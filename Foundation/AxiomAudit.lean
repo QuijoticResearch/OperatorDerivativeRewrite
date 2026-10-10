@@ -1,0 +1,5 @@
+import Foundation.Adjoint
+
+#print axioms OperatorDerivativeRewrite.Foundation.operatorDerivative
+#print axioms OperatorDerivativeRewrite.Foundation.operatorDerivative_isClosed
+#print axioms OperatorDerivativeRewrite.Foundation.operatorDerivative_adjoint_identity
