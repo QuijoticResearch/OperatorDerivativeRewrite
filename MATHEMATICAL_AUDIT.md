@@ -1695,3 +1695,129 @@ Every pre-existing proof module except the extended axiom query file is
 unchanged from a077fd6. SHA-256 verification confirms both original sources
 are unchanged. No theorem statement was weakened and no environment dependency
 or toolchain was changed.
+
+## Countable Gaussian probability space and first-chaos L² extension (after 9330547)
+
+This milestone constructs an actual probability space of countably many independent
+standard Gaussian coordinates and a genuine L² extension of their finite linear
+combinations. It does **not** complete an isonormal Gaussian process: Gaussianity
+of every infinite-series limit is still a separate analytic obligation.
+
+The sample space is Ω = ℝ^ℕ with its product measurable space and probability
+measure μ = infinitePi (n ↦ gaussianReal 0 1). It is not ℓ² and is not an
+identity-covariance Gaussian Radon measure on an infinite-dimensional Hilbert
+space. The coefficient Hilbert space ℓ² is distinct from this sample space.
+No assertion that sample sequences are square summable is used.
+
+### Exact definitions and verified declarations
+
+All names below are in `OperatorDerivativeRewrite.Foundation.InfiniteGaussian`.
+The two source modules introduce only the following declarations:
+
+| Declaration | Precise mathematical meaning |
+| --- | --- |
+| `SampleSpace` | Real sequences ℕ → ℝ, equipped with the existing product measurable space. |
+| `gaussianProduct` | Mathlib's countable product of the verified standard real Gaussian measure. |
+| `gaussianProduct_probability` | This product measure has total mass one. |
+| `GaussianL2` | The actual real L² space of this probability measure. |
+| `coordinate` | Evaluation Xₙ(ω) = ωₙ. |
+| `coordinate_measurePreserving` | Xₙ pushes μ forward to the standard real Gaussian measure. |
+| `coordinate_law` | Exact equality μ.map Xₙ = gaussianReal 0 1. |
+| `coordinate_hasGaussianLaw` | Each actual evaluation variable has Gaussian law. |
+| `coordinates_independent` | The entire coordinate family is jointly independent in Mathlib's `iIndepFun` sense. |
+| `coordinate_memLp` | Xₙ belongs to every finite Lp, including the exponent-zero convention of Mathlib. |
+| `finiteProjection` | Restriction ω ↦ (ωᵢ)ᵢ∈s for any finite set s of natural indices. |
+| `finiteProjection_measurePreserving` | Its law is the previously verified finite independent product Gaussian, also when s is empty. |
+| `finitePullback` | An actual linear isometry L²(ℝˢ, γˢ) → L²(Ω, μ) by composition with restriction. |
+| `finitePullback_coeFn` | Its representative agrees almost everywhere with the composed finite-dimensional representative. |
+| `finitePullback_inner` | It preserves every real Hilbert inner product. |
+| `polynomialCylinder` | The actual random variable p((ωᵢ)ᵢ∈s), for a genuine multivariate polynomial p. |
+| `polynomialCylinder_memLp` | Each such random variable has all finite moments, transported from the verified finite marginal. |
+| `polynomialCylinderEmbedding` | Linear embedding of these evaluated polynomials into L²(Ω, μ). |
+| `polynomialCylinderEmbedding_coeFn` | The embedded class is represented almost everywhere by the actual polynomial evaluation. |
+| `polynomialCylinderEmbedding_injective` | For fixed s, distinct polynomials give distinct L² classes. |
+| `finiteHermite_orthonormal` | For each fixed s, the pullback of its complete finite tensor Hermite family remains orthonormal. Completeness in the entire infinite product is not asserted. |
+| `coordinateL2` | L² class of the actual evaluation Xₙ, built using its proved integrability. |
+| `coordinateL2_coeFn` | This class has the stated actual evaluation representative almost everywhere. |
+| `coordinate_integral` | E[Xₙ] = 0. |
+| `coordinate_product_integral` | E[Xₙ Xₘ] = 1 if n = m and 0 otherwise. |
+| `coordinateL2_orthonormal` | The coordinate L² classes form an orthonormal family. No completeness in all L² is claimed. |
+| `CoefficientSpace` | Mathlib's Hilbert space lp (n ↦ ℝ) 2, namely real ℓ² coefficients. |
+| `firstChaosEmbedding` | The linear isometry from ℓ² into L² constructed by the orthogonal Hilbert-sum theorem applied to the proved coordinate orthonormal family. |
+| `firstChaos_hasSum` | For every h ∈ ℓ², the finite sums of hₙ Xₙ converge unconditionally in L² to `firstChaosEmbedding h`. |
+| `firstChaos_single` | The image of a single coefficient a at index n is exactly a times the actual coordinate class. |
+| `firstChaos_inner` | ⟨W h, W k⟩L² = ⟨h, k⟩ℓ². This is stated as an L² inner product; centering of every infinite limit is not silently assumed. |
+| `firstChaos_norm` | ‖W h‖L² = ‖h‖ℓ². |
+| `firstChaos_finiteSum` | The extension agrees with every finite linear combination of actual coordinate classes. |
+| `firstChaos_injective` | Different ℓ² coefficient vectors yield different L² random variables. |
+
+### Proof dependencies and absence of circular assumptions
+
+The measure and marginal proofs reuse `Measure.infinitePi`, its probability
+instance, `measurePreserving_eval_infinitePi`, `infinitePi_map_restrict`, and
+`iIndepFun_infinitePi`. They do not posit an infinite Gaussian measure axiom.
+Polynomial integrability is pulled back from the existing proved finite-dimensional
+`productPolynomial_memLp`; faithfulness uses the existing polynomial embedding
+injectivity and Mathlib's isometric Lp pullback. Tensor orthogonality is used only
+for independent coordinate marginals and only within a fixed finite index set.
+
+The coordinate second moment is derived from the previously verified real
+polynomial Stein identity applied to p(x) = x. Off-diagonal products use genuine
+coordinate independence and proved L² membership. The resulting orthonormality
+is the input to Mathlib's `OrthogonalFamily.linearIsometry`, whose
+`hasSum_linearIsometry` proves actual unconditional L² convergence. There is
+no assumed convergence, no independently prescribed derivative, and no assumed
+infinite-dimensional graph domain or adjoint identification.
+
+Finite projections include s = ∅ without special hypotheses. Earlier correlated
+finite-dimensional coordinates and their true polynomial derivatives are
+preserved unchanged; this new independent sequence model does not assert tensor
+orthogonality for correlated coordinates. Passing from independent sequence
+coordinates to correlated ℓ² combinations requires the Gaussian limit result
+below before claiming an isonormal family.
+
+### Remaining analytic obligations and next task
+
+The single best next task is to prove, for every h ∈ ℓ², that the actual
+representative of `firstChaosEmbedding h` has law N(0, ‖h‖²). A noncircular
+route is to prove the exact Gaussian law of finite weighted coordinate sums,
+transport their proved L² convergence to convergence in probability/distribution,
+and identify the limiting characteristic function while variances tend to
+‖h‖². The current unconditional L² convergence theorem is a proved prerequisite,
+not a hypothesis substituting for Gaussianity. Centering and joint Gaussianity
+of all finite families of these limits must also be established to complete the
+isonormal process and correlated-coordinate model.
+
+Additional obligations before infinite-dimensional Malliavin operators are:
+
+- Density of the union of finite-coordinate polynomial spaces in L²(Ω, μ).
+  Finite-dimensional polynomial density alone does not establish this; one needs
+  density of finite-coordinate measurable cylinders or a proved conditional
+  expectation approximation. Pulled-back finite Hermite families overlap as s
+  changes, so their union cannot simply be declared an orthonormal basis.
+- Compatibility under enlargement and renaming of finite coordinate sets,
+  including representation independence of the resulting Hilbert-valued
+  polynomial derivative. The fixed-set polynomial injectivity proved here does
+  not by itself settle comparisons between different coordinate sets.
+- A genuine ℓ²-valued cylindrical gradient with proved L² integrability,
+  Gaussian integration by parts, dense domain, and closability.
+- The divergence adjoint, graph cores, and any infinite-dimensional spectral
+  domain characterization. The finite-dimensional equalities are not imported
+  as infinite-dimensional operator equalities.
+
+No infinite-dimensional derivative, divergence, Itô formula, or full isonormal
+Gaussian law is claimed in this milestone.
+
+### Verification
+
+The complete `lake build` succeeds (3292 jobs). Both new modules compile without
+new warnings; the two existing unused-section-variable warnings in
+`Foundation/Adjoint.lean` remain unchanged. A fresh direct Lean run of
+`Foundation/AxiomAudit.lean` yields 469 results for 469 explicit queries,
+including all 34 new declarations. The only dependencies reported are
+`propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or custom axiom is
+reported. The fresh raw output is in the ignored build artifact
+`.lake/build/infinite-gaussian-foundation-axioms.log`.
+
+All earlier proof modules are unchanged. The original `OperatorDerivative.lean`
+and `OperatorDerivative.tex` retain their previously recorded SHA-256 hashes.

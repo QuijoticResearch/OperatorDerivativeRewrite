@@ -108,7 +108,7 @@ functions. `Foundation/FiniteGaussianCompleteness.lean` proves tensor polynomial
 spanning and constructs a complete orthonormal Hilbert basis in every finite
 dimension, including zero, with actual cylindrical pullback compatibility.
 Full multivariate adjoint identification and spectral domains are verified in the modules below.
-No infinite-dimensional Gaussian measure or Malliavin operator is claimed.
+A countable Gaussian product probability space is constructed below; no infinite-dimensional Malliavin operator is claimed.
 
 `Foundation/FiniteGaussianIBP.lean` proves polynomial coordinate Gaussian
 integration by parts. `Foundation/FiniteGaussianVector.lean` constructs actual
@@ -142,3 +142,19 @@ convergence and the zero-dimensional case. No componentwise weighted divergence
 domain or graph density is assumed. Classical polynomial values and all earlier
 correlated-coordinate cylinder results are preserved. These results concern the
 finite independent Gaussian model; no infinite-dimensional adjoint is claimed.
+
+`Foundation/InfiniteGaussianProduct.lean` constructs the countable product
+Gaussian probability space on real sequences, proves independent standard
+Gaussian coordinate laws and all finite marginal laws, and embeds actual finite
+polynomial cylinders isometrically into its L² space. These cylinders have every
+finite moment; fixed-coordinate polynomial embeddings are injective, and finite
+tensor Hermite orthonormality is preserved.
+
+`Foundation/InfiniteGaussianFirstChaos.lean` proves coordinate centering,
+second moments, and L² orthonormality. It constructs an injective linear isometry
+from real ℓ² into product L² by actual unconditional sums of weighted coordinates,
+preserving finite sums, norms, and inner products. Gaussianity of arbitrary
+infinite-series limits and density of all polynomial cylinders remain to be
+proved. This milestone does not yet establish the full isonormal Gaussian
+process or an infinite-dimensional derivative/divergence operator. The sample
+space of real sequences is distinct from the coefficient space ℓ².

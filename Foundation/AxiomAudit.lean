@@ -1,3 +1,4 @@
+import Foundation.InfiniteGaussianFirstChaos
 import Foundation.FiniteGaussianDomains
 import Foundation.GaussianHermiteDomains
 import Foundation.GaussianAdjoints
@@ -511,3 +512,40 @@ namespace OperatorDerivativeRewrite.Foundation.FiniteGaussian
 #print axioms vectorHermiteTruncation_empty
 #print axioms closedVectorDivergence_domain_empty
 end OperatorDerivativeRewrite.Foundation.FiniteGaussian
+
+namespace OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+#print axioms SampleSpace
+#print axioms gaussianProduct
+#print axioms gaussianProduct_probability
+#print axioms GaussianL2
+#print axioms coordinate
+#print axioms coordinate_measurePreserving
+#print axioms coordinate_law
+#print axioms coordinate_hasGaussianLaw
+#print axioms coordinates_independent
+#print axioms coordinate_memLp
+#print axioms finiteProjection
+#print axioms finiteProjection_measurePreserving
+#print axioms finitePullback
+#print axioms finitePullback_coeFn
+#print axioms finitePullback_inner
+#print axioms polynomialCylinder
+#print axioms polynomialCylinder_memLp
+#print axioms polynomialCylinderEmbedding
+#print axioms polynomialCylinderEmbedding_coeFn
+#print axioms polynomialCylinderEmbedding_injective
+#print axioms finiteHermite_orthonormal
+#print axioms coordinateL2
+#print axioms coordinateL2_coeFn
+#print axioms coordinate_integral
+#print axioms coordinate_product_integral
+#print axioms coordinateL2_orthonormal
+#print axioms CoefficientSpace
+#print axioms firstChaosEmbedding
+#print axioms firstChaos_hasSum
+#print axioms firstChaos_single
+#print axioms firstChaos_inner
+#print axioms firstChaos_norm
+#print axioms firstChaos_finiteSum
+#print axioms firstChaos_injective
+end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
