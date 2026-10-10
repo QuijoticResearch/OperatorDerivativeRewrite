@@ -86,3 +86,23 @@ The squared derivative graph norm is Σ (n+1)cₙ²; the squared divergence grap
 norm is Σ (n+2)cₙ². No graph-density assumption is used. Tensor bases and
 multivariate operators remain future work; see the mathematical audit for the
 precise spectral proof and all declaration meanings.
+
+`Foundation/FiniteGaussianCoordinates.lean` uses Mathlib's basis-independent
+standard Gaussian on any finite-dimensional real Hilbert space. It proves
+isonormal covariance, exact Gaussian marginals, all finite coordinate moments,
+joint Gaussianity of arbitrary finite coordinate families, and their genuine
+linear relations. Orthogonality or linear independence of the family is not
+assumed. The ambient Gaussian's full support is proved from its product model.
+
+`Foundation/FiniteGaussianCylinders.lean` defines actual multivariate polynomial
+cylinders and verifies the Fréchet gradient Σᵢ ∂ᵢp(W(h))hᵢ, smoothness, a true
+analytic product rule, and all finite scalar/vector moments. Its L² gradient is
+proved independent of the finite representation, including correlated or
+linearly dependent coordinate families on the same ambient space.
+
+`Foundation/FiniteGaussianTensor.lean` reuses the verified one-dimensional
+Hermites to construct an orthonormal tensor family in independent finite-product
+Gaussian L². Tensor completeness and finite-dimensional polynomial density are
+not yet proved. Multivariate Gaussian integration by parts, gradient closability,
+divergence adjoints, and their spectral domains are subsequent milestones.
+No infinite-dimensional Gaussian measure or Malliavin operator is claimed.

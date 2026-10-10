@@ -1,3 +1,4 @@
+import Foundation.FiniteGaussianTensor
 import Foundation.GaussianHermiteDomains
 import Foundation.GaussianAdjoints
 import Foundation.GaussianOperator
@@ -270,3 +271,57 @@ namespace OperatorDerivativeRewrite.Foundation.GaussianCore
 #print axioms divergence_adjoint_hermite_approximation
 #print axioms derivative_adjoint_hermite_approximation
 end OperatorDerivativeRewrite.Foundation.GaussianCore
+
+/-! Finite Gaussian coordinates, genuine polynomial cylinders, and tensor orthogonality. -/
+namespace OperatorDerivativeRewrite.Foundation.FiniteGaussian
+#print axioms gaussianMeasure
+#print axioms coordinate
+#print axioms coordinate_apply
+#print axioms gaussianMeasure_openPos
+#print axioms continuous_ae_eq
+#print axioms coordinate_memLp
+#print axioms coordinate_gaussian_law
+#print axioms coordinate_covariance
+#print axioms coordinate_add
+#print axioms coordinate_smul
+#print axioms coordinate_linear_relation
+#print axioms gaussianMeasure_eq_product_map
+#print axioms coordinateFamily
+#print axioms coordinateFamily_isGaussian
+#print axioms cylinder
+#print axioms cylinderGradient
+#print axioms cylinder_C
+#print axioms cylinder_X
+#print axioms cylinder_add
+#print axioms cylinder_mul
+#print axioms cylinderGradient_C
+#print axioms cylinderGradient_X
+#print axioms cylinderGradient_add
+#print axioms cylinderGradient_mul
+#print axioms cylinder_hasFDerivAt
+#print axioms cylinder_fderiv
+#print axioms cylinder_smooth
+#print axioms cylinder_continuous
+#print axioms cylinder_product_rule
+#print axioms doubled_holderTriple
+#print axioms cylinder_memLp
+#print axioms cylinderGradient_memLp
+#print axioms cylinderGradient_representation_independent
+#print axioms cylinderL2
+#print axioms cylinderGradientL2
+#print axioms cylinderL2_coeFn
+#print axioms cylinderGradientL2_coeFn
+#print axioms cylinderGradientL2_representation_independent
+#print axioms normalizedHermitePolynomial
+#print axioms normalizedHermitePolynomial_L2
+#print axioms normalizedHermitePolynomial_integral
+#print axioms productGaussian
+#print axioms tensorHermiteFunction
+#print axioms tensorHermite_partial_memLp
+#print axioms tensorHermite_memLp
+#print axioms tensorHermite
+#print axioms tensorHermite_coeFn
+#print axioms tensorHermite_inner
+#print axioms tensorHermite_orthonormal
+#print axioms orthonormal_coordinates_joint_law
+end OperatorDerivativeRewrite.Foundation.FiniteGaussian

@@ -944,3 +944,198 @@ all their transitive proof dependencies. The audit reports only `propext`,
 `Classical.choice`, and `Quot.sound`; no `sorryAx` or custom axioms occur.
 The new modules have no compiler/linter warnings; the
 pre-existing unused-section-variable warnings in `Foundation.Adjoint` remain.
+
+## Finite-dimensional Gaussian cylinder foundation (continuation of a2ccf4b)
+
+This is a deliberately bounded first finite-dimensional milestone: actual
+Gaussian coordinates, a representation-independent polynomial L² gradient,
+and independent tensor Hermite orthogonality. It does not assert multivariate
+polynomial density, tensor completeness, gradient closability, or any
+multivariate adjoint identity. Those remain proof obligations, not hypotheses
+of an abstract interface. No existing result or original source was changed.
+
+### Ambient measure and mathematical assumptions
+
+Let E be a finite-dimensional real inner-product space with its Borel measurable
+structure. No positive dimension or nondegeneracy of a coordinate family is
+required. `gaussianMeasure E` is Mathlib's `ProbabilityTheory.stdGaussian E`;
+it is not a new axiomatic Gaussian process. For h in E, define W(h)(x)=⟨h,x⟩.
+The exact marginal is N(0,‖h‖²), and Cov(W(h),W(k))=⟨h,k⟩. The finite
+coordinate family is a continuous linear map, and its pushforward measure is
+proved Gaussian. Finite linear relations among the hᵢ hold pointwise among
+W(hᵢ). This includes zero vectors, duplicate coordinates, and singular Gram
+matrices without pretending they have nondegenerate densities.
+
+For an orthonormal basis b, the coordinate vector (W(bᵢ)) has exactly the
+independent product law ∏ᵢγ. This theorem is restricted to orthonormal
+coordinates. The law of an arbitrary finite family h has Gram covariance
+⟨hᵢ,hⱼ⟩ and may be correlated or supported on a proper linear subspace;
+independent tensor formulas are not transferred to that law without proof.
+
+The ambient measure stdGaussian E does have full support. This is proved from
+Mathlib's orthonormal product realization, positivity of one-dimensional
+Gaussian measure on nonempty open sets, positivity of finite products, and
+surjectivity/continuity of orthonormal synthesis. It is used on E, never on a
+potentially singular coordinate image.
+
+The scalar polynomial and analytic lemmas do not require finite-dimensional E.
+Actual Gaussian statements here do require finite-dimensional E: there is no
+standard Gaussian measure on an arbitrary infinite-dimensional Hilbert space
+with identity covariance. An isonormal process over an infinite-dimensional
+space requires a different probability-space construction and consistency
+arguments. No such process or infinite-dimensional Malliavin operator is
+claimed by these definitions.
+
+### Genuine derivatives and representation independence
+
+For any finite family h:ι→E and actual `MvPolynomial ι ℝ` p, define
+
+    F(x) = p(W(h₁)(x),...,W(hₙ)(x)),
+    G(x) = Σᵢ (∂ᵢp)(W(h)(x)) hᵢ.
+
+The formal partial derivatives are Mathlib's `MvPolynomial.pderiv`, and are
+not independently supplied values. Induction on the polynomial proves
+`HasFDerivAt F (innerSL ℝ (G x)) x` for every x. Thus G is verified as the
+actual Hilbert gradient. Smoothness of F and the analytic product rule are
+proved from actual polynomial evaluation and continuous linear coordinates.
+The polynomial gradient formula is not itself used as an assumed chain rule.
+
+For cylinders using a common finite family, the gradient product identity is
+
+    ∇(FG) = F∇G + G∇F.
+
+All finite Lp moments of coordinates, cylinders, and their Hilbert-valued
+gradients are proved. The multiplication step uses the verified Hölder
+infrastructure at exponents 2r,2r→r. Scalar multiplication by the fixed hᵢ
+uses Lr×L∞→Lr, and the finite sum gives gradient membership. In particular,
+F,G,∇F,∇G are in L⁴ and the product expressions above are in L². No closure
+of arbitrary L² under multiplication is invoked. No L∞ membership of a
+nonconstant polynomial is asserted.
+
+Suppose p(W(h)) and q(W(k)) agree stdGaussian E-almost everywhere, with
+possibly different finite index sets and dependent families. Their continuous
+ambient representatives agree everywhere by the proved full support.
+Their actual Fréchet derivatives therefore agree; injectivity of the real
+Hilbert-to-dual isometry gives equality of the ambient gradients everywhere.
+The result is also proved for the actual scalar/vector L² equivalence classes.
+This establishes well-defined gradient values independently of any choice of
+cylindrical representation.
+
+For example, if h₁=h₂, p(z₁,z₂)=z₁-z₂ represents the zero variable although
+its formal coordinate partials are (1,-1). Its genuine ambient gradient is
+h₁-h₂=0. Equality of raw coordinate partial arrays is not the required notion
+of representation independence. The theorem proves equality of the weighted
+ambient vector, so it handles exactly this degeneracy.
+
+### Independent tensor polynomial construction
+
+`FiniteGaussianTensor.lean` defines Hₙ/√(n!) as an actual real polynomial
+whose one-dimensional L² class is the previously verified normalized Hermite
+basis vector. For finite multi-index α:ι→ℕ, define
+
+    e_α(x) = ∏ᵢ H_{αᵢ}(xᵢ)/√(αᵢ!),    x ∈ ℝ^ι,    measure ∏ᵢγ.
+
+Every partial product has all finite moments by Hölder induction; every full
+tensor is therefore a justified L² vector. Product-measure Fubini and the
+verified one-dimensional Hermite integrals give
+
+    ⟨e_α,e_β⟩ = 1_{α=β}.
+
+This proves an orthonormal family, including the empty-index case. It does
+not prove that this family is a Hilbert basis. No `HilbertBasis.mk` is applied
+with an unproved density assumption. The one-dimensional complete basis is
+reused for its exact normalization and orthogonality, while its completeness
+has not yet been lifted through product L².
+
+### Meaning of all new declarations
+
+All names below are in `OperatorDerivativeRewrite.Foundation.FiniteGaussian`.
+
+| Declaration | Mathematical meaning |
+|---|---|
+| `gaussianMeasure` | Mathlib's basis-independent standard Gaussian on finite-dimensional E |
+| `coordinate`, `coordinate_apply` | The continuous linear functional W(h)=⟨h,·⟩ and its pointwise value |
+| `gaussianMeasure_openPos` | Positivity of the ambient Gaussian on every nonempty open set |
+| `continuous_ae_eq` | Continuous scalar ambient representatives equal a.e. are equal everywhere |
+| `coordinate_memLp` | Every W(h) has every finite Lp moment |
+| `coordinate_gaussian_law` | W(h) has the exact possibly degenerate marginal N(0,‖h‖²) |
+| `coordinate_covariance` | Cov(W(h),W(k))=⟨h,k⟩ |
+| `coordinate_add`, `coordinate_smul`, `coordinate_linear_relation` | True pointwise linear relations among coordinates |
+| `gaussianMeasure_eq_product_map` | Product-Gaussian realization through any orthonormal basis |
+| `coordinateFamily` | The finite joint coordinate continuous linear map |
+| `coordinateFamily_isGaussian` | Gaussianity of its pushforward, with no rank assumption |
+| `orthonormal_coordinates_joint_law` | Exact independent product law for an orthonormal basis family |
+| `cylinder` | Actual multivariate polynomial evaluation at W(h) |
+| `cylinderGradient` | The computed vector Σᵢ(∂ᵢp)(W(h))hᵢ |
+| `cylinder_C`, `cylinder_X`, `cylinder_add`, `cylinder_mul` | Evaluation respects constants, variables, addition, and multiplication |
+| `cylinderGradient_C`, `cylinderGradient_X`, `cylinderGradient_add` | Computed constant/coordinate gradients and additivity |
+| `cylinderGradient_mul` | Polynomial vector product identity, subsequently verified analytically |
+| `cylinder_hasFDerivAt`, `cylinder_fderiv` | The computed vector represents the actual Fréchet derivative |
+| `cylinder_smooth`, `cylinder_continuous` | Actual smoothness and continuity of the evaluated cylinder |
+| `cylinder_product_rule` | Analytic Fréchet derivative product rule for actual cylinders |
+| `doubled_holderTriple` | Proved arithmetic (2r)⁻¹+(2r)⁻¹=r⁻¹, not a closure axiom |
+| `cylinder_memLp`, `cylinderGradient_memLp` | Actual finite-moment integrability of the scalar function and vector gradient |
+| `cylinderGradient_representation_independent` | Ambient gradient equality across a.e.-equal finite representations |
+| `cylinderL2`, `cylinderGradientL2` | Actual scalar/vector L² equivalence classes with integrability already proved |
+| `cylinderL2_coeFn`, `cylinderGradientL2_coeFn` | Their a.e. representatives are the actual functions above |
+| `cylinderGradientL2_representation_independent` | Equal scalar L² cylinders have equal vector L² gradients |
+| `normalizedHermitePolynomial` | Actual normalized real Hermite polynomial |
+| `normalizedHermitePolynomial_L2` | Its one-dimensional class is the previously verified Hermite basis vector |
+| `normalizedHermitePolynomial_integral` | Exact integral orthogonality of those scalar representatives |
+| `productGaussian` | Actual independent finite product measure ∏ᵢγ |
+| `tensorHermiteFunction` | Actual finite product e_α of normalized Hermite representatives |
+| `tensorHermite_partial_memLp`, `tensorHermite_memLp` | Proved finite moments of partial and full tensor products |
+| `tensorHermite`, `tensorHermite_coeFn` | Actual product Gaussian L² vectors and their a.e. representatives |
+| `tensorHermite_inner`, `tensorHermite_orthonormal` | Exact tensor inner products and orthonormality; no completeness assertion |
+
+### Remaining analytic obligations and adjoint investigation
+
+The next formalization task is tensor completeness and finite-dimensional
+polynomial density. A valid route is to lift the existing one-dimensional
+complete Hermite basis using a proved product/iterated-L² identification and
+Fubini, or to prove that a vector orthogonal to all tensor products is zero.
+The inspected Mathlib tensor basis API concerns finite algebraic tensor
+products and finite-dimensional orthonormal bases; it does not by itself give
+this Hilbert completion/density theorem for infinite-dimensional Gaussian L².
+The missing result is an implementation/proof obligation for a true theorem,
+not a mathematical failure of polynomial density. A fixed family spanning a
+proper subspace cannot be assumed dense in the whole ambient L² space.
+
+After density, multivariate IBP still needs a proof by integrable slices and
+finite-product Fubini, starting from the verified one-dimensional polynomial
+IBP. The intended ambient identity is
+
+    E[⟨∇F,k⟩ G] = E[F (W(k)G-⟨∇G,k⟩)].
+
+It does not require a Gram-matrix inverse. It is not currently a Lean theorem
+in these modules. Vector-valued test-core density and this identity should
+then prove closability of the actual finite-dimensional gradient. No
+closability, dense operator domain, or full divergence adjoint is assumed now.
+
+For future independent Hermite coordinates, the expected closed gradient
+domain condition is Σ_α |α| |c_α|²<∞. The divergence output coefficients
+should be Σᵢ √(αᵢ) u_{i,α-eᵢ}, with absent/negative indices contributing zero.
+Its maximal adjoint domain must control the square-summability of that SUM;
+requiring each separate weighted coordinate derivative to be square summable
+can be stronger because terms can cancel. These are mathematical targets
+only, not verified declarations or asserted domain identities. The existing
+one-dimensional domains cannot simply be intersected to obtain the strongest
+vector-divergence domain without a new spectral proof.
+
+The original cylindrical interfaces (`OperatorDerivative.lean:340–360` and
+the manuscript's cylindrical-reduction discussion) remain untouched. The
+actual polynomial derivative and representation-independent L² value now
+supply concrete ingredients for repair, but their asserted IBP and closed
+operator identifications still require the finite-dimensional analytic steps
+above. General bounded smooth cylinders, consistency across growing ambient
+spaces, and infinite-dimensional limits remain future work.
+
+Verification for this milestone comprises `lake build`,
+`lake build Foundation.AxiomAudit`, and a fresh
+`lake env lean Foundation/AxiomAudit.lean`. There are 50 new explicit axiom
+queries, for 258 audited declarations in total. The fresh audit reports only
+`propext`, `Classical.choice`, and `Quot.sound`, with no `sorryAx` or custom
+axioms. The original Lean/manuscript hashes and all previous foundation source
+files are checked unchanged before committing. Only pre-existing warnings in
+`Foundation.Adjoint` remain; the new modules have no compiler/linter warnings
+and no suppressed linters.
