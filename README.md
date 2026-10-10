@@ -38,3 +38,14 @@ counterexample, preserved fragments, and the proposed restricted interface.
 
 The original `C:/Operator/OperatorDerivative.lean` and
 `C:/Operator/OperatorDerivative.tex` are preserved unchanged.
+
+`Foundation/OperatorDomains.lean` characterizes the actual adjoint domain, proves
+whole-space domains for bounded operators and passage to limits for closed graphs,
+and records the L⁴ value-and-output restriction without asserting closure or Leibniz.
+`Foundation/MultiplierCore.lean` constructs continuous bounded multipliers and
+proves a multiplier algebra for the given divergence using domain preservation and
+bounded commutators. For centered densely defined divergences, its functions and
+products belong to the actual adjoint domain. Admissible generators give the same
+result for their generated algebra. No graph density or Leibniz rule is asserted.
+See the domain reconstruction section of the mathematical audit for all hypotheses
+and the remaining cylindrical/analytic obligations.

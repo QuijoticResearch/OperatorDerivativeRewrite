@@ -232,3 +232,200 @@ Verification: `lake build` and `lake build Foundation.AxiomAudit` succeed with p
 Lean/Mathlib v4.34.1. `#print axioms` is included for **every** new declaration.
 All report only `propext`, `Classical.choice`, `Quot.sound`; none depend on `sorryAx`
 or a custom axiom. Existing unused-section-variable warnings in `Adjoint.lean` remain.
+
+## Domain reconstruction milestone (after db345dc)
+
+### Original domain and closure inventory
+
+| Original location | Actual Lean content | Mathematical assessment / repair |
+| --- | --- | --- |
+| Lean 62–80 | D = δ.adjoint, closedness and adjoint identity under dense δ-domain | Preserve; this is the actual operator and domain used in the new modules |
+| Lean `UnboundedEnergySpace` 101–170, especially 110–113 | δ is a LinearPMap and δ.domain is dense; comment calls δ closable | No `IsClosable` field is present. Density gives an adjoint and closedness, but alone does not imply density of its domain |
+| Lean 130, 167–170 | Proj sends every vector into dom(δ); dom(D) is dense; dense pairing nondegeneracy | These are extra analytic hypotheses, not consequences of δ-density. Projection-domain invariance needs a concrete proof; D-density needs closability of δ or a separate proof |
+| Lean 155–156, 2836–2839 | `mul_dom` asserts product closure for every pair in dom(D) | Invalid as a consequence of closedness. Remove this universal closure; replace it with a proved restricted-core result |
+| Lean 180–187 | U.D = U.δ.adjoint and its domain-specific identity | Preserve. Membership must refer to this adjoint, not a newly assigned derivative |
+| Lean 201–208, 226, 289, 314 | PRP/isometry and factorization/orthogonality/variance with explicit δ/D domain elements and projection-domain hypotheses | Those hypotheses remain needed. They are independent of multiplication closure |
+| Lean `LeibnizCondition_unbounded` 335–338 | Identity for F,G in dom(D), with separate hFG, but total L² products | hFG is logically separate, but the ambient products are already incorrectly typed. Use restricted products; do not infer hFG from closedness |
+| Lean `UnboundedCylindricalStructure` 341–373 | `cyl_in_dom`, `mul_cyl`, `coord_leibniz`, `ibp_formula`; `cyl_dense` merely supplies a sequence of cylindrical elements; `leibniz_closure` assumes the extension | No smoothness or derivative relation is encoded for coordinate derivatives. There is NO convergence clause in `cyl_dense`. Neither density nor the extension is proved by these fields |
+| Lean 378–416 | IBP identification and cylindrical/global Leibniz wrappers | Formal algebra under supplied hypotheses. A real coordinate derivative and verified IBP are required for mathematical identification |
+| Lean `ProductRule_unbounded` 423–476 | Divergence identity requires hFu, and proof uses universal `mul_dom` | Replace with bounded/restricted multipliers, correct L² pairings and separate domain facts. The present multiplier criterion supplies a sufficient δ-domain condition, but does not identify the commutator as contraction with DF |
+| Lean `UnboundedSmoothFunc` 484–497 | `app_in_dom`, `deriv1_in_dom`, two chain rules assumed | Composition-domain membership and chain identities must be separately proved for a genuine scalar function; smoothness is not encoded here |
+| Lean 546–560, 672 | Reciprocal volatility and Brownian derivative transfer and Leibniz assumptions | Require an actual Brownian derivative domain and a proved weighted transfer. Scalar L² reciprocity is not an everywhere-defined multiplier |
+| Lean `EnergySpace` 735–799 | δ is continuous and everywhere defined; D is its continuous adjoint | Both domains really are the whole Hilbert spaces. This does not make L² an algebra or make D a derivation |
+| Lean 1126–1204 | Universal bounded `LeibnizCondition`, `ProductRule`, equivalence | Universal pointwise L² typing fails. Even on a bounded test algebra, Leibniz requires separate structure on the actual adjoint |
+| Lean 1218–1411 | Powers and chain-rule approximation/continuity assumptions | Use actual bounded test products or verified moment bounds. The hypotheses called polynomial approximation do not encode polynomials. Defect continuity cannot be assumed to establish a nonexistent L² product |
+| Lean `CylindricalStructure` 1429–1452 and wrappers 1455–1484 | Assumed algebraic class and IBP; `leibniz_closure` concludes Leibniz on all L² | Separate algebraic closure, actual operator membership, actual derivative identity, and the topology of extension |
+| Lean 1649–1661, 1830–1841 | Gaussian/fBM structures carry or propagate the previous closure assumptions | Gaussian marginals do not supply graph density or closure of dom(D) |
+| Lean `ConcreteStochasticIntegral` 2768–2788 | Dense δ-domain, centeredness and exact isometry on its entire domain | Isometry makes δ bounded on that domain and gives a bounded extension. If also closed, its dense domain must be the whole space. This is not a generic unbounded Skorokhod divergence interface |
+| Lean `ConcreteEnergyData` 2806–2850 and converter 2856 | Repeats universal `mul_dom`, D-density and projection-domain assumptions | Concrete Lp types do not prove these assumptions. Use the new primitive domain statements before assembling another energy interface |
+| Lean `CylindricalFunctional` 2939–2967 | Separate `f_eval`, `df_eval`, F and dF, with a.e. evaluation specifications | No `ContDiff` or derivative relation ties df_eval to f_eval; no membership of F in the actual δ* domain. Do not reuse this as a verified cylindrical derivative |
+| Lean 3632–3724, 4427–4492 | Intended Sobolev/core closure comments and correct Lp product facts | L⁴ product estimates are useful, but neither identify dom(D) with D^{1,4} nor prove domain closure. `cylindrical_memLp_four` returns its own membership hypothesis |
+| Lean 4712–4748, 4892–4937 | Smooth/composed cylindrical packages and formula unfolding | Some scalar derivative hypotheses are supplied, but actual δ*-domain identification and representation independence remain separate tasks |
+| Lean 4943–4999 | Continuous-bilinear density theorem and commented-out domain extension | The generic theorem is valid. It does not construct a graph space or prove continuity of a defect that uses D(FG) before product-domain membership |
+| TeX 208–217, 254–283 | Densely defined closable δ; adjoint domain characterized by continuous pairing | This is the intended unbounded domain. Correctly distinguish density of δ-domain, closability, closedness and density of D-domain |
+| TeX 504, 674, 703–727 | C_b^∞ cylindrical class; graph-norm and L⁴-graph closure | An algebraic cylindrical class is a collection before closure. D^{1,2} and D^{1,4} are closures in DIFFERENT norms; identifying them with actual adjoint restrictions requires proof |
+| TeX 739, 783–810 | Claimed Sobolev identification and divergence-domain extension | Correct the L⁴-derivative inference, use a graph core rather than mere L² density, and distinguish δ from its closure |
+| TeX 984–1024, 1054 | Weighted transfer and M-cylindrical density | Weighted transfer needs correct energy spaces. The manuscript itself recognizes an additional M-cylindrical graph-density argument; coordinate generation alone does not prove it |
+| TeX 1377 | Claims bounded case bypasses closure by density and invokes unavailable analysis for unbounded case | Boundedness of D only compares its graph norm with L². Product continuity still needs a stronger topology. Distinguish a missing mathematical proof from the work of implementing one |
+
+### Three different objects
+
+1. **Actual domain:** for the fixed δ, dom(D) = dom(δ*) consists of F such that
+   u ↦ ⟨F,δu⟩ is continuous in the ambient L² norm of u. For dense δ-domain this
+   is equivalent to existence of a unique vector v with ⟨v,u⟩ = ⟨F,δu⟩ for every
+   u in dom(δ). The value DF is that representer. For bounded everywhere-defined
+   δ, dom(D) is all of L².
+2. **Algebraic test class:** finite sums and products of selected test functions.
+   No density follows from this description. The chosen class in this increment
+   is `Algebra.adjoin ℝ S`, where generators S satisfy the concrete divergence
+   multiplier conditions below. Smooth bounded cylindrical generators are a
+   future specialization, not something automatically proved admissible here.
+3. **Graph core / closure:** a linear subspace C contained in dom(D) is a graph
+   core if the closure of the graph of D restricted to C is the graph of D.
+   Mathlib already expresses this as `LinearPMap.HasCore`. Ordinary L² density
+   is insufficient. Graph convergence means both F_n → F and DF_n → v in L²;
+   the new `closed_graph_limit` then proves F ∈ dom(D) and DF = v.
+   No graph norm is silently placed on the domain subtype in our definitions.
+
+A fourth-moment restriction is F ∈ dom(D), F ∈ L⁴ and DF ∈ L⁴(H).
+`fourthMomentDomain` defines exactly that set of actual domain elements.
+It is not defined as a closure and is not identified with classical D^{1,4}.
+An L⁴ graph closure additionally requires approximating both F and DF in L⁴.
+We have not constructed that closure or proved a density theorem this increment.
+
+### Closedness does not give product closure, even when the product is L²
+
+On (0,1) with Lebesgue probability measure let w(x)=x^(-1/5), and let
+D be the maximal multiplication operator Df = wf with domain {f∈L² : wf∈L²}.
+This is closed: if f_n→f and wf_n→g in L², simultaneous a.e.-convergent
+subsequences give g=wf. It is densely defined: truncation to [1/n,1) approximates
+any L² function and w is bounded on each such truncated set.
+For f=g=x^(-1/5), wf=x^(-2/5) is L², so f,g∈dom(D).
+The product fg=x^(-2/5) is also L², but wfg=x^(-3/5) is not L².
+Thus fg∉dom(D). This example is a mathematical counterexample, not a Lean
+formalization in this increment, and is not asserted to be a centered divergence.
+
+### Sufficient product-closure hypotheses implemented now
+
+Write M_f^X and M_f^V for pointwise multiplication by f on X=L²(ℝ) and V=L²(H).
+For a fixed δ : V →ₗ.[ℝ] X, `IsDivergenceMultiplier δ f` means:
+
+- f is a.e. strongly measurable and essentially bounded;
+- M_f^V preserves **δ's** domain;
+- there exists a bounded linear R_f : V → X such that, for all u∈dom(δ),
+
+      δ(M_f^V u) = M_f^X(δu) − R_f u.
+
+This is an explicit sufficient analytic condition on the GIVEN δ.
+It neither assumes closure of dom(δ*) under products nor prescribes a derivative
+of f. The equation determines R_f on the dense δ-domain; `divergenceCommutator_unique`
+proves uniqueness of its bounded extension. For an arbitrary unbounded δ, proving
+these hypotheses for nonconstant cylindrical generators remains a concrete analytic task.
+The criterion is sufficient and may be stronger than needed; no necessity is claimed.
+
+The new proofs show constants, sums and products remain admissible. In particular
+
+    R_(fg) = M_f^X R_g + R_f M_g^V.
+
+All scalar and vector multipliers are actual continuous linear maps constructed
+using the preceding L∞ × L² → L² estimates. These are not merely assumed maps.
+`boundedMultiplierAlgebra δ` is the resulting subalgebra of real functions on Ω.
+Its raw functions have canonical a.e. L² classes on finite measure spaces;
+`boundedToL2_mul` proves that algebraic multiplication agrees with actual L² multiplication.
+The raw-function algebra is not claimed to inject into L² (null-set differences remain).
+
+For dense δ-domain, admissibility implies M_f^X maps dom(δ*) into itself.
+The proof verifies the adjoint relation with the genuine representer
+
+    M_f^V(δ*F) + R_f*F.
+
+If δ is centered, constant one belongs to dom(δ*). Multiplying that constant
+proves each admissible f, and every product of admissible f,g, has its L² class
+in the actual adjoint domain. Hence the algebraic test class generated by any
+admissible generator set is product-closed in dom(δ*), without per-product
+membership assumptions. The generator hypotheses must still be proved in applications.
+For bounded δ on the whole space, all essentially bounded f satisfy the criterion:
+R_f = M_f^X δ − δ M_f^V. This case is verified independently of any Leibniz rule.
+
+### Operator membership is separate from the Leibniz identity
+
+The present theorems do NOT identify R_f u with ⟨Df,u⟩ pointwise, or R_f*G
+with G Df. That local identification is needed to obtain
+D(fg) = f Dg + g Df. It requires a genuine derivative/IBP construction for the
+specific δ, rather than an arbitrary assignment to coordinate derivatives.
+
+For example, on a two-point equal-probability space let δ = I − E on real L²,
+where E is projection onto constants. This δ is bounded, centered and self-adjoint,
+so D=δ and all bounded multipliers belong to our algebra. For F taking values ±1,
+DF=F but D(F²)=D1=0 while 2FDF=2. Product-domain closure therefore does not imply
+Leibniz, even with a centered δ and D1=0. This is documented mathematics, not an
+additional Lean counterexample theorem.
+
+A restricted Leibniz statement should quantify over elements of a verified test
+algebra already included in dom(D), and then assert the identity for the SAME D.
+For an L⁴ extension, first establish product membership using known core products,
+actual core Leibniz identities, L⁴ value-and-derivative approximation, Hölder
+product convergence and closedness. Only then identify the value of D(FG).
+Avoid defining a everywhere-valued defect involving D(FG) before its membership
+is known. No such extension or cylindrical derivative is implemented here.
+
+### Downstream repairs and remaining arguments
+
+| Results | What this increment supplies | What remains |
+| --- | --- | --- |
+| D_closed, D_adjoint, adjoint uniqueness, bounded/unbounded agreement | Actual-domain characterization, bounded full-domain theorem, graph-limit criterion | Concrete δ, density and any closability/closedness assumptions |
+| `mul_dom`, `mul_cyl`, cylindrical product admissibility | Proven restricted algebra product closure, including generated classes | Verify divergence multiplier conditions for intended cylindrical generators; no all-dom(D) closure |
+| `ibp_rep`, D_eq_malliavin and cylindrical Leibniz | A place to state genuine identities without fake domains | True smooth derivatives, representation independence and IBP against the given δ |
+| `cylindrical_implies_leibniz`, Gaussian/fBM Leibniz | Correct distinction between algebraic class and graph closure; L⁴ product-term membership | L⁴ derivative estimates, approximation of values AND derivatives, genuine core Leibniz and product-convergence implementation |
+| Divergence product rule | Admissible multipliers preserve dom(δ); adjoint membership is proved separately | Identify R_f with the pointwise contraction; for weaker unbounded multipliers, prove graph-core extension and δ = D* (or use δ's closure) |
+| Powers / chain rules | Finite products of admissible bounded tests stay in the algebra and actual D-domain | Actual Leibniz, smooth composition admissibility, derivative identities and convergence estimates |
+| Clark–Ocone/GKW/variance | Native Hilbert domains unaffected by the erroneous algebra fields | PRP, projection-domain invariance, closed range/isometry and representation hypotheses |
+| Brackets / Itô formulas / time integration | Correct prerequisites can now be stated | L⁴ estimates for derivatives/projections, correction integrability, local operator identities, time limits and Fubini; intentionally out of scope |
+| Stochastic volatility | Domain restrictions cannot be hidden in total L² multiplications | Genuine weighted energy spaces, transfer domains, and M-cylindrical graph-density analysis |
+
+Mathematical gaps: verifying the test generators against a concrete δ, identifying
+its adjoint with a genuine derivative, proving graph density, and proving the required
+projection/weighted estimates. Lean implementation work: packaging a known graph topology,
+Lp representative compatibility, and sequential Hölder convergence once those mathematical
+hypotheses are available. An implementation difficulty is not evidence for any missing
+mathematical claim.
+
+### Every new declaration and its meaning
+
+All names are in `OperatorDerivativeRewrite.Foundation`.
+
+| Declaration | Precise meaning |
+| --- | --- |
+| `mem_adjoint_domain_iff_representable` | For dense δ-domain, F∈dom(δ*) iff a vector represents ⟨F,δu⟩ against every u∈dom(δ) |
+| `bounded_adjoint_domain` | The partial adjoint of an everywhere-defined continuous δ has domain ⊤ |
+| `closed_graph_limit` | Convergence of both inputs and actual operator outputs for a closed D proves limit membership and identifies D's value |
+| `fourthMomentDomain` | Set of elements of the actual D-domain having both value and actual output in L⁴ |
+| `fourthMomentDomain_product_terms` | Two such elements yield FG, F DG, G DF in L²; no product-domain membership or identity is asserted |
+| `boundedMultiplier` | Continuous linear multiplication by a given MemLp-∞ real function on L²(H) |
+| `boundedMultiplier_coeFn` | That map agrees a.e. with pointwise scalar multiplication |
+| `boundedMultiplier_add` | M_(f+g) = M_f + M_g |
+| `boundedMultiplier_mul` | M_(fg) = M_f composed with M_g |
+| `boundedMultiplier_const` | M_c = c times the identity |
+| `boundedMultiplier_symmetric` | Real bounded multipliers satisfy ⟨M_fu,v⟩ = ⟨u,M_fv⟩ |
+| `IsDivergenceMultiplier` | Explicit δ-domain preservation and bounded divergence commutator, plus MemLp-∞ membership |
+| `isDivergenceMultiplier_const` | Constants satisfy that criterion for every linear δ |
+| `IsDivergenceMultiplier.add` | Sum admissibility, derived using R_f + R_g |
+| `IsDivergenceMultiplier.mul` | Product admissibility, derived using M_f R_g + R_f M_g |
+| `boundedMultiplierAlgebra` | Subalgebra whose carrier is exactly the above admissibility predicate; its algebra laws are proved |
+| `isDivergenceMultiplier_bounded` | Every MemLp-∞ f is admissible for a continuous δ with whole-space domain |
+| `divergenceCommutator_unique` | For dense δ-domain, two bounded commutators obeying the actual equation are equal |
+| `adjoin_le_boundedMultiplierAlgebra` | Admissibility of generators implies admissibility of every element of their Mathlib-generated algebra |
+| `IsDivergenceMultiplier.preserves_adjoint_domain` | Admissible f preserves the actual δ* domain, for dense δ-domain and complete H |
+| `boundedToL2` | Canonical L² a.e. class of an essentially bounded scalar function on a finite measure space |
+| `boundedToL2_coeFn` | That class agrees a.e. with its input function |
+| `boundedToL2_mul` | The L² class of fg is M_f applied to the L² class of g |
+| `one_mem_adjoint_domain` | Centered δ puts constant one in its adjoint domain, on a finite measure space with complete H |
+| `IsDivergenceMultiplier.mem_adjoint_domain` | With centered, densely defined δ, each admissible bounded f has its actual L² class in dom(δ*) |
+| `multiplierAlgebra_product_mem_adjoint_domain` | Under those hypotheses, every product in the chosen multiplier algebra has its actual L² class in dom(δ*) |
+| `generatedAlgebra_product_mem_adjoint_domain` | The same product-domain conclusion for an algebra generated by any family satisfying the explicit δ-multiplier conditions |
+
+Verification: `lake build` and `lake build Foundation.AxiomAudit` succeed. All 27
+new definitions/theorems have explicit `#print axioms` commands and report only
+`propext`, `Classical.choice`, `Quot.sound`. There is no `sorryAx` or custom axiom.
+No original source, existing adjoint/product theorem, full cylindrical derivative
+or Itô formula has been altered or implemented by this milestone.

@@ -1,5 +1,7 @@
 import Foundation.Adjoint
 import Foundation.LpProducts
+import Foundation.OperatorDomains
+import Foundation.MultiplierCore
 
 /-! Axiomatic dependencies of every foundation declaration. -/
 
@@ -35,3 +37,31 @@ import Foundation.LpProducts
 #print axioms OperatorDerivativeRewrite.Foundation.smul_L2_memLp_one
 #print axioms OperatorDerivativeRewrite.Foundation.L2_integral_inner_bound
 #print axioms OperatorDerivativeRewrite.Foundation.L2_bounded_multiplier_selfadj
+
+#print axioms OperatorDerivativeRewrite.Foundation.mem_adjoint_domain_iff_representable
+#print axioms OperatorDerivativeRewrite.Foundation.bounded_adjoint_domain
+#print axioms OperatorDerivativeRewrite.Foundation.closed_graph_limit
+#print axioms OperatorDerivativeRewrite.Foundation.fourthMomentDomain
+#print axioms OperatorDerivativeRewrite.Foundation.fourthMomentDomain_product_terms
+#print axioms OperatorDerivativeRewrite.Foundation.boundedMultiplier
+#print axioms OperatorDerivativeRewrite.Foundation.boundedMultiplier_coeFn
+#print axioms OperatorDerivativeRewrite.Foundation.boundedMultiplier_add
+#print axioms OperatorDerivativeRewrite.Foundation.boundedMultiplier_mul
+#print axioms OperatorDerivativeRewrite.Foundation.boundedMultiplier_const
+#print axioms OperatorDerivativeRewrite.Foundation.boundedMultiplier_symmetric
+#print axioms OperatorDerivativeRewrite.Foundation.IsDivergenceMultiplier
+#print axioms OperatorDerivativeRewrite.Foundation.isDivergenceMultiplier_const
+#print axioms OperatorDerivativeRewrite.Foundation.IsDivergenceMultiplier.add
+#print axioms OperatorDerivativeRewrite.Foundation.IsDivergenceMultiplier.mul
+#print axioms OperatorDerivativeRewrite.Foundation.boundedMultiplierAlgebra
+#print axioms OperatorDerivativeRewrite.Foundation.isDivergenceMultiplier_bounded
+#print axioms OperatorDerivativeRewrite.Foundation.divergenceCommutator_unique
+#print axioms OperatorDerivativeRewrite.Foundation.adjoin_le_boundedMultiplierAlgebra
+#print axioms OperatorDerivativeRewrite.Foundation.IsDivergenceMultiplier.preserves_adjoint_domain
+#print axioms OperatorDerivativeRewrite.Foundation.boundedToL2
+#print axioms OperatorDerivativeRewrite.Foundation.boundedToL2_coeFn
+#print axioms OperatorDerivativeRewrite.Foundation.boundedToL2_mul
+#print axioms OperatorDerivativeRewrite.Foundation.one_mem_adjoint_domain
+#print axioms OperatorDerivativeRewrite.Foundation.IsDivergenceMultiplier.mem_adjoint_domain
+#print axioms OperatorDerivativeRewrite.Foundation.multiplierAlgebra_product_mem_adjoint_domain
+#print axioms OperatorDerivativeRewrite.Foundation.generatedAlgebra_product_mem_adjoint_domain
