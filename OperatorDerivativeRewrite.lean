@@ -6,3 +6,4 @@ import Foundation.GaussianAdjoints
 import Foundation.GaussianHermiteDomains
 import Foundation.FiniteGaussianTensor
 import Foundation.FiniteGaussianCompleteness
+import Foundation.FiniteGaussianLadders

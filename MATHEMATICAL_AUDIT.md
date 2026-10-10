@@ -1272,3 +1272,223 @@ only `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or custom
 axioms. Prior foundation proofs and original Lean/manuscript hashes are
 checked unchanged. Only the two pre-existing unused-section-variable warnings
 in `Foundation.Adjoint` remain; no new warnings or suppressed linters.
+
+## Finite Gaussian gradient/divergence: dense closable polynomial operators (after 9fc7fbb)
+
+This is a complete operator-core milestone: polynomial Gaussian IBP, genuine
+scalar-to-vector gradient and vector-to-scalar divergence, both dense domains,
+proved closability, closed extensions and adjoint inclusions, and actual tensor
+Hermite lowering/raising. Full maximal-adjoint identification and spectral
+domain characterizations are **not** claimed in this milestone.
+
+The original `UnboundedCylindricalStructure` (`OperatorDerivative.lean:341–374`)
+requires a cylindrical IBP formula and an extension from a purported graph core.
+Its earlier `cyl_dense` field does not actually express convergence. The
+manuscript's cylindrical reduction and Sobolev closure discussion likewise
+needs analytic proofs. The new finite independent Gaussian model now supplies
+a genuine polynomial IBP identity and closable operators. It does not establish
+the original D^{1,4} graph-density or closed Leibniz extension claims. Original
+sources and every previously verified foundation module remain unchanged.
+
+### Spaces, domains, definitions, and sign convention
+
+For every finite index type I, including the empty type, let μ = ∏ᵢ N(0,1) on
+I → ℝ. The scalar Hilbert space is Hₛ = L²(μ;ℝ). The vector Hilbert space is
+Hᵥ = L²(μ;EuclideanSpace ℝ I), with the Euclidean ℓ² fiber norm and inner
+product, not the supremum norm on a plain Pi space.
+
+Scalar and vector polynomial embeddings evaluate actual multivariate
+polynomials, with all finite moments proved. Both embeddings are injective:
+full support of μ converts equality a.e. of continuous polynomials into
+equality everywhere, and polynomial extensionality gives equality of the
+polynomials. Vector injectivity follows from the scalar coordinate maps.
+
+The operator graphs are ranges of linear maps from actual polynomials:
+
+    ∇₀[p] = [x ↦ (∂ᵢp(x))ᵢ],       dom(∇₀) = scalar polynomial embedding range;
+    δ₀[u] = [Σᵢ(Xᵢuᵢ − ∂ᵢuᵢ)],  dom(δ₀) = vector polynomial embedding range.
+
+Vertical uniqueness is proved from the injectivity of the input embeddings.
+No derivative/output data are independently prescribed. The polynomial
+vector used for ∇₀ is additionally verified to be the actual Fréchet gradient
+on the Euclidean coordinate model. In particular δ₀ has the positive
+Gaussian-adjoint sign convention, rather than the ordinary positive divergence.
+
+The scalar polynomial domain is dense by the existing proved finite Gaussian
+density theorem. Vector polynomial density is now proved separately:
+orthogonality to fields with one polynomial component forces each scalar L²
+component to vanish; the vector therefore vanishes a.e. Orthogonal-complement
+theory gives density. There is no vector-density hypothesis and no assumption
+about graph-norm density.
+
+### Integration by parts, closability, and exact inclusions
+
+`Foundation/FiniteGaussianIBP.lean` first proves the actual coordinate identity
+
+    ∫ xᵢ p(x) dμ = ∫ ∂ᵢp(x) dμ.
+
+Partial differentiation of a separable polynomial product differentiates
+precisely its i-th factor. Finite-product Fubini and the previously verified
+one-dimensional Stein identity prove the identity for every separable product.
+Linearity and the already proved algebraic tensor Hermite spanning extend it
+to every multivariate polynomial. Applying it to pq, with genuine product
+integrability, gives
+
+    ∫ (∂ᵢp)q dμ = ∫ p(Xᵢq−∂ᵢq) dμ.
+
+Coordinate summation yields, for every scalar polynomial p and polynomial
+vector field u,
+
+    ⟨∇₀[p],[u]⟩_{Hᵥ} = ⟨[p],δ₀[u]⟩_{Hₛ}.
+
+Both dense-domain hypotheses are proved independently. Mathlib's formal
+adjoint theorem gives actual operator inclusions, including domains and values:
+
+    ∇₀ ⊆ δ₀*,    δ₀ ⊆ ∇₀*.
+
+The adjoints of these densely defined operators are closed. Their closed
+extensions therefore prove closability of both polynomial operators. Their
+actual graph closures, denoted `closedGradient` and `closedVectorDivergence`,
+are closed, densely defined operators satisfying
+
+    closure(∇₀) ⊆ δ₀*,    closure(δ₀) ⊆ ∇₀*.
+
+Classical polynomial values are preserved on both closed graphs and for every
+proof of polynomial domain membership. Polynomial domains are graph cores
+for their own closures, by the definition and verified properties of graph
+closure. This statement does NOT make them graph cores for the maximal
+adjoints on the right. No equality between a closure and the opposite adjoint
+has been inferred from scalar or vector L² density.
+
+### Tensor actions and the outstanding spectral argument
+
+`Foundation/FiniteGaussianLadders.lean` reuses the actual one-dimensional
+polynomial operator graph actions to prove normalized polynomial lowering
+and raising. These determine actual multivariate polynomial identities. For
+e_α = ∏ᵢ H_{αᵢ}/√(αᵢ!) and eᵢ the coordinate unit multi-index:
+
+    ∂ᵢe_α = √(αᵢ)e_{α−eᵢ} when αᵢ>0; ∂ᵢe_α = 0 when αᵢ=0;
+    (Xᵢ−∂ᵢ)e_α = √(αᵢ+1)e_{α+eᵢ}.
+
+These are proved for actual normalized polynomial representatives and their
+operator L² graphs, not stipulated coefficient transformations. A vector
+Hermite field with its sole nonzero component i equal to e_α belongs to δ₀'s
+domain, and its output is exactly √(αᵢ+1)e_{α+eᵢ}. The corresponding tensor
+scalar belongs to ∇₀'s domain, and each positive-degree gradient component
+has the exact lowering weight above.
+
+**Remaining unproved targets, not declaration meanings:** for scalar Hermite
+coefficients c_α and vector-component coefficients u_{i,β}, the expected
+closed-gradient criterion is
+
+    Σ_α |α| |c_α|² < ∞,
+
+and the expected maximal divergence criterion is square-summability of the
+scalar sequence
+
+    d_α = Σ_{i:αᵢ>0} √(αᵢ) u_{i,α−eᵢ}.
+
+The divergence criterion controls the SQUARE OF THE SUM, allowing cancellation
+between coordinates. Requiring each coordinate raising operator separately
+to have finite weighted norm is generally stronger and is not used here. The
+one-dimensional fact that derivative and divergence have the same domain
+does not identify these different scalar/vector multivariate domains.
+
+The next proof obligations are precise:
+
+1. Derive and prove sufficient as well as necessary Hermite coefficient
+   relations for both maximal adjoint graphs, using the complete scalar basis
+   and a proved componentwise vector expansion/Parseval identity.
+2. Prove square-summable coefficient realization in the required vector space,
+   and the weighted norm formulas that characterize the scalar gradient.
+3. Use **finite total-degree cutoffs** {|α|≤N}. Lowering changes total degree
+   by −1; raising changes it by +1 for every coordinate. Thus the appropriate
+   shifted output cutoff can retain all contributions to each divergence
+   coefficient, including cancellations. Finiteness and both graph-limit
+   convergence statements must be proved in Lean; they are not assumed.
+4. Establish that these approximations are graph dense in δ₀* and ∇₀*, then
+   deduce closure(∇₀)=δ₀* and closure(δ₀)=∇₀*. Until then only the displayed
+   inclusions are established. Rectangular coordinate cutoffs must not be
+   substituted without checking that boundary cancellations are preserved.
+
+This is missing formalized spectral/approximation infrastructure, not a
+counterexample to the finite Gaussian operator identifications. No infinite-
+dimensional limit, Itô formula, or full Malliavin operator is claimed.
+
+### Compatibility and correlated-coordinate limits
+
+`gradientPolynomial_hasFDerivAt` proves that the computed Euclidean-valued
+polynomial gradient represents the actual Fréchet derivative. It specializes
+the existing genuine cylindrical derivative at the standard orthonormal basis.
+All earlier arbitrary-family results remain preserved: for hᵢ in a finite real
+Hilbert space, including linearly dependent vectors, the actual derivative is
+Σᵢ ∂ᵢp(W(h))hᵢ and is independent of its polynomial cylinder representation.
+These are geometric chain-rule statements and do not assert tensor
+orthogonality for correlated coordinates.
+
+The new Hilbert operators live on the independent product model. An
+orthonormal change of ambient coordinates has the already proved
+measure-preserving scalar polynomial pullback. Transporting the **closed**
+vector operators and identifying their domains on an arbitrary ambient Hilbert
+space requires a further vector L² transport theorem. A correlated or
+rank-deficient family is not a measure-preserving identification with the full
+independent product space; no such claim is made or used.
+
+### Public declaration meanings and verification
+
+All new names are in `OperatorDerivativeRewrite.Foundation.FiniteGaussian`.
+The named `DecidableEq I` parameters on coordinate-update theorems are solely
+computational decidability for finite-index updates, not analytic assumptions.
+
+| Declarations | Mathematical meaning |
+| --- | --- |
+| `productPolynomialIntegral` | Integration as a linear functional on genuinely integrable polynomials |
+| `polynomial_coordinate_eval`, `pderiv_coordinate_polynomial` | Genuine evaluation/substitution and coordinate polynomial differentiation |
+| `tensorPolynomialMap_eval`, `tensorPolynomialMap_pderiv` | Product evaluation and differentiation of precisely one tensor factor |
+| `productPolynomial_stein` | Multivariate coordinate Gaussian Stein identity |
+| `coordinateDivergencePolynomial` | The actual expression Xᵢq−∂ᵢq |
+| `productPolynomial_integration_by_parts` | Genuine integrable polynomial coordinate IBP |
+| `ScalarGaussianL2`, `VectorGaussianL2` | The scalar and Euclidean-valued Gaussian L² Hilbert spaces |
+| `productGaussian_openPos` | Proved full support of the independent product |
+| `productPolynomialEmbedding_injective` | Uniqueness of actual scalar polynomial evaluation in L² |
+| `vectorPolynomialFunction`, `vectorPolynomial_memLp` | Genuine Euclidean-valued polynomial functions with all finite moments |
+| `vectorPolynomialL2`, `vectorPolynomialL2_coeFn` | Their actual L² classes and a.e. representatives |
+| `vectorPolynomialEmbedding`, `vectorPolynomialEmbedding_injective` | Linear injective evaluation of actual polynomial fields |
+| `vectorL2Component`, `vectorL2Component_coeFn`, `vectorPolynomialL2_component` | Genuine scalar L² coordinate projection and its polynomial compatibility |
+| `vectorPolynomialL2_inner` | Proved decomposition of the vector Hilbert pairing into integrable component pairings |
+| `eq_zero_of_vectorPolynomial_orthogonal`, `vectorPolynomialEmbedding_dense` | Independent proof of full vector polynomial L² density |
+| `gradientPolynomial`, `divergencePolynomial` | Actual partial-derivative family and Σᵢ(Xᵢuᵢ−∂ᵢuᵢ) |
+| `gradientPolynomialL2` | The actual Euclidean-valued polynomial gradient L² class |
+| `productPolynomialL2_inner`, `gradient_divergence_polynomial_pairing` | Genuine scalar Hilbert pairing and full scalar/vector IBP |
+| `polynomialGradientGraph`, `polynomialDivergenceGraph` | Linear ranges of genuine input/output polynomial evaluations |
+| `polynomialGradientGraph_vertical_zero`, `polynomialDivergenceGraph_vertical_zero` | Proven single-valuedness of these graphs |
+| `polynomialGradient`, `polynomialDivergence` | Genuine partial linear operators with exactly the polynomial domains |
+| `polynomialGradient_graph`, `polynomialDivergence_graph` | Their graphs equal the proved single-valued polynomial graphs |
+| `polynomialGradient_polynomial_graph`, `polynomialDivergence_polynomial_graph` | Actual polynomial input/output domain membership and values |
+| `polynomialGradient_domain`, `polynomialDivergence_domain` | Exact algebraic scalar/vector polynomial domains |
+| `polynomialGradient_dense_domain`, `polynomialDivergence_dense_domain` | Both domains are proved dense in their respective Hilbert spaces |
+| `polynomialGradient_formalAdjoint` | IBP on the actual two operator domains |
+| `polynomialGradient_le_divergence_adjoint`, `polynomialDivergence_le_gradient_adjoint` | ∇₀⊆δ₀* and δ₀⊆∇₀*, with domains and values |
+| `polynomialGradient_isClosable`, `polynomialDivergence_isClosable` | Genuine closability from closed adjoint extensions |
+| `closedGradient`, `closedVectorDivergence` | Actual graph closures of the polynomial operators |
+| `closedGradient_isClosed`, `closedVectorDivergence_isClosed` | Proved closedness of those extensions |
+| `closedGradient_dense_domain`, `closedVectorDivergence_dense_domain` | Their domains remain dense |
+| `closedGradient_le_divergence_adjoint`, `closedVectorDivergence_le_gradient_adjoint` | The strongest closed-operator inclusions established here |
+| `closedGradient_polynomial_graph`, `closedVectorDivergence_polynomial_graph` | Closed graphs preserve the classical polynomial values |
+| `closedGradient_has_polynomial_core`, `closedVectorDivergence_has_polynomial_core` | Polynomial graph cores for their own closures, not for unproved maximal adjoint identifications |
+| `gradientPolynomial_hasFDerivAt` | The computed gradient is the actual Euclidean Fréchet derivative |
+| `closedGradient_polynomial_apply`, `closedVectorDivergence_polynomial_apply` | Actual polynomial values for every proof of closed-domain membership |
+| `normalizedHermitePolynomial_derivative`, `normalizedHermitePolynomial_divergence` | Actual normalized one-dimensional polynomial ladder identities recovered from the verified operators |
+| `tensorHermitePolynomial_lowering`, `tensorHermitePolynomial_lowering_zero` | Actual positive-degree lowering and zero-degree vanishing |
+| `tensorPolynomialMap_coordinateDivergence`, `tensorHermitePolynomial_raising` | True separable-factor divergence and normalized tensor raising |
+| `tensorHermiteVector`, `tensorHermiteVector_divergence_graph` | Actual one-component vector tensor field and its δ₀ graph action |
+| `tensorHermite_gradient_graph`, `tensorHermite_gradient_component` | Actual ∇₀ tensor graph membership and normalized component lowering |
+
+Verification consists of the full Lake build, the AxiomAudit target build,
+and a fresh `lake env lean Foundation/AxiomAudit.lean`. All 73 new public
+statements/definitions/instances are explicitly queried, for 355 audited
+declarations in total. Only `propext`, `Classical.choice`, and `Quot.sound`
+appear: no `sorryAx`, `admit`, or custom axioms. All prior foundation sources
+and original Lean/manuscript hashes are checked unchanged. Only the two
+pre-existing `Foundation.Adjoint` warnings remain; no new warnings or
+suppressed linters.

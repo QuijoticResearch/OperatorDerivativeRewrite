@@ -107,6 +107,25 @@ polynomial density by one-dimensional moment uniqueness and characteristic
 functions. `Foundation/FiniteGaussianCompleteness.lean` proves tensor polynomial
 spanning and constructs a complete orthonormal Hilbert basis in every finite
 dimension, including zero, with actual cylindrical pullback compatibility.
-Multivariate Gaussian integration by parts, gradient closability,
-divergence adjoints, and their spectral domains are subsequent milestones.
+Full multivariate adjoint identification and spectral domains remain subsequent milestones.
 No infinite-dimensional Gaussian measure or Malliavin operator is claimed.
+
+`Foundation/FiniteGaussianIBP.lean` proves polynomial coordinate Gaussian
+integration by parts. `Foundation/FiniteGaussianVector.lean` constructs actual
+Euclidean-valued L² polynomial fields and proves their density.
+`Foundation/FiniteGaussianOperators.lean` defines the genuine polynomial
+gradient and Gaussian divergence, proves their dense domains and closability,
+and constructs closed extensions with rigorous adjoint inclusions:
+
+- closure(∇₀) ⊆ δ₀*;
+- closure(δ₀) ⊆ ∇₀*.
+
+The gradient is verified as the actual Fréchet derivative. Both closures
+preserve their classical polynomial values. `Foundation/FiniteGaussianLadders.lean`
+proves actual normalized tensor raising/lowering identities on these domains.
+Full adjoint equality and spectral domain characterizations require the
+remaining total-degree Hermite graph-approximation argument documented in
+the mathematical audit. Polynomial cores for their own closures are not
+assumed to be cores for the maximal adjoints. Correlated-coordinate derivative
+results remain preserved; tensor orthogonality is used only on the independent
+standard Gaussian product.

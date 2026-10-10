@@ -1,4 +1,4 @@
-import Foundation.FiniteGaussianCompleteness
+import Foundation.FiniteGaussianLadders
 import Foundation.GaussianHermiteDomains
 import Foundation.GaussianAdjoints
 import Foundation.GaussianOperator
@@ -351,4 +351,80 @@ namespace OperatorDerivativeRewrite.Foundation.FiniteGaussian
 #print axioms orthonormal_coordinates_measurePreserving
 #print axioms productPolynomialL2_pullback
 #print axioms tensorHermite_pullback
+end OperatorDerivativeRewrite.Foundation.FiniteGaussian
+
+namespace OperatorDerivativeRewrite.Foundation.FiniteGaussian
+#print axioms productPolynomialIntegral
+#print axioms polynomial_coordinate_eval
+#print axioms pderiv_coordinate_polynomial
+#print axioms tensorPolynomialMap_eval
+#print axioms tensorPolynomialMap_pderiv
+#print axioms productPolynomial_stein
+#print axioms coordinateDivergencePolynomial
+#print axioms productPolynomial_integration_by_parts
+#print axioms ScalarGaussianL2
+#print axioms VectorGaussianL2
+#print axioms productGaussian_openPos
+#print axioms productPolynomialEmbedding_injective
+#print axioms vectorPolynomialFunction
+#print axioms vectorPolynomial_memLp
+#print axioms vectorPolynomialL2
+#print axioms vectorPolynomialL2_coeFn
+#print axioms vectorPolynomialEmbedding
+#print axioms vectorL2Component
+#print axioms vectorL2Component_coeFn
+#print axioms vectorPolynomialL2_component
+#print axioms vectorPolynomialEmbedding_injective
+#print axioms vectorPolynomialL2_inner
+#print axioms eq_zero_of_vectorPolynomial_orthogonal
+#print axioms vectorPolynomialEmbedding_dense
+#print axioms gradientPolynomial
+#print axioms divergencePolynomial
+#print axioms gradientPolynomialL2
+#print axioms productPolynomialL2_inner
+#print axioms gradient_divergence_polynomial_pairing
+#print axioms polynomialGradientGraph
+#print axioms polynomialDivergenceGraph
+#print axioms polynomialGradientGraph_vertical_zero
+#print axioms polynomialDivergenceGraph_vertical_zero
+#print axioms polynomialGradient
+#print axioms polynomialDivergence
+#print axioms polynomialGradient_graph
+#print axioms polynomialDivergence_graph
+#print axioms polynomialGradient_polynomial_graph
+#print axioms polynomialDivergence_polynomial_graph
+#print axioms polynomialGradient_domain
+#print axioms polynomialDivergence_domain
+#print axioms polynomialGradient_dense_domain
+#print axioms polynomialDivergence_dense_domain
+#print axioms polynomialGradient_formalAdjoint
+#print axioms polynomialGradient_le_divergence_adjoint
+#print axioms polynomialDivergence_le_gradient_adjoint
+#print axioms polynomialGradient_isClosable
+#print axioms polynomialDivergence_isClosable
+#print axioms closedGradient
+#print axioms closedVectorDivergence
+#print axioms closedGradient_isClosed
+#print axioms closedVectorDivergence_isClosed
+#print axioms closedGradient_dense_domain
+#print axioms closedVectorDivergence_dense_domain
+#print axioms closedGradient_le_divergence_adjoint
+#print axioms closedVectorDivergence_le_gradient_adjoint
+#print axioms closedGradient_polynomial_graph
+#print axioms closedVectorDivergence_polynomial_graph
+#print axioms closedGradient_has_polynomial_core
+#print axioms closedVectorDivergence_has_polynomial_core
+#print axioms gradientPolynomial_hasFDerivAt
+#print axioms closedGradient_polynomial_apply
+#print axioms closedVectorDivergence_polynomial_apply
+#print axioms normalizedHermitePolynomial_derivative
+#print axioms normalizedHermitePolynomial_divergence
+#print axioms tensorHermitePolynomial_lowering
+#print axioms tensorHermitePolynomial_lowering_zero
+#print axioms tensorPolynomialMap_coordinateDivergence
+#print axioms tensorHermitePolynomial_raising
+#print axioms tensorHermiteVector
+#print axioms tensorHermiteVector_divergence_graph
+#print axioms tensorHermite_gradient_graph
+#print axioms tensorHermite_gradient_component
 end OperatorDerivativeRewrite.Foundation.FiniteGaussian
