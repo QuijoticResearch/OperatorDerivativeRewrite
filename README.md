@@ -83,8 +83,8 @@ domains, output norms, graph norms, and graph cores of both adjoints. For
 coefficients cₙ = ⟨Hₙ/√(n!), f⟩, membership in the common closed domain is
 Σ n cₙ² < ∞ (equivalently Σ (n+1)cₙ² < ∞, since f is already in L²).
 The squared derivative graph norm is Σ (n+1)cₙ²; the squared divergence graph
-norm is Σ (n+2)cₙ². No graph-density assumption is used. Tensor bases and
-multivariate operators remain future work; see the mathematical audit for the
+norm is Σ (n+2)cₙ². No graph-density assumption is used. Multivariate
+operators remain future work; see the mathematical audit for the
 precise spectral proof and all declaration meanings.
 
 `Foundation/FiniteGaussianCoordinates.lean` uses Mathlib's basis-independent
@@ -102,7 +102,11 @@ linearly dependent coordinate families on the same ambient space.
 
 `Foundation/FiniteGaussianTensor.lean` reuses the verified one-dimensional
 Hermites to construct an orthonormal tensor family in independent finite-product
-Gaussian L². Tensor completeness and finite-dimensional polynomial density are
-not yet proved. Multivariate Gaussian integration by parts, gradient closability,
+Gaussian L². `Foundation/FiniteGaussianDensity.lean` proves multivariate
+polynomial density by one-dimensional moment uniqueness and characteristic
+functions. `Foundation/FiniteGaussianCompleteness.lean` proves tensor polynomial
+spanning and constructs a complete orthonormal Hilbert basis in every finite
+dimension, including zero, with actual cylindrical pullback compatibility.
+Multivariate Gaussian integration by parts, gradient closability,
 divergence adjoints, and their spectral domains are subsequent milestones.
 No infinite-dimensional Gaussian measure or Malliavin operator is claimed.

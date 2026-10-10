@@ -1,4 +1,4 @@
-import Foundation.FiniteGaussianTensor
+import Foundation.FiniteGaussianCompleteness
 import Foundation.GaussianHermiteDomains
 import Foundation.GaussianAdjoints
 import Foundation.GaussianOperator
@@ -324,4 +324,31 @@ namespace OperatorDerivativeRewrite.Foundation.FiniteGaussian
 #print axioms tensorHermite_inner
 #print axioms tensorHermite_orthonormal
 #print axioms orthonormal_coordinates_joint_law
+end OperatorDerivativeRewrite.Foundation.FiniteGaussian
+
+namespace OperatorDerivativeRewrite.Foundation.FiniteGaussian
+#print axioms productPolynomial_memLp
+#print axioms productPolynomialL2
+#print axioms productPolynomialL2_coeFn
+#print axioms productPolynomialEmbedding
+#print axioms productGaussian_exp_linear_memLp
+#print axioms eq_zero_of_productPolynomial_orthogonal
+#print axioms productPolynomialEmbedding_dense
+#print axioms tensorPolynomialMap
+#print axioms tensorHermitePolynomial
+#print axioms tensorPolynomialMap_mem_span
+#print axioms tensorHermitePolynomial_span
+#print axioms tensorHermitePolynomial_eval
+#print axioms tensorHermitePolynomial_L2
+#print axioms tensorHermite_span
+#print axioms tensorHermite_dense_span
+#print axioms tensorHermiteBasis
+#print axioms tensorHermiteBasis_apply
+#print axioms tensorHermiteBasis_hasSum
+#print axioms tensorHermiteFunction_empty
+#print axioms tensorHermite_empty_expansion
+#print axioms tensorHermite_unique_coordinate
+#print axioms orthonormal_coordinates_measurePreserving
+#print axioms productPolynomialL2_pullback
+#print axioms tensorHermite_pullback
 end OperatorDerivativeRewrite.Foundation.FiniteGaussian

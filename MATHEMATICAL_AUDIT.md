@@ -1139,3 +1139,136 @@ axioms. The original Lean/manuscript hashes and all previous foundation source
 files are checked unchanged before committing. Only pre-existing warnings in
 `Foundation.Adjoint` remain; the new modules have no compiler/linter warnings
 and no suppressed linters.
+
+## Finite Gaussian polynomial density and tensor completeness (after 0347f06)
+
+This milestone proves scalar L² completeness, not graph-norm density or a
+multivariate adjoint identity. The original Lean and manuscript are unchanged.
+The original `UnboundedCylindricalStructure.cyl_dense` at
+`OperatorDerivative.lean:347–350` describes graph convergence in a comment but
+its field supplies only a sequence of cylindrical functions, with no convergence
+condition. The manuscript's cylindrical reduction and closure discussion
+(e.g. lines 52, 84 and 165) also needs genuinely proved density and IBP results.
+The new theorems below supply the scalar L² density prerequisite; they do not
+validate that original graph-density claim.
+
+### Precise setting and noncircular proof
+
+For any finite index type I, μ = ∏ᵢ γ on I → ℝ, with γ = N(0,1). All results
+hold for I = Fin n, for every n, with no positivity-of-dimension hypothesis.
+The underlying Pi space uses its ordinary finite-product Borel structure;
+no correlated-coordinate law is substituted for this independent product.
+
+`Foundation/FiniteGaussianDensity.lean` proves polynomial density without
+assuming tensor completeness. If f ∈ L²(μ) is orthogonal to all polynomials,
+its positive and negative parts define finite positive measures ν₊ and ν₋.
+For every continuous real linear functional L and t ∈ ℝ,
+exp(t L(x)) ∈ L²(μ): decompose L into finitely many coordinate functionals,
+factor the exponential, and apply the proved one-dimensional exponential
+moments and Hölder with doubled exponents. Cauchy–Schwarz then proves all
+exponential moments of the pushforwards L_*ν₊ and L_*ν₋. Orthogonality to (L(x))ⁿ gives equal
+moments of these projected measures. The previously verified
+`GaussianCore.finite_measure_eq_of_moments` makes every pair of projections
+equal; Mathlib's `Measure.ext_of_charFunDual` makes ν₊ = ν₋. Uniqueness of
+nonnegative densities gives f = 0. Orthogonal-complement theory yields
+polynomial density. This also works in dimension zero, where the zeroth
+moment fixes the total mass.
+
+`Foundation/FiniteGaussianCompleteness.lean` uses the existing one-dimensional
+Hermite polynomial sequence basis, rescaled by 1/√(n!), to expand every
+separable polynomial into a finite Hermite tensor sum. Mathlib's
+`MultilinearMap.map_sum_finset` performs the finite distributive expansion.
+Every multivariate monomial is a scalar multiple of a separable polynomial,
+so normalized tensor polynomials span the entire multivariate polynomial
+space. Their Gaussian L² classes span exactly the algebraic polynomial core.
+Independent polynomial density and the previously verified tensor
+orthonormality then construct an actual `HilbertBasis (I → ℕ)`.
+
+The existing one-dimensional complete Hermite basis is preserved and its
+agreement with the one-coordinate tensor basis is explicitly verified by
+`tensorHermite_unique_coordinate`. The proof of higher-dimensional density
+uses the verified one-dimensional moment-uniqueness infrastructure rather
+than an unproved Hilbert tensor-completion identification. The inspected
+Mathlib algebraic tensor/finite-dimensional orthonormal-basis APIs alone do
+not supply that analytic identification. This is an alternative proof of the
+requested full completeness theorem, not a conditional or weaker replacement.
+
+### Meanings of all new public declarations
+
+All names below are in `OperatorDerivativeRewrite.Foundation.FiniteGaussian`.
+Private helpers establish arbitrary finite exponential moments of γ, finite
+products of these exponentials, nonnegative weighted-measure integrability,
+integral transfer, finiteness, and the rescaled one-dimensional polynomial
+basis. None are postulates.
+
+| Declaration | Verified mathematical meaning |
+| --- | --- |
+| `productPolynomial_memLp` | Every multivariate polynomial has every finite moment under μ |
+| `productPolynomialL2` | The actual L² class of polynomial evaluation, with proved integrability |
+| `productPolynomialL2_coeFn` | Its representative equals polynomial evaluation μ-a.e. |
+| `productPolynomialEmbedding` | Linear evaluation into L²; its range is the algebraic polynomial core |
+| `productGaussian_exp_linear_memLp` | exp(t L(x)) belongs to L²(μ) for every real continuous linear functional L and t |
+| `eq_zero_of_productPolynomial_orthogonal` | A vector orthogonal to every polynomial is zero, by the weighted-measure argument |
+| `productPolynomialEmbedding_dense` | The algebraic multivariate polynomial core is dense in L²(μ) |
+| `tensorPolynomialMap` | The genuine multilinear map (pᵢ) ↦ ∏ᵢ pᵢ(Xᵢ) |
+| `tensorHermitePolynomial` | ∏ᵢ H_{αᵢ}(Xᵢ)/√(αᵢ!), an actual multivariate polynomial |
+| `tensorPolynomialMap_mem_span` | Every separable polynomial is in the algebraic span of these tensors |
+| `tensorHermitePolynomial_span` | Their algebraic polynomial span is the whole multivariate polynomial space |
+| `tensorHermitePolynomial_eval` | Evaluation gives the already verified tensor representative e_α(x) |
+| `tensorHermitePolynomial_L2` | Its polynomial L² class is exactly the existing tensor vector |
+| `tensorHermite_span` | The algebraic tensor-vector span equals the polynomial embedding range |
+| `tensorHermite_dense_span` | That span is dense in the full product Gaussian L² space |
+| `tensorHermiteBasis` | Complete orthonormal Hilbert basis indexed by I → ℕ |
+| `tensorHermiteBasis_apply` | Its basis vector at α is the previously defined tensorHermite α |
+| `tensorHermiteBasis_hasSum` | Every f equals the unconditionally convergent sum Σ_α ⟨e_α,f⟩e_α |
+| `tensorHermiteFunction_empty` | In dimension zero the sole tensor representative is the constant 1 |
+| `tensorHermite_empty_expansion` | Every zero-dimensional L² vector is its vacuum coefficient times the vacuum vector |
+| `tensorHermite_unique_coordinate` | For a singleton coordinate index, the tensor vector is the measure-preserving pullback of the existing one-dimensional Hermite Hilbert-basis vector |
+| `orthonormal_coordinates_measurePreserving` | Coordinates in an orthonormal basis of the ambient finite Hilbert space preserve its standard Gaussian measure to μ |
+| `productPolynomialL2_pullback` | Pullback of polynomial L² evaluation is exactly the existing cylinderL2 b p |
+| `tensorHermite_pullback` | Pullback of each tensor vector is the genuine cylinder of its tensorHermitePolynomial |
+
+### Independent, correlated, and degenerate families
+
+The basis and density theorems above concern the independent standard
+coordinate space. Compatibility with ambient standard Gaussian cylinders is
+proved through orthonormal-basis coordinates. The earlier representation
+independence theorems for arbitrary correlated/dependent families remain
+unchanged. Their joint law has Gram covariance and may lie on a proper linear
+subspace. No tensor orthogonality for such a family, density of its functions
+in the entire ambient L² space, or invertible Gram matrix is asserted here.
+Density with respect to a degenerate family's own image law and a transported
+complete ambient Hilbert basis can be treated separately if needed.
+
+### Remaining analytic prerequisites and downstream consequences
+
+There is no unresolved obstruction to scalar polynomial density or tensor
+completeness in this milestone. Their proofs are completed.
+
+* Multivariate polynomial Gaussian IBP still needs integrable slices and
+  finite-product Fubini using the verified one-dimensional IBP. The intended
+  formula is E[⟨∇F,k⟩G] = E[F(W(k)G−⟨∇G,k⟩)]. Scalar/vector polynomial moments
+  are already proved; this integral identity has not yet been formalized.
+* Gradient closability needs this IBP identity plus density of an actual
+  vector-valued polynomial test core. Scalar L² density alone is not a proof
+  of either statement. The actual gradient is already representation
+  independent, so no independently prescribed derivative data are needed.
+* Divergence adjoints require a genuine densely defined vector-to-scalar
+  operator, the adjoint pairing, and new graph-domain/spectral arguments.
+  Neither graph-norm density nor full adjoint identification follows merely
+  from this scalar Hilbert basis.
+* The expected gradient weight Σ_α |α| |c_α|² and divergence coefficient
+  Σᵢ√(αᵢ)u_{i,α−eᵢ} remain targets. The divergence domain must control the
+  square-summability of the sum, allowing cancellation between coordinates.
+* The original scalar cylindrical-density premise can now be replaced by an
+  actual theorem on the standard finite product. Original D^{1,4} graph-core
+  claims, closed Leibniz extensions, smooth nonpolynomial cylinders, Itô
+  formulas, and infinite-dimensional limits still need new analytic proofs.
+
+Verification: full `lake build`, `lake build Foundation.AxiomAudit`, and a fresh
+`lake env lean Foundation/AxiomAudit.lean`. The 24 new public declarations are
+explicitly queried, bringing the audit to 282 declarations. Dependencies are
+only `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or custom
+axioms. Prior foundation proofs and original Lean/manuscript hashes are
+checked unchanged. Only the two pre-existing unused-section-variable warnings
+in `Foundation.Adjoint` remain; no new warnings or suppressed linters.
