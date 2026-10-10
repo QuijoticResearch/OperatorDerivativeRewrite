@@ -83,9 +83,9 @@ domains, output norms, graph norms, and graph cores of both adjoints. For
 coefficients cₙ = ⟨Hₙ/√(n!), f⟩, membership in the common closed domain is
 Σ n cₙ² < ∞ (equivalently Σ (n+1)cₙ² < ∞, since f is already in L²).
 The squared derivative graph norm is Σ (n+1)cₙ²; the squared divergence graph
-norm is Σ (n+2)cₙ². No graph-density assumption is used. Multivariate
-operators remain future work; see the mathematical audit for the
-precise spectral proof and all declaration meanings.
+norm is Σ (n+2)cₙ². No graph-density assumption is used. The finite multivariate development below
+extends this spectral method; the mathematical audit records its proof
+dependencies and all declaration meanings.
 
 `Foundation/FiniteGaussianCoordinates.lean` uses Mathlib's basis-independent
 standard Gaussian on any finite-dimensional real Hilbert space. It proves
@@ -107,7 +107,7 @@ polynomial density by one-dimensional moment uniqueness and characteristic
 functions. `Foundation/FiniteGaussianCompleteness.lean` proves tensor polynomial
 spanning and constructs a complete orthonormal Hilbert basis in every finite
 dimension, including zero, with actual cylindrical pullback compatibility.
-Full multivariate adjoint identification and spectral domains remain subsequent milestones.
+Full multivariate adjoint identification and spectral domains are verified in the modules below.
 No infinite-dimensional Gaussian measure or Malliavin operator is claimed.
 
 `Foundation/FiniteGaussianIBP.lean` proves polynomial coordinate Gaussian
@@ -123,9 +123,22 @@ and constructs closed extensions with rigorous adjoint inclusions:
 The gradient is verified as the actual Fréchet derivative. Both closures
 preserve their classical polynomial values. `Foundation/FiniteGaussianLadders.lean`
 proves actual normalized tensor raising/lowering identities on these domains.
-Full adjoint equality and spectral domain characterizations require the
-remaining total-degree Hermite graph-approximation argument documented in
-the mathematical audit. Polynomial cores for their own closures are not
-assumed to be cores for the maximal adjoints. Correlated-coordinate derivative
+The subsequent verified spectral argument below proves the full adjoint equalities
+and polynomial graph cores for the maximal adjoints. Correlated-coordinate derivative
 results remain preserved; tensor orthogonality is used only on the independent
 standard Gaussian product.
+
+`Foundation/FiniteGaussianSpectral.lean` characterizes the actual full divergence
+adjoint through combined coefficients, with genuine L² realization and Parseval.
+`Foundation/FiniteGaussianTruncation.lean` constructs finite total-degree scalar
+and vector polynomial projections. Their raising action preserves cancellations
+between coordinates and proves closure(δ₀) = ∇₀*.
+`Foundation/FiniteGaussianAdjoints.lean` proves the complementary gradient
+approximation and closure(∇₀) = δ₀*, so both closed operators are mutual adjoints.
+`Foundation/FiniteGaussianDomains.lean` proves coefficient realization, the exact
+scalar domain Σα |α| |cα|² < ∞, and the vector divergence domain Σβ |bβ|² < ∞,
+where bβ = Σᵢ:βᵢ>0 √βᵢ uᵢ,β−eᵢ. It also verifies squared Hilbert graph-error
+convergence and the zero-dimensional case. No componentwise weighted divergence
+domain or graph density is assumed. Classical polynomial values and all earlier
+correlated-coordinate cylinder results are preserved. These results concern the
+finite independent Gaussian model; no infinite-dimensional adjoint is claimed.

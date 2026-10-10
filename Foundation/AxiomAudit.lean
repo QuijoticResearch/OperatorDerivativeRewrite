@@ -1,4 +1,4 @@
-import Foundation.FiniteGaussianLadders
+import Foundation.FiniteGaussianDomains
 import Foundation.GaussianHermiteDomains
 import Foundation.GaussianAdjoints
 import Foundation.GaussianOperator
@@ -427,4 +427,87 @@ namespace OperatorDerivativeRewrite.Foundation.FiniteGaussian
 #print axioms tensorHermiteVector_divergence_graph
 #print axioms tensorHermite_gradient_graph
 #print axioms tensorHermite_gradient_component
+end OperatorDerivativeRewrite.Foundation.FiniteGaussian
+
+namespace OperatorDerivativeRewrite.Foundation.FiniteGaussian
+#print axioms scalarHermiteCoefficient
+#print axioms vectorHermiteCoefficient
+#print axioms divergenceCoefficient
+#print axioms gradientCoefficient
+#print axioms scalarHermiteCoefficient_hasSum_sq
+#print axioms exists_scalarHermite_coefficients
+#print axioms scalarHermiteCoefficient_ext
+#print axioms tensorHermite_gradient_component_zero
+#print axioms tensorHermite_gradient_pairing
+#print axioms gradient_adjoint_coefficients
+#print axioms gradient_adjoint_graph_of_coefficients
+#print axioms gradient_adjoint_graph_iff
+#print axioms gradient_adjoint_domain_iff
+#print axioms gradient_adjoint_norm_sq
+#print axioms closedGradient_adjoint_eq
+#print axioms closedVectorDivergence_coefficients
+#print axioms polynomialDivergence_coefficients
+#print axioms divergenceCoefficient_empty
+#print axioms gradient_adjoint_domain_empty
+#print axioms gradient_adjoint_graph_empty
+#print axioms hermiteDegree
+#print axioms hermiteDegreeCutoff
+#print axioms mem_hermiteDegreeCutoff
+#print axioms hermiteDegreeCutoff_tendsto
+#print axioms scalarHermiteTruncationPolynomial
+#print axioms scalarHermiteTruncation
+#print axioms scalarHermiteTruncationPolynomial_L2
+#print axioms scalarHermiteTruncation_coefficient
+#print axioms scalarHermiteTruncation_tendsto
+#print axioms vectorL2Insert
+#print axioms vectorL2Insert_polynomial
+#print axioms vectorL2_reassemble
+#print axioms vectorHermiteTruncationPolynomial
+#print axioms vectorHermiteTruncation
+#print axioms vectorHermiteTruncation_component
+#print axioms vectorHermiteTruncation_coefficient
+#print axioms vectorHermiteTruncation_tendsto
+#print axioms hermiteDegree_lower
+#print axioms divergenceCoefficient_truncation
+#print axioms gradient_adjoint_truncation_graph
+#print axioms gradient_adjoint_truncation_tendsto
+#print axioms closedVectorDivergence_graph_of_coefficients
+#print axioms closedVectorDivergence_eq_gradient_adjoint
+#print axioms closedVectorDivergence_domain_iff
+#print axioms tensorHermiteVector_inner
+#print axioms divergence_adjoint_coefficients
+#print axioms vectorHermiteCoefficient_ext
+#print axioms hermiteDegree_raise
+#print axioms gradientCoefficient_truncation
+#print axioms divergence_adjoint_truncation_graph
+#print axioms divergence_adjoint_truncation_tendsto
+#print axioms closedGradient_graph_of_adjoint
+#print axioms closedGradient_eq_divergence_adjoint
+#print axioms closedVectorDivergence_adjoint_eq
+#print axioms closedGradient_eq_closedVectorDivergence_adjoint
+#print axioms closedVectorDivergence_eq_closedGradient_adjoint
+#print axioms divergence_adjoint_has_polynomial_core
+#print axioms gradient_adjoint_has_polynomial_core
+#print axioms vectorL2Component_insert
+#print axioms exists_vectorHermite_coefficients
+#print axioms gradient_coefficients_truncation_graph
+#print axioms closedGradient_graph_of_coefficients
+#print axioms closedGradient_graph_iff
+#print axioms hermiteRaise_injective
+#print axioms mem_range_hermiteRaise
+#print axioms gradientCoefficient_summable_iff
+#print axioms hermiteDegree_weight_summable_iff
+#print axioms closedGradient_domain_iff
+#print axioms closedGradient_domain_empty
+#print axioms closedGradient_graph_empty
+#print axioms closedVectorDivergence_graph_iff
+#print axioms closedVectorDivergence_norm_sq
+#print axioms closedVectorDivergence_graph_empty
+#print axioms divergence_adjoint_graph_iff
+#print axioms divergence_adjoint_truncation_graphNorm_tendsto
+#print axioms gradient_adjoint_truncation_graphNorm_tendsto
+#print axioms hermiteDegreeCutoff_empty
+#print axioms scalarHermiteTruncation_empty
+#print axioms vectorHermiteTruncation_empty
+#print axioms closedVectorDivergence_domain_empty
 end OperatorDerivativeRewrite.Foundation.FiniteGaussian

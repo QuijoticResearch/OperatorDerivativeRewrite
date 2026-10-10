@@ -1492,3 +1492,206 @@ appear: no `sorryAx`, `admit`, or custom axioms. All prior foundation sources
 and original Lean/manuscript hashes are checked unchanged. Only the two
 pre-existing `Foundation.Adjoint` warnings remain; no new warnings or
 suppressed linters.
+
+## Finite Gaussian spectral domains and full adjoint identification (after a077fd6)
+
+This milestone completes the finite independent Gaussian operator identification.
+The earlier section describes the results at a077fd6; its outstanding spectral
+and graph-core obligations are discharged here. The four new modules are
+`FiniteGaussianSpectral`, `FiniteGaussianTruncation`, `FiniteGaussianAdjoints`,
+and `FiniteGaussianDomains`. Original sources and all existing proof modules
+remain unchanged. The root import and explicit axiom audit include the new work.
+
+### Exact operator statements
+
+For every finite index type I, set μ = ∏ᵢ N(0,1), Hₛ = L²(μ;ℝ), and
+Hᵥ = L²(μ;EuclideanSpace ℝ I). These are the existing actual L² spaces and
+polynomial operators, with the previously proved Gaussian integration by parts.
+Write eα for the complete normalized tensor Hermite basis, and define
+
+    cα(f) = ⟨eα,f⟩,
+    uᵢ,α = ⟨eα, componentᵢ(u)⟩,
+    aᵢ,α(f) = √(αᵢ+1) cα+eᵢ(f),
+    bβ(u) = Σᵢ:βᵢ>0 √βᵢ uᵢ,β−eᵢ,
+    |α| = Σᵢ αᵢ.
+
+`Function.update` raises or lowers the indicated coordinate and retains every
+other coordinate. All coefficients come from the actual L² input, not from
+independently supplied derivative data. `DecidableEq I`, when present in a
+coordinate-update statement, is an implementation requirement for finite index
+operations, not a regularity or graph-density assumption. Statements whose
+types do not need it omit it and use local classical decidability in proofs.
+
+The verified exact closed graph and domain statements are:
+
+- `closedGradient_graph_iff`: (f,g) belongs to closure(∇₀)'s graph iff
+  uᵢ,α(g) = aᵢ,α(f) for every i and α.
+- `closedGradient_domain_iff`: f belongs to closure(∇₀)'s domain iff
+  Σα |α| |cα(f)|² is summable (equivalently finite, since terms are nonnegative).
+- `closedVectorDivergence_graph_iff`: (u,g) belongs to closure(δ₀)'s graph iff
+  cβ(g) = bβ(u) for every β.
+- `closedVectorDivergence_domain_iff`: u belongs to closure(δ₀)'s domain iff
+  Σβ |bβ(u)|² is summable. No individual component derivative domain is required.
+- `closedVectorDivergence_norm_sq`: its output satisfies
+  ‖g‖² = Σβ |bβ(u)|².
+- `closedGradient_eq_divergence_adjoint`: closure(∇₀) = δ₀*.
+- `closedVectorDivergence_eq_gradient_adjoint`: closure(δ₀) = ∇₀*.
+- The two closed operators are also mutual adjoints, via the proved invariance
+  of adjoints under closure of a densely defined closable operator.
+
+The vector divergence condition combines coordinates **before squaring**.
+Replacing it by Σᵢ,α (αᵢ+1)|uᵢ,α|² < ∞ would discard legitimate cancellations.
+The proofs never use that stronger condition. Square summability of b is proved
+sufficient by scalar coefficient realization and the whole polynomial adjoint
+identity, then by actual polynomial graph approximation. It is not assumed as
+proof of any componentwise integrability or domain membership.
+
+### Noncircular realization and proof dependencies
+
+1. The previously verified one-dimensional Hermite completeness and noncircular
+   multivariate polynomial density supply `tensorHermiteBasis` and algebraic
+   `tensorHermitePolynomial_span`.
+2. Parseval follows from Mathlib's ℓ² norm theorem applied to that Hilbert basis.
+   Its inverse representation realizes every square-summable real coefficient
+   family as an actual scalar Gaussian L² class.
+3. `tensorHermite_gradient_pairing` uses the already verified genuine partial
+   derivatives and lowering identities to compute bβ for any vector L² input.
+   Testing the adjoint equation on these polynomial tensors proves necessity.
+4. Sufficiency for ∇₀* is proved by a linear pairing functional on actual
+   multivariate polynomials. Its kernel contains every Hermite tensor polynomial;
+   algebraic spanning proves the adjoint equation on the entire polynomial
+   gradient domain. This does not assume maximal-domain membership or graph density.
+5. Continuous coordinate insertions reconstruct every vector L² class from its
+   actual scalar components. They also realize square-summable component
+   coefficient families as genuine vector L² classes.
+6. Raising a coordinate is an injective map onto the positive-coordinate modes.
+   The coordinate weighted series vanishes on the complement of that image.
+   Mathlib's injective summability reindexing proves the exact coordinate weight,
+   and a finite sum of nonnegative coordinate weights gives |α|. This proves
+   both directions of the scalar weighted-domain statement, with output graph
+   membership established by the true polynomial approximants.
+
+### Actual total-degree graph approximants
+
+`hermiteDegreeCutoff N` is the finite set {|α| ≤ N}. It is constructed inside a
+finite coordinate box and filtered by total degree. Its exact membership theorem
+and cofinality in the finite-subset filter are proved, not assumed. Scalar
+truncation P_N f is Σ|α|≤N cα(f)eα; vector truncation P_N u applies this same
+projection in every component. Both are explicitly evaluated polynomial classes
+and converge in their respective actual L² spaces by completeness and continuous
+coordinate insertion.
+
+The verified graph approximants are:
+
+    (P_(N+1) f, P_N g) ∈ graph(∇₀)  for every (f,g) ∈ graph(δ₀*),
+    (P_N u, P_(N+1) g) ∈ graph(δ₀)  for every (u,g) ∈ graph(∇₀*).
+
+For divergence output index β, every nonzero summand uses input degree |β|−1.
+Consequently all coordinates contributing to bβ survive the cutoff together:
+
+    bβ(P_N u) = 1_{|β|≤N+1} bβ(u).
+
+This is the proved `divergenceCoefficient_truncation`, and it is the exact lemma
+that protects cancellation. The complementary lowering projection identity is
+proved for gradient coefficients. The graph membership of each approximation
+comes from the original polynomial operator; equality of its output with the
+projected adjoint output is established by coefficient completeness.
+
+Both approximation pairs converge in the product L² topology. Additionally,
+`gradient_adjoint_truncation_graphNorm_tendsto` and
+`divergence_adjoint_truncation_graphNorm_tendsto` prove explicitly that the
+squared Hilbert graph error, ‖input error‖² + ‖output error‖², tends to zero.
+Actual graph closure then yields each reverse adjoint inclusion. The two
+identifications have separate approximation proofs; neither is inferred merely
+from the formal adjoint inclusion or L² polynomial density. Polynomial graph
+cores for the full maximal adjoints follow only after these equalities.
+
+### Zero dimension, classical values, and cylindrical compatibility
+
+For an empty index type, |α|=0 and the cutoff is the sole vacuum index for every N.
+Scalar and vector projections are the identity. The closed gradient domain is
+all Hₛ and its value is the unique zero vector. The closed divergence domain is
+all Hᵥ and its value is zero in Hₛ. These are explicit Lean theorems, not an
+implicit restriction to positive dimensions. All domain and graph theorems also
+work for arbitrary finite dimension, in particular `Fin n` for every n.
+
+The definitions of ∇₀, δ₀, and their closures have not changed. Existing
+`closedGradient_polynomial_apply` and `closedVectorDivergence_polynomial_apply`
+therefore retain the actual classical values ∂ᵢp and Σᵢ(Xᵢuᵢ−∂ᵢuᵢ). Their
+previous axiom queries are rerun together with the new identifications.
+`gradientPolynomial_hasFDerivAt` still identifies the gradient as the actual
+Fréchet gradient on the Euclidean coordinate model. Earlier orthonormal-coordinate
+pullback compatibility and correlated-cylinder representation independence,
+product rules, and integrability proofs are preserved unchanged.
+
+Tensor orthogonality and these coefficient formulas apply to the independent
+standard-coordinate model. They do not assert tensor orthogonality for an
+arbitrary correlated or linearly dependent coordinate family. Transport of full
+closed scalar/vector operators to an arbitrary finite Hilbert Gaussian model,
+and an explicit transformation of maximal domains for redundant correlated
+representations, remain separate obligations. No infinite-dimensional limit,
+infinite-dimensional cylindrical graph density, smooth nonpolynomial core,
+D^{1,4} multiplier graph density, closed Leibniz extension, or Itô formula is
+claimed here. There is no remaining analytic gap in the stated finite independent
+Gaussian adjoint identifications or spectral domain criteria.
+
+### Declaration meanings
+
+All 80 new public definitions and theorems are explicitly queried by the axiom
+audit. Each is covered below; supporting statements are recorded to make the
+proof scope reviewable.
+
+| Declarations | Precise meaning |
+| --- | --- |
+| `scalarHermiteCoefficient`, `vectorHermiteCoefficient` | Actual scalar tensor coefficients and component coefficients of a vector L² class |
+| `gradientCoefficient`, `divergenceCoefficient` | Actual spectral lowering formula and combined raising formula |
+| `scalarHermiteCoefficient_hasSum_sq` | Parseval with the scalar L² norm |
+| `exists_scalarHermite_coefficients`, `scalarHermiteCoefficient_ext` | Genuine scalar coefficient realization and uniqueness |
+| `tensorHermite_gradient_component_zero`, `tensorHermite_gradient_pairing` | Genuine zero-mode vanishing and gradient pairing with an arbitrary L² field |
+| `gradient_adjoint_coefficients`, `gradient_adjoint_graph_of_coefficients`, `gradient_adjoint_graph_iff` | Necessary and sufficient combined coefficients for the full graph of ∇₀* |
+| `gradient_adjoint_domain_iff`, `gradient_adjoint_norm_sq` | Exact maximal divergence domain and output norm |
+| `closedGradient_adjoint_eq`, `closedVectorDivergence_adjoint_eq` | Adjoints of the closures equal the corresponding polynomial adjoints |
+| `closedVectorDivergence_coefficients`, `polynomialDivergence_coefficients` | Combined coefficients for the existing closed and classical polynomial divergence values |
+| `divergenceCoefficient_empty`, `gradient_adjoint_domain_empty`, `gradient_adjoint_graph_empty` | Zero coefficients and full zero-valued maximal divergence in dimension zero |
+| `hermiteDegree`, `hermiteDegreeCutoff` | Total multi-index degree and its actual finite cutoff |
+| `mem_hermiteDegreeCutoff`, `hermiteDegreeCutoff_tendsto` | Exact cutoff membership and exhaustion of the finite-subset filter |
+| `scalarHermiteTruncationPolynomial`, `scalarHermiteTruncation` | Genuine polynomial representative and its scalar Hermite projection |
+| `scalarHermiteTruncationPolynomial_L2`, `scalarHermiteTruncation_coefficient`, `scalarHermiteTruncation_tendsto` | Actual polynomial membership, exact cutoff coefficients, and unconditional L² convergence |
+| `vectorL2Insert`, `vectorL2Insert_polynomial`, `vectorL2_reassemble` | Continuous coordinate insertion, genuine polynomial compatibility, and exact reconstruction of any vector L² class |
+| `vectorHermiteTruncationPolynomial`, `vectorHermiteTruncation` | Genuine polynomial vector representative and its common total-degree projection |
+| `vectorHermiteTruncation_component`, `vectorHermiteTruncation_coefficient`, `vectorHermiteTruncation_tendsto` | Exact component projections and coefficients, with vector L² convergence |
+| `hermiteDegree_lower`, `hermiteDegree_raise` | Coordinate lowering/raising changes total degree by exactly one |
+| `divergenceCoefficient_truncation`, `gradientCoefficient_truncation` | Exact shifted spectral projections; divergence cancellations are retained |
+| `gradient_adjoint_truncation_graph`, `gradient_adjoint_truncation_tendsto` | Genuine polynomial divergence graph approximants of every ∇₀* pair and their convergence |
+| `closedVectorDivergence_graph_of_coefficients` | Combined coefficient realization in the actual polynomial divergence graph closure |
+| `closedVectorDivergence_eq_gradient_adjoint`, `closedVectorDivergence_domain_iff` | Full divergence adjoint identification and its exact combined square-sum domain |
+| `tensorHermiteVector_inner`, `divergence_adjoint_coefficients` | Actual vector tensor coefficient pairing and necessary coefficients of the full δ₀* graph |
+| `vectorHermiteCoefficient_ext` | Uniqueness of vector L² classes from their component tensor coefficients |
+| `divergence_adjoint_truncation_graph`, `divergence_adjoint_truncation_tendsto` | Genuine polynomial gradient graph approximants of every δ₀* pair and their convergence |
+| `closedGradient_graph_of_adjoint`, `closedGradient_eq_divergence_adjoint` | Reverse gradient graph inclusion and full gradient adjoint identification |
+| `closedGradient_eq_closedVectorDivergence_adjoint`, `closedVectorDivergence_eq_closedGradient_adjoint` | Mutual adjoint identities for the closed operators |
+| `divergence_adjoint_has_polynomial_core`, `gradient_adjoint_has_polynomial_core` | Polynomial graph cores of the actual full maximal adjoints |
+| `vectorL2Component_insert`, `exists_vectorHermite_coefficients` | Exact coordinate insertion/projection and genuine vector coefficient realization |
+| `gradient_coefficients_truncation_graph`, `closedGradient_graph_of_coefficients`, `closedGradient_graph_iff` | Genuine gradient graph construction from coefficients and exact closed gradient graph |
+| `hermiteRaise_injective`, `mem_range_hermiteRaise`, `gradientCoefficient_summable_iff` | Noncircular reindexing of positive-coordinate modes into the exact coordinate weight |
+| `hermiteDegree_weight_summable_iff`, `closedGradient_domain_iff` | Finite-sum equivalence of coordinate and total weights, then the exact scalar gradient domain |
+| `closedGradient_domain_empty`, `closedGradient_graph_empty` | Full zero-dimensional scalar domain and actual zero gradient |
+| `closedVectorDivergence_graph_iff`, `closedVectorDivergence_norm_sq` | Exact closed divergence graph and combined output norm |
+| `closedVectorDivergence_graph_empty`, `closedVectorDivergence_domain_empty` | Actual zero divergence and full vector domain in zero dimensions |
+| `divergence_adjoint_graph_iff` | Exact coefficient characterization of the full maximal gradient δ₀* |
+| `divergence_adjoint_truncation_graphNorm_tendsto`, `gradient_adjoint_truncation_graphNorm_tendsto` | Explicit squared Hilbert graph-error convergence for both total-degree approximation schemes |
+| `hermiteDegreeCutoff_empty`, `scalarHermiteTruncation_empty`, `vectorHermiteTruncation_empty` | Sole vacuum cutoff and identity projections in dimension zero |
+
+Verification completed successfully: full `lake build` (3219 jobs),
+`lake build Foundation.AxiomAudit` (3218 jobs), and a fresh
+`lake env lean Foundation/AxiomAudit.lean`. The fresh output contains exactly
+435 declarations (355 existing plus 80 new). Its only axiomatic dependencies
+are `propext`, `Classical.choice`, and `Quot.sound`; there is no `sorryAx` or
+custom axiom. The complete raw output is saved at
+`.lake/build/finite-gaussian-spectral-axioms.log` (ignored build artifact).
+Only the two pre-existing `Foundation.Adjoint` section-variable warnings remain;
+all four new modules compile without warnings or suppressed linters.
+Every pre-existing proof module except the extended axiom query file is
+unchanged from a077fd6. SHA-256 verification confirms both original sources
+are unchanged. No theorem statement was weakened and no environment dependency
+or toolchain was changed.
