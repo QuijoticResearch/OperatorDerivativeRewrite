@@ -1,5 +1,37 @@
 import Foundation.Adjoint
+import Foundation.LpProducts
+
+/-! Axiomatic dependencies of every foundation declaration. -/
 
 #print axioms OperatorDerivativeRewrite.Foundation.operatorDerivative
 #print axioms OperatorDerivativeRewrite.Foundation.operatorDerivative_isClosed
 #print axioms OperatorDerivativeRewrite.Foundation.operatorDerivative_adjoint_identity
+
+#print axioms OperatorDerivativeRewrite.Foundation.holderTripleFourFourTwo
+#print axioms OperatorDerivativeRewrite.Foundation.mul_memLp
+#print axioms OperatorDerivativeRewrite.Foundation.smul_memLp
+#print axioms OperatorDerivativeRewrite.Foundation.inner_memLp
+#print axioms OperatorDerivativeRewrite.Foundation.mul_eLpNorm_le
+#print axioms OperatorDerivativeRewrite.Foundation.smul_eLpNorm_le
+#print axioms OperatorDerivativeRewrite.Foundation.inner_eLpNorm_le
+#print axioms OperatorDerivativeRewrite.Foundation.lpMul
+#print axioms OperatorDerivativeRewrite.Foundation.lpSmul
+#print axioms OperatorDerivativeRewrite.Foundation.lpInner
+#print axioms OperatorDerivativeRewrite.Foundation.lpMul_coeFn
+#print axioms OperatorDerivativeRewrite.Foundation.lpSmul_coeFn
+#print axioms OperatorDerivativeRewrite.Foundation.lpInner_coeFn
+#print axioms OperatorDerivativeRewrite.Foundation.lpMul_norm_le
+#print axioms OperatorDerivativeRewrite.Foundation.lpSmul_norm_le
+#print axioms OperatorDerivativeRewrite.Foundation.lpInner_norm_le
+#print axioms OperatorDerivativeRewrite.Foundation.mul_L2_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.inner_L2_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.mul_L4_memLp_two
+#print axioms OperatorDerivativeRewrite.Foundation.smul_L4_memLp_two
+#print axioms OperatorDerivativeRewrite.Foundation.inner_L4_memLp_two
+#print axioms OperatorDerivativeRewrite.Foundation.mul_Linfty_L2_memLp_two
+#print axioms OperatorDerivativeRewrite.Foundation.smul_Linfty_L2_memLp_two
+#print axioms OperatorDerivativeRewrite.Foundation.inner_Linfty_L2_memLp_two
+#print axioms OperatorDerivativeRewrite.Foundation.L2_inner_eq_integral
+#print axioms OperatorDerivativeRewrite.Foundation.smul_L2_memLp_one
+#print axioms OperatorDerivativeRewrite.Foundation.L2_integral_inner_bound
+#print axioms OperatorDerivativeRewrite.Foundation.L2_bounded_multiplier_selfadj

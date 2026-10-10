@@ -25,9 +25,16 @@ and proves `operatorDerivative_isClosed` and
 `operatorDerivative_adjoint_identity`. Both theorems require a dense operator
 domain; the identity explicitly uses elements of the two operator domains.
 
-The namespace is `OperatorDerivativeRewrite.Foundation`. No stochastic calculus
-interfaces, multiplication operations, chain rules, or custom axioms are included.
-`Foundation/AxiomAudit.lean` prints the axiomatic dependencies of all three declarations.
+The namespace is `OperatorDerivativeRewrite.Foundation`. No energy-space interfaces
+or chain rules are imported. No custom axioms are introduced.
+
+`Foundation/LpProducts.lean` proves scalar-product, scalar–vector-product, and
+vector-inner-product membership and Hölder estimates with their actual exponents.
+It includes L² × L² → L¹, L⁴ × L⁴ → L², L∞ × L² → L², typed Lp operations,
+integrated Cauchy–Schwarz, and bounded real multiplier symmetry on L².
+`Foundation/AxiomAudit.lean` prints dependencies of every foundation declaration.
+See [MATHEMATICAL_AUDIT.md](MATHEMATICAL_AUDIT.md) for original errors, the
+counterexample, preserved fragments, and the proposed restricted interface.
 
 The original `C:/Operator/OperatorDerivative.lean` and
 `C:/Operator/OperatorDerivative.tex` are preserved unchanged.
