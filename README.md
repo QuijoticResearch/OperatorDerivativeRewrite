@@ -49,3 +49,14 @@ products belong to the actual adjoint domain. Admissible generators give the sam
 result for their generated algebra. No graph density or Leibniz rule is asserted.
 See the domain reconstruction section of the mathematical audit for all hypotheses
 and the remaining cylindrical/analytic obligations.
+
+`Foundation/GaussianCore.lean` proves a genuine rank-one Gaussian polynomial core:
+all finite moments, actual smooth derivatives and chain/product rules,
+representation independence, and Gaussian integration by parts.
+`Foundation/GaussianOperator.lean` constructs the actual derivative/divergence
+operators on the polynomial L² domain, proves derivative closability and formal
+adjointness, and connects actual cylinders p(W(h)) to that derivative.
+The coordinate x is proved to fail the bounded-multiplier criterion; constants
+satisfy it. Polynomial density and the value identification with the full L²
+adjoint remain obligations, not assumptions. This is a one-coordinate polynomial
+milestone, not the manuscript's general bounded smooth cylindrical calculus.

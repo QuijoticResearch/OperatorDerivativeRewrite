@@ -429,3 +429,178 @@ new definitions/theorems have explicit `#print axioms` commands and report only
 `propext`, `Classical.choice`, `Quot.sound`. There is no `sorryAx` or custom axiom.
 No original source, existing adjoint/product theorem, full cylindrical derivative
 or Itô formula has been altered or implemented by this milestone.
+
+## Genuine Gaussian polynomial core (continuation from 519ff572)
+
+### Original defect and manuscript scope
+
+`OperatorDerivative.lean:2939–2960` defines `CylindricalFunctional` with
+independent `f_eval`, `df_eval`, `F`, and `dF`. Neither differentiability nor an
+identity relating `df_eval` to the derivative of `f_eval` is required.
+`malliavin_derivative_of_cylindrical` at 3005 sums these freely supplied data.
+`IsonormalIsGaussian.per_coord_stein` at 3840 and `SteinLemma.stein` at 3903
+assume the desired integration-by-parts identities for every such object.
+The Gaussian marginal law alone cannot justify those fields. For example, in
+one standard Gaussian coordinate, choose f=0 but df=1. Both are integrable and
+satisfy the structure's evaluation specifications, yet the claimed Stein identity
+would be 0=1. Thus this is a mathematical defect, not an API difficulty.
+
+`cylindrical_compose` at 4892 prescribes the new coefficient as φ'(f)df.
+`cylindrical_chain_rule` at 4920 closes by unfolding and `rfl`; it does not prove
+that the original df is an actual derivative. Those constructions are not reused.
+The manuscript (notably lines 100–104 and its cylindrical-core discussion near
+703) intends smooth bounded finite-dimensional functions, an actual IBP formula,
+and analytic closure/density arguments. Its intended statements are not silently
+replaced by the smaller statements below. The originals remain unchanged.
+
+### Precisely delimited first milestone
+
+The new modules work on Ω=ℝ with γ=gaussianReal 0 1 and H=ℝ. The coordinate
+W(h)(x)=hx has law N(0,h²), including the degenerate h=0 case. This is the
+rank-one Gaussian model, not an arbitrary isonormal process on an arbitrary H.
+A cylinder is F=p(W(h)), where p is an actual real polynomial. Pullback along
+W(h) gives `coordinatePolynomial h p = p.comp (C h * X)`.
+Every polynomial pullback is smooth and belongs to every finite Lp, by Mathlib's
+Gaussian moment theorem; no integrability requirement is presumed without proof.
+This polynomial core includes unbounded cylinders and is not the manuscript's
+C_b^∞ core. No finite-dimensional generalization or infinite-dimensional result
+is claimed here.
+
+The derivative is the classical derivative of actual evaluation, transported
+into Mathlib's L² classes. Its formula is DF(x)=p'(hx)h a.e. Equality of continuous
+representatives a.e. for γ implies equality everywhere: γ and Lebesgue measure
+are mutually absolutely continuous and Lebesgue measure is positive on open sets.
+Consequently different polynomial and coordinate representations of the same F
+have equal derivatives as L² classes. This includes h=0; no division by h or
+nondegeneracy assumption on the chosen coordinate is needed.
+
+The polynomial derivative and divergence are actual `LinearPMap`s with the same
+algebraic domain C=range(polynomialEmbedding), not separately specified outputs.
+Their graphs are respectively {(p,p')} and {(q,xq-q')} in Gaussian L²×L². We prove
+that these graphs determine functions before invoking `Submodule.toLinearPMap`
+(which otherwise has a fallback zero map). Products remain in C because they
+are actual polynomials with all finite Gaussian moments. Product membership is
+proved separately from the derivative's Leibniz equality.
+
+Gaussian IBP is proved by differentiating the explicit Gaussian density and
+applying Mathlib's integration by parts on the real line. The hypotheses of that
+analytic theorem—integrability of pρ, p'ρ, and xpρ—are all derived from the
+Gaussian moment estimates. The resulting identities are
+
+- ∫ xp dγ = ∫ p' dγ;
+- ⟨Dp,q⟩ = ⟨p,δq⟩, where δq=xq-q'.
+
+Closability of D in all of L²(γ) is proved without a polynomial-density assumption.
+The IBP identity extends continuously to the closure of its graph. For a vertical
+limit (0,v), it implies ⟨v,q⟩=0 for every polynomial q. Also v belongs to the
+closure of the polynomial subspace, since every derivative p' is polynomial.
+Continuity extends the orthogonality to that closed subspace, including v itself;
+thus ⟨v,v⟩=0 and v=0. The graph closure therefore is the graph of a genuine
+operator, and Mathlib's operator closure is closed.
+
+### Exact meanings of new declarations
+
+All names below are in `OperatorDerivativeRewrite.Foundation.GaussianCore`.
+
+| Declaration | Verified mathematical meaning |
+|---|---|
+| `γ` | Standard real Gaussian probability measure |
+| `polynomial_memLp` | p(x) belongs to L^r(γ) for every r≠∞, including r=0 |
+| `polynomial_smooth` | Polynomial evaluation is C^∞ |
+| `polynomial_hasDerivAt` | Its actual classical derivative is p'(x) |
+| `continuous_representation_unique` | Continuous functions equal γ-a.e. are equal pointwise |
+| `derivative_representation_independent` | Polynomial evaluations equal a.e. have identical derivative evaluations |
+| `derivative_product` | Actual classical derivative of p(x)q(x) is p'q+pq' |
+| `derivative_chain` | Actual derivative of p(q(x)) is p'(q(x))q'(x) |
+| `density_hasDerivAt` | Standard Gaussian density has derivative -xρ(x) |
+| `integrable_density_mul` | Gaussian integrability implies Lebesgue integrability after multiplication by ρ |
+| `polynomial_stein` | Unconditional Stein identity for every polynomial p |
+| `divergencePolynomial` | Actual polynomial xq-q' |
+| `polynomial_integration_by_parts` | ∫p'q dγ = ∫p(xq-q') dγ |
+| `W` | Actual coordinate function hx |
+| `W_gaussian_law` | Its pushforward law is N(0,h²) |
+| `coordinatePolynomial` | Actual polynomial pullback p(hx) |
+| `coordinatePolynomial_eval` | Evaluation equals p(W(h)(x)) |
+| `cylindrical_hasDerivAt` | Actual chain derivative is p'(W(h)(x))h |
+| `coordinate_not_memLp_top` | x↦x is not in L∞(γ) |
+| `GaussianL2` | Mathlib's real L²(γ) Hilbert space |
+| `polynomialL2` | Canonical L² class of actual polynomial evaluation |
+| `polynomialL2_coeFn` | The class agrees a.e. with polynomial evaluation |
+| `polynomialEmbedding` | Linear evaluation map from real polynomials into L²(γ) |
+| `polynomialEmbedding_injective` | Equality of polynomial L² classes implies equality of polynomials |
+| `polynomialL2_inner` | Their Hilbert pairing is ∫pq dγ |
+| `polynomialL2_integration_by_parts` | The genuine polynomial IBP in Hilbert-space notation |
+| `derivativeGraph` | Linear range of p↦([p],[p']) |
+| `derivativeGraph_vertical_zero` | That range has no nonzero vertical elements |
+| `polynomialDerivative` | Partially defined derivative reconstructed from the verified graph |
+| `polynomialDerivative_graph` | Its graph is exactly derivativeGraph, not the fallback zero construction |
+| `polynomialDerivative_polynomial` | ([p],[p']) belongs to the actual derivative graph |
+| `closed_graph_ibp` | IBP holds for every pair in the graph closure and every polynomial test |
+| `closed_derivativeGraph_vertical_zero` | The graph closure has no nonzero vertical elements |
+| `polynomialDerivative_isClosable` | Genuine closability in all of Gaussian L² |
+| `polynomialDerivative_closure_isClosed` | Mathlib's graph closure of D is closed |
+| `divergenceLinear` | Linearity of q↦xq-q' |
+| `divergenceGraph` | Linear range of q↦([q],[xq-q']) |
+| `divergenceGraph_vertical_zero` | That range also determines a genuine operator |
+| `polynomialDivergence` | Genuine partially defined polynomial divergence |
+| `polynomialDivergence_graph` | Its graph equals divergenceGraph |
+| `polynomialDerivative_formalAdjoint` | D and δ obey the formal-adjoint identity on their actual domains |
+| `polynomial_mem_divergence_adjoint_domain` | Every polynomial lies in the actual δ* domain, via its proven derivative representer |
+| `polynomial_product_graph` | ([pq],[p'q]+[pq']) belongs to D's graph: genuine closure and Leibniz rule |
+| `cylindricalL2` | Actual L² class F=p(W(h)) |
+| `cylindricalL2_coeFn` | Its a.e. evaluation formula |
+| `cylindricalDerivativeL2` | Derivative of the actual pullback polynomial as an L² class |
+| `cylindrical_operator_graph` | The cylinder and this derivative belong to D's actual graph |
+| `cylindricalDerivativeL2_coeFn` | DF=p'(W(h))h a.e. |
+| `cylindrical_representation_independent` | Equal F represented by (h,p) and (k,q) have equal derivative L² classes |
+| `coordinate_not_admissible` | x↦x fails the previous IsDivergenceMultiplier criterion |
+| `constant_admissible` | Constants satisfy that criterion for the genuine polynomial divergence |
+| `polynomialDerivative_domain` | dom D equals the algebraic polynomial L² range |
+| `polynomialDivergence_domain` | dom δ equals that same range |
+
+### Multiplier and adjoint conclusions; remaining analytic obligations
+
+The polynomial algebra has genuine product closure, but does not generally
+satisfy the bounded-multiplier criterion of the previous milestone. Already
+W(1)=x is not essentially bounded, as proved using Gaussian full support and
+continuity; hence it cannot satisfy `IsDivergenceMultiplier`. Constants do satisfy
+the full criterion, including domain preservation. We do not assert that all
+polynomials are bounded multipliers, or that arbitrary bounded smooth functions
+preserve the polynomial δ-domain. For example, multiplication by sin(x) sends
+constant 1 outside that algebraic polynomial domain. The latter observation is
+mathematical explanation, not an additional Lean theorem in this milestone.
+A nonconstant bounded smooth core needs an appropriate divergence test domain
+and a proof of the commutator's boundedness and domain preservation.
+
+The proven formal-adjoint identity and polynomial membership in dom δ* are
+an exact connection with the adjoint foundation at this stage. Identifying
+δ*([p]) with [p'] as the value of Mathlib's adjoint requires a dense δ-domain.
+Polynomial density in all L²(γ) is mathematically true but is NOT proved or assumed
+in these modules. This matters because Mathlib's `LinearPMap.adjoint` uses a
+fallback zero value for nondense domains. Neither formal adjointness nor an
+existing derivative representer alone licenses claiming equality of that value.
+After proving density, the existing `LinearPMap.adjoint_apply_eq` will identify
+δ* on the core. Equality of δ* with the closed derivative on its full domain
+requires a further argument establishing maximality/core properties; it is not
+claimed merely from an inclusion on polynomials.
+
+Remaining work: polynomial density; exact adjoint identification on the core;
+full-domain identification if intended; multivariate joint Gaussian IBP and
+representation independence for arbitrary finite cylinders (including redundant
+coordinates); extension to arbitrary H and isonormal processes; bounded smooth
+cylinders and their genuine divergence-domain multiplier estimates; closure
+chain/product rules under the proper L⁴ or bounded-factor hypotheses. No Itô,
+Clark–Ocone, PRP, or stochastic Fubini assertion follows from this milestone.
+The old cylindrical constructions and assumption-based Stein classes remain
+unported. Original scalar–constant-vector multiplication and the adjoint
+infrastructure remain reusable after the missing hypotheses are actually proved.
+
+Verification: `lake build` and `lake build Foundation.AxiomAudit` succeed.
+`lake env lean Foundation/AxiomAudit.lean` checks every declaration explicitly.
+All 53 new declarations, including definitions and abbreviations, have axiom
+queries. Their dependencies are contained in `propext`, `Classical.choice`, and
+`Quot.sound`; no `sorryAx` or custom axiom occurs. All 111 declarations in the
+combined foundation audit report that same allowed union. A source scan finds
+no `sorry`, `admit`, or custom axiom in the foundation modules. Original SHA-256
+hashes remain unchanged: Lean `9B8BA956878B80F3C2AC8F239D335C0F49582C88D0693E63554F481ACBEBDF29`;
+manuscript `FCA841CCA43DC712AAD2FCF02CB04010ABD7CFCDA4A231022D58A3B23D3BB983`.
