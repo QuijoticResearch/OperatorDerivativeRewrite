@@ -57,9 +57,9 @@ representation independence, and Gaussian integration by parts.
 operators on the polynomial L² domain, proves derivative closability and formal
 adjointness, and connects actual cylinders p(W(h)) to that derivative.
 The coordinate x is proved to fail the bounded-multiplier criterion; constants
-satisfy it. Polynomial density and the value identification with the full L²
-adjoint remain obligations, not assumptions. This is a one-coordinate polynomial
-milestone, not the manuscript's general bounded smooth cylindrical calculus.
+satisfy it. The subsequent modules prove polynomial density and the full adjoint
+identifications. This remains a one-coordinate polynomial milestone; the
+manuscript's general bounded smooth cylindrical calculus is future work.
 
 `Foundation/GaussianDensity.lean` now proves polynomial density in the whole
 Gaussian L² space from exponential-moment determinacy, without any adjoint
@@ -67,6 +67,22 @@ assumption. `Foundation/AdjointClosure.lean` supplies general graph-closure and
 formal-adjoint lemmas. `Foundation/GaussianAdjoints.lean` proves dense domains,
 closability of divergence, closed-domain adjoint inclusions, and actual polynomial
 values for both adjoints. The closed derivative preserves the genuine cylinder
-formula. Full equalities between each closed operator and the other's adjoint
-remain unproved: polynomial graph-norm approximation in those adjoint domains is
-the next analytic obligation. See the latest section of the mathematical audit.
+formula. These inclusions are the starting point for the Hermite spectral argument.
+
+`Foundation/GaussianHermite.lean` constructs the normalized probabilists' Hermite
+Hilbert basis, proves Gaussian orthogonality and completeness using polynomial
+density, and verifies the true derivative/divergence lowering and raising actions.
+`Foundation/GaussianHermiteAdjoints.lean` proves full adjoint identifications by
+explicit finite Hermite graph approximations:
+
+- closure(D₀) = δ₀* = closure(δ₀)*;
+- closure(δ₀) = D₀* = closure(D₀)*.
+
+`Foundation/GaussianHermiteDomains.lean` gives the exact weighted coefficient
+domains, output norms, graph norms, and graph cores of both adjoints. For
+coefficients cₙ = ⟨Hₙ/√(n!), f⟩, membership in the common closed domain is
+Σ n cₙ² < ∞ (equivalently Σ (n+1)cₙ² < ∞, since f is already in L²).
+The squared derivative graph norm is Σ (n+1)cₙ²; the squared divergence graph
+norm is Σ (n+2)cₙ². No graph-density assumption is used. Tensor bases and
+multivariate operators remain future work; see the mathematical audit for the
+precise spectral proof and all declaration meanings.

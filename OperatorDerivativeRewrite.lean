@@ -3,3 +3,4 @@ import Foundation.LpProducts
 import Foundation.MultiplierCore
 import Foundation.GaussianOperator
 import Foundation.GaussianAdjoints
+import Foundation.GaussianHermiteDomains

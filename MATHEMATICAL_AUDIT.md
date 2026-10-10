@@ -767,3 +767,180 @@ No `sorryAx`, custom axioms, `sorry`, or `admit` occur. The new modules emit no
 compiler or linter warnings; the pre-existing unused-section-variable warnings
 in `Foundation.Adjoint` remain. The original Lean and manuscript hashes are
 unchanged, and the prior verified Gaussian core modules have not been modified.
+
+## Hermite spectral identification (continuation of 68d3189)
+
+This section resolves the one-dimensional graph-core and adjoint-identification
+obligations recorded in the preceding milestone. The underlying measure is still
+γ = N(0,1), and the original polynomial operators are unchanged:
+
+- dom D₀ = dom δ₀ = C = polynomialEmbedding.range;
+- D₀[p] = [p']; δ₀[p] = [xp-p'];
+- D̄ and δ̄ are their actual graph closures as Mathlib `LinearPMap`s.
+
+### Construction and proof dependencies
+
+`Foundation/GaussianHermite.lean` maps Mathlib's integer-coefficient
+`Polynomial.hermite n` to real coefficients. Its recursion is precisely
+H₀ = 1, Hₙ₊₁ = xHₙ-Hₙ'. The lowering formula Hₙ₊₁' = (n+1)Hₙ is proved
+by induction using the actual polynomial commutator Dδp = p+δDp.
+Gaussian integration by parts then yields
+⟨Hₙ,Hₘ⟩ = 1_{n=m} n!, including the probability normalization at degree zero.
+No Rodrigues formula, Gaussian orthogonality, or spectral identity is assumed.
+
+Define eₙ = [Hₙ]/√(n!). Positivity of n! proves that these normalizers are
+nonzero. The eₙ are orthonormal. Monicity and degree Hₙ = n give an algebraic
+polynomial sequence spanning all real polynomials via Mathlib
+`Polynomial.Sequence.span`. Consequently span{eₙ} = C. The independently
+proved `polynomialEmbedding_dense` supplies completeness; Mathlib
+`HilbertBasis.mk` gives a genuine isometric coefficient representation in ℓ².
+In particular, cₙ(f) = ⟨eₙ,f⟩, and f = Σ cₙ(f)eₙ in L².
+
+The verified actual polynomial graph actions are
+D₀e₀ = 0, D₀eₙ₊₁ = √(n+1)eₙ, δ₀eₙ = √(n+1)eₙ₊₁.
+All these vectors already have justified L² integrability from the polynomial
+moment theorem. Coefficients and derivative values are never prescribed
+independently of the functions.
+
+### Spectral argument for the missing graph cores
+
+Let P_N f = Σ_{n<N} cₙ(f)eₙ. These truncations converge to f in L² for every
+f, without any operator assumption.
+
+For (f,g) in graph δ₀*, test the actual adjoint identity against eₙ in dom δ₀.
+It forces cₙ(g) = √(n+1)cₙ₊₁(f). The lowering actions give, by finite induction,
+(P_{N+1}f, P_N g) in graph D₀. Both components converge to (f,g), so this pair
+belongs to graph D̄. This proves δ₀* ⊆ D̄; combine with the already proved
+opposite inclusion to obtain D̄ = δ₀*.
+
+For (f,g) in graph D₀*, testing e₀ and eₙ₊₁ forces c₀(g)=0 and
+cₙ₊₁(g)=√(n+1)cₙ(f). The raising actions give
+(P_N f, P_{N+1}g) in graph δ₀, converging to (f,g). Hence D₀* ⊆ δ̄ and,
+using the previous opposite inclusion, δ̄ = D₀*.
+
+These are separate verified approximation arguments in the two directions.
+They use only Hilbert-basis completeness, the true adjoint graph equation, and
+the actual ladder actions. Graph-norm density is a conclusion, never a
+hypothesis. The conditional coefficient-to-graph lemmas are sufficiency
+proofs by explicit approximation; necessity is proved by adjoint testing.
+Together they give exact graph characterizations, not a conditional operator
+interface. Product-topology convergence of input and output is equivalent to
+convergence in the Hilbert graph norm √(‖input‖²+‖output‖²).
+
+Closing either densely defined operator leaves its adjoint unchanged, so the
+strongest proved identities are
+
+    D̄ = δ₀* = δ̄*,       δ̄ = D₀* = D̄*.
+
+The pre-existing polynomial graph and application theorems still identify
+D̄[p]=[p'] and δ̄[p]=[xp-p']; the equalities therefore preserve exactly the
+original polynomial operators. The previous classical cylindrical derivative
+formula also remains valid. No original source or manuscript was edited.
+
+### Exact weighted domains and norms
+
+Parseval is proved as `HasSum (fun n => cₙ(f)^2) ‖f‖²`. Conversely, every
+square-summable real sequence is realized by the inverse Hilbert-basis
+isometry. This is a theorem, not an existence or integrability assumption.
+
+The closed graph characterizations imply, for f already in Gaussian L²,
+
+    f ∈ dom D̄  ↔  Σ n cₙ(f)² < ∞,
+    f ∈ dom δ̄  ↔  Σ (n+1)cₙ(f)² < ∞.
+
+Lean expresses these convergent real series with `Summable`. The two domains
+are proved equal because Σ cₙ(f)² is already finite. Their output norms and
+Hilbert graph norms are exactly
+
+    ‖D̄f‖² = Σ n cₙ(f)²,
+    ‖δ̄f‖² = Σ (n+1)cₙ(f)²,
+    ‖f‖² + ‖D̄f‖² = Σ (n+1)cₙ(f)²,
+    ‖f‖² + ‖δ̄f‖² = Σ (n+2)cₙ(f)².
+
+`HasCore` is established for span{eₙ} in each full adjoint domain. The two
+explicit approximation theorems additionally exhibit the polynomial graph
+sequences and their convergence for every adjoint graph pair.
+
+### Meaning of all new public declarations
+
+All names below are in `OperatorDerivativeRewrite.Foundation.GaussianCore`.
+The two private inner-product recurrence lemmas are proved by IBP and are
+included transitively in the axiom audit of `hermiteVector_inner`.
+
+| Declaration | Precise meaning |
+|---|---|
+| `hermitePolynomial` | Real-coefficient image of Mathlib's probabilists' Hₙ |
+| `hermitePolynomial_zero` | H₀=1 |
+| `hermitePolynomial_succ` | Hₙ₊₁=δHₙ for the original differential expression |
+| `derivative_divergencePolynomial` | (xp-p')'=p+xp'-p'' |
+| `hermitePolynomial_derivative` | Hₙ₊₁'=(n+1)Hₙ |
+| `hermitePolynomial_monic`, `hermitePolynomial_degree` | Hₙ is monic of degree n |
+| `hermiteSequence` | The Hermites as Mathlib's degree-indexed polynomial sequence |
+| `hermitePolynomial_span` | All real polynomials are finite algebraic Hermite expansions |
+| `hermiteVector` | Hₙ evaluated as a Gaussian L² equivalence class |
+| `hermiteVector_inner` | ⟨Hₙ,Hₘ⟩=1_{n=m}n! |
+| `normalizedHermite` | eₙ=[Hₙ]/√(n!) |
+| `hermite_normalizer_pos`, `hermite_normalizer_succ` | Positive √(n!) and its square-root recursion |
+| `normalizedHermite_orthonormal` | The eₙ form an orthonormal family |
+| `hermiteVector_span`, `normalizedHermite_span` | Each algebraic vector span is exactly C |
+| `normalizedHermite_dense_span` | Density of that span in Gaussian L² |
+| `hermiteBasis` | The complete normalized Hermite Hilbert basis |
+| `hermiteBasis_apply` | Its vectors are precisely eₙ |
+| `hermiteBasis_coefficient` | Its isometry coordinates equal ⟨eₙ,f⟩ |
+| `hermiteBasis_hasSum` | The coefficient expansion converges unconditionally to f in L² |
+| `normalizedHermite_derivative_graph` | (eₙ₊₁,√(n+1)eₙ) belongs to graph D₀ |
+| `normalizedHermite_derivative_zero_graph` | (e₀,0) belongs to graph D₀ |
+| `normalizedHermite_divergence_graph` | (eₙ,√(n+1)eₙ₊₁) belongs to graph δ₀ |
+| `hermiteCoefficient` | The actual real Hilbert pairing cₙ(f) |
+| `hermiteTruncation` | P_N f, its actual finite expansion |
+| `hermiteTruncation_zero`, `hermiteTruncation_succ` | Empty sum and addition of the next Hermite term |
+| `hermiteTruncation_tendsto` | P_N f→f in L² for every f |
+| `divergence_adjoint_coefficients` | Necessary lowering coefficient equation for graph δ₀* |
+| `derivative_adjoint_coefficient_zero` | Necessary zero-mode equation c₀(g)=0 for graph D₀* |
+| `derivative_adjoint_coefficients` | Necessary raising coefficient equation for graph D₀* |
+| `hermiteTruncation_derivative_graph` | Lowering coefficient equations produce actual finite D₀ graphs |
+| `hermiteTruncation_divergence_graph` | Raising equations and the zero mode produce actual finite δ₀ graphs |
+| `closedDerivative_graph_of_coefficients` | Those lowering equations suffice for membership in graph D̄ |
+| `closedDivergence_graph_of_coefficients` | Those raising equations and the zero mode suffice for graph δ̄ |
+| `closedDerivative_eq_divergence_adjoint` | Full operator equality D̄=δ₀* |
+| `closedDivergence_eq_derivative_adjoint` | Full operator equality δ̄=D₀* |
+| `closedDerivative_eq_closedDivergence_adjoint` | Full operator equality D̄=δ̄* |
+| `closedDivergence_eq_closedDerivative_adjoint` | Full operator equality δ̄=D̄* |
+| `closedDerivative_graph_iff`, `closedDivergence_graph_iff` | Exact necessary-and-sufficient spectral graph equations |
+| `hermiteCoefficient_hasSum_sq` | Parseval, including square summability and the L² norm |
+| `exists_hermite_coefficients` | Existence of an L² vector for any square-summable real sequence |
+| `hermite_weight_square` | (√(n+1)a)²=(n+1)a² |
+| `closedDerivative_domain_iff` | dom D̄ is exactly the n-weighted coefficient domain |
+| `closedDivergence_domain_iff` | dom δ̄ is exactly the (n+1)-weighted coefficient domain |
+| `closedDerivative_domain_eq_closedDivergence_domain` | These two closed domains coincide |
+| `closedDerivative_norm_sq`, `closedDivergence_norm_sq` | Exact output-norm squared formulas on each closed graph |
+| `closedDerivative_graph_norm_sq`, `closedDivergence_graph_norm_sq` | Exact Hilbert graph-norm squared formulas |
+| `divergence_adjoint_has_hermite_core`, `derivative_adjoint_has_hermite_core` | Finite Hermite expansions are graph cores for the two full adjoints |
+| `divergence_adjoint_hermite_approximation` | Explicit D₀ graph approximants and their joint convergence for each δ₀* graph pair |
+| `derivative_adjoint_hermite_approximation` | Explicit δ₀ graph approximants and their joint convergence for each D₀* graph pair |
+
+### Downstream consequences and remaining scope
+
+The one-dimensional adjoint and graph-core gaps are fully resolved for the
+standard-Gaussian polynomial operators. They can now serve as actual closed
+operators in the existing adjoint framework. This does not prove that the
+common closed domain is an algebra, that its functions are bounded, or that
+polynomial multiplication is an admissible bounded commutator. The verified
+L² product restrictions and the obstruction for the unbounded coordinate
+continue to apply.
+
+Multivariate Gaussian tensor bases, directional/vector-valued operators,
+representation independence across arbitrary finite Gaussian coordinate
+systems, bounded smooth cylindrical domains, admissible nonconstant
+multipliers, and the Itô formula remain distinct future obligations. A tensor
+Hermite basis and the corresponding directional weighted sums are the natural
+next step. No such multivariate or stochastic claims are asserted here.
+
+Verification: the complete `lake build`, `lake build Foundation.AxiomAudit`,
+and a fresh `lake env lean Foundation/AxiomAudit.lean` all succeed. The 57 new
+public declarations have explicit `#print axioms` queries;
+together with the existing 151 queries, the audit covers 208 declarations and
+all their transitive proof dependencies. The audit reports only `propext`,
+`Classical.choice`, and `Quot.sound`; no `sorryAx` or custom axioms occur.
+The new modules have no compiler/linter warnings; the
+pre-existing unused-section-variable warnings in `Foundation.Adjoint` remain.

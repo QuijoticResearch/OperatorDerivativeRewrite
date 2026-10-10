@@ -1,3 +1,4 @@
+import Foundation.GaussianHermiteDomains
 import Foundation.GaussianAdjoints
 import Foundation.GaussianOperator
 import Foundation.Adjoint
@@ -208,3 +209,64 @@ import Foundation.MultiplierCore
   OperatorDerivativeRewrite.Foundation.GaussianCore.closedDerivative_cylindrical_mem
 #print axioms
   OperatorDerivativeRewrite.Foundation.GaussianCore.closedDerivative_cylindrical_coeFn
+
+/-! Hermite basis, spectral graph approximation, and full adjoint identification. -/
+namespace OperatorDerivativeRewrite.Foundation.GaussianCore
+#print axioms hermitePolynomial
+#print axioms hermitePolynomial_zero
+#print axioms hermitePolynomial_succ
+#print axioms derivative_divergencePolynomial
+#print axioms hermitePolynomial_derivative
+#print axioms hermitePolynomial_monic
+#print axioms hermitePolynomial_degree
+#print axioms hermiteSequence
+#print axioms hermitePolynomial_span
+#print axioms hermiteVector
+#print axioms hermiteVector_inner
+#print axioms normalizedHermite
+#print axioms hermite_normalizer_pos
+#print axioms normalizedHermite_orthonormal
+#print axioms hermiteVector_span
+#print axioms normalizedHermite_span
+#print axioms normalizedHermite_dense_span
+#print axioms hermiteBasis
+#print axioms hermiteBasis_apply
+#print axioms hermiteBasis_coefficient
+#print axioms hermiteBasis_hasSum
+#print axioms hermite_normalizer_succ
+#print axioms normalizedHermite_derivative_graph
+#print axioms normalizedHermite_derivative_zero_graph
+#print axioms normalizedHermite_divergence_graph
+#print axioms hermiteCoefficient
+#print axioms hermiteTruncation
+#print axioms hermiteTruncation_zero
+#print axioms hermiteTruncation_succ
+#print axioms hermiteTruncation_tendsto
+#print axioms divergence_adjoint_coefficients
+#print axioms derivative_adjoint_coefficient_zero
+#print axioms derivative_adjoint_coefficients
+#print axioms hermiteTruncation_derivative_graph
+#print axioms hermiteTruncation_divergence_graph
+#print axioms closedDerivative_graph_of_coefficients
+#print axioms closedDivergence_graph_of_coefficients
+#print axioms closedDerivative_eq_divergence_adjoint
+#print axioms closedDivergence_eq_derivative_adjoint
+#print axioms closedDerivative_eq_closedDivergence_adjoint
+#print axioms closedDivergence_eq_closedDerivative_adjoint
+#print axioms closedDerivative_graph_iff
+#print axioms closedDivergence_graph_iff
+#print axioms hermiteCoefficient_hasSum_sq
+#print axioms exists_hermite_coefficients
+#print axioms hermite_weight_square
+#print axioms closedDerivative_domain_iff
+#print axioms closedDivergence_domain_iff
+#print axioms closedDerivative_domain_eq_closedDivergence_domain
+#print axioms closedDerivative_norm_sq
+#print axioms closedDivergence_norm_sq
+#print axioms closedDerivative_graph_norm_sq
+#print axioms closedDivergence_graph_norm_sq
+#print axioms divergence_adjoint_has_hermite_core
+#print axioms derivative_adjoint_has_hermite_core
+#print axioms divergence_adjoint_hermite_approximation
+#print axioms derivative_adjoint_hermite_approximation
+end OperatorDerivativeRewrite.Foundation.GaussianCore
