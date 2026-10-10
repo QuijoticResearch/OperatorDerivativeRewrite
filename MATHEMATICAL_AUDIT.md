@@ -604,3 +604,166 @@ combined foundation audit report that same allowed union. A source scan finds
 no `sorry`, `admit`, or custom axiom in the foundation modules. Original SHA-256
 hashes remain unchanged: Lean `9B8BA956878B80F3C2AC8F239D335C0F49582C88D0693E63554F481ACBEBDF29`;
 manuscript `FCA841CCA43DC712AAD2FCF02CB04010ABD7CFCDA4A231022D58A3B23D3BB983`.
+
+## Gaussian density and adjoint inclusions (continuation from aac876f)
+
+### Operator directions and exact domains
+
+Write C=range(polynomialEmbedding) in L²(γ), γ=N(0,1). The original verified
+operators are D₀=polynomialDerivative and δ₀=polynomialDivergence, both maps
+L²(γ) ⇀ L²(γ) with domain exactly C. Their graphs contain ([p],[p']) and
+([q],[xq-q']), respectively. The IBP orientation is ⟨D₀p,q⟩=⟨p,δ₀q⟩.
+In particular the derivative is contained in the divergence's adjoint, not in
+its own adjoint. Neither algebraic operator is identified with a closed operator
+merely from its name or domain density.
+
+### Noncircular density proof now verified
+
+`Foundation/GaussianDensity.lean` proves `polynomialEmbedding_dense` in the whole
+Gaussian L² space. The proof does not assume any adjoint identity, Hermite basis,
+or density theorem for a graph norm. Searches found compact-set Weierstrass
+approximation but no direct Gaussian L² polynomial-density theorem in this
+Mathlib checkout. Compact approximation alone would not control polynomial growth
+outside the compact set.
+
+First, `finite_measure_eq_of_moments` proves a reusable determinacy result for
+finite measures on ℝ with integrable exp(tx) for every real t. Their complex MGFs
+are entire by Mathlib's `analyticAt_complexMGF`. The moments determine all complex
+derivatives at zero by `iteratedDeriv_complexMGF`; the entire Taylor-series
+theorem then makes the MGFs equal everywhere. Mathlib's
+`Measure.ext_of_complexMGF_id_eq` turns this into equality of measures. This is
+an analytic proof of moment determinacy, not an assumption of it. Requiring
+exponential moments is essential: finite moments alone do not generally determine
+a measure.
+
+For f∈L²(γ) orthogonal to polynomials, define w₊=max(f,0) and w₋=max(-f,0), and
+finite positive measures ν₊=w₊γ and ν₋=w₋γ. The weights belong to L² and L¹.
+Gaussian exp(tx) belongs to L² because its squared norm integrates exp(2tx),
+whose integrability is already proved in Mathlib. The previous foundation's
+`mul_L2_integrable` therefore proves every exponential moment of ν₊ and ν₋.
+The same estimate proves integrability of w₊xⁿ and w₋xⁿ. Orthogonality to xⁿ
+makes their moments equal. Moment determinacy gives ν₊=ν₋; uniqueness of
+withDensity densities gives w₊=w₋ a.e., hence f=0. Finally, the orthogonal
+complement of the closed polynomial subspace is zero, so Hilbert projection
+implies that subspace is all L²(γ). No desired operator equality appears in this
+argument or its hypotheses.
+
+### Exact proved operator conclusions
+
+Define D̄=closure(D₀) and δ̄=closure(δ₀), meaning closure of their graphs in
+L²(γ)×L²(γ), reconstructed as genuine single-valued operators. D₀'s closability
+was proved in the previous milestone. δ₀'s closability is now proved from its
+inclusion in the closed operator D₀*. All four operators D₀, δ₀, D̄, δ̄ have
+dense domains; D̄ and δ̄ are closed.
+
+The following are verified inclusions of `LinearPMap`s, so each includes both
+operator-domain inclusion and equality of the values on the smaller domain:
+
+- D₀ ⊆ δ₀* and δ₀ ⊆ D₀*;
+- D̄ ⊆ δ₀* and δ̄ ⊆ D₀*;
+- D̄ ⊆ δ̄* and δ̄ ⊆ D̄*.
+
+The following equalities are also verified: D̄*=D₀* and δ̄*=δ₀*. These are
+invariance of each operator's adjoint under its own graph closure. They are not
+an identification of D̄ with δ₀*, or of δ̄ with D₀*.
+Integration by parts extends to the two closed domains:
+∀f∈dom D̄, ∀u∈dom δ̄, ⟨D̄f,u⟩=⟨f,δ̄u⟩.
+
+Every polynomial belongs to dom D̄ and D̄[p]=[p']. It also belongs to dom δ̄
+with δ̄[p]=[xp-p']. The actual values δ₀*[p]=[p'] and D₀*[p]=[xp-p'] are now
+established on the polynomial core via graph membership; the nondense-domain
+fallback previously noted is ruled out by the new density proof. For a genuine
+cylinder F=p(W(h)), membership in dom D̄ is proved separately, and D̄F agrees
+a.e. with p'(W(h))h for any chosen proof of that membership.
+
+### Why full identification is not claimed
+
+D₀⊆δ₀* follows from IBP and dense δ₀-domain. Since δ₀* is closed, closability
+then gives D̄⊆δ₀*. Neither step proves the reverse inclusion δ₀*⊆D̄.
+The missing statement is polynomial graph-norm density in dom δ₀*: for every
+(f,v)∈graph δ₀*, polynomial pairs ([pₙ],[pₙ']) must converge to (f,v).
+Similarly, δ̄=D₀* requires polynomial divergence pairs ([qₙ],[xqₙ-qₙ']) to
+approximate every graph pair of D₀*.
+
+The polynomial domain is proved to be a core of D̄ and δ̄, their own closures.
+That fact is a consequence of the definition of graph closure. It does NOT prove
+that it is a core of δ₀* or D₀*, which may have larger graph domains. Ordinary
+L² density concerns only first components and does not prove either graph
+approximation. The three assertions D₀⊆δ₀*, D̄=δ₀*, and δ̄=D₀* are therefore
+not substituted for one another. General biadjoint/closure duality can relate
+the two equality assertions under suitable densely defined closable hypotheses,
+but that is additional reasoning, not a consequence of formal adjointness alone.
+
+A concrete route to full one-dimensional identification is normalized Hermite
+expansion. Mathlib contains the probabilists' Hermite polynomials and their
+Gaussian differentiation formula (`RingTheory/Polynomial/Hermite`), but those
+files do not supply Gaussian orthogonality, an L² Hermite Hilbert basis, or the
+needed graph approximation theorem. A next development could prove
+hₙ=Heₙ/√(n!) is a complete orthonormal family, D₀hₙ=√n hₙ₋₁, and
+δ₀hₙ=√(n+1) hₙ₊₁. Adjointness would determine weighted coefficient sequences;
+finite Hermite truncations would then converge in both graph components. This
+would supply the missing reverse inclusions. This paragraph is a proof strategy,
+not a list of already verified Hermite theorems.
+
+The milestone stops at the proved closed inclusions; no equality D̄=δ₀* or
+δ̄=D₀* is asserted as Lean-verified. No arbitrary-domain assumption equivalent
+to either equality has been introduced.
+
+### New declaration meanings
+
+All Gaussian names are in `OperatorDerivativeRewrite.Foundation.GaussianCore`.
+The four general lemmas are in `OperatorDerivativeRewrite.Foundation`.
+
+| Declaration | Exact meaning |
+|---|---|
+| `finite_measure_eq_of_moments` | Finite real measures with every exponential moment and equal polynomial moments are equal |
+| `gaussian_exp_memLp_two` | exp(tx)∈L²(γ) for every t |
+| `weightedMeasure` | Positive measure μ.withDensity(ofReal w) |
+| `weighted_integrable_iff` | For measurable w≥0, g is integrable for wμ iff wg is integrable for μ |
+| `weighted_integral` | For such w, ∫g d(wμ)=∫wg dμ |
+| `weighted_finite` | A measurable nonnegative integrable density defines a finite measure |
+| `eq_zero_of_polynomial_orthogonal` | An L²(γ) function orthogonal to every polynomial is zero |
+| `polynomialEmbedding_dense` | The polynomial range is dense in all Gaussian L² |
+| `operatorClosure_le_closed` | A closable operator's graph closure lies in every given closed extension |
+| `operatorClosure_dense_domain` | Dense original domain implies dense closure domain |
+| `formalAdjoint_closure_left` | A genuine formal-adjoint identity extends to the closure of the first operator |
+| `operatorClosure_adjoint_eq` | Closing a densely defined closable real Hilbert-space operator leaves its adjoint unchanged |
+| `polynomialDerivative_dense_domain` | dom D₀ is dense |
+| `polynomialDivergence_dense_domain` | dom δ₀ is dense |
+| `polynomialDerivative_le_divergence_adjoint` | D₀⊆δ₀* as actual operators |
+| `polynomialDivergence_le_derivative_adjoint` | δ₀⊆D₀* as actual operators |
+| `polynomialDivergence_isClosable` | δ₀ has a single-valued graph closure |
+| `closedDerivative`, `closedDivergence` | Graph closures D̄ and δ̄ of the actual polynomial operators |
+| `closedDerivative_isClosed`, `closedDivergence_isClosed` | Both graph closures are closed operators |
+| `closedDerivative_dense_domain`, `closedDivergence_dense_domain` | Both closed operators have dense domains |
+| `closedDerivative_le_divergence_adjoint` | D̄⊆δ₀* |
+| `closedDivergence_le_derivative_adjoint` | δ̄⊆D₀* |
+| `closedDerivative_formalAdjoint` | IBP between all members of the two closed domains |
+| `closedDerivative_polynomial_graph` | ([p],[p'])∈graph D̄ |
+| `closedDivergence_polynomial_graph` | ([p],[xp-p'])∈graph δ̄ |
+| `divergence_adjoint_polynomial_graph` | ([p],[p'])∈graph δ₀* |
+| `derivative_adjoint_polynomial_graph` | ([p],[xp-p'])∈graph D₀* |
+| `closedDerivative_has_polynomial_core` | C is a graph core for D̄ itself |
+| `closedDivergence_has_polynomial_core` | C is a graph core for δ̄ itself |
+| `closedDerivative_adjoint_eq` | D̄*=D₀* |
+| `closedDivergence_adjoint_eq` | δ̄*=δ₀* |
+| `closedDerivative_le_closedDivergence_adjoint` | D̄⊆δ̄* |
+| `closedDivergence_le_closedDerivative_adjoint` | δ̄⊆D̄* |
+| `closedDerivative_polynomial_mem` | Membership of every polynomial in dom D̄ |
+| `closedDerivative_polynomial_apply` | D̄[p]=[p'] for any proof of membership |
+| `closedDerivative_cylindrical_mem` | Membership of every existing one-coordinate polynomial cylinder in dom D̄ |
+| `closedDerivative_cylindrical_coeFn` | Its closed derivative is p'(W(h))h a.e. |
+
+The closure/formal-adjoint lemmas apply to general real inner-product spaces
+(and complete spaces where actual adjoints are used), so are reusable for scalar
+and vector-valued multivariate domains. Moment determinacy applies to arbitrary
+finite measures on ℝ with exponential moments, not only γ. Multivariate density,
+Hermite tensor bases, and their graph norms remain future work.
+
+Verification for this milestone: `lake build` and `lake build Foundation.AxiomAudit`
+both succeed. All 40 new declarations have explicit axiom queries; the combined
+151-declaration audit reports only `propext`, `Classical.choice`, and `Quot.sound`.
+No `sorryAx`, custom axioms, `sorry`, or `admit` occur. The new modules emit no
+compiler or linter warnings; the pre-existing unused-section-variable warnings
+in `Foundation.Adjoint` remain. The original Lean and manuscript hashes are
+unchanged, and the prior verified Gaussian core modules have not been modified.

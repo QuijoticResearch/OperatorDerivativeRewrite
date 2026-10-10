@@ -60,3 +60,13 @@ The coordinate x is proved to fail the bounded-multiplier criterion; constants
 satisfy it. Polynomial density and the value identification with the full L²
 adjoint remain obligations, not assumptions. This is a one-coordinate polynomial
 milestone, not the manuscript's general bounded smooth cylindrical calculus.
+
+`Foundation/GaussianDensity.lean` now proves polynomial density in the whole
+Gaussian L² space from exponential-moment determinacy, without any adjoint
+assumption. `Foundation/AdjointClosure.lean` supplies general graph-closure and
+formal-adjoint lemmas. `Foundation/GaussianAdjoints.lean` proves dense domains,
+closability of divergence, closed-domain adjoint inclusions, and actual polynomial
+values for both adjoints. The closed derivative preserves the genuine cylinder
+formula. Full equalities between each closed operator and the other's adjoint
+remain unproved: polynomial graph-norm approximation in those adjoint domains is
+the next analytic obligation. See the latest section of the mathematical audit.
