@@ -5,6 +5,7 @@ import Foundation.PoissonMaximalOperators
 import Foundation.PoissonWeightedDomains
 import Foundation.PoissonTruncation
 import Foundation.PoissonTruncationConvergence
+import Foundation.PoissonGraphApprox
 import Foundation.Adjoint
 import Foundation.LpProducts
 import Foundation.GaussianEntropy

@@ -3939,3 +3939,8 @@ vanishing-mass theorem types. This is not a verified graph-core result.
 
 Finite-coordinate restrictions converge in genuine scalar and rate-weighted field L² via Mathlib uniform integrability. The same truncation family is used on each side of the operator graph. The difference of a truncated function decomposes into the cutoff of its full difference plus one outgoing boundary atom. This does not yet prove graph convergence: the operator values must be related to the maximal graph and the boundary atom controlled in L².
 
+
+## P3 complete: exact graph-core closure
+
+Foundation/PoissonGraphApprox.lean proves simultaneous Hilbert convergence of finite-support truncations and their actual operator outputs. The output is the cutoff of the maximal value plus one boundary atom, whose squared norm tends to zero by the exact P2 weighted moment. Thus closure_coreDifference_eq_maximal and closure_coreDivergence_eq_maximal identify both graph closures with their closed maximal pointwise operators. No adjoint equality is assumed in this argument. P4 exact mutual adjoints remains open pending reverse adjoint-domain characterization.
+
