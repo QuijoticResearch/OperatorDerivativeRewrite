@@ -4,6 +4,7 @@ import Foundation.PoissonCoordinateEvaluation
 import Foundation.PoissonMaximalOperators
 import Foundation.PoissonWeightedDomains
 import Foundation.PoissonTruncation
+import Foundation.PoissonTruncationConvergence
 import Foundation.GaussianLogSobolevFull
 import Foundation.GaussianSobolevGlobalApprox
 import Foundation.GaussianSobolevQuantitative
@@ -1209,3 +1210,11 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.PoissonTruncation.divergence_truncate_tail
 #print axioms OperatorDerivativeRewrite.Foundation.PoissonTruncation.scalar_boundary_sq_tendsto_zero
 #print axioms OperatorDerivativeRewrite.Foundation.PoissonTruncation.divergence_boundary_sq_tendsto_zero
+
+/-! P3 ambient finite-coordinate L² convergence. -/
+#print axioms OperatorDerivativeRewrite.Foundation.PoissonTruncationConvergence.cut
+#print axioms OperatorDerivativeRewrite.Foundation.PoissonTruncationConvergence.cut_memLp
+#print axioms OperatorDerivativeRewrite.Foundation.PoissonTruncationConvergence.cut_toLp_tendsto
+#print axioms OperatorDerivativeRewrite.Foundation.PoissonTruncationConvergence.scalar_truncate_tendsto
+#print axioms OperatorDerivativeRewrite.Foundation.PoissonTruncationConvergence.field_truncate_tendsto
+#print axioms OperatorDerivativeRewrite.Foundation.PoissonTruncationConvergence.difference_truncate_decomposition

@@ -3935,3 +3935,7 @@ and direct `lake env lean Foundation/AxiomAudit.lean` succeeds. All 10 new
 truncation declarations have transitive axioms among `propext`,
 `Classical.choice`, and `Quot.sound` only. Lean checked the exact boundary and
 vanishing-mass theorem types. This is not a verified graph-core result.
+## P3 continuation: ambient L² convergence
+
+Finite-coordinate restrictions converge in genuine scalar and rate-weighted field L² via Mathlib uniform integrability. The same truncation family is used on each side of the operator graph. The difference of a truncated function decomposes into the cutoff of its full difference plus one outgoing boundary atom. This does not yet prove graph convergence: the operator values must be related to the maximal graph and the boundary atom controlled in L².
+
