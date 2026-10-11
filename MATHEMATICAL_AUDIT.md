@@ -1972,3 +1972,124 @@ The original source SHA-256 hashes still match the recorded baseline. All earlie
 proof modules, dependency configuration, lockfile, and Lean toolchain are
 unchanged. The root imports and audit module are extended to include the two
 new verified modules.
+
+## Full product L² polynomial cylinder density (after c1202d0)
+
+This is the first complete milestone toward the requested infinite-dimensional
+Malliavin derivative. It resolves polynomial cylinder density in the entire
+countable Gaussian product L² space. It does not yet construct that derivative,
+its closed extension, or a divergence operator.
+
+### Exact core and verified declarations
+
+`MvPolynomial ℕ ℝ` is an algebraic polynomial space: each polynomial involves
+only finitely many variables. The existing sample space Ω = ℝ^ℕ and measure μ
+are preserved. The new evaluation map sends p to the actual L² class of
+ω ↦ p(ω), with integrability established before this class is constructed.
+Its range is exactly the union of the existing finite-coordinate polynomial
+spaces, not an assumed closure or merely a larger linear span.
+
+All fourteen new declarations are in
+`OperatorDerivativeRewrite.Foundation.InfiniteGaussian`:
+
+| Declaration | Exact meaning |
+| --- | --- |
+| `coordinatePolynomial_memLp` | Actual evaluation of every p ∈ ℝ[ℕ] belongs to all finite Lp spaces. This is proved by finite-variable renaming and the verified finite marginal estimates. |
+| `coordinatePolynomialL2` | The actual L² equivalence class of ω ↦ p(ω). |
+| `coordinatePolynomialL2_coeFn` | Its representative agrees almost everywhere with actual evaluation. |
+| `coordinatePolynomialEmbedding` | Linear evaluation map ℝ[ℕ] → L²(Ω, μ); its image is the algebraic coordinate polynomial core. |
+| `coordinatePolynomialL2_rename` | Renaming a finite-index polynomial into natural-number variables gives exactly its existing finite-cylinder L² class. |
+| `coordinatePolynomialEmbedding_range` | The image is exactly ⋃ₛ range(polynomialCylinderEmbedding s), over all finite sets s ⊆ ℕ. |
+| `coordinatePolynomialEmbedding_injective` | Distinct algebraic coordinate polynomials give distinct L² classes. Two polynomials are first placed in one common finite variable set, where existing injectivity applies. |
+| `ae_zero_of_cylinder_integrals` | An integrable real function whose integrals vanish on every finite measurable cylinder is zero almost everywhere; product sigma-algebra generation is proved infrastructure, not an assumption of cylinder density. |
+| `orthogonal_finitePullback` | Orthogonality to every coordinate polynomial implies orthogonality to every L² class pulled back from any finite Gaussian marginal. |
+| `orthogonal_cylinder_integral` | Such an orthogonal L² function has zero integral on every finite measurable cylinder. |
+| `eq_zero_of_coordinatePolynomial_orthogonal` | The orthogonal complement of the algebraic coordinate polynomial core is trivial. |
+| `coordinatePolynomialEmbedding_dense` | The image of the actual polynomial evaluation map is dense in the whole product Gaussian L² space. |
+| `polynomialCylinders_dense` | Equivalently, the actual union of finite-coordinate polynomial spaces is dense in the whole L² space. |
+| `exists_polynomialCylinder_approx` | For every f ∈ L² and ε > 0, there are a finite set s and a genuine polynomial p ∈ ℝ[s] with ‖f − polynomialCylinderEmbedding s p‖L² < ε. |
+
+### Noncircular density proof
+
+Every countable-variable polynomial is renamed from a finite variable set using
+Mathlib's `MvPolynomial.exists_finset_rename`. Its integrability and finite
+pullback identification therefore reuse the already verified finite-dimensional
+results. `exists_finset_rename₂` puts two polynomials in one common finite set,
+which proves injectivity without any infinite-dimensional support assumption.
+These are actual finite polynomial cylinders, including constants and the
+empty coordinate set.
+
+For density, take an arbitrary f ∈ L² orthogonal to all these polynomial classes.
+For each fixed finite coordinate set s, the continuous functional
+ g ↦ ⟨f, finitePullback s g⟩ vanishes on the finite-dimensional polynomial image.
+The previously verified finite Gaussian polynomial density theorem, plus
+`Continuous.ext_on`, extends this equality to every g in that finite L² space.
+Applying it to finite measurable-set indicators and transporting indicators
+through the measure-preserving projection proves that ∫₍cylinder s S₎ f = 0
+for every measurable S.
+
+L² membership under this probability measure proves f is integrable. Mathlib's
+`generateFrom_measurableCylinders` and `isPiSystem_measurableCylinders` identify
+a generating π-system. `MeasurableSpace.induction_on_inter` extends the zero
+integral identity from that system to all measurable sets: the whole-space
+integral is already zero, complements use `setIntegral_compl`, and disjoint
+countable unions use `integral_iUnion` with the proved integrability of f.
+`Integrable.ae_eq_zero_of_forall_setIntegral_eq_zero` then gives f = 0 almost
+everywhere. The Hilbert orthogonal-complement criterion proves density of the
+core. Its proved exact range identity turns this into density of the actual
+union of finite-coordinate polynomial spaces. The final approximation theorem
+extracts a finite-set, single-polynomial witness from metric density.
+
+Thus finite-dimensional polynomial density is not mistaken for full product
+density. Full density follows from an additional proved sigma-algebra argument.
+No conditional-expectation convergence, cylinder density, or graph density is
+assumed. No L² × L² → L² closure hypothesis is introduced.
+
+### Remaining representation and operator obligations
+
+The density result concerns independent evaluation coordinates ωₙ, which are
+already proved to equal W(eₙ) as L² classes. It gives the needed dense scalar
+subcore for a future operator. It does not silently restrict the requested
+arbitrary-coordinate cylindrical domain to finite-support h vectors.
+
+The following requirements of the larger Malliavin derivative objective remain:
+
+1. Define p(W(h₁), …, W(hₙ)) and its actual ℓ²-valued derivative for arbitrary
+   finite families of ℓ² vectors, with proved scalar and vector integrability.
+   Infinite-support h vectors need not produce finite-coordinate polynomials
+   in the sample evaluations, so this is a genuinely larger core.
+2. Prove representation independence across different arbitrary families,
+   including correlated and linearly dependent ones. The injectivity proved
+   here is for independent coordinate polynomials only. A polynomial vanishing
+   on a degenerate Gaussian family's support need not be the zero polynomial.
+   One must control its derivative along the actual finite-dimensional Hilbert
+   span; formal equality of polynomial expressions is insufficient.
+3. Establish substantive product/chain rules, Gaussian integration by parts
+   against actual finite-rank polynomial test vector fields, and density of
+   the needed vector test space in L²(Ω; ℓ²).
+4. Use these identities and dense test spaces to prove closability, with
+   operator-domain membership kept separate from the derivative identities.
+5. Construct the closed derivative and its densely defined adjoint divergence,
+   with explicit actual domains. No graph-norm density, maximal-domain
+   characterization, or infinite-dimensional adjoint equality is proved by
+   the scalar density theorem established here.
+
+All earlier Gaussian, finite-dimensional operator, spectral-domain, and adjoint
+results remain unchanged. Work stops at this scalar density milestone as
+requested; the overall Malliavin operator construction remains unfinished.
+
+### Verification of the density milestone
+
+The complete `lake build` succeeds (3347 jobs). Both new modules compile without
+warnings; the two existing unused-section-variable warnings in
+`Foundation/Adjoint.lean` remain unchanged. A fresh Lean run of the complete
+`Foundation/AxiomAudit.lean` produces 513 results for 513 explicit queries,
+including all fourteen new declarations. The only dependencies reported are
+`propext`, `Classical.choice`, and `Quot.sound`; there is no `sorryAx` or custom
+axiom dependency. Raw audit output is retained in the ignored build artifact
+`.lake/build/infinite-gaussian-cylinder-density-axioms.log`.
+
+The original Lean/manuscript SHA-256 hashes remain unchanged. All previous proof
+modules, the toolchain, and dependency configuration remain unchanged. The root
+imports, axiom audit, and documentation are extended for this verified milestone.
+The overall Malliavin operator objective remains open beyond scalar core density.

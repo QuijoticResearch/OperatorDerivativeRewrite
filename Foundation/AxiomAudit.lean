@@ -1,3 +1,4 @@
+import Foundation.InfiniteGaussianDensity
 import Foundation.InfiniteGaussianIsonormal
 import Foundation.InfiniteGaussianFirstChaos
 import Foundation.FiniteGaussianDomains
@@ -582,4 +583,21 @@ namespace OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms firstChaos_finiteSupport_ae
 #print axioms firstChaosFamily_finiteCoordinates_law
 #print axioms firstChaos_isGaussianProcess
+end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+
+namespace OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+#print axioms coordinatePolynomial_memLp
+#print axioms coordinatePolynomialL2
+#print axioms coordinatePolynomialL2_coeFn
+#print axioms coordinatePolynomialEmbedding
+#print axioms coordinatePolynomialL2_rename
+#print axioms coordinatePolynomialEmbedding_range
+#print axioms coordinatePolynomialEmbedding_injective
+#print axioms ae_zero_of_cylinder_integrals
+#print axioms orthogonal_finitePullback
+#print axioms orthogonal_cylinder_integral
+#print axioms eq_zero_of_coordinatePolynomial_orthogonal
+#print axioms coordinatePolynomialEmbedding_dense
+#print axioms polynomialCylinders_dense
+#print axioms exists_polynomialCylinder_approx
 end OperatorDerivativeRewrite.Foundation.InfiniteGaussian

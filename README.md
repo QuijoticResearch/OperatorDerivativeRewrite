@@ -171,6 +171,21 @@ and identifies finite-support correlated families with matrix pushforwards of
 the existing finite Gaussian coordinate model. Thus the original first-chaos
 isometry is now a genuine real isonormal Gaussian process over ℓ².
 
-Density of all finite polynomial cylinders and infinite-dimensional cylindrical
-derivative/divergence operators remain to be established. No such operators
-are constructed in this milestone.
+Full product polynomial cylinder density is proved by the modules below.
+Infinite-dimensional derivative/divergence operators remain to be established.
+
+`Foundation/InfiniteGaussianPolynomials.lean` constructs the actual L² evaluation
+of algebraic polynomials indexed by ℕ, proves all finite moments and injectivity,
+and identifies its image exactly with the union of finite polynomial cylinders.
+
+`Foundation/InfiniteGaussianDensity.lean` proves that this actual union is dense
+in the entire countable Gaussian product L² space. The proof combines the
+verified finite Gaussian polynomial density theorem with an independent
+measurable-cylinder π-system argument. It also proves that every L² variable
+can be approximated in norm by one finite polynomial cylinder.
+
+This completes the first scalar density milestone toward a Malliavin derivative.
+Derivatives for arbitrary correlated W(h) cylinders, representation independence,
+vector test-space density, Gaussian integration by parts, closability, and closed
+operator/adjoint domains remain to be constructed. No such infinite-dimensional
+operator is claimed here.
