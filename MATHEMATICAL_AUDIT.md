@@ -3765,3 +3765,55 @@ The theorem is the concrete variance-one Gaussian inequality under the original 
 Verification: complete `lake build` succeeds (3445 jobs), and direct `lake env lean Foundation/AxiomAudit.lean` succeeds. Both new public theorems depend transitively exactly on `propext`, `Classical.choice`, and `Quot.sound`; neither depends on `sorryAx` or a custom axiom. The two pre-existing `Foundation.Adjoint` unused-section-variable warnings remain unchanged.
 
 Verification: complete `lake build` succeeds (3443 jobs); direct `lake env lean Foundation/AxiomAudit.lean` succeeds. All 19 new public declarations have transitive axiom sets contained in `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or custom axiom appears. The new module has no warnings. Only the two pre-existing unused-section-variable warnings in `Foundation.Adjoint` remain. Original manuscripts and dependency pins are unchanged.
+
+## P0: one-site Poisson finite-support difference/divergence calculus
+
+`Foundation/PoissonDifferenceCore.lean` uses Mathlib's actual
+`ProbabilityTheory.poissonMeasure rate` on `ℕ`, with `rate : ℝ≥0`.
+`poisson_weight_pos` explicitly assumes `0 < rate`; the recurrence and finite-support
+identities are stronger and hold for every nonnegative rate. For
+`w(n) = (poissonMeasure rate).real {n}`, `poisson_weight_succ` proves
+`(n+1) w(n+1) = rate w(n)`. This includes `n=0`.
+
+For actual `Finsupp` functions `f,u : ℕ →₀ ℝ`, `forwardDifference f n` is
+`f(n+1)-f(n)`. `backwardWeighted u 0 = 0` and
+`backwardWeighted u (n+1) = (n+1)u(n)`, so
+`poissonDivergenceExpr rate u n = backwardWeighted u n-rate*u(n)`.
+`divergence_at_zero` and `divergence_at_succ` verify both boundary formulas explicitly.
+The finite-support lemmas prove these functions retain finite support.
+`integrable_of_finite_support` uses Mathlib's exact Poisson integrability
+criterion; `memLp_two_of_finite_support` derives genuine L² membership from
+integrability of the actual square. The module proves L² membership for the
+finite-support fields and both pairing integrands under the Poisson measure,
+and also under the `rate`-weighted Poisson measure. The two pairing terms are
+separately proved integrable before the real integral identities are used.
+
+`poisson_shift_finsupp` states
+
+`∫ n, (n : ℝ) * f n ∂poissonLaw rate =
+  (rate : ℝ) * ∫ n, f (n+1) ∂poissonLaw rate`.
+
+`poisson_difference_ibp_finsupp` states
+
+`(rate : ℝ) * ∫ n, forwardDifference f n * u n ∂poissonLaw rate =
+  ∫ n, f n * poissonDivergenceExpr rate u n ∂poissonLaw rate`.
+
+Both proofs use `integral_poissonMeasure'` only after proving integrability,
+then reindex summable finite-support series by the proved weight recurrence.
+`poisson_difference_mul_finsupp` proves the actual pointwise product identity
+`D(f*g) = f*Dg + g*Df + Df*Dg` for Mathlib's pointwise `Finsupp` product.
+The extra quadratic term distinguishes this jump difference calculus from
+an ordinary differential derivation.
+
+This is a finite-support IBP milestone. No maximal operator domain,
+closability, graph-density, adjoint equality, Poisson process representation,
+or ordinary chain rule is asserted. P1–P5 from
+`OPERATOR_DERIVATIVE_NON_GAUSSIAN_RESEARCH_AUDIT.md` remain open.
+Verification for P0: the complete `lake build` succeeds (4006 jobs), including
+`Foundation.PoissonDifferenceCore` and the project root. Direct
+`lake env lean Foundation/AxiomAudit.lean` succeeds. All 34 new public
+declarations have transitive axiom dependencies among exactly `propext`,
+`Classical.choice`, and `Quot.sound`; none uses `sorryAx` or a custom axiom.
+The new module emits no warnings. The two existing unused-section-variable
+warnings in `Foundation.Adjoint` remain unchanged. The original manuscripts
+and dependency pins were not modified.

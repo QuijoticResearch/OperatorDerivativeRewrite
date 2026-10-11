@@ -1,3 +1,4 @@
+import Foundation.PoissonDifferenceCore
 import Foundation.Adjoint
 import Foundation.LpProducts
 import Foundation.GaussianEntropy
