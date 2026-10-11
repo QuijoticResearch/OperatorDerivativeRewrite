@@ -3944,3 +3944,8 @@ Finite-coordinate restrictions converge in genuine scalar and rate-weighted fiel
 
 Foundation/PoissonGraphApprox.lean proves simultaneous Hilbert convergence of finite-support truncations and their actual operator outputs. The output is the cutoff of the maximal value plus one boundary atom, whose squared norm tends to zero by the exact P2 weighted moment. Thus closure_coreDifference_eq_maximal and closure_coreDivergence_eq_maximal identify both graph closures with their closed maximal pointwise operators. No adjoint equality is assumed in this argument. P4 exact mutual adjoints remains open pending reverse adjoint-domain characterization.
 
+
+## P4 complete: exact Hilbert adjoints
+
+Foundation/PoissonAdjoints.lean tests arbitrary adjoint graph pairs against each finite-support count basis vector. The Poisson weight recurrence and strict positivity identify the entire adjoint-domain coefficient formula, including count zero. It proves coreDifference.adjoint = maximalDivergence, coreDivergence.adjoint = maximalDifference, and mutual adjointness of the closed maximal operators. These conclusions use P3 graph-core identities; no adjoint domain is assumed. The field Hilbert measure retains the factor rate, which is essential for the unscaled divergence formula.
+
