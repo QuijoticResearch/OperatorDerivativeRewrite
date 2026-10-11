@@ -3456,3 +3456,87 @@ Only the two pre-existing unused-section-variable warnings in
 `gaussian-time-build.log`, `gaussian-time-axioms.log`, and
 `gaussian-time-statements.log`. No original manuscript, existing theorem
 statement, toolchain, or dependency pin changes.
+
+## Complete one-dimensional positive-time entropy dissipation (direct interpolation M3)
+
+`Foundation/GaussianEntropyDissipationProof.lean` proves the actual derivative
+of the **existing centered** entropy trajectory for the **existing**
+variance-one Mehler semigroup. Let `g : ℝ → ℝ` satisfy `ContDiff ℝ 1 g`,
+`0<ε`, `ε≤g(z)≤M`, and `‖deriv g z‖≤B` for every `z`. The final statements,
+for every `t>0`, are:
+
+```text
+hasDerivAt_entropy_dissipation:
+  HasDerivAt (GaussianEntropyDissipation.entropyTrajectory g)
+    (-GaussianFisher.fisherInformation (GaussianMehler.mehler t g)) t
+
+deriv_entropy_dissipation:
+  deriv (GaussianEntropyDissipation.entropyTrajectory g) t
+    = -GaussianFisher.fisherInformation (GaussianMehler.mehler t g)
+```
+
+`GaussianFisher.fisherInformation u` is exactly
+`∫ (deriv u(x))²/u(x) dγ(x)`. `evolved_fisher_integrable` proves that this
+specific integrand is integrable using the proved lower bound and actual
+spatial derivative bound. No mass-one normalization is imposed on `g`.
+There is no factor two, because `γ=gaussianReal 0 1` has variance one.
+
+Proof dependencies and analytic obligations discharged:
+
+1. `mehler_contDiff_one` combines the verified actual spatial derivative
+   commutation with continuity of the Mehler average of `deriv g`.
+   `mehler_bounds` gives `ε≤P_tg≤M`, and `mehler_deriv_bound` gives
+   `‖(P_tg)'‖≤B` for `t≥0`.
+2. `logFactor t g x = 1+log(P_tg(x))` is proved C¹ with actual derivative
+   `(P_tg)'/(P_tg)`. The logarithm's argument is positive, and
+   `logFactor_bound` and `deriv_logFactor_bound` give explicit bounds
+   `1+|log ε|+|log M|` and `B/ε`. These bounds do not assume that one lies
+   between `ε` and `M`.
+3. `timeVelocity` names the concrete formula established by the preceding
+   Mehler time-derivative theorem. Its measurability in `x` is proved by
+   Mathlib's product-parameter integral API. For `s` in the verified
+   neighborhood of `t₀>0`, `timeVelocity_local_bound` proves
+   `‖timeVelocity s g x‖ ≤ B*(|x|+m₁/(b(t₀)/2))`, where
+   `m₁=∫|y|dγ<∞`. The first Gaussian moment makes the outer majorant
+   integrable in `x`.
+4. `hasDerivAt_entropy_raw` applies Mathlib's dominated local
+   differentiation theorem to the *actual* integrand
+   `P_sg(x) log(P_sg(x))`. It proves measurability, base-time
+   integrability, a common positive-time majorant, and the pointwise
+   chain rule throughout the neighborhood before interchanging derivative
+   and outer integral.
+5. `hasDerivAt_entropyTrajectory_raw` uses the already verified Gaussian
+   invariance of the mean on a positive-time neighborhood. It transfers
+   the derivative to the original centered entropy; no globally false
+   negative-time invariance identity is used.
+6. `entropy_pairing_eq_neg_fisher` proves the product integrability needed
+   for both Fubini interchanges by the verified
+   `GaussianRotationStein.rotated_stein_integrable`. It rewrites the time
+   velocity as `(a/b)(-b*x+a*y)` with `b>0`, applies the proved
+   `rotated_stein_identity`, then uses the actual identities
+   `deriv(P_tg)=a P_t(deriv g)` and
+   `deriv(logFactor)=(deriv(P_tg))/(P_tg)` to obtain negative Fisher
+   information. The sign and cancellation of `b` are checked in Lean.
+
+The previously verified `entropyTrajectory_tendsto_zero_time` and
+`entropyTrajectory_tendsto_atTop` supply continuity at zero and convergence
+of centered entropy to zero at infinity. This milestone adds the positive-time
+derivative, **not** a two-sided derivative at zero. It does not prove a
+log-Sobolev inequality, extend the input beyond bounded positive C¹
+functions, or establish an abstract Gamma₂ curvature theorem. Those are
+separate later obligations. The proof uses local Mathlib Gaussian,
+parametric-integral, and product-measure infrastructure; no upstream source
+code was copied into this module.
+
+Verification: full `lake build` passes (3379 jobs). The complete
+transitive `Foundation/AxiomAudit.lean` run contains 808 reports,
+including all 18 new declarations. Each new declaration depends only
+on `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or
+custom mathematical axiom appears. All 18 exact elaborated `#check @...`
+checks pass. The new module has no warnings and contains no `sorry`,
+`admit`, `axiom`, or `unsafe`. Two pre-existing unused-section-variable
+warnings in `Foundation.Adjoint` remain. Ignored transcripts are under
+`.lake/build/` as `gaussian-entropy-dissipation-build.log`,
+`gaussian-entropy-dissipation-axioms.log`, and
+`gaussian-entropy-dissipation-statements.log`. No original manuscript,
+previous theorem statement, dependency pin, or lockfile changes.

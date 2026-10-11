@@ -27,3 +27,4 @@ import Foundation.GaussianEntropyDissipation
 import Foundation.GaussianSteinBounded
 import Foundation.GaussianRotationStein
 import Foundation.GaussianMehlerTimeDerivative
+import Foundation.GaussianEntropyDissipationProof
