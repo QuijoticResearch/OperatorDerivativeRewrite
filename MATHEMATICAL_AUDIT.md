@@ -3669,3 +3669,43 @@ new public declarations have only `propext`, `Classical.choice`, and
 `Quot.sound` in their transitive axiom sets; no `sorryAx` or custom axiom
 is reported. The two pre-existing unused-section-variable warnings in
 `Foundation.Adjoint` remain unrelated to this module.
+
+## M5: compact-support derivative and primitive bridge
+
+`Foundation/GaussianSobolevSmoothApprox.lean` establishes the fixed-cutoff
+hypotheses required before smoothing. For an everywhere differentiable `f`
+with actual derivative `h`, compact support of `f`, and Gaussian integrability
+of `h²`, `compact_derivative_memLp_volume` proves `h ∈ L²(volume)` by
+bounding the support of `deriv f` inside a finite interval and applying the
+verified local Gaussian-to-Lebesgue comparison. No continuity of `h` is used.
+`compact_derivative_integrable_volume` upgrades this to global Lebesgue
+integrability. `compact_derivative_integral_zero` then uses the verified local
+FTC on an interval strictly containing both supports to prove `∫h dx=0`.
+`compact_primitive_representation` supplies a point left of the support
+from which `f(x)=∫_a^x h(y)dy` for every real `x`.
+
+The module applies these results to each `truncated f n` from the previous
+milestone under exactly the original Gaussian square-integrability and
+actual-derivative hypotheses. It proves square integrability of each actual
+cutoff derivative, zero Lebesgue integral, and an exact primitive formula.
+This establishes the compatibility condition for zero-mean derivative
+smoothing. It does **not** assert smooth graph density: the cutoff remains
+only everywhere differentiable, and no smooth approximating derivative,
+fixed-support correction, primitive error bound, or diagonal sequence has
+yet been constructed.
+
+The remaining M5 proof needs (i) smooth Lebesgue-L² approximation of each
+compactly supported derivative with support in a common larger interval,
+(ii) correction by a normalized smooth bump so the derivative approximants
+have integral zero, (iii) quantitative control of both the primitive and
+derivative errors on that interval, (iv) transfer of both estimates to
+Gaussian L², and (v) a diagonal sequence combined with the cutoff limits.
+M6 entropy limits are not begun. No original manuscript or dependency pin
+was modified.
+
+Verification: complete `lake build` succeeds (3391 jobs). The direct
+`Foundation/AxiomAudit.lean` check succeeds with 842 transitive reports.
+All nine new public declarations depend only on `propext`,
+`Classical.choice`, and `Quot.sound`; no `sorryAx` or custom axiom appears.
+The new module has no warnings. The two pre-existing unused-section-variable
+warnings in `Foundation.Adjoint` are unchanged.

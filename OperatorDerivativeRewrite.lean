@@ -31,3 +31,4 @@ import Foundation.GaussianEntropyDissipationProof
 import Foundation.GaussianLogSobolevCore
 import Foundation.GaussianLocalSobolev
 import Foundation.GaussianSobolevCutoffs
+import Foundation.GaussianSobolevSmoothApprox
