@@ -12,6 +12,7 @@ import Foundation.GaussianAdjoints
 import Foundation.GaussianOperator
 import Foundation.Adjoint
 import Foundation.LpProducts
+import Foundation.GaussianEntropy
 import Foundation.OperatorDomains
 import Foundation.MultiplierCore
 
@@ -844,3 +845,13 @@ namespace OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms exists_finiteScalarProjection_approx
 
 end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+
+/-! Finite square entropy: M1, including the integrability majorant and zero cases. -/
+#print axioms OperatorDerivativeRewrite.Foundation.entropySq
+#print axioms OperatorDerivativeRewrite.Foundation.klFun_le_one_add_sq
+#print axioms OperatorDerivativeRewrite.Foundation.integrable_sq_mul_log_of_memLp_four
+#print axioms OperatorDerivativeRewrite.Foundation.entropySq_nonneg_of_memLp_four
+#print axioms OperatorDerivativeRewrite.Foundation.entropySq_congr
+#print axioms OperatorDerivativeRewrite.Foundation.entropySq_zero
+#print axioms OperatorDerivativeRewrite.Foundation.entropySq_const
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianCore.polynomial_sq_mul_log_integrable

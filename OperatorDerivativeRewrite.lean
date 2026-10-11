@@ -1,5 +1,6 @@
 import Foundation.Adjoint
 import Foundation.LpProducts
+import Foundation.GaussianEntropy
 import Foundation.MultiplierCore
 import Foundation.GaussianOperator
 import Foundation.GaussianAdjoints

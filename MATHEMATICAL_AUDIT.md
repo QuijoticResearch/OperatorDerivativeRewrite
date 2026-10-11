@@ -2735,3 +2735,60 @@ queries with 714 results. Each new declaration depends only on a subset of
 axiom. The source scan finds no `axiom`, `sorry`, or `admit` declaration. The
 audit transcript is in the ignored file
 `.lake/build/infinite-gaussian-projection-axioms.log`.
+
+## Gaussian entropy M1: finite square entropy from L4 (2026-10-11)
+
+Implemented `Foundation/GaussianEntropy.lean`, following M1 of
+`BAKRY_EMERY_REPLACEMENT_PLAN.md`. The module defines, for real functions,
+
+    entropySq μ f = ∫ f² log(f²) dμ − (∫ f² dμ) log(∫ f² dμ).
+
+The definition uses Mathlib's `0 * log 0 = 0` convention. As with any real
+Bochner integral, the definition alone does not assert finiteness. The new
+integrability theorem supplies that analytic justification.
+
+The three required, Lean-verified statements are:
+
+- `OperatorDerivativeRewrite.Foundation.integrable_sq_mul_log_of_memLp_four`:
+  for any measurable space, finite measure μ, and real function f with
+  `MemLp f 4 μ`, the function `ω ↦ (f ω)^2 * Real.log ((f ω)^2)` is integrable.
+- `OperatorDerivativeRewrite.Foundation.entropySq_nonneg_of_memLp_four`:
+  for a probability measure μ and `MemLp f 4 μ`, `0 ≤ entropySq μ f`.
+- `OperatorDerivativeRewrite.Foundation.GaussianCore.polynomial_sq_mul_log_integrable`:
+  for every real polynomial p, `x ↦ (p.eval x)^2 * Real.log ((p.eval x)^2)`
+  is integrable under the existing standard Gaussian measure `GaussianCore.γ`.
+
+No entropy-integrability assumption or positivity assumption on f is added.
+The proofs also apply to functions vanishing on positive-measure sets and to
+the zero polynomial.
+
+The integrability proof uses Mathlib's nonnegative
+`InformationTheory.klFun r = r * Real.log r + 1 - r`.
+The new `klFun_le_one_add_sq` proves `klFun r ≤ 1 + r²` for r ≥ 0, with a
+separate zero case and the genuine estimate `log r ≤ r - 1` for positive r.
+Existing Hölder (`mul_L4_memLp_two`) gives f² in L² and hence f⁴ integrable;
+finite-measure exponent comparison gives f² integrable. These facts provide
+an integrable majorant for `klFun (f²)`. Subtracting 1 and adding f² proves
+integrability of f² log(f²). Jensen's theorem `ConvexOn.map_integral_le`,
+using `Real.convexOn_mul_log`, then proves nonnegative square entropy.
+
+Supporting declarations are `entropySq_congr` (a.e. invariance),
+`entropySq_zero` (zero entropy for zero under any measure), and
+`entropySq_const` (zero entropy for every constant on a probability space).
+Together with the definition, the majorant, and the three required results,
+all eight declarations are queried in `Foundation/AxiomAudit.lean`.
+The module is imported by `OperatorDerivativeRewrite.lean`.
+
+Verification: targeted Lean checking of the new module passed with no errors
+or warnings. The complete `lake build` passed (3372 jobs). Fresh execution of
+`lake env lean Foundation/AxiomAudit.lean` passed with 722 reports covering
+721 distinct declarations. Each of the eight new declarations reports exactly
+`{propext, Classical.choice, Quot.sound}`; the complete audit has the same
+union. There is no `sorryAx`, custom axiom, or unchecked proof step.
+Elaborated `#check @...` statements confirm the hypotheses recorded above.
+
+M1 is complete. This milestone does not establish log-Sobolev, Fisher decay,
+a semigroup, or finiteness for every L² function. The original Gaussian
+log-Sobolev axiom has not been replaced. Later milestones in the plan remain
+open. No external dependency, original manuscript change, or alteration of
+an existing theorem statement is part of this milestone.
