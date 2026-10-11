@@ -2792,3 +2792,116 @@ a semigroup, or finiteness for every L² function. The original Gaussian
 log-Sobolev axiom has not been replaced. Later milestones in the plan remain
 open. No external dependency, original manuscript change, or alteration of
 an existing theorem statement is part of this milestone.
+
+## Gaussian Mehler M2a: concrete one-dimensional OU kernels (2026-10-11)
+
+Starting verified commit: `62546acb0d3f81a49d5b09613b32e1fcf39f6bf6`.
+Implemented `Foundation/GaussianMehler.lean`, namespace
+`OperatorDerivativeRewrite.Foundation.GaussianMehler`.
+
+### Scope and exact statements
+
+The measure `γ` is the existing `GaussianCore.γ = gaussianReal 0 1`,
+with variance one. The actual definition is
+
+```lean
+mehler (t : ℝ) (f : ℝ → ℝ) (x : ℝ) :=
+  ∫ y, f (Real.exp (-t) * x + Real.sqrt (1 - Real.exp (-2 * t)) * y) ∂γ
+```
+
+The useful analytic class is specified by `hf : Continuous f` and a real
+bound `hM : ∀ z, ‖f z‖ ≤ M`. No smoothness or prescribed derivative is
+required. A second function g has the analogous continuity and bound
+hypotheses where needed. The mathematical statements of the declarations are:
+
+- `one_sub_exp_nonneg (t) (ht : 0 ≤ t)`: `0 ≤ 1 - exp(-2*t)`.
+- `integrable_comp_of_bounded`: for any finite measure μ, measurable real
+  f bounded in norm, and measurable g into ℝ, `f ∘ g` is μ-integrable.
+  This is an integrability conclusion, not an assumed integrability field.
+- `kernel_integrable hf hM t x`: the actual Mehler integrand is γ-integrable.
+- `mehler_zero (f)`: `mehler 0 f = f`. No regularity is needed here:
+  at zero time the integrand is genuinely constant in y.
+- `mehler_const (t c)`: `mehler t (fun _ => c) = fun _ => c`.
+- `mehler_mono hf hg hM hN hfg t x`: from `∀ z, f z ≤ g z`,
+  `mehler t f x ≤ mehler t g x`, with both integrands proved integrable.
+- `mehler_nonneg hf hM hpos t x`: from `∀ z, 0 ≤ f z`,
+  `0 ≤ mehler t f x`.
+- `mehler_pos hf hM hpos t x`: from `∀ z, 0 < f z`,
+  `0 < mehler t f x`; full support of the positive integrand and γ(ℝ)=1
+  give strict positivity. There is no assumed uniform positive lower bound.
+- `mehler_norm_le hM t x`: `‖mehler t f x‖ ≤ M`.
+- `mehler_continuous hf hM t`: `Continuous (mehler t f)`.
+- `mehler_integrable hf hM t`: `Integrable (mehler t f) γ`.
+- `gaussian_combination_map (a b)`: the map `(x,y) ↦ a*x+b*y` sends
+  γ×γ to `gaussianReal 0 (a²+b²)`, with nonnegative variance represented
+  explicitly in ℝ≥0. This includes degenerate choices of a and b.
+- `kernel_map (t) (ht : 0 ≤ t)`: the Mehler mixing map sends γ×γ to γ.
+- `integral_mehler hf hM t ht`: `∫ x, mehler t f x ∂γ = ∫ x, f x ∂γ`.
+- `mehler_compose s t hs ht hf hM`: for `0 ≤ s` and `0 ≤ t`,
+  `mehler (s+t) f = mehler s (mehler t f)` as functions on ℝ.
+- `mehler_tendsto_mean hf hM x`:
+  `Tendsto (fun t => mehler t f x) atTop (𝓝 (∫ y, f y ∂γ))`.
+
+The normalization is exp(-t), variance `1-exp(-2*t)`, and invariant standard
+Gaussian variance one. Composition and invariance explicitly require
+nonnegative times. Some elementary boundedness/continuity statements are
+valid for every real time, but no negative-time OU semigroup is asserted.
+
+### Proof dependencies and source compatibility
+
+The pinned upstream implementation was inspected before the port:
+[markov-semigroups, Euclidean.lean at acf6491](https://github.com/mrdouglasny/markov-semigroups/blob/acf649108ea2222f4a8544a2782f448cb502492a/MarkovSemigroups/Instances/WorkInProgress/Euclidean.lean).
+Its concrete namespace is `Gaussian1D` (rather than a standalone Gaussian1D
+file). Reused source arguments are `ouSemigroup`, `ou_kernel_map`,
+`ouSemigroup_compose`, value boundedness, and the pointwise dominated
+convergence step inside `ouSemigroup_ergodic`. The upstream `IsCore` smoothness
+conditions are not used: these particular arguments need only bounded
+continuity. The composition proof is a source-level port with attribution.
+The file retains Michael R. Douglas's copyright notice; the applicable Apache
+2.0 license is included at `LICENSES/Apache-2.0.txt`.
+
+Upstream pins Lean v4.30.0. The port is verified against our unchanged
+Lean v4.34.1 and Mathlib lock
+`d13f23b723b8a846827a245b89c10fc7d3f11612`. A concrete API migration was needed:
+`gaussianReal_add_gaussianReal_of_indepFun` now takes `HasLaw` arguments,
+where the pinned upstream proof passed their `.map_eq` equalities. Variance
+constructor coercions were checked explicitly. No upstream abstract
+semigroup classes, axioms, package dependencies, or derivative results are
+imported. This verifies the local port, not the whole upstream repository.
+
+Mathlib supplies `gaussianReal_const_mul`,
+`gaussianReal_add_gaussianReal_of_indepFun`, `indepFun_prod`, `integral_map`,
+`integral_prod`, bounded integral estimates, and
+`tendsto_integral_filter_of_dominated_convergence`.
+Constant domination proves each kernel and product integrand integrable.
+Invariance follows from the Gaussian mixing law and Fubini. Composition
+compares the laws of `exp(-t)*sqrt(1-exp(-2*s))*Y + sqrt(1-exp(-2*t))*Z`
+and `sqrt(1-exp(-2*(s+t)))*Y`; their variances coincide. Continuity and the
+pointwise limit follow from dominated convergence with majorant M.
+
+### Verification and remaining obligations
+
+All seven requested M2a targets are established on the stated bounded
+continuous class. All 18 declarations in this module, including the measure
+abbreviation and kernel definition, have transitive `#print axioms` queries
+in `Foundation/AxiomAudit.lean`. The root module imports the new module.
+Final verification: the complete `lake build` passed (3373 jobs), with no
+warnings from the new module. The pre-existing `Foundation.Adjoint` unused
+section-variable warnings remain. Fresh `lake env lean Foundation/AxiomAudit.lean`
+passed with 740 reports for 739 distinct declarations. Every new declaration
+reports exactly `{propext, Classical.choice, Quot.sound}`; the complete audit
+has the same union, with no `sorryAx` or custom axiom. Fresh elaborated
+`#check @...` queries for all 18 declarations also passed. The ignored
+transcripts are `.lake/build/gaussian-mehler-axioms.log` and
+`.lake/build/gaussian-mehler-statements.log`. A source scan found no axioms,
+`unsafe`, `sorry`, or `admit` in the new module. Original source SHA256 hashes
+match the previous milestone, and the dependency configuration and lockfile
+have no diff.
+
+M2a does not assert an L²-class extension or strong continuity in L².
+M2b (actual spatial differentiation and weighted Fisher-information decay),
+M3 (entropy dissipation), and M4 (Gaussian log-Sobolev) remain unimplemented.
+The legacy log-Sobolev axiom is not discharged by these kernel properties.
+No assertion of a general abstract curvature-dimension theorem follows.
+The original manuscripts, existing theorem statements, dependency lockfile,
+and the two pre-existing untracked audit/plan documents are preserved.

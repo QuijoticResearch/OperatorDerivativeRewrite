@@ -1,3 +1,4 @@
+import Foundation.GaussianMehler
 import Foundation.InfiniteGaussianCoordinateFields
 import Foundation.InfiniteGaussianProjectionConvergence
 import Foundation.InfiniteGaussianOperators
@@ -855,3 +856,23 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.entropySq_zero
 #print axioms OperatorDerivativeRewrite.Foundation.entropySq_const
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianCore.polynomial_sq_mul_log_integrable
+
+/-! Concrete Gaussian Mehler kernels: M2a. -/
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehler.γ
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehler.mehler
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehler.one_sub_exp_nonneg
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehler.integrable_comp_of_bounded
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehler.kernel_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehler.mehler_zero
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehler.mehler_const
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehler.mehler_mono
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehler.mehler_nonneg
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehler.mehler_norm_le
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehler.mehler_continuous
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehler.mehler_tendsto_mean
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehler.gaussian_combination_map
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehler.kernel_map
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehler.integral_mehler
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehler.mehler_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehler.mehler_compose
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehler.mehler_pos

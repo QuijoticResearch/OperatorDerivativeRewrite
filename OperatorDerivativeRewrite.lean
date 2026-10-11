@@ -18,3 +18,5 @@ import Foundation.InfiniteGaussianOperators
 import Foundation.InfiniteGaussianFiniteSectors
 import Foundation.InfiniteGaussianCoordinateFields
 import Foundation.InfiniteGaussianProjectionConvergence
+
+import Foundation.GaussianMehler
