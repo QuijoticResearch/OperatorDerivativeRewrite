@@ -1,3 +1,4 @@
+import Foundation.GaussianRotationStein
 import Foundation.GaussianSteinBounded
 import Foundation.GaussianEntropyDissipation
 import Foundation.GaussianFisherDecay
@@ -917,3 +918,10 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianSteinBounded.density_product_hasDerivAt
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianSteinBounded.density_product_tendsto_zero
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianSteinBounded.stein_identity
+
+/-! Static Gaussian rotation, product integrability, and rotated bounded C¹ Stein. -/
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianRotationStein.γ
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianRotationStein.gaussian_rotation_map
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianRotationStein.product_abs_coordinates_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianRotationStein.rotated_stein_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianRotationStein.rotated_stein_identity

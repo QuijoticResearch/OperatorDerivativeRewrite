@@ -3334,3 +3334,64 @@ verified. No complete entropy differentiation argument was begun here. The
 next independently verifiable analytic milestone is positive-time spatial
 second-derivative regularity/bounds for the existing Mehler kernel; arbitrary
 supplied derivative candidates must not replace actual derivatives.
+
+## Static Gaussian rotation and bounded C¹ Stein pairing (direct interpolation B1)
+
+The preceding paragraph records the earlier generator-route recommendation; the direct interpolation route is now selected for M3.
+
+`Foundation/GaussianRotationStein.lean` implements only the first static milestone of
+`M3_ENTROPY_DISSIPATION_STRATEGY.md`. It reuses the existing variance-one
+`GaussianCore.γ` and the verified bounded C¹ `GaussianSteinBounded.stein_identity`.
+No time or entropy derivative is asserted here.
+
+* `gaussian_rotation_map`: for **any real** `a,b` satisfying `a²+b²=1`, the
+  map `(x,y) ↦ (a*x+b*y, -b*x+a*y)` preserves `γ.prod γ`. The sign of `b`
+  is handled by choosing `arccos a` or its negative. The result is a direct
+  specialization of Mathlib's `IsGaussian.map_rotation_eq_self`, with
+  centeredness and exact coordinate formulas proved.
+* `product_abs_coordinates_integrable`: both absolute coordinate functions
+  have finite `γ.prod γ` integrals. This follows from Mathlib's Gaussian
+  first `Lp` moment, not from totalized integral algebra.
+* `rotated_stein_integrable`: for bounded measurable `k`, bounded C¹ `ψ`
+  whose **actual derivative** is bounded, all four product integrands in
+  the original and rotated Stein pairings are integrable. The unbounded
+  factor is at most linear in one or both Gaussian coordinates; explicit
+  absolute-coordinate majorants establish finiteness.
+* `rotated_stein_identity`: under the same bounds and `a²+b²=1`,
+
+  ```text
+  ∫ ψ(x) k(a*x+b*y) (-b*x+a*y) d(γ⊗γ)
+    = -b ∫ ψ'(x) k(a*x+b*y) d(γ⊗γ).
+  ```
+
+  This remains valid for negative `b` and at `b=0`; no division by `b`
+  occurs. Rotate to `(z,v)`, use the inverse `x=a*z-b*v`, apply the verified
+  one-dimensional Stein theorem to `v ↦ ψ(a*z-b*v)`, multiply by `k(z)`,
+  use product Fubini, and rotate back. `k` is never differentiated.
+
+This identity supplies the fixed-time integration-by-parts step of direct
+Gaussian interpolation. It does **not** imply entropy dissipation alone. The
+remaining M3 obligations are the actual positive-time derivative of the
+existing Mehler kernel, a common local integrable dominator for its
+parameter derivative, positive-time C¹/log-factor packaging, outer entropy
+differentiation under the Gaussian integral, and identification of the
+result with negative Fisher information. The proved zero-time continuity is
+separate from positive-time differentiation. Neither log-Sobolev nor any
+abstract Bakry–Émery criterion is claimed.
+
+The new proof uses pinned Mathlib's Gaussian rotation invariance and first
+Gaussian moment, plus the project's already attributed bounded Stein theorem.
+It adapts no code from the upstream `markov-semigroups` repository; the
+existing local Apache-2.0 attribution for the Stein foundation remains.
+
+Verification: full `lake build` passes (3377 jobs). The complete transitive
+`Foundation/AxiomAudit.lean` run has 777 reports, including `#print axioms`
+for all five new declarations. Each of those five depends only on
+`propext`, `Classical.choice`, and `Quot.sound`; the complete transcript
+contains no `sorryAx` or custom axiom. Exact elaborated `#check @...`
+checks for all five pass. The new module contains no `sorry`, `admit`,
+`axiom`, or `unsafe`. Its compile has no warnings; the two pre-existing
+unused-section-variable warnings in `Foundation.Adjoint` remain. The
+corresponding ignored logs are `gaussian-rotation-build.log`,
+`gaussian-rotation-axioms.log`, and `gaussian-rotation-statements.log`
+under `.lake/build`.
