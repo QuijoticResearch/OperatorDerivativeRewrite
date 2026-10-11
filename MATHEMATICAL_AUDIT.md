@@ -3880,3 +3880,36 @@ coordinate evaluation, closedness, and core inclusion were checked with Lean.
 The only warnings are the two pre-existing unused section variables in
 `Foundation.Adjoint`. This is a verified partial P2 milestone, not the
 weighted-domain characterization or graph-core theorem.
+## P2: exact weighted domains of the closed maximal Poisson operators
+
+`Foundation/PoissonWeightedDomains.lean` proves that Poisson L² membership is
+exactly summability of the genuine Poisson masses times the actual squared
+function values. The positive rate-scaled field measure has the same
+summability test. The Poisson mass recurrence and a nonzero-rate series
+scaling prove `summable_shift_sq_iff_moment` and
+`summable_backward_sq_iff_moment`, including the `n=0` boundary. These are
+series equivalences, not definitions of operator domains.
+
+The exact domain theorems are:
+
+- `mem_maximalDifference_domain_iff_moment`: for every scalar class `f`,
+  membership in `maximalDifference.domain` is equivalent to summability of
+  `n * poissonWeight rate n * (f n)^2`.
+- `mem_maximalDivergence_domain_iff_moment`: for every weighted-field class
+  `u`, membership in `maximalDivergence.domain` is equivalent to summability
+  of `(n+1) * poissonWeight rate n * (u n)^2`.
+
+Both proofs first establish that the actual pointwise operator expression has
+an L² realization; positive singleton masses then identify that realization
+at every count. The diagonal terms are L² because the input already belongs
+to its ambient Hilbert space. Closedness was independently proved in the
+preceding P2 submilestone by coordinate-evaluation continuity. No adjoint
+identity or graph-core density is assumed. P3 finite-support graph
+approximation and P4 exact mutual adjoints remain separate obligations.
+P2 verification: complete `lake build` succeeds (4010 jobs), and direct
+`lake env lean Foundation/AxiomAudit.lean` succeeds. All 13 new
+`PoissonWeightedDomains` declarations and the new weighted almost-everywhere
+pointwise lemma depend transitively only on `propext`, `Classical.choice`, and
+`Quot.sound`; no `sorryAx` or custom axiom appears. The exact two maximal-domain
+iff statements and both Poisson reindexing equivalences were checked with
+Lean. The two old `Foundation.Adjoint` warnings remain the only build warnings.

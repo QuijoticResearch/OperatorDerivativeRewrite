@@ -100,4 +100,11 @@ theorem fieldFinsupp_apply (hr : 0 < rate) (u : ℕ →₀ ℝ) (n : ℕ) :
   exact ae_eq_implies_pointwise rate hr
     ((Measure.ae_ennreal_smul_measure_iff hr0).mp (fieldFinsupp_coeFn rate u)) n
 
+/-- Equality almost everywhere for the positive-rate weighted law is equality at every count. -/
+theorem weighted_ae_eq_implies_pointwise (hr : 0 < rate) {f g : ℕ → ℝ}
+    (h : f =ᵐ[(rate : ℝ≥0∞) • poissonLaw rate] g) (n : ℕ) : f n = g n := by
+  have hr0 : (rate : ℝ≥0∞) ≠ 0 := by exact_mod_cast (ne_of_gt hr)
+  exact ae_eq_implies_pointwise rate hr
+    ((Measure.ae_ennreal_smul_measure_iff hr0).mp h) n
+
 end OperatorDerivativeRewrite.Foundation.PoissonCoordinateEvaluation
