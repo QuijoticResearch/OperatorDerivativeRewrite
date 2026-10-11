@@ -3584,3 +3584,52 @@ Lean module has no warnings, `sorry`, `admit`, `axiom`, or `unsafe`.
 The two pre-existing unused-section-variable warnings in
 `Foundation.Adjoint` remain. No previous Lean theorem statement, original
 manuscript, dependency pin, or lockfile was changed.
+
+## M5a: local Gaussian Sobolev bridge
+
+`Foundation/GaussianLocalSobolev.lean` establishes the first M5 prerequisite
+without a graph-density or entropy hypothesis. Its measure comparison says
+that for every real `a,b` there is a finite positive `C` such that
+
+`volume.restrict (Set.Icc a b) ≤ C • GaussianCore.γ`.
+
+The Gaussian density is continuous and strictly positive. Mathlib's compact
+minimum theorem supplies a positive lower bound on `Icc a b`; it also handles
+`b < a`, when that interval is empty and its restricted measure is zero.
+The identity of the Gaussian measure with Lebesgue measure weighted by its
+actual density, `withDensity_mono`, and restriction/scaling yield the displayed
+measure comparison. `MemLp.of_measure_le_smul` then proves local Lebesgue
+`L²` membership for any Gaussian `L²` function, with no extra measurability
+assumption beyond `MemLp`.
+
+For ordinary functions `f,h : ℝ → ℝ`, assume only
+`∀ x, HasDerivAt f (h x) x` and
+`Integrable (fun x => (h x)^2) GaussianCore.γ`.
+`derivative_eq_deriv` identifies `h` pointwise with Mathlib's `deriv f`;
+`measurable_deriv` supplies measurability. `memLp_two_iff_integrable_sq`
+and the local measure comparison give local Lebesgue `L²`, hence local `L¹`.
+`intervalIntegrable_derivative_of_gaussian_sq_integrable` proves
+`IntervalIntegrable h volume a b` for arbitrary endpoint order. Finally,
+`integral_derivative_eq_sub_of_gaussian_sq_integrable` applies Mathlib's
+`intervalIntegral.integral_eq_sub_of_hasDerivAt` to conclude
+`∫ x in a..b, h x = f b - f a`. No continuity of `h`, assumed absolute
+continuity of `f`, or independently supplied local Lebesgue integrability is
+used. No Gaussian log-Sobolev result is imported by this module.
+
+This milestone proves a local FTC bridge, **not** the full weighted Sobolev
+approximation from M5 and not the full-domain Gaussian LSI of M6. Remaining
+M5 work: construct smooth cutoffs with simultaneous Gaussian `L²` control
+of values and actual derivatives; smooth the compactly supported results
+with both errors controlled; and prove a diagonal graph approximation.
+Ambient `L²` density alone cannot discharge these obligations.
+
+Verification: full `lake build` passes (3381 jobs). The six new public
+declarations have exact elaborated `#check @...` probes in
+`.lake/build/gaussian-local-sobolev-statements.log`. The complete
+`Foundation/AxiomAudit.lean` run reports 821 declarations; each new
+public declaration depends transitively only on `propext`,
+`Classical.choice`, and `Quot.sound`, with zero `sorryAx` or custom axioms.
+The module compiles without warnings. The two pre-existing unused-section-
+variable warnings in `Foundation.Adjoint` remain. The build and axiom logs
+are under `.lake/build/gaussian-local-sobolev-*.log`. No original source,
+previous verified theorem statement, dependency pin, or lockfile changed.

@@ -1,3 +1,4 @@
+import Foundation.GaussianLocalSobolev
 import Foundation.GaussianLogSobolevCore
 import Foundation.GaussianEntropyDissipationProof
 import Foundation.GaussianMehlerTimeDerivative
@@ -971,3 +972,11 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianLogSobolevCore.regularized_entropy_tendsto
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianLogSobolevCore.core_sq_mul_log_integrable
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianLogSobolevCore.gaussian_logSobolev_core
+
+/-! M5 local Gaussian-to-Lebesgue Sobolev bridge. -/
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianLocalSobolev.γ
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianLocalSobolev.exists_local_measure_comparison
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianLocalSobolev.memLp_two_volume_restrict_Icc_of_memLp_gaussian
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianLocalSobolev.derivative_eq_deriv
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianLocalSobolev.intervalIntegrable_derivative_of_gaussian_sq_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianLocalSobolev.integral_derivative_eq_sub_of_gaussian_sq_integrable
