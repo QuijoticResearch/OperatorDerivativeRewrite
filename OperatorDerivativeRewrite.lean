@@ -23,3 +23,5 @@ import Foundation.GaussianMehler
 import Foundation.GaussianFisherDecay
 
 import Foundation.GaussianEntropyDissipation
+
+import Foundation.GaussianSteinBounded

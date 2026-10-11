@@ -3206,3 +3206,131 @@ Original Lean and TeX manuscript hashes match the previous verified milestone.
 The toolchain, dependency lockfile, and previous theorem statements are
 unchanged. The pre-existing untracked replacement plan and independent
 operator audit remain preserved and are not included in this commit.
+## Bounded C¹ Gaussian Stein identity: completed M3 integration-by-parts prerequisite
+
+Starting commit: `c1dad1d0d549dc3c770dc5ec451b4c5f33295480`.
+New module: `Foundation/GaussianSteinBounded.lean`.
+Namespace: `OperatorDerivativeRewrite.Foundation.GaussianSteinBounded`.
+The measure is the existing `GaussianCore.γ = gaussianReal 0 1`; the module
+introduces no new Gaussian measure, operator, semigroup, or derivative data.
+
+### Exact verified identity and hypotheses
+
+```lean
+theorem stein_identity {h : ℝ → ℝ} (hc : ContDiff ℝ 1 h)
+    {A B : ℝ} (hb : ∀ x, |h x| ≤ A)
+    (hdb : ∀ x, |deriv h x| ≤ B) :
+    (∫ x, deriv h x ∂GaussianCore.γ) =
+      ∫ x, x * h x ∂GaussianCore.γ
+```
+
+The derivative is Mathlib's actual `deriv h`. `ContDiff ℝ 1 h` gives
+continuous differentiability, including continuity/measurability of the
+actual derivative. The two uniform bounds can be different. No positivity,
+positive lower bound, compact support, second derivative, entropy assumption,
+Stein assumption, approximation hypothesis, or semigroup field is used.
+Neither bound constant needs a separately supplied nonnegativity proof:
+the corresponding pointwise bound already implies nonnegativity by evaluation
+at zero. There are no additional implicit analytic assumptions.
+
+### Supporting theorem statements
+
+Write `γ = GaussianCore.γ` and `ρ x = gaussianPDFReal 0 1 x` below. Bare
+`Integrable` in the weighted statements is with respect to Lebesgue volume.
+
+| Theorem | Hypotheses | Exact conclusion |
+|---|---|---|
+| `integrable_of_bounded` | `Measurable h`, `∀ x, |h x| ≤ A` | `Integrable h γ` |
+| `integrable_coordinate_mul_of_bounded` | same measurable bound | `Integrable (fun x => x * h x) γ` |
+| `stein_integrable` | the main theorem's C¹ and two bounds | `Integrable h γ ∧ Integrable (deriv h) γ ∧ Integrable (fun x => x * h x) γ` |
+| `density_products_integrable` | the main theorem's hypotheses | `Integrable (fun x => h x * ρ x) ∧ Integrable (fun x => deriv h x * ρ x) ∧ Integrable (fun x => h x * (-x * ρ x))` |
+| `density_product_hasDerivAt` | `ContDiff ℝ 1 h`, any `x : ℝ` | `HasDerivAt (fun y => h y * ρ y) (deriv h x * ρ x + h x * (-x * ρ x)) x` |
+| `density_product_tendsto_zero` | the main theorem's hypotheses | `Tendsto (fun x => h x * ρ x) atBot (𝓝 0) ∧ Tendsto (fun x => h x * ρ x) atTop (𝓝 0)` |
+
+Thus every Gaussian integral in the identity is separately proved integrable;
+the identity is not an equality produced merely by totalizing nonintegrable
+real integrals. The intermediate Lebesgue integrals are also proved integrable.
+Both boundary terms are proved to vanish; no tail limit is an assumption.
+
+### Proof architecture and reuse
+
+1. Bounded measurable functions are integrable under the Gaussian probability
+   measure by `Integrable.mono'` and the integrable constant bound.
+2. Mathlib `ProbabilityTheory.memLp_id_gaussianReal` at exponent one yields
+   Gaussian integrability of the coordinate. Its absolute value times A
+   dominates `|x * h x|`, giving coordinate-product integrability.
+3. Existing local `GaussianCore.integrable_density_mul` transfers each
+   Gaussian integrability result to integration against the real PDF under
+   Lebesgue measure. Algebraic rearrangement gives both product-rule terms.
+4. Existing local `GaussianCore.density_hasDerivAt` proves the actual density
+   derivative `ρ' x = -x * ρ x`; Mathlib's actual product rule supplies the
+   derivative of `h * ρ`. The sum of the two integrable pieces is integrable.
+5. Mathlib `tendsto_zero_of_hasDerivAt_of_integrableOn_Iic` and
+   `tendsto_zero_of_hasDerivAt_of_integrableOn_Ioi` establish zero limits at
+   the two infinities from the genuine derivative and weighted-function
+   integrability. These theorems prove the boundary estimates internally;
+   they are not boundary conditions imposed on h.
+6. `integral_mul_deriv_eq_deriv_mul` gives whole-line integration by parts
+   with those verified limits and integrable terms. Conversion via
+   `integral_gaussianReal_eq_integral_smul` then gives Stein's identity with
+   the exact sign and standard variance-one normalization.
+
+The proof generalizes the existing local polynomial proof's infrastructure,
+without using polynomial approximation. It has no approximation or derivative
+convergence gap.
+
+Inspected the concrete pinned upstream source:
+[EuclideanStein.lean, Gaussian1D.stein_identity_standard, line 165](https://github.com/mrdouglasny/markov-semigroups/blob/acf649108ea2222f4a8544a2782f448cb502492a/MarkovSemigroups/Instances/WorkInProgress/EuclideanStein.lean#L165),
+commit `acf649108ea2222f4a8544a2782f448cb502492a`. Its PDF derivative, PDF tail
+limits, weighted integrability helpers, and Stein proof were read. The local
+proof reuses the already verified density derivative and Mathlib boundary
+infrastructure instead of duplicating its exponential-tail lemmas and its
+whole-line FTC assembly. The upstream uses one shared bound M; the local
+theorem permits separate A and B. Attribution to Michael R. Douglas and
+contributors and the Apache-2.0 notice are retained in the new module;
+`LICENSES/Apache-2.0.txt` remains applicable. No upstream abstract framework
+or new dependency is introduced.
+
+### Verification and remaining M3 obligations
+
+The module is added to the root project imports and `Foundation/AxiomAudit.lean`.
+Complete `lake build` passes (3376 jobs); the new module has no warnings.
+Pre-existing unused section-variable warnings in `Foundation.Adjoint` remain.
+The transitive axiom audit passes: 772 reports for 771 distinct declarations.
+Every one of the seven new theorems, and the complete audit's union, uses only
+`propext`, `Classical.choice`, and `Quot.sound`. There is no `sorryAx` or custom
+mathematical axiom. Exact elaborated `#check @...` checks for all seven new
+theorems pass. A source scan finds no `axiom`, `unsafe`, `sorry`, or `admit` in
+the new module. Ignored transcripts:
+
+- `.lake/build/gaussian-stein-build.log`
+- `.lake/build/gaussian-stein-axioms.log`
+- `.lake/build/gaussian-stein-statements.log`
+
+Original manuscript SHA-256 hashes match the preceding milestone; toolchain,
+Mathlib lockfile, dependency configuration, and all earlier verified theorem
+statements remain unchanged. The two pre-existing untracked Markdown documents
+are preserved and excluded from this commit.
+
+This completes the bounded C¹ Stein prerequisite identified in the previous
+milestone. It does not prove entropy dissipation, generator/time commutation,
+log-Sobolev, or an abstract Bakry–Émery criterion. Remaining M3 obligations are:
+
+1. Positive-time C² smoothing of the actual Mehler evolution from bounded C¹
+   input, with actual second-derivative bounds on compact positive-time intervals.
+2. Time differentiation of the actual Mehler kernel under its inner integral,
+   with local positive-time domination; derive the generator formula
+   `∂t P_t g = (P_t g)'' - x (P_t g)'` using the proved Stein identity.
+3. Outer entropy differentiation with an integrable local time dominator;
+   justify all logarithms and reciprocal denominators using M2b's proved
+   positive lower-bound preservation.
+4. Establish the weighted bilinear IBP needed for the evolved logarithm, using
+   actual derivatives and the newly proved Stein identity only after proving
+   its application hypotheses. Assemble
+   `HasDerivAt (entropyTrajectory g) (-fisherInformation (P_t g)) t` for `t > 0`.
+
+Continuity and the ergodic entropy limit from the preceding milestone remain
+verified. No complete entropy differentiation argument was begun here. The
+next independently verifiable analytic milestone is positive-time spatial
+second-derivative regularity/bounds for the existing Mehler kernel; arbitrary
+supplied derivative candidates must not replace actual derivatives.

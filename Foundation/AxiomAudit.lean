@@ -1,3 +1,4 @@
+import Foundation.GaussianSteinBounded
 import Foundation.GaussianEntropyDissipation
 import Foundation.GaussianFisherDecay
 import Foundation.GaussianMehler
@@ -907,3 +908,12 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianEntropyDissipation.entropyTrajectory_tendsto_zero_time
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianEntropyDissipation.entropyTrajectory_eq_invariant_mean
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianEntropyDissipation.entropyTrajectory_tendsto_atTop
+
+/-! Bounded C¹ Gaussian Stein identity and its integrability/boundary proofs. -/
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSteinBounded.integrable_of_bounded
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSteinBounded.integrable_coordinate_mul_of_bounded
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSteinBounded.stein_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSteinBounded.density_products_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSteinBounded.density_product_hasDerivAt
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSteinBounded.density_product_tendsto_zero
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSteinBounded.stein_identity
