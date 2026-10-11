@@ -3817,3 +3817,36 @@ declarations have transitive axiom dependencies among exactly `propext`,
 The new module emits no warnings. The two existing unused-section-variable
 warnings in `Foundation.Adjoint` remain unchanged. The original manuscripts
 and dependency pins were not modified.
+## P1: genuine Poisson Hilbert core operators
+
+`Foundation/PoissonDifferenceOperators.lean` uses the actual scalar Hilbert space
+`Lp ℝ 2 (poissonLaw rate)` and field Hilbert space
+`Lp ℝ 2 ((rate : ℝ≥0∞) • poissonLaw rate)`, with `0 < rate` for
+injectivity and dense operator domains. Finite-support functions are embedded
+as L² equivalence classes by `scalarEmbedding` and `fieldEmbedding`; positivity
+of every Poisson singleton mass proves both embeddings injective. Pairing with
+coordinate indicators extracts each L² representative at its atom, which
+proves that both finite-support ranges are dense. This is ambient L² density,
+not graph-norm density.
+
+`differenceGraph` and `divergenceGraph` are the ranges of the actual
+finite-support linear maps. `coreDifference` and `coreDivergence` are their
+single-valued `LinearPMap`s. `coreDifference_finsupp_apply` and
+`coreDivergence_finsupp_apply` identify their values with `f(n+1)-f(n)` and
+`n u(n-1)-rate*u(n)`, including the zero boundary. The scalar and field
+inner-product lemmas prove the latter carries the rate factor. Consequently
+`coreDifference_formalAdjoint` is the P0 integration-by-parts identity in the
+genuine Hilbert spaces. `coreDifference_le_divergence_adjoint` and
+`coreDivergence_le_difference_adjoint` give operator inclusions, while
+`coreDifference_isClosable` and `coreDivergence_isClosable` follow from these
+inclusions and dense domains.
+
+No maximal weighted domain, closed-operator equality, graph-core density, or
+mutual-adjoint equality is claimed at P1. Those are the separate P2–P4 tasks.
+P1 verification: complete `lake build` succeeds (4007 jobs). Direct
+`lake env lean Foundation/AxiomAudit.lean` succeeds. Every new P1 declaration
+has transitive axioms contained in `propext`, `Classical.choice`, and
+`Quot.sound`; none uses `sorryAx` or a custom axiom. Exact elaborated types
+of the formal-adjoint, dense-domain, and closability theorems were inspected
+with Lean. Only the two pre-existing unused-section-variable warnings in
+`Foundation.Adjoint` remain. P2 weighted maximal domains are next.
