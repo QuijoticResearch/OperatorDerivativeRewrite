@@ -2460,3 +2460,153 @@ documentation are included. This section supersedes the preceding milestone's
 open IBP, vector density, closability, and natural closed-operator/adjoint
 construction obligations, while preserving the explicit unresolved graph-core
 and full-domain identification obligations above.
+
+## Finite-coordinate divergence graph approximation (continuing 65a6afbf)
+
+### Outcome and scope
+
+This milestone proves that every maximal divergence graph on a finite set of
+independent Gaussian coordinates embeds in the graph closure of the genuine
+infinite-dimensional polynomial divergence. Its total-degree Hermite
+approximations converge in the actual infinite-space divergence graph norm,
+preserving cancellations. It also proves the operator-first identity δ* = D
+for the full divergence δ = D*, and proves that the two requested polynomial
+core identities are equivalent. Neither polynomial core identity is asserted.
+
+The model is still Ω = ℝ^ℕ with countable product standard Gaussian measure μ,
+H = ℓ²(ℕ;ℝ), scalar L²(μ), and vector L²(μ;H). Existing arbitrary-direction
+polynomial cylinders, including dependent, correlated, and infinite-support
+directions, are preserved. The new tensor truncations apply specifically to
+finite sets of independent standard coordinates, not to arbitrary correlated
+coordinate lists.
+
+### Exact new definitions and statements
+
+`Foundation/AdjointBidual.lean` supplies two reusable real Hilbert-space theorems:
+
+- `closedOperator_adjoint_adjoint_eq`: if T is closed and both T and T* have
+  dense ambient domains, T** = T. The reverse inclusion uses orthogonal
+  separation of the closed graph in the Hilbert product `WithLp 2 (E × F)`.
+- `closableOperator_adjoint_adjoint_eq_closure`: if T is closable and both
+  ambient domains are dense, T** = closure(T). The proof uses the preceding
+  theorem and the already verified fact that graph closure leaves T* unchanged.
+
+No graph-density assumption occurs in either statement. All their density
+hypotheses are discharged by existing concrete theorems in the applications.
+
+`Foundation/InfiniteGaussianFiniteSectors.lean` defines and proves:
+
+| Declaration | Exact mathematical meaning |
+| --- | --- |
+| `coordinatePolynomialDomain s p` | The actual class p((ωᵢ)ᵢ∈s), as a member of the existing intrinsic scalar polynomial domain. Membership follows from unit-direction isonormal cylinders. |
+| `coordinatePolynomialDomain_derivative_coeFn` | Its actual derivative is almost everywhere Σᵢ∈s (∂ᵢp)((ωⱼ)ⱼ∈s)eᵢ. The proof uses the representation-independent genuine derivative, not prescribed derivative values. |
+| `finiteVectorPullback s` | A bounded linear map Jₛ from finite vector Gaussian L² to L²(μ;H), defined by Jₛu = Σᵢ∈s eᵢ Iₛ(uᵢ), where Iₛ is the previously verified scalar isometric pullback and uᵢ is the actual L² component. |
+| `finiteVectorPullback_apply`, `finiteVectorPullback_polynomial` | The exact component sum formula and its identification with an actual finite-rank cylindrical field for polynomial vectors. |
+| `rankDivergence_coordinate` | δ₀(p eᵢ) is the actual pullback of xᵢp − ∂ᵢp. The derivative contribution is computed using actual partial derivatives and orthogonality of the coordinate units. |
+| `finitePolynomialDivergence_lift_graph` | For every finite polynomial vector u, (Jₛu, Iₛδ₀,ₛu) belongs to the existing genuine infinite δ₀ graph. |
+| `closedPolynomialDivergence` | Exactly closure(δ₀), using the already proved closability; it is not defined to be δ. |
+| `closedPolynomialDivergence_isClosed` | This actual graph closure is closed. |
+| `closedPolynomialDivergence_le_hilbertDivergence` | closure(δ₀) ⊆ δ, including domains and values, by closed-extension minimality. |
+| `closedPolynomialDivergence_adjoint_eq` | closure(δ₀)* = δ₀*. |
+| `finiteDivergence_truncation_lift_graph` | If (u,g) lies in the full finite adjoint ∇₀,ₛ* graph, then (Jₛu≤N, Iₛg≤N+1) lies in the genuine infinite polynomial δ₀ graph for every N. |
+| `finiteDivergence_truncation_lift_tendsto` | Both coordinates of these lifted truncations converge in their infinite-space L² norms to (Jₛu,Iₛg). |
+| `finiteDivergence_truncation_lift_graphNorm_tendsto` | The squared graph error ‖Jₛu≤N − Jₛu‖² + ‖Iₛg≤N+1 − Iₛg‖² tends to zero. This convergence lemma is separate from graph membership. |
+| `finiteDivergence_lift_closed_graph` | Every full maximal finite divergence pair (u,g) lifts to graph(closure(δ₀)). This follows from the explicit polynomial graph sequence. |
+| `finiteDivergence_lift_hilbert_graph` | The same pair belongs to graph(δ), with the same value. |
+| `finiteDivergence_coefficients_lift_closed_graph` | If the actual scalar coefficients of g equal the combined divergence coefficients of u, the lifted pair belongs to graph(closure(δ₀)). This uses proved finite coefficient realization; equality of coefficients is the exact spectral graph condition, not a presumed core property. |
+| `finiteDivergence_domain_lift` | The genuine condition Σβ bβ² < ∞ supplies an actual scalar g and puts (Jₛu,Iₛg) in graph(closure(δ₀)). Integrability and realization are proved by the existing finite spectral theorem. |
+| `finiteVectorPullback_empty` | J∅u = 0; all finite-sector graph theorems also allow dimension zero. The finite adjoint restricts its scalar output to zero in that dimension. |
+| `coordinatePolynomialDomain_derivative_lift` | D₀(Iₛp) = Jₛ(∇₀,ₛp), as actual vector L² classes. |
+| `finitePolynomialGradient_lift_graph` | Every finite polynomial gradient graph lifts to the genuine infinite D₀ graph. |
+| `finiteGradient_lift_closed_graph` | Every full maximal finite gradient graph lifts to graph(D), by the proved finite Hermite graph approximations. |
+| `hilbertDivergence_adjoint_eq_closedDerivative` | δ* = D, using D's proved closedness, D-domain density, and δ-domain density. |
+| `cylindricalDivergence_adjoint_dense_domain` | Dom(δ₀*) is dense because it contains the already proved dense Dom(D). |
+| `cylindricalDivergence_adjoint_adjoint_eq_closedPolynomialDivergence` | δ₀** = closure(δ₀), using concrete closability and both concrete density proofs. |
+| `polynomialDivergence_core_iff_adjoint_identification` | closure(δ₀) = δ if and only if δ₀* = D. Taking adjoints uses the proved identities above. This equivalence does not establish either equality. |
+
+### Combined coefficients and cancellation
+
+For u in a finite coordinate sector the spectral divergence condition is
+
+    bβ = Σᵢ:βᵢ≥1 √βᵢ uᵢ,β−eᵢ,
+    Σβ |bβ|² < ∞.
+
+Every vector component uses the same total-degree cutoff |α| ≤ N. A coefficient
+contributing to bβ has degree |β|−1, regardless of which component contributes.
+Thus the finite theorem `divergenceCoefficient_truncation` retains the entire
+sum when |β| ≤ N+1 and removes it otherwise. The lifted graph theorem reuses
+that exact result. It never demands Σᵢ,α (αᵢ+1)|uᵢ,α|² < ∞, which would be
+stronger and would exclude legitimate cancellations. Scalar coefficient
+realization and graph membership are established before the graph limit is used.
+
+### Exact remaining analytic bridge
+
+L² density of polynomial fields does not imply graph density in Dom(δ).
+The unproved step is approximation of an arbitrary full infinite divergence
+pair by maximal finite-coordinate divergence pairs. This milestone handles
+all inner Hermite approximations after such a finite pair has been obtained.
+
+A concrete sufficient bridge is the following finite-coordinate conditional
+expectation theorem, which is NOT assumed or formalized as an axiom:
+
+Let Sₙ = {0,...,n−1}, let Eₙ be conditional expectation onto σ(ωᵢ : i∈Sₙ),
+and let πₙ be the Hilbert projection onto span{eᵢ : i∈Sₙ}. For every F∈Dom(D),
+
+    EₙF ∈ Dom(D),    D(EₙF) = πₙ Eₙ(DF).
+
+Here vector conditional expectation acts on the H-valued random field before
+πₙ. The required next construction identifies scalar finite pullbacks with
+that measurable subspace and identifies Jₛ with its finite vector counterpart.
+Mathlib already provides `condExpL2`, its contraction property, and its
+almost-everywhere agreement with conditional expectation in
+`MeasureTheory/Function/ConditionalExpectation/CondexpL2.lean` and `Basic.lean`.
+The missing result is compatibility with this project's genuine cylindrical
+D and the finite Gaussian operators, not existence of conditional expectation.
+
+For arbitrary-direction polynomial cylinders, a noncircular route is to split
+each h into πₙh and (1−πₙ)h, prove Gaussian independence of these orthogonal
+families, integrate the residual polynomial using its established Gaussian
+moments, and prove the displayed derivative identity by actual polynomial
+partial differentiation. Contraction and closedness then extend it to Dom(D).
+This remains an obligation, including infinite-support h; it is not supplied
+as a hypothesis to any completed theorem.
+
+Duality would then give, for every (u,v)∈graph(δ),
+
+    uₙ = πₙ Eₙu ∈ Dom(δ),    δuₙ = Eₙv,
+
+and identify (uₙ,Eₙv) with an actual finite adjoint graph. One must additionally
+prove uₙ→u in vector L² and Eₙv→v in scalar L². The existing scalar polynomial
+density and coordinate completeness can supply this convergence with the
+uniform contraction estimates; an L¹ martingale limit alone is insufficient.
+Combining these outer approximations with the now verified inner Hermite
+approximations would prove closure(δ₀)=δ, and then δ₀*=D by the verified
+bidual equivalence. No mathematical counterexample to either equality is
+claimed; the obstruction here is an unfinished analytic compatibility proof.
+
+### Operator-first manuscript identification
+
+`OperatorDerivative.lean:57–80` defines the operator derivative as the natural
+unbounded adjoint. `OperatorDerivative.tex:48–52` takes δ as primitive and
+`OperatorDerivative.tex:500–504` describes the Gaussian cylindrical derivative,
+its graph closure, and the Skorokhod adjoint. The verified concrete full δ now
+recovers exactly D = δ*. This is a valid operator-first identification on the
+countable Gaussian model, without presuming the polynomial divergence core.
+Choosing δ₀ or closure(δ₀) as the primitive integral would instead give δ₀*,
+which is only known to contain D. Its equality with D is precisely the open
+core problem. None of these statements supplies predictable isometry, PRP,
+Clark–Ocone hypotheses, or an identification with the original bounded energy
+interface. The polynomial core is distinct from the manuscript's smooth
+bounded cylindrical core; equality of their graph closures is not asserted.
+
+### Verification
+
+The complete `lake build` passes (3357 jobs). Both new proof modules compile
+without warnings; the two longstanding unused-variable warnings in Adjoint
+are unchanged. The complete axiom audit has 674 queries and 674 results,
+including all 28 new declarations. Its dependency union is only `propext`,
+`Classical.choice`, and `Quot.sound`; there is no `sorryAx` or custom axiom.
+The raw output is retained in the ignored artifact
+`.lake/build/infinite-gaussian-finite-sectors-axioms.log`. The Foundation
+source scan finds no `sorry`, `admit`, or custom axiom declarations.
+The original Lean and TeX sources and all earlier proof modules are unchanged.

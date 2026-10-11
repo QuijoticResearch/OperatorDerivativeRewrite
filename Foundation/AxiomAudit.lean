@@ -1,3 +1,4 @@
+import Foundation.InfiniteGaussianFiniteSectors
 import Foundation.InfiniteGaussianOperators
 import Foundation.InfiniteGaussianPolynomialProducts
 import Foundation.InfiniteGaussianCylinders
@@ -754,4 +755,41 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 
 namespace OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms exists_cylindricalField_approx
+end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+
+namespace OperatorDerivativeRewrite.Foundation
+#print axioms closedOperator_adjoint_adjoint_eq
+#print axioms closableOperator_adjoint_adjoint_eq_closure
+end OperatorDerivativeRewrite.Foundation
+
+namespace OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+#print axioms coordinatePolynomialDomain
+#print axioms coordinatePolynomialDomain_derivative_coeFn
+#print axioms finiteVectorPullback
+#print axioms finiteVectorPullback_apply
+#print axioms finiteVectorPullback_polynomial
+#print axioms rankDivergence_coordinate
+#print axioms finitePolynomialDivergence_lift_graph
+#print axioms closedPolynomialDivergence
+#print axioms closedPolynomialDivergence_isClosed
+#print axioms closedPolynomialDivergence_le_hilbertDivergence
+#print axioms closedPolynomialDivergence_adjoint_eq
+#print axioms finiteDivergence_truncation_lift_graph
+#print axioms finiteDivergence_truncation_lift_tendsto
+#print axioms finiteDivergence_truncation_lift_graphNorm_tendsto
+#print axioms finiteDivergence_lift_closed_graph
+#print axioms finiteDivergence_lift_hilbert_graph
+#print axioms finiteDivergence_coefficients_lift_closed_graph
+#print axioms finiteDivergence_domain_lift
+#print axioms finiteVectorPullback_empty
+#print axioms coordinatePolynomialDomain_derivative_lift
+#print axioms finitePolynomialGradient_lift_graph
+#print axioms finiteGradient_lift_closed_graph
+#print axioms hilbertDivergence_adjoint_eq_closedDerivative
+#print axioms cylindricalDivergence_adjoint_dense_domain
+#print axioms cylindricalDivergence_adjoint_adjoint_eq_closedPolynomialDivergence
+end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+
+namespace OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+#print axioms polynomialDivergence_core_iff_adjoint_identification
 end OperatorDerivativeRewrite.Foundation.InfiniteGaussian

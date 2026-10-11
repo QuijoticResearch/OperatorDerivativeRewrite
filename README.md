@@ -233,3 +233,20 @@ Graph-core density for δ and equalities closure(δ₀)=δ or D=δ₀* remain op
 Non-polynomial smooth cylinders, sample-space translation compatibility,
 maximal spectral/Sobolev domains, and advanced stochastic calculus remain
 future work. See MATHEMATICAL_AUDIT.md for the exact statements and dependencies.
+
+`Foundation/AdjointBidual.lean` proves real Hilbert closed-operator and closable-
+operator bidual identities by graph orthogonality. In the concrete Gaussian
+model these prove δ* = D and δ₀** = closure(δ₀).
+
+`Foundation/InfiniteGaussianFiniteSectors.lean` lifts the full finite Gaussian
+gradient and divergence graphs to the countable Gaussian product. For every
+maximal finite divergence pair, simultaneous total-degree Hermite truncations
+lift to genuine polynomial δ₀ graph pairs and converge in the infinite-space
+graph norm. The proof retains the combined divergence coefficients and their
+cancellations, and includes dimension zero.
+
+The global identities closure(δ₀)=δ and δ₀*=D are proved equivalent, but remain
+open. The exact missing bridge is finite-coordinate conditional expectation
+preserving Dom(D) and commuting with its gradient, followed by joint L²
+convergence of the projected field and divergence. The mathematical audit
+records the full statements and a noncircular route to this bridge.
