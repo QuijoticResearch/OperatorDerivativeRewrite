@@ -28,3 +28,4 @@ import Foundation.GaussianSteinBounded
 import Foundation.GaussianRotationStein
 import Foundation.GaussianMehlerTimeDerivative
 import Foundation.GaussianEntropyDissipationProof
+import Foundation.GaussianLogSobolevCore

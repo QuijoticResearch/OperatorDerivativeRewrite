@@ -1,3 +1,4 @@
+import Foundation.GaussianLogSobolevCore
 import Foundation.GaussianEntropyDissipationProof
 import Foundation.GaussianMehlerTimeDerivative
 import Foundation.GaussianRotationStein
@@ -962,3 +963,11 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianEntropyDissipationProof.entropy_pairing_eq_neg_fisher
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianEntropyDissipationProof.hasDerivAt_entropy_dissipation
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianEntropyDissipationProof.deriv_entropy_dissipation
+/-! Gaussian log-Sobolev inequality on the bounded C¹ core. -/
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianLogSobolevCore.γ
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianLogSobolevCore.entropyDensity_le_half_fisher
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianLogSobolevCore.regularized_deriv
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianLogSobolevCore.regularized_fisher_le_energy
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianLogSobolevCore.regularized_entropy_tendsto
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianLogSobolevCore.core_sq_mul_log_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianLogSobolevCore.gaussian_logSobolev_core

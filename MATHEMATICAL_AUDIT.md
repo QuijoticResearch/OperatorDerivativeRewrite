@@ -3540,3 +3540,47 @@ warnings in `Foundation.Adjoint` remain. Ignored transcripts are under
 `gaussian-entropy-dissipation-axioms.log`, and
 `gaussian-entropy-dissipation-statements.log`. No original manuscript,
 previous theorem statement, dependency pin, or lockfile changes.
+## M4: bounded C¹ Gaussian log-Sobolev core
+
+`Foundation/GaussianLogSobolevCore.lean` proves the variance-one standard
+Gaussian inequality for every actual `ContDiff ℝ 1 f` whose values and actual
+Mathlib derivative are uniformly bounded by a common finite `M`:
+
+`entropySq γ f ≤ 2 * ∫ x, (deriv f x) ^ 2 ∂γ`.
+
+No positivity or nonvanishing condition is imposed on `f`. The separate
+`core_sq_mul_log_integrable` theorem establishes finiteness of the
+`f² log(f²)` integral from the bounded C¹ hypothesis through M1's L⁴
+integrability theorem. The derivative energy is integrable by an explicit
+Gaussian probability-space bound in `regularized_fisher_le_energy`.
+
+The positive-density lemma `entropyDensity_le_half_fisher` applies to a
+uniformly positive bounded C¹ `g` with bounded actual derivative. It combines
+M3's genuine identity `d/dt Entγ(P_tg) = -I(P_tg)` and M2b's
+`I(P_tg) ≤ exp(-2t) I(g)` by proving that
+`Entγ(P_tg) - exp(-2t) I(g)/2` is monotone for `t ≥ 0`.
+Continuity of entropy at zero and its verified limit zero at infinity give
+`Entγ(g) ≤ I(g)/2`. This comparison is equivalent to integrating the
+exponential bound, without invoking an unverified improper integral.
+
+For arbitrary core `f`, `regularized_deriv` proves the actual derivative
+`(f²+ε)'=2ff'`, and `regularized_fisher_le_energy` proves
+`I(f²+ε) ≤ 4 ∫(f')²` for each `ε>0`. `regularized_entropy_tendsto`
+uses `ε_n=1/(n+1)` and genuine bounded dominated convergence for both
+integrals in centered entropy, using Mathlib's continuous `r log r` at zero.
+The resulting factor is exactly `1/2 * 4 = 2` for the standard Gaussian
+variance-one normalization. The proof does not assume log-Sobolev.
+
+This is a Gaussian special-case theorem on a bounded C¹ core. It does not
+replace the original general Bakry–Émery axiom or establish its full-domain
+version. M5–M6 require a noncircular approximation theorem that preserves
+both the derivative energy and entropy (or another justified domain
+extension). An abstract Γ₂ curvature criterion remains a separate result.
+Verification: full `lake build` passes (3380 jobs). The transitive
+`Foundation/AxiomAudit.lean` run reports 815 declarations. Each of the
+seven new declarations uses only `propext`, `Classical.choice`, and
+`Quot.sound`; no `sorryAx` or custom mathematical axiom occurs. The new
+Lean module has no warnings, `sorry`, `admit`, `axiom`, or `unsafe`.
+The two pre-existing unused-section-variable warnings in
+`Foundation.Adjoint` remain. No previous Lean theorem statement, original
+manuscript, dependency pin, or lockfile was changed.
