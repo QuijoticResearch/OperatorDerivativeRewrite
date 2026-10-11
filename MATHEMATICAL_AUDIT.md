@@ -3850,3 +3850,33 @@ has transitive axioms contained in `propext`, `Classical.choice`, and
 of the formal-adjoint, dense-domain, and closability theorems were inspected
 with Lean. Only the two pre-existing unused-section-variable warnings in
 `Foundation.Adjoint` remain. P2 weighted maximal domains are next.
+## P2 preparation: closed maximal pointwise Poisson operators
+
+`Foundation/PoissonCoordinateEvaluation.lean` constructs continuous linear
+coordinate functionals on both genuine Poisson L² spaces. Positive mass at
+every count makes actual chosen L² representatives pointwise compatible with
+addition, scalar multiplication, and Hilbert-space convergence. This is the
+analytic mechanism needed to reason about coefficientwise graph limits.
+
+`Foundation/PoissonMaximalOperators.lean` defines `maximalDifferenceGraph`
+by `v(n)=f(n+1)-f(n)` and `maximalDivergenceGraph` by the exact zero-boundary
+and successor formulas. Every graph equation is a closed condition under the
+continuous coordinate maps. The graphs are single-valued, so
+`maximalDifference` and `maximalDivergence` are actual `LinearPMap`s, both
+proved closed. `coreDifference_le_maximal` and `coreDivergence_le_maximal`
+prove the P1 operators are restrictions of these maximal pointwise operators.
+No adjoint equality or graph-density hypothesis is used in their definitions.
+
+**Remaining P2 obligation:** show the domains of these maximal operators are
+exactly the proposed weighted square-summability classes. Closedness and
+coefficientwise descriptions alone do not establish those weighted-domain
+equalities. P3 graph-core density and P4 mutual-adjoint identification also
+remain open.
+P2 preparation verification: complete `lake build` succeeds (4009 jobs), and
+direct `lake env lean Foundation/AxiomAudit.lean` succeeds. All 31 new
+declarations depend transitively only on `propext`, `Classical.choice`, and
+`Quot.sound`; no `sorryAx` or custom axiom occurs. Exact elaborated types of
+coordinate evaluation, closedness, and core inclusion were checked with Lean.
+The only warnings are the two pre-existing unused section variables in
+`Foundation.Adjoint`. This is a verified partial P2 milestone, not the
+weighted-domain characterization or graph-core theorem.
