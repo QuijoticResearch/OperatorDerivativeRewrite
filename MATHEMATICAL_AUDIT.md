@@ -2905,3 +2905,139 @@ The legacy log-Sobolev axiom is not discharged by these kernel properties.
 No assertion of a general abstract curvature-dimension theorem follows.
 The original manuscripts, existing theorem statements, dependency lockfile,
 and the two pre-existing untracked audit/plan documents are preserved.
+
+## Gaussian Fisher M2b: derivative commutation and Fisher decay (2026-10-11)
+
+Starting verified commit: `db6768796c01935bfee26bc1bc0288f30069a127`.
+Implemented by Sol Medium and reviewed against the mathematical targets.
+The new file is `Foundation/GaussianFisherDecay.lean`, namespace
+`OperatorDerivativeRewrite.Foundation.GaussianFisher`. It imports and uses
+M2a's existing `GaussianMehler.mehler`; there is no new semigroup definition.
+The measure abbreviation remains the existing standard Gaussian γ = N(0,1).
+
+### Definition and exact hypotheses
+
+```lean
+def fisherInformation (g : ℝ → ℝ) : ℝ :=
+  ∫ y, (deriv g y) ^ 2 / g y ∂γ
+```
+
+This is Fisher information, rather than the legacy `gaussian_fisher` Dirichlet
+energy. `deriv g` is the actual Mathlib derivative. The definition alone makes
+no assertion of integrability or positivity for arbitrary g. The new theorems
+prove those analytic obligations on their stated class.
+
+The full decay theorem has exactly these hypotheses:
+
+```lean
+theorem fisherInformation_decay
+    (g : ℝ → ℝ) (hg : ContDiff ℝ 1 g)
+    {ε M : ℝ} (hε : 0 < ε)
+    (hg_lo : ∀ x, ε ≤ g x) (hg_hi : ∀ x, g x ≤ M)
+    (hg'_bd : ∀ x, |deriv g x| ≤ M)
+    (t : ℝ) (ht : 0 ≤ t) :
+    fisherInformation (GaussianMehler.mehler t g) ≤
+      Real.exp (-2 * t) * fisherInformation g
+```
+
+No C² or C∞ hypothesis, normalization `∫g=1`, entropy integrability,
+commutation identity, Fisher inequality, or arbitrary derivative candidate
+is assumed. `M ≥ 0` and positivity of g are derived from the stated bounds.
+
+### Completed declarations
+
+- `hasDerivAt_mehler_C1`: for `ContDiff ℝ 1 f`, uniform bounds
+  `∀ x, ‖f x‖ ≤ M` and `∀ x, ‖deriv f x‖ ≤ M`, and any real t and x₀,
+  `HasDerivAt (mehler t f) (exp(-t) * mehler t (deriv f) x₀) x₀`.
+  This is a genuine differentiation theorem for the existing integral.
+- `deriv_mehler_C1`: under those same hypotheses,
+  `deriv (mehler t g) x = exp(-t) * mehler t (deriv g) x`.
+- `mehler_lower_bound`: if g is continuous and uniformly bounded in norm,
+  `0 < ε`, and `∀ x, ε ≤ g x`, then `ε ≤ mehler t g x` for every real t,x.
+  In particular all subsequent Mehler denominators are strictly positive.
+- `fisherInformation_integrable`: for measurable g and measurable `deriv g`,
+  `0 < ε`, `∀ x, ε ≤ g x`, and `∀ x, |deriv g x| ≤ M`,
+  `Integrable (fun x => (deriv g x)^2 / g x) γ`. No upper bound on g is
+  needed for this supporting integrability result. The measurability facts
+  are derived from C¹ regularity when used in the final theorem.
+- `weighted_cauchy_schwarz_mehler`: under precisely the full decay theorem's
+  g,ε,M hypotheses, for t ≥ 0 and every x,
+  `(mehler t (deriv g) x)^2 / mehler t g x ≤
+   mehler t (fun y => (deriv g y)^2 / g y) x`.
+- `fisherInformation_mehler_integrable`: under those same hypotheses and
+  t ≥ 0, the function `x ↦ (deriv (mehler t g) x)^2 / mehler t g x`
+  is γ-integrable. This is proved before applying integral monotonicity.
+- `fisherInformation_decay`: the displayed full theorem.
+
+The two other declarations are the abbreviation γ and the supporting
+`cauchy_schwarz_gamma` helper. This helper assumes actual integrability of
+AB, A², and B² and proves `(∫AB)^2 ≤ (∫A²)(∫B²)` by expanding the
+nonnegative square `(A-λB)^2`. The zero second-moment case is treated
+separately; in the other case its denominator is proved positive.
+
+### Genuine analysis and proof dependencies
+
+Differentiation uses Mathlib's
+`hasDerivAt_integral_of_dominated_loc_of_deriv_le`. The spatial integrand
+`g(exp(-t)*x + sqrt(1-exp(-2*t))*y)` has its derivative proved by the
+ordinary chain rule. The derivative integrand is dominated by the integrable
+constant `|exp(-t)|*M`. Continuity and measurability are consequences of
+`ContDiff ℝ 1 g`, not additional assumptions about the desired integral.
+
+The pointwise bound `0 ≤ (deriv g)^2/g ≤ M²/ε` supplies a genuine integrable
+majorant. In weighted Cauchy–Schwarz, A is the composed `deriv g / sqrt(g)`
+and B is the composed `sqrt(g)`. Every square-root denominator is positive;
+AB, A², and B² are proved measurable and integrable before the inequality.
+Preservation of ε gives the positive denominator `mehler t g x` when dividing
+the resulting inequality. These are kernel averages against the actual γ.
+
+For the evolution's Fisher integrand, derivative commutation and M2a
+boundedness give `|deriv (mehler t g)| ≤ M` when t ≥ 0. M2a continuity
+applied to g and `deriv g` also gives measurability of the evolved derivative
+via the proved derivative formula. The input integrability result then
+applies to the evolution.
+
+The final proof integrates the pointwise estimate, with explicit input,
+evolved, and Mehler-Fisher integrability. M2a's `integral_mehler` is applied
+to the continuous bounded function `(deriv g)^2/g`; invariance is reused,
+rather than assumed or independently repackaged as a structure field.
+Finally `(exp(-t))² = exp(-2*t)` yields the exact rate. All theorems include
+zero time; no division by a positive-time smoothing coefficient is used.
+
+Source-level ports retain attribution to Michael R. Douglas and contributors,
+Apache 2.0, at commit `acf649108ea2222f4a8544a2782f448cb502492a`:
+
+- [Euclidean.lean: hasDerivAt_ouSemigroup_C1](https://github.com/mrdouglasny/markov-semigroups/blob/acf649108ea2222f4a8544a2782f448cb502492a/MarkovSemigroups/Instances/WorkInProgress/Euclidean.lean#L505).
+- [OUEntropyDecomposition.lean: Cauchy–Schwarz and Fisher decay](https://github.com/mrdouglasny/markov-semigroups/blob/acf649108ea2222f4a8544a2782f448cb502492a/MarkovSemigroups/General/OUEntropyDecomposition.lean#L84).
+
+The latter's historical comments call results axioms, but the inspected
+pinned declarations have proof bodies. Only the concrete M2b proof slice is
+ported; no abstract semigroup or entropy-dissipation infrastructure is
+imported. The local port is checked against Lean/Mathlib v4.34.1 and the
+unchanged dependency lock. Existing `LICENSES/Apache-2.0.txt` applies.
+
+### Verification and scope boundary
+
+The new module is imported by the root project and `Foundation/AxiomAudit.lean`.
+All ten new declarations, including the supporting Cauchy–Schwarz helper, have
+explicit transitive axiom queries. Final verification: the complete `lake build`
+passed (3374 jobs), with no warnings from the new module. The pre-existing
+`Foundation.Adjoint` unused section-variable warnings remain. Fresh
+`lake env lean Foundation/AxiomAudit.lean` passed: 750 reports for 749 distinct
+declarations. Each of the ten new declarations reports exactly
+`{propext, Classical.choice, Quot.sound}`; this is also the complete audit's
+union. There is no `sorryAx` or custom axiom. Exact elaborated `#check @...`
+queries for all ten declarations passed. The ignored transcripts are
+`.lake/build/gaussian-fisher-axioms.log` and
+`.lake/build/gaussian-fisher-statements.log`. A source scan finds no `axiom`,
+`unsafe`, `sorry`, or `admit` in the new module. The original manuscript hashes
+match the previous milestone, and there is no dependency or lockfile diff.
+
+M2b's five targets are complete on the exact stated C¹, bounded, uniformly
+positive class. There is no remaining M2b mathematical or Lean obstruction.
+M3 entropy dissipation and M4 log-Sobolev have not been started. In particular,
+this milestone does not replace the original Gaussian log-Sobolev axiom,
+prove abstract curvature-dimension theory, or extend Fisher decay to an
+unproved maximal Sobolev domain. Original manuscripts and previous verified
+statements are preserved, as are the pre-existing untracked plan and graph
+core audit documents.

@@ -20,3 +20,4 @@ import Foundation.InfiniteGaussianCoordinateFields
 import Foundation.InfiniteGaussianProjectionConvergence
 
 import Foundation.GaussianMehler
+import Foundation.GaussianFisherDecay

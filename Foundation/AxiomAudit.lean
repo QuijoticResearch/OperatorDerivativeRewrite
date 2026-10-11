@@ -1,3 +1,4 @@
+import Foundation.GaussianFisherDecay
 import Foundation.GaussianMehler
 import Foundation.InfiniteGaussianCoordinateFields
 import Foundation.InfiniteGaussianProjectionConvergence
@@ -876,3 +877,15 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianMehler.mehler_integrable
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianMehler.mehler_compose
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianMehler.mehler_pos
+
+/-! Concrete Gaussian Fisher decay: M2b. -/
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianFisher.γ
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianFisher.fisherInformation
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianFisher.fisherInformation_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianFisher.hasDerivAt_mehler_C1
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianFisher.deriv_mehler_C1
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianFisher.mehler_lower_bound
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianFisher.weighted_cauchy_schwarz_mehler
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianFisher.fisherInformation_mehler_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianFisher.fisherInformation_decay
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianFisher.cauchy_schwarz_gamma
