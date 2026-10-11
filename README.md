@@ -184,8 +184,17 @@ verified finite Gaussian polynomial density theorem with an independent
 measurable-cylinder π-system argument. It also proves that every L² variable
 can be approximated in norm by one finite polynomial cylinder.
 
-This completes the first scalar density milestone toward a Malliavin derivative.
-Derivatives for arbitrary correlated W(h) cylinders, representation independence,
-vector test-space density, Gaussian integration by parts, closability, and closed
-operator/adjoint domains remain to be constructed. No such infinite-dimensional
-operator is claimed here.
+`Foundation/InfiniteGaussianCylinders.lean` constructs polynomial cylinders in
+arbitrary finite families W(hᵢ), including correlated and linearly dependent
+families and directions with infinite support. It proves all finite scalar and
+ℓ²-valued gradient moments, verifies the actual Fréchet derivative under affine
+Hilbert coordinate perturbations, and proves polynomial product rules with
+integrable product terms. Unit-vector cylinders recover the existing coordinate
+core; the enlarged scalar core is dense.
+
+Representation independence remains an explicit open obligation. The gradient
+is indexed by its polynomial representation; no derivative operator on scalar
+L² classes is defined. Sample-space translation compatibility, Gaussian
+integration by parts, vector test-space density, closability, and closed
+operator/adjoint domains remain to be proved. See MATHEMATICAL_AUDIT.md for the
+exact theorem scope and the recovery record from commit 2d31e09.

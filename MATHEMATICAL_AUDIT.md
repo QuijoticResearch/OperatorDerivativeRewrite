@@ -2093,3 +2093,109 @@ The original Lean/manuscript SHA-256 hashes remain unchanged. All previous proof
 modules, the toolchain, and dependency configuration remain unchanged. The root
 imports, axiom audit, and documentation are extended for this verified milestone.
 The overall Malliavin operator objective remains open beyond scalar core density.
+
+## Recovered milestone: arbitrary isonormal polynomial cylinders and gradients
+
+Baseline: `2d31e09e71daf530c82244a6b7616218f955c83c`.
+The interrupted working tree contained only the untracked
+`Foundation/InfiniteGaussianCylinders.lean`; all committed files were unchanged.
+Its 25 declarations already contained the cylinder construction, integrability
+proofs, polynomial gradient and product rules, analytic perturbation argument,
+compatibility lemmas, and scalar core density proof. A targeted Lean run found
+one unfinished elaboration: the linear-coordinate derivative in
+`isonormalCylinderShift_hasFDerivAt` lacked its basepoint. Recovery supplied the
+explicit zero Hilbert vector and wrapped the line for the style linter. No
+recovered definition, theorem statement, or mathematical hypothesis was changed.
+An exact pre-repair copy is preserved in the ignored build artifact
+`.lake/build/recovered-infinite-cylinders.lean`.
+
+### Mathematical meaning of the completed declarations
+
+Let H be the already constructed real Hilbert space ℓ², μ the countable product
+of standard Gaussian measures, and W : H → L²(μ) the verified isonormal isometry.
+For any finite index type I, arbitrary h : I → H, and real polynomial p in I,
+write F(h,p)(ω) = p((W(hᵢ)(ω))ᵢ). No orthogonality, independence, nonzero-vector,
+finite-support, or rank hypothesis is imposed on h. Actual representatives of
+W(hᵢ) are used; their pointwise values are not asserted to satisfy all Hilbert
+linear relations simultaneously outside one universal null set.
+
+| Lean declarations | Precise content |
+| --- | --- |
+| `isonormalCylinder` | The actual scalar polynomial evaluation F(h,p). |
+| `isonormalCylinder_C`, `isonormalCylinder_X` | Constants evaluate to constants; a coordinate variable evaluates to W(hᵢ). |
+| `isonormalCylinder_add`, `isonormalCylinder_mul` | Evaluation respects polynomial addition and multiplication. |
+| `isonormalCylinder_memLp` | F(h,p) belongs to every finite-exponent Lp(μ), proved from the genuine Gaussian marginal laws and doubled-exponent Hölder. |
+| `isonormalCylinderGradient` | G(h,p)(ω) = Σᵢ (∂ᵢp)((W(hⱼ)(ω))ⱼ) hᵢ in H; partials are actual polynomial derivatives. |
+| `isonormalCylinderGradient_memLp` | G(h,p) belongs to every finite-exponent Lp(μ; H), by scalar polynomial moments and finite sums of fixed Hilbert vectors. |
+| `isonormalCylinderL2`, `isonormalCylinderGradientL2` | The scalar and H-valued L² classes obtained from the proved integrability. These are maps of representation data (h,p), not an operator on scalar L² classes. |
+| `isonormalCylinderL2_coeFn`, `isonormalCylinderGradientL2_coeFn` | Their Lp representatives agree almost everywhere with F and G, respectively. |
+| `isonormalCylinderGradient_C`, `isonormalCylinderGradient_X` | The gradient of a constant is zero; the gradient of the i-th coordinate is hᵢ. |
+| `isonormalCylinderGradient_add` | G(h,p+q) = G(h,p) + G(h,q), pointwise. |
+| `isonormalCylinderGradient_mul` | G(h,pq) = F(h,p) G(h,q) + F(h,q) G(h,p), proved using the genuine polynomial partial-derivative product rule. |
+| `isonormalCylinderShift` | The actual Hilbert-space polynomial Ψ(h,p,ω)(v) = p((W(hᵢ)(ω) + ⟨hᵢ,v⟩)ᵢ). |
+| `isonormalCylinderShift_hasFDerivAt`, `isonormalCylinderShift_fderiv` | Ψ has the genuine Fréchet derivative at v=0 given by the continuous linear functional v ↦ ⟨G(h,p)(ω),v⟩. The proof uses analytic constant, sum, and product differentiation. |
+| `isonormalCylinderShift_product_rule` | The actual Fréchet derivative at zero of Ψ(h,p,ω) Ψ(h,q,ω) is represented by F(h,p) G(h,q) + F(h,q) G(h,p). |
+| `isonormalCylinder_smulGradient_memLp` | Each product-rule term F(h,p) G(h,q) has every finite Lp moment, using both factors at exponent 2r. This is polynomial-core closure, not L² × L² → L² closure. |
+| `isonormalCylinderL2_units` | Choosing hᵢ to be the corresponding coordinate unit vectors recovers the existing finite-coordinate polynomial embedding as an L² class. |
+| `isonormalCylinderL2_rename_units` | Polynomial renaming along any finite map into ℕ agrees with evaluation at the corresponding isonormal unit vectors; injectivity of that map is not required. |
+| `isonormalPolynomialCore` | The set of scalar L² classes represented by some polynomial in an arbitrary finite family of H directions. No derivative graph is attached to this set. |
+| `isonormalPolynomialCore_dense` | This scalar set is dense in the entire Gaussian L² space because it contains the previously proved dense coordinate-polynomial subcore. |
+
+The statements allow empty finite index types: the sum defining G is then zero,
+and the polynomial is constant. Thus no positive-dimension restriction is hidden.
+The new core also allows infinite-support h vectors. Existing independent
+coordinate constructions and all prior operator results are preserved.
+
+### Scope of genuine differentiation and the explicit open obligation
+
+The verified derivative is the derivative of the displayed affine-coordinate
+function on H for each fixed ω. This is substantive analytic differentiation,
+not independently prescribed derivative data. It does not yet identify Ψ with
+F evaluated at a translated sample ω+v. Such an identification requires an
+almost-everywhere translation argument for the chosen W representatives,
+including the relevant Cameron–Martin measure facts; none is assumed here.
+
+Representation independence remains unproved: from
+F(h,p) = F(k,q) almost everywhere, one must prove
+G(h,p) = G(k,q) almost everywhere, even for different finite index types and
+linearly dependent families. The finite-dimensional representation-independence
+results do not apply directly to the infinite product sample space. In
+particular, a degenerate Gaussian coordinate law does not have full support in
+the ambient coordinate space, so scalar equality does not justify formal
+polynomial equality or unrestricted equality of coordinate partial derivatives.
+
+A possible noncircular route is to take the common finite-dimensional span of
+both families, choose an orthonormal basis, prove its W coordinates have the
+standard Gaussian joint law, transport both polynomials using the proved
+almost-everywhere linear relations, and apply full-support polynomial
+uniqueness and genuine differentiation on that span. The span inclusion must
+then transport the gradient identity back to H. These transports and the
+common-span comparison are future proof obligations, not hypotheses introduced
+into any completed theorem.
+
+Consequently, no Malliavin derivative operator on scalar L² equivalence classes,
+infinite-dimensional Gaussian integration by parts, gradient closability,
+vector test-space density, divergence adjoint, graph-domain characterization,
+or infinite-dimensional adjoint equality is claimed. The present product rules
+hold for actual polynomial representations within one chosen family. They do
+not discharge the comparison between distinct representations. Full smooth
+cylinders and infinite-dimensional chain rules also remain beyond this milestone.
+
+### Verification and preservation
+
+The complete Lake build succeeds (3348 jobs). The recovered module compiles
+without warnings after the line wrap; the two pre-existing unused-variable
+warnings in `Foundation/Adjoint.lean` remain. The full axiom audit has 538 explicit
+queries and 538 verified results, including all 25 recovered declarations.
+Only `propext`, `Classical.choice`, and `Quot.sound` occur: no `sorryAx` or custom
+axioms. The raw output is preserved in the ignored build artifact
+`.lake/build/infinite-gaussian-cylinders-axioms.log`. A source scan found no
+`sorry`, `admit`, or custom axiom declarations in Foundation.
+
+The original Lean and manuscript SHA-256 hashes match the previously recorded
+values. Earlier proof modules, toolchain, and dependency lockfile are unchanged.
+Only the recovered module, project root import, axiom queries, and documentation
+are included in this milestone. This section supersedes the earlier density
+milestone's open items about arbitrary-cylinder integrability and polynomial
+product differentiation; its representation, integration-by-parts, and operator
+obligations remain open as specified above.

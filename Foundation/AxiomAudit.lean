@@ -1,3 +1,4 @@
+import Foundation.InfiniteGaussianCylinders
 import Foundation.InfiniteGaussianDensity
 import Foundation.InfiniteGaussianIsonormal
 import Foundation.InfiniteGaussianFirstChaos
@@ -600,4 +601,32 @@ namespace OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms coordinatePolynomialEmbedding_dense
 #print axioms polynomialCylinders_dense
 #print axioms exists_polynomialCylinder_approx
+end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+
+namespace OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+#print axioms isonormalCylinder
+#print axioms isonormalCylinderGradient
+#print axioms isonormalCylinder_C
+#print axioms isonormalCylinder_X
+#print axioms isonormalCylinder_add
+#print axioms isonormalCylinder_mul
+#print axioms isonormalCylinder_memLp
+#print axioms isonormalCylinderGradient_memLp
+#print axioms isonormalCylinderL2
+#print axioms isonormalCylinderGradientL2
+#print axioms isonormalCylinderL2_coeFn
+#print axioms isonormalCylinderGradientL2_coeFn
+#print axioms isonormalCylinderGradient_C
+#print axioms isonormalCylinderGradient_X
+#print axioms isonormalCylinderGradient_add
+#print axioms isonormalCylinderGradient_mul
+#print axioms isonormalCylinderShift
+#print axioms isonormalCylinderShift_hasFDerivAt
+#print axioms isonormalCylinderShift_fderiv
+#print axioms isonormalCylinderShift_product_rule
+#print axioms isonormalCylinder_smulGradient_memLp
+#print axioms isonormalCylinderL2_units
+#print axioms isonormalPolynomialCore
+#print axioms isonormalCylinderL2_rename_units
+#print axioms isonormalPolynomialCore_dense
 end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
