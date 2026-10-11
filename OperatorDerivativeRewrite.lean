@@ -7,6 +7,9 @@ import Foundation.PoissonTruncation
 import Foundation.PoissonTruncationConvergence
 import Foundation.PoissonGraphApprox
 import Foundation.PoissonAdjoints
+import Foundation.PoissonBoundedCalculus
+import Foundation.PoissonMoments
+import Foundation.PoissonPolynomialExamples
 import Foundation.Adjoint
 import Foundation.LpProducts
 import Foundation.GaussianEntropy

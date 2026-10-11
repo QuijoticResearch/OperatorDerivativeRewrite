@@ -3949,3 +3949,10 @@ Foundation/PoissonGraphApprox.lean proves simultaneous Hilbert convergence of fi
 
 Foundation/PoissonAdjoints.lean tests arbitrary adjoint graph pairs against each finite-support count basis vector. The Poisson weight recurrence and strict positivity identify the entire adjoint-domain coefficient formula, including count zero. It proves coreDifference.adjoint = maximalDivergence, coreDivergence.adjoint = maximalDifference, and mutual adjointness of the closed maximal operators. These conclusions use P3 graph-core identities; no adjoint domain is assumed. The field Hilbert measure retains the factor rate, which is essential for the unscaled divergence formula.
 
+
+## P5: bounded non-Gaussian product calculus and polynomial examples
+
+Foundation/PoissonBoundedCalculus.lean proves actual scalar and weighted-field L² membership for bounded count functions. It proves bounded products belong to the maximal difference domain and the genuine closed operator satisfies D(fg)=fDg+gDf+(Df)(Dg) pointwise at every positive-mass atom. This is an explicit restricted multiplication domain; no assertion that arbitrary dom(D) is an algebra is made.
+
+Foundation/PoissonMoments.lean proves every Poisson polynomial moment series converges by a ratio estimate, all real polynomials belong to scalar L², and genuine Poisson integrals satisfy E[N]=λ and E[N²]=λ²+λ. Foundation/PoissonPolynomialExamples.lean then verifies the actual closed-operator equalities δ1=N−λ, D(N−λ)=1, and D((N−λ)²)=2(N−λ)+1; the ordinary differential square chain rule is false. The product theorem covers bounded representatives. Full maximal-domain multiplier characterization, Poisson-process stochastic integration, Clark–Ocone, and martingale representation remain outside this one-site milestone.
+
