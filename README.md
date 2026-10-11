@@ -210,7 +210,26 @@ and gradient higher moments prove integrability of every product term by
 Hölder; no multiplication closure of general L² or closed operator domains is
 assumed.
 
-Sample-space translation compatibility, non-polynomial smooth cylinders,
-Gaussian integration by parts, vector test-space density, closability, and
-closed operator/adjoint domains remain open. See MATHEMATICAL_AUDIT.md for the
-exact statements, dependencies, and the recovery record.
+`Foundation/FiniteGaussianDirectionalIBP.lean` proves actual orthonormal-basis
+polynomial substitution and directional Gaussian Stein on finite Hilbert
+spaces, including correlated and dependent cylinder coordinates.
+
+`Foundation/InfiniteGaussianVectorCore.lean` proves that the algebraic core of
+finite-rank polynomial fields G h is dense in all L²(Ω;ℓ²), using scalar
+polynomial density and actual ℓ² coordinate completeness.
+
+`Foundation/InfiniteGaussianIBP.lean` transports Stein to arbitrary isonormal
+cylinders and proves genuine Gaussian integration by parts with the scalar L²
+expression δ₀(Gh)=G W(h)−⟨D₀G,h⟩. All terms have proved integrability.
+
+`Foundation/InfiniteGaussianOperators.lean` proves finite-rank divergence
+representation independence, exact cylindrical domains, Gaussian IBP on those
+domains, and closability of D₀ and δ₀. It constructs D=closure(D₀) and the full
+natural adjoint δ=D*, proves δ₀⊆δ, and retains the original polynomial values.
+It also proves explicit norm approximation of every vector L² field by genuine
+finite-rank polynomial fields.
+
+Graph-core density for δ and equalities closure(δ₀)=δ or D=δ₀* remain open.
+Non-polynomial smooth cylinders, sample-space translation compatibility,
+maximal spectral/Sobolev domains, and advanced stochastic calculus remain
+future work. See MATHEMATICAL_AUDIT.md for the exact statements and dependencies.

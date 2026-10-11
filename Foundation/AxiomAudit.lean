@@ -1,3 +1,4 @@
+import Foundation.InfiniteGaussianOperators
 import Foundation.InfiniteGaussianPolynomialProducts
 import Foundation.InfiniteGaussianCylinders
 import Foundation.InfiniteGaussianDensity
@@ -678,4 +679,79 @@ namespace OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms PolynomialRepresentation.directions
 #print axioms PolynomialRepresentation.polynomial
 #print axioms PolynomialRepresentation.represents
+end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+
+namespace OperatorDerivativeRewrite.Foundation.FiniteGaussian
+#print axioms basisPolynomialMap
+#print axioms basisPolynomialMap_eval
+#print axioms basisPolynomialMap_pderiv_eval
+#print axioms cylinder_stein_basis
+#print axioms cylinder_stein
+end OperatorDerivativeRewrite.Foundation.FiniteGaussian
+namespace OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+#print axioms GaussianVectorL2
+#print axioms scalarTensor
+#print axioms scalarTensor_coeFn
+#print axioms cylindricalVectorDomain
+#print axioms scalarTensor_mem_domain
+#print axioms scalarTensor_inner
+#print axioms eq_zero_of_cylindricalVector_orthogonal
+#print axioms cylindricalVectorDomain_dense
+end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+namespace OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+#print axioms isonormalCylinder_stein
+#print axioms polynomialDerivative_stein
+#print axioms polynomial_times_firstChaos_memLp
+#print axioms polynomial_directional_memLp
+#print axioms rankDivergence_memLp
+#print axioms rankDivergence
+#print axioms rankDivergence_coeFn
+#print axioms polynomialDerivative_rank_integration_by_parts
+#print axioms polynomialDerivative_rank_pairing
+end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+namespace OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+#print axioms cylindricalDerivative
+#print axioms cylindricalDivergenceGraph
+#print axioms cylindricalDivergenceGraph_pairing
+#print axioms cylindricalDivergenceGraph_vertical_zero
+#print axioms cylindricalDivergence
+#print axioms cylindricalDivergence_graph
+#print axioms cylindricalDivergence_rank_graph
+#print axioms cylindricalDivergence_domain
+#print axioms cylindricalDerivative_dense_domain
+#print axioms cylindricalDivergence_dense_domain
+#print axioms cylindricalDerivative_formalAdjoint
+#print axioms cylindricalDerivative_le_divergence_adjoint
+#print axioms cylindricalDivergence_le_derivative_adjoint
+#print axioms cylindricalDerivative_isClosable
+#print axioms cylindricalDivergence_isClosable
+#print axioms closedCylindricalDerivative
+#print axioms hilbertDivergence
+#print axioms closedCylindricalDerivative_isClosed
+#print axioms closedCylindricalDerivative_dense_domain
+#print axioms closedCylindricalDerivative_graph
+#print axioms closedCylindricalDerivative_mem_iff
+#print axioms hilbertDivergence_eq_cylindricalDerivative_adjoint
+#print axioms cylindricalDivergence_le_hilbertDivergence
+#print axioms hilbertDivergence_isClosed
+#print axioms hilbertDivergence_dense_domain
+#print axioms hilbertDivergence_mem_iff
+#print axioms cylindricalField
+#print axioms cylindricalDivergenceExpression
+#print axioms cylindricalDivergence_field_graph
+#print axioms cylindricalDivergence_representation_independent
+#print axioms cylindricalField_mem_domain
+#print axioms cylindricalDivergence_field_apply
+#print axioms cylindricalField_integration_by_parts
+#print axioms cylindricalField_ibp_integrable
+#print axioms closedCylindricalDerivative_core_graph
+#print axioms closedCylindricalDerivative_core_mem
+#print axioms closedCylindricalDerivative_core_apply
+#print axioms hilbertDivergence_field_graph
+#print axioms cylindricalVectorDomain_mem_iff
+#print axioms closedCylindricalDerivative_le_cylindricalDivergence_adjoint
+end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+
+namespace OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+#print axioms exists_cylindricalField_approx
 end OperatorDerivativeRewrite.Foundation.InfiniteGaussian

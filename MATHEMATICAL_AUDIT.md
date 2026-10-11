@@ -2319,3 +2319,144 @@ divergence adjoints, and graph-domain characterizations remain unproved. No
 closed-domain algebra or graph-norm density assertion is inferred from the
 polynomial-domain product rule. The next analytic milestone is Gaussian
 integration by parts with proved test-space density, then closability.
+
+## Genuine Gaussian IBP, dense finite-rank divergence fields, and closability
+
+Baseline: `baa5f859a066e6eb5b57ad3f16c2bcd25221cb36`. The starting working tree
+was clean. This milestone preserves the existing polynomial derivative,
+representation independence, scalar domain, and product results. It establishes
+Gaussian integration by parts and closes the actual polynomial derivative on
+the verified countable-product isonormal model over H = ℓ².
+
+### Directional finite-Hilbert Gaussian analysis
+
+`Foundation/FiniteGaussianDirectionalIBP.lean` has five declarations:
+
+| Declaration | Exact mathematical meaning |
+| --- | --- |
+| `basisPolynomialMap` | For arbitrary finite hᵢ in a finite-dimensional Hilbert space E, substitutes the genuine linear polynomial Σₐ ⟨hᵢ,bₐ⟩ Xₐ into p, where (bₐ) is the standard orthonormal basis of E. This is a ring homomorphism of actual polynomial algebras. |
+| `basisPolynomialMap_eval` | Evaluation of that substituted polynomial at y is exactly p((⟨hᵢ,Σₐ yₐ bₐ⟩)ᵢ). No coordinate-rank assumption is imposed. |
+| `basisPolynomialMap_pderiv_eval` | Its a-th evaluated partial derivative is ⟨cylinderGradient(h,p)(Σₐ yₐ bₐ),bₐ⟩. The proof differentiates the actual substituted polynomial, using the true polynomial product rule. |
+| `cylinder_stein_basis` | E[⟨gradient(h,p),bₐ⟩] = E[cylinder(h,p) ⟨bₐ,x⟩] under stdGaussian E, transported from the previously proved independent-coordinate polynomial Stein theorem. |
+| `cylinder_stein` | E[⟨gradient(h,p),v⟩] = E[cylinder(h,p) ⟨v,x⟩] for every v ∈ E, by orthonormal reconstruction, proved integrability, and finite-sum integration. |
+
+This is the missing analytic bridge between the original independent-coordinate
+IBP theorem and arbitrary finite Hilbert families. It does not treat correlated
+coordinates as independent tensor coordinates. Empty index families and
+zero-dimensional Hilbert spaces are allowed.
+
+### Actual vector test core and its proved density
+
+`Foundation/InfiniteGaussianVectorCore.lean` has eight declarations:
+
+| Declarations | Exact mathematical meaning |
+| --- | --- |
+| `GaussianVectorL2` | Mathlib L²(μ; H), using the genuine ℓ² Hilbert fiber norm. |
+| `scalarTensor`, `scalarTensor_coeFn` | The bounded linear map f ↦ f h from scalar L² to H-valued L², and its actual almost-everywhere representative formula. It uses the existing continuous-linear-map Lp composition infrastructure. |
+| `cylindricalVectorDomain` | The algebraic span of actual G h fields, with G in the already verified scalar polynomial cylindrical subspace and h arbitrary in H. |
+| `scalarTensor_mem_domain` | Every such rank-one polynomial field belongs to that core. |
+| `scalarTensor_inner` | ⟨f h,u⟩ in vector L² equals the scalar L² pairing of f with the actual projected field ⟨h,u⟩. |
+| `eq_zero_of_cylindricalVector_orthogonal` | A vector L² field orthogonal to every rank-one polynomial field is zero. Scalar cylinder density first kills every scalar projected field; countably many ℓ² unit-coordinate projections then kill its actual representative almost everywhere. |
+| `cylindricalVectorDomain_dense` | This core is dense in the entire H-valued Gaussian L² space, by the Hilbert orthogonal-complement criterion. |
+
+Density is not assumed from scalar density alone. The proof establishes the
+projection pairing, uses the already proved scalar density, and separately
+uses completeness of the ℓ² coordinate system. The later exact finite-sum
+characterization and norm-approximation theorem identify the dense set with
+genuine finite-rank polynomial fields, rather than an unspecified vector domain.
+
+### Genuine infinite-cylinder Stein and rank-one IBP
+
+`Foundation/InfiniteGaussianIBP.lean` has nine declarations:
+
+| Declarations | Exact mathematical meaning |
+| --- | --- |
+| `isonormalCylinder_stein` | For arbitrary finite h, polynomial p, and v ∈ H, E[⟨G(h,p),v⟩] = E[F(h,p) W(v)]. The proof transports both sides to the standard Gaussian on span(range h ∪ {v}) using the previously proved genuine finite realization and gradient compatibility. |
+| `polynomialDerivative_stein` | The same identity E[⟨D₀F,v⟩] = E[F W(v)] on the actual representation-independent scalar L² polynomial domain. |
+| `polynomial_times_firstChaos_memLp` | F W(h) has every finite Lp moment. At exponent r, both input moments at 2r are proved and Hölder is applied. |
+| `polynomial_directional_memLp` | ⟨D₀G,h⟩ has every finite Lp moment, using the proved vector derivative moments and a fixed Hilbert direction. |
+| `rankDivergence_memLp` | G W(h) − ⟨D₀G,h⟩ has every finite Lp moment. |
+| `rankDivergence`, `rankDivergence_coeFn` | Its actual scalar L² class and the proved almost-everywhere expression δ₀(Gh)=G W(h)−⟨D₀G,h⟩. |
+| `polynomialDerivative_rank_integration_by_parts` | E[⟨D₀F,Gh⟩] = E[F rankDivergence(G,h)] for all scalar polynomial-domain F,G and arbitrary h ∈ H. This follows from Stein applied to the proved intrinsic polynomial product and the actual product derivative. |
+| `polynomialDerivative_rank_pairing` | The corresponding Hilbert-space pairing identity ⟨D₀F,Gh⟩_{L²(H)} = ⟨F,rankDivergence(G,h)⟩_{L²}. |
+
+The rank-one IBP proof establishes integrability before splitting sums or
+subtracting integrals: F⟨D₀G,h⟩ and G⟨D₀F,h⟩ use L² × L² → L¹; F(GW(h)) uses
+the independently proved L² membership of GW(h). Fourth moments justify that
+membership. No L² × L² → L² closure is assumed.
+
+### Single-valued cylindrical divergence, closed derivative, and full adjoint
+
+`Foundation/InfiniteGaussianOperators.lean` has forty-one declarations. They
+establish the following definitions and exact statements:
+
+| Declarations | Exact mathematical meaning |
+| --- | --- |
+| `cylindricalDerivative` | D₀ as a Mathlib LinearPMap on ambient scalar L², with domain exactly polynomialCylindricalDomain and value exactly polynomialDerivative. |
+| `cylindricalDivergenceGraph` | The algebraic span of the pairs (G h, G W(h)−⟨D₀G,h⟩) of actual L² classes. No independently prescribed output is introduced. |
+| `cylindricalDivergenceGraph_pairing` | Every pair (u,v) in that span satisfies ⟨D₀F,u⟩=⟨F,v⟩ for every scalar polynomial test F. Proved rank-one IBP puts the generators in the kernel of the actual pairing-difference linear functional, hence also their span. |
+| `cylindricalDivergenceGraph_vertical_zero` | If (0,v) belongs to this graph, then v=0. The pairing identity and proved scalar density force v to vanish. This proves divergence single-valuedness, rather than assuming it. |
+| `cylindricalDivergence`, `cylindricalDivergence_graph` | The genuine partial linear operator δ₀ obtained from this proved single-valued graph, with its graph equal to the explicitly generated graph. |
+| `cylindricalDivergence_rank_graph` | Each actual rank-one field has precisely its explicit rankDivergence value in δ₀'s graph. |
+| `cylindricalDivergence_domain` | The domain of δ₀ is exactly cylindricalVectorDomain; both inclusions are proved. |
+| `cylindricalDerivative_dense_domain`, `cylindricalDivergence_dense_domain` | Both actual operator domains are dense in their respective ambient L² spaces. |
+| `cylindricalDerivative_formalAdjoint` | The Hilbert IBP identity on both actual restricted operator domains. |
+| `cylindricalDerivative_le_divergence_adjoint`, `cylindricalDivergence_le_derivative_adjoint` | D₀ ⊆ δ₀* and δ₀ ⊆ D₀*, with domain inclusion and values proved from IBP and the relevant proved domain density. |
+| `cylindricalDerivative_isClosable` | D₀ is closable because it is contained in the closed adjoint δ₀* of a densely defined operator. This uses the genuine IBP and vector density already proved. |
+| `cylindricalDivergence_isClosable` | δ₀ is also closable, using its proved inclusion in the closed adjoint D₀*. |
+| `closedCylindricalDerivative`, `closedCylindricalDerivative_isClosed`, `closedCylindricalDerivative_dense_domain` | D is the actual graph closure of D₀; closability proves that it is a closed densely defined operator. |
+| `closedCylindricalDerivative_graph`, `closedCylindricalDerivative_mem_iff` | graph(D)=closure(graph(D₀)); F∈Dom(D) iff there exists V∈L²(μ;H) with (F,V) in that graph closure. These are exact graph domains, with no unproved Sobolev characterization imposed. |
+| `hilbertDivergence` | The full natural Hilbert-space adjoint δ=D*. |
+| `hilbertDivergence_eq_cylindricalDerivative_adjoint` | D*=D₀*, by the previously proved generic closure-adjoint theorem and the newly proved closability and density. |
+| `cylindricalDivergence_le_hilbertDivergence` | δ₀ ⊆ δ, with actual domain and value inclusion. |
+| `hilbertDivergence_isClosed`, `hilbertDivergence_dense_domain` | δ is closed because D is densely defined, and is densely defined because its domain contains the proved dense domain of δ₀. |
+| `hilbertDivergence_mem_iff` | u∈Dom(δ) iff there exists v∈scalar L² such that ⟨DF,u⟩=⟨F,v⟩ for every F∈Dom(D). This is an exact weak-divergence domain characterization proved from the natural adjoint definition and its pairing identity. |
+| `cylindricalField`, `cylindricalDivergenceExpression` | The actual finite sums u=Σⱼ Gⱼ hⱼ and v=Σⱼ(GⱼW(hⱼ)−⟨D₀Gⱼ,hⱼ⟩), for arbitrary finite index types. |
+| `cylindricalDivergence_field_graph`, `cylindricalField_mem_domain`, `cylindricalDivergence_field_apply` | Every finite sum belongs to δ₀'s domain, its explicit sum expression is in the graph, and applying δ₀ gives that expression for any domain proof. |
+| `cylindricalDivergence_representation_independent` | If two arbitrary finite decompositions give the same H-valued L² field, their divergence sum expressions are equal as scalar L² classes. This follows from the proved graph single-valuedness; no decomposition-independence hypothesis is used. |
+| `cylindricalField_integration_by_parts` | For every scalar polynomial F and every actual finite-rank cylindrical u, E[⟨D₀F,u⟩]=E[F δ₀u]. |
+| `cylindricalField_ibp_integrable` | Both integrands in that finite-field identity are integrable, proved by vector Hölder and scalar L² product integrability. |
+| `closedCylindricalDerivative_core_graph`, `closedCylindricalDerivative_core_mem`, `closedCylindricalDerivative_core_apply` | Every original scalar polynomial-domain F belongs to Dom(D), and DF retains exactly its genuine polynomial derivative D₀F. |
+| `hilbertDivergence_field_graph` | The full adjoint δ contains every finite-rank field with precisely the explicit cylindrical divergence value. |
+| `cylindricalVectorDomain_mem_iff` | The vector core consists exactly of finite sums Gⱼ hⱼ, with a Fin n representation. The proof extracts finite span witnesses and absorbs real coefficients into the scalar polynomial-domain elements. |
+| `closedCylindricalDerivative_le_cylindricalDivergence_adjoint` | D ⊆ δ₀* is a proved closed-operator inclusion. No equality is inferred. |
+| `exists_cylindricalField_approx` | For every u∈L²(μ;H) and ε>0, there is one genuine finite-rank polynomial field Σⱼ Gⱼhⱼ with L² distance less than ε. |
+
+Thus operator-domain membership, actual expressions, integration by parts,
+single-valuedness, and closability are separate verified steps. The natural
+adjoint domain uses the ambient L² norm on Dom(D), not an assumed graph-norm
+boundedness condition. Its weak divergence v is uniquely determined because
+Dom(D) is dense. No arbitrary adjoint-domain or graph-density assumption occurs.
+
+### Exact remaining obligations and verification
+
+The strongest proved relations here are
+D₀ ⊆ δ₀*, D=closure(D₀) ⊆ δ₀*, and δ₀ ⊆ D₀*=D*=δ.
+These do not establish closure(δ₀)=δ or D=δ₀*. A graph-core/essential-adjointness
+argument would be needed for those stronger identifications. No graph-norm
+density of the vector polynomial core in Dom(δ) has been proved here.
+
+All construction remains on the genuine countable-product Gaussian model over
+H=ℓ², allowing arbitrary directions, including infinite-support, dependent,
+correlated, and zero directions. Extension to other abstract Hilbert models,
+non-polynomial smooth cylinders, sample-space translation/Cameron–Martin
+compatibility, maximal Sobolev or chaos spectral domains, and advanced stochastic
+calculus/Itô results remain future work. No multiplication-algebra claim is made
+for Dom(D) or Dom(δ), and no equality with a bounded energy-space interface is
+assumed.
+
+The full Lake build passes (3355 jobs). All four new modules compile without
+warnings; the two existing unused-variable warnings in Adjoint remain unchanged.
+The complete axiom audit has 646 queries and 646 results, including all 63 new
+declarations. Its dependency union is only `propext`, `Classical.choice`, and
+`Quot.sound`; no `sorryAx` or custom axioms occur. The raw output is retained in
+`.lake/build/infinite-gaussian-ibp-closability-axioms.log`, an ignored build
+artifact. The Foundation source scan finds no `sorry`, `admit`, or custom axiom
+declarations.
+
+The original Lean and manuscript hashes and all earlier proof modules remain
+unchanged. Only these four new proof modules, root imports, axiom queries, and
+documentation are included. This section supersedes the preceding milestone's
+open IBP, vector density, closability, and natural closed-operator/adjoint
+construction obligations, while preserving the explicit unresolved graph-core
+and full-domain identification obligations above.
