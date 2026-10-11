@@ -1,4 +1,5 @@
 import Foundation.InfiniteGaussianCoordinateFields
+import Foundation.InfiniteGaussianProjectionConvergence
 import Foundation.InfiniteGaussianOperators
 import Foundation.InfiniteGaussianPolynomialProducts
 import Foundation.InfiniteGaussianCylinders
@@ -554,6 +555,37 @@ namespace OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms firstChaos_norm
 #print axioms firstChaos_finiteSum
 #print axioms firstChaos_injective
+end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+
+namespace OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+
+#print axioms finiteFiberMap
+#print axioms finiteFiberMap_apply
+#print axioms finiteFiberMap_basis
+#print axioms finiteFiberMap_orthonormal
+#print axioms finiteFiberIsometry
+#print axioms finiteFiberIsometry_apply
+#print axioms finiteFiberIsometry_compLp_norm
+#print axioms finiteFiberLpIsometry
+#print axioms finiteVectorIsometry
+#print axioms finiteVectorIsometry_coeFn
+#print axioms finiteVectorPullback_coeFn
+#print axioms finiteVectorPullback_eq_isometry
+#print axioms finiteVectorProjection
+#print axioms finiteVectorProjection_fix
+#print axioms finiteVectorProjection_norm_le
+#print axioms finiteScalarProjection_fix_polynomial_of_subset
+#print axioms finiteVectorProjection_fix_coordinate_of_subset
+#print axioms finiteVectorProjection_eventually_fix_core
+#print axioms finiteVectorProjection_range_tendsto
+#print axioms finiteScalarProjection_range_tendsto
+#print axioms finiteSector_weak_gradient_range_graph
+#print axioms finiteSector_projections_range_tendsto
+#print axioms cylindricalDivergence_adjoint_le_closedDerivative
+#print axioms cylindricalDivergence_adjoint_eq_closedDerivative
+#print axioms closedPolynomialDivergence_eq_hilbertDivergence
+#print axioms hilbertDivergence_polynomial_graph_core_sequence
+
 end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 
 namespace OperatorDerivativeRewrite.Foundation.InfiniteGaussian

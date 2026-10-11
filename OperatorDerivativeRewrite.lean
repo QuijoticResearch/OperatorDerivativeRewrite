@@ -16,3 +16,4 @@ import Foundation.InfiniteGaussianPolynomialProducts
 import Foundation.InfiniteGaussianOperators
 import Foundation.InfiniteGaussianFiniteSectors
 import Foundation.InfiniteGaussianCoordinateFields
+import Foundation.InfiniteGaussianProjectionConvergence

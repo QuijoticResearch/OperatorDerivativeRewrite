@@ -2674,3 +2674,64 @@ depends only on some subset of `propext`, `Classical.choice`, and `Quot.sound`;
 none depends on `sorryAx` or a custom axiom. The source scan found no
 `axiom`, `sorry`, or `admit` declaration. The audit transcript is kept in the
 ignored file `.lake/build/infinite-gaussian-coordinate-fields-axioms.log`.
+
+### Complete divergence graph core on the countable Gaussian product
+
+`Foundation/InfiniteGaussianProjectionConvergence.lean` resolves the projection
+obligation left above. The theorem applies to the established countable product
+of independent standard real Gaussians, with ambient fiber `ℓ²(ℕ)` and genuine
+polynomial-cylinder operators. It does not introduce a componentwise
+Sobolev-domain condition or assume graph density.
+
+The finite fiber map sends `x ∈ ℝˢ` to `Σᵢ∈s xᵢ eᵢ ∈ ℓ²(ℕ)`.
+`finiteFiberMap_orthonormal` and `finiteFiberIsometry` verify that this is an
+isometry, including for `s = ∅`. Its pointwise `L²` lift and the
+measure-preserving finite Gaussian projection give `finiteVectorIsometry`.
+`finiteVectorPullback_eq_isometry` proves that this is **the previously defined
+vector lift** `Jₛ`, so `JₛJₛ*` is a contractive orthogonal projection, not a
+new, independently prescribed approximation.
+
+`finiteVectorProjection_fix_coordinate_of_subset` proves that a field
+`p(ω|ₛ)eₙ` is fixed whenever the finite sector contains `s ∪ {n}`. Span
+induction gives `finiteVectorProjection_eventually_fix_core`; the verified
+ambient density of these polynomial fields and uniform projection contraction
+give `finiteVectorProjection_range_tendsto`:
+
+    J_[0,N) J_[0,N)* G → G  in L²(Ω;ℓ²), for every G.
+
+The parallel result `finiteScalarProjection_range_tendsto` gives
+`I_[0,N) I_[0,N)* F → F` for every scalar `L²` class. Thus
+`finiteSector_projections_range_tendsto` is a **simultaneous** limit along the
+same increasing sets. For a pair `(F,G) ∈ graph(δ₀*)`, the previously proved
+finite-dimensional Hermite weak-gradient bridge places every projected pair
+in `graph(D)` (`finiteSector_weak_gradient_range_graph`). Closedness of `D`
+then proves `cylindricalDivergence_adjoint_le_closedDerivative`. Combining the
+earlier reverse inclusion and bidual equivalence yields the exact identities
+
+    δ₀* = D,
+    closure(δ₀) = δ = D*.
+
+The Lean declarations are `cylindricalDivergence_adjoint_eq_closedDerivative`
+and `closedPolynomialDivergence_eq_hilbertDivergence`. The latter is a genuine
+graph-core assertion: `hilbertDivergence_polynomial_graph_core_sequence`
+constructs, for each `(u,g) ∈ graph(δ)`, a sequence in the actual polynomial
+divergence domain whose field and divergence converge jointly to `(u,g)`.
+The finite-dimensional spectral theorem used in the weak-gradient lift retains
+the **combined** divergence coefficients `b_β`; it does not require
+componentwise weighted summability. The proof does not infer graph convergence
+from ambient `L²` density alone: isometric projection convergence and closedness
+are the additional steps.
+
+No unresolved analytic obligation remains for the polynomial divergence graph
+core on this countable standard Gaussian product. Extensions to a general
+Gaussian probability space or an arbitrary nonseparable isonormal index space
+require separate transfer/density arguments. This milestone does not assert an
+Itô formula or stochastic integration theory.
+
+Verification for this milestone: the full `lake build` and
+`lake build Foundation.AxiomAudit` pass. The audit contains 714 `#print axioms`
+queries with 714 results. Each new declaration depends only on a subset of
+`propext`, `Classical.choice`, and `Quot.sound`; none uses `sorryAx` or a custom
+axiom. The source scan finds no `axiom`, `sorry`, or `admit` declaration. The
+audit transcript is in the ignored file
+`.lake/build/infinite-gaussian-projection-axioms.log`.
