@@ -3956,3 +3956,43 @@ Foundation/PoissonBoundedCalculus.lean proves actual scalar and weighted-field L
 
 Foundation/PoissonMoments.lean proves every Poisson polynomial moment series converges by a ratio estimate, all real polynomials belong to scalar L², and genuine Poisson integrals satisfy E[N]=λ and E[N²]=λ²+λ. Foundation/PoissonPolynomialExamples.lean then verifies the actual closed-operator equalities δ1=N−λ, D(N−λ)=1, and D((N−λ)²)=2(N−λ)+1; the ordinary differential square chain rule is false. The product theorem covers bounded representatives. Full maximal-domain multiplier characterization, Poisson-process stochastic integration, Clark–Ocone, and martingale representation remain outside this one-site milestone.
 
+
+## One-site Poisson bounded multipliers on the full maximal derivative domain
+
+`Foundation/PoissonMultipliers.lean` extends P5 from two bounded factors to an
+arbitrary `f` in the exact maximal difference domain and a bounded real count
+function `g`. It constructs actual scalar and rate-weighted field `Lp` products,
+proves pointwise evaluation using positive mass at every Poisson atom, and
+proves the estimates `‖g f‖₂ ≤ C ‖f‖₂` and `‖g u‖₂,field ≤ C ‖u‖₂,field`
+whenever `|g(n)| ≤ C`. These classes do not depend on the chosen bound or on a
+bounded representative of the same Poisson L² class.
+
+The actual maximal derivative of the bounded scalar class of `g` has values
+`Dg(n)=g(n+1)-g(n)`, hence `|Dg(n)| ≤ 2C` with no additional hypothesis.
+For `f ∈ dom(D)`, the established maximal-domain formula gives
+`Sf(n)=f(n+1) ∈ L²(λ μλ)`. Thus `g Df` and `(Sf) Dg` are both in the weighted
+field L² space. In particular, the shifted term satisfies the explicit bound
+`‖(Sf)Dg‖₂,field ≤ 2C ‖Sf‖₂,field`. Their pointwise sum equals the difference of the scalar
+product, so the exact maximal-domain criterion proves `gf ∈ dom(D)`.
+`scalarMul_difference_shifted` identifies the actual operator output with the
+sum of those two weighted L² classes. Separately, `f Dg`, `g Df`, and
+`(Df)(Dg)` belong to weighted L² by the proved bounded-multiplier estimates;
+`scalarMul_difference_expanded` proves the full three-term jump rule as an
+equality of actual field L² elements. The two forms are mathematically
+identical because `Sf=f+Df` pointwise on the maximal domain.
+
+Boundedness of `g` alone suffices here; boundedness of `Dg` follows from the
+finite-difference formula. This does not make `dom(D)` an algebra. Indeed,
+with `w_n = μλ({n})` and `f(n)=w_n^(-1/4)/sqrt(n+1)`, the ratio test gives
+`Σ sqrt(w_n)<∞`, so `f ∈ dom(D)`. Yet `f² ∈ L²(μλ)` because
+`Σ w_n f(n)^4=Σ 1/(n+1)^2<∞`, while `f² ∉ dom(D)` because
+`Σ n w_n f(n)^4=Σ n/(n+1)^2=∞`. This is a mathematical counterexample,
+not a new Lean declaration. No arbitrary-domain product statement, multisite
+claim, or Poisson-process integral is inferred.
+
+Verification: the complete `lake build` succeeds (4018 jobs). Direct
+`lake env lean Foundation/AxiomAudit.lean` succeeds with 1106 transitive
+reports; all 27 new public declarations depend only on `propext`,
+`Classical.choice`, and `Quot.sound` or subsets thereof. No `sorryAx`, custom
+axiom, `sorry`, `admit`, or unsafe code is present. The two previously known
+unused section-variable warnings in `Foundation.Adjoint` remain.

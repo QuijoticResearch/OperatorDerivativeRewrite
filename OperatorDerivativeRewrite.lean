@@ -10,6 +10,7 @@ import Foundation.PoissonAdjoints
 import Foundation.PoissonBoundedCalculus
 import Foundation.PoissonMoments
 import Foundation.PoissonPolynomialExamples
+import Foundation.PoissonMultipliers
 import Foundation.Adjoint
 import Foundation.LpProducts
 import Foundation.GaussianEntropy
