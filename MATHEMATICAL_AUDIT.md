@@ -2610,3 +2610,67 @@ The raw output is retained in the ignored artifact
 `.lake/build/infinite-gaussian-finite-sectors-axioms.log`. The Foundation
 source scan finds no `sorry`, `admit`, or custom axiom declarations.
 The original Lean and TeX sources and all earlier proof modules are unchanged.
+
+## Finite-coordinate weak-gradient bridge (current milestone)
+
+The two target identities remain **unproved**:
+
+    closure(δ₀) = δ = D*,       δ₀* = D.
+
+The existing finite-sector Hermite truncation gives graph approximation **after**
+an infinite field has been identified with a maximal finite-sector divergence
+pair. It does not provide finite-sector graph approximation of arbitrary
+`u ∈ Dom(δ)`. The bidual theorem proves the displayed identities equivalent,
+but neither follows from L² density alone.
+
+`Foundation/InfiniteGaussianCoordinateFields.lean` now establishes the following
+additional facts with the actual product Gaussian measure and operators:
+
+| Declaration | Mathematical statement |
+| --- | --- |
+| `coordinatePolynomialVectorDomain` | The algebraic span of fields `p(ω|ₛ)eₙ`, where `s` is finite and `p` is a genuine polynomial on that finite coordinate space. |
+| `coordinatePolynomialVectorDomain_le` | Every such field belongs to the actual polynomial divergence domain. This follows from the existing rank-field graph, without asserting graph closure. |
+| `coordinatePolynomialVectorDomain_dense`, `exists_coordinatePolynomialVector_approx` | These finite-coordinate fields approximate every `L²(Ω;ℓ²)` field in the **ambient L² norm**. The proof uses verified scalar polynomial density and the completeness of the coordinate vectors in `ℓ²`. |
+| `finiteVectorPullback_insert`, `coordinatePolynomialVector_mem_finite_sector` | A rank-one coordinate field is the pullback of a genuine finite Gaussian vector field after enlarging its coordinate set to include its output direction. |
+| `eq_zero_of_finiteVectorPullback_orthogonal` | The ranges of all finite vector lifts jointly detect every vector `L²` class. This is an orthogonality statement; it is not convergence of the associated adjoint projections. |
+| `finiteSector_weak_gradient_graph` | If `(F,G) ∈ graph(δ₀*)`, then `(Iₛ*F,Jₛ*G) ∈ graph(δ₀,ₛ*)` for every finite `s`, where `Iₛ` and `Jₛ` are the established scalar and vector lifts. The proof uses the actual polynomial divergence lift and Hilbert adjoint pairings. |
+| `finiteSector_weak_gradient_lift_graph` | Every projected pair `(IₛIₛ*F,JₛJₛ*G)` lies in `graph(D)` by the previously verified finite-dimensional Hermite graph theorem. No convergence is asserted. |
+| `finiteScalarProjection_fix`, `finiteScalarProjection_norm_le`, `exists_finiteScalarProjection_approx` | `IₛIₛ*` fixes the finite scalar sector, is contractive, and its finite-sector choices approximate every scalar Gaussian `L²` class in norm. This uses proved polynomial density and the Hilbert adjoint of the isometric pullback. |
+
+These statements apply to all finite `s`, including the empty set. They do not
+replace the maximal finite vector divergence condition by componentwise
+Sobolev bounds; the previous finite graph theorem still uses the combined
+Hermite coefficients and permits cancellation.
+
+The exact missing step is **joint finite-sector projection convergence** on
+the graph of `δ₀*` (equivalently, an appropriate conditional-expectation
+commutation theorem): find finite sets `sₙ` such that both
+
+    Iₛₙ Iₛₙ* F → F          in scalar L²,
+    Jₛₙ Jₛₙ* G → G          in vector L²
+
+for each `(F,G) ∈ graph(δ₀*)`. The scalar approximation above is existential
+and does not by itself give a common sequence with the vector approximation.
+The vector lift has not yet been proved isometric or its adjoint compositions
+identified with finite-coordinate conditional expectation and direction
+projection. The joint density of its ranges, proved here, is strictly weaker
+than convergence of `JₛJₛ*`. With this additional noncircular projection result,
+closedness of `D` and `finiteSector_weak_gradient_lift_graph` would yield
+`δ₀* ≤ D`; the reverse inclusion and existing bidual theorem would then give
+both desired identities. No theorem in this milestone assumes that convergence.
+
+Mathlib already supplies bounded Hilbert adjoints, `condExpL2`, Gaussian
+product measures, and the `L²` infrastructure. Public `gaussian-hilbert`
+contains finite Hermite completeness, while `lean-malliavin` has a closed
+Gaussian Banach-space Malliavin derivative and simple-field divergence. Their
+interfaces do not directly supply this project's finite-lift projection
+compatibility, so no new dependency was introduced. The inspected sources are
+`https://github.com/mrdouglasny/gaussian-hilbert/blob/4d055b0bf3722c73bd6c327eeabd8a8a72ab4c7e/GaussianHilbert/HermitePolynomials.lean`
+and `https://github.com/savarin/lean-malliavin/blob/a1a6ccc6eedbdf15fc3aebf9146d1fddfa0c8272/Malliavin/MalliavinDerivative.lean`.
+
+The complete `lake build` passes (3358 jobs), and the separately built
+`Foundation.AxiomAudit` has 688 queries and 688 results. Every new declaration
+depends only on some subset of `propext`, `Classical.choice`, and `Quot.sound`;
+none depends on `sorryAx` or a custom axiom. The source scan found no
+`axiom`, `sorry`, or `admit` declaration. The audit transcript is kept in the
+ignored file `.lake/build/infinite-gaussian-coordinate-fields-axioms.log`.
