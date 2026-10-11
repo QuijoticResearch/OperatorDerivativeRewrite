@@ -15,3 +15,4 @@ import Foundation.InfiniteGaussianCylinders
 import Foundation.InfiniteGaussianPolynomialProducts
 import Foundation.InfiniteGaussianOperators
 import Foundation.InfiniteGaussianFiniteSectors
+import Foundation.InfiniteGaussianCoordinateFields

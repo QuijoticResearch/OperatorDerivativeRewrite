@@ -1,4 +1,4 @@
-import Foundation.InfiniteGaussianFiniteSectors
+import Foundation.InfiniteGaussianCoordinateFields
 import Foundation.InfiniteGaussianOperators
 import Foundation.InfiniteGaussianPolynomialProducts
 import Foundation.InfiniteGaussianCylinders
@@ -792,4 +792,23 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 
 namespace OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms polynomialDivergence_core_iff_adjoint_identification
+end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+
+namespace OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+
+#print axioms coordinatePolynomialVectorDomain
+#print axioms coordinatePolynomialVectorDomain_le
+#print axioms eq_zero_of_coordinatePolynomialVector_orthogonal
+#print axioms coordinatePolynomialVectorDomain_dense
+#print axioms exists_coordinatePolynomialVector_approx
+#print axioms finiteVectorPullback_insert
+#print axioms coordinatePolynomialVector_mem_finite_sector
+#print axioms eq_zero_of_finiteVectorPullback_orthogonal
+#print axioms finiteSector_weak_gradient_graph
+#print axioms finiteSector_weak_gradient_lift_graph
+#print axioms finiteScalarProjection
+#print axioms finiteScalarProjection_fix
+#print axioms finiteScalarProjection_norm_le
+#print axioms exists_finiteScalarProjection_approx
+
 end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
