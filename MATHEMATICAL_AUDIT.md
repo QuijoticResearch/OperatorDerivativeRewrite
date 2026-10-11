@@ -3709,3 +3709,13 @@ All nine new public declarations depend only on `propext`,
 `Classical.choice`, and `Quot.sound`; no `sorryAx` or custom axiom appears.
 The new module has no warnings. The two pre-existing unused-section-variable
 warnings in `Foundation.Adjoint` are unchanged.
+
+## M5: fixed-support smooth approximation and zero-mean correction
+
+`Foundation/GaussianSobolevFixedSupport.lean` establishes a smaller supporting milestone for the fixed-compact-support smoothing argument. For a Lebesgue `L²` function `h` with pointwise support in `[-R,R]`, `R ≥ 0`, and every `ε > 0`, `exists_fixed_support_smooth_approx` gives a genuinely smooth approximant `v` supported in the *same enlarged interval* `[-(R+2),R+2]`, with `eLpNorm (h-v) 2 volume ≤ ENNReal.ofReal ε`. The proof applies Mathlib's smooth compactly supported `L²` density theorem, then multiplies the approximant by a smooth bump equal to one on the support of `h`. Its pointwise bound by one ensures this support truncation does not increase the `L²` error.
+
+`exists_unit_integral_bump` constructs a smooth `q` supported in the enlarged interval with `∫q dx=1`, using Mathlib's normalized `ContDiffBump`; the integral is a proved property of that construction. The definition `corrected v q = v - (∫v dx) q` and `corrected_properties` prove that the corrected function is smooth, retains the same fixed support, and has zero Lebesgue integral. Integrability of both terms is derived from smoothness and compact support.
+
+This milestone does **not** yet establish convergence of the corrected approximants. The remaining quantitative lemma must bound `|∫v dx| = |∫(v-h) dx|` by the Lebesgue `L²` error on the common finite interval, using the already proved `∫h dx=0` for cutoff derivatives. Then one must bound the `L²` error added by `(∫v)q`, construct the compactly supported smooth primitives, prove their actual derivatives and quantitative primitive error bound, transfer both estimates to Gaussian `L²`, and finally diagonalize across cutoffs. None of those results is assumed here, and neither the final M5 theorem nor M6 has been started. Original manuscripts and dependency pins remain unchanged.
+
+Verification for this fixed-support subset: the complete `lake build` succeeds (3441 jobs). Direct `lake env lean Foundation/AxiomAudit.lean` succeeds. All four newly audited declarations report exactly `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or custom axiom is reported. The new module has no warnings.

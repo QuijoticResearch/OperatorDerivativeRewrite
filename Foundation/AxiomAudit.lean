@@ -1,3 +1,4 @@
+import Foundation.GaussianSobolevFixedSupport
 import Foundation.GaussianSobolevSmoothApprox
 import Foundation.GaussianSobolevCutoffs
 import Foundation.GaussianLocalSobolev
@@ -1007,3 +1008,9 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevSmoothApprox.truncated_derivative_sq_integrable
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevSmoothApprox.truncated_derivative_integral_zero
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevSmoothApprox.truncated_primitive_representation
+
+/-! M5 fixed-support smooth approximation and zero-integral correction. -/
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevFixedSupport.exists_fixed_support_smooth_approx
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevFixedSupport.exists_unit_integral_bump
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevFixedSupport.corrected
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevFixedSupport.corrected_properties
