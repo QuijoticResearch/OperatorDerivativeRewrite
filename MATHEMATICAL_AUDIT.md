@@ -3913,3 +3913,25 @@ pointwise lemma depend transitively only on `propext`, `Classical.choice`, and
 `Quot.sound`; no `sorryAx` or custom axiom appears. The exact two maximal-domain
 iff statements and both Poisson reindexing equivalences were checked with
 Lean. The two old `Foundation.Adjoint` warnings remain the only build warnings.
+## P3 preparation: finite-coordinate truncation boundaries
+
+`Foundation/PoissonTruncation.lean` defines `truncate f N` as the genuine
+finite-support restriction to counts below `N`. For `truncate f (N+1)`, the
+actual forward difference agrees with the full difference below `N`, equals
+`-f(N)` at `N`, and vanishes above `N`. For a truncated field, divergence
+agrees with the full expression through `N`, has a single incoming value
+`(N+1)u(N)` at `N+1`, and vanishes thereafter. Theorems
+`scalar_boundary_sq_tendsto_zero` and
+`divergence_boundary_sq_tendsto_zero` show the respective boundary weighted
+square masses tend to zero. The divergence result uses precisely the P2
+next-count domain moment, not a componentwise Sobolev condition.
+
+**Remaining P3 obligation:** establish simultaneous L² convergence of each
+truncation and its operator value, including the series-tail norm estimates.
+Vanishing of the isolated boundary terms alone is insufficient to claim graph
+convergence. Neither closure equality nor graph-core density is asserted yet.
+P3 preparation verification: complete `lake build` succeeds (4011 jobs),
+and direct `lake env lean Foundation/AxiomAudit.lean` succeeds. All 10 new
+truncation declarations have transitive axioms among `propext`,
+`Classical.choice`, and `Quot.sound` only. Lean checked the exact boundary and
+vanishing-mass theorem types. This is not a verified graph-core result.

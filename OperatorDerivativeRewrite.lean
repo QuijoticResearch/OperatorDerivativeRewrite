@@ -3,6 +3,7 @@ import Foundation.PoissonDifferenceOperators
 import Foundation.PoissonCoordinateEvaluation
 import Foundation.PoissonMaximalOperators
 import Foundation.PoissonWeightedDomains
+import Foundation.PoissonTruncation
 import Foundation.Adjoint
 import Foundation.LpProducts
 import Foundation.GaussianEntropy
