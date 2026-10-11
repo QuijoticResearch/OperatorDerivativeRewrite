@@ -3395,3 +3395,64 @@ unused-section-variable warnings in `Foundation.Adjoint` remain. The
 corresponding ignored logs are `gaussian-rotation-build.log`,
 `gaussian-rotation-axioms.log`, and `gaussian-rotation-statements.log`
 under `.lake/build`.
+
+## Actual positive-time derivative of the Gaussian Mehler kernel (direct interpolation B2)
+
+`Foundation/GaussianMehlerTimeDerivative.lean` uses the **existing**
+`GaussianMehler.mehler` integral. Set `a(t)=exp(-t)` and
+`b(t)=sqrt(1-exp(-2t))`. Under `ContDiff ℝ 1 g`, a global norm bound
+`‖g z‖≤M`, and a global bound `‖deriv g z‖≤B` on the **actual** derivative,
+the new theorem `hasDerivAt_mehler_time` proves, for `t>0` and any `x`, both
+integrability of the differentiated kernel and
+
+```text
+HasDerivAt (fun s => GaussianMehler.mehler s g x)
+  (∫ y, deriv g (a(t)*x+b(t)*y)
+       * (-a(t)*x+(a(t)^2/b(t))*y) dγ(y)) t.
+```
+
+`deriv_mehler_time` states the corresponding equality for Mathlib's actual
+`deriv`. No derivative at zero is claimed, since the displayed velocity
+contains `1/b(t)`.
+
+The supporting results establish `a(t)^2+b(t)^2=1` for `t≥0`, `b(t)>0`
+for `t>0`, `a'(t)=-a(t)`, `b'(t)=a(t)^2/b(t)` for `t>0`, continuity of `b`,
+and an explicit positive-time neighborhood
+`U={s | b(t)/2 < b(s)} ∩ (0,∞)`. On `U` the denominator is at least
+`b(t)/2>0`, `0≤a(s)≤1`, and `velocity_bound` proves
+
+```text
+|-a(s)*x+(a(s)^2/b(s))*y| ≤ |x|+|y|/(b(t)/2).
+```
+
+Thus the derivative integrand is dominated by
+`B*(|x|+|y|/(b(t)/2))`. The bound is independent of `s` on `U` and is
+integrable in `y` by Mathlib's finite first Gaussian moment. The proof also
+establishes measurability of the original and derivative kernels, bounded
+integrability at the base time, and the actual pointwise chain rule throughout
+`U`. Only then does it apply Mathlib
+`hasDerivAt_integral_of_dominated_loc_of_deriv_le`, which returns derivative
+integrability and the genuine integral derivative simultaneously. The
+formula's coefficient signs follow from `a'=-a` and `b'=a²/b`.
+
+This theorem does not use rotation/Stein, Fisher decay, C² input, entropy
+dissipation, or an assumed derivative candidate. It prepares the outer
+entropy differentiation; the static rotated Stein identity from B1 will be
+used only when identifying that outer derivative with negative Fisher
+information. Remaining M3 obligations are positive-time C¹ regularity and
+bounded derivative of the evolved Mehler function, logarithmic-factor
+positivity/bounds, outer differentiation under the Gaussian integral with a
+common local majorant in `x`, and the final rotation/Stein pairing. The
+zero-time continuity already proved elsewhere remains a separate result.
+
+Verification: full `lake build` passes (3378 jobs). The complete transitive
+axiom audit has 790 reports, including all 13 new definitions/theorems;
+each new declaration depends only on `propext`, `Classical.choice`, and
+`Quot.sound`. The complete audit contains no `sorryAx` or custom axiom.
+Exact elaborated `#check @...` checks pass for every new declaration.
+The new module has no warning or `sorry`, `admit`, `axiom`, or `unsafe`.
+Only the two pre-existing unused-section-variable warnings in
+`Foundation.Adjoint` remain. Logs are under `.lake/build/` as
+`gaussian-time-build.log`, `gaussian-time-axioms.log`, and
+`gaussian-time-statements.log`. No original manuscript, existing theorem
+statement, toolchain, or dependency pin changes.

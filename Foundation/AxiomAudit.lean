@@ -1,3 +1,4 @@
+import Foundation.GaussianMehlerTimeDerivative
 import Foundation.GaussianRotationStein
 import Foundation.GaussianSteinBounded
 import Foundation.GaussianEntropyDissipation
@@ -925,3 +926,18 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianRotationStein.product_abs_coordinates_integrable
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianRotationStein.rotated_stein_integrable
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianRotationStein.rotated_stein_identity
+
+/-! Positive-time derivative of the actual Gaussian Mehler kernel. -/
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehlerTimeDerivative.γ
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehlerTimeDerivative.a
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehlerTimeDerivative.b
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehlerTimeDerivative.a_sq_add_b_sq
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehlerTimeDerivative.b_pos
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehlerTimeDerivative.hasDerivAt_a
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehlerTimeDerivative.hasDerivAt_b
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehlerTimeDerivative.b_continuous
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehlerTimeDerivative.b_local_lower_bound
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehlerTimeDerivative.a_bounds
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehlerTimeDerivative.velocity_bound
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehlerTimeDerivative.hasDerivAt_mehler_time
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianMehlerTimeDerivative.deriv_mehler_time
