@@ -3754,4 +3754,14 @@ This completes the global smooth graph-approximation statement of M5 for everywh
 
 Verification: complete `lake build` succeeds (3444 jobs), and direct `lake env lean Foundation/AxiomAudit.lean` succeeds. The new theorem's transitive axioms are exactly `propext`, `Classical.choice`, and `Quot.sound`; there is no `sorryAx` or custom axiom. The two existing unused-section-variable warnings in `Foundation.Adjoint` are unchanged.
 
+## M6: full one-dimensional Gaussian log-Sobolev inequality
+
+`Foundation/GaussianLogSobolevFull.lean` proves `gaussian_logSobolev_of_hasDerivAt`: for any real functions `f,h` with `HasDerivAt f (h x) x` at every `x` and Gaussian integrability of `f²` and `h²`, the function `f² log(f²)` is genuinely Gaussian-integrable and `entropySq γ f ≤ 2 ∫h² dγ`. No positivity, boundedness, or C¹ regularity assumption appears. `gaussian_logSobolev_of_hasDerivAt_pos` adds the original axiom's strict-positivity hypothesis as a compatibility corollary, with the same measure and factor 2.
+
+The proof applies the verified M5 simultaneous graph approximation to obtain one sequence of smooth compactly supported `Fₙ`. A real `L²` norm lemma proves convergence of `∫Fₙ²` and `∫(deriv Fₙ)²`. M4 gives an inequality for the *genuinely integrable* nonnegative quantity `klFun(Fₙ²) = Fₙ² log(Fₙ²)+1−Fₙ²`. The Gaussian-L² error gives convergence in measure and then an almost-everywhere convergent subsequence. Fatou and continuity of `klFun` bound the limiting extended integral by the finite limit of the M4 bounds. Only after proving that extended integral finite does the proof infer integrability of `klFun(f²)`, then of `f² log(f²)`, and finally rewrite the inequality in centered entropy form. This avoids using a totalized real integral for a potentially nonintegrable function and handles `f=0` pointwise.
+
+The theorem is the concrete variance-one Gaussian inequality under the original derivative and L² hypotheses. It does not establish the abstract `Γ₂ ≥ κΓ` Bakry–Émery curvature criterion, nor does this milestone edit or replace the axiom in the original manuscript/source.
+
+Verification: complete `lake build` succeeds (3445 jobs), and direct `lake env lean Foundation/AxiomAudit.lean` succeeds. Both new public theorems depend transitively exactly on `propext`, `Classical.choice`, and `Quot.sound`; neither depends on `sorryAx` or a custom axiom. The two pre-existing `Foundation.Adjoint` unused-section-variable warnings remain unchanged.
+
 Verification: complete `lake build` succeeds (3443 jobs); direct `lake env lean Foundation/AxiomAudit.lean` succeeds. All 19 new public declarations have transitive axiom sets contained in `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or custom axiom appears. The new module has no warnings. Only the two pre-existing unused-section-variable warnings in `Foundation.Adjoint` remain. Original manuscripts and dependency pins are unchanged.

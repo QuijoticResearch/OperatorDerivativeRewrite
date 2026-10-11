@@ -1,3 +1,4 @@
+import Foundation.GaussianLogSobolevFull
 import Foundation.GaussianSobolevGlobalApprox
 import Foundation.GaussianSobolevQuantitative
 import Foundation.GaussianSobolevPrimitives
@@ -1053,3 +1054,7 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 
 /-! M5 global simultaneous smooth graph approximation. -/
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevGlobalApprox.exists_smooth_compact_graph_sequence
+
+/-! M6 full Gaussian log-Sobolev theorem and exact-hypothesis compatibility. -/
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianLogSobolevFull.gaussian_logSobolev_of_hasDerivAt
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianLogSobolevFull.gaussian_logSobolev_of_hasDerivAt_pos
