@@ -1,3 +1,4 @@
+import Foundation.GaussianSobolevCutoffs
 import Foundation.GaussianLocalSobolev
 import Foundation.GaussianLogSobolevCore
 import Foundation.GaussianEntropyDissipationProof
@@ -980,3 +981,17 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianLocalSobolev.derivative_eq_deriv
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianLocalSobolev.intervalIntegrable_derivative_of_gaussian_sq_integrable
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianLocalSobolev.integral_derivative_eq_sub_of_gaussian_sq_integrable
+
+/-! M5 smooth-cutoff graph approximation. -/
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevCutoffs.γ
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevCutoffs.cutoff
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevCutoffs.truncated
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevCutoffs.cutoff_contDiff
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevCutoffs.cutoff_compact
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevCutoffs.truncated_compact
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevCutoffs.cutoff_bounds
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevCutoffs.hasDerivAt_truncated
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevCutoffs.deriv_truncated
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevCutoffs.cutoff_derivative_bound
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevCutoffs.simultaneous_sq_error_tendsto
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevCutoffs.derivative_cutoff_extra_sq_integral_bound

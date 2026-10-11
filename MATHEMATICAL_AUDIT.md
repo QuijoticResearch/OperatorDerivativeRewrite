@@ -3633,3 +3633,39 @@ The module compiles without warnings. The two pre-existing unused-section-
 variable warnings in `Foundation.Adjoint` remain. The build and axiom logs
 are under `.lake/build/gaussian-local-sobolev-*.log`. No original source,
 previous verified theorem statement, dependency pin, or lockfile changed.
+
+## M5: simultaneous Gaussian L² cutoff approximation
+
+`Foundation/GaussianSobolevCutoffs.lean` fixes one smooth bump `χ` equal to one on
+`[-1,1]`, supported in `[-2,2]`, and defines `cutoff n x = χ(x/(n+1))` and
+`truncated f n x = cutoff n x * f x`. Mathlib's `ContDiffBump` supplies smoothness,
+value bounds, and compact support. The actual product derivative is
+`cutoff n x * h x + deriv (cutoff n) x * f x` whenever
+`∀ x, HasDerivAt f (h x) x`. No continuity of `h` is assumed.
+
+Under Gaussian integrability of `f²` and `h²`,
+`simultaneous_sq_error_tendsto` proves, with this **same** sequence, that
+both `∫(truncated f n - f)² dγ` and
+`∫(deriv (truncated f n) - h)² dγ` tend to zero. Its proof derives
+measurability of `h` from the actual derivative, bounds the value error by
+`f²`, and dominates the derivative error by `2h² + 2C²f²`, with `C` a
+verified global bound on the base bump derivative. Dominated convergence is
+applied only after these integrability and pointwise-limit facts are proved.
+`derivative_cutoff_extra_sq_integral_bound` additionally establishes the
+quantitative estimate
+
+    ∫ (deriv (cutoff n) * f)² dγ ≤ (C/(n+1))² ∫ f² dγ.
+
+This is a cutoff graph-approximation milestone, **not** smooth approximation
+of `f`: the truncated function remains only differentiable with the original
+regularity. The remaining M5 step is controlled smoothing of these compactly
+supported functions and their actual derivatives, followed by a diagonal
+sequence. M6 entropy limits and the original Bakry–Émery axiom replacement
+remain open. No original manuscript or dependency pin was changed.
+
+Verification for this milestone: complete `lake build` succeeds (3390 jobs).
+`Foundation/AxiomAudit.lean` succeeds with 833 transitive reports. All 12
+new public declarations have only `propext`, `Classical.choice`, and
+`Quot.sound` in their transitive axiom sets; no `sorryAx` or custom axiom
+is reported. The two pre-existing unused-section-variable warnings in
+`Foundation.Adjoint` remain unrelated to this module.
