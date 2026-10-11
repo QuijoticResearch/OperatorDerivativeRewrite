@@ -21,3 +21,5 @@ import Foundation.InfiniteGaussianProjectionConvergence
 
 import Foundation.GaussianMehler
 import Foundation.GaussianFisherDecay
+
+import Foundation.GaussianEntropyDissipation

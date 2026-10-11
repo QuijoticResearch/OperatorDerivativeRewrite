@@ -3041,3 +3041,168 @@ prove abstract curvature-dimension theory, or extend Fisher decay to an
 unproved maximal Sobolev domain. Original manuscripts and previous verified
 statements are preserved, as are the pre-existing untracked plan and graph
 core audit documents.
+
+## M3 prerequisite milestone: finite centered entropy, continuity, and ergodic limit
+
+Starting point: `fb89674635246eac1a316f6ec3b82381a24ff317`.
+New module: `Foundation/GaussianEntropyDissipation.lean`.
+**This is an independently verified subset of M3. The entropy-dissipation
+identity is not yet proved.** No M4 development is included.
+
+### Definitions and exact normalization
+
+Namespace: `OperatorDerivativeRewrite.Foundation.GaussianEntropyDissipation`.
+`γ` is the existing standard real Gaussian probability measure, with no new
+measure or semigroup definition. Put
+
+```
+entropyDensity g = integral (g * log g) dγ
+                   - (integral g dγ) * log (integral g dγ)
+entropyTrajectory g t = entropyDensity (GaussianMehler.mehler t g)
+```
+
+This is centered density entropy, not entropy of the square of the evolved
+input. `entropyDensity_eq_entropySq_sqrt` proves exactly
+`entropyDensity g = entropySq γ (fun x => Real.sqrt (g x))` under
+`∀ x, 0 ≤ g x`. Both definitions are real-valued functionals; only the
+integrability theorems below license their interpretation as finite entropy.
+Signed bounded inputs also have finite values for the real `r log r`
+functional, but the entropy interpretation and Jensen nonnegativity are
+asserted only for nonnegative inputs. `Real.log 0 = 0` and continuity of
+`r * Real.log r` handle zero, without introducing a positive lower bound.
+
+### Exact verified theorem statements
+
+In this table `P t g` denotes the existing `GaussianMehler.mehler t g`.
+All bounds are pointwise; `M` is an arbitrary real bound, not an additional
+regularity predicate. There are no derivative candidates or assumed
+entropy integrability hypotheses.
+
+| Theorem | Hypotheses | Conclusion |
+|---|---|---|
+| `entropyDensity_eq_entropySq_sqrt` | `∀ x, 0 ≤ g x` | `entropyDensity g = entropySq γ (fun x => Real.sqrt (g x))` |
+| `exists_mul_log_bound` | any `M : ℝ` | `∃ B : ℝ, ∀ r : ℝ, ‖r‖ ≤ M → ‖r * Real.log r‖ ≤ B` |
+| `entropyDensity_integrable` | `Measurable g`, `∀ x, ‖g x‖ ≤ M` | `Integrable g γ ∧ Integrable (fun x => g x * Real.log (g x)) γ` |
+| `entropyDensity_nonneg` | preceding measurable bound and `∀ x, 0 ≤ g x` | `0 ≤ entropyDensity g` |
+| `mehler_time_continuous` | `Continuous g`, `∀ x, ‖g x‖ ≤ M`, any `x : ℝ` | `Continuous (fun t => P t g x)` |
+| `entropyTrajectory_integrable` | same continuous bound, any `t : ℝ` | `Integrable (P t g) γ ∧ Integrable (fun x => P t g x * Real.log (P t g x)) γ` |
+| `entropyTrajectory_nonneg` | same continuous bound, `∀ x, 0 ≤ g x`, any `t : ℝ` | `0 ≤ entropyTrajectory g t` |
+| `entropyTrajectory_continuous` | same continuous bound | `Continuous (entropyTrajectory g)` |
+| `entropyTrajectory_zero` | any `g : ℝ → ℝ` | `entropyTrajectory g 0 = entropyDensity g` |
+| `entropyTrajectory_tendsto_zero_time` | same continuous bound | `Tendsto (entropyTrajectory g) (𝓝 0) (𝓝 (entropyDensity g))` |
+| `entropyTrajectory_eq_invariant_mean` | same continuous bound, `0 ≤ t` | `entropyTrajectory g t = (∫ x, P t g x * Real.log (P t g x) ∂γ) - (∫ x, g x ∂γ) * Real.log (∫ x, g x ∂γ)` |
+| `entropyTrajectory_tendsto_atTop` | same continuous bound | `Tendsto (entropyTrajectory g) atTop (𝓝 0)` |
+
+The Mehler formula has a real-time extension using the total real square
+root. Continuity is proved for that formula on all real times, including
+zero; the semigroup interpretation and mean invariance remain restricted
+to nonnegative times. The full neighborhood limit at zero implies the
+required right-hand limit. No time differentiability at zero is claimed.
+For the intended class `ContDiff ℝ 1 g`, `0 < ε`, `ε ≤ g x ≤ M`,
+`|deriv g x| ≤ M`, every continuous bounded/nonnegative hypothesis above
+follows from the stated bounds. These results actually need less regularity
+than dissipation and do not silently strengthen that eventual theorem.
+
+### Proof dependencies and upstream inspection
+
+The proofs use Mathlib `Real.continuous_mul_log`, compactness of `Icc`,
+`Integrable.mono'`, `Real.convexOn_mul_log.map_integral_le`,
+`continuous_of_dominated`, and
+`tendsto_integral_filter_of_dominated_convergence`. The compact image of
+`[-M,M]` supplies an actual constant dominator for `r log r`. The density
+itself is dominated by `M`. Both dominators are integrable under the Gaussian
+probability measure. Kernel continuity and these dominators prove continuity
+of both spatial integrals. M2a pointwise convergence to the mean, followed by
+outer dominated convergence for both integrals, proves their centered
+cancellation at infinity. Mean invariance is reused only with its original
+nonnegative-time restriction. Jensen is applied only after proving both
+integrals finite.
+
+M2b is imported and its actual derivative/Fisher infrastructure is preserved,
+but Fisher decay and log-Sobolev are not used to prove the entropy limit.
+Neither polynomial integration by parts nor finite-dimensional operator
+closure is misapplied to evolving nonpolynomial logarithms.
+
+Inspected concrete pinned sources, commit
+`acf649108ea2222f4a8544a2782f448cb502492a`:
+
+- [Euclidean.lean, Gaussian1D.ouSemigroup_entropy_sq_ergodic, line 1209](https://github.com/mrdouglasny/markov-semigroups/blob/acf649108ea2222f4a8544a2782f448cb502492a/MarkovSemigroups/Instances/WorkInProgress/Euclidean.lean#L1209).
+  Its compact-bound/outer-DCT argument is adapted here for a bounded density
+  directly, without assuming it is the square of an upstream `IsCore` function.
+- [OUEntropyDecomposition.lean, hasDerivAt_entropy_ouSemigroup, line 607](https://github.com/mrdouglasny/markov-semigroups/blob/acf649108ea2222f4a8544a2782f448cb502492a/MarkovSemigroups/General/OUEntropyDecomposition.lean#L607).
+  Its approximately 1000-line concrete proof includes positive-time
+  smoothing, inner time differentiation, outer entropy differentiation,
+  and a bilinear Dirichlet step. Historical partial-proof comments are
+  not evidence that the current declaration is an axiom; the actual proof
+  body was inspected. This theorem has not been ported or asserted locally.
+- [EuclideanStein.lean, stein_identity_standard, line 165](https://github.com/mrdouglasny/markov-semigroups/blob/acf649108ea2222f4a8544a2782f448cb502492a/MarkovSemigroups/Instances/WorkInProgress/EuclideanStein.lean#L165),
+  `hasDerivAt_t_ouSemigroup` at line 291, and
+  `gaussian_dirichlet_form_bilinear` at line 703 were inspected as remaining
+  narrow reusable proof infrastructure. None is imported as an assumption.
+
+Attribution to Michael R. Douglas and contributors and the Apache-2.0 license
+reference are preserved in the new module. Existing `LICENSES/Apache-2.0.txt`
+applies. No external dependency or dependency pin is changed.
+
+### Exact remaining M3 obligations
+
+There is no identified mathematical counterexample for the planned positive
+bounded C¹ class. The following analytic proofs, however, are still absent
+from the local Lean development; the verified limits above do not imply them:
+
+1. Nonpolynomial Gaussian Stein integration by parts with explicit
+   integrability/boundary control. The first recommended next theorem is,
+   for `ContDiff ℝ 1 v`, `∀ x, |v x| ≤ A`, and
+   `∀ x, |deriv v x| ≤ B`,
+   `∫ x, x * v x ∂γ = ∫ x, deriv v x ∂γ`.
+   Prove integrability of both sides and Gaussian-weighted boundary limits,
+   then derive it from the actual PDF derivative. Reuse the concrete upstream
+   `stein_identity_standard` proof, without its abstract framework.
+2. Positive-time spatial C² regularity of `P t g` from bounded C¹ input and
+   bounded actual first derivative, including second-derivative bounds on
+   compact positive-time intervals. Do not require a supplied unrelated
+   second-derivative function or silently strengthen g to C².
+3. Actual kernel time differentiation for `t > 0`. On a neighborhood bounded
+   away from zero, prove the inner dominator involving `1 + |x| + |y|`, and
+   derive `∂t P t g = deriv (deriv (P t g)) - x * deriv (P t g)`.
+   The singular derivative of the square-root coefficient cannot be bounded
+   uniformly down to zero by this argument.
+4. Outer differentiation of entropy, dominated locally in positive time.
+   Use the already verified `ε ≤ P t g ≤ M`, so logarithms/reciprocals have
+   justified positive denominators. Establish genuine integrability of
+   `(∂t P t g) * (1 + log (P t g))`, not just an equality of totalized integrals.
+5. Gaussian bilinear IBP with `1 + log (P t g)` gives the negative of
+   `∫ (deriv (P t g))² / (P t g) dγ`. With mean invariance, conclude precisely
+   `HasDerivAt (entropyTrajectory g)
+       (-GaussianFisher.fisherInformation (GaussianMehler.mehler t g)) t`
+   under the original positive bounded C¹ hypotheses and `0 < t`.
+
+The above next Stein theorem is a prerequisite, not a replacement statement
+for dissipation. The strongest completed claim in this commit is the finite,
+continuous, ergodically vanishing centered entropy trajectory. Its domination
+lemmas justify the integrals and their continuity/limits, **not differentiation
+under either integral**. No entropy decay rate, monotonicity, entropy
+production equality, or Gaussian log-Sobolev inequality is claimed here.
+A right derivative at zero is a further optional obligation; continuity at
+zero, needed for the planned later limit argument, is already verified.
+
+### Verification
+
+Complete `lake build` passed: 3375 jobs. The new module has no warnings;
+pre-existing unused section-variable warnings in `Foundation.Adjoint` remain.
+`lake env lean Foundation/AxiomAudit.lean` passed: 765 reports for 764 distinct
+declarations. All 15 new declarations (three definitions/abbreviations and
+12 theorems), and the complete audit's union, depend only on
+`propext`, `Classical.choice`, and `Quot.sound`. There is no `sorryAx` or
+custom mathematical axiom. Exact `#check @...` queries for all new declarations
+passed. A source scan finds no `axiom`, `unsafe`, `sorry`, or `admit` in the
+new module. Ignored verification transcripts:
+
+- `.lake/build/gaussian-entropy-trajectory-build.log`
+- `.lake/build/gaussian-entropy-trajectory-axioms.log`
+- `.lake/build/gaussian-entropy-trajectory-statements.log`
+
+Original Lean and TeX manuscript hashes match the previous verified milestone.
+The toolchain, dependency lockfile, and previous theorem statements are
+unchanged. The pre-existing untracked replacement plan and independent
+operator audit remain preserved and are not included in this commit.
