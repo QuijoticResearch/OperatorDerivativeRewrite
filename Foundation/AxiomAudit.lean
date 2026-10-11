@@ -1,3 +1,4 @@
+import Foundation.InfiniteGaussianIsonormal
 import Foundation.InfiniteGaussianFirstChaos
 import Foundation.FiniteGaussianDomains
 import Foundation.GaussianHermiteDomains
@@ -548,4 +549,37 @@ namespace OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms firstChaos_norm
 #print axioms firstChaos_finiteSum
 #print axioms firstChaos_injective
+end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+
+namespace OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+#print axioms weightedSum
+#print axioms weightedSumL2
+#print axioms weightedSumL2_coeFn
+#print axioms weightedSum_charFun
+#print axioms weightedSum_law
+#print axioms weightedSumL2_tendsto
+#print axioms weightedSumL2_tendstoInMeasure
+#print axioms weightedSumL2_tendstoInDistribution
+#print axioms coefficientSquares_hasSum
+#print axioms firstChaos_charFun
+#print axioms firstChaos_law
+#print axioms firstChaos_hasGaussianLaw
+#print axioms firstChaos_integral
+#print axioms firstChaos_product_integral
+#print axioms firstChaos_covariance
+#print axioms firstChaos_zero_law
+#print axioms firstChaos_add_ae
+#print axioms firstChaos_smul_ae
+#print axioms firstChaosFamily
+#print axioms firstChaos_linearCombination_ae
+#print axioms firstChaosFamily_linear_ae
+#print axioms firstChaosFamily_linear_law
+#print axioms firstChaosFamily_hasGaussianLaw
+#print axioms firstChaosFamily_covariance
+#print axioms firstChaos_unit
+#print axioms firstChaosFamily_unit_law
+#print axioms firstChaos_variance
+#print axioms firstChaos_finiteSupport_ae
+#print axioms firstChaosFamily_finiteCoordinates_law
+#print axioms firstChaos_isGaussianProcess
 end OperatorDerivativeRewrite.Foundation.InfiniteGaussian

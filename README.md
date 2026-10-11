@@ -153,8 +153,24 @@ tensor Hermite orthonormality is preserved.
 `Foundation/InfiniteGaussianFirstChaos.lean` proves coordinate centering,
 second moments, and L² orthonormality. It constructs an injective linear isometry
 from real ℓ² into product L² by actual unconditional sums of weighted coordinates,
-preserving finite sums, norms, and inner products. Gaussianity of arbitrary
-infinite-series limits and density of all polynomial cylinders remain to be
-proved. This milestone does not yet establish the full isonormal Gaussian
-process or an infinite-dimensional derivative/divergence operator. The sample
-space of real sequences is distinct from the coefficient space ℓ².
+preserving finite sums, norms, and inner products. The following modules complete
+its isonormal Gaussian law. The sample space of real sequences remains distinct
+from the coefficient space ℓ².
+
+`Foundation/InfiniteGaussianLaw.lean` proves exact laws of actual finite weighted
+coordinate sums and of every infinite L² limit W(h): N(0, ‖h‖²), including h = 0.
+The proof explicitly passes from L² convergence to convergence in probability,
+to convergence in distribution and characteristic functions, then uses
+uniqueness of probability laws.
+
+`Foundation/InfiniteGaussianIsonormal.lean` proves centering, exact covariance
+Cov(W(h),W(k)) = ⟨h,k⟩, variance, and almost-everywhere linearity of actual
+representatives. It proves joint Gaussianity of every finite family without
+rank or independence assumptions, verifies Mathlib's Gaussian-process predicate,
+and identifies finite-support correlated families with matrix pushforwards of
+the existing finite Gaussian coordinate model. Thus the original first-chaos
+isometry is now a genuine real isonormal Gaussian process over ℓ².
+
+Density of all finite polynomial cylinders and infinite-dimensional cylindrical
+derivative/divergence operators remain to be established. No such operators
+are constructed in this milestone.

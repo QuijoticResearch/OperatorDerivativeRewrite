@@ -1821,3 +1821,154 @@ reported. The fresh raw output is in the ignored build artifact
 
 All earlier proof modules are unchanged. The original `OperatorDerivative.lean`
 and `OperatorDerivative.tex` retain their previously recorded SHA-256 hashes.
+
+## Genuine ℓ² isonormal Gaussian process (after aceed38)
+
+The Gaussian law obligation left by the preceding milestone is now proved for
+the original `firstChaosEmbedding`, without changing that construction or any
+earlier proof module. On Ω = ℝ^ℕ with the countable product standard Gaussian
+probability measure μ, the existing linear isometry W : ℓ² → L²(Ω, μ) satisfies
+
+- μ.map W(h) = N(0, ‖h‖²) for every h ∈ ℓ², including h = 0;
+- E[W(h)] = 0, E[W(h)W(k)] = Cov(W(h),W(k)) = ⟨h,k⟩;
+- every finite family (W(hᵢ)) is jointly Gaussian, even when its Gram matrix is
+  singular or coordinates coincide;
+- linearity holds exactly as an L² linear map and almost everywhere for each
+  fixed finite linear relation between actual representatives.
+
+`firstChaos_isGaussianProcess` verifies Mathlib's Gaussian process predicate for
+these actual representatives indexed by all ℓ² vectors. Together with the
+proved linear isometry and covariance theorem, this establishes a genuine real
+isonormal Gaussian process over ℓ². There is no assumption of Gaussianity of an
+L² limit and no assumed joint Gaussianity.
+
+### Exact new definitions and theorems
+
+All names are in `OperatorDerivativeRewrite.Foundation.InfiniteGaussian`.
+The complete list of 30 new declarations is:
+
+| Declaration | Precise mathematical content |
+| --- | --- |
+| `weightedSum` | The actual finite random variable Sₛ(a)(ω) = Σₙ∈s aₙωₙ. |
+| `weightedSumL2` | Its L² class, constructed as the finite sum of proved coordinate classes. |
+| `weightedSumL2_coeFn` | That L² class is represented almost everywhere by Sₛ(a). |
+| `weightedSum_charFun` | Its characteristic function at t is exp(−t² Σₙ∈s aₙ²/2). |
+| `weightedSum_law` | Its exact law is N(0, Σₙ∈s aₙ²), also for empty sums and zero coefficients. |
+| `weightedSumL2_tendsto` | Initial-segment weighted sums converge to the original W(h) in L². |
+| `weightedSumL2_tendstoInMeasure` | These actual L² representatives converge to W(h) in probability. |
+| `weightedSumL2_tendstoInDistribution` | They converge to W(h) in distribution under μ. |
+| `coefficientSquares_hasSum` | Σₙ hₙ² converges unconditionally to ‖h‖ℓ²². |
+| `firstChaos_charFun` | The actual limit law has characteristic function exp(−‖h‖²t²/2). |
+| `firstChaos_law` | Equality of the actual pushforward measure with N(0, ‖h‖²), without a nonzero-norm restriction. |
+| `firstChaos_hasGaussianLaw` | Gaussianity of the actual representative of W(h). |
+| `firstChaos_integral` | E[W(h)] = 0 for every h. |
+| `firstChaos_product_integral` | E[W(h)W(k)] = ⟨h,k⟩ℓ². |
+| `firstChaos_covariance` | Cov(W(h),W(k)) = ⟨h,k⟩ℓ², for arbitrary h and k. |
+| `firstChaos_zero_law` | W(0) has the point-mass law δ₀. |
+| `firstChaos_add_ae` | W(h+k) = W(h)+W(k) almost everywhere for each h,k. |
+| `firstChaos_smul_ae` | W(ah) = aW(h) almost everywhere for each a,h. |
+| `firstChaosFamily` | The actual finite random vector ω ↦ (W(hᵢ)(ω))ᵢ. This definition has no prescribed Gaussianity field. |
+| `firstChaos_linearCombination_ae` | W(Σᵢ aᵢhᵢ) = Σᵢ aᵢW(hᵢ) almost everywhere. |
+| `firstChaosFamily_linear_ae` | For each continuous real linear form L on the finite coordinate space, L(W(hᵢ)) agrees almost everywhere with W(Σᵢ L(eᵢ)hᵢ). |
+| `firstChaosFamily_linear_law` | The exact law of that projection is N(0, ‖Σᵢ L(eᵢ)hᵢ‖²). |
+| `firstChaosFamily_hasGaussianLaw` | Joint Gaussianity for every finite index type and arbitrary vectors hᵢ. Uses `Finite`, with an enumeration chosen only inside the proof. |
+| `firstChaosFamily_covariance` | The covariance matrix of the finite random vector is its Gram matrix (⟨hᵢ,hⱼ⟩). The individual covariance equality does not require finiteness. |
+| `firstChaos_unit` | W(eₙ) is exactly the original coordinate L² class. |
+| `firstChaosFamily_unit_law` | Every finite family of unit coefficients has exactly the original finite product Gaussian marginal law, including the empty family. |
+| `firstChaos_variance` | Var(W(h)) = ‖h‖². |
+| `firstChaos_finiteSupport_ae` | W of a finite-support coefficient vector is the actual finite weighted coordinate sum almost everywhere. |
+| `firstChaosFamily_finiteCoordinates_law` | A finite coefficient matrix A supported in a finite coordinate set s yields exactly the pushforward of the previously verified finite product Gaussian γˢ by x ↦ Ax. No invertibility or independence of output rows is required. |
+| `firstChaos_isGaussianProcess` | Mathlib's `IsGaussianProcess` holds for the actual process indexed by all ℓ² vectors. |
+
+### Noncircular limiting argument
+
+The finite characteristic function calculation uses the previously verified
+standard Gaussian evaluation laws and joint independence from the product
+measure. Measurable coordinate scaling preserves independence. The genuine
+one-dimensional theorem `GaussianCore.W_gaussian_law` supplies the scaled
+coordinate laws; Mathlib's characteristic function product formula for independent
+finite sums then proves exp(−t²Σ aₙ²/2). Uniqueness of finite measure
+characteristic functions proves the finite-sum law as well.
+
+The prior unconditional L² series theorem gives convergence of initial-segment
+sums. `tendstoInMeasure_of_tendsto_Lp` explicitly proves convergence in
+probability. `TendstoInMeasure.tendstoInDistribution_of_aemeasurable` then proves
+convergence in distribution of the measurable representatives. Mathlib's
+`TendstoInDistribution.tendsto_charFun` yields convergence to the characteristic
+function of the actual limit law. These are separate proved implications;
+L² convergence is not treated as the conclusion about laws.
+
+Mathlib's `lp.hasSum_norm`, specialized to exponent two, proves Σ hₙ² = ‖h‖².
+Continuity of real-to-complex coercion, scalar arithmetic and complex exponential
+therefore identifies the pointwise characteristic function limit. Uniqueness of
+limits equates this function with the characteristic function of W(h).
+`Measure.ext_of_charFun` gives the exact centered Gaussian measure equality.
+No division by ‖h‖ occurs, so the zero vector is covered by the same argument
+and is explicitly identified with δ₀.
+
+Joint Gaussianity is derived after all scalar laws are proved. Every continuous
+linear form on a finite real coordinate space is expanded in coordinate unit
+vectors. Exact L² linearity, plus the verified almost-everywhere representatives
+of finite sums and scalar multiples, identifies its evaluation on the finite
+family with an actual W of the corresponding ℓ² combination. Its scalar law is
+already known. `isGaussian_of_map_eq_gaussianReal` then proves that the joint
+pushforward measure is Gaussian. This requires no orthogonality, independence,
+positive-definite covariance, or graph-domain hypothesis. All finite dimensions,
+including dimension zero, are covered by the finite-index statements.
+
+Centering follows by integration against the proved Gaussian law. Product
+expectations reuse the original Hilbert isometry and the definition of the L²
+inner product; the product is integrable by the existing L² inner-product
+infrastructure. The covariance and variance identities then use the proved
+centering and Mathlib's covariance/variance formulas. Joint Gaussianity is not
+used to manufacture covariance or to assume an L² multiplication closure.
+
+### Compatibility and scope
+
+The original coordinate classes and finite Hermite, polynomial, derivative,
+divergence, graph-domain and adjoint proofs are unchanged. Unit vectors in ℓ²
+recover their exact coordinate classes and finite product laws. More generally,
+finite-support coefficient matrices recover actual correlated and dependent
+linear coordinate families as pushforwards of the same finite product Gaussian.
+Tensor orthogonality continues to apply to the independent input coordinates;
+it is not asserted for the correlated output coordinates.
+
+The process is defined over the real coefficient Hilbert space ℓ². Its sample
+space remains ℝ^ℕ with product measure; no identity-covariance Gaussian Radon
+measure on ℓ² is claimed. Linearity of representatives is proved almost
+everywhere for each fixed relation, not as a simultaneous pointwise linear
+functional on all of ℓ² outside one universal null set.
+
+The Gaussian-law, centering, joint-Gaussianity and correlated-coordinate
+obligations listed in the previous milestone are resolved. Before constructing
+infinite-dimensional cylindrical derivatives, the remaining requirements are:
+
+- proved density of finite-coordinate polynomial cylinders in the full product
+  Gaussian L² space (finite-dimensional density alone does not prove this);
+- a genuine Hilbert-valued derivative determined by actual finite polynomial
+  or smooth functions, with representation independence across finite Gaussian
+  families and appropriate integrability;
+- Gaussian integration by parts, a dense derivative domain, and closability;
+- identification of the divergence adjoint and any claimed infinite-dimensional
+  graph cores or spectral domains;
+- if needed, transport from ℓ² to other separable real Hilbert index spaces
+  through a chosen Hilbert-space isometry, with its compatibility proved.
+
+No infinite-dimensional derivative, divergence, graph-domain identity, or Itô
+formula is introduced in this milestone.
+
+### Verification of the complete isonormal milestone
+
+The full `lake build` succeeds (3345 jobs). Both new proof modules compile
+without warnings; the two older unused-section-variable warnings in
+`Foundation/Adjoint.lean` remain unchanged. A fresh direct Lean run of
+`Foundation/AxiomAudit.lean` returns 499 results for 499 explicit axiom queries,
+including all 30 new declarations. Its complete dependency set is
+`propext`, `Classical.choice`, and `Quot.sound`, with no `sorryAx` or custom
+axioms. Raw output is retained as the ignored build artifact
+`.lake/build/infinite-gaussian-isonormal-axioms.log`.
+
+The original source SHA-256 hashes still match the recorded baseline. All earlier
+proof modules, dependency configuration, lockfile, and Lean toolchain are
+unchanged. The root imports and audit module are extended to include the two
+new verified modules.
