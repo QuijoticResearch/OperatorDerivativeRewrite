@@ -192,9 +192,25 @@ Hilbert coordinate perturbations, and proves polynomial product rules with
 integrable product terms. Unit-vector cylinders recover the existing coordinate
 core; the enlarged scalar core is dense.
 
-Representation independence remains an explicit open obligation. The gradient
-is indexed by its polynomial representation; no derivative operator on scalar
-L² classes is defined. Sample-space translation compatibility, Gaussian
-integration by parts, vector test-space density, closability, and closed
-operator/adjoint domains remain to be proved. See MATHEMATICAL_AUDIT.md for the
-exact theorem scope and the recovery record from commit 2d31e09.
+`Foundation/InfiniteGaussianRepresentation.lean` proves equality of the genuine
+ℓ²-valued L² gradients for any two polynomial representations of the same scalar
+L² class. It reduces both arbitrary finite families to their common Hilbert
+span, proves the standard Gaussian law of its W-based realization, and uses the
+verified finite-space representation theorem. Dependent original coordinates
+are allowed; their evaluation is not assumed injective.
+
+`Foundation/InfiniteGaussianDerivative.lean` defines the actual dense scalar
+polynomial cylindrical subspace and its representation-independent linear
+derivative. The operator agrees with the genuine polynomial gradient on every
+representation, including empty coordinate families.
+
+`Foundation/InfiniteGaussianPolynomialProducts.lean` proves multiplication
+closure on this actual L² domain and the intrinsic rule D(fg)=f Dg+g Df. Scalar
+and gradient higher moments prove integrability of every product term by
+Hölder; no multiplication closure of general L² or closed operator domains is
+assumed.
+
+Sample-space translation compatibility, non-polynomial smooth cylinders,
+Gaussian integration by parts, vector test-space density, closability, and
+closed operator/adjoint domains remain open. See MATHEMATICAL_AUDIT.md for the
+exact statements, dependencies, and the recovery record.

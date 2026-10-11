@@ -2199,3 +2199,123 @@ are included in this milestone. This section supersedes the earlier density
 milestone's open items about arbitrary-cylinder integrability and polynomial
 product differentiation; its representation, integration-by-parts, and operator
 obligations remain open as specified above.
+
+## Representation-independent infinite-dimensional polynomial derivative
+
+Baseline: `fb17f970af28169e93e7cc7acab6402123c04e4e`. The starting working tree
+was clean. The previous cylinder definitions and all earlier proof modules are
+preserved unchanged. This milestone proves the previously explicit
+representation-independence obligation and constructs the genuine derivative
+on the scalar polynomial cylindrical subspace. It stops before Gaussian
+integration by parts or closability.
+
+### Common finite-dimensional Gaussian realization
+
+`Foundation/InfiniteGaussianRepresentation.lean` has seven declarations:
+
+| Declaration | Exact mathematical content |
+| --- | --- |
+| `finiteGaussianPoint` | For a finite-dimensional real Hilbert space E, an isometric linear inclusion A : E → H, and the standard orthonormal basis (bₐ) of E, defines X_A(ω) = Σₐ W(A bₐ)(ω) bₐ. Here H is the verified ℓ² Hilbert space. |
+| `finiteGaussianPoint_measurable` | This actual E-valued random vector is measurable. |
+| `finiteGaussianPoint_coordinate` | For every v ∈ E, W(A v) = ⟨v,X_A⟩ almost everywhere, by proved finite-sum W linearity and orthonormal basis reconstruction. |
+| `finiteGaussianPoint_law` | μ.map X_A = stdGaussian E, proved by characteristic functions of the preceding coordinates, the verified first-chaos Gaussian law, and ‖A v‖ = ‖v‖. No law or independence is assumed. |
+| `isonormalCylinder_finiteGaussianPoint` | F(Ah,p) = cylinder(h,p)(X_A) almost everywhere for every finite family h in E. |
+| `isonormalCylinderGradient_finiteGaussianPoint` | G(Ah,p) = A(cylinderGradient(h,p)(X_A)) almost everywhere; the finite and infinite genuine gradient formulas are compatible through the linear inclusion. |
+| `isonormalCylinderGradientL2_representation_independent` | For arbitrary finite index types I,J, arbitrary h : I → H and k : J → H, and polynomials p,q, F(h,p) = F(k,q) as scalar L² classes implies G(h,p) = G(k,q) as H-valued L² classes. There are no rank, independence, orthogonality, finite-support, or derivative-equality hypotheses. |
+
+For the last theorem, take S = span(range h ∪ range k) inside H. Finiteness of
+both families proves finite dimensionality of S. Equip S with its Borel sigma
+algebra, use its standard orthonormal basis, and apply the realization above to
+its isometric subtype inclusion A. Each hᵢ and kⱼ is lifted to S using proved
+span membership. The scalar transport lemmas and the assumed scalar L² equality
+give equality of the two finite-space cylinder functions at X_A almost
+everywhere. Their equality set is closed because both functions are continuous,
+hence measurable. The proved pushforward law transfers that equality to
+stdGaussian S. The previously verified
+`FiniteGaussian.cylinderGradient_representation_independent` then gives equality
+of their gradients everywhere on S; transport through A and the actual gradient
+compatibility lemmas gives equality of the H-valued L² classes.
+
+Full support is used on S, not on the possibly degenerate original coordinate
+space. Consequently, dependent-coordinate polynomial evaluation is never
+asserted to be injective. The original formal polynomials need not be equal.
+The proof also covers S = {0} and empty families: all basis sums and all scalar
+projection laws used above remain valid in dimension zero.
+
+### The actual polynomial scalar L² domain and derivative
+
+`Foundation/InfiniteGaussianDerivative.lean` establishes the following:
+
+| Declarations | Mathematical content |
+| --- | --- |
+| `isonormalCylinderL2_rename` | Renaming polynomial variables along any finite map agrees with composing the Hilbert coordinate family with that map. The scalar statement needs no finite-type hypothesis. |
+| `isonormalCylinderGradientL2_rename` | The genuine L² gradients agree under that same renaming, deduced from the proved representation-independence theorem and scalar equality. |
+| `isonormalCylinderL2_add`, `isonormalCylinderGradientL2_add` | Polynomial addition gives addition of actual scalar and gradient L² classes. |
+| `isonormalCylinderL2_const_mul`, `isonormalCylinderGradientL2_const_mul` | Multiplying a polynomial by a real constant gives scalar multiplication of the actual scalar and gradient classes. |
+| `isonormalCylinderL2_mem_core` | A cylinder indexed by any finite type belongs to the original Fin-indexed scalar core, via a proved finite equivalence and renaming. |
+| `isonormalPolynomialCore_zero`, `isonormalPolynomialCore_add`, `isonormalPolynomialCore_smul` | Zero, addition, and real scalar multiplication preserve the scalar core. Addition uses a common disjoint-union family, not an assumed closure property. |
+| `polynomialCylindricalDomain` | The resulting real submodule of the actual scalar Gaussian L² space, with carrier exactly the previously defined isonormalPolynomialCore. |
+| `PolynomialRepresentation`, its four fields, `polynomialRepresentation` | Witness data for a scalar domain element: dimension, Hilbert directions, an actual polynomial, and equality of its evaluated scalar L² class to the element. A witness is chosen noncomputably from proved membership; it contains no independently prescribed derivative value. |
+| `polynomialGradient` | The H-valued L² gradient of that chosen representation. |
+| `polynomialGradient_agrees` | For every representation (h,p) of f, the chosen value equals G(h,p) in H-valued L², using the proved comparison theorem. Its scalar representation equality is the definition of being a representation, not a gradient-equality assumption. |
+| `polynomialGradient_add`, `polynomialGradient_smul` | The representation-independent gradient is a real linear map, with addition compared in a common family and scalar multiplication reduced to constant-polynomial multiplication. |
+| `polynomialDerivative` | The genuine linear operator D : polynomialCylindricalDomain → L²(μ; H), implemented as a LinearMap on that submodule. No closed extension is asserted. |
+| `polynomialCylindricalDomain_dense` | Its scalar domain is dense in the full ambient Gaussian L² space, using the already proved core-density theorem. |
+| `polynomialDerivative_on_cylinder` | D of the domain element represented by F(h,p) equals G(h,p), for every finite representation. |
+| `polynomialDerivative_empty` | For any polynomial in an empty coordinate family, the actual domain derivative is zero. |
+
+Noncomputable witness choice affects neither operator values nor the operator's
+mathematical meaning: `polynomialGradient_agrees` proves that every witness has
+the same value. No arbitrary representation-independence hypothesis or custom
+axiom is introduced. The derivative is a densely defined linear operator on the
+polynomial domain; no domain of a closure is being substituted for this domain.
+
+### Intrinsic products and Leibniz with correct integrability
+
+`Foundation/InfiniteGaussianPolynomialProducts.lean` has thirteen declarations:
+
+| Declarations | Mathematical content |
+| --- | --- |
+| `exists_common_polynomial_representation` | Any two scalar domain elements admit a common finite Hilbert family and two actual polynomials representing them. The construction combines their witnesses and renames into one Fin-indexed family. |
+| `polynomialDomain_memLp`, `polynomialDerivative_memLp` | Actual representatives of every domain element and its genuine derivative have every finite Lp moment, by almost-everywhere transport of the earlier polynomial moment proofs. |
+| `polynomialDomain_mul_memLp` | The product of two domain elements' scalar representatives has every finite Lp moment; exponent r uses both input moments at 2r and Hölder. |
+| `polynomialProductL2`, `polynomialProductL2_coeFn` | The actual scalar L² class of their pointwise product and its almost-everywhere representative identity. |
+| `polynomialProductL2_agrees` | In any common polynomial representation, this actual L² product equals the evaluation class of p q. |
+| `polynomialProductL2_mem_domain` | This product belongs to the scalar cylindrical subspace, proved from a common representation and polynomial multiplication. |
+| `polynomialProduct` | Multiplication of actual domain elements, returning a domain element with the proved membership witness. |
+| `polynomialDomain_smul_derivative_memLp` | f Dg has every finite Lp moment; in particular, L⁴ × L⁴ → L² proves membership at r=2. |
+| `polynomialTimesDerivative`, `polynomialTimesDerivative_coeFn` | The actual H-valued L² class of f Dg and its almost-everywhere representative identity. |
+| `polynomialDerivative_product` | For all actual domain elements f,g, D(polynomialProduct f g) = polynomialTimesDerivative f g + polynomialTimesDerivative g f as H-valued L² classes. This is the intrinsic Leibniz identity D(fg)=f Dg+g Df. |
+
+Product closure and the Leibniz identity have separate proofs. Membership is
+established through scalar polynomial multiplication and higher moments before
+the derivative identity is proved. The identity then uses genuine partial
+differentiation in a common representation and the independently established
+representation comparison. This does not introduce L² × L² → L² closure outside
+the polynomial domain, nor boundedness of polynomial multiplication on L².
+
+### Verification, dependencies, and remaining obligations
+
+The full `lake build` passes (3351 jobs). All three new modules compile without
+warnings; only the two pre-existing unused-variable warnings in Adjoint remain.
+The complete axiom audit includes 583 queries and 583 results: all earlier 538
+queries plus 45 queries for the new declarations and representation fields.
+The dependency union is only `propext`, `Classical.choice`, and `Quot.sound`;
+there is no `sorryAx` or custom axiom. The raw audit output is saved as the ignored
+build artifact `.lake/build/infinite-gaussian-representation-axioms.log`.
+
+Earlier proof modules, the original Lean source and manuscript, toolchain, and
+dependency configuration remain unchanged. Root imports, axiom queries, and
+project documentation are extended for these three new modules.
+
+Representation independence is now proved for polynomial cylinders on the
+verified countable-product isonormal model over H = ℓ². This supersedes the open
+representation obligation of the preceding milestone. Extension to a general
+abstract separable Hilbert space/model, non-polynomial smooth cylinder classes,
+and translation compatibility of sample representatives are not claimed here.
+Gaussian integration by parts for this actual infinite-dimensional operator,
+density of the necessary vector test fields, closability, its closed extension,
+divergence adjoints, and graph-domain characterizations remain unproved. No
+closed-domain algebra or graph-norm density assertion is inferred from the
+polynomial-domain product rule. The next analytic milestone is Gaussian
+integration by parts with proved test-space density, then closability.

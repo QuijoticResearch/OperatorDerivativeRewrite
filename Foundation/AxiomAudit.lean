@@ -1,3 +1,4 @@
+import Foundation.InfiniteGaussianPolynomialProducts
 import Foundation.InfiniteGaussianCylinders
 import Foundation.InfiniteGaussianDensity
 import Foundation.InfiniteGaussianIsonormal
@@ -629,4 +630,52 @@ namespace OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms isonormalPolynomialCore
 #print axioms isonormalCylinderL2_rename_units
 #print axioms isonormalPolynomialCore_dense
+end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+
+namespace OperatorDerivativeRewrite.Foundation.InfiniteGaussian
+#print axioms finiteGaussianPoint
+#print axioms finiteGaussianPoint_measurable
+#print axioms finiteGaussianPoint_coordinate
+#print axioms finiteGaussianPoint_law
+#print axioms isonormalCylinder_finiteGaussianPoint
+#print axioms isonormalCylinderGradient_finiteGaussianPoint
+#print axioms isonormalCylinderGradientL2_representation_independent
+#print axioms isonormalCylinderL2_rename
+#print axioms isonormalCylinderGradientL2_rename
+#print axioms isonormalCylinderL2_add
+#print axioms isonormalCylinderGradientL2_add
+#print axioms isonormalCylinderL2_const_mul
+#print axioms isonormalCylinderGradientL2_const_mul
+#print axioms isonormalCylinderL2_mem_core
+#print axioms isonormalPolynomialCore_zero
+#print axioms isonormalPolynomialCore_add
+#print axioms isonormalPolynomialCore_smul
+#print axioms polynomialCylindricalDomain
+#print axioms PolynomialRepresentation
+#print axioms polynomialRepresentation
+#print axioms polynomialGradient
+#print axioms polynomialGradient_agrees
+#print axioms polynomialGradient_add
+#print axioms polynomialGradient_smul
+#print axioms polynomialDerivative
+#print axioms polynomialCylindricalDomain_dense
+#print axioms polynomialDerivative_on_cylinder
+#print axioms polynomialDerivative_empty
+#print axioms exists_common_polynomial_representation
+#print axioms polynomialDomain_memLp
+#print axioms polynomialDerivative_memLp
+#print axioms polynomialDomain_mul_memLp
+#print axioms polynomialProductL2
+#print axioms polynomialProductL2_coeFn
+#print axioms polynomialProductL2_agrees
+#print axioms polynomialProductL2_mem_domain
+#print axioms polynomialProduct
+#print axioms polynomialDomain_smul_derivative_memLp
+#print axioms polynomialTimesDerivative
+#print axioms polynomialTimesDerivative_coeFn
+#print axioms polynomialDerivative_product
+#print axioms PolynomialRepresentation.dimension
+#print axioms PolynomialRepresentation.directions
+#print axioms PolynomialRepresentation.polynomial
+#print axioms PolynomialRepresentation.represents
 end OperatorDerivativeRewrite.Foundation.InfiniteGaussian

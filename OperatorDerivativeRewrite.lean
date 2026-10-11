@@ -12,3 +12,4 @@ import Foundation.InfiniteGaussianFirstChaos
 import Foundation.InfiniteGaussianIsonormal
 import Foundation.InfiniteGaussianDensity
 import Foundation.InfiniteGaussianCylinders
+import Foundation.InfiniteGaussianPolynomialProducts
