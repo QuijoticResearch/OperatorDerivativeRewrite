@@ -1,3 +1,4 @@
+import Foundation.GaussianSobolevPrimitives
 import Foundation.GaussianSobolevFixedSupport
 import Foundation.GaussianSobolevSmoothApprox
 import Foundation.GaussianSobolevCutoffs
@@ -1014,3 +1015,15 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevFixedSupport.exists_unit_integral_bump
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevFixedSupport.corrected
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevFixedSupport.corrected_properties
+
+/-! M5 fixed-support smooth primitive and integrability. -/
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevFixedSupport.integrable_of_memLp_two_support
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevFixedSupport.correction_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevFixedSupport.primitive
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevFixedSupport.primitive_hasDerivAt
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevFixedSupport.deriv_primitive
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevFixedSupport.primitive_contDiff
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevFixedSupport.primitive_zero_left
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevFixedSupport.primitive_zero_right
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevFixedSupport.primitive_hasCompactSupport
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevFixedSupport.corrected_primitive_properties
