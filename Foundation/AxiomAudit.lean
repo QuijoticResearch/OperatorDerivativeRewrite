@@ -1,3 +1,4 @@
+import Foundation.GaussianSobolevGlobalApprox
 import Foundation.GaussianSobolevQuantitative
 import Foundation.GaussianSobolevPrimitives
 import Foundation.GaussianSobolevFixedSupport
@@ -1049,3 +1050,6 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevFixedSupport.actual_primitive_from_left
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevFixedSupport.fixed_support_graph_error
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevFixedSupport.fixed_support_smooth_graph_approx
+
+/-! M5 global simultaneous smooth graph approximation. -/
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSobolevGlobalApprox.exists_smooth_compact_graph_sequence

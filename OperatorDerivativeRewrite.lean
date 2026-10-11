@@ -35,3 +35,4 @@ import Foundation.GaussianSobolevSmoothApprox
 import Foundation.GaussianSobolevFixedSupport
 import Foundation.GaussianSobolevPrimitives
 import Foundation.GaussianSobolevQuantitative
+import Foundation.GaussianSobolevGlobalApprox

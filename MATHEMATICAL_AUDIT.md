@@ -3746,4 +3746,12 @@ Finally, `fixed_support_smooth_graph_approx` states: for `R≥0`, an everywhere 
 
 This is the fixed-support stage of M5, **not** the global weighted Sobolev approximation theorem. The next step is a diagonal choice combining these approximants with `GaussianSobolevCutoffs.simultaneous_sq_error_tendsto` for arbitrary Gaussian-L² `f` and actual derivative `h`. M6 entropy limits and any replacement of the original Bakry–Émery axiom remain separate.
 
+## M5: global simultaneous Gaussian smooth graph approximation
+
+`Foundation/GaussianSobolevGlobalApprox.lean` proves `exists_smooth_compact_graph_sequence`. If `f` has actual derivative `h` at every real point and both `f²` and `h²` are integrable for the standard Gaussian measure, there is **one** sequence `Fₙ` of C∞ compactly supported functions such that both `∫(Fₙ-f)² dγ → 0` and `∫(deriv Fₙ-h)² dγ → 0`. The proof applies the verified fixed-support graph approximation to each smooth-cutoff truncation with tolerance `1/(n+1)`. It proves square integrability of the function and derivative errors through Mathlib `MemLp`, then uses the integrated squared triangle inequality and the previously verified simultaneous cutoff limits. The derivatives are actual Mathlib derivatives; no continuity of `h`, positivity of `f`, or assumed graph density is used.
+
+This completes the global smooth graph-approximation statement of M5 for everywhere differentiable representatives with Gaussian-L² value and derivative. Extension of the Gaussian log-Sobolev inequality to this class, including entropy convergence, is M6 and remains unproved. The general Bakry–Émery curvature theorem and original manuscript remain untouched.
+
+Verification: complete `lake build` succeeds (3444 jobs), and direct `lake env lean Foundation/AxiomAudit.lean` succeeds. The new theorem's transitive axioms are exactly `propext`, `Classical.choice`, and `Quot.sound`; there is no `sorryAx` or custom axiom. The two existing unused-section-variable warnings in `Foundation.Adjoint` are unchanged.
+
 Verification: complete `lake build` succeeds (3443 jobs); direct `lake env lean Foundation/AxiomAudit.lean` succeeds. All 19 new public declarations have transitive axiom sets contained in `propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx` or custom axiom appears. The new module has no warnings. Only the two pre-existing unused-section-variable warnings in `Foundation.Adjoint` remain. Original manuscripts and dependency pins are unchanged.
