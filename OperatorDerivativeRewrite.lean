@@ -1,3 +1,8 @@
+import Foundation.GaussianShiftedHermite
+import Foundation.GaussianShiftedRepresentation
+import Foundation.GaussianShiftedIntegrand
+import Foundation.GaussianPastFutureProducts
+import Foundation.GaussianHermiteFutureError
 import Foundation.GaussianTerminalRepresentation
 import Foundation.GaussianHermiteStochasticSums
 import Foundation.GaussianHermiteRepresentation
