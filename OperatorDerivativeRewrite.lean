@@ -160,3 +160,5 @@ import Foundation.GaussianLipschitzQuadraticVariation
 import Foundation.GaussianSmoothIto
 import Foundation.GaussianSmoothConditional
 import Foundation.GaussianSmoothCylinders
+import Foundation.GaussianContinuousStochasticFubini
+import Foundation.GaussianTimeWeightedSmoothIto

@@ -5724,3 +5724,19 @@ Verification: full Lake build PASS (4156 jobs); transitive axiom audit PASS (257
 Source-location clarification for the preceding two entries (authoritative declaration starts): GaussianTaylorRemainder.remainder 16, remainder_bound 19, cube_coeFn 54, cube_norm_sq 72, incrementCube_norm_sq 86, remainder_memLp 104, remainderL2_norm_sq 121, remainderSum_coeFn 146, remainderSum_norm_sq 163, remainderSum_tendsto 184. GaussianSmoothIto.finite_taylor_identity 39, ito_of_lipschitz_derivatives 83, bounded_derivatives_ito 99, valueL2_zero 122, drift_integrable 129, smooth_ito_ae 135.
 
 Verification: full Lake build PASS (4158 jobs); transitive axiom audit PASS (2584 declarations, all 14 new public declarations), only propext, Classical.choice, Quot.sound. Explicit public theorem types inspected and new sources scanned. Prior sources and original files, pins, and twelve unrelated untracked documents preserved. Nothing pushed.
+
+## Close Brownian chapter V: justified time weighting and separable smooth time dependence (2026-10-12)
+
+`Foundation/GaussianContinuousStochasticFubini.lean`: `kernel_stronglyMeasurable` (22), `kernel_bound` (29), and `kernel_column` (47) establish measurability, an actual L2 majorant, and the ordinary FTC column integral for 1_(0<x<=t) q(t) v(x), v a continuous Gaussian-L2 curve. Given a continuous predictable-field curve U whose actual slices are 1_(0,t]v, `integrated_slices` (100) proves the Bochner integral of q(t)U_t has slices 1_(0,T](x)(a(T)-a(x))v(x), whenever q is continuous and is an actual derivative of a. This uses the already verified BochnerL2Fubini.integral_eq_of_slices and proves its domination hypotheses, not an unchecked pointwise evaluation map on L2. `weighted_slices` (127) identifies a(T)U_T-integral qU with the desired time-weighted field. `integral_weighted_field` (147) is the justified existing-J Fubini identity. In the application below q is exactly Mathlib deriv a and all U hypotheses are proved.
+
+`Foundation/GaussianTimeWeightedSmoothIto.lean`: `primitive_hasDerivAt` (21) and `weighted_primitive_identity` (49) establish actual Bochner FTC/integration by parts. `weightedField` (30) is defined independently through GaussianContinuousIntegrands.predictableField for the actual curve a(t)phi(B_t); `weightedField_slices` (37) identifies it. For the already verified C3 spatial core, `smooth_integrand_continuous` (74) PROVES horizon continuity of the genuine spatial-derivative field, using the established scalar Ito identity and the J isometry. `weightedField_eq` (89) then identifies the independently constructed weighted field with the time-Fubini expression. There is no circularity: scalar Ito preceded this argument and used Taylor sums, not time-weighted Ito.
+
+`time_weighted_ito` (104) and `time_weighted_ito_combined` (152) prove, for a : real -> real of class C1 and f in the explicit scalar C3/Lipschitz/bounded-third-derivative core,
+
+    a(T) f(B_T)-a(0) f(B_0)
+      = J(1_(0,T] a(t) f'(B_t))
+        + integral_0^T [a'(t) f(B_t) + (1/2) a(t) f''(B_t)] dt.
+
+The drift is genuinely integrable in Gaussian L2, and the stochastic field is in the existing predictable product L2 domain. There is no global bound imposed on a or a': compact-time continuity supplies all required estimates. `time_partial` (167), `space_partial` (170), and `second_space_partial` (173) independently prove the actual first time derivative and first/second space derivatives of a(t)f(x). This is a genuine restricted time-dependent smooth theorem, C1 in time and C3 in space; it is NOT an arbitrary nonseparable C1,2 theorem. Every result allows T=0.
+
+Verification: full Lake build PASS (4160 jobs); transitive axiom audit PASS (2607 declarations, all 23 new public declarations); explicit elaborated types inspected. Only propext, Classical.choice, Quot.sound. Prior proofs, pins, original files and twelve unrelated documents preserved; nothing pushed.

@@ -42,3 +42,7 @@ The Brownian J and its predictable adjoint J* remain bounded. Full D is the exis
 
 The shortest remaining extensions are: deterministic C1 time weights and then a genuinely nonseparable C1,2 theorem; a C2 approximation/localization theorem with simultaneous terminal/first-/second-derivative limits; mixed smooth finite-dimensional cylinders with correct covariance cross terms. General unbounded semimartingale coefficients, infinite-dimensional traces, and Volterra models require further analytic theorems. None can be supplied by changing the name of the present restricted theorem. Preserve the central intended contribution by stating the exact concrete Brownian theorem and keeping the abstract scheme explicitly open until its time types, domains, and correction mechanism are repaired.
 
+
+## Subsequent verified time-dependent milestone
+
+`Foundation/GaussianTimeWeightedSmoothIto.lean:152`, `time_weighted_ito_combined`, now proves the restricted time-dependent theorem for a(t)f(x), with a C1 and f in the stated C3 spatial core. Lines 167,170,173 prove its actual partial derivatives. `GaussianContinuousStochasticFubini.integrated_slices` proves the necessary kernel Fubini theorem with domination, and `weightedField` is independently defined by its actual running coefficient before its stochastic identity is proved. Thus deterministic C1 time weighting is no longer a missing obligation. General nonseparable C1,2, mixed nonlinear smooth cylinders, and the original abstract formula remain open.
