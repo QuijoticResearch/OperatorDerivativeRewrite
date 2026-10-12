@@ -15,6 +15,7 @@ import Foundation.GaussianPolynomialStepCompletion
 import Foundation.GaussianPredictableL2Completion
 import Foundation.GaussianTimeSensitivity
 import Foundation.GaussianTimeObservationDensity
+import Foundation.GaussianTimePastDensity
 import Foundation.PoissonDifferenceCore
 import Foundation.PoissonDifferenceOperators
 import Foundation.PoissonCoordinateEvaluation
