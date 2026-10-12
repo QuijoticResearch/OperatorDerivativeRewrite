@@ -86,3 +86,103 @@ the inspected pinned APIs and are not proved in this milestone. They are
 not necessary for the direct norm-Cauchy solvability argument. No use of
 algebraic reflexivity, finite-dimensional compactness, or a surrogate
 existence assumption is made.
+
+## Complete-space application: exact declarations and hypotheses
+
+`Foundation/BanachLpDualityFourCoercivity.lean` adds seven declarations,
+without completeness or reflexivity:
+
+- `quarticPotential_sublevel_bound`: if `E u ≤ 0`, then
+  `‖u‖ ≤ max 1 (4*‖f‖/c⁴)`.
+- `quarticPotential_lower_bound`: for every u,
+  `-(‖f‖ * max 1 (4*‖f‖/c⁴)) ≤ E u`.
+- `quarticPotential_bddBelow`: the actual real energy range is bounded below.
+- `scalar_quartic_midpoint`:
+  `((a+b)/2)⁴ + (a-b)⁴/16 ≤ (a⁴+b⁴)/2`, from a polynomial identity.
+- `quarticPotential_midpoint`: integrating this with the already proved
+  quartic integrability gives the L4 deficit with coefficient `1/64`.
+- `quarticPotential_midpoint_lower`: the lower norm bound gives coefficient `c⁴/64`.
+- `quarticEnergy_midpoint_lower`: the same estimate for the actual affine
+  energy, since the continuous linear datum cancels exactly at the midpoint.
+
+All terms are genuinely integrable before `integral_mono_ae` is applied,
+and Lp sums/scalar multiples are identified only almost everywhere.
+The finite energy lower bound is proved before the infimum theorem is used.
+
+`Foundation/BanachLpDualityFourInfinite.lean` uses exactly these ambient
+parameters, with no further analytic hypotheses:
+
+```lean
+{Ω H : Type*} [MeasurableSpace Ω] {μ : Measure Ω}
+[NormedAddCommGroup H] [NormedSpace ℝ H] [CompleteSpace H]
+(δ : H →L[ℝ] Lp ℝ 4 μ) (c : ℝ) (hc : 0 < c)
+(hδ : ∀ u : H, c * ‖u‖ ≤ ‖δ u‖)
+```
+
+- `exists_quarticPotential_minimizer δ c hc hδ f` proves
+  `∃ u, ∀ v, ‖δu‖⁴/4 - f u ≤ ‖δv‖⁴/4 - f v` by the verified
+  complete-space minimization theorem with `k = c⁴/64`.
+- `normalFour_surjective δ c hc hδ` proves
+  `Function.Surjective (normalFour δ)`. At the constructed minimum it
+  applies the existing dimension-independent
+  `BanachLpDualityFourExistence.hasFDerivAt_quarticPotential` and
+  `IsLocalMin.hasFDerivAt_eq_zero`. The old finite-dimensional existence
+  theorem is never applied.
+- `normalFour_existsUnique δ c hc hδ f` proves
+  `∃! u : H, normalFour δ u = f` for every `f : StrongDual ℝ H`.
+- `normalFourEquiv δ c hc hδ : H ≃ StrongDual ℝ H` constructs the actual
+  nonlinear bijection. `normalFourEquiv_apply` identifies its forward map;
+  `normalFour_inverse_solves` proves its inverse solves the original equation.
+- `normalFour_inverse_cubic` and `normalFour_inverse_holder` retain exactly
+  the existing estimates for this inverse T, for every f,g:
+
+      ‖T f - T g‖³ ≤ (4/c⁴) ‖f-g‖,
+      ‖T f - T g‖ ≤ (4/c⁴)^(1/3) ‖f-g‖^(1/3).
+
+- `lpFour_normal_existsUnique` specializes to `H = Lp ℝ 4 μ`, `δ = id`,
+  `c = 1`, for arbitrary μ, using Mathlib's Lp completeness. It assumes no
+  dimension bound and gives unique solvability for every continuous linear
+  functional on the entire L4 space.
+
+## Scope and remaining obligations
+
+C6a is proved with the reflexivity hypothesis removed: every reflexive
+Banach H satisfies the stronger complete-space theorem. C6b's goal of
+eliminating explicit reflexivity from **solvability** is achieved by a
+different fully proved route. The separate auxiliary assertion that such
+H is reflexive remains unformalized, with its missing lemmas listed above.
+It is not a missing hypothesis or proof obligation in the solvability theorem.
+
+No finite-dimensionality, compactness, weak-convergence, separability,
+finite-measure, σ-finiteness, or dual-representation assumption occurs in
+the new complete-space results. The zero space is allowed. For zero μ,
+the positive lower bound forces H to be zero, as it should. Infinite-dimensional
+Lp spaces are covered by the explicit identity-operator specialization.
+
+General exponents, incomplete H, and construction of a concrete stochastic
+integral satisfying the lower bound are outside this result. The original
+maps and all previously verified declarations are preserved. No dependency
+pins, original manuscripts, or pre-existing untracked documents are changed.
+
+## Final verification
+
+- Complete `lake build`: passed, 4030 jobs. Only the pre-existing warnings
+  in the old adjoint and Poisson modules remain.
+- Transitive `Foundation/AxiomAudit.lean`: passed for 1213 declarations,
+  including all 17 new public declarations across the three C6 modules.
+- Axiom union: exactly `propext`, `Classical.choice`, `Quot.sound`; no
+  `sorryAx` or custom mathematical axioms.
+- Independent review read all new proof bodies, checked elaborated types,
+  and audited every new declaration. Verdict: PASS.
+- Compiled boundary instances: `H = (Fin 0 → ℝ)` with δ=0 and c=1,
+  and `H = Lp ℝ 4 (Measure.count : Measure ℕ)` with δ=id and c=1.
+- No new result assumes finite-dimensionality or reflexivity; the L4
+  specialization has only Ω, its measurable-space structure, μ, and f as
+  parameters. No unintended H parameter remains.
+- The existing verified theorem bodies and dependency pins have no diff
+  from the starting commit. Original Banach source/manuscript hashes are
+  unchanged, and all eight pre-existing untracked documents are preserved.
+
+Solvability, uniqueness, and inverse stability have no remaining C6 proof
+obligation. Formal analytic reflexivity inheritance remains a separate
+unimplemented theorem, not asserted by this development. No push is performed.

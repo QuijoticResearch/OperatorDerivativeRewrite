@@ -4199,3 +4199,39 @@ energy, avoiding those missing reflexivity prerequisites.
 Verification: full Lake build passed (4028 jobs); transitive audit passed
 for 1197 declarations, with only `propext`, `Classical.choice`, and
 `Quot.sound`. The minimization proof and elaborated type passed independent review.
+
+## C6: complete-space p=4 normal-equation solvability
+
+`BanachLpDualityFourCoercivity` proves a finite global lower bound on
+`E(u) = ‖δu‖₄⁴/4 - f u`, and proves
+`E((u+v)/2) + (c⁴/64)*‖u-v‖⁴ ≤ (E u+E v)/2`. The latter integrates a
+scalar polynomial inequality after proving integrability of every quartic
+term; continuous-dual forcing cancels at the midpoint.
+
+`Foundation/BanachLpDualityFourInfinite.lean` applies the general verified
+minimizing-sequence theorem. Its `exists_quarticPotential_minimizer`,
+`normalFour_surjective`, and `normalFour_existsUnique` prove that every
+continuous-dual datum f has a unique solution of the original `normalFour δ u=f`,
+under exactly: real normed H, `CompleteSpace H`, an actual continuous linear
+δ into L4 of arbitrary μ, `c > 0`, and `∀u, c*‖u‖ ≤ ‖δu‖`.
+The argument uses the existing actual quartic Fréchet derivative and Fermat's
+theorem. It does not use the old finite-dimensional existence proof.
+
+`normalFourEquiv` constructs the bijection; `normalFour_inverse_solves`
+checks the actual equation. The inverse cubic and Hölder estimates retain
+the constant `(4/c⁴)^(1/3)`. `lpFour_normal_existsUnique` specializes to the
+entire L4 space with δ=id, without a dimension restriction.
+
+Thus C6a holds with the stronger complete-space scope, and explicit reflexivity
+is eliminated from the solvability statement. The separate theorem that a
+complete H embedded as a closed subspace of L4 is reflexive is not formalized:
+pinned Mathlib lacks the relevant L4 bidual-surjectivity and reflexivity
+transport infrastructure. This is not a gap in the direct existence proof.
+`BANACH_C6_REPORT.md` records exact statements, API sources, and proof dependencies.
+
+C6 verification: full Lake build passed (4030 jobs); transitive axiom audit
+passed for 1213 declarations, including all 17 new public declarations.
+Only `propext`, `Classical.choice`, and `Quot.sound` occur. Independent
+proof-body and elaborated-type review passed, including compiled zero-space
+and L4-on-ℕ-counting-measure specializations. Existing theorem bodies,
+original manuscripts, pins, and pre-existing untracked documents are unchanged.
