@@ -1,3 +1,7 @@
+import Foundation.BochnerL2Fubini
+import Foundation.GaussianHermiteTimeIntegral
+import Foundation.GaussianHermiteTimeKernel
+import Foundation.GaussianWeightedTimeHermite
 import Foundation.GaussianTimeSpaceTensor
 import Foundation.GaussianOrderedTensorRepresentation
 import Foundation.GaussianMultitimeRepresentation
