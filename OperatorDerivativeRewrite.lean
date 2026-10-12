@@ -164,3 +164,6 @@ import Foundation.GaussianContinuousStochasticFubini
 import Foundation.GaussianTimeWeightedSmoothIto
 import Foundation.GaussianSmoothHeatMartingale
 import Foundation.GaussianSmoothProjectionDiagnostic
+import Foundation.RealSteklovApprox
+import Foundation.BochnerL2Approximation
+import Foundation.GaussianBoundedApproximation
