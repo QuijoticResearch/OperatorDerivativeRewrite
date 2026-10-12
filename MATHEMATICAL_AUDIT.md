@@ -5163,3 +5163,35 @@ type was inspected. Axioms: only propext, Classical.choice, Quot.sound.
 `GaussianPredictableHorizon.zeroExtension_mem` proves that EVERY L2 class measurable for this finite-horizon predictable sigma-algebra belongs, after zero extension, to the PREVIOUS `closedProductSteps`. The proof uses the new pi-system L2 density theorem and the earlier inclusion of arbitrary square-integrable past steps. It does not define predictable fields by a polynomial closure. `PredictableDomain`, `horizonEmbedding`, and `itoIntegral` expose the full finite-horizon class and the SAME existing `productIntegral`. Its norm, centering, and actual `hilbertDivergence.graph` membership are proved. `nonnegativeEmbedding` supplies direct access from Mathlib's NNReal predictable L2 class.
 
 The full infinite-horizon domain equality remains the next obligation. No Malliavin graph density or sensitivity extension follows from this ambient L2 density. All 36 new public declarations, including the finite-measure instance, have explicit-type checks and transitive axiom checks. Full build: 4073 jobs. Complete audit: 1645 checks; only `propext`, `Classical.choice`, `Quot.sound`.
+
+## Full predictable domain identification and integral (2026-10-12)
+
+### Exact statements
+
+`GaussianPredictableFull.fullPredictable` is the intersection of (i) Mathlib `lpMeas` for the pullback of `GaussianTimeProcess.naturalFiltration.predictable` under `(t,omega) -> (t.toNNReal,omega)`, and (ii) actual L2 classes vanishing a.e. outside `(0,infinity) x Omega`. The ambient measure is `volume.prod InfiniteGaussian.gaussianProduct`. The support condition is independent of any stochastic core: `L2Supported.mem_supportedL2_iff` proves its equivalence to vanishing a.e. off the measurable set. Its closedness follows from the closed range of the zero-extension isometry.
+
+`GaussianPredictableFull.predictable_mem_closedProductSteps` proves membership in the OLD completion for every such predictable field, with no boundedness, finite-horizon, polynomial, or differentiability assumption. On each `(0,n]`, the preceding full finite-horizon theorem supplies membership after zero extension. For a vector orthogonal to the old completion, every truncated pairing is zero. Genuine L2-by-L2 integrability and monotone exhaustion of positive time show the full pairing is zero. The double-orthogonal theorem then gives membership. This does not use a totalized nonintegrable integral.
+
+The reverse inclusion is proved by actual predictable measurability and support of arbitrary adapted L2 steps, followed by closedness. Consequently:
+
+- `closedProductSteps_eq_fullPredictable`: equality of the actual ambient submodules.
+- `mem_closedProductSteps_iff`: exact predictable-representative and time-support characterization.
+- `domainEquiv`: identity on the ambient equivalence classes, as a linear isometric equivalence.
+- `itoIntegral`: the PREVIOUS `productIntegral` composed with this identity equivalence.
+- `itoIntegral_norm`, `itoIntegral_centered`, `itoIntegral_divergence_graph`: full-domain isometry, centering, and agreement with the previously constructed unbounded Gaussian divergence after the existing field transport.
+- `itoIntegral_past_step`, `itoIntegral_past_partition`: actual increment-product/sum formulas for arbitrary L2 past coefficients.
+- `itoIntegral_unique`: uniqueness among continuous linear extensions agreeing on the proved dense algebraic polynomial step domain.
+
+These results settle the ambient predictable-density and integral-domain identification obligation for the constructed raw Brownian model, on the entire positive time axis. No usual augmentation, path-continuous modification, martingale representation property, or boundedness of the full divergence is asserted. Time zero is null for the time measure; the `(0,T]` convention is consistent with the earlier `[0,T]` transport.
+
+### Next analytic boundary: ambient density is not derivative graph density
+
+Inspection of `GaussianTimeSensitivity.lean`, `InfiniteGaussianKernel.lean`, the finite-sector graph approximation, and the pinned Mathlib predictable/Lp APIs reveals the next independent obligation. The existing finite-sector approximations concern Gaussian scalar/vector adjoint graphs. They do not prove approximation preserving EVERY Brownian past subspace, nor joint measurability and the causal support of derivatives of time-indexed predictable fields. The new predictable indicator approximation has no derivative estimates at all.
+
+A precise next target is an independently defined field domain of predictable `u` whose probability slices lie in `closedCylindricalDerivative.domain` for a.e. time, with a jointly measurable derivative field `V(t,omega)` in L2 of time times probability with values in `CoefficientSpace`. Prove graph approximation by adapted polynomial step fields, simultaneously in `u` and `V`, WITHOUT defining this target as their closure. This requires an actual product-L2/Bochner-L2 slice bridge, compatibility of past conditional expectations with the closed derivative (including projection onto past deterministic directions), and adaptation-preserving time approximation. In the Brownian time representation, derivative support must be proved to lie in the past before claiming the two-time stochastic sensitivity integral is predictable and square integrable. Hilbert-valued predictable integration and its isometry are also needed for that correction.
+
+The exact passage needed is: for every field in that independently specified domain, construct a SAME sequence of adapted polynomial step fields `u_n` with `u_n -> u` in product L2 and `D u_n -> V` in the derivative-field L2 norm. Then prove convergence of the stochastic correction using a genuine vector-valued isometry. Only those estimates allow closedness of D to give `D(Ju) = u + correction(u)`. No such approximation or correction estimate is assumed or claimed here. The existing Gaussian constant-kernel theorem can be used only AFTER the correction isometry and causal support show slice derivatives vanish. The predictable projection identity alone cannot prove determinism.
+
+This is a substantial missing analytic bridge, not a compilation defect or an inference from the now completed ambient density. Continuous-time sensitivity, stochastic-volatility rigidity, and an operator-functional Ito theorem remain open. The verified finite polynomial sensitivity formula and its nonzero correction example are preserved. No manuscript claims or earlier theorem bodies were changed.
+
+Verification: full Lake build PASS, 4075 jobs. Complete transitive audit PASS, 1667 checks, including all 22 public declarations in the two new modules (80 added across this run). Only `propext`, `Classical.choice`, and `Quot.sound`. Fully explicit `#check @...` statements were checked for every new declaration. No dependency pin changes and no push.
