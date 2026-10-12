@@ -4705,3 +4705,52 @@ No admissions, custom axioms or unsafe proof shortcuts were introduced.
 Original-source SHA256 hashes still match the recovered baseline; original
 manuscripts, existing Lean proof bodies, dependency pins and all twelve
 pre-existing untracked reports remain unchanged. Nothing was pushed.
+
+## Paper 1 continuation: product-measure fields and cross-partition isometry
+
+Recovery started at `d3f27db51ae3e0cf78330597f62f7c5eb08d0df0`, rather than
+the older `30d3140` named in the restart request. All seven named historical
+milestones and the four later Gaussian time-realization milestones are
+ancestors of that HEAD. No tracked work was missing or modified; the twelve
+pre-existing untracked reports were preserved. The recovered baseline passed
+the complete Lake build (4056 jobs) and 1451 transitive axiom checks.
+
+`Foundation/GaussianTimeProductL2.lean` constructs actual classes in
+`Lp ℝ 2 (volume.prod gaussianProduct)`. `productTensor_memLp` proves square
+integrability of h(time)*A(sample) for arbitrary separate L2 classes, using
+product integration. `productTensor_inner` proves the factorization of their
+pairings. `partitionL2_coeFn`, `partitionFunction_memLp` and
+`partitionFunction_sq_integrable` justify the pointwise half-open interval
+step function. `partitionL2_norm_eq_field` identifies its actual product-L2
+norm with the existing embedded ell2-valued field norm. For monotone finite
+partitions, `partitionL2_norm_sq` gives sum_i (t_(i+1)-t_i)*norm(A_i)^2.
+No coefficient boundedness or adaptation is needed for these tensor facts.
+Empty partitions and repeated endpoints are included.
+
+`Foundation/GaussianTimePolynomialPairing.lean` proves
+`incrementProduct_inner`: for G=p(B_(r_i)) with r_i <= s <= t and
+H=q(B_(v_j)) with v_j <= a <= b, the pairing of G*(B_t-B_s) and
+H*(B_b-B_a) equals the pairing of their actual embedded vector fields.
+Intervals may overlap, coordinate index types may differ, and no common
+partition is assumed. The proof orders s and a, applies the previously
+verified Gaussian Stein identity to G*H*W(h), and uses the actual polynomial
+derivative/product rule. Both coefficient derivatives vanish along the later
+interval direction. All products have established finite Gaussian moments.
+
+`elementaryTimeGraph` is the algebraic span of these genuine field/integral
+pairs. `elementaryTimeGraph_pairing` and `elementaryTimeGraph_norm` extend
+the isometry to arbitrary finite linear combinations by two-variable span
+induction. `elementaryTimeGraph_le_cylindricalDivergence_graph` and
+`elementaryTimeGraph_le_hilbertDivergence_graph` prove agreement with the
+existing operators, including their domains. Thus a vanishing field assembly
+has a vanishing integral assembly; no decomposition independence is assumed.
+
+These results do not identify a full predictable L2 domain, assert continuous
+sample paths, or prove continuous-time stochastic-volatility rigidity. They
+remove the finite-step assembly and cross-partition pairing obstruction
+without changing the existing operators, manuscripts, or dependency pins.
+
+Verification of this increment: complete Lake build passed (4058 jobs);
+all 1480 registered transitive axiom checks passed, including all 29 public
+declarations of these two modules. Elaborated types were inspected. The
+axiom union remains `propext`, `Classical.choice`, `Quot.sound` only.
