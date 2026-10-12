@@ -15,6 +15,7 @@ import Foundation.PoissonMultiplierAlgebra
 import Foundation.PoissonLipschitzChain
 import Foundation.PoissonQuadraticDefect
 import Foundation.BanachLpAdjoint
+import Foundation.BanachRange
 import Foundation.GaussianLogSobolevFull
 import Foundation.GaussianSobolevGlobalApprox
 import Foundation.GaussianSobolevQuantitative
@@ -1359,3 +1360,16 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.BanachLpAdjoint.boundedBanachDerivative_norm_le
 #print axioms OperatorDerivativeRewrite.Foundation.BanachLpAdjoint.boundedBanachDerivative_eq_zero_iff
 #print axioms OperatorDerivativeRewrite.Foundation.BanachLpAdjoint.boundedBanachDerivative_const_eq_zero
+
+/-! C2: actual Banach range, inverse, and annihilator results. -/
+#print axioms OperatorDerivativeRewrite.Foundation.BanachRange.injective_of_lower_bound
+#print axioms OperatorDerivativeRewrite.Foundation.BanachRange.antilipschitz_of_inverse_bound
+#print axioms OperatorDerivativeRewrite.Foundation.BanachRange.isClosed_range_of_inverse_bound
+#print axioms OperatorDerivativeRewrite.Foundation.BanachRange.inverse_bound_of_lower_bound
+#print axioms OperatorDerivativeRewrite.Foundation.BanachRange.isClosed_range_of_lower_bound
+#print axioms OperatorDerivativeRewrite.Foundation.BanachRange.rangeEquiv
+#print axioms OperatorDerivativeRewrite.Foundation.BanachRange.rangeEquiv_symm_bound
+#print axioms OperatorDerivativeRewrite.Foundation.BanachRange.kernel_annihilates_closure
+#print axioms OperatorDerivativeRewrite.Foundation.BanachRange.kernel_iff_annihilates_closure
+#print axioms OperatorDerivativeRewrite.Foundation.BanachRange.not_mem_closure_of_pairing_ne_zero
+#print axioms OperatorDerivativeRewrite.Foundation.BanachRange.not_mem_range_of_pairing_ne_zero

@@ -4043,3 +4043,22 @@ new public declaration depends only on `propext`, `Classical.choice`, and
 `Quot.sound`; there are no `sorryAx` or custom axioms. The declarations were
 also inspected with fully explicit `#check` types. The two unused-section-variable
 warnings from the older `Foundation.Adjoint` remain unchanged.
+
+## C2: closed Banach ranges and concrete annihilators
+
+`Foundation/BanachRange.lean` works with the genuine B0 operator
+`δ : H →L[ℝ] Lp ℝ p μ` and its actual Hölder adjoint. A positive lower
+bound `c‖u‖ ≤ ‖δu‖` proves injectivity. If `H` is complete, it proves that
+the actual range is closed and constructs Mathlib's continuous linear
+equivalence `H ≃L[ℝ] δ.range`, with `c‖δ⁻¹v‖ ≤ ‖v‖` for range elements.
+
+Independently of any lower bound or completeness, `kernel_iff_annihilates_closure`
+identifies `D F = 0` with vanishing of the genuine pairing against the entire
+norm closure of `range δ`. A nonzero pairing with such an `F` therefore proves
+that a chosen `Lp` element lies outside this closure, hence outside the range.
+This is a precise nonrepresentability criterion. It requires an actual witness
+`F` and a proved nonzero real integral; none is supplied by the abstract theorem.
+
+These results are conditional functional analysis for an arbitrary concrete
+bounded map. They do not construct a Poisson or stable integral, prove the
+range is all centered `Lp`, or identify every `Lp` dual functional with `Lq`.
