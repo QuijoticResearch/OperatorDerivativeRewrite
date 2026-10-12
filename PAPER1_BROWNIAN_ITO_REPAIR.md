@@ -48,3 +48,14 @@ The shortest remaining extensions are: deterministic C1 time weights and then a 
 `Foundation/GaussianTimeWeightedSmoothIto.lean:152`, `time_weighted_ito_combined`, now proves the restricted time-dependent theorem for a(t)f(x), with a C1 and f in the stated C3 spatial core. Lines 167,170,173 prove its actual partial derivatives. `GaussianContinuousStochasticFubini.integrated_slices` proves the necessary kernel Fubini theorem with domination, and `weightedField` is independently defined by its actual running coefficient before its stochastic identity is proved. Thus deterministic C1 time weighting is no longer a missing obligation. General nonseparable C1,2, mixed nonlinear smooth cylinders, and the original abstract formula remain open.
 
 The additional module `Foundation/GaussianSmoothHeatMartingale.lean` proves genuine nonpolynomial backward-heat martingales: `sin_heat_martingale` and `cos_heat_martingale`. These follow from the actual differential equations and the existing J, with no martingale assumption. The general `heat_martingale` remains restricted to the explicitly documented separable C1-in-time/C3-in-space class.
+
+## Bounded smooth diagnostic for Step 2
+
+The cubic caveat in the original table is now complemented by `Foundation/GaussianSmoothProjectionDiagnostic.lean`:
+`sin_bounded_C3` (17) proves boundedness of sine and its first three actual derivatives. `sin_predictableAdjoint` (30) and `sin_predictableAdjoint_slices` (49) prove
+
+    J*[sin(B_T)](t) = 1_(0,T](t) exp(-(T-t)/2) cos(B_t).
+
+`sin_projection_ne_running_derivative` (69) proves this differs, for every T>0, from 1_(0,T]cos(B_t). Thus the terminal-adjoint/running-derivative substitution fails even for this bounded smooth function in the concrete bounded predictable-adjoint formulation. This theorem uses J*, not an undeclared value of the unbounded D. The existing J*=Pi D theorem can only be invoked on its established domain. A new smooth Malliavin-domain theorem is not assumed here, and the entire original ill-specified abstract theorem is not declared refuted solely by this calculation.
+
+The corrected scalar Ito formula and the terminal representation are different identities: the former has the running derivative plus a random drift; the latter uses a conditional, terminal-horizon-dependent integrand. Erasing that distinction is precisely the unsupported step.

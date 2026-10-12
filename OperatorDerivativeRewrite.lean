@@ -163,3 +163,4 @@ import Foundation.GaussianSmoothCylinders
 import Foundation.GaussianContinuousStochasticFubini
 import Foundation.GaussianTimeWeightedSmoothIto
 import Foundation.GaussianSmoothHeatMartingale
+import Foundation.GaussianSmoothProjectionDiagnostic

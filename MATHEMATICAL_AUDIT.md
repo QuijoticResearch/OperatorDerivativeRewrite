@@ -5753,3 +5753,17 @@ Verification: full Lake build PASS (4160 jobs); transitive axiom audit PASS (260
 
 Dependencies: the proved smooth Taylor-sum Ito theorem, C1 stochastic Fubini/time weighting, genuine conditional J identity, and Mathlib real calculus. This is a separable backward-heat class; no general C1,2 characterization or full functional Ito theorem is asserted. Verification: complete Lake build, all public declarations checked with their elaborated arguments, and full transitive axiom audit; only propext, Classical.choice, Quot.sound permitted.
 Campaign VI verification completed: 4,161 Lake jobs; 2,630 audited declarations, zero nonstandard axioms. All 23 new public declaration types inspected.
+
+## Brownian campaign VII — bounded smooth projection diagnostic (2026-10-12)
+
+`Foundation/GaussianSmoothProjectionDiagnostic.lean` supplies a C_b^3 diagnostic that the prior cubic calculation did not provide:
+
+- `sin_bounded_C3` (line 17): sine is C3 and every actual iterated derivative of order 0 through 3 has norm at most one.
+- `sin_predictableAdjoint` (30): for every T>=0, J*[sin(B_T)] = exp(-T/2) times the independently constructed predictable field 1_(0,T] exp(t/2)cos(B_t). This follows from `GaussianSmoothHeatMartingale.heat_representation` and the genuine isometry identity J*J=id; no target projection formula is assumed.
+- `sin_predictableAdjoint_slices` (49) identifies the exact product-L2 slices as 1_(0,T] exp(-(T-t)/2)cos(B_t).
+- `sin_projection_ne_running_derivative` (69): for every T>0 this bounded predictable adjoint differs from the independently defined running field 1_(0,T]cos(B_t). Equality would imply equality of almost every time slice. The proved mean E cos(B_t)=exp(-t/2)>0 then forces t=T almost everywhere on (0,T), contradicting the positive measure of that interval.
+
+This directly disproves the terminal-adjoint/running-spatial-derivative substitution in its bounded predictable-adjoint formulation even on a bounded smooth test function. It is not merely a failure caused by cubic growth. The theorem does not assert new full Malliavin-domain membership for sine by fiat; the existing equality J*=predictable projection of D retains its exact domain restriction. Nor is this a blanket counterexample to every possible precisely repaired abstract theorem. The manuscript's Step 2 cannot be justified by the bounded-adjoint Brownian representation theorem, and its correction needs the actual time-dependent/conditional representer rather than the running spatial derivative.
+
+No additional integrability assumptions are hidden: values are constructed through Lipschitz L2 composition, weighted predictable fields use compact-time bounded coefficients, and all expectations are integrals of genuine L2 functions under the probability measure. Time zero is included in the formula and excluded exactly where non-equality requires a positive interval.
+Campaign VII verification completed: 4,162 Lake jobs; 2,634 audited declarations, zero nonstandard axioms; all four new theorem types inspected explicitly. Original source/manuscript SHA256 hashes and dependency pins unchanged. The full campaign added 136 audited public declarations in eleven new Lean modules; prior verified theorem bodies were preserved.
