@@ -149,3 +149,5 @@ import Foundation.GaussianCubicDiagnostic
 import Foundation.GaussianPredictableCutoff
 import Foundation.GaussianConditionalIto
 import Foundation.GaussianConditionalClarkOcone
+import Foundation.GaussianHermiteMartingale
+import Foundation.GaussianPolynomialMartingale
