@@ -4062,3 +4062,27 @@ This is a precise nonrepresentability criterion. It requires an actual witness
 These results are conditional functional analysis for an arbitrary concrete
 bounded map. They do not construct a Poisson or stable integral, prove the
 range is all centered `Lp`, or identify every `Lp` dual functional with `Lq`.
+
+## C1: densely defined Banach adjoints
+
+`Foundation/BanachUnboundedAdjoint.lean` takes a genuine partial linear map
+`T : X →ₗ.[ℝ] Y` between real normed spaces and assumes only that its domain
+is dense in `X`. The adjoint graph consists of the pairs `(φ,f)` of continuous
+linear functionals satisfying `f x = φ (T x)` for every `x ∈ dom(T)`.
+It is a closed linear subspace. Density makes its second coordinate unique,
+so it defines an actual partial linear map `adjoint T hDense` between the
+strong duals. Its graph is exactly that pairing relation and is closed.
+
+The exact domain criterion is an **ambient norm** bound:
+`φ ∈ dom(T*) ↔ ∃ C : ℝ, ∀ x ∈ dom(T), ‖φ(T x)‖ ≤ C ‖x‖`.
+The forward direction uses the operator norm of the continuous adjoint value.
+The reverse direction uses Mathlib's `LinearMap.extendOfNorm` along the dense
+domain inclusion, and `adjoint_apply_eq_extension` proves that the constructed
+value is precisely this extension. No graph-norm continuity, Hilbert/Riesz
+identification, reflexivity, or boundedness of `T` is assumed.
+
+This result is abstract Banach operator theory, not a stochastic-integral
+construction. Bounded-operator compatibility, closability and second-adjoint
+recovery remain to be formalized. In general, recovering `T` from its Banach
+double adjoint requires careful use of the canonical embedding into `X**`
+and, for equality in `X`, reflexivity or other sufficient hypotheses.

@@ -16,6 +16,7 @@ import Foundation.PoissonLipschitzChain
 import Foundation.PoissonQuadraticDefect
 import Foundation.BanachLpAdjoint
 import Foundation.BanachRange
+import Foundation.BanachUnboundedAdjoint
 import Foundation.GaussianLogSobolevFull
 import Foundation.GaussianSobolevGlobalApprox
 import Foundation.GaussianSobolevQuantitative
@@ -1373,3 +1374,17 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.BanachRange.kernel_iff_annihilates_closure
 #print axioms OperatorDerivativeRewrite.Foundation.BanachRange.not_mem_closure_of_pairing_ne_zero
 #print axioms OperatorDerivativeRewrite.Foundation.BanachRange.not_mem_range_of_pairing_ne_zero
+
+/-! C1: an actual closed Banach adjoint of a densely defined operator. -/
+#print axioms OperatorDerivativeRewrite.Foundation.BanachUnboundedAdjoint.adjointGraph
+#print axioms OperatorDerivativeRewrite.Foundation.BanachUnboundedAdjoint.mem_adjointGraph_iff
+#print axioms OperatorDerivativeRewrite.Foundation.BanachUnboundedAdjoint.isClosed_adjointGraph
+#print axioms OperatorDerivativeRewrite.Foundation.BanachUnboundedAdjoint.adjointGraph_unique
+#print axioms OperatorDerivativeRewrite.Foundation.BanachUnboundedAdjoint.adjointGraph_vertical_zero
+#print axioms OperatorDerivativeRewrite.Foundation.BanachUnboundedAdjoint.adjoint
+#print axioms OperatorDerivativeRewrite.Foundation.BanachUnboundedAdjoint.adjoint_mem_domain_iff
+#print axioms OperatorDerivativeRewrite.Foundation.BanachUnboundedAdjoint.adjoint_graph_eq
+#print axioms OperatorDerivativeRewrite.Foundation.BanachUnboundedAdjoint.adjoint_apply_pairing
+#print axioms OperatorDerivativeRewrite.Foundation.BanachUnboundedAdjoint.adjoint_isClosed
+#print axioms OperatorDerivativeRewrite.Foundation.BanachUnboundedAdjoint.adjoint_mem_domain_iff_exists_bound
+#print axioms OperatorDerivativeRewrite.Foundation.BanachUnboundedAdjoint.adjoint_apply_eq_extension
