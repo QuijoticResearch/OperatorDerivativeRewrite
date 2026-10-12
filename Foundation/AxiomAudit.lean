@@ -12,6 +12,7 @@ import Foundation.PoissonMoments
 import Foundation.PoissonPolynomialExamples
 import Foundation.PoissonMultipliers
 import Foundation.PoissonMultiplierAlgebra
+import Foundation.PoissonLipschitzChain
 import Foundation.GaussianLogSobolevFull
 import Foundation.GaussianSobolevGlobalApprox
 import Foundation.GaussianSobolevQuantitative
@@ -1334,3 +1335,13 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.PoissonMultiplierAlgebra.scalarMul_add
 #print axioms OperatorDerivativeRewrite.Foundation.PoissonMultiplierAlgebra.difference_product_shifted_multiplier
 
+
+
+/-! Genuine Lipschitz chain rule for the maximal Poisson difference. -/
+#print axioms OperatorDerivativeRewrite.Foundation.PoissonLipschitzChain.composition_memLp
+#print axioms OperatorDerivativeRewrite.Foundation.PoissonLipschitzChain.composition
+#print axioms OperatorDerivativeRewrite.Foundation.PoissonLipschitzChain.composition_apply
+#print axioms OperatorDerivativeRewrite.Foundation.PoissonLipschitzChain.composition_difference_memLp
+#print axioms OperatorDerivativeRewrite.Foundation.PoissonLipschitzChain.composition_mem_domain
+#print axioms OperatorDerivativeRewrite.Foundation.PoissonLipschitzChain.composition_difference_apply
+#print axioms OperatorDerivativeRewrite.Foundation.PoissonLipschitzChain.composition_difference_norm_le
