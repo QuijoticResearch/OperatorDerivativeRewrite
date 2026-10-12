@@ -168,3 +168,6 @@ import Foundation.RealSteklovApprox
 import Foundation.BochnerL2Approximation
 import Foundation.GaussianBoundedApproximation
 import Foundation.GaussianC2Ito
+import Foundation.GaussianC2OperatorCorrection
+import Foundation.GaussianMixedStoppedIto
+import Foundation.GaussianBoundedContinuity

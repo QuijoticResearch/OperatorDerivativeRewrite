@@ -63,3 +63,9 @@ The corrected scalar Ito formula and the terminal representation are different i
 ## Genuine C2 extension
 
 `Foundation/GaussianC2Ito.lean:107` (`c2_ito`) and line 125 (`c2_ito_ae`) now remove the C3 assumption for scalar Brownian Ito: the exact hypotheses are C2 and uniform bounds on the first two actual derivatives. No bound on f, third derivative, or Lipschitz f'' is assumed. The explicit interval-average approximants converge in the terminal, predictable, and drift topologies. General time-dependent C1,2 and arbitrary mixed smooth cylinders remain distinct obligations.
+
+## Corrected operator statement and mixed quadratic functional class
+
+`GaussianC2OperatorCorrection.terminal_adjoint` proves the precise replacement J*f(B_T)=running f' +(1/2)J*(actual drift); `terminal_adjoint_eq_running_iff` proves the missing projected drift must vanish for the manuscript substitution to hold. `full_derivative_projection` invokes Pi D only under its exact, separately stated domain condition. The C2 Ito theorem itself has no such extra assumption.
+
+`GaussianMixedStoppedIto.stopped_quadratic_ito` now treats arbitrary mixed quadratic functions of finitely many stopped Brownian observations, with actual directional derivatives, Hessian contraction, and correction sum_ij b_ij min(T,r_i,r_j). Its cross integrand is independently identified by `crossField_slices`. This is a genuine nonlinear functional repair beyond additive cylinders, but not the manuscript's abstract theorem or arbitrary smooth multivariate Ito.
