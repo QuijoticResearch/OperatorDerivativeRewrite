@@ -1,6 +1,7 @@
 import Foundation.HilbertRepresentation
 import Foundation.AdjointUnitaryTransport
 import Foundation.InfiniteGaussianKernel
+import Foundation.WeightedAdjointTransport
 import Foundation.PoissonDifferenceCore
 import Foundation.PoissonDifferenceOperators
 import Foundation.PoissonCoordinateEvaluation

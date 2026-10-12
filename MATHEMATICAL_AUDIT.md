@@ -4316,3 +4316,37 @@ axiom checks passed, including all 14 new public declarations. Their elaborated
 types were separately checked. Only `propext`, `Classical.choice`, and
 `Quot.sound` occur. Independent proof review confirmed that this is a theorem
 about the full constructed closed operator, not a conditional kernel axiom.
+
+## Paper 1 reconstruction: concrete weighted L2 and adjoint transport
+
+`Foundation/WeightedL2Transport.lean` constructs, for any measure mu and real
+measurable sigma nonzero mu-a.e., the actual linear isometric equivalence
+
+    U : L2(sigma^2 dmu) -> L2(dmu),  Uu = sigma*u,
+    U^{-1}v = v/sigma.
+
+The a.e. formulas, both inverse identities, genuine L2 integrability and norm
+identity are proved. The proof uses Mathlib withDensity integrability and
+Bochner integral identities, square norms and mutual absolute continuity.
+It permits signed weights and arbitrary measures: no bound on sigma, reciprocal
+bound, finite measure, or integrability of 1/sigma is assumed. Integrability of
+division follows from cancellation inside the *weighted* square norm.
+
+`Foundation/WeightedAdjointTransport.lean` applies this construction to any
+actual dense partial operator T:L2(mu)->X, for a real inner product space X.
+The actual weighted operator has domain {u | Uu in dom T} and value T(Uu).
+Density and closedness are equivalent to those of T. Its adjoint has exactly
+dom T*, and its value is the weighted L2 class (T*F)/sigma, for every
+F in dom T*. Equality is proved as an equality of partial operators, not only
+of pairings on test functions.
+
+This closes the concrete weighted full-space transport step of B05, and fixes
+the doubled-probability-space error of B01 when mu is time-product-probability
+measure. The input T is an actual partial operator, but this module does not
+identify it as a Brownian divergence or construct its predictable restriction.
+The stochastic-volatility rigidity conclusion remains open.
+
+Verification: full Lake build passed (4036 jobs); transitive checks passed for
+all 1286 listed declarations, including all 29 new public declarations. Their
+elaborated hypotheses and proof bodies were independently reviewed. The axiom
+union is exactly `propext`, `Classical.choice`, and `Quot.sound`.
