@@ -1,3 +1,5 @@
+import Foundation.GaussianWeightedHermite
+import Foundation.GaussianWeightedIntegrand
 import Foundation.GaussianShiftedHermite
 import Foundation.GaussianShiftedRepresentation
 import Foundation.GaussianShiftedIntegrand
