@@ -153,3 +153,5 @@ import Foundation.GaussianHermiteMartingale
 import Foundation.GaussianPolynomialMartingale
 import Foundation.GaussianWeightedHermiteOrthogonality
 import Foundation.GaussianWeightedQuadraticVariation
+import Foundation.GaussianContinuousIntegrands
+import Foundation.GaussianLipschitzIntegrands
