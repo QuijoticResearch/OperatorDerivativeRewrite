@@ -4546,3 +4546,54 @@ Brownian natural sigma-algebra.
 Verification: full Lake build passed (4051 jobs); all 1384 listed transitive
 axiom checks passed, including all 38 new time-Hilbert/process declarations.
 The axiom union is exactly `propext`, `Classical.choice`, `Quot.sound`.
+
+## Paper 1: genuine random predictable-step integration
+
+`Foundation/GaussianPredictableStep.lean` proves elementary integration for
+an actual `IsPreBrownianReal B μ`. For ordered nonnegative times s <= t,
+`pastCoefficient B s a` is a measurable function of the entire coordinate
+past, and `stepIntegral B s t a` is literally A*(B_t-B_s).
+`pastCoefficient_indep_increment` derives independence from Mathlib's
+`IsPreBrownianReal.indepFun_shift`. With A in L2, independence of the squared
+factors proves square integrability; general L2-times-L2 closure is not used.
+`integral_stepIntegral` and `integral_stepIntegral_sq` prove
+E[A*(B_t-B_s)]=0 and E[(A*(B_t-B_s))^2]=(t-s)*E[A^2].
+
+`integral_stepIntegral_mul_stepIntegral` proves cross-term orthogonality for
+s <= t <= r <= v and arbitrary L2 coefficients from the respective pasts.
+The regrouped past product is L1, not assumed L2. All pairing integrands are
+proved integrable. On a monotone finite partition τ, the actual finite sum
+`partitionIntegral` is L2 and centered, and `integral_partitionIntegral_sq`
+proves E[(sum A_i*(B_{τ_(i+1)}-B_{τ_i}))^2]
+= sum (τ_(i+1)-τ_i)*E[A_i^2]. No independence of the coefficients, uniform
+bound, or polynomial restriction is assumed. Empty partitions and repeated
+times are allowed.
+
+`measurable_natural_iff_exists_pastCoefficient` uses actual measurable
+factorization to show that this parametrization covers every real coefficient
+measurable for the raw natural filtration. `integral_natural_step_sq` states
+the one-step result directly for such coefficients.
+`stepProcess_stronglyPredictable` and `partitionProcess_stronglyPredictable`
+prove predictability of the actual indicator step processes in Mathlib's
+predictable sigma-algebra. They do not assume predictability as a field.
+
+`Foundation/GaussianTimeStepIntegral.lean` specializes to the constructed
+Gaussian time process, so its principal results have no assumed Gaussian
+realization. `partitionIntegralL2` is an actual scalar Gaussian L2 class;
+`partitionIntegralL2_coeFn`, `partitionIntegralL2_centered` and
+`partitionIntegralL2_norm_sq` prove its representative, centering and exact
+norm formula. `partitionIntegralL2_congr` proves invariance under a.e.
+coefficient changes for the same partition. `timeStep_integrable_sq_and_isometry`
+covers every L2 coefficient measurable for this concrete natural filtration;
+`timeStep_stronglyPredictable` and `timePartition_stronglyPredictable` prove
+the associated integrands are genuinely predictable.
+
+Scope: the elapsed-time energy has not yet been identified with a quotient
+in time-probability L2. Cross-partition representation independence, density
+of steps in the full predictable L2 subspace and continuous extension are
+separate obligations. No full predictable stochastic integral, PRP, completed
+filtration, or stochastic sensitivity theorem is claimed by this milestone.
+
+Verification: full build passed (4053 jobs). All 1418 listed transitive axiom
+checks passed, including the 26 generic and eight concrete public declarations
+of this milestone. Only `propext`, `Classical.choice`, `Quot.sound` occur.
