@@ -4096,3 +4096,21 @@ The reverse criterion and second-adjoint recovery remain to be
 formalized. In general, recovering `T` from its Banach
 double adjoint requires careful use of the canonical embedding into `X**`
 and, for equality in `X`, reflexivity or other sufficient hypotheses.
+
+## C3 first fixed-exponent duality map
+
+`Foundation/BanachLpDualityFour.lean` defines `dualityFour` on actual scalar
+Lp classes: `F ∈ L⁴(μ)` maps to the class of `F³` in `L^(4/3)(μ)`.
+`cube_memLp` proves this integrability from Mathlib's `MemLp.norm_rpow_div`;
+`dualityFour_ae` identifies the representative almost everywhere. The
+quartic moment and pairing are genuinely integrable, and
+`dualityFour_pairing` proves `∫ (dualityFour F) F = ∫ F⁴`, and
+`quartic_integral_eq_norm` identifies this with `‖F‖₄⁴`. The exact conjugate
+norm law `‖dualityFour F‖_(4/3) = ‖F‖₄³` is proved independently, including
+the zero case. For an actual bounded `δ : H →L[ℝ] L⁴(μ)`, `normalFour`
+composes this nonlinear map with the B0 transpose, proving
+`normalFour δ u u = ‖δu‖₄⁴`. A genuine lower bound on `δ` gives
+`c⁴‖u‖⁴ ≤ normalFour δ u u`. The map is nonlinear and no linear-map
+structure or solvability of a normal equation is asserted. General
+`1<p<∞` signed-power theory, monotonicity, continuity, and
+normal-equation solvability remain separate obligations.

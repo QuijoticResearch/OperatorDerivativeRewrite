@@ -17,6 +17,7 @@ import Foundation.PoissonQuadraticDefect
 import Foundation.BanachLpAdjoint
 import Foundation.BanachRange
 import Foundation.BanachUnboundedAdjoint
+import Foundation.BanachLpDualityFour
 import Foundation.GaussianLogSobolevFull
 import Foundation.GaussianSobolevGlobalApprox
 import Foundation.GaussianSobolevQuantitative
@@ -1393,3 +1394,17 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.BanachUnboundedAdjoint.boundedAsPartial_adjoint_domain
 #print axioms OperatorDerivativeRewrite.Foundation.BanachUnboundedAdjoint.boundedAsPartial_adjoint_apply
 #print axioms OperatorDerivativeRewrite.Foundation.BanachUnboundedAdjoint.isClosable_of_adjoint_domain_separates
+
+/-! C3 first case: the genuine L4-to-L(4/3) signed duality map. -/
+#print axioms OperatorDerivativeRewrite.Foundation.BanachLpDualityFour.cube_memLp
+#print axioms OperatorDerivativeRewrite.Foundation.BanachLpDualityFour.dualityFour
+#print axioms OperatorDerivativeRewrite.Foundation.BanachLpDualityFour.dualityFour_ae
+#print axioms OperatorDerivativeRewrite.Foundation.BanachLpDualityFour.quartic_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.BanachLpDualityFour.dualityFour_pairing_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.BanachLpDualityFour.dualityFour_pairing
+#print axioms OperatorDerivativeRewrite.Foundation.BanachLpDualityFour.dualityFour_norm
+#print axioms OperatorDerivativeRewrite.Foundation.BanachLpDualityFour.quartic_integral_eq_norm
+#print axioms OperatorDerivativeRewrite.Foundation.BanachLpDualityFour.dualityFour_pairing_eq_norm
+#print axioms OperatorDerivativeRewrite.Foundation.BanachLpDualityFour.normalFour
+#print axioms OperatorDerivativeRewrite.Foundation.BanachLpDualityFour.normalFour_pairing
+#print axioms OperatorDerivativeRewrite.Foundation.BanachLpDualityFour.normalFour_coercive
