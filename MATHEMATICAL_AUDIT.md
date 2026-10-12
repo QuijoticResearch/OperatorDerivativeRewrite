@@ -5357,3 +5357,13 @@ Verification: full build PASS (4101 jobs), transitive audit PASS (1944 declarati
 Scope: a rigorous deterministic-kernel Volterra realization. No joint time measurability/continuity is asserted without hypotheses on K, and no fBM kernel formula, fractional predictable projection, random-kernel calculus, stochastic Fubini, or rough-path assertion is proved here. The legacy Volterra claims need these qualifications; no manuscript was edited.
 
 Verification: full build PASS (4102 jobs), transitive audit PASS (1960 declarations; all 16 new public declarations checked). Explicit types elaborated. Only propext, Classical.choice, Quot.sound. Original manuscripts and dependency pins preserved.
+
+## Finite Brownian quadratic cylinders and Clark--Ocone (2026-10-12)
+
+`GaussianQuadraticCylinders.brownianProduct` is the actual polynomial product B_s B_t; `brownianProduct_coeFn` checks its random-variable representative. For s<=t, `orderedCrossField` is 2 times the running-Brownian integral field on (0,s] plus B_s on (s,t]. `orderedCrossField_integral` proves its existing Ito integral is B_s B_t-s. `crossField_integral` treats arbitrary order, coincident times, and zero times by min/max, with centering min(s,t).
+
+For any finite index type, arbitrary real c,a_i,b_ij and arbitrary nonnegative times t_i, `quadraticCylinder` is the genuine class c + sum a_i B_(t_i) + sum b_ij B_(t_i)B_(t_j). `quadraticCylinderIntegrand` explicitly sums deterministic interval fields and the proved cross fields. `quadraticCylinder_representation` proves J(u)=F-m, and `quadraticCylinder_mean` proves m is the actual expectation, namely c+sum b_ij min(t_i,t_j). No symmetry of b, independent observations, or nonsingular covariance is required.
+
+`quadraticCylinder_mem_derivative_domain` proves membership in the actual full closed Malliavin derivative domain. `predictableAdjoint_constant` follows from actual centering of the Ito integral. `predictableProjection_quadraticCylinder` identifies the actual predictable projection of DF with the explicit integrand; `quadraticCylinder_clarkOcone` proves F=E[F]+J(PredProj DF). The representation was established before applying the adjoint identity, so this does not assume PRP. All integrals are of genuine Gaussian L2 classes on a probability space. This proves the entire finite quadratic-cylinder class, not higher-degree polynomial or full Brownian-generated L2 representation.
+
+Verification: full Lake build PASS (4103 jobs), transitive audit PASS (1976 declarations; all 16 new public declarations checked). Explicit elaborated types checked. Axioms only propext, Classical.choice, Quot.sound. No earlier theorem bodies, manuscripts, or dependency pins modified.
