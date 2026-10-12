@@ -91,3 +91,4 @@ import Foundation.GaussianBochnerDerivative
 import Foundation.GaussianParameterizedIntegral
 import Foundation.GaussianProductDerivative
 import Foundation.GaussianAdaptedGraphCore
+import Foundation.GaussianContinuousRigidity
