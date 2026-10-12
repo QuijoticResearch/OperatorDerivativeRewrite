@@ -5209,3 +5209,13 @@ Verification: full Lake build PASS, 4075 jobs. Complete transitive audit PASS, 1
 The product-L2/Bochner-L2 equivalence, adapted graph-core approximation, and identification of the coefficient Hilbert space with derivative time remain distinct obligations. This milestone does not assume them. Pinned Mathlib supplies convergence in measure/subsequence extraction, continuous-map actions on Lp, and simple-function density; no direct-integral closed-operator lifting theorem was imported.
 
 Verification: full build PASS (4077 jobs), transitive audit PASS (1692 checks, including all 25 new declarations), explicit elaborated types checked. Only propext, Classical.choice, Quot.sound. Original files and dependency pins unchanged.
+
+## Parameterized predictable Ito integration (2026-10-12)
+
+`BochnerLinearIsometry.lift` lifts an ACTUAL linear isometry J:E->F to an isometry of Bochner L2 spaces for an arbitrary parameter measure. Its norm equality follows from the a.e. representative formula and equality of pointwise norms; it is not an assumed structure field.
+
+`GaussianParameterizedIntegral.parameterIntegral nu` is `Lp fullPredictable 2 nu ->Li Lp GaussianL2 2 nu`, acting almost everywhere by the existing full predictable Ito integral. `parameterIntegral_coeFn`, `parameterIntegral_norm`, `parameterIntegral_norm_sq_integrable`, `parameterIntegral_isometry`, `parameterIntegral_centered`, and `parameterIntegral_eq_zero_iff` prove actual values, integrability on both sides, norm-square integral equality, centering for almost every parameter, and injectivity.
+
+This constructs the genuine parameterized integral needed for the stochastic correction. Its inputs are Bochner L2 functions with values in the already verified full predictable domain. It does NOT assert that an arbitrary joint derivative field has this measurability/predictability, nor identify a parameterized input with D_s u_t without proof. Causal support, the product-space equivalence, and adapted graph approximation remain to be supplied before invoking it as the sensitivity correction operator. No stochastic derivative interchange is claimed.
+
+Verification: full build PASS (4079 jobs); full transitive axiom audit PASS (1703 checks, all 11 new public declarations audited), only propext, Classical.choice, Quot.sound. All explicit elaborated types checked. No manuscript or pin changes.
