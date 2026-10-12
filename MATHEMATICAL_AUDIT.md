@@ -4088,7 +4088,11 @@ the ordinary continuous transpose `φ.comp S`. This does not require a general
 identification of the dual of `Lp` with another `Lp`.
 
 This result is abstract Banach operator theory, not a stochastic-integral
-construction. Closability and second-adjoint recovery remain to be
+construction. The theorem `isClosable_of_adjoint_domain_separates` proves a
+genuine sufficient condition for closability: the domain of `T*` must
+separate points of `Y`. Its proof uses closure of the original graph and
+the continuous adjoint pairing; it does not assume the graph is closable.
+The reverse criterion and second-adjoint recovery remain to be
 formalized. In general, recovering `T` from its Banach
 double adjoint requires careful use of the canonical embedding into `X**`
 and, for equality in `X`, reflexivity or other sufficient hypotheses.

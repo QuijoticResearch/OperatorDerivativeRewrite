@@ -213,4 +213,39 @@ theorem boundedAsPartial_adjoint_apply (S : X →L[ℝ] Y)
     change φ (S (x : X)) = φ (S (x : X))
     rfl
 
+/-- If the adjoint domain separates points of `Y`, then the original
+operator is closable. This is a point-separation criterion, not a claim
+of norm density of the adjoint domain in `Y*`. -/
+theorem isClosable_of_adjoint_domain_separates (T : X →ₗ.[ℝ] Y)
+    (hDense : DenseRange T.domain.subtype)
+    (hsep : ∀ y : Y,
+      (∀ φ : (adjoint T hDense).domain, (φ : StrongDual ℝ Y) y = 0) → y = 0) :
+    T.IsClosable := by
+  have hv : ∀ z : X × Y, z ∈ T.graph.topologicalClosure → z.1 = 0 → z.2 = 0 := by
+    intro z hz hz0
+    apply hsep
+    intro φ
+    let f : StrongDual ℝ X := adjoint T hDense φ
+    let C : Set (X × Y) :=
+      {w | f w.1 = (φ : StrongDual ℝ Y) w.2}
+    have hclosed : IsClosed C :=
+      isClosed_eq (f.continuous.comp continuous_fst)
+        (φ.1.continuous.comp continuous_snd)
+    have hsub : (T.graph : Set (X × Y)) ⊆ C := by
+      intro w hw
+      rcases (LinearPMap.mem_graph_iff T).mp hw with ⟨x, hx, hval⟩
+      rcases w with ⟨a, b⟩
+      change (x : X) = a at hx
+      change (T x : Y) = b at hval
+      subst a
+      subst b
+      exact adjoint_apply_pairing T hDense φ x
+    have hclosure : (T.graph.topologicalClosure : Set (X × Y)) ⊆ C := by
+      rw [Submodule.topologicalClosure_coe]
+      exact closure_minimal hsub hclosed
+    have hval := hclosure hz
+    simpa [C, hz0] using hval.symm
+  refine ⟨T.graph.topologicalClosure.toLinearPMap, ?_⟩
+  exact (Submodule.toLinearPMap_graph_eq _ hv).symm
+
 end OperatorDerivativeRewrite.Foundation.BanachUnboundedAdjoint
