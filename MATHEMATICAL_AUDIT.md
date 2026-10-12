@@ -4143,3 +4143,38 @@ C4 verification: the full Lake build passed (4026 jobs), and the transitive
 audit passed for 1187 declarations, including all 17 new public declarations.
 Only `propext`, `Classical.choice`, and `Quot.sound` occur; no `sorryAx` or
 custom axioms occur. An independent proof-body and elaborated-type review passed.
+
+## C5: finite-dimensional quartic normal equations
+
+`Foundation/BanachLpDualityFourExistence.lean` proves existence and uniqueness
+for the actual equation `normalFour δ u = f`, for every `f : StrongDual ℝ H`,
+when H is finite-dimensional real normed and the actual bounded map δ into
+L4 satisfies `c * ‖u‖ ≤ ‖δu‖` for some `c > 0`. The measure is arbitrary.
+No Hilbert identification, Lp-dual representation, nontriviality, or additional
+regularity assumption is used; the zero-dimensional case is included.
+
+`hasFDerivAt_quarticPotential` proves the Fréchet derivative of
+`‖δu‖₄⁴/4` equals `normalFour δ u`, by differentiating genuine continuous
+Hölder products and the L2 pairing. `exists_quarticPotential_minimizer`
+proves a bounded sublevel for `‖δu‖₄⁴/4 - f u`, and obtains a global minimum
+using finite-dimensional compactness. The zero-derivative theorem at that
+minimum gives `normalFour_surjective`. C4 injectivity then yields
+`normalFour_existsUnique` and the actual bijection `normalFourEquiv`.
+
+`normalFour_inverse_solves` proves compatibility of its inverse with the
+original normal equation. `normalFour_inverse_cubic` and
+`normalFour_inverse_holder` give, for all dual inputs f,g,
+`‖A⁻¹f-A⁻¹g‖ ≤ (4/c⁴)^(1/3) * ‖f-g‖^(1/3)`.
+
+The exact theorem statements, proof dependencies, and independent baseline
+audit appear in `BANACH_C4_C5_AUDIT.md`. No C4 or finite-dimensional C5
+obligation remains. Infinite-dimensional solvability, general exponents,
+and construction of a stochastic integral meeting the norm bound are separate.
+
+C5 verification: the full Lake build passed (4027 jobs). The transitive
+axiom audit passed for 1196 public declarations; all nine new C5 declarations
+and all 17 C4 declarations depend only on `propext`, `Classical.choice`,
+and `Quot.sound`. No `sorryAx`, custom axioms, or unsafe shortcuts occur.
+Independent proof-body and elaborated-type review passed, including a
+compiled zero-dimensional instance. Existing verified theorem statements,
+original manuscripts, and dependency pins are unchanged.
