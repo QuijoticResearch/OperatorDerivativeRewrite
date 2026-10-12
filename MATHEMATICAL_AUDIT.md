@@ -4014,3 +4014,32 @@ The shift norm is essential. A claim that the commutator is bounded from ambient
 ## Exact Poisson quadratic defect on a verified L² domain
 
 `PoissonQuadraticDefect.bounded_square_difference` proves for every uniformly bounded count function `f` and positive rate that the **actual maximal difference** of its square satisfies `D(f²)=2fDf+(Df)²` as an equality in `L²(ℕ,rate·μ_rate)`. The input square and both right-hand terms are genuine L² classes; domain membership comes from `PoissonBoundedCalculus.bounded_product_mem_maximalDifference` and term integrability from `PoissonMultipliers.fieldMul`. This theorem does not cover every unbounded maximal-domain function. The already verified unbounded centered-count identity `D((N−rate)²)=2(N−rate)+1` is separate and uses explicit Poisson moments.
+
+## B0: bounded Banach Lp adjoint
+
+`Foundation/BanachLpAdjoint.lean` starts the Paper 2 reconstruction with an
+actual normed real space `H`, measure `μ`, Hölder-conjugate exponents `q,p ≥ 1`,
+and an actual continuous linear map `δ : H →L[ℝ] Lp ℝ p μ`. It defines
+`boundedBanachDerivative δ : Lp ℝ q μ →L[ℝ] StrongDual ℝ H` by composing
+Mathlib's `ContinuousLinearMap.lpPairing` with precomposition by `δ`.
+
+`integrable_mul` proves that `F · δu` is genuinely integrable. The evaluation
+theorem identifies `D F u` with its real integral, `boundedBanachDerivative_norm_le`
+gives `‖D F‖ ≤ ‖F‖ ‖δ‖`, and `boundedBanachDerivative_eq_zero_iff` identifies its
+kernel with the annihilator of the range of `δ`. On a finite measure,
+`boundedBanachDerivative_const_eq_zero` proves that `D` kills Mathlib constant
+Lp classes when every `δu` has zero actual integral. These conclusions use no
+scalar-Lp dual-surjectivity theorem, Hilbert/Riesz identification, process
+construction, or stochastic representation hypothesis.
+
+This bounded construction does not resolve the impossible interfaces in the
+legacy Banach source, construct a stable integral, or address unbounded Banach
+adjoints. Those remain distinct obligations. The original files and dependency
+pins are untouched.
+
+Verification: the full `lake build` passes (4,022 jobs). Direct execution of
+`Foundation/AxiomAudit.lean` passes with 1,128 transitive axiom reports. Every
+new public declaration depends only on `propext`, `Classical.choice`, and
+`Quot.sound`; there are no `sorryAx` or custom axioms. The declarations were
+also inspected with fully explicit `#check` types. The two unused-section-variable
+warnings from the older `Foundation.Adjoint` remain unchanged.

@@ -16,6 +16,7 @@ import Foundation.PoissonLipschitzChain
 import Foundation.PoissonQuadraticDefect
 import Foundation.Adjoint
 import Foundation.LpProducts
+import Foundation.BanachLpAdjoint
 import Foundation.GaussianEntropy
 import Foundation.MultiplierCore
 import Foundation.GaussianOperator

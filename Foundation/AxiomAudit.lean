@@ -14,6 +14,7 @@ import Foundation.PoissonMultipliers
 import Foundation.PoissonMultiplierAlgebra
 import Foundation.PoissonLipschitzChain
 import Foundation.PoissonQuadraticDefect
+import Foundation.BanachLpAdjoint
 import Foundation.GaussianLogSobolevFull
 import Foundation.GaussianSobolevGlobalApprox
 import Foundation.GaussianSobolevQuantitative
@@ -1350,3 +1351,11 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 
 /-! Genuine weighted-L² quadratic Poisson defect on bounded functions. -/
 #print axioms OperatorDerivativeRewrite.Foundation.PoissonQuadraticDefect.bounded_square_difference
+
+/-! B0: a bounded Banach derivative through Mathlib's actual Lp pairing. -/
+#print axioms OperatorDerivativeRewrite.Foundation.BanachLpAdjoint.boundedBanachDerivative
+#print axioms OperatorDerivativeRewrite.Foundation.BanachLpAdjoint.integrable_mul
+#print axioms OperatorDerivativeRewrite.Foundation.BanachLpAdjoint.boundedBanachDerivative_apply
+#print axioms OperatorDerivativeRewrite.Foundation.BanachLpAdjoint.boundedBanachDerivative_norm_le
+#print axioms OperatorDerivativeRewrite.Foundation.BanachLpAdjoint.boundedBanachDerivative_eq_zero_iff
+#print axioms OperatorDerivativeRewrite.Foundation.BanachLpAdjoint.boundedBanachDerivative_const_eq_zero
