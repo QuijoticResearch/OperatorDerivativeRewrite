@@ -5425,3 +5425,13 @@ The proof uses actual adjoint duality to establish `derivative_projectedGradient
 Scope: the homogeneous gradient is proved as an actual bounded map into vector Gaussian L2, with its full derivative graph and spectral norm. Identification with the componentwise order-(n-1) vector-chaos projection has not yet been established. Brownian-past preservation and independent predictable graph-core equality remain separate obligations at this checkpoint.
 
 Verification: full build PASS (4109 jobs); complete transitive audit PASS (2055 declarations, including all 16 new public declarations). Fully explicit types checked. Only propext, Classical.choice, Quot.sound. No changes to existing theorem bodies or dependency pins.
+
+## All-order projection preserves correlated cylinders and every Brownian past (2026-10-12)
+
+`GaussianChaosCylinders.cylinder_gradient_expansion` proves the genuine finite-rank expression for the derivative of any polynomial cylinder. `orthonormal_rankDivergence` derives the actual Gaussian coordinate-divergence formula on an arbitrary orthonormal Hilbert family. `orthonormal_tensor_mem_sector` then proves the number-eigenvalue identity for Hermite tensors in ANY such directions, not only the ambient coordinate axes.
+
+`projection_of_sector` proves the exact Kronecker action of each orthogonal projection on every eigenspace. `projection_orthonormal_polynomial` uses algebraic Hermite spanning. Crucially, `projection_polynomial` removes the orthonormality assumption: for ANY finite family h and polynomial p, there exists a polynomial q in the SAME family such that Q_n[p(W(h))]=q(W(h)). The proof chooses an orthonormal basis of span(h), proves the two polynomial substitutions, and returns to the original observations. Singular covariance, repetitions, zero directions and the zero-dimensional span require no extra assumptions.
+
+`projection_pastPolynomial_measurable` and `projection_preserves_past` establish preservation of the actual raw Brownian past at EVERY time by EVERY natural-order projection, for all past-measurable Gaussian L2 classes. Extension uses the existing past-polynomial density and closedness of the actual measurable subspace under the bounded projection. No conditional expectation commutation or PRP is assumed.
+
+Verification: full Lake build PASS (4110 jobs); complete transitive audit PASS (2064 declarations, all nine new public declarations included). Explicit theorem types checked. Only propext, Classical.choice, Quot.sound. This resolves higher-chaos past preservation. Time-probability graph approximation is still a separate step; this entry does not yet claim full predictable graph-core equality.
