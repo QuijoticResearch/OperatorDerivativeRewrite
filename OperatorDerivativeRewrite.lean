@@ -1,3 +1,7 @@
+import Foundation.GaussianTimeSpaceTensor
+import Foundation.GaussianOrderedTensorRepresentation
+import Foundation.GaussianMultitimeRepresentation
+import Foundation.GaussianBrownianPRP
 import Foundation.GaussianWeightedHermite
 import Foundation.GaussianWeightedIntegrand
 import Foundation.GaussianShiftedHermite
