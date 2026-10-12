@@ -4235,3 +4235,31 @@ Only `propext`, `Classical.choice`, and `Quot.sound` occur. Independent
 proof-body and elaborated-type review passed, including compiled zero-space
 and L4-on-ℕ-counting-measure specializations. Existing theorem bodies,
 original manuscripts, pins, and pre-existing untracked documents are unchanged.
+
+## Paper 1 reconstruction: Hilbert representation and natural domains
+
+`Foundation/HilbertRepresentation.lean` replaces the abstract representation
+argument's inappropriate L²-algebra interface by actual real Hilbert spaces.
+For a linear isometry J, its actual bounded adjoint R=J* is defined everywhere;
+RJ=Id, JR is the orthogonal projection onto the closed range of J, and the
+residual satisfies a genuine Pythagorean norm identity. Completeness and
+isometry prove closed range. If range J=C-perpendicular for a specified closed
+subspace C, the represented part is F minus its C-projection, with the exact
+centered norm identity. The range equality is the explicit abstract PRP input.
+
+`adjoint_domain_iff_pairing_bound` characterizes the full unbounded adjoint
+domain by |inner F (T u)| <= C*norm u on the actual dense domain of T, using
+the ambient norm, not the graph norm. The graph-core variant requires genuine
+equality T=closure S; ambient density alone is deliberately insufficient.
+Density also proves uniqueness of the represented vector.
+
+`predictableAdjoint_eq_projected_adjoint` proves R F=P(delta*F) only for F
+in the actual full-adjoint domain, when the dense partial delta genuinely
+extends J on the closed subspace P. No arbitrary L² domain membership,
+Leibniz identity, or multiplication closure is assumed. This closes the
+abstract domain/representation repair in Paper 1 obligations B01/B03;
+construction of Brownian predictable integration and its PRP remains separate.
+
+Verification: full Lake build passed (4031 jobs). The transitive axiom audit
+passed for all 1231 listed declarations, including all 18 new public declarations;
+its union is exactly `propext`, `Classical.choice`, and `Quot.sound`.
