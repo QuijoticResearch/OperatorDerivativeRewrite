@@ -4282,3 +4282,37 @@ stochastic sensitivity formula.
 Verification: full Lake build passed (4032 jobs); all 1243 listed transitive
 axiom checks passed, including all 12 new public declarations. Only `propext`,
 `Classical.choice`, and `Quot.sound` occur.
+
+## Paper 1 reconstruction: genuine Gaussian constant-kernel theorem
+
+`Foundation/FiniteGaussianKernel.lean` proves that a graph pair (f,0) belongs
+to the actual closed finite Gaussian gradient exactly when f is a scalar
+multiple of the degree-zero tensor Hermite vector. The proof eliminates every
+nonconstant coefficient by the verified lowering formula and uses completeness
+of the tensor basis. It covers all finite dimensions, including dimension zero.
+
+`Foundation/InfiniteGaussianKernel.lean` proves, for every actual scalar L2
+class f of the countable standard Gaussian product,
+
+    (f,0) in graph closedCylindricalDerivative
+      iff exists c, f = c almost everywhere
+      iff f = integral f almost everywhere.
+
+There is no extra differentiability, cylinder, graph-density or kernel
+hypothesis. A zero-gradient pair restricts to each finite-sector weak-gradient
+graph; the finite kernel theorem identifies each scalar projection with its
+vacuum coefficient. The existing strong convergence of these same projections
+identifies f. Conversely, constants belong to the closed graph by lifting the
+empty finite sector. The coefficient equals actual Gaussian expectation.
+
+This closes the constant-kernel ingredient of B05 on the constructed canonical
+Gaussian model. It does not construct a Brownian time filtration, a predictable
+stochastic integral, or sensitivity of that integral to volatility. In
+particular it must not be exported unchanged to a probability space containing
+extra randomness invisible to the Gaussian derivative.
+
+Verification: full Lake build passed (4034 jobs); all 1257 listed transitive
+axiom checks passed, including all 14 new public declarations. Their elaborated
+types were separately checked. Only `propext`, `Classical.choice`, and
+`Quot.sound` occur. Independent proof review confirmed that this is a theorem
+about the full constructed closed operator, not a conditional kernel axiom.
