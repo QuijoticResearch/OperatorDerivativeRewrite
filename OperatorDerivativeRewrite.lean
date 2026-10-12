@@ -8,6 +8,7 @@ import Foundation.GaussianElementaryRigidity
 import Foundation.GaussianHilbertProcess
 import Foundation.GaussianTimeProcess
 import Foundation.GaussianTimeStepIntegral
+import Foundation.GaussianTimeFieldNorm
 import Foundation.PoissonDifferenceCore
 import Foundation.PoissonDifferenceOperators
 import Foundation.PoissonCoordinateEvaluation

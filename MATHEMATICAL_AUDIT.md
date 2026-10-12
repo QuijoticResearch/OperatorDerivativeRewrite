@@ -4597,3 +4597,111 @@ filtration, or stochastic sensitivity theorem is claimed by this milestone.
 Verification: full build passed (4053 jobs). All 1418 listed transitive axiom
 checks passed, including the 26 generic and eight concrete public declarations
 of this milestone. Only `propext`, `Classical.choice`, `Quot.sound` occur.
+
+## Paper 1: verified polynomial common domain of stochastic integral and divergence
+
+`Foundation/GaussianTimeDivergence.lean` defines actual polynomial coefficients
+G=p(B_(r_i)) and the coefficient-space direction e(1_(s,t]), where e is the
+constructed isometry from time L2 to ell2. All finite moments of G and
+G*(B_t-B_s) are proved independently of the ordering hypotheses.
+For r_i <= s <= t, `pastDirection_inner_increment` computes zero inner
+product and `pastCoefficient_gradient_inner_increment` derives zero
+contraction from the genuine polynomial derivative formula.
+`rankDivergence_pastCoefficient` then proves
+delta_0(G*e(1_(s,t]))=G*(B_t-B_s) in actual Gaussian L2.
+`pastCoefficient_cylindricalDivergence_graph` and
+`pastCoefficient_hilbertDivergence_graph` give both domain membership and
+the exact value in the existing operators. The corresponding `sum` theorems
+prove this for finite fields. Overlapping intervals are allowed in these
+graph identities; no orthogonality/isometry is asserted for overlapping steps.
+Past coordinates may be repeated, correlated or linearly dependent.
+
+`Foundation/GaussianTimePolynomialIntegral.lean` joins this graph formula to
+the actual stochastic-integral construction. `polynomialPastFunction_measurable`
+and `polynomialPastFunction_memLp` prove the coefficient hypotheses, rather
+than supplying integrability as a new assumption.
+`polynomialPartitionIntegralL2` is the previously constructed predictable
+increment integral specialized to those coefficients.
+`polynomialPartitionIntegralL2_eq_sum` proves its equality with the sum of
+the genuine product classes. Theorems
+`polynomialPartitionIntegralL2_cylindricalDivergence_graph` and
+`polynomialPartitionIntegralL2_hilbertDivergence_graph` identify this exact
+value in the existing operator graphs. Their only mathematical inputs are
+a finite polynomial coordinate index, monotone finite partition, polynomial
+coefficients and sampling times at or before the left endpoints. Empty
+coordinate sets/partitions and repeated times are allowed. The same value
+satisfies the elapsed-time norm formula in
+`polynomialPartitionIntegralL2_norm_sq`. Calling this a polynomial test class
+does not assert a graph-core or predictable-density theorem.
+
+`Foundation/GaussianTimeFieldNorm.lean` further identifies the actual
+embedded vector-L2 norm. `scalarTensor_pair_inner` factors the pairing of
+two rank-one fields, `partitionDirection_inner_eq_zero` proves orthogonality
+of distinct interval directions, and `partitionField_norm_sq` gives
+norm(sum A_i*e(1_(τ_i,τ_(i+1)]))^2 = sum (τ_(i+1)-τ_i)*norm(A_i)^2
+for arbitrary scalar Gaussian L2 classes A_i. Adaptation is not needed for
+this deterministic direction calculation. For the polynomial past fields,
+`polynomialPartitionIntegralL2_norm_sq_eq_field` and
+`polynomialPartitionIntegralL2_norm_eq_field` prove the actual vector-L2
+Itô isometry: the constructed integral and its embedded field have equal
+norms. This is stronger than a merely formal elapsed-time expression, but
+does not identify arbitrary time-probability L2 quotients with these fields.
+
+The operator here is the existing ell2-valued Gaussian divergence applied
+to the explicitly embedded time directions. It is not a newly constructed
+adjoint on all time-probability L2, nor a claim that every predictable L2
+integrand is in this domain.
+
+### Reuse investigation and exact next boundary
+
+Pinned Mathlib supplies the Gaussian covariance criterion, increment laws,
+independence from the entire past, natural filtrations and predictable
+sigma-algebra used above. No dependency was added or changed.
+
+Public reusable developments do exist. The inspected
+[BrownianMotion source](https://github.com/RemyDegenne/brownian-motion/blob/master/BrownianMotion/Gaussian/BrownianMotion.lean)
+constructs continuous modifications through
+`IsPreBrownianReal.exists_continuous_modification` and `isBrownianReal_mk`;
+its Kolmogorov--Chentsov prerequisites are not all in this repository's pin.
+[MathFin's ItoIntegralCLM](https://github.com/formal-applied-math/formal-mathfin/blob/main/MathFin/Foundations/ItoIntegralCLM.lean)
+constructs `itoIntegralCLM_T`, proves `simpleAssembly_T_denseRange` and
+`itoIntegralCLM_T_norm`, using a predictable-rectangle density argument.
+These are actual constructions, not just postulated isometry fields.
+Their inspected toolchains are Lean 4.33.0-rc1, with a different Mathlib
+revision; our toolchain remains 4.34.1 and Mathlib remains
+`d13f23b723b8a846827a245b89c10fc7d3f11612`. A future selective port requires
+checking the extra simple-process/predictable and continuity dependencies,
+and preserving their licenses. No upstream source was copied in this run.
+
+The next smallest substantial milestone is finite-horizon predictable L2
+assembly: realize the indicator steps as classes for dt-times-probability,
+prove their actual norm equals the partition energy, prove common-refinement
+compatibility, and construct the isometry on their span. Only after a proved
+density theorem may it be extended to the full predictable L2 domain.
+The raw-natural versus completed-filtration representative issue must also
+be addressed explicitly. Continuous modification is a separate supporting
+development, with an existing upstream proof to inspect for a selective port.
+
+The continuous stochastic-volatility rigidity theorem remains open. Beyond
+integral completion it needs the correct terminal measurable subspace,
+the derivative/time-direction identification, an actual Hilbert-valued
+stochastic integral, and adaptation-preserving approximation in the relevant
+derivative graph norm. These are needed to pass the genuine sensitivity
+formula through closed operators. Ambient L2 density and the existing
+ambient constant-kernel theorem do not discharge them. No stochastic
+sensitivity limit, determinism conclusion, PRP, or manuscript correction
+has been asserted or implemented here. This is the stopping boundary for
+this run: those bridges require substantial new verified infrastructure.
+
+Final verification for this milestone: full Lake build passed (4056 jobs).
+All 1451 listed transitive axiom checks passed, including the 33 public
+declarations in the divergence, polynomial-integral and field-norm modules.
+Across the run, all 128 new public declarations are explicitly included in
+`Foundation/AxiomAudit.lean`; their elaborated types and proof bodies were
+checked. Independent mathematical reviews found no hidden realization,
+integrability or graph-domain assumptions in these new results. The axiom
+union remains exactly `propext`, `Classical.choice`, `Quot.sound`.
+No admissions, custom axioms or unsafe proof shortcuts were introduced.
+Original-source SHA256 hashes still match the recovered baseline; original
+manuscripts, existing Lean proof bodies, dependency pins and all twelve
+pre-existing untracked reports remain unchanged. Nothing was pushed.
