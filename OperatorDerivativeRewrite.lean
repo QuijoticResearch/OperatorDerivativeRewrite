@@ -6,6 +6,7 @@ import Foundation.WeightedMeasurableTransport
 import Foundation.GaussianElementaryIntegral
 import Foundation.GaussianElementaryRigidity
 import Foundation.GaussianHilbertProcess
+import Foundation.GaussianTimeProcess
 import Foundation.PoissonDifferenceCore
 import Foundation.PoissonDifferenceOperators
 import Foundation.PoissonCoordinateEvaluation

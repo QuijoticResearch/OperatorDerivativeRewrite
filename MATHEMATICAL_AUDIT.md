@@ -4511,3 +4511,38 @@ Verification for this milestone: the complete Lake build passed (4042 jobs).
 All 1346 listed declarations passed the transitive axiom audit; the union
 is exactly `propext`, `Classical.choice`, `Quot.sound`. All six embedding
 and seventeen Gaussian-process public declarations are included.
+
+## Paper 1: actual time Hilbert space and pre-Brownian realization
+
+`Foundation/GaussianTimeHilbert.lean` uses actual Lebesgue L2 on the real
+line. `intervalVector a b` is the class of the indicator of `(a,b]`;
+`timeVector t` is the indicator of `(0,t]` for nonnegative t. Their inner
+products are interval intersection lengths. In particular,
+`timeVector_inner` gives min(s,t), `timeVector_sub_norm_sq` gives t-s for
+s <= t, and `timeVector_increments_orthogonal` handles ordered disjoint
+intervals. Empty intervals, touching endpoints and zero time are included.
+Completeness and second countability are established using pinned Mathlib.
+
+`Foundation/GaussianTimeProcess.lean` defines `wienerL2` and `process` by
+the constructed isonormal embedding of these time vectors into the existing
+countable Gaussian product. `process_isPreBrownian` derives all Brownian
+finite-dimensional laws from actual joint Gaussianity, centering and the
+min covariance, using Mathlib's covariance criterion.
+`process_hasLaw` gives N(0,t), `process_increment_hasLaw` gives variance
+abs(t-s), `process_hasIndepIncrements` gives mutual independence on every
+ordered finite partition, and `process_disjoint_increments_independent`
+specializes this to two ordered disjoint intervals. `wienerL2_sub` identifies
+the actual increment class with its interval vector. `naturalFiltration`
+is the raw natural filtration; `process_stronglyAdapted` is proved for it.
+
+This is a concrete pre-Brownian realization, not a continuous-path Brownian
+construction. No joint time/sample measurability, completed or right-continuous
+filtration, or PRP is asserted. Whole-line time L2 contains negative-time
+directions not seen by these nonnegative-time coordinates. The chosen Hilbert
+embedding need not be onto the ambient coefficient space. Neither ambient
+Gaussian kernel theorems nor ambient density automatically transfer to the
+Brownian natural sigma-algebra.
+
+Verification: full Lake build passed (4051 jobs); all 1384 listed transitive
+axiom checks passed, including all 38 new time-Hilbert/process declarations.
+The axiom union is exactly `propext`, `Classical.choice`, `Quot.sound`.
