@@ -4754,3 +4754,50 @@ Verification of this increment: complete Lake build passed (4058 jobs);
 all 1480 registered transitive axiom checks passed, including all 29 public
 declarations of these two modules. Elaborated types were inspected. The
 axiom union remains `propext`, `Classical.choice`, `Quot.sound` only.
+
+## Paper 1: constructed integral on the closed polynomial time-field span
+
+`Foundation/GaussianPolynomialStepCompletion.lean` defines
+`elementaryFields` as the field-component image of `elementaryTimeGraph`,
+and `completedFields` as its closure in the existing Gaussian vector L2.
+These are explicit domains, not names for an unproved full predictable space.
+
+`fieldAssembly_dense` and `integralAssembly_norm` prove the hypotheses for
+Mathlib's `LinearMap.extendOfIsometry`, constructing
+`completedIntegral : completedFields →ₗᵢ[ℝ] GaussianL2`.
+`completedIntegral_assembly` proves exact agreement with every elementary
+integral assembly, and `completedIntegral_norm` is the actual Itô isometry
+on the completed domain. The construction assumes neither an integral
+extension nor a graph-density property.
+
+`completedIntegral_graphClosure` proves that every completed field/integral
+pair is in the elementary graph closure. The existing full Gaussian
+divergence is closed, so `completedIntegral_hilbertDivergence_graph`,
+`completedFields_le_divergence_domain` and `completedIntegral_eq_divergence`
+establish actual domain membership and the exact divergence value.
+The explicit membership argument in the last theorem is redundant but
+allows evaluation at any proof of membership; membership is already proved
+for every element of the domain.
+
+`completedOperator` packages this constructed integral as a partial linear
+operator with domain exactly `completedFields`. `completedOperator_graph`
+proves equality with the elementary graph closure in both directions;
+`completedOperator_isClosed` and `completedOperator_le_divergence` follow.
+Finally `exists_elementary_graph_approx` produces a SINGLE sequence of
+finite elementary graph pairs converging simultaneously to the field and
+its integral. Thus the elementary graph is a proved graph core for this
+restricted completed operator. It is not claimed to be a core for the
+entire divergence on arbitrary anticipative fields.
+
+Independent proof review checked the construction and both graph-inclusion
+directions. The remaining full-predictable-space identification needs
+time-product L2 transport, density of predictable rectangles, and polynomial
+cylinder density within each past sigma-algebra. Ambient Gaussian polynomial
+density does not alone preserve adaptation. Continuous-time sensitivity
+and rigidity additionally require approximation in the derivative graph
+norm; the integral graph approximation here does not supply that theorem.
+
+Verification: complete Lake build passed (4059 jobs); all 1499 registered
+transitive axiom checks passed, including the 19 public declarations of this
+module. Their elaborated types were inspected. Only `propext`,
+`Classical.choice`, `Quot.sound` occur. No prior proof body or pin changed.
