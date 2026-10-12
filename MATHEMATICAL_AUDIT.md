@@ -5112,3 +5112,46 @@ declaration's elaborated type was checked; explicit measurable-space arguments
 in the main step theorems were inspected. No new-module warnings remain.
 Manuscript/source SHA256 checks match the baseline, dependency pins are unchanged,
 and the twelve unrelated untracked documents were preserved.
+
+## Paper 1: finite-horizon predictable transport and genuine generator density
+
+`PredictableTimeTransport.timeMeasure T` is real Lebesgue measure restricted
+to [0,T], pulled back under NNReal coercion. `coe_measurePreserving` and
+`coeTime_measurePreserving` prove the actual pushforward laws. The latter uses
+the product with any finite measure on the probability space.
+`realTime_product_restrict` identifies the target with restriction of the real
+time-product measure. `L2Equiv` is a SURJECTIVE linear isometry between the two
+actual L2 spaces; surjectivity follows from the measurable embedding and the
+proved measurable-factorization theorem. `L2Equiv_coeFn`, `L2Equiv_norm`,
+`L2Equiv_integrable`, and `L2Equiv_integral` give the actual representative,
+norm, integrability and integral statements. `coeTime_preimage_Ioc` verifies
+the half-open interval convention exactly. `timeZero_slice_null` and
+`timeMeasure_horizon_zero` handle time zero and horizon zero explicitly.
+
+`L2GeneratingIndicators.lean` defines `Foundation.generatingIndicatorSpan`:
+for a finite measure, the closure of
+indicators of a pi-system S containing univ equals the independently defined
+L2 measurable subspace for generateFrom S. `generatingIndicatorSpan_closure`
+proves this by orthogonality, finite-measure integrability, pi-lambda induction
+and uniqueness of measurable Lp classes; it assumes neither density nor graph
+approximation. Its exact hypotheses include generateFrom S = m and m <= m0.
+
+`PredictableGeneratingDensity.generators` is precisely Mathlib's predictable
+generator family ({0} x A at time zero, (s,infinity) x A for A measurable at s),
+with univ adjoined. `generators_generate`, `generators_isPiSystem`, and
+`predictable_le_product` prove generation, intersection closure and ambient
+measurability separately. `predictable_indicator_density` then proves full
+predictable L2 density of their indicator span for timeMeasure T x mu, for
+ANY NNReal filtration and finite mu. It includes T=0. It is a genuine density
+theorem, not just a measurability or self-closure assertion.
+
+The filtration remains raw. This milestone does not yet identify the existing
+real-time `closedProductSteps` with full predictable L2. The next step is
+norm-preserving zero extension and checking the images of these generators
+against the already proved arbitrary-past-step domain theorem. No Malliavin
+graph density, sensitivity limit, rigidity or operator-functional Ito formula
+is inferred from this ambient predictable L2 density.
+
+Verification: full Lake build passed (4070 jobs); all 1609 transitive axiom
+checks passed, including all 22 new public declarations. Every new elaborated
+type was inspected. Axioms: only propext, Classical.choice, Quot.sound.

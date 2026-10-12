@@ -17,6 +17,7 @@ import Foundation.GaussianTimeSensitivity
 import Foundation.GaussianTimeObservationDensity
 import Foundation.GaussianTimePastDensity
 import Foundation.GaussianPastStepCompletion
+import Foundation.PredictableGeneratingDensity
 import Foundation.PoissonDifferenceCore
 import Foundation.PoissonDifferenceOperators
 import Foundation.PoissonCoordinateEvaluation
