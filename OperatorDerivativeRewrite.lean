@@ -101,3 +101,4 @@ import Foundation.GaussianBrownianGeneratedSpace
 import Foundation.GaussianQuadraticIncrement
 import Foundation.GaussianBrownianQuadraticVariation
 import Foundation.GaussianQuadraticRepresentation
+import Foundation.GaussianQuadraticIto
