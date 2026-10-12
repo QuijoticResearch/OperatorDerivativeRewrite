@@ -1,3 +1,4 @@
+import Foundation.GaussianTimeSpaceHermite
 import Foundation.GaussianChaosLowering
 import Foundation.GaussianSensitivityGeometry
 import Foundation.GaussianConditionalGraph
