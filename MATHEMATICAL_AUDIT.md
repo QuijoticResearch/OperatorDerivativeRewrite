@@ -4350,3 +4350,24 @@ Verification: full Lake build passed (4036 jobs); transitive checks passed for
 all 1286 listed declarations, including all 29 new public declarations. Their
 elaborated hypotheses and proof bodies were independently reviewed. The axiom
 union is exactly `propext`, `Classical.choice`, and `Quot.sound`.
+
+## Paper 1 reconstruction: weighted measurable subspaces
+
+`Foundation/WeightedMeasurableTransport.lean` restricts the constructed weighted
+unitary to Mathlib's actual `lpMeas` subspaces for a sub-sigma-algebra m<=m0.
+For a measure on m0, an m-measurable real sigma nonzero almost everywhere,
+`measurableUnitary` proves an isometric equivalence between the m-measurable
+weighted and unweighted L2 classes. The underlying maps are exactly the
+previous multiplication/division maps. The forward and reverse membership
+statements are proved using multiplication/division measurability and both
+absolute-continuity relations, not supplied as preservation assumptions.
+
+This supplies the measurable-subspace part of weighted transport in B05.
+Choosing an actual predictable sigma-algebra and identifying its integral
+remain separate stochastic obligations. No filtration or stochastic integral
+has been assumed or constructed by this module.
+
+Verification after restart: full Lake build passed (4037 jobs), and all 1294
+listed transitive axiom checks passed, including the eight new public declarations.
+Independent review confirmed the distinct sigma-algebras and correct a.e.
+transport. Only `propext`, `Classical.choice`, and `Quot.sound` occur.

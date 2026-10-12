@@ -2,6 +2,7 @@ import Foundation.HilbertRepresentation
 import Foundation.AdjointUnitaryTransport
 import Foundation.InfiniteGaussianKernel
 import Foundation.WeightedAdjointTransport
+import Foundation.WeightedMeasurableTransport
 import Foundation.PoissonDifferenceCore
 import Foundation.PoissonDifferenceOperators
 import Foundation.PoissonCoordinateEvaluation
@@ -1551,3 +1552,13 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.WeightedAdjointTransport.weightedOperator_adjoint_domain
 #print axioms OperatorDerivativeRewrite.Foundation.WeightedAdjointTransport.weightedOperator_adjoint_eq
 #print axioms OperatorDerivativeRewrite.Foundation.WeightedAdjointTransport.weightedOperator_adjoint_coeFn
+
+/-! Paper 1: weighted transport of actual sub-sigma-algebra L² spaces. -/
+#print axioms OperatorDerivativeRewrite.Foundation.WeightedMeasurableTransport.aestronglyMeasurable_unitary
+#print axioms OperatorDerivativeRewrite.Foundation.WeightedMeasurableTransport.aestronglyMeasurable_unitary_symm
+#print axioms OperatorDerivativeRewrite.Foundation.WeightedMeasurableTransport.unitary_mem_lpMeas_iff
+#print axioms OperatorDerivativeRewrite.Foundation.WeightedMeasurableTransport.measurableUnitary
+#print axioms OperatorDerivativeRewrite.Foundation.WeightedMeasurableTransport.measurableUnitary_coe
+#print axioms OperatorDerivativeRewrite.Foundation.WeightedMeasurableTransport.measurableUnitary_symm_coe
+#print axioms OperatorDerivativeRewrite.Foundation.WeightedMeasurableTransport.measurableUnitary_coeFn
+#print axioms OperatorDerivativeRewrite.Foundation.WeightedMeasurableTransport.measurableUnitary_symm_coeFn
