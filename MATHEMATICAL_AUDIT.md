@@ -4116,4 +4116,30 @@ structure or solvability of a normal equation is asserted. The verified
 `0 ≤ (A(u)-A(v))(u-v)` for all `u,v`, using the actual integrable Hölder
 pairings and the signed cubic inequality. General `1<p<∞` signed-power
 theory, strict monotonicity, continuity, and
-normal-equation solvability remain separate obligations.
+normal-equation solvability remain separate obligations at the C3 baseline.
+
+## C4: smooth cube map and quantitative monotonicity
+
+`Foundation/BanachLpDualityFourContinuity.lean` realizes the existing cube
+map by Mathlib's genuine continuous Hölder products L4 × L4 → L2 and
+L2 × L4 → L(4/3). Its equality with `dualityFour` is proved a.e. The cube
+and `normalFour δ` are C∞, hence continuous and locally Lipschitz, for any
+measure and any real normed H. No full Lp-dual representation is used.
+
+`normalFour_uniform_monotone` proves
+`(Au-Av)(u-v) ≥ ‖δ(u-v)‖₄⁴/4` by integrating the sharp scalar cubic
+inequality with established integrability. The actual lower norm bound on δ
+gives `normalFour_uniform_monotone_lower`, with constant `c⁴/4`.
+`normalFour_injective`, `normalFour_inverse_cubic_bound`, and
+`normalFour_inverse_holder_bound` prove injectivity and exponent-1/3 stability
+of the inverse relation. They do not assume or conclude surjectivity.
+
+An independent audit of the baseline adjoint and duality modules found no
+blocking defect; exact hypotheses and scope qualifications are recorded in
+`BANACH_C4_C5_AUDIT.md`. In particular the adjoint-domain separation condition
+is substantive, and no stochastic integral or stable lower bound is constructed.
+
+C4 verification: the full Lake build passed (4026 jobs), and the transitive
+audit passed for 1187 declarations, including all 17 new public declarations.
+Only `propext`, `Classical.choice`, and `Quot.sound` occur; no `sorryAx` or
+custom axioms occur. An independent proof-body and elaborated-type review passed.

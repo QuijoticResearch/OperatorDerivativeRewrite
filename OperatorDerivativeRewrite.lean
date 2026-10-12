@@ -20,6 +20,7 @@ import Foundation.BanachLpAdjoint
 import Foundation.BanachRange
 import Foundation.BanachUnboundedAdjoint
 import Foundation.BanachLpDualityFour
+import Foundation.BanachLpDualityFourContinuity
 import Foundation.GaussianEntropy
 import Foundation.MultiplierCore
 import Foundation.GaussianOperator
