@@ -5740,3 +5740,16 @@ Verification: full Lake build PASS (4158 jobs); transitive axiom audit PASS (258
 The drift is genuinely integrable in Gaussian L2, and the stochastic field is in the existing predictable product L2 domain. There is no global bound imposed on a or a': compact-time continuity supplies all required estimates. `time_partial` (167), `space_partial` (170), and `second_space_partial` (173) independently prove the actual first time derivative and first/second space derivatives of a(t)f(x). This is a genuine restricted time-dependent smooth theorem, C1 in time and C3 in space; it is NOT an arbitrary nonseparable C1,2 theorem. Every result allows T=0.
 
 Verification: full Lake build PASS (4160 jobs); transitive axiom audit PASS (2607 declarations, all 23 new public declarations); explicit elaborated types inspected. Only propext, Classical.choice, Quot.sound. Prior proofs, pins, original files and twelve unrelated documents preserved; nothing pushed.
+
+## Brownian campaign VI — explicit smooth heat martingales (2026-10-12)
+
+`Foundation/GaussianSmoothHeatMartingale.lean` derives martingales from an independently stated differential equation, not from a martingale or stochastic representation hypothesis. The scalar function f is C3, f/f'/f'' are globally Lipschitz, and its actual third derivative is uniformly bounded. The time coefficient a is C1. The only additional mathematical hypothesis is the explicit backward heat equation a'(t)f(x)+(1/2)a(t)f''(x)=0 for t >= 0.
+
+- `heat_drift_zero` (line 31), `heat_representation` (47): the actual Bochner drift vanishes; a(T)f(B_T)-a(0)f(0) equals J of the independently specified predictable field 1_(0,T] a(t)f'(B_t).
+- `heat_projection` (67), `heat_condExp` (78), `heat_martingale` (89): actual orthogonal projection, conditional expectation, and Mathlib Martingale statements, including time zero. Strong adaptation is proved for the explicitly chosen pointwise process.
+- `heat_mean` (97) gives a(T)E[f(B_T)]=a(0)f(0).
+- `expHalf_deriv` (117), trigonometric Lipschitz/third-derivative bounds (120–143), and `sin_heat_equation` / `cos_heat_equation` (147/152) prove the concrete hypotheses.
+- `sin_heat_martingale` (157) and `cos_heat_martingale` (164) prove that exp(t/2)sin(B_t) and exp(t/2)cos(B_t) are actual martingales. `cos_mean` (171) derives E[cos(B_T)]=exp(-T/2).
+
+Dependencies: the proved smooth Taylor-sum Ito theorem, C1 stochastic Fubini/time weighting, genuine conditional J identity, and Mathlib real calculus. This is a separable backward-heat class; no general C1,2 characterization or full functional Ito theorem is asserted. Verification: complete Lake build, all public declarations checked with their elaborated arguments, and full transitive axiom audit; only propext, Classical.choice, Quot.sound permitted.
+Campaign VI verification completed: 4,161 Lake jobs; 2,630 audited declarations, zero nonstandard axioms. All 23 new public declaration types inspected.
