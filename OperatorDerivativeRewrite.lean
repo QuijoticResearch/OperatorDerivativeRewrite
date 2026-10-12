@@ -1,3 +1,8 @@
+import Foundation.GaussianPolynomialHeat
+import Foundation.GaussianPolynomialProcess
+import Foundation.GaussianPolynomialIto
+import Foundation.GaussianPolynomialDifferentiation
+import Foundation.GaussianScalarPolynomialIto
 import Foundation.BochnerL2Fubini
 import Foundation.GaussianHermiteTimeIntegral
 import Foundation.GaussianHermiteTimeKernel
