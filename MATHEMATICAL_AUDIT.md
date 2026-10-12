@@ -5155,3 +5155,11 @@ is inferred from this ambient predictable L2 density.
 Verification: full Lake build passed (4070 jobs); all 1609 transitive axiom
 checks passed, including all 22 new public declarations. Every new elaborated
 type was inspected. Axioms: only propext, Classical.choice, Quot.sound.
+
+## Full finite-horizon predictable integration (2026-10-12)
+
+`L2ZeroExtension.lean` constructs zero extension from a restricted measure as a linear L2 isometry, with actual representative and indicator formulas. `PredictableRealL2.lean` defines the real-time predictable sigma-algebra as the pullback of Mathlib's NNReal predictable sigma-algebra under `(t,omega) -> (t.toNNReal,omega)`. The finite-horizon measure is Lebesgue times Gaussian probability restricted to `(0,T] x Omega`. Its equality with the `[0,T]` product restriction, and both directions of measure-preserving time transport, are proved. This is the raw natural Brownian filtration; no usual augmentation is asserted.
+
+`GaussianPredictableHorizon.zeroExtension_mem` proves that EVERY L2 class measurable for this finite-horizon predictable sigma-algebra belongs, after zero extension, to the PREVIOUS `closedProductSteps`. The proof uses the new pi-system L2 density theorem and the earlier inclusion of arbitrary square-integrable past steps. It does not define predictable fields by a polynomial closure. `PredictableDomain`, `horizonEmbedding`, and `itoIntegral` expose the full finite-horizon class and the SAME existing `productIntegral`. Its norm, centering, and actual `hilbertDivergence.graph` membership are proved. `nonnegativeEmbedding` supplies direct access from Mathlib's NNReal predictable L2 class.
+
+The full infinite-horizon domain equality remains the next obligation. No Malliavin graph density or sensitivity extension follows from this ambient L2 density. All 36 new public declarations, including the finite-measure instance, have explicit-type checks and transitive axiom checks. Full build: 4073 jobs. Complete audit: 1645 checks; only `propext`, `Classical.choice`, `Quot.sound`.

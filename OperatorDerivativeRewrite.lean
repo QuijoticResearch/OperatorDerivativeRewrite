@@ -85,3 +85,4 @@ import Foundation.GaussianLogSobolevFull
 
 
 
+import Foundation.GaussianPredictableHorizon
