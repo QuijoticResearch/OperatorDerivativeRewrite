@@ -98,3 +98,6 @@ import Foundation.GaussianDeterministicGraphCore
 import Foundation.GaussianDeterministicIntegral
 import Foundation.GaussianLocalIncrementEnergy
 import Foundation.GaussianBrownianGeneratedSpace
+import Foundation.GaussianQuadraticIncrement
+import Foundation.GaussianBrownianQuadraticVariation
+import Foundation.GaussianQuadraticRepresentation
