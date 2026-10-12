@@ -1,4 +1,5 @@
 import Foundation.HilbertRepresentation
+import Foundation.AdjointUnitaryTransport
 import Foundation.PoissonDifferenceCore
 import Foundation.PoissonDifferenceOperators
 import Foundation.PoissonCoordinateEvaluation

@@ -4263,3 +4263,22 @@ construction of Brownian predictable integration and its PRP remains separate.
 Verification: full Lake build passed (4031 jobs). The transitive axiom audit
 passed for all 1231 listed declarations, including all 18 new public declarations;
 its union is exactly `propext`, `Classical.choice`, and `Quot.sound`.
+
+## Paper 1 reconstruction: exact unitary adjoint transport
+
+`Foundation/AdjointUnitaryTransport.lean` constructs the actual partial operator
+`pullback U T` for a real Hilbert unitary U:K1->K2. Its domain is precisely
+the inverse image of dom T, with value T(Uu). The graph, density and closedness
+are transported in both directions. For dense T and complete K1,K2, the theorem
+`pullback_adjoint_eq` proves equality of actual partial operators
+`(T U)* = U^{-1} T*`, including full domain equality. No boundedness of T,
+graph-core assumption, or stochastic pairing hypothesis is used.
+
+This proves the abstract operator-transport step of B05. A concrete weighted
+L2 unitary and an actual Brownian stochastic-integral realization are separate
+requirements; this module by itself proves neither volatility rigidity nor a
+stochastic sensitivity formula.
+
+Verification: full Lake build passed (4032 jobs); all 1243 listed transitive
+axiom checks passed, including all 12 new public declarations. Only `propext`,
+`Classical.choice`, and `Quot.sound` occur.

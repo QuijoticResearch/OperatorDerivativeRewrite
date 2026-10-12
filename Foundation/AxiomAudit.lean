@@ -1,4 +1,5 @@
 import Foundation.HilbertRepresentation
+import Foundation.AdjointUnitaryTransport
 import Foundation.PoissonDifferenceCore
 import Foundation.PoissonDifferenceOperators
 import Foundation.PoissonCoordinateEvaluation
@@ -1487,3 +1488,17 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.HilbertRepresentation.adjoint_representer_unique
 #print axioms OperatorDerivativeRewrite.Foundation.HilbertRepresentation.adjoint_domain_iff_core_pairing_bound
 #print axioms OperatorDerivativeRewrite.Foundation.HilbertRepresentation.predictableAdjoint_eq_projected_adjoint
+
+/-! Paper 1: exact unitary transport of partial operators and their adjoints. -/
+#print axioms OperatorDerivativeRewrite.Foundation.AdjointUnitaryTransport.pullback
+#print axioms OperatorDerivativeRewrite.Foundation.AdjointUnitaryTransport.mem_pullback_domain
+#print axioms OperatorDerivativeRewrite.Foundation.AdjointUnitaryTransport.pullback_apply
+#print axioms OperatorDerivativeRewrite.Foundation.AdjointUnitaryTransport.mem_pullback_graph
+#print axioms OperatorDerivativeRewrite.Foundation.AdjointUnitaryTransport.pullback_dense_domain
+#print axioms OperatorDerivativeRewrite.Foundation.AdjointUnitaryTransport.pullback_dense_domain_iff
+#print axioms OperatorDerivativeRewrite.Foundation.AdjointUnitaryTransport.pullback_isClosed
+#print axioms OperatorDerivativeRewrite.Foundation.AdjointUnitaryTransport.pullback_isClosed_iff
+#print axioms OperatorDerivativeRewrite.Foundation.AdjointUnitaryTransport.mem_pullback_adjoint_domain
+#print axioms OperatorDerivativeRewrite.Foundation.AdjointUnitaryTransport.pullback_adjoint_domain
+#print axioms OperatorDerivativeRewrite.Foundation.AdjointUnitaryTransport.pullback_adjoint_apply
+#print axioms OperatorDerivativeRewrite.Foundation.AdjointUnitaryTransport.pullback_adjoint_eq
