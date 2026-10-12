@@ -1,3 +1,4 @@
+import Foundation.GaussianChaosLowering
 import Foundation.GaussianSensitivityGeometry
 import Foundation.GaussianConditionalGraph
 import Foundation.GaussianGeneratedGraphCore
