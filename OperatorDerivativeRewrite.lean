@@ -146,3 +146,6 @@ import Foundation.GaussianChaosDecomposition
 import Foundation.GaussianChaosGraphConvergence
 import Foundation.GaussianChaosCylinders
 import Foundation.GaussianCubicDiagnostic
+import Foundation.GaussianPredictableCutoff
+import Foundation.GaussianConditionalIto
+import Foundation.GaussianConditionalClarkOcone
