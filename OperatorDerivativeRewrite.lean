@@ -158,3 +158,5 @@ import Foundation.GaussianLipschitzIntegrands
 import Foundation.GaussianTaylorRemainder
 import Foundation.GaussianLipschitzQuadraticVariation
 import Foundation.GaussianSmoothIto
+import Foundation.GaussianSmoothConditional
+import Foundation.GaussianSmoothCylinders
