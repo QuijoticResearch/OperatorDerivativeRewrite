@@ -93,3 +93,5 @@ import Foundation.GaussianProductDerivative
 import Foundation.GaussianAdaptedGraphCore
 import Foundation.GaussianContinuousRigidity
 import Foundation.GaussianBrownianBracket
+
+import Foundation.GaussianDeterministicGraphCore

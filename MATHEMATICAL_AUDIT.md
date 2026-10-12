@@ -5281,3 +5281,13 @@ Verification: full build PASS (4092 jobs); transitive audit PASS (1837 checks, i
 5. The original Gubinelli remainder claims and Volterra normalization defects in the preserved earlier audit remain unresolved. No rough-path result, path-continuous modification, or usual augmentation was constructed in this run.
 
 Paper 1 is NOT complete. These are explicit mathematical/domain boundaries, including two now machine-checked scope obstructions, rather than unreported failed Lean proofs. All newly registered modules compile; the original manuscript and prior untracked audit documents remain preserved.
+
+## Independent deterministic predictable graph core (2026-10-12)
+
+`GaussianDeterministicGraphCore.vacuumProjection` is the actual Gaussian mean projection F -> <1,F>1. `meanProjection` lifts it to time/probability L2 through the verified Bochner equivalence. `meanProjection_tensor` proves its action on separated fields; `gaussianOne_inner_self` justifies normalization, including `meanProjection_deterministic`.
+
+`constant_step_graph` proves genuine zero-derivative graph membership of constant predictable interval steps. `meanProjection_graph` maps the OLD ambient predictable approximants into these graph pairs and uses continuity of the mean projection. Here ambient density is legitimately sufficient because the projected derivatives are all proved zero, rather than merely presumed to converge.
+
+`deterministic_mem_completedGraph` includes every actual field a(t)1 with a in real Lebesgue L2 and that field in fullPredictable. `independent_zero_graph_mem_completedGraph` equivalently includes every independently predictable field with (u,0) in the independently constructed derivative graph. `deterministic_integral_derivative` proves (J(a1),fieldEmbedding(a1)) belongs to the genuine closed Gaussian derivative graph. No step-function, finite-support, finite-horizon, or polynomial assumption is imposed on a. This is the zero-gradient independent subclass; full random predictable Sobolev graph equality remains open.
+
+Verification: full Lake build PASS (4093 jobs); transitive axiom audit PASS (1849 declarations; all 12 new public declarations included). Fully explicit public types elaborated. Dependencies only propext, Classical.choice, Quot.sound. Original manuscripts, pins, and all twelve unrelated untracked documents preserved.
