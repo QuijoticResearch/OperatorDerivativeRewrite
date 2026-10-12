@@ -1,3 +1,4 @@
+import Foundation.GaussianTerminalRepresentation
 import Foundation.GaussianHermiteStochasticSums
 import Foundation.GaussianHermiteRepresentation
 import Foundation.GaussianHermiteIntegrand
