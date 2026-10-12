@@ -1,3 +1,5 @@
+import Foundation.GaussianConditionalGraph
+import Foundation.GaussianGeneratedGraphCore
 import Foundation.GaussianSpectralPoincare
 import Foundation.GaussianQuantitativeRigidity
 import Foundation.BochnerL2Dominated
