@@ -106,3 +106,4 @@ import Foundation.GaussianBrownianSobolevField
 import Foundation.GaussianDeterministicVolterra
 import Foundation.GaussianQuadraticCylinders
 import Foundation.GaussianPastFirstChaos
+import Foundation.GaussianFirstChaosGraphCore
