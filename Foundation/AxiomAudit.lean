@@ -1,3 +1,4 @@
+import Foundation.GaussianSmoothIto
 import Foundation.GaussianLipschitzQuadraticVariation
 import Foundation.GaussianTaylorRemainder
 import Foundation.GaussianLipschitzIntegrands
@@ -2988,3 +2989,12 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianLipschitzQuadraticVariation.error_coeFn
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianLipschitzQuadraticVariation.weight_energy
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianLipschitzQuadraticVariation.error_tendsto
+
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSmoothIto.driftSum
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSmoothIto.driftSum_coeFn
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSmoothIto.finite_taylor_identity
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSmoothIto.ito_of_lipschitz_derivatives
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSmoothIto.bounded_derivatives_ito
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSmoothIto.valueL2_zero
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSmoothIto.drift_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianSmoothIto.smooth_ito_ae
