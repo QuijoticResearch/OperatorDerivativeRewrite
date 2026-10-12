@@ -1,3 +1,6 @@
+import Foundation.GaussianHermiteStochasticSums
+import Foundation.GaussianHermiteRepresentation
+import Foundation.GaussianHermiteIntegrand
 import Foundation.GaussianTimeSpaceHermite
 import Foundation.GaussianChaosLowering
 import Foundation.GaussianSensitivityGeometry
