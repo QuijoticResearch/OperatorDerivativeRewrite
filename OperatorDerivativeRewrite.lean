@@ -110,3 +110,4 @@ import Foundation.GaussianFirstChaosGraphCore
 import Foundation.GaussianNumberSectors
 import Foundation.GaussianNumberHermite
 import Foundation.GaussianChaosDecomposition
+import Foundation.GaussianChaosGraphConvergence

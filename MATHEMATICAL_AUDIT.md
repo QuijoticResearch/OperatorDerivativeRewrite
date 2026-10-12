@@ -5415,3 +5415,13 @@ New modules: GaussianNumberSectors, GaussianNumberHermite, GaussianChaosDecompos
 Scope: this is an ambient spectral decomposition. It does not yet assert that higher-order projections preserve an arbitrary Brownian past or even the Brownian-generated scalar subspace. Negative-time noise has not been identified with positive-time Brownian information. No PRP or predictable graph-core equality follows from ambient scalar convergence alone.
 
 Verification: full Lake build PASS (4108 jobs); transitive axiom audit PASS (2039 declarations, including all 40 new public definitions/theorems/instances). Explicit public types elaborated. Only propext, Classical.choice, Quot.sound. Original files, previous theorem bodies, pinned dependencies, and twelve untracked documents preserved.
+
+## Same-sequence all-chaos convergence in the actual derivative graph (2026-10-12)
+
+`GaussianChaosGraphConvergence` proves `simultaneous_graph_tendsto`: for every actual (f,g) in graph(D), the SAME truncation sequence satisfies (sum_(n<=N) Q_n f, sum_(n<=N) D Q_n f) -> (f,g). `truncation_graph` verifies every approximating pair belongs to the original closed derivative graph. No graph-core, convergence, or summability assumption is added.
+
+The proof uses actual adjoint duality to establish `derivative_projectedGradient_pairing` and `projectedGradient_finite_bound`. Orthogonality of the genuine gradient ranges then proves summability of projected derivatives. Scalar convergence and closedness identify the vector sum with the ORIGINAL derivative g. `derivative_domain_iff_weighted_chaos` proves both directions of f in dom(D) iff sum_n n||Q_n f||^2 is finite. `derivative_energy_hasSum` proves its sum is exactly ||Df||^2. Order zero and the infinite Gaussian ambient space are included. This is derivative graph convergence, not just scalar L2 convergence.
+
+Scope: the homogeneous gradient is proved as an actual bounded map into vector Gaussian L2, with its full derivative graph and spectral norm. Identification with the componentwise order-(n-1) vector-chaos projection has not yet been established. Brownian-past preservation and independent predictable graph-core equality remain separate obligations at this checkpoint.
+
+Verification: full build PASS (4109 jobs); complete transitive audit PASS (2055 declarations, including all 16 new public declarations). Fully explicit types checked. Only propext, Classical.choice, Quot.sound. No changes to existing theorem bodies or dependency pins.
