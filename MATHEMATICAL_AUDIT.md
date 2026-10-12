@@ -4801,3 +4801,77 @@ Verification: complete Lake build passed (4059 jobs); all 1499 registered
 transitive axiom checks passed, including the 19 public declarations of this
 module. Their elaborated types were inspected. Only `propext`,
 `Classical.choice`, `Quot.sound` occur. No prior proof body or pin changed.
+
+## Paper 1: integral completion in the actual time-probability L2 space
+
+`Foundation/GaussianPredictableL2Completion.lean` constructs
+`closedProductSteps`, the closure in `Lp ℝ 2 (volume.prod gaussianProduct)`
+of the span of the actual functions 1_(s,t](x)*p(B_(r_i)(omega)), with
+finitely many r_i <= s <= t and nonnegative times. Its definition contains
+no integrability, isometry, domain-preservation or full-density assumptions.
+All tensor classes and all generator hypotheses come from the previously
+verified concrete construction.
+
+`transportRelation_vector_image` proves equality of the corresponding
+vector-field image with `elementaryFields`. `transportRelation_pairing`
+and `transportRelation_norm` prove preservation of the pairings and norms
+on the actual algebraic relation. In particular both assemblies have the
+same kernel, so distinct finite decompositions give the same field and
+integral classes. Both assembly dense-range statements are proved.
+
+Using these results, `productToField` is a constructed SURJECTIVE linear
+isometry equivalence from `closedProductSteps` to `completedFields`.
+`productToField_assembly` and `productToField_step` prove that it retains
+the concrete tensor interpretation. Composing it with the proved completed
+integral defines `productIntegral : closedProductSteps →ₗᵢ[ℝ] GaussianL2`.
+`productIntegral_norm` is the actual product-measure Itô isometry, and
+`productIntegral_step` identifies every generator's value with the genuine
+coefficient-times-increment class. Linearity extends this identification
+to finite sums. `productIntegral_hilbertDivergence_graph` proves domain
+membership and the identical full-divergence value of every transported
+completed field. Independent read-only review checked the quotient,
+surjectivity, and graph arguments.
+
+`hilbertDivergence_graph_centered` proves that every actual full-divergence
+value has mean zero by pairing against the previously verified constant-one
+closed-derivative graph pair. `productIntegral_integrable` and
+`productIntegral_centered` consequently establish genuine integrability and
+zero expectation throughout the new completed product-space domain.
+
+### Exact remaining boundary toward full predictable integration and rigidity
+
+The two closed polynomial spans are now identified. The next unresolved
+claim is their equality with ALL square-integrable predictable processes,
+not a claim about completeness of these spans. Pinned Mathlib already has
+`MeasureTheory.lpMeas`, `isClosed_aestronglyMeasurable`,
+`lpMeasToLpTrimLie` and `Lp.induction_stronglyMeasurable` in
+`Mathlib/MeasureTheory/Function/ConditionalExpectation/AEMeasurable.lean`.
+These should be reused rather than introducing another measurable L2 space.
+
+Two bridges remain necessary. First, `timeProbability` uses real time and
+our generators vanish at negative times, whereas the existing predictable
+sigma-algebra is for the natural filtration indexed by nonnegative reals.
+A proved nonnegative-time identification/zero extension, including the
+null time-zero slice, is needed for the precise ambient-space statement.
+Second, density of predictable rectangles and approximation of each
+past-measurable coefficient by polynomials in finitely many PAST coordinates
+must be proved. The ambient Gaussian polynomial-density theorem does not
+provide the latter adaptation-preserving restriction automatically.
+
+The integral graph core proved above does not approximate the Malliavin
+derivative of the integrands. The continuous sensitivity identity still
+needs its own derivative-domain estimates and adaptation-preserving graph
+approximation, as well as the correct terminal measurable subspace and
+time-direction derivative identification. No equality of the ambient
+Gaussian sigma-algebra with the Brownian terminal sigma-algebra, continuous
+modification, martingale representation, predictable representation, or
+continuous-time volatility rigidity follows from this milestone.
+Original bracket, Gubinelli and stochastic Ito claims are unchanged.
+
+Verification of the product-space completion: complete Lake build passed
+(4060 jobs); all 1524 registered transitive axiom checks passed, including
+all 25 public declarations in this module. All new elaborated types were
+inspected, and the axiom union is still exactly `propext`, `Classical.choice`,
+`Quot.sound`. All eleven recovered milestone commits remain ancestors.
+The original Lean/TeX SHA256 hashes match the baseline; dependencies and
+the twelve unrelated untracked documents remain untouched. Nothing pushed.

@@ -12,6 +12,7 @@ import Foundation.GaussianTimeFieldNorm
 import Foundation.GaussianTimeProductL2
 import Foundation.GaussianTimePolynomialPairing
 import Foundation.GaussianPolynomialStepCompletion
+import Foundation.GaussianPredictableL2Completion
 import Foundation.PoissonDifferenceCore
 import Foundation.PoissonDifferenceOperators
 import Foundation.PoissonCoordinateEvaluation
