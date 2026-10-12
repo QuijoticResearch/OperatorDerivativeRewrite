@@ -4,6 +4,7 @@ import Foundation.InfiniteGaussianKernel
 import Foundation.WeightedAdjointTransport
 import Foundation.WeightedMeasurableTransport
 import Foundation.GaussianElementaryIntegral
+import Foundation.GaussianElementaryRigidity
 import Foundation.PoissonDifferenceCore
 import Foundation.PoissonDifferenceOperators
 import Foundation.PoissonCoordinateEvaluation
@@ -1585,3 +1586,14 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.InfiniteGaussian.elementaryIntegral_hilbertDivergence_graph
 #print axioms OperatorDerivativeRewrite.Foundation.InfiniteGaussian.elementaryIntegral_lift_norm_sq
 #print axioms OperatorDerivativeRewrite.Foundation.InfiniteGaussian.elementaryIntegral_lift_integral
+
+/-! Paper 1: actual finite Gaussian elementary sensitivity and discrete rigidity. -/
+#print axioms OperatorDerivativeRewrite.Foundation.FiniteGaussian.pderiv_vars_subset
+#print axioms OperatorDerivativeRewrite.Foundation.FiniteGaussian.IsPastPolynomial.pderiv
+#print axioms OperatorDerivativeRewrite.Foundation.FiniteGaussian.elementaryIntegralPolynomial_pderiv
+#print axioms OperatorDerivativeRewrite.Foundation.FiniteGaussian.elementaryIntegral_gradient_graph
+#print axioms OperatorDerivativeRewrite.Foundation.FiniteGaussian.elementaryIntegral_hasFDerivAt
+#print axioms OperatorDerivativeRewrite.Foundation.FiniteGaussian.elementaryIntegral_rigidity_pderiv
+#print axioms OperatorDerivativeRewrite.Foundation.FiniteGaussian.productPolynomialL2_C_eq_vacuum
+#print axioms OperatorDerivativeRewrite.Foundation.FiniteGaussian.elementaryIntegral_gradient_eq_coefficients_iff
+#print axioms OperatorDerivativeRewrite.Foundation.FiniteGaussian.elementaryIntegral_rigidity_ae

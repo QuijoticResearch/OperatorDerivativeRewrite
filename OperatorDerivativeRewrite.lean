@@ -4,6 +4,7 @@ import Foundation.InfiniteGaussianKernel
 import Foundation.WeightedAdjointTransport
 import Foundation.WeightedMeasurableTransport
 import Foundation.GaussianElementaryIntegral
+import Foundation.GaussianElementaryRigidity
 import Foundation.PoissonDifferenceCore
 import Foundation.PoissonDifferenceOperators
 import Foundation.PoissonCoordinateEvaluation

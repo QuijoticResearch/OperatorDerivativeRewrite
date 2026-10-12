@@ -4407,3 +4407,71 @@ Verification: full Lake build passed (4038 jobs); all 1314 listed transitive
 axiom checks passed, including all 20 public declarations in this module.
 Independent proof review confirmed genuine random coefficients and exact
 normalization. Only `propext`, `Classical.choice`, and `Quot.sound` occur.
+
+## Paper 1 reconstruction: actual elementary Gaussian sensitivity and rigidity
+
+`Foundation/GaussianElementaryRigidity.lean` proves the actual polynomial
+sensitivity formula
+
+    partial_k J(u) = u_k + J(i -> partial_k u_i),
+
+and proves this is both the actual Euclidean Frechet derivative and the value
+of the existing closed finite Gaussian gradient. For past polynomial fields,
+differentiation preserves past dependence, by a proved inclusion of polynomial
+variable sets. No independently prescribed derivative is introduced.
+
+The exact main result is `elementaryIntegral_gradient_eq_coefficients_iff`:
+for every finite linearly ordered index type (including the empty type) and
+u_i real polynomials in strictly earlier independent standard coordinates,
+
+    (elementaryIntegralL2 u, vectorPolynomialL2 u) in graph closedGradient
+      iff exists c : index -> Real, forall i, u_i = C(c_i).
+
+Forward: uniqueness in the actual closed graph identifies the sensitivity
+expression, so each derivative-field elementary integral is zero. The already
+proved random-coefficient isometry forces the entire differentiated field to
+have zero norm. Genuine polynomial evaluation injectivity and the finite
+constant-kernel theorem then force each coefficient polynomial to be constant.
+Reverse: actual derivatives of constant coefficients vanish, yielding the
+closed-gradient graph identity. `elementaryIntegral_rigidity_ae` states the
+ordinary almost-everywhere constant representative consequence explicitly.
+
+This is a complete discrete finite Gaussian rigidity theorem supporting B05,
+not a conditional cancellation assertion. No positivity, bounded coefficients,
+independence of all coefficients, or determinism conclusion is assumed. Its
+finite, independent-coordinate, polynomial hypotheses are essential to the
+proved scope; it does not establish the manuscript's continuous-time theorem E.
+
+Remaining paper-critical obligations are an actual time-Hilbert Gaussian/
+Brownian realization, predictable random integration and its completion,
+adapted graph approximation, and sensitivity under the stochastic limit.
+The new constant-kernel and weighted-transport theorems can then be applied.
+The bracket/Gubinelli counterexamples and the manuscript's universal Ito
+claim still require explicit mathematical revision; they are not repaired by
+these finite-coordinate results. Original manuscripts and existing theorem
+bodies have not been changed.
+
+Final verification: full Lake build passed (4039 jobs); all 1323 listed
+transitive axiom checks passed, including all nine declarations of this module.
+A separate source-to-audit coverage check found all 110 new public declarations
+and no missing audit entry; all 110 explicit `#check @...` elaborated-type
+checks passed. The transitive axiom union remains exactly `propext`,
+`Classical.choice`, and `Quot.sound`. Source scanning found no admissions,
+custom axioms or unsafe declarations in the new modules. Independent review
+after recovery from the restart found no mathematical defects, with the scope
+qualifications above.
+
+Public-declaration inventory (all exact names are listed in `Foundation/AxiomAudit.lean`):
+`HilbertRepresentation` 18; `AdjointUnitaryTransport` 12;
+`FiniteGaussianKernel` 5; `InfiniteGaussianKernel` 9;
+`WeightedL2Transport` 22; `WeightedAdjointTransport` 7;
+`WeightedMeasurableTransport` 8; `GaussianElementaryIntegral` 20;
+`GaussianElementaryRigidity` 9. Every module is imported by the project root.
+
+The next smallest paper-critical step is to construct the time-Hilbert
+isonormal realization over L2([0,T]), using the existing countable Gaussian
+space and an actual proved Hilbert-space coordinate embedding, then define
+W_t from interval indicators and prove covariance and independent increments.
+This alone would still not prove path continuity, predictable integration,
+PRP or stochastic sensitivity. Those are explicit subsequent obligations,
+not consequences of the current fixed discrete coordinate isometry.
