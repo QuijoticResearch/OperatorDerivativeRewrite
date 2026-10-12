@@ -97,3 +97,4 @@ import Foundation.GaussianBrownianBracket
 import Foundation.GaussianDeterministicGraphCore
 import Foundation.GaussianDeterministicIntegral
 import Foundation.GaussianLocalIncrementEnergy
+import Foundation.GaussianBrownianGeneratedSpace
