@@ -87,3 +87,4 @@ import Foundation.GaussianLogSobolevFull
 
 import Foundation.GaussianPredictableHorizon
 import Foundation.GaussianPredictableFull
+import Foundation.GaussianBochnerDerivative

@@ -5195,3 +5195,17 @@ The exact passage needed is: for every field in that independently specified dom
 This is a substantial missing analytic bridge, not a compilation defect or an inference from the now completed ambient density. Continuous-time sensitivity, stochastic-volatility rigidity, and an operator-functional Ito theorem remain open. The verified finite polynomial sensitivity formula and its nonzero correction example are preserved. No manuscript claims or earlier theorem bodies were changed.
 
 Verification: full Lake build PASS, 4075 jobs. Complete transitive audit PASS, 1667 checks, including all 22 public declarations in the two new modules (80 added across this run). Only `propext`, `Classical.choice`, and `Quot.sound`. Fully explicit `#check @...` statements were checked for every new declaration. No dependency pin changes and no push.
+
+## Bochner fieldwise closed Gaussian derivative (2026-10-12)
+
+`BochnerClosedOperator.fiberGraph mu T` consists of pairs of actual Bochner L2 classes `(u,v)` satisfying `(u(t),v(t)) in graph(T)` almost everywhere. `fiberGraph_singleValued` proves that this is the graph of a genuine partial linear map; `lift_graph`, `mem_lift_graph_iff`, and `mem_lift_domain_iff` expose the exact domain and values. In particular, a measurable square-integrable derivative VALUE is required; pointwise domain membership alone is not substituted for this requirement.
+
+`lift_isClosed` proves closedness when T is closed. It extracts a common a.e. convergent subsequence of both graph coordinates from L2 convergence and uses the original closed graph fiberwise. `lift_dense_domain` proves ambient domain density from actual density of T's domain using finite-measure indicators and Mathlib simple-function density. No graph-core assertion is made. `tensor_graph` gives genuine agreement on separated-variable fields with coefficients in the original operator graph.
+
+`GaussianBochnerDerivative.fieldDerivative` specializes this construction to the existing closed Gaussian derivative. Its source is `Lp GaussianL2 2 volume`, and its target is `Lp GaussianVectorL2 2 volume`, both on real time. `fieldDerivative_graph_iff`, `fieldDerivative_domain_iff`, `fieldDerivative_isClosed`, `fieldDerivative_dense_domain`, and `polynomial_tensor_graph` prove the promised actual fiber operator properties. No predictability or positive-time support is built into this domain.
+
+`fieldDerivative_zero_iff_deterministic` proves that its kernel consists EXACTLY of fields `t -> a(t) * gaussianOne` for a SINGLE scalar `a in L2(volume)`. The forward proof constructs `a` through the bounded inner-product functional against the Gaussian vacuum. Thus time measurability and integrability of the deterministic profile are proved, not selected independently for each t. This is a fieldwise Gaussian kernel theorem, NOT yet stochastic-volatility rigidity.
+
+The product-L2/Bochner-L2 equivalence, adapted graph-core approximation, and identification of the coefficient Hilbert space with derivative time remain distinct obligations. This milestone does not assume them. Pinned Mathlib supplies convergence in measure/subsequence extraction, continuous-map actions on Lp, and simple-function density; no direct-integral closed-operator lifting theorem was imported.
+
+Verification: full build PASS (4077 jobs), transitive audit PASS (1692 checks, including all 25 new declarations), explicit elaborated types checked. Only propext, Classical.choice, Quot.sound. Original files and dependency pins unchanged.
