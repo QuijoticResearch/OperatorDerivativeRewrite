@@ -30,8 +30,20 @@ Mathlib `d13f23b723b8a846827a245b89c10fc7d3f11612`). All work remained on
   if the adjoint domain separates points of `Y`, then `T` is closable. This
   is a sufficient point-separation criterion, with no assertion that the
   adjoint domain is norm-dense in `Y*`.
+* C3 fixed exponent, commit `dd8560298c5598cb46bb0014745a6a93872f1c38`:
+  `Foundation/BanachLpDualityFour.lean` constructs the signed nonlinear map
+  `J₄(F)=F³ : L⁴→L^(4/3)` on genuine Lp classes. Lean verifies its actual
+  pairing integrability, `∫J₄(F)F=‖F‖₄⁴`, and
+  `‖J₄(F)‖_(4/3)=‖F‖₄³`. For a supplied bounded
+  `δ:H→L⁴`, `normalFour δ u = D(J₄(δu))` satisfies
+  `normalFour δ u u=‖δu‖₄⁴`; a genuine positive lower bound for `δ`
+  yields `c⁴‖u‖⁴≤normalFour δ u u`.
+* C3 monotonicity, commit `caf0844ac42cd40eeb535004b997f9c056416714`:
+  the same actual nonlinear normal map satisfies
+  `0≤(normalFour δ u-normalFour δ v)(u-v)` for every `u,v`. Its proof uses
+  integrable Hölder pairings and the pointwise signed cubic inequality.
 
-The complete `lake build` passes with 4,024 jobs. All 1,156 declarations
+The complete `lake build` passes with 4,025 jobs. All 1,170 declarations
 listed in `Foundation/AxiomAudit.lean` were checked transitively; the union
 of reported axioms is `propext`, `Classical.choice`, and `Quot.sound`. No
 `sorryAx` or custom mathematical axiom appears in the new dependency chains.
@@ -63,11 +75,12 @@ current upstream README describes broader later developments; those are not
 evidence that the pinned version contains a predictable-integrand integral.
 No upstream code, dependency, or license text was added to this repository.
 
-C3 remains open beyond Mathlib's reusable `MemLp.norm_rpow_div` and
-`memLp_norm_rpow_iff`: a signed nonlinear duality map on Lp classes needs
-conjugate exponent arithmetic, a.e. representative independence, pairing
-and norm identities, then the actual monotone-operator existence argument.
-No minimizer, onto theorem, or normal equation was asserted.
+General C3 remains open. The verified fixed `p=4` case uses Mathlib's
+`MemLp.norm_rpow_div`; arbitrary `1<p<∞` still needs signed-power and
+conjugate-exponent arithmetic, representative independence, continuity and
+strict monotonicity estimates, then a genuine monotone-operator existence
+argument. No minimizer, onto theorem, or solution of the normal equation was
+asserted.
 
 C5–C6 require an actual marked point family and process/filtration layer.
 The existing one-site Poisson operator theory supplies genuine count moments
@@ -84,11 +97,11 @@ NOT LEAN VERIFIED**.
 
 ## Next independent implementation
 
-The smallest valuable C3 task is a signed scalar Lp duality map for a fixed
-explicit conjugate pair, with a proof that it descends to Lp equivalence
-classes and has the exact pairing and norm identities. General `1<p<∞`
-should follow only after exponent arithmetic and the zero convention are
-proved. For concrete stochastic progress, audit and port a minimal
+The next C3 task is continuity and strict monotonicity for the verified
+`p=4` normal map, followed by a finite-dimensional existence theorem before
+attempting an arbitrary reflexive Banach-space surjectivity result. General
+`1<p<∞` should follow only after signed-power exponent arithmetic and the
+zero convention are proved. For concrete stochastic progress, audit and port a minimal
 `PoissonPointFamily` + deterministic compensated-sum slice from the pinned
 LeanLevy source in an isolated module, preserving MIT attribution; first
 compile it without changing the dependency lockfile.

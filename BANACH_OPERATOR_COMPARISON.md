@@ -8,6 +8,7 @@
 | One-site Poisson `δ` | Weighted integrand `L²` to scalar `L²`, maximal backward weighted divergence | Adjoint to `D`, including full graph-domain identities | This is not yet a time-indexed predictable stochastic integral |
 | B0 `boundedBanachDerivative δ` | `Lp ℝ q μ →L[ℝ] StrongDual ℝ H` for an **actual supplied** bounded `δ : H →L[ℝ] Lp ℝ p μ` | Hölder transpose; kernel is a range annihilator | The abstract `δ` is not constructed by B0 and the transpose is not automatically onto `H*` |
 | C1 `adjoint T` | Partial map `StrongDual ℝ Y →ₗ.[ℝ] StrongDual ℝ X` for densely defined `T : X →ₗ.[ℝ] Y` | Exact ambient-norm adjoint domain, closed pairing graph | No automatic identification with `X` or `Y`; double-adjoint recovery remains open |
+| C3 `normalFour δ` | Nonlinear function `H → StrongDual ℝ H` for a supplied `δ:H→L[ℝ]L⁴(μ)` | Exact fourth-power energy, coercivity under lower bound, and monotonicity | It has no asserted inverse or surjectivity; it is not a stochastic integral |
 
 The shared abstraction is a densely defined linear map, its actual graph,
 and a duality pairing with an adjoint-domain condition. This does not provide
