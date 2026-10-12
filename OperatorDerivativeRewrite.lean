@@ -145,3 +145,4 @@ import Foundation.GaussianNumberHermite
 import Foundation.GaussianChaosDecomposition
 import Foundation.GaussianChaosGraphConvergence
 import Foundation.GaussianChaosCylinders
+import Foundation.GaussianCubicDiagnostic
