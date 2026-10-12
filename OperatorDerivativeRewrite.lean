@@ -1,3 +1,5 @@
+import Foundation.BochnerL2Dominated
+import Foundation.GaussianPredictableChaosCore
 import Foundation.HilbertRepresentation
 import Foundation.AdjointUnitaryTransport
 import Foundation.InfiniteGaussianKernel
