@@ -151,3 +151,5 @@ import Foundation.GaussianConditionalIto
 import Foundation.GaussianConditionalClarkOcone
 import Foundation.GaussianHermiteMartingale
 import Foundation.GaussianPolynomialMartingale
+import Foundation.GaussianWeightedHermiteOrthogonality
+import Foundation.GaussianWeightedQuadraticVariation
