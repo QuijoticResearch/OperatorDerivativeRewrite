@@ -107,3 +107,6 @@ import Foundation.GaussianDeterministicVolterra
 import Foundation.GaussianQuadraticCylinders
 import Foundation.GaussianPastFirstChaos
 import Foundation.GaussianFirstChaosGraphCore
+import Foundation.GaussianNumberSectors
+import Foundation.GaussianNumberHermite
+import Foundation.GaussianChaosDecomposition
