@@ -4081,8 +4081,14 @@ domain inclusion, and `adjoint_apply_eq_extension` proves that the constructed
 value is precisely this extension. No graph-norm continuity, Hilbert/Riesz
 identification, reflexivity, or boundedness of `T` is assumed.
 
+`boundedAsPartial_adjoint_domain` and `boundedAsPartial_adjoint_apply` now
+verify compatibility with a genuine bounded map `S : X →L[ℝ] Y`: every
+continuous dual input belongs to the partial adjoint domain, and its value is
+the ordinary continuous transpose `φ.comp S`. This does not require a general
+identification of the dual of `Lp` with another `Lp`.
+
 This result is abstract Banach operator theory, not a stochastic-integral
-construction. Bounded-operator compatibility, closability and second-adjoint
-recovery remain to be formalized. In general, recovering `T` from its Banach
+construction. Closability and second-adjoint recovery remain to be
+formalized. In general, recovering `T` from its Banach
 double adjoint requires careful use of the canonical embedding into `X**`
 and, for equality in `X`, reflexivity or other sufficient hypotheses.

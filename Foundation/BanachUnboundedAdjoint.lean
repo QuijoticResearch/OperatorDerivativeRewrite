@@ -177,4 +177,40 @@ theorem adjoint_apply_eq_extension (T : X →ₗ.[ℝ] Y)
   · intro x
     exact LinearMap.extendOfNorm_eq hDense ⟨C, hb⟩ x
 
+/-- Regard a bounded operator as a partial operator on the whole space. -/
+def boundedAsPartial (S : X →L[ℝ] Y) : X →ₗ.[ℝ] Y :=
+  S.toLinearMap.toPMap ⊤
+
+theorem boundedAsPartial_dense (S : X →L[ℝ] Y) :
+    DenseRange (boundedAsPartial S).domain.subtype := by
+  change DenseRange (⊤ : Submodule ℝ X).subtype
+  apply Function.Surjective.denseRange
+  intro x
+  exact ⟨⟨x, Submodule.mem_top⟩, rfl⟩
+
+theorem boundedAsPartial_adjoint_domain (S : X →L[ℝ] Y)
+    (φ : StrongDual ℝ Y) :
+    φ ∈ (adjoint (boundedAsPartial S) (boundedAsPartial_dense S)).domain := by
+  apply (adjoint_mem_domain_iff _ _ φ).2
+  refine ⟨φ.comp S, ?_⟩
+  intro x
+  change φ (S (x : X)) = φ (S (x : X))
+  rfl
+
+/-- On a bounded operator, the partial adjoint agrees pointwise with the
+ordinary continuous transpose by precomposition. -/
+theorem boundedAsPartial_adjoint_apply (S : X →L[ℝ] Y)
+    (φ : StrongDual ℝ Y) :
+    adjoint (boundedAsPartial S) (boundedAsPartial_dense S)
+      ⟨φ, boundedAsPartial_adjoint_domain S φ⟩ = φ.comp S := by
+  apply adjointGraph_unique (boundedAsPartial S) (boundedAsPartial_dense S) φ
+  · have hm := LinearPMap.mem_graph
+      (adjoint (boundedAsPartial S) (boundedAsPartial_dense S))
+      ⟨φ, boundedAsPartial_adjoint_domain S φ⟩
+    rw [adjoint_graph_eq] at hm
+    exact hm
+  · intro x
+    change φ (S (x : X)) = φ (S (x : X))
+    rfl
+
 end OperatorDerivativeRewrite.Foundation.BanachUnboundedAdjoint
