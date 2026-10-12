@@ -11,6 +11,7 @@ import Foundation.PoissonBoundedCalculus
 import Foundation.PoissonMoments
 import Foundation.PoissonPolynomialExamples
 import Foundation.PoissonMultipliers
+import Foundation.PoissonMultiplierAlgebra
 import Foundation.GaussianLogSobolevFull
 import Foundation.GaussianSobolevGlobalApprox
 import Foundation.GaussianSobolevQuantitative
@@ -1322,3 +1323,14 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.PoissonMultipliers.scalarMul_eq_of_representatives
 #print axioms OperatorDerivativeRewrite.Foundation.PoissonMultipliers.fieldMul_eq_of_representatives
 #print axioms OperatorDerivativeRewrite.Foundation.PoissonMultipliers.boundedDifference_eq_of_representatives
+
+/-! One-site Poisson bounded-multiplier algebra and commutator. -/
+#print axioms OperatorDerivativeRewrite.Foundation.PoissonMultiplierAlgebra.bounded_add
+#print axioms OperatorDerivativeRewrite.Foundation.PoissonMultiplierAlgebra.bounded_mul
+#print axioms OperatorDerivativeRewrite.Foundation.PoissonMultiplierAlgebra.scalarMul_comp
+#print axioms OperatorDerivativeRewrite.Foundation.PoissonMultiplierAlgebra.product_mem_domain
+#print axioms OperatorDerivativeRewrite.Foundation.PoissonMultiplierAlgebra.difference_commutator
+#print axioms OperatorDerivativeRewrite.Foundation.PoissonMultiplierAlgebra.difference_product_norm_le
+#print axioms OperatorDerivativeRewrite.Foundation.PoissonMultiplierAlgebra.scalarMul_add
+#print axioms OperatorDerivativeRewrite.Foundation.PoissonMultiplierAlgebra.difference_product_shifted_multiplier
+

@@ -3996,3 +3996,9 @@ reports; all 27 new public declarations depend only on `propext`,
 `Classical.choice`, and `Quot.sound` or subsets thereof. No `sorryAx`, custom
 axiom, `sorry`, `admit`, or unsafe code is present. The two previously known
 unused section-variable warnings in `Foundation.Adjoint` remain.
+
+## Poisson bounded-multiplier algebra and commutator
+
+`Foundation/PoissonMultiplierAlgebra.lean` proves bounded count functions are closed under addition and multiplication, that their actual scalar L² multiplication maps add and compose, and that successive multiplication preserves the exact maximal difference domain. For an arbitrary `f ∈ dom(D)` and bounded `g`, `difference_commutator` identifies the actual field-L² commutator `D(gf) − gDf` with `(Sf)Dg`, while `difference_product_shifted_multiplier` proves the alternative genuine field-L² rule `D(gf)=fDg+(Sg)Df`. `difference_product_norm_le` quantitatively bounds the output by `C‖Df‖ + 2C‖Sf‖` in the rate-weighted field norm. Both terms are genuine L² classes, with integrability established in `PoissonMultipliers.lean`.
+
+The shift norm is essential. A claim that the commutator is bounded from ambient scalar L² to the weighted field L² under boundedness of `g` alone is false: take `g(n)=(-1)^n` and normalized singleton scalar vectors at count `N`; their scalar norms equal one, while the commutator output norms grow like `2√N`. Graph-norm boundedness follows from the proved shift decomposition `Sf=f+Df`, but the present module retains the explicit shift norm. This does not assert that the maximal operator domain is an algebra.

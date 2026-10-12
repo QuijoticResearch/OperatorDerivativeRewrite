@@ -11,6 +11,7 @@ import Foundation.PoissonBoundedCalculus
 import Foundation.PoissonMoments
 import Foundation.PoissonPolynomialExamples
 import Foundation.PoissonMultipliers
+import Foundation.PoissonMultiplierAlgebra
 import Foundation.Adjoint
 import Foundation.LpProducts
 import Foundation.GaussianEntropy
@@ -50,3 +51,4 @@ import Foundation.GaussianSobolevPrimitives
 import Foundation.GaussianSobolevQuantitative
 import Foundation.GaussianSobolevGlobalApprox
 import Foundation.GaussianLogSobolevFull
+
