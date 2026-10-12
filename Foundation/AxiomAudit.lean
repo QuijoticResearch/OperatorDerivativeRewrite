@@ -1,3 +1,4 @@
+import Foundation.GaussianC2Ito
 import Foundation.GaussianBoundedApproximation
 import Foundation.BochnerL2Approximation
 import Foundation.RealSteklovApprox
@@ -3110,3 +3111,21 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianBoundedApproximation.value_uniform_error
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianBoundedApproximation.drift_tendsto
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianBoundedApproximation.integrands_tendsto
+
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianC2Ito.functionLip
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianC2Ito.derivativeLip
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianC2Ito.second_continuous
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianC2Ito.curvatureValue
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianC2Ito.curvatureValue_coeFn
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianC2Ito.smoothApprox
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianC2Ito.smoothApprox_C3
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianC2Ito.approximateFunctionLip
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianC2Ito.approximateDerivativeLip
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianC2Ito.curvatureLipConstant
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianC2Ito.approximateCurvatureLip
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianC2Ito.terminal_tendsto
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianC2Ito.stochastic_tendsto
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianC2Ito.curvature_tendsto
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianC2Ito.curvature_integral_tendsto
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianC2Ito.c2_ito
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianC2Ito.c2_ito_ae

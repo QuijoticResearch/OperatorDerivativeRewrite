@@ -167,3 +167,4 @@ import Foundation.GaussianSmoothProjectionDiagnostic
 import Foundation.RealSteklovApprox
 import Foundation.BochnerL2Approximation
 import Foundation.GaussianBoundedApproximation
+import Foundation.GaussianC2Ito

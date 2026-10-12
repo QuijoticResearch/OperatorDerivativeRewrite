@@ -59,3 +59,7 @@ The cubic caveat in the original table is now complemented by `Foundation/Gaussi
 `sin_projection_ne_running_derivative` (69) proves this differs, for every T>0, from 1_(0,T]cos(B_t). Thus the terminal-adjoint/running-derivative substitution fails even for this bounded smooth function in the concrete bounded predictable-adjoint formulation. This theorem uses J*, not an undeclared value of the unbounded D. The existing J*=Pi D theorem can only be invoked on its established domain. A new smooth Malliavin-domain theorem is not assumed here, and the entire original ill-specified abstract theorem is not declared refuted solely by this calculation.
 
 The corrected scalar Ito formula and the terminal representation are different identities: the former has the running derivative plus a random drift; the latter uses a conditional, terminal-horizon-dependent integrand. Erasing that distinction is precisely the unsupported step.
+
+## Genuine C2 extension
+
+`Foundation/GaussianC2Ito.lean:107` (`c2_ito`) and line 125 (`c2_ito_ae`) now remove the C3 assumption for scalar Brownian Ito: the exact hypotheses are C2 and uniform bounds on the first two actual derivatives. No bound on f, third derivative, or Lipschitz f'' is assumed. The explicit interval-average approximants converge in the terminal, predictable, and drift topologies. General time-dependent C1,2 and arbitrary mixed smooth cylinders remain distinct obligations.
