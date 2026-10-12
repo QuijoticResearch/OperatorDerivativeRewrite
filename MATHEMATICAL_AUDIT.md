@@ -4475,3 +4475,39 @@ W_t from interval indicators and prove covariance and independent increments.
 This alone would still not prove path continuity, predictable integration,
 PRP or stochastic sensitivity. Those are explicit subsequent obligations,
 not consequences of the current fixed discrete coordinate isometry.
+
+## Paper 1 time realization: recovered baseline and Hilbert-indexed Gaussian process
+
+Recovery confirmed HEAD `30d3140f569cb7afc642e220a247949f052ae02f`, all seven
+previous milestones as ancestors, no tracked changes, and all twelve existing
+untracked documents preserved. Repeated baseline verification passed: full
+build 4039 jobs; 1323 listed transitive axiom checks with the standard trio.
+No previous milestone was restarted or rewritten.
+
+`Foundation/SeparableHilbertEmbedding.lean` constructs a linear isometric
+embedding of every complete second-countable real inner product space H into
+the existing countable coefficient space. Orthonormal families are proved
+countable by metric separation, an actual Mathlib Hilbert basis is chosen,
+and the Hilbert sum isometry places its coefficients at distinct natural
+indices. No basis or coordinate embedding is supplied as a hypothesis;
+zero, finite and infinite dimensional spaces are all covered.
+
+`Foundation/GaussianHilbertProcess.lean` composes this constructed embedding
+with the verified first-chaos isometry. `isonormalEmbedding` is an actual
+linear L2 isometry and `isonormal` gives its measurable representatives on
+the original countable Gaussian product. Theorems prove all finite joint
+Gaussian laws, mean zero, law N(0,norm(h)^2), covariance inner(h,k), genuine
+integrability of each product, and its expectation. Index linearity holds
+in L2 and for each stated pair almost everywhere. It is not asserted
+simultaneously pathwise over uncountably many indices.
+
+Scope: the embedding is injective, not asserted onto. The resulting indexed
+family need not generate the full ambient product sigma-algebra. No PRP,
+Brownian continuity, joint time/sample measurability, or identification of
+the ambient derivative with a natural-filtration derivative follows merely
+from this construction.
+
+Verification for this milestone: the complete Lake build passed (4042 jobs).
+All 1346 listed declarations passed the transitive axiom audit; the union
+is exactly `propext`, `Classical.choice`, `Quot.sound`. All six embedding
+and seventeen Gaussian-process public declarations are included.
