@@ -1,3 +1,5 @@
+import Foundation.GaussianSpectralPoincare
+import Foundation.GaussianQuantitativeRigidity
 import Foundation.BochnerL2Dominated
 import Foundation.GaussianPredictableChaosCore
 import Foundation.HilbertRepresentation
