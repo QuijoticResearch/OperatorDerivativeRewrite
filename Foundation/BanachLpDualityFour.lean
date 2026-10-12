@@ -149,4 +149,48 @@ theorem normalFour_coercive (δ : H →L[ℝ] Lp ℝ 4 μ)
     c ^ 4 * ‖u‖ ^ 4 = (c * ‖u‖) ^ 4 := by ring
     _ ≤ ‖δ u‖ ^ 4 := pow_le_pow_left₀ (mul_nonneg hc.le (norm_nonneg _)) (hδ u) 4
 
+/-- Signed cubic powers are monotone, including at zero. -/
+theorem cubic_monotone (a b : ℝ) :
+    0 ≤ (a ^ 3 - b ^ 3) * (a - b) := by
+  have hsq : 0 ≤ (a - b) ^ 2 := sq_nonneg _
+  have hq : 0 ≤ (a + b / 2) ^ 2 + (3 / 4 : ℝ) * b ^ 2 := by
+    have h1 := sq_nonneg (a + b / 2)
+    have h2 := sq_nonneg b
+    nlinarith
+  calc
+    0 ≤ (a - b) ^ 2 * ((a + b / 2) ^ 2 + (3 / 4 : ℝ) * b ^ 2) :=
+      mul_nonneg hsq hq
+    _ = (a ^ 3 - b ^ 3) * (a - b) := by ring
+
+/-- The nonlinear normal map is monotone as an actual dual-valued map.
+No strictness or surjectivity is asserted. -/
+theorem normalFour_monotone (δ : H →L[ℝ] Lp ℝ 4 μ) (u v : H) :
+    0 ≤ (normalFour δ u - normalFour δ v) (u - v) := by
+  let a : Ω → ℝ := fun ω => (dualityFour (δ u)) ω * (δ (u - v)) ω
+  let b : Ω → ℝ := fun ω => (dualityFour (δ v)) ω * (δ (u - v)) ω
+  have ha : Integrable a μ := BanachLpAdjoint.integrable_mul δ (dualityFour (δ u)) (u - v)
+  have hb : Integrable b μ := BanachLpAdjoint.integrable_mul δ (dualityFour (δ v)) (u - v)
+  have hrepr : (fun ω => a ω - b ω) =ᵐ[μ]
+      (fun ω => (((δ u) ω) ^ 3 - ((δ v) ω) ^ 3) *
+        (((δ u) ω) - ((δ v) ω))) := by
+    filter_upwards [dualityFour_ae (δ u), dualityFour_ae (δ v),
+      Lp.coeFn_sub (δ u) (δ v)] with ω hu hv hsub
+    dsimp [a, b]
+    rw [hu, hv]
+    have hδ : (δ (u - v)) ω = (δ u) ω - (δ v) ω := by
+      simpa only [map_sub, Pi.sub_apply] using hsub
+    rw [hδ]
+    ring
+  calc
+    0 ≤ ∫ ω, a ω - b ω ∂μ := by
+      apply integral_nonneg_of_ae
+      filter_upwards [hrepr] with ω hω
+      rw [hω]
+      exact cubic_monotone _ _
+    _ = (normalFour δ u - normalFour δ v) (u - v) := by
+      rw [integral_sub ha hb]
+      simp only [sub_apply, normalFour,
+        BanachLpAdjoint.boundedBanachDerivative_apply]
+      rfl
+
 end OperatorDerivativeRewrite.Foundation.BanachLpDualityFour

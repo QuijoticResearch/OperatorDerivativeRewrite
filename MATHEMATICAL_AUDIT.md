@@ -4111,6 +4111,9 @@ the zero case. For an actual bounded `δ : H →L[ℝ] L⁴(μ)`, `normalFour`
 composes this nonlinear map with the B0 transpose, proving
 `normalFour δ u u = ‖δu‖₄⁴`. A genuine lower bound on `δ` gives
 `c⁴‖u‖⁴ ≤ normalFour δ u u`. The map is nonlinear and no linear-map
-structure or solvability of a normal equation is asserted. General
-`1<p<∞` signed-power theory, monotonicity, continuity, and
+structure or solvability of a normal equation is asserted. The verified
+`normalFour_monotone` theorem additionally proves
+`0 ≤ (A(u)-A(v))(u-v)` for all `u,v`, using the actual integrable Hölder
+pairings and the signed cubic inequality. General `1<p<∞` signed-power
+theory, strict monotonicity, continuity, and
 normal-equation solvability remain separate obligations.

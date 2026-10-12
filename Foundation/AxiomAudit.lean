@@ -1408,3 +1408,5 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.BanachLpDualityFour.normalFour
 #print axioms OperatorDerivativeRewrite.Foundation.BanachLpDualityFour.normalFour_pairing
 #print axioms OperatorDerivativeRewrite.Foundation.BanachLpDualityFour.normalFour_coercive
+#print axioms OperatorDerivativeRewrite.Foundation.BanachLpDualityFour.cubic_monotone
+#print axioms OperatorDerivativeRewrite.Foundation.BanachLpDualityFour.normalFour_monotone
