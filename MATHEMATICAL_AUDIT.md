@@ -4178,3 +4178,24 @@ and `Quot.sound`. No `sorryAx`, custom axioms, or unsafe shortcuts occur.
 Independent proof-body and elaborated-type review passed, including a
 compiled zero-dimensional instance. Existing verified theorem statements,
 original manuscripts, and dependency pins are unchanged.
+
+## C6 prerequisite: complete-space quartic minimization
+
+`Foundation/QuarticUniformMinimization.lean` proves
+`exists_minimizer_of_quartic_midpoint`: a continuous bounded-below functional
+E on a complete real normed space attains its minimum if
+`E((u+v)/2) + k*‖u-v‖⁴ ≤ (E u+E v)/2` for a proved positive k.
+The proof chooses an infimizing sequence, proves it norm-Cauchy from this
+quantitative deficit, and uses completeness and continuity. It has no
+finite-dimensionality, reflexivity, compactness, or assumed-minimizer hypothesis.
+
+`BANACH_C6_REPORT.md` records the actual pinned Mathlib API inspection and
+the selected direct proof architecture. Analytic L4 reflexivity and its
+closed-subspace transport are not present in the inspected library; algebraic
+`Module.IsReflexive` would incorrectly force finite-dimensionality. The C6
+application will prove the needed midpoint condition for the actual quartic
+energy, avoiding those missing reflexivity prerequisites.
+
+Verification: full Lake build passed (4028 jobs); transitive audit passed
+for 1197 declarations, with only `propext`, `Classical.choice`, and
+`Quot.sound`. The minimization proof and elaborated type passed independent review.

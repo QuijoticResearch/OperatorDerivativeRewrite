@@ -20,6 +20,7 @@ import Foundation.BanachUnboundedAdjoint
 import Foundation.BanachLpDualityFour
 import Foundation.BanachLpDualityFourContinuity
 import Foundation.BanachLpDualityFourExistence
+import Foundation.QuarticUniformMinimization
 import Foundation.GaussianLogSobolevFull
 import Foundation.GaussianSobolevGlobalApprox
 import Foundation.GaussianSobolevQuantitative
@@ -1442,3 +1443,6 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.BanachLpDualityFourExistence.normalFour_inverse_solves
 #print axioms OperatorDerivativeRewrite.Foundation.BanachLpDualityFourExistence.normalFour_inverse_cubic
 #print axioms OperatorDerivativeRewrite.Foundation.BanachLpDualityFourExistence.normalFour_inverse_holder
+
+/-! C6 prerequisite: a constructed minimizer in a complete normed space. -/
+#print axioms OperatorDerivativeRewrite.Foundation.QuarticUniformMinimization.exists_minimizer_of_quartic_midpoint

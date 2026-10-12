@@ -22,6 +22,7 @@ import Foundation.BanachUnboundedAdjoint
 import Foundation.BanachLpDualityFour
 import Foundation.BanachLpDualityFourContinuity
 import Foundation.BanachLpDualityFourExistence
+import Foundation.QuarticUniformMinimization
 import Foundation.GaussianEntropy
 import Foundation.MultiplierCore
 import Foundation.GaussianOperator
