@@ -4010,3 +4010,7 @@ The shift norm is essential. A claim that the commutator is bounded from ambient
     D(φ(f))(n) = φ(f(n) + Df(n)) − φ(f(n)).
 
 `composition_difference_norm_le` proves `‖D(φ(f))‖_{L²(rate μ)} ≤ K‖Df‖_{L²(rate μ)}`. The scalar composition is a genuine L² class, and the derivative estimate concerns the actual closed maximal operator. The condition `φ(0)=0` is a sufficient integrability condition used by Mathlib's `LipschitzWith.comp_memLp`; this module does not claim the most general affine-growth version, the ordinary Gaussian chain rule, or a general square-function theorem on the whole maximal domain. The existing `difference_centeredCount_sq_eq` remains a separately proved unbounded quadratic example with the nonzero jump defect.
+
+## Exact Poisson quadratic defect on a verified L² domain
+
+`PoissonQuadraticDefect.bounded_square_difference` proves for every uniformly bounded count function `f` and positive rate that the **actual maximal difference** of its square satisfies `D(f²)=2fDf+(Df)²` as an equality in `L²(ℕ,rate·μ_rate)`. The input square and both right-hand terms are genuine L² classes; domain membership comes from `PoissonBoundedCalculus.bounded_product_mem_maximalDifference` and term integrability from `PoissonMultipliers.fieldMul`. This theorem does not cover every unbounded maximal-domain function. The already verified unbounded centered-count identity `D((N−rate)²)=2(N−rate)+1` is separate and uses explicit Poisson moments.

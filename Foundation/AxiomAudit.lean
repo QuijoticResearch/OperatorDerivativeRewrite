@@ -13,6 +13,7 @@ import Foundation.PoissonPolynomialExamples
 import Foundation.PoissonMultipliers
 import Foundation.PoissonMultiplierAlgebra
 import Foundation.PoissonLipschitzChain
+import Foundation.PoissonQuadraticDefect
 import Foundation.GaussianLogSobolevFull
 import Foundation.GaussianSobolevGlobalApprox
 import Foundation.GaussianSobolevQuantitative
@@ -1345,3 +1346,7 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.PoissonLipschitzChain.composition_mem_domain
 #print axioms OperatorDerivativeRewrite.Foundation.PoissonLipschitzChain.composition_difference_apply
 #print axioms OperatorDerivativeRewrite.Foundation.PoissonLipschitzChain.composition_difference_norm_le
+
+
+/-! Genuine weighted-L² quadratic Poisson defect on bounded functions. -/
+#print axioms OperatorDerivativeRewrite.Foundation.PoissonQuadraticDefect.bounded_square_difference
