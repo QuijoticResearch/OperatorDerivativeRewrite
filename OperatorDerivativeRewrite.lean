@@ -103,3 +103,4 @@ import Foundation.GaussianBrownianQuadraticVariation
 import Foundation.GaussianQuadraticRepresentation
 import Foundation.GaussianQuadraticIto
 import Foundation.GaussianBrownianSobolevField
+import Foundation.GaussianDeterministicVolterra

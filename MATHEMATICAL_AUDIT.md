@@ -5345,3 +5345,15 @@ Verification: full Lake build PASS (4100 jobs), transitive axiom audit PASS (192
 `quadraticIntegral_full_energy` gives ||D(Ju)||^2=T^2. `quadraticIntegral_full_energy_ne_variance` proves this differs from ||Ju||^2=T^2/2 whenever T>0. Thus even expected stochastic energy for random volatility cannot be recovered by blindly taking the full Malliavin derivative norm. No random pathwise bracket was asserted.
 
 Verification: full build PASS (4101 jobs), transitive audit PASS (1944 declarations; all 21 new public declarations checked). Explicit types elaborated. Axioms only propext, Classical.choice, Quot.sound. No prior theorem bodies or dependency pins changed.
+
+## Deterministic causal Volterra kernels in the actual integral (2026-10-12)
+
+`GaussianDeterministicVolterra.predictable_time_measurable` proves measurability of the time coordinate for the raw predictable sigma-algebra. `positive_profile_predictable` proves every actual real Lebesgue L2 profile vanishing a.e. on nonpositive times yields a fullPredictable deterministic field. No continuity, step-function, finite-horizon, or separate predictability hypothesis is assumed.
+
+`positiveProfiles` is independently specified by a.e. support; `profileField` and `profileIntegral` use the SAME existing predictable Ito integral. `profileIntegral_eq_isonormal` proves equality with W(Ea), `profileIntegral_derivative` gives its full closed derivative, and `profileIntegral_law` proves Gaussian variance ||a||^2, including a=0. `profile_pair_integrable` and `profileIntegral_pair_integrable` justify both covariance integrals. `profileIntegral_covariance` gives integral a(r)b(r) dr exactly.
+
+`causal_profile_mem` handles a kernel supported in (0,t] at EACH given time. `volterraProcess` uses a family K:NNReal->Lp(real,2,volume), with that a.e. support for every t. `volterraProcess_eq`, `volterraProcess_isGaussianProcess`, and `volterraProcess_covariance` identify its actual stochastic integral, finite-dimensional Gaussian laws, and covariance integral K_s K_t. No nondegeneracy, independence, or covariance normalization is imposed. In particular the representer norm is variance, not a derivative of variance.
+
+Scope: a rigorous deterministic-kernel Volterra realization. No joint time measurability/continuity is asserted without hypotheses on K, and no fBM kernel formula, fractional predictable projection, random-kernel calculus, stochastic Fubini, or rough-path assertion is proved here. The legacy Volterra claims need these qualifications; no manuscript was edited.
+
+Verification: full build PASS (4102 jobs), transitive audit PASS (1960 declarations; all 16 new public declarations checked). Explicit types elaborated. Only propext, Classical.choice, Quot.sound. Original manuscripts and dependency pins preserved.
