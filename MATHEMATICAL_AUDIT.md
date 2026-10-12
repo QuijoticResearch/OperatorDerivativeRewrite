@@ -4371,3 +4371,39 @@ Verification after restart: full Lake build passed (4037 jobs), and all 1294
 listed transitive axiom checks passed, including the eight new public declarations.
 Independent review confirmed the distinct sigma-algebras and correct a.e.
 transport. Only `propext`, `Classical.choice`, and `Quot.sound` occur.
+
+## Paper 1 reconstruction: elementary integration with random Gaussian coefficients
+
+`Foundation/GaussianElementaryIntegral.lean` uses the actual finite standard
+Gaussian product and polynomials u_i whose variables have indices strictly
+less than i in a finite linear order (`IsPastPolynomial`). Define
+J(u)=sum_i X_i*u_i, as an actual polynomial and its scalar Gaussian L2 class.
+All finite moments, integrability of J(u) and J(u)^2, and representative
+formulas are proved. Past dependence proves partial_i u_i=0, so J(u) is the
+value of the existing polynomial divergence and its closed extension on u.
+
+Theorems `elementaryIntegral_centered` and `elementaryIntegral_norm_sq` prove
+E J(u)=0 and norm(J(u))^2=norm(u)^2. The proof applies the verified Gaussian
+Stein identity to actual polynomial products; off-diagonal moments vanish
+because later Gaussian coordinates do not occur in earlier coefficients.
+No centering, independence of a coefficient from its own increment, isometry,
+or divergence identity is supplied as an additional premise.
+
+For every finite subset of the countable coordinate space, four lift theorems
+prove exact graph membership in both the existing cylindrical divergence and
+the full `hilbertDivergence`, preservation of the norm identity, and centering
+of the lifted representative. Thus this is genuine random elementary
+integration inside the previously constructed infinite Gaussian model.
+
+Scope: coefficients are past *polynomials*, on ordered independent unit-variance
+coordinates, including the empty index case. This is neither arbitrary
+anticipating integration nor a Brownian-time integral. Even completion for a
+fixed discrete order does not give full centered-L2 representation: the first
+coordinate's second Hermite polynomial is orthogonal to the elementary range.
+Continuous-time realization, refinement and predictable completion remain
+requirements of B03/B05. No new PRP claim is made here.
+
+Verification: full Lake build passed (4038 jobs); all 1314 listed transitive
+axiom checks passed, including all 20 public declarations in this module.
+Independent proof review confirmed genuine random coefficients and exact
+normalization. Only `propext`, `Classical.choice`, and `Quot.sound` occur.
