@@ -174,3 +174,5 @@ import Foundation.GaussianBoundedContinuity
 import Foundation.GaussianC2TimeWeighted
 import Foundation.GaussianFiniteRankTimeIto
 import Foundation.GaussianStoppedComposition
+import Foundation.FiniteCovarianceHessian
+import Foundation.GaussianStoppedSmoothFields
