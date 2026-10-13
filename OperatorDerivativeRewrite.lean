@@ -1,3 +1,4 @@
+import Foundation.ObservableProjectedDivergenceClosure
 import Foundation.IBMConditionalObservable
 import Foundation.ObservableDensityObstruction
 import Foundation.ObservableDensityCriterion
