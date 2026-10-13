@@ -6212,3 +6212,7 @@ For supplied measurable continuous scenery and clock paths on the verified joint
 ## Closure of projected source divergence — 2026-10-13
 
 The projected source divergence is a closable partial operator whose graph and closure lie inside the full observable adjoint whenever both requisite derivative domains are dense. Equality is not established; the observable graph-core problem remains open. Full build 4250 jobs; 3292 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## Conditional IBM observable projection identities — 2026-10-13
+
+Conditional expectation onto the supplied-path IBM observable L² space fixes observable inputs and preserves inner products against observable test functions. Source derivative-domain stability remains open. Full build 4251 jobs; 3294 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.

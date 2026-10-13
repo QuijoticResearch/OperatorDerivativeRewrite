@@ -193,3 +193,9 @@ Full Lake build 4249 jobs, exact public types, complete transitive audit 3288 de
 `Foundation/ObservableProjectedDivergenceClosure.lean` packages the projected source adjoint on its original source-adjoint domain as the partial linear operator `projectedOperator`. Under independently assumed density of both the source derivative domain and the observable restricted derivative domain, `projectedOperator_le_adjoint` proves graph inclusion in the full observable adjoint. `projectedOperator_closable` proves this partial operator is closable, and `projectedOperator_closure_le_adjoint` proves its closure remains inside the full observable adjoint. These are strict one-sided statements: equality requires a separate graph-core theorem and is not asserted for IBM.
 
 Full Lake build 4250 jobs, exact public types, complete transitive audit 3292 declarations with only subsets of propext/Classical.choice/Quot.sound. Logs `.lake/campaign-ibm-observable-09-*`.
+
+## Conditional IBM observable projection geometry — 2026-10-13
+
+`Foundation/IBMConditionalProjectionGeometry.lean` proves `observableProjection_fixed`: every element of the supplied-path observable L² space is fixed by conditional expectation. `observableProjection_pairing` proves that projecting any source L² function preserves its inner product against every observable test function. Both are exact orthogonal-projection identities on the conditional IBM observable space. They do not imply preservation of the source Malliavin derivative domain; no continuous Brownian modifications have been supplied from the actual coordinates.
+
+Full Lake build 4251 jobs, exact public types, complete transitive audit 3294 declarations with only subsets of propext/Classical.choice/Quot.sound. Logs `.lake/campaign-ibm-observable-10-*`.
