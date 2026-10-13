@@ -6240,3 +6240,7 @@ Actual correlated first-chaos representatives satisfy `E[A⁴B⁴]=9u²v²+72uvc
 ## IBM paired fourth-power increments — 2026-10-13
 
 The verified source scenery and conditional supplied-path IBM increments satisfy the exact mixed eighth-moment Wick polynomial, with covariance equal to signed reflected-clock spatial overlap. The conditional centered fourth-power product is `72uvc²+24c⁴`. Clock averaging and partition variance limits remain open. Full build 4260 jobs; 3325 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM finite quartic-sum conditional variance — 2026-10-13
+
+Each fixed-clock fourth-power increment lies in scenery L², and the centered second moment of any finite quartic sum is exactly the double sum of `72u_pu_qc²+24c⁴` spatial-overlap contributions. This is the analytic input for partition limits, not a convergence theorem. Full build 4261 jobs; 3329 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
