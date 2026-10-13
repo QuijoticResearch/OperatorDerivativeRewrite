@@ -181,3 +181,5 @@ import Foundation.FiniteTaylorRemainder
 import Foundation.GaussianStoppedTaylor
 import Foundation.GaussianRefiningPartitions
 import Foundation.GaussianStoppedMeshFields
+
+import Foundation.GaussianVolatilityProcess
