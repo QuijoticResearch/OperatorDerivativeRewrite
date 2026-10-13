@@ -256,6 +256,7 @@ import Foundation.GaussianOUCore
 import Foundation.FractionalCovarianceMatrices
 import Foundation.BrownianCovariancePowers
 import Foundation.FractionalWickCovariance
+import Foundation.SPDEFiniteGalerkin
 import Foundation.SPDEFiniteModes
 import Foundation.SPDEModulatedSensitivity
 import Foundation.SPDEModulatedResponse
