@@ -192,3 +192,4 @@ import Foundation.GaussianKernelTransfer
 import Foundation.GaussianPositiveVolatility
 import Foundation.GaussianVolatilityRepresenter
 import Foundation.FractionalSpectralKernel
+import Foundation.FractionalSpectralGeometry

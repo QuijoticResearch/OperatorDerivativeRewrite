@@ -6000,3 +6000,13 @@ Initial verified HEAD d09656ee119054c9300a9d74b6ac9533653e800a, with the precedi
 `SpectralSpace` is actual L²(R;R²), complete by Mathlib; `spectralSpace_secondCountable` proves the separability prerequisite for the existing isonormal construction. `vector` is the actual L² class, `vector_zero` handles t=0, `vector_one_ne_zero` proves nondegeneracy using positivity of sine on (0,pi), and `vector_norm_sq_integral` identifies the actual norm integral. Fractional covariance and normalized process realization are not yet asserted at this milestone.
 
 Verification: complete Lake build passed (4188 jobs); 2974 transitive axiom checks passed, including all 23 new public declarations, with only propext, Classical.choice and Quot.sound. Exact public types checked. Logs `.lake/campaign-fractional/01-*`. Existing declarations, original manuscript, pinned dependencies, and unrelated untracked documents preserved.
+
+## Fractional Gaussian campaign A2: exact covariance, not just marginal variance
+
+`Foundation/FractionalSpectralGeometry.lean` proves the actual spectral increment identity `kernel_sub_norm_sq`, scaling `kernel_scale_norm_sq`, and the resulting L² identities. `normalized` divides the actual vector by the independently proved nonzero norm at time one. `normalized_norm_sq` gives |t|^(2H); `normalized_sub_norm_sq` gives |t-s|^(2H); `normalized_inner` therefore gives exactly (|s|^(2H)+|t|^(2H)-|t-s|^(2H))/2, for every real s,t and exactly 0<H<1.
+
+`covariance_positive` proves positive semidefiniteness for arbitrary finite real coefficient/time families, directly from the squared norm of their Hilbert-vector sum. `normalized_sub_norm` proves the exact H-Hölder distance |t-s|^H in the deterministic Hilbert space, and `normalized_continuous` proves its continuity. The proof uses genuine kernel integrability from A1 before the dilation change of variables. No covariance, positivity, completion, or scaling assumption is introduced.
+
+This is real spectral geometry. It is not a causal Volterra kernel or pathwise sample regularity. The result applies without exclusions at H=1/2. The subsequent process realization and Cameron–Martin interpretation remain distinct constructions.
+
+Verification: full Lake build 4189 jobs, 2992 transitive axiom checks (all 18 new public declarations), only propext, Classical.choice, Quot.sound. Exact public types checked. Logs `.lake/campaign-fractional/02-*`.
