@@ -1,3 +1,4 @@
+import Foundation.IBMContinuousMalliavin
 import Foundation.IBMWholeLineSmoothing
 import Foundation.IBMContinuousDerivative
 import Foundation.IBMContinuousRadius
