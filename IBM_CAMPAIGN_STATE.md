@@ -41,3 +41,17 @@ Names have prefix `OperatorDerivativeRewrite.Foundation.`.
   - `IBMModificationBridge.scenery_modified_law` — line 35
   - `IBMModificationBridge.clock_modified_law` — line 44
   - `IBMModificationBridge.modified_sources_independent` — line 52
+
+## Gaussian mixture and source-moment milestone
+
+`Foundation/IBMConditionalMixture.lean` proves the actual scenery factor's centered Gaussian marginal `sceneryBase_gaussian_law`. Given an explicitly supplied continuous scenery modification `S` with deterministic-time a.e. equality to that factor, `sceneryPath_gaussian_law` and `conditional_event` prove that for each fixed clock sample the composed coordinate has centered Gaussian law with variance `|C t ωY|`. Given measurable coordinates for both supplied continuous modifications, `mixture_event` proves the exact event-law mixture over the clock factor using product-measure Fubini. It does not establish that such modifications exist.
+
+`Foundation/IBMSourceMoments.lean` proves the actual first-chaos fourth moment and fourth-moment increment identities for the two-sided scenery and Brownian clock. These are inputs for a continuous-modification argument, not themselves continuity. `Foundation/IBMConditionalMoments.lean` proves the centered Gaussian second moment and, for each fixed clock sample under the same scenery-modification hypothesis, conditional mean zero and conditional second moment `|C t ωY|`.
+
+Target builds, exact checks of all 10 new public statements, full Lake build (4208 jobs), and complete transitive axiom audit (3181 declarations, only propext/Classical.choice/Quot.sound) pass. Logs `.lake/campaign-ibm/04-*`, `05-*`, `06-*`. Existing source bodies, manuscripts and dependency pins were unchanged. Central open obligation: construct continuous modifications from `IBMSourceLaws` coordinate processes; thereafter prove actual IBM path construction, covariance, scaling and mollified calculus. No unconditioned IBM path or Ito–Tanaka claim is made.
+
+### New declaration locations
+
+- `Foundation/IBMConditionalMixture.lean`: `sceneryBase_gaussian_law` (16), `sceneryPath_gaussian_law` (32), `conditional_event` (40), `mixture_event` (51).
+- `Foundation/IBMSourceMoments.lean`: `firstChaos_fourth` (17), `sceneryBase_increment_fourth` (30), `clockBase_increment_fourth` (54).
+- `Foundation/IBMConditionalMoments.lean`: `gaussian_zero_second` (14), `conditional_mean` (25), `conditional_second` (35).

@@ -6112,3 +6112,7 @@ IBMSourceLaws constructs independent product Gaussian source factors, actual two
 
 Continuous IBM composition, joint measurability and independent path-valued source maps are verified under explicitly supplied measurable continuous paths. The bridge proves measurable path-valued random variables and preservation of one-time laws from continuous coordinate modifications. Existence of such modifications from the source Gaussian coordinates remains open. Full build 4205 jobs, 3171 transitive axiom checks, only propext/Classical.choice/Quot.sound. Exact statements and limitations: IBM_CAMPAIGN_STATE.md.
 
+
+## IBM conditional Gaussian mixture and source fourth moments — 2026-10-13
+
+The source scenery law and both source fourth-moment increment identities are actual verified facts. Conditional Gaussian event and first/second-moment formulas for the composition, plus the clock mixture event law, are verified under explicit continuous-modification hypotheses. Full build 4208 jobs, 3181 transitive axiom checks, only propext/Classical.choice/Quot.sound. Exact statements and open existence obligation: IBM_CAMPAIGN_STATE.md.

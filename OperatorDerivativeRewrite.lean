@@ -1,3 +1,6 @@
+import Foundation.IBMConditionalMoments
+import Foundation.IBMSourceMoments
+import Foundation.IBMConditionalMixture
 import Foundation.IBMModificationBridge
 import Foundation.IBMContinuousComposition
 import Foundation.IBMSourceLaws
