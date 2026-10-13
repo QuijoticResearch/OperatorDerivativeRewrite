@@ -6184,3 +6184,7 @@ The maximal restriction of any closed partial linear source operator to an obser
 ## IBM projected divergence transfer — 2026-10-13
 
 For a closed observable subspace with a dense restricted domain, every source-adjoint integrand lies in the restricted adjoint domain and its value is the orthogonal projection of the source divergence. This is a one-sided domain inclusion; IBM observable density is still open. Full build 4243 jobs; 3268 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM observable-core density criterion — 2026-10-13
+
+Source-domain density plus invariance of that domain under observable orthogonal projection implies density of the restricted derivative domain. IBM projection invariance is not established. Full build 4244 jobs; 3269 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.

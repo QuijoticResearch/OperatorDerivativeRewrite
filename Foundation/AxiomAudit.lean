@@ -1,3 +1,4 @@
+import Foundation.ObservableCoreDensity
 import Foundation.ObservableProjectedDivergence
 import Foundation.ObservableRestriction
 import Foundation.IBMBesselDuality
@@ -3805,4 +3806,5 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.ObservableProjectedDivergence.projected_pairing
 #print axioms OperatorDerivativeRewrite.Foundation.ObservableProjectedDivergence.source_divergence_mem
 #print axioms OperatorDerivativeRewrite.Foundation.ObservableProjectedDivergence.divergence_source_value
+#print axioms OperatorDerivativeRewrite.Foundation.ObservableCoreDensity.derivative_dense_of_projection_invariant
 
