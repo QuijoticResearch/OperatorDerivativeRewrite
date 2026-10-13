@@ -6116,3 +6116,7 @@ Continuous IBM composition, joint measurability and independent path-valued sour
 ## IBM conditional Gaussian mixture and source fourth moments — 2026-10-13
 
 The source scenery law and both source fourth-moment increment identities are actual verified facts. Conditional Gaussian event and first/second-moment formulas for the composition, plus the clock mixture event law, are verified under explicit continuous-modification hypotheses. Full build 4208 jobs, 3181 transitive axiom checks, only propext/Classical.choice/Quot.sound. Exact statements and open existence obligation: IBM_CAMPAIGN_STATE.md.
+
+## IBM conditional two-time covariance — 2026-10-13
+
+The exact two-sided Brownian covariance kernel for the composed process is proved at each fixed clock sample under the continuous-scenery-modification hypothesis. Full build 4209 jobs, complete 3182-declaration transitive audit, only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.

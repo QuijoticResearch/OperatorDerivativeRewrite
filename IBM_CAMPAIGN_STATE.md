@@ -55,3 +55,7 @@ Target builds, exact checks of all 10 new public statements, full Lake build (42
 - `Foundation/IBMConditionalMixture.lean`: `sceneryBase_gaussian_law` (16), `sceneryPath_gaussian_law` (32), `conditional_event` (40), `mixture_event` (51).
 - `Foundation/IBMSourceMoments.lean`: `firstChaos_fourth` (17), `sceneryBase_increment_fourth` (30), `clockBase_increment_fourth` (54).
 - `Foundation/IBMConditionalMoments.lean`: `gaussian_zero_second` (14), `conditional_mean` (25), `conditional_second` (35).
+
+## Conditional covariance milestone
+
+`Foundation/IBMConditionalCovariance.lean:27` proves the exact two-time covariance of the composed scenery at any fixed clock sample: `( |C_s| + |C_t| - ||C_t|-|C_s|| )/2`. It uses the actual two-sided source covariance and deterministic-time a.e. modification equality; no sign restriction on the clock values is imposed. The source modification remains an explicit hypothesis. Full Lake build 4209 jobs, 3182 transitive axiom checks with only propext/Classical.choice/Quot.sound, and exact theorem type check passed. Logs `.lake/campaign-ibm/07-*`.

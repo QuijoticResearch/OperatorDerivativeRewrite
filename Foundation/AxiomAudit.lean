@@ -1,3 +1,4 @@
+import Foundation.IBMConditionalCovariance
 import Foundation.IBMConditionalMoments
 import Foundation.IBMSourceMoments
 import Foundation.IBMConditionalMixture
@@ -3698,3 +3699,4 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMConditionalMoments.gaussian_zero_second
 #print axioms OperatorDerivativeRewrite.Foundation.IBMConditionalMoments.conditional_mean
 #print axioms OperatorDerivativeRewrite.Foundation.IBMConditionalMoments.conditional_second
+#print axioms OperatorDerivativeRewrite.Foundation.IBMConditionalCovariance.conditional_covariance
