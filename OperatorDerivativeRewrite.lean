@@ -256,6 +256,7 @@ import Foundation.GaussianOUCore
 import Foundation.FractionalCovarianceMatrices
 import Foundation.BrownianCovariancePowers
 import Foundation.FractionalWickCovariance
+import Foundation.SPDEModulatedResponse
 import Foundation.FractionalForcingKernel
 import Foundation.StochasticKernelConvolution
 
