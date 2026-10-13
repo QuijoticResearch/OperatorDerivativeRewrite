@@ -183,3 +183,5 @@ import Foundation.GaussianRefiningPartitions
 import Foundation.GaussianStoppedMeshFields
 
 import Foundation.GaussianVolatilityProcess
+
+import Foundation.GaussianPowerVolterra
