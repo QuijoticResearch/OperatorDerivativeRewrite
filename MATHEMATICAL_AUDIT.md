@@ -6160,3 +6160,7 @@ The exact second-derivative formula for f(x+U_r) is verified under explicit actu
 ## IBM spatial convolution and actual derivatives — 2026-10-13
 
 For a supplied continuous path and compactly supported C² kernel, actual Lebesgue convolution and its first two derivative-kernel representations are verified, as is the second spatial chain rule. Stochastic measurability and Brownian source construction remain open. Full build 4235 jobs; 3228 transitive axiom checks, only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM measurable mollified random-time process — 2026-10-13
+
+For supplied continuous measurable source families and a compactly supported C² kernel, the actual convolution fields are jointly measurable, and their random-time composition is a measurable continuous-path-valued process on the joint product factor. Brownian continuous-modification existence is still open. Full build 4237 jobs; 3242 transitive axiom checks, only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.

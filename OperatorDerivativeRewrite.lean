@@ -1,3 +1,5 @@
+import Foundation.IBMMollifiedProcess
+import Foundation.IBMMollifiedMeasurability
 import Foundation.IBMMollifiedScenery
 import Foundation.IBMMollifiedChainRule
 import Foundation.IBMDualAssembly

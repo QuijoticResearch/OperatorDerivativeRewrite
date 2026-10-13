@@ -1,3 +1,5 @@
+import Foundation.IBMMollifiedProcess
+import Foundation.IBMMollifiedMeasurability
 import Foundation.IBMMollifiedScenery
 import Foundation.IBMMollifiedChainRule
 import Foundation.IBMDualAssembly
@@ -3756,3 +3758,17 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedScenery.deriv_U
 #print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedScenery.deriv_V
 #print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedScenery.second_chain_rule
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedMeasurability.convolution_measurable
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedMeasurability.U_measurable
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedMeasurability.V_measurable
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedMeasurability.W_measurable
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedMeasurability.convolution_joint_measurable
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedMeasurability.U_joint_measurable
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedMeasurability.V_joint_measurable
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedMeasurability.W_joint_measurable
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedProcess.Z
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedProcess.Z_measurable
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedProcess.Z_path_continuous
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedProcess.Z_joint_measurable
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedProcess.path
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedProcess.path_measurable
