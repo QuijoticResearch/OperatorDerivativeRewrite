@@ -6168,3 +6168,7 @@ For supplied continuous measurable source families and a compactly supported C²
 ## IBM concrete normalized mollifier — 2026-10-13
 
 A specific smooth nonnegative unit-mass bump sequence with shrinking support now instantiates the convolution kernel, and its pathwise convolution converges pointwise to every supplied continuous scenery path, including at a fixed random clock argument. The continuous source modifications, stronger stochastic convergence, derivative limits and singular correction remain open. Full build 4239 jobs; 3250 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM sectionwise dual distribution identity — 2026-10-13
+
+The bounded interior-plus-boundary H⁻¹ assembly now has an almost-everywhere section formula and an exact tempered-distribution identity `∂u+aδ₀` for arbitrary admissible input fields. IBM-specific local-time inputs and convergence remain open. Full build 4240 jobs; 3252 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
