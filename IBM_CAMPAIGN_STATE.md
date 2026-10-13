@@ -199,3 +199,9 @@ Full Lake build 4250 jobs, exact public types, complete transitive audit 3292 de
 `Foundation/IBMConditionalProjectionGeometry.lean` proves `observableProjection_fixed`: every element of the supplied-path observable L² space is fixed by conditional expectation. `observableProjection_pairing` proves that projecting any source L² function preserves its inner product against every observable test function. Both are exact orthogonal-projection identities on the conditional IBM observable space. They do not imply preservation of the source Malliavin derivative domain; no continuous Brownian modifications have been supplied from the actual coordinates.
 
 Full Lake build 4251 jobs, exact public types, complete transitive audit 3294 declarations with only subsets of propext/Classical.choice/Quot.sound. Logs `.lake/campaign-ibm-observable-10-*`.
+
+## Sharp H⁻¹–H¹ Hilbert duality — 2026-10-13
+
+`Foundation/IBMBesselDualitySharp.lean` strengthens the existing IBM Sobolev test geometry. `pairingCLM_norm_eq` proves the weighted-L² pairing functional has operator norm exactly the H⁻¹ norm. `pairingCLM_existsUnique` proves every continuous complex-linear functional on the actual Bessel-potential H¹ space is uniquely represented by an H⁻¹ vector through this pairing, using Mathlib's Riesz representation on the isometric L² model. This is an onto isometric *conjugate-linear* Hilbert dual representation at the level of propositions. It does not yet prove that the manuscript's IBM first-chaos distribution coincides with this pairing on Schwartz tests or that the singular limit is intrinsically IBM-observable.
+
+Full Lake build 4252 jobs, exact public types, complete transitive audit 3296 declarations with only subsets of propext/Classical.choice/Quot.sound. Logs `.lake/campaign-ibm-observable-11-*`.

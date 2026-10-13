@@ -1,3 +1,4 @@
+import Foundation.IBMBesselDualitySharp
 import Foundation.IBMConditionalProjectionGeometry
 import Foundation.ObservableProjectedDivergenceClosure
 import Foundation.IBMConditionalObservable

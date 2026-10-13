@@ -6216,3 +6216,7 @@ The projected source divergence is a closable partial operator whose graph and c
 ## Conditional IBM observable projection identities — 2026-10-13
 
 Conditional expectation onto the supplied-path IBM observable L² space fixes observable inputs and preserves inner products against observable test functions. Source derivative-domain stability remains open. Full build 4251 jobs; 3294 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM sharp H⁻¹–H¹ duality — 2026-10-13
+
+The weighted-L² H⁻¹ pairing has exactly the H⁻¹ operator norm and uniquely represents every continuous H¹ functional. Agreement of this Hilbert-model pairing with the manuscript's Schwartz-distribution action is still open. Full build 4252 jobs; 3296 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.

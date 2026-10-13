@@ -1,3 +1,4 @@
+import Foundation.IBMBesselDualitySharp
 import Foundation.IBMConditionalProjectionGeometry
 import Foundation.ObservableProjectedDivergenceClosure
 import Foundation.IBMConditionalObservable
@@ -3840,3 +3841,5 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.ObservableProjectedDivergenceClosure.projectedOperator_closure_le_adjoint
 #print axioms OperatorDerivativeRewrite.Foundation.IBMConditionalProjectionGeometry.observableProjection_fixed
 #print axioms OperatorDerivativeRewrite.Foundation.IBMConditionalProjectionGeometry.observableProjection_pairing
+#print axioms OperatorDerivativeRewrite.Foundation.IBMBesselDualitySharp.pairingCLM_norm_eq
+#print axioms OperatorDerivativeRewrite.Foundation.IBMBesselDualitySharp.pairingCLM_existsUnique
