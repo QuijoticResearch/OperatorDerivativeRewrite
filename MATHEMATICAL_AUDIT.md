@@ -6140,3 +6140,7 @@ The concrete distributional derivative now extends as a bounded continuous linea
 ## IBM random-field H⁻¹ transfer — 2026-10-13
 
 Bounded differentiation now acts from L²(clock;L²(space)) to L²(clock;H⁻¹(space)), with almost-everywhere section identification and convergence transfer. No IBM-specific kernel or local-time limit is asserted. Full build 4230 jobs; 3201 transitive axiom checks, only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM origin Dirac boundary mass in H⁻¹ — 2026-10-13
+
+Mathlib's actual tempered Dirac distribution at zero is proved to belong to H⁻¹(ℝ) and bundled there. This is only the deterministic boundary target, not a local-time convergence theorem. Full build 4231 jobs; 3204 transitive axiom checks, only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.

@@ -1,3 +1,4 @@
+import Foundation.IBMDeltaBoundary
 import Foundation.IBMNegativeSobolevRandom
 import Foundation.IBMNegativeSobolevBounded
 import Foundation.IBMNegativeSobolev

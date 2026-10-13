@@ -87,3 +87,9 @@ Target and full Lake builds passed (4229 jobs), exact public types checked, comp
 `Foundation/IBMNegativeSobolevRandom.lean` lifts bounded spatial differentiation to the actual Gaussian clock factor as `randomDerivativeCLM : L²(Ω_Y;L²(ℝ,ℂ)) →L[ℂ] L²(Ω_Y;H⁻¹(ℝ))`. Its operator norm is at most that of the deterministic derivative; `randomDerivative_apply_ae` identifies almost every clock section; `randomDerivative_tendsto` transports strong Bochner-L² convergence. This precisely isolates an analytic transfer step for the manuscript residual `-∂_w(ρ_ε*(CL))`: proving the kernel itself lies in the domain and converges there still requires actual Brownian local time and coefficient estimates.
 
 Target build, exact types, full Lake build 4230 jobs, transitive audit 3201 declarations, only propext/Classical.choice/Quot.sound. Logs `.lake/campaign-ibm-singular-03-*`.
+
+## Origin Dirac boundary mass in H⁻¹ — 2026-10-13
+
+`Foundation/IBMDeltaBoundary.lean` proves `delta_zero_memHminusOne` for Mathlib's actual tempered Dirac distribution on ℝ, using its Fourier transform and the integrability of `(1+|ξ|²)^(-1)` in dimension one. `deltaZeroHminusOne` bundles the boundary mass in the same concrete H⁻¹ space as the derivative residual, with an exact underlying-distribution theorem. This verifies the deterministic target for the manuscript's `L_t^0(Y) f'(x) δ_0`, but not the local-time random coefficient, boundary-layer approximation, or stochastic limit.
+
+Target build, exact types, full Lake build 4231 jobs, complete transitive axiom audit 3204 declarations, only propext/Classical.choice/Quot.sound. Logs `.lake/campaign-ibm-singular-04-*`.

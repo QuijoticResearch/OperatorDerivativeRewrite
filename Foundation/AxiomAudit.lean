@@ -1,3 +1,4 @@
+import Foundation.IBMDeltaBoundary
 import Foundation.IBMNegativeSobolevRandom
 import Foundation.IBMNegativeSobolevBounded
 import Foundation.IBMNegativeSobolev
@@ -3724,3 +3725,6 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolevRandom.randomDerivative_opNorm_le
 #print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolevRandom.randomDerivative_apply_ae
 #print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolevRandom.randomDerivative_tendsto
+#print axioms OperatorDerivativeRewrite.Foundation.IBMDeltaBoundary.delta_zero_memHminusOne
+#print axioms OperatorDerivativeRewrite.Foundation.IBMDeltaBoundary.deltaZeroHminusOne
+#print axioms OperatorDerivativeRewrite.Foundation.IBMDeltaBoundary.deltaZeroHminusOne_toDistr
