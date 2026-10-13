@@ -1,3 +1,5 @@
+import Foundation.IBMModificationBridge
+import Foundation.IBMContinuousComposition
 import Foundation.IBMSourceLaws
 import Foundation.FractionalForcingObstruction
 import Foundation.GaussianPolynomialHeat

@@ -6107,3 +6107,8 @@ FractionalForcingObstruction.no_higher_initial_power_bound and no_initial_browni
 
 IBMSourceLaws constructs independent product Gaussian source factors, actual two-sided scenery with exact covariance/mean/marginal laws, Brownian finite laws on both halves, whole-half independence, and independent Brownian clock finite laws. No path modification or random-time composition is claimed. Full build 4201 jobs, transitive axiom audit 3153, only propext/Classical.choice/Quot.sound. All 21 public types checked. Complete source locations and scope: RESEARCH_RECOVERY_REPORT.md; analytic next backlog: RESEARCH_READINESS_AND_BACKLOG.md.
 
+
+## IBM conditional path composition and modification bridge — 2026-10-13
+
+Continuous IBM composition, joint measurability and independent path-valued source maps are verified under explicitly supplied measurable continuous paths. The bridge proves measurable path-valued random variables and preservation of one-time laws from continuous coordinate modifications. Existence of such modifications from the source Gaussian coordinates remains open. Full build 4205 jobs, 3171 transitive axiom checks, only propext/Classical.choice/Quot.sound. Exact statements and limitations: IBM_CAMPAIGN_STATE.md.
+
