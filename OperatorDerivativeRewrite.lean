@@ -1,3 +1,4 @@
+import Foundation.IBMMollifiedScenery
 import Foundation.IBMMollifiedChainRule
 import Foundation.IBMDualAssembly
 import Foundation.IBMRandomBoundary

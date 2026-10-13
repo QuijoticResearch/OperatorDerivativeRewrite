@@ -111,3 +111,9 @@ Exact public types, target build, full Lake build 4233 jobs, and complete transi
 `Foundation/IBMMollifiedChainRule.lean` proves the exact identity `deriv (deriv (r ↦ f(x+U r))) r = f₂(x+U r) (V r)² + f₁(x+U r) W r`, assuming actual pointwise `HasDerivAt U V`, `HasDerivAt V W`, `HasDerivAt f f₁`, and `HasDerivAt f₁ f₂`. It also proves the first and second HasDerivAt statements. These explicit spatial derivative hypotheses will be discharged only after an actual mollified scenery is constructed; the module makes no Malliavin-derivative or Brownian local-time assertion.
 
 Target build, exact types, full Lake build 4234 jobs, transitive axiom audit 3220 declarations, only propext/Classical.choice/Quot.sound. Logs `.lake/campaign-ibm-singular-07-*`.
+
+## Actual convolution derivatives for supplied continuous scenery paths — 2026-10-13
+
+`Foundation/IBMMollifiedScenery.lean` defines `U=ρ⋆X`, `V=(deriv ρ)⋆X`, and `W=(deriv (deriv ρ))⋆X` using Mathlib's actual convolution integral against Lebesgue measure. If `X` is continuous and `ρ` has compact support and is `C²`, `U_hasDerivAt` and `V_hasDerivAt` prove the pointwise first and second spatial derivative representations; `deriv_U` and `deriv_V` identify Mathlib's derivatives. `second_chain_rule` applies the separately verified chain rule to these actual convolution fields and proves `∂²_r f(x+U_r)=f₂(x+U_r)V_r²+f₁(x+U_r)W_r` under explicit test-function derivative assumptions. This is a pathwise deterministic construction from a supplied continuous scenery path, not yet a measurable stochastic mollified IBM: continuous Brownian scenery, kernel normalization/scale, random-field measurability, Gaussian covariance and quantitative approximation are open.
+
+Target build, exact types, full Lake build 4235 jobs, transitive audit 3228 declarations, only propext/Classical.choice/Quot.sound. Logs `.lake/campaign-ibm-singular-08-*`.

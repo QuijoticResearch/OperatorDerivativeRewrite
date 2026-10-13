@@ -1,3 +1,4 @@
+import Foundation.IBMMollifiedScenery
 import Foundation.IBMMollifiedChainRule
 import Foundation.IBMDualAssembly
 import Foundation.IBMRandomBoundary
@@ -3747,3 +3748,11 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedChainRule.g_hasDerivAt
 #print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedChainRule.g_second_hasDerivAt
 #print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedChainRule.deriv_deriv_g
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedScenery.U
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedScenery.V
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedScenery.W
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedScenery.U_hasDerivAt
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedScenery.V_hasDerivAt
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedScenery.deriv_U
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedScenery.deriv_V
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedScenery.second_chain_rule

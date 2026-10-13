@@ -6156,3 +6156,7 @@ A bounded operator assembles convergent interior L² spatial kernels and square-
 ## IBM conditional mollified spatial chain rule — 2026-10-13
 
 The exact second-derivative formula for f(x+U_r) is verified under explicit actual spatial derivative fields U,V,W and test-function derivatives. No mollifier or Malliavin field is yet constructed. Full build 4234 jobs; 3220 transitive axiom checks, only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM spatial convolution and actual derivatives — 2026-10-13
+
+For a supplied continuous path and compactly supported C² kernel, actual Lebesgue convolution and its first two derivative-kernel representations are verified, as is the second spatial chain rule. Stochastic measurability and Brownian source construction remain open. Full build 4235 jobs; 3228 transitive axiom checks, only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
