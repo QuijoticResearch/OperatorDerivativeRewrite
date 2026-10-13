@@ -6220,3 +6220,7 @@ Conditional expectation onto the supplied-path IBM observable L² space fixes ob
 ## IBM sharp H⁻¹–H¹ duality — 2026-10-13
 
 The weighted-L² H⁻¹ pairing has exactly the H⁻¹ operator norm and uniquely represents every continuous H¹ functional. Agreement of this Hilbert-model pairing with the manuscript's Schwartz-distribution action is still open. Full build 4252 jobs; 3296 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM signed spatial overlap — 2026-10-13
+
+The covariance of two source Brownian-scenery increments is the signed spatial overlap of their oriented nonnegative intervals. Under explicit continuous-modification hypotheses, the same exact formula holds conditionally for two IBM increments at any fixed clock sample. This is covariance structure, not a quartic-variation limit. Full build 4254 jobs; 3301 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
