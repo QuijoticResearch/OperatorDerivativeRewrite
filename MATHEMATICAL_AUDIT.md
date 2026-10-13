@@ -6062,3 +6062,13 @@ Started only after the fractional campaign's final verified report commit 4c11a8
 `generator_integrable`, `gamma_integrable`, and `gammaTwo_integrable` establish actual Gaussian integrability. `gaussian_generator_pairing`, `gaussian_generator_symmetric`, and `gaussian_generator_energy` reuse proved polynomial Gaussian IBP to establish symmetry and energy. This is a legitimate common polynomial core, not a theorem about the full closed OU generator, all Sobolev functions, higher iterates, or fractional-time evolution. Those operator-domain extension obligations remain explicit.
 
 Verification: all 15 public declarations and explicit types checked. Full build passed (4194 jobs); transitive audit 3072 declarations, only propext, Classical.choice, Quot.sound. Logs `.lake/campaign-curvature/01-*`.
+
+## Gaussian curvature campaign C2: covariance positivity and actual matrix eigenpairs
+
+`Foundation/FractionalCovarianceMatrices.lean` proves finite fractional covariance matrices positive semidefinite for 0<H<1 from the independently constructed spectral Hilbert vectors, and proves positivity of every natural Hadamard power by Mathlib's Schur product theorem. This includes power zero and empty finite index sets. `brownian_covariance` identifies H=1/2 with min(s,t) for nonnegative times. `hurst_two_negative_energy` proves the H=2 two-point quadratic form on coefficients (2,-1) equals -12, excluding its interpretation as a probability covariance.
+
+`Foundation/BrownianCovariancePowers.lean` proves the exact factorization A_k=L diag(D_k) L^T at times 1,...,n, k>0, where D_k(j)=(j+1)^k-j^k. `differenceVector_ne_zero`, `covariance_difference_action` and `generalized_eigenpair` establish actual nonzero generalized eigenvectors e_j-e_(j-1) (with the initial endpoint handled separately) and eigenvalues D_k(j)/D_l(j), for k,l>0. `adjacent_ratio_two` and `adjacent_ratio_ne_innovation` check the concrete ratio 7/3, which differs from 7. Completeness of this eigenbasis and a full spectral theorem are not asserted by this module.
+
+Source qualification: the available `C:/Operator/fbm/hurst_curvature.tex` compares its j-th Hadamard form to the FIRST form; since D_1=1, raw D_j are appropriate for that stated comparison. The ratio correction concerns an adjacent-level comparison, not an error in that first-level comparison. Equality of covariance/Gram matrices does not establish equality of fractional Laplacians, Gaussian OU generators, or their domains.
+
+Verification: all 24 new public declarations compiled and explicit types checked. Full build passed (4196 jobs); full transitive audit 3096 declarations with only propext, Classical.choice, Quot.sound. Logs `.lake/campaign-curvature/02-*`. No prior theorem body or archive changed.

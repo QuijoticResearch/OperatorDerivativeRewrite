@@ -198,3 +198,5 @@ import Foundation.FractionalPredictionObstruction
 import Foundation.FractionalControlledEstimate
 import Foundation.FractionalGaussianOperators
 import Foundation.GaussianOUCore
+import Foundation.FractionalCovarianceMatrices
+import Foundation.BrownianCovariancePowers
