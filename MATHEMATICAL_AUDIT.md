@@ -6132,3 +6132,7 @@ Exact conditional fourth moment `3 * ||C_t|-|C_s||²` is proved under the contin
 ## IBM singular campaign: concrete L²-to-H⁻¹ distributional derivative — 2026-10-13
 
 The derivative of any complex Lebesgue-L² function is bundled in Mathlib's actual H⁻¹(ℝ) Bessel-potential space, with the correct underlying distribution and an algebraic linear map. Boundedness, IBM-kernel convergence and local-time estimates remain separate. Full build 4228 jobs; 3191 transitive axiom checks, only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM bounded H⁻¹ derivative — 2026-10-13
+
+The concrete distributional derivative now extends as a bounded continuous linear map from complex Lebesgue L²(ℝ) to Mathlib H⁻¹(ℝ), by a verified closed-graph argument. This does not establish any IBM-specific kernel limit. Full build 4229 jobs; 3197 transitive axiom checks, only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.

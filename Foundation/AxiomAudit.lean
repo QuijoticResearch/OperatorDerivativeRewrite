@@ -1,3 +1,4 @@
+import Foundation.IBMNegativeSobolevBounded
 import Foundation.IBMNegativeSobolev
 import Foundation.IBMConditionalIncrements
 import Foundation.IBMConditionalFiniteDim
@@ -3712,3 +3713,9 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolev.l2Derivative_add
 #print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolev.l2Derivative_smul
 #print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolev.l2DerivativeLinear
+#print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolevBounded.hminusOneToDistrCLM
+#print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolevBounded.hminusOneToDistrCLM_apply
+#print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolevBounded.l2Derivative_seqClosedGraph
+#print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolevBounded.l2DerivativeCLM
+#print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolevBounded.l2DerivativeCLM_apply
+#print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolevBounded.l2Derivative_norm_le
