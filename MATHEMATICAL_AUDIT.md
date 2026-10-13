@@ -6136,3 +6136,7 @@ The derivative of any complex Lebesgue-L² function is bundled in Mathlib's actu
 ## IBM bounded H⁻¹ derivative — 2026-10-13
 
 The concrete distributional derivative now extends as a bounded continuous linear map from complex Lebesgue L²(ℝ) to Mathlib H⁻¹(ℝ), by a verified closed-graph argument. This does not establish any IBM-specific kernel limit. Full build 4229 jobs; 3197 transitive axiom checks, only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM random-field H⁻¹ transfer — 2026-10-13
+
+Bounded differentiation now acts from L²(clock;L²(space)) to L²(clock;H⁻¹(space)), with almost-everywhere section identification and convergence transfer. No IBM-specific kernel or local-time limit is asserted. Full build 4230 jobs; 3201 transitive axiom checks, only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.

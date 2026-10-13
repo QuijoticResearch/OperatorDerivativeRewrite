@@ -1,3 +1,4 @@
+import Foundation.IBMNegativeSobolevRandom
 import Foundation.IBMNegativeSobolevBounded
 import Foundation.IBMNegativeSobolev
 import Foundation.IBMConditionalIncrements
@@ -3719,3 +3720,7 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolevBounded.l2DerivativeCLM
 #print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolevBounded.l2DerivativeCLM_apply
 #print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolevBounded.l2Derivative_norm_le
+#print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolevRandom.randomDerivativeCLM
+#print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolevRandom.randomDerivative_opNorm_le
+#print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolevRandom.randomDerivative_apply_ae
+#print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolevRandom.randomDerivative_tendsto

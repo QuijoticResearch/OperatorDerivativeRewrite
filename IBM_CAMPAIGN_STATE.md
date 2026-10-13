@@ -81,3 +81,9 @@ Target build, exact types, full Lake build (4228 jobs), and complete transitive 
 `Foundation/IBMNegativeSobolevBounded.lean` constructs the continuous embedding from the actual H⁻¹ Bessel-potential space to tempered distributions. It proves the algebraic L² derivative map has sequentially closed graph by comparing both continuous embeddings in the distribution space, then applies Mathlib's Banach closed-graph theorem to obtain `l2DerivativeCLM`. The operator is bounded and `l2Derivative_norm_le` provides its finite operator-norm inequality. This is deterministic infrastructure for a future first-scenery-chaos residual `-∂_w(ρ_ε*(CL))`; it neither constructs that kernel nor proves local-time convergence. No explicit sharp constant is claimed.
 
 Target and full Lake builds passed (4229 jobs), exact public types checked, complete transitive axiom audit 3197 declarations with only propext/Classical.choice/Quot.sound. Logs `.lake/campaign-ibm-singular-02-*`.
+
+## Random-field H⁻¹ transfer on the clock factor — 2026-10-13
+
+`Foundation/IBMNegativeSobolevRandom.lean` lifts bounded spatial differentiation to the actual Gaussian clock factor as `randomDerivativeCLM : L²(Ω_Y;L²(ℝ,ℂ)) →L[ℂ] L²(Ω_Y;H⁻¹(ℝ))`. Its operator norm is at most that of the deterministic derivative; `randomDerivative_apply_ae` identifies almost every clock section; `randomDerivative_tendsto` transports strong Bochner-L² convergence. This precisely isolates an analytic transfer step for the manuscript residual `-∂_w(ρ_ε*(CL))`: proving the kernel itself lies in the domain and converges there still requires actual Brownian local time and coefficient estimates.
+
+Target build, exact types, full Lake build 4230 jobs, transitive audit 3201 declarations, only propext/Classical.choice/Quot.sound. Logs `.lake/campaign-ibm-singular-03-*`.
