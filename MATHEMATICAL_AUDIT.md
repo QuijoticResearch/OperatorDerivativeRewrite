@@ -6188,3 +6188,7 @@ For a closed observable subspace with a dense restricted domain, every source-ad
 ## IBM observable-core density criterion — 2026-10-13
 
 Source-domain density plus invariance of that domain under observable orthogonal projection implies density of the restricted derivative domain. IBM projection invariance is not established. Full build 4244 jobs; 3269 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM positive-time scenery observable instantiation — 2026-10-13
+
+The abstract closed restriction specializes to the existing dense Gaussian observable derivative for the positive-time coordinates of the verified two-sided IBM scenery source. This is a source-factor result, not compression onto the full IBM observable sigma-algebra. Full build 4245 jobs; 3274 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.

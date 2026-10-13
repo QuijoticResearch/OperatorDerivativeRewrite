@@ -1,3 +1,4 @@
+import Foundation.IBMSceneryObservableRestriction
 import Foundation.ObservableCoreDensity
 import Foundation.ObservableProjectedDivergence
 import Foundation.ObservableRestriction
