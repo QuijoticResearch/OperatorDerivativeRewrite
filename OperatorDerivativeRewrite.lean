@@ -187,3 +187,5 @@ import Foundation.GaussianVolatilityProcess
 import Foundation.GaussianPowerVolterra
 
 import Foundation.GaussianFutureRigidity
+
+import Foundation.GaussianKernelTransfer
