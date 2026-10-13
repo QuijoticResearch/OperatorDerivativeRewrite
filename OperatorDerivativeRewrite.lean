@@ -201,3 +201,4 @@ import Foundation.GaussianOUCore
 import Foundation.FractionalCovarianceMatrices
 import Foundation.BrownianCovariancePowers
 import Foundation.FractionalWickCovariance
+import Foundation.FractionalForcingKernel

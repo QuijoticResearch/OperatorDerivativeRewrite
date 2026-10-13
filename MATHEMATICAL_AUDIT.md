@@ -6080,3 +6080,15 @@ Verification: all 24 new public declarations compiled and explicit types checked
 This verifies the source manuscript's Wick Gram interpretation, including correlated times and degenerate directions. It does not identify a fractional Laplacian or a covariance-relative curvature matrix with the Gaussian OU number operator. The degree and spatial-innovation indices are different.
 
 Verification: 6 new declarations, exact types checked, full Lake build 4197 jobs, full transitive audit 3102 declarations and only propext, Classical.choice, Quot.sound. Logs `.lake/campaign-curvature/03-*`.
+
+## Fractional stochastic evolution E1: exact one-mode forcing threshold
+
+The recursive C:/Operator/spde inventory contains two TeX manuscripts and no executable numerical sources, data, PDFs or Lean files. Both manuscripts' relevant definitions, proofs, limitations and retention experiments were inspected; see C:/Operator/ResearchAudits/SPDE_SOURCE_AUDIT.md and its hash manifest. Full manuscript claims remain UNVERIFIED.
+
+`Foundation/FractionalForcingKernel.lean` extends the actual power-Volterra construction with necessity, not just sufficiency: `power_kernel_memLp_iff` proves for t>0 that 1_(0,t](s)(t-s)^beta is in Lebesgue L² iff beta>-1/2. `response_memLp_iff` proves for alpha>0 and t>0 that the normalized zero-generator forcing kernel (t-s)^(alpha-1)/Gamma(alpha) is in L² iff alpha>1/2. The proof uses the actual improper-integral criterion and reflection, with Gamma positivity, not a totalized integral.
+
+`responseVector`, its a.e. representative theorem, and `stochasticResponse` give a genuine normalized deterministic time vector and isonormal Gaussian variable. `responseVector_norm_sq` and `stochasticResponse_norm_sq` prove the exact energy t^(2alpha-1)/(Gamma(alpha)^2*(2alpha-1)), including t=0. `stochasticResponse_derivative` proves actual closed Gaussian derivative graph membership. `stochasticResponse_zero` and `stochasticResponse_order_one` handle zero time and recover the existing Brownian coordinate at alpha=1.
+
+This is a zero-generator one-mode forcing realization, not yet a Caputo solution theorem, a nonzero-rate Mittag-Leffler response, a continuous-path modification or an infinite-dimensional SPDE. It exposes the scalar temporal obstruction that spatial regularity alone cannot remove. The source's whole-space cylindrical-noise Hilbert-Schmidt computation is independently invalid; nonzero Fourier multipliers on L²(R) are not HS just because their symbols are in L². Its blanket temporal Holder exponent, arbitrary-Q scaling, and alpha=2 decay bounds also require repair. These source defects are documented without changing the manuscripts.
+
+Verification: all 11 public declarations and explicit types checked. Full build 4198 jobs; full transitive audit 3113 declarations, only propext, Classical.choice, Quot.sound. Logs `.lake/campaign-evolution/01-*`.
