@@ -5976,3 +5976,17 @@ Verification: complete Lake build passed (4185 jobs); all 2906 audit declaration
 The coefficient and increment products are actual finite-moment Gaussian polynomial random variables. Domain membership and values follow from the pre-existing polynomial differentiation and independent Sobolev results; no sensitivity value is postulated. This tests the full derivative, not the bounded predictable adjoint J*. A bounded nonconstant Sobolev coefficient and a general intrinsic volatility-observable calculus remain separate obligations.
 
 Verification: all 24 new public declarations compiled and their explicit types were checked; full Lake build passed (4186 jobs), and 2930 transitive axiom checks used only `propext`, `Classical.choice`, `Quot.sound`. Logs: `.lake/campaign-volterra/05-*`.
+
+### Volterra campaign B/C/D: actual weighted random representer (2026-10-12)
+
+`Foundation/GaussianVolatilityRepresenter.lean` uses the preceding actual volatility, not an assumed gradient formula. Its `gradientField_graph` proves that the actual closed derivative of J sigma is the time-field embedding of `gradientField`. On the horizon (0,b], `coefficient` is measurable and at least one everywhere, and `coefficient_eq_field` identifies it with the actual volatility L² class.
+
+`quotient_memLp` proves genuine L² membership of `gradientField / coefficient` in the actual measure coefficient² dt dP. `representer` is this quotient class, and `representer_formula` proves, for the finite-horizon class,
+
+    kappa(r,omega) = 1 + 1_(0,a](r) 2 B_a(omega) (B_b(omega)-B_a(omega)).
+
+The derivative graph identity requires a≤b. The nondegenerate randomness conclusions require 0<a<b. `correction_not_constant` rules out every AE scalar constant for 2B_a(B_b−B_a), using its actual predictable integral's zero mean and the independently proved nonzero sensitivity norm. `representer_not_deterministic` then rules out every deterministic time function k(r), even without requiring its measurability as a separate hypothesis: weighted/base measure equivalence, AE Fubini, and the positive measure of (0,a] reduce it to `correction_not_constant`.
+
+`representer_sq_integrable` and `gradientField_sq_integrable` prove finiteness before the energy identity is used. `coefficient_mul_representer` recovers the already constructed source gradient. `representer_energy` identifies weighted representer energy with finite-horizon source gradient energy. No reciprocal moments, prescribed derivative data, or intrinsic-observable derivative are assumed. This is a concrete positive unbounded polynomial example, not a claim about every bounded or every predictable volatility.
+
+All 21 public declarations, including the horizon-measure abbreviation, have explicit type checks and axiom audit entries. Full Lake build: 4187 jobs. Full transitive audit: 2951 declarations, only `propext`, `Classical.choice`, `Quot.sound`. Logs: `.lake/campaign-volterra/06-*`. Original manuscript and source SHA256 hashes remain unchanged. No dependency pin changed.
