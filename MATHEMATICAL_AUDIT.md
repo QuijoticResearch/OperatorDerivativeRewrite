@@ -6264,3 +6264,7 @@ For measurable continuous Brownian-source modifications supplied as explicit hyp
 ## Exact finite IBM quartic crossing deficit — 2026-10-13
 
 Under supplied measurable continuous source modifications, the joint finite quartic expectation equals `3` times total ordered interval length minus the expected zero-crossing correction of the reflected clock. The correction is integrable and nonnegative. Proving its decay for deterministic refining partitions is the exact missing expectation-limit step. Full build 4265 jobs; 3352 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## EJP source-first finite spatial smoothing — 2026-10-13
+
+The paper's page-4 mollifier second-moment and Cameron–Martin energy estimates now have independently verified finite-positive-kernel analogues on the constructed Brownian spectral scenery, before any continuous-path assumption. The weighted first-moment error, radius bound, Gaussian fourth moment, and L² convergence for shrinking finite kernels are proved. Extension to genuine continuous convolution and Malliavin derivative kernels remains open. Full build 4266 jobs; 3366 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
