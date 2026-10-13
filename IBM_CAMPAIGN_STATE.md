@@ -93,3 +93,9 @@ Target build, exact types, full Lake build 4230 jobs, transitive audit 3201 decl
 `Foundation/IBMDeltaBoundary.lean` proves `delta_zero_memHminusOne` for Mathlib's actual tempered Dirac distribution on ℝ, using its Fourier transform and the integrability of `(1+|ξ|²)^(-1)` in dimension one. `deltaZeroHminusOne` bundles the boundary mass in the same concrete H⁻¹ space as the derivative residual, with an exact underlying-distribution theorem. This verifies the deterministic target for the manuscript's `L_t^0(Y) f'(x) δ_0`, but not the local-time random coefficient, boundary-layer approximation, or stochastic limit.
 
 Target build, exact types, full Lake build 4231 jobs, complete transitive axiom audit 3204 declarations, only propext/Classical.choice/Quot.sound. Logs `.lake/campaign-ibm-singular-04-*`.
+
+## Random Dirac boundary channel — 2026-10-13
+
+`Foundation/IBMRandomBoundary.lean` constructs a bounded scalar-to-H⁻¹ map `a ↦ a δ₀`, then lifts it to `randomBoundaryCLM : L²(Ω_Y;ℂ) →L[ℂ] L²(Ω_Y;H⁻¹(ℝ))` on the verified Gaussian clock factor. It proves the almost-everywhere section formula and convergence transfer. Thus any *future verified* L² clock-local-time coefficient can enter the same dual space as the interior derivative residual. No local-time coefficient, boundary-layer convergence, or full first-chaos correction is asserted here.
+
+Target build, exact public types, full Lake build 4232 jobs, complete transitive axiom audit 3209 declarations with only propext/Classical.choice/Quot.sound. Logs `.lake/campaign-ibm-singular-05-*`.

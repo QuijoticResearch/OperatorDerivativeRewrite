@@ -6144,3 +6144,7 @@ Bounded differentiation now acts from L²(clock;L²(space)) to L²(clock;H⁻¹(
 ## IBM origin Dirac boundary mass in H⁻¹ — 2026-10-13
 
 Mathlib's actual tempered Dirac distribution at zero is proved to belong to H⁻¹(ℝ) and bundled there. This is only the deterministic boundary target, not a local-time convergence theorem. Full build 4231 jobs; 3204 transitive axiom checks, only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM random H⁻¹ Dirac boundary channel — 2026-10-13
+
+A bounded map takes square-integrable clock coefficients to H⁻¹-valued random Dirac masses, with section identity and convergence transfer. Brownian local-time coefficients remain unconstructed. Full build 4232 jobs; 3209 transitive axiom checks, only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
