@@ -196,3 +196,4 @@ import Foundation.FractionalSpectralGeometry
 import Foundation.FractionalGaussianProcess
 import Foundation.FractionalPredictionObstruction
 import Foundation.FractionalControlledEstimate
+import Foundation.FractionalGaussianOperators
