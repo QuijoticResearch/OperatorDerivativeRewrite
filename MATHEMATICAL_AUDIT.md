@@ -5897,3 +5897,26 @@ For arbitrary bounded continuous multivariate Psi and arbitrary finite stopped-c
 
 Exact limitation: this proves mixed weighted quadratic-variation convergence on ALIGNED refining meshes, not arbitrary meshes. Construction of a common refining mesh containing every stopping horizon, and convergence of all first/second-derivative sums on that same mesh, remain assembly obligations. The earlier independently capped uniform-sum convergence theorems are not silently substituted for a common-partition argument. No general nonlinear Ito identity is asserted at this milestone.
 A3 verification: full Lake build PASS (4,177 jobs); transitive axiom audit PASS (2,804 declarations; all 19 new public declarations; standard three foundational axioms only). Exact elaborated raw-error convergence hypotheses inspected. No earlier theorem body or dependency pin changed.
+
+## Brownian endgame A4: multivariate Taylor and genuine Gaussian remainder convergence (2026-10-12)
+
+`Foundation/FiniteTaylorRemainder.lean` defines the actual affine-line composition, derivative of the actual Hessian, and second-order remainder (16,18,22). For any finite coordinate type (including empty), `third_line` (29) identifies the third actual scalar derivative along x+t v with D(D2Phi)(x+t v)[v,v,v]. `third_line_bound` (43) and `remainder_bound` (50) assume Phi is C3 and the explicit trilinear bound
+
+    forall z v w u, norm(D(D2Phi)(z)[v,w,u]) <= M norm(v) norm(w) norm(u), M>=0.
+
+This is a bound on an actual derivative, not a hypothesis about a Taylor error or independently prescribed derivative data. It is expressed on vector arguments to avoid nested continuous-linear-map norm elaboration issues in the pinned environment. It yields norm(R(x,v)) <= (M/6) norm(v)^3. `line_contDiff`, `remainder_continuous`, and `taylor_identity` prove regularity and the finite actual mixed-partial expansion. The algebraic expansion alone is not presented as the substantive Taylor estimate.
+
+`Foundation/GaussianStoppedTaylor.lean` treats cells s<=t aligned with EVERY stopping horizon: r_i<=s or t<=r_i. `vector_increment` (25) identifies the entire stopped-coordinate increment as Delta B times its deterministic active vector; `activeVector_norm_le` and `vector_increment_norm_le` (20,33) give a dimension-free bound in the finite-product sup norm. `rawRemainder` (44) is the actual multivariate Taylor error. `rawRemainder_measurable`, `rawRemainder_bound`, and `rawRemainder_memLp` (48,54,61) prove measurability, the pointwise cubic estimate, and genuine L2 integrability from the existing actual Gaussian cubic increment. No integrability or independence of errors is assumed.
+
+`remainderL2_coeFn` (69) and `remainderSum_coeFn` (99) identify the constructed L2 elements with the actual individual and summed pointwise remainders. `remainderL2_norm_sq` (72) proves
+
+    norm(R_cell)^2 <= 15 (M/6)^2 (t-s)^3.
+
+`remainderL2_mesh_bound` (81) and `remainderSum_mesh_bound` (113) prove
+
+    norm(sum R_cell) <= (M/6) sqrt(15) sqrt(mesh) (last-first).
+
+The argument uses the triangle inequality and a telescoping sum of interval lengths, not false independence or cancellation of Taylor errors. `remainderSum_tendsto` (126) proves convergence to zero in actual Gaussian L2 along any monotone, aligned meshes with nonnegative mesh bounds tending to zero and uniformly bounded total lengths. Empty coordinates, repeated/zero horizons and zero-length cells are allowed. There are no hidden first-/second-derivative boundedness assumptions in this remainder theorem; those bounds enter the independently verified derivative-field constructions when assembling Ito.
+
+Remaining A obligation at this checkpoint: construction of one common aligned mesh and stochastic/drift approximation on that same mesh, followed by the exact finite Taylor identity and limit assembly. The mixed quadratic-variation and multivariate remainder limits are now proved, but an arbitrary nonlinear stopped-cylinder Ito identity is NOT yet claimed. This milestone does not extend to unrestricted C2 multivariate Phi or general nonseparable C1,2 time dependence.
+A4 verification: full Lake build PASS (4,179 jobs); all 2,829 transitive axiom checks PASS, including all 25 new public declarations; only propext, Classical.choice and Quot.sound. Explicit public types inspected. Earlier theorem bodies and dependency pins unchanged.
