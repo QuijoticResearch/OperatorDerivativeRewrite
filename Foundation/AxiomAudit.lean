@@ -1,3 +1,4 @@
+import Foundation.IBMUniformSmoothing
 import Foundation.IBMConcreteMollifier
 import Foundation.IBMContinuousMalliavin
 import Foundation.IBMWholeLineSmoothing
@@ -3990,3 +3991,5 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.concreteMollifier_source_derivative
 #print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.concreteMollifier_spatial_deriv
 #print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.concreteMollifier_spatial_second_deriv
+#print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.concreteMollifier_uniform_norm_le
+#print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.concreteMollifier_tendstoUniformly

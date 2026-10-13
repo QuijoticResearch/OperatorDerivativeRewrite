@@ -321,3 +321,7 @@ Full Lake build 4266 jobs, exact public types, complete transitive audit 3376 de
 ## Concrete normalized Gaussian scenery mollifier — 2026-10-13
 
 `Foundation/IBMConcreteMollifier.lean` applies the existing explicit `C∞` normalized bump family to the actual source Gaussian L² scenery. Shifted support and restricted mass are proved. The squared L² error is at most `2/(n+1)` and the canonical Gaussian fourth error moment is at most `3(2/(n+1))²`; fixed-point strong L² convergence follows. Each mollified class has first/second spatial derivatives in Gaussian L² and an exact full closed Malliavin derivative equal to the integrated source Hilbert kernel. No sample-path differentiability, joint measurable version, or IBM clock composition is claimed. Full build 4273 jobs; types checked; 3424 transitive axiom outputs using only the permitted three axioms.
+
+## Uniform source-first mollifier convergence — 2026-10-13
+
+`Foundation/IBMUniformSmoothing.lean` proves the explicit normalized Gaussian L² mollifiers converge uniformly in spatial `x` on all of `ℝ`, using the previously verified radius-independent norm error `≤ √(2/(n+1))`. This is a Banach-valued uniform convergence theorem, not a sample-path assertion. Full build 4274 jobs, checked types, 3426 transitive axiom outputs with only the three permitted axioms.
