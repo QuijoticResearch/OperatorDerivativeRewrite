@@ -6224,3 +6224,7 @@ The weighted-L² H⁻¹ pairing has exactly the H⁻¹ operator norm and uniquel
 ## IBM signed spatial overlap — 2026-10-13
 
 The covariance of two source Brownian-scenery increments is the signed spatial overlap of their oriented nonnegative intervals. Under explicit continuous-modification hypotheses, the same exact formula holds conditionally for two IBM increments at any fixed clock sample. This is covariance structure, not a quartic-variation limit. Full build 4254 jobs; 3301 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM reflected-clock fourth-moment correction — 2026-10-13
+
+The reflected-clock squared increment equals the unreflected squared increment minus a nonnegative penalty supported exactly on zero-crossing endpoints. The conditional fourth moment inherits the exact penalty and a sharp same-sign equality. Brownian-clock expectation convergence remains open. Full build 4256 jobs; 3311 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
