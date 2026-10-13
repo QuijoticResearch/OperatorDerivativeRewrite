@@ -1,3 +1,4 @@
+import Foundation.GaussianFutureRigidity
 import Foundation.GaussianPowerVolterra
 import Foundation.GaussianVolatilityProcess
 import Foundation.GaussianStoppedMeshFields
@@ -3364,3 +3365,8 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.value_exponent_zero
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.normalizedVector
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianPowerVolterra.normalizedVector_norm_sq
+
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianFutureRigidity.future_integral_past_zero
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianFutureRigidity.future_integral_eq_past_iff
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianFutureRigidity.deterministic_factor_zero
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianFutureRigidity.parameter_deterministic_representer
