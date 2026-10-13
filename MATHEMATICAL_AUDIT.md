@@ -6280,3 +6280,9 @@ Two literal finite weighted averages of the verified Brownian scenery have the e
 ## EJP paper crosswalk — 2026-10-13
 
 The local EJP manuscript's source laws, mollifier estimates, Itô–Tanaka formula, first-chaos obstruction, dual closure, and bidegree atlas have been mapped to exact Lean proofs and missing bridges in EJP2605_044RA0_LEAN_CROSSWALK.md. The new proofs cover finite source-first smoothing and covariance; continuous convolution and the paper's actual stochastic correction remain open.
+
+## Continuous IBM scenery: compact-kernel Bochner construction — 2026-10-13
+
+`Foundation/IBMContinuousScenery.lean` constructs the verified Brownian scenery as a continuous, strongly measurable map `sourceScenery : ℝ → GaussianL2` with exact increment energy `sourceScenery_increment_sq`. It proves local Bochner integrability on every compact interval. For any continuous real kernel `ρ` and any interval `[a,b]`, `kernelDirection` and `kernelScenery` are actual Bochner integrals of the Hilbert directions and Gaussian L² coordinates. `kernelScenery_eq_embedding` commutes the isonormal linear isometry with integration, and `kernelScenery_norm` gives its exact energy. `direction_inner_kernel` and `kernelScenery_cross_moment_source` identify the continuous kernel's covariance against each original scenery coordinate by integrating the Brownian covariance. No continuous sample-path modification is assumed. These theorems do not yet identify a whole-line compactly supported mollifier, the second/fourth smoothing error bound, spatial or Malliavin derivative fields, or random-time IBM evaluation.
+
+The full Lake build passed (4267 jobs), exact public theorem types were checked, and the transitive axiom audit printed 3383 declarations with only `propext`, `Classical.choice`, and `Quot.sound`. Logs: `.lake/campaign-ibm-cont-01-{build,types,axioms}.log`.

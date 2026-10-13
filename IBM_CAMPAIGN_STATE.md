@@ -293,3 +293,7 @@ Full Lake build 4266 jobs, exact public types, complete transitive audit 3376 de
 ## EJP paper-to-Lean claim audit — 2026-10-13
 
 `EJP2605_044RA0_LEAN_CROSSWALK.md` records the manuscript's main claims against exact verified Lean declarations and separates finite source-kernel mathematics, supplied continuous-path results, and unproved continuum stochastic-calculus steps. The key reverse-order next step is a Bochner-valued convolution of the verified Gaussian Hilbert directions, before the random-time composition or Skorohod/Itô identification. No claim of a full formalized EJP Itô–Tanaka theorem or actual first-chaos closure is made.
+
+## Continuous source-first IBM scenery — 2026-10-13
+
+`Foundation/IBMContinuousScenery.lean` verifies strong measurability, local Bochner integrability, compact-kernel Gaussian L² convolution, exact transfer through the isonormal embedding, and the continuous-kernel cross moment against a source coordinate. The kernel is continuous on a finite interval; no whole-line mollifier or normalization has yet been instantiated. No sample-path Brownian modification, random-time evaluation, Malliavin derivative kernel, or IBM Itô correction is claimed. Full build: 4267 jobs. Public theorem types checked. Transitive audit: 3383 declaration outputs, only the three permitted axioms. Logs `.lake/campaign-ibm-cont-01-*`.

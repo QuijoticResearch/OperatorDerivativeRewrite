@@ -1,3 +1,4 @@
+import Foundation.IBMContinuousScenery
 import Foundation.IBMFiniteScenerySmoothing
 import Foundation.IBMJointQuartic
 import Foundation.IBMObservableQuartic
