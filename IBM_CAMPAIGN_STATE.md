@@ -67,3 +67,11 @@ Target builds, exact checks of all 10 new public statements, full Lake build (42
 ## Conditional fourth-increment milestone
 
 `Foundation/IBMConditionalIncrements.lean:19` proves the exact conditional fourth moment of a composed-path increment at any fixed clock sample: `3 * ||C_t|-|C_s||²`. It transfers the verified two-sided scenery fourth-increment theorem through deterministic-time a.e. modification equality. This is a quantitative estimate for the conditional IBM process, not an unconditional increment bound until the clock is integrated and continuous source modifications are constructed. Full Lake build 4211 jobs, exact type check, 3185 transitive axiom checks with only propext/Classical.choice/Quot.sound. Logs `.lake/campaign-ibm/09-*`.
+
+## IBM singular campaign: deterministic L²-to-H⁻¹ derivative — 2026-10-13
+
+Initial HEAD `cfa08f0b59643f6e0bf8e72405833a99109b82f9`, with the same twelve unrelated untracked documents. The previous IBM campaign's source coordinate laws, conditional composition and conditional finite-dimensional laws are verified; continuous source modifications and unconditional IBM remain open. The three IBM manuscripts and `C:/Operator/ResearchAudits/NONCLASSICAL_ARCHIVE_SOURCE_AUDIT.md` were consulted. Their stochastic singularity and closure claims remain UNVERIFIED.
+
+`Foundation/IBMNegativeSobolev.lean` applies Mathlib's actual Fourier/Bessel-potential Sobolev infrastructure. For every `u : Lp ℂ 2 volume`, `l2_derivative_memHminusOne` proves that the distributional derivative in the unit spatial direction belongs to `H^{-1}(ℝ)`. `l2Derivative` bundles that derivative in the concrete complete Sobolev space; `l2Derivative_toDistr` identifies its underlying distribution, and `l2Derivative_add`/`l2Derivative_smul` give the algebraic linear map `l2DerivativeLinear`. This result does not yet prove a quantitative operator norm or continuity, nor identify an IBM kernel, local time, or stochastic limit. The Bessel potential uses Mathlib's Fourier convention.
+
+Target build, exact types, full Lake build (4228 jobs), and complete transitive audit (3191 declarations; only propext/Classical.choice/Quot.sound) passed. Logs `.lake/campaign-ibm-singular-01-*`. No prior proof body, manuscript, pin or unrelated untracked file changed.

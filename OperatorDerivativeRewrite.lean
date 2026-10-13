@@ -1,3 +1,4 @@
+import Foundation.IBMNegativeSobolev
 import Foundation.IBMConditionalIncrements
 import Foundation.IBMConditionalFiniteDim
 import Foundation.IBMConditionalCovariance

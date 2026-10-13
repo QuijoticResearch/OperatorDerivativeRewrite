@@ -1,3 +1,4 @@
+import Foundation.IBMNegativeSobolev
 import Foundation.IBMConditionalIncrements
 import Foundation.IBMConditionalFiniteDim
 import Foundation.IBMConditionalCovariance
@@ -3705,3 +3706,9 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMConditionalFiniteDim.conditional_isGaussianProcess
 #print axioms OperatorDerivativeRewrite.Foundation.IBMConditionalFiniteDim.conditional_finite_dim_gaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMConditionalIncrements.conditional_increment_fourth
+#print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolev.l2_derivative_memHminusOne
+#print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolev.l2Derivative
+#print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolev.l2Derivative_toDistr
+#print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolev.l2Derivative_add
+#print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolev.l2Derivative_smul
+#print axioms OperatorDerivativeRewrite.Foundation.IBMNegativeSobolev.l2DerivativeLinear
