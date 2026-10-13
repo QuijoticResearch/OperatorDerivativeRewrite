@@ -5966,3 +5966,13 @@ Verification: complete Lake build PASS (4184 jobs); all 2894 transitive axiom ch
 This is deterministic Hilbert transfer. It does not identify K with a covariance square root, establish a specific fractional Brownian kernel, or turn a bounded adjoint into the full Malliavin derivative. Those distinctions are necessary for the manuscript's Theorem F.
 
 Verification: complete Lake build passed (4185 jobs); all 2906 audit declarations passed with only `propext`, `Classical.choice`, `Quot.sound`. Explicit elaborated types are in `.lake/campaign-volterra/04-types.log`; build/audit logs use the same prefix. All twelve new public declarations are audited.
+
+### Volterra campaign B/D: positive random polynomial volatility (2026-10-12)
+
+`Foundation/GaussianPositiveVolatility.lean` constructs the actual predictable field sigma = 1 on (0,a], 1+B_a² on (a,b], zero outside (0,b], for 0≤a≤b. It is unbounded; no bounded-volatility theorem is substituted. `volatilityField_sobolev` proves membership in the independently defined predictable Sobolev domain, and `volatilityField_lower` proves sigma≥1 AE on (0,b]. `volatility_integral` identifies the actual Ito integral as B_a+(1+B_a²)(B_b−B_a).
+
+`coefficient_derivative` is the actual polynomial derivative 2B_a times the source time direction. `volatility_derivative_graph` proves the existing closed cylindrical derivative of the actual integral equals `fieldEmbedding sigma` plus `incrementSensitivity`. `sensitivity_coeFn` identifies that extra term with 2B_a(B_b−B_a) times the time direction 1_(0,a]. `sensitivity_norm_sq` proves its exact squared norm 4a²(b−a). Thus for 0<a<b, `sensitivity_ne_zero`, `volatility_not_original_derivative`, and `volatilityField_not_deterministic` prove nonvanishing correction, failure of D J sigma = sigma, and genuine nondeterminism of the time-probability L² class.
+
+The coefficient and increment products are actual finite-moment Gaussian polynomial random variables. Domain membership and values follow from the pre-existing polynomial differentiation and independent Sobolev results; no sensitivity value is postulated. This tests the full derivative, not the bounded predictable adjoint J*. A bounded nonconstant Sobolev coefficient and a general intrinsic volatility-observable calculus remain separate obligations.
+
+Verification: all 24 new public declarations compiled and their explicit types were checked; full Lake build passed (4186 jobs), and 2930 transitive axiom checks used only `propext`, `Classical.choice`, `Quot.sound`. Logs: `.lake/campaign-volterra/05-*`.
