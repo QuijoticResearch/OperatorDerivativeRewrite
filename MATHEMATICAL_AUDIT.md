@@ -6124,3 +6124,7 @@ The exact two-sided Brownian covariance kernel for the composed process is prove
 ## IBM conditional finite-dimensional Gaussian laws — 2026-10-13
 
 The composed process is a jointly Gaussian process on the scenery factor for every fixed clock sample under the continuous-modification hypothesis. Every finite conditional observation vector has a Gaussian law. Full build 4210 jobs, complete 3184-declaration transitive audit, only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM conditional fourth-increment identity — 2026-10-13
+
+Exact conditional fourth moment `3 * ||C_t|-|C_s||²` is proved under the continuous-scenery-modification hypothesis. Full build 4211 jobs, complete 3185-declaration audit, only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
