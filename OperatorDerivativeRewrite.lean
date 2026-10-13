@@ -1,3 +1,4 @@
+import Foundation.ObservableProjectedDivergence
 import Foundation.ObservableRestriction
 import Foundation.IBMBesselDuality
 import Foundation.IBMDualDistribution

@@ -1,3 +1,4 @@
+import Foundation.ObservableProjectedDivergence
 import Foundation.ObservableRestriction
 import Foundation.IBMBesselDuality
 import Foundation.IBMDualDistribution
@@ -3800,4 +3801,8 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.ObservableRestriction.derivative_domain
 #print axioms OperatorDerivativeRewrite.Foundation.ObservableRestriction.derivative_graph
 #print axioms OperatorDerivativeRewrite.Foundation.ObservableRestriction.derivative_isClosed
+#print axioms OperatorDerivativeRewrite.Foundation.ObservableProjectedDivergence.projectedSourceDivergence
+#print axioms OperatorDerivativeRewrite.Foundation.ObservableProjectedDivergence.projected_pairing
+#print axioms OperatorDerivativeRewrite.Foundation.ObservableProjectedDivergence.source_divergence_mem
+#print axioms OperatorDerivativeRewrite.Foundation.ObservableProjectedDivergence.divergence_source_value
 
