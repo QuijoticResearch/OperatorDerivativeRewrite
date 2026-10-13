@@ -6276,3 +6276,7 @@ The finite positive-kernel estimate now applies to the literal random sum of ver
 ## Exact covariance of finite smoothed scenery — 2026-10-13
 
 Two literal finite weighted averages of the verified Brownian scenery have the exact covariance given by the double weighted sum of the Brownian covariance kernel. No sign, normalization, or disjointness assumption is needed. This is finite-dimensional source geometry, not yet the continuum mollified field. Full build 4266 jobs; 3376 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## EJP paper crosswalk — 2026-10-13
+
+The local EJP manuscript's source laws, mollifier estimates, Itô–Tanaka formula, first-chaos obstruction, dual closure, and bidegree atlas have been mapped to exact Lean proofs and missing bridges in EJP2605_044RA0_LEAN_CROSSWALK.md. The new proofs cover finite source-first smoothing and covariance; continuous convolution and the paper's actual stochastic correction remain open.

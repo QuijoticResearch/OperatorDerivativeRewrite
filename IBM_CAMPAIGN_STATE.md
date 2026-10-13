@@ -289,3 +289,7 @@ Full Lake build 4266 jobs, exact public types, complete transitive audit 3372 de
 `Foundation/IBMFiniteScenerySmoothing.lean` proves `finiteScenery_cross_moment` for two literal finite weighted scenery sums, with no positivity, mass-one, or disjoint-support restriction. `finiteScenery_mean_zero` and `finiteScenery_cross_moment_covariance` identify the exact double weighted Brownian covariance-kernel sum, and `finiteScenery_covariance` states it as measure-theoretic covariance. This supplies a finite-dimensional source-first covariance calculus for the paper's smoothed fields. The continuum convolution kernel and its spatial derivatives are not yet recovered as limits, and no full fixed-ε first-chaos or Itô–Tanaka assertion follows from this finite statement alone.
 
 Full Lake build 4266 jobs, exact public types, complete transitive audit 3376 declarations with only subsets of propext/Classical.choice/Quot.sound. Logs `.lake/campaign-ejp-03-*`.
+
+## EJP paper-to-Lean claim audit — 2026-10-13
+
+`EJP2605_044RA0_LEAN_CROSSWALK.md` records the manuscript's main claims against exact verified Lean declarations and separates finite source-kernel mathematics, supplied continuous-path results, and unproved continuum stochastic-calculus steps. The key reverse-order next step is a Bochner-valued convolution of the verified Gaussian Hilbert directions, before the random-time composition or Skorohod/Itô identification. No claim of a full formalized EJP Itô–Tanaka theorem or actual first-chaos closure is made.
