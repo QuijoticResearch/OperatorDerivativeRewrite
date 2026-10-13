@@ -6232,3 +6232,7 @@ The reflected-clock squared increment equals the unreflected squared increment m
 ## IBM finite-family quartic expectation — 2026-10-13
 
 For any finite family of time intervals and each fixed clock sample, the sum of IBM fourth powers is integrable in the scenery variable and has exact expectation `3` times the sum of squared reflected-clock displacements. Its zero-crossing penalty and upper bound are explicit. No partition limit or full joint expectation has been proved. Full build 4257 jobs; 3316 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## Mixed fourth-power Gaussian moment — 2026-10-13
+
+Actual correlated first-chaos representatives satisfy `E[A⁴B⁴]=9u²v²+72uvc²+24c⁴`, derived through the verified fourth-Hermite decomposition and Wick orthogonality. The IBM reflected-clock substitution and partition variance estimates remain open. Full build 4258 jobs; 3321 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.

@@ -1,3 +1,4 @@
+import Foundation.GaussianQuarticWick
 import Foundation.IBMFiniteQuartic
 import Foundation.IBMConditionalReflectedMoments
 import Foundation.IBMConditionalOverlap
@@ -3866,3 +3867,8 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMFiniteQuartic.conditional_quarticSum_expectation
 #print axioms OperatorDerivativeRewrite.Foundation.IBMFiniteQuartic.conditional_quarticSum_crossing
 #print axioms OperatorDerivativeRewrite.Foundation.IBMFiniteQuartic.conditional_quarticSum_le
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianQuarticWick.value_four
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianQuarticWick.quartic
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianQuarticWick.quartic_coeFn
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianQuarticWick.quartic_inner
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianQuarticWick.firstChaos_fourth_product
