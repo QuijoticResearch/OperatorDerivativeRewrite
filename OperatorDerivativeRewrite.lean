@@ -1,3 +1,4 @@
+import Foundation.IBMJointQuartic
 import Foundation.IBMObservableQuartic
 import Foundation.IBMFourthTaylor
 import Foundation.IBMClockQuarticBound
