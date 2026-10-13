@@ -6030,3 +6030,15 @@ Verification: full Lake build passed, 4190 jobs. The transitive audit passed for
 This directly obstructs the original manuscript's claimed higher-order forecast remainder at s=0 when its leading representer lies in the initial past Hilbert space, hence is zero. Its claimed exponent min(4H,2H+1) exceeds 2H for all 0<H<1. The terminal variable is a genuine first-chaos coordinate with the actual closed derivative already proved in A3. The new theorem concerns mean-square increments, not a pathwise rough-path claim. A separate Taylor estimate for f(X_t) is a different, potentially valid statement and cannot silently replace the conditional-forecast claim.
 
 Verification: all 12 public declarations compiled; exact types checked; full Lake build passed (4191 jobs), transitive audit 3026 declarations with only propext, Classical.choice, Quot.sound. Logs `.lake/campaign-fractional/04-*`. Manuscripts remain unchanged.
+
+## Fractional Gaussian campaign A5: valid Taylor control for actual smooth observables
+
+`Foundation/FractionalControlledEstimate.lean` proves a distinct valid statement, without claiming to repair the conditional forecast theorem by relabeling it. For 0<H<1, f continuously twice differentiable on R and every x satisfying ||deriv(deriv f)(x)||<=M, `remainder_bound` applies actual one-dimensional Taylor theory to R(x,y)=f(y)-f(x)-deriv f(x)*(y-x). `remainder_memLp` proves genuine Gaussian L² membership of R(X_s,X_t). `remainderL2_norm_sq` proves
+
+    ||R(X_s,X_t)||_L²² <= (3 M²/4) |t-s|^(4H)
+
+for all nonnegative s,t, including equal times. No boundedness of f or f' and no independence of increments is assumed. `square_norm_sq` derives the fourth moment from the previously proved actual second-chaos pairing, so the estimate is not based on an assumed fractional Gaussian moment identity. `increment_coeFn` and `remainderL2_coeFn` identify actual representatives.
+
+This is a mean-square controlled estimate for a smooth composition f(X), not a conditional-prediction identity, a pathwise Gubinelli derivative theorem, or a rough integral construction. Continuous sample modifications and pathwise Hölder estimates remain separate.
+
+Verification: all 13 public declarations and explicit hypotheses checked. Full build passed (4192 jobs), transitive audit 3039 declarations, only propext, Classical.choice, Quot.sound. Logs `.lake/campaign-fractional/05-*`.
