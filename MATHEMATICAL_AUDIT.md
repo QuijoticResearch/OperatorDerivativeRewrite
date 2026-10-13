@@ -6010,3 +6010,13 @@ Verification: complete Lake build passed (4188 jobs); 2974 transitive axiom chec
 This is real spectral geometry. It is not a causal Volterra kernel or pathwise sample regularity. The result applies without exclusions at H=1/2. The subsequent process realization and Cameron–Martin interpretation remain distinct constructions.
 
 Verification: full Lake build 4189 jobs, 2992 transitive axiom checks (all 18 new public declarations), only propext, Classical.choice, Quot.sound. Exact public types checked. Logs `.lake/campaign-fractional/02-*`.
+
+## Fractional Gaussian campaign A3: completed integrands and actual Gaussian realization
+
+`Foundation/FractionalGaussianProcess.lean` constructs `integrandSpace` as the closed Hilbert span of the independently normalized spectral vectors, proves completeness, and defines `kernelVector`. `kernelVector_inner` is exactly the fractional Brownian covariance for nonnegative times and 0<H<1. `cameronMartinFunction_injective` proves that these vectors define an injective function realization; `cameronMartin_increment_bound` proves the H-Hölder estimate with the actual Hilbert norm.
+
+`process_isGaussianProcess`, `process_covariance`, `process_centered`, and `process_law` construct a genuine jointly Gaussian process on the existing countable Gaussian product, with marginal variance t^(2H). `process_memLp`, `increment_sq_integrable`, and `increment_secondMoment` establish genuine moment integrability and the exact increment variance |t-s|^(2H). `value_zero` handles time zero; `value_increment_norm` gives the exact L² distance. `value_derivative_graph` identifies every coordinate's actual closed Gaussian derivative with its constant first-chaos direction.
+
+This is a spectral Gaussian realization, not yet a continuous sample-path modification or a causal Brownian Volterra representation. Its complete deterministic Hilbert space is explicit. A full intrinsic integrand-valued divergence/derivative identification and an intrinsic fractional Clark–Ocone formula are not claimed.
+
+Verification: full Lake build passed, 4190 jobs. The transitive audit passed for 3014 declarations, including all 22 new public declarations, with only propext, Classical.choice, Quot.sound. Explicit public types checked in `.lake/campaign-fractional/03-types.log`. Existing source bodies, pins, and unrelated untracked documents preserved.
