@@ -1,3 +1,4 @@
+import Foundation.IBMMollifier
 import Foundation.IBMMollifiedProcess
 import Foundation.IBMMollifiedMeasurability
 import Foundation.IBMMollifiedScenery
@@ -3772,3 +3773,13 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedProcess.Z_joint_measurable
 #print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedProcess.path
 #print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedProcess.path_measurable
+
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifier.bump
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifier.kernel
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifier.kernel_nonneg
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifier.kernel_integral
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifier.kernel_smooth
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifier.kernel_compactSupport
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifier.bump_outer_tendsto_zero
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifier.convolution_tendsto
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifier.process_tendsto

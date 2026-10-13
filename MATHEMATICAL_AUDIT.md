@@ -6164,3 +6164,7 @@ For a supplied continuous path and compactly supported C² kernel, actual Lebesg
 ## IBM measurable mollified random-time process — 2026-10-13
 
 For supplied continuous measurable source families and a compactly supported C² kernel, the actual convolution fields are jointly measurable, and their random-time composition is a measurable continuous-path-valued process on the joint product factor. Brownian continuous-modification existence is still open. Full build 4237 jobs; 3242 transitive axiom checks, only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM concrete normalized mollifier — 2026-10-13
+
+A specific smooth nonnegative unit-mass bump sequence with shrinking support now instantiates the convolution kernel, and its pathwise convolution converges pointwise to every supplied continuous scenery path, including at a fixed random clock argument. The continuous source modifications, stronger stochastic convergence, derivative limits and singular correction remain open. Full build 4239 jobs; 3250 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
