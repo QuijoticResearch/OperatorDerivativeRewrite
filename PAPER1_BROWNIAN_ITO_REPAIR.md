@@ -79,3 +79,17 @@ The corrected scalar Ito formula and the terminal representation are different i
 The strongest corrected functional scope at this checkpoint is: genuine scalar C2 Ito; finite-rank C1,2; previous additive smooth stopped cylinders; and arbitrary mixed quadratic stopped cylinders. The actual bounded-adjoint identity includes the projected drift correction. Full D, bounded J*, running derivatives, and path-functional derivatives remain distinct. New full-D membership is not inferred from a bounded-adjoint identity.
 
 Before claiming arbitrary smooth functional Ito, prove simultaneous approximation/partition estimates for general C1,2 and multivariate Taylor/mixed quadratic-variation convergence for smooth stopped cylinders. The quadratic covariance integral is already verified, but does not replace the latter convergence theorem. Further polynomial-growth localization and pathwise common-null-set versions are separate obligations. The Brownian readiness assessment and concrete reuse declarations are recorded in MATHEMATICAL_AUDIT.md. The original manuscript and legacy Lean source remain unchanged.
+
+## Brownian endgame checkpoint (2026-10-12)
+
+The missing multivariate ingredients are now substantially reduced, but the final arbitrary nonlinear stopped-cylinder Ito formula is still OPEN. New exact declarations are listed in BROWNIAN_ENDGAME_REPORT.md and MATHEMATICAL_AUDIT.md:
+
+- GaussianStoppedComposition: actual arbitrary finite stopped-coordinate L2 vector, past measurability, Lipschitz and bounded-continuous nonlinear composition.
+- FiniteCovarianceHessian and GaussianStoppedSmoothFields: actual derivatives, symmetric Hessian, positive semidefinite covariance contraction, independently defined predictable gradient field and genuine Bochner Hessian drift.
+- GaussianStoppedQuadraticVariation.rawMixedError_sq_tendsto: genuine bounded-continuous-coefficient mixed quadratic-variation convergence on aligned meshes.
+- FiniteTaylorRemainder.remainder_bound and GaussianStoppedTaylor.remainderSum_tendsto: actual C3 multivariate Taylor estimate and Gaussian-L2 remainder convergence, using a bounded actual third trilinear derivative.
+- GaussianRefiningPartitions and GaussianStoppedMeshFields: stochastic and Hessian sums converge on caps of the SAME arbitrary refining mesh, rather than unrelated uniform grids.
+
+The next exact obligation is geometric common aligned-mesh construction and identification/assembly of its finite Taylor sum. No new general nonlinear Ito theorem is being inferred merely from having these separate limits. The strongest complete stopped-cylinder identities remain the preserved additive smooth and arbitrary mixed quadratic formulas. The strongest time-dependent nonseparable result remains the preserved finite-rank C1,2 theorem.
+
+For the operator-first interpretation, adjointness alone cannot imply the diffusion chain rule: the already verified Poisson maximal adjoints satisfy both adjoint identities while PoissonPolynomialExamples.ordinary_chain_rule_fails proves the ordinary square chain rule fails. The full derivative D, its predictable projection on dom(D), the bounded J* defined on all scalar L2, and actual running cylinder derivatives must continue to be distinguished. No new full-D membership or independent second-order closability follows from the present approximation results. The bounded sine counterdiagnostic and genuine drift-projection correction remain unchanged.

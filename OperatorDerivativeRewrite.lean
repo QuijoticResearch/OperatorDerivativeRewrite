@@ -179,3 +179,5 @@ import Foundation.GaussianStoppedSmoothFields
 import Foundation.GaussianStoppedQuadraticVariation
 import Foundation.FiniteTaylorRemainder
 import Foundation.GaussianStoppedTaylor
+import Foundation.GaussianRefiningPartitions
+import Foundation.GaussianStoppedMeshFields
