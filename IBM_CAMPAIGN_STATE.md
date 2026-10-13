@@ -105,3 +105,9 @@ Target build, exact public types, full Lake build 4232 jobs, complete transitive
 `Foundation/IBMDualAssembly.lean` defines the concrete input spaces `InteriorInput = L²(Ω_Y;L²(ℝ,ℂ))` and `BoundaryInput = L²(Ω_Y;ℂ)`, and the output `DualOutput = L²(Ω_Y;H⁻¹(ℝ))`. `dualAssemblyCLM` is the bounded sum of spatial distributional differentiation and multiplication of the origin Dirac mass by a clock coefficient. `dualAssembly_norm_le` controls the two channels separately, and `dualAssembly_tendsto` proves convergence when both inputs converge in their stated spaces. These are explicit conditional analytic transfer statements; no actual IBM correction has been identified as an input pair, and no local-time estimate has been assumed.
 
 Exact public types, target build, full Lake build 4233 jobs, and complete transitive axiom audit 3216 declarations with only propext/Classical.choice/Quot.sound passed. Logs `.lake/campaign-ibm-singular-06-*`.
+
+## Conditional second spatial chain rule for mollified scenery — 2026-10-13
+
+`Foundation/IBMMollifiedChainRule.lean` proves the exact identity `deriv (deriv (r ↦ f(x+U r))) r = f₂(x+U r) (V r)² + f₁(x+U r) W r`, assuming actual pointwise `HasDerivAt U V`, `HasDerivAt V W`, `HasDerivAt f f₁`, and `HasDerivAt f₁ f₂`. It also proves the first and second HasDerivAt statements. These explicit spatial derivative hypotheses will be discharged only after an actual mollified scenery is constructed; the module makes no Malliavin-derivative or Brownian local-time assertion.
+
+Target build, exact types, full Lake build 4234 jobs, transitive axiom audit 3220 declarations, only propext/Classical.choice/Quot.sound. Logs `.lake/campaign-ibm-singular-07-*`.

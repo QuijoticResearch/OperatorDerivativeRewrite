@@ -1,3 +1,4 @@
+import Foundation.IBMMollifiedChainRule
 import Foundation.IBMDualAssembly
 import Foundation.IBMRandomBoundary
 import Foundation.IBMDeltaBoundary
@@ -3742,3 +3743,7 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMDualAssembly.dualAssemblyCLM_apply
 #print axioms OperatorDerivativeRewrite.Foundation.IBMDualAssembly.dualAssembly_norm_le
 #print axioms OperatorDerivativeRewrite.Foundation.IBMDualAssembly.dualAssembly_tendsto
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedChainRule.g
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedChainRule.g_hasDerivAt
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedChainRule.g_second_hasDerivAt
+#print axioms OperatorDerivativeRewrite.Foundation.IBMMollifiedChainRule.deriv_deriv_g

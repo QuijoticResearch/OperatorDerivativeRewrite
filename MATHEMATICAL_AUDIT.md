@@ -6152,3 +6152,7 @@ A bounded map takes square-integrable clock coefficients to H⁻¹-valued random
 ## IBM interior/boundary H⁻¹ assembly — 2026-10-13
 
 A bounded operator assembles convergent interior L² spatial kernels and square-integrable clock boundary coefficients into L²(clock;H⁻¹(space)), with a two-channel norm bound. No actual IBM correction kernel is asserted. Full build 4233 jobs; 3216 transitive axiom checks, only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM conditional mollified spatial chain rule — 2026-10-13
+
+The exact second-derivative formula for f(x+U_r) is verified under explicit actual spatial derivative fields U,V,W and test-function derivatives. No mollifier or Malliavin field is yet constructed. Full build 4234 jobs; 3220 transitive axiom checks, only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
