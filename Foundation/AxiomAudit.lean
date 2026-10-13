@@ -1,3 +1,4 @@
+import Foundation.GaussianOUCore
 import Foundation.FractionalGaussianOperators
 import Foundation.FractionalControlledEstimate
 import Foundation.FractionalPredictionObstruction
@@ -3554,3 +3555,20 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.FractionalGaussianOperators.divergence_dense_domain
 #print axioms OperatorDerivativeRewrite.Foundation.FractionalGaussianOperators.divergence_isClosed
 #print axioms OperatorDerivativeRewrite.Foundation.FractionalGaussianOperators.divergence_adjoint_eq_derivative
+
+/-! Gaussian OU core: actual curvature recursion. -/
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianOUCore.generator
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianOUCore.gamma
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianOUCore.gammaTwo
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianOUCore.generator_actual_derivatives
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianOUCore.gamma_formula
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianOUCore.gammaTwo_formula
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianOUCore.gamma_actual_derivatives
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianOUCore.gamma_nonneg
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianOUCore.gaussian_curvature_one
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianOUCore.generator_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianOUCore.gamma_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianOUCore.gammaTwo_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianOUCore.gaussian_generator_pairing
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianOUCore.gaussian_generator_symmetric
+#print axioms OperatorDerivativeRewrite.Foundation.GaussianOUCore.gaussian_generator_energy
