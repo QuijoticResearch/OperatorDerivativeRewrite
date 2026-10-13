@@ -6260,3 +6260,7 @@ Every finite quartic-variation sum is measurable with respect to the sigma-algeb
 ## IBM finite quartic expectation under the joint law — 2026-10-13
 
 For measurable continuous Brownian-source modifications supplied as explicit hypotheses, the finite quartic variation is jointly measurable and integrable on the product source space. Fubini identifies its actual joint expectation with the clock average of the exact conditional formula, bounded by three times total ordered interval length. Source modifications and the refining-partition `3T` limit remain unproved. Full build 4265 jobs; 3349 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## Exact finite IBM quartic crossing deficit — 2026-10-13
+
+Under supplied measurable continuous source modifications, the joint finite quartic expectation equals `3` times total ordered interval length minus the expected zero-crossing correction of the reflected clock. The correction is integrable and nonnegative. Proving its decay for deterministic refining partitions is the exact missing expectation-limit step. Full build 4265 jobs; 3352 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.

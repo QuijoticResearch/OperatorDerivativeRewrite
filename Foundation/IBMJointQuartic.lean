@@ -95,4 +95,78 @@ theorem joint_quarticSum_le
   rw [integral_prod_symm _ (quarticSum_integrable S C hS hC hmS hmC hmodS hmodC I)]
   exact averaged_conditional_quarticSum_le S C hS hC hmodS hmodC I hI
 
+/-- The unreflected Brownian-clock squared increment is integrable. -/
+theorem clock_increment_square_integrable
+    (hmodC : ∀ r, C r =ᵐ[gaussianProduct] GaussianTimeProcess.process r)
+    (s t : ℝ≥0) :
+    Integrable (fun ω => (C t ω - C s ω)^2) gaussianProduct := by
+  have ht : MemLp (C t) 2 gaussianProduct :=
+    (memLp_congr_ae (hmodC t)).2 (GaussianTimeProcess.process_memLp t 2 (by simp))
+  have hs : MemLp (C s) 2 gaussianProduct :=
+    (memLp_congr_ae (hmodC s)).2 (GaussianTimeProcess.process_memLp s 2 (by simp))
+  have hi := (ht.sub hs).integrable_norm_pow (by norm_num : (2 : ℕ) ≠ 0)
+  convert hi using 1
+  ext ω
+  simp [Real.norm_eq_abs, ← abs_pow, abs_of_nonneg (by positivity :
+    0 ≤ (C t ω - C s ω)^2)]
+
+/-- The exact zero-crossing correction is integrable over the clock source. -/
+theorem clock_crossingPenalty_integrable
+    (hmodC : ∀ r, C r =ᵐ[gaussianProduct] GaussianTimeProcess.process r)
+    (s t : ℝ≥0) :
+    Integrable (fun ω => IBMReflectedClockCorrection.crossingPenalty (C s ω) (C t ω))
+      gaussianProduct := by
+  have heq : (fun ω => IBMReflectedClockCorrection.crossingPenalty (C s ω) (C t ω)) =
+      (fun ω => (C t ω - C s ω)^2 - (|C t ω| - |C s ω|)^2) := by
+    funext ω
+    have h := IBMReflectedClockCorrection.reflected_increment_sq (C s ω) (C t ω)
+    linarith
+  rw [heq]
+  exact (clock_increment_square_integrable C hmodC s t).sub
+    (clock_reflected_increment_integrable C hmodC s t)
+
+/-- The finite joint expectation has an exact deficit from the unreflected
+`3 ×` physical-time length, given by clock zero-crossing penalties. -/
+theorem joint_quarticSum_deficit
+    (hmS : ∀ r, Measurable (S r)) (hmC : ∀ t, Measurable (C t))
+    (hmodS : ∀ r, S r =ᵐ[gaussianProduct] sceneryBase r)
+    (hmodC : ∀ r, C r =ᵐ[gaussianProduct] GaussianTimeProcess.process r)
+    (I : Finset (ℝ≥0 × ℝ≥0))
+    (hI : ∀ p ∈ I, p.1 ≤ p.2) :
+    (∫ ω, quarticSum S C hS hC I ω.1 ω.2 ∂jointMeasure) =
+      3 * ∑ p ∈ I, ((p.2 : ℝ) - p.1) -
+        ∫ ωY, ∑ p ∈ I,
+          3 * IBMReflectedClockCorrection.crossingPenalty (C p.1 ωY) (C p.2 ωY)
+          ∂gaussianProduct := by
+  rw [joint_quarticSum_expectation S C hS hC hmS hmC hmodS hmodC I]
+  have hp (ωY : SampleSpace) (p : ℝ≥0 × ℝ≥0) :
+      (|C p.2 ωY| - |C p.1 ωY|)^2 =
+        (C p.2 ωY - C p.1 ωY)^2 -
+          IBMReflectedClockCorrection.crossingPenalty (C p.1 ωY) (C p.2 ωY) :=
+    IBMReflectedClockCorrection.reflected_increment_sq _ _
+  simp_rw [hp, mul_sub]
+  simp only [Finset.sum_sub_distrib]
+  rw [integral_sub]
+  · rw [integral_finsetSum]
+    · simp_rw [integral_const_mul]
+      have hs : (∑ p ∈ I, 3 * ∫ ω,
+          (C p.2 ω - C p.1 ω)^2 ∂gaussianProduct) =
+          3 * ∑ p ∈ I, ((p.2 : ℝ) - p.1) := by
+        calc
+          _ = ∑ p ∈ I, 3 * ((p.2 : ℝ) - p.1) := by
+            apply Finset.sum_congr rfl
+            intro p hpI
+            rw [clockModified_increment_second C hmodC p.1 p.2 (hI p hpI)]
+          _ = _ := by rw [Finset.mul_sum]
+      rw [hs]
+      simp only [Finset.sum_sub_distrib]
+    · intro p hpI
+      exact (clock_increment_square_integrable C hmodC p.1 p.2).const_mul 3
+  · apply integrable_finsetSum
+    intro p hpI
+    exact (clock_increment_square_integrable C hmodC p.1 p.2).const_mul 3
+  · apply integrable_finsetSum
+    intro p hpI
+    exact (clock_crossingPenalty_integrable C hmodC p.1 p.2).const_mul 3
+
 end OperatorDerivativeRewrite.Foundation.IBMJointQuartic
