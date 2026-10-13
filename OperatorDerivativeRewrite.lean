@@ -176,3 +176,4 @@ import Foundation.GaussianFiniteRankTimeIto
 import Foundation.GaussianStoppedComposition
 import Foundation.FiniteCovarianceHessian
 import Foundation.GaussianStoppedSmoothFields
+import Foundation.GaussianStoppedQuadraticVariation
