@@ -6097,3 +6097,8 @@ Verification: all 11 public declarations and explicit types checked. Full build 
 
 Actual bounded predictable transforms, finite-rank Gram energy, adjoint/domain/nullspace and exact perturbation/convergence transfer independently verified. Full Lake build: 4199 jobs. Complete transitive audit: 3130 declarations; only propext, Classical.choice, Quot.sound. Exact statements, assumptions, source inventory and remaining obligations: RESEARCH_RECOVERY_REPORT.md. No Hilbert-valued SPDE solution is asserted.
 
+
+## Fractional forcing quantified regularity obstruction — 2026-10-13
+
+FractionalForcingObstruction.no_higher_initial_power_bound and no_initial_brownian_variance_bound prove failure of every excessive initial mean-square power bound in the actual zero-mode response. Full build 4200 jobs; full axiom audit 3132, exactly propext/Classical.choice/Quot.sound. See RESEARCH_RECOVERY_REPORT.md for quantifiers and limitations.
+

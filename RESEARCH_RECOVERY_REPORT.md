@@ -42,3 +42,15 @@ All names below have prefix OperatorDerivativeRewrite.Foundation.StochasticKerne
 - `convolution_operator_error` — line 92
 - `convolution_tendsto_iff` — line 100
 - `convolution_operator_tendsto_iff` — line 107
+
+## Fractional forcing initial-time obstruction
+
+Foundation/FractionalForcingObstruction.lean independently proves:
+- no_higher_initial_power_bound (line 13): for alpha>1/2 and p>2alpha-1, for every real C and delta>0 there exists 0<t<delta, t<=1, such that C*t^p < ||X_t-X_0||^2 for the actual zero-generator stochasticResponse.
+- no_initial_brownian_variance_bound (line 46): for 1/2<alpha<1 the same statement holds with C*t.
+
+The proof uses the actual proved norm and zero-time identities, Gamma positivity, and continuity of t^(p-(2alpha-1)) at zero. It does not assume a scaling law or infer sample-path regularity from second moments. This disproves a uniform initial mean-square O(t^p) estimate above the true exponent in this concrete one-mode model. It does not itself disprove every almost-sure Holder assertion without a separate moment implication.
+
+Verification: targeted Lake build passed; full build 4200 jobs; exact public types checked; full transitive audit 3132 declarations, only propext, Classical.choice, Quot.sound. Logs .lake/campaign-evolution/03-{target,build,types,axioms}.log.
+
+Next: independent two-sided Gaussian scenery and Brownian clock coordinate families on the actual product Gaussian measure. Joint path measurability and continuous modification remain separate before IBM random-time evaluation.

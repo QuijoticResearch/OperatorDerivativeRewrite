@@ -1,3 +1,4 @@
+import Foundation.FractionalForcingObstruction
 import Foundation.StochasticKernelConvolution
 import Foundation.FractionalForcingKernel
 import Foundation.FractionalWickCovariance
@@ -3640,3 +3641,5 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.StochasticKernelConvolution.convolution_operator_error
 #print axioms OperatorDerivativeRewrite.Foundation.StochasticKernelConvolution.convolution_tendsto_iff
 #print axioms OperatorDerivativeRewrite.Foundation.StochasticKernelConvolution.convolution_operator_tendsto_iff
+#print axioms OperatorDerivativeRewrite.Foundation.FractionalForcingObstruction.no_higher_initial_power_bound
+#print axioms OperatorDerivativeRewrite.Foundation.FractionalForcingObstruction.no_initial_brownian_variance_bound

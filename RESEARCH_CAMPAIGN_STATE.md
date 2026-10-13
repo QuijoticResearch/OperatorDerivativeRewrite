@@ -35,3 +35,6 @@ No reset, push, dependency change, source manuscript edit, cleanup, black-noise 
 
 Recovery checkpoint: StochasticKernelConvolution now verified, full build 4199, axiom count 3130. Active next: quantified zero-mode initial variance obstruction; not yet accepted until its own full build/audit.
 
+
+Forcing obstruction checkpoint: both quantified counterexamples verified; full build 4200, audit 3132. Active: IBMSourceLaws independent scenery/clock coordinate construction. Random-time composition, paths and IBM calculus remain pending.
+
