@@ -24,6 +24,55 @@ def smoothDirection (I : Finset ℝ) (w : ℝ → ℝ) : SpectralSpace :=
 def smoothScenery (I : Finset ℝ) (w : ℝ → ℝ) : GaussianL2 :=
   isonormalEmbedding SpectralSpace (smoothDirection I w)
 
+/-- The literal finite weighted sum of verified Brownian scenery coordinates. -/
+def finiteSceneryValue (I : Finset ℝ) (w : ℝ → ℝ) (ω : SampleSpace) : ℝ :=
+  ∑ r ∈ I, w r * sceneryBase r ω
+
+/-- The Gaussian L² smoothing construction agrees almost everywhere with
+the literal finite weighted sum of source coordinates. -/
+theorem smoothScenery_ae_eq_finiteValue (I : Finset ℝ) (w : ℝ → ℝ) :
+    (smoothScenery I w : SampleSpace → ℝ) =ᵐ[gaussianProduct]
+      finiteSceneryValue I w := by
+  have heq : smoothScenery I w =
+      ∑ r ∈ I, w r • isonormalEmbedding SpectralSpace (direction r) := by
+    unfold smoothScenery smoothDirection
+    rw [map_sum]
+    simp_rw [map_smul]
+  rw [heq]
+  have hs := Lp.coeFn_finsetSum I
+    (fun r => w r • isonormalEmbedding SpectralSpace (direction r))
+  have ht : (∑ r ∈ I, ((w r • isonormalEmbedding SpectralSpace (direction r)) : GaussianL2) :
+      SampleSpace → ℝ) =ᵐ[gaussianProduct] finiteSceneryValue I w := by
+    have hsum := eventuallyEq_sum (s := I) (fun r hr =>
+      Lp.coeFn_smul (w r) (isonormalEmbedding SpectralSpace (direction r)))
+    have hv : (∑ r ∈ I,
+        w r • (isonormalEmbedding SpectralSpace (direction r) : SampleSpace → ℝ)) =
+        finiteSceneryValue I w := by
+      funext ω
+      simp [finiteSceneryValue, sceneryBase, isonormal, direction,
+        Finset.sum_apply, Pi.smul_apply, smul_eq_mul]
+    rw [hv] at hsum
+    exact hsum
+  exact hs.trans ht
+
+/-- The actual finite random-variable smoothing error has the exact second
+moment of its spectral Hilbert direction. -/
+theorem finiteScenery_error_second (I : Finset ℝ) (w : ℝ → ℝ) (x : ℝ) :
+    (∫ ω, (finiteSceneryValue I w ω - sceneryBase x ω)^2 ∂gaussianProduct) =
+      ‖smoothDirection I w - direction x‖ ^ 2 := by
+  let v := smoothDirection I w - direction x
+  have he : (fun ω => (finiteSceneryValue I w ω - sceneryBase x ω)^2) =ᵐ[gaussianProduct]
+      (fun ω => (isonormal SpectralSpace v ω)^2) := by
+    filter_upwards [(smoothScenery_ae_eq_finiteValue I w).symm,
+      isonormal_sub_ae (smoothDirection I w) (direction x)] with ω hval hsub
+    change finiteSceneryValue I w ω = isonormal SpectralSpace (smoothDirection I w) ω at hval
+    change isonormal SpectralSpace v ω =
+      isonormal SpectralSpace (smoothDirection I w) ω - sceneryBase x ω at hsub
+    rw [hval, hsub]
+  rw [integral_congr_ae he]
+  have h := isonormal_product_integral v v
+  simpa [v, pow_two, real_inner_self_eq_norm_sq] using h
+
 /-- Brownian scenery increments have exactly the square-mean spatial distance. -/
 theorem direction_increment_sq (x r : ℝ) :
     ‖direction r - direction x‖ ^ 2 = |r - x| := by
@@ -79,6 +128,16 @@ theorem smoothDirection_error_sq_le_weighted
       apply Finset.sum_congr rfl
       intro r hr
       rw [direction_increment_sq]
+
+/-- Literal expectation form of the paper's scenery mollifier estimate for
+arbitrary finite positive mass-one spatial kernels. -/
+theorem finiteScenery_error_second_le_weighted
+    (I : Finset ℝ) (w : ℝ → ℝ) (x : ℝ)
+    (hw : ∀ r ∈ I, 0 ≤ w r) (hmass : ∑ r ∈ I, w r = 1) :
+    (∫ ω, (finiteSceneryValue I w ω - sceneryBase x ω)^2 ∂gaussianProduct) ≤
+      ∑ r ∈ I, w r * |r - x| := by
+  rw [finiteScenery_error_second]
+  exact smoothDirection_error_sq_le_weighted I w x hw hmass
 
 /-- The paper's first-absolute-moment estimate for finite positive kernels,
 now stated for the genuine Gaussian L² scenery realization. -/
@@ -184,6 +243,23 @@ theorem smoothScenery_error_fourth
   rw [IBMSourceMoments.firstChaos_fourth]
   rw [(SeparableHilbertEmbedding.hilbertEmbedding SpectralSpace).norm_map]
 
+/-- The literal finite scenery sum has the exact fourth error moment of its
+Gaussian Hilbert direction. -/
+theorem finiteScenery_error_fourth (I : Finset ℝ) (w : ℝ → ℝ) (x : ℝ) :
+    (∫ ω, (finiteSceneryValue I w ω - sceneryBase x ω)^4 ∂gaussianProduct) =
+      3 * (‖smoothDirection I w - direction x‖ ^ 2)^2 := by
+  let v := smoothDirection I w - direction x
+  have he : (fun ω => (finiteSceneryValue I w ω - sceneryBase x ω)^4) =ᵐ[gaussianProduct]
+      (fun ω => (isonormal SpectralSpace v ω)^4) := by
+    filter_upwards [(smoothScenery_ae_eq_finiteValue I w).symm,
+      isonormal_sub_ae (smoothDirection I w) (direction x)] with ω hval hsub
+    change finiteSceneryValue I w ω = isonormal SpectralSpace (smoothDirection I w) ω at hval
+    change isonormal SpectralSpace v ω =
+      isonormal SpectralSpace (smoothDirection I w) ω - sceneryBase x ω at hsub
+    rw [hval, hsub]
+  rw [integral_congr_ae he]
+  exact smoothScenery_error_fourth I w x
+
 /-- The genuine Gaussian fourth moment is controlled by the square of the
 finite kernel's first absolute spatial moment. -/
 theorem smoothScenery_error_fourth_le_weighted
@@ -200,6 +276,17 @@ theorem smoothScenery_error_fourth_le_weighted
     exact mul_nonneg (hw r hr) (abs_nonneg _)
   nlinarith [sq_nonneg (‖smoothDirection I w - direction x‖ ^ 2 -
     ∑ r ∈ I, w r * |r - x|)]
+
+/-- The literal fourth moment is bounded by three times the squared first
+absolute moment of any finite positive mass-one smoothing kernel. -/
+theorem finiteScenery_error_fourth_le_weighted
+    (I : Finset ℝ) (w : ℝ → ℝ) (x : ℝ)
+    (hw : ∀ r ∈ I, 0 ≤ w r) (hmass : ∑ r ∈ I, w r = 1) :
+    (∫ ω, (finiteSceneryValue I w ω - sceneryBase x ω)^4 ∂gaussianProduct) ≤
+      3 * (∑ r ∈ I, w r * |r - x|)^2 := by
+  rw [finiteScenery_error_fourth]
+  simpa only [smoothScenery_error_fourth] using
+    smoothScenery_error_fourth_le_weighted I w x hw hmass
 
 /-- A radius-`δ` positive finite smoothing kernel has fourth error moment
 at most `3δ²`, using the genuine source Gaussian law. -/

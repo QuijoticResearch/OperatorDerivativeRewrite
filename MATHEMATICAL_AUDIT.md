@@ -6268,3 +6268,7 @@ Under supplied measurable continuous source modifications, the joint finite quar
 ## EJP source-first finite spatial smoothing — 2026-10-13
 
 The paper's page-4 mollifier second-moment and Cameron–Martin energy estimates now have independently verified finite-positive-kernel analogues on the constructed Brownian spectral scenery, before any continuous-path assumption. The weighted first-moment error, radius bound, Gaussian fourth moment, and L² convergence for shrinking finite kernels are proved. Extension to genuine continuous convolution and Malliavin derivative kernels remains open. Full build 4266 jobs; 3366 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## Literal finite scenery sums and moments — 2026-10-13
+
+The finite positive-kernel estimate now applies to the literal random sum of verified scenery coordinates, via an a.e. identification with its isonormal Hilbert realization. Exact second and fourth error moments and weighted bounds are proved. Continuous convolution and random-time IBM remain separate obligations. Full build 4266 jobs; 3372 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
