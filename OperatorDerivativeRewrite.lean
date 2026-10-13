@@ -171,3 +171,5 @@ import Foundation.GaussianC2Ito
 import Foundation.GaussianC2OperatorCorrection
 import Foundation.GaussianMixedStoppedIto
 import Foundation.GaussianBoundedContinuity
+import Foundation.GaussianC2TimeWeighted
+import Foundation.GaussianFiniteRankTimeIto
