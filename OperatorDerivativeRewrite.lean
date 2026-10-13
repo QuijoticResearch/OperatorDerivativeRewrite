@@ -173,3 +173,4 @@ import Foundation.GaussianMixedStoppedIto
 import Foundation.GaussianBoundedContinuity
 import Foundation.GaussianC2TimeWeighted
 import Foundation.GaussianFiniteRankTimeIto
+import Foundation.GaussianStoppedComposition
