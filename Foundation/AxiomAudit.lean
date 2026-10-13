@@ -1,3 +1,4 @@
+import Foundation.IBMFourthTaylor
 import Foundation.IBMClockQuarticBound
 import Foundation.IBMFiniteQuarticSecondMoment
 import Foundation.IBMConditionalQuarticPair
@@ -3888,3 +3889,9 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMClockQuarticBound.clock_reflected_increment_integrable
 #print axioms OperatorDerivativeRewrite.Foundation.IBMClockQuarticBound.clock_reflected_increment_second_le
 #print axioms OperatorDerivativeRewrite.Foundation.IBMClockQuarticBound.averaged_conditional_quarticSum_le
+#print axioms OperatorDerivativeRewrite.Foundation.IBMFourthTaylor.remainder
+#print axioms OperatorDerivativeRewrite.Foundation.IBMFourthTaylor.remainder_bound
+#print axioms OperatorDerivativeRewrite.Foundation.IBMFourthTaylor.taylor_four_explicit
+#print axioms OperatorDerivativeRewrite.Foundation.IBMFourthTaylor.increment_identity
+#print axioms OperatorDerivativeRewrite.Foundation.IBMFourthTaylor.finite_path_identity
+#print axioms OperatorDerivativeRewrite.Foundation.IBMFourthTaylor.conditional_ibm_partition_identity

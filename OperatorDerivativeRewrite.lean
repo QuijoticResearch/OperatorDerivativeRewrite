@@ -1,3 +1,4 @@
+import Foundation.IBMFourthTaylor
 import Foundation.IBMClockQuarticBound
 import Foundation.IBMFiniteQuarticSecondMoment
 import Foundation.IBMConditionalQuarticPair

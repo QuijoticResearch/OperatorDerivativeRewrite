@@ -6248,3 +6248,7 @@ Each fixed-clock fourth-power increment lies in scenery L², and the centered se
 ## IBM clock-averaged conditional quartic upper bound — 2026-10-13
 
 The verified Brownian-clock increment has second moment equal to elapsed time; reflection can only lower its squared-increment expectation. Consequently the iterated scenery-then-clock expectation of a finite conditional IBM quartic sum is at most three times total ordered interval length. This is an upper bound, not a derived `3T` limit or a Fubini theorem for the joint process. Full build 4262 jobs; 3334 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM finite-partition fourth-order Taylor formula — 2026-10-13
+
+A genuine fourth-degree Taylor expansion with a `C⁵` fifth-derivative remainder bound telescopes exactly along any finite supplied-path IBM partition. It does not establish convergence of the weighted quartic term or the lower-rank stochastic terms. Full build 4263 jobs; 3340 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
