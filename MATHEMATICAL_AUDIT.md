@@ -6176,3 +6176,7 @@ The bounded interior-plus-boundary H⁻¹ assembly now has an almost-everywhere 
 ## IBM H⁻¹–H¹ weighted-L² dual pairing — 2026-10-13
 
 A concrete bounded pairing sends every H⁻¹ element to a continuous H¹ functional and separates H⁻¹ points. Compatibility with distribution action and onto-isometric duality remain separate. Full build 4241 jobs; 3260 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM abstract observable restriction — 2026-10-13
+
+The maximal restriction of any closed partial linear source operator to an observable submodule is a closed partial linear operator, with exact domain and graph identities. This requires no observable-domain density; IBM's continuous source modifications and observable core density are still open. Full build 4242 jobs; 3264 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.

@@ -1,3 +1,4 @@
+import Foundation.ObservableRestriction
 import Foundation.IBMBesselDuality
 import Foundation.IBMDualDistribution
 import Foundation.IBMMollifier
@@ -3795,4 +3796,8 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMBesselDuality.pairingCLM_apply
 #print axioms OperatorDerivativeRewrite.Foundation.IBMBesselDuality.pairingCLM_norm_le
 #print axioms OperatorDerivativeRewrite.Foundation.IBMBesselDuality.pairing_left_separating
+#print axioms OperatorDerivativeRewrite.Foundation.ObservableRestriction.derivative
+#print axioms OperatorDerivativeRewrite.Foundation.ObservableRestriction.derivative_domain
+#print axioms OperatorDerivativeRewrite.Foundation.ObservableRestriction.derivative_graph
+#print axioms OperatorDerivativeRewrite.Foundation.ObservableRestriction.derivative_isClosed
 
