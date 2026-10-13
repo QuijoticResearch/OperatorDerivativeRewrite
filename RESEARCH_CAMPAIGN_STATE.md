@@ -38,3 +38,12 @@ Recovery checkpoint: StochasticKernelConvolution now verified, full build 4199, 
 
 Forcing obstruction checkpoint: both quantified counterexamples verified; full build 4200, audit 3132. Active: IBMSourceLaws independent scenery/clock coordinate construction. Random-time composition, paths and IBM calculus remain pending.
 
+
+## Current checkpoint (supersedes earlier Active entries)
+
+- Completed restricted milestones this recovery: convolution operator and finite-rank Gram energy with exact convergence transfer (1aa556d); quantified fractional forcing initial variance obstruction (b550ea7); independent two-sided Gaussian scenery and Brownian clock coordinate laws (final IBM checkpoint).
+- Verification at latest checkpoint: full Lake build 4201 jobs; complete axiom audit 3153 declarations, only propext/Classical.choice/Quot.sound. Forty public declarations accepted across this recovery.
+- Next active proof target: continuous jointly measurable versions of the independent source families, preserving finite laws and independence, before reflected-clock IBM composition and moments.
+- Pending/blocked obligations remain as listed above; none of the full fractional, curvature, SPDE, IBM singular or pseudoprocess programs is declared complete.
+- Requested level-p pseudoprocess manuscript not located recursively in C:/Operator; pseudo folder empty at this recovery. Do not silently substitute another source.
+- Detailed next obligations/readiness: RESEARCH_READINESS_AND_BACKLOG.md. Exact theorem inventories and verification: RESEARCH_RECOVERY_REPORT.md.

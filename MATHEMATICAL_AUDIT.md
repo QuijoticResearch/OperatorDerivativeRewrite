@@ -6102,3 +6102,8 @@ Actual bounded predictable transforms, finite-rank Gram energy, adjoint/domain/n
 
 FractionalForcingObstruction.no_higher_initial_power_bound and no_initial_brownian_variance_bound prove failure of every excessive initial mean-square power bound in the actual zero-mode response. Full build 4200 jobs; full axiom audit 3132, exactly propext/Classical.choice/Quot.sound. See RESEARCH_RECOVERY_REPORT.md for quantifiers and limitations.
 
+
+## IBM actual independent source coordinate laws — 2026-10-13
+
+IBMSourceLaws constructs independent product Gaussian source factors, actual two-sided scenery with exact covariance/mean/marginal laws, Brownian finite laws on both halves, whole-half independence, and independent Brownian clock finite laws. No path modification or random-time composition is claimed. Full build 4201 jobs, transitive axiom audit 3153, only propext/Classical.choice/Quot.sound. All 21 public types checked. Complete source locations and scope: RESEARCH_RECOVERY_REPORT.md; analytic next backlog: RESEARCH_READINESS_AND_BACKLOG.md.
+
