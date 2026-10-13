@@ -59,3 +59,7 @@ Target builds, exact checks of all 10 new public statements, full Lake build (42
 ## Conditional covariance milestone
 
 `Foundation/IBMConditionalCovariance.lean:27` proves the exact two-time covariance of the composed scenery at any fixed clock sample: `( |C_s| + |C_t| - ||C_t|-|C_s|| )/2`. It uses the actual two-sided source covariance and deterministic-time a.e. modification equality; no sign restriction on the clock values is imposed. The source modification remains an explicit hypothesis. Full Lake build 4209 jobs, 3182 transitive axiom checks with only propext/Classical.choice/Quot.sound, and exact theorem type check passed. Logs `.lake/campaign-ibm/07-*`.
+
+## Conditional finite-dimensional Gaussian milestone
+
+`Foundation/IBMConditionalFiniteDim.lean:19` proves that for every fixed clock sample the full time-indexed scenery section of the composed path is a Gaussian process on the scenery probability factor. `conditional_finite_dim_gaussian` (line 35) states the resulting joint Gaussian law for every finite set of observation times. The proof uses the verified Gaussian scenery process and a.e. equality at each deterministic scenery parameter; the clock may take either sign before absolute value. These are genuine coherent finite-dimensional conditional laws, but the required continuous scenery modification is still an explicit hypothesis. Full Lake build 4210 jobs, exact type checks, 3184 transitive axiom checks with only propext/Classical.choice/Quot.sound. Logs `.lake/campaign-ibm/08-*`.

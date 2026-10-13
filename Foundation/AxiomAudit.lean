@@ -1,3 +1,4 @@
+import Foundation.IBMConditionalFiniteDim
 import Foundation.IBMConditionalCovariance
 import Foundation.IBMConditionalMoments
 import Foundation.IBMSourceMoments
@@ -3700,3 +3701,5 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMConditionalMoments.conditional_mean
 #print axioms OperatorDerivativeRewrite.Foundation.IBMConditionalMoments.conditional_second
 #print axioms OperatorDerivativeRewrite.Foundation.IBMConditionalCovariance.conditional_covariance
+#print axioms OperatorDerivativeRewrite.Foundation.IBMConditionalFiniteDim.conditional_isGaussianProcess
+#print axioms OperatorDerivativeRewrite.Foundation.IBMConditionalFiniteDim.conditional_finite_dim_gaussian

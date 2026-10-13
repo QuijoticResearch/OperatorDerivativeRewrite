@@ -6120,3 +6120,7 @@ The source scenery law and both source fourth-moment increment identities are ac
 ## IBM conditional two-time covariance — 2026-10-13
 
 The exact two-sided Brownian covariance kernel for the composed process is proved at each fixed clock sample under the continuous-scenery-modification hypothesis. Full build 4209 jobs, complete 3182-declaration transitive audit, only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM conditional finite-dimensional Gaussian laws — 2026-10-13
+
+The composed process is a jointly Gaussian process on the scenery factor for every fixed clock sample under the continuous-modification hypothesis. Every finite conditional observation vector has a Gaussian law. Full build 4210 jobs, complete 3184-declaration transitive audit, only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
