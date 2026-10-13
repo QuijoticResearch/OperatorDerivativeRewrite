@@ -1,3 +1,4 @@
+import Foundation.IBMBesselDuality
 import Foundation.IBMDualDistribution
 import Foundation.IBMMollifier
 import Foundation.IBMMollifiedProcess

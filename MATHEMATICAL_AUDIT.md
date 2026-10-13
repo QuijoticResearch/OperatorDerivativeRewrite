@@ -6172,3 +6172,7 @@ A specific smooth nonnegative unit-mass bump sequence with shrinking support now
 ## IBM sectionwise dual distribution identity — 2026-10-13
 
 The bounded interior-plus-boundary H⁻¹ assembly now has an almost-everywhere section formula and an exact tempered-distribution identity `∂u+aδ₀` for arbitrary admissible input fields. IBM-specific local-time inputs and convergence remain open. Full build 4240 jobs; 3252 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM H⁻¹–H¹ weighted-L² dual pairing — 2026-10-13
+
+A concrete bounded pairing sends every H⁻¹ element to a continuous H¹ functional and separates H⁻¹ points. Compatibility with distribution action and onto-isometric duality remain separate. Full build 4241 jobs; 3260 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.

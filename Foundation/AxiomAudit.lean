@@ -1,3 +1,4 @@
+import Foundation.IBMBesselDuality
 import Foundation.IBMDualDistribution
 import Foundation.IBMMollifier
 import Foundation.IBMMollifiedProcess
@@ -3786,4 +3787,12 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMMollifier.process_tendsto
 #print axioms OperatorDerivativeRewrite.Foundation.IBMDualDistribution.assembly_apply_ae
 #print axioms OperatorDerivativeRewrite.Foundation.IBMDualDistribution.assembly_toDistr_ae
+#print axioms OperatorDerivativeRewrite.Foundation.IBMBesselDuality.HminusOne
+#print axioms OperatorDerivativeRewrite.Foundation.IBMBesselDuality.HplusOne
+#print axioms OperatorDerivativeRewrite.Foundation.IBMBesselDuality.pairing
+#print axioms OperatorDerivativeRewrite.Foundation.IBMBesselDuality.pairing_norm_le
+#print axioms OperatorDerivativeRewrite.Foundation.IBMBesselDuality.pairingCLM
+#print axioms OperatorDerivativeRewrite.Foundation.IBMBesselDuality.pairingCLM_apply
+#print axioms OperatorDerivativeRewrite.Foundation.IBMBesselDuality.pairingCLM_norm_le
+#print axioms OperatorDerivativeRewrite.Foundation.IBMBesselDuality.pairing_left_separating
 
