@@ -325,3 +325,9 @@ Full Lake build 4266 jobs, exact public types, complete transitive audit 3376 de
 ## Uniform source-first mollifier convergence — 2026-10-13
 
 `Foundation/IBMUniformSmoothing.lean` proves the explicit normalized Gaussian L² mollifiers converge uniformly in spatial `x` on all of `ℝ`, using the previously verified radius-independent norm error `≤ √(2/(n+1))`. This is a Banach-valued uniform convergence theorem, not a sample-path assertion. Full build 4274 jobs, checked types, 3426 transitive axiom outputs with only the three permitted axioms.
+
+## Source-first full derivative graph smoothing — 2026-10-13
+
+`Foundation/IBMGraphSmoothing.lean` upgrades the actual normalized Gaussian scenery mollifiers to uniform convergence in the full closed Malliavin graph, not merely in Gaussian L². The coefficient, constant-gradient, and graph-pair errors have exactly the same norm as the source L² error, bounded uniformly in `x` by `√(2/(n+1))`. Every mollifier pair belongs to the actual closed derivative graph; the source pair does too. The theorem does not construct a jointly measurable Brownian modification or permit evaluating at an independent random time. Full Lake build 4275 jobs, checked public types, 3436 audited transitive axiom outputs with only the permitted three axioms. Logs `.lake/campaign-ibm-cont-09-*`.
+
+Direct review of the EJP paper's pages 8–10 shows the fixed-ε leading Stein cancellation is governed by the derivative-field covariance relations `Cov(U,V)=1/2` and `Var(V)+Cov(U,W)=0`, leaving a fifth-derivative term with coefficient `1/4`. The paper's divergent residual depends on Brownian local-time Sobolev estimates. These relations and the local-time step remain independent formalization obligations; the verified graph convergence does not imply either one.

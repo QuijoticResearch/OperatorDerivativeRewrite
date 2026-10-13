@@ -1,3 +1,4 @@
+import Foundation.IBMGraphSmoothing
 import Foundation.IBMUniformSmoothing
 import Foundation.IBMConcreteMollifier
 import Foundation.IBMContinuousMalliavin
