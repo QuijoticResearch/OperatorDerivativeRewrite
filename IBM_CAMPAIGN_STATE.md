@@ -309,3 +309,7 @@ Full Lake build 4266 jobs, exact public types, complete transitive audit 3376 de
 ## Whole-line smooth Gaussian L² scenery — 2026-10-13
 
 `Foundation/IBMContinuousDerivative.lean` constructs the actual whole-line Bochner convolution for compactly supported smooth kernels and proves first/second spatial derivative formulas in Gaussian L² under `C¹`/`C²` hypotheses. This uses the source's proven local Bochner integrability and Mathlib's derivative-of-convolution theorem. No sample-path smooth modification, nonlinear chain rule, Malliavin derivative kernel, or random-time composition is asserted. Full build 4270 jobs, checked theorem types, 3399 transitive axiom outputs using only the permitted three axioms.
+
+## Whole-line smoothing and derivatives on one object — 2026-10-13
+
+`Foundation/IBMWholeLineSmoothing.lean` identifies the compact-interval kernel average with the actual whole-line convolution under an explicit shifted-support condition, then transfers the `δ` Gaussian L² rate and shrinking-radius convergence. This links the preceding smoothing and spatial-derivative modules without a sample-path assumption. Full build 4271 jobs, checked theorem types, 3403 transitive axiom outputs with only the three allowed axioms. Explicit normalized mollifier families, Malliavin derivative kernels, random-time evaluation, and Stein cancellation remain open.

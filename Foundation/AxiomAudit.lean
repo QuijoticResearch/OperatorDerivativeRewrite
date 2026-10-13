@@ -1,3 +1,4 @@
+import Foundation.IBMWholeLineSmoothing
 import Foundation.IBMContinuousDerivative
 import Foundation.IBMContinuousRadius
 import Foundation.IBMContinuousCovariance
@@ -3962,3 +3963,7 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.wholeLineScenery_deriv_integral
 #print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.wholeLineScenery_second_deriv
 #print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.wholeLineScenery_second_deriv_integral
+#print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.wholeLineScenery_eq_kernelScenery
+#print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.wholeLineScenery_eq_embedding
+#print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.wholeLineScenery_error_sq_le
+#print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.wholeLineScenery_tendsto
