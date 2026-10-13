@@ -6148,3 +6148,7 @@ Mathlib's actual tempered Dirac distribution at zero is proved to belong to H⁻
 ## IBM random H⁻¹ Dirac boundary channel — 2026-10-13
 
 A bounded map takes square-integrable clock coefficients to H⁻¹-valued random Dirac masses, with section identity and convergence transfer. Brownian local-time coefficients remain unconstructed. Full build 4232 jobs; 3209 transitive axiom checks, only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM interior/boundary H⁻¹ assembly — 2026-10-13
+
+A bounded operator assembles convergent interior L² spatial kernels and square-integrable clock boundary coefficients into L²(clock;H⁻¹(space)), with a two-channel norm bound. No actual IBM correction kernel is asserted. Full build 4233 jobs; 3216 transitive axiom checks, only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.

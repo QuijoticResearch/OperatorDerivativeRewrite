@@ -1,3 +1,4 @@
+import Foundation.IBMDualAssembly
 import Foundation.IBMRandomBoundary
 import Foundation.IBMDeltaBoundary
 import Foundation.IBMNegativeSobolevRandom
@@ -3734,3 +3735,10 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMRandomBoundary.randomBoundaryCLM
 #print axioms OperatorDerivativeRewrite.Foundation.IBMRandomBoundary.randomBoundary_apply_ae
 #print axioms OperatorDerivativeRewrite.Foundation.IBMRandomBoundary.randomBoundary_tendsto
+#print axioms OperatorDerivativeRewrite.Foundation.IBMDualAssembly.dualAssemblyCLM
+#print axioms OperatorDerivativeRewrite.Foundation.IBMDualAssembly.InteriorInput
+#print axioms OperatorDerivativeRewrite.Foundation.IBMDualAssembly.BoundaryInput
+#print axioms OperatorDerivativeRewrite.Foundation.IBMDualAssembly.DualOutput
+#print axioms OperatorDerivativeRewrite.Foundation.IBMDualAssembly.dualAssemblyCLM_apply
+#print axioms OperatorDerivativeRewrite.Foundation.IBMDualAssembly.dualAssembly_norm_le
+#print axioms OperatorDerivativeRewrite.Foundation.IBMDualAssembly.dualAssembly_tendsto

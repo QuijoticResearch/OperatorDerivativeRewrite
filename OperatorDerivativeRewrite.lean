@@ -1,3 +1,4 @@
+import Foundation.IBMDualAssembly
 import Foundation.IBMRandomBoundary
 import Foundation.IBMDeltaBoundary
 import Foundation.IBMNegativeSobolevRandom

@@ -99,3 +99,9 @@ Target build, exact types, full Lake build 4231 jobs, complete transitive axiom 
 `Foundation/IBMRandomBoundary.lean` constructs a bounded scalar-to-H⁻¹ map `a ↦ a δ₀`, then lifts it to `randomBoundaryCLM : L²(Ω_Y;ℂ) →L[ℂ] L²(Ω_Y;H⁻¹(ℝ))` on the verified Gaussian clock factor. It proves the almost-everywhere section formula and convergence transfer. Thus any *future verified* L² clock-local-time coefficient can enter the same dual space as the interior derivative residual. No local-time coefficient, boundary-layer convergence, or full first-chaos correction is asserted here.
 
 Target build, exact public types, full Lake build 4232 jobs, complete transitive axiom audit 3209 declarations with only propext/Classical.choice/Quot.sound. Logs `.lake/campaign-ibm-singular-05-*`.
+
+## Interior-plus-boundary H⁻¹ assembly — 2026-10-13
+
+`Foundation/IBMDualAssembly.lean` defines the concrete input spaces `InteriorInput = L²(Ω_Y;L²(ℝ,ℂ))` and `BoundaryInput = L²(Ω_Y;ℂ)`, and the output `DualOutput = L²(Ω_Y;H⁻¹(ℝ))`. `dualAssemblyCLM` is the bounded sum of spatial distributional differentiation and multiplication of the origin Dirac mass by a clock coefficient. `dualAssembly_norm_le` controls the two channels separately, and `dualAssembly_tendsto` proves convergence when both inputs converge in their stated spaces. These are explicit conditional analytic transfer statements; no actual IBM correction has been identified as an input pair, and no local-time estimate has been assumed.
+
+Exact public types, target build, full Lake build 4233 jobs, and complete transitive axiom audit 3216 declarations with only propext/Classical.choice/Quot.sound passed. Logs `.lake/campaign-ibm-singular-06-*`.
