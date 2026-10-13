@@ -6236,3 +6236,7 @@ For any finite family of time intervals and each fixed clock sample, the sum of 
 ## Mixed fourth-power Gaussian moment — 2026-10-13
 
 Actual correlated first-chaos representatives satisfy `E[A⁴B⁴]=9u²v²+72uvc²+24c⁴`, derived through the verified fourth-Hermite decomposition and Wick orthogonality. The IBM reflected-clock substitution and partition variance estimates remain open. Full build 4258 jobs; 3321 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM paired fourth-power increments — 2026-10-13
+
+The verified source scenery and conditional supplied-path IBM increments satisfy the exact mixed eighth-moment Wick polynomial, with covariance equal to signed reflected-clock spatial overlap. The conditional centered fourth-power product is `72uvc²+24c⁴`. Clock averaging and partition variance limits remain open. Full build 4260 jobs; 3325 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.

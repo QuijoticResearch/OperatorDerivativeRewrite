@@ -1,3 +1,4 @@
+import Foundation.IBMConditionalQuarticPair
 import Foundation.GaussianQuarticWick
 import Foundation.IBMFiniteQuartic
 import Foundation.IBMConditionalReflectedMoments
@@ -3872,3 +3873,7 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianQuarticWick.quartic_coeFn
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianQuarticWick.quartic_inner
 #print axioms OperatorDerivativeRewrite.Foundation.GaussianQuarticWick.firstChaos_fourth_product
+#print axioms OperatorDerivativeRewrite.Foundation.IBMSceneryQuarticPair.scenery_increment_fourth_product
+#print axioms OperatorDerivativeRewrite.Foundation.IBMConditionalQuarticPair.conditional_increment_fourth_product
+#print axioms OperatorDerivativeRewrite.Foundation.IBMConditionalQuarticPair.fourthPower
+#print axioms OperatorDerivativeRewrite.Foundation.IBMConditionalQuarticPair.conditional_fourth_centered_product
