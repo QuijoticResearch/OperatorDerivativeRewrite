@@ -6196,3 +6196,7 @@ The abstract closed restriction specializes to the existing dense Gaussian obser
 ## IBM observable graph norm and subcore closure — 2026-10-13
 
 The abstract observable restriction has exactly the source graph norm. Every compatible smaller partial operator is closable and its closure lies within the maximal restriction; equality needs an independent graph-core result. Full build 4246 jobs; 3277 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM observable-density annihilator criterion — 2026-10-13
+
+The maximal restricted derivative domain is dense exactly when no nonzero observable vector annihilates it under the Hilbert inner product. This is an exact criterion, not an IBM density proof. Full build 4247 jobs; 3278 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.

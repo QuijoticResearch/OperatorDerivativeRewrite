@@ -169,3 +169,9 @@ Full Lake build 4245 jobs, exact types, complete transitive audit 3274 declarati
 `Foundation/ObservableSubcores.lean` proves `graph_norm_eq`: the maximal observable restriction inherits the source graph norm exactly under subspace inclusion. For any partial operator `B` contained in the maximal restriction, `subcore_closable` proves closability when the source operator is closed, and `subcore_closure_le` proves that `B.closure` remains inside the maximal restriction. Neither result assumes subcore density, nor upgrades inclusion to equality; such equality requires a separate graph-core theorem. These results can control future IBM-observable cylinders once their measurability and source-domain membership are verified.
 
 Full Lake build 4246 jobs, exact types, complete transitive audit 3277 declarations with only subsets of propext/Classical.choice/Quot.sound. Logs `.lake/campaign-ibm-observable-05-*`.
+
+## Exact observable-density criterion — 2026-10-13
+
+`Foundation/ObservableDensityCriterion.lean` proves `derivative_dense_iff_annihilator_zero`: for a Hilbert observable submodule, the maximal restricted derivative domain is dense if and only if every observable vector orthogonal to *all* domain elements is zero. This is the exact necessary-and-sufficient Hilbert criterion. It does not establish the premise for the IBM observable sigma-algebra; a nonzero annihilator would refute density, while proving its absence would establish density. The earlier projection-invariance theorem is a sufficient route, not a replacement for this equivalence.
+
+Full Lake build 4247 jobs, exact type, complete transitive audit 3278 declarations with only subsets of propext/Classical.choice/Quot.sound. Logs `.lake/campaign-ibm-observable-06-*`.
