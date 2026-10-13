@@ -1,3 +1,4 @@
+import Foundation.IBMVarianceCancellation
 import Foundation.IBMGraphSmoothing
 import Foundation.IBMUniformSmoothing
 import Foundation.IBMConcreteMollifier
@@ -4004,3 +4005,7 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.concreteGraph_error_norm
 #print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.concreteGraph_uniform_norm_le
 #print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.concreteGraph_tendstoUniformly
+#print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.wholeLineVariance_deriv
+#print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.wholeLineVariance_second_deriv
+#print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.wholeLine_covariance_cancellation
+#print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.wholeLine_cross_covariance_half

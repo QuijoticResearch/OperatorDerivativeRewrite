@@ -1,3 +1,4 @@
+import Foundation.IBMVarianceCancellation
 import Foundation.IBMGraphSmoothing
 import Foundation.IBMUniformSmoothing
 import Foundation.IBMConcreteMollifier
