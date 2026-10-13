@@ -1,3 +1,4 @@
+import Foundation.ObservableSubcores
 import Foundation.IBMSceneryObservableRestriction
 import Foundation.ObservableCoreDensity
 import Foundation.ObservableProjectedDivergence
@@ -3813,4 +3814,7 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMSceneryObservableRestriction.derivative_eq_existing
 #print axioms OperatorDerivativeRewrite.Foundation.IBMSceneryObservableRestriction.derivative_dense
 #print axioms OperatorDerivativeRewrite.Foundation.IBMSceneryObservableRestriction.derivative_closed
+#print axioms OperatorDerivativeRewrite.Foundation.ObservableSubcores.graph_norm_eq
+#print axioms OperatorDerivativeRewrite.Foundation.ObservableSubcores.subcore_closable
+#print axioms OperatorDerivativeRewrite.Foundation.ObservableSubcores.subcore_closure_le
 
