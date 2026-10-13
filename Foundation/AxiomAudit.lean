@@ -1,3 +1,4 @@
+import Foundation.IBMDualDistribution
 import Foundation.IBMMollifier
 import Foundation.IBMMollifiedProcess
 import Foundation.IBMMollifiedMeasurability
@@ -3783,3 +3784,6 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMMollifier.bump_outer_tendsto_zero
 #print axioms OperatorDerivativeRewrite.Foundation.IBMMollifier.convolution_tendsto
 #print axioms OperatorDerivativeRewrite.Foundation.IBMMollifier.process_tendsto
+#print axioms OperatorDerivativeRewrite.Foundation.IBMDualDistribution.assembly_apply_ae
+#print axioms OperatorDerivativeRewrite.Foundation.IBMDualDistribution.assembly_toDistr_ae
+
