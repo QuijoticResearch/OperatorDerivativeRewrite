@@ -1,3 +1,4 @@
+import Foundation.IBMClockQuarticBound
 import Foundation.IBMFiniteQuarticSecondMoment
 import Foundation.IBMConditionalQuarticPair
 import Foundation.GaussianQuarticWick
