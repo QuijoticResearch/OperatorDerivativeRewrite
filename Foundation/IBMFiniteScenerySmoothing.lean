@@ -5,7 +5,7 @@ import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 The estimate is proved in source L² before constructing continuous paths or
 pathwise convolution, following the integration-first order of development. -/
 noncomputable section
-open MeasureTheory
+open MeasureTheory ProbabilityTheory
 open scoped BigOperators
 
 namespace OperatorDerivativeRewrite.Foundation.IBMFiniteScenerySmoothing
@@ -325,5 +325,56 @@ theorem smoothScenery_tendsto
         (hw n) (hmass n) (hδ n) (hradius n)
       simpa only [smoothScenery, ← (isonormalEmbedding SpectralSpace).map_sub,
         (isonormalEmbedding SpectralSpace).norm_map] using hn)
+
+/-- Two literal finite scenery averages have the exact spectral cross moment. -/
+theorem finiteScenery_cross_moment
+    (I J : Finset ℝ) (w v : ℝ → ℝ) :
+    (∫ ω, finiteSceneryValue I w ω * finiteSceneryValue J v ω
+      ∂gaussianProduct) =
+      inner ℝ (smoothDirection I w) (smoothDirection J v) := by
+  have he : (fun ω => finiteSceneryValue I w ω * finiteSceneryValue J v ω) =ᵐ[gaussianProduct]
+      (fun ω => isonormal SpectralSpace (smoothDirection I w) ω *
+        isonormal SpectralSpace (smoothDirection J v) ω) := by
+    filter_upwards [(smoothScenery_ae_eq_finiteValue I w).symm,
+      (smoothScenery_ae_eq_finiteValue J v).symm] with ω hw hv
+    change finiteSceneryValue I w ω = isonormal SpectralSpace (smoothDirection I w) ω at hw
+    change finiteSceneryValue J v ω = isonormal SpectralSpace (smoothDirection J v) ω at hv
+    rw [hw, hv]
+  rw [integral_congr_ae he]
+  exact isonormal_product_integral _ _
+
+/-- Every finite scenery average is centered, with no normalization or
+positivity assumption on its deterministic weights. -/
+theorem finiteScenery_mean_zero (I : Finset ℝ) (w : ℝ → ℝ) :
+    (∫ ω, finiteSceneryValue I w ω ∂gaussianProduct) = 0 := by
+  rw [integral_congr_ae (smoothScenery_ae_eq_finiteValue I w).symm]
+  exact isonormal_integral _
+
+/-- The cross moment expands into the exact Brownian covariance matrix of
+the finite spatial support points. This is the finite-kernel covariance
+calculus underlying the paper's mollified scenery estimates. -/
+theorem finiteScenery_cross_moment_covariance
+    (I J : Finset ℝ) (w v : ℝ → ℝ) :
+    (∫ ω, finiteSceneryValue I w ω * finiteSceneryValue J v ω
+      ∂gaussianProduct) =
+      ∑ r ∈ I, ∑ s ∈ J, w r * v s *
+        FractionalSpectralGeometry.covariance (1/2) r s := by
+  rw [finiteScenery_cross_moment]
+  simp [smoothDirection, direction, sum_inner, inner_sum,
+    real_inner_smul_left, real_inner_smul_right, normalized_inner,
+    mul_assoc, mul_left_comm]
+  rw [Finset.sum_comm]
+
+/-- Exact covariance of two finite spatial averages, including signed
+weights and overlapping supports. -/
+theorem finiteScenery_covariance
+    (I J : Finset ℝ) (w v : ℝ → ℝ) :
+    cov[finiteSceneryValue I w, finiteSceneryValue J v; gaussianProduct] =
+      ∑ r ∈ I, ∑ s ∈ J, w r * v s *
+        FractionalSpectralGeometry.covariance (1/2) r s := by
+  unfold ProbabilityTheory.covariance
+  rw [finiteScenery_mean_zero I w, finiteScenery_mean_zero J v]
+  simp only [sub_zero]
+  exact finiteScenery_cross_moment_covariance I J w v
 
 end OperatorDerivativeRewrite.Foundation.IBMFiniteScenerySmoothing

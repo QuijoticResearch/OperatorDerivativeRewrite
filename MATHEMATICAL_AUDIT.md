@@ -6272,3 +6272,7 @@ The paper's page-4 mollifier second-moment and Cameron–Martin energy estimates
 ## Literal finite scenery sums and moments — 2026-10-13
 
 The finite positive-kernel estimate now applies to the literal random sum of verified scenery coordinates, via an a.e. identification with its isonormal Hilbert realization. Exact second and fourth error moments and weighted bounds are proved. Continuous convolution and random-time IBM remain separate obligations. Full build 4266 jobs; 3372 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## Exact covariance of finite smoothed scenery — 2026-10-13
+
+Two literal finite weighted averages of the verified Brownian scenery have the exact covariance given by the double weighted sum of the Brownian covariance kernel. No sign, normalization, or disjointness assumption is needed. This is finite-dimensional source geometry, not yet the continuum mollified field. Full build 4266 jobs; 3376 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
