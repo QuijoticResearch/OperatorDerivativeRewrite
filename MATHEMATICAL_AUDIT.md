@@ -6228,3 +6228,7 @@ The covariance of two source Brownian-scenery increments is the signed spatial o
 ## IBM reflected-clock fourth-moment correction — 2026-10-13
 
 The reflected-clock squared increment equals the unreflected squared increment minus a nonnegative penalty supported exactly on zero-crossing endpoints. The conditional fourth moment inherits the exact penalty and a sharp same-sign equality. Brownian-clock expectation convergence remains open. Full build 4256 jobs; 3311 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM finite-family quartic expectation — 2026-10-13
+
+For any finite family of time intervals and each fixed clock sample, the sum of IBM fourth powers is integrable in the scenery variable and has exact expectation `3` times the sum of squared reflected-clock displacements. Its zero-crossing penalty and upper bound are explicit. No partition limit or full joint expectation has been proved. Full build 4257 jobs; 3316 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.

@@ -1,3 +1,4 @@
+import Foundation.IBMFiniteQuartic
 import Foundation.IBMConditionalReflectedMoments
 import Foundation.IBMConditionalOverlap
 import Foundation.IBMBesselDualitySharp
