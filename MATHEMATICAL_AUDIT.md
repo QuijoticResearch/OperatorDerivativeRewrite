@@ -6092,3 +6092,8 @@ The recursive C:/Operator/spde inventory contains two TeX manuscripts and no exe
 This is a zero-generator one-mode forcing realization, not yet a Caputo solution theorem, a nonzero-rate Mittag-Leffler response, a continuous-path modification or an infinite-dimensional SPDE. It exposes the scalar temporal obstruction that spatial regularity alone cannot remove. The source's whole-space cylindrical-noise Hilbert-Schmidt computation is independently invalid; nonzero Fourier multipliers on L²(R) are not HS just because their symbols are in L². Its blanket temporal Holder exponent, arbitrary-Q scaling, and alpha=2 decay bounds also require repair. These source defects are documented without changing the manuscripts.
 
 Verification: all 11 public declarations and explicit types checked. Full build 4198 jobs; full transitive audit 3113 declarations, only propext, Classical.choice, Quot.sound. Logs `.lake/campaign-evolution/01-*`.
+
+## Recovered stochastic kernel convolution — 2026-10-13
+
+Actual bounded predictable transforms, finite-rank Gram energy, adjoint/domain/nullspace and exact perturbation/convergence transfer independently verified. Full Lake build: 4199 jobs. Complete transitive audit: 3130 declarations; only propext, Classical.choice, Quot.sound. Exact statements, assumptions, source inventory and remaining obligations: RESEARCH_RECOVERY_REPORT.md. No Hilbert-valued SPDE solution is asserted.
+

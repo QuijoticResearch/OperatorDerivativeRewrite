@@ -202,3 +202,4 @@ import Foundation.FractionalCovarianceMatrices
 import Foundation.BrownianCovariancePowers
 import Foundation.FractionalWickCovariance
 import Foundation.FractionalForcingKernel
+import Foundation.StochasticKernelConvolution
