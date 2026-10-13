@@ -305,3 +305,7 @@ Full Lake build 4266 jobs, exact public types, complete transitive audit 3376 de
 ## Continuous Gaussian smoothing rates — 2026-10-13
 
 `Foundation/IBMContinuousRadius.lean` establishes `√δ` Hilbert-direction error, `δ` Gaussian L² squared error, exact Gaussian fourth moment, `3δ²` fourth-moment bound, and strong Gaussian L² convergence for continuous positive mass-one kernels integrated over an interval wholly within radius `δ` of the target. This is an actual Bochner convolution, but the radius condition is stronger than the manuscript's first-absolute-moment estimate and no pathwise or random-time statement follows. Full build 4269 jobs, checked theorem types, 3391 transitive axiom outputs with only the permitted three axioms.
+
+## Whole-line smooth Gaussian L² scenery — 2026-10-13
+
+`Foundation/IBMContinuousDerivative.lean` constructs the actual whole-line Bochner convolution for compactly supported smooth kernels and proves first/second spatial derivative formulas in Gaussian L² under `C¹`/`C²` hypotheses. This uses the source's proven local Bochner integrability and Mathlib's derivative-of-convolution theorem. No sample-path smooth modification, nonlinear chain rule, Malliavin derivative kernel, or random-time composition is asserted. Full build 4270 jobs, checked theorem types, 3399 transitive axiom outputs using only the permitted three axioms.
