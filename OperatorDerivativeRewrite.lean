@@ -1,3 +1,4 @@
+import Foundation.IBMContinuousRadius
 import Foundation.IBMContinuousCovariance
 import Foundation.IBMContinuousScenery
 import Foundation.IBMFiniteScenerySmoothing

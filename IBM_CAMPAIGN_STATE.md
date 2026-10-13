@@ -301,3 +301,7 @@ Full Lake build 4266 jobs, exact public types, complete transitive audit 3376 de
 ## Continuous scenery covariance geometry — 2026-10-13
 
 `Foundation/IBMContinuousCovariance.lean` gives the exact two-kernel Gaussian covariance and energy as iterated Brownian-covariance integrals for continuous compact-interval kernels. No sign or normalization assumptions are needed. Full build 4268 jobs, checked public types, 3386 transitive axiom outputs using only `propext`, `Classical.choice`, `Quot.sound`. The whole-line mollifier, error bounds, spatial/Malliavin derivatives and stochastic correction remain separate obligations.
+
+## Continuous Gaussian smoothing rates — 2026-10-13
+
+`Foundation/IBMContinuousRadius.lean` establishes `√δ` Hilbert-direction error, `δ` Gaussian L² squared error, exact Gaussian fourth moment, `3δ²` fourth-moment bound, and strong Gaussian L² convergence for continuous positive mass-one kernels integrated over an interval wholly within radius `δ` of the target. This is an actual Bochner convolution, but the radius condition is stronger than the manuscript's first-absolute-moment estimate and no pathwise or random-time statement follows. Full build 4269 jobs, checked theorem types, 3391 transitive axiom outputs with only the permitted three axioms.

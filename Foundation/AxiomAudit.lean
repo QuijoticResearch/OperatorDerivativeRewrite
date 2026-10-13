@@ -1,3 +1,4 @@
+import Foundation.IBMContinuousRadius
 import Foundation.IBMContinuousCovariance
 import Foundation.IBMContinuousScenery
 import Foundation.IBMFiniteScenerySmoothing
@@ -3947,3 +3948,8 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.kernelDirection_inner_kernel
 #print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.kernelScenery_cross_moment
 #print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.kernelScenery_energy
+#print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.kernelDirection_error_le
+#print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.kernelScenery_error_sq_le
+#print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.kernelScenery_error_fourth
+#print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.kernelScenery_error_fourth_le
+#print axioms OperatorDerivativeRewrite.Foundation.IBMContinuousScenery.kernelScenery_tendsto
