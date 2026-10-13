@@ -1,3 +1,4 @@
+import Foundation.ObservableDensityObstruction
 import Foundation.ObservableDensityCriterion
 import Foundation.ObservableSubcores
 import Foundation.IBMSceneryObservableRestriction

@@ -175,3 +175,9 @@ Full Lake build 4246 jobs, exact types, complete transitive audit 3277 declarati
 `Foundation/ObservableDensityCriterion.lean` proves `derivative_dense_iff_annihilator_zero`: for a Hilbert observable submodule, the maximal restricted derivative domain is dense if and only if every observable vector orthogonal to *all* domain elements is zero. This is the exact necessary-and-sufficient Hilbert criterion. It does not establish the premise for the IBM observable sigma-algebra; a nonzero annihilator would refute density, while proving its absence would establish density. The earlier projection-invariance theorem is a sufficient route, not a replacement for this equivalence.
 
 Full Lake build 4247 jobs, exact type, complete transitive audit 3278 declarations with only subsets of propext/Classical.choice/Quot.sound. Logs `.lake/campaign-ibm-observable-06-*`.
+
+## Dense-source-domain transfer obstruction — 2026-10-13
+
+`Foundation/ObservableDensityObstruction.lean` proves that for any source partial operator `A` and vector `v ∉ A.domain`, the source domain intersects the line `ℝ∙v` only at zero (`span_outside_domain`). `restricted_line_domain_bot` identifies the maximal observable restriction domain on that line as `⊥`, and `restricted_line_not_dense` proves that it is not dense. `exists_nondense_restriction_of_proper_domain` packages the consequence: even when the source domain is dense, if it is proper, some nonzero observable subspace has nondense restricted domain. This is a valid abstract counterexample pattern, not a claim that the IBM observable subspace is such a line or that its intrinsic core fails to be dense.
+
+Full Lake build 4248 jobs, exact types, complete transitive audit 3282 declarations with only subsets of propext/Classical.choice/Quot.sound. Logs `.lake/campaign-ibm-observable-07-*`.

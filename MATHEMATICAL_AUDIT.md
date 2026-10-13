@@ -6200,3 +6200,7 @@ The abstract observable restriction has exactly the source graph norm. Every com
 ## IBM observable-density annihilator criterion — 2026-10-13
 
 The maximal restricted derivative domain is dense exactly when no nonzero observable vector annihilates it under the Hilbert inner product. This is an exact criterion, not an IBM density proof. Full build 4247 jobs; 3278 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.
+
+## IBM abstract density-transfer obstruction — 2026-10-13
+
+A proper source domain has a one-dimensional observable subspace with zero, hence nondense, restricted domain—even if the source domain is dense. This refutes automatic density transfer, not IBM-specific density. Full build 4248 jobs; 3282 transitive axiom checks with only propext/Classical.choice/Quot.sound. See IBM_CAMPAIGN_STATE.md.

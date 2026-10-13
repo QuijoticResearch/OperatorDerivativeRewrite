@@ -1,3 +1,4 @@
+import Foundation.ObservableDensityObstruction
 import Foundation.ObservableDensityCriterion
 import Foundation.ObservableSubcores
 import Foundation.IBMSceneryObservableRestriction
@@ -3819,4 +3820,8 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.ObservableSubcores.subcore_closable
 #print axioms OperatorDerivativeRewrite.Foundation.ObservableSubcores.subcore_closure_le
 #print axioms OperatorDerivativeRewrite.Foundation.ObservableDensityCriterion.derivative_dense_iff_annihilator_zero
+#print axioms OperatorDerivativeRewrite.Foundation.ObservableDensityObstruction.span_outside_domain
+#print axioms OperatorDerivativeRewrite.Foundation.ObservableDensityObstruction.restricted_line_domain_bot
+#print axioms OperatorDerivativeRewrite.Foundation.ObservableDensityObstruction.restricted_line_not_dense
+#print axioms OperatorDerivativeRewrite.Foundation.ObservableDensityObstruction.exists_nondense_restriction_of_proper_domain
 
