@@ -1,3 +1,4 @@
+import Foundation.FractionalWickCovariance
 import Foundation.BrownianCovariancePowers
 import Foundation.FractionalCovarianceMatrices
 import Foundation.GaussianOUCore
@@ -3600,3 +3601,10 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.BrownianCovariancePowers.differenceVector_ne_zero
 #print axioms OperatorDerivativeRewrite.Foundation.BrownianCovariancePowers.covariance_difference_action
 #print axioms OperatorDerivativeRewrite.Foundation.BrownianCovariancePowers.generalized_eigenpair
+
+#print axioms OperatorDerivativeRewrite.Foundation.FractionalWickCovariance.cylinder
+#print axioms OperatorDerivativeRewrite.Foundation.FractionalWickCovariance.direction_inner
+#print axioms OperatorDerivativeRewrite.Foundation.FractionalWickCovariance.cylinder_inner
+#print axioms OperatorDerivativeRewrite.Foundation.FractionalWickCovariance.cylinder_centered
+#print axioms OperatorDerivativeRewrite.Foundation.FractionalWickCovariance.cylinder_derivative_graph
+#print axioms OperatorDerivativeRewrite.Foundation.FractionalWickCovariance.finite_sum_norm_sq

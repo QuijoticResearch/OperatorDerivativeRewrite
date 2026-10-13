@@ -6072,3 +6072,11 @@ Verification: all 15 public declarations and explicit types checked. Full build 
 Source qualification: the available `C:/Operator/fbm/hurst_curvature.tex` compares its j-th Hadamard form to the FIRST form; since D_1=1, raw D_j are appropriate for that stated comparison. The ratio correction concerns an adjacent-level comparison, not an error in that first-level comparison. Equality of covariance/Gram matrices does not establish equality of fractional Laplacians, Gaussian OU generators, or their domains.
 
 Verification: all 24 new public declarations compiled and explicit types checked. Full build passed (4196 jobs); full transitive audit 3096 declarations with only propext, Classical.choice, Quot.sound. Logs `.lake/campaign-curvature/02-*`. No prior theorem body or archive changed.
+
+## Gaussian curvature campaign C3: actual Wick realization of the Hadamard tower
+
+`Foundation/FractionalWickCovariance.lean` uses actual polynomial cylindrical random variables in the constructed fractional Gaussian family. For arbitrary 0<H<1, nonnegative s,t and natural n,m, `cylinder_inner` proves the pairing equals n! R_H(s,t)^n if n=m and zero otherwise. `cylinder_centered` proves positive orders centered. `cylinder_derivative_graph` proves actual closed derivative graph membership with the genuine Wick lowering formula; no derivative data are supplied independently. `finite_sum_norm_sq` proves the exact factorial-scaled quadratic form for finite linear combinations.
+
+This verifies the source manuscript's Wick Gram interpretation, including correlated times and degenerate directions. It does not identify a fractional Laplacian or a covariance-relative curvature matrix with the Gaussian OU number operator. The degree and spatial-innovation indices are different.
+
+Verification: 6 new declarations, exact types checked, full Lake build 4197 jobs, full transitive audit 3102 declarations and only propext, Classical.choice, Quot.sound. Logs `.lake/campaign-curvature/03-*`.
