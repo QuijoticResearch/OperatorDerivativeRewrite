@@ -258,6 +258,7 @@ import Foundation.BrownianCovariancePowers
 import Foundation.FractionalWickCovariance
 import Foundation.SPDEFiniteGalerkin
 import Foundation.SPDETemporalCovariance
+import Foundation.SPDETemporalIncrements
 import Foundation.SPDEFiniteModes
 import Foundation.SPDEModulatedSensitivity
 import Foundation.SPDEModulatedResponse
