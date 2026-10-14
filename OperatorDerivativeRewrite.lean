@@ -281,3 +281,4 @@ import Foundation.IBMSpatialFundamental
 import Foundation.IBMPointwiseEvaluation
 import Foundation.IBMPathwiseFundamental
 import Foundation.IBMConstructedChainRule
+import Foundation.IBMConstructedSources
