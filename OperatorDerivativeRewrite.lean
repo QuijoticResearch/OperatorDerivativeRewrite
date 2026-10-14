@@ -263,6 +263,7 @@ import Foundation.IBMFiniteBulkVariance
 import Foundation.IBMContinuousBulkVariance
 import Foundation.IBMOffsetTranslation
 import Foundation.IBMBoundaryVariance
+import Foundation.IBMJointMollifierGaussian
 import Foundation.SPDEFiniteModes
 import Foundation.SPDEModulatedSensitivity
 import Foundation.SPDEModulatedResponse
