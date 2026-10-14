@@ -2701,3 +2701,35 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianConditionalFullGraphs.
 | joint_preserves_gradientRange | Foundation/GaussianConditionalFullGraphs.lean:53 |
 | joint_gradientProjection_commute | Foundation/GaussianConditionalFullGraphs.lean:58 |
 | conditional_domain_values | Foundation/GaussianConditionalFullGraphs.lean:66 |
+
+## Discovery 86 — even one Brownian channel has noncompact full-past recovery
+
+For the actual time-Hilbert Gaussian Brownian construction, canonical recovery after conditioning on the entire time interval [0,t] is compact exactly when t=0. At positive t, geometric disjoint subintervals produce an actual orthonormal sequence of normalized increment source directions. Their Hilbert-sum isometry lies in the closed observed source span, so the infinite-source noncompactness theorem applies. At zero every source observation vanishes and the recovered projection is zero.
+
+Significance: continuous temporal observation alone creates infinite source multiplicity. The noncompactness of the countably many Brownian modes in discovery 78 is not solely a spatial-mode phenomenon. A single terminal coordinate has compact recovered projection, while the entire history of that same channel does not. This precisely separates one coordinate from one observation channel. Only actual L2 Brownian classes and closed observation spaces are used; no path or completed-filtration identification is asserted.
+
+Verification: full Lake build 4400 jobs (.lake/stardust-86-build.log); fifteen public types inspected; 7715 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-86-audit.log). Discovery 85 checkpoint: bcfbf4c. Discovery 86 is the commit containing this entry.
+
+Reflection: a finite-dimensional observation-source hypothesis is substantive, even at finite time and with one channel. General finite-source compactness remains open. Repository inspection confirms that genuine predictable L2 integration and raw Brownian PRP were already verified; the next investigation therefore links those actual causal fields to canonical recovery through Hodge geometry, rather than rebuilding predictable integration.
+
+### Public locations — discovery 86
+
+Prefix: OperatorDerivativeRewrite.Foundation.BrownianHistoryRecoveryCompactness.
+
+| Name | Source |
+| --- | --- |
+| pastDirections | Foundation/BrownianHistoryRecoveryCompactness.lean:13 |
+| geometricTime | Foundation/BrownianHistoryRecoveryCompactness.lean:16 |
+| geometricTime_antitone | Foundation/BrownianHistoryRecoveryCompactness.lean:18 |
+| geometricTime_le | Foundation/BrownianHistoryRecoveryCompactness.lean:24 |
+| geometric_gap_pos | Foundation/BrownianHistoryRecoveryCompactness.lean:27 |
+| incrementUnit | Foundation/BrownianHistoryRecoveryCompactness.lean:34 |
+| geometric_increments_orthogonal | Foundation/BrownianHistoryRecoveryCompactness.lean:38 |
+| incrementUnit_orthonormal | Foundation/BrownianHistoryRecoveryCompactness.lean:48 |
+| incrementUnit_mem | Foundation/BrownianHistoryRecoveryCompactness.lean:71 |
+| historySourceEmbedding | Foundation/BrownianHistoryRecoveryCompactness.lean:81 |
+| historySourceEmbedding_hasSum | Foundation/BrownianHistoryRecoveryCompactness.lean:84 |
+| historySourceEmbedding_mem | Foundation/BrownianHistoryRecoveryCompactness.lean:89 |
+| positive_history_recovery_noncompact | Foundation/BrownianHistoryRecoveryCompactness.lean:95 |
+| zero_history_recovery_zero | Foundation/BrownianHistoryRecoveryCompactness.lean:100 |
+| brownian_history_recovery_compact_iff | Foundation/BrownianHistoryRecoveryCompactness.lean:110 |
