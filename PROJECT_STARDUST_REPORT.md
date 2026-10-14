@@ -27,6 +27,11 @@ Reflection: equal ladder energy does not imply equal multiplication algebra or o
 | Bounded right inverse of full Gaussian divergence on centered L2 | VERIFIED | Full gradient-range projection and comparison with adapted representation |
 | Gaussian/Poisson finite-chaos isometry versus multiplication | VERIFIED | Polynomial density and completion; retain proved multiplication defect |
 | Source-Hilbert to physical IBM white-noise kernel bridge | OPEN FROM IBM CAMPAIGN | Construct actual isometry before physical kernel/H^-1 claims |
+| Quartic Banach inverse regularity at zero | VERIFIED, EXHAUSTED | Optimal exponent 1/3; move to nondegenerate data away from zero |
+| Quadratic Gaussian metric roughness and antipodes | VERIFIED | Higher-degree or actual normalized-kernel applications |
+| Bochner-field Gaussian divergence recovery | VERIFIED | Apply to actual nonlinear observables with L2 membership discharged |
+| Actual IBM cubic per-path time integrability/projection | VERIFIED | Joint clock moments, representatives/Fubini and physical kernel |
+| Full Gaussian gradient-range Hodge decomposition | IN PROGRESS | Verify closed range, solenoidal component and bounded potential graph |
 
 ## Complete public locations — discovery 1
 
@@ -278,3 +283,17 @@ Prefix: OperatorDerivativeRewrite.Foundation.
 | IBMClockCubicTimeProjection.sectionClass_time_integrable | Foundation/IBMClockCubicTimeProjection.lean:42 |
 | IBMClockCubicTimeProjection.sourceVector_time_integrable | Foundation/IBMClockCubicTimeProjection.lean:50 |
 | IBMClockCubicTimeProjection.time_integrated_projection | Foundation/IBMClockCubicTimeProjection.lean:58 |
+
+## Discovery 9 — The quartic inverse exponent 1/3 is optimal at zero
+
+Verified: BanachQuarticHolderSharpness.no_local_holder_bound upgrades discovery 4. Under the same explicit lower bound, completeness and a nonzero source vector, EVERY exponent q>1/3 fails locally at zero: for any radius r>0 and any proposed real constant K, there is ||f||<r with K||f||^q<||inverse(f)-inverse(0)||.
+
+Together with the previously verified global 1/3-Holder inverse estimate, this establishes the precise optimal Holder exponent at zero for the actual complete-space quartic normal equation. Cubic homogeneity and a justified small-parameter limit prove the obstruction. No scalar replacement for the full Banach inverse, assumed inverse asymptotic or missing limit interchange occurs.
+
+This supersedes the explicit unresolved sharper-exponent note in discovery 4. The source nontriviality and positive lower bound are essential hypotheses; no obstruction is claimed for the zero source space. Stability away from zero remains a separate question.
+
+Verification: full Lake build 4319 jobs (.lake/stardust-09-build.log); the exact new public type checked; 6364 safe Foundation declarations transitively audited with only propext/Classical.choice/Quot.sound (.lake/stardust-09-audit.lean and .log). An informational ring normalization suggestion appears in the build log, but Lean completed with no errors or placeholders. IBM time-projection checkpoint: 8d5def4. Discovery 9 is the commit containing this entry.
+
+Reflection: nonlinear inverse estimates have a proved sharp boundary at zero. A numerical or operator reconstruction plan should respect this modulus instead of seeking a globally or locally linear inverse estimate. A focused campaign can now examine nondegenerate data away from zero, rather than repeating the exhausted near-zero Lipschitz conjecture.
+
+Public location: OperatorDerivativeRewrite.Foundation.BanachQuarticHolderSharpness.no_local_holder_bound — Foundation/BanachQuarticHolderSharpness.lean:17.
