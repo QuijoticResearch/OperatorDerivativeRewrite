@@ -1923,3 +1923,27 @@ Prefix: OperatorDerivativeRewrite.Foundation.BanachFiniteDirectionStability.
 | poissonConstant | Foundation/BanachFiniteDirectionStability.lean:48 |
 | poisson_constant_finite_directions | Foundation/BanachFiniteDirectionStability.lean:50 |
 | no_uniform_one_direction_bound | Foundation/BanachFiniteDirectionStability.lean:61 |
+
+## Discovery 62 — every real scalar Gaussian displacement from physical Poisson gauges
+
+For every real d there exists an actual scalar Gaussian L2 linear isometry equivalence U that transports both full closed graphs: (f,g) lies in the derivative graph exactly when (Uf,Ug+d Uf) does, and the same equivalence holds for divergence. The construction composes the complete scalar Gaussian/Poisson chaos equivalences with the physical half-density gauge between positive Poisson rates. An explicit positive reference rate realizes every real displacement.
+
+Significance: physical changes of Poisson law supply simultaneous Gaussian annihilation and creation displacements after legitimate complete graph transport. This is a reusable operator principle, not merely a finite polynomial identity. The theorem concerns the one-variable GaussianCore space. No reference independence, displacement group law, continuity in d, pointwise translation formula, or infinite-dimensional Gaussian field extension is proved. This is classical coherent geometry; no world-level novelty is asserted.
+
+Verification: full Lake build 4373 jobs (.lake/stardust-62-build.log); seven public types inspected; 7218 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-62-audit.log). Discovery 61 checkpoint: b62c15c. Discovery 62 is the commit containing this entry.
+
+Reflection: graph transport is substantially stronger than transfer of Hilbert norms, but does not transfer products or entropy. The next investigation tests precisely that boundary using actual Poisson jump curvature and exponential entropy counterexamples.
+
+### Public locations — discovery 62
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianDisplacementFromPoisson.
+
+| Name | Source |
+| --- | --- |
+| annihilation_scalar_transfer | Foundation/GaussianDisplacementFromPoisson.lean:14 |
+| creation_scalar_transfer | Foundation/GaussianDisplacementFromPoisson.lean:21 |
+| gaussianDisplacement | Foundation/GaussianDisplacementFromPoisson.lean:28 |
+| displacement_derivative_graph | Foundation/GaussianDisplacementFromPoisson.lean:33 |
+| displacement_divergence_graph | Foundation/GaussianDisplacementFromPoisson.lean:45 |
+| exists_positive_reference_displacement | Foundation/GaussianDisplacementFromPoisson.lean:57 |
+| exists_gaussian_graph_displacement | Foundation/GaussianDisplacementFromPoisson.lean:78 |

@@ -352,3 +352,4 @@ import Foundation.BanachFiniteSourceStability
 import Foundation.PoissonCoherentRecovery
 import Foundation.FractionalDualRegimePrediction
 import Foundation.BanachFiniteDirectionStability
+import Foundation.GaussianDisplacementFromPoisson
