@@ -724,3 +724,29 @@ Prefix: OperatorDerivativeRewrite.Foundation.BanachQuarticDisjointObstruction.
 | actual_poisson_nonzero_datum_obstruction | Foundation/BanachQuarticDisjointObstruction.lean:89 |
 
 Research-register correction: the claim that nonzero quartic data alone should yield local Lipschitz recovery is REFUTED by discovery 23. Future regularity work must test image overlap or actual Hessian lower bounds. Zero-data sharpness is completed; disjoint-image degeneracy is also completed and should not be rediscovered.
+
+## Discovery 24 — all-degree normalized Wick metric transfer for fractional sources
+
+For any two unit Gaussian source directions with nonnegative correlation, their degree n+1 Wick distance squared lies between (n+1)! times the source distance squared and (n+1)(n+1)! times that distance squared. This is a two-sided comparison in actual Gaussian L2, derived from mixed Wick moments and scalar power bounds on correlations in [0,1].
+
+For the repository's actual fractional Gaussian realization, every positive-time direction has strictly positive norm and can be normalized to unit variance. Its covariance is proved nonnegative for all nonnegative times, so the comparison applies at every pair of positive times and every positive Wick degree, for every 0<H<1. No independence, invertible covariance matrix, or time generator is assumed.
+
+This extends discovery 6 beyond second chaos and supplies a concrete Gaussian/fractional transfer of mean-square geometry. It says that normalized higher Wick degrees retain source metric roughness up to explicit constants. It does not by itself prove sample-path Holder exponents, sharp full-past prediction asymptotics, or behavior of normalization at time zero.
+
+Verification: full Lake build 4334 jobs (.lake/stardust-24-build.log); seven public types checked; 6612 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-24-audit.log). Discovery 23 checkpoint: e216495. Discovery 24 is the commit containing this entry.
+
+Reflection: nonlinear chaos degree alone does not imply improved mean-square temporal smoothness after variance normalization. A future focused fractional campaign can combine these bounds with independently proved normalized-source increment estimates and actual path-version construction.
+
+### Public locations — discovery 24
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianWickMetricTransfer.
+
+| Name | Source |
+| --- | --- |
+| unit_positive_correlation_bounds | Foundation/GaussianWickMetricTransfer.lean:30 |
+| unitDirection | Foundation/GaussianWickMetricTransfer.lean:48 |
+| fractional_direction_norm_pos | Foundation/GaussianWickMetricTransfer.lean:52 |
+| unitDirection_norm | Foundation/GaussianWickMetricTransfer.lean:60 |
+| fractional_covariance_nonneg | Foundation/GaussianWickMetricTransfer.lean:66 |
+| fractional_unit_correlation_nonneg | Foundation/GaussianWickMetricTransfer.lean:82 |
+| fractional_unit_wick_bounds | Foundation/GaussianWickMetricTransfer.lean:89 |
