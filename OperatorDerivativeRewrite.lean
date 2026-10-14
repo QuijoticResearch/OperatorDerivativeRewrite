@@ -346,3 +346,4 @@ import Foundation.GaussianFirstChaosQuarticSource
 import Foundation.GaussianL2QuarticEmbeddingObstruction
 import Foundation.PoissonExponentialTilt
 import Foundation.PoissonTiltHellingerGeometry
+import Foundation.PoissonTiltComposition

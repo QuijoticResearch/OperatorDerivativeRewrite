@@ -1645,3 +1645,31 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonTiltHellingerGeometry.
 | gaussianRoot_inner | Foundation/PoissonTiltHellingerGeometry.lean:105 |
 | poisson_gaussian_affinity_transfer | Foundation/PoissonTiltHellingerGeometry.lean:128 |
 | finite_affinity_inner_transfer | Foundation/PoissonTiltHellingerGeometry.lean:133 |
+
+## Discovery 56 — physical tilt composition and exact entropy asymmetry
+
+Actual Poisson exponential tilts form an additive parameter action: tiltedRate(tiltedRate(lambda,theta),eta)=tiltedRate(lambda,theta+eta), with the opposite parameter returning the original rate. Their strictly positive density functions satisfy the exact multiplicative cocycle, so this is a physical change-of-measure composition principle.
+
+The ordered reverse relative entropy is lambda(exp(theta)-theta-1), while the forward value is lambda(theta exp(theta)-exp(theta)+1). At theta=2 their difference is exactly 4 lambda, and is nonzero at every positive rate. The two measures are the original law and its actual exponential tilt; the inverse-rate theorem identifies the reversed pair legitimately.
+
+Significance: the exact symmetric affinity geometry of discovery 55 does not determine ordered physical relative entropy. This gives a concrete limitation on density-Hilbert geometry transfer, consistent with the earlier Gaussian/Poisson multiplication and entropy obstructions. No general entropy inequality is asserted.
+
+Verification: full Lake build 4367 jobs (.lake/stardust-56-build.log); nine public types inspected; 7110 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-56-audit.log). Discovery 55 checkpoint: e1df2ea. Discovery 56 is the commit containing this entry.
+
+Reflection: a physical half-density gauge can now be investigated using the repository's existing positive weighted-L2 unitary, rather than constructing a formal multiplier on one fixed measure. Its action on full Poisson annihilation and creation graphs is the next operator-calculus question.
+
+### Public locations — discovery 56
+
+Prefix: OperatorDerivativeRewrite.Foundation.PoissonTiltComposition.
+
+| Name | Source |
+| --- | --- |
+| tiltedRate_add | Foundation/PoissonTiltComposition.lean:12 |
+| tiltedRate_zero | Foundation/PoissonTiltComposition.lean:19 |
+| tiltedRate_inverse | Foundation/PoissonTiltComposition.lean:24 |
+| density_cocycle | Foundation/PoissonTiltComposition.lean:27 |
+| relativeEntropy | Foundation/PoissonTiltComposition.lean:37 |
+| relativeEntropy_formula | Foundation/PoissonTiltComposition.lean:40 |
+| reverse_relativeEntropy | Foundation/PoissonTiltComposition.lean:43 |
+| exact_entropy_asymmetry | Foundation/PoissonTiltComposition.lean:51 |
+| relativeEntropy_not_symmetric | Foundation/PoissonTiltComposition.lean:56 |
