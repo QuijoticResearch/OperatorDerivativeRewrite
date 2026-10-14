@@ -1058,3 +1058,37 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonExponentialEntropy.
 | All-degree normalized fractional Wick metric comparison | VERIFIED | Actual normalized-source increment asymptotics and path versions |
 
 Next three focused directions: physical IBM kernel/uniform-limit analysis; countable SPDE spatial/temporal convergence; exact fractional full-past prediction. Active independent investigation: complete rate-weighted Poisson field coordinates for precise closed-operator transfer. No completed density, moment-existence or representative gap should be reopened as an assumption.
+
+## Discovery 36 — complete rate-weighted Poisson field geometry
+
+The actual Poisson rate-weighted field L2 space is linearly isometric to its scalar L2 space: the map represents sqrt(lambda) times the same count function, with inverse lambda^(-1/2) times the scalar function under the weighted measure. Both directions, pointwise representatives, linearity, inverse identities and the full norm equality are proved for every positive rate.
+
+This transports the complete scalar Charlier coordinates to a genuine weighted-field Hilbert basis. Its basis vectors are exactly the already constructed normalizedField ladder, and every field has its unconditional inner-product expansion. No density assumption is imposed for the field space.
+
+Significance: retaining the actual rate factor makes exact closed source-operator transfer tractable. Matching scalar coordinates alone was insufficient to compare unbounded operators with different field measures. This result is a Hilbert measure-scaling equivalence and does not identify ordinary multiplication or entropy.
+
+Verification: full Lake build 4346 jobs (.lake/stardust-36-build.log); fifteen public types checked; 6780 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-36-audit.log). Discovery 35 checkpoint: 78d9eab. Discovery 36 is the commit containing this entry.
+
+Reflection: scalar and field completeness can now be used in actual finite graph approximation. Active next proof: exact maximal Poisson graph characterizations and scalar Gaussian Hermite graph intertwining. This remains separate from the already disproved quadratic entropy transfer.
+
+### Public locations — discovery 36
+
+Prefix: OperatorDerivativeRewrite.Foundation.PoissonWeightedScalarGeometry.
+
+| Name | Source |
+| --- | --- |
+| unweighted_memLp | Foundation/PoissonWeightedScalarGeometry.lean:12 |
+| unweighted | Foundation/PoissonWeightedScalarGeometry.lean:17 |
+| weighted | Foundation/PoissonWeightedScalarGeometry.lean:20 |
+| toScalar | Foundation/PoissonWeightedScalarGeometry.lean:23 |
+| toField | Foundation/PoissonWeightedScalarGeometry.lean:26 |
+| toScalar_apply | Foundation/PoissonWeightedScalarGeometry.lean:29 |
+| toField_apply | Foundation/PoissonWeightedScalarGeometry.lean:35 |
+| weightedScalarLinearEquiv | Foundation/PoissonWeightedScalarGeometry.lean:41 |
+| field_norm_sq | Foundation/PoissonWeightedScalarGeometry.lean:69 |
+| toScalar_norm | Foundation/PoissonWeightedScalarGeometry.lean:79 |
+| weightedScalarEquiv | Foundation/PoissonWeightedScalarGeometry.lean:91 |
+| equiv_normalizedField | Foundation/PoissonWeightedScalarGeometry.lean:97 |
+| fieldBasis | Foundation/PoissonWeightedScalarGeometry.lean:108 |
+| fieldBasis_apply | Foundation/PoissonWeightedScalarGeometry.lean:111 |
+| fieldBasis_hasSum | Foundation/PoissonWeightedScalarGeometry.lean:121 |
