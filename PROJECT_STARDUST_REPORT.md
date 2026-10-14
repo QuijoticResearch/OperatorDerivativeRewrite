@@ -1947,3 +1947,57 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianDisplacementFromPoisson.
 | displacement_divergence_graph | Foundation/GaussianDisplacementFromPoisson.lean:45 |
 | exists_positive_reference_displacement | Foundation/GaussianDisplacementFromPoisson.lean:57 |
 | exists_gaussian_graph_displacement | Foundation/GaussianDisplacementFromPoisson.lean:78 |
+
+## Discovery 63 — positive Poisson curvature does not supply diffusion entropy
+
+The actual Poisson birth/death expression Gf(n)=lambda Delta f(n)+n(f(n-1)-f(n)) is linked pointwise to minus the genuine maximal divergence/difference composition on every admitted number-domain triple. Its generator carre du champ is half the forward plus backward jump energy. A sum-of-squares decomposition proves Gamma2>=Gamma/2 for every count function; linear count functions show that 1/2 is the optimal uniform pointwise coefficient.
+
+Separately, the actual forward source energy lambda(Delta f)^2 satisfies an exact Bochner identity: forwardBochner=forwardEnergy+lambda Gamma(Delta f), hence a coefficient-one lower bound. This forward energy differs from the generator carre du champ pointwise. For actual exponential probes their integrals agree, and both equal the genuine maximal source energy.
+
+For every positive rate and every C>=0, an exponential probe belongs to both full source graphs, has integrable Gamma and finite entropy integrand, and violates EntSq<=C integral Gamma. The same probes violate the bound using forward energy. The diffusion exponential chain rule fails at count zero, and therefore fails almost everywhere equality under the actual positive-mass Poisson law. Positive quadratic curvature and a forward Bochner bound cannot replace the missing diffusion algebra in a Gaussian entropy argument.
+
+Scope: the raw generator is identified on admitted maximal number-domain triples; a full converse generator-domain identification, Markov semigroup construction, and bounded-core truncation theorem are not proved here. General modified jump log-Sobolev estimates remain open in this repository. These are classical jump/diffusion distinctions, newly verified against the actual repository operators, not a claimed refutation of a legitimate modified entropy theorem.
+
+Verification: full Lake build 4374 jobs (.lake/stardust-63-build.log); 33 public types inspected; 7258 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-63-audit.log). Discovery 62 checkpoint: d559d55. Discovery 63 is the commit containing this entry.
+
+Reflection: future entropy transfer must explicitly discharge the relevant chain rule or use the correct jump Bregman functional. A substantial next Poisson campaign would construct the actual spectral semigroup and test hypercontractivity with coherent exponential probes. Meanwhile the fractional Brownian benchmark is being checked to calibrate exact prediction laws.
+
+### Public locations — discovery 63
+
+Prefix: OperatorDerivativeRewrite.Foundation.PoissonJumpCurvature.
+
+| Name | Source |
+| --- | --- |
+| jumpGradient | Foundation/PoissonJumpCurvature.lean:14 |
+| jumpGenerator | Foundation/PoissonJumpCurvature.lean:16 |
+| carre | Foundation/PoissonJumpCurvature.lean:19 |
+| gamma | Foundation/PoissonJumpCurvature.lean:23 |
+| gamma2 | Foundation/PoissonJumpCurvature.lean:25 |
+| carre_eq_differences | Foundation/PoissonJumpCurvature.lean:28 |
+| gamma_eq_differences | Foundation/PoissonJumpCurvature.lean:34 |
+| gamma_nonneg | Foundation/PoissonJumpCurvature.lean:39 |
+| gamma2_decomposition | Foundation/PoissonJumpCurvature.lean:43 |
+| gamma2_half_lower | Foundation/PoissonJumpCurvature.lean:59 |
+| gamma_count | Foundation/PoissonJumpCurvature.lean:67 |
+| gamma2_count | Foundation/PoissonJumpCurvature.lean:71 |
+| no_larger_pointwise_curvature | Foundation/PoissonJumpCurvature.lean:80 |
+| number_graph_generator | Foundation/PoissonJumpCurvature.lean:89 |
+| gradient_generator_commutation | Foundation/PoissonJumpCurvature.lean:108 |
+| forwardEnergy | Foundation/PoissonJumpCurvature.lean:112 |
+| forwardBochner | Foundation/PoissonJumpCurvature.lean:114 |
+| forwardBochner_identity | Foundation/PoissonJumpCurvature.lean:118 |
+| forwardBochner_one_lower | Foundation/PoissonJumpCurvature.lean:124 |
+| forward_energy_not_generator_carre | Foundation/PoissonJumpCurvature.lean:129 |
+| gamma_exponential | Foundation/PoissonJumpCurvature.lean:148 |
+| gamma_exponential_integrable | Foundation/PoissonJumpCurvature.lean:158 |
+| gamma_exponential_integral | Foundation/PoissonJumpCurvature.lean:169 |
+| gamma_exponential_eq_source_energy | Foundation/PoissonJumpCurvature.lean:192 |
+| exponential_number_domain | Foundation/PoissonJumpCurvature.lean:196 |
+| gamma_quadratic_entropy_obstruction | Foundation/PoissonJumpCurvature.lean:204 |
+| actual_curvature_entropy_counterexample | Foundation/PoissonJumpCurvature.lean:223 |
+| diffusion_chain_rule_failure | Foundation/PoissonJumpCurvature.lean:239 |
+| diffusion_chain_rule_ae_failure | Foundation/PoissonJumpCurvature.lean:251 |
+| forwardEnergy_exponential | Foundation/PoissonJumpCurvature.lean:258 |
+| forwardEnergy_exponential_integrable | Foundation/PoissonJumpCurvature.lean:263 |
+| forwardEnergy_exponential_integral | Foundation/PoissonJumpCurvature.lean:268 |
+| forward_bochner_entropy_obstruction | Foundation/PoissonJumpCurvature.lean:275 |

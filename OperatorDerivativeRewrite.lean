@@ -353,3 +353,4 @@ import Foundation.PoissonCoherentRecovery
 import Foundation.FractionalDualRegimePrediction
 import Foundation.BanachFiniteDirectionStability
 import Foundation.GaussianDisplacementFromPoisson
+import Foundation.PoissonJumpCurvature
