@@ -2610,3 +2610,29 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianPotentialPredictionRank.
 | potential_prediction_energy | Foundation/GaussianPotentialPredictionRank.lean:54 |
 | fractional_potential_lower | Foundation/GaussianPotentialPredictionRank.lean:62 |
 | fractional_potential_no_higher_bound | Foundation/GaussianPotentialPredictionRank.lean:72 |
+
+## Discovery 83 — every observed Gaussian L2 recovery satisfies both field restrictions
+
+For any Gaussian observation family, every observed scalar target in the full derivative graph has its actual derivative fixed by the joint source/sample orthogonal projection. The proof expands observed polynomial derivatives into actual observed tensor fields, then uses the already established observed polynomial graph density. Arbitrary index sets and correlated or linearly dependent observations are allowed.
+
+The inverse-number potential preserves observed scalar L2 and has derivative Rf. Consequently the actual canonical recovery of every observed scalar L2 target is fixed by both coefficient-source projection and vector conditional expectation. This holds for all targets, without a Wick expansion or separate derivative-domain assumption on the original target. In particular recovery after scalar conditioning always satisfies the two field constraints.
+
+Significance: the correct source and sample restrictions now follow for the full recovered observed space. It provides the range half of the all-L2 joint intertwining proof, beyond the positive Wick and orthogonal-response examples. The reverse identity still requires the adjoint to send jointly restricted fields into observed scalar L2; its draft is under investigation. This is full source calculus, not an adapted stochastic integral assertion.
+
+Verification: full Lake build 4397 jobs (.lake/stardust-83-build.log); seven public types inspected; 7659 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-83-audit.log). Discovery 82 checkpoint: 08c0ba3. Discovery 83 is the commit containing this entry.
+
+Reflection: observed graph density and the bounded inverse-number potential avoid the missing diagonal-Wick density bridge. The adjoint proof uses actual observed polynomial divergence outputs, then bounded extension in the source and sample factors. If completed, it will resolve the joint operator identity on every actual Gaussian scalar L2 class.
+
+### Public locations — discovery 83
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianObservedRecoveryRange.
+
+| Name | Source |
+| --- | --- |
+| observed_tensor_fixed | Foundation/GaussianObservedRecoveryRange.lean:15 |
+| finite_observed_derivative_fixed | Foundation/GaussianObservedRecoveryRange.lean:23 |
+| family_derivative_fixed | Foundation/GaussianObservedRecoveryRange.lean:36 |
+| observed_derivative_fixed | Foundation/GaussianObservedRecoveryRange.lean:51 |
+| observed_recovery_fixed | Foundation/GaussianObservedRecoveryRange.lean:66 |
+| conditional_recovery_joint_fixed | Foundation/GaussianObservedRecoveryRange.lean:70 |
+| conditional_recovery_constraints | Foundation/GaussianObservedRecoveryRange.lean:74 |
