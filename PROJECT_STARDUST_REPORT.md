@@ -956,3 +956,28 @@ Prefix: OperatorDerivativeRewrite.Foundation.FiniteMeasureL2Integration.
 | square_integral_le | Foundation/FiniteMeasureL2Integration.lean:13 |
 | column_integral_memLp | Foundation/FiniteMeasureL2Integration.lean:41 |
 | column_integral_energy_le | Foundation/FiniteMeasureL2Integration.lean:53 |
+
+## Discovery 33 — joint IBM cubic time-integral L2
+
+For every fixed mollifier and every finite real horizon, the actual scalar cubic time integral belongs to L2 of the full joint scenery/clock law. The entire actual time/joint-sample representative is in product L2. This discharges the previously open joint finite-horizon scalar time-integral moment obligation, with an actual energy bound carrying the finite time mass factor.
+
+The joint fixed-time square expectation is bounded by C_n (1+15 t^3). This follows from the actual scenery-section energy identity, global cubic source growth and the proved clock sixth moment. A continuous polynomial time majorant proves joint time/product-square integrability. Discovery 32 then constructs genuine scalar column L2 membership and bounds its energy. Per-clock representative identification from discovery 26 remains available.
+
+Limits: all constants depend on the fixed mollifier. There is no uniform n limit, predictable-clock integration, stochastic Ito–Tanaka formula, derivative/time graph interchange, physical white-noise kernel identification or singular H^-1 conclusion. The active next proof constructs the actual clock-parameterized Bochner target and its full scenery-source recovery graph, rather than assuming its measurability or L2 membership.
+
+Verification: full Lake build 4343 jobs (.lake/stardust-33-build.log); six public types checked; 6692 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-33-audit.log). Discovery 32 checkpoint: 0f787ed. Discovery 33 is the commit containing this entry.
+
+Reflection: fixed-time Gaussian moments and finite-measure column integration eliminate a joint time-integral obstacle without a clock supremum theorem. The remaining analytical difficulty is the mollifier limit and physical source-kernel geometry, not finite-mollifier moment existence.
+
+### Public locations — discovery 33
+
+Prefix: OperatorDerivativeRewrite.Foundation.IBMClockCubicJointTimeL2.
+
+| Name | Source |
+| --- | --- |
+| joint_energy_growth | Foundation/IBMClockCubicJointTimeL2.lean:15 |
+| timeValue | Foundation/IBMClockCubicJointTimeL2.lean:48 |
+| timeValue_measurable | Foundation/IBMClockCubicJointTimeL2.lean:51 |
+| timeValue_memLp | Foundation/IBMClockCubicJointTimeL2.lean:56 |
+| integratedValue_memLp_joint | Foundation/IBMClockCubicJointTimeL2.lean:76 |
+| integratedValue_joint_energy_le | Foundation/IBMClockCubicJointTimeL2.lean:81 |

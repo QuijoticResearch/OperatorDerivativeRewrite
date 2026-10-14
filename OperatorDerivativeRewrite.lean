@@ -322,3 +322,4 @@ import Foundation.GaussianCubicGrowth
 import Foundation.IBMClockCubicJointL2
 import Foundation.IBMClockSixthMoment
 import Foundation.FiniteMeasureL2Integration
+import Foundation.IBMClockCubicJointTimeL2

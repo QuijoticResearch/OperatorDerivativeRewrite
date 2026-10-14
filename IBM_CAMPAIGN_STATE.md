@@ -842,3 +842,11 @@ This supersedes the older OPEN per-clock scalar representative/Fubini status. Jo
 IBMClockCubicJointL2.value_memLp_joint proves actual cubic correction L2 membership under the full joint scenery/clock law for every fixed n,t. Global compact-kernel growth, cubic source norm bounds and the actual clock's sixth-moment membership discharge the random-clock domination obligation at fixed times. Verification: full Lake build 4340 jobs; five public types checked; 6676 safe Foundation declarations audited with only the standard three axioms. See discovery 30 and .lake/stardust-30-{build,audit}.log.
 
 This supersedes fixed-time joint cubic L2 OPEN status only. Joint finite-horizon scalar time-integral L2 is still being investigated. No n-uniform limit, physical kernel bridge, predictable-clock or stochastic Ito–Tanaka theorem follows. ResearchSources remains unchanged.
+
+## Stardust follow-up: joint finite-horizon scalar cubic L2 (2026-10-14)
+
+IBMClockCubicJointTimeL2 proves product L2 of the actual time/joint-sample cubic representative and full joint L2 of its scalar finite-horizon time integral. Fixed-mollifier global growth and the actual clock sixth moment supply an integrable time majorant; finite-measure L2 column integration preserves actual membership with the parameter-mass energy factor.
+
+Verification: full Lake build 4343 jobs; six public types checked; 6692 safe Foundation declarations audited with only the standard three axioms. See discovery 33 and .lake/stardust-33-{build,audit}.log. This supersedes the earlier OPEN joint finite-horizon scalar cubic time-integral L2 status.
+
+Clock-parameterized Bochner target/recovery is being constructed next. Uniform mollifier control, physical kernel identification, graph-norm derivative interchange, local time, predictable-clock integration, stochastic Ito–Tanaka and singular IBM H^-1 convergence remain open. The target is still the g'' time section, not the full correction including its 1/2 factor and boundary term. ResearchSources is unchanged.
