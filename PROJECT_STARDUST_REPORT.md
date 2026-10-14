@@ -3033,3 +3033,35 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianDisplacementNormDiscontinui
 | positive_tilt_displacement | Foundation/GaussianDisplacementNormDiscontinuity.lean:69 |
 | displacement_not_opNorm_continuousAt_zero | Foundation/GaussianDisplacementNormDiscontinuity.lean:76 |
 
+
+## Discovery 97 — the actual coherent graph transfer has unbounded physical entropy distortion
+
+The square of the physical Gaussian coherent vector at d defines the actual Gaussian probability law with mean 2d and variance one. Its density has unit mass, its density-log term is integrable, and its relative entropy is exactly 2d squared. This equals twice the squared norm of its actual closed derivative d times coherent_d, giving exact entropy/derivative-energy saturation on the admitted family.
+
+The full Poisson-to-Gaussian graph transfer sends the physical Poisson square-root tilt to the Gaussian coherent vector at d = sqrt(rate) (exp(theta/2)-1). For every positive rate and every nonnegative proposed ratio K, an explicit positive tilt has Poisson physical relative entropy greater than K times the Gaussian physical coherent entropy. Both probability laws and both finite entropy integrals are actual constructed objects. The inequality concerns these verified paired coherent states; no entropy operator conjugacy is postulated.
+
+Significance: the complete genuine Hilbert/graph equivalence can distort nonlinear entropy by arbitrarily large factors, even on normalized coherent probes. Exact shared source geometry is insufficient for entropy transfer. This quantitatively reconciles the established Gaussian entropy foundations with the Poisson ordinary quadratic entropy obstruction, and strengthens the earlier warnings about multiplication/entropy not being preserved.
+
+Verification: full Lake build 4411 jobs (.lake/stardust-97-build.log); thirteen public types inspected; 7873 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-97-audit.log). Discovery 96 checkpoint: 6bc5e90. Discovery 97 is the commit containing this entry.
+
+Reflection: the scalar coherent/gauge branch is now consolidated through its physical law and exact entropy limitation. A future infinitesimal-generator or infinite-field campaign is justified, but immediate exploration changes region to actual exponential time profiles for the countable Brownian forcing model, with an intended sharp reciprocal-rate trace criterion. No spatial SPDE solution, causal fractional kernel, or uniform IBM limit is claimed.
+
+### Public locations — discovery 97
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianCoherentEntropyDistortion.
+
+| Name | Source |
+| --- | --- |
+| coherentDensity | Foundation/GaussianCoherentEntropyDistortion.lean:12 |
+| coherentLaw | Foundation/GaussianCoherentEntropyDistortion.lean:13 |
+| coherentEntropy | Foundation/GaussianCoherentEntropyDistortion.lean:14 |
+| coherent_density_pdf | Foundation/GaussianCoherentEntropyDistortion.lean:16 |
+| coherentLaw_eq_gaussian | Foundation/GaussianCoherentEntropyDistortion.lean:25 |
+| coherentDensity_mean_one | Foundation/GaussianCoherentEntropyDistortion.lean:33 |
+| coherent_squared_density | Foundation/GaussianCoherentEntropyDistortion.lean:40 |
+| coherent_log_integrable | Foundation/GaussianCoherentEntropyDistortion.lean:50 |
+| coherent_density_log_integrable | Foundation/GaussianCoherentEntropyDistortion.lean:55 |
+| coherentEntropy_eq | Foundation/GaussianCoherentEntropyDistortion.lean:61 |
+| coherentEntropy_eq_twice_derivative_energy | Foundation/GaussianCoherentEntropyDistortion.lean:72 |
+| coherentEntropy_displacement | Foundation/GaussianCoherentEntropyDistortion.lean:76 |
+| unbounded_physical_entropy_distortion | Foundation/GaussianCoherentEntropyDistortion.lean:84 |

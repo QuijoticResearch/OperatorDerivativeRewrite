@@ -387,3 +387,4 @@ import Foundation.GaussianDisplacementContinuity
 import Foundation.GaussianDisplacementQuarticObstruction
 import Foundation.GaussianPhysicalDisplacement
 import Foundation.GaussianDisplacementNormDiscontinuity
+import Foundation.GaussianCoherentEntropyDistortion
