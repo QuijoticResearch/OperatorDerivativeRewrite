@@ -328,3 +328,29 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianSourceHodge.
 | residual_divergence_zero | Foundation/GaussianSourceHodge.lean:71 |
 | recovery_adjoint_kernel_zero | Foundation/GaussianSourceHodge.lean:78 |
 | potential_gradient_graph | Foundation/GaussianSourceHodge.lean:88 |
+
+## Discovery 11 — Divergence kernels expose a dimensional obstruction to naive transfer
+
+Verified: DivergenceKernelContrast proves that the full maximal divergence of the positive-rate one-count Poisson model has trivial kernel. The count-zero boundary fixes u(0)=0, and the actual divergence recurrence inductively fixes every positive-mass atom. This is an operator-graph theorem on genuine rate-weighted L2 classes.
+
+For the actual Gaussian source, the polynomial skew field X_k h-X_h k belongs to the full divergence domain and has divergence zero. Its exact norm² is 2(||h||²||k||²-<h,k>²). Explicit distinct unit l2 source directions give a nonzero example of norm²=2. The cancellation is verified from the genuine rank-divergence graphs, not assumed as a formal rotational symmetry.
+
+Mathematical significance: matching scalar chaos norms does not match the uniqueness geometry of divergence preimages. Gaussian minimum-norm selection matters because solenoidal fields actually exist; the one-count Poisson preimage, when it exists, is unique. This is a DIMENSIONAL comparison between one count and a Gaussian source with at least two directions, not a claim that all Poisson divergences are injective.
+
+Verification: full Lake build 4321 jobs (.lake/stardust-11-build.log); all seven public types checked; 6402 safe Foundation declarations transitively audited with only propext/Classical.choice/Quot.sound (.lake/stardust-11-audit.lean and .log). Source Hodge checkpoint: 197147f. Discovery 11 is the commit containing this entry.
+
+Reflection: compare multidimensional Poisson skew/curl fields before generalizing the injectivity result. Current next step: construct unique contractive recovery for finite positive Charlier expansions, while leaving the full polynomial-density obligation explicit. Do not infer vector-valued noise transfer merely from a scalar Hilbert isometry.
+
+### Public locations — discovery 11
+
+Prefix: OperatorDerivativeRewrite.Foundation.DivergenceKernelContrast.
+
+| Name | Source |
+| --- | --- |
+| poisson_divergence_zero_iff | Foundation/DivergenceKernelContrast.lean:16 |
+| firstChaosPolynomial_eq_embedding | Foundation/DivergenceKernelContrast.lean:42 |
+| rankDivergence_linear_symmetric | Foundation/DivergenceKernelContrast.lean:46 |
+| skewField | Foundation/DivergenceKernelContrast.lean:57 |
+| skewField_divergence_zero | Foundation/DivergenceKernelContrast.lean:60 |
+| skewField_norm_sq | Foundation/DivergenceKernelContrast.lean:70 |
+| gaussian_nonzero_divergence_kernel | Foundation/DivergenceKernelContrast.lean:85 |

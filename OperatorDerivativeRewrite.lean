@@ -300,3 +300,4 @@ import Foundation.GaussianWickContinuity
 import Foundation.IBMClockCubicTimeProjection
 import Foundation.BanachQuarticHolderSharpness
 import Foundation.GaussianSourceHodge
+import Foundation.DivergenceKernelContrast
