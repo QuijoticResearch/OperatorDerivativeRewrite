@@ -55,6 +55,7 @@ import Foundation.IBMSourceLaws
 import Foundation.FractionalForcingObstruction
 import Foundation.StochasticKernelConvolution
 import Foundation.SPDEFiniteGalerkin
+import Foundation.SPDETemporalCovariance
 import Foundation.SPDEFiniteModes
 import Foundation.SPDEModulatedSensitivity
 import Foundation.SPDEModulatedResponse
@@ -4039,3 +4040,7 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.SPDEFiniteGalerkin.responseField_memLp
 #print axioms OperatorDerivativeRewrite.Foundation.SPDEFiniteGalerkin.responseL2_coeFn
 #print axioms OperatorDerivativeRewrite.Foundation.SPDEFiniteGalerkin.responseL2_energy
+#print axioms OperatorDerivativeRewrite.Foundation.SPDETemporalCovariance.modulated_cross_time_moment
+#print axioms OperatorDerivativeRewrite.Foundation.SPDETemporalCovariance.mode_cross_time_moment
+#print axioms OperatorDerivativeRewrite.Foundation.SPDETemporalCovariance.finiteGaussianResponse_cross_inner
+#print axioms OperatorDerivativeRewrite.Foundation.SPDETemporalCovariance.finiteModulatedResponse_cross_time_inner
