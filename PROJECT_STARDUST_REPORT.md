@@ -1574,3 +1574,39 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianL2QuarticEmbeddingObstructi
 | classFour_norm | Foundation/GaussianL2QuarticEmbeddingObstruction.lean:49 |
 | no_uniform_norm_bound | Foundation/GaussianL2QuarticEmbeddingObstruction.lean:66 |
 | no_bounded_physical_extension | Foundation/GaussianL2QuarticEmbeddingObstruction.lean:79 |
+
+## Discovery 54 — actual Poisson exponential change of measure and relative entropy
+
+For every nonnegative Poisson rate lambda and every real theta, the strictly positive density exp(theta n-lambda(exp(theta)-1)) changes the actual count law exactly into Poisson(lambda exp(theta)). The theorem is equality of measures proved from their actual atoms, including lambda=0. It yields the true integral-transfer formula for every scalar count function and verifies normalization.
+
+Both log-density integrability under the new law and density-times-log-density integrability under the old law are discharged. Relative entropy is exactly lambda(theta exp(theta)-exp(theta)+1). The density belongs to actual L2, and its genuine forward-jump Bregman energy under the rate-weighted law equals this same relative entropy, with the jump integrand proved integrable.
+
+Significance: the previous coherent exponential and jump entropy calculations now have an actual change-of-law interpretation. The physical tilt changes the rate, rather than asserting a unitary preservation of nonlinear entropy. Equality with jump energy is proved for this exponential density family; a general modified log-Sobolev inequality remains unproved.
+
+Verification: full Lake build 4365 jobs (.lake/stardust-54-build.log); seventeen public types inspected; 7071 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-54-audit.log). Discovery 53 checkpoint: 5b9646e. Discovery 54 is the commit containing this entry.
+
+Reflection: actual square-root density geometry is the next investigation. Its pairwise affinity may have a Gaussian kernel in square-root rate coordinates even though the verified physical entropy and multiplication structures differ.
+
+### Public locations — discovery 54
+
+Prefix: OperatorDerivativeRewrite.Foundation.PoissonExponentialTilt.
+
+| Name | Source |
+| --- | --- |
+| tiltedRate | Foundation/PoissonExponentialTilt.lean:12 |
+| density | Foundation/PoissonExponentialTilt.lean:15 |
+| tiltedMeasure | Foundation/PoissonExponentialTilt.lean:18 |
+| density_pos | Foundation/PoissonExponentialTilt.lean:21 |
+| density_weight | Foundation/PoissonExponentialTilt.lean:23 |
+| tiltedMeasure_eq_poisson | Foundation/PoissonExponentialTilt.lean:34 |
+| integral_transfer | Foundation/PoissonExponentialTilt.lean:46 |
+| density_mean_one | Foundation/PoissonExponentialTilt.lean:55 |
+| log_density_integrable | Foundation/PoissonExponentialTilt.lean:60 |
+| density_log_integrable | Foundation/PoissonExponentialTilt.lean:68 |
+| relative_entropy | Foundation/PoissonExponentialTilt.lean:77 |
+| density_factor | Foundation/PoissonExponentialTilt.lean:93 |
+| density_memLp_two | Foundation/PoissonExponentialTilt.lean:99 |
+| density_succ | Foundation/PoissonExponentialTilt.lean:105 |
+| density_jumpBregman | Foundation/PoissonExponentialTilt.lean:112 |
+| density_jump_integrable | Foundation/PoissonExponentialTilt.lean:119 |
+| relative_entropy_eq_jump_energy | Foundation/PoissonExponentialTilt.lean:126 |
