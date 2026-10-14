@@ -1385,3 +1385,27 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianPredictionDivergenceRecover
 | terminal_recovery_energy_hasSum | Foundation/GaussianPredictionDivergenceRecovery.lean:27 |
 | terminal_prediction_recovery_energy_hasSum | Foundation/GaussianPredictionDivergenceRecovery.lean:35 |
 | terminal_recovery_rank_upper | Foundation/GaussianPredictionDivergenceRecovery.lean:48 |
+
+## Discovery 47 — weighted source nondegeneracy restores quartic Lipschitz stability
+
+The actual bounded weighted source map B_u(w)=(delta u)(delta w) is constructed into L2 through the verified L4 multiplication operator. A pointwise algebraic inequality proves (A(u)-A(v))(u-v) >= (3/4)||B_u(u-v)||_2^2 for the genuine quartic normal map A=delta*J4 delta, using legitimate integrable representatives.
+
+If the weighted source has a quantitative lower bound c||w|| <= ||B_u(w)||_2 with c>0, then ||u-v|| <= 4/(3c^2) ||A(u)-A(v)|| for every v. When the established complete-space normal equivalence exists, the actual inverse at datum f0=A(u) obeys the same bound against every dual datum. No finite dimension or pointwise lower bound on delta u is imposed; the hypothesis is explicit weighted linear source nondegeneracy.
+
+Significance: a precise sufficient condition restores Lipschitz stability beyond the sharp global one-third exponent. Nonzero data alone are insufficient, as discovery 23 proved. The present theorem does not prove the weighted lower bound from injectivity, establish its necessity, or assert that infinite L4 identity sources satisfy it.
+
+Verification: full Lake build 4357 jobs (.lake/stardust-47-build.log); five public types inspected; 6959 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-47-audit.log). Discovery 46 checkpoint: e391184. Discovery 47 is the commit containing this entry.
+
+Reflection: weighted injectivity is the appropriate positive hypothesis to investigate beside disjoint-support inverse singularities. A concrete constant source over an actual probability space is being checked to show the condition is realizable. Whether the infinite Poisson L4 identity inverse is singular at every datum, including strictly positive representatives, is an unproved conjecture worth a focused campaign.
+
+### Public locations — discovery 47
+
+Prefix: OperatorDerivativeRewrite.Foundation.BanachQuarticWeightedStability.
+
+| Name | Source |
+| --- | --- |
+| weightedSource | Foundation/BanachQuarticWeightedStability.lean:17 |
+| cubic_weighted_monotone | Foundation/BanachQuarticWeightedStability.lean:20 |
+| normalFour_weighted_monotone | Foundation/BanachQuarticWeightedStability.lean:25 |
+| inverse_lipschitz_at_weighted_datum | Foundation/BanachQuarticWeightedStability.lean:52 |
+| normalFour_inverse_weighted_bound | Foundation/BanachQuarticWeightedStability.lean:73 |

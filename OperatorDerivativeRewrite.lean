@@ -336,3 +336,4 @@ import Foundation.GaussianTerminalPredictionSpectrum
 import Foundation.FractionalTerminalPredictionRank
 import Foundation.GaussianTerminalMaximalCorrelation
 import Foundation.GaussianPredictionDivergenceRecovery
+import Foundation.BanachQuarticWeightedStability
