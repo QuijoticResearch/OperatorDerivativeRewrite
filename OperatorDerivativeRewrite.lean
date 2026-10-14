@@ -382,3 +382,4 @@ import Foundation.GaussianPotentialIteration
 import Foundation.GaussianItoAlternatingProjection
 import Foundation.GaussianExponentialSobolevObstruction
 import Foundation.GaussianCoherentIdentification
+import Foundation.GaussianDisplacementGroup
