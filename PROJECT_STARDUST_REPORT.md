@@ -1194,3 +1194,38 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianWickConditionalProjection. 
 | conditional_wick_energy | Foundation/GaussianWickConditionalProjection.lean:132 |
 | conditional_wick_energy_from_linear | Foundation/GaussianWickConditionalProjection.lean:136 |
 | Fractional.forecast_energy_exact | Foundation/GaussianWickConditionalProjection.lean:144 |
+
+## Discovery 40 — posterior covariance corrections and ordinary cubic roughness
+
+For arbitrary actual Gaussian observations h, source projection P and terminal direction u, the true conditional projection of X_u^3 is X_(Pu)^3 + 3(||u||^2-||Pu||^2) X_(Pu). The residual variance and covariance are proved to be the actual norm square and inner product of projection residuals. Mixed cubic and the repository's IBM cubic correction polynomial have exact posterior covariance formulas as well. These are Gaussian observation results; they do not identify the nonlinear IBM raw-past filtration.
+
+Writing tau=||u||^2 and v=||Pu||^2, ordinary cubic prediction energy is exactly 6 v^3 + 9 tau^2 v, bounded between 9 tau^2 v and 15 tau^2 v. For the actual fractional terminal coordinate at time one, tau=1. Its full-past cubic forecast therefore retains linear prediction roughness: every exponent alpha>2H fails a local uniform power bound at zero. This corrects an extrapolation from the pure third Wick observable to an ordinary cube. No sharp linear fractional asymptotic is claimed.
+
+Verification: full Lake build 4350 jobs (.lake/stardust-40-build.log); all seventeen public definition/theorem types inspected (.lake/stardust-40-audit.log); 6871 safe Foundation declarations transitively audited, with only propext, Classical.choice and Quot.sound. Discovery 39 checkpoint: f1ed050. Discovery 40 is the commit containing this entry.
+
+Clarification for discovery 39: the all-degree formula is an energy identity. At degree zero the constant vacuum has energy one and variance zero. For positive degrees the centered Wick energy is its variance.
+
+Reflection: chaos rank, rather than polynomial degree, determines which linear prediction contribution survives. The next question is whether the entire conditional law of a terminal Gaussian coordinate can be compressed to its projected first-chaos coordinate, for every L2 terminal observable.
+
+### Public locations — discovery 40
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianCubicConditionalPrediction; fractional names additionally use Fractional.
+
+| Name | Source |
+| --- | --- |
+| residualVariance | Foundation/GaussianCubicConditionalPrediction.lean:13 |
+| residualCovariance | Foundation/GaussianCubicConditionalPrediction.lean:16 |
+| residualVariance_eq_norm_sq | Foundation/GaussianCubicConditionalPrediction.lean:19 |
+| residualCovariance_eq_inner | Foundation/GaussianCubicConditionalPrediction.lean:28 |
+| conditional_cube | Foundation/GaussianCubicConditionalPrediction.lean:42 |
+| conditional_cube_eq_projected_cube | Foundation/GaussianCubicConditionalPrediction.lean:47 |
+| conditional_mixedCube | Foundation/GaussianCubicConditionalPrediction.lean:54 |
+| conditional_correction | Foundation/GaussianCubicConditionalPrediction.lean:62 |
+| conditional_cube_energy | Foundation/GaussianCubicConditionalPrediction.lean:71 |
+| conditional_cube_energy_from_linear | Foundation/GaussianCubicConditionalPrediction.lean:79 |
+| conditional_cube_energy_bounds | Foundation/GaussianCubicConditionalPrediction.lean:85 |
+| Fractional.cubeForecast | Foundation/GaussianCubicConditionalPrediction.lean:97 |
+| Fractional.cubeForecast_energy | Foundation/GaussianCubicConditionalPrediction.lean:101 |
+| Fractional.cubeForecast_zero | Foundation/GaussianCubicConditionalPrediction.lean:114 |
+| Fractional.cubeForecast_energy_lower | Foundation/GaussianCubicConditionalPrediction.lean:121 |
+| Fractional.no_higher_cube_prediction_increment_bound | Foundation/GaussianCubicConditionalPrediction.lean:126 |
