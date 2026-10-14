@@ -915,3 +915,24 @@ Prefix: OperatorDerivativeRewrite.Foundation.IBMClockCubicJointL2.
 | clock_cubic_growth_memLp | Foundation/IBMClockCubicJointL2.lean:37 |
 | section_energy | Foundation/IBMClockCubicJointL2.lean:52 |
 | value_memLp_joint | Foundation/IBMClockCubicJointL2.lean:59 |
+
+## Discovery 31 — actual clock sixth moment and temporal domination
+
+The actual constructed Brownian clock has sixth absolute moment 15 t^3 at every nonnegative time. The proof uses the verified modification identity and the cubic Gaussian L2 norm identity, not an assumed law for a path supremum. The actual first-chaos sixth moment is independently derived as 15 norm(h)^6.
+
+The scalar growth factor satisfies (1+abs(x))^6<=64(1+abs(x)^6), hence its actual clock expectation is at most 64(1+15 t^3). This provides a polynomial finite-horizon majorant for the jointly integrated cubic square, using only fixed-time clock moments. No maximal-clock moment theorem is inferred.
+
+Verification: full Lake build 4341 jobs (.lake/stardust-31-build.log); four public types checked; 6681 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-31-audit.log). Discovery 30 checkpoint: 3e586d2. Discovery 31 is the commit containing this entry.
+
+Reflection: exact source moments can replace unnecessarily strong path-supremum hypotheses when finite time integrals are handled through justified product integration. Active next step: finite-measure L2 column integration and the actual joint IBM time-integral estimate.
+
+### Public locations — discovery 31
+
+Prefix: OperatorDerivativeRewrite.Foundation.IBMClockSixthMoment.
+
+| Name | Source |
+| --- | --- |
+| firstChaos_sixth_integral | Foundation/IBMClockSixthMoment.lean:13 |
+| clock_sixth_integral | Foundation/IBMClockSixthMoment.lean:21 |
+| one_add_abs_sixth_bound | Foundation/IBMClockSixthMoment.lean:31 |
+| clock_growth_sixth_integral_le | Foundation/IBMClockSixthMoment.lean:39 |

@@ -320,3 +320,4 @@ import Foundation.SPDECountableModes
 import Foundation.IBMSceneryGlobalGrowth
 import Foundation.GaussianCubicGrowth
 import Foundation.IBMClockCubicJointL2
+import Foundation.IBMClockSixthMoment
