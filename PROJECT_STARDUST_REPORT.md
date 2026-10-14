@@ -696,3 +696,31 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonRecoveryPoincare.
 | centered_first_normalized | Foundation/PoissonRecoveryPoincare.lean:64 |
 | normalized_first_lowering_graph | Foundation/PoissonRecoveryPoincare.lean:70 |
 | poincare_equality_first_mode | Foundation/PoissonRecoveryPoincare.lean:76 |
+
+## Discovery 23 — quartic singularities persist at nonzero data
+
+Verified general obstruction: if two source vectors have disjoint actual L4 images, the quartic normal map satisfies A(u+a v)=A(u)+a^3 A(v). For every nonzero v, the inverse violates every proposed local linear modulus at A(u), not only at the origin. All identities are equalities of actual Lp classes and genuine dual maps.
+
+A concrete counterexample is constructed in L4 of a positive-rate Poisson law with the identity bounded source map. The indicators of count zero and count one are nonzero and disjoint. The image of the first indicator is a proved nonzero dual datum, yet every dual neighborhood contains inverse perturbations violating any linear bound. This is a nonlinear Banach normal equation on the actual Poisson probability space; the identity map here is not asserted to be the maximal Poisson divergence.
+
+Corrected conjecture: merely keeping the target away from zero does not restore local Lipschitz regularity for the general quartic inverse. The origin homogeneity obstruction from discoveries 4 and 9 was not the only possible degeneracy. A positive nondegenerate Hessian/coercivity condition would require a separate theorem and can fail along disjoint images.
+
+Verification: full Lake build 4333 jobs (.lake/stardust-23-build.log); seven public types checked; 6603 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-23-audit.log). Discovery 22 checkpoint: 849f550. Discovery 23 is the commit containing this entry.
+
+Reflection: this deserves a focused Banach regularity campaign with explicit source-image overlap hypotheses. The concrete discrete counterexample connects Poisson atom geometry to nonlinear dual recovery and prevents overgeneralization of finite-dimensional radial intuition.
+
+### Public locations — discovery 23
+
+Prefix: OperatorDerivativeRewrite.Foundation.BanachQuarticDisjointObstruction.
+
+| Name | Source |
+| --- | --- |
+| dualityFour_disjoint_add | Foundation/BanachQuarticDisjointObstruction.lean:15 |
+| normalFour_disjoint_add | Foundation/BanachQuarticDisjointObstruction.lean:27 |
+| no_local_linear_bound_at_disjoint_image | Foundation/BanachQuarticDisjointObstruction.lean:34 |
+| poissonAtom | Foundation/BanachQuarticDisjointObstruction.lean:65 |
+| poissonAtom_ne_zero | Foundation/BanachQuarticDisjointObstruction.lean:68 |
+| poissonAtoms_disjoint | Foundation/BanachQuarticDisjointObstruction.lean:75 |
+| actual_poisson_nonzero_datum_obstruction | Foundation/BanachQuarticDisjointObstruction.lean:89 |
+
+Research-register correction: the claim that nonzero quartic data alone should yield local Lipschitz recovery is REFUTED by discovery 23. Future regularity work must test image overlap or actual Hessian lower bounds. Zero-data sharpness is completed; disjoint-image degeneracy is also completed and should not be rediscovered.
