@@ -847,3 +847,26 @@ Consolidated priorities after discovery 27:
 3. Fractional full-past prediction asymptotics and normalized-source increments; nonlinear Wick lower bounds and metric transfer are completed.
 
 Other focused campaigns: exact full Gaussian/Poisson operator intertwining; quartic inverse regularity under actual overlap/Hessian bounds. Completed investigations should be used, not repeatedly reopened.
+
+## Discovery 28 — global growth of compact-kernel scenery
+
+Every continuous compactly supported spatial kernel has a nonnegative constant C with norm(wholeLineScenery rho x)<=C(1+abs(x)) for every real x. The estimate is for the actual Gaussian L2 convolution class. The actual Brownian source scenery norm squared is abs(x), and its norm is at most 1+abs(x).
+
+Compact support controls a fixed-radius integration window around x. A compact uniform kernel bound and the source scenery norm bound control the Bochner integral on that shifted window, whose measure is independent of x. This yields global growth, not just the earlier compact-interval continuity bounds. Every concrete mollifier derivative coefficient U, V and W inherits such a bound through the genuine source isometries.
+
+The bound is intentionally coarse and fixed-kernel: its constant can grow with the mollifier index. It is suitable for clock moment domination and is not a uniform singular-limit estimate. Joint cubic L2 remains the active next obligation, using a separate cubic norm bound and actual finite Gaussian clock moments.
+
+Verification: full Lake build 4338 jobs (.lake/stardust-28-build.log); four public types checked; 6667 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-28-audit.log). Discovery 27 checkpoint: 58315fc. Discovery 28 is the commit containing this entry.
+
+Reflection: local smoothness infrastructure did not by itself control an unbounded random clock. This global polynomial estimate makes the clock integrability problem tractable without a maximal-clock moment or an unsupported uniform pointwise bound.
+
+### Public locations — discovery 28
+
+Prefix: OperatorDerivativeRewrite.Foundation.IBMSceneryGlobalGrowth.
+
+| Name | Source |
+| --- | --- |
+| sourceScenery_norm_sq | Foundation/IBMSceneryGlobalGrowth.lean:11 |
+| sourceScenery_norm_le | Foundation/IBMSceneryGlobalGrowth.lean:16 |
+| compact_kernel_global_growth | Foundation/IBMSceneryGlobalGrowth.lean:20 |
+| tripleCoefficient_global_growth | Foundation/IBMSceneryGlobalGrowth.lean:70 |
