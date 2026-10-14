@@ -274,3 +274,4 @@ import Foundation.FractionalForcingKernel
 import Foundation.StochasticKernelConvolution
 
 import Foundation.IBMSmoothIncrementMoments
+import Foundation.IBMSmoothIncrementTails

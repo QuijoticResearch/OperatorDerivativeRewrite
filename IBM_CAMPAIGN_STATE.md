@@ -386,3 +386,18 @@ Full pinned Lake build passed 4,291 jobs. Five exact public theorem types checke
 
 Remaining: joint measurable smooth modification, deterministic-coordinate L² agreement on that modification, derivative compatibility on one full-measure event, continuous Brownian clock, local time and actual fixed-mollifier Itô–Tanaka. Existing conditional pathwise chain rules and iterated-L² random-clock convergence do not discharge these obligations. Zeroth-chaos quartic expectations remain distinct from first-chaos projection.
 
+
+## IBM dyadic common-event control — 2026-10-13
+
+The previous smooth increment milestone was committed as `fb66fe5` (`fb66fe5` is a descendant of incoming HEAD `ccc0145`). `Foundation/IBMSmoothIncrementTails.lean` adds five public theorems in namespace `OperatorDerivativeRewrite.Foundation.IBMSmoothIncrementTails`:
+
+- `convolution_increment_tail`: Markov fourth-power tail estimate with an explicit compact derivative bound.
+- `gaussianTriple_compact_tail`: for each actual normalized U,V,W field and compact interval, one constant controls all point pairs and all positive thresholds.
+- `gaussianTriple_grid_control`: for arbitrary finite rows of point pairs inside that interval, if `Σ_l m_l h_l⁴/δ_l⁴ < ∞`, then on one full-measure event all row increments are eventually smaller than δ_l simultaneously. The only summability hypothesis is a deterministic grid budget; no stochastic continuity, independence, or desired conclusion is assumed.
+- `gaussianTriple_dyadic_control`: on each unit interval [a,a+1], all 2^l adjacent dyadic increments are eventually smaller than `(3/4)^l`, almost surely. The budget is exactly `(32/81)^l` and is proved summable. This theorem is unconditional on the actual Gaussian source.
+- `gaussianTriple_common_dyadic_control`: the same full-measure event works for every natural mollifier scale, all three derivative fields, and every integer unit interval. The starting level can depend on the sample, scale, field and interval.
+
+Classification A: unconditional IBM-specific countable-skeleton estimates. This advances the required common-event step without claiming a pathwise extension. No modification, joint spatial/sample measurability, pathwise derivative, local time, or Itô–Tanaka identity is constructed here. Establishing a continuous extension still requires a deterministic dyadic chaining/extension proof, measurable selection by pointwise limits, and deterministic-point identification through mean-square continuity. Obtaining C² requires compatibility of the three continuous extensions with the already verified L² derivative identities; continuity of three separately constructed versions would not alone suffice.
+
+Full Lake build passed 4,292 jobs. Five exact new public types checked. Complete environment-wide safe Foundation axiom audit passed 5,912 declarations (generated declarations included), using only `propext`, `Classical.choice`, `Quot.sound`. Logs and audit source: `.lake/campaign-ibm-pathwise-02-*`. The previous module's verified proof bodies were preserved. No dependency pin, manuscript, unrelated untracked document, reset, push, automation or additional agent was used.
+
