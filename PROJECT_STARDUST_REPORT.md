@@ -3065,3 +3065,40 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianCoherentEntropyDistortion.
 | coherentEntropy_eq_twice_derivative_energy | Foundation/GaussianCoherentEntropyDistortion.lean:72 |
 | coherentEntropy_displacement | Foundation/GaussianCoherentEntropyDistortion.lean:76 |
 | unbounded_physical_entropy_distortion | Foundation/GaussianCoherentEntropyDistortion.lean:84 |
+
+## Discovery 98 — actual exponentially damped countable forcing has a sharp reciprocal-rate trace threshold
+
+Constructed genuine Lebesgue L2 time profiles exp(-rate (t-s)) on (0,t], with exact energy (1-exp(-2 rate t))/(2 rate) for positive rates. Rate zero is exactly the existing Brownian time indicator. Upper and lower profile energies prove that, at every positive time and with all modal rates at least one, weighted profile-energy summability is equivalent to summability of c_n squared divided by rate_n.
+
+The existing actual independent Brownian-mode isometries turn this into an exact convergence criterion for the countable Gaussian exponential response series. Unit amplitudes with rates (n+1) squared converge at every nonnegative time. Rates n+1 fail at every positive time. Both the time profiles and the stochastic series are actual L2 objects, with the comparison constants explicit and the profile integral evaluated rigorously.
+
+Significance: this adds concrete rate damping to the previously general countable forcing criterion. Temporal L2 admission and infinite modal trace are separate requirements; damping changes the latter sharply. These are genuine fixed-terminal isonormal responses for the verified Brownian mode model. No spatial Laplacian identification, mild SPDE equation, path version or Markov theorem is asserted.
+
+Verification: full Lake build 4412 jobs (.lake/stardust-98-build.log); eighteen public types inspected; 7901 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-98-audit.log). Discovery 97 checkpoint: 95be961. Discovery 98 is the commit containing this entry.
+
+Reflection: the next construction lifts these responses to actual coefficient-Hilbert-valued Gaussian L2 fields. A closed linear-field divergence completion already passes Lean and awaits its independent full verification; it would also turn finite field trace into controlled second-chaos divergence outputs. A future focused campaign could establish diagonal mild dynamics and temporal regularity, or combine fractional power memory with rate damping to obtain a coupled temporal/modal threshold.
+
+### Public locations — discovery 98
+
+Prefix: OperatorDerivativeRewrite.Foundation.SPDEExponentialForcing.
+
+| Name | Source |
+| --- | --- |
+| response | Foundation/SPDEExponentialForcing.lean:14 |
+| response_measurable | Foundation/SPDEExponentialForcing.lean:17 |
+| response_memLp | Foundation/SPDEExponentialForcing.lean:21 |
+| responseVector | Foundation/SPDEExponentialForcing.lean:33 |
+| responseVector_coeFn | Foundation/SPDEExponentialForcing.lean:35 |
+| responseVector_energy | Foundation/SPDEExponentialForcing.lean:38 |
+| responseVector_energy_exact | Foundation/SPDEExponentialForcing.lean:54 |
+| responseVector_energy_upper | Foundation/SPDEExponentialForcing.lean:79 |
+| responseVector_energy_lower | Foundation/SPDEExponentialForcing.lean:85 |
+| reciprocal_trace_summable_iff | Foundation/SPDEExponentialForcing.lean:93 |
+| actual_series_trace_iff | Foundation/SPDEExponentialForcing.lean:123 |
+| zero_rate_brownian_profile | Foundation/SPDEExponentialForcing.lean:129 |
+| quadraticRates | Foundation/SPDEExponentialForcing.lean:135 |
+| linearRates | Foundation/SPDEExponentialForcing.lean:136 |
+| quadraticRates_lower | Foundation/SPDEExponentialForcing.lean:138 |
+| quadratic_trace_summable | Foundation/SPDEExponentialForcing.lean:142 |
+| quadratic_forcing_summable | Foundation/SPDEExponentialForcing.lean:145 |
+| linear_forcing_not_summable | Foundation/SPDEExponentialForcing.lean:156 |
