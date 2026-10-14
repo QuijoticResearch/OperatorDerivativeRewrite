@@ -1409,3 +1409,25 @@ Prefix: OperatorDerivativeRewrite.Foundation.BanachQuarticWeightedStability.
 | normalFour_weighted_monotone | Foundation/BanachQuarticWeightedStability.lean:25 |
 | inverse_lipschitz_at_weighted_datum | Foundation/BanachQuarticWeightedStability.lean:52 |
 | normalFour_inverse_weighted_bound | Foundation/BanachQuarticWeightedStability.lean:73 |
+
+## Discovery 48 — a concrete regular nonzero quartic inverse source
+
+For every actual probability measure mu, the continuous constant source delta:R -> L4(mu), delta(w)=constant(w), is an isometry. Its actual weighted source is constant(u*w) in L2, with exact norm |u||w|. Therefore every nonzero source value u satisfies discovery 47's weighted lower bound with c=|u|, and the actual complete quartic normal inverse obeys ||u-A^-1(f)|| <= 4/(3|u|^2) ||A(u)-f|| for every dual datum f.
+
+Significance: the positive stability condition is realized by actual Lp objects and a genuine inverse, rather than an assumed abstract operator. The law may be the repository's Gaussian or Poisson probability law; the source is its one-dimensional constant subspace. This is distinct from the infinite-dimensional Poisson L4 identity source, whose verified singular datum uses disjoint support. Source geometry, rather than probability-law name alone, determines this regularity distinction.
+
+Verification: full Lake build 4358 jobs (.lake/stardust-48-build.log); five public types inspected; 6968 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-48-audit.log). Discovery 47 checkpoint: 91c3c89. Discovery 48 is the commit containing this entry.
+
+Reflection: the next investigation tests whether any datum of the infinite Poisson L4 identity source can satisfy weighted source coercivity, including positive representatives with no disjoint zero direction. This tests the applicability of the sufficient condition; failure would not by itself prove inverse singularity everywhere.
+
+### Public locations — discovery 48
+
+Prefix: OperatorDerivativeRewrite.Foundation.BanachQuarticConstantSource.
+
+| Name | Source |
+| --- | --- |
+| source | Foundation/BanachQuarticConstantSource.lean:16 |
+| source_norm | Foundation/BanachQuarticConstantSource.lean:18 |
+| weightedSource_eq_const | Foundation/BanachQuarticConstantSource.lean:23 |
+| weightedSource_norm | Foundation/BanachQuarticConstantSource.lean:33 |
+| inverse_regular_at_nonzero_source | Foundation/BanachQuarticConstantSource.lean:39 |
