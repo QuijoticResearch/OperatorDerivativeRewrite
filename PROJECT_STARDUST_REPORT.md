@@ -22,10 +22,10 @@ Reflection: equal ladder energy does not imply equal multiplication algebra or o
 
 | Direction | Status | Next obligation |
 | --- | --- | --- |
-| All-order actual Poisson Charlier ladder | VERIFIED | Polynomial completeness and Gaussian spectral transfer |
+| All-order actual Poisson Charlier ladder | VERIFIED, COMPLETE BASIS | Density, normalized basis and full centered recovery now verified |
 | Nonlinear Wick prediction from fractional observations | VERIFIED | Sharp asymptotics and full-past versus one-coordinate comparison |
 | Bounded right inverse of full Gaussian divergence on centered L2 | VERIFIED | Full gradient-range projection and comparison with adapted representation |
-| Gaussian/Poisson finite-chaos isometry versus multiplication | VERIFIED | Polynomial density and completion; retain proved multiplication defect |
+| Gaussian/Poisson Hilbert transfer versus multiplication | VERIFIED ON COMPLETE SCALAR SPACES | Exact closed-operator intertwining; retain multiplication defect |
 | Source-Hilbert to physical IBM white-noise kernel bridge | OPEN FROM IBM CAMPAIGN | Construct actual isometry before physical kernel/H^-1 claims |
 | Quartic Banach inverse regularity at zero | VERIFIED, EXHAUSTED | Optimal exponent 1/3; move to nondegenerate data away from zero |
 | Quadratic Gaussian metric roughness and antipodes | VERIFIED | Higher-degree or actual normalized-kernel applications |
@@ -610,3 +610,61 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonCharlierHilbertBasis.
 | gaussianTransfer | Foundation/PoissonCharlierHilbertBasis.lean:69 |
 | transfer_normalized | Foundation/PoissonCharlierHilbertBasis.lean:73 |
 | transfer_coefficient | Foundation/PoissonCharlierHilbertBasis.lean:79 |
+
+## Discovery 21 — full Poisson divergence recovery
+
+For every strictly positive rate, every actual scalar Poisson L2 target f has a genuine maximal divergence preimage of f minus its mean. The recovery is a bounded linear map into the rate-weighted field L2 space, with norm at most one. The divergence range is exactly the centered subspace. Its preimage is unique among all maximal-domain fields, using the previously proved zero divergence kernel.
+
+Construction: normalize the weighted field ladder and sum the scalar coefficient at degree n+1 divided by sqrt(n+1). The complete scalar basis proves square summability; field orthogonality proves convergence. Closedness of the actual maximal divergence graph identifies the limit. The inverse energy is the sum of squared inverse coefficients, and is bounded by the scalar target energy. The zero scalar coefficient is proved equal to the actual Poisson integral.
+
+This extends discovery 12 from finite positive polynomial expansions to all centered L2, without differentiability assumptions on the target. Gaussian and Poisson both have bounded centered source recovery, while their kernels differ: Poisson recovery is unique; the multidirectional Gaussian recovery selects a minimum-norm solution among solenoidal alternatives. No process-level predictable Poisson representation theorem follows from this source result.
+
+Verification: full Lake build 4331 jobs (.lake/stardust-21-build.log); twenty-three public types checked; 6584 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-21-audit.log). Discovery 20 checkpoint: 4659ba0. Discovery 21 is the commit containing this entry.
+
+Reflection: the Poisson branch now supports complete L2 spectral recovery. Next investigate its sharp Poincare estimate and exact closed-operator graph transfer, then move to a different branch. Completeness and recovery need no further repeated exploratory proofs.
+
+### Public locations — discovery 21
+
+Prefix: OperatorDerivativeRewrite.Foundation.PoissonDivergenceRecovery.
+
+| Name | Source |
+| --- | --- |
+| normalizer_succ | Foundation/PoissonDivergenceRecovery.lean:13 |
+| normalizedField | Foundation/PoissonDivergenceRecovery.lean:21 |
+| normalizedField_orthonormal | Foundation/PoissonDivergenceRecovery.lean:24 |
+| normalized_raising_graph | Foundation/PoissonDivergenceRecovery.lean:40 |
+| coefficient | Foundation/PoissonDivergenceRecovery.lean:52 |
+| inverseCoefficient | Foundation/PoissonDivergenceRecovery.lean:55 |
+| coefficient_energy | Foundation/PoissonDivergenceRecovery.lean:58 |
+| inverseCoefficient_sq_le | Foundation/PoissonDivergenceRecovery.lean:64 |
+| recovery_summable | Foundation/PoissonDivergenceRecovery.lean:73 |
+| recovery | Foundation/PoissonDivergenceRecovery.lean:83 |
+| centered | Foundation/PoissonDivergenceRecovery.lean:86 |
+| centered_hasSum | Foundation/PoissonDivergenceRecovery.lean:89 |
+| recovery_graph | Foundation/PoissonDivergenceRecovery.lean:97 |
+| recovery_unique | Foundation/PoissonDivergenceRecovery.lean:112 |
+| recovery_energy | Foundation/PoissonDivergenceRecovery.lean:120 |
+| recovery_norm_le | Foundation/PoissonDivergenceRecovery.lean:136 |
+| zero_mode_difference_graph | Foundation/PoissonDivergenceRecovery.lean:148 |
+| exists_divergence_iff_zero_mode | Foundation/PoissonDivergenceRecovery.lean:156 |
+| coefficient_zero_integral | Foundation/PoissonDivergenceRecovery.lean:167 |
+| exists_divergence_iff_centered | Foundation/PoissonDivergenceRecovery.lean:176 |
+| recovery_add | Foundation/PoissonDivergenceRecovery.lean:181 |
+| recovery_smul | Foundation/PoissonDivergenceRecovery.lean:190 |
+| recoveryOperator | Foundation/PoissonDivergenceRecovery.lean:198 |
+
+
+## Consolidated open and completed investigations after discovery 21
+
+| Direction | Status | Next obligation |
+| --- | --- | --- |
+| Poisson exponential totality, polynomial density, Charlier completeness | VERIFIED, COMPLETED | Use the results; do not reopen density as an assumption |
+| Full centered Poisson divergence recovery | VERIFIED | Sharp Poincare and exact spectral graph transfer |
+| Complete scalar Gaussian/Poisson Hilbert transfer | VERIFIED | Weighted field geometry and full closed graphs |
+| Actual IBM cubic source primitives | VERIFIED PER CLOCK PATH | Physical integrated-kernel estimates and joint clock moments |
+| IBM primitive convergence obstruction | VERIFIED NECESSARY CONDITION | Prove actual vector non-Cauchy/blow-up if true |
+| Fractional nonlinear Wick prediction | VERIFIED LOWER BOUNDS | Exact single-coordinate forecast and sharp full-past asymptotics |
+| Quartic inverse exponent at zero | VERIFIED OPTIMAL 1/3 | Investigate disjoint-image degeneracy away from zero |
+| Scalar representative IBM time Fubini | OPEN | Product L1 control from Bochner L2 sections, or actual majorant |
+
+Current priority: full Poisson source calculus is now tractable without postulated density. The physical IBM bridge and fractional full-past asymptotics remain analytically distinct obstacles. Most surprising connection so far: analytic exponential probes close the discrete polynomial spectral gap in the formal infrastructure, enabling the same centered source-recovery principle as Gaussian chaos despite different multiplication and kernel structure.
