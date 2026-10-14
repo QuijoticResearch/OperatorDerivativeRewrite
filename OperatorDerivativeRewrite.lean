@@ -372,3 +372,4 @@ import Foundation.SPDEObservationRecoveryCompactness
 import Foundation.GaussianJointSourceProjection
 import Foundation.GaussianQuadraticSourceHodge
 import Foundation.GaussianInverseNumberPotential
+import Foundation.GaussianPotentialPredictionRank

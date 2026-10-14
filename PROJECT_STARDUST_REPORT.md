@@ -2582,3 +2582,31 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianInverseNumberPotential.
 | potential_preserves_generated | Foundation/GaussianInverseNumberPotential.lean:67 |
 | potential_positive | Foundation/GaussianInverseNumberPotential.lean:73 |
 | single_observation_potential_compact | Foundation/GaussianInverseNumberPotential.lean:80 |
+
+## Discovery 82 — inverse-number damping preserves fractional prediction obstructions
+
+The actual scalar potential is self-adjoint and acts on every full number sector n by the scalar 1/n (zero on the vacuum). Each terminal Hermite coefficient is multiplied by 1/n. Thus every positive coefficient is nonzero exactly when the original coefficient is nonzero, and the positive Hermite rank is preserved. The complete terminal prediction-energy series has these coefficients squared, with the same actual projected-source powers.
+
+For the actual fractional terminal direction, the previously verified dual-regime lower power 2 min(H,1-H) times any nonzero positive degree m persists for the potential observable. Its explicit lower constant acquires a factor 1/m squared. Arbitrarily small positive observation times still violate every increment-square bound with a strictly higher exponent, for every proposed constant and neighborhood. This also applies to noncentered original targets because the potential removes their vacuum component.
+
+Significance: number-degree regularization and compactness after one observed coordinate do not improve the initial fractional prediction power of a fixed positive-rank terminal observable. Source-time geometry remains decisive. This transfers the established actual full-past obstruction to an observable in the actual derivative domain. No matching sharp fractional upper asymptotic or physical time smoothing is claimed.
+
+Verification: full Lake build 4396 jobs (.lake/stardust-82-build.log); nine public types inspected; 7652 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-82-audit.log). Discovery 81 checkpoint: 4318d74. Discovery 82 is the commit containing this entry.
+
+Reflection: degree weights with nonzero finite-rank multipliers should preserve these powers more generally. That abstract extension is lower priority than the actual joint recovery identity. The observed-target range proof passes Lean and is awaiting its independent full build/audit; the full intertwining draft follows through observed polynomial divergences and bounded adjoint extension.
+
+### Public locations — discovery 82
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianPotentialPredictionRank.
+
+| Name | Source |
+| --- | --- |
+| potential_inner | Foundation/GaussianPotentialPredictionRank.lean:14 |
+| potential_sector | Foundation/GaussianPotentialPredictionRank.lean:23 |
+| potential_wick | Foundation/GaussianPotentialPredictionRank.lean:33 |
+| potential_coefficient | Foundation/GaussianPotentialPredictionRank.lean:37 |
+| potential_centered | Foundation/GaussianPotentialPredictionRank.lean:42 |
+| positive_coefficient_iff | Foundation/GaussianPotentialPredictionRank.lean:45 |
+| potential_prediction_energy | Foundation/GaussianPotentialPredictionRank.lean:54 |
+| fractional_potential_lower | Foundation/GaussianPotentialPredictionRank.lean:62 |
+| fractional_potential_no_higher_bound | Foundation/GaussianPotentialPredictionRank.lean:72 |
