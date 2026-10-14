@@ -2766,3 +2766,27 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianItoSourceHodge.
 | terminalWickIntegrand_energy | Foundation/GaussianItoSourceHodge.lean:88 |
 | terminalWick_residual_energy | Foundation/GaussianItoSourceHodge.lean:93 |
 | quadratic_causal_residual_energy | Foundation/GaussianItoSourceHodge.lean:102 |
+
+## Discovery 88 — actual inverse-number iteration uniformly extracts first chaos
+
+The scalar inverse-number potential has exact chaos coordinates P_n Gf=(1/n) P_n f. Its deviation from first-chaos projection contracts by at most one half on all Gaussian scalar L2 targets. More strongly, for every nonnegative integer k, norm(G^k f-P_1 f) is at most 2^(-k) norm(f), and the same bound holds in actual continuous-linear-operator norm. Thus G^k converges in operator norm to the genuine full first-chaos projection.
+
+Significance: inverse-number iteration uniformly removes every higher degree while retaining the entire, possibly infinite-dimensional, first chaos. This is a stronger statement than convergence on polynomial targets or finite Hermite expansions. It connects source recovery, spectral degree damping and projection dynamics without claiming compactness of the surviving infinite-dimensional range. The potential already annihilates the vacuum after one application; at k=0 the bound uses the actual orthogonal projection residual.
+
+Verification: full Lake build 4402 jobs (.lake/stardust-88-build.log); seven public types inspected; 7747 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-88-audit.log). Discovery 87 checkpoint: a51cad3. Discovery 88 is the commit containing this entry.
+
+Reflection: the exact Ito/Hodge relation should transfer this uniform estimate to alternating the two actual field projections. That transfer and an explicit noncommutation witness are under investigation. The result suggests a reusable way to isolate linear stochastic response from arbitrary raw Brownian L2 observables; physical fractional or IBM number-sector interpretations still require their genuine source bridges.
+
+### Public locations — discovery 88
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianPotentialIteration.
+
+| Name | Source |
+| --- | --- |
+| projection_potential | Foundation/GaussianPotentialIteration.lean:11 |
+| potential_firstProjection | Foundation/GaussianPotentialIteration.lean:26 |
+| potential_first_error_norm | Foundation/GaussianPotentialIteration.lean:30 |
+| iterate_firstProjection | Foundation/GaussianPotentialIteration.lean:53 |
+| iterate_first_error | Foundation/GaussianPotentialIteration.lean:63 |
+| iterate_opNorm_error | Foundation/GaussianPotentialIteration.lean:84 |
+| iterate_operator_tendsto | Foundation/GaussianPotentialIteration.lean:89 |
