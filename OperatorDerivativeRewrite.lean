@@ -283,3 +283,4 @@ import Foundation.IBMPathwiseFundamental
 import Foundation.IBMConstructedChainRule
 import Foundation.IBMConstructedSources
 import Foundation.IBMFiniteHorizonEvaluation
+import Foundation.IBMCubicFirstChaos

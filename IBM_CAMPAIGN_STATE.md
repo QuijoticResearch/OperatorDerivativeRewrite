@@ -680,3 +680,17 @@ Three highest-value next proof targets:
 1. Construct Brownian local time by a proved smooth absolute-value approximation limit using the verified Gaussian C2 Ito theorem. Prove convergence of the sign-integrand stochastic term and independently identify the drift limit through nonnegativity, increase, support/occupation properties. Keep normalization |Y_t|-|Y_0|=integral sgn(Y)dY+L_t^0.
 2. Put the actual scenery-dependent first coefficient into the Brownian-clock adapted/predictable stochastic-integral completion, using the now-proved finite-horizon square integrability and independent scenery as initial information. Identify its constructed integral with the appropriate clock divergence on a proved domain. No stochastic integral may be introduced merely as a formal expression.
 3. Combine the genuine reflected-clock composition theorem with the now-constructed C2 scenery and actual chain rule to prove fixed-mollifier IBM Ito–Tanaka. Then derive its actual first-scenery-chaos kernel by source duality, retaining the finite-mollifier origin correction, before attempting the IBM-specific H^-1 limit. A zeroth-chaos expectation is not this kernel, and a first-chaos limit is not a full singular correction.
+
+## Night Shift II — milestone 1: actual cubic first chaos (2026-10-14)
+
+Incoming HEAD: fc86e6da486c252ce0aded58ad76f3734b6f9faf. The prior continuity campaign is verified; Brownian local time and fixed-mollifier Ito–Tanaka remain open and are not prerequisites for this spatial calculation.
+
+Foundation/IBMCubicFirstChaos.lean proves, for arbitrary source directions u,v,w (including correlated or degenerate triples), that C=UV²+U²W/2 is in Gaussian L2 and the polynomial source domain. The existing complete first-chaos projection satisfies
+P1 C=(||v||²+<u,w>)U+2<u,v>V+||u||²W/2.
+The explicitly polarized third Wick component belongs to the actual D*D sector 3; its residual is orthogonal to the entire first-chaos range. No covariance inverse or independence hypothesis occurs.
+
+The same coefficient is the Bochner expectation of the actual polynomial source derivative. adjoint_eq_mean_derivative uses the verified source Stein identity and justified inner-product/integral interchange; correction_closedDerivative_graph gives the full closed derivative graph. This is substantive source IBP, agreeing with the independently computed Wick contraction.
+
+Verification: affected module compiled; full Lake build succeeded, 4304 jobs (.lake/quijotic-chaos-01-build.log). All 25 public declaration types inspected in .lake/quijotic-chaos-01-audit.log; all 6155 safe Foundation declarations audited transitively, only propext/Classical.choice/Quot.sound. Generated declarations are included in this environment count. No old proof bodies or manuscript files changed. This milestone does not construct a time-integrated correction, local time, stochastic integral, or singular limit.
+
+Next: verify quartic parity; instantiate actual smooth scenery with positive/negative bulk and full origin variance geometry; retain the actual spectral Hilbert source rather than identifying it with physical white-noise L2 without an isometry.
