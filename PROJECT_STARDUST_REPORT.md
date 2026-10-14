@@ -187,3 +187,29 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianPoissonChaosTransfer.
 | poisson_square_first_inner | Foundation/GaussianPoissonChaosTransfer.lean:89 |
 | gaussian_square_first_inner | Foundation/GaussianPoissonChaosTransfer.lean:95 |
 | gaussian_square_coeFn | Foundation/GaussianPoissonChaosTransfer.lean:101 |
+
+## Discovery 6 — Quadratic Gaussian chaos preserves local metric roughness but folds antipodes
+
+Verified: GaussianQuadraticGeometry computes the exact second-chaos distance. For source directions h,k with ||h||²=||k||²=v,
+||Wick2(h)-Wick2(k)||²=2(v+<h,k>)||h-k||².
+When <h,k>>=0, the distance is bounded below by 2v||h-k||² and above by 4v||h-k||². These are nonvacuous metric comparisons for positive fixed variance, using the actual Gaussian L2 realization and source Hilbert inner product.
+
+Globally Wick2(h)=Wick2(-h). Thus the quadratic-chaos map is not injective on a full nontrivial sphere, even though it preserves metric regularity up to constants on positively correlated fixed-variance pairs. The source geometry is the same second-chaos Gram kernel found earlier, now used as an exact nonlinear metric calculation.
+
+Mathematical significance: higher chaos does not automatically improve mean-square increment regularity at fixed variance. For a source-direction process satisfying the explicit fixed-variance and positive-pair-correlation hypotheses, its quadratic Wick increments have the same L2 metric exponent, up to constants. The initial-time variance power of a vanishing process is a different question. This is a precise geometric restriction, not a sample-path Holder theorem or a full curvature/manifold formalization.
+
+Verification: full Lake build 4315 jobs (.lake/stardust-06-build.log); five public types checked; 6337 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-06-audit.lean and .log). Finite Gaussian/Poisson transfer checkpoint: 2ec5d9b. Discovery 6 is the commit containing this entry.
+
+Reflection: test this metric comparison on normalized fractional and SPDE kernel directions. A focused kernel-geometry campaign could extend it to every chaos degree and identify the projective/folding geometry explicitly. Do not infer an improved regularity exponent merely from increasing polynomial degree.
+
+### Public locations — discovery 6
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianQuadraticGeometry.
+
+| Name | Source |
+| --- | --- |
+| wick_two_norm_sq | Foundation/GaussianQuadraticGeometry.lean:13 |
+| wick_two_distance_sq | Foundation/GaussianQuadraticGeometry.lean:18 |
+| fixed_variance_distance_sq | Foundation/GaussianQuadraticGeometry.lean:26 |
+| positive_correlation_distance_bounds | Foundation/GaussianQuadraticGeometry.lean:33 |
+| wick_two_antipodal | Foundation/GaussianQuadraticGeometry.lean:47 |

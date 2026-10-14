@@ -294,3 +294,4 @@ import Foundation.GaussianWickPredictionBound
 import Foundation.GaussianDivergenceRecovery
 import Foundation.BanachQuarticInverseObstruction
 import Foundation.GaussianPoissonChaosTransfer
+import Foundation.GaussianQuadraticGeometry
