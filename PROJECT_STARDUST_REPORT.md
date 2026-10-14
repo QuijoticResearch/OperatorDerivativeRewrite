@@ -2304,3 +2304,33 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianRecoveryCompactnessObstruct
 | firstChaos_graph_left_inverse | Foundation/GaussianRecoveryCompactnessObstruction.lean:37 |
 | no_compact_firstChaos_right_inverse | Foundation/GaussianRecoveryCompactnessObstruction.lean:56 |
 | recovery_not_compact | Foundation/GaussianRecoveryCompactnessObstruction.lean:68 |
+
+## Discovery 74 — actual one-count Poisson recovery is compact with quantitative finite-rank tails
+
+The full actual scalar-to-field Poisson recovery operator is compact at every positive rate. Its finite-rank approximation retains the first N raising modes of the complete Charlier ladder. The squared tail energy is at most ||f||^2/(N+1), uniformly over every actual scalar L2 input, and the operator-norm tail is at most sqrt(1/(N+1)). Genuine finite-rank operators converge in operator norm to the already verified unique recovery operator.
+
+Significance: this contrasts with discovery 73's noncompactness of every bounded full infinite Gaussian divergence right inverse. The scalar Poisson ladder has one direction per degree, so inverse degree weights damp its entire tail; the full infinite Gaussian space has infinitely many undamped first-chaos directions. The distinction is source multiplicity, not the name of the law. The scalar GaussianCore space obtained by complete Poisson transfer must not be confused with the full infinite Gaussian space.
+
+Scope: these finite-rank approximations are Charlier mode cutoffs, not finite-count support cutoffs. The proof preserves the actual rate-weighted field geometry. The displayed approximation rate is an upper bound; optimality among all rank-N maps, Hilbert-Schmidt membership or failure, and Schatten estimates are not proved in this checkpoint.
+
+Verification: full Lake build 4388 jobs (.lake/stardust-74-build.log); eleven public types inspected; 7433 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-74-audit.log). Discovery 73 checkpoint: 2f5542f. Discovery 74 is the commit containing this entry.
+
+Reflection: compact recovery and noncompact recovery now have a verified spectral multiplicity explanation. Sharp approximation and coefficient-square summability deserve future focused study. The next investigation distinguishes finite-dimensional Gaussian observation sources from their infinite-dimensional spaces of nonlinear measurable observables, by classifying compactness of the actual conditional projection.
+
+### Public locations — discovery 74
+
+Prefix: OperatorDerivativeRewrite.Foundation.PoissonRecoveryCompactness.
+
+| Name | Source |
+| --- | --- |
+| partialRecovery | Foundation/PoissonRecoveryCompactness.lean:13 |
+| partialRecovery_apply | Foundation/PoissonRecoveryCompactness.lean:17 |
+| partialRecovery_compact | Foundation/PoissonRecoveryCompactness.lean:26 |
+| tailCoefficient | Foundation/PoissonRecoveryCompactness.lean:46 |
+| recovery_tail_hasSum | Foundation/PoissonRecoveryCompactness.lean:49 |
+| recovery_tail_energy | Foundation/PoissonRecoveryCompactness.lean:65 |
+| tailCoefficient_sq_bound | Foundation/PoissonRecoveryCompactness.lean:78 |
+| recovery_tail_bound | Foundation/PoissonRecoveryCompactness.lean:88 |
+| recovery_tail_operator_bound | Foundation/PoissonRecoveryCompactness.lean:100 |
+| partialRecovery_tendsto | Foundation/PoissonRecoveryCompactness.lean:109 |
+| recovery_compact | Foundation/PoissonRecoveryCompactness.lean:124 |
