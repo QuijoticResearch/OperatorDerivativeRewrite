@@ -6,38 +6,37 @@ Started 2026-10-14 from e7dac26ea306c89e3df9ddba015b54554a7caf2b in C:\OperatorD
 
 This report is durable research memory. Entries marked verified have completed the full build, public type inspection and transitive axiom audit. Ongoing conjectures are separate. No execution after the active session is promised.
 
-## Periodic consolidation — verified through discovery 56
+## Periodic consolidation — verified through discovery 65
 
-This consolidation records independently built and axiom-audited mathematics through d610da9. Subsequent entries, when marked verified, supersede its checkpoint count. The latest full build at this consolidation is 4367 jobs; the complete safe Foundation audit covers 7110 declarations and permits only propext, Classical.choice and Quot.sound. The pinned dependencies and source manuscript remain unchanged. The campaign remains active within this session.
+The latest mathematical checkpoint is c9dfe67. Full Lake build: 4376 jobs. The complete transitive audit checks 7276 safe Foundation declarations and permits only propext, Classical.choice and Quot.sound. The pinned dependencies and named IBM manuscript hash remain unchanged. Later verified entries supersede this count. The campaign remains active within this session.
 
-### Mathematical findings and research priorities
-
-1. **Most significant verified results:** full minimum-norm Gaussian divergence recovery; complete actual Poisson Charlier coordinates and full closed-graph Gaussian scalar transfer; actual fixed-mollifier IBM joint cubic time L2/recovery; complete terminal Gaussian prediction spectrum; and the sharp contrast between everywhere one-third Poisson L4 inverse regularity and nonzero-data regular Gaussian first-chaos sources.
-2. **Verified theorem and commit record:** every discovery below has its exact public names, source lines, full build and transitive audit. The chronological checkpoint ledger at the end of this consolidation lists every mathematical checkpoint through discovery 56. These results are new repository verification and connections; no blanket mathematical novelty claim is made.
-3. **Unexpected branch connections:** arbitrary Gaussian observation geometry reduces all terminal nonlinear L2 prediction to one linear forecast; actual Gaussian mixed moments supply Banach weighted coercivity; physical Poisson square-root densities have an exact Gaussian kernel in square-root rate coordinates; and joint IBM representatives are recovered through the general Bochner/source inverse without an assumed moment bound.
-4. **Corrected conjectures:** a uniform Gaussian-style quadratic entropy bound fails on the full finite-entropy Poisson maximal domain; nonzero data do not restore Poisson L4 inverse Lipschitz regularity, and one-third is optimal at every datum; ordinary cubic fractional forecasts retain their first-chaos term; and a physical full Gaussian L2-to-L4 embedding cannot be bounded merely because first-chaos embedding is bounded.
-5. **Reusable operator principles:** inverse-number divergence recovery and Hodge projection; full centered Poisson recovery; finite-measure L2/Fubini representative transfer; exact arbitrary-family Wick conditional projection; terminal Hermite-rank spectral contraction for prediction and recovery; weighted-source quartic stability; and normalized-atom inverse obstructions.
-6. **Promising unproved questions:** sharp actual fractional full-past linear projection asymptotics; the physical IBM kernel bridge and uniform mollifier limits; general modified Poisson log-Sobolev estimates; source-projection maximal correlation for two multidirectional Gaussian families; and stochastic Galerkin sources with quantitative weighted coercivity. None is implied by the completed conditional, density or moment results.
-7. **Material limits:** degree-zero Wick energy is not variance; the Poisson/Gaussian full operator equivalence has a scalar one-variable Gaussian target; fixed-mollifier IBM moment/recovery results are not a stochastic Ito–Tanaka limit; countable SPDE forcing is not an SPDE solution or path version; and Hilbert or affinity equality does not preserve multiplication or ordered entropy.
-8. **Most surprising completed contrast:** the full infinite Poisson L4 identity inverse admits no local exponent above one-third anywhere, yet the actual infinite Gaussian first-chaos quartic source is regular at every nonzero datum. Explicit allowed source directions and weighted coercivity explain the distinction; neither dimension nor the law name alone determines it.
-9. **Priority changes justified by verification:** move the fractional campaign from nonlinear Wick estimates to actual linear full-past geometry; move IBM from discharged fixed-mollifier moments and representative gaps to physical kernels and uniform limits; and study legitimate stochastic source embeddings rather than hope for better local regularity in the full Poisson L4 identity source.
-10. **Next three focused directions:** (i) sharp fractional linear forecast source geometry; (ii) physical IBM source kernels and mollifier-uniform convergence or obstruction; (iii) multidirectional Gaussian prediction and quantitative weighted coercivity for constrained stochastic sources. Countable SPDE spatial/temporal solution construction and general modified Poisson entropy remain subsequent substantial campaigns.
+1. **Most significant discoveries:** full minimum-norm Gaussian divergence recovery; complete actual Poisson Charlier coordinates and closed-graph transfer; actual fixed-mollifier IBM joint cubic time L2/recovery; the complete terminal Gaussian prediction spectrum and quantitative leading-rank asymptotic transfer; and sharp source-dependent quartic inverse regularity.
+2. **Verified record:** each discovery below records exact public names, source lines, full build and transitive audit. The chronological ledger lists the mathematical checkpoints. These are repository verification and connections; no blanket mathematical novelty claim is made.
+3. **Unexpected connections:** physical Poisson half-density changes displace both full Poisson source graphs and reconstruct every real scalar Gaussian graph displacement. Gaussian mixed moments yield Banach weighted coercivity. Full terminal nonlinear prediction reduces to actual linear observation geometry. IBM joint representatives connect to the general Bochner source inverse.
+4. **Corrected conjectures and counterexamples:** positive sharp Poisson generator curvature 1/2 and forward Bochner coefficient 1 coexist with quadratic entropy failure on actual finite-entropy number-domain probes; the diffusion chain rule fails under the actual law. Nonzero data do not improve the full Poisson L4 inverse above exponent one-third. Ordinary cubic fractional forecasts retain their linear component. Full Gaussian physical L2 does not admit a bounded L4 inclusion.
+5. **Reusable principles:** inverse-number recovery and Hodge projection; full centered and coherent-vacuum Poisson recovery; finite-measure L2/Fubini transfer; arbitrary-family Wick conditional projection; full terminal Hermite spectrum and leading-rank remainder; physical source graph gauges; weighted quartic stability on fixed finite directions; normalized-atom ambient obstructions.
+6. **Promising unproved obligations:** sharp actual fractional linear forecast upper/asymptotic laws and spectral/Volterra bridge; physical IBM kernels and uniform mollifier limits; general modified Poisson jump entropy; multidirectional Gaussian maximal correlation; quantitative constrained stochastic source coercivity. Classical fractional exponents are known in the primary paper cited at discovery 60; their actual repository verification remains open.
+7. **Limits:** scalar Poisson/Gaussian graph transfer and displacement concern one-variable GaussianCore. No displacement group, continuity or physical translation formula is proved. Fixed-mollifier IBM results do not establish an Ito–Tanaka stochastic limit. Countable SPDE forcing does not establish an SPDE solution or paths. Hilbert, graph and affinity transfer does not preserve multiplication or entropy. The jump generator is identified on admitted number-domain triples, not as a fully constructed Markov semigroup.
+8. **Most surprising contrast:** the infinite Poisson L4 inverse is everywhere optimally one-third rough, yet every fixed finite perturbation space is stable at the constant-one baseline, with no uniform constant even across one-dimensional spaces. Infinite Gaussian first-chaos sources are regular at every nonzero datum. Allowed source directions, rather than dimension or law name alone, determine stability.
+9. **Priority changes:** move fractional work to full-past linear geometry because all nonlinear terminal ranks inherit it; the exact H=1/2 Brownian benchmark is now verified. Move IBM to physical kernels and uniform limits. Require an actual diffusion chain rule or a correct jump Bregman functional before entropy transfer. Study controlled stochastic source embeddings rather than seeking better ambient Poisson L4 inverse exponents.
+10. **Next three focused directions:** (i) sharp fractional full-past linear geometry and causal source realization; (ii) physical IBM kernels and mollifier-uniform convergence or obstruction; (iii) multidirectional Gaussian prediction and quantitative constrained-source coercivity. Poisson spectral semigroup/hypercontractivity and general modified entropy deserve a separate focused campaign.
 
 ### Current investigation register
 
-| Investigation | Verified status | Remaining mathematical obligation |
+| Investigation | Completed mathematics | Open obligation |
 | --- | --- | --- |
-| Original Gaussian divergence recovery and fractional Wick prediction | Complete, extended | Sharp time asymptotics require actual linear source geometry |
-| All terminal nonlinear Gaussian L2 prediction | Exact spectrum and sufficient coordinate complete | Two multidirectional terminal families remain open |
-| Poisson density, full scalar/field basis and closed graph transfer | Complete | Do not reopen density as an assumption |
-| Poisson quadratic entropy / modified jump entropy | Quadratic bound refuted; exponential-family jump equality verified | General modified inequality unproved |
-| IBM actual fixed-mollifier joint cubic time target and recovery | Complete | Physical kernel and uniform-mollifier limits unproved |
-| IBM primitive source-vector obstruction | Necessary condition verified | Actual blow-up or non-Cauchy proof unproved |
-| Countable SPDE noise modes | Independent modes and exact summability criterion verified | Actual solution, spatial estimates, convergence and paths unproved |
-| Poisson L4 identity quartic inverse regularity | Everywhere one-third optimality complete | This source investigation is exhausted |
-| Positive quartic source geometry | Weighted theorem, constant source and infinite Gaussian first-chaos source verified | Other constrained stochastic sources need genuine lower bounds |
-| Physical Gaussian L2-to-L4 inclusion | Bounded extension excluded | Controlled source subspaces remain eligible |
-| Poisson exponential tilts and affinity | Actual laws, entropy, composition and finite Gaussian affinity comparison verified | Physical half-density source graph displacement currently under investigation |
+| Original Gaussian recovery and fractional Wick prediction | Complete and substantially extended | Sharp actual fractional linear upper/asymptotic law |
+| All terminal nonlinear Gaussian L2 prediction | Exact spectrum, sufficient coordinate, leading-rank remainder and abstract limit | Multidirectional terminal families |
+| Fractional Hurst geometry | Lower exponent 2 min(H,1-H); exact Brownian current-value benchmark | Actual causal bridge and matching upper law |
+| Poisson complete scalar/field calculus | Complete bases, full graph transfer and centered recovery | Spectral semigroup with legitimate physical interpretation |
+| Poisson physical tilt/coherent geometry | Actual laws, gauge, both displaced graphs, coherent range/kernel | Displacement group/formula and continuity |
+| Scalar Gaussian displacements | Every real displacement of both full graphs | Reference independence, group and infinite-dimensional extension |
+| Poisson quadratic curvature and entropy | Sharp generator coefficient 1/2; forward coefficient 1; actual entropy and chain-rule obstruction | General modified jump entropy, bounded-core truncation proof |
+| IBM fixed-mollifier joint cubic time target | Complete actual L2, representatives and source recovery | Physical kernel and uniform limits |
+| IBM primitive source obstruction | Necessary source-vector condition | Actual non-Cauchy or blow-up theorem |
+| Countable SPDE noise | Actual independent modes and summability criterion | Solution, spatial/temporal estimates and paths |
+| Poisson ambient quartic inverse | Everywhere optimal one-third exponent | Exhausted; study legitimate constrained sources |
+| Finite/source quartic stability | Fixed finite directions; nonzero Gaussian first-chaos regularity | Quantitative uniform constants for useful stochastic sources |
 
 ## Discovery 1 — Actual Poisson adjunction reconstructs the all-order Charlier ladder
 
@@ -1708,7 +1707,7 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonTiltComposition.
 | relativeEntropy_not_symmetric | Foundation/PoissonTiltComposition.lean:56 |
 
 
-## Chronological mathematical checkpoint ledger through discovery 56
+## Chronological mathematical checkpoint ledger through discovery 65
 
 | Commit | Verified checkpoint |
 | --- | --- |
@@ -1768,6 +1767,17 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonTiltComposition.
 | ddf2d57 | Identify actual Poisson exponential tilts and relative jump entropy |
 | e1df2ea | Match actual Poisson tilt Hellinger geometry to Gaussian exponential vectors |
 | d610da9 | Verify physical Poisson tilt composition and exact entropy asymmetry |
+| ad72b49 | Displace actual full Poisson source graphs with the physical half-density unitary |
+| 7f4bcb8 | Derive weighted quartic stability from actual finite-source injectivity |
+| a14205f | Recover the full coherent-vacuum creation range and shifted Poisson Poincare |
+| 91441d4 | Strengthen actual fractional prediction obstructions to the dual Hurst regimes |
+| b62c15c | Separate fixed finite-direction stability from ambient Poisson inverse roughness |
+| d559d55 | Prove full Gaussian graph displacements through Poisson gauges |
+| a4f023f | Verify sharp Poisson curvature and diffusion entropy obstruction |
+| 237d73e | Verify the exact Brownian benchmark in fractional prediction |
+| c9dfe67 | Transfer leading Hermite-rank asymptotics for every terminal Gaussian L2 observable |
+
+Documentation checkpoint: 5ec7740 consolidated discoveries through 56.
 
 ## Discovery 57 — physical Poisson half-density gauge displaces both full source graphs
 
@@ -2049,3 +2059,35 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianPredictionRankAsymptotic.
 | leading_rank_remainder | Foundation/GaussianPredictionRankAsymptotic.lean:12 |
 | normalized_rank_remainder | Foundation/GaussianPredictionRankAsymptotic.lean:52 |
 | leading_rank_limit | Foundation/GaussianPredictionRankAsymptotic.lean:75 |
+
+
+## Discovery 66 — actual fractional full-past prediction strictly improves on the current value
+
+For the actual H=1/4 spectral Gaussian process, predict the time-4 value using the full past through time 2. Its pairing with the time-1 value is (3-sqrt(3))/2. The forecast using the current time-2 value alone has pairing 1/2. Exact source covariances and genuine conditional projections prove that these forecasts differ, and orthogonal projection geometry proves that the full-past forecast has strictly larger L2 energy.
+
+The proof also supplies the general actual source projection formula onto one Gaussian observation: P_v u=(inner(v,u)/||v||^2)v, including v=0. This is a useful regression formula against the full conditional-projection infrastructure.
+
+Significance: the Brownian current-value benchmark cannot be silently reused for a general fractional process. The general sufficient coordinate from discovery 41 is the full linear forecast, which here contains more information than the current coordinate. This is a concrete one-parameter, three-time counterexample; no general classification of fractional Markov parameters or pathwise Markov property is claimed.
+
+Verification: full Lake build 4377 jobs (.lake/stardust-66-build.log); twelve public types inspected; 7298 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-66-audit.log). Discovery 65 checkpoint: c9dfe67. Discovery 66 is the commit containing this entry.
+
+Reflection: the full-past source space is essential to the remaining fractional upper/asymptotic proof. A current-value regression proxy can give strict lower information. Exploration now turns to actual countable renormalized Wick responses and the distinction between square-summable random fluctuations and summable uncentered means.
+
+### Public locations — discovery 66
+
+Prefix: OperatorDerivativeRewrite.Foundation.FractionalCurrentObservationObstruction.
+
+| Name | Source |
+| --- | --- |
+| source_projection_single | Foundation/FractionalCurrentObservationObstruction.lean:12 |
+| direction | Foundation/FractionalCurrentObservationObstruction.lean:20 |
+| past | Foundation/FractionalCurrentObservationObstruction.lean:23 |
+| terminal | Foundation/FractionalCurrentObservationObstruction.lean:26 |
+| fullForecast | Foundation/FractionalCurrentObservationObstruction.lean:28 |
+| currentForecast | Foundation/FractionalCurrentObservationObstruction.lean:30 |
+| covariance_quarter | Foundation/FractionalCurrentObservationObstruction.lean:32 |
+| source_covariances | Foundation/FractionalCurrentObservationObstruction.lean:38 |
+| current_forecast_earlier_pairing | Foundation/FractionalCurrentObservationObstruction.lean:51 |
+| full_forecast_earlier_pairing | Foundation/FractionalCurrentObservationObstruction.lean:61 |
+| full_past_not_current | Foundation/FractionalCurrentObservationObstruction.lean:72 |
+| strict_prediction_energy_gain | Foundation/FractionalCurrentObservationObstruction.lean:79 |
