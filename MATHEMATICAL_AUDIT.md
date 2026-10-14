@@ -6709,3 +6709,11 @@ The log contains each full Lean type. These locations are verified against the f
 | IBMClockCubicCorrection.section_projection | Foundation/IBMClockCubicCorrection.lean:62 |
 | IBMClockCubicCorrection.time_integrated_projection | Foundation/IBMClockCubicCorrection.lean:70 |
 | IBMClockCubicCorrection.time_integrated_source_vector | Foundation/IBMClockCubicCorrection.lean:81 |
+
+## Stardust follow-up: unconditional per-clock-path cubic time projection (2026-10-14)
+
+GaussianWickContinuity and IBMClockCubicTimeProjection now discharge the explicit per-path Bochner integrability hypothesis in the Night Shift II time-integrated cubic projection. Every actual constructed continuous clock path has both an integrable scenery-Gaussian-L2 cubic correction section and an integrable SpectralSpace sourceVector on every finite horizon. IBMClockCubicTimeProjection.time_integrated_projection identifies the first-scenery projection with the source embedding of the actual time-integrated source vector, retaining the finite origin layer.
+
+Verification: full pinned Lake build 4318 jobs; all eleven public types checked; 6363 safe Foundation declarations audited, only propext/Classical.choice/Quot.sound. See .lake/stardust-08-{build,audit}.log and discovery 8 in PROJECT_STARDUST_REPORT.md for exact source locations and interpretation.
+
+This supersedes only the earlier OPEN/CONDITIONAL per-path integrability status. Joint random-clock L2, scalar representative/Fubini identification, graph-norm derivative/time interchange, physical spatial kernel identification, local time, fixed-mollifier Ito–Tanaka and IBM-specific singular H^-1 convergence remain open. No manuscript files were modified.

@@ -242,3 +242,39 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianBochnerDivergenceRecovery.
 | fiberRecovery_norm_le | Foundation/GaussianBochnerDivergenceRecovery.lean:36 |
 | fiberRecovery_minimal_norm | Foundation/GaussianBochnerDivergenceRecovery.lean:42 |
 | exists_fiber_divergence_iff_centered | Foundation/GaussianBochnerDivergenceRecovery.lean:52 |
+
+## Discovery 8 — Wick continuity discharges the actual IBM per-path time hypothesis
+
+Verified: GaussianWickContinuity derives continuity of every finite Wick degree in its source direction from the exact mixed-moment distance formula. It proves continuity of cube and the polarized cubic correction for continuous direction families; no choice of pointwise Gaussian representatives is assumed.
+
+IBMClockCubicTimeProjection applies this to the actual mollified scenery directions. The cubic spatialCorrection and its genuine SpectralSpace sourceVector are continuous in x. Consequently both the Gaussian-L2 correction along |clockPath(omegaY)(s)| and its source Hilbert vector are Bochner integrable on EVERY finite horizon for EVERY actual constructed clock path.
+
+The earlier IBMClockCubicCorrection.time_integrated_source_vector theorem had an explicit Integrable hypothesis. The new IBMClockCubicTimeProjection.time_integrated_projection discharges that hypothesis unconditionally and proves
+P1 integral_0^T C_n(|Y_s|) ds = isonormalEmbedding(integral_0^T sourceVector_n(|Y_s|) ds)
+in the scenery Gaussian-L2 section at each actual clock path. The exact sourceVector retains the origin variance layer and reflected-clock nonnegative geometry. Both integrals are independently shown to exist.
+
+Mathematical significance: an exploratory general Gaussian continuity theorem resolves a concrete open IBM input from the preceding campaign. Per-clock-path Bochner integrability follows from continuity and compact time, without needing joint clock moment estimates. This distinction prevents imposing an unnecessary probabilistic prerequisite on a valid section-level theorem.
+
+Limitations: joint L2 over the Brownian clock, scalar representative/time-integral Fubini identification, source graph-norm time interchange, physical white-noise identification, Brownian local time, stochastic Ito–Tanaka, residual L2 obstruction and spatial H^-1 limits remain separate. This is unconditional source-section time projection, not the complete stochastic IBM correction. The manuscript's stochastic interior term additionally carries its overall 1/2 factor.
+
+Verification: full Lake build 4318 jobs (.lake/stardust-08-build.log); all eleven new public types checked; 6363 safe Foundation declarations transitively audited with only propext/Classical.choice/Quot.sound (.lake/stardust-08-audit.lean and .log). Bochner recovery checkpoint: ac57c27. Discovery 8 is the commit containing this entry.
+
+Reflection: prioritize actual representative/Fubini and random-clock moment/domain estimates now that this per-path hypothesis is removed. This application justifies shifting some research effort from general infrastructure toward concrete nonlinear source observables. The next source-kernel and local-time dependencies are unchanged.
+
+### Public locations — discovery 8
+
+Prefix: OperatorDerivativeRewrite.Foundation.
+
+| Name | Source |
+| --- | --- |
+| GaussianWickContinuity.wick_norm_sq | Foundation/GaussianWickContinuity.lean:13 |
+| GaussianWickContinuity.wick_distance_sq | Foundation/GaussianWickContinuity.lean:17 |
+| GaussianWickContinuity.wick_continuous | Foundation/GaussianWickContinuity.lean:23 |
+| GaussianWickContinuity.cube_continuous | Foundation/GaussianWickContinuity.lean:38 |
+| GaussianWickContinuity.correction_continuous_of | Foundation/GaussianWickContinuity.lean:44 |
+| IBMClockCubicTimeProjection.tripleCoefficient_continuous | Foundation/IBMClockCubicTimeProjection.lean:16 |
+| IBMClockCubicTimeProjection.spatialCorrection_continuous | Foundation/IBMClockCubicTimeProjection.lean:27 |
+| IBMClockCubicTimeProjection.sourceVector_continuous | Foundation/IBMClockCubicTimeProjection.lean:32 |
+| IBMClockCubicTimeProjection.sectionClass_time_integrable | Foundation/IBMClockCubicTimeProjection.lean:42 |
+| IBMClockCubicTimeProjection.sourceVector_time_integrable | Foundation/IBMClockCubicTimeProjection.lean:50 |
+| IBMClockCubicTimeProjection.time_integrated_projection | Foundation/IBMClockCubicTimeProjection.lean:58 |
