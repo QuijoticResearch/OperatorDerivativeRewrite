@@ -610,3 +610,73 @@ Continuous-source milestone E was committed as `8c8444d2dc5a8ce8f56ba61b054fa784
 
 Full final pinned Lake build passed 4,303 jobs. Final environment-wide safe Foundation axiom audit and all public declaration types are checked in `.lake/quijotic-final-audit.{lean,log}`. Final build log `.lake/quijotic-horizon-build-final3.log`. Style/line-length warnings remain; no build errors or forbidden proof constructs remain. No prior verified proof body, source manuscript, dependency pin or unrelated document was changed.
 Final verification: 6,118 safe Foundation declarations passed the transitive axiom audit with only propext, Classical.choice, Quot.sound; all 140 new public declaration types printed. In the preceding source-graph paragraph, the final source lines are 185 and 197 respectively.
+
+## Quijotic verified final checkpoint and next-session handoff — 2026-10-14
+
+This is a clean verified checkpoint after multiple substantive milestones. The conversation has become large; durable repository state now contains the complete recovery chain. Resume from these files and actual Git HEAD, without assuming further work was completed. No unverified Lean source is left among campaign files and the tracked working tree is clean after this handoff is committed.
+
+Initial HEAD: `36997d45a478c4b2d05fcc48dfdb79d13e2dadc7`.
+Final mathematical HEAD: `786f65a934020e3b5924a6b3688bb13456fba9da`.
+The subsequent documentation-only handoff commit is identified by the final chat report and actual Git HEAD; its hash cannot be embedded in its own contents.
+
+| Verified mathematical commit | Outcome | Full Lake jobs | Safe Foundation audit |
+| --- | --- | ---: | ---: |
+| `f5425ebc8fdfc955b191b83e7d7e640e787d36de` | Actual jointly measurable continuous U,V,W modifications and Hilbert FTC | 4295 | 6010 |
+| `b4646c4e3ddf1aadc41270329260132c140cb8a7` | Common-event pathwise C2 and actual product-space random-clock L2 evaluation | 4297 | 6033 |
+| `ea48bd54dd78eb678c363a3dd9c9932253ca9302` | Actual nonlinear spatial chain rule; fixed-time bounded-test coefficient domains | 4298 | 6042 |
+| `8c8444d2dc5a8ce8f56ba61b054fa78471ade617` | Continuous Brownian clock, independent two-sided scenery and genuine continuous IBM | 4302 | 6108 |
+| `786f65a934020e3b5924a6b3688bb13456fba9da` | Finite-horizon actual coefficient domains and closed scenery-source graph compatibility | 4303 | 6118 |
+
+Final audit checked all 140 new public declaration types and all 6118 safe Foundation declarations, including generated declarations. Only propext, Classical.choice, Quot.sound occur transitively; no exceptions. Full build succeeded with style/line-length warnings. Source and logs are `.lake/quijotic-final-audit.{lean,log}` and `.lake/quijotic-horizon-build-final3.log`; earlier milestone logs remain available. The audit counts are environment counts, not claims of mathematical novelty or independent theorem count.
+
+Exact principal public declarations, with prefix `OperatorDerivativeRewrite.Foundation.` and paths relative to this workspace:
+
+| Declaration | File and verified source line | Meaning |
+| --- | --- | --- |
+| `IBMDyadicExtension.extension_tail` | `Foundation/IBMDyadicExtension.lean:94` | Uniform geometric approximation error after the dyadic starting level |
+| `IBMDyadicExtension.linear_tendstoUniformly` | `Foundation/IBMDyadicExtension.lean:217` | Actual dyadic affine interpolants converge uniformly |
+| `IBMDyadicExtension.field_jointly_measurable` | `Foundation/IBMDyadicExtension.lean:515` | Actual Gaussian field jointly measurable in spatial/sample coordinates |
+| `IBMDyadicExtension.field_coordinate_ae` | `Foundation/IBMDyadicExtension.lean:520` | Exact original-source modification at each deterministic spatial coordinate |
+| `IBMDyadicExtension.field_isGaussianProcess` | `Foundation/IBMDyadicExtension.lean:537` | Preserves the full scale/order/spatial finite-dimensional Gaussian structure |
+| `IBMContinuousScenery.concreteMollifier_integral_derivatives` | `Foundation/IBMSpatialFundamental.lean:29` | Both genuine Gaussian-L2 Bochner FTC identities |
+| `IBMPointwiseEvaluation.value_section_toLp_eq` | `Foundation/IBMPointwiseEvaluation.lean:61` | Actual scenery section equals the previous random Gaussian-L2 class |
+| `IBMPointwiseEvaluation.value_memLp` | `Foundation/IBMPointwiseEvaluation.lean:69` | Actual fixed-time U,V,W product-space L2 evaluations |
+| `IBMPathwiseFundamental.field_setIntegral_ae` | `Foundation/IBMPathwiseFundamental.lean:46` | Justified representative/Bochner integral interchange |
+| `IBMPathwiseFundamental.field_common_hasDerivAt` | `Foundation/IBMPathwiseFundamental.lean:133` | One common full-measure event with U'=V and V'=W everywhere |
+| `IBMPathwiseFundamental.field_common_contDiff_two` | `Foundation/IBMPathwiseFundamental.lean:167` | Unconditional almost-sure C2 scenery at every mollifier scale |
+| `IBMConstructedChainRule.field_chain_rules` | `Foundation/IBMConstructedChainRule.lean:15` | Actual first and second nonlinear spatial chain rules |
+| `IBMConstructedSources.clock_isBrownian` | `Foundation/IBMConstructedSources.lean:48` | Constructed continuous clock is formally Brownian |
+| `IBMConstructedSources.positiveScenery_isBrownian` | `Foundation/IBMConstructedSources.lean:71` | Continuous positive Brownian scenery branch |
+| `IBMConstructedSources.negativeScenery_isBrownian` | `Foundation/IBMConstructedSources.lean:89` | Continuous negative Brownian scenery branch |
+| `IBMConstructedSources.scenery_branches_independent` | `Foundation/IBMConstructedSources.lean:111` | Independence of whole positive/negative coordinate processes |
+| `IBMConstructedSources.sources_independent` | `Foundation/IBMConstructedSources.lean:135` | Independence of full scenery/clock path maps on the original product factors |
+| `IBMConstructedSources.ibmValue_jointly_measurable` | `Foundation/IBMConstructedSources.lean:150` | Actual continuous IBM process is jointly measurable |
+| `IBMConstructedSources.mollifiedValue_jointly_measurable` | `Foundation/IBMConstructedSources.lean:163` | Actual smooth-field random-time evaluations jointly measurable in time/sample |
+| `IBMConstructedSources.mollifiedValue_ae_original` | `Foundation/IBMConstructedSources.lean:172` | Fixed-time equality with original-clock actual evaluations |
+| `IBMFiniteHorizonEvaluation.horizon_square_integrable` | `Foundation/IBMFiniteHorizonEvaluation.lean:111` | U,V,W in the genuine finite-horizon square-integrable time/source domain |
+| `IBMFiniteHorizonEvaluation.firstCoefficient_horizon_square_integrable` | `Foundation/IBMFiniteHorizonEvaluation.lean:133` | Bounded test first derivative gives square-integrable first coefficient |
+| `IBMFiniteHorizonEvaluation.secondCoefficient_horizon_integrable` | `Foundation/IBMFiniteHorizonEvaluation.lean:150` | Bounded first/second test derivatives give an integrable bulk coefficient |
+| `IBMFiniteHorizonEvaluation.field_closedSourceDerivative_graph` | `Foundation/IBMFiniteHorizonEvaluation.lean:185` | Exact full closed source derivative of actual selected coordinates |
+| `IBMFiniteHorizonEvaluation.value_section_closedSourceDerivative_graph` | `Foundation/IBMFiniteHorizonEvaluation.lean:197` | Exact closed scenery-source derivative for every actual clock section |
+
+Status corresponding to the campaign's requested final report:
+
+- Jointly measurable continuous Gaussian fields: completed unconditionally for U,V,W, all scales on original scenery source; exact deterministic-point agreement and complete finite-dimensional Gaussian structure preserved.
+- Pathwise C2 and derivative compatibility: completed unconditionally on one common full-measure event for every n and every real x. This uses proved representative integration, rational endpoint countability and continuity; no hidden derivative assumption.
+- Random-clock evaluation: completed for actual values and actual constructed continuous clock, with fixed-time class equality, fixed-time product L2 integrability, path continuity, joint time/sample measurability and finite-horizon U,V,W square integrability.
+- Actual nonlinear chain rule: completed for explicit ordinary real derivative functions f1,f2. Measurability and fixed-time/finite-horizon coefficient integrability are proved for continuous globally bounded f1,f2. Polynomial spatial chain rules fit the general derivative hypotheses, but unbounded polynomial coefficient domain estimates have not been separately proved.
+- Unconditional continuous Brownian sources: completed, including Brownian clock, both scenery branches, their independence, preserved covariance/Gaussian laws, measurable paths and independent scenery/clock path factors.
+- Genuine IBM: completed as an actual continuous jointly measurable composition of the constructed independent Brownian sources. This does not itself constitute stochastic IBM calculus.
+- Brownian local time: open; no new local-time random variable, occupation density or support theorem has been constructed.
+- Fixed-mollifier Ito–Tanaka: open; no stochastic integral identity is claimed.
+- Source-adjoint IBM identity: partial source compatibility completed for actual linear Gaussian coordinates and random-clock scenery sections. Joint nonlinear graph membership, clock derivative, scenery-enlarged adapted integral and the IBM-specific adjoint pairing remain open.
+- First-chaos singular correction: open for the actual correction. Existing quartic Stein expectations remain zeroth-chaos computations; existing H^-1 operators remain reusable conditional infrastructure. No new IBM-specific H^-1 limit or higher-chaos reconstruction is claimed.
+- Corrected manuscript claims: the incoming negative-bulk variance slope correction (+1 on positive bulk, -1 on negative bulk) remains in force. This campaign introduces no further manuscript correction or novelty claim.
+
+The source manuscripts were preserved. The EJP PDF hash is unchanged. ResearchSources was never staged. The only initial untracked items remaining are the twelve unrelated documents and ResearchSources. The dependency pins are unchanged, no old Foundation proof body was edited, and there was no push, reset, destructive cleanup, recurring automation or additional agent.
+
+Three highest-value next proof targets:
+
+1. Construct Brownian local time by a proved smooth absolute-value approximation limit using the verified Gaussian C2 Ito theorem. Prove convergence of the sign-integrand stochastic term and independently identify the drift limit through nonnegativity, increase, support/occupation properties. Keep normalization |Y_t|-|Y_0|=integral sgn(Y)dY+L_t^0.
+2. Put the actual scenery-dependent first coefficient into the Brownian-clock adapted/predictable stochastic-integral completion, using the now-proved finite-horizon square integrability and independent scenery as initial information. Identify its constructed integral with the appropriate clock divergence on a proved domain. No stochastic integral may be introduced merely as a formal expression.
+3. Combine the genuine reflected-clock composition theorem with the now-constructed C2 scenery and actual chain rule to prove fixed-mollifier IBM Ito–Tanaka. Then derive its actual first-scenery-chaos kernel by source duality, retaining the finite-mollifier origin correction, before attempting the IBM-specific H^-1 limit. A zeroth-chaos expectation is not this kernel, and a first-chaos limit is not a full singular correction.
