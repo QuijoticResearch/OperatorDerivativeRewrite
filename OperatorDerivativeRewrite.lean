@@ -305,3 +305,4 @@ import Foundation.PoissonPolynomialRecovery
 import Foundation.IBMClockCubicSourcePrimitive
 import Foundation.GaussianFirstChaosRecovery
 import Foundation.PoissonCoherentVectors
+import Foundation.IBMSourcePrimitiveObstruction

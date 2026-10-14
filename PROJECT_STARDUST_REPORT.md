@@ -482,3 +482,26 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonCoherentVectors.
 | divergenceValue_memLp | Foundation/PoissonCoherentVectors.lean:137 |
 | divergenceScalar | Foundation/PoissonCoherentVectors.lean:146 |
 | exponential_divergence_graph | Foundation/PoissonCoherentVectors.lean:149 |
+
+## Discovery 16 — IBM source recovery preserves the first-chaos obstruction
+
+Verified: for every actual Gaussian L2 class f, the norm of its existing first-chaos projection is at most the norm of R f. For each constructed clock path and finite horizon, the integrated source vector therefore has norm and pairwise distances bounded by the actual cubic source primitive. Cauchy convergence of the primitives forces Cauchy convergence of these vectors.
+
+This connects the minimum-norm Gaussian inverse to the IBM kernel obstruction: source divergence recovery cannot erase a failure of first-chaos convergence. It supplies a necessary condition, not an actual blow-up or non-Cauchy estimate. Joint clock L2, physical kernel identification, local-time estimates, and stochastic Ito–Tanaka remain open.
+
+Verification: full Lake build 4326 jobs (.lake/stardust-16-build.log); six public declarations checked; 6475 safe Foundation declarations transitively audited with only propext/Classical.choice/Quot.sound (.lake/stardust-16-audit.log). Discovery 15 checkpoint: 4decbfb. Discovery 16 is the commit containing this entry.
+
+Reflection: prioritize an actual integrated-kernel estimate before treating recovery as a route to an IBM stochastic formula. The source inverse already gives all that can be obtained from Hilbert-space inversion alone.
+
+### Public locations — discovery 16
+
+Prefix: OperatorDerivativeRewrite.Foundation.IBMSourcePrimitiveObstruction.
+
+| Name | Source |
+| --- | --- |
+| firstProjection_norm_le_recovery | Foundation/IBMSourcePrimitiveObstruction.lean:16 |
+| integratedSourceVector | Foundation/IBMSourcePrimitiveObstruction.lean:44 |
+| integrated_source_projection | Foundation/IBMSourcePrimitiveObstruction.lean:48 |
+| integratedSourceVector_norm_le_primitive | Foundation/IBMSourcePrimitiveObstruction.lean:54 |
+| integratedSourceVector_distance_le_primitive | Foundation/IBMSourcePrimitiveObstruction.lean:60 |
+| integratedSourceVector_cauchy_of_primitive_cauchy | Foundation/IBMSourcePrimitiveObstruction.lean:73 |
