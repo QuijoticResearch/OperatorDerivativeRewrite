@@ -891,3 +891,27 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianCubicGrowth.
 | cube_norm_le | Foundation/GaussianCubicGrowth.lean:19 |
 | mixedCube_norm_le | Foundation/GaussianCubicGrowth.lean:23 |
 | correction_norm_le | Foundation/GaussianCubicGrowth.lean:38 |
+
+## Discovery 30 — fixed-time joint clock/scenery cubic L2
+
+For every fixed mollifier n and every nonnegative time t, the actual constructed cubic IBM correction value belongs to L2 of the full joint scenery/clock product measure. This is unconditional joint membership at a fixed time, beyond the earlier per-clock-section results.
+
+The spatial correction class has a global bound C_n (1+abs(x))^3, using discoveries 28–29 and all three genuine mollifier coefficient directions. The actual constructed clock has L6 membership by its verified coordinate modification of the Gaussian Brownian process. The product-square integral is justified using the existing scenery sections, joint measurability, and the integrable sixth-moment clock majorant. No independence of the U,V,W scenery directions or arbitrary product-domain closure is assumed.
+
+Limits: the constant depends on n. This does not yet prove joint L2 for the finite-horizon scalar time integral or uniform control as the mollifier is removed. Predictable-clock integration, stochastic Ito–Tanaka, physical kernel identification and singular H^-1 limits remain open. The active next proof is an actual finite-horizon product-square and column-integral bound.
+
+Verification: full Lake build 4340 jobs (.lake/stardust-30-build.log); five public types checked; 6676 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-30-audit.log). Discovery 29 checkpoint: defdb31. Discovery 30 is the commit containing this entry.
+
+Reflection: the fixed-time joint clock moment obligation can be discharged from coarse global source growth and existing Gaussian moments. The singular-limit obstruction is separate and is not improved by allowing constants to depend on the mollifier.
+
+### Public locations — discovery 30
+
+Prefix: OperatorDerivativeRewrite.Foundation.IBMClockCubicJointL2.
+
+| Name | Source |
+| --- | --- |
+| spatialCorrection_global_growth | Foundation/IBMClockCubicJointL2.lean:15 |
+| clock_memLp_six | Foundation/IBMClockCubicJointL2.lean:32 |
+| clock_cubic_growth_memLp | Foundation/IBMClockCubicJointL2.lean:37 |
+| section_energy | Foundation/IBMClockCubicJointL2.lean:52 |
+| value_memLp_joint | Foundation/IBMClockCubicJointL2.lean:59 |

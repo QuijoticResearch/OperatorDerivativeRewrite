@@ -319,3 +319,4 @@ import Foundation.IBMClockCubicRepresentative
 import Foundation.SPDECountableModes
 import Foundation.IBMSceneryGlobalGrowth
 import Foundation.GaussianCubicGrowth
+import Foundation.IBMClockCubicJointL2

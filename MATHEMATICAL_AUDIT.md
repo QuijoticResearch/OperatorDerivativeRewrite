@@ -6733,3 +6733,9 @@ IBMClockCubicRepresentative discharges the scalar representative/Fubini obligati
 Verification: full Lake build 4336 jobs; seven IBM public types checked; 6624 safe Foundation declarations transitively audited with only propext/Classical.choice/Quot.sound. See discoveries 25–26 in PROJECT_STARDUST_REPORT.md and .lake/stardust-26-{build,audit}.log.
 
 This supersedes the older OPEN per-clock scalar representative/Fubini status. Joint random-clock/scenery L2, physical kernel identification, graph-norm derivative interchange, local time, predictable-clock integration, fixed-mollifier stochastic Ito–Tanaka and the singular IBM spatial H^-1 limit remain open. The g'' time section is not the full manuscript correction including its factor 1/2 and boundary term. ResearchSources is unchanged.
+
+## Stardust follow-up: fixed-time joint cubic L2 (2026-10-14)
+
+IBMClockCubicJointL2.value_memLp_joint proves actual cubic correction L2 membership under the full joint scenery/clock law for every fixed n,t. Global compact-kernel growth, cubic source norm bounds and the actual clock's sixth-moment membership discharge the random-clock domination obligation at fixed times. Verification: full Lake build 4340 jobs; five public types checked; 6676 safe Foundation declarations audited with only the standard three axioms. See discovery 30 and .lake/stardust-30-{build,audit}.log.
+
+This supersedes fixed-time joint cubic L2 OPEN status only. Joint finite-horizon scalar time-integral L2 is still being investigated. No n-uniform limit, physical kernel bridge, predictable-clock or stochastic Ito–Tanaka theorem follows. ResearchSources remains unchanged.
