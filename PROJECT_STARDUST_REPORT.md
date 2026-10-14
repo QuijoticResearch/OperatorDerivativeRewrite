@@ -1610,3 +1610,38 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonExponentialTilt.
 | density_jumpBregman | Foundation/PoissonExponentialTilt.lean:112 |
 | density_jump_integrable | Foundation/PoissonExponentialTilt.lean:119 |
 | relative_entropy_eq_jump_energy | Foundation/PoissonExponentialTilt.lean:126 |
+
+## Discovery 55 — exact Gaussian–Poisson square-root density geometry
+
+Actual square-root densities of the Poisson exponential tilts are constructed as unit-norm vectors in the original Poisson L2. Their inner product is exp(-lambda/2 (exp(theta/2)-exp(eta/2))^2); their squared Hellinger distance is twice one minus this affinity. The parameter sqrt(lambda) exp(theta/2) is proved equal to the square root of the actual tilted rate.
+
+Actual normalized Gaussian exponential vectors G(a)=exp(-a^2) exp(a x) in the physical standard Gaussian L2 have norm one and inner product exp(-(a-b)^2/2). Thus the Poisson tilt square-root density affinity matches these Gaussian vectors exactly at square-root rate coordinates. Every finite linear combination has the same inner product under this map. The Gaussian vectors are square-root densities of unit-variance location tilts with means 2a; no equality of the two probability laws is asserted.
+
+Significance: physical Poisson rate geometry has an exact Gaussian kernel after the square-root transformation, despite different multiplication and entropy structures. This is a second precise Gaussian–Poisson bridge, involving density geometry rather than identifying arbitrary stochastic processes or source products. A full unitary extension for this particular positive-parameter family is not proved here.
+
+Verification: full Lake build 4366 jobs (.lake/stardust-55-build.log); sixteen public types inspected; 7094 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-55-audit.log). Discovery 54 checkpoint: ddf2d57. Discovery 55 is the commit containing this entry.
+
+Reflection: the exact affinity comparison should be kept separate from ordered relative entropy. Composition of actual Poisson tilts and a concrete forward/reverse entropy discrepancy are the next investigation. A future focused campaign could relate physical half-density gauges to displaced source annihilation/creation graphs.
+
+### Public locations — discovery 55
+
+Prefix: OperatorDerivativeRewrite.Foundation.PoissonTiltHellingerGeometry.
+
+| Name | Source |
+| --- | --- |
+| rootDensity | Foundation/PoissonTiltHellingerGeometry.lean:13 |
+| rootDensity_sq | Foundation/PoissonTiltHellingerGeometry.lean:16 |
+| rootDensity_memLp | Foundation/PoissonTiltHellingerGeometry.lean:22 |
+| rootClass | Foundation/PoissonTiltHellingerGeometry.lean:31 |
+| rootClass_coeFn | Foundation/PoissonTiltHellingerGeometry.lean:34 |
+| rootClass_norm_sq | Foundation/PoissonTiltHellingerGeometry.lean:37 |
+| rootClass_inner | Foundation/PoissonTiltHellingerGeometry.lean:46 |
+| hellinger_distance_sq | Foundation/PoissonTiltHellingerGeometry.lean:68 |
+| sqrtRate | Foundation/PoissonTiltHellingerGeometry.lean:74 |
+| sqrtRate_eq_sqrt_tilted | Foundation/PoissonTiltHellingerGeometry.lean:76 |
+| rootClass_inner_sqrtRate | Foundation/PoissonTiltHellingerGeometry.lean:87 |
+| gaussianRoot | Foundation/PoissonTiltHellingerGeometry.lean:98 |
+| gaussianRoot_norm | Foundation/PoissonTiltHellingerGeometry.lean:101 |
+| gaussianRoot_inner | Foundation/PoissonTiltHellingerGeometry.lean:105 |
+| poisson_gaussian_affinity_transfer | Foundation/PoissonTiltHellingerGeometry.lean:128 |
+| finite_affinity_inner_transfer | Foundation/PoissonTiltHellingerGeometry.lean:133 |
