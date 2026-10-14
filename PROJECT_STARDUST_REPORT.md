@@ -2973,3 +2973,31 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianDisplacementQuarticObstruct
 | displaced_coherent_physical | Foundation/GaussianDisplacementQuarticObstruction.lean:36 |
 | no_uniform_quartic_displacement_bound | Foundation/GaussianDisplacementQuarticObstruction.lean:42 |
 | no_bounded_quartic_realization | Foundation/GaussianDisplacementQuarticObstruction.lean:57 |
+
+## Discovery 95 — the Poisson-constructed displacement is the physical Gaussian half-density translation
+
+For every actual scalar Gaussian L2 target, the previously constructed displacement at d has almost-everywhere representative exp(d x-d squared) times f(x-2d). The physical action is itself in actual Gaussian L2 and its constructed L2 class equals the unitary output. The factor two in the spatial shift is fixed by the verified derivative and divergence shift normalization.
+
+The proof first establishes Gaussian translation nonsingularity. The set of L2 targets satisfying the formula is a linear submodule and is closed: from a convergent L2 sequence, legitimate almost-everywhere subsequences of both inputs and unitary outputs pass the formula to the limit, with translated null sets controlled by absolute continuity. The already proved physical formula on the dense coherent span then gives every target.
+
+Significance: actual Poisson half-density transport and full scalar graph transfer reconstruct the genuine Gaussian half-density translation operator, including arbitrary nonsmooth L2 classes. No classical pointwise group formula was assumed. This completes the formula obligation left open at discovery 62 and explicitly connects count-based tilt geometry to physical Gaussian translation. It remains a one-variable Gaussian theorem; no infinite-dimensional Cameron-Martin formula or fractional/SPDE kernel conclusion is inferred.
+
+Verification: full Lake build 4409 jobs (.lake/stardust-95-build.log); nine public types inspected; 7844 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-95-audit.log). Discovery 94 checkpoint: 8cfbe52. Discovery 95 is the commit containing this entry.
+
+Reflection: the group is strongly continuous on L2 but has no bounded L4 realization at nonzero displacement. The pointwise formula now permits a direct operator-norm continuity test using translated disjoint interval indicators. Exact physical Gaussian coherent-law/entropy identification could also quantify how the genuine Poisson/Gaussian graph equivalence distorts entropy, rather than merely noting that entropy is not preserved.
+
+### Public locations — discovery 95
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianPhysicalDisplacement.
+
+| Name | Source |
+| --- | --- |
+| physicalAction | Foundation/GaussianPhysicalDisplacement.lean:14 |
+| shifted_gaussian_absolutelyContinuous | Foundation/GaussianPhysicalDisplacement.lean:16 |
+| shift_ae | Foundation/GaussianPhysicalDisplacement.lean:22 |
+| physicalFormulaDomain | Foundation/GaussianPhysicalDisplacement.lean:25 |
+| physicalFormulaDomain_isClosed | Foundation/GaussianPhysicalDisplacement.lean:50 |
+| coherent_physical_formula | Foundation/GaussianPhysicalDisplacement.lean:70 |
+| displacement_physical_formula | Foundation/GaussianPhysicalDisplacement.lean:78 |
+| physicalAction_memLp | Foundation/GaussianPhysicalDisplacement.lean:91 |
+| physicalAction_class | Foundation/GaussianPhysicalDisplacement.lean:95 |

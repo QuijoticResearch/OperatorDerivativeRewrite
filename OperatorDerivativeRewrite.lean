@@ -385,3 +385,4 @@ import Foundation.GaussianCoherentIdentification
 import Foundation.GaussianDisplacementGroup
 import Foundation.GaussianDisplacementContinuity
 import Foundation.GaussianDisplacementQuarticObstruction
+import Foundation.GaussianPhysicalDisplacement
