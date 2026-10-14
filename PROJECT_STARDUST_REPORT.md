@@ -2733,3 +2733,36 @@ Prefix: OperatorDerivativeRewrite.Foundation.BrownianHistoryRecoveryCompactness.
 | positive_history_recovery_noncompact | Foundation/BrownianHistoryRecoveryCompactness.lean:95 |
 | zero_history_recovery_zero | Foundation/BrownianHistoryRecoveryCompactness.lean:100 |
 | brownian_history_recovery_compact_iff | Foundation/BrownianHistoryRecoveryCompactness.lean:110 |
+
+## Discovery 87 — causal Ito fields and minimal divergence sources have exact chaos-angle geometry
+
+Every genuine full predictable Ito field has global gradient projection equal to canonical recovery of its actual Ito output. Their difference lies in the actual divergence kernel, and their squared energies add to the predictable integrand energy. These statements use the existing independently constructed predictable L2 space and integral, without redefining either.
+
+For an Ito output in full number sector n, canonical recovery energy is 1/n times the causal field energy; the divergence-free residual has fraction 1-1/n. For every scalar L2 target, predictable projection of its recovered source equals the predictable adjoint of its inverse-number potential. On a pure Ito degree n, alternating gradient projection and predictable projection returns exactly 1/n times the original integrand. For n>1 and nonzero input, canonical recovery has strictly smaller norm than the causal field.
+
+Actual terminal Brownian Hermite integrands instantiate every positive degree, with energy (n+1)! T^(n+1). For the quadratic target B_T squared minus T, the divergence-free causal/minimal-source residual has exact squared norm T squared. This explicitly distinguishes canonical full-source minimum norm from unique causal Ito representation: the causal restriction removes divergence-free freedom but generally costs extra source energy.
+
+Verification: full Lake build 4401 jobs (.lake/stardust-87-build.log); fourteen public types inspected; 7739 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-87-audit.log). Discovery 86 checkpoint: a037423. Discovery 87 is the commit containing this entry.
+
+Reflection: the degree factor is an actual alternating-projection spectral relation, not a formal principal-angle structure or unproved adapted representation. It suggests uniform geometric removal of higher chaos under repeated projection, with the first-chaos Ito component surviving. The inverse-number iteration estimate is under investigation. A future campaign should quantify how causal physical kernel restrictions alter minimum source energy in IBM and fractional models.
+
+### Public locations — discovery 87
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianItoSourceHodge.
+
+| Name | Source |
+| --- | --- |
+| ito_gradientProjection | Foundation/GaussianItoSourceHodge.lean:16 |
+| ito_recovery_residual_graph | Foundation/GaussianItoSourceHodge.lean:20 |
+| ito_recovery_energy | Foundation/GaussianItoSourceHodge.lean:25 |
+| recovery_sector_energy | Foundation/GaussianItoSourceHodge.lean:33 |
+| ito_sector_residual_energy | Foundation/GaussianItoSourceHodge.lean:43 |
+| predictable_recovery_potential | Foundation/GaussianItoSourceHodge.lean:51 |
+| predictable_recovery_sector | Foundation/GaussianItoSourceHodge.lean:59 |
+| alternating_projection_sector | Foundation/GaussianItoSourceHodge.lean:63 |
+| pure_mode_causal_minimum_gap | Foundation/GaussianItoSourceHodge.lean:70 |
+| terminalWickIntegrand | Foundation/GaussianItoSourceHodge.lean:80 |
+| terminalWickIntegrand_integral | Foundation/GaussianItoSourceHodge.lean:83 |
+| terminalWickIntegrand_energy | Foundation/GaussianItoSourceHodge.lean:88 |
+| terminalWick_residual_energy | Foundation/GaussianItoSourceHodge.lean:93 |
+| quadratic_causal_residual_energy | Foundation/GaussianItoSourceHodge.lean:102 |
