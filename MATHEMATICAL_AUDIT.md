@@ -6591,3 +6591,15 @@ The same coefficient is the Bochner expectation of the actual polynomial source 
 Verification: affected module compiled; full Lake build succeeded, 4304 jobs (.lake/quijotic-chaos-01-build.log). All 25 public declaration types inspected in .lake/quijotic-chaos-01-audit.log; all 6155 safe Foundation declarations audited transitively, only propext/Classical.choice/Quot.sound. Generated declarations are included in this environment count. No old proof bodies or manuscript files changed. This milestone does not construct a time-integrated correction, local time, stochastic integral, or singular limit.
 
 Next: verify quartic parity; instantiate actual smooth scenery with positive/negative bulk and full origin variance geometry; retain the actual spectral Hilbert source rather than identifying it with physical white-noise L2 without an isometry.
+
+## Night Shift II — milestone 2: concrete scenery and quartic parity (2026-10-14)
+
+Milestone 1 commit: 25f33da. Foundation/IBMSceneryCubicProjection.lean specializes the existing first-chaos projection to actual U,V,W fields, with deterministic-point AE equality to the common C2 modification. positive_bulk_projection assumes (bump n).rOut<x and gives +V+sigma W/2; negative_bulk_projection assumes x<-(bump n).rOut and gives -V+sigma W/2. Here sigma=wholeLineVariance(kernel n).
+
+variance_geometry_projection is unconditional at every real x: P1 C=sigma'' U/2+sigma' V+sigma W/2. The sigma'' and sigma' contributions retain the full finite origin geometry, consistent with the previously verified exact boundary variance. Smoothness at fixed n does not imply any Dirac limit. projection_eq_sourceEmbedding gives the genuine sourceVector in SpectralSpace, built from actual Bochner mollified Brownian directions; no identification with physical white-noise L2(dw) is asserted.
+
+Foundation/IBMEvenCorrectionProjection.lean realizes U²V² and U³W by explicit quartic polarization and proves quarticCorrection_projection_zero for the actual even correction U²V²/2+U³W/6. Nonzero expectation remains a zeroth-chaos fact and is compatible with this exact zero projection.
+
+Verification: full Lake build succeeded with 4306 jobs (.lake/quijotic-chaos-02-build.log); all 16 new public types inspected and all 6192 safe Foundation declarations audited transitively (.lake/quijotic-chaos-02-audit.log). Only propext/Classical.choice/Quot.sound. The finite-index proof reduction found by the full build was repaired before this checkpoint. No old proof bodies, manuscripts, dependency pins or unrelated documents changed.
+
+This completes unconditional finite-mollifier cubic spatial first chaos and quartic parity. Smooth nonpolynomial tests, joint random-clock cubic moment bounds, physical spatial kernel identification, Brownian local time, fixed-mollifier stochastic calculus and singular H^-1 convergence remain unproved. Next work: all-degree polynomial Stein coefficients, actual clock sections, and explicit compact-supported source kernel integration.

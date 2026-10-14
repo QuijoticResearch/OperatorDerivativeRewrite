@@ -284,3 +284,5 @@ import Foundation.IBMConstructedChainRule
 import Foundation.IBMConstructedSources
 import Foundation.IBMFiniteHorizonEvaluation
 import Foundation.IBMCubicFirstChaos
+import Foundation.IBMEvenCorrectionProjection
+import Foundation.IBMSceneryCubicProjection
