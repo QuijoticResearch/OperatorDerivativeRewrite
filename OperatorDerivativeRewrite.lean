@@ -339,3 +339,5 @@ import Foundation.GaussianPredictionDivergenceRecovery
 import Foundation.BanachQuarticWeightedStability
 import Foundation.BanachQuarticConstantSource
 import Foundation.PoissonQuarticWeightedObstruction
+import Foundation.PoissonQuarticAtomPerturbation
+import Foundation.PoissonQuarticNowhereLipschitz

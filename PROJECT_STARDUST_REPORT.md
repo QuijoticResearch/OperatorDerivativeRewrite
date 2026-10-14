@@ -1456,3 +1456,39 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonQuarticWeightedObstruction.
 | atom_fourth | Foundation/PoissonQuarticWeightedObstruction.lean:42 |
 | quartic_weights_summable | Foundation/PoissonQuarticWeightedObstruction.lean:49 |
 | no_positive_weighted_lower | Foundation/PoissonQuarticWeightedObstruction.lean:59 |
+
+## Discovery 50 — the actual Poisson L4 quartic inverse is nowhere locally Lipschitz
+
+For every positive Poisson rate, every dual datum f0, every real proposed linear constant K and every positive dual radius r, there is another actual dual datum f with ||f-f0||<r and K||f-f0|| < ||A^-1(f)-A^-1(f0)||. The inverse is the already verified complete-space quartic normal equivalence for the L4 identity source. Thus no datum admits a local linear inverse stability bound.
+
+This proof does not infer singularity from failure of a sufficient condition. It constructs normalized atom directions of unit source norm. For every F in actual Poisson L4, x_n=F(n)||indicator_n||_4 tends to zero in absolute value, because x_n^4 is the summable actual quartic atom energy. The exact nonlinear perturbation is A(F+a w_n)-A(F)=((x_n+a)^3-x_n^3) A(w_n), with ||A(w_n)||<=1. Choosing a_n=1/(n+1) makes data changes small relative to the source increment and gives the genuine inverse counterexample at every datum.
+
+Significance: the earlier zero and disjoint-support singularities extend to all data, including sources with strictly positive representatives. This corrects the prospective idea that avoiding zero coordinates might restore local Lipschitz stability for the infinite Poisson L4 identity source. It does not contradict the constant-subspace positive example or apply automatically to arbitrary source embeddings.
+
+Verification: full Lake build 4361 jobs (.lake/stardust-50-build.log); seventeen public types in the perturbation and inverse modules inspected; 7007 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-50-audit.log). Discovery 49 checkpoint: 192dcd6. Discovery 50 is the commit containing this entry.
+
+Reflection: an even stronger pointwise statement is being checked: whether every local exponent above the globally verified one-third Holder exponent fails at every datum. Separately, Gaussian first-chaos source embeddings have a promising positive weighted geometry, so infinite dimension alone should not be treated as the cause of these singularities.
+
+### Public locations — discovery 50
+
+Names have their source module as namespace under OperatorDerivativeRewrite.Foundation.
+
+| Name | Source |
+| --- | --- |
+| PoissonQuarticAtomPerturbation.normalizedAtom | Foundation/PoissonQuarticAtomPerturbation.lean:18 |
+| PoissonQuarticAtomPerturbation.normalizedAtom_norm | Foundation/PoissonQuarticAtomPerturbation.lean:21 |
+| PoissonQuarticAtomPerturbation.normalized_normal_norm_le | Foundation/PoissonQuarticAtomPerturbation.lean:26 |
+| PoissonQuarticAtomPerturbation.normal_atom_shift | Foundation/PoissonQuarticAtomPerturbation.lean:33 |
+| PoissonQuarticAtomPerturbation.localCoefficient | Foundation/PoissonQuarticAtomPerturbation.lean:64 |
+| PoissonQuarticAtomPerturbation.localCoefficient_fourth | Foundation/PoissonQuarticAtomPerturbation.lean:67 |
+| PoissonQuarticAtomPerturbation.localCoefficient_abs_tendsto_zero | Foundation/PoissonQuarticAtomPerturbation.lean:72 |
+| PoissonQuarticAtomPerturbation.cubic_shift_abs_le | Foundation/PoissonQuarticAtomPerturbation.lean:86 |
+| PoissonQuarticAtomPerturbation.normal_shift_norm_bound | Foundation/PoissonQuarticAtomPerturbation.lean:98 |
+| PoissonQuarticNowhereLipschitz.step | Foundation/PoissonQuarticNowhereLipschitz.lean:14 |
+| PoissonQuarticNowhereLipschitz.step_pos | Foundation/PoissonQuarticNowhereLipschitz.lean:16 |
+| PoissonQuarticNowhereLipschitz.step_tendsto_zero | Foundation/PoissonQuarticNowhereLipschitz.lean:18 |
+| PoissonQuarticNowhereLipschitz.relativeBound | Foundation/PoissonQuarticNowhereLipschitz.lean:21 |
+| PoissonQuarticNowhereLipschitz.relativeBound_nonneg | Foundation/PoissonQuarticNowhereLipschitz.lean:24 |
+| PoissonQuarticNowhereLipschitz.relativeBound_tendsto_zero | Foundation/PoissonQuarticNowhereLipschitz.lean:30 |
+| PoissonQuarticNowhereLipschitz.no_local_linear_bound_at_source | Foundation/PoissonQuarticNowhereLipschitz.lean:39 |
+| PoissonQuarticNowhereLipschitz.no_local_linear_bound_at_datum | Foundation/PoissonQuarticNowhereLipschitz.lean:76 |
