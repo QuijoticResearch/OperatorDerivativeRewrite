@@ -2194,3 +2194,30 @@ Prefix: OperatorDerivativeRewrite.Foundation.SPDEWickBrownianPrediction.
 | response_energy_hasSum | Foundation/SPDEWickBrownianPrediction.lean:66 |
 | full_past_prediction_energy | Foundation/SPDEWickBrownianPrediction.lean:74 |
 | harmonic_square_prediction_energy | Foundation/SPDEWickBrownianPrediction.lean:85 |
+
+## Discovery 70 — Hermite rank improves initial prediction but not positive-time roughness
+
+The countable Brownian Wick response has exact full-past prediction between every pair 0<=s<=t, without a unit-time restriction. Its pairing with the earlier response equals the earlier energy. Its actual L2 increment energy is (t^d-s^d) times unit-time terminal energy, for every positive degree d and square-summable coefficient sequence.
+
+For the genuine harmonic-weight quadratic response, unit-time energy is at least 2. At time 1/2, every increment h>=0 has squared L2 norm at least 2h. For every proposed exponent alpha>1, every real constant C and every positive neighborhood radius, an arbitrarily small positive h<=1/2 violates C h^alpha as an increment-square bound.
+
+Significance: the exact degree-two initial forecast law t^2 does not confer an exponent-two local increment law away from zero. Initial Hermite-rank scaling and positive-time stochastic roughness are distinct, even for a legitimate countable renormalized observable. The proof concerns actual L2 responses and conditional projections; it does not establish sample path Holder exponents or a formal Mathlib martingale instance.
+
+Verification: full Lake build 4384 jobs (.lake/stardust-70-build.log); eight public types inspected; 7368 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-70-audit.log). Discovery 69 checkpoint: 2cf6ff3. Discovery 70 is the commit containing this entry.
+
+Reflection: future temporal regularity claims must specify the base time, target norm, and actual process. This nonlinear countable Brownian branch now has exact summability, prediction and increment benchmarks. Investigation returns to a material Poisson gap: whether the already verified quadratic entropy obstruction persists on the bounded finite-support core rather than only the maximal domain.
+
+### Public locations — discovery 70
+
+Prefix: OperatorDerivativeRewrite.Foundation.SPDEWickTemporalGeometry.
+
+| Name | Source |
+| --- | --- |
+| source_projection_between | Foundation/SPDEWickTemporalGeometry.lean:12 |
+| response_prediction_between | Foundation/SPDEWickTemporalGeometry.lean:22 |
+| response_energy_scale | Foundation/SPDEWickTemporalGeometry.lean:29 |
+| response_pairing | Foundation/SPDEWickTemporalGeometry.lean:38 |
+| response_increment_energy | Foundation/SPDEWickTemporalGeometry.lean:51 |
+| harmonic_terminal_energy_lower | Foundation/SPDEWickTemporalGeometry.lean:58 |
+| harmonic_positive_time_increment_lower | Foundation/SPDEWickTemporalGeometry.lean:65 |
+| no_higher_positive_time_power | Foundation/SPDEWickTemporalGeometry.lean:75 |

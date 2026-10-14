@@ -360,3 +360,4 @@ import Foundation.FractionalCurrentObservationObstruction
 import Foundation.SPDEWickModes
 import Foundation.SPDEWickPrediction
 import Foundation.SPDEWickBrownianPrediction
+import Foundation.SPDEWickTemporalGeometry
