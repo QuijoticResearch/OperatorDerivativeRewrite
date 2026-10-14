@@ -1900,3 +1900,26 @@ Prefix: OperatorDerivativeRewrite.Foundation.FractionalDualRegimePrediction.
 | terminal_forecast_dual_lower | Foundation/FractionalDualRegimePrediction.lean:73 |
 | no_higher_dual_prediction_increment_bound | Foundation/FractionalDualRegimePrediction.lean:91 |
 | exists_positive_terminal_rank | Foundation/FractionalDualRegimePrediction.lean:123 |
+
+## Discovery 61 — fixed finite perturbations are stable but no uniform direction constant exists
+
+The weighted-source argument is extended to an arbitrary fixed finite-dimensional perturbation subspace E of a possibly infinite-dimensional source H. Actual source injectivity and a nonzero-a.e. baseline imply weighted injectivity on E, so some K_E>0 bounds ||u-v|| by K_E ||A(u)-A(v)|| whenever u-v belongs to E. The baseline need not belong to E. This uses the full normal-map data norm; no projected Galerkin equation is constructed.
+
+For the actual Poisson L4 identity source at the constant-one baseline, every fixed finite-dimensional perturbation subspace has such a stability constant. Yet at every positive rate there is no real K that works uniformly across even all one-dimensional perturbation spaces. The counterexample uses the genuine complete inverse and the already verified everywhere linear-bound failure, choosing the span of the actual violating source difference.
+
+Significance: fixed finite-dimensional stability can coexist with the full inverse's everywhere sharp one-third roughness at the same baseline. A numerical or finite-source regularity audit therefore cannot justify a dimension-uniform inverse claim without actual quantitative control. This is a concrete source-geometry obstruction, rather than speculation about a future discretization.
+
+Verification: full Lake build 4372 jobs (.lake/stardust-61-build.log); four public types inspected; 7208 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-61-audit.log). Discovery 60 checkpoint: 91441d4. Discovery 61 is the commit containing this entry.
+
+Reflection: the finite/ambient stability distinction is now verified, and this branch is consolidated. Exploration is constructing scalar Gaussian coherent graph displacements through the complete physical Poisson gauge, and investigating actual Poisson jump curvature versus forward source Bochner energy.
+
+### Public locations — discovery 61
+
+Prefix: OperatorDerivativeRewrite.Foundation.BanachFiniteDirectionStability.
+
+| Name | Source |
+| --- | --- |
+| finite_direction_stability | Foundation/BanachFiniteDirectionStability.lean:19 |
+| poissonConstant | Foundation/BanachFiniteDirectionStability.lean:48 |
+| poisson_constant_finite_directions | Foundation/BanachFiniteDirectionStability.lean:50 |
+| no_uniform_one_direction_bound | Foundation/BanachFiniteDirectionStability.lean:61 |

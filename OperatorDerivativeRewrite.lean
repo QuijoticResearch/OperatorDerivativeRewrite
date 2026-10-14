@@ -351,3 +351,4 @@ import Foundation.PoissonTiltSourceGauge
 import Foundation.BanachFiniteSourceStability
 import Foundation.PoissonCoherentRecovery
 import Foundation.FractionalDualRegimePrediction
+import Foundation.BanachFiniteDirectionStability
