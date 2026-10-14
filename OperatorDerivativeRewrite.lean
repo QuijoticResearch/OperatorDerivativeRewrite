@@ -334,3 +334,4 @@ import Foundation.GaussianSingleObservationPrediction
 import Foundation.GaussianPolynomialPredictionRank
 import Foundation.GaussianTerminalPredictionSpectrum
 import Foundation.FractionalTerminalPredictionRank
+import Foundation.GaussianTerminalMaximalCorrelation

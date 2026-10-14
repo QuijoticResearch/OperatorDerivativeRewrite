@@ -1338,3 +1338,27 @@ Prefix: OperatorDerivativeRewrite.Foundation.FractionalTerminalPredictionRank.
 | forecast_zero_of_centered | Foundation/FractionalTerminalPredictionRank.lean:39 |
 | forecast_small_time_lower | Foundation/FractionalTerminalPredictionRank.lean:53 |
 | no_higher_prediction_increment_bound | Foundation/FractionalTerminalPredictionRank.lean:77 |
+
+## Discovery 45 — sharp terminal Gaussian maximal correlation
+
+For every unit-variance terminal Gaussian direction u, every actual centered terminal L2 observable f and every Gaussian observation family h, prediction energy is at most v ||f||^2, v=||P_h u||^2. For every g in the full observation-generated L2 space, inner(f,g)^2 is at most v ||f||^2 ||g||^2. The centering hypothesis is the actual integral of f, proved equal to its zero-th Hermite coefficient. For centered g this is a covariance/correlation bound.
+
+The actual linear pair f=X_u, g=X_(P_h u) attains the bound algebraically. If v>0, both members are nonzero and the normalized maximal correlation is sqrt(v). If v=0 every centered terminal forecast vanishes. This sharp inequality permits arbitrary observation index sets and correlated or degenerate observations; it does not assert multivariate terminal canonical-correlation bounds or non-Gaussian maximal-correlation transfer.
+
+Significance: nonlinear transforms of a single terminal Gaussian coordinate cannot improve normalized L2 prediction efficiency. This connects full terminal chaos rank to a sharp information restriction, beyond individual Wick moment identities. It is a verified instance of classical Gaussian maximal-correlation geometry, not a novelty claim.
+
+Verification: full Lake build 4355 jobs (.lake/stardust-45-build.log); five public theorem types inspected; 6938 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-45-audit.log). Discovery 44 checkpoint: b654bd8. Discovery 45 is the commit containing this entry.
+
+Reflection: the corresponding theorem for two multidirectional Gaussian observation spaces should depend on the source projection operator norm and all-degree tensor contractions. That is a promising future focused campaign, not proved here. Exploration now returns to how conditional prediction changes minimum-norm source-divergence recovery energy.
+
+### Public locations — discovery 45
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianTerminalMaximalCorrelation.
+
+| Name | Source |
+| --- | --- |
+| coefficient_zero_eq_mean | Foundation/GaussianTerminalMaximalCorrelation.lean:13 |
+| terminal_prediction_efficiency | Foundation/GaussianTerminalMaximalCorrelation.lean:19 |
+| terminal_observation_covariance_bound | Foundation/GaussianTerminalMaximalCorrelation.lean:29 |
+| linear_prediction_attains_bound | Foundation/GaussianTerminalMaximalCorrelation.lean:46 |
+| linear_covariance_attains_bound | Foundation/GaussianTerminalMaximalCorrelation.lean:52 |
