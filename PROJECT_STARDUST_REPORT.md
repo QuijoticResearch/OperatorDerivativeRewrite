@@ -1131,3 +1131,29 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonSpectralGraphs.
 | fieldTransfer_coefficient | Foundation/PoissonSpectralGraphs.lean:137 |
 | difference_transfer_iff | Foundation/PoissonSpectralGraphs.lean:142 |
 | divergence_transfer_iff | Foundation/PoissonSpectralGraphs.lean:148 |
+
+## Discovery 38 — exact forward-jump entropy for Poisson exponentials
+
+For every real exponential parameter, the forward jump Bregman integrand rho_(n+1) log(rho_(n+1)/rho_n)-rho_(n+1)+rho_n is genuinely integrable under the rate-weighted Poisson measure. Its energy is nonnegative and is computed exactly for the actual exponential density family.
+
+For the square density of exp(theta N), its forward jump Bregman energy equals its actual square entropy exactly. This supplies the correct jump-sensitive replacement on the same exponential witnesses that refute every uniform quadratic difference-energy bound in discovery 35. All density values are positive, and all displayed integrals are proved finite.
+
+This is an equality for the exponential family, not a proof of a general modified Poisson log-Sobolev inequality. The nonlinear jump functional is additional structure beyond the closed Hilbert source-operator pair. Its exact agreement on exponentials suggests a focused entropy campaign with the forward Bregman form rather than forcing the Gaussian quadratic form.
+
+Verification: full Lake build 4348 jobs (.lake/stardust-38-build.log); seven public types checked; 6825 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-38-audit.log). Discovery 37 checkpoint: d2d1731. Discovery 38 is the commit containing this entry.
+
+Reflection: the completed Gaussian/Poisson operator equivalence and the entropy distinction are mutually consistent. The density/closed-graph/entropy-test investigation is now completed. Exploration moves to exact nonlinear Gaussian/fractional prediction from arbitrary observation families.
+
+### Public locations — discovery 38
+
+Prefix: OperatorDerivativeRewrite.Foundation.PoissonJumpEntropy.
+
+| Name | Source |
+| --- | --- |
+| jumpBregman | Foundation/PoissonJumpEntropy.lean:12 |
+| jumpEntropyEnergy | Foundation/PoissonJumpEntropy.lean:15 |
+| exponential_jumpBregman | Foundation/PoissonJumpEntropy.lean:18 |
+| exponential_jump_integrable | Foundation/PoissonJumpEntropy.lean:28 |
+| exponential_jump_energy | Foundation/PoissonJumpEntropy.lean:35 |
+| exponential_square_entropy_eq_jump_energy | Foundation/PoissonJumpEntropy.lean:44 |
+| exponential_jump_energy_nonneg | Foundation/PoissonJumpEntropy.lean:50 |
