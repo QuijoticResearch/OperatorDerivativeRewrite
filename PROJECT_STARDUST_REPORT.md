@@ -2832,3 +2832,32 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianItoAlternatingProjection.
 | predictableFieldProjection_field | Foundation/GaussianItoAlternatingProjection.lean:97 |
 | hodge_predictable_noncommutation | Foundation/GaussianItoAlternatingProjection.lean:103 |
 
+
+## Discovery 90 — actual Gaussian derivative graph norm does not control L4
+
+Every physical scalar Gaussian exponential exp(theta x) belongs to the genuine closed polynomial derivative graph, with derivative theta exp(theta x). Ordinary Taylor polynomials converge in actual Gaussian L2, dominated by an explicitly proved L2 absolute-exponential majorant. Their genuine derivatives converge simultaneously, so closedness proves full graph membership rather than just a classical derivative formula.
+
+The existing exact norms are L2 = exp(theta squared) and L4 = exp(2 theta squared). For every proposed real constant K there is an admitted exponential graph pair with L4 norm greater than K times the sum of target and derivative L2 norms. Thus there is no uniform physical L4 bound from this full Gaussian derivative graph norm, even for genuine smooth exponential probes.
+
+Significance: adding one actual Gaussian source derivative to an L2 norm does not justify a bounded L4 source embedding for quartic calculus. This strengthens discovery 53's plain L2 obstruction. The scalar Gaussian log-Sobolev foundations remain compatible with this result: entropy control and uniform L4 graph embedding are different assertions. The theorem concerns the actual one-variable GaussianCore derivative, not an unproved transfer to every time, fractional or infinite-field realization.
+
+Verification: full Lake build 4404 jobs (.lake/stardust-90-build.log); ten public types inspected; 7787 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-90-audit.log). Discovery 89 checkpoint: 20b7c0e. Discovery 90 is the commit containing this entry.
+
+Reflection: physical exponentials now provide exact admitted coherent eigenvectors for the scalar Gaussian derivative. The Poisson gauge already constructed displaced Gaussian graph operators but had not identified their vacuum image physically. The new graph admission plus the Poisson shifted-annihilation kernel may close that identification and clarify reference independence or real displacement group laws. General Banach source embeddings still need genuine L4 bounds beyond full L2 graph regularity.
+
+### Public locations — discovery 90
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianExponentialSobolevObstruction.
+
+| Name | Source |
+| --- | --- |
+| taylorPolynomial | Foundation/GaussianExponentialSobolevObstruction.lean:14 |
+| taylor_eval | Foundation/GaussianExponentialSobolevObstruction.lean:17 |
+| taylor_eval_bound | Foundation/GaussianExponentialSobolevObstruction.lean:29 |
+| absolute_exp_memLp_two | Foundation/GaussianExponentialSobolevObstruction.lean:42 |
+| taylorClass_tendsto | Foundation/GaussianExponentialSobolevObstruction.lean:53 |
+| taylor_derivative | Foundation/GaussianExponentialSobolevObstruction.lean:73 |
+| exponential_derivative_graph | Foundation/GaussianExponentialSobolevObstruction.lean:86 |
+| exponential_hasDerivAt | Foundation/GaussianExponentialSobolevObstruction.lean:98 |
+| no_graph_norm_L4_bound | Foundation/GaussianExponentialSobolevObstruction.lean:102 |
+| admitted_graph_L4_counterexample | Foundation/GaussianExponentialSobolevObstruction.lean:118 |

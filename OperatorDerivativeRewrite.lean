@@ -380,3 +380,4 @@ import Foundation.BrownianHistoryRecoveryCompactness
 import Foundation.GaussianItoSourceHodge
 import Foundation.GaussianPotentialIteration
 import Foundation.GaussianItoAlternatingProjection
+import Foundation.GaussianExponentialSobolevObstruction
