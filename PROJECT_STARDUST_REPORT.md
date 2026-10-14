@@ -1282,3 +1282,33 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianPolynomialPredictionRank.
 | conditional_expansion_energy | Foundation/GaussianPolynomialPredictionRank.lean:17 |
 | conditional_expansion_rank_upper | Foundation/GaussianPolynomialPredictionRank.lean:24 |
 | conditional_expansion_rank_lower | Foundation/GaussianPolynomialPredictionRank.lean:46 |
+
+## Discovery 43 — the complete terminal L2 prediction spectrum
+
+For every unit-variance Gaussian terminal direction u and every f in its actual generated L2 space, define c_n=inner(Wick_n(u),f)/n!. The actual global n-th chaos projection of f is proved equal to c_n Wick_n(u), using terminal Wick density and a continuous rank-one operator. Consequently sum_n c_n Wick_n(u) converges unconditionally to f; its true conditional forecast is the unconditional sum_n c_n Wick_n(P_h u).
+
+The actual prediction energy is the convergent nonnegative sum sum_n c_n^2 n! v^n, v=||P_h u||^2. The original energy is sum_n c_n^2 n!. If coefficients vanish below m, prediction energy is at most v^m ||f||^2, and its m-th contribution c_m^2 m! v^m is a lower bound. Thus two-sided Hermite-rank scaling now applies to every terminal L2 observable with a nonzero first surviving coefficient, without an assumed expansion or polynomial approximation hypothesis.
+
+Significance: the nonlinear terminal prediction problem is an actual diagonal spectral transform of linear forecast energy. This connects arbitrary observation geometry, full Gaussian chaos completeness and infinite nonlinear prediction. Energy includes the vacuum coefficient; for centered f with c_0=0 it is variance. It does not determine v(t), imply a time-Markov property or transfer to the nonlinear IBM observation filtration.
+
+Verification: full Lake build 4353 jobs (.lake/stardust-43-build.log); eleven public definition/theorem types inspected; 6919 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-43-audit.log). Discovery 42 checkpoint: d60cf8c. Discovery 43 is the commit containing this entry.
+
+Reflection: the finite/infinite Hermite-rank investigation is complete at the source-geometry level. A useful next concrete consequence is an actual fractional small-time obstruction for arbitrary centered terminal L2 observables, extending the earlier pure Wick and raw cubic cases. Sharp time rates still depend on the unresolved linear full-past geometry.
+
+### Public locations — discovery 43
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianTerminalPredictionSpectrum.
+
+| Name | Source |
+| --- | --- |
+| coefficient | Foundation/GaussianTerminalPredictionSpectrum.lean:14 |
+| rankProjection | Foundation/GaussianTerminalPredictionSpectrum.lean:17 |
+| rankProjection_apply | Foundation/GaussianTerminalPredictionSpectrum.lean:20 |
+| projection_wick | Foundation/GaussianTerminalPredictionSpectrum.lean:24 |
+| terminal_projection | Foundation/GaussianTerminalPredictionSpectrum.lean:37 |
+| terminal_expansion_hasSum | Foundation/GaussianTerminalPredictionSpectrum.lean:58 |
+| terminal_prediction_expansion | Foundation/GaussianTerminalPredictionSpectrum.lean:63 |
+| terminal_prediction_energy_hasSum | Foundation/GaussianTerminalPredictionSpectrum.lean:70 |
+| terminal_energy_hasSum | Foundation/GaussianTerminalPredictionSpectrum.lean:83 |
+| terminal_prediction_rank_upper | Foundation/GaussianTerminalPredictionSpectrum.lean:91 |
+| terminal_prediction_rank_lower | Foundation/GaussianTerminalPredictionSpectrum.lean:108 |
