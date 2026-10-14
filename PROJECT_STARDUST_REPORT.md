@@ -2334,3 +2334,34 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonRecoveryCompactness.
 | recovery_tail_operator_bound | Foundation/PoissonRecoveryCompactness.lean:100 |
 | partialRecovery_tendsto | Foundation/PoissonRecoveryCompactness.lean:109 |
 | recovery_compact | Foundation/PoissonRecoveryCompactness.lean:124 |
+
+## Discovery 75 — Gaussian conditional projection is compact exactly for zero observations
+
+For an arbitrary actual Gaussian observation family, its full scalar L2 conditional projection is compact if and only if every source direction is zero. If any observed direction is nonzero, normalize it and construct its actual countable orthonormal Wick family. Their Hilbert-sum embedding is fixed by conditional projection; its adjoint then forces compactness of the infinite coefficient-space identity if the projection were compact.
+
+If all source directions vanish, the generated L2 subspace is exactly the Gaussian vacuum line and conditional projection is the rank-one mean operator. This also handles an empty observation family. No countability, independence, linear independence, or finite-dimensional assumption on the family is imposed.
+
+Significance: even a single nonzero Gaussian coordinate yields infinitely many nonlinear measurable observables, so a finite-dimensional observation source does not imply a finite-rank or compact conditional projection. Together with discoveries 73–74, this distinguishes observation dimension, degree damping, and source multiplicity in legitimate operator approximation claims.
+
+Verification: full Lake build 4389 jobs (.lake/stardust-75-build.log); twelve public types inspected; 7455 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-75-audit.log). Discovery 74 checkpoint: 3772456. Discovery 75 is the commit containing this entry.
+
+Reflection: conditional projection itself supplies no compactness except in the trivial observation case. A degree-damped recovery after finite-dimensional observation may behave differently; that is an unproved focused question. Immediate investigation identifies actual Wick source primitives and the joint source projection needed when prediction and recovery are interchanged.
+
+### Public locations — discovery 75
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianConditionalCompactness.
+
+| Name | Source |
+| --- | --- |
+| normalizedWick | Foundation/GaussianConditionalCompactness.lean:13 |
+| normalizedWick_orthonormal | Foundation/GaussianConditionalCompactness.lean:16 |
+| terminalEmbedding | Foundation/GaussianConditionalCompactness.lean:32 |
+| terminalEmbedding_hasSum | Foundation/GaussianConditionalCompactness.lean:35 |
+| conditional_fixes_terminalEmbedding | Foundation/GaussianConditionalCompactness.lean:40 |
+| unit_observation_noncompact | Foundation/GaussianConditionalCompactness.lean:50 |
+| nonzero_observation_noncompact | Foundation/GaussianConditionalCompactness.lean:70 |
+| zero_family_polynomial_constant | Foundation/GaussianConditionalCompactness.lean:83 |
+| zero_family_generated | Foundation/GaussianConditionalCompactness.lean:93 |
+| zero_family_projection | Foundation/GaussianConditionalCompactness.lean:105 |
+| zero_family_compact | Foundation/GaussianConditionalCompactness.lean:112 |
+| conditionalProjection_compact_iff | Foundation/GaussianConditionalCompactness.lean:122 |

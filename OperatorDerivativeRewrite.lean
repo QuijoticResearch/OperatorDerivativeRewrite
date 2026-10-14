@@ -365,3 +365,4 @@ import Foundation.PoissonCoreEntropyObstruction
 import Foundation.PoissonCoreCurvatureEntropy
 import Foundation.GaussianRecoveryCompactnessObstruction
 import Foundation.PoissonRecoveryCompactness
+import Foundation.GaussianConditionalCompactness
