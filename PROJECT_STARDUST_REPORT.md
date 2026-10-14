@@ -2029,3 +2029,23 @@ Prefix: OperatorDerivativeRewrite.Foundation.FractionalBrownianPredictionBenchma
 | wick_forecast_energy | Foundation/FractionalBrownianPredictionBenchmark.lean:76 |
 | current_observation_sufficient | Foundation/FractionalBrownianPredictionBenchmark.lean:81 |
 | terminal_forecast_energy | Foundation/FractionalBrownianPredictionBenchmark.lean:86 |
+
+## Discovery 65 — quantitative leading Hermite rank without nonlinear smoothness assumptions
+
+For every unit Gaussian terminal direction u, every actual terminal L2 observable f, and every arbitrary observation family h, write v=||P_h u||^2. If the coefficients below m vanish, the actual forecast energy has leading term c_m^2 m! v^m and nonnegative remainder at most v^(m+1)||f||^2. For v>0 its normalized remainder is between zero and v||f||^2.
+
+For any filter-indexed family of observations with actual linear variance tending to zero and eventually positive, the normalized forecast energy therefore tends to c_m^2 m!. No polynomial restriction, differentiability, assumed chaos expansion, time law, or convergence speed is needed. If c_m is nonzero this gives a positive leading constant; the theorem also legitimately permits a zero coefficient. This turns any independently verified small-information linear asymptotic into its all-terminal-L2 Hermite-rank counterpart.
+
+Verification: full Lake build 4376 jobs (.lake/stardust-65-build.log); three public types inspected; 7276 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-65-audit.log). Discovery 64 checkpoint: 237d73e. Discovery 65 is the commit containing this entry.
+
+Reflection: nonlinear terminal asymptotics reduce entirely to actual linear projection geometry. The difficult fractional source bridge and upper asymptotic are still required; the abstract limit theorem does not assume or prove them. The next investigation distinguishes genuine Brownian current-value sufficiency from the full-past requirement at a concrete different Hurst parameter.
+
+### Public locations — discovery 65
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianPredictionRankAsymptotic.
+
+| Name | Source |
+| --- | --- |
+| leading_rank_remainder | Foundation/GaussianPredictionRankAsymptotic.lean:12 |
+| normalized_rank_remainder | Foundation/GaussianPredictionRankAsymptotic.lean:52 |
+| leading_rank_limit | Foundation/GaussianPredictionRankAsymptotic.lean:75 |

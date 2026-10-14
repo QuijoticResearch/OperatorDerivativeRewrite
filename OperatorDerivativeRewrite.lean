@@ -355,3 +355,4 @@ import Foundation.BanachFiniteDirectionStability
 import Foundation.GaussianDisplacementFromPoisson
 import Foundation.PoissonJumpCurvature
 import Foundation.FractionalBrownianPredictionBenchmark
+import Foundation.GaussianPredictionRankAsymptotic
