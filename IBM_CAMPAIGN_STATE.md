@@ -828,3 +828,11 @@ IBMClockCubicSourcePrimitive now constructs a canonical full scenery-source dive
 Verification: full pinned Lake build 4323 jobs; nine public types inspected; 6431 safe Foundation declarations audited with only propext/Classical.choice/Quot.sound. See discovery 13 in PROJECT_STARDUST_REPORT.md and .lake/stardust-13-{build,audit}.log.
 
 This advances the IBM-specific source integration identity. It does not prove joint clock L2, scalar representative Fubini, predictable-clock integration, local time, fixed-mollifier Ito–Tanaka, physical white-noise kernel identification or an IBM spatial H^-1 limit. The source primitive is for the g'' time-section integral, not the complete manuscript correction with its overall 1/2 and boundary term. No manuscripts were written or staged.
+
+## Stardust follow-up: per-clock scalar cubic representative identified (2026-10-14)
+
+IBMClockCubicRepresentative discharges the scalar representative/Fubini obligation for EVERY constructed clock path and finite horizon. The actual cubic scalar time integral represents integratedCorrection almost everywhere in scenery, belongs to Gaussian L2, and is centered. Joint time/scenery L1 integrability is proved. BochnerL2RepresentativeFubini supplies a new scalar finite-measure principle without a uniform pointwise majorant or independently assumed column L2 class.
+
+Verification: full Lake build 4336 jobs; seven IBM public types checked; 6624 safe Foundation declarations transitively audited with only propext/Classical.choice/Quot.sound. See discoveries 25–26 in PROJECT_STARDUST_REPORT.md and .lake/stardust-26-{build,audit}.log.
+
+This supersedes the older OPEN per-clock scalar representative/Fubini status. Joint random-clock/scenery L2, physical kernel identification, graph-norm derivative interchange, local time, predictable-clock integration, fixed-mollifier stochastic Ito–Tanaka and the singular IBM spatial H^-1 limit remain open. The g'' time section is not the full manuscript correction including its factor 1/2 and boundary term. ResearchSources is unchanged.

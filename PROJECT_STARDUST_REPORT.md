@@ -774,3 +774,29 @@ Prefix: OperatorDerivativeRewrite.Foundation.BochnerL2RepresentativeFubini.
 | representative_integrable | Foundation/BochnerL2RepresentativeFubini.lean:63 |
 | integral_coeFn_ae | Foundation/BochnerL2RepresentativeFubini.lean:71 |
 | column_integral_memLp | Foundation/BochnerL2RepresentativeFubini.lean:107 |
+
+## Discovery 26 — actual IBM scalar cubic time integral identified
+
+For every constructed clock path and every finite real horizon, the actual scalar time integral of the cubic correction is the almost-everywhere representative of integratedCorrection. It belongs to scenery Gaussian L2 and has mean zero. Its joint time/scenery representative is genuinely product L1 integrable. All hypotheses of discovery 25 are discharged using actual joint measurability and unconditional per-path Bochner integrability.
+
+This closes the previously open per-clock scalar representative/Fubini gap. The source primitive from discovery 13 now recovers a class explicitly identified with the actual scalar cubic time integral, and the source-vector projection/obstruction from discoveries 8 and 16 applies to that class.
+
+Limits: every statement fixes the clock path. Joint random-clock/scenery L2 membership still requires an integrable clock-dependent norm bound. The result does not prove graph-norm derivative interchange, adapted or predictable-clock integration, local time, a fixed-mollifier stochastic Ito–Tanaka formula, physical white-noise kernel identification, or the singular spatial H^-1 limit. The integral is the g'' cubic time section; the full manuscript correction also has its overall factor 1/2 and boundary term.
+
+Verification: full Lake build 4336 jobs (.lake/stardust-26-build.log); seven public types checked; 6624 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-26-audit.log). Discovery 25 checkpoint: 8f86ebe. Discovery 26 is the commit containing this entry.
+
+Reflection: the representative obstacle could be removed from existing L2 integration foundations without a new pointwise majorant. Prioritize actual joint clock moments and the physical kernel bridge; do not reopen per-clock scalar Fubini as an unproved assumption.
+
+### Public locations — discovery 26
+
+Prefix: OperatorDerivativeRewrite.Foundation.IBMClockCubicRepresentative.
+
+| Name | Source |
+| --- | --- |
+| timeRepresentative | Foundation/IBMClockCubicRepresentative.lean:15 |
+| timeRepresentative_measurable | Foundation/IBMClockCubicRepresentative.lean:18 |
+| integratedValue | Foundation/IBMClockCubicRepresentative.lean:25 |
+| timeRepresentative_integrable | Foundation/IBMClockCubicRepresentative.lean:28 |
+| integratedCorrection_coeFn | Foundation/IBMClockCubicRepresentative.lean:36 |
+| integratedValue_memLp | Foundation/IBMClockCubicRepresentative.lean:43 |
+| integratedValue_centered | Foundation/IBMClockCubicRepresentative.lean:47 |
