@@ -668,3 +668,31 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonDivergenceRecovery.
 | Scalar representative IBM time Fubini | OPEN | Product L1 control from Bochner L2 sections, or actual majorant |
 
 Current priority: full Poisson source calculus is now tractable without postulated density. The physical IBM bridge and fractional full-past asymptotics remain analytically distinct obstacles. Most surprising connection so far: analytic exponential probes close the discrete polynomial spectral gap in the formal infrastructure, enabling the same centered source-recovery principle as Gaussian chaos despite different multiplication and kernel structure.
+
+## Discovery 22 — sharp full-domain Poisson Poincare and divergence coercivity
+
+Every genuine maximal difference graph pair (f,g) satisfies norm(f minus its mean) <= norm(g) in the rate-weighted field space. Thus the variance is at most lambda times the ordinary Poisson expectation of the squared forward difference. The normalized first Charlier mode lies in the actual difference graph and attains equality, so the constant is sharp.
+
+Every genuine maximal divergence graph pair (u,f) also satisfies norm(u)<=norm(f). The proof uses the unique all-L2 recovery from discovery 21, with no finite-polynomial restriction on either inequality. The sharper bound norm(R f)<=norm(centered f) follows by uniqueness, and adjoint duality with this recovered field gives the Poincare estimate.
+
+Reusable principle: bounded centered divergence recovery plus adjoint graph duality yields full-domain Poincare; injective divergence additionally yields coercivity. This connects the actual Gaussian/Poisson source program at the level of closed operators, beyond matching finite eigenvalues.
+
+Verification: full Lake build 4332 jobs (.lake/stardust-22-build.log); nine public types checked; 6593 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-22-audit.log). Discovery 21 checkpoint: 780aeef. Discovery 22 is the commit containing this entry.
+
+Reflection: the Poisson density/recovery/Poincare chain is now a completed investigation. Exact operator intertwining and process-level applications deserve a focused future campaign. Exploration now moves to disjoint-image quartic degeneracy away from zero, rather than re-proving this completed chain.
+
+### Public locations — discovery 22
+
+Prefix: OperatorDerivativeRewrite.Foundation.PoissonRecoveryPoincare.
+
+| Name | Source |
+| --- | --- |
+| centered_zero_mode | Foundation/PoissonRecoveryPoincare.lean:13 |
+| recovery_centered | Foundation/PoissonRecoveryPoincare.lean:17 |
+| recovery_norm_le_centered | Foundation/PoissonRecoveryPoincare.lean:26 |
+| centered_pairing | Foundation/PoissonRecoveryPoincare.lean:31 |
+| poincare | Foundation/PoissonRecoveryPoincare.lean:45 |
+| divergence_coercive | Foundation/PoissonRecoveryPoincare.lean:56 |
+| centered_first_normalized | Foundation/PoissonRecoveryPoincare.lean:64 |
+| normalized_first_lowering_graph | Foundation/PoissonRecoveryPoincare.lean:70 |
+| poincare_equality_first_mode | Foundation/PoissonRecoveryPoincare.lean:76 |

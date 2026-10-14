@@ -311,3 +311,4 @@ import Foundation.PoissonPolynomialDensity
 import Foundation.PoissonCharlierCompleteness
 import Foundation.PoissonCharlierHilbertBasis
 import Foundation.PoissonDivergenceRecovery
+import Foundation.PoissonRecoveryPoincare
