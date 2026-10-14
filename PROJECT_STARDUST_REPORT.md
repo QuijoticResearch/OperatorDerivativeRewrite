@@ -870,3 +870,24 @@ Prefix: OperatorDerivativeRewrite.Foundation.IBMSceneryGlobalGrowth.
 | sourceScenery_norm_le | Foundation/IBMSceneryGlobalGrowth.lean:16 |
 | compact_kernel_global_growth | Foundation/IBMSceneryGlobalGrowth.lean:20 |
 | tripleCoefficient_global_growth | Foundation/IBMSceneryGlobalGrowth.lean:70 |
+
+## Discovery 29 — actual cubic Gaussian growth estimates
+
+The actual cubic source class has norm squared 15 norm(h)^6. Hence norm(cube h)<=4 norm(h)^3. Cubic polarization gives norm(mixedCube u v)<=12 B^3 whenever both source norms are at most B; the actual IBM correction class has norm at most 18 B^3 when all three source directions have norm at most B.
+
+These are genuine Gaussian L2 norm estimates with all domains already constructed, not pointwise polynomial bounds on Gaussian samples. They make nonlinear products controllable through deterministic source norms and provide the remaining analytic ingredient for combining compact-kernel growth with random-clock Gaussian moments. The numerical upper constants are convenient bounds and are not claimed optimal.
+
+Verification: full Lake build 4339 jobs (.lake/stardust-29-build.log); four public types checked; 6671 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-29-audit.log). Discovery 28 checkpoint: 22947b4. Discovery 29 is the commit containing this entry.
+
+Reflection: the cubic observable is L2 despite being non-Gaussian, and source-norm control supplies a polynomial domination route. Active application: fixed-time joint clock/scenery L2 for the actual mollified IBM correction; no uniform mollifier or stochastic time limit is yet concluded.
+
+### Public locations — discovery 29
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianCubicGrowth.
+
+| Name | Source |
+| --- | --- |
+| cube_norm_sq | Foundation/GaussianCubicGrowth.lean:10 |
+| cube_norm_le | Foundation/GaussianCubicGrowth.lean:19 |
+| mixedCube_norm_le | Foundation/GaussianCubicGrowth.lean:23 |
+| correction_norm_le | Foundation/GaussianCubicGrowth.lean:38 |
