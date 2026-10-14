@@ -1549,3 +1549,28 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianFirstChaosQuarticSource.
 | normalEquiv | Foundation/GaussianFirstChaosQuarticSource.lean:110 |
 | inverse_regular_at_nonzero | Foundation/GaussianFirstChaosQuarticSource.lean:116 |
 | inverse_regular_at_nonzero_datum | Foundation/GaussianFirstChaosQuarticSource.lean:124 |
+
+## Discovery 53 — the physical Gaussian L2-to-L4 embedding cannot extend beyond controlled source geometry
+
+Actual standard Gaussian exponential functions exp(theta x) are constructed in both L2 and L4. Their exact norms are exp(theta^2) and exp(2 theta^2), respectively. The L4/L2 ratio exp(theta^2) exceeds every proposed bound. Consequently no bounded linear map from the full physical scalar Gaussian L2 space into its L4 space can agree with this inclusion even on all exponential functions.
+
+Significance: the successful Gaussian first-chaos L4 source construction in discovery 52 cannot be extended to all physical Gaussian L2 observables by a bounded inclusion. This exposes a genuine source-domain limitation. It does not exclude other bounded embeddings, assert a failure of scalar Gaussian/Poisson Hilbert unitaries, or contradict finite-chaos/hypercontractive estimates with degree-dependent constants.
+
+Verification: full Lake build 4364 jobs (.lake/stardust-53-build.log); eight public types inspected; 7051 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-53-audit.log). Discovery 52 checkpoint: 204d4ff. Discovery 53 is the commit containing this entry.
+
+Reflection: the Gaussian/Poisson/Banach regularity investigation is consolidated: explicit source embeddings and weighted coercivity matter, while full ambient Lp inclusions may be unbounded. Exploration moves to actual Poisson exponential changes of measure, connecting the earlier coherent-vector and entropy calculations to a physical rate change.
+
+### Public locations — discovery 53
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianL2QuarticEmbeddingObstruction.
+
+| Name | Source |
+| --- | --- |
+| exponential_memLp_four | Foundation/GaussianL2QuarticEmbeddingObstruction.lean:15 |
+| classTwo | Foundation/GaussianL2QuarticEmbeddingObstruction.lean:25 |
+| classFour | Foundation/GaussianL2QuarticEmbeddingObstruction.lean:26 |
+| exponential_integral | Foundation/GaussianL2QuarticEmbeddingObstruction.lean:28 |
+| classTwo_norm | Foundation/GaussianL2QuarticEmbeddingObstruction.lean:32 |
+| classFour_norm | Foundation/GaussianL2QuarticEmbeddingObstruction.lean:49 |
+| no_uniform_norm_bound | Foundation/GaussianL2QuarticEmbeddingObstruction.lean:66 |
+| no_bounded_physical_extension | Foundation/GaussianL2QuarticEmbeddingObstruction.lean:79 |

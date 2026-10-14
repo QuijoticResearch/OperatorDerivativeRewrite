@@ -343,3 +343,4 @@ import Foundation.PoissonQuarticAtomPerturbation
 import Foundation.PoissonQuarticNowhereLipschitz
 import Foundation.PoissonQuarticHolderEverywhere
 import Foundation.GaussianFirstChaosQuarticSource
+import Foundation.GaussianL2QuarticEmbeddingObstruction
