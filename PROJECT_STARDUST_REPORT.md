@@ -1871,3 +1871,32 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonCoherentRecovery.
 | coherentRecovery_norm_le_centered | Foundation/PoissonCoherentRecovery.lean:150 |
 | coherent_vacuum_annihilation | Foundation/PoissonCoherentRecovery.lean:161 |
 | shifted_annihilation_kernel | Foundation/PoissonCoherentRecovery.lean:172 |
+
+## Discovery 60 — dual-regime fractional prediction obstruction through min(H,1-H)
+
+The actual terminal covariance is at least t/2 on 0<=t<=1, in addition to the previously proved t^(2H)/2 contribution. The proof separates the concave- and convex-power cases legitimately. Actual full-past linear prediction energy is therefore at least t^(2-2H)/4 as well as t^(2H)/4, and hence at least t^(2 min(H,1-H))/4 for every 0<H<1 and 0<t<=1.
+
+This transfers through the verified exact spectrum. Every Wick degree n has actual full-past prediction energy at least n! t^(2n min(H,1-H))/4^n. Every centered terminal L2 observable with nonzero m-th coefficient has the corresponding coefficient-weighted lower bound, and every proposed local initial forecast-increment square exponent above 2m min(H,1-H) fails at an arbitrarily small positive time. Complete terminal Wick expansion proves that every nonzero centered terminal L2 observable has a positive minimal Hermite rank; no rank-existence hypothesis is postulated.
+
+Significance: the earlier 2H obstruction remains correct but is substantially strengthened for H>1/2, where the persistent covariance contribution controls the lower bound. This concerns terminal conditional predictions, not the path Holder exponent. No matching upper bound, actual Volterra realization, time generator, equality of H and 1-H laws, or sharp asymptotic constant is proved in this Lean checkpoint. Degree zero is again an energy statement, not a variance assertion.
+
+Published context: Sottinen and Viitasaari's Proposition 3.2 already establishes the classical no-information exponents 2H for H<1/2 and 2-2H for H>1/2. The repository's remaining obligation is the actual spectral/Volterra source bridge and upper/asymptotic proof; this is not presented as an original world-level conjecture. [Primary paper, page 5](https://arxiv.org/pdf/1610.02900).
+
+Verification: full Lake build 4371 jobs (.lake/stardust-60-build.log); eight public types inspected; 7199 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-60-audit.log). Discovery 59 checkpoint: a14205f. Discovery 60 is the commit containing this entry.
+
+Reflection: sharp full-past linear geometry is now the clear fractional priority; all terminal nonlinear ranks inherit its verified laws. A causal kernel bridge could discharge published upper and asymptotic results without assuming them. Independent finite-direction inverse stability is also being verified, to distinguish fixed finite restrictions from uniform ambient regularity.
+
+### Public locations — discovery 60
+
+Prefix: OperatorDerivativeRewrite.Foundation.FractionalDualRegimePrediction.
+
+| Name | Source |
+| --- | --- |
+| predictionPower | Foundation/FractionalDualRegimePrediction.lean:14 |
+| terminal_covariance_linear_lower | Foundation/FractionalDualRegimePrediction.lean:16 |
+| linear_forecast_persistent_lower | Foundation/FractionalDualRegimePrediction.lean:30 |
+| linear_forecast_dual_lower | Foundation/FractionalDualRegimePrediction.lean:53 |
+| wick_forecast_dual_lower | Foundation/FractionalDualRegimePrediction.lean:62 |
+| terminal_forecast_dual_lower | Foundation/FractionalDualRegimePrediction.lean:73 |
+| no_higher_dual_prediction_increment_bound | Foundation/FractionalDualRegimePrediction.lean:91 |
+| exists_positive_terminal_rank | Foundation/FractionalDualRegimePrediction.lean:123 |
