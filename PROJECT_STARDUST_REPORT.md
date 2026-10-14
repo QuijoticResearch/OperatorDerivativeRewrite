@@ -1517,3 +1517,35 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonQuarticHolderEverywhere.
 | normal_shift_cubic_bound | Foundation/PoissonQuarticHolderEverywhere.lean:26 |
 | no_local_holder_at_source | Foundation/PoissonQuarticHolderEverywhere.lean:45 |
 | no_local_holder_at_datum | Foundation/PoissonQuarticHolderEverywhere.lean:100 |
+
+## Discovery 52 — an infinite Gaussian first-chaos quartic source is regular at every nonzero datum
+
+The genuine first-chaos map from the full infinite coefficient Hilbert space is reconstructed as a bounded linear source into actual Gaussian L4. Its fourth norm power is exactly 3||h||^4, giving proved lower bound ||h|| and upper bound 2||h||. No L4 embedding is assumed.
+
+Its weighted source energy is exactly ||X_h X_k||_2^2=||h||^2||k||^2+2 inner(h,k)^2. Hence ||B_h(k)||_2>=||h|| ||k||, so every h!=0 satisfies the actual weighted coercivity condition. The complete normal equivalence exists. Its quartic normal functional is proved exactly A(h)=3||h||^2 inner(h, .), and at every nonzero dual datum f0 its actual inverse satisfies ||A^-1(f0)-A^-1(f)|| <=4/(3||A^-1(f0)||^2) ||f0-f|| for every f.
+
+Significance: actual Gaussian mixed moments supply nonzero-data inverse regularity on an infinite-dimensional source. The contrast with discovery 51 is between the Gaussian first-chaos source embedding and the full Poisson L4 identity source; it is not a probability-law-only or dimension-only conclusion. The global quartic one-third behavior at zero is consistent with regularity elsewhere.
+
+Verification: full Lake build 4363 jobs (.lake/stardust-52-build.log); thirteen public types inspected; 7042 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-52-audit.log). Discovery 51 checkpoint: 94a5fa4. Discovery 52 is the commit containing this entry.
+
+Reflection: this reusable Gaussian-to-Banach source construction deserves a focused extension to constrained stochastic Hilbert sources. The full ambient L2-to-L4 inclusion must not be assumed from first-chaos control; actual scalar Gaussian exponentials are being tested as an obstruction to such an extension.
+
+### Public locations — discovery 52
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianFirstChaosQuarticSource.
+
+| Name | Source |
+| --- | --- |
+| classFour | Foundation/GaussianFirstChaosQuarticSource.lean:16 |
+| classFour_coeFn | Foundation/GaussianFirstChaosQuarticSource.lean:20 |
+| classFour_norm_fourth | Foundation/GaussianFirstChaosQuarticSource.lean:24 |
+| classFour_norm_bounds | Foundation/GaussianFirstChaosQuarticSource.lean:35 |
+| sourceLinear | Foundation/GaussianFirstChaosQuarticSource.lean:46 |
+| source | Foundation/GaussianFirstChaosQuarticSource.lean:65 |
+| weighted_source_energy | Foundation/GaussianFirstChaosQuarticSource.lean:68 |
+| weighted_source_lower | Foundation/GaussianFirstChaosQuarticSource.lean:81 |
+| normal_pairing | Foundation/GaussianFirstChaosQuarticSource.lean:87 |
+| normal_radial | Foundation/GaussianFirstChaosQuarticSource.lean:104 |
+| normalEquiv | Foundation/GaussianFirstChaosQuarticSource.lean:110 |
+| inverse_regular_at_nonzero | Foundation/GaussianFirstChaosQuarticSource.lean:116 |
+| inverse_regular_at_nonzero_datum | Foundation/GaussianFirstChaosQuarticSource.lean:124 |
