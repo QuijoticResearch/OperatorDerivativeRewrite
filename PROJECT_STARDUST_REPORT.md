@@ -2506,3 +2506,50 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianJointSourceProjection.
 | jointConditional_fixed_iff | Foundation/GaussianJointSourceProjection.lean:98 |
 | jointConditional_wick_recovery | Foundation/GaussianJointSourceProjection.lean:119 |
 | jointConditional_countable_wick_recovery | Foundation/GaussianJointSourceProjection.lean:125 |
+
+## Discovery 80 — actual Gaussian Hodge projection symmetrizes random matrix fields
+
+For every admitted full divergence graph pair (v,f), canonical recovery Rf equals the actual orthogonal gradient projection of v. This general operator identity follows from centeredness of divergence outputs, the closed gradient range, and the divergence-free residual. It is not restricted to polynomial fields.
+
+For finite coefficient families h_i and a real matrix A, the actual field sum A_ij h_i X_(h_j) has full divergence equal to the centered quadratic sum A_ij (X_(h_i) X_(h_j) - inner(h_i,h_j)). Its global gradient projection and minimal recovered source are exactly the field of (A+A transpose)/2. The target energy equals twice the squared norm of this symmetric field. When h is orthonormal, field energy is the sum of squared matrix entries and the divergence kernel consists exactly of skew matrices.
+
+Significance: the source Hodge decomposition realizes matrix symmetric/skew decomposition inside the genuine infinite Gaussian field space. This supplies an explicit finite quadratic model of the otherwise large divergence kernel, and an exact variance identity for arbitrary finite centered Gaussian quadratic forms. Correlated families are allowed for the graph and recovery identities; orthonormality is needed for the coefficient energy and the necessity of the skew condition. No countable Hilbert-Schmidt completion is claimed.
+
+Verification: full Lake build 4394 jobs (.lake/stardust-80-build.log); all public types inspected; 7617 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-80-audit.log). Discovery 79 checkpoint: 88b0b1f. Discovery 80 is the commit containing this entry.
+
+Reflection: a countable square-summable matrix extension could unify quadratic renormalization with source Hodge geometry, but requires a legitimate completed matrix field construction. Immediate work tests the bounded scalar inverse-number potential R adjoint composed with R, including commutation with arbitrary observation projections. The full joint source/sample recovery intertwining remains open; observed polynomial graph density offers a promising route.
+
+### Public locations — discovery 80
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianQuadraticSourceHodge.
+
+| Name | Source |
+| --- | --- |
+| recovery_mem_gradientRange | Foundation/GaussianQuadraticSourceHodge.lean:16 |
+| recovery_divergence_gradientProjection | Foundation/GaussianQuadraticSourceHodge.lean:28 |
+| mixedPolynomial | Foundation/GaussianQuadraticSourceHodge.lean:37 |
+| mixedTarget | Foundation/GaussianQuadraticSourceHodge.lean:40 |
+| mixedTarget_coeFn | Foundation/GaussianQuadraticSourceHodge.lean:42 |
+| mixedTarget_rankDivergence | Foundation/GaussianQuadraticSourceHodge.lean:56 |
+| mixed_derivative | Foundation/GaussianQuadraticSourceHodge.lean:64 |
+| mixed_derivative_graph | Foundation/GaussianQuadraticSourceHodge.lean:71 |
+| mixed_divergence_graph | Foundation/GaussianQuadraticSourceHodge.lean:77 |
+| mixedSource | Foundation/GaussianQuadraticSourceHodge.lean:84 |
+| mixedSource_gradient | Foundation/GaussianQuadraticSourceHodge.lean:87 |
+| linear_rank_gradientProjection | Foundation/GaussianQuadraticSourceHodge.lean:93 |
+| recovery_mixed | Foundation/GaussianQuadraticSourceHodge.lean:103 |
+| linearField | Foundation/GaussianQuadraticSourceHodge.lean:109 |
+| quadraticTarget | Foundation/GaussianQuadraticSourceHodge.lean:112 |
+| symmetrize | Foundation/GaussianQuadraticSourceHodge.lean:115 |
+| linearField_add | Foundation/GaussianQuadraticSourceHodge.lean:117 |
+| linearField_smul | Foundation/GaussianQuadraticSourceHodge.lean:121 |
+| linearField_symmetrize | Foundation/GaussianQuadraticSourceHodge.lean:125 |
+| linearField_divergence_graph | Foundation/GaussianQuadraticSourceHodge.lean:145 |
+| quadraticTarget_derivative_graph | Foundation/GaussianQuadraticSourceHodge.lean:156 |
+| quadraticTarget_recovery | Foundation/GaussianQuadraticSourceHodge.lean:168 |
+| linearField_gradientProjection | Foundation/GaussianQuadraticSourceHodge.lean:186 |
+| quadraticTarget_variance | Foundation/GaussianQuadraticSourceHodge.lean:190 |
+| linearField_inner | Foundation/GaussianQuadraticSourceHodge.lean:203 |
+| linearField_energy | Foundation/GaussianQuadraticSourceHodge.lean:212 |
+| quadraticTarget_matrix_energy | Foundation/GaussianQuadraticSourceHodge.lean:217 |
+| linearField_divergence_kernel_iff | Foundation/GaussianQuadraticSourceHodge.lean:222 |
