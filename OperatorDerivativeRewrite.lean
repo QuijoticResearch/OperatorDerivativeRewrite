@@ -273,3 +273,4 @@ import Foundation.SPDEModulatedResponse
 import Foundation.FractionalForcingKernel
 import Foundation.StochasticKernelConvolution
 
+import Foundation.IBMSmoothIncrementMoments
