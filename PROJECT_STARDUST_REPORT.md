@@ -6,20 +6,20 @@ Started 2026-10-14 from e7dac26ea306c89e3df9ddba015b54554a7caf2b in C:\OperatorD
 
 This report is durable research memory. Entries marked verified have completed the full build, public type inspection and transitive axiom audit. Ongoing conjectures are separate. No execution after the active session is promised.
 
-## Periodic consolidation — verified through discovery 84
+## Periodic consolidation — verified through discovery 89
 
-The latest prior saved checkpoint is a8fba55; discovery 84 is the commit containing its entry. Full Lake build: 4398 jobs. The complete transitive audit checks 7681 safe Foundation declarations and permits only propext, Classical.choice and Quot.sound. Pinned dependencies and the named IBM manuscript hash remain unchanged. Later verified entries supersede this count. The campaign remains active within this session.
+The latest prior saved checkpoint is 9214f62; discovery 89 is the commit containing its entry. Full Lake build: 4403 jobs. The complete transitive audit checks 7776 safe Foundation declarations and permits only propext, Classical.choice and Quot.sound. Pinned dependencies and the named IBM manuscript hash remain unchanged. Later verified entries supersede this count. The campaign remains active within this session.
 
-1. **Most significant discoveries:** full minimum-norm Gaussian recovery; complete actual Poisson coordinates and full graph transfer; fixed-mollifier IBM joint cubic time L2/recovery; complete terminal prediction spectrum and rank laws; countable renormalized Wick responses; sharp source-dependent quartic regularity; recovery compactness contrasts; and the full joint source/sample recovery identity on every Gaussian scalar L2 target.
-2. **Verified record:** each discovery gives exact public names, source lines, build and transitive audit. The ledger lists saved mathematical checkpoints through 83; discovery 84 is saved with this consolidation. These are verified repository mathematics and connections, without a blanket world-level novelty claim.
-3. **Unexpected connections:** physical Poisson gauges reconstruct scalar Gaussian graph displacements. Compact actual Poisson recovery factors Gaussian recovery after one coordinate. Nonlinear terminal prediction reduces to linear source geometry. Gaussian Hodge projection realizes matrix symmetrization. The inverse-number potential and observed polynomial graph density establish the full joint recovery identity.
+1. **Most significant discoveries:** full minimum-norm Gaussian recovery; complete actual Poisson coordinates and full graph transfer; fixed-mollifier IBM joint cubic time L2/recovery; complete terminal prediction spectrum and rank laws; countable renormalized Wick responses; sharp source-dependent quartic regularity; recovery compactness contrasts; the full joint source/sample recovery identity and both full graphs; and exact causal/minimal-source Hodge energy with uniform alternating-projection convergence.
+2. **Verified record:** each discovery gives exact public names, source lines, build and transitive audit. The ledger lists saved mathematical checkpoints through 88; discovery 89 is saved with this consolidation. These are verified repository mathematics and connections, without a blanket world-level novelty claim.
+3. **Unexpected connections:** physical Poisson gauges reconstruct scalar Gaussian graph displacements. Compact actual Poisson recovery factors Gaussian recovery after one coordinate. Nonlinear terminal prediction reduces to linear source geometry. Gaussian Hodge projection realizes matrix symmetrization. The inverse-number potential and observed polynomial graph density establish full joint recovery and graph compatibility. Genuine causal Ito fields have degree-dependent divergence-free residuals, and alternating causal/Hodge projection extracts first chaos uniformly.
 4. **Corrected conjectures and counterexamples:** Poisson curvature does not imply quadratic entropy even on the finite-support core. The Poisson L4 inverse is everywhere exactly one-third regular. Actual H=1/4 full-past forecasts beat the current coordinate. Initial Wick rank does not improve positive-time increment powers. Ordinary vector conditioning fails to commute with recovery; the joint source/sample projection does commute. Inverse-number damping preserves positive-rank fractional power obstructions.
 5. **Reusable principles:** full recovery and source Hodge geometry; centered/coherent Poisson inverses; L2/Fubini transfer; exact Wick projection and terminal spectrum; weighted-source stability and atom obstructions; physical graph gauges; countable renormalized response and Gram criteria; entropy/core graph approximation; compact recovery tails; quadratic matrix Hodge formulas; inverse-number conditional commutation; and all-L2 joint recovery intertwining with its adjoint identity.
-6. **Promising unproved obligations:** actual fractional spectral/Volterra bridge and sharp linear upper/asymptotic laws; physical IBM kernels and uniform limits; recovery compactness for general finite-dimensional observed source spans; a general modified Poisson entropy theorem and physical spectral semigroup; spatial/temporal renormalized SPDE solutions; and countable completed matrix-field Hodge geometry. The all-L2 joint identity is now discharged. The actual repository fractional sharp upper law remains open despite classical results cited at discovery 60.
+6. **Promising unproved obligations:** actual fractional spectral/Volterra bridge and sharp linear upper/asymptotic laws; physical IBM kernels and uniform limits; recovery compactness for general finite-dimensional observed source spans; a general modified Poisson entropy theorem and physical spectral semigroup; spatial/temporal renormalized SPDE solutions; and countable completed matrix-field Hodge geometry. The all-L2 joint identity and both full graph identities are now discharged. The actual repository fractional sharp upper law remains open despite classical results cited at discovery 60.
 7. **Limits:** scalar Poisson/Gaussian transfer does not identify full infinite Gaussian fields or preserve products/entropy. Fixed-mollifier IBM recovery is not an Ito-Tanaka limit. Countable Wick responses are actual L2 classes, not SPDE solutions or path versions. Joint source conditioning alone does not prove an adapted integral or Clark-Ocone formula. Degree-zero energy is not variance. Number-degree damping is not physical time smoothing.
 8. **Most surprising operator contrast:** full Gaussian recovery and one-coordinate conditioning are separately noncompact, while their actual composition is compact via Poisson factorization. Positive countable Brownian full-past recovery is noncompact. Yet a universal exact joint projection identity holds on all scalar L2 targets. Compactness and compatibility answer different questions.
-9. **Research priorities:** the general joint identity is complete. Priority moves toward actual unbounded graph compatibility, causal physical kernels, and precise finite versus infinite observed-source compactness. Sharp actual fractional forecasts and uniform IBM limits remain the major physical bottlenecks.
-10. **Next three directions:** (i) intertwining of both full closed graphs and Hodge projection; (ii) one-channel Brownian history and general finite-source compactness; (iii) actual fractional causal bridge and sharp upper forecast laws. General modified Poisson entropy and spatial renormalized SPDE construction deserve focused separate campaigns.
+9. **Research priorities:** the general joint identity is complete. Full unbounded graph compatibility and actual causal/Hodge projection dynamics are complete. Priority moves toward physical causal kernels, function-space source assumptions, and precise finite versus infinite observed-source compactness. Sharp actual fractional forecasts and uniform IBM limits remain the major physical bottlenecks.
+10. **Next three directions:** (i) actual Gaussian exponential graph/Sobolev-L4 obstruction and source regularity; (ii) general finite-source compactness and quantitative damping; (iii) actual fractional causal bridge and sharp upper forecast laws. General modified Poisson entropy and spatial renormalized SPDE construction deserve focused separate campaigns.
 
 ### Current investigation register
 
@@ -35,9 +35,10 @@ The latest prior saved checkpoint is a8fba55; discovery 84 is the commit contain
 | IBM primitive obstruction | Necessary source-vector condition | Actual blow-up/non-Cauchy theorem |
 | Countable SPDE/Wick modes | Exact renormalization/summability, Gram forecasts, full-past and increment laws | Spatial solutions and paths |
 | Quartic inverse geometry | Poisson one-third optimality; Gaussian first-chaos nonzero regularity; finite-direction stability | Useful quantitative stochastic embeddings |
-| Recovery compactness | Poisson compact; full Gaussian noncompact; one-coordinate composition compact; positive countable Brownian past noncompact | One-channel continuous history; general finite observed-source criterion |
+| Recovery compactness | Poisson compact; full Gaussian noncompact; one-coordinate composition compact; even single-channel positive Brownian history noncompact | General finite observed-source criterion; one-channel history classification complete |
 | Conditional projection | Compact exactly for all-zero source families | Terminal-restricted quantitative compactness |
-| Joint recovery and scalar potential | All-L2 J R=R C; adjoint identity; potential C commutation; observed recovery constraints | Full unbounded graph compatibility and causal physical applications |
+| Joint recovery and scalar potential | All-L2 J R=R C; both full graphs; Hodge commutation; inverse-number iteration extracts first chaos | Physical causal kernel applications |
+| Causal Ito/Hodge geometry | Exact degree energy fractions; noncommuting projections; uniform alternating convergence to first-chaos Ito component | Physical IBM/fractional energy cost |
 | Quadratic matrix source geometry | Actual finite matrix Hodge symmetrization and skew divergence kernel | Countable square-summable completion |
 
 ## Discovery 1 — Actual Poisson adjunction reconstructs the all-order Charlier ladder
@@ -1709,7 +1710,7 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonTiltComposition.
 | relativeEntropy_not_symmetric | Foundation/PoissonTiltComposition.lean:56 |
 
 
-## Chronological mathematical checkpoint ledger through discovery 83
+## Chronological mathematical checkpoint ledger through discovery 88
 
 | Commit | Verified checkpoint |
 | --- | --- |
@@ -1796,6 +1797,11 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonTiltComposition.
 | 4318d74 | Construct inverse-number potential and observation commutation |
 | 08c0ba3 | Preserve fractional prediction rank under inverse-number damping |
 | a8fba55 | Prove full observed derivative and recovery field constraints |
+| 71faefc | Prove full Gaussian joint source conditional recovery intertwining |
+| bcfbf4c | Intertwine both full Gaussian source graphs and Hodge projection |
+| a037423 | Prove noncompact recovery from a single continuous Brownian history |
+| a51cad3 | Exact Hodge energy and alternating geometry of causal Ito sources |
+| 9214f62 | Uniform geometric first-chaos extraction by inverse-number iteration |
 
 Documentation checkpoint: 5ec7740 consolidated discoveries through 56.
 
@@ -2790,3 +2796,39 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianPotentialIteration.
 | iterate_first_error | Foundation/GaussianPotentialIteration.lean:63 |
 | iterate_opNorm_error | Foundation/GaussianPotentialIteration.lean:84 |
 | iterate_operator_tendsto | Foundation/GaussianPotentialIteration.lean:89 |
+
+## Discovery 89 — actual causal/Hodge alternation uniformly converges, but the projections do not commute
+
+Pull back the genuine global gradient projection to the independently defined predictable L2 space using its isometric Gaussian field embedding and actual predictable adjoint. Its Ito output is exactly the inverse-number potential of the original Ito output. Every power has the corresponding exact inverse-number output, so the uniform scalar estimate transfers to every predictable integrand.
+
+The alternating operator powers converge in actual operator norm, with error at most 2^(-k), to the self-adjoint idempotent map that retains precisely the first-chaos Ito output component. This is uniform on the entire genuine predictable space, not just finite polynomial integrands. The full actual projection onto predictable Gaussian fields and the global Hodge projection do not commute; the terminal quadratic Brownian field at T=1 supplies the verified witness.
+
+Significance: there are two different verified projection geometries. Arbitrary joint source/sample observation commutes with Hodge projection (discovery 85), whereas causal predictability does not. Nonetheless causal/Hodge alternation has an exact degree spectrum and a uniform convergence rate. The limit is verified as the first-chaos Ito component; no additional identification of every deterministic profile or physical IBM/fractional kernel is inferred.
+
+Verification: full Lake build 4403 jobs (.lake/stardust-89-build.log); sixteen public types inspected; 7776 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-89-audit.log). Discovery 88 checkpoint: 9214f62. Discovery 89 is the commit containing this entry. The executive register and chronological ledger through 88 are updated with this checkpoint.
+
+Reflection: this coherent abstract compatibility/projection-dynamics branch is consolidated. New exploration moves to physical scalar Gaussian exponential derivative graphs and the possible failure of a full derivative graph norm to control L4, connecting Gaussian Sobolev/curvature foundations to quartic source-calculus assumptions. Physical causal fractional and IBM kernels, finite observed-source compactness, and general modified Poisson entropy remain substantive focused campaigns.
+
+### Public locations — discovery 89
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianItoAlternatingProjection.
+
+| Name | Source |
+| --- | --- |
+| alternatingOperator | Foundation/GaussianItoAlternatingProjection.lean:18 |
+| firstChaosOperator | Foundation/GaussianItoAlternatingProjection.lean:21 |
+| predictableFieldProjection | Foundation/GaussianItoAlternatingProjection.lean:24 |
+| alternating_apply | Foundation/GaussianItoAlternatingProjection.lean:27 |
+| potential_brownian | Foundation/GaussianItoAlternatingProjection.lean:32 |
+| integral_adjoint_centered | Foundation/GaussianItoAlternatingProjection.lean:37 |
+| integral_alternating | Foundation/GaussianItoAlternatingProjection.lean:43 |
+| integral_firstChaos | Foundation/GaussianItoAlternatingProjection.lean:50 |
+| firstChaosOperator_idempotent | Foundation/GaussianItoAlternatingProjection.lean:56 |
+| firstChaosOperator_inner | Foundation/GaussianItoAlternatingProjection.lean:61 |
+| iterate_integral | Foundation/GaussianItoAlternatingProjection.lean:69 |
+| iterate_firstChaos_error | Foundation/GaussianItoAlternatingProjection.lean:79 |
+| iterate_opNorm_error | Foundation/GaussianItoAlternatingProjection.lean:85 |
+| alternating_operator_tendsto | Foundation/GaussianItoAlternatingProjection.lean:90 |
+| predictableFieldProjection_field | Foundation/GaussianItoAlternatingProjection.lean:97 |
+| hodge_predictable_noncommutation | Foundation/GaussianItoAlternatingProjection.lean:103 |
+

@@ -379,3 +379,4 @@ import Foundation.GaussianConditionalFullGraphs
 import Foundation.BrownianHistoryRecoveryCompactness
 import Foundation.GaussianItoSourceHodge
 import Foundation.GaussianPotentialIteration
+import Foundation.GaussianItoAlternatingProjection
