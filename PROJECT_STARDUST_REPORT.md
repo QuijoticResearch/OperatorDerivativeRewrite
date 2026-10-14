@@ -1768,3 +1768,47 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonTiltComposition.
 | ddf2d57 | Identify actual Poisson exponential tilts and relative jump entropy |
 | e1df2ea | Match actual Poisson tilt Hellinger geometry to Gaussian exponential vectors |
 | d610da9 | Verify physical Poisson tilt composition and exact entropy asymmetry |
+
+## Discovery 57 — physical Poisson half-density gauge displaces both full source graphs
+
+The actual half-density multiplier U_theta:f -> sqrt(rho_theta) f is constructed as a full linear isometry equivalence from L2(Poisson(lambda exp(theta))) onto L2(Poisson(lambda)). Its inverse is genuine division by the nonvanishing density root. No bounded multiplier or reciprocal bound in one fixed measure is assumed; the existing weighted-L2 transport discharges membership, norm, representatives and surjectivity.
+
+For positive lambda, normalize the actual field source by its proved sqrt(lambda) scalar isometry. The resulting lowering graph is a_lambda=sqrt(lambda) Delta, and the raising graph is a_lambda^dagger, whose count-zero and positive-count formulas are proved from the actual maximal divergence. With d=sqrt(lambda exp(theta))-sqrt(lambda), the exact full graph identities are a_lambda U_theta=U_theta a_(lambda exp(theta))+d U_theta and a_lambda^dagger U_theta=U_theta a_(lambda exp(theta))^dagger+d U_theta. Both directions are verified for every pair of actual L2 classes, not only test polynomials.
+
+Significance: physical Poisson change of measure realizes a coherent displacement of the genuine complete source operators. This is stronger than matching a finite Gram matrix or postulating a transported operator. It connects the actual tilt law, weighted field normalization and all-domain adjoint source calculus. It does not construct a time-dependent Poisson process, Girsanov theorem, semigroup or stochastic integral.
+
+Verification: full Lake build 4368 jobs (.lake/stardust-57-build.log); twenty-five public types inspected; 7158 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-57-audit.log). Discovery 56 checkpoint: d610da9; periodic consolidated report: 5ec7740. Discovery 57 is the commit containing this entry.
+
+Reflection: the shifted creation operator should have a contractive unique recovery on the orthogonal complement of its coherent vacuum, with shifted annihilation Poincare. The existing full Poisson recovery and the now proved physical unitary are sufficient infrastructure to investigate this next. Independent exploration is verifying finite-dimensional weighted source stability from actual injectivity and nonzero-a.e. data.
+
+### Public locations — discovery 57
+
+Prefix: OperatorDerivativeRewrite.Foundation.PoissonTiltSourceGauge.
+
+| Name | Source |
+| --- | --- |
+| rootDensity_pos | Foundation/PoissonTiltSourceGauge.lean:16 |
+| tiltedRate_pos | Foundation/PoissonTiltSourceGauge.lean:18 |
+| weightedMeasure_eq | Foundation/PoissonTiltSourceGauge.lean:22 |
+| base_absolutelyContinuous_tilt | Foundation/PoissonTiltSourceGauge.lean:30 |
+| gauge_memLp | Foundation/PoissonTiltSourceGauge.lean:36 |
+| gaugeClass | Foundation/PoissonTiltSourceGauge.lean:45 |
+| gaugeClass_coeFn | Foundation/PoissonTiltSourceGauge.lean:48 |
+| gaugeLinear | Foundation/PoissonTiltSourceGauge.lean:52 |
+| gaugeClass_norm | Foundation/PoissonTiltSourceGauge.lean:71 |
+| gaugeIsometry | Foundation/PoissonTiltSourceGauge.lean:85 |
+| inverse_memLp | Foundation/PoissonTiltSourceGauge.lean:89 |
+| gauge_surjective | Foundation/PoissonTiltSourceGauge.lean:95 |
+| gauge | Foundation/PoissonTiltSourceGauge.lean:106 |
+| gauge_coeFn | Foundation/PoissonTiltSourceGauge.lean:109 |
+| gauge_apply | Foundation/PoissonTiltSourceGauge.lean:113 |
+| rootDensity_succ | Foundation/PoissonTiltSourceGauge.lean:117 |
+| annihilationGraph | Foundation/PoissonTiltSourceGauge.lean:124 |
+| annihilationGraph_iff | Foundation/PoissonTiltSourceGauge.lean:127 |
+| displacement | Foundation/PoissonTiltSourceGauge.lean:140 |
+| annihilation_gauge_iff | Foundation/PoissonTiltSourceGauge.lean:142 |
+| creationExpr | Foundation/PoissonTiltSourceGauge.lean:167 |
+| creationGraph | Foundation/PoissonTiltSourceGauge.lean:171 |
+| creationGraph_iff | Foundation/PoissonTiltSourceGauge.lean:174 |
+| creationExpr_gauge | Foundation/PoissonTiltSourceGauge.lean:188 |
+| creation_gauge_iff | Foundation/PoissonTiltSourceGauge.lean:207 |
