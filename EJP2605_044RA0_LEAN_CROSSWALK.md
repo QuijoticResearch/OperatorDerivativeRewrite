@@ -68,3 +68,11 @@ GaussianWickContinuity and IBMClockCubicTimeProjection now discharge the explici
 Verification: full pinned Lake build 4318 jobs; all eleven public types checked; 6363 safe Foundation declarations audited, only propext/Classical.choice/Quot.sound. See .lake/stardust-08-{build,audit}.log and discovery 8 in PROJECT_STARDUST_REPORT.md for exact source locations and interpretation.
 
 This supersedes only the earlier OPEN/CONDITIONAL per-path integrability status. Joint random-clock L2, scalar representative/Fubini identification, graph-norm derivative/time interchange, physical spatial kernel identification, local time, fixed-mollifier Ito–Tanaka and IBM-specific singular H^-1 convergence remain open. No manuscript files were modified.
+
+## Stardust follow-up: actual cubic time-section source primitive (2026-10-14)
+
+IBMClockCubicSourcePrimitive now constructs a canonical full scenery-source divergence primitive for the actual Gaussian-L2 time integral of the cubic spatial correction along EVERY constructed reflected clock path. Centering and the bounded recovery/time interchange are proved. The primitive lies in the full closed source divergence graph, has norm at most its target, and is minimum norm among all source preimages.
+
+Verification: full pinned Lake build 4323 jobs; nine public types inspected; 6431 safe Foundation declarations audited with only propext/Classical.choice/Quot.sound. See discovery 13 in PROJECT_STARDUST_REPORT.md and .lake/stardust-13-{build,audit}.log.
+
+This advances the IBM-specific source integration identity. It does not prove joint clock L2, scalar representative Fubini, predictable-clock integration, local time, fixed-mollifier Ito–Tanaka, physical white-noise kernel identification or an IBM spatial H^-1 limit. The source primitive is for the g'' time-section integral, not the complete manuscript correction with its overall 1/2 and boundary term. No manuscripts were written or staged.

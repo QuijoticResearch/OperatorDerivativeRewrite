@@ -383,3 +383,33 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonPolynomialRecovery.
 | recovery_norm_sq | Foundation/PoissonPolynomialRecovery.lean:48 |
 | target_norm_sq | Foundation/PoissonPolynomialRecovery.lean:56 |
 | recovery_norm_le | Foundation/PoissonPolynomialRecovery.lean:65 |
+
+## Discovery 13 — An actual IBM time-section source-divergence primitive
+
+Verified: IBMClockCubicSourcePrimitive proves the cubic observable and every actual clock section are centered. Its integratedCorrection is the previously justified Gaussian-L2 Bochner time integral along the actual reflected clock. Centering commutes with the time integral by a proved bounded-functional/Bochner interchange.
+
+The canonical sourcePrimitive is R(integratedCorrection). It belongs to the FULL scenery-source divergence graph with divergence equal to integratedCorrection. Its norm is bounded by the target norm, it has minimum norm among every source divergence preimage, and it equals the Bochner time integral of R applied to the actual correction sections. No target Malliavin differentiability or time/source derivative-domain assumption is needed.
+
+Mathematical significance: the exploratory source recovery now constructs an IBM-specific nonvacuous source integration identity for a nonlinear time-integrated observable. This tests the integration-first program directly on the actual mollified clock/scenery construction rather than only on an abstract Gaussian polynomial. The chain is actual continuous source directions -> justified section time integral -> centering -> full closed source divergence primitive.
+
+Limitations: the identity holds in scenery Gaussian-L2 at each actual clock path. Joint clock L2 bounds, scalar representative/time-Fubini identification, predictable Brownian-clock integration, local time and fixed-mollifier Ito–Tanaka are not thereby proved. The primitive is a full source-divergence primitive of the cubic spatial g'' integral; it is not claimed to be the paper's complete stochastic correction, which includes the overall 1/2 and separate clock/boundary terms. Source chaos regularization is not spatial H^-1 regularization.
+
+Verification: full Lake build 4323 jobs (.lake/stardust-13-build.log); all nine public types checked; 6431 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-13-audit.lean and .log). Poisson recovery checkpoint: 5c6e9d1. Discovery 13 is the commit containing this entry.
+
+Reflection: this result justifies a focused actual-source observable campaign. The next missing steps should be concrete joint-domain/representative and physical spatial-kernel estimates, not another abstract source adjoint definition. Active check: first-chaos recovery should preserve norm exactly, confirming that this new primitive cannot automatically cure the identified first-chaos singularity.
+
+### Public locations — discovery 13
+
+Prefix: OperatorDerivativeRewrite.Foundation.IBMClockCubicSourcePrimitive.
+
+| Name | Source |
+| --- | --- |
+| correction_centered | Foundation/IBMClockCubicSourcePrimitive.lean:16 |
+| section_centered | Foundation/IBMClockCubicSourcePrimitive.lean:27 |
+| integratedCorrection | Foundation/IBMClockCubicSourcePrimitive.lean:31 |
+| integratedCorrection_centered | Foundation/IBMClockCubicSourcePrimitive.lean:34 |
+| sourcePrimitive | Foundation/IBMClockCubicSourcePrimitive.lean:45 |
+| sourcePrimitive_graph | Foundation/IBMClockCubicSourcePrimitive.lean:50 |
+| sourcePrimitive_time_integral | Foundation/IBMClockCubicSourcePrimitive.lean:56 |
+| sourcePrimitive_norm_le | Foundation/IBMClockCubicSourcePrimitive.lean:61 |
+| sourcePrimitive_minimal_norm | Foundation/IBMClockCubicSourcePrimitive.lean:65 |

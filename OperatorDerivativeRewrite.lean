@@ -302,3 +302,4 @@ import Foundation.BanachQuarticHolderSharpness
 import Foundation.GaussianSourceHodge
 import Foundation.DivergenceKernelContrast
 import Foundation.PoissonPolynomialRecovery
+import Foundation.IBMClockCubicSourcePrimitive
