@@ -2947,3 +2947,29 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianDisplacementContinuity.
 | strong_tendsto_zero | Foundation/GaussianDisplacementContinuity.lean:67 |
 | strong_tendsto | Foundation/GaussianDisplacementContinuity.lean:106 |
 | displacement_parameter_continuous | Foundation/GaussianDisplacementContinuity.lean:124 |
+
+## Discovery 94 — nonzero Gaussian unitary displacement cannot transport physical L4 boundedly
+
+Physical coherent vectors have genuine L2 and L4 representatives of the same exponential function. Their L2 norm is one, while their L4 norm is exp(a squared). The actual Gaussian displacement sends the L2 coherent vector at a to the physical coherent vector at d+a. For every nonzero d and proposed real bound K, an explicit coherent probe has displaced L4 norm greater than K times its original L4 norm.
+
+Consequently no bounded linear operator on actual Gaussian L4 can agree with the verified displacement action on every coherent probe. This conclusion uses a concrete family of admitted physical outputs, rather than inferring function-space behavior from the Hilbert transfer. It does not assert that the unitary maps every L4 class into L4; it rules out a bounded physical realization already on the test family.
+
+Significance: full L2 unitary equivalence, both full graph shifts, and strong continuity do not supply a bounded L4 change of source coordinates. Thus these gauges cannot automatically transport the quartic source-calculus assumptions. This reinforces the program's distinction between Hilbert/operator geometry and multiplication-based Banach regularity.
+
+Verification: full Lake build 4408 jobs (.lake/stardust-94-build.log); seven public types inspected; 7827 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-94-audit.log). Discovery 93 checkpoint: 19e0474. Discovery 94 is the commit containing this entry.
+
+Reflection: the physical formula on all L2 targets is still being completed through Gaussian translation nonsingularity and a closed-domain argument using legitimate almost-everywhere subsequences. Once that is proved, translated indicator probes can also test operator-norm continuity, which is stronger than the already verified strong continuity. Useful quartic source embeddings require their own genuine L4 estimates.
+
+### Public locations — discovery 94
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianDisplacementQuarticObstruction.
+
+| Name | Source |
+| --- | --- |
+| coherentFour | Foundation/GaussianDisplacementQuarticObstruction.lean:13 |
+| coherentFour_coeFn | Foundation/GaussianDisplacementQuarticObstruction.lean:15 |
+| coherentTwo_coeFn | Foundation/GaussianDisplacementQuarticObstruction.lean:23 |
+| coherentFour_norm | Foundation/GaussianDisplacementQuarticObstruction.lean:31 |
+| displaced_coherent_physical | Foundation/GaussianDisplacementQuarticObstruction.lean:36 |
+| no_uniform_quartic_displacement_bound | Foundation/GaussianDisplacementQuarticObstruction.lean:42 |
+| no_bounded_quartic_realization | Foundation/GaussianDisplacementQuarticObstruction.lean:57 |
