@@ -440,3 +440,45 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianFirstChaosRecovery.
 | recovery_firstChaos_norm | Foundation/GaussianFirstChaosRecovery.lean:53 |
 | recovery_firstChaos_distance | Foundation/GaussianFirstChaosRecovery.lean:64 |
 | recovery_norm_sq_ge_firstProjection | Foundation/GaussianFirstChaosRecovery.lean:78 |
+
+## Discovery 15 — Nonpolynomial Poisson coherent vectors on the actual adjoint domains
+
+Verified: PoissonCoherentVectors derives finite exponential moments for every real parameter from an actual summable Poisson-weight series. Its scalar exponential L2 class has the genuine moment exp(lambda(exp(theta)-1)), and pairings follow the exact two-parameter moment formula.
+
+The mean-one coherent vector E_theta=exp(-lambda(exp(theta)-1))*exp(theta N) has integral 1 and inner product exp(lambda(exp(theta)-1)(exp(eta)-1)). Mean-one does not mean unit L2 norm. These are actual L2 equivalence classes; the normalization and every integral interchange are verified.
+
+The genuine maximal difference graph is D exp(theta N)=(exp(theta)-1) exp(theta N) in the rate-weighted field space. A proved count-times-exponential moment also gives the full divergence graph: delta exp(theta N)=(N exp(-theta)-lambda) exp(theta N), including the count-zero boundary. This is a nonpolynomial adjoint-domain progression, not a postulated ordinary chain rule.
+
+Mathematical significance: the source program now has an analytic family beyond finite count polynomials, with exact Hilbert kernels and both closed operator domains. Its kernel suggests a completed Gaussian/Poisson coherent-state transfer, but that transfer is not claimed here. This family offers a legitimate alternative completeness route through atomwise Laplace probes.
+
+Limitations: no polynomial density or full Charlier spectral completeness is inferred from exponential moments alone. There is no dynamic Poisson stochastic integral, process-level change of measure, or full Gaussian coherent-family identification in this module. Active next proof: totality of the exponential family itself by justified dominated convergence, followed separately by polynomial approximation.
+
+Verification: full Lake build 4325 jobs (.lake/stardust-15-build.log); all nineteen public types checked; 6468 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-15-audit.lean and .log). First-chaos recovery checkpoint: c31865b. Informational ring-normalization suggestions appear, with no Lean errors/placeholders. Discovery 15 is the commit containing this entry.
+
+Reflection: this family may connect stochastic operator domains, likelihood/exponential families and Gaussian Hilbert kernels. Focused future work should prove the actual completed transfer and preserve the already verified multiplication and kernel differences; matching a scalar reproducing kernel does not identify the entire calculus.
+
+### Public locations — discovery 15
+
+Prefix: OperatorDerivativeRewrite.Foundation.PoissonCoherentVectors.
+
+| Name | Source |
+| --- | --- |
+| exponential | Foundation/PoissonCoherentVectors.lean:14 |
+| weighted_exponential_hasSum | Foundation/PoissonCoherentVectors.lean:16 |
+| exponential_memLp | Foundation/PoissonCoherentVectors.lean:39 |
+| exponential_integral | Foundation/PoissonCoherentVectors.lean:49 |
+| scalar | Foundation/PoissonCoherentVectors.lean:54 |
+| field | Foundation/PoissonCoherentVectors.lean:57 |
+| scalar_apply | Foundation/PoissonCoherentVectors.lean:60 |
+| field_apply | Foundation/PoissonCoherentVectors.lean:64 |
+| scalar_inner | Foundation/PoissonCoherentVectors.lean:69 |
+| coherent | Foundation/PoissonCoherentVectors.lean:81 |
+| coherent_inner | Foundation/PoissonCoherentVectors.lean:84 |
+| scalar_integral | Foundation/PoissonCoherentVectors.lean:96 |
+| coherent_integral | Foundation/PoissonCoherentVectors.lean:101 |
+| exponential_difference_graph | Foundation/PoissonCoherentVectors.lean:110 |
+| count_exponential_memLp | Foundation/PoissonCoherentVectors.lean:118 |
+| divergenceValue | Foundation/PoissonCoherentVectors.lean:134 |
+| divergenceValue_memLp | Foundation/PoissonCoherentVectors.lean:137 |
+| divergenceScalar | Foundation/PoissonCoherentVectors.lean:146 |
+| exponential_divergence_graph | Foundation/PoissonCoherentVectors.lean:149 |
