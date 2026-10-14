@@ -18,7 +18,7 @@ Verification: full Lake build 4310 jobs (.lake/stardust-01-build.log), all 21 pu
 
 Reflection: equal ladder energy does not imply equal multiplication algebra or ordinary chain rules. Poisson polynomial completeness and a unitary transfer to Gaussian chaos are not yet proved. A future focused campaign could establish polynomial density, the Poisson number spectral decomposition and a precise Hilbert transfer while exhibiting multiplication defects.
 
-## Investigation register
+## Historical investigation register after discovery 1
 
 | Direction | Status | Next obligation |
 | --- | --- | --- |
@@ -1044,7 +1044,7 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonExponentialEntropy.
 | actual_entropy_counterexample | Foundation/PoissonExponentialEntropy.lean:85 |
 | no_uniform_quadratic_entropy_bound | Foundation/PoissonExponentialEntropy.lean:112 |
 
-## Current research register after discovery 35
+## Historical research register after discovery 35
 
 | Direction | Status | Next obligation |
 | --- | --- | --- |
@@ -1431,3 +1431,28 @@ Prefix: OperatorDerivativeRewrite.Foundation.BanachQuarticConstantSource.
 | weightedSource_eq_const | Foundation/BanachQuarticConstantSource.lean:23 |
 | weightedSource_norm | Foundation/BanachQuarticConstantSource.lean:33 |
 | inverse_regular_at_nonzero_source | Foundation/BanachQuarticConstantSource.lean:39 |
+
+
+## Discovery 49 — weighted coercivity fails at every Poisson L4 identity-source datum
+
+For every positive Poisson rate and every actual F in L4 of its count law, no c>0 satisfies c||w||_4 <= ||F w||_2 for all source directions w. This includes representatives with no zero coordinates.
+
+The proof computes the weighted map on every indicator atom: output norm to the fourth power is F(n)^4 p_n^2, while input norm to the fourth power is p_n. A hypothetical lower bound forces c^4 <= p_n F(n)^4 for every n. Actual L4 integrability makes that sequence summable and hence convergent to zero, contradicting c>0. All products are actual Lp classes, and positivity of each Poisson atom is used legitimately.
+
+Significance: discovery 47's sufficient Lipschitz condition cannot hold anywhere for the infinite-dimensional Poisson L4 identity source, even though discovery 48 realizes it on its constant source subspace. This is an applicability obstruction, not yet a proof that the inverse is singular everywhere. The latter requires a separate perturbation argument.
+
+Verification: full Lake build 4359 jobs (.lake/stardust-49-build.log); five public theorem types inspected; 6973 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-49-audit.log). Discovery 48 checkpoint: c43d288. Discovery 49 is the commit containing this entry.
+
+Reflection: normalized positive-mass atoms have small interaction with every fixed L4 datum. Their exact nonlinear normal-map perturbation is being investigated as a route to a stronger everywhere inverse-singularity result, without an assumed disjoint zero direction.
+
+### Public locations — discovery 49
+
+Prefix: OperatorDerivativeRewrite.Foundation.PoissonQuarticWeightedObstruction.
+
+| Name | Source |
+| --- | --- |
+| weighted_atom | Foundation/PoissonQuarticWeightedObstruction.lean:16 |
+| weighted_atom_fourth | Foundation/PoissonQuarticWeightedObstruction.lean:32 |
+| atom_fourth | Foundation/PoissonQuarticWeightedObstruction.lean:42 |
+| quartic_weights_summable | Foundation/PoissonQuarticWeightedObstruction.lean:49 |
+| no_positive_weighted_lower | Foundation/PoissonQuarticWeightedObstruction.lean:59 |
