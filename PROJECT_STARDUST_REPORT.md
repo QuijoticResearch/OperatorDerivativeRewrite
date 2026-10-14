@@ -2472,3 +2472,37 @@ Prefix: OperatorDerivativeRewrite.Foundation.SPDEObservationRecoveryCompactness.
 | positive_time_recovery_noncompact | Foundation/SPDEObservationRecoveryCompactness.lean:67 |
 | zero_time_recovery_zero | Foundation/SPDEObservationRecoveryCompactness.lean:72 |
 | brownian_past_recovery_compact_iff | Foundation/SPDEObservationRecoveryCompactness.lean:86 |
+
+## Discovery 79 — the actual joint source/sample orthogonal projection corrects countable recovery
+
+Project Gaussian vector L2 fields pointwise onto the closed observed coefficient-source span, and separately take their actual vector conditional expectation. These two genuine bounded maps commute. Their composition is self-adjoint, idempotent and norm-contracting; a field is fixed exactly when each of the two restrictions fixes it. This constructs the joint observed-source/observed-sample orthogonal projection on all Gaussian vector L2 fields.
+
+The joint projection applied to every actual recovered positive Wick degree equals recovery of the scalar conditional prediction. Bounded linearity and legitimate unconditional summability extend the corrected identity to every verified countable orthogonal Wick response, including the nonlinear renormalized Brownian examples. Unlike ordinary vector conditioning alone, the joint projection changes the coefficient source direction as required by discovery 76.
+
+Scope: the field projection properties hold for all actual vector L2 fields and arbitrary observation families. The scalar recovery intertwining identity is verified for positive Wick observables and the stated countable responses. Its extension to every Gaussian scalar L2 target remains unproved. Repository searches did not identify a ready diagonal-Wick density bridge; finite-degree polarization plus polynomial density, or direct derivative/conditional compatibility, are plausible focused routes. No adapted stochastic integral is asserted.
+
+Verification: full Lake build 4393 jobs (.lake/stardust-79-build.log); fifteen public types inspected and the private measurable-space inclusion instance audited transitively; 7571 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-79-audit.log). Discovery 78 checkpoint: b4b3f57. Discovery 79 is the commit containing this entry.
+
+Reflection: the correct joint projection is now a reusable actual operator, rather than an informal instruction to condition a primitive. The full identity and causal physical source applications deserve a focused campaign. Exploration moves to linear random matrix fields, where source Hodge projection may realize exact symmetric/antisymmetric matrix decomposition and expose the geometry of divergence-free components.
+
+### Public locations — discovery 79
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianJointSourceProjection.
+
+| Name | Source |
+| --- | --- |
+| fieldSourceProjection | Foundation/GaussianJointSourceProjection.lean:17 |
+| fieldSourceProjection_scalarTensor | Foundation/GaussianJointSourceProjection.lean:20 |
+| fieldConditional_source_commute | Foundation/GaussianJointSourceProjection.lean:29 |
+| fieldSourceProjection_idempotent | Foundation/GaussianJointSourceProjection.lean:37 |
+| fieldSourceProjection_inner | Foundation/GaussianJointSourceProjection.lean:50 |
+| fieldConditional_eq_starProjection | Foundation/GaussianJointSourceProjection.lean:60 |
+| fieldConditional_idempotent | Foundation/GaussianJointSourceProjection.lean:64 |
+| fieldConditional_inner | Foundation/GaussianJointSourceProjection.lean:69 |
+| jointConditional | Foundation/GaussianJointSourceProjection.lean:74 |
+| jointConditional_idempotent | Foundation/GaussianJointSourceProjection.lean:77 |
+| jointConditional_inner | Foundation/GaussianJointSourceProjection.lean:82 |
+| jointConditional_norm_le | Foundation/GaussianJointSourceProjection.lean:87 |
+| jointConditional_fixed_iff | Foundation/GaussianJointSourceProjection.lean:98 |
+| jointConditional_wick_recovery | Foundation/GaussianJointSourceProjection.lean:119 |
+| jointConditional_countable_wick_recovery | Foundation/GaussianJointSourceProjection.lean:125 |

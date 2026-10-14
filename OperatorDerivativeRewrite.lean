@@ -369,3 +369,4 @@ import Foundation.GaussianConditionalCompactness
 import Foundation.GaussianWickRecoveryPrediction
 import Foundation.GaussianOneObservationRecoveryCompactness
 import Foundation.SPDEObservationRecoveryCompactness
+import Foundation.GaussianJointSourceProjection
