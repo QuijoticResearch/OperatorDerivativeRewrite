@@ -505,3 +505,23 @@ Prefix: OperatorDerivativeRewrite.Foundation.IBMSourcePrimitiveObstruction.
 | integratedSourceVector_norm_le_primitive | Foundation/IBMSourcePrimitiveObstruction.lean:54 |
 | integratedSourceVector_distance_le_primitive | Foundation/IBMSourcePrimitiveObstruction.lean:60 |
 | integratedSourceVector_cauchy_of_primitive_cauchy | Foundation/IBMSourcePrimitiveObstruction.lean:73 |
+
+## Discovery 17 — exponential probes are total in Poisson L2
+
+For a strictly positive rate, a scalar Poisson L2 class orthogonal to exp(theta N) for every real theta is zero. Consequently the closed linear span of this actual exponential family is the entire scalar L2 space.
+
+Proof mechanism: after lower atoms have been eliminated, multiply the probe exp(-j N) by exp(j r) and let j tend to infinity. Dominated convergence isolates the r-th atom; positivity of each Poisson weight forces its value to vanish. Strong induction eliminates all atoms. This gives a complete analytic observation family using the proved exponential moments, without assuming polynomial density.
+
+Significance: atomwise separation connects discrete probability, Laplace-type transforms, Hilbert orthogonality, and the closed stochastic difference calculus. Polynomial/Charlier completeness is still a separate obligation. The active next investigation is actual L2 Taylor approximation, not an inference from pointwise convergence alone.
+
+Verification: full Lake build 4327 jobs (.lake/stardust-17-build.log); three public types checked; 6481 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-17-audit.log). Discovery 16 checkpoint: ebe0ba8. Discovery 17 is the commit containing this entry.
+
+### Public locations — discovery 17
+
+Prefix: OperatorDerivativeRewrite.Foundation.PoissonExponentialTotal.
+
+| Name | Source |
+| --- | --- |
+| exponential_orthogonal_zero | Foundation/PoissonExponentialTotal.lean:82 |
+| exponentialSpan | Foundation/PoissonExponentialTotal.lean:92 |
+| exponentialSpan_closure | Foundation/PoissonExponentialTotal.lean:95 |

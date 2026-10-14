@@ -306,3 +306,4 @@ import Foundation.IBMClockCubicSourcePrimitive
 import Foundation.GaussianFirstChaosRecovery
 import Foundation.PoissonCoherentVectors
 import Foundation.IBMSourcePrimitiveObstruction
+import Foundation.PoissonExponentialTotal
