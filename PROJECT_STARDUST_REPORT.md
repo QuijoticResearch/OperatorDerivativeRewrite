@@ -2135,3 +2135,33 @@ Prefix: OperatorDerivativeRewrite.Foundation.SPDEWickModes.
 | harmonic_not_summable | Foundation/SPDEWickModes.lean:158 |
 | actual_centered_squares_summable | Foundation/SPDEWickModes.lean:165 |
 | actual_raw_squares_not_summable | Foundation/SPDEWickModes.lean:173 |
+
+## Discovery 68 — observation creates cross-mode Wick prediction without destroying convergence
+
+For actual countable orthogonal Wick responses, conditional prediction through any Gaussian observation family is the genuinely convergent series of Wick powers of the projected source directions. These projected directions need not remain orthogonal. Exact finite forecast energies are the full double Gram sum c_i c_j d! inner(P h_i,P h_j)^d; the sums are nonnegative, bounded by original finite energy, and converge along finite sets to the actual infinite forecast energy. The centered predicted limit also admits the actual recovered divergence graph.
+
+For two orthogonal unit source directions observed only through their sum, both project onto half that sum. The Wick difference therefore has zero forecast, while the Wick sum has forecast energy 4 d! /2^d. This is instantiated on two actual independent unit-time Brownian mode directions at degree two, giving forecast energy 2. Cross terms reinforce the sum and cancel the difference; summing only projected individual energies would give an incorrect answer.
+
+Significance: actual nonlinear countable forcing remains conditionally meaningful after observation destroys orthogonality. Full covariance powers, rather than diagonal variance powers alone, govern its prediction. Degree zero in the finite identities is energy, not centered variance; the countable response and recovery results require positive degree. No absolute summability theorem for a separately reindexed infinite double matrix, stochastic PDE solution, or spatial field version is asserted.
+
+Verification: full Lake build 4382 jobs (.lake/stardust-68-build.log); eleven public types inspected; 7348 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-68-audit.log). Discovery 67 checkpoint: e7021cd. Discovery 68 is the commit containing this entry.
+
+Reflection: the countable renormalized construction and all-order conditional projection now interact legitimately. The next investigation identifies full-past projections for every actual Brownian mode and transfers the exact time law to countable nonlinear responses, rather than assuming a one-variable terminal representation.
+
+### Public locations — discovery 68
+
+Prefix: OperatorDerivativeRewrite.Foundation.SPDEWickPrediction.
+
+| Name | Source |
+| --- | --- |
+| gramEnergy | Foundation/SPDEWickPrediction.lean:15 |
+| finite_wick_gram | Foundation/SPDEWickPrediction.lean:18 |
+| finite_prediction_gram | Foundation/SPDEWickPrediction.lean:30 |
+| projected_gram_bounds | Foundation/SPDEWickPrediction.lean:37 |
+| predicted_response_hasSum | Foundation/SPDEWickPrediction.lean:50 |
+| projected_gram_limit | Foundation/SPDEWickPrediction.lean:59 |
+| predicted_response_recovery_graph | Foundation/SPDEWickPrediction.lean:71 |
+| two_mode_source_projection | Foundation/SPDEWickPrediction.lean:82 |
+| two_mode_difference_forecast_zero | Foundation/SPDEWickPrediction.lean:92 |
+| two_mode_sum_forecast_energy | Foundation/SPDEWickPrediction.lean:99 |
+| actual_brownian_square_forecast_energy | Foundation/SPDEWickPrediction.lean:115 |

@@ -358,3 +358,4 @@ import Foundation.FractionalBrownianPredictionBenchmark
 import Foundation.GaussianPredictionRankAsymptotic
 import Foundation.FractionalCurrentObservationObstruction
 import Foundation.SPDEWickModes
+import Foundation.SPDEWickPrediction
