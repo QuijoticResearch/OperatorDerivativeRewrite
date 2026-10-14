@@ -1261,3 +1261,24 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianSingleObservationPrediction
 | sourceProjection_single_mean | Foundation/GaussianSingleObservationPrediction.lean:77 |
 | conditional_singleObservation_sufficient | Foundation/GaussianSingleObservationPrediction.lean:95 |
 | conditional_singleObservation_range | Foundation/GaussianSingleObservationPrediction.lean:111 |
+
+## Discovery 42 — exact polynomial prediction energy and Hermite-rank bounds
+
+Every finite terminal Wick expansion sum_i c_i Wick_i(u) has actual conditional forecast sum_i c_i Wick_i(P_h u), with exact energy sum_i c_i^2 i! v^i, v=||P_h u||^2. For a unit-variance terminal direction and coefficients vanishing below m, the energy is at most v^m times the original polynomial energy. Every individual contribution c_m^2 m! v^m is a lower bound. If c_m is nonzero and all lower coefficients vanish, these are genuine two-sided bounds in the linear prediction energy, including v=0 and v=1.
+
+Significance: polynomial degree is replaced by verified Hermite rank as the prediction scaling parameter. No asymptotic in fractional time is inferred without an actual asymptotic for v(t). The formula includes the constant coefficient as energy; variance requires removing that vacuum term.
+
+Verification: full Lake build 4352 jobs (.lake/stardust-42-build.log); four public theorem types inspected; 6893 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-42-audit.log). Discovery 41 checkpoint: 8a67c03. Discovery 42 is the commit containing this entry.
+
+Reflection: this quantitative rank principle should extend to all terminal L2 observables through the actual global chaos projections and terminal Wick density. That extension is being investigated; no infinite coefficient identity is assumed in this checkpoint.
+
+### Public locations — discovery 42
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianPolynomialPredictionRank.
+
+| Name | Source |
+| --- | --- |
+| conditional_expansion | Foundation/GaussianPolynomialPredictionRank.lean:12 |
+| conditional_expansion_energy | Foundation/GaussianPolynomialPredictionRank.lean:17 |
+| conditional_expansion_rank_upper | Foundation/GaussianPolynomialPredictionRank.lean:24 |
+| conditional_expansion_rank_lower | Foundation/GaussianPolynomialPredictionRank.lean:46 |

@@ -331,3 +331,4 @@ import Foundation.PoissonJumpEntropy
 import Foundation.GaussianWickConditionalProjection
 import Foundation.GaussianCubicConditionalPrediction
 import Foundation.GaussianSingleObservationPrediction
+import Foundation.GaussianPolynomialPredictionRank
