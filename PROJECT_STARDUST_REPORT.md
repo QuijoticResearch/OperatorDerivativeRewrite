@@ -2553,3 +2553,32 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianQuadraticSourceHodge.
 | linearField_energy | Foundation/GaussianQuadraticSourceHodge.lean:212 |
 | quadraticTarget_matrix_energy | Foundation/GaussianQuadraticSourceHodge.lean:217 |
 | linearField_divergence_kernel_iff | Foundation/GaussianQuadraticSourceHodge.lean:222 |
+
+## Discovery 81 — inverse-number potential commutes with every Gaussian observation projection
+
+The actual bounded scalar operator G = R adjoint composed with R has unconditional chaos expansion sum over n of (1/n) P_n, with the zero-degree term zero. Its actual full derivative is Rf, and the full divergence of this derivative is f-P_0 f. Positivity is quantified by inner(Gf,f)=norm(Rf)^2.
+
+For every Gaussian observation family, including arbitrary correlated or uncountable families, G commutes with its actual scalar conditional projection. Consequently G preserves each generated scalar L2 space. Recovery after one unit Gaussian observation was proved compact in discovery 77; bounded postcomposition proves compactness of G after that same observation.
+
+Significance: arbitrary observational restriction is compatible with the scalar inverse-number potential, despite the proved failure of ordinary vector conditioning to commute with source recovery. The identity is on all Gaussian scalar L2 targets, with the derivative and divergence graphs explicitly verified. This is a scalar number-operator inverse; it is not an inverse physical time derivative, fractional kernel, or SPDE generator.
+
+Verification: full Lake build 4395 jobs (.lake/stardust-81-build.log); ten public types inspected; 7643 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-81-audit.log). Discovery 80 checkpoint: 8a7be73. Discovery 81 is the commit containing this entry.
+
+Reflection: this supplies a bounded route from observed divergence outputs to observed scalar potentials. Together with observed polynomial graph density, it may close the full joint source/sample recovery identity. A separate test now asks whether inverse-number damping changes fractional prediction powers; compactness in one coordinate alone does not establish improved temporal powers.
+
+### Public locations — discovery 81
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianInverseNumberPotential.
+
+| Name | Source |
+| --- | --- |
+| potentialOperator | Foundation/GaussianInverseNumberPotential.lean:14 |
+| projection_zero_positive | Foundation/GaussianInverseNumberPotential.lean:17 |
+| adjoint_inverseGradient | Foundation/GaussianInverseNumberPotential.lean:24 |
+| potential_hasSum | Foundation/GaussianInverseNumberPotential.lean:33 |
+| potential_derivative_graph | Foundation/GaussianInverseNumberPotential.lean:45 |
+| potential_number_graph | Foundation/GaussianInverseNumberPotential.lean:53 |
+| potential_conditional_commute | Foundation/GaussianInverseNumberPotential.lean:58 |
+| potential_preserves_generated | Foundation/GaussianInverseNumberPotential.lean:67 |
+| potential_positive | Foundation/GaussianInverseNumberPotential.lean:73 |
+| single_observation_potential_compact | Foundation/GaussianInverseNumberPotential.lean:80 |

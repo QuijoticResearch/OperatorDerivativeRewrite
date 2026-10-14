@@ -371,3 +371,4 @@ import Foundation.GaussianOneObservationRecoveryCompactness
 import Foundation.SPDEObservationRecoveryCompactness
 import Foundation.GaussianJointSourceProjection
 import Foundation.GaussianQuadraticSourceHodge
+import Foundation.GaussianInverseNumberPotential
