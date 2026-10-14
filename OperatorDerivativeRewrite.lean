@@ -359,3 +359,4 @@ import Foundation.GaussianPredictionRankAsymptotic
 import Foundation.FractionalCurrentObservationObstruction
 import Foundation.SPDEWickModes
 import Foundation.SPDEWickPrediction
+import Foundation.SPDEWickBrownianPrediction

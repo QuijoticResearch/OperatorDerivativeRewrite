@@ -2165,3 +2165,32 @@ Prefix: OperatorDerivativeRewrite.Foundation.SPDEWickPrediction.
 | two_mode_difference_forecast_zero | Foundation/SPDEWickPrediction.lean:92 |
 | two_mode_sum_forecast_energy | Foundation/SPDEWickPrediction.lean:99 |
 | actual_brownian_square_forecast_energy | Foundation/SPDEWickPrediction.lean:115 |
+
+## Discovery 69 — exact full-past prediction of countably many nonlinear Brownian modes
+
+Observe the entire actual countable Brownian mode family at every time through t. Each terminal unit-time mode source direction projects to that mode's time-t direction, for 0<=t<=1. For every positive degree d and square-summable real coefficient sequence, the actual countable terminal Wick response therefore predicts exactly to its time-t Wick response. Forecast energy is t^d times the unit-time terminal energy.
+
+This applies to the genuinely renormalized harmonic-weight quadratic response from discovery 67, whose forecast energy scales exactly as t^2. The observable involves countably many independent terminal coordinates, so the result is not restricted to the single-terminal-variable spectrum. The proof also supplies a reusable source projection criterion from actual membership and covariance pairings.
+
+Significance: all-order Wick projection, legitimate countable nonlinear summability, and the actual full Brownian past now compose into an exact prediction law. No spatial SPDE solution, path regularity, or time generator is asserted. Energy scaling at the initial time alone does not imply better positive-time increments; that issue is being investigated separately.
+
+Verification: full Lake build 4383 jobs (.lake/stardust-69-build.log); ten public types inspected; 7360 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-69-audit.log). Discovery 68 checkpoint: dc287a6. Discovery 69 is the commit containing this entry.
+
+Reflection: the countable nonlinear benchmark can calibrate future renormalized stochastic responses. A source covariance calculation suggests exact increment energy proportional to t^d-s^d, so positive-time regularity may remain Brownian despite the degree-dependent initial prediction exponent. This is the immediate next proof target.
+
+### Public locations — discovery 69
+
+Prefix: OperatorDerivativeRewrite.Foundation.SPDEWickBrownianPrediction.
+
+| Name | Source |
+| --- | --- |
+| sourceProjection_eq_of_pairings | Foundation/SPDEWickBrownianPrediction.lean:13 |
+| brownianDirection_inner | Foundation/SPDEWickBrownianPrediction.lean:31 |
+| pastDirections | Foundation/SPDEWickBrownianPrediction.lean:38 |
+| mode_source_projection | Foundation/SPDEWickBrownianPrediction.lean:40 |
+| response | Foundation/SPDEWickBrownianPrediction.lean:50 |
+| response_hasSum | Foundation/SPDEWickBrownianPrediction.lean:53 |
+| full_past_prediction | Foundation/SPDEWickBrownianPrediction.lean:59 |
+| response_energy_hasSum | Foundation/SPDEWickBrownianPrediction.lean:66 |
+| full_past_prediction_energy | Foundation/SPDEWickBrownianPrediction.lean:74 |
+| harmonic_square_prediction_energy | Foundation/SPDEWickBrownianPrediction.lean:85 |
