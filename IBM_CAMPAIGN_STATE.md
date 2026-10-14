@@ -419,3 +419,123 @@ Full pinned Lake build passed 4,293 jobs. All six new public declaration types c
 
 Manuscript checked directly: original PDF SHA256 `5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE`. Rendered pages 4 and 6 were inspected. Proposition 3.4 uses local-time coefficient g′(0), consistent with `|Y_t|=|Y_0|+∫sgn(Y_s)dY_s+L⁰_t`. This is manuscript inspection, not a Lean proof of Tanaka or of its IBM application. No new manuscript claim was disproved in this campaign; the previously recorded negative-bulk slope correction remains in force. The PDF is unchanged.
 
+
+## Pathwise bridge completion report and dependency map — 2026-10-13
+
+### Verified outcome and Git history
+
+The campaign establishes quantitative common-event control of the actual mollified Gaussian scenery skeleton and global fixed-time integrability of its derivative convolutions at the Brownian clock. It does **not** establish a jointly measurable C² modification or a stochastic IBM change-of-variables formula.
+
+Initial HEAD: `ccc014559b5985011893d1a89278f0fda6c9344f`.
+Final mathematical HEAD: `ba284cee17a8b8bf133814ea3ddd90d67074c31e`.
+The documentation-only commit following this report is identified in the final chat response; its own hash cannot be embedded in its contents.
+
+Substantive verified commits:
+
+1. `fb66fe5e6759d2b83e4f2dd52c8a6bbeeb130671` — exact and compact-uniform fourth moments of the actual Gaussian convolution increments; explicit fourth-power integrability.
+2. `ce7de19daccf58256a68e9846d68ba88fe78cd09` — probability tails, finite-grid Borel–Cantelli control, explicit dyadic estimates and one common full-measure event across all scales/derivative fields/integer windows.
+3. `ba284cee17a8b8bf133814ea3ddd90d67074c31e` — signed-kernel global growth and fixed-time global L² integrability at the actual independent clock, including U,V,W.
+
+The supplied `023cbcd` checkpoint was historical: incoming `ccc0145` had already proved iterated-L² random-clock evaluation and mollification convergence. That result was inspected and reused, not recreated. The twelve initially untracked unrelated documents remain untouched. No reset, push, automation, extra agent or dependency upgrade was performed.
+
+### Exact new declarations and interpretation
+
+All names have prefix `OperatorDerivativeRewrite.Foundation.`. Source paths are relative to `C:/OperatorDerivativeRewrite`.
+
+| Module | Declaration and source line | Mathematical content and assumptions |
+| --- | --- | --- |
+| `Foundation/IBMSmoothIncrementMoments.lean` | `IBMSmoothIncrementMoments.convolution_increment_fourth_integrable`, 16 | Fourth power of the actual deterministic-point convolution increment is integrable. |
+| same | `convolution_increment_fourth`, 25 | E[(Gρ(t)−Gρ(s))⁴] = 3‖Uρ(t)−Uρ(s)‖⁴. General kernel; actual Bochner conventions. |
+| same | `convolution_increment_fourth_le`, 45 | Compactly supported C¹ kernel and explicit derivative bound C on [a,b] imply fourth moment ≤3C⁴|t−s|⁴. |
+| same | `convolution_compact_increment_bound`, 66 | For compactly supported C² kernels, compactness supplies C≥0 independently of s,t in [a,b]. |
+| same | `gaussianTriple_compact_increment_bound`, 85 | Specializes to each concrete normalized U,V,W field, using the actual smooth bump derivatives. |
+| `Foundation/IBMSmoothIncrementTails.lean` | `IBMSmoothIncrementTails.convolution_increment_tail`, 18 | Markov tail bound P(δ⁴≤ΔG⁴)≤3C⁴|t−s|⁴/δ⁴, δ>0. |
+| same | `gaussianTriple_compact_tail`, 38 | One compact constant for all pairs and positive thresholds of each actual U,V,W field. |
+| same | `gaussianTriple_grid_control`, 57 | Arbitrary finite rows inside [a,b], cardinalities m_l, spacings ≤h_l and positive thresholds δ_l; deterministic summability Σm_l h_l⁴/δ_l⁴ gives almost-sure eventual simultaneous control. |
+| same | `gaussianTriple_dyadic_control`, 108 | For each unit interval and actual field, all 2^l adjacent dyadic increments are eventually <(3/4)^l almost surely. Budget (32/81)^l is actually proved summable. |
+| same | `gaussianTriple_common_dyadic_control`, 141 | A single probability-one event covers all natural mollifier scales, all three fields and every integer unit interval; eventual levels are allowed to vary. |
+| `Foundation/IBMRandomDerivativeIntegrability.lean` | `IBMRandomDerivativeIntegrability.kernelMass`, 18 | Actual absolute kernel mass on [−R,R]. |
+| same | `offsetScenery_norm_sq_le`, 23 | Continuous signed ρ and R≥0 give ‖offsetScenery(x)‖²≤A²(|x|+R), A=∫[−R,R]|ρ(−r)|. |
+| same | `wholeLineScenery_norm_sq_le`, 54 | Same bound for the original convolution when ρ vanishes outside [−R,R], using the actual translation bridge. |
+| same | `randomKernelClass`, 69 | Actual Gaussian-L²-valued map ωY↦Uρ(|Y_t(ωY)|). |
+| same | `randomKernelClass_memLp`, 74 | Every compactly supported C¹ kernel has this map in L²(clock;L²(scenery)), at each fixed t. |
+| same | `randomDerivativeClass_memLp`, 108 | The same holds for the actual normalized U,V,W kernels. No clock continuity or localization required. |
+
+The new theorems are category **A**, unconditional IBM-specific source-field results. Their Gaussian L² equalities are Hilbert-class statements, while the dyadic bounds concern actual scalar representatives on a countable skeleton. Neither interpretation is silently promoted to an uncountable pathwise equality. The finite-grid theorem has an explicit deterministic summability assumption, discharged in the dyadic application. No stochastic regularity assumption equivalent to the desired conclusion is introduced.
+
+### Build and proof integrity
+
+The three full pinned Lake builds passed **4,291**, **4,292**, and **4,293** jobs, respectively. All sixteen new public declaration types were inspected. The final environment-wide axiom audit checked **5,918 safe Foundation declarations**, including generated declarations, and accepted only `propext`, `Classical.choice`, `Quot.sound`. Earlier milestones checked 5,905 and 5,912. These counts are broader than the historical explicit-declaration audit and must not be interpreted as a declaration-growth comparison.
+
+The audit imports the complete root library, runs `Lean.collectAxioms` for every safe declaration with the Foundation namespace prefix, and throws an error for any other axiom. Logs, exact type output and audit source are retained under `.lake/campaign-ibm-pathwise-01-*`, `02-*`, `03-*`. The new modules contain no proof holes, unsafe definitions or custom axioms. `git diff --check` passed before the final documentation update. The pinned Lean is `v4.34.1`; Mathlib remains pinned at `v4.34.1` with its existing manifest.
+
+### Status of the requested mathematical program
+
+| Requested component | Actual status |
+| --- | --- |
+| Continuous Brownian sources | Open. Verified coordinate laws and fourth moments remain available; no unconditional continuous modification was constructed. |
+| Jointly measurable smooth scenery | Open. New compact moment bounds and one common full-measure dyadic-control event are established. The extension and C² compatibility steps remain. |
+| Random-clock mollified IBM | Unconditional fixed-time iterated-L² U construction/convergence was incoming; new global integrability covers V,W too. Existing pointwise continuous processes remain category B, conditional on supplied continuous source paths. |
+| Nonlinear pathwise chain rule | Existing category B deterministic convolution theorem `IBMMollifiedScenery.second_chain_rule` remains valid for supplied continuous scenery and explicit test-function derivative assumptions. No new unconditional Gaussian-path instantiation. |
+| Brownian local time | Not constructed. Pinned-library searches found no applicable completed Tanaka/local-time theorem. |
+| Genuine fixed-mollifier Itô–Tanaka | Not proved. No Brownian integral or local-time term is supplied by the new results. |
+| IBM-specific source-adjoint link | Incoming convolution graph identities and Gaussian isometries remain verified. They support L² estimates and smoothing; no new identity connects an actual stochastic change-of-variables correction to the clock adjoint. |
+| Full smooth-test Gaussian Stein identity | Open beyond incoming quartic moment/variance identities. New results do not supply a general smooth-test integration-by-parts theorem. |
+| First-scenery-chaos residual | Not identified from an actual Itô–Tanaka correction. Quartic expectations remain zeroth-chaos statements. |
+| Ordinary L² obstruction | Not proved for an actual correction. No lower-bound/non-Cauchy theorem was established. |
+| IBM-specific H⁻¹ convergence | Not proved. Incoming category C bounded differentiation, Dirac channel and assembly transfer remain reusable, but no actual local-time kernel has been supplied. |
+| Higher-chaos reconstruction | Open. Neither sector limits nor a convergent full reconstruction were established. |
+| Intrinsic observable domain | Incoming abstract restriction/projected-divergence infrastructure remains reusable. Actual IBM cylinder-core density and intrinsic closedness were not discharged. |
+
+**Strongest change-of-variables result actually available:** the deterministic spatial second chain rule for convolution of a supplied continuous scenery path, with explicit first/second derivatives of the test function. It is not a stochastic IBM Itô–Tanaka theorem. No full fixed-mollifier or singular unmollified formula is claimed.
+
+### Dependency map and exact missing edges
+
+Write G_{n,j}(r,ω) for the actual `gaussianTriple n r j ω`, j=0,1,2. Its deterministic-point L² classes are already identified with U,V,W. Let I=[a,b]. The following are desired theorem signatures, not implemented declarations.
+
+1. **Continuous extension and measurable path selection.** From the now-verified moment estimates and dyadic common event, prove
+
+   `∃ S : SampleSpace → C(I,ℝ), Measurable S ∧ ∀ r : I, (fun ω => S ω r) =ᵐ[gaussianProduct] (fun ω => G_{n,j}(r,ω))`.
+
+   Dependencies: deterministic dyadic chaining/uniform continuity on the dense skeleton; complete-target extension; selection by countable limits; mean-square continuity to identify every deterministic coordinate. Obstacle: missing probability/metric-space construction, not missing Gaussian moments. A dyadic increment event alone does not constitute this theorem. Unit-interval constructions must agree on common boundaries, and the resulting global version must be measurable.
+
+2. **Derivative compatibility of the selected continuous fields.** For measurable continuous modifications U,V,W with the actual deterministic-coordinate L² agreement, prove
+
+   `∀ᵐ ω, ∀ r, HasDerivAt (U ω) (V ω r) r ∧ HasDerivAt (V ω) (W ω r) r`.
+
+   Dependencies: legitimate identification of the L² fundamental-theorem-of-calculus integral with the samplewise integral, local integrability/Fubini, a countable common event for endpoint integral identities, then continuity and the classical fundamental theorem. Obstacle: functional-analytic/probability interface. Strong L² differentiation by itself does not imply this conclusion. This yields the actual C² modification needed for the primary theorem.
+
+3. **Actual product-space random-time agreement and integrability.** For the jointly measurable modified field and the actual clock, prove deterministic-time product-a.e. agreement between the pointwise composition and the iterated-L² object, e.g.
+
+   `∀ t, pointwise U(|Y_t|) represents randomMollifiedL2 n t`.
+
+   Dependencies: joint field measurability, deterministic-coordinate modification equality, product Fubini and source independence. The new V,W integrability can then transfer to actual coefficients. Nonlinear test functions still need bounded-derivative or separately proved moment assumptions. Time-integrated stochastic coefficient estimates need an additional finite-horizon argument. Obstacle: representative/product-L² interface.
+
+4. **Continuous Brownian clock.** Construct a measurable path-valued modification of `GaussianTimeProcess.process` with each coordinate a.e. equal to the original, preserving coherent Gaussian laws. Dependencies: actual Brownian moment bounds, dyadic extension and deterministic-point identification. Path-space independence must use measurability on the separate source factors, not pairwise scalar independence. Obstacle: probability construction. An alternative valid Wiener-path probability space may be used with an explicit law/adjoint bridge.
+
+5. **Local time and deterministic reflected-clock composition.** Construct L⁰ and prove
+
+   `g(|Y_t|)−g(|Y_0|) = ∫₀ᵗ g′(|Y_s|)sgn(Y_s)dY_s + g′(0)L⁰_t + (1/2)∫₀ᵗg″(|Y_s|)ds`
+
+   with defined Brownian stochastic integrals, appropriate integrability/localization, and a genuine probability limit defining local time. Dependencies: continuous Brownian clock, stochastic integration and smooth approximation of |·| with convergent derivative terms. Obstacle: substantial probability theory. The convention is `|Y_t|=|Y_0|+∫sgn(Y_s)dY_s+L⁰_t`, so the boundary coefficient is g′(0), not g′(0)/2.
+
+6. **Fixed-mollifier IBM formula and adjoint identification.** Substitute the actual pathwise chain rule into item 5, and identify the adapted clock integral with the existing clock divergence on its proved domain. Dependencies: items 1–5, actual integrability of nonlinear coefficients and measurable conditioning on scenery. Obstacle: stochastic-domain/interface closure. Source graph membership alone is insufficient.
+
+7. **Actual first-chaos residual and Sobolev limit.** Define the correction from item 6, prove its scenery first-chaos projection by source duality, retain every differentiated term and the origin term, then identify actual clock-dependent interior and boundary kernels. Desired limit: `Kε → K` in `L²(ΩY;H⁻¹(ℝ))`. Dependencies: correct projection coefficients, local-time spatial measurability/integrability, actual L² approximate-identity convergence and coefficient convergence; then reuse the existing bounded H⁻¹ assembly. Obstacle: analytic estimates and stochastic projection, not absence of a general bounded derivative operator. Ordinary L² nonconvergence separately requires quantitative lower bounds.
+
+8. **Higher sectors and intrinsic observables.** Prove sector energies/convergence and a reconstruction in a common space before asserting a full correction. For intrinsic IBM calculus, construct actual observable-domain elements and establish the required cylinder-core density or retain a nondense partial adjoint. Dependencies: actual IBM paths and correction plus observable sigma-algebra analysis. Obstacle: mathematical domain/density questions, not merely an operator wrapper.
+
+### Manuscript fidelity and novelty classification
+
+The original 24-page manuscript was checked through its archived text and direct rendered inspection of pages 4 and 6. SHA256 remains `5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE`. Page 6 Proposition 3.4 is the intended fixed-mollifier identity; its local-time normalization agrees with item 5. This visual/formula audit is not a Lean proof of the proposition. A complete external literature/novelty review was not completed during this campaign.
+
+The new bounds formalize standard Gaussian moments, compact derivative estimates, Markov and first Borel–Cantelli in the concrete IBM source model. They are verified specialized applications, not claims of mathematical novelty. Existing abstract Sobolev machinery remains category C. No new manuscript claim was disproved here; the incoming category D correction that negative-bulk variance has slope −1 rather than +1 remains essential. All stochastic formula/residual/limit obligations above are category E until proved.
+
+The integration-first source calculus materially simplifies these verified class-level results: its constructed isonormal isometry and source energy make exact Gaussian moments and signed-kernel growth available without assuming sample paths. It has not yet simplified or strengthened a **proved stochastic IBM Itô–Tanaka theorem**, because that theorem remains absent. Defining D=J* does not by itself supply a jointly measurable smooth field, Brownian local time, or intrinsic observable-domain density.
+
+### Three most valuable next targets
+
+1. Close item 1 on one compact interval: measurable continuous modification of each actual Gaussian convolution field from the now-proved dyadic common event, with deterministic-coordinate agreement.
+2. Close item 2 and the product-space portion of item 3: pathwise derivative compatibility on one common event and legitimate random-clock evaluation of those exact classes.
+3. Construct Brownian local time and prove the reflected-clock smooth-composition theorem in item 5, then instantiate the actual fixed-mollifier IBM formula and clock-adjoint domain identity.
+
