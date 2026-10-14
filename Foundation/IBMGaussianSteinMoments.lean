@@ -11,6 +11,7 @@ open InfiniteGaussian GaussianQuadraticIncrement
 open FractionalControlledEstimate GaussianDeterministicGraphCore
 open GaussianTimeSpaceHermite
 open IBMJointMollifierGaussian FractionalSpectralKernel
+open IBMContinuousScenery
 open SeparableHilbertEmbedding
 attribute [local instance] FractionalSpectralKernel.spectralSpace_secondCountable
 
@@ -174,5 +175,97 @@ theorem concrete_quartic_correction_expectation (n : ℕ) (x : ℝ)
   rw [integral_add (hi₁.const_mul _) (hi₂.const_mul _),
     integral_const_mul, integral_const_mul]
   exact concrete_quartic_stein_cancellation n x hbulk
+
+/-- Exact finite-mollifier quartic correction at every spatial point. The
+second and third terms are the boundary departures from bulk cancellation;
+no singular limit is inferred from this finite identity. -/
+theorem quartic_correction_expectation_all_x (n : ℕ) (x : ℝ) :
+    (∫ ω, (1 / 2 : ℝ) *
+        (gaussianTriple n x 0 ω)^2 * (gaussianTriple n x 1 ω)^2 +
+        (1 / 6 : ℝ) *
+        (gaussianTriple n x 0 ω)^3 * gaussianTriple n x 2 ω
+      ∂gaussianProduct) =
+      (1 / 2 : ℝ) *
+        cov[gaussianTriple n x 0, gaussianTriple n x 0; gaussianProduct] *
+        (cov[gaussianTriple n x 1, gaussianTriple n x 1; gaussianProduct] +
+          cov[gaussianTriple n x 0, gaussianTriple n x 2; gaussianProduct]) +
+        cov[gaussianTriple n x 0, gaussianTriple n x 1; gaussianProduct]^2 := by
+  have hi₁ : Integrable (fun ω =>
+      (gaussianTriple n x 0 ω)^2 * (gaussianTriple n x 1 ω)^2)
+      gaussianProduct :=
+    mul_L2_integrable (triple_square_memLp n x 0) (triple_square_memLp n x 1)
+  have hi₂ : Integrable (fun ω =>
+      (gaussianTriple n x 0 ω)^3 * gaussianTriple n x 2 ω)
+      gaussianProduct :=
+    mul_L2_integrable (triple_cube_memLp n x 0) (triple_first_memLp n x 2)
+  simp only [mul_assoc]
+  rw [integral_add (hi₁.const_mul _) (hi₂.const_mul _),
+    integral_const_mul, integral_const_mul,
+    gaussianTriple_square_product n x 0 1,
+    gaussianTriple_cube_first_product n x 0 2]
+  ring
+
+theorem gaussianTriple_covariance_eq_L2_inner (n : ℕ) (x : ℝ) (i j : Fin 3) :
+    cov[gaussianTriple n x i, gaussianTriple n x j; gaussianProduct] =
+      inner ℝ (wholeLineScenery (derivativeKernel n i) x)
+        (wholeLineScenery (derivativeKernel n j) x) := by
+  rw [gaussianTriple_covariance, wholeLineScenery_eq_sourceEmbedding,
+    wholeLineScenery_eq_sourceEmbedding, LinearIsometry.inner_map_map]
+
+/-- The finite quartic correction depends only on the first two derivatives
+of the actual Gaussian scenery variance. This is valid at the boundary as
+well as in the bulk, before any singular limit. -/
+theorem quartic_correction_variance_geometry (n : ℕ) (x : ℝ) :
+    (∫ ω, (1 / 2 : ℝ) *
+        (gaussianTriple n x 0 ω)^2 * (gaussianTriple n x 1 ω)^2 +
+        (1 / 6 : ℝ) *
+        (gaussianTriple n x 0 ω)^3 * gaussianTriple n x 2 ω
+      ∂gaussianProduct) =
+      (1 / 4 : ℝ) * (deriv (wholeLineVariance (IBMMollifier.kernel n)) x)^2 +
+        (1 / 4 : ℝ) * wholeLineVariance (IBMMollifier.kernel n) x *
+          deriv (fun y => deriv (wholeLineVariance (IBMMollifier.kernel n)) y) x := by
+  rw [quartic_correction_expectation_all_x]
+  have h₀₀ : cov[gaussianTriple n x 0, gaussianTriple n x 0; gaussianProduct] =
+      wholeLineVariance (IBMMollifier.kernel n) x := by
+    rw [gaussianTriple_covariance_eq_L2_inner]
+    simp [derivativeKernel, wholeLineVariance]
+  have h₀₁ : 2 * cov[gaussianTriple n x 0, gaussianTriple n x 1;
+      gaussianProduct] = deriv (wholeLineVariance (IBMMollifier.kernel n)) x := by
+    rw [gaussianTriple_covariance_eq_L2_inner]
+    simpa [derivativeKernel] using
+      (wholeLineVariance_deriv (IBMMollifier.kernel n)
+        (IBMMollifier.kernel_compactSupport n)
+        ((IBMMollifier.kernel_smooth n).of_le (by norm_num)) x).symm
+  have hsum : 2 *
+      (cov[gaussianTriple n x 1, gaussianTriple n x 1; gaussianProduct] +
+        cov[gaussianTriple n x 0, gaussianTriple n x 2; gaussianProduct]) =
+      deriv (fun y => deriv (wholeLineVariance (IBMMollifier.kernel n)) y) x := by
+    rw [gaussianTriple_covariance_eq_L2_inner,
+      gaussianTriple_covariance_eq_L2_inner]
+    simpa [derivativeKernel, real_inner_self_eq_norm_sq] using
+      (wholeLineVariance_second_deriv (IBMMollifier.kernel n)
+        (IBMMollifier.kernel_compactSupport n)
+        ((IBMMollifier.kernel_smooth n).of_le (by norm_num)) x).symm
+  rw [h₀₀]
+  have hsq := congrArg (fun z : ℝ => z^2) h₀₁
+  have hmul := congrArg (fun z : ℝ =>
+      wholeLineVariance (IBMMollifier.kernel n) x * z) hsum
+  nlinarith
+
+/-- Exact finite-mollifier boundary deviation from the bulk `1/4` Stein
+coefficient. All terms are ordinary real derivatives of the proved Gaussian
+L² variance; no distributional limit has been taken. -/
+theorem quartic_boundary_stein_deviation (n : ℕ) (x : ℝ) :
+    (∫ ω, (1 / 2 : ℝ) *
+        (gaussianTriple n x 0 ω)^2 * (gaussianTriple n x 1 ω)^2 +
+        (1 / 6 : ℝ) *
+        (gaussianTriple n x 0 ω)^3 * gaussianTriple n x 2 ω
+      ∂gaussianProduct) - 1 / 4 =
+      (1 / 4 : ℝ) *
+        ((deriv (wholeLineVariance (IBMMollifier.kernel n)) x)^2 - 1 +
+          wholeLineVariance (IBMMollifier.kernel n) x *
+            deriv (fun y => deriv (wholeLineVariance (IBMMollifier.kernel n)) y) x) := by
+  rw [quartic_correction_variance_geometry]
+  ring
 
 end OperatorDerivativeRewrite.Foundation.IBMGaussianSteinMoments
