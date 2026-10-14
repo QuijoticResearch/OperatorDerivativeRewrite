@@ -2675,3 +2675,29 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianJointRecoveryIntertwining.
 | joint_recovery_conditional | Foundation/GaussianJointRecoveryIntertwining.lean:124 |
 | joint_recovery_operator | Foundation/GaussianJointRecoveryIntertwining.lean:134 |
 
+
+## Discovery 85 — both full closed Gaussian graphs intertwine with joint observation
+
+The projected gradient of degree n is n times recovery of that scalar chaos projection. Full joint recovery intertwining therefore gives degreewise gradient compatibility. Legitimate full derivative graph convergence then proves that (f,g) in the actual closed derivative graph implies (C_h f,J_h g) lies in the same graph. On the actual derivative domain, D(C_h f)=J_h(Df).
+
+Hilbert adjoint duality proves the companion full divergence identity: every admitted (v,f) maps to (J_h v,C_h f) in the actual divergence graph. The joint projection also preserves the global closed gradient range and commutes with its genuine orthogonal Hodge projection. Arbitrary observation index sets and correlated families are allowed throughout; no domain or graph is defined by fiat.
+
+Significance: the bounded all-L2 recovery identity now controls both original unbounded source graphs. Observed restriction produces a compatible differential and adjoint pair within the verified calculus. This is a reusable full-domain transfer principle for Gaussian-generated models. The joint projection changes both source and sample variables; an adapted integral or physical causal kernel remains a separate obligation.
+
+Verification: full Lake build 4399 jobs (.lake/stardust-85-build.log); seven public types inspected; 7688 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-85-audit.log). Discovery 84 checkpoint: 71faefc. Discovery 85 is the commit containing this entry.
+
+Reflection: the formerly open abstract compatibility branch is now closed for scalar recovery, the adjoint, both full graphs and Hodge projection. Immediate exploration turns to continuous-time observation multiplicity and compactness, then should return to genuinely physical causal bridges rather than repeating abstract compatibility variants.
+
+### Public locations — discovery 85
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianConditionalFullGraphs.
+
+| Name | Source |
+| --- | --- |
+| projectedGradient_eq_number_recovery | Foundation/GaussianConditionalFullGraphs.lean:13 |
+| projectedGradient_joint_commute | Foundation/GaussianConditionalFullGraphs.lean:24 |
+| conditional_derivative_graph | Foundation/GaussianConditionalFullGraphs.lean:29 |
+| conditional_divergence_graph | Foundation/GaussianConditionalFullGraphs.lean:39 |
+| joint_preserves_gradientRange | Foundation/GaussianConditionalFullGraphs.lean:53 |
+| joint_gradientProjection_commute | Foundation/GaussianConditionalFullGraphs.lean:58 |
+| conditional_domain_values | Foundation/GaussianConditionalFullGraphs.lean:66 |
