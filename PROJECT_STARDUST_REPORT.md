@@ -6,20 +6,20 @@ Started 2026-10-14 from e7dac26ea306c89e3df9ddba015b54554a7caf2b in C:\OperatorD
 
 This report is durable research memory. Entries marked verified have completed the full build, public type inspection and transitive axiom audit. Ongoing conjectures are separate. No execution after the active session is promised.
 
-## Periodic consolidation — verified through discovery 92
+## Periodic consolidation — verified through discovery 96
 
-The latest prior saved checkpoint is 05ca70a; discovery 92 is the commit containing its entry. Full Lake build: 4406 jobs. The complete transitive audit checks 7803 safe Foundation declarations and permits only propext, Classical.choice and Quot.sound. Pinned dependencies and the named IBM manuscript hash remain unchanged. Later verified entries supersede this count. The campaign remains active within this session.
+The latest prior saved checkpoint is 940cb4f; discovery 96 is the commit containing its entry. Full Lake build: 4410 jobs. The complete transitive audit checks 7856 safe Foundation declarations and permits only propext, Classical.choice and Quot.sound. Pinned dependencies and the named IBM manuscript hash remain unchanged. Later verified entries supersede this count. The campaign remains active within this session.
 
 1. **Most significant discoveries:** full minimum-norm Gaussian recovery; complete actual Poisson coordinates and full graph transfer; fixed-mollifier IBM joint cubic time L2/recovery; complete terminal prediction spectrum and rank laws; countable renormalized Wick responses; sharp source-dependent quartic regularity; recovery compactness contrasts; the full joint source/sample recovery identity and both full graphs; and exact causal/minimal-source Hodge energy with uniform alternating-projection convergence.
-2. **Verified record:** each discovery gives exact public names, source lines, build and transitive audit. The ledger lists saved mathematical checkpoints through 91; discovery 92 is saved with this consolidation. These are verified repository mathematics and connections, without a blanket world-level novelty claim.
+2. **Verified record:** each discovery gives exact public names, source lines, build and transitive audit. The ledger lists saved mathematical checkpoints through 95; discovery 96 is saved with this consolidation. These are verified repository mathematics and connections, without a blanket world-level novelty claim.
 3. **Unexpected connections:** physical Poisson gauges reconstruct scalar Gaussian graph displacements. Compact actual Poisson recovery factors Gaussian recovery after one coordinate. Nonlinear terminal prediction reduces to linear source geometry. Gaussian Hodge projection realizes matrix symmetrization. The inverse-number potential and observed polynomial graph density establish full joint recovery and graph compatibility. Genuine causal Ito fields have degree-dependent divergence-free residuals, and alternating causal/Hodge projection extracts first chaos uniformly.
 4. **Corrected conjectures and counterexamples:** Poisson curvature does not imply quadratic entropy even on the finite-support core. The Poisson L4 inverse is everywhere exactly one-third regular. Actual H=1/4 full-past forecasts beat the current coordinate. Initial Wick rank does not improve positive-time increment powers. Ordinary vector conditioning fails to commute with recovery; the joint source/sample projection does commute. Inverse-number damping preserves positive-rank fractional power obstructions.
 5. **Reusable principles:** full recovery and source Hodge geometry; centered/coherent Poisson inverses; L2/Fubini transfer; exact Wick projection and terminal spectrum; weighted-source stability and atom obstructions; physical graph gauges; countable renormalized response and Gram criteria; entropy/core graph approximation; compact recovery tails; quadratic matrix Hodge formulas; inverse-number conditional commutation; and all-L2 joint recovery intertwining with its adjoint identity.
 6. **Promising unproved obligations:** actual fractional spectral/Volterra bridge and sharp linear upper/asymptotic laws; physical IBM kernels and uniform limits; recovery compactness for general finite-dimensional observed source spans; a general modified Poisson entropy theorem and physical spectral semigroup; spatial/temporal renormalized SPDE solutions; and countable completed matrix-field Hodge geometry. The all-L2 joint identity and both full graph identities are now discharged. The actual repository fractional sharp upper law remains open despite classical results cited at discovery 60.
-7. **Limits:** scalar Poisson/Gaussian transfer does not identify full infinite Gaussian fields or preserve products/entropy. Fixed-mollifier IBM recovery is not an Ito-Tanaka limit. Countable Wick responses are actual L2 classes, not SPDE solutions or path versions. Joint source conditioning alone does not prove an adapted integral or Clark-Ocone formula. Degree-zero energy is not variance. Number-degree damping is not physical time smoothing. The scalar Gaussian displacement group now has a physical coherent vacuum and reference independence, but no arbitrary-target pointwise translation formula yet.
+7. **Limits:** scalar Poisson/Gaussian transfer does not identify full infinite Gaussian fields or preserve products/entropy. Fixed-mollifier IBM recovery is not an Ito-Tanaka limit. Countable Wick responses are actual L2 classes, not SPDE solutions or path versions. Joint source conditioning alone does not prove an adapted integral or Clark-Ocone formula. Degree-zero energy is not variance. Number-degree damping is not physical time smoothing. The scalar Gaussian displacement group now has its physical formula and strong continuity; nonzero action has no bounded L4 realization and positive displacements remain uniformly away from identity in operator norm.
 8. **Most surprising operator contrast:** full Gaussian recovery and one-coordinate conditioning are separately noncompact, while their actual composition is compact via Poisson factorization. Positive countable Brownian full-past recovery is noncompact. Yet a universal exact joint projection identity holds on all scalar L2 targets. Compactness and compatibility answer different questions.
 9. **Research priorities:** the general joint identity is complete. Full unbounded graph compatibility and actual causal/Hodge projection dynamics are complete. Priority moves toward physical causal kernels, function-space source assumptions, and precise finite versus infinite observed-source compactness. Sharp actual fractional forecasts and uniform IBM limits remain the major physical bottlenecks.
-10. **Next three directions:** (i) scalar Gaussian displacement strong continuity and physical transport; (ii) actual fractional causal bridge and sharp upper forecast laws; (iii) general finite-source compactness and useful L4 stochastic source embeddings. General modified Poisson entropy and spatial renormalized SPDE construction deserve focused separate campaigns.
+10. **Next three directions:** (i) physical entropy distortion and actual damped countable stochastic convolutions; (ii) actual fractional causal bridge and sharp upper forecast laws; (iii) general finite-source compactness and useful L4 stochastic source embeddings. General modified Poisson entropy and spatial renormalized SPDE construction deserve focused separate campaigns.
 
 ### Current investigation register
 
@@ -29,7 +29,7 @@ The latest prior saved checkpoint is 05ca70a; discovery 92 is the commit contain
 | Terminal nonlinear Gaussian L2 prediction | Exact spectrum, sufficient coordinate, leading-rank remainder/limit, inverse-number rank preservation | Multidirectional terminal families |
 | Fractional source geometry | Dual lower exponent; exact Brownian benchmark; actual current-only counterexample | Causal bridge and matching upper law |
 | Poisson complete calculus | Full bases/graphs, centered and coherent recovery, compact inverse | Physical spectral semigroup |
-| Tilt/coherent graph geometry | Physical Poisson gauges, both displaced graphs, physical Gaussian coherent vacuum and intrinsic real displacement group | Strong continuity, physical pointwise formula and infinite-field extension |
+| Tilt/coherent graph geometry | Physical Poisson gauges; intrinsic real Gaussian group with all-L2 formula and strong continuity; L4/operator-norm obstructions | Infinitesimal generator and infinite-field extension; scalar branch consolidated |
 | Poisson curvature and entropy | Sharp pointwise coefficients; finite-core Gamma identity and entropy counterexamples | General modified jump entropy; ordinary quadratic branch closed |
 | IBM fixed-mollifier cubic target | Actual joint L2 and recovered source | Physical kernel and uniform mollifier limits |
 | IBM primitive obstruction | Necessary source-vector condition | Actual blow-up/non-Cauchy theorem |
@@ -1710,7 +1710,7 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonTiltComposition.
 | relativeEntropy_not_symmetric | Foundation/PoissonTiltComposition.lean:56 |
 
 
-## Chronological mathematical checkpoint ledger through discovery 91
+## Chronological mathematical checkpoint ledger through discovery 95
 
 | Commit | Verified checkpoint |
 | --- | --- |
@@ -1805,6 +1805,10 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonTiltComposition.
 | 20b7c0e | Uniform causal/Hodge alternation and projection noncommutation |
 | 33b18fa | Physical Gaussian exponential graphs and full Sobolev-L4 obstruction |
 | 05ca70a | Identify physical Gaussian coherent vacuum through full Poisson graph transfer |
+| 163f15c | Establish reference-independent real Gaussian displacement group |
+| 19e0474 | Strong continuity of intrinsic real Gaussian displacement group |
+| 8cfbe52 | No bounded physical L4 realization at nonzero displacement |
+| 940cb4f | All-L2 physical Gaussian half-density translation formula |
 
 Documentation checkpoint: 5ec7740 consolidated discoveries through 56.
 
@@ -3001,3 +3005,31 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianPhysicalDisplacement.
 | displacement_physical_formula | Foundation/GaussianPhysicalDisplacement.lean:78 |
 | physicalAction_memLp | Foundation/GaussianPhysicalDisplacement.lean:91 |
 | physicalAction_class | Foundation/GaussianPhysicalDisplacement.lean:95 |
+
+## Discovery 96 — Gaussian displacement is strongly continuous but not operator-norm continuous
+
+For every positive real displacement d, the actual Gaussian unitary has operator-norm distance at least square root of two from identity. A genuine Gaussian L2 indicator of (0,d) is nonzero, while its physically translated image is supported in (2d,3d). The two actual L2 vectors are orthogonal and have equal norms; their exact difference energy gives the operator bound.
+
+For every positive Poisson reference rate, arbitrarily small positive tilts have positive displacement. The lower bound contradicts operator-norm continuity at tilt zero, even though strong continuity on every target was independently verified in discovery 93. The proof uses actual interval classes, Gaussian translation nonsingularity and the all-L2 physical formula, without an assumed generator or norm-continuity criterion.
+
+Significance: convergence on each target cannot be upgraded to a uniform operator perturbation estimate for these source gauges. This complements the nonzero L4 bounded-realization obstruction and precisely states the available topology of the group. The bound is proved for positive displacements; no exact norm-distance-two theorem is claimed.
+
+Verification: full Lake build 4410 jobs (.lake/stardust-96-build.log); eight public types inspected; 7856 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-96-audit.log). Discovery 95 checkpoint: 940cb4f. Discovery 96 is the commit containing this entry. Executive consolidation and chronological ledger through 95 are updated with this checkpoint.
+
+Reflection: the scalar real displacement branch now has physical coherent identification, reference independence, group law, strong continuity, arbitrary-target pointwise formula, and precise L4/operator-norm limitations. Its infinitesimal generator and infinite-field extension merit a future focused campaign. Immediate exploration quantifies actual coherent-law entropy distortion, then moves toward genuine countable damped stochastic forcing and trace criteria rather than repeating group variants.
+
+### Public locations — discovery 96
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianDisplacementNormDiscontinuity.
+
+| Name | Source |
+| --- | --- |
+| intervalProbe | Foundation/GaussianDisplacementNormDiscontinuity.lean:13 |
+| intervalProbe_coeFn | Foundation/GaussianDisplacementNormDiscontinuity.lean:16 |
+| gaussian_interval_ne_zero | Foundation/GaussianDisplacementNormDiscontinuity.lean:19 |
+| intervalProbe_norm_pos | Foundation/GaussianDisplacementNormDiscontinuity.lean:26 |
+| translated_probe_orthogonal | Foundation/GaussianDisplacementNormDiscontinuity.lean:30 |
+| positive_displacement_opNorm_lower | Foundation/GaussianDisplacementNormDiscontinuity.lean:49 |
+| positive_tilt_displacement | Foundation/GaussianDisplacementNormDiscontinuity.lean:69 |
+| displacement_not_opNorm_continuousAt_zero | Foundation/GaussianDisplacementNormDiscontinuity.lean:76 |
+
