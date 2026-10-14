@@ -936,3 +936,23 @@ Prefix: OperatorDerivativeRewrite.Foundation.IBMClockSixthMoment.
 | clock_sixth_integral | Foundation/IBMClockSixthMoment.lean:21 |
 | one_add_abs_sixth_bound | Foundation/IBMClockSixthMoment.lean:31 |
 | clock_growth_sixth_integral_le | Foundation/IBMClockSixthMoment.lean:39 |
+
+## Discovery 32 — finite-measure scalar L2 integration
+
+If a scalar representative g is in actual L2 of a product measure and the parameter measure mu is finite, its scalar column integral is in L2 of the source measure. Its energy is at most mu(univ) times the full product energy. The source measure need only be s-finite. A proved finite-measure Cauchy–Schwarz estimate controls each column before product integration is used.
+
+This complements discovery 25: one principle identifies Bochner L2 sections with scalar representatives; this one constructs genuine column L2 membership directly from joint product-square integrability. It provides the finite-horizon tool for the joint IBM cubic target, with no uniform pointwise bound, independently postulated column L2 class or normalized probability parameter measure.
+
+Verification: full Lake build 4342 jobs (.lake/stardust-32-build.log); three public types checked; 6684 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-32-audit.log). Discovery 31 checkpoint: 164596a. Discovery 32 is the commit containing this entry.
+
+Reflection: finite parameter mass converts product L2 estimates into actual time-integral L2 estimates. This is a reusable operator bound; it does not convert nonintegrable or singular-limit families into L2, and its parameter-mass factor must be retained.
+
+### Public locations — discovery 32
+
+Prefix: OperatorDerivativeRewrite.Foundation.FiniteMeasureL2Integration.
+
+| Name | Source |
+| --- | --- |
+| square_integral_le | Foundation/FiniteMeasureL2Integration.lean:13 |
+| column_integral_memLp | Foundation/FiniteMeasureL2Integration.lean:41 |
+| column_integral_energy_le | Foundation/FiniteMeasureL2Integration.lean:53 |
