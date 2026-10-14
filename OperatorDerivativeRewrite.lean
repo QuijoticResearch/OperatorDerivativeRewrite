@@ -309,3 +309,4 @@ import Foundation.IBMSourcePrimitiveObstruction
 import Foundation.PoissonExponentialTotal
 import Foundation.PoissonPolynomialDensity
 import Foundation.PoissonCharlierCompleteness
+import Foundation.PoissonCharlierHilbertBasis

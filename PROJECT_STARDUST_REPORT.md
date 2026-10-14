@@ -579,3 +579,34 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonCharlierCompleteness.
 | polynomialEmbedding_ladder | Foundation/PoissonCharlierCompleteness.lean:94 |
 | scalarSpan | Foundation/PoissonCharlierCompleteness.lean:97 |
 | scalarSpan_closure | Foundation/PoissonCharlierCompleteness.lean:100 |
+
+## Discovery 20 — complete Charlier coordinates and Gaussian Hilbert transfer
+
+The actual positive-rate Poisson scalar L2 space now has a normalized Charlier Hilbert basis, with unconditional expansion by its genuine inner-product coefficients. Normalization divides P_n by sqrt(n! lambda^n), whose strict positivity is proved.
+
+Composing its coordinate isometry with the existing complete scalar Gaussian Hermite coordinate isometry gives an actual linear isometric equivalence of the two full scalar L2 spaces. It maps each normalized Charlier vector to the corresponding normalized Hermite vector and preserves every chaos coefficient.
+
+This extends the finite-coefficient geometry of discovery 5 to complete scalar spaces. The Gaussian target here is GaussianCore.GaussianL2, the existing one-variable standard Gaussian model, not the entire infinite-source Gaussian space. The equivalence preserves Hilbert geometry; ordinary multiplication is not identified. Full closed derivative/divergence graph intertwining is not yet claimed.
+
+Verification: full Lake build 4330 jobs (.lake/stardust-20-build.log); twelve public types checked; 6538 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-20-audit.log). Discovery 19 checkpoint: dc12c72. Discovery 20 is the commit containing this entry.
+
+Reflection: scalar spectral coordinates are now reusable across the Gaussian/Poisson branches. The most useful next step is full Poisson divergence recovery, with the rate-weighted field geometry retained explicitly, followed by actual operator graph transfer.
+
+### Public locations — discovery 20
+
+Prefix: OperatorDerivativeRewrite.Foundation.PoissonCharlierHilbertBasis.
+
+| Name | Source |
+| --- | --- |
+| normalizer | Foundation/PoissonCharlierHilbertBasis.lean:13 |
+| normalizer_pos | Foundation/PoissonCharlierHilbertBasis.lean:16 |
+| normalized | Foundation/PoissonCharlierHilbertBasis.lean:22 |
+| normalized_orthonormal | Foundation/PoissonCharlierHilbertBasis.lean:25 |
+| normalized_span | Foundation/PoissonCharlierHilbertBasis.lean:40 |
+| basis | Foundation/PoissonCharlierHilbertBasis.lean:54 |
+| basis_apply | Foundation/PoissonCharlierHilbertBasis.lean:58 |
+| coefficient | Foundation/PoissonCharlierHilbertBasis.lean:61 |
+| expansion_hasSum | Foundation/PoissonCharlierHilbertBasis.lean:65 |
+| gaussianTransfer | Foundation/PoissonCharlierHilbertBasis.lean:69 |
+| transfer_normalized | Foundation/PoissonCharlierHilbertBasis.lean:73 |
+| transfer_coefficient | Foundation/PoissonCharlierHilbertBasis.lean:79 |
