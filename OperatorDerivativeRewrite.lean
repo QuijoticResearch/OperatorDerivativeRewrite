@@ -367,3 +367,4 @@ import Foundation.GaussianRecoveryCompactnessObstruction
 import Foundation.PoissonRecoveryCompactness
 import Foundation.GaussianConditionalCompactness
 import Foundation.GaussianWickRecoveryPrediction
+import Foundation.GaussianOneObservationRecoveryCompactness

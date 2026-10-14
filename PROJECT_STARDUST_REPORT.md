@@ -2396,3 +2396,42 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianWickRecoveryPrediction.
 | prediction_recovery_defect | Foundation/GaussianWickRecoveryPrediction.lean:79 |
 | prediction_recovery_defect_energy | Foundation/GaussianWickRecoveryPrediction.lean:85 |
 | firstChaos_noncommutation | Foundation/GaussianWickRecoveryPrediction.lean:92 |
+
+## Discovery 77 — one-coordinate Gaussian conditioning restores compact recovery
+
+For every unit actual Gaussian source direction u, canonical full Gaussian recovery composed with conditional projection onto the single observed coordinate is compact. The conditional projection itself is noncompact, and full unrestricted recovery is noncompact by discoveries 73 and 75. The distinction is now proved for the actual composed operator on all Gaussian L2 inputs.
+
+The proof constructs a bounded factorization through the actual compact one-count Poisson recovery at rate one. The complete Charlier scalar representation and weighted field isometry connect to the terminal Wick Hilbert embedding. Exact normalized-mode recovery, density of all terminal Wick observables, and the adjoint identity for conditioning prove that the transported compact operator equals canonical recovery after the genuine single-coordinate projection. This is not a newly named operator with a postulated recovery equation.
+
+Significance: restricting observed source multiplicity can restore compactness without making conditional expectation compact. This is a reusable Gaussian/Poisson operator transfer that remains valid for the actual minimum-norm Gaussian source inverse. It does not transfer ordinary products, entropy, or stochastic integral representations.
+
+Scope: a single unit Gaussian direction is verified. The more general statement for arbitrary finite-dimensional observed source spans remains a repository obligation. The opposite case of an actually infinite observed source is being investigated on the countable Brownian mode filtration.
+
+Verification: full Lake build 4391 jobs (.lake/stardust-77-build.log); eighteen public types inspected and the private coefficient helper audited transitively; 7529 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-77-audit.log). Discovery 76 checkpoint: 73d5d0f. Discovery 77 is the commit containing this entry.
+
+Reflection: the correct compactness question is recovery after a specified source observation constraint. Finite-dimensional observation does not make scalar conditioning compact, but one source direction does make its recovered operator compact. Future focused work should establish the general finite-source criterion and quantitative approximation bounds; actual countably many Brownian observations supply the next concrete obstruction test.
+
+### Public locations — discovery 77
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianOneObservationRecoveryCompactness.
+
+| Name | Source |
+| --- | --- |
+| poisson_recovery_normalized_zero | Foundation/GaussianOneObservationRecoveryCompactness.lean:20 |
+| poisson_recovery_normalized_succ | Foundation/GaussianOneObservationRecoveryCompactness.lean:28 |
+| terminalEmbedding_single | Foundation/GaussianOneObservationRecoveryCompactness.lean:43 |
+| terminal_adjoint_normalized | Foundation/GaussianOneObservationRecoveryCompactness.lean:47 |
+| poissonInput | Foundation/GaussianOneObservationRecoveryCompactness.lean:57 |
+| poissonOutput | Foundation/GaussianOneObservationRecoveryCompactness.lean:61 |
+| transferredRecovery | Foundation/GaussianOneObservationRecoveryCompactness.lean:66 |
+| transferredRecovery_compact | Foundation/GaussianOneObservationRecoveryCompactness.lean:70 |
+| poissonInput_normalized | Foundation/GaussianOneObservationRecoveryCompactness.lean:75 |
+| poissonOutput_normalizedField | Foundation/GaussianOneObservationRecoveryCompactness.lean:80 |
+| recovery_vacuum_zero | Foundation/GaussianOneObservationRecoveryCompactness.lean:89 |
+| transferredRecovery_normalized | Foundation/GaussianOneObservationRecoveryCompactness.lean:95 |
+| transferredRecovery_on_terminal | Foundation/GaussianOneObservationRecoveryCompactness.lean:115 |
+| terminal_adjoint_conditional | Foundation/GaussianOneObservationRecoveryCompactness.lean:134 |
+| transferredRecovery_conditional | Foundation/GaussianOneObservationRecoveryCompactness.lean:148 |
+| transferredRecovery_eq_conditional_recovery | Foundation/GaussianOneObservationRecoveryCompactness.lean:152 |
+| single_observation_recovery_compact | Foundation/GaussianOneObservationRecoveryCompactness.lean:160 |
+| compact_recovery_noncompact_projection | Foundation/GaussianOneObservationRecoveryCompactness.lean:165 |
