@@ -1362,3 +1362,26 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianTerminalMaximalCorrelation.
 | terminal_observation_covariance_bound | Foundation/GaussianTerminalMaximalCorrelation.lean:29 |
 | linear_prediction_attains_bound | Foundation/GaussianTerminalMaximalCorrelation.lean:46 |
 | linear_covariance_attains_bound | Foundation/GaussianTerminalMaximalCorrelation.lean:52 |
+
+## Discovery 46 — conditional prediction contracts minimum divergence recovery
+
+For every Gaussian L2 target f and every actual Gaussian observation family h, the full minimum-norm source-divergence recovery operator satisfies ||R C_h f|| <= ||R f||. The proof uses genuine chaos/conditional-projection commutation and the full inverse-number energy identity; no differentiability assumption on f is required.
+
+For a unit-variance terminal direction and every actual terminal L2 observable, the original recovery energy is sum_n n^-1 c_n^2 n!, and its forecast recovery energy is sum_n n^-1 c_n^2 n! v^n. The n=0 term is zero, consistent with recovery removing the mean. If coefficients vanish below m, forecast recovery energy is at most v^m times original recovery energy. These are actual full divergence primitives with the previously proved graph and minimum-norm properties, not formal inverses.
+
+Significance: Gaussian divergence recovery and nonlinear prediction share one verified spectral calculus. Prediction contracts both observable energy and the inverse-number norm required to realize a centered target as a source divergence. This does not identify an adapted stochastic integral or a conditional expectation of the vector primitive itself.
+
+Verification: full Lake build 4356 jobs (.lake/stardust-46-build.log); four public types inspected; 6942 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-46-audit.log). Discovery 45 checkpoint: 84f5dd9. Discovery 46 is the commit containing this entry.
+
+Reflection: the original recovery/prediction campaign now has an exact joint operator principle. The terminal Gaussian spectrum investigation is complete; exploration moves to weighted nondegeneracy for quartic Banach inverse stability, prompted by the verified disjoint-support counterexamples.
+
+### Public locations — discovery 46
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianPredictionDivergenceRecovery.
+
+| Name | Source |
+| --- | --- |
+| conditional_recovery_norm_le | Foundation/GaussianPredictionDivergenceRecovery.lean:15 |
+| terminal_recovery_energy_hasSum | Foundation/GaussianPredictionDivergenceRecovery.lean:27 |
+| terminal_prediction_recovery_energy_hasSum | Foundation/GaussianPredictionDivergenceRecovery.lean:35 |
+| terminal_recovery_rank_upper | Foundation/GaussianPredictionDivergenceRecovery.lean:48 |
