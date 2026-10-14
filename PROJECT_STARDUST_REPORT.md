@@ -2365,3 +2365,34 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianConditionalCompactness.
 | zero_family_projection | Foundation/GaussianConditionalCompactness.lean:105 |
 | zero_family_compact | Foundation/GaussianConditionalCompactness.lean:112 |
 | conditionalProjection_compact_iff | Foundation/GaussianConditionalCompactness.lean:122 |
+
+## Discovery 76 — exact Wick primitives and the joint source projection required by prediction
+
+For every actual Gaussian source direction u and every n>=0, the canonical minimum-norm primitive of Wick_(n+1)(u) is exactly u tensor Wick_n(u), in the genuine full divergence graph. Its energy is n! ||u||^(2n+2). This is a statement about the actual recovered source, not only its norm or an assumed ladder operator.
+
+The actual vector L2 conditional expectation is constructed through Mathlib condExpL2 and proved to commute with fixed scalar-to-vector tensor maps. Thus ordinary conditioning of this primitive leaves u fixed and conditions Wick_n. In contrast, recovery of the predicted target uses P_h u as the source direction. Their exact difference is (u-P_h u) tensor Wick_n(P_h u), with energy n! ||u-P_h u||^2 ||P_h u||^(2n).
+
+Whenever P_h u differs from u, vector conditioning and canonical recovery do not commute on the first-chaos observable. Correct interchange must also project the coefficient source direction. The Wick formulas verify this joint correction on every single-direction Wick degree; an all-Gaussian-L2 operator identity is a separate remaining obligation, not asserted here.
+
+Significance: scalar conditional expectation alone does not turn an unconstrained source primitive into the primitive of a forecast. This matters for causal or adapted source restrictions in the stochastic operator program. No adapted stochastic integral, Clark–Ocone theorem, or physical IBM kernel is constructed by this checkpoint.
+
+Verification: full Lake build 4390 jobs (.lake/stardust-76-build.log); ten public types inspected; 7477 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-76-audit.log). Discovery 75 checkpoint: 177d3cb. Discovery 76 is the commit containing this entry.
+
+Reflection: a future focused campaign should extend the joint source/observable projection identity to all L2 targets and relate it to legitimate causal source kernels. Current investigation tests whether one-coordinate Gaussian conditional recovery is compact by factoring through the actual compact Poisson recovery, despite the conditional projection itself being noncompact.
+
+### Public locations — discovery 76
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianWickRecoveryPrediction.
+
+| Name | Source |
+| --- | --- |
+| wick_source_divergence_graph | Foundation/GaussianWickRecoveryPrediction.lean:13 |
+| recovery_wick | Foundation/GaussianWickRecoveryPrediction.lean:20 |
+| recovery_wick_energy | Foundation/GaussianWickRecoveryPrediction.lean:46 |
+| fieldConditional | Foundation/GaussianWickRecoveryPrediction.lean:53 |
+| fieldConditional_scalarTensor | Foundation/GaussianWickRecoveryPrediction.lean:57 |
+| predicted_wick_recovery | Foundation/GaussianWickRecoveryPrediction.lean:67 |
+| scalarTensor_sub_direction | Foundation/GaussianWickRecoveryPrediction.lean:72 |
+| prediction_recovery_defect | Foundation/GaussianWickRecoveryPrediction.lean:79 |
+| prediction_recovery_defect_energy | Foundation/GaussianWickRecoveryPrediction.lean:85 |
+| firstChaos_noncommutation | Foundation/GaussianWickRecoveryPrediction.lean:92 |
