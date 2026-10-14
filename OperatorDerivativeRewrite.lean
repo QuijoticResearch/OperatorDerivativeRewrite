@@ -299,3 +299,4 @@ import Foundation.GaussianBochnerDivergenceRecovery
 import Foundation.GaussianWickContinuity
 import Foundation.IBMClockCubicTimeProjection
 import Foundation.BanachQuarticHolderSharpness
+import Foundation.GaussianSourceHodge

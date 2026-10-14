@@ -31,7 +31,7 @@ Reflection: equal ladder energy does not imply equal multiplication algebra or o
 | Quadratic Gaussian metric roughness and antipodes | VERIFIED | Higher-degree or actual normalized-kernel applications |
 | Bochner-field Gaussian divergence recovery | VERIFIED | Apply to actual nonlinear observables with L2 membership discharged |
 | Actual IBM cubic per-path time integrability/projection | VERIFIED | Joint clock moments, representatives/Fubini and physical kernel |
-| Full Gaussian gradient-range Hodge decomposition | IN PROGRESS | Verify closed range, solenoidal component and bounded potential graph |
+| Full Gaussian gradient-range Hodge decomposition | VERIFIED | Intrinsic/predictable restrictions and concrete source-kernel comparison |
 
 ## Complete public locations — discovery 1
 
@@ -297,3 +297,34 @@ Verification: full Lake build 4319 jobs (.lake/stardust-09-build.log); the exact
 Reflection: nonlinear inverse estimates have a proved sharp boundary at zero. A numerical or operator reconstruction plan should respect this modulus instead of seeking a globally or locally linear inverse estimate. A focused campaign can now examine nondegenerate data away from zero, rather than repeating the exhausted near-zero Lipschitz conjecture.
 
 Public location: OperatorDerivativeRewrite.Foundation.BanachQuarticHolderSharpness.no_local_holder_bound — Foundation/BanachQuarticHolderSharpness.lean:17.
+
+## Discovery 10 — Full Gaussian source Hodge decomposition and closed gradient range
+
+Verified: GaussianSourceHodge defines the actual gradient range by the output projection of the full closed derivative graph. Membership is equivalent to (R* v,v) belonging to that same graph. This characterizes the range as a continuous preimage of a closed graph and proves it is closed, without an assumed closed-range theorem.
+
+Its orthogonal complement is exactly the full source divergence kernel, including domain membership. The genuine orthogonal gradientProjection splits every ambient Gaussian vector field into its gradient part and a divergence-free residual. For EVERY vector field v, (R* v,gradientProjection v) lies in the full derivative graph. Thus the bounded potential-recovery adjoint provides the correct potential domain automatically; it is still not the unbounded derivative itself.
+
+Mathematical significance: discovery 3's minimum-norm divergence recovery now yields the complementary full source Hodge geometry. It connects closed unbounded adjunction, the Gaussian spectral gap, bounded recovery, and orthogonal projection. The construction is actual operator-domain mathematics, not a formal decomposition into unspecified derivatives and kernels.
+
+Limitations: ambient source fields, not predictable fields or intrinsic IBM observables. No adapted projection, stochastic PRP, physical spatial Helmholtz decomposition or geometric curvature theorem is inferred. The Bochner transfer can subsequently be applied with its explicit actual L2 domain input.
+
+Verification: full Lake build 4320 jobs (.lake/stardust-10-build.log); all ten public types checked; 6385 safe Foundation declarations transitively audited with only propext/Classical.choice/Quot.sound (.lake/stardust-10-audit.lean and .log). Sharp quartic inverse checkpoint: 92adc06. Discovery 10 is the commit containing this entry.
+
+Reflection: the formerly open full gradient-range question in the register is resolved. Next compare the solenoidal kernels of the actual Poisson one-count model and Gaussian source, then revisit which intrinsic/predictable restrictions survive source Hodge projection. Do not replace these restrictions with ambient source completeness.
+
+### Public locations — discovery 10
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianSourceHodge.
+
+| Name | Source |
+| --- | --- |
+| gradientRange | Foundation/GaussianSourceHodge.lean:12 |
+| mem_gradientRange_iff | Foundation/GaussianSourceHodge.lean:15 |
+| gradientRange_recovery_characterization | Foundation/GaussianSourceHodge.lean:23 |
+| gradientRange_isClosed | Foundation/GaussianSourceHodge.lean:38 |
+| gradientRange_orthogonal_iff_divergence_zero | Foundation/GaussianSourceHodge.lean:50 |
+| gradientProjection | Foundation/GaussianSourceHodge.lean:66 |
+| gradientProjection_mem | Foundation/GaussianSourceHodge.lean:68 |
+| residual_divergence_zero | Foundation/GaussianSourceHodge.lean:71 |
+| recovery_adjoint_kernel_zero | Foundation/GaussianSourceHodge.lean:78 |
+| potential_gradient_graph | Foundation/GaussianSourceHodge.lean:88 |
