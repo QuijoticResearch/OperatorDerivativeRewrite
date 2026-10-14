@@ -278,3 +278,5 @@ import Foundation.IBMSmoothIncrementTails
 import Foundation.IBMRandomDerivativeIntegrability
 import Foundation.IBMDyadicExtension
 import Foundation.IBMSpatialFundamental
+import Foundation.IBMPointwiseEvaluation
+import Foundation.IBMPathwiseFundamental
