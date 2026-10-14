@@ -295,3 +295,4 @@ import Foundation.GaussianDivergenceRecovery
 import Foundation.BanachQuarticInverseObstruction
 import Foundation.GaussianPoissonChaosTransfer
 import Foundation.GaussianQuadraticGeometry
+import Foundation.GaussianBochnerDivergenceRecovery

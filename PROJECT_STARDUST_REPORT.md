@@ -213,3 +213,32 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianQuadraticGeometry.
 | fixed_variance_distance_sq | Foundation/GaussianQuadraticGeometry.lean:26 |
 | positive_correlation_distance_bounds | Foundation/GaussianQuadraticGeometry.lean:33 |
 | wick_two_antipodal | Foundation/GaussianQuadraticGeometry.lean:47 |
+
+## Discovery 7 — Minimum-norm Gaussian divergence recovery transfers to random Bochner fields
+
+Verified: GaussianBochnerDivergenceRecovery lifts the bounded recovery operator to L2(mu;GaussianL2) for an arbitrary external measurable space and measure mu. The lifted field satisfies the ORIGINAL source divergence graph almost everywhere, has norm at most the input norm, and is minimum norm among all Bochner-L2 preimages of the centered input field.
+
+The exact range criterion is fiber centering: a Bochner-L2 scalar field u has an actual Bochner-L2 divergence preimage iff inner(gaussianOne,u(x))=0 for mu-almost every x. No finite-measure, independent-parameter, intrinsic stochastic-integral, or source-differentiability hypothesis is added. This is a theorem in the verified BochnerClosedOperator.lift graph, not merely a formal pointwise family with unproved measurability.
+
+Mathematical significance: stochastic parameters, time variables and Gaussian source recovery can now be combined by a bounded operator. It connects the all-chaos recovery with the closed fiber calculus used in Brownian, IBM and SPDE branches. Once an actual observable is known to be a Bochner-L2 field, no further source-derivative domain theorem is needed to construct its centered full-divergence representation.
+
+Limitations: the Bochner-L2 membership of an actual random-clock cubic observable is still an analytic input; this transfer does not prove it. It does not construct a predictable stochastic integral, local time, a physical spatial kernel or an IBM H^-1 limit. A joint scalar representative identification still uses the existing justified product/Fubini machinery.
+
+Verification: full Lake build 4316 jobs (.lake/stardust-07-build.log); all eight public types checked; 6352 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-07-audit.lean and .log). Quadratic geometry checkpoint: 388488d. Discovery 7 is the commit containing this entry.
+
+Reflection: apply this transfer to verified actual finite-horizon Gaussian response fields, then polynomial observables with discharged moment estimates. New active exploration: continuity of finite Wick polynomials in source direction may remove the explicit per-clock-path Bochner integrability hypothesis in the earlier IBM cubic time projection. This would still be distinct from a joint clock L2 estimate and from stochastic Ito–Tanaka.
+
+### Public locations — discovery 7
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianBochnerDivergenceRecovery.
+
+| Name | Source |
+| --- | --- |
+| fiberRecovery | Foundation/GaussianBochnerDivergenceRecovery.lean:14 |
+| fiberCenter | Foundation/GaussianBochnerDivergenceRecovery.lean:17 |
+| fiberRecovery_coeFn | Foundation/GaussianBochnerDivergenceRecovery.lean:20 |
+| fiberCenter_coeFn | Foundation/GaussianBochnerDivergenceRecovery.lean:24 |
+| fiberRecovery_graph | Foundation/GaussianBochnerDivergenceRecovery.lean:28 |
+| fiberRecovery_norm_le | Foundation/GaussianBochnerDivergenceRecovery.lean:36 |
+| fiberRecovery_minimal_norm | Foundation/GaussianBochnerDivergenceRecovery.lean:42 |
+| exists_fiber_divergence_iff_centered | Foundation/GaussianBochnerDivergenceRecovery.lean:52 |
