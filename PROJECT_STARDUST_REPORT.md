@@ -800,3 +800,50 @@ Prefix: OperatorDerivativeRewrite.Foundation.IBMClockCubicRepresentative.
 | integratedCorrection_coeFn | Foundation/IBMClockCubicRepresentative.lean:36 |
 | integratedValue_memLp | Foundation/IBMClockCubicRepresentative.lean:43 |
 | integratedValue_centered | Foundation/IBMClockCubicRepresentative.lean:47 |
+
+## Discovery 27 — countable SPDE forcing modes and exact L2 criterion
+
+A countable family of actual independent Brownian forcing modes is constructed through the separable Hilbert space L2(count; TimeHilbert). Each mode embeds isometrically into the existing Gaussian product space. The series of modal responses c_n X_n(v_n) converges unconditionally in actual Gaussian L2 exactly when the nonnegative energies sum c_n^2 norm(v_n)^2 is summable. Its limiting energy is that exact sum.
+
+For the existing bounded-modulation fractional responses, the criterion becomes summability of c_n^2 times the actual temporal integral of the squared modulated response kernel. This extends finite forcing calculations to countably many modes on a single consistent Gaussian realization. It does not assume a solution to an SPDE, spatial semigroup convergence, boundary regularity, or a path version of the summed field.
+
+The limit remains in the complete first-chaos range and has a genuine full source-divergence primitive. Recovery preserves its norm exactly. Countably many unit Brownian modes provide a concrete failure of L2 summability: the first N cutoff energy is exactly N. Independent Gaussianity is proved from the actual joint Gaussian source and zero cross covariance; orthogonality alone is not used as a general independence assertion.
+
+Verification: full Lake build 4337 jobs (.lake/stardust-27-build.log); twenty-one public types checked; 6662 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-27-audit.log). Discovery 26 checkpoint: 2a62349. Discovery 27 is the commit containing this entry.
+
+Reflection: the infinite-mode trace/energy condition is a genuine obstruction, and Gaussian source recovery preserves the completed first-chaos norm. A focused SPDE campaign should combine the exact criterion with actual spatial spectral weights and temporal increment estimates. Merely increasing the finite Galerkin dimension is not a proof of an infinite-dimensional stochastic solution.
+
+### Public locations — discovery 27
+
+Prefix: OperatorDerivativeRewrite.Foundation.SPDECountableModes.
+
+| Name | Source |
+| --- | --- |
+| ModeHilbert | Foundation/SPDECountableModes.lean:14 |
+| modeVector | Foundation/SPDECountableModes.lean:20 |
+| modeVector_apply | Foundation/SPDECountableModes.lean:23 |
+| modeEmbedding | Foundation/SPDECountableModes.lean:29 |
+| modeVector_inner | Foundation/SPDECountableModes.lean:44 |
+| gaussianMode | Foundation/SPDECountableModes.lean:51 |
+| gaussianModes_orthogonal | Foundation/SPDECountableModes.lean:54 |
+| gaussianSeries_summable_iff | Foundation/SPDECountableModes.lean:61 |
+| infiniteResponse | Foundation/SPDECountableModes.lean:67 |
+| infiniteResponse_hasSum | Foundation/SPDECountableModes.lean:70 |
+| infiniteResponse_energy | Foundation/SPDECountableModes.lean:75 |
+| modulatedSeries_summable_iff | Foundation/SPDECountableModes.lean:89 |
+| infiniteResponse_firstChaos | Foundation/SPDECountableModes.lean:97 |
+| infiniteResponse_recovery_norm | Foundation/SPDECountableModes.lean:108 |
+| infiniteResponse_recovery_graph | Foundation/SPDECountableModes.lean:116 |
+| brownianMode | Foundation/SPDECountableModes.lean:126 |
+| brownianModes_jointGaussian | Foundation/SPDECountableModes.lean:129 |
+| brownianModes_independent | Foundation/SPDECountableModes.lean:134 |
+| finiteResponse_energy | Foundation/SPDECountableModes.lean:147 |
+| brownian_unit_modes_not_summable | Foundation/SPDECountableModes.lean:152 |
+| brownian_unit_cutoff_energy | Foundation/SPDECountableModes.lean:161 |
+
+Consolidated priorities after discovery 27:
+1. IBM joint random-clock/scenery L2 and the physical integrated-kernel bridge. Per-clock representative Fubini is now completed.
+2. SPDE countable-mode spectral energy and actual spatial/temporal convergence. The forcing summability criterion is completed.
+3. Fractional full-past prediction asymptotics and normalized-source increments; nonlinear Wick lower bounds and metric transfer are completed.
+
+Other focused campaigns: exact full Gaussian/Poisson operator intertwining; quartic inverse regularity under actual overlap/Hessian bounds. Completed investigations should be used, not repeatedly reopened.

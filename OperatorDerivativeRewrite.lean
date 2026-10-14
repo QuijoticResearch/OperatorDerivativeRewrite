@@ -316,3 +316,4 @@ import Foundation.BanachQuarticDisjointObstruction
 import Foundation.GaussianWickMetricTransfer
 import Foundation.BochnerL2RepresentativeFubini
 import Foundation.IBMClockCubicRepresentative
+import Foundation.SPDECountableModes
