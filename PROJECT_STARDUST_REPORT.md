@@ -6,17 +6,17 @@ Started 2026-10-14 from e7dac26ea306c89e3df9ddba015b54554a7caf2b in C:\OperatorD
 
 This report is durable research memory. Entries marked verified have completed the full build, public type inspection and transitive axiom audit. Ongoing conjectures are separate. No execution after the active session is promised.
 
-## Periodic consolidation — verified through discovery 65
+## Periodic consolidation — verified through discovery 70
 
-The latest mathematical checkpoint is c9dfe67. Full Lake build: 4376 jobs. The complete transitive audit checks 7276 safe Foundation declarations and permits only propext, Classical.choice and Quot.sound. The pinned dependencies and named IBM manuscript hash remain unchanged. Later verified entries supersede this count. The campaign remains active within this session.
+The latest mathematical checkpoint is f2cfb99. Full Lake build: 4384 jobs. The complete transitive audit checks 7368 safe Foundation declarations and permits only propext, Classical.choice and Quot.sound. The pinned dependencies and named IBM manuscript hash remain unchanged. Later verified entries supersede this count. The campaign remains active within this session.
 
-1. **Most significant discoveries:** full minimum-norm Gaussian divergence recovery; complete actual Poisson Charlier coordinates and closed-graph transfer; actual fixed-mollifier IBM joint cubic time L2/recovery; the complete terminal Gaussian prediction spectrum and quantitative leading-rank asymptotic transfer; and sharp source-dependent quartic inverse regularity.
+1. **Most significant discoveries:** full minimum-norm Gaussian divergence recovery; complete actual Poisson Charlier coordinates and closed-graph transfer; actual fixed-mollifier IBM joint cubic time L2/recovery; countable renormalized Wick responses with exact conditional and increment laws; the complete terminal Gaussian prediction spectrum and quantitative leading-rank asymptotic transfer; and sharp source-dependent quartic inverse regularity.
 2. **Verified record:** each discovery below records exact public names, source lines, full build and transitive audit. The chronological ledger lists the mathematical checkpoints. These are repository verification and connections; no blanket mathematical novelty claim is made.
 3. **Unexpected connections:** physical Poisson half-density changes displace both full Poisson source graphs and reconstruct every real scalar Gaussian graph displacement. Gaussian mixed moments yield Banach weighted coercivity. Full terminal nonlinear prediction reduces to actual linear observation geometry. IBM joint representatives connect to the general Bochner source inverse.
-4. **Corrected conjectures and counterexamples:** positive sharp Poisson generator curvature 1/2 and forward Bochner coefficient 1 coexist with quadratic entropy failure on actual finite-entropy number-domain probes; the diffusion chain rule fails under the actual law. Nonzero data do not improve the full Poisson L4 inverse above exponent one-third. Ordinary cubic fractional forecasts retain their linear component. Full Gaussian physical L2 does not admit a bounded L4 inclusion.
+4. **Corrected conjectures and counterexamples:** positive sharp Poisson generator curvature 1/2 and forward Bochner coefficient 1 coexist with quadratic entropy failure on actual finite-entropy number-domain probes; the diffusion chain rule fails under the actual law. Nonzero data do not improve the full Poisson L4 inverse above exponent one-third. Ordinary cubic fractional forecasts retain their linear component. Full Gaussian physical L2 does not admit a bounded L4 inclusion. Actual H=1/4 full-past forecasts strictly exceed current-only forecasts. Degree-dependent initial Wick prediction does not improve the positive-time increment-square exponent beyond one in the verified quadratic example.
 5. **Reusable principles:** inverse-number recovery and Hodge projection; full centered and coherent-vacuum Poisson recovery; finite-measure L2/Fubini transfer; arbitrary-family Wick conditional projection; full terminal Hermite spectrum and leading-rank remainder; physical source graph gauges; weighted quartic stability on fixed finite directions; normalized-atom ambient obstructions.
 6. **Promising unproved obligations:** sharp actual fractional linear forecast upper/asymptotic laws and spectral/Volterra bridge; physical IBM kernels and uniform mollifier limits; general modified Poisson jump entropy; multidirectional Gaussian maximal correlation; quantitative constrained stochastic source coercivity. Classical fractional exponents are known in the primary paper cited at discovery 60; their actual repository verification remains open.
-7. **Limits:** scalar Poisson/Gaussian graph transfer and displacement concern one-variable GaussianCore. No displacement group, continuity or physical translation formula is proved. Fixed-mollifier IBM results do not establish an Ito–Tanaka stochastic limit. Countable SPDE forcing does not establish an SPDE solution or paths. Hilbert, graph and affinity transfer does not preserve multiplication or entropy. The jump generator is identified on admitted number-domain triples, not as a fully constructed Markov semigroup.
+7. **Limits:** scalar Poisson/Gaussian graph transfer and displacement concern one-variable GaussianCore. No displacement group, continuity or physical translation formula is proved. Fixed-mollifier IBM results do not establish an Ito–Tanaka stochastic limit. Countable SPDE forcing and nonlinear Wick responses do not establish an SPDE solution or paths. Hilbert, graph and affinity transfer does not preserve multiplication or entropy. The jump generator is identified on admitted number-domain triples, not as a fully constructed Markov semigroup.
 8. **Most surprising contrast:** the infinite Poisson L4 inverse is everywhere optimally one-third rough, yet every fixed finite perturbation space is stable at the constant-one baseline, with no uniform constant even across one-dimensional spaces. Infinite Gaussian first-chaos sources are regular at every nonzero datum. Allowed source directions, rather than dimension or law name alone, determine stability.
 9. **Priority changes:** move fractional work to full-past linear geometry because all nonlinear terminal ranks inherit it; the exact H=1/2 Brownian benchmark is now verified. Move IBM to physical kernels and uniform limits. Require an actual diffusion chain rule or a correct jump Bregman functional before entropy transfer. Study controlled stochastic source embeddings rather than seeking better ambient Poisson L4 inverse exponents.
 10. **Next three focused directions:** (i) sharp fractional full-past linear geometry and causal source realization; (ii) physical IBM kernels and mollifier-uniform convergence or obstruction; (iii) multidirectional Gaussian prediction and quantitative constrained-source coercivity. Poisson spectral semigroup/hypercontractivity and general modified entropy deserve a separate focused campaign.
@@ -31,10 +31,10 @@ The latest mathematical checkpoint is c9dfe67. Full Lake build: 4376 jobs. The c
 | Poisson complete scalar/field calculus | Complete bases, full graph transfer and centered recovery | Spectral semigroup with legitimate physical interpretation |
 | Poisson physical tilt/coherent geometry | Actual laws, gauge, both displaced graphs, coherent range/kernel | Displacement group/formula and continuity |
 | Scalar Gaussian displacements | Every real displacement of both full graphs | Reference independence, group and infinite-dimensional extension |
-| Poisson quadratic curvature and entropy | Sharp generator coefficient 1/2; forward coefficient 1; actual entropy and chain-rule obstruction | General modified jump entropy, bounded-core truncation proof |
+| Poisson quadratic curvature and entropy | Sharp generator coefficient 1/2; forward coefficient 1; actual entropy and chain-rule obstruction | General modified jump entropy; bounded-core source-energy obstruction now verified in discovery 71 |
 | IBM fixed-mollifier joint cubic time target | Complete actual L2, representatives and source recovery | Physical kernel and uniform limits |
 | IBM primitive source obstruction | Necessary source-vector condition | Actual non-Cauchy or blow-up theorem |
-| Countable SPDE noise | Actual independent modes and summability criterion | Solution, spatial/temporal estimates and paths |
+| Countable SPDE noise and nonlinear Wick responses | Actual independent modes, exact degree-weighted summability, necessary renormalization, projected Gram forecasts, Brownian full-past laws and positive-time roughness | Spatial solution, further regularity and paths |
 | Poisson ambient quartic inverse | Everywhere optimal one-third exponent | Exhausted; study legitimate constrained sources |
 | Finite/source quartic stability | Fixed finite directions; nonzero Gaussian first-chaos regularity | Quantitative uniform constants for useful stochastic sources |
 
@@ -1707,7 +1707,7 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonTiltComposition.
 | relativeEntropy_not_symmetric | Foundation/PoissonTiltComposition.lean:56 |
 
 
-## Chronological mathematical checkpoint ledger through discovery 65
+## Chronological mathematical checkpoint ledger through discovery 70
 
 | Commit | Verified checkpoint |
 | --- | --- |
@@ -1776,6 +1776,11 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonTiltComposition.
 | a4f023f | Verify sharp Poisson curvature and diffusion entropy obstruction |
 | 237d73e | Verify the exact Brownian benchmark in fractional prediction |
 | c9dfe67 | Transfer leading Hermite-rank asymptotics for every terminal Gaussian L2 observable |
+| 8f16200 | Prove actual fractional full-past forecast strictly exceeds current-only prediction |
+| e7021cd | Construct actual countable Wick modes and a necessary renormalization example |
+| dc287a6 | Verify countable Wick forecasts with projected Gram cross terms |
+| 2cf6ff3 | Prove exact full-past prediction for countable Brownian Wick responses |
+| f2cfb99 | Separate initial Wick prediction scaling from positive-time roughness |
 
 Documentation checkpoint: 5ec7740 consolidated discoveries through 56.
 
@@ -2221,3 +2226,29 @@ Prefix: OperatorDerivativeRewrite.Foundation.SPDEWickTemporalGeometry.
 | harmonic_terminal_energy_lower | Foundation/SPDEWickTemporalGeometry.lean:58 |
 | harmonic_positive_time_increment_lower | Foundation/SPDEWickTemporalGeometry.lean:65 |
 | no_higher_positive_time_power | Foundation/SPDEWickTemporalGeometry.lean:75 |
+
+
+## Discovery 71 — the Poisson quadratic entropy obstruction persists on the finite-support core
+
+Finite coordinate cutoffs converge in entropy whenever the actual square and square-log-square integrands are integrable and square mass is positive. The proof uses legitimate dominated convergence and continuity of the logarithm at positive mass. For a nonzero actual scalar Poisson L2 class with finite entropy integrand, its finite-support cutoffs therefore converge in entropy as well as in the already verified maximal difference graph norm.
+
+Every proposed quadratic entropy constant C>=0 at every positive Poisson rate is violated by some actual finite-support function. Its genuine core difference and core divergence graphs are both exhibited. The unbounded maximal-domain exponential counterexample survives restriction to bounded, finitely supported core witnesses; the previously stated bounded-core truncation limitation is discharged.
+
+Significance: quadratic entropy failure is a property of the legitimate core calculus, not an artifact of extending to an excessive domain. Entropy convergence uses its own integrability and positive-mass hypotheses; mere L2 convergence is not asserted to imply entropy convergence. General modified jump entropy estimates remain open. An exact finite-core identification of integrated generator Gamma with source energy is under investigation next.
+
+Verification: full Lake build 4385 jobs (.lake/stardust-71-build.log); five public types inspected; 7374 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-71-audit.log). Discovery 70 checkpoint: f2cfb99. Discovery 71 is the commit containing this entry.
+
+Reflection: the durable distinction is now ordinary quadratic entropy versus the correct jump functional, rather than maximal domain versus finite core. This is a useful negative result for future curvature transfer arguments. The next proof connects it explicitly to the generator's positive pointwise curvature through finite-core integrated Gamma.
+
+### Public locations — discovery 71
+
+Prefix: OperatorDerivativeRewrite.Foundation.PoissonCoreEntropyObstruction.
+
+| Name | Source |
+| --- | --- |
+| cut_integral_tendsto | Foundation/PoissonCoreEntropyObstruction.lean:15 |
+| entropy_cut_tendsto | Foundation/PoissonCoreEntropyObstruction.lean:27 |
+| scalar_cut_entropy_tendsto | Foundation/PoissonCoreEntropyObstruction.lean:45 |
+| finite_core_entropy_counterexample | Foundation/PoissonCoreEntropyObstruction.lean:60 |
+| finite_core_actual_graph_counterexample | Foundation/PoissonCoreEntropyObstruction.lean:84 |
+
