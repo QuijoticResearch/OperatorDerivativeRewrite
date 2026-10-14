@@ -276,3 +276,5 @@ import Foundation.StochasticKernelConvolution
 import Foundation.IBMSmoothIncrementMoments
 import Foundation.IBMSmoothIncrementTails
 import Foundation.IBMRandomDerivativeIntegrability
+import Foundation.IBMDyadicExtension
+import Foundation.IBMSpatialFundamental
