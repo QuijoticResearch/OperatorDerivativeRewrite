@@ -341,3 +341,4 @@ import Foundation.BanachQuarticConstantSource
 import Foundation.PoissonQuarticWeightedObstruction
 import Foundation.PoissonQuarticAtomPerturbation
 import Foundation.PoissonQuarticNowhereLipschitz
+import Foundation.PoissonQuarticHolderEverywhere

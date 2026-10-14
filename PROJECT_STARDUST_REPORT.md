@@ -1492,3 +1492,28 @@ Names have their source module as namespace under OperatorDerivativeRewrite.Foun
 | PoissonQuarticNowhereLipschitz.relativeBound_tendsto_zero | Foundation/PoissonQuarticNowhereLipschitz.lean:30 |
 | PoissonQuarticNowhereLipschitz.no_local_linear_bound_at_source | Foundation/PoissonQuarticNowhereLipschitz.lean:39 |
 | PoissonQuarticNowhereLipschitz.no_local_linear_bound_at_datum | Foundation/PoissonQuarticNowhereLipschitz.lean:76 |
+
+## Discovery 51 — one-third inverse Holder regularity is optimal at every Poisson L4 datum
+
+For every positive Poisson rate, every actual dual datum f0, every q>1/3, every real K and every r>0, there is f with ||f-f0||<r and K||f-f0||^q < ||A^-1(f)-A^-1(f0)|| for the genuine complete quartic inverse on the infinite Poisson L4 identity source. Combined with its established global one-third upper bound, this proves pointwise optimality of that exponent at every datum.
+
+The proof strengthens discovery 50's normalized-atom perturbation. Set a_n=|x_n|+1/(n+1), where x_n is the actual normalized atom coefficient. Then a_n>0 tends to zero and the exact data increment has norm <=7 a_n^3, while the inverse increment has norm a_n. For q>1/3 the ratio bound K 7^q a_n^(3q-1) tends to zero. Surjectivity transfers the construction from every source F to every dual datum.
+
+Significance: quartic inverse roughness on this full infinite L4 source is a pervasive small-support phenomenon, not restricted to the origin or zeros of the datum. This resolves the conjecture recorded in discovery 47, strengthens the corrected nonzero-data conjecture and provides a reusable normalized-atom perturbation argument. It does not assert the same behavior for arbitrary infinite-dimensional source embeddings.
+
+Verification: full Lake build 4362 jobs (.lake/stardust-51-build.log); six public types inspected; 7016 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-51-audit.log). Discovery 50 checkpoint: 81ed28c. Discovery 51 is the commit containing this entry.
+
+Reflection: the Poisson L4 identity inverse regularity investigation is complete. To isolate the decisive source geometry, the next investigation constructs the actual infinite-dimensional Gaussian first-chaos L4 embedding and tests its weighted coercivity at every nonzero source value. This would distinguish source restrictions from ambient infinite-dimensional L4 variation.
+
+### Public locations — discovery 51
+
+Prefix: OperatorDerivativeRewrite.Foundation.PoissonQuarticHolderEverywhere.
+
+| Name | Source |
+| --- | --- |
+| perturbationSize | Foundation/PoissonQuarticHolderEverywhere.lean:14 |
+| perturbationSize_pos | Foundation/PoissonQuarticHolderEverywhere.lean:17 |
+| perturbationSize_tendsto_zero | Foundation/PoissonQuarticHolderEverywhere.lean:20 |
+| normal_shift_cubic_bound | Foundation/PoissonQuarticHolderEverywhere.lean:26 |
+| no_local_holder_at_source | Foundation/PoissonQuarticHolderEverywhere.lean:45 |
+| no_local_holder_at_datum | Foundation/PoissonQuarticHolderEverywhere.lean:100 |
