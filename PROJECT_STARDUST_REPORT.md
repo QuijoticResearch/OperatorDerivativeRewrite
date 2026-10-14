@@ -1092,3 +1092,42 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonWeightedScalarGeometry.
 | fieldBasis | Foundation/PoissonWeightedScalarGeometry.lean:108 |
 | fieldBasis_apply | Foundation/PoissonWeightedScalarGeometry.lean:111 |
 | fieldBasis_hasSum | Foundation/PoissonWeightedScalarGeometry.lean:121 |
+
+## Discovery 37 — exact closed Gaussian/Poisson operator graph transfer
+
+For every positive rate, the genuine maximal Poisson difference graph is exactly characterized by field coefficient g_n=sqrt(n+1) f_(n+1). Its genuine maximal divergence graph is exactly characterized by target coefficient f_0=0 and f_(n+1)=sqrt(n+1) u_n. Necessity uses actual adjoint duality; sufficiency uses complete scalar/weighted-field expansions and finite graph approximations in the actual closed graphs.
+
+The scalar Charlier/Hermite unitary from discovery 20 and the newly constructed weighted-field unitary intertwine BOTH full graphs with GaussianCore.closedDerivative and closedDivergence. This is an exact equivalence of actual closed unbounded Hilbert operator pairs, not merely a match of finite matrix elements or number eigenvalues. The target is the one-variable standard Gaussian scalar calculus; no full multidirectional Gaussian source field or process-level Poisson/Gaussian equivalence is asserted.
+
+The combination with discovery 35 is especially significant: exact closed Hilbert operator transfer coexists with failure of a Gaussian-style quadratic entropy bound for the actual Poisson finite-entropy domain. The physical multiplication/entropy structures are additional data, and cannot be inferred from Hilbert unitarity. The earlier multidirectional Gaussian divergence-kernel contrast remains correctly scoped.
+
+Verification: full Lake build 4347 jobs (.lake/stardust-37-build.log); twenty public types checked; 6815 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-37-audit.log). Discovery 36 checkpoint: 9ecd7b0. Discovery 37 is the commit containing this entry.
+
+Reflection: the closed scalar Gaussian/Poisson spectral-transfer investigation is now completed. Future work should exploit this equivalence while keeping nonlinear invariants separate. Active entropy follow-up tests the correct forward jump Bregman energy on the actual exponential family, not a forced quadratic Gaussian inequality.
+
+### Public locations — discovery 37
+
+Prefix: OperatorDerivativeRewrite.Foundation.PoissonSpectralGraphs.
+
+| Name | Source |
+| --- | --- |
+| fieldCoefficient | Foundation/PoissonSpectralGraphs.lean:14 |
+| scalarTruncation | Foundation/PoissonSpectralGraphs.lean:17 |
+| fieldTruncation | Foundation/PoissonSpectralGraphs.lean:20 |
+| scalarTruncation_tendsto | Foundation/PoissonSpectralGraphs.lean:23 |
+| fieldTruncation_tendsto | Foundation/PoissonSpectralGraphs.lean:27 |
+| normalized_lowering_graph | Foundation/PoissonSpectralGraphs.lean:31 |
+| difference_coefficients | Foundation/PoissonSpectralGraphs.lean:46 |
+| divergence_coefficients | Foundation/PoissonSpectralGraphs.lean:52 |
+| scalarTruncation_succ | Foundation/PoissonSpectralGraphs.lean:58 |
+| fieldTruncation_succ | Foundation/PoissonSpectralGraphs.lean:63 |
+| truncation_difference_graph | Foundation/PoissonSpectralGraphs.lean:68 |
+| truncation_divergence_graph | Foundation/PoissonSpectralGraphs.lean:85 |
+| difference_graph_iff | Foundation/PoissonSpectralGraphs.lean:103 |
+| divergence_graph_iff | Foundation/PoissonSpectralGraphs.lean:114 |
+| fieldGaussianTransfer | Foundation/PoissonSpectralGraphs.lean:126 |
+| fieldTransfer_normalized | Foundation/PoissonSpectralGraphs.lean:129 |
+| scalarTransfer_coefficient | Foundation/PoissonSpectralGraphs.lean:133 |
+| fieldTransfer_coefficient | Foundation/PoissonSpectralGraphs.lean:137 |
+| difference_transfer_iff | Foundation/PoissonSpectralGraphs.lean:142 |
+| divergence_transfer_iff | Foundation/PoissonSpectralGraphs.lean:148 |

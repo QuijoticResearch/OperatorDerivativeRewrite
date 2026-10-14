@@ -326,3 +326,4 @@ import Foundation.IBMClockCubicJointTimeL2
 import Foundation.IBMClockCubicBochnerRecovery
 import Foundation.PoissonExponentialEntropy
 import Foundation.PoissonWeightedScalarGeometry
+import Foundation.PoissonSpectralGraphs
