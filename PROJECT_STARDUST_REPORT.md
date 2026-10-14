@@ -750,3 +750,27 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianWickMetricTransfer.
 | fractional_covariance_nonneg | Foundation/GaussianWickMetricTransfer.lean:66 |
 | fractional_unit_correlation_nonneg | Foundation/GaussianWickMetricTransfer.lean:82 |
 | fractional_unit_wick_bounds | Foundation/GaussianWickMetricTransfer.lean:89 |
+
+## Discovery 25 — representative Fubini without a uniform majorant
+
+On finite parameter and source measures, integrable scalar L2 sections with a jointly strongly measurable scalar representative have an integrable product representative. Their scalar column integrals equal the Bochner L2 integral almost everywhere and themselves belong to actual L2. No uniform pointwise L2 majorant or independently supplied column L2 class is required.
+
+Proof: Cauchy–Schwarz controls the integral of the absolute test pairing by norm(V) norm(v_x), making every such product pairing integrable from Bochner integrability. The constant test class gives product L1 integrability and almost-everywhere column integrability. Indicator test classes and justified scalar Fubini identify all set integrals of the Bochner class and the column integral; integrable-function uniqueness gives actual almost-everywhere equality. L2 membership then transfers from the Bochner class.
+
+This is a reusable bridge between quotient-valued integration and actual scalar observables. It strengthens the earlier BochnerL2Fubini rule in the scalar finite-measure setting, and directly targets the remaining per-clock IBM cubic representative gap. It does not assert infinite-source-measure versions, arbitrary vector-valued representative uniqueness, joint clock L2 moments, or stochastic integration.
+
+Verification: full Lake build 4335 jobs (.lake/stardust-25-build.log); five public types checked; 6617 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-25-audit.log). Discovery 24 checkpoint: efa90f1. Discovery 25 is the commit containing this entry.
+
+Reflection: a uniform spatial/time pointwise majorant was stronger than needed for the scalar representative bridge. Existing unconditional Bochner integrability can be used directly once joint measurability is established. The next application tests the actual constructed IBM cubic correction rather than leaving the principle abstract.
+
+### Public locations — discovery 25
+
+Prefix: OperatorDerivativeRewrite.Foundation.BochnerL2RepresentativeFubini.
+
+| Name | Source |
+| --- | --- |
+| pairing_norm_integral_le | Foundation/BochnerL2RepresentativeFubini.lean:24 |
+| pairing_integrable_of_slices | Foundation/BochnerL2RepresentativeFubini.lean:39 |
+| representative_integrable | Foundation/BochnerL2RepresentativeFubini.lean:63 |
+| integral_coeFn_ae | Foundation/BochnerL2RepresentativeFubini.lean:71 |
+| column_integral_memLp | Foundation/BochnerL2RepresentativeFubini.lean:107 |
