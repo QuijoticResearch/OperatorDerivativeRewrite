@@ -2252,3 +2252,29 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonCoreEntropyObstruction.
 | finite_core_entropy_counterexample | Foundation/PoissonCoreEntropyObstruction.lean:60 |
 | finite_core_actual_graph_counterexample | Foundation/PoissonCoreEntropyObstruction.lean:84 |
 
+
+## Discovery 72 — genuine finite-core curvature and integrated energy still do not imply quadratic entropy
+
+For every finite-support Poisson function, the actual generator expression equals minus its finite core divergence/difference number expression. Its generator is integrable and has integral zero. The generator Gamma decomposes into half the generator applied to the square plus the actual number pairing. Legitimate finite-support integration by parts proves integral Gamma equals the genuine rate-weighted difference-field energy.
+
+Consequently, for every C>=0 at every positive rate, some finite-support function has integrable Gamma, satisfies the pointwise bound Gamma2>=Gamma/2 at every count, and violates EntSq<=C integral Gamma. Discovery 71 already exhibits both genuine core graphs for these witnesses. The bounded-core curvature/entropy obstruction is now complete; it no longer depends on comparing energies only for exponential maximal-domain probes.
+
+Significance: the failed implication is positive quadratic jump curvature to ordinary quadratic entropy without diffusion algebra. The verified finite-core stationarity and source energy identity do not repair the missing chain rule. This does not contradict a modified jump entropy inequality, an entropic curvature theorem, or a diffusion theorem with its actual hypotheses. No Markov semigroup construction is asserted.
+
+Verification: full Lake build 4386 jobs (.lake/stardust-72-build.log); seven public types inspected; 7381 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-72-audit.log). Discovery 71 checkpoint: d718ddd. Discovery 72 is the commit containing this entry.
+
+Reflection: the ordinary Poisson quadratic entropy branch is consolidated even on its genuine bounded core. Future work should construct the correct modified inequality or a physical semigroup, not reopen the failed diffusion implication. Exploration now tests whether full Gaussian divergence recovery can be compact despite inverse number weights, in view of infinite first-chaos source multiplicity.
+
+### Public locations — discovery 72
+
+Prefix: OperatorDerivativeRewrite.Foundation.PoissonCoreCurvatureEntropy.
+
+| Name | Source |
+| --- | --- |
+| finite_generator_eq_neg_number | Foundation/PoissonCoreCurvatureEntropy.lean:13 |
+| finite_generator_integrable | Foundation/PoissonCoreCurvatureEntropy.lean:18 |
+| finite_generator_integral_zero | Foundation/PoissonCoreCurvatureEntropy.lean:24 |
+| finite_gamma_decomposition | Foundation/PoissonCoreCurvatureEntropy.lean:34 |
+| finite_gamma_integrable | Foundation/PoissonCoreCurvatureEntropy.lean:45 |
+| finite_gamma_integral_source_energy | Foundation/PoissonCoreCurvatureEntropy.lean:52 |
+| positive_curvature_bounded_core_entropy_failure | Foundation/PoissonCoreCurvatureEntropy.lean:62 |
