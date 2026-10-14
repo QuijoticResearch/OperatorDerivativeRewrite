@@ -308,3 +308,4 @@ import Foundation.PoissonCoherentVectors
 import Foundation.IBMSourcePrimitiveObstruction
 import Foundation.PoissonExponentialTotal
 import Foundation.PoissonPolynomialDensity
+import Foundation.PoissonCharlierCompleteness

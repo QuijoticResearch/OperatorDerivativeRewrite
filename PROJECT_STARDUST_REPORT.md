@@ -551,3 +551,31 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonPolynomialDensity.
 | taylor_eval_bound | Foundation/PoissonPolynomialDensity.lean:39 |
 | taylorClass_tendsto | Foundation/PoissonPolynomialDensity.lean:58 |
 | polynomialSpan_closure | Foundation/PoissonPolynomialDensity.lean:84 |
+
+## Discovery 19 — Charlier spectral completeness
+
+The reconstructed all-order Charlier ladder spans every real polynomial algebraically. Its actual scalar Poisson L2 span is consequently dense for every strictly positive rate. This closes the analytic-and-algebraic completeness obligation that earlier finite-sector results deliberately left open.
+
+Proof mechanism: verified raising/lowering identities give the three-term multiplication recurrence X P(n+1)=P(n+2)+(lambda+n+1)P(n+1)+lambda(n+1)P(n), with the separate vacuum case. The ladder span contains constants and is invariant under multiplication by X, hence contains every polynomial. A legitimate linear polynomial-to-L2 embedding transfers the spanning statement; discovery 18 supplies density.
+
+Significance: the orthogonal ladder is now a complete spectral family in the actual probability space, not just a collection of eigenvectors. Full closed-operator recovery and a completed normalized Gaussian/Poisson Hilbert transfer are now justified research directions. They still require their own constructions and graph checks.
+
+Verification: full Lake build 4329 jobs (.lake/stardust-19-build.log); nine public types checked; 6509 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-19-audit.log). Discovery 18 checkpoint: e2ad6c6. Discovery 19 is the commit containing this entry.
+
+Reflection: a previously blocked branch now merits a focused Poisson spectral-calculus campaign. Completeness does not identify Gaussian and Poisson multiplication, does not eliminate the divergence-kernel contrast, and does not prove a process-level stochastic representation theorem.
+
+### Public locations — discovery 19
+
+Prefix: OperatorDerivativeRewrite.Foundation.PoissonCharlierCompleteness.
+
+| Name | Source |
+| --- | --- |
+| X_mul_zero | Foundation/PoissonCharlierCompleteness.lean:13 |
+| X_mul_succ | Foundation/PoissonCharlierCompleteness.lean:17 |
+| algebraicSpan | Foundation/PoissonCharlierCompleteness.lean:33 |
+| X_mul_mem | Foundation/PoissonCharlierCompleteness.lean:36 |
+| algebraicSpan_eq_top | Foundation/PoissonCharlierCompleteness.lean:56 |
+| polynomialEmbedding | Foundation/PoissonCharlierCompleteness.lean:68 |
+| polynomialEmbedding_ladder | Foundation/PoissonCharlierCompleteness.lean:94 |
+| scalarSpan | Foundation/PoissonCharlierCompleteness.lean:97 |
+| scalarSpan_closure | Foundation/PoissonCharlierCompleteness.lean:100 |
