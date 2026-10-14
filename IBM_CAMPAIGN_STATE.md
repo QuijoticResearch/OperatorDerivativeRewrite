@@ -706,3 +706,109 @@ Foundation/IBMEvenCorrectionProjection.lean realizes U²V² and U³W by explicit
 Verification: full Lake build succeeded with 4306 jobs (.lake/quijotic-chaos-02-build.log); all 16 new public types inspected and all 6192 safe Foundation declarations audited transitively (.lake/quijotic-chaos-02-audit.log). Only propext/Classical.choice/Quot.sound. The finite-index proof reduction found by the full build was repaired before this checkpoint. No old proof bodies, manuscripts, dependency pins or unrelated documents changed.
 
 This completes unconditional finite-mollifier cubic spatial first chaos and quartic parity. Smooth nonpolynomial tests, joint random-clock cubic moment bounds, physical spatial kernel identification, Brownian local time, fixed-mollifier stochastic calculus and singular H^-1 convergence remain unproved. Next work: all-degree polynomial Stein coefficients, actual clock sections, and explicit compact-supported source kernel integration.
+
+## Night Shift II — verified final checkpoint, milestone 3 (2026-10-14)
+
+Incoming HEAD: fc86e6da486c252ce0aded58ad76f3734b6f9faf. Milestone 1: 25f33da3d64500f1fc17baf71e9fcb774c87872b (4304 jobs, 6155 audited declarations). Milestone 2: 647dd86b0b5ead13ed01db2412e2a0493116646c (4306 jobs, 6192 audited declarations). Milestone 3 is the commit containing this final checkpoint and the three new modules below; its hash is discoverable from Git history without this conversation.
+
+Final full pinned Lake build: 4309 jobs, successful (.lake/quijotic-chaos-03-build.log). Final type inspection: all 60 public declarations in all six campaign modules. Final transitive audit: all 6221 safe Foundation declarations, including generated declarations, only propext/Classical.choice/Quot.sound (.lake/quijotic-chaos-final-audit.lean and .log). No forbidden placeholder, unsafe declaration or custom axiom occurs in these modules. Existing warnings are style/deprecation warnings. All verification inputs were rebuilt after the final proof edit.
+
+Unconditional results in this milestone:
+
+- IBMPolynomialFirstChaos: arbitrary finite Gaussian source families and every multivariate polynomial have first-chaos coefficients equal to expectations of actual partial derivatives. The actual scenery U,V,W specialization follows, without a covariance inverse, independence, or nondegeneracy. All polynomial degrees and polynomial shifts are permitted by this algebraic interface; a separate explicit shifted-quartic simplification has not been formalized.
+- IBMSceneryProjectionKernel: each mollifier-derivative-weighted Brownian direction is genuinely Bochner integrable. The finite-mollifier first-chaos source vector is exactly integral weight(n,x,r) k_r dr, with weight=sigma''(x)rho(x-r)/2+sigma'(x)rho'(x-r)+sigma(x)rho''(x-r)/2. The same vector, after the actual Hilbert isometry into CoefficientSpace, equals the Bochner mean closed source derivative of the cubic observable. SpectralSpace remains the honest source target; no pointwise physical-white-noise identification is assumed.
+- IBMClockCubicCorrection: an actual jointly measurable continuous cubic correction along the constructed reflected Brownian clock exists. Every sample path is integrable over finite time intervals. Every fixed clock section is scenery-L2, has the actual closed source derivative, and has the explicit first-chaos source vector evaluated at the reflected clock.
+
+Conditional results: time_integrated_projection and time_integrated_source_vector commute the existing bounded scenery projection and actual source isometry with time Bochner integration under an explicit Integrable sectionClass hypothesis. This is projection in the scenery factor at a fixed actual clock path. No global conditional-expectation theorem, joint clock/scenery cubic moment bound, time/representative Fubini equality or time/source derivative interchange is claimed without its needed estimate/domain theorem.
+
+Final requested status (18 items):
+
+1. Initial HEAD is given above; final HEAD is the milestone-3 commit containing this checkpoint (reported explicitly in the final response).
+2. Three verified mathematical milestone commits; each has full-build, type and transitive-audit records.
+3. Complete exact public-name/source-line inventory follows. Prefix for every entry: OperatorDerivativeRewrite.Foundation.
+4. Full final Lake build: 4309 jobs.
+5. Final transitive axiom audit: 6221 declarations; all 60 new public types checked.
+6. Cubic formula: P1(UV²+U²W/2)=(Var V+Cov(U,W))U+2Cov(U,V)V+Var(U)W/2. Actual first/third decomposition, source polynomial-domain membership and full-first-chaos residual orthogonality are proved.
+7. Positive bulk x>rOut: +V+sigma W/2. Negative bulk x<-rOut: -V+sigma W/2. Exact mollifier support hypotheses are in the theorem statements.
+8. Origin layer: sigma'' U/2+sigma' V+sigma W/2 at every real x. No boundary Dirac limit follows just from these finite-scale equalities.
+9. Smooth-test extension: arbitrary polynomial source observations are verified; bounded smooth or Schwartz nonlinear source-domain/interchange extension is open. Earlier bounded-test spatial chain-rule/domain results remain reusable.
+10. Concrete kernel: the verified Bochner source-direction kernel is given above. Its physical L2(dw) representation in terms of xi, rho and rho' is open pending a constructed source isometry.
+11. Actual random-clock correction: constructed, jointly measurable, continuous, pathwise time integrable, scenery-section L2 and closed-domain. Joint L2 bounds and unconditional time-integrated source-L2 theorem remain open. The conditional theorem states its analytic integrability input explicitly.
+12. Stein cancellation: the cubic coefficient Var V+Cov(U,W)=0 is discharged in both bulk regions, with opposite V signs. The finite origin layer is retained. No actual local-time weighted singular residual has been constructed.
+13. Ordinary spatial L2 obstruction: open for the actual correction; no norm divergence, failure of Cauchy convergence or absence of a random-variable limit is newly asserted.
+14. IBM-specific random H^-1 convergence: open. Existing bounded derivative, random Bochner and Dirac-channel infrastructure is reusable conditional analysis, not an IBM-specific limit proof.
+15. Source-adjoint interpretation: substantive full closed source graph and Stein duality identify the coefficient with mean D C; the explicit kernel agrees with Wick contraction. The source divergence/adjoint infrastructure supplies the integration operator. This simplifies extraction of the first-chaos coefficient but currently repackages justified Gaussian IBP; it does not supply missing stochastic singular estimates. It is not the adjoint of the bounded predictable Ito integral, and no intrinsic dense IBM domain is inferred.
+16. Strongest change-of-variables result remains the prior actual C2 spatial chain rule along genuinely constructed independent continuous Brownian sources, now supplemented with the exact cubic scenery projection. Fixed-mollifier and limiting stochastic IBM Ito–Tanaka remain open. Our spatialCorrection is g'', whereas the manuscript's stochastic interior term carries an additional overall 1/2 in front of its time integral.
+17. Remaining analytic blockers: physical source-kernel isometry; cubic clock/scenery higher-moment estimates and time/source graph-norm/Fubini transfer; nonpolynomial Gaussian source differentiation and dominated interchanges; actual Brownian local time with occupation density and spatial regularity; adapted/predictable clock integral on the scenery-enlarged source; finite-mollifier stochastic identity; actual residual/boundary limit and nondegenerate obstruction estimates.
+18. Highest-value next obligations: (i) construct the Brownian source isometry to physical signed interval kernels and identify rho/rho' directions; (ii) discharge polynomial random-clock higher-moment and graph-norm time domains, then prove a legitimate smooth-test source Stein theorem; (iii) construct normalized clock local time and occupation/spatial L2 estimates, enabling the actual residual and Dirac-boundary H^-1 inputs. Fixed-mollifier Ito–Tanaka additionally needs the scenery-enlarged adapted-integral construction.
+
+Manuscript comparison: flagship(8).tex, proof of the first-chaos L2-divergence theorem, Step 3, has positive-bulk A=E f5/4, B=E f3, C=E f1. The verified zero-shift cubic gives A=0,B=1,C=sigma/2, in agreement. The negative-bulk sign cannot be transported unchanged across zero. Zero-shift quartic has zero first chaos even if its expectation is nonzero. No claimed distributional-limit correction is inferred from this agreement.
+
+Repository preservation: no old Foundation proof body was edited; Lean 4.34.1 and pinned Mathlib unchanged; no manuscript write/stage, no unrelated document write/stage, no push/reset/cleanup, automation or agent. EJP PDF SHA256 remains 5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE. The twelve unrelated untracked documents and ResearchSources remain untracked. Work stops at this durable verified checkpoint; no background continuation is claimed.
+
+### Complete public declaration inventory for Night Shift II
+
+The log contains each full Lean type. These locations are verified against the final saved sources.
+
+| Public declaration (prefix above) | Source location |
+| --- | --- |
+| IBMCubicFirstChaos.wick_one_eq_embedding | Foundation/IBMCubicFirstChaos.lean:14 |
+| IBMCubicFirstChaos.adjoint_cube | Foundation/IBMCubicFirstChaos.lean:20 |
+| IBMCubicFirstChaos.mixedCube | Foundation/IBMCubicFirstChaos.lean:30 |
+| IBMCubicFirstChaos.mixedCube_coeFn | Foundation/IBMCubicFirstChaos.lean:33 |
+| IBMCubicFirstChaos.mixedCube_memLp | Foundation/IBMCubicFirstChaos.lean:53 |
+| IBMCubicFirstChaos.adjoint_mixedCube | Foundation/IBMCubicFirstChaos.lean:57 |
+| IBMCubicFirstChaos.correction | Foundation/IBMCubicFirstChaos.lean:64 |
+| IBMCubicFirstChaos.coefficient | Foundation/IBMCubicFirstChaos.lean:67 |
+| IBMCubicFirstChaos.correction_coeFn | Foundation/IBMCubicFirstChaos.lean:70 |
+| IBMCubicFirstChaos.correction_memLp | Foundation/IBMCubicFirstChaos.lean:83 |
+| IBMCubicFirstChaos.adjoint_correction | Foundation/IBMCubicFirstChaos.lean:90 |
+| IBMCubicFirstChaos.projection_correction | Foundation/IBMCubicFirstChaos.lean:96 |
+| IBMCubicFirstChaos.correction_residual_orthogonal | Foundation/IBMCubicFirstChaos.lean:102 |
+| IBMCubicFirstChaos.wick_mem_sector | Foundation/IBMCubicFirstChaos.lean:108 |
+| IBMCubicFirstChaos.mixedWick | Foundation/IBMCubicFirstChaos.lean:129 |
+| IBMCubicFirstChaos.mixedCube_decomposition | Foundation/IBMCubicFirstChaos.lean:133 |
+| IBMCubicFirstChaos.thirdPart | Foundation/IBMCubicFirstChaos.lean:140 |
+| IBMCubicFirstChaos.correction_wick_decomposition | Foundation/IBMCubicFirstChaos.lean:142 |
+| IBMCubicFirstChaos.thirdPart_mem_thirdChaos | Foundation/IBMCubicFirstChaos.lean:149 |
+| IBMCubicFirstChaos.cube_mem_polynomialDomain | Foundation/IBMCubicFirstChaos.lean:159 |
+| IBMCubicFirstChaos.mixedCube_mem_polynomialDomain | Foundation/IBMCubicFirstChaos.lean:163 |
+| IBMCubicFirstChaos.correctionCore | Foundation/IBMCubicFirstChaos.lean:171 |
+| IBMCubicFirstChaos.adjoint_eq_mean_derivative | Foundation/IBMCubicFirstChaos.lean:177 |
+| IBMCubicFirstChaos.correction_closedDerivative_graph | Foundation/IBMCubicFirstChaos.lean:199 |
+| IBMCubicFirstChaos.mean_derivative_correction | Foundation/IBMCubicFirstChaos.lean:204 |
+| IBMEvenCorrectionProjection.adjoint_quartic | Foundation/IBMEvenCorrectionProjection.lean:12 |
+| IBMEvenCorrectionProjection.squareProduct | Foundation/IBMEvenCorrectionProjection.lean:22 |
+| IBMEvenCorrectionProjection.squareProduct_coeFn | Foundation/IBMEvenCorrectionProjection.lean:25 |
+| IBMEvenCorrectionProjection.cubeProduct | Foundation/IBMEvenCorrectionProjection.lean:50 |
+| IBMEvenCorrectionProjection.cubeProduct_coeFn | Foundation/IBMEvenCorrectionProjection.lean:54 |
+| IBMEvenCorrectionProjection.quarticCorrection | Foundation/IBMEvenCorrectionProjection.lean:87 |
+| IBMEvenCorrectionProjection.quarticCorrection_coeFn | Foundation/IBMEvenCorrectionProjection.lean:90 |
+| IBMEvenCorrectionProjection.quarticCorrection_projection_zero | Foundation/IBMEvenCorrectionProjection.lean:103 |
+| IBMSceneryCubicProjection.spatialCorrection | Foundation/IBMSceneryCubicProjection.lean:16 |
+| IBMSceneryCubicProjection.spatialCorrection_coeFn | Foundation/IBMSceneryCubicProjection.lean:19 |
+| IBMSceneryCubicProjection.spatialCorrection_projection | Foundation/IBMSceneryCubicProjection.lean:30 |
+| IBMSceneryCubicProjection.positive_bulk_projection | Foundation/IBMSceneryCubicProjection.lean:46 |
+| IBMSceneryCubicProjection.negative_bulk_projection | Foundation/IBMSceneryCubicProjection.lean:57 |
+| IBMSceneryCubicProjection.variance_geometry_projection | Foundation/IBMSceneryCubicProjection.lean:73 |
+| IBMSceneryCubicProjection.sourceVector | Foundation/IBMSceneryCubicProjection.lean:91 |
+| IBMSceneryCubicProjection.projection_eq_sourceEmbedding | Foundation/IBMSceneryCubicProjection.lean:100 |
+| IBMPolynomialFirstChaos.adjoint_polynomial | Foundation/IBMPolynomialFirstChaos.lean:12 |
+| IBMPolynomialFirstChaos.projection_polynomial | Foundation/IBMPolynomialFirstChaos.lean:39 |
+| IBMPolynomialFirstChaos.actual_scenery_polynomial_projection | Foundation/IBMPolynomialFirstChaos.lean:50 |
+| IBMSceneryProjectionKernel.weight | Foundation/IBMSceneryProjectionKernel.lean:15 |
+| IBMSceneryProjectionKernel.weighted_direction_integrable | Foundation/IBMSceneryProjectionKernel.lean:22 |
+| IBMSceneryProjectionKernel.sourceVector_eq_integral | Foundation/IBMSceneryProjectionKernel.lean:29 |
+| IBMSceneryProjectionKernel.projection_eq_integrated_source_kernel | Foundation/IBMSceneryProjectionKernel.lean:50 |
+| IBMSceneryProjectionKernel.mean_source_derivative_eq_kernel | Foundation/IBMSceneryProjectionKernel.lean:58 |
+| IBMClockCubicCorrection.value | Foundation/IBMClockCubicCorrection.lean:18 |
+| IBMClockCubicCorrection.value_jointly_measurable | Foundation/IBMClockCubicCorrection.lean:22 |
+| IBMClockCubicCorrection.value_continuous | Foundation/IBMClockCubicCorrection.lean:29 |
+| IBMClockCubicCorrection.value_time_integrable | Foundation/IBMClockCubicCorrection.lean:36 |
+| IBMClockCubicCorrection.sectionClass | Foundation/IBMClockCubicCorrection.lean:40 |
+| IBMClockCubicCorrection.sectionClass_coeFn | Foundation/IBMClockCubicCorrection.lean:43 |
+| IBMClockCubicCorrection.section_memLp | Foundation/IBMClockCubicCorrection.lean:50 |
+| IBMClockCubicCorrection.section_closedDerivative_graph | Foundation/IBMClockCubicCorrection.lean:54 |
+| IBMClockCubicCorrection.section_projection | Foundation/IBMClockCubicCorrection.lean:62 |
+| IBMClockCubicCorrection.time_integrated_projection | Foundation/IBMClockCubicCorrection.lean:70 |
+| IBMClockCubicCorrection.time_integrated_source_vector | Foundation/IBMClockCubicCorrection.lean:81 |

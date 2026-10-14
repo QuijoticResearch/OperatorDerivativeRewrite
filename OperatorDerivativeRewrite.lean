@@ -286,3 +286,6 @@ import Foundation.IBMFiniteHorizonEvaluation
 import Foundation.IBMCubicFirstChaos
 import Foundation.IBMEvenCorrectionProjection
 import Foundation.IBMSceneryCubicProjection
+import Foundation.IBMPolynomialFirstChaos
+import Foundation.IBMSceneryProjectionKernel
+import Foundation.IBMClockCubicCorrection
