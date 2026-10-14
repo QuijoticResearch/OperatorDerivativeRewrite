@@ -354,3 +354,32 @@ Prefix: OperatorDerivativeRewrite.Foundation.DivergenceKernelContrast.
 | skewField_divergence_zero | Foundation/DivergenceKernelContrast.lean:60 |
 | skewField_norm_sq | Foundation/DivergenceKernelContrast.lean:70 |
 | gaussian_nonzero_divergence_kernel | Foundation/DivergenceKernelContrast.lean:85 |
+
+## Discovery 12 — Unique norm-one Poisson recovery on finite centered polynomial sectors
+
+Verified: PoissonPolynomialRecovery constructs a genuine maximal divergence preimage for every finite positive Charlier expansion f=sum c_i P_(i+1). The field is u=sum c_i P_i in the ORIGINAL rate-weighted field L2. Its graph is proved by linear assembly of the actual raising graphs, and the source target is proved centered by its real integral.
+
+The exact energies are ||u||²=sum c_i² i! lambda^(i+1) and ||f||²=sum (i+1)c_i² i! lambda^(i+1). Hence ||u||<=||f|| uniformly in polynomial degree. The preimage is unique among ALL fields in the maximal divergence graph, by discovery 11's actual zero-kernel theorem. It is not merely uniqueness among polynomial candidates.
+
+Mathematical significance: the adjoint-first Poisson ladder now supplies a non-Gaussian integration/recovery operator with the same inverse-number energy pattern as Gaussian recovery, but distinct uniqueness geometry and product corrections. This is a valid restricted integration-first result without pretending polynomial completeness has been proved.
+
+Limitations: finite positive Charlier expansions only. Extending to every centered Poisson L2 target requires a genuine density/completeness argument. The current research search identified an analytic route through exponential moments, Taylor polynomial approximation in L2, and approximation of positive-mass atom indicators; the needed approximation proof is not yet established. Do not replace this missing proof with an assumed chaos decomposition.
+
+Verification: full Lake build 4322 jobs (.lake/stardust-12-build.log); all eight public types checked; 6421 safe Foundation declarations transitively audited with only propext/Classical.choice/Quot.sound (.lake/stardust-12-audit.lean and .log). Kernel contrast checkpoint: eccd9d0. Discovery 12 is the commit containing this entry.
+
+Reflection: Poisson polynomial completeness is now a high-value focused obligation because it would extend several independently verified finite results at once: full recovery, Poincare, the complete number decomposition and Gaussian/Poisson Hilbert transfer. A multidimensional Poisson campaign must separately account for solenoidal kernels.
+
+### Public locations — discovery 12
+
+Prefix: OperatorDerivativeRewrite.Foundation.PoissonPolynomialRecovery.
+
+| Name | Source |
+| --- | --- |
+| target | Foundation/PoissonPolynomialRecovery.lean:14 |
+| recovery | Foundation/PoissonPolynomialRecovery.lean:17 |
+| recovery_graph | Foundation/PoissonPolynomialRecovery.lean:20 |
+| recovery_unique | Foundation/PoissonPolynomialRecovery.lean:26 |
+| target_centered | Foundation/PoissonPolynomialRecovery.lean:34 |
+| recovery_norm_sq | Foundation/PoissonPolynomialRecovery.lean:48 |
+| target_norm_sq | Foundation/PoissonPolynomialRecovery.lean:56 |
+| recovery_norm_le | Foundation/PoissonPolynomialRecovery.lean:65 |
