@@ -6,37 +6,38 @@ Started 2026-10-14 from e7dac26ea306c89e3df9ddba015b54554a7caf2b in C:\OperatorD
 
 This report is durable research memory. Entries marked verified have completed the full build, public type inspection and transitive axiom audit. Ongoing conjectures are separate. No execution after the active session is promised.
 
-## Periodic consolidation — verified through discovery 70
+## Periodic consolidation — verified through discovery 77
 
-The latest mathematical checkpoint is f2cfb99. Full Lake build: 4384 jobs. The complete transitive audit checks 7368 safe Foundation declarations and permits only propext, Classical.choice and Quot.sound. The pinned dependencies and named IBM manuscript hash remain unchanged. Later verified entries supersede this count. The campaign remains active within this session.
+The latest mathematical checkpoint is 899c699. Full Lake build: 4391 jobs. The complete transitive audit checks 7529 safe Foundation declarations and permits only propext, Classical.choice and Quot.sound. Pinned dependencies and the named IBM manuscript hash remain unchanged. Later verified entries supersede this count. The campaign remains active within this session.
 
-1. **Most significant discoveries:** full minimum-norm Gaussian divergence recovery; complete actual Poisson Charlier coordinates and closed-graph transfer; actual fixed-mollifier IBM joint cubic time L2/recovery; countable renormalized Wick responses with exact conditional and increment laws; the complete terminal Gaussian prediction spectrum and quantitative leading-rank asymptotic transfer; and sharp source-dependent quartic inverse regularity.
-2. **Verified record:** each discovery below records exact public names, source lines, full build and transitive audit. The chronological ledger lists the mathematical checkpoints. These are repository verification and connections; no blanket mathematical novelty claim is made.
-3. **Unexpected connections:** physical Poisson half-density changes displace both full Poisson source graphs and reconstruct every real scalar Gaussian graph displacement. Gaussian mixed moments yield Banach weighted coercivity. Full terminal nonlinear prediction reduces to actual linear observation geometry. IBM joint representatives connect to the general Bochner source inverse.
-4. **Corrected conjectures and counterexamples:** positive sharp Poisson generator curvature 1/2 and forward Bochner coefficient 1 coexist with quadratic entropy failure on actual finite-entropy number-domain probes; the diffusion chain rule fails under the actual law. Nonzero data do not improve the full Poisson L4 inverse above exponent one-third. Ordinary cubic fractional forecasts retain their linear component. Full Gaussian physical L2 does not admit a bounded L4 inclusion. Actual H=1/4 full-past forecasts strictly exceed current-only forecasts. Degree-dependent initial Wick prediction does not improve the positive-time increment-square exponent beyond one in the verified quadratic example.
-5. **Reusable principles:** inverse-number recovery and Hodge projection; full centered and coherent-vacuum Poisson recovery; finite-measure L2/Fubini transfer; arbitrary-family Wick conditional projection; full terminal Hermite spectrum and leading-rank remainder; physical source graph gauges; weighted quartic stability on fixed finite directions; normalized-atom ambient obstructions.
-6. **Promising unproved obligations:** sharp actual fractional linear forecast upper/asymptotic laws and spectral/Volterra bridge; physical IBM kernels and uniform mollifier limits; general modified Poisson jump entropy; multidirectional Gaussian maximal correlation; quantitative constrained stochastic source coercivity. Classical fractional exponents are known in the primary paper cited at discovery 60; their actual repository verification remains open.
-7. **Limits:** scalar Poisson/Gaussian graph transfer and displacement concern one-variable GaussianCore. No displacement group, continuity or physical translation formula is proved. Fixed-mollifier IBM results do not establish an Ito–Tanaka stochastic limit. Countable SPDE forcing and nonlinear Wick responses do not establish an SPDE solution or paths. Hilbert, graph and affinity transfer does not preserve multiplication or entropy. The jump generator is identified on admitted number-domain triples, not as a fully constructed Markov semigroup.
-8. **Most surprising contrast:** the infinite Poisson L4 inverse is everywhere optimally one-third rough, yet every fixed finite perturbation space is stable at the constant-one baseline, with no uniform constant even across one-dimensional spaces. Infinite Gaussian first-chaos sources are regular at every nonzero datum. Allowed source directions, rather than dimension or law name alone, determine stability.
-9. **Priority changes:** move fractional work to full-past linear geometry because all nonlinear terminal ranks inherit it; the exact H=1/2 Brownian benchmark is now verified. Move IBM to physical kernels and uniform limits. Require an actual diffusion chain rule or a correct jump Bregman functional before entropy transfer. Study controlled stochastic source embeddings rather than seeking better ambient Poisson L4 inverse exponents.
-10. **Next three focused directions:** (i) sharp fractional full-past linear geometry and causal source realization; (ii) physical IBM kernels and mollifier-uniform convergence or obstruction; (iii) multidirectional Gaussian prediction and quantitative constrained-source coercivity. Poisson spectral semigroup/hypercontractivity and general modified entropy deserve a separate focused campaign.
+1. **Most significant discoveries:** full minimum-norm Gaussian recovery; complete actual Poisson Charlier coordinates and full graph transfer; actual fixed-mollifier IBM joint cubic time L2/recovery; the full terminal Gaussian prediction spectrum and leading-rank transfer; countable renormalized Wick responses; sharp source-dependent quartic inverse regularity; and a precise compactness contrast between full and conditionally restricted source recovery.
+2. **Verified record:** each discovery below gives exact public names, source lines, full build and transitive audit. The chronological ledger lists every mathematical checkpoint through 77. These are repository verification and connections; no blanket world-level novelty claim is made.
+3. **Unexpected connections:** physical Poisson gauges displace both full source graphs and reconstruct scalar Gaussian graph displacements. Actual compact Poisson recovery factors canonical Gaussian recovery after one observed coordinate. Arbitrary nonlinear terminal prediction reduces to actual linear source geometry. Countable Brownian squares require legitimate renormalization. Vector conditioning of recovered Wick primitives also needs source-direction projection.
+4. **Corrected conjectures and counterexamples:** positive Poisson curvature and integrated Gamma energy do not imply quadratic entropy, even on the genuine finite-support core. The full Poisson L4 inverse is nowhere better than exponent one-third. Actual H=1/4 full-past forecasts strictly outperform the current coordinate. Initial Wick rank scaling does not improve positive-time increment-square powers. Ordinary vector conditioning does not commute with recovery on unobserved first-chaos directions.
+5. **Reusable principles:** inverse-number recovery and Hodge projection; complete centered/coherent Poisson inverses; finite-measure L2/Fubini transfer; exact Wick conditional projection and terminal spectrum; leading-rank remainder/limit; weighted-source stability and atom obstructions; physical graph gauges; countable renormalized response criteria and projected Gram energies; entropy-plus-graph core approximation; quantitative compact recovery tails; and actual Wick source primitives with explicit conditioning defects.
+6. **Promising unproved obligations:** actual fractional spectral/Volterra bridge and sharp linear upper/asymptotic laws; physical IBM kernels and uniform mollifier limits; the joint source/observable recovery identity on all L2 targets; compact recovery after general finite-dimensional observed source spans; general modified Poisson entropy and a physical spectral semigroup; and spatial/temporal renormalized SPDE solutions. Classical fractional exponents are already known in the primary paper cited at discovery 60; their actual repository verification remains open.
+7. **Limits:** Poisson/Gaussian transfer and displacement target one-variable GaussianCore, not full infinite Gaussian fields. No displacement group or physical translation formula is proved. Fixed-mollifier IBM recovery is not an Ito–Tanaka limit. Countable nonlinear Wick responses are actual L2 classes, not SPDE solutions or path versions. No adapted stochastic integral follows from the source projection formulas. Degree-zero energy is not variance. Graph, Hilbert and affinity transfer does not preserve multiplication or entropy.
+8. **Most surprising operator contrast:** full Gaussian recovery is noncompact, one-coordinate conditioning is noncompact, yet their actual recovery-after-conditioning composition is compact. Actual scalar Poisson recovery supplies the factorization. A second strong contrast remains the everywhere one-third ambient Poisson inverse versus regular nonzero infinite Gaussian first-chaos sources and stable fixed finite perturbations without uniform constants.
+9. **Priority changes:** focus fractional work on full-past linear geometry; focus IBM on physical kernels and uniform limits; require source projection when interchanging prediction and recovery; distinguish degree damping from source multiplicity in compactness claims; and use the correct jump entropy functional instead of attempting the refuted diffusion implication.
+10. **Next three focused directions:** (i) actual causal fractional source geometry and sharp linear prediction; (ii) physical IBM kernels and mollifier-uniform convergence or obstruction; (iii) the full joint source/observable recovery identity and quantitative finite-source compactness/stability. General modified Poisson entropy and spatial renormalized SPDE construction deserve distinct focused campaigns.
 
 ### Current investigation register
 
 | Investigation | Completed mathematics | Open obligation |
 | --- | --- | --- |
 | Original Gaussian recovery and fractional Wick prediction | Complete and substantially extended | Sharp actual fractional linear upper/asymptotic law |
-| All terminal nonlinear Gaussian L2 prediction | Exact spectrum, sufficient coordinate, leading-rank remainder and abstract limit | Multidirectional terminal families |
-| Fractional Hurst geometry | Lower exponent 2 min(H,1-H); exact Brownian current-value benchmark | Actual causal bridge and matching upper law |
-| Poisson complete scalar/field calculus | Complete bases, full graph transfer and centered recovery | Spectral semigroup with legitimate physical interpretation |
-| Poisson physical tilt/coherent geometry | Actual laws, gauge, both displaced graphs, coherent range/kernel | Displacement group/formula and continuity |
-| Scalar Gaussian displacements | Every real displacement of both full graphs | Reference independence, group and infinite-dimensional extension |
-| Poisson quadratic curvature and entropy | Sharp generator coefficient 1/2; forward coefficient 1; actual entropy and chain-rule obstruction | General modified jump entropy; bounded-core source-energy obstruction now verified in discovery 71 |
-| IBM fixed-mollifier joint cubic time target | Complete actual L2, representatives and source recovery | Physical kernel and uniform limits |
+| Terminal nonlinear Gaussian L2 prediction | Exact spectrum, sufficient coordinate, leading-rank remainder and limit | Multidirectional terminal families |
+| Fractional Hurst geometry | Dual exponent 2 min(H,1-H); exact Brownian benchmark; actual H=1/4 current-only insufficiency | Causal bridge and matching upper law |
+| Poisson complete scalar/field calculus | Complete bases, full graph transfer, centered and coherent recovery | Physical spectral semigroup |
+| Physical tilt/coherent graph geometry | Actual laws, gauges, both displaced graphs and scalar Gaussian displacements | Group/formula/continuity and infinite-field extension |
+| Poisson quadratic curvature and entropy | Sharp generator coefficient 1/2; forward coefficient 1; bounded-core Gamma/source energy and entropy counterexamples | General modified jump entropy; ordinary quadratic branch consolidated |
+| IBM fixed-mollifier cubic target | Actual joint L2, representatives and recovered source | Physical kernel and uniform limits |
 | IBM primitive source obstruction | Necessary source-vector condition | Actual non-Cauchy or blow-up theorem |
-| Countable SPDE noise and nonlinear Wick responses | Actual independent modes, exact degree-weighted summability, necessary renormalization, projected Gram forecasts, Brownian full-past laws and positive-time roughness | Spatial solution, further regularity and paths |
-| Poisson ambient quartic inverse | Everywhere optimal one-third exponent | Exhausted; study legitimate constrained sources |
-| Finite/source quartic stability | Fixed finite directions; nonzero Gaussian first-chaos regularity | Quantitative uniform constants for useful stochastic sources |
+| Countable SPDE/Wick modes | Exact summability, necessary renormalization, Gram forecasts, Brownian full-past and increment laws | Spatial solutions and paths |
+| Quartic inverse source geometry | Ambient Poisson one-third optimality; Gaussian first-chaos nonzero regularity; finite-direction stability | Quantitative useful stochastic embeddings |
+| Recovery compactness | Actual Poisson compact tails; no compact full Gaussian right inverse; one-coordinate Gaussian conditional recovery compact | General finite observed source criterion; countable Brownian observation test underway |
+| Gaussian conditional projection | Compact exactly for all-zero observed sources | Conditional projection itself is not a compact filter in nontrivial cases |
+| Prediction versus recovered fields | Actual Wick primitive and joint correction/defect formulas; first-chaos noncommutation | Full all-L2 joint operator identity and causal source applications |
 
 ## Discovery 1 — Actual Poisson adjunction reconstructs the all-order Charlier ladder
 
@@ -1707,7 +1708,7 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonTiltComposition.
 | relativeEntropy_not_symmetric | Foundation/PoissonTiltComposition.lean:56 |
 
 
-## Chronological mathematical checkpoint ledger through discovery 70
+## Chronological mathematical checkpoint ledger through discovery 77
 
 | Commit | Verified checkpoint |
 | --- | --- |
@@ -1781,6 +1782,13 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonTiltComposition.
 | dc287a6 | Verify countable Wick forecasts with projected Gram cross terms |
 | 2cf6ff3 | Prove exact full-past prediction for countable Brownian Wick responses |
 | f2cfb99 | Separate initial Wick prediction scaling from positive-time roughness |
+| d718ddd | Carry the Poisson quadratic entropy obstruction onto the genuine finite-support core |
+| 4c8cd3f | Identify finite-core Poisson Gamma energy and its curvature entropy counterexample |
+| 2f5542f | Exclude compact full Gaussian divergence right inverses through infinite first chaos |
+| 3772456 | Prove actual Poisson divergence recovery compact through quantitative finite-rank tails |
+| 177d3cb | Classify compact Gaussian conditional projections through actual Wick embeddings |
+| 73d5d0f | Recover actual Wick primitives and verify the source projection defect under conditioning |
+| 899c699 | Restore compact Gaussian recovery after one observation through actual Poisson factorization |
 
 Documentation checkpoint: 5ec7740 consolidated discoveries through 56.
 
@@ -2435,3 +2443,32 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianOneObservationRecoveryCompa
 | transferredRecovery_eq_conditional_recovery | Foundation/GaussianOneObservationRecoveryCompactness.lean:152 |
 | single_observation_recovery_compact | Foundation/GaussianOneObservationRecoveryCompactness.lean:160 |
 | compact_recovery_noncompact_projection | Foundation/GaussianOneObservationRecoveryCompactness.lean:165 |
+
+
+## Discovery 78 — countable Brownian full-past recovery is compact only at time zero
+
+If an actual Gaussian observation source span contains an isometric copy of the infinite coefficient Hilbert space, canonical recovery after its conditional projection is noncompact. The proof composes observed first-chaos and vacuum embeddings to recover the infinite-dimensional identity; no hypothetical divergence inverse or semigroup is substituted.
+
+For the actual countable Brownian modes, every positive full-past observation time contains normalized independent current mode directions. Their genuine Hilbert-sum embedding lies in the closed observation source span. Thus recovery after the actual complete countable Brownian past is noncompact at every positive time. At time zero all source directions vanish and the recovered conditional operator is zero. The exact compactness classification is therefore t=0.
+
+Significance: finite observation time does not control source multiplicity when countably many modes are observed. This supplies a concrete stochastic counterpoint to compact recovery after one observed Gaussian coordinate. Initial nonlinear Wick prediction scaling does not by itself justify compactness of an infinite-mode observed recovery operator. No spatial SPDE solution or path statement is made.
+
+Verification: full Lake build 4392 jobs (.lake/stardust-78-build.log); nine public types inspected; 7545 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-78-audit.log). Discovery 77 checkpoint: 899c699. Discovery 78 is the commit containing this entry. The report consolidation and ledger through discovery 77 are saved with this checkpoint.
+
+Reflection: future compactness claims for stochastic filtering must specify both degree damping and observed source multiplicity. A general finite-dimensional observed-source theorem and spatial mode damping estimates remain worthwhile focused campaigns. Immediate work constructs the actual joint coefficient-source and sample conditional projection, and tests the corrected recovery identity on countable nonlinear responses.
+
+### Public locations — discovery 78
+
+Prefix: OperatorDerivativeRewrite.Foundation.SPDEObservationRecoveryCompactness.
+
+| Name | Source |
+| --- | --- |
+| infinite_observed_source_noncompact | Foundation/SPDEObservationRecoveryCompactness.lean:13 |
+| modeUnit | Foundation/SPDEObservationRecoveryCompactness.lean:33 |
+| modeUnit_orthonormal | Foundation/SPDEObservationRecoveryCompactness.lean:35 |
+| observedSourceEmbedding | Foundation/SPDEObservationRecoveryCompactness.lean:49 |
+| observedSourceEmbedding_hasSum | Foundation/SPDEObservationRecoveryCompactness.lean:52 |
+| observedSourceEmbedding_mem | Foundation/SPDEObservationRecoveryCompactness.lean:57 |
+| positive_time_recovery_noncompact | Foundation/SPDEObservationRecoveryCompactness.lean:67 |
+| zero_time_recovery_zero | Foundation/SPDEObservationRecoveryCompactness.lean:72 |
+| brownian_past_recovery_compact_iff | Foundation/SPDEObservationRecoveryCompactness.lean:86 |
