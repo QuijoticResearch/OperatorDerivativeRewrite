@@ -374,3 +374,4 @@ import Foundation.GaussianQuadraticSourceHodge
 import Foundation.GaussianInverseNumberPotential
 import Foundation.GaussianPotentialPredictionRank
 import Foundation.GaussianObservedRecoveryRange
+import Foundation.GaussianJointRecoveryIntertwining
