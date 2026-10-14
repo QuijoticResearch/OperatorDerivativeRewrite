@@ -25,7 +25,7 @@ Reflection: equal ladder energy does not imply equal multiplication algebra or o
 | All-order actual Poisson Charlier ladder | VERIFIED | Polynomial completeness and Gaussian spectral transfer |
 | Nonlinear Wick prediction from fractional observations | VERIFIED | Sharp asymptotics and full-past versus one-coordinate comparison |
 | Bounded right inverse of full Gaussian divergence on centered L2 | VERIFIED | Full gradient-range projection and comparison with adapted representation |
-| Gaussian/Poisson finite-chaos isometry versus multiplication | PROMISING, UNPROVED | Match verified Gram matrices; calculate second-degree product defect |
+| Gaussian/Poisson finite-chaos isometry versus multiplication | VERIFIED | Polynomial density and completion; retain proved multiplication defect |
 | Source-Hilbert to physical IBM white-noise kernel bridge | OPEN FROM IBM CAMPAIGN | Construct actual isometry before physical kernel/H^-1 claims |
 
 ## Complete public locations — discovery 1
@@ -151,3 +151,39 @@ Prefix: OperatorDerivativeRewrite.Foundation.BanachQuarticInverseObstruction.
 | inverse_zero | Foundation/BanachQuarticInverseObstruction.lean:40 |
 | no_local_linear_bound | Foundation/BanachQuarticInverseObstruction.lean:48 |
 | inverse_not_lipschitz | Foundation/BanachQuarticInverseObstruction.lean:78 |
+
+## Discovery 5 — Finite Gaussian/Poisson chaos isometry does not preserve squaring
+
+Verified: GaussianPoissonChaosTransfer matches the exact inner products of every finite Charlier expansion and Gaussian Wick expansion with the same coefficient list and variance lambda. It constructs an actual matching source direction in the repository's l2 CoefficientSpace, so the concrete norm transfer has no existential or artificial direction hypothesis.
+
+This Hilbert transfer does not identify ordinary polynomial multiplication. The actual centered Poisson square decomposes as P2+P1+lambda P0. The corresponding Gaussian square is Wick2+lambda Wick0, with an actual AE square realization. The Poisson square pairs with its first polynomial mode by lambda>0; the Gaussian square pairs with its first Wick mode by exactly zero. Both second modes nevertheless have norm²=2 lambda². Thus equal chaos Gram geometry is compatible with different products, jump chain rules and parity.
+
+Mathematical significance: the adjoint ladders discovered in milestone 1 support a concrete finite Hilbert transfer, while the product defect prevents a naive algebraic transfer of nonlinear observables. This directly tests a tempting stronger conjecture rather than assuming a Gaussian analogy supplies jump calculus.
+
+Limitations: finite coefficients only. No completed unitary onto the whole Poisson L2 space, polynomial density, full Poisson chaos projection characterization, multiplication-preserving map, process coupling or limit theorem is claimed. The nonzero Poisson pairing concerns the genuine first polynomial eigenmode; it does not substitute for an unproved full spectral completeness theorem.
+
+Verification: full Lake build 4314 jobs (.lake/stardust-05-build.log); all 15 public types checked; 6332 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-05-audit.lean and .log). Prior Banach checkpoint: f45c9ca. Discovery 5 is the commit containing this entry.
+
+Reflection: a future Poisson spectral campaign should first prove polynomial density and then extend the finite isometry to a unitary on the appropriate generated spaces. The multiplication defect should remain part of its specification. Shared number eigenvalues do not make Gaussian and Poisson stochastic calculus interchangeable.
+
+### Public locations — discovery 5
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianPoissonChaosTransfer.
+
+| Name | Source |
+| --- | --- |
+| poissonExpansion | Foundation/GaussianPoissonChaosTransfer.lean:15 |
+| gaussianExpansion | Foundation/GaussianPoissonChaosTransfer.lean:18 |
+| poissonExpansion_inner | Foundation/GaussianPoissonChaosTransfer.lean:21 |
+| gaussianExpansion_inner | Foundation/GaussianPoissonChaosTransfer.lean:29 |
+| finite_chaos_inner_transfer | Foundation/GaussianPoissonChaosTransfer.lean:38 |
+| finite_chaos_norm_transfer | Foundation/GaussianPoissonChaosTransfer.lean:44 |
+| matchingDirection | Foundation/GaussianPoissonChaosTransfer.lean:51 |
+| matchingDirection_norm_sq | Foundation/GaussianPoissonChaosTransfer.lean:54 |
+| concrete_finite_chaos_norm_transfer | Foundation/GaussianPoissonChaosTransfer.lean:58 |
+| charlier_one | Foundation/GaussianPoissonChaosTransfer.lean:63 |
+| charlier_two | Foundation/GaussianPoissonChaosTransfer.lean:67 |
+| poisson_square_decomposition | Foundation/GaussianPoissonChaosTransfer.lean:74 |
+| poisson_square_first_inner | Foundation/GaussianPoissonChaosTransfer.lean:89 |
+| gaussian_square_first_inner | Foundation/GaussianPoissonChaosTransfer.lean:95 |
+| gaussian_square_coeFn | Foundation/GaussianPoissonChaosTransfer.lean:101 |
