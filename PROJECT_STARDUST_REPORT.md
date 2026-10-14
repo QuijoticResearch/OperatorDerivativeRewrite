@@ -1835,3 +1835,39 @@ Prefix: OperatorDerivativeRewrite.Foundation.BanachFiniteSourceStability.
 | finite_linear_lower_bound | Foundation/BanachFiniteSourceStability.lean:34 |
 | finite_weighted_lower | Foundation/BanachFiniteSourceStability.lean:46 |
 | finite_datum_inverse_stability | Foundation/BanachFiniteSourceStability.lean:51 |
+
+## Discovery 59 — coherent-vacuum source recovery, exact range and shifted Poincare
+
+The physical gauge carries the tilted law's actual normalized constant mode into the previously constructed density root. Consequently its centered projection becomes f-inner(root_theta,f) root_theta in the original Poisson L2. This is orthogonality to the unit coherent vacuum, not the original-law mean projection.
+
+A genuine bounded linear recovery operator is constructed by composing the physical unitary, the verified rate-weighted field isometry and the complete actual Poisson recovery. Its output u is the unique solution of the shifted full creation graph C_lambda(u)=f-P_root(f)+d u. Its norm is bounded by ||f-P_root(f)||, and hence by ||f||. The full shifted creation range is exactly root_theta's orthogonal complement.
+
+The shifted full annihilation graph A_lambda(f)=g+d f satisfies ||f-P_root(f)||<=||g||. Its kernel is exactly the coherent-vacuum line, and the density root's genuine annihilation eigenvalue is d. All operators use the actual maximal Poisson graphs and full L2 domains, with d=sqrt(lambda exp(theta))-sqrt(lambda) and positive lambda. No stochastic time-dependent tilt, adapted integral or semigroup is claimed.
+
+Significance: the original full centered source recovery survives a physical change of law as a complete coherent-vacuum operator calculus, including unique recovery, kernel, range and Poincare. This provides a verified source displacement principle beyond isolated coherent-vector calculations.
+
+Verification: full Lake build 4370 jobs (.lake/stardust-59-build.log); fifteen public types inspected, with the private range helper also built and transitively audited; 7189 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-59-audit.log). Discovery 58 checkpoint: 7f4bcb8. Discovery 59 is the commit containing this entry.
+
+Reflection: a complete displaced spectral basis or a true semigroup construction would be a focused follow-up; no such construction is inferred here. Independent exploration has returned to fractional prediction and is checking the stronger persistent-regime covariance contribution, potentially changing the obstruction exponent from 2H to 2 min(H,1-H).
+
+### Public locations — discovery 59
+
+Prefix: OperatorDerivativeRewrite.Foundation.PoissonCoherentRecovery.
+
+| Name | Source |
+| --- | --- |
+| coherentCentered | Foundation/PoissonCoherentRecovery.lean:15 |
+| gauge_vacuum | Foundation/PoissonCoherentRecovery.lean:18 |
+| gauge_zero_coefficient | Foundation/PoissonCoherentRecovery.lean:27 |
+| gauge_centered | Foundation/PoissonCoherentRecovery.lean:36 |
+| coherentRecovery | Foundation/PoissonCoherentRecovery.lean:42 |
+| coherentRecoveryOperator | Foundation/PoissonCoherentRecovery.lean:46 |
+| coherentRecoveryOperator_apply | Foundation/PoissonCoherentRecovery.lean:52 |
+| coherentRecovery_graph | Foundation/PoissonCoherentRecovery.lean:55 |
+| coherentRecovery_norm_le | Foundation/PoissonCoherentRecovery.lean:69 |
+| coherentRecovery_unique | Foundation/PoissonCoherentRecovery.lean:75 |
+| coherent_creation_range | Foundation/PoissonCoherentRecovery.lean:104 |
+| coherent_poincare | Foundation/PoissonCoherentRecovery.lean:130 |
+| coherentRecovery_norm_le_centered | Foundation/PoissonCoherentRecovery.lean:150 |
+| coherent_vacuum_annihilation | Foundation/PoissonCoherentRecovery.lean:161 |
+| shifted_annihilation_kernel | Foundation/PoissonCoherentRecovery.lean:172 |
