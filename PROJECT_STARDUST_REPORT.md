@@ -125,3 +125,29 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianDivergenceRecovery.
 | recovery_minimal_norm | Foundation/GaussianDivergenceRecovery.lean:166 |
 | exists_divergence_iff_centered | Foundation/GaussianDivergenceRecovery.lean:178 |
 | recovery_adjoint_derivative | Foundation/GaussianDivergenceRecovery.lean:193 |
+
+## Discovery 4 — Quartic Banach recovery cannot have a local linear modulus
+
+Verified: BanachQuarticInverseObstruction proves the actual L4 duality map and normal map have cubic homogeneity. Under the existing explicit positive lower bound on delta, completeness and a nonzero source vector, every dual neighborhood of zero violates every proposed linear inverse bound. Precisely: for any real K and r>0, there is ||f||<r with K||f||<||inverse(f)-inverse(0)||. Consequently the full inverse is not globally Lipschitz for any Lipschitz constant.
+
+The proof uses the genuine complete-space normalFourEquiv, not a scalar toy inverse: shrinking the source by a shrinks its dual datum by a³. The existing 1/3-Holder theorem remains valid. This milestone rules out a linear modulus, but does not yet formally prove failure of EVERY Holder exponent above 1/3; that sharper claim remains a clear homogeneity-based next theorem.
+
+Mathematical significance: the linear Gaussian source recovery of discovery 3 and the nonlinear Banach quartic inverse have fundamentally different stability near zero. Bijectivity and a quantitative coercive normal map do not upgrade the quartic inverse to Lipschitz regularity. This corrects a tempting inference, not a documented erroneous repository theorem; all existing verified statements remain intact.
+
+Verification: full Lake build 4313 jobs (.lake/stardust-04-build.log); seven public types checked; 6307 safe Foundation declarations audited transitively with only propext/Classical.choice/Quot.sound (.lake/stardust-04-audit.lean and .log). Gaussian recovery checkpoint: d66d16dc3f7142b1ca6456394b0c089283790fdb. Discovery 4 is the commit containing this entry.
+
+Reflection: investigate the exact optimal Holder exponent and stability away from zero. Do not infer a global Lipschitz algorithm for Banach recovery from the Gaussian bounded inverse. This branch warrants a focused quantitative nonlinear inverse campaign if recovery algorithms become a priority.
+
+### Public locations — discovery 4
+
+Prefix: OperatorDerivativeRewrite.Foundation.BanachQuarticInverseObstruction.
+
+| Name | Source |
+| --- | --- |
+| dualityFour_smul | Foundation/BanachQuarticInverseObstruction.lean:17 |
+| normalFour_smul | Foundation/BanachQuarticInverseObstruction.lean:26 |
+| normalFour_zero | Foundation/BanachQuarticInverseObstruction.lean:30 |
+| inverse_normalFour | Foundation/BanachQuarticInverseObstruction.lean:35 |
+| inverse_zero | Foundation/BanachQuarticInverseObstruction.lean:40 |
+| no_local_linear_bound | Foundation/BanachQuarticInverseObstruction.lean:48 |
+| inverse_not_lipschitz | Foundation/BanachQuarticInverseObstruction.lean:78 |
