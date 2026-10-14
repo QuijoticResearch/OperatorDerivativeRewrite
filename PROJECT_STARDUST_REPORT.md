@@ -2091,3 +2091,47 @@ Prefix: OperatorDerivativeRewrite.Foundation.FractionalCurrentObservationObstruc
 | full_forecast_earlier_pairing | Foundation/FractionalCurrentObservationObstruction.lean:61 |
 | full_past_not_current | Foundation/FractionalCurrentObservationObstruction.lean:72 |
 | strict_prediction_energy_gain | Foundation/FractionalCurrentObservationObstruction.lean:79 |
+
+## Discovery 67 — actual countable Wick modes and necessary quadratic renormalization
+
+For any countable orthogonal actual Gaussian source directions h_i and positive Wick degree d, the actual L2 series sum c_i Wick_d(h_i) converges exactly when sum c_i^2 d! ||h_i||^(2d) is finite. Exact finite and infinite energies are proved. The limit lies entirely in degree d, is centered, belongs to the recovered actual divergence graph, and its minimum-norm source recovery energy equals (1/d) times target energy.
+
+The construction is instantiated on the actual independent Brownian mode source vectors from discovery 27. Raw squares are actual L2 representatives of X(h)^2, with mean ||h||^2; a divergent coefficient-weighted mean prevents their series from converging in L2. For independent unit-time Brownian modes and c_i=1/(i+1), the centered-square series sum (B_i(1)^2-1)/(i+1) converges in actual Gaussian L2, while the raw-square series does not. Square summability supplies finite fluctuation energy despite a divergent harmonic expectation.
+
+Significance: the verified SPDE forcing program now has a legitimate countable nonlinear renormalized response and exact mode criterion, rather than only first-chaos forcing. Centering is mathematically necessary in this concrete example. No space-dependent SPDE solution, distribution-valued product, time path version, or renormalized stochastic equation is constructed. The theorem uses actual orthogonal source directions; it does not assume all projected directions remain orthogonal.
+
+Verification: full Lake build 4381 jobs (.lake/stardust-67-build.log); 25 public types inspected; 7334 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-67-audit.log). Discovery 66 checkpoint: 8f16200. Discovery 67 is the commit containing this entry.
+
+Reflection: nonlinear noise summability is controlled by degree-weighted mode variances, while raw expectations demand a different summability condition. A future focused campaign could construct spatial/temporal renormalized SPDE responses with actual regularity estimates. The immediate next investigation computes conditional predictions when observation destroys orthogonality and creates cross-mode covariance terms.
+
+### Public locations — discovery 67
+
+Prefix: OperatorDerivativeRewrite.Foundation.SPDEWickModes.
+
+| Name | Source |
+| --- | --- |
+| wickLine | Foundation/SPDEWickModes.lean:14 |
+| wickComponent | Foundation/SPDEWickModes.lean:17 |
+| wickLines_orthogonal | Foundation/SPDEWickModes.lean:20 |
+| wickSeries_summable_iff | Foundation/SPDEWickModes.lean:28 |
+| wickResponse | Foundation/SPDEWickModes.lean:38 |
+| wickResponse_hasSum | Foundation/SPDEWickModes.lean:41 |
+| finite_wick_energy | Foundation/SPDEWickModes.lean:47 |
+| wickResponse_energy | Foundation/SPDEWickModes.lean:56 |
+| wickResponse_projection | Foundation/SPDEWickModes.lean:67 |
+| wickResponse_recovery_graph | Foundation/SPDEWickModes.lean:79 |
+| wickResponse_recovery_energy | Foundation/SPDEWickModes.lean:86 |
+| modeDirection | Foundation/SPDEWickModes.lean:103 |
+| modeDirections_orthogonal | Foundation/SPDEWickModes.lean:106 |
+| modeDirection_energy | Foundation/SPDEWickModes.lean:111 |
+| brownianDirection | Foundation/SPDEWickModes.lean:117 |
+| brownianDirection_energy | Foundation/SPDEWickModes.lean:120 |
+| rawSquare | Foundation/SPDEWickModes.lean:123 |
+| rawSquare_coeFn | Foundation/SPDEWickModes.lean:126 |
+| rawSquare_mean | Foundation/SPDEWickModes.lean:136 |
+| rawSquareSeries_mean_obstruction | Foundation/SPDEWickModes.lean:141 |
+| harmonicCoefficient | Foundation/SPDEWickModes.lean:151 |
+| harmonic_square_summable | Foundation/SPDEWickModes.lean:153 |
+| harmonic_not_summable | Foundation/SPDEWickModes.lean:158 |
+| actual_centered_squares_summable | Foundation/SPDEWickModes.lean:165 |
+| actual_raw_squares_not_summable | Foundation/SPDEWickModes.lean:173 |
