@@ -265,6 +265,7 @@ import Foundation.IBMOffsetTranslation
 import Foundation.IBMBoundaryVariance
 import Foundation.IBMJointMollifierGaussian
 import Foundation.IBMGaussianSteinMoments
+import Foundation.IBMNegativeBulkVariance
 import Foundation.SPDEFiniteModes
 import Foundation.SPDEModulatedSensitivity
 import Foundation.SPDEModulatedResponse
