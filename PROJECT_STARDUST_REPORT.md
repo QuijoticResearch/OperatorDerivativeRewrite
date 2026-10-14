@@ -23,8 +23,8 @@ Reflection: equal ladder energy does not imply equal multiplication algebra or o
 | Direction | Status | Next obligation |
 | --- | --- | --- |
 | All-order actual Poisson Charlier ladder | VERIFIED | Polynomial completeness and Gaussian spectral transfer |
-| Nonlinear Wick prediction from fractional observations | IN PROGRESS | Prove generated-space membership and Cauchy lower bound; instantiate actual fBM |
-| Bounded right inverse of full Gaussian divergence on centered L2 | PROMISING, UNPROVED | Assemble inverse-weighted gradient sectors and prove minimal norm |
+| Nonlinear Wick prediction from fractional observations | VERIFIED | Sharp asymptotics and full-past versus one-coordinate comparison |
+| Bounded right inverse of full Gaussian divergence on centered L2 | IN PROGRESS | Finish bounded operator, minimal norm and adjoint recovery verification |
 | Gaussian/Poisson finite-chaos isometry versus multiplication | PROMISING, UNPROVED | Match verified Gram matrices; calculate second-degree product defect |
 | Source-Hilbert to physical IBM white-noise kernel bridge | OPEN FROM IBM CAMPAIGN | Construct actual isometry before physical kernel/H^-1 claims |
 
@@ -55,3 +55,31 @@ All names have prefix OperatorDerivativeRewrite.Foundation.PoissonCharlierLadder
 | scalar_norm_sq_succ | Foundation/PoissonCharlierLadder.lean:147 |
 | scalar_norm_sq | Foundation/PoissonCharlierLadder.lean:154 |
 | scalar_inner | Foundation/PoissonCharlierLadder.lean:170 |
+
+## Discovery 2 — Nonlinear fractional prediction survives in every Wick degree
+
+Verified: GaussianWickPredictionBound proves that the actual Wick polynomial of any observed source direction belongs to the full generated Gaussian sigma-algebra space, even with uncountable, correlated or degenerate observations. For arbitrary terminal direction u, observed direction h_i and degree n, the pairing of the actual conditional projection of Wick_n(u) against Wick_n(h_i) is n! <u,h_i>^n. Cauchy then gives the exact nondivided energy lower bound; zero observation directions are allowed in that abstract statement.
+
+The actual fractional Brownian specialization uses its previously constructed source direction and full past up to t. For 0<H<1, 0<t<=1, every degree n has
+||E[Wick_n(X_1) | past_t]||² >= n! (t^(2H))^n / 4^n.
+A sharper covariance quotient bound is also proved for all t>0. The conditional projection is the repository's actual conditional expectation in Gaussian L2; no ad hoc projection, independence assumption or covariance inverse is introduced. Wick_n is not itself Gaussian when n>1.
+
+Mathematical significance: the earlier first-chaos prediction obstruction extends to all nonlinear Hermite degrees by testing against one observed Wick coordinate. It connects conditional-space density, chaos algebra and the actual fractional covariance kernel. The bound supplies a norm-level lower scale t^(Hn); it is a lower bound, not an exact prediction asymptotic or a matching upper estimate. No new global memory/Markov claim is made.
+
+Verification: full pinned Lake build 4311 jobs (.lake/stardust-02-build.log); all seven public types checked; 6267 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-02-audit.lean and .log). Discovery 1 commit: ffe1a503a484bf6061536c1f2c6508e5dca0fd21. Discovery 2 is the commit containing this entry.
+
+Reflection/new questions: find sharp small-time prediction asymptotics and matching upper bounds, and compare conditioning on the entire past with conditioning on the single current coordinate. Any proposed remainder estimate must respect the degree-dependent lower scale. The proof does not yet establish sharpness or a new process regularity theorem. This is worth a focused fractional prediction campaign after the operator discoveries.
+
+### Public locations — discovery 2
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianWickPredictionBound.
+
+| Name | Source |
+| --- | --- |
+| observed_wick_mem | Foundation/GaussianWickPredictionBound.lean:14 |
+| forecast_wick_pairing | Foundation/GaussianWickPredictionBound.lean:27 |
+| forecast_wick_energy_lower | Foundation/GaussianWickPredictionBound.lean:40 |
+| Fractional.forecast | Foundation/GaussianWickPredictionBound.lean:60 |
+| Fractional.forecast_covariance_lower | Foundation/GaussianWickPredictionBound.lean:63 |
+| Fractional.forecast_norm_sq_lower | Foundation/GaussianWickPredictionBound.lean:80 |
+| Fractional.forecast_small_time_lower | Foundation/GaussianWickPredictionBound.lean:98 |
