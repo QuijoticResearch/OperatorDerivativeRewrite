@@ -323,3 +323,4 @@ import Foundation.IBMClockCubicJointL2
 import Foundation.IBMClockSixthMoment
 import Foundation.FiniteMeasureL2Integration
 import Foundation.IBMClockCubicJointTimeL2
+import Foundation.IBMClockCubicBochnerRecovery

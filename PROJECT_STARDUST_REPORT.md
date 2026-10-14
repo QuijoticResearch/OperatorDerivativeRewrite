@@ -981,3 +981,36 @@ Prefix: OperatorDerivativeRewrite.Foundation.IBMClockCubicJointTimeL2.
 | timeValue_memLp | Foundation/IBMClockCubicJointTimeL2.lean:56 |
 | integratedValue_memLp_joint | Foundation/IBMClockCubicJointTimeL2.lean:76 |
 | integratedValue_joint_energy_le | Foundation/IBMClockCubicJointTimeL2.lean:81 |
+
+## Discovery 34 — actual joint Bochner source recovery for the IBM cubic target
+
+The clock-indexed integratedCorrection is now proved strongly measurable and genuinely L2 with values in scenery Gaussian L2. Its actual sourcePrimitive is likewise L2 over the clock. Their constructed clock Bochner classes lie in the genuine lifted full scenery divergence graph. The recovered field has norm at most the target and is minimum norm among all lifted source preimages.
+
+The target Bochner energy equals the full joint scalar energy of the actual cubic time integral. The latter is centered under the full joint law, proved by justified scalar Fubini and the existing per-clock centering. Thus the scalar and quotient-valued joint descriptions agree, and the earlier arbitrary-parameter Gaussian recovery theorem now has its measurability, L2 and centering hypotheses discharged for this actual IBM observable.
+
+This completes the fixed-mollifier joint moment/representative/source-primitive chain, not a stochastic Ito–Tanaka formula. The lifted divergence differentiates scenery source coordinates fiberwise while the clock indexes the fibers. It is not asserted to be an intrinsic IBM derivative, an adapted integral with respect to the clock, or the full manuscript correction including its factor 1/2 and boundary term. Uniform mollifier limits, the physical kernel isometry, local-time estimates, graph-norm derivative/time interchange and singular spatial H^-1 convergence remain open.
+
+Verification: full Lake build 4344 jobs (.lake/stardust-34-build.log); fourteen public types checked; 6729 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-34-audit.log). Discovery 33 checkpoint: 6b29207. Discovery 34 is the commit containing this entry.
+
+Reflection: the fixed-mollifier source calculation has become a fully joint L2 statement with a genuine minimal primitive. Research priorities should now move from repeating moment existence to physical source-kernel geometry and n-uniform estimates. Exploration next tests nonlinear entropy invariants against the completed Gaussian/Poisson Hilbert transfer.
+
+### Public locations — discovery 34
+
+Prefix: OperatorDerivativeRewrite.Foundation.IBMClockCubicBochnerRecovery.
+
+| Name | Source |
+| --- | --- |
+| integratedCorrection_stronglyMeasurable | Foundation/IBMClockCubicBochnerRecovery.lean:15 |
+| integratedCorrection_energy | Foundation/IBMClockCubicBochnerRecovery.lean:31 |
+| integratedCorrection_memLp | Foundation/IBMClockCubicBochnerRecovery.lean:39 |
+| clockTargetClass | Foundation/IBMClockCubicBochnerRecovery.lean:48 |
+| clockTargetClass_coeFn | Foundation/IBMClockCubicBochnerRecovery.lean:51 |
+| clockPrimitiveClass | Foundation/IBMClockCubicBochnerRecovery.lean:55 |
+| clockPrimitiveClass_coeFn | Foundation/IBMClockCubicBochnerRecovery.lean:58 |
+| sourcePrimitive_memLp | Foundation/IBMClockCubicBochnerRecovery.lean:66 |
+| clockTarget_center | Foundation/IBMClockCubicBochnerRecovery.lean:70 |
+| clockPrimitive_graph | Foundation/IBMClockCubicBochnerRecovery.lean:77 |
+| clockPrimitive_norm_le | Foundation/IBMClockCubicBochnerRecovery.lean:83 |
+| clockPrimitive_minimal_norm | Foundation/IBMClockCubicBochnerRecovery.lean:87 |
+| clockTarget_energy | Foundation/IBMClockCubicBochnerRecovery.lean:93 |
+| integratedValue_joint_centered | Foundation/IBMClockCubicBochnerRecovery.lean:107 |

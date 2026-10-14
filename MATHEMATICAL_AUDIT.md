@@ -6747,3 +6747,11 @@ IBMClockCubicJointTimeL2 proves product L2 of the actual time/joint-sample cubic
 Verification: full Lake build 4343 jobs; six public types checked; 6692 safe Foundation declarations audited with only the standard three axioms. See discovery 33 and .lake/stardust-33-{build,audit}.log. This supersedes the earlier OPEN joint finite-horizon scalar cubic time-integral L2 status.
 
 Clock-parameterized Bochner target/recovery is being constructed next. Uniform mollifier control, physical kernel identification, graph-norm derivative interchange, local time, predictable-clock integration, stochastic Ito–Tanaka and singular IBM H^-1 convergence remain open. The target is still the g'' time section, not the full correction including its 1/2 factor and boundary term. ResearchSources is unchanged.
+
+## Stardust follow-up: actual joint Bochner cubic source recovery (2026-10-14)
+
+IBMClockCubicBochnerRecovery discharges the actual clock-indexed Bochner target and primitive measurability/L2 hypotheses. Their classes lie in the genuine lifted full scenery-source divergence graph, with norm and minimum-norm recovery bounds. The target Bochner energy equals the actual joint scalar cubic time-integral energy, and the scalar target is centered under the joint law.
+
+Verification: full Lake build 4344 jobs; fourteen public types checked; 6729 safe Foundation declarations transitively audited with only the standard three axioms. See discovery 34 and .lake/stardust-34-{build,audit}.log.
+
+Fixed-mollifier joint moment/representative/source recovery is now verified. The operator acts fiberwise in scenery with the clock as parameter; no intrinsic IBM derivative or predictable-clock stochastic integral is identified. Physical source-kernel isometry, n-uniform limits, local time, derivative/time graph interchange, stochastic Ito–Tanaka and singular IBM H^-1 convergence remain open. The g'' time target still differs from the full manuscript correction's 1/2 factor and boundary term. Manuscripts remain unchanged.
