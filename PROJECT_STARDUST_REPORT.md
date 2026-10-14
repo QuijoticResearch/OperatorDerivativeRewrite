@@ -2919,3 +2919,31 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianDisplacementGroup.
 | displacement_group_law | Foundation/GaussianDisplacementGroup.lean:105 |
 | zero_displacement_identity | Foundation/GaussianDisplacementGroup.lean:130 |
 
+
+## Discovery 93 — the intrinsic scalar Gaussian displacement group is strongly continuous
+
+Actual Poisson exponential totality and physical coherent-vector identification imply that the span of Gaussian coherent vectors is dense in the entire scalar Gaussian L2 space. Displacement acts on this orbit by adding its real parameter. The exact Gaussian affinity gives L2 continuity of the orbit, and equicontinuity of the actual unitary family extends the limit from its dense linear span to every target.
+
+If any family of positive Poisson references and tilts has real displacement parameters converging to zero, its Gaussian unitaries converge on each actual L2 target to that target. If parameters converge to the displacement of a fixed reference, the operators converge on every target to that fixed unitary. In particular each fixed-reference tilt action is strongly continuous. Arbitrary filters and index sets are supported; no reference parameter regularity beyond real displacement convergence is assumed.
+
+Significance: genuine scalar graph displacement, physical coherent vectors, Poisson exponential totality and Gaussian affinity jointly yield an intrinsic strongly continuous real unitary group. This closes the continuity question left open at discovery 62. Strong continuity means convergence on each target; no operator-norm continuity or infinite-field displacement extension is asserted.
+
+Verification: full Lake build 4407 jobs (.lake/stardust-93-build.log); nine public types inspected; 7815 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-93-audit.log). Discovery 92 checkpoint: 163f15c. Discovery 93 is the commit containing this entry.
+
+Reflection: the coherent orbit can also test whether this L2 unitary action supports a bounded L4 realization. Such a bound is relevant to transporting quartic source calculus and does not follow from unitary norm preservation. A pointwise physical formula on arbitrary L2 targets remains open; coherent density, Gaussian translation nonsingularity, and legitimate L2-to-almost-everywhere subsequences offer a route.
+
+### Public locations — discovery 93
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianDisplacementContinuity.
+
+| Name | Source |
+| --- | --- |
+| coherentSpan | Foundation/GaussianDisplacementContinuity.lean:15 |
+| scalar_root_relation | Foundation/GaussianDisplacementContinuity.lean:17 |
+| coherentSpan_closure | Foundation/GaussianDisplacementContinuity.lean:27 |
+| displacement_coherent | Foundation/GaussianDisplacementContinuity.lean:47 |
+| gaussianRoot_distance_sq | Foundation/GaussianDisplacementContinuity.lean:52 |
+| gaussianRoot_continuous | Foundation/GaussianDisplacementContinuity.lean:57 |
+| strong_tendsto_zero | Foundation/GaussianDisplacementContinuity.lean:67 |
+| strong_tendsto | Foundation/GaussianDisplacementContinuity.lean:106 |
+| displacement_parameter_continuous | Foundation/GaussianDisplacementContinuity.lean:124 |
