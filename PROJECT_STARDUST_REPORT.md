@@ -1812,3 +1812,26 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonTiltSourceGauge.
 | creationGraph_iff | Foundation/PoissonTiltSourceGauge.lean:174 |
 | creationExpr_gauge | Foundation/PoissonTiltSourceGauge.lean:188 |
 | creation_gauge_iff | Foundation/PoissonTiltSourceGauge.lean:207 |
+
+## Discovery 58 — finite-dimensional injective sources acquire weighted inverse stability
+
+For an actual bounded source delta:H -> L4(mu), if delta is injective and delta u is nonzero almost everywhere, the actual weighted map B_u(w)=(delta u)(delta w) into L2 is proved injective. No quantitative operator lower bound is assumed in this first step.
+
+Every injective linear map from a finite-dimensional normed source has a positive lower norm bound, derived from Mathlib's genuine antilipschitz theorem. Consequently, under the above explicit source hypotheses and finite-dimensional H, B_u has a positive quantitative lower bound, and some K>0 satisfies ||u-v|| <=K ||A(u)-A(v)|| for every v for the actual quartic normal map. This verifies stability of the inverse relation; the existing complete-space equivalence supplies the inverse when its hypotheses are instantiated.
+
+Significance: source injectivity plus nonzero-a.e. data is a sufficient positive finite-dimensional criterion, rather than postulated normal-map monotonicity. The constant depends on the source and datum. Finite dimension alone is not sufficient, and no uniform estimate as discretization dimension grows is asserted. This complements the everywhere rough full Poisson L4 inverse and the special infinite Gaussian first-chaos weighted geometry.
+
+Verification: full Lake build 4369 jobs (.lake/stardust-58-build.log); four public types inspected; 7163 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-58-audit.log). Discovery 57 checkpoint: ad72b49. Discovery 58 is the commit containing this entry.
+
+Reflection: finite-dimensional Galerkin or source restrictions need quantitative constants, not merely injectivity, before a uniform infinite-dimensional conclusion is legitimate. The coherent Poisson recovery investigation is also progressing: the physical unitary should transfer full centered recovery to the shifted creation graph's coherent-vacuum complement.
+
+### Public locations — discovery 58
+
+Prefix: OperatorDerivativeRewrite.Foundation.BanachFiniteSourceStability.
+
+| Name | Source |
+| --- | --- |
+| weighted_source_injective | Foundation/BanachFiniteSourceStability.lean:17 |
+| finite_linear_lower_bound | Foundation/BanachFiniteSourceStability.lean:34 |
+| finite_weighted_lower | Foundation/BanachFiniteSourceStability.lean:46 |
+| finite_datum_inverse_stability | Foundation/BanachFiniteSourceStability.lean:51 |
