@@ -1014,3 +1014,47 @@ Prefix: OperatorDerivativeRewrite.Foundation.IBMClockCubicBochnerRecovery.
 | clockPrimitive_minimal_norm | Foundation/IBMClockCubicBochnerRecovery.lean:87 |
 | clockTarget_energy | Foundation/IBMClockCubicBochnerRecovery.lean:93 |
 | integratedValue_joint_centered | Foundation/IBMClockCubicBochnerRecovery.lean:107 |
+
+## Discovery 35 — Poisson entropy obstructs a Gaussian quadratic LSI
+
+For every strictly positive Poisson rate and every nonnegative finite C, an actual maximal-difference graph pair (f,g) is constructed with finite square-entropy integrand and entropySq(f)>C norm(g)^2. Consequently no uniform quadratic entropy bound holds on all such finite-entropy maximal-domain pairs.
+
+The witnesses are actual exponential L2 classes exp(theta N), with theta=C+1. Their square entropy is lambda exp(lambda(exp(2theta)-1)) times [2theta exp(2theta)-exp(2theta)+1]. Their genuine weighted difference energy is lambda exp(lambda(exp(2theta)-1)) times (exp(theta)-1)^2. The first weighted exponential count moment, every displayed real integral, entropy integrability and the operator graph are verified before the inequality comparison.
+
+This exposes a nonlinear limit of the completed scalar Gaussian/Poisson Hilbert transfer and matching Poincare geometry. The repository's Gaussian quadratic log-Sobolev program cannot be transferred merely from Hilbert coordinates, ladder energies or bounded centered recovery. The verified obstruction is stated for the actual full difference domain with finite entropy; it does not assert a theorem about a separately restricted bounded core, prove a modified Poisson log-Sobolev inequality, or invalidate the sharp Poisson Poincare result.
+
+Verification: full Lake build 4345 jobs (.lake/stardust-35-build.log); ten public types checked; 6740 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-35-audit.log). Discovery 34 checkpoint: 9339c58. Discovery 35 is the commit containing this entry. Informational ring-normalization suggestions have no associated Lean error.
+
+Reflection: nonlinear entropy is another invariant that ordinary scalar Hilbert equivalence does not identify. A focused Poisson curvature/entropy campaign should formulate the correct jump-sensitive inequality, while a separate spectral campaign can investigate exact closed-operator transfer without claiming entropy preservation.
+
+### Public locations — discovery 35
+
+Prefix: OperatorDerivativeRewrite.Foundation.PoissonExponentialEntropy.
+
+| Name | Source |
+| --- | --- |
+| weighted_count_exponential_hasSum | Foundation/PoissonExponentialEntropy.lean:17 |
+| count_exponential_integral | Foundation/PoissonExponentialEntropy.lean:34 |
+| exponential_square | Foundation/PoissonExponentialEntropy.lean:40 |
+| exponential_square_log | Foundation/PoissonExponentialEntropy.lean:45 |
+| exponential_entropy_integrable | Foundation/PoissonExponentialEntropy.lean:52 |
+| exponential_entropy | Foundation/PoissonExponentialEntropy.lean:57 |
+| exponential_field_norm_sq | Foundation/PoissonExponentialEntropy.lean:70 |
+| exponential_difference_energy | Foundation/PoissonExponentialEntropy.lean:79 |
+| actual_entropy_counterexample | Foundation/PoissonExponentialEntropy.lean:85 |
+| no_uniform_quadratic_entropy_bound | Foundation/PoissonExponentialEntropy.lean:112 |
+
+## Current research register after discovery 35
+
+| Direction | Status | Next obligation |
+| --- | --- | --- |
+| Full Gaussian centered divergence recovery; fractional Wick prediction lower bounds | VERIFIED, CHECKPOINTED | Use established results; exact full-past fractional asymptotics remain open |
+| Poisson density, complete scalar Charlier coordinates, full centered recovery, sharp Poincare | VERIFIED, COMPLETED | Exact full weighted-field operator graph transfer |
+| Quadratic Poisson entropy bound on finite-entropy maximal-domain pairs | REFUTED | Correct jump-sensitive entropy/curvature formulation |
+| Fixed-mollifier IBM per-clock and full joint cubic time target/recovery | VERIFIED, COMPLETED | Physical source-kernel bridge and uniform mollifier estimates |
+| IBM integrated source-vector norm/Cauchy obstruction | VERIFIED NECESSARY CONDITION | Actual non-Cauchy/blow-up estimate remains unproved |
+| Countable SPDE forcing criterion and independent modes | VERIFIED | Actual spatial weights, Galerkin/time convergence and solution construction |
+| Quartic inverse at zero and disjoint nonzero data | VERIFIED OBSTRUCTIONS | Positive overlap/Hessian assumptions for regularity |
+| All-degree normalized fractional Wick metric comparison | VERIFIED | Actual normalized-source increment asymptotics and path versions |
+
+Next three focused directions: physical IBM kernel/uniform-limit analysis; countable SPDE spatial/temporal convergence; exact fractional full-past prediction. Active independent investigation: complete rate-weighted Poisson field coordinates for precise closed-operator transfer. No completed density, moment-existence or representative gap should be reopened as an assumption.
