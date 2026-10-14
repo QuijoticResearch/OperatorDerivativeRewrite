@@ -1312,3 +1312,29 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianTerminalPredictionSpectrum.
 | terminal_energy_hasSum | Foundation/GaussianTerminalPredictionSpectrum.lean:83 |
 | terminal_prediction_rank_upper | Foundation/GaussianTerminalPredictionSpectrum.lean:91 |
 | terminal_prediction_rank_lower | Foundation/GaussianTerminalPredictionSpectrum.lean:108 |
+
+## Discovery 44 — full terminal L2 fractional prediction and rank obstructions
+
+For the actual fractional Gaussian process, every 0<H<1 and every L2 observable f of its time-one terminal coordinate has full-past forecast energy sum_n c_n^2 n! V(t)^n, with V(t) the actual linear full-past forecast energy. The terminal direction is verified to have unit variance. If c_0=0, the true forecast at the initial time is zero.
+
+For every degree m, its forecast energy is at least (c_m^2 m!/4^m) t^(2Hm) for 0<t<=1. If f is centered and c_m is nonzero, every proposed local initial forecast-increment square bound C t^alpha with alpha>2Hm fails at an arbitrarily small positive t. No minimum-degree assumption is needed for this obstruction; choosing the first nonzero coefficient gives the strongest rank interpretation. Every parameter, observable, sigma-algebra and conditional projection is actual repository mathematics.
+
+Significance: nonlinear fractional prediction obstructions now cover arbitrary centered terminal L2 observables rather than selected Wick powers or cubes. This is a lower-bound obstruction; it neither establishes a matching upper time rate nor sharp asymptotics, and it does not claim a stochastic differential equation or fractional time generator.
+
+Verification: full Lake build 4354 jobs (.lake/stardust-44-build.log); seven public types inspected; 6933 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-44-audit.log). Discovery 43 checkpoint: 1529735. Discovery 44 is the commit containing this entry.
+
+Reflection: terminal prediction spectrum, sufficient coordinate and fractional rank obstruction form a coherent completed group. Sharp full-past linear asymptotics now deserve a focused campaign. A separate abstract consequence being investigated is the sharp maximal-correlation inequality between every terminal nonlinear observable and the entire Gaussian observation space.
+
+### Public locations — discovery 44
+
+Prefix: OperatorDerivativeRewrite.Foundation.FractionalTerminalPredictionRank.
+
+| Name | Source |
+| --- | --- |
+| terminalDirection | Foundation/FractionalTerminalPredictionRank.lean:13 |
+| terminalDirection_unit | Foundation/FractionalTerminalPredictionRank.lean:16 |
+| forecast | Foundation/FractionalTerminalPredictionRank.lean:21 |
+| forecast_energy_hasSum | Foundation/FractionalTerminalPredictionRank.lean:24 |
+| forecast_zero_of_centered | Foundation/FractionalTerminalPredictionRank.lean:39 |
+| forecast_small_time_lower | Foundation/FractionalTerminalPredictionRank.lean:53 |
+| no_higher_prediction_increment_bound | Foundation/FractionalTerminalPredictionRank.lean:77 |
