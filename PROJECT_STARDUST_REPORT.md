@@ -2861,3 +2861,31 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianExponentialSobolevObstructi
 | exponential_hasDerivAt | Foundation/GaussianExponentialSobolevObstruction.lean:98 |
 | no_graph_norm_L4_bound | Foundation/GaussianExponentialSobolevObstruction.lean:102 |
 | admitted_graph_L4_counterexample | Foundation/GaussianExponentialSobolevObstruction.lean:118 |
+
+## Discovery 91 — Poisson graph displacement identifies the physical Gaussian coherent vacuum
+
+The transferred physical Poisson square-root tilt at displacement d is exactly the actual scalar Gaussian unit vector exp(d x-d squared). Its full Gaussian derivative graph has eigenvalue d. The previously constructed Gaussian displacement sends the genuine normalized Hermite vacuum to this physical exponential vector, with its positive vacuum pairing fixing the scalar phase.
+
+The full derivative eigenspace for every real d is precisely the line spanned by this coherent vector: an admitted (f,d f) equals inner(coherent_d,f) times coherent_d. The proof transports the genuine Poisson shifted-annihilation kernel and identifies its image using the admitted exponential graph and exact positive vacuum pairings. Every real d is covered by an explicitly established positive Poisson reference choice.
+
+Significance: actual Poisson half-density gauges, complete scalar graph transfer, and Gaussian physical exponentials meet at the level of vectors and full eigenspaces. This upgrades discovery 55's affinity comparison and discovery 62's graph displacement construction; the displaced vacuum now has a verified physical function. The result is one-variable GaussianCore, not a multiplication-preserving Poisson/Gaussian equivalence or a full infinite Gaussian displacement theorem.
+
+Verification: full Lake build 4405 jobs (.lake/stardust-91-build.log); nine public types inspected; 7796 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-91-audit.log). Discovery 90 checkpoint: 33b18fa. Discovery 91 is the commit containing this entry.
+
+Reflection: the full creation graph and vacuum image should uniquely determine the unitary on the complete Hermite core. A reference-independence and additive real group-law draft is under verification. Strong continuity can potentially follow from the actual Poisson exponential totality transported through these physical coherent vectors. A pointwise translation formula on arbitrary Gaussian L2 still requires a separate measure transport proof.
+
+### Public locations — discovery 91
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianCoherentIdentification.
+
+| Name | Source |
+| --- | --- |
+| gaussianRoot_derivative_graph | Foundation/GaussianCoherentIdentification.lean:16 |
+| gaussian_vacuum_root | Foundation/GaussianCoherentIdentification.lean:24 |
+| poisson_vacuum_root | Foundation/GaussianCoherentIdentification.lean:35 |
+| gaussianRoot_vacuum_pairing | Foundation/GaussianCoherentIdentification.lean:41 |
+| transferred_root_vacuum_pairing | Foundation/GaussianCoherentIdentification.lean:46 |
+| gaussian_shifted_kernel | Foundation/GaussianCoherentIdentification.lean:55 |
+| transferred_root_identification | Foundation/GaussianCoherentIdentification.lean:71 |
+| displacement_vacuum_physical | Foundation/GaussianCoherentIdentification.lean:86 |
+| gaussian_eigenvector_iff | Foundation/GaussianCoherentIdentification.lean:96 |
