@@ -401,3 +401,21 @@ Classification A: unconditional IBM-specific countable-skeleton estimates. This 
 
 Full Lake build passed 4,292 jobs. Five exact new public types checked. Complete environment-wide safe Foundation axiom audit passed 5,912 declarations (generated declarations included), using only `propext`, `Classical.choice`, `Quot.sound`. Logs and audit source: `.lake/campaign-ibm-pathwise-02-*`. The previous module's verified proof bodies were preserved. No dependency pin, manuscript, unrelated untracked document, reset, push, automation or additional agent was used.
 
+
+## IBM signed-kernel random-clock integrability — 2026-10-13
+
+The dyadic milestone was committed as `ce7de19`. `Foundation/IBMRandomDerivativeIntegrability.lean` adds four theorems and two definitions in namespace `OperatorDerivativeRewrite.Foundation.IBMRandomDerivativeIntegrability`:
+
+- `kernelMass R ρ = ∫_{-R}^R |ρ(-r)| dr` is the actual absolute kernel mass.
+- `offsetScenery_norm_sq_le`: for a continuous signed kernel and R≥0, the existing offset Gaussian convolution obeys `‖Uρ(x)‖² ≤ kernelMass(R,ρ)² (|x|+R)`. This uses the exact Brownian source energy, the triangle inequality and a genuine Bochner integral bound. Neither positivity nor mass one is assumed.
+- `wholeLineScenery_norm_sq_le`: the same global bound holds for the original whole-line convolution if ρ vanishes when |z|>R. The previously verified translation theorem identifies the two actual integrals.
+- `randomKernelClass ρ t ω = wholeLineScenery ρ |Y_t(ω)|` is an actual Gaussian-L²-valued function on the existing clock factor.
+- `randomKernelClass_memLp`: every compactly supported C¹ kernel has `randomKernelClass ρ t ∈ L²(ΩY;L²(ΩX))` at every deterministic clock time. A support radius is obtained from actual compactness, and the growth bound is dominated using the verified clock's integrable first absolute moment. No clock continuity or localization is assumed.
+- `randomDerivativeClass_memLp`: this applies to all three actual normalized U,V,W derivative kernels at every fixed clock time, including their signs. This closes global iterated-L² integrability of V and W, beyond the previously verified U case.
+
+Classification A: unconditional IBM-specific Gaussian-class integrability. It is a fixed-time statement, not time-integrated stochastic-integrand square integrability and not a product-space pointwise process. No random representative interchange, nonlinear observable integrability, local supremum integrability or Brownian stochastic integral is asserted. The remaining class-to-field bridge is essential before transferring this conclusion to actual pointwise random-time coefficients.
+
+Full pinned Lake build passed 4,293 jobs. All six new public declaration types checked. Environment-wide safe Foundation transitive axiom audit passed 5,918 declarations, generated declarations included, using only `propext`, `Classical.choice`, `Quot.sound`. Logs and audit source: `.lake/campaign-ibm-pathwise-03-*`. A proof-token scan found no prohibited proof constructs in the new modules (the English word 'admit' appears only in a documentation sentence). Existing verified proof bodies, dependency pins, manuscripts and unrelated files were preserved.
+
+Manuscript checked directly: original PDF SHA256 `5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE`. Rendered pages 4 and 6 were inspected. Proposition 3.4 uses local-time coefficient g′(0), consistent with `|Y_t|=|Y_0|+∫sgn(Y_s)dY_s+L⁰_t`. This is manuscript inspection, not a Lean proof of Tanaka or of its IBM application. No new manuscript claim was disproved in this campaign; the previously recorded negative-bulk slope correction remains in force. The PDF is unchanged.
+

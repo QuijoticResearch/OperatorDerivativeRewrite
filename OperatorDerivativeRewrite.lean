@@ -275,3 +275,4 @@ import Foundation.StochasticKernelConvolution
 
 import Foundation.IBMSmoothIncrementMoments
 import Foundation.IBMSmoothIncrementTails
+import Foundation.IBMRandomDerivativeIntegrability
