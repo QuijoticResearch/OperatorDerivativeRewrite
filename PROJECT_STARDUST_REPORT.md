@@ -525,3 +525,29 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonExponentialTotal.
 | exponential_orthogonal_zero | Foundation/PoissonExponentialTotal.lean:82 |
 | exponentialSpan | Foundation/PoissonExponentialTotal.lean:92 |
 | exponentialSpan_closure | Foundation/PoissonExponentialTotal.lean:95 |
+
+## Discovery 18 — genuine polynomial density in Poisson L2
+
+For every strictly positive Poisson rate, the closed linear span of the actual L2 classes of ordinary real polynomials is the whole scalar L2 space. Finite Taylor polynomials for exp(theta N) converge in L2 to the exponential class for every real theta.
+
+The proof controls every Taylor sum by exp(abs(theta) N), whose L2 membership was proved in discovery 15. Uniform integrability and pointwise Taylor convergence supply actual L2 convergence; discovery 17 then supplies totality. Pointwise convergence alone is not used to justify density.
+
+This closes the analytic polynomial-density obligation without postulating a classical spectral theorem. Charlier completeness still requires the separate algebraic spanning bridge now under investigation. Full all-L2 Poisson recovery and a completed Gaussian/Poisson Hilbert transfer are promising subsequent campaigns, not conclusions of this file.
+
+Verification: full Lake build 4328 jobs (.lake/stardust-18-build.log); seven public types checked; 6492 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-18-audit.log). Discovery 17 checkpoint: 8211986. Discovery 18 is the commit containing this entry.
+
+Reflection: exponential integrability has become an effective route from analytic test families back to a discrete polynomial calculus. Prioritize completing the genuine spectral basis and closed-operator extension; retain the proved multiplication and divergence-kernel differences from Gaussian calculus.
+
+### Public locations — discovery 18
+
+Prefix: OperatorDerivativeRewrite.Foundation.PoissonPolynomialDensity.
+
+| Name | Source |
+| --- | --- |
+| polynomialClass | Foundation/PoissonPolynomialDensity.lean:16 |
+| polynomialSpan | Foundation/PoissonPolynomialDensity.lean:19 |
+| taylorPolynomial | Foundation/PoissonPolynomialDensity.lean:22 |
+| taylor_eval | Foundation/PoissonPolynomialDensity.lean:25 |
+| taylor_eval_bound | Foundation/PoissonPolynomialDensity.lean:39 |
+| taylorClass_tendsto | Foundation/PoissonPolynomialDensity.lean:58 |
+| polynomialSpan_closure | Foundation/PoissonPolynomialDensity.lean:84 |
