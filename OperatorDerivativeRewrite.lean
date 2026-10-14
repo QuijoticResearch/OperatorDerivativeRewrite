@@ -363,3 +363,4 @@ import Foundation.SPDEWickBrownianPrediction
 import Foundation.SPDEWickTemporalGeometry
 import Foundation.PoissonCoreEntropyObstruction
 import Foundation.PoissonCoreCurvatureEntropy
+import Foundation.GaussianRecoveryCompactnessObstruction

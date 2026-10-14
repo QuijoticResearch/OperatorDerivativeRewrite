@@ -2278,3 +2278,29 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonCoreCurvatureEntropy.
 | finite_gamma_integrable | Foundation/PoissonCoreCurvatureEntropy.lean:45 |
 | finite_gamma_integral_source_energy | Foundation/PoissonCoreCurvatureEntropy.lean:52 |
 | positive_curvature_bounded_core_entropy_failure | Foundation/PoissonCoreCurvatureEntropy.lean:62 |
+
+## Discovery 73 — no compact bounded full Gaussian divergence right inverse
+
+The canonical recovery restricted to the actual infinite first chaos is a genuine linear isometry from the coefficient Hilbert space into Gaussian vector L2, with value h tensor the Gaussian vacuum. Its adjoint supplies a bounded left inverse for every bounded linear map K that satisfies the actual divergence graph recovery equation on every first-chaos direction. Adjoint source duality proves this identity even if K adds divergence-free components.
+
+The coefficient Hilbert space is not finite dimensional, witnessed by its actual countable orthonormal single-coordinate family. If such a K were compact, composing with the first-chaos embedding and the vacuum adjoint would make the infinite-dimensional identity compact, contradicting Mathlib's exact finite-dimensional characterization. Thus every bounded linear first-chaos right inverse is noncompact, including the canonical full Gaussian recovery.
+
+Significance: inverse number weights cannot supply compactness when a fixed positive degree already has infinite source multiplicity. The conclusion is stronger than failure of compactness for one chosen inverse. It concerns the full infinite Gaussian source space, not the one-variable GaussianCore target of Poisson graph transfer. Compactness of the actual one-count Poisson recovery is a promising separate question; it is not asserted here.
+
+Verification: full Lake build 4387 jobs (.lake/stardust-73-build.log); seven public types inspected; 7399 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-73-audit.log). Discovery 72 checkpoint: 4c8cd3f. Discovery 73 is the commit containing this entry.
+
+Reflection: degree damping and multiplicity must be analyzed separately in any compactness or approximation claim for stochastic source recovery. The scalar Poisson ladder has one mode per degree and decaying inverse weights, suggesting a legitimate finite-rank approximation proof. This is the next investigation, with no compactness claim until its full operator-norm limit is verified.
+
+### Public locations — discovery 73
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianRecoveryCompactnessObstruction.
+
+| Name | Source |
+| --- | --- |
+| vacuumEmbedding | Foundation/GaussianRecoveryCompactnessObstruction.lean:12 |
+| vacuumEmbedding_apply | Foundation/GaussianRecoveryCompactnessObstruction.lean:18 |
+| coefficient_single_orthonormal | Foundation/GaussianRecoveryCompactnessObstruction.lean:21 |
+| coefficient_space_not_finiteDimensional | Foundation/GaussianRecoveryCompactnessObstruction.lean:30 |
+| firstChaos_graph_left_inverse | Foundation/GaussianRecoveryCompactnessObstruction.lean:37 |
+| no_compact_firstChaos_right_inverse | Foundation/GaussianRecoveryCompactnessObstruction.lean:56 |
+| recovery_not_compact | Foundation/GaussianRecoveryCompactnessObstruction.lean:68 |
