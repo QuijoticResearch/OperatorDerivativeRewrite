@@ -2001,3 +2001,31 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonJumpCurvature.
 | forwardEnergy_exponential_integrable | Foundation/PoissonJumpCurvature.lean:263 |
 | forwardEnergy_exponential_integral | Foundation/PoissonJumpCurvature.lean:268 |
 | forward_bochner_entropy_obstruction | Foundation/PoissonJumpCurvature.lean:275 |
+
+## Discovery 64 — exact Brownian prediction inside the fractional spectral process
+
+At H=1/2 the actual fractional terminal source direction projects onto the full past as exactly the current source direction, for 0<=t<=1. Consequently the actual terminal linear forecast equals the current process value, every degree-n terminal Wick forecast equals the current Wick cylinder and has energy n! t^n, and every terminal L2 observable has full-past forecast equal to its forecast from the current observation alone. Its energy has the exact summable spectrum sum c_n^2 n! t^n.
+
+Significance: this verifies the Brownian sufficient-coordinate benchmark within the same actual fractional spectral realization used for the roughness obstructions, including time zero and the terminal time. It identifies L2 classes and conditional projections; it does not assert pathwise equality with a separately constructed Brownian process, or supply the fractional Volterra bridge for other Hurst parameters.
+
+Verification: full Lake build 4375 jobs (.lake/stardust-64-build.log); eleven public types inspected; the complete transitive audit passes with only propext/Classical.choice/Quot.sound (.lake/stardust-64-audit.log). Discovery 63 checkpoint: a4f023f. Discovery 64 is the commit containing this entry.
+
+Reflection: the exact t^n law calibrates the general terminal spectrum. The next investigation quantifies the leading Hermite-rank remainder for all terminal L2 observables and arbitrary observation geometry, so any legitimate linear small-information asymptotic can transfer without extra nonlinear smoothness assumptions.
+
+### Public locations — discovery 64
+
+Prefix: OperatorDerivativeRewrite.Foundation.FractionalBrownianPredictionBenchmark.
+
+| Name | Source |
+| --- | --- |
+| direction | Foundation/FractionalBrownianPredictionBenchmark.lean:12 |
+| past | Foundation/FractionalBrownianPredictionBenchmark.lean:15 |
+| covariance_half | Foundation/FractionalBrownianPredictionBenchmark.lean:18 |
+| past_pairing | Foundation/FractionalBrownianPredictionBenchmark.lean:25 |
+| source_projection | Foundation/FractionalBrownianPredictionBenchmark.lean:38 |
+| linear_forecast | Foundation/FractionalBrownianPredictionBenchmark.lean:59 |
+| direction_energy | Foundation/FractionalBrownianPredictionBenchmark.lean:65 |
+| wick_forecast | Foundation/FractionalBrownianPredictionBenchmark.lean:71 |
+| wick_forecast_energy | Foundation/FractionalBrownianPredictionBenchmark.lean:76 |
+| current_observation_sufficient | Foundation/FractionalBrownianPredictionBenchmark.lean:81 |
+| terminal_forecast_energy | Foundation/FractionalBrownianPredictionBenchmark.lean:86 |
