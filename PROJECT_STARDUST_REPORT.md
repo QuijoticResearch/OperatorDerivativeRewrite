@@ -24,7 +24,7 @@ Reflection: equal ladder energy does not imply equal multiplication algebra or o
 | --- | --- | --- |
 | All-order actual Poisson Charlier ladder | VERIFIED | Polynomial completeness and Gaussian spectral transfer |
 | Nonlinear Wick prediction from fractional observations | VERIFIED | Sharp asymptotics and full-past versus one-coordinate comparison |
-| Bounded right inverse of full Gaussian divergence on centered L2 | IN PROGRESS | Finish bounded operator, minimal norm and adjoint recovery verification |
+| Bounded right inverse of full Gaussian divergence on centered L2 | VERIFIED | Full gradient-range projection and comparison with adapted representation |
 | Gaussian/Poisson finite-chaos isometry versus multiplication | PROMISING, UNPROVED | Match verified Gram matrices; calculate second-degree product defect |
 | Source-Hilbert to physical IBM white-noise kernel bridge | OPEN FROM IBM CAMPAIGN | Construct actual isometry before physical kernel/H^-1 claims |
 
@@ -83,3 +83,45 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianWickPredictionBound.
 | Fractional.forecast_covariance_lower | Foundation/GaussianWickPredictionBound.lean:63 |
 | Fractional.forecast_norm_sq_lower | Foundation/GaussianWickPredictionBound.lean:80 |
 | Fractional.forecast_small_time_lower | Foundation/GaussianWickPredictionBound.lean:98 |
+
+## Discovery 3 — Bounded minimum-norm recovery for full Gaussian source divergence
+
+Verified: GaussianDivergenceRecovery constructs R f = sum_{n>=1} n^(-1) D P_n f for EVERY ambient Gaussian-L2 target f. Orthogonal summability and the closed divergence graph are proved from the complete actual number-sector decomposition. Thus (R f, f-P0 f) belongs to the full source divergence graph without assuming f is Malliavin differentiable.
+
+R is a genuine bounded linear operator with ||R f||<=||f||. Its exact energy is ||R f||²=sum_{n>=1} n^(-1)||P_n f||². It is perpendicular to every divergence-free field and has minimum norm among all source divergence preimages of f-P0 f. The full source divergence range is exactly {f: inner gaussianOne f=0}.
+
+The adjoint gives another substantive identity: if (f,g) belongs to the FULL closed derivative graph, R* g=f-P0 f. This bounded adjoint is a potential-recovery operator, not the unbounded Malliavin derivative itself. It demonstrates why naming an arbitrary bounded integration map and taking its adjoint does not automatically reconstruct the full derivative.
+
+Mathematical significance: integration-first source recovery is available on the entire centered L2 target, with one inverse number weight. It connects the Gaussian chaos energy, Poincare estimate, closed unbounded adjunction, orthogonal kernel decomposition and minimum-norm inverse. This is classical source Hodge/pseudoinverse mathematics, newly verified through the repository's actual graph infrastructure; no novelty claim.
+
+Limitations: this is full ambient Gaussian source divergence, not predictable Ito representation, not an intrinsic IBM observable domain, and not spatial H^-1 regularity. The inverse number weight concerns chaos degree; it cannot substitute for a physical spatial frequency estimate. No martingale representation property is inferred.
+
+Verification: full Lake build 4312 jobs (.lake/stardust-03-build.log); all 19 public types checked; 6300 safe Foundation declarations transitively audited with only propext/Classical.choice/Quot.sound (.lake/stardust-03-audit.lean and .log). Prior checkpoints: ffe1a503a484bf6061536c1f2c6508e5dca0fd21 and b968ae9 (fractional Wick prediction). Discovery 3 is the commit containing this entry.
+
+Reflection: source-divergence recovery is now a priority for nonlinear observables because it requires no target derivative-domain hypothesis. A future focused campaign should identify the orthogonal projection onto the full gradient range and its closed-range decomposition, then compare this source recovery with adapted representation. Poisson transfer would additionally require the unproved complete Charlier spectral decomposition.
+
+### Public locations — discovery 3
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianDivergenceRecovery.
+
+| Name | Source |
+| --- | --- |
+| inverseGradientComponent | Foundation/GaussianDivergenceRecovery.lean:13 |
+| inverseGradient_norm_sq | Foundation/GaussianDivergenceRecovery.lean:16 |
+| inverseGradient_norm_sq_le | Foundation/GaussianDivergenceRecovery.lean:26 |
+| inverseGradient_summable | Foundation/GaussianDivergenceRecovery.lean:38 |
+| recovery | Foundation/GaussianDivergenceRecovery.lean:46 |
+| centeredComponent | Foundation/GaussianDivergenceRecovery.lean:49 |
+| centeredComponent_hasSum | Foundation/GaussianDivergenceRecovery.lean:52 |
+| inverseGradient_divergence_graph | Foundation/GaussianDivergenceRecovery.lean:56 |
+| recovery_graph | Foundation/GaussianDivergenceRecovery.lean:70 |
+| recovery_energy_hasSum | Foundation/GaussianDivergenceRecovery.lean:83 |
+| recovery_norm_le | Foundation/GaussianDivergenceRecovery.lean:99 |
+| recovery_inverse_energy_hasSum | Foundation/GaussianDivergenceRecovery.lean:104 |
+| recovery_add | Foundation/GaussianDivergenceRecovery.lean:108 |
+| recovery_smul | Foundation/GaussianDivergenceRecovery.lean:125 |
+| recoveryOperator | Foundation/GaussianDivergenceRecovery.lean:139 |
+| recovery_orthogonal_kernel | Foundation/GaussianDivergenceRecovery.lean:148 |
+| recovery_minimal_norm | Foundation/GaussianDivergenceRecovery.lean:166 |
+| exists_divergence_iff_centered | Foundation/GaussianDivergenceRecovery.lean:178 |
+| recovery_adjoint_derivative | Foundation/GaussianDivergenceRecovery.lean:193 |
