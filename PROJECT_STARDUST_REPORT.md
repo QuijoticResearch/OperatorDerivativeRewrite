@@ -413,3 +413,30 @@ Prefix: OperatorDerivativeRewrite.Foundation.IBMClockCubicSourcePrimitive.
 | sourcePrimitive_time_integral | Foundation/IBMClockCubicSourcePrimitive.lean:56 |
 | sourcePrimitive_norm_le | Foundation/IBMClockCubicSourcePrimitive.lean:61 |
 | sourcePrimitive_minimal_norm | Foundation/IBMClockCubicSourcePrimitive.lean:65 |
+
+## Discovery 14 — Source recovery preserves the first-chaos obstruction
+
+Verified: GaussianFirstChaosRecovery identifies R(X_h) with the actual constant rank-one source field h*gaussianOne, using both closed derivative and divergence graphs plus kernel orthogonality. Its norm equals ||X_h||, and the distance between any two recovered first-chaos classes equals their original Gaussian-L2 distance exactly.
+
+For any target f, the first number-sector energy ||P1 f||² is a lower bound on ||R f||², by the actual inverse-energy series. Higher-chaos inverse weighting cannot cancel that positive term. The exact pure-first-chaos distance result transfers non-Cauchy behavior as well as norm divergence; it does not conflate these with absence of every possible random-variable limit.
+
+Mathematical significance: the new full source primitive is useful operator recovery, but it cannot be invoked as a cure for a first-chaos L2 singularity. This closes a tempting loophole in applying discoveries 3 and 13 to the IBM limit program. Negative chaos order and negative spatial Sobolev order are different structures.
+
+Limitations: no actual IBM kernel norm divergence or non-Cauchy sequence is proved here; its physical kernel/local-time estimates remain open. The result is a verified generic obstruction-transfer principle, not a substitute for those analytic inputs.
+
+Verification: full Lake build 4324 jobs (.lake/stardust-14-build.log); all six public types checked; 6437 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-14-audit.lean and .log). IBM source primitive checkpoint: fb5f935229546640bf8058b3ea98c5e96984006b. Discovery 14 is the commit containing this entry.
+
+Reflection: retain source recovery as a construction tool, while prioritizing physical kernel and local-time estimates for singular closure. A proposed limit argument must explicitly distinguish chaos smoothing from spatial smoothing. Active Poisson exploration: actual exponential/coherent L2 vectors may supply a legitimate completeness route beyond the finite polynomial recovery theorem.
+
+### Public locations — discovery 14
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianFirstChaosRecovery.
+
+| Name | Source |
+| --- | --- |
+| firstChaos_derivative_graph | Foundation/GaussianFirstChaosRecovery.lean:14 |
+| firstChaos_divergence_graph | Foundation/GaussianFirstChaosRecovery.lean:22 |
+| recovery_firstChaos | Foundation/GaussianFirstChaosRecovery.lean:31 |
+| recovery_firstChaos_norm | Foundation/GaussianFirstChaosRecovery.lean:53 |
+| recovery_firstChaos_distance | Foundation/GaussianFirstChaosRecovery.lean:64 |
+| recovery_norm_sq_ge_firstProjection | Foundation/GaussianFirstChaosRecovery.lean:78 |
