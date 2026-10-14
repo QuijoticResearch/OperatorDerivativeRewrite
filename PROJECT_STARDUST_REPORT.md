@@ -6,6 +6,39 @@ Started 2026-10-14 from e7dac26ea306c89e3df9ddba015b54554a7caf2b in C:\OperatorD
 
 This report is durable research memory. Entries marked verified have completed the full build, public type inspection and transitive axiom audit. Ongoing conjectures are separate. No execution after the active session is promised.
 
+## Periodic consolidation — verified through discovery 56
+
+This consolidation records independently built and axiom-audited mathematics through d610da9. Subsequent entries, when marked verified, supersede its checkpoint count. The latest full build at this consolidation is 4367 jobs; the complete safe Foundation audit covers 7110 declarations and permits only propext, Classical.choice and Quot.sound. The pinned dependencies and source manuscript remain unchanged. The campaign remains active within this session.
+
+### Mathematical findings and research priorities
+
+1. **Most significant verified results:** full minimum-norm Gaussian divergence recovery; complete actual Poisson Charlier coordinates and full closed-graph Gaussian scalar transfer; actual fixed-mollifier IBM joint cubic time L2/recovery; complete terminal Gaussian prediction spectrum; and the sharp contrast between everywhere one-third Poisson L4 inverse regularity and nonzero-data regular Gaussian first-chaos sources.
+2. **Verified theorem and commit record:** every discovery below has its exact public names, source lines, full build and transitive audit. The chronological checkpoint ledger at the end of this consolidation lists every mathematical checkpoint through discovery 56. These results are new repository verification and connections; no blanket mathematical novelty claim is made.
+3. **Unexpected branch connections:** arbitrary Gaussian observation geometry reduces all terminal nonlinear L2 prediction to one linear forecast; actual Gaussian mixed moments supply Banach weighted coercivity; physical Poisson square-root densities have an exact Gaussian kernel in square-root rate coordinates; and joint IBM representatives are recovered through the general Bochner/source inverse without an assumed moment bound.
+4. **Corrected conjectures:** a uniform Gaussian-style quadratic entropy bound fails on the full finite-entropy Poisson maximal domain; nonzero data do not restore Poisson L4 inverse Lipschitz regularity, and one-third is optimal at every datum; ordinary cubic fractional forecasts retain their first-chaos term; and a physical full Gaussian L2-to-L4 embedding cannot be bounded merely because first-chaos embedding is bounded.
+5. **Reusable operator principles:** inverse-number divergence recovery and Hodge projection; full centered Poisson recovery; finite-measure L2/Fubini representative transfer; exact arbitrary-family Wick conditional projection; terminal Hermite-rank spectral contraction for prediction and recovery; weighted-source quartic stability; and normalized-atom inverse obstructions.
+6. **Promising unproved questions:** sharp actual fractional full-past linear projection asymptotics; the physical IBM kernel bridge and uniform mollifier limits; general modified Poisson log-Sobolev estimates; source-projection maximal correlation for two multidirectional Gaussian families; and stochastic Galerkin sources with quantitative weighted coercivity. None is implied by the completed conditional, density or moment results.
+7. **Material limits:** degree-zero Wick energy is not variance; the Poisson/Gaussian full operator equivalence has a scalar one-variable Gaussian target; fixed-mollifier IBM moment/recovery results are not a stochastic Ito–Tanaka limit; countable SPDE forcing is not an SPDE solution or path version; and Hilbert or affinity equality does not preserve multiplication or ordered entropy.
+8. **Most surprising completed contrast:** the full infinite Poisson L4 identity inverse admits no local exponent above one-third anywhere, yet the actual infinite Gaussian first-chaos quartic source is regular at every nonzero datum. Explicit allowed source directions and weighted coercivity explain the distinction; neither dimension nor the law name alone determines it.
+9. **Priority changes justified by verification:** move the fractional campaign from nonlinear Wick estimates to actual linear full-past geometry; move IBM from discharged fixed-mollifier moments and representative gaps to physical kernels and uniform limits; and study legitimate stochastic source embeddings rather than hope for better local regularity in the full Poisson L4 identity source.
+10. **Next three focused directions:** (i) sharp fractional linear forecast source geometry; (ii) physical IBM source kernels and mollifier-uniform convergence or obstruction; (iii) multidirectional Gaussian prediction and quantitative weighted coercivity for constrained stochastic sources. Countable SPDE spatial/temporal solution construction and general modified Poisson entropy remain subsequent substantial campaigns.
+
+### Current investigation register
+
+| Investigation | Verified status | Remaining mathematical obligation |
+| --- | --- | --- |
+| Original Gaussian divergence recovery and fractional Wick prediction | Complete, extended | Sharp time asymptotics require actual linear source geometry |
+| All terminal nonlinear Gaussian L2 prediction | Exact spectrum and sufficient coordinate complete | Two multidirectional terminal families remain open |
+| Poisson density, full scalar/field basis and closed graph transfer | Complete | Do not reopen density as an assumption |
+| Poisson quadratic entropy / modified jump entropy | Quadratic bound refuted; exponential-family jump equality verified | General modified inequality unproved |
+| IBM actual fixed-mollifier joint cubic time target and recovery | Complete | Physical kernel and uniform-mollifier limits unproved |
+| IBM primitive source-vector obstruction | Necessary condition verified | Actual blow-up or non-Cauchy proof unproved |
+| Countable SPDE noise modes | Independent modes and exact summability criterion verified | Actual solution, spatial estimates, convergence and paths unproved |
+| Poisson L4 identity quartic inverse regularity | Everywhere one-third optimality complete | This source investigation is exhausted |
+| Positive quartic source geometry | Weighted theorem, constant source and infinite Gaussian first-chaos source verified | Other constrained stochastic sources need genuine lower bounds |
+| Physical Gaussian L2-to-L4 inclusion | Bounded extension excluded | Controlled source subspaces remain eligible |
+| Poisson exponential tilts and affinity | Actual laws, entropy, composition and finite Gaussian affinity comparison verified | Physical half-density source graph displacement currently under investigation |
+
 ## Discovery 1 — Actual Poisson adjunction reconstructs the all-order Charlier ladder
 
 Verified: Foundation/PoissonCharlierLadder.lean constructs monic polynomials recursively by P0=1 and P(n+1)(x)=x Pn(x-1)-lambda Pn(x). Their genuine scalar Poisson-L2 and rate-weighted field-L2 representatives satisfy D P(n+1)=(n+1)Pn and delta Pn=P(n+1), in the exact maximal operator graphs. Every degree has actual number-operator eigenvalue n. These facts follow from the previously verified closed mutual adjoints, with full polynomial moment domains; no formal operator is substituted for a closed operator.
@@ -1615,7 +1648,7 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonExponentialTilt.
 
 Actual square-root densities of the Poisson exponential tilts are constructed as unit-norm vectors in the original Poisson L2. Their inner product is exp(-lambda/2 (exp(theta/2)-exp(eta/2))^2); their squared Hellinger distance is twice one minus this affinity. The parameter sqrt(lambda) exp(theta/2) is proved equal to the square root of the actual tilted rate.
 
-Actual normalized Gaussian exponential vectors G(a)=exp(-a^2) exp(a x) in the physical standard Gaussian L2 have norm one and inner product exp(-(a-b)^2/2). Thus the Poisson tilt square-root density affinity matches these Gaussian vectors exactly at square-root rate coordinates. Every finite linear combination has the same inner product under this map. The Gaussian vectors are square-root densities of unit-variance location tilts with means 2a; no equality of the two probability laws is asserted.
+Actual normalized Gaussian exponential vectors G(a)=exp(-a^2) exp(a x) in the physical standard Gaussian L2 have norm one and inner product exp(-(a-b)^2/2). Thus the Poisson tilt square-root density affinity matches these Gaussian vectors exactly at square-root rate coordinates. Every finite linear combination has the same inner product under this map. The Gaussian vectors have the classical square-root density form for unit-variance location tilts with means 2a; identification of shifted Gaussian laws is not a new formal theorem here. No equality of the Gaussian and Poisson laws is asserted.
 
 Significance: physical Poisson rate geometry has an exact Gaussian kernel after the square-root transformation, despite different multiplication and entropy structures. This is a second precise Gaussian–Poisson bridge, involving density geometry rather than identifying arbitrary stochastic processes or source products. A full unitary extension for this particular positive-parameter family is not proved here.
 
@@ -1673,3 +1706,65 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonTiltComposition.
 | reverse_relativeEntropy | Foundation/PoissonTiltComposition.lean:43 |
 | exact_entropy_asymmetry | Foundation/PoissonTiltComposition.lean:51 |
 | relativeEntropy_not_symmetric | Foundation/PoissonTiltComposition.lean:56 |
+
+
+## Chronological mathematical checkpoint ledger through discovery 56
+
+| Commit | Verified checkpoint |
+| --- | --- |
+| ffe1a50 | Reconstruct all-order Poisson Charlier ladder from closed adjoints |
+| b968ae9 | Prove all-degree fractional Wick prediction lower bounds |
+| d66d16d | Construct bounded minimum-norm Gaussian divergence recovery |
+| f45c9ca | Prove local Lipschitz obstruction for quartic Banach recovery |
+| 2ec5d9b | Verify Gaussian Poisson finite-chaos transfer and product obstruction |
+| 388488d | Identify quadratic Gaussian chaos metric bounds and antipodal folding |
+| ac57c27 | Lift minimum-norm Gaussian divergence recovery to Bochner fields |
+| 8d5def4 | Discharge actual IBM per-path cubic time projection integrability |
+| 92adc06 | Prove optimal one-third Holder exponent for quartic Banach inverse |
+| 197147f | Construct full Gaussian source Hodge decomposition |
+| eccd9d0 | Compare actual Poisson and Gaussian divergence kernels |
+| 5c6e9d1 | Construct unique contractive Poisson polynomial divergence recovery |
+| fb5f935 | Construct full source-divergence primitive for actual IBM cubic time sections |
+| c31865b | Prove first-chaos isometry and obstruction preservation under source recovery |
+| 4decbfb | Construct actual Poisson coherent vectors and exponential adjoint domains |
+| ebe0ba8 | Prove IBM primitive convergence requires source-kernel convergence |
+| 8211986 | Prove exponential totality in actual Poisson L2 |
+| e2ad6c6 | Prove polynomial density through Poisson L2 Taylor convergence |
+| dc12c72 | Complete the actual Poisson Charlier spectral ladder |
+| 4659ba0 | Construct complete Charlier coordinates and Gaussian Hilbert transfer |
+| 780aeef | Recover every centered Poisson L2 target in the actual divergence graph |
+| 849f550 | Derive sharp full-domain Poisson Poincare from source recovery |
+| e216495 | Exhibit a nonzero-data quartic inverse singularity on Poisson L4 |
+| efa90f1 | Compare all normalized Wick metrics for actual fractional Gaussian sources |
+| 8f86ebe | Identify scalar Bochner L2 representatives without a uniform majorant |
+| 2a62349 | Identify actual per-clock IBM cubic scalar time integrals in scenery L2 |
+| 58315fc | Construct countable independent SPDE forcing modes with exact L2 criterion |
+| 22947b4 | Bound compact-kernel Gaussian scenery globally by spatial growth |
+| defdb31 | Prove actual cubic Gaussian norm bounds for nonlinear source observables |
+| 3e586d2 | Prove actual fixed-time joint IBM cubic correction L2 membership |
+| 164596a | Derive actual IBM clock sixth moments and finite-horizon domination |
+| 0f787ed | Prove actual L2 column integration over a finite parameter measure |
+| 6b29207 | Prove full joint L2 of actual IBM cubic finite-horizon time integrals |
+| 9339c58 | Verify joint Bochner IBM cubic scenery-source recovery and minimality |
+| 78d9eab | Refute a uniform Gaussian quadratic entropy bound on actual Poisson domains |
+| 9ecd7b0 | Complete actual rate-weighted Poisson field Hilbert geometry |
+| d2d1731 | Intertwine the actual full Poisson and scalar Gaussian closed operator graphs |
+| d36aa54 | Identify exact forward-jump Bregman entropy for Poisson exponentials |
+| f1ed050 | Compute exact Wick forecasts from arbitrary actual Gaussian observation families |
+| d6c05d8 | Prove Gaussian cubic posterior corrections and fractional roughness |
+| 8a67c03 | Prove sufficient Gaussian forecast coordinate for all terminal L2 observables |
+| d60cf8c | Prove exact Gaussian polynomial prediction energies and chaos-rank bounds |
+| 1529735 | Prove complete terminal Gaussian prediction spectrum and L2 rank bounds |
+| b654bd8 | Prove arbitrary terminal L2 fractional forecast rank obstructions |
+| 84f5dd9 | Prove sharp terminal Gaussian maximal-correlation inequalities |
+| e391184 | Connect Gaussian prediction to minimum divergence recovery energy |
+| 91c3c89 | Prove weighted-source Lipschitz stability for actual quartic normal inverses |
+| c43d288 | Realize regular nonzero quartic inverse data on probability-space constant sources |
+| 192dcd6 | Exclude weighted coercivity at every Poisson L4 identity-source datum |
+| 81ed28c | Prove the actual Poisson L4 quartic inverse is nowhere locally Lipschitz |
+| 94a5fa4 | Prove pointwise optimal one-third inverse Holder exponent at every Poisson datum |
+| 204d4ff | Construct regular nonzero quartic inverse geometry on the infinite Gaussian first-chaos source |
+| 5b9646e | Exclude a bounded physical Gaussian L2-to-L4 extension using actual exponentials |
+| ddf2d57 | Identify actual Poisson exponential tilts and relative jump entropy |
+| e1df2ea | Match actual Poisson tilt Hellinger geometry to Gaussian exponential vectors |
+| d610da9 | Verify physical Poisson tilt composition and exact entropy asymmetry |
