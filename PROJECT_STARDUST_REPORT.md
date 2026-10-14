@@ -1157,3 +1157,40 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonJumpEntropy.
 | exponential_jump_energy | Foundation/PoissonJumpEntropy.lean:35 |
 | exponential_square_entropy_eq_jump_energy | Foundation/PoissonJumpEntropy.lean:44 |
 | exponential_jump_energy_nonneg | Foundation/PoissonJumpEntropy.lean:50 |
+
+## Discovery 39 — exact Wick conditional prediction for arbitrary Gaussian observations
+
+For any actual Gaussian observation family h, every source direction u, and every degree n, its true L2 conditional projection satisfies C_h Wick_n(u)=Wick_n(P_h u), where P_h is the actual orthogonal projection onto the closed coefficient-space span of the observed directions. No covariance inverse, finite-rank hypothesis, independence assumption, index-set countability, or time generator is imposed.
+
+The proof reconstructs covariance invariance through repeated genuine source-adjoint pairing against finite observation polynomials. Existing density extends that equality to the whole generated sigma-algebra. The projected first-chaos coordinate is genuinely measurable there, so its actual Wick polynomials are also measurable. This yields the projection identity rather than defining a forecast through the proposed answer.
+
+The exact energy is n! norm(P_h u)^(2n), equivalently n! times the n-th power of the actual linear forecast variance. For the repository's fractional process and its full nonnegative-time past, GaussianWickConditionalProjection.Fractional.forecast_energy_exact proves this exact relation for every 0<H<1, every observation time and every degree, including the degenerate initial time. The previous nonlinear lower bounds remain valid and can now be interpreted through the exact linear forecast geometry.
+
+Significance: pure Wick nonlinear prediction has been reduced to an actual linear Gaussian source-projection problem. This is a reusable Gaussian conditional-calculus principle and closes a stronger obligation than one-coordinate lower bounds. It does not determine sharp full-past fractional linear asymptotics, identify a fractional time generator or causal Brownian representation, or apply automatically to the nonlinear IBM raw-past filtration or non-Gaussian observations.
+
+Verification: full Lake build 4349 jobs (.lake/stardust-39-build.log); fifteen public definitions/theorem types checked, with sourceSpan_complete also built and audited; 6847 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-39-audit.log). Discovery 38 checkpoint: d36aa54. Discovery 39 is the commit containing this entry.
+
+Reflection: a focused fractional forecast campaign should now prioritize the actual linear projection norm, since every pure Wick variance follows exactly. Ordinary polynomials can contain lower chaos and need separate posterior-variance terms; that distinction is the next investigation.
+
+### Public locations — discovery 39
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianWickConditionalProjection. Fractional names have the extra Fractional prefix.
+
+| Name | Source |
+| --- | --- |
+| wick_pairing_recursion | Foundation/GaussianWickConditionalProjection.lean:14 |
+| wick_pairing_eq_of_covariances | Foundation/GaussianWickConditionalProjection.lean:33 |
+| wick_family_pairing_eq | Foundation/GaussianWickConditionalProjection.lean:46 |
+| conditional_wick_eq_of_covariances | Foundation/GaussianWickConditionalProjection.lean:54 |
+| sourceSpan | Foundation/GaussianWickConditionalProjection.lean:78 |
+| sourceSpan_complete | Foundation/GaussianWickConditionalProjection.lean:81 |
+| sourceProjection | Foundation/GaussianWickConditionalProjection.lean:84 |
+| sourceProjection_pairing | Foundation/GaussianWickConditionalProjection.lean:87 |
+| firstChaos_mem_generated_of_sourceSpan | Foundation/GaussianWickConditionalProjection.lean:96 |
+| wick_mem_generated_of_firstChaos | Foundation/GaussianWickConditionalProjection.lean:109 |
+| wick_mem_generated_of_sourceSpan | Foundation/GaussianWickConditionalProjection.lean:117 |
+| conditional_wick_projection | Foundation/GaussianWickConditionalProjection.lean:121 |
+| conditional_firstChaos_projection | Foundation/GaussianWickConditionalProjection.lean:128 |
+| conditional_wick_energy | Foundation/GaussianWickConditionalProjection.lean:132 |
+| conditional_wick_energy_from_linear | Foundation/GaussianWickConditionalProjection.lean:136 |
+| Fractional.forecast_energy_exact | Foundation/GaussianWickConditionalProjection.lean:144 |

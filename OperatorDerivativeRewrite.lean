@@ -328,3 +328,4 @@ import Foundation.PoissonExponentialEntropy
 import Foundation.PoissonWeightedScalarGeometry
 import Foundation.PoissonSpectralGraphs
 import Foundation.PoissonJumpEntropy
+import Foundation.GaussianWickConditionalProjection
