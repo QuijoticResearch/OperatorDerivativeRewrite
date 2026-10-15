@@ -390,3 +390,4 @@ import Foundation.GaussianDisplacementNormDiscontinuity
 import Foundation.GaussianCoherentEntropyDistortion
 import Foundation.SPDEExponentialForcing
 import Foundation.GaussianLinearFieldDivergenceCompletion
+import Foundation.SPDEHilbertExponentialForcing

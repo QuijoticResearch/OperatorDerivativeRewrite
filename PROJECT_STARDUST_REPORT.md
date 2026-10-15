@@ -6,12 +6,12 @@ Started 2026-10-14 from e7dac26ea306c89e3df9ddba015b54554a7caf2b in C:\OperatorD
 
 This report is durable research memory. Entries marked verified have completed the full build, public type inspection and transitive axiom audit. Ongoing conjectures are separate. No execution after the active session is promised.
 
-## Periodic consolidation — verified through discovery 96
+## Periodic consolidation — verified through discovery 100
 
-The latest prior saved checkpoint is 940cb4f; discovery 96 is the commit containing its entry. Full Lake build: 4410 jobs. The complete transitive audit checks 7856 safe Foundation declarations and permits only propext, Classical.choice and Quot.sound. Pinned dependencies and the named IBM manuscript hash remain unchanged. Later verified entries supersede this count. The campaign remains active within this session.
+The latest prior saved checkpoint is 9a4122d; discovery 100 is the commit containing its entry. Full Lake build: 4414 jobs. The complete transitive audit checks 7988 safe Foundation declarations and permits only propext, Classical.choice and Quot.sound. Pinned dependencies and the named IBM manuscript hash remain unchanged. Later verified entries supersede this count. The campaign remains active within this session.
 
 1. **Most significant discoveries:** full minimum-norm Gaussian recovery; complete actual Poisson coordinates and full graph transfer; fixed-mollifier IBM joint cubic time L2/recovery; complete terminal prediction spectrum and rank laws; countable renormalized Wick responses; sharp source-dependent quartic regularity; recovery compactness contrasts; the full joint source/sample recovery identity and both full graphs; and exact causal/minimal-source Hodge energy with uniform alternating-projection convergence.
-2. **Verified record:** each discovery gives exact public names, source lines, build and transitive audit. The ledger lists saved mathematical checkpoints through 95; discovery 96 is saved with this consolidation. These are verified repository mathematics and connections, without a blanket world-level novelty claim.
+2. **Verified record:** each discovery gives exact public names, source lines, build and transitive audit. The ledger lists saved mathematical checkpoints through 99; discovery 100 is saved with this consolidation. These are verified repository mathematics and connections, without a blanket world-level novelty claim.
 3. **Unexpected connections:** physical Poisson gauges reconstruct scalar Gaussian graph displacements. Compact actual Poisson recovery factors Gaussian recovery after one coordinate. Nonlinear terminal prediction reduces to linear source geometry. Gaussian Hodge projection realizes matrix symmetrization. The inverse-number potential and observed polynomial graph density establish full joint recovery and graph compatibility. Genuine causal Ito fields have degree-dependent divergence-free residuals, and alternating causal/Hodge projection extracts first chaos uniformly.
 4. **Corrected conjectures and counterexamples:** Poisson curvature does not imply quadratic entropy even on the finite-support core. The Poisson L4 inverse is everywhere exactly one-third regular. Actual H=1/4 full-past forecasts beat the current coordinate. Initial Wick rank does not improve positive-time increment powers. Ordinary vector conditioning fails to commute with recovery; the joint source/sample projection does commute. Inverse-number damping preserves positive-rank fractional power obstructions.
 5. **Reusable principles:** full recovery and source Hodge geometry; centered/coherent Poisson inverses; L2/Fubini transfer; exact Wick projection and terminal spectrum; weighted-source stability and atom obstructions; physical graph gauges; countable renormalized response and Gram criteria; entropy/core graph approximation; compact recovery tails; quadratic matrix Hodge formulas; inverse-number conditional commutation; and all-L2 joint recovery intertwining with its adjoint identity.
@@ -19,7 +19,7 @@ The latest prior saved checkpoint is 940cb4f; discovery 96 is the commit contain
 7. **Limits:** scalar Poisson/Gaussian transfer does not identify full infinite Gaussian fields or preserve products/entropy. Fixed-mollifier IBM recovery is not an Ito-Tanaka limit. Countable Wick responses are actual L2 classes, not SPDE solutions or path versions. Joint source conditioning alone does not prove an adapted integral or Clark-Ocone formula. Degree-zero energy is not variance. Number-degree damping is not physical time smoothing. The scalar Gaussian displacement group now has its physical formula and strong continuity; nonzero action has no bounded L4 realization and positive displacements remain uniformly away from identity in operator norm.
 8. **Most surprising operator contrast:** full Gaussian recovery and one-coordinate conditioning are separately noncompact, while their actual composition is compact via Poisson factorization. Positive countable Brownian full-past recovery is noncompact. Yet a universal exact joint projection identity holds on all scalar L2 targets. Compactness and compatibility answer different questions.
 9. **Research priorities:** the general joint identity is complete. Full unbounded graph compatibility and actual causal/Hodge projection dynamics are complete. Priority moves toward physical causal kernels, function-space source assumptions, and precise finite versus infinite observed-source compactness. Sharp actual fractional forecasts and uniform IBM limits remain the major physical bottlenecks.
-10. **Next three directions:** (i) physical entropy distortion and actual damped countable stochastic convolutions; (ii) actual fractional causal bridge and sharp upper forecast laws; (iii) general finite-source compactness and useful L4 stochastic source embeddings. General modified Poisson entropy and spatial renormalized SPDE construction deserve focused separate campaigns.
+10. **Next three directions:** (i) compact modal synthesis versus stochastic trace and useful pure second-chaos L4 estimates; (ii) actual fractional causal bridge and sharp upper forecast laws; (iii) general finite-source compactness and useful L4 stochastic source embeddings. General modified Poisson entropy and spatial renormalized SPDE construction deserve focused separate campaigns.
 
 ### Current investigation register
 
@@ -39,7 +39,7 @@ The latest prior saved checkpoint is 940cb4f; discovery 96 is the commit contain
 | Conditional projection | Compact exactly for all-zero source families | Terminal-restricted quantitative compactness |
 | Joint recovery and scalar potential | All-L2 J R=R C; both full graphs; Hodge commutation; inverse-number iteration extracts first chaos | Physical causal kernel applications |
 | Causal Ito/Hodge geometry | Exact degree energy fractions; noncommuting projections; uniform alternating convergence to first-chaos Ito component | Physical IBM/fractional energy cost |
-| Quadratic matrix source geometry | Actual finite matrix Hodge symmetrization and skew divergence kernel | Countable square-summable completion |
+| Quadratic matrix source geometry | Actual finite matrix Hodge symmetrization and skew divergence kernel | Actual Hilbert-valued forcing and bounded quadratic divergence completion; square-summable matrix coordinates remain open |
 
 ## Discovery 1 — Actual Poisson adjunction reconstructs the all-order Charlier ladder
 
@@ -1710,7 +1710,7 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonTiltComposition.
 | relativeEntropy_not_symmetric | Foundation/PoissonTiltComposition.lean:56 |
 
 
-## Chronological mathematical checkpoint ledger through discovery 95
+## Chronological mathematical checkpoint ledger through discovery 99
 
 | Commit | Verified checkpoint |
 | --- | --- |
@@ -1809,6 +1809,10 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonTiltComposition.
 | 19e0474 | Strong continuity of intrinsic real Gaussian displacement group |
 | 8cfbe52 | No bounded physical L4 realization at nonzero displacement |
 | 940cb4f | All-L2 physical Gaussian half-density translation formula |
+| 6bc5e90 | Strongly continuous Gaussian displacements fail operator-norm continuity |
+| 95be961 | Actual coherent entropy distortion under full Poisson/Gaussian transfer |
+| 989e0e4 | Exponential Gaussian forcing and sharp reciprocal-rate trace criterion |
+| 9a4122d | Full divergence on completed linear Gaussian fields and quadratic Hodge control |
 
 Documentation checkpoint: 5ec7740 consolidated discoveries through 56.
 
@@ -3136,3 +3140,48 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianLinearFieldDivergenceComple
 | completed_kernel_iff | Foundation/GaussianLinearFieldDivergenceCompletion.lean:97 |
 | linear_rank_mem | Foundation/GaussianLinearFieldDivergenceCompletion.lean:106 |
 | completed_series_graph | Foundation/GaussianLinearFieldDivergenceCompletion.lean:109 |
+
+## Discovery 100 — actual Hilbert-valued damped Gaussian forcing and controlled quadratic divergence
+
+Constructed genuine coefficient-Hilbert-valued Gaussian L2 responses from the actual countable Brownian-mode time profiles. Each modal map is an isometry into an orthogonal spatial coordinate, so the vector series has the exact weighted profile-energy summability criterion. Every coordinate equals the corresponding scalar modal response as an L2 class and almost everywhere. The squared Hilbert-valued L2 norm has the exact summed variance series.
+
+For exponential profiles with rates at least one and positive time, the Hilbert-valued series converges exactly under the reciprocal-rate trace condition. Unit amplitudes with rates (n+1) squared give an actual convergent field and full divergence graph; rates n+1 fail. Under the trace condition, the field lies in the completed linear Gaussian field space, so its actual full divergence is a controlled second-chaos target, recovery returns the global gradient component, and output norm is at most square root of two times field norm.
+
+Significance: the scalar countable forcing foundation now supports an actual infinite-dimensional random Hilbert value with all coordinates and exact energy, while the new source completion gives a genuine quadratic divergence output. This is a concrete connection between modal stochastic damping and completed Gaussian Hodge geometry. These are fixed-terminal L2 constructions on the existing noise model, not an identified spatial Laplacian, a mild SPDE equation, a time-path version or a proved causal Markov law. Summability hypotheses govern the meaningful series values; off-domain tsum defaults are not given stochastic-solution meaning.
+
+Verification: full Lake build 4414 jobs (.lake/stardust-100-build.log); twenty-five public types inspected; 7988 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-100-audit.log). Discovery 99 checkpoint: 9a4122d. Discovery 100 is the commit containing this entry. Executive consolidation and chronological ledger through 99 are updated with this checkpoint.
+
+Reflection: compact deterministic response maps may still have divergent basis-square stochastic trace; the linear-rate profiles are a promising actual test. A proposed extension of first-chaos square-product association to centered first/second mixtures is under verification and may fail. Pure second-chaos L4/product estimates, and diagonal mild/time regularity or fractional-memory damping, deserve focused continuation. The campaign continues beyond this coherent group.
+
+### Public locations — discovery 100
+
+Prefix: OperatorDerivativeRewrite.Foundation.SPDEHilbertExponentialForcing.
+
+| Name | Source |
+| --- | --- |
+| unitDirection | Foundation/SPDEHilbertExponentialForcing.lean:16 |
+| unitDirection_norm | Foundation/SPDEHilbertExponentialForcing.lean:18 |
+| spatialEmbedding | Foundation/SPDEHilbertExponentialForcing.lean:21 |
+| spatialEmbedding_inner | Foundation/SPDEHilbertExponentialForcing.lean:29 |
+| spatialMode | Foundation/SPDEHilbertExponentialForcing.lean:38 |
+| spatialModes_orthogonal | Foundation/SPDEHilbertExponentialForcing.lean:40 |
+| spatialSeries_summable_iff | Foundation/SPDEHilbertExponentialForcing.lean:45 |
+| spatialResponse | Foundation/SPDEHilbertExponentialForcing.lean:50 |
+| spatialResponse_hasSum | Foundation/SPDEHilbertExponentialForcing.lean:52 |
+| spatialResponse_energy | Foundation/SPDEHilbertExponentialForcing.lean:57 |
+| spatialCoordinate | Foundation/SPDEHilbertExponentialForcing.lean:67 |
+| spatialCoordinate_tensor | Foundation/SPDEHilbertExponentialForcing.lean:70 |
+| spatialCoordinate_mode | Foundation/SPDEHilbertExponentialForcing.lean:80 |
+| spatialResponse_coordinate | Foundation/SPDEHilbertExponentialForcing.lean:89 |
+| spatialResponse_coeFn_coordinate | Foundation/SPDEHilbertExponentialForcing.lean:103 |
+| spatialResponse_linear | Foundation/SPDEHilbertExponentialForcing.lean:114 |
+| exponentialField | Foundation/SPDEHilbertExponentialForcing.lean:122 |
+| exponential_field_trace_iff | Foundation/SPDEHilbertExponentialForcing.lean:125 |
+| exponential_field_energy | Foundation/SPDEHilbertExponentialForcing.lean:131 |
+| exponential_field_divergence | Foundation/SPDEHilbertExponentialForcing.lean:142 |
+| exponential_field_quadratic_controls | Foundation/SPDEHilbertExponentialForcing.lean:148 |
+| quadraticField | Foundation/SPDEHilbertExponentialForcing.lean:157 |
+| quadraticField_hasSum | Foundation/SPDEHilbertExponentialForcing.lean:159 |
+| quadraticField_divergence_graph | Foundation/SPDEHilbertExponentialForcing.lean:166 |
+| linear_field_series_not_summable | Foundation/SPDEHilbertExponentialForcing.lean:171 |
+
