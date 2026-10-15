@@ -3185,3 +3185,29 @@ Prefix: OperatorDerivativeRewrite.Foundation.SPDEHilbertExponentialForcing.
 | quadraticField_divergence_graph | Foundation/SPDEHilbertExponentialForcing.lean:166 |
 | linear_field_series_not_summable | Foundation/SPDEHilbertExponentialForcing.lean:171 |
 
+
+## Discovery 101 — centered mixed Gaussian chaoses can have negatively correlated squares
+
+For every unit Gaussian source direction, constructed actual centered polynomial observables F=X+(X²-1)/2 and G=X-(X²-1)/2. Each has variance 3/2, while their actual product is precisely one half of vacuum minus one quarter of the fourth Wick polynomial. Orthogonality gives E[F²G²]=7/4 and Cov(F²,G²)=-1/2. An unconditional existential theorem instantiates a genuine unit coefficient direction.
+
+This corrects a tempting extension of the first-chaos square-product lower bound: centered observables under Gaussian measure need not satisfy E[F²G²]≥E[F²]E[G²]. These observables mix degrees one and two; they are not jointly Gaussian random variables. The result does not refute the pure second-chaos product conjecture or weaker source-dependent stability estimates. Pure-degree structure is a substantive hypothesis worth preserving in the next quartic source investigation.
+
+Verification: full Lake build 4415 jobs (.lake/stardust-101-build.log); nine public types inspected; 8003 safe Foundation declarations transitively audited with only propext, Classical.choice and Quot.sound (.lake/stardust-101-audit.log). Discovery 100 checkpoint: 66a04b9. Discovery 101 is the commit containing this entry.
+
+Reflection: degree mixing destroys the constant-one product lower bound even in one underlying Gaussian coordinate. The separate pure second-chaos question remains open. The next investigation tests compact deterministic modal smoothing against the stronger stochastic trace requirement.
+
+### Public locations — discovery 101
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianMixedChaosProductCounterexample.
+
+| Name | Source |
+| --- | --- |
+| mix | Foundation/GaussianMixedChaosProductCounterexample.lean:13 |
+| mix_centered | Foundation/GaussianMixedChaosProductCounterexample.lean:15 |
+| mix_norm_sq | Foundation/GaussianMixedChaosProductCounterexample.lean:20 |
+| mix_coeFn | Foundation/GaussianMixedChaosProductCounterexample.lean:29 |
+| mix_product | Foundation/GaussianMixedChaosProductCounterexample.lean:40 |
+| mix_product_norm_sq | Foundation/GaussianMixedChaosProductCounterexample.lean:58 |
+| mixed_square_association_failure | Foundation/GaussianMixedChaosProductCounterexample.lean:68 |
+| negative_square_covariance | Foundation/GaussianMixedChaosProductCounterexample.lean:77 |
+| exists_centered_polynomial_counterexample | Foundation/GaussianMixedChaosProductCounterexample.lean:91 |

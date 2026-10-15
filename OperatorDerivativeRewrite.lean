@@ -391,3 +391,4 @@ import Foundation.GaussianCoherentEntropyDistortion
 import Foundation.SPDEExponentialForcing
 import Foundation.GaussianLinearFieldDivergenceCompletion
 import Foundation.SPDEHilbertExponentialForcing
+import Foundation.GaussianMixedChaosProductCounterexample
