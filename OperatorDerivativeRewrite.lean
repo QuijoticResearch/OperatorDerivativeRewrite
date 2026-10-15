@@ -393,3 +393,4 @@ import Foundation.GaussianLinearFieldDivergenceCompletion
 import Foundation.SPDEHilbertExponentialForcing
 import Foundation.GaussianMixedChaosProductCounterexample
 import Foundation.SPDECompactModalSynthesis
+import Foundation.GaussianExponentialMarkovPrediction
