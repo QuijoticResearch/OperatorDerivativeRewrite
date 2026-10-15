@@ -3102,3 +3102,37 @@ Prefix: OperatorDerivativeRewrite.Foundation.SPDEExponentialForcing.
 | quadratic_trace_summable | Foundation/SPDEExponentialForcing.lean:142 |
 | quadratic_forcing_summable | Foundation/SPDEExponentialForcing.lean:145 |
 | linear_forcing_not_summable | Foundation/SPDEExponentialForcing.lean:156 |
+
+## Discovery 99 — full divergence extends boundedly over completed linear Gaussian fields
+
+Take the actual Gaussian vector L2 closure of finite rank fields a times X_b. Every field in this native completed space lies in the original full divergence domain, and its divergence is exactly 2 R adjoint applied to the field. Its scalar output lies in the genuine second number sector. No divergence operator or graph is redefined.
+
+The exact derivative is twice the global gradient projection, canonical recovery returns that gradient component, and output energy is twice its squared norm. Thus divergence norm is at most square root of two times field norm on this completed space; its kernel is exactly the zero gradient component. Legitimate unconditional sums of such fields preserve the actual graph and the corresponding scalar sum.
+
+Significance: the finite quadratic matrix Hodge formulas now extend to a closed space of genuine linear Gaussian fields, allowing controlled infinite second-chaos outputs. The proof uses actual finite-rank graphs and closure under the bounded 2 R adjoint map. It does not claim boundedness of full divergence on all vector L2 fields, or a separate named Hilbert-Schmidt matrix equivalence or surjectivity onto every second-chaos scalar target.
+
+Verification: full Lake build 4413 jobs (.lake/stardust-99-build.log); fifteen public types inspected; 7943 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-99-audit.log). Discovery 98 checkpoint: 989e0e4. Discovery 99 is the commit containing this entry.
+
+Reflection: finite-energy Hilbert-valued damped Gaussian forcing should therefore supply actual renormalized quadratic divergence targets automatically. The Hilbert-valued forcing draft is under verification. Further focused questions include a complete square-summable matrix coordinate identification, sharp second-chaos L4/product bounds and resulting quartic-source regularity, and actual diagonal mild dynamics rather than merely fixed-terminal response classes.
+
+### Public locations — discovery 99
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianLinearFieldDivergenceCompletion.
+
+| Name | Source |
+| --- | --- |
+| linearFieldCore | Foundation/GaussianLinearFieldDivergenceCompletion.lean:14 |
+| linearGaussianFields | Foundation/GaussianLinearFieldDivergenceCompletion.lean:17 |
+| mixedTarget_mem_sector_two | Foundation/GaussianLinearFieldDivergenceCompletion.lean:19 |
+| adjoint_linear_rank | Foundation/GaussianLinearFieldDivergenceCompletion.lean:31 |
+| completedDivergence | Foundation/GaussianLinearFieldDivergenceCompletion.lean:37 |
+| completedDivergence_rank | Foundation/GaussianLinearFieldDivergenceCompletion.lean:39 |
+| full_divergence_graph | Foundation/GaussianLinearFieldDivergenceCompletion.lean:45 |
+| completedDivergence_mem_sector_two | Foundation/GaussianLinearFieldDivergenceCompletion.lean:57 |
+| completed_derivative_graph | Foundation/GaussianLinearFieldDivergenceCompletion.lean:68 |
+| completed_recovery | Foundation/GaussianLinearFieldDivergenceCompletion.lean:72 |
+| completed_energy | Foundation/GaussianLinearFieldDivergenceCompletion.lean:76 |
+| completed_norm_bound | Foundation/GaussianLinearFieldDivergenceCompletion.lean:87 |
+| completed_kernel_iff | Foundation/GaussianLinearFieldDivergenceCompletion.lean:97 |
+| linear_rank_mem | Foundation/GaussianLinearFieldDivergenceCompletion.lean:106 |
+| completed_series_graph | Foundation/GaussianLinearFieldDivergenceCompletion.lean:109 |

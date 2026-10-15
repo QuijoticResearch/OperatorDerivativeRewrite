@@ -389,3 +389,4 @@ import Foundation.GaussianPhysicalDisplacement
 import Foundation.GaussianDisplacementNormDiscontinuity
 import Foundation.GaussianCoherentEntropyDistortion
 import Foundation.SPDEExponentialForcing
+import Foundation.GaussianLinearFieldDivergenceCompletion
