@@ -3434,3 +3434,38 @@ Prefix: OperatorDerivativeRewrite.Foundation.SPDEExponentialTimeContinuity.
 | exponentialField_continuous | Foundation/SPDEExponentialTimeContinuity.lean:102 |
 | quadraticField_continuous | Foundation/SPDEExponentialTimeContinuity.lean:123 |
 | quadratic_divergence_continuous | Foundation/SPDEExponentialTimeContinuity.lean:127 |
+
+## Discovery 108 — completed Gaussian matrix transposition is the actual Hodge reflection
+
+Constructed the actual global Hodge reflection, an isometric involution on Gaussian vector L2. On every linear Gaussian rank field a*X_b it acts exactly as b*X_a. It preserves the closed linear Gaussian field space and swaps every matrix coefficient pairing. This gives the completed source-space transposition without assuming a finite matrix representation.
+
+The symmetric part (v+transpose(v))/2 is exactly the actual gradient projection; the antisymmetric part is its divergence-free residual. On completed linear fields, actual divergence vanishes exactly for antisymmetric fields. Transposition preserves the actual completed divergence output. Its fixed fields are precisely gradient fields, and its negated fields are precisely the orthogonal component. Norms are preserved.
+
+Significance: finite matrix symmetrization from discovery 80 extends to an actual bounded transposition isometry on the completed space. Symmetric/skew geometry is encoded by the genuine Gaussian derivative/divergence Hodge structure rather than by formal matrix operators. An explicit square-summable matrix-coordinate identification is being checked next.
+
+Scope: the reflection exists globally, but its interpretation as interchange of source and Gaussian coordinates is proved on linear Gaussian fields. No such tensor-flip interpretation for arbitrary nonlinear vector fields is asserted. Formal Hilbert-Schmidt operator classes and surjectivity of quadratic divergence onto the entire second-chaos sector remain separate obligations.
+
+Verification: full Lake build 4424 jobs (.lake/stardust-108-build.log); fourteen public types inspected; 8183 safe Foundation declarations transitively audited with only propext/Classical.choice/Quot.sound (.lake/stardust-108-audit.log). Discovery 107 checkpoint: bb377f0. Discovery 108 is the commit containing this entry.
+
+Reflection: native transposition suggests complete square-summable matrix coordinates, exact divergence energy of the symmetric matrix part, and infinite antisymmetric source examples. General pure quadratic L4/product bounds remain a higher-priority analytic gap beyond the rank-one formula.
+
+### Public locations — discovery 108
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianLinearFieldTranspose.
+
+| Name | Source |
+| --- | --- |
+| transpose | Foundation/GaussianLinearFieldTranspose.lean:12 |
+| transpose_apply | Foundation/GaussianLinearFieldTranspose.lean:14 |
+| transpose_rank | Foundation/GaussianLinearFieldTranspose.lean:16 |
+| transpose_involution | Foundation/GaussianLinearFieldTranspose.lean:21 |
+| transpose_norm | Foundation/GaussianLinearFieldTranspose.lean:24 |
+| transpose_pairing | Foundation/GaussianLinearFieldTranspose.lean:26 |
+| transpose_mem | Foundation/GaussianLinearFieldTranspose.lean:30 |
+| transpose_matrix_coefficient | Foundation/GaussianLinearFieldTranspose.lean:40 |
+| symmetricPart_eq | Foundation/GaussianLinearFieldTranspose.lean:45 |
+| antisymmetricPart_eq | Foundation/GaussianLinearFieldTranspose.lean:50 |
+| transpose_fix_iff | Foundation/GaussianLinearFieldTranspose.lean:55 |
+| transpose_neg_iff | Foundation/GaussianLinearFieldTranspose.lean:58 |
+| completed_kernel_antisymmetric | Foundation/GaussianLinearFieldTranspose.lean:68 |
+| transpose_divergence | Foundation/GaussianLinearFieldTranspose.lean:72 |
