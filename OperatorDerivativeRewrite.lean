@@ -399,3 +399,4 @@ import Foundation.GaussianPureQuadraticProduct
 import Foundation.IntegratedBrownianHistoryReconstruction
 import Foundation.SPDEExponentialTimeContinuity
 import Foundation.GaussianLinearFieldTranspose
+import Foundation.GaussianLinearFieldMatrixCoordinates

@@ -3469,3 +3469,45 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianLinearFieldTranspose.
 | transpose_neg_iff | Foundation/GaussianLinearFieldTranspose.lean:58 |
 | completed_kernel_antisymmetric | Foundation/GaussianLinearFieldTranspose.lean:68 |
 | transpose_divergence | Foundation/GaussianLinearFieldTranspose.lean:72 |
+
+## Discovery 109 — complete square-summable matrix coordinates and exact quadratic divergence energy
+
+Constructed an explicit actual isometric equivalence between square-summable real matrices indexed by Nat×Nat and the completed linear Gaussian field space. Its unit matrix images are the genuine fields e_i*X_{e_j}. Their orthonormality comes from actual tensor and Gaussian inner products. Completeness is proved by two successive coefficient expansions for arbitrary rank fields, followed by closure; no matrix representation is assumed.
+
+The inverse coordinates equal the actual L2 pairings against these unit fields. They have exact squared-norm HasSum energy. Transposition swaps indices, and the actual gradient projection averages each coefficient with its transposed coefficient. The completed divergence squared norm has the exact series of twice the squared symmetric coefficients. Divergence vanishes exactly for skew coordinates, including all infinite square-summable matrices.
+
+Significance: the countable matrix-source completion obligation from discovery 80 is now discharged in a concrete isometric coordinate model. The full graph completion from discovery 99 and Hodge transpose from discovery 108 have explicit infinite matrix content and energy. This creates a usable foundation for general quadratic source estimates beyond rank-one observables.
+
+Scope: actual square-summable matrix coordinates, not a separately defined formal Hilbert-Schmidt operator class. Surjectivity of completed divergence onto every second-chaos target is still under investigation; the coordinate equivalence alone does not assert it. General pure quadratic L4/product bounds remain open.
+
+Verification: full Lake build 4425 jobs (.lake/stardust-109-build.log); twenty-one public types inspected; 8224 safe Foundation declarations transitively audited with only propext/Classical.choice/Quot.sound (.lake/stardust-109-audit.log). Discovery 108 checkpoint: 54ccfcc. Discovery 109 is the commit containing this entry.
+
+Reflection: the existing component chaos-lowering theorem suggests full second-chaos recovery lies in this completed space. Proving first-chaos spectral/range identification and a component criterion for linear fields may establish actual onto divergence. This is more significant than adding finite matrix examples and is the next active investigation.
+
+### Public locations — discovery 109
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianLinearFieldMatrixCoordinates.
+
+| Name | Source |
+| --- | --- |
+| unit | Foundation/GaussianLinearFieldMatrixCoordinates.lean:13 |
+| matrixUnit | Foundation/GaussianLinearFieldMatrixCoordinates.lean:14 |
+| units_orthonormal | Foundation/GaussianLinearFieldMatrixCoordinates.lean:16 |
+| matrixUnits_orthonormal | Foundation/GaussianLinearFieldMatrixCoordinates.lean:18 |
+| matrixSynthesis | Foundation/GaussianLinearFieldMatrixCoordinates.lean:27 |
+| matrixSynthesis_single | Foundation/GaussianLinearFieldMatrixCoordinates.lean:30 |
+| coefficient_hasSum | Foundation/GaussianLinearFieldMatrixCoordinates.lean:34 |
+| matrixSynthesis_range | Foundation/GaussianLinearFieldMatrixCoordinates.lean:39 |
+| matrixIntoFields | Foundation/GaussianLinearFieldMatrixCoordinates.lean:69 |
+| matrixIntoFields_surjective | Foundation/GaussianLinearFieldMatrixCoordinates.lean:74 |
+| matrixUnitary | Foundation/GaussianLinearFieldMatrixCoordinates.lean:80 |
+| coordinates | Foundation/GaussianLinearFieldMatrixCoordinates.lean:83 |
+| coordinates_norm | Foundation/GaussianLinearFieldMatrixCoordinates.lean:85 |
+| coordinates_apply | Foundation/GaussianLinearFieldMatrixCoordinates.lean:87 |
+| coordinates_transpose | Foundation/GaussianLinearFieldMatrixCoordinates.lean:96 |
+| coordinates_energy | Foundation/GaussianLinearFieldMatrixCoordinates.lean:101 |
+| gradient_mem | Foundation/GaussianLinearFieldMatrixCoordinates.lean:107 |
+| coordinates_gradient | Foundation/GaussianLinearFieldMatrixCoordinates.lean:112 |
+| divergence_matrix_energy | Foundation/GaussianLinearFieldMatrixCoordinates.lean:125 |
+| coordinates_injective | Foundation/GaussianLinearFieldMatrixCoordinates.lean:132 |
+| divergence_zero_iff_skew_coordinates | Foundation/GaussianLinearFieldMatrixCoordinates.lean:135 |
