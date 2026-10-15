@@ -3584,3 +3584,36 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianQuadraticMatrixPrediction.
 | second_chaos_prediction | Foundation/GaussianQuadraticMatrixPrediction.lean:54 |
 | second_chaos_prediction_energy | Foundation/GaussianQuadraticMatrixPrediction.lean:59 |
 | prediction_matrix_energy | Foundation/GaussianQuadraticMatrixPrediction.lean:68 |
+
+## Discovery 112 — exact positive-chaos compactness criterion for full recovery compositions
+
+For the actual full Gaussian recovery operator R, established operator-norm convergence of its finite-chaos truncations R*T_N with error at most (N+1)^(-1/2). The proof uses the exact inverse-number recovery energy and complete chaos decomposition. These truncations are finite in degree, not asserted to be finite rank: infinite source multiplicity can persist inside one chaos.
+
+For every bounded linear input operator K from an arbitrary real normed space into Gaussian L2, proved the exact criterion:
+R*K is compact if and only if P_n*K is compact for every positive degree n.
+No commutation of K with chaos projections is required. Sufficiency follows from compact finite-chaos sums and the uniform recovery tail bound. Necessity uses a constructed bounded sector extractor n*P_n*R_adjoint, which recovers P_n from R on every input.
+
+Significance: compactness of recovered stochastic sources is determined by within-chaos source multiplicity, while high-degree number smoothing supplies the uniform tail. This unifies the actual Poisson and one-observation compact recovery examples with full Gaussian and Brownian-history noncompactness. General finite-dimensional observation recovery now reduces to verifying compactness, typically finite rank, of every observed positive-chaos block.
+
+Scope: an exact abstract operator criterion, not a completed proof that every finite-dimensional source observation has compact full recovery. That remaining finite Hermite range/dimension obligation is explicit. Finite-chaos approximation alone does not imply full recovery is compact.
+
+Verification: full Lake build 4428 jobs (.lake/stardust-112-build.log); ten public types inspected; 8314 safe Foundation declarations transitively audited with only propext/Classical.choice/Quot.sound (.lake/stardust-112-audit.log). Discovery 111 checkpoint: 458401b. Discovery 112 is the commit containing this entry.
+
+Reflection: test the sharp compact approximation gap for unrestricted Gaussian recovery. Infinite first-chaos multiplicity may force every compact approximation to have error at least one despite norm-convergent finite-chaos truncations. Then return to the finite observed-chaos range obligation instead of treating degree smoothing as finite rank.
+
+### Public locations — discovery 112
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianRecoverySpectralCompactness.
+
+| Name | Source |
+| --- | --- |
+| partialRecovery | Foundation/GaussianRecoverySpectralCompactness.lean:12 |
+| projection_truncation | Foundation/GaussianRecoverySpectralCompactness.lean:14 |
+| projection_residual | Foundation/GaussianRecoverySpectralCompactness.lean:24 |
+| recovery_tail_energy | Foundation/GaussianRecoverySpectralCompactness.lean:29 |
+| recovery_tail_operator_bound | Foundation/GaussianRecoverySpectralCompactness.lean:43 |
+| partialRecovery_tendsto | Foundation/GaussianRecoverySpectralCompactness.lean:54 |
+| sectorExtract | Foundation/GaussianRecoverySpectralCompactness.lean:63 |
+| sectorExtract_recovery | Foundation/GaussianRecoverySpectralCompactness.lean:66 |
+| partial_composition_compact | Foundation/GaussianRecoverySpectralCompactness.lean:72 |
+| recovery_composition_compact_iff | Foundation/GaussianRecoverySpectralCompactness.lean:99 |

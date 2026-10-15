@@ -402,3 +402,4 @@ import Foundation.GaussianLinearFieldTranspose
 import Foundation.GaussianLinearFieldMatrixCoordinates
 import Foundation.GaussianQuadraticRecoverySurjectivity
 import Foundation.GaussianQuadraticMatrixPrediction
+import Foundation.GaussianRecoverySpectralCompactness
