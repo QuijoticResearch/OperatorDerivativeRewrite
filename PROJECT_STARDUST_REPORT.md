@@ -3554,3 +3554,33 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianQuadraticRecoverySurjectivi
 | quadraticLift_surjective | Foundation/GaussianQuadraticRecoverySurjectivity.lean:156 |
 | quadraticUnitary | Foundation/GaussianQuadraticRecoverySurjectivity.lean:166 |
 
+
+## Discovery 111 — every second-chaos forecast is completed matrix compression
+
+For arbitrary Gaussian observations, the actual joint source/sample conditional projection sends each rank field a*X_b to (P a)*X_(P b), where P is the actual orthogonal projection onto the observed source span. It preserves completed linear fields and commutes with their transposition. Every compressed matrix coefficient is the actual L2 pairing against the rank field formed from both projected coordinate directions.
+
+The actual completed divergence of this compressed source is the scalar conditional prediction of its original divergence. Hence every full second-chaos target f has forecast equal to the completed divergence of J(R f), with squared forecast norm exactly twice ||J(R f)||². Its exact energy HasSum consists of twice the squared matrix pairings against projected coordinate pairs. This is the native square-summable matrix compression law, including correlated, degenerate, finite, infinite and uncountable observation families.
+
+Significance: full quadratic Gaussian prediction is now governed by compression of both matrix coordinates through observed-source geometry. The complete symmetric-source classification from discovery 110 supplies the recovered matrix for every second-chaos L2 target, rather than only explicit finite quadratic polynomials. No ordinary trace is required, so renormalized infinite quadratics are within the legitimate Hilbert scope.
+
+Scope: actual L2 conditioning, graph compatibility and coefficient energy. No pointwise unrenormalized quadratic formula, finite trace, covariance-matrix inverse, nonlinear SPDE solution or pathwise conditional law is assumed. General pure second-chaos L4/product bounds remain unproved.
+
+Verification: full Lake build 4427 jobs (.lake/stardust-111-build.log); nine public types inspected; 8275 safe Foundation declarations transitively audited with only propext/Classical.choice/Quot.sound (.lake/stardust-111-audit.log). Discovery 110 checkpoint: a122258. Discovery 111 is the commit containing this entry.
+
+Reflection: finite coordinate compression should produce finite-dimensional quadratic forecast ranges and exact approximation errors. A broader compactness criterion through positive chaos blocks is being checked next; it may separate finite source multiplicity from high-degree spectral smoothing.
+
+### Public locations — discovery 111
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianQuadraticMatrixPrediction.
+
+| Name | Source |
+| --- | --- |
+| joint_rank | Foundation/GaussianQuadraticMatrixPrediction.lean:14 |
+| joint_linear_mem | Foundation/GaussianQuadraticMatrixPrediction.lean:20 |
+| joint_transpose_commute | Foundation/GaussianQuadraticMatrixPrediction.lean:31 |
+| matrix_compression_pairing | Foundation/GaussianQuadraticMatrixPrediction.lean:35 |
+| coordinates_compression | Foundation/GaussianQuadraticMatrixPrediction.lean:41 |
+| conditional_completed_divergence | Foundation/GaussianQuadraticMatrixPrediction.lean:48 |
+| second_chaos_prediction | Foundation/GaussianQuadraticMatrixPrediction.lean:54 |
+| second_chaos_prediction_energy | Foundation/GaussianQuadraticMatrixPrediction.lean:59 |
+| prediction_matrix_energy | Foundation/GaussianQuadraticMatrixPrediction.lean:68 |

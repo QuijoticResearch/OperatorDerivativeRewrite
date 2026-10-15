@@ -401,3 +401,4 @@ import Foundation.SPDEExponentialTimeContinuity
 import Foundation.GaussianLinearFieldTranspose
 import Foundation.GaussianLinearFieldMatrixCoordinates
 import Foundation.GaussianQuadraticRecoverySurjectivity
+import Foundation.GaussianQuadraticMatrixPrediction
