@@ -3370,3 +3370,34 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianPureQuadraticProduct.
 | square_association_equality_iff | Foundation/GaussianPureQuadraticProduct.lean:64 |
 | fourth_moment_sharp | Foundation/GaussianPureQuadraticProduct.lean:78 |
 
+
+## Discovery 106 — Brownian state is recovered from integrated history by backward L2 differentiation
+
+For 0≤a<s, the actual backward quotient (integratedVector(s)-integratedVector(a))/(s-a) differs from the Brownian indicator timeVector(s) in L2 norm by at most sqrt(s-a). The proof uses exact physical profiles and bounds the error by the indicator of (a,s]. At a_n=s*n/(n+1), these genuine time-Hilbert quotients converge to the Brownian time vector.
+
+After the constructed coefficient isometry, closed-span continuity proves that the current Brownian direction belongs to the Gaussian source span of the integrated-value history alone, including time zero. The hidden velocity from discovery 104 is therefore reconstructed using only past integrated values. As a consequence, the actual integrated-history source forecast is integratedDirection(s)+(t-s)*brownianDirection(s), and every future single-terminal L2 observable has identical prediction from integrated history alone and from the two current state coordinates. All Wick degrees inherit the exact forecast.
+
+Significance: a causal derivative limit closes the remaining state-reconstruction limitation in discovery 104. Current integrated value alone fails, but its past recovers the additional state needed for prediction. This supplies a concrete verified inverse-kernel principle within the actual stochastic operator model, without pathwise differentiation assumptions.
+
+Scope: L2/source-span reconstruction and terminal conditional identities. No pathwise derivative, completed-filtration equality, full joint-state transition theorem or strong Markov assertion is added. The future result concerns every observable of a single terminal integrated coordinate; multidirectional terminal-state sufficiency is a separate extension.
+
+Verification: full Lake build 4421 jobs (.lake/stardust-106-build.log); ten public types inspected; 8153 safe Foundation declarations transitively audited with only propext/Classical.choice/Quot.sound (.lake/stardust-106-audit.log). Discovery 105 checkpoint: 9f771c1. Discovery 106 is the commit containing this entry.
+
+Reflection: higher polynomial causal kernels may admit analogous finite derivative-state recovery. The next investigation extends actual damped Hilbert-valued forcing from fixed terminal values to mean-square time continuity under the same stochastic trace condition. General fractional kernels should retain their separate memory and regularity obligations.
+
+### Public locations — discovery 106
+
+Prefix: OperatorDerivativeRewrite.Foundation.IntegratedBrownianHistoryReconstruction.
+
+| Name | Source |
+| --- | --- |
+| quotient | Foundation/IntegratedBrownianHistoryReconstruction.lean:14 |
+| quotient_error_bound | Foundation/IntegratedBrownianHistoryReconstruction.lean:16 |
+| probeTime | Foundation/IntegratedBrownianHistoryReconstruction.lean:53 |
+| probeTime_gap | Foundation/IntegratedBrownianHistoryReconstruction.lean:55 |
+| probeTime_lt | Foundation/IntegratedBrownianHistoryReconstruction.lean:60 |
+| quotient_tendsto | Foundation/IntegratedBrownianHistoryReconstruction.lean:65 |
+| brownian_mem_integrated_history | Foundation/IntegratedBrownianHistoryReconstruction.lean:77 |
+| integrated_history_source_projection | Foundation/IntegratedBrownianHistoryReconstruction.lean:98 |
+| integrated_history_state_sufficient | Foundation/IntegratedBrownianHistoryReconstruction.lean:108 |
+| integrated_history_wick_prediction | Foundation/IntegratedBrownianHistoryReconstruction.lean:114 |

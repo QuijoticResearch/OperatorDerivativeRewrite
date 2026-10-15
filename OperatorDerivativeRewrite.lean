@@ -396,3 +396,4 @@ import Foundation.SPDECompactModalSynthesis
 import Foundation.GaussianExponentialMarkovPrediction
 import Foundation.IntegratedBrownianStatePrediction
 import Foundation.GaussianPureQuadraticProduct
+import Foundation.IntegratedBrownianHistoryReconstruction
