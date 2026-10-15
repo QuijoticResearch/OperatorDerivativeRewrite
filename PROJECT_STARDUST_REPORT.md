@@ -3401,3 +3401,36 @@ Prefix: OperatorDerivativeRewrite.Foundation.IntegratedBrownianHistoryReconstruc
 | integrated_history_source_projection | Foundation/IntegratedBrownianHistoryReconstruction.lean:98 |
 | integrated_history_state_sufficient | Foundation/IntegratedBrownianHistoryReconstruction.lean:108 |
 | integrated_history_wick_prediction | Foundation/IntegratedBrownianHistoryReconstruction.lean:114 |
+
+## Discovery 107 — trace-admitted Hilbert-valued damped forcing is mean-square continuous
+
+Proved the exact inner-product and distance formulas for the actual scalar exponential time profiles. Every positive-rate profile is continuous into the genuine Lebesgue time Hilbert space, including at time zero. Profile increments satisfy a uniform squared-norm bound 2/rate.
+
+For arbitrary rates at least one and amplitudes satisfying the reciprocal-rate trace condition, the actual Hilbert-valued Gaussian forcing field is continuous into Gaussian vector L2. Its increment energy is exactly the summed modal increment energy. Dominated convergence applies to these energies under the summable inverse-rate bound, rather than requiring an unnecessary sum of modal L2 norms. The unit-amplitude quadratic-rate field and its actual completed second-chaos divergence output are both continuous in their L2 spaces.
+
+Significance: the fixed-terminal construction from discovery 100 now has genuine mean-square temporal regularity under its sharp admission condition. This uses the exact causal kernel geometry from discovery 103 and the completed divergence operator from discovery 99. Compactness alone remains insufficient, as discovery 102 proves.
+
+Scope: continuity of actual Hilbert-valued L2 classes and quadratic divergence classes. No pathwise continuous version, quantitative optimal time exponent, spatial differential generator, mild equation, or nonlinear SPDE evolution has been established. The rate lower bound is explicit; this result is not a claim about fractional-memory kernels.
+
+Verification: full Lake build 4423 jobs (.lake/stardust-107-build.log); twelve public types inspected; 8167 safe Foundation declarations transitively audited with only propext/Classical.choice/Quot.sound (.lake/stardust-107-audit.log). Discovery 106 checkpoint: 7f15a79. Discovery 107 is the commit containing this entry. Pinned dependencies and the named IBM manuscript hash remain unchanged.
+
+Reflection: optimal time exponents and diagonal mild evolution are valuable next SPDE obligations. Exploration now returns to completed matrix source geometry: the global Hodge reflection may construct the actual transposition isometry on linear Gaussian fields and identify antisymmetry with zero divergence.
+
+### Public locations — discovery 107
+
+Prefix: OperatorDerivativeRewrite.Foundation.SPDEExponentialTimeContinuity.
+
+| Name | Source |
+| --- | --- |
+| variance | Foundation/SPDEExponentialTimeContinuity.lean:14 |
+| response_inner | Foundation/SPDEExponentialTimeContinuity.lean:16 |
+| response_distance_sq | Foundation/SPDEExponentialTimeContinuity.lean:33 |
+| responseVector_continuous | Foundation/SPDEExponentialTimeContinuity.lean:42 |
+| response_increment_domination | Foundation/SPDEExponentialTimeContinuity.lean:57 |
+| profile_trace | Foundation/SPDEExponentialTimeContinuity.lean:70 |
+| increment_trace | Foundation/SPDEExponentialTimeContinuity.lean:78 |
+| field_sub | Foundation/SPDEExponentialTimeContinuity.lean:87 |
+| field_increment_energy | Foundation/SPDEExponentialTimeContinuity.lean:95 |
+| exponentialField_continuous | Foundation/SPDEExponentialTimeContinuity.lean:102 |
+| quadraticField_continuous | Foundation/SPDEExponentialTimeContinuity.lean:123 |
+| quadratic_divergence_continuous | Foundation/SPDEExponentialTimeContinuity.lean:127 |

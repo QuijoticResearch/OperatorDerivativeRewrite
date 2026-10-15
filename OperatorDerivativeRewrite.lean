@@ -397,3 +397,4 @@ import Foundation.GaussianExponentialMarkovPrediction
 import Foundation.IntegratedBrownianStatePrediction
 import Foundation.GaussianPureQuadraticProduct
 import Foundation.IntegratedBrownianHistoryReconstruction
+import Foundation.SPDEExponentialTimeContinuity
