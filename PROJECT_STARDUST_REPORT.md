@@ -6,20 +6,20 @@ Started 2026-10-14 from e7dac26ea306c89e3df9ddba015b54554a7caf2b in C:\OperatorD
 
 This report is durable research memory. Entries marked verified have completed the full build, public type inspection and transitive axiom audit. Ongoing conjectures are separate. No execution after the active session is promised.
 
-## Periodic consolidation — verified through discovery 105
+## Periodic consolidation — verified through discovery 110
 
-The latest prior saved checkpoint is 71aeb4d; discovery 105 is the commit containing its entry. Full Lake build: 4420 jobs. The complete transitive audit checks 8131 safe Foundation declarations and permits only propext, Classical.choice and Quot.sound. Pinned dependencies and the named IBM manuscript hash remain unchanged. Later verified entries supersede this count. The campaign remains active within this session.
+The latest prior saved checkpoint is 5427cb4; discovery 110 is the commit containing its entry. Full Lake build: 4426 jobs. The complete transitive audit checks 8266 safe Foundation declarations and permits only propext, Classical.choice and Quot.sound. Pinned dependencies and the named IBM manuscript hash remain unchanged. Later verified entries supersede this count. The campaign remains active within this session.
 
-1. **Most significant discoveries:** full minimum-norm Gaussian recovery; complete actual Poisson coordinates and full graph transfer; fixed-mollifier IBM joint cubic time L2/recovery; complete terminal prediction spectrum and rank laws; countable renormalized Wick responses; sharp source-dependent quartic regularity; recovery compactness contrasts; the full joint source/sample recovery identity and both full graphs; exact causal/minimal-source Hodge energy with uniform alternating-projection convergence; actual Hilbert-valued damped forcing and compact/trace separation; and causal exponential versus integrated-state prediction.
-2. **Verified record:** each discovery gives exact public names, source lines, build and transitive audit. The ledger lists saved mathematical checkpoints through 104; discovery 105 is saved with this consolidation. These are verified repository mathematics and connections, without a blanket world-level novelty claim.
+1. **Most significant discoveries:** full minimum-norm Gaussian recovery; complete actual Poisson coordinates and full graph transfer; fixed-mollifier IBM joint cubic time L2/recovery; complete terminal prediction spectrum and rank laws; countable renormalized Wick responses; sharp source-dependent quartic regularity; recovery compactness contrasts; the full joint source/sample recovery identity and both full graphs; exact causal/minimal-source Hodge energy with uniform alternating-projection convergence; actual Hilbert-valued damped forcing and compact/trace separation; causal exponential versus integrated-state prediction; integrated-history derivative recovery; and full second-chaos/symmetric square-summable matrix-source equivalence.
+2. **Verified record:** each discovery gives exact public names, source lines, build and transitive audit. The ledger lists saved mathematical checkpoints through 109; discovery 110 is saved with this consolidation. These are verified repository mathematics and connections, without a blanket world-level novelty claim.
 3. **Unexpected connections:** physical Poisson gauges reconstruct scalar Gaussian graph displacements. Compact actual Poisson recovery factors Gaussian recovery after one coordinate. Nonlinear terminal prediction reduces to linear source geometry. Gaussian Hodge projection realizes matrix symmetrization. The inverse-number potential and observed polynomial graph density establish full joint recovery and graph compatibility. Genuine causal Ito fields have degree-dependent divergence-free residuals, and alternating causal/Hodge projection extracts first chaos uniformly.
-4. **Corrected conjectures and counterexamples:** Poisson curvature does not imply quadratic entropy even on the finite-support core. The Poisson L4 inverse is everywhere exactly one-third regular. Actual H=1/4 full-past forecasts beat the current coordinate. Initial Wick rank does not improve positive-time increment powers. Ordinary vector conditioning fails to commute with recovery; the joint source/sample projection does commute. Inverse-number damping preserves positive-rank fractional power obstructions. Centered mixed chaoses can have negative square covariance, while rank-one pure second chaos has the exact positive product formula. Compact modal synthesis can have infinite stochastic trace. Integrated Brownian current-value prediction fails, while its two-coordinate state suffices for joint-history terminal prediction.
+4. **Corrected conjectures and counterexamples:** Poisson curvature does not imply quadratic entropy even on the finite-support core. The Poisson L4 inverse is everywhere exactly one-third regular. Actual H=1/4 full-past forecasts beat the current coordinate. Initial Wick rank does not improve positive-time increment powers. Ordinary vector conditioning fails to commute with recovery; the joint source/sample projection does commute. Inverse-number damping preserves positive-rank fractional power obstructions. Centered mixed chaoses can have negative square covariance, while rank-one pure second chaos has the exact positive product formula. Compact modal synthesis can have infinite stochastic trace. Integrated Brownian current-value prediction fails, while its own history reconstructs the Brownian coordinate and is sufficient through the two-coordinate state for terminal prediction.
 5. **Reusable principles:** full recovery and source Hodge geometry; centered/coherent Poisson inverses; L2/Fubini transfer; exact Wick projection and terminal spectrum; weighted-source stability and atom obstructions; physical graph gauges; countable renormalized response and Gram criteria; entropy/core graph approximation; compact recovery tails; quadratic matrix Hodge formulas; inverse-number conditional commutation; and all-L2 joint recovery intertwining with its adjoint identity.
-6. **Promising unproved obligations:** actual fractional spectral/Volterra bridge and sharp linear upper/asymptotic laws; physical IBM kernels and uniform limits; recovery compactness for general finite-dimensional observed source spans; a general modified Poisson entropy theorem and physical spectral semigroup; spatial/temporal renormalized SPDE solutions; and countable completed matrix-field Hodge geometry. The all-L2 joint identity and both full graph identities are now discharged. The actual repository fractional sharp upper law remains open despite classical results cited at discovery 60.
+6. **Promising unproved obligations:** actual fractional spectral/Volterra bridge and sharp linear upper/asymptotic laws; physical IBM kernels and uniform limits; recovery compactness for general finite-dimensional observed source spans; a general modified Poisson entropy theorem and physical spectral semigroup; spatial/temporal renormalized SPDE solutions; general pure quadratic L4/product estimates and optimal temporal SPDE regularity. Countable matrix completion and full second-chaos onto divergence are now discharged. The all-L2 joint identity and both full graph identities are now discharged. The actual repository fractional sharp upper law remains open despite classical results cited at discovery 60.
 7. **Limits:** scalar Poisson/Gaussian transfer does not identify full infinite Gaussian fields or preserve products/entropy. Fixed-mollifier IBM recovery is not an Ito-Tanaka limit. Countable Wick responses are actual L2 classes, not SPDE solutions or path versions. Joint source conditioning alone does not prove an adapted integral or Clark-Ocone formula. Degree-zero energy is not variance. Number-degree damping is not physical time smoothing. The scalar Gaussian displacement group now has its physical formula and strong continuity; nonzero action has no bounded L4 realization and positive displacements remain uniformly away from identity in operator norm.
 8. **Most surprising operator contrast:** full Gaussian recovery and one-coordinate conditioning are separately noncompact, while their actual composition is compact via Poisson factorization. Positive countable Brownian full-past recovery is noncompact. Yet a universal exact joint projection identity holds on all scalar L2 targets. Compactness and compatibility answer different questions.
-9. **Research priorities:** the general joint identity is complete. Full unbounded graph compatibility and actual causal/Hodge projection dynamics are complete. Actual exponential terminal Markov prediction and independent innovation are now verified. Priority moves toward causal state reconstruction, useful pure quadratic L4 source assumptions, and precise finite versus infinite observed-source compactness. Sharp actual fractional forecasts and uniform IBM limits remain the major physical bottlenecks.
-10. **Next three directions:** (i) causal integrated-history reconstruction and general pure second-chaos L4 estimates; (ii) actual fractional causal bridge and sharp upper forecast laws; (iii) general finite-source compactness and useful L4 stochastic source embeddings. General modified Poisson entropy and spatial renormalized SPDE construction deserve focused separate campaigns.
+9. **Research priorities:** the general joint identity is complete. Full unbounded graph compatibility and actual causal/Hodge projection dynamics are complete. Actual exponential terminal Markov prediction and independent innovation are now verified. Causal integrated-history reconstruction is complete. Full quadratic L2 matrix/source geometry is complete. Priority moves toward full quadratic matrix conditioning, useful general pure quadratic L4 source bounds, and precise finite versus infinite observed-source compactness. Sharp actual fractional forecasts and uniform IBM limits remain the major physical bottlenecks.
+10. **Next three directions:** (i) full quadratic matrix prediction and general pure second-chaos L4 estimates; (ii) actual fractional causal bridge and sharp upper forecast laws; (iii) general finite-source compactness and useful L4 stochastic source embeddings. General modified Poisson entropy and spatial renormalized SPDE construction deserve focused separate campaigns.
 
 ### Current investigation register
 
@@ -33,14 +33,14 @@ The latest prior saved checkpoint is 71aeb4d; discovery 105 is the commit contai
 | Poisson curvature and entropy | Sharp pointwise coefficients; finite-core Gamma identity and entropy counterexamples | General modified jump entropy; ordinary quadratic branch closed |
 | IBM fixed-mollifier cubic target | Actual joint L2 and recovered source | Physical kernel and uniform mollifier limits |
 | IBM primitive obstruction | Necessary source-vector condition | Actual blow-up/non-Cauchy theorem |
-| Countable SPDE/Wick modes | Exact renormalization, Hilbert-valued modal forcing and energy, sharp damping trace; compactness insufficient for noise admission | Spatial mild evolution, paths and fractional-memory trace |
+| Countable SPDE/Wick modes | Exact renormalization, Hilbert-valued modal forcing and energy, sharp damping trace, mean-square continuity; compactness insufficient for noise admission | Spatial mild evolution, optimal time powers, paths and fractional-memory trace |
 | Quartic inverse geometry | Poisson one-third optimality; Gaussian first-chaos regularity; finite-direction stability; actual scalar Gaussian full derivative graph cannot control L4 | Useful quantitative L4 stochastic embeddings |
 | Recovery compactness | Poisson compact; full Gaussian noncompact; one-coordinate composition compact; even single-channel positive Brownian history noncompact | General finite observed-source criterion; one-channel history classification complete |
 | Conditional projection | Compact exactly for all-zero source families | Terminal-restricted quantitative compactness |
 | Joint recovery and scalar potential | All-L2 J R=R C; both full graphs; Hodge commutation; inverse-number iteration extracts first chaos | Physical causal kernel applications |
 | Causal Ito/Hodge geometry | Exact degree energy fractions; noncommuting projections; uniform alternating convergence to first-chaos Ito component | Physical IBM/fractional energy cost |
-| Quadratic matrix source geometry | Finite matrix Hodge symmetrization; full divergence on completed linear fields; rank-one pure quadratic product and sharp fourth moment | General matrix L4/product bounds and explicit square-summable matrix coordinates |
-| Causal response state | Exponential whole-history innovation independence and terminal Markov law; integrated two-state terminal sufficiency and own-value obstruction | Brownian reconstruction from integrated history; higher causal kernel state complexity |
+| Quadratic matrix source geometry | Complete square-summable matrix coordinates, actual transpose, skew kernel and symmetric energy; full second-chaos isometry and onto divergence; sharp rank-one quartic formula | General pure quadratic L4/product bounds and full conditional matrix compression |
+| Causal response state | Exponential innovation independence and terminal Markov law; integrated current-value obstruction, backward L2 state recovery and own-history two-state sufficiency | Higher causal kernel state complexity, joint-state sufficiency and path versions |
 
 ## Discovery 1 — Actual Poisson adjunction reconstructs the all-order Charlier ladder
 
@@ -1711,7 +1711,7 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonTiltComposition.
 | relativeEntropy_not_symmetric | Foundation/PoissonTiltComposition.lean:56 |
 
 
-## Chronological mathematical checkpoint ledger through discovery 104
+## Chronological mathematical checkpoint ledger through discovery 109
 
 | Commit | Verified checkpoint |
 | --- | --- |
@@ -1819,6 +1819,11 @@ Prefix: OperatorDerivativeRewrite.Foundation.PoissonTiltComposition.
 | 8ee4232 | Actual compact modal synthesis with infinite stochastic basis-square trace |
 | 34f0c1e | Genuine exponential Ito process, terminal Markov forecast and independent innovation |
 | 71aeb4d | Integrated Brownian two-state prediction and current-value-only obstruction |
+| 9f771c1 | Sharp pure rank-one quadratic product geometry and fourth moment |
+| 7f15a79 | Actual backward L2 differentiation reconstructs Brownian state from integrated history |
+| bb377f0 | Trace-admitted actual Hilbert-valued damped forcing is mean-square continuous |
+| 54ccfcc | Completed linear Gaussian transposition is the actual Hodge reflection |
+| 5427cb4 | Complete square-summable Gaussian matrix coordinates and symmetric divergence energy |
 
 Documentation checkpoint: 5ec7740 consolidated discoveries through 56.
 
@@ -3511,3 +3516,41 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianLinearFieldMatrixCoordinate
 | divergence_matrix_energy | Foundation/GaussianLinearFieldMatrixCoordinates.lean:125 |
 | coordinates_injective | Foundation/GaussianLinearFieldMatrixCoordinates.lean:132 |
 | divergence_zero_iff_skew_coordinates | Foundation/GaussianLinearFieldMatrixCoordinates.lean:135 |
+
+## Discovery 110 — full second chaos is equivalent to completed symmetric Gaussian matrix sources
+
+Proved that the spectral degree-one sector equals the actual complete first-chaos isometry range. The proof uses genuine component chaos lowering, a constructed vacuum-field projection, and full vector-core separation. A vector Gaussian L2 field belongs to the completed linear field space exactly when every genuine Hilbert component belongs to this first-chaos range.
+
+The existing full chaos-lowering theorem then shows that recovery of every second-chaos target lies in the completed linear field space. Its actual completed divergence is exactly the original target. Thus completed divergence is onto the entire actual second-chaos sector, closing the limitation in discoveries 99 and 109.
+
+The recovered source is symmetric and has squared norm one half of the target squared norm. Multiplication of recovery by sqrt(2) gives an actual isometric equivalence between the full second-chaos sector and the intersection of completed linear fields with the global gradient range. Combined with discovery 109, this identifies full quadratic Gaussian L2 mathematics with actual square-summable symmetric matrix-source geometry. Infinite skew matrices supply exactly the complementary zero-divergence fields.
+
+Significance: this is a full infinite-dimensional quadratic classification built from verified unbounded graphs, component lowering, source closure and actual isometries. It goes substantially beyond finite matrix examples or rank-one Wick probes. It provides a precise source space on which future L4 estimates and matrix conditional laws can be pursued.
+
+Scope: Hilbert L2/graph/isometry classification. Formal Hilbert-Schmidt operator classes, general pure second-chaos L4/product bounds, pathwise quadratic representatives and trace-class unrenormalized quadratic forms remain separate. Square-summable symmetric coefficients are not assumed to have a finite ordinary trace.
+
+Verification: full Lake build 4426 jobs (.lake/stardust-110-build.log); fourteen public types inspected; 8266 safe Foundation declarations transitively audited with only propext/Classical.choice/Quot.sound (.lake/stardust-110-audit.log). Discovery 109 checkpoint: 5427cb4. Discovery 110 is the commit containing this entry. Pinned dependencies remain unchanged.
+
+Reflection: the matrix model suggests full second-chaos prediction by compression of both coordinates through the observed-source projection; that proof is in progress. General quadratic L4 estimates and finite-source compact recovery are the next substantial analytic priorities, while fractional causal identification and IBM uniform limits remain physical bottlenecks.
+
+### Public locations — discovery 110
+
+Prefix: OperatorDerivativeRewrite.Foundation.GaussianQuadraticRecoverySurjectivity.
+
+| Name | Source |
+| --- | --- |
+| vacuumProjection | Foundation/GaussianQuadraticRecoverySurjectivity.lean:17 |
+| component_vacuumProjection | Foundation/GaussianQuadraticRecoverySurjectivity.lean:20 |
+| constant_components_vacuum | Foundation/GaussianQuadraticRecoverySurjectivity.lean:30 |
+| sector_one_iff_firstChaos | Foundation/GaussianQuadraticRecoverySurjectivity.lean:41 |
+| component_linear_mem | Foundation/GaussianQuadraticRecoverySurjectivity.lean:63 |
+| linear_fields_iff_components | Foundation/GaussianQuadraticRecoverySurjectivity.lean:74 |
+| recovery_second_chaos_linear | Foundation/GaussianQuadraticRecoverySurjectivity.lean:100 |
+| completed_divergence_recovery | Foundation/GaussianQuadraticRecoverySurjectivity.lean:112 |
+| completed_divergence_onto_second_chaos | Foundation/GaussianQuadraticRecoverySurjectivity.lean:120 |
+| second_recovery_energy | Foundation/GaussianQuadraticRecoverySurjectivity.lean:124 |
+| symmetricFields | Foundation/GaussianQuadraticRecoverySurjectivity.lean:131 |
+| quadraticLift | Foundation/GaussianQuadraticRecoverySurjectivity.lean:133 |
+| quadraticLift_surjective | Foundation/GaussianQuadraticRecoverySurjectivity.lean:156 |
+| quadraticUnitary | Foundation/GaussianQuadraticRecoverySurjectivity.lean:166 |
+
