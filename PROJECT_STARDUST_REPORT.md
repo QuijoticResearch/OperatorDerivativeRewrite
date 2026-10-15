@@ -3211,3 +3211,42 @@ Prefix: OperatorDerivativeRewrite.Foundation.GaussianMixedChaosProductCounterexa
 | mixed_square_association_failure | Foundation/GaussianMixedChaosProductCounterexample.lean:68 |
 | negative_square_covariance | Foundation/GaussianMixedChaosProductCounterexample.lean:77 |
 | exists_centered_polynomial_counterexample | Foundation/GaussianMixedChaosProductCounterexample.lean:91 |
+
+## Discovery 102 — actual compact modal smoothing with divergent stochastic trace
+
+Constructed a bounded linear synthesis operator from square-summable real modal amplitudes into the actual Gaussian L2 space for every uniformly bounded family of time profiles. Its unit-coordinate images are exactly the genuine Gaussian modes. Finite modal truncations are compact, and their operator-norm error is bounded by any uniform tail bound on the profile norms. Thus profiles tending uniformly to zero in the tails give compact synthesis.
+
+For the actual exponential profiles at rates n+1, proved the tail bound (N+1)^(-1/2), compactness at every nonnegative time, and divergence of the summed squared norms of the unit-coordinate images at every positive time. This is an actual compact operator in the verified stochastic model whose stochastic basis-square trace is infinite. The divergent unit-amplitude Gaussian forcing series from discovery 98 therefore survives despite compact deterministic smoothing. Unit amplitudes are not a square-summable deterministic input; this distinction is part of the conclusion.
+
+Significance: deterministic compactness and admission of cylindrical Gaussian forcing are different analytic requirements. This sharpens the earlier Poisson/Gaussian compactness comparisons and supplies a concrete limitation for modal SPDE constructions. No formal Schatten-class equivalence, spatial Laplacian identification or time-path solution is asserted.
+
+Verification: full Lake build 4417 jobs (.lake/stardust-102-build.log); twenty public types inspected; 8048 safe Foundation declarations transitively audited, only propext/Classical.choice/Quot.sound (.lake/stardust-102-audit.log). Discovery 101 checkpoint: 6de8117. Discovery 102 is the commit containing this entry. Pinned dependencies remain unchanged.
+
+Reflection: the trace criterion is essential beyond compactness. Next, the causal exponential kernel suggests an exact full-past terminal Markov prediction law; the all-terminal-L2 version is being checked. Fractional-memory kernels should be tested against this memoryless benchmark rather than assigned a Markov interpretation.
+
+### Public locations — discovery 102
+
+Prefix: OperatorDerivativeRewrite.Foundation.SPDECompactModalSynthesis.
+
+| Name | Source |
+| --- | --- |
+| column | Foundation/SPDECompactModalSynthesis.lean:14 |
+| column_norm | Foundation/SPDECompactModalSynthesis.lean:17 |
+| synthesis | Foundation/SPDECompactModalSynthesis.lean:25 |
+| synthesis_apply | Foundation/SPDECompactModalSynthesis.lean:30 |
+| synthesis_norm | Foundation/SPDECompactModalSynthesis.lean:37 |
+| synthesis_single | Foundation/SPDECompactModalSynthesis.lean:45 |
+| partialSynthesis | Foundation/SPDECompactModalSynthesis.lean:54 |
+| partialSynthesis_apply | Foundation/SPDECompactModalSynthesis.lean:57 |
+| partialSynthesis_compact | Foundation/SPDECompactModalSynthesis.lean:61 |
+| synthesis_tail_bound | Foundation/SPDECompactModalSynthesis.lean:76 |
+| synthesis_compact | Foundation/SPDECompactModalSynthesis.lean:108 |
+| modalTail | Foundation/SPDECompactModalSynthesis.lean:120 |
+| linear_profile_tail | Foundation/SPDECompactModalSynthesis.lean:122 |
+| modalTail_tendsto | Foundation/SPDECompactModalSynthesis.lean:136 |
+| linear_profile_bound | Foundation/SPDECompactModalSynthesis.lean:143 |
+| linearSynthesis | Foundation/SPDECompactModalSynthesis.lean:146 |
+| linearSynthesis_compact | Foundation/SPDECompactModalSynthesis.lean:149 |
+| linearSynthesis_single | Foundation/SPDECompactModalSynthesis.lean:152 |
+| linearSynthesis_infinite_trace | Foundation/SPDECompactModalSynthesis.lean:156 |
+| compact_does_not_imply_stochastic_trace | Foundation/SPDECompactModalSynthesis.lean:166 |
