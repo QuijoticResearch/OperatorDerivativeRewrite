@@ -1108,3 +1108,8 @@ import Foundation.FourierPathTimeHessian
 import Foundation.FourierPathHessianRealization
 import Foundation.FourierPathSmoothControls
 import Foundation.FourierPathControlTensors
+import Foundation.FourierPathCanonicalHessian
+import Foundation.BochnerControlTowers
+import Foundation.FourierPathTimeTowers
+import Foundation.FourierPathTimeTensorIdentity
+import Foundation.FourierPathTimeTensorRealization
