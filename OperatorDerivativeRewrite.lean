@@ -1073,3 +1073,6 @@ import Foundation.HigherHeatFourierPathAdjoint
 import Foundation.FourierPathDirectionalCharacters
 import Foundation.FourierPathDirectionalSeries
 import Foundation.FourierPathDirectionalOperator
+import Foundation.FourierPathDirectionalResolvent
+import Foundation.FourierPathDirectionalFullGenerator
+import Foundation.FourierPathDifferentialCommutation
