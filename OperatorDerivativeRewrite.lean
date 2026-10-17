@@ -1210,3 +1210,6 @@ import Foundation.PoissonCountMoments
 import Foundation.ComplexRootPoissonQuarticDrift
 import Foundation.ComplexRootPoissonPositiveMoments
 import Foundation.ComplexRootQuarticMartingale
+import Foundation.ProbabilityTailBound
+import Foundation.ComplexRootPoissonTail
+import Foundation.ComplexRootPoissonNoWeakLimit

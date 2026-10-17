@@ -1,4 +1,5 @@
 import Foundation.PoissonEntireMoments
+import Foundation.PoissonMoments
 import Mathlib.Algebra.Order.Ring.Pow
 
 /-! Native integrability and exact first and second moments of the actual Poisson count. -/
@@ -35,8 +36,11 @@ theorem weighted_count (r : ℝ≥0) : HasSum (fun n : ℕ => weight r n*(n : �
     (weight_hasSum r).mul_left (r : ℝ)
 
 theorem count_integral (r : ℝ≥0) : (∫ n : ℕ, (n : ℝ) ∂poissonMeasure r) = (r : ℝ) := by
-  apply (hasSum_integral_poissonMeasure (count_integrable r)).unique
-  simpa only [weight, smul_eq_mul] using weighted_count r
+  by_cases hr : r = 0
+  · subst r
+    apply (hasSum_integral_poissonMeasure (count_integrable 0)).unique
+    simpa only [weight, smul_eq_mul] using weighted_count 0
+  · exact PoissonMoments.integral_poisson_count r (pos_iff_ne_zero.mpr hr)
 
 theorem weighted_factorial_second (r : ℝ≥0) :
     HasSum (fun n : ℕ => weight r n*((n : ℝ)*((n : ℝ)-1))) ((r : ℝ)^2) := by
@@ -63,14 +67,17 @@ theorem factorial_second_integral (r : ℝ≥0) :
 
 theorem square_integral (r : ℝ≥0) :
     (∫ n : ℕ, (n : ℝ)^2 ∂poissonMeasure r) = (r : ℝ)^2+(r : ℝ) := by
-  have he (n : ℕ) : (n : ℝ)^2 = (n : ℝ)*((n : ℝ)-1)+(n : ℝ) := by ring
-  simp_rw [he]
-  rw [integral_add]
-  · rw [factorial_second_integral, count_integral]
-  · convert (count_power_integrable r 2).sub (count_integrable r) using 1
-    funext n
-    simp only [Pi.sub_apply]
-    ring
-  · exact count_integrable r
+  by_cases hr : r = 0
+  · subst r
+    have he (n : ℕ) : (n : ℝ)^2 = (n : ℝ)*((n : ℝ)-1)+(n : ℝ) := by ring
+    simp_rw [he]
+    rw [integral_add]
+    · rw [factorial_second_integral, count_integral]
+    · convert (count_power_integrable 0 2).sub (count_integrable 0) using 1
+      funext n
+      simp only [Pi.sub_apply]
+      ring
+    · exact count_integrable 0
+  · exact PoissonMoments.integral_poisson_count_sq r (pos_iff_ne_zero.mpr hr)
 
 end OperatorDerivativeRewrite.Foundation.PoissonCountMoments
