@@ -1255,3 +1255,6 @@ import Foundation.MarkedBackwardSemigroupMartingale
 import Foundation.MarkedHolomorphicExponential
 import Foundation.MarkedExponentialMartingale
 import Foundation.MarkedTwoTimeHolomorphicTransform
+import Foundation.MarkedTwoTimeHeatLimit
+import Foundation.MarkedSignedCylinderBridge
+import Foundation.MarkedJointNoWeakLimit
