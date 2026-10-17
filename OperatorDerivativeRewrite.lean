@@ -1030,3 +1030,6 @@ import Foundation.QuarticPolynomialSteinUniqueness
 import Foundation.QuarticDualSemigroup
 import Foundation.QuarticDualDistributions
 import Foundation.HigherHeatTemperedSemigroup
+import Foundation.DifferentiableZeroSet
+import Foundation.SignedSchwartzLogDerivative
+import Foundation.SignedSchwartzHigherWeights
