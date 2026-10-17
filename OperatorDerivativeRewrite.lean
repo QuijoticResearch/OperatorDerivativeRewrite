@@ -1313,3 +1313,4 @@ import Foundation.RootMarkDoobRepresentation
 import Foundation.RootMarkMartingaleRepresentation
 import Foundation.ComplexRootChannelGram
 import Foundation.RootMarkFiniteClark
+import Foundation.RootMarkConditionalEnergy
