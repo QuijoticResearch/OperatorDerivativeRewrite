@@ -1138,3 +1138,7 @@ import Foundation.HigherHeatLpPropagator
 import Foundation.HigherHeatLpForwardEquation
 import Foundation.HigherHeatLpObservableIto
 import Foundation.HigherHeatL2InputObstruction
+import Foundation.FourierPathDualControls
+import Foundation.FourierPathDualStepPairing
+import Foundation.FourierPathDualGrid
+import Foundation.FourierPathDualDamping
