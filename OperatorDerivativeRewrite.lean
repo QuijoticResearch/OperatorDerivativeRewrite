@@ -1153,3 +1153,6 @@ import Foundation.FourierPathDualTimeGradient
 import Foundation.FourierPathDualJointDensity
 import Foundation.FourierPathDualDensityFubini
 import Foundation.FourierPathDualDensitySamplers
+import Foundation.FourierPathSamplerOperators
+import Foundation.LpStrongOperatorConvergence
+import Foundation.FourierPathDensityStrongLimit
