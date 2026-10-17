@@ -1286,3 +1286,6 @@ import Foundation.ComplexRootTiltedSemigroup
 import Foundation.ComplexRootTiltedExpectation
 import Foundation.MarkedJumpIto
 import Foundation.MarkedTiltConditional
+import Foundation.ComplexRootNormTransform
+import Foundation.ComplexTiltVariationTest
+import Foundation.ComplexTiltVariationDivergence
