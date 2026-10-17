@@ -1102,3 +1102,9 @@ import Foundation.FourierPathTimeFieldAtoms
 import Foundation.FourierPathTimeFieldSeries
 import Foundation.FourierPathTimeGradient
 import Foundation.FourierPathTimeGradientRealization
+import Foundation.FourierPathGradientCommutation
+import Foundation.FourierPathControlHessian
+import Foundation.FourierPathTimeHessian
+import Foundation.FourierPathHessianRealization
+import Foundation.FourierPathSmoothControls
+import Foundation.FourierPathControlTensors
