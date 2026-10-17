@@ -1081,3 +1081,7 @@ import Foundation.FourierPathTransferSymbols
 import Foundation.FourierPathRoughTransferObstruction
 import Foundation.FourierPathDirectionalAdjoint
 import Foundation.FourierPathRoughAdjointObstruction
+import Foundation.FourierPathLinearDirection
+import Foundation.FourierPathHeatGradient
+import Foundation.FourierPathHeatTransfer
+import Foundation.FourierPathPositiveTransferRealization
