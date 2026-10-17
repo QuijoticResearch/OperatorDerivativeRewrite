@@ -17,11 +17,11 @@ Historical first-window timing: The user extended the temporary focus to approxi
 
 At terminal time2026-10-17T00:52:47-04:00, the user explicitly prioritized advancing pseudoprocesses and their stochastic calculus, revisiting `order_p_clark_ocone (7).tex`, pursuing useful connections throughout the verified library, and making Git commits. This supersedes the previous practical no-commit state; commits must exclude ResearchSources and unrelated documents. The indefinite Stardust objective, verification and axiom audits remain in force. Selective source review revisited setup100–174, function-class244–330 and integrand-pairing366–411. Its proposed positive pseudo-L2 completion remains contradicted by646; an indefinite signed-kernel/Fourier calculus is a promising construction route. No manuscript theorem is adopted as an axiom.
 
-## Latest consolidation — verified through discovery 877
+## Latest consolidation — verified through discovery 882
 
-Current pseudoprocess front: verified through discovery 877. Actual integral laws, operator propagators, observable Ito/forward equations, Holder-dual Frechet calculus, unique Bochner time densities and joint time/path representatives remain established. Actual finite weighted sampler expectation operators are now uniformly contractive on the completed Fourier space. Their actions on the vector time density converge strongly in native L^(2m) to the actual expectationField, and the associated dual-control contraction functionals converge in operator norm. Scalar weighted section integrals represent those fields almost everywhere. Compatibility with earlier L-one densities, measurable Lp-valued path families and path-space Bochner averages, causal projections, higher dual-control towers, random adapted integration and chronological Clark–Ocone reconstruction remain open. No general signed path-law limit or uniform total-variation bound is asserted. The indefinite Stardust goal remains active.
+Current pseudoprocess front: verified through discovery 882. Actual integral laws, operator propagators, observable Ito/forward equations, Holder-dual Frechet calculus, unique Bochner time densities and joint time/path representatives remain established. Actual finite weighted sampler expectation operators are now uniformly contractive on the completed Fourier space. Their actions on the vector time density converge strongly in native L^(2m) to the actual expectationField, and the associated dual-control contraction functionals converge in operator norm. Scalar weighted section integrals represent those fields almost everywhere. Compatibility with earlier L-one densities, measurable Lp-valued path families and path-space Bochner averages, causal projections, higher dual-control towers, random adapted integration and chronological Clark–Ocone reconstruction remain open. No general signed path-law limit or uniform total-variation bound is asserted. The indefinite Stardust goal remains active.
 
-Latest verification: full Lake build 5264 jobs;24 new public types inspected; complete transitive audit of 24221 safe Foundation declarations with only propext, Classical.choice, Quot.sound. All43 sources retain42 hashes. The additional180-minute stochastic priority is completed; unrestricted autonomous Stardust discovery and the indefinite native goal remain active.
+Latest verification: full Lake build 5269 jobs;17 new public types inspected; complete transitive audit of 24247 safe Foundation declarations with only propext, Classical.choice, Quot.sound. All43 sources retain42 hashes. The additional180-minute stochastic priority is completed; unrestricted autonomous Stardust discovery and the indefinite native goal remain active.
 
 Unrestricted discoveries648–651 close the exact source-form Fibonacci J=16 partition compatibility gap for the fixed Gaussian NS shear. Discoveries652–657 construct its actual radial groups, persistent low-shell anisotropy, genuine joint spacetime smoothness and an explicit canonical screening countermodel. Discoveries658–660 now prove actual tail moments tend to zero, the low centroid tends to a finite positive limit and the high/low centroid ratio tends to infinity. Exactly kappa_H*E_H=D_H tends to zero, so every fixed positive C/(kappa_H*E_H) diverges, even after the proof's transient condition is met. A relative-threshold delayed-window screening predicate also fails. Actual normalized high-shell weights are nonnegative, sum to1 and retain variance>=3/16, with one fixed bias-1/16 at every cutoff and admissible time. These are native infinite-lattice constructions in the same flow. Full source interpretation still requires explicit weighting/admissible-group conventions and any additionally intended sector/geometric restrictions. Other J certificates, exact equal-area assertions, steady-state affine-transfer identities and Millennium conclusions are not inferred.
 
@@ -16926,3 +16926,48 @@ The existing proof861 was refactored to expose `scaled_factor_limit`: n*(factor(
 This checkpoint connects genuine Poisson laws, actual integrability of unbounded holomorphic tests, the operator/Markov realization863–873 and the biharmonic symbol. It proves pointwise transform convergence, not weak probability-law convergence, tightness, a continuous-time sample-path realization or convergence of the stochastic integrals873. A next substantive target is to control polynomial moments and holomorphic drift under these actual laws, then determine which compensated identities survive refinement. The positive Hermitian geometry, signed real-path obstructions and the unresolved order-p Clark–Ocone positivity/domain obligations remain separate. No manuscript theorem was assumed and every source remains read-only.
 
 Verification877: target3286 jobs, full5264 jobs, exit0. All24 public types inspected. Root audit24221 safe Foundation declarations with only propext, Classical.choice, Quot.sound. Forbidden-token and direct/Git whitespace checks passed. All43 sources retain42 hashes, staged/unstaged source/dependency diffs empty. Evidence: `.lake/stardust-877-module.log`, `.lake/stardust-877-full-build.log`, `.lake/stardust-877-audit.log`, `.lake/stardust-877-public-types.json`, `.lake/stardust-877-inventory-check.json`. Unrestricted autonomous Stardust exploration and the indefinite goal remain active.
+
+
+## Discovery878 — Exact positive fourth moments of genuine complex walks
+
+`Foundation/ComplexRootWalkFourthMoment.lean` derives a real-observable finite-walk disintegration from the verified complex-valued theorem866 by the injective real embedding, then uses native product-integral interchange and the actual one-step positive moment857. It proves the exact recurrence and
+
+`E[|S_n|^4]=(8*n^2-4*n)*a^4`.
+
+The second moment859, the fourth moment above and all integrability used here are native positive-probability integrals on the actual finite sample spaces856. No signed pairing is substituted for a positive moment.
+
+## Discovery879 — A general native positive-probability lower tail inequality
+
+`Foundation/FiniteProbabilityTailBound.lean` proves finite-space Lp membership directly, derives the squared Cauchy–Schwarz integral inequality from native Holder, and proves for nonnegative Y and 0<=b<=E[Y]
+
+`(E[Y]-b)^2 <= E[Y^2] * P(Y>b)`.
+
+The proof integrates a pointwise truncation inequality and applies native Holder to Y and the actual event indicator. Absolute integrability and square integrability are proved from the finite probability space, rather than assumed as a formal norm property. This supplies an independently verified tool for testing whether moment growth corresponds to probability mass escaping compact sets.
+
+## Discovery880 — A uniform one-eighth lower tail bound under biharmonic scaling
+
+`Foundation/ComplexRootScaledTail.lean` proves that with a_n(T)^4=6T/n and n>0,
+
+`E[|S_n|^4]=48*T*n-24*T`,
+
+and for every n including zero,
+
+`E[|S_n|^4] <= 2*(E[|S_n|^2])^2`.
+
+For T>0 and n>0, whenever 0<=2b<=E[|S_n|^2], it proves the actual event probability `P(|S_n|^2>b)>=1/8`. This combines878–879 with the verified second-moment normalization862. It is a lower bound on probability mass, not an inference from divergent second moments alone.
+
+## Discovery881 — The genuine terminal and continuous path laws are not tight
+
+`Foundation/ComplexRootNonTightness.lean` transports the tail bound through the actual terminal-law pushforward. For every fixed compact K in C and T>0, eventually the law of S_n under a_n(T) gives K's complement mass at least1/8. It therefore proves native failure of IsTightMeasureSet for the entire terminal-law family. The actual continuous polygonal path laws858 also fail native tightness: a hypothetical tight family would have tight terminal pushforwards by continuous evaluation at time1, contradicting the proved terminal obstruction.
+
+## Discovery882 — No weak complex probability-law limit, even after divergent refinement
+
+`Foundation/ComplexRootNoWeakLimit.lean` packages the actual terminal laws as native ProbabilityMeasure C objects. For every index function phi:N->N tending to infinity, the corresponding family is not tight. It proves that the probability measures cannot tend weakly to any native complex-state probability measure. The proof connects the compact escaping-mass bound881 to the pinned library's Prokhorov theorem: a convergent sequence together with its limit is compact, so its measures would form a tight set, yielding a contradiction.
+
+This is a rigorous obstruction to obtaining the fixed-count complex-root realization of biharmonic heat as a weak limit of ordinary positive probability laws. It coexists with the proved holomorphic transform limit861 because those entire exponential tests are unbounded on C and do not define the ordinary weak probability topology. The finite-level continuous paths858 and discrete stochastic calculus868–873 remain genuine and valid. Their scaling limit cannot be justified by claiming tightness of these fixed-count path laws. Weighted expectation/dual-space limits, other realizations and stochastic-integral limits remain separate questions.
+
+The no-tightness and no-weak-limit statements here concern the fixed-count laws856 scaled by a_n(T), not automatically the compound-Poisson family877. Transferring the conclusion to the latter requires its own positive-moment or event-probability proof and is left open. T=0 is correctly excluded from the obstruction. No manuscript theorem was assumed, no source was changed, and the existing operator, signed-measure and mathematical verification results are preserved.
+
+At this natural proof break, selectively searched the preserved `order_p_clark_ocone (7).tex`, SHA256 `52671C5A5A77C892CEB8AFC183C7BFBA1520BF0EB3BA1A0E60AE0403063CC6C7`, for realization and convergence assumptions. Lines54 and114 explicitly distinguish pseudo-expectation from a probability measure, so the new complex weak-limit obstruction is not itself a refutation of the manuscript's differently formulated representation claims. Lines174 and329 still require the stated positivity/domain construction, separately from non-degeneracy. Line316 suggests a new domain question: it calls sums of separate one-coordinate Schwartz functions Schwartz on the full multivariate space. A focused diagnostic with g(x)=exp(-x^2) and F(x,y)=g(x)+g(y) gives F(0,y)->1 and an increasing first decay weight along (0,y). Values y=1,2,4,8,16,32 are recorded in `.lake/stardust-882-schwartz-sum-candidate.json`. This is only a numerical candidate and a question for a native Schwartz counterexample, not a newly formalized failure or a general claim about the manuscript's representation theorem. It may explain why cylindrical observables need a test space distinct from ordinary multivariate Schwartz space. Investigate this at the next suitable proof break while preserving the active stochastic-construction work.
+
+Verification882: target3306 jobs, full5269 jobs, exit0. All17 public types inspected. Root audit24247 safe Foundation declarations with only propext, Classical.choice, Quot.sound. Forbidden-token and direct/Git whitespace checks passed. All43 sources retain42 hashes, staged/unstaged source/dependency diffs empty. Evidence: `.lake/stardust-882-module.log`, `.lake/stardust-882-full-build.log`, `.lake/stardust-882-audit.log`, `.lake/stardust-882-public-types.json`, `.lake/stardust-882-inventory-check.json`. Unrestricted autonomous Stardust exploration and the indefinite goal remain active.

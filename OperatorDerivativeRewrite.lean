@@ -1197,3 +1197,8 @@ import Foundation.PoissonEntireMoments
 import Foundation.ComplexRootPoissonGrowth
 import Foundation.ComplexRootPoissonTransform
 import Foundation.ComplexRootPoissonHeatLimit
+import Foundation.ComplexRootWalkFourthMoment
+import Foundation.FiniteProbabilityTailBound
+import Foundation.ComplexRootScaledTail
+import Foundation.ComplexRootNonTightness
+import Foundation.ComplexRootNoWeakLimit
