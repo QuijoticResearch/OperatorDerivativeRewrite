@@ -1062,3 +1062,5 @@ import Foundation.HigherHeatFourierTranslations
 import Foundation.HigherHeatFourierTranslationContinuity
 import Foundation.HigherHeatFourierPathSemigroup
 import Foundation.HigherHeatFourierPathC0
+import Foundation.HigherHeatFourierPathDerivative
+import Foundation.HigherHeatFourierPathGenerator
