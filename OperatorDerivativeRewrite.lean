@@ -1096,3 +1096,9 @@ import Foundation.FourierPathControlGradient
 import Foundation.FourierPathControlTransfer
 import Foundation.FourierPathControlFrechetSeries
 import Foundation.FourierPathControlFrechet
+import Foundation.BochnerTimeControlPairing
+import Foundation.BochnerDyadicTimeFields
+import Foundation.FourierPathTimeFieldAtoms
+import Foundation.FourierPathTimeFieldSeries
+import Foundation.FourierPathTimeGradient
+import Foundation.FourierPathTimeGradientRealization
