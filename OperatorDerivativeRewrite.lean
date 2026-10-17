@@ -1023,3 +1023,7 @@ import Foundation.PseudoFiniteGramObstruction
 import Foundation.SignedSchwartzFirstOrder
 import Foundation.BiharmonicFiniteRecovery
 import Foundation.QuarticAppellCalculus
+import Foundation.QuarticAppellExpansion
+import Foundation.QuarticAppellPairing
+import Foundation.QuarticAppellDualDensity
+import Foundation.QuarticPolynomialSteinUniqueness
