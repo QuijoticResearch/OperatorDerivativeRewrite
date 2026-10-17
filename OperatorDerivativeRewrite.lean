@@ -1228,3 +1228,6 @@ import Foundation.ConstructedRenewalPoissonLaw
 import Foundation.ExponentialResidualLife
 import Foundation.IndependentCoordinateBlocks
 import Foundation.ExponentialSourceRegeneration
+import Foundation.AdaptiveExponentialResidual
+import Foundation.RenewalWallClockResidual
+import Foundation.RenewalConditionalResidual
