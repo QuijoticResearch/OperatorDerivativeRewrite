@@ -1202,3 +1202,6 @@ import Foundation.FiniteProbabilityTailBound
 import Foundation.ComplexRootScaledTail
 import Foundation.ComplexRootNonTightness
 import Foundation.ComplexRootNoWeakLimit
+import Foundation.SchwartzCylinderObstruction
+import Foundation.SchwartzBoundedCylinders
+import Foundation.BoundedPathOccupation
