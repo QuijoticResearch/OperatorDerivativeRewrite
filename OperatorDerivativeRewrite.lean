@@ -1249,3 +1249,6 @@ import Foundation.MarkedRenewalMartingale
 import Foundation.ComplexRootLowerPolynomialMoments
 import Foundation.MarkedConditionalPolynomial
 import Foundation.MarkedQuarticCompensation
+import Foundation.IndependentInnovationConditioning
+import Foundation.MarkedOperatorConditional
+import Foundation.MarkedBackwardSemigroupMartingale
