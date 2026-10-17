@@ -1070,3 +1070,6 @@ import Foundation.HigherHeatFourierPathResolvent
 import Foundation.HigherHeatFourierPathFullGenerator
 import Foundation.HigherHeatFourierPathGraphCore
 import Foundation.HigherHeatFourierPathAdjoint
+import Foundation.FourierPathDirectionalCharacters
+import Foundation.FourierPathDirectionalSeries
+import Foundation.FourierPathDirectionalOperator
