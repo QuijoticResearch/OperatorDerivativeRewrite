@@ -1142,3 +1142,7 @@ import Foundation.FourierPathDualControls
 import Foundation.FourierPathDualStepPairing
 import Foundation.FourierPathDualGrid
 import Foundation.FourierPathDualDamping
+import Foundation.FourierPathDualGradientSeries
+import Foundation.FourierPathDualGradient
+import Foundation.FourierPathDualFrechetSeries
+import Foundation.FourierPathDualFrechet
