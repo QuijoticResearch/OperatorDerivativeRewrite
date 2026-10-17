@@ -1306,3 +1306,4 @@ import Foundation.BandLimitedConditionalCalculus
 import Foundation.MarkedIndependentIncrements
 import Foundation.MarkedFiniteHeatLimit
 import Foundation.BandLimitedSchwartzDomain
+import Foundation.MarkedExponentialTimeIntegral
