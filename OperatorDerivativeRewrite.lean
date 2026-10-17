@@ -1048,3 +1048,5 @@ import Foundation.ClosedOperatorEnergyOperator
 import Foundation.SignedSchwartzEnergyOperator
 import Foundation.EnergyResolventGaussianField
 import Foundation.SignedSchwartzGaussianField
+import Foundation.SignedDensityProbabilitySampling
+import Foundation.HigherHeatProbabilitySampling
