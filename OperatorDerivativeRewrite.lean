@@ -1116,3 +1116,6 @@ import Foundation.FourierPathTimeTensorRealization
 import Foundation.FourierPathStopping
 import Foundation.FourierPathDictionaryTransport
 import Foundation.FourierPathFutureIntegral
+import Foundation.FourierPathKernelFunctionals
+import Foundation.FourierPathTerminalKernels
+import Foundation.FourierPathBackwardOperators
