@@ -1150,3 +1150,6 @@ import Foundation.BochnerDualControlPairing
 import Foundation.FourierPathDualTimeAtoms
 import Foundation.FourierPathDualTimeSeries
 import Foundation.FourierPathDualTimeGradient
+import Foundation.FourierPathDualJointDensity
+import Foundation.FourierPathDualDensityFubini
+import Foundation.FourierPathDualDensitySamplers
