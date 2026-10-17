@@ -1129,3 +1129,7 @@ import Foundation.HigherHeatStepIntegralLaws
 import Foundation.SignedHeatFourierUniqueness
 import Foundation.HigherHeatStepIntegralRealization
 import Foundation.HigherHeatStepIntegralOperators
+import Foundation.HigherHeatIntegralSecondMoment
+import Foundation.HigherHeatLpControls
+import Foundation.HigherHeatLpStepControls
+import Foundation.HigherHeatLpControlExtension
