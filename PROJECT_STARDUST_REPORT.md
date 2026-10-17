@@ -17,11 +17,11 @@ Historical first-window timing: The user extended the temporary focus to approxi
 
 At terminal time2026-10-17T00:52:47-04:00, the user explicitly prioritized advancing pseudoprocesses and their stochastic calculus, revisiting `order_p_clark_ocone (7).tex`, pursuing useful connections throughout the verified library, and making Git commits. This supersedes the previous practical no-commit state; commits must exclude ResearchSources and unrelated documents. The indefinite Stardust objective, verification and axiom audits remain in force. Selective source review revisited setup100–174, function-class244–330 and integrand-pairing366–411. Its proposed positive pseudo-L2 completion remains contradicted by646; an indefinite signed-kernel/Fourier calculus is a promising construction route. No manuscript theorem is adopted as an axiom.
 
-## Latest consolidation — verified through discovery 765
+## Latest consolidation — verified through discovery 769
 
-Current pseudoprocess front: verified through discovery 765. A genuine regular-direction transfer identity is now constructed for h(s)=s on the completed Fourier path model at every positive even heat order and positive horizon: E_T[D_h F]=L_T[F], with an actual bounded functional of bound 1+T^(-1). Heat evolution smooths every ambient test into the derivative domain; real expectation components have actual computed adjoint values, and signed/ordinary signed-weighted path approximants converge to the transfer. The rough-direction exclusion761 remains valid. Next broaden the regular directions and connect the transfer to signed marginal score/IBP foundations; chronological integration and Clark–Ocone reconstruction remain open.
+Current pseudoprocess front: verified through discovery 769. Genuine bounded derivative transfer, heat smoothing into the full derivative domain, actual adjoint values and signed/weighted stochastic approximant limits now hold for every continuous zero-starting path direction that is K-Lipschitz on [0,1]. The explicit uniform bound is (1+K)(1+T^(-1)), for every positive even heat order and positive horizon, with arbitrary countable dyadic Fourier spectra. The explicit eighth-root direction is proved non-Lipschitz through its actual adjoint exclusion. Next construct directions from actual bounded/integrable time controls and investigate time-indexed derivative fields; chronological integration and Clark–Ocone reconstruction remain open.
 
-Latest verification: full Lake build 5142 jobs;8 new public types inspected; complete transitive audit of 22497 safe Foundation declarations with only propext, Classical.choice, Quot.sound. All43 sources retain42 hashes. The additional180-minute stochastic priority is completed; unrestricted autonomous Stardust discovery and the indefinite native goal remain active.
+Latest verification: full Lake build 5146 jobs;7 new public types inspected; complete transitive audit of 22529 safe Foundation declarations with only propext, Classical.choice, Quot.sound. All43 sources retain42 hashes. The additional180-minute stochastic priority is completed; unrestricted autonomous Stardust discovery and the indefinite native goal remain active.
 
 Unrestricted discoveries648–651 close the exact source-form Fibonacci J=16 partition compatibility gap for the fixed Gaussian NS shear. Discoveries652–657 construct its actual radial groups, persistent low-shell anisotropy, genuine joint spacetime smoothness and an explicit canonical screening countermodel. Discoveries658–660 now prove actual tail moments tend to zero, the low centroid tends to a finite positive limit and the high/low centroid ratio tends to infinity. Exactly kappa_H*E_H=D_H tends to zero, so every fixed positive C/(kappa_H*E_H) diverges, even after the proof's transient condition is met. A relative-threshold delayed-window screening predicate also fails. Actual normalized high-shell weights are nonnegative, sum to1 and retain variance>=3/16, with one fixed bias-1/16 at every cutoff and admissible time. These are native infinite-lattice constructions in the same flow. Full source interpretation still requires explicit weighting/admissible-group conventions and any additionally intended sector/geometric restrictions. Other J certificates, exact equal-area assertions, steady-state affine-transfer identities and Millennium conclusions are not inferred.
 
@@ -15862,3 +15862,51 @@ Instantiating the general component theorem on the explicit spectrum757 with the
 Next investigate broader regular directions using actual finite-grid increment bounds and spectral damping, and connect the new path-dual transfer to the existing genuine signed marginal score/IBP machinery714–728. The read-only Clark–Ocone manuscript remains a source of questions rather than assumptions. Source integrity, full verification and unrestricted autonomous Stardust exploration continue.
 
 Verification765: target4230 jobs, full5142 jobs, exit0. All8 public types inspected. Root audit22497 safe Foundation declarations with only propext, Classical.choice, Quot.sound. Forbidden-token and direct/Git whitespace checks passed. All43 sources retain42 hashes, staged/unstaged source/dependency diffs empty. Evidence: `.lake/stardust-765-module.log`, `.lake/stardust-765-full-build.log`, `.lake/stardust-765-audit.log`, `.lake/stardust-765-public-types.json`, `.lake/stardust-765-inventory-check.json`. Unrestricted autonomous Stardust exploration and the indefinite goal remain active.
+
+
+## Discovery766 — Actual dyadic direction increments and local Lipschitz control
+
+`Foundation/FourierPathDyadicDirections.lean` defines actual increments of a continuous zero-starting path at consecutive uniform grid nodes. The existing cumulative-position matrix and the native finite-interval telescoping identity prove exact recovery of every sampled path value from these increments.
+
+Only Lipschitz regularity on the normalized sampling interval [0,1] is required. Explicit membership proofs place both nodes of each increment in that interval. The actual Lipschitz distance inequality gives |increment_j| ≤ K/N on every positive grid size. The path remains arbitrary continuous outside the sampling interval, and differentiability of the direction is not assumed.
+
+This connects actual path geometry to the same increment/position machinery used for the signed finite laws, rather than assuming a derivative or a continuum integration-by-parts formula.
+
+Verification766: target4220 jobs, full5143 jobs, exit0. All5 public types inspected. Root audit22503 safe Foundation declarations with only propext, Classical.choice, Quot.sound. Forbidden-token and direct/Git whitespace checks passed. All43 sources retain42 hashes, staged/unstaged source/dependency diffs empty. Evidence: `.lake/stardust-766-module.log`, `.lake/stardust-766-full-build.log`, `.lake/stardust-766-audit.log`, `.lake/stardust-766-public-types.json`, `.lake/stardust-766-inventory-check.json`. Unrestricted autonomous Stardust exploration and the indefinite goal remain active.
+
+
+## Discovery767 — Uniform heat damping for every locally Lipschitz direction
+
+`Foundation/FourierPathLipschitzDamping.lean` rewrites the actual directional Fourier frequency as the exact sum of normalized backward frequencies against the actual dyadic direction increments766. A finite average absolute-value estimate reuses the verified positive-even-power bound762.
+
+For a direction Lipschitz with constant K on [0,1], this proves |directional frequency| ≤ K times (1+heat spectral rate), uniformly over all dyadic levels and all frequency values. Existing exponential damping then gives a uniform symbol bound (1+K)(1+T^(-1)) for every positive even heat order and positive horizon.
+
+The bound is chosen strictly positive even at K=0 to instantiate the genuine bounded heat-gradient construction763. It is a proved upper bound, with no optimality claim. The previous sharper linear-direction result762 remains unchanged. There is no restriction that the countable spectrum have bounded levels or bounded frequencies.
+
+Verification767: target4221 jobs, full5144 jobs, exit0. All6 public types inspected. Root audit22509 safe Foundation declarations with only propext, Classical.choice, Quot.sound. Forbidden-token and direct/Git whitespace checks passed. All43 sources retain42 hashes, staged/unstaged source/dependency diffs empty. Evidence: `.lake/stardust-767-module.log`, `.lake/stardust-767-full-build.log`, `.lake/stardust-767-audit.log`, `.lake/stardust-767-public-types.json`, `.lake/stardust-767-inventory-check.json`. Unrestricted autonomous Stardust exploration and the indefinite goal remain active.
+
+
+## Discovery768 — Actual smoothing and transfer for the entire local Lipschitz direction class
+
+`Foundation/FourierPathLipschitzTransfer.lean` instantiates the existing actual heat-gradient and transfer constructions763–764 with the verified local Lipschitz damping767. Thus every continuous zero-starting direction that is K-Lipschitz on [0,1] has a genuine bounded complex-linear heat-gradient and transfer functional on every prescribed completed countable Fourier path space.
+
+Heat evolution sends every ambient test into that direction's full closed derivative domain. For every actual derivative graph pair (F,G), the actual higher-heat expectation satisfies E_T[G]=L_{h,T}[F], with |L_{h,T}[F]| ≤ (1+K)(1+T^(-1)) norm(F). All statements hold for every positive even heat order2m and positive horizon. This broadens the single linear direction765 to an entire rigorously defined class without assuming a chain rule, a pseudo-L2 isometry or signed path measure.
+
+The actual continuous path may have arbitrary continuous behavior outside [0,1]. Local regularity on the observed interval suffices. The construction gives a continuous-dual transfer identity; representation by an ordinary path score or a chronological integral remains separate.
+
+Verification768: target4230 jobs, full5145 jobs, exit0. All7 public types inspected. Root audit22516 safe Foundation declarations with only propext, Classical.choice, Quot.sound. Forbidden-token and direct/Git whitespace checks passed. All43 sources retain42 hashes, staged/unstaged source/dependency diffs empty. Evidence: `.lake/stardust-768-module.log`, `.lake/stardust-768-full-build.log`, `.lake/stardust-768-audit.log`, `.lake/stardust-768-public-types.json`, `.lake/stardust-768-inventory-check.json`. Unrestricted autonomous Stardust exploration and the indefinite goal remain active.
+
+
+## Discovery769 — Actual Lipschitz-direction adjoint values and stochastic realization
+
+`Foundation/FourierPathLipschitzRealization.lean` proves that every continuous real component of the genuine expectation lies in the actual Banach adjoint domain of each locally Lipschitz path derivative. Its actual adjoint value is the same component of the constructed transfer768. The expectation-component definition765 and existing genuine adjoint framework760 are reused rather than replaced by a new pairing.
+
+The actual signed continuous-path approximant integrals of the derivative test converge to the transfer functional. Ordinary expectations under the genuine probability-path samplers, with the already constructed signed weights, converge to the same value. The existing test integrability738 applies to each actual derivative vector. These are statements about concrete functions, measures, closed domains and limits, not a formal cylinder recurrence.
+
+The affirmative theorem and the independent explicit adjoint exclusion761 also prove that the eighth-root direction757 is not Lipschitz on [0,1] for any finite constant K. This gives an actual class-boundary consequence through the verified operator domains, without assuming a regularity classification for the counterexample.
+
+The countable Fourier completion and positive even heat orders remain the scope. Arbitrary Schwartz test-space completions, time-indexed tensor gradient fields, chronological stochastic integration, adapted projections and Clark–Ocone reconstruction remain open. No positivity of the signed pseudo-expectation or path-space Radon–Nikodym score is asserted.
+
+Next construct actual direction paths from bounded/integrable time controls and investigate measurable time-indexed derivative fields, then compare with the manuscript's tensor-domain claims. Sobolev-type direction classes and the existing genuine signed marginal score/IBP foundations are promising connections. They require explicit constructions and proofs; none is inferred just from adjoint terminology. ResearchSources stays immutable and the full unrestricted Stardust exploration remains active.
+
+Verification769: target4238 jobs, full5146 jobs, exit0. All7 public types inspected. Root audit22529 safe Foundation declarations with only propext, Classical.choice, Quot.sound. Forbidden-token and direct/Git whitespace checks passed. All43 sources retain42 hashes, staged/unstaged source/dependency diffs empty. Evidence: `.lake/stardust-769-module.log`, `.lake/stardust-769-full-build.log`, `.lake/stardust-769-audit.log`, `.lake/stardust-769-public-types.json`, `.lake/stardust-769-inventory-check.json`. Unrestricted autonomous Stardust exploration and the indefinite goal remain active.

@@ -1085,3 +1085,7 @@ import Foundation.FourierPathLinearDirection
 import Foundation.FourierPathHeatGradient
 import Foundation.FourierPathHeatTransfer
 import Foundation.FourierPathPositiveTransferRealization
+import Foundation.FourierPathDyadicDirections
+import Foundation.FourierPathLipschitzDamping
+import Foundation.FourierPathLipschitzTransfer
+import Foundation.FourierPathLipschitzRealization
