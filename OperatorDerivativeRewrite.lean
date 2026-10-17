@@ -1050,3 +1050,6 @@ import Foundation.EnergyResolventGaussianField
 import Foundation.SignedSchwartzGaussianField
 import Foundation.SignedDensityProbabilitySampling
 import Foundation.HigherHeatProbabilitySampling
+import Foundation.HigherHeatInterpolatedPaths
+import Foundation.SignedDensityProbabilityTransport
+import Foundation.HigherHeatWeightedPaths
