@@ -1278,3 +1278,6 @@ import Foundation.PoissonEntireAlgebra
 import Foundation.MarkedTiltHeatLimit
 import Foundation.ComplexRootTiltedStep
 import Foundation.ComplexPoissonCompensation
+import Foundation.ComplexDensityPushforward
+import Foundation.ComplexRootTiltedLaw
+import Foundation.ShiftedHeatProbabilityObstruction
