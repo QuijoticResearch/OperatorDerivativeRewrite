@@ -1027,3 +1027,6 @@ import Foundation.QuarticAppellExpansion
 import Foundation.QuarticAppellPairing
 import Foundation.QuarticAppellDualDensity
 import Foundation.QuarticPolynomialSteinUniqueness
+import Foundation.QuarticDualSemigroup
+import Foundation.QuarticDualDistributions
+import Foundation.HigherHeatTemperedSemigroup
