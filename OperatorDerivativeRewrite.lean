@@ -1225,3 +1225,6 @@ import Foundation.ExponentialRenewalSurvival
 import Foundation.ExponentialRenewalWeights
 import Foundation.FiniteExponentialRenewal
 import Foundation.ConstructedRenewalPoissonLaw
+import Foundation.ExponentialResidualLife
+import Foundation.IndependentCoordinateBlocks
+import Foundation.ExponentialSourceRegeneration
