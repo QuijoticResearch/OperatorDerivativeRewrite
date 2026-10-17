@@ -1033,3 +1033,7 @@ import Foundation.HigherHeatTemperedSemigroup
 import Foundation.DifferentiableZeroSet
 import Foundation.SignedSchwartzLogDerivative
 import Foundation.SignedSchwartzHigherWeights
+import Foundation.SignedDensityL1Transport
+import Foundation.HigherHeatSingularIntegrationByParts
+import Foundation.SignedScoreSimpleZero
+import Foundation.NormalizedSignedScoreCounterexample
