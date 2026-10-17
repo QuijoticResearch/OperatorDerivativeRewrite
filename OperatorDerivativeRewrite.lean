@@ -1133,3 +1133,7 @@ import Foundation.HigherHeatIntegralSecondMoment
 import Foundation.HigherHeatLpControls
 import Foundation.HigherHeatLpStepControls
 import Foundation.HigherHeatLpControlExtension
+import Foundation.HigherHeatLpTimeChange
+import Foundation.HigherHeatLpPropagator
+import Foundation.HigherHeatLpForwardEquation
+import Foundation.HigherHeatLpObservableIto
