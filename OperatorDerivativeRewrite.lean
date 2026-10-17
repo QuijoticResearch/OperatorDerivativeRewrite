@@ -1252,3 +1252,6 @@ import Foundation.MarkedQuarticCompensation
 import Foundation.IndependentInnovationConditioning
 import Foundation.MarkedOperatorConditional
 import Foundation.MarkedBackwardSemigroupMartingale
+import Foundation.MarkedHolomorphicExponential
+import Foundation.MarkedExponentialMartingale
+import Foundation.MarkedTwoTimeHolomorphicTransform
