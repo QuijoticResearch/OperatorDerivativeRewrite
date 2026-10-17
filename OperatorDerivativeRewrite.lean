@@ -1274,3 +1274,5 @@ import Foundation.ComplexDensityIntegral
 import Foundation.MarkedTiltExpectation
 import Foundation.ComplexDensityUnbounded
 import Foundation.MarkedTiltTransform
+import Foundation.PoissonEntireAlgebra
+import Foundation.MarkedTiltHeatLimit
