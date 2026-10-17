@@ -1056,3 +1056,5 @@ import Foundation.HigherHeatWeightedPaths
 import Foundation.HigherHeatCylinderPathLimit
 import Foundation.HigherHeatInterpolatedFourier
 import Foundation.HigherHeatMixedFourierPaths
+import Foundation.L1SeriesSynthesis
+import Foundation.HigherHeatFourierBanach
