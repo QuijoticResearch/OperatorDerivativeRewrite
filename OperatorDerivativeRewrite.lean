@@ -1002,3 +1002,7 @@ import Foundation.HigherHeatFourierBracket
 import Foundation.HigherHeatPredictablePairing
 import Foundation.HigherHeatFourierProduct
 import Foundation.HigherHeatSchwartzCalculus
+import Foundation.HigherHeatSchwartzJets
+import Foundation.HigherHeatKernelStein
+import Foundation.SchwartzPolynomialPairing
+import Foundation.HigherHeatPolynomialRealization
