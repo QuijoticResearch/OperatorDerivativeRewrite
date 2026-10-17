@@ -1213,3 +1213,9 @@ import Foundation.ComplexRootQuarticMartingale
 import Foundation.ProbabilityTailBound
 import Foundation.ComplexRootPoissonTail
 import Foundation.ComplexRootPoissonNoWeakLimit
+import Foundation.ExponentialHoldingSequence
+import Foundation.ExponentialNonexplosiveClock
+import Foundation.ExponentialRenewalCount
+import Foundation.ExponentialRenewalCadlag
+import Foundation.MarkedRootRenewalProcess
+import Foundation.RootRenewalPathLaw
