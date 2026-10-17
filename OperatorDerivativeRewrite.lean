@@ -1156,3 +1156,7 @@ import Foundation.FourierPathDualDensitySamplers
 import Foundation.FourierPathSamplerOperators
 import Foundation.LpStrongOperatorConvergence
 import Foundation.FourierPathDensityStrongLimit
+import Foundation.MovingPathCharacters
+import Foundation.MovingPathCharacterSeparation
+import Foundation.MovingPathCharacterMeasurability
+import Foundation.BackwardHeatMovingObstruction
