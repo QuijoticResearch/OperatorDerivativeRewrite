@@ -1037,3 +1037,6 @@ import Foundation.SignedDensityL1Transport
 import Foundation.HigherHeatSingularIntegrationByParts
 import Foundation.SignedScoreSimpleZero
 import Foundation.NormalizedSignedScoreCounterexample
+import Foundation.SignedSchwartzL2Rigging
+import Foundation.SignedSchwartzWeakDerivative
+import Foundation.SignedSchwartzClosedDerivative
