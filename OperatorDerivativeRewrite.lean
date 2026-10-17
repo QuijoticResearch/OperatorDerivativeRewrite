@@ -997,3 +997,8 @@ import Foundation.HigherHeatBackwardFourier
 import Foundation.PseudoClarkOconeObstruction
 import Foundation.HigherHeatFourierInnovations
 import Foundation.HigherHeatFourierCalculus
+import Foundation.HigherHeatFourierCovariance
+import Foundation.HigherHeatFourierBracket
+import Foundation.HigherHeatPredictablePairing
+import Foundation.HigherHeatFourierProduct
+import Foundation.HigherHeatSchwartzCalculus
