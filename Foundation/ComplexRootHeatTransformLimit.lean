@@ -29,8 +29,9 @@ theorem amplitude_tendsto (T : ℝ≥0) : Tendsto (amplitude T) atTop (𝓝 0) :
   have he := (Real.continuous_sqrt.tendsto (0 : ℝ)).comp h1
   simpa only [Function.comp_def, Real.sqrt_zero] using he
 
-theorem factor_limit (T : ℝ≥0) (ξ : ℝ) :
-    Tendsto (fun n => (factor (amplitude T n * ξ))^n) atTop (𝓝 (Real.exp (-(T : ℝ)*ξ^4))) := by
+theorem scaled_factor_limit (T : ℝ≥0) (ξ : ℝ) :
+    Tendsto (fun n : ℕ => (n : ℝ)*(factor (amplitude T n * ξ)-1))
+      atTop (𝓝 (-(T : ℝ)*ξ^4)) := by
   have hx : Tendsto (fun n => amplitude T n * ξ) atTop (𝓝 0) := by
     simpa only [zero_mul] using (amplitude_tendsto T).mul_const ξ
   have ho : (fun n => factor (amplitude T n * ξ) - (1-(amplitude T n * ξ)^4/6))
@@ -55,11 +56,12 @@ theorem factor_limit (T : ℝ≥0) (ξ : ℝ) :
     rw [mul_pow, amplitude_fourth]
     field_simp [hnr]
     ring
-  have hmain : Tendsto (fun n : ℕ => (n : ℝ)*(factor (amplitude T n * ξ)-1))
-      atTop (𝓝 (-(T : ℝ)*ξ^4)) := by
-    have hh := (herr.sub_const ((T : ℝ)*ξ^4)).congr' hevent.symm
-    simpa only [zero_sub, neg_mul] using hh
-  have hh := Real.tendsto_one_add_pow_exp_of_tendsto hmain
+  have hh := (herr.sub_const ((T : ℝ)*ξ^4)).congr' hevent.symm
+  simpa only [zero_sub, neg_mul] using hh
+
+theorem factor_limit (T : ℝ≥0) (ξ : ℝ) :
+    Tendsto (fun n => (factor (amplitude T n * ξ))^n) atTop (𝓝 (Real.exp (-(T : ℝ)*ξ^4))) := by
+  have hh := Real.tendsto_one_add_pow_exp_of_tendsto (scaled_factor_limit T ξ)
   have hefun : (fun n : ℕ => (1+(factor (amplitude T n * ξ)-1))^n) =
       (fun n => (factor (amplitude T n * ξ))^n) := by
     funext n

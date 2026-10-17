@@ -1193,3 +1193,7 @@ import Foundation.ComplexRootPoissonConditionalCalculus
 import Foundation.ComplexRootPoissonCompensation
 import Foundation.ComplexRootPoissonDynkinMartingale
 import Foundation.ComplexRootPoissonStochasticSum
+import Foundation.PoissonEntireMoments
+import Foundation.ComplexRootPoissonGrowth
+import Foundation.ComplexRootPoissonTransform
+import Foundation.ComplexRootPoissonHeatLimit
