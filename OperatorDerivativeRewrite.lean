@@ -1060,3 +1060,5 @@ import Foundation.L1SeriesSynthesis
 import Foundation.HigherHeatFourierBanach
 import Foundation.HigherHeatFourierTranslations
 import Foundation.HigherHeatFourierTranslationContinuity
+import Foundation.HigherHeatFourierPathSemigroup
+import Foundation.HigherHeatFourierPathC0
