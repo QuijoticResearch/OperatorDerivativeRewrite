@@ -1058,3 +1058,5 @@ import Foundation.HigherHeatInterpolatedFourier
 import Foundation.HigherHeatMixedFourierPaths
 import Foundation.L1SeriesSynthesis
 import Foundation.HigherHeatFourierBanach
+import Foundation.HigherHeatFourierTranslations
+import Foundation.HigherHeatFourierTranslationContinuity
