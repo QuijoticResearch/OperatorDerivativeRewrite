@@ -17,11 +17,11 @@ Historical first-window timing: The user extended the temporary focus to approxi
 
 At terminal time2026-10-17T00:52:47-04:00, the user explicitly prioritized advancing pseudoprocesses and their stochastic calculus, revisiting `order_p_clark_ocone (7).tex`, pursuing useful connections throughout the verified library, and making Git commits. This supersedes the previous practical no-commit state; commits must exclude ResearchSources and unrelated documents. The indefinite Stardust objective, verification and axiom audits remain in force. Selective source review revisited setup100–174, function-class244–330 and integrand-pairing366–411. Its proposed positive pseudo-L2 completion remains contradicted by646; an indefinite signed-kernel/Fourier calculus is a promising construction route. No manuscript theorem is adopted as an axiom.
 
-## Latest consolidation — verified through discovery 854
+## Latest consolidation — verified through discovery 862
 
-Current pseudoprocess front: verified through discovery 854. Actual integral laws, operator propagators, observable Ito/forward equations, Holder-dual Frechet calculus, unique Bochner time densities and joint time/path representatives remain established. Actual finite weighted sampler expectation operators are now uniformly contractive on the completed Fourier space. Their actions on the vector time density converge strongly in native L^(2m) to the actual expectationField, and the associated dual-control contraction functionals converge in operator norm. Scalar weighted section integrals represent those fields almost everywhere. Compatibility with earlier L-one densities, measurable Lp-valued path families and path-space Bochner averages, causal projections, higher dual-control towers, random adapted integration and chronological Clark–Ocone reconstruction remain open. No general signed path-law limit or uniform total-variation bound is asserted. The indefinite Stardust goal remains active.
+Current pseudoprocess front: verified through discovery 862. Actual integral laws, operator propagators, observable Ito/forward equations, Holder-dual Frechet calculus, unique Bochner time densities and joint time/path representatives remain established. Actual finite weighted sampler expectation operators are now uniformly contractive on the completed Fourier space. Their actions on the vector time density converge strongly in native L^(2m) to the actual expectationField, and the associated dual-control contraction functionals converge in operator norm. Scalar weighted section integrals represent those fields almost everywhere. Compatibility with earlier L-one densities, measurable Lp-valued path families and path-space Bochner averages, causal projections, higher dual-control towers, random adapted integration and chronological Clark–Ocone reconstruction remain open. No general signed path-law limit or uniform total-variation bound is asserted. The indefinite Stardust goal remains active.
 
-Latest verification: full Lake build 5231 jobs;47 new public types inspected; complete transitive audit of 23954 safe Foundation declarations with only propext, Classical.choice, Quot.sound. All43 sources retain42 hashes. The additional180-minute stochastic priority is completed; unrestricted autonomous Stardust discovery and the indefinite native goal remain active.
+Latest verification: full Lake build 5249 jobs;78 new public types inspected; complete transitive audit of 24067 safe Foundation declarations with only propext, Classical.choice, Quot.sound. All43 sources retain42 hashes. The additional180-minute stochastic priority is completed; unrestricted autonomous Stardust discovery and the indefinite native goal remain active.
 
 Unrestricted discoveries648–651 close the exact source-form Fibonacci J=16 partition compatibility gap for the fixed Gaussian NS shear. Discoveries652–657 construct its actual radial groups, persistent low-shell anisotropy, genuine joint spacetime smoothness and an explicit canonical screening countermodel. Discoveries658–660 now prove actual tail moments tend to zero, the low centroid tends to a finite positive limit and the high/low centroid ratio tends to infinity. Exactly kappa_H*E_H=D_H tends to zero, so every fixed positive C/(kappa_H*E_H) diverges, even after the proof's transient condition is met. A relative-threshold delayed-window screening predicate also fails. Actual normalized high-shell weights are nonnegative, sum to1 and retain variance>=3/16, with one fixed bias-1/16 at every cutoff and admissible time. These are native infinite-lattice constructions in the same flow. Full source interpretation still requires explicit weighting/admissible-group conventions and any additionally intended sector/geometric restrictions. Other J certificates, exact equal-area assertions, steady-state affine-transfer identities and Millennium conclusions are not inferred.
 
@@ -16782,3 +16782,58 @@ These six discoveries share consolidated target/full builds, complete transitive
 Further exploration candidate (not a verified theorem): `.lake/stardust-854-complex-walk-candidate.json` numerically tests independent complex increments uniform on the four roots of -1, scaled by (24T/N)^(1/4). For7 refinements the holomorphic Fourier expectation approaches the biharmonic symbol, while the calculated absolute second moment of the sum grows as sqrt(24TN). A rigorous finite positive probability construction and analytic-observable limit could be productive; this is neither an asserted tight path-law limit nor a way around the existing real-path finite-complex-measure obstruction. No source has been added or altered.
 
 Verification854: target3846 jobs, full5231 jobs, exit0. All47 public types inspected. Root audit23954 safe Foundation declarations with only propext, Classical.choice, Quot.sound. Forbidden-token and direct/Git whitespace checks passed. All43 sources retain42 hashes, staged/unstaged source/dependency diffs empty. Evidence: `.lake/stardust-854-module.log`, `.lake/stardust-854-full-build.log`, `.lake/stardust-854-audit.log`, `.lake/stardust-854-public-types.json`, `.lake/stardust-854-inventory-check.json`. Unrestricted autonomous Stardust exploration and the indefinite goal remain active.
+
+
+## Discovery855 — A genuine positive probability noise with a negative fourth holomorphic moment
+
+`Foundation/ComplexFourthRootNoise.lean` constructs an actual uniform probability measure on Fin4 and the complex noise Z=aR with R taking values 1+i,-1+i,-1-i,1-i. Native Bochner integrals prove E[Z]=E[Z^2]=E[Z^3]=0, E[Z^4]=-4a^4, and E[|Z|^2]=2a^2. The pointwise identity R^4=-4 and |Z|^2=2a^2 are proved. These are genuine positive-probability complex random variables. A negative holomorphic fourth moment does not violate positivity of absolute moments, and does not provide a real-valued probability realization of the signed biharmonic marginal.
+
+## Discovery856 — Actual independent complex random walks and their laws
+
+`Foundation/ComplexFourthRootWalk.lean` constructs actual product probability spaces (Fin n -> Fin4), independent measurable noise increments, the discrete partial-sum process, and its terminal complex-valued probability law. All finite positions are integrable. The process starts at zero, has the verified terminal position, and its terminal mean is zero. Independence is Mathlib's native iIndepFun derived from the actual product measure. Its exact holomorphic exponential transform factors into the n-th power of the one-step transform. Every transform integral is over a genuine finite probability space; no signed or complex measure on real paths is postulated.
+
+## Discovery857 — Exact one-step holomorphic and positive-norm calculus
+
+`Foundation/ComplexRootOneStepCalculus.lean` proves actual probability-integral identities for every complex state z:
+
+`E[(z+Z)^4]=z^4-4a^4`,
+
+`E[|z+Z|^2]=|z|^2+2a^2`,
+
+`E[|z+Z|^4]=|z|^4+8a^2|z|^2+4a^4`.
+
+The exact holomorphic exponential transform E[exp(i xi Z)] is cos(a xi) cosh(a xi), with the real arguments embedded into C. This gives both the fourth-order cancellation needed for the heat generator and the ordinary positive moment identities of the same constructed noise. The holomorphic transform on C is not the ordinary bounded characteristic-function class on R^2.
+
+## Discovery858 — Genuine continuous complex sample paths with actual probability laws
+
+`Foundation/ComplexRootContinuousPaths.lean` constructs continuous polygonal interpolations of every finite root walk on [0,1], extended constantly outside this interval, as actual elements of {omega:C(R,C) | omega(0)=0}. The ramp functions are continuous, and their exact grid values recover the discrete positions at k/n for n>0. Each path map is measurable from its actual finite probability space, the process has zero mean at every real time, and the induced path measure is a genuine probability measure. Its terminal pushforward law equals the independently constructed terminal complex walk law. These are actual finite-level processes and measurable path laws, rather than a declaration of desired stochastic axioms. No martingale or limiting-path assertion is attached without proof.
+
+## Discovery859 — The genuine Hermitian covariance is positive and explicit
+
+`Foundation/ComplexRootWalkSecondMoment.lean` proves the full Hermitian covariance of distinct increments is zero and of a coinciding increment is 2a^2. The proof uses actual product independence, measurable conjugation and native integral factorization. Consequently E[S_n conjugate(S_n)]=2na^2 and E[|S_n|^2]=2na^2. This keeps the genuine positive Hilbert geometry distinct from the holomorphic moments responsible for fourth-order cancellation.
+
+## Discovery860 — Verified fourth-order local consistency of the exact transform
+
+`Foundation/ComplexRootTransformConsistency.lean` explicitly verifies four derivatives of factor(x)=cos(x)cosh(x), its exact fourth-order Taylor polynomial 1-x^4/6, and the native Peano remainder `factor(x)-(1-x^4/6)=o(x^4)` at zero. This is a kernel-checked analytic estimate, replacing reliance on the numerical root-walk experiment854. No heartbeat limit was increased; the proof uses native scalar differentiation and Taylor's theorem.
+
+## Discovery861 — Genuine complex probability transforms converge to the existing biharmonic operator symbol
+
+`Foundation/ComplexRootHeatTransformLimit.lean` constructs the actual amplitude `a_n=sqrt(sqrt(6T/n))` for nonnegative T, with its exact fourth power 6T/n and convergence to zero. The n=0 convention is harmless and included. The Taylor remainder860, actual exact transform857, and the pinned library's Euler power-limit theorem prove
+
+`E[exp(i xi S_n)] -> exp(-T xi^4)`.
+
+With angular frequency xi=2 pi frequency, the limiting complex number is exactly `HigherHeatL2.symbol 2 T frequency`, the existing verified biharmonic Fourier multiplier. This is a rigorous constructive connection from actual positive probability objects and their continuous complex paths to the existing operator machinery, for every real frequency and every nonnegative heat horizon. It establishes pointwise holomorphic-transform approximation, not convergence of the full real L2 evolution operators or of an unrestricted completed Fourier test domain. The integrands are entire functions that can be unbounded on C, so this theorem does not imply weak convergence of the probability laws on C or on path space.
+
+## Discovery862 — Exact higher-heat normalization coexists with divergent absolute second moments
+
+`Foundation/ComplexRootScaledMoments.lean` verifies the normalized one-step holomorphic fourth moment -24T/n and the exact shifted quartic identity with that correction. On the same genuine probability walk,
+
+`(E[|S_n|^2])^2=24Tn`, hence `E[|S_n|^2]=sqrt(24Tn)`.
+
+For every positive T the absolute second moment tends to infinity. Thus the holomorphic heat-symbol approximation861 comes with a proved loss of uniform ordinary L2 control. A divergent second moment alone is not a proof of failure of tightness; weak/path-law convergence and any stronger stochastic realization still need separate arguments. No positive norm is identified with an indefinite signed square pairing.
+
+Connections and next obligations: this supplies a genuine complex probability approximation route beyond the signed finite-law and positive-sampler constructions. It is compatible with the earlier no-finite-signed/complex-measure obstructions on real paths because its paths take complex values and its limiting test class is holomorphic. Extending from individual exponential observables to an actual completed analytic operator domain needs convergence and growth bounds; the full countable Fourier completion cannot be evaluated at nonreal states merely by assuming real-path sup-norm estimates continue to hold. A promising next construction is a complex compound-Poisson transition semigroup using the verified four-point jump law and existing Poisson-law/operator calculus. Local inspection found extensive genuine Poisson-law moments and spectral calculus, but a common continuous-time marked counting-process realization was not located; do not infer one from the one-time law. A native bounded jump semigroup and its holomorphic limit may be productive before attempting full path foundations.
+
+This work is independent of manuscript assertions. The numerical complex-root candidate854 has now been replaced by general analytic Lean proofs of the stated transform limit and absolute second-moment behavior. The Clark–Ocone manuscript's chronological integration and positive graph-domain assumptions remain unverified, with their previously proved obstructions preserved. All43 read-only manuscripts retain42 distinct recorded hashes. These eight discoveries share consolidated target/full builds, complete transitive axiom audit, all public-type inspection, integrity checks, and an exact Git checkpoint; no source or dependency file was changed.
+
+Verification862: target3266 jobs, full5249 jobs, exit0. All78 public types inspected. Root audit24067 safe Foundation declarations with only propext, Classical.choice, Quot.sound. Forbidden-token and direct/Git whitespace checks passed. All43 sources retain42 hashes, staged/unstaged source/dependency diffs empty. Evidence: `.lake/stardust-862-module.log`, `.lake/stardust-862-full-build.log`, `.lake/stardust-862-audit.log`, `.lake/stardust-862-public-types.json`, `.lake/stardust-862-inventory-check.json`. Unrestricted autonomous Stardust exploration and the indefinite goal remain active.
