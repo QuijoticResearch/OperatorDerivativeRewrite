@@ -1160,3 +1160,6 @@ import Foundation.MovingPathCharacters
 import Foundation.MovingPathCharacterSeparation
 import Foundation.MovingPathCharacterMeasurability
 import Foundation.BackwardHeatMovingObstruction
+import Foundation.BoundedMovingLpProcess
+import Foundation.BackwardHeatLpRealization
+import Foundation.BackwardSchwartzLpRealization
