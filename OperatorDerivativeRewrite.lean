@@ -1246,3 +1246,6 @@ import Foundation.MarkedRenewalRegeneration
 import Foundation.MarkedPastReconstruction
 import Foundation.MarkedPastFutureIndependence
 import Foundation.MarkedRenewalMartingale
+import Foundation.ComplexRootLowerPolynomialMoments
+import Foundation.MarkedConditionalPolynomial
+import Foundation.MarkedQuarticCompensation
