@@ -1089,3 +1089,8 @@ import Foundation.FourierPathDyadicDirections
 import Foundation.FourierPathLipschitzDamping
 import Foundation.FourierPathLipschitzTransfer
 import Foundation.FourierPathLipschitzRealization
+import Foundation.FourierPathBoundedControls
+import Foundation.FourierPathControlSymbols
+import Foundation.FourierPathControlGradientSeries
+import Foundation.FourierPathControlGradient
+import Foundation.FourierPathControlTransfer
