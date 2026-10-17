@@ -1316,3 +1316,5 @@ import Foundation.RootMarkFiniteClark
 import Foundation.RootMarkConditionalEnergy
 import Foundation.RootMarkItoIsometry
 import Foundation.RootMarkIntegralUniqueness
+import Foundation.RootMarkL2Integral
+import Foundation.RootMarkFiniteOperator
