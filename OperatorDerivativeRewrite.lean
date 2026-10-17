@@ -1294,3 +1294,6 @@ import Foundation.ComplexRootChannelOperator
 import Foundation.MarkedChannelIto
 import Foundation.PoissonSuperexponentialObstruction
 import Foundation.ComplexRootGaussianDomain
+import Foundation.ComplexRootExponentialDomain
+import Foundation.BandLimitedComplexExtension
+import Foundation.BandLimitedProcessExpectation
