@@ -1094,3 +1094,5 @@ import Foundation.FourierPathControlSymbols
 import Foundation.FourierPathControlGradientSeries
 import Foundation.FourierPathControlGradient
 import Foundation.FourierPathControlTransfer
+import Foundation.FourierPathControlFrechetSeries
+import Foundation.FourierPathControlFrechet
