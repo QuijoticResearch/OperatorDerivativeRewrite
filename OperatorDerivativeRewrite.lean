@@ -1042,3 +1042,5 @@ import Foundation.SignedSchwartzWeakDerivative
 import Foundation.SignedSchwartzClosedDerivative
 import Foundation.HilbertAdjointDomainDensity
 import Foundation.SignedSchwartzAdjointProbes
+import Foundation.ClosedOperatorEnergyResolvent
+import Foundation.SignedSchwartzEnergyResolvent
