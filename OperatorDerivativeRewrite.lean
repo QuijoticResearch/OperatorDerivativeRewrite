@@ -1015,3 +1015,7 @@ import Foundation.HigherHeatSchwartzSemigroup
 import Foundation.HigherHeatSchwartzTransition
 import Foundation.HigherHeatBackwardSchwartz
 import Foundation.HigherHeatSchwartzMartingale
+import Foundation.HigherHeatObservableGenerator
+import Foundation.HigherHeatObservableIto
+import Foundation.HigherHeatSchwartzContinuity
+import Foundation.HigherHeatInitialObservable
