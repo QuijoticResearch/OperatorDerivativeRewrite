@@ -1258,3 +1258,6 @@ import Foundation.MarkedTwoTimeHolomorphicTransform
 import Foundation.MarkedTwoTimeHeatLimit
 import Foundation.MarkedSignedCylinderBridge
 import Foundation.MarkedJointNoWeakLimit
+import Foundation.ConditionalBochnerFubini
+import Foundation.RightContinuousProgressive
+import Foundation.MarkedTimeIntegral
