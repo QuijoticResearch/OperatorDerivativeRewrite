@@ -1292,3 +1292,5 @@ import Foundation.ComplexTiltVariationDivergence
 import Foundation.ComplexRootMarkRepresentation
 import Foundation.ComplexRootChannelOperator
 import Foundation.MarkedChannelIto
+import Foundation.PoissonSuperexponentialObstruction
+import Foundation.ComplexRootGaussianDomain
