@@ -1011,3 +1011,7 @@ import Foundation.HigherHeatSteinWeight
 import Foundation.SignedAbsoluteIntegration
 import Foundation.HigherHeatSignedPolynomialCalculus
 import Foundation.HigherHeatIntegrableGains
+import Foundation.HigherHeatSchwartzSemigroup
+import Foundation.HigherHeatSchwartzTransition
+import Foundation.HigherHeatBackwardSchwartz
+import Foundation.HigherHeatSchwartzMartingale
