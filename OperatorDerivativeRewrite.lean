@@ -1297,3 +1297,5 @@ import Foundation.ComplexRootGaussianDomain
 import Foundation.ComplexRootExponentialDomain
 import Foundation.BandLimitedComplexExtension
 import Foundation.BandLimitedProcessExpectation
+import Foundation.ComplexRootUniformHeatBounds
+import Foundation.BandLimitedHeatLimit
