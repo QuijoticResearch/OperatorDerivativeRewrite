@@ -1168,3 +1168,9 @@ import Foundation.HigherHeatLpEndpointIto
 import Foundation.HigherHeatLpAbsoluteContinuity
 import Foundation.ComplexAbsoluteContinuousFTC
 import Foundation.HigherHeatLpIntegratedIto
+import Foundation.HigherHeatProductPolynomials
+import Foundation.HigherHeatCoordinatePolynomials
+import Foundation.HigherHeatPowerVariation
+import Foundation.HigherHeatQuarticVariation
+import Foundation.HigherHeatUniformQuarticVariation
+import Foundation.HigherHeatAbsoluteVariationObstruction
