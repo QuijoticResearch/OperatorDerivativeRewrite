@@ -1006,3 +1006,8 @@ import Foundation.HigherHeatSchwartzJets
 import Foundation.HigherHeatKernelStein
 import Foundation.SchwartzPolynomialPairing
 import Foundation.HigherHeatPolynomialRealization
+import Foundation.SchwartzPolynomialSeparation
+import Foundation.HigherHeatSteinWeight
+import Foundation.SignedAbsoluteIntegration
+import Foundation.HigherHeatSignedPolynomialCalculus
+import Foundation.HigherHeatIntegrableGains
