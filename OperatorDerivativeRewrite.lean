@@ -1165,3 +1165,6 @@ import Foundation.BackwardHeatLpRealization
 import Foundation.BackwardSchwartzLpRealization
 import Foundation.HigherHeatObservableEndpoint
 import Foundation.HigherHeatLpEndpointIto
+import Foundation.HigherHeatLpAbsoluteContinuity
+import Foundation.ComplexAbsoluteContinuousFTC
+import Foundation.HigherHeatLpIntegratedIto
