@@ -993,3 +993,7 @@ import Foundation.BrownianFiniteCompensator
 import Foundation.BrownianFiniteIncrementFourier
 import Foundation.StickyPairFiniteIncrementFourier
 import Foundation.StickyPairBrownianCoordinates
+import Foundation.HigherHeatBackwardFourier
+import Foundation.PseudoClarkOconeObstruction
+import Foundation.HigherHeatFourierInnovations
+import Foundation.HigherHeatFourierCalculus
