@@ -8,10 +8,11 @@ noncomputable section
 open MeasureTheory ProbabilityTheory Set
 namespace OperatorDerivativeRewrite.Foundation.SequentialIncrementIndependence
 set_option backward.isDefEq.respectTransparency false
-variable {Ω : Type*} [m₀ : MeasurableSpace Ω] (μ : Measure Ω) [IsProbabilityMeasure μ]
+variable {Ω E : Type*} [m₀ : MeasurableSpace Ω] [MeasurableSpace E]
+  (μ : Measure Ω) [IsProbabilityMeasure μ]
 
 theorem sequential {ι : Type*} [LinearOrder ι] (m : ι → MeasurableSpace Ω)
-    (X : ι → Ω → ℝ) (hpast : ∀ i j, j < i → Measurable[m i] (X j))
+    (X : ι → Ω → E) (hpast : ∀ i j, j < i → Measurable[m i] (X j))
     (hI : ∀ i, Indep (MeasurableSpace.comap (X i) inferInstance) (m i) μ) :
     iIndepFun X μ := by
   classical
@@ -36,10 +37,10 @@ theorem sequential {ι : Type*} [LinearOrder ι] (m : ι → MeasurableSpace Ω)
       _ = μ (X a ⁻¹' sets a)*(∏ i ∈ S, μ (X i ⁻¹' sets i)) := by rw [ih hmS]
       _ = _ := by rw [Finset.prod_insert ha]
 
-theorem of_filtration {T : Type*} [LinearOrder T] (ℱ : Filtration T m₀)
-    (X : T → Ω → ℝ) (hX : ∀ t, Measurable[ℱ t] (X t))
+theorem of_filtration [Sub E] [MeasurableSub₂ E] {T : Type*} [LinearOrder T] (ℱ : Filtration T m₀)
+    (X : T → Ω → E) (hX : ∀ t, Measurable[ℱ t] (X t))
     (hI : ∀ s t, s ≤ t →
-      Indep (MeasurableSpace.comap (fun ω => X t ω-X s ω) inferInstance) (ℱ s) μ) :
+      Indep (MeasurableSpace.comap (fun ω => X t ω - X s ω) inferInstance) (ℱ s) μ) :
     HasIndepIncrements X μ := by
   intro n t ht
   apply sequential μ (fun i : Fin n => ℱ (t i.castSucc))
