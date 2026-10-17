@@ -1163,3 +1163,5 @@ import Foundation.BackwardHeatMovingObstruction
 import Foundation.BoundedMovingLpProcess
 import Foundation.BackwardHeatLpRealization
 import Foundation.BackwardSchwartzLpRealization
+import Foundation.HigherHeatObservableEndpoint
+import Foundation.HigherHeatLpEndpointIto
