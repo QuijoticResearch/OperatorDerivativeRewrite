@@ -1311,3 +1311,5 @@ import Foundation.BandLimitedJumpGenerator
 import Foundation.RootMarkStochasticIntegral
 import Foundation.RootMarkDoobRepresentation
 import Foundation.RootMarkMartingaleRepresentation
+import Foundation.ComplexRootChannelGram
+import Foundation.RootMarkFiniteClark
