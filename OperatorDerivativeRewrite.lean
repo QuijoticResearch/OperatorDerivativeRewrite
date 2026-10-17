@@ -1222,3 +1222,6 @@ import Foundation.RootRenewalPathLaw
 import Foundation.RootRenewalWalkMarginal
 import Foundation.RootRenewalOperatorBridge
 import Foundation.ExponentialRenewalSurvival
+import Foundation.ExponentialRenewalWeights
+import Foundation.FiniteExponentialRenewal
+import Foundation.ConstructedRenewalPoissonLaw
