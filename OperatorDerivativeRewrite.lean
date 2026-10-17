@@ -1125,3 +1125,7 @@ import Foundation.FourierPathMeasuredKernels
 import Foundation.FourierPathConditionalPairing
 import Foundation.FourierPathCompletedGains
 import Foundation.FourierPathCompletedGainPairing
+import Foundation.HigherHeatStepIntegralLaws
+import Foundation.SignedHeatFourierUniqueness
+import Foundation.HigherHeatStepIntegralRealization
+import Foundation.HigherHeatStepIntegralOperators
