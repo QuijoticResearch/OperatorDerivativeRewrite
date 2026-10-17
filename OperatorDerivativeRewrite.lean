@@ -1146,3 +1146,7 @@ import Foundation.FourierPathDualGradientSeries
 import Foundation.FourierPathDualGradient
 import Foundation.FourierPathDualFrechetSeries
 import Foundation.FourierPathDualFrechet
+import Foundation.BochnerDualControlPairing
+import Foundation.FourierPathDualTimeAtoms
+import Foundation.FourierPathDualTimeSeries
+import Foundation.FourierPathDualTimeGradient
