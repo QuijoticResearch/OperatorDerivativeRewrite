@@ -1191,3 +1191,5 @@ import Foundation.ComplexRootPoissonTrajectory
 import Foundation.ComplexRootPoissonMarginals
 import Foundation.ComplexRootPoissonConditionalCalculus
 import Foundation.ComplexRootPoissonCompensation
+import Foundation.ComplexRootPoissonDynkinMartingale
+import Foundation.ComplexRootPoissonStochasticSum
