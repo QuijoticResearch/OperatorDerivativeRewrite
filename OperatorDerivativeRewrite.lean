@@ -1281,3 +1281,6 @@ import Foundation.ComplexPoissonCompensation
 import Foundation.ComplexDensityPushforward
 import Foundation.ComplexRootTiltedLaw
 import Foundation.ShiftedHeatProbabilityObstruction
+import Foundation.ComplexRootTiltedWalk
+import Foundation.ComplexRootTiltedSemigroup
+import Foundation.ComplexRootTiltedExpectation
