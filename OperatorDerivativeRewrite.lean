@@ -1276,3 +1276,5 @@ import Foundation.ComplexDensityUnbounded
 import Foundation.MarkedTiltTransform
 import Foundation.PoissonEntireAlgebra
 import Foundation.MarkedTiltHeatLimit
+import Foundation.ComplexRootTiltedStep
+import Foundation.ComplexPoissonCompensation
