@@ -1308,3 +1308,4 @@ import Foundation.MarkedFiniteHeatLimit
 import Foundation.BandLimitedSchwartzDomain
 import Foundation.MarkedExponentialTimeIntegral
 import Foundation.BandLimitedJumpGenerator
+import Foundation.RootMarkStochasticIntegral
