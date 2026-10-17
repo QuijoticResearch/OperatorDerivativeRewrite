@@ -1301,3 +1301,4 @@ import Foundation.ComplexRootUniformHeatBounds
 import Foundation.BandLimitedHeatLimit
 import Foundation.BandLimitedEntireCalculus
 import Foundation.BandLimitedDifferentialHeatLimit
+import Foundation.BandLimitedHeatEquation
