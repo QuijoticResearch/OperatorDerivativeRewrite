@@ -1269,3 +1269,4 @@ import Foundation.RightContinuousBoundedSampling
 import Foundation.MarkedDynkinSampling
 import Foundation.RenewalBoundedWald
 import Foundation.MarkedUnboundedSampling
+import Foundation.MarkedExponentialTilt
