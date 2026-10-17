@@ -1019,3 +1019,7 @@ import Foundation.HigherHeatObservableGenerator
 import Foundation.HigherHeatObservableIto
 import Foundation.HigherHeatSchwartzContinuity
 import Foundation.HigherHeatInitialObservable
+import Foundation.PseudoFiniteGramObstruction
+import Foundation.SignedSchwartzFirstOrder
+import Foundation.BiharmonicFiniteRecovery
+import Foundation.QuarticAppellCalculus
