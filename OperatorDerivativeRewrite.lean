@@ -1231,3 +1231,6 @@ import Foundation.ExponentialSourceRegeneration
 import Foundation.AdaptiveExponentialResidual
 import Foundation.RenewalWallClockResidual
 import Foundation.RenewalConditionalResidual
+import Foundation.RenewalConditionalTail
+import Foundation.RenewalFreshFutureSource
+import Foundation.RenewalConditionalFuturePath
