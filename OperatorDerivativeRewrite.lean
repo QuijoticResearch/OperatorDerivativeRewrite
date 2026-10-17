@@ -1046,3 +1046,5 @@ import Foundation.ClosedOperatorEnergyResolvent
 import Foundation.SignedSchwartzEnergyResolvent
 import Foundation.ClosedOperatorEnergyOperator
 import Foundation.SignedSchwartzEnergyOperator
+import Foundation.EnergyResolventGaussianField
+import Foundation.SignedSchwartzGaussianField
