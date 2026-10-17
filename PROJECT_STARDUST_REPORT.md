@@ -17,11 +17,11 @@ Historical first-window timing: The user extended the temporary focus to approxi
 
 At terminal time2026-10-17T00:52:47-04:00, the user explicitly prioritized advancing pseudoprocesses and their stochastic calculus, revisiting `order_p_clark_ocone (7).tex`, pursuing useful connections throughout the verified library, and making Git commits. This supersedes the previous practical no-commit state; commits must exclude ResearchSources and unrelated documents. The indefinite Stardust objective, verification and axiom audits remain in force. Selective source review revisited setup100–174, function-class244–330 and integrand-pairing366–411. Its proposed positive pseudo-L2 completion remains contradicted by646; an indefinite signed-kernel/Fourier calculus is a promising construction route. No manuscript theorem is adopted as an axiom.
 
-## Latest consolidation — verified through discovery 885
+## Latest consolidation — verified through discovery 890
 
-Current pseudoprocess front: verified through discovery 885. Actual integral laws, operator propagators, observable Ito/forward equations, Holder-dual Frechet calculus, unique Bochner time densities and joint time/path representatives remain established. Actual finite weighted sampler expectation operators are now uniformly contractive on the completed Fourier space. Their actions on the vector time density converge strongly in native L^(2m) to the actual expectationField, and the associated dual-control contraction functionals converge in operator norm. Scalar weighted section integrals represent those fields almost everywhere. Compatibility with earlier L-one densities, measurable Lp-valued path families and path-space Bochner averages, causal projections, higher dual-control towers, random adapted integration and chronological Clark–Ocone reconstruction remain open. No general signed path-law limit or uniform total-variation bound is asserted. The indefinite Stardust goal remains active.
+Current pseudoprocess front: verified through discovery 890. Actual integral laws, operator propagators, observable Ito/forward equations, Holder-dual Frechet calculus, unique Bochner time densities and joint time/path representatives remain established. Actual finite weighted sampler expectation operators are now uniformly contractive on the completed Fourier space. Their actions on the vector time density converge strongly in native L^(2m) to the actual expectationField, and the associated dual-control contraction functionals converge in operator norm. Scalar weighted section integrals represent those fields almost everywhere. Compatibility with earlier L-one densities, measurable Lp-valued path families and path-space Bochner averages, causal projections, higher dual-control towers, random adapted integration and chronological Clark–Ocone reconstruction remain open. No general signed path-law limit or uniform total-variation bound is asserted. The indefinite Stardust goal remains active.
 
-Latest verification: full Lake build 5272 jobs;29 new public types inspected; complete transitive audit of 24296 safe Foundation declarations with only propext, Classical.choice, Quot.sound. All43 sources retain42 hashes. The additional180-minute stochastic priority is completed; unrestricted autonomous Stardust discovery and the indefinite native goal remain active.
+Latest verification: full Lake build 5277 jobs;38 new public types inspected; complete transitive audit of 24374 safe Foundation declarations with only propext, Classical.choice, Quot.sound. All43 sources retain42 hashes. The additional180-minute stochastic priority is completed; unrestricted autonomous Stardust discovery and the indefinite native goal remain active.
 
 Unrestricted discoveries648–651 close the exact source-form Fibonacci J=16 partition compatibility gap for the fixed Gaussian NS shear. Discoveries652–657 construct its actual radial groups, persistent low-shell anisotropy, genuine joint spacetime smoothness and an explicit canonical screening countermodel. Discoveries658–660 now prove actual tail moments tend to zero, the low centroid tends to a finite positive limit and the high/low centroid ratio tends to infinity. Exactly kappa_H*E_H=D_H tends to zero, so every fixed positive C/(kappa_H*E_H) diverges, even after the proof's transient condition is met. A relative-threshold delayed-window screening predicate also fails. Actual normalized high-shell weights are nonnegative, sum to1 and retain variance>=3/16, with one fixed bias-1/16 at every cutoff and admissible time. These are native infinite-lattice constructions in the same flow. Full source interpretation still requires explicit weighting/admissible-group conventions and any additionally intended sector/geometric restrictions. Other J certificates, exact equal-area assertions, steady-state affine-transfer identities and Millennium conclusions are not inferred.
 
@@ -16996,3 +16996,50 @@ The construction integrates pointwise along each path and then proves a bounded-
 All read-only sources are preserved. The archive was searched only for the already identified domain question and the exact local proof paragraph; manuscripts were not bulk ingested and no source instructions were followed.
 
 Verification885: target3206 jobs, full5272 jobs, exit0. All29 public types inspected. Root audit24296 safe Foundation declarations with only propext, Classical.choice, Quot.sound. Forbidden-token and direct/Git whitespace checks passed. All43 sources retain42 hashes, staged/unstaged source/dependency diffs empty. Evidence: `.lake/stardust-885-module.log`, `.lake/stardust-885-full-build.log`, `.lake/stardust-885-audit.log`, `.lake/stardust-885-public-types.json`, `.lake/stardust-885-inventory-check.json`. Unrestricted autonomous Stardust exploration and the indefinite goal remain active.
+
+
+## Discovery886 — Actual polynomial and translated-polynomial domains under Poisson mixing
+
+`Foundation/ComplexRootPoissonPolynomialDomain.lean` proves the pointwise walk bound |S_n|<=2n|a| and, using native Bernoulli, the geometric bound |S_n|<=(1+2|a|)^n. Every power |S_n|^k is therefore dominated by a geometric count observable. The proved growth criterion875 gives native absolute integrability and exact mixture formulas for z^k and |z|^k under the actual compound-root law. A positive constant-factor extension of the growth criterion is constructed by normalization and proved cancellation; it gives absolute integrability and exact mixture formulas for every translated power (z+y)^k. No bounded-continuous membership or integrability of an unbounded test is silently assumed.
+
+## Discovery887 — Native first, second and factorial moments of the actual Poisson count
+
+`Foundation/PoissonCountMoments.lean` proves integrability of every count power N^k by a geometric bound. Shifted factorial series give native HasSum proofs for the weighted first and second factorial moments, including the r=0 case without division by r. The actual probability integrals are E[N]=r, E[N(N-1)]=r^2 and E[N^2]=r^2+r. Integrability is proved separately from summing the signed or vector-valued series.
+
+## Discovery888 — Exact unbounded quartic drift under the actual compound-root law
+
+`Foundation/ComplexRootPoissonQuarticDrift.lean` uses the genuine finite-walk disintegration866 and one-step quartic identity857 to prove
+
+`E[(z+S_n)^4]=z^4-4*n*a^4`.
+
+The translated mixture domain886 and native count integral887 then prove
+
+`E[(z+Z_r)^4]=z^4-4*r*a^4`
+
+and E[Z_r^4]=-4*r*a^4 under the genuine compound-root probability law864. The actual complex count integrability and its integral are explicitly bridged from the native real count law. The observable is unbounded, and the proof does not apply the C_b operator to a function outside its domain.
+
+## Discovery889 — Exact positive compound-root second and fourth moments
+
+`Foundation/ComplexRootPoissonPositiveMoments.lean` proves
+
+`E[|Z_r|^2]=2*r*a^2`,
+
+`E[|Z_r|^4]=(8*r^2+4*r)*a^4`.
+
+These are actual positive norm moments obtained from the absolutely integrable mixture886, finite-walk moments859/878 and native count moments887. At Poisson mean n and a_n(T)^4=6T/n, the squared second moment is24*T*n for all n, and the fourth moment is48*T*n+24*T when n>0. Consequently the fourth moment is at most three times the squared second moment for n>0. The positive fourth moment differs from the fixed-count formula880; that difference is accounted for by the actual count variance rather than being transferred by analogy.
+
+## Discovery890 — A genuine native unbounded quartic martingale
+
+`Foundation/ComplexRootQuarticMartingale.lean` proves the actual Markov kernel integrates y^4 to z^4-4*r*a^4. It proves fourth-power integrability of every coordinate of the constructed infinite trajectory868 by its actual marginal laws869 and the unbounded domain886. Native regular conditional disintegration yields
+
+`E[X_(n+1)^4 | past_n]=X_n^4-4*delta*a^4`.
+
+The actual process
+
+`M_n=X_n^4+4*n*delta*a^4`
+
+is then proved to be a native complex-valued Martingale with respect to the actual canonical filtration and trajectory probability law. Its strong adaptation and native absolute integrability are proved. This extends the genuine stochastic calculus872–873 beyond bounded observables to an unbounded holomorphic polynomial whose fourth-order drift is explicit.
+
+This is discrete stochastic calculus on the genuine complex compound-root skeleton, not a declaration of a positive real-state higher-order process or a continuous-time Ito-p calculus. Negative holomorphic fourth moments and positive norm fourth moments remain distinct. The bounded generator863–866 is not assigned an unbounded polynomial by coercion; the polynomial identity is established through the actual law and its proved domain. Stochastic-integral scaling limits, continuous-time marked paths, a higher-order Clark–Ocone completion and any probability-path limit remain separate obligations. For the Poissonized weak-limit gap882, the positive moment ratio is now controlled; extending879's finite-space lower-tail proof to the actual non-finite law with explicit native L2 hypotheses is a concrete next target. No manuscript was ingested at the expense of this productive proof, no manuscript theorem was assumed, and every source remains unchanged.
+
+Verification890: target3368 jobs, full5277 jobs, exit0. All38 public types inspected. Root audit24374 safe Foundation declarations with only propext, Classical.choice, Quot.sound. Forbidden-token and direct/Git whitespace checks passed. All43 sources retain42 hashes, staged/unstaged source/dependency diffs empty. Evidence: `.lake/stardust-890-module.log`, `.lake/stardust-890-full-build.log`, `.lake/stardust-890-audit.log`, `.lake/stardust-890-public-types.json`, `.lake/stardust-890-inventory-check.json`. Unrestricted autonomous Stardust exploration and the indefinite goal remain active.

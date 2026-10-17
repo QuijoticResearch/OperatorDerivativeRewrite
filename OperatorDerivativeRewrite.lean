@@ -1205,3 +1205,8 @@ import Foundation.ComplexRootNoWeakLimit
 import Foundation.SchwartzCylinderObstruction
 import Foundation.SchwartzBoundedCylinders
 import Foundation.BoundedPathOccupation
+import Foundation.ComplexRootPoissonPolynomialDomain
+import Foundation.PoissonCountMoments
+import Foundation.ComplexRootPoissonQuarticDrift
+import Foundation.ComplexRootPoissonPositiveMoments
+import Foundation.ComplexRootQuarticMartingale
