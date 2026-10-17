@@ -1243,3 +1243,6 @@ import Foundation.RootMarkSourceRegeneration
 import Foundation.ProductSourceShuffle
 import Foundation.MarkedConditionalSource
 import Foundation.MarkedRenewalRegeneration
+import Foundation.MarkedPastReconstruction
+import Foundation.MarkedPastFutureIndependence
+import Foundation.MarkedRenewalMartingale
