@@ -1119,3 +1119,7 @@ import Foundation.FourierPathFutureIntegral
 import Foundation.FourierPathKernelFunctionals
 import Foundation.FourierPathTerminalKernels
 import Foundation.FourierPathBackwardOperators
+import Foundation.FourierPathPointEquivalence
+import Foundation.FourierPathSignedTransitions
+import Foundation.FourierPathMeasuredKernels
+import Foundation.FourierPathConditionalPairing
