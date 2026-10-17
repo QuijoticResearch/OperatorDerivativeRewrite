@@ -1044,3 +1044,5 @@ import Foundation.HilbertAdjointDomainDensity
 import Foundation.SignedSchwartzAdjointProbes
 import Foundation.ClosedOperatorEnergyResolvent
 import Foundation.SignedSchwartzEnergyResolvent
+import Foundation.ClosedOperatorEnergyOperator
+import Foundation.SignedSchwartzEnergyOperator
