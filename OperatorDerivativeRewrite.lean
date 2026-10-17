@@ -1302,3 +1302,4 @@ import Foundation.BandLimitedHeatLimit
 import Foundation.BandLimitedEntireCalculus
 import Foundation.BandLimitedDifferentialHeatLimit
 import Foundation.BandLimitedHeatEquation
+import Foundation.BandLimitedConditionalCalculus
