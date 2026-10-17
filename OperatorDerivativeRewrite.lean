@@ -1234,3 +1234,8 @@ import Foundation.RenewalConditionalResidual
 import Foundation.RenewalConditionalTail
 import Foundation.RenewalFreshFutureSource
 import Foundation.RenewalConditionalFuturePath
+import Foundation.RenewalPastReconstruction
+import Foundation.CountableConditionalIndependence
+import Foundation.RenewalPastFutureIndependence
+import Foundation.RenewalIndependentIncrements
+import Foundation.RenewalCompensatedMartingale
