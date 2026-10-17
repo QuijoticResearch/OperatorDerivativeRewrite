@@ -1219,3 +1219,6 @@ import Foundation.ExponentialRenewalCount
 import Foundation.ExponentialRenewalCadlag
 import Foundation.MarkedRootRenewalProcess
 import Foundation.RootRenewalPathLaw
+import Foundation.RootRenewalWalkMarginal
+import Foundation.RootRenewalOperatorBridge
+import Foundation.ExponentialRenewalSurvival
