@@ -1310,3 +1310,4 @@ import Foundation.MarkedExponentialTimeIntegral
 import Foundation.BandLimitedJumpGenerator
 import Foundation.RootMarkStochasticIntegral
 import Foundation.RootMarkDoobRepresentation
+import Foundation.RootMarkMartingaleRepresentation
