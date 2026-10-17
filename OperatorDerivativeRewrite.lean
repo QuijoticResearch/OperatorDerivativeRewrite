@@ -1069,3 +1069,4 @@ import Foundation.HigherHeatFourierPathClosure
 import Foundation.HigherHeatFourierPathResolvent
 import Foundation.HigherHeatFourierPathFullGenerator
 import Foundation.HigherHeatFourierPathGraphCore
+import Foundation.HigherHeatFourierPathAdjoint
