@@ -1289,3 +1289,6 @@ import Foundation.MarkedTiltConditional
 import Foundation.ComplexRootNormTransform
 import Foundation.ComplexTiltVariationTest
 import Foundation.ComplexTiltVariationDivergence
+import Foundation.ComplexRootMarkRepresentation
+import Foundation.ComplexRootChannelOperator
+import Foundation.MarkedChannelIto
