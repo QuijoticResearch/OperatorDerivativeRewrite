@@ -1264,3 +1264,4 @@ import Foundation.MarkedTimeIntegral
 import Foundation.MarkedIntegralConditioning
 import Foundation.MarkedGeneratorIntegral
 import Foundation.MarkedDynkinMartingale
+import Foundation.HigherHeatMarginalSeparationObstruction
