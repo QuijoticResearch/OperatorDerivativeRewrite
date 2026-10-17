@@ -1299,3 +1299,5 @@ import Foundation.BandLimitedComplexExtension
 import Foundation.BandLimitedProcessExpectation
 import Foundation.ComplexRootUniformHeatBounds
 import Foundation.BandLimitedHeatLimit
+import Foundation.BandLimitedEntireCalculus
+import Foundation.BandLimitedDifferentialHeatLimit
