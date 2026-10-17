@@ -1064,3 +1064,5 @@ import Foundation.HigherHeatFourierPathSemigroup
 import Foundation.HigherHeatFourierPathC0
 import Foundation.HigherHeatFourierPathDerivative
 import Foundation.HigherHeatFourierPathGenerator
+import Foundation.ContractionTangentDissipativity
+import Foundation.HigherHeatFourierPathClosure
