@@ -1261,3 +1261,6 @@ import Foundation.MarkedJointNoWeakLimit
 import Foundation.ConditionalBochnerFubini
 import Foundation.RightContinuousProgressive
 import Foundation.MarkedTimeIntegral
+import Foundation.MarkedIntegralConditioning
+import Foundation.MarkedGeneratorIntegral
+import Foundation.MarkedDynkinMartingale
