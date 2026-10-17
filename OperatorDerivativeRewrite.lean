@@ -1053,3 +1053,6 @@ import Foundation.HigherHeatProbabilitySampling
 import Foundation.HigherHeatInterpolatedPaths
 import Foundation.SignedDensityProbabilityTransport
 import Foundation.HigherHeatWeightedPaths
+import Foundation.HigherHeatCylinderPathLimit
+import Foundation.HigherHeatInterpolatedFourier
+import Foundation.HigherHeatMixedFourierPaths
