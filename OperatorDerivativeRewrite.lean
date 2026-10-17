@@ -1040,3 +1040,5 @@ import Foundation.NormalizedSignedScoreCounterexample
 import Foundation.SignedSchwartzL2Rigging
 import Foundation.SignedSchwartzWeakDerivative
 import Foundation.SignedSchwartzClosedDerivative
+import Foundation.HilbertAdjointDomainDensity
+import Foundation.SignedSchwartzAdjointProbes
