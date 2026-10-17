@@ -1239,3 +1239,7 @@ import Foundation.CountableConditionalIndependence
 import Foundation.RenewalPastFutureIndependence
 import Foundation.RenewalIndependentIncrements
 import Foundation.RenewalCompensatedMartingale
+import Foundation.RootMarkSourceRegeneration
+import Foundation.ProductSourceShuffle
+import Foundation.MarkedConditionalSource
+import Foundation.MarkedRenewalRegeneration
