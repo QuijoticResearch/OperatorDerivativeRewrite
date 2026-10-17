@@ -1123,3 +1123,5 @@ import Foundation.FourierPathPointEquivalence
 import Foundation.FourierPathSignedTransitions
 import Foundation.FourierPathMeasuredKernels
 import Foundation.FourierPathConditionalPairing
+import Foundation.FourierPathCompletedGains
+import Foundation.FourierPathCompletedGainPairing
