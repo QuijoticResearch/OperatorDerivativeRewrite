@@ -1113,3 +1113,6 @@ import Foundation.BochnerControlTowers
 import Foundation.FourierPathTimeTowers
 import Foundation.FourierPathTimeTensorIdentity
 import Foundation.FourierPathTimeTensorRealization
+import Foundation.FourierPathStopping
+import Foundation.FourierPathDictionaryTransport
+import Foundation.FourierPathFutureIntegral
