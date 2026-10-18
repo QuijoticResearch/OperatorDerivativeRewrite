@@ -1522,3 +1522,4 @@ import Foundation.IBMScalarSecondProjection
 import Foundation.IBMPolynomialWeightedStein
 import Foundation.IBMShiftedJetMoments
 import Foundation.IBMHigherScalarProjection
+import Foundation.IBMMixedFourthStein
