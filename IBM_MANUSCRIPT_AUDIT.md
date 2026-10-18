@@ -575,3 +575,35 @@ E[V^2 (K^2-r) phi_j(U)]=2 h^2 Q_j+(q b^2+4 h d b)Q_(j+2)+d^2 b^2 Q_(j+4).
 At j=2 this retains the Q6 coefficient d^2 b^2 in the actual squared-derivative curvature term paired with the actual second-chaos Wick test. Thus the finite mixed contraction now goes beyond1067's single-observation scalar coefficient. It agrees with the square-factor portion of the six-channel candidate recorded from `ResearchSources/ibm/BidegreeAtlas.tex` lines848–923; the source hash is checked against the existing immutable baseline. No additional manuscript content was needed for this proof. The intermediate fourth-power formula E[V^4 phi_j(U)]=3q^2 Q_j+6q d^2 Q_(j+2)+d^4 Q_(j+4) is also verified as an actual integral on its proved domain.
 
 Still open: the complementary W(K^2-r)phi_1(U) contraction, the full second-sector projection of the actual curvature using the existing joint L2 domains and verified density/separation, general-Schwartz singular limits, other sectors, F1 common topology and uniform tails, physical noise-coordinate H^-1 closure, and F3. The centered identity is a test-pairing theorem, not by itself the completed projection or a physical tensor-kernel identification. No arbitrary-L2 multiplication operator, generalized signed path probability, threshold conclusion or RH implication is claimed. Existing quartic native/literal reconstruction and limits remain available. All original manuscripts and dependencies are preserved.
+
+
+## Discovery1069: full native second-source projection of shifted Schwartz IBM curvature
+
+The previous goal turn made durable progress in6eacd02 by recording the final campaign and hard October31 research stop. Mathematical work continues from verified1068, commit797cef0357aab559960acf159dbd17b4c6e4654e. IBM remains immediate; no successor gate has been released. The latest explicit finite campaign sequence overrides historical indefinite-exploration wording.
+
+`IBMMixedCubicStein` proves the complementary actual Gaussian contractions. For U=W_u, W=W_w, K=W_k and phi_j(z)=g^(j)(a+z), let Q_l=E[phi_l(U)], r=||k||^2, e=<u,w>, b=<u,k>, h=<w,k>. Actual singleton conditional Wick projection and the zero-safe regression identity give the third mixed Wick pairing. Finite cubic polarization then proves
+
+E[W K^2 phi_j(U)]=(r e+2 h b)Q_(j+1)+e b^2 Q_(j+3),
+E[W (K^2-r) phi_j(U)]=2 h b Q_(j+1)+e b^2 Q_(j+3).
+
+The product is genuinely integrable, proved using the existing actual mixedCube L2 representative and bounded test composition. Zero directions and collinear directions are included. These identities complete the previously missing linear-factor test alongside1068's squared-factor test.
+
+`IBMSecondChaosTesting` reuses the existing completed second-chaos matrix approximations, `GaussianQuadraticMatrixApproximation.boxCore_tendsto`, rather than assuming density. It identifies the existing mixedTarget with the existing Wick cross, proves quadratic Wick tests separate every native second-sector vector, and obtains a projection criterion for arbitrary ambient Gaussian L2 inputs. The criterion has a proved second-sector hypothesis and tests every Gaussian direction. No physical tensor-kernel isometry or new chaos space is postulated.
+
+`IBMSchwartzSecondProjection` first proves actual L2 domains for multiplication by each bounded shifted Schwartz jet. This is bounded-observable multiplication; it asserts no multiplication bound for two arbitrary L2 variables. The independently realized correctionClass is a.e. the actual curvature
+
+F=g''(a+U)V^2+g'(a+U)W.
+
+For q=||v||^2, d=<u,v>, e=<u,w>, its completed native source-two projection is now verified:
+
+Pi_2 F = ((q+e)Q4+d^2 Q6)/2 :U^2: + 2d Q4 cross(u,v) + Q2 (:V^2:+cross(u,w)).
+
+Here cross(u,v) is the existing actual UV-<u,v> L2 representative, and :U^2: is the native Wick2 vector. The proof combines actual centered quadratic-test integrals with the proved separation criterion, so this is a completed projection equality, not only a finite polynomial test or numerical diagnostic. The Q6 term survives with coefficient d^2/2. The same machinery proves the general linear-factor projection
+
+Pi_2[g^(j)(a+U)W]=Q_(j+1) cross(u,w)+(e Q_(j+3)/2):U^2:.
+
+At j=1 it supplies the actual source-two origin term needed in the whole correction. Finally mollifiedClass substitutes the existing tripleCoefficient directions. Its representative is proved a.e. equal to the actual constructed IBMDyadicExtension.field curvature at every fixed n and real spatial r, and its native source-two projection is identified with the explicit formula. This supplies a genuine process-field connection, not a merely formal Gaussian triple.
+
+Selectively reread `ResearchSources/ibm/BidegreeAtlas.tex` lines848–923 (channel enumeration and start of Theorem D). Its immutable SHA256 remains409FFE56EDB47DF23DAEEA788CEEC24E1C7ED9FF657BDCB6914708F8FA535D4E. The native formula agrees with the six finite channel contributions and their factorial normalizations1,1,4,12,1,3: in particular12 times Q6/24 gives the verified half coefficient. This is native Gaussian source agreement; the manuscript's physical white-noise tensor kernels still require an exact isometry/specialization if that representation is claimed. The manuscript's infinite Stroock-series substitution is not used. For the finite selector, the exact equation 2j=p+q-2 together with j<=q gives p<=q+2 directly; no convergence theorem follows merely from enumerating surviving indices. Theorem D's full source/clock block, time integration and singular limit are not certified by this pointwise-in-radius projection alone.
+
+Next substantive route: construct and differentiate the actual general-Schwartz source-two spatial primitive P_n(r)=Q2(n,r)/2 times Wick2(u_n(r)), reusing existing Gaussian differentiation, coefficient geometry and Wick derivative machinery. The expected derivative identities Q2'=d Q4 and Q2''=(q+e)Q4+d^2 Q6 would connect the verified projection with P_n''. They remain proof obligations, not imported assumptions. This could extend the already verified quartic heat/occupation reconstruction to nonlinear Schwartz data. All fixed-mollifier domain, spatial endpoint, random-time Fubini and singular-limit hypotheses must be discharged. General-Schwartz singular reconstruction, other sectors, F1 common topology/uniform summable tails, physical noise-coordinate H^-1 closure, and F3 remain open. No IBM campaign freeze, A(4)/A(2) transition, RH implication or final multichannel completion is asserted. Manuscripts and pinned dependencies remain unchanged.

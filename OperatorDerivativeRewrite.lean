@@ -1523,3 +1523,6 @@ import Foundation.IBMPolynomialWeightedStein
 import Foundation.IBMShiftedJetMoments
 import Foundation.IBMHigherScalarProjection
 import Foundation.IBMMixedFourthStein
+import Foundation.IBMMixedCubicStein
+import Foundation.IBMSecondChaosTesting
+import Foundation.IBMSchwartzSecondProjection
