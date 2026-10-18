@@ -1338,3 +1338,4 @@ import Foundation.HigherEvenRenewalProcess
 import Foundation.CyclicPolynomialKernel
 import Foundation.FiniteMarkedRenewalMarginals
 import Foundation.HigherEvenRenewalMoments
+import Foundation.HigherEvenRenewalEnergy
