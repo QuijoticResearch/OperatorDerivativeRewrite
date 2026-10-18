@@ -1369,3 +1369,6 @@ import Foundation.PureOrderAppellExpansion
 import Foundation.PureOrderAppellTail
 import Foundation.PureOrderAppellPairing
 import Foundation.PureOrderSteinUniqueness
+import Foundation.PureOrderAppellPrimitive
+import Foundation.HigherHeatAppellDuals
+import Foundation.PureOrderAppellTransition
