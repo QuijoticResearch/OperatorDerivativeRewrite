@@ -1471,3 +1471,4 @@ import Foundation.HigherHeatQuadraticItoApproximation
 import Foundation.HigherHeatQuadraticIto
 import Foundation.HigherHeatQuadraticItoBoundary
 import Foundation.IBMUnmollifiedSourceDerivative
+import Foundation.IBMBoundaryCurvature
