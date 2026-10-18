@@ -1329,3 +1329,4 @@ import Foundation.RootMarkInfiniteIto
 import Foundation.RootMarkFiniteEnergyLimit
 import Foundation.RootMarkInfiniteOperator
 import Foundation.RootMarkHilbertIntegrands
+import Foundation.RootMarkInfiniteClarkOperator
