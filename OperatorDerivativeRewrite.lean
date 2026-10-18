@@ -1401,3 +1401,5 @@ import Foundation.SignedSchwartzPolynomialL2
 import Foundation.SignedSchwartzPolynomialJets
 import Foundation.SignedSchwartzPolynomialPairing
 import Foundation.HigherHeatCompletedJetObstruction
+import Foundation.PureOrderTaylorInnovations
+import Foundation.PureOrderPolynomialTransport
