@@ -1379,3 +1379,6 @@ import Foundation.BiharmonicLeftSumObstruction
 import Foundation.HigherHeatJetChannels
 import Foundation.HigherHeatJetPairing
 import Foundation.PureOrderAppellOrthogonality
+import Foundation.HigherHeatPredictableL1
+import Foundation.HigherHeatPredictableJets
+import Foundation.SignedSchwartzFundamentalSymmetry
