@@ -1486,3 +1486,5 @@ import Foundation.IBMCorrectionStein
 import Foundation.IBMOriginalBoundaryResidual
 import Foundation.IBMAveragedBulkClock
 import Foundation.IBMSceneryAveragedCorrectionLimit
+import Foundation.IBMGeneralSchwartzFubini
+import Foundation.IBMClockConditionalCorrection

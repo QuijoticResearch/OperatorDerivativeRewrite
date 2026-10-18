@@ -204,3 +204,25 @@ f''(a)L_T^0(Y)+(1/4) integral_0^T E_X[f^(4)(a+X_(|Y_s|))] ds.
 The first term is the actual continuous Tanaka mass coordinate. The second is the actual unmollified scenery expectation, not an assumed heat-semigroup coefficient. Every existing fixed clock-sector projection consequently converges by continuity of that projection. Strong convergence in the full clock space is stronger than merely proving convergence of individual clock coefficients.
 
 Precise F1 scope: this proves closure of the full time integral of scenery expectations, including all clock fluctuations, along the same concrete shrinking normalized bump sequence and for each fixed Schwartz test, shift and horizon. It does not yet identify this functional as the zero-scenery projection of a constructed general-Schwartz joint time-integrated correction: the corresponding joint source/time measurability, integrability and Fubini bridge must be verified. Existing joint cubic results are insufficient for a blanket general-Schwartz claim. It does not supply m>=1 higher-source kernel limits, uniform cross-sector tails, or a common global dual norm. Those remain open, as do F3 and arbitrary-profile/uniform-parameter extensions. Next priority is the actual general-Schwartz joint Fubini bridge if it can be closed directly from the existing dyadic fields and growth bounds; otherwise pursue a concrete higher-sector estimate. No new general chaos campaign or source edits. The indefinite goal remains active, pseudoprocess extension frozen.
+
+
+## Discovery1055: actual joint Schwartz Fubini and clock conditional expectation identified
+
+The previous turn made verified progress in393642e4a4beec16506b8903078f3e6706ce289f. Continued the precise missing F1 averaging bridge. Direct reuse located `IBMFiniteHorizonEvaluation.secondCoefficient_horizon_integrable`, which already proves the required general bounded-test joint time/scenery/clock L1 domain. Reused it instead of rebuilding Gaussian growth infrastructure. Sources and dependency pins remain unchanged.
+
+`IBMGeneralSchwartzFubini` defines the literal general-Schwartz correction from the existing constructed continuous mollified scenery/derivative evaluations, with the already verified shifted derivative tests. It proves joint time/probability measurability and instantiates the existing finite-horizon L1 theorem for every actual Schwartz test, shift, mollifier and finite horizon. The actual time-integrated correction is therefore integrable under the full independent scenery/clock law. At each fixed clock position its actual scenery mean equals1053's Gaussian source correction expectation, by the existing dyadic-coordinate almost-everywhere identities.
+
+Product-measure associativity proves time/scenery integrability for almost every clock sample. Fubini then gives
+
+E_X[integral_0^T actualCorrection_n(X,Y,s)ds]
+=integral_0^T E_X[actualCorrection_n(X,Y,s)]ds
+
+for almost every actual clock sample, with no supplied section-integrability hypothesis. The source mean is proved L2(clock), agrees with1054's literal averaged path and inherits its strong L2 limit.
+
+`IBMClockConditionalCorrection` reuses `IndependentInnovationConditioning.conditional_integral` with the existing independent product coordinates. It proves that the genuine conditional expectation of the actual integrable joint correction given the entire clock source sigma field is exactly that source mean. A measure-preserving pullback isometry identifies its joint L2 representative with the lift of1054's averaged class. Thus the actual clock conditional expectations belong to L2 of the full joint law and converge strongly there to the lift of
+
+f''(a)L_T^0(Y)+(1/4) integral_0^T E_X[f^(4)(a+X_(|Y_s|))]ds.
+
+This closes the missing joint Fubini and conditional-mean identification, not just an abstract candidate coefficient. It supplies a genuine zero-scenery conditional block, retaining all clock randomness, along the concrete normalized bump sequence for each fixed test, shift and horizon.
+
+Scope: the full unaveraged general-Schwartz correction has a verified joint L1 domain here, while its conditional expectation has the proved L2 domain and strong limit. This checkpoint does not assert a joint L2 domain or convergence for the full unaveraged correction, identify an orthogonal Hilbert projection whose input domain has not yet been proved, or obtain any higher-source sector limits or uniform cross-sector tail bounds. Conditional expectation is valid on the established L1 domain. F1 remains open beyond this zero-source block; F3 remains open. Next investigate a direct fixed-mollifier joint L2 estimate for the actual Schwartz correction from the existing Gaussian fourth moments and finite-horizon machinery, to make higher-source projections legitimate before seeking their singular limits. No new general chaos infrastructure or source edits. Pseudoprocess extension stays frozen; the indefinite goal remains active.
