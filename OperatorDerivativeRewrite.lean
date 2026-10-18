@@ -1479,3 +1479,5 @@ import Foundation.IBMBoundaryAveragedCoefficient
 import Foundation.IBMBoundaryWeightedClock
 import Foundation.IBMBoundaryLayerRemainder
 import Foundation.IBMBoundaryResidualLimit
+import Foundation.IBMScaledGaussianStein
+import Foundation.IBMFirstChaosDiagonalStein
