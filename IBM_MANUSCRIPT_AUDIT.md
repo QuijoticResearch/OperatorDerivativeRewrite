@@ -748,3 +748,32 @@ Selective F3 audit/reuse check: reread the operator-bridge and intrinsic-core di
 A concrete candidate for the next F3 test is time smoothing of actual IBM observables, A_(rho,phi)=integral rho(s)phi(Z_s)ds. Unlike scenery-mollified surrogates, these candidate observables use Z itself. If joint derivative-domain membership can be proved for a suitable time-smoothed algebra, while time approximate identities recover bounded continuous cylinder observables, it could supply a density route. The crucial uniform joint-Malliavin graph estimates, clock derivative realization, observable-algebra closure and density steps have not been proved or assumed. Inspect existing occupation/local-time and operator machinery before constructing additional foundations; do not label this candidate a density proof.
 
 Remaining F1 sectors are now source degree at least1, excluding the separately controlled(2,0) block, together with their common physical dual topology and uniform cross-sector summation. The entire source-zero clock family has the concrete native closure and eventual tail control above. Full physical noise-coordinate H^-1 identification and the precise F3 intrinsic-core question remain open. The prior concrete F2 random limit is preserved. Do not infer convergence of the whole unprojected correction, bypass the first-chaos obstruction or declare the IBM campaign frozen. Original sources, unrelated documents and pinned dependencies remain unchanged; no successor campaign has begun.
+
+
+## Discovery1075: full nonlinear source-Hilbert derivative and all-source terminal candidate
+
+The preceding goal turn made verified progress in e7e2ccfb0f4da6d341c024f60ac3f62300b72a83. IBM remains immediate. The queued IBM → A(4) → A(2) → final multichannel campaign and October31 hard stop are unchanged. No successor gate is released.
+
+`IBMSchwartzSourceDerivative` constructs the full actual Gaussian-L2 observable O_j(u)=g^(j)(a+W(u)), without a chaos projection. It constructs the bounded multiplier by the actual bounded Schwartz jet on the existing GaussianL2, then composes it with the verified first-chaos embedding. The resulting continuous linear source derivative is
+
+DO_j(u)[h]=g^(j+1)(a+W(u)) W(h).
+
+The representative, source domain and bounded multiplier are proved, not postulated. Taylor's scalar remainder, the actual Gaussian square class and its existing L2 norm bound give the global estimate
+
+||O_j(v)-O_j(u)-DO_j(u)[v-u]||_L2 <= seminorm(g^(j+2)) ||v-u||^2.
+
+This proves Frechet differentiability on the entire existing coefficient Hilbert space, including zero and degenerate directions, and the corresponding derivative along differentiable spatial coefficient curves. No arbitrary L2 product, point evaluation on L2 classes, covariance inverse or formal chaos-series differentiation is used. The module uses default elaboration resources.
+
+`IBMFullSchwartzTerminal` applies this full observable to the actual concrete mollified coefficients and their verified source-coefficient limit. Its spatial derivative is the actual weighted first-chaos slope, before projection. It proves continuity and strong source-L2 convergence of the whole nonlinear observable at every radius. The exact base-embedding identity and the independently constructed continuous Brownian scenery modification identify the limiting section with g(a+X(r)) almost everywhere, and, for every fixed clock path, identify its random-radius section with g(a+Z_T). This does not claim an exceptional set uniform over all radii; its pointwise-in-clock AE source assertion is explicit.
+
+The module constructs genuine Bochner clock averages of these full source classes, proves their absolute integrability using the bounded Schwartz observable, and obtains strong source-L2 convergence by dominated convergence, for every nonnegative horizon. The origin limit is g(a) times the Gaussian vacuum. Consequently the full terminal-minus-origin candidate converges strongly to
+
+E_Y[g(a+X(|Y_T|))]-g(a).
+
+This convergence retains all source chaos degrees together, rather than only the earlier second-source projection. The existing contractive chaos truncation estimate gives precise eventual uniform source tails for this candidate: for each eta>0 there exist N0,n0 such that every cutoff N>=N0 and mollifier index n>=n0 has truncation remainder below eta. These thresholds are chosen before either index varies. This is a theorem about the actual terminal-minus-origin candidate, not yet about the correction.
+
+Exact remaining connection: identify the entire clock-averaged correction with this full terminal-minus-origin class. The earlier projected heat proof establishes that equality after the second-source projection. Extending it requires the full weighted-slope derivative (second spatial derivative equal to actual unprojected curvature), its needed continuity/domain bounds, and the vector-valued heat boundary/Fubini argument. The new first derivative does not supply this second derivative automatically. In particular, positive-source clock sectors, global F1 cross-sector convergence in a physical test dual, and identification of source Hilbert coordinates with the manuscript's physical white-noise coordinate remain open. No claim of full correction convergence is made from terminal convergence alone.
+
+The F3 reuse search found existing zero-occupation/Tanaka-mass and heat occupation-mean results, but did not establish a full spatial local-time field or the uniform joint derivative estimate needed for a time-smoothed intrinsic-core argument. The previously verified partial scenery derivative remains valid. Neither joint clock Sobolev membership nor intrinsic-core density/nondensity was proved in this checkpoint. No F3 conclusion follows from the bounded multiplier construction. The concrete F2 limit and all prior verifications remain preserved.
+
+All27 new public declaration types are inspected in the checkpoint audit. Original manuscripts and the43-file/42-hash Incoming inventory are preserved. No source, dependency or toolchain changes; no unrelated campaign, resource increase, or added mathematical axiom.

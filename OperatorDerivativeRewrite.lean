@@ -1543,3 +1543,5 @@ import Foundation.IBMSchwartzLiteralJoint
 import Foundation.IBMSchwartzWholeSourceMean
 import Foundation.IBMSchwartzSourceZeroJoint
 import Foundation.IBMSchwartzSourceZeroTails
+import Foundation.IBMSchwartzSourceDerivative
+import Foundation.IBMFullSchwartzTerminal
