@@ -1399,3 +1399,5 @@ import Foundation.HigherHeatCompactOpenObstruction
 import Foundation.SchwartzGaussianCutoff
 import Foundation.SignedSchwartzPolynomialL2
 import Foundation.SignedSchwartzPolynomialJets
+import Foundation.SignedSchwartzPolynomialPairing
+import Foundation.HigherHeatCompletedJetObstruction
