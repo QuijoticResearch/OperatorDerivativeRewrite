@@ -1537,3 +1537,6 @@ import Foundation.IBMSchwartzClockMean
 import Foundation.IBMSchwartzSourceContinuity
 import Foundation.IBMSchwartzTimeProjection
 import Foundation.IBMSchwartzScalarRecovery
+import Foundation.IBMSchwartzBochnerDomain
+import Foundation.IBMSchwartzJointRealization
+import Foundation.IBMSchwartzLiteralJoint
