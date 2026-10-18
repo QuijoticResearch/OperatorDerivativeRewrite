@@ -1346,3 +1346,4 @@ import Foundation.HigherEvenHeatTransformLimit
 import Foundation.MarkedRenewalFourierTests
 import Foundation.HigherEvenBandHeatLimit
 import Foundation.HigherEvenBandGenerator
+import Foundation.HigherEvenSignedRealization
