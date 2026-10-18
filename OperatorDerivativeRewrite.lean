@@ -1540,3 +1540,6 @@ import Foundation.IBMSchwartzScalarRecovery
 import Foundation.IBMSchwartzBochnerDomain
 import Foundation.IBMSchwartzJointRealization
 import Foundation.IBMSchwartzLiteralJoint
+import Foundation.IBMSchwartzWholeSourceMean
+import Foundation.IBMSchwartzSourceZeroJoint
+import Foundation.IBMSchwartzSourceZeroTails
