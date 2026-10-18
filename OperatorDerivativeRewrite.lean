@@ -1392,3 +1392,5 @@ import Foundation.HigherHeatPolynomialRefinement
 import Foundation.HigherHeatConditionalRefinement
 import Foundation.HigherHeatPolynomialCylinders
 import Foundation.HigherHeatPolynomialPathDomain
+import Foundation.HigherHeatDyadicConditioning
+import Foundation.HigherHeatCylindricalConditioning
