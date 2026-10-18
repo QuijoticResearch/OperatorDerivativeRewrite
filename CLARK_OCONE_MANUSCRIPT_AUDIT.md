@@ -99,3 +99,21 @@ Relevant existing topology is already available and should be reused: `SignedSch
 `BiharmonicLeftSumObstruction` connects the pre-existing signed quadratic-variation result to actual left-point sums. For every finite real increment array, endpoint²−Σ 2(previous position)·increment equals Σ increment². Under every uniform biharmonic finite signed increment law, its squared defect is integrable and has expectation **−24T**, independently of mesh size. It therefore does not tend to zero even in the asserted signed squared-error sense. The source's polynomial Ito ladder cannot be obtained from ordinary left-point sums with a vanishing quadratic defect. Since the manuscript refers adapted integration to an unspecified chronological construction rather than explicitly defining those sums, this does not rule out every renormalized/generalized integral: it makes the required alternative prescription and its convergence a central obligation.
 
 Next investigation: determine the actual bilinear couplings of the intermediate increment-power channels. Their vanishing means do not make their cumulative fluctuations vanish; the quadratic defect already proves that at order4. A multi-level signed calculus may retain these channels, consistent with the Appell-tail repair. Any connection to positive complex-noise or Gaussian realizations must preserve the distinction between actual positive energy and signed bilinear moments. No convergence or representation theorem for such a calculus is yet claimed.
+
+## Discovery1013: a genuine finite signed channel energy and the orthogonality audit
+
+Let p=2m, κ=p!(-1)^(m+1), and let the actual signed finite increment law have positive cell durations t_i. Set Q_r=Σ_i (ΔX_i)^r, with 1≤r<p. `HigherHeatJetChannels` proves actual integrability, E[Q_r]=0, and
+
+E[Q_r Q_s] = 1_(r+s=p) κ Σ_i t_i.
+
+It also proves the cellwise version, with an additional indicator i=j. These are exact finite-law statements at every grid, not asymptotic covariance guesses. In particular, vanishing means do not license discarding intermediate powers.
+
+For real coefficient vectors u of dimension p−1, define K_u=Σ_(r=1)^(p−1) u_r Q_r. `HigherHeatJetPairing` proves integrability and centeredness, actual probe recovery E[K_u Q_(p−r)]=κT u_r, and the exact bilinear identity
+
+E[K_u K_v] = κT Σ_(r=1)^(p−1) v_r u_(p−r).
+
+If T≠0, the probes separate coefficients. A kernel equal to zero almost everywhere for the **actual signed law's variation measure** has u=0. Thus there is a nondegenerate finite signed energy and an actual uniqueness theorem on this selected channel space. The pairing is bilinear and generally indefinite; it is not a positive Hermitian Ito isometry. Coefficients here are deterministic constants across the grid. This does not represent every finite-grid observable, construct adapted coefficients, or prove a common limiting stochastic integral. Those extensions remain central work.
+
+`PureOrderAppellOrthogonality` proves a nonzero off-diagonal pairing at every p>2, a≠0. For p=2,a=1/2, it identifies the constructed Appell family with the existing actual Gaussian Hermite polynomials, identifies the entire polynomial expectation functional with genuine Gaussian integration, and proves the exact diagonal Gram formula. A native normalized orthogonality-if-and-only-if-p=2 theorem follows. This verifies the useful Appell orthogonality claim while leaving the manuscript's false Gaussian depth-two reconstruction claim refuted.
+
+For completeness, the general scaling follows rigorously coefficientwise from the formal two-variable generating series E[exp(λX−aλ^p) exp(μX−aμ^p)]=exp(a((λ+μ)^p−λ^p−μ^p)). At p=2 this is exp(2aλμ), giving Gram_nm=1_(n=m)n!(2a)^n. No infinite stochastic convergence is used in this coefficientwise argument; the native actual-Gaussian bridge above verifies the normalized case.

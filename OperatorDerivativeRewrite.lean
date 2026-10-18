@@ -1376,3 +1376,6 @@ import Foundation.TemperedGeneratorTranspose
 import Foundation.ChronologicalProjectionDomain
 import Foundation.SignedSchwartzJetDomain
 import Foundation.BiharmonicLeftSumObstruction
+import Foundation.HigherHeatJetChannels
+import Foundation.HigherHeatJetPairing
+import Foundation.PureOrderAppellOrthogonality
