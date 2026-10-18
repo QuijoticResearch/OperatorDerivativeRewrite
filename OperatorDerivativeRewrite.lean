@@ -1529,3 +1529,6 @@ import Foundation.IBMSchwartzSecondProjection
 import Foundation.IBMGaussianMeanDerivative
 import Foundation.IBMSchwartzSpatialPrimitive
 import Foundation.IBMSchwartzPrimitiveLimit
+import Foundation.IBMSchwartzHeatBounds
+import Foundation.IBMSchwartzHeatBoundary
+import Foundation.IBMSchwartzHeatHalfLine
