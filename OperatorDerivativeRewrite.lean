@@ -1443,3 +1443,7 @@ import Foundation.MultivariateConditionalStein
 import Foundation.HigherHeatPositionSteinDerivative
 import Foundation.HigherHeatPositionPairedBound
 import Foundation.HigherHeatEarlyDualContinuity
+import Foundation.HigherHeatPositionIncrementBound
+import Foundation.HigherHeatDyadicPositionRefinement
+import Foundation.HigherHeatDyadicDualLipschitz
+import Foundation.HigherHeatDyadicDualNodes
