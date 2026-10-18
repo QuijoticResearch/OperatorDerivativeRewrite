@@ -1504,3 +1504,7 @@ import Foundation.IBMSchwartzBoundaryChaosReuse
 import Foundation.IBMClockHeatOccupation
 import Foundation.IBMQuarticHeatBoundary
 import Foundation.IBMClockOriginMean
+import Foundation.IBMHeatTailDecay
+import Foundation.IBMQuarticHeatEndpoint
+import Foundation.IBMQuarticHeatHalfLine
+import Foundation.IBMQuarticHeatDomain

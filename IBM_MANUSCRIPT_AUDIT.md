@@ -406,3 +406,29 @@ E[L_T^0]P_n'(0)+(1/2)integral_0^R W_T Pi_2 g_n''
 Combined with1060's identified actual origin source projection, this fixes the stochastic coefficient and signs in the proposed cancellation. It remains a finite-radius spatial identity, not yet the entire clock-averaged stochastic correction.
 
 Next central obligations: prove E_n(T,R)->0 in source L2 from actual polynomial growth and Gaussian density/tail decay; justify the half-line source-Bochner domains, reflected terminal density formula and actual time/source/clock Fubini connection to the curvature integral. Then1060's terminal convergence can be applied to an identified correction. General Schwartz six-channel projection, remaining higher-source singular limits, F1 common dual topology/uniform sector tails and F3 remain open. No physical white-noise-coordinate H^-1 theorem or full random local-time occupation formula is inferred. The focused IBM campaign and indefinite Stardust goal remain active; pseudoprocess extension remains frozen. No manuscript files or dependency/toolchain settings were changed.
+
+
+## Discovery1063: vanishing actual heat endpoint and absolutely integrable quartic half-line reconstruction
+
+The previous goal turn made verified progress in3d90cbac34062bec3c16a2604f0b83c7b34d285c. Continued the exact retained endpoint from1062, rather than assuming it vanishes or pivoting to unrelated chaos machinery. Four local IBM modules reuse actual source coefficients, existing Gaussian moments and native Bochner integration.
+
+`IBMHeatTailDecay` proves integrability and the exact first standard-Gaussian tail moment integral_r^infinity x p_1(x)dx=p_1(r) for r>=0. Integral comparison gives the Mills estimate r tail(r)<=p_1(r), and hence tail(r)<=p_1(r) for r>=1. The explicit potential obeys W_T(r)<=4sqrt(T)p_1(r/sqrt(T)) for r>=0. Reusing Mathlib's Gaussian exponential asymptotics proves r^k p_1(r/a)->0 and (1+|r|)^k p_1(r/a)->0 for every natural k and a>0. These are actual function estimates, not asymptotic assumptions imported from a manuscript.
+
+`IBMQuarticHeatEndpoint` uses the existing coefficient growth and verified bilinear cross norm bound to prove actual quadratic-source growth, then ||P_n'(r)||<=C_n(1+|r|)^3. The coefficient C_n is allowed to depend on the fixed mollifier; no uniform bound is claimed. The previous common primitive bound and the new Mills bound show both W_T(R)P_n'(R) and W_T'(R)P_n(R) tend to zero in source Gaussian L2 as R->infinity. Thus the actual endpoint E_n(T,R) retained in1062 vanishes for every fixed n,T>0.
+
+`IBMQuarticHeatHalfLine` transfers the already proved actual clock-terminal Bochner domain through the constructed clock's Gaussian law and density. It proves absolute Bochner integrability on the half-line and the actual reflected terminal formula
+
+E_Y[P_n(|Y_T|)]=2 integral_0^infinity p_T(r)P_n(r)dr.
+
+The factor2 is proved by splitting the genuine vector-valued integral and reflecting its negative half-line; matching one-time laws alone is not asserted as a mixed-kernel equivalence. Combining this with endpoint decay proves that the genuine finite-radius origin-corrected heat integrals tend to E_Y[P_n(|Y_T|)]-P_n(0).
+
+`IBMQuarticHeatDomain` closes the remaining absolute spatial-domain issue. The actual second-source curvature projection has polynomial growth ||Pi_2 g_n''(r)||<=D_n(1+|r|)^3, derived from the verified covariance-geometry formula, curvature bound and actual cross-source growth. Gaussian finite moments give integrability of p_T(r)(1+|r|)^k for every natural k. Consequently W_T(r)Pi_2 g_n''(r) is genuinely absolutely Bochner integrable on the positive half-line. Radius-limit uniqueness now proves the actual half-line source-L2 identity
+
+E[L_T^0]P_n'(0)+(1/2)integral_0^infinity W_T(r)Pi_2 g_n''(r)dr
+=E_Y[P_n(|Y_T|)]-P_n(0).
+
+All terms are actual integrals or verified source objects; no endpoint assumption or unspecified test domain remains in this spatial identity. Direct reuse of1060's terminalDifference_tendsto gives strong source-L2 convergence of this origin-corrected half-line expression to E_Y[P_0(|Y_T|)] as the concrete mollifier sequence shrinks. This uses the exact identity at each n and does not exchange radius and mollifier limits or assert uniform-in-n endpoint estimates.
+
+The next central IBM obligation is now specifically the stochastic integration bridge: identify the spatial heat-weighted Bochner correction with the actual time-integrated projected curvature averaged over the clock, with the time/clock/source measurability and Fubini domains proved. The half-line identity alone does not establish that bridge. Useful existing ingredients are BrownianClockWeightedEnergy.sigma_measurable, actual clock laws, Gaussian finite-moment bounds, the newly proved projected cubic growth and the existing finite-horizon integration machinery. After that identification the verified terminal convergence can yield an actual clock-averaged second-source correction limit.
+
+This remains the quartic test f(z)=z^4/24, which is not Schwartz. General Schwartz six-channel identification, other higher-source limits, F1 cross-sector common dual topology/uniform tails and F3 remain open. No physical white-noise-coordinate H^-1 closure or full spatial local-time occupation-density field has been inferred. The focused IBM campaign and indefinite Stardust goal remain active; pseudoprocess extension remains frozen. All source and dependency settings are preserved.
