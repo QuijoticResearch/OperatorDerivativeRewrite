@@ -494,3 +494,36 @@ Pi_clock0(Pi_source2 C_n)=sourceLift(E_Y[P_n(|Y_T|)]-P_n(0))
 strongly in joint L2 for every fixed positive horizon along the concrete shrinking-mollifier sequence. The source projection here is the transported existing Gaussian number-sector operator; the clock-zero operation is the native conditional expectation onto the source sigma algebra. The separate origin term remains in the whole correction. No infinite sector-sum/limit exchange or uniform-in-n joint bound has been used.
 
 Precise remaining obligations: the class-level joint realization and native block identification gap in1064 is now closed for this quartic model. A direct global scalar representative equating this inverse-curry joint class with the literal polynomial time integral of the chosen simultaneous scenery derivative representatives has not yet been proved; the established sections identify it with the native source-L2-valued Bochner time correction. If a pathwise scalar identity is needed, reuse BochnerL2RepresentativeFubini and the actual derivative-field joint measurability, rather than redefining the joint class. The quartic test f(z)=z^4/24 is not Schwartz, has no Q6 channel, and does not prove the general six-channel Schwartz projection or its singular limits. Other source sectors, F1 common dual topology and uniform summable tails, the physical white-noise-coordinate H^-1 closure and F3 remain open. The unreflected occupation manuscript's mixed kernels are not transferred across the clock convention. Next prioritize a necessary general-Schwartz source identity or the explicit scalar recovery if it supports the Itô–Tanaka claim; do not restart the already verified endpoint and mean-Fubini work. The focused IBM campaign and indefinite Stardust goal remain active; pseudoprocess extension stays frozen. Manuscripts and dependency/toolchain settings are preserved.
+
+
+## Discovery1066: literal scalar quartic recovery and nonlinear single-observation source projection
+
+The previous goal turn made verified progress in079c4ab6d432f9619e85c5215fef9fadfca076ba. Closed the explicit scalar representative gap in1065, then advanced a general-Schwartz supporting identity without opening an unrelated chaos campaign.
+
+`IBMQuarticScalarRecovery` defines the literal polynomial curvature from the actual simultaneously constructed scenery fields U_n,V_n,W_n: (1/2)U_n^2 V_n^2+(1/6)U_n^3 W_n. Its spatial/source and time/source measurability follow from the existing jointly measurable fields and actual continuous clock paths. For every constructed clock path and finite horizon, source-class continuity gives a genuine source-L2-valued time integral. Direct reuse of BochnerL2RepresentativeFubini proves the actual scalar time/source product domain and identifies the native Bochner integral almost everywhere in the source with the literal scalar time integral. That scalar integral belongs to source L2 for every fixed clock path. A separate global time/clock/source measurability proof supplies a measurable scalar time integral on the full two-source space.
+
+`IBMQuarticLiteralJoint` uses the actual continuous Tanaka mass path, rather than an unspecified mass representative, and the literal origin coefficient (1/6)U_n(0)^3 V_n(0). The resulting scalar whole correction is
+
+C_n(T)=L_T^0(Y)(1/6)U_n(0)^3 V_n(0)
+ +(1/2)integral_0^T [(1/2)U_n(|Y_s|)^2 V_n(|Y_s|)^2
+                    +(1/6)U_n(|Y_s|)^3 W_n(|Y_s|)]ds.
+
+It proves joint measurability and almost-every-clock equality of the source-L2 representatives with the native wholeCorrection. Combining those sections with1065's inverse-curry sections gives actual product-almost-everywhere equality of this literal scalar expression with the native jointClass. In particular the literal correction has genuine joint L2, and its toLp class equals the previous native joint class. The native source-two/clock-zero block limit is now a theorem of this literal scalar stochastic correction, not merely an unspecified inverse-curry representative. Product coordinates remain (clock,source) in these modules. This identifies the correction term; it does not by itself prove an entire mollified stochastic Itô–Tanaka identity including its martingale term.
+
+`IBMScalarSecondProjection` then reuses verified single-observation Wick density and native number-sector projections. It removes the unit-variance restriction from the existing terminal projection theorem: for u!=0 and f measurable in the Gaussian observation W_u, the nth source projection is
+
+Pi_n f = [<:W_u^n:,f>/(n! ||u||^(2n))] :W_u^n:.
+
+The proof uses the existing closure of the one-observation Wick span, not an assumed Hermite expansion or a new chaos definition. Specializing to the actual bounded composition class and the existing second Stein identity proves
+
+Pi_2[phi(W_u)]=(1/2)E[phi''(W_u)]:W_u^2:
+
+for every bounded C2 phi with bounded first and second derivatives. The degenerate observation u=0 is separately verified; no division by zero or normalization hypothesis survives in this theorem. This is an actual Gaussian-L2 source projection of a nonlinear observable, not a polynomial-only test or scalar expectation identity.
+
+Direct reuse of the verified shifted Schwartz jets gives, for every g in Schwartz, shift a, natural k and coefficient u,
+
+Pi_2[g^(k)(a+W_u)]=(1/2)E[g^(k+2)(a+W_u)]:W_u^2:,
+
+with the native jet domains and derivative bounds discharged. This supplies a genuine nonpolynomial coefficient projection needed in the general correction channels.
+
+Remaining focused obligations: the full mixed product projection for g''(a+U)V^2+g'(a+U)W still needs its exact contractions and higher-order Stein identities. In particular a second-order single-observation formula does not establish the source-four coefficient of g'', hence does not prove or eliminate the Q6 channel. The quartic model cannot detect that channel. General-Schwartz higher-source singular limits, other source sectors, F1 common dual topology and uniform summable tails, physical white-noise-coordinate H^-1 closure and F3 remain open. The quartic model's literal/native realization, retained origin, half-line endpoints and clock/time mean bridge should now be reused as completed results rather than re-proved. Next investigate the necessary third/fourth single-observation pairings or a direct mixed Stein reconstruction using the existing conditional Gaussian and projection machinery. The focused IBM campaign and indefinite Stardust goal remain active; pseudoprocess extension stays frozen. Manuscripts and dependency/toolchain settings remain unchanged.

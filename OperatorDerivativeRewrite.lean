@@ -1516,3 +1516,6 @@ import Foundation.IBMQuarticSourceGrowth
 import Foundation.IBMClockEighthMoment
 import Foundation.IBMQuarticBochnerDomain
 import Foundation.IBMQuarticJointRealization
+import Foundation.IBMQuarticScalarRecovery
+import Foundation.IBMQuarticLiteralJoint
+import Foundation.IBMScalarSecondProjection
