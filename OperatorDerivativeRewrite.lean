@@ -1372,3 +1372,7 @@ import Foundation.PureOrderSteinUniqueness
 import Foundation.PureOrderAppellPrimitive
 import Foundation.HigherHeatAppellDuals
 import Foundation.PureOrderAppellTransition
+import Foundation.TemperedGeneratorTranspose
+import Foundation.ChronologicalProjectionDomain
+import Foundation.SignedSchwartzJetDomain
+import Foundation.BiharmonicLeftSumObstruction
