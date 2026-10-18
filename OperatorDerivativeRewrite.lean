@@ -1354,3 +1354,6 @@ import Foundation.MarkedRealizationPast
 import Foundation.MarkedRealizationIndependence
 import Foundation.MarkedRealizationMartingale
 import Foundation.HigherEvenRenewalMartingale
+import Foundation.MarkedRealizationMarkov
+import Foundation.MarkedRealizationExponentialMartingale
+import Foundation.HigherEvenExponentialMartingale
