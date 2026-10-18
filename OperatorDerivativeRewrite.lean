@@ -1532,3 +1532,8 @@ import Foundation.IBMSchwartzPrimitiveLimit
 import Foundation.IBMSchwartzHeatBounds
 import Foundation.IBMSchwartzHeatBoundary
 import Foundation.IBMSchwartzHeatHalfLine
+import Foundation.IBMSchwartzHeatFubini
+import Foundation.IBMSchwartzClockMean
+import Foundation.IBMSchwartzSourceContinuity
+import Foundation.IBMSchwartzTimeProjection
+import Foundation.IBMSchwartzScalarRecovery
