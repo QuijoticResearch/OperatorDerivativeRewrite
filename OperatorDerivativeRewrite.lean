@@ -1512,3 +1512,7 @@ import Foundation.IBMQuarticHeatFubini
 import Foundation.IBMReflectedClockMean
 import Foundation.IBMQuarticClockMean
 import Foundation.IBMQuarticTimeProjection
+import Foundation.IBMQuarticSourceGrowth
+import Foundation.IBMClockEighthMoment
+import Foundation.IBMQuarticBochnerDomain
+import Foundation.IBMQuarticJointRealization
