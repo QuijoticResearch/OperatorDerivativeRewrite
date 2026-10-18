@@ -1390,3 +1390,5 @@ import Foundation.PureOrderPolynomialConditioning
 import Foundation.PureOrderPolynomialInnovations
 import Foundation.HigherHeatPolynomialRefinement
 import Foundation.HigherHeatConditionalRefinement
+import Foundation.HigherHeatPolynomialCylinders
+import Foundation.HigherHeatPolynomialPathDomain
