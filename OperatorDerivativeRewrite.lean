@@ -1357,3 +1357,8 @@ import Foundation.HigherEvenRenewalMartingale
 import Foundation.MarkedRealizationMarkov
 import Foundation.MarkedRealizationExponentialMartingale
 import Foundation.HigherEvenExponentialMartingale
+import Foundation.MarkedPrefixFiltration
+import Foundation.CyclicCenteredKernel
+import Foundation.CyclicPredictableIntegral
+import Foundation.CyclicPredictableEnergy
+import Foundation.CyclicClockChannelObstruction
