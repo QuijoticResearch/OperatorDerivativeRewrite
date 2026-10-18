@@ -1382,3 +1382,5 @@ import Foundation.PureOrderAppellOrthogonality
 import Foundation.HigherHeatPredictableL1
 import Foundation.HigherHeatPredictableJets
 import Foundation.SignedSchwartzFundamentalSymmetry
+import Foundation.SignedSchwartzMeanProjection
+import Foundation.SignedSchwartzKreinAdjoint
