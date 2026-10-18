@@ -1477,3 +1477,5 @@ import Foundation.IBMBoundaryClockLimit
 import Foundation.IBMBoundaryChaosReuse
 import Foundation.IBMBoundaryAveragedCoefficient
 import Foundation.IBMBoundaryWeightedClock
+import Foundation.IBMBoundaryLayerRemainder
+import Foundation.IBMBoundaryResidualLimit
