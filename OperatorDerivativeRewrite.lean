@@ -1403,3 +1403,6 @@ import Foundation.SignedSchwartzPolynomialPairing
 import Foundation.HigherHeatCompletedJetObstruction
 import Foundation.PureOrderTaylorInnovations
 import Foundation.PureOrderPolynomialTransport
+import Foundation.FactorialAnalyticDomain
+import Foundation.FactorialAnalyticHeat
+import Foundation.FactorialAnalyticFunctions
