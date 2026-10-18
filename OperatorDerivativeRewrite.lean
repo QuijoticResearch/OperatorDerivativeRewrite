@@ -1498,3 +1498,6 @@ import Foundation.IBMQuarticPrimitiveLimit
 import Foundation.IBMQuarticSpatialWeakLimit
 import Foundation.IBMQuarticClockTerminal
 import Foundation.IBMQuarticOriginProjection
+import Foundation.IBMClockGaussianTail
+import Foundation.IBMClockHeatPotential
+import Foundation.IBMSchwartzBoundaryChaosReuse

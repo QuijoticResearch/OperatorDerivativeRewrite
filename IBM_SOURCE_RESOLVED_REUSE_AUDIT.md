@@ -65,3 +65,45 @@ This supplies actual fixed-clock-sector convergence for the unweighted F2 bounda
 ## Immediate campaign consequence
 
 Keep the next main proof on F2: derive and bound the actual averaged Schwartz coefficients using the now verified boundary bracket and unweighted clock mass. Use existing bounded projection commutation whenever a fixed clock sector is needed. Reserve the explicit second-clock origin kernel as a concrete normalization test. Defer general joint sector infrastructure and cross-sector summability until an actual estimate requires them. Review the missing section files or manuscript-specific Lean files if their path becomes available; do not claim their proofs were audited from the wrapper.
+
+## Updated comparison at discovery1061
+
+2026-10-18. The preceding1049 review is retained as historical evidence; its F2 gaps have since been narrowed by1053–1060. The source wrapper at `C:/Operator/ibm/main.tex` still has hash897F68ED4BBF3445928FE0AEA0833442E73C475E230D6DBDD61E0D56908C0D45 and its nine body sections remain absent. The available archived companions retain the hashes above. A complete manuscript-specific Lean formalization is still not located; the comparison below concerns the actual repository theorems, not a purported audit of unavailable section proofs.
+
+### Results that can now be reused directly
+
+| Obligation | Verified theorem reuse | Exact scope |
+|---|---|---|
+| F2 actual weighted random boundary layer | `IBMOriginalBoundaryResidual.originalResidual_literal`, `originalPathIntegral_tendsto`, `half_originalPathIntegral_tendsto` | The actual scenery-averaged Schwartz curvature residual, after subtracting one quarter of the fourth-derivative expectation, converges in clock L2 to f''(a)L_T^0. The curvature prefactor changes this to f''(a)L_T^0/2. Fixed shift/horizon and the concrete shrinking normalized bump sequence. This resolves the original coefficient-identification gap in1049 for this branch. |
+| Every fixed clock sector of that weighted residual | New `IBMSchwartzBoundaryChaosReuse.residual_projection_tendsto`, `half_residual_projection_tendsto`, `residual_projection_error` | Directly compose the existing contraction with the actual1053 convergence. For every fixed k, Pi_k R_n converges to f''(a)Pi_k L_T^0, with error bounded by the unprojected L2 error. No physical local-time chaos kernel identification is needed. This strengthens1049's unweighted boundary reuse. |
+| Actual zero-scenery-source block of the Schwartz curvature | `IBMGeneralSchwartzFubini.sourceMean_eq_ae`; `IBMSchwartzJointL2.clockProjection_eq`; `IBMClockConditionalCorrection.conditional_tendsto` | Genuine joint L2 input, actual conditional expectation onto the clock sigma algebra, and strong joint L2 convergence of this block are available. These identify the entire clock-measurable block of the curvature component, rather than just its scalar mean. The separate origin term is not included in these curvature definitions. |
+| Concrete higher scenery-source test | `IBMQuarticSecondChaos.quarticCorrection_projection_two`, `quartic_second_energy_test`; `IBMQuarticSecondGeometry`; `IBMQuarticSecondPrimitive.primitive_second_deriv` | Exact second-source projection of the actual quartic correction, with primitive P_n(r)=c_n(r):U_n(r)^2:/4 and P_n''=Pi_2 g_n''. A normalized collinear test gives second-sector energy32 despite zero first projection. Quartic f(z)=z^4/24 is not Schwartz and cannot establish the general six-channel Schwartz formula. |
+| Higher-source convergence already obtained | `IBMQuarticSpatialWeakLimit.projected_test_tendsto`; `IBMQuarticClockTerminal.terminalDifference_tendsto` | Strong source-L2 convergence against deterministic compact spatial tests, and of the actual clock terminal candidate E_Y P_n(|Y_T|)-P_n(0). Neither theorem identifies the clock-integrated correction with that candidate. Spatial evaluation r is distinct from the physical white-noise coordinate; this is not a noise-coordinate H^-1 closure theorem. |
+| The missing origin channel | `IBMQuarticOriginProjection.origin_projection`, `projectedOriginJoint_coeFn`, `projectedOrigin_clock_mean` | Actual quartic origin source factor projects to P_n'(0). Its independent product with the actual Tanaka mass and its clock mean are constructed. Omitting this term invalidates the proposed boundary cancellation. |
+
+### Explicit kernel and normalization tests
+
+The existing independent scripts1049 and1057 were rerun at this checkpoint; their source hash assertions passed. These are diagnostics except for the explicitly identified Lean covariance/quartic theorems.
+
+1. The verified covariance test remains decisive: unreflected scenery at1,-1 has covariance0, reflected scenery has covariance1. The companion first-clock kernel is odd in the spatial argument; its reflected sum vanishes in all three diagnostic tests, including the unreflected value0.27181024396655595 at x=1,s=1/4,T=1. Do not transfer a nonzero unreflected (1,1) kernel into the reflected campaign.
+2. At x=0 the proposed second-clock kernel K_T=psi_T-psi_max has squared kernel norm T/(6pi), giving I2 variance T/(3pi). The exact rational transformed integral is1/6. This tests normalization and integrability of a candidate; identifying it with Pi_2 of the actual Tanaka mass remains open. For reflected positive-space occupation the candidate density is the sum at r and -r, so its even second-clock kernel doubles and its kernel variance quadruples; the standalone origin Tanaka mass in Ito–Tanaka retains its original normalization. A singleton-value change does not change a spatial Lebesgue integral, but cannot justify discarding the boundary trace.
+3. The general second-source correction candidate, with c=||u||^2, q=||v||^2, d=<u,v>, e=<u,w>, Q_j=E f^(j)(a+U), is
+
+   Pi_2 F = ((q+e)Q_4+d^2 Q_6):U^2:/2 + 2d Q_4:UV: + Q_2(:V^2:+:UW:).
+
+   This is the six-channel atlas formula after contractions, not the occupation manuscript's arbitrary-test mixed kernel. The six-direction Gaussian quadrature diagnostic at order96 has maximum pairing error below4.5e-15 in the correlated, zero-observation and collinear cases. Dropping the Q_6 contribution leaves errors0.5972676434266413 and4.330503703590493 in the two nondegenerate cases. These numbers support retention of that channel; they are not a Lean proof or a rigorous numerical counterexample. The exact quartic test has Q_6=0 and therefore cannot detect its omission.
+
+### Precise missing connections and the next IBM proof
+
+The occupation identity for an actual bounded observable is useful organizationally, but a full measurable spatial clock local-time field with its density identity and spatial Bochner-L2 bound is still missing. Sourcewise factorization alone does not identify correction kernels containing singular scenery derivatives. A product of independent source L2 factors is legitimate; integrating that product over space additionally needs an integrable product of their L2 norms. This is a real domain obligation, not a formal projection rule.
+
+For ((m,n)), the existing one-source projections, complete expansions, product currying and conditional clock block should be reused. Their existence does not identify the manuscript's physical white-noise kernels or prove a general two-factor projection theorem with matched factorial normalizations. Establish such an identification only if an actual F1 estimate needs it. Fixed-sector convergence above also does not exchange an infinite sector sum with the shrinking-mollifier limit; F1 still needs a specified common dual topology, genuine remaining-sector limits and uniform summable tails.
+
+The immediate higher-source (2,0) test stays on the existing half-line heat route. New `IBMClockGaussianTail.clock_hasLaw` and `clock_density_integral` identify actual constructed-clock expectations with the Gaussian density. `IBMClockHeatPotential` constructs W_T(r)=4(sqrt(T)p_1(r/sqrt(T))-r tail(r/sqrt(T))) and proves, for T>0, W_r'=-4tail, W_r''=4p_T, W_T'=2p_T, W_T(0)=4sqrt(T)p_1(0), W_r'(0)=-2. This uses an actual Gaussian tail integral with tail(0)=1/2, not an assumed occupation mean.
+
+Still required: identify W_T(r)=2 integral_0^T p_s(r)ds on r>=0, including the time-zero limit and near-zero time integrability; establish the relevant clock/time/source Fubini domains and polynomial endpoint decay; then justify the two half-line integrations by parts giving
+
+E[L_T^0]P_n'(0) + (1/2) integral_0^infinity W_T(r)P_n''(r)dr
+= E[P_n(|Y_T|)]-P_n(0).
+
+The derivatives and terminal convergence do not yet prove this identity. Resolve this connection before claiming a (2,0) correction limit. General Schwartz six-channel identification, other higher-source limits, the full F1 cross-sector closure and F3 remain open. This review introduces no separate chaos campaign and does not change the IBM Ito–Tanaka priority.
