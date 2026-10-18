@@ -1439,3 +1439,7 @@ import Foundation.PureOrderConditionalPairing
 import Foundation.HigherHeatCausalPairing
 import Foundation.HigherHeatCompletedCausalPairing
 import Foundation.HigherHeatPairedDualCausality
+import Foundation.MultivariateConditionalStein
+import Foundation.HigherHeatPositionSteinDerivative
+import Foundation.HigherHeatPositionPairedBound
+import Foundation.HigherHeatEarlyDualContinuity
