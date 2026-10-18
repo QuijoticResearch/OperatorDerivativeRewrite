@@ -1526,3 +1526,6 @@ import Foundation.IBMMixedFourthStein
 import Foundation.IBMMixedCubicStein
 import Foundation.IBMSecondChaosTesting
 import Foundation.IBMSchwartzSecondProjection
+import Foundation.IBMGaussianMeanDerivative
+import Foundation.IBMSchwartzSpatialPrimitive
+import Foundation.IBMSchwartzPrimitiveLimit

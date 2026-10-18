@@ -607,3 +607,34 @@ At j=1 it supplies the actual source-two origin term needed in the whole correct
 Selectively reread `ResearchSources/ibm/BidegreeAtlas.tex` lines848–923 (channel enumeration and start of Theorem D). Its immutable SHA256 remains409FFE56EDB47DF23DAEEA788CEEC24E1C7ED9FF657BDCB6914708F8FA535D4E. The native formula agrees with the six finite channel contributions and their factorial normalizations1,1,4,12,1,3: in particular12 times Q6/24 gives the verified half coefficient. This is native Gaussian source agreement; the manuscript's physical white-noise tensor kernels still require an exact isometry/specialization if that representation is claimed. The manuscript's infinite Stroock-series substitution is not used. For the finite selector, the exact equation 2j=p+q-2 together with j<=q gives p<=q+2 directly; no convergence theorem follows merely from enumerating surviving indices. Theorem D's full source/clock block, time integration and singular limit are not certified by this pointwise-in-radius projection alone.
 
 Next substantive route: construct and differentiate the actual general-Schwartz source-two spatial primitive P_n(r)=Q2(n,r)/2 times Wick2(u_n(r)), reusing existing Gaussian differentiation, coefficient geometry and Wick derivative machinery. The expected derivative identities Q2'=d Q4 and Q2''=(q+e)Q4+d^2 Q6 would connect the verified projection with P_n''. They remain proof obligations, not imported assumptions. This could extend the already verified quartic heat/occupation reconstruction to nonlinear Schwartz data. All fixed-mollifier domain, spatial endpoint, random-time Fubini and singular-limit hypotheses must be discharged. General-Schwartz singular reconstruction, other sectors, F1 common topology/uniform summable tails, physical noise-coordinate H^-1 closure, and F3 remain open. No IBM campaign freeze, A(4)/A(2) transition, RH implication or final multichannel completion is asserted. Manuscripts and pinned dependencies remain unchanged.
+
+
+## Discovery1070: genuine nonlinear Schwartz spatial primitive and strong clock-averaged limits
+
+The previous goal turn made verified progress inebb201b52e0efd0356fabb2e7d0c9e3e547bb977. IBM remains immediate, with successor gates and the October31 hard stop unchanged. This checkpoint follows the actual general-Schwartz primitive route recorded at1069, without imposing a nonzero Gaussian variance or introducing a new source realization.
+
+`IBMGaussianMeanDerivative` proves a genuine global first-order Taylor remainder bound for bounded-second-derivative C2 real functions using Mathlib's actual Taylor theorem. Applied to the existing shifted Schwartz jets, actual first-chaos L2 representatives and already verified mixed Stein identity, it gives for every source directions u,v and every jet index j:
+
+|Q_j(v)-Q_j(u)-<u,v-u>Q_(j+2)(u)| <= (C_(j+2)/2)||v-u||^2,
+
+where Q_j(u)=E[g^(j)(a+W_u)] on the existing source probability space and C_j is the existing Schwartz seminorm bound for the jth jet. All subtracted terms and the remainder are genuinely integrable. The actual Gaussian second moment equals ||v-u||^2 by the native first-chaos isometry. The estimate implies Frechet differentiability on the entire source Hilbert space, with derivative Q_(j+2)(u) times innerSL(u). In particular u=0 is included. No pathwise continuous white-noise functional, common pointwise bound over all Hilbert directions, division by the variance or differentiation of a square root at zero is assumed. For every genuinely differentiable Hilbert source curve, this proves the scalar chain rule Q_j'= <u,u'>Q_(j+2).
+
+`IBMSchwartzSpatialPrimitive` constructs the actual native primitive
+
+P(u)=Q2(u)/2 :W_u^2:,
+
+and proves it equals the existing source-two projection of the actual bounded observable g(a+W_u). For a source curve u with u'=v and v'=w at the point in question, the actual Gaussian-L2 derivative is
+
+P'= <u,v>Q4(u)/2 :W_u^2: + Q2(u)cross(u,v).
+
+A second actual derivative, using the existing bounded Wick cross calculus, equals exactly1069's full secondCandidate: the Q6 term, covariance term, squared derivative term and all cross terms are present. Specializing the existing proved coefficient derivatives gives for every fixed mollifier n and every real spatial r:
+
+P_n''(r)=Pi_2[mollifiedClass(g,a,n,r)].
+
+The class on the right has already been identified with the constructed scenery-field curvature. The actual slope also equals the source-two projection of g'(a+U_n(r))V_n(r), including r=0, so the origin term is independently identified. This is a literal native Gaussian-L2 second derivative identity for nonlinear Schwartz data; it is not only a formal kernel derivative or a distributional assertion in the physical noise coordinate.
+
+`IBMSchwartzPrimitiveLimit` proves continuity in the source direction and in spatial r. Projection contraction gives the global bound ||P(u)||<=C0, uniform over all source directions, n and r. The actual mollifier coefficient convergence therefore gives strong source-L2 convergence P_n(r) -> P_infinity(r) at every real r. The limiting primitive is continuous and vanishes at r=0, using the actual zero source-scenery class. Composing with the existing Brownian clock |Y_T| gives actual Bochner-integrable source-L2 terminal fields. The same global bound proves by dominated convergence that their clock means converge strongly in source L2, for every horizon T>=0, and that the terminal-minus-origin primitives have the same limit. The proof supplies the limiting object as the actual clock integral of the limiting projected Schwartz observable, rather than defining it through a desired correction limit.
+
+No new manuscript theorem was adopted or source content reread: this was a direct extension and reuse of verified source-law, Stein, coefficient geometry, quadratic Wick calculus, projection and Brownian-clock foundations. The three new modules use default resource settings. Existing source hashes and pinned dependencies are preserved.
+
+Remaining central work: identify the whole projected Schwartz correction, with its actual origin and time integral, with this terminal-minus-origin primitive via justified heat/occupation Fubini and integration by parts. The finite-radius and infinite-endpoint estimates must be proved for the new nonlinear primitive, not inherited by analogy from quartic data. The global primitive bound is useful, while its slope and actual curvature need appropriate fixed-mollifier estimates. Native joint source/clock block identification, general singular reconstruction, other source sectors, F1 common topology/uniform summable tails, physical white-noise-coordinate H^-1 closure and F3 remain open. Strong convergence of the primitive clock means is not by itself convergence of the original whole correction. No campaign transition or final full multichannel reconstruction is declared.
