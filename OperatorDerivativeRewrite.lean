@@ -1424,3 +1424,6 @@ import Foundation.FiniteCoordinateConditioning
 import Foundation.HigherHeatPositionTransport
 import Foundation.HigherHeatFiniteCausalBound
 import Foundation.HigherHeatCompletedCausalProjection
+import Foundation.HigherHeatEmptyPastBound
+import Foundation.HigherHeatCompletedEmptyPast
+import Foundation.HigherHeatCompletedSignedMean
