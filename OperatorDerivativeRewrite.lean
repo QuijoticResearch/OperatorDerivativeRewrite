@@ -1427,3 +1427,6 @@ import Foundation.HigherHeatCompletedCausalProjection
 import Foundation.HigherHeatEmptyPastBound
 import Foundation.HigherHeatCompletedEmptyPast
 import Foundation.HigherHeatCompletedSignedMean
+import Foundation.HigherHeatConditionalLinearObservables
+import Foundation.HigherHeatTerminalPositions
+import Foundation.HigherHeatCausalTimeObstruction
