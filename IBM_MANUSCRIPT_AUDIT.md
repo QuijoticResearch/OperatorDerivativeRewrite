@@ -373,3 +373,36 @@ At the existing heat-kernel proof break, completed `IBMClockGaussianTail`: actua
 `IBMClockHeatPotential` defines p_T(r)=p_1(r/sqrt(T))/sqrt(T) and W_T(r)=4(sqrt(T)p_1(r/sqrt(T))-r tail(r/sqrt(T))). For T>0 it verifies p_T is the actual Gaussian density and rewrites actual clock expectations using it. Native derivative proofs establish W_r'=-4tail, W_r''=4p_T and W_T'=2p_T, plus W_T(0)=4sqrt(T)p_1(0) and W_r'(0)=-2. These are analytic identities of actual functions. They do not assume or yet prove W_T(r)=2 integral_0^T p_s(r)ds.
 
 Next main IBM obligation remains the clock-averaged quartic origin-plus-one-half-curvature identity. Prove the potential's time-zero limit and time-integral domains, then the actual clock/time/source interchanges and half-line integration-by-parts endpoint terms. The existing terminal convergence is a candidate limit until this equality is established. General Schwartz higher-source six-channel identification, remaining-sector convergence, F1 common dual topology/uniform tails and F3 remain open. Spatial evaluation derivatives are not noise-coordinate H^-1 control. Full spatial local-time occupation-density factorization is still missing and is unnecessary for the direct heat route; do not build it merely to reproduce the manuscript's organization. The focused IBM campaign and indefinite Stardust goal remain active; pseudoprocess extension stays frozen.
+
+
+## Discovery1062: genuine heat time integral and actual origin normalization in the quartic boundary identity
+
+The previous turn made verified progress in4b862a44da0116a08bb2451b349894f785a46038. Continued the existing higher-source IBM proof after the bounded source-resolved review. This checkpoint discharges1061's initial-time/time-integrability obligation and identifies the stochastic origin coefficient; it does not assume the infinity boundary or a clock occupation factorization.
+
+`IBMClockHeatOccupation` proves a global standard-density bound by p_1(0), measurability/nonnegativity of the actual heat density, and the near-zero bound p_t(r)<=p_1(0)t^(-1/2) for t>=0. The existing integrable-rpow theorem gives genuine time integrability on every finite interval. The square-root density product tends to zero; for r>0 the scaled tail tends to zero by the actual tail's atTop limit. Handling r=0 separately proves the right-hand initial limit W_t(r)->0 for every r>=0. It is essential to use this right limit: substituting t=0 into the original explicit formula is not a valid continuous extension for positive r.
+
+The genuine FTC with endpoint limits now proves, for T>0 and r>=0,
+
+W_T(r)=2 integral_0^T p_s(r)ds.
+
+This is an actual Lebesgue time integral with its integrability verified, rather than an occupation-mean hypothesis. Nonnegativity of W follows. The result does not yet construct a spatial local-time field or establish the vector-valued source/time/clock interchange.
+
+`IBMQuarticHeatBoundary` reuses the actual source primitive P_n, its derivatives and existing vector-valued interval integration by parts twice. For every real finite radius R and T>0 it proves
+
+integral_0^R W_T(r)Pi_2 g_n''(r)dr
+= E_n(T,R)-W_T(0)P_n'(0)-2P_n(0)+4 integral_0^R p_T(r)P_n(r)dr,
+
+where E_n(T,R)=W_T(R)P_n'(R)-W_T'(R)P_n(R) is retained as an explicitly defined Gaussian-L2 vector. All finite-interval domains follow from actual continuity; no arbitrary endpoint-vanishing assumptions are inserted. Scalar multiplication/algebra then gives the exact finite-radius origin cancellation, still retaining one half of E_n(T,R).
+
+`IBMClockOriginMean` proves the standard Gaussian density's atTop decay and actual first half-line moment using its native derivative and improper FTC. The actual standard absolute mean is2p_1(0), using the reflected scalar Lebesgue integral identity. Gaussian scaling and the constructed clock law give E|Y_T|=2sqrt(T)p_1(0), including T=0. Reusing the constructed Tanaka mass's existing expectation identity yields
+
+E[L_T^0]=2sqrt(T)p_1(0)=W_T(0)/2.
+
+Consequently `actual_origin_finite_cancellation` proves with the actual Tanaka-mass mean, for T>0,
+
+E[L_T^0]P_n'(0)+(1/2)integral_0^R W_T Pi_2 g_n''
+=2 integral_0^R p_T P_n-P_n(0)+(1/2)E_n(T,R).
+
+Combined with1060's identified actual origin source projection, this fixes the stochastic coefficient and signs in the proposed cancellation. It remains a finite-radius spatial identity, not yet the entire clock-averaged stochastic correction.
+
+Next central obligations: prove E_n(T,R)->0 in source L2 from actual polynomial growth and Gaussian density/tail decay; justify the half-line source-Bochner domains, reflected terminal density formula and actual time/source/clock Fubini connection to the curvature integral. Then1060's terminal convergence can be applied to an identified correction. General Schwartz six-channel projection, remaining higher-source singular limits, F1 common dual topology/uniform sector tails and F3 remain open. No physical white-noise-coordinate H^-1 theorem or full random local-time occupation formula is inferred. The focused IBM campaign and indefinite Stardust goal remain active; pseudoprocess extension remains frozen. No manuscript files or dependency/toolchain settings were changed.

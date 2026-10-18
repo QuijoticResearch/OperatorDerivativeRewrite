@@ -1501,3 +1501,6 @@ import Foundation.IBMQuarticOriginProjection
 import Foundation.IBMClockGaussianTail
 import Foundation.IBMClockHeatPotential
 import Foundation.IBMSchwartzBoundaryChaosReuse
+import Foundation.IBMClockHeatOccupation
+import Foundation.IBMQuarticHeatBoundary
+import Foundation.IBMClockOriginMean
