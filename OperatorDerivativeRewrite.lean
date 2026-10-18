@@ -1430,3 +1430,8 @@ import Foundation.HigherHeatCompletedSignedMean
 import Foundation.HigherHeatConditionalLinearObservables
 import Foundation.HigherHeatTerminalPositions
 import Foundation.HigherHeatCausalTimeObstruction
+import Foundation.MultivariateFactorialDampedProduct
+import Foundation.HigherHeatCylinderDilation
+import Foundation.HigherHeatCommonDampedProduct
+import Foundation.HigherHeatDilationLaw
+import Foundation.HigherHeatCompletedPairing

@@ -19,7 +19,7 @@ Even at p=2, the initial choice c2=1 produces variance2t, whereas later formulas
 | `eq:pseudo-E`: all bounded continuous tests, every p | Too broad at odd order. A tempered kernel need not be a finite signed measure. Separate even finite signed laws, Schwartz distribution pairings, and independently defined algebraic polynomial moments. | Even actual laws already verified in `HigherHeatSignedLaws`, `HigherHeatProductPolynomials`; general odd analytic realization still needs its own audit. Spectral derivatives alone do not define pairing of every tempered distribution with every polynomial. |
 | Spectral moments | Valid as a separately specified pure-order polynomial functional, with the observable coefficient b. Their identification with the density PDE requires the parity correction above. | `PseudoPolynomialStein` proves recurrence, factorial moments, and characterization; `HigherHeatPolynomialRealization` identifies actual even signed kernels. |
 | `prop:Itop`, `eq:Itop-time` | An observable generator does not alone construct an adapted stochastic integral. The asserted signed L2 construction is invalid as given. With a separately constructed suitable divergence these may be target identities, not foundational inputs established by this paper. | Existing signed step integral laws and Fourier test operators are genuine but have explicit restricted domains. A complete chronological continuum domain/limit must still be supplied. |
-| `eq:adjoint`, derivative = adjoint | Adjointness requires specified paired spaces and operator domains. Nondegeneracy gives uniqueness of an adjoint value if it exists, not existence for every cylindrical functional or a reconstruction identity. | `BanachUnboundedAdjoint`, `FourierPathDirectionalAdjoint`, `HigherHeatFourierPathAdjoint` give genuine closed adjoints with explicit domains; `FourierPathRoughAdjointObstruction` excludes an actual expectation component. These cannot be replaced by an unrestricted formal adjoint. |
+| `eq:adjoint`, derivative = adjoint | Adjointness requires specified paired spaces and operator domains. Nondegeneracy gives uniqueness of an adjoint value if it exists, not existence for every cylindrical functional or a reconstruction identity. | `BanachUnboundedAdjoint`, `FourierPathDirectionalAdjoint`, `HigherHeatFourierPathAdjoint` give genuine closed adjoints with explicit domains; `FourierPathRoughAdjointObstruction` excludes an actual expectation component. Discovery1035 now constructs a bounded symmetric signed pairing on the complete common analytic cylinder domain with exact actual polynomial-product agreement. Its whole-domain nondegeneracy and chronological adjoint compatibility remain open. These cannot be replaced by an unrestricted formal adjoint. |
 | `eq:tame-Dp` and `lem:tame-welldefined`(3) | Differentiating cylinder coordinates gives the displayed formal pth derivative, but does not prove it is the adjoint of the proposed chronological integral. Time indicators are not Schwartz functions across their cutoffs. | Need an actual time-space domain and trace convention; distinguish directional derivatives from the adjoint. |
 | `eq:CO`, `thm:main`, `thm:funclass`, `cor:main` | **False** on the claimed all-polynomial domain: F=X_T has DpF=0 for every p≥2, E F=0, yet pairs nontrivially with X_T^(p−1). No linear reconstruction of DpF can repair this. | `PseudoClarkOconeObstruction.pth_derivative_reconstruction_impossible`; actual even signed-kernel version `HigherHeatPolynomialRealization.no_actual_pth_reconstruction`. Discoveries1023–1024 additionally put every polynomial in the actual minimal marginal jet completion and refute highest-jet-only reconstruction there for every map, without a linearity assumption. |
 | `rem:p2` | **False**, even on smooth polynomial Brownian functionals in D^{2,2}. W_T has zero second derivative and nonzero centered value. Membership in a smaller Sobolev domain does not remove first chaos. | The all-p obstruction already includes p=2. Any proposed repeated Brownian formula must retain lower-order terms or explicitly restrict to a subspace that annihilates them; it cannot be a universal depth-p formula. |
@@ -49,7 +49,7 @@ Even at p=2, the initial choice c2=1 produces variance2t, whereas later formulas
 ## Repair program still active
 
 1. Finish the restricted polynomial telescoping audit under explicitly defined integration rules. Include low-degree and multi-time tests; keep polynomial formal algebra separate from actual signed finite laws.
-2. The common positive analytic test topology, bounded actual scalar dyadic projections including the empty past, and normalized signed mean are now constructed (discoveries1028–1033). Strong right continuity in that coefficient norm is refuted in discovery1034. Construct appropriate paired tensor/time-integrand domains or a weaker/dual formulation and prove the stability and measurability needed for chronological integration; the existing Fourier and adjoint machinery remains available. Do not transport scalar bounds to tensor or time domains without an intertwining theorem.
+2. The common positive analytic test topology, bounded actual scalar dyadic projections including the empty past, and normalized signed mean are now constructed (discoveries1028–1033). Strong right continuity in that coefficient norm is refuted in discovery1034. Discovery1035 constructs a genuine bounded signed pairing on that complete domain, using damped multiplication and actual law dilation; positivity fails explicitly. Construct appropriate paired tensor/time-integrand domains or a weaker/dual formulation and prove the stability and measurability needed for chronological integration; the existing Fourier and adjoint machinery remains available. Do not transport scalar bounds to tensor or time domains without an intertwining theorem.
 3. Resolve chronological integration, its kernel, and reconstruction on an explicitly stated domain. If the advertised depth-p formula is abandoned, determine a useful multi-channel or all-degree replacement and identify precisely what is actually constructed.
 4. Audit all-order versus quartic-only Appell/Stein coverage, odd-order density/observable sign conventions, and continuum approximation claims.
 5. Keep all unproved assertions visible. A finite positive complex-noise representation, even with an actual Ito isometry, is a different object from the missing signed-limit Clark–Ocone theorem.
@@ -595,3 +595,48 @@ Independent finite diagnostics found no violations in9409 exact rational damped-
 The complete Clark–Ocone audit remains active. Tensor-integrand Π_p, chronological δ_p, corrected full-channel limiting reconstruction, integrand uniqueness and convergence remain central open obligations. The original D^p-only and signed-isometry prescriptions remain refuted, and the multiplication/path-measure obstructions remain in force. IBM remains gated. The read-only source retains SHA-256 `52671C5A5A77C892CEB8AFC183C7BFBA1520BF0EB3BA1A0E60AE0403063CC6C7`.
 
 Verification: target4265/full5514 jobs passed; all23 public types inspected; transitive root audit27767 safe Foundation declarations, only propext, Classical.choice and Quot.sound. All43 source files retain42 hashes. The finite pairing diagnostics are explicitly unverified mathematical leads, not Lean theorems. The complete manuscript repair remains open; IBM remains gated.
+
+
+## Discovery1035: a genuine completed signed pairing through damped multiplication and actual law scaling
+
+Five modules resolve the damped-product/pairing lead selected in discovery1034. This supplies a bounded paired test-space structure while preserving the obstruction to bounded ordinary multiplication. It does not resolve chronological integration or complete the Clark–Ocone repair.
+
+`MultivariateFactorialDampedProduct` constructs an actual continuous bilinear operator on each complete multivariate factorial coefficient space H(I). Two applications of the existing arbitrary-index l1 synthesis mechanism assemble the coefficient atoms. If the two input monomials have total degrees a,b, the output coefficient factor is binom(a+b,b)/2^(a+b), which is nonnegative and at most1 by the native binomial bound. The factorial identity identifies the output precisely with the encoding of P(x/2)Q(x/2), first for monomials and then for every pair of polynomials by native induction. The operator satisfies
+
+‖D(u,v)‖ ≤ ‖u‖‖v‖.
+
+Double density proves uniqueness among continuous bilinear maps with that polynomial action. The construction is symmetric, and injective coordinate embeddings preserve it. This is damped multiplication, not ordinary multiplication. No unital or associative Banach-algebra structure is claimed.
+
+`HigherHeatCylinderDilation` constructs the algebraic dilation S_c on the existing native direct-limit polynomial cylinder algebra. It proves commutation with block pullbacks, dyadic steps and arbitrary refinement transfers. It also proves commutation with the cumulative position-coordinate equivalence and its inverse. Thus the damping operation is consistent across different grid presentations, rather than a choice of one finite-grid representation. Arbitrary c is used only for the algebraic cylinder map; no bounded completion for expansive c is asserted.
+
+`HigherHeatCommonDampedProduct` proves the ambient damped product of embedded cylinder cores is exactly the embedding of S_(1/2)(FG), by moving both inputs to a common grid and using coordinate compatibility. The common closed analytic cylinder subspace is stable under D: first extend membership in one variable by density and closedness, then in the other. Codomain restriction and the proven norm bound yield a genuine continuous bilinear map on the complete common Domain. It has the same contractive estimate, exact cylinder-core action and symmetry.
+
+`HigherHeatDilationLaw` proves the general pure-order moment homogeneity
+
+moment_p(c^p a,n)=c^n moment_p(a,n), for p>0.
+
+The proof splits into the native off-order vanishing theorem and the factorial formula when p divides n. For the physical signed laws of order p=2m, set T'=2^p T. Every dyadic increment parameter at T' is 2^p times its parameter at T. The actual signed monomial expectation theorem and the product degree identity therefore cancel the spatial factor1/2 exactly. Polynomial induction and native direct-limit induction prove
+
+E_(2^p T)[S_(1/2) F]=E_T[F]
+
+for every polynomial cylinder F. These are the actual previously constructed signed finite-law expectations, not an independently postulated moment functional substituted for them.
+
+`HigherHeatCompletedPairing` defines on the complete common Domain
+
+B_T(u,v)=mean_(2^p T)(D(u,v)).
+
+It is an actual continuous real bilinear map, symmetric, with
+
+|B_T(u,v)| ≤ exp(2^p T) ‖u‖‖v‖,
+
+and exact actual signed-law agreement B_T(core F,core G)=E_T[FG] for all polynomial cylinders F,G. Equality is proved in the complex-valued actual expectation and then in its real component. Double density proves uniqueness among continuous bilinear maps with this core law. Pairing against core1 recovers the original normalized mean at horizon T. The explicit biharmonic example survives the completion:
+
+B_T(core(X_1²),core(X_1²))=−24T<0.
+
+Thus the completed pairing is indefinite; it is not a pseudo-L2 norm or a Hilbert inner product. No nondegeneracy theorem on the whole completion is assumed or proved. The completed vectors need not have an ordinary product in the same coefficient domain; their pairing is constructed through a separately proved bounded operation and the scaled actual mean. No signed path measure or all-nonpolynomial kernel-integral representation follows.
+
+**Consequence for the focused repair:** there is now a concrete complete paired test domain, with actual multitime signed-law agreement, despite unbounded ordinary multiplication and failure of strong right continuity of the scalar projections in coefficient norm. This makes a weak or dual causal formulation worth investigating. Compatibility of the completed causal projections with the pairing, the required time regularity/measurability, an appropriate tensor-integrand domain, chronological divergence δ_p, corrected full-channel limiting reconstruction, integrand uniqueness and convergence remain open. Symmetry and boundedness of B_T alone do not settle these obligations.
+
+The original universal D^p-only reconstruction and signed isometry remain refuted. The complete Clark–Ocone audit remains active and incomplete; IBM remains gated. The source remains read-only with SHA-256 `52671C5A5A77C892CEB8AFC183C7BFBA1520BF0EB3BA1A0E60AE0403063CC6C7`. No manuscript text has been changed, no dependency or resource limit increased, and no finite numerical diagnostic is used as a proof.
+
+Verification: target4266/full5519 jobs passed; all56 public types inspected; transitive root audit27885 safe Foundation declarations, only propext, Classical.choice and Quot.sound. All43 source files retain42 hashes. The complete manuscript repair remains open; IBM remains gated.
