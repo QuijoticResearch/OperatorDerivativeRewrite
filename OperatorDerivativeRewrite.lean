@@ -1364,3 +1364,8 @@ import Foundation.CyclicPredictableEnergy
 import Foundation.CyclicClockChannelObstruction
 import Foundation.HigherHeatChronologicalObstruction
 import Foundation.PseudoCorrectionObstruction
+import Foundation.PureOrderAppellCalculus
+import Foundation.PureOrderAppellExpansion
+import Foundation.PureOrderAppellTail
+import Foundation.PureOrderAppellPairing
+import Foundation.PureOrderSteinUniqueness
