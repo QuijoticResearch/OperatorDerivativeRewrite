@@ -1484,3 +1484,5 @@ import Foundation.IBMFirstChaosDiagonalStein
 import Foundation.IBMFirstChaosMixedStein
 import Foundation.IBMCorrectionStein
 import Foundation.IBMOriginalBoundaryResidual
+import Foundation.IBMAveragedBulkClock
+import Foundation.IBMSceneryAveragedCorrectionLimit
