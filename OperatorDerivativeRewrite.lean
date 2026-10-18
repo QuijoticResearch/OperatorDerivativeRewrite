@@ -1496,3 +1496,5 @@ import Foundation.IBMQuadraticSpatialCalculus
 import Foundation.IBMQuarticSecondPrimitive
 import Foundation.IBMQuarticPrimitiveLimit
 import Foundation.IBMQuarticSpatialWeakLimit
+import Foundation.IBMQuarticClockTerminal
+import Foundation.IBMQuarticOriginProjection

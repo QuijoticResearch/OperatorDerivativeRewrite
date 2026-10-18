@@ -328,3 +328,31 @@ P_n'(0)E[L_T^0]+(1/2)integral_0^infinity w_T(r)P_n''(r)dr
 =E_Y[P_n(|Y_T|)]-P_n(0).
 
 The first boundary terms cancel exactly in this conditional calculation. This is a promising direct route for the clock-averaged higher-source block, which may be preferable to constructing a new full vector-valued reflected Ito theorem. The Gaussian heat/occupation-mean identities, endpoint decay, Bochner domains, actual correction origin projection and equality with the genuine clock expectation are obligations, not assumptions to add to a claimed result. No such identity or (2,0) limit is certified here. Prioritize investigating this narrow heat-kernel/clock-average route using existing laws and boundary mass before expanding stochastic infrastructure.
+
+
+## Discovery1060: actual clock terminal candidate and the retained quartic origin channel
+
+The previous goal turn made verified progress in2bb1d09869b91cae3ad08434f92b3e1660961ea2. Returned from deterministic spatial tests to the actual clock-averaged correction. This checkpoint constructs two required pieces of1059's proposed heat-kernel cancellation, without assuming that cancellation or declaring a (2,0) limit.
+
+`IBMQuarticClockTerminal` uses the actual constructed continuous Brownian clock and1059's actual Gaussian-L2 primitive. The existing sixth-moment clock machinery gives an integrable common bound4(1+|Y_T|)^3 on norm(P_n(|Y_T|)). Joint-source density or an occupation field is not assumed. It proves genuine Bochner integrability of the terminal source fields and their unmollified limit. Dominated convergence then yields strong source-Gaussian-L2 convergence
+
+E_Y[P_n(|Y_T|)] → E_Y[P_0(|Y_T|)],
+
+and, since P_n(0)→P_0(0)=0,
+
+E_Y[P_n(|Y_T|)]-P_n(0) → E_Y[P_0(|Y_T|)].
+
+This is an actual clock expectation with values in the source L2 space, not a formal heat-semigroup coefficient. It proves convergence of the proposed terminal candidate only, until the drift-plus-origin identity is established.
+
+`IBMQuarticOriginProjection` constructs the actual quartic origin source factor (1/6)U_n(0)^3 V_n(0), proves its literal constructed-field representative, and directly reuses1057's cube-product projection to prove
+
+Pi_2[(1/6)U_n(0)^3 V_n(0)] = P_n'(0)
+=(c_n(0)/2):U_n(0)V_n(0):,
+
+where the last equality uses the verified variance slope at0. Thus the origin coefficient required in the candidate boundary cancellation is now identified from the actual source observable, not inserted to match the proposed formula.
+
+Using the existing independent-product L2 tensor constructor and the actual continuous Tanaka mass coordinate, it constructs the joint source-projected origin term P_n'(0)L_T^0(Y). Its literal product representative is verified and Fubini gives its actual clock mean E[L_T^0(Y)]P_n'(0). The actual random mass factor is retained. No physical white-noise kernel identification, origin-term vanishing estimate or cancellation is inferred.
+
+Scope clarification for the accumulated IBM audit: the general-Schwartz joint time/source domain and conditional projection constructed in1055–1056 concern the time-integrated curvature component, integral g_n''(|Y_s|)ds. The full manuscript Ito–Tanaka correction additionally has its separate origin term g_n'(0)L_T^0(Y), as well as the curvature prefactor1/2. The current quartic origin construction addresses that separate term; the earlier curvature results must not be advertised as already constructing the whole origin-plus-curvature correction or its singular limit.
+
+Remaining central obligation: prove that the genuine clock average of the quartic origin-plus-one-half-curvature correction equals E_Y[P_n(|Y_T|)]-P_n(0). The next focused route is the Gaussian half-line heat/occupation-mean identity, its endpoint contribution and Bochner domains, reusing the actual clock law and mass normalization. The terminal convergence and identified origin coefficient do not themselves prove the identity. No new general reflected stochastic-calculus infrastructure has been introduced. Full general-Schwartz higher-source six-channel identification and clock-integrated limits, F1 cross-sector bounds/global dual topology and F3 remain open. Source hashes, concrete mollifier/fixed-parameter scope, pseudoprocess freeze and indefinite goal are preserved.
