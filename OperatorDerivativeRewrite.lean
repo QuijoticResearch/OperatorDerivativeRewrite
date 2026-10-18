@@ -1419,3 +1419,7 @@ import Foundation.MultivariatePolynomialNilpotence
 import Foundation.MultivariateFactorialHeat
 import Foundation.MultivariateDirectionalKernel
 import Foundation.MultivariateSignedHeatChain
+import Foundation.SingleCoordinateConditioning
+import Foundation.FiniteCoordinateConditioning
+import Foundation.HigherHeatPositionTransport
+import Foundation.HigherHeatFiniteCausalBound
