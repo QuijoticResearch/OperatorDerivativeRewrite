@@ -1331,3 +1331,5 @@ import Foundation.RootMarkInfiniteOperator
 import Foundation.RootMarkHilbertIntegrands
 import Foundation.RootMarkInfiniteClarkOperator
 import Foundation.CyclicRootProbabilityNoise
+import Foundation.CyclicMarkRepresentation
+import Foundation.HigherEvenRootInnovation
