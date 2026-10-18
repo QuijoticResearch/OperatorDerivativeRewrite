@@ -428,3 +428,36 @@ Polynomial evaluation and the existing cumulative coordinate equivalence prove t
 The next central tasks are the uniform signed heat/mean estimates and the completed actual causal projection, reusing these contractions and the previously verified finite signed laws. The complete Clark–Ocone manuscript repair remains active and incomplete. IBM remains gated. The source remains read-only with SHA-256 `52671C5A5A77C892CEB8AFC183C7BFBA1520BF0EB3BA1A0E60AE0403063CC6C7`.
 
 Verification: target4238/full5499 jobs passed; all40 public types inspected; transitive root audit27436 safe Foundation declarations, only propext, Classical.choice and Quot.sound. All43 source files retain42 hashes. The complete manuscript repair remains open; IBM remains gated.
+
+
+## Discovery1030: completed directional heat identified with actual signed kernel chains
+
+Four modules connect the complete multivariate analytic derivative calculus to actual signed higher-heat kernel integrals. This is a finite signed-kernel construction and bound, not an infinite chronological Clark–Ocone reconstruction.
+
+`MultivariatePolynomialNilpotence` proves that the native constant-direction derivation lowers total polynomial degree: if deg(P)≤n+1 then deg(D_v P)≤n. It uses the existing monomial derivative formula and native Finsupp degree, including the exact one-degree loss on every nonzero exponent. Consequently D_v^(n+1)P=0 whenever deg(P)≤n, and D_v^kP=0 for k>deg(P). The completed derivative powers agree with these native iterates and vanish on the same polynomial core. No finite-coordinate-type assumption is required.
+
+`MultivariateFactorialHeat` constructs the actual bounded exponential U_(p,a,v)=exp(a D_v^p) on H_I for |v_i|≤1. Its series converges natively in the complete space. For p>0 it is identified, as a whole vector on every polynomial, with the factorial embedding of the finite polynomial evolution
+
+T_(p,a,v)P = Σ_(k=0)^deg(P) (a^k/k!) D_v^(pk)P.
+
+The cutoff is justified by proved local nilpotence, not by a formal truncation convention. The module proves ‖U_(p,a,v)‖≤exp(|a|), the zero and additive evolution laws, uniqueness of the continuous extension from the polynomial core, and the corresponding polynomial transport bound. All estimates are independent of the number of coordinate indices. At this stage this native exponential still requires an identification with signed integration; the next module supplies it on every polynomial.
+
+`MultivariateDirectionalKernel` restricts a native multivariate polynomial to the actual affine line z↦x+zv, producing an ordinary real polynomial. Its ordinary derivative and every iterate are identified with the corresponding native directional derivative. The existing univariate factorial heat series then gives the exact expectation series for that line polynomial. Local nilpotence reduces this series to the finite T above. This reuses the existing verified actual signed-kernel moments and integrability, rather than assigning a new formal expectation.
+
+For m>0, t>0 and a=(-1)^(m+1)t, the module proves actual integrability and the equality
+
+∫_ℝ P(x+zv) K_(m,t)(z) dz = (T_(2m,a,v)P)(x).
+
+It packages T as a native real linear polynomial transport. The completed exponential agrees with its factorial encoding. For |v_i|≤1 the encoded transport has norm at most exp(t) times the input norm. The actual affine-line integral identity itself permits arbitrary directions v; only the stated complete-space bound requires |v_i|≤1. The signed kernel here is the repository's actual real Schwartz kernel, with the already verified even-order physical sign. No positivity or odd-order density theorem is assumed.
+
+`MultivariateSignedHeatChain` constructs finite lists of positive-duration signed-kernel steps with bounded coordinate directions. Each nested integral is identified exactly with the corresponding composition of native polynomial transports. Every outer step is proved integrable after evaluating its remaining nested integral; there is no use of a nonintegrable integral's default value. The associated composed bounded operators agree with these polynomials on the dense core, and satisfy
+
+‖U_chain‖ ≤ exp(Σ_j t_j),
+
+with the same bound for the encoded polynomial output. Thus fixed total duration gives a bound independent of the number of steps, despite the known growth of total variation for actual higher-heat product laws. These are actual finite iterated signed integrals and their operator realizations, not finite positive complex-noise surrogates.
+
+**Precise remaining obligations:** the chain theorem is an ordered nested-integral identity. This discovery does not identify every such chain with a single joint product-density integral, or discharge all Fubini/refinement identities needed to match the existing dyadic signed conditioning maps. The dyadic cumulative directions and future-only transports must still be linked explicitly to those native finite laws. The contractive clamping from discovery1029 must then be composed with the actual future evolution and extended consistently to the closed common cylinder domain before claiming a completed signed causal projection. Nor is an actual signed-kernel integral formula on every nonpolynomial element inferred from continuous extension on the dense core.
+
+Chronological δ_p, corrected full-channel limiting reconstruction, completed-integrand uniqueness and convergence remain central open work. The time-continuity and coordinate-multiplication obstructions still apply. The original universal D^p-only reconstruction and signed-square isometry remain refuted. The complete Clark–Ocone audit stays active and incomplete, and IBM remains gated. The read-only source retains SHA-256 `52671C5A5A77C892CEB8AFC183C7BFBA1520BF0EB3BA1A0E60AE0403063CC6C7`.
+
+Verification: target3816/full5503 jobs passed; all48 public types inspected, including the signed-step constructor and fields; transitive root audit27542 safe Foundation declarations, only propext, Classical.choice and Quot.sound. All43 source files retain42 hashes. The complete manuscript repair remains open; IBM remains gated.

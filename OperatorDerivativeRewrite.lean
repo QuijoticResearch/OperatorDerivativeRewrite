@@ -1415,3 +1415,7 @@ import Foundation.HigherHeatAnalyticCylinderDomain
 import Foundation.HigherHeatAnalyticTimeObstruction
 import Foundation.MultivariateFactorialSubstitution
 import Foundation.HigherHeatAnalyticClamping
+import Foundation.MultivariatePolynomialNilpotence
+import Foundation.MultivariateFactorialHeat
+import Foundation.MultivariateDirectionalKernel
+import Foundation.MultivariateSignedHeatChain
