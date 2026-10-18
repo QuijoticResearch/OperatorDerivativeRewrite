@@ -299,3 +299,32 @@ deriv(deriv(P_n))(r)=Pi_2(spatialQuartic_n(r)).
 Thus the actual quartic second-source correction is a second spatial derivative of a concrete actual random-field primitive. The expression is globally valid before a singular limit; it is not an expectation identity or a formal distributional template. This makes explicit how the covariance contraction and origin-layer terms combine under differentiation.
 
 Scope and next question: the derivative coordinate is the scenery evaluation position r, whereas the manuscript H^-1 closure uses its physical white-noise coordinate w. No equality of these coordinates, physical spectral/tensor isometry, H^-1 norm bound, or pairing with an unconstructed clock local-time field is inferred. The next productive test is whether the primitive's existing smoothing control yields a rigorously stated spatial weak convergence and whether that estimate survives the actual clock-time integration; a second derivative alone does not guarantee the needed bound for a rough clock occupation input. Reuse the verified actual clock process and Bochner integration instead of assuming a spatial density. General-Schwartz six-channel projection identification, higher-source singular limits, F1 uniform cross-sector tails/global dual topology and F3 remain open. The concrete-family and fixed-parameter scope, source hashes and pseudoprocess freeze are preserved; the indefinite goal remains active.
+
+
+## Discovery1059: actual quartic higher-source kernel has a specified spatial weak limit
+
+The previous turn made verified progress in4fef463efaecec68eeca01aead42ce16ede7fe03. Tested the newly verified primitive in a precise deterministic spatial topology, without identifying it with the manuscript white-noise-coordinate dual norm or the clock occupation input. No source/dependency changes or unrelated exploration.
+
+`IBMQuarticPrimitiveLimit` constructs the actual unmollified source coefficient by applying the existing first-chaos embedding adjoint to the constructed source scenery. The existing genuine mollifier L2 convergence and continuity of that adjoint prove convergence of the actual mollified coefficients. Existing Wick continuity and actual variance convergence then give pointwise strong Gaussian-L2 convergence
+
+P_n(r)=(1/4)c_n(r):U_n(r)²: → P_0(r)=(1/4)|r|:X_r²:.
+
+The formal P_0 uses the just-defined actual adjoint source coefficient; no new random process or Gaussian law is supplied. The module proves continuity of these actual Gaussian-L2 curves and the common global bound norm(P_n(r))≤(|r|+2)². The bound is derived from1058's verified centered-product norm, the actual coefficient variance and existing global variance bound. The same bound passes to P_0. Bochner dominated convergence proves that every finite-interval continuous deterministic spatial test integral of P_n converges strongly in Gaussian L2.
+
+`IBMQuarticSpatialWeakLimit` proves continuity and hence all finite-interval integration domains of the actual projected quartic kernel. It reuses the existing coefficient-continuity theorem and bounded centered-product map. Two justified vector-valued integrations by parts give, for every C2 scalar psi with psi(a)=psi(b)=psi'(a)=psi'(b)=0,
+
+integral_a^b psi(r) Pi_2 F_n(r) dr = integral_a^b psi''(r) P_n(r) dr.
+
+Consequently for a≤b the actual projected kernel test integrals converge strongly in Gaussian L2 to integral_a^b psi''(r)P_0(r)dr. This is a genuine higher-source weak spatial limit with its test class, endpoint conditions and probability topology fully stated and verified; it is not an assumed distributional kernel limit. It retains the actual mollifier origin layer through1058's global derivative identity.
+
+Limits of this result: the test is deterministic and clamped C2, with each fixed interval and test. No operator-norm/Sobolev norm convergence is asserted. In particular a random clock occupation object is not a C2 test, and the spatial coordinate r is not the manuscript physical white-noise coordinate w. This result alone therefore does not close time-integrated F1 or provide a global cross-sector topology.
+
+The next focused investigation should return to the actual reflected-clock correction rather than extending deterministic test spaces without a concrete estimate. A promising structural route is to compare the full quartic second-source correction, including its separate origin term, with the reflected-clock Ito identity for the primitive P_n. Formally the second projection of f(U_n), for f(z)=z^4/24, is P_n; the second projection of f'(U_n)V_n should be P_n'. Thus the full origin-plus-one-half-time-integral correction may be tied to a terminal primitive and its actual clock martingale. The required actual projection/clock-Ito identifications and joint energy estimates are not proved here. Do not drop the origin term, infer convergence of the clock stochastic integral from terminal convergence, or mistake this polynomial test for the general-Schwartz F1 theorem. Use existing reflected-clock and Gaussian Ito machinery if productive. Full general-Schwartz six-channel identification, higher-source clock-integrated limits and cross-sector tails, noise-coordinate dual identification and F3 remain open. Source hashes, fixed concrete mollifier scope and pseudoprocess freeze are preserved; the indefinite goal stays active.
+
+
+Further targeted research calculation1059 (not a Lean result): consider first averaging the full second-source correction over the clock, the (2,0) direction. The candidate half-line occupation mean is w_T(r)=2 integral_0^T p_s(r)ds. If its actual Gaussian-kernel identities and the required integrability are verified, w_T(0)=2 E[L_T^0], w_T'(0+)=-2 and w_T''(r)=4p_T(r) for r>0 suggest
+
+P_n'(0)E[L_T^0]+(1/2)integral_0^infinity w_T(r)P_n''(r)dr
+=E_Y[P_n(|Y_T|)]-P_n(0).
+
+The first boundary terms cancel exactly in this conditional calculation. This is a promising direct route for the clock-averaged higher-source block, which may be preferable to constructing a new full vector-valued reflected Ito theorem. The Gaussian heat/occupation-mean identities, endpoint decay, Bochner domains, actual correction origin projection and equality with the genuine clock expectation are obligations, not assumptions to add to a claimed result. No such identity or (2,0) limit is certified here. Prioritize investigating this narrow heat-kernel/clock-average route using existing laws and boundary mass before expanding stochastic infrastructure.

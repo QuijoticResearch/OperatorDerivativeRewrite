@@ -1494,3 +1494,5 @@ import Foundation.IBMQuarticSecondChaos
 import Foundation.IBMQuarticSecondGeometry
 import Foundation.IBMQuadraticSpatialCalculus
 import Foundation.IBMQuarticSecondPrimitive
+import Foundation.IBMQuarticPrimitiveLimit
+import Foundation.IBMQuarticSpatialWeakLimit
