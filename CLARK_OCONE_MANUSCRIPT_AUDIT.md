@@ -401,3 +401,30 @@ The resulting factorial encoding on each grid is real linear, injective and dens
 The read-only Clark–Ocone source retains SHA-256 `52671C5A5A77C892CEB8AFC183C7BFBA1520BF0EB3BA1A0E60AE0403063CC6C7`. No IBM research or unrelated branch was begun. The complete Clark–Ocone audit remains the immediate priority; central signed chronological reconstruction and convergence obligations remain open, and IBM remains gated.
 
 Verification: target4238/full5497 jobs passed; all57 public types inspected; transitive root audit27385 safe Foundation declarations, only propext, Classical.choice and Quot.sound. All43 source files retain42 hashes. The complete manuscript repair remains open; IBM remains gated.
+
+
+## Discovery1029: contractive coordinate collisions, zeroing and completed clamping
+
+The analytic common-domain program now handles noninjective substitutions. These are required for the deterministic part of a causal projection: retaining past increments sets future increments to zero, which identifies future positions with the last retained position.
+
+`MultivariateFactorialSubstitution` constructs, for arbitrary coordinate types, every weighted substitution y_i ↦ w_i y_(f(i)) with |w_i|≤1. The coordinate function f is arbitrary and may have collisions. On the native complete factorial coefficient space H_I, its monomial atom is the target basis vector at alpha.mapDomain(f), multiplied by ∏_i w_i^(alpha_i). Each atom has norm at most1. Mathlib's native degree_mapDomain identity preserves the factorial weight even when several exponents merge. The resulting synthesized map is a genuine continuous real linear contraction, and agrees on every polynomial with the native multivariate polynomial algebra substitution. This equality includes coefficients after collisions, rather than treating f as an embedding.
+
+The module proves evaluation at actual real configurations, composition of arbitrary weighted substitutions and the identity law. Density gives uniqueness of the continuous extension from its polynomial action. Unit weights recover native polynomial renaming; for an injective coordinate function the completed map agrees with the previously verified isometric renaming operator. Zero weights recover the polynomial's constant term, so setting every coordinate to zero, as needed at an empty past, is also covered by a contractive completed map.
+
+The ordinary chain rule is proved first for native polynomial derivations and then for the completed operators:
+
+D_v S_(f,w) = S_(f,w) D_(w*(v∘f)).
+
+For endomorphisms this also gives the corresponding heat-exponential intertwining at every order p and real parameter a. It is an identity between actual bounded operators and their native convergent Banach-algebra exponentials. No signed kernel or stochastic integral is defined by this identity alone.
+
+`HigherHeatAnalyticClamping` connects the construction to the existing actual dyadic increment cylinders. At grid n, keep the increments with index j≤r and set all later increments to zero. The cumulative-position map then satisfies exactly
+
+cumulative(mask_r*x)_i = cumulative(x)_(min(i,r)).
+
+Polynomial evaluation and the existing cumulative coordinate equivalence prove the full conjugacy: zeroing future increments equals clamping every later position to the position at r. This is proved for every polynomial and every real increment configuration. Consequently the completed clamp on the grid coefficient space acts on the encoded native cylinder exactly as its native zero-future substitution. It is contractive with a bound independent of grid size, satisfies the tower law C_s C_r=C_(min(r,s)), and is idempotent. The native polynomial zero-future substitution is idempotent as well.
+
+**Precise boundary:** these clamp operators are the deterministic retained-coordinate part of conditioning. They are not the actual signed conditional expectation at positive duration: the future signed heat transport must be composed with this substitution and identified with the existing signed polynomial conditioning maps. Nor has a dyadic clamp yet been restricted to the closed common cylinder domain with all cofinal-grid consistency obligations discharged. No completed signed causal projection, chronological δ_p, reconstruction, integral isometry or stochastic convergence is claimed here. The time-continuity and coordinate-multiplication obstructions from discoveries1028 and1026 still apply.
+
+The next central tasks are the uniform signed heat/mean estimates and the completed actual causal projection, reusing these contractions and the previously verified finite signed laws. The complete Clark–Ocone manuscript repair remains active and incomplete. IBM remains gated. The source remains read-only with SHA-256 `52671C5A5A77C892CEB8AFC183C7BFBA1520BF0EB3BA1A0E60AE0403063CC6C7`.
+
+Verification: target4238/full5499 jobs passed; all40 public types inspected; transitive root audit27436 safe Foundation declarations, only propext, Classical.choice and Quot.sound. All43 source files retain42 hashes. The complete manuscript repair remains open; IBM remains gated.

@@ -1413,3 +1413,5 @@ import Foundation.PolynomialLinearSubstitution
 import Foundation.HigherHeatPolynomialCoordinates
 import Foundation.HigherHeatAnalyticCylinderDomain
 import Foundation.HigherHeatAnalyticTimeObstruction
+import Foundation.MultivariateFactorialSubstitution
+import Foundation.HigherHeatAnalyticClamping
