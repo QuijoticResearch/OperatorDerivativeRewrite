@@ -1457,3 +1457,5 @@ import Foundation.HigherHeatWeakTimeAdjoint
 import Foundation.HigherHeatAdaptedStepDuality
 import Foundation.HigherHeatWeakStepFields
 import Foundation.HigherHeatDyadicStepAgreement
+import Foundation.HigherHeatStepRefinement
+import Foundation.HigherHeatCompletedStepAgreement
