@@ -1450,3 +1450,7 @@ import Foundation.HigherHeatDyadicDualNodes
 import Foundation.HigherHeatDyadicTimeDensity
 import Foundation.HigherHeatDyadicDualData
 import Foundation.HigherHeatContinuousDualCoordinate
+import Foundation.HigherHeatCommonDerivative
+import Foundation.HigherHeatTimeDerivative
+import Foundation.HigherHeatDerivativeLInfinity
+import Foundation.HigherHeatWeakTimeAdjoint
