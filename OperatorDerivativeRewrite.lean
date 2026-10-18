@@ -1447,3 +1447,6 @@ import Foundation.HigherHeatPositionIncrementBound
 import Foundation.HigherHeatDyadicPositionRefinement
 import Foundation.HigherHeatDyadicDualLipschitz
 import Foundation.HigherHeatDyadicDualNodes
+import Foundation.HigherHeatDyadicTimeDensity
+import Foundation.HigherHeatDyadicDualData
+import Foundation.HigherHeatContinuousDualCoordinate
