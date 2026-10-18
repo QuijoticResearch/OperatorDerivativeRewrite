@@ -1385,3 +1385,4 @@ import Foundation.SignedSchwartzFundamentalSymmetry
 import Foundation.SignedSchwartzMeanProjection
 import Foundation.SignedSchwartzKreinAdjoint
 import Foundation.HigherHeatChronologicalProbes
+import Foundation.HigherHeatMultivariateMoments

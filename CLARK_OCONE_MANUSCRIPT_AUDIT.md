@@ -157,3 +157,19 @@ For m≥2, E[M_I M_J]=0 whenever I is nonempty, for every J. Thus every finite r
 For every m>0, the complementary probes instead satisfy E[M_J Q_I]=1_(I=J)∏_(i∈I)(κt_i). The product factor never vanishes. Consequently E[C Q_I]=c_I∏_(i∈I)(κt_i), and vanishing of all these probes forces every coefficient to vanish. In particular, C=0 almost everywhere for the actual signed law's variation measure forces c_I=0 for each I∈A. The empty subset is permitted in the recovery theorem; it is excluded from the zero-Gram premise.
 
 This rigorously repairs a finite-level uniqueness mechanism while rejecting the source's attempted same-order isometry mechanism. It uses complementary-degree observables, not an assumed positive norm or a positive-measure conditional expectation. The constants depend on products of cell durations; no uniform refinement bound, limiting probe, continuous-time chronological integral, or general predictable coefficient theorem is asserted. The stronger quartic residual calculation queued in discovery1015 still needs its terminal-polynomial cross-term formalization. The complete manuscript audit remains in progress, and IBM remains gated.
+
+## Discovery1017: strict-simplex reconstruction fails at the first divisible degree
+
+`HigherHeatMultivariateMoments` constructs an actual real linear signed expectation on every real multivariate polynomial on a finite increment array. Every polynomial evaluation is proved integrable under the native finite signed higher-heat law. Monomial expectation factors into the actual one-cell moments. The calculus is therefore connected to genuine signed measures; it is not merely an abstract moment functional.
+
+The general degree obstruction is verified: if a monomial has positive exponents on a specified subset I and total degree below p·card(I), at least one specified exponent is not divisible by p and its moment vanishes. For a chronological monomial M_I, this proves E[M_I Q]=0 whenever card(I)+degree(Q)<p·card(I). In particular, for even p>2, card(I)=p and Q=(ΣΔ_i)^p, the cross pairing vanishes. The theorem applies to every finite grid, not just uniform meshes.
+
+The existing exact deterministic step-integral law is reused to identify ΣΔ_i with the actual higher-heat terminal law at T=Σt_i. The new unbounded polynomial integrability theorem supplies the missing hypothesis for the native signed pushforward integration formula, so the terminal moments are transported rigorously, without a bounded-test shortcut.
+
+For p=4, set R=(ΣΔ_i)^4+24T and let C=Σ_(I∈A)c_I∏_(i∈I)Δ_i, with every I of cardinality4 and arbitrary deterministic real coefficients. This includes the ordinary strict-simplex fourth-order Riemann prescription and every constant normalization of it. The actual-law identities are now Lean verified:
+
+E[C²]=0, E[CR]=0, E[R²]=19584T², and E[(C−R)²]=19584T².
+
+The error square is separately proved signed-integrable. A native nonconvergence theorem permits arbitrary sequences of grid sizes, positive cell durations summing to a fixed T>0, subsets and coefficients at each grid: their signed squared reconstruction errors cannot tend to zero. This establishes the obstruction queued in discovery1015, including the manuscript's first divisible-degree example, rather than only the earlier linear-observable obstruction.
+
+**Scope:** this refutes ordinary strict-simplex products as a reconstruction prescription in the claimed signed squared-error sense. It does not rule out every possible renormalized or enlarged jet integral. A corrected prescription must specify its diagonal/intermediate-power terms, functional domains, causal action, limiting topology and estimates, and prove the resulting reconstruction and uniqueness. The algebraic Appell primitive and finite complementary-probe uniqueness do not discharge those obligations. The complete Clark–Ocone audit remains in progress; no IBM transition is authorized yet.
