@@ -1394,3 +1394,5 @@ import Foundation.HigherHeatPolynomialCylinders
 import Foundation.HigherHeatPolynomialPathDomain
 import Foundation.HigherHeatDyadicConditioning
 import Foundation.HigherHeatCylindricalConditioning
+import Foundation.PureOrderCompactDecay
+import Foundation.HigherHeatCompactOpenObstruction

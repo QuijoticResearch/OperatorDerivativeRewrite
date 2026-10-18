@@ -247,3 +247,25 @@ The cutoff description itself is compatible with refinement: Π_(b,S)=Π_(b+1,pr
 The operator is also transported through the faithful algebra equivalence to the concrete subalgebra of continuous functions on actual continuous paths. This native path-domain endomorphism is idempotent and preserves the transported signed expectation. Thus a common unbounded path-observable domain now carries genuine signed polynomial conditioning at dyadic cutoffs, rather than requiring each observable to stay on a fixed grid.
 
 **What remains open:** no positive conditional expectation, completed path norm, contraction estimate, or continuity of these endomorphisms in the inherited compact-open topology is asserted. The signed weak pairing is not a positive Ito isometry. The construction has not been identified with the manuscript's ordered derivative-tensor Π or chronological δ_p. It does not prove convergence of full-power innovation kernels, the source's infinite reconstruction series, polynomial membership in a proposed Schwartz/jet completion, or uniqueness on a completed stochastic-integrand domain. Extending beyond algebraic dyadic conditioning and choosing a justified test/dual topology remain central. The Clark–Ocone audit remains active, and IBM remains gated.
+
+## Discovery1022: explicit compact-open nonclosability of the actual signed expectation
+
+The new common path-observable domain needs a justified topology before any closure argument can be used. Two modules now give a rigorous obstruction to using only its inherited compact-open topology.
+
+`PureOrderCompactDecay` proves, for every integer p≥2 and nonzero real a, that the continuous functions
+
+F_n(x) = [n! / ((pn)! a^n)] u(x)^(pn)
+
+converge to zero in compact-open topology for every continuous real function u on an arbitrary topological space. The proof establishes the explicit factorial bound (n!)²≤(pn)!, and hence on every set where |u|≤R,
+
+|F_n| ≤ (R^p/|a|)^n / n!.
+
+The right-hand side tends to zero, uniformly on every compact set. Separately, the verified pure-order moment formula gives normalizer·moment_(pn)=1. These statements are native Lean proofs, not numerical asymptotics or formal generating-series assumptions.
+
+`HigherHeatCompactOpenObstruction` instantiates this sequence in the actual realized polynomial-cylinder algebra, with p=2m, a=(-1)^(m+1)T and u the realized terminal observable, for every m>0 and T>0. Every F_n is an actual polynomial cylinder/path function in the already constructed domain. The native actual signed expectation satisfies E[F_n]=1 for every n, while F_n tends to zero both as a continuous path function and in the inherited subtype topology of the realized algebra. Consequently the signed expectation is **not continuous** in that topology.
+
+The stronger operator statement is verified. The graph pairs (F_n,E[F_n]) tend to (0,1). No closed linear graph containing the whole polynomial expectation graph can have only zero above the zero input. In particular, no closed native LinearPMap on C(Path,ℝ) with codomain ℂ can extend that expectation. The module explicitly constructs the partial expectation with domain realizedAlgebra.toSubmodule, using its native linear equivalence with the realized algebra, and proves **¬partialExpectation.IsClosable** with Mathlib's actual definition and closed-extension theorem.
+
+**Scope and implication:** this excludes compact-open closure of the polynomial expectation graph, and therefore excludes a completion/closed-operator argument that uses only that ambient topology while retaining all these polynomial observables. It does not exclude a stronger weighted or nuclear test topology. The result includes m=1, so it must not be interpreted as disproving Gaussian L2 stochastic calculus; such a weighted norm does not declare this expectation-one sequence to converge to zero. The marginal positive-majorant Hilbert and signed adjoint constructions already verified in earlier discoveries remain valid in their own topologies.
+
+The finite and algebraic common-domain conditioning identities remain established. No new continuity or nonclosability claim about every causal projection, Malliavin derivative, chronological integral or proposed Schwartz completion is made here. Polynomial membership in the manuscript's proposed Schwartz/jet completion remains unproved; this obstruction applies to the concrete polynomial domain and any closure retaining it with the stated topology. A suitable stronger common test/dual domain and convergence estimates still require construction. The Clark–Ocone audit remains active; IBM remains gated.
