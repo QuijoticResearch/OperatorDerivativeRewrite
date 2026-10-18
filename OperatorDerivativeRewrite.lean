@@ -1335,3 +1335,4 @@ import Foundation.CyclicMarkRepresentation
 import Foundation.HigherEvenRootInnovation
 import Foundation.MarkedRenewalRealization
 import Foundation.HigherEvenRenewalProcess
+import Foundation.CyclicPolynomialKernel
