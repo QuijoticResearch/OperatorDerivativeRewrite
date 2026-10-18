@@ -1409,3 +1409,7 @@ import Foundation.FactorialAnalyticFunctions
 import Foundation.L1BoundedSynthesis
 import Foundation.MultivariateFactorialDomain
 import Foundation.MultivariateFactorialRenaming
+import Foundation.PolynomialLinearSubstitution
+import Foundation.HigherHeatPolynomialCoordinates
+import Foundation.HigherHeatAnalyticCylinderDomain
+import Foundation.HigherHeatAnalyticTimeObstruction
