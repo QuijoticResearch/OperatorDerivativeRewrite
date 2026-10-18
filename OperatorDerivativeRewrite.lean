@@ -1344,3 +1344,4 @@ import Foundation.HigherEvenRenewalTransform
 import Foundation.CyclicExponentialTaylor
 import Foundation.HigherEvenHeatTransformLimit
 import Foundation.MarkedRenewalFourierTests
+import Foundation.HigherEvenBandHeatLimit
