@@ -1362,3 +1362,5 @@ import Foundation.CyclicCenteredKernel
 import Foundation.CyclicPredictableIntegral
 import Foundation.CyclicPredictableEnergy
 import Foundation.CyclicClockChannelObstruction
+import Foundation.HigherHeatChronologicalObstruction
+import Foundation.PseudoCorrectionObstruction
