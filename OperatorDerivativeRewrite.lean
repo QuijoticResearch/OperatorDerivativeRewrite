@@ -1396,3 +1396,6 @@ import Foundation.HigherHeatDyadicConditioning
 import Foundation.HigherHeatCylindricalConditioning
 import Foundation.PureOrderCompactDecay
 import Foundation.HigherHeatCompactOpenObstruction
+import Foundation.SchwartzGaussianCutoff
+import Foundation.SignedSchwartzPolynomialL2
+import Foundation.SignedSchwartzPolynomialJets
