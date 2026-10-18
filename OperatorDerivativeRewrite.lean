@@ -1423,3 +1423,4 @@ import Foundation.SingleCoordinateConditioning
 import Foundation.FiniteCoordinateConditioning
 import Foundation.HigherHeatPositionTransport
 import Foundation.HigherHeatFiniteCausalBound
+import Foundation.HigherHeatCompletedCausalProjection
