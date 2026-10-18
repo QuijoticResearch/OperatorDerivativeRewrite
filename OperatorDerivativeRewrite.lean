@@ -1343,3 +1343,4 @@ import Foundation.MarkedRenewalExponentialTransform
 import Foundation.HigherEvenRenewalTransform
 import Foundation.CyclicExponentialTaylor
 import Foundation.HigherEvenHeatTransformLimit
+import Foundation.MarkedRenewalFourierTests
