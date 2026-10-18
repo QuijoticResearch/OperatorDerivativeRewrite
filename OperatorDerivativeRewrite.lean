@@ -1330,3 +1330,4 @@ import Foundation.RootMarkFiniteEnergyLimit
 import Foundation.RootMarkInfiniteOperator
 import Foundation.RootMarkHilbertIntegrands
 import Foundation.RootMarkInfiniteClarkOperator
+import Foundation.CyclicRootProbabilityNoise
