@@ -1388,3 +1388,5 @@ import Foundation.HigherHeatChronologicalProbes
 import Foundation.HigherHeatMultivariateMoments
 import Foundation.PureOrderPolynomialConditioning
 import Foundation.PureOrderPolynomialInnovations
+import Foundation.HigherHeatPolynomialRefinement
+import Foundation.HigherHeatConditionalRefinement

@@ -197,3 +197,23 @@ P(x)−E[P] = Σ_i Σ_(d∈support P) C_(past_i,i,d)(x) Z_(i,d_i)(x).
 This holds for every polynomial cylinder on every finite grid, not merely terminal monomials or a chosen low degree. Revealing one cell has zero pairing against every polynomial observable supported in the previous past, proved with the actual signed integral. The finite conditional and reconstruction calculus is consequently connected to the existing signed laws, rather than assumed from formal symbols or obtained from a positive complex-noise approximation.
 
 **Limits of the repair:** this is a finite polynomial domain and a full-power innovation representation. It does not identify the manuscript's derivative-tensor causal projection. It is not a proof of its D^p-only chronological Clark–Ocone formula, a positive Ito isometry, a bounded projection on an unspecified completed path space, or a refinement-consistent continuous-time integral. Coefficients are indexed by the polynomial's support; uniqueness of this uncollected representation is not asserted. Grouped-coefficient uniqueness, refinement compatibility, appropriate test/dual spaces, closed operator domains, and limiting estimates remain serious obligations. The original strict-simplex prescription remains refuted by discoveries1016–1017. IBM remains gated.
+
+## Discovery1019: unbounded polynomial and conditional refinement compatibility
+
+`HigherHeatPolynomialRefinement` reuses `HigherHeatBlockCoarsening.block_sum_law`, which already identifies the actual signed law of sums of disjoint increment blocks. It constructs the native polynomial algebra homomorphism B_p that replaces each coarse coordinate by the sum of its fine coordinates. It proves evaluation compatibility and integrability of every unbounded polynomial pullback under the actual fine signed law. The native signed pushforward integration formula then gives
+
+E_fine[B_p P] = E_coarse[P],
+
+with coarse durations equal to the actual sums of fine durations. This is valid for every polynomial and every surjective block map, not only bounded/Fourier observables or selected moments. An explicit section lift proves that the block-sum map on real configurations is surjective. Consequently B_p is injective: refinement does not collapse two different polynomial observables.
+
+`HigherHeatConditionalRefinement` supplies a pointwise actual-kernel representation of the discovery1018 conditional projection. Freeze the retained coordinates S at an arbitrary configuration x, leave the other coordinates as polynomial variables, and take the actual finite signed mean. The result is exactly (Π_S P)(x). Every frozen polynomial belongs to the already verified integrable polynomial domain. This clarifies a functional domain and integration prescription without assuming a positive conditional expectation.
+
+Freezing commutes with block pullback when the retained fine cells form whole coarse blocks. Combining that polynomial identity with actual expectation compatibility proves the stronger native polynomial identity
+
+Π_fine_(p^−1(S))(B_p P) = B_p(Π_coarse_S P).
+
+It holds as an equality of polynomials, hence at every configuration, not merely after taking a signed expectation. The module also proves the corresponding identity for differences of two conditional projections. For chronologically aligned blocks this identifies coarse conditional innovations with the aggregate refined innovations at coarse boundaries. Thus the finite conditional structure is compatible across refinements, as required before constructing a common polynomial-cylinder domain.
+
+**What this resolves:** finite signed polynomial expectation and conditional projection compatibility, preservation of distinct observables, and exact compatibility of conditional differences under arbitrary finite block coarsening. The proof uses the genuine existing signed laws, separately justified unbounded integration, and the constructed finite causal operator.
+
+**What remains:** this is not convergence of the individual full-power coefficient kernels, an estimate uniform over refinements, an extension of the indefinite square pairing to a norm, a completed domain for the manuscript's derivative-tensor Π, or a continuous-time chronological δ_p. The prior strict-simplex counterexample remains valid. The existing bounded continuous path-cylinder algebra should be reused when constructing an unbounded polynomial-cylinder/test domain, rather than interpreted as already containing these polynomial observables. No common unbounded polynomial-cylinder construction or completed stochastic integral is asserted here. The Clark–Ocone audit remains in progress, and IBM remains gated.
