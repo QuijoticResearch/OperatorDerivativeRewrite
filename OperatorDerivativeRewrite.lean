@@ -1475,3 +1475,5 @@ import Foundation.IBMBoundaryCurvature
 import Foundation.IBMVarianceClockGeometry
 import Foundation.IBMBoundaryClockLimit
 import Foundation.IBMBoundaryChaosReuse
+import Foundation.IBMBoundaryAveragedCoefficient
+import Foundation.IBMBoundaryWeightedClock
