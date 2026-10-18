@@ -1519,3 +1519,6 @@ import Foundation.IBMQuarticJointRealization
 import Foundation.IBMQuarticScalarRecovery
 import Foundation.IBMQuarticLiteralJoint
 import Foundation.IBMScalarSecondProjection
+import Foundation.IBMPolynomialWeightedStein
+import Foundation.IBMShiftedJetMoments
+import Foundation.IBMHigherScalarProjection

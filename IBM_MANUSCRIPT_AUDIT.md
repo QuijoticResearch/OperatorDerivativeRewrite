@@ -527,3 +527,32 @@ Pi_2[g^(k)(a+W_u)]=(1/2)E[g^(k+2)(a+W_u)]:W_u^2:,
 with the native jet domains and derivative bounds discharged. This supplies a genuine nonpolynomial coefficient projection needed in the general correction channels.
 
 Remaining focused obligations: the full mixed product projection for g''(a+U)V^2+g'(a+U)W still needs its exact contractions and higher-order Stein identities. In particular a second-order single-observation formula does not establish the source-four coefficient of g'', hence does not prove or eliminate the Q6 channel. The quartic model cannot detect that channel. General-Schwartz higher-source singular limits, other source sectors, F1 common dual topology and uniform summable tails, physical white-noise-coordinate H^-1 closure and F3 remain open. The quartic model's literal/native realization, retained origin, half-line endpoints and clock/time mean bridge should now be reused as completed results rather than re-proved. Next investigate the necessary third/fourth single-observation pairings or a direct mixed Stein reconstruction using the existing conditional Gaussian and projection machinery. The focused IBM campaign and indefinite Stardust goal remain active; pseudoprocess extension stays frozen. Manuscripts and dependency/toolchain settings remain unchanged.
+
+
+## Discovery1067: genuine polynomial-weighted Stein recurrence and source-three/source-four Schwartz coefficients
+
+The previous goal turn made verified progress in833547fded6d8881a78aaa284956b08c6ae527ec. Continued the actual higher-order pairings needed for the general mixed correction, reusing the established weighted Gaussian IBP domain instead of treating polynomial multiples of bounded functions as bounded.
+
+`IBMPolynomialWeightedStein` proves integrability of coordinate powers times bounded continuous scaled tests under the actual quarter Gaussian. Scaled polynomial tests, their actual product derivatives and coordinate multiples all have proved domains before invoking HelicalWeightedPressureIBP.stein_integrable. The resulting recurrence holds at every real scale, including zero. Transporting it through the verified actual first-chaos law gives, with W_u the existing first-chaos observation and v=||u||^2,
+
+E[W_u^(k+1)phi(W_u)]=k v E[W_u^(k-1)phi(W_u)]+v E[W_u^k phi'(W_u)]
+
+for every natural k and bounded C2 phi with bounded first derivative. At k=0 the first term is zero and the natural subtraction is harmless. All source polynomial-weighted moments in this formula are proved integrable, including degenerate u. No division by the scale is used.
+
+`IBMShiftedJetMoments` specializes to the existing actual shifted Schwartz derivative jets. The recurrence gives the first four raw weighted moments and the third/fourth centered Hermite identities. In particular, for phi_j(z)=g^(j)(a+z),
+
+E[(W_u^3-3vW_u)phi_j(W_u)]=v^3 E[phi_(j+3)(W_u)],
+E[(W_u^4-6vW_u^2+3v^2)phi_j(W_u)]=v^4 E[phi_(j+4)(W_u)].
+
+The domain proofs use actual Gaussian absolute moments and verified jet bounds; the identities are not restricted to polynomial observables. The generic weighted recurrence remains available for further finite-order pairings without rebuilding IBP foundations.
+
+`IBMHigherScalarProjection` identifies these expressions with actual native Wick pairings and reuses1066's unnormalized terminal projection theorem. It proves
+
+Pi_3[g^(j)(a+W_u)]=(E[g^(j+3)(a+W_u)]/6):W_u^3:,
+Pi_4[g^(j)(a+W_u)]=(E[g^(j+4)(a+W_u)]/24):W_u^4:.
+
+Zero observations are explicitly verified using the native Wick norm formula, so neither result has a nondegeneracy or unit-variance hypothesis. Together with1066's source-two formula, this supplies actual nonlinear single-observation source coefficients needed up to order4. In particular j=2 gives the source-four coefficient of g'', with the actual sixth-derivative expectation Q6 and factorial1/24. This verifies the scalar coefficient that the quartic test cannot detect; it does not yet prove its mixed-product contraction coefficient12 or the full correction projection.
+
+Selectively reread the Stroock-kernel paragraph of the read-only `ResearchSources/ibm/BidegreeAtlas.tex`, lines818–845. SHA256 remains409FFE56EDB47DF23DAEEA788CEEC24E1C7ED9FF657BDCB6914708F8FA535D4E. The native source-three/four coefficients agree with its factorial normalizations for these orders. The paragraph's displayed variance-norm argument supplies compact-radius control; that argument alone does not justify a bound over all radii. A direct additional verified result gives ||Pi_m phi(W_u)||<=A whenever ||phi||<=A, uniformly over all source directions and all fixed sectors, by the actual bounded composition's L2 norm and the existing projection contraction. This is a native source-vector bound, not an identification with the manuscript's physical white-noise tensor kernels. It also does not provide uniform tails of an infinite sector expansion or bounds for multiplication by the singular V/W fields.
+
+Remaining central obligation: prove the source-two projection of the actual mixed products g''(a+U)V^2 and g'(a+U)W, including the contractions from the now verified source-three/four scalar coefficients and the exact coefficient of Q6. Product domains, conditional Gaussian polynomial identities and the existing completed second-chaos machinery should be reused. No bounded multiplication operator on arbitrary Gaussian L2, unproved Hermite-series interchange, physical kernel identification or all-sector uniform bound has been assumed. General-Schwartz singular limits, other source sectors, F1 common dual topology/uniform summable tails, physical white-noise-coordinate H^-1 closure and F3 remain open. The focused IBM campaign and indefinite Stardust goal remain active; pseudoprocess extension remains frozen. All manuscript, dependency and toolchain files are preserved.
