@@ -1406,3 +1406,6 @@ import Foundation.PureOrderPolynomialTransport
 import Foundation.FactorialAnalyticDomain
 import Foundation.FactorialAnalyticHeat
 import Foundation.FactorialAnalyticFunctions
+import Foundation.L1BoundedSynthesis
+import Foundation.MultivariateFactorialDomain
+import Foundation.MultivariateFactorialRenaming
