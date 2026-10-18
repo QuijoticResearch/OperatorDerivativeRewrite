@@ -1386,3 +1386,5 @@ import Foundation.SignedSchwartzMeanProjection
 import Foundation.SignedSchwartzKreinAdjoint
 import Foundation.HigherHeatChronologicalProbes
 import Foundation.HigherHeatMultivariateMoments
+import Foundation.PureOrderPolynomialConditioning
+import Foundation.PureOrderPolynomialInnovations

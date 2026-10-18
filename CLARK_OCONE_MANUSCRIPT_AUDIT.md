@@ -173,3 +173,27 @@ E[C²]=0, E[CR]=0, E[R²]=19584T², and E[(C−R)²]=19584T².
 The error square is separately proved signed-integrable. A native nonconvergence theorem permits arbitrary sequences of grid sizes, positive cell durations summing to a fixed T>0, subsets and coefficients at each grid: their signed squared reconstruction errors cannot tend to zero. This establishes the obstruction queued in discovery1015, including the manuscript's first divisible-degree example, rather than only the earlier linear-observable obstruction.
 
 **Scope:** this refutes ordinary strict-simplex products as a reconstruction prescription in the claimed signed squared-error sense. It does not rule out every possible renormalized or enlarged jet integral. A corrected prescription must specify its diagonal/intermediate-power terms, functional domains, causal action, limiting topology and estimates, and prove the resulting reconstruction and uniqueness. The algebraic Appell primitive and finite complementary-probe uniqueness do not discharge those obligations. The complete Clark–Ocone audit remains in progress; no IBM transition is authorized yet.
+
+## Discovery1018: genuine finite signed causal projection and full polynomial innovation reconstruction
+
+Two modules replace unspecified finite-grid causal operations by explicit native linear maps on **all real multivariate polynomials**. They build on the actual signed increment laws and the unbounded polynomial integrability calculus from discovery1017.
+
+`PureOrderPolynomialConditioning` constructs Π_S by integrating precisely the coordinates outside a retained subset S. On a monomial x^d, it multiplies the retained monomial by the product of the discarded one-cell moments. It proves causal dependence on retained coordinates, fixation of past-supported polynomials, idempotence, the tower identity Π_S Π_T=Π_(S∩T), commutation of these independent-coordinate projections, the past-module identity Π_S(PQ)=Π_S(P)Q for past-supported Q, and preservation of the **actual** finite signed mean. Crucially, it proves the native signed integral identity
+
+E[(Π_S P)Q]=E[PQ]
+
+against every past-supported polynomial Q. Products are within the verified integrable polynomial domain. The empty projection is the actual signed mean as a constant observable, and the full projection is the identity. This is a constructed finite signed conditional operator; it does not invoke positive-measure conditional expectation or claim contraction.
+
+`PureOrderPolynomialInnovations` constructs the centered cell powers Z_(i,r)=x_i^r−μ_i(r), where μ_i(r) is the actual cell moment, and predictable polynomial coefficients. For a newly revealed cell i outside S, each monomial d of P contributes
+
+C_(S,i,d) = coeff_d(P) · [product of moments on coordinates outside S∪{i}] · x^(d restricted to S).
+
+The exact one-step identity is Π_(S∪{i})P−Π_S P=Σ_d C_(S,i,d) Z_(i,d_i). Every C depends only on the retained past; Z_(i,0)=0. All powers needed by the finite polynomial are retained. Each innovation has zero actual signed mean, and each coefficient-times-innovation term is separately proved integrable under the actual finite signed law.
+
+For the chronological chain of increment coordinates, native telescoping yields the pointwise reconstruction
+
+P(x)−E[P] = Σ_i Σ_(d∈support P) C_(past_i,i,d)(x) Z_(i,d_i)(x).
+
+This holds for every polynomial cylinder on every finite grid, not merely terminal monomials or a chosen low degree. Revealing one cell has zero pairing against every polynomial observable supported in the previous past, proved with the actual signed integral. The finite conditional and reconstruction calculus is consequently connected to the existing signed laws, rather than assumed from formal symbols or obtained from a positive complex-noise approximation.
+
+**Limits of the repair:** this is a finite polynomial domain and a full-power innovation representation. It does not identify the manuscript's derivative-tensor causal projection. It is not a proof of its D^p-only chronological Clark–Ocone formula, a positive Ito isometry, a bounded projection on an unspecified completed path space, or a refinement-consistent continuous-time integral. Coefficients are indexed by the polynomial's support; uniqueness of this uncollected representation is not asserted. Grouped-coefficient uniqueness, refinement compatibility, appropriate test/dual spaces, closed operator domains, and limiting estimates remain serious obligations. The original strict-simplex prescription remains refuted by discoveries1016–1017. IBM remains gated.
