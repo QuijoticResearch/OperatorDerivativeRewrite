@@ -1492,3 +1492,5 @@ import Foundation.IBMDerivativeFourthDomain
 import Foundation.IBMSchwartzJointL2
 import Foundation.IBMQuarticSecondChaos
 import Foundation.IBMQuarticSecondGeometry
+import Foundation.IBMQuadraticSpatialCalculus
+import Foundation.IBMQuarticSecondPrimitive

@@ -274,3 +274,28 @@ Pi_2 F = ((q+e)Q4+d²Q6):U²:/2 + 2d Q4:UV: + Q2(:V²:+:UW:),
 where Qj=E[f^(j)(a+U)]. Six rank-one quadratic test directions span the finite three-dimensional symmetric quadratic space. Orders12,24,40,64,96 independently integrate the source moments and one-dimensional Qj in correlated, zero-observation and collinear cases. At order96 the maximum tested pairing errors are3.11e-15,3.55e-15,4.44e-15 respectively. Omitting the channel involving Q6 causes an error about.597 in the correlated case and4.331 in the collinear case. This is a numerical normalization diagnostic, not a rigorous counterexample or Lean proof of the full Schwartz formula. The quartic exact test has Q6=0, so it cannot validate that channel on its own. Reproducible ignored evidence: `.lake/stardust-1057-kernel-tests.py` and `.json`.
 
 A productive next analytic connection is the formal product-rule observation that the verified quartic expression should equal (1/4) d_r²[c_n(r):U_n(r)²:]. The existing `GaussianQuadraticSourceHodge.mixedTarget` represents the same centered quadratic observable and already has source derivative/divergence graphs. Reuse that result when developing the bridge; its identification with the polarization helper and the needed Gaussian-L2 spatial quadratic derivative/product rule have not been proved here. Investigate whether existing polynomial/source bilinear machinery can establish it and whether it gives a useful bound after the actual clock integration. Spatial r differentiation is not automatically the manuscript white-noise-coordinate w derivative or an H^-1 bound. The full general-Schwartz six-channel identity, actual time-integrated higher-source kernel limits, F1 uniform cross-sector tails/global dual topology and F3 remain open. No separate chaos framework or unrelated campaign is opened. The indefinite goal remains active, with the concrete-family scope and pseudoprocess freeze preserved.
+
+
+## Discovery1058: actual Gaussian-L2 second spatial primitive for the quartic second-source kernel
+
+The previous turn made verified progress in0b9f8978aef2b6b5d05fa4d4fe1be9bfd4339256. Investigated the concrete derivative structure suggested by1057, reusing the existing centered quadratic source-Hodge target and actual convolution calculus. No source ingestion or manuscript edits. This is a focused supporting operator connection for F1, not a new chaos campaign.
+
+`IBMQuadraticSpatialCalculus` proves that1057's quadratic polarization helper is exactly `GaussianQuadraticSourceHodge.mixedTarget`. Its source derivative and divergence graphs, paired by the existing `GaussianNumberSectors.graph_duality`, give the exact norm identity
+
+norm(:UV:)²=norm(u)² norm(v)²+inner(u,v)².
+
+Cauchy–Schwarz supplies a finite bilinear bound norm(:UV:)≤2 norm(u)norm(v). The actual centered product is proved linear in each source direction and packaged as a bounded bilinear map. Mathlib's native bilinear derivative rule then gives an actual Gaussian-L2 spatial product rule and the derivative of the second Wick power. This proves the analytic quadratic rule from existing source adjoint machinery; no unrestricted multiplication on all L2 variables or samplewise differentiation is used.
+
+`IBMQuarticSecondPrimitive` uses the existing first-chaos embedding adjoint, whose composition with that embedding is the identity, to transfer the already verified whole-line scenery convolution derivative to its actual source coefficients. The zero and first scenery coefficient curves are therefore proved to have their actual first and second derivative coefficients as spatial derivatives. These are genuine source-Hilbert HasDerivAt statements, not freely chosen derivative candidates.
+
+For the original normalized bump and actual scenery variance c_n, define the Gaussian-L2 curve
+
+P_n(r)=(1/4)c_n(r):U_n(r)²:.
+
+The module proves its explicit first derivative, then differentiates it again using the bounded quadratic rule and the verified c_n''=2rho_n. Comparing with1057's exact projected kernel yields, at every real r including both layer endpoints and the origin,
+
+deriv(deriv(P_n))(r)=Pi_2(spatialQuartic_n(r)).
+
+Thus the actual quartic second-source correction is a second spatial derivative of a concrete actual random-field primitive. The expression is globally valid before a singular limit; it is not an expectation identity or a formal distributional template. This makes explicit how the covariance contraction and origin-layer terms combine under differentiation.
+
+Scope and next question: the derivative coordinate is the scenery evaluation position r, whereas the manuscript H^-1 closure uses its physical white-noise coordinate w. No equality of these coordinates, physical spectral/tensor isometry, H^-1 norm bound, or pairing with an unconstructed clock local-time field is inferred. The next productive test is whether the primitive's existing smoothing control yields a rigorously stated spatial weak convergence and whether that estimate survives the actual clock-time integration; a second derivative alone does not guarantee the needed bound for a rough clock occupation input. Reuse the verified actual clock process and Bochner integration instead of assuming a spatial density. General-Schwartz six-channel projection identification, higher-source singular limits, F1 uniform cross-sector tails/global dual topology and F3 remain open. The concrete-family and fixed-parameter scope, source hashes and pseudoprocess freeze are preserved; the indefinite goal remains active.
