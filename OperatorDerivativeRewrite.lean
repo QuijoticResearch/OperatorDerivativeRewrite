@@ -1435,3 +1435,7 @@ import Foundation.HigherHeatCylinderDilation
 import Foundation.HigherHeatCommonDampedProduct
 import Foundation.HigherHeatDilationLaw
 import Foundation.HigherHeatCompletedPairing
+import Foundation.PureOrderConditionalPairing
+import Foundation.HigherHeatCausalPairing
+import Foundation.HigherHeatCompletedCausalPairing
+import Foundation.HigherHeatPairedDualCausality
