@@ -1333,3 +1333,5 @@ import Foundation.RootMarkInfiniteClarkOperator
 import Foundation.CyclicRootProbabilityNoise
 import Foundation.CyclicMarkRepresentation
 import Foundation.HigherEvenRootInnovation
+import Foundation.MarkedRenewalRealization
+import Foundation.HigherEvenRenewalProcess
