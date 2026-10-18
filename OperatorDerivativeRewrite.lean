@@ -1326,3 +1326,4 @@ import Foundation.RootMarkRealClarkLimit
 import Foundation.RootMarkComplexClarkLimit
 import Foundation.RootMarkL2Limit
 import Foundation.RootMarkInfiniteIto
+import Foundation.RootMarkFiniteEnergyLimit
