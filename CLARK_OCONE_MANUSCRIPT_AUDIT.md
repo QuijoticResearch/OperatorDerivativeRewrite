@@ -4,7 +4,7 @@ Source: `ResearchSources/Incoming/order_p_clark_ocone (7).tex` (read-only).
 SHA-256: `52671C5A5A77C892CEB8AFC183C7BFBA1520BF0EB3BA1A0E60AE0403063CC6C7`.
 Full text examined at the start of discovery1009, 2026-10-18. This ledger is a corrigendum alongside the source, not an alteration of it. Manuscript labels below identify claims independent of changing line numbers.
 
-**Status: audit in progress; the manuscript is not repaired or certified as a whole. IBM transition remains gated.** Counterexamples refute the advertised universal theorem, but do not construct its most useful possible replacements. In particular, no completed signed pseudoprocess chronological Clark–Ocone calculus follows from the finite-amplitude positive complex-process results.
+**Status: focused audit frozen at verified1045. The manuscript’s universal theorem is refuted; a rigorous restricted signed calculus and concrete quadratic Itô/reconstruction are verified. Stronger completed multichannel claims remain explicitly open. IBM transition is released only after the final audited Git commit.** Counterexamples refute the advertised universal theorem, but do not construct its most useful possible replacements. In particular, no completed signed pseudoprocess chronological Clark–Ocone calculus follows from the finite-amplitude positive complex-process results.
 
 ## Current campaign completion criterion
 
@@ -985,3 +985,38 @@ Consequently R_n→0 in Banach-dual norm. If, additionally, the actual adapted c
 No substantive obstruction to every multichannel formula has been established. The first-channel obstruction must not be used as such a claim. Keep this as a bounded focused investigation; if a substantive new obstruction appears, document and defer the remaining Itô problem, complete the final campaign audit/Git checkpoint, freeze and open IBM F1–F3. Do not prolong the pseudoprocess campaign with unrelated foundations. IBM remains gated pending that final checkpoint. All43 manuscripts retain42 hashes, with the Clark–Ocone source still SHA-256 `52671C5A5A77C892CEB8AFC183C7BFBA1520BF0EB3BA1A0E60AE0403063CC6C7`. Dependencies and resource limits are unchanged.
 
 Verification: target4300/full5556 jobs passed; all20 new public types inspected; transitive root audit28308 safe Foundation declarations, only propext, Classical.choice and Quot.sound. All43 manuscript files retain42 hashes. Forbidden-token, direct/Git whitespace, exact-index and protected-source/dependency checks passed. No dependencies or resource limits increased. Actual signed quadratic channel identification is verified with its explicit coefficient and convergence hypotheses; a concrete full Itô identity and final campaign checkpoint remain pending, so IBM remains gated.
+
+
+## Discovery1045: concrete signed quadratic Itô identity and the final two-channel boundary
+
+Five modules complete a concrete, nonconditional stochastic application of the signed calculus. They use actual native signed sums, the existing all-time dual coordinate curve, actual Bochner fields and explicit norm limits. No unconstructed signed path measure, formal time tensor or unverified state is introduced.
+
+`HigherHeatQuadraticItoData` defines the strict-past polynomial coefficient at cell j as the sum of all earlier increments. It proves polynomial adaptation, constant adaptation and the exact native quadratic telescoping identity. It proves that the actual dyadic Ioc cells partition(0,1], with existence and uniqueness of a cell for every time there. It identifies each native past coefficient's actual signed dual with the already verified continuous coordinate curve at the corresponding left endpoint. The telescope is a polynomial/pathwise algebra identity, not only an expectation calculation.
+
+`HigherHeatQuadraticItoFields` constructs the actual Bochner L1 field A obtained by continuously clamping real time into[0,1] and evaluating the existing norm-Lipschitz signed dual coordinate curve. The clamp is irrelevant almost everywhere under the actual restricted Lebesgue time measure. It constructs the constant dual field B=J_T(core1), the actual signed mean functional. The normalized time measure is proved finite with mass1 and supported in(0,1] almost everywhere. Actual Lp quotient representatives and finite cell sums are handled explicitly. The native constant adapted fields equal B exactly in L1 at every grid level.
+
+`HigherHeatQuadraticItoApproximation` proves the genuine L1 estimate
+
+‖actual native left-coordinate field_n−A‖_L1 ≤ pT exp(T) d_n,
+
+with d_n=duration(1,n)→0. The curve and constant fields consequently belong to the complete adapted field domain. Their existence and approximation are proved, rather than assumed as inputs to the earlier conditional limit theorem.
+
+`HigherHeatQuadraticIto` passes the exact native quadratic telescope through the already verified actual signed first- and second-step dual-norm limits. For every physical order p=2m≥2 and positive horizon it proves, as equality of functionals on the entire complete analytic Domain,
+
+J_T(core X_T²)=2 I1(A)+I2(B).
+
+It proves the explicit actual signed cylinder identity against every polynomial cylinder G:
+
+E_T[X_T² G]=[2 I1(A)+I2(B)](core G),
+
+with the real dual value embedded in C. The E_T is the genuine signed finite-kernel cylinder expectation already constructed from the higher-order heat semigroup. The equality is stronger than the scalar heat equation for E_T[X_T²]. Both stochastic sums and the predictable time-field limits have actual domains and norm convergence. A linear reconstruction is also proved: the completed first integral of B is exactly J_T(core X_T).
+
+The drift conventions are checked. At order2, I2(B)=2T J_T(core1), the quadratic drift for the heat normalization with variance2T. At higher even orders the p-th spatial derivative of x² is proved zero. Thus the second channel in the higher-order quadratic formula cannot be relabeled as that p-th drift. The higher-order quadratic observable is proved centered under the actual signed law, so the formula supplies a genuine positive centered reconstruction example with two channels. This is a quadratic-domain result; it does not claim a general all-polynomial Itô or universal chronological Clark–Ocone theorem.
+
+`HigherHeatQuadraticItoBoundary` supplies the substantive boundary for the available calculus. For every p=2m≥4, both constructed channels annihilate the terminal linear test, even for arbitrary nonadapted L1 fields. The actual centered observable X_T^(p−1) pairs nontrivially with that test as p! (−1)^(m+1)T. Hence no combination of these two channels reconstructs that observable. In particular, at biharmonic order4, X_T³ is centered, has zero fourth-derivative drift, and cannot satisfy a general cubic Itô/reconstruction formula using only the two constructed channels, even with arbitrary nonlinear choices of their L1 integrands. At least a genuinely additional channel is necessary. This is not a proof against a properly constructed full hierarchy with all required channels.
+
+**Final campaign boundary and transition:** the minimal coherent weak signed calculus has a specified complete analytic test domain, actual completed adapted first integration, verified second-power signed limits, derivative–integral duality, operator-extension uniqueness and exact kernel-level integrand equality. Its strongest certified chronological applications here are linear and quadratic; the earlier actual finite full-power Taylor/transport and terminal Appell/jet reconstructions remain valid with their stated finite domains. The original universal D^p-only reconstruction, strict-simplex prescription and signed-isometry completion remain refuted. A universal completed multichannel reconstruction, higher q≥3 stochastic channel limits, full general f^(p) drift formula, source tensor Π_p/δ_p identification and whole-completion pairing nondegeneracy are not proved.
+
+Following the user's explicit stopping instruction, defer that general extension at the certified cubic/two-channel boundary instead of growing an indefinite hierarchy of new foundations. Freeze this focused pseudoprocess campaign after the final full build, all-public-type/axiom/source audit and exact Git checkpoint. The detailed frozen contract is `PSEUDOPROCESS_CALCULUS_FREEZE.md`. Only after that commit, open the focused IBM F1–F3 audit anchored at the immutable `EJP2605-044RA0(2).pdf`. This transition does not certify the false manuscript or mark the indefinite Stardust goal complete. All43 source files retain42 hashes; the Clark–Ocone source remains SHA-256 `52671C5A5A77C892CEB8AFC183C7BFBA1520BF0EB3BA1A0E60AE0403063CC6C7`. No dependencies or resource limits changed.
+
+Final verification1045: target4312/full5561 jobs passed, exit0. All41 new public types inspected. Root transitive audit28406 safe Foundation declarations; only propext, Classical.choice and Quot.sound. Forbidden-token and direct/Git whitespace checks passed. All43 source files retain42 hashes; protected-source/dependency diffs empty; exact9-file index verified. No dependencies or resource limits increased. The restricted signed calculus, concrete quadratic Itô and explicit cubic/two-channel boundary are frozen at this checkpoint; the general multichannel extension is deferred. IBM F1–F3 opens after the corresponding Git commit. The indefinite Stardust goal remains active.

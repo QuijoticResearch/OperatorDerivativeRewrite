@@ -1465,3 +1465,8 @@ import Foundation.HigherHeatAffineStepCorrection
 import Foundation.HigherHeatSecondChannelSteps
 import Foundation.HigherHeatCompletedAffineSteps
 import Foundation.HigherHeatQuadraticChannelLimit
+import Foundation.HigherHeatQuadraticItoData
+import Foundation.HigherHeatQuadraticItoFields
+import Foundation.HigherHeatQuadraticItoApproximation
+import Foundation.HigherHeatQuadraticIto
+import Foundation.HigherHeatQuadraticItoBoundary
