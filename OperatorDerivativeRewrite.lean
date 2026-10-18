@@ -1474,3 +1474,4 @@ import Foundation.IBMUnmollifiedSourceDerivative
 import Foundation.IBMBoundaryCurvature
 import Foundation.IBMVarianceClockGeometry
 import Foundation.IBMBoundaryClockLimit
+import Foundation.IBMBoundaryChaosReuse
