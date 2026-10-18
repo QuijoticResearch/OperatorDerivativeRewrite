@@ -1341,3 +1341,4 @@ import Foundation.HigherEvenRenewalMoments
 import Foundation.HigherEvenRenewalEnergy
 import Foundation.MarkedRenewalExponentialTransform
 import Foundation.HigherEvenRenewalTransform
+import Foundation.CyclicExponentialTaylor
