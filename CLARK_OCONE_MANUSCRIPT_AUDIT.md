@@ -6,6 +6,10 @@ Full text examined at the start of discovery1009, 2026-10-18. This ledger is a c
 
 **Status: audit in progress; the manuscript is not repaired or certified as a whole. IBM transition remains gated.** Counterexamples refute the advertised universal theorem, but do not construct its most useful possible replacements. In particular, no completed signed pseudoprocess chronological Clark–Ocone calculus follows from the finite-amplitude positive complex-process results.
 
+## Current campaign completion criterion
+
+The latest user direction expands the campaign to a minimal coherent Lean-verified Malliavin-type calculus for higher-order heat pseudoprocesses. Priorities: bounded dual integral, actual signed step-integral agreement, derivative–integral duality, strongest valid Clark–Ocone reconstruction. Freeze only after that calculus is verified and Clark–Ocone is proved or has a rigorously documented stopping point, with a complete committed full-build/axiom-audit checkpoint. Automatically proceed to IBM F1–F3 then. Same-grid agreement is progress, not the completed calculus; IBM remains gated. Keep manuscript files immutable and avoid unrelated branches.
+
 ## Conventions that must be fixed first
 
 There are two different operators: the density PDE operator and its transpose on observables. If the density satisfies ∂t K = c ∂x^p K, integration by parts gives the observable generator **(-1)^p c ∂x^p**, not c ∂x^p at odd p. The manuscript drops this sign in `prop:obs-ito`. Its spectral moment convention E[X^(pn)] = (pn)! (c t)^n/n! instead treats c as the observable-generator coefficient. These conventions agree at even orders only. A repair must name coefficients separately, say b for observables and c=(-1)^p b for densities. The coefficient of (iξ)^p in a characteristic function also depends on the Fourier sign convention; fix this before using any Airy formula.
@@ -839,3 +843,40 @@ with ‖firstChannel(A)‖≤pT‖A‖_L1. Its coefficient and complementary der
 The all-time nonlinear causal family, adapted time-field closure, full tensor-integrand Π_p, chronological δ_p, corrected full-channel limiting reconstruction, integrand uniqueness and convergence remain open. The original universal D^p-only formula and signed-isometry claims remain refuted. The complete Clark–Ocone audit remains active and incomplete; IBM remains gated. The read-only source retains SHA-256 `52671C5A5A77C892CEB8AFC183C7BFBA1520BF0EB3BA1A0E60AE0403063CC6C7`. No resource limits or dependencies have been increased; explicit canonical type parameters resolved elaboration difficulties.
 
 Verification: target4281/full5545 jobs passed; all41 public types inspected; transitive root audit28120 safe Foundation declarations, only propext, Classical.choice and Quot.sound. All43 source files retain42 hashes. No resource limits or dependencies increased. The complete manuscript repair remains open; IBM remains gated.
+
+
+## Discovery1041: actual adapted signed step duality and native-grid time-integral agreement
+
+Three modules connect the bounded weak integral to actual signed stochastic step sums on a specified polynomial test grid. They reuse the actual signed increment laws, polynomial derivations, common analytic cylinder domain, completed signed pairing, and bounded L1 time adjoint. No path-space signed measure or positive signed L2 norm is assumed.
+
+`HigherHeatAdaptedStepDuality` proves that absence of an increment variable from a polynomial F implies its coordinate derivative vanishes. Native Leibniz then gives, for every r≥0,
+
+∂_j^r(FG)=F ∂_j^r G whenever ∂_j F=0.
+
+Applying the already verified actual signed coordinate Stein identity gives
+
+E[(F ΔX_j)G]=p b Δt_j E[F ∂_j^(p−1)G],
+
+where p=2m, m>0, b=(−1)^(m+1), every increment duration is strictly positive, and F excludes coordinate j. These E are actual signed increment-kernel integrals, not a postulated moment functional. The module defines a genuine finite stochastic step polynomial Σ_j F_j X_j and proves its pointwise evaluation is exactly Σ_j F_j(x)x_j. The explicit chronological adaptation condition is that every variable in F_j has index strictly less than j. It implies the missing-variable hypothesis and yields the corresponding finite-sum derivative–integral duality against every polynomial G on that finite grid.
+
+`HigherHeatWeakStepFields` constructs actual Bochner L1 dual-valued indicator fields 1_s a for every measurable finite-measure time set. It proves their almost-everywhere representatives, the exact L1 norm ‖a‖ μ(s), and
+
+W_(μ,r)(1_s a)(G)=∫_s a(D_t^r G)dμ(t).
+
+If the applied derivative is almost everywhere a fixed H on s, this equals μ(s)a(H). It proves the corresponding scaled first-channel formula and bound. Every formula respects the native Lp quotient and its almost-everywhere representative.
+
+`HigherHeatDyadicStepAgreement` supplies the actual analytic bridge. A native normalized dyadic cell is Ioc(j·d,(j+1)·d), with d=duration(1,n). Throughout that entire cell, the sampled cutoff direction equals the positional tail direction for increment j. Conjugating by the existing cumulative-coordinate equivalence identifies the grid derivative with the genuine increment-coordinate derivation, including every iterate. The cell lies in[0,1], is measurable and finite under the actual time measure, and has real measure exactly d. The physical scaling T·duration(1,n)=duration(T,n) is verified.
+
+For the genuine field A_j(t)=1_cell_j(t) J_T(core F), its bounded first-channel integral therefore agrees, against every native polynomial test G on the same grid, with
+
+firstChannel(A_j)(core G)=B_T(core(F X_j),core G)
+
+provided F excludes increment j. The right side is the already verified actual signed expectation E_T[F ΔX_j G]. Summation gives the exact same-grid adapted stochastic sum agreement for all chronological adapted polynomial coefficient families. This is a proved identification of the constructed L1 time integral with genuine signed step sums on this domain, rather than a coefficient comparison or a finite complex-noise surrogate.
+
+**Precise remaining obligations:** the current agreement theorem tests G on the same grid as the field coefficients. It does not yet establish equality of dual functionals on the whole common completion: arbitrary finer-grid probes, refinement invariance of field presentations, and density must be handled first. The adapted field closure, integral kernel/quotient, completed integrand uniqueness, higher/multiple channels and the strongest valid reconstruction/convergence remain active. No all-time nonlinear causal projection or whole-completion pairing nondegeneracy is inferred. Anticipating coefficients are not ordinary adapted stochastic sums; their derivative product corrections remain necessary. The source's universal D^p-only reconstruction and signed isometry remain refuted.
+
+**Current user mandate:** expand the campaign to a coherent, rigorously verified Malliavin-type calculus for higher-order heat pseudoprocesses. Priorities are the bounded dual integral, actual signed step agreement, derivative–integral duality and the strongest valid Clark–Ocone reconstruction. Freeze only after the minimal coherent calculus is verified and Clark–Ocone is either proved or has a rigorously documented stopping point. At that committed full-build/axiom-audit checkpoint, automatically proceed to IBM F1–F3. This checkpoint is progress toward that criterion, not its fulfillment; IBM remains gated. Avoid unrelated branches and do not alter manuscripts.
+
+The preserved Clark–Ocone source retains SHA-256 `52671C5A5A77C892CEB8AFC183C7BFBA1520BF0EB3BA1A0E60AE0403063CC6C7`. All43 files retain42 distinct hashes. No dependencies or Lean resource limits have changed. The indefinite Stardust goal remains active under the focused calculus mandate.
+
+Verification: target4286/full5548 jobs passed; all29 new public types inspected; transitive root audit28180 safe Foundation declarations, only propext, Classical.choice and Quot.sound. All43 source files retain42 hashes. No dependencies or resource limits increased. The calculus is incomplete and IBM remains gated.

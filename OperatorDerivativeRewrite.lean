@@ -1454,3 +1454,6 @@ import Foundation.HigherHeatCommonDerivative
 import Foundation.HigherHeatTimeDerivative
 import Foundation.HigherHeatDerivativeLInfinity
 import Foundation.HigherHeatWeakTimeAdjoint
+import Foundation.HigherHeatAdaptedStepDuality
+import Foundation.HigherHeatWeakStepFields
+import Foundation.HigherHeatDyadicStepAgreement
