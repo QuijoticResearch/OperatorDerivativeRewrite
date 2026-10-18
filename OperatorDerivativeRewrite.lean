@@ -1459,3 +1459,5 @@ import Foundation.HigherHeatWeakStepFields
 import Foundation.HigherHeatDyadicStepAgreement
 import Foundation.HigherHeatStepRefinement
 import Foundation.HigherHeatCompletedStepAgreement
+import Foundation.HigherHeatAdaptedIntegralClosure
+import Foundation.HigherHeatFirstChannelRange
