@@ -1349,3 +1349,8 @@ import Foundation.HigherEvenBandGenerator
 import Foundation.HigherEvenSignedRealization
 import Foundation.MarkedSourceRegeneration
 import Foundation.MarkedConditionalRealization
+import Foundation.MarkedRealizationRegeneration
+import Foundation.MarkedRealizationPast
+import Foundation.MarkedRealizationIndependence
+import Foundation.MarkedRealizationMartingale
+import Foundation.HigherEvenRenewalMartingale
