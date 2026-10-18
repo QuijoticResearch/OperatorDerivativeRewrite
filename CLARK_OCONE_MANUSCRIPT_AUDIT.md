@@ -938,3 +938,50 @@ Consequently J_T(core X_T^(p−1)) is outside the range of firstChannel for ever
 Elaboration used explicit vector/scalar arguments and native linear-map laws instead of raising resource limits. All43 manuscript files retain42 hashes. The read-only Clark–Ocone source remains SHA-256 `52671C5A5A77C892CEB8AFC183C7BFBA1520BF0EB3BA1A0E60AE0403063CC6C7`.
 
 Verification: target4292/full5552 jobs passed; all24 new public types inspected; transitive root audit28252 safe Foundation declarations, only propext, Classical.choice and Quot.sound. All43 sources retain42 hashes. Forbidden-token, direct/Git whitespace, source/dependency diff and exact-index checks passed. No dependencies or resource limits increased. Actual adapted closure and first-channel reconstruction boundary are verified; the final multichannel Itô investigation/checkpoint and IBM transition remain pending.
+
+
+## Discovery1044: actual signed quadratic channel, anticipating correction and dual-norm limit
+
+Four modules advance the focused multichannel investigation using the existing native derivations, actual signed finite laws, common domain, causal polynomial adaptation, L1 dual fields and bounded transposes. They do not introduce a new stochastic law or a positive signed-square construction.
+
+`HigherHeatAffineStepCorrection` proves the iterated native Leibniz identity for an affine multiplier F, meaning D²F=0:
+
+D^(r+1)(FG)=F D^(r+1)G+(r+1)(DF)D^rG.
+
+It proves exact increment-block pullback/coordinate-derivative intertwining, including the actual block-variable calculation. Applying actual signed coordinate Stein gives the corresponding signed expectation identity with both complementary derivative orders p−1 and p−2. This is an anticipating multiplier correction; the product term cannot in general be called an ordinary adapted stochastic step integral without that correction.
+
+`HigherHeatSecondChannelSteps` defines the actual bounded second complementary derivative operator on existing Bochner L1 dual fields,
+
+I2(A)=p(p−1)(−1)^(m+1)T W_(timeMeasure,p−2)(A), with p=2m.
+
+Its native time-cell formula uses the already verified cutoff derivative, exact Lebesgue cell duration and physical scaling. It proves the actual signed affine-product identity against native polynomial tests and proves that affine coordinate support is preserved by genuine grid refinement. The coefficient, sign and complementary derivative order are derived from the signed law, not inferred from a heat expectation formula.
+
+`HigherHeatCompletedAffineSteps` repeats the refinement and dense-core argument for this corrected identity. For every native affine F and every completed analytic test, it proves equality of actual Banach-dual functionals
+
+J_T(F ΔX_j)=I1(1_cell J_T(F))+I2(1_cell J_T(∂_jF)).
+
+For F=Fpast ΔX_j, with Fpast excluding increment j, this gives the genuine quadratic step identity
+
+J_T(Fpast (ΔX_j)^2)=I1(1_cell J_T(Fpast ΔX_j))+I2(1_cell J_T(Fpast)).
+
+The first term uses the already constructed unrestricted weak time adjoint on an anticipating coefficient field. It is a finite-grid correction, not an assertion that this anticipating field belongs to the adapted closure. The module bounds its actual dual norm by
+
+(p T d)^2 ‖J_T(Fpast)‖,
+
+where d is the normalized cell length. This uses whole-completion actual first-step agreement and the proved L1 indicator norm. It is uniform in the test grid and applies to every completed test, rather than only equal-grid moments.
+
+`HigherHeatQuadraticChannelLimit` defines the genuine finite quadratic stochastic polynomial Σ_j F_j(ΔX_j)^2 and the finite sum R_n of these corrections. For chronological adapted polynomial coefficients it proves exact equality
+
+J_T(Σ_j F_j(ΔX_j)^2)=R_n+I2(actual adapted field_n).
+
+If all actual coefficient dual norms are bounded by one real constant M, the actual remainder satisfies
+
+‖R_n‖≤(pT)^2 d_n M,  d_n=duration(1,n)→0.
+
+Consequently R_n→0 in Banach-dual norm. If, additionally, the actual adapted coefficient fields converge in Bochner L1 to A in the previously constructed closed adapted space, then the actual quadratic signed stochastic sums converge in Banach-dual norm to I2(A). This supplies actual signed quadratic-step identification and its precise sufficient domain/topology. L1 convergence and the uniform coefficient bound are hypotheses, not conclusions of arbitrary mesh refinement; neither can be silently omitted. It is a stochastic signed-functional limit, not merely the expectation-level heat equation.
+
+**Current scope and next focused check:** the first channel is already completed on its actual adapted L1 closure, and the second power channel now has a genuine finite signed correction and a verified norm-limit theorem on the domain above. The centered X_T^(p−1) range witness still rules out universal reconstruction using the first channel alone. The strongest prior positive reconstruction remains the actual finite full-power Taylor/transport and terminal Appell/jet formulas; this checkpoint does not claim a completed universal chronological Clark–Ocone theorem. A useful concrete next test is the quadratic Itô identity using the already verified continuous dual coordinate curve for its predictable linear coefficient: prove the native left-coordinate fields actually converge in L1, handle the constant field, and pass the exact quadratic telescoping identity through the two proved integrals. This would provide a nonconditional, explicitly instantiated two-channel identity. Higher powers q≥3, the general p-th-order drift and a full multichannel Itô formula are not certified here.
+
+No substantive obstruction to every multichannel formula has been established. The first-channel obstruction must not be used as such a claim. Keep this as a bounded focused investigation; if a substantive new obstruction appears, document and defer the remaining Itô problem, complete the final campaign audit/Git checkpoint, freeze and open IBM F1–F3. Do not prolong the pseudoprocess campaign with unrelated foundations. IBM remains gated pending that final checkpoint. All43 manuscripts retain42 hashes, with the Clark–Ocone source still SHA-256 `52671C5A5A77C892CEB8AFC183C7BFBA1520BF0EB3BA1A0E60AE0403063CC6C7`. Dependencies and resource limits are unchanged.
+
+Verification: target4300/full5556 jobs passed; all20 new public types inspected; transitive root audit28308 safe Foundation declarations, only propext, Classical.choice and Quot.sound. All43 manuscript files retain42 hashes. Forbidden-token, direct/Git whitespace, exact-index and protected-source/dependency checks passed. No dependencies or resource limits increased. Actual signed quadratic channel identification is verified with its explicit coefficient and convergence hypotheses; a concrete full Itô identity and final campaign checkpoint remain pending, so IBM remains gated.

@@ -1461,3 +1461,7 @@ import Foundation.HigherHeatStepRefinement
 import Foundation.HigherHeatCompletedStepAgreement
 import Foundation.HigherHeatAdaptedIntegralClosure
 import Foundation.HigherHeatFirstChannelRange
+import Foundation.HigherHeatAffineStepCorrection
+import Foundation.HigherHeatSecondChannelSteps
+import Foundation.HigherHeatCompletedAffineSteps
+import Foundation.HigherHeatQuadraticChannelLimit
