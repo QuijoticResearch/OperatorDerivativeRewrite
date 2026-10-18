@@ -432,3 +432,41 @@ All terms are actual integrals or verified source objects; no endpoint assumptio
 The next central IBM obligation is now specifically the stochastic integration bridge: identify the spatial heat-weighted Bochner correction with the actual time-integrated projected curvature averaged over the clock, with the time/clock/source measurability and Fubini domains proved. The half-line identity alone does not establish that bridge. Useful existing ingredients are BrownianClockWeightedEnergy.sigma_measurable, actual clock laws, Gaussian finite-moment bounds, the newly proved projected cubic growth and the existing finite-horizon integration machinery. After that identification the verified terminal convergence can yield an actual clock-averaged second-source correction limit.
 
 This remains the quartic test f(z)=z^4/24, which is not Schwartz. General Schwartz six-channel identification, other higher-source limits, F1 cross-sector common dual topology/uniform tails and F3 remain open. No physical white-noise-coordinate H^-1 closure or full spatial local-time occupation-density field has been inferred. The focused IBM campaign and indefinite Stardust goal remain active; pseudoprocess extension remains frozen. All source and dependency settings are preserved.
+
+
+## Discovery1064: actual clock/time Fubini bridge and projected whole quartic correction limit
+
+The previous goal turn made verified progress in03f7dbf4b327246c2e407ee1a41bfeb9396e2553. Continued the remaining stochastic integration bridge from the absolutely integrable half-line identity. This checkpoint proves the clock/time/source-class identification for the actual second-source curvature process and commutes projection through the actual source-valued whole time correction.
+
+`IBMQuarticHeatFubini` constructs the actual Gaussian-L2-valued heat integrand (2p_s(r))Pi_2 g_n''(r). Its joint strong measurability is derived from the explicit measurable heat kernel and the verified continuous source curvature. For each radius, its finite-time integral and norm integral are respectively W_T(r)Pi_2 g_n''(r) and the norm of that vector. Thus1063's actual absolute spatial Bochner domain supplies the full positive-space/time product domain by the existing product-integrability theorem. Genuine Fubini proves
+
+integral_0^T integral_0^infinity 2p_s(r)Pi_2 g_n''(r)dr ds
+=integral_0^infinity W_T(r)Pi_2 g_n''(r)dr.
+
+No uniform moment estimate or spatial local-time field is substituted for this domain argument.
+
+`IBMReflectedClockMean` packages direct actual Gaussian-law reuse for a strongly measurable observable on a proved reflected-clock Bochner domain. It transfers integrability through the actual clock law and density, then splits/refects the vector-valued Lebesgue integral. The resulting reflected expectation has the required factor2. This small reusable lemma is used for both the actual source vector and its norm, without identifying any unreflected mixed-source kernels.
+
+`IBMQuarticClockMean` constructs the genuine source-Gaussian-L2-valued process H_n(t,omega_Y)=Pi_2 g_n''(|Y_t|), using the existing continuous Brownian clock and actual source curvature projection. Its fixed-time Bochner integrability follows from verified projected cubic growth and the existing clock cubic-moment domain. The actual-law lemma identifies both its clock mean and mean norm with the corresponding positive-space heat integrals. The already established heat product domain then transfers to a genuine finite-time/clock product domain for H_n. This proves Bochner integrability of the clock-dependent time integral and justifies clock/time Fubini. Consequently
+
+E_Y[integral_0^T Pi_2 g_n''(|Y_s|)ds]
+=integral_0^infinity W_T(r)Pi_2 g_n''(r)dr.
+
+The previous half-line identity now gives the actual time-correction mean identity
+
+E[L_T^0]P_n'(0)+(1/2)E_Y[integral_0^T Pi_2 g_n''(|Y_s|)ds]
+=E_Y[P_n(|Y_T|)]-P_n(0),
+
+and strong source-L2 convergence to E_Y[P_0(|Y_T|)] along the concrete shrinking-mollifier sequence. The stochastic integration bridge left open in1063 is therefore discharged at this explicitly projected source-class level, with the separate origin factor and the one-half coefficient retained.
+
+`IBMQuarticTimeProjection` additionally proves continuity of the actual fourth-power Wick class, polarized square/cube products, and unprojected quartic source curvature. Every constructed continuous clock path therefore gives a genuine continuous source-L2 integrand and a justified finite-time Bochner integral. The existing Gaussian number-sector continuous linear map commutes with that integral. Constructing the whole source-valued correction
+
+C_n(T,omega_Y)=L_T^0(omega_Y) originClass_n+(1/2)integral_0^T g_n''(|Y_s(omega_Y)|)ds,
+
+it proves pointwise in the clock representative
+
+Pi_2 C_n=L_T^0 P_n'(0)+(1/2)integral_0^T Pi_2 g_n''(|Y_s|)ds.
+
+The projected whole correction is Bochner integrable over the clock, its actual clock mean is the identified correctedMean, and that mean converges strongly in source L2 to the actual terminal limit. The earlier actual field representatives and origin projection identify the source objects; no manuscript formula has been taken as an axiom.
+
+Precise scope: this closes the quartic clock-averaged second-source model calculation for T>0, fixed horizon and the concrete mollifier sequence, in source Gaussian L2. The quartic test f(z)=z^4/24 is not Schwartz. This checkpoint does not assert a native joint-L2 orthogonal ((2,0)) projection of the entire unprojected correction: full unprojected clock/source L2 realization, scalar joint representative/time recovery and its norm domains remain to be identified if that native joint statement is required. It also does not prove the general Schwartz six-channel identity (in particular the Q6 channel), remaining higher-source limits, F1 common dual topology/uniform sector tails or F3. No physical white-noise-coordinate H^-1 closure is inferred. Next reuse the completed mean reconstruction to tackle those precise domains or the genuinely missing general-Schwartz source identities, rather than reopening the proved heat endpoint/Fubini obligations. The focused IBM campaign and indefinite Stardust goal remain active; pseudoprocess extension stays frozen. Manuscripts and dependency/toolchain settings are preserved.

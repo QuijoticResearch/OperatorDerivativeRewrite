@@ -1508,3 +1508,7 @@ import Foundation.IBMHeatTailDecay
 import Foundation.IBMQuarticHeatEndpoint
 import Foundation.IBMQuarticHeatHalfLine
 import Foundation.IBMQuarticHeatDomain
+import Foundation.IBMQuarticHeatFubini
+import Foundation.IBMReflectedClockMean
+import Foundation.IBMQuarticClockMean
+import Foundation.IBMQuarticTimeProjection
