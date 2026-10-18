@@ -226,3 +226,24 @@ f''(a)L_T^0(Y)+(1/4) integral_0^T E_X[f^(4)(a+X_(|Y_s|))]ds.
 This closes the missing joint Fubini and conditional-mean identification, not just an abstract candidate coefficient. It supplies a genuine zero-scenery conditional block, retaining all clock randomness, along the concrete normalized bump sequence for each fixed test, shift and horizon.
 
 Scope: the full unaveraged general-Schwartz correction has a verified joint L1 domain here, while its conditional expectation has the proved L2 domain and strong limit. This checkpoint does not assert a joint L2 domain or convergence for the full unaveraged correction, identify an orthogonal Hilbert projection whose input domain has not yet been proved, or obtain any higher-source sector limits or uniform cross-sector tail bounds. Conditional expectation is valid on the established L1 domain. F1 remains open beyond this zero-source block; F3 remains open. Next investigate a direct fixed-mollifier joint L2 estimate for the actual Schwartz correction from the existing Gaussian fourth moments and finite-horizon machinery, to make higher-source projections legitimate before seeking their singular limits. No new general chaos infrastructure or source edits. Pseudoprocess extension stays frozen; the indefinite goal remains active.
+
+
+## Discovery1056: genuine general-Schwartz joint L2 domain and native clock projection
+
+The previous goal turn made verified progress ine3e72c02be8655c9459ed844706819be83657ffe. Continued the concrete domain gap before any higher-source projection. All derivative fields are the existing jointly measurable continuous dyadic modifications, evaluated at the actual independently constructed Brownian clock. No new process or moment law is assumed.
+
+`IBMDerivativeFourthDomain` identifies the actual mollified evaluation with the corresponding existing field, proves source fourth-moment integrability, and uses the verified first-chaos fourth moment to identify its literal source integral with3 times the fourth power of the actual source coefficient norm. Existing fixed-mollifier polynomial coefficient growth and the existing sixth clock moment then give
+
+E_joint[(derivativeField_n,i(t))^4] ≤ C_n,i (1+15 t^3),
+
+with a proved finite nonnegative constant C_n,i. The proof supplies joint integrability by product-measure slicing, not by equality of formal moments. Joint measurability and the continuous time majorant give actual fourth integrability on every finite time/joint-source product measure. All three derivative indices are included. Constants depend on n; no uniform bound is claimed.
+
+`IBMSchwartzJointL2` proves the actual pointwise square estimate for the original general-Schwartz correction H_n,
+
+H_n² ≤ 2 M_2² V_n^4 + 2 M_1² W_n²,
+
+where M_j is the actual derivative Schwartz seminorm bound. The just-proved fourth domain and existing second-moment finite-horizon theorem yield genuine L2 of H_n on time times the independent joint source. Existing finite-measure L2 integration then proves that the actual scalar time integral belongs to joint L2, with its actual energy estimate. The joint equivalence class is constructed from that literal random variable and its representative agreement is verified.
+
+The module applies Mathlib native condExpL2 to that proved joint L2 input and identifies it with1055's measure-preserving lift of the actual scenery-averaged clock class. Thus the previous L1 conditional-expectation identification is now also a legitimate L2 conditional projection of the actual full correction. No assumed input domain or constructed surrogate correction is used. This removes the specific domain caveat in1055 while retaining its strong convergence result for the clock block.
+
+Scope: this is a substantive fixed-mollifier general-Schwartz construction, not a shrinking-mollifier uniform estimate. It does not prove full joint L2 convergence, higher-source sector limits, a common global dual norm, or uniform cross-sector tail summability. F1 beyond the zero-source clock block and F3 remain open. Next investigate an actual higher-source projection or its concrete kernel/energy obstruction using this now legitimate joint L2 input and existing projection/Bochner machinery. Keep the study tied to the original correction and a stated topology, rather than constructing a separate general chaos framework. The43-file Incoming inventory and four recorded IBM source versions preserve their hashes; no source/dependency changes. The indefinite goal remains active and pseudoprocess extension frozen.

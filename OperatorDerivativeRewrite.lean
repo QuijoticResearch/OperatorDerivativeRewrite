@@ -1488,3 +1488,5 @@ import Foundation.IBMAveragedBulkClock
 import Foundation.IBMSceneryAveragedCorrectionLimit
 import Foundation.IBMGeneralSchwartzFubini
 import Foundation.IBMClockConditionalCorrection
+import Foundation.IBMDerivativeFourthDomain
+import Foundation.IBMSchwartzJointL2
