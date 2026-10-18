@@ -247,3 +247,30 @@ where M_j is the actual derivative Schwartz seminorm bound. The just-proved four
 The module applies Mathlib native condExpL2 to that proved joint L2 input and identifies it with1055's measure-preserving lift of the actual scenery-averaged clock class. Thus the previous L1 conditional-expectation identification is now also a legitimate L2 conditional projection of the actual full correction. No assumed input domain or constructed surrogate correction is used. This removes the specific domain caveat in1055 while retaining its strong convergence result for the clock block.
 
 Scope: this is a substantive fixed-mollifier general-Schwartz construction, not a shrinking-mollifier uniform estimate. It does not prove full joint L2 convergence, higher-source sector limits, a common global dual norm, or uniform cross-sector tail summability. F1 beyond the zero-source clock block and F3 remain open. Next investigate an actual higher-source projection or its concrete kernel/energy obstruction using this now legitimate joint L2 input and existing projection/Bochner machinery. Keep the study tied to the original correction and a stated topology, rather than constructing a separate general chaos framework. The43-file Incoming inventory and four recorded IBM source versions preserve their hashes; no source/dependency changes. The indefinite goal remains active and pseudoprocess extension frozen.
+
+
+## Discovery1057: exact higher-source quartic kernel and independent six-channel normalization tests
+
+The previous goal turn made verified progress inad9e06e70c89cdf4e107074da6939c8fa6c7241c. Moved from the completed fixed-mollifier joint domain to a concrete higher-source kernel test. Selectively examined `ResearchSources/ibm/BidegreeAtlas.tex` around its channel enumeration (approximately848–923); its SHA256409FFE56EDB47DF23DAEEA788CEEC24E1C7ED9FF657BDCB6914708F8FA535D4E remains unchanged. The original source-resolved wrapper/body limitations recorded in1049 remain; this companion is not silently substituted for the missing manuscript body. No source file was edited.
+
+`IBMQuarticSecondChaos` directly reuses the existing actual `IBMEvenCorrectionProjection.squareProduct`, `cubeProduct` and `quarticCorrection`, plus the verified Wick-sector projection. It constructs the centered cross product as an actual L2 class and proves its representative is UV-inner(u,v). Quadratic polarization, scaling and the actual quartic Wick decomposition prove the exact second-source projections of U²V² and U³W. Writing c=norm(u)², q=norm(v)², d=inner(u,v), e=inner(u,w), it proves for the existing quartic correction F=(1/2)U²V²+(1/6)U³W,
+
+Pi_2 F = ((q+e)/2):U²: + 2d:UV: + (c/2)(:V²:+:UW:).
+
+This is a genuine projection identity in the actual Gaussian L2 space, including degenerate and correlated directions, not a supplied tensor-kernel definition. For u=v=w and norm(u)²=1, the projected second-source energy is exactly32. The existing verified first-source projection for this same even quartic correction is exactly zero. This finite Gaussian example shows why first-source parity suppression cannot exclude higher-source energy; it is not asserted to be a realizable IBM derivative triple at a spatial point.
+
+`IBMQuarticSecondGeometry` instantiates the identity with the existing actual mollified IBM source triple, proves its literal dyadic-field representative and identifies all coefficients from actual variance/covariance geometry, including boundary endpoints:
+
+Pi_2 F_n(r) = (rho_n(r)/2):U_n(r)²:
+ + c_n'(r):U_n(r)V_n(r):
+ + (c_n(r)/2)(:V_n(r)²:+:U_n(r)W_n(r):).
+
+The positive exterior formula has rho_n=0 and c_n'=1; the finite origin layer is retained globally. These remain spectral/source Hilbert Wick classes; no identification with a physical white-noise tensor kernel is assumed.
+
+An independent Gauss–Hermite diagnostic tests the companion's general six-channel coefficients on the actual finite Gaussian model F=f''(a+U)V²+f'(a+U)W with f(x)=exp(-x²), a=.37. The collapsed candidate is
+
+Pi_2 F = ((q+e)Q4+d²Q6):U²:/2 + 2d Q4:UV: + Q2(:V²:+:UW:),
+
+where Qj=E[f^(j)(a+U)]. Six rank-one quadratic test directions span the finite three-dimensional symmetric quadratic space. Orders12,24,40,64,96 independently integrate the source moments and one-dimensional Qj in correlated, zero-observation and collinear cases. At order96 the maximum tested pairing errors are3.11e-15,3.55e-15,4.44e-15 respectively. Omitting the channel involving Q6 causes an error about.597 in the correlated case and4.331 in the collinear case. This is a numerical normalization diagnostic, not a rigorous counterexample or Lean proof of the full Schwartz formula. The quartic exact test has Q6=0, so it cannot validate that channel on its own. Reproducible ignored evidence: `.lake/stardust-1057-kernel-tests.py` and `.json`.
+
+A productive next analytic connection is the formal product-rule observation that the verified quartic expression should equal (1/4) d_r²[c_n(r):U_n(r)²:]. The existing `GaussianQuadraticSourceHodge.mixedTarget` represents the same centered quadratic observable and already has source derivative/divergence graphs. Reuse that result when developing the bridge; its identification with the polarization helper and the needed Gaussian-L2 spatial quadratic derivative/product rule have not been proved here. Investigate whether existing polynomial/source bilinear machinery can establish it and whether it gives a useful bound after the actual clock integration. Spatial r differentiation is not automatically the manuscript white-noise-coordinate w derivative or an H^-1 bound. The full general-Schwartz six-channel identity, actual time-integrated higher-source kernel limits, F1 uniform cross-sector tails/global dual topology and F3 remain open. No separate chaos framework or unrelated campaign is opened. The indefinite goal remains active, with the concrete-family scope and pseudoprocess freeze preserved.

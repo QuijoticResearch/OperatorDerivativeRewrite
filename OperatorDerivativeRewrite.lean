@@ -1490,3 +1490,5 @@ import Foundation.IBMGeneralSchwartzFubini
 import Foundation.IBMClockConditionalCorrection
 import Foundation.IBMDerivativeFourthDomain
 import Foundation.IBMSchwartzJointL2
+import Foundation.IBMQuarticSecondChaos
+import Foundation.IBMQuarticSecondGeometry
