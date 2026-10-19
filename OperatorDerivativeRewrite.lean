@@ -1737,3 +1737,6 @@ import Foundation.RiemannQuarticStripBoundary
 import Foundation.RiemannQuarticFarModelSaddle
 import Foundation.RiemannQuarticLaguerreWitness
 import Foundation.RiemannQuarticFarCorrection
+import Foundation.GaussianOscillatoryTail
+import Foundation.RiemannQuarticFarRemainder
+import Foundation.RiemannQuarticFarSignedIntegral
