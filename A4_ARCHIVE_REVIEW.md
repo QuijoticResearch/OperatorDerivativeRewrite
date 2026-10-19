@@ -528,3 +528,68 @@ high-order local Taylor bounds or analytic quadrature are possible routes,
 not established replacements. Even a verified t=8 negative Laguerre value
 would only establish finite-time nonmembership, not A(4)=infinity.
 Both threshold alternatives remain open. A(2) retains its successor gate.
+
+## Actual real channels and Taylor certificate route, 2026-10-19 (1112)
+
+`RiemannQuarticRealCertificate` proves the exact real quadrature channels
+for derivative orders0,1,2: cos(u*x), -u*sin(u*x), -u^2*cos(u*x), respectively,
+multiplied by exp(8*u^4)*partialKernel(N,u). Its `finiteDerivative_real`
+identifies the symmetric complex integrals with these real integrals on
+[0,8/5]. `realIntegrand_eq_sum` gives the precise finite sum of elementary
+exponentials used by the numerical prototype, including the two different
+linear exponents9u and5u, all arithmetic powers, and their signs.
+
+Four terms already suffice for a coarse sign certificate: the proved
+pointwise weighted theta error is <=10^-17 and the total actual complex
+derivative error is <=10^-16, for all real x and k<=2. Here `actualJet` is
+defined explicitly as the real part of the actual iterated complex
+derivative. The theorem `negative_Laguerre_of_enclosures` retains three
+EXPLICIT hypotheses on the actual four-term real integrals Q_k(x):
+
+    Q_0(x) <= -163/10^12
+    |Q_1(x)| <= 4/10^13
+    Q_2(x) <= -145/10^12.
+
+It concludes that actualJet(1,x)^2-actualJet(0,x)*actualJet(2,x) is less
+than -2/10^20, after all proved tail errors. No concrete x is proved to
+satisfy these three hypotheses yet; this is a conditional certificate
+transfer theorem, not the missing negative-sign theorem.
+
+`RiemannQuarticTaylorJets` proves genuine normalized derivative identities
+with a_n(f,c)=D^n f(c)/n!: multiplication is convolution, and
+
+    a_(n+1)(exp(f),c) =
+      sum_(i=0)^n (i+1)*a_(i+1)(f,c)*a_(n-i)(exp(f),c)/(n+1).
+
+The finite arithmetic kernels and real channel integrands are proved
+C-infinity. The centered local Taylor polynomial is exactly the sum of
+these coefficients; its integral on [c-h,c+h] has the exact monomial
+formula. If |a_(n+1)(f,v)|<=M throughout that cell, with h>0 and M>=0,
+`local_integral_error` proves an error <=2*M*h^(n+2). The coefficient
+bound is an explicit obligation, not a presumed numerical fact.
+
+The new standard-library exact-dyadic prototype is
+`tools/stardust_quartic_interval_probe.py`. All interval arithmetic rounds
+outwards with integer floor/ceiling; exp and sin/cos use finite series
+plus remainder bounds and range reduction; pi uses Mathlib's existing
+`Real.pi_gt_d20` / `Real.pi_lt_d20`. Floating-point numbers occur only in
+display fields. At160 panels, order16,160-bit interval precision, four
+theta terms, the reported widths are approximately2.52e-15,2.68e-15 and
+6.39e-15, and all three endpoint box tests pass. This prototype's interval
+propagation and complete calculation are NOT Lean-verified, so its
+printed intervals are not admitted as hypotheses of the Lean theorem.
+
+A higher-order test exposed a concrete numerical obstruction: order20
+at the same160-bit precision gives widths around10^-9 and fails every
+box test. The interval floor used for tiny exponentials gets amplified
+by high derivatives. Keeping the failed output, then raising precision
+to256 bits at order20, gives widths about1.64e-21,1.52e-22 and2.04e-23;
+all endpoint tests pass again. Thus increasing Taylor order alone is not
+an established convergence mechanism for the rounded implementation.
+The next central obligation is a small kernel-checked interval evaluator
+and proof that its exponential/convolution/trigonometric coefficient
+bounds cover actual normalized derivatives on each cell, followed by
+the finite-cell integral assembly and the three concrete box proofs.
+The analytic recurrence and local Taylor integration portions are now
+proved; the remaining interval calculation is not. A(4) remains active
+and unresolved, with no transition to A(2) or claim about RH.

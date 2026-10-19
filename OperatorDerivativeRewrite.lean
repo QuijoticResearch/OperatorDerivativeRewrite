@@ -1656,3 +1656,5 @@ import Foundation.RiemannQuarticCutoff
 import Foundation.RiemannQuarticJetCutoff
 import Foundation.RiemannThetaTruncation
 import Foundation.RiemannQuarticFiniteApproximation
+import Foundation.RiemannQuarticRealCertificate
+import Foundation.RiemannQuarticTaylorJets
