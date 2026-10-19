@@ -1552,3 +1552,7 @@ import Foundation.IBMFullSchwartzHeatHalfLine
 import Foundation.IBMFullSchwartzHeatFubini
 import Foundation.IBMFullSchwartzClockMean
 import Foundation.IBMFullSchwartzNativeMean
+import Foundation.IBMPhysicalNoiseVectors
+import Foundation.IBMPhysicalNoiseRealization
+import Foundation.IBMPhysicalNoiseCalculus
+import Foundation.IBMPhysicalNoiseClock

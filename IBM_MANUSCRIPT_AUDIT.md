@@ -821,3 +821,54 @@ It proves strong native joint-L2 convergence for every nonnegative horizon, reta
 Precise limits of this advance: the complete source-zero/all-clock family was verified in1074, and the complete all-source/clock-zero family is verified here. The genuinely mixed sectors with positive source degree AND positive clock degree, their common physical test-dual topology, and their global summability remain open. Clock averaging is an actual bounded projection and may remove singular behavior; this result does not bypass the random first-chaos obstruction or prove convergence of the full unprojected random correction. Physical white-noise-coordinate H^-1 identification is still absent. F3 joint clock-domain membership and intrinsic-core density/nondensity remain open. The concrete F2 result and all earlier work are preserved. These unresolved central obligations keep IBM active.
 
 All69 public declaration types from the seven new modules are inspected at the checkpoint. The modules use default elaboration resource settings; only the existing spectral-space second-countability and exponent facts are used where needed. No new mathematical axiom, dependency, toolchain change, manuscript write, extra research branch or resource increase. Incoming remains43 files/42 exact content hashes; the four IBM archive baselines and the Yang–Mills/Navier–Stokes dictionary hash remain unchanged.
+
+
+## Discovery1077: actual physical white noise, dense indicator realization, and clock-dependent physical H^-1 kernels
+
+The previous goal turn made verified progress in c67bbe7947f705db60e08cd08d98958fa8ad3c25. IBM remains immediate. This checkpoint addresses the missing physical noise-coordinate realization directly, rather than adding further isolated chaos projections. The IBM → A(4) → A(2) → final multichannel gates and October31 hard stop remain unchanged.
+
+`IBMPhysicalNoiseVectors` reuses the actual Lebesgue-L2 interval indicators from `GaussianTimeHilbert`, defining the two-sided oriented kernel
+
+v_r=1_(0,r]-1_(r,0].
+
+For negative r this is minus the indicator of(r,0]; for positive r it is the indicator of(0,r]. Its actual representatives, interval increments, norm squared |r| and increment norm squared |r-s| are proved. Pairing v_r with any actual physical L2 function equals its oriented integral from0 to r.
+
+Crucially, `span_dense` proves that these kernels span a dense subspace of the ENTIRE physical L2(R,dw), including both half-lines. The proof imposes no density assumption: a vector orthogonal to the span has identically zero indefinite integral; the existing Lebesgue differentiation theorem applies to its locally integrable L2 representative and forces the vector to be zero almost everywhere. The Hilbert orthogonal-complement criterion then supplies density. No arbitrary embedding of an abstract countable-dimensional Hilbert space is substituted for the physical kernels.
+
+`IBMPhysicalNoiseRealization` uses the existing `baseCoefficient` and its exact embedding into the already constructed Brownian scenery. Their norm and increment energies match v_r. Polarization proves equality of their Gram kernels. Consequently every finite Finsupp linear combination has exactly the same physical and scenery-coefficient norms. The existing Mathlib dense linear-isometry extension theorem constructs
+
+J:L2(R,dw) -> CoefficientSpace,  J(v_r)=baseCoefficient(r).
+
+J is a linear isometry on every actual physical L2 kernel. It is fixed by the Brownian indicator coordinates. Its range need not equal the entire ambient coefficient space; no such surjectivity is asserted. The existing generic Hilbert-basis Gaussian embedding alone would not give these exact scenery-coordinate identities, which is why this Gram-preserving transfer is needed.
+
+Composing J with the VERIFIED existing first-chaos embedding constructs the physical white noise W(f) on the original scenery Gaussian probability space. The module proves its exact centered Gaussian law with variance ||f||^2, joint Gaussianity for the family indexed by physical L2, zero mean, and covariance <f,h>_L2 = integral f(w)h(w)dw. It also proves actual equality of classes
+
+W(v_r)=X(r),  W(1_(a,b])=X(b)-X(a), a<=b.
+
+These are equalities with the existing scenery, not just equalities in law or an independent replacement process. White noise here is the genuine isonormal family indexed by physical L2; no pointwise random white-noise function w -> W(w) or evaluation at a Dirac kernel is claimed.
+
+`IBMPhysicalNoiseCalculus` identifies J's adjoint on its image, proves continuity of the physical indicator curve, and connects W(f) to the repository's actual CLOSED Gaussian source derivative graph, with constant coefficient J(f). Its bounded gradient pullback J* acts on vector-valued Gaussian L2 fields; on these actual derivative graphs it returns the physical kernel f. This does not assert closedness of an unrestricted postcomposed derivative or solve an intrinsic-domain density problem.
+
+For every continuous compactly supported rho, the module constructs the physical L2 Bochner kernel
+
+Q_(rho,x)=integral rho(x-r) v_r dr,
+
+proves its absolute Bochner integrability, and proves W(Q_(rho,x))=wholeLineScenery(rho,x). The actual closed Gaussian gradient pulls back to Q_(rho,x). For each of the three concrete mollifier jet kernels i=0,1,2, continuity and compact support are discharged, and `triple_coefficient_physical` proves
+
+J(Q_(derivativeKernel(n,i),r))=tripleCoefficient(n,r,i).
+
+Thus the actual zeroth, first and second spatial mollifier coefficients all have fixed physical white-noise kernels. The concrete zeroth physical mollifier kernel converges STRONGLY in L2(R,dw) to v_r at every real radius r. This is inherited through J* from the actual verified coefficient convergence; it is not an unverified formal convolution limit.
+
+`IBMPhysicalNoiseClock` composes the genuine first-chaos coefficient adjoint with J*, giving a bounded kernel pullback on the existing source GaussianL2. Applying its Bochner-L2 lift to the already constructed random-time scenery classes constructs actual physical kernel fields Q_n(|Y_t|) and v_(|Y_t|). Their AE representatives use the independently constructed continuous Brownian clock, and they converge strongly in L2(clock;L2(R,dw)). The actual-section theorem recovers the independently constructed continuous IBM Z_t=X(|Y_t|) by applying W to the limiting random physical kernel, for almost every clock source and then almost every scenery source. No exceptional set uniform over all spatial points is assumed.
+
+Finally, ordinary real-to-complex scalar inclusion and the ALREADY verified bounded spatial distributional derivative L2 -> H^-1 are composed on this ACTUAL physical variable w. The module constructs H^-1(R)-valued random variables from Q_n(|Y_t|), identifies their actual physical-kernel representatives and their distributional derivative meaning, and proves the precise topology
+
+d_w Q_n(|Y_t|) -> d_w v_(|Y_t|) strongly in L2(clock;H^-1(R,dw))
+
+for every nonnegative time t. The complexification preserves the physical variable and Lebesgue measure. These are actual Bochner-L2 random distributions associated with the constructed IBM clock, not a coefficient-space negative norm renamed as physical H^-1.
+
+Exact remaining obligations: an explicit physical FUNCTION identity for Q_(rho',x), including signs, boundary constants and its relation to translated rho, has not yet been proved. No Dirac evaluation of W is asserted. The new H^-1 convergence is for the physical distributional derivatives of the zeroth Brownian mollifier kernels. It is NOT a theorem identifying the manuscript's entire first-source correction kernel with these derivatives, and it is NOT convergence of the full nonlinear correction. That coefficient/kernel identification, weighted random physical estimates, the genuinely mixed positive-source/positive-clock sectors and their common dual/global summation remain open. The coordinate isometry itself is now constructed, so it should no longer be listed as entirely missing; the remaining physical H^-1 identifications and estimates are narrower and explicit.
+
+F3 joint clock-domain membership and intrinsic-core density/nondensity remain open. In particular, this physical scenery realization does not prove density of F_Z-measurable elements in the joint derivative domain. The complete source-zero/all-clock family from1074, complete all-source/clock-zero family from1076, and concrete F2 closure are preserved. IBM remains active; no successor gate is released.
+
+All62 public declaration types from the four new modules are inspected at the checkpoint. No added mathematical axiom, dependency/toolchain change, elaboration resource increase, manuscript modification or unrelated research branch. Incoming remains43 files/42 exact hashes, with the four IBM archive baselines and dictionary hash preserved.
