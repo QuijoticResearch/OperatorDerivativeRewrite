@@ -1587,3 +1587,4 @@ import Foundation.IBMSchwartzFullReflectedIto
 import Foundation.IBMFoldedTransitionBound
 import Foundation.IBMClockOverlapEnergy
 import Foundation.IBMClockAverageCandidate
+import Foundation.IBMTimeAveragedObservable
