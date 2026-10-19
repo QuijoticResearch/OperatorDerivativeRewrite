@@ -1599,3 +1599,5 @@ import Foundation.IBMNonlinearAverageGraph
 import Foundation.IBMFiniteAverageCore
 import Foundation.IBMFiniteWeightedLaws
 import Foundation.IBMIntrinsicCoreDensity
+import Foundation.IBMIntrinsicOperators
+import Foundation.IBMJointIntrinsicDerivative
