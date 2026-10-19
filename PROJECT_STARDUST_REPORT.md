@@ -20378,3 +20378,42 @@ Three one-dimensional diagonal-density quadratures agree with this candidate to 
 Exact remaining obligations: construct the actual fixed-n time-average clock derivative graph and identify its Hilbert energy with this covariance expression; prove strong convergence of the actual observables; then use a verified bounded-gradient/closed-adjoint criterion or prove convergence of the cross energies. A uniform bound alone is not strong gradient convergence or derivative-domain membership. The Dirichlet candidate may help the latter route, but its reflection identity and off-diagonal approximate-identity limit for the actual compact mollifiers must be proved first. Bounded smooth functions of genuine averages and L2(F_Z) density remain separate; IBM averages are not Gaussian observation vectors. `InfiniteGaussianProjectionConvergence.cylindricalDivergence_adjoint_eq_closedDerivative` is an existing exact weak-gradient graph bridge. No new joint-domain or F3 density conclusion, global F1 summation, or IBM campaign freeze is asserted. F2 and all earlier verified constructions are preserved.
 
 Verification: full `lake build` passed5676 jobs. The root-wide transitive axiom audit passed30495 safe Foundation declarations, allowing only `propext`, `Classical.choice`, `Quot.sound`. All42 new public declarations/instance types were inspected. No sorry, admit, new axiom or hidden domain assumption was introduced. All107 archive manuscript hashes and43 Incoming files/42 distinct hashes match saved baselines. ResearchSources, pinned dependencies, unrelated drafts, goal state and campaign order are unchanged. This is a verified supporting F3 energy checkpoint, with the central graph and density claims still explicitly open.
+
+
+## Verified discovery1086 — genuine Bochner-L2 clock-gradient candidates and exact mixed-energy identities
+
+Continued from auditedec6758adb96bbe687ef7410da8c57f4e54412c17 (1085). The previous goal turn made substantive progress. Terminal proof/research checks on2026-10-19 include01:31:43,01:33:54,01:36:02,01:38:36,01:40:30,01:43:27,01:45:14 and01:46:21 America/New_York. IBM remains immediate. A(4), A(2), the final full multichannel campaign and October31 stop retain their existing gates.
+
+New root-imported module: `Foundation/IBMClockAverageCandidate.lean`. The signed covariance bounds from1085 are now connected to independently constructed Hilbert-space objects. The target is the genuine nested space `Lp GaussianVectorL2 2 gaussianProduct`: outer probability is the actual clock factor, inner GaussianVectorL2 is source-Gaussian L2 valued in the clock coefficient Hilbert space. The source and clock factors are separate copies of the existing Gaussian product law. No signed pseudoprocess pseudo-L2 or supplied covariance space is substituted.
+
+At time t, the actual source-Gaussian vector section is
+
+`sign(Y_t) * X'_n(|Y_t|) * h_t`,
+
+where h_t is the existing embedded Brownian time vector, X'_n is the first spatial-derivative scenery column, and multiplication by h_t is the existing scalarTensor map. `sourceColumn_actual_ae`, `sectionField_actual_ae` and `field_actual_ae` identify the sections with `IBMDyadicExtension.field n 1` and the actual constructed `mollifiedValue n 1`, first at each clock sample and then in nested AE form. This is equality of the actual L2 source sections; no new pathwise differentiation theorem for separately chosen modifications is asserted.
+
+The construction proves joint strong measurability and fixed-time Bochner-L2 membership without caller-supplied domain, measurability or integrability assumptions. Existing `ProductL2Sections.sectionL2_stronglyMeasurable`, actual physical-column covariance, scalarTensor pairing and the Brownian time-vector geometry are reused. The required fixed-width source-column bound is derived from the existing overlap bound, not imposed as a new process hypothesis. A continuous bilinear lift is proved equal to scalarTensor using the existing Mathlib compLpL2 machinery; the genuine tensor norm factors into the scalar and direction norms.
+
+`field_inner` proves the exact Hilbert inner product of two time sections equals1085's signedEnergyKernel J_nm(s,t). The time-averaged object `average n T = integral_(0,T] field n t dt` is an actual integrable Target-valued Bochner integral for every T>=0. `average_ae` is a justified OUTER-CLOCK representative formula for an integral valued in SOURCE vector-L2; its Fubini hypotheses and uniform square-integrable clock majorant are discharged using `BochnerL2Fubini.integral_eq_of_slices`. This formula is not silently strengthened to a pointwise-in-both-factors integral identity.
+
+The substantive new exact identities are
+
+`inner(average n T, average m T) = integral_(0,T]^2 J_nm(s,t) ds dt`,
+
+`norm(average n T)^2 = integral J_nn`,
+
+`norm(average n T - average m T)^2 = integral (J_nn + J_mm - 2 J_nm)`.
+
+Thus1085's bound now controls the norm of a genuine constructed object:
+
+`norm(average n T)^2 <= 8/sqrt(2*pi) * T^2*sqrt(T)`, uniformly in n.
+
+The mixed-width distance formula is an exact potential route to a strong Cauchy proof once actual cross-energy convergence is established. It does not assume or establish that convergence. Integrability is proved before the two nested Hilbert inner-product/time interchanges; none is a formal expectation-level replacement for the Hilbert norm identity.
+
+Exact remaining gap: these are still CANDIDATE clock derivatives. No pair consisting of a scalar IBM time average and this field has yet been placed in the actual closed D_Y graph. The scalar time averages' strong L2 convergence and intrinsic F_Z realization, the fixed-n reflected Gaussian composition/weak IBP theorem, the factor-order transport to the fibre-lifted clock derivative, and a valid limiting closed-domain argument remain. The current nested target orders clock probability outside source probability; the canonical source/clock L2 interchange must be proved or reused when matching `BochnerClosedOperator.lift gaussianProduct closedCylindricalDerivative`. Abstract equality of underlying coefficient spaces cannot replace that factor identification.
+
+A precise existing alternative to demanding strong derivative convergence was located: Mathlib `LinearPMap.mem_adjoint_domain_iff` characterizes the actual adjoint domain by continuity of its inner-product functional on the original domain. Once FIXED-N graph membership and strong scalar convergence are established, the uniform bound could yield continuity of the limiting divergence-test functional, followed by the verified `InfiniteGaussianProjectionConvergence.cylindricalDivergence_adjoint_eq_closedDerivative` or the Hilbert bidual identification. The bound on a candidate alone does not supply the necessary IBP. No new generic adjoint theory was built. The Dirichlet signed folded-kernel/compact-mollifier convergence idea from1085 remains an unproved alternative; its numerical Gaussian-mollifier diagnostic is not a theorem.
+
+F3 maximal pullback-core density remains open, as do F1 higher-source common physical topology/global summation. Bounded smooth intrinsic functions and arbitrary-law L2(F_Z) density remain separate from the Gaussian observation polynomial-density theorems. F2 and all earlier verified results remain preserved. No IBM freeze, successor transition or new research campaign is asserted. No manuscript was read wholesale or modified during this proof checkpoint.
+
+Verification: full `lake build` passed5677 jobs. The root-wide transitive axiom audit passed30556 safe Foundation declarations with only `propext`, `Classical.choice`, `Quot.sound`. All38 new public declaration/abbreviation types were inspected, including the nested probability factors, time sign restrictions, representative quantifiers and Bochner-integral domains. No sorry, admit or new axiom was introduced. All107 archived manuscript hashes and43 Incoming files/42 distinct hashes match the saved baselines. Pinned dependencies, ResearchSources, unrelated drafts, goal state and campaign order are unchanged.
