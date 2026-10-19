@@ -1601,3 +1601,6 @@ import Foundation.IBMFiniteWeightedLaws
 import Foundation.IBMIntrinsicCoreDensity
 import Foundation.IBMIntrinsicOperators
 import Foundation.IBMJointIntrinsicDerivative
+import Foundation.GaussianRegularizedSecondDerivative
+import Foundation.GaussianObservedSecondRegularization
+import Foundation.GaussianReflectedSecondBoundary
