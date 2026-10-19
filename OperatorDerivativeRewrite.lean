@@ -1604,3 +1604,6 @@ import Foundation.IBMJointIntrinsicDerivative
 import Foundation.GaussianRegularizedSecondDerivative
 import Foundation.GaussianObservedSecondRegularization
 import Foundation.GaussianReflectedSecondBoundary
+import Foundation.IBMUniformMollifiedIncrements
+import Foundation.IBMNormalizedClockProfiles
+import Foundation.GaussianItoChaosIntertwining
