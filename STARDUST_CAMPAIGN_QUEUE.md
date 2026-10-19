@@ -4,7 +4,7 @@ Updated October 19, 2026 by explicit user instruction. This file supersedes olde
 
 ## Current campaign and transition gates
 
-IBM is frozen at verified checkpoint `89460761948de953f47da4564c38c255749f06f3`. A(4) remains ACTIVE through its verified stopping checkpoint. Do not divert its current saddle-point and global far-field investigation or start the next campaign early. The latest mathematical checkpoint is `4cf16b70c89385641e0141e75a8363dfe958af68`; actual saddle correction and eventual global re-entry remain unresolved. A verified finite-time negative Laguerre witness and expanding real/simple-zero windows do not decide eventual global re-entry.
+IBM is frozen at verified checkpoint `89460761948de953f47da4564c38c255749f06f3`. A(4) remains ACTIVE through its verified stopping checkpoint. Do not divert its current saddle-point and global far-field investigation or start the next campaign early. Consult A4_ARCHIVE_REVIEW.md and PROJECT_STARDUST_REPORT.md for the latest mathematical checkpoint and exact open obligations. A verified finite-time negative Laguerre witness and expanding real/simple-zero windows do not decide eventual global re-entry.
 
 The ordered remaining queue is:
 
