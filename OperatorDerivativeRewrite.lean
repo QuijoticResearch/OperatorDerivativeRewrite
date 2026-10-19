@@ -1621,3 +1621,7 @@ import Foundation.GaussianClockSourceSpectral
 import Foundation.IBMCommonClockDual
 import Foundation.IBMCrossSectorDualClosure
 import Foundation.IBMMollifierProfileAudit
+import Foundation.IBMDilatedMollifier
+import Foundation.IBMCompactKernelSchwartz
+import Foundation.IBMCompactKernelReflectedIto
+import Foundation.IBMDilatedEndpointLimit
