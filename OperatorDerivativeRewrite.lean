@@ -1694,3 +1694,7 @@ import Foundation.RiemannQuarticSaddleBranch
 import Foundation.RiemannQuarticValueCells005To024
 import Foundation.RiemannQuarticCurvature
 import Foundation.RiemannQuarticSaddleNeighborhood
+import Foundation.RiemannQuarticValueCells025To044
+import Foundation.RiemannQuarticQuantitativeSaddle
+import Foundation.RiemannQuarticFrequencyBranch
+import Foundation.RiemannQuarticPhaseRemainder
