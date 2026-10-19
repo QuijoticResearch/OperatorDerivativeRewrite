@@ -1585,3 +1585,4 @@ import Foundation.GaussianSourceClockIto
 import Foundation.IBMSchwartzFullGlobalBounds
 import Foundation.IBMSchwartzFullReflectedIto
 import Foundation.IBMFoldedTransitionBound
+import Foundation.IBMClockOverlapEnergy
