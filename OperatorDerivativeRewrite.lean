@@ -1631,3 +1631,7 @@ import Foundation.IBMCompactClockRecovery
 import Foundation.IBMCompactPredictableSlices
 import Foundation.IBMDilatedPredictableLimit
 import Foundation.IBMDilatedDualClosure
+import Foundation.IBMCompactVarianceGeometry
+import Foundation.IBMDilatedVarianceGeometry
+import Foundation.IBMCompactClockMass
+import Foundation.IBMDilatedClockMassLimit
