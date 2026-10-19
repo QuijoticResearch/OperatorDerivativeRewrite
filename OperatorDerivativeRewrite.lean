@@ -1665,3 +1665,7 @@ import Foundation.RiemannQuarticIntervalTrig
 import Foundation.RiemannQuarticTrigChecks
 import Foundation.RiemannQuarticIntervalJets
 import Foundation.RiemannQuarticTrigJets
+import Foundation.RiemannQuarticPhaseJets
+import Foundation.RiemannQuarticArithmeticJets
+import Foundation.RiemannQuarticPhaseChecks
+import Foundation.RiemannQuarticChannelJets

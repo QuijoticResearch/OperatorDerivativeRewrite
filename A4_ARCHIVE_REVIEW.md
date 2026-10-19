@@ -688,3 +688,59 @@ remain open. The Python prototype's full output is still unverified.
 No unconditional negative-Laguerre, nonreal-zero, LP nonmembership,
 eventual-threshold or RH theorem is claimed. A(4) remains active; A(2)
 retains its gate.
+
+## Literal arithmetic phase and channel jets, 2026-10-19 (1115)
+
+`RiemannQuarticPhaseJets` now supplies the actual source-specific phase
+
+    g_(m,a)(u)=8*u^4+a*u-pi*m^2*exp(4*u)
+
+and proves its normalized derivative at EVERY natural order n:
+
+    D^n g(u)/n! =
+      [8*(4 falling n)*u^(4-n)+a*(1 falling n)*u^(1-n)
+       -pi*m^2*4^n*exp(4*u)]/n!.
+
+The falling factorials correctly vanish beyond the polynomial degrees.
+All real u,a and natural m,n are covered; the actual theta sum uses
+m=1,...,N and a=9 or5. `phaseJet_mem` proves the rounded enclosure from
+actual u, exp(4u), pi and slope enclosures. `phaseExpJet_mem` connects
+these input jets to actual derivatives of exp(g), with an enclosure of
+the actual exp(g(u)) still required explicitly.
+
+`RiemannQuarticArithmeticJets` defines the two-phase theta weight with
+the exact coefficients2*pi^2*m^4 and -3*pi*m^2, proves its normalized
+derivative formula and finite-sum formula, and supplies rounded theta
+and finite-weight jet enclosures. `realIntegrand_eq_weight` proves that
+the resulting weight times the existing real channel is exactly the
+earlier finite arithmetic integrand. `realIntegrandJet_mem` transfers
+weight/channel coefficient bounds to derivatives of that actual integrand.
+
+`RiemannQuarticChannelJets` proves normalized monomial bounds and uses
+them to account for the factors-u and-u^2 in channels1 and2. Its complete
+channel evaluator represents cos(xu), -u*sin(xu), -u^2*cos(xu), with scope
+k<=2. `integrandJet_mem` combines these proved channels with actual
+weight coefficient bounds. No supplied abstract channel array replaces
+the literal Fourier factors.
+
+`RiemannQuarticPhaseChecks` is a concrete kernel computation using96-bit
+arithmetic and a proved range-reduced enclosure of exp(2), plus the
+proved pi box. At m=1,a=9,u=1/2 it proves
+
+    -19 <= g(u) <= -18
+    -81 <= Dg(u) <= -79
+    -1/100 <= D^16 g(u)/16! <= -1/1000.
+
+The last check concerns the PHASE coefficient at ONE point. It is not
+a bound for D^16 exp(g), the full kernel, or a whole Taylor cell. The
+check is reduced by `decide +kernel` and transferred to actual real
+derivatives by the phase membership theorem; no external endpoints
+are accepted as assumptions.
+
+Next, evaluate genuine whole-cell phase/exponential and integrand bounds
+using these source-specific functions, then assemble the centered Taylor
+integrals and prove the three required real integral inequalities.
+Producing only further all-order identities would not close this gap.
+The full Python calculation remains unverified; the negative-Laguerre
+theorem remains conditional. Both global A(4) alternatives are open,
+and no threshold relation or RH implication is claimed.
