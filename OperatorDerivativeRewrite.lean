@@ -1611,3 +1611,6 @@ import Foundation.GaussianDirectionalRecovery
 import Foundation.IBMNormalizedSlopeGraph
 import Foundation.GaussianClockValueOperators
 import Foundation.IBMClockRegularizedSlope
+import Foundation.GaussianHorizonChaosIntertwining
+import Foundation.GaussianSourceHorizonRegularization
+import Foundation.IBMRegularizedStochasticIdentity
