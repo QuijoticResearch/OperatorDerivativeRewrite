@@ -1658,3 +1658,6 @@ import Foundation.RiemannThetaTruncation
 import Foundation.RiemannQuarticFiniteApproximation
 import Foundation.RiemannQuarticRealCertificate
 import Foundation.RiemannQuarticTaylorJets
+import Foundation.RiemannQuarticDyadic
+import Foundation.RiemannQuarticIntervalExp
+import Foundation.RiemannQuarticIntervalChecks

@@ -593,3 +593,46 @@ the finite-cell integral assembly and the three concrete box proofs.
 The analytic recurrence and local Taylor integration portions are now
 proved; the remaining interval calculation is not. A(4) remains active
 and unresolved, with no transition to A(2) or claim about RH.
+
+## Verified rounded arithmetic and exponential evaluator, 2026-10-19 (1113)
+
+`RiemannQuarticDyadic` reuses Mathlib's `Inclusion.Interval Dyadic`, its
+arithmetic membership theorems and rational-to-dyadic approximation. The
+new outward-rounding operation preserves membership and handles unbounded
+endpoints explicitly. Rounded addition, subtraction, multiplication,
+division by a natural number, powers, finite sums and Horner evaluation
+all have real-valued enclosure proofs. The scalar divisions use the actual
+total real/rational division conventions, including at zero; no accidental
+positive-denominator assumption is hidden in those general statements.
+
+`RiemannQuarticIntervalExp` proves the actual exponential Taylor error
+<=2/n! for n>0 and |x|<=1. Both a direct power-sum evaluator and a Horner
+evaluator include that error with outward rounding. Range reduction by
+2^s and s repeated squarings has a proved real exponential enclosure,
+with the reduced-argument bound stated explicitly. For x<=-p, the tiny
+exponential bound exp(x)<=2^-p is proved from exp(1)>=2, validating the
+form of the precision-dependent tiny-exponential enclosure. This does
+not assert convergence of the full rounded derivative calculation.
+
+`RiemannQuarticIntervalChecks` provides a computable endpoint checker
+with a theorem transferring a successful check to real inequalities.
+Its pi box uses Mathlib's existing20-digit proved bounds. A complete
+160-bit,65-term,16-fold range-reduced Horner calculation is checked by
+`decide +kernel`, proving the concrete real enclosure
+
+    601845037/10^6 <= exp(32/5) <= 601845039/10^6.
+
+This is the exponential exp(4R) at the selected cutoff R=8/5. Both the
+arithmetic check and its connection to the actual exponential are Lean
+theorems. Native-code admission is not used. The earlier direct-series
+version also passed before the checked definition was switched to the
+proved Horner evaluator; no quantitative speedup is claimed here.
+
+The Python prototype remains a separate unverified full computation.
+The new Lean evaluator need not produce bit-identical intervals to it;
+soundness and successful concrete checks, rather than external endpoint
+agreement, are required. Outstanding: a similarly verified sine/cosine
+evaluator, coefficient/derivative interval propagation, and finite-panel
+assembly proving the three actual integral inequalities. The conditional
+negative-Laguerre theorem has not become unconditional. Global A(4)
+remains unresolved in both directions and A(2) remains gated.
