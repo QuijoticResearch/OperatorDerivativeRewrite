@@ -1,4 +1,4 @@
-> Current priority override (October 19, 2026): see [STARDUST_CAMPAIGN_QUEUE.md](STARDUST_CAMPAIGN_QUEUE.md). A(4) is active; its successor is general A(2k), k >= 2, beginning with A(6), followed by A(2) and the final multichannel campaign. October 31 remains the hard stop. The older recovery entries below are historical, not the current queue.
+> Current priority override (October 19, 2026): see [STARDUST_CAMPAIGN_QUEUE.md](STARDUST_CAMPAIGN_QUEUE.md). A(4) is active; its successor is general A(2k), k >= 2, using verified A(4) results as base and A(6) as the first generalization. A real-exponent k > 1 extension and uniform k -> 1+ investigation are conditional on a coherent, reusable integer theorem providing a justified foundation. A(2) and the final multichannel campaign remain afterward. October 31 remains the hard stop. The older recovery entries below are historical, not the current queue.
 
 # Research recovery campaign state — 2026-10-13
 

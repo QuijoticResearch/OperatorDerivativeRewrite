@@ -13,5 +13,10 @@ is required by these instructions.
 
 Read `STARDUST_CAMPAIGN_QUEUE.md` for the authoritative current queue and campaign gates.
 A(4) remains active. After its verified stopping checkpoint: general A(2k), k >= 2
-(start k = 3 / A(6)), then A(2), then the final multichannel pseudoprocess attempt.
+(verified A(4) results as base; first generalization k = 3 / A(6)). Within that
+campaign, evaluate real k > 1 and uniform control as k approaches 1 from above
+only after a coherent, reusable integer-order theorem provides a justified
+foundation; see the exact gate in STARDUST_CAMPAIGN_QUEUE.md. Then A(2), followed
+by the final multichannel pseudoprocess attempt. No limiting real-rootedness or RH
+implication is assumed.
 October 31, 2026 remains the hard stopping date. Do not start queued campaigns early.

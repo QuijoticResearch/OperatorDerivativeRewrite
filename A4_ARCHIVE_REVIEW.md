@@ -19,8 +19,12 @@ The manuscript notation is generally `Lambda(4)`, defined as the infimum of
 times T for which every subsequent transform belongs to the Laguerre–Polya
 class. This is the eventual threshold meant here by the user's A(4) question;
 membership at one time and eventual membership must be distinguished. The current
-queue is A(4) ACTIVE, then general A(2k), k >= 2 (begin with A(6)), then A(2),
-then the final multichannel campaign, with October 31, 2026 the hard stop.
+queue is A(4) ACTIVE, then integer A(2k), k >= 2 (verified A(4) results as
+base; first generalization A(6)), with a real k > 1 / uniform k -> 1+ branch
+conditional on a coherent, reusable integer theorem providing a justified
+foundation, then A(2), then the final multichannel campaign. October 31, 2026
+remains the hard stop. No limit preservation of real-rootedness or RH implication
+is assumed.
 See STARDUST_CAMPAIGN_QUEUE.md; this October 19 instruction supersedes older
 successor-order statements in the historical entries below.
 
