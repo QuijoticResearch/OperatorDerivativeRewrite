@@ -1731,3 +1731,8 @@ import Foundation.RiemannQuarticNormalizedAnalytic
 import Foundation.RiemannQuarticCosineLocalZeros
 import Foundation.RiemannQuarticWindowZeros
 import Foundation.RiemannQuarticKernelReflection
+import Foundation.RiemannQuarticValueCells145To159
+import Foundation.RiemannQuarticNaturalContour
+import Foundation.RiemannQuarticStripBoundary
+import Foundation.RiemannQuarticFarModelSaddle
+import Foundation.RiemannQuarticLaguerreWitness
