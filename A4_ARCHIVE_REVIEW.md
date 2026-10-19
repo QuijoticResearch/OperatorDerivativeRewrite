@@ -636,3 +636,55 @@ evaluator, coefficient/derivative interval propagation, and finite-panel
 assembly proving the three actual integral inequalities. The conditional
 negative-Laguerre theorem has not become unconditional. Global A(4)
 remains unresolved in both directions and A(2) remains gated.
+
+## Verified trigonometric evaluator and derivative propagation, 2026-10-19 (1114)
+
+`RiemannQuarticIntervalTrig` proves the four-period rational coefficients
+of powers of i, then the actual cosine/sine polynomial coefficients and
+remainder bounds <=2/n! for n>0 and |x|<=1. It reuses Mathlib's bound of
+the complex exponential remainder by the real remainder at its norm,
+followed by the already verified scalar exponential error. Rounded Horner
+evaluation includes that error. The paired doubling operation is proved
+from the actual addition formulas. `scaledTrig_mem` proves the cosine and
+sine enclosures after division by2^s and s doublings, with the reduced
+argument bound explicit; no approximate pi-based range reduction is used.
+
+`RiemannQuarticTrigChecks` performs an actual kernel computation at
+632083/6250=(632083/10000)*(8/5), the chosen spatial point times cutoff.
+Using96-bit arithmetic,24 series terms and eight doublings, the
+`decide +kernel` check and its real interpretation prove
+
+    4/5 <= cos(632083/6250) <= 9/10
+    1/2 <= sin(632083/6250) <= 3/5.
+
+These broad inequalities test the complete evaluated procedure. They
+are not the required integral enclosures or a numerical zero theorem.
+
+`RiemannQuarticIntervalJets.convolution_mem` propagates actual normalized
+product derivatives from input enclosures through order n. Its
+`expPrefix_mem` / `expJet_mem` propagate actual derivatives of exp(f),
+for C-infinity f, from an actual exp(f(x)) enclosure and coefficient
+enclosures through n. Prefix correctness is asserted only for k<=n;
+the total function's values outside its computed prefix have no derivative
+interpretation. The implementation uses finite structural recursion,
+with no assumption of external coefficient output. Its large-grid
+computational cost has not yet been measured.
+
+`RiemannQuarticTrigJets` proves the derivative sign cycle and the exact
+normalized coefficients of cos(a*u), sin(a*u), for every natural order
+and every real a,u. The frequency factor is a^n/n!, including at negative
+a. With c_n=Re(i^n), s_n=Im(i^n), their remaining factors are respectively
+c_n*cos(a*u)-s_n*sin(a*u) and s_n*cos(a*u)+c_n*sin(a*u). The corresponding
+rounded jet evaluators have membership proofs from actual frequency and
+phase enclosures. Thus product, exponential and trigonometric propagation
+are now verified for actual derivatives, rather than only formal arrays.
+
+The next concrete application is the literal four-term weighted kernel:
+enclose its polynomial/exponential phase jets on each cell, combine them
+with the proved trigonometric jets, and assemble the centered Taylor
+integrals using the1112 remainder theorem. These concrete source and cell
+bounds, the finite-panel assembly and the three integral box hypotheses
+remain open. The Python prototype's full output is still unverified.
+No unconditional negative-Laguerre, nonreal-zero, LP nonmembership,
+eventual-threshold or RH theorem is claimed. A(4) remains active; A(2)
+retains its gate.
