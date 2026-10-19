@@ -1639,3 +1639,8 @@ import Foundation.IBMCompactSourceAverage
 import Foundation.IBMCompactWeightedBoundary
 import Foundation.IBMCompactBoundaryRemainder
 import Foundation.IBMCompactOriginalBoundary
+import Foundation.RiemannQuarticKernel
+import Foundation.RiemannQuarticDomain
+import Foundation.RiemannQuarticFlow
+import Foundation.RiemannQuarticEvolution
+import Foundation.RiemannQuarticReality

@@ -381,3 +381,45 @@ Prioritize these global alternatives and concrete obstructions over a new
 curvature tower or unrelated coding branch. Transfer to A(2) is deferred to
 its queued campaign; no relationship of thresholds, and no RH progress, is
 claimed by this archive review.
+
+## Verified extension after the archive review: checkpoint1109
+
+The five `RiemannQuartic*` Foundation modules now construct the literal
+arithmetic-kernel transform, rather than a generic polynomial substitute.
+`RiemannQuarticKernel.kernel_eq_series` identifies the definition with the
+actual series in the manuscripts, with summation index n+1. Its summability
+comes from Mathlib's `HurwitzKernelBounds.summable_f_nat`; no manuscript
+theorem or numerical enclosure is assumed. `kernel_pos` proves positivity
+for every u>=0. `kernel_decay` gives the explicit envelope
+
+    |Phi(u)| <= C*exp(9*u - pi*exp(4*u)/2),  u>=0,
+
+where C=2*pi^2*thetaMoment(4,1/2)+3*pi*thetaMoment(2,1/2) is a fixed finite
+constant. `RiemannQuarticDomain.weighted_integrable` proves integrability
+of u^k*exp(T*u^4+B*u)*Phi(u) on [0,infinity) for **every** natural k and
+real T,B. Polynomial-exponential comparison is used only after this actual
+kernel bound, without an assumed decay hypothesis on an arbitrary function.
+
+`RiemannQuarticFlow` constructs actual complex half-line integrals and all
+their spatial jets. `flow_differentiable` proves that the symmetrized
+transform is entire in z for each real time. Dominated differentiation in
+`RiemannQuarticEvolution.jet_time_hasDerivAt` uses the same all-tilt moment
+domain and proves the time derivative of jet k is jet k+4. The theorem
+`fourth_order_heat_equation` gives the correct **positive** fourth spatial
+derivative for the growing arithmetic flow. `flow_eq_cosine_integral`
+identifies it with the literal absolutely integrable cosine transform.
+
+`RiemannQuarticReality.flow_real` identifies real-axis values with the
+actual real cosine integral; `flow_even` proves evenness. Finally,
+`flow_ne_zero_on_imaginary_axis` excludes every imaginary-axis zero for
+every real time, using the strictly positive cosh integral. This is a
+global axis exclusion, not exclusion of all off-axis zeros.
+
+The identification at t=0 with Mathlib's completed zeta function is still
+open in this development. It needs the precise normalization, theta/Mellin
+identity and integrations by parts. No theorem above is asserted to close
+that bridge, establish real-rootedness, certify the t=8 decimal intervals,
+or decide A(4). The existing compact-frequency derivative mechanism was
+reused for the spatial integral proof; the unbounded arithmetic domain was
+proved separately instead of assuming compact support or factorial-domain
+membership for Xi.
