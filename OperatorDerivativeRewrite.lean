@@ -1591,3 +1591,4 @@ import Foundation.IBMTimeAveragedObservable
 import Foundation.IBMReflectedGaussianSobolev
 import Foundation.IBMClockObservationGraph
 import Foundation.IBMFirstSourceClockGraph
+import Foundation.IBMClockAverageGraph
