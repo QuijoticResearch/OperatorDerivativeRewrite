@@ -1564,3 +1564,6 @@ import Foundation.IBMSchwartzPhysicalPrimitive
 import Foundation.IBMSchwartzPhysicalPrimitiveClock
 import Foundation.IBMPhysicalDiracDifference
 import Foundation.IBMPhysicalDirac
+import Foundation.IBMPhysicalNegativeEmbedding
+import Foundation.IBMSchwartzPhysicalSlope
+import Foundation.IBMSchwartzPhysicalSlopeClock

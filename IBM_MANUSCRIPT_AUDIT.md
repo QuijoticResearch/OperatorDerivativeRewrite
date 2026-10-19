@@ -964,3 +964,49 @@ Remaining F1 obligations: convergence of nonlinear weighted first spatial slopes
 The clock-Ito reuse audit is sharpened: `GaussianC2Ito.c2_ito` already improves the scalar smooth core to C2 with bounded first and second derivatives, and `GaussianFiniteRankTimeIto.finite_rank_ito` supplies a scalar finite-rank time-dependent formula. The earlier1078 candidate description mentioned the narrower scalar C3 theorem; the C2 theorem should be reused when its ACTUAL derivative bounds hold. Neither theorem by itself supplies a reflected-clock formula for this infinite-dimensional H^-1 target. `GaussianMixedStoppedIto` concerns deterministic stopped coordinates and must not be treated as random stopping/localization. No target-valued/reflected stochastic calculus theorem is silently assumed here.
 
 All62 public declaration types from the four new modules are inspected at the checkpoint. Default elaboration settings are retained. Incoming remains43files/42hashes, with the dictionary and all four IBM archive baselines unchanged. Manuscripts, dependencies/toolchain, unrelated documents and successor campaigns are preserved.
+
+## Discovery1080: full nonlinear first-slope convergence and actual predictable Hminus clock integrands
+
+Continued from verified3ad926590528014bc0c6b60295ccf3450a87102d. The preceding turn made verified progress. Starting terminal time was2026-10-18T21:48:44-04:00; subsequent proof-break checks include21:53:56,21:58:35 and22:01:47. IBM remains immediate, with the three successor gates and October31 hard stop unchanged.
+
+`IBMPhysicalNegativeEmbedding` bundles the actual physical Lebesgue-L2 function as an element of the SAME physical complex H^-1 used for the existing derivative. It reuses1079's actual Sobolev membership `IBMPhysicalDirac.l2Value`, not a replacement coefficient norm. Additivity and real homogeneity are proved by distributional extensionality. The sequential graph is proved closed by comparing the continuous L2 and H^-1 embeddings into tempered distributions, and the existing closed-graph theorem supplies the bounded real-linear embedding E. Its distribution is EXACTLY the complexification of the original physical L2 function. The operator norm is finite; no unproved norm-one estimate is asserted. Two local-use propositions verify the norm and joint continuity of the existing pointwise real scalar action on H^-1 by transporting through the verified Bessel-to-L2 isometry. They introduce no alternate Sobolev normalization or global type-class overrides.
+
+`IBMSchwartzPhysicalSlope` proves convergence of the ENTIRE first spatial slope from1079, with both nonlinear terms. Write u_n(r)=the actual zeroth triple coefficient, d_n(r)=<u_n(r),v_n(r)>, M_j(u)=E[g^(j)(a+W(u))], and let v_r denote the physical oriented Brownian indicator. The fixed-n object is ACTUALLY E(P_n'(r)), where P_n is1079's physical C2 primitive. The exact identity is
+
+S_n(r)=d_n(r) M_3(u_n(r)) E(Q_(rho_n,r))
+       +M_1(u_n(r)) [rho_n(r-w)]_(H^-1).
+
+The complete strong H^-1 limit at every real r is
+
+S(r)=(signum(r)/2) M_3(base(r)) E(v_r)
+       +M_1(base(r)) delta_r^H.
+
+This includes negative radii and the degenerate origin. The covariance identity d_n=(variance_n)'/2, its uniform bound, and its pointwise limit signum(r)/2 are reused from `IBMQuarticSecondGeometry.coefficient_slope` and `IBMVarianceClockGeometry.slope_bound/slope_tendsto`. In particular d_n(0)=0 and the limiting coefficient at zero is zero. No interior value1/2 is substituted at zero. All shifted Schwartz Gaussian means are proved continuous on the full source Hilbert space, including zero, and bounded by their actual Schwartz seminorm. Their convergence uses the already verified actual source-vector mollifier limit.
+
+The translated-Dirac term is1079's ACTUAL smooth L2-function embedding; its strong limit is the actual Dirac distribution, not a formal white-noise evaluation. The zeroth term uses the newly bounded zero-order embedding E. Consequently both terms converge in the SAME physical H^-1 space. `value_tendsto` is a theorem about convergence of actual fixed-n first spatial derivatives; it does NOT by itself assert that differentiating the unmollified primitive commutes with the singular limit. That deterministic derivative-identification step, if needed, must be proved by an appropriate FTC or closed derivative argument.
+
+A single finite constant C_g, independent of n and r, is proved to satisfy
+
+||S_n(r)||_(H^-1) <= C_g(1+|r|),
+||S(r)||_(H^-1) <= C_g(1+|r|).
+
+The proof transports the existing quantitative physical Brownian smoothing estimate, bounds Q_(rho_n,r) by3(1+|r|), and uses the exact anchored Dirac identity. It does not try to bound the native physical L2 norm of an approximate Dirac uniformly. The growth constant uses only actual Schwartz seminorms, ||E||, ||D_w|| and the already verified delta_0 H^-1 norm.
+
+`IBMSchwartzPhysicalSlopeClock` constructs the actual signed candidate clock fields
+
+U_n(s,omega)=1_(0<s<=T) signum(Y_s(omega)) S_n(|Y_s(omega)|),
+U(s,omega)=1_(0<s<=T) signum(Y_s(omega)) S(|Y_s(omega)|).
+
+They are actual Bochner L2 equivalence classes with values in physical H^-1, using the existing continuous clockPath and the existing timeProbability measure volume x gaussianProduct. Their AE representative identities are proved. The time support is exactly the existing horizon, including the zero horizon case. The global growth bound, verified clock moments, and original Bochner dominated convergence prove
+
+U_n -> U strongly in L2(R_time x Omega_clock;H^-1(R_physical)).
+
+This is a joint time-clock theorem on each finite horizon, not merely fixed-time convergence, clock averaging, or a sectorwise formal limit. It retains BOTH nonlinear source-mean weights. The first-chaos physical coefficient has been retained before all clock chaos degrees; no clock-sector truncation is used.
+
+`field_predictable` and `limitField_predictable` prove AEStronglyMeasurable representatives for the repository's EXISTING predictable sigma-algebra of the actual Gaussian Brownian filtration. The proof reuses `GaussianHermiteRepresentation.hermiteIntegrand 1 T` and `BrownianSignIntegral.brownian_field_joint`, composes its predictable representative with the actual Borel H^-1-valued signed spatial function, and checks zero extension using signum(0)=0. This establishes genuine predictability rather than taking adaptedness as a supplied hypothesis. It does not define a target-valued Ito integral by naming a residual.
+
+The first-source F1 frontier is therefore narrowed: the complete nonlinear candidate integrands now have actual predictable domains and strong time-clock H^-1 convergence. An actual bounded/isometric H^-1-target clock Ito operator and a justified reflected-clock finite-mollifier identity are still needed to turn these into convergence of the ENTIRE correction kernel. The whole correction includes the Tanaka boundary coefficient and second spatial curvature, and no such stochastic identity is assumed. The weighted rho_n' channel and covariance layer cannot be separately replaced by this first-derivative limit. Higher positive-source/positive-clock sectors, common physical dual/global summation, and F3 joint clock-domain/intrinsic-core density remain open. All earlier F2 and edge-family results are preserved.
+
+A concrete reuse route for the next proof break is recorded, not claimed as a theorem: `ProductL2Curry.curryEquiv` in `ProductL2Equivalence` is already an onto isometry for SFinite parameter measures, so the physical Lebesgue variable need not be treated as a finite probability factor. Combined with the Bessel-to-physical-L2 isometry and the actual scalar predictable Ito isometry, it may supply a fiberwise target-valued integral after the predictable slice domain is rigorously identified. `BochnerLinearIsometry.lift` already lifts a genuine isometry to a Bochner parameter space. `GaussianBochnerDivergenceRecovery` is a source-divergence recovery theorem; it must not be confused with an adapted clock Ito integral for this H^-1 target. No new tensor-product foundation or unproved stochastic law is introduced at this checkpoint.
+
+All48 new public declaration types are inspected at the checkpoint. All three modules use default elaboration resources, with only local instance selection for the existing complex Hilbert target. Source manuscripts, toolchain/dependencies, unrelated documents and queued campaigns are preserved. Incoming remains43files/42hashes, and the dictionary plus all four IBM archive hashes remain unchanged.
