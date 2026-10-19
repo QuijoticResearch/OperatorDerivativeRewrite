@@ -423,3 +423,65 @@ or decide A(4). The existing compact-frequency derivative mechanism was
 reused for the spatial integral proof; the unbounded arithmetic domain was
 proved separately instead of assuming compact support or factorial-domain
 membership for Xi.
+
+## Verified Xi identification: checkpoint1110
+
+The completed-zeta identification left open in1109 is now proved, including
+the normalization and every complex spatial point. Seven new modules
+`RiemannThetaDifferentiation`, `RiemannThetaModularity`, `RiemannThetaDecay`,
+`RiemannThetaCosine`, `RiemannThetaMellin`, `RiemannXiNormalization` and
+`RiemannXiBridge` reuse the same literal kernel and Mathlib's actual theta
+and completed-zeta definitions.
+
+The argument establishes the following identities, with genuine integrals:
+
+    Psi(u) = exp(u)*thetaMoment(0, exp(4u))
+    Phi(u) = (Psi''(u)-Psi(u))/8
+    Psi(u)-Psi(-u) = (exp(-u)-exp(u))/2
+    Psi'(0) = -1/2
+    J(x) = integral_0^infinity Psi(u)*cos(x*u) du
+    H_0(x) = 1/16-(1+x^2)*J(x)/8
+    completedRiemannZeta_0(1/2+i*x/2) = 8*J(x).
+
+The actual theta-series derivatives are justified by summable local bounds
+on their derivatives. The modular identity comes from Mathlib's theta
+functional equation. The improper boundary term uses proved integrability
+and decay of Psi and Psi'; it is not supplied as an assumption.
+The Mellin identity reuses `hurwitzEvenFEPair 0`, its `f_modif`, its public
+`IsStrongFEPair.hasMellin`, and the defining completed-zeta Mellin transform.
+The exponential substitution, reflection of the negative logarithmic ray,
+and the factor-four scaling are all proved.
+
+The entire function is defined with poles already canceled:
+
+    entireXi(s) = (s*(s-1)*completedRiemannZeta_0(s)+1)/2.
+
+`entireXi_eq_completed` proves that away from s=0,1 this is
+s*(s-1)*completedRiemannZeta(s)/2. It is not an identification of the
+pole-removed completed zeta function itself with xi. Both the arithmetic
+transform and this normalized entire function are proved holomorphic;
+their agreement on the real spatial axis extends by the identity theorem.
+The final declaration is
+
+    RiemannXiBridge.flow_zero_complex (z : Complex):
+      flow 0 z = entireXi(1/2+i*z/2)/8.
+
+Thus the verified growing quartic integral now has the actual normalized
+Xi function as its initial datum. This is a classical representation
+formalized for the A(4) campaign, not a new result about RH or a proof of
+an eventual real-rooting threshold. The global zero-control alternatives
+and the rigorous t=8 certificate remain open.
+
+An independent, explicitly **nonrigorous** standard-library Decimal probe
+is saved as `tools/stardust_quartic_laguerre_probe.py`. At70-digit precision,
+15 theta terms, cutoff1.6, and trapezoidal spacings0.002 and0.001, it gives
+
+    H       ~= -1.641482419874955227552069264822e-10
+    H'      ~=  3.656317925334409839674695900428e-13
+    H''     ~= -1.460002952462137043575094865066e-10
+    H'^2-HH'' ~= -2.396555810771356813972349899970e-20
+
+at t=8, x=63.2083. Both grids agree well and reproduce the manuscript's
+reported sign. No interval arithmetic, proved truncation error or proved
+quadrature error is supplied by this script. Its output is evidence for
+selecting the next rigorous calculation, never a Lean hypothesis.

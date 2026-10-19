@@ -1644,3 +1644,10 @@ import Foundation.RiemannQuarticDomain
 import Foundation.RiemannQuarticFlow
 import Foundation.RiemannQuarticEvolution
 import Foundation.RiemannQuarticReality
+import Foundation.RiemannThetaDifferentiation
+import Foundation.RiemannThetaModularity
+import Foundation.RiemannThetaDecay
+import Foundation.RiemannThetaCosine
+import Foundation.RiemannThetaMellin
+import Foundation.RiemannXiNormalization
+import Foundation.RiemannXiBridge
