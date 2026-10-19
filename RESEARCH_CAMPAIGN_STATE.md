@@ -1,3 +1,5 @@
+> Current priority override (October 19, 2026): see [STARDUST_CAMPAIGN_QUEUE.md](STARDUST_CAMPAIGN_QUEUE.md). A(4) is active; its successor is general A(2k), k >= 2, beginning with A(6), followed by A(2) and the final multichannel campaign. October 31 remains the hard stop. The older recovery entries below are historical, not the current queue.
+
 # Research recovery campaign state — 2026-10-13
 
 Initial HEAD: 953e958c2d6ba5ed21deaca4d3a36f813a0c5f95.

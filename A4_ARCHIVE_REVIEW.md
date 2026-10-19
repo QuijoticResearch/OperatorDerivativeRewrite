@@ -18,8 +18,11 @@ settles the eventual global zero configuration of the Riemann kernel.
 The manuscript notation is generally `Lambda(4)`, defined as the infimum of
 times T for which every subsequent transform belongs to the Laguerre–Polya
 class. This is the eventual threshold meant here by the user's A(4) question;
-membership at one time and eventual membership must be distinguished. A(2)
-and the final multichannel campaign remain queued, with October 31 the stop.
+membership at one time and eventual membership must be distinguished. The current
+queue is A(4) ACTIVE, then general A(2k), k >= 2 (begin with A(6)), then A(2),
+then the final multichannel campaign, with October 31, 2026 the hard stop.
+See STARDUST_CAMPAIGN_QUEUE.md; this October 19 instruction supersedes older
+successor-order statements in the historical entries below.
 
 ## Complete inventory
 
