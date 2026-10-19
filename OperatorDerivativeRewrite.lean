@@ -1669,3 +1669,8 @@ import Foundation.RiemannQuarticPhaseJets
 import Foundation.RiemannQuarticArithmeticJets
 import Foundation.RiemannQuarticPhaseChecks
 import Foundation.RiemannQuarticChannelJets
+import Foundation.RiemannQuarticCellPhase
+import Foundation.RiemannQuarticCellDomain
+import Foundation.RiemannQuarticStoredJets
+import Foundation.RiemannQuarticFullCell
+import Foundation.RiemannQuarticFullCellChecks

@@ -744,3 +744,54 @@ Producing only further all-order identities would not close this gap.
 The full Python calculation remains unverified; the negative-Laguerre
 theorem remains conditional. Both global A(4) alternatives are open,
 and no threshold relation or RH implication is claimed.
+
+## A genuine whole-cell Taylor bound, 2026-10-19 (1116)
+
+For the actual four-term integrands at t=8 and x=632083/10000, Lean now
+proves, simultaneously for k=0,1,2 and EVERY u in[1/2,51/100],
+
+    |D_u^16 realIntegrand(4,k,x,u)/16!| <= 10^22.
+
+`RiemannQuarticFullCellChecks.cell_taylor_error` consequently proves an
+actual integral error below10^-16 on that cell, replacing each integrand
+by its degree15 Taylor polynomial centered at101/200. This is cell50
+of the160 equal cells on[0,8/5]. The sixteenth derivative is with respect
+to the integration variable u; k labels the original spatial derivative
+channels0,1,2. This does not assert a sixteenth spatial-flow theorem.
+It is the finite FOUR-term integrand, with the infinite theta/cutoff
+errors handled separately by the earlier verified reduction.
+
+`RiemannQuarticCellPhase` first verifies an analogous uniform bound and
+actual cell integral error for the first slope9 phase exponential alone.
+`RiemannQuarticCellDomain` then proves exp(4u)<=603 on the whole cutoff
+interval and -40000<=g_(m,a)(u)<=100 for m<=4,0<=a<=9. These give actual
+range-reduction domains for every required phase, not supplied numerical
+hypotheses. The full-cell evaluator encloses exp(4u), every exponential
+phase base, all eight phase coefficient sequences, their exact theta
+weights, and the three signed real Fourier channels uniformly in u.
+The final order16 bounds are checked by `decide +kernel` and transferred
+to the actual derivatives by `uniform_I`.
+
+This calculation exposed a substantive computational obstruction. The
+original prefix evaluator repeatedly recalculates earlier coefficients;
+its full-cell exploratory run was stopped after759.34375 observed CPU
+seconds with no Boolean output, after verifying the executable/start time.
+`RiemannQuarticStoredJets` stores each prefix in a finite list, proves its
+length and prefix agreement, and proves `expJetStored_eq`: its returned
+intervals are EXACTLY the original evaluator's intervals. The full-cell
+proof uses this implementation via `G_eq_original`, so neither domains
+nor rounding guarantees are weakened. The stored implementation returned
+all three feasibility checks in about36 seconds, and the full kernel
+module check then passed in67 seconds. Runs overlapped and are not a
+controlled benchmark. A kernel-process memory snapshot was about8.0 GB,
+so further sharing may matter before scaling to160 cells. The stopped
+exploratory run is not recorded as a successful proof or completed test.
+
+This closes the first actual whole-cell derivative/remainder calculation.
+The other159 cells, numerical enclosures of the centered Taylor polynomial
+integrals, finite-cell assembly, and the three full real-integral box
+inequalities are still open. Those inequalities must be proved before
+the conditional Laguerre conclusion can be instantiated. The Python
+prototype remains unverified as a whole. No unconditional negative
+Laguerre, nonreal zero, LP nonmembership, A(4) threshold or RH implication
+is claimed. A(4) stays active and A(2) remains gated.
