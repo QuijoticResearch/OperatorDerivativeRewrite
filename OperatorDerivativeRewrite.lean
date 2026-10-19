@@ -1625,3 +1625,9 @@ import Foundation.IBMDilatedMollifier
 import Foundation.IBMCompactKernelSchwartz
 import Foundation.IBMCompactKernelReflectedIto
 import Foundation.IBMDilatedEndpointLimit
+import Foundation.IBMCompactKernelIncrements
+import Foundation.IBMCompactClockGraph
+import Foundation.IBMCompactClockRecovery
+import Foundation.IBMCompactPredictableSlices
+import Foundation.IBMDilatedPredictableLimit
+import Foundation.IBMDilatedDualClosure
