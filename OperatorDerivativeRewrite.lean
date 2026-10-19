@@ -1703,3 +1703,9 @@ import Foundation.RiemannQuarticContour
 import Foundation.RiemannQuarticEndpointSaddle
 import Foundation.RiemannQuarticSaddleGeometry
 import Foundation.RiemannQuarticSpatialPhase
+import Foundation.RiemannQuarticValueCells065To084
+import Foundation.RiemannQuarticGaussianTail
+import Foundation.RiemannQuarticLocalTail
+import Foundation.RiemannQuarticWeightedSlope
+import Foundation.RiemannQuarticShiftedAmplitude
+import Foundation.RiemannQuarticDistantTail
