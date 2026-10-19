@@ -1560,3 +1560,7 @@ import Foundation.IBMPhysicalDerivativeColumn
 import Foundation.IBMPhysicalDerivativeKernel
 import Foundation.IBMSchwartzFirstCoefficient
 import Foundation.IBMSchwartzPhysicalFirstKernel
+import Foundation.IBMSchwartzPhysicalPrimitive
+import Foundation.IBMSchwartzPhysicalPrimitiveClock
+import Foundation.IBMPhysicalDiracDifference
+import Foundation.IBMPhysicalDirac

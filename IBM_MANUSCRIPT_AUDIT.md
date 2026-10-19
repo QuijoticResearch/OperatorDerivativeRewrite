@@ -923,3 +923,44 @@ Remaining F1 work is now more concrete. The full finite-mollifier FIRST-source k
 A candidate reuse route, not a theorem, is to apply the verified clock stochastic-integration machinery to the physical first-source primitive Q_(1,n)(r)Q_(rho_n,r). Its formal first spatial derivative contains an approximate physical Dirac kernel, while its second derivative is the exact K_n identified above. A genuine reflected-clock Ito/Tanaka argument in the completed physical H^-1 target could potentially avoid constructing an unrelated occupation-field infrastructure. The existing smooth Ito theorem is scalar with bounded-derivative C3 hypotheses; it does NOT automatically supply this Hilbert-valued reflected/singular theorem. The required target-valued adapted integral, boundary formula, and uniform limit estimates must first be supplied through actual theorem reuse or proved extensions. Do not treat this candidate as F1 closure.
 
 All34 public declaration types from the four new modules are inspected at the checkpoint. The modules use default elaboration resource settings. Incoming remains43 files/42 hashes and all four IBM archive baselines plus the dictionary hash remain unchanged. No manuscript, dependency/toolchain, unrelated document or successor campaign is modified.
+
+## Discovery1079: actual physical C2 primitive, nonlinear IBM endpoints, and strong clock-Hminus Dirac limits
+
+Continued after committing1078 as3804e7c12696d016fb4eb32a3306d9cccbd6f5c6. Terminal clock readings include2026-10-18T21:34:00-04:00 and21:46:50-04:00. IBM remains immediate; A(4), A(2), and the final multichannel campaign retain their gates and October31 hard stop.
+
+`IBMSchwartzPhysicalPrimitive` identifies the ACTUAL first-source physical primitive of the whole Schwartz spatial observable, without a formal Gaussian series. For a shifted Schwartz test g, actual source vector u_n(r), and Q_j=E[g^(j)(a+W(u_n(r)))], it proves
+
+P_n(r)=Q_(1,n)(r) Q_(rho_n,r),
+P_n'(r)=d_n(r) Q_(3,n)(r) Q_(rho_n,r)+Q_(1,n)(r)rho_n(r-w),
+P_n''(r)=K_n(r),
+P_n'(0)=originKernel_n.
+
+Here d_n=<u_n,v_n>, Q_(rho_n,r) is the actual physical Lebesgue-L2 convolution kernel, and K_n is1078's FULL first-source curvature, including ((q_n+e_n)Q_3+d_n^2 Q_5)Q_0+2d_n Q_3 rho_n+Q_1 rho_n'. The origin identity uses the verified d_n(0)=0. All derivatives are genuine norm derivatives in physical L2, and `primitive_C2` proves ContDiff R2 on the entire real line. Both first and second spatial FTC identities hold for arbitrary endpoint ordering. `wholeKernel_derivatives` identifies the actual whole kernel as the Tanaka mass times P_n'(0) plus one-half the clock-time integral of P_n'' at the reflected clock. This last theorem is an exact rewriting of independently constructed objects, NOT a stochastic chain rule.
+
+The general source formula firstChaosEmbedding* observable_j(u)=Q_(j+1)(u)u is independently justified from the existing mixed Gaussian Stein identity. It includes u=0 and uses no variance division. Applying the actual physical noise to P_n recovers the complete first-chaos projection of the actual spatial observable; the adjoint physical pullback does not lose an unexamined coefficient component. The primitive limit is Q_1(base(r))v_r in the actual physical L2 space and reconstructs the first-chaos projection of the actual unmollified observable.
+
+`IBMSchwartzPhysicalPrimitiveClock` constructs actual Bochner L2(clock;GaussianL2(source)) endpoint classes of g(a+X_n(|Y_T|)) and g(a+X(|Y_T|)). Their source sections are the already constructed continuous IBM observable g(a+Z_T), almost everywhere in each independent factor. The entire endpoint classes converge strongly, retaining every source chaos degree; the proof reuses the Schwartz uniform bound, existing source convergence and verified Bochner dominated convergence. The physical primitive endpoint classes consequently converge strongly in L2(clock;physical L2), and applying the physical noise reconstructs exactly the entire first-source endpoint projection before clock averaging. This endpoint convergence does not imply convergence of the spatial derivatives or whole correction.
+
+`IBMPhysicalDiracDifference` proves the physical sign identity from actual complexified Brownian indicator functions:
+
+D_w v_r = delta_0-delta_r in tempered distributions.
+
+The proof evaluates the actual Lp-to-distribution embedding on Schwartz tests, uses the oriented whole-line indicator pairing and the complex FTC, and keeps both endpoints. Thus delta_r-delta_s has the genuine H^-1 representative D_w(v_s-v_r), with norm at most ||D_w|| sqrt(|s-r|). This proves the physical Holder bound and continuity of anchored Dirac differences without interpreting arbitrary L2 values at a point.
+
+`IBMPhysicalDirac` explicitly REUSES `IBMDeltaBoundary.deltaZeroHminusOne`, whose Fourier proof of delta_0 membership was already verified. No new Fourier normalization or alternate probability source is introduced. The new translated mass is
+
+delta_r^H = deltaZeroHminusOne-D_w v_r,
+
+and its distribution is exactly delta_r. The physical smooth translated bump is the Sobolev realization of its actual complexified Lebesgue-L2 class. For every n and every real r, the exact equality is
+
+[rho_n(r-w)]_(H^-1) = deltaZeroHminusOne-D_w Q_(rho_n,r).
+
+This is proved by bounded scalar testing of the existing Bochner kernel integral, the already established derivative-of-indicator identity, the actual normalized bump integral and cancellation of the two scalar integrals. It does not define the translated bump by the right side and then assume agreement. The Sobolev embedding of the actual translated L2 function is constructed first, and equality is proved by distributional extensionality. The fixed-n scalar integrability is supplied by actual compact support.
+
+Consequently the actual translated bump converges strongly to the actual Dirac at each physical r. More significantly, `mollifiedDirac_ae`, `diracClass_ae`, and `mollifiedDirac_tendsto` give genuine L2(clock;H^-1(physical space)) classes with representatives rho_n(|Y_T|-w) and delta_(|Y_T|), and prove their strong convergence at every nonnegative fixed horizon T. They reuse1077's existing strong physical derivative limit by adding the SAME deterministic delta_0 in the clock L2 space. This now identifies what that derivative limit means for the actual approximate-Dirac channel, rather than confusing it with the whole correction.
+
+Remaining F1 obligations: convergence of nonlinear weighted first spatial slopes in the correct time-clock norm; an actual adapted H^-1-valued clock integral with reflected boundary accounting and a justified stochastic chain-rule limit; then convergence of the entire K_n^whole, including the origin mass and weighted rho_n' channel. The new unweighted Dirac limit is not a limit for Q_1 rho_n', nor for the covariance-layer term. Higher positive-source/positive-clock sectors, common physical dual/global summation, and F3 joint clock-domain/intrinsic-core density remain open. No bulk origin substitution or native-L2 regularization is asserted.
+
+The clock-Ito reuse audit is sharpened: `GaussianC2Ito.c2_ito` already improves the scalar smooth core to C2 with bounded first and second derivatives, and `GaussianFiniteRankTimeIto.finite_rank_ito` supplies a scalar finite-rank time-dependent formula. The earlier1078 candidate description mentioned the narrower scalar C3 theorem; the C2 theorem should be reused when its ACTUAL derivative bounds hold. Neither theorem by itself supplies a reflected-clock formula for this infinite-dimensional H^-1 target. `GaussianMixedStoppedIto` concerns deterministic stopped coordinates and must not be treated as random stopping/localization. No target-valued/reflected stochastic calculus theorem is silently assumed here.
+
+All62 public declaration types from the four new modules are inspected at the checkpoint. Default elaboration settings are retained. Incoming remains43files/42hashes, with the dictionary and all four IBM archive baselines unchanged. Manuscripts, dependencies/toolchain, unrelated documents and successor campaigns are preserved.
