@@ -1607,3 +1607,7 @@ import Foundation.GaussianReflectedSecondBoundary
 import Foundation.IBMUniformMollifiedIncrements
 import Foundation.IBMNormalizedClockProfiles
 import Foundation.GaussianItoChaosIntertwining
+import Foundation.GaussianDirectionalRecovery
+import Foundation.IBMNormalizedSlopeGraph
+import Foundation.GaussianClockValueOperators
+import Foundation.IBMClockRegularizedSlope

@@ -1602,3 +1602,66 @@ EXACT remaining obligations: prove the normalized reflected first closed derivat
 F3's actual intrinsic joint calculus and common-domain density remain proved. F2 retains the concrete normalized bump-family scope. IBM is not frozen; no A(4), A(2), RH or final multichannel conclusion is made. No manuscript ingestion was needed for this direct F1 proof question.
 
 Verification1099: profile module build passed4428 jobs; the direct Itô intertwining module check passed before extending its final weighted-sum theorems. The FINAL full root build passed5697 jobs, exit0, including all final sources and weighted-sum statements. Root-wide transitive axiom audit passed31097 safe Foundation declarations, allowing only `propext`, `Classical.choice`, `Quot.sound`. ALL31 new public definitions/theorems were printed and reviewed: actual Gaussian measures and factor order, positive-time restrictions, uniform-in-n constants, the original full-adjoint graph hypothesis, full predictable domain, chaos degree shift, and unconditional full predictable-L2 topology. No sorry/admit or new axiom. The working manifest covers1643 Foundation/root Lean sources. All107 archived manuscript hashes and43 Incoming files/42 distinct hashes match saved baselines; the dictionary hash remains8EC222C21FDB2D81D652E3CF553BE59EEA987F01AD3B1C54EEC91216111BC22E. No ResearchSources or dependency-pin modification. Evidence: `.lake/stardust-1099-profile-build.log`, `.lake/stardust-1099-full-build.log`, `.lake/stardust-1099-audit.log`, `.lake/stardust-1099-archive-check.json`, `.lake/stardust-1099-inventory-check.json`, `.lake/stardust-1099-working-checkpoint.json`. Earlier draft logs are diagnostic only; the final full build and audit certify the checkpoint source bytes.
+
+
+## Verified discovery1100 — actual full-source signed-slope recovery, strong clock-chaos reconstruction and uniform integrable time-zero energy
+
+Continued from audited917017b7dcb82b87d1446f2ba63ca311613000d3 (1099); the preceding goal turn made substantive verified progress. Current worktree and saved checkpoint were revalidated. Terminal proof/checkpoint checks on2026-10-19 include05:24:13,05:26:51,05:28:26,05:29:34,05:30:01,05:32:15,05:33:25,05:34:29,05:36:31,05:37:12,05:38:11,05:39:13,05:39:59,05:40:33,05:41:04 and05:41:27 America/New_York. IBM/F1 remains immediate. IBM -> A(4) -> A(2) -> final full multichannel and the October31 hard stop retain their gates. ResearchSources remain read-only and uncommitted.
+
+Four new root modules: `GaussianDirectionalRecovery`, `IBMNormalizedSlopeGraph`, `GaussianClockValueOperators`, `IBMClockRegularizedSlope`. These close1099's normalized first-derivative, bounded-recovery, source-factor-order and positive-time strong-reconstruction obligations. They do not yet close the predictable time-field / stochastic-integral limit obligation.
+
+`GaussianDirectionalRecovery` reuses the ORIGINAL infinite-Gaussian bounded divergence recovery R and its actual component map. Define R_v f=component(v)(R f). The component norm bound and existing recovery bound give norm(R_v f)<=norm(v)*norm(f). No new spectral operator or assigned derivative is needed. For EVERY genuine closed derivative graph pair
+
+    (f, scalarTensor(v,g)) in closedCylindricalDerivative.graph, norm(v)=1,
+
+`shifted_derivative_hasSum` proves the unconditional Gaussian-L2 sum
+
+    R_v f = sum_(k>=0) (k+1)^(-1) P_k g.
+
+It maps the existing unconditional inverse-gradient series through the actual component operator, uses the already verified all-direction derivative lowering identity, and retains the essential +1 shift. `shifted_derivative_projection` gives its exact projection identity at EVERY k. The real closed-graph hypothesis is explicit; it is not inferred from a formal derivative expression.
+
+`IBMNormalizedSlopeGraph` builds the actual source-Hilbert-valued standard-Gaussian slope profile
+
+    H_n,t(x)=sign(x)*sqrt(t)*spatialSlope_n(sqrt(t)*abs(x)).
+
+Its strong measurability and Gaussian L2 membership follow from the already constructed full source spatial slope and its fixed-mollifier global bound. The bound here may depend on n and is used ONLY to establish the genuine finite-mollifier graph/domain. It is not substituted for the later uniform energy estimate.
+
+For EVERY continuous source functional L, `tested_closed_graph` proves that L applied to the1099 actual endpoint profile F_n,t has L(H_n,t) as its derivative in the ORIGINAL standard-Gaussian polynomial-closure graph. The proof scales the already proved actual source-Hilbert spatial derivative, then invokes the existing reflected Gaussian Sobolev theorem. This retains the reflection cusp. No classical derivative of abs at0 or missing boundary convention is assumed.
+
+The exact measure-preserving pullback/test naturality is proved on actual L2 classes. The already verified complete closed-graph transport then gives `tested_sampled_closed_graph`: after every continuous source test, the ACTUAL full `endpointClass` has canonical-clock derivative v_t times the sampled normalized slope. `sampledSlope_actual_ae` independently identifies that sampled source-valued class with sqrt(t) times the actual signedSlope_n(Y_t). The proof uses the actual clock-coordinate identity, positive-scaling invariance of signum and the actual normalized source slope; it does not define the process slope through recovery. `actual_slope_recovery_hasSum` now applies the genuine bounded recovery identity to this actual graph.
+
+`GaussianClockValueOperators` carries scalar clock operators through the EXISTING product-L2 flip. Its Field has outer CLOCK probability and inner SOURCE Gaussian L2. For a bounded scalar-clock operator A, define
+
+    C_A = flip o (A.compLpL on source parameter) o flip.
+
+`clockLift_tensor` verifies C_A(a_clock tensor v_source)=(A a_clock) tensor v_source, so the factor on which A acts is unambiguous. `clockLift_test` proves on the WHOLE source-valued Bochner L2 space that every continuous source test commutes with C_A. This is established by the existing actual tensor-density/Lp induction machinery, not by assuming raw nested-Lp representatives form a jointly measurable function. Full source tests separate classes, all lifted clock projections separate classes, and norm(C_A f)<=norm(A)*norm(f). In particular the lifted R_v has norm bound norm(v), so unit-direction recovery is uniformly bounded across all source chaos.
+
+The flip involution is proved on the actual whole Bochner space. `clock_truncation_tendsto` proves strong joint-L2 convergence of the original clock chaos truncations, using existing scalar truncation convergence/norm bounds and Bochner L2 dominated convergence on the source parameter. Finite operator sums commute with the lift and identify the actual finite clock-chaos sums. No finite-dimensional scenery assumption is imposed.
+
+`IBMClockRegularizedSlope.pointSlope_actual_ae` identifies its finite-mollifier pointSlope class with signedSlope_n(Y_t), for every t>0, as a SOURCE-valued canonical-clock L2 class. Define
+
+    Q_n(t)=t^(-1/2) C_(R_vt)(endpointClass_n(t)).
+
+This is the actual bounded source-valued recovery of the full endpoint. `recoveredSlope_projection` proves
+
+    P_k^clock Q_n(t) = (k+1)^(-1) P_k^clock pointSlope_n(t)
+
+as an equality in FULL joint source/clock L2 for EVERY k. It is derived from the genuine reflected graph through all continuous source tests and the proved naturality/separation results. `recoveredSlope_unique` proves the recovered class is the UNIQUE source-valued class with these clock projections. It is not an arbitrary operator-defined substitute for the actual slope regularization.
+
+More strongly, `recoveredSlope_chaos_tendsto` proves the finite sums over k=0,...,N of those actual shifted signed-slope projections converge STRONGLY in full joint L2 to Q_n(t). This final source-valued theorem is a natural-cutoff sequence convergence assertion; the generic scalar graph result separately has an unconditional HasSum. We do not relabel the source-valued theorem as an unproved unconditional arbitrary-finite-set sum or a time-L2 convergence theorem.
+
+The whole source-valued bound is now
+
+    norm(Q_n(t))^2 <= L_g^2 * (integral abs(x) dgamma(x)) / sqrt(t),  t>0,
+
+UNIFORMLY in the concrete normalized mollifier family. It follows from the unit recovery bound and1099's actual full endpoint energy, not an n-dependent slope bound or separate estimates on finitely many sectors. The exponent t^(-1/2) is the required integrable squared-energy scale near0. The RHS contains the actual finite Gaussian absolute moment; no numerical value is postulated.
+
+`recoveredSlope_tendsto` proves STRONG full joint source/clock L2 mollifier convergence at each fixed t, using the PREVIOUSLY proved full endpoint convergence and the actual bounded clock recovery operator. The limit is precisely the same recovery applied to the actual unmollified endpoint, preserving all scenery randomness. The uniform positive-time energy estimate passes to that limit. At0 the definition is harmless through inverse0, but no positive-time derivative graph or point-process derivative at0 is asserted.
+
+Exact remaining F1 obligations: assemble these positive-time Q_n(t) classes into actual measurable predictable fields, identifying their time slices with the original horizon signed-slope field through actual product/curry/Fubini results. Prove strong TIME-L2 convergence in the source-valued predictable domain using the uniform t^(-1/2) squared-energy majorant and fixed-time strong limits. Extend/identify1099's actual scalar Itô-number intertwining on this genuine source-valued horizon domain. Then use the EXISTING full finite-mollifier reflected identity endpoint_n=Ito(B_n)+wholeCorrection_n to obtain the common-clock-number-smoothed stochastic and correction limits. The wholeCorrection already includes actual boundary mass plus full curvature; the1098 abs boundary counterexample remains relevant and unchanged. No origin term may be dropped.
+
+A direct next implementation route is to lift finite clock-chaos projections sectionwise on the existing source-valued time/clock product space. Each finite projection preserves the original predictable domain by1099's scalar result plus actual source tensor density. Finite shifted sums should converge at fixed n in time-L2, dominated by the ORIGINAL finite-n integrand norm, and their positive-time slices are the now-proved Q_n(t) by strong clock-chaos reconstruction. This would give measurability/predictability without assuming operator-norm continuity of a varying v_t or jointly measurable arbitrary nested-Lp representatives. The subsequent mollifier limit uses the new uniform energy and a genuinely integrable time bound. This remains a proposed rigorous route, not a proved domain-identification or convergence statement.
+
+No equivalence with the manuscript's physical spatial H^(-1) topology is claimed. A common injective clock-number topology is a separate precisely specified candidate; its completed full correction identity is still open. F3's actual joint intrinsic calculus remains proved, F2 keeps the concrete bump-family scope, and IBM is not frozen. No new source ingestion or unrelated campaign was necessary.
+
+Verification1100: final supporting modules and full root build passed5701 jobs, exit0. Root-wide transitive axiom audit passed31210 safe Foundation declarations with only `propext`, `Classical.choice`, `Quot.sound`. ALL45 new public definitions/abbreviations/theorems were printed and inspected, including original closed-graph hypotheses, positive-time/unit-direction restrictions, standard versus canonical Gaussian laws, clock/source factor order, finite-mollifier domain versus uniform energy estimates, full source-valued equalities, uniqueness and exact strong-convergence topologies. No sorry/admit or new axiom. Working manifest covers1647 Foundation/root Lean files. All107 archive hashes and43 Incoming files/42 distinct hashes match the saved baselines; ym_ns_dictionary.tex remains8EC222C21FDB2D81D652E3CF553BE59EEA987F01AD3B1C54EEC91216111BC22E. No ResearchSources or dependency-pin changes. Evidence: `.lake/stardust-1100-full-build.log`, `.lake/stardust-1100-audit.log`, `.lake/stardust-1100-working-checkpoint.json`, `.lake/stardust-1100-archive-check.json`, `.lake/stardust-1100-inventory-check.json`. Draft errors were corrected before this final full build/audit; final certification refers to the final sources, not stale support logs.
