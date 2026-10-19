@@ -485,3 +485,46 @@ at t=8, x=63.2083. Both grids agree well and reproduce the manuscript's
 reported sign. No interval arithmetic, proved truncation error or proved
 quadrature error is supplied by this script. Its output is evidence for
 selecting the next rigorous calculation, never a Lean hypothesis.
+
+## Verified finite-integral reduction, 2026-10-19 (1111)
+
+Five new root-imported modules close the frequency-cutoff and theta-tail
+parts of that calculation for the actual arithmetic Xi quartic flow.
+They do not certify the script's quadrature values.
+
+`RiemannThetaEffective.kernel_effective_bound` proves, for u >= 0,
+
+    Phi(u) <= 64*exp(9*u-pi*exp(4*u)).
+
+The proof bounds successive theta terms by a geometric ratio no greater
+than one half, retaining the full negative pi*exp(4u) exponent. At t=8,
+`RiemannQuarticCutoff.weighted_tail_bound` bounds the k-th weighted tail
+by 64*k!*exp(-63*u) for u >= 8/5. Its integral is at most 10^-28 for
+k=0,1,2. `RiemannQuarticJetCutoff` transfers the bound to actual complex
+Fourier jets and spatial flow derivatives, uniformly for every real x.
+
+`RiemannThetaTruncation` defines the finite kernel from precisely the
+first N theta terms, proves its exact difference from Phi, and bounds
+the weighted difference on [0,8/5]. With N=15 this pointwise error is
+at most 10^-100 for k=0,1,2; no computed manuscript value is a hypothesis.
+
+`RiemannQuarticFiniteApproximation.derivative_finite_error` proves
+
+    ||D^k H_8(x)-finiteDerivative(15,k,8,x,8/5)|| <= 10^-27
+
+for every real x and k <= 2. `finiteDerivative` is the actual symmetric
+complex Bochner integral of that finite kernel on [0,8/5], retaining the
+correct (i*u)^k and (-1)^k factors. Continuity, interval integrability,
+the exact integrand difference and both tail transfers are proved.
+
+The remaining certificate obligation is a rigorously evaluated enclosure
+of these finite elementary integrals at x=63.2083, with both quadrature
+and transcendental-evaluation errors justified. The Decimal values remain
+nonrigorous. Mathlib already supplies `Real.exp_bound`, `exp_approx_end`
+and `intervalIntegral.trapezoidal_error_le_of_c2`; their hypotheses and
+effective bounds still need an application to these integrands. A coarse
+second-derivative trapezoid estimate may require an impractical grid;
+high-order local Taylor bounds or analytic quadrature are possible routes,
+not established replacements. Even a verified t=8 negative Laguerre value
+would only establish finite-time nonmembership, not A(4)=infinity.
+Both threshold alternatives remain open. A(2) retains its successor gate.

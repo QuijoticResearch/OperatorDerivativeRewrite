@@ -1651,3 +1651,8 @@ import Foundation.RiemannThetaCosine
 import Foundation.RiemannThetaMellin
 import Foundation.RiemannXiNormalization
 import Foundation.RiemannXiBridge
+import Foundation.RiemannThetaEffective
+import Foundation.RiemannQuarticCutoff
+import Foundation.RiemannQuarticJetCutoff
+import Foundation.RiemannThetaTruncation
+import Foundation.RiemannQuarticFiniteApproximation
