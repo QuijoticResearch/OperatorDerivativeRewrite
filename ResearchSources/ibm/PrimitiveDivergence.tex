@@ -1,0 +1,2276 @@
+\documentclass[11pt,reqno]{amsart}
+
+%==============================================================
+% Primitive Divergence and Observable It\^o Calculus over
+% Nonclassical Noises
+% --------------------------------------------------------------
+% Companion to the IBM trilogy:
+%   Fontes, Energy-First Stochastic Calculus       [EnergyFirst]
+%   Fontes, First-Chaos Dual Closure of the IBM... [FCDC]
+%   Fontes, A Bidegree Atlas for the IBM ...       [BidegreeAtlas]
+% Scope: framework paper on the operator-derivative principle over
+% nonclassical noise. No new black-noise theorems are proved; no
+% primitive divergence is constructed.
+%==============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{mathrsfs}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+\emergencystretch=3em
+
+% --- theorem environments (compatible with the trilogy)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{program}[theorem]{Program}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{sketch}{Sketch}
+
+% --- macros
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\Dom}{\mathrm{Dom}}
+\newcommand{\cl}{\mathrm{cl}}
+\newcommand{\IBM}{Z}
+
+\title{Primitive Divergence and Carr\'e-du-Champ Seeds\\
+       over Nonclassical Noises}
+\author{Ramiro Fontes}
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+This paper formulates the operator-derivative problem over
+nonclassical noises. The primitive datum is a tuple
+$(\{\Gamma_{\mathcal N,S}\}_{|S|\ge 2},\delta_{\mathcal N},D_{\mathcal N})$:
+a generator-level interaction hierarchy
+$\{\Gamma_{\mathcal N,S}\}_{|S|\ge 2}$ of $|S|$-linear
+product-defect forms indexed by finite subsets $S$, on a test
+algebra over a Tsirelson--Vershik noise $\mathcal N$, headed by the
+bilinear two-point carr\'e-du-champ
+$\Gamma_{\mathcal N}^{(2)}=\Gamma_{\mathcal N,\{i,j\}}$;
+a closed primitive divergence $\delta_{\mathcal N}$ on
+$L^{2}(\mathcal N)$; and the adjoint operator derivative
+$D_{\mathcal N}:=\delta_{\mathcal N}^{*}$.
+Classical stochastic calculus starts with a first-chaos innovation
+and derives $\delta$ from it; the operator-derivative framework
+reverses this, treating
+$(\{\Gamma_{\mathcal N,S}\}_{|S|\ge 2},\delta_{\mathcal N})$
+as primitive data and Brownian, Poisson, and L\'evy stochastic
+integrals as realizations of $\delta$ rather than its definition.
+We make four contributions.
+\textbf{(1)} \emph{Representation-free primitive.} The framework is
+set up over $\mathcal N$ without reference to a first-chaos
+generator, so that classical innovations are particular realizations
+rather than definitional inputs, and the candidate primitive datum
+is the generator-level interaction hierarchy
+$\{\Gamma_{\mathcal N,S}\}_{|S|\ge 2}$, headed by the bilinear,
+positive two-point carr\'e-du-champ
+$\Gamma_{\mathcal N}^{(2)}=\Gamma_{\mathcal N,\{i,j\}}$, together
+with the closed divergence $\delta_{\mathcal N}$.
+\textbf{(2)} \emph{Seed-collapse theorem.} Every centered
+interval-additive deterministic seed of a candidate
+$\delta_{\mathcal N}$ lies in the first chaos of $\mathcal N$, and
+hence is trivial over a black noise; the positive replacement is a
+carr\'e-du-champ / product-defect seed.
+\textbf{(3)} \emph{Leibniz-defect invariant.} The bilinear form
+$\mathfrak L_D(F,G)=D(FG)-F\,DG-G\,DF$ is identified as the first
+algebraic invariant of a nonclassical operator derivative, with
+Wiener-zero and compensated-Poisson-quadratic benchmarks; over a
+black noise the defect question becomes structural.
+\textbf{(4)} \emph{Nonclassical divergence problem.} The
+construction, or impossibility, of the primitive tuple
+$(\{\Gamma_{\mathcal N,S}\}_{|S|\ge 2},\delta_{\mathcal N},D_{\mathcal N})$
+intrinsically from the algebra of $\mathcal N$, without first-chaos
+generators, is formulated as the central open problem; the two-point
+form $\Gamma_{\mathcal N}^{(2)}$ is the primary candidate seed, and
+$\mathfrak L_{D_{\mathcal N}}$ is the algebraic remainder relating
+$\Gamma_{\mathcal N}^{(2)}$ to the candidate generator
+$L_{\mathcal N}=-\delta_{\mathcal N}D_{\mathcal N}$, when this
+composition is defined on a suitable dense domain. The classical
+no-innovation-reduction statement appears as a short benchmark
+corollary. No primitive divergence is constructed, no universal
+existence theorem for the hierarchy
+$\{\Gamma_{\mathcal N,S}\}_{|S|\ge 2}$ over black noises is
+claimed, no representation of the hierarchy through
+$(\delta_{\mathcal N},D_{\mathcal N})$ is given, and no new
+black-noise theorem beyond the seed-collapse statement is asserted.
+\end{abstract}
+
+\maketitle
+
+%==============================================================
+\section{Introduction}\label{sec:intro}
+%==============================================================
+
+An \emph{observable It\^o identity} for a process $X$ on a Polish
+space $E$ is a martingale-problem relation of the form
+\[
+  f(X_t) - f(X_0) = \int_0^t Lf(X_s)\,ds + M_t[f], \qquad f\in\mathcal T,
+\]
+where $L\colon\mathcal T\to C_b(E)$ is linear and $(M_t[f])$ is a
+martingale with respect to the natural filtration of $X$. When the
+martingale problem $(L,\mathcal T)$ is well posed, such an identity
+fixes the semigroup, generator, and law of $X$. It does not, by
+itself, fix how the randomness driving $M[f]$ is organized: the same
+semigroup is compatible with many different choices of underlying
+noise, of pathwise lift, and of operator-valued representation. The
+purpose of this paper is to formulate the operator-derivative
+problem over nonclassical noise and to identify its first two
+structural invariants: the seed data of a candidate primitive
+divergence, and the Leibniz defect of its adjoint.
+
+The trilogy that motivates this paper ---
+\cite{EnergyFirst,FCDC,BidegreeAtlas} --- adopts what we call the
+\emph{energy-first stance}: the divergence operator $\delta$, together
+with its adjoint $D=\delta^{*}$, is taken as primitive. Stochastic
+integration against a Brownian or Poisson generator is then one
+realization of $\delta$, not its definition. The trilogy uses this
+stance to handle Iterated Brownian Motion (IBM), where the natural
+$L^2$ closure of the pathwise It\^o correction fails on a first-chaos
+sector and only the $H^{-1}$ dual closure survives. The framework was
+developed precisely because the classical It\^o integral was not the
+right primitive for that problem.
+
+\subsection{Black noise as a test of the energy-first stance}\label{sec:intro-blacknoise}
+
+The IBM obstructions of the trilogy live entirely inside a
+\emph{classical} noise: the source randomness is a pair of
+independent Brownian motions, and the obstruction is one of
+topology and of sector summability, not of the noise algebra itself.
+Tsirelson's theory of noises~\cite{Tsirelson2004,TsirelsonVershik1998}
+exhibits a strictly more severe phenomenon. A \emph{noise} is a
+continuous product of probability spaces, encoded as a family
+$\mathcal N=(\mathcal F_{s,t})_{s\le t}$ of $\sigma$-fields with
+$\mathcal F_{r,t}=\mathcal F_{r,s}\vee\mathcal F_{s,t}$ under
+independence, and an associated time-shift. Inside any noise, the
+\emph{classical subnoise} $\mathcal N^{\mathrm{cl}}$ is the noise
+generated by additive integrable families $(X_{s,t})$ with
+$X_{r,t}=X_{r,s}+X_{s,t}$; equivalently, by the closed linear span of
+the first chaoses $I_1(\mathcal F_{s,t})$. The noise $\mathcal N$ is
+\emph{classical} when $\mathcal N^{\mathrm{cl}}=\mathcal N$ and
+\emph{black} when $\mathcal N^{\mathrm{cl}}$ is trivial while
+$\mathcal N$ itself is not. Known examples of black noise include
+Tsirelson's sticky and coalescing flows~\cite{LeJanRaimond2004}, the
+noise of the Brownian web in the sense of~\cite{Tsirelson2004,SSS2017},
+and the noise of two-dimensional critical
+percolation~\cite{SchrammSmirnov2011}.
+
+The role of black noise in the present paper is precisely calibrated.
+It is straightforward, and we record it as a proposition in
+\cref{sec:proposition}, that black noise forbids any reduction of the
+martingale family $(M_t[f])$ to a stochastic integral against a
+Brownian or Poisson driver living inside the filtration of $X$: there
+is simply no classical first-chaos generator in which such an
+integral could be written. What does \emph{not} follow from this, and
+what is sometimes implicitly assumed in the literature, is that black
+noise obstructs an energy-first It\^o calculus as such. Under the
+energy-first stance, $\delta$ is primitive; the absence of a
+classical innovation eliminates one realization of $\delta$ but does
+not, prima facie, eliminate the operator. Whether $\delta$ admits a
+genuinely intrinsic construction over a nonclassical noise --- without
+an intermediate classical generator --- is the central programmatic
+question of this paper, and we leave it open.
+
+\subsection{Three calibrations}\label{sec:intro-calibrations}
+
+The relative position of the trilogy and of the black-noise setting
+is clearest when read against the Brownian benchmark.
+
+\emph{Brownian (Wiener) noise.} The first chaos
+$I_1(\mathcal F_{s,t})\simeq L^2([s,t])$ is the canonical home of the
+additive integrable families; the Brownian increment
+$W_t-W_r=(W_s-W_r)+(W_t-W_s)$ is the prototypical such family. The
+classical It\^o divergence
+$\delta^W(\mathbf 1_{[s,t]})=W_t-W_s$ is the seed of all subsequent
+construction: by closure and chaos decomposition it extends from
+$I_1$ to all of $L^2(\mathcal F_W)$, and the Malliavin pair
+$(\delta^W,D^W)$ is determined accordingly.
+
+\emph{IBM and the trilogy.} The natural noise of IBM is a tensor
+product of two independent Brownian noises; it is classical, and the
+first chaos is rich. The trilogy's obstructions arise \emph{inside}
+this classical setting. In~\cite{EnergyFirst} the $L^2$ closure of
+the mollified pathwise correction fails on a first-chaos sector and
+only an $H^{-1}$ dual closure survives; in~\cite{FCDC} that dual
+closure is identified explicitly; in~\cite{BidegreeAtlas} the higher
+bidegree sectors $(m,n)$ are organized into an atlas with their own
+summability conditions. None of these obstructions is
+filtration-level: the seed of the classical construction is intact,
+and the failure occurs in the closure and the cross-sector
+summability.
+
+\emph{Black noise.} Here the first chaos itself collapses:
+$I_1(\mathcal N)$ is trivial, modulo constants. The Brownian template
+breaks at the first step. There is no $\mathbf 1_{[s,t]}$ to integrate
+against a classical generator, no isometry
+$L^2([s,t])\to I_1(\mathcal F_{s,t})$ to extend by closure, and no
+chaos decomposition into $\bigoplus_n I_n$ with $I_n$ built from
+tensor powers of $I_1$. Any candidate energy-first construction must
+therefore originate elsewhere, at the algebra of the noise rather than
+at a first-chaos generator.
+
+Thus IBM and black noise are first-class examples of the
+operator-derivative framework along different axes: IBM tests the
+topology of the correction inside classical noise, while black noise
+tests whether the primitive divergence $\delta_{\mathcal N}$ can be
+specified when the classical first-chaos seed is absent. The two
+tests are orthogonal, and their resolutions are independent.
+
+\subsection{The first structural pressure point}\label{sec:intro-seed}
+
+The collapse just described is not by itself a theorem of
+obstruction. What we record in \cref{sec:seed} is the precise
+location of the pressure point. Let $\delta_{\mathcal N}$ be assembled,
+in the manner of the classical case, from a family of interval
+operators
+\[
+  \delta_{s,t}\colon\Dom(\delta_{s,t})\subset L^2(\mathcal F_{s,t};H_{s,t})\to L^2(\mathcal F_{s,t}),
+\]
+with test-direction spaces forming an additive family
+$H_{r,t}=H_{r,s}\oplus H_{s,t}$. We call $\delta_{\mathcal N}$
+\emph{interval-compatible} if its deterministic-coefficient seed ---
+the map $T_{s,t}(h):=\delta_{s,t}(\mathbf 1\otimes h)$ --- is bounded
+and linear, and satisfies the interval additivity
+$T_{r,t}(h_{r,s}\oplus h_{s,t})=T_{r,s}(h_{r,s})+T_{s,t}(h_{s,t})$
+inside $L^2(\mathcal F_{r,t})$. Brownian and Poisson divergences both
+meet this requirement; in the Brownian case the seed map
+$T^W_{s,t}\colon L^2([s,t])\to L^2(\mathcal F_{s,t})$ is the It\^o
+isometry, and its range lies in $I_1(\mathcal F_{s,t})$.
+
+The observation of \cref{sec:seed} is that this is no accident. For
+\emph{any} family $T_{s,t}$ satisfying interval additivity and
+$T_{s,t}(h)\in L^2(\mathcal F_{s,t})$, the elements
+$X_{s,t}:=T_{s,t}(h_{s,t})$ form an additive integrable family in
+the noise $\mathcal N$, hence belong to the first chaos
+$I_1(\mathcal N)$. When $\mathcal N$ is black, $I_1(\mathcal N)$ is
+trivial after centering, and $T_{s,t}\equiv 0$. The classical seed
+\emph{has no nontrivial instance} over a black noise.
+
+We emphasize what this observation does and does not say. It does not
+say that no primitive divergence $\delta_{\mathcal N}$ can exist over
+a black noise. It says only that any such $\delta_{\mathcal N}$, if it
+exists, cannot be reached by the classical route: the
+deterministic-coefficient, interval-additive, first-order seed is
+unavailable. Two possibilities remain. \emph{Either} a primitive
+divergence over a black noise admits a nonclassical seed ---
+non-additive in $(s,t)$, multiplicative, quadratic, or based on
+interval functionals of a fundamentally different type --- and an
+energy-first It\^o calculus extends beyond classical innovation.
+\emph{Or} every candidate construction reduces, after closure, to an
+interval-additive seed, in which case the observation forces
+triviality and a nontrivial first chaos is a necessary input to the
+energy-first program.
+
+\subsection{A second pressure point at the Leibniz rule}\label{sec:intro-leibniz}
+
+The classical Malliavin pair satisfies the Leibniz rule
+$D(FG)=F\,DG+G\,DF$, which makes the adjoint $D=\delta^{*}$ a
+first-order derivation on its natural test algebra. There is no a
+priori reason for this rule to survive when the seed of
+$\delta_{\mathcal N}$ ceases to be classical. We record this as a
+second, complementary diagnostic in \cref{sec:leibniz}, isolating the
+\emph{Leibniz defect}
+\[
+  \mathfrak L_D(F,G):=D(FG)-F\,DG-G\,DF.
+\]
+The Wiener case has $\mathfrak L_{D^W}\equiv 0$ on its smooth
+cylindrical algebra; the compensated Poisson case has the nonzero
+quadratic defect $\mathfrak L_{D^P}(F,G)(z)=(D^P_z F)(D^P_z G)$,
+already inside the classical L\'evy world. The diagnostic is that an
+energy-first calculus over a nonclassical noise should be expected,
+on the Poisson precedent, to have a nonzero Leibniz defect; the
+question is whether this defect can be expressed intrinsically from
+the noise tensor factorization.
+
+The first pressure point is at the seed; the second is at the
+product rule of the adjoint. Together they locate, in
+\cref{sec:open}, the central open problem of the paper. The positive
+candidate that remains after additive first-chaos seeds vanish is
+not absence of structure but a higher-order one: a
+\emph{carr\'e-du-champ} / product-defect seed
+(\cref{sec:cdc-seed,sec:twopoint}), supplying a positive bilinear
+energy kernel in settings where the classical first-chaos seed is
+unavailable, and more generally the generator-level interaction
+hierarchy of \cref{sec:twopoint-hierarchy}, whose higher members
+$\Gamma_{S}$ for $|S|\ge 3$ record the genuinely $|S|$-body
+infinitesimal interaction content of the noise above the two-point
+layer.
+
+\subsection{What this paper does not do}\label{sec:intro-non-claims}
+
+The framing above is calibrated against several non-claims that we
+make explicit here and repeat in the body of the paper.
+
+We do not prove any new black-noise theorem. The proposition of
+\cref{sec:proposition} is a restatement of \cite{Tsirelson2004} in
+the ladder language of this paper; the examples of black noise are
+cited, not reproved. We do not construct $\delta_{\mathcal N}$ on any
+nontrivial black noise. The pressure-point observation of
+\cref{sec:seed} forbids only the classical seed; it does not exclude
+nonclassical seeds, and offers no construction of one. The Leibniz
+diagnostic of \cref{sec:leibniz} is exactly that --- a diagnostic.
+It does not prove that blackness forces a nonzero Leibniz defect.
+We do not claim that IBM is black. The natural noise of IBM is
+classical, and the trilogy's obstructions live at the level of
+$L^2$ closure and sector summability inside that classical noise,
+not at the level of the noise algebra. Black noise is therefore a
+\emph{complementary} test of the energy-first stance, addressing
+whether the framework can survive without any classical seed at all,
+rather than how it survives the loss of $L^2$ closure within a
+classical seed.
+
+\subsection{Roadmap}\label{sec:intro-roadmap}
+
+\Cref{sec:definitions} fixes the basic objects: observable It\^o
+identity, energy lift, noise in the Tsirelson--Vershik sense,
+classical subnoise, black noise, and classical innovation reduction
+in the strong sense required for the proposition of
+\cref{sec:proposition} to apply.
+\Cref{sec:proposition} states and proves the proposition that black
+noise forbids classical innovation reduction.
+\Cref{sec:calibration} compares the Wiener, IBM, and black-noise
+cases at the level of what disappears when the first chaos becomes
+trivial. \Cref{sec:seed} states and proves the pressure-point
+observation on interval-additive seeds. \Cref{sec:leibniz}
+introduces the Leibniz defect and records the complementary
+algebraic diagnostic. \Cref{sec:twopoint} computes the two-point
+product defect for stochastic flows of kernels and records, in
+\cref{sec:twopoint-hierarchy}, the natural all-$|S|$ extension as
+the generator-level interaction hierarchy.
+\Cref{sec:open} formulates the central open
+problem of constructing a primitive divergence $\delta_{\mathcal N}$
+over a nonclassical noise, with both possible outcomes stated
+symmetrically. \Cref{sec:examples} gathers the known examples of
+black noise as citations. \Cref{sec:discussion} returns to the
+relation with the trilogy and to the non-claims of this introduction.
+
+%==============================================================
+\section{Definitions}\label{sec:definitions}
+%==============================================================
+
+This section fixes the objects used throughout the paper: the
+observable It\^o identity, the energy / operator-valued lift, the
+Tsirelson--Vershik noise and its classical subnoise, black noise,
+and the classical innovation reduction in the strong form required
+for the proposition of \cref{sec:proposition} to apply. Definitions
+are kept to the minimum needed for the lemma of \cref{sec:seed} and
+the open problem of \cref{sec:open}; we do not develop Tsirelson's
+theory in full generality.
+
+Throughout, $(\Omega,\mathcal F,\Prob)$ is a fixed probability space;
+$E$ is a Polish space; all functions and processes are Borel
+measurable; martingales are with respect to a specified,
+usual-conditions-completed filtration.
+
+\subsection{\texorpdfstring{Observable It\^o identity}{Observable Ito identity}}\label{sec:def-observable}
+
+\begin{definition}[\texorpdfstring{Observable It\^o identity}{Observable Ito identity}]\label{def:observable}
+An \emph{observable It\^o identity} is a triple $(X,L,\mathcal T)$ in
+which
+\begin{itemize}
+\item[$(\mathrm i)$] $X=(X_t)_{t\ge 0}$ is a c\`adl\`ag process on a
+Polish space $E$, defined on $(\Omega,\mathcal F,\Prob)$;
+\item[$(\mathrm{ii})$] $\mathcal T\subset C_b(E)$ is a linear test class;
+\item[$(\mathrm{iii})$] $L\colon\mathcal T\to C_b(E)$ is linear; and
+\item[$(\mathrm{iv})$] for every $f\in\mathcal T$ the process
+\begin{equation}\label{eq:martingale-problem}
+  M_t[f]\;:=\;f(X_t)-f(X_0)-\int_0^t Lf(X_s)\,ds,\qquad t\ge 0,
+\end{equation}
+is a martingale with respect to the natural filtration
+$\mathcal F^X_t:=\sigma(X_u:u\le t)$.
+\end{itemize}
+\end{definition}
+
+\begin{remark}\label{rem:observable-semigroup}
+When the martingale problem $(L,\mathcal T)$ is well posed in the
+standard sense (see~\cite{EthierKurtz}), the observable It\^o
+identity determines the law of $X$, hence its transition semigroup.
+It does \emph{not} determine how the randomness in $(M_t[f])$ is
+organized as a stochastic process: distinct sources of innovation
+can generate identical martingale problems. The present paper is
+concerned precisely with the gap between the operator-level identity
+\eqref{eq:martingale-problem} and any further representation of
+$(M_t[f])$ in terms of an underlying integrator.
+\end{remark}
+
+\subsection{Energy lift}\label{sec:def-energy}
+
+\begin{definition}[Energy lift]\label{def:energy-lift}
+An \emph{energy lift} of an observable It\^o identity
+$(X,L,\mathcal T)$ is a quintuple
+\[
+  \bigl(\mathcal H,\;\mathcal U,\;\delta,\;D,\;(u^{\,\cdot}_f)_{f\in\mathcal T}\bigr)
+\]
+in which:
+\begin{itemize}
+\item[$(\mathrm i)$] $\mathcal H$ is a complex Hilbert space, or a
+rigged Hilbert triple $\mathcal H_+\subset\mathcal H\subset\mathcal H_-$,
+with $L^2(\Omega,\mathcal F^X,\Prob)\subset\mathcal H$ as a dense
+subspace;
+\item[$(\mathrm{ii})$] $\mathcal U$ is a Hilbert space of test directions;
+\item[$(\mathrm{iii})$] $\delta\colon\Dom(\delta)\subset\mathcal U\to L^2(\Omega)$
+is a closed, densely-defined operator (the \emph{divergence}), with
+closed adjoint $D=\delta^{*}\colon\Dom(D)\subset L^2(\Omega)\to\mathcal U$
+(the \emph{adjoint derivative}), satisfying the integration-by-parts
+identity
+\begin{equation}\label{eq:IBP}
+  \E\!\bigl[F\cdot\delta(u)\bigr]
+  \;=\;\E\!\bigl[\langle DF,u\rangle_{\mathcal U}\bigr],
+  \qquad F\in\Dom(D),\ u\in\Dom(\delta);
+\end{equation}
+\item[$(\mathrm{iv})$] for every $f\in\mathcal T$ there is a
+predictable direction
+$u^{\,\cdot}_f\colon[0,\infty)\to\mathcal U$ such that
+\begin{equation}\label{eq:M-as-delta}
+  M_t[f]\;=\;\delta\!\bigl(u_f^{[0,t]}\bigr)\quad\text{in }L^2(\Omega),
+  \qquad t\ge 0,
+\end{equation}
+where $u_f^{[0,t]}$ is the restriction of $u_f^{\,\cdot}$ to $[0,t]$.
+\end{itemize}
+\end{definition}
+
+\begin{remark}\label{rem:energy-lift-no-classical}
+\Cref{def:energy-lift} makes no commitment as to the structure of
+$\delta$. In particular, $\delta$ is not assumed to be the
+It\^o--Wiener integral against a Brownian motion, nor the
+compensated integral against a Poisson random measure, nor any other
+classical L\'evy-type integrator. The Wiener and Poisson divergences
+are particular realizations of $\delta$; the energy-first stance of
+this paper treats $\delta$ as the primitive object and asks under
+what conditions on the underlying noise such a $\delta$ can exist
+at all. The terminology \emph{adjoint derivative} for $D=\delta^{*}$
+is deliberate: the Leibniz rule $D(FG)=F\,DG+G\,DF$, and hence the
+property of being a derivation on a test algebra, is an additional
+optional structure rather than part of the basic definition. See
+\cref{sec:leibniz}.
+\end{remark}
+
+\subsection{Noise}\label{sec:def-noise}
+
+\begin{definition}[Noise]\label{def:noise}
+A \emph{noise} on $(\Omega,\mathcal F,\Prob)$ is a system
+$\mathcal N=\bigl((\mathcal F_{s,t})_{s\le t},(T_h)_{h\in\R}\bigr)$
+of sub-$\sigma$-fields and a measurable measure-preserving group
+action, satisfying:
+\begin{itemize}
+\item[$(\mathrm i)$] \emph{Independent factorization.} For every
+$r\le s\le t$,
+\begin{equation}\label{eq:noise-factor}
+  \mathcal F_{r,t}\;=\;\mathcal F_{r,s}\vee\mathcal F_{s,t},
+  \qquad \mathcal F_{r,s}\perp\!\!\!\perp\mathcal F_{s,t}.
+\end{equation}
+\item[$(\mathrm{ii})$] \emph{Stationarity.} Each
+$T_h\colon\Omega\to\Omega$ is measure preserving,
+$T_{h_1+h_2}=T_{h_1}\circ T_{h_2}$, and
+$T_h(\mathcal F_{s,t})=\mathcal F_{s+h,\,t+h}$.
+\item[$(\mathrm{iii})$] \emph{Continuity.} The standard continuity
+conditions on $(\mathcal F_{s,t})$ in $(s,t)$ hold (right-continuity
+at right endpoints; left-continuity at left endpoints).
+\end{itemize}
+We refer to~\cite{Tsirelson2004}, \S 2, for the full
+Tsirelson--Vershik axioms; the form above is sufficient for the
+present paper.
+\end{definition}
+
+\begin{remark}[\texorpdfstring{$L^2$-tensor form}{L^2-tensor form}]\label{rem:noise-l2-tensor}
+The independent factorization \eqref{eq:noise-factor} is equivalent,
+after passing to $L^2$, to the unitary tensor identification
+\begin{equation}\label{eq:L2-tensor}
+  L^2(\mathcal F_{r,t})\;\cong\;L^2(\mathcal F_{r,s})\otimes L^2(\mathcal F_{s,t}),
+  \qquad r\le s\le t,
+\end{equation}
+under which the constants $\mathbf 1$ correspond to the canonical
+embeddings. In \cref{sec:seed} we write
+$\mathcal F_{r,t}=\mathcal F_{r,s}\otimes\mathcal F_{s,t}$ as shorthand
+for the $L^2$-level identification \eqref{eq:L2-tensor}; we never use
+$\otimes$ as an algebraic tensor product of $\sigma$-fields.
+\end{remark}
+
+\subsection{First chaos and classical subnoise}\label{sec:def-classical}
+
+\begin{definition}[Additive integrable family]\label{def:additive-family}
+Let $\mathcal N=(\mathcal F_{s,t})$ be a noise. An \emph{additive
+integrable family} on $\mathcal N$ is a collection
+$X=(X_{s,t})_{s\le t}$ such that:
+\begin{itemize}
+\item[$(\mathrm i)$] $X_{s,t}\in L^2(\mathcal F_{s,t})$ for every $s\le t$;
+\item[$(\mathrm{ii})$] for every $r\le s\le t$,
+\begin{equation}\label{eq:additivity}
+  X_{r,t}\;=\;X_{r,s}+X_{s,t}\quad\text{in }L^2(\mathcal F_{r,t}),
+\end{equation}
+where the right-hand side is read via the canonical embeddings
+$L^2(\mathcal F_{r,s})\hookrightarrow L^2(\mathcal F_{r,t})$ and
+$L^2(\mathcal F_{s,t})\hookrightarrow L^2(\mathcal F_{r,t})$ of
+\cref{rem:noise-l2-tensor}.
+\end{itemize}
+The family $X$ is \emph{centered} if $\E[X_{s,t}]=0$ for every $s\le t$.
+\end{definition}
+
+\begin{definition}[First chaos; classical subnoise]\label{def:classical-subnoise}
+The \emph{first chaos} $I_1(\mathcal N)$ of $\mathcal N$ is the
+closed linear subspace of $\bigoplus_{s\le t}L^2(\mathcal F_{s,t})$
+spanned by all additive integrable families on $\mathcal N$ in the
+sense of \cref{def:additive-family}. The \emph{classical subnoise}
+$\mathcal N^{\mathrm{cl}}=(\mathcal F^{\mathrm{cl}}_{s,t})$ is the
+subnoise generated by $I_1(\mathcal N)$:
+\[
+  \mathcal F^{\mathrm{cl}}_{s,t}
+  :=\sigma\bigl(\,X_{s,t}\;:\;X\text{ an additive integrable family on }\mathcal N\,\bigr),
+  \qquad s\le t.
+\]
+\end{definition}
+
+We refer to~\cite{Tsirelson2004}, \S 3, for the development of $I_1$
+and $\mathcal N^{\mathrm{cl}}$, and for their basic structural
+properties (Hilbertian closure, behavior under refinement,
+equivalence with the \emph{stable} or \emph{linearizable} subnoise).
+
+\subsection{Black noise}\label{sec:def-black}
+
+\begin{definition}[Black noise]\label{def:black}
+A noise $\mathcal N$ is \emph{black} if its classical subnoise
+$\mathcal N^{\mathrm{cl}}$ is trivial,
+\[
+  \mathcal F^{\mathrm{cl}}_{s,t}\;=\;\{\emptyset,\Omega\}\bmod\Prob
+  \qquad\text{for every }s<t,
+\]
+while $\mathcal N$ itself is nontrivial in the sense that
+$\mathcal F_{s,t}\neq\{\emptyset,\Omega\}\bmod\Prob$ for some $s<t$.
+\end{definition}
+
+\begin{remark}[Equivalent form]\label{rem:black-no-centered-additive}
+By \cref{def:additive-family} and \cref{def:classical-subnoise},
+$\mathcal N$ is black if and only if every centered additive
+integrable family $(X_{s,t})$ on $\mathcal N$ satisfies $X_{s,t}=0$
+almost surely for every $s\le t$. In this equivalent form, blackness
+asserts the absence of any nonconstant first-order, additive
+$L^2$-content in $\mathcal N$. Known examples of black noise include
+the noise of Tsirelson's sticky and coalescing
+flows~\cite{LeJanRaimond2004}, the noise of the Brownian
+web~\cite{Tsirelson2004,SSS2017}, and the noise of two-dimensional
+critical percolation~\cite{SchrammSmirnov2011}; we cite these in
+\cref{sec:examples} and do not reprove them here.
+\end{remark}
+
+\subsection{Natural noise; classical innovation reduction}\label{sec:def-cir}
+
+\begin{definition}[Natural noise of a process]\label{def:natural-noise}
+Let $(X,L,\mathcal T)$ be an observable It\^o identity. We assume
+that $X$ carries a \emph{natural noise}
+$\mathcal N_X=(\mathcal F^X_{s,t})_{s\le t}$ in the sense of
+\cref{def:noise}, with $\mathcal F^X_{s,t}\subset\mathcal F$ for every
+$s\le t$ and
+$\bigvee_{u\le t}\mathcal F^X_{0,u}=\mathcal F^X_t$. For processes
+with stationary, independent-like increments --- Brownian, L\'evy,
+Poisson; iterated and stochastic-flow examples treated in
+\cref{sec:calibration,sec:examples} --- $\mathcal N_X$ may be taken
+as the natural Tsirelson--Vershik noise generated by $X$. For
+general $X$ the existence of $\mathcal N_X$ is an assumption on the
+model, not a universal construction. We write
+$\mathcal N_X^{\mathrm{cl}}$ for the classical subnoise of
+$\mathcal N_X$.
+\end{definition}
+
+\begin{definition}[Classical innovation reduction]\label{def:cir}
+A \emph{classical innovation reduction} of an observable It\^o
+identity $(X,L,\mathcal T)$ is a stochastic process
+$Z=(Z_t)_{t\ge 0}$ on $(\Omega,\mathcal F,\Prob)$ such that:
+\begin{itemize}
+\item[$(\mathrm i)$] $Z$ is a L\'evy process (Brownian, Poisson,
+compound Poisson, or finite-dimensional L\'evy), and is adapted to
+the natural filtration $\mathcal F^X_t$;
+\item[$(\mathrm{ii})$] the noise $\mathcal N_Z$ generated by $Z$ is a
+subnoise of the classical subnoise $\mathcal N_X^{\mathrm{cl}}$ of
+$X$, and is nontrivial in the sense that
+$\mathcal F^Z_{s,t}\neq\{\emptyset,\Omega\}\bmod\Prob$ for some $s<t$;
+\item[$(\mathrm{iii})$] for every $f\in\mathcal T$ there exists an
+$\mathcal F^X$-predictable integrand $H[f]$ such that
+\begin{equation}\label{eq:cir-representation}
+  M_t[f]\;=\;\int_0^t H_s[f]\,dZ_s\quad\text{in }L^2(\Omega),
+  \qquad t\ge 0,
+\end{equation}
+and the predictable representation $H[f]$ determines $M[f]$ uniquely.
+\end{itemize}
+\end{definition}
+
+\begin{remark}[Adaptedness and the enlargement caveat]\label{rem:cir-no-enlargement}
+Condition $(\mathrm i)$ is what makes \cref{def:cir} bite. Adjoining
+a Brownian motion $W'$ to $(\Omega,\mathcal F,\Prob)$ on an enlarged
+probability space, independent of all existing randomness, and
+writing $M_t[f]=\int_0^t H_s[f]\,dW'_s$ for some predictable $H[f]$
+on the enlargement does \emph{not} produce a classical innovation
+reduction in the present sense, because $W'$ is not adapted to
+$\mathcal F^X$. Condition $(\mathrm{ii})$ further requires that the
+L\'evy driver contribute to the classical part of the noise of $X$.
+In combination, $(\mathrm i)$--$(\mathrm{ii})$ formalize the
+requirement that the L\'evy representation
+\eqref{eq:cir-representation} take place \emph{inside} the noise
+$\mathcal N_X$ rather than on an extraneous enlargement.
+\end{remark}
+
+\begin{remark}[Strength relative to the energy lift]\label{rem:cir-vs-energy-lift}
+\Cref{def:cir} is strictly stronger than \cref{def:energy-lift}.
+Every classical innovation reduction yields an energy lift, with
+$\delta=\delta^Z$ the It\^o--Wiener (or compensated Poisson)
+divergence against $Z$ and $D=D^Z$ its Malliavin adjoint. The
+converse fails: an energy lift may exist without any $Z$ satisfying
+\cref{def:cir}. The proposition of \cref{sec:proposition} records the
+precise mechanism by which blackness of $\mathcal N_X$ forbids the
+converse.
+\end{remark}
+
+%==============================================================
+\section{Classical innovation reduction and black noise}\label{sec:proposition}
+%==============================================================
+
+We record the benchmark proposition showing that blackness of
+$\mathcal N_X$ forbids the classical innovation reduction of
+\cref{def:cir}. The statement is short and conservative:
+a restatement of Tsirelson's blackness in the form required by the
+operator-derivative framework, not a new black-noise theorem.
+
+\begin{proposition}\label{prop:no-cir}
+Let $(X,L,\mathcal T)$ be an observable It\^o identity with natural
+noise $\mathcal N_X$ in the sense of \cref{def:natural-noise}.
+Suppose $\mathcal N_X$ is black in the sense of \cref{def:black}.
+Then $(X,L,\mathcal T)$ admits no classical innovation reduction in
+the sense of \cref{def:cir}: no process $Z$ satisfying conditions
+$(\mathrm i)$--$(\mathrm{iii})$ of \cref{def:cir} can represent the
+martingale family $(M_t[f])$ as in
+\eqref{eq:cir-representation}.
+\end{proposition}
+
+\begin{proof}
+By \cref{def:cir}$(\mathrm{ii})$, a classical innovation reduction
+requires the noise $\mathcal N_Z$ generated by the candidate driver
+$Z$ to be a \emph{nontrivial} subnoise of the classical subnoise
+$\mathcal N_X^{\mathrm{cl}}$. Blackness of $\mathcal N_X$
+(\cref{def:black}) means $\mathcal N_X^{\mathrm{cl}}$ is trivial, so
+every subnoise of $\mathcal N_X^{\mathrm{cl}}$ is trivial. This
+contradicts the required nontriviality of $\mathcal N_Z$, and no
+classical innovation reduction exists.
+
+Equivalently, any L\'evy driver whose interval noise genuinely lives
+inside the natural noise of $X$ would generate nontrivial classical
+additive $L^2$-content on $\mathcal N_X$, which blackness forbids.
+\end{proof}
+
+\begin{remark}\label{rem:prop-tsirelson-restatement}
+\Cref{prop:no-cir} is essentially a restatement of the definition of
+black noise in the ladder language of this paper. The argument is
+direct from the definitions: condition $(\mathrm{ii})$ of
+\cref{def:cir} demands that the noise of the candidate L\'evy driver
+be a nontrivial subnoise of $\mathcal N_X^{\mathrm{cl}}$, and
+blackness of $\mathcal N_X$ collapses that classical subnoise to a
+trivial one. We do not advertise this as a new black-noise theorem.
+Its role here is to make precise, in the framework of
+\cref{def:energy-lift,def:cir}, what blackness obstructs and what it
+does not.
+\end{remark}
+
+\begin{remark}[What is not asserted]\label{rem:prop-non-claim}
+\Cref{prop:no-cir} asserts only that the strong classical reduction
+of \cref{def:cir} is unavailable when $\mathcal N_X$ is black. It
+does not assert that no energy lift of $(X,L,\mathcal T)$ in the
+sense of \cref{def:energy-lift} exists, and it does not assert that
+no primitive divergence $\delta_{\mathcal N}$ over $\mathcal N_X$
+exists. Those are exactly the questions to which
+\cref{sec:seed,sec:leibniz,sec:open} return.
+\end{remark}
+
+%==============================================================
+\section{Calibration: Wiener, IBM, black noise}\label{sec:calibration}
+%==============================================================
+
+Before turning to the technical pressure points of
+\cref{sec:seed,sec:leibniz}, it is useful to set the trilogy and the
+black-noise setting side by side at the level of what the first
+chaos provides. We summarize this in three short paragraphs and one
+metaphor; nothing in this section is proved here.
+
+\subsection{Wiener noise}\label{sec:cal-wiener}
+
+Let $W$ be a standard Brownian motion. Its noise $\mathcal N_W$ is
+classical and the first chaos
+$I_1(\mathcal F^W_{s,t})\cong L^2([s,t])$ is canonically Hilbertian:
+each $h\in L^2([s,t])$ corresponds to $\int_s^t h(u)\,dW_u\in
+I_1(\mathcal F^W_{s,t})$. The increment seed $W_t-W_s$ is the
+prototypical centered additive integrable family. From this seed the
+It\^o divergence $\delta^W$ and its Malliavin adjoint $D^W$ are
+built by closure and chaos extension; the Wiener case is the source
+of the classical pattern that the energy-first program generalizes.
+
+\subsection{IBM and the trilogy}\label{sec:cal-ibm}
+
+Iterated Brownian motion $\IBM_t:=X_{|Y_t|}$, with $X$ a two-sided
+Brownian scenery and $Y$ an independent Brownian clock, lies on a
+classical noise $\mathcal N_{(X,Y)}=\mathcal N_X\otimes\mathcal N_Y$
+in the sense of~\eqref{eq:L2-tensor}. Both factors carry rich first
+chaoses. The trilogy's obstructions arise \emph{inside} this
+classical setting and are not filtration-level:
+\begin{itemize}
+\item[--] \cite{EnergyFirst} mollifies the scenery,
+$X^\varepsilon=\rho_\varepsilon*X$, and proves an energy-first It\^o
+formula at the mollified level; the natural $L^2$ closure of the
+correction term fails on a first-$X$-chaos sector, and only an
+$H^{-1}$ dual closure survives;
+\item[--] \cite{FCDC} identifies the dual closure of that
+first-chaos sector explicitly;
+\item[--] \cite{BidegreeAtlas} organizes the higher bidegree sectors
+$(m,n)$ along the chaos decompositions of $\mathcal N_X$ and
+$\mathcal N_Y$ into an atlas with their own summability and closure
+conditions.
+\end{itemize}
+None of these obstructions is at the level of the first chaos or the
+noise algebra: the seed of the classical construction is intact,
+and the failure occurs in the closure (\cite{EnergyFirst,FCDC}) and
+the cross-sector summability (\cite{BidegreeAtlas}).
+
+\subsection{Black noise}\label{sec:cal-black}
+
+For a black noise $\mathcal N$, the first chaos collapses:
+$I_1(\mathcal N)$ is trivial modulo constants, by
+\cref{def:black,rem:black-no-centered-additive}. The Brownian
+template breaks at the first step. There is no $\mathbf 1_{[s,t]}$
+to integrate against a classical generator, no isometry
+$L^2([s,t])\to I_1(\mathcal F_{s,t})$ to extend by closure, and no
+chaos decomposition $\bigoplus_n I_n$ built from tensor powers of
+$I_1$. Any candidate energy-first construction must therefore
+originate elsewhere, at the algebra of the noise rather than at a
+first-chaos generator.
+
+\subsection{Horizontal and vertical stresses}\label{sec:cal-metaphor}
+
+The trilogy and the black-noise setting stress the energy-first
+program along orthogonal axes. The trilogy operates \emph{within}
+the classical first-chaos input and asks how far the resulting
+calculus can be carried when its natural $L^2$ closures fail and
+when the bidegree sectors must be summed nonuniformly; this is a
+\emph{horizontal} stress test. Black noise operates \emph{below} the
+first chaos and asks whether the calculus can be carried out when
+no classical first-chaos input is available at all; this is a
+\emph{vertical} stress test. The two settings are complementary: a
+positive resolution of either does not entail the other, and the
+non-trivial obstructions in the two cases are of different types.
+The trilogy is not concerned with blackness, and the present paper
+is not concerned with $L^2$-closure failures inside classical noise.
+
+%==============================================================
+\section{The first structural pressure point}\label{sec:seed}
+%==============================================================
+
+The classical It\^o construction of a divergence operator begins not
+with a closed unbounded operator on Fock space but with a much
+smaller object: a bounded linear map from deterministic test
+functions on an interval into the first chaos of the noise on that
+interval. Closure, chaos extension, and the full Malliavin pair are
+obtained from this seed by standard limiting arguments. In this
+section we record the precise structural form of the seed in the
+classical case and observe that, over a black noise, no nontrivial
+seed of this form exists. The observation is short and conservative;
+it locates the first place where the classical template fails,
+without claiming that the failure is fatal to the energy-first
+program.
+
+\subsection{Setup}\label{sec:seed-setup}
+
+Let $\mathcal N=(\mathcal F_{s,t})_{s\le t}$ be a noise in the
+Tsirelson--Vershik sense (\cref{def:noise}), with the tensor
+factorization
+\begin{equation}\label{eq:tensor-factorization}
+  \mathcal F_{r,t}=\mathcal F_{r,s}\otimes\mathcal F_{s,t},
+  \qquad r\le s\le t,
+\end{equation}
+read at the $L^2$ level via~\eqref{eq:L2-tensor}, and the associated
+unitary identification
+\[
+  L^2(\mathcal F_{r,t})\;\cong\;L^2(\mathcal F_{r,s})\otimes L^2(\mathcal F_{s,t}).
+\]
+We write $\iota^{r,t}_{s,t}\colon L^2(\mathcal F_{s,t})\hookrightarrow L^2(\mathcal F_{r,t})$
+for the canonical embedding $X\mapsto\mathbf 1_{r,s}\otimes X$, and
+$\iota^{r,t}_{r,s}$ for the symmetric embedding
+$X\mapsto X\otimes\mathbf 1_{s,t}$. We suppress these embeddings
+when no ambiguity arises.
+
+Let $(H_{s,t})_{s\le t}$ be a family of separable Hilbert spaces of
+\emph{deterministic test directions}, with an additive structure
+\begin{equation}\label{eq:H-additive}
+  H_{r,t}\;=\;H_{r,s}\oplus H_{s,t},\qquad r\le s\le t,
+\end{equation}
+and isometric inclusions $H_{s,t}\hookrightarrow H_{r,t}$ compatible
+with refinement of intervals. The canonical example is
+$H_{s,t}=L^2([s,t])$.
+
+\begin{definition}[Interval-additive deterministic seed]\label{def:seed}
+An \emph{interval-additive deterministic seed} on $\mathcal N$,
+valued in $(H_{s,t})$, is a family
+\[
+  T_{s,t}\colon H_{s,t}\longrightarrow L^2(\mathcal F_{s,t}),
+  \qquad s\le t,
+\]
+of bounded linear maps satisfying, for every $r\le s\le t$ and every
+$h_{r,s}\in H_{r,s}$, $h_{s,t}\in H_{s,t}$,
+\begin{equation}\label{eq:interval-additive}
+  T_{r,t}(h_{r,s}\oplus h_{s,t})
+  \;=\;
+  \iota^{r,t}_{r,s}\!\bigl(T_{r,s}(h_{r,s})\bigr)
+  +\iota^{r,t}_{s,t}\!\bigl(T_{s,t}(h_{s,t})\bigr)
+  \quad\text{in }L^2(\mathcal F_{r,t}).
+\end{equation}
+\end{definition}
+
+The definition isolates the structural content of the classical seed.
+If $\delta_{\mathcal N}$ is assembled from a family of operators
+$\delta_{s,t}\colon\Dom(\delta_{s,t})\subset L^2(\mathcal F_{s,t};H_{s,t})\to L^2(\mathcal F_{s,t})$
+as in the open problem of \cref{sec:open}, and one restricts to
+deterministic test coefficients by setting
+\begin{equation}\label{eq:seed-from-delta}
+  T_{s,t}(h)\;:=\;\delta_{s,t}(\mathbf 1\otimes h),
+  \qquad h\in H_{s,t},
+\end{equation}
+then $T_{s,t}$ inherits boundedness from a basic continuity
+assumption on $\delta_{s,t}$ and inherits
+\eqref{eq:interval-additive} from any reasonable splitting of
+$\delta_{r,t}$ along \eqref{eq:tensor-factorization}. We call
+\eqref{eq:seed-from-delta} the \emph{deterministic-coefficient seed}
+of $\delta_{\mathcal N}$.
+
+\subsection{Brownian and Poisson benchmarks}\label{sec:seed-benchmarks}
+
+Let $W$ be a standard Brownian motion on $[0,\infty)$ with natural
+noise $\mathcal N_W=(\mathcal F^W_{s,t})$, and take $H_{s,t}=L^2([s,t])$
+with the additive structure~\eqref{eq:H-additive} provided by
+$L^2([r,t])=L^2([r,s])\oplus L^2([s,t])$. The Wiener seed
+\begin{equation}\label{eq:wiener-seed}
+  T^W_{s,t}(h)\;:=\;\int_s^t h(u)\,dW_u
+\end{equation}
+is bounded linear, $\|T^W_{s,t}(h)\|_{L^2}=\|h\|_{L^2([s,t])}$, and
+satisfies \eqref{eq:interval-additive} by the standard splitting of
+the It\^o integral. The range of $T^W_{s,t}$ is exactly the first
+chaos $I_1(\mathcal F^W_{s,t})$, and $T^W$ is precisely the seed from
+which the Malliavin divergence $\delta^W$ is reconstructed by chaos
+extension.
+
+For a Poisson process $N$ of intensity $\lambda$ with compensated
+version $\widetilde N_t=N_t-\lambda t$, the seed
+$T^{\widetilde N}_{s,t}(h)=\int_s^t h(u)\,d\widetilde N_u$ is bounded
+linear, satisfies the analogous splitting, and ranges into the
+compensated first chaos of $\mathcal N_{\widetilde N}$. In both
+cases the seed is the input from which the full divergence operator
+is built by closure and chaos extension; in both cases it satisfies
+\cref{def:seed} and lands in $I_1$.
+
+\subsection{First-chaos confinement}\label{sec:seed-lemma}
+
+We now record the structural observation. Let
+$H_\infty:=\bigcup_{s\le t}H_{s,t}$ be the directed union under
+refinement, and call $h\in H_\infty$ \emph{compatible} if it has, for
+every interval $(s,t)$, a component $h_{s,t}\in H_{s,t}$ such that
+$h_{r,t}=h_{r,s}\oplus h_{s,t}$ under~\eqref{eq:H-additive}. In the
+Brownian benchmark this is exactly $h\in L^2([0,T])$ with
+$h_{s,t}=h\,\mathbf 1_{[s,t]}$.
+
+\begin{lemma}[First-chaos confinement]\label{lem:seed}
+Let $\mathcal N=(\mathcal F_{s,t})$ be a noise and let $(T_{s,t})$ be
+an interval-additive deterministic seed in the sense of
+\cref{def:seed}. For every compatible $h\in H_\infty$, define
+\begin{equation}\label{eq:X-family}
+  X_{s,t}\;:=\;T_{s,t}(h_{s,t})-\E\!\bigl[T_{s,t}(h_{s,t})\bigr],
+  \qquad s\le t.
+\end{equation}
+Then:
+\begin{enumerate}
+\item[$(\mathrm i)$] $X_{s,t}\in L^2(\mathcal F_{s,t})$ is centered
+for every $s\le t$;
+\item[$(\mathrm{ii})$] $(X_{s,t})$ is additive:
+\[
+  X_{r,t}\;=\;X_{r,s}+X_{s,t}
+  \quad\text{in }L^2(\mathcal F_{r,t}),\quad r\le s\le t;
+\]
+\item[$(\mathrm{iii})$] $(X_{s,t})\in I_1(\mathcal N)$.
+\end{enumerate}
+If, in addition, $\mathcal N$ is black in the sense of
+\cref{def:black}, then $X_{s,t}=0$ almost surely for every $s\le t$,
+and the seed reduces to its deterministic mean:
+\begin{equation}\label{eq:seed-deterministic}
+  T_{s,t}(h_{s,t})\;=\;\E\!\bigl[T_{s,t}(h_{s,t})\bigr]
+  \qquad\text{for every compatible }h.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Claim $(\mathrm i)$ is immediate: $T_{s,t}$ maps into
+$L^2(\mathcal F_{s,t})$ by \cref{def:seed}, and centering is by
+construction.
+
+For $(\mathrm{ii})$, apply \eqref{eq:interval-additive} with
+$h_{r,t}=h_{r,s}\oplus h_{s,t}$ and take expectations:
+\begin{align*}
+  X_{r,t}
+  &=T_{r,t}(h_{r,t})-\E[T_{r,t}(h_{r,t})]\\
+  &=T_{r,s}(h_{r,s})+T_{s,t}(h_{s,t})
+   -\E[T_{r,s}(h_{r,s})]-\E[T_{s,t}(h_{s,t})]\\
+  &=X_{r,s}+X_{s,t},
+\end{align*}
+with the embeddings $\iota$ suppressed.
+
+For $(\mathrm{iii})$, $(X_{s,t})$ is by $(\mathrm i)$--$(\mathrm{ii})$
+a centered, $\mathcal F_{s,t}$-measurable, square-integrable, additive
+family on $\mathcal N$. By \cref{def:additive-family} and
+\cref{def:classical-subnoise}, $I_1(\mathcal N)$ is the closed
+linear span in $L^2$ of all such families, so
+$(X_{s,t})\in I_1(\mathcal N)$.
+
+The final assertion is immediate. Blackness of $\mathcal N$ means
+$\mathcal N^{\mathrm{cl}}$ is trivial, equivalently
+$I_1(\mathcal N)=\{0\}$ modulo constants
+(\cref{rem:black-no-centered-additive}). The centering in
+$(\mathrm i)$ removes the constant part, so $X_{s,t}=0$ in $L^2$,
+hence almost surely. This is \eqref{eq:seed-deterministic}.
+\end{proof}
+
+\subsection{Interpretation}\label{sec:seed-interpretation}
+
+\Cref{lem:seed} says, with no hypothesis on $\mathcal N$ beyond the
+noise axioms, that the centered part of any interval-additive
+deterministic seed lives in the first chaos. The Wiener and Poisson
+seeds saturate this confinement: their ranges are precisely the
+additive integrable families generating $I_1$. In a black noise,
+where $I_1$ is trivial, the same confinement forces the centered seed
+to vanish entirely.
+
+It is essential to be clear about the scope of this observation.
+
+\medskip
+\noindent\emph{What the lemma does say.}
+The classical route to building $\delta_{\mathcal N}$ --- starting
+from a bounded, linear, deterministic-coefficient family of interval
+operators $T_{s,t}\colon H_{s,t}\to L^2(\mathcal F_{s,t})$ that is
+additive under~\eqref{eq:H-additive} --- is unavailable over any
+black noise. The seed, if assembled in this manner, is forced to be
+deterministic and therefore carries no stochastic content. The
+Wiener template $T^W_{s,t}(h)=\int_s^t h\,dW$ has no nonzero analogue
+over a black noise, because the very $L^2([s,t])$-isometric image
+into $I_1$ that underwrites~\eqref{eq:wiener-seed} does not exist
+there.
+
+\medskip
+\noindent\emph{What the lemma does not say.}
+\Cref{lem:seed} does not exclude the existence of a primitive
+divergence $\delta_{\mathcal N}$ over a black noise. It constrains
+only one form of seed --- the bounded linear, interval-additive,
+deterministic-coefficient form. Several escape routes remain open
+and are not addressed by the lemma:
+\begin{itemize}
+\item[$(\mathrm a)$] \emph{Non-additive interval structure.} The
+hypothesis~\eqref{eq:H-additive} on test-direction spaces is what
+feeds additivity into the seed. A noise-intrinsic test class with a
+multiplicative or otherwise non-additive composition law on
+intervals is not constrained by \cref{lem:seed}.
+\item[$(\mathrm b)$] \emph{Nonlinear or higher-order seeds.} A seed
+that is quadratic in $h$, or of area- or bracket-type in the sense
+of rough paths, produces on each interval not an additive family
+$(X_{s,t})$ but a higher-order interval object; such objects need
+not lie in $I_1$.
+\item[$(\mathrm c)$] \emph{Stochastic coefficients.} \Cref{lem:seed}
+constrains only the deterministic-coefficient seed
+$T_{s,t}(h)=\delta_{s,t}(\mathbf 1\otimes h)$. A primitive divergence
+defined directly on stochastic integrands, without first specializing
+to deterministic test coefficients, is not constrained.
+\item[$(\mathrm d)$] \emph{Domain choice.} The dense domain in
+$L^2(\mathcal F_{s,t})$ on which $\delta_{s,t}$ acts is part of the
+data; the lemma constrains only the deterministic-coefficient slice
+of that domain.
+\end{itemize}
+
+\begin{remark}\label{rem:seed-interpretation}
+\Cref{lem:seed} is \emph{not} an impossibility theorem for a
+primitive divergence $\delta_{\mathcal N}$, and not an impossibility
+theorem for a Malliavin-type calculus over a black noise. It is a
+pressure-point observation: it identifies precisely which classical
+move is unavailable, and locates the first nontrivial design
+decision that any candidate construction must make. The fork
+produced by the lemma --- either $\delta_{\mathcal N}$ admits a
+nonclassical seed in one of the senses $(\mathrm a)$--$(\mathrm d)$,
+or no nontrivial $\delta_{\mathcal N}$ exists over a black noise ---
+is the question to which \cref{sec:open} returns, and which the
+present paper leaves open.
+\end{remark}
+
+%==============================================================
+\section{Leibniz defect and nonclassical seeds}\label{sec:leibniz}
+%==============================================================
+
+The seed lemma of \cref{sec:seed} locates the first structural
+pressure point at the level of the deterministic-coefficient,
+interval-additive seed of $\delta_{\mathcal N}$. A second,
+complementary pressure point lies one level higher in the calculus,
+in the algebraic structure of the adjoint derivative
+$D=\delta^{*}$. The classical Malliavin pair satisfies the Leibniz
+rule, which makes $D$ a first-order derivation on its natural test
+algebra. There is no a priori reason for this rule to survive when
+the seed of $\delta_{\mathcal N}$ ceases to be classical; in this
+section we record the natural diagnostic and the open question that
+goes with it.
+
+\subsection{Test algebra and Leibniz defect}\label{sec:leibniz-defect}
+
+Throughout this section we assume that, in addition to the data of
+\cref{def:energy-lift}, there are given:
+\begin{itemize}
+\item[$(\mathrm a)$] a test algebra
+$\mathcal A\subset L^\infty(\Omega)\cap\Dom(D)$, closed under
+pointwise products: $FG\in\mathcal A$ for every $F,G\in\mathcal A$;
+\item[$(\mathrm b)$] an $L^\infty(\Omega)$-module structure on
+$\mathcal U$ extending its Hilbert structure, so that for
+$F\in L^\infty(\Omega)$ and $u\in\mathcal U$ the product
+$Fu\in\mathcal U$ is well defined and the resulting bilinear map
+$L^\infty(\Omega)\times\mathcal U\to\mathcal U$ is bounded.
+\end{itemize}
+Under $(\mathrm a)$--$(\mathrm b)$, the elements $F\,DG$ and $G\,DF$
+lie in $\mathcal U$ for $F,G\in\mathcal A$, and the following object
+is well defined.
+
+\begin{definition}[Leibniz defect]\label{def:leibniz-defect}
+The \emph{Leibniz defect} of $D$ on $\mathcal A$ is the bilinear map
+$\mathfrak L_D\colon\mathcal A\times\mathcal A\to\mathcal U$ given by
+\begin{equation}\label{eq:leibniz-defect}
+  \mathfrak L_D(F,G)\;:=\;D(FG)-F\,DG-G\,DF,
+  \qquad F,G\in\mathcal A.
+\end{equation}
+We say $D$ is \emph{first-order on $\mathcal A$} if
+$\mathfrak L_D\equiv 0$, and that $(\mathcal A,D)$ is a
+\emph{derivation pair} in this case.
+\end{definition}
+
+\begin{remark}\label{rem:why-adjoint-derivative}
+The condition $\mathfrak L_D\equiv 0$ is, by
+\cref{def:leibniz-defect}, the condition that $D$ be a derivation
+on $\mathcal A$. The general \cref{def:energy-lift} of an energy
+lift does not impose this condition: the integration-by-parts
+identity~\eqref{eq:IBP} fixes only the closed adjoint pair
+$(\delta,D)$ on a dense common domain. The terminology
+\emph{adjoint derivative} for $D=\delta^{*}$ is intended to leave
+the Leibniz rule, and hence the derivation property, as an
+additional optional structure rather than as part of the basic
+definition. The classical Malliavin examples below show that the
+derivation property is the natural, but not the only, possibility.
+\end{remark}
+
+\subsection{Wiener and Poisson benchmarks}\label{sec:leibniz-benchmarks}
+
+Two classical examples show that $\mathfrak L_D\equiv 0$ and
+$\mathfrak L_D\not\equiv 0$ both occur naturally inside the
+classical L\'evy world.
+
+\emph{Wiener / Malliavin.} Let $W$ be a Brownian motion, $D^W$ the
+Malliavin derivative, $\mathcal U=L^2(\R_+)$, and $\mathcal A^W$ the
+algebra of smooth cylindrical functionals of $W$. Then
+\begin{equation}\label{eq:leibniz-wiener}
+  D^W(FG)\;=\;F\,D^W G+G\,D^W F,\qquad F,G\in\mathcal A^W,
+\end{equation}
+so $\mathfrak L_{D^W}\equiv 0$ on $\mathcal A^W$
+(\cite{Nualart}, Prop.~1.2.3). The Malliavin pair $(\delta^W,D^W)$
+is a derivation pair.
+
+\emph{Poisson / finite difference.} Let $N$ be a Poisson random
+measure on a measurable space $Z$ with intensity $\mu$, let
+$\widetilde N=N-\mu$ be its compensated version, and let $D^P$ be the
+difference operator
+\[
+  (D^P_z F)(\omega)\;:=\;F(\omega+\delta_z)-F(\omega),\qquad z\in Z,
+\]
+extended to a closed operator
+$L^2(\Omega)\to L^2(\Omega\times Z,\mu)$ (\cite{Nualart}, \S 6.2;
+\cite{LastPenrose}). A direct computation on the natural test algebra
+$\mathcal A^P$ gives
+\begin{equation}\label{eq:leibniz-poisson}
+  D^P_z(FG)
+  \;=\;F\,D^P_z G+G\,D^P_z F+(D^P_z F)(D^P_z G),
+\end{equation}
+so the Leibniz defect of $D^P$ is the nonzero quadratic correction
+\begin{equation}\label{eq:leibniz-defect-poisson}
+  \mathfrak L_{D^P}(F,G)(z)\;=\;(D^P_z F)(D^P_z G).
+\end{equation}
+A nonzero defect is therefore not pathological: it is the algebraic
+signature of a calculus that is not first-order, exactly as expected
+for jump-type integrators.
+
+\subsection{The diagnostic over black noise}\label{sec:leibniz-black}
+
+The natural diagnostic over a black noise combines the seed
+confinement of \cref{sec:seed} with the Leibniz framework above. The
+proposition below is the simplest version: it says only what
+follows directly from \cref{lem:seed}, and isolates the
+\emph{contrapositive} fork between non-additive seeds and nonzero
+Leibniz defect as a separate remark.
+
+\begin{proposition}[Diagnostic; corollary of \cref{lem:seed}]\label{prop:diagnostic}
+Let $\mathcal N$ be a black noise and let
+$(\delta_{\mathcal N},D_{\mathcal N})$ be an energy lift over
+$\mathcal N$ in the sense of \cref{def:energy-lift}. Suppose
+$\delta_{\mathcal N}$ has a deterministic-coefficient seed
+\[
+  T_{s,t}(h)\;:=\;\delta_{s,t}(\mathbf 1\otimes h),\qquad h\in H_{s,t},
+\]
+that is interval-additive in the sense of \cref{def:seed}. Then the
+centered seed is trivial in $L^2$:
+\begin{equation}\label{eq:trivial-seed}
+  T_{s,t}(h_{s,t})\;=\;\E[T_{s,t}(h_{s,t})]\qquad\text{for every compatible }h.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Direct from \cref{lem:seed}: the family $(T_{s,t})$ satisfies the
+hypotheses of the lemma, so the centered family $X_{s,t}$ of
+\eqref{eq:X-family} lies in $I_1(\mathcal N)$. Blackness of
+$\mathcal N$ makes $I_1(\mathcal N)$ trivial, hence
+$X_{s,t}=0$ in $L^2$, which is \eqref{eq:trivial-seed}.
+\end{proof}
+
+\begin{remark}[The fork]\label{rem:diagnostic-fork}
+\Cref{prop:diagnostic} kills the interval-additive
+deterministic-coefficient seed in black noise. It does not, by
+itself, address whether $D_{\mathcal N}$ is a derivation. The
+following two pressure points are therefore complementary:
+\begin{itemize}
+\item[$(\mathrm A)$] \emph{Seed pressure point.} For the calculus
+to have nontrivial stochastic content via a deterministic-coefficient
+seed, the seed must not be interval-additive in the sense of
+\cref{def:seed}. It must be non-additive in $(s,t)$, nonlinear,
+multiplicative, quadratic, or of area- or bracket-type, in the
+senses left open by \cref{rem:seed-interpretation}.
+\item[$(\mathrm B)$] \emph{Leibniz pressure point.} For the calculus
+to have a nontrivial algebraic structure on a test algebra, the
+adjoint derivative $D_{\mathcal N}$ either is a derivation
+($\mathfrak L_{D_{\mathcal N}}\equiv 0$) or has a nonzero Leibniz
+defect. The Poisson precedent \eqref{eq:leibniz-defect-poisson}
+shows that nonzero defects are the algebraic signature of
+non-first-order calculi already inside the classical L\'evy world,
+and are the natural location for a nonclassical replacement of the
+Wiener Leibniz rule.
+\end{itemize}
+Any nontrivial energy-first calculus over a black noise must engage
+$(\mathrm A)$ nontrivially. Whether it must also engage $(\mathrm B)$
+nontrivially --- that is, whether blackness forces a nonzero Leibniz
+defect on any separating test algebra --- is open. The present paper
+does not assert any necessity here; it asserts only that the
+defect is the natural diagnostic.
+\end{remark}
+
+\begin{remark}[Diagnostic, not impossibility]\label{rem:leibniz-diagnostic}
+\Cref{prop:diagnostic} is a diagnostic. It does not claim that no
+$(\delta_{\mathcal N},D_{\mathcal N})$ exists over a black noise; it
+does not claim that blackness forces
+$\mathfrak L_{D_{\mathcal N}}\not\equiv 0$. It claims only that the
+classical pattern --- interval-additive deterministic seed --- has
+no nontrivial instance over a black noise, and that a nonzero
+Leibniz defect is the natural place to look for a non-classical
+replacement, on the basis of the Poisson precedent
+\eqref{eq:leibniz-defect-poisson}.
+\end{remark}
+
+\subsection{\texorpdfstring{Carr\'e-du-champ as a positive seed}{Carre-du-champ as a positive seed}}\label{sec:cdc-seed}
+
+The seed lemma (\cref{lem:seed}) rules out centered interval-additive
+deterministic seeds over a black noise. It does not rule out
+second-order energy seeds. The natural positive replacement is the
+\emph{carr\'e-du-champ} bilinear form of Bakry--\'Emery, which we
+record here as the principal candidate primitive datum for an
+operator-derivative lift over a nonclassical noise.
+
+For a generator $L$ on a function algebra $\mathcal A$ closed under
+products, the carr\'e-du-champ is the bilinear form
+\begin{equation}\label{eq:carre-du-champ}
+  \Gamma(F,G)\;:=\;\tfrac{1}{2}\bigl(L(FG)-F\,LG-G\,LF\bigr),
+  \qquad F,G\in\mathcal A.
+\end{equation}
+The form is symmetric in $(F,G)$, vanishes when either argument is a
+constant, and is positive semidefinite whenever $L$ is the generator
+of a Markov semigroup on a suitable algebra
+(see~\cite{BakryGentilLedoux}, Ch.~1).
+
+\paragraph{Why $\Gamma$ is not ruled out by the seed lemma.}
+\Cref{lem:seed} concerns \emph{first-order} interval-additive seeds:
+families $T_{s,t}\colon H_{s,t}\to L^{2}(\mathcal F_{s,t})$ linear in
+the test direction $h\in H_{s,t}$, additive under
+$H_{r,t}=H_{r,s}\oplus H_{s,t}$, and centered. The carr\'e-du-champ
+is intrinsically \emph{second-order} in the test arguments: it is a
+bilinear function of the pair $(F,G)$, with no requirement of
+interval additivity in either slot. It specifies a positive energy
+kernel rather than a first-chaos increment. Over a black noise the
+additive first-chaos input vanishes by \cref{lem:seed}, but
+$\Gamma$, as a bilinear positive form on a test algebra, need not.
+
+\paragraph{Carr\'e-du-champ as a positive kernel.}
+For a wide class of nonclassical generators, $\Gamma$ admits a
+positive-kernel representation. For the fractional Laplacian
+$L=-(-\Delta)^{\alpha/2}$ on $\R^d$, $\alpha\in(0,2)$, the
+carr\'e-du-champ at a smooth $F$ takes the nonlocal form
+\begin{equation}\label{eq:cdc-frac}
+  \Gamma(F,F)(x)
+  \;=\;c_{d,\alpha}\int_{\R^{d}}\frac{(F(x+h)-F(x))^{2}}{|h|^{d+\alpha}}\,dh,
+\end{equation}
+which is manifestly nonnegative. The integral kernel
+$|h|^{-d-\alpha}$ can be interpreted in Fourier variables through a
+positive covariance-type kernel; a separate treatment of this
+identification in the energy-first framework appears in the
+companion work~\cite{FontesFracBE}. The point for the present paper
+is conservative: $\Gamma$ is not merely the algebraic remainder of a
+Leibniz failure but a positive kernel encoding an intrinsic energy
+structure of $L$, and this energy structure persists in regimes where
+the classical first-chaos seed is unavailable.
+
+\paragraph{Two-point analogue.}
+For a stochastic flow of kernels $\Phi$ with one- and two-point
+generators $L^{(1)}$, $L^{(2)}$, the natural two-point
+carr\'e-du-champ on product observables is
+\begin{equation}\label{eq:gamma-twopoint}
+  \Gamma^{(2)}(f,g)(x,y)\;:=\;\tfrac{1}{2}\,\mathfrak D^{(2)}(f,g)(x,y),
+\end{equation}
+where $\mathfrak D^{(2)}$ is the two-point product defect of
+\cref{def:two-point-defect} (\cref{sec:twopoint}). The factor
+$\tfrac{1}{2}$ aligns the normalization with Bakry--\'Emery: in
+coalescing-type examples, when the two-point dynamics reduce on the
+diagonal to the one-point dynamics, $\Gamma^{(2)}(f,g)(x,x)$
+coincides with the one-point carr\'e-du-champ $\Gamma(f,g)(x)$ built
+from $L^{(1)}$, as in \eqref{eq:defect-coalescing-diag}. In examples
+where the two-point dynamics do not reduce on the diagonal --- such
+as common-driving flows (\cref{prop:defect-common}), where
+$\Gamma^{(2)}$ is supported on all of $\R^{2}$ --- the diagonal
+restriction is not pinned by the one-point semigroup. The product
+defect of \cref{sec:twopoint} is in either case precisely a
+two-point carr\'e-du-champ in the normalization
+\eqref{eq:gamma-twopoint}; the conditional sticky-flow proposition
+(\cref{prop:defect-sticky}) is a conditional identification of
+$\Gamma^{(2)}_{\theta}$ as a diagonal-supported product-defect
+distribution.
+
+\paragraph{The primary candidate primitive datum.}
+The seed taxonomy of \cref{sec:seed-taxonomy} below lists four
+candidate seed classes. Among them, the carr\'e-du-champ /
+product-defect class is the one for which explicit positive formulas
+are available in nonclassical settings: the fractional-Laplacian
+kernel \eqref{eq:cdc-frac} for nonlocal generators, the two-point
+carr\'e-du-champ \eqref{eq:gamma-twopoint} for Le Jan--Raimond
+flows. The multiplicative, area/Chen-type, and Boolean-projection
+classes are at this stage less concrete. We therefore promote the
+carr\'e-du-champ / product-defect class to \emph{primary} status in
+the operator-derivative program over a nonclassical noise: the
+candidate primitive datum is a positive bilinear energy kernel on a
+test algebra, and the closed adjoint pair
+$(\delta_{\mathcal N},D_{\mathcal N})$ is to be sought
+\emph{consistent with} that kernel rather than constructed from a
+first-chaos generator.
+
+%==============================================================
+\section{A two-point product defect for sticky flows}\label{sec:twopoint}
+%==============================================================
+
+The two pressure points of \cref{sec:seed,sec:leibniz} identify what
+a primitive divergence over a black noise cannot reduce to: it
+cannot be reached from a centered interval-additive deterministic
+seed, and its adjoint operator derivative cannot in general be
+expected to be first-order on a separating test algebra. The
+pressure points do not, on their own, indicate what positive seed
+data might support a construction. This section records the first
+concrete candidate: the semigroup-level product defect of a
+stochastic flow of kernels, specialized to the Le Jan--Raimond
+sticky and coalescing flows~\cite{LeJanRaimond2004}.
+
+The object we compute is not the operator-derivative Leibniz defect
+of \cref{def:leibniz-defect}, which would require a primitive
+divergence $\delta_{\mathcal N}$ in hand. It is the
+semigroup-level \emph{shadow} of that defect, accessible already at
+the level of the one- and two-point semigroups of the flow. The
+shadow is computable and structurally explicit on standard
+examples, and it naturally singles out a class of nonclassical seed
+data that \cref{lem:seed} does not rule out.
+
+\subsection{The two-point product defect}\label{sec:twopoint-def}
+
+Let $\Phi$ be a stochastic flow of kernels on $\R$ in the sense of
+\cite{LeJanRaimond2004}, with associated noise $\mathcal N_{\Phi}$.
+Let $\{P_t^{(1)}\}_{t\ge 0}$ denote its one-point semigroup acting
+on a test class $\mathcal T^{(1)}\subset C_b(\R)$ with generator
+$L^{(1)}$, and let $\{P_t^{(2)}\}_{t\ge 0}$ denote its two-point
+semigroup acting on a test class $\mathcal T^{(2)}\subset C_b(\R^2)$
+with generator $L^{(2)}$. We assume product observables
+$f\otimes g(x,y)=f(x)g(y)$ with $f,g\in\mathcal T^{(1)}$ lie in
+$\mathcal T^{(2)}$.
+
+\begin{definition}[Two-point product defect]\label{def:two-point-defect}
+The \emph{two-point product defect} of the flow $\Phi$ on
+$f,g\in\mathcal T^{(1)}$ is the function
+\begin{equation}\label{eq:two-point-defect}
+  \mathfrak D^{(2)}(f,g)(x,y)
+  \;:=\;
+  L^{(2)}(f\otimes g)(x,y)
+  -(L^{(1)}f)(x)\,g(y)
+  -f(x)\,(L^{(1)}g)(y),
+\end{equation}
+read on $\R^{2}$ (or on its symmetric quotient as appropriate).
+\end{definition}
+
+\Cref{def:two-point-defect} measures the failure of $L^{(2)}$ to
+act as the tensor product
+$L^{(1)}\otimes\mathrm{id}+\mathrm{id}\otimes L^{(1)}$ on product
+observables. It is the semigroup-level analogue, on product
+observables built from one-point evaluations, of the
+operator-derivative Leibniz defect $\mathfrak L_{D_{\mathcal N}}$
+of \cref{def:leibniz-defect}. When the noise of the flow is
+classical and a Malliavin pair $(\delta^{\Phi},D^{\Phi})$ is
+available, $\mathfrak D^{(2)}$ is recovered from
+$\mathfrak L_{D^{\Phi}}$ on product cylindrical functionals by the
+standard generator-to-Malliavin translation; over a black noise the
+operator-derivative Leibniz defect is not constructed, but the
+semigroup-level shadow $\mathfrak D^{(2)}$ remains a computable
+invariant of the flow.
+
+\subsection{Independent Brownian motion benchmark}\label{sec:twopoint-indep}
+
+The simplest benchmark is the flow of independent Brownian motions,
+in which each starting point evolves as an independent Brownian
+motion and the two-point semigroup is the product of one-point
+semigroups.
+
+\begin{proposition}[Zero defect for independent Brownian motion]\label{prop:defect-indep}
+Let $\Phi$ be the stochastic flow of independent Brownian motions
+on $\R$, with $L^{(1)}=\tfrac{1}{2}\partial_x^2$ and
+$L^{(2)}=\tfrac{1}{2}(\partial_x^2+\partial_y^2)$ on
+$\mathcal T^{(1)}=\mathcal T^{(2)}=C_c^{\infty}$. Then
+\begin{equation}\label{eq:defect-indep-zero}
+  \mathfrak D^{(2)}(f,g)(x,y)\;\equiv\;0,
+  \qquad f,g\in C_c^{\infty}(\R),\ (x,y)\in\R^2.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+$L^{(2)}(f\otimes g)(x,y)=\tfrac{1}{2}f''(x)g(y)+\tfrac{1}{2}f(x)g''(y)
+=(L^{(1)}f)(x)g(y)+f(x)(L^{(1)}g)(y)$.
+\end{proof}
+
+\subsection{Common-driving and coalescing benchmarks}\label{sec:twopoint-coalescing}
+
+A flow with off-diagonal interaction produces a nonzero defect. Two
+standard cases place the interaction in qualitatively different
+locations: globally for a common-driving flow, and on the diagonal
+only for a coalescing flow.
+
+\begin{proposition}[Common-driving flow: global defect]\label{prop:defect-common}
+Let $\Phi$ be the flow on $\R$ driven by a single common Brownian
+motion $W$, $X_t^{(x)}=x+W_t$, with two-point generator
+$L^{(2)}=\tfrac{1}{2}(\partial_x+\partial_y)^2
+=\tfrac{1}{2}(\partial_x^2+2\partial_{xy}+\partial_y^2)$. Then
+\begin{equation}\label{eq:defect-common}
+  \mathfrak D^{(2)}(f,g)(x,y)\;=\;f'(x)\,g'(y),\qquad (x,y)\in\R^2.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+$L^{(2)}(f\otimes g)(x,y)=\tfrac{1}{2}f''(x)g(y)+f'(x)g'(y)+\tfrac{1}{2}f(x)g''(y)$;
+subtracting the one-point contributions leaves $f'(x)g'(y)$.
+\end{proof}
+
+\begin{proposition}[Coalescing Brownian flow: formal diagonal defect]\label{prop:defect-coalescing}
+Let $\Phi$ be Arratia's coalescing Brownian flow on $\R$, in which
+distinct points evolve as independent Brownian motions until they
+meet and coalesce, and as a single Brownian motion thereafter. For
+$f,g\in C_c^{\infty}(\R)$:
+\begin{itemize}
+\item[$(\mathrm a)$] \emph{Off-diagonal vanishing.} On
+$\{(x,y)\in\R^{2}:x\neq y\}$,
+\begin{equation}\label{eq:defect-coalescing-offdiag}
+  \mathfrak D^{(2)}(f,g)(x,y)\;=\;0.
+\end{equation}
+\item[$(\mathrm b)$] \emph{Diagonal density.} On the diagonal
+$\{x=y\}$, with the identification
+$(f\otimes g)(x,x)=(fg)(x)$ inherited from the coalescence rule,
+the two-point generator acts as
+$L^{(2)}(f\otimes g)(x,x)=L^{(1)}(fg)(x)=\tfrac{1}{2}(fg)''(x)$, so
+the pointwise diagonal value of the product defect is the one-point
+carr\'e-du-champ of the heat semigroup,
+\begin{equation}\label{eq:defect-coalescing-diag}
+  \mathfrak D^{(2)}(f,g)(x,x)
+  \;=\;f'(x)g'(x)
+  \;=\;2\,\Gamma^{(1)}(f,g)(x).
+\end{equation}
+\end{itemize}
+In particular $\mathfrak D^{(2)}(f,g)$ is a product-defect
+distribution supported on the diagonal $\{x=y\}$, with formal density
+$f'(x)g'(x)$ in the variable $x$. The normalization of
+$\mathfrak D^{(2)}(f,g)$ as a distribution on $\R^{2}$ --- against the
+diagonal Lebesgue measure, against the local-time measure of
+$Y_t-X_t$ at $0$, or against any other choice --- is inherited from
+the generator and domain convention adopted for the coalescing flow.
+\end{proposition}
+
+\begin{proof}
+For $(\mathrm a)$, off the diagonal the two distinct points of the
+coalescing flow evolve as independent Brownian motions and the
+defect vanishes by \cref{prop:defect-indep}. For $(\mathrm b)$, the
+coalescence identification gives
+$L^{(2)}(f\otimes g)(x,x)=L^{(1)}(fg)(x)=\tfrac{1}{2}(fg)''(x)$,
+while $(L^{(1)}f)(x)g(x)+f(x)(L^{(1)}g)(x)
+=\tfrac{1}{2}f''(x)g(x)+\tfrac{1}{2}f(x)g''(x)$, and subtraction
+yields $f'(x)g'(x)$. The relation with the one-point carr\'e-du-champ
+$\Gamma^{(1)}(f,g)(x)=\tfrac{1}{2}(L^{(1)}(fg)-fL^{(1)}g-gL^{(1)}f)(x)=\tfrac{1}{2}f'(x)g'(x)$
+of \eqref{eq:carre-du-champ} is then $\mathfrak D^{(2)}(f,g)(x,x)=2\Gamma^{(1)}(f,g)(x)$.
+\end{proof}
+
+The two benchmarks illustrate the qualitative spectrum of
+$\mathfrak D^{(2)}$. For independent flows it vanishes identically.
+For a common-driving flow it is a globally nonzero bilinear form
+supported on $\R^2$. For a coalescing flow it is concentrated on
+the measure-zero diagonal, recording that the two-point interaction
+is confined to the contact set. The Brownian sticky flow sits
+between the independent and coalescing regimes on the diagonal.
+
+\subsection{Conditional proposition for the Brownian sticky flow}\label{sec:twopoint-sticky}
+
+The Brownian sticky flow constructed in \cite{LeJanRaimond2004} is
+a one-parameter interpolation $\Phi_{\theta}$, with one endpoint of
+the parametrization recovering the flow of independent Brownian
+motions and the other recovering the coalescing Brownian flow, and
+intermediate values producing sticky encounters at the diagonal.
+The off-diagonal two-point dynamics are independent in both Brownian
+coordinates; the sticky structure lies entirely at the boundary
+$\{x=y\}$. The product defect $\mathfrak D^{(2)}_{\theta}$ inherits
+this structure.
+
+\begin{proposition}[Brownian sticky flow: conditional defect]\label{prop:defect-sticky}
+Let $\Phi_{\theta}$ be the Brownian sticky flow of
+\cite{LeJanRaimond2004} with sticky parameter $\theta$. Suppose
+the two-point generator $L^{(2)}_{\theta}$ acts on a suitable test
+class as $\tfrac{1}{2}(\partial_x^2+\partial_y^2)$ off the diagonal
+$\{x=y\}$, subject to the Wentzell-type sticky boundary condition
+prescribed by \cite{LeJanRaimond2004}. Then the product defect of
+\cref{def:two-point-defect} vanishes off the diagonal,
+\begin{equation}\label{eq:defect-sticky-offdiag}
+  \mathfrak D^{(2)}_{\theta}(f,g)(x,y)\;=\;0\qquad\text{for }x\neq y,
+\end{equation}
+and is concentrated as a diagonal-supported product-defect
+distribution on $\{x=y\}$. The diagonal coefficient is governed by
+the sticky boundary condition; it vanishes at the independent-flow
+endpoint of the parametrization (recovering
+\cref{prop:defect-indep}), and at the coalescing endpoint of the
+parametrization the diagonal formal density is $f'(x)g'(x)$ in the
+sense of \cref{prop:defect-coalescing}, with normalization
+determined by the chosen generator/domain convention.
+\end{proposition}
+
+The off-diagonal statement \eqref{eq:defect-sticky-offdiag} follows
+from \cref{prop:defect-indep} applied to the off-diagonal dynamics
+of $\Phi_{\theta}$. The diagonal statement is conditional on the
+exact form of the Wentzell-type boundary condition in
+\cite{LeJanRaimond2004}; we record this as the verification step.
+
+\begin{remark}[Verification requirement]\label{rem:lejanraimond-todo}
+\Cref{prop:defect-sticky} is stated conditionally on the explicit
+two-point sticky generator $L^{(2)}_{\theta}$ and on its
+Wentzell-type boundary condition at $\{x=y\}$. The data required to
+make the diagonal coefficient explicit, and hence
+\cref{prop:defect-sticky} unconditional, are: (a) the domain of
+$L^{(2)}_{\theta}$ as an unbounded operator together with the
+boundary condition characterizing it; (b) the parametrization
+convention for $\theta$ and the identification of the independent
+and coalescing limits; (c) the precise rescaling of the diagonal
+occupation measure (a local time of the difference $Y_t-X_t$ at
+$0$) and the explicit $\theta$-dependence of the diagonal
+coefficient. We refer to \cite{LeJanRaimond2004} for these data and
+treat their extraction as the first concrete verification step for
+the present approach.
+\end{remark}
+
+\subsection{Positive seed taxonomy}\label{sec:seed-taxonomy}
+
+The propositions of \S\ref{sec:twopoint-coalescing}--\ref{sec:twopoint-sticky}
+identify a class of positive seed candidates that \cref{lem:seed}
+does not rule out: the \emph{carr\'e-du-champ / product-defect
+seeds} of \cref{sec:cdc-seed}. We record this class as the primary
+candidate, together with three further candidate types, as a
+taxonomy of seed data for a primitive divergence over a nonclassical
+noise. The list is descriptive: none of these candidates has been
+extended to a closed $\delta_{\mathcal N}$ over a nontrivial black
+noise; the point of listing them is to fix the vocabulary in which
+partial answers to \cref{prog:open} can be classified.
+
+\paragraph{Carr\'e-du-champ / product-defect seeds (primary).}
+A symmetric bilinear form
+$\Gamma_{\mathcal N}\colon\mathcal A\times\mathcal A\to L^{2}(\mathcal N)$
+on a test algebra $\mathcal A\subset L^{\infty}(\mathcal N)$,
+specified intrinsically from the noise tensor factorization in the
+manner of \eqref{eq:carre-du-champ}, with the energy-form positivity
+of \cref{prog:open}$(\mathrm i)$. The concrete instances are
+\eqref{eq:gamma-twopoint} for stochastic flows of kernels --- the
+two-point carr\'e-du-champ extracted from
+\cref{prop:defect-indep,prop:defect-common,prop:defect-coalescing,prop:defect-sticky}
+--- and \eqref{eq:cdc-frac} for nonlocal generators. This is the
+only seed class for which explicit positive formulas are available
+in nonclassical settings.
+
+\paragraph{Multiplicative seeds.}
+A family $(M_{s,t})$ of $\mathcal F_{s,t}$-measurable elements of
+$L^{2}(\mathcal N)$ satisfying the multiplicative interval law
+\[
+  M_{r,t}\;=\;M_{r,s}\,M_{s,t},\qquad r\le s\le t,
+\]
+rather than the additive law of \eqref{eq:additivity}. The classical
+analogue is the stochastic exponential, which factors through a
+logarithmic first chaos; a multiplicative seed is not required to
+do so, and so is not trivialized by \cref{lem:seed}.
+
+\paragraph{Area- or Chen-type seeds.}
+A second-level family $(A_{r,t})$ satisfying a Chen-type relation
+$A_{r,t}=A_{r,s}+A_{s,t}+B_{r,s}\otimes B_{s,t}$ together with a
+(possibly trivial) first-level $(B_{s,t})$. Over a black noise the
+first level is forced to be trivial by \cref{lem:seed}; the
+second-level $A_{r,t}$ is then either purely additive or carries an
+intrinsically defined second-level interaction independent of any
+first level.
+
+\paragraph{Boolean-projection seeds.}
+A seed defined through the family of $L^{2}$-conditional-expectation
+projections $\{Q_{\mathcal H}\}_{\mathcal H\in\mathfrak B(\mathcal N)}$
+associated with the noise Boolean algebra of $\mathcal N$, rather
+than through real-valued interval families. Over a black noise the
+projection-differential first chaos is trivial; a Boolean-projection
+seed must come from higher-order algebraic combinations on the
+Boolean lattice. We refer to \cite{Tsirelson2004,TsirelsonVershik1998}
+for the Boolean formulation of noise structure and treat the
+Boolean-projection seed as a coordinate-system proposal rather than
+a constructed object.
+
+\medskip
+The carr\'e-du-champ / product-defect class is the most concrete
+member of this taxonomy and the natural target for the first
+verification step of \cref{prog:open}. The remaining three classes
+are listed for completeness; their extension to constructed calculi
+over black noises is open and not addressed in the present paper.
+
+\subsection{Relation to the operator-derivative Leibniz defect}\label{sec:twopoint-relation}
+
+The two-point product defect $\mathfrak D^{(2)}$ and the
+operator-derivative Leibniz defect $\mathfrak L_{D_{\mathcal N}}$
+are objects of different levels of structure. The former is a
+semigroup-level invariant of a flow, computable from $L^{(1)}$ and
+$L^{(2)}$ on product observables. The latter is the algebraic
+invariant of a primitive divergence's adjoint, requiring
+$(\delta_{\mathcal N},D_{\mathcal N})$ in hand. We make the relation
+between them explicit.
+
+\begin{remark}[\texorpdfstring{$\mathfrak D^{(2)}$ as the shadow of $\mathfrak L_{D_{\mathcal N}}$}{D^(2) as the shadow of L_D}]\label{rem:defect-shadow}
+Suppose, for the duration of this remark only, that an
+operator-derivative lift
+$(\delta_{\mathcal N_{\Phi}},D_{\mathcal N_{\Phi}})$ of the flow
+$\Phi$ exists, with $D_{\mathcal N_{\Phi}}$ acting on a test algebra
+$\mathcal A_{\Phi}$ containing the product cylindrical functionals
+$F_{f,g}^{(x,y)}:=f(X_t^{(x)})g(X_t^{(y)})$ for $f,g\in\mathcal T^{(1)}$
+and $x,y\in\R$. Then on $F_{f,g}^{(x,y)}$ the operator-derivative
+Leibniz defect $\mathfrak L_{D_{\mathcal N_{\Phi}}}$ and the
+semigroup-level defect $\mathfrak D^{(2)}$ are connected by the
+standard generator-to-Malliavin translation: the bilinear coefficient
+of $\mathfrak D^{(2)}(f,g)$ recovers, after this translation, the
+$L^{\infty}(\mathcal N_{\Phi})$-bilinear component of
+$\mathfrak L_{D_{\mathcal N_{\Phi}}}$ on the product algebra
+generated by $F_f^{(x)}$. The construction of
+$(\delta_{\mathcal N_{\Phi}},D_{\mathcal N_{\Phi}})$ that would make
+this translation rigorous is the content of \cref{prog:open}; until
+it is in hand, $\mathfrak D^{(2)}$ is the semigroup-level shadow
+that any constructed $\mathfrak L_{D_{\mathcal N_{\Phi}}}$ should
+recover or refine.
+\end{remark}
+
+\Cref{rem:defect-shadow} formulates the first concrete adequacy
+criterion for the operator-derivative program on a Le Jan--Raimond
+flow: any candidate
+$(\delta_{\mathcal N_{\Phi}},D_{\mathcal N_{\Phi}})$ must recover
+the explicit defects of
+\cref{prop:defect-indep,prop:defect-common,prop:defect-coalescing,prop:defect-sticky}
+on product observables. This criterion is independent of any first-chaos
+data on $\mathcal N_{\Phi}$ and is therefore a meaningful target
+even when, as for the coalescing and sticky flows, the noise of the
+flow is black.
+
+\medskip
+\noindent\emph{Summary.} The product defect $\mathfrak D^{(2)}(f,g)$
+of \cref{def:two-point-defect} is the two-point carr\'e-du-champ of
+the flow on product observables, up to the Bakry--\'Emery
+normalization \eqref{eq:gamma-twopoint}:
+$\Gamma^{(2)}(f,g)=\tfrac{1}{2}\mathfrak D^{(2)}(f,g)$. For
+independent Brownian motions it vanishes; for the common-driving
+flow it is a globally nonzero positive kernel of formal density
+$\tfrac{1}{2}f'(x)g'(y)$ on $\R^{2}$; for the coalescing flow it is
+a diagonal-supported product-defect distribution of formal density
+$\tfrac{1}{2}f'(x)g'(x)$ in the diagonal variable, with
+normalization determined by the two-point generator and domain
+convention (\cref{prop:defect-coalescing}); for the Brownian sticky
+flow it is, conditionally on \cite{LeJanRaimond2004}, a
+diagonal-supported product-defect distribution encoded by the
+sticky boundary condition (\cref{prop:defect-sticky}). In each case
+the candidate seed datum for the operator-derivative program over
+the flow is not an additive first-chaos increment but a two-point
+carr\'e-du-champ $\Gamma^{(2)}$ extracted from the two-point
+semigroup. The seed lemma rules out the additive route; the
+carr\'e-du-champ supplies the next-most-concrete positive candidate.
+
+\subsection{\texorpdfstring{From two-point energy to the \(N\)-point defect hierarchy}{From two-point energy to the N-point defect hierarchy}}\label{sec:twopoint-hierarchy}
+
+The two-point product defect of \cref{def:two-point-defect} is one
+layer of a more general construction. Whenever a flow or noise
+carries $N$-point semigroups $\{P_t^{(N)}\}_{t\ge 0}$ with generators
+$L^{(N)}$ acting on a test class
+$\mathcal T^{(N)}\subset C_b(\R^N)$ that contains the product
+cylinders $f_1\otimes\cdots\otimes f_N$ with
+$f_i\in\mathcal T^{(1)}$, we record the natural higher analogue.
+
+\begin{definition}[\texorpdfstring{\(N\)-point product defect}{N-point product defect}]\label{def:N-point-defect}
+The \emph{$N$-point product defect} of the flow $\Phi$ on
+$f_1,\ldots,f_N\in\mathcal T^{(1)}$ is the object
+\begin{equation}\label{eq:N-point-defect}
+  \mathfrak D^{(N)}(f_1,\ldots,f_N)
+  \;:=\;
+  L^{(N)}(f_1\otimes\cdots\otimes f_N)
+  \;-\;\sum_{i=1}^{N}(L^{(1)}f_i)\otimes\prod_{j\neq i}f_j,
+\end{equation}
+initially defined on the common domain of the $N$-point generator
+$L^{(N)}$ and of the one-point generator $L^{(1)}$ acting in each
+factor, and interpreted according to the $N$-point generator/domain
+convention --- as a function, an energy measure, or a distribution
+on $\R^{N}$ (or on its symmetric quotient as appropriate). In
+particular the diagonal-supported product defects of the coalescing
+and sticky flows in
+\cref{prop:defect-coalescing,prop:defect-sticky} are read as
+distributions on $\R^{2}$.
+\end{definition}
+
+For $N=2$ this recovers \cref{def:two-point-defect}, the failure of
+$L^{(2)}$ to equal
+$L^{(1)}\otimes\mathrm{id}+\mathrm{id}\otimes L^{(1)}$. For $N\ge 3$
+the raw defect $\mathfrak D^{(N)}$ already contains contributions
+from proper subsets $B\subsetneq\{1,\ldots,N\}$ lifted to all $N$
+variables. To isolate the \emph{genuinely $N$-body} interaction we
+work at the infinitesimal generator level: we organize
+$\mathfrak D^{(N)}$ over subsets of $\{1,\ldots,N\}$ on the Boolean
+lattice of subsets, rather than through a finite-time partition
+expansion. The right index for the hierarchy is the finite subset
+$S$ itself, not the integer $|S|$.
+
+\subsubsection*{Subset-indexed half raw product defect}
+
+For a finite index set $S$ with $|S|=N\ge 2$ and a tuple of one-point
+test functions $(f_i)_{i\in S}\subset\mathcal T^{(1)}$, write
+$f_S:=\prod_{i\in S}f_i$ for the product observable and $L^{(S)}$
+for the $|S|$-point generator of the flow acting on $f_S$. Define the
+\emph{half raw product defect} on $S$ by
+\begin{equation}\label{eq:M-S}
+  M_S(f_S)
+  \;:=\;
+  \frac{1}{2}\!\left[
+    L^{(S)}(f_S)
+    \;-\;
+    \sum_{i\in S}(L^{(1)}f_i)\prod_{j\in S\setminus\{i\}}f_j
+  \right]
+  \;=\;\tfrac{1}{2}\mathfrak D^{(|S|)}(f_S),
+\end{equation}
+where the second equality matches the integer-indexed
+\cref{def:N-point-defect} under the relabeling
+$\{1,\ldots,|S|\}\leftrightarrow S$. For $|S|=2$,
+$M_S(f_S)=\Gamma^{(2)}(f_i,f_j)$, the bilinear two-point
+carr\'e-du-champ of \eqref{eq:gamma-twopoint}.
+
+\begin{definition}[Generator-level interaction hierarchy]\label{def:N-point-cdc}
+For a finite index set $S$ with $|S|\ge 2$ and one-point test
+functions $(f_i)_{i\in S}\subset\mathcal T^{(1)}$, define the
+\emph{generator-level interaction defect} $\Gamma_S$ on $S$
+recursively by
+\begin{equation}\label{eq:gamma-N-cumulant}
+  \Gamma_S(f_S)
+  \;:=\;
+  M_S(f_S)
+  \;-\;
+  \!\!\sum_{\substack{B\subsetneq S\\ |B|\ge 2}}\!\!
+  \Gamma_B(f_B)\prod_{j\in S\setminus B}f_j,
+\end{equation}
+read in the appropriate distribution / energy-measure / function
+space on $\R^{|S|}$ inherited from the $|S|$-point generator/domain
+convention. The base case $|S|=2$ gives
+$\Gamma_{\{i,j\}}(f_if_j)=M_{\{i,j\}}(f_if_j)=\Gamma^{(2)}(f_i,f_j)$,
+the bilinear two-point carr\'e-du-champ.
+Equivalently, on every $S$ the recursion is the subset inversion of
+\begin{equation}\label{eq:gamma-N-inversion}
+  M_S(f_S)
+  \;=\;
+  \!\!\sum_{\substack{B\subseteq S\\ |B|\ge 2}}\!\!
+  \Gamma_B(f_B)\prod_{j\in S\setminus B}f_j.
+\end{equation}
+We refer to $\{\Gamma_S\}_{|S|\ge 2}$ as the \emph{generator-level
+interaction hierarchy} (or, equivalently, the
+\emph{infinitesimal product-defect hierarchy}); the members
+$\Gamma_S$ for $|S|\ge 3$ are the \emph{higher
+$\Gamma$-interaction defects} of the flow. The bilinear $|S|=2$
+member is the proper carr\'e-du-champ; the higher members are
+$|S|$-linear interaction defects, not bilinear carr\'es-du-champ.
+\end{definition}
+
+The inversion \eqref{eq:gamma-N-inversion} sums over \emph{subsets}
+of $S$, not over set partitions of $S$. The distinction is essential
+and is the reason the hierarchy is described as generator-level
+rather than as a cumulant family.
+
+\begin{remark}[Partition cumulants vs.\ generator-level defects]\label{rem:partition-vs-generator}
+In finite-time moment and cumulant expansions one must sum over set
+partitions of $S$. At $|S|=4$ the partition inversion contains
+terms of partition-product type such as
+$\Gamma^{(2)}_{\{1,2\}}\,\Gamma^{(2)}_{\{3,4\}}$ ---
+products of two lower interactions arising from $t^{2}$ and higher
+contributions in $P_t^{(N)}=e^{tL^{(N)}}$ acting on a product
+observable. Such terms belong to finite-time cumulants and to
+higher-order-in-time expansions; they are bilinear in the
+interaction hierarchy.
+The present paper instead decomposes the \emph{infinitesimal}
+product defect --- the first-order $dt$-content of $L^{(N)}$ on
+$\prod_{i\in S}f_i$ --- and at this generator level the
+decomposition is linear over interacting subsets of $S$, not
+bilinear over set partitions of $S$. The recursion
+\eqref{eq:gamma-N-cumulant} is correspondingly a subset inversion,
+and no partition-product term appears. A finite-time
+partition-cumulant hierarchy may be derived from the semigroups
+$\{P_t^{(N)}\}_{t\ge 0}$ at a later stage; it is not the object of
+this paper.
+\end{remark}
+
+\paragraph{Schematic for small $|S|$.}
+For $|S|=2$, $\Gamma_{\{i,j\}}(f_if_j)=M_{\{i,j\}}(f_if_j)$. For
+$S=\{1,2,3\}$,
+\begin{equation}\label{eq:gamma-3}
+  \Gamma_{\{1,2,3\}}(f_1f_2f_3)
+  \;=\;
+  M_{\{1,2,3\}}(f_1f_2f_3)
+  -\Gamma_{\{1,2\}}(f_1f_2)\,f_3
+  -\Gamma_{\{1,3\}}(f_1f_3)\,f_2
+  -\Gamma_{\{2,3\}}(f_2f_3)\,f_1,
+\end{equation}
+in which the three pairwise interaction defects are subtracted from
+$M_{\{1,2,3\}}$ to leave the irreducible three-body content. For
+$S=\{1,2,3,4\}$ (writing $\Gamma_B$ for $\Gamma_B(f_B)$ to lighten
+notation),
+\begin{equation}\label{eq:gamma-4}
+\begin{aligned}
+\Gamma_{\{1,2,3,4\}}
+&=
+M_{\{1,2,3,4\}}\\
+&\quad
+-\Gamma_{\{1,2,3\}}f_4-\Gamma_{\{1,2,4\}}f_3-\Gamma_{\{1,3,4\}}f_2-\Gamma_{\{2,3,4\}}f_1\\
+&\quad
+-\Gamma_{\{1,2\}}f_3f_4-\Gamma_{\{1,3\}}f_2f_4-\Gamma_{\{1,4\}}f_2f_3\\
+&\quad
+-\Gamma_{\{2,3\}}f_1f_4-\Gamma_{\{2,4\}}f_1f_3-\Gamma_{\{3,4\}}f_1f_2,
+\end{aligned}
+\end{equation}
+in which the ten subtracted terms enumerate the four three-body
+and six two-body interaction defects on the proper subsets
+$B\subsetneq\{1,2,3,4\}$ with $|B|\ge 2$. \emph{No
+partition-product term such as
+$\Gamma_{\{1,2\}}\Gamma_{\{3,4\}}$ appears in the generator-level
+hierarchy}; such terms belong to finite-time partition cumulants
+and not to the infinitesimal product defect, in the sense of
+\cref{rem:partition-vs-generator}.
+
+\paragraph{Distribution-valued caution.}
+The $\Gamma_S$ are interpreted in the appropriate space inherited
+from the $|S|$-point generator/domain convention. In regular cases
+they are represented by functions on $\R^{|S|}$; in coalescing or
+sticky cases they may be diagonal-supported measures or
+distributions. The same caution applies to the half raw defects
+$M_S$.
+
+\paragraph{Classical truncation.}
+For a second-order diffusion on $\R^{d}$ whose $|S|$-point
+dynamics are generated by sums of one- and two-particle terms ---
+products of independent copies, common drivers, finite-range
+pairwise couplings, or coalescence rules that act only at pair
+encounters --- the half raw defect satisfies the pair-generated
+identity
+\begin{equation}\label{eq:pair-generated}
+  M_S(f_S)
+  \;=\;
+  \!\!\sum_{\substack{B\subseteq S\\ |B|=2}}\!\!
+  \Gamma_B(f_B)\prod_{j\in S\setminus B}f_j,
+  \qquad |S|\ge 2.
+\end{equation}
+Comparing with the full inversion \eqref{eq:gamma-N-inversion}
+forces $\Gamma_S=0$ for every $|S|\ge 3$, up to the existing caveat
+about higher collision strata and the diagonal/boundary conditions
+specifying $L^{(|S|)}$. In that case the hierarchy truncates at the
+two-point level. The benchmarks of
+\cref{prop:defect-indep,prop:defect-common,prop:defect-coalescing}
+sit in this class: their $|S|$-point generators are determined by
+the one- and two-point laws, and the hierarchy is pair-saturated.
+
+\paragraph{Nonclassical noises.}
+There is no a priori reason for the hierarchy to truncate when the
+$|S|$-point dynamics of a flow or noise are not pairwise-generated.
+Stochastic flows with genuine multi-time, multi-particle interaction,
+and noises constructed from extended random structures (multi-arm
+events at criticality, multi-point coalescence with memory) can in
+principle support nontrivial $\Gamma_S$ at every level $|S|\ge 2$.
+We assert no such example here; the generator-level interaction
+hierarchy is introduced as the natural all-$N$ extension of the
+two-point seed, not as an existence statement on any particular
+noise.
+
+\paragraph{Hierarchy as candidate primitive datum.}
+\Cref{sec:cdc-seed} promoted $\Gamma^{(2)}$ to the principal positive
+candidate replacing the additive first-chaos seed. The natural
+all-$|S|$ refinement is to take the full hierarchy
+$\{\Gamma_{\mathcal N,S}\}_{|S|\ge 2}$ as candidate primitive
+datum, with $\Gamma_{\mathcal N,\{i,j\}}$ --- the noise-level
+two-point carr\'e-du-champ --- as its first and most concrete layer
+(the layer for which the explicit positive formulas of
+\cref{prop:defect-indep,prop:defect-common,prop:defect-coalescing,prop:defect-sticky}
+and \eqref{eq:cdc-frac} are available) and the higher layers
+$\Gamma_{\mathcal N,S}$ for $|S|\ge 3$ as the genuinely multi-body
+generator-level algebraic content above pairwise energy. The open
+problem of \cref{sec:open} is restated accordingly.
+
+\begin{remark}[Non-claims for the hierarchy]\label{rem:hierarchy-non-claim}
+We do not claim that the hierarchy
+$\{\Gamma_{\mathcal N,S}\}_{|S|\ge 2}$ exists, intrinsically
+specified from $\mathcal N$, on every black noise. We do not claim
+that the hierarchy determines $\delta_{\mathcal N}$ even when it
+exists, nor do we assert a representation theorem linking the
+hierarchy to a closed adjoint pair
+$(\delta_{\mathcal N},D_{\mathcal N})$. The two-point member
+$\Gamma_{\mathcal N,\{i,j\}}$ remains the primary candidate seed
+and the first concrete layer to be constructed in any partial answer
+to \cref{prog:open}. A finite-time partition-cumulant hierarchy is
+not constructed here either; see
+\cref{rem:partition-vs-generator}.
+\end{remark}
+
+%==============================================================
+\section{Open problem}\label{sec:open}
+%==============================================================
+
+We now state the central open problem of the paper, in the sharpened
+form provided by the pressure-point analyses of
+\cref{sec:seed,sec:leibniz} and the semigroup-level computation of
+\cref{sec:twopoint}.
+
+\begin{program}[\texorpdfstring{Primitive divergence and generator-level interaction hierarchy over a nonclassical noise}{Primitive divergence and generator-level interaction hierarchy over a nonclassical noise}]\label{prog:open}
+Let $\mathcal N=(\mathcal F_{s,t})$ be a noise in the
+Tsirelson--Vershik sense, possibly black. Specify a tuple
+\[
+  \bigl(\{\Gamma_{\mathcal N,S}\}_{|S|\ge 2},
+        \delta_{\mathcal N},D_{\mathcal N}\bigr),
+\]
+indexed by finite subsets $S$, together with a test algebra
+$\mathcal A\subset L^{\infty}(\mathcal N)$, satisfying:
+\begin{itemize}
+\item[$(\mathrm i)$] \emph{Primitive generator-level interaction
+hierarchy.} A family of $|S|$-linear forms
+\[
+  \Gamma_{\mathcal N,S}\colon\mathcal A^{\,|S|}\longrightarrow L^{2}(\mathcal N),
+  \qquad |S|\ge 2,
+\]
+indexed by finite subsets $S$, in which the bilinear member at
+$|S|=2$ is the proper noise-level carr\'e-du-champ (denoted
+$\Gamma_{\mathcal N}^{(2)}=\Gamma_{\mathcal N,\{i,j\}}$ when the
+particular subset labels are immaterial) and, for $|S|\ge 3$,
+$\Gamma_{\mathcal N,S}$ is the noise-level lift of the
+generator-level interaction defect of \cref{def:N-point-cdc}. In
+semigroup-level realizations the corresponding $|S|$-point objects
+may be represented by functions, energy measures, or distributions;
+the $L^{2}(\mathcal N)$-valued formulation refers to the intrinsic
+noise-level object when such a realization exists.
+The hierarchy is specified intrinsically from the tensor
+factorization \eqref{eq:tensor-factorization} of $\mathcal N$,
+without reference to a classical first-chaos generator. Each
+$\Gamma_{\mathcal N,S}$ vanishes whenever any argument is a constant,
+is compatible with the interval-tensor structure of $\mathcal N$,
+and is required to be a generator-level interaction defect in the
+subset-inversion sense of
+\eqref{eq:gamma-N-cumulant}--\eqref{eq:gamma-N-inversion} with
+respect to a generator hierarchy $L_{\mathcal N}^{(S)}$ associated
+with $\mathcal N$ wherever that hierarchy is available. The
+two-point form $\Gamma_{\mathcal N}^{(2)}$ is symmetric and
+energy-form positive,
+\[
+  \E\!\bigl[\Gamma_{\mathcal N}^{(2)}(F,F)\bigr]\ge 0
+  \quad\text{for every }F\in\mathcal A,
+\]
+with the pointwise sharpening
+$\Gamma_{\mathcal N}^{(2)}(F,F)\ge 0$ almost surely when a pointwise
+order is available on its values, and is identified as the primary
+candidate seed. No positivity is required of $\Gamma_{\mathcal N,S}$
+for $|S|\ge 3$. A finite-time partition-cumulant hierarchy may
+later be derived from the semigroups; it is not part of this
+formulation (see \cref{rem:partition-vs-generator}).
+\item[$(\mathrm{ii})$] \emph{Primitive divergence.} A closed
+densely-defined operator
+$\delta_{\mathcal N}\colon\Dom(\delta_{\mathcal N})\subset L^{2}(\mathcal N;\mathcal U)\to L^{2}(\mathcal N)$,
+compatible with the interval-tensor structure of $\mathcal N$ and
+specified consistently with
+$\{\Gamma_{\mathcal N,S}\}_{|S|\ge 2}$ in the sense of
+$(\mathrm{iv})$ below.
+\item[$(\mathrm{iii})$] \emph{Operator derivative.} The closed
+adjoint $D_{\mathcal N}:=\delta_{\mathcal N}^{*}$ on the natural
+dense domain in $L^{2}(\mathcal N)$, satisfying the
+integration-by-parts identity \eqref{eq:IBP}. No nontrivial
+classical first-chaos generator is used as an intermediate input.
+\item[$(\mathrm{iv})$] \emph{Carr\'e-du-champ recovery, two-point
+layer.} The formal Markov-type generator
+$L_{\mathcal N}:=-\delta_{\mathcal N}D_{\mathcal N}$ built from the
+pair is required to be densely defined on a common subdomain of
+$\mathcal A$, and the Bakry--\'Emery identity
+\[
+  \Gamma_{\mathcal N}^{(2)}(F,G)
+  \;=\;\tfrac{1}{2}\bigl(L_{\mathcal N}(FG)-F\,L_{\mathcal N}G-G\,L_{\mathcal N}F\bigr)
+\]
+is required to hold on $\mathcal A$. The Leibniz defect
+$\mathfrak L_{D_{\mathcal N}}$ of \cref{def:leibniz-defect} on
+$\mathcal A$ is identified explicitly as the algebraic remainder
+relating the two sides. Recovery of the higher layers
+$\Gamma_{\mathcal N,S}$ for $|S|\ge 3$ through a multi-point
+generator-level analogue of the Bakry--\'Emery identity ---
+consistent with the subset inversion \eqref{eq:gamma-N-inversion}
+--- is the natural all-$|S|$ refinement and is left as part of the
+open problem.
+\item[$(\mathrm v)$] \emph{Semigroup-level adequacy.} When
+$\mathcal N=\mathcal N_{\Phi}$ is the natural noise of a stochastic
+flow of kernels $\Phi$ in the sense of \cite{LeJanRaimond2004}, the
+two-point form $\Gamma_{\mathcal N}^{(2)}$ restricted to product
+cylindrical functionals
+$F_{f,g}^{(x,y)}:=f(X_t^{(x)})g(X_t^{(y)})$ recovers the two-point
+carr\'e-du-champ $\Gamma^{(2)}$ of \eqref{eq:gamma-twopoint} on
+product observables $f\otimes g$, and, more generally, each
+$\Gamma_{\mathcal N,S}$ restricted to $|S|$-fold product cylindrical
+functionals recovers the generator-level interaction defect
+$\Gamma_S$ of \cref{def:N-point-cdc} on product observables
+$\prod_{i\in S}f_i$.
+\end{itemize}
+\end{program}
+
+\Cref{prog:open} sharpens the open problem at three levels. At the
+level of the primitive datum, $(\mathrm i)$ asks for an
+intrinsically-specified positive energy kernel that does not pass
+through a first-chaos generator, organized into the all-$|S|$
+generator-level interaction hierarchy of
+\cref{sec:twopoint-hierarchy} and headed by the bilinear two-point
+form $\Gamma_{\mathcal N}^{(2)}$. At the
+level of the closed adjoint pair, $(\mathrm{ii})$--$(\mathrm{iv})$
+ask for $(\delta_{\mathcal N},D_{\mathcal N})$ consistent with the
+two-point layer via the Bakry--\'Emery identity, with the Leibniz
+defect of $D_{\mathcal N}$ as the explicit algebraic remainder, and
+with the higher layers $\Gamma_{\mathcal N,S}$ ($|S|\ge 3$) as the
+natural all-$|S|$ refinement of the recovery criterion via the
+subset inversion \eqref{eq:gamma-N-inversion}. At the level of
+consistency with an underlying flow, $(\mathrm v)$ asks the
+primitive hierarchy to recover the generator-level interaction
+defects of \cref{sec:twopoint,sec:twopoint-hierarchy} on $|S|$-fold
+product cylindrical functionals. The two pressure points
+$(\mathrm A)$ and $(\mathrm B)$ of \cref{rem:diagnostic-fork} are
+the two locations where the construction must depart from the
+classical pattern; $(\mathrm v)$ at the two-point level provides
+the first concrete adequacy criterion against which a candidate
+construction can be tested.
+
+Two outcomes are consistent with the framework of the present paper
+and with the literature it references. We state both symmetrically.
+
+\medskip\noindent
+\emph{Positive outcome.} There exists a class of nontrivial black
+noises $\mathcal N$ for which a tuple
+$(\{\Gamma_{\mathcal N,S}\}_{|S|\ge 2},\delta_{\mathcal N},D_{\mathcal N})$
+as in \cref{prog:open} can be constructed. Then the energy-first
+It\^o calculus genuinely extends beyond classical innovation: the
+two-point form $\Gamma_{\mathcal N}^{(2)}$ supplies the positive
+energy kernel that the seed lemma rules out at the first-chaos
+level, the higher layers $\Gamma_{\mathcal N,S}$, $|S|\ge 3$,
+record the genuinely $|S|$-body generator-level algebraic content
+that pairwise energy does not capture, $\delta$ can be primitive
+over a nonclassical noise, and observable It\^o identities driven by
+such noises admit a Malliavin-type lift in which the first chaos is
+absent and the algebra of the calculus is carried by a nonclassical
+seed (in the senses of
+\cref{rem:seed-interpretation,sec:cdc-seed,sec:twopoint-hierarchy})
+and, possibly, a nonzero Leibniz defect.
+
+\medskip\noindent
+\emph{Negative outcome.} No tuple as in \cref{prog:open} exists on
+any nontrivial black noise. Equivalently, every attempt at a closed
+primitive divergence either reduces (after closure) to an
+interval-additive deterministic seed and collapses by
+\cref{lem:seed}, or fails to satisfy one of
+$(\mathrm i)$--$(\mathrm v)$ for other reasons. Then a nontrivial
+linearizable / classical subnoise is \emph{necessary} for the
+energy-first It\^o calculus, and the trilogy's framework is
+intrinsically tied to noises $\mathcal N$ with
+$\mathcal N^{\mathrm{cl}}\neq\{\emptyset,\Omega\}$.
+
+\medskip
+We make no conjecture as to which outcome holds. The available
+evidence from Tsirelson's program on the rigidity of first chaos in
+nonclassical noises~\cite{Tsirelson2004,TsirelsonVershik1998} is
+consistent with, but does not prove, the negative outcome. The
+purpose of \cref{prog:open} is to formulate the problem at a level
+of specificity that makes either outcome accessible to a precise
+attack: by exhibiting one of the five conditions to fail, or by
+constructing an example in which all five hold.
+
+\begin{remark}[On stating partial answers]\label{rem:partial-answers}
+A partial answer to \cref{prog:open} need not produce the full
+hierarchy or the full tuple
+$(\{\Gamma_{\mathcal N,S}\}_{|S|\ge 2},\delta_{\mathcal N},D_{\mathcal N})$.
+Useful partial results include: completion of
+\cref{prop:defect-sticky} from the verification data of
+\cref{rem:lejanraimond-todo}, making the two-point carr\'e-du-champ
+$\Gamma^{(2)}_{\theta}$ of the Brownian sticky flow explicit; an
+explicit construction of
+$(\delta_{\mathcal N_{\Phi}},D_{\mathcal N_{\Phi}})$ on a
+Le Jan--Raimond flow consistent with the two-point carr\'e-du-champ
+in the sense of \cref{rem:defect-shadow}; a precise identification
+of which of $(\mathrm i)$--$(\mathrm v)$ in \cref{prog:open} forces
+a negative answer in a given attempted construction; a worked
+example of a nonclassical seed in the senses of
+\cref{rem:seed-interpretation} or
+\cref{sec:cdc-seed,sec:seed-taxonomy}, even without the full
+carr\'e-du-champ-divergence-derivative tuple attached; or the
+identification of a nontrivial higher interaction defect
+$\Gamma_{\mathcal N,S}$ for some $|S|\ge 3$ on a noise whose
+two-point layer has been computed, in the sense of
+\cref{def:N-point-cdc}.
+\end{remark}
+
+%==============================================================
+\section{Examples}\label{sec:examples}
+%==============================================================
+
+The examples below are referenced in the body of this paper and in
+\cref{rem:black-no-centered-additive}. We restate them briefly, with
+attribution, and add no new proofs. The IBM paragraph is included
+explicitly as a non-example: it lies on a classical noise.
+
+\subsection{Tsirelson's sticky and coalescing flows}\label{sec:ex-sticky}
+
+Le Jan and Raimond~\cite{LeJanRaimond2004} construct stochastic flows
+of kernels --- in particular, the sticky and coalescing Brownian
+flows --- whose natural noise is black. The construction proceeds by
+exhibiting an explicit Tsirelson--Vershik noise structure on the
+flow and showing that every additive integrable family on this noise
+vanishes; we refer the reader to~\cite{LeJanRaimond2004}, especially
+\S 5, for the details. These flows are arguably the cleanest known
+example of black noise with an explicit tensor factorization, and
+they are the natural candidates for testing partial answers to
+\cref{prog:open}.
+
+\subsection{The noise of the Brownian web}\label{sec:ex-bweb}
+
+The Brownian web is a system of coalescing one-dimensional Brownian
+motions starting from every space-time point; it was constructed by
+T\'oth--Werner and Fontes--Isopi--Newman--Ravishankar, and surveyed
+by Schertzer, Sun and Swart~\cite{SSS2017}. Its associated noise is
+widely understood to be black in the framework of Tsirelson; see
+\cite{Tsirelson2004} and subsequent work, with further exposition
+and related two-dimensional black-noise constructions discussed in
+\cite{SSS2017}. The one-point motion under the Brownian web is
+itself a Brownian motion, but the full web noise is not generated
+by any one-parameter L\'evy generator: blackness, in this sense,
+forbids it. We cite this example as a non-trivial illustration that
+black noises can arise from constructions whose marginal behavior
+is classical.
+
+\subsection{The noise of two-dimensional critical percolation}\label{sec:ex-percolation}
+
+Schramm and Smirnov~\cite{SchrammSmirnov2011} prove that the scaling
+limit of two-dimensional critical percolation, viewed as a random
+generalized function or as a noise on the plane, is black. This is
+one of the few examples of a black noise arising directly from a
+critical lattice model in dimension greater than one. The result
+relies on conformal invariance and on a Bernoulli-type
+characterization of the scaling limit; we refer
+to~\cite{SchrammSmirnov2011} for the proof and for the precise form
+of the noise axioms used.
+
+\subsection{IBM as a non-black example}\label{sec:ex-ibm}
+
+Iterated Brownian motion $\IBM_t=X_{|Y_t|}$, with two-sided Brownian
+scenery $X$ and independent Brownian clock $Y$, has natural noise
+$\mathcal N_{(X,Y)}=\mathcal N_X\otimes\mathcal N_Y$ in the sense of
+\eqref{eq:L2-tensor}. Both factors are classical Wiener noises with
+rich first chaos, and the tensor product is classical. The
+obstructions identified in the IBM trilogy
+\cite{EnergyFirst,FCDC,BidegreeAtlas} are not at the level of the
+noise algebra; they live, respectively, in the $L^2$ closure of the
+mollified pathwise correction on a first-$X$-chaos sector
+(\cite{EnergyFirst}), in the dual $H^{-1}$ closure of that sector
+(\cite{FCDC}), and in the cross-sector summability of the higher
+bidegree atlas (\cite{BidegreeAtlas}). \Cref{prog:open} is therefore
+not addressed by, and does not subsume, any of those results.
+
+%==============================================================
+\section{Discussion and non-claims}\label{sec:discussion}
+%==============================================================
+
+We close by restating the non-claims of the paper in their final form.
+
+\begin{enumerate}
+\item[$(\mathrm 1)$] \emph{No new black-noise theorem is proved.}
+The proposition of \cref{sec:proposition} restates Tsirelson's
+classification of black noise in the ladder language of this paper;
+the examples of \cref{sec:examples} are cited, not reproved.
+
+\item[$(\mathrm 2)$] \emph{No primitive divergence over a black noise
+is constructed.} \Cref{prog:open} is genuinely open; partial answers
+of the form described in \cref{rem:partial-answers} are welcome.
+
+\item[$(\mathrm 3)$] \emph{IBM is not a black-noise example.} Its
+natural noise is the classical tensor product
+$\mathcal N_X\otimes\mathcal N_Y$ of two Wiener noises, and its
+trilogy obstructions are intra-classical.
+
+\item[$(\mathrm 4)$] \emph{Black noise blocks classical innovation
+reduction, not necessarily primitive divergence.} The proposition
+of \cref{sec:proposition} forbids the strong reduction of
+\cref{def:cir}; it does not forbid an energy lift in the sense of
+\cref{def:energy-lift}. The two-level pressure-point analysis of
+\cref{sec:seed,sec:leibniz} sharpens but does not resolve the
+distinction.
+
+\item[$(\mathrm 5)$] \emph{The Leibniz defect is a diagnostic, not a
+proved necessity.} \Cref{prop:diagnostic} kills only the
+interval-additive deterministic seed in black noise; it does not
+force the adjoint derivative $D_{\mathcal N}$ to be non-first-order.
+Whether blackness forces a nonzero Leibniz defect on every separating
+test algebra is part of \cref{prog:open}$(\mathrm{iv})$ and is open.
+
+\item[$(\mathrm 6)$] \emph{The hierarchy is a conceptual extension,
+not a construction.} The generator-level interaction hierarchy
+$\{\Gamma_{\mathcal N,S}\}_{|S|\ge 2}$ of
+\cref{sec:twopoint-hierarchy} is introduced as the natural
+all-$|S|$ extension of the two-point seed, at the infinitesimal
+generator level rather than as a finite-time partition-cumulant
+family (see \cref{rem:partition-vs-generator}). We do not claim
+that the hierarchy exists, intrinsically specified from
+$\mathcal N$, on any nontrivial black noise; we do not claim that it
+determines $\delta_{\mathcal N}$ even when it exists; we prove no
+representation theorem linking the hierarchy to a closed adjoint
+pair. The two-point member $\Gamma_{\mathcal N}^{(2)}$ remains the
+primary candidate seed and the first concrete layer to be
+constructed in any partial answer to \cref{prog:open}.
+\end{enumerate}
+
+The intended role of the present paper in the operator-derivative
+program is to identify the first two pressure points that any
+extension of the framework to nonclassical noise must address:
+confinement of the deterministic-coefficient interval-additive seed
+to the first chaos (\cref{lem:seed}), and the Leibniz defect of the
+adjoint derivative on a test algebra (\cref{def:leibniz-defect}). In
+the operator-derivative framework, black noise stands beside IBM as
+a first-class example along a complementary axis: IBM stresses the
+framework horizontally, inside a classical noise, through failures
+of $L^2$ closure on specific bidegree sectors; black noise stresses
+it vertically, by removing the classical first-chaos input entirely.
+The trilogy~\cite{EnergyFirst,FCDC,BidegreeAtlas} addresses the
+horizontal axis; the present paper formulates the vertical axis as
+an open research problem (\cref{prog:open}), with two concrete
+locations at which a positive answer must depart from the classical
+pattern and two concrete locations at which a negative answer would
+have to be established.
+
+The conclusion is not that black noise defeats the operator
+derivative. The conclusion is that black noise isolates the point at
+which the operator derivative becomes genuinely representation-free.
+
+%==============================================================
+\begin{thebibliography}{99}
+
+\bibitem{EnergyFirst}
+R.~Fontes,
+\emph{Energy-First Stochastic Calculus: Iterated Brownian Motion as a Test Case}.
+Preprint.
+
+\bibitem{FCDC}
+R.~Fontes,
+\emph{First-Chaos Dual Closure of the IBM It\^o Correction}.
+Preprint.
+
+\bibitem{BidegreeAtlas}
+R.~Fontes,
+\emph{A Bidegree Atlas for the IBM It\^o Correction}.
+Preprint.
+
+\bibitem{EthierKurtz}
+S.~N.~Ethier and T.~G.~Kurtz,
+\emph{Markov Processes: Characterization and Convergence}.
+Wiley, New York, 1986.
+
+\bibitem{LastPenrose}
+G.~Last and M.~Penrose,
+\emph{Lectures on the Poisson Process}.
+Cambridge University Press, Cambridge, 2017.
+
+\bibitem{LeJanRaimond2004}
+Y.~Le~Jan and O.~Raimond,
+Flows, coalescence and noise.
+\emph{Ann. Probab.} \textbf{32} (2004), no.~2A, 1247--1315.
+
+\bibitem{Nualart}
+D.~Nualart,
+\emph{The Malliavin Calculus and Related Topics}, 2nd ed.
+Springer, Berlin, 2006.
+
+\bibitem{SchrammSmirnov2011}
+O.~Schramm and S.~Smirnov,
+On the scaling limits of planar percolation.
+\emph{Ann. Probab.} \textbf{39} (2011), no.~5, 1768--1814.
+
+\bibitem{SSS2017}
+E.~Schertzer, R.~Sun and J.~M.~Swart,
+The Brownian web, the Brownian net, and their universality.
+In: \emph{Advances in Disordered Systems, Random Processes and Some Applications}, P.~Contucci and C.~Giardin\`a (eds.), Cambridge University Press, 2017.
+
+\bibitem{Tsirelson2004}
+B.~Tsirelson,
+Nonclassical stochastic flows and continuous products.
+\emph{Probab. Surv.} \textbf{1} (2004), 173--298.
+
+\bibitem{TsirelsonVershik1998}
+B.~S.~Tsirelson and A.~M.~Vershik,
+Examples of nonlinear continuous tensor products of measure spaces and non-Fock factorizations.
+\emph{Rev. Math. Phys.} \textbf{10} (1998), no.~1, 81--145.
+
+\bibitem{BakryGentilLedoux}
+D.~Bakry, I.~Gentil and M.~Ledoux,
+\emph{Analysis and Geometry of Markov Diffusion Operators}.
+Grundlehren der mathematischen Wissenschaften, vol.~348, Springer, 2014.
+
+\bibitem{FontesFracBE}
+R.~Fontes,
+\emph{Fractional Laplacian carr\'e-du-champ and covariance kernels: a Bakry--\'Emery view}.
+In preparation.
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,1174 @@
+\documentclass[11pt]{article}
+
+% --- Packages ---
+\usepackage{amsmath, amssymb, amsthm, mathtools}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{cleveref}
+
+\geometry{margin=1in}
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
+
+% --- Theorem environments ---
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{assumption}{Assumption}[section]
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[section]
+\newtheorem{example}{Example}[section]
+
+% --- Cleveref names ---
+\crefname{theorem}{Theorem}{Theorems}
+\crefname{proposition}{Proposition}{Propositions}
+\crefname{lemma}{Lemma}{Lemmas}
+\crefname{corollary}{Corollary}{Corollaries}
+\crefname{definition}{Definition}{Definitions}
+\crefname{assumption}{Assumption}{Assumptions}
+\crefname{remark}{Remark}{Remarks}
+\crefname{example}{Example}{Examples}
+\crefname{section}{Section}{Sections}
+
+% --- Commands ---
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\K}{\mathcal{K}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ip}[2]{\langle #1, #2 \rangle}
+\newcommand{\norm}[1]{\| #1 \|}
+\newcommand{\dGamma}{\Delta\Gamma}
+\newcommand{\bracket}[1]{\langle #1 \rangle}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Dom}{Dom}
+
+\title{Girsanov Theory for Volterra Processes:\\[0.3em]
+Bracket Invariance, Operator Drift, and Risk-Neutral Pricing}
+\author{Ramiro Fontes\\[0.5em]
+\small Quijotic Research\\[0.3em]
+\small\texttt{ramirofontes@gmail.com}}
+\date{February 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We develop Girsanov theory for Volterra processes. Let $M$ be a continuous
+martingale driver and $K$ a causal kernel; the Volterra observable is
+$Z_t = \int_0^t K(t,s)\,dM_s$. Such processes include fractional Brownian
+motion, rough volatility factors, and other non-Markovian models where $Z$
+may fail to be a semimartingale. The measure change acts on the primitive
+driver $M$; the induced change on $Z$ is an \emph{operator-valued drift}
+determined entirely by the kernel $K$ and the market price of risk $\theta$.
+
+The main results are:
+\begin{enumerate}[label=(\roman*)]
+\item \textbf{Bracket invariance} (\Cref{thm:girsanov-main}): The fresh-noise
+energy increment $\dGamma(t,h) = \int_t^{t+h} K(t+h,s)^2\,d\bracket{M}_s$ is
+unchanged under equivalent measure changes. Consequently, any Hurst exponent
+or roughness diagnostic derived from $\dGamma$ is a representation invariant.
+
+\item \textbf{Operator drift decomposition} (\Cref{thm:girsanov-main}): Under
+the risk-neutral measure $\QQ$, the observable decomposes as
+$Z_t = Z_t^{\QQ} + B_t^\theta$, where $Z^{\QQ}$ is the same operator applied
+to a $\QQ$-martingale, and $B^\theta = -K[\theta \cdot d\bracket{M}]$ is a
+history-dependent drift functional.
+
+\item \textbf{Risk-neutral constraint as Volterra equation} (\Cref{cor:rn-constraint}):
+For tradables driven by memory factors, the no-arbitrage condition becomes
+an operator equation for $\theta$, not a pointwise algebraic relation.
+
+\item \textbf{Clark--Ocone--type representation under measure change} (\Cref{thm:clark-ocone-Q}):
+The hedging density under $\QQ$ is $\phi_t = \E^{\QQ}[D_{M^{\QQ}} F \mid \F_t]$,
+computable via the modified Leibniz rule and Bayes' formula.
+\end{enumerate}
+
+These results extend the operator factorization framework to risk-neutral
+valuation, providing the theoretical foundation for pricing and hedging in
+markets with memory.
+
+\medskip
+\noindent\textbf{MSC 2020:} 60H07, 60H30, 60G44, 91G20.
+
+\noindent\textbf{Keywords:} Girsanov theorem; Volterra processes; measure change;
+bracket invariance; operator derivative; risk-neutral pricing; memory markets.
+\end{abstract}
+
+\tableofcontents
+
+%==============================================================================
+\section{Introduction}\label{sec:intro}
+%==============================================================================
+
+\subsection{Motivation}
+
+The classical Girsanov theorem describes how Brownian motion transforms under
+equivalent measure changes: the process acquires a drift, but its quadratic
+variation is preserved. This preservation is fundamental to mathematical
+finance---it ensures that volatility is an objective feature of the market,
+independent of the choice of pricing measure.
+
+For Volterra processes $Z_t = \int_0^t K(t,s)\,dM_s$, the situation is more
+subtle. The observable $Z$ may not be a semimartingale (e.g., fractional
+Brownian motion with $H \ne 1/2$), so classical Girsanov theory does not
+apply directly. Yet practical applications---rough volatility models, memory
+markets, path-dependent derivatives---require measure change machinery for
+these processes.
+
+This paper develops that machinery. The key insight is that measure changes
+should be performed at the \emph{driver level} (on $M$), not at the observable
+level (on $Z$). The transformation of $Z$ is then induced by the operator
+structure, yielding clean decompositions that require no semimartingale
+assumptions on the observable.
+
+\subsection{Main results}
+
+We establish four principal results.
+
+\begin{enumerate}[label=(\arabic*)]
+\item \textbf{Girsanov theorem with bracket invariance} (\Cref{thm:girsanov-main}).
+Let $\theta$ be predictable with appropriate integrability, and let $\QQ$ be
+the equivalent measure defined by the Dol\'eans exponential
+$L_T = \mathcal{E}(-\int_0^T \theta_s\,dM_s)$. Then:
+\begin{itemize}
+\item The tilted driver $M_t^{\QQ} := M_t + \int_0^t \theta_s\,d\bracket{M}_s$
+is a $\QQ$-martingale with $\bracket{M^{\QQ}} = \bracket{M}$.
+\item The observable decomposes as $Z_t = Z_t^{\QQ} + B_t^\theta$, where
+$Z_t^{\QQ} = \int_0^t K(t,s)\,dM_s^{\QQ}$ and
+$B_t^\theta = -\int_0^t K(t,s)\theta_s\,d\bracket{M}_s$.
+\item The fresh-noise energy is invariant: $\dGamma^{\QQ}(t,h) = \dGamma^{\PP}(t,h)$.
+\end{itemize}
+
+\item \textbf{Multi-dimensional extension} (\Cref{thm:girsanov-vector}).
+For vector drivers $M \in \R^d$ and multiple kernels $K^{(a)}$, the bracket
+matrix $\bracket{M}$ is preserved, and each observable acquires an
+operator-valued drift $B^{(a),\theta} = -K^{(a)}[d\bracket{M}\,\theta]$.
+
+\item \textbf{Risk-neutral constraint} (\Cref{cor:rn-constraint}).
+For a tradable with dynamics driven by both fresh noise and memory factors,
+the discounted-martingale condition becomes a Volterra equation for $\theta$.
+The market price of risk is history-priced, not pointwise.
+
+\item \textbf{Clark--Ocone--type representation under $\QQ$} (\Cref{thm:clark-ocone-Q}).
+A square-integrable $\QQ$-claim $F$ admits the representation
+$F = \E^{\QQ}[F] + \int_0^T \phi_t^\top\,dM_t^{\QQ}$, where the hedging
+density $\phi_t = \E^{\QQ}[D_{M^{\QQ}} F \mid \F_t]$ is computed via Bayes'
+formula and the modified Leibniz rule.
+\end{enumerate}
+
+\subsection{Significance}
+
+The bracket invariance theorem (\Cref{thm:girsanov-main}(3)) is the conceptual
+core of this paper. It asserts that any model feature built purely from the
+kernel family $K$ and the driver bracket $d\bracket{M}$ is unchanged across
+the entire Girsanov family of equivalent measures. This includes:
+
+\begin{itemize}
+\item The fresh-noise energy increment $\dGamma(t,h)$.
+\item Any Hurst exponent extracted from the scaling $\dGamma(t,h) \asymp h^{2H}$.
+\item Roughness diagnostics and regime classifications.
+\item The ``fresh vs.\ history'' decomposition of increments.
+\end{itemize}
+
+In short: \emph{the geometry is objective; only the drift is subjective}.
+
+For practitioners, the risk-neutral constraint (\Cref{cor:rn-constraint})
+is the actionable result. It shows that in memory markets, the market price
+of risk $\theta$ cannot be read off pointwise from asset dynamics---it must
+be solved for as a functional equation. This changes how one thinks about
+calibration and no-arbitrage conditions in rough volatility and Volterra models.
+
+\subsection{Related work}
+
+The operator factorization framework was developed in \cite{Fontes2026a},
+with extensions to fractional processes \cite{Fontes2026b}, non-semimartingale
+It\^o formulas \cite{Fontes2026c}, and kernel-level geometry \cite{Fontes2026f}.
+The bracket-corrected calculus of \cite{Fontes2026g} provides the modified
+Leibniz rule used here for density calculations.
+
+For classical Girsanov theory, see \cite{KaratzasShreve1991}. The rough
+volatility literature \cite{GatheralJaissonRosenbaum2018} motivates the
+need for measure change theory beyond semimartingales. Volterra processes
+and their stochastic calculus are treated in \cite{Decreusefond1999} and
+the rough path literature \cite{FrizHairer2014}.
+
+\subsection{What is new}
+
+Girsanov's theorem for continuous martingales is classical
+\cite{KaratzasShreve1991}. What is new here is the operator-level
+formulation and its consequences:
+\begin{enumerate}[(i)]
+\item The bracket invariance principle (\Cref{thm:girsanov-main}(3))
+  identifies a large class of intrinsic geometric quantities---fresh-noise
+  energy, Hurst exponents, roughness diagnostics---that are \emph{provably
+  unchanged} under equivalent measure change, without semimartingale
+  assumptions on the observables.
+\item The operator drift decomposition (\Cref{thm:girsanov-main}(2))
+  replaces the classical pointwise drift correction with a
+  deterministic operator acting on the kernel family, making the
+  history-dependence of the drift explicit.
+\item The risk-neutral constraint (\Cref{cor:rn-constraint}) shows that
+  in memory-driven markets, the market price of risk $\theta$ satisfies a
+  Volterra integral equation rather than a pointwise algebraic relation.
+\end{enumerate}
+These results do not contradict classical theory---they are consequences of
+it, organized via the operator factorization framework so that the
+structural content becomes visible. The proofs are deliberately elementary
+once the framework is in place; the contribution is the framework itself
+and the structural insights it reveals, particularly for non-semimartingale
+observables where classical methods do not directly apply.
+
+\subsection{Organization}
+
+\Cref{sec:framework} recalls the Volterra framework and fixes notation.
+\Cref{sec:girsanov} proves the main Girsanov theorem with bracket invariance.
+\Cref{sec:vector} extends to vector drivers and multiple kernels.
+\Cref{sec:finance} derives the risk-neutral constraint as a Volterra equation.
+\Cref{sec:density} develops density differentiation and Bayes' rule for
+operator derivatives. \Cref{sec:clark-ocone} proves the Clark--Ocone--type
+representation under $\QQ$ and derives the hedging recipe. \Cref{sec:examples} works concrete examples.
+\Cref{sec:limitations} states scope limitations.
+
+%==============================================================================
+\section{Framework}\label{sec:framework}
+%==============================================================================
+
+We recall the Volterra framework from \cite{Fontes2026f}, specialized to the
+setting needed for measure change theory.
+
+\subsection{Probabilistic setup}
+
+Let $(\Omega, \F, (\F_t)_{t \in [0,T]}, \PP)$ be a filtered probability space
+satisfying the usual conditions. Let $M$ be a continuous square-integrable
+$\PP$-martingale with $M_0 = 0$ and predictable quadratic variation
+$\bracket{M}$. Throughout, we assume $M$ possesses the \emph{predictable
+representation property}: every $F \in L^2(\F_T, \PP)$ admits a representation
+$F = \E[F] + \int_0^T \phi_t\,dM_t$ for some predictable $\phi$. The operator
+derivative $D_M$ (\Cref{def:DM}) is then the Hilbert-space adjoint of
+stochastic integration with respect to $M$, yielding a Clark--Ocone--type
+representation by construction (see \Cref{prop:clark-ocone-P} and
+\Cref{rem:clark-ocone-distinction}).
+
+Define the bracket measure
+\[
+\mu(ds) := d\bracket{M}_s.
+\]
+
+\begin{assumption}[Driver regularity]\label{ass:driver}
+The bracket process $\bracket{M}$ is absolutely continuous with respect to
+Lebesgue measure: $d\bracket{M}_t = a_t\,dt$ for some predictable process
+$a_t \ge 0$. We write $\mu(ds) = a_s\,ds$.
+\end{assumption}
+
+\Cref{ass:driver} simplifies exposition but is not essential; results extend
+to general continuous martingales with minor modifications.
+
+\subsection{Volterra observables}
+
+\begin{definition}[Volterra observable]\label{def:volterra}
+A \emph{causal kernel} is a measurable function $K : [0,T]^2 \to \R$ with
+$K(t,s) = 0$ for $s > t$. The associated \emph{Volterra observable} is
+\[
+Z_t := \int_0^t K(t,s)\,dM_s.
+\]
+\end{definition}
+
+\begin{assumption}[Kernel integrability]\label{ass:kernel}
+The kernel $K$ satisfies
+\[
+\sup_{t \in [0,T]} \int_0^t K(t,s)^2\,\mu(ds) < \infty.
+\]
+\end{assumption}
+
+Under \Cref{ass:kernel}, $Z_t$ is well-defined and square-integrable by the
+It\^o isometry. Importantly, no semimartingale assumption is imposed on the
+observable $Z$; for singular kernels (e.g.\ $K(t,s) = (t-s)^{H-1/2}$ with
+$H < 1/2$), $Z$ is typically \emph{not} a semimartingale. All
+measure-change effects in this paper are carried by the driver $M$, not
+the observables.
+
+\subsection{Fresh-noise energy}
+
+\begin{definition}[Fresh-noise energy increment]\label{def:DeltaGamma}
+For $t \in [0,T)$ and $h > 0$ with $t + h \le T$, define
+\[
+\dGamma(t,h) := \int_t^{t+h} K(t+h,s)^2\,\mu(ds).
+\]
+\end{definition}
+
+The increment $\dGamma(t,h)$ measures the energy contributed by innovations
+on $(t, t+h]$. It is the fundamental second-order object of the Volterra
+framework, governing It\^o corrections and determining Hurst scaling
+\cite{Fontes2026f}.
+
+\subsection{The operator derivative}
+
+\begin{definition}[Operator derivative]\label{def:DM}
+Let $F \in L^2(\F_T, \PP)$. The \emph{operator derivative} $D_M F$ is the
+unique element of $L^2(\Omega \times [0,T],\, d\bracket{M} \otimes d\PP)$ satisfying
+\begin{equation}\label{eq:DM-riesz}
+\E\!\left[F \int_0^T \varphi_t\,dM_t\right]
+= \E\!\left[\int_0^T (D_M F)_t\,\varphi_t\,d\bracket{M}_t\right]
+\end{equation}
+for all predictable $\varphi$ with $\E\int_0^T \varphi_t^2\,d\bracket{M}_t < \infty$.
+\end{definition}
+
+Existence and uniqueness follow from the Riesz representation theorem applied
+to the continuous linear functional
+$\varphi \mapsto \E[F \int_0^T \varphi_t\,dM_t]$ on $L^2(d\bracket{M} \otimes d\PP)$.
+This is the specialization of the general operator derivative \cite{Fontes2026d}
+to the continuous martingale energy space $H_M = L^2(\Omega \times [0,T],\, d\bracket{M} \otimes d\PP)$.
+For comparison with the classical Malliavin derivative, see \cite{Nualart2006}.
+When the filtration is generated by $M$, the martingale representation
+$F = \E[F] + \int_0^T \phi_s\,dM_s$ gives the explicit identification
+$(D_M F)_t = \phi_t$.
+
+\begin{remark}[No limit required]\label{rem:no-epsilon}
+The definition \eqref{eq:DM-riesz} is purely algebraic---it involves no
+$\epsilon \to 0$ limits, no time-local increments, and no regularity
+assumptions beyond square integrability. This is deliberate: since Girsanov
+preserves $\bracket{M}$, the operator derivative is the natural invariant
+object under measure change. When $\bracket{M}$ has Lebesgue density $a_t > 0$,
+one recovers the conditional increment formula
+\[
+(D_M F)_t = a_t^{-1}\lim_{\epsilon \downarrow 0} \epsilon^{-1}\,
+\E[F(M_{t+\epsilon} - M_t) \mid \F_t]
+\]
+as a consequence, not a definition \cite{Fontes2026g}.
+\end{remark}
+
+\subsection{The operator factorization}
+
+The operator derivative is not an arbitrary differentiation---it is the
+exact inverse (modulo expectation) of stochastic integration.
+
+\begin{proposition}[Adjoint martingale representation {\cite{Fontes2026a}}]\label{prop:clark-ocone-P}
+Let $F \in L^2(\F_T, \PP)$. Under the standing assumption that $M$
+possesses the predictable representation property, we have
+\begin{equation}\label{eq:factorization}
+(\mathrm{Id} - \E)\,F = \delta_M(D_M F),
+\end{equation}
+where $\delta_M(\varphi) := \int_0^T \varphi_t\,dM_t$ denotes stochastic
+integration against $M$. Equivalently,
+\[
+F = \E[F] + \int_0^T (D_M F)_t\,dM_t.
+\]
+\end{proposition}
+
+\begin{remark}[Relationship to Clark--Ocone]\label{rem:clark-ocone-distinction}
+On Wiener space, \Cref{prop:clark-ocone-P} reduces to the classical
+Clark--Ocone formula. In the present setting, it holds for general continuous
+martingale drivers and is derived via Riesz representation rather than
+Malliavin calculus. No Gaussian structure, chaos expansion, or pathwise
+derivative is used. We refer to this as a \emph{Clark--Ocone--type}
+representation to signal the structural parallel without implying
+dependence on the Malliavin framework.
+\end{remark}
+
+This identity---purely a consequence of the Riesz definition and
+martingale representation---is the reason the operator derivative is the
+correct density for hedging and representation. Its algebraic form
+$(\mathrm{Id} - \E) = \delta_M \circ D_M$ is measure-agnostic: under
+$\QQ$, it becomes $(\mathrm{Id} - \E^{\QQ})\,F = \delta_{M^{\QQ}}(D_{M^{\QQ}} F)$
+with the same structure, because Girsanov preserves the bracket and hence
+the adjoint pair $(D_M, \delta_M)$.
+
+%==============================================================================
+\section{Girsanov Theorem with Bracket Invariance}\label{sec:girsanov}
+%==============================================================================
+
+\subsection{Setup}
+
+Let $\theta$ be a predictable $\R$-valued process satisfying the integrability
+condition
+\begin{equation}\label{eq:theta-int}
+\int_0^T \theta_s^2\,d\bracket{M}_s < \infty \quad \text{a.s.}
+\end{equation}
+
+Define the Dol\'eans exponential (stochastic exponential)
+\begin{equation}\label{eq:doleans}
+L_t := \mathcal{E}\left(-\int_0^t \theta_s\,dM_s\right)
+:= \exp\left(-\int_0^t \theta_s\,dM_s - \frac{1}{2}\int_0^t \theta_s^2\,d\bracket{M}_s\right).
+\end{equation}
+
+\begin{assumption}[Martingale property]\label{ass:novikov}
+The process $L$ is a true $\PP$-martingale. (This holds, e.g., under the
+Novikov condition $\E[\exp(\frac{1}{2}\int_0^T \theta_s^2\,d\bracket{M}_s)] < \infty$.)
+\end{assumption}
+
+Under \Cref{ass:novikov}, we define the equivalent measure $\QQ$ by
+\begin{equation}\label{eq:Q-def}
+\frac{d\QQ}{d\PP}\bigg|_{\F_T} = L_T.
+\end{equation}
+
+\subsection{Main theorem}
+
+\begin{theorem}[Girsanov theorem with bracket invariance]\label{thm:girsanov-main}
+Under \Cref{ass:driver,ass:kernel,ass:novikov}, the following hold:
+
+\begin{enumerate}[label=(\arabic*)]
+\item \textbf{Driver-level Girsanov.} The process
+\begin{equation}\label{eq:MQ-def}
+M_t^{\QQ} := M_t + \int_0^t \theta_s\,d\bracket{M}_s
+\end{equation}
+is a continuous $\QQ$-martingale with
+\begin{equation}\label{eq:bracket-preserved}
+\bracket{M^{\QQ}}_t = \bracket{M}_t.
+\end{equation}
+
+\item \textbf{Operator pushforward decomposition.} The Volterra observable
+$Z$ admits the exact decomposition
+\begin{equation}\label{eq:Z-decomp}
+Z_t = Z_t^{\QQ} + B_t^\theta,
+\end{equation}
+where
+\begin{align}
+Z_t^{\QQ} &:= \int_0^t K(t,s)\,dM_s^{\QQ}, \label{eq:ZQ-def} \\
+B_t^\theta &:= -\int_0^t K(t,s)\,\theta_s\,d\bracket{M}_s. \label{eq:Btheta-def}
+\end{align}
+Under $\QQ$, the noise part $Z^{\QQ}$ is the same operator applied to a
+martingale; the measure change induces the deterministic operator-valued
+drift $B^\theta$.
+
+\item \textbf{Bracket invariance.} For all admissible $t, h$,
+\begin{equation}\label{eq:DG-invariance}
+\dGamma^{\QQ}(t,h) := \int_t^{t+h} K(t+h,s)^2\,d\bracket{M^{\QQ}}_s
+= \int_t^{t+h} K(t+h,s)^2\,d\bracket{M}_s = \dGamma^{\PP}(t,h).
+\end{equation}
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\textbf{Part (1):} This is the classical continuous-martingale Girsanov theorem
+applied at the driver level. Under \Cref{ass:novikov}, the process $L$ is a
+true martingale, so $M^{\QQ}$ defined by \eqref{eq:MQ-def} is a $\QQ$-local
+martingale. The bracket preservation \eqref{eq:bracket-preserved} follows
+because $M^{\QQ}$ differs from $M$ by a finite-variation process:
+\[
+\bracket{M^{\QQ}}_t = \bracket{M + \int_0^\cdot \theta_s\,d\bracket{M}_s}_t
+= \bracket{M}_t,
+\]
+since quadratic variation ignores finite-variation perturbations.
+
+\textbf{Part (2):} From \eqref{eq:MQ-def}, we have
+$dM_s = dM_s^{\QQ} - \theta_s\,d\bracket{M}_s$. Substituting into the
+definition of $Z_t$:
+\begin{align*}
+Z_t &= \int_0^t K(t,s)\,dM_s \\
+&= \int_0^t K(t,s)\,dM_s^{\QQ} - \int_0^t K(t,s)\,\theta_s\,d\bracket{M}_s \\
+&= Z_t^{\QQ} + B_t^\theta.
+\end{align*}
+The first integral is a stochastic integral against the $\QQ$-martingale
+$M^{\QQ}$; the second is a Lebesgue--Stieltjes integral in $s$ for each
+fixed $t$, hence a deterministic, non-martingale correction. This
+decomposition is exact and requires no semimartingale assumption on $Z$.
+
+\textbf{Part (3):} The fresh-noise energy is defined purely in terms of
+$K$ and $d\bracket{M}$. Since $\bracket{M^{\QQ}} = \bracket{M}$ by part (1),
+the equality \eqref{eq:DG-invariance} follows immediately.
+\end{proof}
+
+\begin{remark}[No semimartingale assumption on $Z$]
+The decomposition \eqref{eq:Z-decomp} holds for any Volterra observable,
+including fractional Brownian motion and rough processes. The measure change
+is performed where it belongs---on the driver $M$---and the effect on $Z$
+is induced by the operator structure.
+\end{remark}
+
+\begin{remark}[Non-Gaussian drivers]\label{rem:non-gaussian}
+The construction applies to any continuous martingale driver $M$, not only
+Brownian motion. In particular, it accommodates:
+\begin{itemize}
+\item Time-changed Brownian drivers $M_t = W_{\tau_t}$ with random time change $\tau$,
+\item Stochastic volatility drivers $M_t = \int_0^t \sigma_s\,dW_s$ where $\sigma$ is
+itself a stochastic process,
+\item Other continuous martingale drivers arising from filtration enlargement or
+market microstructure models.
+\end{itemize}
+The observable processes may be non-Markovian and need not be
+semimartingales. The Girsanov formula in exponential form \eqref{eq:doleans}
+is cleanest for continuous martingales; extensions to jump drivers (L\'evy,
+Poisson) require the jump-compensator version of Girsanov, but the same
+``driver-level then operator pushforward'' philosophy carries over.
+\end{remark}
+
+\begin{remark}[Recovery of classical Girsanov when $K = \mathbf{1}$]\label{rem:classical-recovery}
+When $K(t,s) = \mathbf{1}_{\{s \le t\}}$, the observable equals the driver:
+$Z_t = M_t$. The drift functional reduces to
+$B_t^\theta = -\int_0^t \theta_s\,d\bracket{M}_s$, and the decomposition
+\eqref{eq:Z-decomp} becomes the classical Girsanov identity
+$M_t = M_t^{\QQ} - \int_0^t \theta_s\,d\bracket{M}_s$. The operator framework
+thus strictly generalizes classical measure change theory: non-trivial kernels
+yield non-trivial (history-dependent) drift functionals, while the Markov
+kernel recovers the standard result.
+\end{remark}
+
+\begin{remark}[Interpretation of bracket invariance]
+\Cref{thm:girsanov-main}(3) asserts that $\dGamma$ is a \emph{geometric}
+quantity, not a probabilistic one. Any scaling law extracted from
+$\dGamma(t,h) \asymp h^{2H}$ is invariant under equivalent measure changes.
+The Hurst parameter is an intrinsic property of the representation $(K, \mu)$,
+observable under any equivalent measure.
+\end{remark}
+
+\subsection{The drift functional}
+
+The operator-valued drift $B^\theta$ deserves separate attention.
+
+\begin{definition}[Operator drift functional]\label{def:drift-functional}
+For a predictable process $\theta$, define the \emph{$K$-drift functional}
+\begin{equation}\label{eq:drift-functional}
+B_t^\theta := -(K[\theta \cdot d\bracket{M}])_t := -\int_0^t K(t,s)\,\theta_s\,d\bracket{M}_s.
+\end{equation}
+\end{definition}
+
+\begin{proposition}[Properties of the drift functional]\label{prop:drift-properties}
+The drift functional $B^\theta$ satisfies:
+\begin{enumerate}[label=(\alph*)]
+\item \textbf{Causality:} $B_t^\theta$ depends only on $\{(\theta_s, d\bracket{M}_s) : s \le t\}$.
+\item \textbf{Linearity:} $B^{\alpha\theta_1 + \beta\theta_2} = \alpha B^{\theta_1} + \beta B^{\theta_2}$.
+\item \textbf{History dependence:} Even if $\theta$ is constant, $B_t^\theta$
+depends on the full history $\{K(t,s) : s \le t\}$.
+\item \textbf{Deterministic and non-martingale:} For each $t$, $B_t^\theta$
+is a deterministic functional of $(\theta, K, d\bracket{M})$; it carries no
+martingale component. When $t \mapsto K(t,\cdot)$ is sufficiently regular
+(e.g.\ smooth or exponential kernels), the path $t \mapsto B_t^\theta$ has
+finite variation. For singular kernels (e.g.\ $K(t,s) = (t-s)^{H-1/2}$,
+$H < 1/2$), $B^\theta$ may fail to be of bounded variation in $t$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Properties (a)--(c) are immediate from the definition. For (d),
+under \Cref{ass:driver}, $B_t^\theta = -\int_0^t K(t,s)\,\theta_s\,a_s\,ds$
+is a Lebesgue integral in $s$ for each $t$, hence a deterministic,
+non-martingale correction. Regularity in $t$ depends on the kernel:
+for kernels with $t \mapsto K(t,\cdot)$ absolutely continuous in
+$L^2(\mu)$, the path $t \mapsto B_t^\theta$ has finite variation;
+for singular kernels this may fail.
+\end{proof}
+
+%==============================================================================
+\section{Vector Drivers and Multiple Kernels}\label{sec:vector}
+%==============================================================================
+
+We extend to the setting relevant for multi-factor models.
+
+\subsection{Setup}
+
+Let $M = (M^1, \ldots, M^d)$ be a continuous $d$-dimensional $\PP$-local
+martingale with predictable bracket matrix
+\[
+\bracket{M}_t = \big(\bracket{M^i, M^j}_t\big)_{i,j=1}^d.
+\]
+Write $d\bracket{M}_t$ for the matrix-valued measure.
+
+Fix $m$ causal kernels $K^{(a)} : [0,T]^2 \to \R^d$ (row vectors), $a = 1, \ldots, m$,
+and define observables
+\[
+Z_t^{(a)} := \int_0^t K^{(a)}(t,s)\,dM_s = \sum_{i=1}^d \int_0^t K^{(a)}_i(t,s)\,dM_s^i.
+\]
+
+Define the fresh-noise energy for each $a$:
+\[
+\dGamma^{(a)}(t,h) := \int_t^{t+h} K^{(a)}(t+h,s)\,d\bracket{M}_s\,K^{(a)}(t+h,s)^\top.
+\]
+
+\subsection{Vector Girsanov theorem}
+
+Let $\theta$ be a predictable $\R^d$-valued process with
+$\int_0^T \theta_s^\top\,d\bracket{M}_s\,\theta_s < \infty$ a.s., and assume
+the Dol\'eans exponential
+\[
+L_t := \mathcal{E}\left(-\int_0^t \theta_s^\top\,dM_s\right)
+\]
+is a true martingale. Define $\QQ$ by $\frac{d\QQ}{d\PP}|_{\F_T} = L_T$.
+
+\begin{theorem}[Vector Girsanov with bracket invariance]\label{thm:girsanov-vector}
+Under the above assumptions:
+
+\begin{enumerate}[label=(\arabic*)]
+\item \textbf{Vector driver shift.} The process
+\[
+M_t^{\QQ} := M_t + \int_0^t d\bracket{M}_s\,\theta_s
+\]
+is a continuous $\QQ$-local martingale with
+\[
+\bracket{M^{\QQ}}_t = \bracket{M}_t \quad \text{(same bracket matrix)}.
+\]
+
+\item \textbf{Multi-kernel pushforward.} For each $a \in \{1, \ldots, m\}$,
+\begin{equation}\label{eq:Za-decomp}
+Z_t^{(a)} = Z_t^{(a),\QQ} + B_t^{(a),\theta},
+\end{equation}
+where
+\begin{align*}
+Z_t^{(a),\QQ} &:= \int_0^t K^{(a)}(t,s)\,dM_s^{\QQ}, \\
+B_t^{(a),\theta} &:= -\int_0^t K^{(a)}(t,s)\,d\bracket{M}_s\,\theta_s.
+\end{align*}
+
+\item \textbf{Energy invariance.} For each $a$ and admissible $t, h$,
+\[
+\dGamma^{(a),\QQ}(t,h) = \dGamma^{(a),\PP}(t,h).
+\]
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The proof follows the same structure as \Cref{thm:girsanov-main}, with
+matrix/vector notation throughout.
+\end{proof}
+
+\begin{corollary}[Measure-change invariants]\label{cor:invariants}
+Any model feature built purely from the kernel family $\{K^{(a)}\}$ and
+the driver bracket $d\bracket{M}$ is invariant across the equivalent
+measures generated by exponentials of $\int \theta^\top\,dM$. This includes:
+\begin{enumerate}[label=(\alph*)]
+\item Fresh-noise energy increments $\dGamma^{(a)}(t,h)$.
+\item Hurst/roughness exponents extracted from $\dGamma$ scaling.
+\item Cross-kernel correlations $\Gamma_{K^{(a)}, K^{(b)}}$.
+\item The ``fresh vs.\ history'' decomposition structure.
+\end{enumerate}
+\end{corollary}
+
+%==============================================================================
+\section{Risk-Neutral Pricing}\label{sec:finance}
+%==============================================================================
+
+We derive the risk-neutral constraint for markets driven by memory factors.
+
+\subsection{Asset dynamics}
+
+Consider a tradable $S$ with discounted dynamics
+\begin{equation}\label{eq:S-dynamics}
+\frac{dS_t}{S_t} = r_t\,dt + \sum_{a=1}^m \beta_t^{(a)}\,dZ_t^{(a)} + \lambda_t^\top\,dM_t,
+\end{equation}
+where:
+\begin{itemize}
+\item $r_t$ is the instantaneous interest rate,
+\item $\beta^{(a)}$ are predictable loadings on memory factors $Z^{(a)}$,
+\item $\lambda_t \in \R^d$ is the loading on fresh noise $dM_t$.
+\end{itemize}
+Here $dZ_t^{(a)}$ denotes the increment $Z_{t+dt}^{(a)} - Z_t^{(a)}$; since $Z^{(a)}$
+may not be a semimartingale, this is formal notation for the integrated dynamics.
+
+\subsection{The risk-neutral constraint}
+
+\begin{corollary}[Risk-neutrality as Volterra equation]\label{cor:rn-constraint}
+Under the measure $\QQ$ defined by market price of risk $\theta$, the
+non-martingale correction to the dynamics relative to $r_t\,dt$ equals
+\[
+-\lambda_t^\top\,d\bracket{M}_t\,\theta_t + \sum_{a=1}^m \beta_t^{(a)}\,dB_t^{(a),\theta}.
+\]
+Hence a risk-neutral measure (discounted $S$ a $\QQ$-local martingale) is
+obtained by choosing $\theta$ such that, for all $t$,
+\begin{equation}\label{eq:rn-constraint}
+\lambda_t^\top\,d\bracket{M}_t\,\theta_t - \sum_{a=1}^m \beta_t^{(a)}\,dB_t^{(a),\theta} = 0.
+\end{equation}
+Here $dB^{(a),\theta}$ denotes the formal increment of the operator-induced
+correction; the constraint is interpreted in integrated form when the kernels
+are singular (cf.\ \eqref{eq:S-dynamics}).
+\end{corollary}
+
+In financial applications, an equivalent measure $\QQ$ under which discounted
+asset prices are local martingales is referred to as a \emph{risk-neutral}
+(or pricing) measure. In the present setting, the condition
+\eqref{eq:rn-constraint} characterizes such a measure when asset dynamics
+involve operator-driven, non-Markovian factors.
+
+\begin{proof}
+Under $\QQ$, applying the decomposition \eqref{eq:Za-decomp} to the
+integrated dynamics \eqref{eq:S-dynamics} (interpreting $dZ^{(a)}$ as the
+formal increment of the Volterra observable, cf.\ \eqref{eq:S-dynamics}),
+we obtain
+\begin{align*}
+\frac{dS_t}{S_t} &= r_t\,dt + \sum_{a=1}^m \beta_t^{(a)}\,(dZ_t^{(a),\QQ} + dB_t^{(a),\theta})
++ \lambda_t^\top\,(dM_t^{\QQ} - d\bracket{M}_t\,\theta_t) \\
+&= r_t\,dt + \sum_{a=1}^m \beta_t^{(a)}\,dZ_t^{(a),\QQ} + \lambda_t^\top\,dM_t^{\QQ} \\
+&\quad - \lambda_t^\top\,d\bracket{M}_t\,\theta_t + \sum_{a=1}^m \beta_t^{(a)}\,dB_t^{(a),\theta}.
+\end{align*}
+For discounted $S$ to be a $\QQ$-local martingale, the non-martingale terms
+must cancel, yielding \eqref{eq:rn-constraint}.
+\end{proof}
+
+\begin{remark}[The constraint is a Volterra equation]
+Writing out $-dB^{(a),\theta} = d(\int_0^t K^{(a)}(t,s)\,d\bracket{M}_s\,\theta_s)$,
+the constraint \eqref{eq:rn-constraint} becomes
+\[
+\lambda_t^\top\,d\bracket{M}_t\,\theta_t + \sum_{a=1}^m \beta_t^{(a)}\,d\left(\int_0^t K^{(a)}(t,s)\,d\bracket{M}_s\,\theta_s\right) = 0.
+\]
+This is a Volterra-type constraint for $\theta$, coupling the current value
+$\theta_t$ to the entire history $\{\theta_s : s < t\}$ through the kernels
+$K^{(a)}$. In discrete time, it becomes a lower-triangular linear system.
+\end{remark}
+
+\begin{remark}[Interpretation]
+The market price of risk in memory markets is \emph{history-priced}: it
+cannot be determined pointwise from current asset dynamics but must be
+solved for as a functional equation. This is the key structural difference
+from classical diffusion models.
+\end{remark}
+
+\begin{remark}[Uniqueness and market completeness]
+The existence of an equivalent pricing measure does not imply uniqueness.
+As in classical stochastic volatility or jump models, the present framework
+generally describes an incomplete market, with admissible pricing measures
+characterized by the operator constraint \eqref{eq:rn-constraint}.
+\end{remark}
+
+%==============================================================================
+\section{Density Calculus Under Measure Change}\label{sec:density}
+%==============================================================================
+
+To compute hedging densities under $\QQ$, we need to differentiate conditional
+expectations involving the likelihood ratio $L$. The key algebraic tool is
+the Leibniz rule for the operator derivative.
+
+\begin{proposition}[Leibniz rule for $D_M$]\label{prop:leibniz}
+For $F, G \in \Dom(D_M)$ with $FG \in \Dom(D_M)$,
+\begin{equation}\label{eq:leibniz}
+(D_M(FG))_t = \E[F \mid \F_t]\,(D_M G)_t + \E[G \mid \F_t]\,(D_M F)_t.
+\end{equation}
+In particular, when $F$ and $G$ are both $\F_t$-measurable, this reduces to the
+standard product rule $(D_M(FG))_t = F\,(D_M G)_t + G\,(D_M F)_t$.
+\end{proposition}
+
+The general Leibniz rule \eqref{eq:leibniz} with conditional expectations is
+the bracket-corrected form established in \cite{Fontes2026g}. All applications
+in this section involve $\F_t$-measurable factors, so only the simplified form
+is needed.
+
+\subsection{Bayes' rule for conditional expectations}
+
+\begin{lemma}[Bayes' rule]\label{lem:bayes}
+For $F \in L^1(\F_T, \QQ)$ and $t \le T$,
+\begin{equation}\label{eq:bayes}
+\E^{\QQ}[F \mid \F_t] = \frac{\E^{\PP}[F L_T \mid \F_t]}{L_t}.
+\end{equation}
+\end{lemma}
+
+\subsection{Operator derivative of the likelihood ratio}
+
+\begin{lemma}[Derivative of the density]\label{lem:DL}
+The terminal density $L_T$ satisfies
+\begin{equation}\label{eq:DL}
+(D_M L_T)_t = -L_t\,\theta_t.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The Dol\'eans exponential satisfies $dL_t = -L_t\,\theta_t\,dM_t$, so
+$L_T = 1 + \int_0^T (-L_s\,\theta_s)\,dM_s$. Since this is the martingale
+representation of $L_T$, the operator derivative is the integrand:
+$(D_M L_T)_t = -L_t\,\theta_t$.
+\end{proof}
+
+\begin{lemma}[Derivative of the inverse density]\label{lem:DLinv}
+For each $t \in [0,T]$, the $\F_t$-measurable random variable $L_t^{-1}$
+satisfies
+\begin{equation}\label{eq:DLinv}
+(D_M L_t^{-1})_t = \frac{\theta_t}{L_t}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Apply $D_M$ to the identity $L_t \cdot L_t^{-1} = 1$ and evaluate at time $t$.
+Since $L_t$ and $L_t^{-1}$
+are $\F_t$-measurable, \Cref{prop:leibniz} gives
+\[
+0 = L_t \cdot (D_M L_t^{-1})_t + L_t^{-1} \cdot (D_M L_t)_t.
+\]
+Since $L$ is a martingale with $L_t = 1 + \int_0^t (-L_s\,\theta_s)\,dM_s$,
+the operator derivative identification gives
+$(D_M L_t)_t = -L_t\,\theta_t$ (cf.~\Cref{lem:DL}). Substituting:
+\[
+0 = L_t \cdot (D_M L_t^{-1})_t - L_t^{-1} \cdot L_t\,\theta_t.
+\]
+Solving gives $(D_M L_t^{-1})_t = \theta_t / L_t$.
+\end{proof}
+
+\subsection{Derivative of conditional expectations under $\QQ$}
+
+\begin{proposition}[Operator derivative via $\PP$]\label{prop:DQ-via-P}
+Let $G_t := \E^{\QQ}[F \mid \F_t] = N_t / L_t$, where $N_t := \E^{\PP}[F L_T \mid \F_t]$.
+Then
+\begin{equation}\label{eq:DG}
+(D_M G)_t = \frac{1}{L_t}(D_M N)_t + G_t \cdot \theta_t.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Apply \Cref{prop:leibniz} to $G_t = N_t \cdot L_t^{-1}$ (both $\F_t$-measurable):
+\[
+(D_M G)_t = N_t \cdot (D_M L_t^{-1})_t + L_t^{-1} \cdot (D_M N)_t.
+\]
+Using \Cref{lem:DLinv}:
+\[
+(D_M G)_t = N_t \cdot \frac{\theta_t}{L_t} + L_t^{-1} \cdot (D_M N)_t
+= \frac{N_t}{L_t} \cdot \theta_t + \frac{1}{L_t}(D_M N)_t.
+\]
+Since $G_t = N_t / L_t$, this gives \eqref{eq:DG}.
+\end{proof}
+
+%==============================================================================
+\section{Adjoint Representation Under Measure Change}\label{sec:clark-ocone}
+%==============================================================================
+
+\subsection{Representation theorem}
+
+Since $M^{\QQ}$ is a $\QQ$-martingale with $\bracket{M^{\QQ}} = \bracket{M}$,
+the operator derivative $D_{M^{\QQ}}$ is defined by the same Riesz
+representation as \Cref{def:DM}, with $M$ replaced by $M^{\QQ}$ and
+expectations taken under $\QQ$:
+\[
+\E^{\QQ}\!\left[F \int_0^T \varphi_t\,dM_t^{\QQ}\right]
+= \E^{\QQ}\!\left[\int_0^T (D_{M^{\QQ}} F)_t\,\varphi_t\,d\bracket{M^{\QQ}}_t\right].
+\]
+Since $d\bracket{M^{\QQ}} = d\bracket{M}$, the operators $D_M$ and
+$D_{M^{\QQ}}$ share the same deterministic energy structure $d\bracket{M}$;
+they differ only in the probability measure under which the $L^2$ duality
+is taken ($\PP$ for $D_M$, $\QQ$ for $D_{M^{\QQ}}$).
+
+\begin{theorem}[Clark--Ocone--type representation under $\QQ$]\label{thm:clark-ocone-Q}
+Let $F \in L^2(\F_T, \QQ)$. Then $F$ admits the representation
+\begin{equation}\label{eq:CO-Q}
+F = \E^{\QQ}[F] + \int_0^T \phi_t^\top\,dM_t^{\QQ},
+\end{equation}
+where the hedging density is
+\begin{equation}\label{eq:phi-Q}
+\phi_t = \E^{\QQ}[D_{M^{\QQ}} F \mid \F_t].
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Since $\QQ \sim \PP$ and $M$ has the predictable representation property
+under $\PP$, the $\QQ$-martingale $M^{\QQ}$ has the predictable representation
+property under $\QQ$ (see, e.g., \cite[Thm.~3.4.34]{KaratzasShreve1991}).
+The martingale representation theorem gives
+$F = \E^{\QQ}[F] + \int_0^T \psi_t\,dM_t^{\QQ}$ for some
+predictable $\psi$. The identification $\psi_t = \E^{\QQ}[D_{M^{\QQ}} F \mid \F_t]$
+follows from the definition of the operator derivative.
+\end{proof}
+
+\subsection{Computing the density via $\PP$}
+
+\begin{corollary}[Hedging density via Bayes]\label{cor:phi-bayes}
+The hedging density can be computed without working directly under $\QQ$:
+\begin{equation}\label{eq:phi-bayes}
+\phi_t = \E^{\QQ}[D_{M^{\QQ}} F \mid \F_t] = \frac{1}{L_t}\E^{\PP}[L_T \cdot D_{M^{\QQ}} F \mid \F_t].
+\end{equation}
+\end{corollary}
+
+\subsection{Pricing and hedging recipe}
+
+Let $B_t := \exp(\int_0^t r_s\,ds)$ denote the money market account.
+
+\begin{corollary}[Complete hedging recipe]\label{cor:hedging-recipe}
+Let the discounted payoff be $\tilde{F} := B_T^{-1} H$ for a claim $H$, and define the
+discounted price process
+\[
+\tilde{V}_t := \E^{\QQ}[\tilde{F} \mid \F_t].
+\]
+Then:
+\begin{enumerate}[label=(\alph*)]
+\item $\tilde{V}_t = \tilde{V}_0 + \int_0^t \phi_s^\top\,dM_s^{\QQ}$.
+\item The hedging density in the ``fresh-risk'' direction is
+$\phi_s = \E^{\QQ}[D_{M^{\QQ}} \tilde{F} \mid \F_s]$.
+\item For tradables driven by memory factors $Z^{(a)} = \int K^{(a)}\,dM$,
+the hedge in the $Z^{(a)}$-direction is obtained by decomposing $\phi$
+using the kernel structure.
+\end{enumerate}
+\end{corollary}
+
+\begin{remark}[Bridge to memory-factor hedging]
+The fresh-noise hedge $\phi$ in the $M^{\QQ}$-direction can be ``pushed forward''
+to hedge loadings on the observables $Z^{(a)}$ using the kernel geometry.
+Specifically, if $dZ^{(a)} = K^{(a)}(t,t)\,dM_t + (\text{history})$, the
+instantaneous exposure to $Z^{(a)}$ is determined by $K^{(a)}(t,t)$ and
+the intrinsic increments $\dGamma^{(a)}$.
+\end{remark}
+
+%==============================================================================
+\section{Examples and Numerical Experiments}\label{sec:examples}
+%==============================================================================
+
+We first establish analytical examples, then provide numerical experiments
+with explicit Python implementations demonstrating the framework's practical
+utility.
+
+\subsection{Analytical examples}
+
+\subsubsection{Classical case: Markov kernel}
+
+When $K(t,s) = \mathbf{1}_{\{s \le t\}}$, we have $Z_t = M_t$ (the observable
+equals the driver). The drift functional becomes
+\[
+B_t^\theta = -\int_0^t \theta_s\,d\bracket{M}_s,
+\]
+recovering classical Girsanov: $M_t = M_t^{\QQ} - \int_0^t \theta_s\,d\bracket{M}_s$.
+
+The risk-neutral constraint \eqref{eq:rn-constraint} reduces to
+$\lambda_t^\top\,d\bracket{M}_t\,\theta_t = 0$, the familiar pointwise condition.
+
+\subsubsection{Fractional Brownian motion}
+
+Let $M = W$ (Brownian motion) and $K = K_H$ the Molchan--Golosov kernel for
+fractional Brownian motion with Hurst parameter $H \in (0,1)$:
+\[
+B_t^H = \int_0^t K_H(t,s)\,dW_s.
+\]
+
+Under the measure change defined by $\theta$, the fBM becomes
+\[
+B_t^H = B_t^{H,\QQ} + B_t^\theta,
+\]
+where $B^{H,\QQ}$ is fBM under $\QQ$ (same Hurst parameter) and
+$B_t^\theta = -\int_0^t K_H(t,s)\,\theta_s\,ds$.
+
+The Hurst parameter $H$ is preserved because $\dGamma(t,h) \asymp h^{2H}$ is
+a bracket invariant.
+
+\subsubsection{Exponential kernel (Ornstein--Uhlenbeck type)}
+
+Let $K(t,s) = e^{-\lambda(t-s)}$ for $\lambda > 0$. Then
+$Z_t = \int_0^t e^{-\lambda(t-s)}\,dM_s$ is an OU-type process. The drift
+functional is
+\[
+B_t^\theta = -\int_0^t e^{-\lambda(t-s)}\,\theta_s\,d\bracket{M}_s.
+\]
+
+For constant $\theta$, this simplifies to $B_t^\theta = -\theta(1 - e^{-\lambda t})/\lambda$
+when $d\bracket{M}_s = ds$.
+
+%------------------------------------------------------------------------------
+\subsection{Numerical validation}
+%------------------------------------------------------------------------------
+
+We validate the theoretical claims via Monte Carlo experiments. Full Python
+implementations are available at \texttt{github.com/quijotic-research/girsanov-volterra}.\footnote{Code includes all experiments, reproducible with fixed random seeds.}
+
+\subsubsection{Claim 1: Classical risk-neutralization fails with memory}
+
+For an asset driven by both fresh noise and a memory factor,
+\[
+\frac{dS}{S} = \mu\,dt + \beta\,dZ + \lambda\,dM,
+\quad Z_t = \int_0^t e^{-\kappa(t-s)}\,dM_s,
+\]
+naive constant $\theta$ (ignoring the memory structure) fails to produce a
+martingale. Table~\ref{tab:naive-vs-operator} shows that naive $\theta = 0.25$
+yields 3.6\% pricing bias.
+
+\subsubsection{Claim 2: Operator-correct $\theta$ restores the martingale}
+
+The correct market price of risk solves the operator equation
+\eqref{eq:rn-constraint}. For the exponential kernel, time-stepping the
+discrete-time Volterra system yields a time-varying $\theta$ ranging from
+$0.10$ to $0.16$ over $[0,1]$. (In the large-$\kappa$ limit, the memory
+contribution decays quickly and $\theta(t) \approx (\mu - r)/(\lambda + \beta\,e^{-\kappa t})$.)
+This reduces bias to 0.9\%---a
+4$\times$ improvement (Table~\ref{tab:naive-vs-operator}).
+
+\begin{table}[h]
+\centering
+\caption{Naive vs.\ operator-correct measure change for memory-driven asset.
+Model: $dS/S = 0.05\,dt + 0.3\,dZ + 0.2\,dM$ with $Z_t = \int_0^t e^{-(t-s)}dM_s$.
+Target: $\E^{\QQ}[S_T] = S_0 = 100$. Monte Carlo with 50{,}000 paths.}
+\label{tab:naive-vs-operator}
+\begin{tabular}{lccc}
+\hline
+\textbf{Method} & \textbf{$\theta$} & $\E^{\QQ}[S_T]$ & \textbf{Bias} \\
+\hline
+Physical measure ($\PP$) & --- & 106.23 & +6.2\% \\
+Naive (constant) & $0.25$ & 96.43 & $-3.6\%$ \\
+Operator-correct (time-varying) & $0.10 \to 0.16$ & 100.91 & $+0.9\%$ \\
+Direct $\QQ$ simulation & --- & 101.28 & $+1.3\%$ \\
+\hline
+\end{tabular}
+\end{table}
+
+We also verify the martingale property at multiple maturities:
+$\E^{\QQ}[S_t/B_t] \approx S_0$ for $t \in \{0.2, 0.4, 0.6, 0.8, 1.0\}$,
+with $|z|$-scores all below 1.3.
+
+\subsubsection{Claim 3: Bracket geometry is measure-invariant}
+
+The fresh-noise energy $\dGamma(t,h) = \int_t^{t+h} K(t+h,s)^2\,d\bracket{M}_s$
+depends only on $(K, \bracket{M})$. Since $\bracket{M^{\QQ}} = \bracket{M}$,
+any scaling law extracted from $\dGamma$ is invariant under measure change.
+
+For the fractional kernel $K(t,s) = (t-s)^{H-1/2}$ with $H = 0.3$, log-log
+regression on $\dGamma(t,h)$ vs.\ $h$ recovers $\hat{H} = 0.3000$ exactly.
+The Hurst parameter is a geometric property, observable under any equivalent
+measure.
+
+\subsubsection{Summary of Monte Carlo validation}
+
+Table~\ref{tab:mc-summary} summarizes all stochastic claims.
+
+\begin{table}[h]
+\centering
+\caption{Monte Carlo validation summary (30{,}000--50{,}000 paths per test).}
+\label{tab:mc-summary}
+\begin{tabular}{lp{5.5cm}c}
+\hline
+\textbf{Test} & \textbf{Criterion} & \textbf{Result} \\
+\hline
+$Z^{\QQ}$ martingale & $\E[Z^{\QQ}_T - Z^{\QQ}_t] \approx 0$ & Pass ($|z| < 0.2$) \\
+Decomposition & $Z = Z^{\QQ} + B^\theta$ pathwise & Pass (error $< 10^{-3}$) \\
+Discounted $S$ martingale & $\E^{\QQ}[S_t/B_t] = S_0$ for all $t$ & Pass ($|z| < 1.3$) \\
+Naive vs.\ operator $\theta$ & Operator bias $<$ naive bias & Pass (0.9\% vs 3.6\%) \\
+Importance sampling & Direct $=$ reweighted & Pass ($< 0.5\%$ diff) \\
+Covariance preservation & Simulated $\approx$ theoretical & Pass ($< 1.5\%$ error) \\
+Rough kernel ($H = 0.3$) & $\dGamma$ scaling extracts $H$ & Pass (exact) \\
+\hline
+\end{tabular}
+\end{table}
+
+%==============================================================================
+\section{Scope and Limitations}\label{sec:limitations}
+%==============================================================================
+
+\subsection{What this paper provides}
+
+\begin{enumerate}
+\item A clean Girsanov framework for Volterra processes that requires no
+semimartingale assumption on the observable.
+\item The bracket invariance principle: geometric features are measure-independent.
+\item The risk-neutral constraint as an operator equation: actionable for
+calibration in memory markets.
+\item Density calculus machinery for computing hedging strategies under $\QQ$.
+\end{enumerate}
+
+\subsection{What this paper does not provide}
+
+\begin{enumerate}
+\item \textbf{Pathwise theory:} We work in $L^2$, not pathwise. Rough path
+Girsanov theory requires different machinery.
+\item \textbf{Existence/uniqueness for the Volterra equation:} We show the
+risk-neutral constraint is a Volterra equation; solving it in full generality
+requires case-by-case analysis.
+\item \textbf{Jump processes:} The exponential Girsanov form \eqref{eq:doleans}
+is for continuous martingales. L\'evy or Poisson drivers require the
+jump-compensator version, though the ``driver-level then operator pushforward''
+philosophy extends naturally.
+\end{enumerate}
+
+%==============================================================================
+\section{Conclusion}\label{sec:conclusion}
+%==============================================================================
+
+We have developed Girsanov theory for Volterra processes, establishing:
+
+\begin{enumerate}
+\item The measure change acts at the driver level, inducing an operator-valued
+drift on observables (\Cref{thm:girsanov-main}).
+
+\item The fresh-noise energy $\dGamma(t,h)$ is invariant under equivalent
+measure changes---it is a geometric quantity, not a probabilistic one
+(\Cref{thm:girsanov-main}(3)).
+
+\item Risk-neutral pricing in memory markets requires solving a Volterra
+equation for the market price of risk (\Cref{cor:rn-constraint}).
+
+\item The Clark--Ocone--type representation under $\QQ$ provides the hedging
+density, computable via Bayes' formula and the modified Leibniz rule
+(\Cref{thm:clark-ocone-Q}).
+\end{enumerate}
+
+The bracket invariance principle is the conceptual core: \emph{equivalent
+measure changes preserve the Volterra bracket geometry and induce only
+operator-valued drift shifts on kernel observables}.
+
+%==============================================================================
+\section*{Acknowledgments}
+%==============================================================================
+
+The author works in financial risk management; the risk-neutral pricing
+application arose from practical experience with memory models. AI tools
+were used as interactive assistants for mathematical exploration. The
+author is responsible for all content.
+
+%==============================================================================
+% References
+%==============================================================================
+
+\begin{thebibliography}{99}
+
+\bibitem{Fontes2026a}
+R.~Fontes.
+\newblock Stochastic calculus as operator factorization.
+\newblock \emph{arXiv:2601.09976}, 2026.
+
+\bibitem{Fontes2026b}
+R.~Fontes.
+\newblock Stochastic calculus for rough fractional {B}rownian motion via
+operator factorization.
+\newblock \emph{arXiv:2601.09967}, 2026.
+
+\bibitem{Fontes2026c}
+R.~Fontes.
+\newblock An {I}t\^o formula via predictable projection for non-semimartingale
+processes.
+\newblock \emph{arXiv:2601.10359}, 2026.
+
+\bibitem{Fontes2026d}
+R.~Fontes.
+\newblock The operator derivative: Intrinsic properties, structural conditions,
+and process-dependent extensions.
+\newblock \emph{Preprint}, 2026.
+
+\bibitem{Fontes2026e}
+R.~Fontes.
+\newblock {PDE} generators from energy space structure in {F}eynman--{K}ac theory.
+\newblock \emph{Preprint}, 2026.
+
+\bibitem{Fontes2026f}
+R.~Fontes.
+\newblock Volterra representations and operator brackets: The kernel-level
+geometry of non-{M}arkovian calculus.
+\newblock \emph{Preprint}, 2026.
+
+\bibitem{Fontes2026g}
+R.~Fontes.
+\newblock Bracket-corrected differentiation for kernel-driven processes:
+Why stochastic calculus rules deform, and what it means for hedging.
+\newblock \emph{Preprint}, 2026.
+
+\bibitem{KaratzasShreve1991}
+I.~Karatzas and S.~E. Shreve.
+\newblock \emph{Brownian Motion and Stochastic Calculus}.
+\newblock Springer, second edition, 1991.
+
+\bibitem{Decreusefond1999}
+L.~Decreusefond and A.~S. \"Ust\"unel.
+\newblock Stochastic analysis of the fractional {B}rownian motion.
+\newblock \emph{Potential Analysis}, 10(2):177--214, 1999.
+
+\bibitem{FrizHairer2014}
+P.~K. Friz and M.~Hairer.
+\newblock \emph{A Course on Rough Paths}.
+\newblock Springer, 2014.
+
+\bibitem{GatheralJaissonRosenbaum2018}
+J.~Gatheral, T.~Jaisson, and M.~Rosenbaum.
+\newblock Volatility is rough.
+\newblock \emph{Quantitative Finance}, 18(6):933--949, 2018.
+
+\bibitem{Nualart2006}
+D.~Nualart.
+\newblock \emph{The {M}alliavin Calculus and Related Topics}.
+\newblock Springer, second edition, 2006.
+
+\end{thebibliography}
+
+\end{document}

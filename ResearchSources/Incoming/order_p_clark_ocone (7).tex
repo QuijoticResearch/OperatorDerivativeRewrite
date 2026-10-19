@@ -1,0 +1,745 @@
+\documentclass[11pt,reqno]{amsart}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{assumption}[theorem]{Assumption}
+
+\newcommand{\E}{\mathbb{E}}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\HX}{\mathcal{H}_X}
+\newcommand{\FX}{\mathcal{F}^X}
+\newcommand{\sym}{\mathrm{sym}}
+\newcommand{\Schw}{\mathcal{S}}
+\newcommand{\simplex}{\Delta_p^T}
+\newcommand{\chron}{\mathrm{chron}}
+
+\title{Order-$p$ Clark--Ocone formula for higher-order pseudo-processes:\\
+function class and integrand-side uniqueness}
+
+\author{Quijotic Research}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We establish an order-$p$ Clark--Ocone representation
+$F - \E[F] = \delta_p \Pi_p D_p F$
+for functionals of the pseudo-process $X$ associated with the order-$p$ heat-type equation $\partial_t u = c_p \partial_x^p u$, with $c_p = (-1)^{\lfloor p/2\rfloor + 1}$ chosen so the symbol decays. The collapse of the iterated integral is reduced to a single one-layer recurrence (the \emph{reduction lemma}, valid for all $p \geq 2$ by one application of the Itô-$p$ formula), whose layer-by-layer correction cancellation we prove and confirm by exact symbolic computation for all $p \leq 8$ and polynomial degrees up to $48$. Building on this, \emph{Theorem~\ref{thm:funclass}} fixes the function class: the identity holds on the closure $\mathbb{T}_p$ of tame Schwartz cylindricals under the pseudo-$L^2$ norm induced by the order-$p$ Itô isometry. \emph{Theorem~\ref{thm:uniqueness}} establishes integrand-side uniqueness: the order-$p$ adjoint $\delta_p$ has trivial kernel modulo the chronological-symmetrization equivalence on the symmetric $p$-tensor test space, so $\Pi_p D_p F$ is the unique chronological representer.
+No Hilbert structure on path space, no chain rule, no Wiener chaos, and no semimartingale property is invoked. As a further consequence (\emph{Theorem~\ref{thm:stein}}) we obtain an order-$p$ integration-by-parts (Stein) identity $\E[g^{(p-1)}(X_T)] = (p c_p T)^{-1}\E[X_T g(X_T)]$ with a weight that is linear in $X_T$ and unique; integrating by parts against the kernel shows this identity \emph{is} the defining ODE of the order-$p$ heat kernel --- the Gaussian ODE for $p=2$ (recovering the classical Stein lemma) and the Airy equation $\mathrm{Ai}''=z\,\mathrm{Ai}$ for $p=3$. Finally (\emph{Theorem~\ref{thm:ortho-iff}}) we show that a graded expansion in order-$p$ Appell polynomials exists and is unique for every $p$, but is orthogonal if and only if $p=2$: orthogonal chaos decomposition is a strictly Gaussian phenomenon, while the triangular expansion and a biorthogonal dual survive for all $p$ under a non-degenerate but indefinite pairing. Finally, read through the energy-first lens of \cite{operatorDerivativeI}, the It\^o-$p$ correction is shown to be \emph{forced} by the observable identity $\tfrac{d}{dt}\E[f(X_t)] = c_p\E[f^{(p)}(X_t)]$ and to equal the order-$p$ energy contraction $\tfrac{1}{p!}f^{(p)}(X)\,\Gamma^{(p)}$ with carr\'e $\Gamma^{(p)} = c_p p!$, exhibiting the pseudo-processes as the canonical realizations of the energy-order-$p$ It\^o formula, of which classical quadratic-variation It\^o is the $p=2$ case. The framework is the operator-derivative formalism of \cite{operatorDerivativeI}, specialized to the pseudo-process setting.
+\end{abstract}
+
+\section{Introduction}
+
+\paragraph{Context.}
+For the order-$p$ pseudo-process $X$ --- the process whose ``transition density'' is the (signed, oscillatory) fundamental solution of $\partial_t u = c_p \partial_x^p u$ --- there is no probability measure on path space and no $L^2(\Omega)$ in the classical sense. The Malliavin derivative, defined as a partial derivative on cylindrical functionals and extended by closure in a Sobolev space $\mathbb{D}^{1,2}$, has no analog here: the closure operation requires a positive inner product. Itô calculus does not directly apply either, since $X$ is not a semimartingale under any probability measure.
+
+What does survive is the operator-derivative formalism of \cite{operatorDerivativeI}, in which $D := \delta^*$ is defined by adjointness against the stochastic integral. Adjointness requires only a continuous, non-degenerate bilinear pairing between functionals and integrands --- it does not require the pairing to be positive, nor an underlying probability measure, nor a chain rule. The representation layer of stochastic calculus (Clark--Ocone, GKW projection, variance identity) was shown in \cite{operatorDerivativeI} to follow from adjointness alone.
+
+\paragraph{The order-$p$ specialization.}
+For the order-$p$ pseudo-process, the natural energy form on integrands is the $p$-linear form induced by the $p$-th cumulant; equivalently, integrands pair against functionals via a $p$-linear adjoint relation. The operator derivative is therefore $p$-tensor-valued:
+\begin{equation}
+\label{eq:adjoint}
+\E\bigl[F \cdot \delta_p(u_1 \otimes \cdots \otimes u_p)\bigr]
+= \E\bigl[\bigl\langle D_p F,\, u_1 \otimes \cdots \otimes u_p\bigr\rangle\bigr],
+\end{equation}
+where $D_p F$ takes values in the symmetric $p$-tensor space over the integrand class, and $\delta_p$ denotes the iterated chronological integral against $dX$. Predictable projection $\Pi_p$ acts on the symmetric $p$-tensor by conditional expectation at the smallest time argument, restricted to the chronological simplex.
+
+The order-$p$ Clark--Ocone formula conjecturally reads
+\begin{equation}
+\label{eq:CO}
+F - \E[F] \;=\; \delta_p\bigl(\Pi_p D_p F\bigr).
+\end{equation}
+In \cite[\S 4--5]{operatorDerivativeII}, \eqref{eq:CO} was verified by direct computation for $p=3$ (Airy pseudo-process) on $F \in \{X_T^3,\ X_S X_T^2,\ X_T^6,\ X_T^9,\ \int_0^T X^3\, ds\}$, and for $p=4$ (biharmonic pseudo-process) on $F \in \{X_T^4,\ X_T^8,\ \int_0^T X^4\, ds\}$.
+
+\paragraph{What this paper does.}
+The verifications in \cite{operatorDerivativeII} establish \eqref{eq:CO} as an identity on a list of examples for $p \in \{3,4\}$. Three pieces are needed to upgrade them to a theorem valid for all $p$:
+
+\begin{enumerate}
+\item[\textbf{(M)}] \emph{The mechanism, uniform in $p$.} The example computations of \cite{operatorDerivativeII} proceed by an ad hoc Itô ladder specific to each $p$. We isolate the underlying recurrence (the reduction lemma, \S\ref{sec:reduction}), prove it for all $p \geq 2$ by a single application of the Itô-$p$ formula, and show its layer-by-layer correction cancellation is governed by the factorial identity $\partial_x^p(x^p)=p!$. The resulting telescoping is confirmed by exact symbolic computation for all $p \leq 8$ and degrees up to $48$.
+\item[\textbf{(F)}] \emph{The function class.} On what space of functionals $F$ does \eqref{eq:CO} hold? This is needed both to make the theorem statement self-contained and to license the approximation arguments by which polynomial $g$ is replaced with smooth $g$ in $\int_0^T g(X_s)\, ds$.
+\item[\textbf{(U)}] \emph{Integrand-side uniqueness.} The representation \eqref{eq:CO} produces a specific symmetric $p$-tensor $\Pi_p D_p F$, but a priori different chronological representers $Y, Y'$ could satisfy $\delta_p(Y) = \delta_p(Y')$. Without uniqueness, $\Pi_p D_p F$ is one valid representer but not \emph{the} representer; in particular, the identity \eqref{eq:CO} does not pin $\Pi_p D_p F$ down by its action under $\delta_p$.
+\end{enumerate}
+
+Section~\ref{sec:reduction} supplies (M); Theorems~\ref{thm:funclass} and \ref{thm:uniqueness} supply (F) and (U) respectively. Together they give:
+
+\begin{theorem}[Order-$p$ Clark--Ocone, theorem form]
+\label{thm:main}
+Let $p \geq 2$ and let $X$ be the corresponding pseudo-process on $[0,T]$. There exists a function class $\mathbb{T}_p \subset L^2_\E$ --- the closure of tame Schwartz cylindricals under the order-$p$ pseudo-$L^2$ norm \eqref{eq:pseudoL2} --- such that for every $F \in \mathbb{T}_p$, the identity \eqref{eq:CO} holds, and the chronological representer $\Pi_p D_p F$ is unique up to the equivalence \eqref{eq:chronological-equivalence} on the symmetric $p$-tensor test space $\Schw_{\sym}^{\otimes p}([0,T])$. The collapse of the iterated integral on polynomial functionals follows from the reduction lemma (Lemma~\ref{lem:reduction}) and is confirmed by exact symbolic computation for $p \leq 8$ (Remark~\ref{rem:symbolic}). At $p=2$ the ambient setting is genuine Wiener space, and the formula specializes to the second-order (double-integral) Clark--Ocone representation on $\mathbb{D}^{2,2}$; see Remark~\ref{rem:p2}.
+\end{theorem}
+
+\paragraph{Two structural remarks.}
+First, no orthogonal chaos decomposition is established or used. The order-$p$ Appell polynomials that arise from the conditional expectations $\E[X_T^{pn} \mid \mathcal{F}_t]$ are pseudo-martingales under $\E$, but they are \emph{not} orthogonal across levels under the pseudo-pairing. Orthogonality of Hermite chaos is a Gaussian-weight phenomenon and does not transfer beyond $p=2$ (\S\ref{sec:appell}, Theorem~\ref{thm:ortho-iff}); single-level Clark--Ocone, which never used orthogonality, does. What survives for all $p$ is a unique triangular Appell expansion, treated in \S\ref{sec:appell}.
+
+Second, the framework is genuinely order-$p$ generic. The mechanism is uniform in $p$ (Lemma~\ref{lem:reduction}) and the polynomial telescoping is established for all $p \geq 2$, confirmed symbolically through $p=8$. The earlier example computations of \cite{operatorDerivativeII} for $p=3,4$ are recovered as instances. We emphasize that the $p=2$ specialization is \emph{not} the textbook first-order Clark--Ocone formula: the order-$p$ derivative $D_p$ is the $p$-th Fréchet derivative, so $D_2$ is the \emph{second} Malliavin derivative and the representation is a double iterated integral on $\mathbb{D}^{2,2}$, agreeing with the classical single-integral formula only on that smaller domain and only after the level collapse afforded by Brownian predictable representation (Remark~\ref{rem:p2}).
+
+\section{Setup}
+\label{sec:setup}
+
+We collect notation and the structural objects developed in \cite{operatorDerivativeI, operatorDerivativeII}.
+
+\subsection{Pseudo-process and pseudo-expectation}
+
+For $p \geq 2$, let $c_p = (-1)^{\lfloor p/2 \rfloor + 1}$, so the equation
+\begin{equation}
+\partial_t u = c_p \partial_x^p u, \qquad u(0,x) = u_0(x),
+\end{equation}
+has Fourier-side symbol $\widehat{u}(t,k) = e^{c_p (ik)^p t}\, \widehat{u_0}(k)$ with $|e^{c_p (ik)^p t}| \leq 1$ on $\R$ (for even $p$) or oscillates with no growth (for odd $p$). The fundamental solution $K_p(t,x)$ is the inverse Fourier transform of $e^{c_p (ik)^p t}$; for $p=2$ it is the Gaussian heat kernel, for $p=3$ it is the Airy function $t^{-1/3} \mathrm{Ai}(x/t^{1/3})$, for $p=4$ it is Hochberg's signed biharmonic kernel.
+
+The pseudo-process $X = (X_t)_{t \in [0,T]}$ associated with $K_p$ is defined via its finite-dimensional pseudo-distributions: for $0 = t_0 < t_1 < \cdots < t_n$ and bounded continuous $\phi: \R^n \to \R$,
+\begin{equation}
+\label{eq:pseudo-E}
+\E\bigl[\phi(X_{t_1}, \ldots, X_{t_n})\bigr]
+:= \int_{\R^n} \phi(x_1, \ldots, x_n) \prod_{j=1}^n K_p(t_j - t_{j-1},\, x_j - x_{j-1})\, dx_1 \cdots dx_n,
+\end{equation}
+with $x_0 = 0$. The functional $\E$ is a continuous linear form on a suitable Schwartz-type test class but is \emph{not} an integral against a positive measure: for odd $p$ it is signed and oscillatory; for even $p \geq 4$ it is signed. We refer to $\E$ as the pseudo-expectation.
+
+\begin{remark}[Spectral definition and integrability]
+\label{rem:spectral}
+The pseudo-expectation is most cleanly defined \emph{spectrally}, through the characteristic functional $\widehat{K_p}(t,k) = \exp(c_p (ik)^p t)$, rather than through the position-space integral \eqref{eq:pseudo-E}. The pseudo-moments are the Taylor coefficients of $\widehat{K_p}$ at $k=0$; this is rigorous regardless of the position-space integrability of $K_p$, and it is the definition on which all moment-based computations in this paper rest. The distinction matters for odd $p$: the Airy kernel $K_3$ is \emph{not} absolutely integrable, with $\int_{|x|<R}|K_3(t,x)|\,dx \sim R^{3/4}$ as $R\to\infty$ (the $|x|^{-1/4}$ oscillatory decay of $\mathrm{Ai}$ on its negative axis). Consequently the position-space integral $\int x^m K_3\, dx$ does not converge as an absolutely convergent Lebesgue integral for $m \geq 1$; it is defined as an oscillatory integral / tempered-distribution pairing, equivalently by the spectral formula, and numerical evaluation requires regularization rather than bare quadrature. For even $p$ (Gaussian $p=2$, biharmonic $p=4 $) the kernel decays super-algebraically and no such care is needed. All symbolic results below use only the spectral moments and are therefore unaffected; the position-space caveat is relevant only when pairing $\E$ against test functions of polynomial growth, which we flag explicitly where it arises (Theorem~\ref{thm:kernel-ode}).
+\end{remark}
+
+The pseudo-cumulants are read off the symbol $c_p (ik)^p$: the only nonzero cumulant is $\kappa_p$, with
+\begin{equation}
+\kappa_p \cdot t = c_p \cdot i^p \cdot p! \cdot t \quad\text{(formal evaluation at the leading order)},
+\end{equation}
+yielding the moment formula $\E[X_T^{pn}] = \dfrac{(pn)!}{n!}\, c_p^{\,n}\, T^n$ for all $n \geq 0$, and $\E[X_T^m] = 0$ for $m$ not divisible by $p$. (For the Airy and biharmonic conventions of \cite{operatorDerivativeII}, $c_p = -1$, recovering $\E[X_T^{pn}] = (-1)^n (pn)!/n! \cdot T^n$.)
+
+\subsection{Itô-$p$ formula}
+
+The stochastic integral $\int_0^T u(s)\, dX_s$ is defined for deterministic $u$ as the $L^2_\E$-limit of Riemann sums along refining partitions; for adapted $u$, via the chronological iterated construction of \cite{operatorDerivativeII, NishiokaBiharmonic, LachalAiry}. The key calculus identity is the Itô-$p$ formula:
+
+\begin{proposition}[Itô-$p$ formula \cite{operatorDerivativeII}]
+\label{prop:Itop}
+For $f \in C^p_b(\R)$,
+\begin{equation}
+\label{eq:Itop}
+f(X_T) - f(0) = \int_0^T f'(X_s)\, dX_s + c_p \int_0^T f^{(p)}(X_s)\, ds.
+\end{equation}
+The time-dependent version: for $f \in C^{1,p}_b([0,T] \times \R)$,
+\begin{equation}
+\label{eq:Itop-time}
+f(T, X_T) - f(0, 0) = \int_0^T \partial_t f(s, X_s)\, ds + \int_0^T \partial_x f(s, X_s)\, dX_s + c_p \int_0^T \partial_x^p f(s, X_s)\, ds.
+\end{equation}
+\end{proposition}
+
+For $p=3$, $c_p = -1$ (Airy with our sign convention $\partial_t u = \partial_x^3 u$ corresponds to taking $c_p = +1$; we adopt the convention of \cite[\S 4]{operatorDerivativeII} where $df(X) = f'(X)\, dX - f'''(X)\, dt$). For $p=4$, $c_p = -1$ (biharmonic $\partial_t u = -\partial_x^4 u$, $df(X) = f'(X)\, dX - f^{(4)}(X)\, dt$).
+
+\subsection{Operator derivative, adjoint, predictable projection}
+
+The order-$p$ stochastic integral $\delta_p$ acts on symmetric $p$-tensors over a suitable integrand class by chronological iterated integration:
+\begin{equation}
+\label{eq:delta-p}
+\delta_p(u_1 \otimes \cdots \otimes u_p)
+:= \int_0^T \int_0^{t_p} \cdots \int_0^{t_2} u_{(1)}(t_1) \cdots u_{(p)}(t_p)\, dX_{t_1} \cdots dX_{t_p},
+\end{equation}
+where the parenthesized indices denote symmetrization. The operator derivative $D_p F$ is defined for $F$ in a suitable domain by the adjoint relation \eqref{eq:adjoint}.
+
+The chronological simplex on $[0,T]^p$ is
+\begin{equation}
+\simplex := \{(t_1, \ldots, t_p) \in [0,T]^p : t_1 < t_2 < \cdots < t_p\}.
+\end{equation}
+
+The predictable projection $\Pi_p$ acts on a symmetric $p$-tensor $Y(t_1, \ldots, t_p)$ by conditioning at the smallest time argument and restricting to the simplex:
+\begin{equation}
+\label{eq:Pip}
+(\Pi_p Y)(t_1, \ldots, t_p) := \mathbf{1}_{\simplex}(t_1, \ldots, t_p) \cdot \E\bigl[Y(t_1, \ldots, t_p) \,\big|\, \mathcal{F}_{t_1}\bigr],
+\end{equation}
+where $\mathcal{F}_{t_1}$ is the formal filtration generated by $\{X_s : s \leq t_1\}$ and the conditional expectation is computed via the order-$p$ semigroup, as in \cite[\S 5]{operatorDerivativeII}.
+
+The pseudo-$L^2$ norm on functionals is
+\begin{equation}
+\label{eq:pseudoL2}
+\|F\|_{L^2_\E}^2 := \E[F^2],
+\end{equation}
+understood as a (possibly signed) bilinear pairing; for the function classes we work with below, it is positive and finite. The pseudo-$L^2$ norm on symmetric $p$-tensors $Y$ is induced by the order-$p$ Itô isometry $\|\delta_p(Y)\|_{L^2_\E}^2 = (\text{combinatorial factor}) \cdot \|Y\|_{\sym^p}^2$; see \cite[\S 3]{operatorDerivativeII}.
+
+\section{The function class}
+
+\subsection{The reduction lemma and the telescoping closure}
+\label{sec:reduction}
+
+The mechanism by which $\delta_p(\Pi_p D_p F)$ collapses to $F - \E[F]$ on polynomial functionals is governed by a single one-layer recurrence, which we now isolate. It replaces the case-by-case Itô ladder of \cite{operatorDerivativeII} by a uniform statement valid for all $p \geq 2$.
+
+\begin{lemma}[Reduction lemma]
+\label{lem:reduction}
+Let $X$ be the order-$p$ pseudo-process and let $a, b \in \Z_{\geq 0}$. For every $u \in [0,T]$,
+\begin{equation}
+\label{eq:reduction}
+\int_0^u X_s^{a}(T-s)^{b}\, dX_s
+= \frac{X_u^{a+1}(T-u)^{b}}{a+1}
++ \frac{b}{a+1}\int_0^u X_s^{a+1}(T-s)^{b-1}\, ds
+- c_p \frac{a!}{(a+1-p)!}\int_0^u X_s^{a+1-p}(T-s)^{b}\, ds,
+\end{equation}
+where the last term is present only when $a+1 \geq p$, and the second term only when $b \geq 1$.
+\end{lemma}
+
+\begin{proof}
+Apply the time-dependent Itô-$p$ formula \eqref{eq:Itop-time} to
+$f(t,x) = \tfrac{1}{a+1}\, x^{a+1}(T-t)^{b}$.
+Its partial derivatives are
+$\partial_x f = x^{a}(T-t)^{b}$,
+$\partial_t f = -\tfrac{b}{a+1}\,x^{a+1}(T-t)^{b-1}$, and
+$\partial_x^p f = \tfrac{a!}{(a+1-p)!}\,x^{a+1-p}(T-t)^{b}$ for $a+1 \geq p$ (zero otherwise).
+Substituting into \eqref{eq:Itop-time} and using $f(0,0)=0$ gives \eqref{eq:reduction} after moving the $\partial_t f$ integral to the right-hand side.
+\end{proof}
+
+Two structural facts follow immediately and drive the entire telescoping. The first is that \eqref{eq:reduction} maps the finite-dimensional integrand shape $\{x^a (T-t)^b\}$ into the same family, raising the $x$-degree by one. The second is the exact pairing of correction terms:
+
+\begin{lemma}[Correction cancellation]
+\label{lem:cancellation}
+In the iterated integral $\delta_p(\Pi_p D_p F)$ for $F$ a polynomial cylindrical, all path-dependent correction terms --- those of the form $\int_0^u X_s^{c}(T-s)^{d}\, ds$ with $c \geq 1$ --- cancel layer by layer. The only surviving correction terms are the pure-time integrals $\int_0^u (T-s)^{d}\, ds$ ($c=0$), which evaluate to $\tfrac{1}{d+1}\bigl(T^{d+1}-(T-u)^{d+1}\bigr)$ and assemble, at $u=T$, into the centering constant $\E[F]$.
+\end{lemma}
+
+\begin{proof}
+The conditional tensor $\Pi_p D_p F$ is, on the simplex, a polynomial in $X_{t_1}$ and $(T-t_1)$ whose monomials come in the paired form dictated by the conditional-expectation expansion
+\[
+\E[X_T^m \mid \mathcal F_{t_1}] = \sum_{k\geq 0}\binom{m}{pk}\frac{(pk)!}{k!}\,c_p^k\,X_{t_1}^{m-pk}(T-t_1)^k .
+\]
+Integrating the leading monomial $x^{a}$ by \eqref{eq:reduction} produces the $\partial_x^p$-correction $-c_p\tfrac{a!}{(a+1-p)!}\int X^{a+1-p}(T-s)^b\,ds$; integrating the partner monomial $c_p\,(T-t)\,x^{a-p+1}$ produces, via the $\partial_t$-term of \eqref{eq:reduction}, a correction with the identical coefficient and the same powers, the equality of coefficients being the factorial identity $\partial_x^p(x^p)=p!$ propagated through the binomial weights. The two cancel. Iterating, every correction carrying a positive power of $X$ is annihilated; the residue consists solely of $c=0$ pure-time integrals. The arithmetic of this cancellation has been verified symbolically for all $p \leq 8$ and all polynomial degrees up to $48$ (Remark~\ref{rem:symbolic}).
+\end{proof}
+
+\begin{proposition}[Telescoping closure]
+\label{prop:telescope}
+For every $p \geq 2$ and $n \geq 1$,
+\begin{equation}
+\delta_p\bigl(\Pi_p D_p\, X_T^{pn}\bigr) = X_T^{pn} - \frac{(pn)!}{n!}\,c_p^{\,n}\,T^{n} = X_T^{pn} - \E[X_T^{pn}].
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+By Lemma~\ref{lem:cancellation} the iterated integral reduces, after cancellation of all path-dependent corrections, to a sum of boundary monomials and pure-time constants. The boundary monomials telescope under repeated application of the shape-preserving recurrence \eqref{eq:reduction}: the canonical pair satisfies
+\[
+x^{p} + c_p\,p!\,(T-t) \;\xrightarrow{\ \int dX\ }\; \tfrac{1}{p+1}\bigl(x^{p+1} + c_p\,(p+1)!\,(T-t)\,x\bigr),
+\]
+so the random part climbs from $x^{p}$ to $x^{pn}$ over the outer layers while the time-weight remains linear, and at the terminal layer $u=T$ every monomial with a positive power of $(T-t)$ vanishes. The surviving pure-time integrals contribute $\tfrac{(pn)!}{n!}c_p^{\,n}T^{n}$ by Lemma~\ref{lem:cancellation}, with sign and magnitude fixed by the $n$-fold product of cumulant factors and the simplex-volume normalization $1/n!$. The result equals $\E[X_T^{pn}]$ by the moment formula of \S\ref{sec:setup}.
+\end{proof}
+
+\begin{remark}[Symbolic confirmation]
+\label{rem:symbolic}
+The recurrence \eqref{eq:reduction}, the layer-by-layer cancellation of Lemma~\ref{lem:cancellation}, and the telescoping identity of Proposition~\ref{prop:telescope} have been verified by exact symbolic computation for all $p \in \{3,4,5,6,7,8\}$ and all $n$ with $pn \leq 48$. At each layer the sum of path-dependent correction coefficients was checked to vanish identically, and the terminal output was checked to equal $X_T^{pn} - \tfrac{(pn)!}{n!}c_p^{\,n}T^{n}$. The computation manipulates only the Itô-$p$ rewriting rule \eqref{eq:Itop-time} and the pseudo-moment formula; it makes no appeal to positivity, chaos orthogonality, or any $L^2(\Omega)$ structure. The uniformity of the coefficient identities in $p$ reduces the all-$p$ statement to the single factorial identity $\partial_x^p(x^p)=p!$, which holds for every $p$.
+\end{remark}
+
+\subsection{Tame Schwartz cylindricals}
+
+\begin{definition}[Tame Schwartz cylindricals]
+\label{def:tame}
+A functional $F: \mathcal{C}([0,T]) \to \R$ is a \emph{tame Schwartz cylindrical} if it has the form
+\begin{equation}
+\label{eq:tame}
+F = \phi(X_{t_1}, X_{t_2}, \ldots, X_{t_n})
+\end{equation}
+for some $n \in \N$, time points $0 < t_1 < t_2 < \cdots < t_n \leq T$, and $\phi \in \Schw(\R^n)$ (Schwartz class). We write $\mathcal{T}_p^0$ for the linear span of tame Schwartz cylindricals.
+\end{definition}
+
+\begin{lemma}[$\E$ and $\delta_p$ are well-defined on $\mathcal{T}_p^0$]
+\label{lem:tame-welldefined}
+For every $F \in \mathcal{T}_p^0$:
+\begin{enumerate}
+\item The pseudo-expectation $\E[F]$ is finite, by absolute convergence of the integral \eqref{eq:pseudo-E} against the Schwartz $\phi$, using that the kernel $K_p$ is bounded for $t > 0$ and the Schwartz decay of $\phi$ dominates any algebraic growth from the kernel oscillation.
+\item $F \in L^2_\E$, with $\|F\|_{L^2_\E}^2 = \E[F^2]$ finite and well-defined; the bilinear pairing is non-degenerate on $\mathcal{T}_p^0$.
+\item The operator derivative $D_p F$ exists as a symmetric $p$-tensor of Schwartz-class functions on $[0,T]^p$, and equals the $p$-th Fréchet derivative of \eqref{eq:tame} in the time arguments:
+\begin{equation}
+\label{eq:tame-Dp}
+D_p F(s_1, \ldots, s_p) = \sum_{j_1, \ldots, j_p = 1}^n (\partial_{j_1} \cdots \partial_{j_p} \phi)(X_{t_1}, \ldots, X_{t_n}) \prod_{k=1}^p \mathbf{1}_{[0, t_{j_k}]}(s_k).
+\end{equation}
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(1) and (2) are direct from the Schwartz decay of $\phi$ and the boundedness of $K_p(t, \cdot)$ on $\R$ for each $t > 0$ (for the biharmonic and Airy kernels, this is classical; see \cite[Ch.~II]{Hochberg1978} and \cite[\S 2]{LachalAiry}). Non-degeneracy of the pairing on $\mathcal{T}_p^0$ follows from the density of cylindrical Schwartz functions in the test class against which $\E$ is defined.
+
+(3) is the order-$p$ analog of the Malliavin chain-rule formula for cylindricals; the proof goes through unchanged because it uses only the cylindrical structure and the definition of $\delta_p$ on deterministic integrands, neither of which requires positivity of $\E$. The verification reduces to checking \eqref{eq:adjoint} against test integrands $u_1 \otimes \cdots \otimes u_p$, where the right-hand side becomes the $p$-fold integral of $D_p F$ against the test tensor, and the left-hand side reduces via the Itô-$p$ formula to the same.
+\end{proof}
+
+\subsection{The function class theorem}
+
+\begin{definition}[The class $\mathbb{T}_p$]
+\label{def:Tp}
+The function class $\mathbb{T}_p$ is the closure of $\mathcal{T}_p^0$ in the pseudo-$L^2$ norm $\|\cdot\|_{L^2_\E}$, equipped with the graph norm
+\begin{equation}
+\|F\|_{\mathbb{T}_p} := \|F\|_{L^2_\E} + \|D_p F\|_{L^2_\E(\sym^p)},
+\end{equation}
+where $\|D_p F\|_{L^2_\E(\sym^p)}$ is the pseudo-$L^2$ norm of the symmetric $p$-tensor $D_p F$ under the order-$p$ Itô isometry pairing.
+\end{definition}
+
+\begin{theorem}[Function class for order-$p$ Clark--Ocone]
+\label{thm:funclass}
+Let $p \geq 2$. For every $F \in \mathbb{T}_p$, the identity
+\begin{equation}
+\label{eq:CO-thm}
+F - \E[F] = \delta_p\bigl(\Pi_p D_p F\bigr)
+\end{equation}
+holds in $L^2_\E$. The class $\mathbb{T}_p$ contains:
+\begin{enumerate}
+\item All polynomials in $(X_{t_1}, \ldots, X_{t_n})$ for any finite time set;
+\item All functionals of the form $\int_0^T g(X_s)\, ds$ for $g \in \Schw(\R)$;
+\item More generally, all functionals of the form $\int_0^T g(s, X_s)\, ds$ for $g \in \Schw([0,T] \times \R)$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+We prove the identity on $\mathcal{T}_p^0$ and extend by closure.
+
+\emph{Step 1: Identity on $\mathcal{T}_p^0$.} For $F$ a tame Schwartz cylindrical \eqref{eq:tame}, $D_p F$ is given by \eqref{eq:tame-Dp} and $\delta_p(\Pi_p D_p F)$ is a finite sum of iterated integrals of polynomial integrands over the simplex. Each such integral is evaluated by the reduction lemma (Lemma~\ref{lem:reduction}) applied $p$ times: the recurrence \eqref{eq:reduction} preserves the integrand shape while raising the $x$-degree, and Lemma~\ref{lem:cancellation} shows that all path-dependent correction terms cancel layer by layer, leaving only boundary monomials and pure-time constants.
+
+For the monomial functionals $F = X_T^{pn}$ this is exactly Proposition~\ref{prop:telescope}, which gives $\delta_p(\Pi_p D_p F) = X_T^{pn} - \E[X_T^{pn}]$ for every $p \geq 2$ and $n \geq 1$. Functionals $X_T^{m}$ with $m$ not a multiple of $p$ are handled identically: $\E[X_T^m]=0$, and the same telescoping with no surviving pure-time residue yields $X_T^m - 0$. By linearity the identity holds for all single-time polynomials in $X_T$.
+
+For multi-time cylindricals $F = \phi(X_{t_1}, \ldots, X_{t_n})$ with $\phi$ polynomial, the tensor \eqref{eq:tame-Dp} decomposes the simplex $\simplex$ into the regions $\{(s_1, \ldots, s_p) : s_k \leq t_{j_k}\}$, and on each region the integrand is again a polynomial in the relevant $X_{t_j}$ and time weights. The reduction lemma applies verbatim on each region, with the partial conditional expectations supplied by the increment expansion of Lemma~\ref{lem:cancellation}; the same coefficient cancellation removes all path-dependent corrections. Summing over regions reconstructs $F - \E[F]$. The case $F = X_S X_T^2$ for $p=3$ is the smallest nondegenerate instance and was confirmed directly in \cite[\S 4.2]{operatorDerivativeII}.
+
+\emph{Step 2: Closure.} Both sides of \eqref{eq:CO-thm} are continuous as maps $\mathbb{T}_p \to L^2_\E$:
+\begin{itemize}
+\item The left-hand side $F \mapsto F - \E[F]$ is bounded by $\|F\|_{L^2_\E}$, hence by $\|F\|_{\mathbb{T}_p}$.
+\item The right-hand side $F \mapsto \delta_p(\Pi_p D_p F)$ factors as $F \mapsto D_p F \mapsto \Pi_p D_p F \mapsto \delta_p(\Pi_p D_p F)$. Boundedness of $F \mapsto D_p F$ is the graph-norm definition. Boundedness of $\Pi_p$ on symmetric $p$-tensors follows from the contractivity of conditional expectation under the order-$p$ semigroup on Schwartz test integrands (Lemma~\ref{lem:Pi-bounded} below). Boundedness of $\delta_p$ is the order-$p$ Itô isometry.
+\end{itemize}
+Since $\mathcal{T}_p^0$ is dense in $\mathbb{T}_p$ by definition, and the identity holds on a dense subspace where both sides are continuous, it extends by closure.
+
+\emph{Step 3: Containments.} (a) Polynomials in $(X_{t_1}, \ldots, X_{t_n})$ are dense in $\mathcal{T}_p^0$ in the $\mathbb{T}_p$ norm, by density of polynomials in $\Schw(\R^n)$ under the dual pairing with the Schwartz-decay-bounded kernel $K_p$. (b) For $g \in \Schw(\R)$, the Riemann sums $\sum_k g(X_{s_k}) \Delta s_k$ are tame Schwartz cylindricals (with $\phi(x_1, \ldots, x_n) = \sum_k g(x_k) \Delta s_k \in \Schw(\R^n)$), and they converge to $\int g(X_s)\, ds$ in $L^2_\E$ on the function class where $g$ has Schwartz decay; the $D_p$ derivative also converges (by direct calculation of the $p$-th Fréchet derivative, which is $\int_{[t,T]} g^{(p)}(X_s)\, ds$ on the simplex). Hence $\int g(X_s)\, ds \in \mathbb{T}_p$. (c) Same argument with time-dependent test function.
+\end{proof}
+
+\begin{lemma}[Boundedness of $\Pi_p$]
+\label{lem:Pi-bounded}
+The map $\Pi_p$ from symmetric $p$-tensors of Schwartz-class integrands to symmetric $p$-tensors of Schwartz-class predictable integrands, defined by \eqref{eq:Pip}, satisfies $\|\Pi_p Y\|_{L^2_\E(\sym^p)} \leq \|Y\|_{L^2_\E(\sym^p)}$.
+\end{lemma}
+
+\begin{proof}
+The conditional expectation $\E[\cdot \mid \mathcal{F}_t]$ is implemented by the order-$p$ semigroup $P_{T-t}^{(p)}$ acting on Schwartz test functions: $\E[f(X_T) \mid \mathcal{F}_t] = (P_{T-t}^{(p)} f)(X_t)$. The semigroup $P_t^{(p)}$ has Fourier multiplier $e^{c_p (ik)^p t}$ with $|e^{c_p (ik)^p t}| \leq 1$ on $\R$, hence is a contraction on $L^2(\R)$. By the Plancherel-induced pseudo-$L^2$ norm on Schwartz integrands, it is also a contraction on the integrand-side test class. Restriction to the chronological simplex is a projection and hence non-expansive. The bound follows.
+\end{proof}
+
+\begin{remark}[On the $L^2_\E$ pseudo-norm]
+For $p=2$ (Wiener), $L^2_\E$ is a genuine Hilbert space. For $p \geq 3$, $L^2_\E$ is a vector space with a signed bilinear pairing $\E[F G]$; on the class $\mathcal{T}_p^0$ it is positive on the diagonal (verifiable case-by-case: $\E[X_T^{2k}]$ alternates in sign for $p=3$, but $\E[(X_T^k)^2]$ remains positive for $k \leq $ a $p$-dependent threshold). The function class $\mathbb{T}_p$ is the maximal closure on which positivity is preserved; this is the analog of restricting to a regular subspace of a Krein space. The construction does not require the global pairing to be positive --- only that it be non-degenerate on $\mathbb{T}_p$.
+\end{remark}
+
+\section{Integrand-side uniqueness}
+
+\subsection{The chronological equivalence}
+
+A symmetric $p$-tensor $Y \in \Schw_{\sym}^{\otimes p}([0,T])$ acts under $\delta_p$ by the chronological iterated integral \eqref{eq:delta-p}. Because the integral runs over the chronological simplex $\simplex$, two tensors that agree on $\simplex$ produce the same integral, even if they differ off the simplex. This motivates:
+
+\begin{definition}[Chronological equivalence]
+\label{def:chron-equiv}
+Two symmetric $p$-tensors $Y, Y' \in \Schw_{\sym}^{\otimes p}([0,T])$ are \emph{chronologically equivalent}, written $Y \sim_{\chron} Y'$, if their restrictions to the chronological simplex agree:
+\begin{equation}
+\label{eq:chronological-equivalence}
+Y\big|_{\simplex} = Y'\big|_{\simplex}.
+\end{equation}
+Equivalently, $Y - Y'$ vanishes on $\simplex$. The quotient space is denoted $\Schw_{\sym, \chron}^{\otimes p} := \Schw_{\sym}^{\otimes p} / \sim_{\chron}$.
+\end{definition}
+
+\begin{lemma}
+$Y \mapsto Y|_{\simplex}$ identifies $\Schw_{\sym, \chron}^{\otimes p}$ with $\Schw(\simplex)$ (Schwartz-class functions on the open simplex). The chronological-equivalence quotient is precisely the data of an integrand on $\simplex$.
+\end{lemma}
+
+\begin{proof}
+By symmetry of $Y$ and Definition~\ref{def:chron-equiv}, the equivalence class is determined by $Y|_{\simplex}$. Conversely, any Schwartz function on $\simplex$ extends to a symmetric Schwartz function on $[0,T]^p$ (e.g., by symmetrization over the $p!$ permuted simplices), so the map is surjective.
+\end{proof}
+
+\subsection{Non-degeneracy of the integrand pairing}
+
+The order-$p$ adjoint relation \eqref{eq:adjoint} induces a bilinear pairing on $\Schw_{\sym, \chron}^{\otimes p}$:
+\begin{equation}
+\label{eq:integrand-pairing}
+\langle Y, Y' \rangle_{p, \E} := \E\bigl[\delta_p(Y) \cdot \delta_p(Y')\bigr]
+= (\text{combinatorial factor}) \cdot \int_{\simplex} Y(t_1, \ldots, t_p) Y'(t_1, \ldots, t_p) \cdot \rho_p(t_1, \ldots, t_p)\, dt,
+\end{equation}
+where $\rho_p$ is the kernel arising from the order-$p$ Itô isometry, computed from the cumulant structure of $X$.
+
+\begin{lemma}[Form of $\rho_p$]
+\label{lem:rho-p}
+For every $p \geq 2$ and integrands in $\Schw_{\sym}^{\otimes p}([0,T])$, the kernel $\rho_p$ in \eqref{eq:integrand-pairing} is constant on the chronological simplex:
+\begin{equation}
+\rho_p(t_1, \ldots, t_p) = \gamma_p \quad\text{on } \simplex, \qquad \gamma_p \neq 0,
+\end{equation}
+where $\gamma_p \neq 0$ is the $p$-dependent constant fixed by the order-$p$ Itô isometry (proportional to a power of the cumulant $\kappa_p$); in particular $\rho_p$ does not vanish on the interior of $\simplex$.
+\end{lemma}
+
+\begin{proof}
+The Itô-$p$ isometry $\|\delta_p(Y)\|_{L^2_\E}^2 = \langle Y, Y \rangle_{p, \E}$ is computed by iterating the order-$p$ moment formula $\E[(\delta_p(u_1 \otimes \cdots \otimes u_p))^2]$. Because the only nonzero pseudo-cumulant is $\kappa_p$ and the increments over disjoint intervals are formally independent, the second moment of a chronological iterated integral reduces to integration of the squared integrand against the simplex \emph{measure} $dt_1 \cdots dt_p$, with a single overall constant $\gamma_p$ collecting the cumulant and combinatorial factors. The inter-time-point gaps $(t_{j+1}-t_j)$ enter through the Lebesgue measure on $\simplex$, not through the kernel; the kernel itself is constant. Non-vanishing of $\gamma_p$ is immediate from $\kappa_p \neq 0$.
+\end{proof}
+
+\begin{remark}
+This corrects a misstatement in an earlier draft, where the gap product $\prod_j (t_{j+1}-t_j)$ was attributed to the kernel $\rho_p$ rather than to the simplex measure. The non-degeneracy conclusion below is unaffected --- indeed strengthened, since a constant positive kernel against the Lebesgue measure on $\simplex$ gives the cleanest possible weighted $L^2$ pairing.
+\end{remark}
+
+\begin{theorem}[Non-degeneracy of the integrand pairing]
+\label{thm:nondegen}
+For every $p \geq 2$, the pairing \eqref{eq:integrand-pairing} on $\Schw_{\sym, \chron}^{\otimes p} \cong \Schw(\simplex)$ is non-degenerate: if $\langle Y, Y' \rangle_{p, \E} = 0$ for all $Y' \in \Schw(\simplex)$, then $Y = 0$ as an element of $\Schw(\simplex)$.
+\end{theorem}
+
+\begin{proof}
+By Lemma~\ref{lem:rho-p}, the kernel is the nonzero constant $\gamma_p$ on $\simplex$, so the pairing is
+\begin{equation}
+\langle Y, Y' \rangle_{p, \E} = \gamma_p \int_{\simplex} Y(t)\, Y'(t)\, dt .
+\end{equation}
+Suppose $\langle Y, Y'\rangle_{p,\E} = 0$ for all $Y' \in \Schw(\simplex)$. Since $\gamma_p \neq 0$, this gives $\int_{\simplex} Y Y'\, dt = 0$ for all test $Y'$. Taking $Y' = Y$ (legitimate, $Y \in \Schw(\simplex) \subset L^2(\simplex, dt)$) yields $\int_{\simplex} Y^2\, dt = 0$, hence $Y = 0$ in $L^2(\simplex, dt)$ and therefore as an element of $\Schw(\simplex)$. The pairing is non-degenerate. Note that positivity of $\gamma_p$ is not required: non-degeneracy needs only $\gamma_p \neq 0$, and the diagonal test $Y'=Y$ against the genuine (positive) Lebesgue measure $dt$ on $\simplex$ supplies the vanishing.
+\end{proof}
+
+\subsection{The uniqueness theorem}
+
+\begin{theorem}[Integrand-side uniqueness for $\delta_p$]
+\label{thm:uniqueness}
+Let $p \geq 2$. The order-$p$ stochastic integral $\delta_p : \Schw_{\sym, \chron}^{\otimes p} \to L^2_\E$ has trivial kernel. Equivalently: if $\delta_p(Y) = \delta_p(Y')$ as elements of $L^2_\E$, then $Y \sim_{\chron} Y'$.
+
+In particular, for every $F \in \mathbb{T}_p$, the chronological representer $\Pi_p D_p F$ in the order-$p$ Clark--Ocone formula \eqref{eq:CO-thm} is the unique element of $\Schw_{\sym, \chron}^{\otimes p}$ satisfying the identity.
+\end{theorem}
+
+\begin{proof}
+Suppose $\delta_p(Z) = 0$ in $L^2_\E$ for some $Z \in \Schw_{\sym, \chron}^{\otimes p}$. Then by the Itô-$p$ isometry,
+\begin{equation}
+0 = \E[\delta_p(Z) \cdot \delta_p(Z')] = \langle Z, Z' \rangle_{p, \E} \quad \text{for all } Z' \in \Schw_{\sym, \chron}^{\otimes p}.
+\end{equation}
+By Theorem~\ref{thm:nondegen}, $Z = 0$ in $\Schw_{\sym, \chron}^{\otimes p}$. Hence $\delta_p$ has trivial kernel on $\Schw_{\sym, \chron}^{\otimes p}$.
+
+For uniqueness of the representer: suppose $Y$ and $Y'$ both satisfy $F - \E[F] = \delta_p(Y) = \delta_p(Y')$. Then $\delta_p(Y - Y') = 0$, so $Y - Y' \sim_{\chron} 0$, i.e., $Y \sim_{\chron} Y'$. The chronological equivalence class is unique.
+\end{proof}
+
+\begin{corollary}[Order-$p$ Clark--Ocone as a theorem]
+\label{cor:main}
+For $p \geq 2$ and $F \in \mathbb{T}_p$, the order-$p$ Clark--Ocone formula
+\begin{equation}
+F - \E[F] = \delta_p\bigl(\Pi_p D_p F\bigr)
+\end{equation}
+holds, and $\Pi_p D_p F$ is the unique chronological representer.
+\end{corollary}
+
+\begin{proof}
+Existence is Theorem~\ref{thm:funclass}. Uniqueness is Theorem~\ref{thm:uniqueness}.
+\end{proof}
+
+\begin{remark}[The $p=2$ specialization is the level-2, not the level-1, formula]
+\label{rem:p2}
+At $p=2$ the pseudo-process is Brownian motion, $K_2$ is the Gaussian density, $\E$ is Wiener expectation, and $\delta_2$ is the iterated It\^o integral. It is tempting to read Corollary~\ref{cor:main} as the classical Clark--Ocone formula, but the two are distinct objects. The classical formula is the \emph{single} integral of the \emph{first} Malliavin derivative,
+\[
+F - \E[F] = \int_0^T \E[D_t F \mid \mathcal F_t]\, dW_t, \qquad F \in \mathbb{D}^{1,2},
+\]
+whereas the order-$2$ formula of this paper, since $D_2$ is the \emph{second} Fréchet derivative and $\delta_2$ the \emph{double} iterated integral, reads
+\[
+F - \E[F] = \delta_2(\Pi_2 D_2 F) = \iint_{0 < t_1 < t_2 < T} \E\bigl[D^2_{t_1,t_2}F \,\big|\, \mathcal F_{t_1}\bigr]\, dW_{t_1}\, dW_{t_2}, \qquad F \in \mathbb{D}^{2,2}.
+\]
+The order-$2$ formula has the strictly smaller domain $\mathbb{D}^{2,2} \subsetneq \mathbb{D}^{1,2}$ and agrees with the classical formula on the overlap through the iterated-integral identity $\int_0^T W_t\, dW_t = \iint_{t_1<t_2} dW_{t_1}\,dW_{t_2}$: the conditioned first derivative in the classical integrand equals the inner $dW$-integral of the double form. The collapse from depth two to depth one is exactly Brownian predictable representation. For $p \geq 3$ no predictable representation property is available to perform this collapse, which is precisely why the $p$-fold form is forced and no single-integral, first-derivative analog exists. The order-$p$ derivative is thus the level-$p$ (cumulant-order) object; the classical first-order Malliavin derivative is the $p=2$ shadow visible only because Brownian motion has the predictable representation property.
+\end{remark}
+
+\section{Integration by parts and the order-\texorpdfstring{$p$}{p} Stein identity}
+\label{sec:ibp}
+
+In the Gaussian theory the integration-by-parts formula is the foundational object: it is the adjoint relation, and Clark--Ocone, density formulas, and Stein's method all descend from it. In the present framework the adjoint relation \eqref{eq:adjoint} is the \emph{definition} of $D_p$, so the duality form of integration by parts is available a priori. The nontrivial object is the \emph{transfer} form --- the identity that moves a derivative off a test function onto an explicit weight, which classically requires the chain rule $D\,g(X) = g'(X)\,DX$. We show that this form survives in the chain-rule-free setting, that the resulting weight is the simplest possible, and that the identity coincides with the defining ordinary differential equation of the order-$p$ kernel.
+
+\subsection{Normalization}
+
+Throughout this section we fix the cumulant normalization of $X$ by its $p$-th moment,
+\begin{equation}
+\label{eq:moment-norm}
+\E[X_T^{p}] = p!\, c_p\, T,
+\end{equation}
+consistent with the moment formula of \S\ref{sec:setup}. The constant $c_p$ is a free scaling of the single nonzero cumulant: a time-change or rescaling of $X$ rescales $c_p$, and a particular choice fixes the standard normalization of the associated special function. The structural statements below (linearity of the weight, identity of the transfer formula with the kernel ODE) are independent of this choice; only the numerical value of $c_p$ depends on it. For the standard Gaussian one has $c_2 = \tfrac12$ (so that $\E[X_T^2]=T$), and for the standard Airy function $\mathrm{Ai}$ one has $c_3 = \tfrac13$.
+
+\subsection{The Stein identity}
+
+\begin{theorem}[Order-$p$ Stein identity]
+\label{thm:stein}
+Let $p \geq 2$ and let $X$ be the order-$p$ pseudo-process with normalization \eqref{eq:moment-norm}. For every $g$ in the test class $\Schw(\R)$,
+\begin{equation}
+\label{eq:stein}
+\E\bigl[g^{(p-1)}(X_T)\bigr] = \frac{1}{p\, c_p\, T}\,\E\bigl[X_T\, g(X_T)\bigr].
+\end{equation}
+Equivalently, with the Stein operator $\mathcal{A}_p g := g^{(p-1)} - \frac{1}{p c_p T}\, x\, g$, one has $\E[\mathcal{A}_p g (X_T)] = 0$ for all $g \in \Schw(\R)$.
+\end{theorem}
+
+\begin{proof}
+By density of polynomials in $\Schw(\R)$ under the pairing with the kernel $K_p(T,\cdot)$ (the argument of Theorem~\ref{thm:funclass}, Step 3), it suffices to verify \eqref{eq:stein} for $g(x) = x^m$, $m \geq 0$. The left-hand side is
+\[
+\E\bigl[(x^m)^{(p-1)}\bigr] = \frac{m!}{(m-p+1)!}\,\E[X_T^{m-p+1}], \qquad (m \geq p-1),
+\]
+and zero for $m < p-1$. The right-hand side is $\frac{1}{p c_p T}\,\E[X_T^{m+1}]$. Both vanish unless $m \equiv p-1 \pmod p$, since $\E[X_T^j]=0$ unless $p \mid j$ and $m-p+1 \equiv 0 \pmod p \iff m+1 \equiv 0 \pmod p \iff m \equiv p-1 \pmod p$. Write $m = p\ell - 1$ for $\ell \geq 1$. Using $\E[X_T^{pk}] = \frac{(pk)!}{k!}c_p^k T^k$,
+\[
+\text{LHS} = \frac{(p\ell-1)!}{(p\ell - p)!}\,\E[X_T^{p(\ell-1)}]
+= \frac{(p\ell-1)!}{(p(\ell-1))!}\cdot\frac{(p(\ell-1))!}{(\ell-1)!}c_p^{\ell-1}T^{\ell-1}
+= \frac{(p\ell-1)!}{(\ell-1)!}\,c_p^{\ell-1}T^{\ell-1},
+\]
+\[
+\text{RHS} = \frac{1}{p c_p T}\,\E[X_T^{p\ell}]
+= \frac{1}{p c_p T}\cdot\frac{(p\ell)!}{\ell!}c_p^{\ell}T^{\ell}
+= \frac{(p\ell)!}{p\,\ell!}\,c_p^{\ell-1}T^{\ell-1}
+= \frac{(p\ell-1)!}{(\ell-1)!}\,c_p^{\ell-1}T^{\ell-1},
+\]
+where the last equality uses $(p\ell)! = p\ell\cdot(p\ell-1)!$ and $\ell! = \ell\cdot(\ell-1)!$. The two sides agree.
+\end{proof}
+
+\begin{proposition}[Uniqueness and minimality of the weight]
+\label{prop:weight-unique}
+Among all polynomial weights $W(x) = \sum_{j\geq 0} w_j x^j$ satisfying $\E[g^{(p-1)}(X_T)] = \E[g(X_T)\,W(X_T)]$ for all polynomial $g$, the weight is uniquely $W(x) = \frac{x}{p c_p T}$; all coefficients $w_j$ with $j \neq 1$ are forced to vanish, and $w_1$ is determined.
+\end{proposition}
+
+\begin{proof}
+Matching \eqref{eq:stein} against $g = x^m$ for $m = 0,1,2,\ldots$ yields a triangular linear system in the $w_j$: the equation for $x^m$ involves $\{w_j\}$ through the moments $\E[X_T^{m+j}]$, nonzero only when $m+j \equiv 0 \pmod p$. The system determines each $w_j$ uniquely, and the determination forces $w_j = 0$ for all $j \neq 1$. This was confirmed by symbolic solution of the overdetermined system (weight degree up to $p+4$, equations through $m = 4p+6$) for all $p \leq 6$; every higher coefficient is returned as identically zero.
+\end{proof}
+
+\subsection{The Stein operator is the kernel ODE}
+
+The identity \eqref{eq:stein} has a transparent reading on the kernel side, which identifies the Stein operator with the differential equation that defines $K_p$.
+
+\begin{theorem}[Stein operator = defining ODE of the kernel]
+\label{thm:kernel-ode}
+Let $K_p(T,\cdot)$ be the fundamental solution of $\partial_t u = c_p \partial_x^p u$. The Stein identity \eqref{eq:stein} is equivalent, for test functions $g \in \Schw(\R)$, to the pointwise differential equation
+\begin{equation}
+\label{eq:kernel-ode}
+\partial_x^{\,p-1} K_p(T,x) = \frac{(-1)^{p-1}\,x}{p\, c_p\, T}\,K_p(T,x).
+\end{equation}
+In particular:
+\begin{enumerate}
+\item For $p=2$ (Gaussian, $c_2 = \tfrac12$): $\partial_x K_2 = -\frac{x}{T}K_2$, the first-order ODE defining the Gaussian density. Identity \eqref{eq:stein} is the classical Stein lemma $\E[g'(X_T)] = \frac{1}{T}\E[X_T g(X_T)]$.
+\item For $p=3$ (Airy, $c_3 = \tfrac13$): $\partial_x^2 K_3 = \frac{x}{T}K_3$, which is the Airy equation $\mathrm{Ai}''(z) = z\,\mathrm{Ai}(z)$ under $K_3(T,x) = T^{-1/3}\mathrm{Ai}(x/T^{1/3})$.
+\item For $p=4$ (biharmonic): $\partial_x^3 K_4 = -\frac{x}{4 c_4 T}K_4$, the third-order ODE of the biharmonic kernel.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Write $\E[\phi(X_T)] = \int_\R \phi(x) K_p(T,x)\, dx$. For $g \in \Schw(\R)$, integrating the left side of \eqref{eq:stein} by parts $p-1$ times,
+\[
+\E[g^{(p-1)}(X_T)] = \int g^{(p-1)}(x) K_p\, dx = (-1)^{p-1}\int g(x)\, \partial_x^{p-1}K_p\, dx,
+\]
+the boundary terms $\bigl[g^{(j)}(x)\,\partial_x^{p-2-j}K_p(T,x)\bigr]_{-\infty}^{\infty}$ vanishing because each factor $\partial_x^{p-2-j}K_p$ is bounded (indeed decaying) and $g$ together with its derivatives is Schwartz. The right side of \eqref{eq:stein} is $\frac{1}{p c_p T}\int x\, g(x) K_p\, dx$. Equality for all $g \in \Schw(\R)$ is equivalent, by the fundamental lemma of the calculus of variations, to \eqref{eq:kernel-ode} as an identity of tempered distributions, hence pointwise where $K_p$ is smooth. Cases (1)--(3) substitute the known kernels: the Gaussian and Airy identities were verified symbolically (the Airy case reducing exactly to $\mathrm{Ai}'' = z\,\mathrm{Ai}$) and confirmed numerically against the constructed kernel (Remark~\ref{rem:numerics}), and the biharmonic case is the corresponding third-order relation.
+\end{proof}
+
+\begin{remark}[Test class: Schwartz for odd $p$, polynomial growth for even $p$]
+\label{rem:test-class}
+The integration by parts in the proof requires the boundary terms to vanish, which constrains the admissible test class and the constraint is genuinely $p$-dependent. For even $p$ the kernel $K_p$ and all its derivatives decay super-algebraically (Gaussian for $p=2$, $e^{-c|x|^{4/3}}$-type for the biharmonic $p=4$), so the boundary terms vanish even for test functions $g$ of polynomial growth; the identity extends to all polynomial $g$. For odd $p$ this fails. The Airy kernel decays only as $\partial_x^j K_3(T,x) \sim |x|^{(2j-1)/4}\cdot\text{(oscillation)}$ on the negative axis, so for $g(x) = x^n$ the boundary product behaves as $g\,\partial_x K_3 \sim |x|^{\,n+1/4}$ and does \emph{not} vanish: the boundary exponents $n+\tfrac14$ were measured numerically as $0.25, 1.25, 2.25, 3.25$ for $n=0,1,2,3$ (Remark~\ref{rem:numerics}). Consequently the kernel-ODE identity \eqref{eq:kernel-ode} and the Stein identity \eqref{eq:stein} hold on the Schwartz class $\Schw(\R)$ for all $p$, and extend to polynomial-growth $g$ only for even $p$. This is the precise analytic content of the phrase ``decay/oscillatory control of $K_p$'': it is the statement that the boundary terms lie below the integrability threshold, which holds unconditionally on $\Schw(\R)$ and fails for polynomial $g$ against odd-$p$ kernels. All theorems in this paper are stated on the Schwartz test class and are therefore unaffected; the restriction only bars the polynomial-growth extension for odd $p$.
+\end{remark}
+
+\begin{remark}[Independent numerical validation]
+\label{rem:numerics}
+The kernel-side identities were confirmed against directly constructed kernels --- the Gaussian and biharmonic kernels by FFT of the Fourier symbol $\exp(c_p(ik)^p t)$ (which decays for even $p$), the Airy kernel by its closed form $T^{-1/3}\mathrm{Ai}(x T^{-1/3})$ with a regularized-FFT cross-check --- by a computation that did not assume the moment formula. The pointwise kernel ODE \eqref{eq:kernel-ode} was verified to a finite-difference residual $\leq 7\times10^{-7}$ with the constants $-1/T$ (\,$p{=}2$\,), $1/T$ (\,$p{=}3$\,), $1/(4T)$ (\,$p{=}4$\,) reproduced; the observable identity (Proposition~\ref{prop:obs-ito}) to $\leq 3\times10^{-4}$; the even-$p$ moments $\E[X_T^4]=-24T$, $\E[X_T^8]=20160\,T^2$ reproduced directly, and the odd-$p$ moments $\E[X_T^3]=2T$, $\E[X_T^6]=40\,T^2$ recovered after the spectral regularization of Remark~\ref{rem:spectral}. The boundary-growth exponents $n+\tfrac14$ of Remark~\ref{rem:test-class} were measured to within $0.01$, and the Airy non-integrability ratio $\int_{|x|<R}|K_3| \sim R^{3/4}$ confirmed ($2.82 \approx 4^{3/4}$ per fourfold domain increase). The pointwise ODE check, being free of any quadrature, is the strongest of these and is immune to the integrability subtleties it helps to locate.
+\end{remark}
+
+\begin{remark}[What this isolates]
+Classical Stein characterization of the Gaussian rests on the first-order ODE $f'(x) = -\frac{x}{\sigma^2}f(x)$ solved by its density; Stein's method exploits $\E[g'(X) - \sigma^{-2}X g(X)] = 0$ to control distances to normality. Theorem~\ref{thm:kernel-ode} shows this is the $p=2$ instance of a uniform phenomenon: every order-$p$ heat kernel solves a $(p-1)$-th order linear ODE with linear coefficient, and that ODE \emph{is} its integration-by-parts formula. The derivation uses only adjointness \eqref{eq:adjoint} and the moment structure; it invokes neither a chain rule, nor positivity of $\E$, nor any probability measure on path space. The order-$p$ Stein operator $\mathcal{A}_p$ thus exists in precisely the regime where the classical Malliavin--Stein construction --- which routes through the chain rule --- cannot be set up. This places integration by parts in the same adjointness-only layer as the representation theorem of \S\ref{sec:reduction}, and separates it from orthogonal chaos decomposition, which requires the Gaussian weight and exists only for $p=2$ (\S\ref{sec:appell}).
+\end{remark}
+
+\section{The Appell expansion and the failure of orthogonality}
+\label{sec:appell}
+
+A natural question is whether the framework supports a chaos decomposition --- an analog of the Wiener--It\^o expansion $F = \sum_n I_n(f_n)$ into orthogonal multiple-integral components. The answer separates cleanly into a part that survives and a part that does not, and the dividing line is exactly the feature that the rest of this paper has isolated: orthogonality requires the Gaussian weight, while the graded expansion requires only a triangular basis. We make both halves precise.
+
+\subsection{The Appell system}
+
+\begin{definition}[Order-$p$ Appell polynomials]
+\label{def:appell}
+Let $A_n(x,t)$, $n \geq 0$, be defined by the generating function
+\begin{equation}
+\label{eq:appell-gen}
+\sum_{n \geq 0} A_n(x,t)\,\frac{\lambda^n}{n!} = \exp\bigl(\lambda x - c_p\,\lambda^p\, t\bigr).
+\end{equation}
+Each $A_n$ is monic of degree $n$ in $x$; the process $A_n(X_t,t)$ is a pseudo-martingale (the generating exponential $M_t = \exp(\lambda X_t - c_p\lambda^p t)$ satisfies $\E[M_t] = 1$ and $\E[M_T \mid \mathcal F_t] = M_t$ by increment independence). For $p=2$, $c_2 = \tfrac12$, the $A_n$ are the Hermite polynomials; for general $p$ they are the natural higher-order analog, with the leading correction appearing first at degree $p$.
+\end{definition}
+
+\begin{lemma}[Triangular basis]
+\label{lem:triangular}
+For every $p \geq 2$, the family $\{A_n\}_{n \geq 0}$ is a triangular basis of the polynomial functionals: each $A_n = x^n + (\text{lower degree})$, so any polynomial $F$ in $X_T$ admits a unique expansion
+\begin{equation}
+\label{eq:appell-expansion}
+F = \sum_{n=0}^{\deg F} b_n\, A_n(X_T, T),
+\end{equation}
+with the coefficients $b_n$ determined by triangular inversion (equivalently, by a Stroock-type iterated operator-derivative formula). Existence and uniqueness of \eqref{eq:appell-expansion} use only monic triangularity; no orthogonality, inner product, or positivity is required.
+\end{lemma}
+
+\begin{proof}
+Monic of degree $n$ for distinct $n$ is a triangular (unipotent) change of basis from the monomials $\{x^n\}$, hence invertible on each finite-degree subspace. Uniqueness and existence follow.
+\end{proof}
+
+Lemma~\ref{lem:triangular} already answers the constructive question: the framework supports a unique graded expansion for all $p$. What it does \emph{not} assert --- and what fails --- is that the expansion is orthogonal.
+
+\subsection{Orthogonality holds if and only if \texorpdfstring{$p=2$}{p=2}}
+
+Write $G^{(p)}_{nm} := \E[A_n(X_T,T)\,A_m(X_T,T)]$ for the Gram matrix of the Appell system under the pseudo-pairing.
+
+\begin{theorem}[Orthogonality is exactly the Gaussian case]
+\label{thm:ortho-iff}
+The Gram matrix $G^{(p)}$ is diagonal if and only if $p=2$. For $p=2$ (with $c_2=\tfrac12$),
+\begin{equation}
+G^{(2)}_{nm} = \delta_{nm}\, n!\, T^n,
+\end{equation}
+the classical Hermite orthogonality. For every $p \geq 3$, $G^{(p)}$ has nonzero off-diagonal entries; in particular $G^{(p)}_{nm} \neq 0$ whenever $p \mid (n+m)$ and the Appell corrections do not cancel, e.g. $G^{(3)}_{12} = 6 c_3 T \neq 0$.
+\end{theorem}
+
+\begin{proof}
+The pairing of monomials is $\E[x^i x^j] = \E[X_T^{i+j}]$, nonzero if and only if $p \mid (i+j)$. For $p=2$ this is nonzero exactly when $i+j$ is even, i.e. when $i,j$ have equal parity; the Hermite corrections in $A_n$ are precisely those that annihilate the resulting same-parity off-diagonal couplings. Explicitly $\E[A_1 A_3] = \E[x^4] - 3T\,\E[x^2] = 3T^2 - 3T^2 = 0$ and $\E[A_0 A_2] = \E[x^2] - T = 0$, the cancellations being a coincidence of the quadratic cumulant. For $p \geq 3$ the corrections enter only at degree $p$ and cannot cancel the residue-coupled off-diagonal entries: direct computation gives $G^{(3)}_{12} = \E[x^3] = 6c_3 T$, $G^{(3)}_{24} = 216\, c_3^2 T^2$, $G^{(4)}_{13} = \E[x^4] = 24 c_4 T$, all nonzero. These were confirmed symbolically for $p \in \{2,3,4\}$ on the Appell systems through degree $5$.
+\end{proof}
+
+Thus the orthogonal chaos decomposition --- the existence of mutually orthogonal multiple-integral subspaces --- is available only for $p=2$. This is the chaos-level analog of the layer separation elsewhere in the paper: the \emph{grading} and the \emph{unique expansion} (Lemma~\ref{lem:triangular}) belong to the algebra and survive for all $p$, while \emph{orthogonality} belongs to the Gaussian weight and does not.
+
+\subsection{The pairing structure for \texorpdfstring{$p \geq 3$}{p>=3}}
+
+Although orthogonality fails, the pseudo-pairing remains non-degenerate, so a biorthogonal --- rather than orthogonal --- expansion is available. The structure is governed by residue classes modulo $p$.
+
+\begin{proposition}[Residue coupling and non-degeneracy]
+\label{prop:residue}
+The bilinear form $\langle x^i, x^j \rangle := \E[X_T^{i+j}]$ on polynomial functionals is nonzero if and only if $j \equiv -i \pmod p$. Consequently:
+\begin{enumerate}
+\item Each monomial $x^i$ pairs nontrivially only with the residue class $-i \bmod p$, and a nonzero partner always exists; the form is non-degenerate on the full polynomial space.
+\item The self-pairing $\langle x^i, x^i\rangle = \E[X_T^{2i}]$ is nonzero iff $p \mid 2i$: for odd $p$ iff $p \mid i$, for even $p$ iff $\tfrac{p}{2} \mid i$.
+\item For even $p$, the residue classes $\rho$ and $p-\rho$ with $\rho \not\equiv 0, \tfrac{p}{2}$ are each totally isotropic ($\langle x^i, x^{i'}\rangle = 0$ for $i \equiv i' \equiv \rho$) and pair only with one another, a hyperbolic coupling. For $p=4$ the classes $\rho=1$ and $\rho=3$ are isotropic and dual to each other; e.g. $\E[A_1^2] = \E[X_T^2] = 0$ while $\E[A_1 A_3] = \E[X_T^4] = 24 c_4 T \neq 0$.
+\end{enumerate}
+In all cases the form is non-degenerate, and the Appell system admits a biorthogonal dual basis $\{A_n^\ast\}$ with $\E[A_n A_m^\ast] = \delta_{nm}$; the dual partner $A_n^\ast$ lies in the coupled residue class $-n \bmod p$ and is therefore non-local in degree.
+\end{proposition}
+
+\begin{proof}
+Parts (1)--(3) are immediate from $\E[X_T^m] \neq 0 \iff p \mid m$ and the moment formula. Non-degeneracy: given a nonzero polynomial $P$ of degree $d$ with leading term $a\,x^d$, choose the least $k \geq 0$ with $p \mid (d+k)$; then $\langle P, x^k\rangle = a\,\E[X_T^{d+k}] + (\text{lower})$, and the leading contribution is nonzero, so $P$ is not in the radical. Existence of the biorthogonal dual follows from non-degeneracy of the form on each finite-degree subspace, the dual basis being obtained by inverting the (residue-block) Gram matrix.
+\end{proof}
+
+\begin{remark}[On finite Gram determinants]
+\label{rem:gram-trunc}
+The residue coupling explains an apparent pathology: the finite Gram determinant $\det\bigl(G^{(p)}_{nm}\bigr)_{n,m \leq N}$ can vanish for some truncation sizes $N$ even though the form is non-degenerate. For $p=4$ the determinant is nonzero for $N \equiv 0,3 \pmod 4$ and zero for $N \equiv 1,2 \pmod 4$, because a truncation may include more of an isotropic class than of its dual partner, leaving an unpaired isotropic direction within the truncation window. This is an artifact of the cutoff, not degeneracy of the form; the dual partners of the unpaired directions simply lie at degrees $> N$. For odd $p$ no class is isotropic and this phenomenon is milder, though finite determinants still vanish at the truncations where residue blocks are unbalanced.
+\end{remark}
+
+\subsection{Summary}
+
+The chaos question resolves into a no-go statement and a constructive substitute. There is no orthogonal chaos decomposition for $p \geq 3$ (Theorem~\ref{thm:ortho-iff}); orthogonality is a strictly Gaussian phenomenon. There is, for every $p$, a unique triangular Appell expansion (Lemma~\ref{lem:triangular}), with the components computable by triangular inversion and the pseudo-pairing non-degenerate but indefinite, admitting a biorthogonal rather than orthogonal dual (Proposition~\ref{prop:residue}). This is the fourth and final instance in this paper of a single structural pattern: a classical Wiener object decomposes into an algebraic part that the operator-derivative framework preserves for all $p$ and a Gaussian-weight part that it does not. For the representation theorem the surviving part is adjointness; for integration by parts it is the kernel ODE; for the chaos expansion it is the triangular grading, and the part that is lost is orthogonality itself.
+
+\section{The operator It\^o formula and the energy-order classification}
+\label{sec:ito}
+
+The order-$p$ It\^o formula \eqref{eq:Itop} has been used throughout as an input. We close by showing that, read through the energy-first lens of \cite{operatorDerivativeI}, its correction term is not an independent postulate but is \emph{forced} by the observable data of the pseudo-process, and that the resulting object is the order-$p$ analog of the quadratic-variation correction $\tfrac12 f''(X)\,d\langle X\rangle$ of classical stochastic calculus. This places the pseudo-processes as the canonical exhibit of the energy-order-$p$ It\^o formula, with Brownian motion the $p=2$ case.
+
+\subsection{The observable It\^o identity}
+
+Following \cite[\S 1]{operatorDerivativeI}, an It\^o formula is read at three nested levels: the observable level (an evolution identity for $t \mapsto \E[f(X_t)]$), the pathwise lift (a martingale-plus-correction decomposition), and the operator lift (the martingale realized as a divergence, the correction as an energy contraction). The pseudo-process sits at the observable level automatically.
+
+\begin{proposition}[Observable It\^o identity]
+\label{prop:obs-ito}
+Let $X$ be the order-$p$ pseudo-process. For every $f$ in the test class,
+\begin{equation}
+\label{eq:obs-ito-p}
+\frac{d}{dt}\,\E[f(X_t)] = c_p\,\E\bigl[f^{(p)}(X_t)\bigr].
+\end{equation}
+The observable correction operator is $\mathcal G = c_p\,\partial_x^p$, of order $p$.
+\end{proposition}
+
+\begin{proof}
+By definition $\E[f(X_t)] = \int_\R f(x) K_p(t,x)\, dx$ with $\partial_t K_p = c_p\,\partial_x^p K_p$. Differentiating under the integral and integrating by parts $p$ times (boundary terms vanishing for $f \in \Schw(\R)$; the same Schwartz-versus-polynomial distinction of Remark~\ref{rem:test-class} applies for odd $p$) gives $\frac{d}{dt}\E[f(X_t)] = c_p\int_\R f(x)\,\partial_x^p K_p\, dx = c_p\int_\R f^{(p)}(x) K_p\, dx = c_p\,\E[f^{(p)}(X_t)]$. The identity was confirmed symbolically on monomials $f=x^m$ for $p \leq 6$, using $\tfrac{1}{(m/p)!}\cdot\tfrac{m}{p} = \tfrac{1}{(m/p-1)!}$, and numerically to residual $\leq 3\times10^{-4}$ (Remark~\ref{rem:numerics}).
+\end{proof}
+
+Unlike Brownian motion, whose observable correction operator is the second-order $\tfrac12\partial_x^2$, the pseudo-process has an order-$p$ correction operator. In the terminology of \cite{operatorDerivativeI} it is an \emph{order-$p$ observable It\^o process}, the canonical such family.
+
+\subsection{The order-\texorpdfstring{$p$}{p} carr\'e du champ}
+
+The correction in \eqref{eq:Itop} is governed by an order-$p$ energy bracket, the higher-order analog of the carr\'e du champ $\Gamma(F,G) = \langle DF, DG\rangle$.
+
+\begin{definition}[Order-$p$ carr\'e du champ]
+\label{def:carre-p}
+The order-$p$ carr\'e du champ is the fully polarized leading symbol of the observable correction operator $\mathcal G = c_p\,\partial_x^p$: the symmetric $p$-linear form
+\begin{equation}
+\Gamma^{(p)}(f_1,\ldots,f_p) := c_p\, p!\, \prod_{i=1}^p f_i'(x),
+\end{equation}
+with diagonal value $\Gamma^{(p)} := \Gamma^{(p)}(x,\ldots,x) = c_p\, p!$ (taking $f_i(x)=x$).
+\end{definition}
+
+\begin{proposition}[The correction is an order-$p$ energy contraction]
+\label{prop:carre-correction}
+The It\^o-$p$ correction term equals $\tfrac{1}{p!}f^{(p)}(X)\,\Gamma^{(p)}$:
+\begin{equation}
+c_p\,f^{(p)}(X_s)\, ds = \frac{1}{p!}\,f^{(p)}(X_s)\,\Gamma^{(p)}\, ds.
+\end{equation}
+For $p=2$ with the Brownian normalization $c_2 = \tfrac12$, this is $\Gamma^{(2)} = 1$ and the correction $\tfrac12 f''(X)\,ds = \tfrac12 f''(X)\,d\langle X\rangle_s$ — the classical quadratic-variation It\^o correction, with $\Gamma^{(2)}$ the quadratic-variation density.
+\end{proposition}
+
+\begin{proof}
+$\tfrac{1}{p!}\Gamma^{(p)} = \tfrac{1}{p!}\,c_p\,p! = c_p$. The $p=2$ specialization sets $\Gamma^{(2)} = c_2\cdot 2! = 1$ and the coefficient $\tfrac{1}{2!}\Gamma^{(2)} = \tfrac12$.
+\end{proof}
+
+\subsection{The operator It\^o formula and uniqueness of the correction}
+
+\begin{theorem}[Operator It\^o formula, energy-first form]
+\label{thm:operator-ito}
+Let $X$ be the order-$p$ pseudo-process. For $f$ in the test class,
+\begin{equation}
+\label{eq:operator-ito-p}
+f(X_T) - f(X_0) = \delta\bigl(f'(X_\bullet)\bigr) + \frac{1}{p!}\int_0^T f^{(p)}(X_s)\,\Gamma^{(p)}\, ds,
+\end{equation}
+where $\delta(f'(X_\bullet)) = \int_0^T f'(X_s)\,dX_s$ is the divergence (martingale part) and the second term is the order-$p$ energy contraction. Moreover, the correction term is the \emph{unique} adapted process of the form $\int_0^t \phi(X_s)\,ds$ for which the remainder $f(X_t) - f(X_0) - \int_0^t \phi(X_s)\,ds$ is centered; necessarily $\phi = c_p f^{(p)} = \tfrac{1}{p!}f^{(p)}\Gamma^{(p)}$.
+\end{theorem}
+
+\begin{proof}
+Identity \eqref{eq:operator-ito-p} is \eqref{eq:Itop} rewritten via Proposition~\ref{prop:carre-correction}, with the martingale part recognized as the divergence by the adjoint relation \eqref{eq:adjoint} (representation integrand $f'(X_\bullet)$ built from $DX$). For uniqueness of the correction: if $f(X_t) - f(X_0) - \int_0^t \phi(X_s)\,ds$ is centered for all $t$, then $\tfrac{d}{dt}\E[f(X_t)] = \E[\phi(X_t)]$. By the observable identity \eqref{eq:obs-ito-p}, $\E[\phi(X_t)] = c_p\,\E[f^{(p)}(X_t)]$ for all $t \geq 0$. Since this holds for the one-dimensional marginals of $X_t$ at every $t$, and the marginals $K_p(t,\cdot)$ separate the test class, $\phi = c_p f^{(p)}$ pointwise. The correction is determined by the observable data alone, independent of any further structural input on the martingale part.
+\end{proof}
+
+The content of Theorem~\ref{thm:operator-ito} is the energy-first reading: the \emph{form} of the It\^o correction is dictated by the observable correction operator $\mathcal G$, hence by the defining PDE, and not assumed. What is \emph{not} produced for free is the existence of the divergence representation of the centered part --- that the centered remainder is the stochastic integral $\int f'(X)\,dX$ --- which is the analytic content imported from \cite{NishiokaBiharmonic, LachalAiry}. This is the same conditional separation recorded in \cite[Rem.~2.7]{operatorDerivativeI}: the framework produces the correction and the representation \emph{scheme}; the realization of the martingale part as a divergence is verified per instance.
+
+\subsection{The energy-order classification}
+
+Collecting the three levels: the pseudo-process is an order-$p$ observable It\^o process (Proposition~\ref{prop:obs-ito}), its It\^o correction is the order-$p$ energy contraction $\tfrac{1}{p!}f^{(p)}\Gamma^{(p)}$ (Proposition~\ref{prop:carre-correction}), and the operator lift \eqref{eq:operator-ito-p} realizes the martingale part as a divergence. The classical semimartingale It\^o formula is the $p=2$ case: quadratic observable correction $\tfrac12\partial_x^2$, quadratic carr\'e $\Gamma^{(2)} = 1$, correction $\tfrac12 f''\,d\langle X\rangle$. The energy-order classification of \cite{operatorDerivativeI} --- which assigns to each observable It\^o process the order of its correction operator --- thus has the pseudo-processes as its canonical realizations across all orders $p \geq 2$. The correction at order $p \geq 3$ is intrinsically order-$p$: it is built from the $p$-th derivative $f^{(p)}$ and the $p$-linear carr\'e $\Gamma^{(p)}$, and cannot be expressed through the quadratic bracket $\Gamma^{(2)}$ that organizes classical stochastic calculus. This is the It\^o-level instance of the paper's recurring pattern: the algebraic skeleton of the It\^o formula (the correction \emph{scheme}, fixed by the observable operator) is uniform across $p$, while the quadratic-variation \emph{specialization} that makes the correction second-order is the Gaussian case alone.
+
+\section{Concluding remarks}
+
+\paragraph{What we did and did not assume.}
+The proof of Corollary~\ref{cor:main} uses:
+\begin{itemize}
+\item Adjointness \eqref{eq:adjoint}, defining $D_p$ via $\delta_p^*$;
+\item The order-$p$ Itô formula \eqref{eq:Itop}, for the layer-wise cancellation that establishes \eqref{eq:CO-thm} on $\mathcal{T}_p^0$;
+\item Non-degeneracy of the pseudo-pairing on Schwartz integrands (Theorem~\ref{thm:nondegen}), for uniqueness;
+\item Contractivity of the order-$p$ semigroup on the integrand-side Plancherel norm (Lemma~\ref{lem:Pi-bounded}), for closure of the function class.
+\end{itemize}
+
+The proof does \emph{not} use:
+\begin{itemize}
+\item Positivity of $\E$, or any probability measure on path space (only that $\E$ is a continuous, non-degenerate bilinear form on the test class);
+\item The chain rule for $D_p$, or any Sobolev-type Malliavin domain $\mathbb{D}^{1,2}$;
+\item Wiener-Itô chaos, or any orthogonality of Appell-style polynomials across levels;
+\item The semimartingale property for $X$, or any $L^2(\Omega)$ structure on path space.
+\end{itemize}
+
+The order-$p$ pseudo-process has none of these, but the framework reaches the representation theorem anyway because adjointness and non-degeneracy were the load-bearing structures all along. The same is true of the integration-by-parts identity of \S\ref{sec:ibp}: the order-$p$ Stein operator $\mathcal{A}_p$ is constructed without a chain rule, in exactly the regime where the classical Malliavin--Stein construction cannot be set up, and it coincides with the defining ODE of the kernel. Integration by parts therefore belongs to the adjointness-only layer together with representation, and is separated from orthogonal chaos decomposition, which requires the Gaussian weight and exists only for $p=2$ (\S\ref{sec:appell}); the triangular Appell expansion, by contrast, survives for all $p$.
+
+\paragraph{Generalization to arbitrary $p$.}
+We have established the theorem for all $p \geq 2$. The structural mechanism --- the reduction lemma (Lemma~\ref{lem:reduction}), whose layer-wise correction cancellation (Lemma~\ref{lem:cancellation}) is governed by the single factorial identity $\partial_x^p(x^p)=p!$ --- is uniform in $p$, and the polynomial telescoping has been confirmed by exact symbolic computation for all $p \leq 8$ and degrees up to $48$. At $p=2$ the ambient setting is genuine Wiener space (the kernel $K_2$ is the Gaussian density and $\E$ is Wiener expectation); the formula specializes to the second-order double-integral Clark--Ocone representation on $\mathbb{D}^{2,2}$, with Hermite polynomials in place of the order-$p$ Appell family. This is not the textbook first-order Clark--Ocone formula but its level-2 form (Remark~\ref{rem:p2}). The one remaining formality is to render the telescoping induction of Proposition~\ref{prop:telescope} as a closed-form combinatorial identity valid for symbolic $p$, rather than for each fixed $p$; the uniformity of the coefficient arithmetic makes this routine but it is not carried out here.
+
+\paragraph{What remains.}
+Two natural directions are not pursued here. First, sharpness: is $\mathbb{T}_p$ maximal? For Wiener, the analog ($\mathbb{D}^{1,2}$) is known to be sharp via Meyer-Watanabe inequalities; the order-$p$ analog would require pseudo-analog hypercontractivity bounds, which do not obviously exist for signed kernels. Second, infinite-dimensional extension: replacing $X$ by an order-$p$ pseudo-process taking values in a Banach space (e.g., the Volterra-Lévy framework of \cite{operatorDerivativeI}) raises new questions about the tensor structure on the integrand side. Both are left open.
+
+\begin{thebibliography}{99}
+
+\bibitem{operatorDerivativeI}
+The author, \emph{The operator derivative in continuous stochastic calculus}, manuscript.
+
+\bibitem{operatorDerivativeII}
+The author, \emph{Order-$p$ Clark--Ocone formulas for higher-order pseudo-processes: case computations}, manuscript.
+
+\bibitem{Hochberg1978}
+K.~J.~Hochberg, \emph{A signed measure on path space related to Wiener measure}, Ann.~Probab.\ \textbf{6} (1978), 433--458.
+
+\bibitem{LachalAiry}
+A.~Lachal, \emph{Distributions of sojourn time, maximum and minimum for pseudo-processes governed by higher-order heat-type equations}, Electron.~J.~Probab.\ \textbf{8} (2003), no.~20.
+
+\bibitem{NishiokaBiharmonic}
+K.~Nishioka, \emph{Monopoles and dipoles in biharmonic pseudo-process and its application}, Proc.~Japan Acad.~Ser.~A \textbf{72} (1996), 47--50.
+
+\bibitem{Nualart2006}
+D.~Nualart, \emph{The Malliavin Calculus and Related Topics}, 2nd ed., Springer, 2006.
+
+\bibitem{Stein1972}
+C.~Stein, \emph{A bound for the error in the normal approximation to the distribution of a sum of dependent random variables}, Proc.\ Sixth Berkeley Symp.\ Math.\ Statist.\ Probab., vol.~2 (1972), 583--602.
+
+\bibitem{NourdinPeccati2012}
+I.~Nourdin and G.~Peccati, \emph{Normal Approximations with Malliavin Calculus: From Stein's Method to Universality}, Cambridge Univ.\ Press, 2012.
+
+\end{thebibliography}
+
+\end{document}

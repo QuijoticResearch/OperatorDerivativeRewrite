@@ -1,0 +1,34 @@
+namespace DraftReflectedScalarIto
+theorem slope_sign (f : ℝ → ℝ) (x : ℝ) :
+    ReflectedC2Primitive.slope f x = BrownianSignIntegral.signum x*(deriv f |x|-deriv f 0) := by
+  rcases lt_trichotomy x 0 with hn | hz | hp
+  · simp [ReflectedC2Primitive.slope, BrownianSignIntegral.signum, hn, not_lt_of_gt hn, abs_of_neg hn]
+  · subst x
+    simp [ReflectedC2Primitive.slope, BrownianSignIntegral.signum]
+  · simp [ReflectedC2Primitive.slope, BrownianSignIntegral.signum, hp, not_lt_of_gt hp, abs_of_pos hp]
+
+variable (f : ℝ → ℝ) (hf : ContDiff ℝ 2 f) (K1 : ℝ≥0)
+  (h1 : ∀ x, ‖deriv (deriv f) x‖ ≤ (K1 : ℝ))
+theorem running_coeFn (T : ℝ≥0) :
+    (running f hf K1 h1 T : TimeProbabilityL2) =ᵐ[timeProbability]
+      (PredictableRealL2.horizon T).indicator
+        (fun z => BrownianSignIntegral.signum (sigma z)*deriv f |sigma z|) := by
+  let hφ := GaussianC2Ito.derivativeLip (corrected f) (corrected_C2 hf) K1 (bound1 f hf K1 h1)
+  let U := integrand hφ T
+  have hu : (running f hf K1 h1 T : TimeProbabilityL2) =
+      (U : TimeProbabilityL2)+deriv f 0 • BrownianSignIntegral.field T := rfl
+  filter_upwards [Lp.coeFn_add (U : TimeProbabilityL2)
+      (deriv f 0 • BrownianSignIntegral.field T),
+    Lp.coeFn_smul (deriv f 0) (BrownianSignIntegral.field T),
+    lipschitz_joint hφ T, BrownianSignIntegral.field_coeFn T] with z ha hs hg hsign
+  rw [hu, ha]
+  simp only [Pi.add_apply]
+  rw [hs, hg]
+  simp only [Pi.smul_apply, smul_eq_mul]
+  rw [hsign]
+  by_cases hz : z ∈ PredictableRealL2.horizon T
+  · simp only [indicator_of_mem hz]
+    rw [corrected_deriv (hf.differentiable (by norm_num)), slope_sign]
+    ring
+  · simp [hz]
+end DraftReflectedScalarIto

@@ -1,0 +1,3763 @@
+\documentclass[11pt,reqno]{amsart}
+
+%==============================================================
+% Energy-First Stochastic Calculus:
+% Iterated Brownian Motion as a Test Case
+%==============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{mathrsfs}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+% --- theorem environments
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{program}[theorem]{Program}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{sketch}{Sketch}
+
+% --- macros
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\Hilb}{\mathcal{H}}
+\newcommand{\Dom}{\mathrm{Dom}}
+\newcommand{\Ran}{\mathrm{Ran}}
+\newcommand{\Gra}{\mathrm{Gra}}
+\newcommand{\Energy}{\mathcal{E}}
+\newcommand{\Source}{\mathsf{S}}
+\newcommand{\Obs}{\mathsf{Z}}
+\renewcommand{\iota}{\mathfrak{i}}
+\newcommand{\IBM}{Z}
+\newcommand{\Carre}{\Gamma}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+
+\title{Energy-First Stochastic Calculus:\\
+       Iterated Brownian Motion as a Test Case}
+\author{Ramiro Fontes}
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+We begin from \emph{observable It\^o identities} --- evolution
+formulas for $t\mapsto\E[f(X_t)]$ on a test class
+$\mathcal T$ --- and ask when such an identity admits a pathwise
+lift to $f(X_t)-f(X_0)=M_f(t)+C_f(t)$ and a further energy-first
+lift in which $M_f$ is a divergence/integral and $C_f$ an
+observable-energy contraction (\cref{def:obs-ito-identity}). On this
+hierarchy, the classical semimartingale It\^o formula is the
+quadratic-energy case at the energy-first level; it is one
+specific lift, not the definition. Accordingly, we propose an
+energy-first reorganisation of stochastic calculus: take a closed
+densely-defined operator derivative $D$ on an energy space
+$\Energy$ as the primitive datum and \emph{define} the divergence by
+adjunction $\delta=D^{*}$, then construct an intrinsic observable
+derivative $D_\Obs$ and projected divergence
+$\delta_\Obs u=\E[\delta_\Source(Ju)\mid\mathcal F_\Obs]$ for
+composite processes whose observable filtration is strictly smaller
+than a source filtration (\cref{thm:compression,thm:proj-div}); a
+conditional operator-It\^o transfer principle (\cref{thm:transfer})
+shows how source-level It\^o expansions descend to the observable. The flagship
+application of this framework is an It\^o formula for iterated
+Brownian motion $\IBM_t=X_{|Y_t|}$, with two-sided Brownian scenery
+$X$ and independent Brownian clock $Y$, which does not supply the
+semimartingale quadratic-variation structure needed for the
+classical It\^o formula in its own filtration. For the mollified IBM
+$\IBM_t^{\,\varepsilon}=x+X^\varepsilon_{|Y_t|}$ with
+$X^\varepsilon=\rho_\varepsilon*X$ ($\rho$ even, non-negative,
+compactly supported), $f\in\mathscr S(\R)$, and
+$g_\varepsilon(r)=f(x+X^\varepsilon_r)$, we prove the pathwise
+identity
+\begin{equation*}
+  f(\IBM_t^{\,\varepsilon})-f(\IBM_0^{\,\varepsilon})
+   \;=\;\delta_Y\bigl(B_{f,\varepsilon}(t)\bigr)
+   \;+\;C_{\IBM,\varepsilon}(f;t),
+\end{equation*}
+where the clock Skorohod-divergence integrand is
+$B_{f,\varepsilon}(t)(s)=g_\varepsilon'(|Y_s|)\,\mathrm{sgn}(Y_s)\,
+\mathbf 1_{[0,t]}(s)$ and the mollified pathwise correction is
+\begin{equation*}
+  C_{\IBM,\varepsilon}(f;t)
+   \;=\;g_\varepsilon'(0)\,L_t^{0}(Y)
+   \;+\;\tfrac{1}{2}\int_0^{t}g_\varepsilon''(|Y_s|)\,ds
+\end{equation*}
+(\cref{thm:energy-first-ito-moll}). The expectation of this
+correction reproduces the fourth-order Brownian-time PDE
+\begin{equation*}
+  \partial_t u
+   \;=\;\tfrac{1}{8}\,\partial_x^{4}u
+   \;+\;\frac{\partial_x^{2}f(x)}{2\sqrt{2\pi t}},
+  \qquad u(t,x)=\E[f(x+X_{|Y_t|})],
+\end{equation*}
+in the sense
+$\lim_{\varepsilon\to 0}\E[C_{\IBM,\varepsilon}(f;t)]=u(t,x)-f(x)$
+(\cref{thm:bt-correction,thm:moll-consistency}). The identity is
+pathwise for every $\varepsilon>0$ and fourth-order correct in
+expectation as $\varepsilon\to 0$. The unmollified pathwise
+correction does \emph{not} exist in classical $L^{2}(\Omega)$:
+$\Var(\mathrm{Proj}_1^{X}\,C_{\IBM,\varepsilon}(f;t))\to+\infty$ as
+$\varepsilon\to 0$ under the nondegeneracy condition
+$(P_\eta f')(x)\not\equiv 0$ on $(0,\infty)$
+(\cref{prop:var-divergence}), via an exact cancellation of leading
+$\varepsilon^{-1}$ terms across the two summands of
+$g_\varepsilon''$ and the Bouleau--Yor spatial quadratic variation
+of the clock local time. The natural target is therefore the dual of
+the quartic composite observable energy
+$\Energy_\IBM^{(4)}=\Energy_\IBM^{(2)}\otimes\Energy_\IBM^{(2)}$ of
+the rigged hierarchy \eqref{eq:rigged-4}. The proved IBM It\^o
+formula is therefore mollified-pathwise and fourth-order consistent;
+the remaining analytic problem is the unmollified correction in the
+quartic observable-energy dual.
+
+The clock It\^o formula behind the identity is second order in the
+Brownian-time variable, but because its coefficients are derivatives
+of Brownian scenery, the observable correction has fourth-order PDE
+shadow. IBM is the canonical fourth-order witness for an
+energy-order classification of It\^o corrections that supersedes
+classical semimartingale quadratic variation; the candidate
+second-order observable energy $\Energy_\IBM^{(2)}$
+(\cref{def:second-order-ibm}) is a second \emph{operator} derivative
+whose carr\'e-form, contracted against the clock, produces the
+fourth-order spatial shadow.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction: the reversal}\label{sec:intro}
+
+The classical construction of stochastic calculus, in nearly every textbook
+treatment, proceeds in the following order:
+\begin{enumerate}
+\item Fix a Brownian motion $B$ on a probability space.
+\item Construct the stochastic (It\^o or Skorohod) integral $\delta$ on
+  a class of integrands by an isometry argument.
+\item Define the Malliavin derivative $D$ either by chaos expansion or
+  as the adjoint $D=\delta^{*}$, and verify duality.
+\item Derive the It\^o/Tanaka formulae and identify the PDE shadow of
+  the process as the action of the infinitesimal generator on smooth
+  functions.
+\end{enumerate}
+For Brownian motion this ordering is harmless. The Gaussian structure
+forces every reasonable derivative/divergence pair to coincide, the
+energy space is $L^2(\R_+)$ with the Lebesgue inner product, and the
+PDE shadow is the heat equation.
+
+The companion paper~\cite{Fontes-OperatorDerivative} (\emph{The Operator
+Derivative in Continuous Stochastic Calculus}) develops a divergence-first
+operator framework: it takes the stochastic integral $\delta_X$ as primitive
+on a Hilbert energy space $\mathcal H_X$ and defines the operator derivative
+by adjointness $D_X\coloneqq\delta_X^{*}$ on its natural adjoint domain.
+The representation layer (Clark--Ocone, GKW projection, variance identity)
+is shown there to follow from adjointness alone; the calculus layer
+(Leibniz, chain rule, It\^o formula) requires a cylindrical reduction with
+process-dependent representers. The present paper inverts the order of
+this construction.
+
+\subsection*{The hidden distinction}
+The ordering hides a structural choice. \emph{Three} pieces of data
+are in play: an energy space $\Energy$, an operator derivative
+$D\colon L^2(\Omega)\to\Energy$, and a divergence
+$\delta\colon\Energy\to L^2(\Omega)$. In the Brownian regime any two
+determine the third. Outside that regime --- fractional Brownian
+motion, Volterra and ambit processes, stable L\'evy processes,
+stochastic volatility models --- the choice of $\Energy$ becomes the
+primary modelling decision, and postulating $\delta$ first is a
+technical convenience rather than the conceptually correct order.
+
+\subsection*{The reversal, and the compression construction}
+We invert the ordering relative to~\cite{Fontes-OperatorDerivative}. The
+primitive object is the pair $(\Energy, D)$. The divergence is
+\emph{defined} as $\delta\coloneqq D^{*}$. For a composite process in
+which an observable $\sigma$-algebra $\mathcal F_\Obs$ is strictly
+contained in a richer source $\sigma$-algebra $\mathcal F_\Source$, the
+construction goes one step further: a source energy datum
+$(\Hilb_\Source,\Energy_\Source,D_\Source)$ induces an intrinsic
+observable energy datum $(\Hilb_\Obs,\Energy_\Obs,D_\Obs)$ by
+\emph{compression} --- restricting $D_\Source$ to functionals of the
+observable $\sigma$-algebra and closing. The intrinsic divergence is the
+observable conditional expectation of the source divergence. This is the
+content of Section~\ref{sec:compat}.
+
+\subsection*{The flagship example: It\^o for iterated Brownian motion}
+The energy-first framework was developed against a concrete
+obstruction: iterated Brownian motion
+$\IBM_t=X_{|Y_t|}$,
+with two-sided Brownian scenery $X$ and independent Brownian clock
+$Y$, is not a semimartingale in its own filtration and does not
+admit a classical semimartingale It\^o formula of the usual
+quadratic-variation form
+$\tfrac12\!\int f''(\IBM_s)\,d\langle\IBM\rangle_s$. The flagship payoff of the framework
+(\cref{thm:energy-first-ito-moll}) is the following identity for
+\emph{mollified} IBM
+$\IBM_t^{\,\varepsilon}=x+X^\varepsilon_{|Y_t|}$, where
+$X^\varepsilon=\rho_\varepsilon*X$ for an even non-negative
+compactly supported $\rho$: for $f\in\mathscr S(\R)$ and
+$g_\varepsilon(r)=f(x+X^\varepsilon_r)$,
+\begin{equation}\label{eq:flagship-intro}
+  f(\IBM_t^{\,\varepsilon})-f(\IBM_0^{\,\varepsilon})
+  \;=\;\delta_Y\bigl(B_{f,\varepsilon}(t)\bigr)
+   \;+\;C_{\IBM,\varepsilon}(f;t),
+\end{equation}
+where the clock Skorohod-divergence integrand is
+$B_{f,\varepsilon}(t)(s)=g_\varepsilon'(|Y_s|)\,\mathrm{sgn}(Y_s)\,
+\mathbf 1_{[0,t]}(s)$ and the mollified pathwise correction is
+\begin{equation}\label{eq:flagship-C-intro}
+  C_{\IBM,\varepsilon}(f;t)
+   \;=\;g_\varepsilon'(0)\,L_t^{0}(Y)
+   \;+\;\tfrac{1}{2}\int_0^{t}g_\varepsilon''(|Y_s|)\,ds.
+\end{equation}
+The clock derivatives are explicit:
+$g_\varepsilon'(r)=f'(x+X^\varepsilon_r)\,\partial_r X^\varepsilon_r$
+and
+$g_\varepsilon''(r)=f''(x+X^\varepsilon_r)\,
+(\partial_r X^\varepsilon_r)^{2}
++f'(x+X^\varepsilon_r)\,\partial_r^{2}X^\varepsilon_r$.
+
+The expectation of $C_{\IBM,\varepsilon}(f;t)$ converges as
+$\varepsilon\to 0$ to the fourth-order Brownian-time PDE correction
+$\partial_t u=\tfrac{1}{8}\,\partial_x^{4}u+\partial_x^{2}f/
+(2\sqrt{2\pi t})$ for $u(t,x)=\E[f(x+X_{|Y_t|})]$:
+$\lim_{\varepsilon\to 0}\E[C_{\IBM,\varepsilon}(f;t)]=u(t,x)-f(x)$
+(\cref{thm:bt-correction,thm:moll-consistency}). The identity
+\eqref{eq:flagship-intro} is therefore \emph{pathwise for every
+$\varepsilon>0$ and fourth-order correct in expectation as
+$\varepsilon\to 0$}. The unmollified pathwise correction does
+\emph{not} exist in classical $L^{2}(\Omega)$:
+$\Var(\mathrm{Proj}_1^{X}\,C_{\IBM,\varepsilon}(f;t))\to+\infty$
+for every $f$ satisfying the nondegeneracy condition
+$(P_\eta f')(x)\not\equiv 0$ on $(0,\infty)$
+(\cref{prop:var-divergence}), so the natural target is the dual of
+the quartic composite observable energy
+$\Energy_\IBM^{(4)}=\Energy_\IBM^{(2)}\otimes\Energy_\IBM^{(2)}$ of
+the rigged hierarchy \eqref{eq:rigged-4}.
+
+The clock It\^o formula behind \eqref{eq:flagship-intro} is second
+order in the Brownian-time variable, but because its coefficients
+are derivatives of Brownian scenery the observable correction has
+fourth-order PDE shadow. IBM is therefore the canonical
+fourth-order witness for an energy-order classification of It\^o
+corrections that supersedes classical semimartingale quadratic
+variation; the framework of this paper builds the operator/energy
+structures needed to formulate, control, and classify such
+corrections, and IBM is where it lands a proved theorem. The
+proved IBM It\^o formula is mollified-pathwise and fourth-order
+consistent; the remaining analytic problem is the unmollified
+correction in the quartic observable-energy dual.
+
+\subsection*{Why iterated Brownian motion}
+We use iterated Brownian motion
+$\IBM_t = X_{|Y_t|}$
+--- with two-sided Brownian scenery $X$ and independent Brownian clock
+$Y$ --- as the principal test case. Three features make IBM
+diagnostically useful.
+\begin{enumerate}
+\item Its PDE shadow is the bi-Laplacian/local-time PDE signature
+  identified by Allouba--Zheng~\cite{AllouZheng}, not the heat equation
+  (IBM is not Markov in its own filtration).
+\item It is naturally a \emph{composite} process: the source Malliavin
+  calculi $(D_X,\delta_X)$ and $(D_Y,\delta_Y)$ live on the two
+  independent Gaussian factors and provide an explicit atlas indexed by
+  the chaos bidegree $(m,n)$, as developed in~\cite{Fontes-IBMchaos}.
+\item It does not fall under the classical semimartingale It\^o
+  theory in its own filtration --- it lacks the usual semimartingale
+  quadratic-variation structure needed for the classical It\^o
+  formula --- so there is no a priori canonical $\delta_\IBM$ to
+  take as starting datum.
+\end{enumerate}
+Applied to IBM, the compression construction yields a minimal
+first-order intrinsic derivative on $\mathcal C_\IBM$
+(\cref{def:ibm-datum}), made concrete at the mollified occupation
+level in \cref{thm:ibm-occ}. The bi-Laplacian/local-time PDE shadow
+is organised by the analogous second-order observable energy, while
+the principal open analytic target is the unmollified pathwise
+correction in the associated quartic observable-energy dual.
+
+\subsection*{Relation to companion papers}
+\cite{Fontes-OperatorDerivative} develops the operator-first
+representation/calculus split with $\delta$ as primitive; the present
+note inverts that ordering. \cite{Fontes-IBMchaos} computes
+source-resolved bidegree projections for IBM occupation functionals
+and supplies the $(m,n)$-atlas and the spatial
+factorisation~\eqref{eq:occ-factor} used in
+Section~\ref{sec:ibm-occ}. \cite{Fontes-IBMnumerical} validates the
+bidegree variance budgets numerically; not used here.
+\cite{Fontes-PDEgenerators} treats PDE shadows of energy structures
+generally and is the natural setting for the second-order
+verification listed in Section~\ref{sec:tasks}.
+
+\subsection*{Main-results ladder}
+The paper organises the results into four groups:
+\begin{itemize}
+\item[\textbf{(A)}] \emph{General energy-first framework.}
+  The observable-compression construction $D_\Obs$ and projected
+  divergence formula
+  $\delta_\Obs u=\E[\delta_\Source(Ju)\mid\mathcal F_\Obs]$
+  (\cref{thm:compression,thm:proj-div}); a conditional operator-It\^o
+  transfer principle (\cref{thm:transfer}); a concrete IBM first-order
+  datum on the mollified occupation core
+  (\cref{thm:ibm-occ,cor:unmollified}); and a candidate second-order
+  observable energy $\Energy_\IBM^{(2)}$
+  (\cref{def:second-order-ibm,prop:compression-2}) whose
+  tensor square $\Energy_\IBM^{(4)}=
+  \Energy_\IBM^{(2)}\otimes\Energy_\IBM^{(2)}$ is the home of the
+  quartic composite observable energy.
+\item[\textbf{(B)}] \emph{Flagship IBM theorem: mollified pathwise
+  It\^o formula.} The energy-first It\^o formula for mollified IBM
+  (\cref{thm:energy-first-ito-moll}): the pathwise identity
+  \eqref{eq:flagship-intro} with the explicit mollified correction
+  \eqref{eq:flagship-C-intro}, for every $\varepsilon>0$ and
+  $t\ge 0$, and the operator-divergence reading of the martingale
+  part. \emph{Proved.}
+\item[\textbf{(C)}] \emph{Fourth-order PDE consistency.}
+  At the deterministic level, $u(t,x)=\E[f(x+X_{|Y_t|})]$ satisfies
+  the bi-Laplacian Brownian-time PDE
+  $\partial_t u=\tfrac18\partial_x^{4}u+\partial_x^{2}f/(2\sqrt{2\pi t})$
+  (\cref{thm:bt-correction}); the flagship correction of (B) is
+  consistent with it after expectation:
+  $\lim_{\varepsilon\to 0}\E[C_{\IBM,\varepsilon}(f;t)]=u(t,x)-f(x)$
+  (\cref{thm:moll-consistency}). \emph{Proved.}
+\item[\textbf{(D)}] \emph{$L^{2}$ obstruction and quartic-dual
+  target.} The first-scenery-chaos $L^{2}$-divergence
+  \[
+    \Var\bigl(\mathrm{Proj}_1^{X}\,C_{\IBM,\varepsilon}(f;t)\bigr)
+     \;\to\;+\infty\qquad(\varepsilon\to 0)
+  \]
+  is \textbf{proved} for every $f\in\mathscr S(\R)$ satisfying the
+  nondegeneracy condition $(P_\eta f')(x)\not\equiv 0$ on
+  $(0,\infty)$ (\cref{prop:var-divergence}); the Brownian local-time
+  input is \cref{lem:lt-sobolev}. Ordinary Wick / Hermite
+  renormalisation, which acts in the zeroth and second scenery
+  chaoses, does not address the first-chaos singularity
+  (\cref{prop:wick-insufficient}). The natural target for the
+  unmollified pathwise correction $C_\IBM(f;t)$ is therefore the
+  dual of the quartic composite observable energy
+  $\Energy_\IBM^{(4)}$ in the rigged hierarchy
+  \eqref{eq:rigged-4}; the schematic pathwise identity
+  \cref{conj:ibm-ito} remains conditional on this construction.
+  \emph{$L^{2}$-obstruction proved; quartic-dual construction is the
+  open analytic target.}
+\end{itemize}
+
+\subsection*{Contents}
+Section~\ref{sec:operator} sets up the energy-first formalism, and
+Section~\ref{sec:compat} contains the abstract observable-compression
+construction (the framework half of (A)). Section~\ref{sec:ibm-source}
+specialises to IBM at the abstract level and sketches the
+second-order energy. Section~\ref{sec:ibm-occ} carries out the first
+concrete IBM instantiation on the mollified occupation core,
+realising the framework piece of (A) with \cref{thm:ibm-occ} as the
+first IBM theorem; the Fourier-mode diagnostic of
+\cref{prop:fourier-2nd} sits there as a PDE-shadow check.
+Section~\ref{sec:second-order} defines the candidate second-order
+observable energy (the higher-order half of (A)).
+Section~\ref{sec:ibm-ito} contains the operator-It\^o transfer
+theorem and the deterministic Brownian-time fourth-order PDE
+benchmark (part of (C)), together with the schematic pathwise target
+underlying (D). Section~\ref{sec:moll-pathwise} states and proves
+the flagship mollified IBM It\^o theorem (B) together with the
+expectation-level fourth-order consistency (C).
+Section~\ref{sec:toward-unmoll} records the first-chaos $L^{2}$
+obstruction (D). Section~\ref{sec:tasks} lists the analytic tasks
+that remain for (D).
+
+\subsection*{Convention on IBM}
+Outside Section~\ref{sec:ibm-occ}, the canonical example treated in
+this paper is $\IBM_t=X_{|Y_t|}$. Section~\ref{sec:ibm-occ}, which
+develops the spatial-factorisation atlas of the occupation functional
+$F_T(\varphi)=\int_0^{T}\varphi(\IBM_s)\,ds$, uses the two-sided
+composition $X_{Y_s}$ for that section only, since it produces the
+cleaner $\R$-valued local-time decomposition \eqref{eq:occ-factor}
+(see~\cite{Fontes-IBMchaos}); the canonical $X_{|Y_t|}$ form
+corresponds to the half-line restriction, with $L^{x}(Y)$ on $\R$
+replaced by $L^{x}(|Y|)$ on $\R_{+}$. This convention switch is
+local to Section~\ref{sec:ibm-occ} and is recalled at its start.
+
+\section{Energy-first operator calculus}\label{sec:operator}
+
+We work throughout on a probability space $(\Omega,\mathcal F,\Prob)$
+and write $L^2(\Omega)=L^2(\Omega,\mathcal F,\Prob)$.
+
+\subsection*{Three levels of an It\^o formula}\label{sec:three-levels}
+
+The paper is organised around the principle that an It\^o formula
+should be read at three nested levels of structure: a baseline
+\emph{observable} layer, a \emph{pathwise} lift, and an
+\emph{energy-first / operator} lift. The classical semimartingale
+It\^o formula is the quadratic-energy case of the third level; it
+is one specific lift, not the definition.
+
+\begin{definition}[Observable It\^o identity]\label{def:obs-ito-identity}
+Let $\mathcal T\subseteq C(\R)$ be a class of test functions and
+$X=(X_t)_{t\ge 0}$ an $\R$-valued process with
+$\E|f(X_t)|<\infty$ for every $f\in\mathcal T$ and $t\ge 0$. We
+say that $X$ admits an \emph{observable It\^o identity} on
+$\mathcal T$ if, for each $f\in\mathcal T$, the map
+$t\mapsto\E[f(X_t)]$ is locally absolutely continuous on
+$(0,\infty)$ and there exist a family of linear operators
+$\mathcal G_t$ on $\mathcal T$ and a family of linear functionals
+$\mathcal B_t$ on $\mathcal T$ such that
+\begin{equation}\label{eq:obs-ito-identity}
+  \frac{d}{dt}\,\E[f(X_t)]
+   \;=\;\E\bigl[(\mathcal G_t f)(X_t)\bigr]
+   \;+\;\mathcal B_t f
+\end{equation}
+in the sense of distributions in $t$, or pointwise wherever the
+left-hand-side derivative exists.
+\end{definition}
+
+We call $\mathcal G_t$ the \emph{observable correction operator}
+and $\mathcal B_t$ the \emph{boundary/source term}. For Brownian
+motion, $\mathcal G=\tfrac12\partial_x^{2}$ and $\mathcal B=0$; for
+a general Markov process the observable correction operator is the
+infinitesimal generator. We do not require $X$ to be Markovian, nor
+to be a semimartingale: \cref{def:obs-ito-identity} is purely an
+evolution identity for test-function expectations, and assumes no
+filtration structure on $X$.
+
+\paragraph{The hierarchy.} On a given class $\mathcal T$:
+\begin{itemize}
+\item[\textbf{Level 1.}] \emph{Observable It\^o identity}
+  \eqref{eq:obs-ito-identity}: an evolution identity for
+  $t\mapsto\E[f(X_t)]$. This is the weakest level; it depends only
+  on the one-dimensional time marginals of $X$ paired with
+  $\mathcal T$.
+\item[\textbf{Level 2.}] \emph{Pathwise lift}: a decomposition
+  \begin{equation}\label{eq:pathwise-lift}
+    f(X_t)-f(X_0)\;=\;M_f(t)\;+\;C_f(t),
+    \qquad \E[M_f(t)]=0,
+  \end{equation}
+  where $C_f$ is a process whose time-derivative expectation
+  reproduces the right-hand side of \eqref{eq:obs-ito-identity}
+  (so that integrating in time and taking expectation recovers
+  Level~1), and $M_f$ is a centred fluctuation.
+\item[\textbf{Level 3.}] \emph{Energy-first / operator lift}: a
+  further lift of \eqref{eq:pathwise-lift} in which $M_f$ is
+  represented by a divergence/integral $\delta(U_f)$ for an energy
+  datum $(\Hilb,\Energy,D)$ in the sense of \cref{def:energy-datum}
+  below, and $C_f$ is represented by an observable-energy
+  contraction associated with $D$ or a higher-order analogue
+  of $D$.
+\end{itemize}
+
+\paragraph{The lift is additional structure, not automatic.}
+A Level-1 observable It\^o identity does not by itself produce a
+Level-2 pathwise lift: such a lift requires $C_f$ to exist
+pathwise in a suitable topology, which is a structural property of
+$X$ relative to $\mathcal T$ and may fail when $X$ is not a
+semimartingale or when $\mathcal G_t$ is of higher order than two.
+Similarly, a Level-2 lift is not automatically Level-3: realising
+$M_f$ as $\delta(U_f)$ and $C_f$ as an energy contraction requires
+an energy datum whose divergence/contraction reproduces the
+pathwise decomposition. The classical semimartingale It\^o formula
+sits at Level~3 with $\Energy=L^{2}(\R_{+})$, $D$ the Malliavin
+derivative, and the quadratic-energy contraction
+$C_f(t)=\tfrac12\int_0^t f''(X_s)\,d\langle X\rangle_s$: it is one
+specific energy-first lift, not the definition of an It\^o formula.
+
+\paragraph{IBM as a fourth-order observable It\^o process.}
+For iterated Brownian motion $\IBM_t=X_{|Y_t|}$ with
+$\IBM_0=x$ and $f\in\mathscr S(\R)$, the half-normal integration
+of the heat semigroup yields the observable It\^o identity
+\begin{equation}\label{eq:obs-ito-ibm}
+  \frac{d}{dt}\,\E[f(\IBM_t)]
+   \;=\;\tfrac{1}{8}\,\E\bigl[f^{(4)}(\IBM_t)\bigr]
+   \;+\;\frac{1}{2\sqrt{2\pi t}}\,f''(x),
+  \qquad t>0,
+\end{equation}
+which is \cref{thm:bt-correction} written in test-function-expectation
+form. Thus IBM is an observable It\^o process of \emph{fourth} order,
+with observable correction operator
+$\mathcal G_t=\tfrac{1}{8}\,\partial_x^{4}$ and boundary/source term
+$\mathcal B_t f=f''(x)/(2\sqrt{2\pi t})$. The purpose of the
+flagship mollified pathwise theorem of \cref{sec:moll-pathwise}
+(\cref{thm:energy-first-ito-moll}) is to lift this fourth-order
+observable identity to a Level-2/3 identity at scenery-mollified
+level: \eqref{eq:flagship-intro} is the lift, and
+\eqref{eq:efi-fourth} verifies that its expectation reproduces
+\eqref{eq:obs-ito-ibm}. The unmollified Level-2/3 lift is not
+constructed here as an $L^{2}(\Omega)$ object; the analytic
+obstacle (\cref{prop:var-divergence}) shows that the correct
+target topology is the dual of the quartic composite observable
+energy
+$\Energy_\IBM^{(4)}=\Energy_\IBM^{(2)}\otimes\Energy_\IBM^{(2)}$
+of the rigged hierarchy \eqref{eq:rigged-4}.
+
+\subsection*{Energy datum and the operator/divergence layer}
+
+We now state the structural data underlying Level~3. The rest of
+this section sets up the energy datum, the carr\'e du champ, and
+the three-layer (R)/(P)/(I) decomposition internal to Level~3.
+
+\begin{definition}[Energy datum]\label{def:energy-datum}
+An \emph{energy datum} is a triple $(\Hilb,\Energy, D)$ where
+$\Hilb\subseteq L^2(\Omega)$ is a closed subspace,
+$\Energy$ is a separable Hilbert space, and
+\[
+  D\colon \Dom(D)\subseteq\Hilb \longrightarrow \Energy
+\]
+is a closed, densely defined linear operator. The
+\emph{divergence} is the Hilbert-space adjoint
+$\delta\coloneqq D^{*}\colon\Dom(\delta)\subseteq\Energy\to\Hilb$.
+\end{definition}
+
+The closedness assumption is what makes adjunction well-posed: by the
+von Neumann adjoint theorem, $\delta=D^{*}$ is then also closed and
+densely defined.
+
+\begin{definition}[Carr\'e du champ]\label{def:carre}
+On $\Dom(D)\times\Dom(D)$ define the bilinear form
+$\Carre(F,G)\coloneqq\langle DF,\,DG\rangle_\Energy$.
+We call $\Carre$ the \emph{energy bracket} associated to the datum.
+\end{definition}
+
+In the classical Wiener space $\Hilb=L^2(\Omega)$,
+$\Energy=L^2(\R_+)$, $D$ the Malliavin derivative, the bracket reduces
+to the standard Malliavin matrix entry; the present formalism does not
+require this specialisation.
+
+\paragraph{Layer structure.}
+Once the datum is fixed, three layers are constructed in sequence:
+
+\medskip
+\noindent\textbf{(R) Representation layer.}
+Given $(\Hilb,\Energy,D)$, the integration-by-parts formula
+\begin{equation}\label{eq:ibp}
+  \E\bigl[F\,\delta u\bigr]
+  \;=\;\langle DF,\,u\rangle_{\Energy},\qquad
+  F\in\Dom(D),\;u\in\Dom(\delta),
+\end{equation}
+holds by definition of adjunction. \emph{Existence of a chaos
+expansion} adapted to $D$ is then an independent assumption on
+$(\Hilb,\Energy,D)$, e.g.~that $D$ admits a Wiener chaos diagonalisation.
+
+\medskip
+\noindent\textbf{(P) Product/chain layer.}
+A \emph{product rule} for $D$, of the form
+$D(FG)=F\,DG+G\,DF$ on a suitable algebra, and a \emph{chain rule}
+$D(f(F))=f'(F)\,DF$ on smooth $f$, are not consequences of
+\cref{def:energy-datum}. They have to be imposed as further hypotheses
+on the datum; when they hold, we call the datum a \emph{calculus datum}.
+
+\medskip
+\noindent\textbf{(I) It\^o layer.}
+Once (R) and (P) are in place, an It\^o-type formula
+\begin{equation}\label{eq:operator-ito}
+  f(F_t)-f(F_0) \;=\; \delta\bigl(U_f(F_\bullet)\bigr) + C_f(F_\bullet),
+\end{equation}
+with $U_f$ a representation integrand built from $f',DF$ and
+$C_f$ an \emph{energy correction} built from $f''$ and $\Carre(F,F)$,
+becomes a candidate identity. We do not assert that
+\cref{eq:operator-ito} holds for every calculus datum; we record it as
+the scheme that must be verified in each instance.
+
+\begin{remark}[Conditional, not automatic]\label{rem:conditional}
+The energy-first framework does not produce \cref{eq:operator-ito}
+for free. What it does produce is a sharp separation between the
+two ingredients of an It\^o formula: a divergence representative
+$U_f$ in $\Energy$, and a correction term whose form is dictated by
+$\Carre$. For Gaussian/Brownian data the correction reduces to the
+standard $\tfrac12 f''(F)\,d\langle F\rangle$; for non-Gaussian data
+it need not.
+\end{remark}
+
+\begin{remark}[Two-layer separation, inherited]\label{rem:two-layer}
+The representation/calculus separation
+of~\cite{Fontes-OperatorDerivative} survives the reversal: the
+integration-by-parts formula~\eqref{eq:ibp} and any chaos representation
+adapted to $D$ form the representation layer, while a chain/product
+rule for $D$ is the additional input needed for the calculus layer. Such
+a chain rule is equivalent, in the sense
+of~\cite[Thm.~B]{Fontes-OperatorDerivative}, to a \emph{cylindrical
+reduction} --- the existence of a dense algebra of test functionals
+$f(\xi_1,\dots,\xi_n)$ and representers $\kappa_i\in L^2(\Omega;\Energy)$
+through which the integration-by-parts formula factors. The classical
+Malliavin calculus is the special case in which the representers are the
+deterministic Cameron--Martin elements; in the present setting it is
+recovered as one cylindrical reduction among others, not as the
+definition of $D$. The difference between the two orderings is one of
+\emph{starting datum}: in the energy-first ordering, both layers are
+read off $(\Energy, D)$ rather than off $(\mathcal H_X, \delta_X)$.
+\end{remark}
+
+\section{Construction of the intrinsic observable derivative}\label{sec:compat}
+
+This section contains the central abstract content of the paper. Given
+a closed densely defined source derivative $D_\Source$ and an observable
+$\sigma$-algebra $\mathcal F_\Obs\subseteq\mathcal F_\Source$, we
+construct a closed first-order intrinsic derivative $D_\Obs$ and its
+adjoint $\delta_\Obs$. On the subspace of $u\in\Energy_\Obs$ for which
+$Ju\in\Dom(\delta_\Source)$, the intrinsic divergence is given by the
+projected formula $\delta_\Obs u=P_\Obs\delta_\Source(Ju)$; we do not
+claim this characterises all of $\Dom(\delta_\Obs)$. Exact intertwining
+$\iota\,\delta_\Obs=\delta_\Source J$ is recovered as a special case.
+
+\subsection*{Setup}
+
+Let $\mathcal F_\Source\supseteq\mathcal F_\Obs$ be sub-$\sigma$-algebras
+of $\mathcal F$. Set
+\[
+  \Hilb_\Source\coloneqq L^2(\Omega,\mathcal F_\Source,\Prob),\qquad
+  \Hilb_\Obs\coloneqq L^2(\Omega,\mathcal F_\Obs,\Prob),
+\]
+and let
+\[
+  \iota\colon \Hilb_\Obs\hookrightarrow\Hilb_\Source
+\]
+denote the canonical isometric inclusion. Its Hilbert-space adjoint is
+the conditional expectation onto $\mathcal F_\Obs$,
+\[
+  P_\Obs\coloneqq\iota^{*}=\E[\,\cdot\mid\mathcal F_\Obs]\colon
+  \Hilb_\Source\to\Hilb_\Obs.
+\]
+Let $(\Hilb_\Source,\Energy_\Source,D_\Source)$ be a source energy datum
+in the sense of \cref{def:energy-datum}, with divergence
+$\delta_\Source=D_\Source^{*}$.
+
+\subsection*{The compression datum}
+
+\begin{definition}[Observable smooth core]\label{def:obs-core}
+The \emph{observable smooth core} induced by $D_\Source$ is
+\[
+  \mathcal C_\Obs
+  \;\coloneqq\;
+  \bigl\{\,F\in\Hilb_\Obs : \iota F\in\Dom(D_\Source)\,\bigr\}.
+\]
+\end{definition}
+
+\begin{assumption}[Density of the observable core]\label{ass:dense}
+$\mathcal C_\Obs$ is dense in $\Hilb_\Obs$.
+\end{assumption}
+
+\Cref{ass:dense} is a structural input. Its verification depends on
+$\mathcal F_\Obs\hookrightarrow\mathcal F_\Source$ and on $D_\Source$; for
+IBM it is among the open analytic tasks of Section~\ref{sec:tasks}.
+
+\begin{definition}[Compression operator and observable energy]
+\label{def:compression}
+For $F\in\mathcal C_\Obs$, set
+\[
+  D_\Obs^{0} F \;\coloneqq\; D_\Source(\iota F) \;\in\; \Energy_\Source.
+\]
+Define the observable energy space
+\[
+  \Energy_\Obs
+  \;\coloneqq\;
+  \overline{D_\Obs^{0}\,\mathcal C_\Obs}^{\,\Energy_\Source}
+  \;\subseteq\;\Energy_\Source,
+\]
+a closed subspace of $\Energy_\Source$, and let
+$J\colon\Energy_\Obs\hookrightarrow\Energy_\Source$ denote the isometric
+inclusion. Regard $D_\Obs^{0}$ henceforth as a linear operator
+$\mathcal C_\Obs\to\Energy_\Obs$.
+\end{definition}
+
+\subsection*{Closability and the intrinsic derivative}
+
+\begin{theorem}[Observable compression derivative]\label{thm:compression}
+Under \cref{ass:dense}, the operator
+$D_\Obs^{0}\colon\mathcal C_\Obs\subseteq\Hilb_\Obs\to\Energy_\Obs$ is
+closed on the maximal pullback domain $\mathcal C_\Obs$. We denote it
+$D_\Obs$ and call it the \emph{minimal observable derivative} induced by
+$D_\Source$. Consequently, any restriction
+$D_\Obs^{0}|_{\mathcal C'}$ to a subcore
+$\mathcal C'\subseteq\mathcal C_\Obs$ that is dense in $\Hilb_\Obs$ is
+closable, and the closure of any such restriction is contained in
+$D_\Obs$.
+\end{theorem}
+
+\begin{proof}
+Let $F_n\in\mathcal C_\Obs$ with $F_n\to F$ in $\Hilb_\Obs$ and
+$D_\Obs^{0}F_n\to h$ in $\Energy_\Obs$. Since $\iota$ is an isometric
+inclusion, $\iota F_n\to\iota F$ in $\Hilb_\Source$; since $J$ is an
+isometric inclusion,
+$J\,D_\Obs^{0}F_n=D_\Source(\iota F_n)\to Jh$ in $\Energy_\Source$.
+Closedness of $D_\Source$ yields $\iota F\in\Dom(D_\Source)$, hence
+$F\in\mathcal C_\Obs$, and $D_\Source(\iota F)=Jh$, whence
+$D_\Obs^{0}F=h$. So the graph of $D_\Obs^{0}$ on $\mathcal C_\Obs$ is
+closed.
+
+The second statement is a direct consequence: if
+$\mathcal C'\subseteq\mathcal C_\Obs$ is dense in $\Hilb_\Obs$, the same
+graph-closure argument applied to sequences in $\mathcal C'$ converging
+in $\Hilb_\Obs\times\Energy_\Obs$ to a graph point lands in
+$\mathcal C_\Obs$ and in the graph of $D_\Obs$. In particular, the
+closure of $D_\Obs^{0}|_{\mathcal C'}$ exists as a closed operator and
+is contained in $D_\Obs$.
+\end{proof}
+
+The intrinsic divergence is now defined by adjunction.
+
+\begin{definition}[Intrinsic divergence]\label{def:int-div}
+\[
+  \delta_\Obs\coloneqq D_\Obs^{*}\colon\Dom(\delta_\Obs)\subseteq\Energy_\Obs
+  \longrightarrow\Hilb_\Obs.
+\]
+\end{definition}
+
+\subsection*{The projected divergence formula}
+
+\begin{theorem}[Projected divergence formula]\label{thm:proj-div}
+Let $u\in\Energy_\Obs$ satisfy $Ju\in\Dom(\delta_\Source)$. Then
+$u\in\Dom(\delta_\Obs)$ and
+\begin{equation}\label{eq:proj-div}
+  \delta_\Obs u \;=\; P_\Obs\,\delta_\Source(Ju).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Let $F\in\mathcal C_\Obs$. By \cref{thm:compression} and the inclusion
+isometry $J$,
+\[
+  \langle D_\Obs F,\,u\rangle_{\Energy_\Obs}
+  \;=\;\langle J\,D_\Obs F,\,Ju\rangle_{\Energy_\Source}
+  \;=\;\langle D_\Source(\iota F),\,Ju\rangle_{\Energy_\Source}.
+\]
+By source integration-by-parts (\cref{eq:ibp} applied to $D_\Source$)
+and the hypothesis $Ju\in\Dom(\delta_\Source)$,
+\[
+  \langle D_\Source(\iota F),\,Ju\rangle_{\Energy_\Source}
+  \;=\;\langle\iota F,\,\delta_\Source(Ju)\rangle_{\Hilb_\Source}.
+\]
+Applying $\iota^{*}=P_\Obs$,
+\[
+  \langle\iota F,\,\delta_\Source(Ju)\rangle_{\Hilb_\Source}
+  \;=\;\langle F,\,P_\Obs\,\delta_\Source(Ju)\rangle_{\Hilb_\Obs}.
+\]
+Chaining,
+\begin{equation}\label{eq:chain}
+  \langle D_\Obs F,\,u\rangle_{\Energy_\Obs}
+  \;=\;\langle F,\,P_\Obs\,\delta_\Source(Ju)\rangle_{\Hilb_\Obs}
+  \qquad\text{for all }F\in\mathcal C_\Obs.
+\end{equation}
+The right-hand side of \cref{eq:chain} is a bounded linear functional of
+$F\in\Hilb_\Obs$, with bound
+$\|P_\Obs\,\delta_\Source(Ju)\|_{\Hilb_\Obs}$. Since
+$\Dom(D_\Obs)=\mathcal C_\Obs$ by \cref{thm:compression}, the identity
+holds on all of $\Dom(D_\Obs)$. Hence $u\in\Dom(D_\Obs^{*})=
+\Dom(\delta_\Obs)$ and $\delta_\Obs u=P_\Obs\,\delta_\Source(Ju)$.
+\end{proof}
+
+\begin{remark}[Automaticity of the $L^{2}$ hypothesis]
+\label{rem:l2-auto}
+In more abstract versions of this construction one finds the additional
+hypothesis $P_\Obs\delta_\Source(Ju)\in\Hilb_\Obs$. In our setup this is
+automatic: $\delta_\Source(Ju)\in\Hilb_\Source$ by definition of
+$\Dom(\delta_\Source)$, and $P_\Obs=\E[\cdot\mid\mathcal F_\Obs]$ is an
+$L^{2}$-contraction, so the conclusion always lies in $\Hilb_\Obs$.
+\end{remark}
+
+\begin{remark}[Reduction to exact intertwining]\label{rem:exact-special}
+If $\delta_\Source(Ju)$ is $\mathcal F_\Obs$-measurable --- equivalently,
+fixed by $P_\Obs$ --- then \cref{eq:proj-div} reduces to the exact
+intertwining
+\[
+  \iota\,\delta_\Obs u \;=\; \delta_\Source(Ju),
+\]
+recovering the special case stated below in
+\cref{cor:exact-intertwining}. For general lifts the divergence carries
+a $P_\Obs$, which is the content of the present construction.
+\end{remark}
+
+\subsection*{Exact intertwining as a special case}
+
+\begin{definition}[Exact divergence intertwining]\label{def:dintertwine}
+The lift $J$ \emph{intertwines the divergences exactly} if there is a
+subspace $\mathcal C\subseteq\Dom(\delta_\Obs)$, dense in $\Energy_\Obs$,
+such that for every $u\in\mathcal C$, $Ju\in\Dom(\delta_\Source)$,
+$\delta_\Source(Ju)$ is $\mathcal F_\Obs$-measurable, and
+\[
+  \iota\,\delta_\Obs u \;=\; \delta_\Source(Ju).
+\]
+\end{definition}
+
+\begin{corollary}[Adjoint compatibility, exact case]\label{cor:exact-intertwining}
+Suppose $D_\Obs$ is the compression derivative of \cref{thm:compression}
+and the inclusion $J$ intertwines the divergences exactly in the sense
+of \cref{def:dintertwine}. Then for every $F\in\mathcal C_\Obs$,
+\[
+  D_\Obs F \;=\; J^{*}\,D_\Source(\iota F),
+\]
+which is the rigidity statement of the previous draft of this paper.
+\end{corollary}
+
+\begin{proof}
+By \cref{thm:proj-div} together with exact intertwining,
+$\delta_\Obs u = P_\Obs\delta_\Source(Ju) = \delta_\Source(Ju)$ on
+$\mathcal C$. The identity for $D_\Obs F$ follows by taking the adjoint
+of $J$ on $\mathcal C$: for $F\in\mathcal C_\Obs$ and $u\in\mathcal C$,
+\[
+  \langle D_\Obs F,u\rangle_{\Energy_\Obs}
+  = \langle D_\Source(\iota F),Ju\rangle_{\Energy_\Source}
+  = \langle J^{*}D_\Source(\iota F),u\rangle_{\Energy_\Obs},
+\]
+and density of $\mathcal C$ in $\Energy_\Obs$ concludes.
+\end{proof}
+
+\subsection*{Domain caveats}
+
+\begin{remark}[Density of $\mathcal C_\Obs$ is non-trivial]
+\label{rem:density-caveat}
+Without \cref{ass:dense} the compression still produces a closable
+operator on a non-dense domain, but $\delta_\Obs=D_\Obs^{*}$ is no longer
+guaranteed to be densely defined and the duality machinery is lost. For
+abstract Wiener spaces with a smooth source datum, density is typically
+inherited from smooth cylindrical functionals; for IBM it is more
+delicate and listed as an open task.
+\end{remark}
+
+\begin{remark}[Minimality]\label{rem:minimality}
+$D_\Obs$ is minimal in the following sense. Any closed operator
+$\widetilde D\colon\Dom(\widetilde D)\subseteq\Hilb_\Obs\to\Energy_\Source$
+that extends $F\mapsto D_\Source(\iota F)$ on $\mathcal C_\Obs$ has
+$\Dom(D_\Obs)\subseteq\Dom(\widetilde D)$ and
+$\widetilde D|_{\Dom(D_\Obs)}=JD_\Obs$. Choosing a different source
+derivative produces, in general, a different observable derivative; the
+compression is a functor from source-data to observable-data, not a
+canonical construction independent of the source.
+\end{remark}
+
+\begin{remark}[Energy norm transfer]\label{rem:energy-norm}
+Since $J$ is an isometric inclusion, for every $F\in\Dom(D_\Obs)$,
+\[
+  \|D_\Obs F\|_{\Energy_\Obs}
+  \;=\; \|D_\Source(\iota F)\|_{\Energy_\Source}.
+\]
+The intrinsic energy is strictly the source energy restricted to those
+modes that arise from observable functionals --- not a coarsened or
+contracted version of it.
+\end{remark}
+
+\section{IBM: the compression construction}\label{sec:ibm-source}
+
+We now apply the abstract construction of Section~\ref{sec:compat} to
+iterated Brownian motion. The output, under the stated density
+hypothesis, is a first-order intrinsic observable derivative $D_\IBM$
+on the maximal pullback core and a projected divergence formula for
+$\delta_\IBM$ on the lifted source-divergence domain; the second-order
+analogue, which is the natural home for the bi-Laplacian/local-time
+PDE shadow, is sketched in Section~\ref{sec:ibm-source-2nd}.
+
+\subsection*{The IBM source datum}
+
+Let $X=(X_x)_{x\in\R}$ be a two-sided Brownian scenery and
+$Y=(Y_t)_{t\ge 0}$ an independent Brownian clock, with
+$\mathcal F_\Source=\mathcal F_X\vee\mathcal F_Y$ the source
+$\sigma$-algebra and
+$\mathcal F_\IBM=\sigma(\IBM_s:s\ge 0)\subseteq\mathcal F_\Source$
+the observable $\sigma$-algebra, where $\IBM_t=X_{|Y_t|}$. The joint
+Wiener chaos decomposition is
+\[
+  L^2(\Omega_X\times\Omega_Y)
+  =\bigoplus_{m,n\ge 0}\Hilb^{X}_{m}\otimes\Hilb^{Y}_{n}.
+\]
+The partial Malliavin derivatives $D_X$, $D_Y$ on each Gaussian factor
+combine into
+\[
+  D_\Source=(D_X,D_Y),\qquad
+  \Dom(D_\Source)=\Dom(D_X)\cap\Dom(D_Y),
+\]
+mapping into the source energy
+$\Energy_\Source=L^2(\R)\oplus L^2(\R_+)$. The source divergence acts
+componentwise on $\Energy_\Source$,
+\begin{equation}\label{eq:delta-S}
+  \delta_\Source(u_X,u_Y) \;=\; \delta_X(u_X)+\delta_Y(u_Y),
+\end{equation}
+for $u_X\in\Dom(\delta_X)$, $u_Y\in\Dom(\delta_Y)$, where
+$\delta_X=D_X^{*}$ and $\delta_Y=D_Y^{*}$ are the source Skorohod
+divergences~\cite{Nualart,Janson}. The bidegree-$(m,n)$ chaos projection
+is the explicit coordinate atlas of~\cite{Fontes-IBMchaos}.
+
+\subsection*{The intrinsic IBM datum}
+
+Applying \cref{def:obs-core,def:compression,thm:compression,thm:proj-div}
+to $\mathcal F_\IBM\subseteq\mathcal F_\Source$ and $D_\Source$:
+
+\begin{definition}[Intrinsic IBM datum]\label{def:ibm-datum}
+\hfill
+\begin{enumerate}
+\item The observable smooth core of IBM is
+\[
+  \mathcal C_\IBM
+  \;=\;\bigl\{\,F\in L^{2}(\Omega,\mathcal F_\IBM,\Prob):
+        \iota F\in\Dom(D_X)\cap\Dom(D_Y)\,\bigr\}.
+\]
+\item The observable energy of IBM is
+\[
+  \Energy_\IBM
+  \;=\;\overline{\bigl\{(D_X\iota F,\,D_Y\iota F):F\in\mathcal C_\IBM\bigr\}}
+       ^{\,L^{2}(\R)\oplus L^{2}(\R_{+})}
+  \;\subseteq\; L^{2}(\R)\oplus L^{2}(\R_{+}).
+\]
+\item The intrinsic IBM derivative is
+\[
+  D_\IBM F \;=\; (D_X\iota F,\,D_Y\iota F) \;\in\;\Energy_\IBM,
+  \qquad F\in\mathcal C_\IBM,
+\]
+closed on $\mathcal C_\IBM$ by \cref{thm:compression}.
+\item The intrinsic IBM divergence $\delta_\IBM=D_\IBM^{*}$ admits the
+projected formula, by \cref{thm:proj-div},
+\begin{equation}\label{eq:ibm-delta}
+  \delta_\IBM u \;=\; \E\!\bigl[\,\delta_X u_X+\delta_Y u_Y\,\big|\,
+   \mathcal F_\IBM\,\bigr]
+\end{equation}
+for $u=(u_X,u_Y)\in\Energy_\IBM$ with $u_X\in\Dom(\delta_X)$ and
+$u_Y\in\Dom(\delta_Y)$.
+\end{enumerate}
+\end{definition}
+
+We adopt as a standing hypothesis that $\mathcal C_\IBM$ is dense in
+$L^{2}(\Omega,\mathcal F_\IBM,\Prob)$. The verification of this density
+on natural concrete test classes (smooth bounded functions of finitely
+many IBM increments, smooth integral functionals
+$\int_{0}^{T}\varphi(\IBM_{s})\,ds$, etc.) is listed in
+Section~\ref{sec:tasks}.
+
+\Cref{def:ibm-datum} should be read as the assertion: \emph{the minimal
+first-order intrinsic observable derivative for IBM, induced by the
+source atlas, is a closed operator on the maximal pullback domain
+$\mathcal C_\IBM$, and its adjoint $\delta_\IBM$ admits the projected
+conditional-expectation formula \eqref{eq:ibm-delta} on the lifted
+source-divergence domain}. No further input from the IBM chaos paper is
+needed for the construction itself; the chaos paper becomes relevant
+when computing $D_\IBM$ mode by mode.
+
+\subsection*{What is constructed and what is not}
+
+The construction is genuinely a construction, not a programme. It
+\emph{does} produce a closed first-order operator on the IBM core
+$\mathcal C_\IBM$, with the projected divergence
+formula~\eqref{eq:ibm-delta} valid on
+$\{u\in\Energy_\IBM:Ju\in\Dom(\delta_\Source)\}$. Density of
+$\mathcal C_\IBM$ in $L^{2}(\mathcal F_\IBM)$ is a standing hypothesis,
+not a theorem proved here; a concrete inner-product realisation of
+$\Energy_\IBM$ is likewise not provided. It does \emph{not} produce,
+on its own, the full first-order calculus of IBM: a chain or product
+rule for $D_\IBM$ is not part of the definition and must be verified
+via a cylindrical reduction (\cref{rem:two-layer}). The natural
+candidate reduction inherits random representers from the joint
+$(X,Y)$ Brownian Malliavin gradient projected onto $\mathcal F_\IBM$;
+its domain of validity is again analytic, not formal.
+
+\subsection*{Source bidegree compatibility}
+
+For $F\in\mathcal C_\IBM$ with joint Wiener chaos expansion
+$F=\sum_{m,n\ge 0}F_{m,n}\in\Hilb^{X}_{m}\otimes\Hilb^{Y}_{n}$, the
+partial source derivatives $D_X F_{m,n}$ and $D_Y F_{m,n}$ are explicit
+by source Malliavin calculus, and
+\[
+  D_\IBM F \;=\; \sum_{m,n\ge 0}\bigl(D_X F_{m,n},\,D_Y F_{m,n}\bigr)
+  \;\in\;\Energy_\IBM.
+\]
+The chaos paper~\cite{Fontes-IBMchaos} supplies the bidegree kernels;
+the present construction supplies the operator. Together they pin down
+$D_\IBM$ mode by mode on $\mathcal C_\IBM$. We do not assert that this
+mode-by-mode description gives a closed-form $\Energy_\IBM$;
+identifying $\Energy_\IBM$ concretely is task~(2) of
+Section~\ref{sec:tasks}.
+
+\subsection{Second-order energy and the PDE shadow}\label{sec:ibm-source-2nd}
+
+The bi-Laplacian/local-time PDE signature of~\cite{AllouZheng} is a
+\emph{second-order} object: it lives in the Brownian-time PDE shadow
+for the deterministic averaged observable $u(t,x)=\E[f(x+X_{|Y_t|})]$,
+not in any first-order pathwise representation of $\IBM$ (which is
+not Markov in its own filtration). The first-order datum of
+\cref{def:ibm-datum} therefore should not be expected, on its own, to
+display the $\partial_x^{4}$ correction.
+
+We sketch the natural higher-order construction. Let
+$D_\Source^{(2)}\coloneqq D_\Source\otimes D_\Source$ act on the
+second-order Sobolev space of the source via iteration of the partial
+Malliavin derivatives, with values in
+$\Energy_\Source^{\otimes 2}=L^{2}(\R^{2})\oplus L^{2}(\R\times\R_{+})
+\oplus L^{2}(\R_{+}^{2})$ (or a symmetrised version, depending on
+convention). Define the second-order observable smooth core
+\[
+  \mathcal C_\IBM^{(2)}
+  \;=\;\bigl\{\,F\in L^{2}(\Omega,\mathcal F_\IBM):
+        \iota F\in\Dom(D_\Source^{(2)})\,\bigr\}
+\]
+and (assuming density) the second-order observable energy
+\[
+  \Energy_\IBM^{(2)}
+  \;=\;\overline{\bigl\{D_\Source^{(2)}\iota F:F\in\mathcal C_\IBM^{(2)}\bigr\}}
+       ^{\,\Energy_\Source^{\otimes 2}}.
+\]
+The same compression argument as \cref{thm:compression} closes the
+operator $F\mapsto D_\Source^{(2)}(\iota F)$ on $\mathcal C_\IBM^{(2)}$,
+yielding a closed second-order intrinsic operator
+\[
+  D_\IBM^{(2)}\colon\mathcal C_\IBM^{(2)}\subseteq L^{2}(\mathcal F_\IBM)
+  \longrightarrow\Energy_\IBM^{(2)}.
+\]
+The formal development of $D_\IBM^{(2)}$ as a closed operator and its
+relation to the source bidegrees and the Fourier PDE shadow is given
+in Section~\ref{sec:second-order} (\cref{prop:compression-2,def:second-order-ibm}).
+We do not introduce a second-order intrinsic divergence symbol; the
+adjoint of $D_\IBM^{(2)}$ is a candidate object whose closed-form
+action is part of the next-stage analysis, not constructed here.
+
+\begin{remark}[Where the bi-Laplacian should appear]\label{rem:bilap-where}
+The proposed mechanism is that the bi-Laplacian/local-time correction
+of~\cite{AllouZheng} appears as a structural component of the
+second-order $\Carre$-form built from $D_\IBM^{(2)}$, averaged against
+the law of the Brownian clock $Y$. We do not prove this here. The
+source-resolved chaos atlas of~\cite{Fontes-IBMchaos} provides the
+expected consistency check: at bidegree $(m,n)$ the second-order energy
+of $F\in\mathcal C_\IBM^{(2)}$ should be computable in closed form, and
+matching against the Allouba--Zheng PDE signature becomes a finite
+verification at each bidegree. We make no claim that this matching is
+established.
+\end{remark}
+
+The first-order construction supplies the observable representation
+layer. The second-order construction is the proposed route to the PDE
+shadow. The It\^o identity of Section~\ref{sec:ibm-ito} sits between
+them.
+
+\section{First IBM theorem: the mollified occupation core}\label{sec:ibm-occ}
+
+\paragraph{Scope.} The construction below is first-order and
+core-level. It defines a \emph{mollified} occupation observable
+derivative and its projected divergence on an explicit non-empty
+subspace of $\mathcal C_\IBM$. The full unmollified intrinsic IBM
+calculus --- including density of the occupation core, the unmollified
+clock derivative as an $L^{2}(\R_{+})$-valued object, and the
+second-order energy producing the Brownian-time PDE shadow --- remains
+open.
+
+We single out three levels of regularity for the IBM occupation
+functional $F_T(\varphi)=\int_0^T\varphi(\IBM_s)\,ds$.
+
+\begin{itemize}
+\item[(A)] \emph{Mollified occupation core.}
+  $F_{T,\varepsilon}(\varphi)$ in $\Dom(D_X)\cap\Dom(D_Y)$ for every
+  $\varepsilon>0$, with $D_X F_{T,\varepsilon}$,
+  $D_Y F_{T,\varepsilon}$ classical and
+  $D_X D_Y F_{T,\varepsilon}$ classical to the extent the
+  second-order source calculus allows. All theorem statements of
+  this section operate at this level.
+\item[(B)] \emph{Unmollified scenery derivative.}
+  $D_X F_T(\varphi)$ is rigorous via the spatial factorisation
+  $F_T(\varphi)=\int_{\R}\varphi(X_x)L_T^{\,x}(Y)\,dx$
+  of~\cite{Fontes-IBMchaos}: it is an $L^{2}(\R)$-valued random
+  variable for $\varphi\in C_c^\infty(\R)$.
+\item[(C)] \emph{Unmollified full IBM derivative.} The candidate
+  $D_\IBM F_T(\varphi)$, with components $D_X F_T(\varphi)$ and
+  $D_Y F_T(\varphi)$, is \emph{not} constructed in this paper as an
+  $L^{2}(\R)\oplus L^{2}(\R_{+})$-valued operator. The clock
+  component is genuinely singular at the level of local time, and
+  must be identified, in the unmollified limit, as a
+  distribution-valued kernel or via chaos projections.
+\end{itemize}
+
+The remainder of this section makes (A) precise; (B) is cited as
+background; (C) is the principal analytic target left open. The
+scenery derivative is computed in closed form at the mollified level;
+the clock derivative is computed at the mollified level and recorded
+as singular at $\varepsilon=0$.
+
+\subsection*{Test class and occupation core}
+
+\paragraph{Convention for this section.}
+Within Section~\ref{sec:ibm-occ}, $\IBM_s$ denotes the two-sided
+composition $X_{Y_s}$ (rather than the canonical
+$X_{|Y_s|}$ used elsewhere in the paper); this produces the
+$\R$-valued spatial factorisation~\eqref{eq:occ-factor} with the
+Brownian local time $L^{x}(Y)$ on $\R$, in line
+with~\cite{Fontes-IBMchaos}. The conclusions below transfer to the
+canonical $X_{|Y_s|}$ form by replacing $L^{x}(Y)$ on $\R$ with
+$L^{x}(|Y|)$ on $\R_{+}$ throughout; we do not carry both notations
+in parallel.
+
+Let $\mathscr S_\IBM\coloneqq C_c^{\infty}(\R)$. For
+$\varphi\in\mathscr S_\IBM$ and $T>0$, set
+\[
+  F_T(\varphi)\;\coloneqq\;\int_0^T\varphi(\IBM_s)\,ds.
+\]
+Since $\varphi$ is bounded and $T$ is finite,
+$F_T(\varphi)\in L^{2}(\Omega,\mathcal F_\IBM,\Prob)$.
+
+\begin{definition}[IBM occupation core]\label{def:cocc}
+The \emph{IBM occupation core} is
+\[
+  \mathcal C_{\mathrm{occ}}
+  \;\coloneqq\;\mathrm{span}\bigl\{\,F_T(\varphi)-\E F_T(\varphi):
+   T>0,\ \varphi\in\mathscr S_\IBM\,\bigr\}\;\subseteq\;
+   L^{2}(\Omega,\mathcal F_\IBM,\Prob).
+\]
+\end{definition}
+
+$\mathcal C_{\mathrm{occ}}$ is a centred linear subspace of the
+observable $L^{2}$. We do not claim density and we do not construct a
+derivative on $\mathcal C_{\mathrm{occ}}$ directly: at the unmollified
+level $F_T(\varphi)\notin\Dom(D_Y)$ as an
+$L^{2}(\R_{+})$-valued Malliavin derivative, so
+$\mathcal C_{\mathrm{occ}}\not\subseteq\mathcal C_\IBM$. We use
+$\mathcal C_{\mathrm{occ}}$ as the unmollified \emph{target}
+approximated by the mollified core
+$\mathcal C_{\mathrm{occ}}^{\,\varepsilon}\subseteq\mathcal C_\IBM$ of
+\cref{def:mollified}.
+
+\subsection*{Spatial factorisation}
+
+The Kac--L\'evy occupation density for the Brownian clock $Y$ gives
+\begin{equation}\label{eq:occ-factor}
+  F_T(\varphi)
+  \;=\;\int_{\R}\varphi(X_x)\,L_T^{\,x}(Y)\,dx,
+\end{equation}
+where $L_T^{\,x}(Y)$ is the local time of $Y$ at level $x$ up to time
+$T$. Identity~\eqref{eq:occ-factor} is standard
+(see~\cite{RevuzYor,BorodinSalminen}) and is the structural input
+used in~\cite{Fontes-IBMchaos}; we take it as given.
+
+\subsection*{Scenery-mollified occupation core}
+
+The spatial derivative of the unmollified scenery $X$ is distributional
+(spatial white noise); we replace $X$ by its mollification, which keeps
+both source derivatives classical at every $\varepsilon>0$.
+
+\begin{definition}[Mollified scenery and mollified core]
+\label{def:mollified}
+Fix a non-negative even mollifier $\rho\in C_c^\infty(\R)$ with
+$\int\rho=1$ and write $\rho_\varepsilon(z)=\varepsilon^{-1}\rho(z/\varepsilon)$.
+The $\varepsilon$-mollified scenery is
+\[
+  X^{\varepsilon}_y \;\coloneqq\; (\rho_\varepsilon*X)(y)
+  \;=\;\int_{\R}\rho_\varepsilon(y-z)\,X_z\,dz,
+  \qquad y\in\R,
+\]
+which is $\Prob$-a.s.\ $C^{\infty}$ in $y$ on every compact, with
+$X^{\varepsilon}_y\to X_y$ locally uniformly in $y$ a.s.\ as
+$\varepsilon\to 0$ by Brownian H\"older continuity. The
+$\varepsilon$-mollified occupation functional is
+\[
+  F_{T,\varepsilon}(\varphi)
+  \;\coloneqq\;\int_0^T\varphi\bigl(X^{\varepsilon}_{Y_s}\bigr)\,ds,
+\]
+and the associated mollified core is
+\[
+  \mathcal C_{\mathrm{occ}}^{\,\varepsilon}
+  \;\coloneqq\;\mathrm{span}\bigl\{\,F_{T,\varepsilon}(\varphi)-
+      \E F_{T,\varepsilon}(\varphi):T>0,\ \varphi\in\mathscr S_\IBM\,\bigr\}.
+\]
+\end{definition}
+
+\begin{lemma}[Source regularity of the mollified core]
+\label{lem:moll-domain}
+For every $\varepsilon>0$, $T>0$ and $\varphi\in\mathscr S_\IBM$,
+\[
+  F_{T,\varepsilon}(\varphi)\;\in\;\Dom(D_X)\cap\Dom(D_Y),
+\]
+and hence $\mathcal C_{\mathrm{occ}}^{\,\varepsilon}\subseteq\mathcal C_\IBM$.
+\end{lemma}
+
+\begin{proof}
+For every $\omega$ and $\varepsilon>0$, $y\mapsto X^\varepsilon_y(\omega)$
+is $C^\infty$ with derivatives controlled, on every compact, by
+$\sup_K|X|$ and $\|\rho_\varepsilon^{(k)}\|_{L^1}$. Hence
+$s\mapsto\varphi(X^\varepsilon_{Y_s(\omega)})$ is the composition of
+$C^\infty$ maps integrated over $s\in[0,T]$, and the source chain rule
+on the joint Wiener space~\cite[\S1.2]{Nualart} together with Fubini
+gives $F_{T,\varepsilon}(\varphi)\in\Dom(D_X)\cap\Dom(D_Y)$. Explicit
+kernels are given in \cref{prop:moll-deriv} below; their finiteness in
+$L^{2}(\R)$ and $L^{2}(\R_{+})$ respectively follows from $\varphi$
+having compact support and $X^\varepsilon,\partial_yX^\varepsilon$ having
+finite $L^{2}$-moments on the range of $Y|_{[0,T]}$.
+\end{proof}
+
+\subsection*{Explicit source derivatives on the mollified core}
+
+Let $\sigma_x\in L^{2}(\R)$ denote the Cameron--Martin representer of
+the scenery evaluation $X\mapsto X_x$; in the two-sided Brownian
+parametrisation $\sigma_x=\mathbf 1_{[0,x]}$ for $x\ge 0$ and
+$\sigma_x=-\mathbf 1_{[x,0]}$ for $x<0$, so
+$\|\sigma_x\|_{L^{2}(\R)}^{2}=|x|$. For the clock,
+$D_rY_s=\mathbf 1_{r\le s}\in L^{2}(\R_{+})$.
+
+\begin{proposition}[Source derivatives of the mollified core]
+\label{prop:moll-deriv}
+Set $(D_XX^\varepsilon_y)(\xi)\coloneqq(\rho_\varepsilon*\sigma_\cdot(\xi))(y)$
+and $(\partial_yX^\varepsilon)(y)\coloneqq(\rho_\varepsilon'*X)(y)$. Then
+for $\varphi\in\mathscr S_\IBM$, $T>0$, $\varepsilon>0$,
+\begin{align}
+  D_X F_{T,\varepsilon}(\varphi)(\xi)
+  &\;=\;\int_0^T\varphi'\bigl(X^\varepsilon_{Y_s}\bigr)\,
+         (D_XX^\varepsilon_{Y_s})(\xi)\,ds,
+         \qquad\xi\in\R,
+         \label{eq:DX-moll}\\[2pt]
+  D_Y F_{T,\varepsilon}(\varphi)(r)
+  &\;=\;\int_r^T\varphi'\bigl(X^\varepsilon_{Y_s}\bigr)\,
+         (\partial_yX^\varepsilon)(Y_s)\,ds,
+         \qquad r\in[0,T].
+         \label{eq:DY-moll}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+\eqref{eq:DX-moll}: $X^\varepsilon_y$ is linear in $X$ with
+$D_XX^\varepsilon_y(\xi)=\int_\R\rho_\varepsilon(y-z)\sigma_z(\xi)\,dz$.
+The source chain rule applied to $\varphi(X^\varepsilon_{Y_s})$ in the
+$X$-direction yields $\varphi'(X^\varepsilon_{Y_s})\,D_XX^\varepsilon_{Y_s}(\xi)$;
+integration over $s$ commutes by Fubini.
+
+\eqref{eq:DY-moll}: $Y_s$ enters only through $y\mapsto X^\varepsilon_y$
+evaluated at $Y_s$. Since $D_rY_s=\mathbf 1_{r\le s}$ and $X^\varepsilon$
+has classical spatial derivative
+$\partial_yX^\varepsilon=\rho_\varepsilon'*X$, the chain rule gives
+$D_r\varphi(X^\varepsilon_{Y_s})=\varphi'(X^\varepsilon_{Y_s})\,
+\partial_yX^\varepsilon(Y_s)\,\mathbf 1_{r\le s}$, and integration over
+$s$ yields \eqref{eq:DY-moll}.
+\end{proof}
+
+\subsection*{Occupation observable energy}
+
+\begin{definition}[Occupation observable energy]\label{def:occ-energy}
+The \emph{$\varepsilon$-occupation observable energy} is
+\[
+  \Energy_\IBM^{\mathrm{occ},\,\varepsilon}
+  \;\coloneqq\;
+  \overline{\bigl\{(D_XF,\,D_YF):F\in\mathcal C_{\mathrm{occ}}^{\,\varepsilon}\bigr\}}
+  ^{\,L^{2}(\R)\oplus L^{2}(\R_{+})}
+  \;\subseteq\;\Energy_\IBM.
+\]
+\end{definition}
+
+We do not claim that
+$\overline{\bigcup_{\varepsilon>0}\Energy_\IBM^{\mathrm{occ},\,\varepsilon}}
+=\Energy_\IBM$, nor that the energies stabilise as $\varepsilon\to 0$:
+identifying the limiting object is part of the analytic programme
+listed at the end of this section.
+
+\subsection*{Occupation-core intrinsic derivative and divergence}
+
+Specialising \cref{def:compression} to the occupation core:
+
+\begin{definition}[Occupation derivative and divergence]
+\label{def:ibm-occ-D}
+For $F\in\mathcal C_{\mathrm{occ}}^{\,\varepsilon}$, the
+\emph{occupation-core intrinsic derivative} is
+\[
+  D_\IBM^{\,\mathrm{occ},\,\varepsilon} F
+  \;\coloneqq\;(D_X F,\,D_Y F)\;\in\;\Energy_\IBM^{\mathrm{occ},\,\varepsilon},
+\]
+explicit from \eqref{eq:DX-moll}--\eqref{eq:DY-moll}. Its adjoint
+$\delta_\IBM^{\,\mathrm{occ},\,\varepsilon}=
+(D_\IBM^{\,\mathrm{occ},\,\varepsilon})^{*}$
+satisfies, on the lifted source-divergence domain,
+\begin{equation}\label{eq:occ-delta}
+  \delta_\IBM^{\,\mathrm{occ},\,\varepsilon} u
+  \;=\;\E\!\bigl[\,\delta_X u_X+\delta_Y u_Y\,\big|\,\mathcal F_\IBM\,\bigr]
+  \qquad\text{for }u=(u_X,u_Y)
+  \text{ with }u_X\in\Dom(\delta_X),\ u_Y\in\Dom(\delta_Y).
+\end{equation}
+\end{definition}
+
+\subsection*{Quantitative mollifier estimates}
+
+The convergence theorem below relies on a single explicit second-moment
+bound for the scenery mollifier.
+
+\begin{lemma}[Scenery mollifier $L^{2}$-rate, uniform in $x$]
+\label{lem:moll-rate}
+Let $X$ be the two-sided Brownian scenery and $X^{\varepsilon}=
+\rho_\varepsilon*X$ as in \cref{def:mollified}. Then \emph{uniformly}
+for every $x\in\R$,
+\begin{equation}\label{eq:moll-rate-L2}
+  \E\bigl[(X^{\varepsilon}_x-X_x)^{2}\bigr]\;\le\;C_\rho\,\varepsilon,
+  \qquad C_\rho\;\coloneqq\;\int_\R|v|\rho(v)\,dv\;<\;\infty,
+\end{equation}
+and consequently $\E|X^\varepsilon_x-X_x|\le C_\rho^{1/2}\varepsilon^{1/2}$
+uniformly in $x$. In particular $X^\varepsilon_0\to 0$ in $L^{2}$ as
+$\varepsilon\to 0$, since $X_0=0$ a.s.
+\end{lemma}
+
+\begin{proof}
+For two-sided Brownian scenery, $\E[(X_z-X_x)^{2}]=|z-x|$ for every
+$z,x\in\R$: when $z,x$ have the same sign or one is zero, this is the
+standard one-sided Brownian increment variance; when $z>0>x$,
+independence of $X_z$ and $X_x$ gives
+$\E[(X_z-X_x)^{2}]=\E X_z^{2}+\E X_x^{2}=z+|x|=z-x=|z-x|$ (and
+symmetrically for $x>0>z$). Hence the identity holds across the
+origin.
+
+Writing $X^\varepsilon_x-X_x=\int_\R\rho_\varepsilon(x-z)(X_z-X_x)\,dz$
+and applying Jensen's inequality with the probability measure
+$\rho_\varepsilon(x-z)\,dz$,
+\[
+  \E[(X^\varepsilon_x-X_x)^{2}]
+  \;\le\;\int_\R\rho_\varepsilon(x-z)\,\E[(X_z-X_x)^{2}]\,dz
+  \;=\;\int_\R\rho_\varepsilon(x-z)|z-x|\,dz.
+\]
+Substituting $v=(x-z)/\varepsilon$ gives
+$\int_\R\rho(v)|v|\varepsilon\,dv=C_\rho\varepsilon$, proving
+\eqref{eq:moll-rate-L2}. The bound is uniform in $x\in\R$ since the
+right-hand side does not depend on $x$. The $L^{1}$ corollary is
+Cauchy--Schwarz, and the $L^{2}$ convergence at $x=0$ is the case
+$X_0=0$.
+\end{proof}
+
+\begin{lemma}[Scenery-derivative kernel: $L^{2}$ bound and rate]\label{lem:moll-H}
+With $H_\varepsilon(y,\xi)\coloneqq(D_XX^\varepsilon_y)(\xi)=(\rho_\varepsilon*\sigma_\cdot(\xi))(y)$:
+\begin{enumerate}
+\item[(a)] $\|H_\varepsilon(y,\cdot)\|_{L^{2}(\R)}^{2}\le|y|+C_\rho\varepsilon$
+  for every $y\in\R$;
+\item[(b)] $\|H_\varepsilon(y,\cdot)-\sigma_y\|_{L^{2}(\R)}^{2}\le C'_\rho\varepsilon$
+  for every $y\in\R$, with $C'_\rho$ depending only on the support of
+  $\rho$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a). Jensen and $\|\sigma_z\|_{L^{2}(\R)}^{2}=|z|$ give
+$\int_\R H_\varepsilon(y,\xi)^{2}\,d\xi\le
+\int_\R\rho_\varepsilon(y-z)|z|\,dz\le|y|+C_\rho\varepsilon$.
+
+(b). The difference $H_\varepsilon(y,\xi)-\sigma_y(\xi)$ vanishes off the
+$O(\varepsilon)$-neighbourhood of the jump locus
+$\{\xi\in\R:\xi\,\text{between}\,y\,\text{and a point in supp}\,\rho_\varepsilon(y-\cdot)\}$,
+and is uniformly bounded by $1$ there. The $L^{2}(\R,d\xi)$ mass is
+therefore $O(\varepsilon)$ uniformly in $y$.
+\end{proof}
+
+\begin{lemma}[Spatial derivative of the mollified scenery]\label{lem:moll-eps-inv}
+Away from the origin (specifically, for $|y|>c\varepsilon$ where
+$\mathrm{supp}\,\rho\subseteq[-c,c]$),
+$(\partial_y X^\varepsilon)(y)=(\rho_\varepsilon'*X)(y)$ is centred
+Gaussian with
+\[
+  \Var\bigl((\partial_y X^\varepsilon)(y)\bigr)
+  \;=\;\frac{c_\rho^{\,(1)}}{\varepsilon},
+  \qquad c_\rho^{\,(1)}\;\coloneqq\;\int_\R\rho(v)^{2}\,dv.
+\]
+\end{lemma}
+
+\begin{proof}
+For $|y|>c\varepsilon$, the support of $z\mapsto\rho_\varepsilon(y-z)$ is
+entirely on one side of $0$. Integration by parts (the boundary terms
+vanish because $\rho_\varepsilon$ has compact support) gives
+$(\partial_y X^\varepsilon)(y)=\int_\R\rho_\varepsilon(y-z)\,dX_z$, an
+It\^o integral of a deterministic $L^{2}$ integrand. Hence the
+$L^{2}$-isometry yields
+$\Var=\int\rho_\varepsilon^{2}(u)\,du=\varepsilon^{-1}\int\rho^{2}$.
+\end{proof}
+
+\subsection*{Mollified-to-unmollified convergence in the scenery direction}
+
+\begin{theorem}[Mollified-to-unmollified IBM occupation convergence in the scenery direction]
+\label{thm:ibm-occ}
+Let $T>0$ and $\varphi\in\mathscr S_\IBM=C_c^\infty(\R)$. Then:
+\begin{enumerate}
+\item For every $\varepsilon>0$,
+  $\mathcal C_{\mathrm{occ}}^{\,\varepsilon}\subseteq\mathcal C_\IBM$,
+  and the occupation-core intrinsic derivative
+  $D_\IBM^{\,\mathrm{occ},\,\varepsilon}$ is the restriction of the
+  minimal observable derivative $D_\IBM$ of \cref{def:ibm-datum} to
+  $\mathcal C_{\mathrm{occ}}^{\,\varepsilon}$, with explicit kernels
+  \eqref{eq:DX-moll}--\eqref{eq:DY-moll}.
+\item On the lifted source-divergence domain, the adjoint
+  $\delta_\IBM^{\,\mathrm{occ},\,\varepsilon}$ admits the projected
+  formula \eqref{eq:occ-delta}.
+\item As $\varepsilon\to 0$,
+  $F_{T,\varepsilon}(\varphi)\to F_T(\varphi)$ in $L^{2}(\Omega)$, with
+  rate $O(\varepsilon^{1/2})$.
+\item As $\varepsilon\to 0$,
+  $D_X F_{T,\varepsilon}(\varphi)\to D_X F_T(\varphi)$ in
+  $L^{2}(\Omega;L^{2}(\R))$, also at rate $O(\varepsilon^{1/2})$, with
+  limit
+  \begin{equation}\label{eq:DX-limit}
+    D_X F_T(\varphi)(\xi)
+    \;=\;\int_{\R}\varphi'(X_x)\,\sigma_x(\xi)\,L_T^{\,x}(Y)\,dx
+    \;=\;\int_0^T\varphi'(X_{Y_s})\,\sigma_{Y_s}(\xi)\,ds.
+  \end{equation}
+\item For every $\varepsilon>0$, $D_Y F_{T,\varepsilon}(\varphi)$ is a
+  classical element of $L^{2}(\R_{+})$ given by \eqref{eq:DY-moll}. The
+  underlying spatial kernel $\partial_yX^\varepsilon$ has pointwise
+  variance $c_\rho^{(1)}\varepsilon^{-1}$ (\cref{lem:moll-eps-inv}), so
+  the family $\{D_YF_{T,\varepsilon}(\varphi)\}_{\varepsilon>0}$ is not
+  controlled by the uniform-in-$y$ estimates used for the scenery
+  component. We do not assert convergence of
+  $D_Y F_{T,\varepsilon}(\varphi)$ in $L^{2}(\Omega;L^{2}(\R_{+}))$.
+  Any limiting clock object must be interpreted distributionally or
+  chaos-by-chaos.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) follows from \cref{lem:moll-domain,prop:moll-deriv}: both $D_\IBM$
+and $D_\IBM^{\,\mathrm{occ},\,\varepsilon}$ act as
+$F\mapsto D_\Source(\iota F)$ on
+$\mathcal C_{\mathrm{occ}}^{\,\varepsilon}\subseteq\mathcal C_\IBM$.
+(ii) is \cref{thm:proj-div} applied to
+$D_\IBM^{\,\mathrm{occ},\,\varepsilon}$.
+
+\emph{Localisation.} For $R>0$ set
+$A_R\coloneqq\{\sup_{s\in[0,T]}|Y_s|\le R\}$. The Brownian reflection
+principle gives
+\begin{equation}\label{eq:bm-max}
+  \Prob(A_R^{c})\;\le\;2\Prob(|Y_T|>R)\;\le\;2\,e^{-R^{2}/(2T)}.
+\end{equation}
+Both \cref{lem:moll-rate} and \cref{lem:moll-H}\,(b) are uniform in the
+spatial variable $y\in\R$; we use the localisation $A_R/A_R^{c}$ to
+keep the moment-dependent factor $\|H_\varepsilon\|^{2}\le|y|+C_\rho\varepsilon$
+controlled, then send $R\to\infty$ if desired. The
+$O(\varepsilon^{1/2})$ rates below hold for every fixed $R>0$.
+
+(iii). By Lipschitz continuity of $\varphi$ and Cauchy--Schwarz,
+\[
+  |F_{T,\varepsilon}(\varphi)-F_T(\varphi)|^{2}
+  \;\le\;\|\varphi'\|_\infty^{2}\,T
+   \int_0^T(X^\varepsilon_{Y_s}-X_{Y_s})^{2}\,ds.
+\]
+\emph{On $A_R$:} $|Y_s|\le R$ for $s\in[0,T]$; conditioning on $Y$ and
+applying \cref{lem:moll-rate} (uniform in $y\in[-R,R]$, indeed uniform
+in $y\in\R$) gives
+$\E_X[(X^\varepsilon_{Y_s}-X_{Y_s})^{2}\mathbf 1_{A_R}]\le C_\rho\varepsilon$.
+Hence
+$\E[|F_{T,\varepsilon}-F_T|^{2}\mathbf 1_{A_R}]\le C_\rho T^{2}\|\varphi'\|_\infty^{2}\varepsilon$.
+
+\emph{On $A_R^{c}$:} The same Lemma~\ref{lem:moll-rate} bound holds for
+all $y\in\R$, so
+$\E_X[(X^\varepsilon_{Y_s}-X_{Y_s})^{2}\mathbf 1_{A_R^{c}}]\le C_\rho\varepsilon\,
+\mathbf 1_{A_R^{c}}$, giving
+$\E[|F_{T,\varepsilon}-F_T|^{2}\mathbf 1_{A_R^{c}}]\le
+C_\rho T^{2}\|\varphi'\|_\infty^{2}\varepsilon\,\Prob(A_R^{c})$.
+
+Summing, $\E[|F_{T,\varepsilon}-F_T|^{2}]\le
+C_\rho T^{2}\|\varphi'\|_\infty^{2}\varepsilon\,(1+\Prob(A_R^{c}))\le
+2C_\rho T^{2}\|\varphi'\|_\infty^{2}\varepsilon$, the claimed
+$O(\varepsilon^{1/2})$ rate in $L^{2}(\Omega)$. The estimate is uniform
+in $R>0$; the localisation enters only to expose where the
+unbounded range of $Y_s$ would otherwise need to be controlled.
+
+(iv). The second equality in \eqref{eq:DX-limit} is the occupation
+density formula applied to $x\mapsto\varphi'(X_x)\sigma_x(\xi)$. For
+the limit itself, set $H_\varepsilon(y,\xi)\coloneqq(D_XX^\varepsilon_y)(\xi)$
+and decompose
+\[
+  D_X F_{T,\varepsilon}(\varphi)-D_X F_T(\varphi)\;=\;A_\varepsilon+B_\varepsilon,
+\]
+where
+\[
+  A_\varepsilon(\xi)
+  =\!\int_0^T\!\bigl[\varphi'(X^\varepsilon_{Y_s})-\varphi'(X_{Y_s})\bigr]
+   H_\varepsilon(Y_s,\xi)\,ds,
+  \quad
+  B_\varepsilon(\xi)
+  =\!\int_0^T\!\varphi'(X_{Y_s})\bigl[H_\varepsilon(Y_s,\xi)-\sigma_{Y_s}(\xi)\bigr]ds.
+\]
+
+\emph{Bound on $A_\varepsilon$, with explicit localisation.} By
+Cauchy--Schwarz in $s$ and in $\omega$,
+\[
+  \|A_\varepsilon\|_{L^{2}(\Omega;L^{2}(\R))}^{2}
+  \le T\!\int_0^T\!\E\Bigl[
+       |\varphi'(X^\varepsilon_{Y_s})-\varphi'(X_{Y_s})|^{2}\,
+       \|H_\varepsilon(Y_s,\cdot)\|_{L^{2}(\R)}^{2}\Bigr]ds.
+\]
+Conditioning on $Y$, Lipschitz $\varphi'$ and \cref{lem:moll-rate} give
+the uniform-in-$y$ bound
+$\E_X[|\varphi'(X^\varepsilon_y)-\varphi'(X_y)|^{2}]\le
+\|\varphi''\|_\infty^{2}C_\rho\varepsilon$. Split the remaining factor
+on $A_R$ and $A_R^{c}$.
+
+On $A_R$, $|Y_s|\le R$, so \cref{lem:moll-H}\,(a) gives
+$\|H_\varepsilon(Y_s,\cdot)\|^{2}\le R+C_\rho\varepsilon$ uniformly for
+$s\in[0,T]$, hence
+\[
+  \E\bigl[|\varphi'(X^\varepsilon_{Y_s})-\varphi'(X_{Y_s})|^{2}
+   \|H_\varepsilon(Y_s,\cdot)\|^{2}\mathbf 1_{A_R}\bigr]
+  \le\|\varphi''\|_\infty^{2}C_\rho(R+C_\rho\varepsilon)\,\varepsilon.
+\]
+On $A_R^{c}$, the global bound $\|H_\varepsilon(Y_s,\cdot)\|^{2}\le
+|Y_s|+C_\rho\varepsilon$ combined with Cauchy--Schwarz and
+\eqref{eq:bm-max} gives
+\[
+  \E[(|Y_s|+C_\rho\varepsilon)\mathbf 1_{A_R^{c}}]
+  \le\E[Y_s^{2}]^{1/2}\Prob(A_R^{c})^{1/2}+C_\rho\varepsilon\Prob(A_R^{c})
+  \le\sqrt{2T}\,e^{-R^{2}/(4T)}+2C_\rho\varepsilon\,e^{-R^{2}/(2T)}.
+\]
+Multiplying by the $\varepsilon$-factor from $\varphi'$ Lipschitz, the
+$A_R^{c}$ contribution is $O(\varepsilon\,e^{-R^{2}/(4T)})$ for any
+$R>0$. Adding the two pieces, for any fixed $R>0$,
+\[
+  \|A_\varepsilon\|_{L^{2}(\Omega;L^{2}(\R))}^{2}
+  \;\le\;T^{2}\|\varphi''\|_\infty^{2}C_\rho\,
+   \bigl[(R+C_\rho\varepsilon)\varepsilon
+       +\sqrt{2T}\,\varepsilon\,e^{-R^{2}/(4T)}\bigr]
+  \;=\;O(\varepsilon).
+\]
+
+\emph{Bound on $B_\varepsilon$.} \cref{lem:moll-H}\,(b) is uniform in
+$y\in\R$, so no localisation is needed for this term:
+\[
+  \|B_\varepsilon\|_{L^{2}(\Omega;L^{2}(\R))}^{2}
+  \le\|\varphi'\|_\infty^{2}T\!\int_0^T\!
+       \E\|H_\varepsilon(Y_s,\cdot)-\sigma_{Y_s}\|_{L^{2}(\R)}^{2}\,ds
+  \le C'_\rho\,\|\varphi'\|_\infty^{2}\,T^{2}\,\varepsilon.
+\]
+Adding the two contributions,
+$\|D_X F_{T,\varepsilon}(\varphi)-D_X F_T(\varphi)\|_{L^{2}(\Omega;L^{2}(\R))}
+=O(\varepsilon^{1/2})$.
+
+(v). For each $\varepsilon>0$, $\partial_yX^\varepsilon=\rho_\varepsilon'*X$
+is a centred Gaussian random function of $y$, $\Prob$-a.s.\ continuous
+on every compact, and $D_Y F_{T,\varepsilon}(\varphi)$ defined by
+\eqref{eq:DY-moll} is a well-defined element of $L^{2}(\R_{+})$ by
+\cref{lem:moll-domain}. \Cref{lem:moll-eps-inv} gives the pointwise
+variance $\Var(\partial_yX^\varepsilon(y))=c_\rho^{(1)}\varepsilon^{-1}$
+for $|y|>c\varepsilon$. The variance scaling of $\partial_yX^\varepsilon$
+is the analytic obstruction; the uniform-in-$y$ control used for the
+scenery component fails for the clock kernel. Establishing sharp
+divergence or renormalised convergence of
+$D_Y F_{T,\varepsilon}(\varphi)$ requires a careful account of
+correlations along the clock path, possible zeros of $\varphi'$, and
+clock revisits, and belongs to the next-stage clock analysis. We assert
+neither convergence nor divergence in $L^{2}(\Omega;L^{2}(\R_{+}))$ here.
+\end{proof}
+
+\begin{corollary}[Clock derivative: the first analytic obstruction]
+\label{cor:unmollified}
+\Cref{thm:ibm-occ}~(iii)--(iv) shows that the
+observable-compression construction is not formal: on the IBM
+occupation core, the mollified intrinsic derivative converges in the
+observable functional ($F_{T,\varepsilon}\to F_T$ in $L^{2}(\Omega)$)
+and in the scenery-energy direction ($D_X F_{T,\varepsilon}\to D_X F_T$
+in $L^{2}(\Omega;L^{2}(\R))$), with closed-form limit
+\eqref{eq:DX-limit} via the spatial factorisation. The clock direction
+sits outside this picture: the spatial kernel
+$\partial_yX^\varepsilon=\rho_\varepsilon'*X$ has pointwise variance
+$c_\rho^{(1)}\varepsilon^{-1}$ (\cref{lem:moll-eps-inv}), so no $L^{2}$
+limit is asserted here; the pointwise variance scaling indicates that
+the clock component cannot be handled by the same classical
+compactness argument as the scenery component. Any limiting clock
+object must be interpreted distributionally or chaos-by-chaos --- as a
+distribution-valued kernel against $L^{2}(\R_{+})$ test integrands, or
+through source-chaos projections in the bidegree atlas
+of~\cite{Fontes-IBMchaos,NualartVives}. This is the first analytic
+obstruction to a fully classical intrinsic IBM derivative and the
+natural entry point for the second-order observable energy of
+Section~\ref{sec:ibm-source-2nd}.
+\end{corollary}
+
+\subsection*{Why this matters}
+
+\Cref{thm:ibm-occ}~(iii)--(iv) is the first piece of evidence that the
+abstract observable-compression construction is realised concretely on
+a non-trivial subspace of $\mathcal C_\IBM$, with the unmollified
+scenery component surviving the $\varepsilon\to 0$ limit in the
+expected $L^{2}$-sense. \Cref{cor:unmollified} isolates the remaining
+analytic gap as a single, structural feature of the composite
+$X\circ Y$: the clock direction probes the spatial white noise of the
+scenery, an object that lives outside any classical $L^{2}$-valued
+Malliavin theory. This is exactly where the source-chaos atlas
+of~\cite{Fontes-IBMchaos} and the second-order observable energy of
+Section~\ref{sec:ibm-source-2nd} must enter, and is the natural
+analytic obstruction the next theorem in this programme has to
+resolve.
+
+\subsection*{Connection to source bidegrees}
+
+\begin{remark}[Bidegree consistency]\label{rem:bidegree}
+The lifted occupation derivative
+$J D_\IBM^{\,\mathrm{occ},\,\varepsilon} F$ sits inside
+$L^{2}(\R)\oplus L^{2}(\R_{+})$ and decomposes against the joint Wiener
+bidegree atlas
+$\bigoplus_{m,n\ge 0}\Hilb^{X}_{m}\otimes\Hilb^{Y}_{n}$
+of~\cite{Fontes-IBMchaos}. Mode by mode:
+\begin{itemize}
+\item bidegrees $(m,0)$, $m\ge 1$, recover pure scenery contributions
+  driven by \eqref{eq:DX-moll};
+\item bidegrees $(0,n)$, $n\ge 1$, recover pure clock contributions
+  driven by \eqref{eq:DY-moll};
+\item mixed bidegrees $(m,n)$, $m,n\ge 1$, are
+  \emph{consistency constraints} linking $D_X F$ and $D_Y F$ through
+  the spatial factorisation~\eqref{eq:occ-factor}.
+\end{itemize}
+We do not reprove the bidegree expansion; it is the content
+of~\cite{Fontes-IBMchaos} and is cited as background.
+\end{remark}
+
+\paragraph{Transition: two distinct IBM functionals.}
+The occupation-core construction of this section concerns the pathwise
+functional $F_T(\varphi)=\int_0^{T}\varphi(X_{Y_s})\,ds$. The Fourier-mode
+calculation below concerns the Brownian-time semigroup observable
+$u(t,x)=\E[f(x+X_{|Y_t|})]$. These are related but distinct: the
+former supplies a concrete observable-energy core (\cref{thm:ibm-occ});
+the latter identifies the PDE shadow expected at the second-order
+level. The calculation that follows is \emph{not} derived from the
+first-order observable compression; it is a separate diagnostic of
+what the second-order observable energy of
+Section~\ref{sec:second-order} must reproduce.
+
+\subsection*{Fourier-mode PDE-shadow diagnostic}
+
+We record a PDE-shadow diagnostic identifying, at the level of
+Fourier-mode test functions, the second-order signature that any
+intrinsic IBM It\^o formula would have to reproduce. \emph{We do not
+derive the intrinsic IBM It\^o formula here; the Fourier computation
+identifies what the second-order observable energy must reproduce in
+the semigroup setting.}
+
+\paragraph{Convention.} $X=(X_s)_{s\in\R}$ is the standard two-sided
+Brownian scenery ($\Var(X_s)=|s|$, generator $\tfrac12\Delta$), and
+$Y=(Y_t)_{t\ge 0}$ is an independent standard one-sided Brownian clock
+from $Y_0=0$. Set
+\[
+  Z_t\;\coloneqq\;x+X_{|Y_t|},\qquad t\ge 0,
+\]
+the Brownian-time process started at $x$. The use of $|Y_t|$ here (in
+place of $Y_t$ on its own filtration) is for clean PDE benchmarking;
+the abstract observable-compression construction does not depend on
+this convention.
+
+\paragraph{Characteristic function.}
+For $k\in\R$ and $t>0$,
+\[
+  u_k(t,x)\;\coloneqq\;\E\bigl[e^{ikZ_t}\bigr]
+  \;=\;e^{ikx}\,\E\bigl[e^{ikX_{|Y_t|}}\bigr].
+\]
+Conditioning on $|Y_t|=s$ gives $\E[e^{ikX_s}]=e^{-k^{2}s/2}$, and
+$|Y_t|$ has half-normal density
+$p_t(s)=\sqrt{2/(\pi t)}\,e^{-s^{2}/(2t)}$ for $s\ge 0$. Hence
+\begin{equation}\label{eq:uk-int}
+  u_k(t,x)
+  \;=\;e^{ikx}\,\sqrt{\tfrac{2}{\pi t}}
+   \int_0^\infty e^{-k^{2}s/2-s^{2}/(2t)}\,ds.
+\end{equation}
+Completing the square,
+$-k^{2}s/2-s^{2}/(2t)=-(s+k^{2}t/2)^{2}/(2t)+k^{4}t/8$, and
+substituting $u=(s+k^{2}t/2)/\sqrt{t}$,
+\begin{equation}\label{eq:uk-closed}
+  u_k(t,x)
+  \;=\;2\,e^{ikx}\,e^{k^{4}t/8}\,\Phi^{c}\!\bigl(k^{2}\sqrt{t}/2\bigr),
+  \qquad
+  \Phi^{c}(a)\coloneqq\!\int_a^\infty\!\frac{e^{-u^{2}/2}}{\sqrt{2\pi}}\,du.
+\end{equation}
+At $t\to 0^{+}$, $\Phi^{c}(0)=1/2$ recovers $u_k(0^{+},x)=e^{ikx}=f_k(x)$.
+
+\paragraph{PDE identity at the Fourier-mode level.}
+Differentiate \eqref{eq:uk-closed} in $t$. With $a=k^{2}\sqrt t/2$
+and $b=k^{4}t/8$, $(\Phi^{c})'(a)=-\phi(a)$ for
+$\phi(a)=(2\pi)^{-1/2}e^{-a^{2}/2}$, and the cancellation
+$a^{2}/2=b$ gives $e^{b}\phi(a)=(2\pi)^{-1/2}$. Therefore
+\begin{equation}\label{eq:uk-pde}
+  \partial_t u_k(t,x)
+  \;=\;e^{ikx}\Bigl[\,2\,e^{b}\cdot\tfrac{k^{4}}{8}\,\Phi^{c}(a)
+       \;-\;2\,e^{b}\phi(a)\cdot\tfrac{k^{2}}{4\sqrt{t}}\Bigr]
+  \;=\;\frac{k^{4}}{8}\,u_k(t,x)\;-\;\frac{k^{2}\,e^{ikx}}{2\sqrt{2\pi t}}.
+\end{equation}
+Translating $-k^{2}e^{ikx}=\Delta f_k$ and $k^{4}u_k=\Delta^{2}u_k$
+(with $\Delta=\partial_x^{2}$),
+\begin{equation}\label{eq:az-fourier}
+  \partial_t u_k(t,x)
+  \;=\;\frac{1}{8}\,\Delta^{2}u_k(t,x)
+       \;+\;\frac{\Delta f_k(x)}{2\sqrt{2\pi t}}.
+\end{equation}
+Fourier synthesis on smooth bounded $f$ yields
+\begin{equation}\label{eq:az-general}
+  \partial_t u(t,x)
+  \;=\;\frac{1}{8}\,\Delta^{2}u(t,x)
+       \;+\;\frac{\Delta f(x)}{2\sqrt{2\pi t}},
+  \qquad u(0,x)=f(x).
+\end{equation}
+Under the stated convention, \eqref{eq:az-general} is the Brownian-time
+PDE of~\cite{AllouZheng}; the constants $1/8$ and $1/(2\sqrt{2\pi})$
+are derived directly from \eqref{eq:uk-int}.
+
+\paragraph{Convention sensitivity.} The bi-Laplacian coefficient $1/8$
+and the boundary coefficient $1/(2\sqrt{2\pi})$ depend on the scenery
+variance normalisation. With $\Var(X_s)=\alpha s$, the coefficient of
+$\Delta^{2}u$ becomes $\alpha^{2}/8$ and that of $\Delta f$ becomes
+$\alpha/(2\sqrt{2\pi t})$. We have used $\alpha=1$ (standard Brownian
+motion); rescaling $X$ rescales both constants accordingly.
+
+\paragraph{Interpretation.}
+\Cref{eq:az-general} is \emph{not} a new PDE theorem and not the
+intrinsic IBM It\^o formula. It identifies the second-order shadow the
+energy-first programme must reproduce:
+\begin{itemize}
+\item the bi-Laplacian $\tfrac18\Delta^{2}u$ on the right is what a
+  successful second-order observable energy
+  $\Energy_\IBM^{(2)}$ (\cref{rem:bilap-where}) should generate as the
+  $\Carre$-form contribution;
+\item the singular $t^{-1/2}$ term $\Delta f/(2\sqrt{2\pi t})$ is the
+  boundary/local-time signature attributable to $|Y_t|$ near the origin
+  of the half-normal density.
+\end{itemize}
+The first-order observable compression of \cref{thm:ibm-occ}
+constructs $D_\IBM$ on the mollified occupation core. The
+Fourier-mode calculation \eqref{eq:uk-int}--\eqref{eq:az-general}
+shows what the next layer --- the second-order observable energy ---
+must reproduce: the $k^{4}$ multiplier corresponding to $\Delta^{2}$,
+together with the singular $t^{-1/2}$ boundary term.
+
+\paragraph{Two levels, one source structure.}
+For pathwise occupation functionals $F_T(\varphi)$, mixed bidegrees
+$(m,n)$ with $m,n\ge 1$ obstruct a closed scalar PDE
+(\cref{rem:bidegree}). For Brownian-time semigroup observables
+$u(t,x)=\E[f(x+X_{|Y_t|})]$, the averaged law admits the closed
+fourth-order PDE \eqref{eq:az-general}. Both phenomena reflect the
+same composite source structure $X\circ Y$ but at different levels:
+the occupation-functional layer keeps the joint $(X,Y)$ filtration
+explicit and resolves the mixed sector chaos-by-chaos
+in~\cite{Fontes-IBMchaos}; the semigroup layer averages over $Y$ first
+and exposes a closed PDE in $x$. The Fourier diagnostic above operates
+strictly at the semigroup level.
+
+\subsection*{What remains for the full IBM It\^o formula}
+
+The occupation-core construction is the first non-trivial IBM
+instantiation of the observable-compression framework: it produces a
+closed first-order operator on a non-empty, explicit subdomain of
+$\mathcal C_\IBM$, with closed-form source derivatives at the mollified
+level. The gap between \cref{thm:ibm-occ} and a full intrinsic IBM
+It\^o formula splits into four analytic problems.
+\begin{enumerate}
+\item Either prove density of $\mathcal C_{\mathrm{occ}}$ in
+  $L^{2}(\mathcal F_\IBM)$, or commit to the smaller occupation-level
+  observable calculus carried by the closure of
+  $\mathcal C_{\mathrm{occ}}$.
+\item Identify the unmollified clock derivative
+  $D_Y F_T(\varphi)=\lim_{\varepsilon\to 0}D_Y F_{T,\varepsilon}(\varphi)$
+  as a distribution-valued kernel against $L^{2}(\R_{+})$ test
+  integrands, and prove closability of the resulting operator on
+  $\mathcal C_{\mathrm{occ}}$.
+\item Construct the second-order observable energy
+  $\Energy_\IBM^{(2)}$ on (the closure of) the occupation core, in the
+  sense of Section~\ref{sec:ibm-source-2nd}.
+\item Verify that the second-order $\Carre$-form, averaged against the
+  law of $Y$, reproduces the bi-Laplacian/local-time PDE signature
+  identified by~\cite{AllouZheng}.
+\end{enumerate}
+The It\^o identity itself remains the target of \cref{conj:ibm-ito}.
+
+\section{Second-order observable energy}\label{sec:second-order}
+
+We now formalise the operator-energy object that a future intrinsic
+IBM It\^o formula must use: a \emph{candidate second-order observable
+energy}, built by compressing a second-order source derivative through
+the observable filtration. The construction mirrors
+Section~\ref{sec:compat} but at second order. We treat it as a
+candidate datum, not a completed generator: \cref{thm:ibm-occ}
+supplies the first-order operator $D_\IBM$ on the mollified occupation
+core, and the Fourier diagnostic \eqref{eq:az-general} indicates that
+any successful intrinsic IBM It\^o formula must access a $\Delta^{2}$
+contribution plus a singular $t^{-1/2}$ boundary term. The present
+section defines the abstract object expected to carry that
+information.
+
+\subsection*{Abstract definition}
+
+Let $(\Hilb_\Source,\Energy_\Source,D_\Source)$ be the source energy
+datum of Section~\ref{sec:compat}. Suppose $D_\Source^{(2)}$ is a closed
+densely defined second-order source derivative
+\[
+  D_\Source^{(2)}\colon\Dom(D_\Source^{(2)})\subseteq\Hilb_\Source
+   \longrightarrow\Energy_\Source^{(2)},
+\]
+mapping into some second-order source energy space
+$\Energy_\Source^{(2)}$. In the Gaussian setting, $D_\Source^{(2)}$ is
+the iteration $D_\Source\otimes D_\Source$ on the second source
+Sobolev space, and $\Energy_\Source^{(2)}$ is the appropriate tensor
+product; the choice is part of the datum.
+
+\begin{definition}[Second-order observable smooth core]
+\label{def:obs-core-2}
+$\mathcal C_\Obs^{(2)}\coloneqq
+ \bigl\{F\in\Hilb_\Obs:\iota F\in\Dom(D_\Source^{(2)})\bigr\}$.
+\end{definition}
+
+\begin{definition}[Candidate second-order compression operator and energy]
+\label{def:compression-2}
+For $F\in\mathcal C_\Obs^{(2)}$, set
+$D_\Obs^{(2),0}F\coloneqq D_\Source^{(2)}(\iota F)
+\in\Energy_\Source^{(2)}$.
+The \emph{candidate second-order observable energy} is
+\[
+  \Energy_\Obs^{(2)}
+  \;\coloneqq\;
+  \overline{\bigl\{\,D_\Source^{(2)}(\iota F):F\in\mathcal C_\Obs^{(2)}\,\bigr\}}
+   ^{\,\Energy_\Source^{(2)}}
+  \;\subseteq\;\Energy_\Source^{(2)},
+\]
+with isometric inclusion
+$J^{(2)}\colon\Energy_\Obs^{(2)}\hookrightarrow\Energy_\Source^{(2)}$.
+\end{definition}
+
+The next proposition is the second-order analogue of
+\cref{thm:compression}.
+
+\begin{proposition}[Second-order observable compression]
+\label{prop:compression-2}
+Assume $D_\Source^{(2)}$ is closed and densely defined and that
+$\mathcal C_\Obs^{(2)}$ is dense in $\Hilb_\Obs$. Then
+$D_\Obs^{(2),0}\colon\mathcal C_\Obs^{(2)}\subseteq\Hilb_\Obs
+\to\Energy_\Obs^{(2)}$ is closed on the maximal pullback domain
+$\mathcal C_\Obs^{(2)}$; we denote it $D_\Obs^{(2)}$. Any restriction
+to a subcore $\mathcal C'\subseteq\mathcal C_\Obs^{(2)}$ dense in
+$\Hilb_\Obs$ is closable, and the closure is contained in
+$D_\Obs^{(2)}$.
+\end{proposition}
+
+\begin{proof}
+Identical structurally to \cref{thm:compression}: if $F_n\in
+\mathcal C_\Obs^{(2)}$ with $F_n\to F$ in $\Hilb_\Obs$ and
+$D_\Obs^{(2),0}F_n\to h$ in $\Energy_\Obs^{(2)}$, the isometric
+inclusions $\iota$ and $J^{(2)}$ give $\iota F_n\to\iota F$ in
+$\Hilb_\Source$ and $J^{(2)}D_\Obs^{(2),0}F_n=D_\Source^{(2)}(\iota F_n)
+\to J^{(2)}h$ in $\Energy_\Source^{(2)}$. Closedness of
+$D_\Source^{(2)}$ yields $\iota F\in\Dom(D_\Source^{(2)})$, i.e.,
+$F\in\mathcal C_\Obs^{(2)}$, and $D_\Obs^{(2),0}F=h$. Density of
+$\mathcal C_\Obs^{(2)}$ in $\Hilb_\Obs$ ensures the adjoint is
+densely defined; closability of subcore restrictions is the same
+argument applied to sequences in $\mathcal C'$.
+\end{proof}
+
+\Cref{prop:compression-2} produces a closed operator; it does not
+produce a generator. Identifying the action of $D_\Obs^{(2)}$ on a
+useful test class and converting it into an It\^o-type correction is
+the next analytic problem.
+
+\subsection*{IBM specialisation}
+
+For IBM with source $\Source=(X,Y)$, the natural second-order source
+derivative is the four-tuple
+\begin{equation}\label{eq:DS2-IBM}
+  D_\Source^{(2)}F
+  \;=\;\bigl(D_X^{\,2}F,\;D_XD_YF,\;D_YD_XF,\;D_Y^{\,2}F\bigr),
+\end{equation}
+acting on the joint Sobolev space, with values in the symmetrised tensor
+$\Energy_\Source^{(2)}\subseteq L^{2}(\R^{2})\oplus L^{2}(\R\times\R_{+})
+\oplus L^{2}(\R_{+}\times\R)\oplus L^{2}(\R_{+}^{2})$.
+Each block is the iterated partial Malliavin derivative on the
+corresponding Gaussian factor.
+
+For the mollified occupation functional $F_{T,\varepsilon}(\varphi)$ of
+\cref{def:mollified}, each block of \eqref{eq:DS2-IBM} is classical:
+$X^\varepsilon$ is $C^{\infty}$ in its spatial argument, so all
+relevant joint derivatives are well-defined. The clock-block components
+$D_XD_Y$, $D_YD_X$, $D_Y^{\,2}$ inherit the singular spatial kernel
+$\partial_yX^\varepsilon$ via the source chain rule and propagate its
+$\varepsilon^{-1}$ pointwise-variance scaling (\cref{lem:moll-eps-inv})
+into the unmollified limit; for fixed $\varepsilon>0$ they are
+well-defined.
+
+\begin{definition}[Candidate second-order IBM observable energy]
+\label{def:second-order-ibm}
+Let $\mathcal C_\IBM^{(2)}\coloneqq\{F\in L^{2}(\mathcal F_\IBM):
+\iota F\in\Dom(D_\Source^{(2)})\}$. The \emph{candidate second-order
+IBM observable energy} is
+\[
+  \Energy_\IBM^{(2)}
+  \;\coloneqq\;\overline{\bigl\{D_\Source^{(2)}(\iota F):F\in\mathcal
+   C_\IBM^{(2)}\bigr\}}^{\,\Energy_\Source^{(2)}}.
+\]
+The second-order IBM compression operator $D_\IBM^{(2)}$ is the closed
+pullback of $D_\Source^{(2)}$ on $\mathcal C_\IBM^{(2)}$, provided the
+latter is dense in $L^{2}(\mathcal F_\IBM)$.
+\end{definition}
+
+\Cref{def:second-order-ibm} is a candidate datum, not a generator: the
+closure exists abstractly by \cref{prop:compression-2} once the density
+hypothesis on $\mathcal C_\IBM^{(2)}$ is verified, but identifying
+$\Energy_\IBM^{(2)}$ concretely and producing a closed-form action of
+$D_\IBM^{(2)}$ on cylindrical IBM functionals are open.
+
+\subsection*{Connection to source bidegrees}
+
+\begin{remark}[Bidegree consistency at second order]\label{rem:bidegree-2}
+The four blocks of \eqref{eq:DS2-IBM} act on the joint Wiener bidegree
+atlas of~\cite{Fontes-IBMchaos} as follows: $D_X^{\,2}F$ sees the
+second scenery chaos, in particular the $(m,n)$-component with
+$m\ge 2$; $D_Y^{\,2}F$ sees the second clock chaos, $n\ge 2$;
+$D_XD_YF$ and $D_YD_XF$ see the mixed scenery--clock interaction,
+supported on $(m,n)$ with $m,n\ge 1$. The mixed-sector $(2,1)$,
+$(1,2)$, and $(2,2)$ kernels computed in~\cite{Fontes-IBMchaos} thus
+serve as \emph{consistency requirements} for a candidate
+$D_\IBM^{(2)}$: it must reproduce those kernels in the lifted
+$J^{(2)}$-view. We do not reprove the bidegree expansion; the
+consistency requirement is one-way.
+\end{remark}
+
+\subsection*{Connection to the Fourier PDE shadow}
+
+The diagnostic \eqref{eq:az-general} of Section~\ref{sec:ibm-occ}
+requires that, in the semigroup-averaged view, the second-order
+observable energy produce a $k^{4}$ multiplier (equivalently a
+$\tfrac18\Delta^{2}u$ contribution) plus the singular boundary term
+$\Delta f/(2\sqrt{2\pi t})$. The $\Carre^{(2)}$-form
+\[
+  \Carre^{(2)}_\IBM(F,G)
+  \;\coloneqq\;\langle D_\IBM^{(2)}F,\,D_\IBM^{(2)}G\rangle_{\Energy_\IBM^{(2)}}
+\]
+built from \cref{def:second-order-ibm} is the natural candidate to
+carry this information once averaged against the law of $Y$. The
+present section defines the operator-energy object; producing the
+closed action and matching the Fourier constants $1/8$ and
+$1/(2\sqrt{2\pi})$ are the next analytic problems.
+
+\subsection*{Scope discipline}
+
+We do not derive the intrinsic IBM It\^o formula here, nor do we claim
+the bi-Laplacian correction follows from $D_\IBM^{(2)}$ as constructed.
+\Cref{def:second-order-ibm} supplies a candidate second-order
+observable energy; \cite{Fontes-IBMchaos} supplies the consistency
+requirements at each bidegree; \eqref{eq:az-general} supplies the
+target Fourier signature. Closing the gap between these three is the
+next analytic target.
+
+\subsection*{Remaining analytic tasks at second order}
+
+Extending the first-order list of Section~\ref{sec:tasks}:
+\begin{enumerate}
+\item Verify density of $\mathcal C_\IBM^{(2)}$ in
+  $L^{2}(\mathcal F_\IBM)$, ideally on (the closure of) the mollified
+  occupation core $\mathcal C_{\mathrm{occ}}^{\,\varepsilon}$.
+\item Identify $\Energy_\IBM^{(2)}$ concretely as a closed subspace of
+  $\Energy_\Source^{(2)}$ on a useful test class.
+\item Match the bidegree projections of~\cite{Fontes-IBMchaos} at the
+  $(2,0)$, $(1,1)$, $(0,2)$, $(2,1)$, $(1,2)$, $(2,2)$ sectors.
+\item Show that the averaged $\Carre^{(2)}_\IBM$ reproduces the
+  $\Delta^{2}$ and $t^{-1/2}$-boundary signatures of
+  \eqref{eq:az-general}.
+\item Combine with \cref{conj:ibm-ito} to identify the correction
+  $C_\IBM(f;t)$.
+\end{enumerate}
+
+\section{An operator-It\^o transfer principle}\label{sec:transfer}
+\label{sec:ibm-ito}
+
+We layer the framework one step further. Combining the first-order
+observable divergence $\delta_\Obs$ (\cref{thm:proj-div}) with the
+second-order observable correction sketched in
+Section~\ref{sec:second-order}, we state and prove an abstract
+\emph{conditional} transfer theorem showing how a source-level It\^o
+expansion descends to an observable-level one. We then specialise to
+IBM, recap the Fourier-mode diagnostic, and read off what the
+source-resolved chaos atlas says about the remaining pieces.
+
+\subsection*{The conditional transfer theorem}
+
+Let $(\Hilb_\Source,\Energy_\Source,D_\Source)$ and
+$(\Hilb_\Obs,\Energy_\Obs,D_\Obs)$ be the source and observable energy
+data of Section~\ref{sec:compat}, with isometric inclusions $\iota$ and
+$J$ and observable projection $P_\Obs=\iota^*=\E[\,\cdot\mid\mathcal F_\Obs]$.
+Suppose an observable process $U=(U_t)_{t\ge 0}$ and a smooth class of
+test functions admit a \emph{source-level} It\^o-type expansion
+\begin{equation}\label{eq:source-ito}
+  f(U_t)-f(U_0)\;=\;\delta_\Source\bigl(A_f(t)\bigr)\;+\;R_f(t),
+  \qquad A_f(t)\in\Dom(\delta_\Source),
+\end{equation}
+on the joint source $\sigma$-algebra $\mathcal F_\Source$, with
+remainder $R_f(t)\in L^{2}(\mathcal F_\Source)$.
+
+\begin{theorem}[Conditional operator-It\^o transfer]\label{thm:transfer}
+Assume \eqref{eq:source-ito} holds with $A_f(t)\in J(\Energy_\Obs)$,
+so that there exists $B_f(t)\in\Energy_\Obs$ with $JB_f(t)=A_f(t)$, and
+assume $B_f(t)$ lies in the lifted source-divergence domain
+$\{u\in\Energy_\Obs:Ju\in\Dom(\delta_\Source)\}$. Suppose further that
+$f(U_t)-f(U_0)$ is $\Prob$-a.s.\ $\mathcal F_\Obs$-measurable. Then
+\begin{equation}\label{eq:obs-ito}
+  f(U_t)-f(U_0)\;=\;\delta_\Obs\bigl(B_f(t)\bigr)\;+\;P_\Obs R_f(t),
+\end{equation}
+with $\delta_\Obs(B_f(t))=P_\Obs\,\delta_\Source(A_f(t))$.
+\end{theorem}
+
+\begin{proof}
+By \cref{thm:proj-div} applied to $B_f(t)$,
+$\delta_\Obs(B_f(t))=P_\Obs\,\delta_\Source(JB_f(t))
+=P_\Obs\,\delta_\Source(A_f(t))$. Apply $P_\Obs$ to both sides of
+\eqref{eq:source-ito}: since $f(U_t)-f(U_0)$ is
+$\mathcal F_\Obs$-measurable, $P_\Obs[f(U_t)-f(U_0)]=f(U_t)-f(U_0)$;
+linearity of $P_\Obs$ on the right gives
+$\delta_\Obs(B_f(t))+P_\Obs R_f(t)$.
+\end{proof}
+
+\Cref{thm:transfer} does \emph{not} prove an It\^o formula for $U$ on
+its own. It converts a source-level identity \eqref{eq:source-ito}
+into an observable-level identity \eqref{eq:obs-ito}, conditional on
+the source divergence integrand falling in the lifted observable image
+$J(\Energy_\Obs)$. The practical content is a separation of duties:
+the source side supplies the It\^o expansion; the compression
+construction (\cref{thm:compression,thm:proj-div}) supplies the
+observable lift; the correction term is the observable projection of
+the source remainder.
+
+\subsection*{IBM specialisation: target identity}
+
+For IBM with source $\Source=(X,Y)$, the joint Wiener space carries
+the classical Skorohod divergence $\delta_\Source(u_X,u_Y)=\delta_Xu_X
++\delta_Yu_Y$ and the source second-order derivatives $D_X^{2}$,
+$D_XD_Y$, $D_YD_X$, $D_Y^{2}$ of \eqref{eq:DS2-IBM}. The intrinsic IBM
+It\^o identity that \cref{thm:transfer} would specialise to has the
+schematic form
+\begin{equation}\label{eq:ibm-target}
+  f(\IBM_t)-f(\IBM_0)
+  \;=\;\delta_\IBM\bigl(B_f(t)\bigr)\;+\;C_\IBM(f;t),
+  \qquad C_\IBM(f;t)\;=\;P_\IBM\,R_f(t),
+\end{equation}
+where $B_f(t)\in\Energy_\IBM$ is the first-order observable integrand
+and $C_\IBM(f;t)$ is the observable second-order correction obtained
+from the closed second-order IBM energy $\Energy_\IBM^{(2)}$ of
+\cref{def:second-order-ibm}. \Cref{eq:ibm-target} is the
+\emph{target identity}, not a theorem in full generality: it requires
+both the source-level expansion \eqref{eq:source-ito} for $\IBM$ and
+the verification that $A_f(t)\in J(\Energy_\IBM)$ on a useful test
+class. The schematic version is recorded below.
+
+\begin{conjecture}[Schematic IBM It\^o]\label{conj:ibm-ito}
+Suppose $D_\IBM$ admits a cylindrical reduction
+(\cref{rem:two-layer}) and the second-order datum
+$(\Energy_\IBM^{(2)},D_\IBM^{(2)})$ is closed and densely defined.
+Then for every $f$ in a suitable smooth class and every $t\ge 0$,
+\eqref{eq:ibm-target} holds with
+\begin{enumerate}
+\item $B_f(t)\in\Energy_\IBM$ a representation integrand associated
+  to $f$ and to the energy structure of $\IBM$ on $[0,t]$;
+\item the correction $C_\IBM(f;t)$ built from a contraction of
+  $D_\IBM^{(2)}$ against a smooth functional of $f$, with source lift
+  $J^{\otimes 2}\,C_\IBM(f;t)$ compatible with the
+  bi-Laplacian/local-time PDE signature identified
+  in~\cite{AllouZheng};
+\item $C_\IBM(f;t)$ is \emph{not} of the form
+  $\tfrac12\int_{0}^{t}f''(\IBM_{s})\,d\langle\IBM\rangle_{s}$, since
+  $\IBM$ does not supply the semimartingale quadratic-variation
+  structure $\langle\IBM\rangle$ needed for a classical It\^o
+  correction of that form (in its own filtration $\IBM$ is not a
+  semimartingale, so no such $d\langle\IBM\rangle$ exists);
+  quadratic variation is the wrong organising invariant, and the
+  observable energy order (fourth, not second) is the right one
+  (cf.~the energy-order discussion after
+  \cref{thm:energy-first-ito-moll}).
+\end{enumerate}
+\end{conjecture}
+
+\begin{remark}[Status of \cref{conj:ibm-ito}]
+The first-order pieces ($\delta_\IBM, B_f(t)$) are objects supplied by
+the construction of Section~\ref{sec:ibm-source} and made concrete on
+the mollified occupation core by \cref{thm:ibm-occ}; the second-order
+correction $C_\IBM(f;t)$ presupposes the second-order datum of
+Section~\ref{sec:second-order}. The conjecture commits to a precise
+shape via \cref{thm:transfer} but not to a specific functional form.
+\end{remark}
+
+\subsection*{Fourier-mode second-order match}
+
+Under the convention $\Var(X_s)=s$, the Brownian-time semigroup
+observable $u_k(t,x)=\E[e^{ik(x+X_{|Y_t|})}]$ admits an explicit
+second-order PDE shadow with the bi-Laplacian Fourier multiplier
+$k^{4}/8$. We derive it directly from the half-normal density of
+$|Y_t|$ via an ordinary differential equation in $t$, independently
+of the closed-form expression \eqref{eq:uk-closed}.
+
+\begin{proposition}[Fourier-mode bi-Laplacian shadow]
+\label{prop:fourier-2nd}
+Let $a=k^{2}/2$ and
+\[
+  q(t)\;\coloneqq\;\int_0^\infty e^{-as}\,p_t(s)\,ds,
+  \qquad p_t(s)=\sqrt{\tfrac{2}{\pi t}}\,e^{-s^{2}/(2t)},\quad s\ge 0,
+\]
+so that $u_k(t,x)=e^{ikx}q(t)$. Then $q$ satisfies
+\begin{equation}\label{eq:q-ode}
+  q'(t)\;=\;\frac{a^{2}}{2}\,q(t)\;-\;\frac{a}{\sqrt{2\pi t}}
+  \;=\;\frac{k^{4}}{8}\,q(t)\;-\;\frac{k^{2}}{2\sqrt{2\pi t}},
+\end{equation}
+and equivalently
+\begin{equation}\label{eq:az-prop}
+  \partial_t u_k(t,x)
+  \;=\;\frac{1}{8}\,\Delta^{2}u_k(t,x)
+       \;+\;\frac{\Delta f_k(x)}{2\sqrt{2\pi t}},
+  \qquad f_k(x)=e^{ikx}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The Gaussian density $\phi_t(s)=(2\pi t)^{-1/2}e^{-s^{2}/(2t)}$
+satisfies the heat equation $\partial_t\phi_t=\tfrac12\partial_s^{2}\phi_t$
+pointwise; since $p_t=\sqrt{2}\,\phi_t|_{s\ge 0}$, the same identity
+holds for $p_t$ at every $s>0$. Therefore
+\[
+  q'(t)\;=\;\int_0^\infty e^{-as}\,\partial_t p_t(s)\,ds
+   \;=\;\tfrac{1}{2}\int_0^\infty e^{-as}\,\partial_s^{2}p_t(s)\,ds.
+\]
+Integrate by parts twice in $s$. Boundary terms at $s=\infty$ vanish by
+super-exponential decay of $p_t$; at $s=0$ we have
+$\partial_s p_t(0)=-\sqrt{2/(\pi t)}\cdot(0/t)=0$ and
+$p_t(0)=\sqrt{2/(\pi t)}$. Hence
+\[
+  \int_0^\infty e^{-as}\,\partial_s^{2}p_t(s)\,ds
+  \;=\;a\!\int_0^\infty e^{-as}\,\partial_s p_t(s)\,ds
+  \;=\;a\bigl(-p_t(0)+a\,q(t)\bigr)
+  \;=\;a^{2}q(t)-a\,\sqrt{\tfrac{2}{\pi t}}.
+\]
+Dividing by $2$ and using $\sqrt{2}/(2\sqrt{\pi t})=1/\sqrt{2\pi t}$
+gives the first equality of \eqref{eq:q-ode}; substituting
+$a=k^{2}/2$ gives the second, since $a^{2}/2=k^{4}/8$ and
+$a/\sqrt{2\pi t}=k^{2}/(2\sqrt{2\pi t})$.
+
+For \eqref{eq:az-prop}, multiply \eqref{eq:q-ode} by $e^{ikx}$:
+$\partial_t u_k(t,x)=\frac{k^{4}}{8}u_k(t,x)-\frac{k^{2}e^{ikx}}{2\sqrt{2\pi t}}$.
+Since $\Delta e^{ikx}=-k^{2}e^{ikx}$ and $\Delta^{2}e^{ikx}=k^{4}e^{ikx}$,
+the right-hand side is $\tfrac18\Delta^{2}u_k(t,x)+\Delta f_k(x)/(2\sqrt{2\pi t})$.
+\end{proof}
+
+Fourier-synthesis on smooth bounded $f$ gives, with $u(t,x)=\E[f(x+X_{|Y_t|})]$,
+\begin{equation}\label{eq:az-recap}
+  \partial_t u(t,x)
+  \;=\;\frac{1}{8}\,\Delta^{2}u(t,x)
+       \;+\;\frac{\Delta f(x)}{2\sqrt{2\pi t}}.
+\end{equation}
+The constants $1/8$ and $1/(2\sqrt{2\pi})$ are convention-dependent:
+rescaling $\Var(X_s)=\alpha s$ rescales them to $\alpha^{2}/8$ and
+$\alpha/(2\sqrt{2\pi t})$.
+
+\paragraph{Second-order target.}
+\Cref{prop:fourier-2nd} is the first concrete second-order target for
+the intrinsic IBM observable energy: any closed second-order
+observable energy producing an IBM It\^o formula via
+\cref{thm:transfer} must reproduce the $k^{4}/8$ multiplier on Fourier
+modes and the singular $t^{-1/2}\Delta f$ boundary term. We do
+\emph{not} derive \eqref{eq:az-prop} from $D_\IBM^{(2)}$ of
+\cref{def:second-order-ibm}; the proposition is a PDE-shadow
+identity at the semigroup level, and we use it as the consistency
+target that any future closed-form action of $D_\IBM^{(2)}$, averaged
+against the law of $Y$, must satisfy. \Cref{eq:az-prop} operates at
+the semigroup level $u=\E[f(\cdot)]$; \cref{conj:ibm-ito} operates
+pathwise on $f(\IBM_t)$.
+
+\paragraph{Source-bidegree reading.}
+In the source atlas of~\cite{Fontes-IBMchaos}, the $k^{4}$ Fourier
+multiplier is the signature of second-order scenery variation
+transported through the Brownian clock --- the $(2,0)$, $(2,1)$, and
+$(1,1)$ sectors interacting with the clock distribution --- and the
+boundary $t^{-1/2}\Delta f$ term records the clock's local-time
+singularity at the origin of the half-normal density.
+
+\subsection*{Semigroup-level IBM It\^o correction}
+
+\paragraph{Level structure.}
+The paper occupies three proved layers and one open target:
+\begin{itemize}
+\item[\textbf{(L1)}] \emph{Proved abstract operator theorem.}
+  Observable compression and projected divergence
+  (\cref{thm:compression,thm:proj-div}).
+\item[\textbf{(L2)}] \emph{Proved / controlled IBM core.}
+  Mollified occupation core; $F_{T,\varepsilon}\to F_T$ in $L^{2}$ and
+  $D_X F_{T,\varepsilon}\to D_X F_T$ in scenery energy; the clock
+  direction recorded as an obstruction
+  (\cref{thm:ibm-occ}, \cref{cor:unmollified}).
+\item[\textbf{(L3)}] \emph{Deterministic semigroup benchmark.}
+  The Brownian-time PDE correction (\cref{thm:bt-correction} below).
+\item[\textbf{(L4)}] \emph{Future unmollified quartic-dual
+  pathwise / operator-It\^o theorem.} Still conditional and open
+  (\cref{conj:ibm-ito}, conditional form of \cref{thm:transfer});
+  the correction is expected to live in the quartic-energy dual
+  $\Energy_\IBM^{(4),-}$ of \eqref{eq:rigged-4}.
+\end{itemize}
+
+The present subsection records~(L3): the deterministic PDE
+benchmark that any pathwise / operator-It\^o formula for IBM must
+reproduce after full expectation. The relevant operator-energy
+input is the second operator-derivative energy $\Energy_\IBM^{(2)}$
+of \cref{def:second-order-ibm}, whose carr\'e / tensor structure
+$\Energy_\IBM^{(4)}=\Energy_\IBM^{(2)}\otimes\Energy_\IBM^{(2)}$
+produces the fourth-order observable shadow; the correction
+$C_\IBM(f;t)$ itself is expected in the dual
+$\Energy_\IBM^{(4),-}$, not in classical $L^{2}(\Omega)$. The identity below is the known Brownian-time
+semigroup PDE; we give a direct derivation from the half-normal
+integral representation, so that constants and convention are
+explicit. This is a deterministic PDE statement, source-neutral with
+respect to the operator-energy framework --- the framework's role is
+to use it as a benchmark, not to derive it.
+
+\begin{theorem}[Brownian-time semigroup correction]
+\label{thm:bt-correction}
+Let $X$ be standard two-sided Brownian scenery with $\Var(X_s)=s$ and
+$Y$ an independent standard Brownian clock. For $f\in C_c^{\infty}(\R)$
+(or, more generally, $f\in\mathscr S(\R)$), define
+\[
+  u(t,x)\;\coloneqq\;\E[f(x+X_{|Y_t|})],
+  \qquad t\ge 0,\ x\in\R.
+\]
+Then $u\in C^{\infty}((0,\infty)\times\R)$, $u(0+,x)=f(x)$, and for
+every $t>0$,
+\begin{equation}\label{eq:bt-correction}
+  \partial_t u(t,x)
+  \;=\;\frac{1}{8}\,\partial_x^{4}u(t,x)
+       \;+\;\frac{1}{2\sqrt{2\pi t}}\,\partial_x^{2}f(x).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Conditioning on $|Y_t|$ and using independence of $X$ and $Y$,
+\begin{equation}\label{eq:bt-integral}
+  u(t,x)\;=\;\int_0^\infty (P_s f)(x)\,p_t(s)\,ds,
+\end{equation}
+where $P_s f(x)=\E[f(x+X_s)]=(G_s*f)(x)$ is the heat semigroup with
+variance $s$, so $\partial_s P_s f=\tfrac12\,\partial_x^{2} P_s f$,
+and $p_t(s)=\sqrt{2/(\pi t)}\,e^{-s^{2}/(2t)}$ is the half-normal
+density.
+
+The Gaussian density $\phi_t(s)=(2\pi t)^{-1/2}e^{-s^{2}/(2t)}$
+satisfies the heat equation $\partial_t\phi_t=\tfrac12\,\partial_s^{2}
+\phi_t$ pointwise; since $p_t=\sqrt 2\,\phi_t|_{s\ge 0}$, the same
+identity holds for $p_t$ at every $s>0$, with $\partial_s p_t(0)=0$
+and $p_t(0)=\sqrt{2/(\pi t)}$. Therefore
+\[
+  \partial_t u(t,x)
+  \;=\;\int_0^\infty(P_s f)(x)\,\partial_t p_t(s)\,ds
+   \;=\;\tfrac12\int_0^\infty(P_s f)(x)\,\partial_s^{2}p_t(s)\,ds.
+\]
+Integrate by parts twice in $s$; boundary terms at $s=\infty$ vanish
+by rapid decay of $p_t$ and boundedness of $P_s f$:
+\[
+\begin{aligned}
+  \tfrac12\!\int_0^\infty\!(P_s f)(x)\,\partial_s^{2}p_t(s)\,ds
+  &= -\tfrac12\!\int_0^\infty\!\partial_s(P_s f)(x)\,\partial_s p_t(s)\,ds
+   \quad(\partial_s p_t(0)=0)\\
+  &= -\tfrac14\!\int_0^\infty\!\partial_x^{2}P_s f(x)\,\partial_s p_t(s)\,ds
+   \quad(\partial_s P_s=\tfrac12\,\partial_x^{2} P_s)\\
+  &= -\tfrac14\bigl[\partial_x^{2}P_s f(x)\,p_t(s)\bigr]_0^\infty
+   +\tfrac14\!\int_0^\infty\!\partial_s\partial_x^{2}P_s f(x)\,p_t(s)\,ds\\
+  &= \tfrac14\,\partial_x^{2}f(x)\,p_t(0)
+   +\tfrac18\!\int_0^\infty\!\partial_x^{4}P_s f(x)\,p_t(s)\,ds.
+\end{aligned}
+\]
+The boundary term at $s=0$ uses $P_0 f=f$ and $p_t(0)=\sqrt{2/(\pi t)}$,
+so $\tfrac14\partial_x^{2}f(x)\,p_t(0)=\partial_x^{2}f(x)/(2\sqrt{2\pi t})$.
+The remaining integral equals $\tfrac18\,\partial_x^{4}u(t,x)$ by the
+representation \eqref{eq:bt-integral}. Smoothness of $u$ on
+$(0,\infty)\times\R$ and the initial condition $u(0+,x)=f(x)$ follow
+from standard regularising properties of the Gaussian heat kernel
+$G_s$ and the half-normal density $p_t$.
+\end{proof}
+
+\paragraph{Connection to the operator-It\^o transfer.}
+\Cref{thm:bt-correction} identifies the deterministic correction that
+any closed second-order observable IBM energy must reproduce on
+Brownian-time semigroup observables. In the notation of
+\cref{thm:transfer}, the operator-It\^o transfer produces an
+observable correction $P_\IBM R_f(t)$ that is itself
+$\mathcal F_\IBM$-measurable; the right-hand side of
+\eqref{eq:bt-correction} is its \emph{full-expectation} reduction
+$\E[P_\IBM R_f(t)]=\E[R_f(t)]$ for the Brownian-time class. We do
+\emph{not} derive \eqref{eq:bt-correction} from $D_\IBM^{(2)}$ of
+\cref{def:second-order-ibm}; \cref{thm:bt-correction} is a closed PDE
+identity at the deterministic level, while a closed-form action of
+$D_\IBM^{(2)}$ would be needed for the pathwise observable expansion.
+
+\paragraph{Deterministic semigroup identity.}
+Integrating \eqref{eq:bt-correction} in $t$ on $(0,t]$ and using
+$u(0+,x)=f(x)$ gives the deterministic semigroup identity
+\begin{equation}\label{eq:bt-target}
+  u(t,x)-f(x)
+  \;=\;\int_0^t\Bigl[\,\tfrac18\,\partial_x^{4}u(s,x)
+       \;+\;\tfrac{1}{2\sqrt{2\pi s}}\,\partial_x^{2}f(x)\,\Bigr]\,ds,
+\end{equation}
+valid for $f\in\mathscr S(\R)$. The right-hand side contains no
+divergence term: \eqref{eq:bt-target} operates strictly at the
+deterministic PDE / semigroup level.
+
+\paragraph{Benchmark for the next theorem.}
+\begin{center}
+\fbox{\begin{minipage}{0.92\linewidth}
+\emph{Any pathwise / operator-It\^o formula for IBM must reproduce,
+after full expectation, the integrated deterministic correction}
+\begin{equation}\label{eq:bt-benchmark}
+\begin{split}
+  C^{\mathrm{det}}_\IBM(f;t,x)
+   &\;\coloneqq\;\int_0^{t}\!\Bigl[\tfrac{1}{8}\partial_x^{4}u(s,x)
+   +\tfrac{\partial_x^{2}f(x)}{2\sqrt{2\pi s}}\Bigr]\,ds\\
+   &\;=\;u(t,x)-f(x),
+\end{split}
+\end{equation}
+\emph{for $t>0$, $f\in\mathscr S(\R)$, with
+$u(t,x)=\E[f(x+X_{|Y_t|})]$ under the convention $\Var(X_s)=s$.}
+\end{minipage}}
+\end{center}
+
+\paragraph{Relation to the future unmollified quartic-dual
+pathwise/operator-It\^o target.}
+A future unmollified pathwise It\^o identity for IBM would have the
+schematic form
+\begin{equation}\label{eq:pathwise-target}
+  f(x+X_{|Y_t|})-f(x)
+  \;=\;\delta_\IBM(B_f(t))\;+\;C_\IBM(f;t),
+\end{equation}
+with $B_f(t)$ a first-order observable integrand and $C_\IBM(f;t)$
+the observable correction; the proved obstruction
+\cref{prop:var-divergence} rules out $C_\IBM(f;t)\in L^{2}(\Omega)$,
+so $C_\IBM(f;t)$ is expected in the quartic-energy dual
+$\Energy_\IBM^{(4),-}$ of \eqref{eq:rigged-4}, paired against test
+integrands in $\Energy_\IBM^{(4),+}$. \Cref{eq:pathwise-target} is
+\emph{not} proved here; it remains the subject of
+\cref{conj:ibm-ito} and the conditional operator-It\^o transfer
+principle \cref{thm:transfer}. Passing from such a pathwise
+identity to the deterministic Brownian-time semigroup means taking
+the \emph{full} expectation over the source randomness: the centred
+divergence term $\delta_\IBM(B_f(t))$ should vanish, while
+$\E[C_\IBM(f;t)]$ should reduce to the deterministic correction in
+\eqref{eq:bt-target}. The required operator-energy input is the
+second operator-derivative energy $\Energy_\IBM^{(2)}$ of
+\cref{def:second-order-ibm}, whose tensor square produces the
+fourth-order observable shadow; the semigroup statement does not
+require this input.
+
+\paragraph{Source-resolved chaos perspective.}
+The source-resolved chaos paper~\cite{Fontes-IBMchaos} explains why
+the fourth-order signature in \eqref{eq:bt-correction} should be
+read as a statistical / operator shadow of pure and mixed source
+bidegrees --- $(2,0)$, $(0,2)$, $(1,1)$, $(2,1)$, $(1,2)$ ---
+\emph{not} as a Markov generator of $\IBM$: $\IBM$ is not Markov in
+its own filtration, and the mixed sectors $(m,n)$ with $m,n\ge 1$
+obstruct a closed scalar PDE for pathwise occupation functionals.
+The present paper turns that interpretation into an operator-energy
+benchmark: \cref{thm:bt-correction} concerns the \emph{averaged}
+Brownian-time semigroup, where the average over $Y$ collapses the
+mixed sectors and exposes the closed PDE \eqref{eq:bt-correction},
+and \eqref{eq:bt-benchmark} records the deterministic correction that
+the closed second-order observable energy must reproduce. Equivalently,
+the Fourier-mode diagnostic of \cref{prop:fourier-2nd} identifies what
+$C_\IBM(f;t)$ in \eqref{eq:pathwise-target} must reduce to after full
+expectation: the $k^{4}/\Delta^{2}$ multiplier together with the
+$t^{-1/2}\Delta f$ boundary term.
+
+\subsection*{Current status}
+
+\begin{itemize}
+\item first-order observable compression: proved abstractly
+  (\cref{thm:compression,thm:proj-div});
+\item mollified IBM occupation derivative: constructed explicitly
+  (\cref{thm:ibm-occ}~(i)--(ii));
+\item scenery convergence: controlled at rate $O(\varepsilon^{1/2})$
+  (\cref{thm:ibm-occ}~(iii)--(iv));
+\item clock component: singular, no $L^{2}$ limit asserted
+  (\cref{cor:unmollified});
+\item abstract operator-It\^o transfer principle: proved conditionally
+  (\cref{thm:transfer});
+\item Brownian-time Fourier diagnostic: identifies the target
+  correction \eqref{eq:az-recap};
+\item candidate second-order observable energy: defined
+  (\cref{def:second-order-ibm,prop:compression-2});
+\item the closed second-order IBM observable energy and the full
+  proof of \cref{conj:ibm-ito}: remain the next analytic theorem.
+\end{itemize}
+
+\section{A semigroup-level IBM correction}\label{sec:sg-correction}
+
+We now name and isolate the deterministic correction that
+\cref{thm:bt-correction} produces, and record one consistency
+consequence for any future unmollified quartic-dual pathwise IBM
+It\^o formula. The content of
+this section is a packaging of \cref{thm:bt-correction} with explicit
+named symbols, plus a single conditional corollary; no new analytic
+work beyond \cref{thm:bt-correction} is performed.
+
+\subsection*{The semigroup correction}
+
+Let $X$ be standard two-sided Brownian scenery with $\Var(X_s)=s$ and
+$Y$ an independent standard Brownian clock. For $f\in\mathscr S(\R)$,
+define the Brownian-time semigroup observable
+\begin{equation}\label{eq:sg-u}
+  u(t,x)\;=\;\E[f(x+X_{|Y_t|})]
+   \;=\;\int_0^\infty(P_s f)(x)\,p_t(s)\,ds,
+\end{equation}
+where $P_s=e^{s\Delta/2}$ is the heat semigroup of variance $s$ and
+$p_t(s)=\sqrt{2/(\pi t)}\,e^{-s^{2}/(2t)}$, $s\ge 0$, is the half-normal
+density.
+
+\begin{definition}[Semigroup correction density and integrated correction]
+\label{def:sg-correction}
+For $f\in\mathscr S(\R)$ and $t>0$, the \emph{semigroup correction
+density} is
+\begin{equation}\label{eq:sg-density}
+  \mathcal C_\IBM^{\mathrm{sg}}(f;t,x)
+  \;\coloneqq\;\frac{1}{8}\,\partial_x^{4}u(t,x)
+   \;+\;\frac{1}{2\sqrt{2\pi t}}\,\partial_x^{2}f(x),
+\end{equation}
+and the \emph{integrated semigroup correction} is
+\begin{equation}\label{eq:sg-integrated}
+  C_\IBM^{\mathrm{sg}}(f;t,x)
+  \;\coloneqq\;\int_0^t\mathcal C_\IBM^{\mathrm{sg}}(f;s,x)\,ds.
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Semigroup-level IBM correction]\label{thm:sg-correction}
+For $f\in\mathscr S(\R)$ and $t>0$,
+\begin{equation}\label{eq:sg-main}
+  u(t,x)-f(x)\;=\;C_\IBM^{\mathrm{sg}}(f;t,x),
+\end{equation}
+equivalently $\partial_t u(t,x)=\mathcal C_\IBM^{\mathrm{sg}}(f;t,x)$.
+The integrand defining $C_\IBM^{\mathrm{sg}}$ is integrable on
+$(0,t]$: the boundary singularity
+$s^{-1/2}\partial_x^{2}f(x)$ is of integrable type, since
+$\int_0^t s^{-1/2}\,ds=2\sqrt t<\infty$ and $\partial_x^{2}f$ is
+bounded for $f\in\mathscr S(\R)$.
+\end{theorem}
+
+\begin{proof}
+The pointwise-in-$t$ identity
+$\partial_t u(t,x)=\mathcal C_\IBM^{\mathrm{sg}}(f;t,x)$ is precisely
+\cref{thm:bt-correction}. Integrate over $(0,t]$ and use the initial
+condition $u(0+,x)=f(x)$ to obtain \eqref{eq:sg-main}. For
+integrability of the integrand near $s=0$: the first term
+$\tfrac18\partial_x^{4}u(s,x)$ is bounded uniformly on compact sets in
+$(s,x)$ by the smoothing of the Gaussian heat kernel applied to
+$f\in\mathscr S(\R)$ together with the half-normal kernel; the second
+term satisfies $\int_0^{t}(2\sqrt{2\pi s})^{-1}\,ds=\sqrt{t/(2\pi)}<\infty$.
+\end{proof}
+
+\subsection*{Expectation-level interpretation}
+
+\Cref{thm:sg-correction} constructs the deterministic correction
+$C_\IBM^{\mathrm{sg}}(f;t,x)$. It is not the pathwise correction
+$C_\IBM(f;t)$ of \eqref{eq:pathwise-target}; it fixes the
+expectation-level value that any pathwise correction must take on the
+Brownian-time semigroup class:
+\[
+  \E[C_\IBM(f;t)]\;=\;C_\IBM^{\mathrm{sg}}(f;t,x)
+\]
+under the assumption that the pathwise identity exists and the
+divergence term is centred. The next corollary records this as a
+hard consistency requirement.
+
+\begin{corollary}[Conditional pathwise-to-semigroup consistency]
+\label{cor:pathwise-to-sg}
+Suppose, on a domain of test functions $f\in\mathscr S(\R)$ and time
+horizons $t>0$, a pathwise / operator-It\^o identity
+of the form \eqref{eq:pathwise-target} holds:
+\[
+  f(x+X_{|Y_t|})-f(x)\;=\;\delta_\IBM(B_f(t))+C_\IBM(f;t),
+\]
+with $\E[\delta_\IBM(B_f(t))]=0$ (centred divergence). Then necessarily
+\begin{equation}\label{eq:consistency}
+  \E[C_\IBM(f;t)]\;=\;C_\IBM^{\mathrm{sg}}(f;t,x)\;=\;u(t,x)-f(x).
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Take full expectation of \eqref{eq:pathwise-target}:
+$\E[f(x+X_{|Y_t|})]-f(x)=\E[\delta_\IBM(B_f(t))]+\E[C_\IBM(f;t)]
+=\E[C_\IBM(f;t)]$. The left-hand side is $u(t,x)-f(x)$, which by
+\cref{thm:sg-correction} equals $C_\IBM^{\mathrm{sg}}(f;t,x)$.
+\end{proof}
+
+\Cref{cor:pathwise-to-sg} is a theorem of \emph{consistency}, not of
+existence: it does not produce a pathwise identity, but constrains the
+expectation-level value of any such pathwise identity should one
+exist. In particular, any candidate $C_\IBM(f;t)$ produced from a
+closed-form action of $D_\IBM^{(2)}$ on the Brownian-time semigroup
+class must satisfy \eqref{eq:consistency}.
+
+\subsection*{Connection to the second-order observable energy}
+
+The remaining open problem is to identify $C_\IBM(f;t)$ intrinsically
+from a closed-form action of the second-order observable energy
+$\Energy_\IBM^{(2)}$ (\cref{def:second-order-ibm}).
+\Cref{thm:sg-correction} pins down the deterministic value that this
+second-order correction must have after full expectation;
+\cref{cor:pathwise-to-sg} converts the benchmark into a hard
+consistency requirement on any candidate $C_\IBM(f;t)$. Producing
+such a candidate from $D_\IBM^{(2)}$ on a suitable test class, and
+verifying \eqref{eq:consistency}, is the natural next analytic step;
+the pathwise correction itself remains open.
+
+\section{The proved IBM It\^o formula at the mollified level}\label{sec:moll-pathwise}
+
+This section is the calibration locus of the paper: we prove the
+mollified pathwise IBM It\^o formula and its fourth-order semigroup
+consistency. The open problem is the unmollified pathwise correction
+in the quartic observable-energy dual, addressed in
+\cref{sec:toward-unmoll}.
+
+The proved IBM It\^o formula combines four already-established
+ingredients: the mollified pathwise It\^o--Tanaka identity
+(\cref{prop:moll-tanaka}), the operator-divergence reading of the
+martingale term (\cref{thm:transfer} specialised to IBM), the
+explicit mollified pathwise correction
+$C_{\IBM,\varepsilon}(f;t)$, and its expectation-level convergence
+to the fourth-order Brownian-time PDE correction
+(\cref{thm:moll-consistency} combined with \cref{thm:bt-correction}).
+We state the combined theorem first, then verify its constituent
+pieces in the subsections that follow.
+
+\begin{theorem}[Energy-first It\^o formula for mollified IBM]
+\label{thm:energy-first-ito-moll}
+Let $X$ be standard two-sided Brownian scenery with $\Var(X_s)=|s|$,
+$Y$ an independent standard Brownian clock, $\rho$ an even
+non-negative compactly supported mollifier, $X^\varepsilon=
+\rho_\varepsilon*X$, and
+\[
+  \IBM_t^{\,\varepsilon}\;\coloneqq\;x+X^\varepsilon_{|Y_t|},
+  \qquad t\ge 0,\;x\in\R.
+\]
+For $f\in\mathscr S(\R)$, set $g_\varepsilon(r)\coloneqq
+f(x+X^\varepsilon_r)$, $r\in\R$, which is $\Prob_X$-a.s.\ $C^\infty$
+in $r$. Then for every $\varepsilon>0$ and $t\ge 0$:
+
+\smallskip
+\noindent\textbf{(i) Mollified pathwise It\^o--Tanaka identity.}
+\begin{equation}\label{eq:efi-ito}
+  f(\IBM_t^{\,\varepsilon})-f(\IBM_0^{\,\varepsilon})
+  \;=\;\delta_Y\bigl(B_{f,\varepsilon}(t)\bigr)
+   \;+\;C_{\IBM,\varepsilon}(f;t),
+\end{equation}
+with clock-divergence integrand
+\begin{equation}\label{eq:efi-B}
+  B_{f,\varepsilon}(t)(s)
+   \;=\;g_\varepsilon'(|Y_s|)\,\mathrm{sgn}(Y_s)\,
+        \mathbf 1_{[0,t]}(s),
+\end{equation}
+and mollified pathwise correction
+\begin{equation}\label{eq:efi-C}
+  C_{\IBM,\varepsilon}(f;t)
+   \;=\;g_\varepsilon'(0)\,L_t^{0}(Y)
+   \;+\;\tfrac12\!\int_0^t g_\varepsilon''(|Y_s|)\,ds,
+\end{equation}
+where $L_t^{0}(Y)$ is the Brownian local time of $Y$ at $0$ and the
+clock derivatives are explicit:
+\begin{equation}\label{eq:efi-gpp}
+  g_\varepsilon'(r)
+   \;=\;f'(x+X^\varepsilon_r)\,\partial_rX^\varepsilon_r,\qquad
+  g_\varepsilon''(r)
+   \;=\;f''(x+X^\varepsilon_r)\,(\partial_rX^\varepsilon_r)^{2}
+   \;+\;f'(x+X^\varepsilon_r)\,\partial_r^{2}X^\varepsilon_r.
+\end{equation}
+
+\smallskip
+\noindent\textbf{(ii) Operator-divergence reading of the martingale
+term.} The term $\delta_Y(B_{f,\varepsilon}(t))$ in \eqref{eq:efi-ito}
+is the source clock Skorohod divergence of the integrand
+\eqref{eq:efi-B}; it coincides pathwise with the conditional It\^o
+integral $\int_0^t g_\varepsilon'(|Y_s|)\,\mathrm{sgn}(Y_s)\,dY_s$, is
+a continuous $L^{2}$-martingale in $Y$ (conditional on $X$), and
+satisfies $\E[\delta_Y(B_{f,\varepsilon}(t))]=0$. In the language of
+the conditional operator-It\^o transfer principle
+(\cref{thm:transfer}), \eqref{eq:efi-ito} is the mollified instance
+of the schematic pathwise target \eqref{eq:pathwise-target}, with the
+clock-source divergence carrying the martingale part.
+
+\smallskip
+\noindent\textbf{(iii) Fourth-order expectation-level consistency.}
+With $u(t,x)=\E[f(x+X_{|Y_t|})]$,
+\begin{equation}\label{eq:efi-fourth}
+  \lim_{\varepsilon\to 0}\E\bigl[C_{\IBM,\varepsilon}(f;t)\bigr]
+   \;=\;\int_0^t\!\Bigl[\,\tfrac{1}{8}\,\partial_x^{4}u(s,x)
+        \;+\;\tfrac{1}{2\sqrt{2\pi s}}\,\partial_x^{2}f(x)\,\Bigr]\,ds
+   \;=\;u(t,x)-f(x).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Part (i) is \cref{prop:moll-tanaka} below, repackaged using
+\eqref{eq:efi-C}--\eqref{eq:efi-gpp}. For (ii), the integrand
+$B_{f,\varepsilon}(t)$ is $Y$-adapted with continuous paths in $s$
+and we verify conditional square-integrability for each $\omega_X$
+as follows. By \cref{def:mollified}, $X^\varepsilon$ is
+$\Prob_X$-a.s.\ $C^{\infty}$ in $r$, hence the path
+$r\mapsto\partial_r X^\varepsilon_r$ is locally bounded a.s.\ on
+every compact $r$-interval. On $[0,t]$ the random variable
+$|Y_s|$ ranges over a compact subinterval of $\R_{+}$ (the path of
+$|Y|$ on $[0,t]$ is continuous and so attains a finite maximum).
+Combined with the Schwartz bounds on $f$ (so $f'$ is bounded on
+$\R$), this gives
+\[
+  \E_Y\!\int_0^{t}g_\varepsilon'(|Y_s|)^{2}\,ds
+   \;\le\;\|f'\|_\infty^{2}\,
+    \E_Y\!\int_0^{t}\bigl(\partial_r X^\varepsilon_{|Y_s|}\bigr)^{2}\,ds
+   \;<\;\infty\quad\text{a.s.\ in }\omega_X,
+\]
+since $\partial_r X^\varepsilon$ is continuous in $r$ and $|Y|$ is
+bounded on $[0,t]$ a.s. The source clock Skorohod divergence on
+$Y$-adapted square-integrable integrands coincides with the It\^o
+integral~\cite{Nualart}, giving the identification
+$\delta_Y(B_{f,\varepsilon}(t))=\int_0^t g_\varepsilon'(|Y_s|)
+\mathrm{sgn}(Y_s)\,dY_s$ and the centring
+$\E[\delta_Y(B_{f,\varepsilon}(t))]=0$. Part (iii) is
+\cref{thm:moll-consistency} combined with the integrated form
+\eqref{eq:sg-integrated} of \cref{thm:sg-correction}, which equates
+$C_\IBM^{\mathrm{sg}}(f;t,x)$ with the time integral on the right of
+\eqref{eq:efi-fourth}.
+\end{proof}
+
+\paragraph{The proved IBM It\^o formula of the paper.}
+\Cref{thm:energy-first-ito-moll} is the proved IBM It\^o formula of
+this paper. It is pathwise at the mollified scenery level and
+fourth-order correct after expectation. The theorem does \emph{not}
+assert convergence of $C_{\IBM,\varepsilon}(f;t)$ in
+$L^{2}(\Omega)$ as $\varepsilon\to 0$, and the unmollified pathwise
+correction $C_\IBM(f;t)$ is not constructed here as an
+$L^{2}(\Omega)$ random variable; the obstruction result of
+\cref{sec:toward-unmoll} (\cref{prop:var-divergence}) explains why
+the natural unmollified target is instead the dual of the quartic
+composite observable energy
+$\Energy_\IBM^{(4)}=\Energy_\IBM^{(2)}\otimes\Energy_\IBM^{(2)}$ in
+the rigged hierarchy \eqref{eq:rigged-4}.
+
+\paragraph{Why the correction is quartic at the energy level.}
+The clock It\^o formula behind \eqref{eq:efi-ito} is second order in
+the Brownian-time variable $r$: it is the ordinary It\^o--Tanaka
+formula applied to $g_\varepsilon(|Y_t|)$. The coefficients of that
+second-order expansion, $g_\varepsilon'$ and $g_\varepsilon''$
+displayed in \eqref{eq:efi-gpp}, are however first and second
+\emph{spatial} derivatives of a Brownian scenery. The PDE shadow of
+\eqref{eq:efi-C} in expectation, displayed on the right of
+\eqref{eq:efi-fourth}, is therefore fourth order in the spatial
+variable: the bi-Laplacian term $\tfrac18\,\partial_x^{4}u$ is the
+shadow of the $f'(x+X^\varepsilon_r)\,\partial_r^{2}X^\varepsilon$
+contribution to $g_\varepsilon''$ after averaging over the
+half-normal clock distribution, and the boundary term
+$\partial_x^{2}f/(2\sqrt{2\pi s})$ is its half-normal boundary
+correction. This is the canonical example of energy-order
+classification replacing semimartingale quadratic variation:
+classical $\langle\cdot\rangle$-tracking sees only the second-order
+clock term of \eqref{eq:efi-ito} and misses the fourth-order spatial
+PDE shadow that is the actual It\^o correction for IBM.
+
+\subsection*{Mollified pathwise It\^o--Tanaka identity}
+
+For $\varepsilon>0$, $x\in\R$, and $t\ge 0$, set
+$Z_t^\varepsilon=x+X^\varepsilon_{|Y_t|}$. For $f\in\mathscr S(\R)$,
+define the conditionally smooth function in the clock variable
+\[
+  g_\varepsilon(r)\;\coloneqq\;f(x+X^\varepsilon_r),
+  \qquad r\in\R,
+\]
+which is $\Prob_X$-a.s.\ $C^\infty$ in $r$.
+
+\begin{proposition}[Mollified pathwise It\^o-Tanaka identity]
+\label{prop:moll-tanaka}
+For every $\varepsilon>0$, $t\ge 0$, $f\in\mathscr S(\R)$,
+\begin{equation}\label{eq:moll-tanaka}
+  f(Z_t^\varepsilon)-f(Z_0^\varepsilon)
+  \;=\;M_{\varepsilon,t}^{Y}\;+\;g_\varepsilon'(0)\,L_t^{0}(Y)
+       \;+\;\tfrac12\!\int_0^t g_\varepsilon''(|Y_s|)\,ds,
+\end{equation}
+where $L_t^{0}(Y)$ is the Brownian local time of $Y$ at $0$ and
+\begin{equation}\label{eq:moll-mart}
+  M_{\varepsilon,t}^{Y}\;=\;\int_0^t g_\varepsilon'(|Y_s|)\,
+   \mathrm{sgn}(Y_s)\,dY_s
+\end{equation}
+is a continuous $L^{2}$-martingale in $Y$ (conditional on $X$). The
+derivatives in \eqref{eq:moll-tanaka} are explicit:
+\[
+  g_\varepsilon'(r)=f'(x+X^\varepsilon_r)\,\partial_rX^\varepsilon_r,
+  \quad
+  g_\varepsilon''(r)=f''(x+X^\varepsilon_r)\,(\partial_rX^\varepsilon_r)^{2}
+   +f'(x+X^\varepsilon_r)\,\partial_r^{2}X^\varepsilon_r.
+\]
+\end{proposition}
+
+\begin{proof}
+Tanaka's formula gives $d|Y_t|=\mathrm{sgn}(Y_t)dY_t+dL_t^{0}(Y)$ and
+$\langle|Y|\rangle_t=t$. For each $\omega_X$, $g_\varepsilon\in C^\infty(\R)$,
+so the It\^o-Tanaka formula applied to $g_\varepsilon(|Y_t|)$ yields,
+using $g_\varepsilon'(|Y_s|)dL_s^{0}=g_\varepsilon'(0)dL_s^{0}$
+(since $dL_s^{0}$ is supported on $\{Y_s=0\}$),
+\[
+  g_\varepsilon(|Y_t|)-g_\varepsilon(0)
+  =\!\int_0^t\!\! g_\varepsilon'(|Y_s|)\mathrm{sgn}(Y_s)\,dY_s
+   +g_\varepsilon'(0)L_t^{0}(Y)
+   +\tfrac12\!\int_0^t\!\! g_\varepsilon''(|Y_s|)\,ds.
+\]
+The left-hand side equals $f(Z_t^\varepsilon)-f(Z_0^\varepsilon)$ since
+$Z_t^\varepsilon=x+X^\varepsilon_{|Y_t|}$ and $|Y_0|=0$. The explicit
+formulas for $g_\varepsilon',g_\varepsilon''$ are the chain rule.
+\end{proof}
+
+Define the \emph{mollified pathwise correction}
+\begin{equation}\label{eq:moll-correction}
+  C_{\IBM,\varepsilon}(f;t)
+  \;\coloneqq\;
+  g_\varepsilon'(0)\,L_t^{0}(Y)\;+\;\tfrac12\!\int_0^t\!\!
+   g_\varepsilon''(|Y_s|)\,ds.
+\end{equation}
+Both contributions are pathwise well-defined random variables for each
+$\varepsilon>0$. The first is a clock local-time term, the second is
+the conditional It\^o second-order term.
+
+\subsection*{Expectation-level convergence}
+
+Set $v^\varepsilon(r,x)\coloneqq\E_X[f(x+X^\varepsilon_r)]$ and
+$U^\varepsilon(t,x)\coloneqq\E[f(x+X^\varepsilon_{|Y_t|})]
+=\int_0^\infty v^\varepsilon(r,x)\,p_t(r)\,dr$.
+
+\begin{theorem}[Expectation-level consistency at $\varepsilon>0$]
+\label{thm:moll-consistency}
+For every $f\in\mathscr S(\R)$, $\varepsilon>0$, and $t>0$,
+\begin{equation}\label{eq:moll-exp-id}
+  \E[C_{\IBM,\varepsilon}(f;t)]
+   \;=\;U^\varepsilon(t,x)-v^\varepsilon(0,x).
+\end{equation}
+Consequently, as $\varepsilon\to 0$,
+\begin{equation}\label{eq:moll-limit}
+  \lim_{\varepsilon\to 0}\,\E[C_{\IBM,\varepsilon}(f;t)]
+   \;=\;u(t,x)-f(x)
+   \;=\;C_\IBM^{\mathrm{sg}}(f;t,x).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Take expectation in \eqref{eq:moll-tanaka}. The It\^o integral
+$M_{\varepsilon,t}^{Y}$ has zero $Y$-conditional mean, so
+$\E[M_{\varepsilon,t}^{Y}]=0$. Therefore
+$\E[f(Z_t^\varepsilon)-f(Z_0^\varepsilon)]=\E[C_{\IBM,\varepsilon}(f;t)]$.
+By definition $\E[f(Z_t^\varepsilon)]=U^\varepsilon(t,x)$ and
+$\E[f(Z_0^\varepsilon)]=\E[f(x+X^\varepsilon_0)]=v^\varepsilon(0,x)$,
+giving \eqref{eq:moll-exp-id}.
+
+For \eqref{eq:moll-limit}: by Lipschitz $f$ and the $L^{1}$ corollary
+of \cref{lem:moll-rate} (uniform in $r\in\R$),
+$\E|f(x+X^\varepsilon_r)-f(x+X_r)|\le\|f'\|_\infty\,
+C_\rho^{1/2}\,\varepsilon^{1/2}$. Averaging against the law of
+$|Y_t|$ gives $U^\varepsilon(t,x)\to u(t,x)$. At $r=0$,
+\cref{lem:moll-rate} together with $X_0=0$ a.s.\ gives
+$X^\varepsilon_0\to 0$ in $L^{2}$, so $v^\varepsilon(0,x)
+=\E[f(x+X^\varepsilon_0)]\to f(x)$ by Lipschitz $f$. The second
+equality in \eqref{eq:moll-limit} is \cref{thm:sg-correction}.
+\end{proof}
+
+\paragraph{Local-time term has zero expectation.}
+The mollifier $\rho$ is non-negative and \emph{even}
+(\cref{def:mollified}), so $\rho_\varepsilon$ is even and
+$\rho_\varepsilon'$ is odd. A reflection-symmetry argument then
+shows
+\begin{equation}\label{eq:lt-zero-mean}
+  \E\bigl[g_\varepsilon'(0)\,L_t^{0}(Y)\bigr]\;=\;0
+  \qquad\text{for every }\varepsilon>0,\ t>0.
+\end{equation}
+Indeed, $L_t^{0}(Y)$ is $Y$-measurable and $g_\varepsilon'(0)$ is
+$X$-measurable; by independence $\E[g_\varepsilon'(0)L_t^{0}(Y)]
+=\E_X[g_\varepsilon'(0)]\,\E_Y[L_t^{0}(Y)]$. The two-sided Brownian
+scenery has the symmetry $X_z\stackrel{d}{=}X_{-z}$ as random fields;
+under the corresponding reflection, $X^\varepsilon_0
+=\int\rho_\varepsilon(z)X_z\,dz$ is invariant (even integrand) while
+$\partial_rX^\varepsilon_0=-\int\rho_\varepsilon'(z)X_z\,dz$ picks up a
+sign (odd integrand). Therefore $\E_X[h(X^\varepsilon_0)
+\partial_rX^\varepsilon_0]=0$ for every Borel $h$ with finite
+expectation, and in particular $\E_X[g_\varepsilon'(0)]
+=\E_X[f'(x+X^\varepsilon_0)\partial_rX^\varepsilon_0]=0$, giving
+\eqref{eq:lt-zero-mean}.
+
+In view of \eqref{eq:lt-zero-mean}, the whole expectation
+\eqref{eq:moll-exp-id} is carried by the interior term:
+\[
+  \E[C_{\IBM,\varepsilon}(f;t)]
+  \;=\;\tfrac12\int_0^t\E\bigl[g_\varepsilon''(|Y_s|)\bigr]\,ds
+  \;=\;U^\varepsilon(t,x)-v^\varepsilon(0,x).
+\]
+
+\paragraph{Bulk and boundary structure of the interior expectation
+(interpretive).}
+The interior term in \eqref{eq:moll-correction} admits a heat-semigroup
+reading. Conditioning on $X$ and using
+$v^\varepsilon(r,x)=(P_{\sigma_\varepsilon^{2}(r)}f)(x)$ with
+$\sigma_\varepsilon^{2}(r)\coloneqq\Var(X^\varepsilon_r)$,
+$\E_X[g_\varepsilon''(r)]=\partial_r^{2}v^\varepsilon(r,x)$. For
+$r>c\varepsilon$ (bulk), $(\sigma_\varepsilon^{2})'(r)=1$ exactly, so
+$\partial_r v^\varepsilon=\tfrac12\Delta v^\varepsilon$ and
+$\partial_r^{2}v^\varepsilon=\tfrac14\Delta^{2}v^\varepsilon
+\xrightarrow{\varepsilon\to 0}\tfrac14\,\partial_x^{4}P_rf(x)$ pointwise
+in $r$ on $(0,\infty)$. Heuristically, integrating against
+$p_s(r)\,dr$ and combining with the outer $\tfrac12$ in
+\eqref{eq:moll-correction} matches the bulk contribution
+$\tfrac18\,\partial_x^{4}u(s,x)$ of \eqref{eq:bt-correction}. On the
+boundary layer $r\in[0,c\varepsilon]$ near the half-normal origin,
+$(\sigma_\varepsilon^{2})''(r)=O(\varepsilon^{-1})$ on the
+scale-$\varepsilon$ transition to the bulk slope --- the mechanism by
+which the boundary term $\partial_x^{2}f(x)/(2\sqrt{2\pi s})$ of
+\eqref{eq:bt-correction} is identified at the expectation level
+through the half-normal integration-by-parts identity used in
+\cref{thm:bt-correction}. This bulk/boundary decomposition is
+\emph{interpretive}: we do not separately prove the boundary-layer
+limit. The global convergence
+$\E[C_{\IBM,\varepsilon}(f;t)]\to C_\IBM^{\mathrm{sg}}(f;t,x)$ is
+already established by \cref{thm:moll-consistency}; the decomposition
+above only explains \emph{through which channel} bulk and boundary
+contributions appear.
+
+\paragraph{Local-time versus boundary correction: not the same object.}
+The boundary term $\partial_x^{2}f(x)/(2\sqrt{2\pi s})$ in
+\eqref{eq:bt-correction} is \emph{not} the expectation of the
+Tanaka local-time term in this symmetric mollified model:
+\eqref{eq:lt-zero-mean} shows that expectation is zero. Rather, the
+boundary correction appears in the $\varepsilon\to 0$ limit through
+the half-normal integration-by-parts boundary layer of the interior
+second-derivative term, as identified above. The two phenomena ---
+pathwise Tanaka local time and the semigroup boundary correction
+--- coexist in the same identity \eqref{eq:moll-tanaka} but
+contribute through different channels: the local-time term is
+pathwise present but expectation-invisible, while the boundary
+correction is the expectation-level boundary layer of the interior
+term.
+
+\subsection*{Operator-divergence interpretation}
+
+In the notation of the operator-It\^o transfer principle
+(\cref{thm:transfer}), $M_{\varepsilon,t}^{Y}$ is the clock-source
+divergence integral $\delta_Y(B_{f,\varepsilon}(t))$ of
+\eqref{eq:efi-B}: this is the operator-divergence reading recorded
+as part~(ii) of \cref{thm:energy-first-ito-moll}. The observable
+projection of $\delta_Y(B_{f,\varepsilon}(t))$ onto $\mathcal F_\IBM$,
+if it converges in the unmollified limit, is the candidate
+$\delta_\IBM(B_f(t))$ of the schematic pathwise target
+\eqref{eq:pathwise-target}. We do not assert this projection limit
+exists.
+
+\subsection*{Status of the pathwise programme}
+
+\begin{itemize}
+\item \emph{Mollified pathwise IBM It\^o formula}: \textbf{proved}
+  (\cref{thm:energy-first-ito-moll}~(i)--(ii); constituent pieces
+  \cref{prop:moll-tanaka} and the operator-divergence reading).
+\item \emph{Fourth-order expectation-level consistency}: \textbf{proved}
+  (\cref{thm:energy-first-ito-moll}~(iii); constituent pieces
+  \cref{thm:moll-consistency} and \cref{thm:sg-correction}). In
+  particular, the local-time term is expectation-invisible
+  (\eqref{eq:lt-zero-mean}), so the entire expectation is carried by
+  the interior $g_\varepsilon''$-integral.
+\item \emph{Raw $L^{2}(\Omega)$ unmollified pathwise correction}
+  $C_\IBM(f;t)$: \textbf{obstructed}. The first-scenery-chaos
+  candidate $\Psi_\varepsilon$ associated with the
+  $\partial_r^{2}X^\varepsilon$ content of $g_\varepsilon''$ has
+  $\Var(\Psi_\varepsilon)\to\infty$
+  (\cref{prop:var-divergence}); ordinary Wick / Hermite renormalisation
+  acts in $\Hilb_0^{X}\oplus\Hilb_2^{X}$ and structurally does not
+  address this $\Hilb_1^{X}$ singularity
+  (\cref{prop:wick-insufficient}).
+\item \emph{Quartic observable-energy dual correction}: \textbf{open
+  analytic target}. The unmollified pathwise correction $C_\IBM(f;t)$
+  is expected to live in the dual of the quartic composite observable
+  energy $\Energy_\IBM^{(4)}=\Energy_\IBM^{(2)}\otimes
+  \Energy_\IBM^{(2)}$, in the rigged hierarchy of
+  \eqref{eq:rigged-4}, with $\E[C_\IBM]=C_\IBM^{\mathrm{sg}}$ forced
+  by \cref{cor:pathwise-to-sg}.
+\end{itemize}
+
+\section{Toward the unmollified pathwise correction}\label{sec:toward-unmoll}
+
+We now investigate whether the mollified pathwise correction
+$C_{\IBM,\varepsilon}(f;t)$ converges as $\varepsilon\to 0$ as a
+random variable, beyond the expectation-level convergence of
+\cref{thm:moll-consistency}. The conclusion of this section is
+negative at the raw level: the centred fluctuation
+$\tilde C_{\IBM,\varepsilon}\coloneqq C_{\IBM,\varepsilon}-\E[C_{\IBM,\varepsilon}]$
+has variance that diverges as $\varepsilon\to 0$, so
+$C_{\IBM,\varepsilon}$ does \emph{not} converge in $L^{2}(\Omega)$.
+We then identify the natural energy-contraction / source-chaos
+renormalisation that the unmollified pathwise correction should be
+built from --- realised in the present Gaussian Brownian-scenery
+source atlas as Wick / Hermite centering --- mark its convergence as
+open, and place the analytic gap in the source-resolved chaos
+coordinates.
+
+\subsection*{Mean / fluctuation decomposition}
+
+Set
+\begin{equation}\label{eq:decomp}
+  \tilde C_{\IBM,\varepsilon}(f;t)
+   \;\coloneqq\;C_{\IBM,\varepsilon}(f;t)-\E[C_{\IBM,\varepsilon}(f;t)],
+\end{equation}
+so $C_{\IBM,\varepsilon}=\E[C_{\IBM,\varepsilon}]+\tilde C_{\IBM,\varepsilon}$
+and $\E[\tilde C_{\IBM,\varepsilon}]=0$. By \cref{thm:moll-consistency},
+the mean component converges to $C_\IBM^{\mathrm{sg}}(f;t,x)$. The
+fluctuation $\tilde C_{\IBM,\varepsilon}$ is the new object to test.
+
+\subsection*{Variance scaling of the constituents}
+
+For $|y|>c\varepsilon$, the It\^o-isometry calculation of
+\cref{lem:moll-eps-inv} extends to the second spatial derivative:
+\begin{equation}\label{eq:var-2deriv}
+  \Var\bigl(\partial_y^{2}X^\varepsilon_y\bigr)
+  \;=\;\int_\R\rho_\varepsilon'(y-z)^{2}\,dz
+  \;=\;\frac{c_\rho^{(2)}}{\varepsilon^{3}},
+  \qquad c_\rho^{(2)}\coloneqq\int_\R\rho'(v)^{2}\,dv,
+\end{equation}
+since $\partial_y^{2}X^\varepsilon_y=\int\rho_\varepsilon'(y-z)\,dX_z$ in
+the It\^o-integral form valid away from the origin. The pointwise
+variance of $g_\varepsilon''(r)$ is therefore dominated, for
+$f\in\mathscr S(\R)$ with $f'\not\equiv 0$ and $r>c\varepsilon$, by
+the $f'(x+X^\varepsilon_r)\partial_r^{2}X^\varepsilon_r$ contribution
+of order $\|f'\|_\infty^{2}c_\rho^{(2)}\varepsilon^{-3}$. The
+$f''(\cdot)(\partial_rX^\varepsilon)^{2}$ contribution gives only the
+subdominant $\varepsilon^{-2}$ scaling (Gaussian fourth moment).
+
+\begin{lemma}[Brownian local-time Sobolev regularity]\label{lem:lt-sobolev}
+Let $Y$ be standard Brownian motion, $t>0$, and write
+$L\coloneqq L_t^{\cdot}(|Y|)$ for the spatial local time of the
+reflected Brownian motion $|Y|$ on $[0,t]$, supported in $[0,M_t]$
+with $M_t=\sup_{[0,t]}|Y_s|>0$ a.s.
+\begin{enumerate}
+\item For every $s<\tfrac12$, $L\in H^{s}_{\mathrm{loc}}(\R)$ a.s.
+\item For every compact interval $J\subset(0,\infty)$, on the event
+  $\{M_t>\sup J\}$ (which has positive $\Prob_Y$-probability for
+  every $t>0$ and every finite $\sup J$),
+  $L\notin H^{1}_{\mathrm{loc}}(J)$ a.s.; in particular
+  $L\notin H^{1}(\R)$ a.s.\ on $\{M_t>\sup J\}$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+By Tanaka's formula,
+$|Y_t|=\int_0^{t}\mathrm{sgn}(Y_s)\,dY_s+L_t^{0}(Y)$ is a continuous
+semimartingale, and we may invoke the Brownian semimartingale local
+time apparatus directly on $|Y|$.
+
+(i) The local time $r\mapsto L_t^{r}(|Y|)$ is $1/2^{-}$ H\"older
+continuous on $\R$ a.s.; this is the classical regularity for
+continuous-semimartingale local times in the Brownian case
+(see~\cite{RevuzYor}, Ch.~VI, Theorem VI.1.7 for $Y$, applied to
+$|Y|$ via the Tanaka decomposition). Consequently
+$L\in H^{s}_{\mathrm{loc}}(\R)$ for every $s<1/2$ a.s.
+
+(ii) By the Bouleau--Yor theorem~\cite{BouleauYor} applied to the
+continuous semimartingale $|Y|$, the spatial local time
+$r\mapsto L_t^{r}(|Y|)$ has nontrivial spatial quadratic variation
+on every compact subinterval of the visited range. Concretely,
+along refining partitions of $J\subset(0,\infty)$,
+\[
+  \liminf_{|\Delta|\to 0}\sum_{[x_k,x_{k+1}]\subset J}
+   \bigl(L_t^{x_{k+1}}(|Y|)-L_t^{x_k}(|Y|)\bigr)^{2}\;>\;0
+\]
+a.s.\ on $\{M_t>\sup J\}$. Only the nontriviality of the spatial
+quadratic variation is used in what follows; no exact value of the
+limit is required. If $L\in H^{1}_{\mathrm{loc}}(J)$ on a
+positive-$\Prob_Y$-probability subset of $\{M_t>\sup J\}$, then on
+that subset $L$ is absolutely continuous on $J$ with
+$L^{2}$-derivative; Cauchy--Schwarz then gives
+\[
+  \sum_{[x_k,x_{k+1}]\subset J}\bigl(L_t^{x_{k+1}}-L_t^{x_k}\bigr)^{2}
+   \;\le\;|\Delta|\,\|L'\|_{L^{2}(J)}^{2}\;\to\;0
+\]
+along refining partitions, contradicting the displayed nontrivial
+liminf. Hence $L\notin H^{1}_{\mathrm{loc}}(J)$ a.s.\ on
+$\{M_t>\sup J\}$.
+\end{proof}
+
+\begin{theorem}[$L^{2}$-divergence of the first-chaos projection]
+\label{prop:var-divergence}
+Let $f\in\mathscr S(\R)$, $x\in\R$, $t>0$. Assume the
+nondegeneracy condition
+\begin{equation}\label{eq:nondegen}
+  C(\eta)\;\coloneqq\;\E[f'(x+X_\eta)]\;=\;(P_\eta f')(x),
+  \qquad\eta>0,\qquad\text{is not identically zero on }(0,\infty).
+\end{equation}
+Then
+\begin{equation}\label{eq:var-diverges}
+  \liminf_{\varepsilon\to 0}\,
+   \Var\bigl(\mathrm{Proj}_1^{X}\,C_{\IBM,\varepsilon}(f;t)\bigr)\;=\;+\infty,
+\end{equation}
+and in particular $C_{\IBM,\varepsilon}(f;t)$ does not converge in
+$L^{2}(\Omega)$ as $\varepsilon\to 0$. The hypothesis
+\eqref{eq:nondegen} holds in particular whenever $f'(x)\ne 0$
+(since $C(\eta)\to f'(x)$ as $\eta\to 0^{+}$).
+\end{theorem}
+
+\begin{proof}
+Set $U_r=X^\varepsilon_r$, $V_r=\partial_rX^\varepsilon_r$,
+$W_r=\partial_r^{2}X^\varepsilon_r$, all centred Gaussians in
+$\Hilb_1^{X}$. In the bulk ($r>c\varepsilon$),
+$\sigma_V^{2}=c_\rho^{(1)}/\varepsilon$, $\Cov(U_r,V_r)=\tfrac12$,
+and
+$\Cov(U_r,W_r)=-\sigma_V^{2}=-c_\rho^{(1)}/\varepsilon$ via
+$\partial_r\Cov(U_r,V_r)=\sigma_V^{2}+\Cov(U_r,W_r)=0$. We use the
+white-noise representation of the two-sided Brownian scenery: each
+of $U_r$, $V_r$, $W_r$ is $W(\cdot)$ for a deterministic kernel in
+$L^{2}(\R,dw)$, with $D_wV_r=\rho_\varepsilon(r-w)$,
+$D_wW_r=\rho_\varepsilon'(r-w)$, and $D_wU_r=\xi_{r,\varepsilon}(w)$,
+the smoothed-Heaviside kernel of $U_r$ on the two-sided scenery.
+
+\emph{Step 1: First-chaos kernel decomposition.}
+The pathwise correction $C_{\IBM,\varepsilon}(f;t)$ has two
+summands: the boundary local-time piece $g_\varepsilon'(0)L_t^{0}(Y)$
+and the interior integral
+$\tfrac12\!\int_0^{t}g_\varepsilon''(|Y_s|)\,ds$. Since
+$g_\varepsilon'(0)=f'(x+X_0^\varepsilon)V_0$ is the product of a
+smooth function of one first-chaos element with another first-chaos
+element, $f'(x+X_0^\varepsilon)$ has a non-trivial zeroth-chaos
+component $\E[f'(x+X_0^\varepsilon)]$, and the boundary piece
+\emph{does} contribute to $\mathrm{Proj}_1^{X}$ in general. We do
+not discard it. Conditional on $Y$, the Malliavin kernel of
+$\mathrm{Proj}_1^{X}C_{\IBM,\varepsilon}(f;t)$ splits as
+\begin{equation}\label{eq:Kdecomp}
+  K_\varepsilon(w\mid Y)
+   \;=\;K_\varepsilon^{\mathrm{int}}(w\mid Y)
+   \;+\;K_\varepsilon^{\mathrm{bdy}}(w\mid Y),
+\end{equation}
+with $K_\varepsilon^{\mathrm{bdy}}(w\mid Y)=L_t^{0}(Y)\,\E_X[D_wg_\varepsilon'(0)]$
+($Y$-measurable scalar times an $X$-deterministic kernel) and
+$K_\varepsilon^{\mathrm{int}}(w\mid Y)=\E_X[D_w\tfrac12\!\int_0^{t}g_\varepsilon''(|Y_s|)\,ds\mid Y]$.
+
+\emph{Step 2: Spatial support of $K_\varepsilon^{\mathrm{bdy}}$.}
+From $g_\varepsilon'(0)=f'(x+X_0^\varepsilon)V_0$,
+\[
+  \E_X[D_wg_\varepsilon'(0)]
+   \;=\;\E_X[f''(x+X_0^\varepsilon)V_0]\,D_wX_0^\varepsilon
+   \;+\;\E_X[f'(x+X_0^\varepsilon)]\,D_wV_0.
+\]
+Both kernels are supported in $\{|w|\le c\varepsilon\}$: indeed,
+$D_wV_0=\rho_\varepsilon(0-w)=\rho_\varepsilon(w)$ has compact
+support in $|w|\le c\varepsilon$, and
+$D_wX_0^\varepsilon=\xi_{0,\varepsilon}(w)=\int\rho_\varepsilon(z)\eta_z(w)\,dz$
+(with $\eta_z(w)=\mathrm{sgn}(z)\mathbf 1_{w\in[0,z]_{*}}$) vanishes
+for $|w|>c\varepsilon$ because $\rho_\varepsilon(z)$ is supported in
+$|z|\le c\varepsilon$ and $\eta_z(w)=0$ whenever $|w|>|z|$. Hence
+\begin{equation}\label{eq:Kbdy-support}
+  \mathrm{supp}\,K_\varepsilon^{\mathrm{bdy}}(\cdot\mid Y)
+   \;\subseteq\;[-c\varepsilon,c\varepsilon],\qquad\forall\,\varepsilon>0.
+\end{equation}
+
+\emph{Step 3: Interior kernel via Stein/Malliavin.}
+For $g_\varepsilon''(r)=f''(x+U_r)V_r^{2}+f'(x+U_r)W_r$,
+\begin{equation}\label{eq:Dgpp}
+\begin{aligned}
+  \E[D_wg_\varepsilon''(r)]
+   &=\bigl(\E[f'''(x+U_r)V_r^{2}]+\E[f''(x+U_r)W_r]\bigr)\xi_{r,\varepsilon}(w)\\
+   &\quad+2\E[f''(x+U_r)V_r]\,\rho_\varepsilon(r-w)
+   +\E[f'(x+U_r)]\,\rho_\varepsilon'(r-w).
+\end{aligned}
+\end{equation}
+Stein for jointly Gaussian $(U,V)$ gives, for any smooth $h$,
+$\E[h(x+U)V]=\Cov(U,V)\E[h'(x+U)]$ and
+$\E[h(x+U)V^{2}]=\sigma_V^{2}\E[h(x+U)]+\Cov(U,V)^{2}\E[h''(x+U)]$.
+In the bulk,
+\begin{align*}
+  \E[f'''(x+U_r)V_r^{2}]+\E[f''(x+U_r)W_r]
+   &=(\sigma_V^{2}+\Cov(U_r,W_r))\E[f'''(x+U_r)]\\
+   &\qquad+\tfrac14\E[f^{(5)}(x+U_r)]
+   =\tfrac14\E[f^{(5)}(x+U_r)],
+\end{align*}
+$2\E[f''(x+U_r)V_r]=\E[f'''(x+U_r)]$, so the two $\varepsilon^{-1}$
+contributions cancel exactly. Writing
+$A_\varepsilon(r)=\tfrac14\E[f^{(5)}(x+U_r)]$,
+$B_\varepsilon(r)=\E[f'''(x+U_r)]$,
+$C_\varepsilon(r)=\E[f'(x+U_r)]$
+(bounded uniformly in $(r,\varepsilon)$, with limits $A,B,C$, in
+particular $C(r)=(P_r f')(x)$ as in \eqref{eq:nondegen}),
+\begin{equation}\label{eq:Dkernel}
+  \E[D_wg_\varepsilon''(r)]
+  =A_\varepsilon(r)\xi_{r,\varepsilon}(w)
+   +B_\varepsilon(r)\rho_\varepsilon(r-w)
+   +C_\varepsilon(r)\rho_\varepsilon'(r-w).
+\end{equation}
+The $O(\varepsilon)$ boundary-layer corrections at $r\in[0,c\varepsilon]$
+contribute $O(\varepsilon^{1/2})$ in $L^{2}(\R,dw)$-norm below and
+do not affect the conclusion. Setting $L\coloneqq L_t^{\cdot}(|Y|)$
+(supported in $[0,M_t]$ with $M_t=\sup_{[0,t]}|Y_s|>0$ a.s.),
+integration against $L\,dr$ gives
+\begin{equation}\label{eq:T123}
+  K_\varepsilon^{\mathrm{int}}(w\mid Y)
+   =\tfrac12\bigl(T_1+T_2+T_3\bigr)(w),
+\end{equation}
+where
+$T_1(w)=\!\int_0^{\infty}\!A_\varepsilon(r)L(r)\xi_{r,\varepsilon}(w)\,dr$,
+$T_2(w)=(\rho_\varepsilon*B_\varepsilon L)(w)$,
+$T_3(w)=-\partial_w(\rho_\varepsilon*C_\varepsilon L)(w)$, with
+$\|T_j\|_{L^{2}(\R,dw)}^{2}=\Var_X(I_j^\varepsilon\mid Y)$ for
+$I_j^\varepsilon$ the corresponding random variables
+($I_1^\varepsilon=\int AL\,U_r\,dr$,
+$I_2^\varepsilon=\int BL\,V_r\,dr$,
+$I_3^\varepsilon=\int CL\,W_r\,dr$).
+
+\emph{Step 4: Spatial localisation away from the boundary.}
+By hypothesis \eqref{eq:nondegen} and the real-analyticity of
+$C(\eta)=(P_\eta f')(x)$ on $(0,\infty)$, the zero set of $C$ is
+discrete; choose a compact interval $J=[a,b]\subset(0,\infty)$ with
+$a>0$, $\inf_{\eta\in J}|C(\eta)|\ge c_J>0$, and a non-empty closed
+subinterval $J^{\circ}=[a',b']\subset(a,b)$. Fix a smooth cutoff
+$\chi\in C_c^{\infty}(\R)$ with $\chi\equiv 1$ on $J^{\circ}$,
+$\mathrm{supp}\,\chi\subset J$, and $0\le\chi\le 1$. Restrict to
+$\varepsilon$ small enough that $c\varepsilon<a/2$. Then, by Step~2,
+$\mathrm{supp}\,K_\varepsilon^{\mathrm{bdy}}\cap\mathrm{supp}\,\chi=\emptyset$,
+so $\chi\cdot K_\varepsilon^{\mathrm{bdy}}\equiv 0$ and, by
+\eqref{eq:Kdecomp},
+\begin{equation}\label{eq:localised}
+  \Var_X(\mathrm{Proj}_1^{X}C_{\IBM,\varepsilon}\mid Y)
+  =\|K_\varepsilon(\cdot\mid Y)\|_{L^{2}(\R)}^{2}
+  \;\ge\;\|\chi K_\varepsilon^{\mathrm{int}}(\cdot\mid Y)\|_{L^{2}(\R)}^{2}
+  =\tfrac14\|\chi(T_1+T_2+T_3)\|_{L^{2}}^{2}.
+\end{equation}
+
+\emph{Step 5: Localised $\|\chi T_1\|$ and $\|\chi T_2\|$ are bounded
+uniformly.}
+Since $|\chi|\le 1$, $\|\chi T_j\|_{L^{2}}\le\|T_j\|_{L^{2}}$, and:
+$\|T_1\|_{L^{2}}^{2}=\Var_X(I_1^\varepsilon\mid Y)
+\le(\|A\|_\infty t)^{2}(M_t+c\varepsilon)$ via
+$|\Cov(U_r,U_{r'})|\le M_t+c\varepsilon$ and
+$\int L=t$; $\|T_2\|_{L^{2}}^{2}=\|\rho_\varepsilon*B_\varepsilon L\|_{L^{2}}^{2}
+\le\|B_\varepsilon L\|_{L^{2}}^{2}\le\|B\|_\infty^{2}\|L\|_\infty^{2}M_t$
+by Young's inequality. Both bounds are uniform in $\varepsilon$.
+
+\emph{Step 6: $\|\chi T_3\|\to\infty$ on $\{M_t>b\}$.}
+Set $u_\varepsilon\coloneqq\rho_\varepsilon*(C_\varepsilon L)$. Since
+$C_\varepsilon\to C$ uniformly on compact subsets of $(0,\infty)$
+(heat-semigroup continuity in $\eta$), $L$ has compact support in
+$[0,M_t]$, and $\|\rho_\varepsilon*f-f\|_{L^{2}}\to 0$ for
+$f\in L^{2}$, we obtain $u_\varepsilon\to CL$ in $L^{2}(\R)$, and
+hence $\chi u_\varepsilon\to\chi CL$ in $L^{2}(\R)$.
+
+\emph{Claim: $\chi CL\notin H^{1}(\R)$ a.s.\ on $\{M_t>b\}$.}
+On $J^{\circ}$, $\chi\equiv 1$ and $|C|\ge c_J>0$; if
+$\chi CL\in H^{1}(\R)$, then $\chi CL|_{J^{\circ}}=CL|_{J^{\circ}}
+\in H^{1}_{\mathrm{loc}}(J^{\circ})$, and dividing by the smooth
+nonvanishing $C$ on $J^{\circ}$ gives $L\in H^{1}_{\mathrm{loc}}(J^{\circ})$.
+But \cref{lem:lt-sobolev}(ii) applied to the compact subinterval
+$J^{\circ}$ yields $L\notin H^{1}_{\mathrm{loc}}(J^{\circ})$ a.s.\ on
+$\{M_t>\sup J^{\circ}\}=\{M_t>b'\}\supseteq\{M_t>b\}$, a
+contradiction. Hence $\chi CL\notin H^{1}(\R)$ a.s.\ on $\{M_t>b\}$.
+
+For any $R>0$, $\widehat{\chi u_\varepsilon}\to\widehat{\chi CL}$
+in $L^{2}(\R)$ by Plancherel transfer of $L^{2}$-convergence; with
+$|\widehat{\chi u_\varepsilon}(k)|\le\|\chi u_\varepsilon\|_{L^{1}(\R)}\le
+\|\chi\|_{L^{1}}\sup_\varepsilon\|u_\varepsilon\|_{L^{\infty}}<\infty$
+uniform in $\varepsilon,k$, dominated convergence on $\{|k|\le R\}$
+gives
+\[
+  \liminf_{\varepsilon\to 0}\|(\chi u_\varepsilon)'\|_{L^{2}}^{2}
+   \;=\;\liminf_{\varepsilon\to 0}\frac{1}{2\pi}\!\int_\R k^{2}|\widehat{\chi u_\varepsilon}|^{2}dk
+   \;\ge\;\frac{1}{2\pi}\!\int_{|k|\le R}\!k^{2}|\widehat{\chi CL}|^{2}dk.
+\]
+Letting $R\to\infty$ and using $\chi CL\notin H^{1}$ gives
+$\liminf_{\varepsilon\to 0}\|(\chi u_\varepsilon)'\|_{L^{2}}=+\infty$
+a.s.\ on $\{M_t>b\}$. Now
+$\chi T_3=-\chi\,u_\varepsilon'=-(\chi u_\varepsilon)'+\chi'u_\varepsilon$,
+and $\|\chi'u_\varepsilon\|_{L^{2}}\to\|\chi'CL\|_{L^{2}}<\infty$
+(smooth $\chi'$ times $L^{2}$-convergent $u_\varepsilon$). Therefore
+\[
+  \|\chi T_3\|_{L^{2}}\;\ge\;\|(\chi u_\varepsilon)'\|_{L^{2}}-\|\chi'u_\varepsilon\|_{L^{2}}\;\xrightarrow[\varepsilon\to 0]{}\;+\infty
+  \quad\text{a.s.\ on }\{M_t>b\}.
+\]
+
+\emph{Step 7: Conclusion.}
+By the reverse triangle inequality applied to \eqref{eq:localised}
+and Steps~5--6,
+\[
+  \|K_\varepsilon\|_{L^{2}}
+   \;\ge\;\tfrac12\,\|\chi(T_1+T_2+T_3)\|_{L^{2}}
+   \;\ge\;\tfrac12\bigl(\|\chi T_3\|_{L^{2}}-\|\chi T_1\|_{L^{2}}-\|\chi T_2\|_{L^{2}}\bigr)
+   \;\xrightarrow[\varepsilon\to 0]{}\;+\infty
+\]
+a.s.\ on $\{M_t>b\}$, which has positive $\Prob_Y$-probability for
+every $t>0$ (e.g.\ because $\{Y_t>b\}\subset\{M_t>b\}$ and
+$\Prob(Y_t>b)>0$). Hence
+$\Var_X(\mathrm{Proj}_1^{X}C_{\IBM,\varepsilon}\mid Y)\to+\infty$
+a.s.\ on $\{M_t>b\}$, and Fatou over $Y$ gives
+$\liminf\E_Y[\Var_X(\cdot\mid Y)]=+\infty$; since
+$\Var(\mathrm{Proj}_1^{X}C_{\IBM,\varepsilon})\ge\E_Y[\Var_X(\cdot\mid Y)]$,
+\eqref{eq:var-diverges} follows. $L^{2}(\Omega)$-convergence of
+$C_{\IBM,\varepsilon}(f;t)$ would force a uniformly bounded variance
+and so fails.
+\end{proof}
+
+The key analytic point of \cref{prop:var-divergence} is twofold.
+First, the naive $\varepsilon^{-1}$-divergent first-chaos
+contributions from the two summands of $g_\varepsilon''(r)$
+\emph{cancel exactly} in the Malliavin kernel \eqref{eq:Dkernel},
+leaving a residual $T_3$ summand with $\rho_\varepsilon'$-kernel and
+coefficient $C_\varepsilon L$. Second, a spatial cutoff $\chi$
+supported away from the boundary $w=0$ suppresses the first-chaos
+contribution of the local-time term $g_\varepsilon'(0)L_t^{0}(Y)$
+(whose Malliavin kernel is supported in $\{|w|\le c\varepsilon\}$,
+\eqref{eq:Kbdy-support}) and isolates the interior $T_3$ piece; the
+localised divergence
+$\|\chi T_3\|_{L^{2}}\to\infty$ is driven by
+$\chi CL\notin H^{1}(\R)$, in turn forced by the Bouleau--Yor spatial
+quadratic variation of the clock local time
+(\cref{lem:lt-sobolev}).
+
+\paragraph{The obstruction is quartic, not merely topological.}
+The divergence above is not only a topology issue; it reflects the
+\emph{order} of the IBM observable energy. Brownian motion has
+quadratic energy and produces the second-order heat operator
+$\tfrac12\Delta$. IBM composes a Brownian scenery with a Brownian
+clock, so the observable correction $C_\IBM$ is quartic at the
+energy level: $C_{\IBM,\varepsilon}$ is second order in the clock
+variable (via $\tfrac12\int g_\varepsilon''(|Y_s|)\,ds$), but because
+its coefficients are derivatives of the Brownian scenery the
+semigroup shadow of the integrated correction is fourth order in the
+spatial variable. The appearance of $\Delta^{2}u$ in
+\eqref{eq:bt-correction} is the PDE shadow of this quartic composite
+observable energy, not of a second-order Markov generator.
+Accordingly, the candidate second-order observable energy
+$\Energy_\IBM^{(2)}$ of \cref{def:second-order-ibm} should be read as
+a second-order \emph{operator-derivative} object whose
+$\Carre^{(2)}$-form, once averaged against the clock, produces a
+fourth-order / quartic PDE-shadow signature. The
+$\partial_r^{2}X^\varepsilon$ singularity isolated by
+\cref{prop:var-divergence} is the rank-one footprint of this
+quartic structure in the first scenery chaos.
+
+\subsection*{Energy-contraction renormalisation candidate}
+
+The subtraction below should not be read as intrinsically Gaussian.
+At the operator level, the divergent object is the
+\emph{diagonal contraction} of two first-order energy directions: the
+self-pairing of the energy-derivative kernel
+$\partial_rX^\varepsilon_r$ against itself, measured in the source
+energy space. In any Gaussian source atlas, this contraction is
+realised as the expectation of the squared first-chaos element. In the
+present Brownian-scenery realisation, the diagonal contraction is
+\begin{equation}\label{eq:contraction}
+  \mathrm{Contr}_\varepsilon(r)
+  \;\coloneqq\;\E\bigl[(\partial_rX^\varepsilon_r)^{2}\bigr]
+  \;=\;\frac{c_\rho^{(1)}}{\varepsilon}
+  \qquad\text{for }|r|>c\varepsilon,
+\end{equation}
+so Wick / Hermite centering is precisely the Brownian-coordinate
+expression of an operator-energy contraction subtraction. We use the
+operator language below; the Gaussian Wick formula \eqref{eq:wick-sq}
+is the explicit coordinate realisation in this paper.
+
+Define the contraction-renormalised square
+\begin{equation}\label{eq:wick-sq}
+  :(\partial_rX^\varepsilon_r)^{2}:\;\coloneqq\;
+  (\partial_rX^\varepsilon_r)^{2}\,-\,\mathrm{Contr}_\varepsilon(r)
+  \;=\;(\partial_rX^\varepsilon_r)^{2}\,-\,\frac{c_\rho^{(1)}}{\varepsilon};
+\end{equation}
+in the present Gaussian source coordinates this is the usual
+Wick / Hermite square in $\Hilb_2^{X}$. The
+\emph{contraction-renormalised} second-derivative density is
+\begin{equation}\label{eq:wick-g}
+  :g_\varepsilon''(r):\;\coloneqq\;
+   f''(x+X^\varepsilon_r):(\partial_rX^\varepsilon_r)^{2}:
+   \;+\;f'(x+X^\varepsilon_r)\,\partial_r^{2}X^\varepsilon_r,
+\end{equation}
+and the \emph{operator-contraction-renormalised correction candidate}
+is
+\begin{equation}\label{eq:wick-correction}
+  \widehat C_{\IBM,\varepsilon}(f;t)
+  \;\coloneqq\;
+   g_\varepsilon'(0)\,L_t^{0}(Y)\;+\;\tfrac12\!\int_0^t\,
+   :g_\varepsilon''(|Y_s|):\,ds.
+\end{equation}
+By construction, $:g_\varepsilon''(r):$ has the contraction
+$\mathrm{Contr}_\varepsilon(r)$ subtracted from the square component;
+its expectation differs from that of the raw $g_\varepsilon''(r)$ by the
+explicit deterministic counterterm
+$-\mathrm{Contr}_\varepsilon(r)\,\E_X[f''(x+X^\varepsilon_r)]$.
+
+We do not prove convergence of $\widehat C_{\IBM,\varepsilon}$;
+\eqref{eq:wick-correction} is offered as the natural
+contraction-renormalised candidate. Whether
+$\widehat C_{\IBM,\varepsilon}(f;t)$ converges in $L^{2}(\Omega)$, in
+some weaker topology, or only chaos-by-chaos remains open.
+
+\subsection*{Source-chaos coordinates}
+
+The source-resolved chaos atlas of~\cite{Fontes-IBMchaos} suggests
+where convergence of $\widehat C_{\IBM,\varepsilon}$ should be sought.
+The Wick square $:(\partial_rX^\varepsilon)^{2}:$ lives in the second
+scenery Wiener chaos $\Hilb^{X}_{2}$; the kernel
+$\partial_r^{2}X^\varepsilon$ lives in $\Hilb^{X}_{1}$; multiplication
+by smooth functions of $X^\varepsilon$ couples to other scenery
+sectors; integration against the half-normal weight of $|Y_s|$ couples
+to the clock sectors $\Hilb^{Y}_{n}$. The bidegree projections of
+$\widehat C_{\IBM,\varepsilon}$ onto $(2,0)$, $(2,1)$, $(1,1)$,
+$(1,2)$, $(0,2)$ are the natural objects in which
+$\varepsilon\to 0$ convergence might be checked first, in line with
+the consistency requirements of \cref{rem:bidegree-2}.
+
+\subsection*{Status and next analytic target}
+
+\begin{itemize}
+\item \emph{Raw centred correction $\tilde C_{\IBM,\varepsilon}$}:
+  $\Var(\mathrm{Proj}_1^{X}\,C_{\IBM,\varepsilon}(f;t))\to+\infty$ as
+  $\varepsilon\to 0$ \textbf{(proved)}, for every $f\in\mathscr S(\R)$
+  with $(P_\cdot f')(x)\not\equiv 0$ on $(0,\infty)$
+  (\cref{prop:var-divergence}). The raw $L^{2}(\Omega)$-target for
+  the unmollified pathwise correction is therefore ruled out at the
+  first scenery-chaos level.
+\item \emph{Contraction-renormalised candidate
+  $\widehat C_{\IBM,\varepsilon}$}: \textbf{defined}
+  (\eqref{eq:wick-correction}). Its $L^{2}$-convergence is
+  \textbf{open}; the Wick / Hermite subtraction acts in
+  $\Hilb_0^{X}\oplus\Hilb_2^{X}$ and structurally does not touch the
+  divergent $\rho_\varepsilon'$-kernel of \eqref{eq:Dkernel}
+  (\cref{prop:wick-insufficient}).
+\item \emph{Finite-bidegree projections of
+  $\widehat C_{\IBM,\varepsilon}$}: convergence at each
+  $(m,n)$-sector is the natural next analytic step, drawing on the
+  kernels of~\cite{Fontes-IBMchaos}.
+\item \emph{Unmollified pathwise correction $C_\IBM(f;t)$}: open. Any
+  future definition must (i) reduce in full expectation to
+  $C_\IBM^{\mathrm{sg}}(f;t,x)$ (\cref{cor:pathwise-to-sg}) and
+  (ii) be constructed in a topology weaker than $L^{2}(\Omega)$,
+  since the raw $L^{2}$-limit of $C_{\IBM,\varepsilon}$ does not
+  exist (\cref{prop:var-divergence}); a quartic observable-energy
+  dual is the structural target (\eqref{eq:rigged-4}).
+\end{itemize}
+
+\section{Renormalised pathwise correction: variance after Gaussian contraction subtraction}\label{sec:renorm-correction}
+
+The contraction-renormalised candidate $\widehat C_{\IBM,\varepsilon}$
+of \eqref{eq:wick-correction} subtracts the diagonal contraction
+$\mathrm{Contr}_\varepsilon(r)=c_\rho^{(1)}/\varepsilon$ from the
+squared first-energy direction $(\partial_rX^\varepsilon)^{2}$ ---
+realised concretely in the present Gaussian source atlas as the
+Wick / Hermite square subtraction \eqref{eq:wick-sq}. We now check
+whether that subtraction is sufficient to give an $L^{2}$-bounded
+candidate, and conclude that it is not: the linear-in-Gaussian term
+$\partial_r^{2}X^\varepsilon$ lives in the first scenery chaos
+$\Hilb_1^{X}$ with $\Var\sim\varepsilon^{-3}$, and no subtraction of
+products of Gaussian first-chaos elements lowers its rank-1 chaos
+mass. The unmollified pathwise correction $C_\IBM(f;t)$ must therefore
+be constructed in a topology weaker than $L^{2}(\Omega)$, or
+chaos-by-chaos with test integrands.
+
+\subsection*{Cross-covariance audit at the bulk}
+
+For $|r|>c\varepsilon$, the bulk covariance matrix of the triple
+$(X^\varepsilon_r,\,\partial_rX^\varepsilon_r,\,\partial_r^{2}X^\varepsilon_r)$
+is
+\[
+  \mathrm{Cov}\;=\;
+  \begin{pmatrix}
+   r+O(\varepsilon) & 1/2 & -c_\rho^{(1)}/\varepsilon\\[2pt]
+   1/2 & c_\rho^{(1)}/\varepsilon & 0\\[2pt]
+   -c_\rho^{(1)}/\varepsilon & 0 & c_\rho^{(2)}/\varepsilon^{3}
+  \end{pmatrix},
+\]
+the only $\varepsilon^{-1}$ cross-correlation being
+\[
+  \Cov(X^\varepsilon_r,\partial_r^{2}X^\varepsilon_r)
+   \;=\;-\,c_\rho^{(1)}/\varepsilon,
+\]
+obtained by twice differentiating
+$\Var(X^\varepsilon_r)=\sigma_\varepsilon^{2}(r)$ and using
+$(\sigma_\varepsilon^{2})'(r)=1$ for $|r|>c\varepsilon$.
+This cross-covariance contributes the divergent piece
+$-c_\rho^{(1)}\varepsilon^{-1}\E[f''(x+X^\varepsilon_r)]$ to
+$\E[f'(\cdot)\partial_r^{2}X^\varepsilon]$; in the unrenormalised
+$g_\varepsilon''$ it is cancelled exactly by the $\sigma_V^{2}$ part
+of $\E[f''(\cdot)V^{2}]$, leaving
+$\E[g_\varepsilon''(r)]=\tfrac14\E[f^{(4)}(x+X^\varepsilon_r)]$
+finite. The Wick / Hermite subtraction in $\mathcal R_\varepsilon$
+(the contraction subtraction in the Gaussian source coordinates)
+removes the $\sigma_V^{2}$ part of $(\partial_rX^\varepsilon)^{2}$
+\emph{only}, so an additional deterministic counterterm
+$+\mathrm{Contr}_\varepsilon(r)\,\E[f''(x+X^\varepsilon_r)]$ is
+needed to preserve $\E[\mathcal R_\varepsilon]=\E[g_\varepsilon'']$.
+The cross-covariance produces no stochastic counterterm that would
+tame the $\varepsilon^{-3}$ variance of
+$\partial_r^{2}X^\varepsilon$.
+
+\subsection*{Variance after Gaussian contraction subtraction}
+
+\begin{proposition}[Gaussian square-contraction subtraction is insufficient]
+\label{prop:wick-insufficient}
+Under the hypotheses of \cref{prop:var-divergence}, the contraction
+subtraction
+$(\partial_rX^\varepsilon)^{2}\mapsto:(\partial_rX^\varepsilon)^{2}:$
+does not modify the $\partial_r^{2}X^\varepsilon$ content of the
+integrand $g_\varepsilon''$. Consequently the
+first-scenery-chaos singularity in
+$\mathrm{Proj}_1^{X}C_{\IBM,\varepsilon}$ carried by
+$\partial_r^{2}X^\varepsilon$ (identified in
+\cref{prop:var-divergence}) is not removed by the subtraction, and
+the contraction renormalisation is necessary but not sufficient for
+$L^{2}$-tightness of $\widehat C_{\IBM,\varepsilon}$. In the Gaussian
+Brownian-scenery source atlas, the subtraction is the Wick / Hermite
+square centering used in the present paper.
+\end{proposition}
+
+\begin{proof}
+The contraction subtraction
+$(\partial_rX^\varepsilon_r)^{2}\mapsto:(\partial_rX^\varepsilon_r)^{2}:
+=(\partial_rX^\varepsilon_r)^{2}-c_\rho^{(1)}/\varepsilon$ alters only
+the $V^{2}$ factor in
+$g_\varepsilon''(r)=f''(x+X^\varepsilon_r)V_r^{2}+f'(x+X^\varepsilon_r)W_r$
+(with $V_r=\partial_rX^\varepsilon_r$, $W_r=\partial_r^{2}X^\varepsilon_r$).
+The term $f'(x+X^\varepsilon_r)W_r$ --- which carries the
+$C_\varepsilon(r)\rho_\varepsilon'(r-w)$ contribution to the
+first-chaos Malliavin kernel \eqref{eq:Dkernel} of
+\cref{prop:var-divergence}, with coefficient
+$C_\varepsilon(r)=\E_X[f'(x+X^\varepsilon_r)]=(P_{\sigma_\varepsilon^{2}(r)}f')(x)$,
+and is the source of the residual first-chaos $L^{2}$-divergence
+identified in Step~4 of the proof of \cref{prop:var-divergence} ---
+is untouched by the contraction subtraction.
+
+The subtraction does add a counterterm to $\widehat C_{\IBM,\varepsilon}$
+of the form $-\tfrac{c_\rho^{(1)}}{2\varepsilon}\int_0^t
+f''(x+X^\varepsilon_{|Y_s|})\,ds$, a smooth functional of $X^\varepsilon$
+alone. Its first-chaos kernel (via Stein on $f''(x+X^\varepsilon)$)
+is built from the $U_r$-fiber $\xi_{r,\varepsilon}(w)$ of
+$\Hilb_1^{X}$, not from the $W_r$-fiber $\rho_\varepsilon'(r-w)$; in
+the notation of \eqref{eq:Dkernel} and \eqref{eq:T123}, it modifies
+$A_\varepsilon$ and contributes to the $T_1$-summand, but does not
+modify $T_3=-\partial_w(\rho_\varepsilon*C_\varepsilon L)$, which is
+the localized divergent piece of \cref{prop:var-divergence}. Hence
+the residual $L^{2}$-divergence of
+$\mathrm{Proj}_1^{X}\widehat C_{\IBM,\varepsilon}$ persists; the
+contraction subtraction acts in the
+$\Hilb_0^{X}\oplus\Hilb_2^{X}$ even-chaos sectors and does not
+address the rank-$1$ chaos mass carried by the $\rho_\varepsilon'$-kernel
+in \eqref{eq:Dkernel}.
+\end{proof}
+
+\paragraph{Caveat on $L^{2}$-divergence of $\widehat C_{\IBM,\varepsilon}$.}
+\Cref{prop:wick-insufficient} shows that the Wick / Hermite
+subtraction cannot cancel the $\rho_\varepsilon'$-driven $T_3$
+contribution to the localised first-chaos kernel
+\eqref{eq:T123}, but it does not by itself prove
+$\Var(\widehat C_{\IBM,\varepsilon})\to\infty$ unconditionally:
+an algebraic cancellation between the residual $T_3$ piece and the
+Stein counterterm generated by the contraction subtraction would
+require structural conditions on $f$ beyond \eqref{eq:nondegen},
+which we do not analyse. The structural content is that the
+contraction subtraction acts in the wrong chaos sector to address
+the $\rho_\varepsilon'(r-w)$ kernel, so no $L^{2}$-tightness can be
+expected from it alone.
+
+\paragraph{What is needed instead.}
+\Cref{prop:wick-insufficient} identifies the analytic obstacle
+precisely: $\partial_r^{2}X^\varepsilon$ is a centred Gaussian in
+$\Hilb_1^{X}$ whose variance tracks the spatial-derivative-of-white-noise
+it converges to as $\varepsilon\to 0$. No contraction subtraction of
+squared first-energy directions (no Wick subtraction of Gaussian
+squares, in the present source coordinates) addresses this rank-one
+chaos mass. The renormalisation must operate at the level of a
+\emph{quartic composite observable energy}, not at the level of a
+single Gaussian square: the second-order clock derivative
+$g_\varepsilon''(|Y_s|)$, paired with second-order scenery covariances,
+produces the fourth-order $\Delta^{2}$ signature of \eqref{eq:bt-correction},
+and the appropriate target topology is the dual of a fourth-order
+energy space rather than of $L^{2}$. Schematically, with
+$\Energy_\IBM^{(2)}$ the candidate second-order observable energy of
+\cref{def:second-order-ibm} and $\Energy_\IBM^{(4)}=\Energy_\IBM^{(2)}\otimes
+\Energy_\IBM^{(2)}$ its tensor square (the quartic composite energy
+underlying the $\Delta^{2}$ shadow), one expects a rigged hierarchy
+\begin{equation}\label{eq:rigged-4}
+  \Energy_\IBM^{(4),+}
+   \;\subset\;\Energy_\IBM^{(4)}
+   \;\subset\;\Energy_\IBM^{(4),-},
+\end{equation}
+in which the unmollified pathwise correction $C_\IBM(f;t)$ should
+live in the negative space $\Energy_\IBM^{(4),-}$ and be paired with
+test integrands from $\Energy_\IBM^{(4),+}$. Two analytic routes
+remain to construct such a pairing:
+\begin{enumerate}
+\item[(i)] interpret $\partial_r^{2}X$ in the unmollified limit as a
+  Hida / Schwartz distribution and read the
+  $f'(X)\partial_r^{2}X$ contribution as a distribution-valued kernel
+  pairing with test integrands in $\Energy_\IBM^{(4),+}$ --- the
+  fourth-order analogue of the Tanaka-style interpretation already
+  required for the unmollified clock derivative in
+  \cref{cor:unmollified};
+\item[(ii)] Stratonovich-regularise the time integral
+  $\int_0^t f'(x+X^\varepsilon_{|Y_s|})\,\partial_r^{2}
+   X^\varepsilon_{|Y_s|}\,ds$ via integration by parts in the clock
+  variable, transferring the spatial $r$-derivative onto
+  Brownian-clock local-time data and producing a quartic-energy
+  pairing.
+\end{enumerate}
+Neither route is pursued here. The renormalisation programme is
+therefore not Wick-subtraction of a second-chaos object, but
+renormalisation of a \emph{quartic composite observable energy} whose
+PDE shadow is $\Delta^{2}$.
+
+\subsection*{Finite-bidegree projections: anisotropy of the divergence}
+
+The source-resolved chaos atlas of~\cite{Fontes-IBMchaos} projects
+$\widehat C_{\IBM,\varepsilon}$ onto sectors
+$\Hilb_m^{X}\otimes\Hilb_n^{Y}$. The proof of
+\cref{prop:wick-insufficient} shows that the divergence is
+\emph{anisotropic} across bidegrees:
+\begin{itemize}
+\item \emph{$(2,n)$-bidegrees}, which contain the contraction-renormalised
+  square $:(\partial_rX^\varepsilon)^{2}:$ in $\Hilb_2^{X}$ --- the
+  Wick / Hermite square in the Gaussian source atlas: conjectured
+  $L^{2}$-bounded and convergent chaos-by-chaos as
+  $\varepsilon\to 0$, in line with the kernel-by-kernel framework of
+  \cite{Fontes-IBMchaos}.
+\item \emph{$(1,n)$-bidegrees}, which contain $\partial_r^{2}X^\varepsilon$
+  in $\Hilb_1^{X}$: structurally unaddressed by the contraction
+  subtraction (\cref{prop:wick-insufficient}); convergence
+  expected in the fourth-order / quartic observable-energy dual
+  topology $\Energy_\IBM^{(4),-}$ of \eqref{eq:rigged-4}, of which
+  Hida-distribution and Stratonovich-regularised topologies are
+  candidate realisations.
+\end{itemize}
+We do not prove either statement; together they identify the precise
+location of the analytic obstacle in the chaos atlas.
+
+\subsection*{Semigroup consistency is preserved}
+
+Whatever topology eventually houses $C_\IBM(f;t)$, the consistency
+\eqref{eq:consistency} from \cref{cor:pathwise-to-sg} forces
+$\E[C_\IBM(f;t)]=C_\IBM^{\mathrm{sg}}(f;t,x)$. The schematic
+decomposition
+\begin{equation}\label{eq:final-decomp}
+  C_\IBM(f;t)\;=\;C_\IBM^{\mathrm{sg}}(f;t,x)
+   \;+\;C_\IBM^{\mathrm{fluc}}(f;t),
+  \qquad\E[C_\IBM^{\mathrm{fluc}}]=0,
+\end{equation}
+is therefore the structural form to expect of any future
+construction; we do not assert that $C_\IBM^{\mathrm{fluc}}$ exists in
+the present analytical setting.
+
+\subsection*{Status}
+
+\begin{itemize}
+\item \emph{Raw centred correction $\tilde C_{\IBM,\varepsilon}$}:
+  $\Var(\mathrm{Proj}_1^{X}C_{\IBM,\varepsilon}(f;t))\to+\infty$
+  \textbf{(proved)} for every $f$ with $(P_\cdot f')(x)\not\equiv 0$
+  (\cref{prop:var-divergence}); raw $L^{2}(\Omega)$ unmollified
+  pathwise correction is ruled out.
+\item \emph{Contraction-renormalised $\widehat C_{\IBM,\varepsilon}$
+  (i.e., Wick / Hermite square in the Gaussian source atlas)}: the
+  subtraction acts in $\Hilb_0^{X}\oplus\Hilb_2^{X}$ and structurally
+  does not address the $\partial_r^{2}X^\varepsilon$ first-chaos
+  singularity of \cref{prop:var-divergence}; necessary but
+  insufficient (\cref{prop:wick-insufficient}).
+\item \emph{$(2,n)$-bidegree projections}: conjectured $L^{2}$-bounded
+  / chaos-by-chaos convergent; not proved here.
+\item \emph{$(1,n)$-bidegree projections}: structurally unaddressed by
+  contraction subtraction; convergence expected in the fourth-order
+  observable-energy dual topology $\Energy_\IBM^{(4),-}$, realised
+  concretely as Hida-distributional or Stratonovich-regularised.
+\item \emph{Unmollified pathwise correction $C_\IBM(f;t)$}: open. Must
+  satisfy $\E[C_\IBM]=C_\IBM^{\mathrm{sg}}$ and be constructed via a
+  renormalisation of the quartic composite observable energy
+  $\Energy_\IBM^{(4)}$, in the fourth-order observable-energy dual
+  topology of \eqref{eq:rigged-4} (Wick / Hermite centering is the
+  Brownian-coordinate realisation of the second-chaos part of this
+  quartic renormalisation; the rank-one $\partial_r^{2}X^\varepsilon$
+  contribution requires a genuinely fourth-order treatment).
+\end{itemize}
+
+\section{Open analytic tasks}\label{sec:tasks}
+
+The compression construction of Section~\ref{sec:compat} supplies the
+abstract framework; \cref{def:ibm-datum} supplies the abstract IBM
+datum and \cref{thm:ibm-occ} supplies the first concrete instantiation
+on the mollified occupation core. Carrying this through to the
+intrinsic IBM It\^o formula reduces to the following analytic problems,
+extending the four listed at the end of Section~\ref{sec:ibm-occ}.
+
+\begin{enumerate}
+\item \emph{Density of $\mathcal C_\IBM$.} Verify that
+  $\mathcal C_\IBM=\{F\in L^{2}(\mathcal F_\IBM):\iota F\in\Dom(D_X)\cap\Dom(D_Y)\}$
+  is dense in $L^{2}(\mathcal F_\IBM)$. The mollified occupation core
+  $\bigcup_{\varepsilon>0}\mathcal C_{\mathrm{occ}}^{\,\varepsilon}$
+  furnishes a non-empty subspace; whether its $L^{2}$-closure exhausts
+  $L^{2}(\mathcal F_\IBM)$ is open, and depends on the regularity of
+  Wiener compositions $X_{|Y_{t}|}$ at pointwise evaluations.
+
+\item \emph{Concrete description of $\Energy_\IBM$.} The compression
+  construction defines $\Energy_\IBM\subseteq L^{2}(\R)\oplus L^{2}(\R_{+})$
+  as a closed subspace, but does not give a usable inner-product
+  realisation. Candidate descriptions: occupation-time-weighted norms,
+  or the spatial decomposition of IBM occupation
+  functionals~\cite{Fontes-IBMchaos}. The first concrete sub-realisation
+  is $\Energy_\IBM^{\mathrm{occ},\,\varepsilon}$ of
+  \cref{def:occ-energy}.
+
+\item \emph{Unmollified clock derivative.} Identify
+  $\lim_{\varepsilon\to 0} D_Y F_{T,\varepsilon}(\varphi)$ as a
+  distribution-valued kernel against $L^{2}(\R_{+})$ test integrands,
+  via the Tanaka representation of $L_T^{\,x}(Y)$; prove closability of
+  the resulting operator on $\mathcal C_{\mathrm{occ}}$. This is the
+  central analytic content not yet provided by \cref{thm:ibm-occ}.
+
+\item \emph{Cylindrical reduction for $D_\IBM$.} Establish a chain or
+  product rule for $D_\IBM$ via a cylindrical reduction with random
+  representers; the natural candidate is the joint Brownian--Malliavin
+  representer projected onto $\mathcal F_\IBM$.
+
+\item \emph{Second-order construction.} Verify density of
+  $\mathcal C_\IBM^{(2)}$ on (the closure of) the occupation core and
+  complete the construction of $\Energy_\IBM^{(2)}$ and $D_\IBM^{(2)}$
+  as in Section~\ref{sec:ibm-source-2nd}.
+
+\item \emph{Recover the PDE shadow.} Show that, averaged against the
+  law of $Y$, the second-order $\Carre$-form built from
+  $D_\IBM^{(2)}$ matches the bi-Laplacian/local-time PDE signature
+  identified by~\cite{AllouZheng}.
+
+\item \emph{Unmollified pathwise correction in the quartic
+  observable-energy dual.} The raw $L^{2}(\Omega)$-target for the
+  unmollified pathwise correction $C_\IBM(f;t)$ is ruled out by the
+  proved first-chaos divergence (\cref{prop:var-divergence}). The
+  remaining analytic task is to construct $C_\IBM(f;t)$ in the dual
+  $\Energy_\IBM^{(4),-}$ of the quartic composite observable energy
+  $\Energy_\IBM^{(4)}=\Energy_\IBM^{(2)}\otimes\Energy_\IBM^{(2)}$
+  (rigged hierarchy \eqref{eq:rigged-4}), and to prove the
+  corresponding energy-dual It\^o identity --- a refinement of the
+  schematic \cref{conj:ibm-ito} in which $C_\IBM(f;t)$ is paired
+  against test integrands from $\Energy_\IBM^{(4),+}$ rather than
+  treated as an element of $L^{2}(\Omega)$. We do not assert the
+  existence of such a dual topology; constructing one (e.g.\ via
+  Hida-distribution or Stratonovich-regularisation routes) is the
+  natural open analytic problem.
+
+\item \emph{Reconciliation with companion papers.} Compare the
+  source-resolved variance budget of~\cite{Fontes-IBMchaos} and the
+  numerical decompositions of~\cite{Fontes-IBMnumerical} with the
+  energy correction of \cref{conj:ibm-ito} term by term on each
+  bidegree; cross-check the second-order energy against the
+  PDE-generator framework of~\cite{Fontes-PDEgenerators}.
+\end{enumerate}
+
+\section*{Next analytic targets}
+
+The viewpoint of this note: \emph{the source Malliavin calculus is the
+atlas; the intrinsic operator derivative, defined by observable
+compression, is the invariant object.} The ladder of results in this
+paper is:
+\begin{enumerate}
+\item the abstract first-order observable compression
+  (\cref{thm:compression,thm:proj-div}) gives $D_\Obs$ and $\delta_\Obs$
+  by closing the source pullback through the observable filtration;
+\item the mollified IBM occupation functionals $F_{T,\varepsilon}(\varphi)$
+  of \cref{def:mollified} supply a concrete non-empty first-order IBM
+  core, with \cref{thm:ibm-occ}~(i)--(ii) realising the abstract
+  construction explicitly;
+\item the scenery component converges in the unmollified limit:
+  $F_{T,\varepsilon}\to F_T$ in $L^{2}(\Omega)$ and
+  $D_XF_{T,\varepsilon}\to D_XF_T$ in $L^{2}(\Omega;L^{2}(\R))$ at rate
+  $O(\varepsilon^{1/2})$ (\cref{thm:ibm-occ}~(iii)--(iv));
+\item the clock component is the first singular obstruction
+  (\cref{cor:unmollified}), traced to the $\varepsilon^{-1}$ pointwise
+  variance of $\partial_yX^\varepsilon$ (\cref{lem:moll-eps-inv});
+\item the candidate second-order observable energy
+  $\Energy_\IBM^{(2)}$ of \cref{def:second-order-ibm} is the next
+  operator-energy object needed for an IBM It\^o formula, with
+  \cref{prop:compression-2} establishing its closability;
+\item the Fourier-mode diagnostic \eqref{eq:az-general} identifies the
+  PDE shadow that this second-order energy must reproduce: the
+  bi-Laplacian $\tfrac18\Delta^{2}u$ together with the singular
+  boundary term $\Delta f/(2\sqrt{2\pi t})$.
+\end{enumerate}
+The next analytic theorem is to construct the unmollified IBM
+correction $C_\IBM(f;t)$ as an element of the dual
+$\Energy_\IBM^{(4),-}$ of the quartic composite observable-energy
+space $\Energy_\IBM^{(4)}=\Energy_\IBM^{(2)}\otimes\Energy_\IBM^{(2)}$
+in the rigged hierarchy \eqref{eq:rigged-4}, and to prove the
+corresponding energy-dual It\^o identity. Its expectation should
+recover the integrated Brownian-time semigroup correction
+$\E[C_\IBM(f;t)]=u(t,x)-f(x)=C^{\mathrm{det}}_\IBM(f;t,x)$ of
+\eqref{eq:bt-benchmark}. The proved first-chaos $L^{2}$-obstruction
+\cref{prop:var-divergence} rules out $C_\IBM(f;t)$ as an ordinary
+$L^{2}(\Omega)$ random variable, so the construction must take
+place in the quartic energy-dual topology; once available, it
+would convert the schematic pathwise It\^o \cref{conj:ibm-ito} into
+a theorem in that topology. The component tasks are listed in
+Section~\ref{sec:tasks} and Section~\ref{sec:second-order}.
+
+\begin{thebibliography}{99}
+
+\bibitem{AllouZheng}
+H.~Allouba and W.~Zheng,
+\emph{Brownian-time processes: the PDE connection and the
+half-derivative generator},
+Ann. Probab. \textbf{29} (2001), no.~4, 1780--1795.
+
+\bibitem{BogachevGaussian}
+V.~I.~Bogachev,
+\emph{Gaussian Measures},
+Mathematical Surveys and Monographs, vol.~62,
+American Mathematical Society, Providence, RI, 1998.
+
+\bibitem{BorodinSalminen}
+A.~N.~Borodin and P.~Salminen,
+\emph{Handbook of Brownian Motion --- Facts and Formulae},
+2nd ed., Probability and Its Applications,
+Birkh\"auser Verlag, Basel, 2002.
+
+\bibitem{BouleauHirsch}
+N.~Bouleau and F.~Hirsch,
+\emph{Dirichlet Forms and Analysis on Wiener Space},
+de Gruyter Studies in Mathematics, vol.~14,
+Walter de Gruyter \& Co., Berlin, 1991.
+
+\bibitem{BouleauYor}
+N.~Bouleau and M.~Yor,
+\emph{Sur la variation quadratique des temps locaux de certaines
+semimartingales},
+C.~R.~Acad.~Sci.~Paris S\'er.~I Math. \textbf{292} (1981), no.~9,
+491--494.
+
+\bibitem{Fontes-IBMchaos}
+R.~Fontes,
+\emph{Source-resolved chaos expansions for iterated Brownian motion},
+companion paper, in preparation, 2026.
+
+\bibitem{Fontes-IBMnumerical}
+R.~Fontes,
+\emph{A numerical variance budget for iterated Brownian motion},
+companion paper, in preparation, 2026.
+
+\bibitem{Fontes-OperatorDerivative}
+R.~Fontes,
+\emph{The operator derivative in continuous stochastic calculus:
+a Hilbert energy space framework},
+preprint, 2026.
+
+\bibitem{Fontes-PDEgenerators}
+R.~Fontes,
+\emph{PDE generators and energy corrections for Brownian-time processes},
+companion paper, in preparation, 2026.
+
+\bibitem{FukushimaOshimaTakeda}
+M.~Fukushima, Y.~Oshima, and M.~Takeda,
+\emph{Dirichlet Forms and Symmetric Markov Processes},
+2nd ed., de Gruyter Studies in Mathematics, vol.~19,
+Walter de Gruyter \& Co., Berlin, 2011.
+
+\bibitem{Janson}
+S.~Janson,
+\emph{Gaussian Hilbert Spaces},
+Cambridge Tracts in Mathematics, vol.~129,
+Cambridge University Press, Cambridge, 1997.
+
+\bibitem{Nualart}
+D.~Nualart,
+\emph{The Malliavin Calculus and Related Topics},
+2nd ed., Probability and Its Applications,
+Springer-Verlag, Berlin, 2006.
+
+\bibitem{NualartPardoux}
+D.~Nualart and E.~Pardoux,
+\emph{Stochastic calculus with anticipating integrands},
+Probab. Theory Related Fields \textbf{78} (1988), no.~4, 535--581.
+
+\bibitem{NualartVives}
+D.~Nualart and J.~Vives,
+\emph{Chaos expansions and local times},
+Publ. Mat. \textbf{36} (1992), no.~2B, 827--836.
+
+\bibitem{ReedSimonI}
+M.~Reed and B.~Simon,
+\emph{Methods of Modern Mathematical Physics. I: Functional Analysis},
+revised and enlarged ed., Academic Press, New York, 1980.
+
+\bibitem{RevuzYor}
+D.~Revuz and M.~Yor,
+\emph{Continuous Martingales and Brownian Motion},
+3rd ed., Grundlehren der Mathematischen Wissenschaften, vol.~293,
+Springer-Verlag, Berlin, 1999.
+
+\end{thebibliography}
+
+\end{document}

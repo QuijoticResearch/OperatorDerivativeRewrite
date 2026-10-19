@@ -1,0 +1,208 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{hyperref}
+
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{conjecture}{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\dt}{\partial_t}
+\newcommand{\dx}{\partial_x}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+\newcommand{\LP}{\mathcal{LP}}
+
+\title{A Gershgorin scaling law for quartic decoherence of zeros}
+\author{}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Consider the fourth-order heat flow $\dt H=\dx^4H$ acting on a real function with
+only real zeros. There are two natural criteria for when the flow lifts a close
+real pair of zeros off the axis: a \emph{floor} criterion (the pair drowns when
+$tH_0^{(4)}$ overwhelms the small extremum the pair sits over) and a
+\emph{drift} criterion (writing the flow as a Gaussian average of second-order
+heat flows over signed times, the pair decoheres when the displacement
+$\abs v\sqrt{2t}$ across the averaging window reaches the half-gap, giving
+$t_c=h^2/2v^2$). We show these are one law in Gershgorin form. For an isolated
+close pair at half-gap $h$ embedded in a field of remaining zeros, the lift-off
+time is exactly
+\[
+   t_{\mathrm{drown}}=\frac{h^2}{24\,e_2}\,(1+O(h^2)),
+\]
+where $e_2$ is the second elementary symmetric function of the inverse distances
+from the collision site to the other zeros. Lift-off requires $e_2>0$ (net
+one-sidedness/drift), which makes a symmetric lattice stable and an edge
+configuration unstable; in the drift-dominated regime $e_2\approx p_1^2/2$ this
+reduces to the drift form $t_c\asymp h^2/p_1^2$. The common law
+$t_{\mathrm{drown}}\asymp h^2/(\text{crowding})$ makes gap compression explicit:
+where local gaps close while the surrounding crowding stays bounded below,
+lift-off times shrink to zero. We instantiate this at a random-matrix spectral
+edge, where the one-sided field forces instability with edge gaps $h\asymp
+N^{-2/3}$. We make no claims about the Riemann hypothesis.
+\end{abstract}
+
+\section{Setup and the two criteria}
+Let $H_0$ be real entire (or a real polynomial) with only simple real zeros, and
+evolve it by the fourth-order heat flow
+\begin{equation}\label{eq:flow}
+  \dt H=\dx^{4}H,\qquad H|_{t=0}=H_0,
+\end{equation}
+so that locally $H_t=H_0+t\,H_0^{(4)}+\tfrac{t^2}{2}H_0^{(8)}+\cdots$ (a finite
+sum for polynomials). Two criteria govern when a real pair of zeros becomes a
+complex-conjugate pair.
+
+\paragraph{Floor criterion.} If two real zeros bound an extremum of $H_0$ at
+$x_*$ (so $H_0'(x_*)=0$), the value $H_t(x_*)$ moves linearly at first order; the
+pair merges and lifts off when $H_t(x_*)$ changes sign,
+\begin{equation}\label{eq:floor}
+  t_{\mathrm{drown}}=-\frac{H_0(x_*)}{H_0^{(4)}(x_*)} .
+\end{equation}
+
+\paragraph{Drift criterion.} The fourth-order flow admits the Gaussian-average
+representation
+\begin{equation}\label{eq:avg}
+  H_t=\E_{s\sim N(0,2t)}\bigl[\,e^{-s\dx^2}H_0\,\bigr],
+\end{equation}
+since $\E_{s\sim N(0,2t)}e^{su^2}=e^{tu^4}$ on the Fourier side: the quartic flow
+is the second-order heat flow run for a random, two-sided Gaussian time $s$. A
+zero $x_j$ of the second-order flow $e^{-s\dx^2}H_0$ moves with velocity
+$v=H_0''/H_0'$ (evaluated at $x_j$); across the averaging window of width
+$\sqrt{2t}$ its displacement is $\abs v\sqrt{2t}$, and two zeros at half-gap $h$
+decohere into the average when this reaches $h$, i.e.\ at
+\begin{equation}\label{eq:drift}
+  t_c=\frac{h^2}{2v^2}.
+\end{equation}
+Both \eqref{eq:floor} and \eqref{eq:drift} scale as $h^2$. We now show they are
+the same Gershgorin functional of the surrounding zeros.
+
+\section{The local collision model}
+Place the pair at $x_*\pm h$ and factor
+\begin{equation}\label{eq:factor}
+  H_0(x)=\bigl[(x-x_*)^2-h^2\bigr]\,q(x),\qquad q(x_*)\neq0,
+\end{equation}
+where $q$ carries the remaining zeros $\{z_k\}$. Define the inverse distances and
+their power sums
+\[
+  w_k:=\frac{1}{x_*-z_k},\qquad p_1=\sum_k w_k,\quad p_2=\sum_k w_k^2,\quad
+  e_2=\tfrac12\bigl(p_1^2-p_2\bigr).
+\]
+
+\begin{lemma}[Derivatives at the collision]\label{lem:loc}
+With $f(x)=(x-x_*)^2-h^2$ (so $f(x_*)=-h^2$, $f'(x_*)=0$, $f''\equiv2$,
+$f'''=f^{(4)}=0$),
+\[
+  H_0(x_*)=-h^2 q(x_*),\quad
+  H_0''(x_*)=2q(x_*)-h^2 q''(x_*),\quad
+  H_0^{(4)}(x_*)=12\,q''(x_*)-h^2 q^{(4)}(x_*),
+\]
+and $q''(x_*)/q(x_*)=p_1^2-p_2=2e_2$.
+\end{lemma}
+\begin{proof}
+Leibniz on $H_0=fq$ with $f''\equiv2$, $f'''=f^{(4)}=0$, $f(x_*)=-h^2$,
+$f'(x_*)=0$: the surviving terms are $H_0^{(n)}(x_*)=fq^{(n)}+\binom n2 f''q^{(n-2)}
+=\binom n2\!\cdot\!2\,q^{(n-2)}(x_*)-h^2q^{(n)}(x_*)$, giving the three values.
+For the last identity, $q'/q=\sum_k w_k=p_1$ and $(q'/q)'=-\sum_k w_k^2=-p_2$, so
+$q''/q=(q'/q)'+(q'/q)^2=p_1^2-p_2=2e_2$.
+\end{proof}
+
+\begin{proposition}[Gershgorin lift-off law]\label{prop:law}
+For an isolated close pair ($h$ small),
+\begin{equation}\label{eq:law}
+  t_{\mathrm{drown}}=-\frac{H_0(x_*)}{H_0^{(4)}(x_*)}
+   =\frac{h^2\,q(x_*)}{12\,q''(x_*)}\bigl(1+O(h^2)\bigr)
+   =\frac{h^2}{24\,e_2}\bigl(1+O(h^2)\bigr),
+\end{equation}
+and the pair lifts off ($t_{\mathrm{drown}}>0$) iff $e_2>0$, i.e.\ iff
+$p_1^2>p_2$.
+\end{proposition}
+\begin{proof}
+By Lemma~\ref{lem:loc}, $-H_0(x_*)/H_0^{(4)}(x_*)=h^2q/(12q'')$, and
+$q/q''=1/(2e_2)$.
+\end{proof}
+
+The lift-off time is the squared half-gap over the second-order crowding $e_2$ of
+the surrounding zeros --- a Gershgorin functional. Denser, more one-sided
+surroundings (large $e_2$) lift the pair faster.
+
+\section{Why the two criteria coincide}
+The sign test $e_2>0\iff p_1^2>p_2$ separates two regimes.
+\begin{itemize}
+\item \textbf{Symmetric field} (a pure local oscillation): the surrounding zeros
+cancel, $p_1=0$, so $e_2=-p_2/2<0$ and $t_{\mathrm{drown}}<0$ --- \emph{no
+lift-off}; the floor pushes the extremum further from the axis. (This is the
+identity $H_0^{(4)}=\omega^4H_0$ for a pure cosine.) A regular lattice of zeros is
+stable under the quartic flow.
+\item \textbf{Drift-dominated field} ($\abs{p_1}\gg p_2^{1/2}$): then
+$e_2\approx p_1^2/2$ and
+\begin{equation}\label{eq:reconcile}
+   t_{\mathrm{drown}}\approx\frac{h^2}{12\,p_1^{2}},
+\end{equation}
+which is the drift law \eqref{eq:drift} with $v\asymp p_1$, the net second-order
+crowding $q'/q$ at the site. So the floor and drift criteria are the same law.
+\end{itemize}
+
+\begin{remark}
+The floor criterion carries the full $e_2=\tfrac12(p_1^2-p_2)$ and is therefore
+sharper near the symmetric regime, where $p_2$ is not negligible and the drift
+form \eqref{eq:drift} overestimates the lift-off speed. Away from symmetry the two
+agree up to a constant.
+\end{remark}
+
+\section{Gap compression and a never-emptying band}
+The law \eqref{eq:law} converts a statement about gaps into a statement about
+times. Suppose a family of configurations has local gaps $h\to0$ while the local
+crowding stays bounded, $e_2\asymp c>0$ (a net drift that does not vanish). Then
+$t_{\mathrm{drown}}\asymp h^2\to0$: such pairs lift off arbitrarily early.
+
+\begin{conjecture}[Gap-compression instability]\label{conj:gc}
+If a real-rooted $H_0$ has, at every sufficiently large scale, pairs with gap
+$h\to0$ and bounded-below drift crowding $e_2$, then for every $t>0$ some pair has
+already lifted off, so $H_t$ has nonreal zeros for all $t>0$; the real-rooted
+region cannot fill the whole line at any finite time.
+\end{conjecture}
+
+\noindent This is the natural mechanism by which a fourth-order flow can fail to
+restore global real-rootedness: wherever gaps compress faster than any rising
+real-rooted window, lift-off descends to meet them. The rigorous inputs it needs
+are (i) an effective lower edge for whatever real-rooted window the flow does
+produce, and (ii) a lower bound $e_2\ge c>0$ for infinitely many compressing
+pairs. Proposition~\ref{prop:law} supplies the explicit rate in between.
+
+\section{The random-matrix spectral-edge instance}
+At the spectral edge of a random matrix the surrounding field of eigenvalues is
+\emph{one-sided}: all $w_k=1/(x_*-z_k)$ share a sign, so $p_1=\pm\sum_k\abs{w_k}
+=\pm S$ with $S=\sum_k\abs{x_*-z_k}^{-1}$, and the cross term cannot cancel.
+Hence $e_2=\tfrac12(S^2-p_2)>0$ automatically: \emph{edge pairs are always
+unstable inward} under the quartic flow. When the inverse-gaps are spread (no
+single neighbor dominates), $p_2/S^2\to0$, so $e_2\approx S^2/2$ saturates its
+Maclaurin bound and
+\begin{equation}\label{eq:edge}
+   t_{\mathrm{drown}}\approx\frac{h^2}{12\,S^2}.
+\end{equation}
+For a Wigner edge the nearest gap scales as $h\asymp N^{-2/3}$ and $S\asymp N$, so
+edge pairs lift off on a time scale $t_{\mathrm{drown}}\asymp N^{-4/3}/N^{2}
+=N^{-10/3}$ --- fast, and distributed through the soft-edge gap law: if the
+rescaled edge gap has small-gap density $\sim h^{\beta}$ (level repulsion index
+$\beta$), the lift-off time inherits the same $\beta$-dependent law. Thus a single
+identity, $t_{\mathrm{drown}}\asymp h^2/(\text{crowding})$, governs both
+compression settings, with the only difference the gap law that feeds it.
+
+\section*{Scope}
+Proposition~\ref{prop:law} is an exact local identity and the reconciliation of
+the two criteria is rigorous up to the stated constants. Conjecture~\ref{conj:gc}
+and the edge estimate \eqref{eq:edge} are heuristics with explicit rates, not
+theorems. We make no claim about the Riemann hypothesis.
+\end{document}

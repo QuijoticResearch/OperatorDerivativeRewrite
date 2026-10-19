@@ -1,0 +1,1395 @@
+\documentclass[11pt,reqno]{amsart}
+
+%==============================================================
+% Beyond Correlation: Operator-Derived Features for
+%   Compositional Risk
+%   A Machine-Learning Hedge Experiment with an Iterated-Brownian
+%   Prototype
+% --------------------------------------------------------------
+% Companion to:
+%   Fontes, Operator Clark--Ocone Formula from Primitive
+%     Divergence  [OperatorClarkOcone]
+%   Fontes, Energy-First Stochastic Calculus  [EnergyFirst]
+%   Fontes, First-Chaos Dual Closure of the IBM Ito Correction
+%     [FCDC]
+%   Fontes, A Bidegree Atlas for the IBM Ito Correction
+%     [BidegreeAtlas]
+%   Fontes, From Carre-du-Champ Hierarchies to Primitive
+%     Divergence  [GammaHierarchyDivergence]
+%
+% Scope: finance-facing conceptual framework paper. Compositional
+% randomness X_t = Phi(\Xi_{tau_t}) as a distinct architecture from
+% correlational multi-factor models. IBM Z_t = B(Y_t) as the
+% canonical mathematically tractable prototype. Operator
+% derivatives D^B (field/scenery) and D^Y (clock/state) separate
+% the two risk directions; mollified product-source Clark--Ocone
+% decomposes hedge demand. The unmollified clock-derivative
+% singularity is the mathematical signature of rough compositional
+% risk. No no-arbitrage, no calibration, no martingale
+% representation in the natural IBM observable filtration.
+%==============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{mathrsfs}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{cleveref}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{makecell}
+\usepackage{threeparttable}
+
+\emergencystretch=3em
+
+% --- theorem environments
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{convention}[theorem]{Convention}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% --- macros
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\Dom}{\mathrm{Dom}}
+\newcommand{\Ran}{\mathrm{Ran}}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\IBM}{Z}
+\newcommand{\Bvar}{B}
+\newcommand{\Yclock}{Y}
+\newcommand{\UGam}{\cU_{\Gamma}}
+\newcommand{\Piad}{\Pi^{\mathrm{ad}}}
+\newcommand{\Lzero}{L^{2}_{0}}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+
+\title[Operator-Derived Features for Compositional Risk]{Beyond
+       Correlation: Operator-Derived Features for
+       Compositional Risk\\
+       \normalsize A Machine-Learning Hedge Experiment with an
+       Iterated-Brownian Prototype}
+\author{Ramiro Fontes}
+\address{Quijotic Research}
+\email{ramirofontes@gmail.com}
+\urladdr{www.quijotic.com}
+\thanks{Code, hyperparameters, and CSV outputs supporting the
+numerical experiment of \cref{sec:experiment} are available at
+\url{https://github.com/QuijoticResearch/compositional-risk-features}.}
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+On synthetic compositional data, augmenting a fixed
+non-compositional baseline with six operator-derivative
+features raises out-of-sample $R^{2}$ by approximately
+$0.5$--$0.7$ across four payoffs (softplus, quadratic, tanh,
+smoothed call). Ridge regression on the operator features
+essentially reproduces the analytic first-order operator hedge;
+gradient-boosted trees add value in the large-clock-shock
+regime. On a correlation-matched control with the same marginal
+variance, the gap collapses to $|\Delta R^{2}|\le 0.01$,
+isolating the advantage to compositional structure.
+
+Many asset observables are compositions
+$X_{t}=\Phi(\Xi_{\tau_{t}})$: a random market field $\Xi$
+sampled along a random clock/state process $\tau$. The
+filtration, topology, and field/clock-sensitivity content of
+this composition are not visible to covariance/PCA descriptions
+unless the compositional architecture is modeled explicitly.
+The operator-derivative framework
+of~\cite{GammaHierarchyDivergence,OperatorClarkOcone} supplies
+two directional operator derivatives---a field/scenery
+derivative $D^{\Bvar}$ and a clock/state derivative
+$D^{\Yclock}$---and from these a small set of state-conditioned
+compositional features. Iterated Brownian
+motion $\IBM_{t}=\Bvar(\Yclock_{t})$ is the mathematical
+prototype: the cleanest setting in which the architecture is
+exposed.
+
+The framework's role is feature engineering for compositional
+risk: operator derivatives identify the features, ML does the
+function approximation.
+\end{abstract}
+
+\maketitle
+
+%==============================================================
+\section{Introduction}\label{sec:intro}
+%==============================================================
+
+The standard quantitative-finance literature models market risk
+as a \emph{correlational} structure: a vector of latent factors
+$W^{(1)},\ldots,W^{(k)}$ drives observable processes via linear
+combinations or smooth transforms,
+\begin{equation}\label{eq:corr-model}
+  dX^{(i)}_{t}\;=\;\mu_{i}(t,X_{t})\,dt
+   \;+\;\sum_{j=1}^{k}\sigma_{ij}(t,X_{t})\,dW^{(j)}_{t},
+   \qquad d\langle W^{(i)},W^{(j)}\rangle_{t}=\rho_{ij}(t,X_{t})\,dt.
+\end{equation}
+The covariance matrix $(\rho_{ij})$ glues the drivers and
+parametrizes co-movement; portfolio risk decomposes into factor
+sensitivities, with the matrix as the central structural input
+for co-movement (alongside drift, the diffusion surface, the
+state variables, and the filtration).
+
+Many real market observables are not naturally of this form.
+They are \emph{compositions}:
+\begin{equation}\label{eq:comp-model}
+  X_{t}\;=\;\Phi\bigl(\Xi_{\tau_{t}}\bigr),
+\end{equation}
+where $\Xi$ is a random market field and $\tau_{t}$ is a random
+clock / state / sampling process at which the field is read.
+Examples developed in \cref{sec:finance} include latent
+value/liquidity/risk-premium surfaces sampled by order-flow,
+volatility surfaces sampled by random liquidity regime,
+execution-cost fields sampled by random trade intensity, and
+credit/liquidity-state observables sampled by event clocks. The
+composition $\Phi(\Xi_{\tau_{t}})$ is not a linear combination
+of independent drivers, and is not adequately described by a
+covariance matrix. The conceptual punchline is short:
+\emph{field risk} is sensitivity to the random market surface
+$\Xi$ at a given sampling location; \emph{clock/state risk} is
+sensitivity to moving through that surface, i.e.\ to changes in
+the sampling process $\tau$; correlation-only models collapse
+this distinction into a single off-diagonal covariance entry.
+
+The minimal mathematically tractable example is \emph{iterated
+Brownian motion} (IBM),
+\begin{equation}\label{eq:IBM}
+  \IBM_{t}\;=\;\Bvar(\Yclock_{t}),\qquad t\ge 0,
+\end{equation}
+with $\Bvar=(\Bvar_{x})_{x\in\R}$ a two-sided Brownian motion
+(scenery / random field) and $\Yclock=(\Yclock_{s})_{s\ge 0}$ an
+independent Brownian motion (clock / state). IBM is a
+well-studied compositional Gaussian process; for path properties
+and quartic-variation behavior see Burdzy~\cite{Burdzy}. It is
+used here as a mathematical prototype, not a calibrated price
+model: its non-semimartingality, fourth-order PDE shadow,
+$L^{2}$-divergent It\^o correction, and quartic operator-energy
+dual~\cite{EnergyFirst,FCDC,BidegreeAtlas} all stem from the
+compositional structure rather than from any high-dimensional
+or non-Gaussian feature.
+
+The practical test of the framework is operational: at any
+maturity $T$ and any payoff $F=\Phi(X_{T})$, does ML given
+compositional features outperform the same ML given only
+non-compositional (covariance/PCA-based) features, on
+compositional data? The numerical experiment of
+\cref{sec:experiment} answers yes by
+$\Delta R^{2}\approx 0.5$--$0.7$ across four payoffs, with a
+covariance-matched negative control collapsing the gap. The
+contribution is feature construction, not replacement of ML:
+the operator derivative identifies a small set of
+state-conditioned compositional features that a standard ML
+hedger (gradient-boosted regression trees) cannot recover from
+covariance/PCA features alone.
+
+\subsection{Operator derivatives identify the features}\label{sec:intro-operators}
+
+The operator-derivative framework
+of~\cite{GammaHierarchyDivergence,OperatorClarkOcone} gives two
+directional operator derivatives on a payoff
+$F=f(\Bvar(\Yclock_{T}))$, on the product source space
+$(\Omega_{\Bvar}\times\Omega_{\Yclock},\Prob_{\Bvar}\otimes\Prob_{\Yclock})$:
+the field/scenery derivative $D^{\Bvar}_{x}F$ measures the
+response of the payoff to perturbations of the realized field
+value $\Bvar(x)$ at coordinate $x$; the clock/state derivative
+$D^{\Yclock}_{s}F$ measures the response to perturbations of the
+clock path $\Yclock(s)$. These are not in general the classical
+Malliavin derivatives with respect to the underlying white
+noises (\cref{sec:DB-DY}). The operator Clark--Ocone
+formula~\cite[\S 7]{OperatorClarkOcone} decomposes the centered
+payoff into field and clock components. Reading the chain rule for the
+cylindrical IBM payoff $F=f(\Bvar_{\varepsilon}(\Yclock_{T}))$
+(\cref{sec:operator-derivatives,sec:carre}) identifies six
+state-conditioned compositional features:
+\[
+  \delta\Bvar_{\varepsilon}(\Yclock),\quad
+  \partial_{x}\Bvar_{\varepsilon}(\Yclock)\,\delta\Yclock,\quad
+  f'(X)\,\delta\Bvar_{\varepsilon}(\Yclock),\quad
+  f'(X)\,\partial_{x}\Bvar_{\varepsilon}(\Yclock)\,\delta\Yclock,\quad
+  \Gamma_{\mathrm{field}},\quad\Gamma_{\mathrm{clock}},
+\]
+where $X=\Bvar_{\varepsilon}(\Yclock)$ and
+$\Gamma_{\mathrm{field}}$, $\Gamma_{\mathrm{clock}}$ are the
+squared carr\'e-du-champ terms of \cref{sec:carre}. These six
+features are the object of the experiment in
+\cref{sec:experiment}.
+
+\subsection{Rough compositional risk}\label{sec:intro-rough}
+
+For the cylindrical IBM payoff $F=f(\Bvar(\Yclock_{T}))$ the
+clock derivative $D^{\Yclock}_{s}F$ involves the spatial
+derivative $\partial_{x}\Bvar(\Yclock_{T})$, which is not an
+ordinary $L^{2}$-random variable since $\partial_{x}\Bvar$ is
+white noise in space. After spatial mollification
+$\Bvar\mapsto\Bvar_{\varepsilon}=\rho_{\varepsilon}*\Bvar$ the
+clock derivative is well-defined; the unmollified limit lives
+in a strictly weaker operator-energy module identified
+in~\cite{EnergyFirst,FCDC,BidegreeAtlas}. The mollified
+derivatives are used throughout; the unmollified limit is not
+treated here. This singularity is the mathematical signature of
+\emph{rough compositional risk}: when a random field is sampled
+at a stochastic state, the clock/state-hedge demand can fail to
+be classical $L^{2}$, and identifying the correct
+operator-energy topology becomes the central analytic problem.
+
+\medskip
+
+\Cref{sec:correl-vs-comp} contrasts correlational and
+compositional risk architectures.
+\Cref{sec:IBM-prototype} sets up the IBM prototype.
+\Cref{sec:operator-derivatives} develops the operator-derivative
+decomposition into field and clock components.
+\Cref{sec:carre} introduces the compositional carr\'e-du-champ
+and the role of mollification, motivating the squared
+$\Gamma$-features. \Cref{sec:operator-hedging} states the
+analytic operator hedge via the operator Clark--Ocone formula,
+kept brief, as it motivates the feature set rather than serving
+as a standalone hedge method. \Cref{sec:finance} discusses
+finance-facing interpretations of the field/clock split.
+\Cref{sec:experiment} reports the numerical experiment. The
+operator-derivative machinery used here---closable
+$\Gamma^{(2)}$-seeds, primitive divergence, an operator
+Clark--Ocone formula, and the IBM trilogy of energy-first
+calculus, first-chaos dual closure, and the bidegree
+atlas~\cite{GammaHierarchyDivergence,OperatorClarkOcone,EnergyFirst,FCDC,BidegreeAtlas}---is
+part of a broader operator-derivative reformulation; the
+present paper is one practical instantiation of that machinery
+for the finance audience.
+
+%==============================================================
+\section{Correlational versus compositional randomness}\label{sec:correl-vs-comp}
+%==============================================================
+
+Fix a probability space $(\Omega,\cF,\Prob)$ with a filtration
+$(\cF_{t})_{t\ge 0}$ and a finite vector of independent
+$(\cF_{t})$-Brownian motions $W^{(1)},\ldots,W^{(k)}$. A
+\emph{correlational multi-factor model} for an observable
+$X=(X^{(1)},\ldots,X^{(d)})$ is a system of It\^o SDEs
+\begin{equation}\label{eq:corr-SDE}
+  dX^{(i)}_{t}\;=\;\mu_{i}(t,X_{t})\,dt
+   \;+\;\sum_{j=1}^{k}\sigma_{ij}(t,X_{t})\,dW^{(j)}_{t},
+   \qquad i=1,\ldots,d,
+\end{equation}
+with drift coefficients $\mu_{i}$ and diffusion coefficients
+$\sigma_{ij}$. The instantaneous covariance is
+$d\langle X^{(i)},X^{(j)}\rangle_{t}
+ =\sum_{k}\sigma_{ik}\sigma_{jk}\,dt$, and the correlation
+matrix $(\rho_{ij})$ is the central structural input for
+co-movement. Hedging proceeds via delta-replication
+along the joint Brownian filtration, with the classical Wiener
+Clark--Ocone formula supplying the predictable
+integrands~\cite[\S 7.1]{OperatorClarkOcone}.
+
+A \emph{compositional model} for $X$ is one in which $X$ is the
+value of a random field $\Xi$ sampled at a random argument
+$\tau$:
+\begin{equation}\label{eq:comp-X}
+  X_{t}\;=\;\Phi\bigl(\Xi_{\tau_{t}}\bigr),
+\end{equation}
+where $\Xi=(\Xi_{u})_{u\in U}$ is a random measurable map from
+a \emph{state space} $U$ to $\R$, $\tau=(\tau_{t})_{t\ge 0}$ is
+a random $U$-valued process (the clock/state/sampling process),
+$\Xi$ and $\tau$ are independent (or carry a joint dependence
+structure separately specified), and $\Phi$ is a deterministic
+post-processing.
+
+\begin{example}[Random-field-sampled-by-process]\label{ex:field-sample}
+Most generic compositional models have the form
+\eqref{eq:comp-X} with $\Phi$ the identity:
+$X_{t}=\Xi_{\tau_{t}}$. The map $u\mapsto\Xi_{u}$ is a fixed
+sample-realized random landscape; $t\mapsto\tau_{t}$ is a
+sampling trajectory in $U$; $X$ reads the landscape along the
+trajectory.
+\end{example}
+
+The correlational model glues drivers linearly via the diffusion
+coefficients $\sigma_{ij}$ and the correlation matrix
+$\rho_{ij}$. Composition is structurally different in three
+ways.
+
+\begin{itemize}
+\item \emph{Filtration enlargement.} The natural filtration of
+the compositional observable $X_{t}=\Xi_{\tau_{t}}$ is
+$\cF^{X}_{t}=\sigma(X_{s}:s\le t)$, which is strictly contained
+in the source filtration $\sigma(\Xi)\vee\sigma(\tau)$.
+Information about $\Xi$ outside the trajectory $\tau_{[0,t]}$,
+and information about $\tau$ beyond the values reached, is
+filtered out. The classical correlational filtration
+$\sigma(W^{(1)},\ldots,W^{(k)}\restriction[0,t])$ has no such
+collapse.
+
+\item \emph{Topology.} The smoothness of $X$ in $t$ inherits
+the roughness of both $\Xi$ along the trajectory $\tau$ and
+$\tau$ itself. Even when $\Xi$ and $\tau$ are individually
+Gaussian and $C^{0}$, the composition $\Xi_{\tau_{t}}$ can fail
+to be a semimartingale (IBM is the canonical
+example~\cite{EnergyFirst}); standard It\^o calculus does not
+apply directly.
+
+\item \emph{Hedge sensitivities.} A perturbation of $X$ at time
+$t$ can come from a perturbation of $\Xi$ in a neighborhood of
+$\tau_{t}$, or from a perturbation of $\tau$ that moves the
+sampling argument. These two sensitivities have different
+analytic content (the first is a local perturbation of the
+field, the second involves the gradient of the field at the
+random sampling point) and call for distinct hedge instruments.
+\end{itemize}
+
+In the correlational model these distinctions collapse: there
+is one filtration, one quadratic-variation topology, one
+delta-replication structure. In a compositional model they are
+intrinsic.
+
+%==============================================================
+\section{IBM prototype}\label{sec:IBM-prototype}
+%==============================================================
+
+Let $\Bvar=(\Bvar_{x})_{x\in\R}$ be two-sided standard Brownian
+motion in the spatial variable, and let
+$\Yclock=(\Yclock_{s})_{s\ge 0}$ be an independent standard
+Brownian motion. The product Gaussian space
+\[
+  (\Omega,\cF,\Prob)\;=\;(\Omega_{\Bvar}\times\Omega_{\Yclock},
+   \cF_{\Bvar}\otimes\cF_{\Yclock},
+   \Prob_{\Bvar}\otimes\Prob_{\Yclock})
+\]
+carries the iterated Brownian motion
+\begin{equation}\label{eq:IBM-def}
+  \IBM_{t}\;:=\;\Bvar(\Yclock_{t}),\qquad t\ge 0.
+\end{equation}
+$\Bvar$ is the random field (the \emph{scenery}); $\Yclock$ is
+the random clock/state at which the field is sampled.
+Cylindrical IBM observables of the form
+\begin{equation}\label{eq:IBM-payoff}
+  F\;=\;f(\Bvar(\Yclock_{T}))=f(\IBM_{T}),
+   \qquad f\in C_{b}^{\infty}(\R),\;T>0,
+\end{equation}
+are the simplest payoff functionals of the composite observable
+at a fixed maturity $T$. The analytic derivations of
+\cref{sec:operator-derivatives,sec:carre,sec:operator-hedging}
+hold under $f\in C_{b}^{\infty}(\R)$. The numerical experiment
+of \cref{sec:experiment} additionally includes polynomial
+payoffs (quadratic) as a stress test under the weaker
+hypothesis that $f$ is smooth with sufficient integrability
+against the Gaussian laws of $X$ and its perturbations for the
+displayed identities to hold; bounded support is not required
+for the empirical comparison.
+
+IBM exposes the compositional architecture in the cleanest possible
+setting. Both factors $\Bvar$ and $\Yclock$ are Gaussian and canonical,
+with no nonlinearity in the SDE, no leverage, no calibration, and no
+microstructure noise. The product source space admits a classical
+Wiener representation, so one may also describe it using the usual
+white-noise Malliavin calculus~\cite{NualartMalliavin}. That
+representation is not the primitive calculus used here. The derivatives
+in \cref{sec:DB-DY} are field/clock operator derivatives on the
+compositional source coordinates. As
+\cref{rem:operator-vs-malliavin} explains, the classical white-noise
+Malliavin derivative is obtained only after pulling these coordinate
+derivatives through the Gaussian covariance/kernel representation, and
+the two should not be identified. The compositional pathology is
+fully visible: $\IBM$ is not a semimartingale in its own
+filtration~\cite{EnergyFirst}; the natural It\^o correction
+$C_{\IBM,\varepsilon}(f;t)$ has $L^{2}$-divergent first
+scenery-chaos as
+$\varepsilon\to 0$~\cite[Prop.~5.1]{EnergyFirst}, closed in the
+negative-Sobolev / quartic dual by~\cite{FCDC}; the joint
+Wiener bidegree atlas is computed by~\cite{BidegreeAtlas}. IBM
+is a mathematical prototype, not a model of asset prices.
+
+%==============================================================
+\section{Operator-derivative decomposition}\label{sec:operator-derivatives}
+%==============================================================
+
+\subsection{Field and clock derivatives}\label{sec:DB-DY}
+
+For $F\in\mathrm{Dom}(D^{\mathrm{IBM}})$ on the product source space,
+the \emph{source operator derivative}
+of~\cite[\S 7.2]{OperatorClarkOcone} is the pair
+\begin{equation}\label{eq:DIBM}
+  D^{\mathrm{IBM}}F\;=\;(D^{\Bvar}F,D^{\Yclock}F),
+\end{equation}
+where $D^{\Bvar}_{x}F$ is the field/scenery operator derivative
+at coordinate $x\in\R$ and $D^{\Yclock}_{s}F$ is the
+clock/state operator derivative at time $s\in[0,T]$. The
+field/scenery derivative $D^{\Bvar}_{x}F$ is the variational
+derivative of the payoff with respect to perturbations of the
+realized scenery value $\Bvar(x)$ at coordinate $x$; the
+clock/state derivative $D^{\Yclock}_{s}F$ is the variational
+derivative with respect to perturbations of the clock path
+$\Yclock(s)$ at time $s$.
+
+\begin{remark}[Operator derivative versus classical Malliavin
+derivative]\label{rem:operator-vs-malliavin}
+The derivative $D^{\Bvar}$ used here is the scenery-coordinate
+operator derivative: it differentiates the payoff with respect
+to perturbations of the realized field value $\Bvar(x)$ at
+coordinate $x$, yielding, after mollification, the delta-like
+kernel $\rho_{\varepsilon}(\Yclock_{T}-x)$
+of~\eqref{eq:DB-eps} below. It is \emph{not} the classical
+Malliavin derivative with respect to the white-noise increments
+generating the Brownian scenery. For $\Bvar_{y}=W(\mathbf
+1_{[0,y]})$ with $W$ scalar white noise on $\R$, the classical
+Malliavin derivative is the interval kernel $D^{W}_{u}\Bvar_{y}
+=\mathbf 1_{[0,y]}(u)$, structurally distinct from a delta. The
+two are related by the covariance/kernel map of the underlying
+Gaussian representation: in special cylindrical situations the
+classical Malliavin derivative is the pullback of the
+scenery-coordinate operator derivative through this map, but
+the two live in different coordinate systems and should not be
+identified. The precise relationship is characterized
+in~\cite{OperatorClarkOcone}; the operator derivative is the
+more primitive object and is what the compositional features
+below are built from. The clock derivative $D^{\Yclock}$ admits the analogous variational
+definition. For the cylindrical payoffs considered here, the same
+kernel formula is obtained after representing the clock coordinate
+through its Gaussian white-noise kernel. As with the scenery
+coordinate, this is a representation-level pullback, not an
+identification of the operator derivative with the classical
+Malliavin derivative.
+\end{remark}
+
+For the cylindrical payoff $F=f(\Bvar(\Yclock_{T}))$ of
+\eqref{eq:IBM-payoff}, the operator derivatives have explicit
+expressions. \emph{Formally:}
+\begin{align}
+  D^{\Bvar}_{x}F
+  &\;=\;f'\bigl(\Bvar(\Yclock_{T})\bigr)\,\delta_{\Yclock_{T}}(x)
+   \quad\text{(distribution in $x$)},
+   \label{eq:DB-formal}\\
+  D^{\Yclock}_{s}F
+  &\;=\;f'\bigl(\Bvar(\Yclock_{T})\bigr)\,\Bvar'(\Yclock_{T})\,\mathbf 1_{[0,T]}(s)
+   \quad\text{(formal: $\Bvar'$ is white noise)}.
+   \label{eq:DY-formal}
+\end{align}
+The scenery derivative is a delta-function in space at the
+random point $\Yclock_{T}$ (a local-time/distributional
+object); the clock derivative involves the spatial derivative
+of Brownian scenery, which is white noise and hence not an
+ordinary random variable.
+
+\subsection{Mollification and the rough asymmetry}\label{sec:mollified}
+
+Fix a mollifier
+$\rho_{\varepsilon}(x)=\varepsilon^{-1}\rho(x/\varepsilon)$
+(even, nonnegative, $C_{c}^{\infty}$, $\int\rho=1$,
+$\supp\rho\subset[-1,1]$), and set
+$\Bvar_{\varepsilon}:=\rho_{\varepsilon}*\Bvar$, so that
+$\Bvar_{\varepsilon}\in C^{\infty}(\R)$ a.s. The mollified
+cylindrical observable is
+\begin{equation}\label{eq:F-eps}
+  F_{\varepsilon}\;:=\;f\bigl(\Bvar_{\varepsilon}(\Yclock_{T})\bigr)\;\in\;\mathrm{Dom}(D^{\mathrm{IBM}}).
+\end{equation}
+The rigorous operator derivatives are
+\begin{align}
+  D^{\Bvar}_{x}F_{\varepsilon}
+  &\;=\;f'\bigl(\Bvar_{\varepsilon}(\Yclock_{T})\bigr)\,\rho_{\varepsilon}(\Yclock_{T}-x),
+   \label{eq:DB-eps}\\
+  D^{\Yclock}_{s}F_{\varepsilon}
+  &\;=\;f'\bigl(\Bvar_{\varepsilon}(\Yclock_{T})\bigr)\,\partial_{x}\Bvar_{\varepsilon}(\Yclock_{T})\,\mathbf 1_{[0,T]}(s).
+   \label{eq:DY-eps}
+\end{align}
+Both are well-defined elements of $L^{2}(\Omega\times\R)$ and
+$L^{2}(\Omega\times[0,T])$ respectively, for every
+$\varepsilon>0$.
+
+\Cref{eq:DB-eps,eq:DY-eps} make the two risk directions
+explicit. The field-derivative
+$D^{\Bvar}_{x}F_{\varepsilon}=f'(\Bvar_{\varepsilon}(\Yclock_{T}))\rho_{\varepsilon}(\Yclock_{T}-x)$
+is concentrated near the random point $\Yclock_{T}$ and
+measures field sensitivity in a neighborhood of size
+$\varepsilon$ around the sampled spatial location. As
+$\varepsilon\downarrow 0$, the spatial-mollified
+$\rho_{\varepsilon}(\Yclock_{T}-x)$ converges to
+$\delta_{\Yclock_{T}}(x)$ in the distributional sense in $x$;
+the field derivative lives in a Sobolev space of negative
+spatial order.
+
+The clock-derivative
+$D^{\Yclock}_{s}F_{\varepsilon}=f'(\Bvar_{\varepsilon}(\Yclock_{T}))\partial_{x}\Bvar_{\varepsilon}(\Yclock_{T})\mathbf 1_{[0,T]}(s)$
+carries the more delicate object
+$\partial_{x}\Bvar_{\varepsilon}(\Yclock_{T})$, the spatial
+derivative of the smoothed scenery evaluated at the clock. As
+$\varepsilon\downarrow 0$, the conditional variance scales as
+\begin{equation}\label{eq:clock-var-scaling}
+  \Var\bigl(\partial_{x}\Bvar_{\varepsilon}(\Yclock_{T})\bigm|\Yclock\bigr)
+   \;=\;\varepsilon^{-1}\,\|\rho\|^{2}_{L^{2}}
+\end{equation}
+by the standard short-correlation scaling of mollified white
+noise. This is the precise location of the IBM operator-energy
+topology issue identified in~\cite[\S 5--6]{EnergyFirst}: the
+unmollified clock-derivative integrand does not exist in
+$L^{2}(\Omega)$ but only in the dual of a strictly weaker
+operator-energy module, the quartic observable-energy dual
+analyzed in~\cite{EnergyFirst,FCDC,BidegreeAtlas}.
+
+In summary: $D^{\Bvar}_{x}F_{\varepsilon}$ is finite in
+classical $L^{2}$ for every $\varepsilon>0$, with unmollified
+limit in negative spatial Sobolev (a familiar
+local-time/Bouleau--Yor type object);
+$D^{\Yclock}_{s}F_{\varepsilon}$ is finite in classical $L^{2}$
+for every $\varepsilon>0$, with unmollified limit in a strictly
+weaker operator-energy module
+(\cite{EnergyFirst,FCDC,BidegreeAtlas}). The asymmetry between
+field and clock derivatives is the mathematical signature of
+rough compositional risk: the sampling-process derivative
+carries the field's spatial roughness through the chain rule.
+
+%==============================================================
+\section{Compositional carr\'e-du-champ}\label{sec:carre}
+%==============================================================
+
+\subsection{Product-source energy}\label{sec:carre-energy}
+
+The operator-derivative framework equips the product source
+space with a field/clock carr\'e-du-champ form built from the
+operator derivatives $(D^{\Bvar},D^{\Yclock})$ of
+\cref{sec:DB-DY},
+\begin{equation}\label{eq:Gamma-IBM}
+  \Gamma^{\mathrm{IBM}}(F,F)
+   \;=\;\int_{\R}|D^{\Bvar}_{x}F|^{2}\,dx
+       \;+\;\int_{0}^{T}|D^{\Yclock}_{s}F|^{2}\,ds,
+   \qquad F\in\mathrm{Dom}(D^{\mathrm{IBM}}),
+\end{equation}
+with energy
+\begin{equation}\label{eq:E-IBM}
+  \cE^{\mathrm{IBM}}(F,F)\;=\;\E\bigl[\Gamma^{\mathrm{IBM}}(F,F)\bigr]
+   \;=\;\E\!\int_{\R}|D^{\Bvar}_{x}F|^{2}\,dx
+        \;+\;\E\!\int_{0}^{T}|D^{\Yclock}_{s}F|^{2}\,ds.
+\end{equation}
+Both integrals are finite for $F\in\mathrm{Dom}(D^{\mathrm{IBM}})$,
+and $\Gamma^{\mathrm{IBM}}$ is the carr\'e-du-champ of the
+operator-derivative pair $(D^{\mathrm{IBM}},\delta^{\mathrm{IBM}})$
+via~\cite[Eq.~(7.5)]{OperatorClarkOcone}. The two terms
+correspond to the two risk directions: field energy and
+clock/state energy.
+
+\subsection{Mollified vs unmollified}\label{sec:carre-moll}
+
+For mollified payoffs $F_{\varepsilon}$ of~\eqref{eq:F-eps},
+$\cE^{\mathrm{IBM}}(F_{\varepsilon},F_{\varepsilon})$ is finite
+at every $\varepsilon>0$. As $\varepsilon\downarrow 0$, both
+the field- and clock-energy integrals diverge like
+$\varepsilon^{-1}$. For the field term,
+\begin{equation}\label{eq:field-energy-blowup}
+  \E\!\int_{\R}|D^{\Bvar}_{x}F_{\varepsilon}|^{2}\,dx
+   \;=\;\E\bigl[(f'(\Bvar_{\varepsilon}(\Yclock_{T})))^{2}\bigr]
+        \cdot\int_{\R}\rho_{\varepsilon}(\Yclock_{T}-x)^{2}\,dx
+   \;=\;\E\bigl[(f'(\Bvar_{\varepsilon}(\Yclock_{T})))^{2}\bigr]
+        \cdot\varepsilon^{-1}\,\|\rho\|_{L^{2}}^{2},
+\end{equation}
+which diverges as $\varepsilon^{-1}$ provided $f'$ does not
+vanish identically on the support of
+$\Bvar_{\varepsilon}(\Yclock_{T})$. For the clock term,
+\begin{equation}\label{eq:clock-energy-blowup}
+  \E\!\int_{0}^{T}|D^{\Yclock}_{s}F_{\varepsilon}|^{2}\,ds
+   \;=\;T\cdot\E\bigl[(f'(\Bvar_{\varepsilon}(\Yclock_{T})))^{2}\,(\partial_{x}\Bvar_{\varepsilon}(\Yclock_{T}))^{2}\bigr]
+   \;\lesssim\;T\cdot\varepsilon^{-1}\,\|f'\|_{L^{\infty}}^{2}\,\|\rho\|_{L^{2}}^{2},
+\end{equation}
+also diverging as $\varepsilon^{-1}$ by the same
+short-correlation scaling, with a matching lower bound under the
+nondegeneracy condition $\E[(f'(\Bvar_{\varepsilon}(\Yclock_{T})))^{2}]
+\gtrsim 1$. \Cref{eq:clock-energy-blowup}
+is~\eqref{eq:clock-var-scaling} integrated against the clock-time
+variable.
+
+The field/clock asymmetry is therefore not finiteness of the
+$L^{2}$ energies---both diverge---but the \emph{nature of the
+distributional limits}. The field derivative
+$D^{\Bvar}_{x}F_{\varepsilon}=f'(\Bvar_{\varepsilon}(\Yclock_{T}))\rho_{\varepsilon}(\Yclock_{T}-x)$
+converges, distributionally in $x$, to $f'(\Bvar(\Yclock_{T}))\,\delta_{\Yclock_{T}}(x)$:
+a clean local-time/Bouleau--Yor-type object in negative spatial
+Sobolev. The clock derivative carries the additional rough
+factor $\partial_{x}\Bvar_{\varepsilon}(\Yclock_{T})$ through
+the chain rule, which does not admit a comparable clean
+distributional limit; it lands instead in the strictly weaker
+quartic operator-energy module
+of~\cite{EnergyFirst,FCDC,BidegreeAtlas}.
+
+The compositional carr\'e-du-champ $\Gamma^{\mathrm{IBM}}$ thus
+does not converge to a classical $L^{2}$-form as
+$\varepsilon\downarrow 0$. The natural target is the
+negative-Sobolev / quartic operator-energy dual identified
+in~\cite{EnergyFirst,FCDC,BidegreeAtlas}: the unmollified
+clock-derivative integrand and its dual integrals are naturally
+treated in this negative-Sobolev / quartic operator-energy dual
+rather than in $L^{2}(\Omega)$. In compositional-risk language, field-spatial
+roughness, transported by chain rule through the random clock,
+requires a renormalized topology to make sense of clock-state
+sensitivities at the unmollified limit.
+
+\begin{remark}[Rough sampling, smooth field, would be the
+opposite case]\label{rem:rough-sampling-smooth-field}
+The asymmetry between the field-energy and clock-energy terms
+in~\eqref{eq:E-IBM} reflects that, in the IBM
+$\IBM_{t}=\Bvar(\Yclock_{t})$, the field $\Bvar$ is rough
+($\partial_{x}\Bvar$ is white noise). Were the field smooth and
+the clock rough, the asymmetry would reverse. In a general
+compositional model $X_{t}=\Phi(\Xi_{\tau_{t}})$, both kinds of
+roughness can interact and the natural carr\'e-du-champ is
+correspondingly more complex; IBM is the cleanest case where
+the analysis is tractable end-to-end.
+\end{remark}
+
+%==============================================================
+\section{Operator hedging: motivation for the feature set}\label{sec:operator-hedging}
+%==============================================================
+
+The operator Clark--Ocone formula
+of~\cite[\S 7]{OperatorClarkOcone} applied to a mollified IBM
+payoff $F_{\varepsilon}=f(\Bvar_{\varepsilon}(\Yclock_{T}))$
+gives, in compact form,
+\begin{equation}\label{eq:hedge-IBM-source}
+  F_{\varepsilon}-\E F_{\varepsilon}
+   \;=\;\delta_{\Bvar}\bigl(\Piad_{\Bvar}D^{\Bvar}F_{\varepsilon}\bigr)
+        \;+\;\delta_{\Yclock}\bigl(\Piad_{\Yclock}D^{\Yclock}F_{\varepsilon}\bigr),
+\end{equation}
+where $\delta_{\Bvar},\delta_{\Yclock}$ are the Skorohod
+divergences against the scenery and clock Brownian factors and
+$\Piad_{\Bvar},\Piad_{\Yclock}$ are the predictable projections
+in the appropriate enlarged filtrations
+(\cite[\S 7.3]{OperatorClarkOcone}). The point extracted from
+this formula is not a tradable hedging strategy; it tells us
+which features the centered payoff is a function of.
+
+Reading the chain rule on the cylindrical IBM payoff
+(\cref{eq:F-eps,eq:DB-eps,eq:DY-eps}), the integrands in
+\eqref{eq:hedge-IBM-source} are linear combinations of six
+state-conditioned compositional features:
+\begin{equation}\label{eq:op-feature-set}
+  \delta\Bvar_{\varepsilon}(\Yclock),\quad
+  \partial_{x}\Bvar_{\varepsilon}(\Yclock)\,\delta\Yclock,\quad
+  f'(X)\,\delta\Bvar_{\varepsilon}(\Yclock),\quad
+  f'(X)\,\partial_{x}\Bvar_{\varepsilon}(\Yclock)\,\delta\Yclock,\quad
+  \Gamma_{\mathrm{field}},\;\Gamma_{\mathrm{clock}},
+\end{equation}
+where
+$\Gamma_{\mathrm{field}}=(f'(X)\,\delta\Bvar_{\varepsilon}(\Yclock))^{2}$
+and
+$\Gamma_{\mathrm{clock}}=(f'(X)\,\partial_{x}\Bvar_{\varepsilon}(\Yclock)\,\delta\Yclock)^{2}$
+are the squared compositional carr\'e-du-champ terms
+(\cref{sec:carre}). The first four are the analytic integrands
+of the operator Clark--Ocone formula; the last two are the
+natural second-order energy corrections.
+
+The features \eqref{eq:op-feature-set} are the central object
+of the empirical section. \Cref{sec:experiment} compares a
+fixed ML model trained on this feature set (plus a generic
+non-compositional baseline) against the same model trained on
+the baseline alone, on compositional and on correlation-matched
+data.
+
+\begin{remark}[Unmollified limit and natural IBM filtration]\label{rem:hedge-not-the-point}
+Equation~\eqref{eq:hedge-IBM-source} lives on the product
+source filtration $\sigma(\Bvar)\vee\sigma(\Yclock)$;
+restriction to the natural IBM observable filtration
+$\sigma(\IBM_{s}:s\le t)$ is a separate non-semimartingale
+problem~\cite{EnergyFirst} not addressed here. The unmollified
+limit of the clock integrand exists only in an operator-energy
+module strictly weaker than $L^{2}$, identified
+in~\cite{EnergyFirst,FCDC,BidegreeAtlas}. The empirical content
+concerns feature engineering for ML on the mollified payoff at
+fixed $\varepsilon$, not analytic hedging at the unmollified
+limit.
+\end{remark}
+
+%==============================================================
+\section{Finance interpretation}\label{sec:finance}
+%==============================================================
+
+The compositional model \eqref{eq:comp-X} captures several
+market-risk situations in which the standard correlational
+formulation~\eqref{eq:corr-model} is structurally inadequate.
+The unifying finance punchline is the field/clock split:
+\emph{field risk} is sensitivity to the random market surface
+$\Xi$ at the current sampling location; \emph{clock/state risk}
+is sensitivity to moving through that surface, i.e.\ to
+perturbations of the sampling-state $\tau$; correlation-only
+models collapse the two into a single off-diagonal covariance
+entry and lose the distinction. Four illustrative classes,
+qualitative not calibrated:
+
+\begin{itemize}
+\item \emph{Latent value field sampled by order flow.}
+$\Xi_{u}$ is a latent fundamental-value or risk-premium surface
+indexed by a market state-space $u\in U$; $\tau_{t}$ is the
+order-flow process that determines which state is expressed in
+observed prices. Field risk is shifts in the latent value
+surface; clock/state risk is order flow sampling a different
+region of the surface even when the surface is unchanged. A
+correlation-only model conflates these into a single
+quadratic-variation contribution.
+\item \emph{Volatility surface sampled by liquidity regime.}
+$\Xi_{u}$ is an implied- or local-volatility surface as a
+function of strike, maturity, or some abstract liquidity
+parameter $u$; $\tau_{t}$ is a random regime-state process.
+Volatility risk splits into surface-shape risk
+(field/scenery) and regime-shift risk (clock/state). Hedging a
+volatility option requires distinct instruments for each.
+\item \emph{Execution-cost field sampled by trade intensity.}
+$\Xi_{u}$ is an instantaneous execution-cost map (as a function
+of inventory, urgency, or order-book depth); $\tau_{t}$ is the
+cumulative trading-intensity process. The realized
+execution-cost stream depends on field shifts (changes in
+market depth and impact) and on clock shifts (changes in
+trade-intensity behavior). Optimal-execution in this language
+separates field-risk hedging (e.g.\ via market-maker rebates)
+from clock-risk hedging (e.g.\ via algorithmic re-pacing).
+\item \emph{Credit / liquidity state sampled by event clock.}
+$\Xi_{u}$ is a credit-/liquidity-state landscape (a matrix of
+recovery rates or default-intensity values) indexed by an
+abstract risk-state; $\tau_{t}$ is a random-event clock
+triggering transitions between states. Field risk is variation
+of recovery/intensity at fixed event clock; clock/state risk is
+variation of the event clock at fixed field. Distress events
+typically involve both.
+\end{itemize}
+
+In each case, a covariance-based decomposition collapses field
+risk and clock/state risk into a single off-diagonal covariance
+entry; the operator-derivative decomposition
+$D=(D^{\Xi},D^{\tau})$ separates them along their distinct
+risk directions. The compositional carr\'e-du-champ
+of \cref{sec:carre} provides the corresponding energy
+decomposition; the operator hedging formula
+of \cref{sec:operator-hedging} provides the corresponding
+hedge decomposition.
+
+\begin{remark}[Why this is not stochastic volatility, time
+change, or regime-switching]\label{rem:not-just}
+Each of the four examples could be locally approximated by a
+correlational stochastic-volatility, time-change, or
+regime-switching specification. The compositional formulation
+is structurally distinct in three ways flagged
+in~\cref{sec:correl-vs-comp}: filtration enlargement,
+non-semimartingale topology, and the field/clock-hedge
+asymmetry made precise by the operator derivatives. These
+distinctions are not visible to covariance/PCA features unless
+the compositional architecture is explicitly modeled; they are
+the mathematical content of treating a payoff as a composition
+rather than as a smooth transform of correlated drivers.
+\end{remark}
+
+%==============================================================
+\section{Numerical experiment: compositional features for ML}\label{sec:experiment}
+%==============================================================
+
+This experiment tests the framework directly. The ML model and
+training protocol are held fixed; the data and the train/test
+split are held fixed; the only variable is the feature set. The
+operator-derivative framework and ML are complementary, not
+competing: operator derivatives identify compositional features;
+ML learns nonlinear combinations and higher-order corrections.
+
+Two questions are tested separately. (i) On compositional data
+in the mid-regime ($\eta_{Y}=\eta_{B}=0.1$), can ML on the
+operator-derived features
+\eqref{eq:op-feature-set} match the analytic first-order
+operator hedge, and outperform ML on non-compositional features
+(PCA of field shocks, $X$, $f'(X)$, $Y$, plus standard
+interactions)? The answer is near-definitional, since the
+operator features \emph{are} the first-order Taylor terms
+of $\Delta F$ in the source shocks: in the mid-regime ML on
+operator features reaches $R^{2}\approx 0.96$, essentially
+reproducing the analytic operator hedge. (ii) In the
+large-clock-shock regime where the first-order Taylor breaks
+down, does ML on operator features extract higher-order
+content beyond what the analytic first-order operator hedge
+can deliver? This is the empirically informative question and
+the centerpiece of the experiment: at $\eta_{Y}=0.4$, the
+analytic first-order operator hedge collapses to
+$R^{2}\approx 0.51$ while gradient-boosted ML on operator
+features (including the squared $\Gamma$ terms) holds at
+$0.65$, a $+0.14$ recovery that the first-order formula cannot
+produce.
+
+\paragraph{Setup.}
+We simulate a mollified IBM payoff
+$F_{\varepsilon}=f(\Bvar_{\varepsilon}(\Yclock_{T}))$
+(\cref{sec:IBM-prototype}) on a spatial grid $[-8,8]$ with
+$\Delta x=0.1$, $\Yclock\sim N(0,\sigma_{Y}^{2}T)$ with $T=1$
+and $\sigma_{Y}=1$, Gaussian mollifier of bandwidth
+$\varepsilon=0.3$, and a one-step P\&L shock
+$\Delta F=f((\Bvar+\eta_{B}\delta\Bvar)_{\varepsilon}(\Yclock+\eta_{Y}\delta\Yclock))-F$
+with $\eta_{B}=\eta_{Y}=0.1$. For the correlation-matched
+negative control, $X^{\mathrm{corr}}=aZ_{1}+bZ_{2}$ with
+$a^{2}=b^{2}=\Var(\Bvar_{\varepsilon}(\Yclock))/2$. Each seed
+draws $n_{\mathrm{paths}}=10{,}000$ paths and splits
+50/50 train/test. We run 12 seeds for the main payoff sweep.
+
+This is not time-series forecasting; it is controlled
+out-of-sample approximation of the P\&L shock map conditional
+on source shocks $(\delta\Bvar,\delta\Yclock)$. The shocks are
+inputs to the model, not predictions of the model; the
+regression target is $\Delta F$ as a function of those source
+shocks together with the pre-shock state.
+
+\paragraph{Code and data.}
+Simulation code, seeds, hyperparameters, and CSV outputs are
+available at
+\url{https://github.com/QuijoticResearch/compositional-risk-features}.
+\Cref{tab:code-mapping} maps each table and figure below to the
+driver script that produces it; intermediate CSVs are written to
+\texttt{experiments/results/} and figures to
+\texttt{experiments/figures/}.
+
+\begin{table}[ht]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.30\linewidth} >{\raggedright\arraybackslash}p{0.32\linewidth} >{\raggedright\arraybackslash}X@{}}
+\toprule
+Result & Driver script (\path{experiments/}) & Outputs (\path{experiments/results/}) \\
+\midrule
+\Cref{tab:main-results}, \Cref{tab:delta-feature}, \Cref{fig:main}
+   & \path{compositional_hedge_sim_v3.py}
+   & \path{v3_main_results.csv}, \path{v3_main_summary.csv} \\
+\Cref{tab:negctrl}
+   & \path{compositional_hedge_sim_v3_negctrl.py}
+   & \path{v3_negctrl_*.csv} \\
+\Cref{tab:nplus}
+   & \path{compositional_hedge_sim_v4_nplus.py}
+   & \path{v4_nplus_main_*.csv} \\
+\Cref{tab:stress-etaY}
+   & \path{compositional_hedge_sim_v4_nplus.py}
+   & \path{v4_nplus_stress_etaY.csv} \\
+\Cref{tab:stress-eps}
+   & \path{compositional_hedge_sim_v3.py}
+   & \path{v3_stress_eps.csv} \\
+\Cref{fig:stress}
+   & \path{compositional_hedge_sim_v3.py}
+   & \path{v3_stress_etaY.csv}, \path{v3_stress_eps.csv} \\
+\Cref{fig:importance}
+   & \path{compositional_hedge_sim_v3.py}
+   & \path{v3_feature_importance.csv} \\
+\bottomrule
+\end{tabularx}
+\caption{Mapping of empirical results to driver scripts in the
+companion repository. All scripts run on CPU; total compute for
+the headline numbers is on the order of minutes.}
+\label{tab:code-mapping}
+\end{table}
+
+\paragraph{Payoffs.}
+The four payoffs are fixed throughout. Softplus and smoothed
+call use $f(x)=\beta^{-1}\log(1+e^{\beta(x-K)})$ with
+$(\beta,K)=(2,0)$ and $(4,\tfrac12)$ respectively (the call
+parameters give a Black--Scholes-like elbow at the money);
+quadratic is $f(x)=x^{2}$ and tanh is $f(x)=\tanh(x)$.
+\Cref{tab:payoffs} collects the formulas and parameters.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lll}
+\toprule
+Payoff & $f(x)$ & Parameters \\
+\midrule
+softplus       & $\beta^{-1}\log(1+e^{\beta(x-K)})$ & $\beta=2,\;K=0$ \\
+smoothed call  & $\beta^{-1}\log(1+e^{\beta(x-K)})$ & $\beta=4,\;K=\tfrac12$ \\
+quadratic      & $x^{2}$                            & --- \\
+tanh           & $\tanh(x)$                         & --- \\
+\bottomrule
+\end{tabular}
+\caption{Payoff functions used throughout
+\cref{sec:experiment}. Softplus and tanh are bounded-derivative
+smooth payoffs; smoothed call has the same softplus form with a
+sharper $\beta$ and strike $K=\tfrac12$; quadratic is a
+polynomial stress test with unbounded $f'$.}
+\label{tab:payoffs}
+\end{table}
+
+\paragraph{Three method classes.}
+\begin{itemize}
+\item \emph{A. Pure operator hedge} (analytic, no fitting):
+\[
+  \widehat F^{\mathrm{op}}
+   \;=\;f'(X)\bigl[\eta_{B}\,\delta\Bvar_{\varepsilon}(\Yclock)
+        +\eta_{Y}\,\partial_{x}\Bvar_{\varepsilon}(\Yclock)\,\delta\Yclock\bigr].
+\]
+\item \emph{B. ML on non-compositional features} (set N): PCA
+of $\delta\Bvar$ (top $K=10$),
+$\delta\Bvar_{\varepsilon}(0)$, $\delta\Yclock$, $X$, $f'(X)$,
+$\Yclock$, plus interactions
+$f'(X)\delta\Yclock$, $f'(X)\delta\Bvar_{\varepsilon}(0)$,
+$X\delta\Yclock$, $\Yclock\delta\Yclock$.
+\item \emph{C. ML on operator features} (set Op): set N
+augmented with the six state-conditioned compositional features
+\eqref{eq:op-feature-set}.
+\end{itemize}
+ML models in classes B and C: Ridge ($\alpha=1$) and
+\texttt{HistGradientBoostingRegressor} (HGB, $200$ trees,
+learning rate $0.05$, max depth $6$); see
+Friedman~\cite{FriedmanGBM} for the gradient boosting algorithm.
+
+\paragraph{Main diagnostic.}
+\begin{equation}\label{eq:delta-feature}
+  \Delta R^{2}_{\mathrm{feature}}\;:=\;R^{2}\bigl(\text{best ML on Op}\bigr)\;-\;R^{2}\bigl(\text{best ML on N}\bigr),
+\end{equation}
+plus the auxiliary
+$R^{2}(\text{best ML on Op})-R^{2}(\text{pure operator})$,
+which measures whether ML on operator features improves on the
+analytic first-order operator hedge.
+
+\paragraph{Main results.}
+\Cref{tab:main-results} summarizes the per-payoff $R^{2}$
+across the five headline methods (12 seeds, four payoffs).
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+Method & softplus & quadratic & tanh & smoothed call \\
+\midrule
+ML+N, Ridge                & $0.156$ & $0.147$ & $0.156$ & $0.148$ \\
+ML+N, HGB                  & $0.412$ & $0.315$ & $0.342$ & $0.427$ \\
+\textbf{ML+Op, Ridge}      & $\mathbf{0.966}$ & $\mathbf{0.963}$ & $\mathbf{0.957}$ & $\mathbf{0.957}$ \\
+ML+Op, HGB                 & $0.953$ & $0.916$ & $0.953$ & $0.948$ \\
+pure operator              & $0.965$ & $0.964$ & $0.954$ & $0.957$ \\
+\bottomrule
+\end{tabular}
+\caption{Main comparison, mean out-of-sample $R^{2}$ across 12
+seeds, $n=10{,}000$, $\sigma_{Y}=1$, $\eta_{Y}=\eta_{B}=0.1$,
+$\varepsilon=0.3$. ML+N (HGB) captures $0.32$--$0.43$ of
+variance; ML+Op (Ridge) captures $0.96+$, essentially matching
+the analytic operator hedge.}
+\label{tab:main-results}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lccc}
+\toprule
+Payoff & $\Delta R^{2}_{\mathrm{feature}}$ & $R^{2}_{\mathrm{op,pure}}$ &
+  $R^{2}_{\mathrm{ML+Op}}-R^{2}_{\mathrm{op,pure}}$ \\
+\midrule
+softplus      & $0.554 \pm 0.005$ & $0.965$ & $+0.001 \pm 0.000$ \\
+quadratic     & $0.648 \pm 0.010$ & $0.964$ & $-0.001 \pm 0.001$ \\
+tanh          & $0.616 \pm 0.005$ & $0.954$ & $+0.003 \pm 0.000$ \\
+smoothed call & $0.531 \pm 0.007$ & $0.957$ & $+0.001 \pm 0.001$ \\
+\bottomrule
+\end{tabular}
+\caption{Main diagnostics, mean$\pm$SE across 12 seeds.
+\emph{Left:} $\Delta R^{2}_{\mathrm{feature}}$ = (best ML on
+Op) $-$ (best ML on N): supplying ML with operator features
+adds $0.53$--$0.65$ units of $R^{2}$ across payoffs.
+\emph{Right:} ML on operator features does not improve on the
+pure analytic operator hedge in the mid-regime; it essentially
+reproduces it ($\pm 0.003$).}
+\label{tab:delta-feature}
+\end{table}
+
+\paragraph{Correlation-matched negative control.}
+The operator features may simply be better-engineered features
+that would help ML in any setting, not just on compositional
+data. We falsify this by replacing the regression target with
+a correlation-matched analogue. The features (set N and set
+Op) are computed exactly as before from the same simulated
+$(\Bvar,\Yclock)$ paths. The target $\Delta F$ is replaced by
+$\Delta F^{\mathrm{corr}}=f(X^{\mathrm{corr}}+\Delta X^{\mathrm{corr}})-f(X^{\mathrm{corr}})$
+with $X^{\mathrm{corr}}\sim N(0,\Var(X))$ and
+$\Delta X^{\mathrm{corr}}\sim N(0,\Var(\Delta F)/\E[f'(X)^{2}])$
+drawn independently of $(\Bvar,\Yclock)$, so $X^{\mathrm{corr}}$
+has the same marginal variance as the compositional state but
+carries no dependence on the field/clock structure. The
+operator features should now carry no information about the
+target. \Cref{tab:negctrl} confirms this prediction: the
+compositional-data $\Delta R^{2}_{\mathrm{feature}}\approx 0.6$
+collapses to $|\Delta R^{2}_{\mathrm{feature}}|\le 0.01$ on the
+correlation-matched target, across all four payoffs. The
+advantage is tied to compositional structure rather than
+generic nonlinear feature enrichment under the tested HGB
+protocol.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lcc}
+\toprule
+Payoff & $\Delta R^{2}_{\mathrm{feature}}$ (compositional) &
+  $\Delta R^{2}_{\mathrm{feature}}$ (correlational) \\
+\midrule
+softplus      & $+0.609 \pm 0.010$ & $-0.003 \pm 0.003$ \\
+quadratic     & $+0.634 \pm 0.012$ & $-0.002 \pm 0.002$ \\
+tanh          & $+0.642 \pm 0.006$ & $+0.008 \pm 0.002$ \\
+smoothed call & $+0.592 \pm 0.014$ & $-0.002 \pm 0.003$ \\
+\bottomrule
+\end{tabular}
+\caption{Correlation-matched negative control,
+$\Delta R^{2}_{\mathrm{feature}}=R^{2}(\text{HGB+Op})-R^{2}(\text{HGB+N})$,
+mean$\pm$SE across 8 seeds, $n=6{,}000$. \emph{Left column:}
+compositional target $\Delta F$, replicating the headline.
+\emph{Right column:} target replaced by
+$f(X^{\mathrm{corr}}+\Delta X^{\mathrm{corr}})-f(X^{\mathrm{corr}})$
+with $X^{\mathrm{corr}}$ drawn independently of
+$(\Bvar,\Yclock)$, marginal variance matched. The HGB+Op
+advantage of $\sim 0.6$ on compositional data collapses to
+noise level ($|\Delta|\le 0.01$) on correlation-matched data;
+on correlational targets both ML+N and ML+Op overfit and reach
+small negative $R^{2}$, so neither feature set explains
+anything and there is nothing for the operator features to
+add.}
+\label{tab:negctrl}
+\end{table}
+
+\paragraph{State-conditioned baseline (Set N+).}
+A separate objection is that the operator advantage may simply
+reflect any state-conditioned feature set, not the
+operator-derivative directions specifically. A strong baseline
+that a practitioner without operator calculus could build is
+\emph{locally} state-aware around the sampled clock position
+$\Yclock$: PCA of $\delta\Bvar$ restricted to the 11 grid points
+nearest $\Yclock$ (top six components), the five raw
+nearby-grid shocks
+$\delta\Bvar(\Yclock-2\Delta x),\ldots,\delta\Bvar(\Yclock+2\Delta x)$,
+and twenty random Fourier features (RBFSampler with $\gamma=1$)
+over $(X,\Yclock,\delta\Yclock,\delta\Bvar_{\varepsilon}(0),
+\text{raw nearby shocks})$. Call this \emph{Set N+}: it
+strictly extends Set N with state-conditioned, locally nonlinear
+capacity, but contains \emph{no} operator-derivative directions
+(no $f'(X)\,\delta\Bvar_{\varepsilon}(\Yclock)$, no clock
+derivative, no $\Gamma$ squares). Set N+ has 50 features
+against Set Op's 25; the comparison is whether more capacity in
+the wrong directions can match fewer features in the right
+directions. The prediction, recorded before running the N+
+comparison, was that the gap shrinks against N+; the open
+question was whether it shrinks to noise or holds at a
+meaningful margin. \Cref{tab:nplus} shows that the gap shrinks
+by roughly a third but remains $0.35$--$0.49$ in $R^{2}$ across
+all four payoffs: the operator advantage is specifically about
+\emph{which directions} in the source shock are exploited, not
+merely \emph{where} in the field they are sampled.
+
+\begin{table}[ht]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lccccc}
+\toprule
+Payoff
+ & \makecell{N\\(best ML)}
+ & \makecell{N+\\(best ML)}
+ & \makecell{Op\\(best ML)}
+ & \makecell{Op $-$ N}
+ & \makecell{Op $-$ N+} \\
+\midrule
+softplus       & $0.412$ & $0.557$ & $0.966$ & $+0.554 \pm 0.005$ & $+0.409 \pm 0.005$ \\
+quadratic      & $0.315$ & $0.494$ & $0.963$ & $+0.648 \pm 0.010$ & $+0.469 \pm 0.007$ \\
+tanh           & $0.342$ & $0.465$ & $0.957$ & $+0.616 \pm 0.005$ & $+0.492 \pm 0.006$ \\
+smoothed call  & $0.427$ & $0.605$ & $0.957$ & $+0.531 \pm 0.007$ & $+0.353 \pm 0.007$ \\
+\bottomrule
+\end{tabular}
+\caption{Three-arm comparison at the main regime
+($\sigma_{Y}=1$, $\eta_{Y}=\eta_{B}=0.1$, $\varepsilon=0.3$,
+12 seeds, $n=10{,}000$). ``Best ML'' is the maximum of Ridge
+and HGB on the given feature set. Set N+ is strictly stronger
+than Set N---it adds local PCA, raw nearby-grid shocks, and
+RFF over local state---and closes
+$0.12$--$0.18$ of the gap to Op. The residual Op $-$ N+ gap is
+$0.35$--$0.49$, larger than a pure local-state-encoding account
+of the operator features would predict.}
+\label{tab:nplus}
+\end{table}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.95\linewidth]{experiments/figures/v3_main_comparison.pdf}
+\caption{Main comparison: mean out-of-sample $R^{2}$ on
+$\Delta F$, per method and payoff. ML on non-compositional
+features (left two groups) reaches $0.15$--$0.43$. ML on
+operator features (middle two) and pure operator (rightmost)
+all sit at $0.92$--$0.97$.}
+\label{fig:main}
+\end{figure}
+
+\paragraph{Stress: large clock shock (the key result).}
+The mid-regime headline of $R^{2}\approx 0.96$ on operator
+features is, by construction, close to the maximum any
+first-order shock-linear hedger could attain: at small
+$(\eta_{B},\eta_{Y})$ the P\&L shock $\Delta F$ is a first-order
+Taylor expansion in the source shocks, whose coefficients are
+the operator features themselves. Reaching $R^{2}\approx 0.96$
+in that regime confirms that the operator features expose the
+first-order shock structure cleanly. The discriminating regime
+is large clock shock, where the first-order operator hedge
+breaks down and the question is whether ML on operator features
+can recover the missing higher-order content.
+
+\Cref{tab:stress-etaY} sweeps the clock-shock size $\eta_{Y}$
+at fixed $\sigma_{Y}=1$, $\varepsilon=0.3$;
+\cref{tab:stress-eps} sweeps $\varepsilon$ at fixed
+$\sigma_{Y}=1$, $\eta_{Y}=0.1$. Eight seeds per cell,
+$n_{\mathrm{paths}}=6{,}000$, softplus payoff. The decoupling
+of historical clock variance $\sigma_{Y}$ from shock size
+$\eta_{Y}$ matters: at $\eta_{Y}=0.4$ the analytic first-order
+operator hedge collapses from $R^{2}\approx 0.97$ to $0.51$,
+while HGB on operator features holds at $0.65$, a $+0.14$
+recovery. This is the empirically informative cell: the
+analytic hedge knows only the first-order direction, while
+HGB, given the $\Gamma_{\mathrm{field}}$ and
+$\Gamma_{\mathrm{clock}}$ second-order features, learns
+higher-order corrections that the first-order formula cannot
+produce.
+
+\begin{table}[ht]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccccc}
+\toprule
+$\eta_{Y}$
+ & \makecell{ML+N\\HGB}
+ & \makecell{ML+N+\\HGB}
+ & \makecell{ML+Op\\HGB}
+ & \makecell{ML+Op\\Ridge}
+ & \makecell{pure\\op}
+ & \makecell{ML+Op\\$-$ pure} \\
+\midrule
+$0.02$ & $0.583$ & $0.937$ & $0.983$ & $0.998$ & $0.997$ & $+0.001$ \\
+$0.05$ & $0.480$ & $0.765$ & $0.970$ & $0.992$ & $0.992$ & $+0.000$ \\
+$0.10$ & $0.338$ & $0.521$ & $0.946$ & $0.967$ & $0.966$ & $+0.001$ \\
+$0.20$ & $0.264$ & $0.331$ & $0.858$ & $0.863$ & $0.851$ & $+0.012$ \\
+$0.40$ & $0.242$ & $0.256$ & $\mathbf{0.649}$ & $0.617$ & $0.510$ & $\mathbf{+0.139}$ \\
+\bottomrule
+\end{tabular}
+\caption{Stress over $\eta_{Y}$, with the state-conditioned N+
+baseline included (8 seeds per cell, $n=6{,}000$, softplus
+payoff). At very small $\eta_{Y}=0.02$ (deep Taylor regime), N+
+catches up to within $0.06$ of Op because the local nonlinear
+baseline can approximate the first-order shock structure that
+the operator features encode. From $\eta_{Y}=0.05$ onward Op
+opens a $0.22$--$0.53$ margin over N+; at $\eta_{Y}=0.4$ pure
+operator collapses to $0.51$, while ML+Op (HGB) recovers $0.65$,
+an improvement of $+0.14$ over the analytic first-order hedge,
+and ML+N+ (HGB) holds only $0.26$.}
+\label{tab:stress-etaY}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lccccc}
+\toprule
+$\varepsilon$
+ & \makecell{ML+N\\HGB}
+ & \makecell{ML+Op\\HGB}
+ & \makecell{ML+Op\\Ridge}
+ & \makecell{pure\\op}
+ & \makecell{ML+Op\\$-$ pure} \\
+\midrule
+$0.15$ & $0.208$ & $0.870$ & $0.887$ & $0.877$ & $+0.010$ \\
+$0.30$ & $0.338$ & $0.946$ & $0.967$ & $0.966$ & $+0.001$ \\
+$0.60$ & $0.496$ & $0.964$ & $0.988$ & $0.988$ & $+0.000$ \\
+$1.20$ & $0.634$ & $0.970$ & $0.994$ & $0.994$ & $+0.000$ \\
+$2.40$ & $\mathbf{0.841}$ & $0.974$ & $0.971$ & $0.958$ & $+0.013$ \\
+\bottomrule
+\end{tabular}
+\caption{Stress over $\varepsilon$ on a log axis. ML+Op (Ridge
+or HGB) tracks or slightly exceeds the pure operator hedge
+across the full $\varepsilon$ range. ML+N (HGB) catches up only
+in the very smooth regime $\varepsilon=2.4$ where it reaches
+$0.84$. In the rough regime $\varepsilon=0.15$ the structural
+advantage $\mathrm{(ML+Op)}-\mathrm{(ML+N)}\approx 0.68$ is
+largest; ML+Op even slightly improves on pure operator there.}
+\label{tab:stress-eps}
+\end{table}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.95\linewidth]{experiments/figures/v3_stress_curves.pdf}
+\caption{Stress curves. Left: $R^{2}$ vs $\eta_{Y}$ at fixed
+$\sigma_{Y}=1$, $\varepsilon=0.3$. Right: $R^{2}$ vs
+$\varepsilon$ (log) at fixed $\sigma_{Y}=1$, $\eta_{Y}=0.1$.
+ML+Op (HGB) overtakes the pure operator hedge at large
+$\eta_{Y}$ by capturing higher-order corrections through the
+$\Gamma$-square features; ML+N stays well below ML+Op except
+in the very smooth-field regime.}
+\label{fig:stress}
+\end{figure}
+
+\paragraph{Feature ablation.}
+\Cref{fig:importance} reports the leave-one-out drop in $R^{2}$
+when one operator feature is removed from the Op set (HGB
+refit on the remaining features), averaged over 5 seeds per
+payoff at the main-regime settings.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.92\linewidth]{experiments/figures/v3_feature_importance.pdf}
+\caption{Leave-one-out drop in $R^{2}$ for HGB trained on Op
+features, by dropped operator feature and by payoff. For the
+quadratic payoff (orange), the two state-conditioned hedge
+integrands $f'(X)\delta\Bvar_{\varepsilon}(\Yclock)$ and
+$f'(X)\partial_{x}\Bvar_{\varepsilon}(\Yclock)\delta\Yclock$
+are individually critical (drop of $\sim 0.13$--$0.19$ each);
+for softplus, tanh, and smoothed call, the individual drops
+are modest ($\le 0.01$) because the operator features carry
+correlated information that ML can partially recover from the
+remaining features. The collective contribution of the
+operator features is large (see \cref{tab:delta-feature});
+individual features matter most for the quadratic payoff where
+the nonlinearity structure $f'(x)=2x$ is exposed cleanly.}
+\label{fig:importance}
+\end{figure}
+
+\paragraph{Reading.}
+\begin{itemize}
+\item In the mid-regime ($\eta_{Y}=0.1$, $\varepsilon=0.3$),
+ML on operator features matches the pure analytic operator
+hedge to within sampling error. ML offers no improvement on
+the first-order operator hedge in the regime where the
+first-order hedge is itself accurate.
+\item In the large-clock-shock regime ($\eta_{Y}=0.4$), HGB on
+operator features outperforms the pure operator hedge by
+$+0.14$ in $R^{2}$ ($0.65$ vs $0.51$): the predicted regime
+where ML augments first-order analytic hedging with
+higher-order corrections. The $\Gamma_{\mathrm{field}}$ and
+$\Gamma_{\mathrm{clock}}$ squared features carry the
+second-order content.
+\item ML on global non-compositional features (set N) never
+matches either ML+Op or the pure operator hedge in any regime
+tested (except the very smooth $\varepsilon=2.4$ where it
+reaches $0.84$ vs ML+Op's $0.97$). The structural feature
+advantage $\Delta R^{2}\approx 0.5$--$0.7$ over Set N is
+stable across payoffs.
+\item Against the stronger state-conditioned baseline Set N+,
+the gap shrinks to $0.35$--$0.49$ in $R^{2}$ at the main
+regime---larger than a pure ``operator features as local state
+encoding'' account would predict.
+At very small $\eta_{Y}=0.02$ (deep Taylor regime) the gap
+collapses to $0.06$, consistent with local-baseline approximation
+of first-order shock structure; from $\eta_{Y}=0.05$ onward
+ML+Op holds a $0.22$--$0.53$ margin over ML+N+. The structural
+advantage is therefore not that the operator features are
+state-conditioned, but that they are state-conditioned
+\emph{in the directions} $f'(X)\,\delta\Bvar_{\varepsilon}(\Yclock)$
+and
+$f'(X)\,\partial_{x}\Bvar_{\varepsilon}(\Yclock)\,\delta\Yclock$
+that the chain rule selects.
+\item Individual operator features show heterogeneous
+importance: for the quadratic payoff, two single features
+carry $0.13$--$0.19$ $R^{2}$ each; for the other payoffs the
+joint contribution dominates and individual leave-one-out
+drops are small. ML benefits from the \emph{set} of operator
+features rather than any one of them.
+\end{itemize}
+
+\paragraph{Verdict.}
+Operator derivatives and ML are complementary, not competing.
+The operator derivative supplies six state-conditioned features
+that raise out-of-sample $R^{2}$ by $\sim 0.5$--$0.7$ over a
+global non-compositional baseline and by $0.35$--$0.49$ over a
+strictly stronger state-conditioned baseline (Set N+) that
+matches the local PCA / nearby-grid / random-Fourier capacity
+without the operator directions. In the mid-regime, a linear
+Ridge regression on operator features reproduces the analytic
+first-order operator hedge to within sampling error: the
+operator hedge is optimally implementable by ML given the
+right features. In the large-clock-shock regime where
+first-order Taylor breaks down, gradient-boosted ML on
+operator features (including the squared $\Gamma$ terms)
+outperforms the pure analytic operator hedge by capturing
+higher-order corrections that the first-order formula omits.
+The framework's practical role is feature engineering for
+compositional risk: identify compositional features
+analytically---and specifically the chain-rule-selected
+directions---then let ML do nonlinear combinations and
+higher-order learning.
+
+\medskip
+
+The features and operator hedge are formulated on the mollified
+field $\Bvar_{\varepsilon}$; the unmollified limit
+$\varepsilon\downarrow 0$ is open and is not treated here. The
+negative results ``ML+N $<$ ML+Op'' and ``ML+N+ $<$ ML+Op'' are
+bounded by HGB on the fixed non-compositional and
+state-conditioned baselines tested here. This does not rule out
+every high-capacity raw-field architecture; it rules out the
+tested non-compositional and state-conditioned baselines under a
+controlled fixed-protocol comparison. A capacity-unbounded
+architecture trained end-to-end on the raw scenery/clock inputs
+might recover analogous representations internally, in which
+case the framework's role would shift from feature construction
+to feature validation, with the operator derivative identifying
+which compositional features the learned representation must
+recover to be optimal.
+
+%==============================================================
+\section*{Acknowledgements}
+%==============================================================
+
+AI tools were used as interactive assistants for drafting,
+reorganizing, and generating mathematical arguments, under the
+author's direction. The author is responsible for all
+mathematical content and any errors.
+
+%==============================================================
+\begin{thebibliography}{99}
+
+\bibitem{BidegreeAtlas}
+R.~Fontes, \emph{A Bidegree Atlas for the Iterated-Brownian-Motion
+  It\^o Correction}, manuscript (2026).
+
+\bibitem{Burdzy}
+K.~Burdzy, \emph{Some path properties of iterated Brownian motion},
+  in: Seminar on Stochastic Processes, 1992, Progr.\ Probab.,
+  vol.~33, Birkh\"auser, Boston, MA, 1993, pp.~67--87.
+
+\bibitem{EnergyFirst}
+R.~Fontes, \emph{Energy-First Stochastic Calculus: Iterated
+  Brownian Motion as a Test Case}, manuscript (2026).
+
+\bibitem{FCDC}
+R.~Fontes, \emph{First-Chaos Dual Closure of the Iterated
+  Brownian Motion It\^o Correction}, manuscript (2026).
+
+\bibitem{FriedmanGBM}
+J.~H. Friedman, \emph{Greedy function approximation: a gradient
+  boosting machine}, Ann.\ Statist.\ \textbf{29} (2001),
+  no.~5, 1189--1232.
+
+\bibitem{GammaHierarchyDivergence}
+R.~Fontes, \emph{From Carr\'e-du-Champ Hierarchies to Primitive
+  Divergence}, manuscript (2026).
+
+\bibitem{NualartMalliavin}
+D.~Nualart, \emph{The Malliavin Calculus and Related Topics},
+  2nd ed., Probability and Its Applications, Springer, Berlin,
+  2006.
+
+\bibitem{OperatorClarkOcone}
+R.~Fontes, \emph{Operator Clark--Ocone Formula from Primitive
+  Divergence}, manuscript (2026).
+
+\end{thebibliography}
+
+\end{document}

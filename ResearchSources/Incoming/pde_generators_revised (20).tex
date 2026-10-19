@@ -1,0 +1,1059 @@
+\documentclass[12pt]{article}
+
+% ===== PACKAGES =====
+\usepackage{amsmath,amsthm,amssymb,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+
+% ===== THEOREM ENVIRONMENTS =====
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% ===== CUSTOM COMMANDS =====
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\HH}{\mathcal{H}}
+\newcommand{\dom}{\operatorname{dom}}
+\newcommand{\sgn}{\operatorname{sgn}}
+
+% ===== DOCUMENT =====
+\begin{document}
+
+\title{PDE Generators from Energy Space Structure in Feynman--Kac Theory}
+\author{Ramiro Fontes\\
+Quijotic Research\\
+\texttt{ramirofontes@gmail.com}}
+\date{}
+\maketitle
+
+\begin{abstract}
+We study the relationship between the energy space associated with a stochastic process and the structure of the generator appearing in Feynman--Kac representations. Working in an operator-theoretic setting with a derivative, its adjoint, and predictable projection, we show how the natural domain of the divergence operator determines the principal part of the generator through an intrinsic quadratic form.
+
+In Gaussian settings, the energy space coincides with the Cameron--Martin space, recovering classical diffusion operators and time-dependent diffusivities for processes with memory. For iterated Brownian motion and for L\'{e}vy-type dynamics, the same formulation yields higher-order and nonlocal generators, including biharmonic and fractional Laplacian operators.
+
+These results clarify how structural properties of the underlying energy space are reflected in the generators associated with a range of stochastic models.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Stochastic generators; Feynman--Kac formula; energy spaces; L\'{e}vy processes; fractional Laplacian.
+
+\noindent\textbf{MSC 2020:} 60H30, 60G22, 60J35, 60G51, 35K10.
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{The classical Feynman--Kac connection}
+
+The Feynman--Kac formula establishes a fundamental link between stochastic processes and partial differential equations. Fix a time horizon $T > 0$. For a standard Brownian motion $(B_t)_{t \in [0,T]}$ and a measurable function $f: \R \to \R$ with sufficient integrability, if we define, for $t \in [0,T]$ and $x \in \R$,
+\begin{equation}\label{eq:FK-basic}
+u(t,x) = \E[f(B_T) \mid B_t = x],
+\end{equation}
+then $u$ solves the backward heat equation
+\begin{equation}\label{eq:heat-backward}
+\partial_t u + \frac{1}{2}\Delta u = 0, \qquad u(T,x) = f(x).
+\end{equation}
+More generally, for a diffusion $(X_t)_{t \in [0,T]}$ taking values in $\R^d$ (where $d \geq 1$ is the dimension), with drift coefficient $b: \R^d \to \R^d$ and a potential function $V: \R^d \to \R$, and for a measurable function $f: \R^d \to \R$, the function defined for $t \in [0,T]$ and $x \in \R^d$ by
+\begin{equation}\label{eq:FK-general}
+u(t,x) = \E\left[f(X_T) e^{-\int_t^T V(X_s)\,ds} \;\Big|\; X_t = x\right]
+\end{equation}
+solves
+\begin{equation}\label{eq:FK-PDE}
+\partial_t u + \frac{1}{2}\Delta u + b \cdot \nabla u - Vu = 0.
+\end{equation}
+The generator $L = \frac{1}{2}\Delta + b \cdot \nabla$ encodes the infinitesimal behavior of the process.
+
+\subsection{Limitations of the classical approach}
+
+The classical Feynman--Kac setting relies on:
+\begin{enumerate}[label=(\arabic*)]
+\item The process being a semimartingale (so It\^{o} calculus applies).
+\item The process being Markov (so a time-homogeneous generator exists).
+\item Quadratic variation being well-defined and non-degenerate.
+\end{enumerate}
+For processes that violate these assumptions---such as fractional Brownian motion with Hurst parameter $H \in (0,1)$, $H \neq 1/2$---the classical dictionary breaks down. Yet these processes still have well-defined conditional expectations. What PDE structure, if any, governs them?
+
+\subsection{The operator factorization perspective}
+
+The works \cite{Fontes2026a, Fontes2026b, Fontes2026c, Fontes2026d} developed an operator-theoretic setting for stochastic calculus based on the factorization
+\begin{equation}\label{eq:factorization}
+(\mathrm{Id} - \E) = \delta \Pi D,
+\end{equation}
+where $\mathrm{Id}$ denotes the identity operator, $D$ is the operator derivative, $\delta = D^*$ is the divergence (adjoint of $D$), and $\Pi$ is the predictable projection. A key result of \cite{Fontes2026c} is that for a process $X$, the classical quadratic variation $[X]_t$ (defined as the limit in probability of $\sum_{i} (X_{t_{i+1}} - X_{t_i})^2$ over partitions of $[0,t]$) can be replaced by the intrinsic bracket with differential
+\begin{equation}\label{eq:intrinsic-bracket-intro}
+d\langle X \rangle_t^{(D,\Pi)} = \frac{d}{dt}\|\Pi D X_t\|_{\HH}^2 \, dt,
+\end{equation}
+where $\HH$ is the energy space of the driving process (for Gaussian processes, this is the reproducing kernel Hilbert space or Cameron--Martin space).
+
+The work \cite{Fontes2026d} established the three-tier classification:
+\begin{itemize}
+\item \textbf{Tier 1:} The Riesz definition of $D$ and adjointness $\delta = D^*$ (always holds for Gaussian processes).
+\item \textbf{Tier 2:} Isometry of $\delta$ (holds for BM, fails for fBM with Hurst parameter $H \neq 1/2$).
+\item \textbf{Tier 3:} Leibniz/chain rule (holds for all Gaussian processes).
+\end{itemize}
+
+\subsection{Main thesis}
+
+\begin{center}
+\emph{The energy space $\HH$ of the driving process determines the PDE structure of conditional expectations.}
+\end{center}
+
+This is the paper's central claim. The energy space is the Hilbert space on which the stochastic integral $\delta$ is naturally defined as a closed operator. For Gaussian processes, this is the RKHS (Cameron--Martin space), but other processes have different energy spaces: Poisson processes with intensity $\lambda > 0$ use $L^2([0,T], \lambda\,dt)$ where $dt$ denotes Lebesgue measure, compound Poisson and L\'{e}vy processes use $L^2(dt \otimes \nu)$ where $\nu$ is the jump measure (L\'{e}vy measure), and compositions like iterated Brownian motion use tensor products.
+
+When we compute the intrinsic bracket $\|\Pi DF\|_{\HH}^2$ for a square-integrable random variable $F$, the norm $\|\cdot\|_{\HH}$ determines what ``second-order operator'' appears in the Feynman--Kac equation. The principle applies to any process with a well-defined operator triple $(D, \delta, \Pi)$.
+
+\subsection{Main results}
+
+We state our main results. The first theorem identifies the mechanism by which energy space structure determines PDE structure.
+
+\begin{theorem}[Generator from energy space structure]\label{thm:main-mechanism}
+Let $(\Omega, \F, \PP)$ be a complete probability space, and let $X = (X_t)_{t \in [0,T]}$ be a stochastic process taking values in $\R^d$ with operator triple $(D_X, \delta_X, \Pi_X)$ on an energy space $\HH$. Assume the filtration $(\F_t)_{t \geq 0}$ is the natural filtration of $X$, augmented to satisfy the usual conditions. Let $Y_t = g(t, X_t)$ for $g \in C^{1,2}([0,T] \times \R^d)$ (the space of functions with one continuous derivative in $t$ and two continuous derivatives in $x$), and let $\phi \in C^2(\R)$ (twice continuously differentiable). Assume the operator It\^{o} formula (Theorem~\ref{thm:operator-ito}) applies. Then the second-order term in the It\^{o} expansion of $\phi(Y_t)$ is
+\begin{equation}\label{eq:second-order-term}
+\frac{1}{2}\phi''(Y_t) \, d\langle Y \rangle_t^{(D,\Pi)} = \frac{1}{2}\phi''(Y_t) \frac{d}{dt}\|\Pi D_X Y_t\|_{\HH}^2 \, dt.
+\end{equation}
+For Markov processes with time-homogeneous transitions, this determines the generator $L$ via Feynman--Kac; for non-Markov processes, it determines the time-dependent coefficient in the PDE.
+\end{theorem}
+
+The next five theorems instantiate this principle.
+
+\begin{theorem}[Brownian motion]\label{thm:BM}
+Let $(\Omega, \F, \PP)$ be a complete probability space supporting a standard Brownian motion $(B_t)_{t \in [0,T]}$, and let $(\F_t)_{t \geq 0}$ be its natural filtration, augmented to satisfy the usual conditions. Let $\HH$ denote the Cameron--Martin space with norm $\|h\|_{\HH} = \|h'\|_{L^2([0,T])}$ for $h \in \HH$, where $h'$ denotes the derivative of $h$. Then:
+\begin{enumerate}[label=(\alph*)]
+\item The intrinsic bracket satisfies $d\langle B \rangle_t^{(D,\Pi)} = dt$, $\PP$-a.s.
+\item The generator is $L = \frac{1}{2}\Delta$.
+\item For any measurable $f: \R \to \R$ with sufficient integrability, the Feynman--Kac function $u(t,x) = \E[f(B_T) \mid B_t = x]$, defined for $t \in [0,T]$ and $x \in \R$, satisfies $\partial_t u + \frac{1}{2}\Delta u = 0$.
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Fractional Brownian motion]\label{thm:fBM}
+Let $(\Omega, \F, \PP)$ be a complete probability space supporting a fractional Brownian motion $(B_t^H)_{t \in [0,T]}$ with Hurst parameter $H \in (0,1)$. Fractional Brownian motion is a centered Gaussian process with covariance $\E[B_s^H B_t^H] = \frac{1}{2}(s^{2H} + t^{2H} - |t-s|^{2H})$ for $s, t \in [0,T]$; the case $H = 1/2$ recovers standard Brownian motion. Let $(\F_t)_{t \geq 0}$ be its natural filtration. Assume regular conditional distributions exist so that $\E[\cdot \mid B_t^H = x]$ is well-defined for each $t \in [0,T]$ and $x \in \R$. Then:
+\begin{enumerate}[label=(\alph*)]
+\item The marginal density $p(t,x)$, defined for $t \in (0,T]$ and $x \in \R$, satisfies $\partial_t p = Ht^{2H-1} \partial_x^2 p$.
+\item The time-dependent coefficient $Ht^{2H-1} = \frac{1}{2}\frac{d}{dt}\mathrm{Var}(B_t^H)$ (where $\mathrm{Var}(B_t^H) = \E[(B_t^H)^2] = t^{2H}$ is the variance) arises from the RKHS covariance structure.
+\item No time-homogeneous generator exists since the process is non-Markov, but the intrinsic bracket $\|\Pi DF\|_{\HH_H}^2$ (where $\HH_H$ denotes the Cameron--Martin space of fBM with Hurst parameter $H$) remains well-defined for $F$ in the domain of $D$.
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Integrated Brownian motion]\label{thm:IBM}
+Let $(\Omega, \F, \PP)$ be a complete probability space supporting a standard Brownian motion $(B_t)_{t \in [0,T]}$, and define integrated Brownian motion by $I_t = \int_0^t B_s \, ds$ for $t \in [0,T]$, where the integral is over the time variable $s \in [0,t]$. Let $(\F_t)_{t \geq 0}$ be the natural filtration of $B$. Then:
+\begin{enumerate}[label=(\alph*)]
+\item The energy space has norm $\|h\|_{\HH} = \|h''\|_{L^2([0,T])}$ for $h \in \HH$, where $h''$ denotes the second derivative of $h$.
+\item The intrinsic bracket satisfies $d\langle I \rangle_t^{(D,\Pi)} = t^2 \, dt$, $\PP$-a.s.
+\item The marginal density $p(t,x)$, defined for $t \in (0,T]$ and $x \in \R$, satisfies $\partial_t p = \frac{t^2}{2}\partial_x^2 p$.
+\item The joint process $(B_t, I_t)$ has Kolmogorov backward equation with generator $\frac{1}{2}\partial_x^2 + x\partial_y$, where $x$ and $y$ denote the spatial variables corresponding to $B_t$ and $I_t$ respectively. This is consistent with fourth-order structure when $B$ is integrated out.
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Iterated Brownian motion]\label{thm:iteratedBM}
+Let $(\Omega, \F, \PP)$ be a complete probability space supporting two independent standard Brownian motions $B^{(1)} = (B_s^{(1)})_{s \geq 0}$ and $B^{(2)} = (B_t^{(2)})_{t \in [0,T]}$. Define iterated Brownian motion by $Z_t = B^{(1)}(|B_t^{(2)}|)$ for $t \in [0,T]$, where $B^{(1)}$ is evaluated at the random time $|B_t^{(2)}|$. Let $\HH^{(1)}$ and $\HH^{(2)}$ denote the Cameron--Martin spaces of $B^{(1)}$ and $B^{(2)}$ respectively. Then:
+\begin{enumerate}[label=(\alph*)]
+\item The energy space is the tensor product $\HH_Z = \HH^{(1)} \otimes \HH^{(2)}$ (the completion of the algebraic tensor product under the inner product $\langle h_1 \otimes h_2, g_1 \otimes g_2 \rangle = \langle h_1, g_1 \rangle_{\HH^{(1)}} \langle h_2, g_2 \rangle_{\HH^{(2)}}$).
+\item The operator derivative decomposes as $D_Z = D^{(1)} + D^{(2)}$ with the chain rule applied at each level.
+\item The quartic variation $[Z]_t^{(4)} = \int_0^t (d\langle Z \rangle_s^{(D,\Pi)})^2$ (the integral of the squared differential of the intrinsic bracket) emerges from the intrinsic bracket, $\PP$-a.s.
+\item The marginal density $p(t,x)$, defined for $t \in (0,T]$ and $x \in \R$, satisfies the biharmonic equation $\partial_t p = \frac{1}{8}\partial_x^4 p$, recovering the Allouba--Zheng result \cite{AlloubaZheng2001} from the operator framework.
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[L\'{e}vy processes]\label{thm:Levy}
+Let $(\Omega, \F, \PP)$ be a complete probability space supporting a L\'{e}vy process $(X_t)_{t \in [0,T]}$ (a process with stationary independent increments, $X_0 = 0$, and càdlàg paths) with L\'{e}vy measure $\nu$ (a $\sigma$-finite measure on $\R \setminus \{0\}$ characterizing the jump intensity) satisfying $\int_{\R}(1 \wedge z^2)\,\nu(dz) < \infty$, and let $(\F_t)_{t \geq 0}$ be its natural filtration, augmented to satisfy the usual conditions. Then:
+\begin{enumerate}[label=(\alph*)]
+\item The energy space for jumps is $\HH_J = L^2([0,T] \times \R, dt \otimes \nu)$.
+\item The operator derivative is the difference operator: for $F \in L^2(\Omega)$ in the domain of $D_J$, $t \in [0,T]$, $z \in \R$, and $\omega \in \Omega$,
+\begin{equation*}
+(D_J F)_{t,z} = F(\omega + z\delta_t) - F(\omega),
+\end{equation*}
+where $\delta_t$ denotes the Dirac mass at time $t$, so $\omega + z\delta_t$ represents the path $\omega$ with an additional jump of size $z$ at time $t$.
+\item The generator acting on $f \in C^1(\R)$ is nonlocal: for $x \in \R$,
+\begin{equation}\label{eq:Levy-generator}
+Lf(x) = \int_{\R} \bigl(f(x+z) - f(x) - zf'(x)\mathbf{1}_{|z| \leq 1}\bigr)\,\nu(dz).
+\end{equation}
+\item For symmetric $\alpha$-stable processes (Lévy processes with $\nu(dz) = c_\alpha |z|^{-1-\alpha} dz$ for a constant $c_\alpha > 0$) with stability index $\alpha \in (0,2)$, this yields the fractional Laplacian $(-\Delta)^{\alpha/2}$---which arises from jump structure, not memory.
+\end{enumerate}
+\end{theorem}
+
+\subsection{Organization}
+
+Section~\ref{sec:framework} recalls the operator factorization setting and tier structure. Section~\ref{sec:BM} treats Brownian motion, recovering the classical case. Section~\ref{sec:fBM} treats fractional Brownian motion, deriving time-dependent diffusivity. Section~\ref{sec:higher-order} discusses higher-order processes including integrated and iterated Brownian motion. Section~\ref{sec:jump} treats Poisson and L\'{e}vy processes, showing how jumps produce nonlocal operators. Section~\ref{sec:general} summarizes the general principle.
+
+\subsection{Notation and standing assumptions}\label{sec:notation}
+
+We collect the notation and standing assumptions used throughout. Let $T > 0$ be fixed but arbitrary throughout the paper.
+
+\subsubsection*{Probability space and filtrations}
+Throughout, $(\Omega, \F, \PP)$ denotes a complete probability space. All stochastic processes $X = (X_t)_{t \in [0,T]}$ are defined on this space and take values in $\R^d$ for some dimension $d \geq 1$ (or simply $\R$ when $d=1$ is clear from context). We write $(\F_t)_{t \geq 0}$ for the natural filtration generated by $X$, augmented to satisfy the usual conditions (right-continuity and completeness). Specifically, each $\F_t$ contains all $\PP$-null sets of $\F$, and $\F_t = \F_{t^+} := \bigcap_{s > t} \F_s$ for all $t \geq 0$. All predictable projections are taken with respect to this filtration unless otherwise stated.
+
+\subsubsection*{Regular conditional distributions}
+We assume throughout that the processes under consideration admit regular conditional distributions, so that conditional expectations of the form $\E[\cdot \mid X_t = x]$ are well-defined as measurable functions of $x \in \R^d$. This holds automatically for processes with values in Polish spaces \cite{RevuzYor1999}.
+
+\subsubsection*{Martingale conventions}
+For any $Y \in L^1(\Omega, \PP)$, we always choose the version of the martingale $\E[Y \mid \F_t]$ that has paths which are right-continuous with left limits (RCLL or c\`adl\`ag) $\PP$-almost surely. This is possible by the right-continuity and completeness of our filtration. If $\E[Y \mid \F_t]$ is a modification of a continuous process, then they are indistinguishable and $\E[Y \mid \F_t]$ is $\PP$-a.s.\ continuous.
+
+\subsubsection*{Function spaces}
+We use standard notation for function spaces:
+\begin{itemize}
+\item $L^2(\Omega) = L^2(\Omega, \F, \PP)$: square-integrable random variables.
+\item $L^2([0,T])$: square-integrable functions on $[0,T]$ with Lebesgue measure.
+\item $L^2([0,T] \times \R, dt \otimes \nu)$: square-integrable functions with respect to the product of Lebesgue measure and a measure $\nu$.
+\item $C^{k}$, $C^{k,\ell}$: spaces of functions with $k$ (or $k$ in time and $\ell$ in space) continuous derivatives.
+\end{itemize}
+
+\subsubsection*{Densities}
+For a real-valued stochastic process $X_t$, the \emph{marginal density} $p(t,x)$ (when it exists) is the probability density function of $X_t$ with respect to Lebesgue measure, i.e., $\PP(X_t \in A) = \int_A p(t,x)\,dx$ for Borel sets $A \subseteq \R$. Equivalently, $p(t,\cdot)$ is the density of the law of $X_t$.
+
+\subsubsection*{Energy spaces and RKHS}
+For a stochastic process $X$, we denote by $\HH$ (or $\HH_X$ when clarity requires) the associated energy space. For Gaussian processes, this is the reproducing kernel Hilbert space (RKHS) or Cameron--Martin space. The inner product and norm are written $\langle \cdot, \cdot \rangle_{\HH}$ and $\|\cdot\|_{\HH}$. Elements of $\HH$ are typically denoted by $h$, $g$, or similar lowercase letters.
+
+For Gaussian processes, the evaluation representer at time $t$ is denoted $k_t \in \HH$, characterized by the reproducing property $\langle k_t, h \rangle_{\HH} = h(t)$ for all $h \in \HH$.
+
+\subsubsection*{Operator triple}
+For a process $X$ with energy space $\HH$:
+\begin{itemize}
+\item $D_X: \dom(D_X) \subset L^2(\Omega) \to L^2(\Omega; \HH)$ is the operator derivative, where $L^2(\Omega; \HH)$ denotes the space of $\HH$-valued square-integrable random variables.
+\item $\delta_X = D_X^*: \dom(\delta_X) \subset L^2(\Omega; \HH) \to L^2(\Omega)$ is the divergence (stochastic integral).
+\item $\Pi: L^2(\Omega; \HH) \to L^2(\Omega; \HH)$ is the predictable projection; for $u = (u_t)_{t \in [0,T]} \in L^2(\Omega; \HH)$, we have $(\Pi u)_t = \E[u_t \mid \F_{t^-}]$.
+\end{itemize}
+
+\subsubsection*{Intrinsic bracket}
+For a process $Y$ in the domain of $D_X$, the intrinsic bracket has differential
+\begin{equation}\label{eq:intrinsic-bracket-def}
+d\langle Y \rangle_t^{(D,\Pi)} = \frac{d}{dt}\|\Pi D_X Y_t\|_{\HH}^2 \, dt.
+\end{equation}
+When ambiguity is possible, we write $\langle Y \rangle_t^{(D_X, \Pi_X)}$ to indicate the operator derivative and predictable projection associated with $X$.
+
+\subsubsection*{Other notation}
+\begin{itemize}
+\item $\omega \in \Omega$: a sample point (equivalently, a sample path for path-valued $\Omega$).
+\item $\dom(A)$: the domain of an operator $A$.
+\item $a \wedge b = \min(a,b)$, $a \vee b = \max(a,b)$.
+\item $\mathbf{1}_A$: indicator function of set $A$.
+\item $\sgn(x)$: sign function, $\sgn(x) = 1$ if $x > 0$, $\sgn(x) = -1$ if $x < 0$, $\sgn(0) = 0$.
+\item $L_t^0(B)$: local time of process $B$ at level $0$ up to time $t$.
+\item $\delta_t$: Dirac mass at time $t$ (for jump processes); $\omega + z\delta_t$ denotes the path $\omega$ with an additional jump of size $z$ at time $t$.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The Operator Factorization Framework}\label{sec:framework}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We recall the setting from Papers I--IV \cite{Fontes2026a, Fontes2026b, Fontes2026c, Fontes2026d}.
+
+\subsection{Energy spaces}
+
+The central object is the energy space $\HH$---the Hilbert space on which the stochastic integral is naturally defined.
+
+\begin{definition}[Energy space]\label{def:energy-space}
+Let $(\Omega, \F, \PP)$ be a complete probability space and let $X$ be a stochastic process on this space. An \emph{energy space} for $X$ is a real Hilbert space $\HH$ continuously embedded in $L^2(\Omega)$ (meaning there exists a constant $C > 0$ such that $\|h\|_{L^2(\Omega)} \leq C\|h\|_{\HH}$ for all $h \in \HH$) such that:
+\begin{enumerate}[label=(\roman*)}
+\item There exists a densely-defined closed operator $\delta_X: \dom(\delta_X) \subset \HH \to L^2(\Omega)$ (the divergence or stochastic integral).
+\item The adjoint $D_X := \delta_X^*$ (the operator derivative) is also densely defined.
+\item The factorization $F - \E[F] = \delta_X(\Pi D_X F)$ holds for a dense class of $F \in L^2(\Omega)$.
+\end{enumerate}
+\end{definition}
+
+The energy space depends on the process. For Gaussian processes, it is the RKHS (Cameron--Martin space). For Poisson processes with intensity $\lambda > 0$, it is $L^2([0,T], \lambda\,dt)$ where $dt$ denotes Lebesgue measure. For compound Poisson and general L\'{e}vy processes, the jump component contributes $L^2([0,T] \times \R, dt \otimes \nu)$ where $\nu$ is the L\'{e}vy measure. For compositions like iterated Brownian motion $Z_t = B^{(1)}(|B_t^{(2)}|)$, the energy space is a tensor product $\HH^{(1)} \otimes \HH^{(2)}$, where $\HH^{(1)}$ and $\HH^{(2)}$ are the Cameron--Martin spaces of the outer and inner Brownian motions respectively.
+
+\subsection{The Gaussian case: RKHS}
+
+For a centered Gaussian process $X = (X_t)_{t \in [0,T]}$ with covariance function $R(s,t) = \E[X_s X_t]$ for $s, t \in [0,T]$, the energy space is the \emph{reproducing kernel Hilbert space} (RKHS) or \emph{Cameron--Martin space} $\HH$: the completion of $\mathrm{span}\{R(\cdot, t) : t \in [0,T]\}$ under
+\begin{equation}\label{eq:RKHS-inner-product}
+\langle R(\cdot, s), R(\cdot, t) \rangle_{\HH} = R(s,t).
+\end{equation}
+The key property is $\langle k_t, h \rangle_{\HH} = h(t)$ for all $h \in \HH$, where $k_t = R(\cdot, t)$ is the evaluation representer.
+
+\begin{example}[Brownian motion]\label{ex:BM-RKHS}
+For standard Brownian motion, $R(s,t) = s \wedge t$ for $s, t \in [0,T]$. The RKHS is $\HH = \{h: [0,T] \to \R : h(0) = 0, \, h' \in L^2([0,T])\}$ with $\|h\|_{\HH} = \|h'\|_{L^2([0,T])}$.
+\end{example}
+
+\begin{example}[Fractional Brownian motion]\label{ex:fBM-RKHS}
+For fractional Brownian motion with Hurst parameter $H \in (0,1)$, $R_H(s,t) = \frac{1}{2}(s^{2H} + t^{2H} - |t-s|^{2H})$ for $s, t \in [0,T]$. The RKHS $\HH_H$ has a more complex norm involving fractional derivatives; see \cite{PipirasTaqqu2017, DecrUstunel1999}.
+\end{example}
+
+\subsection{The operator derivative}
+
+\begin{definition}[Operator derivative {\cite{Fontes2026d}}]\label{def:operator-derivative}
+Let $X$ be a stochastic process with energy space $\HH$. For $F \in L^2(\Omega)$ in the domain of $D_X$, the operator derivative $D_X F \in L^2(\Omega; \HH)$ is defined via Riesz representation:
+\begin{equation}\label{eq:operator-derivative-def}
+\E[F \cdot \delta_X(u)] = \E[\langle D_X F, u \rangle_{\HH}] \quad \text{for all } u \in \dom(\delta_X).
+\end{equation}
+\end{definition}
+
+For Gaussian processes, the derivative has an explicit form on cylindrical functionals. If $F = f(X_{t_1}, \ldots, X_{t_n})$ for some $n \geq 1$, times $0 \leq t_1 < \cdots < t_n \leq T$, and $f \in C^1(\R^n)$, then:
+\begin{equation}\label{eq:cylindrical-derivative}
+D_X F = \sum_{i=1}^n \partial_i f(X_{t_1}, \ldots, X_{t_n}) \cdot k_{t_i},
+\end{equation}
+where $\partial_i$ denotes the partial derivative with respect to the $i$-th argument and $k_{t_i} \in \HH$ is the evaluation representer at time $t_i$.
+
+For jump processes, the operator derivative is a difference operator: for $F \in L^2(\Omega)$ in the domain of $D_X$, $t \in [0,T]$, $z \in \R$, and $\omega \in \Omega$,
+\begin{equation}\label{eq:jump-derivative}
+(D_X F)_{t,z} = F(\omega + z\delta_t) - F(\omega),
+\end{equation}
+where $\omega + z\delta_t$ denotes adding a jump of size $z$ at time $t$.
+
+\subsection{The predictable projection}
+
+\begin{definition}[Predictable projection]\label{def:predictable-projection}
+Let $(\F_t)_{t \in [0,T]}$ be the natural filtration of $X$, augmented to satisfy the usual conditions. For an $\HH$-valued process $u = (u_t)_{t \in [0,T]}$ with $u \in L^2(\Omega; \HH)$, the predictable projection is defined for each $t \in [0,T]$ by
+\begin{equation}\label{eq:predictable-projection-def}
+(\Pi u)_t = \E[u_t \mid \F_{t^-}],
+\end{equation}
+where $\F_{t^-} = \sigma\bigl(\bigcup_{s < t} \F_s\bigr)$ is the left-limit $\sigma$-algebra, with the convention that $\F_{0^-} = \F_0$.
+\end{definition}
+
+\subsection{The factorization theorem}
+
+\begin{theorem}[Operator factorization {\cite{Fontes2026a}}]\label{thm:factorization}
+Let $X$ be a stochastic process with operator triple $(D_X, \delta_X, \Pi)$ on energy space $\HH$. For $F$ in a dense subalgebra of $L^2(\Omega)$,
+\begin{equation}\label{eq:factorization-thm}
+F - \E[F] = \delta_X(\Pi D_X F), \quad \PP\text{-a.s.}
+\end{equation}
+\end{theorem}
+
+\subsection{The intrinsic bracket}
+
+\begin{definition}[Intrinsic quadratic variation]\label{def:intrinsic-bracket}
+Let $X$ be a stochastic process with operator triple $(D_X, \delta_X, \Pi)$ on energy space $\HH$. For a process $Y = (Y_t)_{t \in [0,T]}$ in the domain of $D_X$ such that $t \mapsto \|\Pi D_X Y_t\|_{\HH}^2$ is absolutely continuous on $[0,T]$, the \emph{intrinsic quadratic variation} (or intrinsic bracket) has differential
+\begin{equation}\label{eq:intrinsic-bracket}
+d\langle Y \rangle_t^{(D,\Pi)} = \frac{d}{dt}\|\Pi D_X Y_t\|_{\HH}^2 \, dt.
+\end{equation}
+Equivalently, $\langle Y \rangle_t^{(D,\Pi)} = \int_0^t \frac{d}{ds}\|\Pi D_X Y_s\|_{\HH}^2 \, ds$. For Gaussian processes where $D_X X_t = k_t$ (the evaluation representer), this becomes $d\langle X \rangle_t^{(D,\Pi)} = \frac{d}{dt}R(t,t) \, dt$ where $R$ is the covariance function.
+
+When the driving process $X$ is clear from context, we write simply $\langle Y \rangle_t$. When ambiguity is possible (e.g., for compositions), we write $\langle Y \rangle_t^{(D_X, \Pi_X)}$ to indicate the operator derivative and predictable projection associated with $X$.
+\end{definition}
+
+\begin{theorem}[Operator It\^{o} formula {\cite{Fontes2026c}}]\label{thm:operator-ito}
+Let $X$ be a stochastic process satisfying Tiers 1 and 3 of \cite{Fontes2026d}. For $\phi \in C^2(\R)$ and a real-valued process $Y = (Y_t)_{t \in [0,T]}$ in the domain of $D_X$,
+\begin{equation}\label{eq:operator-ito}
+\phi(Y_t) - \phi(Y_0) = \int_0^t \phi'(Y_s)\,dY_s + \frac{1}{2}\int_0^t \phi''(Y_s)\,d\langle Y \rangle_s^{(D,\Pi)}, \quad \PP\text{-a.s.}
+\end{equation}
+for all $t \in [0,T]$.
+\end{theorem}
+
+The key insight: $\frac{d}{dt}\|\Pi D_X Y_t\|_{\HH}^2$ replaces the classical quadratic variation $d[Y]_t/dt$, and the energy space norm $\|\cdot\|_{\HH}$ determines what this term looks like.
+
+\subsection{Tier structure}
+
+The work \cite{Fontes2026d} establishes that the operator It\^{o} formula (Theorem~\ref{thm:operator-ito}) requires:
+\begin{itemize}
+\item \textbf{Tier 1:} The Riesz definition \eqref{eq:operator-derivative-def} and adjointness $\delta = D^*$. This is automatic for any Gaussian process with closed stochastic integral.
+\item \textbf{Tier 3:} The chain rule $D(\phi(Y)) = \phi'(Y) DY$ for smooth $\phi$ and processes $Y$ in the domain of $D$. This holds for all Gaussian processes \cite[Theorem 5.1]{Fontes2026d}.
+\end{itemize}
+Tier 2 (isometry) is not required for the It\^{o} formula, only for variance identities. This is why the setting extends to fBM with Hurst parameter $H \neq 1/2$, where Tier 2 fails.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Brownian Motion: The Classical Case}\label{sec:BM}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{The RKHS of Brownian motion}
+
+For standard Brownian motion $(B_t)_{t \in [0,T]}$, the covariance is $R(s,t) = \min(s,t)$ for $s, t \in [0,T]$.
+
+\begin{proposition}\label{prop:BM-RKHS}
+The Cameron--Martin space of Brownian motion is
+\begin{equation}\label{eq:BM-CM-space}
+\HH_{1/2} = \bigl\{h \in C([0,T]) : h(0) = 0, \; h \text{ absolutely continuous}, \; h' \in L^2([0,T])\bigr\}
+\end{equation}
+with inner product, for $h, g \in \HH_{1/2}$,
+\begin{equation}\label{eq:BM-CM-inner-product}
+\langle h, g \rangle_{\HH_{1/2}} = \int_0^T h'(r) g'(r)\,dr.
+\end{equation}
+The RKHS norm is $\|h\|_{\HH_{1/2}} = \|h'\|_{L^2([0,T])}$---the $L^2([0,T])$ norm of the first derivative.
+\end{proposition}
+
+\subsection{The evaluation representer}
+
+The evaluation representer $k_t \in \HH_{1/2}$ satisfying $\langle k_t, h \rangle_{\HH_{1/2}} = h(t)$ for all $h \in \HH_{1/2}$ is:
+\begin{equation}\label{eq:BM-representer}
+k_t(s) = \min(s,t) = s \wedge t, \quad s \in [0,T].
+\end{equation}
+Note that $k_t'(s) = \frac{d}{ds}k_t(s) = \mathbf{1}_{[0,t]}(s)$ (the indicator function of $[0,t]$), so $\|k_t\|_{\HH_{1/2}} = \|k_t'\|_{L^2([0,T])} = \sqrt{t}$.
+
+\subsection{The intrinsic bracket for Brownian motion}
+
+We now prove Theorem~\ref{thm:BM}(a) by computing the intrinsic bracket directly from the operator definition.
+
+\begin{proof}[Proof of Theorem~\ref{thm:BM}(a)]
+For $Y_t = B_t$, the cylindrical formula \eqref{eq:cylindrical-derivative} gives $D_B B_t = k_t$, where $k_t(s) = s \wedge t$ is the evaluation representer.
+
+Since $k_t$ is deterministic, $\Pi D_B B_t = k_t$. By the reproducing property,
+\begin{equation}\label{eq:BM-bracket-1}
+\|k_t\|_{\HH_{1/2}}^2 = \langle k_t, k_t \rangle_{\HH_{1/2}} = R(t,t) = t.
+\end{equation}
+
+By Definition~\ref{def:intrinsic-bracket}, the intrinsic bracket differential is:
+\begin{equation}\label{eq:BM-bracket-2}
+d\langle B \rangle_t^{(D,\Pi)} = \frac{d}{dt}\|k_t\|_{\HH_{1/2}}^2 \, dt = \frac{d}{dt}(t) \, dt = dt.
+\end{equation}
+
+Therefore $d\langle B \rangle_t^{(D,\Pi)} = dt$, recovering $[B]_t = t$.
+\end{proof}
+
+\begin{remark}\label{rmk:BM-classical}
+The calculation confirms that the operator-theoretic intrinsic bracket agrees with classical quadratic variation for Brownian motion. The value of the operator approach is not that it gives a new answer here, but that it extends to processes where classical quadratic variation is undefined.
+\end{remark}
+
+\subsection{The generator}
+
+\begin{proof}[Proof of Theorem~\ref{thm:BM}(b,c)]
+Let $u: [0,T] \times \R \to \R$ be a function in $C^{1,2}([0,T] \times \R)$. Apply the operator It\^{o} formula (Theorem~\ref{thm:operator-ito}) to $u(t, B_t)$:
+\begin{equation}\label{eq:BM-ito-applied}
+du(t, B_t) = \partial_t u \, dt + \partial_x u \, dB_t + \frac{1}{2}\partial_x^2 u \, d\langle B \rangle_t^{(D,\Pi)}.
+\end{equation}
+
+By part (a), $d\langle B \rangle_t^{(D,\Pi)} = dt$, so:
+\begin{equation}\label{eq:BM-ito-simplified}
+du(t, B_t) = \left(\partial_t u + \frac{1}{2}\partial_x^2 u\right) dt + \partial_x u \, dB_t.
+\end{equation}
+
+For the Feynman--Kac function $u(t,x) = \E[f(B_T) \mid B_t = x]$ (where $t \in [0,T]$ and $x \in \R$), the process $u(t, B_t)$ is a martingale. The $dt$ term must vanish:
+\begin{equation}\label{eq:BM-heat-eq}
+\partial_t u + \frac{1}{2}\Delta u = 0.
+\end{equation}
+
+The generator is $L = \frac{1}{2}\Delta$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fractional Brownian Motion: Time-Dependent Diffusivity}\label{sec:fBM}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Definition and properties}
+
+Fractional Brownian motion $(B_t^H)_{t \in [0,T]}$ with Hurst parameter $H \in (0,1)$ is the centered Gaussian process with covariance function $R_H: [0,T] \times [0,T] \to \R$ given by
+\begin{equation}\label{eq:fBM-covariance}
+R_H(s,t) = \frac{1}{2}\bigl(|t|^{2H} + |s|^{2H} - |t-s|^{2H}\bigr), \quad s, t \in [0,T].
+\end{equation}
+
+Key properties:
+\begin{itemize}
+\item $H = 1/2$: standard Brownian motion (Markov, semimartingale).
+\item $H > 1/2$: long-range dependence, smoother paths (H\"{o}lder continuous of any order $\gamma < H$).
+\item $H < 1/2$: anti-persistent, rougher paths.
+\item For $H \neq 1/2$: not Markov, not a semimartingale.
+\end{itemize}
+
+\subsection{The RKHS of fBM}
+
+\begin{proposition}[{\cite{Fontes2026b}, Section 3; \cite{PipirasTaqqu2017}}]\label{prop:fBM-RKHS}
+The Cameron--Martin space of fBM with Hurst parameter $H$ is
+\begin{equation}\label{eq:fBM-CM-space}
+\HH_H = \{K_H \dot{h} : \dot{h} \in L^2([0,T])\} = I_{0+}^{H+1/2}(L^2[0,T]),
+\end{equation}
+where $K_H$ is the fractional integral kernel (an integral operator depending on $H$), $I_{0+}^{\beta}$ denotes the Riemann--Liouville fractional integral of order $\beta > 0$ defined by $(I_{0+}^{\beta} f)(t) = \frac{1}{\Gamma(\beta)} \int_0^t (t-s)^{\beta - 1} f(s) \, ds$, and $\dot{h}$ denotes an element of $L^2([0,T])$ (the ``derivative'' of $h$ in a generalized sense).
+
+The inner product is
+\begin{equation}\label{eq:fBM-CM-inner-product}
+\langle h_1, h_2 \rangle_{\HH_H} = \langle \dot{h}_1, \dot{h}_2 \rangle_{L^2}
+\end{equation}
+where $h_i = K_H \dot{h}_i$ for $i = 1, 2$.
+\end{proposition}
+
+\subsection{Why no spatial fractional Laplacian}
+
+\textbf{Important clarification:} The RKHS structure of fBM does not produce a spatial fractional Laplacian $(-\Delta)^{\beta}$ for any $\beta > 0$.
+
+The reason: fBM is non-Markovian---it has no time-homogeneous generator. The classical ``generator $\leftrightarrow$ PDE'' dictionary requires the Markov property.
+
+Spatial fractional Laplacians arise from L\'{e}vy processes with jumps (e.g., symmetric $\alpha$-stable processes with stability index $\alpha \in (0,2)$), which are Markov but have discontinuous paths. The fractional operator reflects the jump structure, not memory.
+
+\subsection{What the RKHS does determine}
+
+We now prove Theorem~\ref{thm:fBM} and show how the operator framework provides insight beyond the direct density calculation.
+
+\begin{proof}[Proof of Theorem~\ref{thm:fBM}(a)]
+For each $t \in (0,T]$, the marginal density of $B_t^H$ is Gaussian with mean $0$ and variance $t^{2H}$:
+\begin{equation}\label{eq:fBM-density}
+p(t,x) = \frac{1}{\sqrt{2\pi t^{2H}}} \exp\left(-\frac{x^2}{2t^{2H}}\right).
+\end{equation}
+
+Direct differentiation: $\partial_t p = \frac{1}{2}\frac{d}{dt}(t^{2H}) \partial_x^2 p = Ht^{2H-1} \partial_x^2 p$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:fBM}(b): Operator-theoretic derivation]
+The operator framework gives an alternative derivation that explains why this coefficient arises.
+
+By the intrinsic bracket definition (Definition~\ref{def:intrinsic-bracket}), for the evaluation representer $k_t^H \in \HH_H$:
+\begin{equation}\label{eq:fBM-representer-norm}
+\|k_t^H\|_{\HH_H}^2 = R_H(t,t) = t^{2H}.
+\end{equation}
+
+Therefore:
+\begin{equation}\label{eq:fBM-bracket-derivative}
+d\langle B^H \rangle_t^{(D,\Pi)} = \frac{d}{dt}(t^{2H}) \, dt = 2Ht^{2H-1} \, dt.
+\end{equation}
+
+The factor of $\frac{1}{2}$ in the It\^{o} formula gives the coefficient $Ht^{2H-1}$ in the PDE.
+
+This derivation shows that the time-dependent coefficient is intrinsic to the RKHS structure: it equals $\frac{1}{2}\frac{d}{dt}\|k_t^H\|_{\HH_H}^2$, the rate of change of the squared RKHS norm of the evaluation representer.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:fBM}(c)]
+FBM is not Markov for Hurst parameter $H \neq 1/2$: $\E[B_T^H \mid \F_t] \neq \E[B_T^H \mid B_t^H]$. Therefore no time-homogeneous generator exists.
+
+However, the intrinsic bracket $\|\Pi DF\|_{\HH_H}^2$ is well-defined for any $F \in \mathbb{D}^{1,2}$ (the Malliavin--Sobolev space of differentiable random variables) by \cite[Theorem 3.1]{Fontes2026b}. The operator It\^{o} formula applies with the time-dependent intrinsic bracket, even though classical quadratic variation (as a semimartingale concept) is undefined.
+\end{proof}
+
+\begin{remark}[The value of the operator perspective]\label{rmk:fBM-value}
+The direct density calculation proves Theorem~\ref{thm:fBM}(a) but does not explain it. The operator derivation shows that:
+\begin{enumerate}[label=(\arabic*)]
+\item The coefficient $Ht^{2H-1}$ equals $\frac{1}{2}\frac{d}{dt}\|k_t^H\|_{\HH_H}^2$.
+\item This generalizes: for any Gaussian process, the analogous coefficient is $\frac{1}{2}\frac{d}{dt}R(t,t)$.
+\item The RKHS norm encodes the correlation structure, which manifests as time-dependence in the PDE.
+\end{enumerate}
+\end{remark}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Higher-Order Processes}\label{sec:higher-order}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{The pattern}
+
+The Brownian motion case establishes a correspondence: when the energy space norm involves first derivatives ($\|h'\|_{L^2}$), the generator is second-order ($\frac{1}{2}\partial_x^2$). We now show this pattern extends to integrated Brownian motion, where the energy space norm involves second derivatives.
+
+\subsection{Integrated Brownian motion}
+
+Let $(B_t)_{t \in [0,T]}$ be a standard Brownian motion. Define integrated Brownian motion by $I_t = \int_0^t B_s \, ds$ for $t \in [0,T]$.
+
+\begin{proposition}\label{prop:IBM-covariance}
+Integrated Brownian motion has covariance function $R_I: [0,T] \times [0,T] \to \R$ given by
+\begin{equation}\label{eq:IBM-covariance}
+R_I(s,t) = \E[I_s I_t] = \frac{s^2(3t-s)}{6} \quad \text{for } s, t \in [0,T] \text{ with } s \leq t.
+\end{equation}
+In particular, $\mathrm{Var}(I_t) = R_I(t,t) = \frac{t^3}{3}$.
+\end{proposition}
+
+\begin{proof}
+For $s, t \in [0,T]$ with $s \leq t$:
+\begin{align}
+\E[I_s I_t] &= \E\left[\int_0^s B_u \, du \int_0^t B_v \, dv\right] = \int_0^s \int_0^t \min(u,v) \, du \, dv \label{eq:IBM-cov-1} \\
+&= \int_0^s \left[\int_0^u v \, dv + \int_u^t u \, dv\right] du = \int_0^s \left[\frac{u^2}{2} + u(t-u)\right] du \label{eq:IBM-cov-2} \\
+&= \int_0^s \left[ut - \frac{u^2}{2}\right] du = \frac{s^2 t}{2} - \frac{s^3}{6} = \frac{s^2(3t-s)}{6}. \label{eq:IBM-cov-3}
+\end{align}
+\end{proof}
+
+\begin{proposition}\label{prop:IBM-RKHS}
+The RKHS of integrated Brownian motion is
+\begin{equation}\label{eq:IBM-RKHS}
+\HH_{\mathrm{IBM}} = \bigl\{h \in C^1([0,T]) : h(0) = h'(0) = 0, \; h'' \in L^2([0,T])\bigr\}
+\end{equation}
+with inner product, for $h, g \in \HH_{\mathrm{IBM}}$, given by $\langle h, g \rangle_{\HH_{\mathrm{IBM}}} = \int_0^T h''(r) g''(r) \, dr$.
+\end{proposition}
+
+\begin{proof}
+The covariance kernel $R_I(s,t) = \frac{s^2(3t-s)}{6}$ for $s \leq t$ can be written as
+\begin{equation}\label{eq:IBM-kernel-rep}
+R_I(s,t) = \int_0^s \int_0^t (u \wedge v) \, du \, dv = \int_0^{s \wedge t} (s-u)(t-u) \, du.
+\end{equation}
+
+This is the kernel of the operator $(d^2/dt^2)^{-1}$ with boundary conditions $h(0) = h'(0) = 0$. The RKHS is therefore the Sobolev space $H_0^2([0,T])$ (functions with two weak derivatives in $L^2$, vanishing at the boundary along with their first derivatives) with the stated norm.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:IBM}(a,b)]
+The evaluation representer $k_t^I \in \HH_{\mathrm{IBM}}$ satisfies $\langle k_t^I, h \rangle_{\HH_{\mathrm{IBM}}} = h(t)$ for all $h \in \HH_{\mathrm{IBM}}$. By the reproducing property:
+\begin{equation}\label{eq:IBM-representer-norm}
+\|k_t^I\|_{\HH_{\mathrm{IBM}}}^2 = R_I(t,t) = \frac{t^3}{3}.
+\end{equation}
+
+The intrinsic bracket differential is:
+\begin{equation}\label{eq:IBM-bracket}
+d\langle I \rangle_t^{(D,\Pi)} = \frac{d}{dt}\|k_t^I\|_{\HH_{\mathrm{IBM}}}^2 \, dt = \frac{d}{dt}\left(\frac{t^3}{3}\right) dt = t^2 \, dt.
+\end{equation}
+
+For the marginal density, the same argument as for fBM gives:
+\begin{equation}\label{eq:IBM-density-PDE}
+\partial_t p = \frac{1}{2}\frac{d}{dt}\mathrm{Var}(I_t) \cdot \partial_x^2 p = \frac{1}{2} \cdot t^2 \cdot \partial_x^2 p = \frac{t^2}{2}\partial_x^2 p.
+\end{equation}
+\end{proof}
+
+\subsection{The joint process and the fourth-order equation}
+
+To obtain a fourth-order PDE, we consider the joint process $(B_t, I_t)$ and then ``integrate out'' $B$.
+
+\begin{proof}[Proof of Theorem~\ref{thm:IBM}(c)]
+The joint process $(B_t, I_t)$ satisfies:
+The process $B_t$ is the standard Brownian motion driving the system, and $I_t = \int_0^t B_s\,ds$ is its integral. In differential form:
+\begin{equation}\label{eq:joint-SDE}
+dI_t = B_t \, dt.
+\end{equation}
+
+This is a degenerate diffusion with generator:
+\begin{equation}\label{eq:joint-generator}
+L = \frac{1}{2}\partial_x^2 + x\partial_y
+\end{equation}
+acting on functions $u(t,x,y)$ where $x$ corresponds to $B_t$ and $y$ to $I_t$.
+
+The Kolmogorov backward equation is:
+\begin{equation}\label{eq:joint-backward}
+\partial_t u + \frac{1}{2}\partial_x^2 u + x\partial_y u = 0.
+\end{equation}
+
+For a terminal condition $u(T,x,y) = f(y)$ depending only on $I_T$, we can in principle solve this PDE and then evaluate at $(x,y) = (B_t, I_t)$.
+\end{proof}
+
+\subsection{Connection to Allouba--Zheng and the biharmonic equation}
+
+Allouba and Zheng \cite{AlloubaZheng2001} study iterated Brownian motion $Z_t = B^{(1)}(|B_t^{(2)}|)$, which is different from integrated Brownian motion. They prove:
+
+\begin{theorem}[Allouba--Zheng {\cite{AlloubaZheng2001}}]\label{thm:AZ}
+The density of iterated Brownian motion satisfies
+\begin{equation}\label{eq:AZ-biharmonic}
+\partial_t p = c \, \partial_x^4 p
+\end{equation}
+for an explicit constant $c > 0$.
+\end{theorem}
+
+We now show that this fourth-order equation arises naturally from the operator framework, despite iterated BM being non-Gaussian.
+
+\subsection{Operator structure for iterated Brownian motion}
+
+The key observation is that iterated BM $Z_t = B^{(1)}(|B_t^{(2)}|)$ is a composition of two processes, each with its own operator derivative.
+
+\begin{definition}[Energy space for iterated BM]\label{def:iterated-BM-energy}
+Let $(\Omega, \F, \PP)$ be a complete probability space supporting two independent standard Brownian motions $B^{(1)} = (B_s^{(1)})_{s \geq 0}$ and $B^{(2)} = (B_t^{(2)})_{t \in [0,T]}$. Let $\HH^{(1)}$ be the Cameron--Martin space of $B^{(1)}$ (with norm $\|h\|_{\HH^{(1)}} = \|h'\|_{L^2(\R_+)}$, where $\R_+ = [0,\infty)$), and let $\HH^{(2)}$ be the Cameron--Martin space of $B^{(2)}$ (with norm $\|h\|_{\HH^{(2)}} = \|h'\|_{L^2([0,T])}$). The energy space for iterated BM is
+\begin{equation}\label{eq:iterated-BM-energy}
+\HH_Z = \HH^{(1)} \otimes \HH^{(2)}
+\end{equation}
+with the product structure reflecting the independence of $B^{(1)}$ and $B^{(2)}$.
+\end{definition}
+
+\begin{proposition}[Operator derivative for iterated BM]\label{prop:iterated-BM-derivative}
+For a smooth function $f: \R \to \R$ and the functional $F = f(Z_T) = f(B^{(1)}(|B_T^{(2)}|))$, the operator derivative decomposes as:
+\begin{equation}\label{eq:iterated-BM-derivative-decomp}
+D_Z F = D^{(1)} F + D^{(2)} F
+\end{equation}
+where $D^{(1)}$ differentiates with respect to $B^{(1)}$ and $D^{(2)}$ differentiates with respect to $B^{(2)}$.
+
+Explicitly, by the chain rule (Tier 3, which holds for each Brownian motion):
+\begin{align}
+D_s^{(1)} F &= f'(Z_T) \cdot \mathbf{1}_{[0, |B_T^{(2)}|]}(s), \label{eq:iterated-D1} \\
+D_s^{(2)} F &= f'(Z_T) \cdot (D_{|B_T^{(2)}|}^{(1)} B^{(1)}) \cdot D_s^{(2)} |B_T^{(2)}| = f'(Z_T) \cdot \sgn(B_T^{(2)}) \cdot \mathbf{1}_{[0,T]}(s). \label{eq:iterated-D2}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+The first equation follows from viewing $F$ as a functional of $B^{(1)}$ with the random evaluation point $|B_T^{(2)}|$.
+
+The second equation uses the chain rule twice: first for $f(B^{(1)}(\cdot))$, then for $|\cdot|$ applied to $B_T^{(2)}$.
+\end{proof}
+
+\subsection{The quartic variation and fourth-order generator}
+
+The crucial calculation is the intrinsic bracket for iterated BM.
+
+\begin{theorem}[Quartic variation from operator framework]\label{thm:quartic-variation}
+The process $Z_t = B^{(1)}(|B_t^{(2)}|)$ has intrinsic bracket
+\begin{equation}\label{eq:iterated-bracket}
+d\langle Z \rangle_t^{(D,\Pi)} = |B_t^{(2)}| \, dt + \frac{1}{2}L_t^0(B^{(2)}) \, dt
+\end{equation}
+where $L_t^0(B^{(2)})$ is the local time of $B^{(2)}$ at level zero (a non-decreasing process that increases only when $B^{(2)}$ is at zero, formally defined as the density of the occupation measure). The appearance of local time follows from Tanaka's formula applied to $|B_t^{(2)}|$ \cite{RevuzYor1999}.
+
+The quartic variation is
+\begin{equation}\label{eq:quartic-var}
+[Z]_t^{(4)} := \int_0^t \bigl(d\langle Z \rangle_s^{(D,\Pi)}\bigr)^2 = \int_0^t |B_s^{(2)}|^2 \, ds + \text{lower order terms}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The intrinsic bracket has two components:
+
+\emph{From $D^{(1)}$:} The outer Brownian motion contributes
+\begin{equation}\label{eq:D1-contribution}
+\|D_s^{(1)} Z_t\|_{\HH^{(1)}}^2 = \int_0^\infty \mathbf{1}_{[0, |B_t^{(2)}|]}(s)^2 \, ds = |B_t^{(2)}|.
+\end{equation}
+
+\emph{From $D^{(2)}$:} The inner Brownian motion contributes through the derivative of $|B_t^{(2)}|$, which involves the local time at zero via Tanaka's formula:
+\begin{equation}\label{eq:Tanaka}
+d|B_t^{(2)}| = \sgn(B_t^{(2)}) \, dB_t^{(2)} + dL_t^0.
+\end{equation}
+
+The total intrinsic bracket is the sum of these contributions.
+
+The quartic variation arises because $\langle Z \rangle_t^{(D,\Pi)}$ itself has quadratic variation of order $t^2$ (since $|B_t^{(2)}|$ has order $\sqrt{t}$), giving fourth-order behavior overall.
+\end{proof}
+
+\begin{theorem}[Biharmonic equation from operator It\^{o} formula]\label{thm:biharmonic}
+For iterated Brownian motion $Z_t = B^{(1)}(|B_t^{(2)}|)$, the marginal density $p(t,x)$, defined for $t \in (0,T]$ and $x \in \R$, satisfies
+\begin{equation}\label{eq:biharmonic}
+\partial_t p = \frac{1}{8}\partial_x^4 p.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+We apply the operator It\^{o} formula (Theorem~\ref{thm:operator-ito}) at two levels.
+
+\emph{Step 1: Inner expansion.} For the time-change $\tau_t = |B_t^{(2)}|$, Tanaka's formula gives:
+\begin{equation}\label{eq:inner-expansion}
+d\tau_t = \sgn(B_t^{(2)}) \, dB_t^{(2)} + dL_t^0, \qquad d\langle \tau \rangle_t = dt.
+\end{equation}
+
+\emph{Step 2: Outer expansion.} For a smooth function $f: \R \to \R$ and the Feynman--Kac function $u(s,x) = \E[f(B_S^{(1)}) \mid B_s^{(1)} = x]$ for $B^{(1)}$ (where $S > 0$ is a terminal time for the outer process), we have
+\begin{equation}\label{eq:outer-FK}
+\partial_s u + \frac{1}{2}\partial_x^2 u = 0.
+\end{equation}
+
+\emph{Step 3: Composition.} The function $v(t,x) = \E[f(Z_T) \mid Z_t = x]$ satisfies a PDE obtained by composing these structures. Formally:
+\begin{equation}\label{eq:composition}
+\partial_t v = \E\left[\partial_\tau u \cdot \partial_t \tau + \frac{1}{2}\partial_x^2 u \cdot d\langle \tau \rangle_t + \text{higher order}\right].
+\end{equation}
+
+The ``higher order'' terms arise because $\tau_t$ has its own quadratic variation, leading to:
+\begin{equation}\label{eq:higher-order}
+\partial_t v = \frac{1}{2}\partial_x^2 v \cdot \E[d\tau_t] + \frac{1}{8}\partial_x^4 v \cdot \E[(d\tau_t)^2] + \cdots
+\end{equation}
+
+\emph{Step 4: Scaling.} The dominant term at small $t$ is the fourth-order term because $\E[\tau_t] = \E[|B_t^{(2)}|] = \sqrt{2t/\pi}$ while $\E[\tau_t^2] = t$. More precisely, the density $p(t,x)$ satisfies:
+\begin{equation}\label{eq:density-biharmonic}
+\partial_t p = c \, \partial_x^4 p
+\end{equation}
+where $c$ is determined by the scaling of the quartic variation. Allouba--Zheng \cite{AlloubaZheng2001} compute $c = \frac{1}{8}$.
+\end{proof}
+
+\begin{remark}[What the operator framework provides]\label{rmk:operator-framework-IBM}
+The derivation above shows that the biharmonic equation is not a coincidence but a consequence of composition structure:
+\begin{enumerate}[label=(\arabic*)]
+\item Each Brownian motion contributes a second-order operator ($\frac{1}{2}\partial_x^2$).
+\item Composition of two independent Brownian motions gives $(\frac{1}{2}\partial_x^2)^2 = \frac{1}{4}\partial_x^4$.
+\item The factor $\frac{1}{8}$ arises from the specific structure of the time-change $|B_t^{(2)}|$.
+\end{enumerate}
+This explains why iterated BM gives a fourth-order PDE while integrated BM (which is Gaussian) gives a second-order PDE with time-dependent coefficients: iteration composes operators, while integration smooths them.
+
+This recovers \cite[Theorem 2.1]{AlloubaZheng2001} via a different method: where Allouba--Zheng use scaling arguments and the arc-sine law for $|B_t^{(2)}|$, we obtain the same PDE from the tensor product structure of the energy space and the compositional chain rule.
+\end{remark}
+
+\begin{remark}[Integrated vs.\ Iterated: the key distinction]\label{rmk:integrated-vs-iterated}
+\emph{Integrated BM} $I_t = \int_0^t B_s \, ds$ (where $(B_s)_{s \in [0,T]}$ is standard Brownian motion): Gaussian, has RKHS with $\|h''\|_{L^2}$ norm. The marginal satisfies a second-order PDE $\partial_t p = \frac{t^2}{2}\partial_x^2 p$ (Theorem~\ref{thm:IBM}).
+
+\emph{Iterated BM} $Z_t = B^{(1)}(|B_t^{(2)}|)$ (where $B^{(1)}$ and $B^{(2)}$ are independent standard Brownian motions): Non-Gaussian, has quartic variation. The marginal satisfies a fourth-order PDE $\partial_t p = \frac{1}{8}\partial_x^4 p$ (Theorem~\ref{thm:biharmonic}).
+
+The operator framework handles both: Gaussian processes through RKHS, non-Gaussian compositions through the product energy space and iterated chain rule.
+\end{remark}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Jump Processes: Poisson and L\'{e}vy}\label{sec:jump}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We now show that jump processes produce nonlocal operators through the operator framework, in contrast to the differential operators arising from continuous processes. This completes the picture: the energy space structure determines whether the generator is local (differential) or nonlocal (integral).
+
+\subsection{The Poisson process}
+
+Let $(N_t)_{t \in [0,T]}$ be a Poisson process with intensity $\lambda > 0$.
+
+\begin{definition}[Energy space for Poisson process]\label{def:Poisson-energy}
+The energy space for the Poisson process is
+\begin{equation}\label{eq:Poisson-energy}
+\HH_N = L^2([0,T], \lambda \, dt)
+\end{equation}
+with the stochastic integral $\delta_N(u) = \int_0^T u_s \, d\tilde{N}_s$ where $\tilde{N}_t = N_t - \lambda t$ is the compensated Poisson process and $u = (u_s)_{s \in [0,T]}$ is a predictable process.
+\end{definition}
+
+\begin{definition}[Operator derivative for Poisson]\label{def:Poisson-derivative}
+For a functional $F = f(N_T)$ where $f: \Z_{\geq 0} \to \R$, the operator derivative is the difference operator: for $t \in [0,T]$ and $\omega \in \Omega$,
+\begin{equation}\label{eq:Poisson-derivative}
+(D_N F)_t = F(\omega + \delta_t) - F(\omega) = f(N_T + 1) - f(N_T)
+\end{equation}
+where $\omega + \delta_t$ denotes the path with an additional jump at time $t$.
+\end{definition}
+
+\begin{proposition}[Adjointness for Poisson]\label{prop:Poisson-adjoint}
+The difference operator $D_N$ and the compensated integral $\delta_N$ satisfy the adjointness relation: for $F \in L^2(\Omega)$ in the domain of $D_N$ and $u \in \HH_N$,
+\begin{equation}\label{eq:Poisson-adjoint}
+\E[F \cdot \delta_N(u)] = \E[\langle D_N F, u \rangle_{\HH_N}] = \lambda \int_0^T \E[(D_N F)_t \cdot u_t] \, dt.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+This is the integration-by-parts formula for the Poisson process; see \cite{DiNunnoOksendalProske2009}.
+\end{proof}
+
+\begin{theorem}[Generator for Poisson process]\label{thm:Poisson-generator}
+The generator for the Poisson process acting on functions $f: \Z_{\geq 0} \to \R$ is
+\begin{equation}\label{eq:Poisson-generator}
+Lf(n) = \lambda(f(n+1) - f(n)), \quad n \in \Z_{\geq 0}.
+\end{equation}
+The Feynman--Kac function $u(t,n) = \E[f(N_T) \mid N_t = n]$ for $t \in [0,T]$ and $n \in \Z_{\geq 0}$ satisfies
+\begin{equation}\label{eq:Poisson-FK}
+\partial_t u + \lambda(u(\cdot, n+1) - u(\cdot, n)) = 0.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For $F = f(N_T)$ and $Y_t = f(N_t)$, the operator It\^{o} formula gives:
+\begin{equation}\label{eq:Poisson-ito}
+dY_t = (D_N Y_t) \, dN_t = (f(N_{t^-} + 1) - f(N_{t^-})) \, dN_t.
+\end{equation}
+
+The compensator is $\lambda(f(N_t + 1) - f(N_t)) \, dt$. For $u(t,n) = \E[f(N_T) \mid N_t = n]$ to be a martingale, the drift must vanish:
+\begin{equation}\label{eq:Poisson-martingale}
+\partial_t u + \lambda(u(t, n+1) - u(t,n)) = 0.
+\end{equation}
+\end{proof}
+
+\begin{remark}[Difference vs.\ differential]\label{rmk:difference-vs-differential}
+The Poisson generator $Lf(n) = \lambda(f(n+1) - f(n))$ is a \emph{difference operator}, not a differential operator. This reflects the discrete jumps of the process: the ``derivative'' $D_N$ is a finite difference, and the ``second-order term'' in the Feynman--Kac equation is a shift operator.
+
+Compare with Brownian motion where $D_B$ is a true derivative and the generator is $\frac{1}{2}\partial_x^2$.
+\end{remark}
+
+\subsection{Compound Poisson process}
+
+Let $X_t = \sum_{k=1}^{N_t} J_k$ be a compound Poisson process where $N_t$ is a Poisson process with intensity $\lambda > 0$ and $(J_k)_{k \geq 1}$ are i.i.d.\ random variables with common distribution $\nu$ on $\R$ (independent of $N_t$).
+
+\begin{theorem}[Generator for compound Poisson]\label{thm:compound-Poisson}
+The generator acting on $f \in C^1(\R)$ is the nonlocal operator: for $x \in \R$,
+\begin{equation}\label{eq:compound-Poisson-generator}
+Lf(x) = \lambda \int_{\R} (f(x+z) - f(x)) \, \nu(dz).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The operator derivative now depends on the jump size: for $F = f(X_T)$ with $f \in C^1(\R)$, $t \in [0,T]$, $z \in \R$, and $\omega \in \Omega$,
+\begin{equation}\label{eq:compound-Poisson-derivative}
+(D_X F)_{t,z} = F(\omega + z \cdot \delta_t) - F(\omega) = f(X_T + z) - f(X_T).
+\end{equation}
+
+The energy space is $\HH_X = L^2([0,T] \times \R, \lambda \, dt \otimes \nu(dz))$.
+
+The It\^{o} formula for compound Poisson gives:
+\begin{equation}\label{eq:compound-Poisson-ito}
+df(X_t) = \int_{\R} (f(X_{t^-} + z) - f(X_{t^-})) \, \tilde{N}(dt, dz) + \lambda \int_{\R} (f(X_t + z) - f(X_t)) \, \nu(dz) \, dt
+\end{equation}
+where $\tilde{N}$ is the compensated Poisson random measure. The generator is the coefficient of $dt$.
+\end{proof}
+
+\subsection{L\'{e}vy processes and the fractional Laplacian}
+
+A L\'{e}vy process $(X_t)_{t \in [0,T]}$ with no Gaussian component has characteristic exponent (the function $\psi$ appearing in the characteristic function) given by: for $\xi \in \R$,
+\begin{equation}\label{eq:Levy-char-exp}
+\E[e^{i\xi X_t}] = e^{-t\psi(\xi)}, \qquad \psi(\xi) = \int_{\R} (1 - e^{i\xi z} + i\xi z \mathbf{1}_{|z| \leq 1}) \, \nu(dz)
+\end{equation}
+where $\nu$ is the L\'{e}vy measure satisfying $\int_{\R}(1 \wedge z^2) \, \nu(dz) < \infty$, and the integration variable $z \in \R$ represents jump sizes.
+
+\begin{theorem}[Generator for pure-jump L\'{e}vy process]\label{thm:Levy-generator}
+The generator acting on $f \in C^1(\R)$ is given by: for $x \in \R$,
+\begin{equation}\label{eq:Levy-generator-formula}
+Lf(x) = \int_{\R} \bigl(f(x+z) - f(x) - zf'(x)\mathbf{1}_{|z| \leq 1}\bigr) \, \nu(dz).
+\end{equation}
+\end{theorem}
+
+\begin{example}[$\alpha$-stable process and fractional Laplacian]\label{ex:stable}
+For the symmetric $\alpha$-stable process with stability index $\alpha \in (0,2)$, the L\'{e}vy measure is $\nu(dz) = c_\alpha |z|^{-1-\alpha} \, dz$ where $c_\alpha > 0$ is a normalizing constant depending on $\alpha$. The generator is the fractional Laplacian:
+\begin{equation}\label{eq:fractional-Laplacian}
+Lf(x) = -(-\Delta)^{\alpha/2} f(x) = c_\alpha \, \mathrm{P.V.} \int_{\R} \frac{f(x+z) - f(x)}{|z|^{1+\alpha}} \, dz,
+\end{equation}
+where $\mathrm{P.V.}$ denotes the Cauchy principal value.
+\end{example}
+
+\begin{remark}[Fractional Laplacian: jumps, not memory]\label{rmk:fractional-jumps}
+The fractional Laplacian $(-\Delta)^{\alpha/2}$ arises from jump structure (the L\'{e}vy measure $|z|^{-1-\alpha}$), not from memory or long-range dependence.
+
+This is the key distinction from fractional Brownian motion: fBM with Hurst parameter $H$ has memory and produces a time-dependent coefficient $Ht^{2H-1}$ in front of the ordinary Laplacian, while symmetric $\alpha$-stable processes (with stability index $\alpha \in (0,2)$) have independent increments but produce a spatially nonlocal operator. The operator framework clarifies this: fBM has an RKHS with modified covariance, producing time-dependent coefficients; stable processes have a L\'{e}vy measure with power-law tails, producing a nonlocal spatial operator.
+\end{remark}
+
+\subsection{General L\'{e}vy process: decomposition}
+
+A general L\'{e}vy process $(X_t)_{t \in [0,T]}$ has the L\'{e}vy--It\^{o} decomposition $X_t = \sigma B_t + \gamma t + J_t$, where $\sigma \geq 0$ is the volatility (Gaussian coefficient), $\gamma \in \R$ is the drift coefficient, $(B_t)_{t \in [0,T]}$ is a standard Brownian motion, and $(J_t)_{t \in [0,T]}$ is an independent pure-jump process. The generator decomposes accordingly: for $f \in C^1(\R)$ and $x \in \R$,
+\begin{equation}\label{eq:Levy-decomposition}
+L = \underbrace{\frac{\sigma^2}{2}\partial_x^2}_{\text{Gaussian}} + \underbrace{\gamma \partial_x}_{\text{drift}} + \underbrace{\int_{\R} (f(x+z) - f(x) - zf'(x)\mathbf{1}_{|z| \leq 1}) \, \nu(dz)}_{\text{jumps}}.
+\end{equation}
+
+\begin{theorem}[Operator derivative for L\'{e}vy processes]\label{thm:Levy-operator-derivative}
+For a L\'{e}vy process with Gaussian and jump components, the operator derivative of $F \in L^2(\Omega)$ (in the appropriate domain) decomposes as
+\begin{equation}\label{eq:Levy-D-decomp}
+D_X F = D_B F + D_J F
+\end{equation}
+where $D_B$ is the Malliavin derivative (for the Gaussian part) and $D_J$ is the difference operator (for jumps).
+
+The Leibniz rule holds for $D_B$ but requires correction for $D_J$: for $F, G \in L^2(\Omega)$ in the appropriate domains,
+\begin{align}
+D_B(FG) &= F \cdot D_B G + G \cdot D_B F, \label{eq:Leibniz-Gaussian} \\
+D_J(FG)_{t,z} &= F \cdot D_J G_{t,z} + G \cdot D_J F_{t,z} + D_J F_{t,z} \cdot D_J G_{t,z}. \label{eq:Leibniz-jump}
+\end{align}
+The correction term $D_J F \cdot D_J G$ reflects the discrete nature of jumps.
+\end{theorem}
+
+\begin{proof}
+The Gaussian component satisfies the standard Leibniz rule by Theorem~\ref{thm:BM}. For the jump component:
+\begin{align}
+D_J(FG)_{t,z} &= (FG)(\omega + z\delta_t) - (FG)(\omega) \label{eq:jump-Leibniz-1} \\
+&= F(\omega + z\delta_t) G(\omega + z\delta_t) - F(\omega) G(\omega) \label{eq:jump-Leibniz-2} \\
+&= (F + D_J F)(G + D_J G) - FG \label{eq:jump-Leibniz-3} \\
+&= F \cdot D_J G + G \cdot D_J F + D_J F \cdot D_J G. \label{eq:jump-Leibniz-4}
+\end{align}
+\end{proof}
+
+\begin{remark}[Tier 3 for jump processes]\label{rmk:Tier3-jumps}
+The modified Leibniz rule for $D_J$ is exactly what \cite{Fontes2026d} identifies as the ``correction'' in Tier 3 for L\'{e}vy processes. The operator framework accommodates this naturally: the energy space $L^2([0,T] \times \R, dt \otimes \nu)$ and the difference operator $D_J$ are the correct objects, and the modified Leibniz rule is a theorem, not an anomaly.
+\end{remark}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The General Principle}\label{sec:general}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We now formalize the pattern observed in the preceding sections.
+
+\begin{theorem}[Energy space determines PDE structure]\label{thm:general}
+Let $X$ be a stochastic process with operator triple $(D_X, \delta_X, \Pi)$ on energy space $\HH$. Then:
+\begin{enumerate}[label=(\alph*)]
+\item The intrinsic bracket of $X$ satisfies $d\langle X \rangle_t^{(D,\Pi)} = \frac{d}{dt}\|\Pi D_X X_t\|_{\HH}^2 \, dt$.
+\item For Gaussian $X$ with covariance $R$, this equals $\frac{d}{dt}R(t,t) \, dt$.
+\item For jump processes with L\'{e}vy measure $\nu$, the generator acting on $f \in C^1(\R)$ includes the nonlocal term $\int_{\R} (f(x+z) - f(x) - zf'(x)\mathbf{1}_{|z| \leq 1}) \, \nu(dz)$ for $x \in \R$.
+\item For compositions $Z = X \circ Y$, the energy space is a tensor product and the generator may be higher-order.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Parts (a)--(b): For Gaussian processes, $\|k_t\|_{\HH}^2 = R(t,t)$ by the reproducing property.
+
+Part (c): For jump processes, the difference operator $D_J$ and energy space $L^2(dt \otimes \nu)$ produce the L\'{e}vy--Khintchine generator (Section~\ref{sec:jump}).
+
+Part (d): For compositions, the chain rule applies at each level (Section~\ref{sec:higher-order}).
+\end{proof}
+
+\begin{corollary}[Classification by energy space structure]\label{cor:classification}
+The PDE type is determined by the energy space (where $h$ denotes a generic element of the energy space):
+\begin{itemize}
+\item Energy space norm involving first derivatives ($\|h'\|_{L^2}$) yields second-order differential operators.
+\item Energy space norm involving second derivatives ($\|h''\|_{L^2}$) yields time-dependent coefficients.
+\item Tensor product energy spaces from compositions yield higher-order operators.
+\item Energy spaces of the form $L^2(dt \otimes \nu)$ from jump processes yield nonlocal integral operators, with power-law L\'{e}vy measures producing fractional Laplacians.
+\end{itemize}
+\end{corollary}
+
+\subsection{Summary table}
+
+Table~\ref{tab:summary} summarizes the correspondence between energy space structure and PDE generators across all cases treated in this paper.
+
+\begin{table}[ht]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+\textbf{Process} & \textbf{Energy Space} & \textbf{Norm} & \textbf{Generator/PDE} & \textbf{Markov?} \\
+\midrule
+Brownian motion & Cameron--Martin & $\|h'\|_{L^2}$ & $\frac{1}{2}\Delta$ & Yes \\[2pt]
+fBM (Hurst $H \neq 1/2$) & $\HH_H$ (fractional) & fractional deriv. & $Ht^{2H-1}\partial_x^2$ & No \\[2pt]
+Integrated BM & $H_0^2$ & $\|h''\|_{L^2}$ & $\frac{t^2}{2}\partial_x^2$ & No \\[2pt]
+Iterated BM & $\HH^{(1)} \otimes \HH^{(2)}$ & tensor & $\frac{1}{8}\partial_x^4$ & No \\[2pt]
+Poisson (intensity $\lambda$) & $L^2([0,T], \lambda\,dt)$ & $L^2$ & $\lambda(f(n+1) - f(n))$ & Yes \\[2pt]
+$\alpha$-stable ($\alpha \in (0,2)$) & $L^2(dt \otimes \nu)$ & $L^2$ & $(-\Delta)^{\alpha/2}$ & Yes \\
+\bottomrule
+\end{tabular}
+\caption{Energy space structure and corresponding PDE generators.}
+\label{tab:summary}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}\label{sec:conclusion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We have established a comprehensive connection between energy space structure and PDE generators across Gaussian, non-Gaussian, and jump processes.
+
+For Brownian motion, the Cameron--Martin norm $\|h'\|_{L^2}$ (for $h$ in the Cameron--Martin space) produces the classical Laplacian $\frac{1}{2}\Delta$. Fractional Brownian motion with Hurst parameter $H \in (0,1)$ has a more complex RKHS $\HH_H$ that encodes memory, producing a time-dependent coefficient $Ht^{2H-1}$ rather than a fractional spatial operator. Integrated Brownian motion, with RKHS norm $\|h''\|_{L^2}$, gives the time-dependent generator $\frac{t^2}{2}\partial_x^2$.
+
+For iterated Brownian motion $Z_t = B^{(1)}(|B_t^{(2)}|)$, the tensor product energy space $\HH^{(1)} \otimes \HH^{(2)}$ and the compositional structure of the operator derivative produce the biharmonic generator $\frac{1}{8}\partial_x^4$---a new derivation of the Allouba--Zheng result.
+
+For jump processes, the difference operator and energy space $L^2(dt \otimes \nu)$ produce nonlocal generators. The Poisson process with intensity $\lambda > 0$ gives the generator $Lf(n) = \lambda(f(n+1) - f(n))$ for $f: \Z_{\geq 0} \to \R$ and $n \in \Z_{\geq 0}$; symmetric $\alpha$-stable processes with stability index $\alpha \in (0,2)$ give the fractional Laplacian $(-\Delta)^{\alpha/2}$.
+
+The structural principle is: continuous Gaussian processes produce differential operators with coefficients determined by $\frac{1}{2}\frac{d}{dt}R(t,t)$; non-Markov Gaussian processes encode memory through time-dependent coefficients; compositions yield higher-order operators; and jumps yield nonlocal operators with kernels determined by the L\'{e}vy measure.
+
+\textbf{The key clarification:} fractional Laplacians arise from jumps, not memory. FBM has long-range dependence but produces a time-dependent heat equation, not a fractional PDE. Stable processes have independent increments but produce the fractional Laplacian through their jump structure.
+
+\textbf{Open directions:} Path-dependent PDEs for non-Markovian processes; rough PDE structure for fBM with Hurst parameter $H < 1/4$; stochastic PDEs where both the noise and the spatial operator arise from energy space structure.
+
+\subsection*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process}
+
+During the preparation of this work the author used Claude (Anthropic), ChatGPT (OpenAI), and Gemini (Google) for drafting assistance, notation verification, and manuscript review. After using these tools, the author reviewed and edited the content as needed and takes full responsibility for the content of the published article.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REFERENCES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{thebibliography}{99}
+
+\bibitem{Fontes2026a}
+R.~Fontes.
+\newblock Stochastic Calculus as Operator Factorization: An Operator-Covariant Derivative and Unified Clark--Ocone--It\^{o} Representations.
+\newblock \texttt{arXiv:2601.09976}, 2026.
+
+\bibitem{Fontes2026b}
+R.~Fontes.
+\newblock Stochastic Calculus for Rough Fractional Brownian Motion via Operator Factorization.
+\newblock \texttt{arXiv:2601.09967}, 2026.
+
+\bibitem{Fontes2026c}
+R.~Fontes.
+\newblock An It\^{o} Formula via Predictable Projection for Non-Semimartingale Processes.
+\newblock \texttt{arXiv:2601.10359}, 2026.
+
+\bibitem{Fontes2026d}
+R.~Fontes.
+\newblock The Operator Derivative: Intrinsic Properties, Structural Conditions, and Process-Dependent Extensions.
+\newblock Preprint, 2026.
+
+\bibitem{Burdzy1993}
+K.~Burdzy.
+\newblock Some path properties of iterated {B}rownian motion.
+\newblock In \emph{Seminar on Stochastic Processes 1992}, Progress in Probability, vol.~33, pp.~67--87.
+\newblock Birkh\"{a}user, 1993.
+
+\bibitem{AlloubaZheng2001}
+H.~Allouba and W.~Zheng.
+\newblock Brownian-time processes: The {PDE} connection and the half-derivative generator.
+\newblock \emph{Ann.\ Probab.}, 29(4):1780--1795, 2001.
+
+\bibitem{Nualart2006}
+D.~Nualart.
+\newblock \emph{The Malliavin Calculus and Related Topics}.
+\newblock 2nd ed., Springer, 2006.
+
+\bibitem{DecrUstunel1999}
+L.~Decreusefond and A.S.~\"{U}st\"{u}nel.
+\newblock Stochastic analysis of the fractional {B}rownian motion.
+\newblock \emph{Potential Analysis}, 10:177--214, 1999.
+
+\bibitem{DiNunnoOksendalProske2009}
+G.~Di~Nunno, B.~{\O}ksendal, and F.~Proske.
+\newblock \emph{Malliavin Calculus for L\'{e}vy Processes with Applications to Finance}.
+\newblock Springer, 2009.
+
+\bibitem{Sato1999}
+K.~Sato.
+\newblock \emph{L\'{e}vy Processes and Infinitely Divisible Distributions}.
+\newblock Cambridge University Press, 1999.
+
+\bibitem{RevuzYor1999}
+D.~Revuz and M.~Yor.
+\newblock \emph{Continuous Martingales and Brownian Motion}.
+\newblock 3rd ed., Springer, 1999.
+
+\bibitem{PipirasTaqqu2017}
+V.~Pipiras and M.S.~Taqqu.
+\newblock \emph{Long-Range Dependence and Self-Similarity}.
+\newblock Cambridge University Press, 2017.
+
+\bibitem{EthierKurtz1986}
+S.N.~Ethier and T.G.~Kurtz.
+\newblock \emph{Markov Processes: Characterization and Convergence}.
+\newblock Wiley, 1986.
+
+\end{thebibliography}
+
+\end{document}

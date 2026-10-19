@@ -1,0 +1,1008 @@
+\documentclass[11pt,reqno]{amsart}
+
+%==============================================================
+% A Diagonal Carre-du-Champ Seed for Sticky Brownian Flows
+% --------------------------------------------------------------
+% Tier alpha input-existence paper for the construction of
+%   Fontes, From Carre-du-Champ Hierarchies to Primitive
+%   Divergence  [GammaHierarchyDivergence]
+% Companion to:
+%   Fontes, Primitive Divergence and Carre-du-Champ Seeds over
+%   Nonclassical Noises  [PrimitiveDivergence]
+% and to the IBM trilogy
+%   [EnergyFirst], [FCDC], [BidegreeAtlas].
+%
+% Scope: extract the diagonal-supported carre-du-champ seed
+% Gamma^(2)_theta from the Le Jan--Raimond two-point sticky
+% generator under a stated convention, and verify the
+% (Sym),(Vanish),(MatPos),(WMatPos),(FormClos) axioms required
+% by GammaHierarchyDivergence. Tier beta (lifting to cylindrical
+% functionals of the full flow noise) is left for subsequent work.
+%==============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{mathrsfs}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+\emergencystretch=3em
+
+% --- theorem environments (compatible with companion papers)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{convention}[theorem]{Convention}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% --- macros
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\Dom}{\mathrm{Dom}}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\Dth}{D_{\theta}}
+\newcommand{\divth}{\delta_{\theta}}
+
+\title{A Diagonal Carr\'e-du-Champ Seed\\
+       for Sticky Brownian Flows}
+\author{Ramiro Fontes}
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+The companion construction~\cite{GammaHierarchyDivergence}
+showed that, given a matrix-positive, weighted-matrix-positive,
+form-closable carr\'e-du-champ seed
+$\Gamma^{(2)}\colon\cA\times\cA\to L^{1}(\Omega)$ on a unital
+test algebra $\cA\subset L^{\infty}(\Omega)\cap L^{2}(\Omega)$
+dense in $L^{2}$, one constructs a Hilbert module of one-forms
+$\cU_{\Gamma}$, a closed operator derivative
+$D_{\cN}=\overline{D_{0}}$, and a closed primitive divergence
+$\delta_{\cN}=D_{\cN}^{*}$ satisfying the integration-by-parts
+identity. That construction is universal in its inputs but
+conditional on existence of the seed.
+
+The present paper supplies a first concrete input. Working under
+the Le Jan--Raimond two-point generator/domain convention for the
+Brownian sticky flow, with sticky parameter $\theta\in[0,\infty]$,
+diagonal interaction coefficient $c_{\theta}\ge 0$, and diagonal
+reference measure $\mu_{\Delta}$ (all three tied to the cited
+convention; see \cref{conv:LJR} below), we extract from the
+two-point sticky generator $L^{(2)}_{\theta}$ a diagonal
+carr\'e-du-champ seed
+\[
+  \Gamma^{(2)}_{\theta}(f,g)
+  \;=\;\frac{c_{\theta}}{2}\,f'(x)g'(x)\,\mu_{\Delta}(dx)
+\]
+on a smooth test class $\cT^{(2)}$ on the diagonal
+$\Delta\subset\R^{2}$. We verify the five axioms required
+by~\cite{GammaHierarchyDivergence}: symmetry \textsc{(Sym)},
+constancy vanishing \textsc{(Vanish)}, matrix positivity
+\textsc{(MatPos)}, weighted matrix positivity \textsc{(WMatPos)},
+and form closability \textsc{(FormClos)}. The first four are
+immediate from the square-of-sum identity
+$\sum_{i,j}U_{i}U_{j}f_{i}'(x)f_{j}'(x)=\bigl(\sum_{i}U_{i}f_{i}'(x)\bigr)^{2}\ge 0$;
+the fifth is the standard form-closability of the
+$\mu_{\Delta}$-weighted Dirichlet form $\frac{c_{\theta}}{2}\int(f')^{2}\,d\mu_{\Delta}$
+under the stated convention.
+
+By the transfer theorem of~\cite{GammaHierarchyDivergence}, this
+seed yields a Hilbert one-form module $\cU_{\Gamma_{\theta}}$, a
+closed operator derivative $\Dth=\overline{D_{0}^{\theta}}$ on
+$L^{2}(\R,\mu_{\Delta})$, and a closed densely-defined primitive
+divergence $\divth=\Dth^{*}$ with the integration-by-parts
+identity
+$\E[F\,\divth(u)]=\langle\Dth F,u\rangle_{\cU_{\Gamma_{\theta}}}$.
+The pair $(\Dth,\divth)$ lives on the diagonal-supported space
+$L^{2}(\R,\mu_{\Delta})$, not yet on cylindrical functionals of
+the full flow noise of $\Phi_{\theta}$.
+
+This is a Tier $\alpha$ result. The lift to cylindrical
+functionals of the LJR flow noise --- which would produce the
+operator-derivative pair on $L^{2}(\cN_{\theta})$ rather than on
+$L^{2}(\R,\mu_{\Delta})$ --- is Tier $\beta$ and is left for
+subsequent work~(\cref{sec:tier-beta}). We do not claim a
+construction over Brownian web, percolation noise, or any other
+black noise.
+\end{abstract}
+
+\maketitle
+
+%==============================================================
+\section{Introduction}\label{sec:intro}
+%==============================================================
+
+\subsection{Where this paper sits}\label{sec:intro-where}
+
+The paper~\cite{PrimitiveDivergence} formulated the
+operator-derivative problem over a nonclassical noise and
+identified its primitive datum as a tuple
+$(\{\Gamma^{(N)}_{\cN}\}_{N\ge 2},\delta_{\cN},D_{\cN})$, with
+the bilinear two-point carr\'e-du-champ
+$\Gamma_{\cN}^{(2)}=\Gamma^{(2)}_{\cN,\{i,j\}}$ as the primary
+candidate seed and
+$\{\Gamma^{(N)}_{\cN}\}_{N\ge 3}$ as compatibility data. The
+companion paper~\cite{GammaHierarchyDivergence} closed the
+construction direction, end-to-end:
+\[
+  \Gamma^{(2)}_{\cN}
+  \;\longrightarrow\;
+  \cU_{\Gamma}
+  \;\longrightarrow\;
+  D_{\cN}=\overline{D_{0}}
+  \;\longrightarrow\;
+  \delta_{\cN}=D_{\cN}^{*}.
+\]
+Given a matrix-positive, weighted-matrix-positive, form-closable
+$\Gamma^{(2)}$-seed on a unital test algebra $\cA$ dense in
+$L^{2}$, that paper produces a closed operator derivative and a
+closed primitive divergence intrinsically; the construction is
+universal in the inputs but conditional on their existence.
+
+The conditional input is exactly what the present paper supplies,
+in the simplest concrete nonclassical regime in which a
+carr\'e-du-champ seed has plausible structure: the
+\emph{diagonal} of the two-point motion of the Le
+Jan--Raimond Brownian sticky flow~\cite{LeJanRaimond2004}.
+
+\subsection{What is and is not claimed}\label{sec:intro-claims}
+
+\textbf{Claimed.} Under the Le Jan--Raimond two-point
+generator/domain convention (\cref{conv:LJR}), the diagonal
+candidate
+\begin{equation}\label{eq:Gamma-theta-intro}
+  \Gamma^{(2)}_{\theta}(f,g)
+  \;=\;\tfrac{c_{\theta}}{2}\,f'(x)g'(x)\,\mu_{\Delta}(dx),
+  \qquad f,g\in\cT^{(2)},
+\end{equation}
+satisfies the five axioms required
+by~\cite{GammaHierarchyDivergence}:
+\textsc{(Sym)},
+\textsc{(Vanish)},
+\textsc{(MatPos)},
+\textsc{(WMatPos)}, and
+\textsc{(FormClos)} (\cref{thm:axioms}). By the transfer theorem
+of~\cite{GammaHierarchyDivergence}, this yields a closed pair
+$(\Dth,\divth)$ on $L^{2}(\R,\mu_{\Delta})$ with
+integration-by-parts (\cref{thm:transfer}).
+
+\textbf{Not claimed.}
+\begin{itemize}
+\item \emph{No flow-noise lift.} The pair $(\Dth,\divth)$ acts on
+the diagonal Hilbert space $L^{2}(\R,\mu_{\Delta})$, not on
+cylindrical functionals of the full flow noise $\cN_{\theta}$.
+The Tier $\beta$ lift to flow-noise functionals is the next
+input-existence problem and is out of scope (\cref{sec:tier-beta}).
+\item \emph{No coefficient extraction.} The diagonal coefficient
+$c_{\theta}$, the parametrization of $\theta$, the choice of
+diagonal reference measure $\mu_{\Delta}$, and the precise
+Wentzell-type boundary condition characterizing $L^{(2)}_{\theta}$
+are all imported from the LJR convention. This paper does not
+re-derive them, and it does not assert numerical values; we work
+with $c_{\theta}\ge 0$ as a parameter tied to \cref{conv:LJR}.
+The Tier $\alpha$ result is structural and survives any
+self-consistent choice within the LJR family.
+\item \emph{No black-noise universality.} This paper concerns the
+LJR sticky/coalescing setting only. It says nothing about
+Brownian web noise~\cite{SSS2017,Tsirelson2004}, two-dimensional
+critical percolation noise~\cite{SchrammSmirnov2011}, or any
+other black noise.
+\end{itemize}
+
+\subsection{Tier \texorpdfstring{$\alpha$}{alpha} versus Tier \texorpdfstring{$\beta$}{beta}}\label{sec:intro-tiers}
+
+The companion construction~\cite{GammaHierarchyDivergence}
+applies whenever a matrix-positive, weighted-matrix-positive,
+form-closable $\Gamma^{(2)}$ on a unital test algebra dense in
+$L^{2}(\Omega)$ is supplied. The probability space $\Omega$ and
+the test algebra $\cA$ are inputs; the Tier ($\alpha/\beta$)
+distinction reflects how rich an $\Omega$ one targets:
+\begin{itemize}
+\item[\textbf{$\alpha$.}] $\Omega=\R$, $\mu_{\Delta}$ as
+reference measure, $\cA=\cT^{(2)}$ a smooth test class on the
+diagonal of $\R^{2}$ identified with $\R$. The output is an
+operator-derivative pair $(\Dth,\divth)$ on
+$L^{2}(\R,\mu_{\Delta})$. This is the clean, fully provable
+case, and is the content of the present paper.
+\item[\textbf{$\beta$.}] $\Omega=$ the LJR flow noise
+$\cN_{\theta}$, $\cA=$ a cylindrical algebra of functionals of
+the flow $\Phi_{\theta}$. The output would be $(D,\delta)$ on
+$L^{2}(\cN_{\theta})$. This requires a separate lift step that
+we do not undertake here.
+\end{itemize}
+
+\subsection{Roadmap}\label{sec:intro-roadmap}
+
+\Cref{sec:LJR-convention} fixes the LJR two-point
+generator/domain convention as a parametrized statement
+(\cref{conv:LJR}) and lists exactly which LJR data this paper
+imports. \Cref{sec:product-defect} computes the two-point
+product defect $\mathfrak D^{(2)}_{\theta}$ off the diagonal
+(where it vanishes) and on the diagonal (where it is
+$c_{\theta}f'(x)g'(x)\,\mu_{\Delta}(dx)$); the diagonal
+candidate $\Gamma^{(2)}_{\theta}=\frac{1}{2}\mathfrak D^{(2)}_{\theta}$
+is then defined. \Cref{sec:axioms} verifies the five
+\textsc{GammaHierarchy} axioms. \Cref{sec:transfer} invokes the
+transfer theorem of~\cite{GammaHierarchyDivergence} to obtain
+the closed pair $(\Dth,\divth)$ and the integration-by-parts
+identity. \Cref{sec:tier-beta} sketches the Tier $\beta$
+problem and lists the open subproblems it presents.
+
+%==============================================================
+\section{LJR two-point sticky generator: convention}\label{sec:LJR-convention}
+%==============================================================
+
+\subsection{The one-point generator}\label{sec:LJR-onepoint}
+
+We work on $(\R,\mathrm{Borel}(\R))$ throughout. The one-point
+test class is
+\[
+  \cT^{(1)}\;:=\;C_{c}^{\infty}(\R),
+\]
+and the one-point generator is the standard half-Laplacian
+\begin{equation}\label{eq:L1}
+  L^{(1)}\;=\;\tfrac{1}{2}\partial_{x}^{2}\;\;\colon\;\;\cT^{(1)}\to C_{b}(\R).
+\end{equation}
+This is the marginal of the Brownian sticky flow $\Phi_{\theta}$
+in every standard LJR parametrization; the assertion is
+uncontroversial and is taken as given.
+
+\subsection{Off-diagonal two-point generator}\label{sec:LJR-offdiag}
+
+The two-point test class is a subspace
+$\cT^{(2)}\subset C_{c}^{\infty}(\R^{2})$ to be specified by the
+Wentzell condition below, and chosen so that the product
+observables $f\otimes g$ with $f,g\in\cT^{(1)}$ lie in
+$\cT^{(2)}$. Off the diagonal $\Delta:=\{(x,y)\in\R^{2}:x=y\}$,
+the LJR two-point sticky flow evolves as two independent
+Brownian motions:
+\begin{equation}\label{eq:L2-offdiag}
+  L^{(2)}_{\theta}\,F(x,y)\;=\;\tfrac{1}{2}\bigl(\partial_{x}^{2}+\partial_{y}^{2}\bigr)F(x,y),
+  \qquad (x,y)\in\R^{2}\setminus\Delta,\;F\in\cT^{(2)}.
+\end{equation}
+This is the off-diagonal-independence property of LJR sticky
+flows, valid in every parametrization of the family.
+
+\subsection{Diagonal Wentzell condition: the LJR convention}\label{sec:LJR-diag}
+
+The diagonal interaction is parametrized; we extract from LJR
+exactly four ingredients and adopt them as a convention.
+
+\begin{convention}[LJR two-point sticky generator/domain]\label{conv:LJR}
+We adopt the following input data, all inherited from
+\cite{LeJanRaimond2004}.
+\begin{itemize}
+\item[$(\mathrm a)$] \emph{Sticky parameter.}
+$\theta\in[0,\infty]$ is the LJR stickiness parameter, with one
+endpoint identifying the flow of independent Brownian motions
+and the other the coalescing Brownian flow of
+Arratia~\cite{LeJanRaimond2004}. We do not fix here which
+endpoint is which; the discussion below applies symmetrically
+once the LJR endpoint identification is fixed.
+\item[$(\mathrm b)$] \emph{Diagonal coefficient.} A coefficient
+$c_{\theta}\ge 0$, determined by the LJR Wentzell-type boundary
+condition characterizing $L^{(2)}_{\theta}$ on
+$\Dom(L^{(2)}_{\theta})\subset\cT^{(2)}$, controls the diagonal
+interaction. The two endpoints of the parametrization satisfy
+$c_{\theta_{\mathrm{indep}}}=0$ (independent flow) and
+$c_{\theta_{\mathrm{coal}}}=c_{\mathrm{coal}}>0$ (coalescing
+flow); intermediate $\theta$ give intermediate $c_{\theta}$.
+\item[$(\mathrm c)$] \emph{Diagonal reference measure.} A Radon
+measure $\mu_{\Delta}$ on $\Delta$, equivalently a Radon measure
+on $\R$ via the identification $\Delta\simeq\R$, in which the
+diagonal contribution to the two-point product defect is
+expressed. Standard choices in the LJR literature are
+Lebesgue measure on $\R$, the local-time-at-$0$ measure of the
+difference $Y_{t}-X_{t}$ pushed forward to the diagonal, or a
+multiple of one of these; the exact LJR choice and any rescaling
+is part of \cref{conv:LJR}, and the final $c_{\theta}$ tracks
+the choice.
+\item[$(\mathrm d)$] \emph{Wentzell-type boundary condition.}
+$L^{(2)}_{\theta}$ is the closed self-adjoint operator on
+$L^{2}(\R^{2},dx\,dy)$ with off-diagonal action~\eqref{eq:L2-offdiag}
+and a Wentzell-type boundary condition on $\Delta$ characterized
+by $\theta$. The condition is symmetric in $(x,y)$, and yields the
+closed symmetric Markov form on $L^{2}(\R^{2},dx\,dy)$ whose
+generator is $L^{(2)}_{\theta}$. We refer
+to~\cite{LeJanRaimond2004} for the exact statement.
+\end{itemize}
+\end{convention}
+
+\begin{remark}[What \cref{conv:LJR} delegates]\label{rem:conv-delegates}
+\Cref{conv:LJR} delegates the following to LJR: the explicit
+form of the Wentzell condition; the explicit value of
+$c_{\theta}$; the parametrization choice (which endpoint is
+which); the choice of $\mu_{\Delta}$; and the closability of the
+two-point Dirichlet form on $L^{2}(\R^{2},dx\,dy)$ under that
+convention. The Tier $\alpha$ verification of
+\cref{sec:axioms} is structural and depends only on
+$c_{\theta}\ge 0$ and on $\mu_{\Delta}$ being a Radon measure on
+$\R$, together with the form-closability of the diagonal energy
+$\frac{c_{\theta}}{2}\int(f')^{2}\,d\mu_{\Delta}$ on a smooth
+test class. None of these structural ingredients depends on the
+numerical value of $c_{\theta}$ or on the precise Wentzell
+condition.
+\end{remark}
+
+\subsection{Test class}\label{sec:LJR-testclass}
+
+We denote by
+\[
+  \cT_{\Delta}\;:=\;C_{c}^{\infty}(\R)
+\]
+the smooth test class on $\R$, identified with the diagonal
+$\Delta$ via $(x,x)\leftrightarrow x$. The diagonal carr\'e-du-champ
+seed $\Gamma^{(2)}_{\theta}$ of \cref{sec:product-defect} will
+be defined as a bilinear form
+$\Gamma^{(2)}_{\theta}\colon\cT_{\Delta}\times\cT_{\Delta}\to L^{1}(\R,\mu_{\Delta})$,
+and the test algebra fed into~\cite{GammaHierarchyDivergence} is
+\begin{equation}\label{eq:test-algebra}
+  \cA_{\theta}\;:=\;C_{c}^{\infty}(\R)\;\subset\;L^{\infty}(\R,\mu_{\Delta})\cap L^{2}(\R,\mu_{\Delta}),
+\end{equation}
+which is unital (after adjoining the constants in
+$L^{\infty}(\R,\mu_{\Delta})$, see \cref{rem:unital}) and dense
+in $L^{2}(\R,\mu_{\Delta})$ for any Radon $\mu_{\Delta}$ that is
+$\sigma$-finite and supported on $\R$.
+
+\begin{remark}[Unitality of $\cA_{\theta}$]\label{rem:unital}
+$C_{c}^{\infty}(\R)$ does not contain the constant function $1$
+when $\mu_{\Delta}(\R)=\infty$. We work with the unital
+extension $\cA_{\theta}^{u}:=\R\cdot 1+C_{c}^{\infty}(\R)$ when
+the unitality hypothesis of \cite[\S 2]{GammaHierarchyDivergence}
+is needed; the carr\'e-du-champ
+$\Gamma^{(2)}_{\theta}(c+f,c'+g)=\Gamma^{(2)}_{\theta}(f,g)$ by
+\textsc{(Vanish)} below, so the extension is consistent. To
+lighten notation we write $\cA_{\theta}$ for the unital extension
+when no confusion arises.
+\end{remark}
+
+%==============================================================
+\section{Product defect and diagonal carr\'e-du-champ seed}\label{sec:product-defect}
+%==============================================================
+
+\subsection{The two-point product defect}\label{sec:Dgamma}
+
+For $f,g\in\cT^{(1)}=C_{c}^{\infty}(\R)$, the two-point product
+defect of the LJR sticky flow is, in the notation of
+\cite[Def.~6.7]{PrimitiveDivergence},
+\begin{equation}\label{eq:Dgamma-def}
+  \mathfrak D^{(2)}_{\theta}(f,g)
+  \;:=\;
+  L^{(2)}_{\theta}(f\otimes g)\;-\;(L^{(1)}f)\otimes g\;-\;f\otimes(L^{(1)}g),
+\end{equation}
+read as a distribution on $\R^{2}$ obtained from the closed
+generator $L^{(2)}_{\theta}$ of \cref{conv:LJR}.
+
+\begin{lemma}[Off-diagonal vanishing]\label{lem:offdiag}
+For $f,g\in C_{c}^{\infty}(\R)$ and $(x,y)\in\R^{2}\setminus\Delta$,
+\begin{equation}\label{eq:offdiag-zero}
+  \mathfrak D^{(2)}_{\theta}(f,g)(x,y)\;=\;0.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+By the off-diagonal independence~\eqref{eq:L2-offdiag} of
+\cref{conv:LJR}$(\mathrm a)$,
+\[
+  L^{(2)}_{\theta}(f\otimes g)(x,y)
+  \;=\;\tfrac{1}{2}f''(x)g(y)+\tfrac{1}{2}f(x)g''(y),
+  \qquad x\neq y,
+\]
+which equals $(L^{(1)}f)(x)g(y)+f(x)(L^{(1)}g)(y)$ by
+\eqref{eq:L1}. Subtracting gives~\eqref{eq:offdiag-zero}.
+\end{proof}
+
+\subsection{Diagonal contribution}\label{sec:diag-contribution}
+
+The diagonal contribution to $\mathfrak D^{(2)}_{\theta}$ is the
+content of the Wentzell-type condition of
+\cref{conv:LJR}$(\mathrm d)$. Reading the LJR convention as a
+parametric statement, we record:
+
+\begin{proposition}[Diagonal contribution under \cref{conv:LJR}]\label{prop:diag-contribution}
+Under \cref{conv:LJR}, the two-point product defect
+$\mathfrak D^{(2)}_{\theta}(f,g)$ is a distribution on $\R^{2}$
+supported on the diagonal $\Delta$, with diagonal density
+\begin{equation}\label{eq:Dgamma-diag}
+  \mathfrak D^{(2)}_{\theta}(f,g)
+  \;=\;c_{\theta}\,f'(x)g'(x)\,\mu_{\Delta}(dx)
+  \quad\text{on }\Delta,
+\end{equation}
+where $c_{\theta}\ge 0$ is the diagonal interaction coefficient
+and $\mu_{\Delta}$ is the diagonal reference measure of
+\cref{conv:LJR}$(\mathrm b),(\mathrm c)$. Equivalently, for
+$f,g,\varphi\in C_{c}^{\infty}(\R^{2})$ with
+$\varphi$ a test function,
+\begin{equation}\label{eq:Dgamma-pairing}
+  \langle\mathfrak D^{(2)}_{\theta}(f,g),\varphi\rangle
+  \;=\;c_{\theta}\!\int_{\R}\!f'(x)g'(x)\,\varphi(x,x)\,\mu_{\Delta}(dx).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+\Cref{lem:offdiag} shows that $\mathfrak D^{(2)}_{\theta}(f,g)$,
+viewed as a distribution on $\R^{2}$, is supported on $\Delta$
+when read against test functions on $\R^{2}$. The remaining
+diagonal pairing~\eqref{eq:Dgamma-pairing} is the content of
+\cref{conv:LJR}: by the Wentzell-type characterization of
+$L^{(2)}_{\theta}$, the diagonal contribution is bilinear in
+$(f,g)$, vanishes when either $f$ or $g$ is constant
+(consistent with the marginals~\eqref{eq:L1}), and is
+quadratic-in-derivative on the diagonal because the off-diagonal
+generator is the half-Laplacian. The two-point sticky generator
+under \cref{conv:LJR} prescribes this pairing as
+\eqref{eq:Dgamma-pairing} with coefficient $c_{\theta}\ge 0$ and
+reference measure $\mu_{\Delta}$. The structural form is uniform
+across the LJR parametrization; the specific
+$(c_{\theta},\mu_{\Delta})$ pair is what
+\cref{conv:LJR}$(\mathrm b),(\mathrm c)$ delegate.
+\end{proof}
+
+\begin{remark}[Coalescing endpoint cross-check]\label{rem:coalescing-check}
+In the coalescing endpoint of the LJR family, the two-point
+generator on the diagonal is
+$L^{(2)}(f\otimes g)(x,x)=L^{(1)}(fg)(x)=\tfrac{1}{2}(fg)''(x)$,
+and a direct computation
+(\cite[Prop.~6.10]{PrimitiveDivergence})
+gives
+$\mathfrak D^{(2)}(f,g)(x,x)=f'(x)g'(x)$,
+i.e.\ \eqref{eq:Dgamma-diag} with
+$c_{\mathrm{coal}}=1$ and $\mu_{\Delta}=\delta_{\Delta}$ (the
+diagonal Dirac), this last being the standard cross-section
+identification with diagonal Lebesgue measure. The exact
+$c_{\mathrm{coal}}$ in the LJR sticky-family parametrization is
+inherited from \cref{conv:LJR}$(\mathrm a),(\mathrm c)$.
+\end{remark}
+
+\subsection{The diagonal carr\'e-du-champ seed}\label{sec:Gamma-seed}
+
+\begin{definition}[Diagonal carr\'e-du-champ seed]\label{def:Gamma-theta}
+The \emph{diagonal carr\'e-du-champ seed} associated with the
+LJR sticky flow $\Phi_{\theta}$ under \cref{conv:LJR} is
+\begin{equation}\label{eq:Gamma-theta}
+  \Gamma^{(2)}_{\theta}(f,g)
+  \;:=\;\tfrac{1}{2}\,\mathfrak D^{(2)}_{\theta}(f,g)
+  \;=\;\frac{c_{\theta}}{2}\,f'(x)g'(x)\,\mu_{\Delta}(dx)
+  \quad\text{on }\Delta,
+\end{equation}
+read as a measure-valued bilinear form on
+$\cT_{\Delta}\times\cT_{\Delta}$.
+\end{definition}
+
+The factor $\frac{1}{2}$ is the Bakry--\'Emery normalization
+\cite[Eq.~(5.7)]{PrimitiveDivergence} of the
+$\Gamma$-functional from the product defect, and matches the
+classical formula $\Gamma(F,G)=\frac{1}{2}(L(FG)-FLG-GLF)$ at
+the level of the one-point semigroup
+(\cite[Ch.~1]{BakryGentilLedoux}).
+
+\begin{remark}[Reading as $L^{1}(\R,\mu_{\Delta})$]\label{rem:Gamma-as-L1}
+For $f,g\in\cT_{\Delta}=C_{c}^{\infty}(\R)$, the right-hand side
+of~\eqref{eq:Gamma-theta} is the Radon measure
+$\frac{c_{\theta}}{2}f'g'\,d\mu_{\Delta}$ on $\R$. Since
+$f',g'\in L^{\infty}(\R)$ are compactly supported, the density
+$\frac{c_{\theta}}{2}f'(x)g'(x)$ is in
+$L^{\infty}(\R,\mu_{\Delta})\cap L^{1}(\R,\mu_{\Delta})$. We
+will accordingly read $\Gamma^{(2)}_{\theta}(f,g)$ as an element
+of $L^{1}(\R,\mu_{\Delta})$, with the implicit identification
+of the measure with its Radon--Nikod\'ym density against
+$\mu_{\Delta}$:
+\begin{equation}\label{eq:Gamma-L1}
+  \Gamma^{(2)}_{\theta}(f,g)\;=\;\tfrac{c_{\theta}}{2}\,f'(x)g'(x)
+  \quad\text{in }L^{1}(\R,\mu_{\Delta}).
+\end{equation}
+This is the form in which $\Gamma^{(2)}_{\theta}$ is fed into
+the construction of \cite{GammaHierarchyDivergence}, where the
+ambient probability space is $(\R,\mu_{\Delta}/\mu_{\Delta}(\R))$
+when $\mu_{\Delta}$ is finite, and $(\R,\mu_{\Delta})$ as a
+$\sigma$-finite measure space otherwise (the construction of
+\cite{GammaHierarchyDivergence} extends to $\sigma$-finite
+measure spaces with no change in the proofs, since matrix and
+weighted-matrix positivity are pointwise-on-$\R$ statements).
+\end{remark}
+
+%==============================================================
+\section{Verification of the GammaHierarchy axioms}\label{sec:axioms}
+%==============================================================
+
+This section verifies the five axioms of
+\cite[Ass.~2.4]{GammaHierarchyDivergence} (under the renaming
+\textsc{Sym, Vanish, MatPos, WMatPos, FormClos} of the
+matrix-positivity-and-form-closability axiom set) for the
+diagonal seed $\Gamma^{(2)}_{\theta}$ of
+\cref{def:Gamma-theta}, on the test algebra $\cA_{\theta}$
+of~\eqref{eq:test-algebra}.
+
+\subsection{Symmetry and constancy vanishing}\label{sec:axioms-symvan}
+
+\begin{lemma}[\normalfont\textsc{(Sym)} and \normalfont\textsc{(Vanish)}]\label{lem:symvan}
+For $f,g\in\cA_{\theta}$ and $c\in\R$:
+\begin{align}
+  \Gamma^{(2)}_{\theta}(f,g) &\;=\;\Gamma^{(2)}_{\theta}(g,f)
+  \quad\text{in }L^{1}(\R,\mu_{\Delta}),\label{eq:axsym}\\
+  \Gamma^{(2)}_{\theta}(c,g) &\;=\;0
+  \quad\text{in }L^{1}(\R,\mu_{\Delta}).\label{eq:axvan}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+By~\eqref{eq:Gamma-L1},
+$\Gamma^{(2)}_{\theta}(f,g)=\frac{c_{\theta}}{2}f'(x)g'(x)
+=\frac{c_{\theta}}{2}g'(x)f'(x)=\Gamma^{(2)}_{\theta}(g,f)$,
+which is~\eqref{eq:axsym}. For~\eqref{eq:axvan}: $c'=0$ for any
+constant $c\in\R$, so
+$\Gamma^{(2)}_{\theta}(c,g)=\frac{c_{\theta}}{2}\cdot 0\cdot g'(x)=0$
+in $L^{1}(\R,\mu_{\Delta})$.
+\end{proof}
+
+\subsection{Matrix positivity}\label{sec:axioms-matpos}
+
+\begin{lemma}[\normalfont\textsc{(MatPos)}]\label{lem:matpos}
+For every finite collection $f_{1},\ldots,f_{n}\in\cA_{\theta}$
+and $U_{1},\ldots,U_{n}\in\cA_{\theta}$,
+\begin{equation}\label{eq:axmatpos}
+  \sum_{i,j=1}^{n}\!\int_{\R}U_{i}(x)U_{j}(x)\,\Gamma^{(2)}_{\theta}(f_{i},f_{j})(x)\,\mu_{\Delta}(dx)\;\ge\;0.
+\end{equation}
+Equivalently, in the notation of
+\cite[Eq.~(2.3)]{GammaHierarchyDivergence},
+$\sum_{i,j}\E[U_{i}U_{j}\,\Gamma(f_{i},f_{j})]\ge 0$ on
+$(\R,\mu_{\Delta})$.
+\end{lemma}
+
+\begin{proof}
+By~\eqref{eq:Gamma-L1},
+\[
+  \sum_{i,j}U_{i}(x)U_{j}(x)\,\Gamma^{(2)}_{\theta}(f_{i},f_{j})(x)
+  \;=\;\frac{c_{\theta}}{2}\sum_{i,j}U_{i}(x)U_{j}(x)\,f_{i}'(x)f_{j}'(x).
+\]
+The double sum factors as a square of a sum:
+\begin{equation}\label{eq:square-of-sum}
+  \sum_{i,j}U_{i}(x)U_{j}(x)\,f_{i}'(x)f_{j}'(x)
+  \;=\;\Bigl(\sum_{i}U_{i}(x)\,f_{i}'(x)\Bigr)^{2}
+  \;\ge\;0
+\end{equation}
+pointwise in $x\in\R$. Therefore
+$\frac{c_{\theta}}{2}(\sum_{i}U_{i}f_{i}')^{2}\ge 0$ pointwise
+on $\R$ (using $c_{\theta}\ge 0$ from \cref{conv:LJR}$(\mathrm b)$),
+and integrating against the nonnegative Radon measure
+$\mu_{\Delta}$ preserves the inequality.
+\end{proof}
+
+\begin{remark}[Pointwise PSD-kernel structure]\label{rem:pointwise-PSD}
+\Cref{lem:matpos} is the textbook diffusion-carr\'e-du-champ
+case described as automatic in
+\cite[Rem.~2.6]{GammaHierarchyDivergence}: the kernel
+$\Gamma^{(2)}_{\theta}(f,g)(x)=\frac{c_{\theta}}{2}f'(x)g'(x)$ is
+pointwise positive-semidefinite on $\R$ (the
+$f\otimes g\mapsto f'g'$ map factors through the gradient
+$\nabla\colon\cA_{\theta}\to L^{2}(\R,\mu_{\Delta})$ given by
+$\nabla f=f'$). This pointwise PSD-kernel structure
+\emph{automatically} gives both \textsc{(MatPos)} and
+\textsc{(WMatPos)}; see \cref{lem:wmatpos} below.
+\end{remark}
+
+\subsection{Weighted matrix positivity}\label{sec:axioms-wmatpos}
+
+\begin{lemma}[\normalfont\textsc{(WMatPos)}]\label{lem:wmatpos}
+For every finite collection $f_{1},\ldots,f_{n}\in\cA_{\theta}$,
+every $U_{1},\ldots,U_{n}\in\cA_{\theta}$, and every nonnegative
+multiplier $Q\in\cA_{\theta,+}$ (the cone of nonnegative elements
+of $\cA_{\theta}$),
+\begin{equation}\label{eq:axwmatpos}
+  \sum_{i,j=1}^{n}\!\int_{\R}Q(x)\,U_{i}(x)U_{j}(x)\,\Gamma^{(2)}_{\theta}(f_{i},f_{j})(x)\,\mu_{\Delta}(dx)\;\ge\;0.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+By~\eqref{eq:Gamma-L1} and the square-of-sum
+identity~\eqref{eq:square-of-sum},
+\[
+  Q(x)\,\sum_{i,j}U_{i}(x)U_{j}(x)\,\Gamma^{(2)}_{\theta}(f_{i},f_{j})(x)
+  \;=\;\frac{c_{\theta}}{2}\,Q(x)\,\Bigl(\sum_{i}U_{i}(x)\,f_{i}'(x)\Bigr)^{2}.
+\]
+Since $Q(x)\ge 0$, $c_{\theta}\ge 0$, and the parenthesized
+expression is squared, the integrand is pointwise nonnegative on
+$\R$. Integrating against the nonnegative Radon measure
+$\mu_{\Delta}$ preserves the inequality.
+\end{proof}
+
+\subsection{Form closability}\label{sec:axioms-formclos}
+
+The remaining axiom is form-closability of the energy form
+\begin{equation}\label{eq:cE-theta}
+  \cE_{\theta}(f,g)\;:=\;\int_{\R}\Gamma^{(2)}_{\theta}(f,g)(x)\,\mu_{\Delta}(dx)
+  \;=\;\frac{c_{\theta}}{2}\!\int_{\R}f'(x)g'(x)\,\mu_{\Delta}(dx),
+  \qquad f,g\in\cA_{\theta},
+\end{equation}
+in the sense of \cite[\textsc{(FormClos)} of
+Ass.~2.4]{GammaHierarchyDivergence}: if $(f_{n})\subset\cA_{\theta}$
+satisfies $f_{n}\to 0$ in $L^{2}(\R,\mu_{\Delta})$ and
+$\cE_{\theta}(f_{n}-f_{m},f_{n}-f_{m})\to 0$ as $n,m\to\infty$,
+then $\cE_{\theta}(f_{n},f_{n})\to 0$.
+
+\begin{lemma}[\normalfont\textsc{(FormClos)}]\label{lem:formclos}
+Suppose, in addition to \cref{conv:LJR}, that the diagonal
+reference measure $\mu_{\Delta}$ is a Radon measure on $\R$
+under which the gradient
+$\nabla\colon C_{c}^{\infty}(\R)\to L^{2}(\R,\mu_{\Delta})$,
+$\nabla f=f'$, is closable in the unbounded-operator sense from
+$L^{2}(\R,\mu_{\Delta})$ to $L^{2}(\R,\mu_{\Delta})$. Then the
+energy form $\cE_{\theta}$ of~\eqref{eq:cE-theta} is
+form-closable on $L^{2}(\R,\mu_{\Delta})$.
+\end{lemma}
+
+\begin{proof}
+Suppose $(f_{n})\subset C_{c}^{\infty}(\R)$ satisfies
+$f_{n}\to 0$ in $L^{2}(\R,\mu_{\Delta})$ and
+$\cE_{\theta}(f_{n}-f_{m},f_{n}-f_{m})\to 0$. By
+\eqref{eq:cE-theta},
+\[
+  \cE_{\theta}(f_{n}-f_{m},f_{n}-f_{m})
+  \;=\;\frac{c_{\theta}}{2}\!\int_{\R}(f_{n}'-f_{m}')^{2}\,d\mu_{\Delta}
+  \;=\;\frac{c_{\theta}}{2}\,\|f_{n}'-f_{m}'\|_{L^{2}(\mu_{\Delta})}^{2}.
+\]
+If $c_{\theta}=0$ there is nothing to prove ($\cE_{\theta}\equiv 0$).
+If $c_{\theta}>0$, the hypothesis says
+$\|f_{n}'-f_{m}'\|_{L^{2}(\mu_{\Delta})}\to 0$, so $(f_{n}')$ is
+Cauchy in $L^{2}(\R,\mu_{\Delta})$ and converges to some
+$g\in L^{2}(\R,\mu_{\Delta})$. The closability of the gradient
+$\nabla$ from $L^{2}(\R,\mu_{\Delta})$ to itself, applied to the
+sequence $(f_{n})$ with $f_{n}\to 0$ in $L^{2}(\R,\mu_{\Delta})$
+and $\nabla f_{n}=f_{n}'\to g$ in $L^{2}(\R,\mu_{\Delta})$,
+forces $g=0$. Hence
+$\cE_{\theta}(f_{n},f_{n})=\frac{c_{\theta}}{2}\|f_{n}'\|_{L^{2}(\mu_{\Delta})}^{2}\to\frac{c_{\theta}}{2}\|g\|_{L^{2}(\mu_{\Delta})}^{2}=0$.
+\end{proof}
+
+\begin{remark}[When the gradient closability hypothesis holds]\label{rem:gradient-closability}
+The closability hypothesis of \cref{lem:formclos} on the
+gradient $\nabla\colon C_{c}^{\infty}(\R)\to L^{2}(\R,\mu_{\Delta})$
+is the standard hypothesis on the diagonal measure
+$\mu_{\Delta}$ from the theory of weighted Dirichlet forms
+(\cite[Ch.~1]{FukushimaOshimaTakeda}). It holds in the standard
+LJR cases: when $\mu_{\Delta}$ is Lebesgue measure on $\R$, the
+gradient is the standard Sobolev gradient and is closable on
+$L^{2}(\R,dx)$ with closure equal to $W^{1,2}(\R)\to L^{2}(\R,dx)$
+(\cite[Ch.~1, \S 1.4]{FukushimaOshimaTakeda},
+\cite[Ch.~1]{BakryGentilLedoux}); when $\mu_{\Delta}$ is a
+local-time-type measure, the gradient closability follows from
+the symmetric-Markov-generator framework of LJR
+(\cite{LeJanRaimond2004}) together with the standard
+correspondence between symmetric Markov semigroups and closable
+Dirichlet forms. In each case, closability is part of the
+LJR convention package; we mark it explicitly in
+\cref{lem:formclos} because it is the only axiom that is not
+purely algebraic and pointwise.
+\end{remark}
+
+\subsection{Main verification theorem}\label{sec:axioms-main}
+
+\begin{theorem}[The diagonal seed satisfies the GammaHierarchy axioms]\label{thm:axioms}
+Under \cref{conv:LJR} together with the gradient-closability
+hypothesis of \cref{lem:formclos}, the diagonal seed
+$\Gamma^{(2)}_{\theta}\colon\cA_{\theta}\times\cA_{\theta}\to L^{1}(\R,\mu_{\Delta})$
+of \cref{def:Gamma-theta} satisfies the five axioms required by
+\cite[Ass.~2.4]{GammaHierarchyDivergence}:
+{\normalfont\textsc{(Sym)}} (\cref{lem:symvan}), {\normalfont\textsc{(Vanish)}}
+(\cref{lem:symvan}), {\normalfont\textsc{(MatPos)}} (\cref{lem:matpos}),
+{\normalfont\textsc{(WMatPos)}} (\cref{lem:wmatpos}), and {\normalfont\textsc{(FormClos)}}
+(\cref{lem:formclos}).
+\end{theorem}
+
+\begin{proof}
+Each axiom is the corresponding lemma of this section.
+\end{proof}
+
+%==============================================================
+\section{Construction by transfer}\label{sec:transfer}
+%==============================================================
+
+\Cref{thm:axioms} verifies the input hypotheses required by
+\cite[Thm.~A and Thm.~B]{GammaHierarchyDivergence} on the test
+algebra $\cA_{\theta}$ over the measure space
+$(\R,\mu_{\Delta})$. The transfer is immediate.
+
+\begin{theorem}[Transfer to the GammaHierarchy construction]\label{thm:transfer}
+Under \cref{conv:LJR} and the gradient-closability hypothesis of
+\cref{lem:formclos}, applying
+\cite[Thm.~A and Thm.~B]{GammaHierarchyDivergence} to the
+diagonal seed $\Gamma^{(2)}_{\theta}$ of \cref{def:Gamma-theta}
+on the test algebra $\cA_{\theta}\subset L^{\infty}(\R,\mu_{\Delta})\cap L^{2}(\R,\mu_{\Delta})$
+yields:
+\begin{enumerate}
+\item[$(\mathrm i)$] a Hilbert one-form module
+$\cU_{\Gamma_{\theta}}=\overline{\cA_{\theta}\otimes\cA_{\theta}/\mathcal N_{0}}$,
+with semi-inner product
+\[
+  \langle [F\otimes U],[G\otimes V]\rangle_{\cU_{\Gamma_{\theta}}}
+  \;=\;\frac{c_{\theta}}{2}\!\int_{\R}\!U(x)V(x)\,F'(x)G'(x)\,\mu_{\Delta}(dx),
+\]
+together with the bounded $\cA_{\theta}$-bimodule action
+$W\cdot[F\otimes U]:=[F\otimes(WU)]$ for $W\in\cA_{\theta}$,
+satisfying $\|W\cdot u\|\le\|W\|_{\infty}\|u\|$;
+\item[$(\mathrm{ii})$] a closable seed
+$D_{0}^{\theta}\colon\cA_{\theta}\to\cU_{\Gamma_{\theta}}$,
+$D_{0}^{\theta}F:=[F\otimes 1]$, with isometry
+$\langle D_{0}^{\theta}F,D_{0}^{\theta}G\rangle_{\cU_{\Gamma_{\theta}}}
+=\frac{c_{\theta}}{2}\int_{\R}F'G'\,d\mu_{\Delta}=\cE_{\theta}(F,G)$;
+\item[$(\mathrm{iii})$] a closed densely-defined operator
+derivative
+\[
+  \Dth\;:=\;\overline{D_{0}^{\theta}}\;\;\colon\;\;\Dom(\Dth)\subset L^{2}(\R,\mu_{\Delta})\to\cU_{\Gamma_{\theta}};
+\]
+\item[$(\mathrm{iv})$] a closed densely-defined primitive
+divergence
+\[
+  \divth\;:=\;\Dth^{*}\;\;\colon\;\;\Dom(\divth)\subset\cU_{\Gamma_{\theta}}\to L^{2}(\R,\mu_{\Delta}),
+\]
+with the explicit adjoint domain
+\[
+  \Dom(\divth)
+  =
+  \left\{
+  u\in\cU_{\Gamma_{\theta}}:
+  F\mapsto\langle\Dth F,u\rangle_{\cU_{\Gamma_{\theta}}}
+  \text{ is }L^{2}(\mu_{\Delta})\text{-continuous on }\Dom(\Dth)
+  \right\}.
+\]
+\item[$(\mathrm v)$] the integration-by-parts identity
+\begin{equation}\label{eq:IBP-theta}
+  \int_{\R}F\,\divth(u)\,d\mu_{\Delta}
+  \;=\;\langle\Dth F,u\rangle_{\cU_{\Gamma_{\theta}}},
+  \qquad F\in\Dom(\Dth),\;u\in\Dom(\divth).
+\end{equation}
+\end{enumerate}
+The pair $(\Dth,\divth)$ is the operator-derivative pair on
+$L^{2}(\R,\mu_{\Delta})$ associated with the diagonal LJR
+sticky-flow seed.
+\end{theorem}
+
+\begin{proof}
+\Cref{thm:axioms} verifies \cref{conv:LJR}'s data fits the
+hypotheses of \cite[Ass.~2.4]{GammaHierarchyDivergence}.
+\Cref{thm:transfer}$(\mathrm i),(\mathrm{ii})$ are then
+\cite[Thm.~A]{GammaHierarchyDivergence} read on $\cA_{\theta}$;
+$(\mathrm{iii}),(\mathrm{iv}),(\mathrm v)$ are
+\cite[Thm.~B]{GammaHierarchyDivergence}.
+\end{proof}
+
+\begin{remark}[Trivial endpoint at $c_{\theta}=0$]\label{rem:trivial-endpoint}
+At the LJR independent-flow endpoint, $c_{\theta}=0$ by
+\cref{conv:LJR}$(\mathrm b)$. Then
+$\Gamma^{(2)}_{\theta}\equiv 0$, $\cE_{\theta}\equiv 0$,
+$\cU_{\Gamma_{\theta}}=\{0\}$, and $\Dth\equiv 0$,
+$\divth\equiv 0$. This is consistent with the
+trivial-product-defect statement at the independent endpoint
+(\cite[Prop.~6.5]{PrimitiveDivergence}): no operator derivative
+content is generated by the diagonal because the diagonal
+interaction is empty.
+\end{remark}
+
+\begin{remark}[Coalescing endpoint]\label{rem:coalescing-endpoint}
+At the LJR coalescing endpoint, $c_{\theta}=c_{\mathrm{coal}}>0$.
+The construction yields a nontrivial pair
+$(\Dth,\divth)$ on $L^{2}(\R,\mu_{\Delta})$, with energy form
+$\cE_{\theta}(f,f)=\frac{c_{\mathrm{coal}}}{2}\int(f')^{2}\,d\mu_{\Delta}$.
+With the standard choice $\mu_{\Delta}=dx$ (Lebesgue), this is
+$\cE_{\theta}(f,f)=\frac{c_{\mathrm{coal}}}{2}\|f'\|_{L^{2}(\R)}^{2}$,
+i.e.\ a multiple of the standard Dirichlet form on $\R$, and
+$\Dth$ is a multiple of the standard Sobolev gradient
+$W^{1,2}(\R)\to L^{2}(\R)$, with $\divth$ the corresponding
+distributional divergence.
+\end{remark}
+
+\begin{remark}[Generator $L_{\theta}=-\divth\Dth$]\label{rem:Ltheta}
+Following \cite[Rem.~4.10]{GammaHierarchyDivergence}, the
+composition
+$L_{\theta}:=-\divth\Dth=-\Dth^{*}\Dth$ on
+$\Dom(L_{\theta}):=\{F\in\Dom(\Dth):\Dth F\in\Dom(\divth)\}$
+is self-adjoint and nonpositive on $L^{2}(\R,\mu_{\Delta})$, by
+the standard $T^{*}T$ theorem
+(\cite[Thm.~13.13]{Rudin-FA}). With the standard Lebesgue
+choice $\mu_{\Delta}=dx$, $L_{\theta}=\frac{c_{\theta}}{2}\partial_{x}^{2}$
+on the natural Sobolev domain $W^{2,2}(\R)$, and the associated
+symmetric strongly-continuous contraction semigroup is
+$\frac{c_{\theta}}{2}$-rescaled heat. With other choices of
+$\mu_{\Delta}$ inherited from \cref{conv:LJR}, $L_{\theta}$ is
+the corresponding weighted Laplacian on $L^{2}(\R,\mu_{\Delta})$.
+\end{remark}
+
+%==============================================================
+\section{Tier \texorpdfstring{$\beta$}{beta} outlook}\label{sec:tier-beta}
+%==============================================================
+
+\subsection{What Tier \texorpdfstring{$\alpha$}{alpha} did}\label{sec:beta-recap}
+
+\Cref{thm:transfer} produces the operator-derivative pair
+$(\Dth,\divth)$ on the diagonal Hilbert space
+$L^{2}(\R,\mu_{\Delta})$. The probability space underlying the
+GammaHierarchy construction is $(\R,\mu_{\Delta})$ (after
+normalization, when $\mu_{\Delta}$ is finite); the test algebra
+is $\cA_{\theta}=C_{c}^{\infty}(\R)$. This is the
+\emph{diagonal} of the two-point motion of the LJR sticky flow,
+not the flow itself.
+
+\subsection{What Tier \texorpdfstring{$\beta$}{beta} would do}\label{sec:beta-target}
+
+A complete operator-derivative theory of the LJR sticky flow
+would produce a closed pair $(D,\delta)$ on $L^{2}(\cN_{\theta})$,
+where $\cN_{\theta}$ is the noise of the flow $\Phi_{\theta}$
+in the Tsirelson--Vershik sense
+(\cite{Tsirelson2004,LeJanRaimond2004},
+\cite[Def.~2.4]{PrimitiveDivergence}). The natural test algebra
+$\cA_{\cN_{\theta}}$ is a cylindrical algebra of bounded
+functionals of the flow; standard choices include polynomial
+combinations of evaluation functionals
+$F(\Phi)=\langle\mu_{x}^{\Phi},\phi\rangle$ for finitely many
+starting points $x_{i}\in\R$ and Schwartz $\phi_{i}$, where
+$\mu_{x}^{\Phi}$ is the random measure produced by
+$\Phi_{\theta}$ from the initial point $x$.
+
+The Tier $\beta$ problem is to lift the diagonal seed
+$\Gamma^{(2)}_{\theta}$ of \cref{def:Gamma-theta} to a
+$\Gamma^{(2)}_{\cN_{\theta}}\colon\cA_{\cN_{\theta}}\times\cA_{\cN_{\theta}}\to L^{1}(\cN_{\theta})$
+satisfying the five axioms of
+\cite[Ass.~2.4]{GammaHierarchyDivergence}, and then to apply the
+construction of \cite{GammaHierarchyDivergence} on
+$L^{2}(\cN_{\theta})$.
+
+\subsection{Subproblems for Tier \texorpdfstring{$\beta$}{beta}}\label{sec:beta-subproblems}
+
+The lift step decomposes into the following subproblems, in
+roughly increasing order of difficulty.
+
+\begin{enumerate}
+\item[$(\mathrm B_{1})$] \emph{Choice of cylindrical algebra.}
+Specify a unital subalgebra
+$\cA_{\cN_{\theta}}\subset L^{\infty}(\cN_{\theta})\cap L^{2}(\cN_{\theta})$
+dense in $L^{2}(\cN_{\theta})$, closed under products, and
+containing enough functionals of the LJR flow that the lift of
+$\Gamma^{(2)}_{\theta}$ is well defined. The natural candidates
+are polynomial-in-evaluations algebras as described above.
+\item[$(\mathrm B_{2})$] \emph{Lift formula.} For
+$F,G\in\cA_{\cN_{\theta}}$, define
+$\Gamma^{(2)}_{\cN_{\theta}}(F,G)$ from the diagonal seed
+$\Gamma^{(2)}_{\theta}$ by averaging the diagonal pairing
+\eqref{eq:Dgamma-pairing} against the random measure-valued
+data of $\Phi_{\theta}$. The natural candidate is, schematically,
+\[
+  \Gamma^{(2)}_{\cN_{\theta}}(F,G)
+  \;\sim\;c_{\theta}\!\int_{\Phi_{\theta}\text{-paths}}\!\!\langle DF,DG\rangle\,d\mathbb{P}^{\Phi_{\theta}},
+\]
+where $DF$ is a $\cN_{\theta}$-Malliavin-type derivative
+adapted to the LJR-sticky structure. Pinning this down on the
+chosen $\cA_{\cN_{\theta}}$ is the central technical step.
+\item[$(\mathrm B_{3})$] \emph{(MatPos), (WMatPos) at the
+flow-noise level.} The pointwise PSD-kernel structure of
+\cref{rem:pointwise-PSD} no longer applies automatically once
+one passes from the diagonal of $\R^{2}$ to the flow-path
+space. Whether the lifted $\Gamma^{(2)}_{\cN_{\theta}}$ inherits
+matrix and weighted-matrix positivity from the diagonal seed
+needs separate verification, and may require structural
+hypotheses on the chosen cylindrical algebra.
+\item[$(\mathrm B_{4})$] \emph{(FormClos) at the flow-noise
+level.} Form-closability of the lifted energy form on
+$L^{2}(\cN_{\theta})$ is the deepest of the four. It is closely
+related to closability of the LJR generator on the
+flow-noise level.
+\item[$(\mathrm B_{5})$] \emph{Identification of the lifted
+$(D,\delta)$.} Assuming $(\mathrm B_{1})$--$(\mathrm B_{4})$, the
+closed pair $(D_{\cN_{\theta}},\delta_{\cN_{\theta}})$ produced
+by \cite{GammaHierarchyDivergence} on $L^{2}(\cN_{\theta})$
+should be identified with a Malliavin-type pair adapted to the
+LJR-sticky structure, in the sense of
+\cite[Ch.~6]{Nualart} for the classical case. This step
+relates the abstract construction to existing Malliavin-style
+calculi for stochastic flows.
+\end{enumerate}
+
+The present paper does not attempt $(\mathrm B_{1})$--$(\mathrm B_{5})$;
+it produces only the diagonal-level $(\Dth,\divth)$ of
+\cref{thm:transfer}. The diagonal seed and its axioms
+established here are the input data the Tier $\beta$ lift would
+operate on.
+
+\subsection{Closing summary}\label{sec:beta-summary}
+
+This paper supplies the first concrete input-existence step in
+the operator-derivative program over a nonclassical-noise
+candidate. Working under a stated LJR convention
+(\cref{conv:LJR}), we extracted a diagonal carr\'e-du-champ seed
+$\Gamma^{(2)}_{\theta}$ from the LJR sticky/coalescing flow and
+verified the five axioms required by
+\cite{GammaHierarchyDivergence}. The transfer
+(\cref{thm:transfer}) yields a closed operator-derivative pair
+$(\Dth,\divth)$ on $L^{2}(\R,\mu_{\Delta})$. The full
+flow-noise lift $(D_{\cN_{\theta}},\delta_{\cN_{\theta}})$ is the
+next input-existence problem.
+
+%==============================================================
+\begin{thebibliography}{99}
+
+\bibitem{GammaHierarchyDivergence}
+R.~Fontes,
+\emph{From Carr\'e-du-Champ Hierarchies to Primitive Divergence}.
+Preprint.
+
+\bibitem{PrimitiveDivergence}
+R.~Fontes,
+\emph{Primitive Divergence and Carr\'e-du-Champ Seeds over Nonclassical Noises}.
+Preprint.
+
+\bibitem{EnergyFirst}
+R.~Fontes,
+\emph{Energy-First Stochastic Calculus: Iterated Brownian Motion as a Test Case}.
+Preprint.
+
+\bibitem{FCDC}
+R.~Fontes,
+\emph{First-Chaos Dual Closure of the IBM It\^o Correction}.
+Preprint.
+
+\bibitem{BidegreeAtlas}
+R.~Fontes,
+\emph{A Bidegree Atlas for the IBM It\^o Correction}.
+Preprint.
+
+\bibitem{BakryGentilLedoux}
+D.~Bakry, I.~Gentil and M.~Ledoux,
+\emph{Analysis and Geometry of Markov Diffusion Operators}.
+Grundlehren der mathematischen Wissenschaften, vol.~348, Springer, 2014.
+
+\bibitem{FukushimaOshimaTakeda}
+M.~Fukushima, Y.~\=Oshima and M.~Takeda,
+\emph{Dirichlet Forms and Symmetric Markov Processes}, 2nd revised ed.
+de Gruyter Studies in Mathematics, vol.~19, de Gruyter, Berlin, 2011.
+
+\bibitem{LeJanRaimond2004}
+Y.~Le~Jan and O.~Raimond,
+Flows, coalescence and noise.
+\emph{Ann. Probab.} \textbf{32} (2004), no.~2A, 1247--1315.
+
+\bibitem{Nualart}
+D.~Nualart,
+\emph{The Malliavin Calculus and Related Topics}, 2nd ed.
+Springer, Berlin, 2006.
+
+\bibitem{Rudin-FA}
+W.~Rudin,
+\emph{Functional Analysis}, 2nd ed.
+McGraw-Hill, New York, 1991.
+
+\bibitem{SchrammSmirnov2011}
+O.~Schramm and S.~Smirnov,
+On the scaling limits of planar percolation.
+\emph{Ann. Probab.} \textbf{39} (2011), no.~5, 1768--1814.
+
+\bibitem{SSS2017}
+E.~Schertzer, R.~Sun and J.~M.~Swart,
+The Brownian web, the Brownian net, and their universality.
+In: \emph{Advances in Disordered Systems, Random Processes and Some Applications}, P.~Contucci and C.~Giardin\`a (eds.), Cambridge University Press, 2017.
+
+\bibitem{Tsirelson2004}
+B.~Tsirelson,
+Nonclassical stochastic flows and continuous products.
+\emph{Probab. Surv.} \textbf{1} (2004), 173--298.
+
+\end{thebibliography}
+
+\end{document}

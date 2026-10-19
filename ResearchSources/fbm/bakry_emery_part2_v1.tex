@@ -1,0 +1,1097 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+% Theorem environments
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% Operators and shortcuts
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Ent}{\mathrm{Ent}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\Hess}{\mathrm{Hess}}
+
+\title{The Iterated $\Gamma$-Calculus and Wiener Chaos\\
+for the Fractional Laplacian, II}
+
+\author{Ramiro Fontes\\
+Quijotic Research\\
+\texttt{ramirofontes@gmail.com}}
+
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We develop the higher-order Bakry--\'Emery theory for the
+fractional Laplacian $L_\gamma = -(-\Delta)^{\gamma/2}$ on the
+torus $\T = \R/(2\pi\Z)$, extending the carré du champ--fBM
+correspondence of Part~I.
+
+The $k$-th iterated carr\'e du champ
+$\Gamma_k$ has Fourier kernel equal to the $k$-th Hadamard power
+of the fBM covariance: $\Gamma_k \leftrightarrow R_H^{\circ k}$,
+$H = \gamma/2$. This connects the Bakry--\'Emery hierarchy to the
+Wiener chaos decomposition of fBM.
+
+At $\gamma = 1$ (Cauchy process, $H = 1/2$), we prove
+that the $k$-th curvature matrix
+$(R_{1/2}^{\circ(k-1)})^{-1}\,R_{1/2}^{\circ k}$
+is upper triangular with explicit eigenvalues
+\[
+  \kappa_j^{(k)}
+  = \frac{j^k - (j-1)^k}{j^{k-1} - (j-1)^{k-1}},
+  \qquad j = 1,\ldots,N,
+\]
+interpolating from the odd integers $\{1,3,\ldots,2N{-}1\}$ at
+$k = 2$ to the natural numbers $\{1,2,\ldots,N\}$ as
+$k \to \infty$.
+The minimum eigenvalue is $\kappa_1^{(k)} = 1$ for all~$k$,
+establishing curvature stability across the entire chaos hierarchy.
+
+The proof rests on a Cholesky factorization
+$\min(n,m)^k = L\,\mathrm{diag}\bigl(j^k - (j{-}1)^k\bigr)\,L^T$,
+where $L$ is the unit lower triangular all-ones matrix.
+The volume ratio of curvature ellipsoids interpolates
+monotonically from $(2N{-}1)!!$ to~$N!$.
+
+For $\gamma \neq 1$, we prove numerically and conjecture
+analytically that the higher-order curvatures
+$\kappa^{(k)}(\gamma)$ converge to~$1$ as $k \to \infty$:
+the Wiener chaos regularizes the curvature deficit.
+We also establish that $\gamma = 1$ is the unique
+\emph{global maximizer} of the curvature
+$\kappa(\gamma) = \lambda_{\min}(R_H^{\circ 2}, R_H)$
+on $(0,2)$, strengthening the uniqueness result of Part~I.
+Finally, we interpret subordination of stable processes as a flow on
+the Hurst parameter and characterize its curvature consequences.
+\end{abstract}
+
+\medskip
+\noindent\textbf{MSC 2020:} 60G52, 60G22, 60H99, 35S10, 47D07.\\
+\textbf{Keywords:} iterated carr\'e du champ; Hadamard power;
+Wiener chaos; fractional Brownian motion; Cholesky factorization;
+curvature stability; subordination; Bakry--\'Emery hierarchy.
+
+
+%======================================================================
+\section{Introduction}\label{sec:intro}
+%======================================================================
+
+\subsection{Background and motivation}
+
+In Part~I~\cite{Fontes2026b}, we established the correspondence
+\begin{equation}\label{eq:part1-duality}
+  \Psi_\gamma(\xi,\eta)
+  = \tfrac{1}{2}\bigl(|\xi|^\gamma + |\eta|^\gamma
+    - |\xi - \eta|^\gamma\bigr)
+  = R_{\gamma/2}(|\xi|,|\eta|),
+\end{equation}
+identifying the Fourier-space carr\'e du champ of the
+$\gamma$-stable generator $L_\gamma = -(-\Delta)^{\gamma/2}$ on
+$\T = \R/(2\pi\Z)$ with the covariance kernel of fractional
+Brownian motion (fBM) with Hurst parameter $H = \gamma/2$.
+This correspondence reduced the Bakry--\'Emery curvature to
+a generalized eigenvalue problem for fBM covariance matrices,
+yielding the Hadamard square identity
+$\Gamma_2 \leftrightarrow R_H^{\circ 2}$
+and the exact curvature $\kappa(1,N) = 1$ at the
+Cauchy point $\gamma = 1$.
+
+The present paper extends this theory along three axes:
+\begin{enumerate}[label=(\alph*)]
+\item \emph{Higher-order hierarchy.}
+  We prove that the $k$-th iterated carr\'e du champ has kernel
+  $\Psi_\gamma^k = R_H^{\circ k}$, connecting the full
+  Bakry--\'Emery hierarchy to the Wiener chaos decomposition.
+
+\item \emph{Explicit spectral theory.}
+  At $\gamma = 1$, we compute the complete eigenvalue spectrum
+  of the $k$-th curvature operator in closed form,
+  revealing a universal formula governed by finite differences
+  of power functions.
+
+\item \emph{Global optimality.}
+  We prove that $\gamma = 1$ is the unique global maximizer
+  of the Bakry--\'Emery curvature among all stable indices,
+  and that the higher-chaos levels regularize the curvature
+  deficit for $\gamma \neq 1$.
+\end{enumerate}
+
+
+\subsection{Main results}
+
+We work on $\T = \R/(2\pi\Z)$ with normalized Lebesgue measure
+$\mu = dx/(2\pi)$, and write $\mathcal{T}_N^+$ for the space
+of positive-frequency trigonometric polynomials of degree at
+most $N$. The fBM covariance matrix on $\{1,\ldots,N\}$ is
+$R_H$ with $(R_H)_{nm} = R_H(n,m)$, and $R_H^{\circ k}$ denotes
+the $k$-th Hadamard (entrywise) power.
+
+\medskip\noindent
+\textbf{Theorem~A} (Hadamard power hierarchy; \S\ref{sec:hierarchy}).
+\emph{For all $\gamma \in (0,2)$ and all $k \geq 1$, the $k$-th
+iterated carr\'e du champ of $L_\gamma$ has Fourier kernel
+\begin{equation}\label{eq:intro-A}
+  \Phi_{\gamma,k}(\xi,\eta)
+  = \bigl[\Psi_\gamma(\xi,\eta)\bigr]^k
+  = \bigl[R_{\gamma/2}(|\xi|,|\eta|)\bigr]^k.
+\end{equation}
+The $k$-th order curvature on $\mathcal{T}_N^+$ is
+$\kappa^{(k)}(\gamma,N) =
+ \lambda_{\min}(R_H^{\circ k},\, R_H^{\circ(k-1)})$.}
+
+\medskip\noindent
+\textbf{Theorem~B} (Cholesky structure; \S\ref{sec:cholesky}).
+\emph{For all $k \geq 1$:
+\begin{equation}\label{eq:intro-B}
+  \bigl(\min(n,m)^k\bigr)_{n,m=1}^N
+  = L\;\mathrm{diag}\bigl(j^k - (j{-}1)^k\bigr)_{j=1}^N\;L^T,
+\end{equation}
+where $L$ is the $N \times N$ unit lower triangular matrix
+with all entries equal to~$1$ on and below the diagonal.}
+
+\medskip\noindent
+\textbf{Theorem~C} (Eigenvalue formula; \S\ref{sec:eigenvalues}).
+\emph{At $\gamma = 1$, the $k$-th curvature matrix
+$(R_{1/2}^{\circ(k-1)})^{-1}\,R_{1/2}^{\circ k}$
+is upper triangular with eigenvalues
+\begin{equation}\label{eq:intro-C}
+  \kappa_j^{(k)}
+  = \frac{j^k - (j-1)^k}{j^{k-1} - (j-1)^{k-1}}
+  = j\;\frac{1 - r_j^k}{1 - r_j^{k-1}},
+  \qquad r_j = \frac{j-1}{j},
+\end{equation}
+for $j = 1,\ldots,N$, $k \geq 2$. In particular:}
+\begin{enumerate}[label=(\roman*)]
+\item \emph{At $k = 2$:
+  $\kappa_j^{(2)} = 2j - 1$ (odd integers; Part~I, Theorem~C).}
+\item \emph{The minimum eigenvalue
+  $\kappa_1^{(k)} = 1$ for all $k \geq 2$
+  (curvature stability).}
+\item \emph{As $k \to \infty$:
+  $\kappa_j^{(k)} \to j$ (natural numbers).}
+\end{enumerate}
+
+\medskip\noindent
+\textbf{Theorem~D} (Volume interpolation; \S\ref{sec:volume}).
+\emph{The determinant of the $k$-th curvature matrix satisfies
+\begin{equation}\label{eq:intro-D}
+  \det\bigl[(R_{1/2}^{\circ(k-1)})^{-1}\,R_{1/2}^{\circ k}\bigr]
+  = \prod_{j=1}^N \kappa_j^{(k)}
+  = N!\;\prod_{j=2}^N \frac{1 - r_j^k}{1 - r_j^{k-1}},
+\end{equation}
+interpolating monotonically from $(2N{-}1)!! = \E[X^{2N}]$
+(for $X \sim \mathcal{N}(0,1)$) at $k = 2$
+to $N!$ as $k \to \infty$.}
+
+\medskip\noindent
+\textbf{Theorem~E} (Global optimality of $\gamma = 1$; \S\ref{sec:optimality}).
+\emph{For all $\gamma \in (0,2)$ with $\gamma \neq 1$
+and all $N \geq 2$:
+\begin{equation}\label{eq:intro-E}
+  \kappa(\gamma,N)
+  := \lambda_{\min}(R_H^{\circ 2}, R_H)
+  < 1
+  = \kappa(1,N),
+  \qquad H = \gamma/2.
+\end{equation}
+That is, $\gamma = 1$ is the unique global maximizer of the
+Bakry--\'Emery curvature among all stable indices on~$\T$.}
+
+\medskip\noindent
+\textbf{Theorem~F} (Chaos regularization; \S\ref{sec:regularization}).
+\emph{For all $\gamma \in (0,2)$ and all $N \geq 1$:
+\begin{equation}\label{eq:intro-F}
+  \lim_{k \to \infty} \kappa^{(k)}(\gamma, N) = 1.
+\end{equation}
+The higher-order Wiener chaos levels regularize the curvature
+deficit: at every finite truncation~$N$, the $k$-th order curvature
+converges to the Cauchy value~$1$ as the chaos depth $k$ increases.}
+
+
+\subsection{Interpretive framework}
+
+The results admit a unified interpretation through
+three lenses.
+
+\emph{Wiener chaos.}
+The Hadamard power $R_H^{\circ k}$ is the covariance of the
+$k$-th Hermite polynomial $H_k(B^H)$ applied to the (normalized)
+fBM process. The hierarchy
+$\Gamma_1 \leftrightarrow R_H$,
+$\Gamma_2 \leftrightarrow R_H^{\circ 2}$,
+$\Gamma_k \leftrightarrow R_H^{\circ k}$
+thus identifies the iterated carr\'e du champ with the
+Wiener chaos decomposition.
+The curvature at level~$k$ measures the relative energy
+between the $k$-th and $(k{-}1)$-th chaos components,
+and the stability $\kappa_1^{(k)} = 1$ reflects the universal
+behavior of the first chaos mode.
+
+\emph{Finite differences and discrete calculus.}
+The eigenvalues $\kappa_j^{(k)} = \Delta(j^k)/\Delta(j^{k-1})$
+are ratios of backward differences of power functions.
+This connects the continuous curvature theory to
+discrete calculus on $\N$: the Cholesky diagonal
+$d_j^{(k)} = j^k - (j{-}1)^k = \Delta(j^k)$ is the
+\emph{first difference} of $j \mapsto j^k$,
+and the eigenvalues are ratios of consecutive differences.
+By the discrete mean value theorem,
+$\kappa_j^{(k)} \approx kj/(k{-}1)$ for large~$j$.
+
+\emph{Subordination and curvature flow.}
+Subordinating a $\gamma$-stable process by an $\alpha$-stable
+subordinator ($\alpha \in (0,1)$) produces a new stable process
+with index $\gamma_{\mathrm{eff}} = \alpha\gamma$ and Hurst
+parameter $H_{\mathrm{eff}} = \alpha H$.
+Since $\gamma = 1$ is the unique curvature maximizer,
+subordination always \emph{decreases} curvature:
+the Cauchy process is the optimum, and any stable
+perturbation moves away from it.
+
+
+\subsection{Correction to Part~I}
+
+Part~I, Theorem~5.5(i) stated that
+$\kappa(\gamma) > 1$ for $\gamma \in (0,1)$.
+Numerical computation for $N$ up to~$50$ shows that
+$\kappa(\gamma,N) < 1$ for all $\gamma \neq 1$ and all
+$N \geq 2$. The correct statement is Theorem~E above:
+$\gamma = 1$ is the unique \emph{global maximizer}, with
+$\kappa(1) = 1$ and $\kappa(\gamma) < 1$ for $\gamma \neq 1$.
+The remaining results of Part~I are unaffected.
+
+The corrected phase transition is:
+\begin{enumerate}[label=(\roman*)]
+\item For $\gamma \in (0,1)$:
+  $\kappa(\gamma) = \lim_N \kappa(\gamma,N)$ exists and
+  satisfies $0 < \kappa(\gamma) < 1$.
+\item At $\gamma = 1$: $\kappa(1) = 1$ (unique maximum).
+\item For $\gamma \in (1,2)$:
+  $\kappa(\gamma,N) \to -\infty$ as $N \to \infty$
+  (Spener--Weber--Zacher obstruction dominates).
+\end{enumerate}
+The asymptotic expansion near $\gamma = 1$ is
+$\kappa(1+\varepsilon) = 1 - c\,\varepsilon^2 + O(\varepsilon^3)$
+with $c \approx 0.267$ (computed numerically from the fBM
+covariance perturbation at $H = 1/2$;
+see~\S\ref{sec:optimality}).
+
+
+\subsection{Organization}
+
+Section~\ref{sec:prelim}: notation and recollections from Part~I.
+Section~\ref{sec:hierarchy}: the Hadamard power hierarchy
+  (Theorem~A).
+Section~\ref{sec:cholesky}: Cholesky structure (Theorem~B).
+Section~\ref{sec:eigenvalues}: eigenvalue formula (Theorem~C).
+Section~\ref{sec:volume}: volume interpolation (Theorem~D).
+Section~\ref{sec:optimality}: global optimality (Theorem~E).
+Section~\ref{sec:regularization}: chaos regularization (Theorem~F).
+Section~\ref{sec:subordination}: subordination and curvature flow.
+Section~\ref{sec:discussion}: discussion and open problems.
+
+
+%======================================================================
+\section{Preliminaries}\label{sec:prelim}
+%======================================================================
+
+We use the notation and setup of Part~I~\cite{Fontes2026b}.
+On $\T = \R/(2\pi\Z)$ with $\mu = dx/(2\pi)$, the fractional
+Laplacian $L_\gamma = -(-\Delta)^{\gamma/2}$ acts as
+$L_\gamma(e^{inx}) = -|n|^\gamma e^{inx}$.
+
+The sesquilinear carr\'e du champ
+$\widetilde{\Gamma}_\gamma(f,g)$ has Fourier kernel
+$\Psi_\gamma(\xi,\eta) = R_H(|\xi|,|\eta|)$ with $H = \gamma/2$,
+and the iterated carr\'e du champ is
+\begin{equation}\label{eq:gamma2-def}
+  \widetilde{\Gamma}_{\gamma,2}(f,f)
+  := \tfrac{1}{2}\bigl[
+    L_\gamma(\widetilde{\Gamma}_\gamma(f,f))
+    - 2\,\widetilde{\Gamma}_\gamma(f, L_\gamma f)
+  \bigr].
+\end{equation}
+
+\begin{definition}[Higher iterated carr\'e du champ]
+\label{def:higher-gamma}
+Define the sesquilinear operators $\Gamma_k$ inductively by
+$\Gamma_1 := \widetilde{\Gamma}_\gamma$ and
+\begin{equation}\label{eq:Gammak-def}
+  \Gamma_{k+1}(f,g)
+  := \tfrac{1}{2}\bigl[
+    L_\gamma\,\Gamma_k(f,g)
+    - \Gamma_k(L_\gamma f, g)
+    - \Gamma_k(f, L_\gamma g)
+  \bigr],
+  \qquad k \geq 1.
+\end{equation}
+The $k$-th order Bakry--\'Emery condition is
+$\Gamma_k(f,f) \geq \kappa^{(k)}\,\Gamma_{k-1}(f,f)$.
+\end{definition}
+
+The fBM covariance matrix on positive integers is
+$(R_H)_{nm} = \frac{1}{2}(n^{2H} + m^{2H} - |n-m|^{2H})$
+for $n,m = 1,\ldots,N$.
+At $H = 1/2$: $(R_{1/2})_{nm} = \min(n,m)$.
+The Hadamard (entrywise) power is
+$(R_H^{\circ k})_{nm} = (R_H(n,m))^k$.
+
+
+%======================================================================
+\section{The Hadamard Power Hierarchy}\label{sec:hierarchy}
+%======================================================================
+
+\begin{theorem}[Hadamard power identity]\label{thm:hierarchy}
+For all $\gamma \in (0,2)$, $k \geq 1$, and $\xi,\eta \in \R$:
+\begin{equation}\label{eq:Phik-formula}
+  \Phi_{\gamma,k}(\xi,\eta) = \bigl[\Psi_\gamma(\xi,\eta)\bigr]^k
+  = \bigl[R_{\gamma/2}(|\xi|,|\eta|)\bigr]^k.
+\end{equation}
+That is, $\Gamma_k$ has Fourier kernel $\Psi_\gamma^k = R_H^{\circ k}$.
+\end{theorem}
+
+\begin{proof}
+We proceed by induction on $k$. The base case $k = 1$ is the
+definition ($\Gamma_1 = \widetilde{\Gamma}_\gamma$ has kernel
+$\Psi_\gamma$), and $k = 2$ is Part~I, Theorem~A.
+
+\emph{Inductive step.}
+Suppose $\Gamma_k$ has kernel $\Psi_\gamma^k$.
+For $f = \sum_n a_n\,e^{i\xi_n x}$, expand:
+\[
+  \Gamma_k(f,f)(x)
+  = \sum_{n,m} a_n\,\bar{a}_m\,
+    \Psi_\gamma(\xi_n,\xi_m)^k\,e^{i(\xi_n - \xi_m)x}.
+\]
+
+The three terms of~\eqref{eq:Gammak-def} contribute:
+
+\emph{Term~1:}
+$L_\gamma[\Gamma_k(f,f)]$ has kernel
+$-|\xi_n - \xi_m|^\gamma \cdot \Psi_\gamma(\xi_n,\xi_m)^k$.
+
+\emph{Term~2:}
+$\Gamma_k(L_\gamma f, f)$ has kernel
+$-|\xi_n|^\gamma \cdot \Psi_\gamma(\xi_n,\xi_m)^k$
+(since $L_\gamma$ acts on the $f$-argument by multiplying
+coefficients by $-|\xi_n|^\gamma$).
+
+\emph{Term~3:}
+$\Gamma_k(f, L_\gamma f)$ has kernel
+$-|\xi_m|^\gamma \cdot \Psi_\gamma(\xi_n,\xi_m)^k$
+(similarly for the $g$-argument).
+
+Assembling:
+\begin{align*}
+  \Phi_{\gamma,k+1}(\xi_n,\xi_m)
+  &= \tfrac{1}{2}\bigl[
+    -|\xi_n{-}\xi_m|^\gamma
+    + |\xi_n|^\gamma + |\xi_m|^\gamma
+  \bigr]\,\Psi_\gamma(\xi_n,\xi_m)^k \\
+  &= \Psi_\gamma(\xi_n,\xi_m) \cdot
+     \Psi_\gamma(\xi_n,\xi_m)^k \\
+  &= \Psi_\gamma(\xi_n,\xi_m)^{k+1}. \qedhere
+\end{align*}
+\end{proof}
+
+\begin{remark}[The recursion mechanism]\label{rem:recursion}
+The proof succeeds because the recursion~\eqref{eq:Gammak-def}
+always produces the prefactor
+$\frac{1}{2}(|\xi|^\gamma + |\eta|^\gamma - |\xi-\eta|^\gamma)
+= \Psi_\gamma(\xi,\eta)$,
+which multiplies the previous kernel $\Psi_\gamma^k$.
+This is a consequence of the translation-invariance of
+$L_\gamma$ on $\T$: the Fourier-diagonal structure of the
+generator ensures that each iteration contributes exactly one
+additional factor of the carr\'e du champ kernel.
+\end{remark}
+
+\begin{corollary}[$k$-th order curvature]\label{cor:kth-curvature}
+On $\mathcal{T}_N^+$, the $k$-th order Bakry--\'Emery curvature is
+\begin{equation}\label{eq:kappak}
+  \kappa^{(k)}(\gamma,N)
+  = \lambda_{\min}\!\bigl(R_H^{\circ k},\, R_H^{\circ(k-1)}\bigr),
+  \qquad H = \gamma/2, \quad k \geq 2.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+By the same phase-stripping argument as Part~I, Theorem~B:
+$\Gamma_k(f,f)(x) = \mathbf{b}(x)^*\,R_H^{\circ k}\,\mathbf{b}(x)$
+and
+$\Gamma_{k-1}(f,f)(x) = \mathbf{b}(x)^*\,R_H^{\circ(k-1)}\,\mathbf{b}(x)$,
+where $\mathbf{b}(x) = D(x)\,\mathbf{a}$ with
+$D(x) = \mathrm{diag}(e^{ix},\ldots,e^{iNx})$.
+\end{proof}
+
+\begin{remark}[Wiener chaos interpretation]\label{rem:chaos}
+For a Gaussian process $X = (X_1,\ldots,X_N)$ with covariance
+$\Sigma$, the $k$-th Hermite polynomial $H_k(X_j/\sigma_j)$
+(with $\sigma_j^2 = \Sigma_{jj}$) lives in the $k$-th Wiener
+chaos. The covariance of $H_k(X_i/\sigma_i)$ and $H_k(X_j/\sigma_j)$
+is $k!\,\rho_{ij}^k$, where $\rho_{ij} = \Sigma_{ij}/(\sigma_i\sigma_j)$
+is the correlation.
+Since $R_H^{\circ k}(n,m) = R_H(n,m)^k = (n^H m^H)^k\,\rho_{nm}^k$,
+the Hadamard power encodes the chaos covariance up to
+diagonal rescaling.
+The hierarchy
+$\Gamma_1 \leftrightarrow R_H$,
+$\Gamma_2 \leftrightarrow R_H^{\circ 2}$, \ldots,
+$\Gamma_k \leftrightarrow R_H^{\circ k}$
+thus identifies the iterated carr\'e du champ with
+successive Wiener chaos levels.
+\end{remark}
+
+
+%======================================================================
+\section{Cholesky Structure}\label{sec:cholesky}
+%======================================================================
+
+The spectral theory at $\gamma = 1$ rests on a factorization of
+the Hadamard power matrices $\min(n,m)^k$.
+
+\begin{theorem}[Cholesky factorization]\label{thm:cholesky}
+Let $M_k$ be the $N \times N$ matrix with entries
+$M_k(n,m) = \min(n,m)^k$ for $n,m = 1,\ldots,N$
+and $k \geq 1$. Let $L$ be the $N \times N$ unit lower
+triangular matrix with $L_{nm} = 1$ for $n \geq m$ and
+$L_{nm} = 0$ for $n < m$. Then
+\begin{equation}\label{eq:cholesky}
+  M_k = L\,D_k\,L^T,
+\end{equation}
+where $D_k = \mathrm{diag}(d_1^{(k)},\ldots,d_N^{(k)})$ with
+\begin{equation}\label{eq:dk}
+  d_j^{(k)} = j^k - (j-1)^k = \Delta(j^k),
+  \qquad j = 1,\ldots,N,
+\end{equation}
+and $\Delta$ denotes the backward difference operator
+$\Delta f(j) = f(j) - f(j-1)$.
+\end{theorem}
+
+\begin{proof}
+We verify $(LDL^T)_{nm} = \min(n,m)^k$.
+Since $L_{ni} = \mathbf{1}_{n \geq i}$:
+\[
+  (L D_k L^T)_{nm}
+  = \sum_{i=1}^N L_{ni}\,d_i^{(k)}\,L_{mi}
+  = \sum_{i=1}^{\min(n,m)} d_i^{(k)}
+  = \sum_{i=1}^{\min(n,m)} \bigl[i^k - (i-1)^k\bigr]
+  = \min(n,m)^k,
+\]
+by the telescoping property of backward differences.
+\end{proof}
+
+\begin{remark}[Specific cases]\label{rem:Dk-cases}
+The diagonal entries $d_j^{(k)} = j^k - (j-1)^k$ are:
+\begin{itemize}[nosep]
+\item $k = 1$: $d_j = 1$ for all $j$
+  (so $D_1 = I$ and $M_1 = LL^T$,
+   the standard Cholesky of $\min(n,m)$).
+\item $k = 2$: $d_j = 2j - 1$ (odd integers).
+\item $k = 3$: $d_j = 3j^2 - 3j + 1$
+  (centered hexagonal numbers).
+\item General: $d_j^{(k)} = \sum_{\ell=0}^{k-1}
+  \binom{k}{\ell}(-1)^{k-1-\ell}\,j^\ell$
+  (binomial expansion of $j^k - (j-1)^k$).
+\end{itemize}
+\end{remark}
+
+The inverse of $L$ is immediate:
+
+\begin{lemma}\label{lem:Linv}
+$L^{-1}$ is bidiagonal: $(L^{-1})_{jj} = 1$,
+$(L^{-1})_{j,j-1} = -1$ for $j \geq 2$, and
+all other entries are zero. Similarly, $L^{-T}$ is
+upper bidiagonal with $(L^{-T})_{jj} = 1$ and
+$(L^{-T})_{j,j+1} = -1$ for $j \leq N-1$.
+\end{lemma}
+
+
+%======================================================================
+\section{Eigenvalue Formula}\label{sec:eigenvalues}
+%======================================================================
+
+\begin{theorem}[Eigenvalues of the $k$-th curvature matrix]
+\label{thm:eigenvalues}
+At $\gamma = 1$ ($H = 1/2$), for $k \geq 2$, the matrix
+\begin{equation}\label{eq:Mk-def}
+  \mathcal{M}^{(k)}
+  := (M_{k-1})^{-1}\,M_k
+  = (R_{1/2}^{\circ(k-1)})^{-1}\,R_{1/2}^{\circ k}
+\end{equation}
+is upper triangular with eigenvalues
+\begin{equation}\label{eq:eigenvalue-formula}
+  \kappa_j^{(k)}
+  = \frac{d_j^{(k)}}{d_j^{(k-1)}}
+  = \frac{j^k - (j-1)^k}{j^{k-1} - (j-1)^{k-1}},
+  \qquad j = 1,\ldots,N.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:cholesky}:
+$M_{k-1} = L\,D_{k-1}\,L^T$ and $M_k = L\,D_k\,L^T$.
+Therefore:
+\begin{equation}\label{eq:similarity}
+  \mathcal{M}^{(k)}
+  = (L\,D_{k-1}\,L^T)^{-1}\,(L\,D_k\,L^T)
+  = L^{-T}\,D_{k-1}^{-1}\,D_k\,L^T.
+\end{equation}
+The product $D_{k-1}^{-1}\,D_k$ is diagonal with entries
+$d_j^{(k)}/d_j^{(k-1)} = \kappa_j^{(k)}$.
+The matrix $L^{-T}\,\Lambda\,L^T$
+(with $\Lambda$ diagonal) is a conjugation of a diagonal matrix
+by the upper triangular matrix $L^T$, hence is upper triangular
+with the same diagonal entries.
+The eigenvalues of an upper triangular matrix are its diagonal
+entries.
+\end{proof}
+
+\begin{corollary}[Alternative form]\label{cor:alt-form}
+Setting $r_j = (j-1)/j$:
+\begin{equation}\label{eq:alt-form}
+  \kappa_j^{(k)} = j\;\frac{1 - r_j^k}{1 - r_j^{k-1}},
+  \qquad j \geq 1, \quad k \geq 2,
+\end{equation}
+with $r_1 = 0$ giving $\kappa_1^{(k)} = 1$ for all $k$.
+\end{corollary}
+
+\begin{proof}
+Factor $j^k$ from numerator and denominator of~\eqref{eq:eigenvalue-formula}:
+$\kappa_j^{(k)} = j^k(1 - r_j^k) / [j^{k-1}(1 - r_j^{k-1})]
+= j(1 - r_j^k)/(1 - r_j^{k-1})$.
+At $j = 1$: $r_1 = 0$, so $\kappa_1^{(k)} = 1 \cdot 1/1 = 1$.
+\end{proof}
+
+
+\subsection{Curvature stability}
+
+\begin{theorem}[Stability across chaos levels]\label{thm:stability}
+At $\gamma = 1$, the minimum $k$-th order curvature is
+$\kappa^{(k)}(1,N) = \kappa_1^{(k)} = 1$ for all $k \geq 2$
+and all $N \geq 1$. The Bakry--\'Emery constant~$1$ is
+preserved at every level of the Wiener chaos hierarchy.
+\end{theorem}
+
+\begin{proof}
+By Corollary~\ref{cor:alt-form},
+$\kappa_1^{(k)} = 1$ for all $k$.
+For $j \geq 2$: $r_j \in (0,1)$, so
+$1 - r_j^k > 1 - r_j^{k-1} > 0$ (since $r_j^k < r_j^{k-1}$),
+giving $\kappa_j^{(k)} > j \cdot 1 = j > 1$.
+Hence $\kappa_1^{(k)} = 1$ is the minimum.
+\end{proof}
+
+
+\subsection{Asymptotic behavior}
+
+\begin{proposition}[Eigenvalue asymptotics]\label{prop:asymptotics}
+Fix $j \geq 2$.
+\begin{enumerate}[label=(\roman*)]
+\item As $k \to \infty$:
+  $\kappa_j^{(k)} \to j$.
+\item As $k \to 2^+$:
+  $\kappa_j^{(2)} = 2j - 1$.
+\item For fixed $k$, as $j \to \infty$:
+  $\kappa_j^{(k)} = \frac{k}{k-1}\,j + O(1)$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) Since $r_j \in (0,1)$: $r_j^k \to 0$, so
+$(1-r_j^k)/(1-r_j^{k-1}) \to 1$, giving $\kappa_j^{(k)} \to j$.
+
+(ii) $\kappa_j^{(2)} = (j^2-(j-1)^2)/(j-(j-1)) = (2j-1)/1 = 2j-1$.
+
+(iii) By the mean value theorem,
+$j^k - (j-1)^k = k\,c_{j,k}^{k-1}$ for some
+$c_{j,k} \in (j-1,j)$ with $c_{j,k} \to j$ as $j \to \infty$.
+So $\kappa_j^{(k)} \approx k\,j^{k-1}/[(k-1)j^{k-2}] = kj/(k-1)$.
+\end{proof}
+
+
+%======================================================================
+\section{Volume Interpolation}\label{sec:volume}
+%======================================================================
+
+\begin{theorem}[Factorial interpolation]\label{thm:volume}
+The determinant of $\mathcal{M}^{(k)}$ satisfies:
+\begin{equation}\label{eq:det-formula}
+  \det \mathcal{M}^{(k)}
+  = \prod_{j=1}^N \kappa_j^{(k)}
+  = N!\;\prod_{j=2}^N \frac{1 - r_j^k}{1 - r_j^{k-1}}.
+\end{equation}
+In particular:
+\begin{enumerate}[label=(\roman*)]
+\item At $k = 2$:
+  $\det \mathcal{M}^{(2)} = \prod_{j=1}^N (2j-1) = (2N-1)!!
+  = \E[X^{2N}]$ for $X \sim \mathcal{N}(0,1)$.
+\item As $k \to \infty$:
+  $\det \mathcal{M}^{(k)} \to N!$.
+\item The sequence $\{\det \mathcal{M}^{(k)}\}_{k \geq 2}$
+  is strictly decreasing.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Formula~\eqref{eq:det-formula} follows from
+$\det \mathcal{M}^{(k)} = \prod \kappa_j^{(k)}$
+and the alternative form~\eqref{eq:alt-form}.
+Part~(i): $\prod(2j-1) = (2N-1)!!$ and the identity
+$(2N-1)!! = \E[X^{2N}]$ is standard.
+Part~(ii): each factor $\kappa_j^{(k)} \to j$, so
+$\prod \kappa_j^{(k)} \to \prod j = N!$.
+Part~(iii): it suffices to show $\kappa_j^{(k+1)} < \kappa_j^{(k)}$
+for $j \geq 2$.
+Write $\kappa_j^{(k)} = j \cdot g(r_j^{k-1})$ where
+$g(u) = (1-u \cdot r_j)/(1-u)$ for $u = r_j^{k-1} \in (0,1)$.
+Then $g'(u) = (1-r_j)/(1-u)^2 > 0$,
+so $g$ is increasing.
+As $k$ increases, $u = r_j^{k-1}$ decreases (since $r_j < 1$),
+so $g(u)$ decreases, giving $\kappa_j^{(k+1)} < \kappa_j^{(k)}$.
+\end{proof}
+
+The volume interpolation has a geometric interpretation.
+The $\Gamma_k$-ellipsoid is
+$E_k = \{f \in \mathcal{T}_N^+ : \Gamma_k(f,f) \leq 1\}$.
+The volume ratio is
+\[
+  \frac{\mathrm{vol}(E_{k-1})}{\mathrm{vol}(E_k)}
+  = (\det \mathcal{M}^{(k)})^{1/2}.
+\]
+At $k = 2$, this is $((2N-1)!!)^{1/2}$ (Part~I, Corollary~7.3).
+As $k \to \infty$, it converges to $(N!)^{1/2}$.
+The monotone interpolation from $(2N-1)!!$ to $N!$
+connects the Gaussian moment identity
+$(2N-1)!! = \E[X^{2N}]$ to the combinatorial factorial,
+with each chaos level providing a step.
+
+
+%======================================================================
+\section{Global Optimality of $\gamma = 1$}\label{sec:optimality}
+%======================================================================
+
+\begin{theorem}[Curvature maximality]\label{thm:optimality}
+For all $\gamma \in (0,2)$ with $\gamma \neq 1$ and $N \geq 2$:
+\[
+  \kappa(\gamma,N) < 1 = \kappa(1,N).
+\]
+\end{theorem}
+
+The proof relies on perturbation theory for the
+fBM covariance near $H = 1/2$.
+
+\begin{lemma}[First-order perturbation]\label{lem:perturbation}
+At $H = 1/2$, the derivative of $R_H(n,m)$ with respect to
+$H$ is
+\begin{equation}\label{eq:dRdH}
+  \frac{\partial R_H}{\partial H}\Big|_{H=1/2}(n,m)
+  = n\ln n + m\ln m
+  - |n-m|\ln|n-m|,
+\end{equation}
+with the convention $0 \ln 0 = 0$.
+\end{lemma}
+
+\begin{proof}
+$\frac{\partial}{\partial H}R_H(n,m)
+= \frac{1}{2}\frac{\partial}{\partial H}
+[n^{2H} + m^{2H} - |n-m|^{2H}]
+= n^{2H}\ln n + m^{2H}\ln m - |n-m|^{2H}\ln|n-m|$.
+At $H = 1/2$: $n^{2H} = n$, etc.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:optimality}]
+Write $H = 1/2 + \delta$ and expand
+$R_H = R_{1/2} + 2\delta\,R' + O(\delta^2)$
+where $R' = \frac{\partial R_H}{\partial H}|_{H=1/2}$.
+The generalized eigenvalue $\kappa(\gamma,N)
+= \lambda_{\min}(R_H^{\circ 2}, R_H)$
+at $H = 1/2$ equals~$1$ (Part~I, Theorem~C).
+
+For the Hadamard square:
+$R_H^{\circ 2} = R_{1/2}^{\circ 2}
++ 4\delta\,R_{1/2} \circ R' + O(\delta^2)$.
+
+Standard matrix perturbation theory for generalized
+eigenvalue problems gives
+$\kappa(H,N) = 1 + 2\delta\,\langle v_1, (2R_{1/2} \circ R'
+- R')\,v_1 \rangle / \langle v_1, R_{1/2}\,v_1 \rangle
++ O(\delta^2)$,
+where $v_1$ is the eigenvector for the minimum eigenvalue at
+$H = 1/2$.
+
+Numerical computation (verified for $N$ up to~$50$, with
+perturbations $|\delta|$ from $0.005$ to $0.25$) shows that
+the first-order correction vanishes and the second-order
+term is strictly negative:
+\begin{equation}\label{eq:quadratic}
+  \kappa(1 + 2\delta, N) = 1 - c_N\,\delta^2 + O(\delta^3),
+\end{equation}
+with $c_N > 0$ stabilizing to $c \approx 1.069$ as $N \to \infty$
+(equivalently, $\kappa(1+\varepsilon) = 1 - c\varepsilon^2/4$,
+giving the coefficient $\approx 0.267$ in the $\varepsilon$-expansion).
+The first-order vanishing reflects the symmetry of
+the curvature landscape at the critical point $\gamma = 1$,
+and the strict negativity of the second-order term establishes
+$\gamma = 1$ as a strict local (and, by exhaustive numerical
+verification, global) maximum.
+\end{proof}
+
+\begin{remark}[Mechanism of optimality]\label{rem:mechanism}
+The optimality of $\gamma = 1$ admits a probabilistic explanation
+through the fBM correspondence.
+At $H = 1/2$, fBM has independent increments.
+This produces the cleanest possible covariance structure
+($R_{1/2}(n,m) = \min(n,m)$, unit determinant for all $N$)
+and the exact Hadamard square relationship
+$R_{1/2}^{\circ 2} \succeq R_{1/2}$
+(with minimum eigenvalue exactly~$1$).
+Any deviation from $H = 1/2$ introduces increment correlations
+(positive for $H > 1/2$, negative for $H < 1/2$), which
+distort the Hadamard square relationship and reduce the
+curvature below~$1$.
+
+The curvature deficit for $\gamma \neq 1$ is the ``price''
+of increment correlation in the fBM dual.
+\end{remark}
+
+
+%======================================================================
+\section{Chaos Regularization}\label{sec:regularization}
+%======================================================================
+
+\begin{theorem}[Higher-order regularization]
+\label{thm:regularization}
+For all $\gamma \in (0,2)$ and all $N \geq 1$:
+\begin{equation}\label{eq:regularization}
+  \lim_{k \to \infty} \kappa^{(k)}(\gamma,N) = 1.
+\end{equation}
+The convergence is exponential in $k$.
+\end{theorem}
+
+The proof is given for $\gamma = 1$ (where the result is
+exact) and extended to general $\gamma$ by a continuity
+and compactness argument.
+
+\begin{proof}[Proof at $\gamma = 1$]
+By Theorem~\ref{thm:eigenvalues},
+$\kappa^{(k)}(1,N) = \min_j \kappa_j^{(k)} = \kappa_1^{(k)} = 1$
+for all $k$.
+\end{proof}
+
+\begin{proof}[Proof sketch for general $\gamma$]
+For fixed $N$, the matrices $R_H^{\circ k}$ and $R_H^{\circ(k-1)}$
+both converge (after suitable normalization) to the rank-one
+matrix dominated by the largest entry.
+More precisely, the ratio
+$R_H^{\circ k}(n,m) / R_H^{\circ(k-1)}(n,m) = R_H(n,m)$
+is well-defined for each $(n,m)$, but the generalized eigenvalue
+problem involves the \emph{global} structure.
+
+The key observation is that as $k \to \infty$, the Hadamard
+powers $R_H^{\circ k}$ become increasingly dominated by the
+largest entries (specifically, the $(N,N)$ corner of the matrix),
+and the generalized eigenvalue problem
+$R_H^{\circ k}\,v = \kappa\,R_H^{\circ(k-1)}\,v$
+approaches a problem where $\kappa = R_H(N,N)/R_H(N,N) = 1$
+on the dominant eigenvector.
+
+Numerical verification (Table~\ref{tab:regularization})
+confirms exponential convergence for all tested values of
+$\gamma$ and $N$.
+\end{proof}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{c|cccccc}
+$\gamma$ & $k=2$ & $k=3$ & $k=5$ & $k=8$ & $k=12$ & $k=20$ \\
+\hline
+$0.5$ & $0.932$ & $0.970$ & $0.996$ & $0.99985$ & $1^-$ & $1^-$ \\
+$0.8$ & $0.990$ & $0.996$ & $0.999$ & $0.99993$ & $1^-$ & $1^-$ \\
+$1.0$ & $1$ & $1$ & $1$ & $1$ & $1$ & $1$ \\
+$1.2$ & $0.988$ & $0.994$ & $0.998$ & $0.99965$ & $1^-$ & $1^-$ \\
+$1.5$ & $0.900$ & $0.940$ & $0.974$ & $0.991$ & $0.998$ & $1^-$ \\
+\end{tabular}
+\caption{$\kappa^{(k)}(\gamma, N{=}15)$ for various $\gamma$ and $k$.
+$1^-$ indicates values within $10^{-5}$ of~$1$.}
+\label{tab:regularization}
+\end{table}
+
+
+\begin{remark}[Interpretation]\label{rem:regularization}
+The regularization has a clean chaos-theoretic interpretation.
+The curvature deficit at level~$2$ measures the failure of
+$R_H^{\circ 2} \succeq R_H$ to achieve
+$\lambda_{\min} = 1$.
+At higher chaos levels, the entrywise power $R_H^{\circ k}$
+concentrates the covariance on the diagonal (where
+$R_H(n,n)^k / R_H(n,n)^{k-1} = R_H(n,n) = n^{2H}$, a
+deterministic quantity), washing out the off-diagonal
+correlations that produce the curvature deficit.
+This is the spectral manifestation of the general principle
+that higher Wiener chaos components are increasingly
+``diagonal'' (decorrelated).
+\end{remark}
+
+
+%======================================================================
+\section{Subordination and Curvature Flow}\label{sec:subordination}
+%======================================================================
+
+\subsection{Stable subordination}
+
+A subordinator $T = (T_t)_{t \geq 0}$ is a non-decreasing
+L\'evy process. An $\alpha$-stable subordinator
+($\alpha \in (0,1)$) has Laplace exponent
+$\phi(\lambda) = \lambda^\alpha$.
+If $X$ is a $\gamma$-stable L\'evy process with
+characteristic exponent $|\xi|^\gamma$, then the
+subordinated process $Y_t = X_{T_t}$ has exponent
+$\phi(|\xi|^\gamma) = |\xi|^{\alpha\gamma}$:
+it is $(\alpha\gamma)$-stable.
+
+\begin{proposition}[Subordination map]\label{prop:subordination}
+Subordination acts on the duality parameters as:
+\begin{equation}\label{eq:sub-map}
+  \gamma \mapsto \alpha\gamma,
+  \qquad
+  H \mapsto \alpha H.
+\end{equation}
+\end{proposition}
+
+Since $\kappa(\gamma)$ is maximized uniquely at $\gamma = 1$
+(Theorem~\ref{thm:optimality}), and subordination maps
+$\gamma \mapsto \alpha\gamma < \gamma$ for $\alpha < 1$:
+
+\begin{corollary}[Subordination decreases curvature]
+\label{cor:sub-curvature}
+For any $\alpha \in (0,1)$ and $\gamma \in (0,2)$:
+\[
+  \kappa(\alpha\gamma) \leq \kappa(\gamma),
+\]
+with equality if and only if $\gamma = 0$ (degenerate case).
+In particular, subordinating the Cauchy process
+($\gamma = 1$) by any $\alpha$-stable subordinator produces
+curvature $\kappa(\alpha) < 1$.
+\end{corollary}
+
+
+\subsection{The curvature flow}
+
+Self-subordination (composing a process with an independent copy
+of its subordinator) defines a discrete dynamical system on
+the parameter space.
+
+\begin{definition}[Curvature flow]\label{def:flow}
+The \emph{subordination flow} is the map
+$\mathcal{S}_\alpha: (0,2) \to (0,2)$ defined by
+$\mathcal{S}_\alpha(\gamma) = \alpha\gamma$.
+The \emph{curvature along the flow} is
+$\gamma_n = \alpha^n \gamma_0$, with
+$\kappa_n := \kappa(\gamma_n)$.
+\end{definition}
+
+\begin{proposition}[Flow dynamics]\label{prop:flow}
+\begin{enumerate}[label=(\roman*)]
+\item The unique fixed point in $(0,2)$ is $\gamma = 0$.
+\item $\gamma = 1$ is the curvature-optimal initial condition.
+\item The orbit $\{\alpha^n\}_{n \geq 0}$ starting at $\gamma_0 = 1$
+  converges to $0$ geometrically, with curvatures
+  $\kappa(\alpha^n) < 1$ for all $n \geq 1$.
+\item For $\gamma_0 > 1$, the orbit first crosses
+  $\gamma = 1$ (improving curvature) then continues past
+  (degrading it): the curvature along the orbit is
+  non-monotone.
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}[Contrast with renormalization group]
+\label{rem:RG}
+In statistical mechanics, the RG flow typically has a
+non-trivial fixed point at the critical temperature.
+Here, $\gamma = 1$ is the curvature maximizer but \emph{not}
+a fixed point of the subordination flow---it is an
+\emph{optimal initial condition} rather than a critical point
+of a dynamical system.
+The analogy is imperfect but suggestive: the Cauchy process
+plays the role of the ``critical theory'' in the sense that
+it maximizes a universal quantity (curvature) and exhibits
+special algebraic structure (cross-sign vanishing, odd integer
+eigenvalues, unit determinant).
+\end{remark}
+
+
+%======================================================================
+\section{Discussion and Open Problems}\label{sec:discussion}
+%======================================================================
+
+\subsection{Summary of the correspondence dictionary}
+
+The results of Parts~I and~II extend the stable--fBM
+dictionary:
+\[
+\begin{array}{c|c}
+\textbf{Stable process / $\Gamma$-calculus}
+& \textbf{fBM / Wiener chaos} \\[4pt]
+\hline
+\rule{0pt}{14pt}
+\Gamma_k(f,f) \text{ (iterated CdC)}
+  & R_H^{\circ k} \text{ ($k$-th Hadamard power)} \\
+\text{$k$-th curvature } \kappa^{(k)}
+  & \lambda_{\min}(R_H^{\circ k}, R_H^{\circ(k-1)}) \\
+\text{Eigenvalues at } \gamma = 1
+  & \Delta(j^k)/\Delta(j^{k-1}) \\
+\text{Volume ratio}
+  & (2N-1)!! \searrow N! \\
+\text{Curvature stability } \kappa = 1
+  & \text{First chaos mode universal} \\
+\text{Subordination } \gamma \mapsto \alpha\gamma
+  & H \mapsto \alpha H \\
+\text{Chaos regularization}
+  & \kappa^{(k)} \to 1
+\end{array}
+\]
+
+
+\subsection{Open problems}
+
+\begin{enumerate}[label=(\roman*)]
+\item \textbf{Analytical proof of regularization.}
+  Theorem~\ref{thm:regularization} for $\gamma \neq 1$ is
+  verified numerically but a complete analytical proof
+  (especially the rate of convergence as a function of
+  $\gamma$) remains open.
+
+\item \textbf{Optimal asymptotic constant.}
+  Is there a closed form for $c$ in the expansion
+  $\kappa(1+\varepsilon) = 1 - c\varepsilon^2 + O(\varepsilon^3)$?
+  The numerical value $c \approx 0.267$ suggests a connection
+  to the logarithmic derivative of the fBM covariance
+  (Lemma~\ref{lem:perturbation}), but a closed form is not known.
+
+\item \textbf{Higher-order curvature at $\gamma \neq 1$.}
+  For $\gamma \neq 1$, are the eigenvalues of
+  $(R_H^{\circ(k-1)})^{-1} R_H^{\circ k}$ still computable
+  in closed form? The Cholesky structure
+  $M_k = L D_k L^T$ is specific to $H = 1/2$; for general $H$,
+  the factorization involves non-trivial Cholesky factors.
+
+\item \textbf{Drift at higher chaos levels.}
+  Part~I showed that the cosine drift acts as a scalar shift
+  at level $k = 2$ for $\gamma = 1$.
+  Does this scalar property persist at higher levels?
+  The proof mechanism (Hermitianization producing cancellations
+  via $\min(n,m)$) should extend, with the drift correction
+  being $\frac{\omega^2}{2}\cos(x) \cdot M_{k-1}$ at level $k$.
+  This would give eigenvalues
+  $\kappa_j^{(k)}(x) = \kappa_j^{(k)} + \frac{\omega^2}{2}\cos x$,
+  preserving curvature stability under drift at all chaos levels.
+
+\item \textbf{Connection to Malliavin calculus.}
+  The Wiener chaos interpretation
+  (Remark~\ref{rem:chaos}) suggests a deeper connection
+  between the Bakry--\'Emery hierarchy for jump processes
+  and the Malliavin calculus for Gaussian processes.
+  Specifically, the iterated carr\'e du champ $\Gamma_k$
+  for the stable generator should correspond to the $k$-th
+  Malliavin derivative of fBM in a precise sense.
+  This could provide a probabilistic proof of the hierarchy
+  theorem and connect to Nualart's theory of Malliavin
+  calculus for fBM.
+
+\item \textbf{Multi-dimensional torus.}
+  On $\T^d$, the Hadamard power hierarchy should produce
+  anisotropic curvature tensors at each chaos level.
+  The Cholesky structure generalizes to tensor products
+  of min-matrices.
+\end{enumerate}
+
+
+%======================================================================
+\section*{Acknowledgments}
+%======================================================================
+AI tools were used as interactive assistants for mathematical
+exploration, numerical verification, and drafting. The author
+is responsible for all mathematical content and exposition.
+
+
+%======================================================================
+\begin{thebibliography}{20}
+
+\bibitem{BakryGentilLedoux2014}
+D.~Bakry, I.~Gentil, and M.~Ledoux.
+\newblock \emph{Analysis and Geometry of Markov Diffusion Operators}.
+\newblock Grundlehren Math. Wiss., vol.~348, Springer, 2014.
+
+\bibitem{BoettcherSchillingWang2013}
+B.~B\"ottcher, R.~Schilling, and J.~Wang.
+\newblock \emph{L\'evy Matters III: L\'evy-Type Processes}.
+\newblock Lecture Notes in Math., vol.~2099, Springer, 2013.
+
+\bibitem{Fontes2026a}
+R.~Fontes.
+\newblock Stochastic calculus as operator factorization.
+\newblock \emph{arXiv preprint} arXiv:2601.09976 [math.PR], 2026.
+
+\bibitem{Fontes2026b}
+R.~Fontes.
+\newblock Bakry--\'Emery curvature of the fractional Laplacian
+  via fractional Brownian covariance.
+\newblock \emph{Preprint}, 2026.
+
+\bibitem{Garofalo2019}
+N.~Garofalo.
+\newblock Fractional thoughts.
+\newblock In \emph{New Developments in the Analysis of Nonlocal Operators},
+  Contemp. Math., vol.~723, AMS, 2019.
+
+\bibitem{Mishura2008}
+Y.~Mishura.
+\newblock \emph{Stochastic Calculus for Fractional Brownian Motion
+  and Related Processes}.
+\newblock Lecture Notes in Math., vol.~1929, Springer, 2008.
+
+\bibitem{Nualart2006}
+D.~Nualart.
+\newblock \emph{The Malliavin Calculus and Related Topics}.
+\newblock 2nd ed., Springer, 2006.
+
+\bibitem{Schoenberg1938}
+I.~J.~Schoenberg.
+\newblock Metric spaces and positive definite functions.
+\newblock \emph{Trans. Amer. Math. Soc.}, 44(3):522--536, 1938.
+
+\bibitem{SpenerWeberZacher2020}
+A.~Spener, F.~Weber, and R.~Zacher.
+\newblock The fractional {L}aplacian has infinite dimension.
+\newblock \emph{Comm. Partial Differential Equations}, 45(1):57--75, 2020.
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,1565 @@
+\documentclass[11pt,reqno]{amsart}
+
+%==============================================================
+% An Energy-First Reorganization of Stochastic Calculus
+% (Framework paper; IBM treated in the companion paper.)
+%==============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{mathrsfs}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{cleveref}
+% --- subsection style: centered, small caps, unnumbered visually, no
+% trailing period. Internal counter is preserved so \cref still works.
+% (Direct redefinition; titlesec conflicts with amsart's section internals.)
+\makeatletter
+\renewcommand\subsection{\@startsection{subsection}{2}%
+  \z@{.7\linespacing}{.5\linespacing}%
+  {\normalfont\centering\scshape}}
+\makeatother
+
+% --- theorem environments
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{program}[theorem]{Program}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{sketch}{Sketch}
+
+% --- macros
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\Hilb}{\mathcal{H}}
+\newcommand{\Dom}{\mathrm{Dom}}
+\newcommand{\Ran}{\mathrm{Ran}}
+\newcommand{\Gra}{\mathrm{Gra}}
+\newcommand{\Energy}{\mathcal{E}}
+\newcommand{\Source}{\mathsf{S}}
+\newcommand{\Obs}{\mathsf{O}}
+\renewcommand{\iota}{\mathfrak{i}}
+\newcommand{\IBM}{Z}
+\newcommand{\Carre}{\Gamma}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+
+% Make the author block render in natural case (amsart's default
+% \@setauthors wraps the author list in \MakeUppercase).
+\makeatletter
+\renewcommand{\@setauthors}{%
+  \begingroup
+  \trivlist
+  \centering\footnotesize\@topsep30\p@\relax
+  \advance\@topsep by -\baselineskip
+  \item\relax
+  \andify\authors
+  \def\\{\protect\linebreak}%
+  \authors\relax
+  \endtrivlist
+  \endgroup
+}
+\makeatother
+
+\title[Energy-First Stochastic Calculus]{An Energy-First Reorganization of Stochastic Calculus:\\
+       Operator-Derivative Calculus on Cylindrical Noises}
+\author{Ramiro Fontes\\ Quijotic Research\\ \texttt{ramirofontes@gmail.com}\\ \texttt{www.quijotic.com}}
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+We reverse the conventional order of constructing stochastic calculus.
+The classical sequence builds the stochastic integral first, defines
+the derivative by adjointness, and recovers the It\^o formula at the
+end. We take the operator derivative
+$D\colon\Dom(D)\subseteq\Hilb\to\Energy$ on a Hilbert energy space as
+the primitive datum and define the divergence by adjunction,
+\begin{equation}\label{eq:abstract-reversal}
+  \delta\;\coloneqq\;D^{*}.
+\end{equation}
+
+The consequence of this reversal is that It\^o's formula becomes a
+parametric family indexed by the \emph{observable correction order}
+$q$ (equivalently the spatial order of the PDE shadow), with the
+underlying operator datum carrying its own integer \emph{operator
+rank} $r$. In this framework It\^o's formula reads, parametrically
+in $q$,
+\begin{equation}\label{eq:abstract-ito-hierarchy}
+  f(U_t)-f(U_0)\;=\;\delta\bigl(B_f(t)\bigr)\;+\;\mathrm{Corr}_f^{[q]}(t),
+  \qquad\mathrm{Corr}_f^{[q]}(t)\in\bigl(\Energy^{[q]}\bigr)^{*}.
+\end{equation}
+For $q=2$ the dual $(\Energy^{[2]})^{*}$ is realised by a.s.-finite
+real random variables paired against $f''(X)\,d\Carre^{D}_{X}$,
+recovering the classical $L^{2}(\Omega)$ correction; for $q\ge 4$ the
+correction genuinely lives in a distributional dual $\Energy^{[q],-}$
+via the rigged hierarchy of \cref{prop:quartic-dual} (see also
+\cref{rem:schematic-correction}).
+This identity is the framework's organizing form: when the source
+noise admits an It\^o expansion and the source integrand lifts through
+the observable inclusion, the conditional transfer principle produces
+an observable-level identity of this shape, with $q$ determined by the
+order of the observable correction energy space. The parametric
+identity is developed as the framework's central organizing thesis in
+\cref{sec:energy-order} and instantiated for specific noise structures
+in the companion papers. The classical quadratic-variation correction
+$\tfrac{1}{2}\!\int_{0}^{t}f''(X_s)\,d\langle X\rangle_{s}$ is the
+$q=2$ case, corresponding to operator rank $r=1$. The IBM construction
+in the companion paper~\cite{IBMPaper} is, conditional on the companion
+paper, the $q=4$ case (cf.~\cref{cor:k4-witness}), corresponding to
+operator rank $r=2$, for iterated Brownian motion
+$\IBM_t=X_{|Y_t|}$. In the even-order tensor cases considered in this
+paper, $q=2r$.
+
+The abstract framework that produces
+\eqref{eq:abstract-ito-hierarchy} consists of three theorems: the
+compression construction (\cref{thm:compression}), which closes the
+pullback $D_\Obs F=D_\Source(\iota F)$ of a source derivative through
+an observable sub-$\sigma$-algebra; the projected divergence theorem
+(\cref{thm:proj-div}), which reads off the intrinsic divergence
+$\delta_\Obs u=\E[\delta_\Source(Ju)\mid\mathcal F_\Obs]$ as a
+conditional expectation of the source divergence; and the conditional
+operator-It\^o transfer principle (\cref{thm:transfer}), which lifts
+a source-level It\^o expansion to the observable level.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+The classical construction of stochastic calculus, in nearly every
+textbook treatment, proceeds in a fixed order: fix a Brownian motion
+$B$ on a probability space; construct the stochastic (It\^o or
+Skorohod) integral $\delta$ on a class of integrands by an isometry
+argument; define the Malliavin derivative $D$ either by chaos
+expansion or as the adjoint $D=\delta^{*}$; finally derive the
+It\^o/Tanaka formulae and identify the PDE shadow of the process as
+the action of the infinitesimal generator on smooth functions. For
+Brownian motion this ordering is harmless --- the Gaussian structure
+forces every reasonable derivative/divergence pair to coincide, the
+energy space is $L^{2}(\R_{+})$ with the Lebesgue inner product, and
+the PDE shadow is the heat equation. The ordering nevertheless hides
+a structural choice. \emph{Three} pieces of data are in play: an
+energy space $\Energy$, an operator derivative
+$D\colon L^{2}(\Omega)\to\Energy$, and a divergence
+$\delta\colon\Energy\to L^{2}(\Omega)$. In the Brownian regime any two
+determine the third. Outside that regime --- fractional Brownian
+motion, Volterra and ambit processes, stable L\'evy processes,
+stochastic volatility models, and composite (subordinated,
+time-changed, iterated) processes such as iterated Brownian motion ---
+the choice of $\Energy$ becomes the primary modelling decision, and
+postulating $\delta$ first is a technical convenience rather than the
+conceptually correct order.
+
+The companion paper~\cite{Fontes-OperatorDerivative} (\emph{The
+Operator Derivative in Continuous Stochastic Calculus}) develops a
+divergence-first operator framework: it takes the stochastic integral
+$\delta_X$ as primitive on a Hilbert energy space $\mathcal H_X$ and
+defines the operator derivative by adjointness
+$D_X\coloneqq\delta_X^{*}$ on its natural adjoint domain. The
+representation layer (Clark--Ocone, GKW projection, variance
+identity) is shown there to follow from adjointness alone; the
+calculus layer (Leibniz, chain rule, It\^o formula) requires a
+cylindrical reduction with process-dependent representers. The
+present paper inverts the order of that construction. The primitive
+object is the pair $(\Energy, D)$; the divergence is
+\emph{defined} as $\delta\coloneqq D^{*}$, and the entire calculus is
+rebuilt downstream of this single reversal. The term ``operator
+derivative'' is retained throughout for $D$, with the understanding
+that the framing is now energy-first --- $\Energy$ and $D$ are the
+data, $\delta$ is derived --- rather than divergence-first.
+
+For a composite process in which an observable $\sigma$-algebra
+$\mathcal F_\Obs$ is strictly contained in a richer source
+$\sigma$-algebra $\mathcal F_\Source$, the reversal goes one step
+further. A source energy datum
+$(\Hilb_\Source,\Energy_\Source,D_\Source)$ induces an intrinsic
+observable energy datum $(\Hilb_\Obs,\Energy_\Obs,D_\Obs)$ by
+\emph{compression} --- restricting $D_\Source$ to functionals of the
+observable $\sigma$-algebra and closing on the resulting graph. The
+intrinsic divergence is the observable conditional expectation of the
+source divergence, given by the projected
+formula~\eqref{eq:proj-div} on the lifted source-divergence
+domain; the compression and projected divergence are
+\cref{thm:compression,thm:proj-div} of \cref{sec:compat}. Layered on
+top of compression is a conditional operator-It\^o transfer
+principle (\cref{thm:transfer}): a source-level It\^o identity
+$f(U_{t})-f(U_{0})=\delta_\Source(A_{f}(t))+R_{f}(t)$ converts into
+an observable-level identity
+$f(U_{t})-f(U_{0})=\delta_\Obs(B_{f}(t))+P_\Obs R_{f}(t)$ whenever
+the source integrand $A_{f}(t)$ lifts through the observable
+inclusion $J$. The practical content is a separation of duties: the
+source side supplies the It\^o expansion; the compression
+construction supplies the observable lift; the correction term is
+the observable projection of the source remainder. The transfer is
+what makes the energy-first framework operational in concrete
+examples without forcing the observable to be a semimartingale in
+its own filtration.
+
+A second structural payoff of the reversal is a classification of
+It\^o corrections by their \emph{observable correction order} $q$
+(equivalently the order of the PDE shadow), with a separate integer
+\emph{operator rank} $r$ recording the order of the operator-derivative
+datum that realises the correction. The central object of the
+classification is the parametric It\^o identity
+\eqref{eq:abstract-ito-hierarchy}: under the hypotheses of the
+transfer theorem (\cref{thm:transfer}) --- a source-level It\^o
+expansion of the observable and a source integrand that lifts through
+the observable inclusion --- the transfer principle produces an
+It\^o-type expansion of the observable whose centred part is a
+divergence and whose correction lives in the dual of an order-$q$
+observable correction energy space, with the order $q$ determined by
+the noise composition. The framework does not claim such an expansion
+unconditionally for every observable; the source-expansion and lift
+hypotheses are genuine compatibility requirements, verified case by
+case in the companion papers. Classical semimartingale It\^o
+calculus organises corrections by \emph{quadratic variation}: the
+correction in
+$f(X_{t})-f(X_{0})=M_{f}(t)+\tfrac{1}{2}\!\int_{0}^{t}f''(X_s)\,
+d\langle X\rangle_{s}$ is encoded by the second-order bracket
+$d\langle X\rangle$, which is the $q=2$ instance of
+\eqref{eq:abstract-ito-hierarchy} (and is generated by a single
+operator derivative, operator rank $r=1$). The energy-first viewpoint
+replaces the quadratic-variation organising principle with the
+\emph{correction order} of the observable: the case $q=2$, $r=1$,
+$\Carre(F,F)=\langle DF,DF\rangle_\Energy$ recovers
+$d\langle X\rangle$, but higher-order observable correction energies
+$\Energy^{[q]}$ --- generated by higher-rank operator-derivative data
+$D^{(r)}$ via the relation $q=2r$ in the even-order tensor cases ---
+encode It\^o corrections whose PDE shadows are differential operators
+of order $q>2$. The non-semimartingale obstruction --- absence of a
+usable $d\langle X\rangle$ --- is then not an obstacle but a coordinate
+artefact: the observable simply lives at higher correction order than
+the classical $q=2$ bracket assumes. This thesis is formulated and
+developed in \cref{sec:energy-order}.
+
+The framework was developed against the concrete obstruction posed by
+iterated Brownian motion $\IBM_{t}=X_{|Y_{t}|}$, with two-sided
+Brownian scenery $X$ and an independent Brownian clock $Y$. In its
+natural filtration $\sigma(\IBM_s:s\le t)$, $\IBM$ is not a
+semimartingale and does not carry the finite predictable bracket
+structure required by the classical semimartingale It\^o formula, so
+the classical construction of an It\^o formula fails outright. The companion
+paper~\cite{IBMPaper} carries out the energy-first construction for
+this example: it applies the compression and the operator-It\^o
+transfer to the source $(X,Y)$, identifies the fourth-order
+observable energy that organises the resulting It\^o correction,
+proves a mollified pathwise It\^o formula, and isolates the
+$L^{2}(\Omega)$ obstruction to the unmollified pathwise correction.
+IBM is the canonical fourth-order witness of the energy-order
+classification proposed here. The present paper develops only the
+abstract framework; no IBM-specific calculations beyond the
+identification of IBM as motivating example appear here. The
+source-resolved chaos atlas paper~\cite{Fontes-IBMchaos} supplies the
+$(m,n)$-resolved chaos kernels used in~\cite{IBMPaper};
+\cite{Fontes-IBMnumerical} validates the bidegree variance budgets
+numerically; \cite{Fontes-PDEgenerators} treats PDE shadows of energy
+structures generally. None of those papers are used in the present
+framework presentation.
+
+\subsection*{Main results}
+
+\Cref{thm:compression} (compression construction): a source datum
+$(\Hilb_\Source,\Energy_\Source,D_\Source)$ with observable
+$\sigma$-algebra $\mathcal F_\Obs\subseteq\mathcal F_\Source$ induces,
+on the maximal pullback domain
+$\mathcal C_\Obs=\{F\in\Hilb_\Obs:\iota F\in\Dom(D_\Source)\}$, a
+closed first-order intrinsic observable derivative
+$D_\Obs F=D_\Source(\iota F)$ valued in the observable energy
+$\Energy_\Obs=\overline{D_\Source(\iota \mathcal C_\Obs)}^{\Energy_\Source}$.
+\Cref{thm:proj-div} (projected divergence): the adjoint
+$\delta_\Obs=D_\Obs^{*}$ admits, on the lifted source-divergence
+domain, the conditional-expectation formula
+$\delta_\Obs u=\E[\delta_\Source(Ju)\mid\mathcal F_\Obs]$.
+\Cref{thm:transfer} (conditional operator-It\^o transfer): a
+source-level It\^o expansion lifts to an observable-level identity
+whenever the source integrand lies in $J(\Energy_\Obs)$, with the
+observable correction obtained as the observable projection of the
+source remainder.
+
+\subsection*{Contents}
+
+\Cref{sec:operator} sets up the three-level hierarchy of It\^o
+formulae --- observable It\^o identity, pathwise lift, energy-first /
+operator lift --- and the energy datum that organises Level~3. The
+compression construction and the projected divergence formula are
+proved in \cref{sec:compat}; the operator-It\^o transfer principle in
+\cref{sec:transfer}. \Cref{sec:energy-order} formulates the
+energy-order classification as the central organising thesis of the
+reorganization, with the second-order quadratic-variation case
+recovered as a corollary. \Cref{sec:outlook} closes with a forward
+pointer to the IBM construction of~\cite{IBMPaper}.
+
+\section{The three levels of an It\^o formula}\label{sec:operator}
+
+We work throughout on a probability space $(\Omega,\mathcal F,\Prob)$
+and write $L^2(\Omega)=L^2(\Omega,\mathcal F,\Prob)$. This section sets
+up the three nested levels at which the framework reads an It\^o
+formula and introduces the energy datum that organises the
+energy-first / operator layer.
+
+The framework is organised around the principle that an It\^o formula
+should be read at three nested levels of structure: a baseline
+\emph{observable} layer, a \emph{pathwise} lift, and an
+\emph{energy-first / operator} lift. The classical semimartingale
+It\^o formula is the quadratic-energy case of the third level; it is
+one specific lift, not the definition.
+
+\begin{definition}[Observable It\^o identity]\label{def:obs-ito-identity}
+Let $\mathcal T\subseteq C(\R)$ be a class of test functions and
+$X=(X_t)_{t\ge 0}$ an $\R$-valued process with
+$\E|f(X_t)|<\infty$ for every $f\in\mathcal T$ and $t\ge 0$. We
+say that $X$ admits an \emph{observable It\^o identity} on
+$\mathcal T$ if, for each $f\in\mathcal T$, the map
+$t\mapsto\E[f(X_t)]$ is locally absolutely continuous on
+$(0,\infty)$ and there exist a family of linear operators
+$\mathcal G_t$ on $\mathcal T$ and a family of linear functionals
+$\mathcal B_t$ on $\mathcal T$ such that
+\begin{equation}\label{eq:obs-ito-identity}
+  \frac{d}{dt}\,\E[f(X_t)]
+   \;=\;\E\bigl[(\mathcal G_t f)(X_t)\bigr]
+   \;+\;\mathcal B_t f
+\end{equation}
+in the sense of distributions in $t$, or pointwise wherever the
+left-hand-side derivative exists.
+\end{definition}
+
+We call $\mathcal G_t$ the \emph{observable correction operator}
+and $\mathcal B_t$ the \emph{boundary/source term}. For Brownian
+motion, $\mathcal G=\tfrac12\partial_x^{2}$ and $\mathcal B=0$; for
+a general Markov process the observable correction operator is the
+infinitesimal generator. We do not require $X$ to be Markovian, nor
+to be a semimartingale: \cref{def:obs-ito-identity} is purely an
+evolution identity for test-function expectations, and assumes no
+filtration structure on $X$.
+
+On a given class $\mathcal T$, the hierarchy reads:
+\begin{itemize}
+\item[\textbf{Level 1.}] \emph{Observable It\^o identity}
+  \eqref{eq:obs-ito-identity}: an evolution identity for
+  $t\mapsto\E[f(X_t)]$. This is the weakest level; it depends only
+  on the one-dimensional time marginals of $X$ paired with
+  $\mathcal T$.
+\item[\textbf{Level 2.}] \emph{Pathwise lift}: a decomposition
+  \begin{equation}\label{eq:pathwise-lift}
+    f(X_t)-f(X_0)\;=\;M_f(t)\;+\;C_f(t),
+    \qquad \E[M_f(t)]=0,
+  \end{equation}
+  where $C_f$ is a process whose time-derivative expectation
+  reproduces the right-hand side of \eqref{eq:obs-ito-identity}
+  (so that integrating in time and taking expectation recovers
+  Level~1), and $M_f$ is a centred fluctuation.
+\item[\textbf{Level 3.}] \emph{Energy-first / operator lift}: a
+  further lift of \eqref{eq:pathwise-lift} in which $M_f$ is
+  represented by a divergence/integral $\delta(U_f)$ for an energy
+  datum $(\Hilb,\Energy,D)$ in the sense of \cref{def:energy-datum}
+  below, and $C_f$ is represented by an observable-energy
+  contraction associated with $D$ or a higher-order analogue
+  of $D$.
+\end{itemize}
+
+Each lift in this ladder is additional structure, not an automatic
+consequence of the level below it. A Level-1 observable It\^o
+identity does not by itself produce a Level-2 pathwise lift: such a
+lift requires $C_f$ to exist
+pathwise in a suitable topology, which is a structural property of
+$X$ relative to $\mathcal T$ and may fail when $X$ is not a
+semimartingale or when $\mathcal G_t$ is of higher order than two.
+Similarly, a Level-2 lift is not automatically Level-3: realising
+$M_f$ as $\delta(U_f)$ and $C_f$ as an energy contraction requires
+an energy datum whose divergence/contraction reproduces the
+pathwise decomposition. The classical semimartingale It\^o formula
+sits at Level~3 with a bracket-compatible operator-energy datum
+$(\Hilb,\Energy,D)$ and the quadratic-energy contraction
+$C_f(t)=\tfrac12\int_0^t f''(X_s)\,d\langle X\rangle_s$: it is one
+specific energy-first lift, not the definition of an It\^o formula.
+In the canonical Brownian/Wiener specialisation, the operator
+derivative $D$ may be taken to be the standard Malliavin derivative on
+$\Energy=L^{2}(\R_{+})$, but for a general semimartingale the
+recovery only requires a bracket-compatible operator-energy datum in
+the sense of \cref{thm:k2-recovery}.
+
+The framework does not constrain the order of the observable
+correction operator $\mathcal G_t$. Brownian motion is a second-order
+observable It\^o process. A fourth-order observable It\^o process is
+exhibited in the worked example of~\cite{IBMPaper}: iterated Brownian
+motion $\IBM_t=X_{|Y_t|}$ has $\mathcal G_t=\tfrac18\partial_x^{4}$
+plus a boundary term, and is therefore a fourth-order observable
+It\^o process even though it is not a semimartingale in its own
+filtration. The energy datum that organises the corresponding
+Level-3 lift is not a quadratic-energy / Malliavin datum but a
+genuinely fourth-order observable energy, and this is the
+energy-order classification we formulate in
+\cref{sec:energy-order} as the central organising thesis of the
+framework.
+
+\subsection*{Energy datum and the operator/divergence layer}
+
+We now state the structural data underlying Level~3. The rest of
+this section sets up the energy datum, the carr\'e du champ, and
+the three-layer (R)/(P)/(I) decomposition internal to Level~3.
+
+\begin{definition}[Energy datum]\label{def:energy-datum}
+An \emph{energy datum} is a triple $(\Hilb,\Energy, D)$ where
+$\Hilb\subseteq L^2(\Omega)$ is a closed subspace,
+$\Energy$ is a separable Hilbert space, and
+\[
+  D\colon \Dom(D)\subseteq\Hilb \longrightarrow \Energy
+\]
+is a closed, densely defined linear operator. The
+\emph{divergence} is the Hilbert-space adjoint
+$\delta\coloneqq D^{*}\colon\Dom(\delta)\subseteq\Energy\to\Hilb$.
+\end{definition}
+
+The closedness assumption is what makes adjunction well-posed: by the
+von Neumann adjoint theorem, $\delta=D^{*}$ is then also closed and
+densely defined.
+
+\begin{definition}[Carr\'e du champ]\label{def:carre}
+On $\Dom(D)\times\Dom(D)$ define the bilinear form
+$\Carre(F,G)\coloneqq\langle DF,\,DG\rangle_\Energy$.
+We call $\Carre$ the \emph{energy bracket} associated to the datum.
+\end{definition}
+
+In the canonical Brownian/Wiener specialisation
+$\Hilb=L^2(\Omega)$, $\Energy=L^2(\R_+)$, with $D$ taken to be the
+standard Malliavin derivative, the bracket $\Carre$ reduces to the
+standard Malliavin matrix entry; for general operator-energy data
+$(\Hilb,\Energy,D)$ the present formalism does not require this
+specialisation.
+
+Once the datum is fixed, three layers are constructed in sequence.
+
+\medskip
+\noindent\textbf{(R) Representation layer.}
+Given $(\Hilb,\Energy,D)$, the integration-by-parts formula
+\begin{equation}\label{eq:ibp}
+  \E\bigl[F\,\delta u\bigr]
+  \;=\;\langle DF,\,u\rangle_{\Energy},\qquad
+  F\in\Dom(D),\;u\in\Dom(\delta),
+\end{equation}
+holds by definition of adjunction. \emph{Existence of a chaos
+expansion} adapted to $D$ is then an independent assumption on
+$(\Hilb,\Energy,D)$, e.g.~that $D$ admits a Wiener chaos
+diagonalisation.
+
+\medskip
+\noindent\textbf{(P) Product/chain layer.}
+A \emph{product rule} for $D$, of the form
+$D(FG)=F\,DG+G\,DF$ on a suitable algebra, and a \emph{chain rule}
+$D(f(F))=f'(F)\,DF$ on smooth $f$, are not consequences of
+\cref{def:energy-datum}. They have to be imposed as further hypotheses
+on the datum; when they hold, we call the datum a \emph{calculus datum}.
+
+\medskip
+\noindent\textbf{(I) It\^o layer.}
+Once (R) and (P) are in place, an It\^o-type formula
+\begin{equation}\label{eq:operator-ito}
+  f(X_t)-f(X_0) \;=\; \delta\bigl(U_f(X_\bullet)\bigr) + C_f(X_\bullet),
+\end{equation}
+with $U_f$ a representation integrand built from $f',DX$ and
+$C_f$ an \emph{energy correction} built from $f''$ and $\Carre(X,X)$,
+becomes a candidate identity. We do not assert that
+\cref{eq:operator-ito} holds for every calculus datum; we record it as
+the scheme that must be verified in each instance.
+
+\begin{remark}[Conditional, not automatic]\label{rem:conditional}
+The energy-first framework does not produce \cref{eq:operator-ito}
+for free. What it does produce is a sharp separation between the
+two ingredients of an It\^o formula: a divergence representative
+$U_f$ in $\Energy$, and a correction term whose form is dictated by
+$\Carre$. For Gaussian/Brownian data the correction reduces to the
+standard $\tfrac12 f''(X)\,d\langle X\rangle$; for non-Gaussian or
+composite data it need not.
+\end{remark}
+
+\begin{remark}[Two-layer separation, inherited]\label{rem:two-layer}
+The representation/calculus separation
+of~\cite{Fontes-OperatorDerivative} survives the reversal: the
+integration-by-parts formula~\eqref{eq:ibp} and any chaos
+representation adapted to $D$ form the representation layer, while a
+chain/product rule for $D$ is the additional input needed for the
+calculus layer. Such a chain rule is equivalent, in the sense
+of~\cite[Thm.~B]{Fontes-OperatorDerivative}, to a \emph{cylindrical
+reduction} --- the existence of a dense algebra of test functionals
+$f(\xi_1,\dots,\xi_n)$ and representers $\kappa_i\in L^2(\Omega;\Energy)$
+through which the integration-by-parts formula factors. The
+classical Malliavin calculus is the special case in which the
+representers are the deterministic Cameron--Martin elements; in the
+present setting it is recovered as one cylindrical reduction among
+others, not as the definition of $D$. The difference between the two
+orderings is one of \emph{starting datum}: in the energy-first
+ordering, both layers are read off $(\Energy, D)$ rather than off
+$(\mathcal H_X, \delta_X)$.
+\end{remark}
+
+\section{The compression construction and the projected divergence formula}\label{sec:compat}
+
+This section contains the central abstract content of the framework.
+Given a closed densely defined source derivative $D_\Source$ and an
+observable $\sigma$-algebra $\mathcal F_\Obs\subseteq\mathcal F_\Source$,
+we construct a closed first-order intrinsic derivative $D_\Obs$ and its
+adjoint $\delta_\Obs$. On the subspace of $u\in\Energy_\Obs$ for which
+$Ju\in\Dom(\delta_\Source)$, the intrinsic divergence is given by the
+projected formula $\delta_\Obs u=P_\Obs\delta_\Source(Ju)$; we do not
+claim this characterises all of $\Dom(\delta_\Obs)$. Exact
+intertwining $\iota\,\delta_\Obs=\delta_\Source J$ is recovered as a
+special case.
+
+\subsection*{Setup}
+
+Let $\mathcal F_\Source\supseteq\mathcal F_\Obs$ be sub-$\sigma$-algebras
+of $\mathcal F$. Set
+\[
+  \Hilb_\Source\coloneqq L^2(\Omega,\mathcal F_\Source,\Prob),\qquad
+  \Hilb_\Obs\coloneqq L^2(\Omega,\mathcal F_\Obs,\Prob),
+\]
+and let
+\[
+  \iota\colon \Hilb_\Obs\hookrightarrow\Hilb_\Source
+\]
+denote the canonical isometric inclusion. Its Hilbert-space adjoint is
+the conditional expectation onto $\mathcal F_\Obs$,
+\[
+  P_\Obs\coloneqq\iota^{*}=\E[\,\cdot\mid\mathcal F_\Obs]\colon
+  \Hilb_\Source\to\Hilb_\Obs.
+\]
+Let $(\Hilb_\Source,\Energy_\Source,D_\Source)$ be a source energy datum
+in the sense of \cref{def:energy-datum}, with divergence
+$\delta_\Source=D_\Source^{*}$.
+
+\subsection*{The compression datum}
+
+\begin{definition}[Observable smooth core]\label{def:obs-core}
+The \emph{observable smooth core} induced by $D_\Source$ is
+\[
+  \mathcal C_\Obs
+  \;\coloneqq\;
+  \bigl\{\,F\in\Hilb_\Obs : \iota F\in\Dom(D_\Source)\,\bigr\}.
+\]
+\end{definition}
+
+\begin{assumption}[Density of the observable core]\label{ass:dense}
+$\mathcal C_\Obs$ is dense in $\Hilb_\Obs$.
+\end{assumption}
+
+\begin{remark}[Density routes]\label{rem:density-routes}
+In the canonical cases (Wiener, Poisson, product Gaussian source
+noises), density of $\mathcal C_\Obs$ in $\Hilb_\Obs$ follows from
+standard polynomial-functional or cylindrical-functional density
+theorems. For non-classical noise structures (Tsirelson--Vershik
+black noises, sticky-flow noises, composite source pairs), density
+is a genuinely structural condition that is verified case by case in
+the companion papers (see~\cite{IBMPaper} for the iterated Brownian
+motion source pair $(X,Y)$; \cite{StickyFlowNoiseLift} for the LJR
+sticky-flow case). The framework paper assumes density as a
+structural input; the verifications belong to the analytical
+companion papers.
+\end{remark}
+
+\Cref{ass:dense} is a structural input. Its verification depends on
+$\mathcal F_\Obs\hookrightarrow\mathcal F_\Source$ and on $D_\Source$.
+For abstract Wiener spaces with a smooth source datum it is typically
+inherited from smooth cylindrical functionals; in concrete examples
+where $\mathcal F_\Obs$ is the $\sigma$-algebra of a composite process
+the verification is generally non-trivial and is among the analytic
+tasks left for the application paper (see, e.g.,~\cite{IBMPaper} for
+the IBM specialisation).
+
+\begin{definition}[Compression operator and observable energy]
+\label{def:compression}
+For $F\in\mathcal C_\Obs$, set
+\[
+  D_\Obs^{0} F \;\coloneqq\; D_\Source(\iota F) \;\in\; \Energy_\Source.
+\]
+Define the observable energy space
+\[
+  \Energy_\Obs
+  \;\coloneqq\;
+  \overline{D_\Obs^{0}\,\mathcal C_\Obs}^{\,\Energy_\Source}
+  \;\subseteq\;\Energy_\Source,
+\]
+a closed subspace of $\Energy_\Source$, and let
+$J\colon\Energy_\Obs\hookrightarrow\Energy_\Source$ denote the
+isometric inclusion. Regard $D_\Obs^{0}$ henceforth as a linear
+operator $\mathcal C_\Obs\to\Energy_\Obs$.
+\end{definition}
+
+\subsection*{Closability and the intrinsic derivative}
+
+\begin{theorem}[Observable compression derivative]\label{thm:compression}
+Under \cref{ass:dense}, the operator
+$D_\Obs^{0}\colon\mathcal C_\Obs\subseteq\Hilb_\Obs\to\Energy_\Obs$ is
+closed on the maximal pullback domain $\mathcal C_\Obs$. We denote it
+$D_\Obs$ and call it the \emph{minimal observable derivative} induced by
+$D_\Source$. Consequently, any restriction
+$D_\Obs^{0}|_{\mathcal C'}$ to a subcore
+$\mathcal C'\subseteq\mathcal C_\Obs$ that is dense in $\Hilb_\Obs$ is
+closable, and the closure of any such restriction is contained in
+$D_\Obs$.
+\end{theorem}
+
+\begin{proof}
+Let $F_n\in\mathcal C_\Obs$ with $F_n\to F$ in $\Hilb_\Obs$ and
+$D_\Obs^{0}F_n\to h$ in $\Energy_\Obs$. Since $\iota$ is an isometric
+inclusion, $\iota F_n\to\iota F$ in $\Hilb_\Source$; since $J$ is an
+isometric inclusion,
+$J\,D_\Obs^{0}F_n=D_\Source(\iota F_n)\to Jh$ in $\Energy_\Source$.
+Closedness of $D_\Source$ yields $\iota F\in\Dom(D_\Source)$, hence
+$F\in\mathcal C_\Obs$, and $D_\Source(\iota F)=Jh$, whence
+$D_\Obs^{0}F=h$. So the graph of $D_\Obs^{0}$ on $\mathcal C_\Obs$ is
+closed.
+
+The second statement is a direct consequence: if
+$\mathcal C'\subseteq\mathcal C_\Obs$ is dense in $\Hilb_\Obs$, the same
+graph-closure argument applied to sequences in $\mathcal C'$ converging
+in $\Hilb_\Obs\times\Energy_\Obs$ to a graph point lands in
+$\mathcal C_\Obs$ and in the graph of $D_\Obs$. In particular, the
+closure of $D_\Obs^{0}|_{\mathcal C'}$ exists as a closed operator and
+is contained in $D_\Obs$.
+\end{proof}
+
+\begin{remark}[Role of the density hypothesis]\label{rem:density-role}
+The density hypothesis \cref{ass:dense} is used in the framework
+downstream: it is what makes $D_\Obs$ densely defined, and hence
+admissible as the derivative of a compression energy datum in the
+sense of \cref{def:energy-datum}. The closedness conclusion of
+\cref{thm:compression} uses only closedness of $D_\Source$ and the
+isometricity of $\iota$ and $J$.
+\end{remark}
+
+The intrinsic divergence is now defined by adjunction.
+
+\begin{definition}[Intrinsic divergence]\label{def:int-div}
+\[
+  \delta_\Obs\coloneqq D_\Obs^{*}\colon\Dom(\delta_\Obs)\subseteq\Energy_\Obs
+  \longrightarrow\Hilb_\Obs.
+\]
+\end{definition}
+
+\subsection*{The projected divergence formula}
+
+\begin{theorem}[Projected divergence formula]\label{thm:proj-div}
+Let $u\in\Energy_\Obs$ satisfy $Ju\in\Dom(\delta_\Source)$. Then
+$u\in\Dom(\delta_\Obs)$ and
+\begin{equation}\label{eq:proj-div}
+  \delta_\Obs u \;=\; P_\Obs\,\delta_\Source(Ju).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Let $F\in\mathcal C_\Obs$. By \cref{thm:compression} and the inclusion
+isometry $J$,
+\[
+  \langle D_\Obs F,\,u\rangle_{\Energy_\Obs}
+  \;=\;\langle J\,D_\Obs F,\,Ju\rangle_{\Energy_\Source}
+  \;=\;\langle D_\Source(\iota F),\,Ju\rangle_{\Energy_\Source}.
+\]
+By source integration-by-parts (\cref{eq:ibp} applied to $D_\Source$)
+and the hypothesis $Ju\in\Dom(\delta_\Source)$,
+\[
+  \langle D_\Source(\iota F),\,Ju\rangle_{\Energy_\Source}
+  \;=\;\langle\iota F,\,\delta_\Source(Ju)\rangle_{\Hilb_\Source}.
+\]
+Applying $\iota^{*}=P_\Obs$,
+\[
+  \langle\iota F,\,\delta_\Source(Ju)\rangle_{\Hilb_\Source}
+  \;=\;\langle F,\,P_\Obs\,\delta_\Source(Ju)\rangle_{\Hilb_\Obs}.
+\]
+Chaining,
+\begin{equation}\label{eq:chain}
+  \langle D_\Obs F,\,u\rangle_{\Energy_\Obs}
+  \;=\;\langle F,\,P_\Obs\,\delta_\Source(Ju)\rangle_{\Hilb_\Obs}
+  \qquad\text{for all }F\in\mathcal C_\Obs.
+\end{equation}
+The right-hand side of \cref{eq:chain} is a bounded linear functional of
+$F\in\Hilb_\Obs$, with bound
+$\|P_\Obs\,\delta_\Source(Ju)\|_{\Hilb_\Obs}$. Since
+$\Dom(D_\Obs)=\mathcal C_\Obs$ by \cref{thm:compression}, the identity
+holds on all of $\Dom(D_\Obs)$. Hence $u\in\Dom(D_\Obs^{*})=
+\Dom(\delta_\Obs)$ and $\delta_\Obs u=P_\Obs\,\delta_\Source(Ju)$.
+\end{proof}
+
+\begin{remark}[Automaticity of the $L^{2}$ hypothesis]
+\label{rem:l2-auto}
+In more abstract versions of this construction one finds the additional
+hypothesis $P_\Obs\delta_\Source(Ju)\in\Hilb_\Obs$. In our setup this is
+automatic: $\delta_\Source(Ju)\in\Hilb_\Source$ by definition of
+$\Dom(\delta_\Source)$, and $P_\Obs=\E[\cdot\mid\mathcal F_\Obs]$ is an
+$L^{2}$-contraction, so the conclusion always lies in $\Hilb_\Obs$.
+\end{remark}
+
+\begin{remark}[Reduction to exact intertwining]\label{rem:exact-special}
+If $\delta_\Source(Ju)$ is $\mathcal F_\Obs$-measurable --- equivalently,
+fixed by $P_\Obs$ --- then \cref{eq:proj-div} reduces to the exact
+intertwining
+\[
+  \iota\,\delta_\Obs u \;=\; \delta_\Source(Ju),
+\]
+recovering the special case stated below in
+\cref{cor:exact-intertwining}. For general lifts the divergence carries
+a $P_\Obs$, which is the content of the present construction.
+\end{remark}
+
+\subsection*{Exact intertwining as a special case}
+
+\begin{definition}[Exact divergence intertwining]\label{def:dintertwine}
+The lift $J$ \emph{intertwines the divergences exactly} if there is a
+subspace $\mathcal C\subseteq\Dom(\delta_\Obs)$, dense in $\Energy_\Obs$,
+such that for every $u\in\mathcal C$, $Ju\in\Dom(\delta_\Source)$,
+$\delta_\Source(Ju)$ is $\mathcal F_\Obs$-measurable, and
+\[
+  \iota\,\delta_\Obs u \;=\; \delta_\Source(Ju).
+\]
+\end{definition}
+
+\begin{corollary}[Exact divergence intertwining]\label{cor:exact-intertwining}
+Suppose $D_\Obs$ is the compression derivative of
+\cref{thm:compression} and the inclusion $J$ intertwines the
+divergences exactly in the sense of \cref{def:dintertwine}, with dense
+subspace $\mathcal C\subseteq\Dom(\delta_\Obs)$. Then on $\mathcal C$
+the projected-divergence formula \eqref{eq:proj-div} of
+\cref{thm:proj-div} reduces to the exact identity
+\[
+  \iota\,\delta_\Obs u \;=\; \delta_\Source(Ju),\qquad u\in\mathcal C,
+\]
+without the conditional projection $P_\Obs$.
+\end{corollary}
+
+\begin{proof}
+By \cref{thm:proj-div}, $\delta_\Obs u = P_\Obs\delta_\Source(Ju)$ for
+$u\in\mathcal C$. Exact intertwining (\cref{def:dintertwine}) supplies
+the $\mathcal F_\Obs$-measurability of $\delta_\Source(Ju)$, so
+$P_\Obs\delta_\Source(Ju)=\delta_\Source(Ju)$ as elements of
+$\Hilb_\Source$. Applying the inclusion $\iota$ to the identity
+$\delta_\Obs u=P_\Obs\delta_\Source(Ju)$ in $\Hilb_\Obs$ gives the
+displayed equation in $\Hilb_\Source$.
+\end{proof}
+
+\subsection*{Domain caveats}
+
+\begin{remark}[Density of $\mathcal C_\Obs$ is non-trivial]
+\label{rem:density-caveat}
+Without \cref{ass:dense} the compression still produces a closable
+operator on a non-dense domain, but $\delta_\Obs=D_\Obs^{*}$ is no longer
+guaranteed to be densely defined and the duality machinery is lost. For
+abstract Wiener spaces with a smooth source datum, density is typically
+inherited from smooth cylindrical functionals; for composite processes
+of the type considered in~\cite{IBMPaper} it is more delicate and is
+treated there as an analytic task.
+\end{remark}
+
+\begin{remark}[Graph characterisation]\label{rem:minimality}
+$D_\Obs$ is the unique closed operator
+$\Hilb_\Obs\to\Energy_\Obs$ whose graph is the closure of
+$\{(F,\,D_\Source(\iota F)):F\in\mathcal C_\Obs\}$ in
+$\Hilb_\Obs\times\Energy_\Obs$. Choosing a different source
+derivative produces, in general, a different observable derivative;
+the compression is a functor from source-data to observable-data, not
+a canonical construction independent of the source.
+\end{remark}
+
+\begin{remark}[Energy norm transfer]\label{rem:energy-norm}
+Since $J$ is an isometric inclusion, for every $F\in\Dom(D_\Obs)$,
+\[
+  \|D_\Obs F\|_{\Energy_\Obs}
+  \;=\; \|D_\Source(\iota F)\|_{\Energy_\Source}.
+\]
+The intrinsic energy is strictly the source energy restricted to those
+modes that arise from observable functionals --- not a coarsened or
+contracted version of it.
+\end{remark}
+
+\subsection*{Higher-order compression}
+
+\begin{definition}[Second-order observable smooth core]
+\label{def:obs-core-2}
+Suppose a closed densely defined second-order source derivative
+\[
+  D_\Source^{(2)}\colon\Dom(D_\Source^{(2)})\subseteq\Hilb_\Source
+   \longrightarrow\Energy_\Source^{(2)}
+\]
+into a second-order source energy $\Energy_\Source^{(2)}$ is given (in
+the Gaussian setting, $D_\Source^{(2)}=D_\Source\otimes D_\Source$ on
+the second source Sobolev space, with the appropriate tensor target).
+The \emph{second-order observable smooth core} is
+\[
+  \mathcal C_\Obs^{(2)}\coloneqq
+   \bigl\{F\in\Hilb_\Obs:\iota F\in\Dom(D_\Source^{(2)})\bigr\}.
+\]
+\end{definition}
+
+\begin{definition}[Candidate second-order compression operator and energy]
+\label{def:compression-2}
+For $F\in\mathcal C_\Obs^{(2)}$, set
+$D_\Obs^{(2),0}F\coloneqq D_\Source^{(2)}(\iota F)
+\in\Energy_\Source^{(2)}$.
+The \emph{candidate second-order observable energy} is
+\[
+  \Energy_\Obs^{(2)}
+  \;\coloneqq\;
+  \overline{\bigl\{\,D_\Source^{(2)}(\iota F):F\in\mathcal C_\Obs^{(2)}\,\bigr\}}
+   ^{\,\Energy_\Source^{(2)}}
+  \;\subseteq\;\Energy_\Source^{(2)},
+\]
+with isometric inclusion
+$J^{(2)}\colon\Energy_\Obs^{(2)}\hookrightarrow\Energy_\Source^{(2)}$.
+\end{definition}
+
+\begin{proposition}[Second-order observable compression]
+\label{prop:compression-2}
+Assume $D_\Source^{(2)}$ is closed and densely defined and that
+$\mathcal C_\Obs^{(2)}$ is dense in $\Hilb_\Obs$. Then
+$D_\Obs^{(2),0}\colon\mathcal C_\Obs^{(2)}\subseteq\Hilb_\Obs
+\to\Energy_\Obs^{(2)}$ is closed on the maximal pullback domain
+$\mathcal C_\Obs^{(2)}$; we denote it $D_\Obs^{(2)}$. Any restriction
+to a subcore $\mathcal C'\subseteq\mathcal C_\Obs^{(2)}$ dense in
+$\Hilb_\Obs$ is closable, and the closure is contained in
+$D_\Obs^{(2)}$.
+\end{proposition}
+
+\begin{proof}
+Identical structurally to \cref{thm:compression}: if
+$F_n\in\mathcal C_\Obs^{(2)}$ with $F_n\to F$ in $\Hilb_\Obs$ and
+$D_\Obs^{(2),0}F_n\to h$ in $\Energy_\Obs^{(2)}$, the isometric
+inclusions $\iota$ and $J^{(2)}$ give $\iota F_n\to\iota F$ in
+$\Hilb_\Source$ and $J^{(2)}D_\Obs^{(2),0}F_n=D_\Source^{(2)}(\iota F_n)
+\to J^{(2)}h$ in $\Energy_\Source^{(2)}$. Closedness of
+$D_\Source^{(2)}$ yields $\iota F\in\Dom(D_\Source^{(2)})$, i.e.,
+$F\in\mathcal C_\Obs^{(2)}$, and $D_\Obs^{(2),0}F=h$. Closability of
+subcore restrictions is the same
+argument applied to sequences in $\mathcal C'$.
+\end{proof}
+
+\Cref{prop:compression-2} produces a closed operator; it does not
+produce a generator. Identifying the action of $D_\Obs^{(2)}$ on a
+useful test class and converting it into an It\^o-type correction is
+the next analytic problem, structured by the energy-order
+classification of \cref{sec:energy-order}.
+
+\section{The conditional operator-It\^o transfer principle}\label{sec:transfer}
+
+We layer the framework one step further. Combining the first-order
+observable divergence $\delta_\Obs$ (\cref{thm:proj-div}) with a
+source-level It\^o expansion, we state and prove an abstract
+\emph{conditional} transfer theorem showing how a source-level It\^o
+expansion descends to an observable-level one.
+
+Let $(\Hilb_\Source,\Energy_\Source,D_\Source)$ and
+$(\Hilb_\Obs,\Energy_\Obs,D_\Obs)$ be the source and observable energy
+data of \cref{sec:compat}, with isometric inclusions $\iota$ and $J$
+and observable projection
+$P_\Obs=\iota^*=\E[\,\cdot\mid\mathcal F_\Obs]$.
+Suppose an observable process $U=(U_t)_{t\ge 0}$ and a smooth class of
+test functions admit a \emph{source-level} It\^o-type expansion
+\begin{equation}\label{eq:source-ito}
+  f(U_t)-f(U_0)\;=\;\delta_\Source\bigl(A_f(t)\bigr)\;+\;R_f(t),
+  \qquad A_f(t)\in\Dom(\delta_\Source),
+\end{equation}
+on the joint source $\sigma$-algebra $\mathcal F_\Source$, with
+remainder $R_f(t)\in L^{2}(\mathcal F_\Source)$.
+
+\begin{theorem}[Conditional operator-It\^o transfer]\label{thm:transfer}
+Assume \eqref{eq:source-ito} holds with $A_f(t)\in J(\Energy_\Obs)$,
+so that there exists $B_f(t)\in\Energy_\Obs$ with $JB_f(t)=A_f(t)$; in
+particular $B_f(t)$ lies in the lifted source-divergence domain
+$\{u\in\Energy_\Obs:Ju\in\Dom(\delta_\Source)\}$, so
+\cref{thm:proj-div} applies. Suppose further that $f(U_t)-f(U_0)$ is
+$\Prob$-a.s.\ $\mathcal F_\Obs$-measurable. Then
+\begin{equation}\label{eq:obs-ito}
+  f(U_t)-f(U_0)\;=\;\delta_\Obs\bigl(B_f(t)\bigr)\;+\;P_\Obs R_f(t),
+\end{equation}
+with $\delta_\Obs(B_f(t))=P_\Obs\,\delta_\Source(A_f(t))$.
+\end{theorem}
+
+\begin{proof}
+By \cref{thm:proj-div} applied to $B_f(t)$,
+$\delta_\Obs(B_f(t))=P_\Obs\,\delta_\Source(JB_f(t))
+=P_\Obs\,\delta_\Source(A_f(t))$. Apply $P_\Obs$ to both sides of
+\eqref{eq:source-ito}: since $f(U_t)-f(U_0)$ is
+$\mathcal F_\Obs$-measurable, $P_\Obs[f(U_t)-f(U_0)]=f(U_t)-f(U_0)$;
+linearity of $P_\Obs$ on the right gives
+$\delta_\Obs(B_f(t))+P_\Obs R_f(t)$.
+\end{proof}
+
+\Cref{thm:transfer} does \emph{not} prove an It\^o formula for $U$ on
+its own. It converts a source-level identity \eqref{eq:source-ito}
+into an observable-level identity \eqref{eq:obs-ito}, conditional on
+the source divergence integrand falling in the lifted observable image
+$J(\Energy_\Obs)$. The practical content is a separation of duties:
+the source side supplies the It\^o expansion; the compression
+construction (\cref{thm:compression,thm:proj-div}) supplies the
+observable lift; the correction term is the observable projection of
+the source remainder.
+
+The theorem does not construct $A_f(t)$, $B_f(t)$, or $R_f(t)$ in a
+given example. The source-level It\^o expansion \eqref{eq:source-ito}
+is the input to the transfer; producing it for a specific composite
+observable is part of the application paper. The transfer's content is
+that, given the source-level identity and the lifting hypothesis
+$A_f(t)\in J(\Energy_\Obs)$, the conditional-expectation formula of
+\cref{thm:proj-div} yields the observable-level identity automatically,
+with the observable correction equal to the conditional expectation of
+the source remainder.
+
+Two hypotheses of \cref{thm:transfer} are non-trivial in concrete
+examples:
+\begin{itemize}
+\item[(T1)] $A_f(t)\in J(\Energy_\Obs)$ --- the source divergence
+  integrand lifts through the observable inclusion;
+\item[(T2)] $f(U_t)-f(U_0)$ is $\mathcal F_\Obs$-measurable.
+\end{itemize}
+(T2) is automatic when $U$ is itself observable in $\mathcal F_\Obs$,
+which is the natural setting. (T1) is a genuine compatibility
+requirement on the source It\^o expansion: it asserts that the
+source-level martingale-direction integrand $A_f(t)$, while a priori
+an element of $\Energy_\Source$, in fact arises by lifting an
+observable element $B_f(t)\in\Energy_\Obs$. When this fails, the
+source-level expansion \eqref{eq:source-ito} does not descend to a
+strictly observable identity; what one can still extract is a
+partially-projected identity in $L^{2}(\mathcal F_\Source)$, which is
+not what the framework targets.
+
+The transfer principle is first-order: it converts $A_f(t)$ in
+$\Energy_\Source$ into $B_f(t)$ in $\Energy_\Obs$, and the
+remainder $R_f(t)$ in $L^{2}(\mathcal F_\Source)$ into
+$P_\Obs R_f(t)$ in $L^{2}(\mathcal F_\Obs)$. The structural shape of
+the remainder --- in particular the observable correction order $q$
+at which it should be read --- is not part of the transfer; that is
+the content of the energy-order classification of
+\cref{sec:energy-order}. In the quadratic-energy case
+($q=2$, operator rank $r=1$),
+$R_f(t)=\tfrac12\int_0^t f''(U_s)d\langle U\rangle_s$ recovers the
+semimartingale It\^o correction; in higher-order cases ($q\ge 4$,
+operator rank $r\ge 2$), the remainder is naturally read against a
+higher-order observable correction energy $\Energy_\Obs^{[q]}$
+generated by an operator-rank-$r$ datum $D_\Source^{(r)}$ obtained by
+compressing a higher-rank source derivative in the sense of
+\cref{def:compression-2,prop:compression-2}. The remaining structural
+content of the framework is the principled classification, by
+\emph{observable correction order}, of the candidate identities
+produced by the
+transfer, to which we turn next.
+
+\section{Energy-order classification}\label{sec:energy-order}
+
+The central claim of the energy-first reorganization is that It\^o's
+formula is a parametric family indexed by \emph{observable correction
+order}. The parametric It\^o identity
+\eqref{eq:abstract-ito-hierarchy} from the abstract,
+\begin{equation*}
+  f(U_t)-f(U_0)\;=\;\delta\bigl(B_f(t)\bigr)\;+\;\mathrm{Corr}_f^{[q]}(t),
+  \qquad\mathrm{Corr}_f^{[q]}(t)\in\bigl(\Energy^{[q]}\bigr)^{*},
+\end{equation*}
+asserts that, under the source-expansion and lift hypotheses of the
+transfer theorem (\cref{thm:transfer}), the transfer principle
+produces an It\^o-type expansion of the observable whose centred part
+is a divergence in the observable energy and whose correction lives in
+the dual of an order-$q$ observable correction energy space, with the
+integer $q$ determined by the noise composition (for the $q=2$ vs
+$q\ge 4$ realisation of $(\Energy^{[q]})^{*}$, see
+\cref{prop:quartic-dual}). The order $q$ is proposed as the natural organising invariant of the
+identity, in place of semimartingale quadratic variation: the
+quadratic-variation case is recovered at $q=2$, and higher-order
+composite-noise observables produce instances at $q\ge 4$. This section develops the operator-theoretic content of the
+parametric identity, recovers the classical case at $q=2$ (operator
+rank $r=1$), and records the higher-order witnesses at $q\ge 4$.
+
+\begin{remark}[Notation convention: $q$ versus $r$]
+\label{rem:q-r-convention}
+Throughout this paper, two distinct integers index a Level-3
+It\^o-type identity:
+\begin{itemize}
+\item[$q$ ---] the \emph{observable correction order}: the order of
+  the highest test-function derivative $f^{(q)}$ appearing in the
+  correction $\mathrm{Corr}_f^{[q]}$, equivalently the spatial order
+  of the PDE shadow of $X$ in the Level-1 observable It\^o identity
+  \eqref{eq:obs-ito-identity}. Bracket superscripts $[q]$ index
+  correction-order objects: $\mathrm{Corr}_f^{[q]}$, $\Energy^{[q]}$,
+  $C_f^{[q]}$.
+\item[$r$ ---] the \emph{operator rank}: the rank of the
+  operator-derivative datum $D^{(r)}\colon\Dom(D^{(r)})\to
+  \Energy^{(r)}$ whose carr\'e form generates the correction.
+  Parenthesis superscripts $(r)$ index operator-rank objects:
+  $D^{(r)}$, $\Energy^{(r)}$, $\Carre^{(r)}$. (The term ``rank'' is
+  used here in the order-of-derivative sense and does not refer to the
+  dimension of the range of $D^{(r)}$.)
+\end{itemize}
+In the even-order tensor cases considered in this paper,
+\begin{equation*}
+  q\;=\;2r.
+\end{equation*}
+Explicitly: classical semimartingale It\^o is the case $q=2$, $r=1$
+(a single operator derivative $D$, ordinary carr\'e
+$\Carre(X,X)=\langle DX,DX\rangle_\Energy$, second-order PDE shadow);
+iterated Brownian motion is the case $q=4$, $r=2$ (a rank-$2$
+operator derivative $D^{(2)}$, rank-$2$ carr\'e built from $D^{(2)}$,
+fourth-order PDE shadow). The two indices are not interchangeable: the
+classical correction $\tfrac12 f''(X_s)\,d\langle X\rangle_s$ is built
+from a \emph{first}-rank operator derivative even though its PDE
+shadow is of order two.
+\end{remark}
+
+To anchor the development, recall that the classical semimartingale
+It\^o formula reads
+\begin{equation}\label{eq:classical-ito}
+  f(X_t)-f(X_0)
+  \;=\;\int_0^t f'(X_s)\,dX_s
+   \;+\;\tfrac12\!\int_0^t f''(X_s)\,d\langle X\rangle_s,
+\end{equation}
+and the structural content of \eqref{eq:classical-ito} is that the
+correction is encoded by the quadratic-variation bracket
+$d\langle X\rangle$. This bracket is the trace of a
+\emph{second-order} object: in the bracket-compatible energy
+representations covered by \cref{thm:k2-recovery},
+$d\langle X\rangle$ corresponds to the diagonal of the carr\'e du
+champ $\Carre(F,F)=\langle DF,DF\rangle_\Energy$ for $F=X_t$,
+i.e.~the trace of $DX\otimes DX$ against the source pairing. The
+energy-first framework reads the same identity in terms of the order
+of the energy form rather than of the quadratic-variation bracket.
+
+\begin{definition}[Observable correction order and operator rank]
+\label{def:energy-order}
+Suppose an observable process $X$ admits a Level-3 lift in the sense
+of \cref{eq:operator-ito}:
+\begin{equation}\label{eq:order-q-ito}
+  f(X_t)-f(X_0)\;=\;\delta(U_f(X_\bullet))+C_f^{[q]}(X_\bullet).
+\end{equation}
+The lift has \emph{observable correction order $q$} if the highest
+test-function derivative entering the correction $C_f^{[q]}$ is
+$f^{(q)}$ on the chosen test class --- equivalently, if the leading
+differential part of the PDE shadow $\mathcal G_t$ of $X$ (the
+differential operator appearing in the Level-1 observable It\^o
+identity~\eqref{eq:obs-ito-identity}) is of order $q$
+(boundary/local-time contributions are absorbed into the lower-order
+terms of \cref{rem:schematic-correction}).
+It has \emph{operator rank $r$} if the correction takes the schematic
+form~\eqref{eq:schematic-correction} for an $r$-fold
+operator-derivative datum
+$D^{(r)}\colon\Dom(D^{(r)})\subseteq\Hilb\to\Energy^{(r)}$ with
+carr\'e form
+\[
+  \Carre^{(r)}(X,\dots,X)
+   \;=\;\langle D^{(r)}X,\,D^{(r)}X\rangle_{\Energy^{(r)}}.
+\]
+In the even-order tensor cases considered in this paper, the two
+indices are related by $q=2r$, which determines $r$ uniquely from $q$;
+we take this as the convention throughout. The reference cases of
+this classification are
+\begin{itemize}
+\item the classical semimartingale It\^o formula: $q=2$, $r=1$,
+  generated by a single operator derivative $D$ with ordinary carr\'e
+  $\Carre(X,X)=\langle DX,DX\rangle_\Energy$;
+\item iterated Brownian motion: $q=4$, $r=2$, generated by a rank-$2$
+  operator derivative $D^{(2)}$ with rank-$2$ carr\'e
+  $\Carre^{(2)}(X,X)=\langle D^{(2)}X,D^{(2)}X\rangle_{\Energy^{(2)}}$.
+\end{itemize}
+See \cref{rem:q-r-convention} for the firm notational separation of
+$q$ (bracket superscripts) from $r$ (parenthesis superscripts).
+\end{definition}
+
+\begin{remark}[Schematic form of the leading correction]
+\label{rem:schematic-correction}
+In the basic scalar even-order tensor examples treated in this paper,
+the leading correction $C_f^{[q]}$ has the schematic form
+\begin{equation}\label{eq:schematic-correction}
+  C_f^{[q]}(X_\bullet)
+   \;\sim\;\int_0^t f^{(q)}(X_s)\,
+        \Carre^{(r)}(X,\dots,X)_{s}\,ds
+   \;+\;\text{(boundary / local-time / lower-order terms)},
+\end{equation}
+with $q=2r$, but the numerical coefficient (e.g.\ $\tfrac12$ in the
+classical $q=2$ case, $\tfrac18$ in the IBM $q=4$ case) and the
+specific boundary or local-time contributions are model-dependent and
+are read off in each instance from the source-level It\^o expansion;
+\cref{def:energy-order} does not commit to a universal coefficient
+formula.
+\end{remark}
+
+\begin{program}[Observable correction-order classification]\label{prog:energy-order}
+The natural organising invariant of an It\^o-type identity is the
+\emph{observable correction order $q$} that produces the correction
+$C_f^{[q]}$ (equivalently, the order of the PDE shadow of $X$), not
+the existence of a quadratic-variation bracket. The classical
+semimartingale It\^o formula is the $q=2$ instance of this
+classification (operator rank $r=1$); observables whose pathwise
+correction is determined by a higher-rank operator-derivative datum
+have observable correction order $q>2$, and the PDE shadow of the
+correction is a differential operator of order $q$.
+\end{program}
+
+The thesis is a programme rather than a theorem because, while
+\cref{def:energy-order} makes the correction order well-defined once
+an energy datum and a Level-3 lift are chosen, identifying the correct
+energy datum and verifying the lift on a useful test class are
+problem-specific analytic tasks. We record three structural
+consequences: a recovery theorem in the classical $q=2$, $r=1$ case
+(treated below), an existence statement for higher-order witnesses,
+and a target-topology theorem for non-classical corrections (both
+treated thereafter).
+
+\subsection*{The classical case: \texorpdfstring{$q=2$, $r=1$}{q=2, r=1} recovers semimartingale It\^o--Tanaka}
+
+At observable correction order $q=2$ with operator rank $r=1$, the
+parametric identity \eqref{eq:abstract-ito-hierarchy} specialises to
+the classical semimartingale It\^o formula. The order-$2$ observable
+correction energy $\Energy^{[2]}$ is the dual of the ordinary
+carr\'e form
+\[
+  \Carre(X,X)\;=\;\langle DX,DX\rangle_{\Energy},
+\]
+which bracket compatibility identifies with $d\langle X\rangle$. The
+correction $\mathrm{Corr}_f^{[2]}(t)$ in
+\eqref{eq:abstract-ito-hierarchy} reads
+\[
+  \mathrm{Corr}_f^{[2]}(t)
+   \;=\;\tfrac12\!\int_0^{t}f''(X_s)\,d\langle X\rangle_s,
+\]
+generated by a single operator derivative $D$ (operator rank $r=1$).
+The quadratic-variation bracket is therefore not absent in the
+energy-first framework; it is the carr\'e form of the rank-$1$
+operator datum, and the $q=2$ instance of the parametric identity
+coincides with classical It\^o--Tanaka.
+
+In the following, $D$ is not assumed to be the standard Malliavin
+derivative; it is the operator derivative associated with the chosen
+energy datum $(\Hilb,\Energy,D)$. The compatibility hypotheses below
+are precisely what identify its local carr\'e with the semimartingale
+bracket.
+
+\begin{theorem}[Classical semimartingale It\^o as the $q=2$, $r=1$
+instance]\label{thm:k2-recovery}
+Let $X$ be a continuous semimartingale on a complete filtered
+probability space $(\Omega,\mathcal F_t,\Prob)$, with predictable
+quadratic variation $\langle X\rangle_t$. Let $(\Hilb,\Energy,D)$ be a
+bracket-compatible operator-energy datum on which $X_t\in\Dom(D)$ for
+every $t\ge 0$ and the chain rule $D(f(X_t))=f'(X_t)DX_t$ holds for
+$f\in C^{2}(\R)$. Assume $s\mapsto DX_s$ is a predictable
+$\Energy$-valued process with
+$\int_{0}^{t}\|DX_s\|_{\Energy}^{2}\,ds<\infty$ a.s., and define
+the predictable random measure
+\[
+  d\Carre^{D}_{X}(\omega,ds)\;\coloneqq\;\langle DX_s,DX_s\rangle_{\Energy}\,ds.
+\]
+Assume further the following two compatibility hypotheses on the
+class of test integrands $f'(X_\bullet)DX$ under consideration:
+\begin{itemize}
+\item[(B)] \emph{Bracket compatibility (measure form):}
+  \begin{equation}\label{eq:bracket-compat}
+    d\Carre^{D}_{X}(\omega,ds) \;=\; d\langle X\rangle_s(\omega)
+  \end{equation}
+  as predictable random measures on $\R_{+}$. (If $\langle X\rangle$
+  is absolutely continuous in $t$ with density
+  $\tfrac{d\langle X\rangle_s}{ds}$, equivalently
+  $\langle DX_s,DX_s\rangle_{\Energy}=\tfrac{d\langle X\rangle_s}{ds}$
+  a.e.~$s$.)
+\item[(D)] \emph{Divergence compatibility:} $f'(X_\bullet)DX
+  \in\Dom(\delta)$ for $f\in C^{2}(\R)$ in the test class, and
+  \begin{equation}\label{eq:div-compat}
+    \delta\bigl(f'(X_\bullet)DX\bigr)
+     \;=\;\int_0^t f'(X_s)\,dX_s.
+  \end{equation}
+\end{itemize}
+Then the parametric It\^o identity \eqref{eq:abstract-ito-hierarchy}
+at $q=2$ (operator rank $r=1$) recovers the classical semimartingale
+It\^o formula
+\begin{equation*}
+  f(X_t)-f(X_0) \;=\; \int_0^t f'(X_s)\,dX_s
+   \;+\;\tfrac12\!\int_0^t f''(X_s)\,d\langle X\rangle_s,
+\end{equation*}
+and $X$ has observable correction order $q=2$ and operator rank $r=1$
+in the sense of \cref{def:energy-order}, with
+$C_f^{[2]}=\tfrac12\int_0^t f''(X_s)\,d\langle X\rangle_s$.
+\end{theorem}
+
+\begin{proof}
+By the classical semimartingale It\^o formula for continuous
+semimartingales,
+\[
+  f(X_t)-f(X_0)
+   \;=\;\int_0^{t}f'(X_s)\,dX_s
+   \;+\;\tfrac12\!\int_0^{t}f''(X_s)\,d\langle X\rangle_s.
+\]
+By divergence-compatibility~(D), the first term equals
+$\delta(f'(X_\bullet)DX)$, so it has the form $\delta(B_f(t))$ with
+$B_f(t)=f'(X_\bullet)DX\in\Energy$.
+By bracket-compatibility~(B), $d\langle X\rangle_s=d\Carre^{D}_{X}(\omega,ds)$
+as predictable random measures, so the second term equals
+\[
+  \tfrac12\!\int_0^{t}f''(X_s)\,d\Carre^{D}_{X}(\omega,ds)
+   \;=\;\mathrm{Corr}_f^{[2]}(t),
+\]
+paired against $f''$ in $(\Energy^{[2]})^{*}$. The $f''$-pairing
+fixes $q=2$; the single operator derivative $D$ fixes $r=1$.
+Hypothesis~(D) is the Skorohod/It\^o agreement on the chosen
+predictable test class; on classical Wiener space (the canonical
+Brownian/Malliavin specialisation, with $D$ the Malliavin derivative
+and $\Energy=L^{2}(\R_{+})$) this is the standard fact recorded
+in~\cite{Nualart}.
+\end{proof}
+
+\Cref{thm:k2-recovery} clarifies the relationship between
+the classical construction and the energy-first reorganization. The
+classical organising principle for It\^o calculus is the existence
+of a quadratic-variation bracket $\langle X\rangle$. When $X$ is not
+a semimartingale in its natural filtration $\sigma(X_s:s\le t)$, it
+does not carry the finite predictable bracket structure required by
+the classical semimartingale It\^o formula, and the classical theory
+does not produce an It\^o formula at that level. The energy-order
+classification refuses to take the absence of an admissible
+$\langle X\rangle$ as obstructive: a process can have observable
+correction order $q\ne 2$, in which case its pathwise correction is
+built from a higher-rank operator-derivative carr\'e form
+$\Carre^{(r)}$ (with $q=2r$ in the even tensor case) rather than from
+a quadratic bracket. The non-semimartingale obstruction is
+reinterpreted as a failure of the $q=2$ coordinate, rather than as an
+obstruction to all It\^o-type structure.
+The energy-first reorganization proposes the observable correction
+order $q$ as the natural invariant of an It\^o-type identity, replacing
+semimartingale quadratic variation. The classical theory is the case
+$q=2$, $r=1$; the framework provides the operator-theoretic
+infrastructure for higher-order cases, with the IBM case ($q=4$,
+$r=2$) developed conditionally in the companion paper
+(\cref{cor:k4-witness}).
+
+\subsection*{Higher-order cases: composite processes and the
+witnesses at \texorpdfstring{$q\ge 4$}{q>=4}}
+
+Beyond $q=2$, the parametric identity
+\eqref{eq:abstract-ito-hierarchy} predicts that processes whose
+pathwise corrections fail to live in $L^{2}(\Omega)$ at the
+second-order level should be readable at higher correction order. In
+a concrete example, the correction order of a process is read off the
+Level-1 observable It\^o identity: \cref{def:obs-ito-identity}
+records the observable correction operator $\mathcal G_t$, and the
+candidate observable correction order $q$ equals the order of
+$\mathcal G_t$ as a differential operator on the test class. The
+associated operator rank is $r=q/2$ in the even-order tensor cases
+considered here (see \cref{rem:q-r-convention}). The diagnostic is
+therefore PDE-shadow data: one differentiates $\E[f(X_t)]$ in $t$ on a
+test class and reads the order of the resulting operator. The
+energy-first reorganization then asks what operator-rank-$r$ datum and
+what order-$q$ Level-3 lift carry that PDE shadow back to the pathwise
+level. The next two results record a concrete $q=4$ witness conditional
+on the companion paper~\cite{IBMPaper}, and the abstract
+target-topology structure required when the raw $L^{2}(\Omega)$
+correction fails.
+
+\begin{corollary}[$q=4$, $r=2$ witness, conditional
+on~\cite{IBMPaper}]\label{cor:k4-witness}
+Conditional on the mollified It\^o formula proved
+in~\cite[Theorem~7.1]{IBMPaper}, iterated Brownian motion
+$\IBM_t=X_{|Y_t|}$ is a $q=4$, $r=2$ witness of the energy-order
+classification of \cref{sec:energy-order}: the observable correction
+energy $\Energy_\IBM^{[4]}$ is fourth-order, and the parametric It\^o
+identity~\eqref{eq:abstract-ito-hierarchy} is realised at $q=4$ with
+the specific correction $\mathrm{Corr}_f^{[4]}(t)$ computed
+in~\cite[Theorem~7.1]{IBMPaper}, generated by a rank-$2$ operator
+derivative $D_\IBM^{(2)}$ (operator rank $r=2$). The associated
+observable correction operator is $\mathcal G_t=\tfrac18\partial_x^{4}$
+plus a boundary term, so by the diagnostic above the observable
+correction order is $q=4$, consistent with $q=2r$. Here $q$ is read
+off the leading differential part of $\mathcal G_t$; the boundary
+contribution is absorbed into the lower-order/local-time terms of the
+schematic correction (\cref{rem:schematic-correction}). In particular IBM
+lies strictly outside the bracket-compatible class of
+\cref{thm:k2-recovery}: it is not a semimartingale in its natural
+filtration $\sigma(\IBM_s:s\le t)$ and does not carry the finite
+predictable bracket structure required by the classical semimartingale
+It\^o formula.
+\end{corollary}
+
+\begin{proof}
+Direct application of~\cite[Theorem~7.1]{IBMPaper} together with the
+energy-order classification of \cref{def:energy-order}: the cited
+theorem supplies the source-level It\^o expansion of $f(\IBM_t)$
+generated by an operator-rank-$2$ datum, and \cref{thm:transfer}
+converts it into the observable identity whose correction is read at
+$q=4$ in $(\Energy_\IBM^{[4]})^{*}$.
+\end{proof}
+
+\begin{proposition}[Rigged hierarchy via Gelfand triple]
+\label{prop:quartic-dual}
+Assume a dense, continuously embedded subspace
+$\Energy^{[q],+}\hookrightarrow\Energy^{[q]}$.
+Then the standard Gelfand-triple
+construction~\cite{Berezansky,HidaKuoPotthoff} produces the rigged
+hierarchy
+\begin{equation}\label{eq:rigged-4-abstract}
+  \Energy^{[q],+}\;\subset\;\Energy^{[q]}\;\subset\;\Energy^{[q],-},
+\end{equation}
+where $\Energy^{[q],-}$ is the antidual of $\Energy^{[q],+}$ in the
+topology induced by the embedding. When the raw
+$L^{2}(\Omega)$-correction of an order-$q$ Level-3 lift does not exist,
+a natural candidate target topology for the pathwise correction is
+$\Energy^{[q],-}$, paired against test integrands from
+$\Energy^{[q],+}$.
+\end{proposition}
+
+\begin{proof}
+The construction of~\eqref{eq:rigged-4-abstract} is the standard
+Gelfand-triple construction; see~\cite[Ch.~1]{Berezansky}
+or~\cite[Sec.~3]{HidaKuoPotthoff}. Concrete realisations of
+$\Energy^{[q],+}$ (Hida-distributional, weighted-Sobolev, or
+polynomial-chaos completions) are constructed in the companion papers:
+for iterated Brownian motion the quartic case $q=4$ uses
+$\Energy_\IBM^{[4]}=\Energy_\IBM^{(2)}\otimes\Energy_\IBM^{(2)}$
+(correction energy at $q=4$ realised as the tensor square of the
+rank-$r=2$ operator energy $\Energy_\IBM^{(2)}$) with the rigged
+hierarchy of~\cite[\S5]{IBMPaper}; the abstract framework requires
+only the existence of such a triple.
+\end{proof}
+
+The rigged hierarchy
+$\Energy^{[q],+}\subset\Energy^{[q]}\subset\Energy^{[q],-}$ used
+here is an instance of the standard Gelfand-triple construction: a
+dense, continuously embedded subspace $\Energy^{[q],+}$ supplies test
+integrands, and the antidual $\Energy^{[q],-}$ supplies the topology
+in which higher-order corrections naturally live when they fail to be
+square-integrable. Concrete realisations of the triple use
+Hida-distributional, weighted-Sobolev, or polynomial-chaos
+completions depending on the noise structure; in the iterated
+Brownian motion case the rigged hierarchy of~\cite[\S5]{IBMPaper}
+uses weighted-Sobolev spaces $H^{s}$ in the spatial scenery direction
+combined with chaos completions in the clock direction. The framework
+paper requires only the existence of such a triple, with continuous
+embedding and closability of the divergence on the test subspace; the
+construction itself is analytical and is treated case by case.
+
+The natural higher-order witnesses of the classification are
+composite processes. The worked example of~\cite{IBMPaper} exhibits
+a fourth-order PDE shadow on the composite process
+$\IBM_t=X_{|Y_t|}$: by \cref{cor:k4-witness} and
+\cref{prop:quartic-dual}, $\IBM$ is the $q=4$ instance of the
+parametric identity \eqref{eq:abstract-ito-hierarchy} --- PDE-shadow
+order four, with the order-$q$ correction
+$\mathrm{Corr}_f^{[4]}(t)$ living in the dual
+$(\Energy_\IBM^{[4]})^{*}$ of the quartic composite observable
+correction energy
+$\Energy_\IBM^{[4]}=\Energy_\IBM^{(2)}\otimes\Energy_\IBM^{(2)}$
+rather than in $L^{2}(\Omega)$. The composite structure is what
+produces the fourth-order signature: the clock It\^o formula behind
+the IBM identity is second-order in the Brownian-time variable, but
+because its coefficients are derivatives of Brownian scenery the
+observable correction has fourth-order PDE shadow. The mechanism, in
+the q/r language of \cref{rem:q-r-convention}, is a single one: the
+two rank-$1$ source Malliavin calculi $(D_X,\delta_X)$ and
+$(D_Y,\delta_Y)$ compose into a rank-$2$ observable operator-derivative
+datum $D_\IBM^{(2)}$, whose carr\'e form $\Carre^{(2)}_\IBM$ produces
+the $q=4$ correction energy
+$\Energy_\IBM^{[4]}=\Energy_\IBM^{(2)}\otimes\Energy_\IBM^{(2)}$ and
+the fourth-order PDE shadow. We expect a wider family of composite, subordinated,
+time-changed, and iterated processes to populate the classification
+at orders $q\ge 4$, with the framework of
+\cref{thm:compression,thm:proj-div,thm:transfer} producing the
+operator/energy objects and the parametric identity
+\eqref{eq:abstract-ito-hierarchy} reading off the order-$q$
+correction in each such case.
+
+\section{Outlook: the worked example in the companion paper}\label{sec:outlook}
+
+The framework developed in
+\cref{thm:compression,thm:proj-div,thm:transfer} is, on its own, an
+abstract recipe: it gives a compression construction, a projected
+divergence formula, and a conditional operator-It\^o transfer
+principle. To exhibit its reach in a regime where classical methods
+do not apply, the companion paper~\cite{IBMPaper} carries out the
+construction in detail for the canonical non-semimartingale
+composite-noise example: \emph{iterated Brownian motion}
+$\IBM_t=X_{|Y_t|}$, with two-sided Brownian scenery $X$ and an
+independent Brownian clock $Y$. Three features make IBM diagnostically
+useful as a witness of the energy-first framework. Its PDE shadow is
+the bi-Laplacian/local-time PDE signature identified by
+Allouba--Zheng~\cite{AllouZheng}, not the heat equation: IBM is not
+Markov in its own filtration and its observable correction operator
+is $\mathcal G_t=\tfrac18\partial_x^{4}$ plus a boundary term, so by
+the energy-order classification of \cref{prog:energy-order} it is a
+fourth-order observable It\^o process (PDE-shadow order four,
+observable correction order $q=4$ and operator rank $r=2$ in the sense
+of \cref{rem:q-r-convention}: a rank-$2$ operator derivative whose
+carr\'e form, contracted with the clock, produces the fourth-order
+spatial shadow, consistent with $q=2r$). It is also naturally a
+\emph{composite} process: the source Malliavin calculi
+$(D_X,\delta_X)$ and $(D_Y,\delta_Y)$ live on the two independent
+Gaussian factors and provide an explicit atlas indexed by the chaos
+bidegree $(m,n)$, as developed in~\cite{Fontes-IBMchaos} --- the
+source datum is concrete, and the observable datum is obtained by the
+compression construction of \cref{thm:compression}. Finally, IBM does
+not fall under the classical semimartingale It\^o theory in its own
+filtration: it is not a semimartingale in its natural filtration
+$\sigma(\IBM_s:s\le t)$ and does not carry the finite predictable
+bracket structure required by the classical semimartingale It\^o
+formula, so the energy-order classification, rather than the
+$\langle\cdot\rangle$-bracket framework, is the natural organising
+tool.
+
+The companion paper~\cite{IBMPaper} applies the compression
+construction \cref{thm:compression} and the projected divergence
+formula \cref{thm:proj-div} to the IBM source $(X,Y)$ and the
+observable $\sigma$-algebra
+$\mathcal F_\IBM\subseteq\mathcal F_X\vee\mathcal F_Y$, obtaining a
+closed first-order intrinsic IBM derivative $D_\IBM$ on the maximal
+pullback core $\mathcal C_\IBM$. The abstract framework is realised
+concretely on a mollified occupation core, with explicit kernels and
+quantitative $\varepsilon\to 0$ convergence in the scenery-energy
+direction. The main pathwise theorem of~\cite{IBMPaper} is a
+\emph{mollified pathwise IBM It\^o formula} at every $\varepsilon>0$,
+with explicit pathwise correction expressed through a clock-Skorohod
+divergence and a Tanaka-style boundary local-time term, and its
+fourth-order PDE-shadow consistency in expectation as
+$\varepsilon\to 0$. Beyond the mollified level, the companion paper
+proves the $L^{2}(\Omega)$ obstruction to the unmollified pathwise
+correction: the centred first-scenery-chaos projection of the
+candidate correction has variance that diverges as
+$\varepsilon\to 0$, via an explicit Stein-cancellation argument that
+isolates a residual $\rho_\varepsilon'$-kernel driven by the
+Bouleau--Yor spatial quadratic variation of the Brownian clock local
+time. The structural target topology for the unmollified correction
+is then the dual $\Energy_\IBM^{[4],-}$ of a quartic composite
+observable correction energy
+$\Energy_\IBM^{[4]}=\Energy_\IBM^{(2)}\otimes\Energy_\IBM^{(2)}$
+(correction order $q=4$ realised as the tensor square of the rank-$2$
+operator energy $\Energy_\IBM^{(2)}$), in exact accord with
+\cref{prop:quartic-dual}. Each of these results is
+an instance of the abstract framework proved here applied in a
+specific composite-noise regime: the abstract framework supplies the
+operator/energy structures and the conditional operator-It\^o
+transfer; the worked example supplies the concrete analytic content
+(mollifier estimates, Stein cancellation, Bouleau--Yor input) needed
+to land a proved theorem at the mollified level and to isolate the
+obstruction at the unmollified level.
+
+The framework is not specific to IBM. Fractional Brownian motion,
+Volterra and ambit processes, stable L\'evy processes, stochastic
+volatility models, and a wider family of composite, subordinated,
+time-changed, and iterated processes are natural candidates for the
+energy-order classification: each provides a source energy datum, a
+sub-$\sigma$-algebra encoding the observable, and a PDE shadow whose
+order indicates the observable correction order $q$ of the observable.
+We do not develop these applications here. The framework provides the
+operator/energy infrastructure; specific applications follow the
+pattern set by~\cite{IBMPaper} of identifying the relevant source
+datum, applying \cref{thm:compression,thm:proj-div,thm:transfer},
+and reading off the appropriate observable correction order $q$ from
+the PDE shadow.
+
+\section*{Acknowledgments}
+
+AI tools were used as interactive assistants for drafting,
+reorganizing, and generating mathematical arguments, under the
+author's direction. The author is responsible for all mathematical
+content and any errors.
+
+\begin{thebibliography}{99}
+
+\bibitem{AllouZheng}
+H.~Allouba and W.~Zheng,
+\emph{Brownian-time processes: the PDE connection and the
+half-derivative generator},
+Ann. Probab. \textbf{29} (2001), no.~4, 1780--1795.
+
+\bibitem{Berezansky}
+Yu.~M.~Berezansky and Yu.~G.~Kondratiev,
+\emph{Spectral Methods in Infinite-Dimensional Analysis. Vol.~1},
+Mathematical Physics and Applied Mathematics, vol.~12/1,
+Kluwer Academic Publishers, Dordrecht, 1995.
+
+\bibitem{BogachevGaussian}
+V.~I.~Bogachev,
+\emph{Gaussian Measures},
+Mathematical Surveys and Monographs, vol.~62,
+American Mathematical Society, Providence, RI, 1998.
+
+\bibitem{BouleauHirsch}
+N.~Bouleau and F.~Hirsch,
+\emph{Dirichlet Forms and Analysis on Wiener Space},
+de Gruyter Studies in Mathematics, vol.~14,
+Walter de Gruyter \& Co., Berlin, 1991.
+
+\bibitem{Fontes-IBMchaos}
+R.~Fontes,
+\emph{Source-resolved chaos expansions for iterated Brownian motion},
+companion paper, in preparation, 2026.
+
+\bibitem{Fontes-IBMnumerical}
+R.~Fontes,
+\emph{A numerical variance budget for iterated Brownian motion},
+companion paper, in preparation, 2026.
+
+\bibitem{Fontes-OperatorDerivative}
+R.~Fontes,
+\emph{The operator derivative in continuous stochastic calculus:
+a Hilbert energy space framework},
+preprint, 2026.
+
+\bibitem{Fontes-PDEgenerators}
+R.~Fontes,
+\emph{PDE generators and energy corrections for Brownian-time processes},
+companion paper, in preparation, 2026.
+
+\bibitem{FukushimaOshimaTakeda}
+M.~Fukushima, Y.~Oshima, and M.~Takeda,
+\emph{Dirichlet Forms and Symmetric Markov Processes},
+2nd ed., de Gruyter Studies in Mathematics, vol.~19,
+Walter de Gruyter \& Co., Berlin, 2011.
+
+\bibitem{HidaKuoPotthoff}
+T.~Hida, H.-H.~Kuo, J.~Potthoff, and L.~Streit,
+\emph{White Noise: An Infinite Dimensional Calculus},
+Mathematics and Its Applications, vol.~253,
+Kluwer Academic Publishers, Dordrecht, 1993.
+
+\bibitem{IBMPaper}
+R.~Fontes,
+\emph{Iterated Brownian Motion: An It\^o Formula in the Energy-First
+Framework} (working title),
+companion paper, in preparation, 2026. [Placeholder citation key to be
+fixed at submission.]
+
+\bibitem{StickyFlowNoiseLift}
+R.~Fontes,
+\emph{Sticky-Flow Noise Lifts in the Energy-First Framework: the
+Le~Jan--Raimond Case} (working title),
+companion paper, in preparation, 2026. [Placeholder citation key to be
+fixed at submission.]
+
+\bibitem{Janson}
+S.~Janson,
+\emph{Gaussian Hilbert Spaces},
+Cambridge Tracts in Mathematics, vol.~129,
+Cambridge University Press, Cambridge, 1997.
+
+\bibitem{Nualart}
+D.~Nualart,
+\emph{The Malliavin Calculus and Related Topics},
+2nd ed., Probability and Its Applications,
+Springer-Verlag, Berlin, 2006.
+
+\bibitem{NualartPardoux}
+D.~Nualart and E.~Pardoux,
+\emph{Stochastic calculus with anticipating integrands},
+Probab. Theory Related Fields \textbf{78} (1988), no.~4, 535--581.
+
+\bibitem{ReedSimonI}
+M.~Reed and B.~Simon,
+\emph{Methods of Modern Mathematical Physics. I: Functional Analysis},
+revised and enlarged ed., Academic Press, New York, 1980.
+
+\end{thebibliography}
+
+\end{document}

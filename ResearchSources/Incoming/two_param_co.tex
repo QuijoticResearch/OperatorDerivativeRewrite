@@ -1,0 +1,1167 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[utf8]{inputenc}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+% Theorem environments
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% Operators
+\newcommand{\Id}{\mathrm{Id}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\im}{\mathrm{im}}
+\DeclareMathOperator{\PV}{P.V.}
+
+\title{Two-Parameter Clark--Ocone Formulas in Banach Energy Spaces\\
+for Stable L\'evy Processes}
+
+\author{Ramiro Fontes\\
+Quijotic Research\\
+\texttt{ramirofontes@gmail.com}}
+
+\date{February 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We extend the operator factorization framework
+of~\cite{Fontes2026a,Fontes2026d} from one-parameter to
+two-parameter energy spaces for symmetric $\gamma$-stable
+L\'evy processes ($\gamma \in (1,2)$).
+
+In the one-parameter framework~\cite{Fontes2026d}, the energy
+space $H_L = L^p([0,T]\times\Omega,\,dt\otimes dP)$ supports
+the stochastic integral $\delta_L(u) = \int u_t\,dL_t$ and
+the adjoint derivative $D_L = \delta_L^*$.  The Banach It\^o
+formula~\cite{Fontes2026f} decomposes $\phi(L_T)$ into a
+$\delta_L$-integral plus a Leibniz defect
+$\Gamma_L^{\phi}(T)$.  However, the defect itself is not a
+$\delta_L$-integral: it lives outside the range of the
+one-parameter divergence.  Consequently, the one-parameter
+factorization $(\Id - \E) = \delta_L \circ \iota_L^{-1} \circ D_L$
+cannot yield a Clark--Ocone representation for arbitrary
+stable functionals.
+
+We resolve this by introducing the \emph{two-parameter energy
+space} $\widetilde{H}_L = L^p([0,T]\times\R\times\Omega,\,
+dt\otimes\nu\otimes dP)$, where $\nu$ is the L\'evy measure,
+with divergence
+$\widetilde{\delta}_L(h) = \int_0^T\!\int_{\R}h(s,z)\,
+\widetilde{N}(ds,dz)$ (integration against the compensated
+Poisson random measure) and derivative
+$\widetilde{D}_L = \widetilde{\delta}_L^*$.  The
+two-parameter BDG equivalence
+$\|\widetilde{\delta}_L(h)\|_{L^p} \asymp
+\|h\|_{\widetilde{H}_L}$
+gives the recovery map $\widetilde{\iota}_L^{-1}$, and the
+factorization
+$(\Id - \E) = \widetilde{\delta}_L \circ
+\widetilde{\iota}_L^{-1} \circ \widetilde{D}_L$
+yields an $L^p$ Clark--Ocone formula:
+every centered $F \in L^p(\Omega)$ has a representation
+$F - \E[F] = \widetilde{\delta}_L(h)$ for a unique
+$h \in \widetilde{H}_L$.
+
+The one-parameter and two-parameter frameworks occupy
+complementary regimes.  The $\delta_L$-integrals have
+integrands $u(t)\cdot z$ that are \emph{$\nu$-singular}
+($\int|z|^p\nu(dz) = \infty$): they converge by cancellation
+in the compensation, not by integrability.
+The Leibniz defect $\Gamma_L^{\phi}$ has integrand
+$\phi(L_{s-}+z)-\phi(L_{s-})-\phi'(L_{s-})z = O(z^2)$
+near $z = 0$, which is \emph{$\nu$-regular}
+($\int_{|z|\leq 1}|z|^{2p}\nu(dz) < \infty$ for
+$p > \gamma/2$) and lies naturally in
+$\widetilde{H}_L$.  The defect is thus the explicitly
+representable part of $\phi(L_T)$ in the two-parameter space;
+the stochastic integral part has only an abstract
+$\widetilde{H}_L$-representative.
+
+As applications, we derive regularity conditions on stable
+functionals in terms of the $z$-decay of the defect
+integrand, connecting the operator framework to Besov-type
+regularity scales for the fractional Laplacian.
+\end{abstract}
+
+\medskip
+\noindent\textbf{MSC 2020:} 60H07, 60H05, 60G52, 60G51, 46B28.\\
+\textbf{Keywords:} Clark--Ocone formula; Banach energy spaces;
+operator factorization; stable L\'evy processes;
+Leibniz defect; compensated Poisson measure;
+two-parameter representation.
+
+
+%======================================================================
+\section{Introduction}\label{sec:intro}
+%======================================================================
+
+\subsection{Background and motivation}
+
+The operator factorization framework developed
+in~\cite{Fontes2026a,Fontes2026b,Fontes2026c} expresses
+stochastic calculus through the identity
+\begin{equation}\label{eq:factorization}
+  (\Id - \E) = \delta \circ \iota^{-1} \circ r \circ D,
+\end{equation}
+where $D$ is the operator--covariant derivative, $\delta = D^*$
+is the divergence (stochastic integral), $r$ is the restriction
+to predictable processes, and $\iota^{-1}$ is the recovery map.
+In the Hilbert framework ($L^2$-energy spaces, Brownian filtrations),
+this factorization yields the Clark--Ocone representation: every
+centered $F \in L^2(\Omega)$ has a unique stochastic integral
+representation $F - \E[F] = \int_0^T u_t\,dB_t$.
+
+The extension to Banach energy spaces~\cite{Fontes2026d}
+replaced $L^2$ by $L^p$ with $p < \gamma < 2$ for symmetric
+$\gamma$-stable L\'evy processes.  The Banach
+It\^o formula~\cite{Fontes2026f} was derived by time
+discretization, yielding for $\phi \in C_b^3(\R)$:
+\begin{equation}\label{eq:banach-ito}
+  \phi(L_T) - \phi(0)
+  = \underbrace{\int_0^T \phi'(L_{t-})\,dL_t}_{%
+  \text{$\delta_L$-integral}}
+  + \underbrace{\Gamma_L^{\phi}(T)}_{%
+  \text{Leibniz defect}},
+\end{equation}
+where $\Gamma_L^{\phi}(T) = \sum_{s \leq T}
+[\phi(L_s) - \phi(L_{s-}) - \phi'(L_{s-})\Delta L_s]$ is the
+chain-rule defect.
+
+The It\^o formula is a representation of $\phi(L_T)$ as a
+$\delta_L$-integral plus a correction.  It is \emph{not} a
+Clark--Ocone formula, because the correction
+$\Gamma_L^{\phi}(T)$ is not itself a $\delta_L$-integral.
+
+
+\subsection{The representability obstruction}\label{sec:obstruction}
+
+The obstruction is structural.  Write
+$\delta_L(u) = \int_0^T u_t\,dL_t$ for the one-parameter
+stochastic integral.  Via the L\'evy--It\^o decomposition,
+\[
+  \delta_L(u)
+  = \int_0^T\!\!\int_{\R} u_t\,z\,\widetilde{N}(dt,dz),
+\]
+where $\widetilde{N}$ is the compensated Poisson random measure.
+The integrand $u_t \cdot z$ is \emph{linear in~$z$}.  Thus the
+range of $\delta_L$ consists of $\widetilde{N}$-integrals with
+integrands that are linear in the jump size.
+
+The Leibniz defect has the Poisson integral representation
+\begin{equation}\label{eq:defect-poisson}
+  \Gamma_L^{\phi}(T)
+  = \int_0^T\!\!\int_{\R}
+  \bigl[\phi(L_{s-}+z) - \phi(L_{s-}) - \phi'(L_{s-})z\bigr]\,
+  N(ds,dz).
+\end{equation}
+The integrand is the Taylor remainder
+$\phi(x+z) - \phi(x) - \phi'(x)z$, which is
+\emph{quadratic in~$z$} to leading order.  This integrand
+is not of the form $u(s)\cdot z$, so $\Gamma_L^{\phi}(T)$ does
+not lie in the range of $\delta_L$.
+
+In the Hilbert case ($\gamma \to 2$, Brownian motion),
+$\Gamma_L^{\phi} = 0$: the defect vanishes, the
+one-parameter integral captures everything, and the
+factorization~\eqref{eq:factorization} yields Clark--Ocone.
+For $\gamma < 2$, the defect is nonzero, and the one-parameter
+factorization cannot produce a full representation theorem.
+
+\begin{remark}[Martingale representation for L\'evy processes]
+\label{rem:levy-rep}
+This is consistent with the classical theory: the filtration of
+a L\'evy process does \emph{not} have the predictable
+representation property with respect to $dL$-integrals alone.
+The full martingale representation requires integration against
+the compensated Poisson measure $\widetilde{N}(ds,dz)$ with
+integrands depending on both $s$ and $z$
+(see e.g.~\cite{Applebaum2009}, Theorem~5.3.5).
+\end{remark}
+
+
+\subsection{Main results}
+
+We resolve the representability obstruction by enlarging the
+energy space from one parameter ($t$) to two parameters ($t,z$).
+
+\medskip\noindent
+\textbf{Theorem~A} (Two-parameter factorization;
+Theorem~\ref{thm:two-param-factorization}).
+\emph{The identity
+$(\Id - \E) = \widetilde{\delta}_L \circ
+\widetilde{\iota}_L^{-1} \circ \widetilde{D}_L$
+holds on $L^p(\Omega) \cap L^q(\Omega)$, where
+$\widetilde{\delta}_L$, $\widetilde{D}_L$, and
+$\widetilde{\iota}_L^{-1}$ are the two-parameter divergence,
+derivative, and recovery map defined in
+Section~\ref{sec:two-param}.}
+
+\medskip\noindent
+\textbf{Theorem~B} ($L^p$ Clark--Ocone;
+Theorem~\ref{thm:clark-ocone}).
+\emph{Every centered $F \in L^p(\Omega) \cap L^q(\Omega)$ has a
+unique representation}
+\[
+  F - \E[F]
+  = \int_0^T\!\!\int_{\R} h_F(s,z)\,\widetilde{N}(ds,dz)
+\]
+\emph{with $h_F \in \widetilde{H}_L
+= L^p([0,T]\times\R\times\Omega,\,
+\mathcal{P}\otimes\mathcal{B}(\R),\,dt\otimes\nu\otimes dP)$,
+and the integrand satisfies
+$h_F = \widetilde{\iota}_L^{-1}(\widetilde{D}_L F)$.}
+
+\medskip\noindent
+\textbf{Theorem~C} (Two-regime decomposition;
+Theorem~\ref{thm:defect-decomposition}).
+\emph{For $F = \phi(L_T)$ with $\phi \in C_b^3(\R)$, the
+martingale part of the defect $\Gamma_L^{\phi}(T)$ is
+$M_T^{(1)} = \widetilde{\delta}_L(g_\phi)$ with natural
+integrand
+$g_\phi(s,z) = \phi(L_{s-}+z) - \phi(L_{s-}) - \phi'(L_{s-})z
+= O(z^2)$, which is $\nu$-regular
+($g_\phi \in \widetilde{H}_L$).  The stochastic integral
+$\delta_L(\phi'(L_{\cdot-}))$ also has a
+$\widetilde{H}_L$-representative, but it is non-explicit:
+the natural integrand $\phi'(L_{t-})z$ is $\nu$-singular
+($\int|z|^p\nu(dz) = \infty$) and does not belong to
+$\widetilde{H}_L$.}
+
+
+\subsection{Significance}
+
+These results complete the operator factorization program:
+
+\begin{center}
+\begin{tabular}{lll}
+\textbf{Setting} & \textbf{Energy space} & \textbf{Representation} \\
+\hline
+Hilbert ($\gamma = 2$, BM)
+  & $H_B = L^2(dt \otimes dP)$
+  & 1-parameter Clark--Ocone \\
+Banach, 1-param ($\gamma < 2$)
+  & $H_L = L^p(dt \otimes dP)$
+  & It\^o formula + defect \\
+Banach, 2-param ($\gamma < 2$)
+  & $\widetilde{H}_L = L^p(dt \otimes \nu \otimes dP)$
+  & Full Clark--Ocone
+\end{tabular}
+\end{center}
+
+The Leibniz defect $\Gamma_L$ acquires a dual interpretation:
+\begin{enumerate}[label=(\roman*)]
+\item In the It\^o formula: the \emph{correction term}
+  (the chain-rule defect added to $\delta_L(\phi'(L_{\cdot-}))$).
+\item In the representation theory: the \emph{$\nu$-regular
+  component} of $F$ (the part with an explicit
+  $\widetilde{H}_L$-integrand $g_\phi = O(z^2)$).
+\item In the one-parameter framework: the \emph{obstruction}
+  to $dL$-representability (the part of $F$ not in
+  $\im(\delta_L)$).
+\end{enumerate}
+In the Brownian case ($\nu = 0$), the defect vanishes,
+the obstruction disappears, and the one-parameter
+representation suffices.  The transition from
+$\gamma < 2$ to Brownian motion is singular:
+the jump structure that necessitates the two-parameter
+framework vanishes entirely.
+
+
+\subsection{Organization}
+
+Section~\ref{sec:one-param-recap} recalls the one-parameter
+framework.  Section~\ref{sec:two-param} constructs the
+two-parameter energy space, divergence, and derivative.
+Section~\ref{sec:BDG} establishes the two-parameter BDG
+equivalence and the recovery map.
+Section~\ref{sec:factorization} proves the two-parameter
+factorization and Clark--Ocone formula (Theorems~A and~B).
+Section~\ref{sec:decomposition} proves the two-regime
+decomposition (Theorem~C) and analyzes the relationship
+between the one-parameter and two-parameter frameworks.
+Section~\ref{sec:regularity} develops regularity implications.
+Section~\ref{sec:discussion} discusses connections and open
+problems.
+
+
+%======================================================================
+\section{The One-Parameter Framework (Recap)}
+\label{sec:one-param-recap}
+%======================================================================
+
+We recall the setup from~\cite{Fontes2026d,Fontes2026f}.
+Let $L = (L_t)_{t \in [0,T]}$ be a symmetric $\gamma$-stable
+L\'evy process with $\gamma \in (1,2)$ on
+$(\Omega, \mathcal{F}, P)$ with natural filtration
+$(\mathcal{F}_t^L)$.  The L\'evy measure is
+$\nu(dz) = c_\gamma|z|^{-1-\gamma}\,dz$, the Poisson random
+measure is $N(dt,dz)$, and $\widetilde{N}(dt,dz) =
+N(dt,dz) - \nu(dz)\,dt$ is the compensated measure.
+
+Fix $p \in (1,\gamma)$ with conjugate $q = p/(p-1) > 2$.
+
+\begin{definition}[One-parameter objects]\label{def:one-param}
+The \emph{one-parameter energy space}, \emph{divergence},
+and \emph{derivative} are:
+\begin{align}
+  H_L &:= L^p([0,T]\times\Omega,\,\mathcal{P},\,
+  dt\otimes dP), \label{eq:HL}\\
+  \delta_L &: H_L \to L^p(\Omega), \qquad
+  \delta_L(u) := \int_0^T u_t\,dL_t, \label{eq:deltaL}\\
+  D_L &:= \delta_L^* : L^q(\Omega) \to H_L^*, \qquad
+  \langle D_L F, u \rangle = \E[F\cdot\delta_L(u)].
+  \label{eq:DL}
+\end{align}
+The BDG equivalence
+$c_p\|u\|_{H_L} \leq \|\delta_L(u)\|_{L^p}
+\leq C_p\|u\|_{H_L}$ holds for constants
+$c_p, C_p > 0$.
+\end{definition}
+
+The factorization~\eqref{eq:factorization} was established
+in~\cite{Fontes2026d} on the domain
+$\{F \in L^p \cap L^q : F - \E[F] \in
+\overline{\im(\delta_L)}^{L^p}\}$.
+The key point is that $\overline{\im(\delta_L)}^{L^p}$
+is a \emph{proper subspace} of $L^p_0(\Omega) :=
+\{F \in L^p : \E[F] = 0\}$ (see
+Section~\ref{sec:obstruction}).  The two-parameter extension
+enlarges the divergence to achieve surjectivity.
+
+
+%======================================================================
+\section{The Two-Parameter Energy Space}\label{sec:two-param}
+%======================================================================
+
+\subsection{Definition}
+
+\begin{definition}[Two-parameter objects]\label{def:two-param}
+The \emph{two-parameter energy space} is
+\begin{equation}\label{eq:tHL}
+  \widetilde{H}_L :=
+  L^p\bigl([0,T]\times\R\times\Omega,\;
+  \mathcal{P}\otimes\mathcal{B}(\R),\;
+  dt\otimes\nu(dz)\otimes dP\bigr),
+\end{equation}
+equipped with the norm
+\begin{equation}\label{eq:tHL-norm}
+  \|h\|_{\widetilde{H}_L}
+  := \left(\E\!\int_0^T\!\!\int_{\R}
+  |h(t,z)|^p\,\nu(dz)\,dt\right)^{1/p}.
+\end{equation}
+The \emph{two-parameter divergence} is
+\begin{equation}\label{eq:tdelta}
+  \widetilde{\delta}_L : \widetilde{H}_L \to L^p(\Omega),
+  \qquad
+  \widetilde{\delta}_L(h) :=
+  \int_0^T\!\!\int_{\R} h(t,z)\,\widetilde{N}(dt,dz).
+\end{equation}
+The \emph{two-parameter derivative} is the adjoint
+\begin{equation}\label{eq:tDL}
+  \widetilde{D}_L := \widetilde{\delta}_L^* :
+  L^q(\Omega) \to \widetilde{H}_L^*,
+  \qquad
+  \langle \widetilde{D}_L F, h \rangle
+  = \E\bigl[F \cdot \widetilde{\delta}_L(h)\bigr]
+\end{equation}
+for $F \in L^q(\Omega)$,
+$h \in \widetilde{H}_L$.
+\end{definition}
+
+\begin{remark}[The measure $dt\otimes\nu\otimes dP$]
+\label{rem:measure}
+The product measure $dt\otimes\nu(dz)\otimes dP$ is
+$\sigma$-finite but not finite (since $\nu(\R) = \infty$
+for $\gamma < 2$).  The space $\widetilde{H}_L$ is a
+well-defined separable Banach space.  The predictability
+requirement $\mathcal{P}\otimes\mathcal{B}(\R)$ ensures
+that integrands $h(t,z,\omega)$ are predictable in $t$
+(adapted to $\mathcal{F}_{t-}^L$) and measurable in $z$.
+\end{remark}
+
+
+\subsection{The linearization map and the $\nu$-singularity obstruction}
+
+The natural candidate for relating the one-parameter and
+two-parameter frameworks is the linearization map.  We show
+that it does \emph{not} define an embedding.
+
+\begin{definition}[Linearization map]\label{def:linearization}
+For $u \in H_L$, define the \emph{linearization}
+$\Lambda u : [0,T]\times\R\times\Omega \to \R$ by
+\begin{equation}\label{eq:Lambda}
+  (\Lambda u)(t,z) := u(t) \cdot z.
+\end{equation}
+\end{definition}
+
+\begin{proposition}[Properties of $\Lambda$]
+\label{prop:Lambda}
+\begin{enumerate}[label=(\alph*)]
+\item $\Lambda$ does \emph{not} map $H_L$ into
+  $\widetilde{H}_L$: the norm
+  $\|\Lambda u\|_{\widetilde{H}_L}^p
+  = \|u\|_{H_L}^p \cdot \int_{\R}|z|^p\,\nu(dz) = \infty$,
+  since $\int|z|^p\,\nu(dz) = \infty$ for $p < \gamma$
+  (the integral $\int_0^1 z^{p-1-\gamma}\,dz$ diverges
+  when $p < \gamma$).
+  The integrand $u(t)\cdot z$ is too singular near $z = 0$
+  for the $L^p(\nu)$ norm.
+\item Nevertheless, $\Lambda$ intertwines the divergences
+  \emph{at the level of stochastic integrals}:
+  $\int_0^T\!\int_\R u(t)z\,\widetilde{N}(dt,dz) = \delta_L(u)
+  \in L^p(\Omega)$ for $u \in H_L$, even though
+  $u(t)z \notin \widetilde{H}_L$.
+  The integral converges by cancellation (compensation),
+  not by integrability of the integrand.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(a) $\int_\R|z|^p\nu(dz) = 2c_\gamma\int_0^\infty
+z^{p-1-\gamma}\,dz$.  Near $z = 0$: the exponent
+$p - 1 - \gamma < -1$ (since $p < \gamma$ and $\gamma < 2$
+gives $p - 1 - \gamma < \gamma - 1 - \gamma = -1$), so the
+integral diverges.
+
+(b) The identity $\delta_L(u) = \int\!\int u(t)z\,
+\widetilde{N}(dt,dz)$ holds because $L_t = \int_0^t\!\int_\R
+z\,\widetilde{N}(ds,dz)$ (valid for symmetric stable with
+$\gamma > 1$, since $\int_{|z|\leq 1}z\,\nu(dz) = 0$
+by symmetry).  The one-parameter BDG inequality
+$\|\delta_L(u)\|_{L^p} \leq C_p\|u\|_{H_L}$ (established
+in~\cite{Fontes2026d}) shows the integral converges in
+$L^p(\Omega)$, even though $u(t)z$ is not in
+$L^p(\nu\otimes dt\otimes dP)$.
+\end{proof}
+
+\begin{remark}[Two regimes of Poisson integrals]
+\label{rem:two-regimes}
+The stochastic integrals against $\widetilde{N}(dt,dz)$ fall
+into two distinct regimes:
+\begin{enumerate}[label=(\roman*)]
+\item \textbf{$\nu$-regular integrands:}
+  $h \in \widetilde{H}_L = L^p(\nu\otimes dt\otimes dP)$.
+  The integral converges because the integrand is
+  $p$-th-power integrable against $\nu$.  The defect integrand
+  $g(t,z) = \phi(L_{t-}+z) - \phi(L_{t-}) - \phi'(L_{t-})z
+  = O(z^2)$ belongs to this regime, since
+  $\int_{|z|\leq 1}|z|^{2p}\nu(dz) < \infty$ for
+  $p > \gamma/2$ (which holds because $p > 1 > \gamma/2$).
+\item \textbf{$\nu$-singular integrands:}
+  $h(t,z) = u(t)\cdot z$ with $u \in H_L$.  The integrand
+  is $O(z)$ near $z = 0$, too singular for $L^p(\nu)$
+  (since $\int|z|^p\nu(dz) = \infty$).  The integral
+  converges by cancellation in the compensation
+  $\widetilde{N} = N - \nu\,dt$.
+\end{enumerate}
+The one-parameter $\delta_L$-integrals are $\nu$-singular.
+The defect is $\nu$-regular.  A full Clark--Ocone
+representation must accommodate both regimes.
+\end{remark}
+
+
+%======================================================================
+\section{Two-Parameter BDG Equivalence}\label{sec:BDG}
+%======================================================================
+
+The norm equivalence for compensated Poisson integrals
+holds for $\nu$-regular integrands.
+
+\begin{theorem}[Two-parameter BDG equivalence]
+\label{thm:two-param-BDG}
+For $p \in (1,\gamma)$ with $\gamma \in (1,2)$, there exist
+constants $\tilde{c}_p, \tilde{C}_p > 0$ (depending on $p$,
+$\gamma$, and $T$) such that for all
+$h \in \widetilde{H}_L$,
+\begin{equation}\label{eq:two-param-BDG}
+  \tilde{c}_p\,\|h\|_{\widetilde{H}_L}
+  \leq \|\widetilde{\delta}_L(h)\|_{L^p(\Omega)}
+  \leq \tilde{C}_p\,\|h\|_{\widetilde{H}_L}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+The upper bound follows from the Burkholder--Rosenthal
+inequality for compensated Poisson integrals
+(see~\cite{Dirksen2015}, Theorem~1.1;
+or~\cite{MarinelliRockner2014}, Theorem~3.1).
+For $p \in (1,2)$ and a predictable integrand
+$h \in \widetilde{H}_L$:
+\begin{equation}\label{eq:upper-BDG}
+  \E\!\left[\left|\int_0^T\!\!\int_{\R}
+  h\,\widetilde{N}\right|^p\right]
+  \leq C_p\,\E\!\left[\int_0^T\!\!\int_{\R}
+  |h(t,z)|^p\,\nu(dz)\,dt\right]
+  = C_p\,\|h\|_{\widetilde{H}_L}^p.
+\end{equation}
+For $p \in (1,2)$, the general Burkholder--Rosenthal
+inequality involves both a ``big jump'' term
+$\E[\int\!\int|h|^p\,\nu\,dt]$ and a ``small jump'' term
+$\E[(\int\!\int|h|^2\,\nu\,dt)^{p/2}]$.
+For $p < 2$, the $L^p(\nu)$ term dominates: the individual
+large jumps control the $L^p$-behavior of the integral,
+and the upper bound simplifies to the
+$\widetilde{H}_L$ norm alone.
+
+The lower bound follows from decoupling inequalities
+(\cite{delaPenaGine1999}, Chapter~6).  The key step is:
+by a tangent sequence argument, the $L^p$ norm of the
+compensated Poisson integral is bounded below by
+(a constant times) the $L^p$ norm of the corresponding
+decoupled sum, which in turn is bounded below by the
+$L^p(\nu\otimes dt\otimes dP)$ norm of the integrand.
+\end{proof}
+
+\begin{remark}[Scope of the two-parameter BDG]
+\label{rem:BDG-scope}
+The equivalence~\eqref{eq:two-param-BDG} applies only
+to $\nu$-regular integrands ($h \in \widetilde{H}_L$).
+It does \emph{not} apply to $\nu$-singular integrands
+such as $h(t,z) = u(t)z$ (which define $\delta_L$-integrals);
+for these, the one-parameter BDG
+$\|\delta_L(u)\|_{L^p} \asymp \|u\|_{H_L}$
+is the correct estimate (see~\cite{Fontes2026d}).
+The two BDG inequalities govern different classes of
+integrands and are \emph{not} special cases of each other.
+\end{remark}
+
+\begin{corollary}[Recovery map for $\nu$-regular integrands]
+\label{cor:recovery}
+The two-parameter divergence
+$\widetilde{\delta}_L : \widetilde{H}_L \to
+\overline{\im(\widetilde{\delta}_L)}^{L^p}$
+is a Banach space isomorphism onto its range.  The
+\emph{two-parameter recovery map}
+$\widetilde{\iota}_L^{-1} :
+\im(\widetilde{\delta}_L)
+\to \widetilde{H}_L$ is the bounded inverse
+constructed from the BDG equivalence, with operator norm
+$\|\widetilde{\iota}_L^{-1}\| \leq 1/\tilde{c}_p$.
+\end{corollary}
+
+
+%======================================================================
+\section{The Two-Parameter Factorization and Clark--Ocone}
+\label{sec:factorization}
+%======================================================================
+
+\subsection{Surjectivity}
+
+The critical difference from the one-parameter case is that the
+two-parameter divergence is surjective onto $L^p_0(\Omega)$.
+
+\begin{theorem}[Surjectivity of $\widetilde{\delta}_L$]
+\label{thm:surjectivity}
+The closure $\overline{\im(\widetilde{\delta}_L)}^{L^p}
+= L^p_0(\Omega)$.  That is, every centered
+$F \in L^p(\Omega)$ lies in the $L^p$-closure of the range
+of $\widetilde{\delta}_L$.
+\end{theorem}
+
+\begin{proof}
+We show that the annihilator
+$\im(\widetilde{\delta}_L)^{\perp} = \{0\}$ in
+$L^q(\Omega)$ (here $\perp$ denotes the annihilator
+under the $L^p$--$L^q$ duality).
+
+Suppose $G \in L^q(\Omega)$ satisfies
+$\E[G \cdot \widetilde{\delta}_L(h)] = 0$ for all
+$h \in \widetilde{H}_L$.  By definition of
+$\widetilde{D}_L$, this means
+$\langle \widetilde{D}_L G, h \rangle = 0$ for all $h$,
+hence $\widetilde{D}_L G = 0$ in $\widetilde{H}_L^*$.
+
+We claim that $\widetilde{D}_L G = 0$ implies
+$G = \E[G]$.  To see this, note that
+$\langle \widetilde{D}_L G, h \rangle
+= \E[G \cdot \widetilde{\delta}_L(h)] = 0$ for all
+predictable $h \in \widetilde{H}_L$.
+In particular, for $h = \mathbf{1}_{(a,b]}\mathbf{1}_A
+\cdot g(z)$ with $A \in \mathcal{F}_a^L$ and
+$g \in L^p(\R, \nu)$:
+\[
+  \E\!\left[\mathbf{1}_A\,G \cdot \int_a^b\!\!\int_\R
+  g(z)\,\widetilde{N}(ds,dz)\right] = 0.
+\]
+Since this holds for all $A \in \mathcal{F}_a^L$,
+it follows that
+$\E[G\cdot\int_a^b\!\int g(z)\widetilde{N}(ds,dz)
+\mid\mathcal{F}_a^L] = 0$ a.s.
+The compensated Poisson integrals
+$\int_a^b\!\int g(z)\widetilde{N}(ds,dz)$ for varying
+$a < b$ and $g \in L^p(\R,\nu)$ detect both the times
+and sizes of all jumps of $L$, generating
+$\mathcal{F}_T^L$.  The conditional orthogonality
+for all $A \in \mathcal{F}_a^L$ then forces
+$G = \E[G]$ a.s.
+
+Therefore $\im(\widetilde{\delta}_L)^{\perp}
+\cap L^q_0(\Omega) = \{0\}$, and the Hahn--Banach
+theorem gives $\overline{\im(\widetilde{\delta}_L)}^{L^p}
+\supset L^p_0(\Omega)$.  The reverse inclusion is
+immediate from $\E[\widetilde{\delta}_L(h)] = 0$.
+\end{proof}
+
+\begin{remark}[Why the one-parameter divergence fails]
+\label{rem:one-param-fails}
+The analogous argument for $\delta_L$ would require
+that $\E[G \cdot \delta_L(u)] = 0$ for all
+$u \in H_L$ implies $G = \E[G]$.  This fails.
+Let $G_0 = \sum_{s\leq T}(\Delta L_s)^2
+\mathbf{1}_{|\Delta L_s|>1}$
+(a compound Poisson sum, hence $G_0 \in L^r$ for all $r$)
+and $G = G_0 - \E[G_0]$.  Then $G$ is centered and nonzero.
+For any $u \in H_L$, $\delta_L(u) = \int u_t\,dL_t$ is
+\emph{odd} in the jump sizes (linear in $\Delta L_s$),
+while $G$ is \emph{even} (depends on $(\Delta L_s)^2$).
+By symmetry of the L\'evy measure $\nu$,
+$\E[G\cdot\delta_L(u)] = 0$, so $D_L G = 0$ but
+$G \neq 0$.
+\end{remark}
+
+
+\subsection{The factorization theorem}
+
+\begin{theorem}[Two-parameter factorization]
+\label{thm:two-param-factorization}
+For $p \in (1,\gamma)$ with $\gamma \in (1,2)$, the identity
+\begin{equation}\label{eq:two-param-fact}
+  F - \E[F]
+  = \widetilde{\delta}_L\bigl(
+  \widetilde{\iota}_L^{-1}(\widetilde{D}_L F)\bigr)
+\end{equation}
+holds for all $F \in L^p(\Omega) \cap L^q(\Omega)$.
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:surjectivity}, $F - \E[F] \in L^p_0
+= \overline{\im(\widetilde{\delta}_L)}^{L^p}$.  By the
+BDG equivalence (Theorem~\ref{thm:two-param-BDG}), there
+exists a unique $h_F \in \widetilde{H}_L$ such that
+$\widetilde{\delta}_L(h_F) = F - \E[F]$.  By the BDG lower
+bound, $h_F = \widetilde{\iota}_L^{-1}(F - \E[F])$.
+
+It remains to identify
+$h_F = \widetilde{\iota}_L^{-1}(\widetilde{D}_L F)$.
+For any $g \in \widetilde{H}_L$:
+\begin{align*}
+  \langle \widetilde{D}_L F, g \rangle
+  &= \E[F \cdot \widetilde{\delta}_L(g)]
+  = \E[(F - \E[F]) \cdot \widetilde{\delta}_L(g)]\\
+  &= \E[\widetilde{\delta}_L(h_F) \cdot
+  \widetilde{\delta}_L(g)].
+\end{align*}
+This identifies $\widetilde{D}_L F$ as the functional
+$g \mapsto \E[\widetilde{\delta}_L(h_F)\cdot
+\widetilde{\delta}_L(g)]$, which is the image of $h_F$
+under the map $\widetilde{H}_L \to \widetilde{H}_L^*$
+induced by the bilinear form
+$(h, g) \mapsto \E[\widetilde{\delta}_L(h)\cdot
+\widetilde{\delta}_L(g)]$.  The recovery map
+$\widetilde{\iota}_L^{-1}$ inverts this identification.
+\end{proof}
+
+
+\subsection{The Clark--Ocone formula}
+
+\begin{theorem}[$L^p$ Clark--Ocone for stable processes]
+\label{thm:clark-ocone}
+For $p \in (1,\gamma)$ and $F \in L^p(\Omega) \cap L^q(\Omega)$,
+there exists a unique $h_F \in \widetilde{H}_L$ such that
+\begin{equation}\label{eq:clark-ocone}
+  F - \E[F]
+  = \int_0^T\!\!\int_{\R} h_F(t,z)\,\widetilde{N}(dt,dz),
+\end{equation}
+with the estimate
+\begin{equation}\label{eq:CO-estimate}
+  \tilde{c}_p\,\|h_F\|_{\widetilde{H}_L}
+  \leq \|F - \E[F]\|_{L^p(\Omega)}
+  \leq \tilde{C}_p\,\|h_F\|_{\widetilde{H}_L}.
+\end{equation}
+The integrand $h_F$ is predictable (in $t$) and
+$\nu$-measurable (in $z$).
+\end{theorem}
+
+\begin{proof}
+This is immediate from the surjectivity
+(Theorem~\ref{thm:surjectivity}), the BDG equivalence
+(Theorem~\ref{thm:two-param-BDG}), and the factorization
+(Theorem~\ref{thm:two-param-factorization}).
+\end{proof}
+
+\begin{remark}[Comparison with existing results]
+\label{rem:comparison}
+The $L^2$ Clark--Ocone formula for L\'evy processes was
+established by L{\o}kka~\cite{Lokka2004} and
+Di~Nunno--{\O}ksendal--Proske~\cite{DiNunnoOksendalProske2009}
+using the Picard difference operator $D_{s,z}F =
+F(\omega + z\epsilon_s) - F(\omega)$ and chaos expansions.
+Their formula reads
+$F - \E[F] = \int\!\int \E[D_{s,z}F|\mathcal{F}_{s-}]
+\,\widetilde{N}(ds,dz)$.
+
+Theorem~\ref{thm:clark-ocone} extends this to $L^p$ with
+$p < 2$ via operator methods, without chaos expansions or
+difference operators.  The integrand
+$h_F = \widetilde{\iota}_L^{-1}(\widetilde{D}_L F)$ is
+defined purely through the adjoint structure.  The
+connection to the Picard operator is discussed in
+Section~\ref{sec:discussion}.
+\end{remark}
+
+
+%======================================================================
+\section{Two-Regime Decomposition}\label{sec:decomposition}
+%======================================================================
+
+We now analyze the structure of the two-parameter integrand
+$h_F$ for functionals of the form $F = \phi(L_T)$, revealing
+the relationship between the one-parameter It\^o formula and
+the two-parameter Clark--Ocone representation.
+
+\subsection{The two-regime decomposition}
+
+The Banach It\^o formula~\eqref{eq:banach-ito} writes
+$F - \E[F] = \delta_L(\phi'(L_{\cdot-}))
++ [\Gamma_L^{\phi}(T) - \E[\Gamma_L^{\phi}(T)]]$.
+Each summand is a centered $L^p$ random variable,
+hence (by Theorem~\ref{thm:clark-ocone}) has a unique
+$\widetilde{H}_L$-representative.  However, these
+representatives have fundamentally different character.
+
+\begin{theorem}[Two-regime decomposition]\label{thm:defect-decomposition}
+Let $\phi \in C_b^3(\R)$ and $F = \phi(L_T)$.  Then:
+\begin{enumerate}[label=(\alph*)]
+\item The defect $\Gamma_L^\phi(T)$ decomposes as
+  $\Gamma_L^\phi(T) = M_T^{(1)} + A_T^{(1)}$, where
+  the martingale part is
+  \begin{equation}\label{eq:defect-martingale}
+    M_T^{(1)} := \int_0^T\!\!\int_{\R}
+    g_\phi(s,z)\,\widetilde{N}(ds,dz)
+    = \widetilde{\delta}_L(g_\phi),
+  \end{equation}
+  with $g_\phi(s,z) :=
+  \phi(L_{s-}+z) - \phi(L_{s-}) - \phi'(L_{s-})z$,
+  and the compensator is
+  $A_T^{(1)} = \int_0^T\mathcal{L}\phi(L_s)\,ds$.
+  The integrand $g_\phi$ lies in $\widetilde{H}_L$:
+  it satisfies $|g_\phi(s,z)| \leq
+  \tfrac{1}{2}\|\phi''\|_\infty z^2$ for $|z|\leq 1$
+  and $\int_{|z|\leq 1}|z|^{2p}\nu(dz) < \infty$
+  (since $p > 1 > \gamma/2$).
+\item The stochastic integral
+  $\delta_L(\phi'(L_{\cdot-}))$ also has a unique
+  $\widetilde{H}_L$-representative $h^{(0)} \in
+  \widetilde{H}_L$ with $\widetilde{\delta}_L(h^{(0)})
+  = \delta_L(\phi'(L_{\cdot-}))$, but this representative
+  is \emph{not} the function $\phi'(L_{t-})\cdot z$
+  (which lies outside $\widetilde{H}_L$).
+  Rather, $h^{(0)}$ is an abstract element whose
+  $\widetilde{N}$-integral happens to equal
+  the $dL$-integral of $\phi'(L_{\cdot-})$.
+\item The full Clark--Ocone integrand satisfies
+  $h_F = h^{(0)} + h^{(1)}$ where $h^{(1)}$ is the
+  $\widetilde{H}_L$-representative of the centered defect.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(a) By Taylor's theorem, $|g_\phi(s,z)| \leq
+\tfrac{1}{2}\|\phi''\|_\infty z^2$ for $|z| \leq 1$
+and $|g_\phi(s,z)| \leq 2\|\phi\|_\infty +
+\|\phi'\|_\infty|z|$ for $|z| > 1$.  Therefore
+\[
+  \|g_\phi\|_{\widetilde{H}_L}^p
+  \leq C\,\E\!\int_0^T\!\left[
+  \int_{|z|\leq 1}|z|^{2p}\nu(dz)
+  + \int_{|z|>1}(1+|z|)^p\nu(dz)\right]dt.
+\]
+The first integral:
+$\int_{|z|\leq 1}|z|^{2p}\nu(dz)
+= 2c_\gamma\int_0^1 z^{2p-1-\gamma}\,dz < \infty$
+iff $2p > \gamma$, i.e., $p > \gamma/2$.
+Since $p > 1 > \gamma/2$ (for $\gamma < 2$), this holds.
+The second integral converges since $p < \gamma$.
+Thus $g_\phi \in \widetilde{H}_L$ and
+$M_T^{(1)} = \widetilde{\delta}_L(g_\phi)$.
+
+The Doob decomposition gives
+$\Gamma_L^\phi(T) = M_T^{(1)} + A_T^{(1)}$ where
+$A_T^{(1)} = \int_0^T\!\int_\R g_\phi(s,z)\nu(dz)\,ds
+= \int_0^T\mathcal{L}\phi(L_s)\,ds$
+(with $\mathcal{L} = -(-\Delta)^{\gamma/2}$, using
+symmetry of $\nu$ to identify the truncated and
+untruncated generators).
+The centered defect is therefore
+$\Gamma_L^\phi(T) - \E[\Gamma_L^\phi(T)]
+= M_T^{(1)} + (A_T^{(1)} - \E[A_T^{(1)}])$.
+By Theorem~\ref{thm:clark-ocone}, each centered summand
+has a unique $\widetilde{H}_L$-representative:
+$g_\phi$ for $M_T^{(1)}$, and an abstract element
+for the compensator correction $A_T^{(1)} - \E[A_T^{(1)}]$.
+
+(b) $\delta_L(\phi'(L_{\cdot-})) \in L^p_0(\Omega)$
+(centered by the BDG construction).  By
+Theorem~\ref{thm:clark-ocone}, it has a unique
+$\widetilde{H}_L$-representative $h^{(0)}$.
+The natural integrand $\phi'(L_{t-})z$ satisfies
+$\int|z|^p\nu(dz) = \infty$ (Proposition~\ref{prop:Lambda}(a)),
+so $\phi'(L_{t-})z \notin \widetilde{H}_L$.
+The representative $h^{(0)}$ exists by the abstract
+surjectivity theorem but does not admit a simple formula
+in terms of $\phi'$ and $z$.
+
+(c) By uniqueness (Theorem~\ref{thm:clark-ocone})
+and linearity of $\widetilde{\delta}_L$.
+\end{proof}
+
+\begin{remark}[The two regimes, revisited]
+\label{rem:regimes-revisited}
+The decomposition reveals a fundamental asymmetry:
+\begin{enumerate}[label=(\roman*)]
+\item The \emph{defect part} has a natural, explicit
+  $\widetilde{H}_L$-integrand $g_\phi(s,z) = O(z^2)$.
+  The quadratic vanishing at $z = 0$ puts it squarely
+  in $\widetilde{H}_L$.
+\item The \emph{stochastic integral part} has a
+  natural integrand $\phi'(L_{t-})z = O(z)$ that is
+  too singular for $\widetilde{H}_L$.  Its
+  $\widetilde{H}_L$-representative exists abstractly
+  but is non-explicit.
+\end{enumerate}
+This is the precise sense in which the Leibniz defect
+is ``better behaved'' than the stochastic integral in
+the two-parameter framework: the defect is $\nu$-regular,
+while the stochastic integral is $\nu$-singular.
+
+In the Hilbert case (Brownian motion), the L\'evy measure
+$\nu = 0$, there are no jumps, and the two-parameter
+space is trivial.  The passage from stable ($\gamma < 2$)
+to Brownian ($\gamma = 2$) is not a continuous limit
+in the L\'evy measure topology: it is a singular transition
+in which the jump structure vanishes entirely and the
+defect $\Gamma_L^\phi \to 0$.
+\end{remark}
+
+\begin{remark}[Defect norm and regularity]
+\label{rem:distance}
+Although $\Lambda(H_L) \not\subset \widetilde{H}_L$
+(the linear-in-$z$ functions are too singular), the
+\emph{defect norm}
+$\|g_\phi\|_{\widetilde{H}_L}$ measures
+the size of the chain-rule correction.
+Since the leading behavior $g_\phi(s,z) \approx
+\tfrac{1}{2}\phi''(L_{s-})z^2$ is determined by
+$\phi''$, the defect norm is controlled by
+$\|\phi''\|_\infty$ (Proposition~\ref{prop:regularity}):
+larger curvature of $\phi$ produces a larger defect.
+Higher-order smoothness ($\phi \in C_b^k$ for $k > 3$)
+does not improve the norm, as the leading $z^2$ term
+dominates near $z = 0$.
+\end{remark}
+
+
+%======================================================================
+\section{Regularity Implications}\label{sec:regularity}
+%======================================================================
+
+The defect integrand $g_\phi$ encodes the regularity of
+$\phi$ through its $z$-decay near $z = 0$.  Since $g_\phi$
+lies in $\widetilde{H}_L$, its norm provides a quantitative
+measure of the chain-rule correction.
+
+\begin{proposition}[Defect norm controls regularity]
+\label{prop:regularity}
+Let $\phi \in C_b^3(\R)$.  The defect integrand
+$g_\phi(s,z) := \phi(L_{s-}+z) - \phi(L_{s-})
+- \phi'(L_{s-})z$ satisfies
+\begin{equation}\label{eq:defect-norm-bound}
+  \|g_\phi\|_{\widetilde{H}_L}^p
+  \leq C\!\left(\|\phi''\|_\infty^p
+  \int_{|z|\leq 1}|z|^{2p}\nu(dz)
+  + (2\|\phi\|_\infty + \|\phi'\|_\infty)^p
+  \int_{|z|>1}(1+|z|)^p\nu(dz)\right)\!T,
+\end{equation}
+where both integrals are finite:
+$\int_{|z|\leq 1}|z|^{2p}\nu(dz) < \infty$ because
+$2p > \gamma$ (since $p > 1 > \gamma/2$),
+and $\int_{|z|>1}(1+|z|)^p\nu(dz) < \infty$ because
+$p < \gamma$.
+
+Consequently, the defect norm is controlled by the
+$C_b^2$ norm of $\phi$:
+$\|g_\phi\|_{\widetilde{H}_L}
+\leq C(\gamma,p,T)\,
+(\|\phi''\|_\infty + \|\phi\|_\infty + \|\phi'\|_\infty)$.
+\end{proposition}
+
+\begin{proof}
+By Taylor's theorem with remainder:
+$|g_\phi(s,z)| \leq \tfrac{1}{2}\|\phi''\|_\infty\,z^2$
+for $|z| \leq 1$ (using $\phi \in C_b^3$).
+For $|z| > 1$:
+$|g_\phi(s,z)| \leq |\phi(L_{s-}+z)| + |\phi(L_{s-})|
++ |\phi'(L_{s-})||z|
+\leq 2\|\phi\|_\infty + \|\phi'\|_\infty|z|$.
+Taking $p$-th powers and integrating against
+$\nu(dz)\,ds\,dP$ gives~\eqref{eq:defect-norm-bound}.
+\end{proof}
+
+\begin{remark}[The integrability threshold]
+\label{rem:threshold}
+The condition $2p > \gamma$ (equivalently $p > \gamma/2$)
+is the threshold for $g_\phi \in \widetilde{H}_L$.
+Since $\gamma \in (1,2)$ and $p > 1$, this is always
+satisfied: $p > 1 > \gamma/2$.
+\end{remark}
+
+\begin{remark}[Connection to the fractional Laplacian]
+\label{rem:besov}
+The compensator $A_T^{(1)} = \int_0^T\!\int_\R
+g_\phi(s,z)\,\nu(dz)\,ds
+= \int_0^T\mathcal{L}\phi(L_s)\,ds$, where
+$\mathcal{L} = -(-\Delta)^{\gamma/2}$, connects the
+defect norm to the regularity of $\phi$ under the
+fractional Laplacian.  Specifically,
+$\|\mathcal{L}\phi\|_\infty < \infty$ iff $\phi$ is in
+the domain of $(-\Delta)^{\gamma/2}$ as a bounded
+operator, which for $\phi \in C_b^2$ holds when
+$\gamma < 2$.  The defect norm
+$\|g_\phi\|_{\widetilde{H}_L}$ refines this to an
+$L^p$-stochastic setting: it measures not just the
+pointwise action of $\mathcal{L}$ but the $p$-th
+moment of the jump-by-jump correction along the
+path of $L$.
+\end{remark}
+
+
+%======================================================================
+\section{Discussion}\label{sec:discussion}
+%======================================================================
+
+\subsection{The complete picture}
+
+The operator factorization program now spans three levels:
+
+\medskip\noindent\textbf{Level 1: Hilbert.}
+Energy space $H = L^2(dt\otimes dP)$.  The factorization
+$(\Id - \E) = \delta \circ D$ (with Riesz identification)
+gives Clark--Ocone.  The It\^o formula has correction
+$\frac{1}{2}\|\Pi DF\|_H^2$.  No defect ($\Gamma = 0$).
+
+\medskip\noindent\textbf{Level 2: Banach, one-parameter.}
+Energy space $H_L = L^p(dt\otimes dP)$.  The factorization
+holds on $\overline{\im(\delta_L)}^{L^p} \subsetneq L^p_0$.
+The It\^o formula has the Leibniz defect $\Gamma_L^{\phi}$
+as correction.  No Clark--Ocone for general functionals.
+
+\medskip\noindent\textbf{Level 3: Banach, two-parameter.}
+Energy space $\widetilde{H}_L = L^p(dt\otimes\nu\otimes dP)$.
+The factorization holds on all of $L^p_0$.  Clark--Ocone
+holds for all centered $F \in L^p \cap L^q$.  The defect
+integrand $g_\phi = O(z^2)$ is $\nu$-regular and has an
+explicit $\widetilde{H}_L$-representative, while the
+$dL$-integral $\delta_L(\phi'(L_{\cdot-}))$ is $\nu$-singular
+and has only an abstract representative.
+
+\medskip
+The passage from Level~1 to Level~2 introduced the defect
+as a correction term.  The passage from Level~2 to Level~3
+reinterprets the defect as an obstruction and resolves it
+by enlarging the energy space.
+
+\subsection{Relationship to the Picard operator}
+
+In $L^2$, the Clark--Ocone formula of
+L{\o}kka~\cite{Lokka2004} uses the Picard difference operator
+$D_{s,z}F = F(\omega + z\epsilon_s) - F(\omega)$, giving
+\[
+  F - \E[F] = \int_0^T\!\!\int_\R
+  \E[D_{s,z}F \mid \mathcal{F}_{s-}]\,
+  \widetilde{N}(ds,dz).
+\]
+Our Theorem~\ref{thm:clark-ocone} gives the same structural
+formula with $h_F$ replacing $\E[D_{s,z}F|\mathcal{F}_{s-}]$.
+In $L^2$, the two must agree (by uniqueness of the representation);
+thus the operator-theoretic integrand
+$\widetilde{\iota}_L^{-1}(\widetilde{D}_L F)$ coincides
+with $\E[D_{s,z}F|\mathcal{F}_{s-}]$ in $L^2$.
+
+For $p < 2$, the relationship is more subtle.  The Picard
+operator is defined pathwise (as a difference), while our
+$\widetilde{D}_L$ is defined as an adjoint (through duality).
+Whether the two agree in $L^p$ for $p < 2$---and whether the
+Picard operator extends to a bounded operator in the
+$L^p$ setting---is an open question.
+
+The operator-theoretic approach has the advantage of not
+requiring pathwise constructions or chaos expansions: the
+integrand exists by abstract Banach space theory (BDG +
+surjectivity), regardless of whether it admits a
+pointwise formula.
+
+
+\subsection{Open problems}
+
+\begin{enumerate}[label=(\roman*)]
+\item \textbf{Explicit computation of
+$\widetilde{\iota}_L^{-1}$.}
+The recovery map is constructed abstractly from BDG.
+For $L^2$, it reduces to the conditional expectation
+$h_F(t,z) = \E[D_{t,z}F|\mathcal{F}_{t-}]$.  For
+$L^p$ with $p < 2$: is there a conditional-expectation-based
+formula, and if so, what replaces the Picard operator $D_{t,z}$
+inside the conditional expectation?
+
+\item \textbf{The duality map and nonlinear projections.}
+The $L^p$--$L^q$ duality map
+$J_q(g) = |g|^{q-2}g/\|g\|^{q-2}$ is the natural
+candidate to replace Riesz identification.  Does $J_q$ interact
+with the predictable projection and the jump structure in a way
+that produces a computable integrand?
+
+\item \textbf{Refined regularity scales.}
+The defect norm $\|g_\phi\|_{\widetilde{H}_L}$ is a
+coarse measure of regularity.  Can one define finer
+regularity scales based on the $z$-decay of $g_F$
+(analogous to Besov spaces $B^\alpha_{p,q}$) that
+characterize the domain of the fractional Laplacian
+in probabilistic terms?
+
+\item \textbf{Extension to $\gamma \in (0,1]$.}
+For $\gamma \leq 1$, the range $p \in (1,\gamma)$ is empty,
+so the entire framework requires reformulation---either
+working with $p \in (0,1)$ (quasi-Banach spaces) or with
+$p > \gamma$ (which changes the BDG landscape, since the
+process has finite variation and different moment behavior).
+The two-parameter space
+$\widetilde{H}_L = L^p(dt\otimes\nu\otimes dP)$ should
+still be natural, but the surjectivity argument and
+BDG equivalence need new ingredients.
+
+\item \textbf{Non-stable jump processes.}
+For general L\'evy processes with L\'evy measure $\nu$
+(not necessarily stable), the two-parameter framework
+should extend with $\widetilde{H}_L =
+L^p(dt\otimes\nu\otimes dP)$.  The BDG equivalence
+would depend on the tail behavior of $\nu$.
+
+\item \textbf{Applications to hedging.}
+In financial models driven by stable processes, the
+one-parameter integrand $\phi'(L_{t-})$ is the delta hedge,
+and the defect is the hedging error from jumps.  The
+two-parameter integrand $h_F(t,z)$ provides the
+\emph{jump-size-dependent hedge}: for each potential jump
+of size $z$, the required position adjustment.  Making
+this precise in the context of incomplete markets is an
+open problem.
+\end{enumerate}
+
+
+%======================================================================
+\section*{Acknowledgments}
+%======================================================================
+AI tools were used as interactive assistants for
+mathematical exploration and drafting.  The author is
+responsible for all content.
+
+
+%======================================================================
+\begin{thebibliography}{10}
+
+\bibitem{Applebaum2009}
+D.~Applebaum.
+\newblock \emph{L\'evy Processes and Stochastic Calculus}.
+\newblock Cambridge University Press, 2nd edition, 2009.
+
+\bibitem{delaPenaGine1999}
+V.~de~la~Pe\~na and E.~Gin\'e.
+\newblock \emph{Decoupling: From Dependence to Independence}.
+\newblock Springer, 1999.
+
+\bibitem{DiNunnoOksendalProske2009}
+G.~Di~Nunno, B.~{\O}ksendal, and F.~Proske.
+\newblock \emph{Malliavin Calculus for L\'evy Processes with
+Applications to Finance}.
+\newblock Springer, 2009.
+
+\bibitem{Dirksen2015}
+S.~Dirksen.
+\newblock Itô isomorphisms for $L^p$-valued Poisson stochastic
+integrals.
+\newblock \emph{Ann.\ Probab.}, 42(6):2595--2643, 2014.
+
+\bibitem{Fontes2026a}
+R.~Fontes.
+\newblock Operator factorization and the Clark--Ocone formula
+in stochastic calculus.
+\newblock arXiv preprint, 2026.
+
+\bibitem{Fontes2026b}
+R.~Fontes.
+\newblock Extension to rough fractional Brownian motion.
+\newblock arXiv preprint, 2026.
+
+\bibitem{Fontes2026c}
+R.~Fontes.
+\newblock An It\^o formula via product rules in Hilbert energy
+spaces.
+\newblock arXiv preprint, 2026.
+
+\bibitem{Fontes2026d}
+R.~Fontes.
+\newblock Operator factorization in Banach energy spaces:
+Leibniz defects for stable processes.
+\newblock arXiv preprint, 2026.
+
+\bibitem{Fontes2026e}
+R.~Fontes.
+\newblock PDE generators from energy space structure.
+\newblock arXiv preprint, 2026.
+
+\bibitem{Fontes2026f}
+R.~Fontes.
+\newblock An It\^o formula via Leibniz defects in Banach energy
+spaces and PDE generators for stable processes.
+\newblock arXiv preprint, 2026.
+
+\bibitem{Lokka2004}
+A.~L{\o}kka.
+\newblock Martingale representation of functionals of L\'evy
+processes.
+\newblock \emph{Stoch.\ Anal.\ Appl.}, 22(4):867--892, 2004.
+
+\bibitem{MarinelliRockner2014}
+C.~Marinelli and M.~R\"ockner.
+\newblock On the maximal inequalities of Burkholder, Davis and
+Gundy.
+\newblock \emph{Expo.\ Math.}, 34(1):1--26, 2016.
+
+\bibitem{Sato1999}
+K.-i.~Sato.
+\newblock \emph{L\'evy Processes and Infinitely Divisible
+Distributions}.
+\newblock Cambridge University Press, 1999.
+
+\end{thebibliography}
+
+\end{document}

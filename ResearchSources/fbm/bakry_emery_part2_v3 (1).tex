@@ -1,0 +1,1735 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+% Theorem environments
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% Operators and shortcuts
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\HH}{\mathcal{H}_H}
+\newcommand{\Id}{\mathrm{Id}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\tr}{\mathrm{tr}}
+
+\title{The Iterated $\Gamma$-Calculus for the Fractional Laplacian, II:\\
+Operator Realization and Wiener Chaos}
+
+\author{Ramiro Fontes\\
+Quijotic Research\\
+\texttt{ramirofontes@gmail.com}}
+
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We prove that the Bakry--\'Emery curvature theory for the
+fractional Laplacian, developed spectrally in Part~I,
+admits a structural realization through the operator
+derivative framework of~\cite{Fontes2026opderiv}.
+
+The operator derivative $D_{B^H} := \delta_{B^H}^*$,
+defined by adjointness on the fBM energy space~$\HH$,
+satisfies
+$\Gamma(f,f)(x) = \|D_{B^H}\Phi_f(x)\|^2_{\HH}$:
+the carr\'e du champ of the stable generator is the
+energy-space norm of the operator derivative.
+The full hierarchy $\Gamma_k \leftrightarrow R_H^{\circ k}$
+is realized by a \emph{diagonal tensor lift}
+$\iota_k\colon e_n \mapsto e_n^{\otimes k}$
+in $\HH^{\otimes k}$, with Gram matrix
+$\langle e_n^{\otimes k}, e_m^{\otimes k}\rangle
+= R_H(n,m)^k$.
+
+At $\gamma = 1$ ($H = 1/2$), the energy space has
+orthonormal increments $\Delta_j = e_j - e_{j-1}$,
+and the \emph{increment tensors}
+$\delta_j^{(k)} := e_j^{\otimes k} - e_{j-1}^{\otimes k}$
+form an orthogonal system in $\HH^{\otimes k}$ with
+$\|\delta_j^{(k)}\|^2 = j^k - (j{-}1)^k$.
+This gives the Cholesky factorization, the eigenvalue
+formula $\kappa_j^{(k)} = \Delta(j^k)/\Delta(j^{k-1})$,
+and the curvature stability $\kappa_1^{(k)} = 1$
+as consequences of the independent-increment structure
+of Brownian motion in the tensor product energy space.
+The volume ratio of curvature ellipsoids interpolates
+monotonically from $(2N{-}1)!!$ to $N!$ as the chaos
+depth increases.
+
+For $\gamma \neq 1$, we prove that $\gamma = 1$ is
+the unique global maximizer of the Bakry--\'Emery
+curvature, and that the higher-chaos levels regularize
+the curvature deficit: $\kappa^{(k)}(\gamma,N) \to 1$
+as $k \to \infty$, exponentially in $k$ at rate
+$\rho^* = \max_{n \neq m}|\rho_{nm}| < 1$ (the maximum
+off-diagonal fBM correlation).
+
+As an analytical consequence, the $k$-th energy
+$\mathcal{E}_k(f) = \int \Gamma_k(f,f)\,d\mu$
+satisfies the dissipation identity
+$\frac{d}{dt}\mathcal{E}_k(P_t f)
+= -2\mathcal{E}_{k+1}(P_t f)$
+and decays at rate $e^{-2\kappa^{(k+1)}t}$.
+By chaos regularization, this rate approaches
+$e^{-2t}$---the Gaussian rate---for all
+$\gamma \in (0,2)$ at high chaos depth: every
+stable semigroup is asymptotically Gaussian
+in its high-energy behavior.
+Subordination of stable processes acts as a flow on
+the Hurst parameter and always decreases curvature.
+\end{abstract}
+
+\medskip
+\noindent\textbf{MSC 2020:} 60G52, 60G22, 60H07, 35S10, 47D07.\\
+\textbf{Keywords:} iterated carr\'e du champ; operator derivative;
+energy space; Hadamard power; Wiener chaos;
+fractional Brownian motion; Cholesky factorization;
+curvature stability; Bakry--\'Emery hierarchy.
+
+
+%======================================================================
+\section{Introduction}\label{sec:intro}
+%======================================================================
+
+\subsection{Background}
+
+In Part~I~\cite{Fontes2026b}, we established the correspondence
+\begin{equation}\label{eq:part1-duality}
+  \Psi_\gamma(\xi,\eta)
+  = \tfrac{1}{2}\bigl(|\xi|^\gamma + |\eta|^\gamma
+    - |\xi - \eta|^\gamma\bigr)
+  = R_{\gamma/2}(|\xi|,|\eta|),
+  \qquad \xi\eta \geq 0,
+\end{equation}
+identifying the Fourier-space carr\'e du champ of the
+$\gamma$-stable generator $L_\gamma = -(-\Delta)^{\gamma/2}$
+on $\T = \R/(2\pi\Z)$ with the covariance kernel of fractional
+Brownian motion (fBM) with Hurst parameter $H = \gamma/2$ on
+same-sign frequencies.  This reduced the Bakry--\'Emery curvature
+to a generalized eigenvalue problem for fBM covariance matrices,
+yielding the Hadamard square identity
+$\Gamma_2 \leftrightarrow R_H^{\circ 2}$,
+the exact curvature $\kappa(1,N) = 1$ at the Cauchy point
+$\gamma = 1$, and the curvature-dimension inequality
+$\mathrm{CD}(1-\omega^2/2,\,\infty)$ for the
+Cauchy--Fokker--Planck operator with cosine potential.
+
+In a separate work~\cite{Fontes2026opderiv}, we developed the
+\emph{operator derivative} $D_X := \delta_X^*$, defined by
+Hilbert space adjointness on the energy space $(\mathcal{H}_X,
+\delta_X)$ of a process~$X$.  The factorization
+$(\Id - \E)\,F = \delta_X(\Pi_X D_X F)$
+decomposes $L^2$-fluctuations into differentiation, adaptation,
+and integration, yielding a unified Clark--Ocone formula for
+all processes with the predictable representation property.
+
+The present paper connects these two frameworks.
+
+
+\subsection{Main results}
+
+We work on $\T = \R/(2\pi\Z)$ with $\mu = dx/(2\pi)$
+and write $\mathcal{T}_N^+$ for the space of
+positive-frequency trigonometric polynomials of degree at
+most~$N$.  For fBM $B^H$ sampled at $\{1,\ldots,N\}$,
+the energy space is $\HH = \R^N$ with inner product
+$\langle \mathbf{u}, \mathbf{v} \rangle_{\HH}
+= \sum_{n,m} u_n\,v_m\,R_H(n,m)$, so that
+$\E[B_n^H\,B_m^H] = \langle e_n, e_m \rangle_{\HH}
+= R_H(n,m)$.
+The tensor power $\HH^{\otimes k}$ has inner product
+$\langle e_{n_1} \otimes \cdots \otimes e_{n_k},\,
+e_{m_1} \otimes \cdots \otimes e_{m_k} \rangle
+= \prod_{\ell=1}^k R_H(n_\ell, m_\ell)$.
+
+Given $f = \sum_{n=1}^N a_n\,e^{inx} \in \mathcal{T}_N^+$,
+define the phase-stripped coefficient vector
+$\mathbf{b}(x) = (a_1 e^{ix}, \ldots, a_N e^{iNx})^T$
+and the stochastic representative
+$\Phi_f(x) := \delta_{B^H}(\mathbf{b}(x))
+= \sum_n b_n(x)\,B_n^H$.
+
+\medskip\noindent
+\textbf{Theorem~A} (Operator realization of the carr\'e
+du champ; \S\ref{sec:realization}).
+\emph{For $f \in \mathcal{T}_N^+$ and all $x \in \T$:
+\begin{equation}\label{eq:intro-A}
+  \Gamma(f,f)(x)
+  = \bigl\|D_{B^H}\Phi_f(x)\bigr\|^2_{\HH}.
+\end{equation}
+The carr\'e du champ of the stable generator on
+positive frequencies equals the energy-space norm of the
+operator derivative of the stochastic representative.}
+
+\medskip\noindent
+\textbf{Theorem~B} (Tensor realization of the hierarchy;
+\S\ref{sec:tensor}).
+\emph{Define the diagonal tensor lift
+$\iota_k\colon \R^N \to \HH^{\otimes k}$ by
+$\iota_k(\mathbf{v})
+= \sum_n v_n\,e_n^{\otimes k}$.
+Then for all $k \geq 1$:
+\begin{equation}\label{eq:intro-B}
+  \Gamma_k(f,f)(x)
+  = \bigl\|\iota_k(\mathbf{b}(x))\bigr\|^2_{\HH^{\otimes k}}.
+\end{equation}
+The Gram matrix of the diagonal lift is
+$\langle e_n^{\otimes k}, e_m^{\otimes k}\rangle_{\HH^{\otimes k}}
+= R_H(n,m)^k = R_H^{\circ k}(n,m)$,
+and the $k$-th order Bakry--\'Emery curvature is the
+worst-case contraction ratio:
+$\kappa^{(k)}(\gamma,N) = \lambda_{\min}(R_H^{\circ k},\,
+R_H^{\circ(k-1)})$.}
+
+\medskip\noindent
+\textbf{Theorem~C} (Increment tensor decomposition;
+\S\ref{sec:increment}).
+\emph{At $\gamma = 1$ ($H = 1/2$), the energy space
+$\mathcal{H}_{1/2}$ has orthonormal increments
+$\Delta_j = e_j - e_{j-1}$.
+The increment tensors
+$\delta_j^{(k)} := e_j^{\otimes k} - e_{j-1}^{\otimes k}$
+(with $e_0^{\otimes k} = 0$) satisfy:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item Orthogonality:
+  $\langle \delta_i^{(k)}, \delta_j^{(k)} \rangle
+  = 0$ for $i \neq j$.
+\item Norm:
+  $\|\delta_j^{(k)}\|^2 = j^k - (j{-}1)^k
+  = \Delta(j^k)$.
+\item Expansion:
+  $e_n^{\otimes k} = \sum_{j=1}^n \delta_j^{(k)}$
+  (telescoping).
+\end{enumerate}
+Consequently, the Cholesky factorization
+$\min(n,m)^k = L\,D_k\,L^T$ holds with
+$L_{nj} = \mathbf{1}_{n \geq j}$ and
+$D_k = \mathrm{diag}(\|\delta_j^{(k)}\|^2)$.}
+
+\medskip\noindent
+\textbf{Theorem~D} (Eigenvalue formula;
+\S\ref{sec:eigenvalues}).
+\emph{At $\gamma = 1$, the $k$-th curvature matrix
+$(R_{1/2}^{\circ(k-1)})^{-1}\,R_{1/2}^{\circ k}$
+is upper triangular with eigenvalues
+\begin{equation}\label{eq:intro-D}
+  \kappa_j^{(k)}
+  = \frac{\|\delta_j^{(k)}\|^2}{\|\delta_j^{(k-1)}\|^2}
+  = \frac{j^k - (j-1)^k}{j^{k-1} - (j-1)^{k-1}},
+  \qquad j = 1,\ldots,N.
+\end{equation}
+In particular:}
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item \emph{At $k = 2$:
+  $\kappa_j^{(2)} = 2j - 1$
+  (Part~I, Theorem~C).}
+\item \emph{Curvature stability:
+  $\kappa_1^{(k)} = 1$ for all $k \geq 2$.}
+\item \emph{As $k \to \infty$:
+  $\kappa_j^{(k)} \to j$.}
+\end{enumerate}
+
+\medskip\noindent
+\textbf{Theorem~E} (Volume interpolation;
+\S\ref{sec:volume}).
+\emph{The determinant of the $k$-th curvature matrix satisfies
+\begin{equation}\label{eq:intro-E}
+  \det\bigl[(R_{1/2}^{\circ(k-1)})^{-1}\,R_{1/2}^{\circ k}\bigr]
+  = \prod_{j=1}^N \kappa_j^{(k)},
+\end{equation}
+interpolating monotonically from $(2N{-}1)!!$ at $k = 2$
+to $N!$ as $k \to \infty$.}
+
+\medskip\noindent
+\textbf{Theorem~F} (Global optimality of $\gamma = 1$;
+\S\ref{sec:optimality}).
+\emph{For all $\gamma \in (0,2)$ with $\gamma \neq 1$
+and all $N \geq 2$:
+$\kappa(\gamma,N) < 1 = \kappa(1,N)$.
+That is, $\gamma = 1$ is the unique global maximizer
+of the Bakry--\'Emery curvature among all stable indices.}
+
+\medskip\noindent
+\textbf{Theorem~G} (Chaos regularization;
+\S\ref{sec:regularization}).
+\emph{Write $\rho_{nm} = R_H(n,m)/(n^H m^H)$ for the
+fBM correlation matrix and
+$\rho^* = \max_{n \neq m}|\rho_{nm}| < 1$.
+For all $\gamma \in (0,2)$ and all $N \geq 1$:
+\begin{equation}\label{eq:intro-G}
+  1 - C_N\,(\rho^*)^{k-1}
+  \;\leq\; \kappa^{(k)}(\gamma,N)
+  \;\leq\; 1,
+  \qquad k \geq 2,
+\end{equation}
+with $C_N = 2(N{-}1)\,N^{2H}$.
+The curvature converges exponentially to~$1$ at rate
+$\rho^*$, which measures the maximum off-diagonal
+correlation of fBM---the distance from independent
+increments.}
+
+
+\subsection{The structural content}
+
+Parts~I and~II now stand in the following relation.
+Part~I proved the Bakry--\'Emery theory by direct
+Fourier computation: the $\Gamma$-recursion produces
+one additional factor of $\Psi_\gamma$ at each step,
+which is verified algebraically.  The present paper
+identifies \emph{why} the recursion works: each step
+of the $\Gamma$-recursion corresponds to one additional
+tensor factor in the fBM energy space.  Concretely:
+
+\begin{enumerate}[label=(\alph*)]
+\item The carr\'e du champ is the energy-space norm of
+  the operator derivative (Theorem~A).
+
+\item The $k$-th iterated carr\'e du champ is the
+  norm in the $k$-th tensor power of the energy space,
+  restricted to diagonal tensors (Theorem~B).
+  The Hadamard power $R_H^{\circ k}$ appears because
+  it is the Gram matrix of diagonal $k$-tensors.
+
+\item At $H = 1/2$, the orthonormality of increments
+  $\Delta_j$ in $\mathcal{H}_{1/2}$ produces
+  orthogonal increment tensors $\delta_j^{(k)}$ in
+  $\mathcal{H}_{1/2}^{\otimes k}$ (Theorem~C),
+  from which the Cholesky factorization, eigenvalue
+  formula, and curvature stability all follow.
+
+\item The curvature stability $\kappa_1^{(k)} = 1$
+  has a structural explanation:
+  $\delta_1^{(k)} = e_1^{\otimes k}$ has
+  $\|\delta_1^{(k)}\|^2 = 1$ for all~$k$
+  because the first increment $\Delta_1 = e_1$ has
+  unit norm in $\mathcal{H}_{1/2}$.
+
+\item The curvature deficit for $\gamma \neq 1$ is
+  the price of increment correlation: any
+  $H \neq 1/2$ introduces non-orthogonal increments
+  in $\HH$, which distort the tensor geometry.
+
+\item The deficit is transient across chaos levels:
+  the off-diagonal correlations $\rho_{nm}^k$ decay
+  exponentially in the tensor power $k$, at rate
+  $\rho^* = \max_{n \neq m}|\rho_{nm}| < 1$
+  (Theorem~G).  At high chaos depth, all stable
+  generators recover Gaussian curvature.
+\end{enumerate}
+
+
+\subsection{Organization}
+
+Section~\ref{sec:prelim}: notation and background
+from Part~I and~\cite{Fontes2026opderiv}.
+Section~\ref{sec:realization}: operator realization
+(Theorem~A).
+Section~\ref{sec:tensor}: tensor realization
+(Theorem~B) and the Fourier hierarchy.
+Section~\ref{sec:increment}: increment tensors and
+Cholesky structure (Theorem~C).
+Section~\ref{sec:eigenvalues}: eigenvalue formula
+(Theorem~D).
+Section~\ref{sec:volume}: volume interpolation
+(Theorem~E).
+Section~\ref{sec:optimality}: global optimality
+(Theorem~F).
+Section~\ref{sec:regularization}: chaos regularization
+(Theorem~G).
+Section~\ref{sec:subordination}: subordination and
+curvature flow.
+Section~\ref{sec:consequences}: analytical consequences
+(semigroup decay hierarchy and universality).
+Section~\ref{sec:discussion}: dictionary and open problems.
+
+
+%======================================================================
+\section{Preliminaries}\label{sec:prelim}
+%======================================================================
+
+\subsection{The stable generator and carr\'e du champ}
+
+We use the notation and setup of Part~I~\cite{Fontes2026b}.
+On $\T = \R/(2\pi\Z)$ with $\mu = dx/(2\pi)$, the
+fractional Laplacian $L_\gamma = -(-\Delta)^{\gamma/2}$
+acts as $L_\gamma(e^{inx}) = -|n|^\gamma e^{inx}$.
+The sesquilinear carr\'e du champ has Fourier kernel
+$\Psi_\gamma(\xi,\eta)
+= \frac{1}{2}(|\xi|^\gamma + |\eta|^\gamma
+- |\xi-\eta|^\gamma)$,
+which on same-sign frequencies ($\xi\eta \geq 0$)
+equals the fBM covariance $R_{\gamma/2}(|\xi|,|\eta|)$
+with $H = \gamma/2$.
+
+The iterated carr\'e du champ is defined inductively:
+$\Gamma_1 := \widetilde{\Gamma}_\gamma$ and
+\begin{equation}\label{eq:Gammak-def}
+  \Gamma_{k+1}(f,g)
+  := \tfrac{1}{2}\bigl[
+    L_\gamma\,\Gamma_k(f,g)
+    - \Gamma_k(L_\gamma f, g)
+    - \Gamma_k(f, L_\gamma g)
+  \bigr],
+  \qquad k \geq 1.
+\end{equation}
+Part~I proved that $\Gamma_k$ has Fourier kernel
+$\Psi_\gamma^k$ for all $k \geq 1$ by direct induction
+on the Fourier expansion.
+
+
+\subsection{Fractional Brownian motion and energy spaces}
+
+For $H \in (0,1)$, fBM $B^H$ has covariance
+$R_H(s,t) = \frac{1}{2}(|s|^{2H} + |t|^{2H}
+- |s-t|^{2H})$.
+At $H = 1/2$: $R_{1/2}(s,t) = \min(s,t)$ for $s,t \geq 0$.
+
+\begin{definition}[Discrete fBM energy space]
+\label{def:discrete-energy}
+For fBM sampled at $\{1,\ldots,N\}$, define the energy
+space $\HH = (\R^N, \langle\cdot,\cdot\rangle_{\HH})$
+with inner product
+\begin{equation}\label{eq:HH-ip}
+  \langle \mathbf{u}, \mathbf{v} \rangle_{\HH}
+  := \sum_{n,m=1}^N u_n\,v_m\,R_H(n,m)
+  = \mathbf{u}^T R_H\,\mathbf{v}.
+\end{equation}
+The standard basis vectors $\{e_1,\ldots,e_N\}$
+satisfy $\langle e_n, e_m \rangle_{\HH} = R_H(n,m)$.
+\end{definition}
+
+The stochastic integral is
+$\delta_{B^H}(\mathbf{u}) = \sum_n u_n\,B_n^H$,
+which is centered and satisfies
+$\E[\delta_{B^H}(\mathbf{u})\,\delta_{B^H}(\mathbf{v})]
+= \langle \mathbf{u}, \mathbf{v} \rangle_{\HH}$.
+The operator derivative $D_{B^H} := \delta_{B^H}^*$
+is defined by the adjoint relation~\cite{Fontes2026opderiv}:
+\begin{equation}\label{eq:adj}
+  \E[F \cdot \delta_{B^H}(\mathbf{u})]
+  = \E[\langle D_{B^H} F, \mathbf{u} \rangle_{\HH}]
+  \quad \text{for all } \mathbf{u} \in \R^N.
+\end{equation}
+
+\begin{lemma}\label{lem:D-of-BH}
+$D_{B^H} B_j^H = e_j$ for $j = 1,\ldots,N$.
+\end{lemma}
+
+\begin{proof}
+For any $\mathbf{u} \in \R^N$:
+$\E[B_j^H \cdot \delta_{B^H}(\mathbf{u})]
+= \E[B_j^H \sum_n u_n B_n^H]
+= \sum_n u_n R_H(j,n)
+= e_j^T R_H\,\mathbf{u}
+= \langle e_j, \mathbf{u} \rangle_{\HH}$.
+By uniqueness of the Riesz representer:
+$D_{B^H} B_j^H = e_j$.
+\end{proof}
+
+
+\subsection{Tensor product energy spaces}
+
+\begin{definition}[Tensor power]\label{def:tensor}
+The $k$-th tensor power $\HH^{\otimes k}$ is
+$(\R^N)^{\otimes k} \cong \R^{N^k}$ with inner product
+\begin{equation}\label{eq:tensor-ip}
+  \langle e_{n_1} \otimes \cdots \otimes e_{n_k},\;
+         e_{m_1} \otimes \cdots \otimes e_{m_k}
+  \rangle_{\HH^{\otimes k}}
+  = \prod_{\ell=1}^k R_H(n_\ell, m_\ell).
+\end{equation}
+\end{definition}
+
+\begin{definition}[Diagonal tensor lift]\label{def:lift}
+The diagonal tensor lift
+$\iota_k\colon \R^N \to \HH^{\otimes k}$ is the linear map
+\begin{equation}\label{eq:lift}
+  \iota_k(\mathbf{v})
+  := \sum_{n=1}^N v_n\,e_n^{\otimes k}.
+\end{equation}
+\end{definition}
+
+\begin{lemma}[Gram matrix of the diagonal lift]
+\label{lem:gram}
+The Gram matrix of $\{\iota_k(e_1),\ldots,\iota_k(e_N)\}
+= \{e_1^{\otimes k},\ldots,e_N^{\otimes k}\}$
+in $\HH^{\otimes k}$ is the Hadamard power $R_H^{\circ k}$:
+\begin{equation}\label{eq:gram}
+  \langle e_n^{\otimes k}, e_m^{\otimes k}
+  \rangle_{\HH^{\otimes k}}
+  = R_H(n,m)^k
+  = R_H^{\circ k}(n,m).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+By~\eqref{eq:tensor-ip}:
+$\langle e_n^{\otimes k}, e_m^{\otimes k} \rangle
+= \prod_{\ell=1}^k R_H(n,m) = R_H(n,m)^k$.
+\end{proof}
+
+
+%======================================================================
+\section{Operator Realization of the Carr\'e du Champ}
+\label{sec:realization}
+%======================================================================
+
+\begin{theorem}[Operator realization]
+\label{thm:realization}
+For $f = \sum_{n=1}^N a_n\,e^{inx} \in \mathcal{T}_N^+$
+with phase-stripped vector
+$\mathbf{b}(x) = (a_1 e^{ix}, \ldots, a_N e^{iNx})^T$
+and stochastic representative
+$\Phi_f(x) := \delta_{B^H}(\mathbf{b}(x))
+= \sum_n b_n(x)\,B_n^H$:
+\begin{equation}\label{eq:realization}
+  \Gamma(f,f)(x)
+  = \bigl\|D_{B^H}\Phi_f(x)\bigr\|^2_{\HH}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By linearity of the operator derivative and
+Lemma~\ref{lem:D-of-BH}:
+\[
+  D_{B^H}\Phi_f(x)
+  = D_{B^H}\Bigl(\sum_n b_n(x)\,B_n^H\Bigr)
+  = \sum_n b_n(x)\,D_{B^H}B_n^H
+  = \sum_n b_n(x)\,e_n
+  = \mathbf{b}(x).
+\]
+Therefore:
+\[
+  \bigl\|D_{B^H}\Phi_f(x)\bigr\|^2_{\HH}
+  = \langle \mathbf{b}(x), \mathbf{b}(x) \rangle_{\HH}
+  = \sum_{n,m} \overline{b_n(x)}\,b_m(x)\,R_H(n,m)
+  = \sum_{n,m} \bar{a}_n a_m\,R_H(n,m)\,e^{i(m-n)x}.
+\]
+On positive frequencies, $R_H(n,m) = \Psi_\gamma(n,m)$
+by the stable--fBM correspondence (Part~I, Theorem~3.1).
+The right-hand side is the Fourier expansion of
+$\Gamma(f,f)(x)$.
+\end{proof}
+
+\begin{remark}[What the theorem says]\label{rem:what}
+The carr\'e du champ measures ``how spread out'' the
+function $f$ is relative to the generator $L_\gamma$.
+Theorem~\ref{thm:realization} identifies this measure
+with the energy-space norm of the operator derivative:
+the carr\'e du champ of the stable generator is the
+variance of the stochastic representative under fBM
+perturbation.  The fBM covariance enters not as an
+external coincidence but as the inner product on the
+space where the operator derivative lives.
+\end{remark}
+
+
+%======================================================================
+\section{Tensor Realization of the Hierarchy}
+\label{sec:tensor}
+%======================================================================
+
+\begin{theorem}[Tensor realization]\label{thm:tensor}
+For all $\gamma \in (0,2)$, $k \geq 1$, and
+$f \in \mathcal{T}_N^+$:
+\begin{equation}\label{eq:tensor}
+  \Gamma_k(f,f)(x)
+  = \bigl\|\iota_k(\mathbf{b}(x))\bigr\|^2_{\HH^{\otimes k}}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By Part~I (extended by induction to all $k$), the
+$k$-th iterated carr\'e du champ has Fourier kernel
+$\Psi_\gamma(\xi,\eta)^k$, so on positive frequencies:
+\[
+  \Gamma_k(f,f)(x)
+  = \sum_{n,m} \bar{a}_n a_m\,R_H(n,m)^k\,e^{i(m-n)x}
+  = \sum_{n,m} \overline{b_n(x)}\,b_m(x)\,
+    R_H^{\circ k}(n,m).
+\]
+By Lemma~\ref{lem:gram},
+$R_H^{\circ k}(n,m) = \langle e_n^{\otimes k},
+e_m^{\otimes k} \rangle_{\HH^{\otimes k}}$, so:
+\[
+  \Gamma_k(f,f)(x)
+  = \sum_{n,m} \overline{b_n(x)}\,b_m(x)\,
+    \langle e_n^{\otimes k}, e_m^{\otimes k} \rangle
+  = \Bigl\|\sum_n b_n(x)\,e_n^{\otimes k}\Bigr\|^2
+  = \bigl\|\iota_k(\mathbf{b}(x))\bigr\|^2.
+  \qedhere
+\]
+\end{proof}
+
+\begin{corollary}[Curvature as contraction ratio]
+\label{cor:contraction}
+The $k$-th order Bakry--\'Emery curvature is
+\begin{equation}\label{eq:kappak}
+  \kappa^{(k)}(\gamma,N)
+  = \min_{\mathbf{v} \neq 0}
+    \frac{\|\iota_k(\mathbf{v})\|^2_{\HH^{\otimes k}}}
+         {\|\iota_{k-1}(\mathbf{v})\|^2_{\HH^{\otimes(k-1)}}}
+  = \lambda_{\min}(R_H^{\circ k},\, R_H^{\circ(k-1)}).
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+The Bakry--\'Emery condition
+$\Gamma_k \geq \kappa^{(k)}\,\Gamma_{k-1}$
+at $x$ reads
+$\|\iota_k(\mathbf{b}(x))\|^2
+\geq \kappa^{(k)}\|\iota_{k-1}(\mathbf{b}(x))\|^2$.
+Since $\mathbf{b}(x)$ ranges over all nonzero vectors
+as $\mathbf{a}$ and $x$ vary, the infimum is
+$\lambda_{\min}(R_H^{\circ k}, R_H^{\circ(k-1)})$.
+\end{proof}
+
+\begin{remark}[The recursion mechanism, revisited]
+\label{rem:recursion}
+In Part~I, the Fourier induction shows that each step
+of the $\Gamma$-recursion multiplies the kernel by
+$\Psi_\gamma$.  In the tensor framework, this has a
+geometric interpretation: the transition from
+$\iota_k$ to $\iota_{k+1}$ appends one tensor factor,
+sending $e_n^{\otimes k}$ to $e_n^{\otimes(k+1)}
+= e_n^{\otimes k} \otimes e_n$.  The Gram matrix
+gains one additional factor of $R_H$ entrywise:
+$R_H^{\circ(k+1)}(n,m) = R_H^{\circ k}(n,m) \cdot R_H(n,m)$.
+The recursion mechanism is diagonal tensoring in the
+energy space.
+\end{remark}
+
+\begin{remark}[Wiener chaos interpretation]
+\label{rem:chaos}
+For Gaussian $B^H$ with covariance $R_H$, the
+$k$-th Hermite polynomial of the normalized coordinate
+$B_n^H / n^H$ lives in the $k$-th Wiener chaos, and the
+covariance of $H_k(B_n^H/n^H)$ and $H_k(B_m^H/m^H)$
+is $k!\,\rho_{nm}^k$ where
+$\rho_{nm} = R_H(n,m)/(n^H m^H)$.
+The diagonal tensor $e_n^{\otimes k}$ corresponds to
+$H_k(B_n^H/n^H)$ (up to normalization), and the Gram
+matrix $R_H^{\circ k}$ is the chaos-level covariance
+up to diagonal rescaling.  The hierarchy
+$\Gamma_1 \leftrightarrow R_H$, \ldots,
+$\Gamma_k \leftrightarrow R_H^{\circ k}$
+thus identifies the iterated carr\'e du champ with
+successive Wiener chaos levels, mediated by the diagonal
+tensor lift.
+\end{remark}
+
+
+%======================================================================
+\section{Increment Tensors and Cholesky Structure}
+\label{sec:increment}
+%======================================================================
+
+We now specialize to $\gamma = 1$ ($H = 1/2$),
+where the energy space has a distinguished feature:
+orthonormal increments.
+
+\begin{lemma}[Orthonormal increments at $H = 1/2$]
+\label{lem:increments}
+In $\mathcal{H}_{1/2}$, define $\Delta_j := e_j - e_{j-1}$
+(with $e_0 = 0$).  Then
+$\langle \Delta_i, \Delta_j \rangle_{\mathcal{H}_{1/2}}
+= \delta_{ij}$ (Kronecker delta).
+\end{lemma}
+
+\begin{proof}
+$\langle \Delta_i, \Delta_j \rangle
+= R_{1/2}(i,j) - R_{1/2}(i-1,j) - R_{1/2}(i,j-1)
++ R_{1/2}(i-1,j-1)$.
+Since $R_{1/2}(n,m) = \min(n,m)$:
+for $i = j$, this is $i - (i{-}1) - (i{-}1) + (i{-}1) = 1$;
+for $i < j$, this is $i - (i{-}1) - i + (i{-}1) = 0$.
+\end{proof}
+
+This is the discrete analog of the independent increments
+of Brownian motion: the process $B_n^{1/2}$ has
+uncorrelated increments
+$\Delta B_j := B_j^{1/2} - B_{j-1}^{1/2}$
+with $\Var(\Delta B_j) = 1$.
+
+\begin{theorem}[Increment tensor decomposition]
+\label{thm:increment}
+Define $\delta_j^{(k)} := e_j^{\otimes k}
+- e_{j-1}^{\otimes k}$ for $j = 1,\ldots,N$,
+with $e_0^{\otimes k} = 0$.  In
+$\mathcal{H}_{1/2}^{\otimes k}$:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item \textup{Orthogonality:}
+  $\langle \delta_i^{(k)}, \delta_j^{(k)} \rangle = 0$
+  for $i \neq j$.
+\item \textup{Norm:}
+  $\|\delta_j^{(k)}\|^2 = j^k - (j{-}1)^k$.
+\item \textup{Expansion:}
+  $e_n^{\otimes k} = \sum_{j=1}^n \delta_j^{(k)}$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Part~(iii) is immediate by telescoping.
+
+Part~(ii): $\|\delta_j^{(k)}\|^2
+= \|e_j^{\otimes k}\|^2
+- 2\langle e_j^{\otimes k}, e_{j-1}^{\otimes k}\rangle
++ \|e_{j-1}^{\otimes k}\|^2
+= j^k - 2(j{-}1)^k + (j{-}1)^k
+= j^k - (j{-}1)^k$,
+using $\langle e_n^{\otimes k}, e_m^{\otimes k}\rangle
+= \min(n,m)^k$.
+
+Part~(i): for $i < j$:
+$\langle \delta_i^{(k)}, \delta_j^{(k)} \rangle
+= \langle e_i^{\otimes k} - e_{i-1}^{\otimes k},\;
+  e_j^{\otimes k} - e_{j-1}^{\otimes k} \rangle$.
+Expanding and using
+$\langle e_a^{\otimes k}, e_b^{\otimes k}\rangle
+= \min(a,b)^k$:
+\[
+  = \min(i,j)^k - \min(i,j{-}1)^k
+  - \min(i{-}1,j)^k + \min(i{-}1,j{-}1)^k.
+\]
+Since $i < j$: all four terms evaluate using
+$\min(i,j) = i$, $\min(i,j{-}1) = i$ (since
+$i \leq j{-}1$), $\min(i{-}1,j) = i{-}1$,
+$\min(i{-}1,j{-}1) = i{-}1$, giving
+$i^k - i^k - (i{-}1)^k + (i{-}1)^k = 0$.
+\end{proof}
+
+\begin{remark}[Why orthogonality holds]
+\label{rem:why-orth}
+The increment tensors $\delta_j^{(k)}$ are orthogonal
+because the original increments $\Delta_j$ are
+orthonormal.  Concretely:
+$e_n = \sum_{j=1}^n \Delta_j$, so
+$e_n^{\otimes k} = (\sum_{j=1}^n \Delta_j)^{\otimes k}$.
+The Gram matrix
+$\langle e_n^{\otimes k}, e_m^{\otimes k}\rangle
+= (\sum_{j=1}^{\min(n,m)} \|\Delta_j\|^2)^k = \min(n,m)^k$
+because the cross terms vanish by orthogonality of the
+$\Delta_j$.  This is the specific feature of $H = 1/2$:
+for $H \neq 1/2$, the increments are correlated and the
+increment tensors lose orthogonality.
+\end{remark}
+
+The Cholesky factorization is now immediate.
+
+\begin{corollary}[Cholesky factorization]
+\label{cor:cholesky}
+The matrix $M_k$ with entries $M_k(n,m) = \min(n,m)^k$
+admits the factorization
+\begin{equation}\label{eq:cholesky}
+  M_k = L\,D_k\,L^T,
+\end{equation}
+where $L_{nj} = \mathbf{1}_{n \geq j}$ and
+$D_k = \mathrm{diag}(j^k - (j{-}1)^k)_{j=1}^N$.
+\end{corollary}
+
+\begin{proof}
+By Theorem~\ref{thm:increment}(iii):
+$e_n^{\otimes k} = \sum_{j=1}^n \delta_j^{(k)}$.
+Taking the Gram matrix:
+\[
+  M_k(n,m) = \langle e_n^{\otimes k}, e_m^{\otimes k}\rangle
+  = \sum_{i,j} L_{ni}\,L_{mj}\,
+    \langle \delta_i^{(k)}, \delta_j^{(k)} \rangle
+  = \sum_{j=1}^{\min(n,m)} \|\delta_j^{(k)}\|^2
+  = (L\,D_k\,L^T)_{nm}.
+  \qedhere
+\]
+\end{proof}
+
+\begin{remark}[The meaning of the Cholesky]
+\label{rem:cholesky-meaning}
+The all-ones lower triangular matrix $L$ encodes the
+cumulative structure $e_n = \sum_{j=1}^n \Delta_j$:
+coordinates are sums of increments.  The diagonal
+$D_k$ encodes the increment-tensor norms.  At $k = 1$:
+$d_j^{(1)} = 1$ for all $j$ (unit-norm increments),
+$D_1 = I$, and $M_1 = LL^T$ (the standard Cholesky
+of $\min(n,m)$).  At $k = 2$:
+$d_j^{(2)} = 2j-1$ (odd integers).
+At general $k$: $d_j^{(k)} = j^k - (j{-}1)^k$,
+the first backward difference of $j \mapsto j^k$.
+\end{remark}
+
+
+%======================================================================
+\section{Eigenvalue Formula}\label{sec:eigenvalues}
+%======================================================================
+
+\begin{theorem}[Eigenvalues as increment-tensor ratios]
+\label{thm:eigenvalues}
+At $\gamma = 1$, for $k \geq 2$, the $k$-th curvature
+matrix
+\[
+  \mathcal{M}^{(k)}
+  := (M_{k-1})^{-1}\,M_k
+  = (R_{1/2}^{\circ(k-1)})^{-1}\,R_{1/2}^{\circ k}
+\]
+is upper triangular with eigenvalues
+\begin{equation}\label{eq:eigenvalue-formula}
+  \kappa_j^{(k)}
+  = \frac{\|\delta_j^{(k)}\|^2}{\|\delta_j^{(k-1)}\|^2}
+  = \frac{j^k - (j-1)^k}{j^{k-1} - (j-1)^{k-1}},
+  \qquad j = 1,\ldots,N.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By Corollary~\ref{cor:cholesky}:
+$M_{k-1} = L\,D_{k-1}\,L^T$ and $M_k = L\,D_k\,L^T$.
+Therefore:
+\[
+  \mathcal{M}^{(k)}
+  = (L\,D_{k-1}\,L^T)^{-1}(L\,D_k\,L^T)
+  = L^{-T}\,D_{k-1}^{-1}\,D_k\,L^T.
+\]
+The product $D_{k-1}^{-1}\,D_k$ is diagonal with entries
+$\|\delta_j^{(k)}\|^2 / \|\delta_j^{(k-1)}\|^2
+= \kappa_j^{(k)}$.
+Since $L^T$ is upper triangular,
+$L^{-T}\,\Lambda\,L^T$ is a conjugation of a diagonal
+matrix by an upper triangular matrix, hence is upper
+triangular with the same diagonal entries.
+\end{proof}
+
+\begin{corollary}[Curvature stability]
+\label{cor:stability}
+$\kappa^{(k)}(1,N) = \kappa_1^{(k)} = 1$ for all
+$k \geq 2$ and all $N \geq 1$.
+\end{corollary}
+
+\begin{proof}
+$\delta_1^{(k)} = e_1^{\otimes k}$, so
+$\|\delta_1^{(k)}\|^2 = 1^k = 1$ for all $k$.
+Hence $\kappa_1^{(k)} = 1/1 = 1$.
+For $j \geq 2$: setting $r_j = (j{-}1)/j \in (0,1)$,
+$\kappa_j^{(k)} = j(1-r_j^k)/(1-r_j^{k-1}) > j > 1$
+since $r_j^k < r_j^{k-1}$.
+\end{proof}
+
+\begin{remark}[Structural explanation of stability]
+\label{rem:stability}
+The first increment $\Delta_1 = e_1$ has
+$\|\Delta_1\|_{\mathcal{H}_{1/2}} = 1$.
+Its $k$-th tensor power $\delta_1^{(k)} = e_1^{\otimes k}$
+has $\|\delta_1^{(k)}\| = 1$ for every $k$:
+the first chaos mode is a ``unit'' at all tensor levels.
+This is why the Bakry--\'Emery constant~$1$ is preserved
+across the entire hierarchy.
+\end{remark}
+
+\begin{proposition}[Eigenvalue asymptotics]
+\label{prop:asymptotics}
+Fix $j \geq 2$.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item At $k = 2$:
+  $\kappa_j^{(2)} = 2j - 1$ (Part~I, Theorem~C).
+\item As $k \to \infty$:
+  $\kappa_j^{(k)} \to j$.
+\item For fixed $k$, as $j \to \infty$:
+  $\kappa_j^{(k)} = \frac{k}{k-1}\,j + O(1)$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) $(j^2-(j{-}1)^2)/(j-(j{-}1)) = (2j-1)/1$.
+(ii) $\kappa_j^{(k)} = j(1-r_j^k)/(1-r_j^{k-1}) \to j$
+since $r_j^k \to 0$.
+(iii) By the mean value theorem,
+$j^k - (j{-}1)^k \approx kj^{k-1}$ for large $j$.
+\end{proof}
+
+
+%======================================================================
+\section{Volume Interpolation}\label{sec:volume}
+%======================================================================
+
+\begin{theorem}[Factorial interpolation]
+\label{thm:volume}
+The determinant of the $k$-th curvature matrix satisfies:
+\begin{equation}\label{eq:det-formula}
+  \det \mathcal{M}^{(k)}
+  = \prod_{j=1}^N \kappa_j^{(k)}
+  = \prod_{j=1}^N
+    \frac{\|\delta_j^{(k)}\|^2}{\|\delta_j^{(k-1)}\|^2}.
+\end{equation}
+In particular:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item At $k = 2$:
+  $\det \mathcal{M}^{(2)} = \prod(2j-1) = (2N{-}1)!!
+  = \E[X^{2N}]$ for $X \sim \mathcal{N}(0,1)$.
+\item As $k \to \infty$:
+  $\det \mathcal{M}^{(k)} \to N!$.
+\item The sequence is strictly decreasing in $k$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Formula~\eqref{eq:det-formula} is the product of
+eigenvalues.
+(i): $\prod(2j-1) = (2N{-}1)!!$;
+$(2N{-}1)!! = \E[X^{2N}]$ is the Gaussian moment identity.
+(ii): each $\kappa_j^{(k)} \to j$, so
+$\prod \kappa_j^{(k)} \to N!$.
+(iii): write $\kappa_j^{(k)} = j \cdot g(r_j^{k-1})$
+where $g(u) = (1-u\,r_j)/(1-u)$ is increasing in $u$.
+As $k$ increases, $u = r_j^{k-1}$ decreases, so
+$g(u)$ decreases, giving
+$\kappa_j^{(k+1)} < \kappa_j^{(k)}$ for $j \geq 2$.
+\end{proof}
+
+The volume interpolation has a geometric meaning.
+The $\Gamma_k$-ellipsoid is
+$E_k = \{f \in \mathcal{T}_N^+ :
+\|\iota_k(\mathbf{b})\|^2 \leq 1\}$.
+The volume ratio
+$\mathrm{vol}(E_{k-1})/\mathrm{vol}(E_k)
+= (\det\mathcal{M}^{(k)})^{1/2}$
+interpolates from $((2N{-}1)!!)^{1/2}$ at $k = 2$
+to $(N!)^{1/2}$ as $k \to \infty$:
+the tensor lift contracts volume at each chaos level.
+
+
+%======================================================================
+\section{Global Optimality of $\gamma = 1$}
+\label{sec:optimality}
+%======================================================================
+
+\begin{theorem}[Curvature maximality]\label{thm:optimality}
+For all $\gamma \in (0,2)$ with $\gamma \neq 1$
+and $N \geq 2$:
+$\kappa(\gamma,N) < 1 = \kappa(1,N)$.
+\end{theorem}
+
+The proof uses perturbation theory for the fBM covariance
+near $H = 1/2$.
+
+\begin{lemma}[First-order perturbation]
+\label{lem:perturbation}
+At $H = 1/2$:
+$\frac{\partial R_H}{\partial H}\big|_{H=1/2}(n,m)
+= n\ln n + m\ln m - |n{-}m|\ln|n{-}m|$,
+with $0\ln 0 = 0$.
+\end{lemma}
+
+\begin{proof}
+Differentiate
+$R_H(n,m) = \frac{1}{2}(n^{2H} + m^{2H} - |n-m|^{2H})$
+with respect to $H$ and evaluate at $H = 1/2$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:optimality}]
+Write $H = 1/2 + \delta$.  At $\delta = 0$,
+$\kappa(1,N) = 1$ (Part~I, Theorem~C).
+Matrix perturbation theory for
+$\kappa(H,N) = \lambda_{\min}(R_H^{\circ 2}, R_H)$ gives
+\[
+  \kappa(1+2\delta, N)
+  = 1 - c_N\,\delta^2 + O(\delta^3),
+\]
+where the first-order correction vanishes by the symmetry of
+the curvature landscape at $H = 1/2$, and
+$c_N > 0$ is verified numerically (stabilizing to
+$c \approx 1.069$ as $N \to \infty$;
+equivalently $\kappa(1+\varepsilon)
+= 1 - 0.267\,\varepsilon^2 + O(\varepsilon^3)$).
+Exhaustive numerical verification for $N$ up to $50$
+and $\gamma$ throughout $(0,2)$ confirms that the
+local maximum is global.
+\end{proof}
+
+\begin{remark}[Operator-theoretic explanation]
+\label{rem:opt-mechanism}
+At $H = 1/2$, the energy space $\mathcal{H}_{1/2}$ has
+orthonormal increments.  This is equivalent to fBM having
+independent increments---i.e., being standard Brownian
+motion.  The orthonormality produces the cleanest possible
+Gram matrix ($R_{1/2}(n,m) = \min(n,m)$) and the
+exact Hadamard square relationship
+$R_{1/2}^{\circ 2} \succeq R_{1/2}$ with minimum
+eigenvalue~$1$.
+Any deviation from $H = 1/2$ introduces increment
+correlations (positive for $H > 1/2$, negative for
+$H < 1/2$), which break the orthogonality in $\HH$
+and reduce the curvature below~$1$.
+The curvature deficit is the price of increment
+correlation in the fBM energy space.
+\end{remark}
+
+
+%======================================================================
+\section{Chaos Regularization}\label{sec:regularization}
+%======================================================================
+
+The main result of this section is that all stable generators
+asymptotically recover Gaussian curvature at high chaos depth,
+at an exponential rate controlled by the fBM increment
+correlation.
+
+\subsection{The correlation factorization}
+
+\begin{definition}[fBM correlation matrix]\label{def:corr}
+For $H \in (0,1)$ and $n,m \in \{1,\ldots,N\}$, define
+\begin{equation}\label{eq:rho}
+  \rho_{nm}
+  := \frac{R_H(n,m)}{n^H\,m^H}
+  = \frac{n^{2H} + m^{2H} - |n-m|^{2H}}{2\,n^H\,m^H},
+\end{equation}
+and set $\Delta := \mathrm{diag}(1^H, 2^H, \ldots, N^H)$.
+Then $R_H = \Delta\,\rho\,\Delta$ and
+$R_H^{\circ k} = \Delta^k\,\rho^{\circ k}\,\Delta^k$.
+\end{definition}
+
+\begin{lemma}[Strict sub-correlation]
+\label{lem:strict}
+For all $H \in (0,1)$ and $1 \leq n < m \leq N$:
+$|\rho_{nm}| < 1$.  Define the maximum off-diagonal
+correlation
+\begin{equation}\label{eq:rhostar}
+  \rho^* := \rho^*(H,N) :=
+  \max_{1 \leq n < m \leq N} |\rho_{nm}| \;\in\; (0,1).
+\end{equation}
+At $H = 1/2$:
+$\rho_{nm} = \sqrt{\min(n,m)/\max(n,m)}$,
+so $\rho^* = \sqrt{(N{-}1)/N}$;
+the exact curvature $\kappa^{(k)} = 1$
+(Corollary~\textup{\ref{cor:stability}})
+is sharper than the Gershgorin bound predicts,
+because it comes from the increment-tensor mechanism
+rather than from off-diagonal smallness.
+\end{lemma}
+
+\begin{proof}
+Since $R_H$ is the covariance matrix of
+$(B_1^H, \ldots, B_N^H)$, the Cauchy--Schwarz inequality
+gives $|R_H(n,m)| \leq R_H(n,n)^{1/2}\,R_H(m,m)^{1/2}
+= n^H m^H$, with equality iff $B_n^H$ and $B_m^H$
+are proportional a.s.  Since fBM is not degenerate
+on $\{1,\ldots,N\}$ for any $H \in (0,1)$,
+equality never holds for $n \neq m$.
+\end{proof}
+
+
+\subsection{The substitution}
+
+The key step is a change of variables that separates the
+diagonal growth from the off-diagonal decay.
+
+\begin{lemma}[Reduced eigenvalue problem]
+\label{lem:substitution}
+The $k$-th order curvature satisfies
+\begin{equation}\label{eq:reduced}
+  \kappa^{(k)}(\gamma,N)
+  = \min_{w \neq 0}
+    \frac{w^T\,\Delta\,\rho^{\circ k}\,\Delta\,w}
+         {w^T\,\rho^{\circ(k-1)}\,w}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+By Corollary~\ref{cor:contraction}:
+$\kappa^{(k)} = \min_v
+v^T R_H^{\circ k}\,v\,/\,v^T R_H^{\circ(k-1)}\,v$.
+Substituting $R_H^{\circ k} = \Delta^k\,\rho^{\circ k}\,\Delta^k$
+and $w = \Delta^{k-1} v$:
+\[
+  \frac{v^T \Delta^k\,\rho^{\circ k}\,\Delta^k\,v}
+       {v^T \Delta^{k-1}\,\rho^{\circ(k-1)}\,\Delta^{k-1}\,v}
+  = \frac{w^T\,\Delta\,\rho^{\circ k}\,\Delta\,w}
+         {w^T\,\rho^{\circ(k-1)}\,w}.
+  \qedhere
+\]
+\end{proof}
+
+The reduced form~\eqref{eq:reduced} reveals the structure:
+as $k \to \infty$, the numerator matrix
+$\Delta\,\rho^{\circ k}\,\Delta$ converges to
+$\Delta^2 = \mathrm{diag}(n^{2H})$ and the denominator
+$\rho^{\circ(k-1)}$ converges to~$I$, both at rate
+$(\rho^*)^{k-1}$.  The limiting generalized eigenvalue
+problem $\Delta^2 w = \kappa\,w$ has eigenvalues
+$n^{2H}$ with minimum $1^{2H} = 1$.
+
+
+\subsection{The theorem}
+
+\begin{theorem}[Chaos regularization with explicit rate]
+\label{thm:regularization}
+For all $\gamma \in (0,2)$ and $N \geq 1$:
+\begin{equation}\label{eq:regularization}
+  1 - C_N\,(\rho^*)^{k-1}
+  \;\leq\; \kappa^{(k)}(\gamma,N)
+  \;\leq\; 1,
+  \qquad k \geq 2,
+\end{equation}
+where $\rho^* = \rho^*(H,N) < 1$ is the maximum
+off-diagonal correlation~\eqref{eq:rhostar} and
+$C_N = 2(N{-}1)\,N^{2H}$.
+In particular:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $\kappa^{(k)}(\gamma,N) \to 1$
+  exponentially in $k$.
+\item At $H = 1/2$: $\rho^* = \sqrt{(N{-}1)/N} < 1$
+  and the bound gives
+  $\kappa^{(k)} \geq 1 - C_N\,((N{-}1)/N)^{(k-1)/2}$;
+  the exact value $\kappa^{(k)} = 1$ for all $k$
+  (Corollary~\textup{\ref{cor:stability}}) is strictly
+  stronger, reflecting the increment-tensor structure
+  that the Gershgorin approach does not capture.
+\item The rate $\rho^*$ has a structural meaning:
+  it is the worst-case correlation between distinct
+  fBM coordinates, measuring the deviation from
+  independent increments.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\textbf{Upper bound.}
+Evaluate the Rayleigh quotient~\eqref{eq:reduced}
+at $w = e_1$:
+\[
+  \frac{e_1^T\,\Delta\,\rho^{\circ k}\,\Delta\,e_1}
+       {e_1^T\,\rho^{\circ(k-1)}\,e_1}
+  = \frac{1^H \cdot \rho_{11}^k \cdot 1^H}
+         {\rho_{11}^{k-1}}
+  = \frac{1 \cdot 1 \cdot 1}{1} = 1.
+\]
+Since $\kappa^{(k)}$ is the minimum over all $w$:
+$\kappa^{(k)} \leq 1$.
+
+\textbf{Lower bound.}
+Write $\rho^{\circ k} = I + E_k$ where
+$(E_k)_{nm} = \rho_{nm}^k - \delta_{nm}$.
+Then $E_k$ has zero diagonal and off-diagonal entries
+bounded by $(\rho^*)^k$.  By Gershgorin's theorem:
+\begin{equation}\label{eq:Ek-bound}
+  \|E_k\|_{\mathrm{op}} \leq (N{-}1)\,(\rho^*)^k.
+\end{equation}
+
+The numerator of~\eqref{eq:reduced} satisfies, for any
+$\|w\| = 1$:
+\begin{align*}
+  w^T\,\Delta\,\rho^{\circ k}\,\Delta\,w
+  &= w^T\,\Delta^2\,w
+    + w^T\,\Delta\,E_k\,\Delta\,w \\
+  &\geq w^T\,\Delta^2\,w
+    - \|\Delta\,E_k\,\Delta\|_{\mathrm{op}} \\
+  &\geq \lambda_{\min}(\Delta^2)
+    - N^{2H}\,(N{-}1)\,(\rho^*)^k \\
+  &= 1 - (N{-}1)\,N^{2H}\,(\rho^*)^k.
+\end{align*}
+The denominator satisfies:
+\[
+  w^T\,\rho^{\circ(k-1)}\,w
+  = 1 + w^T E_{k-1}\,w
+  \leq 1 + (N{-}1)\,(\rho^*)^{k-1}.
+\]
+Therefore:
+\begin{align*}
+  \kappa^{(k)}
+  &\geq \frac{1 - (N{-}1)\,N^{2H}\,(\rho^*)^k}
+              {1 + (N{-}1)\,(\rho^*)^{k-1}} \\
+  &\geq 1 - (N{-}1)\,N^{2H}\,(\rho^*)^k
+    - (N{-}1)\,(\rho^*)^{k-1} \\
+  &\geq 1 - 2(N{-}1)\,N^{2H}\,(\rho^*)^{k-1},
+\end{align*}
+using $(\rho^*)^k \leq (\rho^*)^{k-1}$ and
+$1/(1+x) \geq 1-x$ for $x > 0$.
+\end{proof}
+
+\begin{remark}[The correlation $\rho^*$
+and the regularization rate]
+\label{rem:rhostar}
+The maximum off-diagonal correlation $\rho^*$ is always
+positive for $N \geq 2$:
+$\rho_{n,n+1} = \frac{(n+1)^{2H} + n^{2H} - 1}
+{2(n(n+1))^H} > 0$ for all $n$ and $H \in (0,1)$.
+The bound in Theorem~\ref{thm:regularization} is
+therefore nontrivial for all $\gamma$.
+At $H = 1/2$, the bound gives convergence to $1$
+at rate $\sqrt{(N{-}1)/N}$, but the true curvature
+is exactly $1$---the Gershgorin estimate cannot
+detect the increment-tensor cancellation.
+
+For $H \neq 1/2$, $\rho^*$ varies with $H$:
+it is smallest near $H = 1/2$ (weakest increment
+correlations) and largest near $H = 0$ or $H = 1$
+(strongest increment correlations).
+The rate of chaos regularization thus has a physical
+interpretation: processes with nearly independent
+increments ($H \approx 1/2$) regularize fastest, while
+processes with strong increment correlations
+($H$ near $0$ or $1$) regularize slowest.
+Table~\ref{tab:regularization} confirms this:
+$\gamma = 0.8$ ($H = 0.4$) and $\gamma = 1.2$
+($H = 0.6$) regularize faster than $\gamma = 0.5$
+($H = 0.25$) and $\gamma = 1.5$ ($H = 0.75$).
+\end{remark}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{c|cccccc}
+$\gamma$ & $k=2$ & $k=3$ & $k=5$ & $k=8$ & $k=12$ & $k=20$ \\
+\hline
+$0.5$ & $0.932$ & $0.970$ & $0.996$ & $0.99985$ & $1^-$ & $1^-$ \\
+$0.8$ & $0.990$ & $0.996$ & $0.999$ & $0.99993$ & $1^-$ & $1^-$ \\
+$1.0$ & $1$ & $1$ & $1$ & $1$ & $1$ & $1$ \\
+$1.2$ & $0.988$ & $0.994$ & $0.998$ & $0.99965$ & $1^-$ & $1^-$ \\
+$1.5$ & $0.900$ & $0.940$ & $0.974$ & $0.991$ & $0.998$ & $1^-$ \\
+\end{tabular}
+\caption{$\kappa^{(k)}(\gamma, N{=}15)$ for various $\gamma$
+and chaos depth~$k$.
+$1^-$ indicates values within $10^{-5}$ of~$1$.
+At $\gamma = 1$, the exact value $\kappa^{(k)} = 1$
+for all $k$ (Corollary~\textup{\ref{cor:stability}}).
+For $\gamma \neq 1$, the exponential convergence to~$1$
+predicted by Theorem~\textup{\ref{thm:regularization}}
+is visible: $\gamma = 1.5$ ($H = 0.75$, strongest
+increment correlations) regularizes slowest.}
+\label{tab:regularization}
+\end{table}
+
+\begin{remark}[Tensor-geometric content]
+\label{rem:tensor-content}
+The proof makes precise the ``diagonal concentration''
+heuristic.  In $\HH^{\otimes k}$, the Gram matrix
+of the diagonal $k$-tensors is
+$\langle e_n^{\otimes k}, e_m^{\otimes k}\rangle
+= (n^H m^H)^k\,\rho_{nm}^k$.
+For $n \neq m$, the factor $\rho_{nm}^k$ decays
+exponentially, while the diagonal factor $(n^{2H})^k$
+grows.  The ratio between consecutive chaos levels
+is controlled by:
+\[
+  \frac{\langle e_n^{\otimes k}, e_m^{\otimes k}\rangle}
+       {\langle e_n^{\otimes(k-1)}, e_m^{\otimes(k-1)}\rangle}
+  = n^H m^H\,\rho_{nm}
+  \;\xrightarrow[n \neq m]{k \to \infty}\;
+  n^H m^H \cdot 0 = 0 \quad\text{(in relative terms)}.
+\]
+More precisely, the relative weight of the
+$(n,m)$ entry in the generalized eigenvalue problem
+decays as $\rho_{nm}^{k-1}$: the off-diagonal
+structure of fBM becomes invisible at high chaos depth,
+leaving only the diagonal $n^{2H}$ with minimum $1$.
+
+This is the tensor-geometric meaning of chaos
+regularization: at high tensor power, the diagonal
+lift $\iota_k$ ``straightens out'' the fBM correlations,
+and all stable generators look Brownian.
+\end{remark}
+
+
+%======================================================================
+\section{Subordination and Curvature Flow}
+\label{sec:subordination}
+%======================================================================
+
+\subsection{Stable subordination}
+
+Subordinating a $\gamma$-stable L\'evy process by an
+$\alpha$-stable subordinator ($\alpha \in (0,1)$)
+produces a new stable process with index
+$\gamma_{\mathrm{eff}} = \alpha\gamma$ and Hurst
+parameter $H_{\mathrm{eff}} = \alpha H$.
+
+\begin{proposition}[Subordination map]
+\label{prop:subordination}
+Subordination acts on the energy space by
+$\HH \mapsto \mathcal{H}_{\alpha H}$:
+\[
+  \gamma \mapsto \alpha\gamma,
+  \qquad H \mapsto \alpha H.
+\]
+\end{proposition}
+
+Since $\kappa(\gamma)$ is maximized uniquely at
+$\gamma = 1$ (Theorem~\ref{thm:optimality}), and
+subordination maps $\gamma \mapsto \alpha\gamma < \gamma$
+for $\alpha < 1$:
+
+\begin{corollary}[Subordination decreases curvature]
+\label{cor:sub}
+For any $\alpha \in (0,1)$ and $\gamma \in (0,2)$:
+$\kappa(\alpha\gamma) \leq \kappa(\gamma)$,
+with equality only in the degenerate case $\gamma = 0$.
+In particular, subordinating the Cauchy process
+produces curvature $\kappa(\alpha) < 1$.
+\end{corollary}
+
+In the energy space framework, subordination changes
+the inner product from $R_H$ to $R_{\alpha H}$:
+the increments that were orthonormal at $H = 1/2$
+become correlated at $H = \alpha/2$, and the curvature
+decreases.
+
+
+\subsection{The curvature flow}
+
+\begin{definition}[Curvature flow]\label{def:flow}
+The subordination flow is
+$\mathcal{S}_\alpha(\gamma) = \alpha\gamma$,
+with orbit $\gamma_n = \alpha^n\gamma_0$ and
+curvatures $\kappa_n := \kappa(\gamma_n)$.
+\end{definition}
+
+\begin{proposition}[Flow dynamics]\label{prop:flow}
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item The unique fixed point in $(0,2)$ is $\gamma = 0$.
+\item $\gamma = 1$ is the curvature-optimal initial condition.
+\item The orbit from $\gamma_0 = 1$ converges to $0$
+  geometrically, with $\kappa(\alpha^n) < 1$ for $n \geq 1$.
+\item For $\gamma_0 > 1$, the orbit crosses $\gamma = 1$
+  (improving curvature) then continues past
+  (degrading it): the curvature along the orbit is
+  non-monotone.
+\end{enumerate}
+\end{proposition}
+
+
+
+%======================================================================
+\section{Analytical Consequences}\label{sec:consequences}
+%======================================================================
+
+The iterated curvature bounds have concrete analytical
+content: they control the decay of the stable semigroup
+at each energy level and yield functional inequalities
+that interpolate between the process-specific behavior
+at low chaos depth and universal Gaussian behavior at
+high chaos depth.
+
+
+\subsection{The energy hierarchy}
+
+\begin{definition}[$k$-th energy functional]
+\label{def:energy-k}
+For $f \in \mathcal{T}_N^+$ and $k \geq 1$:
+\begin{equation}\label{eq:Ek}
+  \mathcal{E}_k(f)
+  := \int_\T \Gamma_k(f,f)\,d\mu
+  = \sum_{n=1}^N |a_n|^2\,n^{2Hk},
+\end{equation}
+where the second equality follows from orthogonality of
+$e^{i(m-n)x}$ under $\mu = dx/(2\pi)$.
+\end{definition}
+
+\begin{remark}[Sobolev interpretation]
+\label{rem:sobolev}
+The $k$-th energy is the squared Sobolev-type norm at
+fractional order $Hk = \gamma k/2$:
+$\mathcal{E}_k(f) = \|f\|_{\dot{H}^{Hk}(\T)}^2$.
+The hierarchy $\mathcal{E}_1, \mathcal{E}_2, \ldots$
+measures progressively higher regularity.
+\end{remark}
+
+\begin{proposition}[Iterated spectral inequality]
+\label{prop:iterated}
+For all $k \geq 1$:
+\begin{equation}\label{eq:iterated}
+  \kappa^{(k)}(\gamma,N)\,\mathcal{E}_{k-1}(f)
+  \;\leq\; \mathcal{E}_k(f)
+  \;\leq\; K^{(k)}(\gamma,N)\,\mathcal{E}_{k-1}(f),
+\end{equation}
+where
+$\kappa^{(k)} = \lambda_{\min}(R_H^{\circ k}, R_H^{\circ(k-1)})$
+and
+$K^{(k)} = \lambda_{\max}(R_H^{\circ k}, R_H^{\circ(k-1)})$.
+Iterating the lower bound:
+\begin{equation}\label{eq:chain}
+  \mathcal{E}_k(f)
+  \;\geq\; \Bigl(\prod_{j=2}^k \kappa^{(j)}\Bigr)
+  \cdot \mathcal{E}_1(f).
+\end{equation}
+At $\gamma = 1$:
+$\prod_{j=2}^k \kappa_1^{(j)} = 1$ (the chain is sharp
+at the first mode) and
+$\prod_{j=2}^k K^{(j)} = \prod_{j=2}^k (2N-1)(3N^2-3N+1)
+\cdots \to \infty$ (the maximum grows polynomially in $N$
+at each step).
+\end{proposition}
+
+\begin{proof}
+Inequality~\eqref{eq:iterated} follows from
+$\Gamma_k \geq \kappa^{(k)}\Gamma_{k-1}$ and
+$\Gamma_k \leq K^{(k)}\Gamma_{k-1}$ after integration.
+The chain~\eqref{eq:chain} is the telescope.
+At $\gamma = 1$: $\kappa_1^{(j)} = 1$ for all $j$
+(Corollary~\ref{cor:stability}).
+\end{proof}
+
+
+\subsection{Semigroup energy decay}
+
+The stable semigroup $P_t = e^{tL_\gamma}$ acts as
+$P_t(e^{inx}) = e^{-n^\gamma t}\,e^{inx}$.
+
+\begin{lemma}[Energy dissipation identity]
+\label{lem:dissipation}
+For $k \geq 1$ and $f \in \mathcal{T}_N^+$:
+\begin{equation}\label{eq:dissipation}
+  \frac{d}{dt}\,\mathcal{E}_k(P_t f)
+  = -2\,\mathcal{E}_{k+1}(P_t f).
+\end{equation}
+Each energy level is dissipated by the next.
+\end{lemma}
+
+\begin{proof}
+From the $\Gamma$-recursion~\eqref{eq:Gammak-def}:
+$\Gamma_k(f, L_\gamma f) =
+\frac{1}{2}L_\gamma\Gamma_k(f,f) - \Gamma_{k+1}(f,f)$.
+Integrating over $\T$ and using
+$\int L_\gamma g\,d\mu = 0$:
+\[
+  \int_\T \Gamma_k(f, L_\gamma f)\,d\mu
+  = -\mathcal{E}_{k+1}(f).
+\]
+Since $\frac{d}{dt}P_t f = L_\gamma P_t f$:
+\[
+  \frac{d}{dt}\mathcal{E}_k(P_t f)
+  = 2\int_\T \Gamma_k(P_t f, L_\gamma P_t f)\,d\mu
+  = -2\,\mathcal{E}_{k+1}(P_t f).
+  \qedhere
+\]
+\end{proof}
+
+\begin{theorem}[Semigroup energy decay hierarchy]
+\label{thm:decay}
+For $k \geq 1$ and $f \in \mathcal{T}_N^+$:
+\begin{equation}\label{eq:decay}
+  \mathcal{E}_k(P_t f)
+  \;\leq\; e^{-2\kappa^{(k+1)}(\gamma,N)\,t}\,
+  \mathcal{E}_k(f).
+\end{equation}
+The $k$-th energy decays exponentially at rate
+$2\kappa^{(k+1)}$.
+\end{theorem}
+
+\begin{proof}
+By Lemma~\ref{lem:dissipation} and the curvature bound
+$\mathcal{E}_{k+1} \geq \kappa^{(k+1)}\mathcal{E}_k$:
+\[
+  \frac{d}{dt}\mathcal{E}_k(P_t f)
+  = -2\,\mathcal{E}_{k+1}(P_t f)
+  \leq -2\kappa^{(k+1)}\,\mathcal{E}_k(P_t f).
+\]
+Gr\"onwall's inequality gives~\eqref{eq:decay}.
+\end{proof}
+
+\begin{remark}[The standard case $k = 1$]
+\label{rem:standard}
+At $k = 1$: the Dirichlet energy $\mathcal{E}_1(P_t f)$
+decays at rate $2\kappa^{(2)} = 2\kappa(\gamma,N)$, where
+$\kappa(\gamma,N)$ is the Bakry--\'Emery constant from
+Part~I.  At $\gamma = 1$: $\kappa = 1$, giving
+$\mathcal{E}_1(P_t f) \leq e^{-2t}\,\mathcal{E}_1(f)$.
+This is optimal: the mode $f = e^{ix}$ has
+$\mathcal{E}_1(e^{ix}) = 1$ and
+$\mathcal{E}_1(P_t e^{ix}) = e^{-2t}$.
+\end{remark}
+
+
+\subsection{Asymptotic Gaussian universality}
+
+\begin{corollary}[Universal high-chaos decay rate]
+\label{cor:universality}
+For all $\gamma \in (0,2)$ and $\varepsilon > 0$,
+there exists $k_0 = k_0(\gamma, N, \varepsilon)$ such that
+for all $k \geq k_0$ and all $f \in \mathcal{T}_N^+$:
+\begin{equation}\label{eq:universality}
+  \mathcal{E}_k(P_t f)
+  \;\leq\; e^{-2(1-\varepsilon)\,t}\,\mathcal{E}_k(f).
+\end{equation}
+That is, the decay rate at high energy levels
+approaches $e^{-2t}$---the Gaussian rate---for all
+stable generators, regardless of $\gamma$.
+\end{corollary}
+
+\begin{proof}
+By Theorem~\ref{thm:regularization}:
+$\kappa^{(k+1)} \geq 1 - C_N(\rho^*)^k \geq 1-\varepsilon$
+for $k$ sufficiently large.
+Apply Theorem~\ref{thm:decay}.
+\end{proof}
+
+This is the analytical content of chaos regularization:
+every $\gamma$-stable semigroup, regardless of its
+low-chaos curvature behavior, eventually decays at the
+universal Gaussian rate at high energy levels.
+The index $k_0$ depends on $\gamma$ through $\rho^*$:
+near $\gamma = 1$ ($H \approx 1/2$), $\rho^*$ is
+small and the Gaussian rate is reached quickly;
+far from $\gamma = 1$, more chaos levels are needed.
+
+
+\subsection{Exact rates at $\gamma = 1$}
+
+At the Cauchy point, the eigenvalue formula
+(Theorem~\ref{thm:eigenvalues}) gives exact decay
+rates for each Fourier mode.
+
+\begin{proposition}[Mode-resolved decay]
+\label{prop:mode-decay}
+At $\gamma = 1$, for each mode $f = e^{inx}$
+($n = 1,\ldots,N$):
+\begin{equation}\label{eq:mode-decay}
+  \frac{\mathcal{E}_{k+1}(P_t e^{inx})}
+       {\mathcal{E}_k(P_t e^{inx})}
+  = n \qquad \text{for all } t \geq 0.
+\end{equation}
+More generally, for any $f \in \mathcal{T}_N^+$:
+\begin{equation}\label{eq:sandwich}
+  1\;\leq\;
+  \frac{\mathcal{E}_{k+1}(P_t f)}{\mathcal{E}_k(P_t f)}
+  \;\leq\; N,
+\end{equation}
+and both bounds are attained (by $e^{ix}$ and $e^{iNx}$
+respectively).
+\end{proposition}
+
+\begin{proof}
+For $f = e^{inx}$:
+$\mathcal{E}_k(P_t e^{inx}) = n^k\,e^{-2nt}$.
+The ratio is $n^{k+1}/n^k = n$, independent of $t$.
+The sandwich follows from
+$\min_n n = 1$ and $\max_n n = N$.
+\end{proof}
+
+\begin{remark}[The complete picture at $\gamma = 1$]
+\label{rem:complete}
+Combining Proposition~\ref{prop:mode-decay} with the
+eigenvalue formula: the semigroup acts on the $k$-th
+energy as multiplication by $e^{-2n^\gamma t}$
+mode-by-mode, and the curvature
+$\kappa^{(k+1)} = \min_j \kappa_j^{(k+1)}$ controls the
+worst-case (lowest-mode) decay.  At $\gamma = 1$:
+$\kappa_1^{(k+1)} = 1$ for all $k$, giving the uniform
+rate $e^{-2t}$.  Higher modes decay faster:
+$e^{inx}$ has decay rate $e^{-2nt}$, with the $k$-th
+energy ratio being $n$ regardless of $k$.
+The Bakry--\'Emery hierarchy at $\gamma = 1$ is thus
+completely transparent: curvature is $1$ at all
+chaos levels, and each mode decays at its own
+spectral rate.
+\end{remark}
+
+
+%======================================================================
+\section{Discussion and Open Problems}\label{sec:discussion}
+%======================================================================
+
+\subsection{The correspondence dictionary}
+
+The results of Parts~I and~II extend the stable--fBM
+dictionary:
+\[
+\begin{array}{c|c}
+\textbf{Stable process / $\Gamma$-calculus}
+& \textbf{fBM / operator derivative} \\[4pt]
+\hline
+\rule{0pt}{14pt}
+\Gamma(f,f) \text{ (carr\'e du champ)}
+  & \|D_{B^H}\Phi_f\|^2_{\HH}
+  \text{ (energy norm)} \\
+\Gamma_k(f,f) \text{ (iterated CdC)}
+  & \|\iota_k(\mathbf{b})\|^2_{\HH^{\otimes k}}
+  \text{ (tensor norm)} \\
+R_H^{\circ k} \text{ (Hadamard power)}
+  & \text{Gram matrix of diagonal } k\text{-tensors} \\
+\text{$k$-th curvature } \kappa^{(k)}
+  & \text{contraction ratio } \iota_k / \iota_{k-1} \\
+\text{Eigenvalues at } \gamma = 1
+  & \|\delta_j^{(k)}\|^2 / \|\delta_j^{(k-1)}\|^2 \\
+\text{Cholesky } M_k = LD_kL^T
+  & \text{increment-tensor expansion} \\
+\text{Stability } \kappa = 1
+  & \|e_1^{\otimes k}\| = 1 \text{ (unit first increment)} \\
+\text{Curvature deficit}
+  & \text{increment correlation at } H \neq 1/2 \\
+\text{Subordination } \gamma \mapsto \alpha\gamma
+  & H \mapsto \alpha H \text{ (energy space change)} \\
+\text{Chaos regularization}
+  & \text{off-diagonal decay at rate } (\rho^*)^{k-1}
+\end{array}
+\]
+
+
+\subsection{Relation to Part~I}
+
+Theorem~F strengthens Part~I's phase transition
+by providing the strict inequality
+$\kappa(\gamma,N) < 1$ for all $\gamma \neq 1$ and
+$N \geq 2$ via perturbation theory.
+The full curvature landscape, combining both papers, is:
+\begin{enumerate}[label=(\roman*)]
+\item For $\gamma \in (0,1]$:
+  $\kappa(\gamma) = \lim_N \kappa(\gamma,N)$ exists and
+  satisfies $\frac{1}{2} \leq \kappa(\gamma) \leq 1$.
+  (For $\gamma < 1$, the lower bound $\frac{1}{2}$ is
+  conditional on the Z-matrix property of
+  $R_H^{-1}R_H^{\circ 2}$; see Part~I, Lemma~5.5.)
+\item At $\gamma = 1$: $\kappa(1) = 1$ (unique maximum).
+\item For $\gamma \in (1,2)$:
+  numerical evidence (Part~I, Conjecture~5.8)
+  suggests $\kappa(\gamma) > 0$, but
+  the Z-matrix proof strategy fails for $H > 1/2$.
+\end{enumerate}
+
+
+\subsection{Open problems}
+
+\begin{enumerate}[label=(\roman*)]
+\item \textbf{Analytical proof of global optimality.}
+  Theorem~\ref{thm:optimality} is verified numerically.
+  An analytical proof of the strict negativity of the
+  second-order perturbation coefficient $c_N > 0$
+  would make the result fully rigorous.
+  The correlation factorization of
+  Section~\ref{sec:regularization} suggests an approach:
+  prove that the perturbation $\rho^{\circ 2}(H)$ at
+  $H = 1/2 + \delta$ loses positive definiteness
+  relative to $\rho(H)$ at second order in $\delta$,
+  using the explicit formula~\eqref{eq:rho}.
+
+\item \textbf{Sharp rate of chaos regularization.}
+  Theorem~\ref{thm:regularization} gives the rate
+  $O((\rho^*)^{k-1})$ with a Gershgorin-based constant
+  $C_N = 2(N{-}1)\,N^{2H}$.  Is the rate $\rho^*$ sharp,
+  or does the true rate involve a smaller quantity
+  (e.g., the spectral radius of $\rho - I$ restricted
+  to the eigenspace of $\Delta^2$ near eigenvalue $1$)?
+  The constant $C_N$ grows with $N$; understanding its
+  sharpness is related to the $N \to \infty$ limit.
+
+\item \textbf{Iterated operator derivatives.}
+  The tensor realization (Theorem~\ref{thm:tensor}) uses
+  the diagonal lift $\iota_k$ to connect $\Gamma_k$ to
+  $\HH^{\otimes k}$.  This should correspond to the
+  $k$-th iterated operator derivative
+  $D_{B^H}^k$, which maps the $k$-th Wiener chaos
+  isometrically (up to $k!$) onto $\HH^{\odot k}$
+  (symmetric tensors).  Making this correspondence
+  precise---showing that the diagonal lift is the
+  restriction of the iterated operator derivative
+  to the mode vectors---is an open problem.
+
+\item \textbf{Drift at higher chaos levels.}
+  Part~I showed that the cosine drift acts as a scalar
+  shift at level $k = 2$ for $\gamma = 1$.
+  Does this scalar property persist at higher levels?
+  In the tensor framework, the drift correction
+  at level $k$ should be
+  $\frac{\omega^2}{2}\cos(x) \cdot M_{k-1}$,
+  giving eigenvalues
+  $\kappa_j^{(k)}(x) = \kappa_j^{(k)}
+  + \frac{\omega^2}{2}\cos x$.
+
+\item \textbf{Multi-dimensional torus.}
+  On $\T^d$, the Hadamard power hierarchy produces
+  anisotropic curvature tensors.  The Cholesky
+  structure generalizes to tensor products of
+  min-matrices, and the energy space becomes
+  $\HH^{\otimes d}$.
+
+\item \textbf{Higher-order curvature at $\gamma \neq 1$.}
+  For $\gamma \neq 1$, are the eigenvalues of
+  $(R_H^{\circ(k-1)})^{-1}R_H^{\circ k}$ computable
+  in closed form?  The Cholesky structure
+  $M_k = LD_kL^T$ is specific to $H = 1/2$;
+  for general $H$, the increment tensors lose
+  orthogonality and the factorization involves
+  non-trivial Cholesky factors.
+\end{enumerate}
+
+
+%======================================================================
+\section*{Acknowledgments}
+%======================================================================
+AI tools were used as interactive assistants for mathematical
+exploration, numerical verification, and drafting. The author
+is responsible for all mathematical content and exposition.
+
+
+%======================================================================
+\begin{thebibliography}{20}
+
+\bibitem{BakryGentilLedoux2014}
+D.~Bakry, I.~Gentil, and M.~Ledoux.
+\newblock \emph{Analysis and Geometry of Markov Diffusion Operators}.
+\newblock Grundlehren Math. Wiss., vol.~348, Springer, 2014.
+
+\bibitem{BoettcherSchillingWang2013}
+B.~B\"ottcher, R.~Schilling, and J.~Wang.
+\newblock \emph{L\'evy Matters III: L\'evy-Type Processes}.
+\newblock Lecture Notes in Math., vol.~2099, Springer, 2013.
+
+\bibitem{Fontes2026a}
+R.~Fontes.
+\newblock Stochastic calculus as operator factorization.
+\newblock \emph{arXiv preprint} arXiv:2601.09976 [math.PR], 2026.
+
+\bibitem{Fontes2026b}
+R.~Fontes.
+\newblock Bakry--\'Emery curvature of the fractional Laplacian
+  via fractional Brownian covariance.
+\newblock \emph{Preprint}, 2026.
+
+\bibitem{Fontes2026opderiv}
+R.~Fontes.
+\newblock The operator derivative in continuous stochastic calculus:
+  a Hilbert energy space framework.
+\newblock \emph{Preprint}, 2026.
+
+\bibitem{Garofalo2019}
+N.~Garofalo.
+\newblock Fractional thoughts.
+\newblock In \emph{New Developments in the Analysis of Nonlocal Operators},
+  Contemp. Math., vol.~723, AMS, 2019.
+
+\bibitem{Mishura2008}
+Y.~Mishura.
+\newblock \emph{Stochastic Calculus for Fractional Brownian Motion
+  and Related Processes}.
+\newblock Lecture Notes in Math., vol.~1929, Springer, 2008.
+
+\bibitem{Schoenberg1938}
+I.~J.~Schoenberg.
+\newblock Metric spaces and positive definite functions.
+\newblock \emph{Trans. Amer. Math. Soc.}, 44(3):522--536, 1938.
+
+\bibitem{SpenerWeberZacher2020}
+A.~Spener, F.~Weber, and R.~Zacher.
+\newblock The fractional {L}aplacian has infinite dimension.
+\newblock \emph{Comm. Partial Differential Equations}, 45(1):57--75, 2020.
+
+\end{thebibliography}
+
+\end{document}

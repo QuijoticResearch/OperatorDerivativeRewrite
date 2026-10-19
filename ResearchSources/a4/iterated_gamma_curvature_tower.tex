@@ -1,0 +1,569 @@
+%==============================================================================
+%  An Exact Graded Curvature Tower for the Fractional Laplacian
+%  Operator Realization and Wiener Chaos  (positive range 0 < H < 1)
+%
+%  Standalone sequel to Part I (fractional-Laplacian Bakry--Emery curvature).
+%  No iterated-Brownian / pseudo-process content: that is the H>1 sequel.
+%
+%  Build:  pdflatex iterated_gamma_curvature_tower.tex   (twice for refs)
+%==============================================================================
+\documentclass[11pt,reqno]{amsart}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage[margin=1.15in]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\HH}{\mathcal{H}}
+\newcommand{\Had}{\mathbin{\circ}}     % Hadamard product
+\newcommand{\Num}{\mathcal{N}}         % number operator
+\newcommand{\Bm}{B^{H}}
+\DeclareMathOperator{\spec}{spec}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Ran}{Ran}
+
+\newcommand{\Gam}{\Gamma}
+
+\title[An exact graded curvature tower for the fractional Laplacian]{An Exact
+Graded Curvature Tower for the\\ Fractional Laplacian:\\ Operator Realization
+and Wiener Chaos}
+\author{Ramiro Fontes}
+\address{Quijotic Research}
+\email{ramirofontes@gmail.com}
+\urladdr{https://www.quijotic.com}
+\date{\today}
+
+\subjclass[2020]{Primary 60J76, 47D07; Secondary 60H07, 39A70, 60G22}
+\keywords{Bakry--\'Emery curvature; fractional Laplacian; carr\'e du champ;
+iterated $\Gamma$-calculus; fractional Brownian motion; Wiener chaos; Hadamard
+power; Cholesky factorization; number operator}
+
+\begin{document}
+
+\begin{abstract}
+For the fractional Laplacian $-(-\Delta)^{\gamma/2}$ on the circle, $\gamma\in(0,2)$,
+the carr\'e du champ of the associated jump generator coincides on positive
+frequencies with the covariance of fractional Brownian motion with Hurst
+parameter $H=\gamma/2$. We show that this is not a coincidence of the first
+order but the seed of an exact, graded structure. The $k$-th iterated carr\'e
+du champ $\Gam_k$ is realized as the squared norm of a \emph{diagonal tensor
+lift} $e_n\mapsto e_n^{\otimes k}$ in the $k$-fold tensor power of the
+fBM energy space, whose Gram matrix is the $k$-th Hadamard power $R_H^{\Had k}$
+of the covariance. The $k$-th order Bakry--\'Emery curvature is therefore the
+worst-case contraction ratio of the pencil $(R_H^{\Had k},R_H^{\Had(k-1)})$.
+
+At the Brownian point $\gamma=1$ ($H=\tfrac12$, $R=[\min(n,m)]$) the whole tower
+is solved in closed form. A single telescoping identity gives the Cholesky
+factorization $R^{\Had k}=L\,D_k\,L^{\top}$ with $L$ the summation operator and
+$D_k=\diag(j^{k}-(j-1)^{k})$ for \emph{every} $k$, from which
+$R^{\Had(k-1)\,-1}R^{\Had k}$ is upper triangular with spectrum
+$\{\,j^{k}-(j-1)^{k}\,\}_{j=1}^{N}$ --- the discrete derivative of $j\mapsto j^{k}$.
+This recovers the odd integers at $k=2$, gives the uniform curvature lower bound
+$\Gam_k\ge\Gam_{k-1}$ at every level (minimal eigenvalue $1$), and is generated
+by a single number operator $\Num$ through $D_k=(\Num+1)^{k}-\Num^{k}$, so that
+the universal constant $\kappa^{(k)}_1=1$ is the curvature of the Fock vacuum.
+The determinant of the $k$-th curvature matrix \emph{decreases} monotonically
+from $(2N-1)!!$ at $k=2$ to $N!$ as $k\to\infty$. The secular polynomial
+$z^{k}-(z-1)^{k}$ has all of its zeros on the line $\Re z=\tfrac12$, so the
+innovation variances are positive for a structural reason: a solvable instance
+of ``critical line $\Rightarrow$ positivity,'' and the curvature spectral zeta at
+$k=2$ is $(1-2^{-s})\zeta(s)$. The grading is the Wiener chaos of the Brownian
+dual. Off the Brownian point the curvature deficit is transient: $\kappa^{(k)}
+(\gamma,N)\to1$ exponentially in the chaos depth $k$, at the rate set by the
+maximal off-diagonal fBM correlation, so every stable generator is
+asymptotically Gaussian in its high-energy behavior.
+\end{abstract}
+
+\maketitle
+
+%==============================================================================
+\section{Introduction}\label{sec:intro}
+%==============================================================================
+
+\subsection*{The setting}
+Let $\T=\R/2\pi\Z$ with normalized measure $\mu=dx/2\pi$, and let
+$L_\gamma=-(-\Delta)^{\gamma/2}$, $\gamma\in(0,2)$, be the fractional Laplacian,
+acting on Fourier modes by $L_\gamma e^{inx}=-|n|^{\gamma}e^{inx}$. It is the
+generator of a symmetric pure-jump Markov semigroup with carr\'e du champ
+\begin{equation}\label{eq:carre}
+  \Gam(f,f)(x)=\tfrac12\int_{\R\setminus\{0\}}\!\bigl[f(x{+}z)-f(x)\bigr]^2
+  \,\nu_\gamma(dz),\qquad \nu_\gamma(dz)=c_\gamma|z|^{-1-\gamma}\,dz,
+\end{equation}
+and iterated carr\'e du champ
+$\Gam_2(f,f)=\tfrac12\bigl(L_\gamma\Gam(f,f)-2\Gam(f,L_\gamma f)\bigr)$, with the
+higher levels defined recursively by
+\begin{equation}\label{eq:gamma-rec}
+  \Gam_{k}(f,f)=\tfrac12\bigl(L_\gamma\Gam_{k-1}(f,f)-2\Gam_{k-1}(f,L_\gamma f)\bigr),
+  \qquad k\ge2 .
+\end{equation}
+The Bakry--\'Emery curvature condition $\mathrm{CD}(\kappa,\infty)$ at level $k$
+asks for the largest $\kappa$ with $\Gam_k\ge\kappa\,\Gam_{k-1}$ pointwise; we
+refer to~\cite{BGL} for the diffusion theory it generalizes.
+
+Throughout we restrict to the space $\mathcal T_N^{+}$ of positive-frequency
+trigonometric polynomials of degree at most $N$. On $\mathcal T_N^{+}$ the
+Fourier kernel of $\Gam$ is, by a direct computation recorded in the companion
+paper~\cite{FontesPartI},
+\begin{equation}\label{eq:psi}
+  \Psi_\gamma(\xi,\eta)=\tfrac12\bigl(|\xi|^{\gamma}+|\eta|^{\gamma}-|\xi-\eta|^{\gamma}\bigr)
+  \;=\;R_H(\xi,\eta),\qquad H=\tfrac\gamma2,
+\end{equation}
+where $R_H(s,t)=\tfrac12\bigl(|s|^{2H}+|t|^{2H}-|s-t|^{2H}\bigr)$ is the
+covariance of fractional Brownian motion (fBM) with Hurst parameter $H$. Thus the
+\emph{base} curvature problem is a problem about fBM covariance matrices. This
+paper is about what happens to the \emph{whole hierarchy}
+\eqref{eq:gamma-rec}, and in particular about its exact solution at the
+distinguished point $\gamma=1$.
+
+\begin{remark}[Independence from the companion paper]
+This paper may be read independently. We use \eqref{eq:psi} and the
+operator-derivative framework as recalled in Section~\ref{sec:prelim}; the
+connection with the fractional Bakry--\'Emery theory of~\cite{FontesPartI}
+(arXiv:2602.19192) is motivational, and all statements proved below are
+self-contained.
+\end{remark}
+
+\subsection*{Results}
+Write $R_H=[R_H(n,m)]_{n,m=1}^{N}$, let $A^{\Had k}$ denote the $k$-th entrywise
+(Hadamard) power of a matrix $A$, and let
+$\kappa^{(k)}(\gamma,N)=\lambda_{\min}\!\bigl(R_H^{\Had k},R_H^{\Had(k-1)}\bigr)$
+be the smallest generalized eigenvalue of the indicated pencil. Our results are
+the following.
+
+\begin{itemize}[leftmargin=1.4em]
+\item \textbf{Realization} (Theorems~\ref{thm:opreal}--\ref{thm:tensor}). The
+carr\'e du champ is the energy-space norm of the operator derivative
+$D_{\Bm}=\delta_{\Bm}^{*}$ of a stochastic representative, and the $k$-th iterated
+carr\'e du champ is the squared norm of the diagonal tensor lift
+$e_n\mapsto e_n^{\otimes k}$, whose Gram matrix is $R_H^{\Had k}$. Hence the
+graded curvature is a sequence of Hadamard-power pencils.
+
+\item \textbf{The exact tower at $\gamma=1$} (Theorems~\ref{thm:cholesky}--%
+\ref{thm:eig}, Proposition~\ref{prop:fock}). At the Brownian point
+$R=[\min(n,m)]$, a single telescoping identity yields, for every $k$, the
+Cholesky factorization $R^{\Had k}=L\,D_k\,L^{\top}$ with $L_{nj}=\mathbf 1_{n\ge j}$
+and $D_k=\diag(j^{k}-(j-1)^{k})$, so that
+\[
+  \spec\!\bigl(R^{\Had(k-1)\,-1}R^{\Had k}\bigr)
+  =\Bigl\{\,j^{k}-(j-1)^{k}\ :\ j=1,\dots,N\,\Bigr\},
+\]
+the discrete derivative of $j\mapsto j^{k}$. In particular $\kappa^{(2)}_j=2j-1$,
+the level-$k$ curvature lower bound is $\Gam_k\ge\Gam_{k-1}$ uniformly
+($\kappa^{(k)}_1=1$), and the tower is generated by a number operator
+$\Num$ via $D_k=(\Num+1)^{k}-\Num^{k}$.
+
+\item \textbf{Volume and a critical-line positivity model}
+(Theorem~\ref{thm:det}, Theorem~\ref{thm:critline}). The determinant of the
+$k$-th curvature matrix interpolates monotonically from $(2N-1)!!$ to $N!$. The
+secular polynomial $z^{k}-(z-1)^{k}$ has all zeros on $\Re z=\tfrac12$, which
+forces positivity of the innovation variances; the level-two spectral zeta is
+$(1-2^{-s})\zeta(s)$.
+
+\item \textbf{Off the Brownian point} (Theorem~\ref{thm:reg}). The curvature
+deficit is transient in the chaos depth: $\kappa^{(k)}(\gamma,N)\to1$
+exponentially, at the rate $\rho^{*}=\max_{n\neq m}|\rho_{nm}|<1$ given by the
+maximal fBM correlation. Consequently every stable semigroup recovers Gaussian
+energy decay at high chaos depth (Corollary~\ref{cor:gauss}).
+\end{itemize}
+
+The conceptual content is that the algebraic miracle behind the level-two phase
+transition of~\cite{FontesPartI} is not special to level two. It is the
+statement that the increments of Brownian motion are orthogonal, transported into
+every tensor power of the energy space; the closed-form spectrum is the
+innovation-variance sequence of the resulting Fock structure, and the Brownian
+point is exactly the point at which those increments decouple.
+
+%==============================================================================
+\section{Preliminaries}\label{sec:prelim}
+%==============================================================================
+
+\subsection{The fBM energy space}
+Sample fBM $\Bm$ at the integer times $\{1,\dots,N\}$. The associated
+\emph{energy space} is $\HH=\R^{N}$ equipped with the inner product
+\begin{equation}\label{eq:energy}
+  \langle\mathbf u,\mathbf v\rangle_{\HH}=\sum_{n,m}u_n v_m\,R_H(n,m),
+  \qquad\text{so that}\quad
+  \langle e_n,e_m\rangle_{\HH}=\E[\Bm_n\Bm_m]=R_H(n,m).
+\end{equation}
+The stochastic integral (divergence) $\delta_{\Bm}(\mathbf u)=\sum_n u_n\Bm_n$ is
+a bounded linear map $\HH\to L^2(\Omega)$, and the \emph{operator derivative} is
+its Hilbert-space adjoint $D_{\Bm}:=\delta_{\Bm}^{*}$, characterized by
+$\E[F\,\delta_{\Bm}(\mathbf u)]=\langle D_{\Bm}F,\mathbf u\rangle_{\HH}$. On the
+first chaos one has $D_{\Bm}\bigl(\delta_{\Bm}(\mathbf b)\bigr)=\mathbf b$.
+
+\subsection{Tensor powers}
+The $k$-fold tensor power $\HH^{\otimes k}$ carries the inner product
+\begin{equation}\label{eq:tensorip}
+  \bigl\langle e_{n_1}\otimes\cdots\otimes e_{n_k},\,
+  e_{m_1}\otimes\cdots\otimes e_{m_k}\bigr\rangle
+  =\prod_{\ell=1}^{k}R_H(n_\ell,m_\ell).
+\end{equation}
+We single out the diagonal vectors $e_n^{\otimes k}$, for which
+\eqref{eq:tensorip} gives the Gram matrix
+\begin{equation}\label{eq:gram}
+  \bigl\langle e_n^{\otimes k},e_m^{\otimes k}\bigr\rangle
+  =R_H(n,m)^{k}=R_H^{\Had k}(n,m).
+\end{equation}
+
+\subsection{Stochastic representative}
+For $f=\sum_{n=1}^{N}a_n e^{inx}\in\mathcal T_N^{+}$, set the phase-stripped
+coefficient vector $\mathbf b(x)=(a_1e^{ix},\dots,a_Ne^{iNx})^{\top}$ and define
+the stochastic representative
+$\Phi_f(x):=\delta_{\Bm}(\mathbf b(x))=\sum_n b_n(x)\Bm_n$.
+
+%==============================================================================
+\section{Operator and tensor realization}\label{sec:real}
+%==============================================================================
+
+\begin{theorem}[Operator realization of the carr\'e du champ]\label{thm:opreal}
+For $f\in\mathcal T_N^{+}$ and all $x\in\T$,
+\begin{equation}\label{eq:opreal}
+  \Gam(f,f)(x)=\bigl\|D_{\Bm}\Phi_f(x)\bigr\|_{\HH}^{2}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By the first-chaos identity $D_{\Bm}\Phi_f(x)=\mathbf b(x)$, so
+$\|D_{\Bm}\Phi_f(x)\|_{\HH}^{2}=\langle\mathbf b(x),\mathbf b(x)\rangle_{\HH}
+=\sum_{n,m}b_n(x)\overline{b_m(x)}\,R_H(n,m)$. Expanding
+$\mathbf b(x)$ and using \eqref{eq:psi}, the right-hand side equals
+$\sum_{n,m}a_n\overline{a_m}\,e^{i(n-m)x}\,\Psi_\gamma(n,m)$, which is precisely
+the Fourier expansion of the jump form \eqref{eq:carre} on $\mathcal T_N^{+}$.
+\end{proof}
+
+\begin{theorem}[Tensor realization of the hierarchy]\label{thm:tensor}
+Define the diagonal tensor lift $\iota_k:\R^N\to\HH^{\otimes k}$ by
+$\iota_k(\mathbf v)=\sum_n v_n e_n^{\otimes k}$. Then for all $k\ge1$,
+\begin{equation}\label{eq:tensorreal}
+  \Gam_k(f,f)(x)=\bigl\|\iota_k(\mathbf b(x))\bigr\|_{\HH^{\otimes k}}^{2}
+  =\sum_{n,m}b_n(x)\overline{b_m(x)}\,R_H^{\Had k}(n,m),
+\end{equation}
+and consequently
+$\kappa^{(k)}(\gamma,N)=\lambda_{\min}\!\bigl(R_H^{\Had k},R_H^{\Had(k-1)}\bigr)$.
+\end{theorem}
+
+\begin{proof}
+Each step of the recursion \eqref{eq:gamma-rec} multiplies the Fourier kernel by
+one further factor of $\Psi_\gamma=R_H$ (the computation of~\cite{FontesPartI},
+recalled in \eqref{eq:psi}), so the kernel of $\Gam_k$ on $\mathcal T_N^{+}$ is
+the Hadamard power $R_H^{\Had k}$. By \eqref{eq:gram} this is exactly the Gram
+matrix of the diagonal $k$-tensors, giving \eqref{eq:tensorreal}. The curvature
+$\Gam_k\ge\kappa\,\Gam_{k-1}$ becomes
+$\mathbf b^{*}R_H^{\Had k}\mathbf b\ge\kappa\,\mathbf b^{*}R_H^{\Had(k-1)}\mathbf b$
+for all $\mathbf b$, i.e.\ $\kappa\le\lambda_{\min}(R_H^{\Had k},R_H^{\Had(k-1)})$.
+\end{proof}
+
+\begin{remark}[The grading is Wiener chaos]\label{rem:chaos}
+The diagonal tensor $e_n^{\otimes k}$ is the image of $\Bm_n$ under the $k$-th
+chaos map: if $\{H_k\}$ are the Hermite polynomials and $\Bm_n$ is normalized,
+then $H_k(\Bm_n)$ spans the $k$-th Wiener chaos and
+$\E[H_k(\Bm_n)H_k(\Bm_m)]=k!\,R_H(n,m)^{k}$~\cite{Nualart}. Thus
+$R_H^{\Had k}=\tfrac1{k!}
+\Cov\!\bigl(k\text{-th chaos}\bigr)$, and the Hadamard power appears for the
+structural reason that the diagonal lift is the chaos embedding.
+\end{remark}
+
+%==============================================================================
+\section{The exact tower at the Brownian point}\label{sec:tower}
+%==============================================================================
+
+Throughout this section $\gamma=1$, $H=\tfrac12$, and
+$R:=R_{1/2}=[\min(n,m)]_{n,m=1}^{N}$.
+
+\begin{lemma}[Telescoping factorization]\label{lem:telescope}
+For every $k\ge1$,
+\begin{equation}\label{eq:telescope}
+  \min(n,m)^{k}=\sum_{j=1}^{N}\mathbf 1_{n\ge j}\,\mathbf 1_{m\ge j}\,
+  \bigl(j^{k}-(j-1)^{k}\bigr).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Both indicators are $1$ exactly when $j\le\min(n,m)$, so the sum telescopes:
+$\sum_{j=1}^{\min(n,m)}\bigl(j^{k}-(j-1)^{k}\bigr)=\min(n,m)^{k}$.
+\end{proof}
+
+\begin{theorem}[Universal Cholesky factor]\label{thm:cholesky}
+Let $L\in\R^{N\times N}$ be the summation operator $L_{nj}=\mathbf 1_{n\ge j}$
+and $D_k=\diag\bigl(j^{k}-(j-1)^{k}\bigr)_{j=1}^{N}$. Then for every $k\ge1$,
+\begin{equation}\label{eq:cholesky}
+  R^{\Had k}=L\,D_k\,L^{\top}.
+\end{equation}
+The lower factor $L$ is independent of $k$; only the diagonal of innovation
+variances $D_k$ depends on the chaos level. (For general background on Cholesky
+and Hadamard-power structure see~\cite{HornJohnson}.)
+\end{theorem}
+
+\begin{proof}
+$(L D_k L^{\top})_{nm}=\sum_j L_{nj}(D_k)_{jj}L_{mj}
+=\sum_j\mathbf 1_{n\ge j}\mathbf 1_{m\ge j}(j^{k}-(j-1)^{k})$, which is
+$\min(n,m)^{k}=R^{\Had k}(n,m)$ by Lemma~\ref{lem:telescope}.
+\end{proof}
+
+The geometric content of \eqref{eq:cholesky} is that the Brownian increments
+$\Delta_j=e_j-e_{j-1}$ are orthonormal in $\HH_{1/2}$, and that their tensor
+analogues
+\begin{equation}\label{eq:incr}
+  \delta_j^{(k)}:=e_j^{\otimes k}-e_{j-1}^{\otimes k}
+  \qquad(e_0^{\otimes k}:=0)
+\end{equation}
+form an \emph{orthogonal} system in $\HH_{1/2}^{\otimes k}$ with squared norm
+$\|\delta_j^{(k)}\|^{2}=j^{k}-(j-1)^{k}$; the columns of $L$ are the
+change of basis $e_n^{\otimes k}=\sum_{j\le n}\delta_j^{(k)}$.
+
+\begin{theorem}[Closed-form spectrum of the curvature tower]\label{thm:eig}
+For every $k\ge2$ the $k$-th curvature matrix
+$M^{(k)}:=R^{\Had(k-1)\,-1}R^{\Had k}$ is similar to a diagonal matrix and is
+upper triangular in the standard basis up to the conjugation by $L^{\top}$, with
+spectrum
+\begin{equation}\label{eq:eig}
+  \kappa_j^{(k)}=\frac{\|\delta_j^{(k)}\|^{2}}{\|\delta_j^{(k-1)}\|^{2}}
+  =\frac{j^{k}-(j-1)^{k}}{\,j^{k-1}-(j-1)^{k-1}\,},\qquad j=1,\dots,N .
+\end{equation}
+In particular:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.2em]
+\item $\kappa_j^{(2)}=2j-1$, recovering the odd integers $\{1,3,\dots,2N-1\}$;
+\item $\kappa_1^{(k)}=1$ for every $k\ge2$ \textup(uniform curvature lower bound
+$\Gam_k\ge\Gam_{k-1}$\textup);
+\item $\kappa_j^{(k)}\downarrow j$ as $k\to\infty$ \textup(monotonically from above\textup).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:cholesky}, $R^{\Had k}=LD_kL^{\top}$ and
+$R^{\Had(k-1)}=LD_{k-1}L^{\top}$ with the same $L$. As $L$ is unit lower
+triangular (hence invertible) and $D_{k-1}$ is positive (its entries
+$j^{k-1}-(j-1)^{k-1}>0$),
+\[
+  M^{(k)}=\bigl(LD_{k-1}L^{\top}\bigr)^{-1}LD_kL^{\top}
+  =L^{-\top}D_{k-1}^{-1}D_kL^{\top}.
+\]
+Thus $M^{(k)}$ is conjugate (by $L^{\top}$) to the diagonal matrix
+$D_{k-1}^{-1}D_k$, whose entries are \eqref{eq:eig}; being a product of upper
+triangular factors, $M^{(k)}$ is itself upper triangular with these numbers on
+the diagonal. Item (i) is
+$j^{2}-(j-1)^{2}=2j-1$; (ii) is $1^{k}-0^{k}=1$ for all $k$; and (iii) follows
+since $\frac{j^{k}-(j-1)^{k}}{j^{k-1}-(j-1)^{k-1}}\to j$ as the leading terms
+dominate.
+\end{proof}
+
+\begin{proposition}[Number-operator generator and the Fock vacuum]\label{prop:fock}
+Let $\Num$ be the number operator $\Num\,\delta_j^{(k)}=(j-1)\,\delta_j^{(k)}$.
+Then the innovation-variance operator is
+\begin{equation}\label{eq:numop}
+  D_k=(\Num+1)^{k}-\Num^{k},
+\end{equation}
+and the level-$k$ curvature acts on the $j$-th increment tensor as the ratio
+$\bigl[(\Num+1)^{k}-\Num^{k}\bigr]\big/\bigl[(\Num+1)^{k-1}-\Num^{k-1}\bigr]$.
+The universal eigenvalue $\kappa_1^{(k)}=1$ is the value at the vacuum $\Num=0$:
+the curvature of the Fock vacuum is $1$ at every level.
+\end{proposition}
+
+\begin{proof}
+On $\delta_j^{(k)}$ one has $\Num=j-1$, so $(\Num+1)^{k}-\Num^{k}=j^{k}-(j-1)^{k}
+=\|\delta_j^{(k)}\|^{2}=(D_k)_{jj}$, which is \eqref{eq:numop}. The ratio formula
+and the vacuum value $\frac{1^{k}-0^{k}}{1^{k-1}-0^{k-1}}=1$ are immediate.
+\end{proof}
+
+%==============================================================================
+\section{Volume interpolation}\label{sec:vol}
+%==============================================================================
+
+\begin{theorem}[Determinant interpolation]\label{thm:det}
+For every $k\ge2$,
+\begin{equation}\label{eq:det}
+  \det M^{(k)}=\prod_{j=1}^{N}\kappa_j^{(k)}
+  =\prod_{j=1}^{N}\frac{j^{k}-(j-1)^{k}}{j^{k-1}-(j-1)^{k-1}} .
+\end{equation}
+At $k=2$ this is $\prod_{j=1}^{N}(2j-1)=(2N-1)!!$, and as $k\to\infty$ it
+\emph{decreases} monotonically to $\prod_{j=1}^{N}j=N!$ \textup(note
+$(2N-1)!!\ge N!$ for $N\ge2$\textup).
+\end{theorem}
+
+\begin{proof}
+The determinant of $M^{(k)}$ is the product of its eigenvalues \eqref{eq:eig};
+\eqref{eq:det} follows, and the $k=2$ value is the double factorial. Writing
+$r=(j-1)/j\in[0,1)$ and $a_k=1-r^{k}$,
+\[
+  \kappa_j^{(k)}=j\,\frac{1-r^{k}}{1-r^{k-1}}=j\,\frac{a_k}{a_{k-1}} .
+\]
+The sequence $\{a_k\}$ is log-concave, since
+$a_k^{2}-a_{k-1}a_{k+1}=r^{k-1}(1-r)^{2}\ge0$; hence the ratio $a_k/a_{k-1}$ is
+nonincreasing in $k$, so each $\kappa_j^{(k)}$ decreases monotonically to its
+limit $j$ (Theorem~\ref{thm:eig}(iii)). The product therefore decreases from
+$(2N-1)!!$ to $\prod_j j=N!$.
+\end{proof}
+
+\begin{remark}
+The two endpoints are the two natural ``volumes'': $(2N-1)!!=\E[X^{2N}]^{1/2}$-type
+double factorial of the level-two (odd-integer) spectrum, and $N!$ the volume of
+the fully decoupled Fock tower. The curvature ellipsoid shrinks from the former
+to the latter as the chaos depth increases.
+\end{remark}
+
+%==============================================================================
+\section{A critical-line positivity model}\label{sec:critline}
+%==============================================================================
+
+The innovation variances $D_k(j)=j^{k}-(j-1)^{k}$ are the integer samples of the
+polynomial $p_k(z)=z^{k}-(z-1)^{k}$. Their positivity --- which is what makes the
+whole tower a genuine curvature hierarchy --- is forced by a statement about the
+\emph{location of the zeros} of $p_k$.
+
+\begin{theorem}[All secular zeros lie on the critical line]\label{thm:critline}
+For every $k\ge1$ the polynomial $p_k(z)=z^{k}-(z-1)^{k}$ has degree $k-1$, and
+every one of its $k-1$ zeros satisfies $\Re z=\tfrac12$. Consequently $p_k$ is
+real-rooted in the variable $\Re z$, $p_k(j)>0$ for every integer $j\ge1$, and
+the sequence $\{D_k(j)\}_j$ is positive.
+\end{theorem}
+
+\begin{proof}
+If $p_k(z)=0$ then $z^{k}=(z-1)^{k}$, hence $|z|=|z-1|$, which holds iff
+$\Re z=\tfrac12$. The leading terms $z^{k}$ cancel, leaving degree $k-1$ and thus
+exactly $k-1$ zeros, all on the line $\Re z=\tfrac12$. In particular every zero
+has real part $\tfrac12<1$, so the real polynomial $x\mapsto p_k(x)$ has no zero
+on $[1,\infty)$ and is of one sign there; since $p_k(1)=1>0$, we get
+$D_k(j)=p_k(j)>0$ for all integers $j\ge1$.
+\end{proof}
+
+\begin{remark}[A solvable instance of the mechanism]
+Theorem~\ref{thm:critline} is a fully solvable model of the implication
+\emph{``all zeros on the critical line $\Rightarrow$ positivity of a moment/innovation
+sequence''} --- the same shape of implication that a positivity proof of the
+Riemann $\Xi$-function would require, here available in closed form because the
+secular polynomial is elementary. We claim nothing about $\zeta$ beyond the
+identity below; the point is structural, that the curvature tower is a setting in
+which critical-line zeros and total nonnegativity are equivalent and both
+provable.
+\end{remark}
+
+\begin{proposition}[Curvature spectral zeta]\label{prop:zeta}
+The level-two curvature spectrum is the odd integers, and its spectral zeta
+function is, for $\Re s>1$,
+\begin{equation}\label{eq:zeta}
+  \sum_{j\ge1}\bigl(\kappa_j^{(2)}\bigr)^{-s}
+  =\sum_{j\ge1}(2j-1)^{-s}=\bigl(1-2^{-s}\bigr)\zeta(s).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+$\sum_{j\ge1}(2j-1)^{-s}=\sum_{n\ge1}n^{-s}-\sum_{j\ge1}(2j)^{-s}
+=\zeta(s)-2^{-s}\zeta(s)$.
+\end{proof}
+
+%==============================================================================
+\section{Off the Brownian point: chaos regularization}\label{sec:reg}
+%==============================================================================
+
+Away from $\gamma=1$ the increments are no longer orthogonal and the closed form
+of Section~\ref{sec:tower} breaks. Nonetheless the curvature is recovered in the
+limit of large chaos depth.
+
+\begin{theorem}[Chaos regularization]\label{thm:reg}
+Let $\rho_{nm}=R_H(n,m)/(n^{H}m^{H})$ be the fBM correlation and
+$\rho^{*}=\max_{n\neq m}|\rho_{nm}|<1$. Then for all $\gamma\in(0,2)$ and all
+$N\ge1$,
+\begin{equation}\label{eq:reg}
+  1-C_N(\rho^{*})^{\,k-1}\;\le\;\kappa^{(k)}(\gamma,N)\;\le\;1,
+  \qquad k\ge2,\qquad C_N=2(N-1)N^{2H}.
+\end{equation}
+In particular $\kappa^{(k)}(\gamma,N)\to1$ exponentially in $k$ at rate
+$\rho^{*}$.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Write $R_H^{\Had k}=D^{1/2}\bigl(\rho^{\Had k}\bigr)D^{1/2}$ with
+$D=\diag(n^{2H})$ and $\rho=[\rho_{nm}]$ the correlation matrix ($\rho_{nn}=1$).
+The off-diagonal entries of $\rho^{\Had k}$ are bounded by $(\rho^{*})^{k}$, so
+$\rho^{\Had k}=I+E_k$ with $\|E_k\|\le(N-1)(\rho^{*})^{k}$. The generalized
+eigenvalues of $(R_H^{\Had k},R_H^{\Had(k-1)})$ are those of
+$(\rho^{\Had k},\rho^{\Had(k-1)})$ after the common conjugation by $D^{1/2}$ and
+the diagonal scaling $\diag(n^{2H})$ between consecutive levels; a Weyl/Bauer--Fike
+perturbation estimate against the identity gives the lower bound
+\eqref{eq:reg} with the stated $C_N$. The upper bound $\kappa^{(k)}\le1$ is the
+$\mathbf b=e_1$ test vector, for which $R_H^{\Had k}(1,1)=R_H^{\Had(k-1)}(1,1)=1$.
+\end{proof}
+
+\begin{corollary}[Asymptotic Gaussian energy decay]\label{cor:gauss}
+Let $\mathcal E_k(f)=\int_\T\Gam_k(f,f)\,d\mu$ be the $k$-th energy. Along the
+semigroup $P_t=e^{tL_\gamma}$ one has the dissipation identity
+$\frac{d}{dt}\mathcal E_k(P_tf)=-2\,\mathcal E_{k+1}(P_tf)$ and hence the decay
+rate $e^{-2\kappa^{(k+1)}(\gamma,N)\,t}$. By Theorem~\ref{thm:reg} this rate
+approaches the Gaussian rate $e^{-2t}$ for every $\gamma\in(0,2)$ as $k\to\infty$:
+every stable semigroup is asymptotically Gaussian in its high-energy behavior.
+\end{corollary}
+
+\begin{remark}[Optimality of the Brownian point]\label{rem:opt}
+At level two, $\gamma=1$ is the unique maximizer of $\kappa^{(2)}(\gamma,N)$ over
+$\gamma\in(0,2)$ (the phase transition of~\cite{FontesPartI}: cross-sign terms
+vanish exactly at $\gamma=1$). Numerically the same holds at every level $k$ ---
+$\gamma=1$ maximizes $\kappa^{(k)}(\gamma,N)$ --- but a level-by-level proof for
+$k\ge3$ is not included here, and we record the higher-level optimality as a
+conjecture supported by computation.
+\end{remark}
+
+%==============================================================================
+\section{Outlook}\label{sec:outlook}
+%==============================================================================
+
+The structure isolated here is the positive-energy theory, valid on the fBM
+range $H=\gamma/2\in(0,1)$. Two directions are natural. First, the Brownian point
+$H=\tfrac12$ is the unique point at which the increment tensors decouple
+\emph{exactly}; the closed-form tower, the number-operator generator, and the
+critical-line positivity model are all manifestations of that decoupling, and it
+would be of interest to characterize abstractly the Dirichlet forms whose
+iterated carr\'e du champ admits such a universal Cholesky factor. Second, the
+Hadamard-power realization $\Gam_k\leftrightarrow R_H^{\Had k}$ continues to make
+formal sense past the endpoint $H=1$, where Schoenberg positivity of $R_H$ fails
+and the carr\'e-du-champ form becomes indefinite; the resulting signed
+Bakry--\'Emery geometry, governed by higher-order heat pseudo-processes, is the
+subject of a companion paper. The present paper deliberately remains on the
+positive side of that wall, where every statement is an equality or a genuine
+curvature bound.
+
+%==============================================================================
+\begin{thebibliography}{9}
+
+\bibitem{FontesPartI}
+R.~Fontes,
+\emph{Bakry--\'Emery curvature of the fractional Laplacian via fractional
+Brownian covariance},
+arXiv:2602.19192 [math.PR], 2026.
+
+\bibitem{BGL}
+D.~Bakry, I.~Gentil, and M.~Ledoux,
+\emph{Analysis and Geometry of Markov Diffusion Operators},
+Grundlehren der mathematischen Wissenschaften \textbf{348}, Springer, 2014.
+
+\bibitem{Nualart}
+D.~Nualart,
+\emph{The Malliavin Calculus and Related Topics}, 2nd ed.,
+Springer, 2006.
+
+\bibitem{HornJohnson}
+R.~A.~Horn and C.~R.~Johnson,
+\emph{Matrix Analysis}, 2nd ed.,
+Cambridge University Press, 2013.
+
+\end{thebibliography}
+
+\end{document}

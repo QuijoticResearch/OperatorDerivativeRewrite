@@ -1,0 +1,2043 @@
+\documentclass[11pt,reqno]{amsart}
+
+%==============================================================
+% From Carre-du-Champ Hierarchies to Primitive Divergence
+% --------------------------------------------------------------
+% Constructive companion to:
+%   Fontes, Primitive Divergence and Carre-du-Champ Seeds over
+%           Nonclassical Noises [PrimitiveDivergence]
+% and to the IBM trilogy:
+%   Fontes, Energy-First Stochastic Calculus       [EnergyFirst]
+%   Fontes, First-Chaos Dual Closure of the IBM... [FCDC]
+%   Fontes, A Bidegree Atlas for the IBM ...       [BidegreeAtlas]
+%
+% Scope: a full construction theorem.  Given a compatible positive
+% product-defect / carre-du-champ hierarchy on a test algebra over a
+% noise N, this paper builds the energy module U_Gamma, the closable
+% operator derivative D_N, and the closed primitive divergence
+% delta_N = D_N^*.  No black-noise impossibility theorem is asserted.
+%==============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{mathrsfs}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+\emergencystretch=3em
+
+% --- theorem environments (compatible with PrimitiveDivergence)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{construction}[theorem]{Construction}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{sketch}{Sketch}
+
+% --- macros
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\Dom}{\mathrm{Dom}}
+\newcommand{\Ran}{\mathrm{Ran}}
+\newcommand{\cl}{\mathrm{cl}}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\dN}{D_{\cN}}
+\newcommand{\divN}{\delta_{\cN}}
+\newcommand{\Lleib}{\mathfrak L}
+
+\title{From Carr\'e-du-Champ Hierarchies to Primitive Divergence}
+\author{Ramiro Fontes}
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+The companion paper~\cite{PrimitiveDivergence} formulated the
+operator-derivative problem over a nonclassical noise $\cN$ and
+identified its primitive datum as the tuple
+$(\{\Gamma_{\cN}^{(N)}\}_{N\ge 2},\divN,\dN)$, with the bilinear
+two-point carr\'e-du-champ $\Gamma_{\cN}^{(2)}$ as its first concrete
+layer. That paper left the constructive direction open. The present
+paper carries it out, under explicit axioms.
+
+We work directly in the energy-first regime: the input is not
+a first-chaos increment but a matrix-positive, weighted-matrix-positive,
+form-closable carr\'e-du-champ seed
+$\Gamma:=\Gamma^{(2)}\colon\cA\times\cA\to L^{1}(\Omega)$ on a
+unital algebra $\cA\subset L^{\infty}(\Omega)\cap L^{2}(\Omega)$
+dense in $L^{2}$. (Weighted matrix positivity is the
+multiplier-class refinement
+$\sum_{i,j}\E[Q U_{i}U_{j}\Gamma(F_{i},F_{j})]\ge 0$ for every
+$Q\in\cA_{+}$, used to bound the $L^{\infty}$-bimodule action.)
+From this datum alone we go all the way:
+\[
+  \Gamma^{(2)}_{\cN}
+  \;\longrightarrow\;
+  \cU_{\Gamma}
+  \;\longrightarrow\;
+  \dN
+  \;\longrightarrow\;
+  \divN=\dN^{*}.
+\]
+The construction is the abelian Cipriani--Sauvageot
+Hilbert-bimodule construction, organized into five theorems:
+\textbf{(A)} the Hilbert module of one-forms
+$\cU_{\Gamma}=\overline{\cA\otimes\cA/\mathcal N_{0}}$ as a
+bounded $\cA$-bimodule (with multiplier action by $W\in\cA$;
+extension to a larger $L^{\infty}$-multiplier closure is left
+as a separate hypothesis on $(\cA,L^{\infty}(\Omega))$), with
+seed $D_{0}F:=[F\otimes 1]$ satisfying
+$\langle D_{0}F,D_{0}G\rangle_{\cU_{\Gamma}}=\E[\Gamma(F,G)]$
+and the bimodule consistency identity
+$\langle W\!\cdot\! D_{0}F,D_{0}G\rangle_{\cU_{\Gamma}}=\E[W\Gamma(F,G)]$
+\emph{built in};
+\textbf{(B)} form-closability of $\cE(F,G)=\E[\Gamma(F,G)]$
+implies operator-closability of $D_{0}$, and we set
+$\dN:=\overline{D_{0}}$, $\divN:=\dN^{*}$, both closed
+densely-defined, satisfying
+$\E[F\,\divN(u)]=\langle\dN F,u\rangle_{\cU_{\Gamma}}$;
+\textbf{(C)} the Leibniz defect
+$\Lleib_{D}(F,G)=\dN(FG)-F\!\cdot\!\dN G-G\!\cdot\!\dN F$ is
+well-defined as a $\cU_{\Gamma}$-valued bilinear map, vanishing
+under the differentiation identity and identified by Riesz
+representation under a bounded-functional condition;
+\textbf{(D)} the higher product-defect hierarchy
+$\{\Gamma^{(N)}\}_{N\ge 3}$ is \emph{not} part of the
+construction of $(\dN,\divN)$ but plays the role of
+\emph{compatibility data}: it tests whether $\dN$ matches the
+full $N$-point interaction hierarchy of an underlying flow or
+noise, with a pair-generated truncation criterion;
+\textbf{(E)} classical benchmarks. Wiener noise recovers the
+Malliavin pair with zero Leibniz defect; compensated Poisson
+recovers the difference operator with quadratic defect
+$\Lleib_{D}(F,G)(z)=(D_{z}F)(D_{z}G)$; pair-generated diffusion
+systems satisfy the truncation criterion of~(D); coalescing and
+sticky flows (\cite{LeJanRaimond2004}) fit the construction
+formally, with the exact diagonal-supported energy measure tied to
+the chosen $|S|$-point generator/domain convention.
+
+We do not claim a universal construction over every black noise.
+We claim that for every compatible matrix-positive, weighted-matrix-positive, form-closable
+$\Gamma$-seed on $\cA$, the construction yields $(\dN,\divN)$.
+The open problem for black noise becomes: construct such a
+$\Gamma$-seed from the noise algebra of $\cN$.
+\end{abstract}
+
+\maketitle
+
+%==============================================================
+\section{Introduction}\label{sec:intro}
+%==============================================================
+
+\subsection{From obstruction to construction}\label{sec:intro-from}
+
+The companion paper~\cite{PrimitiveDivergence} formulated the
+operator-derivative problem over a nonclassical noise. Its endpoint
+was the identification of a candidate primitive datum
+\begin{equation}\label{eq:primitive-tuple}
+  \bigl(\{\Gamma_{\cN}^{(N)}\}_{N\ge 2},\;\divN,\;\dN\bigr),
+\end{equation}
+where the hierarchy
+$\{\Gamma_{\cN}^{(N)}\}_{N\ge 2}=\{\Gamma_{\cN,S}\}_{|S|\ge 2}$ is
+the generator-level interaction family of
+\cite[Def.~6.10]{PrimitiveDivergence}, $\divN$ is the closed
+primitive divergence on $L^{2}(\cN)$, and $\dN=\divN^{*}$ is its
+closed adjoint operator derivative. The seed-collapse theorem
+of~\cite[\S 5]{PrimitiveDivergence} ruled out the classical route,
+in which $\divN$ is reached from a centered interval-additive
+deterministic seed: over a black noise that route forces the seed
+to vanish. The positive replacement promoted to primary status
+in~\cite[\S 5.4]{PrimitiveDivergence} was the carr\'e-du-champ /
+product-defect class --- positive bilinear energy data on a test
+algebra, with the higher members
+$\{\Gamma_{\cN}^{(N)}\}_{N\ge 3}$ recording multi-body
+generator-level content above pairwise energy.
+
+The companion paper did not construct $\divN$ from this datum;
+it formulated that construction as the central open problem.
+The present paper carries out the constructive direction
+end-to-end:
+\begin{equation}\label{eq:constructive-arrow}
+  \Gamma^{(2)}_{\cN}
+  \;\longrightarrow\;
+  \cU_{\Gamma}
+  \;\longrightarrow\;
+  \dN
+  \;\longrightarrow\;
+  \divN=\dN^{*},
+\end{equation}
+where $\cU_{\Gamma}$ is built as the
+Hilbert module of one-forms (an abelian Cipriani--Sauvageot
+$L^{\infty}$-bimodule), $\dN$ is the closure of the seed
+$D_{0}F:=[F\otimes 1]$, and $\divN=\dN^{*}$ is its
+closed Hilbert-space adjoint. The thesis is that the primitive
+datum is not a first-chaos increment but a matrix-positive,
+form-closable carr\'e-du-champ seed; from it, $(\dN,\divN)$ are
+constructed as actual closed densely-defined operators, with no
+recourse to a first-chaos generator. The higher members
+$\{\Gamma^{(N)}\}_{N\ge 3}$ play no role in this construction;
+they appear in \cref{sec:hierarchyD} only as compatibility data
+(see~\cref{thm:D}).
+
+\subsection{What this paper is, and is not}\label{sec:intro-claims}
+
+This is not a black-noise obstruction paper. The proposition
+that black noises forbid classical innovation reduction was
+already proved in~\cite{PrimitiveDivergence} as a restatement
+of Tsirelson~\cite{Tsirelson2004}. This is also not a Malliavin
+failure paper: in the energy-first stance, the absence of a
+classical first-chaos seed eliminates one realization of $\divN$
+but not the operator. The framing here is different. Given a
+matrix-positive, weighted-matrix-positive, form-closable $\Gamma^{(2)}$-seed --- whatever
+its origin, classical or not --- we construct $(\dN,\divN)$ as
+closed densely-defined operators with the integration-by-parts
+identity. The construction is universal in this seed. Whether
+such a seed exists on the noise algebra of a particular
+nonclassical $\cN$ becomes the open structural problem; for
+black $\cN$ it is the precise content of what
+\cite[Prog.~7.1]{PrimitiveDivergence} asked for, in the
+sharpened form: \emph{construct a matrix-positive, weighted-matrix-positive, form-closable
+$\Gamma^{(2)}_{\cN}$ on a sufficiently rich test algebra over
+$\cN$.}
+
+The construction exhibits the following separation of concerns.
+The operator-derivative principle decouples calculus
+($\dN,\divN$, integration by parts, Leibniz defect) from
+representation (Brownian innovations, chaos expansions, classical
+generators). The energy/product-defect axioms below isolate the
+calculus. The representation question becomes whether $\cN$
+supplies the inputs.
+
+\subsection{The five theorems}\label{sec:intro-theorems}
+
+The body of the paper is organized as a ladder of five theorems.
+
+\textbf{Theorem A.} (\cref{thm:A}) From a symmetric bilinear
+product-defect form $\Gamma:=\Gamma^{(2)}\colon\cA\times\cA\to
+L^{1}(\Omega)$ on a test algebra $\cA$, satisfying matrix
+positivity
+$\sum_{i,j}\E[U_{i}U_{j}\Gamma(F_{i},F_{j})]\ge 0$, we
+construct the Hilbert module of one-forms
+$\cU_{\Gamma}=\overline{\cA\otimes\cA/\mathcal N_{0}}$ as a
+bounded $L^{\infty}(\Omega)$-bimodule, with seed
+$D_{0}F:=[F\otimes 1]$ and isometry
+$\langle D_{0}F,D_{0}G\rangle_{\cU_{\Gamma}}=\E[\Gamma(F,G)]$.
+The bimodule action satisfies the consistency identity
+$\langle W\cdot D_{0}F,D_{0}G\rangle_{\cU_{\Gamma}}=\E[W\Gamma(F,G)]$
+intrinsically. This is the abelian Cipriani--Sauvageot
+construction~\cite{CiprianiSauvageot}.
+
+\textbf{Theorem B.} (\cref{thm:B}) Form-closability of
+$\cE(F,G):=\E[\Gamma(F,G)]$ implies operator-closability of
+$D_{0}$. Setting $\dN:=\overline{D_{0}}$ and
+$\divN:=\dN^{*}$ then yields a closed densely-defined divergence
+$\divN\colon\cU_{\Gamma}\to L^{2}(\Omega)$ satisfying the
+integration-by-parts identity
+\[
+  \E[F\,\divN(u)]\;=\;\langle\dN F,u\rangle_{\cU_{\Gamma}},
+  \qquad F\in\Dom(\dN),\ u\in\Dom(\divN).
+\]
+This is the actual construction of the pair $(\dN,\divN)$ from
+the $\Gamma^{(2)}$-seed alone --- no first-chaos generator, no
+freestanding closability axiom, no separate bimodule axiom.
+
+\textbf{Theorem C.} (\cref{thm:C}) The Leibniz defect
+$\Lleib_{D}(F,G):=\dN(FG)-F\cdot\dN G-G\cdot\dN F$ is
+well-defined as a $\cU_{\Gamma}$-valued bilinear map under
+\cref{ass:gamma2} alone, using the built-in $L^{\infty}$-action.
+Two regime-identification statements: under the
+\emph{differentiation identity}
+$\Gamma(F^{2},G)=2F\,\Gamma(F,G)$, the defect vanishes
+($\Lleib_{D}\equiv 0$); under a bounded-functional condition on
+$\Lambda_{F,G}(H):=\E[\Gamma(FG,H)-F\Gamma(G,H)-G\Gamma(F,H)]$,
+the defect is the Riesz representative of $\Lambda_{F,G}$ inside
+$\cU_{\Gamma}$.
+
+\textbf{Theorem D.} (\cref{thm:D}) The higher members
+$\{\Gamma^{(N)}\}_{N\ge 3}$ are \emph{not} part of the
+construction of $(\dN,\divN)$; they play the role of
+\emph{compatibility data}. They are required to satisfy
+permutation symmetry, constancy vanishing, matrix positivity at
+$N=2$, subset compatibility, and (when $\cA$ comes from a noise)
+interval/tensor compatibility. The \emph{pair-generated
+truncation criterion} says: if all higher members vanish, the
+hierarchy is determined by $\Gamma^{(2)}$ and Theorem~D
+matches Theorems~A--B with no additional content.
+
+\textbf{Theorem E.} (\cref{thm:E}) Classical benchmarks.
+\begin{enumerate}
+\item[$(\mathrm i)$] Wiener noise on $L^{2}(\R_{+})$ generates the
+ordinary Malliavin pair $(D^{W},\delta^{W})$, with
+$\Lleib_{D^{W}}\equiv 0$.
+\item[$(\mathrm{ii})$] Compensated Poisson on $(Z,\mu)$ generates
+the difference calculus $(D^{P},\delta^{P})$, with the explicit
+nonzero Leibniz defect $\Lleib_{D^{P}}(F,G)(z)=(D^{P}_{z}F)(D^{P}_{z}G)$.
+\item[$(\mathrm{iii})$] Pair-generated diffusion systems satisfy
+\textsc{(PairGen)} and the construction reduces to the
+$\Gamma^{(2)}$-module.
+\item[$(\mathrm{iv})$] In the coalescing and sticky flows of Le
+Jan--Raimond~\cite{LeJanRaimond2004} the construction is formal
+and uses diagonal-supported energy measures; the exact
+coefficients remain tied to the chosen $|S|$-point
+generator/domain convention.
+\end{enumerate}
+
+\subsection{Tone}\label{sec:intro-tone}
+
+The construction is universal in its inputs but conditional on
+their existence. The conditional statement is precise:
+\emph{given} a matrix-positive, weighted-matrix-positive, form-closable $\Gamma^{(2)}$-seed
+on a unital test algebra $\cA$ dense in $L^{2}(\Omega)$,
+$(\dN,\divN)$ is constructed. We do not assert universal
+existence of such a seed over every black noise. We do assert
+that when the seed exists, the calculus follows; the open
+problem for nonclassical $\cN$ is then to construct the seed
+from the noise algebra. The load-bearing assumptions are
+isolated in \cref{sec:disc-conditional}.
+
+\subsection{Roadmap}\label{sec:intro-roadmap}
+
+\Cref{sec:setup} fixes the algebraic and probabilistic setup:
+test algebra $\cA$, noise $\cN$ (when available), and the
+product-defect hierarchy $\{\Gamma^{(N)}\}_{N\ge 2}$ with the
+matrix-positivity and form-closability axioms.
+\Cref{sec:moduleA} constructs the Hilbert module of one-forms
+$\cU_{\Gamma}$ as a Cipriani--Sauvageot $L^{\infty}$-bimodule
+from $\Gamma^{(2)}$ (Theorem~A). \Cref{sec:divergenceB} closes
+$D_{0}$ to $\dN$ and defines $\divN=\dN^{*}$ (Theorem~B). The
+two together carry out the construction
+$\Gamma^{(2)}\to\cU_{\Gamma}\to\dN\to\divN$ end-to-end.
+\Cref{sec:leibnizC} identifies the Leibniz defect using the
+built-in bimodule action (Theorem~C). \Cref{sec:hierarchyD}
+axiomatizes the higher hierarchy as compatibility data and
+proves the pair-generated truncation (Theorem~D).
+\Cref{sec:benchmarksE} works the classical benchmarks
+(Theorem~E). \Cref{sec:nonclassical} returns to
+nonclassical-noise implications, with the open problem reframed
+as the existence of a $\Gamma$-seed. \Cref{sec:discussion}
+closes with what is constructed, what is conditional, and what
+remains.
+
+%==============================================================
+\section{Algebraic and probabilistic setup}\label{sec:setup}
+%==============================================================
+
+Throughout, $(\Omega,\cF,\Prob)$ is a fixed probability space
+satisfying the usual completeness conditions; $\E$ denotes
+expectation, and $L^{p}(\Omega):=L^{p}(\Omega,\cF,\Prob)$ for
+$p\in[1,\infty]$. Inner products on real $L^{2}$ spaces are
+written $\langle\cdot,\cdot\rangle$ without further decoration when
+the space is unambiguous.
+
+\subsection{Test algebra}\label{sec:setup-algebra}
+
+\begin{definition}[Test algebra]\label{def:test-algebra}
+A \emph{test algebra} on $(\Omega,\cF,\Prob)$ is a unital subalgebra
+\[
+  \cA\subset L^{\infty}(\Omega)\cap L^{2}(\Omega)
+\]
+that is dense in $L^{2}(\Omega)$, contains the constants, and is
+closed under pointwise products: $FG\in\cA$ for every
+$F,G\in\cA$.
+\end{definition}
+
+In all examples below $\cA$ will be a smooth-cylindrical algebra,
+either of Wiener or of Poisson cylindrical functionals (see
+\cref{sec:benchmarksE}), or a polynomial algebra in finitely many
+generators of a noise $\cN$. The constructive theorems require
+only the structure of \cref{def:test-algebra}.
+
+\subsection{Noise (when available)}\label{sec:setup-noise}
+
+For most of the construction --- Theorems~A, B, C --- a noise is
+not needed. The bilinear product-defect form $\Gamma^{(2)}$ on
+$\cA$, together with the energy and closability axioms below, is
+sufficient. The noise structure enters only at Theorem~D, in the
+\textsc{(Tens)} compatibility axiom, and at the discussion of
+nonclassical implications in \cref{sec:nonclassical}.
+
+We adopt the same Tsirelson--Vershik noise definition as
+\cite[Def.~2.4]{PrimitiveDivergence}: a system
+$\cN=((\cF_{s,t})_{s\le t},(T_{h})_{h\in\R})$ of sub-$\sigma$-fields
+satisfying independent factorization
+$\cF_{r,t}=\cF_{r,s}\vee\cF_{s,t}$ with
+$\cF_{r,s}\perp\!\!\!\perp\cF_{s,t}$, stationarity, and the standard
+continuity conditions. When a noise is present, $\cA$ is assumed
+\emph{noise-compatible} in the sense that the algebra generated by
+$\cA$ within each interval factor lies inside the appropriate
+restriction:
+\[
+  \cA_{s,t}\;:=\;\cA\cap L^{\infty}(\cF_{s,t}),
+  \qquad
+  \cA_{r,t}\;\supseteq\;\cA_{r,s}\cdot\cA_{s,t}.
+\]
+
+\subsection{Product-defect hierarchy: data}\label{sec:setup-hierarchy}
+
+The primitive datum on $\cA$ is a sequence of multilinear forms
+indexed by finite ordered tuples or, equivalently, by finite
+subsets:
+\begin{equation}\label{eq:hierarchy}
+  \Gamma^{(N)}\colon\cA^{N}\to L^{1}(\Omega),\qquad N\ge 2.
+\end{equation}
+We use the index $N\ge 2$ throughout the body and pass to
+the subset-indexed form $\Gamma_{S}$, $|S|=N$, when the symmetry
+conventions of \cite[Def.~6.10]{PrimitiveDivergence} are needed.
+The bilinear member is the proper carr\'e-du-champ:
+\[
+  \Gamma^{(2)}(F,G)\;\in\; L^{1}(\Omega),\qquad F,G\in\cA.
+\]
+
+The full set of axioms governing $\{\Gamma^{(N)}\}$ is listed in
+\cref{sec:hierarchyD}; for the construction of $(\dN,\divN)$
+in Theorems~A, B, C only the axioms on the bilinear member
+$\Gamma^{(2)}$ below are needed. Throughout, when there is no
+risk of confusion we write $\Gamma$ for $\Gamma^{(2)}$.
+
+\begin{assumption}[$\Gamma^{(2)}$-axioms; needed for Theorems A, B, C]\label{ass:gamma2}
+The bilinear form $\Gamma:=\Gamma^{(2)}\colon\cA\times\cA\to L^{1}(\Omega)$
+satisfies:
+\begin{itemize}
+\item[\textsc{(Sym)}] symmetry: $\Gamma(F,G)=\Gamma(G,F)$
+in $L^{1}(\Omega)$ for $F,G\in\cA$;
+\item[\textsc{(Vanish)}] constancy vanishing:
+$\Gamma(c,G)=0$ in $L^{1}(\Omega)$ for $c\in\R$, $G\in\cA$;
+\item[\textsc{(MatPos)}] \emph{matrix positivity}: for every finite
+collection $F_{1},\ldots,F_{n}\in\cA$ and $U_{1},\ldots,U_{n}\in\cA$,
+\begin{equation}\label{eq:matpos}
+  \sum_{i,j=1}^{n}\E\!\left[U_{i}U_{j}\,\Gamma(F_{i},F_{j})\right]\;\ge\;0;
+\end{equation}
+\item[\textsc{(WMatPos)}] \emph{weighted matrix positivity}: for
+every finite collection $F_{1},\ldots,F_{n}\in\cA$ and
+$U_{1},\ldots,U_{n}\in\cA$, and every nonnegative bounded
+multiplier $Q\in\cA_{+}$ (the cone of nonnegative elements of
+$\cA$),
+\begin{equation}\label{eq:wmatpos}
+  \sum_{i,j=1}^{n}\E\!\left[Q\,U_{i}U_{j}\,\Gamma(F_{i},F_{j})\right]\;\ge\;0;
+\end{equation}
+\item[\textsc{(FormClos)}] \emph{form closability}: if
+$(F_{n})\subset\cA$ satisfies $F_{n}\to 0$ in $L^{2}(\Omega)$ and
+$\E[\Gamma(F_{n}-F_{m},F_{n}-F_{m})]\to 0$ as $n,m\to\infty$,
+then $\E[\Gamma(F_{n},F_{n})]\to 0$.
+\end{itemize}
+\end{assumption}
+
+\begin{remark}[\textsc{(WMatPos)} vs.\ \textsc{(MatPos)}]\label{rem:wmatpos}
+\textsc{(WMatPos)} is strictly stronger than \textsc{(MatPos)},
+which corresponds to $Q=1$. It says that the $\cA$-valued
+bilinear form $(F,G)\mapsto\Gamma(F,G)$ is positive semidefinite
+not only in scalar expectation but also against any nonnegative
+multiplier from $\cA$: testing the $n\times n$ matrix
+$\bigl(\E[Q U_{i}U_{j}\Gamma(F_{i},F_{j})]\bigr)_{i,j}$ against
+the all-ones vector still gives a nonnegative scalar. This is
+the natural multiplier-class hypothesis for the bounded
+$L^{\infty}$-bimodule action of \cref{sec:moduleA-bimodule}: it
+provides exactly the inequality
+$\E[Q\sum_{i,j}U_{i}U_{j}\Gamma(F_{i},F_{j})]\ge 0$ used to bound
+$\|W\cdot\omega\|_{\cU_{\Gamma}}^{2}$ by
+$\|W\|_{\infty}^{2}\|\omega\|_{\cU_{\Gamma}}^{2}$ via the choice
+$Q=\|W\|_{\infty}^{2}-W^{2}\ge 0$. \textsc{(WMatPos)} is
+automatic when $\Gamma$ is realized by a pointwise
+positive-semidefinite kernel on $\Omega$ (Wiener and Poisson
+benchmarks); for an abstract $\Gamma$-datum it is the
+multiplier-class refinement of \textsc{(MatPos)} that we mark
+explicitly.
+\end{remark}
+
+\begin{remark}[Multiplier class used in this paper]\label{rem:wmatpos-multiplier-class}
+The bounded multiplier action below is constructed for
+$W\in\cA\cap L^{\infty}(\Omega)=\cA$ (which is in $L^{\infty}$
+by the standing hypothesis on $\cA$). Whether and how this
+action extends to a larger $L^{\infty}$-multiplier closure of
+$\cA$ depends on additional approximation properties of the
+pair $(\cA,L^{\infty}(\Omega))$ that we do not assume here; in
+particular, no claim of strong-operator density of $\cA$ in
+$L^{\infty}(\Omega)$ is made. For the rest of the paper we
+assume \textsc{(WMatPos)} without further comment, and use only
+the $\cA$-multiplier action; in the Wiener and Poisson
+benchmarks of \cref{sec:benchmarksE} the natural extension to
+$L^{\infty}(\Omega)$ is automatic by Fubini against the
+pointwise integral kernel.
+\end{remark}
+
+\begin{remark}[Why \textsc{(MatPos)} and not just scalar positivity]\label{rem:matpos-vs-pos2}
+The matrix-positivity axiom~\eqref{eq:matpos} is the bilinear
+positivity needed for the Hilbert-module-of-one-forms
+construction of \cref{sec:moduleA}: it says exactly that the
+$\cA$-valued bilinear form $(F,G)\mapsto\Gamma(F,G)$ is positive
+semidefinite as an $\cA$-valued kernel, not just as a scalar
+form. Taking $U_{i}=1$ in~\eqref{eq:matpos} recovers the scalar
+positivity $\E[\Gamma(F,F)]\ge 0$, and the $n=1$ case recovers
+$\E[U^{2}\Gamma(F,F)]\ge 0$ for every $U\in\cA$.
+\textsc{(MatPos)} is automatic when $\Gamma$ is realized as a
+pointwise positive-semidefinite kernel on $\Omega$ --- e.g.\ as
+the integral $\int(D_{r}^{W}F)(D_{r}^{W}G)\,dr$ of
+\cref{sec:bench-wiener}, or the integral of jumps in
+\cref{sec:bench-poisson} --- but no such pointwise realization
+is assumed in general.
+\end{remark}
+
+\begin{remark}[Form vs.\ operator closability]\label{rem:formclos}
+The closability axiom \textsc{(FormClos)} is the standard
+form-closability of the Dirichlet form $\cE(F,G):=\E[\Gamma(F,G)]$
+in the sense of~\cite[Ch.~1]{FukushimaOshimaTakeda}: it ensures
+that $\cE$ admits a closure
+$(\overline{\cE},\Dom(\overline{\cE}))$ on $L^{2}(\Omega)$. In
+\cref{sec:divergenceB} we deduce from \textsc{(MatPos)} and
+\textsc{(FormClos)} the operator-closability of the
+one-form seed $D_{0}$ and the existence of $\dN=\overline{D_{0}}$.
+For Wiener and Poisson on the natural test algebras,
+\textsc{(FormClos)} is the standard Malliavin / difference-calculus
+closability (\cref{sec:benchmarksE}); for nonclassical $\cN$ it
+is a load-bearing assumption (\cref{sec:discussion}).
+\end{remark}
+
+\begin{remark}[Cauchy--Schwarz at the energy level]\label{rem:CS-energy}
+$\Gamma$ takes values in $L^{1}$, not in $L^{2}$; this is
+consistent with \cite[\S 6]{PrimitiveDivergence} and with the
+carr\'e-du-champ of a Dirichlet form. We do not assume that
+$\Gamma(F,G)$ is realized by a pointwise positive-semidefinite
+kernel on $\Omega$. What we do use is the \emph{energy-level}
+Cauchy--Schwarz inequality
+\begin{equation}\label{eq:CS-energy}
+  |\cE(F,G)|^{2}\;\le\;\cE(F,F)\,\cE(G,G),\qquad F,G\in\cA,
+\end{equation}
+which is the $n=2$, $U_{1}=U_{2}=1$ case of \textsc{(MatPos)}.
+\end{remark}
+
+\begin{remark}[On strict positivity]\label{rem:strict-positivity}
+We do \emph{not} assume that $\E[\Gamma(F,F)]=0$ implies $F$
+constant. The Hilbert-module-of-one-forms construction of
+\cref{sec:moduleA} quotients by the appropriate energy-null
+subspace and is indifferent to its precise size. In every
+benchmark of \cref{sec:benchmarksE} (Wiener, Poisson, regular
+diffusion) the null subspace turns out to be $\R\cdot 1$, but
+this is a property of the example, not an axiom of the
+construction.
+\end{remark}
+
+%==============================================================
+\section{Hilbert module of one-forms (Theorem A)}\label{sec:moduleA}
+%==============================================================
+
+This section constructs $\cU_{\Gamma}$ as a Hilbert
+$\cA$-bimodule of one-forms, in the Cipriani--Sauvageot manner
+adapted to the matrix-positive scalar carr\'e-du-champ
+data~\cite{CiprianiSauvageot}. The construction is universal in
+$(\cA,\Gamma)$ and produces, in one step, both the inner-product
+identity and the bounded $L^{\infty}$-bimodule action used in
+\cref{sec:leibnizC}; no separate bimodule axiom is needed.
+
+\subsection{Algebraic one-forms}\label{sec:moduleA-alg}
+
+\begin{definition}[Algebraic one-forms]\label{def:alg-forms}
+The space of \emph{algebraic one-forms} over $\cA$ is the
+algebraic tensor product
+\[
+  \Omega^{1}_{\mathrm{alg}}\;:=\;\cA\otimes_{\R}\cA,
+\]
+with elements written as finite sums $\sum_{i}F_{i}\otimes U_{i}$
+($F_{i},U_{i}\in\cA$). The interpretation, justified by the
+inner product below, is that $F\otimes U$ stands for the formal
+one-form $U\,dF$.
+\end{definition}
+
+\begin{definition}[Semi-inner product on $\Omega^{1}_{\mathrm{alg}}$]\label{def:semi-IP}
+For $\omega=\sum_{i}F_{i}\otimes U_{i}$ and
+$\omega'=\sum_{j}G_{j}\otimes V_{j}$ in $\Omega^{1}_{\mathrm{alg}}$,
+set
+\begin{equation}\label{eq:semi-IP}
+  \langle\omega,\omega'\rangle_{\cU_{\Gamma}}
+  \;:=\;\sum_{i,j}\E\!\bigl[U_{i}V_{j}\,\Gamma(F_{i},G_{j})\bigr].
+\end{equation}
+\end{definition}
+
+\begin{lemma}[Well-definedness and positivity]\label{lem:semi-IP-PSD}
+Under \cref{ass:gamma2}, the form
+$\langle\cdot,\cdot\rangle_{\cU_{\Gamma}}$ of
+\cref{def:semi-IP} is symmetric, $\R$-bilinear, and positive
+semidefinite on $\Omega^{1}_{\mathrm{alg}}$.
+\end{lemma}
+
+\begin{proof}
+Symmetry uses \textsc{(Sym)}; bilinearity is by construction.
+Positivity is exactly \textsc{(MatPos)} of \cref{ass:gamma2}
+applied to the collection $(F_{i},U_{i})_{i}$ representing
+$\omega$:
+$\langle\omega,\omega\rangle_{\cU_{\Gamma}}
+=\sum_{i,j}\E[U_{i}U_{j}\Gamma(F_{i},F_{j})]\ge 0$.
+\end{proof}
+
+\subsection{Quotient by null forms and completion}\label{sec:moduleA-quot}
+
+\begin{definition}[Null forms]\label{def:null-forms}
+The \emph{null space} of the semi-inner product is
+\[
+  \mathcal N_{0}\;:=\;\{\omega\in\Omega^{1}_{\mathrm{alg}}\,:\,
+    \langle\omega,\omega\rangle_{\cU_{\Gamma}}=0\}.
+\]
+By the Cauchy--Schwarz inequality for any positive semidefinite
+form, $\mathcal N_{0}$ is a linear subspace and coincides with
+$\{\omega\,:\,\langle\omega,\omega'\rangle_{\cU_{\Gamma}}=0
+\;\forall\,\omega'\in\Omega^{1}_{\mathrm{alg}}\}$.
+\end{definition}
+
+\begin{definition}[Hilbert module of one-forms]\label{def:energy-module}
+The \emph{Hilbert module of one-forms} $\cU_{\Gamma}$ is the
+metric completion of the inner-product space
+$\bigl(\Omega^{1}_{\mathrm{alg}}/\mathcal N_{0},
+\langle\cdot,\cdot\rangle_{\cU_{\Gamma}}\bigr)$.
+\end{definition}
+
+The class of $F\otimes U$ in $\Omega^{1}_{\mathrm{alg}}/\mathcal N_{0}$,
+read inside $\cU_{\Gamma}$, is denoted $[F\otimes U]$. When
+$\cA$ is separable in $L^{2}(\Omega)$, $\cU_{\Gamma}$ is a
+separable real Hilbert space; the inclusion
+$\Omega^{1}_{\mathrm{alg}}/\mathcal N_{0}\hookrightarrow\cU_{\Gamma}$
+is dense.
+
+\subsection{Built-in \texorpdfstring{$L^{\infty}$}{L-infinity}-bimodule structure}\label{sec:moduleA-bimodule}
+
+The tensor structure of $\Omega^{1}_{\mathrm{alg}}=\cA\otimes\cA$
+gives $\cU_{\Gamma}$ a natural left $L^{\infty}(\Omega)$-action,
+inherited from multiplication in the second tensor factor:
+\begin{equation}\label{eq:bimodule-action-def}
+  W\cdot[F\otimes U]\;:=\;[F\otimes(WU)],
+  \qquad W\in\cA,\;[F\otimes U]\in\cU_{\Gamma}.
+\end{equation}
+\Cref{lem:bimodule-bounded} below establishes the boundedness
+inequality $\|W\cdot\omega\|_{\cU_{\Gamma}}\le\|W\|_{\infty}\|\omega\|_{\cU_{\Gamma}}$
+on $W\in\cA$, giving the construction a bounded multiplier
+action by elements of $\cA$. We do \emph{not} assume that
+$\cA$ is strongly dense in $L^{\infty}(\Omega)$: the bound
+extends the action only to whatever $L^{\infty}$-multiplier
+closure of $\cA$ comes equipped with the relevant approximation
+property (e.g.\ a strong-operator-topology approximation by
+elements of $\cA$ on $\cU_{\Gamma}$), which is an additional
+hypothesis on the pair $(\cA,L^{\infty}(\Omega))$ rather than
+something supplied by \cref{ass:gamma2}. In this paper, only the
+$\cA$-multiplier action is used (see \cref{thm:A,thm:C} and
+their proofs), and the statements below are formulated with
+$W\in\cA$.
+
+\begin{lemma}[Boundedness of the action]\label{lem:bimodule-bounded}
+Under \cref{ass:gamma2}, for $W\in\cA$ and
+$\omega\in\Omega^{1}_{\mathrm{alg}}$,
+\begin{equation}\label{eq:bimodule-bound}
+  \|W\cdot\omega\|_{\cU_{\Gamma}}\;\le\;\|W\|_{\infty}\,\|\omega\|_{\cU_{\Gamma}}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For $\omega=\sum_{i}F_{i}\otimes U_{i}\in\Omega^{1}_{\mathrm{alg}}$
+and $W\in\cA$,
+\[
+  \|W\cdot\omega\|_{\cU_{\Gamma}}^{2}
+  \;=\;\sum_{i,j}\E\!\bigl[(WU_{i})(WU_{j})\,\Gamma(F_{i},F_{j})\bigr]
+  \;=\;\sum_{i,j}\E\!\bigl[W^{2}\,U_{i}U_{j}\,\Gamma(F_{i},F_{j})\bigr].
+\]
+Set $Q:=\|W\|_{\infty}^{2}-W^{2}$, so $Q\in\cA_{+}$ (the
+nonnegative cone of $\cA$) since $\|W\|_{\infty}^{2}\in\R\subset\cA$
+and $W^{2}\le\|W\|_{\infty}^{2}$ a.s. By \textsc{(WMatPos)} of
+\cref{ass:gamma2} applied to the family $(F_{i},U_{i})$ with
+multiplier $Q$,
+\[
+  \sum_{i,j}\E\!\bigl[Q\,U_{i}U_{j}\,\Gamma(F_{i},F_{j})\bigr]\;\ge\;0.
+\]
+Substituting $W^{2}=\|W\|_{\infty}^{2}-Q$ gives
+\[
+  \|W\cdot\omega\|_{\cU_{\Gamma}}^{2}
+  \;=\;\|W\|_{\infty}^{2}\sum_{i,j}\E\!\bigl[U_{i}U_{j}\,\Gamma(F_{i},F_{j})\bigr]
+       -\sum_{i,j}\E\!\bigl[Q\,U_{i}U_{j}\,\Gamma(F_{i},F_{j})\bigr]
+  \;\le\;\|W\|_{\infty}^{2}\,\|\omega\|_{\cU_{\Gamma}}^{2},
+\]
+which is~\eqref{eq:bimodule-bound}.
+
+Well-definedness on the quotient
+$\Omega^{1}_{\mathrm{alg}}/\mathcal N_{0}$: if
+$\omega\in\mathcal N_{0}$ then $\|W\cdot\omega\|_{\cU_{\Gamma}}=0$
+by~\eqref{eq:bimodule-bound}, so $W\cdot\omega\in\mathcal N_{0}$
+and the action descends.
+\end{proof}
+
+\subsection{The operator derivative seed}\label{sec:moduleA-D0}
+
+\begin{definition}[Operator derivative seed]\label{def:D0}
+The \emph{operator derivative seed} is the linear map
+\[
+  D_{0}\colon\cA\;\to\;\cU_{\Gamma},
+  \qquad
+  D_{0}F\;:=\;[F\otimes 1]\in\cU_{\Gamma}.
+\]
+\end{definition}
+
+By the inner-product identity~\eqref{eq:semi-IP} with $U=V=1$,
+\begin{equation}\label{eq:D0-isometry}
+  \langle D_{0}F,D_{0}G\rangle_{\cU_{\Gamma}}
+  \;=\;\E\!\bigl[\Gamma(F,G)\bigr],
+  \qquad F,G\in\cA.
+\end{equation}
+By \textsc{(Vanish)}, $D_{0}c=[c\otimes 1]$ has zero norm
+($\Gamma(c,c)=0$), hence $D_{0}c=0$ in $\cU_{\Gamma}$ for every
+$c\in\R$. The bimodule action interacts with $D_{0}$ on the
+seed: from~\eqref{eq:bimodule-action-def} with $W=U$ and
+$F\otimes 1$,
+\begin{equation}\label{eq:UdF}
+  U\cdot D_{0}F\;=\;[F\otimes U]\quad\text{in }\cU_{\Gamma},
+  \qquad U\in L^{\infty}(\Omega),\;F\in\cA.
+\end{equation}
+
+\subsection{Theorem A: the construction}\label{sec:moduleA-thmA}
+
+\begin{theorem}[A. Hilbert module of one-forms]\label{thm:A}
+Under \cref{ass:gamma2}:
+\begin{enumerate}
+\item[$(\mathrm i)$] The metric completion
+$\cU_{\Gamma}$ of \cref{def:energy-module} is a real Hilbert
+space, and the action~\eqref{eq:bimodule-action-def}
+of $W\in\cA$ is bounded
+by~\eqref{eq:bimodule-bound}, so $\cU_{\Gamma}$ is a bounded
+$\cA$-bimodule. (Extension of this action to a larger
+$L^{\infty}$-multiplier closure of $\cA$ requires additional
+approximation hypotheses on $(\cA,L^{\infty}(\Omega))$ that are
+not assumed here; see
+\cref{rem:wmatpos-multiplier-class}.)
+\item[$(\mathrm{ii})$] The seed
+$D_{0}\colon\cA\to\cU_{\Gamma}$ of \cref{def:D0} is linear and
+satisfies the isometry identity~\eqref{eq:D0-isometry}.
+\item[$(\mathrm{iii})$] The image $\{U\cdot D_{0}F\,:\,F,U\in\cA\}$
+is dense in $\cU_{\Gamma}$. In particular $D_{0}\cA$ together
+with the bimodule action of $\cA$ generates a dense subspace.
+\item[$(\mathrm{iv})$] (Built-in consistency.) For every
+$F,G,W\in\cA$,
+\begin{equation}\label{eq:Linf-consistency}
+  \langle W\cdot D_{0}F,\,D_{0}G\rangle_{\cU_{\Gamma}}
+  \;=\;\E\!\bigl[W\,\Gamma(F,G)\bigr].
+\end{equation}
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+$(\mathrm i)$ is \cref{def:energy-module} together with
+\cref{lem:bimodule-bounded}. $(\mathrm{ii})$ is by construction
+of $D_{0}$ and~\eqref{eq:semi-IP} with $U=V=1$.
+$(\mathrm{iii})$: every $\omega\in\Omega^{1}_{\mathrm{alg}}$ is
+a finite sum $\sum_{i}F_{i}\otimes U_{i}=\sum_{i}U_{i}\cdot D_{0}F_{i}$
+in $\cU_{\Gamma}$ by~\eqref{eq:UdF}, so the image of
+$\cA\otimes\cA$ under $(F,U)\mapsto U\cdot D_{0}F$ exhausts
+$\Omega^{1}_{\mathrm{alg}}/\mathcal N_{0}$, which is dense in
+$\cU_{\Gamma}$.
+$(\mathrm{iv})$: by~\eqref{eq:UdF} and~\eqref{eq:semi-IP},
+$\langle W\cdot D_{0}F,D_{0}G\rangle_{\cU_{\Gamma}}
+=\langle[F\otimes W],[G\otimes 1]\rangle_{\cU_{\Gamma}}
+=\E[W\cdot 1\cdot\Gamma(F,G)]=\E[W\,\Gamma(F,G)]$.
+\end{proof}
+
+\begin{remark}[Bimodule structure is built in, not assumed]\label{rem:bimodule-built-in}
+\Cref{thm:A}$(\mathrm{iv})$ is the consistency identity that in
+the previous version of this paper appeared as a separate axiom
+(\cref{ass:Linf-module} below; cf.\ \cref{rem:Linf-now-derived}).
+Here it is a consequence of the construction: the
+$L^{\infty}$-action on $\cU_{\Gamma}$ is the one induced by the
+second tensor factor of $\Omega^{1}_{\mathrm{alg}}=\cA\otimes\cA$,
+and~\eqref{eq:semi-IP} forces~\eqref{eq:Linf-consistency}. The
+construction is universal in $(\cA,\Gamma)$ and is the abelian
+projection of the Cipriani--Sauvageot Hilbert-bimodule
+construction~\cite{CiprianiSauvageot}; it does not impose the
+Leibniz rule, which is a separate question taken up in
+\cref{sec:leibnizC}.
+\end{remark}
+
+%==============================================================
+\section{Closability and primitive divergence (Theorem B)}\label{sec:divergenceB}
+%==============================================================
+
+In this section we close $D_{0}\colon\cA\to\cU_{\Gamma}$ to a
+densely-defined closed operator $\dN$ on $L^{2}(\Omega)$, define
+$\divN:=\dN^{*}$ as a closed densely-defined divergence on
+$\cU_{\Gamma}$, and prove the integration-by-parts identity.
+The key technical step is that the operator-closability of
+$D_{0}$ is implied by the form-closability axiom \textsc{(FormClos)}
+of \cref{ass:gamma2}; no additional closability assumption is
+needed.
+
+\subsection{From form closability to operator closability}\label{sec:closability}
+
+The seed $D_{0}$ of \cref{def:D0} is a linear map
+$\cA\to\cU_{\Gamma}$. Reading $\cA\subset L^{2}(\Omega)$, it
+defines an unbounded operator
+\[
+  D_{0}\colon L^{2}(\Omega)\supset\cA\;\to\;\cU_{\Gamma}
+\]
+with domain $\Dom(D_{0})=\cA$. Recall that $D_{0}$ is
+\emph{closable} (in the unbounded-operator sense) if for every
+sequence $(F_{n})\subset\cA$ with $F_{n}\to 0$ in $L^{2}(\Omega)$
+and $D_{0}F_{n}$ Cauchy in $\cU_{\Gamma}$, the limit of
+$D_{0}F_{n}$ is $0$ in $\cU_{\Gamma}$.
+
+\begin{lemma}[\textsc{(FormClos)} implies operator closability]\label{lem:formclos-implies-opclos}
+Under \cref{ass:gamma2}, the seed
+$D_{0}\colon L^{2}(\Omega)\supset\cA\to\cU_{\Gamma}$ is closable.
+\end{lemma}
+
+\begin{proof}
+Suppose $(F_{n})\subset\cA$ satisfies $F_{n}\to 0$ in $L^{2}(\Omega)$
+and $D_{0}F_{n}\to v$ in $\cU_{\Gamma}$. Then $(D_{0}F_{n})$ is
+Cauchy in $\cU_{\Gamma}$, i.e.\
+$\|D_{0}(F_{n}-F_{m})\|_{\cU_{\Gamma}}^{2}
+=\E[\Gamma(F_{n}-F_{m},F_{n}-F_{m})]\to 0$ as $n,m\to\infty$, by
+the seed isometry~\eqref{eq:D0-isometry}. The form-closability
+axiom \textsc{(FormClos)} then gives
+$\E[\Gamma(F_{n},F_{n})]=\|D_{0}F_{n}\|_{\cU_{\Gamma}}^{2}\to 0$,
+so $D_{0}F_{n}\to 0$ in $\cU_{\Gamma}$ and therefore $v=0$.
+\end{proof}
+
+\begin{remark}[No separate closability axiom]\label{rem:no-separate-closability}
+In an earlier version of this paper the operator-closability of
+$D_{0}$ was imposed as a freestanding assumption.
+\Cref{lem:formclos-implies-opclos} removes that assumption:
+\textsc{(FormClos)} of \cref{ass:gamma2} suffices.
+\end{remark}
+
+\subsection{\texorpdfstring{The closure $\dN$ and the adjoint $\divN$}{The closure D\_N and the adjoint delta\_N}}\label{sec:closure-DN}
+
+\begin{definition}[Operator derivative; primitive divergence]\label{def:DN}
+Under \cref{ass:gamma2}, define
+\[
+  \dN\;:=\;\overline{D_{0}}\colon\Dom(\dN)\subset L^{2}(\Omega)\to\cU_{\Gamma}
+\]
+to be the closure of $D_{0}$, and the \emph{primitive
+divergence}
+\[
+  \divN\;:=\;\dN^{*}\colon\Dom(\divN)\subset\cU_{\Gamma}\to L^{2}(\Omega)
+\]
+to be its Hilbert-space adjoint.
+\end{definition}
+
+By \cref{lem:formclos-implies-opclos}, $\dN$ is well defined,
+closed, and densely defined; it extends $D_{0}$. The adjoint
+$\divN=\dN^{*}$ is then automatically closed
+(\cite[Thm.~13.9]{Rudin-FA}); densely-definedness of $\Dom(\divN)$
+follows from $\dN^{**}=\dN$ for any closed densely-defined
+operator (\cite[Ch.~5]{Schmuedgen}). Its domain is the natural
+adjoint domain
+\begin{equation}\label{eq:Dom-divN}
+  \Dom(\divN)
+  \;=\;\bigl\{u\in\cU_{\Gamma}\,:\,
+    F\mapsto\langle\dN F,u\rangle_{\cU_{\Gamma}}\text{ is }L^{2}\text{-continuous on }\Dom(\dN)\bigr\},
+\end{equation}
+and for $u\in\Dom(\divN)$, $\divN(u)\in L^{2}(\Omega)$ is the
+unique element such that
+\begin{equation}\label{eq:divN-defining}
+  \E\!\bigl[F\cdot\divN(u)\bigr]
+  \;=\;\langle\dN F,u\rangle_{\cU_{\Gamma}}
+  \qquad\text{for all }F\in\Dom(\dN).
+\end{equation}
+
+\subsection{Integration by parts; main construction theorem}\label{sec:IBP}
+
+\begin{theorem}[B. Construction of $(\dN,\divN)$ and integration by parts]\label{thm:B}
+Under \cref{ass:gamma2} (matrix-positive, weighted-matrix-positive, form-closable
+$\Gamma^{(2)}$-seed on $\cA$):
+\begin{enumerate}
+\item[$(\mathrm i)$] the operator derivative
+$\dN=\overline{D_{0}}$ of \cref{def:DN} is a closed
+densely-defined operator $L^{2}(\Omega)\to\cU_{\Gamma}$;
+\item[$(\mathrm{ii})$] the primitive divergence
+$\divN=\dN^{*}$ is a closed densely-defined operator
+$\cU_{\Gamma}\to L^{2}(\Omega)$, with domain~\eqref{eq:Dom-divN};
+\item[$(\mathrm{iii})$] $(\dN,\divN)$ satisfy the integration-by-parts
+identity
+\begin{equation}\label{eq:IBP}
+  \E\!\bigl[F\cdot\divN(u)\bigr]
+  \;=\;\langle \dN F,\,u\rangle_{\cU_{\Gamma}},
+  \qquad F\in\Dom(\dN),\;u\in\Dom(\divN);
+\end{equation}
+\item[$(\mathrm{iv})$] on the dense subspace
+$\{D_{0}U:U\in\cA\}\subset\cU_{\Gamma}$, when
+$D_{0}U\in\Dom(\divN)$, the identity~\eqref{eq:IBP} for
+$F\in\cA$ reads
+\begin{equation}\label{eq:IBP-on-A}
+  \E\!\bigl[F\cdot\divN(D_{0}U)\bigr]
+  \;=\;\E\!\bigl[\Gamma(F,U)\bigr],
+  \qquad F,U\in\cA.
+\end{equation}
+For general $u\in\Dom(\divN)$ no preimage in $\cA$ is asserted,
+and IBP is the inner-product identity~\eqref{eq:IBP}.
+\end{enumerate}
+This is the construction of $(\dN,\divN)$ from the
+$\Gamma^{(2)}$-seed alone, with no first-chaos generator and no
+further structural assumption.
+\end{theorem}
+
+\begin{proof}
+$(\mathrm i)$ is \cref{lem:formclos-implies-opclos} together
+with \cref{def:DN}. $(\mathrm{ii})$ is \cite[Thm.~13.9]{Rudin-FA}
+and the standard density argument cited above.
+$(\mathrm{iii})$ is~\eqref{eq:divN-defining} extended from
+$\Dom(\dN)$ to $\Dom(\divN)$ by definition of the adjoint.
+$(\mathrm{iv})$: for $u=D_{0}U$ with $U\in\cA$ and
+$F\in\cA\subset\Dom(\dN)$, the right-hand side of~\eqref{eq:IBP}
+equals
+$\langle D_{0}F,D_{0}U\rangle_{\cU_{\Gamma}}=\E[\Gamma(F,U)]$
+by~\eqref{eq:D0-isometry}.
+\end{proof}
+
+\begin{remark}[Bilinear form on $\Dom(\dN)$]\label{rem:closed-form}
+The bilinear form
+\[
+  \overline{\cE}(F,G)\;:=\;\langle\dN F,\dN G\rangle_{\cU_{\Gamma}},
+  \qquad F,G\in\Dom(\dN),
+\]
+is the closure of $\cE$ on $\Dom(\dN)\subset L^{2}(\Omega)$,
+in agreement with the Dirichlet-form closure of \textsc{(Form)}.
+This identifies $\dN$ as the canonical $\cU_{\Gamma}$-valued
+gradient associated with the closed Dirichlet form
+$(\overline{\cE},\Dom(\overline{\cE}))$.
+\end{remark}
+
+\begin{remark}[$L_{\cN}=-\dN^{*}\dN$]\label{rem:generator}
+Define
+\[
+  L_{\cN}\;:=\;-\dN^{*}\dN\;=\;-\divN\dN
+\]
+on the natural composition domain
+\[
+  \Dom(L_{\cN})
+  \;:=\;\bigl\{F\in\Dom(\dN)\,:\,\dN F\in\Dom(\divN)\bigr\}.
+\]
+By the standard $T^{*}T$-construction for closed densely-defined
+$T=\dN$ (\cite[Thm.~13.13]{Rudin-FA}, \cite[Ch.~5]{Schmuedgen}),
+$L_{\cN}$ is self-adjoint and nonpositive on $L^{2}(\Omega)$,
+with $\Dom(L_{\cN})$ a core for the closed quadratic form
+$\overline{\cE}$. The associated symmetric strongly-continuous
+contraction semigroup $P_{t}^{\cN}=e^{tL_{\cN}}$ exists by
+spectral calculus on $L_{\cN}$. If, in addition, the closed
+form $\overline{\cE}$ is Markovian in the Dirichlet-form sense
+(stable under unit-interval contractions), then $P_{t}^{\cN}$
+is a symmetric Markov semigroup
+(\cite[Ch.~1]{FukushimaOshimaTakeda}). The relation between
+$L_{\cN}$ and $\Gamma^{(2)}$ is the infinitesimal
+carr\'e-du-champ identity
+\[
+  \Gamma^{(2)}(F,G)\;=\;\tfrac{1}{2}\bigl(L_{\cN}(FG)-F\,L_{\cN}G-G\,L_{\cN}F\bigr)
+\]
+on the appropriate subdomain, recovering~\eqref{eq:carre-du-champ-recall}
+below at the level of the constructed generator.
+\end{remark}
+
+%==============================================================
+\section{Leibniz defect (Theorem C)}\label{sec:leibnizC}
+%==============================================================
+
+The operator derivative $\dN$ of \cref{thm:B} is closed and
+densely-defined but not, a priori, a derivation on $\cA$. The
+Leibniz defect of $\dN$, in the sense of
+\cite[Def.~5.4]{PrimitiveDivergence}, is a separate algebraic
+object that records the failure of the product rule.
+
+The bounded $\cA$-multiplier action on $\cU_{\Gamma}$ and the
+consistency identity~\eqref{eq:Linf-consistency} are now
+\emph{built in} by the Hilbert-module-of-one-forms construction
+of \cref{thm:A}; no separate structural assumption is needed.
+(In this paper we use only the $\cA$-multiplier action; the
+question of extending it to a larger
+$L^{\infty}(\Omega)$-multiplier closure is left to additional
+approximation hypotheses on $(\cA,L^{\infty}(\Omega))$, see
+\cref{rem:wmatpos-multiplier-class}.)
+
+\subsection{The \texorpdfstring{$\cA$}{A}-multiplier action: derived, not assumed}\label{sec:leibniz-Linf}
+
+\begin{proposition}[Built-in $\cA$-multiplier action]\label{ass:Linf-module}
+Under \cref{ass:gamma2}, the Hilbert module $\cU_{\Gamma}$
+carries a bounded bilinear $\cA$-action
+$\cA\times\cU_{\Gamma}\to\cU_{\Gamma}$,
+$(W,u)\mapsto W\cdot u$, satisfying:
+\begin{itemize}
+\item[$(\mathrm i)$] $\|W\cdot u\|_{\cU_{\Gamma}}\le
+\|W\|_{\infty}\|u\|_{\cU_{\Gamma}}$ for $W\in\cA$,
+$u\in\cU_{\Gamma}$;
+\item[$(\mathrm{ii})$] the consistency
+identity~\eqref{eq:Linf-consistency} of \cref{thm:A}$(\mathrm{iv})$
+holds for every $W,F,G\in\cA$.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+$(\mathrm i)$ is \cref{lem:bimodule-bounded}; $(\mathrm{ii})$
+is \cref{thm:A}$(\mathrm{iv})$. Both are consequences of the
+construction of $\cU_{\Gamma}$ in \cref{sec:moduleA}.
+\end{proof}
+
+\begin{remark}[$L^{\infty}$-action is no longer assumed]\label{rem:Linf-now-derived}
+In an earlier version of this paper the
+$L^{\infty}$-bimodule structure and the consistency
+identity~\eqref{eq:Linf-consistency} appeared as a separate
+assumption (``\cref{ass:Linf-module}''). The
+Hilbert-module-of-one-forms construction of \cref{sec:moduleA}
+makes both intrinsic, and we record them as
+\cref{ass:Linf-module} now stated as a proposition rather than
+an axiom. Below we cite \cref{ass:Linf-module} in the same
+places as before; downstream theorem statements are unchanged in
+substance, but the previously-axiomatic input is now derived.
+\end{remark}
+
+\begin{remark}[Where this gives the right action]\label{rem:Linf-where}
+On the Wiener and Poisson benchmarks of \cref{sec:benchmarksE},
+the unitary identification of $\cU_{\Gamma}$ with
+$L^{2}(\Omega;L^{2}(\R_{+}))$ resp.\ $L^{2}(\Omega\times Z,\mu)$
+matches the bimodule action~\eqref{eq:bimodule-action-def} with
+pointwise multiplication on the $\Omega$-factor;
+\eqref{eq:Linf-consistency} then reduces to Fubini together with
+the integral expression for $\Gamma^{(2)}$.
+\end{remark}
+
+\subsection{Definition and benchmark recall}\label{sec:leibniz-def}
+
+\begin{definition}[Leibniz defect]\label{def:leibniz}
+Under \cref{ass:gamma2} (so that the bounded $\cA$-multiplier
+action of \cref{ass:Linf-module} is available), the
+\emph{Leibniz defect} of $\dN$ on $\cA$ is the bilinear map
+$\Lleib_{D}\colon\cA\times\cA\to\cU_{\Gamma}$
+\begin{equation}\label{eq:leibniz-defect}
+  \Lleib_{D}(F,G)\;:=\;\dN(FG)-F\cdot\dN G-G\cdot\dN F,
+  \qquad F,G\in\cA,
+\end{equation}
+where $F\cdot\dN G$ and $G\cdot\dN F$ are read through the
+bounded $\cA$-multiplier action of \cref{ass:Linf-module} (with
+multipliers $F,G\in\cA$). No extension of the multiplier action
+beyond $\cA$ is required for the statements below.
+\end{definition}
+
+\begin{remark}[Benchmark Leibniz defects]\label{rem:leibniz-benchmarks-recall}
+For Wiener noise on the smooth cylindrical algebra $\cA^{W}$,
+$\Lleib_{D^{W}}\equiv 0$ (\cite[Prop.~1.2.3]{Nualart}). For
+compensated Poisson on $(Z,\mu)$ with the difference operator
+$D^{P}_{z}F=F(\omega+\delta_{z})-F(\omega)$,
+\begin{equation}\label{eq:leibniz-defect-poisson-recall}
+  \Lleib_{D^{P}}(F,G)(z)\;=\;(D^{P}_{z}F)(D^{P}_{z}G),
+\end{equation}
+which is nonzero quadratic. Both are derived in
+\cite[\S 4.2]{PrimitiveDivergence}.
+\end{remark}
+
+\subsection{Zero-defect criterion}\label{sec:leibniz-zero}
+
+The Bakry--\'Emery diffusion criterion, in the form most useful
+here, is the differentiation identity for $\Gamma^{(2)}$ on the
+test algebra. Recall that for a generator $L$ on a function
+algebra closed under products, the carr\'e-du-champ
+\begin{equation}\label{eq:carre-du-champ-recall}
+  \Gamma(F,G)\;=\;\tfrac{1}{2}\bigl(L(FG)-F\,LG-G\,LF\bigr)
+\end{equation}
+satisfies the diffusion property
+$\Gamma(\phi(F),G)=\phi'(F)\Gamma(F,G)$ for smooth $\phi$ if and
+only if $L$ has no jump part (\cite[Def.~1.11.1]{BakryGentilLedoux}).
+The relevant special case for our purposes is $\phi(x)=x^{2}$,
+which we promote to an axiom on $\Gamma^{(2)}$.
+
+\begin{assumption}[Differentiation; sufficient for $\Lleib_{D}\equiv 0$]\label{ass:differentiation}
+$\Gamma^{(2)}$ satisfies the differentiation identity
+\begin{equation}\label{eq:differentiation}
+  \Gamma^{(2)}(F^{2},G)\;=\;2F\,\Gamma^{(2)}(F,G)
+  \qquad\text{in }L^{1}(\Omega),\;F,G\in\cA.
+\end{equation}
+\end{assumption}
+
+\begin{theorem}[C.\,1. Zero-defect criterion]\label{thm:C-zero}
+Under \cref{ass:gamma2,ass:differentiation}, the Leibniz
+defect vanishes:
+\begin{equation}\label{eq:zero-defect}
+  \Lleib_{D}(F,G)\;\equiv\;0,\qquad F,G\in\cA.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For $F,G,H\in\cA$, the $L^{\infty}$-consistency
+identity~\eqref{eq:Linf-consistency} of
+\cref{ass:Linf-module} gives
+\[
+  \langle F\,D_{0}H,D_{0}G\rangle_{\cU_{\Gamma}}
+  \;=\;\E[F\,\Gamma^{(2)}(H,G)].
+\]
+The seed isometry~\eqref{eq:D0-isometry} of \cref{thm:A} gives
+\[
+  \langle D_{0}(FG),D_{0}H\rangle_{\cU_{\Gamma}}
+  \;=\;\E[\Gamma^{(2)}(FG,H)].
+\]
+By the polarization of \cref{ass:differentiation} (which gives
+$\Gamma^{(2)}(FG,H)=F\,\Gamma^{(2)}(G,H)+G\,\Gamma^{(2)}(F,H)$ in
+$L^{1}$), this equals
+\[
+  \E[F\,\Gamma^{(2)}(G,H)]+\E[G\,\Gamma^{(2)}(F,H)]
+  \;=\;\langle F\,D_{0}G+G\,D_{0}F,D_{0}H\rangle_{\cU_{\Gamma}}.
+\]
+Density of $D_{0}\cA$ in $\cU_{\Gamma}$ (\cref{thm:A}) then gives
+$D_{0}(FG)=F\,D_{0}G+G\,D_{0}F$ in $\cU_{\Gamma}$. Closing under
+$\dN=\overline{D_{0}}$, the same identity persists on $\cA$ and
+\eqref{eq:zero-defect} follows.
+\end{proof}
+
+\begin{remark}[Polarization step]\label{rem:polarization}
+The polarization step
+$\Gamma^{(2)}(FG,H)=F\,\Gamma^{(2)}(G,H)+G\,\Gamma^{(2)}(F,H)$
+used in the proof of \cref{thm:C-zero} is the standard
+consequence of the differentiation identity
+\eqref{eq:differentiation} together with the bilinearity and
+symmetry of $\Gamma^{(2)}$, by the polarization identity
+$2FG=(F+G)^{2}-F^{2}-G^{2}$. We do not write the elementary
+algebra explicitly.
+\end{remark}
+
+\subsection{Controlled-defect regime}\label{sec:leibniz-controlled}
+
+When the differentiation identity fails, the Leibniz defect can
+nevertheless be defined intrinsically inside $\cU_{\Gamma}$, by
+identifying it as the Riesz representative of an explicit
+bounded linear functional on $D_{0}\cA$. This is more rigorous
+than a direct quadratic $\Gamma^{(2)}$-bound on the defect, and
+recovers the Wiener and Poisson cases below uniformly
+(\cref{prop:wiener-recovery,prop:poisson-recovery}).
+
+\begin{definition}[Test functional $\Lambda_{F,G}$]\label{def:Lambda}
+For $F,G\in\cA$, define the linear functional
+$\Lambda_{F,G}\colon\cA\to\R$ by
+\begin{equation}\label{eq:Lambda}
+  \Lambda_{F,G}(H)\;:=\;
+  \E\!\bigl[\Gamma^{(2)}(FG,H)-F\,\Gamma^{(2)}(G,H)-G\,\Gamma^{(2)}(F,H)\bigr],
+  \qquad H\in\cA.
+\end{equation}
+\end{definition}
+
+\begin{assumption}[Bounded-functional domination]\label{ass:bounded-functional}
+For every $F,G\in\cA$ there exists a constant $C_{F,G}<\infty$
+such that
+\begin{equation}\label{eq:bounded-functional}
+  |\Lambda_{F,G}(H)|\;\le\;C_{F,G}\,\|D_{0}H\|_{\cU_{\Gamma}}
+  \qquad\text{for all }H\in\cA.
+\end{equation}
+\end{assumption}
+
+\begin{theorem}[C.\,2. Controlled-defect regime via Riesz representation]\label{thm:C-controlled}
+Under \cref{ass:gamma2,ass:bounded-functional}, for every
+$F,G\in\cA$ there is a unique element
+$\Lleib_{D}(F,G)\in\cU_{\Gamma}$ such that
+\begin{equation}\label{eq:Lleib-Riesz}
+  \langle\Lleib_{D}(F,G),\,D_{0}H\rangle_{\cU_{\Gamma}}
+  \;=\;\Lambda_{F,G}(H)
+  \qquad\text{for all }H\in\cA,
+\end{equation}
+with norm bound $\|\Lleib_{D}(F,G)\|_{\cU_{\Gamma}}\le C_{F,G}$.
+The map $(F,G)\mapsto\Lleib_{D}(F,G)$ is bilinear and symmetric,
+and coincides with~\eqref{eq:leibniz-defect} of
+\cref{def:leibniz} as a $\cU_{\Gamma}$-valued bilinear map on
+$\cA\times\cA$.
+\end{theorem}
+
+\begin{proof}
+By \cref{ass:bounded-functional}, the map
+$D_{0}H\mapsto\Lambda_{F,G}(H)$ is a well-defined bounded linear
+functional on the dense subspace $V_{0}=D_{0}\cA\subset\cU_{\Gamma}$.
+Well-definedness on cosets is forced directly by the
+bounded-functional inequality~\eqref{eq:bounded-functional}: if
+$H_{1},H_{2}\in\cA$ satisfy $D_{0}H_{1}=D_{0}H_{2}$ in
+$\cU_{\Gamma}$, then $D_{0}(H_{1}-H_{2})=0$, hence
+$\|D_{0}(H_{1}-H_{2})\|_{\cU_{\Gamma}}=0$, hence
+$|\Lambda_{F,G}(H_{1}-H_{2})|\le C_{F,G}\cdot 0=0$ by
+\eqref{eq:bounded-functional}, so
+$\Lambda_{F,G}(H_{1})=\Lambda_{F,G}(H_{2})$. (In particular this
+covers the constant case $H\in\R\cdot 1$, where
+$D_{0}H=0$ by \textsc{(Vanish)}.) The functional therefore
+extends uniquely to a bounded linear functional on $\cU_{\Gamma}$
+of norm $\le C_{F,G}$, and the Riesz representation theorem on
+the Hilbert space $\cU_{\Gamma}$ gives a unique
+$\Lleib_{D}(F,G)\in\cU_{\Gamma}$
+satisfying~\eqref{eq:Lleib-Riesz}, with the stated norm bound.
+Bilinearity and symmetry of $\Lleib_{D}$ follow from the
+bilinearity and symmetry of $\Lambda_{F,G}$ in $(F,G)$.
+
+To match~\eqref{eq:leibniz-defect}: the seed
+isometry~\eqref{eq:D0-isometry} of \cref{thm:A} gives
+\[
+  \langle D_{0}(FG),D_{0}H\rangle_{\cU_{\Gamma}}
+  \;=\;\E[\Gamma^{(2)}(FG,H)],
+\]
+and the consistency
+identity~\eqref{eq:Linf-consistency} of \cref{ass:Linf-module}
+gives
+\[
+  \langle F\,D_{0}G+G\,D_{0}F,\,D_{0}H\rangle_{\cU_{\Gamma}}
+  \;=\;\E[F\,\Gamma^{(2)}(G,H)+G\,\Gamma^{(2)}(F,H)].
+\]
+Subtracting,
+\[
+  \langle D_{0}(FG)-F\,D_{0}G-G\,D_{0}F,\,D_{0}H\rangle_{\cU_{\Gamma}}
+  \;=\;\Lambda_{F,G}(H)
+  \;=\;\langle\Lleib_{D}(F,G),D_{0}H\rangle_{\cU_{\Gamma}}
+\]
+for every $H\in\cA$. Density of $D_{0}\cA$ in $\cU_{\Gamma}$
+(\cref{thm:A}) gives
+$D_{0}(FG)-F\,D_{0}G-G\,D_{0}F=\Lleib_{D}(F,G)$ in $\cU_{\Gamma}$,
+which under closure $\dN=\overline{D_{0}}$ matches the
+expression in~\eqref{eq:leibniz-defect}.
+\end{proof}
+
+\begin{remark}[Why bounded-functional, not pointwise quadratic]\label{rem:why-bounded-functional}
+\Cref{ass:bounded-functional} replaces a pointwise quadratic
+$\Gamma^{(2)}$-bound on the defect by the weaker, Hilbert-space-natural
+condition that $\Lambda_{F,G}$ be a bounded linear functional on
+$D_{0}\cA$ in the energy norm. This is the minimal data needed to
+extract a Riesz representative inside $\cU_{\Gamma}$, and is exactly
+what the proof uses; no $L^{1/2}$-pointwise Cauchy--Schwarz on
+$\Gamma^{(2)}$ is invoked. Both Wiener and Poisson satisfy
+\cref{ass:bounded-functional}: in the Wiener case
+$\Lambda_{F,G}\equiv 0$ (so $C_{F,G}=0$); in the Poisson case
+\[
+  |\Lambda_{F,G}(H)|
+  \;=\;\Bigl|\E\!\int_{Z}(D^{P}_{z}F)(D^{P}_{z}G)(D^{P}_{z}H)\,d\mu(z)\Bigr|
+  \;\le\;C_{F,G}\,\|D_{0}H\|_{\cU_{\Gamma}}
+\]
+with $C_{F,G}=\|(D^{P}_{\cdot}F)(D^{P}_{\cdot}G)\|_{L^{2}(\Omega\times Z,\mu)}$
+when this norm is finite (which holds on the natural test
+algebra $\cA^{P}$).
+\end{remark}
+
+\begin{theorem}[C. Leibniz defect: combined statement]\label{thm:C}
+Under \cref{ass:gamma2}, the Leibniz defect
+$\Lleib_{D}\colon\cA\times\cA\to\cU_{\Gamma}$ of
+\cref{def:leibniz} is well-defined as a $\cU_{\Gamma}$-valued
+bilinear map (using the built-in $L^{\infty}$-action of
+\cref{ass:Linf-module}).
+\begin{enumerate}
+\item[$(\mathrm i)$] If \cref{ass:differentiation} holds, then
+$\Lleib_{D}\equiv 0$ (\cref{thm:C-zero}).
+\item[$(\mathrm{ii})$] If \cref{ass:bounded-functional} holds,
+then $\Lleib_{D}$ is the unique bilinear map satisfying the
+Riesz identity~\eqref{eq:Lleib-Riesz}, with
+$\|\Lleib_{D}(F,G)\|_{\cU_{\Gamma}}\le C_{F,G}$
+(\cref{thm:C-controlled}).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+$(\mathrm i)$ is \cref{thm:C-zero}; $(\mathrm{ii})$ is
+\cref{thm:C-controlled}.
+\end{proof}
+
+\begin{remark}[Interpretation]\label{rem:leibniz-interpretation}
+The goal is not to force $\dN$ to be first-order; it is to
+identify the defect as part of the operator-derivative data.
+\Cref{thm:C} does this: the defect is computed intrinsically
+from $\Gamma^{(2)}$, without reference to a first-chaos
+representation. In particular,
+\eqref{eq:leibniz-defect-poisson-recall} for compensated Poisson
+will be recovered from this construction in \cref{sec:benchmarksE}
+without using the difference-operator definition.
+\end{remark}
+
+%==============================================================
+\section{Higher \texorpdfstring{$\Gamma$}{Gamma}-hierarchy as compatibility data (Theorem D)}\label{sec:hierarchyD}
+%==============================================================
+
+The construction of $(\dN,\divN)$ in
+\cref{thm:A,thm:B} requires only the bilinear member
+$\Gamma^{(2)}$ (with \textsc{(MatPos)} and \textsc{(FormClos)}
+of \cref{ass:gamma2}). The higher members $\Gamma^{(N)}$ for
+$N\ge 3$ are not part of that construction; they are
+\emph{compatibility data}. They test whether the operator
+derivative $\dN$ matches the full $N$-point interaction
+hierarchy of an underlying flow or noise. We state the axioms
+of~\cite[\S 6.4]{PrimitiveDivergence}, sharpened to the form
+needed here, and prove the pair-generated truncation criterion.
+
+\subsection{Hierarchy axioms}\label{sec:hierarchy-axioms}
+
+\begin{assumption}[Hierarchy axioms]\label{ass:hierarchy}
+The family $\{\Gamma^{(N)}\}_{N\ge 2}$ on $\cA$ satisfies:
+\begin{itemize}
+\item[\textsc{(Sym)}] permutation symmetry: $\Gamma^{(N)}$ is
+invariant under permutations of its $N$ arguments;
+\item[\textsc{(Vanish)}] constancy vanishing: if any argument is
+constant, $\Gamma^{(N)}=0$ in $L^{1}(\Omega)$;
+\item[\textsc{(MatPos2)}] positivity at $N=2$: $\Gamma^{(2)}$
+is matrix-positive in the sense of \textsc{(MatPos)} of
+\cref{ass:gamma2};
+\item[\textsc{(Sub)}] subset compatibility (product rule with
+respect to $L^{\infty}$-action): for every $F_{1},\ldots,F_{N},G\in\cA$,
+\begin{multline}\label{eq:subset-compat}
+  \Gamma^{(N+1)}(F_{1}\!\cdot\!G,F_{2},\ldots,F_{N+1})\\
+  =\;G\,\Gamma^{(N+1)}(F_{1},F_{2},\ldots,F_{N+1})
+  +\Gamma^{(N+1)}(G,F_{2},\ldots,F_{N+1})\,F_{1}+R^{(N+1)},
+\end{multline}
+where the remainder $R^{(N+1)}$ is a finite linear combination
+of $\Gamma^{(M)}$, $M\le N$, multiplied by products of $F_{i}$,
+encoding the recursion \cite[Eq.~(6.10)]{PrimitiveDivergence};
+\item[\textsc{(Tens)}] interval/tensor compatibility (when $\cA$
+comes from a noise $\cN=(\cF_{s,t})$): if $F_{i}\in\cA_{s_{i},t_{i}}$
+and the supports $[s_{i},t_{i}]$ are pairwise disjoint, then
+$\Gamma^{(N)}(F_{1},\ldots,F_{N})=0$.
+\end{itemize}
+\end{assumption}
+
+\begin{remark}[Form of \textsc{(Sub)}]\label{rem:sub-form}
+The axiom \textsc{(Sub)} encodes the subset-inversion
+\cite[Eq.~(6.10)]{PrimitiveDivergence}, which says that the
+half-raw product defect $M_{S}$ on a subset $S$ decomposes over
+proper subsets $B\subsetneq S$ as
+$M_{S}(f_{S})=\sum_{B\subsetneq S,|B|\ge 2}\Gamma_{B}(f_{B})\prod_{j\in S\setminus B}f_{j}$.
+The general product rule for $\Gamma^{(N+1)}$ on a product
+argument $F_{1}\cdot G$ then follows by re-expanding $M_{S}$
+under the substitution $F_{1}\mapsto F_{1}G$. The remainder
+$R^{(N+1)}$ in \eqref{eq:subset-compat} collects the
+sub-leading corrections from this re-expansion. We write the
+axiom in this combined form because the explicit recursion is
+already in~\cite{PrimitiveDivergence}; the form above is the
+operational one needed here.
+\end{remark}
+
+\begin{remark}[Independence of \textsc{(Tens)}]\label{rem:tens-indep}
+The axiom \textsc{(Tens)} is needed only for the noise-level
+construction (Theorems~D and the noise-compatible parts of E).
+It plays no role in Theorems~A, B, C, which work directly on
+$\cA$ without a noise structure.
+\end{remark}
+
+\subsection{The pair-generated truncation criterion}\label{sec:pair-generated}
+
+The pair-generated identity \cite[Eq.~(6.13)]{PrimitiveDivergence}
+characterizes the regime in which the entire hierarchy is
+determined by the bilinear member.
+
+\begin{assumption}[Pair-generated truncation]\label{ass:pair-generated}
+For every finite subset $S$ with $|S|\ge 2$ and every
+$(f_{i})_{i\in S}\subset\cA$, the half-raw product defect
+satisfies
+\begin{equation}\label{eq:pair-generated-recall}
+  M_{S}(f_{S})
+  \;=\;
+  \!\!\sum_{\substack{B\subseteq S\\|B|=2}}\!\!
+  \Gamma^{(2)}(f_{B})\prod_{j\in S\setminus B}f_{j}.
+\end{equation}
+Equivalently, $\Gamma_{S}=0$ for every $|S|\ge 3$.
+\end{assumption}
+
+\begin{theorem}[D. Hierarchy and pair-generated truncation]\label{thm:D}
+Under \cref{ass:gamma2,ass:hierarchy}:
+\begin{enumerate}
+\item[$(\mathrm i)$] \emph{The $(\dN,\divN)$-pair uses only
+$\Gamma^{(2)}$.} The energy module $\cU_{\Gamma}$, the operator
+derivative $\dN$, and the divergence $\divN$ of
+\cref{thm:A,thm:B} are well-defined and satisfy the
+integration-by-parts identity \eqref{eq:IBP}. Their construction
+makes no use of the higher members $\Gamma^{(N)}$, $N\ge 3$; it
+depends only on the bilinear member $\Gamma^{(2)}$ and the
+closability of the associated energy form $\cE$.
+\item[$(\mathrm{ii})$] \emph{Role of the higher members.} The
+higher $\Gamma^{(N)}$ encode higher product-rule
+(generator-level multi-body) data that lies above the bilinear
+energy. They are not used by Theorems~A and~B; their natural
+home is in higher Leibniz-type defects (see
+\cref{rem:hierarchy-as-data}), not in the construction of
+$(\dN,\divN)$ itself.
+\item[$(\mathrm{iii})$] \emph{Pair-generated truncation.} If
+\cref{ass:pair-generated} holds, then $\Gamma^{(N)}=0$ for every
+$N\ge 3$ by the recursion~\eqref{eq:gamma-N-cumulant-recall},
+and the entire construction reduces to the
+$\Gamma^{(2)}$-module. The closed pair $(\dN,\divN)$ is
+determined uniquely up to unitary equivalence on
+$\cU_{\Gamma}$ by $\Gamma^{(2)}$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+$(\mathrm i)$ and $(\mathrm{ii})$: \cref{thm:A,thm:B} use only
+the $\Gamma^{(2)}$-axioms of \cref{ass:gamma2} (matrix
+positivity and form closability), which are part of
+\cref{ass:hierarchy} via the $N=2$ case. No step of those
+proofs invokes $\Gamma^{(N)}$ for $N\ge 3$. The higher members
+thus play no role in the construction of $(\dN,\divN)$; their
+role is the structural one of \cref{rem:hierarchy-as-data}.
+
+$(\mathrm{iii})$: \cref{ass:pair-generated} forces
+$\Gamma^{(N)}=0$ for $N\ge 3$ via the
+recursion~\eqref{eq:gamma-N-cumulant-recall}
+(\cite[Eq.~(6.10)]{PrimitiveDivergence}). The energy module
+$\cU_{\Gamma}$, the seed $D_{0}$, the closure $\dN$, and the
+adjoint $\divN$ are all constructed directly from $\Gamma^{(2)}$
+in \cref{sec:moduleA,sec:divergenceB}. Uniqueness up to unitary
+equivalence on $\cU_{\Gamma}$ is the standard statement that the
+closure of an isometric seed is determined by the inner-product
+target $\cE$.
+\end{proof}
+
+For reference, the recursion \cite[Eq.~(6.10)]{PrimitiveDivergence}
+on the test algebra side reads
+\begin{equation}\label{eq:gamma-N-cumulant-recall}
+  \Gamma_{S}(f_{S})
+  \;=\;
+  M_{S}(f_{S})
+  \;-\;
+  \!\!\sum_{\substack{B\subsetneq S\\|B|\ge 2}}\!\!
+  \Gamma_{B}(f_{B})\prod_{j\in S\setminus B}f_{j}.
+\end{equation}
+
+\begin{remark}[Hierarchy as operator-derivative data]\label{rem:hierarchy-as-data}
+When \cref{ass:pair-generated} fails --- i.e., when some
+$\Gamma^{(N)}\not\equiv 0$ for $N\ge 3$ --- the higher members
+record additional structural content of the calculus that is
+\emph{not} encoded in $(\dN,\divN)$ alone. The natural place
+for this content is in higher Leibniz-type defects:
+multilinear maps on $\cA^{N}$ measuring the failure of
+$\dN$ to commute with $N$-fold products in a way controlled
+purely by lower $\Gamma$. We do not develop the
+higher-Leibniz-defect formalism in the present paper; we mark
+its existence here as the natural next layer above
+\cref{thm:C}.
+\end{remark}
+
+%==============================================================
+\section{Classical benchmarks (Theorem E)}\label{sec:benchmarksE}
+%==============================================================
+
+We verify that the construction of \cref{thm:A,thm:B,thm:C,thm:D}
+recovers the classical objects on the standard test algebras,
+and that pair-generated diffusion systems satisfy the
+truncation criterion. The coalescing/sticky-flow case is
+formal, as flagged.
+
+\subsection{Wiener noise}\label{sec:bench-wiener}
+
+Let $W$ be a Brownian motion on $[0,\infty)$ with natural
+filtration $\cF^{W}$, and let $\cA^{W}\subset L^{\infty}(\Omega)\cap L^{2}(\Omega)$
+be the algebra of smooth cylindrical functionals
+$F=f(W_{t_{1}},\ldots,W_{t_{n}})$ with $f\in C^{\infty}_{b}(\R^{n})$
+and $0\le t_{1}<\cdots<t_{n}$. The two-point carr\'e-du-champ on
+$\cA^{W}$ is
+\[
+  \Gamma^{(2)}_{W}(F,G)\;=\;\int_{0}^{\infty}(D_{r}^{W}F)(D_{r}^{W}G)\,dr,
+\]
+where $D_{r}^{W}$ is the Malliavin
+derivative~\cite[Ch.~1]{Nualart}, given on cylindrical
+functionals by
+\[
+  D_{r}^{W}F\;=\;\sum_{i}\partial_{i}f(W_{t_{1}},\ldots,W_{t_{n}})\,\mathbf 1_{[0,t_{i}]}(r).
+\]
+The Wiener case is the diffusion benchmark.
+
+\begin{proposition}[Wiener recovery]\label{prop:wiener-recovery}
+On the test algebra $\cA^{W}$ with $\Gamma^{(2)}_{W}$ as above:
+\begin{enumerate}
+\item[$(\mathrm i)$] \cref{ass:gamma2,ass:differentiation}
+all hold; \cref{ass:hierarchy} holds with
+$\Gamma^{(N)}_{W}\equiv 0$ for $N\ge 3$, so
+\cref{ass:pair-generated} holds trivially.
+\item[$(\mathrm{ii})$] The energy module $\cU_{\Gamma_{W}}$ of
+\cref{def:energy-module} is unitarily equivalent to
+$L^{2}(\Omega;L^{2}(\R_{+}))$, and the operator derivative
+$D_{\cN_{W}}=\overline{D_{0}^{W}}$ coincides with the Malliavin
+derivative $D^{W}\colon\Dom(D^{W})\subset L^{2}(\Omega)\to L^{2}(\Omega;L^{2}(\R_{+}))$.
+\item[$(\mathrm{iii})$] The primitive divergence
+$\delta_{\cN_{W}}=(D_{\cN_{W}})^{*}$ coincides with the Skorokhod
+divergence $\delta^{W}$ (\cite[Ch.~1]{Nualart}).
+\item[$(\mathrm{iv})$] The Leibniz defect vanishes:
+$\Lleib_{D_{\cN_{W}}}\equiv 0$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+$(\mathrm i)$: \textsc{(Sym)} and \textsc{(Vanish)} are direct
+from the integral formula. \textsc{(MatPos)} and \textsc{(WMatPos)}
+hold pointwise on $\Omega$: for any $Q\ge 0$ in $\cA$ and any
+finite collection $(F_{i},U_{i})$,
+$\sum_{i,j}Q\,U_{i}U_{j}\Gamma^{(2)}_{W}(F_{i},F_{j})
+=\int_{0}^{\infty}Q\,\bigl(\sum_{i}U_{i}D_{r}^{W}F_{i}\bigr)^{2}\,dr\ge 0$
+$\Prob$-a.s., so the expectation is also $\ge 0$.
+Form-closability \textsc{(FormClos)} is the standard Malliavin
+closability (\cite[Prop.~1.2.1]{Nualart}). The differentiation identity
+\eqref{eq:differentiation} is the diffusion property of the
+Wiener carr\'e-du-champ. Pair-generation
+\textsc{(PairGen)} follows because the $|S|$-point dynamics of
+independent Brownian motions decompose as sums of one-point
+generators; equivalently, by
+\cite[Prop.~6.4]{PrimitiveDivergence}.
+
+$(\mathrm{ii})$: The Hilbert-module-of-one-forms construction
+of \cref{thm:A} on $(\cA^{W},\Gamma^{(2)}_{W})$ produces a
+Hilbert space whose inner product on $D_{0}F$ is
+$\E[\int(D_{r}^{W}F)(D_{r}^{W}G)\,dr]$.
+The map $D_{0}F\mapsto D^{W}F$ extends to a unitary equivalence
+$\cU_{\Gamma_{W}}\to L^{2}(\Omega;L^{2}(\R_{+}))$. Closing
+$D_{0}^{W}$ on $L^{2}(\Omega)$ recovers $D^{W}$.
+
+$(\mathrm{iii})$: The adjoint $D_{\cN_{W}}^{*}$ is the
+Skorokhod $\delta^{W}$ by uniqueness of Hilbert-space adjoints.
+
+$(\mathrm{iv})$: \cref{thm:C-zero} applies because of $(\mathrm i)$.
+\end{proof}
+
+\subsection{Compensated Poisson}\label{sec:bench-poisson}
+
+Let $N$ be a Poisson random measure on a measurable space
+$(Z,\mu)$ with $\sigma$-finite intensity, $\widetilde N=N-\mu$
+its compensator. Let $\cA^{P}\subset L^{\infty}(\Omega)\cap L^{2}(\Omega)$
+be a test algebra of bounded measurable functionals of $N$
+closed under products (\cite[Ch.~6]{Nualart},
+\cite[Ch.~18]{LastPenrose}). The difference operator
+$D^{P}_{z}F=F(\omega+\delta_{z})-F(\omega)$ extends to a closed
+operator $L^{2}(\Omega)\to L^{2}(\Omega\times Z,\mu)$, and the
+two-point Poisson carr\'e-du-champ on $\cA^{P}$ is
+\[
+  \Gamma^{(2)}_{P}(F,G)
+  \;=\;\int_{Z}(D^{P}_{z}F)(D^{P}_{z}G)\,d\mu(z),
+\]
+read in $L^{1}(\Omega)$ by the standard $L^{2}(\Omega\times Z,\mu)$
+domain conditions.
+
+\begin{proposition}[Poisson recovery]\label{prop:poisson-recovery}
+On $\cA^{P}$ with $\Gamma^{(2)}_{P}$ as above:
+\begin{enumerate}
+\item[$(\mathrm i)$] \cref{ass:gamma2} hold.
+The differentiation identity \cref{ass:differentiation}
+\emph{fails}, by the explicit jump formula
+\[
+  \Gamma^{(2)}_{P}(F^{2},G)
+  \;=\;\int_{Z}((F(\omega+\delta_{z}))^{2}-F(\omega)^{2})(D^{P}_{z}G)\,d\mu(z)
+  \;\neq\;2F\,\Gamma^{(2)}_{P}(F,G).
+\]
+\item[$(\mathrm{ii})$] The energy module $\cU_{\Gamma_{P}}$ is
+unitarily equivalent to $L^{2}(\Omega\times Z,\mu)$, and the
+operator derivative $D_{\cN_{P}}$ coincides with the difference
+operator $D^{P}$.
+\item[$(\mathrm{iii})$] The primitive divergence
+$\delta_{\cN_{P}}=(D_{\cN_{P}})^{*}$ coincides with the Poisson
+divergence $\delta^{P}$ (\cite[\S 6.2]{Nualart}).
+\item[$(\mathrm{iv})$] The Leibniz defect is the explicit
+quadratic form
+\begin{equation}\label{eq:leibniz-poisson-recovered}
+  \Lleib_{D_{\cN_{P}}}(F,G)(z)\;=\;(D^{P}_{z}F)(D^{P}_{z}G),
+\end{equation}
+nonzero on the test algebra $\cA^{P}$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+$(\mathrm i)$: \textsc{(Sym)}, \textsc{(Vanish)},
+\textsc{(MatPos)}, \textsc{(WMatPos)}, and \textsc{(FormClos)}
+are the standard properties of the difference-operator energy
+(\cite[Ch.~6]{Nualart}); \textsc{(MatPos)} and
+\textsc{(WMatPos)} hold pointwise on $\Omega$ via the integral
+$\Gamma^{(2)}_{P}(F,G)=\int_{Z}(D^{P}_{z}F)(D^{P}_{z}G)\,d\mu(z)$
+above. The displayed jump formula for
+$\Gamma^{(2)}_{P}(F^{2},G)$ is direct, and shows
+\cref{ass:differentiation} fails.
+
+$(\mathrm{ii})$, $(\mathrm{iii})$: as in
+\cref{prop:wiener-recovery} via Cipriani--Sauvageot, with the
+target Hilbert space $L^{2}(\Omega\times Z,\mu)$ instead of
+$L^{2}(\Omega;L^{2}(\R_{+}))$.
+
+$(\mathrm{iv})$: by direct computation,
+$D^{P}_{z}(FG)=(F+D^{P}_{z}F)(G+D^{P}_{z}G)-FG=F\,D^{P}_{z}G+G\,D^{P}_{z}F+(D^{P}_{z}F)(D^{P}_{z}G)$,
+so $\Lleib_{D^{P}}(F,G)(z)=(D^{P}_{z}F)(D^{P}_{z}G)$, which
+is~\eqref{eq:leibniz-poisson-recovered}. Equivalently, by
+\cref{thm:C-controlled}: \cref{ass:bounded-functional} holds
+with $C_{F,G}=\|(D^{P}_{\cdot}F)(D^{P}_{\cdot}G)\|_{L^{2}(\Omega\times Z,\mu)}$
+on the natural test algebra $\cA^{P}$
+(\cref{rem:why-bounded-functional}), and the Riesz representative
+$\Lleib_{D}(F,G)$ is exactly $(D^{P}_{\cdot}F)(D^{P}_{\cdot}G)\in
+L^{2}(\Omega\times Z,\mu)\simeq\cU_{\Gamma_{P}}$.
+\end{proof}
+
+\subsection{Pair-generated diffusion systems}\label{sec:bench-pairgen}
+
+\begin{proposition}[Pair-generated diffusion truncation]\label{prop:pairgen-diffusion}
+Let $\Phi$ be a stochastic flow on $\R$ whose $|S|$-point
+generators $L^{(|S|)}$ are determined by the one- and two-point
+generators $L^{(1)}$, $L^{(2)}$ in the sense of
+\cite[Eq.~(6.13)]{PrimitiveDivergence} (independent copies,
+common drivers, finite-range pairwise couplings, or coalescence
+acting only at pair encounters). Then the
+generator-level interaction hierarchy
+$\{\Gamma^{(N)}_{\Phi}\}_{N\ge 2}$ on the natural test algebra
+satisfies \cref{ass:pair-generated}, and the construction of
+\cref{thm:D} reduces to the $\Gamma^{(2)}_{\Phi}$-module on
+$\cU_{\Gamma_{\Phi}}$.
+\end{proposition}
+
+\begin{proof}
+This is \cite[Prop.~6.13]{PrimitiveDivergence} restated: the
+pair-generated identity \eqref{eq:pair-generated-recall} forces
+$\Gamma^{(N)}_{\Phi}=0$ for every $N\ge 3$, by comparing with
+the full subset inversion \eqref{eq:gamma-N-cumulant-recall}.
+The reduction is then \cref{thm:D}.
+\end{proof}
+
+\subsection{Coalescing and sticky flows: formal construction}\label{sec:bench-sticky}
+
+The Le Jan--Raimond flows~\cite{LeJanRaimond2004} provide
+nonclassical examples in which the construction is \emph{formal}:
+the two-point dynamics produce diagonal-supported energy measures
+on $\R^{2}$, and the exact coefficients depend on the
+$|S|$-point generator/domain convention.
+
+\begin{proposition}[Sticky/coalescing flow: conditional formal energy module]\label{prop:sticky-formal}
+Let $\Phi$ be a Le Jan--Raimond sticky or coalescing flow on
+$\R$ in the sense of~\cite{LeJanRaimond2004}, with one-point
+semigroup $\{P_{t}^{(1)}\}$ generated by
+$L^{(1)}=\tfrac{1}{2}\partial_{x}^{2}$ on a smooth one-particle
+test class, and with a two-point generator $L^{(2)}$ on a
+chosen $C^{2}$-type function class equipped with a Le
+Jan--Raimond diagonal/boundary-condition convention. Suppose
+that, under this convention:
+\begin{itemize}
+\item[$(\mathrm a)$] the two-point product defect
+\[
+  \mathfrak D^{(2)}(f,g)(x,y)
+  \;=\;L^{(2)}(f\otimes g)(x,y)-(L^{(1)}f)(x)g(y)-f(x)(L^{(1)}g)(y)
+\]
+is realized in the diagonal-supported regime as a distribution
+on $\R^{2}$ of the form
+\[
+  \mathfrak D^{(2)}(f,g)\;=\;c_{\theta}(f'g')\,\big|_{x=y}
+  \;+\;(\text{boundary-condition-dependent corrections})
+\]
+for some coefficient $c_{\theta}$ determined by the chosen
+generator/domain convention --- the value of $c_{\theta}$ is
+not asserted here;
+\item[$(\mathrm b)$] under that convention, $L^{(2)}$ is a
+self-adjoint operator on its domain in $L^{2}$.
+\end{itemize}
+Then $\Gamma^{(2)}_{\Phi}:=\tfrac{1}{2}\mathfrak D^{(2)}$
+defines a positive symmetric bilinear form on the natural
+product test algebra, the energy form
+$\cE^{\Phi}(F,G):=\E[\Gamma^{(2)}_{\Phi}(F,G)]$ is closable by
+the standard correspondence between symmetric Markov generators
+and closable Dirichlet forms (\cite[Ch.~1]{FukushimaOshimaTakeda}),
+and \cref{thm:A,thm:B} apply formally to produce an energy
+module $\cU_{\Gamma_{\Phi}}$, an operator derivative $D^{\Phi}$,
+and a divergence $\delta^{\Phi}$. Whether \cref{thm:C} applies
+depends on whether \cref{ass:Linf-module} holds in the chosen
+domain convention; this is not asserted here. The exact
+normalization of the diagonal-supported energy measure ---
+in particular the coefficient $c_{\theta}$ --- remains tied to
+the chosen $|S|$-point generator/domain convention and is not
+pinned down in this paper.
+\end{proposition}
+
+\begin{proof}
+Under hypothesis $(\mathrm a)$,
+$\Gamma^{(2)}_{\Phi}=\tfrac{1}{2}\mathfrak D^{(2)}$ is the
+carr\'e-du-champ in the normalization of
+\eqref{eq:gamma-twopoint-recall}; symmetry on the natural
+product test algebra is symmetry of $\mathfrak D^{(2)}$ in
+$(f,g)$, and positivity is the positivity of the
+carr\'e-du-champ / Dirichlet form associated with the chosen
+symmetric Markov generator $L^{(2)}$ under the stated sign
+convention --- not a freestanding sign claim on $L^{(2)}$ itself.
+Closability of $\cE^{\Phi}$ under $(\mathrm b)$ is the standard
+symmetric-Markov-to-Dirichlet-form correspondence cited in the
+statement. Feeding these inputs into \cref{thm:A,thm:B} yields
+the formal $\cU_{\Gamma_{\Phi}}$, $D^{\Phi}$, $\delta^{\Phi}$
+asserted.
+\end{proof}
+
+\begin{equation}\label{eq:gamma-twopoint-recall}
+  \Gamma^{(2)}_{\Phi}(f,g)(x,y)
+  \;=\;\tfrac{1}{2}\mathfrak D^{(2)}_{\Phi}(f,g)(x,y),
+\end{equation}
+the carr\'e-du-champ normalization of \cite[\S 5]{PrimitiveDivergence}.
+
+\begin{theorem}[E. Classical benchmarks]\label{thm:E}
+The construction of \cref{thm:A,thm:B,thm:C,thm:D} recovers, on
+the indicated test algebras:
+\begin{enumerate}
+\item[$(\mathrm 1)$] the Wiener Malliavin pair $(D^{W},\delta^{W})$
+with $\Lleib_{D^{W}}\equiv 0$ (\cref{prop:wiener-recovery});
+\item[$(\mathrm 2)$] the Poisson difference pair $(D^{P},\delta^{P})$
+with quadratic Leibniz defect
+\eqref{eq:leibniz-poisson-recovered} (\cref{prop:poisson-recovery});
+\item[$(\mathrm 3)$] for pair-generated diffusion systems, the
+$\Gamma^{(2)}$-only construction
+(\cref{prop:pairgen-diffusion});
+\item[$(\mathrm 4)$] for Le Jan--Raimond coalescing/sticky
+flows~\cite{LeJanRaimond2004}, a formal energy module and
+operator derivative pair, with diagonal-supported energy
+measures and exact coefficients tied to the chosen
+$|S|$-point generator/domain convention
+(\cref{prop:sticky-formal}).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+$(\mathrm 1)$ is \cref{prop:wiener-recovery}; $(\mathrm 2)$ is
+\cref{prop:poisson-recovery}; $(\mathrm 3)$ is
+\cref{prop:pairgen-diffusion}; $(\mathrm 4)$ is
+\cref{prop:sticky-formal}.
+\end{proof}
+
+\begin{remark}[Optional fractional Laplacian benchmark]\label{rem:fractional}
+The construction also applies to the fractional Laplacian
+$L=-(-\Delta)^{\alpha/2}$ on $\R^{d}$, $\alpha\in(0,2)$. The
+carr\'e-du-champ \cite[Eq.~(5.7)]{PrimitiveDivergence} is the
+nonlocal energy
+\[
+  \Gamma_{\alpha}(F,F)(x)
+  \;=\;c_{d,\alpha}\int_{\R^{d}}\frac{(F(x+h)-F(x))^{2}}{|h|^{d+\alpha}}\,dh,
+\]
+and the construction of \cref{thm:A,thm:B} produces the
+fractional Sobolev space $H^{\alpha/2}$ as the energy module.
+The Leibniz defect is nonzero in the controlled regime of
+\cref{thm:C-controlled}, with the bound depending on
+$\alpha$. A Bakry--\'Emery account is in
+preparation~\cite{FontesFracBE}.
+\end{remark}
+
+%==============================================================
+\section{Nonclassical-noise implications}\label{sec:nonclassical}
+%==============================================================
+
+We close with the implications for nonclassical noises, paying
+attention to the conditional structure of the construction.
+
+\subsection{Black noise cannot supply additive first-chaos seeds}\label{sec:nonclassical-no-seed}
+
+The seed-collapse theorem of \cite[Thm.~5.6]{PrimitiveDivergence}
+forbids centered interval-additive deterministic seeds over a
+black noise. The construction of the present paper bypasses
+this obstruction by not using such seeds: the input is the
+positive bilinear form $\Gamma^{(2)}$, not a first-chaos
+increment. The role of the seed-collapse theorem in the present
+framing is therefore negative-only: it removes one of the two
+candidate inputs.
+
+\subsection{Compatible \texorpdfstring{$\Gamma$}{Gamma}-hierarchy: the construction goes through}\label{sec:nonclassical-yes}
+
+\begin{theorem}[Construction over $\cN$ with compatible hierarchy]\label{thm:N-construction}
+Suppose $\cN=(\cF_{s,t})$ is a noise (classical or black), $\cA$
+is a noise-compatible test algebra in the sense of
+\cref{sec:setup-noise}, and $\{\Gamma^{(N)}_{\cN}\}_{N\ge 2}$ is
+a hierarchy on $\cA$ satisfying \cref{ass:hierarchy} (whose
+$N=2$ part includes the matrix-positivity and form-closability
+of \cref{ass:gamma2}). Then:
+\begin{enumerate}
+\item[$(\mathrm i)$] the energy module $\cU_{\Gamma_{\cN}}$,
+operator derivative $\dN=\overline{D_{0}}$, and primitive
+divergence $\divN=\dN^{*}$ exist as closed densely-defined
+operators, and satisfy the integration-by-parts
+identity~\eqref{eq:IBP};
+\item[$(\mathrm{ii})$] the Leibniz defect $\Lleib_{\dN}$ of
+\cref{def:leibniz} is well-defined as a $\cU_{\Gamma_{\cN}}$-valued
+bilinear map by \cref{thm:C}, using the built-in
+$L^{\infty}$-action of \cref{ass:Linf-module}. It is
+identified --- as the zero map by \cref{thm:C-zero}, or as the
+Riesz representative of \cref{thm:C-controlled} --- only under
+the further regime assumption: either
+\cref{ass:differentiation} (differentiation identity) or
+\cref{ass:bounded-functional} (bounded-functional domination).
+Without one of those, the integration-by-parts pair
+$(\dN,\divN)$ exists but the algebraic structure of
+$\Lleib_{\dN}$ is not specified by this construction.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+$(\mathrm i)$ is the assembly of \cref{thm:A,thm:B} on the
+noise-compatible test algebra: \cref{ass:hierarchy} contains
+the $N=2$ axioms of \cref{ass:gamma2} (matrix positivity and
+form closability), so \cref{thm:A,thm:B} apply directly. The
+interval/tensor compatibility \textsc{(Tens)} of
+\cref{ass:hierarchy} ensures that the hierarchy respects the
+noise factorization and that the construction reduces correctly
+under interval restriction: if $F\in\cA_{s,t}$, then
+$\dN F\in\cU_{\Gamma_{\cN}}^{[s,t]}$, the energy submodule built
+from the restriction of $\Gamma^{(2)}_{\cN}$ to
+$\cA_{s,t}\times\cA_{s,t}$.
+
+$(\mathrm{ii})$ is \cref{thm:C}: the Leibniz defect is
+well-defined under \cref{ass:gamma2} alone (via the built-in
+$L^{\infty}$-action of \cref{ass:Linf-module}), and identified
+under one of
+\cref{ass:differentiation,ass:bounded-functional}.
+\end{proof}
+
+\subsection{If no compatible hierarchy exists, that is the obstruction}\label{sec:nonclassical-obstruction}
+
+The construction is conditional on the seed data. If a black
+noise $\cN$ does not admit a matrix-positive, weighted-matrix-positive, form-closable
+$\Gamma^{(2)}_{\cN}$ on a sufficiently rich test algebra over
+$\cN$, the obstruction is at that level: it is the absence of
+an intrinsic carr\'e-du-champ seed on the noise algebra. This
+is the real structural obstruction for the operator-derivative
+program over a nonclassical noise, and it is the sharpened
+form of the question pushed to
+\cite[Prog.~7.1]{PrimitiveDivergence}.
+
+The present paper does not resolve the seed-existence question.
+What it does do is reduce the operator-derivative construction
+to that question. After the reduction, the only remaining
+problem is to construct or to exclude a matrix-positive,
+form-closable $\Gamma^{(2)}_{\cN}$ on the algebra of $\cN$.
+
+\begin{remark}[A working stratification of cases]\label{rem:stratification}
+Three cases stratify the situation:
+\begin{enumerate}
+\item[$(\mathrm a)$] $\cN$ admits a compatible hierarchy, and
+\cref{thm:N-construction} applies. Examples: classical Wiener
+and Poisson noises (\cref{prop:wiener-recovery,prop:poisson-recovery});
+formally, the Le Jan--Raimond sticky/coalescing flows
+(\cref{prop:sticky-formal}); conjecturally, a class of
+intermediate nonclassical noises generated by structures with
+genuine higher product-defect content.
+\item[$(\mathrm b)$] $\cN$ admits a hierarchy whose bilinear
+member is matrix-positive but \emph{not} form-closable in the
+sense of \textsc{(FormClos)} of \cref{ass:gamma2}. The Hilbert
+module of one-forms is built but the operator derivative does
+not close. This is the closure-failure regime that the trilogy
+\cite{EnergyFirst,FCDC,BidegreeAtlas} encountered horizontally
+inside classical IBM noise; the dual closures of
+\cite{FCDC,BidegreeAtlas} provide an alternative. The vertical
+analogue --- closure failure on a noise that is itself
+nonclassical --- is open.
+\item[$(\mathrm c)$] $\cN$ admits no compatible hierarchy at
+all. The construction does not apply, and the obstruction is
+the genuine structural obstruction.
+\end{enumerate}
+The present paper handles $(\mathrm a)$ in full and identifies
+$(\mathrm b)$ and $(\mathrm c)$ as the locations of the next
+open problems.
+\end{remark}
+
+%==============================================================
+\section{Discussion}\label{sec:discussion}
+%==============================================================
+
+\subsection{What is constructed}\label{sec:disc-constructed}
+
+Under \cref{ass:gamma2} on a unital test algebra $\cA$ dense in
+$L^{2}(\Omega)$ (no noise structure required), this paper
+constructs:
+\begin{enumerate}
+\item[$(\mathrm i)$] the Hilbert module of one-forms
+$\cU_{\Gamma}=\overline{\cA\otimes\cA/\mathcal N_{0}}$
+(\cref{def:energy-module}), as a bounded
+$L^{\infty}(\Omega)$-bimodule with the consistency
+identity~\eqref{eq:Linf-consistency};
+\item[$(\mathrm{ii})$] the operator derivative seed
+$D_{0}F:=[F\otimes 1]\colon\cA\to\cU_{\Gamma}$ (\cref{def:D0})
+with isometry~\eqref{eq:D0-isometry};
+\item[$(\mathrm{iii})$] the closed operator derivative
+$\dN=\overline{D_{0}}$ (\cref{def:DN}), via the
+form-closability-implies-operator-closability
+\cref{lem:formclos-implies-opclos};
+\item[$(\mathrm{iv})$] the closed primitive divergence
+$\divN=\dN^{*}\colon\cU_{\Gamma}\to L^{2}(\Omega)$ (\cref{def:DN}),
+with the explicit
+domain~\eqref{eq:Dom-divN};
+\item[$(\mathrm v)$] the integration-by-parts identity
+\eqref{eq:IBP} (\cref{thm:B});
+\item[$(\mathrm{vi})$] the Leibniz defect $\Lleib_{D}$ as a
+$\cU_{\Gamma}$-valued bilinear map, vanishing or
+Riesz-represented (\cref{thm:C}).
+\end{enumerate}
+Adding \cref{ass:hierarchy} on the higher members:
+\begin{enumerate}
+\item[$(\mathrm{vii})$] the higher hierarchy
+$\{\Gamma^{(N)}\}_{N\ge 3}$ as compatibility data, with the
+pair-generated truncation criterion (\cref{thm:D});
+\item[$(\mathrm{viii})$] the recovery of the Wiener Malliavin
+pair, the Poisson difference pair, the pair-generated diffusion
+truncation, and a formal construction over Le Jan--Raimond
+sticky/coalescing flows (\cref{thm:E}).
+\end{enumerate}
+
+\subsection{What is conditional}\label{sec:disc-conditional}
+
+The construction is conditional on the existence and
+compatibility of $\{\Gamma^{(N)}\}_{N\ge 2}$ on $\cA$ in the
+sense of \cref{ass:gamma2,ass:hierarchy}. The
+load-bearing assumptions are:
+\begin{enumerate}
+\item[$(\mathrm L_{1})$] \textsc{(MatPos)} of \cref{ass:gamma2}
+(matrix positivity of $\Gamma^{(2)}$) --- needed for
+positivity of the semi-inner product on
+$\Omega^{1}_{\mathrm{alg}}$ (\cref{lem:semi-IP-PSD}) and for
+the seed isometry~\eqref{eq:D0-isometry};
+\item[$(\mathrm L_{2})$] \textsc{(WMatPos)} of \cref{ass:gamma2}
+(weighted matrix positivity, against multipliers $Q\in\cA_{+}$) ---
+needed for the bounded $L^{\infty}(\Omega)$-bimodule action of
+\cref{lem:bimodule-bounded}, via the choice
+$Q=\|W\|_{\infty}^{2}-W^{2}\ge 0$, and hence for the consistency
+identity~\eqref{eq:Linf-consistency};
+\item[$(\mathrm L_{3})$] \textsc{(FormClos)} of \cref{ass:gamma2}
+(form-closability of $\cE(F,G)=\E[\Gamma(F,G)]$) --- needed for
+the operator-closability of $D_{0}$ in
+\cref{lem:formclos-implies-opclos} and hence for the closure
+$\dN=\overline{D_{0}}$ in \cref{def:DN};
+\item[$(\mathrm L_{4})$] subset compatibility \textsc{(Sub)}
+of \cref{ass:hierarchy} --- needed for the hierarchy to behave
+correctly under the recursion
+\eqref{eq:gamma-N-cumulant-recall} and to support the
+pair-generated truncation \cref{ass:pair-generated};
+\item[$(\mathrm L_{5})$] interval/tensor compatibility
+\textsc{(Tens)} of \cref{ass:hierarchy} --- needed only when a
+noise structure is invoked (Theorems~D and E$(\mathrm 4)$,
+\cref{thm:N-construction}).
+\end{enumerate}
+The differentiation identity \cref{ass:differentiation} is
+load-bearing only for the zero-defect statement of
+\cref{thm:C-zero}; the controlled-defect alternative
+\cref{thm:C-controlled} uses the bounded-functional
+hypothesis \cref{ass:bounded-functional}, which is weaker than
+a pointwise quadratic $\Gamma^{(2)}$-bound and is the natural
+condition for Riesz representation in $\cU_{\Gamma}$.
+\Cref{ass:pair-generated} is load-bearing only for the
+truncation conclusion of \cref{thm:D} and is verified in
+classical examples by \cref{prop:wiener-recovery,prop:pairgen-diffusion}.
+
+\subsection{What remains open}\label{sec:disc-open}
+
+The construction of \cref{thm:A,thm:B} reduces the
+operator-derivative existence question over a noise $\cN$ to
+the existence of a matrix-positive, weighted-matrix-positive, form-closable
+$\Gamma^{(2)}_{\cN}$ on a sufficiently rich test algebra
+$\cA\subset L^{\infty}(\cN)\cap L^{2}(\cN)$. The next open
+problems, in increasing order of difficulty:
+\begin{enumerate}
+\item[$(\mathrm O_{1})$] For the Le Jan--Raimond sticky and
+coalescing flows~\cite{LeJanRaimond2004}: pin down the
+$|S|$-point generator/domain convention so that
+\cref{prop:sticky-formal} becomes a non-formal construction
+of a matrix-positive, weighted-matrix-positive, form-closable $\Gamma^{(2)}_{\Phi}$.
+\item[$(\mathrm O_{2})$] For nonclassical noises constructed
+from extended random structures (Brownian web~\cite{SSS2017,Tsirelson2004},
+critical percolation noise~\cite{SchrammSmirnov2011}):
+construct or exclude a matrix-positive, weighted-matrix-positive, form-closable
+$\Gamma^{(2)}_{\cN}$ on a sufficiently rich test algebra over
+$\cN$. This is the sharpened form of the open problem
+\cite[Prog.~7.1]{PrimitiveDivergence}, after the reduction
+carried out by \cref{thm:A,thm:B}.
+\item[$(\mathrm O_{3})$] Formulate and prove a higher Leibniz
+defect formalism --- multilinear bounded maps on $\cA^{N}$
+encoding $\Gamma^{(N)}_{\cN}$ for $N\ge 3$ in
+$(\dN,\divN)$-language --- thereby making the higher hierarchy
+operator-level visible
+(\cref{rem:hierarchy-as-data}).
+\end{enumerate}
+
+The conclusion is straightforward. The operator-derivative
+construction does not require a first-chaos generator. Given a
+matrix-positive, weighted-matrix-positive, form-closable $\Gamma^{(2)}$-seed on a unital
+test algebra dense in $L^{2}$, the calculus follows. What is
+needed for a nonclassical noise is not a new
+operator-derivative principle but the seed; once the seed is in
+place, the operator derivative and divergence are built
+intrinsically.
+
+%==============================================================
+\begin{thebibliography}{99}
+
+\bibitem{PrimitiveDivergence}
+R.~Fontes,
+\emph{Primitive Divergence and Carr\'e-du-Champ Seeds over Nonclassical Noises}.
+Preprint.
+
+\bibitem{EnergyFirst}
+R.~Fontes,
+\emph{Energy-First Stochastic Calculus: Iterated Brownian Motion as a Test Case}.
+Preprint.
+
+\bibitem{FCDC}
+R.~Fontes,
+\emph{First-Chaos Dual Closure of the IBM It\^o Correction}.
+Preprint.
+
+\bibitem{BidegreeAtlas}
+R.~Fontes,
+\emph{A Bidegree Atlas for the IBM It\^o Correction}.
+Preprint.
+
+\bibitem{BakryGentilLedoux}
+D.~Bakry, I.~Gentil and M.~Ledoux,
+\emph{Analysis and Geometry of Markov Diffusion Operators}.
+Grundlehren der mathematischen Wissenschaften, vol.~348, Springer, 2014.
+
+\bibitem{CiprianiSauvageot}
+F.~Cipriani and J.-L.~Sauvageot,
+Derivations as square roots of Dirichlet forms.
+\emph{J. Funct. Anal.} \textbf{201} (2003), no.~1, 78--120.
+
+\bibitem{FukushimaOshimaTakeda}
+M.~Fukushima, Y.~\=Oshima and M.~Takeda,
+\emph{Dirichlet Forms and Symmetric Markov Processes}, 2nd revised ed.
+de Gruyter Studies in Mathematics, vol.~19, de Gruyter, Berlin, 2011.
+
+\bibitem{LastPenrose}
+G.~Last and M.~Penrose,
+\emph{Lectures on the Poisson Process}.
+Cambridge University Press, Cambridge, 2017.
+
+\bibitem{LeJanRaimond2004}
+Y.~Le~Jan and O.~Raimond,
+Flows, coalescence and noise.
+\emph{Ann. Probab.} \textbf{32} (2004), no.~2A, 1247--1315.
+
+\bibitem{Nualart}
+D.~Nualart,
+\emph{The Malliavin Calculus and Related Topics}, 2nd ed.
+Springer, Berlin, 2006.
+
+\bibitem{Rudin-FA}
+W.~Rudin,
+\emph{Functional Analysis}, 2nd ed.
+McGraw-Hill, New York, 1991.
+
+\bibitem{SchrammSmirnov2011}
+O.~Schramm and S.~Smirnov,
+On the scaling limits of planar percolation.
+\emph{Ann. Probab.} \textbf{39} (2011), no.~5, 1768--1814.
+
+\bibitem{Schmuedgen}
+K.~Schm\"udgen,
+\emph{Unbounded Self-adjoint Operators on Hilbert Space}.
+Graduate Texts in Mathematics, vol.~265, Springer, Dordrecht, 2012.
+
+\bibitem{SSS2017}
+E.~Schertzer, R.~Sun and J.~M.~Swart,
+The Brownian web, the Brownian net, and their universality.
+In: \emph{Advances in Disordered Systems, Random Processes and Some Applications}, P.~Contucci and C.~Giardin\`a (eds.), Cambridge University Press, 2017.
+
+\bibitem{Tsirelson2004}
+B.~Tsirelson,
+Nonclassical stochastic flows and continuous products.
+\emph{Probab. Surv.} \textbf{1} (2004), 173--298.
+
+\bibitem{FontesFracBE}
+R.~Fontes,
+\emph{Fractional Laplacian carr\'e-du-champ and covariance kernels: a Bakry--\'Emery view}.
+In preparation.
+
+\end{thebibliography}
+
+\end{document}

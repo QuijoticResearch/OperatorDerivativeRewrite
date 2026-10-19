@@ -1,0 +1,1035 @@
+\documentclass[11pt,reqno]{amsart}
+
+%==============================================================
+% Iterated Brownian motion does not preserve the
+% Laguerre--Polya class
+%==============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{hyperref}
+\emergencystretch=3em
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newenvironment{keyresult}{\par\medskip\noindent}{\par\medskip}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\E}{\mathbb E}
+\newcommand{\LP}{\mathcal{LP}}
+\DeclareMathOperator{\sgn}{sgn}
+
+\title[Nonmonotone Laguerre--P\'olya dynamics for the quartic flow]{Nonmonotone
+Laguerre--P\'olya Dynamics for the Quartic de Bruijn Flow}
+\author{Ramiro Fontes}
+\address{Quijotic Research}
+\email{ramirofontes@gmail.com}
+\urladdr{www.quijotic.com}
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+The growing multiplier $e^{tu^2}$, the backward heat operator
+$e^{-t\partial_x^2}$, preserves the Laguerre--P\'olya class (P\'olya), the
+analytic engine of de Bruijn--Newman theory. We study its order-four analogue,
+the biharmonic pseudo-process semigroup $e^{t\partial_x^4}$, from the signed,
+two-sided iterated-Brownian constructions of Funaki and Allouba--Zheng, multiplier
+$e^{tu^4}$, and show it does not preserve the
+class. The counterexample is a quartic polynomial,
+\[
+   e^{t\partial_x^4}\,(x^2-1)(x^2-4)\;=\;x^4-5x^2+(4+24t),
+\]
+real-rooted for $t\le 3/32$ and not after; the failure is sharp in the order,
+the multiplier $e^{tu^{2m}}$ preserving $\LP$ if and only if $m=1$. At the de
+Bruijn--Newman boundary the same lifting reaches the Riemann $\Xi$-function: at
+$t=8$, $H_{8,4}=e^{8\partial_x^4}H_0$ violates the Laguerre inequality at an
+explicit point, so $H_{8,4}\notin\LP$, a theorem certified in validated
+interval arithmetic. Since $H_0=\tfrac18\Xi(\cdot/2)$ lies in $\LP$ if and only if
+the Riemann hypothesis holds, the theorem itself is the membership failure
+$H_{8,4}\notin\LP$; should RH hold, so that $\Xi$ began in $\LP$, it says the
+quartic flow has carried $\Xi$ out of the class. A two-saddle steepest-descent estimate, carried into the
+complex plane and closed by Rouch\'e, then real-roots $H_{t,4}$ on a window
+$|z|\le X_t\to\infty$ that widens past the saddle band, unlike the order-two flow,
+which once inside $\LP$ stays. Left open is the far field $|x|>X_t$, and with it
+global return $\Lambda(4)<\infty$; the window theorem is asymptotic in $t$.
+\end{abstract}
+
+\maketitle
+
+%==============================================================
+\section{Introduction}\label{sec:intro}
+%==============================================================
+
+A real entire function belongs to the \emph{Laguerre--P\'olya class} $\LP$ if
+it is a locally uniform limit of real polynomials with only real zeros;
+equivalently, by the Hadamard factorization,
+$f(x)=cx^m e^{-\gamma x^2+\beta x}\prod_k(1-x/x_k)e^{x/x_k}$ with
+$\gamma\ge0$, $c,\beta,x_k\in\R$ and $\sum x_k^{-2}<\infty$~\cite{Levin}.
+
+The closure property at the root of de Bruijn--Newman theory is invariance under
+the backward heat operator. On the cosine-transform side, multiplication
+by the growing factor $e^{tu^2}$, equivalently the operator $e^{-t\partial_x^2}$
+on $x$, preserves the class:
+\begin{equation}\label{eq:heatLP}
+   f\in\LP\ \Longrightarrow\ e^{-t\partial_x^2}f\in\LP\qquad(t\ge0).
+\end{equation}
+This is P\'olya's theorem on universal factors~\cite{Polya13,Polya27,deBruijn},
+the multiplier $e^{tu^2}=e^{\gamma w}$ ($w=u^2$, $\gamma=t\ge0$) being of the
+admissible form. The sign is essential. The forward Gaussian convolution
+$G_\tau f(x)=\E\,f(x+\sqrt{2\tau}\,N)=e^{+\tau\partial_x^2}f$, multiplier
+$e^{-\tau u^2}$, does not preserve $\LP$: already
+$G_\tau(x^2-1)=x^2-1+2\tau$ has non-real zeros for $\tau>\tfrac12$. (Forward
+convolution is variation-diminishing in Schoenberg's sense, but a
+variation-diminishing map can still send real zeros into the complex plane, as
+this example does; reduction of sign changes is not preservation of
+real-rootedness.) It is the backward direction $e^{tu^2}$ that lets de Bruijn and
+Newman run the flow $H_t(x)=\int_0^\infty e^{tu^2}\Phi(u)\cos(xu)\,du$ on the
+Riemann $\Xi$-function ($\partial_t H_t=-\partial_x^2H_t$) and speak of a
+sharp real-rooting threshold $\Lambda$, the de Bruijn--Newman
+constant~\cite{deBruijn,Newman,RodgersTao}.
+
+The de Bruijn multiplier is one of a one-parameter family: for $\alpha>0$,
+\begin{equation}\label{eq:family}
+   H_{t,\alpha}(x)=\int_0^\infty e^{tu^\alpha}\Phi(u)\cos(xu)\,du,
+\end{equation}
+with $\alpha=2$ the flow above. Among the symbols $e^{\lambda u^\alpha}$ only
+$\alpha=2$ is a P\'olya universal
+factor, so only there does the flow preserve $\LP$; and for $\alpha\notin2\N$ the
+corner of $u^\alpha$ at the origin destroys the same entire-function setting, so
+the even exponents are the natural real-rooting deformations. The first even exponent past the classical
+$\alpha=2$ is $\alpha=4$, the quartic, biharmonic, iterated-Brownian flow: the
+first nonclassical member of the family, and the subject of this paper.
+
+On $x$ this is the signed biharmonic pseudo-process semigroup
+\begin{equation}\label{eq:P4}
+   P_t=e^{t\partial_x^4}\qquad(\text{multiplier }e^{tu^4}),
+\end{equation}
+the order-four object of the signed, two-sided Brownian-time and
+iterated-Brownian constructions of Funaki and Burdzy~\cite{Funaki,Burdzy} (a
+Brownian motion run along an independent Brownian clock). The kernel of $P_t$ is
+signed, so $P_t$ is a pseudo-process semigroup, not the Markov semigroup of a
+process (\S\ref{sec:ibm}). The Gaussian-clock identity
+$e^{tu^4}=\E_{s\sim N(0,2t)}\,e^{su^2}$ realizes $P_t$ as the de Bruijn flow
+$e^{su^2}$ run for a Gaussian-random, two-sided time $s$, the sense in which it
+iterates the Brownian and the de Bruijn evolutions. Allouba and Zheng~\cite{AlloubaZheng}
+placed these Brownian-time processes on a rigorous footing and identified the
+half-derivative generator and the biharmonic operator behind them; Nane and
+Baeumer--Meerschaert--Nane developed the associated higher-order and fractional
+Cauchy problems~\cite{Nane,BMN}; the signed transition kernels go back to Krylov
+and Hochberg~\cite{Krylov,Hochberg}.
+
+One may ask whether the preservation \eqref{eq:heatLP} survives the
+passage to order four: does $P_t$ preserve $\LP$? The de Bruijn flow $e^{tu^2}$
+($m=1$) does; the order-four flow $e^{tu^4}$ ($m=2$) is the next case, and the
+canonical probabilistic evolution past Brownian motion. De
+Bruijn~\cite{deBruijn} proved that the heat flow brings the Riemann
+$\Xi$-function, of order one and maximal type, into the Laguerre--P\'olya
+class in finite time, $H_t\in\LP$ for $t\ge\tfrac12$. The iterate behaves
+oppositely: $H_{t,4}\notin\LP$ at some finite $t$ (certified at $t=8$,
+\S\ref{sec:zeta}), and if RH holds, so that $\Xi$ began inside $\LP$, this is the
+iterate carrying $\Xi$ out of the class. A two-saddle steepest-descent estimate,
+taken into the complex plane and closed by Rouch\'e, then proves that for large
+$t$ the flow re-roots on a window that widens without bound: heat enters $\LP$
+and stays, the order-four flow leaves and re-roots on the bulk, the far field
+the one piece still open.
+
+\subsection*{Results}
+Four results. $P_t$ fails to preserve $\LP$ already on a polynomial; the failure
+is sharp in the order; the boundary flow $H_{t,4}$ leaves $\LP$ at finite time;
+and for large $t$ it re-roots on a window that widens past the saddle band. The
+first:
+
+\begin{keyresult}
+\textbf{Theorem~\ref{thm:witness}.} $P_t\,(x^2-1)(x^2-4)=x^4-5x^2+(4+24t)$ has
+four non-real zeros, two conjugate pairs, for every $t>3/32$. Hence $P_t$ does
+not preserve $\LP$.
+\end{keyresult}
+
+On a polynomial $P_t=e^{t\partial_x^4}$ is the finite sum $f+tf''''+\cdots$, so
+the constant floor $24t$ fills the dip of $f$ and lifts the pair off the axis at
+$t=3/32$ (\S\ref{sec:nonpres}).
+
+For polynomials, non-preservation also follows from the Borcea--Br\"and\'en
+classification of linear preservers of real-rootedness~\cite{BorceaBranden} with
+the P\'olya--Schur theory~\cite{PolyaSchur}: a diagonal symbol preserves
+real-rootedness only if it is itself of Laguerre--P\'olya type, and
+$z\mapsto e^{tz^4}$ is not. We give instead the explicit counterexample, a probabilistic
+reading of the evolution (Proposition~\ref{prop:mixture}, Lemma~\ref{lem:mixture}),
+a pointwise Laguerre certificate (Lemma~\ref{lem:laguerre}), and the application
+to $\Xi$ in \S\ref{sec:zeta}.
+
+By the identity $e^{tu^4}=\E_{s\sim N(0,2t)}e^{su^2}$, the evolution is the de
+Bruijn flow run over a two-sided Gaussian time (\S\ref{sec:ibm}),
+\begin{equation}\label{eq:mix0}
+   P_tf=\E_{s\sim N(0,2t)}\bigl[\,e^{-s\partial_x^2}f\,\bigr];
+\end{equation}
+a convex combination of two $\LP$ functions can leave the class, already
+$\tfrac12[(x-1)(x-2)+(x-3)(x-4)]=x^2-5x+7$ (Lemma~\ref{lem:mixture}). The analogy
+is imperfect, since for $s<0$ the summand $e^{|s|\partial_x^2}f$ is the forward
+Gaussian and need not lie in $\LP$; the proof is instead the expansion
+$P_tf=f+tf''''+\cdots$ on the counterexample, with $f'^2-ff''<0$ at a point
+(Lemma~\ref{lem:laguerre}). By Theorem~\ref{thm:order}, $e^{tu^{2m}}$ preserves
+$\LP$ if and only if $m=1$.
+
+Funaki's representation makes $P_t$ act on the Riemann $\Xi$-function as the
+quartic de Bruijn--Newman flow
+$H_{t,4}(x)=\int_0^\infty e^{tu^4}\Phi(u)\cos(xu)\,du=P_tH_0(x)$, where
+$H_0(x)=\tfrac18\Xi(x/2)$ is the classical Fourier representation of the
+completed zeta function~\cite{Titchmarsh,Polya27}. Section~\ref{sec:zeta} shows it first leaves the class:
+
+\begin{keyresult}
+\textbf{Proposition~\ref{prop:leave}.} $H_{8,4}\notin\LP$: validated interval
+arithmetic (Arb) gives $L_1[H_{8,4}](63.2083)\in[-2.3966,-2.3965]\times10^{-20}<0$.
+If RH holds, so that $\Xi$ began in $\LP$, this says the quartic flow has carried
+$\Xi$ out of the class.
+\end{keyresult}
+
+A two-saddle analysis then shows it real-rooted on the bulk of the spectrum:
+
+\begin{keyresult}
+\textbf{Theorem~\ref{thm:window}.} For all large $t$, every zero of $H_{t,4}$ in
+the disk $|z|\le X_t$, $X_t\to\infty$, is real and simple. The proof is a uniform
+two-saddle approximation of $H_{t,4}$ closed by a Rouch\'e argument.
+\end{keyresult}
+
+Whether the real-rooting reaches every height, not only the widening window, is
+the question left open:
+
+\begin{keyresult}
+\textbf{Conjecture~\ref{conj:finite}.} $\Lambda(4)<\infty$: for large $t$,
+$H_{t,4}$ is real-rooted at every height; equivalently, the exit is transient.
+\end{keyresult}
+
+The departure is arithmetic. The pair $\{2\gamma_4,2\gamma_5\}$ brackets a
+positive hump of $H_0$, and the order-four floor there, the value of $H_0''''$
+at the midpoint, is negative, so the iterated-Brownian average pushes the hump
+beneath the axis and the two real zeros collide into a conjugate pair, a
+Laguerre violation certified at a single point. Unusually close zero pairs are the input the order-four floor converts into a
+non-real pair (in the extreme, the anomalously close pairs of the Lehmer
+phenomenon~\cite{CSV} at large heights); the only arithmetic datum used here is
+the location of
+two low-lying critical-line zeros. Re-entry, by contrast, is not arithmetic at
+all: for large $t$ the
+weight $e^{tu^4}$ concentrates the transform at an interior saddle
+$u_*\approx\tfrac14\log t$, overwriting the arithmetic of $H_0$ with a
+Gaussian-damped cosine whose leading term is real-rooted. Theorem~\ref{thm:window}
+turns this into real-rooting on the widening window $|z|\le X_t$; carrying the
+same two-saddle dominance into the far field $|x|>X_t$ is the one estimate we
+leave open. The same is conjectured at every even order $2m\ge4$
+(\S\ref{sec:zeta}), with order six
+supplying supporting computations: the multiplier $e^{tu^{2m}}$ is non-universal,
+the flow $H_{t,2m}$ fails the Laguerre certificate at finite $t$ (certified for
+$m=2$, computed for $m=3$), and the kernel forces the saddle to detach, so it is
+conjecturally regained, $\Lambda(2m)<\infty$. This would make order two
+the unique even order under which $\LP$ is forward-invariant, a sharpening of
+Theorem~\ref{thm:order} from preservation to permanence.
+
+The $\Xi$-function enters only as the boundary example where \eqref{eq:heatLP}
+meets the de Bruijn--Newman theory; the inputs are classical.
+
+%==============================================================
+\section{The biharmonic/iterated-Brownian semigroup}\label{sec:ibm}
+%==============================================================
+
+We construct $P_t$ as the semigroup of Funaki's iterated Brownian motion, with
+multiplier $e^{tu^4}$, and rewrite it as the de Bruijn flow averaged over a
+Gaussian time.
+
+\subsection{Construction}
+Let $W$ and $V$ be independent two-sided standard Brownian motions. Funaki's
+iterated Brownian motion is
+\begin{equation}\label{eq:Z}
+   Z_s=\begin{cases} W(V_s), & V_s\ge0,\\[2pt]
+   i\,\widetilde W(-V_s), & V_s<0,\end{cases}
+\end{equation}
+with $\widetilde W$ a third independent Brownian motion and the imaginary
+branch read through the entire extension of the test
+function~\cite{Funaki}. For $f$ entire of order at most one and maximal type,
+the expectation $\E\,f(x+Z_{8t})$ converges, and conditioning on the clock $V$
+gives, for any such $f$,
+\begin{equation}\label{eq:cond}
+   \E\bigl[f(x+Z_{8t})\mid V\bigr]=G_{V_{8t}/2}\,f(x),
+   \qquad \tfrac12 V_{8t}\sim N(0,2t),
+\end{equation}
+where $G_\tau f(x)=\E\,f(x+\sqrt{2\tau}\,N)$ for $\tau\ge0$ is the heat (Gauss)
+average and $G_\tau$ for $\tau<0$ is its backward continuation, the de
+Bruijn--Newman multiplier $e^{-\tau u^2}$ on the Fourier side. The verification
+of \eqref{eq:cond} is the one-line Gaussian computation: for $\sigma\ge0$,
+$\E\,f(x+W_\sigma)=G_{\sigma/2}f(x)$, and for the imaginary branch
+$\E\,f(x+i\widetilde W_\sigma)=G_{-\sigma/2}f(x)$ since the odd part of $f$
+averages out over the symmetric Gaussian and $\E\cosh(\widetilde W_\sigma u)
+=e^{\sigma u^2/2}$.
+
+\begin{proposition}[The biharmonic semigroup]\label{prop:semigroup}
+For $f$ entire of order $\le1$, maximal type, with $\int_0^\infty
+e^{tu^4}|\hat f(u)|\,du<\infty$,
+\[
+   P_tf(x):=\E\,f(x+Z_{8t})
+\]
+is well defined, solves $\partial_tP_tf=\partial_x^4P_tf$ with $P_0f=f$, and
+acts on the Fourier side by the multiplier $e^{tu^4}$. In particular
+$(P_t)_{t\ge0}$ is a semigroup, $P_t=e^{t\partial_x^4}$, and on polynomials
+$P_tf=\sum_{k\ge0}\frac{t^k}{k!}f^{(4k)}$, a finite sum.
+\end{proposition}
+
+\begin{proof}
+By \eqref{eq:cond} and the tower property, $P_tf=\E_V[G_{V_{8t}/2}f]$. Writing
+$s=-\tfrac12V_{8t}\sim N(0,2t)$, so that $H_sf:=e^{-s\partial_x^2}f=G_{-s}f=
+G_{V_{8t}/2}f$ has Fourier multiplier $e^{su^2}$, gives
+$P_tf=\E_{s\sim N(0,2t)}[H_sf]$. Averaging the multiplier
+over the centered Gaussian clock,
+$\E_{s\sim N(0,2t)}e^{su^2}=e^{(2t)u^4/2}=e^{tu^4}$, the Gaussian moment
+generating function evaluated at $u^2$; thus $\widehat{P_tf}=e^{tu^4}\hat f$,
+which the hypothesis $\int e^{tu^4}|\hat f|<\infty$ makes a well-defined entire
+function, and which gives the semigroup property and the equation
+$\partial_tP_tf=\partial_x^4P_tf$. For a polynomial $f$ the $L^1$ hypothesis is
+inapplicable but unnecessary: $P_tf(x)=\E\,f(x+Z_{8t})=\sum_{n\ge0}
+\tfrac{1}{n!}\E[Z_{8t}^n]\,f^{(n)}(x)$ is a finite sum, and the moments of the
+iterated Brownian motion are $\E Z_{8t}^{2}=0$ and, conditioning on the clock,
+$\E Z_{8t}^{4}=\E\bigl[3V_{8t}^2\bigr]=3\,\E V_{8t}^2=24t$, more generally
+$\E Z_{8t}^{4k}=\tfrac{(4k)!}{k!}t^k$ and $\E Z_{8t}^{n}=0$ for $4\nmid n$: these
+are the moments of $e^{t\partial_x^4}$, so the two definitions agree term by
+term and $P_tf=\sum_{k\ge0}\tfrac{t^k}{k!}f^{(4k)}$.
+\end{proof}
+
+\begin{remark}[The two-sided clock and the memory term]\label{rem:allouba}
+The two-sided clock with the imaginary branch is what produces the clean
+generator $\partial_x^4$. The one-sided Brownian-time process $W(|V_s|)$ of
+Allouba and Zheng~\cite{AlloubaZheng} solves instead
+$\partial_su=\tfrac{\Delta f}{\sqrt{8\pi s}}+\tfrac18\Delta^2u$, carrying a
+memory term in the initial data; its clock $|V_s|$ has the law of the inverse
+half-stable subordinator, whence the time-fractional reading~\cite{BMN}. Funaki's
+two-sided construction deletes the memory term and leaves the pure
+biharmonic evolution~\cite{Funaki}, which is the semigroup
+Proposition~\ref{prop:semigroup} describes and the one whose action on $\LP$
+we study.
+\end{remark}
+
+\subsection{The mixture representation}
+The content of \eqref{eq:cond}, restated, is the representation that drives
+everything below.
+
+\begin{proposition}[Two-sided heat-clock representation]\label{prop:mixture}
+For admissible $f$,
+\begin{equation}\label{eq:mix}
+   P_tf=\E_{s\sim N(0,2t)}\bigl[\,H_sf\,\bigr],
+   \qquad H_sf:=e^{-s\partial_x^2}f\ \ (\text{multiplier }e^{su^2}),
+\end{equation}
+an average over the centered Gaussian clock of the de Bruijn--Newman
+heat flows $H_s$, taken over both signs of the time $s$.
+\end{proposition}
+
+The clock is two-sided. For $s\ge0$ the de Bruijn flow
+$H_s=e^{-s\partial_x^2}$ preserves $\LP$; for $s<0$ it is the forward Gaussian
+$e^{|s|\partial_x^2}$, which does not (\S\ref{sec:intro}). The iterated-Brownian
+evolution averages the preserving direction against the destroying one, so the
+average need not be real-rooted. We treat \eqref{eq:mix} as the heuristic behind
+the non-preservation; the rigorous statement is the counterexample of
+\S\ref{sec:nonpres}, where for a polynomial this average is the finite sum
+$P_tf=f+tf''''+\cdots$.
+
+%==============================================================
+\section{Non-preservation}\label{sec:nonpres}
+%==============================================================
+
+We prove $P_t$ does not preserve $\LP$: the class is not convex, an explicit
+quartic leaves it under $P_t$, a single Laguerre inequality certifies the
+departure, and order two is the only even order that preserves $\LP$.
+
+\subsection{Nonconvexity of the Laguerre--P\'olya class}
+
+\begin{lemma}\label{lem:mixture}
+The Laguerre--P\'olya class is not convex. Indeed
+\[
+   \tfrac12\bigl[(x-1)(x-2)+(x-3)(x-4)\bigr]=x^2-5x+7
+\]
+is an average of two real-rooted polynomials and has discriminant
+$25-28=-3<0$.
+\end{lemma}
+
+The two summands are real-rooted with disjoint zero sets ($\{1,2\}$ and
+$\{3,4\}$); the average splits the difference and the four real zeros collapse
+to a conjugate pair near $x=5/2$. A convex combination of $\LP$ functions can
+thus leave $\LP$. This is the heuristic for what follows, with the discrete
+average replaced by the Gaussian clock \eqref{eq:mix}; but the analogy is
+imperfect: that clock also runs the forward-heat direction $s<0$, whose
+summands need not be real-rooted, so we establish non-preservation directly,
+by the counterexample of \S\ref{sec:nonpres}, rather than from convexity failure.
+
+\subsection{The counterexample}
+
+\begin{theorem}[Iterated Brownian motion does not preserve $\LP$]
+\label{thm:witness}
+Let $f(x)=(x^2-1)(x^2-4)\in\LP$. Then
+\begin{equation}\label{eq:witness}
+   P_tf(x)=x^4-5x^2+(4+24t),
+\end{equation}
+which lies in $\LP$ for $0\le t\le 3/32$ and has four non-real zeros,
+two conjugate pairs, for every $t>3/32$. Consequently the iterated-Brownian
+semigroup $P_t=e^{t\partial_x^4}$ does not preserve the Laguerre--P\'olya
+class.
+\end{theorem}
+
+\begin{proof}
+Since $f$ is a polynomial of degree four, $f''''\equiv24$ and $f^{(8)}\equiv0$,
+so by Proposition~\ref{prop:semigroup} $P_tf=f+tf''''=x^4-5x^2+4+24t$. Writing
+$y=x^2$, the zeros solve $y^2-5y+(4+24t)=0$, $y=\tfrac12\bigl(5\pm\sqrt{9-96t}
+\bigr)$. For $t\le3/32$ the discriminant $9-96t\ge0$ and both roots $y$ are
+real and positive (their sum $5$ and product $4+24t$ are positive), giving four
+real $x$; the four zeros are real and $P_tf\in\LP$. At $t=3/32$ the two $y$-roots
+coincide at $5/2$, so $x=\pm\sqrt{5/2}$ are double real zeros. For $t>3/32$ the
+discriminant is negative, $y$ is a conjugate pair, and the four zeros
+$x=\pm\sqrt{y}$ form two conjugate pairs off the real axis. Thus $P_tf\notin\LP$
+for $t>3/32$.
+\end{proof}
+
+The threshold is the floor-versus-dip balance in transparent form. On
+$[1,2]$ the function $f$ dips to its minimum
+$f(\sqrt{5/2})=(\tfrac52-1)(\tfrac52-4)=-\tfrac94$; the evolution raises every
+value by the constant $24t$; and the dip is erased, the pair $\{1,2\}$ (and
+its mirror $\{-1,-2\}$) lifted, when $24t=\tfrac94$, i.e.
+$t=\tfrac{9}{96}=\tfrac3{32}$.
+
+\subsection{The certificate}
+The constant floor $f''''=24$ is the one simplification here; the general
+obstruction is detected pointwise. For $f\in\LP$ the Laguerre
+inequality holds at every real point, and a single violation certifies
+non-membership, with no zero-tracking and no contour bookkeeping.
+
+\begin{lemma}[Laguerre certificate]\label{lem:laguerre}
+Let $f\in\LP$ be real. Then
+\[
+   L_1[f](x):=f'(x)^2-f(x)\,f''(x)\ \ge\ 0\qquad(x\in\R).
+\]
+Hence if $L_1[g](x_0)<0$ at a single real $x_0$, then $g\notin\LP$. In
+particular any real entire $g$ with a strict positive local minimum
+($g(x_0)>0$, $g'(x_0)=0$, $g''(x_0)>0$) fails to lie in $\LP$.
+\end{lemma}
+
+\begin{proof}
+By the Hadamard factorization of the class,
+$f(x)=cx^m e^{-\gamma x^2+\beta x}\prod_k(1-x/x_k)e^{x/x_k}$ with $\gamma\ge0$
+and real zeros $x_k$, $\sum_k x_k^{-2}<\infty$. Off the zeros,
+\[
+   \Bigl(\frac{f'}{f}\Bigr)'=\frac{f''f-(f')^2}{f^2}
+   =-2\gamma-\frac{m}{x^2}-\sum_k\frac1{(x-x_k)^2}\ \le\ 0,
+\]
+so $L_1[f]=(f')^2-f''f\ge0$ off and, by continuity, on all of $\R$. The
+contrapositive is the certificate; at a positive local minimum
+$L_1[g]=-g\,g''<0$. The inequality is classical
+(Laguerre; see Csordas--Varga~\cite{CsordasVarga}).
+\end{proof}
+
+A filled dip is a Laguerre violation: when the order-four floor raises the
+enclosed minimum of a real pair above zero, that minimum is a strict positive
+local minimum of $P_tf$, and $L_1[P_tf]<0$ there. To prove
+$P_tf\notin\LP$ one evaluates $P_tf,(P_tf)',(P_tf)''$ at a single point. This
+reproves the counterexample at once: for $t>3/32$ the polynomial $x^4-5x^2+(4+24t)$
+has positive local minima at $x=\pm\sqrt{5/2}$, with value $24t-\tfrac94>0$ and
+second derivative $20>0$. Being pointwise, the certificate removes any need to follow
+a configuration through a range of times: each $t$ is certified on its
+own, at its own point.
+
+\begin{remark}[The floor and its sign]\label{rem:floor}
+The evolution raises $f$ by the floor $P_tf-f=t\,f''''+O(t^2)$
+(Proposition~\ref{prop:semigroup}), positive where $f''''>0$. Once the floor clears the dip depth, a real pair of
+$f$ bounding a dip lifts: its enclosed minimum crosses zero from below, and
+the certificate fires. This is one-sided: where $f''''<0$ the floor deepens the
+dip and the pair stays real.
+Non-preservation is therefore the existence of a pair over a positive
+floor, which the counterexample exhibits with $f''''\equiv24$; the $\Xi$-corollary of
+\S\ref{sec:zeta} asks which pairs sit over a positive floor, and whether the
+certificate fires along the flow for arbitrarily large $t$.
+\end{remark}
+
+\subsection{Sharpness in the order}
+Among the growing-multiplier orders $e^{tu^{2m}}$, the order-two de Bruijn flow
+alone preserves the class.
+
+\begin{theorem}[Order dichotomy]\label{thm:order}
+For integer $m\ge1$ let $P_{m,t}:=e^{(-1)^m t\partial_x^{2m}}$, the operator with
+cosine-transform multiplier $e^{tu^{2m}}$ (since $\partial_x^{2m}\cos(xu)=(-1)^m
+u^{2m}\cos(xu)$): thus $P_{1,t}=e^{-t\partial_x^2}$ is the backward de
+Bruijn--Newman flow, $P_{2,t}=e^{+t\partial_x^4}$ the iterated-Brownian flow,
+$P_{3,t}=e^{-t\partial_x^6}$, and so on. Then $P_{m,t}$ preserves $\LP$ for all
+$t\ge0$ if and only if $m=1$. (The forward Gaussian $e^{+t\partial_x^2}$,
+multiplier $e^{-tu^2}$, is the opposite sign and does not preserve $\LP$;
+\S\ref{sec:intro}.)
+\end{theorem}
+
+\begin{proof}
+For $m=1$, $P_{1,t}=e^{-t\partial_x^2}$ preserves $\LP$ by P\'olya's
+theorem~\eqref{eq:heatLP}. For each $m\ge2$ an explicit polynomial counterexample fails:
+the real-rooted
+\[
+   f_m(x)=(-1)^m\prod_{j=1}^m\bigl(x^2-j^2\bigr)\in\LP,
+\]
+of degree $2m$ with leading coefficient $(-1)^m$, has $f_m^{(2m)}=(-1)^m(2m)!$
+and $f_m^{(2m+2)}=0$, so $P_{m,t}f_m=f_m+(-1)^m t\,f_m^{(2m)}=f_m+(2m)!\,t$, a
+constant upward shift. On $(1,2)$, $f_m<0$ with $f_m(1)=f_m(2)=0$. Since
+$f_m<0$ and $x>0$ there, $f_m'=2x\,f_m\sum_{j=1}^m(x^2-j^2)^{-1}$ has the
+opposite sign to the sum, which decreases strictly from $+\infty$ to $-\infty$
+across $(1,2)$ (each summand has derivative $-2x(x^2-j^2)^{-2}<0$); so $f_m'$ has
+a single simple zero $a$, passing from $-$ to $+$. Thus $a$ is a strict minimum,
+with $f_m(a)<0$ and $f_m''(a)>0$. For $t$ with $(2m)!\,t>-f_m(a)$, the shift
+$g:=P_{m,t}f_m=f_m+(2m)!\,t$ has $g(a)>0$, $g'(a)=0$, and $g''(a)=f_m''(a)>0$: a
+strict positive local minimum. Hence $L_1[g](a)=-g(a)\,g''(a)<0$, and
+$g\notin\LP$ by Lemma~\ref{lem:laguerre}. For $m=2$ this is the counterexample
+$f_2=(x^2-1)(x^2-4)$ of \eqref{eq:witness}.
+\end{proof}
+
+\begin{remark}[Universal factors]\label{rem:universal}
+By P\'olya's characterization of universal
+factors~\cite{Polya27,deBruijn}, a cosine-transform multiplier preserves the
+real-rootedness of every admissible transform iff, as a function of $w=u^2$, it
+has the form $e^{\gamma w}\prod_k(1+\delta_kw)$ with $\gamma,\delta_k\ge0$. Being
+entire and zero-free, $e^{tw^m}$ can carry no $(1+\delta_kw)$ factor, so it must
+equal $e^{\gamma w}$, forcing $m=1$. The counterexamples $f_m$ make the failure for
+$m\ge2$ concrete, and the order-four case is realized arithmetically by
+$H_{8,4}\notin\LP$ (\S\ref{sec:zeta}).
+\end{remark}
+
+Thus among the growing-multiplier orders only one, the order-two de Bruijn
+flow, preserves real-rootedness, and the first failure is the order-four
+iterated-Brownian case. Probabilistically, the Gaussian kernel of Brownian
+motion is variation-diminishing (Schoenberg) while the signed biharmonic kernel
+of the iterated process is not, so the latter can create real sign changes and,
+off the line, non-real zeros; but variation-diminishing is weaker than
+$\LP$-preservation: the Gaussian convolution itself does not preserve $\LP$
+(\S\ref{sec:intro}), and the order-two preserver is the backward de Bruijn
+direction.
+
+%==============================================================
+\section{The iterated-Brownian flow of the Riemann \texorpdfstring{$\Xi$}{Xi}}
+\label{sec:zeta}
+%==============================================================
+
+We turn to the boundary example. With $\Phi$ the Riemann kernel
+\[
+   \Phi(u)=\sum_{n\ge1}\bigl(2\pi^2n^4e^{9u}-3\pi n^2e^{5u}\bigr)e^{-\pi
+   n^2e^{4u}},\qquad
+   H_0(x)=\int_0^\infty\Phi(u)\cos(xu)\,du=\tfrac18\Xi(x/2),
+\]
+the transform $\hat H_0=\Phi$ decays doubly exponentially, so $H_0$ is
+admissible and Proposition~\ref{prop:semigroup} applies: the
+iterated-Brownian evolution of $H_0$ is the quartic de Bruijn--Newman flow
+\[
+   H_{t,4}(x)=P_tH_0(x)=\int_0^\infty e^{tu^4}\Phi(u)\cos(xu)\,du .
+\]
+Define $\Lambda(4)=\inf\{T:H_{t,4}\in\LP\ \text{for all }t\ge T\}$, the quartic
+analogue of the de Bruijn--Newman constant.
+
+Since $H_0=\tfrac18\Xi(\cdot/2)$ lies in $\LP$ if and only if the Riemann
+hypothesis holds, $H_{t,4}\notin\LP$ at a given $t$ stands on its own, while the
+flow's carrying $\Xi$ out of the class, which presumes $\Xi$ began
+inside, needs RH.
+
+Under the flow the zeros move. Differentiating $H_{t,4}(x_j(t))=0$ in $t$ and
+using $\partial_tH_{t,4}=\partial_x^4H_{t,4}$ gives the velocity law
+\[
+   \dot x_j(t)=-\,\frac{\partial_x^4H_{t,4}}{\partial_xH_{t,4}}\bigg|_{x=x_j(t)},
+\]
+so a simple real zero slides along the axis while $\partial_xH_{t,4}\neq0$ and
+leaves it only through a collision $\partial_xH_{t,4}=0$ of two real zeros. The
+pointwise certificate detects a completed collision; the saddle analysis below is
+an asymptotic evaluation of this transport, locating where the motion forces a
+collision and where it cannot.
+
+\subsection{Non-membership at \texorpdfstring{$t=8$}{t=8}}
+The certificate (Lemma~\ref{lem:laguerre}) applies to the quartic flow directly:
+$H_{t,4}\notin\LP$ as soon as one real $x$ has $L_1[H_{t,4}](x)<0$, that is
+$H_{t,4}(x)\,H_{t,4}''(x)>H_{t,4}'(x)^2$, three convergent cosine integrals (the
+derivatives bring down $-u\sin xu$ and $-u^2\cos xu$ under the same weight
+$e^{tu^4}\Phi$) at a point of one's choosing. The floor that moves the relevant
+value is, by Proposition~\ref{prop:semigroup},
+\begin{equation}\label{eq:floor4}
+   H_{t,4}(x)=H_0(x)+t\,H_0''''(x)+O(t^2),\qquad
+   H_0''''(x)=\int_0^\infty u^4\,\Phi(u)\cos(xu)\,du,
+\end{equation}
+the value at $x$ of a cosine transform of the same arithmetic family as $H_0$.
+
+The first close critical-line pair already yields a certificate, of the
+negative-maximum kind. The zeros of $H_0=\tfrac18\Xi(\cdot/2)$ at
+$x=2\gamma_4=60.85$ and $x=2\gamma_5=65.87$ bound not a dip but a positive
+hump: $H_0>0$ on $(60.85,65.87)$, with $H_0(x_*)\approx2.1\times10^{-9}$ at the
+midpoint $x_*\approx63.3$. There the floor is negative, $H_0''''(x_*)<0$, so the
+flow lowers the hump; the two real zeros approach, collide near $t\approx6.5$,
+and the hump sinks beneath the axis. For $t$ just past, $x_*$ is a strict
+negative local maximum of $H_{t,4}$ ($H_{t,4}(x_*)<0$, $H_{t,4}'(x_*)=0$,
+$H_{t,4}''(x_*)<0$), so $L_1[H_{t,4}](x_*)=-H_{t,4}(x_*)\,H_{t,4}''(x_*)<0$. The Laguerre certificate at a single point makes this rigorous.
+
+\begin{proposition}[Certified: $H_{8,4}\notin\LP$]\label{prop:leave}
+At $t=8$ and $x_0=63.2083$, validated interval arithmetic (Arb) gives
+\[
+   L_1[H_{8,4}](x_0)\in[-2.3966,\,-2.3965]\times10^{-20}\subset(-\infty,0),
+\]
+with $H_{8,4}(x_0)\in[-1.6415,-1.6414]\times10^{-10}$ and
+$H_{8,4}''(x_0)\in[-1.4601,-1.4600]\times10^{-10}$ both negative and
+$|H_{8,4}'(x_0)|<3.7\times10^{-13}$. Hence $H_{8,4}\notin\LP$.
+\end{proposition}
+
+\begin{proof}
+$L_1[H_{8,4}](x_0)=H_{8,4}'(x_0)^2-H_{8,4}(x_0)\,H_{8,4}''(x_0)$ is a finite
+combination of the integrals $\int_0^\infty u^k e^{8u^4}\Phi(u)\,\{\cos,\sin\}(x_0u)\,du$,
+$k=0,1,2$. Split each at $U=1.6$.
+
+For $u\ge U$ the kernel $\Phi(u)=\sum_{n\ge1}(2\pi^2n^4e^{9u}-3\pi n^2e^{5u})
+e^{-\pi n^2e^{4u}}$ satisfies $\Phi(u)\le2.1\,\pi^2e^{9u-\pi e^{4u}}$ (its $n=1$
+term, the constant absorbing the rest), so with $|\{\cos,\sin\}|\le1$ and
+$u^k\le u^2$ each tail integrand is dominated by
+\[
+   M(u):=2.1\,\pi^2u^2\,e^{\,8u^4+9u-\pi e^{4u}}.
+\]
+Here $\dfrac{d}{du}\log M=\dfrac2u+32u^3+9-4\pi e^{4u}\le-1$ on $[U,\infty)$, the
+double-exponential term dominating, so $M(u)\le M(U)\,e^{-(u-U)}$ and
+\[
+   \Bigl|\int_U^\infty\Bigr|\ \le\ \int_U^\infty M(u)\,du\ \le\ M(U)\ <\ 10^{-700}.
+\]
+Truncating the series at $n=15$ omits a remainder below $10^{-300}$ on $[0,U]$, by
+the same $e^{-\pi n^2e^{4u}}$ decay. Both lie far below the enclosure width
+$\sim10^{-24}$ and cannot affect the sign.
+
+On $[0,U]$ the integrals are enclosed by Arb's verified
+integrator~\cite{Johansson}, whose ball arithmetic with adaptive certified Gauss
+quadrature captures the ten orders of oscillatory cancellation in $H\sim10^{-10}$
+that a direct interval sum cannot; a bespoke interval Taylor-model integrator,
+integrating $\cos(x_0u)$ and $\sin(x_0u)$ against an interval-polynomial envelope
+analytically, returns the same enclosure. Working precision, panel counts, and
+validation against a closed-form Gaussian integral are in the accompanying
+repository.\footnote{\url{https://github.com/QuijoticResearch/quartic-de-bruijn-flow}}
+\end{proof}
+
+The certificate is self-contained: it uses no information about the zeros of
+$\zeta$, which serve only to locate where to evaluate. The polynomial counterexample of
+\S\ref{sec:nonpres} makes the bare non-preservation rigorous for the abstract
+semigroup; Proposition~\ref{prop:leave} makes it rigorous for the arithmetic
+function $\Xi$ itself, through the drowning of an unusually close low-lying pair.
+
+\subsection{Real-rooting on an expanding window}
+The departure is transient on the bulk of the spectrum, and this is a theorem.
+While $t$ is small the weight $e^{tu^4}\Phi(u)$ is maximal at the endpoint $u=0$,
+so $H_{t,4}$ is a quartic-heat smoothing of $H_0$; near $t\approx150$ the
+maximizing saddle of $g(u)=tu^4+\log\Phi(u)$ detaches to
+$u_*(t)\approx\tfrac14\log t$, and steepest descent gives
+\begin{equation}\label{eq:bulkcos}
+   H_{t,4}(x)=e^{C}\sqrt{2\pi}\,w\,e^{-x^2/2|g''|}\cos(xu_*)\,(1+o(1)),
+   \qquad C=g(u_*),\ w=|g''|^{-1/2},
+\end{equation}
+a Gaussian-damped cosine, real-rooted to leading order, with $|g''|=4tu_*^2(4u_*-3)$.
+
+Carried into the complex plane, this controls the zeros. For $z=x+iy$ split
+$\cos(zu)=\tfrac12(e^{izu}+e^{-izu})$, so $H_{t,4}(z)=I_+(z)+I_-(z)$ with
+$I_\pm(z)=\tfrac12\int_0^\infty e^{g(u)\pm izu}\,du$. Each $I_\pm$ has a saddle at
+$u_\pm=u_*\pm iz/|g''|+\cdots$, of value $S_\pm(z)=C\pm izu_*-z^2/2|g''|$, and the
+two together give the leading profile
+\begin{equation}\label{eq:Acomplex}
+   A_t(z)=\sqrt{2\pi}\,w\,e^{C}e^{-z^2/2|g''|}\cos(zu_*),
+\end{equation}
+the continuation of \eqref{eq:bulkcos} to complex $z$. Off the real axis the two
+saddles are of unequal size: $\Re(S_--S_+)=2yu_*$, so for $y\neq0$ one dominates
+the other by $e^{2|y|u_*}$, and $A_t$ vanishes only at the real points
+$z_m=(m+\tfrac12)\pi/u_*$, all simple.
+
+\begin{lemma}[Saddle scale]\label{lem:scale}
+As $t\to\infty$, $u_*\sim\tfrac14\log t$ and $|g^{(k)}(u_*)|\sim 4^k\,tu_*^3$ for
+each fixed $k\ge2$. Hence $\rho:=|g'''(u_*)|/|g''|^{3/2}\asymp(tu_*^3)^{-1/2}\to0$
+and $|g^{(k)}(u_*)|/|g''|^{k/2}\asymp(tu_*^3)^{1-k/2}$.
+\end{lemma}
+
+\begin{lemma}[Uniform two-saddle approximation]\label{lem:twosaddle}
+Let $K_t\to\infty$ with $K_t^3\rho\to0$, where $\rho=|g'''(u_*)|/|g''|^{3/2}$. For
+all large $t$ and all $z$ with $|z|\le K_t\sqrt{|g''|}$,
+\[
+   H_{t,4}(z)=A_t(z)+R_t(z),\qquad
+   |R_t(z)|\le \eta_t\cdot\tfrac12\sqrt{2\pi}\,w\,e^{C}e^{-\Re z^2/2|g''|}e^{|y|u_*},
+\]
+the last factor being the modulus of the dominant saddle, with
+$\eta_t\le c\,K_t^3\rho+e^{-cC}\to0$ for an absolute constant $c$.
+\end{lemma}
+
+\begin{proof}
+By symmetry it suffices to treat $I_+(z)=\tfrac12\int_0^\infty e^{\psi(u)}\,du$,
+$\psi(u)=g(u)+izu$, the term $I_-$ being identical under $z\mapsto-z$; write
+$w=|g''|^{-1/2}$. The saddle $u_+$ solves $\psi'(u_+)=g'(u_+)+iz=0$; from
+$g'(u_*)=0$, $g''(u_*)=-|g''|$ and the implicit function theorem,
+$u_+=u_*+iz/|g''|+O(|g'''|\,|z|^2/|g''|^3)$, so for $|z|\le K_t\sqrt{|g''|}$,
+\[
+   |u_+-u_*|\le K_t w\,(1+o(1))=o(1),
+\]
+since $K_t w=K_t/\sqrt{|g''|}\asymp(tu_*^3)^{-5/12}\to0$; thus $u_+$ stays in the
+strip $|\Im u|<\pi/8$ where $g$ is analytic, with value
+$\psi(u_+)=S_+(z)=C+izu_*-z^2/2|g''|+O(K_t^3\rho)$. Deform $[0,\infty)$ to the
+steepest-descent contour through $u_+$ and split at the neighbourhood
+$N=\{\,|u-u_*|\le 2K_t w\,\}$, which contains $u_+$ with margin $K_t w$.
+
+(i) On $N$ the quadratic part of $\psi$ about $u_+$ integrates to
+$\tfrac12\sqrt{2\pi/|g''|}\,e^{S_+}=\tfrac12\sqrt{2\pi}\,w\,e^{S_+}$, as
+$\psi''(u_+)=g''(u_+)=-|g''|(1+o(1))$.
+
+(ii) The cubic and higher terms give the relative error. The scalings of
+Lemma~\ref{lem:scale} hold throughout $N$ (where $e^{4u}$ varies by $1+o(1)$), so
+with $\xi=K_t/(tu_*^3)^{1/2}\to0$,
+\[
+   \sum_{k\ge3}\frac{|g^{(k)}|}{k!}\,(2K_t w)^k
+   \;\le\; c\sum_{k\ge3}\frac{tu_*^3}{k!}\,(2\xi)^k\;\le\; c'\,K_t^3\rho,
+\]
+the factors $4^k$ in $|g^{(k)}|$ and in $|g''|^{k/2}$ cancelling; the classical
+steepest-descent remainder~\cite{Olver} then bounds the contribution of $N$ by
+$\tfrac12\sqrt{2\pi}\,w\,e^{\Re S_+}\bigl(1+O(K_t^3\rho)\bigr)$.
+
+(iii) The lower endpoint contributes the boundary term
+$\tfrac12 e^{g(0)}/|g'(0)+iz|\le\tfrac12 e^{g(0)}/\max(1,|z|)$, which against
+$\tfrac12\sqrt{2\pi}\,w\,e^{\Re S_+}$ is $O(e^{g(0)-C})=O(e^{-cC})$ as
+$C\to\infty$.
+
+(iv) Off $N$ one has $\Re\psi\le\Re S_+-\tfrac12 K_t^2$ next to the saddle, and
+$g(u)\to-\infty$ as $u\to\infty$ by the double-exponential decay
+$\Phi(u)\le e^{-\pi e^{4u}}$; this part is $O\!\bigl(e^{\Re S_+}e^{-K_t^2/2}\bigr)$,
+negligible against (i).
+
+Summing (i)--(iv), $I_+(z)=\tfrac12\sqrt{2\pi}\,w\,e^{S_+(z)}\bigl(1+O(K_t^3\rho)
++O(e^{-cC})\bigr)$ uniformly for $|z|\le K_t\sqrt{|g''|}$, and likewise $I_-$ with
+$S_-$. Their sum is $A_t(z)$ of \eqref{eq:Acomplex}, so
+$|R_t(z)|=|I_++I_--A_t|\le\eta_t\cdot\tfrac12\sqrt{2\pi}\,w\,e^{C-\Re z^2/2|g''|}
+e^{|y|u_*}$, the dominant saddle, with $\eta_t\le c\,K_t^3\rho+e^{-cC}\to0$ (an
+absolute $c$ absorbing the two-saddle sum).
+\end{proof}
+
+\begin{theorem}[Real-rooting on an expanding window]\label{thm:window}
+For every $\gamma<\tfrac23$ there is $t_0(\gamma)$ such that, for $t\ge t_0(\gamma)$,
+every zero of $H_{t,4}$ in the disk $|z|\le|g''|^{\gamma}$ is real and simple. This
+window exceeds the zero band $\sqrt{|g''|}$ once $\gamma>\tfrac12$, and widens
+without bound.
+\end{theorem}
+
+\begin{proof}
+Fix $\gamma<\tfrac23$ and set $X_t=|g''|^{\gamma}$. Apply Lemma~\ref{lem:twosaddle}
+with $K_t=2|g''|^{\gamma-1/2}=2X_t/\sqrt{|g''|}$: since $\rho\asymp|g''|^{-1/2}$
+(Lemma~\ref{lem:scale}), $K_t^3\rho\asymp|g''|^{3\gamma-2}\to0$ as $\gamma<\tfrac23$,
+so $\eta_t\to0$. In the strip
+$|y|\le h:=\pi/2u_*$ tile by $R_m=[m\pi/u_*,(m+1)\pi/u_*]\times[-h,h]$, each
+holding one zero $z_m=(m+\tfrac12)\pi/u_*$ of $A_t$. A rectangle $R_m$ that meets
+the disk $|z|\le X_t$ extends at most $2\pi/u_*$ beyond it, hence lies in
+$|z|\le X_t+2\pi/u_*<K_t\sqrt{|g''|}$ for large $t$, where Lemma~\ref{lem:twosaddle}
+holds. On $\partial R_m$ one has $|\cos(zu_*)|\ge1$:
+the vertical sides give $|\cos(zu_*)|=\cosh(yu_*)\ge1$, the horizontal sides
+$|\cos(zu_*)|\ge\sinh(hu_*)=\sinh(\tfrac\pi2)>1$. With $|y|\le h$ so
+$e^{|y|u_*}\le e^{\pi/2}$,
+\[
+   \frac{|R_t(z)|}{|A_t(z)|}\le \eta_t\,\frac{\tfrac12 e^{|y|u_*}}{|\cos(zu_*)|}
+   \le \tfrac12 e^{\pi/2}\,\eta_t<1
+\]
+for large $t$, so by Rouch\'e $H_{t,4}$ has a single zero in each $R_m$; as
+$H_{t,4}$ is real on $\R$ and $R_m$ is symmetric across it, that zero is real and
+simple. For $|y|\ge h$, $|\cos(zu_*)|\ge\sinh(|y|u_*)$ gives
+$|R_t|/|A_t|\le\eta_t/(1-e^{-\pi})<1$, so $H_{t,4}=A_t+R_t$ does not vanish there.
+Hence every zero of $H_{t,4}$ in $|z|\le X_t$ is one of the real $z_m$.
+\end{proof}
+
+So the return is a theorem on a window that widens with $t$: the dip-born pairs
+of \S\ref{sec:zeta} cannot survive inside $|z|\le X_t$ once $t$ is large. A scan
+to $1.2\sqrt{|g''|}$ at $t=200,300,600,10^3,3\times10^3$, well inside that window,
+finds no Laguerre certificate of either kind, corroborating
+Theorem~\ref{thm:window}; and the measured $|R_t|/|A_t|$ on the rectangle
+boundaries runs from $0.07$ at $t=200$ to $4\times10^{-3}$ at $t=2000$, tracking
+the $\rho$ of Lemma~\ref{lem:scale}. The theorem is asymptotic: it holds once
+$\eta_t<2e^{-\pi/2}$ in Lemma~\ref{lem:twosaddle}, for $t$ beyond a threshold
+$t_0(\gamma)$ we do not make effective, as it carries the constant of the
+steepest-descent remainder~\cite{Olver}. At the band scale the margins above
+place $t_0$ near order $10^2$; below it the only certified statement is $H_{8,4}\notin\LP$ at the
+single point $t=8$ (Proposition~\ref{prop:leave}), the bad set being
+numerically present through $t\lesssim150$ (the census) and the band scan clean
+from $t=200$, none of this from the theorem.
+Tracking that constant would make $t_0(\gamma)$ effective and close the narrative gap.
+
+For $|x|>|g''|^{2/3}$ the leading Gaussian bound no longer applies, because the
+saddle moves. The saddle $u_z$ of $I_t(z)$ solves $g'(u_z)=-iz$; as $x=\Re z$
+grows it runs from $u_*$ to $\tfrac14\log(x/4\pi)+i\pi/8$, the edge of $\Phi$'s
+analyticity strip $|\Im u|<\pi/8$, with $\Re u_z\sim\tfrac14\log x\to\infty$. The
+off-axis dominance rate $2\Re u_z$ of Theorem~\ref{thm:window} therefore does not
+weaken; while $u_z$ stays inside the strip, extending the two-saddle approximation
+is a uniform steepest-descent problem, not an arithmetic one. At the edge
+$\Im u_z=\pi/8$ the saddle meets the singularity of $\Phi$ that carries the zeros
+of $\zeta$, where the smooth model and the arithmetic coincide and the remainder
+is uncontrolled. Far-field exclusion then reduces to the $\Xi$-tail having no
+off-line zeros, the lower edge of Proposition~\ref{prop:rh}.
+
+The arithmetic that makes a certificate lives near $u=0$ and is suppressed past
+detachment by $e^{g(0)-C}=e^{-C+O(1)}$, $C\to\infty$: at $t=300$ the full transform
+and its saddle-window part agree to twenty-two digits. A census finds certificates
+for $t\lesssim150$ alone (the first pair near $x\approx63$ at $t\approx8$, later
+near $x\approx104,118$ at $t\approx120$, none past $t=150$), and in the tail the
+remainder sits below $5\times10^{-2}$ of the leading amplitude at $t=300$, falling
+about a decade per decade to $\sim10^{-5}$ at $t=3\times10^5$.
+
+\begin{conjecture}[Finite quartic constant]\label{conj:finite}
+$\Lambda(4)<\infty$: $H_{t,4}\in\LP$ for all large $t$, so the set of times at
+which $H_{t,4}\notin\LP$ is bounded, comparable to the saddle-detachment scale,
+of order $10^2$ in this normalization. (If RH holds, this says the flow
+returns $\Xi$ to $\LP$ and keeps it there.)
+\end{conjecture}
+
+Theorem~\ref{thm:window} does not reach the far field, and there two readings
+stay open which the data choose between without settling: either a non-real pair
+migrates outward, staying always beyond $X_t$, so $\Lambda(4)=\infty$, or it is
+extinguished and $\Lambda(4)<\infty$. The $e^{-C}$ collapse of the arithmetic and
+the widening tail margin favour the second. What would settle it is the same
+dominance pushed past the saddle window: that the remainder $B$ stays below the
+amplitude of $A$ for $|x|>X_t$ too, for all large $t$. Because $B$ has no definite
+sign there, this is a two-sided envelope bound, not the one-sided comparison a
+sign-definite floor would permit; it is the quartic counterpart, inequality
+reversed, of the monotonicity behind de Bruijn's $\Lambda\le\tfrac12$, and the
+gap that remains.
+
+A coarse quadrature suggests that a lifted pair persists
+until a Laplace window reaches it at $t\asymp x_*^4$, holding a pair off the axis
+at every height and forcing $\Lambda(4)=\infty$; this is an artifact of an
+under-resolved saddle. The peak, of width $w\approx0.013$ at the first pair
+($(t,u_*)\approx(300,1.38)$), is stepped over by a fixed grid of spacing
+$\pi/x\approx0.05$, and the spurious value held that pair off the axis to
+$t=300$. Resolved, the pair re-coheres by $t\approx30$, and \eqref{eq:bulkcos}
+leaves no replacement past detachment. The pointwise certificate removes the
+persistence question altogether: nothing is carried through time.
+
+\begin{remark}[Heat versus iterated Brownian motion]\label{rem:consistency}
+The contrast with the order-two flow is, conjecturally, complete. De Bruijn's heat
+flow $e^{-t\partial_x^2}$ drives the zeros of $\Xi$ monotonically onto the line
+and holds them there ($H_t\in\LP$ for all $t\ge\tfrac12$). The order-four flow does not: $H_{t,4}\notin\LP$ at finite time (certified), and
+if RH holds this is an unusually close low-lying pair knocked off the axis, the
+saddle-detachment analysis suggesting that as $t$ grows the configuration
+relaxes back toward $\LP$. The input is the close pair (in the extreme, the
+Lehmer phenomenon~\cite{CSV}), and the detaching saddle is, on present evidence,
+what repairs it. Where the heat flow pushes zeros to the line and keeps them, the
+order-four flow pushes a close pair off and lets go again, provably on a widening
+window and conjecturally throughout.
+\end{remark}
+
+\begin{proposition}[Phase diagram of the bad set]\label{prop:rh}
+Let $G_4=\{t\ge0:H_{t,4}\in\LP\}$ and $B_4=[0,\infty)\setminus G_4$.
+\begin{enumerate}
+\item[(i)] $8\in B_4$ (Proposition~\ref{prop:leave}), so $B_4\neq\varnothing$.
+\item[(ii)] {\rm(upper edge)} Re-entry is $[T,\infty)\subset G_4$ for some
+$T<\infty$, with $T>8$ since $8\in B_4$; Theorem~\ref{thm:window} establishes its
+content on the widening window $|z|\le X_t$, Conjecture~\ref{conj:finite}
+throughout.
+\item[(iii)] {\rm(lower edge)} If $0\in\overline{G_4\cap(0,\infty)}$, that is some
+$t_n\downarrow0$ with $t_n\in G_4$ (a fortiori if $[0,\tau]\subset G_4$ for a
+$\tau>0$), then $H_0\in\LP$: RH holds.
+\end{enumerate}
+A proof of RH through this flow thus needs both edges, $B_4\subset[\tau,T]$ with
+$0<\tau<T<\infty$. The flow links neither to the other: $e^{t\partial_x^4}$ does
+not preserve $\LP$, so $G_4$ is not an up-set and membership at large $t$ does
+not transfer downward.
+\end{proposition}
+
+\begin{proof}
+(i) is Proposition~\ref{prop:leave}, whence $T>8$ in (ii). For (iii), $\LP$ is
+closed under locally uniform limits~\cite{Levin} and $H_{t,4}\to H_0$ uniformly
+on compacta as $t\downarrow0$ (dominated convergence,
+$e^{tu^4}\Phi\le e^{u^4}\Phi\in L^1$ for $t\le1$); so a sequence $t_n\downarrow0$
+in $G_4$ forces $H_0\in\LP$, which is RH.
+\end{proof}
+
+The edges are not symmetric, and the lower one is strictly stronger than RH:
+$H_0\in\LP$ gives only $0\in G_4$, compatible with $\inf B_4=0$ should bad times
+accumulate at $0^+$, and does not even yield $[0,\tau]\subset G_4$, since the flow
+could leave $\LP$ at once. So the dynamics reach only RH-or-more; pure RH is the
+value $0\in G_4$ at $t=0$, not a consequence of the flow. The saddle analysis
+controls the upper edge $T$; the lower edge $\tau>0$ lies in the pre-detachment
+regime, where the arithmetic is unsuppressed and the two-saddle estimate is
+silent. So $\Lambda(4)$ is a re-entry threshold, the upper edge $T$, not the de
+Bruijn--Newman constant.
+
+\subsection{The general even order}
+The exit-and-return is conjectured to be generic. For each $m\ge2$ consider the
+growing-multiplier flow $H_{t,2m}(x)=\int_0^\infty e^{tu^{2m}}\Phi(u)\cos(xu)\,du
+=P_{m,t}H_0(x)$, with $P_{m,t}=e^{(-1)^m t\partial_x^{2m}}$; its two steps have
+complementary sources. The exit is the non-universality of the multiplier:
+by Theorem~\ref{thm:order}, $e^{tu^{2m}}$ is not a universal factor for $m\ge2$,
+so $P_{m,t}$ carries some admissible $\LP$ function off the axis; for $\Xi$
+the certificate of \S\ref{sec:zeta} gives $H_{8,4}\notin\LP$, while the
+computation below indicates $H_{t,6}\notin\LP$ at finite $t$. The
+leading floor is now $H_{t,2m}=H_0+(-1)^m t\,H_0^{(2m)}+\cdots$, whose sign,
+hence which close pairs drown, depends on $m$, but in each computed case a
+drowning pair exists. The return is the arithmetic kernel, and is
+independent of $m$: against $\Phi(u)\sim e^{-\pi e^{4u}}$, the weight
+$e^{tu^{2m}-\pi e^{4u}}$ has a Laplace saddle that detaches to $u_*(t)$ for any
+growing power, and past detachment $C=tu_*^{2m}+\log\Phi(u_*)\to\infty$ suppresses
+the arithmetic by $e^{-C}$, leaving the real-rooted cosine \eqref{eq:bulkcos}.
+Leave from the multiplier, return from the kernel.
+
+Order six bears this out, and its differences from order four are instructive. The order-six flow $P_{3,t}=e^{-t\partial_x^6}$ (multiplier $e^{tu^6}$)
+has $H_{t,6}\notin\LP$ near $t\in[15,30]$, at heights $x\approx87$--$104$,
+higher than order four's $x\approx63$ since the floor $-t\,H_0^{(6)}$ carries the
+opposite sign and the $u^6$ weight favours higher frequencies, selecting
+different pairs. The certificates are of both kinds, a filled dip and a drowned
+hump. No certificate is found by $t=300$, where the full transform and its
+saddle-window part agree to twenty-six digits ($C\approx1.3\times10^4$): the
+arithmetic is suppressed not subtly but astronomically.
+
+\begin{conjecture}[Preservation only at order two]\label{conj:monotone}
+Among the growing-multiplier flows $\{P_{m,t}=e^{(-1)^m t\partial_x^{2m}}\}_{m\ge1}$,
+order two is the unique one under which the Laguerre--P\'olya class is
+forward-invariant: $P_{1,t}=e^{-t\partial_x^2}$ is de Bruijn's flow, which
+real-roots $\Xi$ and keeps it real ($H_t\in\LP$, $t\ge\tfrac12$). For every
+$m\ge2$, $H_{t,2m}\notin\LP$ at finite $t$ and $H_{t,2m}\in\LP$ for all large
+$t$, i.e.\ $\Lambda(2m)<\infty$; Conjecture~\ref{conj:finite} is the case $m=2$.
+\end{conjecture}
+
+Because the return is uniform in $m$ (the same saddle detaching
+against the same kernel), the dominance estimate of \S\ref{sec:zeta}, proved
+once, would give $\Lambda(2m)<\infty$ for all $m\ge2$ together. This would sharpen
+Theorem~\ref{thm:order} from preservation to permanence:
+conjecturally, order two is the only even order under which $\LP$ is
+forward-invariant: the only one that, once it has $\Xi$ in the class, keeps it.
+
+%==============================================================
+\section{Concluding remarks}\label{sec:concl}
+%==============================================================
+
+The dividing line is the de Bruijn direction.
+The backward heat operator $e^{-t\partial_x^2}$, the growing multiplier
+$e^{tu^2}$, keeps the Laguerre--P\'olya class invariant; this is the order-two
+case and the analytic substrate of de Bruijn--Newman theory. (Forward Gaussian
+convolution, the Brownian transition $e^{+t\partial_x^2}$, does not
+preserve the class; it is only variation-diminishing, which is weaker.) The
+order-four member (the iterated-Brownian, biharmonic semigroup
+$e^{t\partial_x^4}$ of Funaki and Allouba--Zheng) does not: the counterexample
+$(x^2-1)(x^2-4)$ leaves $\LP$ at $t=3/32$ (\S\ref{sec:nonpres}, where
+$e^{t\partial_x^4}f=f+tf''''+\cdots$ fills its dip), and Theorem~\ref{thm:order}
+shows no growing-multiplier order past two escapes this.
+
+At the de Bruijn--Newman boundary the same lifting reaches $\Xi$. An unusually
+close low-lying pair of $H_0$ ($x=2\gamma_4,2\gamma_5$) brackets a positive hump
+over a negative order-four floor; the iterated-Brownian average drowns it near
+$t\approx6.5$, and at $t=8$ this is a certified Laguerre violation,
+$H_{8,4}\notin\LP$ (Proposition~\ref{prop:leave}); if RH holds, so that $\Xi$
+began in $\LP$, the flow has carried it out. The exit is transient on the bulk:
+once $t$ passes the saddle-detachment scale, $e^{tu^4}$ concentrates the
+transform at $u_*\approx\tfrac14\log t$, and a uniform two-saddle approximation
+closed by Rouch\'e proves $H_{t,4}$ real-rooted on a window $|z|\le X_t\to\infty$
+(Theorem~\ref{thm:window}). Global return, $\Lambda(4)<\infty$
+(Conjecture~\ref{conj:finite}), needs the same dominance carried into the far
+field $|x|>X_t$. The two
+flows then sit on opposite sides of a divide, though not the one first expected:
+de Bruijn's heat flow real-roots the line monotonically and keeps it real,
+with threshold in the proven range $0\le\Lambda\le0.22$
+(Rodgers--Tao~\cite{RodgersTao}, Polymath15~\cite{Polymath15}); its order-four
+counterpart is, conjecturally, non-monotone: outside $\LP$ for a bounded
+interval of times, then back.
+
+\subsection*{Further directions}
+Several directions remain open. First, characterize the subordinated evolutions
+that preserve $\LP$: the order-two and order-one flows do, and whether any other
+clock does is open. Second, the far-field estimate behind
+Conjectures~\ref{conj:finite} and~\ref{conj:monotone}:
+bound the remainder of $\int_0^\infty e^{tu^{2m}}\Phi(u)\cos(xu)\,du$ below the
+amplitude of its leading profile for $|x|>X_t$, uniformly in large $t$. The
+remainder has no definite sign, so this is a two-sided bound; since the saddle
+detaches against the same kernel for every $m$, it would give $\Lambda(2m)<\infty$
+for all $m\ge2$, $\Lambda(4)$ included.
+
+\section*{Acknowledgements}
+Claude, Gemini, and ChatGPT were used as interactive assistants for drafting,
+reorganizing, and generating mathematical arguments and computations, under the
+author's direction. The author is responsible for all mathematical content and any
+errors. Symbolic verification of the counterexample and the order-dichotomy moment
+identities accompanies the source.
+
+%==============================================================
+\begin{thebibliography}{99}
+
+\bibitem{AlloubaZheng} H.~Allouba and W.~Zheng, \emph{Brownian-time processes:
+the PDE connection and the half-derivative generator}, Ann.\ Probab.\
+\textbf{29} (2001), 1780--1795.
+
+\bibitem{BMN} B.~Baeumer, M.~M.~Meerschaert and E.~Nane, \emph{Brownian
+subordinators and fractional Cauchy problems}, Trans.\ Amer.\ Math.\ Soc.\
+\textbf{361} (2009), 3915--3930.
+
+\bibitem{BorceaBranden} J.~Borcea and P.~Br\"and\'en, \emph{P\'olya--Schur
+master theorems for circular domains and their boundaries}, Ann.\ of Math.\
+(2) \textbf{170} (2009), 465--492.
+
+\bibitem{Burdzy} K.~Burdzy, \emph{Some path properties of iterated Brownian
+motion}, in: Seminar on Stochastic Processes 1992, Progr.\ Probab.\
+\textbf{33}, Birkh\"auser, 1993, 67--87.
+
+\bibitem{CSV} G.~Csordas, W.~Smith and R.~S.~Varga, \emph{Lehmer pairs of
+zeros, the de Bruijn--Newman constant $\Lambda$, and the Riemann hypothesis},
+Constr.\ Approx.\ \textbf{10} (1994), 107--129.
+
+\bibitem{CsordasVarga} G.~Csordas and R.~S.~Varga, \emph{Necessary and
+sufficient conditions and the Riemann hypothesis}, Adv.\ in Appl.\ Math.\
+\textbf{11} (1990), 328--357.
+
+\bibitem{deBruijn} N.~G.~de Bruijn, \emph{The roots of trigonometric
+integrals}, Duke Math.\ J.\ \textbf{17} (1950), 197--226.
+
+\bibitem{Funaki} T.~Funaki, \emph{Probabilistic construction of the solution of
+some higher order parabolic differential equation}, Proc.\ Japan Acad.\ Ser.\ A
+Math.\ Sci.\ \textbf{55} (1979), 176--179.
+
+\bibitem{Hochberg} K.~J.~Hochberg, \emph{A signed measure on path space related
+to Wiener measure}, Ann.\ Probab.\ \textbf{6} (1978), 433--458.
+
+\bibitem{Johansson} F.~Johansson, \emph{Arb: efficient arbitrary-precision
+midpoint-radius interval arithmetic}, IEEE Trans.\ Comput.\ \textbf{66} (2017),
+1281--1292.
+
+\bibitem{Krylov} V.~Yu.~Krylov, \emph{Some properties of the distribution
+corresponding to the equation $\partial u/\partial t=(-1)^{q+1}\partial^{2q}
+u/\partial x^{2q}$}, Soviet Math.\ Dokl.\ \textbf{1} (1960), 760--763.
+
+\bibitem{Levin} B.~Ya.~Levin, \emph{Distribution of Zeros of Entire
+Functions}, Transl.\ Math.\ Monogr.\ \textbf{5}, Amer.\ Math.\ Soc., 1980.
+
+\bibitem{Nane} E.~Nane, \emph{Higher order PDE's and iterated processes},
+Trans.\ Amer.\ Math.\ Soc.\ \textbf{360} (2008), 2681--2692.
+
+\bibitem{Newman} C.~M.~Newman, \emph{Fourier transforms with only real zeros},
+Proc.\ Amer.\ Math.\ Soc.\ \textbf{61} (1976), 245--251.
+
+\bibitem{Olver} F.~W.~J.~Olver, \emph{Asymptotics and Special Functions},
+Academic Press, New York, 1974.
+
+\bibitem{Polymath15} D.~H.~J.~Polymath, \emph{Effective approximation of heat
+flow evolution of the Riemann $\xi$-function, and a new upper bound for the de
+Bruijn--Newman constant}, Res.\ Math.\ Sci.\ \textbf{6} (2019), no.~31.
+
+\bibitem{Polya13} G.~P\'olya, \emph{\"Uber Ann\"aherung durch Polynome mit
+lauter reellen Wurzeln}, Rend.\ Circ.\ Mat.\ Palermo \textbf{36} (1913),
+279--295.
+
+\bibitem{Polya27} G.~P\'olya, \emph{\"Uber trigonometrische Integrale mit nur
+reellen Nullstellen}, J.\ Reine Angew.\ Math.\ \textbf{158} (1927), 6--18.
+
+\bibitem{PolyaSchur} G.~P\'olya and J.~Schur, \emph{\"Uber zwei Arten von
+Faktorenfolgen in der Theorie der algebraischen Gleichungen}, J.\ Reine
+Angew.\ Math.\ \textbf{144} (1914), 89--113.
+
+\bibitem{RodgersTao} B.~Rodgers and T.~Tao, \emph{The de Bruijn--Newman
+constant is non-negative}, Forum Math.\ Pi \textbf{8} (2020), e6.
+
+\bibitem{Titchmarsh} E.~C.~Titchmarsh, \emph{The Theory of the Riemann
+Zeta-function}, 2nd ed., revised by D.~R.~Heath-Brown, Oxford Univ.\ Press,
+1986.
+
+\end{thebibliography}
+
+\end{document}

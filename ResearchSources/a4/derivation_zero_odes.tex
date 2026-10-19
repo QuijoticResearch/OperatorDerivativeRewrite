@@ -1,0 +1,180 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{hyperref}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{remark}{Remark}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\dt}{\partial_t}
+\newcommand{\dz}{\partial_z}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\title{Derivation of the zero ODEs for $\dt p=\dz^m p$}
+\author{}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{The flow and the basic identity}
+
+Let
+\[
+  p_t(z)=\prod_{k=1}^N\bigl(z-z_k(t)\bigr)
+\]
+be monic of degree $N$ with smoothly varying, distinct zeros $z_k(t)\in\C$, and
+suppose
+\begin{equation}\label{eq:flow}
+  \dt p_t(z)=\dz^{m} p_t(z),\qquad m\in\{1,2,3,\dots\}.
+\end{equation}
+The operator $\dz^m$ lowers degree, so the leading coefficient ($=1$) is
+preserved and the flow stays inside monic degree-$N$ polynomials.
+
+\begin{lemma}[Velocity as a quotient]\label{lem:quotient}
+On any interval where the zeros are simple,
+\begin{equation}\label{eq:quotient}
+  \dot z_j=-\frac{p_t^{(m)}(z_j)}{p_t'(z_j)} .
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Since $z_j(t)$ is a zero of $p_t$ for all $t$, the function
+$t\mapsto p_t\bigl(z_j(t)\bigr)$ is identically zero. Differentiating with the
+chain rule,
+\[
+  0=\frac{d}{dt}\,p_t\bigl(z_j(t)\bigr)
+   =(\dt p_t)\bigl(z_j(t)\bigr)+p_t'\bigl(z_j(t)\bigr)\,\dot z_j .
+\]
+Simplicity gives $p_t'(z_j)\neq0$; substituting \eqref{eq:flow},
+$(\dt p_t)(z_j)=p_t^{(m)}(z_j)$, and solving for $\dot z_j$ gives
+\eqref{eq:quotient}.
+\end{proof}
+
+\section{Evaluating the quotient}
+
+The key computation is the value of $p_t^{(m)}$ and $p_t'$ at a zero.
+
+\begin{lemma}[One factor pulled out]\label{lem:leibniz}
+Write $p_t(z)=(z-z_j)\,q(z)$ with $q(z)=\prod_{k\neq j}(z-z_k)$. Then
+\[
+  p_t'(z_j)=q(z_j),\qquad
+  p_t^{(m)}(z_j)=m\,q^{(m-1)}(z_j).
+\]
+\end{lemma}
+
+\begin{proof}
+By the Leibniz rule applied to the product $(z-z_j)\cdot q(z)$, and using that
+$(z-z_j)$ has vanishing second derivative,
+\[
+  p_t^{(m)}(z)=(z-z_j)\,q^{(m)}(z)+m\,q^{(m-1)}(z).
+\]
+At $z=z_j$ the first term vanishes, giving
+$p_t^{(m)}(z_j)=m\,q^{(m-1)}(z_j)$; the case $m=1$ gives $p_t'(z_j)=q(z_j)$.
+\end{proof}
+
+\begin{lemma}[Elementary-symmetric expansion of $q^{(r)}/q$]\label{lem:qr}
+For $q(z)=\prod_{k\in K}(z-z_k)$ with distinct $z_k$ and $0\le r\le|K|$,
+\begin{equation}\label{eq:qr}
+  \frac{q^{(r)}(z)}{q(z)}
+   = r!\sum_{\substack{S\subseteq K\\ |S|=r}}\prod_{k\in S}\frac{1}{z-z_k}
+   = r!\,e_r\!\Bigl(\bigl\{(z-z_k)^{-1}\bigr\}_{k\in K}\Bigr),
+\end{equation}
+where $e_r$ is the degree-$r$ elementary symmetric polynomial.
+\end{lemma}
+
+\begin{proof}
+Each factor $z-z_k$ is affine, so all of its derivatives of order $\ge 2$
+vanish. By the general (multinomial) Leibniz rule, $q^{(r)}$ is a sum over ways
+of distributing $r$ derivatives among the $|K|$ factors. A distribution
+contributes a nonzero term only if every factor receives $0$ or $1$
+derivative, i.e.\ if the set $S$ of differentiated factors has $|S|=r$. The
+multinomial coefficient for such a distribution is
+$r!/(1!^{\,r}\,0!^{\,|K|-r})=r!$, and the term equals
+\[
+  r!\prod_{k\in S}\underbrace{\frac{d}{dz}(z-z_k)}_{=1}\;\prod_{k\notin S}(z-z_k)
+  = r!\,\frac{q(z)}{\prod_{k\in S}(z-z_k)} .
+\]
+Summing over all $S$ with $|S|=r$ and dividing by $q(z)$ yields \eqref{eq:qr}.
+\end{proof}
+
+\begin{remark}[Cross-check via Bell polynomials]
+Writing $q=e^{\varphi}$ with $\varphi'=f:=q'/q$, the Fa\`a di Bruno / exponential
+formula gives $q^{(r)}/q=Y_r(\varphi',\dots,\varphi^{(r)})=Y_r(f,f',\dots,f^{(r-1)})$,
+the complete Bell polynomial. Since $f=\sum_{k}(z-z_k)^{-1}$ has
+$f^{(i)}=(-1)^i i!\sum_k (z-z_k)^{-(i+1)}$ (power sums of the variables
+$x_k=(z-z_k)^{-1}$), the Bell polynomial reduces, by Newton's identities, to
+$r!\,e_r(x)$ --- consistent with \eqref{eq:qr}.
+\end{remark}
+
+\section{Main result}
+
+\begin{theorem}[Zero dynamics for $\dt p=\dz^m p$]\label{thm:main}
+On any simple interval,
+\begin{equation}\label{eq:main}
+  \dot z_j
+   = -\,m!\!\!\sum_{\substack{A\subseteq\{1,\dots,N\}\setminus\{j\}\\ |A|=m-1}}
+       \;\prod_{a\in A}\frac{1}{z_j-z_a}
+   = -\,m!\,e_{m-1}\!\Bigl(\bigl\{(z_j-z_a)^{-1}\bigr\}_{a\neq j}\Bigr).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Combine the three lemmas. By Lemmas~\ref{lem:quotient} and \ref{lem:leibniz},
+\[
+  \dot z_j=-\frac{p_t^{(m)}(z_j)}{p_t'(z_j)}
+          =-\frac{m\,q^{(m-1)}(z_j)}{q(z_j)} .
+\]
+Apply Lemma~\ref{lem:qr} with $K=\{1,\dots,N\}\setminus\{j\}$ and $r=m-1$:
+\[
+  \dot z_j=-m\cdot(m-1)!\,e_{m-1}\!\Bigl(\bigl\{(z_j-z_a)^{-1}\bigr\}_{a\neq j}\Bigr)
+          =-m!\,e_{m-1}(\cdots),
+\]
+which is \eqref{eq:main}.
+\end{proof}
+
+\section{Specializations}
+
+\paragraph{$m=1$ (transport).} $\dot z_j=-1!\,e_0=-1$: every zero translates
+with unit speed to the left, consistent with $\dt p=p'$ being solved by
+$p_t(z)=p_0(z+t)$, whose zeros satisfy $z_k(0)+t=z$, i.e.\ $z_k(t)=z_k(0)-t$,
+matching $\dot z_j=-1$.
+
+\paragraph{$m=2$ (classical heat flow).}
+\begin{equation}\label{eq:m2}
+  \dot z_j=-2\sum_{k\neq j}\frac{1}{z_j-z_k}.
+\end{equation}
+For this sign convention ($\dt p=+\dz^2 p$) the dynamics is
+\emph{attractive}: two real zeros move toward each other, e.g.\ for
+$z_1<z_2$ one has $\dot z_1=-2/(z_1-z_2)>0$ and $\dot z_2<0$. Real, distinct
+zeros stay real and ordered only until they collide, after which a conjugate
+pair forms (see \texttt{real\_rootedness.py}). The \emph{repulsive},
+Dyson/Coulomb-gas direction --- gradient ascent on $\sum_{k<l}\log\abs{z_k-z_l}$,
+zeros spreading and staying real --- is the opposite sign
+$\dt p=-\dz^2 p$, with $\dot z_j=+2\sum_{k\neq j}(z_j-z_k)^{-1}$. The
+de Bruijn--Newman deformation $e^{tu^2}$ corresponds on $x$ to $-\dz^2$, the
+repulsive direction; the quartic $e^{tu^4}$ corresponds to $+\dz^4$
+(no sign flip), which is why the order conventions must be tracked carefully.
+
+\paragraph{$m=4$ (IBM / fourth-order analogue).}
+With $e_3$ of the variables $(z_j-z_a)^{-1}$,
+\begin{equation}\label{eq:m4}
+  \dot z_j=-24\!\!\sum_{\substack{a<b<c\\ a,b,c\neq j}}
+            \frac{1}{(z_j-z_a)(z_j-z_b)(z_j-z_c)} .
+\end{equation}
+Equivalently, in terms of the power sums
+$P_r(j)=\sum_{k\neq j}(z_j-z_k)^{-r}$, Newton's identities give
+$e_3=\tfrac16\bigl(P_1^3-3P_1P_2+2P_3\bigr)$, hence
+\begin{equation}\label{eq:m4-power}
+  \dot z_j=-4\bigl(P_1(j)^3-3P_1(j)P_2(j)+2P_3(j)\bigr),
+\end{equation}
+which is the form used by the numerical code (it costs $O(N)$ per zero rather
+than $O(N^3)$).
+\end{document}

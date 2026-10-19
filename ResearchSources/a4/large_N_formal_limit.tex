@@ -1,0 +1,142 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{hyperref}
+
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem{remark}{Remark}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\dt}{\partial_t}
+\newcommand{\dz}{\partial_z}
+\newcommand{\GN}{G_N}
+
+\title{A formal large-$N$ limit via the Cauchy transform}
+\author{}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{center}\itshape
+This note is heuristic. Statements are formal; we do not address
+well-posedness, convergence of measures, shock formation, or the validity of
+truncations. Nothing here bears on the Riemann Hypothesis.
+\end{center}
+
+\section{The log-derivative field and its PDE}
+
+Let $p_t(z)=\prod_{k=1}^N(z-z_k(t))$ solve $\dt p=\dz^m p$, and define the
+(normalized) \emph{Cauchy / Stieltjes transform}
+\begin{equation}\label{eq:GN}
+  \GN(t,z):=\frac1N\sum_{k=1}^N\frac{1}{z-z_k(t)},
+  \qquad
+  f(t,z):=\frac{p_t'(z)}{p_t(z)}=\sum_{k=1}^N\frac{1}{z-z_k(t)}=N\,\GN(t,z).
+\end{equation}
+Away from the zeros, $f$ is meromorphic and
+$\dz\log p_t=f$, $\dt\log p_t=\dt p_t/p_t=p_t^{(m)}/p_t$.
+
+\begin{lemma}[Exact PDE for $f$]\label{lem:pde}
+Wherever $p_t\neq0$,
+\begin{equation}\label{eq:pde}
+  \dt f=\dz\!\left(\frac{p_t^{(m)}}{p_t}\right)
+       =\dz\,Y_m\!\bigl(f,f',\dots,f^{(m-1)}\bigr),
+\end{equation}
+where $Y_m$ is the $m$-th complete Bell polynomial.
+\end{lemma}
+
+\begin{proof}
+Mixed partials commute:
+$\dt f=\dt\dz\log p_t=\dz\dt\log p_t=\dz(p_t^{(m)}/p_t)$. Writing
+$p_t=\exp\!\bigl(\int^z f\bigr)$, the exponential (Fa\`a di Bruno) formula gives
+$p_t^{(m)}/p_t=Y_m(\varphi',\dots,\varphi^{(m)})$ with $\varphi'=f$, i.e.\
+$Y_m(f,f',\dots,f^{(m-1)})$.
+\end{proof}
+
+The first few complete Bell polynomials are
+\begin{align*}
+  Y_1&=f,\\
+  Y_2&=f^2+f',\\
+  Y_3&=f^3+3ff'+f'',\\
+  Y_4&=f^4+6f^2f'+3f'^2+4ff''+f'''.
+\end{align*}
+So, exactly,
+\begin{align}
+  m=2:&\quad \dt f=\dz\bigl(f^2+f'\bigr)=2ff'+f'',\label{eq:m2exact}\\
+  m=4:&\quad \dt f=\dz\bigl(f^4+6f^2f'+3f'^2+4ff''+f'''\bigr).\label{eq:m4exact}
+\end{align}
+Equation \eqref{eq:m2exact} is the (complex) \emph{viscous Burgers equation}.
+
+\section{The formal inviscid truncation}
+
+We now pass to the regime of many zeros in an $O(1)$ region, so that $\GN$ has
+an $O(1)$ limit $G$ and $f=N\,G$ is large. Heuristically, on the macroscopic
+scale each $z$-derivative acts on the $O(1)$ profile $G$ and does \emph{not}
+produce a factor of $N$, whereas each undifferentiated factor of $f$ carries one
+power of $N$. Thus in $Y_m(f,f',\dots)$,
+\[
+  \underbrace{f^m}_{O(N^m)}\;\gg\;
+  \underbrace{f^{m-2}f'}_{O(N^{m-1})}\;\gg\;\cdots,
+\]
+and the top term is $f^m=(NG)^m$.
+
+\begin{proposition}[Formal limiting equation]\label{prop:burgers}
+Retaining only the leading term $f^m$ in \eqref{eq:pde} gives the inviscid
+complex Hopf/Burgers equation
+\begin{equation}\label{eq:hopf}
+  \dt f\;\approx\;\dz\bigl(f^m\bigr)=m\,f^{m-1}\dz f .
+\end{equation}
+Writing $f=N\GN\approx N G$ and rescaling time by $\tau=N^{m-1}t$ yields
+\begin{equation}\label{eq:Ghopf}
+  \partial_\tau G\;\approx\;m\,G^{m-1}\,\dz G
+                \;=\;\frac{m}{m}\,\dz\bigl(G^{m}\bigr)
+                \;=\;\dz\bigl(G^{m}\bigr).
+\end{equation}
+\end{proposition}
+
+\begin{proof}[Formal justification]
+Drop all terms of $Y_m$ except $f^m$ in \eqref{eq:pde}; this is the claimed
+order-of-magnitude truncation. Substitute $f=NG$:
+$\dt(NG)=\dz((NG)^m)=N^m\dz(G^m)$, i.e.\ $\dt G=N^{m-1}\dz(G^m)$. Setting
+$\tau=N^{m-1}t$ removes the prefactor, giving \eqref{eq:Ghopf}.
+\end{proof}
+
+\begin{remark}[Cases]
+\begin{itemize}
+  \item $m=2$: $\partial_\tau G=\dz(G^2)=2G\,\dz G$, the complex Burgers/Hopf
+    equation underlying the classical heat-flow dynamics of the spectral
+    measure (e.g.\ semicircle-type evolution). The dropped term $f''$ is the
+    Burgers \emph{viscosity}, formally $O(1/N)$ relative to the kept term.
+  \item $m=4$: $\partial_\tau G=\dz(G^4)=4G^3\,\dz G$, a \emph{cubic-flux} Hopf
+    equation. The conserved ``mass'' $\int G$ (formally, the counting measure)
+    is transported by the nonlinear flux $G^4$; characteristics carry $G$ at
+    speed $-4G^3$, so the fourth-order flow advects the resolvent profile
+    faster where $|G|$ is large.
+\end{itemize}
+\end{remark}
+
+\section{Boundary-value / measure form (sketch)}
+
+If, as $N\to\infty$, the empirical measure
+$\mu_N=\frac1N\sum_k\delta_{z_k}$ converges (weakly, in a suitable sense) to a
+measure $\mu_\tau$, then $G(\tau,z)=\int\frac{d\mu_\tau(w)}{z-w}$ is its Cauchy
+transform, and \eqref{eq:Ghopf} is the resolvent form of a conservation law for
+$\mu_\tau$. For real configurations one recovers $\mu_\tau$ from $G$ via the
+Stieltjes--Perron inversion
+$d\mu_\tau(x)=-\frac1\pi\,\mathrm{Im}\,G(\tau,x+i0)\,dx$. Turning the formal law
+\eqref{eq:Ghopf} into a rigorous statement about $\mu_\tau$ (weak solutions,
+entropy conditions at shocks corresponding to zero collisions / coalescence of
+support) is left open; we record it only as the natural PDE skeleton.
+
+\begin{remark}[What is and is not claimed]
+We claim only that \eqref{eq:pde}--\eqref{eq:m4exact} are exact identities for
+the log-derivative field, and that \eqref{eq:hopf}--\eqref{eq:Ghopf} are their
+formal leading-order reductions. We do \emph{not} claim convergence, uniqueness,
+or any analytic-number-theory consequence.
+\end{remark}
+
+\end{document}

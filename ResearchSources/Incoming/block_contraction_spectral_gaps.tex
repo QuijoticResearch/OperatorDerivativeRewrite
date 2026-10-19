@@ -1,0 +1,795 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{mathrsfs}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\1}{\mathbf{1}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\Lip}{\operatorname{Lip}}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+
+\title{Block Transfer Operators, Schur-Complement Contraction, and Spectral Gaps:\\
+An Operator-Factorization Approach to Lattice Systems}
+\author{Ramiro Fontes\\Quijotic Research\\\texttt{ramirofontes@gmail.com}}
+\date{February 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We develop a self-contained framework for extracting exponential clustering and spectral gaps
+from strict gradient contraction of block transfer operators on lattice systems with compact
+state spaces.  The mechanism rests on an operator-factorization philosophy:
+decompose a lattice potential into interior and boundary degrees of freedom,
+compute the Schur complement of the interior block to obtain effective boundary curvature,
+and show that this curvature drives a strict $H^1$ contraction of the block transfer operator.
+The key combinatorial input is a topological cancellation ($A^\top v = 0$) ensuring that the
+coarse boundary mode is \emph{unscreenable}---it lies in the kernel of the adjoint
+of the interior incidence matrix and therefore retains full curvature after integrating out
+interior variables.
+
+From this single local contraction estimate we derive, by deterministic propagation arguments:
+(i) exponential decay of boundary influence across block layers;
+(ii) exponential clustering of truncated correlations for local observables;
+(iii) a positive spectral gap for the transfer-matrix Hamiltonian under a
+reflection-positivity hypothesis.
+We further show that when the contraction constant is uniform along a
+scaling family parametrized by a lattice spacing $a\downarrow 0$, the spectral gap persists
+in subsequential continuum limits obtained via the Osterwalder--Schrader reconstruction theorem.
+The framework is formulated abstractly but is motivated by, and directly applicable to,
+lattice gauge theories with compact gauge groups.
+\end{abstract}
+
+\tableofcontents
+
+%======================================================================
+\section{Introduction}\label{sec:intro}
+%======================================================================
+
+\subsection{Motivation and context}
+
+A recurring theme in constructive statistical mechanics and quantum field theory is the
+extraction of long-distance information (correlation decay, spectral gaps, phase structure)
+from short-distance analytic control.  The classical Dobrushin--Shlosman program
+\cite{DobrushinShlosman} achieves this for spin systems via contraction of conditional
+expectations; the Balaban program \cite{Balaban1,Balaban2,Balaban3} achieves it for gauge
+theories via iterated renormalization-group (RG) transformations.
+
+In this paper we isolate a mechanism that sits between these traditions: a single-block
+\emph{gradient contraction} estimate for a transfer operator obtained by integrating out
+interior degrees of freedom, where the contraction is certified by an explicit
+\emph{Schur-complement} computation.  The approach is operator-theoretic in spirit:
+\begin{enumerate}[label=(\roman*)]
+\item the lattice potential is decomposed into interior ($y$) and boundary ($x$) variables;
+\item the Hessian factors into blocks $V_{xx}$, $V_{xy}$, $V_{yy}$;
+\item a topological cancellation ($A^\top v=0$) forces $V_{xy}^{(0)}=0$ at leading order,
+making the Schur complement \emph{exact};
+\item the resulting boundary curvature drives heat-kernel smoothing with a strict contraction
+factor $q_0<1$;
+\item perturbative corrections from nonlinear (e.g.\ BCH) remainders are controlled by
+a quantitative stability lemma for Schur complements.
+\end{enumerate}
+
+\subsection{Relationship to operator-factorization calculus}
+
+This work extends the operator-factorization program developed in the companion papers
+\cite{Fontes2026I,Fontes2026II,Fontes2026III,Fontes2026IV}.  Those works establish the
+operator-theoretic identity
+\[
+(\mathrm{Id}-\E) \;=\; \delta\,\Pi\,D
+\]
+as a factorization of stochastic differentiation through projection ($\Pi$) and divergence
+($\delta$), yielding Clark--Ocone representations, It\^o formulas, and Bakry--\'Emery
+curvature estimates in increasing generality (Gaussian, rough fractional, non-semimartingale,
+martingale-innovation settings).
+
+The present paper adapts the same structural philosophy to a lattice-statistical-mechanics
+setting:
+\begin{center}
+\begin{tabular}{lcl}
+\emph{Stochastic calculus setting} && \emph{Lattice block setting}\\[3pt]
+\hline\\[-6pt]
+Conditional expectation $\E[\,\cdot\mid\cF]$ &$\longleftrightarrow$& Block transfer operator $T$\\[2pt]
+Innovation / martingale increment &$\longleftrightarrow$& Boundary gradient $\nabla_\partial$\\[2pt]
+Projection $\Pi$ onto range &$\longleftrightarrow$& Schur complement / $I-P_A$\\[2pt]
+Contraction $\norm{(\mathrm{Id}-\E)f}\le q\norm{f}$ &$\longleftrightarrow$& $\norm{\nabla(Tf)}\le q\norm{\nabla f}$, $q<1$\\[2pt]
+Clark--Ocone representation &$\longleftrightarrow$& Exponential clustering / mass gap
+\end{tabular}
+\end{center}
+The unifying idea is: \emph{factor the operator, identify the contractive piece, and propagate
+contraction to global conclusions}.  In the stochastic setting, the factorization yields
+martingale representations and functional inequalities.  In the lattice setting, it yields
+correlation decay and spectral gaps.
+
+\subsection{Structure of the paper}
+
+Section~\ref{sec:schur} develops the local block analysis: the topological cancellation
+$A^\top v=0$, the exact and robust Schur complements, and the strict $H^1$ contraction
+theorem.
+Section~\ref{sec:clustering} propagates local contraction to exponential clustering
+of lattice correlations via influence-decay arguments.
+Section~\ref{sec:gap} extracts a positive spectral gap from clustering under a
+reflection-positivity hypothesis, including persistence in continuum limits.
+Section~\ref{sec:uniqueness} shows how contraction, combined with a functional equation
+(such as a lattice Schwinger--Dyson identity) and boundary data, yields uniqueness of
+solutions---the abstract ``$Ax=0$ implies $x=0$'' conclusion.
+Section~\ref{sec:application} specializes the framework to SU(2) lattice gauge theory.
+
+%======================================================================
+\section{Block Schur Complement and Local Contraction}\label{sec:schur}
+%======================================================================
+
+\subsection{Setup: tiles, interior variables, and boundary variables}
+
+We work on a $d$-dimensional hypercubic lattice $\Z^d$ ($d\ge 2$) with a block decomposition
+into hypercubes of side length $L\ge 2$.  Fix a single block $B$.  After a suitable
+gauge-fixing or spanning-tree reduction (in the gauge-theory application) or simply by the
+geometry of the model, the degrees of freedom in $B$ decompose into:
+\begin{itemize}[nosep]
+\item \emph{boundary variables} $x\in M_\partial$, a compact Riemannian manifold (e.g.\ a product of copies of a compact Lie group),
+\item \emph{interior variables} $y\in M_{\mathrm{int}}$, similarly compact.
+\end{itemize}
+
+In a small-field (``corridor'') regime, both $x$ and $y$ are coordinatized by exponential
+charts, and we work in $\R^{n_\partial}\times\R^{n_i}$ with $\norm{(x,y)}\le\delta$ for a
+corridor radius $\delta>0$.
+
+The block potential has the form
+\begin{equation}\label{eq:Vfull}
+V(x,y) \;=\; V^{(0)}(x,y) + \Delta(x,y),
+\end{equation}
+where $V^{(0)}$ is a quadratic core and $\Delta$ collects higher-order and geometric
+(Jacobian, BCH) corrections.
+
+\subsection{The linearized plaquette map and the quadratic core}
+
+Let $\omega(x,y)\in\R^{n_p}$ denote the vector of local constraint violations (plaquette
+logarithms in the gauge setting, or more generally the local interaction terms) in the block.
+In the corridor,
+\begin{equation}\label{eq:omega}
+\omega(x,y) \;=\; Ay + vx + e(x,y),
+\end{equation}
+where $A\in\R^{n_p\times n_i}$ is the interior incidence matrix, $v\in\R^{n_p}$ is the
+boundary coupling vector, and $e$ is the nonlinear remainder.  The quadratic core is
+\begin{equation}\label{eq:V0}
+V^{(0)}(x,y) \;:=\; \frac{\beta c_2}{2}\,\norm{Ay+vx}^2,
+\end{equation}
+where $\beta>0$ is an inverse-temperature or inverse-coupling parameter and $c_2>0$ is a
+model-dependent coefficient.
+
+\subsection{Topological cancellation: $A^\top v=0$}
+
+The following is the key combinatorial fact.
+
+\begin{lemma}[Topological cancellation]\label{lem:Atv0}
+For the standard block decomposition (e.g.\ a $2\times 2$ tile in each coordinate plane after
+spanning-tree gauge fixing in the gauge setting, or any block where each interior variable
+participates in exactly two local constraints with opposite orientations), we have
+\[
+A^\top v \;=\; 0.
+\]
+\end{lemma}
+
+\begin{proof}
+Each interior variable $y_k$ appears in exactly two constraint equations, with opposite signs:
+there exist exactly two indices $p\ne p'$ with $A_{p,k}=+1$, $A_{p',k}=-1$, and
+$A_{q,k}=0$ for $q\notin\{p,p'\}$.  If $v=(1,\ldots,1)^\top$ (uniform boundary coupling), then
+\[
+(A^\top v)_k \;=\; \sum_{p=1}^{n_p} A_{p,k}\,v_p \;=\; (+1)+(-1) \;=\; 0
+\]
+for every $k$.  The result holds more generally whenever $v$ lies in the left kernel of the
+signed incidence structure.
+\end{proof}
+
+\begin{corollary}[Unscreenable boundary mode]\label{cor:unscreen}
+Let $P_A := A(A^\top A)^{-1}A^\top$ be the orthogonal projector onto $\Ran(A)$.  Then
+$P_A v = 0$, so
+\[
+(I - P_A)\,v \;=\; v,\qquad v^\top(I-P_A)\,v \;=\; \norm{v}^2.
+\]
+\end{corollary}
+
+\begin{remark}
+The terminology ``unscreenable'' reflects the physics: the boundary mode $v$ cannot be
+cancelled by any linear combination of interior modes.  It is \emph{topologically protected}
+by the signed-incidence structure.  In the operator-factorization language of
+\cite{Fontes2026I,Fontes2026II}, this is the analogue of the projection $\Pi$ isolating the
+innovation: the component of the observable that survives conditioning on the interior.
+\end{remark}
+
+\subsection{Exact Schur complement for the quadratic core}
+
+The Hessian of $V^{(0)}$ has block structure
+\begin{equation}\label{eq:hessian}
+\nabla^2 V^{(0)} \;=\; \beta c_2
+\begin{pmatrix}
+v^\top v & v^\top A \\
+A^\top v & A^\top A
+\end{pmatrix}.
+\end{equation}
+
+\begin{proposition}[Exact core Schur complement]\label{prop:core-schur}
+Assume $A^\top A$ is invertible.  Then the Schur complement of $V_{yy}^{(0)}$ in $\nabla^2 V^{(0)}$ is
+\begin{equation}\label{eq:core-schur}
+\mathrm{Schur}(V^{(0)}) \;=\; \beta c_2\,v^\top(I-P_A)\,v.
+\end{equation}
+Under $A^\top v = 0$ (Lemma~\ref{lem:Atv0}) with $v=(1,\ldots,1)^\top\in\R^{n_p}$,
+\begin{equation}\label{eq:schur-value}
+\mathrm{Schur}(V^{(0)}) \;=\; n_p\,\beta\, c_2.
+\end{equation}
+In particular, for a $2\times 2$ tile with $n_p=4$ plaquettes, $\mathrm{Schur}(V^{(0)})=4\beta c_2$.
+\end{proposition}
+
+\begin{proof}
+The cross-term vanishes: $V_{xy}^{(0)}=\beta c_2\,v^\top A = \beta c_2\,(A^\top v)^\top = 0$.
+Therefore the Schur complement equals $V_{xx}^{(0)} - 0 = \beta c_2\,v^\top v = \beta c_2\,\norm{v}^2$.
+\end{proof}
+
+\begin{remark}
+The exact vanishing of the cross-term is the operator-factorization at work:
+integrating out interior variables does \emph{not} screen the boundary curvature.
+This is the lattice analogue of the projection $\Pi$ in $(\mathrm{Id}-\E)=\delta\Pi D$
+preserving the full innovation.
+\end{remark}
+
+\subsection{Robust Schur complement under perturbations}
+
+The full potential $V = V^{(0)}+\Delta$ has a Hessian that deviates from the block-diagonal
+structure.  We need a quantitative stability result.
+
+\begin{assumption}[Interior coercivity]\label{ass:coerc}
+There exists $\lambda_i>0$ such that $A^\top A\succeq \lambda_i I$.
+\end{assumption}
+
+\begin{assumption}[$C^2$ perturbation control]\label{ass:C2}
+On the corridor $\norm{(x,y)}\le\delta$, the perturbation $\Delta$ satisfies
+\[
+\norm{\Delta_{xx}}\le K_{xx},\quad \norm{\Delta_{xy}}\le K_{xy},\quad \norm{\Delta_{yy}}\le K_{yy},
+\]
+in operator norm.
+\end{assumption}
+
+\begin{lemma}[Schur-complement stability]\label{lem:schur-stab}
+Let $H, H_0$ be symmetric block matrices with $H_0$ having invertible lower-right block $C_0\succeq m_0 I$.
+If $\norm{H-H_0}_{\mathrm{block}}\le(\eta_{xx},\eta_{xy},\eta_{yy})$ with $\eta_{yy}\le\frac{1}{2}m_0$,
+and if $b_0$ denotes the off-diagonal block of $H_0$, then
+\begin{equation}\label{eq:schur-stab}
+\mathrm{Schur}(H) \;\ge\; \mathrm{Schur}(H_0)
+- \eta_{xx} - \frac{4\eta_{xy}^2}{m_0} - \frac{2\norm{b_0}^2}{m_0^2}\,\eta_{yy}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Invertibility of the perturbed block: $\lambda_{\min}(C)\ge m_0-\eta_{yy}\ge\frac{1}{2}m_0$
+by Weyl's inequality.  Expand $\mathrm{Schur}(H)-\mathrm{Schur}(H_0)=(a-a_0)-(b^\top C^{-1}b - b_0^\top C_0^{-1}b_0)$.
+Split the quadratic-form difference:
+\begin{align*}
+b^\top C^{-1}b - b_0^\top C_0^{-1}b_0
+&= (b-b_0)^\top C^{-1}(b-b_0) + 2(b-b_0)^\top C^{-1}b_0 + b_0^\top(C^{-1}-C_0^{-1})b_0.
+\end{align*}
+Bound each term using $\norm{C^{-1}}\le 2/m_0$ and the resolvent identity
+$C^{-1}-C_0^{-1}=C^{-1}(C_0-C)C_0^{-1}$, then collect.
+\end{proof}
+
+\begin{theorem}[Robust boundary curvature]\label{thm:robust-schur}
+Under Assumptions~\ref{ass:coerc}--\ref{ass:C2}, if $K_{yy}\le\frac{1}{2}\beta c_2\lambda_i$,
+then
+\begin{equation}\label{eq:robust-schur}
+\mathrm{Schur}(V) \;\ge\; n_p\,\beta c_2 - K_{xx} - \frac{4K_{xy}^2}{\beta c_2\lambda_i}.
+\end{equation}
+In particular, if $K_{xx}=o(\beta)$ and $K_{xy}=o(\beta)$ as $\beta\to\infty$
+(corridor scaling), then $\mathrm{Schur}(V)\ge\frac{n_p}{2}\,\beta c_2$ for $\beta$
+sufficiently large.
+\end{theorem}
+
+\begin{proof}
+Apply Lemma~\ref{lem:schur-stab} with $H=\nabla^2 V$, $H_0=\nabla^2 V^{(0)}$,
+$m_0=\beta c_2\lambda_i$, and $b_0=0$ (by the topological cancellation).
+The $b_0$-dependent term vanishes, giving~\eqref{eq:robust-schur}.
+\end{proof}
+
+\subsection{Strict $H^1$ contraction for the block transfer operator}
+
+\begin{definition}[Block transfer operator]\label{def:T}
+Let $\rho(x,y)=\exp(-V(x,y))\,\1_{\norm{(x,y)}\le\delta}$ and
+$\nu_x(dy)\propto\rho(x,y)\,dy$ the conditional interior measure.  Define
+\[
+(Tf)(x) \;:=\; \E_{\nu_x}[f(X')],
+\]
+where $X'$ is the updated boundary variable after integrating out the interior.
+\end{definition}
+
+\begin{definition}[Reference operator]
+Let $t_{\mathrm{eff}}:=(n_p\,\beta c_2)^{-1}$, motivated by the Schur-complement curvature.
+Define $T_0:=P_{t_{\mathrm{eff}}}$, the heat semigroup on the boundary manifold at time
+$t_{\mathrm{eff}}$.  If $\lambda_1>0$ is the spectral gap of $-\Delta$ on the boundary
+manifold, then
+\begin{equation}\label{eq:q0}
+\norm{\nabla T_0 f}_{L^2} \;\le\; q_0\,\norm{\nabla f}_{L^2},\qquad
+q_0 := e^{-\lambda_1 t_{\mathrm{eff}}} < 1.
+\end{equation}
+\end{definition}
+
+\begin{assumption}[$H^1$ operator perturbation]\label{ass:HT}
+$\norm{\nabla((T-T_0)f)}_{L^2}\le\varepsilon_T\,\norm{\nabla f}_{L^2}$ for some $\varepsilon_T\ge 0$.
+\end{assumption}
+
+\begin{assumption}[Interior Poincar\'e inequality]\label{ass:poinc}
+$\Var_{\nu_x}(g)\le\kappa_{\mathrm{int}}^{-1}\,\E_{\nu_x}[\norm{\nabla_y g}^2]$ for all
+smooth $g$, with $\kappa_{\mathrm{int}}\gtrsim\beta$ in the uniformly convex corridor.
+\end{assumption}
+
+\begin{lemma}[Covariance identity]\label{lem:cov-id}
+For smooth $F(x,y)$ and any boundary derivative $D$,
+\begin{equation}\label{eq:cov-id}
+D\,\E_{\nu_x}[F] \;=\; \E_{\nu_x}[DF] - \Cov_{\nu_x}(F, DV).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Differentiate $\E_{\nu_x}[F]=Z(x)^{-1}\int F\,e^{-V}\,dy$ by Leibniz' rule.  The
+$DZ/Z^2$ term combines with the $-\int F(DV)e^{-V}/Z$ term to produce the covariance.
+\end{proof}
+
+\begin{lemma}[Covariance error bound]\label{lem:cov-bound}
+Under the interior Poincar\'e inequality, the covariance correction contributes at most
+$\eta\,\norm{\nabla f}_{L^2}$ with $\eta=C_{DV}/\kappa_{\mathrm{int}}^{1/2}$, where
+$C_{DV}^2:=\sup_x\E_{\nu_x}[\norm{\nabla_y(DV)}^2]$.
+\end{lemma}
+
+\begin{theorem}[Strict block contraction]\label{thm:contraction}
+Under the hypotheses of Theorem~\ref{thm:robust-schur} and
+Assumptions~\ref{ass:HT}--\ref{ass:poinc},
+\begin{equation}\label{eq:contraction}
+\norm{\nabla(Tf)}_{L^2} \;\le\; q\,\norm{\nabla f}_{L^2},\qquad
+q := q_0 + \varepsilon_T + \eta.
+\end{equation}
+If $q<1$, the block transfer operator is a strict $H^1$ contraction.
+\end{theorem}
+
+\begin{proof}
+Decompose $\nabla(Tf)=\nabla(T_0 f)+\nabla((T-T_0)f)$, bound each by~\eqref{eq:q0}
+and Assumption~\ref{ass:HT}, and add the covariance correction from
+Lemma~\ref{lem:cov-bound}.  Triangle inequality gives~\eqref{eq:contraction}.
+\end{proof}
+
+\begin{corollary}[Exponential mixing under iteration]\label{cor:mixing}
+If $q<1$, then $\norm{\nabla(T^d f)}_{L^2}\le q^d\,\norm{\nabla f}_{L^2}
+=e^{-\mu d}\,\norm{\nabla f}_{L^2}$ with $\mu:=-\log q>0$.
+\end{corollary}
+
+%======================================================================
+\section{From Local Contraction to Exponential Clustering}\label{sec:clustering}
+%======================================================================
+
+We now propagate the single-block estimate of Section~\ref{sec:schur} to global
+correlation decay.
+
+\subsection{Block lattice and iterated integration}
+
+Let $\mathbb{L}$ denote the coarse lattice of blocks.  For a connected region
+$\Omega\subset\mathbb{L}$, the iterated transfer operator integrates out blocks sequentially:
+\[
+T_\Omega := T_{B_N}\circ\cdots\circ T_{B_1}.
+\]
+
+\begin{definition}[Boundary Lipschitz seminorm]
+$\Lip_\partial(G):=\bigl(\sum_{e\in\partial B}\sup_x\norm{\nabla_{x_e}G(x)}^2\bigr)^{1/2}$.
+\end{definition}
+
+\begin{lemma}[One-step influence contraction]\label{lem:onestep}
+Under the block contraction (Theorem~\ref{thm:contraction} with $q<1$), there exists
+$C_0<\infty$ such that $\Lip_\partial(T_B f)\le C_0\,q\,\Lip_\partial(f)$.
+\end{lemma}
+
+\begin{proof}
+The $L^2$ contraction implies the Lipschitz estimate because the boundary marginal has a
+smooth, strictly positive density on the corridor with uniformly bounded log-derivatives.
+\end{proof}
+
+\subsection{Exponential decay of boundary influence}
+
+\begin{proposition}[Influence decay]\label{prop:influence}
+Let $F$ be a bounded observable supported in blocks $\Delta\subset\Omega$.
+For any two boundary conditions $x,x'$ on $\partial\Omega$,
+\begin{equation}\label{eq:influence}
+\big|\E_{\mu_\Omega(\cdot\mid x)}[F]-\E_{\mu_\Omega(\cdot\mid x')}[F]\big|
+\;\le\; C_1\,\norm{F}_\infty\,e^{-\kappa\,\dist_{\mathbb{L}}(\Delta,\partial\Omega)}\,
+d_\partial(x,x'),
+\end{equation}
+with $\kappa=-\log(C_0 q)>0$.
+\end{proposition}
+
+\begin{proof}
+Integrate blocks layer-by-layer from the boundary inward.  After $n$ layers, the
+Lipschitz seminorm of the effective observable has been reduced by $(C_0 q)^n$.
+The mean-value theorem on the compact boundary converts Lipschitz bounds to
+pointwise differences.
+\end{proof}
+
+\subsection{Exponential clustering of truncated correlations}
+
+\begin{theorem}[Clustering from block contraction]\label{thm:clustering}
+Let $\mu_\beta$ be the infinite-volume Gibbs measure in the corridor regime
+(existence follows from Proposition~\ref{prop:influence} via Dobrushin uniqueness).
+For bounded local observables $F,G$ supported in block sets $\Delta_F,\Delta_G$,
+\begin{equation}\label{eq:cluster}
+\big|\Cov_{\mu_\beta}(F,G)\big|
+\;\le\; C_2\,\norm{F}_\infty\,\norm{G}_\infty\,
+e^{-m\,\dist_{\mathbb{L}}(\Delta_F,\Delta_G)},
+\end{equation}
+where $m>0$ depends only on the corridor parameters and $q$.
+\end{theorem}
+
+\begin{proof}
+Choose a buffer annulus $\Omega$ separating the supports.  Condition on the exterior
+$\cF_{\Omega^c}$; by the DLR property, this is equivalent to conditioning on random
+boundary data on $\partial\Omega$.  Apply Proposition~\ref{prop:influence} to bound
+the fluctuation of $\E[F\mid\cF_{\Omega^c}]$ across the buffer, then integrate against $G$.
+\end{proof}
+
+%======================================================================
+\section{Spectral Gap from Clustering and Reflection Positivity}\label{sec:gap}
+%======================================================================
+
+\subsection{Reflection positivity and transfer matrices}
+
+\begin{assumption}[Reflection positivity]\label{ass:RP}
+The lattice measure $\mu_\beta$ is reflection positive with respect to a coordinate
+hyperplane, yielding a Hilbert space $\cH$, a self-adjoint transfer matrix
+$\mathsf{T}=e^{-a\mathsf{H}}$ with $\mathsf{H}\ge 0$, and a vacuum vector $\Omega$.
+\end{assumption}
+
+\begin{theorem}[Spectral gap from exponential clustering]\label{thm:gap}
+Under Assumption~\ref{ass:RP}, if truncated correlations satisfy~\eqref{eq:cluster} with
+rate $m_{\mathrm{phys}}>0$, then the Hamiltonian $\mathsf{H}$ has a spectral gap at least
+$m_{\mathrm{phys}}$ above the vacuum.
+\end{theorem}
+
+\begin{proof}
+For a mean-zero time-local observable $F$, reflection positivity gives
+$\ip{F}{e^{-t\mathsf{H}}F}_\cH=\E[F\,\Theta(\tau_t F)]$.
+By the spectral theorem, this equals $\int_0^\infty e^{-t\lambda}\,d\mu_F(\lambda)$.
+Exponential clustering forces this Laplace transform to decay as $e^{-m_{\mathrm{phys}}\,t}$,
+which is only possible if $\mu_F$ is supported on
+$\{0\}\cup[m_{\mathrm{phys}},\infty)$.  Since $F$ is arbitrary and mean-zero,
+$\sigma(\mathsf{H})\cap(0,m_{\mathrm{phys}})=\emptyset$.
+\end{proof}
+
+\begin{corollary}[Mass gap from block contraction]\label{cor:gap}
+Under Assumptions~\ref{ass:RP} and the block contraction (Theorem~\ref{thm:contraction}
+with $q<1$), there exists $m_{\mathrm{phys}}>0$ such that the lattice theory has a spectral
+gap $\ge m_{\mathrm{phys}}$.
+\end{corollary}
+
+\subsection{Persistence in continuum limits}
+
+\begin{assumption}[Uniform contraction along a scaling family]\label{ass:uniform}
+Along a trajectory $\beta=\beta(a)\to\infty$ as $a\downarrow 0$, the contraction constant
+$q$ in Theorem~\ref{thm:contraction} satisfies $q<1$ uniformly in $a$.
+\end{assumption}
+
+\begin{theorem}[Continuum spectral gap]\label{thm:continuum-gap}
+Under Assumptions~\ref{ass:RP}, \ref{ass:uniform}, and existence of subsequential continuum
+limits of Schwinger functions, the limiting Euclidean theory satisfies exponential clustering
+with rate $m_\star>0$.  The Osterwalder--Schrader reconstructed Hilbert space and Hamiltonian
+have a spectral gap at least $m_\star$.
+\end{theorem}
+
+\begin{proof}
+Uniform $q<1$ gives a uniform clustering rate $m_{\mathrm{phys}}$ independent of $a$
+(Theorem~\ref{thm:clustering}).  Subsequential limits of bounded Schwinger functions preserve
+the exponential decay bound by dominated convergence.  The OS reconstruction theorem
+(cf.~\cite{OsterwalderSchrader1,OsterwalderSchrader2,GlimmJaffe}) produces a Hilbert space
+with Hamiltonian $H\ge 0$, and the argument of Theorem~\ref{thm:gap} applies to the
+continuum Schwinger functions.
+\end{proof}
+
+%======================================================================
+\section{Uniqueness from Contraction: the Abstract $Ax=0$ Argument}\label{sec:uniqueness}
+%======================================================================
+
+The contraction mechanism yields not only decay estimates but a powerful \emph{uniqueness}
+principle.  This section formulates the abstract version.
+
+\subsection{Functional equations with contractive propagators}
+
+Suppose the observables of the lattice theory satisfy a system of functional equations
+(e.g.\ Schwinger--Dyson identities, loop equations, or lattice Ward identities) of the form
+\begin{equation}\label{eq:func-eq}
+\Phi(\{W_\alpha\}_{\alpha\in\mathcal{I}}) \;=\; 0,
+\end{equation}
+where $\{W_\alpha\}$ is a family of expectation values and $\Phi$ is a (possibly nonlinear)
+operator.
+
+\begin{definition}[Contractive linearization]
+We say the system~\eqref{eq:func-eq} has a \emph{contractive linearization at rate $m$}
+if the linearized operator $L:=D\Phi$ at any solution satisfies: for any two solutions
+$W,W'$ of~\eqref{eq:func-eq},
+\begin{equation}\label{eq:contractive}
+\norm{W_\alpha - W'_\alpha}
+\;\le\; C\sum_{\beta:\,\beta\ne\alpha}
+e^{-m\,d(\alpha,\beta)}\,\norm{W_\beta - W'_\beta}
+\end{equation}
+in a suitable norm, where $d(\alpha,\beta)$ measures the separation of the observables.
+\end{definition}
+
+\begin{theorem}[Uniqueness from contraction plus boundary data]\label{thm:uniqueness}
+Suppose the system~\eqref{eq:func-eq} has a contractive linearization at rate $m>0$,
+and suppose additionally that boundary data (initial conditions, normalization, or
+small-parameter asymptotics) fix the value of $W_\alpha$ for all $\alpha$ in a
+``generating'' subset.  Then the system has at most one solution.
+\end{theorem}
+
+\begin{proof}
+Let $W,W'$ be two solutions with the same boundary data, and let $\delta_\alpha:=W_\alpha-W'_\alpha$.
+Then $\delta$ satisfies the homogeneous system
+\[
+\delta_\alpha \;=\; \sum_\beta L_{\alpha\beta}\,\delta_\beta,
+\]
+with $\delta_\alpha=0$ for generating $\alpha$ (by the shared boundary data).  The contractive
+bound~\eqref{eq:contractive} with rate $m>0$ implies that the operator $L$ has spectral
+radius strictly less than~1 in the weighted norm $\norm{\delta}_m:=\sup_\alpha e^{m\,|\alpha|}\,|\delta_\alpha|$.
+Hence the only solution to $\delta = L\delta$ is $\delta\equiv 0$.
+\end{proof}
+
+\begin{remark}
+This is the abstract content of the ``$Ax=0\Rightarrow x=0$'' argument:
+\emph{exponential clustering makes the linearized propagator contractive},
+so the homogeneous equation has only the trivial solution,
+and \emph{boundary data pins the solution branch}.
+In the stochastic calculus companion papers, the analogous statement is that
+contraction of the conditional expectation yields uniqueness of the
+martingale representation.
+\end{remark}
+
+\subsection{Application: lattice Schwinger--Dyson hierarchies}
+
+In the lattice setting, integration-by-parts (Haar measure invariance for gauge theories,
+or the standard Gibbs/DLR identity for spin systems) produces exact Schwinger--Dyson
+equations for expectations of products of local observables.  Under the exponential clustering
+of Theorem~\ref{thm:clustering}, these equations have contractive structure: each
+observable's expectation is determined by nearby observables with exponentially decaying
+coupling.  A normalization condition (e.g.\ fixing the two-point function of a chosen
+observable at a reference separation) serves as the boundary data.
+
+\begin{corollary}[Uniqueness of the gauge-invariant sector]\label{cor:uniqueness}
+Under the hypotheses of Theorem~\ref{thm:clustering} (exponential clustering with rate $m>0$)
+and the assumption that lattice Schwinger--Dyson identities pass to the continuum, the
+expectations of all gauge-invariant observables in the continuum limit are uniquely determined
+by:
+\begin{enumerate}[label=(\alph*)]
+\item the mass gap $m_\star$,
+\item the continuum functional equations,
+\item a single normalization datum (e.g.\ a two-point function value or small-parameter
+asymptotic).
+\end{enumerate}
+\end{corollary}
+
+%======================================================================
+\section{Application to Lattice Gauge Theory with Compact Gauge Group}\label{sec:application}
+%======================================================================
+
+We briefly indicate how the abstract framework specializes to four-dimensional lattice gauge
+theory with gauge group $G=\mathrm{SU}(2)$ (or any compact Lie group).
+
+\subsection{Specialization of the block structure}
+
+The lattice is $a\Z^4$ with gauge field $U_e\in G$ on each oriented edge.  Blocks are
+$2\times 2\times 2\times 2$ hypercubes.  After spanning-tree gauge fixing within each block,
+the interior variables are the link variables on non-tree edges, and the boundary variables
+are the links crossing block boundaries.
+
+The constraint vector $\omega$ consists of plaquette holonomies.  In exponential coordinates
+$U_e=\exp(X_e)$ near identity, the linearized plaquette map has the form~\eqref{eq:omega}
+with $A$ the signed incidence matrix and $v=(1,1,1,1)^\top$ for a $2\times 2$ tile.
+Lemma~\ref{lem:Atv0} applies: each interior link appears in exactly two plaquettes with
+opposite orientation.
+
+The quadratic core coefficient is $c_2$, the quadratic coefficient in the even expansion
+of the Wilson plaquette potential $\frac{\beta}{2}(2-\mathrm{Re}\,\tr(U_p))$
+$=\beta c_2\norm{X_p}^2+O(\norm{X_p}^4)$.  The evenness of the SU(2) expansion (no cubic
+term) is crucial for the corridor control: it ensures the perturbation $\Delta$ satisfies
+$K_{xx},K_{xy}=O(\beta\delta^2)+O(1)$, which is $o(\beta)$ when $\delta\to 0$.
+
+The boundary manifold is a product of copies of $G$, and the spectral gap $\lambda_1$ of
+$-\Delta$ on $G$ is known explicitly (e.g.\ $\lambda_1=2$ for SU(2) with the round metric
+of diameter $\pi$).
+
+\subsection{Verification of hypotheses}
+
+\begin{enumerate}[label=(\roman*)]
+\item \emph{Topological cancellation}: Lemma~\ref{lem:Atv0} holds by the combinatorics
+of the $2\times 2$ tile.
+\item \emph{Interior coercivity}: $A^\top A\succeq\lambda_i I$ with $\lambda_i>0$
+after spanning-tree gauge fixing (the remaining plaquette constraints are linearly
+independent on the interior links).
+\item \emph{$C^2$ perturbation control}: Follows from BCH evenness and uniform corridor
+bounds on exponential coordinates.
+\item \emph{Interior Poincar\'e}: The corridor potential is uniformly convex with
+constant $\gtrsim\beta$, so Brascamp--Lieb applies.
+\item \emph{Reflection positivity}: Standard for the Wilson action on $a\Z^4$ with
+appropriate boundary conditions \cite{OsterwalderSeiler}.
+\end{enumerate}
+
+The contraction constant $q=q_0+\varepsilon_T+\eta$ satisfies $q<1$ for $\beta$
+sufficiently large and $\delta$ sufficiently small.  The resulting spectral gap is
+$m_{\mathrm{phys}}>0$.
+
+\subsection{Continuum limit}
+
+Under the assumption that a scaling trajectory $\beta(a)\to\infty$ exists with uniform
+corridor control (Assumption~\ref{ass:uniform}), Theorem~\ref{thm:continuum-gap} yields
+a continuum Euclidean theory with a positive spectral gap.
+
+The identification of this theory as a specific gauge theory (rather than an arbitrary
+gapped theory) requires additional input: passage of lattice Ward identities to the
+continuum and a nontriviality condition.  These are discussed in the companion notes
+\cite{Fontes2026Ward,Fontes2026Loop} and are outside the scope of the present
+operator-factorization framework.
+
+%======================================================================
+\section{Discussion}\label{sec:discussion}
+%======================================================================
+
+\subsection{The operator-factorization thread}
+
+The central message of this paper is that the same ``factor, project, contract'' philosophy
+that underlies Clark--Ocone representations and Bakry--\'Emery curvature in the stochastic
+calculus setting also drives mass-gap extraction in lattice statistical mechanics.  The
+specific instantiations differ:
+\begin{center}
+\begin{tabular}{lcc}
+& \emph{Stochastic calculus} & \emph{Lattice blocks}\\[3pt]
+\hline\\[-6pt]
+Operator identity & $(\mathrm{Id}-\E)=\delta\Pi D$ & $\mathrm{Schur}(V)=V_{xx}-V_{xy}V_{yy}^{-1}V_{yx}$\\[2pt]
+Topological input & Adaptedness / filtration & $A^\top v=0$\\[2pt]
+Contraction & $\norm{(\mathrm{Id}-\E)f}\le q\norm{f}$ & $\norm{\nabla(Tf)}\le q\norm{\nabla f}$\\[2pt]
+Global conclusion & Representation theorem & Spectral gap / mass gap\\[2pt]
+Uniqueness & Martingale uniqueness & $Ax=0\Rightarrow x=0$
+\end{tabular}
+\end{center}
+We view these as manifestations of a single structural principle rather than independent results.
+
+\subsection{What this framework does and does not accomplish}
+
+The framework provides a clean, deterministic pipeline:
+\begin{quote}
+\emph{Local contraction} $\Longrightarrow$ \emph{Exponential clustering}
+$\Longrightarrow$ \emph{Spectral gap} $\Longrightarrow$ \emph{Uniqueness}.
+\end{quote}
+What it does \emph{not} supply is the local contraction estimate itself for any specific
+model.  This requires model-specific analysis (corridor bounds, BCH expansions,
+character-algebraic estimates) that is the subject of the companion papers.  Nor does the
+framework address identification of the continuum limit with a specific field theory:
+that requires Ward identities and nontriviality, which are logically independent of the
+contraction mechanism.
+
+The separation is deliberate: by isolating the abstract pipeline, we clarify that
+the spectral gap is a \emph{deterministic consequence} of a single local estimate,
+and the only genuinely difficult model-dependent step is establishing that estimate.
+
+\subsection{Open directions}
+
+\begin{enumerate}[label=(\arabic*)]
+\item \emph{Explicit corridor verification}: Close the contraction estimate for SU(2)
+lattice gauge theory with explicit constants, establishing $q<1$ for a concrete range
+of $\beta$.
+\item \emph{Higher-rank groups}: Extend the topological cancellation and corridor analysis
+to SU($N$) for $N\ge 3$.
+\item \emph{Non-gauge lattice systems}: The Schur-complement mechanism applies whenever
+a block decomposition has the $A^\top v=0$ structure; explore applications to lattice
+$\sigma$-models and other systems with topologically protected modes.
+\item \emph{Quantitative continuum bounds}: Combine the contraction pipeline with quantitative
+OS reconstruction to produce explicit bounds on the continuum spectral gap as a function
+of the lattice contraction constant.
+\end{enumerate}
+
+%======================================================================
+% References
+%======================================================================
+
+\bibliographystyle{alpha}
+\begin{thebibliography}{99}
+
+\bibitem[Bal84]{Balaban1}
+T.~Balaban,
+\newblock Propagators and renormalization transformations for lattice gauge fields~I.
+\newblock \emph{Comm.\ Math.\ Phys.}, 95:17--40, 1984.
+
+\bibitem[Bal85a]{Balaban2}
+T.~Balaban,
+\newblock Averaging operations for lattice gauge theories.
+\newblock \emph{Comm.\ Math.\ Phys.}, 98:17--51, 1985.
+
+\bibitem[Bal85b]{Balaban3}
+T.~Balaban,
+\newblock Spaces of regular gauge field configurations on a lattice and gauge fixing conditions.
+\newblock \emph{Comm.\ Math.\ Phys.}, 99:75--102, 1985.
+
+\bibitem[DS85]{DobrushinShlosman}
+R.L.~Dobrushin and S.B.~Shlosman,
+\newblock Constructive criterion for the uniqueness of Gibbs field.
+\newblock In \emph{Statistical Physics and Dynamical Systems} (K\"osz\"eg, 1984),
+Birkh\"auser, 1985.
+
+\bibitem[FI]{Fontes2026I}
+R.~Fontes,
+\newblock Operator factorization and Clark--Ocone formulas for stable L\'evy processes.
+\newblock Quijotic Research, 2025--2026.
+
+\bibitem[FII]{Fontes2026II}
+R.~Fontes,
+\newblock Operator factorization and It\^o formulas for fractional Brownian motion.
+\newblock Quijotic Research, 2025--2026.
+
+\bibitem[FIII]{Fontes2026III}
+R.~Fontes,
+\newblock Bakry--\'Emery curvature via operator factorization.
+\newblock Quijotic Research, 2025--2026.
+
+\bibitem[FIV]{Fontes2026IV}
+R.~Fontes,
+\newblock Martingale innovations and non-semimartingale It\^o formulas.
+\newblock Quijotic Research, 2025--2026.
+
+\bibitem[FW]{Fontes2026Ward}
+R.~Fontes,
+\newblock Lattice Ward identities and their continuum passage.
+\newblock Quijotic Research, 2026 (in preparation).
+
+\bibitem[FL]{Fontes2026Loop}
+R.~Fontes,
+\newblock Continuum loop equations from lattice Schwinger--Dyson identities.
+\newblock Quijotic Research, 2026 (in preparation).
+
+\bibitem[GJ]{GlimmJaffe}
+J.~Glimm and A.~Jaffe,
+\newblock \emph{Quantum Physics: A Functional Integral Point of View.}
+\newblock Springer, 2nd edition, 1987.
+
+\bibitem[OS73]{OsterwalderSchrader1}
+K.~Osterwalder and R.~Schrader,
+\newblock Axioms for {E}uclidean {G}reen's functions.
+\newblock \emph{Comm.\ Math.\ Phys.}, 31:83--112, 1973.
+
+\bibitem[OS75]{OsterwalderSchrader2}
+K.~Osterwalder and R.~Schrader,
+\newblock Axioms for {E}uclidean {G}reen's functions~{II}.
+\newblock \emph{Comm.\ Math.\ Phys.}, 42:281--305, 1975.
+
+\bibitem[OSe78]{OsterwalderSeiler}
+K.~Osterwalder and E.~Seiler,
+\newblock Gauge field theories on a lattice.
+\newblock \emph{Ann.\ Physics}, 110:440--471, 1978.
+
+\end{thebibliography}
+
+\end{document}

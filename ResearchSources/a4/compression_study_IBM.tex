@@ -1,0 +1,576 @@
+\documentclass[11pt,reqno]{amsart}
+
+%==============================================================
+% Does Random-Clock, Heavy-Tailed Structure Compress?
+% An empirical companion to the iterated-Brownian / operator papers.
+%==============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{finding}{Finding}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\IBM}{Z}
+\newcommand{\bps}{\mathrm{bits/sample}}
+\DeclareMathOperator{\Var}{Var}
+
+\title[Does random-clock, heavy-tailed structure compress?]{Does Random-Clock, Heavy-Tailed Structure Compress?\\
+  An Empirical Study of Iterated-Brownian and\\ Operator Models for Lossless Coding}
+\author{Ramiro Fontes}
+\address{Quijotic Research}
+\email{ramirofontes@gmail.com}
+\urladdr{www.quijotic.com}
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+The companion papers develop, for iterated Brownian motion (IBM)
+$\IBM_t=X_{|Y_t|}$ and the order-$p$ heat pseudo-processes, a heavy-tailed
+marginal calculus (operator order $p$, biharmonic tail
+$e^{-c|r|^{4/3}}$), a long-memory volatility structure (fractional /
+Mittag-Leffler), and a shared adjoint operator framework $D=\delta^{*}$.
+This note asks the only question that decides whether any of that helps
+\emph{lossless compression}: can these models lower the held-out code length
+$-\tfrac1n\sum_i\log_2 q_i(x_i\mid x_{<i})$ below standard baselines? We run a
+five-stage study---synthetic go/no-go, real-data tail coding, a parameter-swept
+Mittag-Leffler volatility model against EWMA/GARCH, a byte-level arithmetic-coded
+codec against gzip/bzip2/xz and a FLAC-class baseline, and a GPU neural
+distribution-head model---on synthetic IBM, a real electrocardiogram
+($108\text{k}$ samples), pooled S\&P~500 daily log-returns ($619\text{k}$), and
+$16$-bit speech. The result is a clear but qualified yes. Non-Gaussian
+residual coding gives a real, measurable advantage: $+0.07$ to $+0.23~\bps$
+over Gaussian on real data, beating the Laplace/Rice coder of FLAC. Tested as a
+real codec---canonical raw bytes, exact byte-for-byte round-trip, all overhead
+included---it beats gzip, bzip2, and xz on numeric streams ($+8\%$ to $+31\%$
+over xz) and \emph{ties} a faithful FLAC-class (LPC$+$Rice) baseline on
+continuous $16$-bit speech ($+0.5\%$, within real-FLAC tuning margin). The
+advantage is largest under a learned predictor, where a heavy-tailed
+distribution head is worth $+0.17$--$0.20~\bps$ over a Gaussian head at equal
+model size. The sobering byte-level lesson is that the \emph{driver is
+prediction plus arithmetic/Rice coding}: a plain Gaussian model captures most of
+the margin, the heavy-tail and clock layers add only $\approx1$--$3\%$ on top,
+and on audio every static heavy-tail likelihood (the IBM mixture included) loses
+to Rice coding---only the volatility model is a consistent lever. Two predictions of the theory are
+\emph{falsified} on real data, however: the winning tail is power-law
+(Student-$t$), not the operator's stretched-exponential $\beta=4/3$; and the
+fractional volatility kernel, while confirming genuine long memory
+($\alpha<1$ optimal on every dataset), beats GARCH only marginally and not
+universally. We test the genuine objects directly: the true IBM mixture (a
+half-normal variance mixture, not a tail proxy) is the best of the four
+canonical codes on synthetic IBM residuals but shares the stretched-exponential
+tail that loses to Student-$t$ on real data; and the raw order-$p$
+pseudo-process kernels are \emph{signed} ($12\%$ negative mass for the
+biharmonic, wildly oscillatory for Airy), hence not entropy codes at all---only
+their positive subordinated (IBM) face compresses. The durable contribution for
+a codec is therefore the
+\emph{framework}---adaptive heavy-tail selection and a jointly modeled
+volatility clock---rather than the specific operator exponents.
+\end{abstract}
+
+\maketitle
+
+\section{The compression question}
+\label{sec:intro}
+
+A lossless compressor is a predictive model followed by an entropy coder. The
+coder (arithmetic, range, or ANS) is solved: it realizes the model's code
+length to within a fraction of a bit. Hence the entire question is whether a
+model's predictive distribution $q_i(x_i\mid x_{<i})$ assigns shorter ideal
+code length
+\begin{equation}\label{eq:codelen}
+  L = -\frac1n\sum_{i=1}^{n}\log_2 q_i(x_i\mid x_{<i})\quad(\bps)
+\end{equation}
+than a baseline. For continuous residuals \eqref{eq:codelen} is a differential
+code length; every model pays the same quantization-bin constant, which cancels
+in model-versus-model differences, so relative $\bps$ is the honest comparison.
+
+The companion papers suggest three mechanisms that might lower
+\eqref{eq:codelen} on bursty signals.
+\begin{enumerate}
+\item \emph{Heavy tails.} The IBM marginal is a normal variance mixture; by a
+  Laplace-method estimate its tail is the biharmonic
+  $q(z)\sim\exp(-c|z|^{4/3})$, i.e.\ exponential-power with shape
+  $\beta=4/3$. The order-$p$ pseudo-process generalizes this to
+  $\beta=p/(p-1)$ (Gaussian $p{=}2\!\to\!\beta{=}2$; biharmonic
+  $p{=}4\!\to\!\beta{=}4/3$).
+\item \emph{A volatility clock.} The random time-change makes the local
+  variance vary; if predictable, it shortens the code (volatility clustering).
+\item \emph{Long memory.} The fractional / Mittag-Leffler structure of the
+  memory companion predicts power-law, not exponential, volatility
+  autocorrelation.
+\end{enumerate}
+The order-$p$ Stein identity (Stein operator $=$ kernel score) further suggests
+a closed-form, fit-free selector for the tail exponent.
+
+We test these as falsifiable claims. Throughout, the headline metric is
+held-out $\bps$; the kill criterion is whether the structure beats the
+appropriate baseline by a margin that survives on real data.
+
+\section{Method and data}
+\label{sec:method}
+
+\paragraph{Datasets.} (i) \emph{Synthetic IBM}: genuine iterated Brownian
+increments from a fixed Brownian scenery sampled at a reflected Brownian clock
+($2\times10^5$ samples), which carries both the heavy tail and the true
+long-range dependence. (ii) \emph{ECG}: the SciPy electrocardiogram, a real
+$108{,}000$-sample biosignal with bursty QRS complexes. (iii) \emph{Equities}:
+daily log-returns pooled across $505$ S\&P~500 names, $618{,}535$ samples.
+
+\paragraph{Models.} Residuals are formed by an order-$p$ AR predictor (rounded
+to integers where lossless coding is required). The residual code is one of:
+Gaussian, Laplace ($\approx$ the FLAC/Rice coder), Student-$t$, the
+\emph{genuine IBM mixture} (a normal variance mixture with half-normal mixing,
+the true IBM-increment marginal, one scale parameter), exponential-power with
+fitted or operator-fixed shape $\beta=p/(p-1)$, and dynamic variants with an
+EWMA, GARCH$(1,1)$, power-law, or genuine Mittag-Leffler volatility scale. Parameters are fit on a training
+prefix; $\bps$ is reported on a disjoint held-out span.
+
+\paragraph{Diagnostics.} The fitted tail exponent $\hat\beta$ and its implied
+operator order $p=\beta/(\beta-1)$; the lag-1 autocorrelation of squared
+residuals $\mathrm{ACF}_1(r^2)$ (presence of clustering); and the decay law of
+$\mathrm{ACF}_k(r^2)$ (power-law $=$ long memory vs.\ exponential $=$ short).
+
+\section{Stage 0: synthetic go/no-go}
+\label{sec:stage0}
+
+On genuine IBM the best static heavy-tail code beats Gaussian by
+$+0.049~\bps$, and the \emph{parameter-free} $\beta=4/3$ code ($2.025~\bps$)
+beats fitted Student-$t$ ($2.032$). Two independent estimators of the tail
+exponent agree, $\hat\beta=1.289$ (MLE) $=1.289$ (score-matching), next to the
+predicted $4/3$. The Gaussian control returns $\hat\beta=1.99$ with no spurious
+gain, so the machinery does not hallucinate tails.
+
+Coding the \emph{genuine} IBM mixture density---a normal variance mixture with
+half-normal mixing, one scale parameter, not the exponential-power proxy---against
+the three canonical codes makes the load-bearing comparison
+(\cref{tab:fourway}). On data that is actually IBM the mixture is the best of the
+four, beating Student-$t$ by $\approx0.01~\bps$ on residuals it itself generated,
+and it correctly \emph{loses} on Gaussian and power-law (stochastic-volatility)
+data---it is the right code specifically for IBM-structured residuals, not a
+universal hammer.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lcc}
+\toprule
+data & winner & IBM mix vs.\ Gauss / Student-$t$\\
+\midrule
+true IBM-increment law & \textbf{IBM mixture} & $+0.058$ / $+0.009$\\
+genuine IBM            & \textbf{IBM mixture} & $+0.051$ / $+0.011$\\
+Gaussian control       & Gaussian             & $-0.040$ (correctly loses)\\
+power-law SV           & Student-$t$          & (correctly loses)\\
+\bottomrule
+\end{tabular}
+\caption{The genuine IBM mixture against the canonical codes (held-out $\bps$
+gain). It wins on IBM-type residuals and correctly loses elsewhere.}
+\label{tab:fourway}
+\end{table}
+
+The squared-residual autocorrelation of IBM decays as a power law,
+$\mathrm{ACF}_k(r^2)\sim k^{-1/2}$ ($R^2_{\text{pow}}=0.87$ vs.\
+$R^2_{\text{exp}}=0.69$), i.e.\ \emph{long memory}; an exponential
+stochastic-volatility control decays exponentially, as expected. Consistently,
+a power-law volatility filter recovers more of the clustering than EWMA
+($+0.028$ vs.\ $+0.014~\bps$) on IBM, while EWMA wins on the exponential
+control---the volatility tool must match the memory law.
+
+\begin{finding}
+The operator's specific tail prediction ($\beta\approx4/3$) holds on data
+generated by the operator; clustering is present and is long-memory; both are
+measurable in $\bps$.
+\end{finding}
+
+A disentanglement experiment (coding IBM, a non-IBM fractional process, and
+i.i.d.\ heavy-tail data with one generic ``fractional$+$tail'' model against a
+clock-aware oracle) showed that IBM, Mittag-Leffler, and the heavy tail are not
+competing explanations but \emph{the same subordination structure seen twice}:
+one random clock produces both the variance-mixture tail and the fractional
+memory (the Allouba--Zheng subordination/PDE correspondence). The oracle gap on
+IBM is large ($+0.21~\bps$), but it is mostly \emph{unpredictable-from-the-past}
+variance, so the causally bankable clock gain is modest.
+
+\section{The pseudo-process is signed; IBM is its codeable face}
+\label{sec:signed}
+
+We built the genuine order-$p$ kernels
+$K_p(t,x)=\mathrm{IFFT}\bigl[e^{c_p(ik)^p t}\bigr]$ directly from the
+characteristic symbol (paper~3, Rmk.~5.7); the reconstruction is exact---$K_2$
+reproduces the standard Gaussian to $\|K_2-\mathcal N(0,1)\|_\infty=1.7\times
+10^{-16}$. The central fact for compression is that an entropy code needs a
+\emph{nonnegative} density: $-\log_2 q$ is undefined where $q<0$. The order-$p$
+kernels fail this for $p\ge3$ (\cref{tab:signed}).
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lcccl}
+\toprule
+$p$ & $\int K$ & $\|K\|_{L^1}$ & neg.\ mass & status\\
+\midrule
+$2$ (Gaussian)   & $1.000$ & $1.000$  & $0$     & positive --- codeable\\
+$4$ (biharmonic) & $1.000$ & $1.237$  & $0.119$ & \textbf{signed --- not a code}\\
+$3$ (Airy)       & $1.000$ & $18.08$  & $8.54$  & \textbf{signed, near-non-integrable}\\
+\bottomrule
+\end{tabular}
+\caption{Genuine order-$p$ kernels by FFT of the symbol. The biharmonic puts
+$12\%$ of its mass in negative lobes; the Airy kernel is wildly oscillatory
+($\|K\|_{L^1}=18$). For $p\ge3$, $K_p$ is signed and cannot be an entropy code.}
+\label{tab:signed}
+\end{table}
+
+On genuine IBM residuals, $0.59\%$ fall where $K_4\le0$: the raw biharmonic code
+length is literally undefined there. The best positive salvage, $|K_4|/\|K_4\|_{L^1}$
+(a proper density), gives $2.139~\bps$---worse than every baseline---because
+taking absolute values destroys the structure. By contrast the positive
+subordinated law of the same order-$4$ operator, the \emph{IBM mixture}, gives
+$2.019~\bps$ and beats Student-$t$ ($2.029$). ``Operator order $4$'' and ``IBM
+marginal'' are the signed and positive sides of one object: the pseudo-process is
+the signed PDE Green's function and does not compress; its IBM subordination is a
+genuine probability and does.
+
+\section{Stage 1: does the tail survive on real data?}
+\label{sec:stage1}
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lcc}
+\toprule
+quantity & ECG (AR resid) & S\&P returns \\
+\midrule
+best static vs.\ Gaussian            & $+0.068$ & $+0.226$ \\
+winning family                        & Student-$t$ & Student-$t$ \\
+exp-power $\beta=4/3$ (operator)      & $+0.043$ & $+0.177$ \\
+vs.\ Laplace (FLAC/Rice)             & $+0.025$ & $+0.015$ \\
+with EWMA clustering                  & $+0.111$ & $+0.264$ \\
+$\hat\beta$ (MLE)                     & $1.18$   & $1.05$ \\
+$\mathrm{ACF}_1(r^2)$                 & $0.227$  & $0.091$ \\
+\bottomrule
+\end{tabular}
+\caption{Held-out $\bps$ improvements over Gaussian on real data. The heavy
+tail and clustering both pay; Student-$t$ wins; the operator $\beta=4/3$ is
+competitive but not the winner.}
+\label{tab:stage1}
+\end{table}
+
+The heavy-tail advantage is real and, on equities, large: $+0.226~\bps$ is
+about $11\%$ below Gaussian residual coding, and it beats the Laplace coder
+that FLAC uses. But \emph{Student-$t$ wins on both datasets}: real residuals are
+power-law tailed (fitted $\mathrm{df}\approx3$), which is heavier than any
+stretched exponential. The operator predicts the lighter $e^{-c|r|^{4/3}}$ and
+therefore undershoots the true tail.
+
+\begin{finding}
+The generic claim ``non-Gaussian heavy tails compress better'' is strongly
+confirmed on real data; the specific operator shape $\beta=4/3$ is falsified
+there---real tails are power-law.
+\end{finding}
+
+\section{Stage 2: long-memory volatility (Mittag-Leffler) vs.\ GARCH}
+\label{sec:stage2}
+
+We tested the genuine Mittag-Leffler kernel
+$w_k=k^{\alpha-1}E_{\alpha,\alpha}(-\lambda k^{\alpha})$ (the fractional-OU
+volatility memory, with $\alpha=2H_2$), swept over $\alpha\in\{0.4,0.6,0.8,1.0\}$
+and five $\lambda$, against EWMA, a fitted GARCH$(1,1)$, and a power-law filter,
+all feeding a common Student-$t$ tail. The Mittag-Leffler function was computed
+in high precision (series and asymptotic), validated to $10^{-7}$ against
+$E_1(-x)=e^{-x}$.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lccccc}
+\toprule
+dataset & Mittag-Leffler & GARCH$(1,1)$ & EWMA & static & optimal $\alpha$\\
+\midrule
+synthetic IBM      & $+0.032$ & $+0.027$ & $+0.018$ & $0$ & $0.4$\\
+S\&P returns       & $+0.067$ & $+0.062$ & $+0.055$ & $0$ & $0.4$\\
+ECG residual       & $+0.090$ & $+0.110$ & $+0.049$ & $0$ & $0.8$\\
+\bottomrule
+\end{tabular}
+\caption{Volatility-model $\bps$ gain over a static scale (common Student-$t$
+tail). The optimal fractional order is $\alpha<1$ on every dataset.}
+\label{tab:stage2}
+\end{table}
+
+The optimum is $\alpha<1$ everywhere: volatility genuinely has long memory,
+including in real financial and ECG data---a clean, literature-consistent
+confirmation of the memory companion. Mittag-Leffler beats EWMA on all three
+datasets and beats GARCH on the financial and IBM data; GARCH wins on ECG,
+whose volatility is more persistent/short-memory. The Mittag-Leffler kernel and
+a plain power-law kernel tie, since $E_{\alpha,\alpha}(-x)$ with $\alpha<1$ is
+itself power-law tailed.
+
+\begin{finding}
+Long memory in volatility is real and the fractional kernel captures it, but its
+edge over GARCH is small ($\sim0.005~\bps$ on equities) and not universal.
+\end{finding}
+
+\section{Stage 3: a real byte-level codec vs.\ gzip / bzip2 / xz}
+\label{sec:stage3}
+
+This stage is tested as a compressor, not a paper. The input is frozen as
+canonical little-endian raw bytes (int16 for ECG, int32 scaled returns for
+S\&P); every method sees exactly those bytes. Our codec must
+$\textsf{encode}\to\textsf{decode}\to$ reproduce the input \emph{byte for byte}
+(verified), and its compressed file carries \emph{all} overhead---magic, length,
+dtype, scale, AR coefficients, model parameters---so it is fully self-decoding.
+The coder is a Witten--Neal--Cleary arithmetic coder over a per-symbol
+cumulative-frequency table built from the model CDF with a guaranteed nonzero
+floor. Baselines are actual bytes from gzip\,$-9$, bzip2\,$-9$, xz\,$-9$
+(LZMA), and a delta$+$xz numeric baseline; zstd was unavailable on the test
+machine and xz/LZMA is the strong sanity check. The ablation swaps only the
+residual law under a common AR predictor and coder.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lrr|lrr}
+\toprule
+\multicolumn{3}{c|}{ECG (216\,kB int16)} & \multicolumn{3}{c}{S\&P (480\,kB int32)}\\
+method & bytes & vs xz & method & bytes & vs xz\\
+\midrule
+gzip$-9$            & $118{,}619$ & $-37\%$ & gzip$-9$            & $323{,}128$ & $-23\%$\\
+xz$-9$              & $86{,}772$  & ---     & xz$-9$              & $263{,}424$ & ---\\
+bzip2$-9$           & $73{,}690$  & $+15\%$ & bzip2$-9$           & $254{,}343$ & $+3\%$\\
+delta$+$xz          & $68{,}696$  & $+21\%$ & delta$+$xz          & $269{,}996$ & $-2\%$\\
+AR$+$Gaussian       & $61{,}505$  & $+29\%$ & AR$+$Gaussian       & $244{,}229$ & $+7\%$\\
+AR$+$Student-$t$    & $60{,}797$  & $+30\%$ & AR$+$Student-$t$    & $242{,}845$ & $+8\%$\\
+AR$+$Stud.$+$EWMA   & $60{,}062$  & $+31\%$ & AR$+$Stud.$+$EWMA   & $242{,}216$ & $+8\%$\\
+\textbf{AR$+$Mittag}& $\mathbf{59{,}686}$ & $\mathbf{+31\%}$ & \textbf{AR$+$Mittag}& $\mathbf{242{,}097}$ & $\mathbf{+8\%}$\\
+AR$+$IBM mixture    & $60{,}983$  & $+30\%$ & AR$+$IBM mixture    & $314{,}849$ & $\mathbf{-20\%}$\\
+\bottomrule
+\end{tabular}
+\caption{Actual compressed bytes, exact round-trip, all overhead included. The
+codec beats every general-purpose baseline; the IBM mixture, with its fixed
+light tail, \emph{fails} on power-law returns ($-20\%$, worse than gzip).}
+\label{tab:stage3}
+\end{table}
+
+Three honest readings of \cref{tab:stage3}. (i) The codec is a real win: it beats
+gzip, bzip2, xz, and delta$+$xz on both streams---$+31\%$ over xz on ECG, $+8\%$
+on S\&P. (ii) The \emph{driver is AR$+$arithmetic coding}, not the exotic tail:
+plain AR$+$Gaussian already reaches $+29\%$ / $+7\%$, and the entire heavy-tail
+$+$ clock ladder adds only $\approx3\%$ (ECG) and $\approx0.9\%$ (S\&P) on top,
+with the random-clock (Mittag-Leffler) model best by a hair. (iii) The
+\emph{IBM mixture is not robust}: its fixed $\beta=4/3$ tail starves the frequent
+large residuals of power-law returns and the code length explodes ($-20\%$); it
+is only competitive where the empirical tail matches it (ECG).
+
+\subsection{Audio: against FLAC}
+\label{sec:flac}
+
+We repeated the byte-level test on real mono $16$-bit PCM (an $11$-second
+$16$\,kHz speech clip). With no \texttt{flac} binary available we implemented
+FLAC's core---linear prediction plus Rice coding---as the baseline:
+\textsf{FLAC-fixed} (best fixed predictor per block) and \textsf{FLAC-LPC}
+(an order-$32$ linear predictor, the same family as our codec), each with
+per-partition optimal Rice parameters.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lrr}
+\toprule
+method & bytes & vs FLAC-LPC\\
+\midrule
+gzip / bzip2 / xz $-9$ & $279$--$310$\,k & $-33$ to $-48\%$\\
+FLAC-fixed$+$Rice      & $229{,}944$ & $-9.8\%$\\
+FLAC-LPC$32+$Rice (boss)& $209{,}340$ & ---\\
+AR$+$Gaussian          & $221{,}482$ & $-5.8\%$\\
+AR$+$Student-$t$       & $219{,}930$ & $-5.1\%$\\
+AR$+$IBM mixture       & $220{,}270$ & $-5.2\%$\\
+AR$+$Student-$t+$EWMA  & $208{,}645$ & $+0.3\%$\\
+\textbf{AR$+$Mittag}   & $\mathbf{208{,}194}$ & $\mathbf{+0.5\%}$\\
+\bottomrule
+\end{tabular}
+\caption{Lossless coding of $16$-bit speech (exact round-trip). We nudge past a
+faithful FLAC-class baseline by $+0.3$ to $+0.5\%$---entirely via the volatility
+model. Every \emph{static} tail (Gaussian, Student-$t$, IBM mixture) \emph{loses}
+to FLAC's Rice coder by $4$--$6\%$.}
+\label{tab:flac}
+\end{table}
+
+The audio result is the sharpest test of the thesis, and it is sobering. On
+continuous speech we beat the general-purpose zips by $25$--$35\%$ and nudge past
+FLAC-LPC by $+0.5\%$---but \emph{only} through the EWMA / Mittag-Leffler
+volatility model. Every static heavy-tail code, including the IBM mixture,
+\emph{loses} to FLAC's Rice coder: a tuned likelihood does not beat Rice coding
+of well-predicted residuals. A real tuned \texttt{flac} (optimal LPC order and
+partitioned-Rice search) would likely reclaim that sub-$1\%$, so against genuine
+FLAC this is a near-tie on continuous audio, with the volatility clock the only
+lever. On a quieter $8$\,kHz clip with long near-silent runs, general-purpose
+bzip2/xz beat both FLAC and our codec by $40\%$---linear-prediction codecs are
+simply the wrong tool when the signal is LZ-compressible.
+
+\section{Stage 4: a learned distribution head (GPU)}
+\label{sec:stage4}
+
+A small causal GRU emits per-step distribution parameters, trained to minimize
+\eqref{eq:codelen}, with a swappable Gaussian or Student-$t$ head.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lcc}
+\toprule
+model & S\&P ($\bps$) & ECG ($\bps$)\\
+\midrule
+neural Student-$t$       & $\mathbf{1.694}$ & $\mathbf{-0.748}$\\
+neural Gaussian          & $1.863$ & $-0.548$\\
+classical EWMA$+$Student-$t$ & $1.789$ & $0.961$\\
+\midrule
+head gain (t vs.\ Gaussian) & $+0.169$ & $+0.200$\\
+neural vs.\ classical clock  & $+0.095$ & $+1.71$\\
+\bottomrule
+\end{tabular}
+\caption{Differential held-out $\bps$ (model comparison; lower is better).
+The non-Gaussian head and learned volatility give the largest gains.}
+\label{tab:stage4}
+\end{table}
+
+This is where the non-Gaussian thesis pays the most: a heavy-tailed head is
+worth $+0.17$ to $+0.20~\bps$ over a Gaussian head \emph{at equal model size},
+\emph{larger} than the static $\approx0.1$, because once a strong predictor
+whitens the volatility the residual is still fat-tailed and the head captures
+exactly that. The learned model also beats the hand-crafted volatility clock by
+$+0.10$ (equities) to $+1.71~\bps$ (ECG). The caveat is amortization: the model
+($\sim0.1$\,MB) only pays off as a pretrained, shared codec, not per small file.
+
+\section{Repeatability of the fractional-clock advantage}
+\label{sec:repeat}
+
+The byte-level ablations showed the random-clock (Mittag-Leffler) model edging
+AR$+$Student-$t+$EWMA by only $0.05$--$0.6\%$---margins small enough to be noise.
+We settle this with paired tests, treating each stream as many independent
+units, under two protocols. (i) \emph{Byte-level chunk sweep}: cut a stream into
+independent fixed-size chunks, compress each one fully and independently
+(per-chunk fit and header) with both models, and pair the resulting file sizes.
+(ii) \emph{Header-free per-block}: fit once over the whole recording and compare
+the two models' actual per-symbol arithmetic code length ($-\log_2$ of the coded
+frequency) aggregated into $256$-sample blocks---removing per-chunk header and
+fit noise to isolate the model. Both are run on \emph{two independent} ECG
+recordings: the SciPy electrocardiogram and MIT-BIH record~100 (a different
+subject and lead, $650$k samples).
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lrrl}
+\toprule
+stream (header-free, per block) & blocks & mean impr. & win rate / $p$\\
+\midrule
+ECG (SciPy)        & $421$  & $+0.64\%$ & $96.2\%$ / $10^{-68}$\\
+ECG (MIT-BIH 100)  & $2539$ & $+0.80\%$ & $99.8\%$ / ${\approx}0$\\
+S\&P returns       & $75$   & $+0.009\%$ & significant but trivial\\
+audio (speech)     & $21$   & $+0.05\%$ & $57\%$ / $0.18$ (noise)\\
+\bottomrule
+\end{tabular}
+\caption{Paired per-block code-length comparison, Mittag-Leffler vs.\
+Student-$t+$EWMA. The advantage is robust and reproduces across two independent
+ECG recordings; it is statistically real but practically zero on returns and
+indistinguishable from noise on audio.}
+\label{tab:repeat}
+\end{table}
+
+At the model level the result is unambiguous on ECG: on both recordings the
+fractional kernel wins $96$--$99.8\%$ of all blocks with overwhelming
+significance, because it matches the long-memory volatility that EWMA's
+exponential decay cannot (\cref{sec:stage2}). At the byte level the same
+advantage appears but is \emph{conditional on block size}: with per-chunk
+headers it \emph{loses} on $1$\,kB chunks (the dynamic model's header overhead
+and its $128$-lag warmup are not amortized), turns positive by $\sim2$--$4$\,kB,
+and reaches $+0.35$ to $+0.52\%$ at $8$\,kB---with the same pattern on both
+recordings.
+
+\begin{finding}
+The Mittag-Leffler / fractional-clock advantage over EWMA is real and
+reproducible across independent ECG recordings ($+0.6$--$0.8\%$ at the model
+level, $96$--$99.8\%$ of blocks), but small, restricted to
+long-memory-volatility data, and---at the byte level---realized only once the
+coding block is large enough to amortize the model's overhead. It is negligible
+on returns and noise on audio.
+\end{finding}
+
+\section{Verdict}
+\label{sec:verdict}
+
+\begin{itemize}
+\item \textbf{A real codec, byte-for-byte.} With exact round-trip and all
+  overhead included, the AR$+$arithmetic codec beats every general-purpose
+  baseline---gzip, bzip2, and xz---by $+8\%$ (returns) to $+31\%$ (ECG) over
+  xz, and it \emph{ties} a faithful FLAC-class baseline on continuous speech
+  ($+0.5\%$, within real-FLAC tuning margin). The structure compresses.
+\item \textbf{But the driver is prediction $+$ coding, not the exotic tail.}
+  Plain AR$+$Gaussian already captures almost the entire margin; the whole
+  heavy-tail $+$ clock ladder adds only $\approx1$--$3\%$ on numeric data, and on
+  audio every \emph{static} heavy-tail code (including the IBM mixture)
+  \emph{loses} to FLAC's Rice coder. The one consistent lever above a Gaussian
+  baseline is the volatility model, not the likelihood shape---and even its best
+  (fractional) form beats EWMA repeatably only on long-memory ECG, by under
+  $1\%$ (\cref{sec:repeat}).
+\item \textbf{The specific operator predictions do not transfer, and can hurt.}
+  Real tails are power-law (Student-$t$), not the biharmonic $\beta=4/3$; the
+  fractional volatility kernel confirms long memory but beats GARCH only
+  marginally; and the \emph{IBM mixture fails outright} on power-law returns
+  ($-20\%$ vs xz, worse than gzip). The raw order-$p$ pseudo-process kernels are
+  signed---not codes at all; only their positive subordinated (IBM) face
+  compresses, and only where the empirical tail happens to match it.
+\item \textbf{The framework is the contribution.} What survives contact with real
+  data is the architecture the papers motivate: an adaptive heavy-tail head
+  (selected per block), a long-memory volatility clock, and the view---made
+  precise by subordination---that tail and volatility are one mechanism, to be
+  modeled jointly rather than bolted together.
+\end{itemize}
+
+A deployable artifact consistent with these results is a per-domain,
+\emph{pretrained neural compressor with a heavy-tailed (Student-$t$) head and a
+long-memory volatility state}; it captures essentially all the measured gains.
+The iterated-Brownian and order-$p$ theory earns its place as the conceptual
+scaffolding for that design, even where its closed-form exponents are not what
+the data wants.
+
+\section*{Reproducibility}
+All experiments are pure Python (NumPy/SciPy; PyTorch with CUDA for
+Stage~4) and reproducible from the scripts \texttt{stage0\_synthetic.py},
+\texttt{memdiag.py}, \texttt{memvol.py}, \texttt{disentangle.py},
+\texttt{stage1\_realdata.py}, \texttt{stage2\_mittag.py}, \texttt{codec.py},
+\texttt{pseudo\_codes.py} (the genuine FFT-built order-$p$ kernels and the IBM
+mixture code), \texttt{bench.py} and \texttt{bench\_wav.py} (the byte-level
+codec with exact round-trip and the gzip/bzip2/xz and FLAC-class baselines),
+\texttt{repeat\_test.py}, \texttt{ecg\_repeat.py} and \texttt{mit\_test.py} (the
+paired repeatability and cross-recording tests), and \texttt{stage4\_neural.py}. The ECG is the SciPy electrocardiogram; the equity
+series is pooled S\&P~500 daily log-returns. The arithmetic coder is
+round-trip verified lossless.
+
+\begin{thebibliography}{9}
+\bibitem{AllouZheng} H.~Allouba and W.~Zheng,
+  \emph{Brownian-time processes: the PDE connection and the half-derivative
+  generator}, Ann.\ Probab.\ \textbf{29} (2001), 1780--1795.
+\bibitem{chaos} R.~Fontes,
+  \emph{Source-Resolved Chaos Expansions for Iterated Brownian Motion}, 2026.
+\bibitem{ito} R.~Fontes,
+  \emph{Iterated Brownian Motion: An It\^o Formula in the Energy-First
+  Framework}, 2026.
+\bibitem{orderp} R.~Fontes,
+  \emph{A Level-$p$ Clark--Ocone Calculus for Higher-Order Heat
+  Pseudo-Processes}, 2026.
+\bibitem{variance} R.~Fontes,
+  \emph{A Numerical Variance Budget for Iterated Brownian Motion}, 2026.
+\bibitem{mem} R.~Fontes,
+  \emph{The Fractional Memory Process: Well-Posedness, Spectral Decomposition,
+  and Discrete Representation}, 2026.
+\end{thebibliography}
+
+\end{document}

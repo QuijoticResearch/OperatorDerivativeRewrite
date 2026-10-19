@@ -1,0 +1,1908 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{cleveref}
+\usepackage{graphicx}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\im}{im}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\HH}{\mathcal{H}}
+\newcommand{\FF}{\mathcal{F}}
+\newcommand{\DD}{\mathcal{D}}
+\newcommand{\ip}[2]{\langle #1, #2 \rangle}
+\newcommand{\norm}[1]{\| #1 \|}
+
+\title{The Fractional Memory Process:\\
+Well-Posedness, Spectral Decomposition,\\
+and Discrete Representation}
+\author{Ramiro Fontes\\Quijotic Research LLC\\{\small\texttt{ramiro@quijotic.com}}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study the fractional stochastic evolution equation
+\[
+\partial_t^{2H_2} X_t = A_{H_1} X_t + \dot{B}_t,
+\qquad X_0 = f,
+\]
+where $\partial_t^{2H_2}$ is the Caputo fractional
+derivative, $A_{H_1} = -c_{H_1}(-\Delta)^{H_1}$ is
+the fractional Laplacian ($c_{H_1} > 0$ a constant),
+$\dot{B}_t$ is Gaussian noise, and $f \in L^2(\R)$
+is the initial datum.  The two parameters
+$H_1 \in (0,1]$ and $H_2 \in (1/4,1)$ independently
+control spatial resolution and temporal persistence.
+
+We establish well-posedness of the mild formulation
+under trace-class noise for all admissible parameters
+and under cylindrical noise when additionally
+$H_1 > \alpha/(2(2\alpha-1))$ with $\alpha = 2H_2$
+(which forces $H_2 > 1/3$).  The spectral decomposition reduces the
+SPDE to independent scalar fractional
+Ornstein--Uhlenbeck modes with power-law decay
+$t^{-H_2/(2H_1)}$ (sharp, with matching lower bound
+when $\hat{f}(0) \neq 0$), and the variance scales
+with explicit self-similarity exponent
+$H = 2H_2 - 1/2 - H_2/(2H_1)$
+(not to be confused with the parameters $H_1$, $H_2$).
+
+For a stream of discrete impulse inputs, we prove
+that the Fourier-projected mild solution is a
+finite sum of two-parameter Mittag-Leffler
+evaluations with explicit prefactors.  A distinct
+autonomous-decay representation using the
+one-parameter Mittag-Leffler function gives the
+free resolvent of the fractional Ornstein--Uhlenbeck
+modes.  The two representations coincide at
+$\alpha = 1$ and play complementary roles for
+$\alpha \in (0, 1)$: the forced-SPDE Green's
+function is $L^1$-integrable on $[0, \infty)$ with
+total mass $1/\lambda$ but has a $(t-s)^{\alpha-1}$
+singularity at the impulse time, while the
+autonomous-decay kernel is regular at zero age but
+$L^1$-divergent at infinity.  Under stationary
+write processes this produces a power-law
+$T^{1-\alpha}$ separation in aggregate kernel mass,
+established in closed form; in a retrieval pipeline the
+singularity causes the forced-SPDE kernel to
+dominate semantic signals, also verified
+numerically.  The effective temporal depth under
+modal truncation to $N$ modes scales as
+$N^{H_1/H_2}$.
+
+We also identify the operator derivative structure
+on the fractional memory space, yielding exact
+Gaussian representations and a polynomially
+propagating Leibniz defect under L\'evy noise.
+These results furnish the kernel and scaling laws
+used in the companion architecture
+paper~\cite{fontes2026arch}.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+The stochastic heat equation
+$\partial_t X = \Delta X + \dot{B}$ governs
+diffusion-driven dynamics in infinite dimensions and
+is the foundational object of Da~Prato--Zabczyk
+theory~\cite{daprato2014}.  Its finite-dimensional
+projections are classical Ornstein--Uhlenbeck
+processes: Markov, Gaussian, with exponential
+relaxation to equilibrium.  These properties make
+the theory analytically tractable but impose a
+structural limitation: the Markov property encodes
+history only through the current state, and
+relaxation is exponentially fast.  This is a
+structural mismatch for systems whose function
+depends on retaining information across long
+timescales --- viscoelastic materials, anomalous
+transport, and the memory-architecture applications
+motivating the companion paper~\cite{fontes2026arch},
+in which the polynomial relaxation and exact
+discrete-impulse representation derived below
+furnish the kernel and scaling laws used at
+runtime.
+
+A growing body of work---in anomalous diffusion,
+viscoelasticity, and fractional
+kinetics~\cite{mainardi2010,meerschaert2012}---replaces
+the integer-order time derivative with a Caputo
+fractional derivative $\partial_t^\alpha$, producing
+power-law relaxation via the Mittag-Leffler function
+$E_\alpha(-\lambda t^\alpha)$.  Independently, the
+integer-order Laplacian is replaced by a fractional
+power $(-\Delta)^s$ in models of anomalous
+spatial transport.
+
+This paper studies the equation that combines both
+generalizations:
+\begin{equation}\label{eq:quijotic_main}
+\partial_t^{2H_2} X_t = A_{H_1} X_t + \dot{B}_t,
+\qquad X_0 = f,
+\end{equation}
+where $\partial_t^{2H_2}$ is the Caputo derivative
+with $\alpha = 2H_2 \in (1/2, 2)$,
+$A_{H_1} = -c_{H_1}(-\Delta)^{H_1}$ is the
+fractional Laplacian with $H_1 \in (0,1]$, and
+$\dot{B}_t$ is Gaussian noise on $L^2(\R)$.
+The two parameters are independent: $H_1$ controls
+the spatial coupling range and $H_2$ controls
+temporal persistence.
+
+\subsection{Main results}
+
+\begin{enumerate}[label=\textbf{(\Alph*)}]
+\item \textbf{Well-posedness}
+  (\Cref{thm:existence_trace,thm:existence}).
+  Unique mild solutions exist for all
+  $H_1 \in (0,1]$ and $H_2 \in (1/4,1)$ with
+  trace-class noise; cylindrical noise requires
+  additionally $H_1 > \alpha/(2(2\alpha-1))$ with
+  $\alpha = 2H_2$ (which forces $H_2 > 1/3$).
+
+\item \textbf{Spectral decomposition}
+  (\Cref{thm:spectral}).  The SPDE reduces to
+  independent scalar fractional OU processes
+  with mode-dependent decay rate
+  $\lambda(\xi) = c_{H_1}|\xi|^{2H_1}$
+  (where $\xi$ is the Fourier variable).
+
+\item \textbf{Energy and decay}
+  (\Cref{thm:energy,thm:decay_det}).  The
+  deterministic component decays as
+  $t^{-H_2/(2H_1)}$---polynomial for all
+  parameters, with matching lower bound.
+
+\item \textbf{Variance scaling}
+  (\Cref{thm:selfsimilar}).  Explicit scaling
+  exponent
+  $H = 2H_2 - 1/2 - H_2/(2H_1)$.
+
+\item \textbf{Discrete-impulse exactness}
+  (\Cref{thm:discretization}).  For impulse
+  inputs, the Fourier-projected mild solution
+  is a finite Mittag-Leffler sum, and modal
+  truncation to $N$ modes gives effective
+  temporal depth $\sim N^{H_1/H_2}$
+  (\Cref{thm:eff_context}).
+
+\item \textbf{Operator derivative and defect
+  structure}
+  (\Cref{thm:clark_ocone,thm:defect_dichotomy}).
+  The operator derivative $D = \delta^*$ yields
+  exact Clark--Ocone representation in the Gaussian
+  case; under L\'evy noise, the Leibniz defect is
+  nonzero, concentrated on the jump component, and
+  propagates polynomially via the Mittag-Leffler
+  resolvent kernel.
+\end{enumerate}
+
+\subsection{Related work}
+
+Fractional stochastic evolution equations have been
+studied by Mainardi~\cite{mainardi2010} (fractional
+relaxation), Meerschaert--Sikorskii~\cite{meerschaert2012}
+(stochastic fractional PDEs), and
+Da~Prato--Zabczyk~\cite{daprato2014}
+(infinite-dimensional stochastic equations).  The
+present work differs in three respects: combining
+fractional time derivatives with fractional spatial
+operators under independent parameters; connecting
+the resulting dynamics to an operator calculus
+(representation and defect structure); and proving the
+exactness of the discrete-impulse representation that
+motivates computational applications.
+
+The operator derivative framework
+$D = \delta^*$~\cite{fontes2026opfac,fontes2026banach}
+and its application to Volterra-L\'evy
+markets~\cite{fontes2026volterra} provide the calculus
+used in Sections~\ref{sec:operator}--\ref{sec:levy}
+to derive the defect dichotomy and its propagation law
+for the fractional memory process.
+
+\section{Preliminaries}\label{sec:prelim}
+
+We work on a filtered probability space
+$(\Omega, \FF, (\FF_t)_{t \geq 0}, \mathbb{P})$
+satisfying the usual conditions, with noise driven by
+either a $Q$-Wiener process (trace-class covariance)
+or a cylindrical Brownian motion on $L^2(\R)$.
+A \emph{cylindrical Brownian motion} is a family
+$(B_t)_{t \geq 0}$ with
+$\E[(B_t h)^2] = t\norm{h}^2$ for all
+$h \in L^2(\R)$; a \emph{$Q$-Wiener process}
+replaces the identity covariance with a trace-class
+operator $Q$, giving
+$\E[(B_t^Q h_1)(B_s^Q h_2)]
+= (t \wedge s)\ip{Qh_1}{h_2}$.
+For an operator-valued integrand
+$\Psi_s : L^2(\R) \to L^2(\R)$, the Hilbert-Schmidt
+norm
+$\norm{\Psi}_{\mathrm{HS}}^2
+:= \sum_k \norm{\Psi e_k}_{L^2}^2$
+(summed over any orthonormal basis $(e_k)$ of
+$L^2(\R)$) controls integrability of the stochastic
+convolution:
+$\int_0^t \Psi_s\, dB_s$ is well-defined when
+$\int_0^t \norm{\Psi_s}_{\mathrm{HS}}^2\, ds < \infty$
+a.s.
+
+The time derivative in~\eqref{eq:quijotic_main} is
+the Caputo fractional derivative.  For
+$0 < \alpha < 1$ and $u \in AC([0,T])$,
+\begin{equation}\label{eq:caputo}
+\partial_t^\alpha u(t)
+:= \frac{1}{\Gamma(1-\alpha)}
+\int_0^t (t-s)^{-\alpha} u'(s)\, ds;
+\end{equation}
+for $1 < \alpha < 2$ and $u \in AC^2([0,T])$,
+the first derivative is replaced by the second.
+(When $\alpha = 1$, $\partial_t^\alpha = \partial_t$.)
+Since $\alpha = 2H_2$ with $H_2 \in (1/4,1)$,
+both regimes arise.
+Unlike the ordinary derivative,
+$\partial_t^\alpha(uv) \neq
+u\,\partial_t^\alpha v + v\,\partial_t^\alpha u$
+in general; this failure of the Leibniz rule
+reappears in the energy analysis of
+\Cref{sec:energy}.  The Caputo derivative also
+satisfies $\partial_t^\alpha c = 0$ for constants.
+See~\cite{podlubny1999} for a comprehensive
+treatment.
+
+The resolvent of the fractional equation is built
+from the Mittag-Leffler function
+$E_{\alpha,\beta}(z)
+:= \sum_{k=0}^\infty z^k/\Gamma(\alpha k + \beta)$,
+with $E_\alpha := E_{\alpha,1}$.  Three properties
+are used throughout:
+$E_\alpha(-t^\alpha)$ is completely monotone for
+$\alpha \in (0,1)$~\cite{pollard1948};
+$E_1(z) = e^z$ (recovering the exponential);
+and $E_\alpha(-r) \sim r^{-1}/\Gamma(1-\alpha)$
+as $r \to \infty$~\cite{gorenflo2014}, which gives
+the power-law tail that distinguishes the fractional
+case from the Markov one.  We also use the Laplace
+identity
+$\mathcal{L}[t^{\beta-1}
+E_{\alpha,\beta}(\pm\lambda t^\alpha)](s)
+= s^{\alpha-\beta}/(s^\alpha \mp \lambda)$.
+
+The following bounds across the full parameter range
+$\alpha \in (0, 2)$ are used repeatedly in the proofs
+that follow; we collect them here so that the
+arguments below do not need to treat $\alpha \leq 1$
+and $\alpha > 1$ separately.
+
+\begin{lemma}[Uniform Mittag-Leffler bounds]
+\label{lem:ml_bounds}
+For every $\alpha \in (0, 2]$ there exists a
+constant $C_\alpha > 0$ such that for all $r \geq 0$,
+\begin{enumerate}[label=\textnormal{(\roman*)}]
+\item $|E_\alpha(-r)| \leq 1$;
+\item $|E_\alpha(-r)| \leq C_\alpha/(1 + r)$;
+\item $|E_{\alpha,\alpha}(-r)| \leq C_\alpha/(1 + r)$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+For $\alpha \in (0, 1]$, (i) is complete monotonicity
+of $E_\alpha(-t^\alpha)$~\cite{pollard1948,schneider1996},
+which gives the stronger statement
+$0 \leq E_\alpha(-r) \leq 1$.  For $\alpha \in (1, 2]$
+the function $E_\alpha(-r)$ is not monotone and takes
+negative values, but the bound $|E_\alpha(-r)| \leq 1$
+still holds via the integral representation of
+$E_\alpha$ as a Laplace transform of a finite measure
+of total mass one; see \cite[Prop.~3.10, \S4.3]{gorenflo2014}.
+The boundary case is
+$E_2(-r) = \cos(\sqrt{r}) \in [-1, 1]$.
+
+Parts (ii) and (iii) follow from the Mittag-Leffler
+asymptotic~\cite[Ch.~4]{gorenflo2014}
+\[
+E_{\alpha,\beta}(-r) = -\sum_{k=1}^{N}
+\frac{(-r)^{-k}}{\Gamma(\beta - \alpha k)}
++ O(r^{-N-1}),
+\qquad r \to \infty, \quad \alpha \in (0, 2),
+\]
+combined with continuous-function boundedness on
+$[0, R]$ for any $R > 0$.  For (iii) the leading
+asymptotic coefficient vanishes (since
+$\Gamma(\alpha - \alpha)^{-1} = 0$), so in fact
+$E_{\alpha,\alpha}(-r) = O(r^{-2})$; we use only
+the weaker $C_\alpha/(1+r)$ bound below.
+\end{proof}
+
+\begin{remark}[Sharp asymptotic for
+$E_{\alpha,\alpha}$]
+For $\alpha \in (0, 1)$, the relation
+$(t)^{\alpha-1} E_{\alpha,\alpha}(-\lambda t^\alpha)
+= -\lambda^{-1}\,\partial_t
+E_\alpha(-\lambda t^\alpha)$
+combined with the $E_\alpha$ asymptotic gives the
+sharper bound
+$E_{\alpha,\alpha}(-r) \sim \alpha/
+[\Gamma(1-\alpha)\,r^2]$
+as $r \to \infty$.  We use only the weaker
+$C_\alpha/(1+r)$ bound in the proofs below.
+\end{remark}
+
+The spatial operator
+$A_{H_1} = -c_{H_1}(-\Delta)^{H_1}$, where
+$c_{H_1} > 0$ is a fixed constant, acts in Fourier
+space (we write $\hat{u}$ for the Fourier transform
+of $u$) as
+$\widehat{(-\Delta)^{H_1} u}(\xi)
+= |\xi|^{2H_1} \hat{u}(\xi)$ for
+$H_1 \in (0,1]$, and generates an analytic contraction
+semigroup with Fourier symbol
+$e^{-c_{H_1}|\xi|^{2H_1} t}$.
+
+\section{Well-Posedness}\label{sec:wellposed}
+
+We formulate the mild solution
+of~\eqref{eq:quijotic_main} via a resolvent family
+in Fourier space.  Write $\alpha = 2H_2$ throughout
+this section.
+
+\begin{definition}[Resolvent family]\label{def:resolvent}
+$\widehat{S_t^{(\alpha, H_1)} f}(\xi) = E_\alpha(-c_{H_1}|\xi|^{2H_1} t^\alpha)\,\hat{f}(\xi)$.
+\end{definition}
+
+\begin{lemma}[Resolvent properties]\label{lem:resolvent_props}
+(a) $S_0 = I$. (b) $\norm{S_t f}_{L^2} \leq \norm{f}_{L^2}$. (c) $t \mapsto S_t f$ continuous. (d) $\partial_t^\alpha S_t f = A_{H_1} S_t f$ for $f \in \DD(A_{H_1}) := H^{2H_1}(\R)$.
+\end{lemma}
+
+\begin{proof}
+(a) $E_\alpha(0) = 1$. (b) By \Cref{lem:ml_bounds}(i), $|E_\alpha(-r)| \leq 1$; apply Plancherel. (c) Dominated convergence. (d) Mittag-Leffler differentiation.
+\end{proof}
+
+The stochastic convolution requires a second kernel.
+
+\begin{definition}[Resolvent integrand]\label{def:resolvent_kernel}
+$\widehat{\Phi_t}(\xi) := t^{\alpha-1} E_{\alpha,\alpha}(-c_{H_1}|\xi|^{2H_1} t^\alpha)$.
+\end{definition}
+
+The mild solution is the sum of the deterministic
+resolvent applied to the initial datum and the
+stochastic convolution against the noise:
+
+\begin{definition}[Mild solution]\label{def:mild}
+$X_t = S_t^{(\alpha, H_1)} f + \int_0^t \Phi_{t-s}\, dB_s$.
+\end{definition}
+
+\subsection{Existence and uniqueness}
+
+\begin{theorem}[Trace-class noise]
+\label{thm:existence_trace}
+For $f \in L^2(\R)$, $H_1 \in (0,1]$, $H_2 \in (1/4,1)$,
+$T > 0$, and $Q$-Wiener noise with trace-class $Q$,
+equation~\eqref{eq:quijotic_main} admits a unique mild
+solution $X \in L^2(\Omega; C([0,T]; L^2(\R)))$.
+\end{theorem}
+
+\begin{proof}
+\textbf{Step~1.} $S_t f \in C([0,T]; L^2)$ by
+\Cref{lem:resolvent_props}.
+
+\textbf{Step~2 (Hilbert-Schmidt condition).}
+The resolvent integrand satisfies
+$\norm{\Phi_s}_{L^2 \to L^2}
+= \sup_\xi |\widehat{\Phi_s}(\xi)|
+\leq C s^{\alpha-1}$
+(from $|E_{\alpha,\alpha}(-r)| \leq C/(1+r)$,
+evaluated at $r = 0$).  Therefore
+\[
+\norm{\Phi_s Q^{1/2}}_{\mathrm{HS}}^2
+\leq \norm{\Phi_s}_{L^2 \to L^2}^2 \Tr(Q)
+\leq C^2 s^{2(\alpha-1)}\,\Tr(Q).
+\]
+The time integral converges:
+$\int_0^t s^{2(\alpha-1)}\, ds < \infty$
+when $2(\alpha-1) > -1$, i.e., $\alpha > 1/2$, i.e.,
+$H_2 > 1/4$.
+
+\textbf{Step~3.} Continuity: standard stochastic
+convolution estimates~\cite{daprato2014}.
+
+\textbf{Step~4 (Uniqueness).}  The mild-solution
+formula in \Cref{def:mild} is a specific functional
+of $f$ and $B$; any two mild solutions with the same
+data are equal by construction.  The map
+$(f, B) \mapsto X$ is linear, so the difference of
+two solutions with common data satisfies the
+homogeneous equation with zero initial datum and
+zero forcing, which is identically zero.
+\end{proof}
+
+\begin{remark}[The condition $H_2 > 1/4$]
+\label{rem:H2_quarter}
+The restriction $H_2 > 1/4$ arises from the temporal
+singularity $s^{\alpha-1}$ of the resolvent integrand
+at $s = 0$.  For $H_2 \leq 1/4$, existence can be
+recovered by imposing additional spatial regularity on
+the noise covariance (e.g., requiring $Q : L^2 \to H^s$
+for $s$ large enough that the Mittag-Leffler spatial
+decay compensates the temporal singularity).  We do not
+pursue this here; the range $H_2 \in (1/4, 1)$ is
+sufficient for the results below.
+\end{remark}
+
+\begin{corollary}[Cylindrical noise]
+\label{thm:existence}
+Let $\alpha = 2H_2$.  For $f \in L^2(\R)$,
+$H_2 \in (1/4,1)$, and
+$H_1 \in (\alpha/(2(2\alpha-1)),\ 1]$
+(which forces $\alpha > 2/3$, equivalently
+$H_2 > 1/3$), equation~\eqref{eq:quijotic_main}
+with cylindrical Brownian noise ($Q = I$) admits a
+unique mild solution.
+\end{corollary}
+
+\begin{proof}
+With cylindrical noise, $\norm{\Phi_s Q^{1/2}}_{\mathrm{HS}}
+= \norm{\Phi_s}_{\mathrm{HS}}$.  Using
+$|E_{\alpha,\alpha}(-r)| \leq C/(1+r)$:
+\[
+\norm{\Phi_s}_{\mathrm{HS}}^2
+\leq C\,s^{2(\alpha-1)} \int_\R
+\frac{d\xi}{(1 + c|\xi|^{2H_1} s^\alpha)^2}.
+\]
+Substituting $\eta = |\xi|^{2H_1} s^\alpha$:
+the spatial integral is
+$\leq C\,s^{-\alpha/(2H_1)}
+\int_0^\infty \eta^{1/(2H_1)-1}(1+c\eta)^{-2}\, d\eta$,
+which is the spatial-integrability requirement and
+converges when $H_1 > 1/4$.  Thus
+$\norm{\Phi_s}_{\mathrm{HS}}^2
+\leq C\,s^{2\alpha - 2 - \alpha/(2H_1)}$, and time
+integrability $\int_0^t \norm{\Phi_s}_{\mathrm{HS}}^2\,
+ds < \infty$ near $s = 0$ requires this exponent to
+exceed $-1$, i.e.\ $2\alpha - 2 - \alpha/(2H_1) > -1$,
+equivalently $H_1 > \alpha/(2(2\alpha - 1))$.  Since
+$\alpha/(2(2\alpha - 1)) > 1/4$ for every
+$\alpha > 1/2$, this stochastic-convolution condition
+is strictly stronger than the spatial-integral
+condition $H_1 > 1/4$ used above and supersedes it.
+The combined hypothesis is therefore
+\[
+H_1 > \max\bigl\{1/4,\ \alpha/(2(2\alpha-1))\bigr\}
+\;=\; \alpha/(2(2\alpha-1)),
+\]
+which together with $H_1 \leq 1$ requires
+$\alpha > 2/3$, i.e.\ $H_2 > 1/3$.
+\end{proof}
+
+\subsection{Pathwise continuity}
+
+\begin{theorem}\label{thm:continuity}
+Under the assumptions of \Cref{thm:existence_trace}
+or \Cref{thm:existence}, the mild solution satisfies
+$X \in C([0,T]; L^2(\R))$ almost surely.
+\end{theorem}
+
+\begin{proof}
+The deterministic part is continuous by
+\Cref{lem:resolvent_props}(c).  For the stochastic
+convolution, we use the factorization
+method~\cite{daprato2014}.
+
+Choose $\gamma \in (0, 1/2)$ with
+$\gamma < \alpha - 1/2$; this requires
+$\alpha > 1/2$, i.e., $H_2 > 1/4$.  (Under trace-class noise, the $Q$-weighted norm
+provides the same integrability within the range
+$H_2 > 1/4$ established in \Cref{thm:existence_trace}.)
+
+Define $Y_t := \int_0^t (t-s)^{-\gamma}
+\Phi_{t-s}\, dB_s$.  By the Burkholder-Davis-Gundy
+inequality,
+$\E[\norm{Y_t}^{2p}]
+\leq C_p \left(\int_0^t s^{-2\gamma}
+\norm{\Phi_s}_{\mathrm{HS}}^2\, ds\right)^p < \infty$
+under the integrability conditions of the applicable
+existence theorem.
+
+The stochastic convolution is recovered via
+$\int_0^t \Phi_{t-s}\, dB_s
+= \frac{\sin(\pi\gamma)}{\pi}
+\int_0^t (t-s)^{\gamma-1} Y_s\, ds$.
+The fractional integral maps $L^\infty$ to
+$C^{\gamma - 1/p}$, giving a.s.\ H\"older continuity.
+\end{proof}
+
+\section{Spectral Representation}\label{sec:spectral}
+
+\begin{theorem}[Spectral decomposition]\label{thm:spectral}
+The mild solution has Fourier representation
+\begin{equation}\label{eq:spectral}
+\hat{X}_t(\xi) = E_\alpha(-\lambda(\xi)\,t^\alpha)\,\hat{f}(\xi) + \int_0^t (t-s)^{\alpha-1} E_{\alpha,\alpha}(-\lambda(\xi)\,(t-s)^\alpha)\, d\hat{B}_s(\xi),
+\end{equation}
+where $\lambda(\xi) = c_{H_1}|\xi|^{2H_1}$ is the
+mode-dependent decay rate and
+$\hat{B}_t(\xi) := \int_\R e^{-i\xi x} dB_t(x)$
+is the Fourier-space Brownian motion, satisfying
+$\E[d\hat{B}_t(\xi)\,\overline{d\hat{B}_s(\eta)}]
+= \delta(\xi - \eta)\,\delta(t-s)\,d\xi\,dt$.
+\end{theorem}
+
+\begin{proof}
+Fourier transform of the mild solution; the resolvent and stochastic integral are Fourier multipliers.
+\end{proof}
+
+\begin{corollary}[Mode-wise dynamics]\label{cor:modewise}
+Each mode evolves as a scalar fractional OU: $\partial_t^\alpha \hat{X}_t(\xi) = -\lambda(\xi)\hat{X}_t(\xi) + d\hat{B}_t(\xi)/dt$. High-frequency modes decay rapidly; low-frequency modes persist.
+\end{corollary}
+
+\begin{corollary}[Mode-wise variance]\label{cor:mode_variance}
+For $f = 0$: $\E[|\hat{X}_t(\xi)|^2] = \int_0^t s^{2(\alpha-1)} |E_{\alpha,\alpha}(-\lambda(\xi)s^\alpha)|^2\, ds$.
+\end{corollary}
+
+\section{Regularity}\label{sec:regularity}
+
+\begin{theorem}[Spatial regularity]\label{thm:spatial_reg}
+Let $\alpha = 2H_2$.
+\begin{enumerate}[label=\textnormal{(\alph*)}]
+\item \emph{Deterministic smoothing.}  For $f \in L^2(\R)$
+and $t > 0$, $S_t f \in H^s(\R)$ for every
+$0 \leq s \leq 2H_1$, with
+$\norm{S_t f}_{H^s} \leq C(s,t,H_1,H_2)\,\norm{f}_{L^2}$.
+\item \emph{Trace-class noise.}  If $Q$ is trace-class,
+the stochastic convolution
+$\int_0^t \Phi_{t-r}\, dB_r$ belongs to $H^s(\R)$ provided
+\begin{equation}\label{eq:spatial_reg_trace}
+\int_0^t \norm{(I-\Delta)^{s/2} \Phi_r Q^{1/2}}_{\mathrm{HS}}^2\,
+dr < \infty.
+\end{equation}
+Without additional smoothing of $Q$, the operator-norm
+estimate
+$\norm{(I-\Delta)^{s/2}\Phi_r Q^{1/2}}_{\mathrm{HS}}
+\leq \norm{(I-\Delta)^{s/2}\Phi_r}_{\mathrm{op}}
+\Tr(Q)^{1/2}$
+gives the sufficient condition
+$s < H_1(2\alpha-1)/\alpha$.
+If $(I-\Delta)^{s/2} Q^{1/2}$ is itself Hilbert-Schmidt,
+then $H^s$ regularity follows for all $\alpha > 1/2$.
+\item \emph{Cylindrical noise.}  For $Q = I$, the
+stochastic convolution belongs to $H^s(\R)$ only under the
+corresponding Hilbert-Schmidt condition
+\begin{equation}\label{eq:spatial_reg_cyl}
+\int_0^t \int_\R (1+|\xi|^2)^s\, r^{2\alpha-2}\,
+|E_{\alpha,\alpha}(-c_{H_1}|\xi|^{2H_1} r^\alpha)|^2\,
+d\xi\, dr < \infty.
+\end{equation}
+Using the same substitution as in
+\Cref{thm:existence}, this is guaranteed when
+$s < H_1(2\alpha-1)/\alpha - 1/2$.  At $s = 0$ this
+recovers the cylindrical-noise well-posedness threshold
+$H_1 > \alpha/(2(2\alpha-1))$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(a) On the Fourier side,
+$\norm{S_t f}_{H^s}^2 = \int_\R (1+|\xi|^2)^s
+|E_\alpha(-c_{H_1}|\xi|^{2H_1} t^\alpha)|^2 |\hat f(\xi)|^2\,
+d\xi$.  For $|\xi| \leq 1$, $(1+|\xi|^2)^s \leq 2^s$ and
+$|E_\alpha| \leq 1$.  For $|\xi| > 1$,
+$(1+|\xi|^2)^s \leq 2^s |\xi|^{2s}$ and
+$|E_\alpha(-c_{H_1}|\xi|^{2H_1} t^\alpha)|^2 \leq C\,
+|\xi|^{-4H_1} t^{-2\alpha}$, so the high-frequency
+contribution is finite when $2s - 4H_1 \leq 0$.
+
+(b) The Hilbert-Schmidt criterion~\eqref{eq:spatial_reg_trace}
+is the standard isometry condition for the stochastic
+convolution.  Since $\norm{T A}_{\mathrm{HS}}
+\leq \norm{T}_{\mathrm{op}}\norm{A}_{\mathrm{HS}}$ and
+$\norm{Q^{1/2}}_{\mathrm{HS}}^2 = \Tr(Q)$, the
+operator-norm route reduces to bounding
+$\norm{(I-\Delta)^{s/2}\Phi_r}_{\mathrm{op}}
+= \sup_\xi (1+|\xi|^2)^{s/2}|\widehat{\Phi_r}(\xi)|$.
+For $s < 2H_1$, the sup is attained at
+$|\xi_*| \sim r^{-\alpha/(2H_1)}$, giving
+$\norm{(I-\Delta)^{s/2}\Phi_r}_{\mathrm{op}}^2
+\leq C\, r^{2\alpha - 2 - \alpha s/H_1}$;
+near $r = 0$ time integrability requires
+$2\alpha - 1 - \alpha s/H_1 > 0$, i.e.\
+$s < H_1(2\alpha - 1)/\alpha$.  If
+$(I-\Delta)^{s/2}Q^{1/2}$ is HS, instead use
+$\norm{(I-\Delta)^{s/2}\Phi_r Q^{1/2}}_{\mathrm{HS}}
+\leq \norm{\Phi_r}_{\mathrm{op}}
+\norm{(I-\Delta)^{s/2}Q^{1/2}}_{\mathrm{HS}}
+\leq C\,r^{\alpha-1}\norm{(I-\Delta)^{s/2}Q^{1/2}}_{\mathrm{HS}}$,
+and time integrability $\int_0^t r^{2(\alpha-1)}\,dr
+< \infty$ holds for all $\alpha > 1/2$.
+
+(c) Apply the substitution
+$\eta = c_{H_1}|\xi|^{2H_1} r^\alpha$ to the inner
+integrand of~\eqref{eq:spatial_reg_cyl}; the spatial
+$\xi$-integral evaluates to
+$C\, r^{-\alpha(1+2s)/(2H_1)}$ times a finite
+$\eta$-integral (convergent at infinity for
+$s < 2H_1 - 1/2$, automatic in the relevant range, and
+trivially at $\eta = 0$).  Thus the inner integrand is
+bounded by $C\,r^{2\alpha - 2 - \alpha(1+2s)/(2H_1)}$, and
+time integrability at $r = 0$ requires
+$2\alpha - 1 - \alpha(1+2s)/(2H_1) > 0$, equivalently
+$s < H_1(2\alpha - 1)/\alpha - 1/2$.  At $s = 0$ this is
+$H_1 > \alpha/(2(2\alpha-1))$, the threshold of
+\Cref{thm:existence}.
+\end{proof}
+
+\begin{theorem}[Temporal H\"older continuity]\label{thm:temporal_reg}
+$\E[\norm{X_t - X_s}_{L^2}^2] \leq C|t-s|^{2\beta}$ with $\beta = \min(2H_2, 1/2 - \varepsilon)$.
+\end{theorem}
+
+\begin{proof}
+\emph{Deterministic part.}  On the Fourier side,
+$\widehat{S_t f}(\xi) - \widehat{S_s f}(\xi)
+= [E_\alpha(-\lambda(\xi) t^\alpha)
+- E_\alpha(-\lambda(\xi) s^\alpha)]\,\hat{f}(\xi)$.
+The Mittag-Leffler function $E_\alpha$ is
+differentiable on $(-\infty, 0]$ with
+$|E_\alpha'(-r)| \leq C$ on any compact set of $r$
+(from the series) and $|E_\alpha'(-r)| = O(r^{-2})$
+at infinity (from \Cref{lem:ml_bounds}(iii) and
+the identity
+$E_\alpha'(-r) = -E_{\alpha,\alpha}(-r)/\alpha$).
+So $|E_\alpha(-\lambda t^\alpha)
+- E_\alpha(-\lambda s^\alpha)|
+\leq C\,\lambda\,|t^\alpha - s^\alpha|$
+uniformly in $\lambda$ (the $O(1/\lambda)$
+contribution from the tail absorbs the prefactor at
+infinity).  For $t, s \in [0, T]$:
+\begin{itemize}[leftmargin=*]
+\item If $\alpha \in (1/2, 1]$, subadditivity gives
+  $|t^\alpha - s^\alpha| \leq |t-s|^\alpha$, so the
+  deterministic Hölder exponent is
+  $\beta_{\mathrm{det}} = \alpha$.
+\item If $\alpha \in (1, 2)$, the mean value theorem
+  gives $|t^\alpha - s^\alpha|
+  \leq \alpha T^{\alpha-1}|t-s|$, so the
+  deterministic part is Lipschitz
+  ($\beta_{\mathrm{det}} = 1$).
+\end{itemize}
+Integrating against $|\hat{f}|^2$ and taking square
+roots: $\norm{S_t f - S_s f}_{L^2}
+\leq C\,|t-s|^{\beta_{\mathrm{det}}}\,\norm{f}_{L^2}$
+with $\beta_{\mathrm{det}} = \min(\alpha, 1) \geq 1/2$
+across the full parameter range.
+
+\emph{Stochastic part.}  The factorization method
+(as in \Cref{thm:continuity}) yields
+$\beta_{\mathrm{stoch}} \leq 1/2 - \varepsilon$
+under the integrability conditions of the applicable
+existence theorem.
+
+\emph{Combined.}  $\beta = \min(\beta_{\mathrm{det}},
+\beta_{\mathrm{stoch}}) = \min(\alpha, 1/2-\varepsilon)
+= \min(2H_2, 1/2-\varepsilon)$.  Since
+$2H_2 > 1/2$ throughout the parameter range
+$H_2 \in (1/4, 1)$, and $\beta_{\mathrm{det}} \geq 1/2
+> 1/2 - \varepsilon$, the stochastic bound
+determines $\beta$ everywhere; the $\min$ notation
+is retained to emphasize that the deterministic
+part could be the binding constraint in a regime
+with smoother noise.
+\end{proof}
+
+\section{Energy, Decay, and Stationarity}\label{sec:energy}
+
+\begin{theorem}[Energy identity]\label{thm:energy}
+$E(t) := \E[\norm{X_t}_{L^2}^2] = \norm{S_t f}_{L^2}^2 + \int_0^t \norm{\Phi_s}_{\mathrm{HS}}^2\, ds$.
+\end{theorem}
+
+\begin{proof}
+Expand using~\Cref{def:mild}; cross term vanishes ($\E[\delta(\cdot)] = 0$); It\^o isometry for the stochastic part.
+\end{proof}
+
+\begin{proposition}[Energy bound]\label{prop:dissipation}
+For the deterministic equation $\partial_t^\alpha u = A_{H_1} u$, the energy $e(t) = \norm{u_t}_{L^2}^2$ satisfies $e(t) \leq e(0)$ for all $t \geq 0$, and is monotonically nonincreasing when $\alpha \in (0, 1]$.
+\end{proposition}
+
+\begin{remark}\label{rem:energy_inequality}
+The identity $\partial_t^\alpha \norm{u}^2 = 2\ip{\partial_t^\alpha u}{u}$ fails for fractional derivatives.  The inequality $e(t) \leq e(0)$ follows directly from $|E_\alpha(-r)| \leq 1$ (\Cref{lem:ml_bounds}(i)), bypassing the product rule entirely.  For $\alpha \in (1, 2]$, $|E_\alpha(-r)|$ is not monotone in $r$ and $e(t)$ may oscillate within $[0, e(0)]$; the bound $e(t) \leq e(0)$ still holds.
+\end{remark}
+
+\begin{proof}
+$e(t) = \int_\R |E_\alpha(-\lambda(\xi) t^\alpha)|^2 |\hat{f}(\xi)|^2\, d\xi \leq \int_\R |\hat{f}|^2\, d\xi = e(0)$, since $|E_\alpha(-r)| \leq 1$ by \Cref{lem:ml_bounds}(i).  For $\alpha \in (0, 1]$, $E_\alpha(-\lambda t^\alpha)$ is monotonically decreasing in $t$ (complete monotonicity), so $e(t)$ is monotonically nonincreasing.
+\end{proof}
+
+\begin{theorem}[Long-time decay]\label{thm:decay_det}
+For $f \in L^1(\R) \cap L^2(\R)$ and $H_1 > 1/4$,
+\begin{equation}\label{eq:decay}
+\norm{S_t f}_{L^2} \leq C\,t^{-H_2/(2H_1)}
+\norm{f}_{L^1} \qquad \text{as } t \to \infty.
+\end{equation}
+If additionally $\hat{f}(0) \neq 0$, the bound is
+achieved: $\norm{S_t f}_{L^2} \geq c\,t^{-H_2/(2H_1)}$
+for $t$ large.
+\end{theorem}
+
+\begin{proof}
+\textbf{Upper bound.}  Write
+$\norm{S_t f}_{L^2}^2
+= \int_\R |E_\alpha(-\lambda(\xi) t^\alpha)|^2
+|\hat{f}(\xi)|^2\, d\xi$.
+Split at $\xi_* = t^{-\alpha/(2H_1)}$.
+
+\emph{Low frequencies} ($|\xi| \leq \xi_*$):
+$|E_\alpha(-r)| \leq 1$ and
+$|\hat{f}(\xi)| \leq \norm{f}_{L^1}$, so the
+contribution is $\leq \norm{f}_{L^1}^2 \cdot
+2\xi_* = 2\norm{f}_{L^1}^2\,t^{-\alpha/(2H_1)}$.
+
+\emph{High frequencies} ($|\xi| > \xi_*$):
+$|E_\alpha(-r)| \leq C/r$ for $r \geq 1$
+(Mittag-Leffler asymptotic), so
+$|E_\alpha(-\lambda(\xi) t^\alpha)|^2
+\leq C/(\lambda(\xi) t^\alpha)^2
+= C/(c_{H_1}^2 |\xi|^{4H_1} t^{2\alpha})$.
+The contribution is
+$\leq C t^{-2\alpha} \int_{|\xi|>\xi_*}
+|\xi|^{-4H_1} |\hat{f}(\xi)|^2\, d\xi$.
+Split this region at $|\xi| = 1$.
+On $\xi_* < |\xi| < 1$: use
+$|\hat{f}(\xi)| \leq \norm{f}_{L^1}$ to get
+$\leq t^{-2\alpha} \norm{f}_{L^1}^2
+\int_{\xi_*}^1 \xi^{-4H_1}\, d\xi$.
+For $H_1 > 1/4$,
+$\int_{\xi_*}^1 \xi^{-4H_1}\, d\xi
+\leq C\,\xi_*^{1-4H_1}
+= C\,t^{-\alpha(1-4H_1)/(2H_1)}$.
+Multiplying: $t^{-2\alpha} \cdot
+t^{-\alpha(1-4H_1)/(2H_1)}
+= t^{-\alpha/(2H_1)}$,
+matching the low-frequency decay scale.
+On $|\xi| \geq 1$:
+$|\xi|^{-4H_1} \leq 1$, so the contribution is
+$\leq t^{-2\alpha}\norm{f}_{L^2}^2$,
+which is subdominant since
+$2\alpha > \alpha/(2H_1)$ for $H_1 > 1/4$.
+
+Combining: $\norm{S_t f}_{L^2}^2
+\leq C\norm{f}_{L^1}^2\,t^{-\alpha/(2H_1)}
++ O(t^{-2\alpha})$.
+For large $t$, the first term dominates since
+$\alpha/(2H_1) < 2\alpha$ (equivalently $H_1 > 1/4$).
+Taking the square root with $\alpha = 2H_2$:
+$\norm{S_t f}_{L^2}
+\leq C\,t^{-H_2/(2H_1)}\norm{f}_{L^1}$.
+
+\textbf{Lower bound} (when $\hat{f}(0) \neq 0$).
+By continuity of $\hat{f}$, there exists $\delta > 0$
+with $|\hat{f}(\xi)| \geq |\hat{f}(0)|/2$ for
+$|\xi| \leq \delta$.  Choose $r_0 > 0$ small enough
+that $|E_\alpha(-r)| \geq 1/2$ for $r \in [0, r_0]$
+(possible since $E_\alpha(0) = 1$ and $E_\alpha$ is
+continuous; for $\alpha \in (0, 1]$ monotonicity
+makes this immediate, and for $\alpha \in (1, 2]$
+continuity at zero suffices).  Define
+$\xi_{**} := \min(\delta,
+(r_0/c_{H_1})^{1/(2H_1)}\,t^{-\alpha/(2H_1)})$.
+For $t$ large enough that the second argument
+is smaller than $\delta$,
+$\xi_{**} = (r_0/c_{H_1})^{1/(2H_1)}\,
+t^{-\alpha/(2H_1)}$, and on $|\xi| \leq \xi_{**}$
+we have $\lambda(\xi) t^\alpha \leq r_0$, so
+$|E_\alpha(-\lambda(\xi) t^\alpha)|^2 \geq 1/4$.
+Therefore
+\[
+\norm{S_t f}_{L^2}^2
+\geq \int_{|\xi| \leq \xi_{**}}
+|E_\alpha(-\lambda(\xi) t^\alpha)|^2
+|\hat{f}(\xi)|^2\, d\xi
+\geq \frac{1}{4}\,(|\hat{f}(0)|/2)^2 \cdot 2\xi_{**}
+= c\,t^{-\alpha/(2H_1)},
+\]
+which gives $\norm{S_t f}_{L^2}
+\geq c\,t^{-H_2/(2H_1)}$ as claimed.
+\end{proof}
+
+\begin{remark}[Polynomial decay for all parameters]
+The decay $t^{-H_2/(2H_1)}$ is \emph{always polynomial},
+including the Markov case $H_2 = 1/2$, where the rate is
+$t^{-1/(4H_1)}$.  On $\R$ without confining geometry,
+there is no spectral gap and the spatial diffusion
+produces algebraic (not exponential) decay even with
+Markov time dynamics.  The distinction is that $H_2 < 1/2$
+produces \emph{slower} polynomial decay than $H_2 = 1/2$,
+reflecting the additional temporal memory.
+\end{remark}
+
+\begin{theorem}[Stationary covariance, conditional]
+\label{thm:stationary}
+The stationary covariance
+\[
+Q_\infty := \int_0^\infty \Phi_s\, Q\, \Phi_s^*\, ds
+\]
+exists as a trace-class operator on $L^2(\R)$ provided
+\begin{equation}\label{eq:stationary_HS}
+\int_0^\infty \norm{\Phi_s Q^{1/2}}_{\mathrm{HS}}^2\, ds
+< \infty.
+\end{equation}
+For $Q$ a Fourier multiplier of nonnegative symbol
+$q(\xi)$, this is equivalent (up to constants) to the
+low-frequency integrability condition
+\begin{equation}\label{eq:stationary_lowfreq}
+\int_\R q(\xi)\, \lambda(\xi)^{-(2\alpha-1)/\alpha}\, d\xi
+< \infty,
+\qquad \lambda(\xi) = c_{H_1}|\xi|^{2H_1}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The Hilbert-Schmidt
+condition~\eqref{eq:stationary_HS} is the Da~Prato--Zabczyk
+trace-class criterion for the stochastic-convolution
+covariance.  In Fourier-diagonal form,
+\[
+\sigma_\infty^2(\xi)
+= q(\xi) \int_0^\infty s^{2(\alpha-1)}
+|E_{\alpha,\alpha}(-\lambda(\xi) s^\alpha)|^2\, ds
+= \frac{q(\xi)}{\alpha}\,
+\lambda(\xi)^{-(2\alpha-1)/\alpha}
+\int_0^\infty u^{1 - 1/\alpha}
+|E_{\alpha,\alpha}(-u)|^2\, du,
+\]
+via the substitution $u = \lambda(\xi) s^\alpha$.  The
+$u$-integral is finite for $\alpha > 1/2$ (integrable at
+$0$ since $1 - 1/\alpha > -1$, and at infinity since
+$|E_{\alpha,\alpha}(-u)|^2 = O(u^{-4})$ by the sharper
+asymptotic of \Cref{lem:ml_bounds}(iii)).  Trace-class
+$Q_\infty$ then reduces to
+$\int \sigma_\infty^2(\xi)\, d\xi
+< \infty$, which is~\eqref{eq:stationary_lowfreq}
+up to constants.
+\end{proof}
+
+\begin{remark}[Stationary covariance is conditional on
+low-frequency behavior]
+\label{rem:stationary_conditional}
+On $\R$, $\lambda(\xi) \to 0$ as $\xi \to 0$, so the
+weight $\lambda(\xi)^{-(2\alpha-1)/\alpha}$ is
+non-integrable at the origin.
+Cylindrical noise ($q \equiv 1$) therefore fails
+\eqref{eq:stationary_lowfreq} for every
+$\alpha \in (1/2, 2)$, and a general trace-class $Q$
+does not give a stationary covariance unless its symbol
+$q(\xi)$ vanishes sufficiently fast at $\xi = 0$.  On a
+bounded domain with positive first Dirichlet eigenvalue
+$\lambda_1 > 0$ (so that $\lambda(\xi) \geq \lambda_1$
+on the discrete spectrum), or under $q(\xi)$ with
+sufficient low-frequency damping, the obstacle
+disappears and $Q_\infty$ exists.
+\end{remark}
+
+\section{Variance Scaling}\label{sec:scaling}
+
+\begin{proposition}[Variance scaling]\label{thm:selfsimilar}
+Under the assumptions of \Cref{thm:existence_trace}
+(trace-class noise) or \Cref{thm:existence}
+(cylindrical noise with $H_1 > \alpha/(2(2\alpha-1))$),
+for $f = 0$
+and any $c > 0$, the variance scales as
+\begin{equation}\label{eq:selfsimilar}
+\E[\norm{X_{ct}}_{L^2}^2]
+= c^{2H}\, \E[\norm{X_t}_{L^2}^2],
+\qquad H = 2H_2 - \tfrac{1}{2} - \tfrac{H_2}{2H_1}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+By the It\^o isometry (\Cref{cor:mode_variance}),
+\[
+\E[\norm{X_t}_{L^2}^2]
+= \int_\R \int_0^t s^{2(\alpha-1)}
+|E_{\alpha,\alpha}(-\lambda(\xi) s^\alpha)|^2\, ds\, d\xi.
+\]
+Substitute $s = t\sigma$:
+$\E[\norm{X_t}_{L^2}^2]
+= t^{2\alpha-1} \int_\R \int_0^1 \sigma^{2(\alpha-1)}
+|E_{\alpha,\alpha}(-\lambda(\xi) t^\alpha
+\sigma^\alpha)|^2\, d\sigma\, d\xi$.
+Now substitute $\xi' = t^{\alpha/(2H_1)}\xi$, so
+$\lambda(\xi) t^\alpha = \lambda(\xi')$ and
+$d\xi = t^{-\alpha/(2H_1)}\,d\xi'$:
+\[
+\E[\norm{X_t}_{L^2}^2]
+= t^{2\alpha - 1 - \alpha/(2H_1)}\,C,
+\]
+where $C = \int_\R \int_0^1 \sigma^{2(\alpha-1)}
+|E_{\alpha,\alpha}(-\lambda(\xi')\sigma^\alpha)|^2\,
+d\sigma\, d\xi'$ is independent of $t$.  The inner
+integral converges since $2(\alpha-1) > -1$ (i.e.,
+$H_2 > 1/4$) and $|E_{\alpha,\alpha}| \leq C/(1+r)$.
+The outer integral converges by the same substitution
+as in \Cref{thm:existence}.  Positivity $C > 0$ follows
+from $E_{\alpha,\alpha}(0) = 1/\Gamma(\alpha) > 0$.  Replacing $t$ by $ct$:
+the variance scales with exponent
+$2H = 2\alpha - 1 - \alpha/(2H_1)
+= 4H_2 - 1 - H_2/H_1$.
+\end{proof}
+
+\begin{remark}[Scaling exponent]
+\label{rem:hurst}
+The variance scaling exponent
+$H = 2H_2 - 1/2 - H_2/(2H_1)$ depends on both
+parameters.  In the Markov limit $H_2 = 1/2$:
+$H = 1/2 - 1/(4H_1)$.  With the standard Laplacian
+$H_1 = 1$: $H = 3H_2/2 - 1/2$.  The exponent
+$H > 0$ (hence nontrivial scaling) requires
+$H_2 > H_1/(4H_1 - 1)$ when $H_1 > 1/4$.
+\end{remark}
+
+\section{Special Cases}\label{sec:special}
+
+Setting $H_2 = 1/2$ recovers Markov dynamics:
+$\partial_t X = A_{H_1} X + \dot{B}$, with
+polynomial decay $t^{-1/(4H_1)}$.
+Setting $H_1 = 1$ gives the time-fractional heat
+equation $\partial_t^\alpha X = -c\Delta X + \dot{B}$.
+Both together ($H_1 = 1$, $H_2 = 1/2$) yield the
+classical stochastic heat equation, whose
+finite-dimensional projections are OU processes.
+Restricting to a single Fourier mode $\xi_0$ gives
+the scalar fractional OU process
+$\partial_t^\alpha Y = -\lambda Y + \dot{W}$ with
+$\lambda = c_{H_1}|\xi_0|^{2H_1}$,
+studied by Cheridito, Kawaguchi, and
+Maejima~\cite{cheridito2003}.
+
+\section{The Operator Derivative on the Fractional Memory Space}
+\label{sec:operator}
+
+The operator derivative $D = \delta^*$, defined as the
+adjoint of the stochastic integral
+in~\cite{fontes2026opfac,fontes2026banach}, provides
+representation theorems from a single duality identity.
+Applied to the fractional memory process, it yields
+exact Clark--Ocone representations in the Gaussian
+case and identifies a structural defect under L\'evy
+noise.  The interpretation of this defect as a
+``memory gap'' is a modeling choice, not a theorem.
+
+\subsection{Energy space and divergence}
+
+The mild solution~(\Cref{def:mild}) writes
+$X_t = S_t f + \delta(\Phi)$, where $\delta$ is the
+stochastic integral (divergence) and $\Phi_{t-s}$ is
+the Mittag-Leffler resolvent integrand.
+
+\begin{definition}[Fractional memory energy space]
+\label{def:energy_space}
+The energy space at time $t$ is
+\[
+\HH_Q^t := L^2([0,t]; L^2(\R)),
+\]
+with divergence $\delta(u) := \int_0^t u_s\, dB_s$.
+\end{definition}
+
+\begin{definition}[Operator derivative]
+\label{def:D_quijotic}
+$D := \delta^*$, defined by the adjoint identity:
+for $F \in L^2(\Omega)$ and $u \in \HH_Q^t$,
+\begin{equation}\label{eq:adjoint_identity}
+\ip{DF}{u}_{\HH_Q^t} = \E[F \cdot \delta(u)].
+\end{equation}
+\end{definition}
+
+\begin{remark}[Volterra kernel structure]
+The resolvent integrand $\widehat{\Phi_s}(\xi)
+= s^{\alpha-1}
+E_{\alpha,\alpha}(-\lambda(\xi) s^\alpha)$
+is a Volterra kernel with power-law tail
+$\sim s^{\alpha-1}/\Gamma(\alpha)$, reflecting the
+Caputo time derivative.  This is the same kernel
+structure encountered in the Volterra-L\'evy theory
+of~\cite{fontes2026volterra}, with the Mittag-Leffler
+function replacing the fractional power kernel.
+\end{remark}
+
+\subsection{Clark-Ocone in the Gaussian case}
+
+\begin{theorem}[Exact representation]
+\label{thm:clark_ocone}
+In the Gaussian setting (noise $B$ is Brownian),
+$D = \delta^*$ coincides with the Malliavin derivative,
+the Leibniz rule holds (i.e., the Leibniz defect
+$\Gamma(F,G) := D(FG) - F \cdot DG - G \cdot DF$
+vanishes for all suitable $F, G$), and every
+$F \in L^2(\FF_t)$ admits
+\begin{equation}\label{eq:clark_ocone}
+F - \E[F] = \int_0^t
+\E[D_s F \mid \FF_s]\, dB_s.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The Gaussian noise generates a Wiener space on which
+$D = \delta^*$ is the Malliavin derivative
+(see~\cite{nualart2006}, Chapter~1).  The Leibniz rule
+follows from the product structure of the Gaussian
+measure.  Clark-Ocone is the classical predictable
+representation property on Wiener
+space~\cite{nualart2006}, Theorem~1.3.14.
+\end{proof}
+
+\begin{remark}
+In the Gaussian case, functionals of $X_t$ admit exact
+stochastic integral representations against the input
+stream.  The fractional memory process under Gaussian
+noise is therefore the baseline of perfect
+representability; the L\'evy case below shows where
+this breaks down.
+\end{remark}
+
+\section{Extension to L\'evy Noise}
+\label{sec:levy}
+
+When the Gaussian noise $\dot{B}$ is replaced by a
+L\'evy noise $\dot{L}$ with jumps, the Leibniz rule
+fails and the defect acquires a concrete propagation
+law governed by the Mittag-Leffler resolvent kernel.
+
+Let $\dot{L}$ be a L\'evy noise with jump measure
+$\nu$.  The equation becomes
+\begin{equation}\label{eq:levy_fmp}
+\partial_t^\alpha X_t = A_{H_1} X_t + \dot{L}_t,
+\qquad X_0 = f.
+\end{equation}
+The mild solution retains the same resolvent structure:
+\begin{equation}\label{eq:mild_levy}
+X_t = S_t f + \int_0^t \Phi_{t-s}\, dL_s,
+\end{equation}
+where the stochastic integral is now against the
+L\'evy process $L$.  Well-posedness of the mild
+formulation under suitable moment conditions on $\nu$
+follows from standard L\'evy stochastic integration
+theory~\cite{daprato2014,meerschaert2012}.
+
+\subsection{Combined energy space}
+
+Following~\cite{fontes2026banach}, the energy space
+splits into continuous and jump components:
+\begin{equation}\label{eq:combined_space}
+\HH = H_W \times \widetilde{H}_J,
+\end{equation}
+where $H_W = L^2([0,t]; L^2(\R))$ carries the Brownian
+part and $\widetilde{H}_J$ carries the compensated
+jump part, with norm weighted by the L\'evy measure
+$\nu$ (see~\cite{fontes2026banach}, Definition~3.1, for
+the precise construction).  The operator derivative
+splits accordingly: $D = (D_W, \widetilde{D}_J)$.
+
+\subsection{The Leibniz defect}
+
+\begin{definition}[Leibniz defect]
+\label{def:defect}
+For $F, G \in \mathrm{dom}(D)$,
+\begin{equation}\label{eq:defect}
+\Gamma(F,G) := D(FG) - F \cdot DG - G \cdot DF.
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Defect dichotomy]
+\label{thm:defect_dichotomy}
+\leavevmode
+\begin{enumerate}[label=(\roman*)]
+\item If $\nu = 0$ (Gaussian noise):
+  $\Gamma(F,G) = 0$ for all $F, G$.
+\item If $\nu \neq 0$: $\Gamma$ is generically
+  nonzero and is concentrated on the jump component
+  $\widetilde{H}_J$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Part~(i) is \Cref{thm:clark_ocone}: the Gaussian
+product structure ensures Leibniz holds for $D_W$.
+Part~(ii) is proved in~\cite{fontes2026banach},
+Theorem~4.2: the jump component $\widetilde{D}_J$
+fails the Leibniz rule because the It\^o product
+formula for jump processes introduces cross terms
+between pre-jump and post-jump values that do not
+factor through the derivative.  The defect $\Gamma$
+is therefore supported on $\widetilde{H}_J$.
+\end{proof}
+
+\subsection{Defect propagation}
+
+The resolvent structure of the fractional memory
+process determines how the defect propagates in time.
+
+\begin{proposition}[Defect propagation]
+\label{prop:defect_propagation}
+For the L\'evy fractional memory
+process~\eqref{eq:levy_fmp}, a jump at time $s$
+contributes to the defect at time $t > s$ with weight
+\begin{equation}\label{eq:defect_weight}
+|\widehat{\Phi_{t-s}}(\xi)|
+\leq C\,(t-s)^{\alpha-1}
+\cdot \frac{1}{1 + \lambda(\xi)(t-s)^\alpha}.
+\end{equation}
+For fixed $\xi$, this decays as $(t-s)^{\alpha-1}$
+for small $t - s$ and as $(t-s)^{-1}$ for large
+$t - s$---in both cases, polynomial.
+\end{proposition}
+
+\begin{proof}
+Direct from the Mittag-Leffler bound
+$|E_{\alpha,\alpha}(-r)| \leq C/(1+r)$ applied to the
+resolvent integrand
+$\widehat{\Phi_s}(\xi)
+= s^{\alpha-1}
+E_{\alpha,\alpha}(-\lambda(\xi) s^\alpha)$.
+\end{proof}
+
+\begin{remark}
+In the Markov case ($\alpha = 1$), the exponential
+kernel ensures rapid decay of the defect contribution.
+For $\alpha < 1$, the Mittag-Leffler kernel decays
+polynomially: the defect from a jump at time $s$
+persists at time $t$ with weight
+$\sim (t-s)^{-\alpha}$.
+This parallels the unhedgeable risk in
+Volterra-L\'evy markets~\cite{fontes2026volterra},
+where the Leibniz defect equals the component of
+financial risk that no trading strategy can eliminate.
+\end{remark}
+
+\begin{remark}
+\label{rem:what_D_adds}
+Compared to the standard Malliavin calculus, the
+operator derivative framework adds the defect
+$\Gamma$ as a structural invariant: its vanishing
+characterizes the Gaussian case
+(\Cref{thm:defect_dichotomy}), its $L^p$ norm
+quantifies the deviation~\cite{fontes2026volterra},
+and its propagation is governed by the resolvent
+kernel~\eqref{eq:defect_weight}.
+\end{remark}
+
+\section{Modal Truncation and Discrete Representation}
+\label{sec:discrete}
+
+The spectral decomposition (\Cref{thm:spectral}) reduces
+the infinite-dimensional SPDE to a continuum of scalar
+modes.  In any finite implementation, only finitely many
+modes are retained.  This section establishes the
+effective temporal depth under modal truncation and
+proves that, for a stream of discrete impulse inputs,
+the spectrally truncated mild solution is computed
+exactly by a finite Mittag-Leffler sum.
+
+\subsection{Effective context under modal truncation}
+
+\begin{definition}[Effective context]
+\label{def:eff_context}
+The effective context $C_{\mathrm{eff}}(N)$ is the
+maximum temporal depth at which stored information
+remains above threshold $\varepsilon > 0$:
+$C_{\mathrm{eff}}(N) := \sup\{\tau > 0 :
+\exists\, k \leq N \text{ with }
+|E_\alpha(-\lambda_k \tau^\alpha)| > \varepsilon\}$,
+where $\lambda_k = c_{H_1}|\xi_k|^{2H_1}$ for
+$N$ uniformly spaced modes
+$\xi_k = k\Xi/N$, $k = 1, \ldots, N$ (excluding the
+zero mode, which has $\lambda(0) = 0$ and would not
+decay).
+\end{definition}
+
+\begin{proposition}[Effective context scaling]
+\label{thm:eff_context}
+Under modal truncation to $N$ uniformly spaced
+nonzero modes $\xi_k = k\Xi/N$, as $\varepsilon \to 0$,
+\begin{equation}\label{eq:eff_context}
+C_{\mathrm{eff}}(N) \lesssim
+\left(\frac{N}{\Xi}\right)^{H_1/H_2}
+\cdot \varepsilon^{-1/(2H_2)}.
+\end{equation}
+The bound is sharp (up to constants) when
+$\alpha \in (0, 1]$, where
+$E_\alpha(-\lambda \tau^\alpha)$ is monotonically
+decreasing; for $\alpha \in (1, 2]$ the bound
+controls the envelope of $|E_\alpha|$ but not the
+precise crossing time, which is non-unique due to
+oscillations.
+\end{proposition}
+
+\begin{proof}
+The longest-lived mode (by envelope) is
+$\xi_{\min} = \Xi/N$ with
+$\lambda_{\min} = c_{H_1}(\Xi/N)^{2H_1}$.
+By \Cref{lem:ml_bounds}(ii),
+$|E_\alpha(-\lambda_{\min}\tau^\alpha)|
+\leq C_\alpha/(1 + \lambda_{\min}\tau^\alpha)$.
+This bound drops below $\varepsilon$ once
+$\lambda_{\min}\tau^\alpha \gtrsim
+\varepsilon^{-1}$, i.e.,
+$\tau \gtrsim (\lambda_{\min})^{-1/\alpha}
+\varepsilon^{-1/\alpha}
+= (N/\Xi)^{H_1/H_2}\,\varepsilon^{-1/(2H_2)}$,
+using $\alpha = 2H_2$.  Sharpness for $\alpha \in
+(0, 1]$ follows from the matching asymptotic
+$E_\alpha(-r) \sim 1/(r\Gamma(1-\alpha))$
+(\cite[Ch.~4]{gorenflo2014}), which gives a lower
+bound of the same order; for $\alpha \in (1, 2]$
+the Mittag-Leffler function oscillates and there
+are arbitrarily large $\tau$ with $|E_\alpha| <
+\varepsilon$ interleaved with $|E_\alpha| \approx
+\varepsilon$, so the crossing time is non-unique
+but the envelope bound above still controls the
+effective context in the sense of the
+supremum in \Cref{def:eff_context}.
+\end{proof}
+
+\begin{remark}[Memory-compute tradeoff]
+\label{rem:memory_compute}
+The scaling $C_{\mathrm{eff}} \sim N^{H_1/H_2}$ is
+polynomial in the number of retained modes.  Since
+each mode evaluation costs $O(1)$ (the Mittag-Leffler
+function can be evaluated via lookup table with
+interpolation), the total query cost for $M$ stored
+inputs is $O(NM)$.  The temporal depth thus grows as
+a power law in the computational budget per query.
+\end{remark}
+
+\subsection{Discrete-impulse exactness}
+
+\begin{theorem}[Discrete-impulse exactness]
+\label{thm:discretization}
+Consider the fractional memory
+process~\eqref{eq:quijotic_main} with impulse forcing
+at times $s_1 < \cdots < s_M < t$:
+\[
+\dot{B}_t = \sum_{j=1}^M v^{(j)}\,\delta(t - s_j),
+\qquad v^{(j)} \in L^2(\R).
+\]
+Then the mild solution at time $t > s_M$ is
+\begin{equation}\label{eq:mild_impulse}
+X_t = S_t f + \sum_{j=1}^M \Phi_{t-s_j}\, v^{(j)},
+\end{equation}
+and its Fourier projection onto mode $\xi_k$ is
+\begin{equation}\label{eq:discrete_exact}
+\hat{X}_t(\xi_k)
+= E_\alpha(-\lambda_k\,t^\alpha)\,\hat{f}(\xi_k)
++ \sum_{j=1}^M
+(t - s_j)^{\alpha-1}\,
+E_{\alpha,\alpha}\bigl(-\lambda_k\,(t - s_j)^\alpha\bigr)\,
+\hat{v}^{(j)}(\xi_k),
+\end{equation}
+where $\lambda_k = c_{H_1}|\xi_k|^{2H_1}$.
+\end{theorem}
+
+\begin{proof}
+Substitute $dB_s = \sum_j v^{(j)}\,\delta(s - s_j)\,ds$
+into the mild-solution formula of \Cref{def:mild}.
+The stochastic integral collapses by the sifting
+property:
+$\int_0^t \Phi_{t-s}\,dB_s
+= \sum_j \Phi_{t-s_j}\,v^{(j)}$
+for $t > s_M$, which gives~\eqref{eq:mild_impulse}.
+Taking Fourier projection at mode $\xi_k$ and using
+$\widehat{\Phi_\tau}(\xi) = \tau^{\alpha-1}
+E_{\alpha,\alpha}(-\lambda(\xi)\tau^\alpha)$
+(\Cref{def:resolvent_kernel})
+and $\widehat{S_t f}(\xi_k)
+= E_\alpha(-\lambda_k t^\alpha)\,\hat{f}(\xi_k)$
+(\Cref{def:resolvent})
+yields~\eqref{eq:discrete_exact}.
+\end{proof}
+
+\begin{remark}[Two representations of impulse
+response]
+\label{rem:two_representations}
+Formula~\eqref{eq:discrete_exact} is the exact mild
+solution of the forced
+equation~\eqref{eq:quijotic_main} and uses the
+two-parameter function $E_{\alpha,\alpha}$ with
+prefactor $(t-s_j)^{\alpha-1}$.  This is the forced
+Green's function of the fractional SPDE.  For
+$\alpha \in (1/2, 1)$ (i.e., $H_2 \in (1/4, 1/2)$),
+the prefactor is singular as $t \to s_j^+$,
+reflecting the weak regularity of the impulse
+response at the time of impulse.
+
+A distinct representation, natural for memory
+architectures that treat each stored input as an
+initial condition placed on the free dynamics at
+the time of writing, is the
+\emph{autonomous-decay representation}:
+\begin{equation}\label{eq:autonomous_decay}
+\hat{X}^{\mathrm{auto}}_t(\xi_k)
+= \sum_{j=1}^M
+E_\alpha\bigl(-\lambda_k\,(t - s_j)^\alpha\bigr)\,
+\hat{v}^{(j)}(\xi_k),
+\end{equation}
+which uses the one-parameter $E_\alpha$ and has no
+prefactor.  Formula~\eqref{eq:autonomous_decay} is
+\emph{not} the mild solution
+of~\eqref{eq:quijotic_main}: it corresponds to the
+jump-reset model in which, at each $s_j$, the state
+is augmented by $v^{(j)}$ and then evolves
+autonomously under
+$\partial_t^\alpha X = A_{H_1}X$ until the next
+impulse.  The two representations coincide when
+$\alpha = 1$ (both give $e^{-\lambda_k(t-s_j)}$) and
+disagree for $\alpha \neq 1$.  The companion
+paper~\cite{fontes2026arch} uses
+\eqref{eq:autonomous_decay} as the retrieval kernel
+on the grounds that it matches the operation
+``each stored fact contributes a decaying
+relevance weight to a ranking at query time'';
+we defer to that paper for discussion of the
+modeling choice, which is a choice distinct from the
+forced-SPDE impulse response derived here.
+\end{remark}
+
+\begin{corollary}[$L^1$ integrability separates the
+two representations]
+\label{cor:l1_separation}
+Fix $\lambda > 0$ and consider the scalar kernels on
+$[0, \infty)$:
+\[
+G_{\mathrm{forced}}(\tau) := \tau^{\alpha-1}
+E_{\alpha,\alpha}(-\lambda \tau^\alpha),
+\qquad
+G_{\mathrm{auto}}(\tau) := E_\alpha(-\lambda \tau^\alpha).
+\]
+\begin{enumerate}[label=\textnormal{(\roman*)}]
+\item For $\alpha \in (0, 1]$,
+  $G_{\mathrm{forced}} \geq 0$ and
+  $\int_0^\infty G_{\mathrm{forced}}(\tau)\,d\tau
+  = 1/\lambda$.  For $\alpha \in (1, 2)$,
+  $\|G_{\mathrm{forced}}\|_{L^1([0,\infty))}
+  < \infty$.
+\item For $\alpha \in (0, 1)$,
+  $G_{\mathrm{auto}} \notin L^1([0, \infty))$: the
+  integral $\int_0^\infty E_\alpha(-\lambda \tau^\alpha)
+  \,d\tau$ diverges at infinity.  For $\alpha = 1$,
+  $G_{\mathrm{auto}} = e^{-\lambda \tau}$ with
+  $L^1$ norm $1/\lambda$.  For $\alpha \in (1, 2)$,
+  $G_{\mathrm{auto}} \in L^1([0, \infty))$.
+\end{enumerate}
+The $L^1$ integrability transition of
+$G_{\mathrm{auto}}$ occurs at $\alpha = 1$, coinciding
+with the Markov-fractional boundary.
+\end{corollary}
+
+\begin{proof}
+\emph{(i), case $\alpha \in (0, 1]$.}  Complete
+monotonicity of $E_\alpha(-t^\alpha)$ implies
+$E_{\alpha,\alpha}(-r) \geq 0$ for $r \geq 0$
+(via the identity $t^{\alpha-1} E_{\alpha,\alpha}
+(-\lambda t^\alpha) = -\lambda^{-1}\partial_t
+E_\alpha(-\lambda t^\alpha)$ applied to the
+nonincreasing $E_\alpha$), so
+$G_{\mathrm{forced}} \geq 0$.  By monotone
+convergence,
+$\int_0^\infty G_{\mathrm{forced}}(\tau)\,d\tau
+= \lim_{s \to 0^+} \mathcal{L}[G_{\mathrm{forced}}](s)
+= \lim_{s \to 0^+} 1/(s^\alpha + \lambda)
+= 1/\lambda$.
+
+\emph{(i), case $\alpha \in (1, 2)$.}
+$G_{\mathrm{forced}}$ is continuous on $(0, \infty)$
+and $\tau^{\alpha-1}$ is integrable near zero
+(since $\alpha > 0$).  At infinity,
+\Cref{lem:ml_bounds}(iii) gives
+$|E_{\alpha,\alpha}(-\lambda \tau^\alpha)|
+\leq C/(1 + \lambda \tau^\alpha)$, so
+$|G_{\mathrm{forced}}(\tau)|
+\leq C \tau^{\alpha-1}/(1 + \lambda \tau^\alpha)
+= O(\tau^{-1})$ at infinity.  The sharper
+asymptotic $E_{\alpha,\alpha}(-r) = O(r^{-2})$
+(remark after \Cref{lem:ml_bounds}) improves this
+to $O(\tau^{-\alpha-1})$, which is integrable for
+$\alpha > 0$.
+
+\emph{(ii), case $\alpha \in (0, 1)$.}  By the
+Mittag-Leffler asymptotic,
+$E_\alpha(-\lambda \tau^\alpha)
+\sim 1/[\lambda\Gamma(1-\alpha)\,\tau^\alpha]$ as
+$\tau \to \infty$, which is positive for $\alpha
+\in (0, 1)$ (since $\Gamma(1-\alpha) > 0$ there).
+$\int^\infty \tau^{-\alpha}\,d\tau$ diverges iff
+$\alpha \leq 1$.  Combined with $E_\alpha(0) = 1$,
+this gives $\int_0^\infty G_{\mathrm{auto}}\,d\tau
+= +\infty$.
+
+\emph{(ii), case $\alpha = 1$.}  Direct.
+
+\emph{(ii), case $\alpha \in (1, 2)$.}  The same
+asymptotic gives $|E_\alpha(-\lambda\tau^\alpha)|
+\sim 1/[|\lambda\Gamma(1-\alpha)|\,\tau^\alpha]$ with
+$\alpha > 1$ (so $\tau^{-\alpha}$ is integrable at
+infinity).  Bounded on compact sets (continuity).
+Hence $L^1$.
+\end{proof}
+
+\begin{remark}[Rankings, aggregates, and the
+complementary pathologies]
+\label{rem:l1_consequence}
+Corollary~\ref{cor:l1_separation} pins down when the
+two representations of \Cref{rem:two_representations}
+behave differently, and when they do not.
+
+For an operation that is a function of ratios of
+finitely many kernel evaluations --- top-$k$
+retrieval ranking, pairwise comparisons, relative
+ordering --- the $L^1$ norm of the kernel does not
+appear directly, but the ranking still depends on
+the kernel's pointwise shape.  Two kernels with
+the same $L^1$ norm can produce different rankings;
+two kernels with different $L^1$ norms can produce
+the same rankings.  The $L^1$ question is separate
+from the ranking question.
+
+For an operation that is a function of
+\emph{aggregate kernel mass} --- normalized mixture
+weights $G(t - s_j)/\sum_i G(t - s_i)$ as the number
+of stored facts $M \to \infty$, prior integrals
+$\int_0^\infty G(\tau)\,\pi(\tau)\,d\tau$ under
+heavy-tailed priors on age, time-integrated
+expectations --- the $L^1$ norm appears and the
+representations diverge qualitatively.  In the
+polynomial-retention regime $\alpha \in (0, 1)$ the
+forced-SPDE kernel is $L^1$-normalizable (total
+mass $1/\lambda$) while the autonomous-decay kernel
+is not.  Under a model in which writes arrive as a
+stationary point process with density $\rho > 0$,
+the aggregate weight
+$\sum_j G_{\mathrm{auto}}(t - s_j)$ diverges as the
+observation window grows, while the analogous sum
+under $G_{\mathrm{forced}}$ remains bounded.
+
+However, the forced-SPDE kernel carries its own
+pathology: the $(t - s)^{\alpha-1}$ prefactor is
+singular as $t \to s^+$ for $\alpha \in (0, 1)$
+(\Cref{rem:two_representations}).  In a retrieval
+system where queries may arrive close in time to
+write events, this singularity causes
+$G_{\mathrm{forced}}$ to rank the most recent write
+first regardless of the semantic content of the
+query, overwhelming any pointwise semantic
+similarity signal by a factor that grows
+unboundedly as the query-write gap shrinks.
+
+The two kernels thus play \emph{complementary}
+rather than hierarchical roles.  $G_{\mathrm{forced}}$
+has $L^1$-bounded aggregate mass but is
+pathological at zero age; it is suitable for
+aggregate operations when queries are separated
+from writes by a timescale on the order of
+$\tau_{\mathrm{char}} = \lambda^{-1/\alpha}$, and
+unsuitable when they are not.
+$G_{\mathrm{auto}}$ is well-behaved at zero age but
+$L^1$-divergent at infinity for $\alpha \in (0, 1)$;
+it is suitable for direct retrieval ranking but
+requires finite-horizon truncation or acceptance of
+unboundedness for aggregate operations.
+
+A cleaner statement of this complementarity uses
+$L^p$ regularity.  For $\alpha \in (0, 1)$, direct
+computation from the Mittag-Leffler asymptotics
+$E_\alpha(-\lambda\tau^\alpha) \sim
+1/(\lambda\Gamma(1-\alpha)\tau^\alpha)$ and
+$E_{\alpha,\alpha}(-\lambda\tau^\alpha) \sim
+\alpha/(\Gamma(1-\alpha)(\lambda\tau^\alpha)^2)$
+at infinity, together with the boundary behaviour
+$E_\alpha(0) = 1$ and
+$E_{\alpha,\alpha}(0) = 1/\Gamma(\alpha)$, yields
+\begin{equation}
+G_{\mathrm{auto}} \in L^p([0,\infty))
+\iff p > \tfrac{1}{\alpha},
+\qquad
+G_{\mathrm{forced}} \in L^p([0,\infty))
+\iff p < \tfrac{1}{1-\alpha}.
+\end{equation}
+The critical exponents $1/\alpha$ and $1/(1-\alpha)$
+are H\"older conjugates, since $\alpha + (1-\alpha) =
+1$.  The two kernels thus live on opposite sides
+of H\"older-conjugate endpoints: $G_{\mathrm{auto}}$
+is in $L^\infty$ but not $L^1$,
+$G_{\mathrm{forced}}$ is in $L^1$ but not $L^\infty$,
+and for $\alpha \in (1/2, 1)$ they share the
+open window $(1/\alpha, 1/(1-\alpha)) \ni 2$ while
+for $\alpha \in (0, 1/2)$ the two windows are
+disjoint.
+
+This duality aligns with a natural distinction
+between retrieval operators.  Sup-type operators
+--- $\operatorname{argmax}$, top-$k$, threshold
+gates, streaming $\limsup$ --- require only that
+the kernel be bounded on its domain, i.e., $L^\infty$,
+and $G_{\mathrm{auto}}$ provides this for all
+$\alpha \in (0, 1)$ while $G_{\mathrm{forced}}$
+does not.  Sum-type operators --- softmax
+normalization, attention mixtures, Bayesian
+posteriors over age, softmax-weighted RAG contexts
+--- require the kernel to be summable against the
+density of stored facts, which reduces to $L^1$
+regularity under a stationary write process; and
+$G_{\mathrm{forced}}$ provides this for all
+$\alpha \in (0, 1)$ while $G_{\mathrm{auto}}$
+does not.  The choice of temporal kernel and the
+choice of retrieval operator are linked, not
+independent: a pipeline restricted to sup-type
+aggregation lives in $L^\infty$ and selects
+$G_{\mathrm{auto}}$, and the $L^1$ divergence of
+Corollary~\ref{cor:l1_separation} never arises;
+a pipeline using sum-type aggregation lives in
+$L^1$ and selects $G_{\mathrm{forced}}$ modulo its
+zero-age singularity.
+
+Applications requiring both bounded aggregates and
+regular zero-age behaviour simultaneously are not
+served by either kernel and may motivate a third
+choice outside the Mittag-Leffler family --- for
+example, a stretched exponential
+$\exp\bigl(-(\lambda\tau)^\alpha\bigr)$, which is
+$L^1$-integrable for $\alpha \in (0, 1)$ and finite
+at $\tau = 0$ but lacks an SPDE derivation; or a
+regularized forced-SPDE kernel
+$(\tau + \epsilon)^{\alpha-1}
+ E_{\alpha,\alpha}(-\lambda(\tau + \epsilon)^\alpha)$
+with $\epsilon > 0$, which is bounded at $\tau = 0$
+while retaining $L^1$-integrability.  The present
+paper does not develop either alternative.
+\end{remark}
+
+The next two subsections turn the foregoing
+asymptotic statements into checkable numerical
+content: \Cref{sec:numerical_verification} converts
+the $L^1$ separation into a closed-form
+aggregate-mass identity under a stationary Poisson
+write process, and \Cref{sec:recency_pathology}
+exhibits the recency-singularity pathology of
+$G_{\mathrm{forced}}$ in a synthetic retrieval
+pipeline.
+
+\subsection{Numerical verification of the
+\texorpdfstring{$L^1$}{L1} separation}
+\label{sec:numerical_verification}
+
+The qualitative and quantitative content of
+\Cref{cor:l1_separation,rem:l1_consequence} can be
+illustrated by the closed-form aggregate-mass
+expectations under a stationary Poisson write process
+on $[0, T]$ with rate $\rho$ and decay $\lambda$.
+By Campbell's theorem,
+\begin{align}
+\E[S_{\mathrm{forced}}(T)]
+&= \rho \int_0^T (T-s)^{\alpha-1}
+   E_{\alpha,\alpha}(-\lambda(T-s)^\alpha)\,ds
+ = \frac{\rho}{\lambda}
+   \bigl(1 - E_\alpha(-\lambda T^\alpha)\bigr),
+\label{eq:s_forced_expectation}\\
+\E[S_{\mathrm{auto}}(T)]
+&= \rho \int_0^T E_\alpha(-\lambda u^\alpha)\,du
+ = \rho\, T\, E_{\alpha,2}(-\lambda T^\alpha),
+\label{eq:s_auto_expectation}
+\end{align}
+where the first identity is the antiderivative
+relation
+\begin{equation}\label{eq:E_alpha_derivative}
+\frac{d}{dT} E_\alpha(-\lambda T^\alpha)
+= -\lambda\,T^{\alpha-1}\,
+E_{\alpha,\alpha}(-\lambda T^\alpha),
+\end{equation}
+which integrated on $[0, T]$ with
+$E_\alpha(0) = 1$ gives
+$\int_0^T u^{\alpha-1}
+E_{\alpha,\alpha}(-\lambda u^\alpha)\,du
+= [1 - E_\alpha(-\lambda T^\alpha)]/\lambda$;
+the second follows from the Mittag-Leffler integral
+identity $\int_0^T E_\alpha(-\lambda u^\alpha)\,du
+= T\,E_{\alpha,2}(-\lambda T^\alpha)$~\cite[\S 4]{gorenflo2014}.
+The total $L^1$ mass of $G_{\mathrm{forced}}$ on
+$[0, \infty)$ equals $1/\lambda$
+(\Cref{cor:l1_separation}(i)) and is recovered by
+sending $T \to \infty$ in
+\eqref{eq:s_forced_expectation}, equivalently by
+evaluating $\mathcal{L}[\tau^{\alpha-1}
+E_{\alpha,\alpha}(-\lambda \tau^\alpha)](s)
+= 1/(s^\alpha + \lambda)$ at $s \to 0^+$.
+The aggregate-mass ratio is therefore
+\begin{equation}\label{eq:l1_ratio}
+\mathcal{R}_\alpha(T)
+:= \frac{\E[S_{\mathrm{auto}}(T)]}
+        {\E[S_{\mathrm{forced}}(T)]}
+ = \frac{\lambda\,T\,E_{\alpha,2}(-\lambda T^\alpha)}
+        {1 - E_\alpha(-\lambda T^\alpha)},
+\end{equation}
+and the Mittag-Leffler asymptotics
+$E_{\alpha,2}(-r)\sim 1/[\Gamma(2-\alpha)\,r]$ and
+$E_\alpha(-r)\sim 1/[\Gamma(1-\alpha)\,r]$ as
+$r \to \infty$ for $\alpha \in (0,1)$ give
+\begin{equation}\label{eq:l1_ratio_asymptotic}
+\mathcal{R}_\alpha(T)
+\sim \frac{T^{1-\alpha}}{\Gamma(2-\alpha)}
+\qquad \text{as } T \to \infty.
+\end{equation}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_l1_mass}
+\caption{\textbf{Closed-form aggregate kernel mass
+under a Poisson write process,
+$\rho = 1$, $\lambda = 0.05$.}
+Blue:
+$\E[S_{\mathrm{auto}}](T) = \rho T\,
+E_{\alpha,2}(-\lambda T^\alpha)$
+(\eqref{eq:s_auto_expectation}).
+Red:
+$\E[S_{\mathrm{forced}}](T) = \rho(1 -
+E_\alpha(-\lambda T^\alpha))/\lambda$
+(\eqref{eq:s_forced_expectation}).
+Dotted horizontal line: $\rho/\lambda = 20$.
+Dotted gray: reference $T^{1-\alpha}$ slope.
+Across $\alpha \in \{0.3, 0.5, 0.8\}$ the forced-SPDE
+mass saturates at $\rho/\lambda$ as predicted by
+\Cref{cor:l1_separation}(i), while the autonomous-decay
+mass diverges at rate $T^{1-\alpha}$ per
+\eqref{eq:l1_ratio_asymptotic}.  Curves are deterministic
+and exactly reproducible from
+\texttt{scripts/generate\_fig\_l1\_mass.py}.}
+\label{fig:l1_mass}
+\end{figure}
+
+The slope of $\E[S_{\mathrm{auto}}](T)$ on log--log
+axes over the rightmost decade $T \in [10^7, 10^8]$,
+computed from \eqref{eq:s_auto_expectation}, is
+$\{0.732, 0.502, 0.200\}$ for $\alpha \in \{0.3, 0.5, 0.8\}$
+respectively, against the asymptotic prediction
+$\{0.700, 0.500, 0.200\}$; the small residual at
+$\alpha = 0.3$ is the sub-asymptotic correction in the
+Mittag-Leffler expansion at finite $T$.  The closed-form
+ratio $\mathcal{R}_\alpha(T)$ at $T = 10^8$ takes the
+values $\{4.30 \cdot 10^5,\ 1.13 \cdot 10^4,\ 43.4\}$
+for the same $\alpha$, agreeing with the asymptotic
+form \eqref{eq:l1_ratio_asymptotic} to within $2\%$.
+The full table of slopes and ratios is written by the
+generation script to
+\texttt{outputs/l1\_mass\_metrics.txt}.
+
+The practical consequence is as predicted by
+\Cref{rem:l1_consequence}: at $T = 10^8$ and
+$\alpha = 0.3$, $\mathcal{R}_\alpha(T) \approx 4.3 \cdot 10^5$,
+and the two representations continue to separate at
+rate $T^{1-\alpha}$.  Any operation depending on the
+ratio $w(\tau)/S(T)$ --- normalized attention mixtures,
+Bayesian age posteriors, softmax-style calibration
+--- will therefore yield asymptotically different
+answers under the two representations.  Rank-based
+retrieval at fixed store size is insensitive to the
+$L^1$ divergence per se, but is sensitive to the
+pointwise shape of the kernel, in particular to the
+recency singularity of $G_{\mathrm{forced}}$, as we
+show next.
+
+\subsection{Verification of the recency-singularity
+pathology}
+\label{sec:recency_pathology}
+
+The penultimate paragraph of \Cref{rem:l1_consequence}
+asserts that $G_{\mathrm{forced}}$'s
+$(t-s)^{\alpha-1}$ prefactor causes it to dominate
+over semantic similarity signals in a retrieval
+context when queries arrive close to writes.  We
+verify this claim on a synthetic retrieval pipeline.
+
+The setup: $N$ documents at Poisson-arrival times on
+$[0, T]$ with embeddings drawn uniformly from the
+unit sphere in $\R^{d_{\mathrm{emb}}}$ ($d_{\mathrm{emb}}
+= 64$).  Each query embedding is a target document's
+embedding plus Gaussian noise at level $0.35$,
+renormalized.  Retrieval score for each document is
+the product of cosine similarity (shifted to be
+nonnegative) and the temporal weight under either
+$G_{\mathrm{auto}}$ or $G_{\mathrm{forced}}$.  Two
+conditions: \emph{no lag} (query at time $T$,
+youngest document at age near $0$) and \emph{lag}
+(query at time $T + 10$, youngest document at age
+$\geq 10$).
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_retrieval_pipeline}
+\caption{\textbf{Retrieval pipeline with semantic
+$\times$ temporal scoring, $\alpha = 0.5$,
+$\lambda = 0.05$.}  Top row: query at time $T$
+(query-write gap can be near zero).  Bottom row:
+query at time $T + 10$.  Left column: top-$1$
+accuracy.  Middle: median softmax confidence $p_1$.
+Right: $N_{\mathrm{eff}}$.  Under forced-SPDE with
+no lag, top-$1$ accuracy is essentially zero across
+all store sizes because the singular prefactor
+$(t-s)^{\alpha-1}$ assigns near-infinite weight to
+the youngest document regardless of semantic match.
+With lag $=10$ the pathology softens but
+$G_{\mathrm{forced}}$ still underperforms
+$G_{\mathrm{auto}}$ on ranking by a factor of $4$ or
+more.  The $L^1$-related predictions (bounded
+$N_{\mathrm{eff}}$ under $G_{\mathrm{forced}}$,
+linear growth under $G_{\mathrm{auto}}$) are
+confirmed in the right column of both rows.}
+\label{fig:pipeline}
+\end{figure}
+
+The experiment confirms the architectural picture of
+\Cref{rem:l1_consequence}: the two kernels have
+complementary pathologies that make them
+non-interchangeable.  The $L^1$-based predictions of
+\Cref{cor:l1_separation} hold under both conditions
+in the right-column panels, but the left column
+shows that $G_{\mathrm{forced}}$'s bounded
+$N_{\mathrm{eff}}$ comes at the cost of misplaced
+confidence: its high $p_1$ in the middle column is
+confidence in the youngest document rather than the
+semantically matching one.  A practitioner seeking
+an $L^1$-integrable, non-recency-pathological
+temporal weighting must look outside the
+Mittag-Leffler family, as noted at the end of
+\Cref{rem:l1_consequence}.
+
+\begin{remark}
+As $N \to \infty$ (more modes) and $M \to \infty$
+(denser write events), the discrete
+representation~\eqref{eq:discrete_exact} recovers
+the continuum mild solution in $L^2(\R)$.  The
+convergence rate is $O(\xi_{\min}^{-2H_1})$ in the
+temporal direction (set by the slowest retained
+mode) and depends on the sampling density $M/T$
+in the input direction.
+\end{remark}
+
+\section{Conclusion}\label{sec:conclusion}
+
+We have developed the fractional memory process---the
+mild solution of $\partial_t^{2H_2} X_t = A_{H_1} X_t
++ \dot{B}_t$---as a mathematically rigorous model of
+persistent-memory dynamics with independent spatial and
+temporal parameters.
+
+Well-posedness holds for $H_2 > 1/4$ under trace-class
+noise and additionally $H_1 > \alpha/(2(2\alpha-1))$
+(forcing $H_2 > 1/3$) under cylindrical
+noise, with pathwise continuity established via the
+factorization method.  The spectral decomposition
+reduces the SPDE to independent scalar fractional OU
+modes, yielding sharp decay $t^{-H_2/(2H_1)}$ (with
+matching lower bound) and variance scaling exponent
+$H = 2H_2 - 1/2 - H_2/(2H_1)$.  On the operator-theoretic side, $D = \delta^*$ yields exact
+Clark--Ocone representations under Gaussian noise
+($\Gamma = 0$) and a nonzero, polynomially propagating
+Leibniz defect under L\'evy noise ($\Gamma \neq 0$).
+Finally, the discrete-impulse exactness theorem shows
+that for impulse inputs, the spectrally truncated mild
+solution is a finite sum of two-parameter
+Mittag-Leffler terms at $O(NM)$ cost, with effective
+temporal depth scaling as $N^{H_1/H_2}$.  The
+memory-architecture kernel used
+in~\cite{fontes2026arch} is a distinct
+autonomous-decay representation (\Cref{rem:two_representations})
+that uses the one-parameter Mittag-Leffler function
+and coincides with the forced-SPDE response only at
+$\alpha = 1$.  The two representations differ
+qualitatively in $L^1$ integrability
+(\Cref{cor:l1_separation}): the forced-SPDE kernel
+has total mass $1/\lambda$ across all $\alpha \in
+(0, 2]$, while the autonomous-decay kernel is not
+$L^1$-integrable for $\alpha \in (0, 1)$.  Under a
+stationary Poisson write process, this produces a
+power-law $T^{1-\alpha}$ separation in total kernel
+mass between the two representations, verified
+numerically in \Cref{sec:numerical_verification}.
+
+The companion paper~\cite{fontes2026arch} develops
+a concrete memory architecture using the
+autonomous-decay kernel.  The forced-SPDE kernel
+derived here is not a drop-in replacement for
+retrieval: its $(t-s)^{\alpha-1}$ prefactor is
+singular as $t \to s^+$ for $\alpha \in (0, 1)$,
+causing it to dominate over semantic similarity
+signals when queries arrive close to writes
+(\Cref{sec:recency_pathology}).  The two kernels
+thus play complementary rather than hierarchical
+roles --- $G_{\mathrm{forced}}$ is $L^1$-bounded
+but pathological at zero age, while
+$G_{\mathrm{auto}}$ is regular at zero age but
+$L^1$-divergent for $\alpha \in (0, 1)$.
+Applications requiring both bounded aggregate mass
+and regular zero-age behaviour may motivate a third
+choice outside the Mittag-Leffler family, a
+direction we leave to future work.
+
+\subsection*{Acknowledgments}
+
+AI tools were used during drafting and mathematical
+exploration; the author takes full responsibility for
+all content and errors.
+\begin{thebibliography}{20}
+
+\bibitem{fontes2026arch}
+R.~Fontes, Fractional memory for attention-based
+systems: architecture and experiments,
+Quijotic Research, 2026.
+
+\bibitem{fontes2026opfac}
+R.~Fontes, The operator derivative in continuous
+stochastic calculus: a Hilbert energy space framework,
+Quijotic Research, 2026.
+arXiv:2601.09976; Zenodo DOI:10.5281/zenodo.14618498.
+
+\bibitem{fontes2026banach}
+R.~Fontes, Operator factorization beyond Hilbert spaces:
+representability obstructions and Leibniz defects for
+stable L\'evy processes, Quijotic Research, 2026.
+Zenodo DOI:10.5281/zenodo.14798498.
+
+\bibitem{fontes2026volterra}
+R.~Fontes, The boundary of hedgeability: pricing and
+hedging in Volterra-L\'evy markets, Quijotic Research,
+2026.
+Zenodo DOI:10.5281/zenodo.19211991.
+
+\bibitem{mainardi2010}
+F.~Mainardi, \emph{Fractional Calculus and Waves in
+Linear Viscoelasticity}, Imperial College Press, 2010.
+
+\bibitem{podlubny1999}
+I.~Podlubny, \emph{Fractional Differential Equations},
+Academic Press, 1999.
+
+\bibitem{gorenflo2014}
+R.~Gorenflo et al., \emph{Mittag-Leffler Functions,
+Related Topics and Applications}, Springer, 2014.
+
+\bibitem{meerschaert2012}
+M.~M.~Meerschaert and A.~Sikorskii, \emph{Stochastic
+Models for Fractional Calculus}, De Gruyter, 2012.
+
+\bibitem{daprato2014}
+G.~Da~Prato and J.~Zabczyk, \emph{Stochastic Equations
+in Infinite Dimensions}, 2nd ed., Cambridge, 2014.
+
+\bibitem{pollard1948}
+H.~Pollard, The completely monotonic character of
+$E_\alpha(-x)$, \emph{Bull.\ AMS}, 54:1115--1116, 1948.
+
+\bibitem{schneider1996}
+W.~R.~Schneider, Completely monotone generalized
+Mittag-Leffler functions,
+\emph{Expo.\ Math.}, 14:3--16, 1996.
+
+\bibitem{cheridito2003}
+P.~Cheridito, H.~Kawaguchi, and M.~Maejima, Fractional
+Ornstein-Uhlenbeck processes, \emph{EJP}, 8:1--14, 2003.
+
+\bibitem{nualart2006}
+D.~Nualart, \emph{The Malliavin Calculus and Related
+Topics}, 2nd ed., Springer, 2006.
+
+\end{thebibliography}
+
+\end{document}

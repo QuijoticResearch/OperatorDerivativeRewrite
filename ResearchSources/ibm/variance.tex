@@ -1,0 +1,942 @@
+\documentclass[11pt,reqno]{amsart}
+
+%==============================================================
+% A Numerical Variance Budget for Iterated Brownian Motion
+%==============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+% Pull figures from the project's outputs/ tree at build time.
+\graphicspath{{../outputs/figures/}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Proj}{\mathrm{Proj}}
+\newcommand{\HX}[1]{\mathcal{H}^{X}_{#1}}
+\newcommand{\HY}[1]{\mathcal{H}^{Y}_{#1}}
+\newcommand{\Loc}{L}
+\newcommand{\IBM}{Z}
+
+\title{A Numerical Variance Budget\\
+       for Iterated Brownian Motion}
+\author{Ramiro Fontes}
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+Subtracting two analytic chaos projections from the naive Monte
+Carlo estimator of $\E\!\int_0^T \varphi(X_{Y_s})\,ds$ for $\varphi$
+odd at $T = 1$ removes $62\%$ of the variance and yields a
+$2.6\times$ effective-sample-size multiplier, at essentially no
+runtime cost. The projections come from a fully analytic
+$3 \times 3$ source-resolved variance budget for the iterated
+Brownian motion (IBM) occupation functional
+$F_T(\varphi) = \int_0^T \varphi(\IBM_s)\,ds$
+over bidegrees $(m, n) \in \{0, 1, 2\}^2$, evaluated in closed form
+using the source projection formula of the companion paper together
+with the $n = 2$ clock chaos of the Brownian local time, derived
+here from Tanaka's formula and matching the Nualart--Vives chaos
+expansion of $\Loc_T^x(Y)$. Across three test functions ($\varphi$
+even, odd, mixed) and three time horizons ($T = 0.25, 1, 4$) the
+parity selection rules of the companion paper hold to machine
+precision, the $3 \times 3$ truncation captures one half to over
+four-fifths of $\Var(F_T)$, and across a $9 \times 6$ sweep of test
+functions, horizons, and control sets, predicted and realised
+reductions agree closely; a split-sample check gives the same
+conclusion. A finite-dimensional Hermite tensor visualisation
+(Stage 2) is exploratory and lives in an appendix.
+\end{abstract}
+
+\maketitle
+
+%==============================================================
+\section{Introduction}
+\label{sec:intro}
+%==============================================================
+
+The companion paper introduces a source-resolved chaos expansion for
+functionals of iterated Brownian motion (IBM), $\IBM_t = X_{Y_t}$,
+where $X$ is a two-sided Brownian scenery and $Y$ is an independent
+Brownian clock. Working in the product Wiener chaos
+$L^2(\Omega) = \bigoplus_{m,n \ge 0} \HX{m} \otimes \HY{n}$, that
+paper proves a source projection formula for the canonical occupation
+functional
+\[
+  F_T(\varphi)
+   \;=\; \int_0^T \varphi(\IBM_s)\,ds
+   \;=\; \int_\R \varphi(X_x)\,\Loc_T^x(Y)\,dx,
+   \qquad \varphi \in C_c^\infty(\R),
+\]
+and derives parity selection rules together with explicit closed-form
+projections at low bidegree.
+
+This is its numerical companion. We compute, for three concrete
+test functions and three time horizons, the variance share of every
+analytic projection $\Proj_{m,n} F_T(\varphi)$ in the truncated set
+$(m, n) \in \{0, 1, 2\}^2$. The full $3 \times 3$ truncation
+(including the previously uncomputed cells $(0, 2), (1, 2), (2, 2)$)
+is a fully analytic accounting: every cell is a closed-form spatial
+integral, and every parity zero is exact up to numerical roundoff.
+
+\Cref{fig:headline} (Section~\ref{sec:stage1}) shows the $3 \times 3$
+analytic variance share for the nine $(\varphi, T)$ combinations.
+The parity selection rules of the companion paper are visually
+obvious: for $\varphi$ even, the column $m = 1$ is zero and so is
+the cell $(0, 1)$; for $\varphi$ odd, the rows $m = 0$ and $m = 2$
+are zero throughout; for $\varphi$ mixed all cells are active except
+$(0, 1)$, which cancels because $\E[\varphi_{\mathrm{mixed}}(X_x)]$
+is even in $x$ while $k_T(x, s)$ is odd in $x$, so the spatial
+integral defining $\Proj_{0, 1} F_T$ cancels (Section~\ref{sec:setup}).
+The captured share of $\Var(F_T)$ ranges from $47\%$ to $84\%$ across
+the nine cases (Table~\ref{tab:stage1}), with the residual living in
+higher bidegrees that we do not compute analytically here.
+
+The main application is a sparse, source-resolved control variate.
+For $\varphi$ odd at $T = 1$, the analytic projections
+$\Proj_{1,0} F_T$ and $\Proj_{1,1} F_T$ together carry $59\%$ of
+$\Var(F_T)$. Subtracting them per sample gives an unbiased Monte
+Carlo estimator with $62\%$ empirical variance reduction (matching
+the Stage 1 prediction within sampling noise) and an effective
+sample size $2.6\times$ that of the naive estimator
+(Section~\ref{sec:control-variate}).
+
+The variance-accounting layer (Stage 1) uses closed-form projections
+evaluated per Monte Carlo sample, with sample-variance estimates
+over 4000 realisations. A separate visualisation layer (Stage 2)
+regresses $F_T$ onto an orthonormal Hermite-tensor basis built from
+finite indicator factors, extending the bidegree decomposition to
+the wider plane $(m, n) \in \{0, \dots, 5\}^2$ at the cost of a
+basis-coverage residual that is large when the analytic projection
+kernels live in spatial directions the indicator basis cannot
+resolve. Stage 1 is the primary accounting; Stage 2 is exploratory
+and is relegated to an appendix.
+
+Chaos-expansion methods for local-time functionals also appear in
+the work of Hu and Nualart on renormalised self-intersection local
+time for fractional Brownian motion \cite{HuNualart}; the present
+computations differ by resolving two independent Gaussian sources,
+the scenery $X$ and the clock $Y$, rather than encoding chaos order
+in a single source. We do not derive a new PDE; we do not push
+Stage 2 to large $K$ beyond the appendix; we do not claim asymptotic
+theorems for the $T \to 0$ or $T \to \infty$ limits of the variance
+budget. Where we note empirical scaling patterns we say so
+explicitly.
+
+%==============================================================
+\section{Setup and analytic background}
+\label{sec:setup}
+%==============================================================
+
+Let $X$ be a two-sided standard Brownian motion (the scenery) and $Y$
+a standard Brownian motion on $[0, T]$ independent of $X$ (the
+clock). Set $\IBM_t = X_{Y_t}$. For $\varphi \in C_c^\infty(\R)$, the
+occupation functional is
+\[
+  F_T(\varphi)
+   \;=\; \int_0^T \varphi(X_{Y_s})\,ds
+   \;=\; \int_\R \varphi(X_x)\,\Loc_T^x(Y)\,dx,
+\]
+with $\Loc_T^x(Y)$ the local time of $Y$ at level $x$ up to $T$.
+
+The companion paper proves the source projection formula
+\begin{equation}
+  \Proj_{m, n} F_T(\varphi)
+   \;=\; \int_\R \Proj^X_m \varphi(X_x)
+        \,\cdot\, \Proj^Y_n \Loc_T^x(Y)\,dx,
+   \qquad m, n \ge 0,
+   \label{eq:source-projection}
+\end{equation}
+in $L^2(\Omega)$, with the integral converging as a Bochner integral
+in $\HX{m} \otimes \HY{n}$. We use \eqref{eq:source-projection} as
+the analytic accounting backbone for the entire numerical budget.
+
+The scenery factors are Hermite polynomials in $X_x \sim N(0, |x|)$:
+\begin{equation}
+  \Proj^X_0 \varphi(X_x) = \E[\varphi(X_x)],\quad
+  \Proj^X_1 \varphi(X_x) = \E[\varphi'(X_x)]\,X_x,\quad
+  \Proj^X_2 \varphi(X_x) = \tfrac{1}{2}\E[\varphi''(X_x)](X_x^2 - |x|).
+  \label{eq:scenery-proj}
+\end{equation}
+The clock projections at $n = 0, 1$ are
+\begin{align}
+  \Proj^Y_0 \Loc_T^x(Y)
+   &= p_T(x) \;=\; \int_0^T \frac{1}{\sqrt{2 \pi s}}\,
+     e^{-x^2/(2s)}\,ds,\\
+  \Proj^Y_1 \Loc_T^x(Y)
+   &= \int_0^T k_T(x, s)\,dY_s,\quad
+   k_T(x, s) = \mathrm{erf}\!\bigl(\tfrac{x}{\sqrt{2s}}\bigr)
+              - \mathrm{erf}\!\bigl(\tfrac{x}{\sqrt{2T}}\bigr).
+\end{align}
+
+\subsection{The clock projection at $n = 2$}
+\label{sec:proj2-clock}
+The clock projection at $n = 2$ is computed here from Tanaka's
+formula. With $\psi_t(x) = (2 \pi t)^{-1/2} e^{-x^2/(2t)}$ the
+Brownian heat kernel, projecting each piece of the Tanaka identity
+onto $\HY{2}$ gives:
+
+\begin{lemma}[$\Proj^Y_2 \Loc_T^x(Y)$]
+\label{lem:proj2-LT}
+For $x \in \R$ and $T > 0$,
+\begin{equation}
+  \Proj^Y_2 \Loc_T^x(Y)
+   \;=\; \psi_T(x)\,\bigl(Y_T^2 - T\bigr)
+        \,-\, 2 \int_0^T \psi_s(x)\,Y_s\,dY_s,
+   \label{eq:proj2-LT}
+\end{equation}
+equivalently $I_2^Y\bigl(K_T(\cdot, \cdot; x)\bigr)$ as a double
+Wiener--It\^o integral with symmetric kernel
+$K_T(s_1, s_2; x) = \psi_T(x) - \psi_{\max(s_1, s_2)}(x)$. The kernel
+is in $L^2([0, T]^2)$ for each $x$, including $x = 0$. In any case,
+changing the value at the singleton $\{x = 0\}$ does not affect the
+spatial Bochner integral of \eqref{eq:source-projection}. This is the
+$n = 2$ specialisation of the Nualart--Vives chaos expansion of
+Brownian local time \cite{NualartVives}, with the Brownian-heat-kernel
+normalisation $\psi_t(x) = (2 \pi t)^{-1/2} e^{-x^2/(2t)}$ used here.
+\end{lemma}
+
+\begin{proof}
+By Tanaka,
+$\Loc_T^x(Y) = |Y_T - x| - |x| - \int_0^T \mathrm{sgn}(Y_s - x)\,dY_s$.
+We project each piece onto $\HY{2}$ separately.
+
+\emph{(i) The endpoint term.}
+$|Y_T - x|$ is a function of the single Gaussian $Y_T \sim N(0, T)$.
+Its Hermite expansion at variance $T$ reads
+$|Y_T - x| = \sum_{n \ge 0} (n!)^{-1}\,
+ \E\!\bigl[(\partial_y)^n |Y_T - x|\bigr]\, h_n(Y_T; T)$,
+with $h_n(z; T)$ the Hermite polynomial of variance $T$
+($h_2(z; T) = z^2 - T$). The second derivative
+$(\partial_y)^2 |y - x| = 2 \delta(y - x)$ gives
+$\E[(\partial_y)^2 |Y_T - x|] = 2 \psi_T(x)$, and hence
+\[
+  \Proj^Y_2 |Y_T - x|
+   \;=\; \tfrac{1}{2!}\,(2 \psi_T(x))\,(Y_T^2 - T)
+   \;=\; \psi_T(x)(Y_T^2 - T)
+   \;=\; \psi_T(x)\,I_2^Y(\mathbf{1}_{[0,T]} \otimes \mathbf{1}_{[0,T]}).
+\]
+
+\emph{(ii) The deterministic term.} $|x|$ is constant in $\omega$ and
+its $\HY{2}$ projection is $0$.
+
+\emph{(iii) The It\^o-integral term.} Write $u_s = \mathrm{sgn}(Y_s - x)$;
+$u$ is adapted with $\E[u_s] = -\mathrm{erf}(x/\sqrt{2s})$
+($\HY{0}$ part) and first-chaos part
+$\Proj^Y_1 u_s = (1!)^{-1}\,\E[u'(Y_s)]\,Y_s = 2 \psi_s(x)\,Y_s$
+(again using $\E[\mathrm{sgn}'(Y_s - x)] = 2 \psi_s(x)$). For an
+adapted process $u_s$ with chaos expansion
+$u_s = \sum_m I_m^Y(g_m^{(s)})$ on $\{s_1 \le \dots \le s_m \le s\}$,
+the It\^o integral $\int_0^T u_s\,dY_s$ has chaos at order $m+1$,
+so the second-chaos contribution comes from the first-chaos part of
+$u$ alone:
+\[
+  \Proj^Y_2 \int_0^T \mathrm{sgn}(Y_s - x)\,dY_s
+   \;=\; \int_0^T \Proj^Y_1 u_s\,dY_s
+   \;=\; \int_0^T 2 \psi_s(x)\,Y_s\,dY_s.
+\]
+Writing $Y_s = \int_0^s dY_{s_1}$ and converting the iterated It\^o
+integral to a symmetric multiple Wiener integral,
+\[
+  \int_0^T 2 \psi_s(x)\,Y_s\,dY_s
+   \;=\; 2 \int_0^T \!\int_0^s \psi_s(x)\,dY_{s_1}\,dY_s
+   \;=\; I_2^Y\!\bigl(\psi_{\max(s_1, s_2)}(x)\bigr),
+\]
+the symmetrisation following from the convention
+$I_2^Y(f) = 2! \int_{0 < s_1 < s_2 < T} f(s_1, s_2)\,dY_{s_1}\,dY_{s_2}$
+applied to a symmetric $f$.
+
+\emph{(iv) Combining.}
+Subtracting (iii) from (i) and using (ii),
+\[
+  \Proj^Y_2 \Loc_T^x(Y)
+   \;=\; \psi_T(x)\,I_2^Y(\mathbf{1} \otimes \mathbf{1})
+        \,-\, I_2^Y(\psi_{\max(s_1, s_2)}(x))
+   \;=\; I_2^Y\!\bigl(\psi_T(x) - \psi_{\max(s_1, s_2)}(x)\bigr),
+\]
+which is \eqref{eq:proj2-LT} in kernel form.
+
+\emph{(v) $L^2$ check.}
+By symmetry of $K_T$ and the change of variables $u = \max(s_1, s_2)$,
+\[
+  \|K_T(\cdot, \cdot; x)\|_{L^2([0,T]^2)}^2
+   \;=\; 2 \int_0^T s\,\bigl(\psi_T(x) - \psi_s(x)\bigr)^2\,ds.
+\]
+Each factor of $\psi_t(x) - \psi_T(x)$ is bounded uniformly in
+$t \in (0, T]$ for $x \ne 0$ (since $\psi_t(x)$ decays
+super-polynomially as $t \to 0^+$ for $x \ne 0$). At $x = 0$, the
+integrand $s\,\psi_s(0)^2 = s\,/(2\pi s) = 1/(2\pi)$ is bounded as
+$s \to 0^+$: the $\psi_s(0)^2 \sim 1/(2\pi s)$ singularity is
+cancelled by the area density $s\,ds$ for
+$\max(s_1, s_2) = s$. Hence $K_T(\cdot, \cdot; x) \in L^2([0, T]^2)$
+for every $x \in \R$.
+\end{proof}
+
+\noindent\emph{Normalisation cross-check.} Computing
+$\Var(\Proj^Y_2 \Loc_T^x(Y))$ two ways, once as $2 \|K_T\|_{L^2}^2$
+and once as the orthogonal decomposition
+$\Var(\psi_T(x)(Y_T^2 - T)) + \Var(2 \int \psi_s Y_s\,dY_s)
+- 2\,\Cov(\cdot, \cdot)$, yields the same closed form
+$2 T^2 \psi_T(x)^2 + 4 \int_0^T s\,\psi_s(x)^2\,ds
+- 8 \psi_T(x) \int_0^T s \psi_s(x)\,ds$, fixing the normalisation.
+The implementation reads the formula \eqref{eq:proj2-LT} directly via
+a left-point It\^o discretisation.
+
+\paragraph{Parity selection rules.}
+For $\varphi$ even, $\E[\varphi^{(m)}(X_x)] = 0$ for odd $m$; hence
+$\Proj_{m, n} F_T = 0$ for every odd $m$ and any $n$. Additionally
+the $n$-th clock-chaos kernel of $\Loc_T^x(Y)$ has parity
+$(-1)^n$ in $x$, while $\E[\varphi(X_x)]$ is even in $x$ for
+$\varphi$ even, so $\Proj_{0, n} F_T = 0$ for odd $n$. For $\varphi$
+odd, $\E[\varphi^{(m)}(X_x)] = 0$ for even $m$; hence
+$\Proj_{m, n} F_T = 0$ for every even $m$ and any $n$. For $\varphi$
+mixed, no parity rule applies. We summarise:
+
+\begin{center}
+\small
+\begin{tabular}{c|ccc}
+$\varphi$ even & $n=0$ & $n=1$ & $n=2$ \\\hline
+$m=0$ & nonzero & \textbf{zero} & nonzero \\
+$m=1$ & \textbf{zero} & \textbf{zero} & \textbf{zero} \\
+$m=2$ & nonzero & nonzero & nonzero \\
+\end{tabular}
+\hspace{0.7cm}
+\begin{tabular}{c|ccc}
+$\varphi$ odd & $n=0$ & $n=1$ & $n=2$ \\\hline
+$m=0$ & \textbf{zero} & \textbf{zero} & \textbf{zero} \\
+$m=1$ & nonzero & nonzero & nonzero \\
+$m=2$ & \textbf{zero} & \textbf{zero} & \textbf{zero} \\
+\end{tabular}
+\end{center}
+
+%==============================================================
+\section{Stage 1: the analytic 3\texttimes 3 variance budget}
+\label{sec:stage1}
+%==============================================================
+
+We evaluate \eqref{eq:source-projection} sample by sample on a fine
+grid for the nine bidegrees $(m, n) \in \{0, 1, 2\}^2$, and aggregate
+sample variances over Monte Carlo realisations. The spatial grid is
+symmetric on $[-A, A]$ with $A = 5$ and $N_x = 400$ intervals, the
+time grid is $0 = t_0 < t_1 < \dots < t_{N_t} = T$ with $N_t = 400$
+steps, and the two-sided scenery is sampled by independent Gaussian
+increments outward from $X_0 = 0$. Per sample, we compute on the
+spatial grid:
+\begin{itemize}
+  \item $V_1(x) = \int_0^T k_T(x, s)\,dY_s$ via left-point It\^o
+    discretisation;
+  \item $V_2(x) = \Proj^Y_2 \Loc_T^x(Y)$ via the closed form of
+    \cref{lem:proj2-LT};
+  \item conditional Gaussian moments $\E[\varphi^{(j)}(X_x)]$,
+    $j = 0, 1, 2$, by 40-point Gauss--Hermite quadrature in the
+    standardised variable.
+\end{itemize}
+The nine $\Proj_{m,n} F_T$ are formed by trapezoidal integration in
+$x$ of the appropriate products, and sample variances use
+$N_1 = 4000$ Monte Carlo realisations. The three test functions are
+\[
+  \varphi_{\mathrm{even}}(x) = e^{-x^2},\quad
+  \varphi_{\mathrm{odd}}(x) = x e^{-x^2},\quad
+  \varphi_{\mathrm{mixed}}(x) = (x + x^2)\,e^{-x^2},
+\]
+and the three horizons are $T \in \{0.25, 1, 4\}$.
+\Cref{tab:stage1} reports each cell's variance share of
+$\Var(F_T(\varphi))$ across the nine $(\varphi, T)$ cases.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lcccccccccc}
+\toprule
+$\varphi$, $T$ &
+$(0,0)$ & $(1,0)$ & $(0,1)$ & $(1,1)$ & $(2,0)$ & $(2,1)$ &
+$(0,2)$ & $(1,2)$ & $(2,2)$ & $\Sigma$\\
+\midrule
+even, 0.25  & --- & 0     & 0     & 0     & 0.283 & 0.249 & 0.264 & 0     & 0.048 & 0.844 \\
+even, 1.0   & --- & 0     & 0     & 0     & 0.280 & 0.204 & 0.205 & 0     & 0.034 & 0.723 \\
+even, 4.0   & --- & 0     & 0     & 0     & 0.287 & 0.149 & 0.180 & 0     & 0.026 & 0.642 \\[2pt]
+odd, 0.25   & --- & 0.454 & 0     & 0.246 & 0     & 0     & 0     & 0.025 & 0     & 0.726 \\
+odd, 1.0    & --- & 0.442 & 0     & 0.182 & 0     & 0     & 0     & 0.023 & 0     & 0.646 \\
+odd, 4.0    & --- & 0.382 & 0     & 0.118 & 0     & 0     & 0     & 0.024 & 0     & 0.524 \\[2pt]
+mixed, 0.25 & --- & 0.427 & 0     & 0.214 & 0.031 & 0.013 & 0.017 & 0.027 & 0.002 & 0.731 \\
+mixed, 1.0  & --- & 0.374 & 0     & 0.151 & 0.017 & 0.003 & 0.009 & 0.020 & 0.003 & 0.577 \\
+mixed, 4.0  & --- & 0.318 & 0     & 0.110 & 0.009 & 0.006 & 0.005 & 0.020 & 0.006 & 0.474 \\
+\bottomrule
+\end{tabular}
+\caption{Stage 1 variance shares $\Var(\Proj_{m,n} F_T) / \Var(F_T)$
+for the analytic $3 \times 3$ truncation. The $(0,0)$ column carries
+$\E[F_T]^2$ not variance and is omitted. Entries shown as $0$ are
+predicted-zero by parity (Section~\ref{sec:setup}) and come out
+numerically at the level of $10^{-30}$ to $10^{-40}$ (numerical roundoff).
+$\Sigma$ is the total share captured by the $3\times 3$ truncation;
+the residual $1 - \Sigma$ lives in higher bidegrees.}
+\label{tab:stage1}
+\end{table}
+
+\Cref{fig:headline} shows a $3 \times 3$ grid of
+3$\times$3 heatmaps displaying the entries of \cref{tab:stage1} as
+filled cells. The parity zero pattern is visually obvious in each
+panel. By the interaction-energy identity in the companion paper,
+the $(1, 1)$ entries of \cref{tab:stage1} are empirical estimates of
+$\|K_T\|_{L^2(\R \times [0, T])}^2 / \Var(F_T)$, i.e.\ the normalised
+first scenery--clock interaction energy.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.99\textwidth]{stage1_heatmap_3x3.png}
+\caption{Stage 1 analytic variance share by bidegree $(m, n) \in \{0, 1, 2\}^2$
+for each of the nine $(\varphi, T)$ cases. Cells labelled \texttt{cst}
+are the $(0, 0)$ constant component and carry $\E[F_T]^2$, not variance.
+Cells labelled \texttt{0} are predicted-zero by parity selection rules
+(see Section~\ref{sec:setup}); empirically these entries come out at
+machine precision, i.e.\ $10^{-30}$--$10^{-40}$, as the scenery
+expectations they contain are zero exactly by Gaussian symmetry before
+any Monte Carlo step. Coloured cells carry the analytic mass: pure
+clock $(0,2)$ and pure scenery $(2,0)$ for $\varphi$ even, the column
+$m = 1$ for $\varphi$ odd, all cells for $\varphi$ mixed except
+$(0, 1)$.}
+\label{fig:headline}
+\end{figure}
+
+\paragraph{Empirical orthogonality.}
+The companion paper proves orthogonality of distinct bidegree
+components in $L^2(\Omega)$. Across all nine cases the empirical
+correlation matrix among the nine projection arrays has diagonal $1$
+and off-diagonal entries at the level of Monte Carlo noise:
+$\max |\rho_{ij}| \le 0.10$, against a theoretical standard error
+$1/\sqrt{N_1} \approx 0.016$ per off-diagonal entry. The slight
+excess over pure sampling-noise heuristics reflects finite-grid
+discretisation; orthogonality is exact for the continuum chaos
+components, while the reported components are evaluated on the
+finite simulation grid. Per-case correlation heatmaps are produced
+as part of the pipeline and saved alongside the other figures.
+
+\subsection{$T$-dependence: the shrinking mixed share}
+\label{sec:T-dep}
+At fixed $\varphi$, the relative weight of mixed-bidegree cells
+versus pure-scenery cells \emph{shrinks} as $T$ grows. Concretely,
+for $\varphi$ odd the ratio $\Var(\Proj_{1, 1} F_T) / \Var(\Proj_{1, 0} F_T)$
+goes from $0.54$ at $T = 0.25$ to $0.41$ at $T = 1$ to $0.31$
+at $T = 4$. For $\varphi$ mixed the same ratio falls from $0.50$ to
+$0.40$ to $0.34$. For $\varphi$ even, the cell $(2, 1)$ as a fraction
+of $(2, 0)$ falls from $0.88$ to $0.73$ to $0.52$. The pure-scenery
+sector loses ground only mildly with $T$, while mixed and pure-clock
+shares fall faster. We do not attempt to extract an asymptotic
+theorem from this; we record it as an observed empirical pattern in
+the parameter range studied. It is consistent with the heuristic
+that as $T$ grows, the mean local time $p_T(x)$ widens and the
+spatial weighting that drives $\Proj^Y_n$ at $n \ge 1$ smooths out,
+shifting variance to higher clock bidegrees beyond the $3 \times 3$
+truncation.
+
+\medskip
+\noindent\emph{Heuristic context.} For small $T$, the clock $Y$ stays
+near $0$ and $F_T$ becomes nearly deterministic after scaling, so
+the budget concentrates in low-order bidegrees and the
+$3 \times 3$ truncation captures most of $\Var(F_T)$. For larger
+$T$, $Y$ explores a wider range, higher bidegrees enter, and a
+fixed $3 \times 3$ truncation captures less. This frames the
+captured-share trend $\Sigma_{T = 0.25} > \Sigma_{T = 1} > \Sigma_{T = 4}$
+visible in \cref{tab:stage1} as observation, not theorem.
+
+\subsection{Robustness checks}
+\label{sec:robustness}
+We record three standalone validations of the analytic budget.
+
+\paragraph{Direct $\|K_T\|^2$ cross-check.}
+The companion paper's interaction-energy identity
+$\Var(\Proj_{1, 1} F_T) = \|K_T\|^2$ predicts the $(1, 1)$ cell
+variance analytically. Using
+$\langle \sigma_x, \sigma_y \rangle_{L^2(\R)}
+ = \min(|x|, |y|)\,\mathbf{1}_{xy \ge 0}$
+the kernel norm reduces to a deterministic 3D quadrature
+\[
+  \|K_T\|^2 = 2\!\int_0^A\!\!\int_0^A \E[\varphi'(X_u)]\,\E[\varphi'(X_v)]
+  \,\min(u, v)
+  \int_0^T k_T(u, s)\,k_T(v, s)\,ds\,du\,dv.
+\]
+For $\varphi_{\mathrm{odd}}$ and $\varphi_{\mathrm{mixed}}$ at
+$T = 1$, the quadrature value matches the empirical Stage 1 $(1, 1)$
+share of \cref{tab:stage1} within $|0.004|$ absolute share
+(\cref{tab:kernel-norm-check}), confirming the interaction-energy
+identity numerically and independently of any Monte Carlo estimate
+of $\Var(\Proj_{1,1} F_T)$.
+
+\begin{table}[h]
+\small\centering
+\begin{tabular}{lrrrrr}
+\toprule
+$\varphi$ & $T$ & $\|K_T\|^2$ &
+$\widehat\Var(\Proj_{1,1} F_T)$ &
+analytic share & empirical share \\
+\midrule
+odd   & 1.0 & 0.00654 & 0.00668 & 0.178 & 0.182 \\
+mixed & 1.0 & 0.00654 & 0.00645 & 0.153 & 0.151 \\
+\bottomrule
+\end{tabular}
+\caption{Direct analytic $\|K_T\|^2$ cross-check vs Stage 1
+empirical $\widehat\Var(\Proj_{1,1} F_T)$ for the $(1, 1)$ cell.
+Shares are normalised by the case-specific $\widehat\Var(F_T)$.
+$\|K_T\|^2$ depends on $\varphi$ only through $\E[\varphi'(X_x)]$,
+which is identical for $\varphi_{\mathrm{odd}}$ and
+$\varphi_{\mathrm{mixed}}$ (their $\phi'$ have the same even part).}
+\label{tab:kernel-norm-check}
+\end{table}
+
+\paragraph{Discretisation sensitivity.}
+We sweep the spatial half-width $A \in \{3, 5, 10\}$ and the grid
+sizes $(N_x, N_t) \in \{(200, 200), (400, 400), (800, 800)\}$ for
+$\varphi_{\mathrm{mixed}}$ at $T = 1$ at $N_1 = 2000$ MC samples per
+setting (9 settings, total runtime $\le 5\,\mathrm{s}$). Across the
+9 settings the captured share $\Sigma$ of the 3$\times$3 truncation
+lies in $[0.560, 0.620]$, the $(1, 0)$ share in $[0.350, 0.401]$,
+the $(1, 1)$ share in $[0.140, 0.175]$, and the $(0, 2)$ share in
+$[0.0089, 0.0132]$. The variation is comparable to the MC noise
+band $\sim 1/\sqrt{N_1} \approx 2\%$ and shows no monotone drift
+under refinement; the budget is not a discretisation artefact.
+
+\paragraph{Additivity.}
+For $\varphi_{\mathrm{sum}} = \varphi_{\mathrm{even}} + \varphi_{\mathrm{odd}}$,
+the parity rules of \cref{sec:setup} predict cell-by-cell additivity
+$\Var(\Proj_{m, n} F_T(\varphi_{\mathrm{sum}}))
+ = \Var(\Proj_{m, n} F_T(\varphi_{\mathrm{even}}))
+ + \Var(\Proj_{m, n} F_T(\varphi_{\mathrm{odd}}))$,
+since exactly one of the two summands contributes to each cell by
+parity (the cross covariance is zero in $L^2(\Omega)$). Running
+Stage 1 on $\varphi_{\mathrm{sum}}$ with the same parameters and
+comparing entry-by-entry against the corresponding rows of
+\cref{tab:stage1}, we find across the seven non-zero cells and
+three horizons RMS relative deviation $\le 0.08$ and maximum
+relative deviation $\le 0.19$ on any single cell, consistent with
+independent-MC noise of two runs at $N_1 = 4000$ each. The bidegree
+budget respects the parity decomposition of the observable.
+
+%==============================================================
+\section{Source-resolved control variate}
+\label{sec:control-variate}
+%==============================================================
+
+For any subset $\mathcal{A} \subset \{(m, n) \in \N^2 : (m, n) \ne (0, 0)\}$
+of non-constant bidegrees, define the source-resolved control
+variate
+\begin{equation}
+  C_\mathcal{A} \;\coloneqq\; \sum_{(m, n) \in \mathcal{A}} \Proj_{m, n} F_T(\varphi).
+  \label{eq:CA-def}
+\end{equation}
+Each summand is a non-constant chaos element, so $\E[C_\mathcal{A}] = 0$
+and the controlled estimator $F_T - C_\mathcal{A}$ has the same mean
+$\E[F_T]$ as the naive estimator $F_T$. By orthogonality of distinct
+bidegrees in $L^2(\Omega)$,
+\begin{equation}
+  \Var\!\bigl(F_T - C_\mathcal{A}\bigr)
+   \;=\; \Var(F_T)
+        \,-\, \sum_{(m, n) \in \mathcal{A}} \Var\!\bigl(\Proj_{m, n} F_T\bigr).
+  \label{eq:CA-var}
+\end{equation}
+The variance reduction realised by $C_\mathcal{A}$ is therefore exactly
+the sum of Stage 1 variance shares over $\mathcal{A}$.
+
+\subsection{The 62\% reduction at $(\varphi_{\mathrm{odd}}, T = 1)$}
+\label{sec:cv-demo}
+For $(\varphi, T) = (\varphi_{\mathrm{odd}}, 1)$ and
+$\mathcal{A} = \{(1, 0), (1, 1)\}$ the projections $\Proj_{1, 0} F_T$
+and $\Proj_{1, 1} F_T$ are deterministic spatial integrals against a
+single linear functional of $(X, Y)$ already constructed to evaluate
+$F_T$, so the runtime overhead is essentially free. Run with
+$N = 8000$ Monte Carlo realisations:
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lr}
+\toprule
+quantity & value \\
+\midrule
+naive sample variance $\widehat\Var(F_T)$        & $0.0372$ \\
+controlled sample variance $\widehat\Var(F_T - C_\mathcal{A})$  & $0.0141$ \\
+empirical variance reduction                       & $62.1\%$ \\
+predicted reduction (unrounded Stage 1 shares)     & $58.7\%$ \\
+effective sample size multiplier                   & $2.6\times$ \\
+total wall-clock time                              & $0.80\,\mathrm{s}$ \\
+\bottomrule
+\end{tabular}
+\caption{Source-resolved control variate for
+$(\varphi, T) = (\varphi_{\mathrm{odd}}, 1)$,
+$\mathcal{A} = \{(1, 0), (1, 1)\}$, $N = 8000$. The empirical
+reduction matches the predicted reduction within sampling noise.
+The predicted value uses unrounded Stage 1 shares; reading the
+rounded entries from \cref{tab:stage1} (a separate 4000-sample run,
+$0.442 + 0.182 = 0.624$) gives a similar magnitude.}
+\label{tab:cv}
+\end{table}
+
+\noindent The controlled estimator with $N = 8000$ gives the same
+precision as a naive estimator with $N \approx 21{,}000$. The
+$62.1\%$ empirical reduction and the $58.7\%$ predicted reduction
+agree up to Monte Carlo noise; the finite-sample provenance of the
+small gap is discussed in the caveat below.
+
+\subsection{Validation across the full sweep}
+\label{sec:control-validation}
+The single-case result above is one entry in a broader validation
+that the source-resolved variance
+budget predicts realised control-variate variance reduction across all
+nine $(\varphi, T)$ cases. For each case we evaluate six control sets
+$\mathcal{A}$:
+\begin{itemize}\itemsep0pt
+  \item \textbf{top1 / top2 / top3:} the one, two, three largest
+    non-constant Stage 1 cells by variance share;
+  \item \textbf{full\_3x3:} all non-constant cells in
+    $\{0, 1, 2\}^2$ with non-zero share;
+  \item \textbf{total\_order\_1:} $\{(1, 0), (0, 1)\}$ (cells with
+    $m + n = 1$);
+  \item \textbf{total\_order\_2:} $\{(1, 0), (0, 1), (1, 1), (2, 0), (0, 2)\}$
+    (cells with $1 \le m + n \le 2$).
+\end{itemize}
+For each $(\varphi, T, \mathcal{A})$ we record the predicted reduction
+$\sum_{(m,n) \in \mathcal{A}}\Var(\Proj_{m,n} F_T) / \Var(F_T)$ and the
+empirical reduction $1 - \widehat\Var(F_T - C_\mathcal{A}) / \widehat\Var(F_T)$,
+both from the same $N = 8000$ Monte Carlo run; in this experiment we
+use the spatial-form $F_T = \int_\R \varphi(X_x)\,L_T^x(Y)\,dx$ (with
+$L_T^x$ via Tanaka) so that the discrete $F_T$ and the discrete
+projections share the same spatial discretisation, reducing a small
+finite-grid mismatch present in the path-form $F_T$ used elsewhere in
+the paper.
+
+\Cref{fig:budget-validation} (left) shows the resulting scatter of
+empirical against predicted reduction across the $9 \times 6 = 54$
+trials. All points lie close to the diagonal $y = x$: the RMS error
+is $0.018$ and the maximum absolute error is $0.049$. The budget
+predicts realised reduction across the full sweep; the small spread
+about the diagonal is consistent with finite-$N$ Monte Carlo noise
+plus minor finite-grid effects.
+
+\Cref{fig:budget-validation} (right) compares source-aware top-$k$
+controls against blind total-order controls on the same axes. For
+$\varphi$ even, $\{(1, 0), (0, 1)\}$ is the entire total-order-$1$
+set but both cells are predicted-zero by parity; the corresponding
+bar is at zero in the figure (the light-grey bar is invisible).
+The source-aware top-$2$ control selects two analytically-non-zero
+cells (here $(2, 0)$ and $(0, 2)$) and achieves roughly $50\%$
+variance reduction with the same number of components. Across all
+nine cases, source-aware top-$k$ at small $k$ matches or beats
+total-order at much larger cardinality: e.g. top-$2$ ($k=2$ cells)
+reaches the same reduction as total-order-$2$ ($\le 5$ cells, of
+which several are parity-zero) for both $\varphi$ even and $\varphi$
+odd.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.49\textwidth]{predicted_vs_empirical_reduction.png}\hfill
+\includegraphics[width=0.49\textwidth]{source_aware_vs_total_order.png}
+\caption{\emph{Left:} predicted vs empirical control-variate
+variance reduction across the nine $(\varphi, T)$ cases and six
+control sets ($N = 8000$); the diagonal is $y = x$. RMS deviation
+$0.018$, maximum $0.049$. \emph{Right:} empirical reduction for
+source-aware top-$k$ vs total-order control sets. For $\varphi$ even,
+total-order-$1$ has both cells predicted-zero by parity and the bar
+is at $0$; source-aware top-$2$ picks the largest non-zero cells
+instead.}
+\label{fig:budget-validation}
+\end{figure}
+
+\noindent\emph{Reading.} The source-resolved budget is operational:
+it predicts realised variance reduction from analytic chaos
+controls. Source-aware sparse controls avoid structurally zero cells
+and can match or outperform total-order controls of the same or
+greater cardinality.
+
+\medskip
+\noindent\emph{Split-sample robustness.} To rule out same-sample
+artefacts, we also ran a split-sample validation in which the
+budget and the selected cells are estimated on one Monte Carlo
+batch (sample $A$, $N_A = 8000$) and the controlled estimator is
+evaluated on an \emph{independent} batch (sample $B$, $N_B = 8000$,
+disjoint seed). The predicted-vs-realised reductions remain close
+to the diagonal: across the same nine $(\varphi, T)$ cases and six
+control sets, RMS error $0.015$, maximum absolute error $0.022$,
+all within the same Monte Carlo noise band as the same-sample
+check. The split-sample scatter is recorded alongside the other
+figures in the project outputs.
+
+\subsection{Comparison with the conditional Monte Carlo baseline}
+\label{sec:cond-baseline}
+The classical conditional Monte Carlo estimator
+$\widehat F^{\mathrm{cond}}_T = F_T - \bigl(\E[F_T \mid Y] - \E[F_T]\bigr)$
+removes all $Y$-randomness from $F_T$ that is captured by
+$\E[F_T \mid Y]$. By the chaos decomposition,
+$\E[F_T \mid Y] - \E[F_T] = \sum_{n \ge 1} \Proj_{0, n} F_T$,
+i.e.\ the entire pure-clock sector. The conditioning baseline is
+therefore a special case of the source-resolved control restricted
+to the column $m = 0$.
+
+For $\varphi_{\mathrm{odd}}$, $\E[\varphi(X_x)] \equiv 0$ so the
+pure-clock sector is zero and the conditioning baseline gives no
+reduction; this is one source of the parity selection rule. We
+compare on $\varphi_{\mathrm{mixed}}$ and $\varphi_{\mathrm{even}}$
+at $T = 1$ (\cref{tab:cond-comparison}, $N = 8000$). For
+$\varphi_{\mathrm{mixed}}$ the bulk of $\Var(F_T)$ lives in $m \ge 1$
+cells, so conditioning yields only a $1.8\%$ reduction; the
+source-resolved top-2 control selects $\{(1, 0), (1, 1)\}$ and
+removes $55\%$. For $\varphi_{\mathrm{even}}$ conditioning captures
+the $m = 0$ sector and reaches $25\%$; source-resolved top-3 reaches
+$66\%$. A combined estimator subtracting both the conditioning term
+and the Stage 1 $m \ge 1$ cells (avoiding double-counting the
+$m = 0$ sector) achieves the best reduction in each row. The
+takeaway is not a runtime benchmark: source-resolved sparse
+controls dominate the naive conditioning baseline whenever the
+variance has substantial $m \ge 1$ content.
+
+\begin{table}[h]
+\small\centering
+\begin{tabular}{llrrrl}
+\toprule
+$\varphi$ & estimator & $\widehat\Var$ & reduction & ESS factor & details \\
+\midrule
+mixed & naive          & 0.0416 & --     & $1.0\times$  & $F_T$ \\
+mixed & conditioning   & 0.0408 & $1.8\%$ & $1.02\times$ & $F_T - C_{\mathrm{cond}}$ \\
+mixed & top-2          & 0.0188 & $55\%$  & $2.21\times$ & $\{(1,0), (1,1)\}$ \\
+mixed & top-3          & 0.0180 & $57\%$  & $2.31\times$ & $\{(1,0), (1,1), (1,2)\}$ \\
+mixed & combined       & 0.0161 & $61\%$  & $2.58\times$ & $C_{\mathrm{cond}} +$ $m \ge 1$ cells \\[2pt]
+even  & naive          & 0.0380 & --     & $1.0\times$  & $F_T$ \\
+even  & conditioning   & 0.0283 & $25\%$  & $1.34\times$ & $F_T - C_{\mathrm{cond}}$ \\
+even  & top-2          & 0.0197 & $48\%$  & $1.93\times$ & $\{(2,0), (0,2)\}$ \\
+even  & top-3          & 0.0128 & $66\%$  & $2.98\times$ & $\{(2,0), (0,2), (2,1)\}$ \\
+even  & combined       & 0.0095 & $75\%$  & $4.01\times$ & $C_{\mathrm{cond}} +$ $m \ge 1$ cells \\
+\bottomrule
+\end{tabular}
+\caption{Source-resolved controls vs the conditioning baseline at
+$T = 1$, $N = 8000$. The ``combined'' row subtracts both
+$C_{\mathrm{cond}}$ and the Stage 1 cells with $m \ge 1$ (not the
+full Stage 1 top-$k$ as the latter would double-count the $m = 0$
+sector already in $C_{\mathrm{cond}}$).}
+\label{tab:cond-comparison}
+\end{table}
+
+\paragraph{Caveat.}
+This is not a Monte Carlo benchmark. We fix the control coefficient
+at $1$ on each selected component. This is the population
+regression-optimal coefficient for exact chaos controls: if
+$C = \Proj_{m, n} F_T$ with $(m, n) \ne (0, 0)$, then by orthogonality
+of distinct bidegrees in $L^2(\Omega)$,
+\[
+  \Cov(F_T, C)
+   \;=\; \Cov(\Proj_{m, n} F_T,\,\Proj_{m, n} F_T)
+   \;=\; \Var(C),
+\]
+so the standard optimal control-variate coefficient
+$\beta^\star = \Cov(F_T, C) / \Var(C)$ equals $1$. For a sum of
+selected bidegrees $C_\mathcal{A} = \sum_{(m, n) \in \mathcal{A}}
+\Proj_{m, n} F_T$, the same calculation separates componentwise: the
+cross-bidegree covariances are zero, $\Cov(F_T, C_\mathcal{A}) =
+\sum_{(m, n) \in \mathcal{A}} \Var(\Proj_{m, n} F_T) =
+\Var(C_\mathcal{A})$, and again $\beta^\star = 1$.
+
+At finite grid and finite $N$, empirical orthogonality is only
+approximate (Section~\ref{sec:stage1}), so fitted coefficients could
+reduce sample variance slightly further. We keep $\beta = 1$ to
+preserve the analytic, unbiased, non-fitted control-variate
+construction. The same caveats apply to the broader validation of
+\cref{sec:control-validation}: this is not a Monte Carlo benchmark,
+we do not optimise coefficients empirically, finite-grid and
+finite-$N$ effects can cause small deviations from the diagonal of
+\cref{fig:budget-validation}, and we do not compare against
+importance-sampling or quasi-Monte Carlo alternatives nor study how
+the analytic projections depend on the spatial half-width $A$ or
+grid sizes $N_x, N_t$ as these are refined. The purpose is to verify
+that the analytic variance budget identifies effective control
+components, not to claim a production-grade variance-reduction
+recipe.
+
+%==============================================================
+\section{Conclusion}
+\label{sec:conclusion}
+%==============================================================
+
+The full $3 \times 3$ analytic variance budget is computable in
+closed form via the source projection formula plus the explicit
+$\Proj^Y_n \Loc_T^x(Y)$ kernels for $n = 0, 1, 2$. For every test
+case, parity selection rules predicted by the companion paper
+hold to machine precision, and the captured share of $\Var(F_T)$ is
+substantial: $47$--$84\%$ of the total. As a concrete application,
+subtracting the $(1, 0)$ and $(1, 1)$ projections from the naive
+Monte Carlo estimator of $\E[F_T(\varphi_{\mathrm{odd}})]$ at
+$T = 1$ removes $62\%$ of the variance, matching the Stage 1
+prediction of $59\%$ within sampling noise.
+
+We see two natural follow-ups. First, the mixed-vs-pure shrinkage
+pattern in Section~\ref{sec:T-dep} is an empirical observation
+across three time horizons; whether it admits a clean asymptotic
+formulation as $T \to \infty$ requires more work. Second, a fully
+optimised control-variate estimator with regression-tuned
+coefficients, larger $(m, n)$ truncation, and benchmarking against
+existing variance-reduction baselines is out of scope here and is
+the natural subject of a follow-up paper.
+
+\subsection*{Reproducibility}
+The Python pipeline that produces every figure and CSV is provided
+alongside the paper in the same repository. A single end-to-end
+driver script runs Stage 1, the appendix Stage 2 sweep and the
+control-variate experiment in a few minutes on a recent laptop; the
+control-variate cell alone runs in under a second.
+
+\appendix
+
+%==============================================================
+\section{Stage 2: finite-dimensional Hermite tensor visualisation}
+\label{sec:stage2}
+%==============================================================
+
+This appendix records an exploratory visualisation that projects
+$F_T(\varphi)$ onto an orthonormal Hermite tensor basis built from
+$K_x = K_y = K$ piecewise-constant indicator factors per source. The
+visualisation extends to bidegrees $(m, n) \in \{0, \dots, 5\}^2$ and
+is useful for showing the qualitative shape of the chaos budget at
+$(m, n)$ that Stage 1 does not compute analytically. The cost is a
+basis-coverage residual that can be large.
+
+We project paths of $X$ and $Y$ onto $K_x$ and $K_y$ orthonormal
+piecewise-constant indicator basis functions in $L^2$, yielding
+factors $\zeta^X \in \R^{K_x}$ and $\zeta^Y \in \R^{K_y}$ that are
+approximately iid $N(0, 1)$. We standardise each factor in sample so
+that the empirical second moments are exactly $1$. The orthonormal
+Hermite tensor basis is
+$\widetilde H_{\alpha, \beta}(\zeta^X, \zeta^Y)
+ = \prod_j h_{\alpha_j}(\zeta^X_j)/\sqrt{\alpha_j!}
+ \cdot \prod_k h_{\beta_k}(\zeta^Y_k)/\sqrt{\beta_k!}$,
+with $h_m$ the probabilist's Hermite polynomial. We sweep multi-indices
+$\alpha \in \N^{K_x}, \beta \in \N^{K_y}$ with total degree
+$|\alpha| \le 5$ and $|\beta| \le 5$.
+
+For each $(\alpha, \beta)$ we estimate $c_{\alpha, \beta}^2$ by the
+unbiased U-statistic
+$\widehat{c_{\alpha, \beta}^2} =
+\bigl[(\sum_s F_T^{(s)} \widetilde H_{\alpha, \beta}^{(s)})^2
+ - \sum_s (F_T^{(s)} \widetilde H_{\alpha, \beta}^{(s)})^2\bigr]
+/ (N (N - 1))$,
+which can be negative on cells where the true value is zero. The
+share of bidegree $(m, n)$ is
+$\max(\sum_{|\alpha| = m, |\beta| = n} \widehat{c_{\alpha, \beta}^2},\, 0)
+/ \Var(F_T)$, with clipping applied only at the bidegree-aggregated
+level for visualisation. The raw signed values are retained in the
+Stage 2 output table for downstream diagnostics.
+
+At $K = 3$, residual share is $60$--$90\%$; at $K = 7$ the U-statistic
+saturates for $\varphi$ even at low $\Var(F_T)$ because the feature
+count $\binom{K + 5}{5}^2$ approaches the sample size. We do not
+draw quantitative conclusions from saturated entries. The Stage 2
+heatmaps qualitatively respect the parity rules of
+Section~\ref{sec:setup} and reproduce the Stage 1 dominant cells
+where the basis can resolve them; some cells, including $(1, 0)$ for
+$\varphi$ odd and $(2, 1)$ for $\varphi$ even, are systematically
+under-attributed by Stage 2. These discrepancies are basis-coverage
+effects of the finite indicator subspace; Stage 1 gives the rigorous
+source attribution. The full set of heatmaps, refinement
+diagnostics and an auto-generated summary report ship with the
+pipeline. For example, for $\varphi$ even at $T = 4$ the residual
+outside the $3 \times 3$ block is concentrated mainly in cells such
+as $(0, 4)$, $(4, 1)$, $(2, 3)$, consistent with higher even
+bidegrees rather than leakage into forbidden parity cells; visible
+Stage 2 mass in odd-$m$ cells (e.g. $(3, 2)$, $(1, 5)$) is the
+basis-coverage / U-statistic noise artefact noted above, not a
+violation of the parity selection rule.
+
+\Cref{fig:stage2-even} shows a representative Stage 2 heatmap for
+$\varphi$ even at $T = 1$, displaying the $(m, n) \in \{0, \dots, 5\}^2$
+plane that Stage 1 does not analytically reach. The dominant Stage 2
+cell at $(0, 2)$ matches the Stage 1 cell $(0, 2)$ in
+\cref{tab:stage1}, and the parity-zero column $m = 1$ together with
+the parity-zero cell $(0, 1)$ are visibly empty (modulo small
+Monte-Carlo noise leakage); higher even-$m$ rows show additional
+mass that Stage 1's $3 \times 3$ truncation does not cover.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.55\textwidth]{heatmap_even_T1.0.png}
+\caption{Representative Stage 2 heatmap for $\varphi$ even at
+$T = 1$, $K_x = K_y = 3$, $\mathrm{deg\_max} = 5$, $N_2 = 10000$.
+Cells are coloured by Stage-2 share of $\Var(F_T)$. The dominant
+cell $(0, 2)$ matches the Stage 1 entry; column $m = 1$ and cell
+$(0, 1)$ are empirically empty, in agreement with the parity rule.
+Higher-$(m, n)$ cells visible here lie outside the $3 \times 3$
+truncation of Stage 1.}
+\label{fig:stage2-even}
+\end{figure}
+
+\begin{thebibliography}{9}
+
+\bibitem{AllouZheng}
+H.~Allouba and W.~Zheng,
+\emph{Brownian-time processes: the PDE connection and the half-derivative generator},
+Ann. Probab. \textbf{29} (2001), no.~4, 1780--1795.
+
+\bibitem{ChaosPaper}
+R.~Fontes,
+\emph{Source-Resolved Chaos Expansions for Iterated Brownian Motion},
+companion paper, 2026.
+
+\bibitem{Janson}
+S.~Janson,
+\emph{Gaussian Hilbert Spaces},
+Cambridge Tracts in Mathematics, vol.~129,
+Cambridge University Press, Cambridge, 1997.
+
+\bibitem{KhoshnevisanLewis}
+D.~Khoshnevisan and T.~M.~Lewis,
+\emph{Stochastic calculus for Brownian motion on a Brownian fracture},
+Ann. Appl. Probab. \textbf{9} (1999), no.~3, 629--667.
+
+\bibitem{Lee}
+A.~J.~Lee,
+\emph{U-Statistics: Theory and Practice},
+Statistics: Textbooks and Monographs, vol.~110,
+Marcel Dekker, New York, 1990.
+
+\bibitem{Nualart}
+D.~Nualart,
+\emph{The Malliavin Calculus and Related Topics},
+2nd ed., Probability and Its Applications, Springer-Verlag, Berlin, 2006.
+
+\bibitem{NualartVives}
+D.~Nualart and J.~Vives,
+\emph{Chaos expansions and local times},
+Publ. Mat. \textbf{36} (1992), no.~2B, 827--836.
+
+\bibitem{HuNualart}
+Y.~Hu and D.~Nualart,
+\emph{Renormalized self-intersection local time for fractional Brownian motion},
+Ann. Probab. \textbf{33} (2005), no.~3, 948--983.
+
+\bibitem{RevuzYor}
+D.~Revuz and M.~Yor,
+\emph{Continuous Martingales and Brownian Motion},
+3rd ed., Grundlehren der Mathematischen Wissenschaften, vol.~293,
+Springer-Verlag, Berlin, 1999.
+
+\end{thebibliography}
+
+\end{document}

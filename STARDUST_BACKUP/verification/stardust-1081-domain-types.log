@@ -1,0 +1,18 @@
+@[reducible] def OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure : NNReal →
+  MeasureTheory.Measure (ℝ × OperatorDerivativeRewrite.Foundation.InfiniteGaussian.SampleSpace) :=
+fun T =>
+  (OperatorDerivativeRewrite.Foundation.PredictableRealL2.horizonMeasure T
+        OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct).trim
+    OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure._proof_1
+@[reducible] def OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.Domain : (T : NNReal) →
+  Submodule ℂ
+    ↥(MeasureTheory.Lp (BesselPotentialSpace ℝ ℂ (-1) 2) 2
+        (OperatorDerivativeRewrite.Foundation.PredictableRealL2.horizonMeasure T
+          OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct)) :=
+fun T =>
+  MeasureTheory.lpMeas (BesselPotentialSpace ℝ ℂ (-1) 2) ℂ
+    (OperatorDerivativeRewrite.Foundation.PredictableRealL2.predictable
+      OperatorDerivativeRewrite.Foundation.GaussianTimeProcess.naturalFiltration)
+    2
+    (OperatorDerivativeRewrite.Foundation.PredictableRealL2.horizonMeasure T
+      OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct)

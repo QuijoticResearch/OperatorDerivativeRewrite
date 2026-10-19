@@ -1,0 +1,322 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\graphicspath{{../outputs/figures/}}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\theoremstyle{definition}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\DeclareMathOperator{\Var}{Var}
+
+% ============================================================
+% TITLE OPTIONS (pick one):
+%  (1) Brownian-Time Score Models: Hidden-Clock Noising and
+%      Fourth-Order PDE Shadows
+%  (2) Hidden-Clock Diffusion Models: Brownian-Time Noising
+%      Beyond Gaussian Heat Flow
+% ============================================================
+\title{Brownian-Time Score Models:\\
+       Hidden-Clock Noising and Fourth-Order PDE Shadows\\
+       \large (working draft --- experimental and theoretical sandbox)}
+\author{Ramiro Fontes}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study replacing the Gaussian noise of score-based diffusion with an
+\emph{iterated-Brownian} (Brownian-time) noise $Z_t=B_1(|B_2^H(t)|)$. Writing
+$S_t=|B_2^H(t)|$ for the hidden clock, the corruption is a hidden-scale Gaussian
+mixture, $Z_t\mid S_t=s\sim\mathcal N(0,s)$, rather than a single Gaussian blur.
+We derive the resulting marginal density, a \emph{hidden-clock Tweedie} score
+formula, and show that recovering the posterior mean $\E[X_0\mid X_t]$ requires
+an \emph{unavoidable} coupled latent-clock posterior term. We record the
+Allouba--Zheng fourth-order PDE shadow for averaged observables and its
+fractional generalization. We then test the central hypothesis --- that
+Brownian-time noising forces a denoiser to learn latent corruption scale,
+yielding a multi-scale geometry distinct from Gaussian diffusion --- with exact
+1-D quadrature and sandbox-scale neural experiments under \emph{matched marginal
+variance}. The honest finding is two-sided: the hidden-scale \emph{mixture}
+genuinely changes the score geometry (saturating-tail scores, leptokurtic
+marginals) and the latent scale is strongly inferable from a single corrupted
+sample; but the \emph{Brownian-time path structure} and the \emph{Hurst index}
+$H$ are \textbf{invisible} to a single-time matched-variance denoiser --- at one
+time the construction reduces \emph{exactly} to a Gaussian scale mixture.
+Crucially, an exact-score generative comparison (annealed Langevin down a matched
+variance ladder, no training confound) finds hidden-clock generation
+\textbf{indistinguishable from---marginally worse than} matched Gaussian. We thus
+report \emph{no} performance advantage, make no generative claim, and assert no
+Markov reverse SDE in $x$-space; the rich hidden-clock structure is a correct
+reframing whose only remaining live upside is a possible learning/optimization
+effect for trained networks.
+\end{abstract}
+
+\section{Setup and non-claims}
+Ordinary diffusion corrupts data by $X_t=a(t)X_0+\sigma(t)\varepsilon$,
+$\varepsilon\sim\mathcal N(0,I)$, with a deterministic schedule $\sigma(t)^2$. We
+replace $\varepsilon$ by a Brownian-time variable
+\begin{equation}
+  Z_t^H=B_1\!\big(|B_2^H(t)|\big),\qquad
+  S_t=|B_2^H(t)|\sim\text{half-normal},\ \ B_2^H(t)\sim\mathcal N(0,\tau),\
+  \tau=t^{2H},
+\end{equation}
+so that $Z_t^H\mid S_t=s\sim\mathcal N(0,s)$. The clock $S_t$ is a
+\emph{variance}. We study $X_t=a(t)X_0+\sigma(t)Z_t^H$.
+
+\paragraph{Non-claims (held throughout).} (i)~The Brownian-time forward is
+\emph{not} Markov in $x$; we do \emph{not} claim a reverse-time SDE in
+$x$-space. (ii)~The fourth-order PDE below governs \emph{averaged observables},
+not a transition density. (iii)~We claim no working generative sampler; all
+neural experiments are sandbox-scale pipeline validations under matched
+controls. These follow the discipline of the Type~II fBM score
+paper~\cite{FontesFBMScore}, which establishes scores and a \emph{matching-marginal}
+Markov auxiliary \emph{without} asserting process-level time reversal of fBM.
+
+\section{Hidden-clock density and score}
+Conditioning on $X_0$ and $S_t=s$ gives a Gaussian channel with random variance
+$\sigma(t)^2 s$, hence the hidden-scale mixture marginal
+\begin{equation}\label{eq:marg}
+  p_t(x)=\int_0^\infty \E_{X_0}\!\big[\phi_{\sigma(t)^2 s}(x-a(t)X_0)\big]\,
+  \rho_t(s)\,ds,\qquad \rho_t(s)=\sqrt{\tfrac{2}{\pi\tau}}e^{-s^2/2\tau}.
+\end{equation}
+
+\begin{proposition}[Hidden-clock Tweedie]\label{prop:tweedie}
+With $\phi_v$ the $\mathcal N(0,v)$ density,
+\begin{equation}\label{eq:hctweedie}
+  \partial_x\log p_t(x)=\E\!\left[-\frac{x-a(t)X_0}{\sigma(t)^2 S_t}\ \middle|\ X_t=x\right],
+\end{equation}
+the posterior being the joint law of $(X_0,S_t)\mid X_t=x$.
+\end{proposition}
+\noindent This is the operator-derivative Tweedie of~\cite{FontesFBMScore} but
+with the \emph{deterministic} bracket replaced by the random posterior precision
+$\E[1/S_t\mid x]$, which does not factor out.
+
+\begin{proposition}[Unavoidable latent-clock term]\label{prop:postmean}
+Let $\tilde\E[\,\cdot\,]=\E[\,\cdot/S_t\mid x]/\E[1/S_t\mid x]$ be the
+precision-weighted posterior. Then
+\begin{equation}
+  a(t)\,\tilde\E[X_0\mid x]=x+\frac{\sigma(t)^2}{\E[1/S_t\mid x]}\,\partial_x\log p_t(x).
+\end{equation}
+The ordinary posterior mean $\E[X_0\mid x]$ coincides with $\tilde\E[X_0\mid x]$
+\emph{iff} $S_t\perp X_0\mid X_t$, which fails for non-Gaussian data. Hence
+passing between the score and $\E[X_0\mid x]$ requires the joint $(X_0,S_t)$
+posterior, not a scalar clock moment.
+\end{proposition}
+
+\section{Fourth-order PDE shadow (averaged observables)}
+For $u(t,x)=\E f(x+B_1(|B_2(t)|))$ ($H=\tfrac12$, $\sigma=1$), conditioning on
+the half-normal clock and using $\partial_s P_s=\tfrac12\partial_x^2 P_s$ for the
+heat semigroup $P_s$ together with the heat equation satisfied by $\rho_t$ in its
+scale yields the Allouba--Zheng equation~\cite{AllouZheng2001,FontesIBMIto}
+\begin{equation}\label{eq:AZ}
+  \partial_t u=\tfrac18\,\partial_x^4 u+\frac{1}{2\sqrt{2\pi t}}\,\partial_x^2 f.
+\end{equation}
+The same computation with the fractional clock scale $\tau=t^{2H}$
+(so $\partial_t\rho_t=H t^{2H-1}\partial_s^2\rho_t$, $\rho_t(0)=\sqrt{2/\pi}\,t^{-H}$)
+gives the averaged fractional equation
+\begin{equation}\label{eq:fAZ}
+  \partial_t u=\frac{H}{4}\,t^{2H-1}\partial_x^4 u+\frac{H}{\sqrt{2\pi}}\,t^{H-1}\partial_x^2 f,
+\end{equation}
+which reduces to~\eqref{eq:AZ} at $H=\tfrac12$. We emphasize that
+\eqref{eq:AZ}--\eqref{eq:fAZ} are statements about the \emph{expectation} of a
+fixed observable $f$, and provide motivation (``more than heat flow''), not a
+generative guarantee. The source-resolved chaos
+expansion~\cite{FontesChaos} provides the orthogonal decomposition of $Z_t$ into
+outer-scenery and inner-clock components that underlies the
+``infer-the-clock-as-a-separate-source'' picture.
+
+\section{Experiments (matched marginal variance throughout)}
+We match the Gaussian baseline's noise variance to the mixture's,
+$\sigma_{\mathrm{eff}}^2(t)=\sigma(t)^2\E[S_t]=\sigma(t)^2\sqrt{2/\pi}\,t^{H}$;
+for a target variance $v$ the clock scale is $\tau=\pi v^2/2$. An audit
+(Exp.~4) confirms $\Var(\text{Gaussian})=\Var(\text{IBM})=v$ to $<2\%$.
+
+\subsection{Experiment 1: exact 1-D scores by quadrature}
+For Gaussian-mixture data we compute~\eqref{eq:marg}, its score, and the clock
+posterior by quadrature, validated against finite differences ($<10^{-5}$), an
+$8\times10^6$-sample histogram ($0.14\%$), and Monte Carlo. Findings
+(Fig.~\ref{fig:matched},~\ref{fig:clock}):
+\begin{itemize}
+\item The hidden-clock marginal is leptokurtic vs the matched Gaussian; the
+  score \emph{saturates} in the tails ($\approx\pm2$) where the Gaussian score is
+  linear ($\approx\pm4.5$). $\max_x|s_{\text{IBM}}-s_{\text{Gauss}}|\in[2.3,4.4]$.
+\item The clock is inferable: $\E[S_t\mid x]$ ranges from below the prior at data
+  modes to $2$--$5\times$ above it in the tails.
+\item A fixed-variance Tweedie mis-recovers $\E[X_0\mid x]$ with error $1.5$--$3.1$,
+  confirming Prop.~\ref{prop:postmean}.
+\item \textbf{At matched variance, $H\in\{\tfrac12,\tfrac13,\tfrac14\}$ give
+  bit-identical scores (max diff $=0$).}
+\end{itemize}
+
+\begin{figure}[t]\centering
+\includegraphics[width=0.62\textwidth]{exp01_bimodal_matched_v1.0.png}
+\caption{Matched-variance Gaussian vs hidden-clock. Top: leptokurtic mixture
+marginal. Bottom: the hidden-clock score saturates in the tails --- a
+multi-scale signature absent from the Gaussian.}
+\label{fig:matched}
+\end{figure}
+\begin{figure}[t]\centering
+\includegraphics[width=0.62\textwidth]{exp01_bimodal_clock_posterior_v1.0.png}
+\caption{Posterior hidden clock. $\E[S_t\mid x]$ dips below the prior at the data
+modes and rises far above it in the tails; $\Var(S_t\mid x)$ is structured by
+$x$. The latent scale is strongly inferable from a single corrupted sample.}
+\label{fig:clock}
+\end{figure}
+
+\subsection{Experiments 2--5: learned denoisers (sandbox scale)}
+Shared architecture/budget/seed; arms A~(Gaussian), B~(IBM), C~(i.i.d.\ half-normal
+scale mixture), D~(fBM, $H=1/3$). Table~\ref{tab:exp2} (representative run).
+\begin{table}[h]\centering
+\begin{tabular}{lcc}
+\toprule
+arm & mean denoise MSE & clock $R^2$ (aux head)\\
+\midrule
+A Gaussian      & 0.0847 & --- (degenerate)\\
+B IBM           & 0.0783 & 0.82\\
+C mixture-iid   & 0.0783 & 0.82\\
+D fBM ($H=1/3$) & 0.0783 & 0.82\\
+\bottomrule
+\end{tabular}
+\caption{Matched-variance denoising. \textbf{B$=$C$=$D to all digits}: the
+single-time law is a scale mixture; Brownian-time/fBM provenance is invisible.
+The scale-mixture's lower MSE is a heteroscedastic-difficulty artifact (median
+clock $<$ mean), not an established generative win.}
+\label{tab:exp2}
+\end{table}
+
+\noindent Exp.~3: a clock head recovers $\log S_t$ with test $R^2$ rising
+$0.41\to0.89$ as the level grows --- the clock is learnably inferable. Exp.~3
+also shows the auxiliary clock target \emph{does not} improve denoising MSE in
+this setup (it competes for capacity). Exp.~5 confirms $H$ is invisible at
+matched single-time variance (score diff $=0$) and acts only through the time
+schedule $\sigma_{\mathrm{eff}}^2(t)=\sqrt{2/\pi}\,t^H$ and cross-time clock
+roughness (mean $|\Delta\log S|$ rises $0.60\to0.84$ as $H\!:\!1/2\to1/4$).
+
+\subsection{Experiment 6: exact-score generative comparison}
+The decisive test of \emph{generation} (not denoising MSE), free of training
+confounds. We run \emph{identical} annealed Langevin dynamics down the
+\emph{same} matched marginal-variance ladder, using the exact quadrature scores
+of the Gaussian vs hidden-clock families, and measure sample quality against the
+true data. Annealed Langevin needs only each marginal's score and makes no
+reverse-SDE claim, consistent with the non-Markov forward. Both arms recover the
+data faithfully (Fig.~\ref{fig:gen}); 1-Wasserstein to the data, with the
+finite-sample floor in parentheses:
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+data & Gaussian $W_1$ & hidden-clock $W_1$ & $\Delta$ (floor)\\
+\midrule
+bimodal       & 0.0410 & 0.0421 & $+0.0011$ \ (0.0217)\\
+trimodal asym & 0.0343 & 0.0413 & $+0.0071$ \ (0.0367)\\
+\bottomrule
+\end{tabular}
+\end{center}
+The two are \textbf{statistically indistinguishable}; the hidden-clock arm is if
+anything marginally \emph{worse}, within the floor. This is the expected honest
+outcome: Langevin equilibrates to each marginal via its exact score, so endpoint
+quality is set by the (matched) bottom-of-ladder marginal, not by the score
+geometry along the way. The saturating-tail score is a real landscape difference
+that confers \emph{no} generative advantage at the exact-score level.
+
+\begin{figure}[t]\centering
+\includegraphics[width=0.95\textwidth]{exp06_trimodal_asym_generated.png}
+\caption{Exact-score annealed-Langevin generation at matched marginal variance.
+Gaussian (left) and hidden-clock (right) score families both reconstruct the
+trimodal data faithfully and indistinguishably.}
+\label{fig:gen}
+\end{figure}
+
+\subsection{Experiment 7: the score-matching obstruction (learned)}
+The last hypothesis is a learning/optimization benefit for a trained network.
+Probing it exposes a sharp obstruction. Denoising score matching regresses onto
+the per-sample target $-\text{noise}/(\sigma^2 S)$; per coordinate this is
+$-z/\sqrt S$ with $z\sim\mathcal N(0,1)$, whose second moment is $\mathbb
+E[1/S]$. Because the half-normal clock density is \emph{positive at} $S=0$,
+$\mathbb E[1/S]=\int_0^\infty s^{-1}\rho(s)\,ds=\infty$: \textbf{the
+hidden-clock DSM target has infinite variance}, whereas the Gaussian target
+$-z/\sqrt v$ has finite second moment $1/v$. (The score itself, the
+\emph{conditional mean} of this target, is finite---it is the training
+\emph{estimator} that is ill-posed.) On an 8-mode 2-D ring with matched
+architecture/budget/seed/ladder we observe all three consequences: (A) empirical
+$\mathbb E[1/S]$ grows without bound as the clock floor $\to0$
+($5.6\!\to\!29.1$ for floors $10^{-1}\!\to\!10^{-5}$ at $v{=}0.25$); (B) naive
+hidden-clock score matching \emph{diverges to NaN}, while the Gaussian arm trains
+normally, and a clock floor $S\ge10^{-2}$ restores trainability; (C) even with
+the floor the residual target variance stays higher, so at matched budget the fit
+is worse and generation is worse (sliced-Wasserstein $0.36$ vs Gaussian $0.18$;
+floor $0.07$). Thus hidden-clock noising carries a \textbf{learning penalty} and
+requires regularization the Gaussian baseline does not---no advantage, consistent
+with Exp.~6.
+
+\subsection{Experiment 8: the augmented (x, clock) reverse}
+The Exp.~7 obstruction is, however, an artifact of the \emph{marginal}-score
+parameterization, and it is removed by working in the augmented $(x,S)$ space ---
+the coordinate that Allouba's half-derivative generator~\cite{AllouZheng2001}
+makes natural for the non-Markov Brownian-time process. The marginal score
+factors as $\partial_x\log p_t(x)=\mathbb E_{s\sim p(s\mid x)}[\partial_x\log
+p_t(x\mid s)]$, and the conditional score $\partial_x\log p_t(x\mid s)$ is
+\emph{bounded} in $s$ (finite data score at $s\to0$, $0$ at $s\to\infty$).
+Drawing $s\sim p(s\mid x)$ and returning the conditional score is therefore the
+\textbf{Rao--Blackwellized} estimator: same mean, finite variance. On the 1-D
+mixtures (exact clock posterior) we confirm: (A) the conditional-clock estimator
+has bounded variance ($\le0.6$) and matches the exact score, while the naive
+$-(x{-}X_0)/S$ estimator's variance grows with a finer clock floor
+($1.5\!\to\!7.9$) and diverges; (B) an augmented annealed Langevin (sample
+$s\sim p(s\mid x)$, step with the conditional score) reproduces the data at
+exact-marginal quality ($W_1=0.05$ bimodal, $0.11$ trimodal); (C) a conditional
+$\varepsilon$-net trains \emph{stably} (target $z$, $\Var=1$) and matches the
+exact conditional score to $9\%$, in contrast to the NaN of Exp.~7. The
+augmentation thus \textbf{fixes learnability}---but reaches only \emph{parity}
+with Gaussian, since Exp.~6 bounds the upside at zero.
+
+\section{What is and is not supported}
+\textbf{Supported.} (1)~Hidden-\emph{scale-mixture} noising changes the
+score/denoising geometry vs matched Gaussian (saturating-tail scores). (2)~The
+latent scale is strongly inferable. (3)~The hidden-clock Tweedie and the
+unavoidable latent-clock term (Props.~\ref{prop:tweedie}--\ref{prop:postmean})
+hold exactly. (4)~The Exp.~7 infinite-variance obstruction is \emph{removable}:
+the augmented $(x,S)$ formulation (Exp.~8) Rao-Blackwellizes the score estimator
+to finite variance, trains stably, and yields a working sampler at exact-marginal
+quality---making hidden-clock noising well-posed and usable.
+
+\textbf{Falsified / unsupported.} (1)~``Brownian-time path structure matters for
+single-time denoising'': \emph{falsified} --- it reduces exactly to a scale
+mixture. (2)~``Rougher fractional clocks give stronger matched-variance
+corruption'': \emph{falsified} --- $H$ is identically invisible at one time.
+(3)~``Predicting the clock improves denoising'': \emph{not supported} (mildly
+negative) in the sandbox. (4)~``Hidden-clock noising \emph{generates} better
+than matched Gaussian'': \emph{falsified at the exact-score level} (Exp.~6) ---
+indistinguishable to marginally worse. (5)~``A \emph{learned} net benefits from
+hidden-clock noising'': \emph{falsified} (Exp.~7) --- the DSM target has infinite
+variance, so training is ill-posed without a clock floor, and even floored it
+carries a learning penalty (worse fit and generation at matched budget).
+
+\textbf{Right framing.} The phenomenon is \emph{hidden-clock / Gaussian
+scale-mixture noising}; the Brownian-time and fractional machinery is the
+\emph{source} of the clock law and the route to any cross-time structure, not a
+single-time advantage. Across denoising MSE, single-time law, exact-score
+generation, and learned score matching, we find \emph{no} performance advantage
+over a matched Gaussian baseline. The learned-case obstruction is real but
+\emph{removable}: the augmented $(x,S)$ reverse (Exp.~8) makes hidden-clock
+score matching well-posed and produces a working sampler at exact-marginal
+quality---the clock-sourced variance is exactly what the augmentation, and a
+source-resolved control-variate treatment in the spirit of the companion
+variance-budget work, addresses. The honest synthesis is therefore not ``it
+cannot work'' but ``it works, at \emph{parity}'': the augmented construction is
+usable, yet the exact-score result (Exp.~6) bounds its generative upside at
+zero. The single thing every experiment here discards is the clock's
+\emph{cross-time path structure}; whether that ever buys anything is the only
+remaining open question, and the burden of proof is on demonstrating a benefit,
+not assuming one.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

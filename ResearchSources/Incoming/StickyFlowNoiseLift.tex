@@ -1,0 +1,2007 @@
+\documentclass[11pt,reqno]{amsart}
+
+%==============================================================
+% Lifting the Sticky-Flow Carre-du-Champ to Flow-Noise Functionals
+% --------------------------------------------------------------
+% Tier beta paper.  Companion to:
+%   Fontes, A Diagonal Carre-du-Champ Seed for Sticky Brownian
+%     Flows  [StickyFlowGammaSeed]               (Tier alpha input)
+%   Fontes, From Carre-du-Champ Hierarchies to Primitive
+%     Divergence  [GammaHierarchyDivergence]     (transfer construction)
+%   Fontes, Primitive Divergence and Carre-du-Champ Seeds over
+%     Nonclassical Noises  [PrimitiveDivergence] (problem formulation)
+%   Fontes, The Operator Derivative over Nonclassical Noise
+%     [OperatorDerivative]
+%   Fontes, Energy-First Stochastic Calculus  [EnergyFirst]
+%
+% Scope: lift the Tier-alpha diagonal seed to a cylindrical algebra
+% of finite-particle, finite-time observables of the Le Jan--Raimond
+% sticky-flow noise N_theta.  Verify Sym/Vanish/MatPos/WMatPos.
+% State FormClos as Hypothesis beta-1; reduce it to per-stratum
+% Wentzell-Dirichlet closability + a projective-limit step, both
+% as Open Problems.  Apply GammaHierarchyDivergence conditionally
+% to obtain (D_{N_theta},delta_{N_theta}) on L^2(N_theta).
+%==============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{mathrsfs}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+\emergencystretch=3em
+
+% --- theorem environments
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{convention}[theorem]{Convention}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{problem}[theorem]{Open problem}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% --- macros
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\Dom}{\mathrm{Dom}}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\Acyl}{\cA_{\mathrm{cyl}}}
+\newcommand{\Acylp}{\cA_{\mathrm{cyl},+}}
+\newcommand{\Aone}{\cA_{\mathrm{cyl}}^{\mathrm{1time}}}
+\newcommand{\Aonep}{\cA_{\mathrm{cyl},+}^{\mathrm{1time}}}
+\newcommand{\Aoneat}[1]{\cA^{\mathrm{1time}}_{\mathrm{cyl},#1}}
+\newcommand{\FT}{\cF_{T}^{\,\mathrm{1t}}}
+\newcommand{\Hone}{L^{2}(\Omega,\FT,\Pth)}
+\newcommand{\Tcyl}{\cT_{\mathrm{cyl}}}
+\newcommand{\GamN}{\Gamma^{(2)}_{\cN_{\theta}}}
+\newcommand{\GamT}{\Gamma^{(2)}_{\theta}}
+\newcommand{\GamM}[1]{\Gamma^{(#1)}_{\theta}}
+\newcommand{\Lth}[1]{L^{(#1)}_{\theta}}
+\newcommand{\DN}{D_{\cN_{\theta}}}
+\newcommand{\divN}{\delta_{\cN_{\theta}}}
+\newcommand{\Dth}{D_{\theta}}
+\newcommand{\divth}{\delta_{\theta}}
+\newcommand{\Ecyl}{\cE_{\theta}^{\mathrm{cyl}}}
+\newcommand{\Pth}{\Prob_{\theta}}
+
+\title{Lifting the Sticky-Flow Carr\'e-du-Champ\\
+       to Flow-Noise Functionals}
+\author{Ramiro Fontes}
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+The Tier $\alpha$ paper~\cite{StickyFlowGammaSeed} extracted from the
+two-point Le~Jan--Raimond sticky-flow generator a diagonal
+carr\'e-du-champ seed
+$\GamT(f,g)=(c_{\theta}/2)\,f'(x)\,g'(x)\,\mu_{\Delta}(dx)$ on the
+diagonal Hilbert space $L^{2}(\R,\mu_{\Delta})$, verified the
+matrix-positivity and form-closability axioms required by the
+companion construction~\cite{GammaHierarchyDivergence}, and produced
+a closed operator-derivative pair $(\Dth,\divth)$. That pair lives
+on the diagonal-supported $L^{2}$, not on the flow-noise space
+$L^{2}(\cN_{\theta})$.
+
+This paper carries out the Tier $\beta$ lift. We fix a time horizon
+$T>0$ and define the \emph{single-time cylindrical algebra at $T$}
+\[
+  \Aone
+  =\bigl\{F_{\mathbf x,T,\Phi}=\Phi(X_{T}^{x_{1}},\ldots,X_{T}^{x_{m}}):
+       m\ge 1,\,\mathbf x\in\R^{m},\,\Phi\in C_{b}^{\infty}(\R^{m})\bigr\}
+\]
+of finite-particle observations of the LJR sticky flow at time $T$,
+and lift the diagonal seed to a cylindrical carr\'e-du-champ
+\[
+  \GamN\colon\Aone\times\Aone\longrightarrow L^{1}(\cN_{\theta})
+\]
+by pullback from the spatial $m$-point carr\'e-du-champ $\GamM{m}$
+of the LJR generator $\Lth{m}$. We verify symmetry, constancy
+vanishing, matrix positivity, and weighted matrix positivity for
+$\GamN$ on $\Aone$ (\cref{thm:axioms}); the matrix-positivity
+arguments use a square-of-sum structural property of $\GamM{m}$
+that we abstract from the LJR convention as \cref{ax:sos}. A
+multi-time extension to the larger algebra $\Acyl$ via a
+constant-prolongation convention (\cref{conv:multi-time}) is
+recorded but is not the primary object of the construction.
+
+The fifth axiom, form closability of the lifted single-time energy
+form on the time-$T$ sub-Hilbert space
+$\Hone=L^{2}(\Omega,\FT,\Pth)$ generated by
+$\sigma(X_{T}^{x}:x\in\R)$, is isolated as Hypothesis~$\beta$-1
+(\cref{hyp:beta1}). We do not prove it; we give a
+\emph{projective-limit closability criterion}
+(\cref{thm:proj-lim-closability}) showing that
+Hypothesis~$\beta$-1 follows from three explicit
+finite-dimensional / projective conditions:
+{\normalfont (P1)} closability of the LJR $m$-point
+Wentzell--Dirichlet form (\cref{P1}); {\normalfont (P2)} pullback
+compatibility, automatic from the LJR consistency convention
+\cref{conv:LJR-n}$(\mathrm{iv})$ (\cref{P2}); and {\normalfont (P3)}
+conditional-expectation energy contraction (\cref{P3}). A general
+Dirichlet-form factor lemma (\cref{lem:abstract-factor}) further
+shows that {\normalfont (P3)} follows from the more checkable
+semigroup-intertwining property {\normalfont (P3')}
+(\cref{P3prime}, \cref{cor:P3prime-implies-P3}). The remaining
+load-bearing assumptions are therefore {\normalfont (P1)} for
+$m\ge 3$ (\cref{prob:per-stratum}) and {\normalfont (P3')} for the
+LJR $n$-point semigroups (\cref{prob:proj-lim}); neither is
+asserted to follow from a cited LJR result.
+
+Conditional on Hypothesis~$\beta$-1 (equivalently on
+{\normalfont (P1)}, {\normalfont (P2)}, {\normalfont (P3)}, or
+a fortiori on {\normalfont (P1)}, {\normalfont (P2)},
+{\normalfont (P3')}), the transfer theorem
+of~\cite{GammaHierarchyDivergence} produces a closed
+densely-defined operator-derivative pair
+\[
+  \DN\colon\Dom(\DN)\subset\Hone\longrightarrow\cU_{\GamN},
+  \qquad
+  \divN=\DN^{*},
+\]
+on the time-$T$ single-time sub-Hilbert space
+$\Hone\subseteq L^{2}(\cN_{\theta})$, satisfying the
+integration-by-parts identity (\cref{thm:transfer-cyl,cor:transfer-P}).
+The multi-time extension to a pair on $L^{2}(\cN_{\theta})$
+requires a strictly stronger multi-time form-closability
+hypothesis (\cref{rem:multi-time-formclos,rem:transfer-multi})
+and is not asserted in the main theorem. The lifted seed is consistent with
+the Tier $\alpha$ diagonal seed on the diagonal stratum of
+two-point observables (\cref{thm:consistency}).
+
+This is a Tier $\beta$ result. We do not claim a flow-noise
+construction over the Brownian web, two-dimensional critical
+percolation, or any other black noise outside LJR; we do not claim
+the Leibniz defect of $\DN$ detects blackness of $\cN_{\theta}$; and
+we do not claim a path-space Malliavin realization of
+$(\DN,\divN)$.
+\end{abstract}
+
+\maketitle
+
+%==============================================================
+\section{Introduction}\label{sec:intro}
+%==============================================================
+
+\subsection{Where this paper sits}\label{sec:intro-where}
+
+The paper~\cite{StickyFlowGammaSeed} (Tier $\alpha$) extracted from
+the Le~Jan--Raimond two-point sticky-flow generator $\Lth{2}$ a
+diagonal carr\'e-du-champ seed
+\begin{equation}\label{eq:tier-alpha-seed}
+  \GamT(f,g)(x)
+  \;=\;\tfrac{c_{\theta}}{2}\,f'(x)\,g'(x)\,\mu_{\Delta}(dx),
+  \qquad f,g\in\cT^{(2)}\subset C_{c}^{\infty}(\R),
+\end{equation}
+verified the five axioms of~\cite{GammaHierarchyDivergence}, and
+obtained by transfer a closed operator-derivative pair
+$(\Dth,\divth)$ on $L^{2}(\R,\mu_{\Delta})$. That construction lives
+on the diagonal-supported Hilbert space, not on the flow-noise space
+$L^{2}(\cN_{\theta})$ of the sticky flow itself.
+
+The present paper carries out the Tier $\beta$ lift. We fix a time
+horizon $T>0$ and treat as primary the \emph{single-time cylindrical
+algebra at $T$},
+$\Aone\subset L^{\infty}(\cN_{\theta})\cap L^{2}(\cN_{\theta})$, of
+finite-particle observations of the LJR flow at time $T$. The
+lifted carr\'e-du-champ
+\begin{equation}\label{eq:lifted-Gamma-intro}
+  \GamN\colon\Aone\times\Aone\longrightarrow L^{1}(\cN_{\theta}),
+\end{equation}
+is defined by pullback from the spatial $m$-point carr\'e-du-champ
+$\GamM{m}$. We verify the axioms {\normalfont\textsc{(Sym)}},
+{\normalfont\textsc{(Vanish)}}, {\normalfont\textsc{(MatPos)}}, and
+{\normalfont\textsc{(WMatPos)}} on $\Aone$, and isolate the fifth,
+{\normalfont\textsc{(FormClos)}} on the time-$T$ sub-Hilbert space
+$\Hone=L^{2}(\Omega,\FT,\Pth)$, as Open Problem~$\beta$-1. The
+projective-limit closability criterion
+(\cref{thm:proj-lim-closability}) reduces this open problem to
+the conjunction of {\normalfont (P1)} (finite-dimensional LJR
+$m$-point Wentzell--Dirichlet closability), {\normalfont (P2)}
+(pullback compatibility, automatic from the LJR consistency
+convention), and {\normalfont (P3)} (conditional-expectation energy
+contraction); the abstract Dirichlet-form factor lemma
+(\cref{lem:abstract-factor,cor:P3prime-implies-P3}) further
+reduces {\normalfont (P3)} to the semigroup intertwining
+{\normalfont (P3')}. A multi-time extension to the larger algebra
+$\Acyl$ via \cref{conv:multi-time} is recorded but requires a
+strictly stronger hypothesis (\cref{rem:multi-time-formclos}) and
+is not part of the main theorem.
+
+Conditional on Hypothesis~$\beta$-1, the transfer theorem
+of~\cite{GammaHierarchyDivergence} produces a closed densely-defined
+operator-derivative pair
+\begin{align*}
+  &\DN\colon\Dom(\DN)\subset\Hone\longrightarrow\cU_{\GamN},\\
+  &\divN:=\DN^{*}\colon\Dom(\divN)\subset\cU_{\GamN}\longrightarrow\Hone,
+\end{align*}
+satisfying the integration-by-parts identity
+$\E[F\,\divN(u)]=\langle\DN F,u\rangle_{\cU_{\GamN}}$.
+
+\subsection{What is and is not claimed}\label{sec:intro-claims}
+
+\textbf{Claimed.}
+\begin{enumerate}
+\item A definition by pullback of $\GamN$ on the single-time
+cylindrical algebra $\Aone$ at fixed $T>0$, parametric in the LJR
+$m$-point generator $\Lth{m}$ and its spatial carr\'e-du-champ
+$\GamM{m}$
+(\cref{def:cyl-observable-1t,def:Aone,def:lifted-Gamma}).
+
+\item Verification that $\GamN$ satisfies
+{\normalfont\textsc{(Sym)}}, {\normalfont\textsc{(Vanish)}},
+{\normalfont\textsc{(MatPos)}}, {\normalfont\textsc{(WMatPos)}} on
+$\Aone$ (\cref{thm:axioms}). The matrix-positivity arguments rely
+on a square-of-sum structural property of $\GamM{m}$ which is
+itself imported from the LJR convention (\cref{ax:sos}). The
+proofs extend to the multi-time algebra $\Acyl$ via
+\cref{conv:multi-time} (\cref{rem:axioms-multi-extend}).
+
+\item Conditional on {\normalfont\textsc{(FormClos)}} on $\Hone$
+(Hypothesis~$\beta$-1, \cref{hyp:beta1}), or equivalently on
+the conjunction of {\normalfont (P1)}--{\normalfont (P3)}
+(\cref{cor:transfer-P}), or a fortiori on
+{\normalfont (P1)}, {\normalfont (P2)}, and {\normalfont (P3')},
+the transfer theorem of~\cite{GammaHierarchyDivergence} yields a
+closed densely-defined operator-derivative pair $(\DN,\divN)$ on
+the time-$T$ sub-Hilbert space $\Hone\subseteq L^{2}(\cN_{\theta})$,
+satisfying integration by parts (\cref{thm:transfer-cyl}).
+
+\item A projective-limit closability criterion
+(\cref{thm:proj-lim-closability}): {\normalfont (P1)+(P2)+(P3)}
+imply {\normalfont\textsc{(FormClos)}} on $\Hone$. An abstract
+Dirichlet-form factor lemma (\cref{lem:abstract-factor}):
+under semigroup intertwining and pullback compatibility, the
+conditional expectation contracts the energy form. Specialized to
+LJR (\cref{cor:P3prime-implies-P3}): {\normalfont (P3')} implies
+{\normalfont (P3)}.
+
+\item Consistency: on two-point single-time observables in the
+diagonal direction, the lifted $\GamN$ recovers the Tier $\alpha$
+diagonal seed~\eqref{eq:tier-alpha-seed}
+(\cref{thm:consistency}).
+\end{enumerate}
+
+\textbf{Not claimed.}
+\begin{itemize}
+\item No proof of {\normalfont\textsc{(FormClos)}} on $\Hone$. The
+projective-limit criterion identifies the analytic content as
+{\normalfont (P1)}+{\normalfont (P3')}; verification of either
+under the LJR convention is left open.
+
+\item No verification that the LJR $n$-point family satisfies
+{\normalfont (P1)} for $m\ge 3$ or {\normalfont (P3')}. We do not
+cite any LJR result that would close either; the cases $m=1,2$ of
+{\normalfont (P1)} are settled in standard Brownian and Tier
+$\alpha$ contexts, but $m\ge 3$ is open
+(\cref{prob:per-stratum}), and {\normalfont (P3')} at the
+$L^{2}$-semigroup level on $\mu_{\mathbf y}$ is open
+(\cref{prob:proj-lim}).
+
+\item No construction of $(\DN,\divN)$ on the full
+$L^{2}(\cN_{\theta})$. The multi-time extension via
+\cref{conv:multi-time} requires a strictly stronger closability
+hypothesis (\cref{rem:multi-time-formclos,rem:transfer-multi}) and
+is left open.
+
+\item No flow-noise lift over Brownian web, two-dimensional
+critical percolation, or any other black noise outside LJR.
+
+\item No higher carr\'e-du-champ hierarchy
+$\{\GamM{n,(N)}\}_{N\ge 3}$ at the flow-noise level, beyond what is
+inherited from the LJR $n$-point convention through pullback.
+
+\item No claim that the construction \emph{detects} blackness
+intrinsically.
+
+\item No path-space Malliavin lift on $\cN_{\theta}$. The pullback
+recipe is a definition; it does not claim to coincide with an
+intrinsic flow-noise calculus, should one exist.
+\end{itemize}
+
+\subsection{Structure of the paper}\label{sec:intro-structure}
+
+\Cref{sec:LJR} sets up the LJR sticky-flow noise $\cN_{\theta}$, the
+random kernel $K_{s,t}$, the $n$-point motion, and the spatial
+$n$-point carr\'e-du-champ $\GamM{n}$, all under a single Convention
+block, and abstracts the square-of-sum property as
+\cref{ax:sos}. \Cref{sec:cyl-algebra} defines the single-time
+cylindrical test algebra $\Aone$ at fixed $T>0$ as the primary
+object, with the multi-time extension $\Acyl$ as a derived
+construct via \cref{conv:multi-time}.
+\Cref{sec:lifted-Gamma} defines the lifted $\GamN$ on $\Aone$ by
+pullback and verifies its particle-tuple padding consistency and
+$L^{1}$-integrability, then records the multi-time extension.
+\Cref{sec:axioms} verifies {\normalfont\textsc{(Sym)}},
+{\normalfont\textsc{(Vanish)}}, {\normalfont\textsc{(MatPos)}},
+{\normalfont\textsc{(WMatPos)}} on $\Aone$. \Cref{sec:formclos}
+states Hypothesis~$\beta$-1 and reduces it to per-stratum
+Wentzell--Dirichlet closability of the LJR $m$-point form together
+with a projective-limit step across particle tuples.
+\Cref{sec:transfer} states the conditional construction theorem on
+$\Hone$. \Cref{sec:consistency} verifies consistency with Tier
+$\alpha$. \Cref{sec:open} lists the remaining open problems.
+
+\subsection{Notation}\label{sec:intro-notation}
+
+We work on the LJR flow-noise probability space
+$(\Omega,\cF,\Pth)$ with associated continuous product structure
+$\cN_{\theta}=(\cF^{\theta}_{s,t})_{s\le t}$. The primary object of
+the construction is indexed by a fixed time $T>0$ and a finite
+particle tuple $\mathbf x=(x_{1},\ldots,x_{m})\in\R^{m}$, with
+single-time evaluation vector
+$\mathbf X_{T}^{\mathbf x}=(X_{T}^{x_{1}},\ldots,X_{T}^{x_{m}})\in\R^{m}$.
+The multi-time extension uses general label tuples
+$\lambda=((x_{i},t_{i}))_{i=1}^{m}\subset\R\times[0,\infty)$, with
+$|\lambda|=m$ and
+$\mathbf Z_{\lambda}=(X^{x_{1}}_{t_{1}},\ldots,X^{x_{m}}_{t_{m}})\in\R^{m}$,
+under \cref{conv:multi-time}.
+$\E$ denotes $\E_{\Pth}$. We write $\Aonep$ and $\Acylp$ for the
+nonnegative cones of $\Aone$ and $\Acyl$ respectively. Norms in
+$L^{p}(\cN_{\theta})$ and in modules are subscripted explicitly
+when needed.
+
+%==============================================================
+\section{LJR flow-noise and \texorpdfstring{$n$}{n}-point convention}\label{sec:LJR}
+%==============================================================
+
+\subsection{The sticky flow and its noise}\label{sec:LJR-flow}
+
+The Le~Jan--Raimond Brownian sticky flow with sticky parameter
+$\theta\in[0,\infty]$ is a stochastic flow of kernels
+\begin{equation}\label{eq:LJR-kernel}
+  K^{\theta}_{s,t}\colon\R\to\cP(\R),\qquad 0\le s\le t,
+\end{equation}
+on the line, jointly measurable in $(s,t,x,\omega)$, satisfying the
+flow property
+$K^{\theta}_{s,u}(x,A)=\int K^{\theta}_{t,u}(y,A)\,K^{\theta}_{s,t}(x,dy)$
+in $L^{2}(\Pth)$ for $s\le t\le u$ and characterized through its
+$n$-point motions~\cite[Thm.~3.2 and \S 4]{LeJanRaimond2004}.
+Throughout, $\theta\in[0,\infty]$ is fixed and we drop the
+superscript: $K_{s,t}=K^{\theta}_{s,t}$.
+
+The associated \emph{flow noise} $\cN_{\theta}=(\cF^{\theta}_{s,t})_{s\le t}$
+is the continuous product of probability spaces in the sense
+of~\cite[\S 6]{LeJanRaimond2004,Tsirelson2004}: $\cF^{\theta}_{s,t}$
+is the $\Pth$-completion of $\sigma(K_{u,v}:s\le u\le v\le t)$.
+Depending on the LJR parameter convention, the
+coalescing/Brownian-web regimes are the natural black-noise targets;
+specific endpoint and classicality statements
+(e.g.\ identifying $\theta=\infty$ with the Brownian web noise of
+\cite{Tsirelson2004,SchertzerSunSwart}, or $\theta=0$ with a
+classical Wiener-type sub-noise) should be read relative to the
+cited convention. The precise classification of the sub-noise
+hierarchy of $\cN_{\theta}$ along $\theta\in[0,\infty]$ is not used
+in this paper.
+
+\subsection{Particles and \texorpdfstring{$n$}{n}-point motions}\label{sec:LJR-npoint}
+
+For $x\in\R$ and $t\ge 0$, sample the random measure $K_{0,t}(x,\cdot)$
+to obtain $X^{x}_{t}\in\R$; under the LJR convention this is the
+\emph{particle of the flow started at~$x$ and observed at time~$t$}.
+For $n\ge 1$ and $\mathbf x=(x_{1},\ldots,x_{n})\in\R^{n}$, the
+\emph{$n$-point motion}
+\begin{equation}\label{eq:n-point-motion}
+  \bigl(X^{x_{1}}_{t},\ldots,X^{x_{n}}_{t}\bigr)_{t\ge 0}
+\end{equation}
+is a Markov process on $\R^{n}$ with sticky behaviour on the
+collision strata~\cite[\S 3]{LeJanRaimond2004}. Its generator,
+domain, and a $\sigma$-finite reference measure on $\R^{n}$ are
+imported from LJR by the following convention.
+
+\begin{convention}[LJR \texorpdfstring{$n$}{n}-point data]\label{conv:LJR-n}
+We import from~\cite[\S 3--4]{LeJanRaimond2004} the following data,
+parametric in $\theta\in[0,\infty]$ and in $n\ge 1$:
+\begin{enumerate}
+\item[$(\mathrm i)$] a generator
+\[
+  \Lth{n}\colon\Dom(\Lth{n})\subset L^{2}(\R^{n},m_{\theta,n})\longrightarrow L^{2}(\R^{n},m_{\theta,n})
+\]
+of the $n$-point motion, with $C_{c}^{\infty}(\R^{n})\subset\Dom(\Lth{n})$
+on the open stratum $\{x_{i}\neq x_{j}\text{ for all }i\neq j\}$,
+and a Wentzell-type boundary domain on each collision stratum
+$\Delta_{S}=\{\mathbf x\in\R^{n}:x_{i}=x_{j}\text{ for all }i,j\in S\}$,
+$|S|\ge 2$, parametrized by sticky coefficients
+$c_{\theta,k}\in[0,\infty]$ ($k=|S|$), with $c_{\theta,1}=0$;
+\item[$(\mathrm{ii})$] a $\sigma$-finite Radon reference measure
+$m_{\theta,n}$ on $\R^{n}$ under which $\Lth{n}$ is symmetric;
+$\theta$- and $n$-dependent and decomposed along the partition of
+$\R^{n}$ into open and collision strata, with diagonal contributions
+inherited from the Tier $\alpha$ measure $\mu_{\Delta}$ of
+\cite{StickyFlowGammaSeed} on each codimension-one stratum;
+\item[$(\mathrm{iii})$] a spatial $n$-point carr\'e-du-champ
+$\GamM{n}\colon\Tcyl^{(n)}\times\Tcyl^{(n)}\to L^{1}(\R^{n},m_{\theta,n})$
+defined as the polarized form of $\Lth{n}$,
+\begin{equation}\label{eq:Gamma-n-def}
+  \GamM{n}(\Phi,\Psi)
+  :=\tfrac12\bigl(\Lth{n}(\Phi\Psi)-\Phi\,\Lth{n}\Psi-\Psi\,\Lth{n}\Phi\bigr),
+\end{equation}
+on a domain $\Tcyl^{(n)}\supset C_{c}^{\infty}(\R^{n})$ that is
+closed under products of bounded $C^{\infty}$ functions of $\R^{n}$
+and contains $C_{b}^{\infty}(\R^{n})$ in the strong sense that
+$\GamM{n}(\Phi,\Psi)$ is well-defined as an element of
+$L^{1}(\R^{n},m_{\theta,n})$ for $\Phi,\Psi\in C_{b}^{\infty}(\R^{n})$;
+\item[$(\mathrm{iv})$] LJR consistency: for every coordinate-deletion
+projection $\pi_{n,n-1}\colon\R^{n}\to\R^{n-1}$,
+\begin{equation}\label{eq:LJR-consistency}
+  \GamM{n}\bigl(\Phi\circ\pi_{n,n-1},\Psi\circ\pi_{n,n-1}\bigr)(\mathbf x)
+  =\GamM{n-1}(\Phi,\Psi)\bigl(\pi_{n,n-1}(\mathbf x)\bigr)
+\end{equation}
+$m_{\theta,n}$-a.e.\ on $\R^{n}$, and
+$(\pi_{n,n-1})_{*}m_{\theta,n}=m_{\theta,n-1}$ as $\sigma$-finite
+Radon measures.
+\end{enumerate}
+We do not pin down explicit forms of $m_{\theta,n}$ for $n\ge 3$ or
+of $c_{\theta,k}$ for $k\ge 3$; both are imported
+from~\cite[\S 3--4]{LeJanRaimond2004} as the LJR convention. The
+two-point case $n=2$ recovers the data of the Tier $\alpha$
+paper~\cite{StickyFlowGammaSeed}, and we write
+$c_{\theta}:=c_{\theta,2}$ throughout.
+\end{convention}
+
+\begin{remark}[$n=1$ case]\label{rem:n1}
+For $n=1$ there is no collision stratum:
+$\Lth{1}=\tfrac12\partial_{x}^{2}$ on $C_{c}^{\infty}(\R)$,
+$m_{\theta,1}$ is Lebesgue, and
+$\GamM{1}(\Phi,\Psi)=\tfrac12\Phi'\Psi'$ is the standard Brownian
+carr\'e-du-champ on the line.
+\end{remark}
+
+\begin{remark}[$n=2$ recovery of Tier $\alpha$]\label{rem:n2-tier-alpha}
+For $n=2$ and $\Phi(x_{1},x_{2})=\phi(x_{1})\psi(x_{2})$, the
+diagonal stratum $\Delta_{\{1,2\}}=\{x_{1}=x_{2}\}$ carries the
+sticky contribution
+$\frac{c_{\theta}}{2}\phi'(x)\psi'(x)\,\mu_{\Delta}(dx)$ in the
+diagonal direction, which is the Tier $\alpha$ diagonal seed
+\eqref{eq:tier-alpha-seed}; off the diagonal the $n=2$ form reduces to
+the independent two-Brownian carr\'e-du-champ
+$\tfrac12((\partial_{x_{1}}\Phi)(\partial_{x_{1}}\Psi)+(\partial_{x_{2}}\Phi)(\partial_{x_{2}}\Psi))$.
+\end{remark}
+
+\subsection{Square-of-sum structural axiom}\label{sec:LJR-sos}
+
+The verification of {\normalfont\textsc{(MatPos)}} and
+{\normalfont\textsc{(WMatPos)}} for the lifted carr\'e-du-champ
+rests on the following structural property of $\GamM{n}$, which we
+abstract from the LJR convention.
+
+\begin{assumption}[LJR square-of-sum structure]\label{ax:sos}
+For every $n\ge 1$ there exist a countable measurable index set
+$\cI^{(n)}$, nonnegative $m_{\theta,n}$-measurable coefficient
+functions $\alpha^{(n)}_{\iota}\colon\R^{n}\to[0,\infty)$ for
+$\iota\in\cI^{(n)}$, and first-order linear differential operators
+$\partial^{(n)}_{\iota}\colon\Tcyl^{(n)}\to L^{0}(\R^{n})$ with
+real coefficients (gradient-direction operators) such that
+\begin{equation}\label{eq:SOS}
+  \GamM{n}(\Phi,\Psi)(\mathbf x)
+  \;=\;\sum_{\iota\in\cI^{(n)}}
+       \alpha^{(n)}_{\iota}(\mathbf x)\,
+       (\partial^{(n)}_{\iota}\Phi)(\mathbf x)\,
+       (\partial^{(n)}_{\iota}\Psi)(\mathbf x)
+  \quad\text{$m_{\theta,n}$-a.e.\ on }\R^{n},
+\end{equation}
+with the sum convergent in $L^{1}(\R^{n},m_{\theta,n})$ for
+$\Phi,\Psi\in C_{b}^{\infty}(\R^{n})$.
+\end{assumption}
+
+The decomposition~\eqref{eq:SOS} is the carr\'e-du-champ in
+``square-of-sum'' coordinates: each summand has the form
+$\alpha\cdot(\partial\Phi)(\partial\Psi)$ with $\alpha\ge 0$. For the
+LJR sticky flow under \cref{conv:LJR-n}, the index set $\cI^{(n)}$
+is the disjoint union of the $n$ open-stratum coordinate directions
+and one diagonal-direction index per non-trivial collision stratum
+$\Delta_{S}$, with
+\[
+  \alpha^{(n)}_{\iota}=\tfrac12\quad\text{(open stratum)},\qquad
+  \alpha^{(n)}_{\iota}=\tfrac{c_{\theta,|S|}}{2}\quad\text{on }\Delta_{S},
+\]
+and $\partial^{(n)}_{\iota}=\partial_{i}$ on the open stratum and
+$\partial^{(n)}_{\iota}=\sum_{j\in S}\partial_{j}$ on $\Delta_{S}$.
+The case $n=2$ is verified explicitly
+in~\cite[Lem.~5.2 and proof of Thm.~6.2]{StickyFlowGammaSeed};
+the general case follows from~\cite[\S 3]{LeJanRaimond2004} under
+\cref{conv:LJR-n}. \Cref{ax:sos} is therefore a structural
+abstraction of the LJR convention rather than an extra analytic
+hypothesis.
+
+%==============================================================
+\section{Cylindrical test algebra}\label{sec:cyl-algebra}
+%==============================================================
+
+Throughout this section and through \cref{sec:transfer}, we fix a
+time horizon $T>0$. The single-time cylindrical algebra at $T$ is
+the primary object; the multi-time extension follows in
+\cref{sec:cyl-multi-time}.
+
+\subsection{Single-time labels and the cylindrical algebra at \texorpdfstring{$T$}{T}}\label{sec:cyl-def-1t}
+
+A \emph{single-time particle tuple} at $T$ is a finite tuple
+$\mathbf x=(x_{1},\ldots,x_{m})\in\R^{m}$ with $m\ge 1$. The
+associated \emph{single-time evaluation vector} is
+\begin{equation}\label{eq:X-T-x}
+  \mathbf X_{T}^{\mathbf x}
+  :=\bigl(X_{T}^{x_{1}},\ldots,X_{T}^{x_{m}}\bigr)\in\R^{m},
+\end{equation}
+$\sigma(K_{0,T})$-measurable, with joint law
+$m_{\theta,T,\mathbf x}$ on $\R^{m}$ given by the LJR $m$-point
+semigroup applied to $\mathbf x$ at time~$T$.
+
+\begin{definition}[Single-time cylindrical observable]\label{def:cyl-observable-1t}
+For $\mathbf x\in\R^{m}$ and $\Phi\in C_{b}^{\infty}(\R^{m})$, the
+\emph{single-time cylindrical observable indexed by
+$(\mathbf x,T,\Phi)$} is
+\begin{equation}\label{eq:F-x-T-Phi}
+  F_{\mathbf x,T,\Phi}\;:=\;\Phi(\mathbf X_{T}^{\mathbf x})
+  \;\in\;L^{\infty}(\cN_{\theta})\cap L^{2}(\cN_{\theta}).
+\end{equation}
+\end{definition}
+
+\begin{definition}[Single-time cylindrical algebra]\label{def:Aone}
+The \emph{single-time cylindrical algebra at $T$} is
+\[
+  \Aone
+  :=\bigl\{F_{\mathbf x,T,\Phi}:m\ge 1,\,\mathbf x\in\R^{m},\,\Phi\in C_{b}^{\infty}(\R^{m})\bigr\},
+\]
+the unital subalgebra of
+$L^{\infty}(\cN_{\theta})\cap L^{2}(\cN_{\theta})$ generated by
+single-time cylindrical observables at $T$. It is closed under
+products by particle-tuple concatenation:
+\begin{equation}\label{eq:product-rule-1t}
+  F_{\mathbf x,T,\Phi}\cdot F_{\mathbf y,T,\Psi}
+  \;=\;F_{(\mathbf x,\mathbf y),T,\Phi\boxtimes\Psi},
+\end{equation}
+where $(\Phi\boxtimes\Psi)(\mathbf z,\mathbf z'):=\Phi(\mathbf z)\,\Psi(\mathbf z')$.
+\end{definition}
+
+Define the \emph{time-$T$ evaluation $\sigma$-field}
+\begin{equation}\label{eq:F-T-1t}
+  \FT\;:=\;\sigma\bigl(X_{T}^{x}:x\in\R\bigr)\;\subseteq\;\cF,
+\end{equation}
+and write $\Hone=L^{2}(\Omega,\FT,\Pth)$ for the corresponding
+sub-Hilbert space of $L^{2}(\cN_{\theta})$.
+
+\begin{lemma}[Density of $\Aone$ in $\Hone$]\label{lem:Aone-dense}
+$\Aone$ is dense in $\Hone$.
+\end{lemma}
+
+\begin{proof}
+$\FT$ is generated by the family $\{X_{T}^{x}:x\in\R\}$. The unital
+algebra $\Aone$ contains all bounded $C^{\infty}$-functions of any
+finite sub-family, hence by the monotone-class theorem is dense in
+$L^{2}(\Omega,\FT,\Pth)=\Hone$.
+\end{proof}
+
+\begin{remark}[$\Hone$ vs.\ $L^{2}(\cN_{\theta})$]\label{rem:Hone-vs-Ltheta}
+$\Hone$ is in general a strict sub-Hilbert space of
+$L^{2}(\cN_{\theta})$: the latter incorporates the full
+continuous-product information across all time intervals $(s,t)$,
+while $\Hone$ retains only the joint distribution of the
+single-time-$T$ particle field. The construction of
+\cref{sec:transfer} produces an operator-derivative pair on
+$\Hone$, conditional on Hypothesis~$\beta$-1 (\cref{hyp:beta1});
+extension of the pair to $L^{2}(\cN_{\theta})$ requires multi-time
+observables and the convention of \cref{sec:cyl-multi-time},
+together with an additional multi-time closability hypothesis
+(\cref{rem:multi-time-formclos}).
+\end{remark}
+
+\subsection{Particle-tuple padding (single-time)}\label{sec:cyl-padding-1t}
+
+For particle tuples $\mathbf x\subseteq\mathbf y$ (componentwise
+inclusion, allowing reorderings absorbed by the symmetry of
+$\GamM{n}$), the projection
+$\pi_{\mathbf y,\mathbf x}\colon\R^{|\mathbf y|}\to\R^{|\mathbf x|}$
+selects the coordinates corresponding to $\mathbf x$. Then
+$F_{\mathbf x,T,\Phi}=F_{\mathbf y,T,\Phi\circ\pi_{\mathbf y,\mathbf x}}$
+$\Pth$-a.s. Two single-time observables at $T$ can always be padded
+to a common particle tuple
+$\mathbf x\cup\mathbf y\supseteq\mathbf x,\mathbf y$. Padding will
+be used in \cref{def:lifted-Gamma} to define $\GamN(F,G)$ for
+arbitrary $F,G\in\Aone$ by reduction to a common particle tuple.
+
+\subsection{Multi-time extension via convention}\label{sec:cyl-multi-time}
+
+Multi-time labels (pairs $(x,t)$ with varying $t$, as in our
+notation \cref{sec:intro-notation}) are accommodated via the
+following convention.
+
+\begin{convention}[Multi-time spatial generator]\label{conv:multi-time}
+For a multi-time label tuple
+$\lambda=((x_{i},t_{i}))_{i=1}^{m}$ with at least one pair of
+distinct times $t_{i}\neq t_{j}$, set
+$T_{\lambda}:=\max_{i}t_{i}$ and let
+$\mathbf Z_{\lambda}:=(X^{x_{1}}_{t_{1}},\ldots,X^{x_{m}}_{t_{m}})\in\R^{m}$
+be the multi-time evaluation vector. The convention is that
+$\Phi(\mathbf Z_{\lambda})$ is treated as a single-time evaluation
+at $T_{\lambda}$ of the prolonged $m$-point motion in which each
+particle whose label time is $t_{i}<T_{\lambda}$ is stopped at
+$t_{i}$ and held constant on $[t_{i},T_{\lambda}]$, and that the
+spatial $|\lambda|$-point generator $\Lth{|\lambda|}$ (and its
+carr\'e-du-champ $\GamM{|\lambda|}$) acts at the evaluation event
+$\mathbf Z_{\lambda}$ accordingly. This extension preserves the LJR
+consistency \cref{conv:LJR-n}$(\mathrm{iv})$ under coordinate
+deletion.
+\end{convention}
+
+\begin{definition}[Multi-time cylindrical observable]\label{def:cyl-observable}
+For a multi-time label tuple
+$\lambda=((x_{i},t_{i}))_{i=1}^{m}$ and
+$\Phi\in C_{b}^{\infty}(\R^{m})$, the cylindrical observable
+indexed by $(\lambda,\Phi)$ is
+\begin{equation}\label{eq:F-lambda-Phi}
+  F_{\lambda,\Phi}\;:=\;\Phi(\mathbf Z_{\lambda})
+  \;\in\;L^{\infty}(\cN_{\theta})\cap L^{2}(\cN_{\theta}).
+\end{equation}
+\end{definition}
+
+\begin{definition}[Extended cylindrical algebra]\label{def:cyl-algebra}
+The \emph{extended (multi-time) cylindrical algebra} $\Acyl$ is the
+unital subalgebra of
+$L^{\infty}(\cN_{\theta})\cap L^{2}(\cN_{\theta})$ generated by all
+multi-time cylindrical observables~\eqref{eq:F-lambda-Phi}, with
+multi-time evaluation interpreted via \cref{conv:multi-time}.
+Closure under products is by label concatenation:
+\begin{equation}\label{eq:product-rule}
+  F_{\lambda,\Phi}\cdot F_{\lambda',\Phi'}
+  \;=\;F_{\lambda\sqcup\lambda',\Phi\boxtimes\Phi'},
+\end{equation}
+where $\lambda\sqcup\lambda'$ is the concatenated tuple. The
+single-time algebra is the sub-algebra $\Aone\subset\Acyl$
+obtained when all $t_{i}=T$.
+\end{definition}
+
+\begin{remark}[Convention vs.\ theorem]\label{rem:conv-not-theorem}
+\Cref{conv:multi-time} is a notational normalization. It converts
+multi-time labels to the single-time formalism of
+\cref{conv:LJR-n} by extending each particle's path constantly past
+its evaluation time. The construction at the multi-time level
+depends only on the resulting joint law $m_{\theta,\lambda}$ and on
+$\GamM{|\lambda|}$ as a spatial operator, via pullback. No claim of
+multi-time path-Malliavin calculus on $\cN_{\theta}$ is made; that
+is a separate construction (\cref{sec:open-path-Malliavin}).
+\end{remark}
+
+\begin{lemma}[Density of $\Acyl$ in $L^{2}(\cN_{\theta})$]\label{lem:cyl-dense}
+$\Acyl$ is dense in $L^{2}(\cN_{\theta})$.
+\end{lemma}
+
+\begin{proof}
+For each $T'>0$, $\cF^{\theta}_{0,T'}=\sigma(K_{u,v}:0\le u\le v\le T')$
+is generated, up to $\Pth$-null sets, by the family of $n$-point
+evaluations $\{X^{x}_{t}:x\in\R,\,0\le t\le T'\}$ as $n,T'$ vary;
+this is the LJR moment-of-flow generator
+characterization~\cite[Prop.~3.1 and Thm.~6.1]{LeJanRaimond2004}.
+The unital algebra $\Acyl$ contains all bounded $C^{\infty}$
+functions of finitely many such evaluations and is therefore dense
+in $L^{2}(\cN_{\theta})$ by the monotone-class theorem.
+\end{proof}
+
+\subsection{Padding for the extended algebra}\label{sec:cyl-padding}
+
+For multi-time label tuples $\lambda\subseteq\lambda'$
+(componentwise inclusion of labels, allowing repetitions and
+reorderings absorbed by the symmetry of $\GamM{n}$), the projection
+$\pi_{\lambda',\lambda}\colon\R^{|\lambda'|}\to\R^{|\lambda|}$
+selects the coordinates corresponding to $\lambda$, and
+$F_{\lambda,\Phi}=F_{\lambda',\Phi\circ\pi_{\lambda',\lambda}}$
+$\Pth$-a.s. Padding within $\Acyl$ thus extends the single-time
+particle-tuple padding of \cref{sec:cyl-padding-1t} via
+\cref{conv:multi-time}.
+
+%==============================================================
+\section{Lifted carr\'e-du-champ}\label{sec:lifted-Gamma}
+%==============================================================
+
+\subsection{Definition by pullback (single-time)}\label{sec:lifted-def}
+
+\begin{definition}[Lifted single-time carr\'e-du-champ]\label{def:lifted-Gamma}
+For single-time observables
+$F=F_{\mathbf x,T,\Phi},G=F_{\mathbf x,T,\Psi}\in\Aone$ at a common
+particle tuple $\mathbf x\in\R^{m}$, with
+$\Phi,\Psi\in C_{b}^{\infty}(\R^{m})\subset\Tcyl^{(m)}$, define
+\begin{equation}\label{eq:lifted-Gamma-def}
+  \GamN(F,G)\;:=\;\GamM{m}(\Phi,\Psi)(\mathbf X_{T}^{\mathbf x})
+  \quad\Pth\text{-a.s.\ on }\Omega.
+\end{equation}
+For arbitrary $F,G\in\Aone$, pad to a common particle tuple
+$\mathbf x$ as in \cref{sec:cyl-padding-1t} and
+apply~\eqref{eq:lifted-Gamma-def}.
+\end{definition}
+
+\begin{lemma}[Padding consistency, single-time]\label{lem:padding}
+For any pad $\mathbf x\subseteq\mathbf y$ with $|\mathbf x|=m$,
+$|\mathbf y|=m'$, and $\Phi,\Psi\in C_{b}^{\infty}(\R^{m})$,
+\begin{equation}\label{eq:padding-consistency}
+  \GamM{m'}\bigl(\Phi\circ\pi_{\mathbf y,\mathbf x},\Psi\circ\pi_{\mathbf y,\mathbf x}\bigr)(\mathbf X_{T}^{\mathbf y})
+  \;=\;\GamM{m}(\Phi,\Psi)(\mathbf X_{T}^{\mathbf x})
+  \quad\Pth\text{-a.s.}
+\end{equation}
+In particular, $\GamN(F,G)$ is well-defined on $\Aone$
+independently of the chosen padding.
+\end{lemma}
+
+\begin{proof}
+By repeated application of \cref{conv:LJR-n}$(\mathrm{iv})$ along a
+chain of single-coordinate projections from $\mathbf y$ to
+$\mathbf x$, each step preserves the equality
+$m_{\theta,T,\mathbf y}$-a.e.\ on $\R^{m'}$. The pushforward
+$(\pi_{\mathbf y,\mathbf x})_{*}m_{\theta,T,\mathbf y}=m_{\theta,T,\mathbf x}$
+and the joint law of
+$\mathbf X_{T}^{\mathbf y},\mathbf X_{T}^{\mathbf x}$
+($\mathbf X_{T}^{\mathbf x}$ being the
+$\pi_{\mathbf y,\mathbf x}$-image of $\mathbf X_{T}^{\mathbf y}$)
+transfer the $m_{\theta,T,\mathbf y}$-a.e.\ identity to a
+$\Pth$-a.s.\ identity at the random point.
+\end{proof}
+
+\begin{remark}[Status: definition, not theorem]\label{rem:def-not-thm}
+\Cref{def:lifted-Gamma} \emph{defines} $\GamN$ on $\Aone$ by
+pullback of the spatial $m$-point carr\'e-du-champ $\GamM{m}$ along
+the time-$T$ evaluation map. It is not derived from a deeper
+path-space Malliavin calculus on $\cN_{\theta}$. The pullback
+recipe is well-posed because of \cref{conv:LJR-n}$(\mathrm{iv})$
+and \cref{lem:padding}; its agreement with any independently
+defined intrinsic flow-noise carr\'e-du-champ (should one exist)
+is a separate question.
+\end{remark}
+
+\subsection{Integrability and bilinearity}\label{sec:lifted-integrability}
+
+\begin{lemma}[$L^{1}$-integrability]\label{lem:L1-integrability}
+For every $F=F_{\mathbf x,T,\Phi},G=F_{\mathbf x,T,\Psi}\in\Aone$
+with $\Phi,\Psi\in C_{b}^{\infty}(\R^{|\mathbf x|})$,
+\begin{equation}\label{eq:L1-bound}
+  \int_{\Omega}|\GamN(F,G)|\,d\Pth
+  \;=\;\int_{\R^{|\mathbf x|}}\bigl|\GamM{|\mathbf x|}(\Phi,\Psi)\bigr|\,dm_{\theta,T,\mathbf x}
+  \;<\;\infty,
+\end{equation}
+so that $\GamN(F,G)\in L^{1}(\cN_{\theta})$.
+\end{lemma}
+
+\begin{proof}
+The first equality is the change-of-variables under the law
+$m_{\theta,T,\mathbf x}$ of $\mathbf X_{T}^{\mathbf x}$. Finiteness
+follows from $\Phi,\Psi\in C_{b}^{\infty}(\R^{|\mathbf x|})$
+together with \cref{conv:LJR-n}$(\mathrm{iii})$ and the bound
+\[
+  \bigl|\GamM{n}(\Phi,\Psi)\bigr|
+  \;\le\;\tfrac12\bigl(\GamM{n}(\Phi,\Phi)+\GamM{n}(\Psi,\Psi)\bigr)
+\]
+(Cauchy--Schwarz applied to the nonnegative quadratic form
+$\GamM{n}$), with the right-hand side $L^{1}$-controlled by
+\cref{ax:sos} via
+$\sum_{\iota}\alpha^{(n)}_{\iota}(\partial^{(n)}_{\iota}\Phi)^{2}$
+for $\Phi\in C_{b}^{\infty}(\R^{n})$.
+\end{proof}
+
+\begin{proposition}[Bilinearity and polarization]\label{prop:bilinear}
+$\GamN\colon\Aone\times\Aone\to L^{1}(\cN_{\theta})$ is bilinear
+and satisfies the polarization identity
+\begin{equation}\label{eq:polarization}
+  \GamN(F,G)
+  =\tfrac14\bigl[\GamN(F+G,F+G)-\GamN(F-G,F-G)\bigr].
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+After common particle-tuple padding, bilinearity in $\Phi,\Psi$
+follows from the bilinearity of $\GamM{n}$ on $\Tcyl^{(n)}$
+(\cref{conv:LJR-n}$(\mathrm{iii})$, polarized definition).
+Polarization is standard from bilinearity and symmetry
+(\cref{lem:sym-cyl} below).
+\end{proof}
+
+\subsection{Multi-time extension}\label{sec:lifted-multi}
+
+The pullback recipe of \cref{def:lifted-Gamma} extends to the
+multi-time algebra $\Acyl$ via \cref{conv:multi-time}.
+
+\begin{definition}[Lifted multi-time carr\'e-du-champ]\label{def:lifted-Gamma-multi}
+For multi-time observables
+$F=F_{\lambda,\Phi},G=F_{\lambda,\Psi}\in\Acyl$ indexed by a common
+label tuple $\lambda$ with $|\lambda|=m$ and
+$\Phi,\Psi\in C_{b}^{\infty}(\R^{m})$, define
+\begin{equation}\label{eq:lifted-Gamma-multi}
+  \GamN(F,G)\;:=\;\GamM{m}(\Phi,\Psi)(\mathbf Z_{\lambda})
+  \quad\Pth\text{-a.s.\ on }\Omega,
+\end{equation}
+with $\mathbf Z_{\lambda}$ and the action of $\GamM{m}$ at this
+multi-time evaluation event interpreted via
+\cref{conv:multi-time}. For arbitrary $F,G\in\Acyl$, pad to a
+common label tuple as in \cref{sec:cyl-padding} and
+apply~\eqref{eq:lifted-Gamma-multi}.
+\end{definition}
+
+\begin{remark}[Honest status of the multi-time extension]\label{rem:multi-time-status}
+\Cref{def:lifted-Gamma-multi} agrees with \cref{def:lifted-Gamma}
+on the sub-algebra $\Aone\subset\Acyl$. Its well-posedness on the
+rest of $\Acyl$ relies on \cref{conv:multi-time}: the multi-time
+evaluation $\Phi(\mathbf Z_{\lambda})$ is reinterpreted as a
+single-time evaluation of a prolonged $|\lambda|$-point motion at
+$T_{\lambda}=\max_{i}t_{i}$. The LJR $|\lambda|$-point generator
+$\Lth{|\lambda|}$ acts naturally at a single time on the
+$|\lambda|$-point Markov state; its multi-time action is therefore
+through this stopping prolongation, not through an intrinsic
+multi-time path-space generator. Whether the present construction
+coincides with a path-Malliavin lift on $\cN_{\theta}$ (should one
+exist) is independent of the present paper
+(\cref{sec:open-path-Malliavin}).
+\end{remark}
+
+\subsection{Deferred extension: kernel-against-test-function
+observables}\label{sec:lifted-kernel}
+
+\begin{remark}[Kernel observables]\label{rem:kernel-obs}
+A strictly larger cylindrical algebra is obtained by replacing
+single-particle evaluations $X^{x}_{t}$ by smeared kernel
+evaluations $\langle K_{s,t}(x),\varphi\rangle=\int K_{s,t}(x,dy)\varphi(y)$
+for $\varphi\in C_{c}^{\infty}(\R)$. Such observables capture
+random-measure features of $K$ that no finite-particle observable
+sees, and \cref{conv:LJR-n}$(\mathrm{iv})$ does not directly cover
+them. We do not develop this extension here; the present paper is
+limited to finite-particle observables of
+\cref{def:cyl-observable-1t} (single-time, primary) and
+\cref{def:cyl-observable} (multi-time extension).
+\end{remark}
+
+%==============================================================
+\section{Verification of \texorpdfstring{(Sym), (Vanish), (MatPos),
+(WMatPos)}{Sym, Vanish, MatPos, WMatPos}}\label{sec:axioms}
+%==============================================================
+
+We verify the four algebraic axioms
+of~\cite[Ass.~2.4]{GammaHierarchyDivergence} for the lifted
+carr\'e-du-champ $\GamN$ on the single-time algebra $\Aone$. The
+fifth axiom, {\normalfont\textsc{(FormClos)}} on $\Hone$, is the
+subject of \cref{sec:formclos}. The proofs in this section extend
+verbatim to the multi-time extension $\Acyl$ via
+\cref{conv:multi-time}; see \cref{rem:axioms-multi-extend}.
+
+\subsection{Symmetry and constancy vanishing}\label{sec:axioms-symvan}
+
+\begin{lemma}[\normalfont\textsc{(Sym)}]\label{lem:sym-cyl}
+For all $F,G\in\Aone$, $\GamN(F,G)=\GamN(G,F)$ in
+$L^{1}(\cN_{\theta})$.
+\end{lemma}
+
+\begin{proof}
+After padding to a common particle tuple $\mathbf x$, this is the
+symmetry of
+$\GamM{|\mathbf x|}(\Phi,\Psi)=\GamM{|\mathbf x|}(\Psi,\Phi)$ in its
+smooth-function arguments (\cref{conv:LJR-n}$(\mathrm{iii})$,
+polarized definition), evaluated at $\mathbf X_{T}^{\mathbf x}$.
+\end{proof}
+
+\begin{lemma}[\normalfont\textsc{(Vanish)}]\label{lem:vanish-cyl}
+For every constant $c\in\R$ (viewed as the single-time observable
+$F_{\mathbf x,T,c}$ with $\Phi\equiv c$ for any $\mathbf x$) and
+every $G\in\Aone$, $\GamN(c,G)=0$ in $L^{1}(\cN_{\theta})$.
+\end{lemma}
+
+\begin{proof}
+For constant $\Phi\equiv c$, $\partial^{(n)}_{\iota}\Phi=0$ for
+every $\iota\in\cI^{(n)}$, so by \cref{ax:sos}
+\[
+  \GamM{n}(c,\Psi)
+  =\sum_{\iota}\alpha^{(n)}_{\iota}\cdot 0\cdot\partial^{(n)}_{\iota}\Psi
+  =0\quad\text{$m_{\theta,T,\mathbf x}$-a.e.\ on }\R^{n},
+\]
+hence
+$\GamN(c,G)=\GamM{|\mathbf x|}(c,\Psi)(\mathbf X_{T}^{\mathbf x})=0$
+$\Pth$-a.s.
+\end{proof}
+
+\subsection{Matrix positivity}\label{sec:axioms-matpos}
+
+\begin{lemma}[\normalfont\textsc{(MatPos)}]\label{lem:matpos-cyl}
+For every finite collection $F_{1},\ldots,F_{r}\in\Aone$ and every
+$U_{1},\ldots,U_{r}\in\Aone$,
+\begin{equation}\label{eq:axmatpos-cyl}
+  \sum_{p,q=1}^{r}\E\bigl[U_{p}U_{q}\,\GamN(F_{p},F_{q})\bigr]\;\ge\;0.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Pad all $F_{p}$ and $U_{p}$ to a common particle tuple $\mathbf x$
+of size $m$, so that
+$F_{p}=\Phi_{p}(\mathbf X_{T}^{\mathbf x})$,
+$U_{p}=V_{p}(\mathbf X_{T}^{\mathbf x})$ with
+$\Phi_{p},V_{p}\in C_{b}^{\infty}(\R^{m})$
+(\cref{lem:padding,sec:cyl-padding-1t}). By
+\cref{def:lifted-Gamma} and the change-of-variables
+\eqref{eq:L1-bound},
+\begin{align*}
+  \sum_{p,q}\E\bigl[U_{p}U_{q}\GamN(F_{p},F_{q})\bigr]
+  &=\sum_{p,q}\E\bigl[V_{p}(\mathbf X_{T}^{\mathbf x})\,V_{q}(\mathbf X_{T}^{\mathbf x})\,\GamM{m}(\Phi_{p},\Phi_{q})(\mathbf X_{T}^{\mathbf x})\bigr]\\
+  &=\sum_{p,q}\int_{\R^{m}}V_{p}\,V_{q}\,\GamM{m}(\Phi_{p},\Phi_{q})\,dm_{\theta,T,\mathbf x}.
+\end{align*}
+By \cref{ax:sos},
+\begin{align*}
+  \sum_{p,q}\int_{\R^{m}}V_{p}V_{q}\,\GamM{m}(\Phi_{p},\Phi_{q})\,dm_{\theta,T,\mathbf x}
+  &=\sum_{\iota\in\cI^{(m)}}\int_{\R^{m}}\alpha^{(m)}_{\iota}
+     \sum_{p,q}V_{p}V_{q}(\partial^{(m)}_{\iota}\Phi_{p})(\partial^{(m)}_{\iota}\Phi_{q})\,dm_{\theta,T,\mathbf x}\\
+  &=\sum_{\iota\in\cI^{(m)}}\int_{\R^{m}}\alpha^{(m)}_{\iota}
+     \Bigl(\sum_{p}V_{p}\,\partial^{(m)}_{\iota}\Phi_{p}\Bigr)^{2}\,dm_{\theta,T,\mathbf x}\\
+  &\ge 0,
+\end{align*}
+since $\alpha^{(m)}_{\iota}\ge 0$ and the squared sum is pointwise
+nonnegative.
+\end{proof}
+
+\subsection{Weighted matrix positivity}\label{sec:axioms-wmatpos}
+
+\begin{lemma}[\normalfont\textsc{(WMatPos)}]\label{lem:wmatpos-cyl}
+For every finite collection $F_{1},\ldots,F_{r}\in\Aone$, every
+$U_{1},\ldots,U_{r}\in\Aone$, and every nonnegative multiplier
+$Q\in\Aonep$,
+\begin{equation}\label{eq:axwmatpos-cyl}
+  \sum_{p,q=1}^{r}\E\bigl[Q\,U_{p}U_{q}\,\GamN(F_{p},F_{q})\bigr]\;\ge\;0.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Pad $F_{p},U_{p},Q$ to a common particle tuple $\mathbf x$ of
+size $m$, with $Q=W(\mathbf X_{T}^{\mathbf x})$ for
+$W\in C_{b}^{\infty}(\R^{m})$ nonnegative on the support of
+$m_{\theta,T,\mathbf x}$ (any $Q\in\Aonep$ admits such a
+representation under standard positivity-preserving padding).
+Repeating the square-of-sum computation of \cref{lem:matpos-cyl}
+with the additional nonnegative factor $W$ inside each summand:
+\begin{equation*}
+  \sum_{p,q}\int_{\R^{m}}W\,V_{p}V_{q}\,\GamM{m}(\Phi_{p},\Phi_{q})\,dm_{\theta,T,\mathbf x}
+  =\sum_{\iota}\int_{\R^{m}}W\,\alpha^{(m)}_{\iota}
+   \Bigl(\sum_{p}V_{p}\,\partial^{(m)}_{\iota}\Phi_{p}\Bigr)^{2}\,dm_{\theta,T,\mathbf x}\;\ge\;0,
+\end{equation*}
+since $W\ge 0$ and $\alpha^{(m)}_{\iota}\ge 0$ pointwise.
+\end{proof}
+
+\subsection{Combined verification}\label{sec:axioms-summary}
+
+\begin{theorem}[The lifted seed satisfies the algebraic
+GammaHierarchy axioms on $\Aone$]\label{thm:axioms}
+Under \cref{conv:LJR-n,ax:sos}, the lifted single-time
+carr\'e-du-champ
+$\GamN\colon\Aone\times\Aone\to L^{1}(\cN_{\theta})$ of
+\cref{def:lifted-Gamma} satisfies four of the five axioms of
+\cite[Ass.~2.4]{GammaHierarchyDivergence}:
+{\normalfont\textsc{(Sym)}} (\cref{lem:sym-cyl}),
+{\normalfont\textsc{(Vanish)}} (\cref{lem:vanish-cyl}),
+{\normalfont\textsc{(MatPos)}} (\cref{lem:matpos-cyl}), and
+{\normalfont\textsc{(WMatPos)}} (\cref{lem:wmatpos-cyl}). The fifth
+axiom, {\normalfont\textsc{(FormClos)}} on $\Hone$, is the subject
+of \cref{sec:formclos}.
+\end{theorem}
+
+\begin{proof}
+Each axiom is the corresponding lemma above.
+\end{proof}
+
+\begin{remark}[Multi-time extension of the axioms]\label{rem:axioms-multi-extend}
+Under \cref{conv:multi-time}, the proofs of
+\cref{lem:sym-cyl,lem:vanish-cyl,lem:matpos-cyl,lem:wmatpos-cyl}
+extend verbatim to the extended algebra $\Acyl$, with single-time
+evaluation vectors $\mathbf X_{T}^{\mathbf x}$ replaced by
+multi-time evaluation vectors $\mathbf Z_{\lambda}$ and the
+reference measures $m_{\theta,T,\mathbf x}$ replaced by
+$m_{\theta,\lambda}$, since each step of the square-of-sum
+computation is a stratum-wise spatial identity. The corresponding
+multi-time axiom statements hold for $\Acyl$;
+see~\cref{rem:multi-time-formclos} for the additional multi-time
+form-closability hypothesis required for the
+\cref{thm:transfer-cyl} construction at the multi-time level.
+\end{remark}
+
+%==============================================================
+\section{Projective-limit closability criterion}\label{sec:formclos}
+%==============================================================
+
+\subsection{The hypothesis to be proved}\label{sec:formclos-statement}
+
+\begin{definition}[Lifted single-time energy form at $T$]\label{def:lifted-energy}
+The \emph{lifted single-time energy form at $T$} on $\Aone$ is
+\begin{equation}\label{eq:Eth-cyl}
+  \Ecyl(F,G):=\E\bigl[\GamN(F,G)\bigr],\qquad F,G\in\Aone.
+\end{equation}
+\end{definition}
+
+By \cref{lem:sym-cyl,prop:bilinear,lem:matpos-cyl}, $\Ecyl$ is a
+densely defined nonnegative symmetric bilinear form on
+$\Aone\subset\Hone$. Its closability on $\Hone$ is the missing fifth
+axiom of \cite[Ass.~2.4]{GammaHierarchyDivergence}.
+
+\begin{hypothesis}[\normalfont\textsc{(FormClos)} on $\Hone$;
+Hypothesis~$\beta$-1]\label{hyp:beta1}
+The form $\Ecyl\colon\Aone\times\Aone\to\R$ is closable on
+$\Hone=L^{2}(\Omega,\FT,\Pth)$: for every sequence
+$(F_{n})_{n\ge 1}\subset\Aone$ such that
+\begin{enumerate}
+\item[$(\mathrm a)$] $F_{n}\to 0$ in $\Hone$, and
+\item[$(\mathrm b)$] $\Ecyl(F_{n}-F_{m},F_{n}-F_{m})\to 0$ as
+$n,m\to\infty$,
+\end{enumerate}
+one has $\Ecyl(F_{n},F_{n})\to 0$.
+\end{hypothesis}
+
+The standard closability condition is~\cite[\S 1.3]{FOT}; once it
+holds, the closure $(\overline{\Ecyl},\overline{\Aone})$ is a
+densely defined nonnegative symmetric closed form on $\Hone$.
+
+The remainder of \cref{sec:formclos} gives a sufficient criterion
+for Hypothesis~$\beta$-1 in terms of three concrete
+finite-dimensional / projective conditions, together with a status
+discussion under the LJR convention. The criterion does not prove
+Hypothesis~$\beta$-1 unconditionally; rather, it sharpens the
+analytic content of \textsc{(FormClos)} on $\Hone$ from an
+infinite-dimensional closability statement on cylindrical
+functionals to two structural questions on the LJR $n$-point
+Wentzell--Dirichlet forms.
+
+\subsection{Finite-dimensional setup}\label{sec:formclos-setup}
+
+For a finite particle tuple $\mathbf x=(x_{1},\ldots,x_{m})\in\R^{m}$,
+write $E_{\mathbf x}\simeq\R^{m}$, and let
+\begin{equation}\label{eq:Z-x}
+  Z_{\mathbf x}\colon\Omega\to E_{\mathbf x},\qquad
+  Z_{\mathbf x}:=\mathbf X_{T}^{\mathbf x}=(X_{T}^{x_{1}},\ldots,X_{T}^{x_{m}}),
+\end{equation}
+be the $\mathbf x$-coordinate map of \cref{eq:X-T-x}, with law
+$\mu_{\mathbf x}:=m_{\theta,T,\mathbf x}$ on $E_{\mathbf x}$. The
+finite-dimensional carr\'e-du-champ form is
+\begin{equation}\label{eq:E-x-finite}
+  \cE_{\mathbf x}(\Phi,\Psi)\;:=\;\int_{E_{\mathbf x}}\GamM{m}(\Phi,\Psi)\,d\mu_{\mathbf x},
+  \qquad\Phi,\Psi\in\mathcal D_{\mathbf x},
+\end{equation}
+on a domain $\mathcal D_{\mathbf x}\supseteq C_{b}^{\infty}(E_{\mathbf x})$
+inherited from \cref{conv:LJR-n}$(\mathrm{iii})$, viewed as a
+Dirichlet form generated by $\Lth{m}$ on $L^{2}(\mu_{\mathbf x})$.
+
+For $\mathbf x\subseteq\mathbf y$ (componentwise inclusion of
+particle labels, \cref{sec:cyl-padding-1t}), let
+$\pi_{\mathbf y,\mathbf x}\colon E_{\mathbf y}\to E_{\mathbf x}$ be
+the coordinate projection and let
+\begin{equation}\label{eq:P-J-I}
+  P_{\mathbf x}^{\mathbf y}\colon L^{2}(\mu_{\mathbf y})\longrightarrow L^{2}(\mu_{\mathbf x})
+\end{equation}
+be the conditional expectation onto the $\mathbf x$-coordinates,
+i.e.\ orthogonal projection in $\Hone$ onto the closed subspace
+$L^{2}(\sigma(Z_{\mathbf x}))$ followed by the
+$\mu_{\mathbf x}$-isometric identification of
+$L^{2}(\sigma(Z_{\mathbf x}))$ with $L^{2}(\mu_{\mathbf x})$. With
+this notation, the per-stratum form is exactly the cylindrical
+form on $\Aoneat{\mathbf x}=\{F_{\mathbf x,T,\Phi}:\Phi\in\mathcal D_{\mathbf x}\}$:
+
+\begin{lemma}[Per-stratum form, single-time]\label{lem:per-stratum}
+For every $\Phi,\Psi\in\mathcal D_{\mathbf x}$,
+\begin{equation}\label{eq:per-stratum-lift}
+  \Ecyl(F_{\mathbf x,T,\Phi},F_{\mathbf x,T,\Psi})
+  \;=\;\cE_{\mathbf x}(\Phi,\Psi).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Combine \cref{lem:L1-integrability} and \cref{def:lifted-Gamma}.
+\end{proof}
+
+\subsection{The projective-limit assumptions}\label{sec:formclos-assumptions}
+
+\begin{assumption}[(P1) Finite-dimensional closability]\label{P1}
+For every finite particle tuple $\mathbf x$, the form
+$(\cE_{\mathbf x},\mathcal D_{\mathbf x})$ is closable on
+$L^{2}(\mu_{\mathbf x})$ as a Dirichlet form generated by the LJR
+$m$-point Wentzell-type generator $\Lth{m}$.
+\end{assumption}
+
+\begin{assumption}[(P2) Pullback compatibility]\label{P2}
+For every $\mathbf x\subseteq\mathbf y$ and all
+$\Phi,\Psi\in\mathcal D_{\mathbf x}$,
+\begin{equation}\label{eq:P2}
+  \cE_{\mathbf y}\bigl(\Phi\circ\pi_{\mathbf y,\mathbf x},
+                       \Psi\circ\pi_{\mathbf y,\mathbf x}\bigr)
+  \;=\;\cE_{\mathbf x}(\Phi,\Psi).
+\end{equation}
+\end{assumption}
+
+\begin{assumption}[(P3) Conditional-expectation energy contraction]\label{P3}
+For every $\mathbf x\subseteq\mathbf y$ and every
+$\Phi\in\mathcal D_{\mathbf y}$, the projected element
+$P_{\mathbf x}^{\mathbf y}\Phi$ lies in $\mathcal D_{\mathbf x}$
+and
+\begin{equation}\label{eq:P3}
+  \cE_{\mathbf x}\bigl(P_{\mathbf x}^{\mathbf y}\Phi,
+                       P_{\mathbf x}^{\mathbf y}\Phi\bigr)
+  \;\le\;\cE_{\mathbf y}(\Phi,\Phi).
+\end{equation}
+\end{assumption}
+
+\begin{remark}[Notational shorthand on $\Aone$]\label{rem:P-shorthand}
+For $F=\Phi(Z_{\mathbf y})\in\Aone$ with
+$\Phi\in\mathcal D_{\mathbf y}$ and $\mathbf x\subseteq\mathbf y$,
+write $P_{\mathbf x}F:=(P_{\mathbf x}^{\mathbf y}\Phi)(Z_{\mathbf x})\in\Aoneat{\mathbf x}\subseteq\Aone$
+(well-defined under (P3)). Then $P_{\mathbf x}F$ is the
+$\Hone$-conditional expectation $\E[F\mid\sigma(Z_{\mathbf x})]$,
+and (P2)--(P3) imply $\Ecyl(P_{\mathbf x}F)\le\Ecyl(F)$.
+\end{remark}
+
+\subsection{The criterion}\label{sec:formclos-theorem}
+
+\begin{theorem}[Projective-limit closability criterion]\label{thm:proj-lim-closability}
+Assume \cref{conv:LJR-n,ax:sos} together with assumptions (P1),
+(P2), (P3) of \cref{P1,P2,P3}. Then Hypothesis~$\beta$-1
+(\cref{hyp:beta1}) holds: the form $(\Ecyl,\Aone)$ is closable on
+$\Hone$.
+\end{theorem}
+
+\begin{proof}
+Let $(F_{n})\subset\Aone$ satisfy $F_{n}\to 0$ in $\Hone$ and
+$\Ecyl(F_{n}-F_{m})\to 0$ as $n,m\to\infty$. We show $\Ecyl(F_{n})\to 0$.
+
+\emph{Step 1 (cut to a single label window).} Fix $\varepsilon>0$,
+and choose $N=N(\varepsilon)$ such that
+$\Ecyl(F_{n}-F_{N})<\varepsilon$ for all $n\ge N$. The cylindrical
+observable $F_{N}$ has finite label support $\mathbf x:=\mathbf x_{F_{N}}$,
+so $F_{N}=\Phi_{N}(Z_{\mathbf x})$ with $\Phi_{N}\in\mathcal D_{\mathbf x}$,
+and $P_{\mathbf x}F_{N}=F_{N}$.
+
+For $n\ge N$, let $\mathbf y_{n}\supseteq\mathbf x\cup\mathbf x_{F_{n}}$
+be a common particle tuple containing both label supports, and
+write $F_{n}=\Psi_{n}(Z_{\mathbf y_{n}})$ with
+$\Psi_{n}\in\mathcal D_{\mathbf y_{n}}$ and
+$F_{N}=(\Phi_{N}\circ\pi_{\mathbf y_{n},\mathbf x})(Z_{\mathbf y_{n}})$.
+By (P2),
+$\Ecyl(F_{n}-F_{N})=\cE_{\mathbf y_{n}}(\Psi_{n}-\Phi_{N}\circ\pi_{\mathbf y_{n},\mathbf x})$.
+
+\emph{Step 2 (energy contraction of $P_{\mathbf x}$).} By (P3)
+applied to $\Psi_{n}-\Phi_{N}\circ\pi_{\mathbf y_{n},\mathbf x}\in\mathcal D_{\mathbf y_{n}}$,
+\[
+  \cE_{\mathbf x}\bigl(P_{\mathbf x}^{\mathbf y_{n}}(\Psi_{n}-\Phi_{N}\circ\pi_{\mathbf y_{n},\mathbf x})\bigr)
+  \;\le\;\cE_{\mathbf y_{n}}(\Psi_{n}-\Phi_{N}\circ\pi_{\mathbf y_{n},\mathbf x})
+  \;=\;\Ecyl(F_{n}-F_{N})\;<\;\varepsilon.
+\]
+On the cylindrical algebra (\cref{rem:P-shorthand,lem:per-stratum}),
+this reads
+\begin{equation}\label{eq:contraction-FN}
+  \Ecyl\bigl(P_{\mathbf x}(F_{n}-F_{N})\bigr)\;<\;\varepsilon.
+\end{equation}
+
+\emph{Step 3 (decomposition $F_{n}=H_{n}+G_{n}$).} Set
+$H_{n}:=P_{\mathbf x}F_{n}\in\Aoneat{\mathbf x}$ and
+$G_{n}:=F_{n}-H_{n}\in\Aone$. Since $P_{\mathbf x}F_{N}=F_{N}$,
+\[
+  G_{n}\;=\;(F_{n}-F_{N})\;-\;P_{\mathbf x}(F_{n}-F_{N})
+  \quad\text{for }n\ge N.
+\]
+By the parallelogram bound
+$\Ecyl(A-B)\le 2\Ecyl(A)+2\Ecyl(B)$ on $\Aone$ (from
+$|a-b|^{2}\le 2|a|^{2}+2|b|^{2}$ for the seminorm
+$\Ecyl(\cdot)^{1/2}$), applied to $A=F_{n}-F_{N}$,
+$B=P_{\mathbf x}(F_{n}-F_{N})$, together with~\eqref{eq:contraction-FN},
+\begin{equation}\label{eq:G-bound}
+  \Ecyl(G_{n})
+  \;\le\;2\Ecyl(F_{n}-F_{N})\;+\;2\Ecyl(P_{\mathbf x}(F_{n}-F_{N}))
+  \;\le\;4\Ecyl(F_{n}-F_{N})\;<\;4\varepsilon.
+\end{equation}
+
+\emph{Step 4 ($H_{n}\to 0$ in finite-dimensional energy).} The
+conditional expectation is an $L^{2}$-contraction:
+$\|H_{n}\|_{L^{2}(\mu_{\mathbf x})}\le\|F_{n}\|_{\Hone}\to 0$
+($n\to\infty$). By (P3), for any $n,m\ge N$,
+\[
+  \cE_{\mathbf x}(H_{n}-H_{m})
+  \;=\;\cE_{\mathbf x}(P_{\mathbf x}^{\mathbf y_{n,m}}(\Psi_{n}-\Psi_{m}))
+  \;\le\;\cE_{\mathbf y_{n,m}}(\Psi_{n}-\Psi_{m})
+  \;=\;\Ecyl(F_{n}-F_{m}),
+\]
+on a common pad $\mathbf y_{n,m}\supseteq\mathbf y_{n}\cup\mathbf y_{m}$,
+so $(H_{n})$ is $\cE_{\mathbf x}$-Cauchy in $\mathcal D_{\mathbf x}$.
+By (P1), $(\cE_{\mathbf x},\mathcal D_{\mathbf x})$ is closable
+on $L^{2}(\mu_{\mathbf x})$, and the standard closability condition
+applied to the $L^{2}$-null Cauchy sequence $(H_{n})$ gives
+\begin{equation}\label{eq:H-bound}
+  \cE_{\mathbf x}(H_{n})\;\longrightarrow\;0\qquad(n\to\infty).
+\end{equation}
+
+\emph{Step 5 (combining).} By the parallelogram bound applied to
+$F_{n}=G_{n}+H_{n}$,
+\[
+  \Ecyl(F_{n})\;\le\;2\Ecyl(G_{n})\;+\;2\Ecyl(H_{n})
+  \;=\;2\Ecyl(G_{n})\;+\;2\cE_{\mathbf x}(H_{n})
+\]
+(using $\Ecyl(H_{n})=\cE_{\mathbf x}(H_{n})$ from
+\cref{lem:per-stratum}). Taking $\limsup_{n\to\infty}$ and
+using~\eqref{eq:G-bound}, \eqref{eq:H-bound},
+\[
+  \limsup_{n\to\infty}\Ecyl(F_{n})\;\le\;2\cdot 4\varepsilon\;+\;2\cdot 0
+  \;=\;8\varepsilon.
+\]
+Letting $\varepsilon\downarrow 0$ proves $\Ecyl(F_{n})\to 0$, i.e.\
+Hypothesis~$\beta$-1.
+\end{proof}
+
+\subsection{Conditional expectation as energy contraction}\label{sec:formclos-CE-contraction}
+
+Assumption (P3) of \cref{P3} can in turn be reduced to a more
+structural \emph{Markov-factor intertwining} property of the LJR
+$n$-point semigroups, via a general Dirichlet-form lemma. We
+formulate the abstract step first and then specialize to the LJR
+projection maps.
+
+\subsubsection*{Abstract Dirichlet-form factor lemma}
+
+\begin{lemma}[Conditional expectation as Dirichlet-form contraction]\label{lem:abstract-factor}
+Let $(\cE_{Y},\cD_{Y})$ be a closed Markovian symmetric Dirichlet
+form on $L^{2}(Y,\mu_{Y})$ generating the strongly continuous
+symmetric Markov semigroup $(T_{t}^{Y})_{t\ge 0}$. Let
+$\pi\colon Y\to X$ be measurable with
+$\mu_{X}:=\pi_{*}\mu_{Y}$, and let
+$P\colon L^{2}(Y,\mu_{Y})\to L^{2}(X,\mu_{X})$ be conditional
+expectation onto $\pi^{-1}\mathcal B(X)$, with the standard
+isometric identification $L^{2}(X,\mu_{X})\hookrightarrow L^{2}(Y,\mu_{Y})$,
+$g\mapsto g\circ\pi$. Suppose $(\cE_{X},\cD_{X})$ is a closed
+Markovian symmetric Dirichlet form on $L^{2}(X,\mu_{X})$ generating
+$(T_{t}^{X})_{t\ge 0}$, and that:
+\begin{enumerate}
+\item[$(\mathrm i)$] (\emph{Pullback compatibility}) for every
+$f\in\cD_{X}$, $f\circ\pi\in\cD_{Y}$ and
+\begin{equation}\label{eq:pullback-compat}
+  \cE_{Y}(f\circ\pi,f\circ\pi)=\cE_{X}(f,f);
+\end{equation}
+\item[$(\mathrm{ii})$] (\emph{Semigroup intertwining}) for every
+$g\in L^{2}(X,\mu_{X})$ and every $t\ge 0$,
+\begin{equation}\label{eq:semigroup-intertwine}
+  T_{t}^{Y}(g\circ\pi)=(T_{t}^{X}g)\circ\pi
+  \qquad\text{in }L^{2}(Y,\mu_{Y}).
+\end{equation}
+\end{enumerate}
+Then for every $F\in\cD_{Y}$, $PF\in\cD_{X}$ and
+\begin{equation}\label{eq:CE-contraction}
+  \cE_{X}(PF,PF)\;\le\;\cE_{Y}(F,F).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Identify $L^{2}(X,\mu_{X})$ with the closed subspace
+$L^{2}(X)\circ\pi\subset L^{2}(Y,\mu_{Y})$, and write
+$\Pi F:=(PF)\circ\pi$ for the corresponding orthogonal projection
+of $F\in L^{2}(Y,\mu_{Y})$ onto $L^{2}(X)\circ\pi$.
+
+\emph{Step 1 ($T_{t}^{Y}$ commutes with $\Pi$).}
+For $g\in L^{2}(X)$ and $F\in L^{2}(Y)$, by symmetry of
+$T_{t}^{Y}$, the dual conditional-expectation identity, symmetry
+of $T_{t}^{X}$, and the intertwining \cref{eq:semigroup-intertwine},
+\begin{align*}
+  \langle PT_{t}^{Y}F,g\rangle_{L^{2}(X)}
+  &=\langle T_{t}^{Y}F,g\circ\pi\rangle_{L^{2}(Y)}
+   =\langle F,T_{t}^{Y}(g\circ\pi)\rangle_{L^{2}(Y)}\\
+  &=\langle F,(T_{t}^{X}g)\circ\pi\rangle_{L^{2}(Y)}
+   =\langle PF,T_{t}^{X}g\rangle_{L^{2}(X)}
+   =\langle T_{t}^{X}PF,g\rangle_{L^{2}(X)}.
+\end{align*}
+Hence $PT_{t}^{Y}F=T_{t}^{X}PF$ in $L^{2}(X)$, and pulling back,
+$\Pi T_{t}^{Y}F=T_{t}^{Y}\Pi F$ in $L^{2}(Y)$ (using
+\cref{eq:semigroup-intertwine} on $g=PF$ for the right-hand side).
+
+\emph{Step 2 (energy contraction by $\Pi$).}
+Set $Q_{t}:=\tfrac{1}{t}(I-T_{t}^{Y})$, a bounded nonnegative
+self-adjoint operator on $L^{2}(Y)$. The semigroup
+characterization of the closed form
+(cf.~\cite[Lem.~1.3.4]{FOT}) reads, for every $u\in L^{2}(Y)$,
+\begin{equation}\label{eq:sg-char}
+  \langle Q_{t}u,u\rangle_{L^{2}(Y)}
+  \;\nearrow\;\cE_{Y}(u,u)\quad(t\downarrow 0),
+\end{equation}
+with the convention $\cE_{Y}(u,u)=+\infty$ if $u\notin\cD_{Y}$ and
+finite limit equal to $\cE_{Y}(u,u)$ if $u\in\cD_{Y}$. Since
+$T_{t}^{Y}$ commutes with $\Pi$ (Step~1), so does
+$Q_{t}^{1/2}:=(\tfrac{1-T_{t}^{Y}}{t})^{1/2}$ via the spectral
+functional calculus on $T_{t}^{Y}$. Hence
+\[
+  \langle Q_{t}\Pi F,\Pi F\rangle
+  =\|Q_{t}^{1/2}\Pi F\|^{2}
+  =\|\Pi Q_{t}^{1/2}F\|^{2}
+  \;\le\;\|Q_{t}^{1/2}F\|^{2}
+  =\langle Q_{t}F,F\rangle,
+\]
+the inequality being orthogonal-projection contraction.
+
+\emph{Step 3 (intertwine $Q_{t}$ at the $X$-side).}
+For $g\in L^{2}(X,\mu_{X})$ and $t>0$, the intertwining
+\cref{eq:semigroup-intertwine} gives
+$T_{t}^{Y}(g\circ\pi)=(T_{t}^{X}g)\circ\pi$, hence
+\[
+  Q_{t}^{Y}(g\circ\pi)=(Q_{t}^{X}g)\circ\pi,
+  \qquad Q_{t}^{X}:=\tfrac{1}{t}(I-T_{t}^{X}).
+\]
+Applying this with $g=PF$ gives $Q_{t}^{Y}\Pi F=(Q_{t}^{X}PF)\circ\pi$,
+and the $L^{2}$-isometric identification
+$L^{2}(X,\mu_{X})\hookrightarrow L^{2}(Y,\mu_{Y})$ gives
+\begin{equation}\label{eq:Qt-X-Y-identity}
+  \langle Q_{t}^{X}PF,PF\rangle_{L^{2}(X)}
+  \;=\;\langle Q_{t}^{Y}\Pi F,\Pi F\rangle_{L^{2}(Y)}.
+\end{equation}
+Combining \cref{eq:Qt-X-Y-identity} with the contraction of
+Step~2,
+\begin{equation}\label{eq:Qt-X-bound}
+  \langle Q_{t}^{X}PF,PF\rangle_{L^{2}(X)}
+  \;\le\;\langle Q_{t}^{Y}F,F\rangle_{L^{2}(Y)}
+  \qquad(t>0).
+\end{equation}
+
+\emph{Step 4 (limit at the $X$-side: $PF\in\cD_{X}$ and
+contraction).}
+The semigroup characterization \cref{eq:sg-char} applied on the
+$X$-side at $u=PF\in L^{2}(X,\mu_{X})$ reads
+\[
+  \langle Q_{t}^{X}PF,PF\rangle_{L^{2}(X)}
+  \;\nearrow\;\cE_{X}(PF,PF)\in[0,+\infty]\qquad(t\downarrow 0),
+\]
+with the limit equal to $+\infty$ exactly when $PF\notin\cD_{X}$
+(\cite[Lem.~1.3.4]{FOT} for $(\cE_{X},\cD_{X})$). For
+$F\in\cD_{Y}$, the right-hand side of \cref{eq:Qt-X-bound}
+converges to $\cE_{Y}(F,F)<\infty$ as $t\downarrow 0$ by the
+analogous characterization on the $Y$-side. Since
+\cref{eq:Qt-X-bound} bounds the left-hand side by the right-hand
+side for every $t>0$, the monotone limit $\cE_{X}(PF,PF)$ is
+bounded by $\cE_{Y}(F,F)<\infty$, so $PF\in\cD_{X}$ and
+\[
+  \cE_{X}(PF,PF)\;\le\;\cE_{Y}(F,F),
+\]
+which is \cref{eq:CE-contraction}.
+\end{proof}
+
+\begin{remark}[Role of pullback compatibility (i)]\label{rem:pullback-not-used-in-proof}
+The proof of \cref{lem:abstract-factor} uses only the semigroup
+intertwining \cref{eq:semigroup-intertwine} (hypothesis (ii)) of
+the lemma; the pullback compatibility
+\cref{eq:pullback-compat} (hypothesis (i)) is \emph{not} invoked.
+We retain (i) in the lemma statement because in the application to
+LJR (\cref{cor:P3prime-implies-P3}) it is exactly (P2)
+(\cref{P2}), the natural compatibility between
+$(\cE_{\mathbf x},\cD_{\mathbf x})$ and
+$(\cE_{\mathbf y},\cD_{\mathbf y})$ on pulled-back functions, and
+because (i) excludes degenerate configurations in which the two
+forms are mutually unrelated. In particular, the proof never asserts
+the reverse-domain implication $(PF)\circ\pi\in\cD_{Y}\Rightarrow PF\in\cD_{X}$
+that would follow from (i) only with extra hypotheses; the
+$X$-side membership $PF\in\cD_{X}$ is established directly from the
+spectral characterization on $L^{2}(X,\mu_{X})$.
+\end{remark}
+
+\subsubsection*{Application to LJR}
+
+Specialize \cref{lem:abstract-factor} to the LJR finite-dimensional
+projection setting:
+\[
+  Y=E_{\mathbf y},\quad X=E_{\mathbf x},\quad
+  \pi=\pi_{\mathbf y,\mathbf x},\quad
+  \mu_{Y}=\mu_{\mathbf y},\quad \mu_{X}=\mu_{\mathbf x},\quad
+  P=P_{\mathbf x}^{\mathbf y},
+\]
+with $\cE_{Y}=\cE_{\mathbf y}$, $\cE_{X}=\cE_{\mathbf x}$. The
+pushforward identity
+$(\pi_{\mathbf y,\mathbf x})_{*}\mu_{\mathbf y}=\mu_{\mathbf x}$
+holds by LJR consistency \cref{conv:LJR-n}$(\mathrm{iv})$, so the
+construction of $P_{\mathbf x}^{\mathbf y}$ is well-posed.
+Hypothesis (i) of \cref{lem:abstract-factor} is exactly (P2)
+of \cref{P2}, automatic by LJR consistency.
+
+The semigroup-intertwining hypothesis (ii) becomes the following
+operator-level property of the LJR $n$-point family.
+
+\begin{assumption}[(P3') Semigroup intertwining of LJR $n$-point
+projections]\label{P3prime}
+For every $\mathbf x\subseteq\mathbf y$, the closed forms
+$(\cE_{\mathbf x},\cD_{\mathbf x})$ and
+$(\cE_{\mathbf y},\cD_{\mathbf y})$ of (P1) generate strongly
+continuous symmetric Markov semigroups
+$(T_{t}^{\mathbf x})_{t\ge 0}$ and $(T_{t}^{\mathbf y})_{t\ge 0}$
+on $L^{2}(\mu_{\mathbf x})$ and $L^{2}(\mu_{\mathbf y})$
+respectively, with the intertwining
+\begin{equation}\label{eq:P3prime}
+  T_{t}^{\mathbf y}(g\circ\pi_{\mathbf y,\mathbf x})
+  \;=\;(T_{t}^{\mathbf x}g)\circ\pi_{\mathbf y,\mathbf x}
+  \quad\text{in }L^{2}(\mu_{\mathbf y}),
+  \qquad g\in L^{2}(\mu_{\mathbf x}),\;t\ge 0.
+\end{equation}
+\end{assumption}
+
+\begin{remark}[Markov-consistency interpretation of (P3')]\label{rem:P3prime-Markov}
+\Cref{P3prime} is the operator-level statement that the LJR
+$\mathbf y$-point Markov process, restricted to functions of
+$\mathbf x$-coordinates, is the LJR $\mathbf x$-point Markov
+process. At the level of probabilistic laws, this is the
+$n$-point consistency of the LJR flow
+(cf.~\cite[\S 3]{LeJanRaimond2004}): the marginal of the
+$\mathbf y$-point motion onto the $\mathbf x$-coordinates is the
+$\mathbf x$-point motion. The operator-level statement
+\eqref{eq:P3prime} is the corresponding $L^{2}$-semigroup
+formulation, which follows from law-level consistency once
+existence and strong continuity of $(T_{t}^{\mathbf x})_{t\ge 0}$
+on $L^{2}(\mu_{\mathbf x})$ are established (the latter being
+covered by (P1)). We do \emph{not} assert that the operator-level
+(P3') is in citable form in \cite{LeJanRaimond2004}; we record it
+as a hypothesis to be verified.
+\end{remark}
+
+\begin{corollary}[(P3') $\Longrightarrow$ (P3)]\label{cor:P3prime-implies-P3}
+Assume (P1) (\cref{P1}), (P2) (\cref{P2}), and (P3')
+(\cref{P3prime}). Then (P3) (\cref{P3}) holds.
+\end{corollary}
+
+\begin{proof}
+Apply \cref{lem:abstract-factor} with the identifications above:
+hypothesis (i) is (P2); hypothesis (ii) is (P3'); the closed-form
+hypotheses on $(\cE_{\mathbf x},\cD_{\mathbf x})$ and
+$(\cE_{\mathbf y},\cD_{\mathbf y})$ are part of (P1). The
+conclusion
+$\cE_{\mathbf x}(P_{\mathbf x}^{\mathbf y}\Phi,P_{\mathbf x}^{\mathbf y}\Phi)
+\le\cE_{\mathbf y}(\Phi,\Phi)$ for every $\Phi\in\cD_{\mathbf y}$
+is (P3).
+\end{proof}
+
+\begin{remark}[Status reduction]\label{rem:status-reduction}
+After \cref{cor:P3prime-implies-P3}, (P3) is no longer a primitive
+hypothesis: it follows from the Markov-factor energy contraction of
+\cref{lem:abstract-factor} once the LJR projection maps
+$\pi_{\mathbf y,\mathbf x}$ are verified to be \emph{Dirichlet-form
+factors} in the sense of (P3'). The projective-limit closability
+question for the LJR sticky flow therefore decomposes as
+\begin{itemize}
+\item (P1) finite-dimensional Wentzell--Dirichlet closability of
+the LJR $m$-point form on $L^{2}(\mu_{\mathbf x})$;
+\item (P3') Markov-consistent $L^{2}$-semigroup intertwining of the
+LJR $n$-point family along coordinate-deletion projections,
+\end{itemize}
+with (P2) automatic. (P3') is plausibly a consequence of the LJR
+$n$-point consistency at the law level
+(\cref{rem:P3prime-Markov}), but its operator-level formulation on
+$L^{2}(\mu_{\mathbf y})$ has not been verified here under the LJR
+convention. We do not claim LJR satisfies (P3').
+\end{remark}
+
+\subsection{Status under the LJR convention}\label{sec:formclos-LJR-status}
+
+We record where each (P) assumption stands relative to the LJR
+$n$-point convention (\cref{conv:LJR-n}).
+
+\paragraph{(P2) follows from the LJR consistency convention.}
+Under the LJR consistency convention
+\cref{conv:LJR-n}$(\mathrm{iv})$ (imported from
+\cite[\S 3--4]{LeJanRaimond2004} as a convention rather than
+verified independently here), (P2) reduces to the spatial
+$n$-point compatibility of the $\GamM{n}$ under coordinate
+deletion together with the pushforward identity
+$(\pi_{n,n-1})_{*}\mu_{\mathbf y}=\mu_{\mathbf x}$
+(when $\mathbf x\subset\mathbf y$ deletes one coordinate); this
+is the content of \cref{lem:padding}. If
+\cref{conv:LJR-n}$(\mathrm{iv})$ is taken to hold by convention,
+(P2) is not an additional analytic hypothesis. We do not cite a
+specific theorem in \cite{LeJanRaimond2004} that establishes
+\cref{conv:LJR-n}$(\mathrm{iv})$ at this operator level; the
+convention is the imported input.
+
+\paragraph{(P1) is finite-dimensional Wentzell--Dirichlet
+closability.}
+For each finite $\mathbf x\in\R^{m}$, (P1) asks for closability of
+the LJR $m$-point Wentzell-type Dirichlet form on
+$L^{2}(\R^{m},\mu_{\mathbf x})$. The cases $m=1$ (standard
+Brownian density at time $T$) and $m=2$ (Tier $\alpha$,
+\cite{StickyFlowGammaSeed}) are settled. For $m\ge 3$, no closability
+theorem is in citable form to our knowledge; (P1) for $m\ge 3$ is
+Open Problem~$\beta$-1${}_{m}$ (\cref{prob:per-stratum} below) and
+is not asserted here.
+
+\paragraph{(P3) reduces to (P3').}
+By \cref{cor:P3prime-implies-P3}, (P3) follows from the
+Markov-factor semigroup intertwining (P3') of \cref{P3prime} via
+the abstract Dirichlet-form contraction \cref{lem:abstract-factor}.
+The remaining analytic content is therefore (P3') rather than (P3).
+For the Brownian case ($\theta=0$, no stickiness), (P3') is the
+classical projection-of-product-Brownian-semigroup statement and
+the contraction is the standard Dirichlet-form-projection result
+(cf.~\cite[Thm.~1.6.1]{FOT}). For LJR $\theta\in(0,\infty]$,
+(P3') is the operator-level statement of Markov consistency of
+the LJR $n$-point semigroups along coordinate-deletion projections;
+it is plausibly a consequence of the law-level $n$-point consistency
+in \cite[\S 3]{LeJanRaimond2004} but its operator-level
+formulation on $L^{2}(\mu_{\mathbf y})$ has not been verified
+here. To our knowledge, no general semigroup-intertwining theorem
+is in citable form covering the LJR Wentzell-type boundary
+conditions on stratified collision sets simultaneously with
+arbitrary coordinate-deletion projections.
+
+\paragraph{Honesty.}
+\Cref{thm:proj-lim-closability} does not prove Hypothesis~$\beta$-1
+unconditionally; it converts the abstract closability statement on
+$\Aone\subset\Hone$ into the conjunction of (P1) and (P3) (with
+(P2) automatic). \Cref{cor:P3prime-implies-P3} further reduces (P3)
+to (P3'), so the residual hypotheses are (P1) and (P3'). Both are
+sharper than raw {\normalfont\textsc{(FormClos)}} on $\Hone$, but
+both remain hypotheses; the analytic verification of (P1) for
+$m\ge 3$ and of (P3') for the LJR sticky-flow $n$-point
+semigroups is left open.
+
+\subsection{Reformulated open problems}\label{sec:formclos-open}
+
+\begin{problem}[Per-stratum closability;
+Open Problem~$\beta$-1${}_{m}$, equivalent to (P1) for
+$m\ge 3$]\label{prob:per-stratum}
+For each $m\ge 3$ and each particle tuple $\mathbf x\in\R^{m}$, is
+the form
+$\cE_{\mathbf x}\colon\mathcal D_{\mathbf x}\times\mathcal D_{\mathbf x}\to\R$
+of \cref{eq:E-x-finite} closable on $L^{2}(\mu_{\mathbf x})$ as a
+Wentzell-type Dirichlet form for the LJR $m$-point Markov process?
+\end{problem}
+
+\begin{problem}[Conditional-expectation contraction; Open Problem
+$\beta$-1${}_{\infty}$, sufficient form (P3')]\label{prob:proj-lim}
+For all $\mathbf x\subseteq\mathbf y$, do the LJR $n$-point
+Wentzell-Dirichlet forms generate strongly continuous symmetric
+Markov semigroups on $L^{2}(\mu_{\mathbf x})$ and
+$L^{2}(\mu_{\mathbf y})$ satisfying the semigroup-intertwining
+identity \cref{eq:P3prime} (i.e.\ (P3') of \cref{P3prime})?
+\end{problem}
+
+\begin{remark}[Equivalent (P3) form of \cref{prob:proj-lim}]\label{rem:P3-form-of-proj-lim}
+The original direct form of Open Problem $\beta$-1${}_{\infty}$ is
+the energy contraction (P3) of \cref{P3}: for all
+$\mathbf x\subseteq\mathbf y$ and $\Phi\in\mathcal D_{\mathbf y}$,
+$P_{\mathbf x}^{\mathbf y}\Phi\in\mathcal D_{\mathbf x}$ and
+\cref{eq:P3} holds. By \cref{cor:P3prime-implies-P3}, (P3') of
+\cref{prob:proj-lim} is sufficient for (P3); we have stated the
+problem in its (P3') form because (P3') is more checkable in
+practice (it is a Markov-consistency statement at the semigroup
+level rather than an inequality of quadratic forms).
+\end{remark}
+
+\begin{remark}[Status of Hypothesis~$\beta$-1 under (P)-decomposition]\label{rem:proj-limit}
+By \cref{thm:proj-lim-closability}, Hypothesis~$\beta$-1
+(\cref{hyp:beta1}) follows from (P1)$+$(P3); by
+\cref{cor:P3prime-implies-P3}, (P3) follows from (P3'). Hence
+$\beta$-1 follows from an affirmative answer to both
+Open Problem~$\beta$-1${}_{m}$ for every $m\ge 3$ (the cases
+$m=1,2$ being settled) and Open Problem~$\beta$-1${}_{\infty}$
+in its (P3') form, under the LJR convention which automatically
+supplies (P2). The remainder of the paper proceeds under
+Hypothesis~$\beta$-1 directly, without committing to either
+component separately, and \cref{thm:transfer-cyl} below applies
+under either Hypothesis or the conjunction (P1)$+$(P3)
+(\cref{cor:transfer-P}), and a fortiori under (P1)$+$(P3').
+\end{remark}
+
+\begin{remark}[Multi-time form-closability]\label{rem:multi-time-formclos}
+At the multi-time level, the analogous form
+$\cE_{\theta}^{\mathrm{multi}}(F,G):=\E[\GamN(F,G)]$ on $\Acyl$ takes
+values in $L^{2}(\cN_{\theta})$ rather than $\Hone$. Closability
+of $\cE_{\theta}^{\mathrm{multi}}$ on $L^{2}(\cN_{\theta})$ is an
+additional hypothesis, separate from Hypothesis~$\beta$-1: the
+analogue of \cref{thm:proj-lim-closability} would now require, in
+addition to (P1)--(P3) at the multi-time level (now indexed by
+general label tuples $\lambda$, with reference measures
+$m_{\theta,\lambda}$ via \cref{conv:multi-time}), an additional
+closability/compatibility statement across times via the
+prolongation convention. We do not formulate it here; the honest
+single-time Hypothesis~$\beta$-1 is the primary input exercised by
+\cref{thm:transfer-cyl}.
+\end{remark}
+
+%==============================================================
+\section{Conditional construction theorem}\label{sec:transfer}
+%==============================================================
+
+Under Hypothesis~$\beta$-1, the lifted seed becomes admissible input
+for the GammaHierarchyDivergence transfer construction.
+
+\begin{theorem}[Transfer to the operator-derivative pair on
+$\Hone$]\label{thm:transfer-cyl}
+Assume \cref{conv:LJR-n,ax:sos} together with Hypothesis~$\beta$-1
+(\cref{hyp:beta1}). Then there exist:
+\begin{enumerate}
+\item[$(\mathrm i)$] a Hilbert module of one-forms
+$\cU_{\GamN}=\overline{\Aone\otimes\Aone/\mathcal N_{0}}$ as a
+bounded $\Aone$-bimodule under the action
+$W\cdot[F\otimes U]:=[F\otimes(WU)]$, satisfying
+$\|W\cdot u\|_{\cU_{\GamN}}\le\|W\|_{\infty}\|u\|_{\cU_{\GamN}}$,
+together with the seed
+$D_{0}^{\theta,\mathrm{cyl}}F:=[F\otimes 1]$ obeying
+\[
+  \langle D_{0}^{\theta,\mathrm{cyl}}F,D_{0}^{\theta,\mathrm{cyl}}G\rangle_{\cU_{\GamN}}
+  =\E\bigl[\GamN(F,G)\bigr]
+  =\Ecyl(F,G)
+  \quad(F,G\in\Aone);
+\]
+\item[$(\mathrm{ii})$] a closed densely-defined operator derivative
+\[
+  \DN\;:=\;\overline{D_{0}^{\theta,\mathrm{cyl}}}\;\;\colon\;\;\Dom(\DN)\subset\Hone\longrightarrow\cU_{\GamN};
+\]
+\item[$(\mathrm{iii})$] a closed densely-defined primitive
+divergence
+\[
+  \divN\;:=\;\DN^{*}\;\;\colon\;\;\Dom(\divN)\subset\cU_{\GamN}\longrightarrow\Hone,
+\]
+with the explicit adjoint domain
+\[
+  \Dom(\divN)
+  =
+  \left\{
+  u\in\cU_{\GamN}:
+  F\mapsto\langle\DN F,u\rangle_{\cU_{\GamN}}
+  \text{ is }\Hone\text{-continuous on }\Dom(\DN)
+  \right\};
+\]
+\item[$(\mathrm{iv})$] the integration-by-parts identity
+\begin{equation}\label{eq:IBP-cyl}
+  \E[F\,\divN(u)]
+  \;=\;\langle\DN F,u\rangle_{\cU_{\GamN}},
+  \qquad F\in\Dom(\DN),\;u\in\Dom(\divN).
+\end{equation}
+\end{enumerate}
+The pair $(\DN,\divN)$ is the operator-derivative pair on $\Hone$
+associated with the LJR sticky-flow noise at the single-time level
+$T$, conditional on Hypothesis~$\beta$-1.
+\end{theorem}
+
+\begin{proof}
+\Cref{thm:axioms} verifies four of the five
+GammaHierarchyDivergence axioms unconditionally;
+\cref{hyp:beta1} supplies the fifth. Together they are the input
+hypothesis of \cite[Thm.~A]{GammaHierarchyDivergence} applied to
+the seed algebra $\Aone\subset\Hone$, whose conclusion is the data
+$(\mathrm i)$--$(\mathrm{iv})$ as stated. The bimodule action of
+$W\in\Aone$ and the operator-norm bound are
+\cite[Thm.~A($\mathrm i$)]{GammaHierarchyDivergence}; closability of
+the seed and definition of $\DN$ are
+\cite[Thm.~B]{GammaHierarchyDivergence}; the adjoint-domain
+description and integration-by-parts identity are
+\cite[Thm.~B and Cor.~B.1]{GammaHierarchyDivergence}.
+\end{proof}
+
+\begin{corollary}[Sufficient criterion via (P1)--(P3); a fortiori
+via (P1)+(P2)+(P3')]\label{cor:transfer-P}
+Under \cref{conv:LJR-n,ax:sos} together with either
+\begin{enumerate}
+\item[$(\mathrm a)$] assumptions (P1), (P2), (P3) of
+\cref{P1,P2,P3}; or
+\item[$(\mathrm b)$] assumptions (P1) (\cref{P1}), (P2) (\cref{P2}),
+and (P3') (\cref{P3prime}) (which by \cref{cor:P3prime-implies-P3}
+imply (P3) and hence (a)),
+\end{enumerate}
+the conclusions of \cref{thm:transfer-cyl} hold: a closed
+densely-defined operator-derivative pair $(\DN,\divN)$ exists on
+$\Hone$ with the integration-by-parts
+identity~\eqref{eq:IBP-cyl}.
+\end{corollary}
+
+\begin{proof}
+Case (a): by \cref{thm:proj-lim-closability}, (P1)+(P2)+(P3) imply
+Hypothesis~$\beta$-1; apply \cref{thm:transfer-cyl}. Case (b):
+\cref{cor:P3prime-implies-P3} reduces to case (a).
+\end{proof}
+
+\begin{remark}[Honesty on LJR verifiability]\label{rem:transfer-honesty}
+Neither (a) nor (b) is asserted to hold for the LJR $n$-point
+family in this paper. (P2) follows from the LJR consistency
+convention \cref{conv:LJR-n}$(\mathrm{iv})$ when the convention is
+taken as imported. (P1) for $m\ge 3$ and (P3') at the
+$L^{2}$-semigroup level on $\mu_{\mathbf y}$ are the residual
+unverified analytic points
+(\cref{prob:per-stratum,prob:proj-lim}). The pair $(\DN,\divN)$
+on $\Hone$ is therefore conditional, not unconditional, for the
+LJR sticky flow.
+\end{remark}
+
+\begin{remark}[Multi-time extension to $L^{2}(\cN_{\theta})$]\label{rem:transfer-multi}
+\Cref{thm:transfer-cyl} produces the operator-derivative pair on
+the single-time sub-Hilbert space $\Hone\subseteq L^{2}(\cN_{\theta})$.
+The multi-time extension to a pair on $L^{2}(\cN_{\theta})$ requires
+applying \cite[Thm.~A]{GammaHierarchyDivergence} to the extended
+algebra $\Acyl$ with $\GamN$ defined by
+\cref{def:lifted-Gamma-multi} and the multi-time form-closability
+hypothesis of \cref{rem:multi-time-formclos}. We do not state this
+multi-time construction theorem in the present paper, since the
+multi-time closability is a strictly stronger hypothesis and is a
+separate analytic statement. The single-time pair of
+\cref{thm:transfer-cyl} is the honest Tier $\beta$ contribution.
+\end{remark}
+
+\begin{remark}[Leibniz defect]\label{rem:leibniz-defect}
+For the single-time pair $(\DN,\divN)$ on $\Hone$ produced by
+\cref{thm:transfer-cyl}, the Leibniz defect
+$\mathfrak L_{\DN}(F,G):=\DN(FG)-F\cdot\DN G-G\cdot\DN F$ is
+well-defined as a $\cU_{\GamN}$-valued bilinear map on $\Aone$ by
+\cite[Thm.~C]{GammaHierarchyDivergence}. Identifying it explicitly
+in terms of LJR data is a separate question, not pursued here. The
+analogous statement for the multi-time extension on
+$L^{2}(\cN_{\theta})$ would require the multi-time hypothesis of
+\cref{rem:multi-time-formclos} and is not asserted. The connection
+to \cite[\S 4]{OperatorDerivative} is discussed
+in~\cref{sec:open-blackness}.
+\end{remark}
+
+%==============================================================
+\section{Consistency with Tier \texorpdfstring{$\alpha$}{alpha}}\label{sec:consistency}
+%==============================================================
+
+The Tier $\alpha$ paper~\cite{StickyFlowGammaSeed} constructed the
+diagonal seed
+\begin{equation}\label{eq:tier-alpha-recall}
+  \GamT(f,g)(x)=\tfrac{c_{\theta}}{2}\,f'(x)\,g'(x)\,\mu_{\Delta}(dx),
+  \qquad f,g\in\cT^{(2)}\subset C_{c}^{\infty}(\R),
+\end{equation}
+on the diagonal Hilbert space $L^{2}(\R,\mu_{\Delta})$, and obtained
+a closed pair $(\Dth,\divth)$ on that space. We verify that, when
+restricted to the appropriate sub-class of cylindrical observables
+in the diagonal direction, the lifted $\GamN$ recovers the seed
+value of~\eqref{eq:tier-alpha-recall} on the diagonal stratum.
+
+\begin{theorem}[Tier $\alpha$ consistency on the diagonal stratum]\label{thm:consistency}
+Fix $T>0$ and $(x_{1},x_{2})\in\R^{2}$. For $f,g\in\cT^{(2)}\subset C_{c}^{\infty}(\R)$,
+let $\Phi_{f},\Phi_{g}\in C_{b}^{\infty}(\R^{2})$ be the
+\emph{diagonal-direction lifts}
+\begin{equation}\label{eq:Phi-f}
+  \Phi_{f}(z_{1},z_{2}):=f\!\left(\tfrac{z_{1}+z_{2}}{2}\right),
+  \qquad
+  \Phi_{g}(z_{1},z_{2}):=g\!\left(\tfrac{z_{1}+z_{2}}{2}\right),
+\end{equation}
+and let $\mathbf x=(x_{1},x_{2})$,
+$F_{f}=\Phi_{f}(\mathbf X_{T}^{\mathbf x})$,
+$F_{g}=\Phi_{g}(\mathbf X_{T}^{\mathbf x})$. Under
+\cref{conv:LJR-n} and \cref{ax:sos}, the diagonal-stratum
+component of the square-of-sum
+representation~\eqref{eq:SOS} of $\GamM{2}(\Phi_{f},\Phi_{g})$ is
+\begin{equation}\label{eq:diag-component}
+  \tfrac{c_{\theta}}{2}\,
+  \bigl(\partial_{1}\Phi_{f}+\partial_{2}\Phi_{f}\bigr)
+  \bigl(\partial_{1}\Phi_{g}+\partial_{2}\Phi_{g}\bigr)
+  \;\;\text{on }\Delta=\{z_{1}=z_{2}\},
+\end{equation}
+and at $z_{1}=z_{2}$ this reduces to
+$\frac{c_{\theta}}{2}f'(z_{1})\,g'(z_{1})$. Consequently, on the
+diagonal event $\{X^{x_{1}}_{T}=X^{x_{2}}_{T}\}$,
+\begin{equation}\label{eq:consistency-restricted}
+  \GamN(F_{f},F_{g})\big|_{\mathrm{diag\ component}}
+  \;=\;\tfrac{c_{\theta}}{2}\,f'(X^{x_{1}}_{T})\,g'(X^{x_{1}}_{T})
+  \;=\;\GamT(f,g)(X^{x_{1}}_{T})
+\end{equation}
+$\Pth$-a.s., i.e.\ the lifted carr\'e-du-champ recovers the Tier
+$\alpha$ diagonal seed at the seed-value level on the diagonal
+stratum.
+\end{theorem}
+
+\begin{proof}
+For $\Phi_{f}(z_{1},z_{2})=f((z_{1}+z_{2})/2)$,
+\[
+  \partial_{1}\Phi_{f}(z_{1},z_{2})=\partial_{2}\Phi_{f}(z_{1},z_{2})
+  =\tfrac12\,f'\!\left(\tfrac{z_{1}+z_{2}}{2}\right),
+\]
+hence $\partial_{1}\Phi_{f}+\partial_{2}\Phi_{f}=f'((z_{1}+z_{2})/2)$,
+which restricts to $f'(z_{1})$ at $z_{1}=z_{2}$. By
+\cref{ax:sos} for $n=2$, the diagonal-direction summand
+($\partial^{(2)}_{\iota}=\partial_{1}+\partial_{2}$,
+$\alpha^{(2)}_{\iota}=c_{\theta}/2$ on $\Delta$) of
+$\GamM{2}(\Phi_{f},\Phi_{g})$ takes the form
+\eqref{eq:diag-component} on $\Delta$, and at $z_{1}=z_{2}$
+evaluates to $\tfrac{c_{\theta}}{2}f'(z_{1})g'(z_{1})$. Pulling back
+along $\mathbf X_{T}^{\mathbf x}$ on the event
+$\{X^{x_{1}}_{T}=X^{x_{2}}_{T}\}$ gives \eqref{eq:consistency-restricted}.
+\end{proof}
+
+\begin{remark}[Bulk component]\label{rem:bulk-component}
+The bulk (open-stratum) summands of $\GamM{2}(\Phi_{f},\Phi_{g})$
+contribute, at $z_{1}=z_{2}$, the additional value
+$\tfrac12\bigl((\tfrac12 f')(\tfrac12 g')+(\tfrac12 f')(\tfrac12 g')\bigr)
+=\tfrac14 f'(z_{1})\,g'(z_{1})$. This is the independent two-Brownian
+contribution and is not captured by the Tier $\alpha$ diagonal seed,
+which deliberately tracks only the diagonal-direction
+sticky-flow energy.
+\end{remark}
+
+\begin{remark}[Seed-level vs.\ operator-level consistency]\label{rem:tier-alpha-bimodule}
+\Cref{thm:consistency} is a seed-level identification. At the
+operator-pair level (assuming Hypothesis~$\beta$-1 so that
+$(\DN,\divN)$ is constructed by \cref{thm:transfer-cyl} on
+$\Hone$), one expects a natural restriction of $\DN$ to the closed
+subspace of $\Hone$ generated by diagonal-direction two-point
+observables, recovering $\Dth$ on $L^{2}(\R,\mu_{\Delta})$ as a
+sub-Hilbert-bimodule of $\cU_{\GamN}$. We do not formalize this
+sub-bimodule statement here.
+\end{remark}
+
+%==============================================================
+\section{Remaining open problems}\label{sec:open}
+%==============================================================
+
+\subsection{Form-closability}\label{sec:open-formclos}
+
+Hypothesis~$\beta$-1 (\cref{hyp:beta1}) is the central conditional
+input of this paper. By the projective-limit closability criterion
+(\cref{thm:proj-lim-closability}), it follows from three
+finite-dimensional / projective conditions
+(\cref{P1,P2,P3}):
+\begin{itemize}
+\item \textbf{(P1) Finite-dimensional closability}, equivalent to
+Open Problem~$\beta$-1${}_{m}$ (\cref{prob:per-stratum}): for each
+$m\ge 3$ and each particle tuple $\mathbf x\in\R^{m}$, closability
+of the LJR $m$-point Wentzell-type Dirichlet form on
+$L^{2}(\R^{m},\mu_{\mathbf x})$. The cases $m=1$ (standard
+Brownian density at time $T$) and $m=2$ (Tier $\alpha$,
+\cite{StickyFlowGammaSeed}) are settled.
+\item \textbf{(P2) Pullback compatibility}: built into
+\cref{conv:LJR-n}$(\mathrm{iv})$ via LJR $n$-point consistency.
+\emph{Automatic, not an additional analytic hypothesis.}
+\item \textbf{(P3) Conditional-expectation energy contraction}:
+the conditional expectation $P_{\mathbf x}^{\mathbf y}$ contracts
+the LJR $n$-point energy in the sense of~\eqref{eq:P3}. By
+\cref{cor:P3prime-implies-P3} this in turn follows from the
+sharper, more checkable
+\item \textbf{(P3') Markov-factor semigroup intertwining}
+(\cref{P3prime}, the (P3') form of
+Open Problem~$\beta$-1${}_{\infty}$, \cref{prob:proj-lim}): the
+LJR $n$-point Wentzell-Dirichlet semigroups intertwine along
+coordinate-deletion projections,
+$T_{t}^{\mathbf y}(g\circ\pi_{\mathbf y,\mathbf x})=(T_{t}^{\mathbf x}g)\circ\pi_{\mathbf y,\mathbf x}$.
+\item \textbf{Multi-time closability} (\cref{rem:multi-time-formclos}):
+the strictly stronger hypothesis required to extend the
+construction from $\Hone$ to the full $L^{2}(\cN_{\theta})$ via
+\cref{conv:multi-time}.
+\end{itemize}
+The remaining analytic content of \textsc{(FormClos)} on $\Hone$
+is therefore (P1) for $m\ge 3$ together with (P3'); (P2) is
+automatic and (P3) follows from (P3') by
+\cref{lem:abstract-factor}. The criterion sharpens the open
+problem but does not close it.
+
+\subsection{Exact LJR coefficients beyond two-point}\label{sec:open-coeff}
+
+\Cref{conv:LJR-n} imports the generator $\Lth{n}$, the reference
+measure $m_{\theta,n}$, and the sticky coefficient family
+$(c_{\theta,k})_{k\ge 2}$ as parametric data. The Tier $\alpha$
+paper~\cite{StickyFlowGammaSeed} treats $c_{\theta,2}=:c_{\theta}$
+parametrically. The structure of $c_{\theta,k}$ for $k\ge 3$ in the
+LJR convention~\cite[\S 3]{LeJanRaimond2004}---whether all higher
+sticky coefficients are independent parameters, are forced by
+$c_{\theta,2}$, or are determined by an interpolation in $\theta$
+or $k$---is not addressed here.
+
+\subsection{Tier \texorpdfstring{$\gamma$}{gamma}: black-noise lifts}\label{sec:open-tier-gamma}
+
+Depending on the LJR parameter convention, the coalescing /
+Brownian-web regimes are the natural black-noise targets;
+endpoint identifications and classicality statements should be
+read relative to the cited convention. The Brownian web noise
+of~\cite[\S 7]{Tsirelson2004,SchertzerSunSwart} is the canonical
+Tier $\gamma$ target on the flow side: a flow-noise
+carr\'e-du-champ over a noise whose first chaos is reported in the
+literature as trivial under the relevant convention. The 2D
+critical percolation noise of~\cite{SchrammSmirnov2011} is a
+separate, harder Tier $\gamma$ target with no flow structure to
+inherit.
+
+\subsection{Higher carr\'e-du-champ hierarchy
+\texorpdfstring{$\{\GamM{n,(N)}\}_{N\ge 3}$}{higher Gamma N}}\label{sec:open-hierarchy}
+
+The companion paper~\cite[\S 6]{PrimitiveDivergence} promotes the
+full generator-level interaction hierarchy
+$\{\Gamma_{\cN}^{(N)}\}_{N\ge 2}$ to candidate primitive datum, with
+the bilinear $\Gamma_{\cN}^{(2)}$ as the first concrete layer.
+\Cref{conv:LJR-n}$(\mathrm{iii})$ supplies $\GamM{n}$ via the
+spatial polarization of $\Lth{n}$ but does not specify a higher
+$\GamM{n,(N)}$ for $N\ge 3$, which would be an $N$-linear
+product-defect form on test functions of $\R^{n}$. Whether the LJR
+$n$-point generator admits a natural higher-order interaction
+hierarchy of this kind, and whether its pullback to $\Acyl$
+produces a flow-noise hierarchy
+$\{\Gamma_{\cN_{\theta}}^{(N)}\}_{N\ge 3}$ matching
+\cite[\S 6]{PrimitiveDivergence}, is open.
+
+\subsection{Detection of blackness}\label{sec:open-blackness}
+
+The question raised by~\cite[\S 4]{OperatorDerivative}---whether the
+operator-derivative pair carries algebraic invariants
+(Leibniz defect, higher hierarchy mismatch) over a black noise that
+distinguish it from a classical pair---is not addressed here.
+\Cref{thm:transfer-cyl} produces the single-time pair $(\DN,\divN)$
+on $\Hone$, conditional on Hypothesis~$\beta$-1, uniformly in
+$\theta\in[0,\infty]$ and without assigning a classicality status
+to the underlying noise. Whether, under the cited LJR convention,
+the coalescing-regime single-time pair has a structurally different
+Leibniz defect than diffusive-regime single-time pairs is the
+natural test of the framework's intrinsic sensitivity to the
+black/classical distinction. The analogous question for the
+multi-time pair on $L^{2}(\cN_{\theta})$ is conditional on the
+strictly stronger multi-time hypothesis of
+\cref{rem:multi-time-formclos}.
+
+\subsection{Path-Malliavin lift}\label{sec:open-path-Malliavin}
+
+The pullback recipe of \cref{def:lifted-Gamma} on $\Aone$, and its
+multi-time extension \cref{def:lifted-Gamma-multi} on $\Acyl$ via
+\cref{conv:multi-time}, do not engage with a path-space Malliavin
+calculus on $\cN_{\theta}$. Whether the single-time pair
+$(\DN,\divN)$ on $\Hone$ produced by \cref{thm:transfer-cyl}, or
+the conjectural multi-time extension on $L^{2}(\cN_{\theta})$ under
+\cref{rem:multi-time-formclos}, admits a path-space realization in
+which $\DN F$ is a genuine pathwise derivative (rather than the
+closure of the seed map $F\mapsto[F\otimes 1]$ in
+\cref{thm:transfer-cyl}$(\mathrm i)$) is a separate construction
+question, of independent interest for the computation of explicit
+Skorohod-type integrals against the LJR flow.
+
+%==============================================================
+\begin{thebibliography}{99}
+
+\bibitem{EnergyFirst}
+R.~Fontes, \emph{Energy-First Stochastic Calculus: Iterated Brownian
+  Motion as a Test Case}, manuscript (2026).
+
+\bibitem{FOT}
+M.~Fukushima, Y.~Oshima, and M.~Takeda, \emph{Dirichlet Forms and
+  Symmetric Markov Processes}, 2nd ed., De Gruyter Studies in
+  Mathematics, vol.~19, Walter de Gruyter, Berlin, 2011.
+
+\bibitem{GammaHierarchyDivergence}
+R.~Fontes, \emph{From Carr\'e-du-Champ Hierarchies to Primitive
+  Divergence}, manuscript (2026).
+
+\bibitem{LeJanRaimond2004}
+Y.~Le~Jan and O.~Raimond, \emph{Flows, coalescence and noise},
+  Ann.~Probab.~\textbf{32} (2004), no.~2, 1247--1315.
+
+\bibitem{MaRoeckner}
+Z.~M.~Ma and M.~R\"ockner, \emph{Introduction to the Theory of
+  (Non-Symmetric) Dirichlet Forms}, Universitext, Springer,
+  Berlin, 1992.
+
+\bibitem{OperatorDerivative}
+R.~Fontes, \emph{The Operator Derivative over Nonclassical Noise:
+  Primitive Divergence and Leibniz Defect}, manuscript (2026).
+
+\bibitem{PrimitiveDivergence}
+R.~Fontes, \emph{Primitive Divergence and Carr\'e-du-Champ Seeds
+  over Nonclassical Noises}, manuscript (2026).
+
+\bibitem{SchertzerSunSwart}
+E.~Schertzer, R.~Sun, and J.~M.~Swart, \emph{The Brownian web,
+  the Brownian net, and their universality}, in: \emph{Advances in
+  Disordered Systems, Random Processes and Some Applications},
+  Cambridge Univ.\ Press (2017), pp.~270--368.
+
+\bibitem{SchrammSmirnov2011}
+O.~Schramm and S.~Smirnov, \emph{On the scaling limits of planar
+  percolation}, Ann.~Probab.~\textbf{39} (2011), no.~5, 1768--1814.
+
+\bibitem{StickyFlowGammaSeed}
+R.~Fontes, \emph{A Diagonal Carr\'e-du-Champ Seed for Sticky
+  Brownian Flows}, manuscript (2026).
+
+\bibitem{Tsirelson2004}
+B.~Tsirelson, \emph{Nonclassical stochastic flows and continuous
+  products}, Probab.~Surv.~\textbf{1} (2004), 173--298.
+
+\end{thebibliography}
+
+\end{document}

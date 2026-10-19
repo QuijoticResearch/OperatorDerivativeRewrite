@@ -1,0 +1,629 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{observation}[theorem]{Observation}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\tr}{\operatorname{tr}}
+
+\title{Bakry-\'{E}mery Curvature and the Yang--Mills Mass Gap:\\
+A Bridge via the Cosine Potential on $S^3$}
+\author{R.\ da Costa Fontes\\ \textit{Quijotic Research}}
+\date{February 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We establish a structural connection between the Bakry-\'{E}mery
+curvature theory for fractional Laplacians on the torus and the
+spectral gap problem for lattice Yang--Mills theory with gauge group
+$\mathrm{SU}(2)$.  Numerical computation of the carr\'{e} du champ
+kernel for the magnetic operator on the $2^3$~torus reveals exact
+$R_{1/2}$~covariance structure (Brownian fBM) in the spectral
+decomposition.  We then prove that the single-link conditional measure
+of the Yang--Mills Hamiltonian satisfies a Bakry-\'{E}mery curvature
+bound $\mathrm{CD}(2-c,\infty)$ on $S^3 \cong \mathrm{SU}(2)$, where
+$c = \tfrac{\beta}{2}|W_\ell|$ encodes the staple sum from
+neighboring plaquettes.  This bound is the exact $S^3$~analog of the
+$\mathrm{CD}(1-\omega^2/2,\,\infty)$ result for the Cauchy--Fokker--Planck
+operator on~$\T$.  We discuss the implications for removing the LTQO
+condition from the mass gap proof via the Martinelli multi-scale
+iteration.
+\end{abstract}
+
+\tableofcontents
+
+%% ================================================================
+\section{Introduction}
+%% ================================================================
+
+Two recent lines of work address spectral gap problems through
+curvature methods.  The first establishes the first positive
+Bakry-\'{E}mery curvature bound for fractional Laplacians on the
+torus, proving $\mathrm{CD}(1-\omega^2/2,\,\infty)$ for the
+Cauchy--Fokker--Planck operator with cosine drift.  The second proves a
+positive mass gap for $\mathrm{SU}(2)$ lattice Yang--Mills theory on the
+$2^3$~torus, conditional on a local topological quantum order (LTQO)
+assumption for the infinite-volume extension.
+
+The purpose of this note is to identify the precise structural bridge
+between these two results.  Our main findings are:
+
+\begin{enumerate}
+\item[(A)] The magnetic operator $B$ in the Yang--Mills Hamiltonian has
+  exact $R_{1/2}$ (Brownian) covariance structure in its spectral
+  decomposition (Section~\ref{sec:carre}).
+\item[(B)] The single-link conditional measure on $S^3 \cong
+  \mathrm{SU}(2)$ satisfies $\mathrm{CD}(2-c,\,\infty)$ with a cosine
+  potential from the Wilson action, in exact parallel to the
+  torus result (Section~\ref{sec:S3}).
+\item[(C)] The cross-sector coupling in the $B$~eigenbasis has singular
+  values given by the Casimir eigenvalue $C_2(j{=}\tfrac{1}{2}) =
+  \tfrac{3}{4}$, revealing the representation-theoretic origin of the
+  curvature structure (Section~\ref{sec:cross}).
+\item[(D)] The diffusion curvature $\kappa_{\mathrm{diff}} = 2-c$ becomes
+  negative for $\beta \gtrsim 2.5$, but the mass gap remains positive
+  due to contributions from the magnetic (jump) sector
+  (Section~\ref{sec:balance}).
+\end{enumerate}
+
+%% ================================================================
+\section{Setup and Notation}
+%% ================================================================
+
+\subsection{The Yang--Mills Hamiltonian}
+
+We work with the Kogut--Susskind Hamiltonian on the spatial lattice
+$\Lambda = (\Z/2\Z)^3$:
+\begin{equation}\label{eq:H}
+  H(g^2) = \frac{g^2}{2}\sum_{\ell} j_\ell(j_\ell+1)
+  - \frac{1}{g^2}\sum_p B_p,
+\end{equation}
+where $j_\ell \in \{0,\tfrac{1}{2},1,\ldots\}$ labels the
+representation on oriented link $\ell$, and $B_p = \tfrac{1}{2}\,
+\chi_{1/2}(U_p)$ is the plaquette operator inserting the fundamental
+character around plaquette~$p$.
+
+After BFS tree gauge fixing, the $2^3$~torus has 17~active links,
+12~plaquettes, and the Gauss law projects onto gauge-invariant states.
+At truncation $j_{\max}=1$, the full Hilbert space has dimension
+$20{,}041{,}551$.
+
+\subsection{The Feshbach subspace}
+
+The low-energy subspace with electric energy $E = \sum_\ell
+j_\ell(j_\ell+1) \le 3$ has dimension~44, containing:
+
+\begin{center}
+\begin{tabular}{ccl}
+\toprule
+$E$ & States & Holonomy sectors \\
+\midrule
+$0$ & 1 & $(+,+,+)$ \\
+$\tfrac{3}{2}$ & 5 & $(+,+,+)$ \\
+$3$ & 38 & $(+,+,+)$: 32; $(+,-,-)$: 2; $(-,+,-)$: 2; $(-,-,+)$: 2 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The projected magnetic operator $PBP$ is a $44\times 44$ real symmetric
+matrix with $\|PBP\| = 0.3998$, matching the theoretical bound
+$\|PBP\| \le 0.4$ from the Clebsch--Gordan analysis.
+
+\subsection{The Bakry-\'{E}mery framework on $\T$}
+
+On the torus $\T = \R/(2\pi\Z)$, the Cauchy--Fokker--Planck operator
+\begin{equation}
+  L = -(-\Delta)^{1/2} + \omega^2 \sin(x)\,\frac{d}{dx}
+\end{equation}
+restricted to positive Fourier modes $\{1,\ldots,N\}$ has carr\'{e}
+du champ kernel
+\begin{equation}\label{eq:psi-torus}
+  \Psi_1(n,m) = \tfrac{1}{2}(|n| + |m| - |n-m|) = \min(n,m),
+\end{equation}
+which is the covariance function $R_{1/2}(n,m)$ of fractional Brownian
+motion at Hurst parameter $H = \tfrac{1}{2}$.
+
+The curvature bound $\mathrm{CD}(1-\omega^2/2,\,\infty)$ follows from
+three key properties:
+\begin{itemize}
+\item[(i)] The generalized eigenvalues of $(\Psi_1^{\circ 2},\,
+  \Psi_1)$ are the odd integers $\{1,3,5,\ldots,2N{-}1\}$, giving
+  $\kappa(1,N) = 1$ for all~$N$.
+\item[(ii)] The cross-sign kernel vanishes: $\Psi_1(n,-m) = 0$ for
+  $n,m > 0$.
+\item[(iii)] The drift correction is a scalar shift: $\Gamma_{L,2} -
+  \Gamma_{1,2} = \tfrac{\omega^2}{2}\cos(x)\,\Gamma$.
+\end{itemize}
+
+%% ================================================================
+\section{Carr\'{e} du Champ of the Magnetic Operator}\label{sec:carre}
+%% ================================================================
+
+\subsection{Spectral decomposition of $B$}
+
+Let $B_{\text{vac}}$ denote the magnetic operator $PBP$ restricted to
+the vacuum sector $(+,+,+)$, which has dimension~38.  The eigenvalue
+decomposition yields:
+
+\begin{observation}\label{obs:pm}
+$B_{\mathrm{vac}}$ has exactly 9~positive eigenvalues, 9~negative
+eigenvalues, and a 20-dimensional null space.  The positive and
+negative eigenvalues are exactly paired:
+\begin{equation}
+  \sigma(B_{\mathrm{vac}}) \cap (0,\infty) = \{\lambda_1, \ldots, \lambda_9\},
+  \quad
+  \sigma(B_{\mathrm{vac}}) \cap (-\infty,0) = \{-\lambda_9, \ldots, -\lambda_1\},
+\end{equation}
+where $0 < \lambda_1 < \cdots < \lambda_9$.
+\end{observation}
+
+The numerical values are:
+\begin{equation*}
+  \lambda_k = 0.0224,\; 0.0428,\; 0.0644,\; 0.0995,\; 0.1200,\;
+  0.1826,\; 0.1923,\; 0.2033,\; 0.3384.
+\end{equation*}
+
+This $\pm$-symmetry follows from the fact that $B = \sum_p B_p$ with
+each $B_p$ a trace (character insertion), which maps the representation
+$j$ to $j \pm \tfrac{1}{2}$.  In the gauge-invariant sector, this
+creates exact $\pm$-pairing.
+
+\subsection{Exact $R_{1/2}$ covariance structure}
+
+In the $B_+$ eigenbasis (the 9-dimensional positive eigenspace), the
+carr\'{e} du champ kernel is:
+\begin{equation}\label{eq:psi-YM}
+  \Psi(k,l) = \tfrac{1}{2}(\lambda_k + \lambda_l - |\lambda_k - \lambda_l|)
+  = \min(\lambda_k,\,\lambda_l).
+\end{equation}
+This is \emph{identically} the fBM covariance $R_{1/2}(\lambda_k,
+\lambda_l)$ at Hurst parameter $H = \tfrac{1}{2}$.
+
+\begin{remark}
+Equation~\eqref{eq:psi-YM} is structurally identical to
+\eqref{eq:psi-torus}: both are $\min$-kernels, which is the signature
+of $H = \tfrac{1}{2}$ (Brownian motion).  On the torus this holds
+because $|\cdot|^1$ is linear; on the Yang--Mills side it holds because
+$\tfrac{1}{2}(a+b-|a-b|) = \min(a,b)$ for any ordered positive reals.
+\end{remark}
+
+\subsection{Approximate odd-integer curvature spectrum}
+
+The generalized eigenvalues of $(\Psi^{\circ 2},\,\Psi)$ in the $B_+$
+sector are:
+
+\begin{center}
+\begin{tabular}{c r r r}
+\toprule
+$k$ & $\kappa_k$ & $\kappa_k / \kappa_0$ & Odd integer \\
+\midrule
+0 & 0.02242 & 1.00 & 1 \\
+1 & 0.06521 & 2.91 & 3 \\
+2 & 0.10717 & 4.78 & 5 \\
+3 & 0.16390 & 7.31 & 7 \\
+4 & 0.21951 & 9.79 & 9 \\
+5 & 0.30253 & 13.50 & 11 \\
+6 & 0.37482 & 16.72 & 13 \\
+7 & 0.39559 & 17.65 & 15 \\
+8 & 0.54169 & 24.16 & 17 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The first five ratios agree with the odd integers to within 3--10\%.
+The deviation at higher levels reflects the non-uniform spacing of the
+$B$~eigenvalues (on the torus, the Fourier modes are uniformly spaced,
+giving exact odd integers).  The pattern error over all~9 eigenvalues is
+$0.286$ in relative $\ell^2$~norm.
+
+\subsection{Positive curvature}
+
+The minimum curvature eigenvalue is:
+\begin{equation}
+  \boxed{\kappa = \lambda_{\min}(B_+) = 0.02242 > 0.}
+\end{equation}
+This is the smallest nonzero eigenvalue of the magnetic operator in the
+vacuum sector.  Its positivity is a direct consequence of the
+$R_{1/2}$~structure and the positive-definiteness of the $\min$-kernel.
+
+%% ================================================================
+\section{Cross-Sector Coupling}\label{sec:cross}
+%% ================================================================
+
+The electric operator $E = \sum_\ell j_\ell(j_\ell+1)$, expressed in the
+$B$~eigenbasis, couples the $B_+$ and $B_-$ sectors.
+
+\begin{observation}
+The singular values of $E(+,-)$ are
+\begin{equation}
+  \sigma(E_{+-}) = \left\{\tfrac{3}{2},\; \tfrac{3}{4},\; \tfrac{3}{4},\;
+  \tfrac{3}{4},\; \tfrac{3}{4},\; 0,\; 0,\; 0,\; 0\right\}.
+\end{equation}
+\end{observation}
+
+The nonzero singular values are exactly $C_2(j{=}\tfrac{1}{2}) =
+\tfrac{3}{4}$ and $2\,C_2(j{=}\tfrac{1}{2}) = \tfrac{3}{2}$, where
+$C_2(j) = j(j+1)$ is the quadratic Casimir.  This is not a coincidence:
+the Feshbach subspace has electric energies $E \in \{0, \tfrac{3}{2},
+3\}$, and the cross-sector coupling is mediated entirely by the Casimir
+structure of the $j = \tfrac{1}{2}$ representation.
+
+The Frobenius norm $\|E(+,-)\|_F = 2.121$ is nonzero, confirming that
+the Yang--Mills system is \emph{not} at the exact Cauchy point
+$\gamma=1$ of the Bakry-\'{E}mery theory (where cross-sign vanishing
+$\Psi_1(n,-m) = 0$ holds).  The analogy with the torus is:
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Torus ($\gamma = 1$) & Yang--Mills \\
+\midrule
+$\Psi_1(n,-m) = 0$ & $\|E(+,-)\| \neq 0$ \\
+Cross-sign vanishing exact & Cross-sign coupling via Casimir \\
+Scalar shift exact & Scalar shift approximate \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+%% ================================================================
+\section{The $S^3$ Analog of Theorem~E}\label{sec:S3}
+%% ================================================================
+
+The correct level at which the Bakry-\'{E}mery theory maps onto
+Yang--Mills is not the multi-link Feshbach space but the
+\emph{single-link conditional measure}.
+
+\subsection{Setup on $S^3$}
+
+Each link $\ell$ of the gauge-fixed lattice carries a group element
+$U_\ell \in \mathrm{SU}(2) \cong S^3$.  Conditional on the neighboring
+links (which enter through the staple sum $W_\ell$), the single-link
+measure is
+\begin{equation}
+  d\mu_\ell(U) = \frac{1}{Z_\ell}\,
+  \exp\!\bigl(\beta\,\mathrm{Re}\,\tr(U\,W_\ell^\dag)\bigr)\,dU,
+\end{equation}
+where $dU$ is the Haar measure on $\mathrm{SU}(2)$ and
+$\beta = 4/g^2$.
+
+Parametrizing $\mathrm{SU}(2)$ by the geodesic distance $\theta \in
+[0,\pi]$ from the identity (with Haar measure $\sin^2\theta\,d\theta$
+on the zonal sector), the potential becomes
+\begin{equation}
+  V(\theta) = -c\cos\theta, \qquad c = \tfrac{\beta}{2}\,|W_\ell|.
+\end{equation}
+
+The associated diffusion operator (Langevin dynamics on $S^3$) is
+\begin{equation}
+  L = \Delta_{S^3} + c\sin\theta\,\frac{d}{d\theta}.
+\end{equation}
+
+\subsection{The curvature bound}
+
+\begin{theorem}[Bakry-\'{E}mery curvature on $S^3$ with cosine drift]%
+\label{thm:S3}
+The operator $L = \Delta_{S^3} - \nabla V \cdot \nabla$ with $V(\theta)
+= -c\cos\theta$ on $S^3$ satisfies
+\begin{equation}
+  \boxed{\mathrm{CD}(2-c,\,\infty)}\,.
+\end{equation}
+Equivalently, for all smooth $f \colon S^3 \to \R$:
+\begin{equation}\label{eq:CD-S3}
+  \Gamma_{L,2}(f,f) \;\ge\; (2-c)\,\Gamma(f,f),
+\end{equation}
+where $\Gamma(f,f) = |\nabla f|^2$ and $\Gamma_{L,2}(f,f) =
+\tfrac{1}{2}[L\,\Gamma(f,f) - 2\,\Gamma(f,Lf)]$.
+\end{theorem}
+
+\begin{proof}
+For a diffusion operator $L = \Delta - \nabla V \cdot \nabla$ on a
+Riemannian manifold $(M,g)$, the standard Bakry-\'{E}mery identity
+gives
+\begin{equation}\label{eq:BE-general}
+  \Gamma_{L,2}(f,f) = |\Hess\,f|^2 + (\Ric + \Hess\,V)(\nabla f,
+  \nabla f).
+\end{equation}
+
+On $S^3$ with constant curvature, $\Ric = 2g$.
+
+For $V(\theta) = -c\cos\theta$, the Hessian is computed using the
+formula for radial functions on $S^n$:
+\begin{equation}
+  \Hess\,V = V''\,d\theta \otimes d\theta + V'\cot\theta\,(g -
+  d\theta \otimes d\theta).
+\end{equation}
+Since $V'' = c\cos\theta$ and $V'\cot\theta = c\sin\theta \cdot
+\frac{\cos\theta}{\sin\theta} = c\cos\theta$, both components equal
+$c\cos\theta$, giving:
+\begin{equation}
+  \Hess\,V = c\cos\theta \cdot g_{S^3}.
+\end{equation}
+This is a \emph{scalar multiple of the metric at every point} --- the
+key structural identity.
+
+Substituting into~\eqref{eq:BE-general}:
+\begin{equation}
+  \Gamma_{L,2}(f,f) = |\Hess\,f|^2 + (2 + c\cos\theta)\,|\nabla f|^2
+  \;\ge\; (2 + c\cos\theta)\,\Gamma(f,f).
+\end{equation}
+Taking the infimum over $\theta \in [0,\pi]$:
+\begin{equation}
+  \Gamma_{L,2}(f,f) \;\ge\; (2-c)\,\Gamma(f,f). \qedhere
+\end{equation}
+\end{proof}
+
+\begin{remark}[Comparison with the torus result]
+On $\T$ with the Cauchy operator $L = -(-\Delta)^{1/2} + \omega^2
+\sin(x)\,d/dx$, the curvature bound is $\mathrm{CD}(1-\omega^2/2,\,
+\infty)$.  On $S^3$ with $L = \Delta_{S^3} + c\sin\theta\,d/d\theta$,
+the bound is $\mathrm{CD}(2-c,\,\infty)$.  The parallel is exact:
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{ll}
+\toprule
+$\T$, Theorem~E & $S^3$, Theorem~\ref{thm:S3} \\
+\midrule
+$\kappa_{\mathrm{free}} = 1$ & $\kappa_{\mathrm{free}} = 2 = \Ric(S^3)$ \\
+$V(x) = -\omega^2\cos x$ & $V(\theta) = -c\cos\theta$ \\
+$\kappa = 1 - \omega^2/2$ & $\kappa = 2 - c$ \\
+$\Hess(V)$: hard (non-local $\Gamma$) & $\Hess(V) = c\cos\theta \cdot g$
+  (automatic) \\
+\bottomrule
+\end{tabular}
+\end{center}
+The crucial difference is that on $\T$ the fractional Laplacian is
+non-local, making the scalar shift a \emph{hard theorem} requiring the
+fBM covariance machinery (Theorems A--D of the Bakry-\'{E}mery paper).
+On~$S^3$, the Laplacian is a diffusion operator, and the scalar shift
+follows from standard Riemannian geometry.
+\end{remark}
+
+\subsection{Consequences for the spectral gap}
+
+The curvature bound $\mathrm{CD}(2-c,\,\infty)$ implies:
+
+\begin{corollary}[Single-link Poincar\'{e} inequality]\label{cor:poincare}
+For $c < 2$, the single-link conditional measure $\mu_\ell$ satisfies
+\begin{equation}
+  \Var_{\mu_\ell}(f) \;\le\; \frac{1}{2-c}\,\mathcal{E}_L(f,f),
+\end{equation}
+where $\mathcal{E}_L(f,f) = \int |\nabla f|^2\,d\mu_\ell$ is the
+Dirichlet form.
+\end{corollary}
+
+\begin{corollary}[Gradient estimate]
+For the semigroup $P_t^L = e^{tL}$:
+\begin{equation}
+  |\nabla P_t^L f|^2 \;\le\; e^{-2(2-c)t}\, P_t^L\!\bigl[|\nabla f|^2\bigr].
+\end{equation}
+\end{corollary}
+
+These recover and sharpen the single-link gap $\gamma_\ell \ge
+\tfrac{3}{4}$ from Theorem~9.1 of the Yang--Mills paper: the spectral
+gap of $\Delta_{S^3}$ on $S^3$ is $\lambda_1 = 3$
+(the first nonzero eigenvalue, corresponding to $j = 1$ in the Peter--Weyl
+expansion), and $\mathrm{CD}(\kappa,\infty)$ with
+$\kappa = 2-c > 0$ implies $\lambda_1(\mu_\ell) \ge 2-c$ for the
+weighted measure.
+
+\subsection{Numerical verification}
+
+We verify the curvature bound numerically using zonal spherical
+harmonics $\chi_j(\theta) = \sin((j{+}1)\theta)/\sin\theta$.  For each
+mode~$j$, we compute $\Gamma_{L,2}(\chi_j,\chi_j)(\theta)$ and
+$\Gamma(\chi_j,\chi_j)(\theta)$ on a grid of 2000~points and evaluate
+the ratio:
+
+\begin{center}
+\begin{tabular}{c c c c}
+\toprule
+$j$ & $\min_\theta \frac{\Gamma_{L,2}}{\Gamma}$ &
+$\max_\theta \frac{\Gamma_{L,2}}{\Gamma}$ & Lower bound $2-c$ \\
+\midrule
+1 & 1.823 & 29656 & 0.5 \\
+2 & 2.545 & $1.64\times 10^6$ & 0.5 \\
+3 & 1.997 & $1.03\times 10^7$ & 0.5 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+(Here $c = 1.5$.)  The minimum ratio exceeds $2-c = 0.5$ in all cases,
+confirming the curvature bound.  The actual minimum is substantially
+better than the worst case, reflecting the fact that $\cos\theta > -1$
+except at $\theta = \pi$.
+
+%% ================================================================
+\section{The Curvature Balance}\label{sec:balance}
+%% ================================================================
+
+\subsection{Diffusion vs.\ jump contributions}
+
+The full Yang--Mills Hamiltonian~\eqref{eq:H} generates dynamics with
+two components:
+\begin{enumerate}
+\item \textbf{Diffusion} (electric term): The Glauber dynamics on
+  each link, with conditional measure on~$S^3$.  Bakry-\'{E}mery
+  curvature $\kappa_{\mathrm{diff}} = 2-c$.
+\item \textbf{Jump} (magnetic term): The plaquette operator $B_p$
+  changes representations by $\pm\tfrac{1}{2}$ on all four links
+  simultaneously.  This is a non-local operator on the product
+  space $(S^3)^{n_{\mathrm{links}}}$.
+\end{enumerate}
+
+The effective coupling $c = \tfrac{\beta}{2}|W_\ell|$ depends on the
+staple sum, which is controlled by the activity
+$\alpha = I_2(\beta)/I_1(\beta)$ (ratio of modified Bessel functions).
+After gauge fixing to coordination~$\sim 3$:
+\begin{equation}
+  c_{\mathrm{eff}} \approx \tfrac{3}{2}\,\beta\,\alpha(\beta).
+\end{equation}
+
+\subsection{Curvature table}
+
+The following table shows the diffusion curvature $\kappa_{\mathrm{diff}}
+= 2 - c_{\mathrm{eff}}$ alongside the actual mass gap from the
+44-state and 2252-state Feshbach computations:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{r r r r r r r}
+\toprule
+$\beta$ & $g^2$ & $\alpha$ & $c_{\mathrm{eff}}$ &
+$\kappa_{\mathrm{diff}}$ & $\mathrm{gap}_{44}$ & $\mathrm{gap}_{2252}$ \\
+\midrule
+0.5 & 8.00 & 0.124 & 0.09 & 1.91 & 6.000 & 6.000 \\
+1.0 & 4.00 & 0.240 & 0.36 & 1.64 & 3.000 & 3.000 \\
+2.0 & 2.00 & 0.433 & 1.30 & 0.70 & 1.503 & 1.496 \\
+2.5 & 1.60 & 0.507 & 1.90 & 0.10 & 1.206 & 1.192 \\
+\midrule
+3.0 & 1.33 & 0.568 & 2.56 & $-0.56$ & 1.010 & 0.987 \\
+3.5 & 1.14 & 0.618 & 3.24 & $-1.24$ & 0.873 & 0.838 \\
+4.0 & 1.00 & 0.658 & 3.95 & $-1.95$ & 0.773 & 0.722 \\
+5.0 & 0.80 & 0.719 & 5.40 & $-3.40$ & 0.645 & 0.555 \\
+8.0 & 0.50 & 0.819 & 9.83 & $-7.83$ & 0.525 & 0.306 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The horizontal line at $\beta \approx 2.5$ marks the transition where
+$\kappa_{\mathrm{diff}}$ becomes negative.  For $\beta \gtrsim 2.5$,
+the single-link diffusion curvature can no longer sustain a positive
+spectral gap.  Yet the actual mass gap remains positive for all
+$\beta > 0$, decreasing monotonically but never reaching zero.
+
+\subsection{The role of the jump sector}
+
+The positivity of the gap for $\beta > 2.5$ must come from the magnetic
+(jump) contribution.  In the $B_+$ sector, the curvature $\kappa =
+\lambda_{\min}(B_+) = 0.0224 > 0$ provides a positive contribution
+that supplements the diffusion curvature.  However, this is not a simple
+additive correction: the electric and magnetic terms do not commute,
+and the cross-sector coupling (Section~\ref{sec:cross}) mixes the
+diffusion and jump contributions.
+
+The crossover regime $\beta \in [2.3, 5.0]$ --- precisely where
+convergent cluster expansions fail due to the closed-surface growth
+constant $\mu_{\mathrm{cs}} \ge 1.64$ --- is where the interplay
+between diffusion and jump curvature is most delicate.  It is in this
+regime that the \emph{block-level} computation (Feshbach projection onto
+the 44-state subspace) provides the necessary non-perturbative input.
+
+%% ================================================================
+\section{Implications for the Mass Gap Proof}
+%% ================================================================
+
+\subsection{The LTQO condition}
+
+The main result of the Yang--Mills paper (Theorem~14.1) establishes:
+\begin{enumerate}
+\item[(i)] Block gap $\gamma(\Lambda,\sigma,g^2) > 0$ for the
+  $2^3$~block, uniformly in boundary conditions~$\sigma$
+  (unconditional).
+\item[(ii)] Infinite-volume gap $m(g^2) > 0$ for all $g^2 > 0$
+  (\emph{conditional on LTQO}).
+\end{enumerate}
+
+The LTQO assumption enters the Martinelli multi-scale iteration as a
+stability condition: it ensures that changing boundary conditions on a
+block does not dramatically alter the ground state in the interior.
+
+\subsection{Curvature as a replacement for LTQO}
+
+The Bakry-\'{E}mery framework offers a potential path to removing the
+LTQO condition.  The key insight is:
+
+\begin{quote}
+\emph{The $\mathrm{CD}(\kappa,\infty)$ condition with $\kappa > 0$
+implies exponential decay of correlations, which is the essential
+content of LTQO.}
+\end{quote}
+
+Specifically, the gradient estimate from $\mathrm{CD}(\kappa,\infty)$
+gives
+\begin{equation}
+  |\nabla_x P_t f(y)| \le e^{-\kappa t}\, P_t[|\nabla_x f|](y),
+\end{equation}
+which controls the sensitivity of the semigroup to boundary
+perturbations.  This is precisely the ``weak dependence on boundary
+conditions'' that LTQO encodes.
+
+\subsection{Program for removing LTQO}
+
+\begin{enumerate}
+\item \textbf{Single-link curvature} (Theorem~\ref{thm:S3}, proven):
+  $\mathrm{CD}(2-c,\,\infty)$ for each link conditional on its neighbors.
+  Valid for $c < 2$, i.e., $\beta \lesssim 2.5$.
+
+\item \textbf{Tensorization with gauge constraint}: Develop a
+  Bakry-\'{E}mery tensorization theorem for product measures on
+  $(S^3)^{n_{\mathrm{links}}}$ subject to the Gauss law.  The gauge
+  constraint projects onto a subspace, which should only
+  \emph{increase} the curvature (by the fiber-bundle projection argument
+  of Section~8.3 in the Yang--Mills paper:
+  $\gamma_{\mathrm{phys}} \ge \gamma_{\mathrm{full}}$).
+
+\item \textbf{Block curvature in the crossover}: For $\beta > 2.5$,
+  the single-link bound is insufficient.  The 44-state Feshbach
+  computation provides the block-level spectral gap, which can be
+  reinterpreted as a \emph{block-level Bakry-\'{E}mery curvature}.
+  This feeds into the Martinelli iteration without requiring LTQO as
+  a separate assumption.
+
+\item \textbf{$S^3$ analog of cross-sign vanishing}: The cross-sector
+  singular values $\{\tfrac{3}{2}, \tfrac{3}{4}, \tfrac{3}{4},
+  \tfrac{3}{4}, \tfrac{3}{4}\}$ suggest that a
+  representation-theoretic version of the cross-sign vanishing
+  condition may hold, giving sharper curvature bounds within the vacuum
+  holonomy sector.
+\end{enumerate}
+
+%% ================================================================
+\section{Conclusion}
+%% ================================================================
+
+We have established a precise structural bridge between the
+Bakry-\'{E}mery curvature theory for fractional Laplacians on the torus
+and the spectral gap problem for lattice Yang--Mills theory:
+
+\begin{itemize}
+\item The magnetic operator has exact $R_{1/2}$ covariance
+  (Brownian structure) in its spectral decomposition.
+\item The single-link conditional measure satisfies
+  $\mathrm{CD}(2-c,\,\infty)$ on $S^3$, with the cosine potential from
+  the Wilson action playing the role of the drift in Theorem~E.
+\item The Hessian identity $\Hess(-c\cos\theta) = c\cos\theta \cdot
+  g_{S^3}$ is the geometric mechanism behind the scalar shift --- the
+  cosine potential is a conformal perturbation on~$S^3$.
+\item The curvature framework provides a natural language for the
+  multi-scale iteration that may replace the LTQO assumption.
+\end{itemize}
+
+The deepest open question is whether the block-level Bakry-\'{E}mery
+curvature can be proven positive in the crossover regime $\beta \in
+[2.3, 5.0]$ without relying on LTQO.  The numerical evidence
+(positive gap for all $\beta$ in both the 44-state and 2252-state
+computations) strongly suggests this is the case.
+
+\end{document}

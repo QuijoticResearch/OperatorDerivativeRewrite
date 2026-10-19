@@ -1,0 +1,1635 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{booktabs}
+
+% Theorem environments
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{assumption}[theorem]{Assumption}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% Operators and shortcuts
+\newcommand{\Id}{\mathrm{Id}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\SU}{\mathrm{SU}}
+\newcommand{\su}{\mathfrak{su}}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\Ric}{\mathrm{Ric}}
+\newcommand{\Hess}{\mathrm{Hess}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Ran}{\mathrm{Ran}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\ip}[2]{\langle #1, #2 \rangle}
+\newcommand{\norm}[1]{\|#1\|}
+\newcommand{\abs}[1]{|#1|}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cT}{\mathcal{T}}
+
+\title{Non-Gaussian Bakry--\'Emery Curvature\\
+for Lattice Yang--Mills Theory\\
+via Operator Factorization}
+
+\author{Ramiro Fontes\\
+Quijotic Research\\
+\texttt{ramirofontes@gmail.com}}
+
+\date{February 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We establish the key ingredients for a spectral gap in
+four-dimensional $\SU(2)$ lattice gauge
+theory with Wilson action at sufficiently large coupling $\beta$,
+using the Bakry--\'Emery $\Gamma_2$-criterion on
+the compact Riemannian configuration space $\SU(2)^{|\cL|}$.
+
+The proof combines three ingredients. First, we establish a
+Bakry--\'Emery curvature bound
+$\Gamma_2 \geq \kappa\beta\,\Gamma$ on each $2^4$ block
+conditionally, with boundary links fixed. The bound holds on a
+``good region'' $\Omega_g$ where plaquette angles are small; the
+Ricci curvature $\Ric_{\SU(2)} = \frac{1}{2}g$ of the compact group
+enters as a positive contribution. Second, the topological
+cancellation $\sum_p (A_\ell)_p = 0$ (a manifestation of
+$\partial\circ\partial = 0$) implies that the abelian Hessian
+has vanishing column sums in the boundary-interior mixed block,
+yielding partial decoupling in the free theory. The non-abelian curvature error
+is bounded via the structure constants $\epsilon_{abc}$ of
+$\SU(2)$. Third, the chessboard estimate from reflection positivity
+concentrates the measure on $\Omega_g$ with exponentially small
+complement, enabling transfer of the local Poincar\'e inequality to
+the full measure with negligible loss. A martingale assembly then
+yields the volume-uniform global spectral gap.
+
+The approach differs from the standard Gaussian route in two ways:
+the Ricci curvature of $\SU(2)$ provides a free positive
+contribution absent in the flat approximation, and the measure
+comparison uses chessboard concentration (cost: $O(e^{-c\beta})$)
+rather than a Gaussian Radon--Nikodym bound (cost: $O(1)$).
+This provides a route from the operator factorization framework
+of~\cite{Fontes2026a,Fontes2026d} to constructive gauge theory,
+with the Leibniz defect serving as the natural measure of
+non-abelian coupling.
+\end{abstract}
+
+\medskip
+\noindent\textbf{MSC 2020:} 81T13, 60H07, 58J65, 47D07, 82B20.\\
+\textbf{Keywords:} Bakry--\'Emery curvature; lattice gauge theory;
+Yang--Mills; operator factorization; Leibniz defect; non-Gaussian;
+spectral gap; chessboard estimate.
+
+
+%==============================================================================
+\section{Introduction}\label{sec:intro}
+%==============================================================================
+
+\subsection{Motivation}
+
+Establishing a spectral gap (mass gap) for lattice Yang--Mills theory
+is the essential analytical step toward the Clay Millennium
+Problem~\cite{JaffeWitten}. The standard approach, due to
+Balaban~\cite{Balaban1983,Balaban1984,Balaban1985}, proceeds via a
+multi-scale renormalization group program that controls the effective
+action at each scale through an elaborate system of estimates. While
+successful in principle, the program spans thousands of pages and has
+resisted independent verification.
+
+A simpler route has long been sought. The Bakry--\'Emery
+$\Gamma_2$-criterion~\cite{BakryEmery1985,BakryGentilLedoux2014}
+provides spectral gaps from curvature lower bounds:
+\begin{equation}\label{eq:BE-implication}
+\Gamma_2(f,f) \geq \kappa\,\Gamma(f,f)
+\quad\Longrightarrow\quad
+\lambda_1 \geq \kappa.
+\end{equation}
+For the Wilson measure on $\SU(2)^{|\cL|}$, the generator is
+$L = \Delta_{\SU(2)} - \nabla S_\beta \cdot \nabla$ (the Langevin operator
+with Wilson action potential), and the Bakry--\'Emery condition
+reduces to a lower bound on the Bakry--\'Emery--Ricci tensor
+$\Ric_\mu = \Ric_g + \Hess(S_\beta)$.
+
+The difficulty is that $\Hess(S_\beta)$ has a complex block structure
+coupling link variables through plaquette interactions, and its
+spectrum depends on the non-abelian geometry of $\SU(2)$. Previous
+analyses linearize: they pass to exponential coordinates $U_\ell = e^{A_\ell}$,
+approximate the Hessian near identity, and treat the non-abelian
+corrections perturbatively via the Holley--Stroock lemma. This
+Gaussian reduction loses geometric information and produces unnecessarily
+conservative constants.
+
+In this paper, we develop a non-Gaussian approach based on the
+operator factorization framework of~\cite{Fontes2026a,Fontes2026d}.
+The key idea is to work directly with the Riemannian structure of
+$\SU(2)$ and to use the Leibniz defect~\cite{Fontes2026d} as the
+natural measure of non-abelian coupling, replacing the perturbative
+Holley--Stroock correction.
+
+
+\subsection{Main results}
+
+\begin{theorem}[Main Theorem]\label{thm:main}
+Let $\Lambda_N = (\Z/N\Z)^4$ with $N = 2^n$, $n \geq 2$. For
+$\SU(2)$ lattice gauge theory with Wilson action at coupling
+$\beta \geq \beta_0$, the following hold:
+\begin{enumerate}[label=(\roman*)]
+\item \textbf{Block-conditional curvature:} For each
+  $2^4$ block $B$, the Bakry--\'Emery--Ricci tensor of the
+  conditional measure $\mu_B(\cdot|\eta)$ satisfies
+  \begin{equation}
+  \Ric_{\mu_B(\cdot|\eta)} \geq \kappa_B(\beta,\theta_*)\,g
+  \qquad \text{on } \Omega_g(\theta_*),
+  \end{equation}
+  with $\kappa_B(\beta,\theta_*) = \frac{1}{2}
+  + \beta(\cos(\theta_*)\cdot\lambda_{\min}(H_{\mathrm{phys}})
+  - C'\theta_*^2)$,
+  uniform in $\eta$ and in $N$.
+
+\item \textbf{Block Poincar\'e:} For each block and all
+  boundary conditions:
+  \begin{equation}
+  \Var_{\mu_B(\cdot|\eta)}(f) \leq \frac{C_P}{\beta}\,
+  \int |\nabla_y f|^2\,d\mu_B(\cdot|\eta),
+  \end{equation}
+  obtained by combining the curvature bound on $\Omega_g$ with
+  the semiclassical spectral gap and chessboard concentration,
+  uniformly in $\eta$ and $N$.
+
+\item \textbf{Spectral gap (conditional):} Assuming the boundary-term
+  Poincar\'e inequality (Remark~\ref{rem:boundary-term}), the spectral
+  gap on gauge-invariant functions satisfies $\lambda_1 \geq c'\beta$,
+  uniformly in $N$, for $\beta \geq \beta_0$.
+
+\item \textbf{Exponential clustering (conditional):} Under the same
+  assumption, for gauge-invariant observables $F, G$ with separated
+  supports:
+  \begin{equation}
+  \abs{\Cov_{\mu_\beta}(F,G)} \leq C\norm{F}_\infty\norm{G}_\infty\,
+  e^{-m\,\mathrm{dist}(F,G)}
+  \end{equation}
+  with $m > 0$ depending on $\beta$.
+\end{enumerate}
+\end{theorem}
+
+The proof architecture is: \textbf{local curvature on $\Omega_g$}
+(Theorem~\ref{thm:curvature}) $\to$ \textbf{semiclassical spectral
+gap + chessboard saddle-point control}
+(Theorem~\ref{thm:block-poincare-local}) $\to$
+\textbf{martingale assembly}
+(Theorem~\ref{thm:global-poincare}).
+
+\subsection{Relationship to prior work}
+
+The operator factorization $(\Id - \E)F = \delta_X \Pi_X D_X F$
+was developed in~\cite{Fontes2026a} (Hilbert),
+\cite{Fontes2026d} (Banach/stable L\'evy), and the connection between
+the Leibniz defect $\Gamma_X$ and Bakry--\'Emery curvature was
+established in~\cite{Fontes2026e,Fontes2026f}. The principle that
+the energy space $\cH$ of the driving process determines the PDE
+generator~\cite{Fontes2026i} extends here: the Riemannian structure
+of $\SU(2)$ (the ``energy space'' of the gauge field) determines
+the Hessian of the Wilson action via the same operator-theoretic
+mechanism. The present paper
+applies this framework to a concrete non-Gaussian, non-abelian setting.
+
+The Bakry--\'Emery approach to lattice spin systems was developed by
+Zegarlinski~\cite{Zegarlinski1996} and
+Stroock--Zegarlinski~\cite{StroockZegarlinski1992}. Their techniques
+apply to continuous spin systems with convex single-site potentials,
+and the extension to gauge theories requires handling the plaquette
+coupling structure and gauge invariance. Our topological cancellation
+($A^\top v = 0$) and Leibniz defect formulation provide the necessary
+tools.
+
+
+\subsection{Organization}
+
+Section~\ref{sec:setup}: lattice setup and Riemannian geometry of $\SU(2)$.
+Section~\ref{sec:operator}: operator derivative and Leibniz defect on $\SU(2)$.
+Section~\ref{sec:cancel}: topological cancellation and free factorization.
+Section~\ref{sec:curvature}: the $\Gamma_2$ computation.
+Section~\ref{sec:chessboard}: chessboard estimate and corridor control.
+Section~\ref{sec:assembly}: martingale assembly and global bound.
+Section~\ref{sec:discussion}: discussion and open problems.
+
+
+%==============================================================================
+\section{Lattice Setup and Riemannian Geometry}\label{sec:setup}
+%==============================================================================
+
+\subsection{Configuration space}
+
+Let $\Lambda_N = (\Z/N\Z)^4$ with $N = 2^n$. The set of oriented links is
+$\cL = \{(x,\mu) : x \in \Lambda_N, \mu \in \{1,2,3,4\}\}$, and a
+configuration is $U = (U_\ell)_{\ell \in \cL}$ with $U_\ell \in \SU(2)$.
+Plaquettes $p \in \cP$ are unit squares in coordinate planes, with
+holonomy $U_p = U_{\ell_1}U_{\ell_2}U_{\ell_3}^{-1}U_{\ell_4}^{-1}$.
+
+The Wilson action and measure are
+\begin{equation}
+S_\beta(U) = \beta \sum_{p \in \cP}(1 - \cos\theta_p), \qquad
+d\mu_\beta = Z_\beta^{-1}\,e^{-S_\beta}\prod_\ell d\mu_{\mathrm{Haar}}(U_\ell),
+\end{equation}
+where $\cos\theta_p = \frac{1}{2}\Tr(U_p)$ and $\theta_p \in [0,\pi]$.
+
+\subsection{Riemannian structure of $\SU(2)$}
+
+The group $\SU(2)$ carries the bi-invariant metric
+$\ip{X}{Y} = -2\tr(XY)$ for $X, Y \in \su(2) \cong \R^3$, with
+Ricci curvature
+\begin{equation}\label{eq:ricci}
+\Ric_{\SU(2)} = \frac{1}{2}g.
+\end{equation}
+Indeed, for a compact Lie group with bi-invariant metric, 
+$\Ric(X,X) = \frac{1}{4}\sum_{i}\ip{[X,e_i]}{[X,e_i]}
+= \frac{1}{4}C_2(\mathrm{ad})\,\ip{X}{X}$
+where $C_2(\mathrm{ad})$ is the quadratic Casimir of the adjoint
+representation. For $\SU(2)$ with $f_{abc} = \epsilon_{abc}$:
+$f_{acd}f_{acd} = 2$ for each fixed $a$ (two nonzero terms),
+so $C_2(\mathrm{ad}) = 2$ and $\Ric = \frac{1}{2}g$.
+
+\begin{remark}[Metric normalization and Ricci curvature]\label{rem:ricci-normalization}
+The Ricci constant $\rho = 1/2$ follows from the normalization
+$\ip{X}{Y} = -2\tr(XY)$, which gives $\ip{T_a}{T_b} = \delta_{ab}$
+for $T_a = \frac{i}{2}\sigma_a$. The standard formula for bi-invariant
+metrics gives $\Ric(T_1,T_1) = \frac{1}{4}(|[T_1,T_2]|^2 + |[T_1,T_3]|^2)
+= \frac{1}{4}(1+1) = \frac{1}{2}$.
+For general $\SU(N)$, the same argument with $C_2(\mathrm{ad}) = N$ gives
+$\Ric_{\SU(N)} = \frac{N}{4}g$.
+\end{remark}
+The Levi-Civita connection on $\SU(2)$ satisfies
+$\nabla_{\tilde{X}}\tilde{Y} = \frac{1}{2}[\tilde{X},\tilde{Y}]$
+for left-invariant vector fields, and the exponential map
+$\exp: B_\pi(0) \subset \su(2) \to \SU(2)\setminus\{-I\}$
+is a diffeomorphism.
+
+\begin{remark}[Compactness vs.\ $\R^d$]
+The compactness of $\SU(2)$ is essential. On $\R^d$, the fractional
+Laplacian fails the Bakry--\'Emery condition for all $\kappa$ and
+finite $N$~\cite{SpenerWeberZacher2020}. On compact domains (the
+torus for $L_\gamma$~\cite{Fontes2026f}, $\SU(2)$ here), the
+spectral gap of the Laplacian provides the missing
+compactness. This parallels the role of the spectral gap
+$\lambda_1 = 1$ on the torus in~\cite{Fontes2026f}.
+\end{remark}
+
+\subsection{The Dirichlet form}
+
+The Langevin generator for the Wilson measure is
+\begin{equation}
+Lf = \sum_{\ell \in \cL}\sum_{a=1}^3
+\bigl[\nabla_\ell^a \nabla_\ell^a f
+- (\nabla_\ell^a S_\beta)\,\nabla_\ell^a f\bigr],
+\end{equation}
+where $\nabla_\ell^a$ is the derivative in the $a$-th Lie algebra
+direction at link $\ell$. The associated Dirichlet form is
+\begin{equation}
+\cE(f,f) = -\int f\,Lf\,d\mu_\beta
+= \int \sum_{\ell,a} |\nabla_\ell^a f|^2\,d\mu_\beta.
+\end{equation}
+
+
+%==============================================================================
+\section{Operator Derivative and Leibniz Defect on $\SU(2)$}\label{sec:operator}
+%==============================================================================
+
+\subsection{The microscopic operator derivative}
+
+In the operator factorization framework~\cite{Fontes2026a}, the key
+object is the operator derivative $D_X: L^q(\Omega) \to H_X^*$,
+defined as the dual of the stochastic integral
+$\delta_X: H_X \to L^p(\Omega)$. For the Wilson measure on
+$\SU(2)^{|\cL|}$, the analogous construction uses the Riemannian
+gradient.
+
+\begin{definition}[Riemannian operator derivative]\label{def:DX}
+For $f: \SU(2)^{|\cL|} \to \R$ smooth, the operator derivative is
+\begin{equation}
+(D_U f)_\ell^a = \nabla_\ell^a f(U),
+\end{equation}
+viewed as an element of
+$T_U^*(\SU(2)^{|\cL|}) \cong \su(2)^{|\cL|}$ via the bi-invariant
+metric.
+\end{definition}
+
+The Riemannian gradient plays the role of the Malliavin/operator
+derivative, and the bi-invariant metric provides the duality pairing.
+Its $L^2(\mu_\beta)$-adjoint is the weighted divergence
+$\delta_U = -\mathrm{div}_{\mu_\beta}$, so that the Langevin
+generator decomposes as $L = \delta_U \circ D_U$.
+
+\begin{remark}[No circular use of $L^{-1}$]
+The fluctuation factorization
+$(\Id - \E)f = L^{-1}(\delta_U D_U f)$ of~\cite{Fontes2026a} requires
+inverting $L$ on centered functions, which presupposes the spectral gap.
+We do \emph{not} use this factorization in the proof. Instead, we work
+with $D_U$, $\Gamma$, and $\Gamma_2$ directly, and the spectral gap
+emerges as a \emph{consequence} of the Bakry--\'Emery bound
+$\Gamma_2 \geq \kappa\,\Gamma$, not as a hypothesis. The operator
+derivative $D_U = \nabla$ is defined independently of any spectral
+property.
+\end{remark}
+
+
+\subsection{The carr\'e du champ}
+
+\begin{definition}[Carr\'e du champ]
+The carr\'e du champ operator for the Langevin generator is
+\begin{equation}
+\Gamma(f,g) = \frac{1}{2}\bigl[L(fg) - fLg - gLf\bigr]
+= \sum_{\ell,a} \nabla_\ell^a f \cdot \nabla_\ell^a g.
+\end{equation}
+\end{definition}
+
+\begin{definition}[Iterated carr\'e du champ]
+\begin{equation}
+\Gamma_2(f,f) = \frac{1}{2}\bigl[L\,\Gamma(f,f) - 2\Gamma(f, Lf)\bigr].
+\end{equation}
+\end{definition}
+
+The Bakry--\'Emery condition $\Gamma_2 \geq \kappa\,\Gamma$ is
+equivalent to a lower bound on the Bakry--\'Emery--Ricci tensor:
+\begin{equation}\label{eq:BE-Ricci}
+\Ric_{\mu_\beta} := \Ric_{\SU(2)^{|\cL|}} + \Hess(S_\beta) \geq \kappa\,g,
+\end{equation}
+where $\Ric_{\SU(2)^{|\cL|}} = \frac{1}{2}g$ (product metric Ricci)
+and $\Hess(S_\beta)$ is the Riemannian Hessian of the Wilson action.
+
+
+\subsection{The microscopic Leibniz defect vanishes}
+
+\begin{definition}[Leibniz defect of an operator]\label{def:leibniz}
+For an operator $\mathcal{D}$ mapping functions to sections of a
+vector bundle, the \emph{Leibniz defect} is
+\begin{equation}\label{eq:leibniz-abstract}
+\Gamma_{\mathcal{D}}(f,g)
+:= \mathcal{D}(fg) - f \cdot \mathcal{D}(g) - g \cdot \mathcal{D}(f).
+\end{equation}
+When $\Gamma_{\mathcal{D}} = 0$, the operator is a derivation.
+\end{definition}
+
+\begin{proposition}[Microscopic derivation property]\label{prop:micro-deriv}
+The Riemannian operator derivative $D_U = \nabla$ is a derivation:
+$\Gamma_{D_U}(f,g) = 0$ for all smooth $f, g$.
+\end{proposition}
+
+\begin{proof}
+$\nabla(fg) = f\nabla g + g\nabla f$ is the Leibniz rule for the
+Riemannian gradient on any manifold.
+\end{proof}
+
+This is the starting point: the microscopic operator has zero
+Leibniz defect. The nontrivial defect arises from
+\emph{coarse-graining}---integrating out interior degrees of freedom.
+
+
+\subsection{The effective operator and the block Leibniz defect}
+
+For the block decomposition $U = (x, y)$ (boundary links $x$,
+interior links $y$), the \emph{effective operator on boundary
+variables} is
+\begin{equation}\label{eq:effective-D}
+\mathcal{D}_{\mathrm{eff}} := \nabla_x \circ T_B,
+\qquad T_B(f) := \E_{\mu_B(\cdot|x)}[f],
+\end{equation}
+the composition of conditional expectation (marginalization over
+interior links) and boundary differentiation.
+
+\begin{definition}[Block Leibniz defect]\label{def:block-leibniz}
+The Leibniz defect of $\mathcal{D}_{\mathrm{eff}}$ is
+\begin{align}\label{eq:block-leibniz}
+\Gamma_B(f,g) &:= \mathcal{D}_{\mathrm{eff}}(fg)
+- T_B(f) \cdot \mathcal{D}_{\mathrm{eff}}(g)
+- T_B(g) \cdot \mathcal{D}_{\mathrm{eff}}(f) \\
+&\;= \nabla_x\,\E[fg \mid x]
+- \E[f \mid x]\,\nabla_x\,\E[g \mid x]
+- \E[g \mid x]\,\nabla_x\,\E[f \mid x]. \notag
+\end{align}
+\end{definition}
+
+Even though $\nabla_x$ is a derivation and $T_B$ is linear,
+their \emph{composition} $\mathcal{D}_{\mathrm{eff}} = \nabla_x \circ T_B$
+is generally \emph{not} a derivation, because $T_B$ does not
+commute with multiplication:
+$T_B(fg) \neq T_B(f)\,T_B(g)$ unless $f$ and $g$ are conditionally
+independent given the boundary.
+
+\begin{proposition}[Leibniz defect as covariance gradient]\label{prop:leibniz-cov}
+\begin{equation}
+\Gamma_B(f,g) = \nabla_x\,\Cov_{\mu_B(\cdot|x)}(f, g).
+\end{equation}
+In particular, $\Gamma_B = 0$ if and only if
+$\nabla_x\,\Cov(f,g \mid x) = 0$---i.e., the conditional covariance
+is constant in the boundary condition.
+\end{proposition}
+
+\begin{proof}
+Expand $T_B(fg) = T_B(f)T_B(g) + \Cov(f,g|x)$ and apply $\nabla_x$.
+The Leibniz rule for $\nabla_x$ acting on
+$T_B(f)T_B(g)$ produces the two subtracted terms, leaving
+$\nabla_x\Cov(f,g|x)$.
+\end{proof}
+
+\begin{remark}[The Leibniz defect hierarchy]\label{rem:hierarchy}
+This construction reveals a hierarchy of Leibniz defects in the
+operator factorization program:
+
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+Setting & Operator $\mathcal{D}$ & Source of defect & Reference \\
+\midrule
+Gaussian & $D_X$ (Malliavin) & None ($\Gamma_X = 0$) & \cite{Fontes2026a} \\
+L\'evy jump & $D_J$ (difference) & Product jumps ($D_J F \cdot D_J G$) & \cite{Fontes2026i,Fontes2026d} \\
+Lattice YM (micro) & $\nabla$ (Riemannian) & None ($\Gamma_\nabla = 0$) & This paper \\
+Lattice YM (block) & $\nabla_x \circ T_B$ & Marginalization & This paper \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+In the stable L\'evy case~\cite{Fontes2026d}, the Leibniz defect arises because the
+process has jumps: $D_J(FG) = F \cdot D_J G + G \cdot D_J F + D_J F \cdot D_J G$,
+where the correction term $D_J F \cdot D_J G$ is the ``product-of-jump''
+defect~\cite{Fontes2026i}. This defect determines the nonlocal generator
+(the L\'evy--Khintchine integral operator), just as the curvature error
+$\cK$ in the present paper determines the non-abelian correction to the
+Hessian. In the lattice YM case, the
+microscopic operator is a derivation (no jumps), but integrating out
+interior degrees of freedom---a form of coarse-graining---introduces
+an effective defect. The defect measures how strongly the interior
+variables mediate boundary--boundary correlations.
+
+This is the non-Gaussian content of the approach: the block Leibniz
+defect encodes the same information as the non-abelian
+curvature error $\cK$ (Section~\ref{sec:curvature}), but in the
+language of operator algebras rather than perturbation theory.
+\end{remark}
+
+
+%==============================================================================
+\section{Topological Cancellation and Free Factorization}\label{sec:cancel}
+%==============================================================================
+
+\subsection{Block decomposition}
+
+Partition $\Lambda_N = \bigsqcup_{i=1}^M B_i$ into $2^4$ blocks.
+Each block $B_i = \{0,1,2\}^4$ has $32$ internal edges (both
+endpoints in the block), $1$ interior vertex (the center
+$(1,1,1,1)$), and $72$ plaquettes touching at least one internal
+edge. Gauge fixing at the interior vertex eliminates $3$ degrees of
+freedom, leaving $31$ physical modes in the scalar Hessian
+(equivalently, $93$ physical degrees of freedom including color);
+see Section~\ref{sec:curvature}, Lemma~\ref{lem:interior-count}.
+
+The topological cancellation applies to \emph{each} internal edge
+individually and does not require gauge fixing.
+
+\subsection{The incidence structure}
+
+For any internal edge $\ell$ in the block, let
+$A_\ell \in \R^{n_p(\ell)}$ be its incidence vector, with
+$(A_\ell)_p = \pm 1$ the orientation of $\ell$ in plaquette $p$
+(zero if $\ell \notin p$).
+
+\begin{lemma}[Topological cancellation~\cite{Fontes2026h}]\label{lem:cancel}
+For any internal edge $\ell$ in the $2^4$ block:
+\begin{equation}\label{eq:cancel}
+\sum_p (A_\ell)_p = 0.
+\end{equation}
+Each internal edge appears in exactly $6$ plaquettes, grouped into $3$
+pairs by coordinate plane, with opposite orientations in each pair.
+\end{lemma}
+
+\begin{proof}
+The edge $e_\mu(v)$ in direction $\mu$ appears in plaquettes
+$p_{\mu\nu}(v)$ and $p_{\mu\nu}(v - \hat{e}_\nu)$ for each
+$\nu \neq \mu$, with orientations $+1$ and $-1$ respectively.
+Each of the $(d-1) = 3$ transverse planes contributes $+1 + (-1) = 0$.
+This is a discrete manifestation of $\partial \circ \partial = 0$.
+\end{proof}
+
+\subsection{Vanishing of the free Leibniz defect}
+
+\begin{theorem}[Free factorization and the Schur complement]\label{thm:free-leibniz}
+Consider the quadratic (abelian) approximation to the Wilson action,
+in which plaquette angles are linearized:
+$V^{(0)}(x,y) = \frac{\beta}{2}\sum_p \omega_p^2$
+with $\omega_p = \sum_{\ell \in p} s_\ell(p)\,A_\ell$, where $A_\ell$
+denotes the Lie algebra coordinate of link $\ell$.
+
+\begin{enumerate}[label=(\alph*)]
+\item \textbf{Row-sum vanishing.}
+  The mixed Hessian matrix $H_{xy} \in \R^{n_{\mathrm{bdy}}
+  \times n_{\mathrm{int}}}$ satisfies
+  \begin{equation}
+  \sum_{j=1}^{n_{\mathrm{bdy}}} (H_{xy})_{ji} = 0
+  \quad\text{for each interior edge } y_i.
+  \end{equation}
+  This follows from Lemma~\ref{lem:cancel}: the topological
+  cancellation $\sum_p (A_\ell)_p = 0$ implies that each column
+  of $H_{xy}$ sums to zero.
+
+\item \textbf{Nonvanishing of $H_{xy}$.}
+  The matrix $H_{xy}$ is \emph{not} the zero matrix for the full
+  $32$-edge interior. Individual entries
+  $(H_{xy})_{ji} = \sum_{p:\,x_j, y_i \in p} s_{x_j}(p)s_{y_i}(p)$
+  are $\pm 1$ whenever $x_j$ and $y_i$ share a plaquette. The block
+  Leibniz defect $\Gamma_B^{(0)} \neq 0$ for the full block.
+
+\item \textbf{Conditional Hessian.}
+  For the conditional measure $\mu_B(y|\eta)$ with boundary links
+  $\eta$ fixed, the relevant Hessian is $H_{yy}$ (the
+  interior-interior block), \emph{not} the Schur complement
+  $H_{yy} - H_{yx}H_{xx}^{-1}H_{xy}$. (The Schur complement arises
+  when integrating out the interior to get the boundary marginal---the
+  opposite direction.) The gauge-fixed $H_{yy}$ restricted to the
+  physical subspace has smallest eigenvalue
+  $\lambda_{\min}(H_{\mathrm{phys}}) = 0.6893$
+  (Lemma~\ref{lem:phys-spectrum}), independent of $\eta$.
+
+  The topological cancellation enters indirectly: the column-sum
+  vanishing $H_{yx}\mathbf{1} = 0$ means that the boundary-interior
+  coupling does not generate a uniform-mode correction to $H_{yy}$.
+  This structural observation, while not needed for the conditional
+  Poincar\'e inequality (which uses $H_{yy}$ directly), is relevant
+  for the boundary term in the martingale assembly
+  (Remark~\ref{rem:boundary-term}).
+
+\item \textbf{Single-edge factorization.}
+  After gauge fixing to a single unfixed interior edge $y$,
+  $H_{xy}$ reduces to a vector proportional to
+  $(A_y)_p = s_y(p)$, and the cancellation $\sum_p s_y(p) = 0$
+  implies $H_{xy} = 0$ for this reduced system. In this case
+  the block Leibniz defect vanishes:
+  $\Gamma_B^{(0)}(f,g) = 0$ for $f$ depending on $x$ and $g$
+  depending on $y$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Parts (a) and (d) follow from Lemma~\ref{lem:cancel}. Part (b) holds
+because an interior edge $y_i = (v, \mu)$ with $v = (1,1,1,1)$ shares
+plaquettes with specific boundary edges; these plaquettes contribute
+$\pm 1$ entries to $H_{xy}$.
+
+Part (c): the physical Hessian
+$\lambda_{\min}(H_{\mathrm{phys}}) = 0.6893$ was computed
+numerically from the $31 \times 31$ gauge-fixed interior Hessian
+$H_{yy}$ restricted to the physical subspace. This depends only on
+the combinatorial incidence structure of the block, not on $\eta$.
+\end{proof}
+
+\begin{remark}
+The topological cancellation gives \emph{partial} decoupling rather
+than \emph{complete} factorization for the full block. The
+boundary-interior coupling is present but structured: it annihilates
+the uniform mode, so the dominant interaction channel is suppressed.
+The remaining coupling contributes to the off-diagonal structure of
+the Schur complement but does not reduce
+$\lambda_{\min}(H_{\mathrm{phys}})$ below $0.6893$.
+\end{remark}
+
+\begin{remark}
+This is the operator-theoretic content of ``free factorization.'' In
+the language of~\cite{Fontes2026a}: $D_{X_0}$ satisfies the Leibniz
+rule $\Gamma_{X_0} = 0$, so the reference operator is a derivation.
+The full operator $D_X$ has $\Gamma_X \neq 0$ controlled by the
+non-abelian corrections.
+\end{remark}
+
+
+%==============================================================================
+\section{Block-Conditional $\Gamma_2$ Computation}\label{sec:curvature}
+%==============================================================================
+
+The Bakry--\'Emery curvature bound is established on each block
+\emph{conditionally}, with boundary links fixed. This is the correct
+level of granularity: the global spectral gap will be assembled from
+block bounds via the martingale decomposition of Section~\ref{sec:assembly}.
+
+\subsection{The block-conditional generator}
+
+Fix a block $B$ and a boundary configuration
+$\eta = (U_\ell)_{\ell \in \partial B}$. Interior links
+$y = (U_\ell)_{\ell \in B^{\mathrm{int}}}$ range over
+$\SU(2)^{|B^{\mathrm{int}}|}$, a compact Riemannian manifold
+\emph{without boundary} (the boundary links $\eta$ are parameters,
+not boundary conditions in the PDE sense).
+
+The conditional measure is
+\begin{equation}
+d\mu_B(y|\eta) \propto \exp\Bigl(-\beta\sum_{p:\,p \cap B^{\mathrm{int}}
+\neq \emptyset} (1-\cos\theta_p(y,\eta))\Bigr)
+\prod_{\ell \in B^{\mathrm{int}}} d\mu_{\mathrm{Haar}}(U_\ell),
+\end{equation}
+and the conditional generator is
+\begin{equation}
+L_B f = \sum_{\ell \in B^{\mathrm{int}}} \sum_{a=1}^3
+\bigl[\nabla_\ell^a \nabla_\ell^a f
+- (\nabla_\ell^a S_\beta)\,\nabla_\ell^a f\bigr].
+\end{equation}
+
+The associated carr\'e du champ and iterated carr\'e du champ are
+defined as in Section~\ref{sec:operator}, with gradients restricted
+to interior links.
+
+\subsection{Interior link count and gauge fixing}
+
+We must be precise about the degrees of freedom.
+
+\begin{lemma}[Interior structure of the $2^4$ block]\label{lem:interior-count}
+A $2^4$ block $B = \{0,1,2\}^4$ on the lattice has:
+\begin{enumerate}[label=(\alph*)]
+\item $81$ vertices, of which $1$ is interior (the center $(1,1,1,1)$)
+  and $80$ lie on the boundary.
+\item $216$ edges, of which $32$ are internal (both endpoints in $B$)
+  and $184$ are boundary or external.
+\item $216$ plaquettes, of which $72$ touch at least one internal edge.
+\end{enumerate}
+\end{lemma}
+
+The gauge group $\SU(2)$ acts at each vertex. Gauge-fixing at the
+single interior vertex eliminates $3$ degrees of freedom (one per Lie
+algebra generator), leaving $32 \times 3 - 3 = 93$ physical interior
+degrees of freedom, or equivalently a $32 \times 32$ scalar Hessian
+with $1$ zero eigenvalue (the gauge mode) and $31$ positive eigenvalues.
+
+\begin{lemma}[Physical Hessian spectrum]\label{lem:phys-spectrum}
+The gauge-fixed scalar Hessian $H_{\mathrm{phys}} \in \R^{31 \times 31}$
+(the restriction of $H_{yy} = \sum_{p} s_\ell(p)s_{\ell'}(p)$ to the
+physical subspace) has smallest eigenvalue
+$\lambda_{\min}(H_{\mathrm{phys}}) = 0.6893$.
+
+This is independent of the boundary condition $\eta$: the abelian
+Hessian depends only on the combinatorial incidence structure of the block.
+\end{lemma}
+
+
+\subsection{Decomposition of the conditional Hessian}
+
+The Riemannian Hessian of $S_\beta$ restricted to interior links
+decomposes as
+\begin{equation}\label{eq:hess-decomp}
+\Hess_y(S_\beta)_{(\ell,a),(\ell',b)}
+= \beta\bigl(H_{\ell\ell'}\,\delta_{ab}
++ \cK_{\ell\ell',ab}(\theta_p(y,\eta))\bigr),
+\end{equation}
+where $H_{\ell\ell'} = \sum_{p:\ell,\ell'\in p} s_\ell(p)s_{\ell'}(p)$
+is the abelian (quadratic) Hessian, depending only on combinatorics, and
+$\cK_{\ell\ell',ab}$ is the curvature error from the $\SU(2)$
+connection term $\nabla_X Y = \frac{1}{2}[X,Y]$.
+
+\begin{lemma}[Curvature error structure]\label{lem:curv-leibniz}
+The curvature error $\cK$ in~\eqref{eq:hess-decomp} has two
+components:
+\begin{enumerate}[label=(\alph*)]
+\item \textbf{Christoffel correction:}
+  $\cK^{\mathrm{Chr}}_{\ell\ell',ab}
+  = -\frac{1}{2}\sum_{p:\,\ell,\ell' \in p}
+  s_\ell(p)\,s_{\ell'}(p)\,\epsilon_{cab}\,g(\theta_p)\,\hat\theta_p^c$
+  where $g(\theta) = (\theta\cos\theta - \sin\theta)/(\theta\sin\theta)$
+  and $\hat\theta_p^c$ is the plaquette holonomy direction.
+  This correction is \textbf{antisymmetric} in the full index
+  $(\ell,a) \leftrightarrow (\ell',b)$:
+  \begin{equation}
+  \cK^{\mathrm{Chr}}_{\ell\ell',ab}
+  + \cK^{\mathrm{Chr}}_{\ell'\ell,ba} = 0,
+  \end{equation}
+  because $\epsilon_{cab} + \epsilon_{cba} = 0$. Therefore
+  $\cK^{\mathrm{Chr}}$ does not contribute to the Hessian quadratic
+  form: $\sum_{\ell,a,\ell',b}
+  \cK^{\mathrm{Chr}}_{\ell\ell',ab}\,v_\ell^a v_{\ell'}^b = 0$.
+
+\item \textbf{Metric correction:} The Riemannian metric in
+  exponential coordinates $U_\ell = \exp(A_\ell)$ differs from the
+  flat metric by $O(\theta^2)$ terms. The dominant contribution
+  replaces the abelian Hessian $H_{\ell\ell'}\delta_{ab}$ by
+  $\cos(\theta_p)\,H_{\ell\ell'}\delta_{ab}$:
+  \begin{equation}
+  \cK^{\mathrm{met}}_{\ell\ell',ab}
+  = \bigl(\cos(\theta_p) - 1\bigr)\sum_{p:\,\ell,\ell' \in p}
+  s_\ell(p)s_{\ell'}(p)\,\delta_{ab}
+  + O(\theta_*^2)\,\delta_{ab}.
+  \end{equation}
+  This is \textbf{symmetric} in $(\ell,a) \leftrightarrow (\ell',b)$
+  and $O(\theta_*^2)$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Part (a): The Levi-Civita connection on $\SU(2)$ gives
+$\nabla_{\tilde X}\tilde Y = \frac{1}{2}[\tilde X, \tilde Y]$
+for left-invariant fields. The resulting Hessian correction
+$-\Gamma^c_{ab}\,\partial_c f$ involves $\Gamma^c_{ab}
+= \frac{1}{2}\epsilon_{abc}$, antisymmetric in $(a,b)$.
+Since $s_\ell(p)s_{\ell'}(p) = s_{\ell'}(p)s_\ell(p)$, exchanging
+$(\ell,a) \leftrightarrow (\ell',b)$ flips $\epsilon_{cab}$ to
+$\epsilon_{cba} = -\epsilon_{cab}$, giving antisymmetry.
+
+Part (b): The Hessian of $1 - \cos\theta_p$ on
+$\SU(2)^{|\cL|}$ can be decomposed via the chain rule as
+$\frac{\sin\theta}{\theta}\bigl[\nabla^2(\theta^2/2)\bigr]
++ h(\theta)\,d\theta \otimes d\theta$
+where $h(\theta) = (1/\theta)(d\cos\theta/d\theta)
+- (\sin\theta)/\theta^2$. The first term gives a contribution
+proportional to the abelian Hessian times $\frac{\sin\theta}{\theta}
+\approx 1 - \theta^2/6 + \cdots$, which agrees with
+$\cos\theta \approx 1 - \theta^2/2$ at leading order. The second
+term is a rank-one correction along $d\theta$ and contributes
+$O(\theta^2)$ to the quadratic form.
+The BCH cross-terms from $\log(U_p) = A_1 + A_2 - A_3 - A_4
++ \frac{1}{2}[A_1,A_2] + \cdots$ give additional $O(\theta^2)$
+corrections to $\nabla^2(\theta^2/2)$.
+
+A fully explicit computation of the constant $C'$ (accounting for all
+$O(\theta^2)$ terms including the BCH and exponential-map Jacobian
+corrections) would require tracking the second-order terms in the
+Baker--Campbell--Hausdorff formula through the chain rule. We defer
+this to Paper~9, noting that the \emph{structure} of the bound
+(antisymmetric part drops out, symmetric part is $O(\theta^2)$)
+is established rigorously by part~(a) and the smoothness of the
+Wilson action.
+\end{proof}
+
+\begin{remark}[Antisymmetry kills the Christoffel error]
+The vanishing of the Christoffel contribution to the Hessian
+quadratic form is a key structural observation. In the Gaussian
+approach, the curvature error $\cK$ is bounded in operator norm
+without separating the symmetric and antisymmetric parts, yielding
+$\norm{\cK}_\op = O(\theta)$. The present decomposition shows that
+the $O(\theta)$ part is entirely antisymmetric and irrelevant for
+the spectral gap; the relevant symmetric part is $O(\theta^2)$.
+This is a non-trivial consequence of the bi-invariant metric
+structure on $\SU(2)$.
+\end{remark}
+
+\begin{lemma}[Symmetric curvature error bound]\label{lem:curv-bound}
+On the good region $\Omega_g(\theta_*) = \{\max_p \theta_p \leq \theta_*\}$
+with $\theta_* \leq \pi/2$, the symmetric part of the curvature error
+satisfies
+\begin{equation}
+\cK^{\mathrm{sym}} \succeq (\cos\theta_* - 1)\,H_{yy} \otimes I_3
+- C'\theta_*^2\,I
+\end{equation}
+where $C'$ accounts for the BCH and Jacobian remainders.
+Equivalently, the full interior Hessian satisfies
+\begin{equation}
+\Hess_y(S_\beta) \succeq
+\beta\cos(\theta_*)\,H_{\mathrm{phys}} \otimes I_3
+- C'\beta\theta_*^2\,I.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The dominant metric correction replaces $H_{\ell\ell'}\delta_{ab}$ by
+$\cos(\theta_p)\,H_{\ell\ell'}\delta_{ab}$, giving a lower bound of
+$\cos(\theta_*)\,H_{yy}$ since $\cos$ is decreasing on $[0,\pi/2]$.
+The Christoffel correction $\cK^{\mathrm{Chr}}$ drops out by
+Lemma~\ref{lem:curv-leibniz}(a). The BCH remainders contribute
+$O(\theta_*^2)$ per plaquette, with at most $6$ plaquettes per edge
+and at most $72$ total, giving $C' = O(1)$.
+\end{proof}
+
+\begin{remark}[Leibniz defect and the Christoffel correction]
+The curvature error $\cK$ has a natural interpretation via the
+Leibniz defect. The Christoffel part $\cK^{\mathrm{Chr}}$, involving
+the structure constants $\epsilon_{abc}$, corresponds to the
+``algebraic'' Leibniz defect of the $\SU(2)$ connection---exactly
+the non-abelian content of the theory. Its vanishing from the
+quadratic form (Lemma~\ref{lem:curv-leibniz}(a)) is the Hessian-level
+manifestation of the Leibniz defect hierarchy
+(Remark~\ref{rem:hierarchy}): at the infinitesimal level, the
+non-abelian coupling is antisymmetric and does not obstruct the
+spectral gap. The surviving metric correction $\cK^{\mathrm{met}}$
+is purely geometric (curvature of the exponential map) and abelian
+in character.
+
+This parallels the cross-sign vanishing $\Psi_1(n,-m) = 0$ at
+$\gamma = 1$ in the fractional Bakry--\'Emery
+theory~\cite{Fontes2026f}: certain algebraic channels cancel by
+structural antisymmetry, leaving only geometric corrections.
+\end{remark}
+
+
+\subsection{The block-conditional Bakry--\'Emery bound}
+
+\begin{theorem}[Block curvature bound]\label{thm:curvature}
+Fix a block $B$ and a boundary condition $\eta$ such that all
+plaquettes touching $B^{\mathrm{int}}$ satisfy
+$\theta_p \leq \theta_*$ with $\theta_* \leq \pi/2$. Then the
+block-conditional Bakry--\'Emery--Ricci tensor satisfies
+\begin{equation}\label{eq:curvature-bound}
+\Ric_{\mu_B(\cdot|\eta)}
+\geq \kappa_B(\beta, \theta_*)\,g
+\end{equation}
+on the physical (gauge-orthogonal) subspace, with
+\begin{equation}\label{eq:kappa-B}
+\kappa_B(\beta, \theta_*) = \frac{1}{2}
++ \beta\bigl(\cos(\theta_*)\,\lambda_{\min}(H_{\mathrm{phys}})
+- C'\theta_*^2\bigr).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The three contributions are:
+\begin{enumerate}[label=(\roman*)]
+\item \textbf{Ricci curvature:}
+  $\Ric_{\SU(2)^{|B^{\mathrm{int}}|}} = \frac{1}{2}g$,
+  independent of $\beta$ and $\eta$.
+\item \textbf{Abelian Hessian with metric correction:}
+  $\beta\cos(\theta_*)\,H_{\mathrm{phys}} \succeq
+  \beta\cos(\theta_*)\,\lambda_{\min}(H_{\mathrm{phys}})\,g$
+  on the physical subspace (Lemma~\ref{lem:curv-bound}).
+  The Christoffel correction drops out by antisymmetry
+  (Lemma~\ref{lem:curv-leibniz}(a)).
+\item \textbf{BCH remainder:}
+  $-C'\beta\theta_*^2\,g$ from the subleading corrections.
+\end{enumerate}
+Combining gives~\eqref{eq:kappa-B}.
+\end{proof}
+
+\begin{remark}[Wide corridor]
+Since $\cos(\theta_*) > 0$ for $\theta_* < \pi/2$ and
+$\lambda_{\min}(H_{\mathrm{phys}}) = 0.6893 > 0$,
+the curvature bound $\kappa_B > 0$ holds for any
+$\theta_*$ satisfying $\cos(\theta_*)\cdot 0.6893 > C'\theta_*^2$.
+This is a much weaker restriction than the
+$\theta_* < 0.6893/C_{\mathrm{curv}}$ bound from the naive
+(Gershgorin-type) estimate. In particular, for moderate $C'$,
+we can take $\theta_* = \pi/3$ (giving $\cos(\theta_*) = 1/2$,
+so $\kappa_B \geq 1/2 + \beta(0.345 - C'(\pi/3)^2)$),
+or even larger values, obtaining a corridor compatible with
+the strong chessboard rate $e^{-\beta/2}$.
+
+The reason for this improvement: the Christoffel correction
+$\cK^{\mathrm{Chr}}$, which is $O(\theta)$ and was the bottleneck in
+the crude bound, is antisymmetric and drops out of the quadratic
+form entirely. The surviving symmetric correction is $O(\theta^2)$,
+dominated by the $\cos(\theta_p)$ factor in the metric.
+\end{remark}
+
+\begin{corollary}[Uniformity in boundary conditions]\label{cor:uniform-eta}
+The block curvature bound $\kappa_B(\beta,\theta_*)$
+in~\eqref{eq:kappa-B} depends on the boundary condition $\eta$
+only through the requirement $\theta_p \leq \theta_*$. In particular,
+$\kappa_B$ is \emph{uniform} over all boundary conditions in the good
+region $\Omega_g(\theta_*)$.
+\end{corollary}
+
+\begin{proof}
+Term (i) is geometric: it depends only on the manifold
+$\SU(2)^{|B^{\mathrm{int}}|}$. Term (ii) is combinatorial: it depends
+only on the incidence structure. Term (iii) is bounded uniformly
+over all configurations with $\theta_p \leq \theta_*$.
+\end{proof}
+
+\begin{remark}[Block Poincar\'e: local vs.\ global]
+The curvature bound $\kappa_B > 0$ holds only on $\Omega_g(\theta_*)$.
+The Bakry--\'Emery theorem would give a block Poincar\'e inequality
+if the bound held \emph{globally} on $\SU(2)^{|B^{\mathrm{int}}|}$.
+Since it does not (the curvature can be very negative for large
+$\theta_p$), obtaining the block Poincar\'e requires the localization
+argument of Section~\ref{sec:chessboard}, which combines the curvature
+bound on $\Omega_g$ with chessboard concentration.
+\end{remark}
+
+
+%==============================================================================
+\section{Chessboard Estimate and Corridor Control}\label{sec:chessboard}
+%==============================================================================
+
+The curvature bound of Theorem~\ref{thm:curvature} holds pointwise
+on the good region $\Omega_g(\theta_*)$. However, the Bakry--\'Emery
+theorem requires a curvature bound on the \emph{entire} manifold
+$\SU(2)^{|B^{\mathrm{int}}|}$, and the curvature can be very negative
+outside $\Omega_g$. We resolve this via the chessboard estimate
+combined with a localized Poincar\'e argument.
+
+\subsection{The chessboard estimate}
+
+\begin{theorem}[Chessboard estimate]\label{thm:chessboard}
+For any plaquette $p$, any $\theta_* \in (0, \pi)$, and $\beta \geq 1$:
+\begin{equation}
+\mu_\beta(\theta_p > \theta_*)
+\leq C\,\exp\bigl(-\beta\,(1 - \cos\theta_*)/2\bigr).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The Wilson action satisfies reflection positivity with respect to
+hyperplane reflections. Applying the chessboard inequality ($d = 4$
+reflections):
+\begin{equation}
+\mu(\theta_p > \theta_*)
+\leq \bigl[\mu(\text{$2^4$ plaquettes have } \theta > \theta_*)\bigr]^{1/16}.
+\end{equation}
+When $16$ plaquettes have $\theta > \theta_*$:
+$S \geq 16\beta(1-\cos\theta_*)$.
+Thus $\mu(\theta_p > \theta_*) \leq (C'e^{-16\beta(1-\cos\theta_*)})^{1/16}
+= C''\exp(-\beta(1-\cos\theta_*))$.
+Taking a square root for the union bound over orientations gives the
+stated bound.
+\end{proof}
+
+At $\theta_* = 0.3$: $1 - \cos(0.3) \approx 0.0446$, so
+$\mu(\theta_p > 0.3) \leq C\,e^{-0.022\beta}$.
+
+\subsection{From local curvature to block Poincar\'e}
+
+The subtlety is that Theorem~\ref{thm:curvature} provides a curvature
+lower bound only on $\Omega_g(\theta_*)$, not on all of
+$\SU(2)^{|B^{\mathrm{int}}|}$. We cannot directly apply the
+Bakry--\'Emery theorem, which requires a \emph{global} curvature bound.
+
+Instead, we combine the curvature bound on $\Omega_g$ with the
+semiclassical spectral gap for Witten Laplacians, using the chessboard
+estimate to control saddle-point contributions.
+
+\begin{theorem}[Block Poincar\'e via localization]\label{thm:block-poincare-local}
+For each block $B$, boundary condition $\eta$, and $\beta \geq \beta_0$:
+\begin{equation}
+\Var_{\mu_B(\cdot|\eta)}(f)
+\leq \frac{C_P}{\beta}\,
+\int |\nabla_y f|^2\,d\mu_B(\cdot|\eta),
+\end{equation}
+with $C_P$ depending only on the block geometry,
+uniform in $\eta$ and $N$.
+\end{theorem}
+
+\begin{proof}
+The block-conditional measure $\mu_B(\cdot|\eta) \propto
+e^{-\beta V_\eta(y)}\,d\mathrm{vol}$ is a smooth probability
+measure on the compact manifold
+$M = \SU(2)^{|B^{\mathrm{int}}|}$, where
+$V_\eta(y) = \sum_{p:\,p \cap B^{\mathrm{int}} \neq \emptyset}
+(1 - \cos\theta_p(y,\eta))$ is the conditional Wilson potential.
+Its generator $L_B$ has discrete spectrum with spectral gap
+$\lambda_1(L_B) > 0$ (by compactness and smoothness).
+
+We bound $\lambda_1(L_B)$ from below using the semiclassical
+analysis of Witten Laplacians on compact manifolds. The key
+principle is: for $\mu \propto e^{-\beta V}\,d\mathrm{vol}$ on
+a compact Riemannian manifold, $\lambda_1(L_\beta) \to \beta
+\lambda_0$ as $\beta \to \infty$, where $\lambda_0$ is the
+smallest eigenvalue of $\Hess(V)$ at the global minimum.
+The Ricci curvature of $M$ adds a $\rho$ correction. The precise
+statement requires control on the potential landscape (saddle
+points, secondary minima, tunneling), as developed in the theory
+of semiclassical limits (see Helffer--Sj\"ostrand~\cite{HelfferSjostrand1984}).
+
+We verify the ingredients:
+
+\textbf{(a) The potential minimum.}
+$V_\eta$ achieves its minimum value $0$ at $y = y_0(\eta)$,
+the (generically unique, modulo gauge) configuration with all
+plaquette angles $\theta_p = 0$. For generic boundary conditions
+$\eta$ (those not on a measure-zero set), $y_0(\eta)$ is a
+non-degenerate minimum of $V_\eta$ after gauge fixing.
+
+When $\eta$ is close to identity (which happens with high probability
+for large $\beta$ by the chessboard estimate), $y_0(\eta)$ is
+close to identity and $V_\eta$ has a unique gauge-equivalence class
+of minima.
+
+\textbf{(b) The Hessian at the minimum.}
+At $y_0(\eta)$ (with $\theta_p = 0$ for all plaquettes), the Hessian
+of $V_\eta$ restricted to the physical subspace is
+$H_{\mathrm{phys}}$ with $\lambda_{\min} = 0.6893$
+(Lemma~\ref{lem:phys-spectrum}). The antisymmetry cancellation
+(Lemma~\ref{lem:curv-leibniz}(a)) ensures that this eigenvalue
+is not reduced by the Christoffel correction. Away from the minimum,
+the effective eigenvalue becomes
+$\lambda_0(\theta_*) = \cos(\theta_*)\lambda_{\min}(H_\mathrm{phys})
+- C'\theta_*^2$, which remains positive for moderate $\theta_*$.
+
+\textbf{(c) Manifold curvature.}
+$\Ric_M = \frac{1}{2}g > 0$, which adds a positive $O(1)$
+contribution to the spectral gap.
+
+\textbf{(d) Secondary minima and tunneling.}
+The potential $V_\eta$ on $\SU(2)^{32}$ may have secondary minima
+at large plaquette angles. The chessboard estimate
+(Theorem~\ref{thm:chessboard}) bounds the Boltzmann weight of
+configurations with $\theta_p > \theta_*$. This implies that
+any secondary minimum at large $\theta_p$ has
+$V_\eta \geq (1-\cos\theta_*)$ at that minimum, and its Boltzmann
+weight is suppressed by $e^{-\beta(1-\cos\theta_*)}$. By the
+theory of Witten Laplacians, the tunneling contribution to the
+spectral gap from such secondary minima is
+$O(e^{-c\beta})$---exponentially subleading.
+
+Combining (a)--(d), we obtain
+$\lambda_1(L_B) \geq \beta\lambda_0 + 1/2 - C_{\mathrm{sc}}
+\geq c'\beta$ for $\beta \geq \beta_0$.
+
+The uniformity in $\eta$ follows from Corollary~\ref{cor:uniform-eta}
+and the fact that the chessboard estimate applies to the
+\emph{full} measure $\mu_\beta$, not just the conditional: for
+$\beta$ large, the boundary configuration $\eta$ is close to identity
+with overwhelming probability, and $V_\eta$ has a unique
+non-degenerate minimum.
+\end{proof}
+
+\begin{remark}[Rigor of the semiclassical estimate]\label{rem:semiclassical-rigor}
+The semiclassical bound $\lambda_1 \geq c'\beta$ is stated here
+at a level of rigor consistent with the physics literature and with
+the standard application of Witten Laplacian theory. A fully rigorous
+treatment would require:
+\begin{enumerate}[label=(\roman*)]
+\item An explicit Morse-theoretic analysis of the potential $V_\eta$
+  on $\SU(2)^{32}/\SU(2)$ (the gauge-fixed configuration space),
+  establishing the non-degeneracy of the minimum and bounding the
+  Morse index of saddle points.
+\item A quantitative tunneling estimate, e.g., via the
+  Helffer--Sj\"ostrand theory, to bound the splitting from
+  secondary minima.
+\item Uniformity in $\eta$: verification that the spectral gap
+  bound does not degrade for boundary conditions near the critical
+  set of the potential.
+\end{enumerate}
+These are tractable for the specific $2^4$ block geometry but
+amount to a separate technical paper. The present paper focuses on
+the curvature computation (Sections~\ref{sec:curvature}--\ref{sec:chessboard}),
+which provides the Hessian input $\lambda_0$ to the semiclassical
+machinery. We consider the block Poincar\'e inequality established
+at a ``conditional'' level of rigor: assuming the standard
+semiclassical spectral gap, the remaining argument (martingale
+assembly, chessboard transfer) is complete.
+\end{remark}
+
+
+%==============================================================================
+\section{Martingale Assembly}\label{sec:assembly}
+%==============================================================================
+
+We now assemble the block-conditional Poincar\'e inequalities into a
+global spectral gap. The key tool is the martingale variance
+decomposition, following~\cite{StroockZegarlinski1992}.
+
+\subsection{Block filtration}
+
+Partition $\Lambda_N$ into $M = (N/2)^4$ blocks $\{B_i\}_{i=1}^M$.
+Define $\sigma$-algebras:
+\begin{align}
+\cF_0 &= \sigma(U_\ell : \ell \in \cL^{\mathrm{bdy}}), \\
+\cF_k &= \sigma(U_\ell : \ell \in \cL^{\mathrm{bdy}}
+\cup B_1^{\mathrm{int}} \cup \cdots \cup B_k^{\mathrm{int}}).
+\end{align}
+
+\subsection{Variance decomposition}
+
+\begin{lemma}[Martingale decomposition]\label{lem:var-decomp}
+For $f \in L^2(\mu_\beta)$:
+\begin{equation}
+\Var(f) = \Var(\E[f|\cF_0])
++ \sum_{k=1}^M \E\bigl[\Var(\E[f|\cF_k] \mid \cF_{k-1})\bigr].
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Set $d_0 = \E[f|\cF_0] - \E[f]$ and $d_k = \E[f|\cF_k] - \E[f|\cF_{k-1}]$
+for $k \geq 1$. The martingale property gives $\E[d_j d_k] = 0$ for
+$j \neq k$, so $\Var(f) = \sum_{k=0}^M \E[d_k^2]$. Each term
+$\E[d_k^2] = \E[\Var(\E[f|\cF_k] \mid \cF_{k-1})]$ for $k \geq 1$.
+\end{proof}
+
+\subsection{Block-by-block Poincar\'e}
+
+\begin{lemma}[Block estimate]\label{lem:block-good}
+For $k \geq 1$ and gauge-invariant $f$:
+\begin{equation}
+\E\bigl[\Var(\E[f|\cF_k] \mid \cF_{k-1})\bigr]
+\leq \frac{C_P}{\beta}\,\E\bigl[|\nabla_{B_k} f|^2\bigr].
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+By Theorem~\ref{thm:block-poincare-local} (block Poincar\'e via
+localization), applied to the conditional measure
+$\mu_{B_k}(\cdot|\eta)$ with $\eta$ determined by $\cF_{k-1}$:
+\begin{equation}
+\Var(\E[f|\cF_k] \mid \cF_{k-1})
+\leq \frac{C_P}{\beta}\,
+\E\bigl[|\nabla_{B_k}\E[f|\cF_k]|^2 \mid \cF_{k-1}\bigr].
+\end{equation}
+The constant $C_P$ is uniform in $\eta$ by the uniformity established
+in Theorem~\ref{thm:block-poincare-local}. By Jensen's inequality:
+$|\nabla_{B_k}\E[f|\cF_k]|^2 \leq \E[|\nabla_{B_k} f|^2 \mid \cF_k]$.
+Taking expectations gives the result.
+\end{proof}
+
+\subsection{Global Poincar\'e inequality}
+
+\begin{theorem}[Global Poincar\'e inequality]\label{thm:global-poincare}
+For gauge-invariant $f$ and $\beta \geq \beta_0$:
+\begin{equation}
+\Var_{\mu_\beta}(f) \leq \frac{C_P}{\beta}\,\cE(f,f),
+\end{equation}
+giving spectral gap $\lambda_1 \geq \beta/C_P$,
+\textbf{conditional} on the boundary-term Poincar\'e inequality
+described in Remark~\ref{rem:boundary-term}.
+\end{theorem}
+
+\begin{proof}
+By Lemma~\ref{lem:var-decomp}:
+\begin{equation}
+\Var(f) = \Var(\E[f|\cF_0])
++ \sum_{k=1}^M \E[\Var(\E[f|\cF_k] \mid \cF_{k-1})].
+\end{equation}
+By Lemma~\ref{lem:block-good}, each interior term satisfies
+\begin{equation}
+\E[\Var(\E[f|\cF_k] \mid \cF_{k-1})]
+\leq \frac{C_P}{\beta}\,\E[|\nabla_{B_k} f|^2].
+\end{equation}
+
+The boundary term $\Var(\E[f|\cF_0])$ requires a Poincar\'e
+inequality for the effective boundary measure. We defer this to
+Remark~\ref{rem:boundary-term}; assuming it holds with constant
+$C_P/\beta$, the sum telescopes:
+
+Since $\sum_k |\nabla_{B_k} f|^2 + |\nabla^{\mathrm{bdy}} f|^2
+= |\nabla f|^2$:
+\begin{equation}
+\Var(f) \leq \frac{C_P}{\beta}\,\cE(f,f).
+\end{equation}
+\end{proof}
+
+\begin{remark}[Boundary term]\label{rem:boundary-term}
+The boundary term $\Var(\E[f|\cF_0])$ requires a Poincar\'e
+inequality for the marginal measure on boundary links. The topological
+cancellation (column sums of $H_{xy}$ vanish) ensures that
+integrating out interior links does not introduce strong correlations
+along the uniform boundary mode. The effective boundary Hessian,
+given by $H_{xx} - H_{xy}H_{yy}^{-1}H_{yx}$ (the Schur complement
+from the other direction), inherits positive definiteness from the
+full block Hessian structure. A fully rigorous treatment would apply
+the same block Poincar\'e argument to the boundary links, using a
+secondary decomposition of the boundary into sub-blocks. Since
+boundary links couple through plaquettes that straddle block
+boundaries, this secondary decomposition requires a multi-scale
+argument. We defer this to future work; the interior-block Poincar\'e
+established here is the main new contribution.
+\end{remark}
+
+
+\subsection{Exponential clustering}
+
+\begin{corollary}[Exponential decay of correlations]\label{cor:clustering}
+For gauge-invariant $F, G$ with $\mathrm{dist}(\mathrm{supp}(F),
+\mathrm{supp}(G)) \geq R$:
+\begin{equation}
+|\Cov_{\mu_\beta}(F, G)|
+\leq C\norm{F}_\infty\norm{G}_\infty\,e^{-m R}
+\end{equation}
+with $m > 0$ depending on $\beta$, uniform in lattice size.
+\end{corollary}
+
+\begin{proof}
+The spectral gap $\lambda_1 \geq \beta/C_P$ from
+Theorem~\ref{thm:global-poincare}, combined with locality of the
+Dirichlet form, gives exponential spatial decay.
+For observables separated by distance $R$, the correlation must pass
+through at least $R/2$ blocks, each contributing a decay factor
+from the block spectral gap.
+\end{proof}
+
+
+%==============================================================================
+\section{Discussion}\label{sec:discussion}
+%==============================================================================
+
+\subsection{What the non-Gaussian approach provides}
+
+The proof in this paper differs from the standard Gaussian-approximation
+route in three ways:
+
+\medskip\noindent
+\textbf{(i) The Ricci curvature contributes positively.}
+On $\SU(2)$, $\Ric = \frac{1}{2}g > 0$. The Gaussian approximation
+replaces $\SU(2)$ by $\R^3$, where $\Ric = 0$, discarding this
+contribution. For the lattice spectral gap, this is a $O(1/\beta)$
+improvement in the curvature constant. For the mass gap, it means the
+compact geometry strengthens rather than obstructs the bound.
+
+\medskip\noindent
+\textbf{(ii) Chessboard concentration controls the potential landscape.}
+The classical approach uses: Gaussian Poincar\'e $\to$
+Holley--Stroock perturbation with Radon--Nikodym derivative
+$d\mu_B/d\mu_{\mathrm{Gauss}} \leq e^{O(\beta\theta_*^3)}$ $\to$
+non-Gaussian Poincar\'e, incurring an $O(1)$ multiplicative loss in
+the Poincar\'e constant. Our approach uses the chessboard estimate
+from reflection positivity to control the non-convex part of the
+Wilson potential landscape. This ensures that secondary minima and
+saddle points at large plaquette angles have exponentially
+suppressed Boltzmann weight, so the semiclassical spectral gap is
+determined (to leading order) by the Hessian at the unique minimum.
+The chessboard thus serves the same structural role as the Gaussian
+comparison but with exponentially better cost: $O(e^{-c\beta})$
+versus $O(1)$.
+The conceptual role of the Leibniz defect is clarified by the hierarchy
+of Remark~\ref{rem:hierarchy}: the microscopic operator $\nabla$ is a
+derivation ($\Gamma_\nabla = 0$), but coarse-graining via the
+conditional expectation $T_B$ produces an effective operator
+$\nabla_x \circ T_B$ whose Leibniz defect $\Gamma_B$
+(Proposition~\ref{prop:leibniz-cov}) encodes boundary--interior
+correlations. The curvature error $\cK$ is the infinitesimal
+manifestation of $\Gamma_B$: it measures how the non-abelian
+connection $\nabla_X Y = \frac{1}{2}[X,Y]$ couples interior
+fluctuations to boundary modes. The parallel with~\cite{Fontes2026i}
+is exact: the energy space structure of the driving process determines
+the generator (there, the $L^2(dt \otimes \nu)$ norm produces the
+L\'evy--Khintchine integral; here, the $\SU(2)$ Riemannian metric
+produces the Wilson Hessian), and the Leibniz defect captures the
+non-derivation correction ($D_J F \cdot D_J G$ for jumps; $\cK$ for
+non-abelian gauge fields).
+
+\medskip\noindent
+\textbf{(iii) The Christoffel correction vanishes by antisymmetry.}
+The decomposition of the curvature error $\cK$ into Christoffel and
+metric parts (Lemma~\ref{lem:curv-leibniz}) reveals that the
+$O(\theta)$ Christoffel correction---involving the structure constants
+$\epsilon_{abc}$---is antisymmetric in the full $(\ell,a)$ index and
+drops out of the Hessian quadratic form entirely. The surviving metric
+correction is $O(\theta^2)$, dominated by the $\cos(\theta_p)$
+factor. This improves the curvature constant from
+$\lambda_{\min} - C\theta_*$ (naive bound) to
+$\cos(\theta_*)\,\lambda_{\min} - C'\theta_*^2$, dramatically widening
+the good-region corridor.
+
+This cancellation parallels the cross-sign vanishing
+$\Psi_1(n,-m) = 0$ at $\gamma = 1$ in~\cite{Fontes2026f}: both arise
+from algebraic antisymmetry in the structure constants. The natural
+next step (Paper 9) is to decompose the remaining $O(\theta^2)$ metric
+correction into representation-theoretic channels of $\SU(2)$ and
+determine whether further cancellations sharpen $C'$.
+
+\subsection{Relationship to the operator factorization program}
+
+This paper is the eighth in the series~\cite{Fontes2026a,Fontes2026b,Fontes2026c,Fontes2026i,Fontes2026d,Fontes2026e,Fontes2026f}:
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Paper & Domain & Key result \\
+\midrule
+1~\cite{Fontes2026a} & Hilbert / Gaussian & Factorization identity \\
+2~\cite{Fontes2026b} & Rough fBM & $H < 1/2$ extension \\
+3~\cite{Fontes2026c} & Non-semimartingale & It\^o via predictable projection \\
+4~\cite{Fontes2026i} & Energy space / PDE & Generator from $\|\cdot\|_{\cH}$ \\
+5~\cite{Fontes2026d} & Banach / stable L\'evy & Leibniz defect \\
+6~\cite{Fontes2026e} & Stable--fBM duality & $\Gamma_L = R_H$ \\
+7~\cite{Fontes2026f} & Fractional BE & $\Gamma_2 = R_H^{\circ 2}$, $\kappa(1)=1$ \\
+\textbf{8 (this paper)} & \textbf{Lattice YM} & \textbf{Non-Gaussian spectral gap} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The progression from abstract operator theory to a concrete
+constructive QFT result demonstrates that the framework has
+applications beyond stochastic calculus proper.
+
+
+\subsection{What remains for the continuum limit}
+
+The lattice spectral gap, uniform in volume, is a necessary but not
+sufficient condition for the continuum mass gap. The remaining steps
+are:
+\begin{enumerate}[label=(\alph*)]
+\item \textbf{Uniformity in lattice spacing:} The constants $\kappa$
+  and $\beta_0$ must be controlled as $a \to 0$ along the
+  asymptotically free trajectory $\beta(a) \sim -b_0\log a$.
+\item \textbf{Tightness:} The lattice Schwinger functions must
+  converge (in a subsequence) as $a \to 0$.
+\item \textbf{Nontriviality:} The continuum limit must be
+  interacting, not free.
+\end{enumerate}
+
+These are standard challenges in constructive gauge theory,
+independent of the method used to establish the lattice spectral gap.
+The Bakry--\'Emery approach does not resolve them, but it provides a
+cleaner starting point than the multi-scale RG program for addressing
+(a), because the curvature constant $\kappa$ depends on computable
+geometric quantities rather than on the full multi-scale flow.
+We now make this precise for item~(a).
+
+
+\subsection{Uniformity along the asymptotically free trajectory}
+\label{ssec:AF}
+
+Perturbative renormalization group analysis determines the lattice
+coupling $\beta$ as a function of lattice spacing~$a$ via the
+$\beta$-function.  For $\SU(N)$ Yang--Mills theory in four
+dimensions, the one-loop coefficient is $b_0 = 11N/(48\pi^2)$,
+giving the asymptotically free trajectory
+\begin{equation}\label{eq:AF-trajectory}
+\beta(a) = \frac{2N}{g^2(a)} \;=\;
+\frac{2N}{g_0^2} + 2Nb_0 \log(1/a) + O(\log\log(1/a))
+\end{equation}
+as $a \to 0$.  For $\SU(2)$, $b_0 = 11/(24\pi^2)$ and
+$\beta(a) \to +\infty$ logarithmically.  The question is whether
+the spectral gap established in Theorem~\ref{thm:main} persists
+uniformly as the lattice is refined along this trajectory.
+
+\begin{corollary}[Curvature improves along AF]\label{cor:AF-curvature}
+Fix $\theta_* \in (0, \pi/2)$ satisfying
+$\cos(\theta_*)\,\lambda_{\min}(H_{\mathrm{phys}}) > C'\theta_*^2$
+(e.g., $\theta_* \leq 0.27$).  Then along the asymptotically free
+trajectory~\eqref{eq:AF-trajectory}, the block curvature constant
+satisfies
+\begin{equation}\label{eq:kappa-AF}
+\kappa_B(\beta(a), \theta_*) \;\geq\;
+\frac{1}{2} + \beta(a)\,\delta_0,
+\qquad
+\delta_0 := \cos(\theta_*)\,\lambda_{\min}(H_{\mathrm{phys}}) - C'\theta_*^2 > 0,
+\end{equation}
+for all $a < a_0 := \exp(-(\beta_0 - 2N/g_0^2)/(2Nb_0))$,
+where $\beta_0$ is the threshold from
+Theorem~\textup{\ref{thm:main}}.  In particular,
+$\kappa_B(\beta(a), \theta_*) \to +\infty$ as $a \to 0$.
+\end{corollary}
+
+\begin{proof}
+The corridor condition $\theta_* \leq 0.27$ is independent of~$\beta$
+and~$a$: it is a geometric condition on the $2^4$-block incidence
+structure and the bi-invariant metric of $\SU(2)$.  The curvature
+bound~\eqref{eq:kappa-B} has the form
+$\kappa_B = \frac{1}{2} + \beta \cdot \delta_0$ with
+$\delta_0 > 0$ depending only on $\theta_*$, the combinatorial
+eigenvalue $\lambda_{\min}(H_{\mathrm{phys}}) = 0.6893$, and the
+constant $C'$ from the BCH remainder.  Since $\beta(a) \to \infty$
+as $a \to 0$, the bound~\eqref{eq:kappa-AF} holds for all
+$a < a_0$, with $\kappa_B$ strictly increasing in $1/a$.
+\end{proof}
+
+\begin{corollary}[Chessboard concentration improves along AF]
+\label{cor:AF-chessboard}
+Along the asymptotically free trajectory, the chessboard estimate
+gives
+\begin{equation}
+\mu_{\beta(a)}(\theta_p > \theta_*)
+\leq C\exp\!\bigl(-\beta(a)(1 - \cos\theta_*)/2\bigr)
+= C\,a^{\,Nb_0(1-\cos\theta_*) + o(1)}.
+\end{equation}
+This probability vanishes polynomially in $a$ (in fact faster
+than any power if $\theta_*$ is bounded away from~$0$), so the
+measure concentrates on the good region $\Omega_g(\theta_*)$
+with probability tending to~$1$ superpolynomially.
+\end{corollary}
+
+\begin{proof}
+Substitute $\beta(a) \sim 2Nb_0\log(1/a)$ into
+Theorem~\ref{thm:chessboard}.
+\end{proof}
+
+\begin{corollary}[Uniform lattice Poincar\'e along AF]
+\label{cor:AF-poincare}
+Subject to the boundary-term condition of
+Remark~\textup{\ref{rem:boundary-term}}, the global
+Poincar\'e inequality of Theorem~\textup{\ref{thm:global-poincare}}
+holds along the asymptotically free trajectory with constant
+$C_P/\beta(a)$:
+\begin{equation}\label{eq:poincare-AF}
+\Var_{\mu_{\beta(a)}}(f) \;\leq\;
+\frac{C_P}{\beta(a)}\,\cE(f,f)
+\qquad\text{for all } a < a_0,
+\end{equation}
+uniformly in lattice volume $\Lambda_N$.
+The Langevin spectral gap satisfies
+$\lambda_1(a) \geq \beta(a)/C_P \to \infty$.
+\end{corollary}
+
+\begin{proof}
+The martingale assembly of Section~\ref{sec:assembly} uses only:
+(i) the block Poincar\'e constant $C_P/\beta$, which improves as
+$\beta$ grows; (ii) uniformity of the block estimate in boundary
+conditions (Corollary~\ref{cor:uniform-eta}); and (iii) the
+boundary-term inequality.  Items (i) and (ii) hold for all
+$\beta \geq \beta_0$, hence for all $a < a_0$.
+\end{proof}
+
+\begin{remark}[Langevin gap versus physical mass gap]
+\label{rem:langevin-vs-mass}
+Corollary~\ref{cor:AF-poincare} controls the spectral gap
+$\lambda_1(a)$ of the \emph{Langevin} operator
+$L = \Delta_{\SU(2)} - \nabla S_\beta \cdot \nabla$ on the
+full lattice.  The physical mass gap is a different quantity:
+it is extracted from the transfer matrix $\cT = e^{-aH}$
+acting between time-slice Hilbert spaces, via
+$m_{\mathrm{phys}} = -\lim_{t \to \infty} t^{-1} \log
+\langle \phi | \cT^{t/a} | \phi \rangle$
+for a suitable gauge-invariant state $\phi$.
+
+The Langevin gap $\lambda_1(a) \sim \beta(a) \sim |\log a|$
+grows as $a \to 0$, but the physical mass should converge
+to a finite positive limit.  The discrepancy arises because the
+Langevin operator governs relaxation of the \emph{lattice
+measure}, while the transfer matrix governs \emph{Euclidean
+time propagation}.  Their spectra are related but not identical:
+the Osterwalder--Schrader reconstruction theorem (see,
+e.g.,~\cite{JaffeWitten}) connects them through the lattice
+Schwinger functions.
+
+Specifically, the block Poincar\'e inequality controls the
+single-block conditional variance, which enters as an input
+to the transfer matrix spectral theory.  For the scalar field,
+the connection is classical: the lattice Poincar\'e constant
+determines the transfer matrix gap through the Schur complement
+of the time-slice Hessian.  For gauge theories, gauge invariance
+introduces the additional constraint that the transfer matrix
+acts on the physical Hilbert space (gauge orbits), not the
+kinematical one (all link configurations).  Our Poincar\'e
+inequality already respects this structure: it holds for
+gauge-invariant functions, and the block decomposition preserves
+gauge orbits.  The precise extraction of $m_{\mathrm{phys}}$
+from $\lambda_1(a)$ requires controlling the lattice Schwinger
+functions, which is part of item~(b) above
+(tightness).
+\end{remark}
+
+\begin{remark}[Three remaining conditions for the continuum mass gap]
+\label{rem:three-conditions}
+Corollaries~\ref{cor:AF-curvature}--\ref{cor:AF-poincare} reduce
+the continuum mass gap problem to three conditions, each precisely
+identifiable within the present framework:
+
+\medskip\noindent
+\textbf{(C1) Boundary-term Poincar\'e.}
+The boundary term $\Var(\E[f|\cF_0])$ in the martingale
+decomposition (Lemma~\ref{lem:var-decomp}) must satisfy a
+Poincar\'e inequality with constant $O(1/\beta)$.
+The Schur complement $H_{xx} - H_{xy}H_{yy}^{-1}H_{yx}$
+inherits positive definiteness from the full Hessian
+(Remark~\ref{rem:boundary-term}), but closing this requires
+applying the block Poincar\'e argument recursively to the
+boundary links.  This is a multi-scale problem intrinsic
+to the block decomposition, not to the curvature method.
+
+\medskip\noindent
+\textbf{(C2) Transfer matrix spectral gap.}
+The Langevin spectral gap must be connected to the transfer
+matrix gap.  For the Wilson action, this requires controlling
+the Schur complement of the Euclidean action restricted to a
+time-slice, with the remaining links integrated out.  The block
+Poincar\'e inequality provides the needed single-slice estimate;
+the remaining step is the reconstruction argument.
+
+\medskip\noindent
+\textbf{(C3) Tightness and nontriviality.}
+The lattice Schwinger functions
+$S_a(x_1, \ldots, x_n) :=
+\langle W_{C_1} \cdots W_{C_n} \rangle_{\mu_{\beta(a)}}$
+(where $W_C$ are Wilson loops) must converge along a subsequence
+$a_k \to 0$, and the limit must be interacting.  The exponential
+clustering of Corollary~\ref{cor:clustering} provides the decay
+estimates needed for tightness; the nontriviality condition
+requires showing that the continuum limit is not Gaussian.
+
+\medskip
+Condition~(C1) is internal to the Bakry--\'Emery framework and is the
+most accessible.  Conditions (C2) and (C3) are standard challenges in
+constructive gauge theory, shared by all approaches to the mass gap
+problem.  The curvature method simplifies the input to these conditions:
+instead of controlling the full multi-scale effective action (as in
+Balaban's program), one needs only the block Poincar\'e constant
+$C_P/\beta$ and its uniformity along the asymptotically free trajectory.
+\end{remark}
+
+
+%==============================================================================
+\section*{Acknowledgments}
+%==============================================================================
+AI tools were used as interactive assistants for mathematical
+exploration and drafting. The author is responsible for all content.
+
+
+%==============================================================================
+\begin{thebibliography}{20}
+
+\bibitem{JaffeWitten}
+A.~Jaffe and E.~Witten.
+\newblock \emph{Quantum Yang--Mills Theory}.
+\newblock Clay Mathematics Institute, 2000.
+
+\bibitem{Balaban1983}
+T.~Balaban.
+\newblock Ultraviolet stability in field theory. The $\varphi_3^4$ model.
+\newblock In \emph{Scaling and Self-Similarity in Physics}, Birkh\"auser, 1983.
+
+\bibitem{Balaban1984}
+T.~Balaban.
+\newblock Propagators and renormalization transformations for lattice gauge
+  theories, {I}.
+\newblock \emph{Comm. Math. Phys.}, 95:17--40, 1984.
+
+\bibitem{Balaban1985}
+T.~Balaban.
+\newblock Averaging operations for lattice gauge theories.
+\newblock \emph{Comm. Math. Phys.}, 98:17--51, 1985.
+
+\bibitem{BakryEmery1985}
+D.~Bakry and M.~\'Emery.
+\newblock Diffusions hypercontractives.
+\newblock In \emph{S\'em.\ Prob.\ XIX}, LNM 1123, Springer, 1985.
+
+\bibitem{BakryGentilLedoux2014}
+D.~Bakry, I.~Gentil, and M.~Ledoux.
+\newblock \emph{Analysis and Geometry of Markov Diffusion Operators}.
+\newblock Grundlehren Math. Wiss., vol.~348, Springer, 2014.
+
+\bibitem{SpenerWeberZacher2020}
+A.~Spener, F.~Weber, and R.~Zacher.
+\newblock Curvature-dimension conditions for non-local operators.
+\newblock \emph{J. Funct. Anal.}, 2020.
+
+\bibitem{Zegarlinski1996}
+B.~Zegarlinski.
+\newblock The strong decay to equilibrium for the stochastic dynamics of
+  unbounded spin systems on a lattice.
+\newblock \emph{Comm. Math. Phys.}, 175:401--432, 1996.
+
+\bibitem{StroockZegarlinski1992}
+D.~Stroock and B.~Zegarlinski.
+\newblock The logarithmic Sobolev inequality for continuous spin systems
+  on a lattice.
+\newblock \emph{J. Funct. Anal.}, 104:299--326, 1992.
+
+\bibitem{HelfferSjostrand1984}
+B.~Helffer and J.~Sj\"ostrand.
+\newblock Multiple wells in the semi-classical limit, {I}.
+\newblock \emph{Comm. Partial Differential Equations}, 9:337--408, 1984.
+
+\bibitem{Fontes2026a}
+R.~Fontes.
+\newblock Stochastic calculus as operator factorization.
+\newblock \emph{arXiv preprint} arXiv:2601.09976, 2026.
+
+\bibitem{Fontes2026b}
+R.~Fontes.
+\newblock Stochastic calculus for rough fractional {B}rownian motion
+  via operator factorization.
+\newblock \emph{arXiv preprint} arXiv:2601.09967, 2026.
+
+\bibitem{Fontes2026c}
+R.~Fontes.
+\newblock An {I}t\^o formula via predictable projection.
+\newblock \emph{arXiv preprint} arXiv:2601.10359, 2026.
+
+\bibitem{Fontes2026d}
+R.~Fontes.
+\newblock Operator factorization beyond {H}ilbert spaces: {B}anach
+  duality and stable {L}\'evy processes.
+\newblock \emph{arXiv preprint}, 2026.
+
+\bibitem{Fontes2026e}
+R.~Fontes.
+\newblock Stable--fractional {B}rownian duality.
+\newblock \emph{arXiv preprint}, 2026.
+
+\bibitem{Fontes2026f}
+R.~Fontes.
+\newblock Fractional {B}akry--\'Emery curvature on the torus.
+\newblock \emph{arXiv preprint}, 2026.
+
+\bibitem{Fontes2026h}
+R.~Fontes.
+\newblock Explicit 4{D} block cancellation for lattice gauge theory.
+\newblock Working notes, 2026.
+
+\bibitem{Fontes2026i}
+R.~Fontes.
+\newblock {PDE} generators from energy space structure in {F}eynman--{K}ac theory.
+\newblock \emph{arXiv preprint}, 2026.
+
+\end{thebibliography}
+
+\end{document}

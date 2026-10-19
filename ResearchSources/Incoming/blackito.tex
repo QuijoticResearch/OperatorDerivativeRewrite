@@ -1,0 +1,3275 @@
+\documentclass[reqno,final,11pt]{amsart}
+%% Packages
+\usepackage{natbib}  %Nature-like bibliography
+\usepackage{fancyhdr} %Headers
+\usepackage{color} %Color definition
+\usepackage{hyperref} %Internal and external links
+\usepackage{graphicx} %Graphics inclusion
+\usepackage{geometry}
+\geometry{
+  top=1in,
+  inner=1in,
+  outer=1in,
+  bottom=1in,
+  headheight=3ex,
+  headsep=2ex,
+}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Author packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{cleveref}
+\emergencystretch=3em
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% Definition of colors for links
+\definecolor{aleacolor}{rgb}{0.16,0.59,0.78}
+
+%% Settings for hyperref package
+\hypersetup{
+breaklinks,
+colorlinks=true,
+linkcolor=aleacolor,
+urlcolor=aleacolor,
+citecolor=aleacolor}
+
+%% Settings for fancyhdr package
+%\renewcommand{\headheight}{11pt}
+\pagestyle{fancy} \fancyhf{} \fancyhead[RO,LE]{\small\thepage}
+\fancyhead[RE]{\small\shortauthors} \fancyhead[LO]{\small\shorttitle}
+
+%% Settings for natbib package
+\renewcommand{\cite}{\citet}
+
+%% Setting the theorem-like environments
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{convention}[theorem]{Convention}
+\newtheorem{hypothesis}[theorem]{Condition}
+\newtheorem{problem}[theorem]{Open problem}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+%% Numbering
+\makeatletter \@addtoreset{equation}{section} \makeatother
+\renewcommand\theequation{\thesection.\arabic{equation}}
+\renewcommand\thefigure{\thesection.\arabic{figure}}
+\renewcommand\thetable{\thesection.\arabic{table}}
+
+%% First page header, modify the link w.r.t. volume number
+\newcommand{\aleaIndex}[1]{\href{http://alea.impa.br/english/index_v23.htm}{\bf 23}}
+\newcommand{\aleaDOI}[1]{\href{https://doi.org/10.30757/ALEA.v23-}{DOI: 10.30757/ALEA.v23-}}
+\eheader{ALEA, Lat. Am. J. Probab. Math. Stat.}{\aleaIndex{23}}{2026}{1}{4}{\aleaDOI}
+%% Uncomment the following line to include Alea logo
+\elogo{\parbox[c]{180pt}{\includegraphics[width=170pt]{logo.pdf}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Author commands and definitions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\Dom}{\mathrm{Dom}}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\Gam}{\Gamma}
+\newcommand{\GamT}{\Gamma^{(2)}_{\theta}}
+\newcommand{\GamN}{\Gamma^{(2)}_{\cN_\theta}}
+\newcommand{\Lth}[1]{L^{(#1)}_{\theta}}
+\newcommand{\DN}{D_{\cN_\theta}}
+\newcommand{\divN}{\delta_{\cN_\theta}}
+\newcommand{\Pth}{\Prob_{\theta}}
+\newcommand{\Hone}{\mathcal H_{1}}
+\newcommand{\Aone}{\cA^{\mathrm{1t}}_{\mathrm{cyl}}}
+\newcommand{\Apair}{\cA^{\le 2}_{\mathrm{cyl}}}
+\newcommand{\Apairflat}{\cA^{\le 2,\flat}_{\mathrm{cyl}}}
+\newcommand{\muD}{\mu_{\Delta}}
+\newcommand{\cth}{c_{\theta}}
+\newcommand{\Ecyl}{\cE^{\mathrm{cyl}}_{\theta}}
+\newcommand{\CKC}{(\mathrm{CKC}_{2})}
+\newcommand{\PiN}{\Pi_{\cN_\theta}}
+\newcommand{\COcap}{(\mathrm{CO\text{-}Cap})}
+\newcommand{\COmix}{(\mathrm{CO\text{-}Mix})}
+\newcommand{\Ltwoz}{L^2_0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\date{DATE; accepted DATE; published under license
+\href{https://creativecommons.org/licenses/by/4.0/}{\textup{CC BY 4.0}}} %%% to be modified by the editor
+
+\begin{document}
+
+\title[Black Clark--Ocone and Operator-It\^o for Sticky Flows]{Pairwise Black
+Clark--Ocone and Operator-It\^o Formulae for Le Jan--Raimond Sticky Flows,
+and the Sticky--Coalescing Dichotomy}
+
+\author{Ramiro Fontes}
+\address{Quijotic Research}
+\email{ramirofontes@gmail.com}
+\urladdr{\href{https://www.quijotic.com}{www.quijotic.com}}
+
+\thanks{The author declares that no funds, grants, or other support were
+received during the preparation of this manuscript.}
+\subjclass[2020]{Primary 60H07; Secondary 60J46, 60J55, 60G20}
+\keywords{Black noise, sticky flow, stochastic flow of kernels,
+Clark--Ocone representation, Dirichlet form, operator It\^o formula,
+coalescence}
+
+\begin{abstract}
+The noise of the Le Jan--Raimond Brownian sticky flow is black: its first
+chaos is trivial, so functionals of the flow admit no martingale
+representation and no stochastic-integral It\^o formula. We develop the
+calculus that survives. The operator derivative $D$ on a carr\'e-du-champ
+energy space comes first, and the divergence is defined by adjointness,
+\[
+  \delta\;:=\;D^{*},
+\]
+on fixed one- and two-point sectors of the flow. Three results follow. First,
+a boundary dichotomy: the deletion contraction that the construction requires
+holds in the reflecting phase under a first-order condition
+$(\mathrm{CKC}_2^{\flat})$ on the two-point law and fails at the coalescing
+endpoint, so the boundary type rather than blackness decides the calculus; in
+the reflecting phase the diagonal-flat pairwise sector then carries closed
+operator pairs and a pairwise black integration-by-parts identity. Second, a
+Clark--Ocone--Green representation
+\[
+  F-\E F\;=\;\delta_{\cN_\theta}\bigl(\PiN D_{\cN_\theta}F\bigr),
+\]
+in which the representer is a minimal-norm Green solution rather than a
+predictable projection, there being no first chaos to project onto. The
+two-point case rests on a sectorwise Poincar\'e inequality; on the
+autonomous gap sector the representation holds with
+explicit constants and fails at the coalescing endpoint, where the
+coalescence indicator is a nonconstant energy-null functional orthogonal to
+every divergence. Third, a partitionwise dynamic operator-It\^o formula: the
+increment is an adapted sum of slicewise divergences plus the generator
+drift, exact at every partition, with the Dynkin martingale recovered in the
+mesh limit. Blackness forbids a driving noise but not adapted increments, so
+the formula is driverless; on the gap sector it requires nothing beyond the
+model itself.
+\end{abstract}
+
+\maketitle
+
+%==============================================================
+\section{Introduction}\label{sec:intro}
+%==============================================================
+
+A stochastic flow of kernels $K=(K_{s,t})_{s\le t}$ on the line (or
+circle) is a random evolution of probability kernels; the Le Jan--Raimond
+(LJR) construction~\citep{LJR-FCN} produces such a flow from a consistent
+family of $n$-point Feller semigroups $(\Prob^{(n)}_t)_{n\ge1}$, the
+$n$-point motion being ``the motion of $n$ unsecable points thrown into the
+fluid''~\citep[\S1]{LJR-FCN}. The Brownian sticky flow is the flow
+whose one-point motion is Brownian and whose two-point motion is sticky on
+the diagonal: two points started apart can meet and, having met, can
+separate again (the intermediate or reflecting phase), in
+contrast with the coalescing (Arratia) flow where points that meet are
+absorbed together forever.
+
+The flow noise $\cN_\theta$, the continuous product of $\sigma$-fields
+$(\cF^{\theta}_{s,t})_{s\le t}$ generated by $K$, is a black noise
+in the sense of Tsirelson~\citep{Tsirelson-StFlour,Tsirelson-Survey}: its first
+chaos (the space of decomposable, i.e.
+additive-across-time, square-integrable functionals) is trivial. Le Jan and
+Raimond prove exactly this~\citep{LJR-circle-noise}: the noise of a Brownian
+sticky flow is black. This is what obstructs the classical
+martingale-representation route to an It\^o formula, and it is a stronger failure
+than the usual loss of semimartingale calculus: it removes the first-chaos
+representation itself, not only the finite predictable bracket. There is no
+internal martingale representation from which to read off a derivative, so the
+compression-from-a-source route does not apply. What remains is the
+reversal: the operator
+derivative $D$ on a carr\'e-du-champ energy space comes first,
+\begin{equation}\label{eq:reversal}
+  \delta\;:=\;D^{*},
+\end{equation}
+and build the calculus downstream of \eqref{eq:reversal} from a
+$\Gamma$-tuple extracted directly from the LJR two-point generator. Working
+pairwise, at the level of one- and two-point observables, isolates the single
+analytic question that the reversal leaves open: whether the pairwise energy
+contracts under deletion of a coordinate. We phrase this as a
+conditional-expectation energy contraction and reduce it to an explicit inequality
+$\CKC$ (\cref{def:ckc}) on the structural scalars
+$(q,q',p,\partial_\xi p,\cth,\muD)$ of the two-point time-$T$ law. The reduction
+runs through an amended gradient identity for the deletion map
+(\cref{prop:amended-star}): because the diagonal atom of the sticky kernel moves
+with the retained coordinate, the naive score identity omits a term
+$q(\xi)\,\partial_\eta\Phi(\xi,\xi)$, and carrying that term is what
+makes the reduction correct.
+
+\subsection*{Three results, and the road map}
+The paper proves three things, in this order.
+\begin{enumerate}
+\item An energy-first construction over a black noise
+(\cref{sec:main}): closed sectorwise pairs $D$, $\delta=D^{*}$, defined
+directly since first-chaos representation is unavailable, and a pairwise
+black integration-by-parts identity (\cref{thm:pairwise-ito}), with the
+sticky--coalescing dichotomy locating exactly where the construction lives
+(\cref{thm:unobstruction,thm:wall-endpoint,thm:discriminant}).
+\item A pairwise Clark--Ocone--Green representation
+(\cref{sec:clarkocone}): $F-\E F=\divN(\PiN\DN F)$
+(\cref{thm:clarkocone}), together with the gap-sector dichotomy
+(\cref{thm:gap-co}) and the coalescing obstruction
+(\cref{prop:co-failure}).
+\item A partitionwise driverless It\^o formula (\cref{sec:dynamic}):
+the increment as an adapted sum of slicewise divergences
+(\cref{thm:dynamic}), not an integral against a first-chaos driver
+(\cref{def:driverless}).
+\end{enumerate}
+The dependency chain:
+\begin{align*}
+  (\mathrm{CKC}_2^{\flat})
+  &\;\Longrightarrow\;
+  \text{integration by parts (\cref{thm:pairwise-ito})},\\
+  \text{sector Poincar\'e inequality}
+  &\;\Longrightarrow\;
+  \text{Clark--Ocone (\cref{thm:clarkocone})},\\
+  \text{slicewise Clark--Ocone}
+  &\;\Longrightarrow\;
+  \text{dynamic formula (\cref{thm:dynamic})}.
+\end{align*}
+The remainder of this introduction describes the route through the two-point
+structure; the reader oriented by this summary may skip to \cref{sec:flow}.
+
+The inequality $\CKC$ is then read off the gap. The two-point gap $g=\eta-\xi$ is
+a scalar sticky Brownian motion (\cref{lem:gap-sticky}); its time-$T$ law splits
+into a diagonal atom and a diffuse density $p$, and the one number that controls
+$\CKC$ is the near-diagonal limit of $p$. Tied to the LJR boundary classification,
+this limit produces a sharp dichotomy (\cref{cor:dichotomy}), the core of
+the first main result: at every
+reflecting-regular boundary the value-trace, Poincar\'e and Fisher constants
+$\tau_{\mathrm{wt}},C^p_P,I_p$ are finite and the obstruction to the contraction
+is absent (\cref{thm:unobstruction}), whereas at the coalescing endpoint the
+density vanishes, these constants diverge, and a difference-direction probe
+defeats the contraction (\cref{thm:wall-endpoint}). Both phases carry black
+noises, so what the boundary type discriminates is not blackness but exactly
+this capacity obstruction (\cref{thm:discriminant}).
+
+One element escapes the first-order analysis. The moving-atom term contributes
+a derivative trace $\tau_{\mathrm{at}}$ whose finiteness is a second-order ($H^2$-type) condition, not a consequence of reflecting regularity.
+On the diagonal-flat sub-core, where the difference-direction derivative vanishes
+at coincidence, this term rotates into the center-of-mass direction and is
+absorbed by the diagonal energy (\cref{cor:neumann-subcore}), so the trace drops
+out. There, under the reduced contraction condition $(\mathrm{CKC}_2^{\flat})$,
+the reflecting phase carries a single-time pairwise
+black integration-by-parts identity (\cref{thm:pairwise-ito}), whose centered
+divergence is the intrinsic energy-space object and never a first-chaos integral,
+with pairing governed by the diagonal carr\'e $\GamT$. The closed-pair
+construction it rests on is developed self-contained and applied on each fixed
+one- or two-point sector (\cref{app:closedpair,app:pairclos}).
+
+The second main result is the Clark--Ocone upgrade
+(\cref{sec:clarkocone}). The integration-by-parts identity is adjointness, not
+yet representation; the classical upgrade projects $DF$ onto predictable
+integrands and is doubly unavailable here, blackness having removed the
+first-chaos target and the single-time sector carrying no filtration. The
+energy route survives: the upgrade is equivalent to a sectorwise Poincar\'e
+inequality, which we prove from the paper's own trace bounds together with a
+uniformization of the two-point value capacity ($\COcap$, or the mixed-mean
+bound $\COmix$), with the deletion contraction $(\mathrm{CKC}_2^{\flat})$ paying
+the two-point step and the classical Gaussian Poincar\'e inequality the
+one-point step. The result (\cref{thm:clarkocone}) is a pairwise black
+Clark--Ocone--Green representation $F-\E F=\divN(\PiN\DN F)$, the representer
+being the minimal-norm Green solution in the energy module. Two statements
+frame it from \cref{conv:LJR} alone: on the autonomous gap sector the
+representation holds with explicit constants, in a sharp
+reflecting/coalescing dichotomy (\cref{thm:gap-co}); at the coalescing
+endpoint it fails outright, the coalescence indicator being a nonconstant
+energy-null functional that no divergence represents (\cref{prop:co-failure}).
+Whether the reflecting phase alone carries the full two-point representation
+remains open.
+
+The third main result is dynamic (\cref{sec:dynamic}). The Dynkin
+comparison (\cref{prop:dynkin}) identifies what a dynamic formula must
+disintegrate, and the adapted-telescope theorem (\cref{thm:dynamic}) carries
+the disintegration out at the level of partitions, exactly: the increment
+$f(Z_T)-f(Z_0)$ equals an adapted sum of conditional single-slice energy
+divergences plus the generator drift, at every partition, with the Dynkin
+martingale recovered in the mesh limit. Blackness rules out slice-additive
+functionals, not adapted increments, so the formula is driverless rather than
+impossible (\cref{def:driverless}): state-indexed conditional divergences
+replace a driver, and an orthogonal-increment identity replaces the It\^o
+isometry. On the gap sector the dynamic formula needs nothing further (\cref{cor:dynamic-gap}),
+the Wentzell drift being clocked by the sticky occupation time, whose
+near-total tail is computed in closed form (\cref{prop:occupation}).
+
+Supporting results sharpen the boundaries of the three:
+the center-of-mass reduction \cref{prop:com-half} compresses the two-point
+Poincar\'e question into $\COmix$ and identifies the essential-supremum form
+of $\COcap$ as the wrong uniformity (\cref{rem:two-well}); the moving-atom
+trace condition becomes a theorem on the second-order sub-core by an
+elementary Agmon bound, isolating the full reflecting case in a single
+intertwining question; and the codimension-two polarity route to a
+three-point failure is blocked by the one-dimensional capacity of the
+pairwise strata (\cref{sec:sharpness}).
+
+Beyond the flat sub-core the moving-atom trace is higher-order, and a
+full reflecting theorem turns on a semigroup-intertwining question for the
+time-$T$-law operators (\cref{rem:dtrace-gamma2}). That question, the three- and
+higher-point contraction, and the multi-time lift are the natural next steps;
+they are collected in \cref{sec:openproblems}.
+
+Throughout, ``pairwise'' refers to observations of at most two points. This
+sub-algebra is stable under the coordinate deletions $2\to1\to0$, which is what
+keeps the pairwise sector self-contained and lets the reduction proceed without
+reference to the higher-point laws.
+
+%==============================================================
+\section{The sticky flow, its noise, and the boundary trichotomy}\label{sec:flow}
+%==============================================================
+
+Fix a stickiness parameter $\theta\in[0,\infty]$. The LJR Brownian sticky
+flow is the stochastic flow of kernels $K^{\theta}=(K^{\theta}_{s,t})_{s\le t}$
+whose law is determined by a consistent family of $n$-point Feller
+semigroups $(\Prob^{(n)}_t)_{n\ge1}$~\citep[Thm.~2.1, \S2]{LJR-FCN}; the
+$n$-point motion $X^{(n)}=(X^{x_1}_t,\dots,X^{x_n}_t)_t$ is the Markov
+process on $\R^n$ associated with $\Prob^{(n)}_t$. The one-point motion is
+Brownian~\citep{LJR-circle-noise}. We drop the superscript $\theta$ when fixed
+and write $\Pth$ for the law of the flow, $\E$ for $\E_{\Pth}$, and
+$\cN_\theta=(\cF^{\theta}_{s,t})_{s\le t}$ for the flow noise.
+
+The starting point is that this noise is black.
+
+\begin{theorem}[Le Jan--Raimond {\citep{LJR-circle-noise}}]\label{thm:black}
+The noise $\cN_\theta$ of a Brownian sticky flow is black: its first chaos
+(the space of centered linear, i.e. additive-across-time, $L^2$
+representations) is trivial.
+\end{theorem}
+We use \cref{thm:black} as an input. Its mechanism is the
+same-law-until-$\tau$ estimate~\citep{LJR-circle-noise}: for the $2d$-point
+joint motion and two independent $d$-point motions, the processes have the
+same law up to the first meeting time
+$\tau=\inf_{i,j}\inf\{t:X^i_t=Y^j_t\}$, and
+$\Prob[\tau<\varepsilon]\le C\sqrt{\varepsilon}$ (one Brownian gap hitting
+zero, by reflection), so the joint-minus-independent difference of any
+second moment of a difference functional $(g(X)-g(Y))^2$ is
+$O(\varepsilon^{3/2})=o(\varepsilon)$. Summed over a dyadic time partition
+this gives zero quadratic variation of the first-chaos projection, hence
+triviality of the first chaos (Tsirelson's
+criterion~\citep{Tsirelson-StFlour,Tsirelson-Survey}). One domain convention
+should be flagged once: \citep{LJR-circle-noise} states the theorem for the
+sticky flow on the circle, whereas \cref{conv:LJR} and the analysis below live
+on the line. The mechanism just described transfers verbatim: it compares the
+joint and the independent $n$-point motions only up to the first meeting time
+and uses a single Brownian-gap hitting estimate, both local in space and time
+and insensitive to the global geometry (the line being the universal cover of
+the circle, with the $n$-point sticky semigroups those of the consistent
+family~\citep{LJR-FCN}); we use the line statement throughout. Two features of this
+mechanism return below: it lives on difference functionals at
+coincidence, and it integrates against an absolutely continuous time
+marginal that does not charge the diagonal.
+
+We now fix the two-point structure of the flow as a convention.
+
+\begin{convention}[LJR two-point sticky generator]
+\label{conv:LJR}
+The two-point generator $\Lth{2}$ on $L^2(\R^2,dx\,dy)$ is characterized by
+four data inherited from~\citep{LJR-FCN}:
+\textnormal{(a)} a stickiness parameter $\theta\in[0,\infty]$, one endpoint
+the independent-Brownian flow, the other the coalescing flow;
+\textnormal{(b)} a diagonal coefficient $\cth\ge0$ with
+$\cth=0$ at the independent endpoint and $\cth=c_{\mathrm{coal}}>0$ at the
+coalescing endpoint;
+\textnormal{(c)} a Radon diagonal reference measure $\muD$ on
+$\Delta\simeq\R$ (Lebesgue, or the local-time-at-$0$ measure of $Y-X$);
+\textnormal{(d)} a Wentzell-type boundary condition on $\Delta$
+characterized by $\theta$, with off-diagonal action $\tfrac12\Delta$, the
+exact statement delegated to~\citep{LJR-FCN}.
+\end{convention}
+
+The carr\'e seed lives on the diagonal. The two-point product defect
+$\mathfrak D^{(2)}_\theta(f,g):=\Lth{2}(f\otimes g)-(\tfrac12 f'')\otimes g
+-f\otimes(\tfrac12 g'')$ is supported on $\Delta$ and equals, on the diagonal,
+$\cth f'(x)g'(x)\,\muD(dx)$ (the off-diagonal part of $\Lth{2}$ is
+$\tfrac12\Delta$, so the defect is diagonal-supported; the diagonal density is
+fixed by the Wentzell condition of \cref{conv:LJR}(d)). The diagonal
+carr\'e-du-champ seed is
+\begin{equation}\label{eq:gamma-seed}
+  \GamT(f,g)\;=\;\tfrac12\,\mathfrak D^{(2)}_\theta(f,g)
+  \;=\;\tfrac{\cth}{2}\,f'(x)g'(x)\,\muD(dx)\quad\text{on }\Delta,
+\end{equation}
+the diagonal seed, supported on the coincidence stratum.
+
+Everything that follows turns on the Feller boundary type of the two-point
+distance process, so we name it now and quote the LJR classification verbatim. Let
+$d_t=d(X_t,Y_t)$ be the two-point distance process and
+$\Prob_r,H_r$ as in~\citep[\S9]{LJR-FCN}.
+
+\begin{definition}[Boundary trichotomy]\label{def:trichotomy}
+The flow is in the
+\textnormal{(N)} non-coalescing phase, the
+\textnormal{(R)} reflecting (intermediate, sticky) phase, or the
+\textnormal{(C)} coalescing phase, according to the boundary type of
+$0$ for $d_t$.
+\end{definition}
+
+\noindent The two cases that matter here are the two-point boundary
+classification of~\citep[Theorem~1.1 and~\S9]{LJR-FCN} (we cite the statement by
+its place in the classification theorem; section numbers refer to the published
+Ann.\ Probab.\ version):
+\begin{quote}
+\textnormal{(C, exit/absorbing, coalescing case)} ``\,$\nu^{s}$ defines a
+coalescing flow of maps if and only if $0$ is a closed exit boundary point,
+i.e. if $\exists\, r>0,\ \Prob_r[H_0<\infty]>0$ and $\forall\, r>0,\
+\Prob_0[H_r<\infty]=0$.''
+
+\textnormal{(R, reflecting regular, intermediate case)} ``\,$\nu^{s}$
+defines a turbulent flow with hitting (i.e. such that the 2-point motion
+starting outside of the diagonal hits the diagonal with a positive
+probability) if and only if $0$ is a reflecting regular boundary point, i.e. if
+$\exists\, r>0,\ \Prob_r[H_0<\infty]>0$ and $\exists\, r>0,\
+\Prob_0[H_r<\infty]>0$.''
+\end{quote}
+The distinguishing clause is $\Prob_0[H_r<\infty]$: in phase (R) the process
+leaves the diagonal (positive probability of separating after
+meeting); in phase (C) it does not. This single clause is what discriminates the
+identified capacity obstruction (\cref{thm:discriminant}).
+
+%==============================================================
+\section{The pairwise lifted carr\'e-du-champ structure}\label{sec:recap}
+%==============================================================
+
+We introduce the pairwise lifted carr\'e-du-champ structure used in the sequel;
+the closed-pair and closability machinery is established in
+\cref{app:closedpair,app:pairclos}. Everything but the closability axiom
+(FormClos) is algebraic; per fixed $\le2$-point sector that axiom is the settled
+first-order closability (P1) (\cref{thm:sectorclos}), and the remaining pairwise
+content is the $2\to1$ deletion-compatibility (P3), which the present paper
+attacks pairwise (\cref{thm:deletion}).
+
+Fix a horizon $T>0$. For $\mathbf x=(x_1,\dots,x_m)\in\R^m$ and
+$\Phi\in C_b^\infty(\R^m)$, the single-time cylindrical observable is
+$F_{\mathbf x,T,\Phi}=\Phi(X^{x_1}_T,\dots,X^{x_m}_T)$. The single-time
+cylindrical algebra $\Aone$ is the unital algebra they generate (products close
+by tuple concatenation, with the number of points unrestricted); it is dense in
+$\Hone:=L^2(\Omega,\cF_T^{\mathrm{1t}},\Pth)$, the time-$T$ sub-Hilbert space.
+The pairwise object $\Apair$ used below ($\le2$ points) is, by contrast, only a
+vector sub-core, not a subalgebra (a product of two-point functionals
+leaves the pairwise sector); the unital closed-pair construction is therefore
+applied per fixed sector (\cref{rem:sectorwise}), not to $\Apair$ as an algebra. The lifted carr\'e-du-champ is the pullback
+\begin{equation}\label{eq:lifted-gamma}
+  \GamN(F,G)\;=\;\Gamma^{(m)}_\theta(\Phi,\Psi)\bigl(X^{x_1}_T,\dots,X^{x_m}_T\bigr),
+  \qquad F=\Phi(\cdot),\ G=\Psi(\cdot),
+\end{equation}
+where $\Gamma^{(m)}_\theta$ is the spatial $m$-point carr\'e of $\Lth{m}$.
+Its structural form (square-of-sum), abstracted from the LJR convention, is:
+\begin{equation}\label{eq:sos}
+  \Gamma^{(m)}_\theta(\Phi,\Phi)(\mathbf z)
+  =\sum_{\iota}\alpha^{(m)}_\iota(\mathbf z)\,(\partial^{(m)}_\iota\Phi)^2,
+  \quad
+  \begin{cases}
+   \alpha=\tfrac12,\ \partial_\iota=\partial_i & \text{open stratum},\\
+   \alpha=\tfrac{c_{\theta,|S|}}{2},\ \partial_\iota=\sum_{j\in S}\partial_j
+     & \text{collision stratum }\Delta_S.
+  \end{cases}
+\end{equation}
+On a collision stratum $\Delta_S$ only the center-of-mass direction
+$\sum_{j\in S}\partial_j$ survives; the difference directions
+$\partial_i-\partial_j$ ($i,j\in S$) are dropped. This degeneracy, the blindness
+of $\Gamma$ to intra-cluster differences on the diagonal, is the central analytic
+fact of the paper.
+
+The lifted single-time energy form is $\Ecyl(F,G)=\E[\GamN(F,G)]$ on $\Aone$.
+The energy-first closed-pair construction (reproduced self-contained in
+\cref{app:closedpair}, \cref{thm:foldA,thm:foldB}) produces a closed
+operator-derivative pair $(\DN,\divN=\DN^{*})$ with integration by parts from a
+$\Gamma$-tuple satisfying five axioms (\cref{ass:gamma-axioms}); the four
+algebraic ones (symmetry, constancy-vanishing, matrix-positivity, weighted
+matrix-positivity) are immediate for $\GamN$ on $\Aone$ from the square-of-sum
+structure \eqref{eq:sos}. The fifth is fixed-sector form closability of $\Ecyl$
+(\textnormal{(P1)}, on each fixed $\le2$-point sector; \cref{thm:sectorclos}). The
+corresponding global form closability, the abstract target of the
+projective criterion \eqref{eq:criterion} (established here only sectorwise), is the following.
+
+\begin{hypothesis}[\textnormal{(FormClos)}, global target; $\beta$-1]
+\label{hyp:beta1}
+For every $(F_n)\subset\Aone$ with $F_n\to0$ in $\Hone$ and
+$\Ecyl(F_n-F_m,F_n-F_m)\to0$, one has $\Ecyl(F_n,F_n)\to0$.
+\end{hypothesis}
+
+The route to this condition is a projective-limit criterion.
+For a finite tuple $\mathbf x$ write $\mu_{\mathbf x}=$ law of
+$(X^{x_1}_T,\dots,X^{x_m}_T)$ (the time-$T$ law, a probability on
+$\R^m$), $\cE_{\mathbf x}(\Phi)=\int\Gamma^{(m)}_\theta(\Phi,\Phi)\,d\mu_{\mathbf x}$,
+and for $\mathbf x\subseteq\mathbf y$ let $P^{\mathbf y}_{\mathbf x}=
+\E[\,\cdot\mid\sigma(\text{$\mathbf x$-coords})]$. The criterion is:
+\begin{equation}\label{eq:criterion}
+  \text{(P1)}+\text{(P2)}+\text{(P3)}\;\Longrightarrow\;\text{\cref{hyp:beta1}},
+\end{equation}
+where \textnormal{(P1)} is finite-level closability of $\cE_{\mathbf x}$ on
+$L^2(\mu_{\mathbf x})$, \textnormal{(P2)} is pullback compatibility
+(automatic from LJR $n$-point consistency), and
+\textnormal{(P3)} is the conditional-expectation energy contraction
+\begin{equation}\label{eq:p3}
+  \cE_{\mathbf x}\bigl(P^{\mathbf y}_{\mathbf x}\Phi,P^{\mathbf y}_{\mathbf x}\Phi\bigr)
+  \;\le\;\cE_{\mathbf y}(\Phi,\Phi),\qquad \mathbf x\subseteq\mathbf y .
+\end{equation}
+(P1) at $m\le2$ is settled: it reduces to the standard weighted-Dirichlet
+closability of $\nabla$ on $L^2(\muD)$~\citep{FOT}, so each fixed $\le2$-point
+sector closes (\cref{thm:sectorclos}). The remaining pairwise structural question,
+compatibility of the sectorwise pairs under the $2\to1$ deletion, is
+\eqref{eq:p3} at $m=2$, supplied by $(\mathrm{CKC}_2^{\flat})$
+(\cref{thm:deletion}); this is deletion-compatibility, not closability. Both
+fixed-sector instances are reproduced and proved self-contained in
+\cref{app:pairclos} (\cref{thm:sectorclos,thm:deletion}); no full-span closability enters.
+
+\begin{remark}[The reference-measure subtlety]\label{rem:reference-measure}
+$\cE_{\mathbf x}$ is integrated against the time-$T$ law
+$\mu_{\mathbf x}$, not against the $\Lth{m}$-symmetrizing measure. This is
+forced by $\Ecyl=\E_{\Pth}[\GamN]$ and is the source of all subtlety:
+$\mu_{\mathbf x}$ charges the coincidence strata, exactly where
+\eqref{eq:sos} is blind. We make this quantitative pairwise below.
+\end{remark}
+
+%==============================================================
+\section{The pairwise reduction}\label{sec:reduction}
+%==============================================================
+
+With the lifted structure in place, the one open input is the deletion
+inequality \eqref{eq:p3}, and this section reduces it to scalar data of the
+two-point law. We work in the pairwise sub-core
+$\Apair=\{F_{\mathbf x,T,\Phi}:|\mathbf x|\le2\}\subset\Aone$, stable under
+coordinate deletion $2\to1\to0$. We reduce \eqref{eq:p3} for the single
+inclusion $\{1\}\subset\{1,2\}$: retain one coordinate $\xi$, delete one
+$\eta$.
+
+By \cref{conv:LJR}(d) the conditional law of $\eta$ given $\xi$ is, with the
+atom at the coincidence event $\eta=\xi$,
+\begin{equation}\label{eq:kernel}
+  \kappa(\xi,d\eta)=q(\xi)\,\delta_\xi(d\eta)+(1-q(\xi))\,p(\xi,\eta)\,d\eta,
+  \qquad 0\le q\le1,\ \textstyle\int p(\xi,\cdot)=1,
+\end{equation}
+where $q(\xi)=\Prob[\eta=\xi\mid\xi]$ is the coalescence probability and
+$p$ is the diffuse conditional density. In the reflecting-regular phase (R),
+reflecting-regularity gives $q(\xi)<1$ for $\mu_x$-a.e.\ $\xi$ (the gap leaves
+the diagonal, so the time-$T$ atom never captures full mass), hence
+$1-q(\xi)>0$ and the prefactor $1/(1-q(\xi))$ is finite; both
+$(\mathrm{CKC}_2)$ and $(\mathrm{CKC}_2^{\flat})$ below are understood on
+$\{1-q>0\}$, which is $\mu_x$-co-null in phase (R). Write
+$\langle\Phi\rangle_p=\int\Phi p\,d\eta$ and
+$\langle\Phi\rangle_\xi=q\Phi(\xi,\xi)+(1-q)\langle\Phi\rangle_p$. The
+energy decomposes, using \eqref{eq:sos} at $m=2$ (open stratum:
+$\tfrac12[(\partial_\xi\Phi)^2+(\partial_\eta\Phi)^2]$; diagonal: keep
+$\partial_\xi+\partial_\eta$, drop $\partial_\eta-\partial_\xi$), as
+\begin{align}\label{eq:Ey}
+  \cE_{\mathbf y}(\Phi)
+  &=\tfrac12\!\int\!\mu_\xi(d\xi)(1-q)\!\int p\,[(\partial_\xi\Phi)^2+(\partial_\eta\Phi)^2]\,d\eta
+   +\tfrac{\cth}{2}\!\int\!((\partial_\xi+\partial_\eta)\Phi)^2(\xi,\xi)\,\omega_\Delta(d\xi),\\
+  \label{eq:Ex}
+  \cE_{\mathbf x}(P\Phi)&=\tfrac12\!\int\!\mu_\xi(d\xi)\,(\partial_\xi(P\Phi))^2,
+\end{align}
+where $P\Phi(\xi)=\langle\Phi\rangle_\xi$, $\mu_\xi$ is the one-point
+time-$T$ law (Brownian), and $\omega_\Delta$ is the diagonal weight (the
+singular part of $\mu_{\mathbf y}$, $\omega_\Delta\propto q(\xi)\mu_\xi$,
+tied to $\muD$ by \cref{conv:LJR}(c)). (P3) at $m=2$ is
+$D(\Phi):=\cE_{\mathbf y}(\Phi)-\cE_{\mathbf x}(P\Phi)\ge0$.
+
+Differentiating $P\Phi$ requires care, since the atom $\delta_\xi$ moves
+with $\xi$ and the naive score identity is therefore wrong.
+
+\begin{proposition}[Amended $(\star)$; derived in \cref{app:amended}]\label{prop:amended-star}
+For $\kappa$ as in \eqref{eq:kernel} and $\Phi\in C^1_b$,
+\begin{equation}\label{eq:amended-star}
+  \partial_\xi(P\Phi)(\xi)
+  =\underbrace{\langle\partial_\xi\Phi\rangle_\xi}_{\textnormal{(A) Jensen}}
+   +\underbrace{q'(\xi)\,[\Phi(\xi,\xi)-\langle\Phi\rangle_p]}_{\textnormal{(B) weight-derivative}}
+   +\underbrace{(1-q)\!\int\!\Phi\,\partial_\xi p\,d\eta}_{\textnormal{(C) diffuse score}}
+   +\underbrace{q(\xi)\,(\partial_\eta\Phi)(\xi,\xi)}_{\textnormal{(D) MOVING-ATOM}}.
+\end{equation}
+Terms \textnormal{(B)+(C)} form the score covariance of the naive identity, while
+term \textnormal{(D)}, a deleted-direction derivative at the atom, is
+extra and absent from the naive identity. All four vanish
+at $\theta=0$ ($q\equiv0$, $p$ independent of $\xi$).
+\end{proposition}
+
+Write $R:=\text{(B)}+\text{(C)}+\text{(D)}$ for the total obstruction
+functional, so $\partial_\xi(P\Phi)=\langle\partial_\xi\Phi\rangle_\xi+R$.
+From \eqref{eq:Ex} and \cref{prop:amended-star},
+$\cE_{\mathbf x}(P\Phi)=\tfrac12\int\mu_\xi[\langle\partial_\xi\Phi\rangle_\xi^2
++2\langle\partial_\xi\Phi\rangle_\xi R+R^2]$. The term
+$\langle\partial_\xi\Phi\rangle_\xi^2$ is dominated by the Jensen reference
+inside $\cE_{\mathbf y}$; the sign-negative obstruction is
+\begin{equation}\label{eq:obstruction}
+  -\tfrac12\!\int\!\mu_\xi\,[\,2\langle\partial_\xi\Phi\rangle_\xi R+R^2\,].
+\end{equation}
+Expanding $R^2=((\mathrm B)+(\mathrm C)+(\mathrm D))^2$ exhibits a
+moving-atom square $q^2(\partial_\eta\Phi(\xi,\xi))^2$, a weight-derivative
+square $q'^2(\Phi(\xi,\xi)-\langle\Phi\rangle_p)^2$, a diffuse-score square,
+and cross terms. The moving-atom and weight-derivative pieces live in the
+difference direction at the diagonal, where $\Gamma$ is blind, so they
+cannot be paid by the diagonal energy in \eqref{eq:Ey}; they must be
+paid by the diffuse $\eta$-energy $G_\eta(\xi):=\langle(\partial_\eta\Phi)^2\rangle_p$.
+
+Each squared obstruction piece is bounded by $G_\eta$ times an explicit
+functional of the gap law (the trace inequalities of \cref{app:assembly}):
+\begin{equation}\label{eq:traces}
+\begin{aligned}
+  |\Phi(\xi,\xi)-\langle\Phi\rangle_p|^2 &\le \tau_{\mathrm{wt}}(\xi)\,G_\eta(\xi),\\
+  |\partial_\eta\Phi(\xi,\xi)|^2 &\le \tau_{\mathrm{at}}(\xi)\,\mathcal E_{\eta,\xi}(\Phi),\\
+  |\mathrm{Cov}_p(\Phi,\partial_\xi\log p)|^2 &\le I_p(\xi)\,C^p_P(\xi)\,G_\eta(\xi),
+\end{aligned}
+\end{equation}
+where the elements are
+\begin{itemize}
+\item the value trace
+  $\tau_{\mathrm{wt}}(\xi)=\bigl(\int\sqrt{r(\xi,\eta)}\,p\,d\eta\bigr)^2$, with
+  resistance $r(\xi,\eta)=\bigl|\int_\xi^\eta ds/p(\xi,s)\bigr|$;
+\item the point-derivative trace $\tau_{\mathrm{at}}(\xi)$, finite only
+  under \cref{hyp:dtrace} (not implied by reflecting regularity), bounded
+  against the enhanced norm $\mathcal E_{\eta,\xi}$;
+\item the diffuse Fisher information
+  $I_p(\xi)=\langle(\partial_\xi\log p)^2\rangle_p$ and the Poincar\'e
+  constant $C^p_P(\xi)$ of $p(\xi,\cdot)$.
+\end{itemize}
+
+The value-trace, Poincar\'e, and Fisher lines of \eqref{eq:traces} are
+controlled by the first-order energy $G_\eta$ and are finite under reflecting
+regularity (\cref{cor:dichotomy}(R)). The derivative line is not: point
+evaluation of $\partial_\eta\Phi$ is not continuous for the first-order
+Dirichlet energy $G_\eta$, so $\tau_{\mathrm{at}}$ finiteness is a genuine
+second-order requirement, which we name.
+
+\begin{hypothesis}[Moving-atom derivative trace]\label{hyp:dtrace}
+On the pairwise core, equipped with an enhanced graph norm $\mathcal
+E_{\eta,\xi}(\Phi)$ that includes second-order ($H^2$/Agmon) control of $\Phi$
+in $\eta$ near the diagonal, there is $C_{\mathrm{tr}}(\xi)$, finite for
+$\mu_\xi$-a.e.\ $\xi$, with
+\[
+  |\partial_\eta\Phi(\xi,\xi)|^2\;\le\;C_{\mathrm{tr}}(\xi)\,\mathcal E_{\eta,\xi}(\Phi);
+\]
+equivalently $\tau_{\mathrm{at}}(\xi)<\infty$.
+\end{hypothesis}
+
+The condition does not follow from reflecting regularity, which controls only
+the value trace $\tau_{\mathrm{wt}}$ and the first-order quantities
+$C^p_P,I_p$; it is a second-order, $H^2$-type requirement, a second-order
+analogue of a negative-Sobolev dual obstruction, and plausibly corresponds to
+an iterated-carr\'e ($\Gamma_2$) level of the carr\'e
+hierarchy~\citep{BGL}; this correspondence is left as a question.
+
+\begin{remark}[Boundary sign and $H^2$-characterization of \cref{hyp:dtrace}]\label{rem:dtrace-gamma2}
+The $\Gamma_2$ level of the carr\'e hierarchy de-risks \cref{hyp:dtrace} without
+discharging it. In gap/center-of-mass coordinates the Bakry
+identity~\citep{BGL}
+$\int\Gamma_2(f,f)\,dm=\int(Lf)^2\,dm$ for the $m$-symmetric sticky gap generator
+($Lf=f''$ off $0$, Wentzell value $Lf(0)=\gamma^{-1}[f'(0{+})-f'(0{-})]$,
+$m=dg+\gamma\,\delta_0$) gives
+\[
+  \int\Gamma_2(f,f)\,dm=\int_{g\neq0}(f'')^2\,dg+\gamma^{-1}[f'(0{+})-f'(0{-})]^2\ \ge\ 0 ,
+\]
+so the Wentzell-diagonal term is nonnegative for every finite stickiness and the
+boundary does not deplete. With the diffuse density bounded below near the
+diagonal in phase (R) (\cref{lem:checkB}), the one-dimensional Agmon trace
+$|\partial_g\Phi(0)|^2\le C(\|\partial_g\Phi\|_{L^2(p)}^2+\|\partial_g^2\Phi\|_{L^2(p)}^2)$
+controls the second-order term by the graph norm $\int(L\Phi)^2\,dm$, so
+\cref{hyp:dtrace} holds on the $H^2$ (graph-norm) domain encoded by
+$\mathcal E_{\eta,\xi}$, with $C_{\mathrm{tr}}\sim1/\inf_{\text{near }0}p$; it is
+an $H^2$/Wentzell-membership condition, not a curvature one. On the diagonal-flat
+sub-core $\partial_g\Phi(0)=0$ the trace is the center-of-mass derivative
+controlled by the diagonal energy, recovering \cref{cor:neumann-subcore}
+directly, while $C_{\mathrm{tr}}\sim1/\inf p$ degrades as $p\to0$ at the
+coalescing endpoint, consistent with \cref{thm:wall-endpoint}.
+\end{remark}
+
+\begin{definition}[$\CKC$ at $m=2$]\label{def:ckc}
+With the effective score strength
+\begin{equation}\label{eq:S}
+  S_A(\xi)\;=\;q'(\xi)^2\,\tau_{\mathrm{wt}}(\xi)
+   +\underbrace{q(\xi)^2\,\tau_{\mathrm{at}}(\xi)}_{\textnormal{needs \cref{hyp:dtrace}}}
+   +(1-q(\xi))^2 I_p(\xi)\,C^p_P(\xi)
+   \;+\;\underbrace{A\,q(\xi)\,\tau_{\mathrm{at}}(\xi)}_{\substack{\textnormal{needs \cref{hyp:dtrace};}\\ \textnormal{universal }A>0}},
+\end{equation}
+for a universal constant $A>0$, and the cross-term Young factor
+$1+1/\kappa_\xi(\xi)$ (\cref{app:assembly}, $\kappa_\xi$ the center-of-mass
+margin from the diagonal channel), we denote the following sufficient condition
+for $D(\Phi)\ge0$ for all $\Phi$ by $\CKC$:
+\begin{equation}\label{eq:ckc}
+  c(\xi)\;:=\;\frac{6\,(1+1/\kappa_\xi(\xi))}{1-q(\xi)}\,S_A(\xi)\;\le\;1
+  \qquad\text{for }\mu_\xi\text{-a.e. }\xi
+\end{equation}
+(well-defined since $1-q>0$ a.e.\ in (R); see the safeguard after
+\eqref{eq:kernel}).
+\end{definition}
+
+The numeric constants $6$ and $1+1/\kappa_\xi$, which are not optimized, come from
+$(a+b+c)^2\le3(a^2+b^2+c^2)$ and one Young split; the content of $\CKC$ is the
+functional form, that the obstruction strength $S$ be dominated by the diffuse
+$\eta$-capacity in the trace constants. The patch summand $A\,q\,\tau_{\mathrm{at}}$
+in \eqref{eq:S} carries the difference-direction half of the atom's
+$\xi$-energy deficit, which the Jensen reference, a center-of-mass quantity in
+\eqref{eq:Ey}, does not cover; the assembly (\cref{app:assembly}) fixes $A$ as
+some finite universal constant, immaterial to the structural dichotomy of
+\cref{sec:gap}. Like $q^2\tau_{\mathrm{at}}$, this term is finite if and only if
+\cref{hyp:dtrace} holds, a second-order trace not implied by reflecting
+regularity; both it and $A$ are (b)-level, and the structural verdict (a) runs on
+the value pieces alone.
+
+%==============================================================
+\section{Evaluation: the two-point gap as a sticky Brownian motion}\label{sec:gap}
+%==============================================================
+
+The reduction has left explicit elements, all of them functions of the law
+of the two-point gap. This section identifies that law and reads the
+elements off the LJR boundary classification.
+
+\begin{lemma}[Gap process]\label{lem:gap-sticky}
+The gap $g=\eta-\xi$ is an autonomous scalar diffusion: off the diagonal it
+is Brownian (diffusivity $2$, two independent unit Brownian motions), and at
+$g=0$ it satisfies the Wentzell boundary condition of \cref{conv:LJR}(d),
+i.e. it is a sticky Brownian motion with stickiness parameter
+$\gamma=\gamma(\cth,\muD)$, monotone in $\cth$: $\gamma=0$ at the
+independent endpoint, $\gamma\to$ the absorbing (exit) limit at the
+coalescing endpoint.
+\end{lemma}
+\begin{proof}[Sketch]
+Translation invariance of the flow decouples the gap from the center of
+mass; the off-diagonal generator is $\partial_g^2$ and \cref{conv:LJR}(d)
+gives the sticky boundary at $0$ (\cref{prop:sticky-bm}). The numeric map
+$\gamma(\cth,\muD)$ is delegated by \cref{conv:LJR}; only the endpoints and
+monotonicity are used.
+\end{proof}
+
+By \cref{prop:sticky-bm}(i)--(ii) the time-$T$ law of $g$ is
+$\mathcal L(g_T)=q\,\delta_0+p(\cdot)\,dg$, with $q>0$ for $\gamma\in(0,\infty)$
+and $p$ continuous; the qualitative facts used are recorded in
+\cref{app:stickyBM}.
+
+Two elements of $\CKC$ now have to be controlled. The first, the weight
+derivative $q'$, turns out to be harmless.
+
+\begin{lemma}\label{lem:checkA}
+In the translation-invariant (homogeneous) reference, $q(\xi)\equiv q$ is
+constant, so $q'\equiv0$ and the leading obstruction term
+$q'^2\tau_{\mathrm{wt}}$ vanishes. In the point-started reference of
+\cref{rem:reference-measure}, $q(\xi)$ is a smooth heat-kernel ratio with
+$|q'|=O(T^{-1/2})$ bounded (\cref{prop:sticky-bm}), so $q'^2\tau_{\mathrm{wt}}$
+is finite. Either way the $q'$-term does not drive failure.
+\end{lemma}
+\begin{proof}
+The gap is autonomous (\cref{lem:gap-sticky}); the coincidence event
+$\{g_T=0\}$ and the diagonal atom measure are translation-invariant, so in
+the invariant reference their ratio $q(\xi)$ is constant. The point-started
+bound is the gradient of the heat-kernel ratio.
+\end{proof}
+
+The point-versus-invariant choice is a modelling tension
+(cf.~\cref{rem:reference-measure}), but \cref{lem:checkA} shows it is harmless at
+$m=2$. The decisive element is instead the near-diagonal behaviour of the
+diffuse density.
+
+\begin{lemma}[Boundary dichotomy of $p$]\label{lem:checkB}
+By \cref{prop:sticky-bm}(ii)--(iii), tied to \cref{def:trichotomy}:
+\begin{itemize}
+\item[\textnormal{(R)}] In the reflecting-regular phase, the diffuse density
+is continuous and strictly positive at the boundary:
+$p(\xi,\eta)\to P_0>0$ as $\eta\to\xi$.
+\item[\textnormal{(C)}] At the coalescing/absorbing endpoint, $p$ vanishes:
+$p(\xi,\eta)\sim C|\eta-\xi|$ as $\eta\to\xi$ (Dirichlet boundary).
+\end{itemize}
+\end{lemma}
+\begin{proof}
+A reflecting-regular boundary point is left by the process
+(\cref{def:trichotomy}, clause $\Prob_0[H_r<\infty]>0$; the reflecting-regular
+(intermediate) case of the two-point boundary classification of~\citep{LJR-FCN}),
+so the diffuse transition density is continuous and positive at $0$; an
+exit/absorbing boundary (the exit/absorbing (coalescing) case
+of~\citep{LJR-FCN}) is a Dirichlet boundary, so the diffuse density vanishes
+there. Both are standard boundary theory once the boundary type is fixed by the
+LJR classification.
+\end{proof}
+
+\begin{corollary}[Finite/infinite dichotomy of the $\CKC$ elements]\label{cor:dichotomy}
+With $r(\xi,\eta)=|\int_\xi^\eta ds/p(\xi,s)|$:
+\begin{itemize}
+\item[\textnormal{(R)}] $p\ge P_0>0$ near the diagonal $\Rightarrow$
+$r\le|\eta-\xi|/P_0<\infty$ $\Rightarrow$ the value-trace, Poincar\'e and
+Fisher constants $\tau_{\mathrm{wt}},\,C^p_P,\,I_p$ are finite
+(positive codimension-one value-capacity, from reflecting regularity).
+The derivative trace $\tau_{\mathrm{at}}$ is finite under \cref{hyp:dtrace} (a second-order requirement not supplied by
+reflecting regularity).
+\item[\textnormal{(C)}] $p\sim C|g|$ $\Rightarrow$ $r=\int ds/(Cs)=+\infty$
+$\Rightarrow$ the value pieces blow up, $\tau_{\mathrm{wt}},\,C^p_P\to+\infty$
+(value-capacity collapse), independently of any derivative-trace
+consideration (the derivative trace $\tau_{\mathrm{at}}$ plays no role in phase
+(C)).
+\end{itemize}
+\end{corollary}
+\begin{proof}
+Substitute \cref{lem:checkB} into \eqref{eq:traces}; the resistance integral
+$r$ converges iff $p$ is bounded below, giving the value pieces. The derivative
+trace $\tau_{\mathrm{at}}$ is governed by \cref{hyp:dtrace} in phase (R). The
+coalescing failure runs on the value-capacity collapse alone and does not rely
+on $\tau_{\mathrm{at}}$.
+\end{proof}
+
+This is the codimension-one positive-versus-zero value-capacity
+dichotomy, now pinned to the boundary type; the derivative trace sits one order
+higher (\cref{hyp:dtrace}).
+
+%==============================================================
+\section{Main results I: the sticky--coalescing dichotomy and the pairwise identity}\label{sec:main}
+%==============================================================
+
+The element-level dichotomy of \cref{cor:dichotomy} now assembles into the
+first main result: absence of the obstruction in the reflecting phase
+(\cref{thm:unobstruction}), the pairwise identity it carries under $(\mathrm{CKC}_2^{\flat})$
+(\cref{thm:pairwise-ito}), failure at the coalescing endpoint
+(\cref{thm:wall-endpoint}), and the discriminant statement
+(\cref{thm:discriminant}). In the reflecting phase the elements of $\CKC$
+are finite, and the apex obstruction has no witness.
+
+For reference across the three main sections, the named conditions, each of
+which appears in the title of every statement that uses it, are:
+$(\mathrm{CKC}_2^{\flat})$ \eqref{eq:ckc-flat}, the first-order deletion
+contraction on the diagonal-flat pair sector, which gives the deletion
+inequality \textnormal{(P3)} \eqref{eq:p3} and the integration-by-parts
+identity (\cref{thm:pairwise-ito}); $\COcap$ (\cref{def:cocap}) and the
+mixed-mean bound $\COmix$ (\cref{def:comix}), uniformizations of the
+two-point value capacity, either of which yields the two-point sector
+Poincar\'e inequality and the Clark--Ocone--Green representation
+(\cref{thm:clarkocone}), with $\COmix$ the operative form
+(\cref{rem:two-well,rem:comix-instantiation}); and
+$(\mathrm{Poin}^{\mathrm{dyn}})$ (\cref{def:dynamic-div}), the slicewise
+Poincar\'e/Clark--Ocone input of the dynamic formula (\cref{thm:dynamic}),
+automatic at $m=1$ and on the gap sector. \Cref{hyp:dtrace}, the moving-atom
+trace, is a theorem on the second-order sub-core (\cref{prop:agmon}); the
+three-point stratum regularity $(\mathrm R_3)$ (\cref{hyp:r3}) enters only
+\cref{prop:m3-blocked}. The gap-sector dichotomy (\cref{thm:gap-co}), the
+coalescence-indicator obstruction (\cref{prop:co-failure}), the occupation
+law (\cref{prop:occupation}), and the dynamic formula on the gap and
+one-point sectors (\cref{cor:dynamic-gap}) use only \cref{conv:LJR}.
+
+\begin{theorem}[Absence of the apex value-capacity obstruction]\label{thm:unobstruction}
+Assume \cref{conv:LJR} and the reflecting-regular phase \textnormal{(R)}. Then
+the value-trace, Poincar\'e and Fisher constants
+$\tau_{\mathrm{wt}},C^p_P,I_p$ are finite (positive codimension-one
+value-capacity), so the apex value-capacity obstruction (the witness of
+\cref{thm:wall-endpoint}) is absent in phase \textnormal{(R)}. The
+moving-atom derivative trace $\tau_{\mathrm{at}}$ is finite under \cref{hyp:dtrace}.
+\end{theorem}
+\begin{proof}
+\Cref{cor:dichotomy}(R) gives finiteness of the value pieces
+$\tau_{\mathrm{wt}},C^p_P,I_p$; under \cref{hyp:dtrace} it also gives
+$\tau_{\mathrm{at}}<\infty$. The only mechanism that forces $D(\Phi)<0$ for a
+normalized difference-direction probe is a polar apex (zero
+value-capacity), which the witness construction of \cref{thm:wall-endpoint}
+requires; in codimension one polarity
+needs $p\to0$ (\cref{cor:dichotomy}(C)), absent in phase (R) where
+$p\ge P_0>0$. Hence the value witness cannot close.
+\end{proof}
+
+Removing the apex value-capacity witness is necessary for \eqref{eq:p3}, not
+sufficient; the certified inequality $c(\xi)\le1$ is the separate statement
+discussed next.
+
+\begin{remark}[Structural vs.\ certified]\label{rem:struct-vs-cert}
+\Cref{thm:unobstruction} asserts finiteness of the $\CKC$ constants, the
+structural statement (a), not the certified inequality $c(\xi)\le1$, the
+quantitative statement (b). The constants $6$ and $1+1/\kappa_\xi$ and the
+delegated map $\gamma(\cth,\muD)$ leave the sharp stickiness threshold for (b)
+unlocated, and the status of (b) is reference-dependent in a way worth
+recording. In the translation-invariant reference, where $q'\equiv0$ and the
+score reduces to $(1-q)^2I_pC^p_P$, no smallness is available: for every
+diffuse density, testing the Poincar\'e inequality with $f(x)=x$ gives
+$C^p_P\ge\mathrm{Var}_p$, while integrating the score by parts gives
+$\mathrm{Var}_p\cdot I_p\ge1$ (Cram\'er--Rao), so $I_pC^p_P\ge1$ and the score
+has an order-one floor; certification there must come from the margin
+constants $A_\Delta,\kappa_\xi$, not from smallness of $S$. In the
+point-started reference the score does vanish at the independent endpoint
+($I_p\to0$ and $q'\to0$ as $\theta\to0$, the conditional density losing its
+$\xi$-dependence), but the diagonal margin degenerates simultaneously
+($c_\theta\to0$), and we do not resolve which effect prevails; exhibiting one
+explicit $\theta$ with $c^{\flat}\le1$ is the most concrete open instantiation
+(\cref{prob:cocap}). The prefactor $1/(1-q)$ in \eqref{eq:ckc}
+is likewise a (b)-level quantity: the structural dichotomy of \cref{cor:dichotomy}
+uses no non-collapse of the diffuse budget $1-q$, and at finite $T$ the atom mass
+stays bounded away from $1$ uniformly in $\gamma$, so the coalescing failure
+(\cref{thm:wall-endpoint}) runs solely through the value-capacity channel
+$\tau_{\mathrm{wt}},C^p_P\to\infty$. The robust, $\theta$-uniform statement on
+phase (R) is (a). The next proposition settles half of the certification
+question: in the translation-invariant reference the margin constants cannot
+rescue the inequality, because the contraction itself fails there.
+\end{remark}
+
+\begin{proposition}[The invariant reference fails outright]
+\label{prop:invariant-fails}
+In the translation-invariant reference with symmetric gap law ($q'\equiv0$,
+$\langle g\rangle_p=0$), the deletion contraction \textnormal{(P3)} fails on
+the diagonal-flat sector for every $\gamma\in(0,\infty)$. Explicitly, for
+the flat observables $\Phi_R(\xi,\eta)=\chi_R(\xi+\eta)$, with $\chi_R$ the
+identity on $[-R,R]$ smoothly truncated outside $[-2R,2R]$,
+\[
+  \cE_{\mathbf y}(\Phi_R)\;=\;(1+q)\,R+O(1)
+  \;<\;2R+O(1)\;=\;\cE_{\mathbf x}(P\Phi_R)
+  \qquad(R\to\infty),
+\]
+where $q\in(0,1)$ is the time-$T$ atom mass. Consequently
+$(\mathrm{CKC}_2^{\flat})$ is unsatisfiable in the invariant reference.
+\end{proposition}
+\begin{proof}
+On $\{\chi_R'=1\}$ the off-diagonal carr\'e of $\Phi_R$ is
+$\tfrac12(1^2+1^2)=1$; at coincidence the Howitt--Warren bracket
+$d\langle X^i,X^j\rangle_t=\mathbf 1_{\{X^i_t=X^j_t\}}\,dt$~\citep{HowittWarren}
+makes the stuck pair a single Brownian point, so the diagonal carr\'e is
+$\tfrac12\bigl((\partial_\xi+\partial_\eta)\Phi_R\bigr)^2=2$; integrating
+against the time-$T$ law, whose diffuse and atomic masses are $1-q$ and $q$
+per unit $\mu_\xi$-length, gives
+$\cE_{\mathbf y}(\Phi_R)=\bigl[(1-q)+2q\bigr]R+O(1)$, the bulk being the
+$\xi$-region $|2\xi|\le R$ of measure $R$ and the $O(1)$ coming from the
+truncation collars and the Gaussian gap tails. For the deletion, symmetry
+of the gap law gives $\langle\eta\rangle_p=\xi$, so $P\Phi_R(\xi)=\chi_R(2\xi)$
+up to collar corrections, and
+$\cE_{\mathbf x}(P\Phi_R)=\tfrac12\cdot4\cdot R+O(1)$. Since $q<1$ at
+finite $T$ (\cref{prop:sticky-bm}), the deficit $(1-q)\cdot2R$ dominates
+the collars for $R$ large, and \textnormal{(P3)} fails. The center-of-mass
+channel is in deficit: the conditional expectation doubles the
+center-of-mass derivative ($P\Phi$ rides both coordinates) while the
+energy pays the stuck pair only once; no smallness of the score and no
+margin constant can repair a failed inequality, so
+$(\mathrm{CKC}_2^{\flat})$, which implies \textnormal{(P3)}, is
+unsatisfiable.
+\end{proof}
+
+The certification question of \cref{rem:struct-vs-cert} therefore runs
+through the point-started reference at small $\theta$ (\cref{prob:cocap}).
+
+\begin{remark}[Numerical instantiation in the point-started reference]
+\label{rem:instantiation}
+For the point-started
+pair with initial gap $g_0=1$ at horizon $T=1$, the joint time-$T$ law is
+computable in closed form from Warren's time-change
+construction~\citep{Warren97} and the Brownian local-time trivariate
+density: with $\beta$ the diffusivity-$2$ Brownian gap and $\ell$ its
+local time, the no-hit part of the gap law is the reflection difference,
+the diffuse part is $\gamma^{-1}\psi_2(T-o;\,y,\,o/\gamma)$ in the
+gap--occupation variables, with $\psi_2$ the trivariate density, the
+atom--occupation density collapses to $\gamma\,\rho_{\tau_l}(T-\gamma l)$
+with $\rho_{\tau_l}$ the inverse-local-time density, and the center of
+mass, whose clock the Howitt--Warren bracket~\citep{HowittWarren}
+accelerates while the pair is stuck, is conditionally Gaussian of
+variance $(T+\mathrm{Occ}_T)/2$. Against this law the flat-sector
+contraction was tested directly, as the generalized eigenvalue problem
+$\sigma:=\max\,\cE_{\mathbf x}(P\Phi)/\cE_{\mathbf y}(\Phi)$ over exactly
+flat Galerkin families (symmetric Hermite tensors plus cubic-antisymmetric
+corrections, dimensions $36$ to $64$, grids to $260^2$), so that
+\textnormal{(P3)} on the family is the statement $\sigma\le1$. The
+results: $\sigma\in[0.94,\,0.97]$ across $\gamma\in\{0.05,\,0.2,\,0.5\}$
+and across refinements, with the law normalization reproduced to between
+$0.13$ and $1.3$ percent; and the center-of-mass direction, the witness of
+\cref{prop:invariant-fails}, gives
+$\cE_{\mathbf x}/\cE_{\mathbf y}\approx0.52$ here against the invariant
+floor $4/(2+2q)>1.8$: the regression of the conditional mean toward the
+starting configuration damps exactly the channel that defeats the
+invariant reference. This is a Galerkin verification at stated tolerances,
+not an interval-arithmetic proof, and it tests the contraction itself
+rather than the sufficient form $c^{\flat}\le1$; within those
+limits it answers the certification question of \cref{rem:struct-vs-cert}
+for the point-started reference at explicit parameters, and the certified
+upgrade, interval arithmetic over the same closed forms, is mechanical.
+A second pass with exact dense eigensolvers and an explicit noise-floor
+deflation (\cref{rem:comix-instantiation}, where the same law also
+instantiates the mixed-mean bound) sharpens the margin: on families whose
+variance spectrum stays above the quadrature noise floor the contraction
+ratio improves to $\sigma\approx0.89$--$0.93$, while admitting sub-floor
+directions inflates it toward $0.97$--$0.98$ through directions dominated by
+quadrature error; in every configuration the tested value remains below~$1$.
+Code and raw output are available at
+\url{https://github.com/QuijoticResearch/sticky-flow-certificates}.
+\end{remark}
+
+On a fixed $\le2$-point sector, let $U_T=u(Z_{\mathbf x})$ be a real-valued smooth
+sector observable, $u\in C_b^\infty(\R^{|\mathbf x|})$, so that $f(U_T)$,
+$\DN U_T$, and $\GamN(F,U_T)$ are well-defined in that sector.
+
+\begin{theorem}[Diagonal-flat pairwise black integration-by-parts identity; under $(\mathrm{CKC}_2^{\flat})$]\label{thm:pairwise-ito}
+Assume \cref{conv:LJR} and the reflecting phase \textnormal{(R)}. Fix a one- or
+two-point coordinate tuple $\mathbf x$ ($|\mathbf x|\le2$) and work in the
+diagonal-flat sector
+$\cD^{\flat}_{\mathbf x}=\{\Phi\in C_b^\infty(\R^{|\mathbf x|}):(\partial_\eta-\partial_\xi)\Phi(\xi,\xi)=0\}$
+($|\mathbf x|=2$; the condition is vacuous for $|\mathbf x|=1$). Assume also the
+reduced first-order contraction condition $(\mathrm{CKC}_2^{\flat})$
+\eqref{eq:ckc-flat} on this fixed sector. This fixed sector
+closes by \textnormal{(P1)} (\cref{thm:sectorclos}), so the fixed-sector
+closed-pair construction (\cref{thm:foldA,thm:foldB}) produces a closed
+densely-defined operator-derivative pair on the sector Hilbert space
+$L^2(\mu_{\mathbf x})$,
+\[
+  \DN\colon\Dom(\DN)\subset L^2(\mu_{\mathbf x})\to\cU_{\GamN},
+  \qquad \divN=\DN^{*}.
+\]
+On the diagonal-flat sector the moving-atom term is absorbed by the diagonal
+(center-of-mass) energy (\cref{cor:neumann-subcore}), removing the
+$\tau_{\mathrm{at}}$ terms, so $(\mathrm{CKC}_2^{\flat})$ is the relevant
+first-order sufficient condition.
+Under $(\mathrm{CKC}_2^{\flat})$, by \cref{thm:deletion} the
+$2\to1$ deletion energy-contraction \textnormal{(P3)} holds, making the one- and
+two-point sectorwise closed pairs compatible under coordinate deletion.
+For the gradient one-form integrand $B_f=f'(U_T)\,\DN U_T$ ($f\in C_b^2$;
+well-defined in the module by \cref{thm:foldA}$(\mathrm{iv})$), the
+divergence functional
+\begin{equation}\label{eq:black-ibp}
+  \Lambda_f(F)\;:=\;\E\bigl[f'(U_T)\,\GamN(F,U_T)\bigr]
+  \;=\;\langle\DN F,\,B_f\rangle_{\cU_{\GamN}},
+  \qquad F\in\Dom(\DN),
+\end{equation}
+is well defined as it stands (since $B_f\in\cU_{\GamN}$); the pairing is
+governed by the diagonal carr\'e $\GamT$ of~\eqref{eq:gamma-seed}, concentrated on
+the coincidence stratum with weight $\cth\muD$. If moreover $\Lambda_f$ is
+$L^2(\Omega)$-continuous, equivalently $B_f\in\Dom(\divN)$, then
+$\divN(B_f)\in L^2(\Omega)$ exists and satisfies the weak identity
+$\E[F\,\divN(B_f)]=\Lambda_f(F)$ for all $F\in\Dom(\DN)$. If, in addition,
+$U_T\in\Dom(L_{\cN})$, where $L_{\cN}:=-\divN\DN$ is the sector Dirichlet
+operator, and the corresponding chain-rule / domain-stability
+assumptions hold for $f\in C_b^2$ (a Wentzell-compatible second-order condition,
+of the \cref{hyp:dtrace} family), then the divergence has the explicit form
+\[
+  \divN(B_f)\;=\;-f'(U_T)\,L_{\cN}U_T-f''(U_T)\,\GamN(U_T,U_T).
+\]
+By blackness (\cref{thm:black}), this $\divN(B_f)$, when it exists, admits
+no representation as a first-chaos / martingale stochastic integral.
+\end{theorem}
+\begin{proof}
+Fix the sector $\mathbf x$ ($|\mathbf x|\le2$). (P1) at level $|\mathbf x|$
+reduces to the settled weighted-Dirichlet closability of $\nabla$ on
+$L^2(\muD)$~\citep{FOT}, so by \cref{thm:sectorclos} the sector closes and
+\cref{hyp:beta1} holds on it; the relevant algebra is unital
+($C_b^\infty(\R)$ resp.\ $C_b^\infty(\R^2)$) with $\Gamma$ the lifted seed
+restricted to that sector (\cref{rem:sectorwise}), so the closed pair
+$(\DN,\divN)$ on $L^2(\mu_{\mathbf x})$ is \cref{thm:foldA,thm:foldB}. Separately, on
+the diagonal-flat sector the moving-atom term is absorbed by the diagonal
+(center-of-mass) energy (\cref{cor:neumann-subcore}), removing the
+$\tau_{\mathrm{at}}$ terms with no appeal to \cref{hyp:dtrace}, so the requirement
+reduces to the first-order condition $(\mathrm{CKC}_2^{\flat})$ (assumed); under
+it, by \cref{thm:deletion}, the $2\to1$ deletion energy-contraction (P3) holds. The pairing identity \eqref{eq:black-ibp} is the seed identity
+$\langle\DN F,B_f\rangle=\E[f'(U_T)\GamN(F,U_T)]$ of \cref{thm:foldA}$(\mathrm{iv})$.
+Under the stated continuity of $\Lambda_f$ (equivalently $B_f\in\Dom(\divN)$; a
+sufficient condition is $U_T\in\Dom(L_{\cN})$ with the chain-rule/domain
+stability for $f\in C_b^2$), $\divN(B_f)\in L^2$ exists by definition of
+the adjoint (\cref{thm:foldB}$(\mathrm{iii})$), and the formula
+$\divN(B_f)=-f'(U_T)L_{\cN}U_T-f''(U_T)\GamN(U_T,U_T)$ is the divergence of the
+gradient one-form (carr\'e Leibniz on the smooth sector, $L_{\cN}=-\divN\DN$); the
+blackness statement is~\cref{thm:black}.
+\end{proof}
+
+\begin{remark}[Operator-It\^o form: a single-time rearrangement, not a dynamic formula]\label{rem:ito-form}
+Formally rearranging the centered divergence term gives the operator-It\^o
+form
+\begin{equation}\label{eq:black-ito}
+  f(U_T)-f(U_0)\;=\;\divN\bigl(B_f\bigr)\;+\;\mathrm{Corr}_f(T),
+\end{equation}
+with correction $\mathrm{Corr}_f(T)$ governed by the diagonal carr\'e $\GamT$
+(the $f''$-against-$d\,\GamN(U,U)$ term, weight $\cth\muD$). This is the
+single-time interpretation of \eqref{eq:black-ibp}, not a separately proved
+equation. Two points: writing $\divN(B_f)$ as a standalone $L^2$ object requires
+$\Lambda_f$ to be $L^2$-continuous (equivalently $B_f\in\Dom(\divN)$), for which
+$U_T\in\Dom(L_{\cN})$ (Wentzell-compatible $H^2$, of the \cref{hyp:dtrace}
+family) is a sufficient condition; and \eqref{eq:black-ito} is a single-time
+rearrangement, not a
+dynamic It\^o formula, since $\divN(B_f)$ is centered ($\E[\divN(B_f)]=0$ since
+$\DN 1=0$), so the non-centered increment $f(U_T)-f(U_0)$ cannot be produced by
+the single-time pair; a dynamic formula requires the multi-time family
+$\{U_t\}_{t\le T}$ and its bracket. A partitionwise dynamic formula of exactly
+this kind is constructed in \cref{thm:dynamic}, the increment being produced
+by an adapted telescope of conditional single-slice divergences; the
+continuum disintegration remains open (\cref{prob:multitime}).
+\end{remark}
+
+\begin{remark}[Sectorwise closed-pair construction]\label{rem:sectorwise}
+The closed-pair construction of \cref{thm:foldA,thm:foldB} requires a unital
+algebra (the multiplier action $U\!\cdot\!D_0F$ and weighted matrix positivity
+against multipliers $Q\in\cA$). The pairwise core $\Apair$ is not an
+algebra: a product of two two-point functionals depends on up to four points,
+leaving the pairwise sector. We therefore apply \cref{thm:foldA,thm:foldB}
+per fixed sector, where the assumptions hold: for a fixed tuple
+$\mathbf x$ ($|\mathbf x|\le2$) the algebra is $C_b^\infty(\R^{|\mathbf x|})$
+(unital), $\Gamma$ the lifted seed restricted to that sector, yielding a
+closed pair on $L^2(\mu_{\mathbf x})$. The global pairwise object is the
+sectorwise family of these constructions, indexed by the fixed tuples
+$\mathbf x$. It is not a direct sum and not a subspace of the flow
+$L^2$ space: distinct fixed-pair sectors are non-orthogonal, and the uncountable
+family of fixed tuples does not assemble into a single Hilbert space or a single
+global operator. There is no single global operator on a ``$\Hone^{\le2}$'' here, and no $m\ge3$ closability enters: each member of the family is a fixed $\le2$-point sector, and
+conditioning one fixed sector on another's coordinates would invoke joint laws of
+up to four points (the $m\ge3,4$ structure the paper does not treat). The fixed
+single sector is the unit of the construction.
+\end{remark}
+
+\begin{corollary}[Diagonal-flat sub-core: the reduced condition]\label{cor:neumann-subcore}
+On the sub-core of pairwise observables with
+$(\partial_\eta-\partial_\xi)\Phi(\xi,\xi)=0$ (flat in the $\Gamma$-blind
+difference direction at coincidence), the moving-atom term
+\eqref{eq:amended-star}\textnormal{(D)} does not vanish but is rotated into the
+center-of-mass direction: $\partial_\eta\Phi(\xi,\xi)
+=\tfrac12(\partial_\xi+\partial_\eta)\Phi(\xi,\xi)$, so
+\textnormal{(D)}$=\tfrac{q}{2}(\partial_\xi+\partial_\eta)\Phi(\xi,\xi)$ is
+controlled by the diagonal (center-of-mass) energy, available in phase
+\textnormal{(R)}. Hence \cref{hyp:dtrace} is not needed: the moving-atom
+contribution is absorbed by the diagonal energy (in phase (R), via the
+comparison below), and the $\tau_{\mathrm{at}}$ terms drop from the score,
+leaving the first-order reduced score
+$S^{\flat}(\xi)=q'(\xi)^2\tau_{\mathrm{wt}}(\xi)+(1-q(\xi))^2 I_p(\xi)C^p_P(\xi)$
+and the reduced sufficient condition
+\begin{equation}\label{eq:ckc-flat}
+  (\mathrm{CKC}_2^{\flat}):\quad
+  c^{\flat}(\xi):=\frac{6\,A_\Delta(\theta)\,(1+1/\kappa_\xi(\xi))}{1-q(\xi)}\,S^{\flat}(\xi)\le1
+  \quad\text{for }\mu_x\text{-a.e. }\xi
+\end{equation}
+(well-defined since $1-q>0$ a.e.\ in (R); see the safeguard after
+\eqref{eq:kernel}), where $A_\Delta(\theta)<\infty$ is the finite
+diagonal-absorption constant defined by the comparison
+$\tfrac{q^2}{4}\mu_x\le A_\Delta(\theta)\,c_\theta\,\omega_\Delta$
+(phase (R), $c_\theta>0$).
+Its elements $\tau_{\mathrm{wt}},C^p_P,I_p$ are finite in phase (R)
+(\cref{thm:unobstruction}), so no derivative-trace input is required,
+and the pairwise black integration-by-parts identity
+\eqref{eq:black-ibp} holds on this sub-core whenever
+$(\mathrm{CKC}_2^{\flat})$ holds, or whenever (P3) is verified directly on the
+sub-core.
+\end{corollary}
+\begin{proof}
+Under the flatness condition,
+$\partial_\eta\Phi(\xi,\xi)=\tfrac12(\partial_\xi+\partial_\eta)\Phi(\xi,\xi)$,
+so term \eqref{eq:amended-star}\textnormal{(D)} lies in the center-of-mass
+direction controlled by the diagonal energy
+$\tfrac{c_\theta}{2}\int((\partial_\xi+\partial_\eta)\Phi)^2\,\omega_\Delta$ of
+\eqref{eq:Ey}. Since $\omega_\Delta\propto q\,\mu_x$
+(\cref{rem:reference-measure}; \cref{conv:LJR}(c)), the comparison
+$\tfrac{q^2}{4}\mu_x\le A_\Delta(\theta)\,c_\theta\,\omega_\Delta$ holds for some
+finite $A_\Delta(\theta)<\infty$ in phase \textnormal{(R)} ($c_\theta>0$,
+$q\le1$), so the contribution of \textnormal{(D)} to the obstruction is absorbed
+by $\cE_{\mathbf y}$'s diagonal term with no uncontrolled difference-direction
+trace; the $\tau_{\mathrm{at}}$ terms therefore drop from the score, leaving the
+first-order reduced score $S^{\flat}$ and the reduced condition
+$(\mathrm{CKC}_2^{\flat})$, with the diagonal-absorption constant
+$A_\Delta(\theta)$ entering its prefactor \eqref{eq:ckc-flat}; no derivative-trace
+input is required; the remaining requirement is exactly the reduced first-order
+contraction inequality $(\mathrm{CKC}_2^{\flat})$. The value-trace, Poincar\'e and
+Fisher pieces are finite in (R) by \cref{cor:dichotomy}(R).
+\end{proof}
+
+We turn to the opposite phase, where the contraction fails. The coalescence wall
+rests on a decomposition of the coalesced two-point law into gap and
+center-of-mass parts.
+
+\begin{lemma}[Gap/center-of-mass decomposition of the coalesced density]\label{lem:gap-com}
+In the coordinates $g=\eta-\xi$ (gap), $c=\tfrac12(\xi+\eta)$ (center of mass), the
+Brownian sticky two-point motion of \cref{conv:LJR} decomposes as follows.
+\begin{enumerate}
+\item[(i)] The gap $g$ is an autonomous scalar sticky Brownian motion of diffusivity
+$2$, sticky at $0$ with stickiness fixed by \cref{conv:LJR}(b); in phase (R) its time-$T$
+law has a positive atom at $0$ (\cref{lem:checkB})~\citep{EngelbertPeskir,ItoMcKean}.
+\item[(ii)] The center of mass $c$ is a driftless martingale started at
+$\bar x=\tfrac12(x_1+x_2)$, with driving noise orthogonal to the gap's throughout the
+motion (including across the sticky diagonal: by construction of the Brownian sticky
+flow the gap and center-of-mass noises are orthogonal). Its instantaneous variance rate
+is $\tfrac12$ off the diagonal (independent particles) and $1$ on the diagonal
+(coalesced, single Brownian particle). Hence, conditionally on the gap path $\mathcal G$,
+\[
+  c_T \mid \mathcal G \;\sim\; N\!\bigl(\bar x,\; V(\mathcal G)\bigr),\qquad
+  V(\mathcal G)=\tfrac12 T+\tfrac12\,\mathrm{Occ},\quad
+  \mathrm{Occ}=\bigl|\{s\le T: g_s=0\}\bigr|\in[0,T],
+\]
+so $V\in[\tfrac12 T,\,T]$.
+\item[(iii)] Consequently the coalesced common-position density factors as a centered
+Gaussian mixture,
+\[
+  \rho_{\mathrm{coal}}(\xi)=\int_{[\frac12 T,\,T]}\varphi_V(\xi-\bar x)\,\tilde\nu(dV),
+\]
+where $\varphi_V$ is the centered Gaussian of variance $V$ and $\tilde\nu$ is the
+(sub-probability) law of $V$ on the coalescence event. In particular
+$\rho_{\mathrm{coal}}$ is symmetric about $\bar x$, and since every component has
+variance $V\le T$,
+\[
+  \rho_{\mathrm{coal}}(\xi)\le C\,e^{-(\xi-\bar x)^2/2T},\qquad
+  |\rho_{\mathrm{coal}}'(\xi)|\le C(1+|\xi-\bar x|)\,e^{-(\xi-\bar x)^2/2T}.
+\]
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+(i)-(ii): the It\^o brackets $d\langle g\rangle=2\,dt$, $d\langle c\rangle=\tfrac12 dt$,
+$d\langle g,c\rangle=0$ off the diagonal are immediate from \cref{conv:LJR} (off-diagonal
+action $\tfrac12\Delta$, particles independent); the diagonal $\{X=Y\}$ is exactly
+$\{g=0\}$, on which the Wentzell condition acts on $g$ alone, making $g$ autonomous, and
+on which the coalesced pair moves as one Brownian particle so $c$ has variance rate $1$.
+The orthogonality of the gap and center-of-mass noises holds throughout,
+including across the sticky diagonal, and is a property of the two-point carr\'e,
+by polarization of the square-of-sum structure \eqref{eq:sos}: off the diagonal,
+\[
+  \Gamma^{(2)}_\theta(g,c)
+  =\tfrac12\bigl[\partial_\xi g\,\partial_\xi c+\partial_\eta g\,\partial_\eta c\bigr]
+  =\tfrac12\bigl[(-1)\cdot\tfrac12+1\cdot\tfrac12\bigr]=0,
+\]
+while on the diagonal stratum only the cluster (center-of-mass) direction
+survives and
+$\Gamma^{(2)}_{\theta,\Delta}(g,c)\propto\bigl((\partial_\xi+\partial_\eta)g\bigr)
+\bigl((\partial_\xi+\partial_\eta)c\bigr)=0\cdot1=0$, the gap being annihilated
+by the center-of-mass derivative. Hence
+$d\langle g,c\rangle=2\,\Gamma^{(2)}_\theta(g,c)\,dt=0$ in both strata, with no
+appeal to the construction beyond \eqref{eq:sos}.
+
+From the zero bracket to the conditional law: $g-g_0$ and $c-\bar x$ are
+continuous $\Pth$-martingales, since both coordinate functions are
+$\Lth2$-harmonic, off the diagonal $\tfrac12\Delta$ annihilates linear
+functions, and on it the Wentzell value vanishes for $g$ (the one-sided
+derivatives of the identity agree, so the jump is zero) while the coalesced
+cluster moves as the driftless one-point motion, with
+$d\langle c\rangle_t=\sigma(g_t)^2\,dt$, $\sigma^2=\tfrac12$ off the diagonal
+and $1$ on it, so $\langle c\rangle$ is $\mathcal G$-measurable. By Knight's
+theorem~\citep[Ch.~V]{RevuzYor} the orthogonal pair $(g-g_0,\,c-\bar x)$ has
+independent Dambis--Dubins--Schwarz Brownian motions
+$\beta^{g},\beta^{c}$ (after the usual extension beyond the horizon), with
+$c_T=\bar x+\beta^{c}_{\langle c\rangle_T}$. Moreover
+$\mathcal G=\sigma(g)\subseteq\sigma(\beta^{g})$: writing
+$W_u:=g_0+\beta^{g}_{2u}$, a Brownian motion of diffusivity $2$, the sticky
+path is recovered from $W$ by the time change of \cref{prop:occupation}
+(Step~0), whose clock is a measurable functional of $W$. Hence $\beta^{c}$ is
+independent of $\mathcal G$, and conditionally on $\mathcal G$ the COM is a
+driftless Gaussian with deterministic variance
+$\langle c\rangle_T=\int_0^T \sigma(g_s)^2\,ds=\tfrac12(T-\mathrm{Occ})+\mathrm{Occ}
+=\tfrac12 T+\tfrac12\mathrm{Occ}$, giving $c_T\mid\mathcal G\sim N(\bar x,V)$ with
+$V\in[\tfrac12T,T]$ since $\mathrm{Occ}\in[0,T]$.
+(iii): on the coalescence event the common position equals $c_T$, so
+$\rho_{\mathrm{coal}}(\xi)=\mathbb E[\mathbf 1_{g_T=0}\,\varphi_{V(\mathcal G)}(\xi-\bar x)]
+=\int\varphi_V(\xi-\bar x)\,\tilde\nu(dV)$. Each component is centered at $\bar x$, giving
+symmetry; and for $V\le T$, $\varphi_V(\xi-\bar x)\le(2\pi\cdot\tfrac12 T)^{-1/2}
+e^{-(\xi-\bar x)^2/2T}$, so integrating $\tilde\nu$ gives the stated bound, and
+differentiating gives the bound on $\rho_{\mathrm{coal}}'$ (the factor $(\xi-\bar x)/V$
+is absorbed into $C(1+|\xi-\bar x|)$ using $V\ge\tfrac12 T$). The variance-$T$
+bound is consistent with a Gaussian heat-kernel upper bound, stickiness only
+delaying the spreading; a direct Aronson bound is obstructed by the
+codimension-one Wentzell boundary, so this explicit decomposition is the rigorous
+route.
+\end{proof}
+
+\begin{lemma}[Nonconstancy of the conditional atom weight]\label{lem:q-nonconstant}
+Under the point-started reference $\mu_x=m_{\theta,T,x}$ from an initial pair
+$(x_1,x_2)$ with $x_1\neq x_2$, the conditional coalescence weight $q(\xi)$ is
+nonconstant in $\xi$ and lies in $\Dom(\cE_{\mathbf x})$ with
+$\cE_{\mathbf x}(q)=\tfrac12\int q'(\xi)^2\,d\mu_x>0$. In the translation-invariant
+reference, $q\equiv\mathrm{const}$ and $q'\equiv0$.
+\end{lemma}
+\begin{proof}
+By \cref{lem:gap-com}(iii), $\rho_{\mathrm{coal}}$ is symmetric about $\bar x$, while the
+retained one-point marginal $\rho_1=N(x_1,T)$ (Brownian one-point motion, \cref{conv:LJR})
+is centered at $x_1$. For $x_1\neq x_2$ ($\bar x\neq x_1$) the ratio
+$q=\rho_{\mathrm{coal}}/\rho_1$ is therefore nonconstant: a function symmetric about
+$\bar x$ is not a constant multiple of a Gaussian centered at $x_1\neq\bar x$. For $T>0$
+the densities are smooth and strictly positive, so $q$ is smooth and $q'\not\equiv0$ on a
+set of positive $\mu_x$-measure.
+For the energy: by \cref{lem:gap-com}(iii), $\rho_{\mathrm{coal}}(\xi)\le
+C e^{-(\xi-\bar x)^2/2T}$ with the same quadratic rate $1/2T$ as $\rho_1$ (variance $T$),
+so the quadratic exponents cancel in $q=\rho_{\mathrm{coal}}/\rho_1$ and $q(\xi),q'(\xi)$
+grow at most exponentially, $|q'(\xi)|\le C(1+|\xi|)e^{a|\xi|}$ with $a=|x_2-x_1|/2T$.
+Integrating against $d\mu_x=\rho_1\,d\xi$ (variance-$T$ Gaussian), the quadratic Gaussian
+decay dominates the linear exponent:
+$\cE_{\mathbf x}(q)=\tfrac12\int q'^2\,d\mu_x\le C\int (1+|\xi|)^2 e^{2a|\xi|}
+e^{-(\xi-x_1)^2/2T}\,d\xi<\infty$. Hence $q\in\Dom(\cE_{\mathbf x})$, and
+$\cE_{\mathbf x}(q)=\tfrac12\int q'^2\,d\mu_x>0$ by nonconstancy. In the
+translation-invariant reference the COM-mixture and $\rho_1$ co-center and $q\equiv$const.
+\end{proof}
+
+\begin{theorem}[Failure of pairwise deletion-compatibility at the coalescing endpoint]\label{thm:wall-endpoint}
+At the coalescing/absorbing endpoint (phase \textnormal{(C)}), under the
+point-started reference $\mu_x=m_{\theta,T,x}$, the diffuse
+density vanishes at the diagonal (\cref{lem:checkB}(C)), so the value-trace and
+Poincar\'e constants $\tau_{\mathrm{wt}}$ and $C^p_P$ diverge, and the
+difference-direction apex is polar for the weighted gap energy. This
+failure is independent of the derivative-trace issue
+($\tau_{\mathrm{at}}$/\cref{hyp:dtrace} play no role here). A
+difference-direction probe
+$\Phi_n(\xi,\eta)=g_n(\eta-\xi)$ with $g_n(0)=1$, $g_n\to0$ in $L^2(\bar p)$, and
+weighted gap energy $\int|g_n'(g)|^2\,\bar p(g)\,dg\to0$, where $\bar p$ is the
+diffuse density of the autonomous gap (such probes are supplied explicitly by
+the logarithmic cutoffs of \cref{prop:co-failure}, Step~3), gives
+$\cE_{\mathbf y}(\Phi_n)\to0$ while
+$\cE_{\mathbf x}(P\Phi_n)\not\to0$, so $D(\Phi_n)<0$ for large $n$.
+The deletion energy-contraction \textnormal{(P3)} \eqref{eq:p3} thus
+fails, the inequality of \cref{thm:deletion} being violated, so the
+sectorwise closed pairs are not deletion-compatible at the coalescing
+endpoint (each fixed sector still closes by (P1)/\cref{thm:sectorclos}; it is the
+$2\to1$ compatibility that breaks). The coalescing flow needs a strict sub-core
+even at the pairwise level.
+\end{theorem}
+\begin{proof}
+The argument needs both polarity (to send $\cE_{\mathbf y}(\Phi_n)\to0$)
+and $q'\not\equiv0$ (to keep $\cE_{\mathbf x}(P\Phi_n)\not\to0$); neither alone
+suffices.
+
+Polarity, hence $\cE_{\mathbf y}(\Phi_n)\to0$. In phase \textnormal{(C)},
+$p(g)\sim C|g|$ as $g\to0$ (\cref{lem:checkB}(C)), so the weighted resistance
+$\int dg/p=\int dg/(C|g|)=\infty$ and the weighted point capacity of the apex
+$\{g=0\}$ is $[\int dg/p]^{-1}=0$: the apex is polar for the weighted gap
+energy (not for the ordinary $H^1$ energy, in which a point has positive
+capacity; it is the weight $p\sim C|g|$, with $\int dg/p=\infty$, that
+collapses the capacity). Explicit probes achieving the polarity and the
+$L^2$-smallness simultaneously are the logarithmic cutoffs
+$\psi_\varepsilon$ of \cref{prop:co-failure} (Step~3): capacity alone supplies
+the pinning $g_n(0)=1$ and the energy smallness, while the simultaneous
+$L^2(\bar p)$-smallness is an extra property, verified there by dominated
+convergence; we take $g_n:=\psi_{\varepsilon_n}$. Set
+$\Phi_n(\xi,\eta)=g_n(\eta-\xi)$. Being a pure difference-direction probe,
+$\Phi_n$ is $\Gamma$-blind on the diagonal (its center-of-mass derivative
+vanishes), so the diagonal (center-of-mass) term in \eqref{eq:Ey} vanishes, and
+the open-stratum contribution to $\cE_{\mathbf y}(\Phi_n)$ is the weighted gap
+energy ($(\partial_\xi\Phi_n)^2+(\partial_\eta\Phi_n)^2=2|g_n'|^2$ against the
+weight $\tfrac12$)
+\[
+  \int(1-q)\,\bigl\langle|g_n'|^2\bigr\rangle_p\,d\mu_\xi
+  \;=\;\int|g_n'|^2\,\bar p\,dg ,
+\]
+by the pushforward identity
+$\int\mu_\xi(d\xi)\,(1-q(\xi))\,p(\xi,\xi+g)=\bar p(g)$ of
+\cref{prop:co-failure} (Step~2), and this tends to $0$ by the probe
+construction; thus $\cE_{\mathbf y}(\Phi_n)\to0$.
+
+$q'\not\equiv0$, hence $\cE_{\mathbf x}(P\Phi_n)\not\to0$. By
+\eqref{eq:kernel}, $P\Phi_n(\xi)=q(\xi)+(1-q(\xi))\langle g_n\rangle_p$, and
+$P\Phi_n\to q$ in $L^2(\mu_\xi)$: by Jensen on the probability density
+$p(\xi,\cdot)$, $(1-q)^2\le(1-q)$, and the pushforward identity of
+\cref{prop:co-failure} (Step~2),
+\[
+  \int(1-q)^2\,\langle g_n\rangle_p^2\,d\mu_\xi
+  \;\le\;\int(1-q)\,\langle g_n^2\rangle_p\,d\mu_\xi
+  \;=\;\|g_n\|^2_{L^2(\bar p)}\;\longrightarrow\;0 .
+\]
+The
+one-point form $\cE_{\mathbf x}(u)=\tfrac12\int(u')^2\,d\mu_\xi$ is closable (it is
+the $m=1$ form, settled; (P1) at $m=1$), hence lower semicontinuous under
+$L^2(\mu_\xi)$ convergence, and $q\in\Dom(\cE_{\mathbf x})$ with
+$\cE_{\mathbf x}(q)=\tfrac12\|q'\|_{L^2(\mu_\xi)}^2$. Therefore
+$\liminf_n\cE_{\mathbf x}(P\Phi_n)\ge\cE_{\mathbf x}(q)=\tfrac12\|q'\|^2>0$ by
+\cref{lem:q-nonconstant}. (Lower semicontinuity replaces any convergence of
+$\partial_\xi(P\Phi_n)$ to $q'$, which matters in phase (C), where
+$I_p=\infty$ would defeat a direct derivative estimate.) Combined with
+$\cE_{\mathbf y}(\Phi_n)\to0$, $\limsup_n D(\Phi_n)\le-\tfrac12\|q'\|^2<0$, so
+$D(\Phi_n)<0$ for large $n$. Thus the deletion energy-contraction \eqref{eq:p3}
+at $m=2$ fails (the inequality of \cref{thm:deletion} is violated), so the
+sectorwise pairs are not deletion-compatible at the endpoint.
+\end{proof}
+
+The two phases can now be set side by side. Blackness is common to both, while
+the boundary type alone toggles the obstruction.
+
+\begin{theorem}[Boundary type discriminates the apex value-capacity obstruction]\label{thm:discriminant}
+Both the reflecting and the coalescing Brownian sticky flows are black
+(\cref{thm:black} and~\citep{LJR-circle-noise}, which also proves that the noise of
+Arratia's coalescing flow is black). Yet the identified apex value-capacity
+obstruction to the pairwise energy contraction \eqref{eq:p3} is discriminated by
+the boundary type: in phase \textnormal{(R)} it is absent
+(\cref{thm:unobstruction}), whereas in phase \textnormal{(C)}, for the
+point-started time-$T$ law $\mu_\xi=m_{\theta,T,x}$, it is present and
+the pairwise deletion energy-contraction (P3) fails
+(\cref{thm:wall-endpoint}). Hence blackness is
+shared but does not by itself decide It\^o-closability; the
+reflecting/absorbing boundary type of \cref{def:trichotomy} is what toggles the
+identified obstruction present/absent. This is not a reflecting-$\Leftrightarrow$-closable
+equivalence: in phase \textnormal{(R)} the absence of the obstruction makes the
+deletion energy-contraction (P3) hold under the stated first-order condition
+$(\mathrm{CKC}_2^{\flat})$ on the diagonal-flat sub-core
+(\cref{cor:neumann-subcore,thm:pairwise-ito}), so the sectorwise closed pairs
+(each closed by (P1)/\cref{thm:sectorclos}) are deletion-compatible there; beyond
+that sub-core, compatibility is open (\cref{prob:fullreflecting}).
+\end{theorem}
+\begin{proof}
+Immediate from \cref{thm:black,thm:unobstruction,thm:wall-endpoint} and the
+boundary classification \cref{def:trichotomy}.
+\end{proof}
+
+The discriminant lives on the point-started law. The energy datum and the
+projective-limit criterion of \cref{sec:recap} are built on the point-started
+consistent family $\mu_\xi=m_{\theta,T,x}$, with
+$(\pi)_*\mu_{\mathbf y}=\mu_{\mathbf x}$, which is not a modelling choice but the
+structure the closability apparatus runs on, so the discriminant of
+\cref{thm:discriminant} lives intrinsically on that family. The invariant or
+translation-started reference, under which $q'\equiv0$ (\cref{lem:checkA}) and the
+phase-\textnormal{(C)} witness of \cref{thm:wall-endpoint} becomes borderline
+($D(\Phi_n)\to0$ rather than $<0$), corresponds to a different operator,
+the motion-semigroup object, which differs from the time-$T$-law operator by a
+reference-measure conflation (cf.~\cref{rem:reference-measure}) rather than an
+alternative reference within the present construction. The point-started reading
+is thus the construction's own, and the discriminant is a property of it.
+
+One objection deserves a direct answer in two parts: that the coalescing
+failure is an artifact of conditioning on a non-stationary reference, which
+the intrinsic noise never sees. First, why the point-started reading is
+forced. The lifted form is $\Ecyl(F)=\E_{\Pth}[\GamN(F,F)]$ by definition
+\eqref{eq:lifted-gamma}; on a fixed sector its reference measure is the
+time-$T$ law $\mu_{\mathbf x}$ of the flow from its initial points, not one
+choice among symmetrizing measures, but the only measure for which $\Ecyl$ is
+the $L^2(\Pth)$-energy of the lifted observable, and the time-$T$ law
+unavoidably charges the coincidence strata
+(\cref{rem:reference-measure}). Substituting the translation-invariant measure
+replaces the operator by the motion-semigroup object: it changes the question,
+not the answer. Second, what fails where. The \textnormal{(P3)} witness of
+\cref{thm:wall-endpoint} does use the point-started structure, through
+$q'\not\equiv0$ (\cref{lem:q-nonconstant}), and degenerates to borderline in
+the invariant reading. The representability failure of \cref{prop:co-failure}
+does not: its mechanism uses only the linear vanishing of the diffuse
+gap density at the absorbing boundary and a gap atom of mass in $(0,1)$, both
+of which hold from any pair of distinct starts, and neither $q'$ nor any
+conditional disintegration along $\xi$ enters. The coalescence indicator is a
+nonconstant energy-null element of $L^2(\mu_{\mathbf y})$ for every
+point-started pair, and the same probes defeat any reference whose gap
+marginal vanishes linearly at the apex while charging the atom nontrivially.
+At the endpoint, representability fails in every reference the construction
+can carry; only the sharper contraction witness is reference-sensitive.
+
+The two analyses live on opposite kinds of measure. The blackness
+proof~\citep{LJR-circle-noise} controls the joint-minus-independent difference of
+difference functionals integrated against an absolutely continuous time marginal,
+which charges the diagonal with only $O(\sqrt\varepsilon)$ mass and sees the
+diagonal carr\'e as $o(1)$ at the quadratic-variation scale; the energy
+contraction \eqref{eq:p3} integrates the same diagonal carr\'e against the
+time-$T$ law, whose singular part charges the diagonal
+(\cref{rem:reference-measure}). Blackness misses the diagonal where closability
+charges it, which is why the blackness machinery cannot supply the closability
+input.
+
+%==============================================================
+\section{Main results II: the pairwise black Clark--Ocone representation}\label{sec:clarkocone}
+%==============================================================
+
+The identity \eqref{eq:black-ibp} is adjointness, not representation: it
+determines $\divN=\DN^{*}$ against the energy pairing, but it does not produce,
+for a given centered functional, an integrand whose divergence is that
+functional. The classical upgrade is the Clark--Ocone
+formula~\citep{Clark,Ocone,Nualart}
+$F-\E F=\delta(\Pi\,DF)$ with $\Pi$ the predictable projection onto adapted
+integrands, and both of its supports are gone here: blackness (\cref{thm:black})
+removes the first chaos, hence the martingale-representation target onto which a
+predictable projection could project, and the fixed sector is a single-time
+object carrying no internal filtration in which ``predictable'' could be
+pronounced. What can survive is an energy-module representation
+\begin{equation}\label{eq:co-target}
+  F-\E_{\mu_{\mathbf x}}F\;=\;\divN\bigl(\PiN\,\DN F\bigr),
+  \qquad \E_{\mu_{\mathbf x}}F:=\textstyle\int F\,d\mu_{\mathbf x},
+\end{equation}
+with $\PiN$ built from the module $\cU_{\GamN}$ itself ($\E_{\mu_{\mathbf x}}$ is
+the sector mean, the lift of $\E_{\Pth}$ to the fixed sector). Writing
+$\Ltwoz(\mu_{\mathbf x}):=\{1\}^{\perp}$ for the centered subspace, the validity
+of \eqref{eq:co-target} for all $F$ forces
+$\mathrm{Ran}\,\divN\supseteq\Ltwoz(\mu_{\mathbf x})$, and this surjectivity is in
+turn equivalent to a Poincar\'e inequality (spectral gap) for the sector energy
+(\cref{cor:co-gap}). The content of this section is therefore a Poincar\'e
+inequality. We prove it from the paper's own trace bounds plus one
+uniformization, named $\COcap$; the deletion contraction
+\textnormal{(P3)}/$(\mathrm{CKC}_2^{\flat})$ pays the two-point step, its second
+appearance in the paper: the same inequality that makes the sectorwise pairs
+deletion-compatible (\cref{thm:deletion}) also transports the one-point spectral
+gap up the deletion tower $2\to1\to0$.
+
+\begin{definition}[$\COcap$: uniform pairwise value capacity]\label{def:cocap}
+In phase \textnormal{(R)}, with the conditional atom weight $q$, the value trace
+$\tau_{\mathrm{wt}}$, and the conditional Poincar\'e constant $C^p_P$ of
+\cref{sec:reduction}, set
+\[
+  K_{\mathrm{cap}}\;:=\;\operatorname*{ess\,sup}_{\xi\ (\mu_\xi)}
+  \bigl[\,q(\xi)\,\tau_{\mathrm{wt}}(\xi)+C^p_P(\xi)\,\bigr].
+\]
+The condition $\COcap$ is: $K_{\mathrm{cap}}<\infty$.
+\end{definition}
+
+\begin{remark}[Status of $\COcap$]\label{rem:cocap-status}
+Pointwise finiteness of both elements for $\mu_\xi$-a.e.\ $\xi$ is exactly the
+phase-(R) statement of \cref{cor:dichotomy,thm:unobstruction}; $\COcap$ is its
+uniform (essential-supremum) strengthening, of the same value-level, first-order
+nature: no derivative trace ($\tau_{\mathrm{at}}$, \cref{hyp:dtrace}) enters. In
+the translation-invariant reference the gap law does not depend on $\xi$
+(\cref{lem:gap-sticky,lem:checkA}), the bracket is a constant, and $\COcap$ holds
+trivially; under the point-started reference, the construction's own
+(\cref{rem:reference-measure}), it is a genuine uniformity requirement
+(\cref{prob:cocap}). Whether the reflecting phase alone yields the
+representation below is open: \cref{thm:unobstruction} supplies pointwise
+finiteness only, $\COcap$ asks for more, and \cref{thm:clarkocone} uses it.
+Indeed we expect the essential-supremum form to fail under the point-started
+reference (\cref{rem:two-well}); the operative point-started weakening is the
+mixed-mean bound $\COmix$ of \cref{def:comix}, and on the autonomous gap sector
+\cref{thm:gap-co} needs neither.
+\end{remark}
+
+\begin{lemma}[Sectorwise Poincar\'e inequality]\label{lem:sector-poincare}
+Fix a sector $\mathbf x$ with $|\mathbf x|\le2$ under \cref{conv:LJR}, and let
+$(\DN,\divN)$ be the fixed-sector closed pair of \cref{thm:pairwise-ito} (for
+$|\mathbf x|=2$, the diagonal-flat pair), with closed form
+$\cE(F)=\|\DN F\|^2_{\cU_{\GamN}}$ on $\Dom(\DN)\subset L^2(\mu_{\mathbf x})$.
+\begin{enumerate}
+\item[$(\mathrm i)$] ($m=1$; any phase.) $\mu_{\mathbf x}=N(x_1,T)$
+and
+\[
+  \mathrm{Var}_{\mu_{\mathbf x}}(F)\;\le\;2T\,\cE(F),
+  \qquad F\in\Dom(\DN).
+\]
+\item[$(\mathrm{ii})$] ($m=2$.) Assume phase \textnormal{(R)},
+$(\mathrm{CKC}_2^{\flat})$ on the fixed sector, and $\COcap$. Then
+\[
+  \mathrm{Var}_{\mu_{\mathbf y}}(\Phi)\;\le\;C_N\,\cE(\Phi),
+  \qquad C_N:=2K_{\mathrm{cap}}+2T,
+  \qquad \Phi\in\Dom(\DN).
+\]
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+$(\mathrm i)$ The one-point motion is Brownian (\cref{conv:LJR}), so
+$\mu_{\mathbf x}=N(x_1,T)$ and the classical Gaussian Poincar\'e
+inequality~\citep{Bogachev} gives, for $u$ in the smooth core,
+$\mathrm{Var}_{\mu_{\mathbf x}}(u)\le T\int(u')^2\,d\mu_{\mathbf x}
+=2T\,\cE_{\mathbf x}(u)$; both sides are continuous along graph-norm convergent
+sequences (the variance under $L^2$ convergence, the energy by closedness), so
+the bound passes to $\Dom(\DN)$.
+
+$(\mathrm{ii})$ We first prove the bound on the diagonal-flat smooth core, then
+close. Disintegrate $\mu_{\mathbf y}(d\xi,d\eta)=\mu_\xi(d\xi)\,\kappa(\xi,d\eta)$
+as in \eqref{eq:kernel} and use the total-variance decomposition
+\[
+  \mathrm{Var}_{\mu_{\mathbf y}}(\Phi)
+  =\int\mu_\xi(d\xi)\,\mathrm{Var}_{\kappa(\xi,\cdot)}\bigl(\Phi(\xi,\cdot)\bigr)
+   +\mathrm{Var}_{\mu_\xi}(P\Phi),
+\]
+with $P\Phi(\xi)=\langle\Phi\rangle_\xi$ the deletion conditional expectation.
+Conditional term. For the atom-plus-density mixture
+$\kappa=q\,\delta_\xi+(1-q)\,p\,d\eta$ the elementary mixture-variance identity is
+\[
+  \mathrm{Var}_{\kappa}\bigl(\Phi(\xi,\cdot)\bigr)
+  =q(1-q)\bigl[\Phi(\xi,\xi)-\langle\Phi\rangle_p\bigr]^2
+   +(1-q)\,\mathrm{Var}_{p}\bigl(\Phi(\xi,\cdot)\bigr).
+\]
+The value-trace inequality \eqref{eq:traces} bounds the first bracket by
+$\tau_{\mathrm{wt}}(\xi)\,G_\eta(\xi)$ and the Poincar\'e constant of
+$p(\xi,\cdot)$ bounds the second by $C^p_P(\xi)\,G_\eta(\xi)$, where
+$G_\eta=\langle(\partial_\eta\Phi)^2\rangle_p$; hence
+\[
+  \mathrm{Var}_{\kappa}\bigl(\Phi(\xi,\cdot)\bigr)
+  \le(1-q)\bigl[q\,\tau_{\mathrm{wt}}+C^p_P\bigr]\,G_\eta
+  \le K_{\mathrm{cap}}\,(1-q)\,G_\eta
+\]
+by $\COcap$. Integrating against $\mu_\xi$ and comparing with the diffuse
+$\eta$-budget of \eqref{eq:Ey},
+$\cE_{\mathbf y}(\Phi)\ge\tfrac12\int\mu_\xi\,(1-q)\,G_\eta$, gives
+\[
+  \int\mu_\xi\,\mathrm{Var}_{\kappa}(\Phi(\xi,\cdot))
+  \;\le\;2K_{\mathrm{cap}}\,\cE_{\mathbf y}(\Phi).
+\]
+Retained term. By part $(\mathrm i)$,
+$\mathrm{Var}_{\mu_\xi}(P\Phi)\le2T\,\cE_{\mathbf x}(P\Phi)$ ($P\Phi$ is $C^1$
+with finite one-point energy, \cref{prop:amended-star}); and on the diagonal-flat
+sector, under $(\mathrm{CKC}_2^{\flat})$, the deletion contraction
+\textnormal{(P3)} holds (\cref{thm:deletion,cor:neumann-subcore}), so
+$\cE_{\mathbf x}(P\Phi)\le\cE_{\mathbf y}(\Phi)$. Summing the two terms gives the
+bound with $C_N=2K_{\mathrm{cap}}+2T$ on the core; the passage to $\Dom(\DN)$ is
+as in $(\mathrm i)$.
+\end{proof}
+
+The route through $\COcap$ disintegrates along the retained coordinate $\xi$.
+There is a second route, along the gap path, whose first half holds outright
+and which compresses the entire remaining difficulty into a single mixed-mean
+bound.
+
+\begin{proposition}[Center-of-mass reduction]\label{prop:com-half}
+Assume \cref{conv:LJR} and phase \textnormal{(R)} on the fixed two-point sector.
+Let $\mathcal G$ be the $\sigma$-field of the gap path,
+$V=\tfrac12T+\tfrac12\mathrm{Occ}\in[\tfrac12T,T]$ and $\bar x$ as in
+\cref{lem:gap-com}, and let $\beta_\theta>0$ be the diagonal-weight comparison
+constant of \cref{rem:reference-measure} ($\omega_\Delta=\beta_\theta\,q\,\mu_\xi$).
+Set $A_c(\theta):=\max\bigl(4,\,2/(\beta_\theta c_\theta)\bigr)<\infty$. Then for
+every $\Phi$ in the diagonal-flat core:
+\begin{enumerate}
+\item[$(\mathrm i)$] $\E\bigl[\mathrm{Var}\bigl(\Phi(\xi,\eta)\mid\mathcal G\bigr)\bigr]
+\;\le\;T\,A_c(\theta)\,\cE_{\mathbf y}(\Phi)$;
+\item[$(\mathrm{ii})$] $\E[\Phi\mid\mathcal G]=H_\Phi(g_T,V)$, where
+\[
+  H_\Phi(g,v):=\int_\R\Phi\bigl(\bar x+\sqrt v\,z-\tfrac g2,\;
+  \bar x+\sqrt v\,z+\tfrac g2\bigr)\,\varphi(z)\,dz,
+  \qquad\varphi\ \text{the standard Gaussian};
+\]
+\item[$(\mathrm{iii})$] the $v$-sensitivity of the conditional mean is
+first-order:
+\[
+  |\partial_vH_\Phi(g,v)|\;\le\;\tfrac12\,v^{-1/2}
+  \Bigl(\E_{c\sim N(\bar x,v)}\bigl[\bigl((\partial_\xi+\partial_\eta)\Phi\bigr)^2
+  (c-\tfrac g2,c+\tfrac g2)\bigr]\Bigr)^{1/2}
+  \;\le\;(2T)^{-1/2}\,(\cdots)^{1/2}.
+\]
+\end{enumerate}
+Consequently
+\begin{equation}\label{eq:com-reduction}
+  \mathrm{Var}_{\mu_{\mathbf y}}(\Phi)\;\le\;T\,A_c(\theta)\,\cE_{\mathbf y}(\Phi)
+  \;+\;\mathrm{Var}\bigl(H_\Phi(g_T,V)\bigr).
+\end{equation}
+\end{proposition}
+\begin{proof}
+$(\mathrm i)$ By \cref{lem:gap-com}$(\mathrm{ii})$ (whose parts (i)--(ii) are
+phase-agnostic), conditionally on $\mathcal G$ the center of mass is
+$c\sim N(\bar x,V)$ with $V\le T$, and
+$\tfrac{d}{dc}\Phi(c-\tfrac g2,c+\tfrac g2)=(\partial_\xi+\partial_\eta)\Phi$,
+so the Gaussian Poincar\'e inequality gives
+$\mathrm{Var}(\Phi\mid\mathcal G)\le T\,
+\E[((\partial_\xi+\partial_\eta)\Phi)^2\mid\mathcal G]$. Taking expectations,
+the left side of $(\mathrm i)$ is bounded by
+$T\int((\partial_\xi+\partial_\eta)\Phi)^2\,d\mu_{\mathbf y}$. Split
+$\mu_{\mathbf y}$ into its diffuse and diagonal parts: on the diffuse part,
+$(a+b)^2\le2a^2+2b^2$ bounds the integral by $4$ times the open-stratum term of
+\eqref{eq:Ey}; on the diagonal,
+$\int((\partial_\xi+\partial_\eta)\Phi)^2(\xi,\xi)\,q\,d\mu_\xi
+=\beta_\theta^{-1}\int((\partial_\xi+\partial_\eta)\Phi)^2\,d\omega_\Delta
+=\tfrac{2}{\beta_\theta c_\theta}\,\cE^{\mathrm{diag}}_{\mathbf y}(\Phi)$.
+Hence the total is $\le A_c(\theta)\,\cE_{\mathbf y}(\Phi)$.
+$(\mathrm{ii})$ The conditional law of $c$ given $\mathcal G$ is $N(\bar x,V)$
+and depends on $\mathcal G$ only through $V$, while the gap enters through
+$g_T$.
+$(\mathrm{iii})$ Differentiating under the integral,
+$\partial_v\Phi(\bar x+\sqrt vz\mp\tfrac g2)=\tfrac{z}{2\sqrt v}\,
+(\partial_\xi+\partial_\eta)\Phi$, and
+$|\int z\,\psi(z)\varphi(z)\,dz|\le(\int z^2\varphi)^{1/2}(\int\psi^2\varphi)^{1/2}$
+with $\int z^2\varphi=1$; finally $\tfrac12v^{-1/2}\le(2T)^{-1/2}$ for
+$v\ge T/2$. The display \eqref{eq:com-reduction} is the total-variance
+decomposition over $\mathcal G$ together with $(\mathrm i)$--$(\mathrm{ii})$.
+\end{proof}
+
+\begin{definition}[$\COmix$: mixed-mean bound]\label{def:comix}
+$\COmix$ is the condition: there is $C_{\mathrm{mix}}<\infty$ with
+\[
+  \mathrm{Var}\bigl(H_\Phi(g_T,V)\bigr)\;\le\;C_{\mathrm{mix}}\,\cE_{\mathbf y}(\Phi)
+  \qquad\text{for all }\Phi\text{ in the diagonal-flat core.}
+\]
+\end{definition}
+
+\begin{corollary}[Sectorwise Poincar\'e under $\COmix$]\label{cor:comix-poincare}
+In phase \textnormal{(R)}, under $\COmix$,
+\[
+  \mathrm{Var}_{\mu_{\mathbf y}}(\Phi)\;\le\;
+  \bigl(T\,A_c(\theta)+C_{\mathrm{mix}}\bigr)\,\cE(\Phi),
+  \qquad\Phi\in\Dom(\DN),
+\]
+on the diagonal-flat pair; neither $(\mathrm{CKC}_2^{\flat})$ nor $\COcap$ is
+used. ($H_\Phi$ and both sides are continuous along graph-norm convergent
+sequences, $\Phi\mapsto\E[\Phi\mid\mathcal G]$ being an $L^2$-contraction, so the
+bound passes from the core to $\Dom(\DN)$.)
+\end{corollary}
+
+\begin{remark}[Numerical instantiation of $\COmix$, and the sector gap]\label{rem:comix-instantiation}
+The closed-form joint law of \cref{rem:instantiation} makes $\COmix$ directly
+testable: the conditioning data $(g_T,V)$ is exactly the tabulated
+gap--occupation pair, and on Galerkin families the conditional mean reduces to
+one-dimensional Gaussian-pair integrals; on the cubic-antisymmetric part of
+the flat family the factor $(\eta-\xi)^3=g_T^3$ is $\mathcal G$-measurable and
+factors out of $H_\Phi$. Against this law, at $g_0=T=1$,
+$\gamma\in\{0.05,0.2,0.5\}$, over the exactly flat families of
+\cref{rem:instantiation} deflated to the variance resolution the quadrature
+supports (directions whose variance falls below the
+quadrature noise floor report arbitrarily soft spurious modes, so the
+deflation threshold is part of the protocol, and a fully resolved
+one-dimensional computation of the dominant channel fixes the reference
+value):
+$(\mathrm a)$ the mixed-mean constant on the families is
+$C_{\mathrm{mix}}\approx1.4$--$4.9$, against the exact gap-channel value
+$2.00$--$2.05$ computed independently by resolved finite elements on the
+closed-form gap--occupation marginal; the channel maximizer is the linear gap
+mode $h(g)=g$, whose energy is the non-atomic gap mass and whose variance is
+$\mathrm{Var}(g_T)\approx2T$, a ratio the autonomous gap theory
+(\cref{thm:gap-co}) already controls, and at the stickier parameters
+$\gamma\in\{0.2,0.5\}$ the planar $(g_T,V)$-content of $\COmix$ beyond this
+pure gap channel is a correction of order fifteen percent;
+$(\mathrm b)$ the conditional-variance half of \cref{prop:com-half} is
+verified with a factor-two margin, the tested ratio
+$\E[\mathrm{Var}(\Phi\mid\mathcal G)]/\cE_{\mathbf y}$ staying below $1.99$
+against the proved $T\,A_c(\theta)=4$, and the contraction
+$\mathrm{Var}(H_\Phi)\le\mathrm{Var}_{\mu_{\mathbf y}}(\Phi)$ holds strictly
+on every family (largest tested eigenvalue $0.9997$);
+$(\mathrm c)$ the resulting sector spectral gap is
+$\lambda_N\approx0.19$--$0.53$ across the sweep, commensurate with the exact
+one-point value $1/(2T)=0.5$: the point-started two-point flat sector does
+not show the degeneration that \cref{prop:co-failure} exhibits at the
+coalescing endpoint. In summary, at the same Galerkin (non-certified) grade
+as \cref{rem:instantiation}: $\COmix$ holds at explicit parameters with
+$C_{\mathrm{mix}}\approx2$, so the conditions of \cref{thm:clarkocone} are
+simultaneously instantiated there in the point-started reference. Code and raw output are available at
+\url{https://github.com/QuijoticResearch/sticky-flow-certificates}.
+\end{remark}
+
+\begin{remark}[Two-well tension: the essential-supremum form of $\COcap$ is likely too strong]\label{rem:two-well}
+We record why we expect $\COcap$ to fail under the point-started
+reference. The occupation-time element is exact
+(\cref{prop:occupation}); the conditional-density steps remain heuristic. For
+$w:=|\xi-x_1|$ large, the conditional gap law given $\xi$ is bimodal: a
+never-met bulk near $g\approx x_2-\xi$, and a met-and-stuck
+component near $g=0$ whose conditional mass is governed by the away time
+$S:=T-\mathrm{Occ}$ of the gap. On $\{V=T-S/2\}$ the Gaussian cost ratio is
+$\varphi_V(w)/\varphi_T(w)\approx e^{-w^2S/4T^2}$, and the exact tail
+\eqref{eq:occupation-law} gives, by a Laplace saddle, with
+$\kappa=|g_0|+2\gamma^{-1}T$, $g_0=x_2-x_1$,
+\[
+  -\log\E\bigl[e^{-w^2S/4T^2}\bigr]\;\sim\;
+  \inf_{s>0}\Bigl(\frac{w^2s}{4T^2}+\frac{\kappa^2}{4s}\Bigr)
+  \;=\;\frac{\kappa\,w}{2T}\qquad(w\to\infty),
+\]
+so the near-diagonal component carries conditional mass
+$e^{-\kappa w/2T+o(w)}$: exponentially small of linear rate. The valley
+between the two components, at intermediate gaps, has conditional density
+exponentially small of quadratic rate $e^{-cw^2}$ (there both channels
+are displaced Gaussians). A two-well test function then forces
+\[
+  C^p_P(\xi)\;\gtrsim\;e^{\,cw^2-\kappa w/2T}\;\longrightarrow\;\infty ,
+\]
+and the essential supremum in $\COcap$ diverges. What remains heuristic is the
+valley upper bound and the transfer of \cref{prop:occupation} to the
+conditional law given $\xi$; the occupation tail itself is now a closed-form
+identity, and we note it is Gaussian-small, not polynomially small, in
+$1/\epsilon$, the near-diagonal lump is far lighter than a polynomial
+heuristic would suggest, but the divergence of $C^p_P(\xi)$ is only
+strengthened, the valley being quadratically small against the lump's linear
+rate. The essential-supremum formulation is thus the wrong uniformity, an
+artifact of disintegrating along $\xi$. The gap-path route of
+\cref{prop:com-half} avoids the two-well: the conditional well
+structure never appears in the $(g_T,V)$ variables, and the operative remaining
+condition is $\COmix$. In the translation-invariant reference $\COcap$ does
+hold (\cref{rem:cocap-status}) and the issue is moot.
+\end{remark}
+
+\begin{corollary}[Spectral gap, kernel, closed range, Green operator]\label{cor:co-gap}
+Assume a sectorwise Poincar\'e inequality
+$\mathrm{Var}_{\mu_{\mathbf x}}\le C_N\,\cE$ holds on the fixed sector, as
+supplied by \cref{lem:sector-poincare} or by \cref{cor:comix-poincare}
+($C_N=2T$ at $m=1$), and set $\lambda_N:=C_N^{-1}>0$. Then on the fixed
+sector:
+\begin{enumerate}
+\item[$(\mathrm i)$] $\ker\DN=\R\,1$: the constants are exactly the energy-null
+functionals, and $\|F-\E_{\mu_{\mathbf x}}F\|^2\le C_N\,\|\DN F\|^2_{\cU_{\GamN}}$
+for $F\in\Dom(\DN)$;
+\item[$(\mathrm{ii})$] $\mathrm{Ran}\,\DN$ is closed in $\cU_{\GamN}$, and the
+restriction $\DN\colon\Dom(\DN)\cap\Ltwoz\to\mathrm{Ran}\,\DN$ is a bijection
+with bounded inverse $\iota$, $\|\iota\|\le C_N^{1/2}$;
+\item[$(\mathrm{iii})$] the sector Dirichlet operator $L_{\cN}=-\divN\DN$ of
+\cref{thm:pairwise-ito}, with domain
+$\{F\in\Dom(\DN):\DN F\in\Dom(\divN)\}$, is self-adjoint with $-L_{\cN}\ge0$
+(von Neumann's theorem for $\DN^{*}\DN$, \citep[Ch.~5]{Schmuedgen}); the centered
+space $\Ltwoz$ reduces $L_{\cN}$, the spectrum of $-L_{\cN}$ on $\Ltwoz$ lies in
+$[\lambda_N,\infty)$, and the Green operator
+$G_N:=\bigl(-L_{\cN}|_{\Ltwoz}\bigr)^{-1}$ is bounded, $\|G_N\|\le C_N$, mapping
+$\Ltwoz$ into $\Dom(L_{\cN})\cap\Ltwoz$;
+\item[$(\mathrm{iv})$] $\ker\divN=(\mathrm{Ran}\,\DN)^{\perp}$ and
+$\mathrm{Ran}\,\divN=\Ltwoz(\mu_{\mathbf x})$: the divergence maps onto the
+centered space, and is injective on $\mathrm{Ran}\,\DN$ but not on its full
+domain.
+\end{enumerate}
+\end{corollary}
+\begin{proof}
+$(\mathrm i)$ $\DN F=0$ forces $\mathrm{Var}(F)=0$ by
+\cref{lem:sector-poincare}, so $F$ is constant; constants are energy-null by
+\cref{thm:foldA}$(\mathrm{ii})$; the displayed bound is the lemma.
+$(\mathrm{ii})$ If $F_n\in\Dom(\DN)\cap\Ltwoz$ and $\DN F_n\to v$, then by
+$(\mathrm i)$ applied to differences $(F_n)$ is $L^2$-Cauchy, $F_n\to F\in\Ltwoz$,
+and closedness of $\DN$ gives $F\in\Dom(\DN)$, $\DN F=v$; hence the range is
+closed and $\|\iota v\|\le C_N^{1/2}\|v\|$.
+$(\mathrm{iii})$ Self-adjointness of $\DN^{*}\DN$ for a closed densely defined
+operator is von Neumann's theorem; $\langle-L_{\cN}F,F\rangle=\|\DN F\|^2\ge0$.
+$L_{\cN}1=0$ (as $\DN1=0$), and $\langle L_{\cN}F,1\rangle=-\langle\DN F,\DN
+1\rangle=0$ with $F-\E F\in\Dom(L_{\cN})$ whenever $F\in\Dom(L_{\cN})$, so
+$\Ltwoz$ reduces $L_{\cN}$; on $\Ltwoz\cap\Dom(L_{\cN})$ the form bound
+$\langle-L_{\cN}F,F\rangle=\|\DN F\|^2\ge\lambda_N\|F\|^2$ (part $(\mathrm i)$)
+places the spectrum in $[\lambda_N,\infty)$, and the spectral theorem gives the
+bounded inverse $G_N$.
+$(\mathrm{iv})$ $\ker\divN=\ker\DN^{*}=(\mathrm{Ran}\,\DN)^{\perp}$ is standard;
+$\langle\divN u,1\rangle=\langle u,\DN1\rangle_{\cU_{\GamN}}=0$ gives
+$\mathrm{Ran}\,\divN\subseteq\Ltwoz$; conversely, for $F\in\Ltwoz$ put
+$G:=G_NF\in\Dom(L_{\cN})\cap\Ltwoz$, so $\DN G\in\Dom(\divN)$ and
+$\divN(\DN G)=-L_{\cN}G=F$. Injectivity on $\mathrm{Ran}\,\DN$ is
+$(\mathrm{Ran}\,\DN)\cap\ker\divN=\{0\}$; the kernel
+$(\mathrm{Ran}\,\DN)^{\perp}$ is in general nontrivial (the module contains
+non-exact one-forms $U\cdot\DN F$).
+\end{proof}
+
+\begin{definition}[The minimal-norm Green representer $\PiN$]\label{def:PiN}
+Under the Poincar\'e assumption of \cref{cor:co-gap}, let $P_{\nabla}$ be the
+orthogonal projection of $\cU_{\GamN}$ onto the closed subspace
+$\mathrm{Ran}\,\DN$ (the representable, or exact, one-forms), and define
+\[
+  \PiN\;:=\;\DN\,G_N\,\iota\,P_{\nabla}\;\colon\;\cU_{\GamN}\longrightarrow\cU_{\GamN},
+\]
+with $\iota,G_N$ as in \cref{cor:co-gap}. $\PiN$ vanishes on
+$(\mathrm{Ran}\,\DN)^{\perp}=\ker\divN$, and on exact one-forms it inverts the
+one-form (module) Laplacian: for $F\in\Dom(\DN)$,
+$\bigl(\DN\divN\bigr)\,\PiN\,\DN F=\DN F$, so on $\mathrm{Ran}\,\DN$ the operator
+$\PiN$ is the Green operator $(\DN\divN)^{-1}$.
+\end{definition}
+
+\begin{lemma}[Properties of $\PiN$]\label{lem:PiN-props}
+$\PiN$ is everywhere defined and bounded with $\|\PiN\|\le C_N$, self-adjoint and
+nonnegative on $\cU_{\GamN}$, and maps $\cU_{\GamN}$ into
+$\mathrm{Ran}\,\DN\cap\Dom(\divN)$. It is not idempotent in general:
+$\PiN^2=\PiN$ holds iff $\divN$ restricted to exact one-forms is a partial
+isometry, which the energy setting does not provide (cf.\
+\cref{rem:co-not-chaos}(2)).
+\end{lemma}
+\begin{proof}
+Every element of $\mathrm{Ran}\,\DN$ is exact, $P_\nabla u=\DN F$ with
+$F=\iota P_\nabla u\in\Dom(\DN)\cap\Ltwoz$ and $\|\DN F\|\le\|u\|$. Then
+$\PiN u=\DN G_NF$, with
+$\|\DN G_NF\|^2=\langle\divN\DN G_NF,G_NF\rangle=\langle F,G_NF\rangle
+\le C_N\|F\|^2\le C_N^2\,\|\DN F\|^2$, giving $\|\PiN\|\le C_N$, and
+$\DN G_NF\in\mathrm{Ran}\,\DN\cap\Dom(\divN)$ since
+$G_NF\in\Dom(L_{\cN})$. Self-adjointness and nonnegativity: for $F,G\in
+\Dom(\DN)\cap\Ltwoz$,
+$\langle\PiN\DN F,\DN G\rangle=\langle\divN\DN G_NF,G\rangle=\langle F,G\rangle$,
+symmetric in $F,G$ and $\ge0$ at $F=G$; both sides vanish against
+$(\mathrm{Ran}\,\DN)^{\perp}$. For the displayed inversion property,
+$\divN\PiN\DN F=F-\E F$ (\cref{thm:clarkocone}$(\mathrm i)$ below, whose proof
+does not use this lemma) and $\DN(F-\E F)=\DN F$. Finally
+$\PiN^2\,\DN F=\DN G_N^2F\neq\DN G_NF$ unless $G_N$ is the identity on the
+relevant vectors, i.e.\ unless $\|\divN u\|=\|u\|$ on exact $u$.
+\end{proof}
+
+\begin{theorem}[Pairwise black Clark--Ocone representation]\label{thm:clarkocone}
+Fix a sector $\mathbf x$ with $|\mathbf x|\le2$ under \cref{conv:LJR}. For
+$|\mathbf x|=2$, assume phase \textnormal{(R)}, work with the diagonal-flat
+closed pair of \cref{thm:pairwise-ito}, and assume either
+$(\mathrm{CKC}_2^{\flat})$ on this fixed sector together with $\COcap$
+(\cref{lem:sector-poincare}) or the mixed-mean bound $\COmix$
+(\cref{cor:comix-poincare}); for $|\mathbf x|=1$ only \cref{conv:LJR}
+is used, in any phase. Then, on $L^2(\mu_{\mathbf x})$:
+\begin{enumerate}
+\item[$(\mathrm i)$] (Representation.) For every $F\in\Dom(\DN)$,
+$\PiN\DN F\in\Dom(\divN)$ and
+\[
+  F-\E_{\mu_{\mathbf x}}F\;=\;\divN\bigl(\PiN\,\DN F\bigr).
+\]
+\item[$(\mathrm{ii})$] (Uniqueness and minimality.) $\PiN\DN F$ is the
+unique representer in $\mathrm{Ran}\,\DN=(\ker\divN)^{\perp}$; among all
+$u\in\Dom(\divN)$ with $\divN u=F-\E F$ it is the one of minimal module norm.
+\item[$(\mathrm{iii})$] (Variance identity and energy bound.)
+\[
+  \mathrm{Var}_{\mu_{\mathbf x}}(F)
+  =\bigl\langle\PiN\DN F,\ \DN F\bigr\rangle_{\cU_{\GamN}},
+  \qquad
+  \|\PiN\DN F\|^2_{\cU_{\GamN}}\le C_N\,\mathrm{Var}_{\mu_{\mathbf x}}(F).
+\]
+\item[$(\mathrm{iv})$] (Surjectivity of the divergence.) Every centered
+$F\in\Ltwoz(\mu_{\mathbf x})$, not necessarily in $\Dom(\DN)$, is a divergence:
+$F=\divN(\DN G_NF)$; and $\DN G_N(F-\E F)=\PiN\DN F$ whenever $F\in\Dom(\DN)$,
+so the two constructions agree on the common domain.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+$(\mathrm i)$ Write $F_0:=F-\E_{\mu_{\mathbf x}}F\in\Dom(\DN)\cap\Ltwoz$, so
+$\DN F=\DN F_0\in\mathrm{Ran}\,\DN$, $P_\nabla\DN F=\DN F$, and
+$\iota\,\DN F=F_0$; thus $\PiN\DN F=\DN G_NF_0$. Since
+$G_NF_0\in\Dom(L_{\cN})$, the one-form $\DN G_NF_0$ lies in $\Dom(\divN)$, and
+$\divN(\DN G_NF_0)=-L_{\cN}G_NF_0=F_0$.
+$(\mathrm{ii})$ Two representers differ by an element of
+$\ker\divN=(\mathrm{Ran}\,\DN)^{\perp}$ (\cref{cor:co-gap}$(\mathrm{iv})$);
+$\PiN\DN F\in\mathrm{Ran}\,\DN$ is therefore the unique representer in that
+subspace, and any other representer $u=\PiN\DN F+w$ with
+$w\in(\mathrm{Ran}\,\DN)^{\perp}$ has
+$\|u\|^2=\|\PiN\DN F\|^2+\|w\|^2$, so the norm is minimal.
+$(\mathrm{iii})$ Pairing $(\mathrm i)$ against $F$:
+$\langle\PiN\DN F,\DN F\rangle_{\cU_{\GamN}}
+=\langle\divN\PiN\DN F,F\rangle=\langle F_0,F\rangle=\|F_0\|^2
+=\mathrm{Var}_{\mu_{\mathbf x}}(F)$. For the bound,
+$\|\PiN\DN F\|^2=\langle F_0,G_NF_0\rangle\le C_N\|F_0\|^2$ as in
+\cref{lem:PiN-props}.
+$(\mathrm{iv})$ Is \cref{cor:co-gap}$(\mathrm{iv})$; the coincidence on
+$\Dom(\DN)$ is the computation in $(\mathrm i)$.
+\end{proof}
+
+\begin{remark}[Energy-module, not first-chaos; fixed-sector, not flow-space]\label{rem:co-not-chaos}
+Three limitations delimit the scope of \cref{thm:clarkocone}.
+\textnormal{(1)} It is not a martingale representation. The representer
+$\PiN\DN F$ is a one-form in the sectorwise energy module $\cU_{\GamN}$, paired
+through the diagonal carr\'e $\GamT$; it is not a stochastic integral against any
+martingale of the flow, and by blackness (\cref{thm:black}) it could not be: the
+first chaos a predictable projection would project onto is trivial. The
+representation is the analytic shadow that survives blackness: a divergence of a
+one-form, not an integral of a predictable process.
+\textnormal{(2)} $\PiN$ is not a projection. In the Wiener
+case~\citep{Clark,Ocone,Nualart} the
+Clark--Ocone projection is idempotent because the It\^o isometry makes the
+divergence a partial isometry on predictable integrands; here $\divN$ is not
+partially isometric on exact forms, and the minimal-norm representer requires the
+Green factor $G_N$, $\PiN=(\DN\divN)^{-1}P_\nabla$. We keep the symbol $\PiN$
+only for the structural analogy $\delta\,\Pi\,D=I-\E$. Even at $|\mathbf x|=1$
+the statement is the static Green representation for the Gaussian
+measure $N(x_1,T)$, an Ornstein--Uhlenbeck-type identity, not the
+filtration-indexed Brownian Clark--Ocone formula.
+\textnormal{(3)} It is sectorwise. The theorem lives on a fixed one- or
+two-point sector, on the diagonal-flat pair at $m=2$, with centering
+$\E_{\mu_{\mathbf x}}$; the sectorwise family does not assemble into a single
+operator on the flow $L^2$-space (\cref{rem:sectorwise}), and the dynamic
+statement is the separate \cref{thm:dynamic} (cf.\ \cref{rem:ito-form}).
+\end{remark}
+
+\begin{proposition}[Failure at the coalescing endpoint: the coalescence indicator]\label{prop:co-failure}
+In phase \textnormal{(C)} (the coalescing endpoint), on the fixed two-point
+sector started from $x_1\neq x_2$, with the diagonal-flat closed pair (which
+closes by \textnormal{(P1)}, \cref{thm:sectorclos}), the coalescence indicator
+\[
+  K:=\mathbf 1_{\Delta}\in L^2(\mu_{\mathbf y}),
+  \qquad K=\mathbf 1_{\{X^{x_1}_T=X^{x_2}_T\}}\ \text{as a flow functional},
+\]
+satisfies $K\in\Dom(\DN)$ with $\DN K=0$, and $K$ is nonconstant in
+$L^2(\mu_{\mathbf y})$. Consequently $\ker\DN\supsetneq\R\,1$, the sectorwise
+Poincar\'e inequality fails, $\overline{\mathrm{Ran}\,\divN}\subseteq
+\{1,K\}^{\perp}\subsetneq\Ltwoz(\mu_{\mathbf y})$, and the centered functional
+$K-\E K$ admits no representation $\divN(u)$, for any
+$u\in\Dom(\divN)$. The discriminant is therefore asymmetric: in phase
+\textnormal{(R)} the representation holds under
+$(\mathrm{CKC}_2^{\flat})$ and $\COcap$ (\cref{thm:clarkocone}), while at the
+coalescing endpoint it fails outright, extending the
+deletion-contraction failure of \cref{thm:wall-endpoint} from the inequality
+\textnormal{(P3)} to representability itself.
+\end{proposition}
+\begin{proof}
+Write $g_0:=x_2-x_1>0$ (relabelling the pair if necessary). All estimates
+reduce to the autonomous gap, where everything is explicit.
+
+Step 1: explicit gap law. At the coalescing endpoint the gap
+$g_t$ is a Brownian motion of diffusivity $2$ absorbed at $0$
+(\cref{lem:gap-sticky,lem:gap-com}; \cref{prop:sticky-bm}$(\mathrm{iii})$), and
+coalescing one-point motions never cross: the two particles have continuous
+paths, so they must meet before they cross, and at the endpoint meeting is
+absorbing; hence the order is preserved and $g_T\ge0$. Its time-$T$ law is
+$\bar q\,\delta_0+\bar p(g)\,dg$ with, by the method of images for the
+absorbed kernel of $\partial_g^2$ and the reflection principle,
+\[
+  \bar p(g)=\frac{1}{\sqrt{4\pi T}}
+  \Bigl[e^{-(g-g_0)^2/4T}-e^{-(g+g_0)^2/4T}\Bigr]\quad(g>0),
+  \qquad
+  \bar q=2\bigl(1-\Phi_{\mathrm{std}}(g_0/\sqrt{2T})\bigr),
+\]
+$\Phi_{\mathrm{std}}$ the standard normal distribution function. Hence
+$0<\bar q<1$ for $0<g_0$ and $T<\infty$; $\bar p>0$ on $(0,\infty)$; and
+$\bar p$ is $C^1$ with $\bar p(0)=0$ and
+$\bar p'(0{+})=(4\pi T)^{-1/2}(g_0/T)\,e^{-g_0^2/4T}>0$, so there are
+$\delta_0>0$ and $C<\infty$ with
+\begin{equation}\label{eq:pbar-linear}
+  \bar p(g)\;\le\;C\,g,\qquad 0<g\le\delta_0 .
+\end{equation}
+This is the linear vanishing of \cref{lem:checkB}(C), here in closed form.
+
+Step 2: reduction of pure gap probes to the gap law. The diffuse part
+of $\mu_{\mathbf y}$ is $\mu_\xi(d\xi)\,(1-q(\xi))\,p(\xi,\eta)\,d\eta$
+\eqref{eq:kernel}, and its pushforward under $(\xi,\eta)\mapsto g=\eta-\xi$ is
+the diffuse part of the gap law, i.e.
+$\int\mu_\xi(d\xi)\,(1-q(\xi))\,p(\xi,\xi+g)=\bar p(g)$; likewise
+$\int q\,d\mu_\xi=\bar q=\mu_{\mathbf y}(\Delta)$. For a probe
+$\Phi=\psi(\eta-\xi)$ with $\psi\in C^\infty_b(\R)$, the center-of-mass
+derivative $(\partial_\xi+\partial_\eta)\Phi$ vanishes identically, so the
+diagonal term of \eqref{eq:Ey} is zero, and
+$(\partial_\xi\Phi)^2+(\partial_\eta\Phi)^2=2\,\psi'(\eta-\xi)^2$ gives
+\begin{equation}\label{eq:gap-energy}
+  \cE_{\mathbf y}(\Phi)=\int_0^\infty\psi'(g)^2\,\bar p(g)\,dg,
+  \qquad
+  \|\Phi\|^2_{L^2(\mu_{\mathbf y})}
+  =\bar q\,\psi(0)^2+\int_0^\infty\psi(g)^2\,\bar p(g)\,dg .
+\end{equation}
+
+Step 3: explicit logarithmic probes. Fix $\chi\in C^\infty(\R)$ with
+$\chi\equiv0$ on $(-\infty,0]$, $\chi\equiv1$ on $[1,\infty)$, $0\le\chi\le1$,
+$|\chi'|\le2$, and for $\varepsilon\in(0,\delta_0)$ set
+\[
+  \psi_\varepsilon(g):=\chi\!\Bigl(\frac{\ln(\delta_0/|g|)}{\ln(\delta_0/\varepsilon)}\Bigr)
+  \quad(g\neq0),\qquad \psi_\varepsilon(0):=1 .
+\]
+Then $\psi_\varepsilon\in C^\infty_b(\R)$ is even, $\equiv1$ on
+$[-\varepsilon,\varepsilon]$, and $\equiv0$ off $[-\delta_0,\delta_0]$
+(smoothness across $|g|=\varepsilon,\delta_0$ because $\chi$ is flat at $1$ and
+$0$); in particular $\Phi_\varepsilon:=\psi_\varepsilon(\eta-\xi)$ lies in the
+diagonal-flat core ($\psi_\varepsilon'\equiv0$ near $0$), with
+$\Phi_\varepsilon(\xi,\xi)=1$. On $[\varepsilon,\delta_0]$,
+$|\psi_\varepsilon'(g)|\le2/\bigl(g\ln(\delta_0/\varepsilon)\bigr)$, and
+$\psi_\varepsilon'=0$ elsewhere, so by \eqref{eq:gap-energy} and
+\eqref{eq:pbar-linear}
+\[
+  \cE_{\mathbf y}(\Phi_\varepsilon)
+  \;\le\;\frac{4}{\ln^2(\delta_0/\varepsilon)}
+  \int_\varepsilon^{\delta_0}\frac{\bar p(g)}{g^{2}}\,dg
+  \;\le\;\frac{4C}{\ln^2(\delta_0/\varepsilon)}
+  \int_\varepsilon^{\delta_0}\frac{dg}{g}
+  \;=\;\frac{4C}{\ln(\delta_0/\varepsilon)}
+  \;\xrightarrow[\varepsilon\downarrow0]{}\;0 .
+\]
+Moreover $0\le\psi_\varepsilon\le1$ and $\psi_\varepsilon\to0$ pointwise on
+$(0,\infty)$ as $\varepsilon\downarrow0$, so
+$\int\psi_\varepsilon^2\,\bar p\,dg\to0$ by dominated convergence; with
+\eqref{eq:gap-energy}, $\Phi_\varepsilon\to K$ in $L^2(\mu_{\mathbf y})$
+(the atom values agree, $\Phi_\varepsilon(\xi,\xi)=1=K$ there) and
+$\|\DN\Phi_\varepsilon\|^2_{\cU_{\GamN}}=\cE_{\mathbf y}(\Phi_\varepsilon)\to0$.
+
+Step 4: the closure chain. We record each link separately; the only
+structural input is that $\DN$ is the closure of the seed $D_0$ on the
+diagonal-flat core (\textnormal{(P1)}, \cref{thm:sectorclos,thm:foldB}), valid
+in every phase. (For Step~5 we also need $\divN=\DN^{*}$ to be well defined,
+i.e.\ the flat core dense in $L^2(\mu_{\mathbf y})$: in gap/center-of-mass
+coordinates, replace $\Phi(c,g)$ by $\Phi(c,\chi_\sigma(g))$ with
+$\chi_\sigma$ smooth, odd, $\chi_\sigma'(0)=0$, and $\chi_\sigma(g)=g$ off
+$[-\sigma,\sigma]$; this flattens any $\Phi\in C_b^\infty$ without changing
+its diagonal values, and converges to $\Phi$ in $L^2(\mu_{\mathbf y})$ as
+$\sigma\downarrow0$, the two functions differing only on the diffuse set
+$\{0<|g|\le\sigma\}$, whose $\mu_{\mathbf y}$-mass vanishes. Since
+$C_b^\infty(\R^2)$ is dense in $L^2(\mu_{\mathbf y})$, so is the flat core.)
+\begin{enumerate}
+\item[\textnormal{(a)}] ($L^2$ convergence.) $\Phi_\varepsilon\to K$ in
+$L^2(\mu_{\mathbf y})$: the atom values agree exactly
+($\Phi_\varepsilon(\xi,\xi)=\psi_\varepsilon(0)=1=K$ on $\Delta$), so by the
+pushforward identity of Step~2 the difference is carried by the diffuse part
+alone:
+\[
+  \|\Phi_\varepsilon-K\|^2_{L^2(\mu_{\mathbf y})}
+  =\int_0^\infty\psi_\varepsilon(g)^2\,\bar p(g)\,dg
+  \;\xrightarrow[\varepsilon\downarrow0]{}\;0 .
+\]
+\item[\textnormal{(b)}] (Energy-Cauchy.) $\Phi_\varepsilon-\Phi_{\varepsilon'}$
+is again a pure gap probe, so \eqref{eq:gap-energy} applies to it directly and
+\[
+  \cE_{\mathbf y}(\Phi_\varepsilon-\Phi_{\varepsilon'})
+  =\int_0^\infty\bigl(\psi_\varepsilon'-\psi_{\varepsilon'}'\bigr)^2\bar p\,dg
+  \;\le\;2\,\cE_{\mathbf y}(\Phi_\varepsilon)+2\,\cE_{\mathbf y}(\Phi_{\varepsilon'})
+  \;\xrightarrow[\varepsilon,\varepsilon'\downarrow0]{}\;0
+\]
+by Step~3. By the seed isometry
+$\|D_0\Phi\|^2_{\cU_{\GamN}}=\cE_{\mathbf y}(\Phi)$
+(\cref{thm:foldA}$(\mathrm{ii})$), the one-forms $(D_0\Phi_\varepsilon)$ are
+Cauchy in $\cU_{\GamN}$, with limit $v=0$ since
+$\|D_0\Phi_\varepsilon\|^2=\cE_{\mathbf y}(\Phi_\varepsilon)\to0$.
+\item[\textnormal{(c)}] (Closedness.) The graph pairs
+$(\Phi_\varepsilon,D_0\Phi_\varepsilon)\to(K,0)$ in
+$L^2(\mu_{\mathbf y})\times\cU_{\GamN}$, and $\DN=\overline{D_0}$ is closed;
+hence $K\in\Dom(\DN)$.
+\item[\textnormal{(d)}] (Energy-null.) $\DN K=\lim_\varepsilon
+D_0\Phi_\varepsilon=0$, equivalently $K$ lies in the domain of the closed form
+with $\cE_{\mathbf y}(K)=\|\DN K\|^2=0$.
+\item[\textnormal{(e)}] (Nonconstancy.) Under the point-started law
+$\mu_{\mathbf y}=m_{\theta,T,\mathbf x}$ with $x_1\neq x_2$,
+$\mathrm{Var}_{\mu_{\mathbf y}}(K)
+=\mu_{\mathbf y}(\Delta)\bigl(1-\mu_{\mathbf y}(\Delta)\bigr)
+=\bar q(1-\bar q)>0$ by the explicit reflection-principle value of Step~1, so
+$K\notin\R\,1$ in $L^2(\mu_{\mathbf y})$.
+\end{enumerate}
+No deletion contraction, no $(\mathrm{CKC}_2^{\flat})$, and no capacity
+uniformity enters: the chain uses only \cref{conv:LJR}, the
+fixed-sector closability \textnormal{(P1)}, and the closed-form gap law of
+Step~1. Note also that
+\textnormal{(a)}--\textnormal{(d)} do not contradict closability: \textnormal{(P1)}
+asserts that the closed form is well defined on graph limits, not that its
+kernel is trivial; what fails at the endpoint is irreducibility.
+
+Step 5: non-representability. For any
+$u\in\Dom(\divN)$,
+$\langle\divN u,K\rangle=\langle u,\DN K\rangle_{\cU_{\GamN}}=0$ and
+$\langle\divN u,1\rangle=0$, so
+$\mathrm{Ran}\,\divN\perp\mathrm{span}\{1,K\}$; if $\divN u=K-\E K$ then
+$\|K-\E K\|^2=\langle\divN u,K\rangle-\E K\,\langle\divN u,1\rangle=0$,
+contradicting $\bar q(1-\bar q)>0$.
+\end{proof}
+
+The dichotomy of \cref{thm:discriminant} therefore extends from the deletion
+contraction to representability itself, asymmetrically: in phase (R), under
+the named conditions of \cref{thm:clarkocone}, every centered sector
+functional is a divergence with a canonical minimal-norm representer, while at
+the coalescing endpoint the energy vanishes on the very
+functional that records coalescence, and no divergence can reach it.
+
+\subsection{The gap sector: the dichotomy in full}\label{subsec:gapco}
+
+On one sub-sector the full dichotomy follows from \cref{conv:LJR} alone. The
+diagonal-flat gap observables
+\[
+  \cA^{\flat}_{\mathrm{gap}}:=\bigl\{\,f(\eta-\xi)\;:\;f\in C_b^\infty(\R),\
+  f'(0)=0\,\bigr\}
+\]
+form a genuine unital algebra ($(fg)'(0)=f'(0)g(0)+f(0)g'(0)=0$, and
+$1\in\cA^{\flat}_{\mathrm{gap}}$), unlike the pairwise core
+(\cref{rem:sectorwise}). Let $\bar\nu:=\bar q\,\delta_0+\bar p(g)\,dg$ be the
+time-$T$ law of the autonomous gap (\cref{lem:gap-sticky,prop:sticky-bm}), with
+$\int\bar p=1-\bar q$, and $\hat p:=\bar p/(1-\bar q)$ the normalized diffuse
+density. Since $\|f(\eta-\xi)\|^2_{L^2(\mu_{\mathbf y})}=\int f^2\,d\bar\nu$,
+the closure of $\cA^{\flat}_{\mathrm{gap}}$ in $L^2(\mu_{\mathbf y})$ is
+$L^2(\bar\nu)$; the restricted $\Gamma$-tuple satisfies the five axioms of
+\cref{ass:gamma-axioms} (the closability axiom being the one-dimensional
+weighted statement, as in \cref{thm:sectorclos}), so
+\cref{thm:foldA,thm:foldB} produce a closed gap pair
+$(D_{\bar\nu},\delta_{\bar\nu}:=D_{\bar\nu}^{*})$ on $L^2(\bar\nu)$ with, on the
+core (the two-sided version of \eqref{eq:gap-energy}),
+\[
+  \cE_{\bar\nu}(f)\;=\;\|D_{\bar\nu}f\|^2\;=\;\int_\R f'(g)^2\,\bar p(g)\,dg .
+\]
+This is a sub-pair of the fixed two-point sector, with its own adjoint; the
+statements below are internal to it.
+
+\begin{theorem}[Black Clark--Ocone dichotomy on the gap sector]\label{thm:gap-co}
+Fix the two-point sector from $x_1\neq x_2$ under \cref{conv:LJR}, and consider
+the gap pair $(D_{\bar\nu},\delta_{\bar\nu})$. Only \cref{conv:LJR} is
+assumed; $(\mathrm{CKC}_2^{\flat})$, $\COcap$, and $\COmix$ do not enter.
+\begin{enumerate}
+\item[\textnormal{(R)}] In the reflecting phase, with
+\[
+  \bar K:=\bar q\,\hat\tau_{\mathrm{wt}}+C^{\hat p}_P,\qquad
+  \hat\tau_{\mathrm{wt}}:=\Bigl(\int\sqrt{\hat r(g)}\,\hat p(g)\,dg\Bigr)^{2},\qquad
+  \hat r(g):=\Bigl|\int_0^g\frac{ds}{\hat p(s)}\Bigr|,
+\]
+one has $\bar K<\infty$ and the Poincar\'e inequality
+$\mathrm{Var}_{\bar\nu}(f)\le\bar K\,\cE_{\bar\nu}(f)$ for all
+$f\in\Dom(D_{\bar\nu})$. Consequently the conclusions of
+\cref{cor:co-gap,def:PiN,lem:PiN-props,thm:clarkocone} hold verbatim for the
+gap pair with $C_N=\bar K$: every centered $F\in L^2(\bar\nu)$ is a divergence,
+$F=\delta_{\bar\nu}(D_{\bar\nu}G_{\bar\nu}F)$, and for $F\in\Dom(D_{\bar\nu})$,
+\[
+  F-\E_{\bar\nu}F\;=\;\delta_{\bar\nu}\bigl(\Pi_{\bar\nu}D_{\bar\nu}F\bigr),
+\]
+with $\Pi_{\bar\nu}$ the minimal-norm Green representer of the gap pair.
+\item[\textnormal{(C)}] At the coalescing endpoint the probes of
+\cref{prop:co-failure} lie in $\cA^{\flat}_{\mathrm{gap}}$, so
+$K=\mathbf 1_{\{g=0\}}\in\Dom(D_{\bar\nu})$ with $D_{\bar\nu}K=0$, $K$
+nonconstant, and the centered functional $K-\E_{\bar\nu}K$ admits no
+representation $\delta_{\bar\nu}(u)$.
+\end{enumerate}
+Thus the gap sector carries the full dichotomy:
+the representation holds in the reflecting phase with explicit constant
+$\bar K$, and fails at the coalescing endpoint.
+\end{theorem}
+\begin{proof}
+\textnormal{(R)} Poincar\'e. For $f$ in the core, the mixture-variance
+identity for $\bar\nu=\bar q\,\delta_0+(1-\bar q)\,\hat p\,dg$ gives
+\[
+  \mathrm{Var}_{\bar\nu}(f)
+  =\bar q(1-\bar q)\bigl[f(0)-\langle f\rangle_{\hat p}\bigr]^2
+   +(1-\bar q)\,\mathrm{Var}_{\hat p}(f).
+\]
+The value-trace bound
+$[f(0)-\langle f\rangle_{\hat p}]^2\le\hat\tau_{\mathrm{wt}}\int f'^2\,\hat p$
+is the one-dimensional instance of \eqref{eq:traces} (\cref{app:assembly}: write
+$f(0)-\langle f\rangle_{\hat p}=-\int(\int_0^g f'\,ds)\hat p\,dg$ and apply
+Cauchy--Schwarz with the resistance $\hat r$), and
+$\mathrm{Var}_{\hat p}(f)\le C^{\hat p}_P\int f'^2\,\hat p$ is the Poincar\'e
+inequality of the diffuse gap density. Collecting, and using
+$(1-\bar q)\int f'^2\,\hat p=\int f'^2\,\bar p=\cE_{\bar\nu}(f)$,
+\[
+  \mathrm{Var}_{\bar\nu}(f)\le
+  \bigl[\bar q\,\hat\tau_{\mathrm{wt}}+C^{\hat p}_P\bigr]\,\cE_{\bar\nu}(f)
+  =\bar K\,\cE_{\bar\nu}(f),
+\]
+which passes to $\Dom(D_{\bar\nu})$ by graph-norm continuity of both sides.
+
+Finiteness of $\bar K$. $C^{\hat p}_P<\infty$ is
+\cref{prop:sticky-bm}$(\mathrm i)$. For $\hat\tau_{\mathrm{wt}}$: in phase (R),
+$\hat p$ is continuous and positive at the wall
+(\cref{prop:sticky-bm}$(\mathrm{ii})$), so
+$\hat P_0:=\inf_{[-\delta,\delta]}\hat p>0$ for some $\delta>0$ and
+$\hat r(g)\le|g|/\hat P_0$ there; for $|g|\ge\delta$ the two-sided Gaussian
+envelopes of the sticky kernel (\cref{prop:sticky-bm}$(\mathrm i)$; stickiness
+only delays the spreading, cf.\ the proof of \cref{lem:gap-com}$(\mathrm{iii})$)
+give $\hat r(g)\le C\,e^{(|g|+|g_0|)^2/4T}$ and
+$\hat p(g)\le C\,e^{-(|g|-|g_0|)^2/4T}$, whence
+$\sqrt{\hat r(g)}\,\hat p(g)\le C'\,e^{-g^2/8T+C''|g|}$, integrable; so
+$\hat\tau_{\mathrm{wt}}<\infty$ and $\bar K<\infty$.
+
+Conclusions. \Cref{cor:co-gap,def:PiN,lem:PiN-props,thm:clarkocone} use
+only the data ``closed pair with Poincar\'e inequality'' and apply verbatim to
+$(D_{\bar\nu},\delta_{\bar\nu})$ with $C_N=\bar K$.
+
+\textnormal{(C)} The probes $\Phi_\varepsilon=\psi_\varepsilon(\eta-\xi)$ of
+\cref{prop:co-failure} are flat gap observables,
+$\psi_\varepsilon\in\cA^{\flat}_{\mathrm{gap}}$ after restriction to the gap
+variable, and all the estimates of that proof (Steps 1--4) are already expressed
+in terms of $\bar\nu$ and $\cE_{\bar\nu}$; the closure chain and the
+orthogonality argument run verbatim inside the gap pair, whose adjoint
+$\delta_{\bar\nu}$ satisfies
+$\langle\delta_{\bar\nu}u,K\rangle=\langle u,D_{\bar\nu}K\rangle=0$ and
+$\langle\delta_{\bar\nu}u,1\rangle=0$.
+\end{proof}
+
+\Cref{thm:gap-co} gives a complete energy-space Clark--Ocone dichotomy,
+toggled by the boundary type alone, on the sub-sector where the LJR structure
+is one-dimensional and explicit. Its scope is also strictly limited: the gap
+pair sees only difference observables of one pair of points, and the
+center-of-mass directions, where the diagonal carr\'e lives, re-enter through
+\cref{prop:com-half} and require $\COmix$ (or $\COcap$) for the full
+two-point sector. The $|\mathbf x|=1$ case of \cref{thm:clarkocone} and
+\cref{thm:gap-co} thus bracket the full sector from its two marginal
+directions, and what is missing is exactly the joint $(g_T,V)$-mean control
+named $\COmix$.
+
+%==============================================================
+\section{Main results III: the partitionwise dynamic black operator-It\^o formula}\label{sec:dynamic}
+%==============================================================
+
+The third main result produces the increment $f(Z_T)-f(Z_0)$ dynamically from
+the energy calculus, in two stages: the Dynkin comparison, which identifies
+exactly what a dynamic formula must disintegrate, and the adapted telescope,
+which carries the disintegration out at the level of partitions, exactly. The
+standing input is stated once: everything below rests on
+the slicewise Poincar\'e/Clark--Ocone input
+$(\mathrm{Poin}^{\mathrm{dyn}})$ of \cref{def:dynamic-div}, automatic at
+$m=1$ and, in phase \textnormal{(R)}, on the gap sector, where the dynamic formula needs nothing further (\cref{cor:dynamic-gap}); at the full
+two-point level it is the slicewise form of $\COmix$, and the formula is exactly as strong as that input.
+
+\subsection{The Dynkin comparison: what a dynamic formula must disintegrate}
+
+\begin{proposition}[Dynkin pair and the static-divergence comparison]\label{prop:dynkin}
+Fix a sector $\mathbf x$, $|\mathbf x|\le2$, let $Z=(Z_t)_{t\le T}$ be the
+$m$-point motion from $\mathbf x$ with Feller generator $L^{(m)}$
+\citep{LJR-FCN}, and let $f,f^2\in\Dom(L^{(m)})$, $f$ bounded.
+\begin{enumerate}
+\item[$(\mathrm i)$] (Dynkin pair; classical.)
+$M^f_t:=f(Z_t)-f(Z_0)-\int_0^tL^{(m)}f(Z_s)\,ds$ is a centered
+$L^2(\Pth)$-martingale with
+\[
+  \langle M^f\rangle_t=\int_0^t\Gamma^{(m)}_\theta(f,f)(Z_s)\,ds,
+  \qquad
+  \E\bigl[(M^f_T)^2\bigr]=\E\!\int_0^T\Gamma^{(m)}_\theta(f,f)(Z_s)\,ds ,
+\]
+the time-integrated carr\'e, as opposed to the single-time datum
+$\E[\GamN]=\E[\Gamma^{(m)}_\theta(f,f)(Z_T)]$ on which the energy pair is
+built.
+\item[$(\mathrm{ii})$] (Comparison.) Assume in addition the sectorwise
+Poincar\'e inequality of \cref{cor:co-gap} on the fixed sector. With
+$F:=f(Z_T)$ and $F_0:=F-\E F$, \cref{thm:clarkocone}$(\mathrm{iv})$ applies to
+$F\in L^2(\mu_{\mathbf x})$ and, as an identity in $L^2(\Omega,\Pth)$,
+\begin{equation}\label{eq:dynkin-compare}
+  \divN\bigl(\DN G_NF_0\bigr)
+  \;=\;M^f_T\;+\;\int_0^T\Bigl[L^{(m)}f(Z_s)-\E\,L^{(m)}f(Z_s)\Bigr]ds .
+\end{equation}
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+$(\mathrm i)$ is Dynkin's formula and the carr\'e-du-champ bracket identity for
+a Feller process with $f,f^2\in\Dom(L^{(m)})$ (standard; the $m$-point
+semigroups are Feller by~\citep{LJR-FCN}). For $(\mathrm{ii})$: centering
+Dynkin's formula at $t=T$ (and noting $f(Z_0)$ is deterministic and
+$\E M^f_T=0$) gives
+$F-\E F=M^f_T+\int_0^T[L^{(m)}f(Z_s)-\E L^{(m)}f(Z_s)]\,ds$, while
+\cref{thm:clarkocone}$(\mathrm{iv})$ gives $F-\E F=\divN(\DN G_NF_0)$; the two
+right-hand sides agree as elements of $L^2(\Omega,\Pth)$.
+\end{proof}
+
+Neither summand on the right of \eqref{eq:dynkin-compare} is
+$\sigma(Z_T)$-measurable; only the sum is. The static divergence therefore
+aggregates the entire Dynkin pair, martingale plus centered
+compensator, into a single one-form acting at the terminal time. A dynamic
+black It\^o formula is exactly a filtration-compatible disintegration of the
+representer $\DN G_NF_0$: a family of modules $\cU_{[0,t]}$ with compatible
+divergences $\delta_t$ such that the aggregate splits into an adapted
+$\delta$-integral matching $M^f$ and a drift matching the compensator, with
+bracket $\int_0^\cdot\Gamma^{(m)}_\theta(f,f)(Z_s)\,ds$. By blackness
+(\cref{thm:black}) the martingale $M^f$ admits no first-chaos representation,
+so the disintegration, if it exists, must remain energy-spatial at every time;
+nothing in the present single-time construction supplies the time-indexed
+module family, and constructing it is \cref{prob:multitime}.
+
+\subsection{The adapted telescope: a partitionwise dynamic formula}
+\label{subsec:dynamic}
+
+The disintegration called for by \eqref{eq:dynkin-compare} can be carried out
+at the level of partitions, and exactly. The mechanism rests on one
+observation about what blackness does and does not forbid. The first chaos
+consists of limits of slice-additive functionals, sums
+$\sum_kX_k$ with $X_k$ measurable with respect to the slice field
+$\cF^\theta_{t_k,t_{k+1}}$ alone; \cref{thm:black} annihilates these.
+The martingale differences $f(Z_{t_{k+1}})-\E[f(Z_{t_{k+1}})\mid\cF_{t_k}]$ are
+not of this form: they depend on $Z_{t_k}$, i.e.\ on the past. Adapted
+increments live exactly in the part of $L^2$ that blackness leaves available,
+and the slicewise Clark--Ocone representation reaches them: conditionally on
+$Z_{t_k}=z$, the increment is a centered functional on a fresh fixed sector
+(start $z$, horizon $\Delta_k$), to which \cref{thm:clarkocone}$(\mathrm{iv})$
+applies.
+
+Fix a sector $\mathbf x$, $|\mathbf x|\le2$, and write $\cF_t$ for the
+filtration of the $m$-point motion $Z$. For a start $z$ and horizon
+$\Delta>0$ let $\mu^{\Delta}_z$ be the law of $Z_\Delta$ from $z$, and let
+$(D^{z,\Delta},\delta^{z,\Delta})$ be the fixed-sector closed pair on
+$L^2(\mu^{\Delta}_z)$ (the diagonal-flat pair at $m=2$), with Green operator
+$G^{z,\Delta}$ when the sector Poincar\'e inequality holds; all the
+fixed-sector results of \cref{sec:clarkocone} are uniform in $(z,\Delta)$ in
+their assumptions, the time-$T$ sector being the case $(z,\Delta)=(\mathbf x,T)$.
+
+\begin{definition}[Slicewise Poincar\'e; adapted slice one-forms; dynamic divergence]\label{def:dynamic-div}
+Let $\pi:0=t_0<\dots<t_n=T$ be a partition, $\Delta_k:=t_{k+1}-t_k$,
+$|\pi|:=\max_k\Delta_k$.
+\textnormal{(a)} The slicewise Poincar\'e condition $(\mathrm{Poin}^{\mathrm{dyn}})$ is: for every
+$\Delta\in(0,T]$ and (law of $Z_t$)-a.e.\ start $z$, the sector pair
+$(D^{z,\Delta},\delta^{z,\Delta})$ satisfies
+$\mathrm{Var}_{\mu^\Delta_z}\le C(z,\Delta)\,\cE$ with $C(z,\Delta)<\infty$;
+no uniformity in $(z,\Delta)$ is required. It holds automatically at
+$m=1$ ($C=2\Delta$, \cref{lem:sector-poincare}) and on the gap sector in phase
+\textnormal{(R)} ($C=\bar K(z,\Delta)$, \cref{thm:gap-co}, every start
+including the atom); at $m=2$ it is supplied by the slicewise form of
+$\COmix$.
+\textnormal{(b)} An adapted slice one-form is a family
+$u=(u_k)_{k<n}$ where $u_k(z)\in\Dom(\delta^{z,\Delta_k})$ for a.e.\ $z$, with
+the composites $W_k(u):=\delta^{z,\Delta_k}\bigl(u_k(z)\bigr)\big|_{z=Z_{t_k}}$
+(functions of $(Z_{t_k},Z_{t_{k+1}})$) jointly measurable and square
+integrable. Its dynamic divergence is
+\[
+  \delta^{\pi}(u)\;:=\;\sum_{k=0}^{n-1}W_k(u).
+\]
+Each $W_k(u)$ is a martingale difference,
+$\E[W_k(u)\mid\cF_{t_k}]=\langle\delta^{z,\Delta_k}u_k(z),1\rangle\big|_{z=Z_{t_k}}=0$,
+so the increments are orthogonal and
+\begin{equation}\label{eq:orth-incr}
+  \E\bigl[\delta^{\pi}(u)^2\bigr]\;=\;\sum_{k}\E\bigl[W_k(u)^2\bigr],
+\end{equation}
+the orthogonal-increment identity, the black substitute for the It\^o
+isometry: it is supplied by adaptedness and the centering of the slice
+divergences, not by any driving noise.
+\end{definition}
+
+\begin{definition}[Driven and driverless representations]\label{def:driverless}
+An additive integrator for the noise $\cN_\theta$ is a family
+$W=(W_{s,t})_{s\le t}$ with $W_{s,t}\in L^2(\cF^{\theta}_{s,t})$ centered,
+additive ($W_{s,u}+W_{u,t}=W_{s,t}$ for $s\le u\le t$), and nondegenerate
+($\E[W_{0,T}^2]>0$). A partitionwise dynamic representation is driven
+if its martingale increments have the form
+$W_k=a_k(Z_{t_k})\,W_{t_k,t_{k+1}}$, up to refinement-vanishing remainders,
+for a single fixed additive integrator $W$ and predictable coefficients $a_k$, the Wiener case, with $W_{s,t}=B_t-B_s$, and driverless
+otherwise. An additive integrator is exactly a nonzero element of the first
+chaos of $\cN_\theta$ (a centered, additive-across-time, square-integrable
+family), so \cref{thm:black} states that the sticky-flow noise admits
+no additive integrator: every partitionwise dynamic representation over
+$\cN_\theta$ is necessarily driverless. The term is used in this sense
+throughout.
+\end{definition}
+
+\begin{theorem}[Partitionwise dynamic black operator-It\^o formula; under $(\mathrm{Poin}^{\mathrm{dyn}})$]\label{thm:dynamic}
+Assume \cref{conv:LJR} and the slicewise condition
+$(\mathrm{Poin}^{\mathrm{dyn}})$ of \cref{def:dynamic-div} on the fixed
+sector (automatic at $m=1$ and, in phase
+\textnormal{(R)}, on the gap sector; the slicewise form of $\COmix$ at the
+full two-point level). Let $f\in\Dom(L^{(m)})$ be bounded. For a partition $\pi$ define the
+canonical adapted integrand
+\[
+  u^{f,\pi}_k(z)\;:=\;D^{z,\Delta_k}\,G^{z,\Delta_k}\bigl(f-P_{\Delta_k}f(z)\bigr)
+  \;\in\;\Dom(\delta^{z,\Delta_k}),
+  \qquad P_\Delta f(z):=\E_z[f(Z_\Delta)] ,
+\]
+the conditional minimal-norm Green representer of the slice increment (no
+flatness of $f$ is required: the representation of
+\cref{thm:clarkocone}$(\mathrm{iv})$ covers every centered element of
+$L^2(\mu^{\Delta_k}_z)$). Then:
+\begin{enumerate}
+\item[$(\mathrm i)$] (Exact telescope.) For every partition $\pi$,
+as an identity in $L^2(\Omega,\Pth)$,
+\begin{equation}\label{eq:dynamic-exact}
+  f(Z_T)-f(Z_0)\;=\;\delta^{\pi}\bigl(u^{f,\pi}\bigr)
+  \;+\;\sum_{k=0}^{n-1}\int_0^{\Delta_k}\bigl(P_sL^{(m)}f\bigr)(Z_{t_k})\,ds .
+\end{equation}
+\item[$(\mathrm{ii})$] (Bracket.) The dynamic divergence term obeys
+\eqref{eq:orth-incr} with
+$\E[W_k^2]=\E\bigl[\mathrm{Var}\bigl(f(Z_{t_{k+1}})\mid\cF_{t_k}\bigr)\bigr]$;
+when moreover $f$ lies in the slice form domains, each summand is computed by
+the energy pairing,
+$\E[W_k^2]=\E\bigl[\langle\Pi^{z,\Delta_k}D^{z,\Delta_k}f,\
+D^{z,\Delta_k}f\rangle\big|_{z=Z_{t_k}}\bigr]$
+(\cref{thm:clarkocone}$(\mathrm{iii})$): no quadratic variation enters.
+\item[$(\mathrm{iii})$] (Mesh limit.) As $|\pi|\to0$ the compensator in
+\eqref{eq:dynamic-exact} converges in $L^2(\Pth)$ to
+$\int_0^TL^{(m)}f(Z_s)\,ds$, hence $\delta^{\pi}(u^{f,\pi})$ converges in
+$L^2(\Pth)$ to the Dynkin martingale value $M^f_T$ of \cref{prop:dynkin}, and
+\begin{equation}\label{eq:dynamic-limit}
+  f(Z_T)-f(Z_0)\;=\;\lim_{|\pi|\to0}\delta^{\pi}\bigl(u^{f,\pi}\bigr)
+  \;+\;\int_0^TL^{(m)}f(Z_s)\,ds ,
+\end{equation}
+with, if also $f^2\in\Dom(L^{(m)})$,
+\[
+  \E\Bigl[\bigl(\lim_{|\pi|\to0}\delta^{\pi}(u^{f,\pi})\bigr)^{2}\Bigr]
+  \;=\;\E\!\int_0^T\Gamma^{(m)}_\theta(f,f)(Z_s)\,ds .
+\]
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+$(\mathrm i)$ Telescope $f(Z_T)-f(Z_0)=\sum_k\bigl[f(Z_{t_{k+1}})-
+\E[f(Z_{t_{k+1}})\mid\cF_{t_k}]\bigr]+\sum_k\bigl[\E[f(Z_{t_{k+1}})\mid\cF_{t_k}]
+-f(Z_{t_k})\bigr]$. For the first sum: by the Markov property the conditional
+law of $Z_{t_{k+1}}$ given $\cF_{t_k}$ is $\mu^{\Delta_k}_{Z_{t_k}}$, and by
+$(\mathrm{Poin}^{\mathrm{dyn}})$ and \cref{thm:clarkocone}$(\mathrm{iv})$
+applied on the slice sector with start $z=Z_{t_k}$,
+\[
+  f(Z_{t_{k+1}})-\E[f(Z_{t_{k+1}})\mid\cF_{t_k}]
+  \;=\;\delta^{z,\Delta_k}\bigl(u^{f,\pi}_k(z)\bigr)\Big|_{z=Z_{t_k}}
+  \;=\;W_k\bigl(u^{f,\pi}\bigr)
+\]
+(the composite $W_k=f(Z_{t_{k+1}})-(P_{\Delta_k}f)(Z_{t_k})$ is manifestly
+jointly measurable). For the second sum: $f\in\Dom(L^{(m)})$ gives the Feller
+identity $\E[f(Z_{t_k+\Delta})\mid\cF_{t_k}]-f(Z_{t_k})
+=\int_0^{\Delta}(P_sL^{(m)}f)(Z_{t_k})\,ds$.
+$(\mathrm{ii})$ Orthogonality is \eqref{eq:orth-incr};
+$W_k=f(Z_{t_{k+1}})-\E[f(Z_{t_{k+1}})\mid\cF_{t_k}]$ gives the conditional
+variance; the energy pairing is the slicewise instance of
+\cref{thm:clarkocone}$(\mathrm{iii})$.
+$(\mathrm{iii})$ Set $h:=L^{(m)}f$, which lies in $C_0$ since the Feller
+generator maps its domain into $C_0$. The difference between the
+compensator and $\int_0^Th(Z_s)\,ds$ is
+$-\sum_k\int_0^{\Delta_k}\xi_{k,s}\,ds$ with
+$\xi_{k,s}:=h(Z_{t_k+s})-\E[h(Z_{t_k+s})\mid\cF_{t_k}]$, and
+\[
+  \E[\xi_{k,s}^2]=\E\bigl[\mathrm{Var}(h(Z_{t_k+s})\mid\cF_{t_k})\bigr]
+  \le\E\bigl[(h(Z_{t_k+s})-h(Z_{t_k}))^2\bigr]
+  \le\sup_z\E_z\bigl[(h(Z_s)-h(z))^2\bigr]=:\eta(s),
+\]
+where $\eta(s)=\sup_z[(P_sh^2)(z)-2h(z)(P_sh)(z)+h^2(z)]
+\le\|P_sh^2-h^2\|_\infty+2\|h\|_\infty\|P_sh-h\|_\infty\to0$ as $s\downarrow0$
+by Feller strong continuity; set
+$\bar\eta(\delta):=\sup_{s\le\delta}\eta(s)$, which also tends to $0$ as
+$\delta\downarrow0$ ($\eta$ itself need not be monotone). By the triangle
+inequality the $L^2$ norm of the
+difference is at most $\sum_k\Delta_k\sqrt{\bar\eta(|\pi|)}=T\sqrt{\bar\eta(|\pi|)}\to0$
+(cross-slice orthogonality of the $\xi_{k,s}$ would sharpen this to
+$(T|\pi|\,\bar\eta(|\pi|))^{1/2}$; the simpler bound suffices).
+Since the left side of \eqref{eq:dynamic-exact} does not depend on $\pi$,
+$\delta^{\pi}(u^{f,\pi})\to f(Z_T)-f(Z_0)-\int_0^TL^{(m)}f(Z_s)\,ds=M^f_T$ in
+$L^2$, and the bracket of $M^f_T$ is \cref{prop:dynkin}$(\mathrm i)$.
+\end{proof}
+
+\begin{corollary}[The dynamic formula on the gap sector]\label{cor:dynamic-gap}
+In phase \textnormal{(R)}, for the autonomous gap $g_t$ and every bounded
+$f\in\Dom(L_\gamma)$ (the sticky gap generator), the conclusions of
+\cref{thm:dynamic} hold with no input beyond \cref{conv:LJR}: the slicewise Poincar\'e
+constants are the $\bar K(z,\Delta)<\infty$ of \cref{thm:gap-co}, finite for
+every start $z\in\R$ (including the atom $z=0$) and every horizon. Moreover
+the drift is explicit, the Wentzell boundary term being clocked by the sticky
+occupation time:
+\[
+  \int_0^TL_\gamma f(g_s)\,ds
+  \;=\;\int_0^Tf''(g_s)\,\mathbf 1_{\{g_s\neq0\}}\,ds
+  \;+\;\gamma^{-1}\bigl[f'(0{+})-f'(0{-})\bigr]\,\mathrm{Occ}_T ,
+\]
+with $\mathrm{Occ}_T$ the occupation time of \cref{prop:occupation}.
+\end{corollary}
+\begin{proof}
+The gap is an autonomous Feller Markov process (\cref{lem:gap-sticky}), its
+slice sectors are the gap pairs of \cref{thm:gap-co} with start $z$ and
+horizon $\Delta$, and the proof of \cref{thm:gap-co} used only
+\cref{prop:sticky-bm}, whose assumptions hold for every start and horizon in
+phase \textnormal{(R)}; so $(\mathrm{Poin}^{\mathrm{dyn}})$ holds and
+\cref{thm:dynamic} applies. The drift formula is the form of $L_\gamma$:
+$L_\gamma f=f''$ off $0$ and
+$L_\gamma f(0)=\gamma^{-1}[f'(0{+})-f'(0{-})]$ (\cref{rem:dtrace-gamma2}),
+and $\int_0^T\mathbf 1_{\{g_s=0\}}\,ds=\mathrm{Occ}_T$.
+\end{proof}
+
+\begin{remark}[What is black about \cref{thm:dynamic}]\label{rem:driverless}
+\textnormal{(1)} Driverless, in the sense of \cref{def:driverless}. In
+the Wiener case the slicewise
+representations collapse onto integration against the increments of a single
+driving martingale: the predictable integrand varies, the driver does not, and
+the driver is an additive integrator, i.e.\ first chaos. Here no additive
+integrator exists, that is exactly \cref{thm:black} read through
+\cref{def:driverless}, and the dynamic object is instead an orthogonal sum of
+state-indexed conditional divergences $\delta^{z,\Delta_k}$, the
+operator itself moving with $Z_{t_k}$. The orthogonal-increment identity
+\eqref{eq:orth-incr} replaces the It\^o isometry, and the conditional Green
+representers replace the predictable projection.
+\textnormal{(2)} Compatibility with blackness. \Cref{thm:black} kills
+slice-additive functionals; the increments $W_k$ are conditionally centered
+but past-dependent, hence invisible to the first-chaos criterion. The dynamic
+formula is built inside the part of $L^2$ that blackness spares.
+\textnormal{(3)} Beyond the theorem. The continuum adapted module
+$\bigcup_t\,\cU_{[0,t]}$ with a single divergence, the convergence of the
+integrands $u^{f,\pi}$ themselves as $|\pi|\to0$ (only the divergences
+converge, their limit identified through the compensator), pathwise chain
+rules, and assembly across sectors all remain open
+(\cref{prob:multitime}). For the gap
+sector a classical semimartingale It\^o formula exists as well, the sticky gap
+being a semimartingale; the content of \cref{cor:dynamic-gap} is that the
+formula is reproduced by the intrinsic energy calculus without invoking the
+driving Brownian motion, the only form that can survive at flow level,
+where no driver exists.
+\end{remark}
+
+%==============================================================
+\section{Open problems}\label{sec:openproblems}
+%==============================================================
+
+Four problems remain, each stated with the missing element identified.
+
+\begin{problem}[Full reflecting case]\label{prob:fullreflecting}
+Beyond the diagonal-flat sub-core the moving-atom trace is second-order
+(\cref{rem:dtrace-gamma2}), and $(\mathrm{CKC}_2^{\flat})$ no longer governs it.
+The enhanced energy $E_{H2}(\Phi)=E_{\mathrm{fo}}(\Phi)+\lambda\,\|L\Phi\|^2$
+satisfies the five closed-pair axioms and produces a closed pair, so the
+obstruction lies not in the construction but in the contraction:
+\textnormal{(P3)} for the enhanced energy holds only if conditional expectation
+intertwines with the $H^2$ structure, which is the time-$T$-law versus
+motion-semigroup reference-measure question (\cref{rem:reference-measure}). Decide
+this intertwining, and with it the full reflecting integration-by-parts identity.
+(\Cref{prop:agmon} now discharges the trace condition \cref{hyp:dtrace} on the
+second-order sub-core with the explicit constant
+$C_{\mathrm{tr}}\sim1/\inf p$, and \cref{rem:order-mismatch} establishes the
+mixed deletion inequality; the open content is thereby isolated to the
+intertwining alone.)
+\end{problem}
+
+\begin{problem}[Compatibility at $m\ge3$]\label{prob:m3}
+The pairwise sector is protected because the only stratum reached under $2\to1$
+deletion is codimension one, hence non-polar in phase (R); at $m\ge3$ the
+inclusion $\{1\}\subset\{1,2,3\}$ meets a multi-coalescence stratum of codimension
+$\ge2$ with two $\Gamma$-blind difference directions, and \eqref{eq:p3} plausibly
+fails, a difference-direction probe $g_n(\eta_1-\xi,\eta_2-\xi)$ sending
+$\cE_{\mathbf y}(g_n)\to0$ while the atom-weight term keeps
+$\cE_{\mathbf x}(Pg_n)\not\to0$. Deciding this requires the $m\ge3$ time-$T$
+near-multi-coalescence law $m_{\theta,T,\mathbf x}$, not characterized
+in~\citep{LJR-FCN,LJR-circle-noise}; the deciding quantity is whether the apex is polar
+for the degenerate $\mu_y$-weighted gap energy, a transverse-density threshold.
+(\Cref{prop:m3-blocked} now shows that, under the pairwise-stratum regularity
+$(\mathrm R_3)$ of \cref{hyp:r3}, this polarity mechanism cannot close:
+the one-dimensional partial-coincidence strata short-circuit the
+codimension-two apex and give it positive capacity. The problem therefore
+shifts: establish $(\mathrm R_3)$ from the LJR construction, and decide whether
+a failure at $m\ge3$ can instead be driven by the score and atom-weight terms,
+the only channels the capacity argument does not block.)
+\end{problem}
+
+\begin{problem}[The mixed-mean bound, and the sharp sector gap]\label{prob:cocap}
+\Cref{thm:clarkocone} runs on either the uniformization $\COcap$
+(\cref{def:cocap}), automatic in the translation-invariant reference, but
+expected to fail under the point-started reference by the two-well
+mechanism of \cref{rem:two-well}, or on the mixed-mean bound $\COmix$
+(\cref{def:comix}), which the gap-path route of \cref{prop:com-half} isolates
+as the operative condition. Prove $\COmix$ for the point-started two-point law
+of \cref{conv:LJR}: by \cref{prop:com-half}$(\mathrm{iii})$ the
+$V$-direction of the conditional mean $H_\Phi(g_T,V)$ is first-order, and by
+\cref{thm:gap-co} the pure $g_T$-direction is controlled outright, so
+what is missing is joint control of the planar $(g_T,V)$-law, e.g.\ quantitative
+lower bounds on the conditional occupation density.
+\Cref{rem:comix-instantiation} now tests the bound itself,
+$C_{\mathrm{mix}}\approx2$ at $g_0=T=1$ across $\gamma\in[0.05,0.5]$, with the
+dominant channel the linear gap mode already controlled by \cref{thm:gap-co}
+and the planar excess of order fifteen percent at the stickier parameters, so
+the missing planar control is quantitatively a perturbation of the
+gap-sector bound; what remains is its proof, and the certified
+(interval-arithmetic) form. Substantiate (or refute)
+the expected failure of essential-supremum $\COcap$ via the two-well mechanism
+of \cref{rem:two-well}, whose occupation-time element is now the exact law
+\eqref{eq:occupation-law}; what is missing are the conditional-density valley
+bounds. Determine
+the sharp sector spectral gap $\lambda_N$ and its degeneration toward the
+coalescing endpoint, where \cref{prop:co-failure} exhibits $\lambda_N=0$ with
+an explicit kernel element; \cref{rem:comix-instantiation} locates
+$\lambda_N\approx0.2$--$0.5$ at $g_0=T=1$, commensurate with the one-point
+gap $1/(2T)$, so the open content is the proof and the rate of collapse
+toward coalescence. Instantiate $(\mathrm{CKC}_2^{\flat})$: exhibit one
+explicit $\theta>0$ with $c^{\flat}(\xi)\le1$ $\mu_x$-a.e.\ (a numerical
+certificate against the sticky-gap law would suffice); by
+\cref{prop:invariant-fails} the translation-invariant reference is closed
+outright --- \textnormal{(P3)} fails there on the flat sector, the
+center-of-mass channel being in deficit --- so the instantiation must run
+through the point-started reference, where
+\cref{rem:instantiation} now verifies the contraction itself numerically
+($\sigma\in[0.89,0.97]$ across families and solvers at $g_0=T=1$,
+$\gamma\in[0.05,0.5]$, in every case below $1$); what remains
+is the certified (interval-arithmetic) form, and the $c^{\flat}$-version
+with an explicit margin $\kappa_\xi>0$. Separately, decide whether the sectorwise
+representers of \cref{thm:clarkocone} admit any consistent assembly across
+sectors, which \cref{rem:sectorwise} leaves without a natural Hilbert frame.
+\end{problem}
+
+\begin{problem}[Dynamic extension]\label{prob:multitime}
+The identity \eqref{eq:black-ito} is single-time, and its divergence term is
+centered, so it cannot produce the increment $f(U_T)-f(U_0)$
+(\cref{rem:ito-form}). A dynamic, pathwise black It\^o formula would require the
+multi-time family $\{U_t\}_{t\le T}$ and its bracket, under a strictly stronger
+closability condition. Establish or refute it. (Partially resolved:
+\cref{thm:dynamic} constructs the disintegration at the level of partitions,
+exactly, the increment is an adapted sum of conditional energy divergences
+plus the generator drift, with the martingale part recovered in the mesh
+limit and the bracket the time-integrated carr\'e; on the gap sector the
+formula holds with no further input, \cref{cor:dynamic-gap}. What remains open is the
+continuum object: an inductive-limit adapted module on which the integrands
+$u^{f,\pi}$ themselves converge, a single divergence operator whose domain
+contains their limit, and the pathwise form; \cref{rem:driverless}(3).)
+\end{problem}
+
+%==============================================================
+\section{Conclusion}\label{sec:conclusion}
+%==============================================================
+
+The noise of the Le Jan--Raimond Brownian sticky flow is black, and
+blackness removes the classical route to stochastic calculus at its first
+step: there is no first chaos, hence no martingale representation, no
+predictable projection, and no driver to integrate against. This paper
+develops the calculus that survives the removal by reversing the usual
+order of construction: the operator derivative $D$ on a carr\'e-du-champ
+energy space comes first, the divergence is its adjoint $\delta=D^{*}$,
+and everything downstream --- integration by parts, Clark--Ocone--Green
+representation, dynamic formula --- is built from the adjoint pair on
+fixed one- and two-point sectors of the flow.
+
+Three structural conclusions emerge. First, what decides whether the
+construction lives is not blackness but the Feller boundary type of the
+two-point gap: at every reflecting-regular boundary the deletion
+contraction is unobstructed and the diagonal-flat pairwise sector carries
+closed operator pairs and a pairwise black integration-by-parts identity
+under $(\mathrm{CKC}_2^{\flat})$, while at the coalescing endpoint a
+difference-direction probe defeats the contraction outright; both phases
+carry black noises, so the boundary type is the true discriminant
+(\cref{thm:discriminant}). Second, representation survives as a Green
+identity rather than a projection: $F-\E F=\divN(\PiN\DN F)$ with a
+minimal-norm representer in the energy module, with explicit
+constants on the autonomous gap sector, and failing at the coalescing
+endpoint, where the coalescence indicator is a nonconstant energy-null
+functional orthogonal to every divergence
+(\cref{thm:gap-co,prop:co-failure}). Third, dynamics survives
+partitionwise: the increment of an observable is an exact adapted sum of
+conditional slicewise divergences plus the generator drift, with the
+Dynkin martingale recovered in the mesh limit --- blackness forbids a
+driving noise, not adapted increments, so the formula is driverless rather
+than impossible (\cref{thm:dynamic}).
+
+The boundary of what is proved is equally sharp, and
+\cref{sec:openproblems} records it: the full reflecting case beyond the
+diagonal-flat sub-core turns on a single semigroup-intertwining question;
+the contraction at three and more points is protected against the polarity
+route but not yet decided; the mixed-mean bound $\COmix$ awaits joint
+control of the planar law of the point-started reference; and the
+continuum limit of the partitionwise formula, a single divergence on an
+inductive-limit adapted module, remains the natural next object. The
+pairwise sector, where the reduction is complete, is small enough to be
+decided and large enough to carry a calculus; that combination, rather
+than any generality, is what the paper establishes.
+
+\section*{Acknowledgements}
+AI tools were used as interactive assistants for drafting, reorganizing,
+and generating mathematical arguments, under the author's direction. The
+author is responsible for all mathematical content and any errors.
+
+%==============================================================
+\appendix
+%==============================================================
+
+\section{Derivation of the amended gradient identity}\label{app:amended}
+
+We prove \cref{prop:amended-star}. With $\kappa$ as in \eqref{eq:kernel} and
+$\langle\Phi\rangle_p=\int\Phi(\xi,\eta)p(\xi,\eta)\,d\eta$,
+\[
+  P\Phi(\xi)=q(\xi)\Phi(\xi,\xi)+(1-q(\xi))\langle\Phi\rangle_p(\xi).
+\]
+Differentiate the atomic and diffuse parts separately. The atomic part:
+since the atom location $\eta=\xi$ moves with $\xi$,
+\[
+  \partial_\xi\bigl[q\Phi(\xi,\xi)\bigr]
+  =q'\Phi(\xi,\xi)+q\,\tfrac{d}{d\xi}\Phi(\xi,\xi)
+  =q'\Phi(\xi,\xi)+q\,[(\partial_\xi\Phi)(\xi,\xi)+(\partial_\eta\Phi)(\xi,\xi)],
+\]
+where $\tfrac{d}{d\xi}\Phi(\xi,\xi)=(\partial_\xi+\partial_\eta)\Phi$ is the
+center-of-mass derivative at the atom. The diffuse part:
+\[
+  \partial_\xi\bigl[(1-q)\langle\Phi\rangle_p\bigr]
+  =-q'\langle\Phi\rangle_p+(1-q)\bigl[\langle\partial_\xi\Phi\rangle_p
+   +\textstyle\int\Phi\,\partial_\xi p\,d\eta\bigr].
+\]
+Now $\langle\partial_\xi\Phi\rangle_\xi=q(\partial_\xi\Phi)(\xi,\xi)
++(1-q)\langle\partial_\xi\Phi\rangle_p$. Subtracting,
+\[
+  \partial_\xi(P\Phi)-\langle\partial_\xi\Phi\rangle_\xi
+  =q'[\Phi(\xi,\xi)-\langle\Phi\rangle_p]
+   +(1-q)\textstyle\int\Phi\,\partial_\xi p\,d\eta
+   +q(\partial_\eta\Phi)(\xi,\xi),
+\]
+which is \eqref{eq:amended-star}. The bracket $\textnormal{(B)}+\textnormal{(C)}$
+is centered: for $\Phi\equiv1$, $\textnormal{(B)}=q'[1-1]=0$ and
+$\textnormal{(C)}=(1-q)\int\partial_\xi p=(1-q)\partial_\xi\!\int p=0$
+(using $\int p\equiv1$), so it is a covariance functional; while
+$\textnormal{(D)}=q\,\partial_\eta\Phi(\xi,\xi)$ is a derivative of $\Phi$,
+not of covariance form, the extra moving-atom term. At
+$\theta=0$, $q\equiv0$ and $p$ is $\xi$-independent, so
+$\textnormal{(B)}=\textnormal{(C)}=\textnormal{(D)}=0$. \qed
+
+\section{Term-by-term assembly of \texorpdfstring{$\CKC$}{CKC}}\label{app:assembly}
+
+Trace inequalities \eqref{eq:traces}. For the value trace, write
+$\Phi(\xi,\xi)-\langle\Phi\rangle_p=-\int(\int_\xi^\eta\partial_\eta\Phi\,ds)\,p\,d\eta$
+and apply Cauchy--Schwarz in $s$ with resistance
+$r(\xi,\eta)=|\int_\xi^\eta ds/p(\xi,s)|$:
+$(\int_\xi^\eta\partial_\eta\Phi\,ds)^2\le r(\xi,\eta)\langle(\partial_\eta\Phi)^2\rangle_p$,
+giving $|\Phi(\xi,\xi)-\langle\Phi\rangle_p|^2\le\tau_{\mathrm{wt}}G_\eta$
+with $\tau_{\mathrm{wt}}=(\int\sqrt r\,p\,d\eta)^2$. The diffuse-score bound
+is $\int\Phi\,\partial_\xi p=\mathrm{Cov}_p(\Phi,\partial_\xi\log p)$ (since
+$\int\partial_\xi p=0$) followed by Cauchy--Schwarz and the Poincar\'e
+inequality $\mathrm{Var}_p(\Phi)\le C^p_P\,G_\eta$ (these three are the
+value/first-order pieces, finite under \cref{lem:checkB}(R)). The
+point-derivative trace $\tau_{\mathrm{at}}$ is not of this type: point
+evaluation of $\partial_\eta\Phi$ is discontinuous for the first-order energy
+$G_\eta$, so the bound $|\partial_\eta\Phi(\xi,\xi)|^2\le\tau_{\mathrm{at}}\,
+\mathcal E_{\eta,\xi}(\Phi)$ requires the enhanced ($H^2$/Agmon) norm
+$\mathcal E_{\eta,\xi}$ and finiteness of $\tau_{\mathrm{at}}$ is exactly
+\cref{hyp:dtrace}, not implied by \cref{lem:checkB}(R). The
+assembly below bounds the $\tau_{\mathrm{at}}$ terms against
+$\mathcal E_{\eta,\xi}$ (under \cref{hyp:dtrace}) and the remaining terms
+against $G_\eta$; the finite/infinite verdict is unchanged, since in phase (C)
+even the value pieces diverge (\cref{cor:dichotomy}(C)).
+
+Assembly. By $(a+b+c)^2\le3(a^2+b^2+c^2)$, $R^2\le3S_0G_\eta$ with
+$S_0=q'^2\tau_{\mathrm{wt}}+q^2\tau_{\mathrm{at}}+(1-q)^2I_pC^p_P$. The
+cross term in \eqref{eq:obstruction} is split by Young,
+$-2\langle\partial_\xi\Phi\rangle_\xi R\ge-\delta\langle\partial_\xi\Phi\rangle_\xi^2-\delta^{-1}R^2$;
+the $\delta\langle\partial_\xi\Phi\rangle_\xi^2$ is absorbed by the
+center-of-mass/diagonal margin provided $\delta\le\kappa_\xi$, and the
+$\delta^{-1}R^2$ inflates the $R^2$-coefficient to $1+\delta^{-1}$. Optimizing
+$\delta=\kappa_\xi$ gives the factor $1+1/\kappa_\xi$. The diffuse paying
+budget is $\tfrac12(1-q)G_\eta$, so $D(\Phi)\ge0$ follows from
+$3(1+1/\kappa_\xi)S_0\le\tfrac12(1-q)$, i.e.
+$c(\xi)=\tfrac{6(1+1/\kappa_\xi)}{1-q}S_0\le1$. The strict positivity of
+the margin, $\kappa_\xi>0$, is part of the condition and is itself a
+statement about the law: the absorption charges the center-of-mass
+channel, whose budget the conditional expectation can exhaust, and
+\cref{prop:invariant-fails} exhibits the translation-invariant reference
+as a case where that channel is in outright deficit and no choice of
+$\delta$ closes the assembly. Finally, the
+difference-direction half of the atom's $\xi$-energy deficit not covered by the
+Jensen reference is, after the same trace bound
+\eqref{eq:traces}, of the form $\mathrm{const}\cdot q(\xi)\,\tau_{\mathrm{at}}(\xi)\,
+G_\eta$; absorbing this constant into a single universal $A>0$ yields the extra
+summand $A\,q\,\tau_{\mathrm{at}}$, so that $S_A=S_0+A\,q\,\tau_{\mathrm{at}}$
+with $S_0$ the three principal terms. The constants $3,6,A$ are not
+optimized. \qed
+
+\section{Sticky-BM boundary facts used}\label{app:stickyBM}
+
+The body uses a small set of one-dimensional sticky-Brownian-motion facts about
+the gap process. We isolate them in a single proposition so that no statement of
+the paper rests on an unlabelled ``standard'' marker. The facts are classical;
+we cite rather than re-derive, and the exact closed forms of the atom mass and
+diffuse density are not used anywhere.
+
+\begin{proposition}[Sticky-BM gap law and boundary behaviour]\label{prop:sticky-bm}
+Let $g$ be two-sided sticky Brownian motion on $\R$ (diffusivity $2$, stickiness
+$\gamma\in[0,\infty]$) with speed measure $m(dg)=dg+\gamma\,\delta_0$ and
+symmetric transition kernel $u(T,\cdot,\cdot)$, the gap process of
+\cref{lem:gap-com}. (The atom of the speed measure grows with the stickiness:
+$\gamma=0$ is the independent endpoint, $\gamma=\infty$ the absorbing one,
+consistently with \cref{lem:gap-sticky}.) For each $T>0$ and each start $g_0$:
+\begin{enumerate}
+\item[$(\mathrm i)$] (atom $+$ diffuse decomposition). The time-$T$ law is
+$\mathcal L(g_T)=q\,\delta_0+p(\cdot)\,dg$, with atom mass
+$q=\gamma\,u(T,g_0,0)\in[0,1)$ and continuous diffuse density $p(g)=u(T,g_0,g)$
+of Gaussian tail; in particular $C^p_P$ and $I_p$ (the weighted Poincar\'e and
+information constants of \cref{lem:checkA}) are finite.
+\item[$(\mathrm{ii})$] (phase R, reflecting regular,
+$\gamma\in(0,\infty)$). The boundary $0$ is regular-reflecting, the atom is
+genuine ($q>0$), and the diffuse density does not vanish at the wall:
+$p(0\pm)>0$.
+\item[$(\mathrm{iii})$] (phase C, exit/absorbing, $\gamma=\infty$
+coalescing). The boundary $0$ is an exit point, $p(0\pm)=0$ with linear vanishing
+$p(g)\sim C|g|$ as $g\to0$, and the apex carries zero weighted capacity in the
+sense used in \cref{lem:checkB}.
+\end{enumerate}
+Only the boundary behaviour in $(\mathrm{ii})$--$(\mathrm{iii})$ is used in the
+body; the assignment of $\gamma\in(0,\infty)$ to phase R and $\gamma=\infty$ to
+phase C is the LJR reflecting/exit classification (\cref{def:trichotomy} and the
+reflecting-regular and exit/absorbing cases of~\citep{LJR-FCN}).
+\end{proposition}
+
+\begin{proof}[Provenance]
+The speed-measure form $m(dg)=dg+\gamma\,\delta_0$ and the resulting
+atom-plus-density structure of the one-dimensional resolvent are the standard
+generalized-diffusion description of sticky Brownian
+motion~\citep[\S4.11]{ItoMcKean},~\citep{EngelbertPeskir}; the Gaussian tail of $p$
+and finiteness of $C^p_P,I_p$ follow from the heat-kernel bounds there. The
+regular/exit dichotomy of the endpoint $0$, and the corresponding non-vanishing
+($p(0\pm)>0$) versus linear vanishing ($p(g)\sim C|g|$) of the diffuse density,
+are Feller's boundary classification applied to $m$; the identification of the
+two relevant cases with the LJR phases is~\citep[\S9]{LJR-FCN}; the sticky-flow
+realization is~\citep{HowittWarren}. At finite $T$ the atom mass stays bounded
+away from $1$, $q=\Prob[\text{two Brownian points met by }T]<1$ uniformly in
+$\gamma$ (\cref{rem:struct-vs-cert}).
+\end{proof}
+
+One further fact, the exact law of near-total occupation, is used by
+\cref{rem:two-well}. Occupation-time laws for one-dimensional diffusions are
+classical territory~\citep{SalminenStenlund}, and the time-change realization
+below is Warren's construction of sticky Brownian motion~\citep{Warren97}. The
+identity is surely known in some form, but we could not locate the exact
+normalization needed, and the derivation is short.
+
+\begin{proposition}[Exact law of near-total occupation]\label{prop:occupation}
+Let $g$ be the two-sided sticky Brownian motion of \cref{prop:sticky-bm}
+(diffusivity $2$, stickiness $\gamma\in(0,\infty)$, speed measure
+$m=dg+\gamma\,\delta_0$), started at $g_0\in\R$, and let
+$\mathrm{Occ}_T=|\{s\le T:g_s=0\}|$. Then for every $0<\varepsilon<T$,
+\begin{equation}\label{eq:occupation-law}
+  \Prob_{g_0}\bigl[\mathrm{Occ}_T\ge T-\varepsilon\bigr]
+  \;=\;2\,\overline\Phi\!\left(\frac{|g_0|+2\gamma^{-1}(T-\varepsilon)}
+  {\sqrt{2\varepsilon}}\right),
+\end{equation}
+$\overline\Phi$ the standard normal tail. In particular, with
+$\kappa:=|g_0|+2\gamma^{-1}T$, as $\varepsilon\downarrow0$
+\begin{equation}\label{eq:occupation-asymp}
+  \Prob_{g_0}\bigl[\mathrm{Occ}_T\ge T-\varepsilon\bigr]
+  \;=\;\frac{2\sqrt\varepsilon}{\sqrt{\pi}\,\kappa}\;
+  e^{\kappa/\gamma}\;e^{-\kappa^{2}/4\varepsilon}\,\bigl(1+o(1)\bigr):
+\end{equation}
+the near-total-occupation tail is Gaussian-small in $1/\varepsilon$ (with a
+$\sqrt\varepsilon$ prefactor), not of polynomial order. The identity
+\eqref{eq:occupation-law} is exact for all $\varepsilon\in(0,T)$, is increasing
+in $\gamma$, and degenerates correctly at both endpoints: as
+$\gamma\to\infty$ (absorbing) it converges to
+$2\overline\Phi(|g_0|/\sqrt{2\varepsilon})=\Prob[\tau_0\le\varepsilon]$, the
+absorbed answer, and as $\gamma\to0$ (independent) it vanishes.
+\end{proposition}
+\begin{proof}
+Step 0: time-change realization. Let $W_t=g_0+\sqrt2\,B_t$ ($B$ a
+standard Brownian motion), let $\ell_t$ be the occupation density of $W$ at $0$
+with respect to Lebesgue measure
+($\int_0^tf(W_u)\,du=\int f(y)\,\ell_t(y)\,dy$), and set
+\[
+  A_t:=t+\gamma\,\ell_t(0),\qquad \alpha:=A^{-1},\qquad g_s:=W_{\alpha_s}.
+\]
+$A$ is continuous and strictly increasing with $A_0=0$, $A_\infty=\infty$, so
+$\alpha$ is well defined; $g$ is the quasidiffusion with scale $x$ and speed
+$m=dg+\gamma\delta_0$, i.e.\ the sticky Brownian motion of
+\cref{prop:sticky-bm} (Warren's construction~\citep{Warren97};
+see also~\citep[\S4.11]{ItoMcKean},~\citep{EngelbertPeskir}).
+
+Step 1: occupation identity. $\mathrm{Occ}_s=\gamma\,\ell_{\alpha_s}(0)$.
+Indeed, substituting $u=A_t$ ($du=dt+\gamma\,d\ell_t$),
+\[
+  \mathrm{Occ}_s=\int_0^s\mathbf 1_{\{W_{\alpha_u}=0\}}\,du
+  =\int_0^{\alpha_s}\mathbf 1_{\{W_t=0\}}\,dt
+  +\gamma\int_0^{\alpha_s}\mathbf 1_{\{W_t=0\}}\,d\ell_t
+  =0+\gamma\,\ell_{\alpha_s}(0),
+\]
+since the zero set of $W$ is Lebesgue-null a.s.\ while $d\ell$ is carried by it.
+
+Step 2: deterministic equivalence. From $T=A_{\alpha_T}=
+\alpha_T+\gamma\ell_{\alpha_T}(0)=\alpha_T+\mathrm{Occ}_T$ and the monotonicity
+of $A$,
+\[
+  \{\mathrm{Occ}_T\ge T-\varepsilon\}
+  =\{\alpha_T\le\varepsilon\}
+  =\{A_\varepsilon\ge T\}
+  =\bigl\{\ell_\varepsilon(0)\ge\gamma^{-1}(T-\varepsilon)\bigr\}:
+\]
+near-total occupation is exactly a local-time tail event for the
+underlying Brownian motion.
+
+Step 3: the local-time tail. Scaling: $\ell_t(0)=
+\tfrac1{\sqrt2}L_t(c)$, where $L(c)$ is the occupation density of the standard
+$B$ at the level $c:=-g_0/\sqrt2$. Let $\tau_c$ be the hitting time of $c$ and,
+for the post-$\tau_c$ Brownian motion (a standard Brownian motion at its
+starting level, independent of $\mathcal F_{\tau_c}$), let $\sigma_a$ be the
+inverse local time at that level; then
+$\{L_\varepsilon(c)\ge a\}=\{\tau_c+\sigma_a\le\varepsilon\}$. By L\'evy's
+identity $(L_t(0))_{t}\overset{d}{=}(\max_{s\le t}B_s)_t$, the inverse local
+time has the law of the first-passage process, $\sigma_a\overset d=T_a$, and
+the first-passage process $(T_y)_{y\ge0}$ is a subordinator (strong Markov),
+so
+\[
+  \tau_c+\sigma_a\;\overset d=\;T_{|c|}+T'_a\;\overset d=\;T_{|c|+a},
+  \qquad
+  \Prob\bigl[L_\varepsilon(c)\ge a\bigr]
+  =\Prob\bigl[T_{|c|+a}\le\varepsilon\bigr]
+  =2\,\overline\Phi\!\left(\frac{|c|+a}{\sqrt\varepsilon}\right)
+\]
+by the reflection principle. With $a=\sqrt2\,\gamma^{-1}(T-\varepsilon)$ and
+$|c|=|g_0|/\sqrt2$,
+\[
+  \Prob_{g_0}\bigl[\mathrm{Occ}_T\ge T-\varepsilon\bigr]
+  =2\,\overline\Phi\!\left(\frac{|g_0|/\sqrt2+\sqrt2\,\gamma^{-1}(T-\varepsilon)}
+  {\sqrt\varepsilon}\right),
+\]
+which is \eqref{eq:occupation-law}. The asymptotics
+\eqref{eq:occupation-asymp} is $\overline\Phi(x)=(1+O(x^{-2}))\,\varphi(x)/x$
+applied at $x=\kappa_\varepsilon/\sqrt{2\varepsilon}$,
+$\kappa_\varepsilon=\kappa-2\gamma^{-1}\varepsilon$, using
+$\kappa_\varepsilon^2/4\varepsilon=\kappa^2/4\varepsilon-\kappa/\gamma
++O(\varepsilon)$. The endpoint degenerations are immediate from
+\eqref{eq:occupation-law}.
+\end{proof}
+
+%==============================================================
+\section{Energy-first closed-pair construction}\label{app:closedpair}
+%==============================================================
+
+For self-containedness we give here the closed-pair construction used by
+\cref{thm:pairwise-ito}: a Hilbert module of one-forms and a closed
+derivative/divergence pair, in the abelian carr\'e-du-champ setting. The
+construction below is the abelian projection of the Cipriani--Sauvageot
+Hilbert-bimodule derivation~\citep{CiprianiSauvageot}; for the Dirichlet-space
+and energy-module background see also~\citep{BouleauHirsch,FOT}; the
+functional-analytic facts (closed operators, adjoints, $T^{**}=T$) are
+standard~\citep{Rudin-FA,Schmuedgen}.
+
+\begin{assumption}[The carr\'e-du-champ axioms]\label{ass:gamma-axioms}
+$\cA$ is a unital subalgebra of $L^\infty(\Omega)\cap L^2(\Omega)$ and
+$\Gamma\colon\cA\times\cA\to L^1(\Omega)$ a bilinear map with:
+\textnormal{(Sym)} $\Gamma(F,G)=\Gamma(G,F)$;
+\textnormal{(Vanish)} $\Gamma(c,\cdot)=0$ for constants $c$;
+\textnormal{(MatPos)} $\sum_{i,j}\E[U_iU_j\,\Gamma(F_i,F_j)]\ge0$ for all finite
+$(F_i,U_i)$ in $\cA$;
+\textnormal{(WMatPos)} the same with a nonnegative multiplier $Q\in\cA_+$
+inserted, $\sum_{i,j}\E[Q\,U_iU_j\,\Gamma(F_i,F_j)]\ge0$;
+\textnormal{(FormClos)} the form $\cE(F,G)=\E[\Gamma(F,G)]$ is closable on
+$L^2(\Omega)$: $F_n\to0$ in $L^2$ and $\cE(F_n-F_m)\to0$ imply $\cE(F_n)\to0$.
+\end{assumption}
+
+\subsection*{Theorem A: the Hilbert module of one-forms.}
+The algebraic one-forms are $\Omega^1_{\mathrm{alg}}:=\cA\otimes_\R\cA$
+($F\otimes U$ standing for $U\,dF$), with the semi-inner product
+\begin{equation}\label{eq:fold-semiIP}
+  \Bigl\langle\textstyle\sum_iF_i\otimes U_i,\ \sum_jG_j\otimes V_j\Bigr\rangle
+  :=\sum_{i,j}\E\bigl[U_iV_j\,\Gamma(F_i,G_j)\bigr].
+\end{equation}
+By \textnormal{(Sym)}+\textnormal{(MatPos)} this is symmetric, bilinear, and
+positive semidefinite; let $\mathcal N_0=\{\omega:\langle\omega,\omega\rangle=0\}$
+and let $\cU_\Gamma$ be the completion of
+$\Omega^1_{\mathrm{alg}}/\mathcal N_0$ (a real Hilbert space), with $[F\otimes U]$
+the class of $F\otimes U$. The seed is $D_0F:=[F\otimes1]$.
+
+\begin{theorem}[Hilbert module of one-forms]\label{thm:foldA}
+Under \cref{ass:gamma-axioms}:
+\begin{enumerate}
+\item[$(\mathrm i)$] the action $W\cdot[F\otimes U]:=[F\otimes(WU)]$ ($W\in\cA$)
+is bounded, $\|W\cdot\omega\|_{\cU_\Gamma}\le\|W\|_\infty\|\omega\|_{\cU_\Gamma}$,
+so $\cU_\Gamma$ is a bounded $\cA$-bimodule;
+\item[$(\mathrm{ii})$] $D_0\colon\cA\to\cU_\Gamma$ is linear with the isometry
+$\langle D_0F,D_0G\rangle_{\cU_\Gamma}=\E[\Gamma(F,G)]$, and $D_0c=0$ for
+constants $c$;
+\item[$(\mathrm{iii})$] $\{U\cdot D_0F:F,U\in\cA\}=\{[F\otimes U]\}$ is dense in
+$\cU_\Gamma$;
+\item[$(\mathrm{iv})$] $\langle W\cdot D_0F,D_0G\rangle_{\cU_\Gamma}
+=\E[W\,\Gamma(F,G)]$ for $F,G,W\in\cA$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+$(\mathrm{ii}),(\mathrm{iv})$ are \eqref{eq:fold-semiIP} with $U=V=1$
+(resp.\ $U=W,V=1$); $(\mathrm{vanish})$ gives $\|D_0c\|^2=\E[\Gamma(c,c)]=0$.
+$(\mathrm{iii})$: $\sum_iF_i\otimes U_i=\sum_iU_i\cdot D_0F_i$ in $\cU_\Gamma$.
+For $(\mathrm i)$, with $Q:=\|W\|_\infty^2-W^2\in\cA_+$,
+\[
+  \|W\cdot\omega\|^2_{\cU_\Gamma}
+  =\sum_{i,j}\E[W^2U_iU_j\Gamma(F_i,F_j)]
+  =\|W\|_\infty^2\|\omega\|^2_{\cU_\Gamma}-\sum_{i,j}\E[Q\,U_iU_j\Gamma(F_i,F_j)]
+  \le\|W\|_\infty^2\|\omega\|^2_{\cU_\Gamma}
+\]
+by \textnormal{(WMatPos)}; the action descends to the quotient since
+$\omega\in\mathcal N_0\Rightarrow W\cdot\omega\in\mathcal N_0$.
+\end{proof}
+
+\subsection*{Theorem B: the closed derivative and its divergence.}
+\begin{lemma}[\textnormal{(FormClos)} implies closability]\label{lem:foldclos}
+Under \cref{ass:gamma-axioms} the seed $D_0\colon L^2(\Omega)\supset\cA\to\cU_\Gamma$
+is closable.
+\end{lemma}
+\begin{proof}
+If $F_n\to0$ in $L^2$ and $D_0F_n\to v$ in $\cU_\Gamma$, then $(D_0F_n)$ is
+Cauchy, i.e.\ $\E[\Gamma(F_n-F_m,F_n-F_m)]=\|D_0(F_n-F_m)\|^2_{\cU_\Gamma}\to0$
+by the isometry. \textnormal{(FormClos)} gives
+$\|D_0F_n\|^2_{\cU_\Gamma}=\E[\Gamma(F_n,F_n)]\to0$, so $v=0$.
+\end{proof}
+
+\begin{theorem}[Construction of $(\DN,\divN)$ and integration by parts]\label{thm:foldB}
+Under \cref{ass:gamma-axioms}, let $\DN:=\overline{D_0}$ be the closure of the
+seed and $\divN:=\DN^{*}$ its Hilbert-space adjoint. Then:
+\begin{enumerate}
+\item[$(\mathrm i)$] $\DN\colon\Dom(\DN)\subset L^2(\Omega)\to\cU_\Gamma$ is
+closed and densely defined (\cref{lem:foldclos});
+\item[$(\mathrm{ii})$] $\divN=\DN^{*}\colon\Dom(\divN)\subset\cU_\Gamma\to
+L^2(\Omega)$ is closed and densely defined, with
+$\Dom(\divN)=\{u:F\mapsto\langle\DN F,u\rangle_{\cU_\Gamma}\text{ is }L^2\text{-continuous}\}$
+(\citealp[Thm.~13.9]{Rudin-FA}; \citealp[Ch.~5]{Schmuedgen}; using $\DN^{**}=\DN$);
+\item[$(\mathrm{iii})$] integration by parts holds:
+\begin{equation}\label{eq:foldIBP}
+  \E\bigl[F\,\divN(u)\bigr]=\langle\DN F,u\rangle_{\cU_\Gamma},
+  \qquad F\in\Dom(\DN),\ u\in\Dom(\divN);
+\end{equation}
+\item[$(\mathrm{iv})$] for $u=D_0U$ with $U\in\cA$ and $F\in\cA$,
+$\E[F\,\divN(D_0U)]=\E[\Gamma(F,U)]$ whenever $D_0U\in\Dom(\divN)$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+$(\mathrm i)$ is \cref{lem:foldclos} and the definition of the closure;
+$(\mathrm{ii})$ is the standard closed-operator/adjoint theory
+\citep[Thm.~13.9]{Rudin-FA} with $\DN^{**}=\DN$ \citep[Ch.~5]{Schmuedgen};
+$(\mathrm{iii})$ is the defining property of the adjoint; $(\mathrm{iv})$ uses
+$\langle\DN F,D_0U\rangle_{\cU_\Gamma}=\langle D_0F,D_0U\rangle_{\cU_\Gamma}
+=\E[\Gamma(F,U)]$ by the seed isometry of \cref{thm:foldA}$(\mathrm{ii})$.
+\end{proof}
+
+In the application of \cref{sec:main}, the construction is applied
+sectorwise (\cref{rem:sectorwise}): on each fixed one- or two-point sector
+$\cA=C_b^\infty(\R)$ resp.\ $C_b^\infty(\R^2)$ (a genuine unital algebra),
+$\Gamma=\GamN$ restricted to that sector, and $\cU_\Gamma=\cU_{\GamN}$; the four
+algebraic axioms are immediate for $\GamN$ from the square-of-sum structure
+\eqref{eq:sos} (\cref{sec:recap}), and the global pairwise object is the
+sectorwise family of these constructions (\cref{rem:sectorwise}), not a
+single global operator. \textnormal{(FormClos)} on each fixed $\le2$-point sector
+is supplied by \cref{app:pairclos} (\cref{thm:sectorclos}), which uses no algebra
+structure.
+
+%==============================================================
+\section{Pairwise closability criterion}\label{app:pairclos}
+%==============================================================
+
+We give the pairwise ($m\le2$) instance of the projective-limit closability
+criterion; the full multi-level machinery is not needed here. Fix
+$T>0$ and recall the pairwise sub-core
+$\Apair=\{F_{\mathbf x,T,\Phi}:|\mathbf x|\le2\}$, stable under coordinate
+deletion $2\to1\to0$. For a tuple $\mathbf x$ ($|\mathbf x|\le2$) write
+$\mu_{\mathbf x}$ for the time-$T$ law of $Z_{\mathbf x}$,
+$\cE_{\mathbf x}(\Phi)=\int\Gamma^{(|\mathbf x|)}_\theta(\Phi,\Phi)\,d\mu_{\mathbf x}$,
+and for $\mathbf x\subseteq\mathbf y$ ($|\mathbf y|\le2$) let
+$P^{\mathbf y}_{\mathbf x}=\E[\,\cdot\mid\sigma(Z_{\mathbf x})]$ be the
+coordinate-deletion conditional expectation. The three conditions are:
+\begin{itemize}
+\item[\textnormal{(P1)}] $(\cE_{\mathbf x},\cD_{\mathbf x})$ is closable on
+$L^2(\mu_{\mathbf x})$ for $|\mathbf x|=1,2$;
+\item[\textnormal{(P2)}] $\cE_{\mathbf y}(\Phi\circ\pi_{\mathbf y,\mathbf x})
+=\cE_{\mathbf x}(\Phi)$ for $\mathbf x\subseteq\mathbf y$;
+\item[\textnormal{(P3)}] $\cE_{\mathbf x}(P^{\mathbf y}_{\mathbf x}\Phi)
+\le\cE_{\mathbf y}(\Phi)$ for the $2\to1$ deletion.
+\end{itemize}
+
+\begin{lemma}[Conditional expectation contracts energy; factor lemma, pairwise instance]\label{lem:foldfactor}
+Let $(\cE_{\mathbf y},\cD_{\mathbf y})$, $(\cE_{\mathbf x},\cD_{\mathbf x})$ be
+closed Markovian symmetric Dirichlet forms on $L^2(\mu_{\mathbf y})$,
+$L^2(\mu_{\mathbf x})$ ($\mathbf x\subset\mathbf y$ the $2\to1$ deletion,
+$\mu_{\mathbf x}=(\pi_{\mathbf y,\mathbf x})_*\mu_{\mathbf y}$) whose semigroups
+intertwine, $T^{\mathbf y}_t(g\circ\pi)=(T^{\mathbf x}_t g)\circ\pi$. Then
+$\cE_{\mathbf x}(P^{\mathbf y}_{\mathbf x}\Phi)\le\cE_{\mathbf y}(\Phi)$ for all
+$\Phi\in\cD_{\mathbf y}$; i.e.\ \textnormal{(P3)} holds. (This is the
+conditional-expectation contraction of a Dirichlet form, in the manner
+of~\citep[Thm.~1.6.1]{FOT}.)
+\end{lemma}
+\begin{proof}
+Identifying $L^2(\mu_{\mathbf x})$ with $L^2(\mu_{\mathbf x})\circ\pi\subset
+L^2(\mu_{\mathbf y})$, the conditional expectation is the orthogonal projection
+$\Pi$ onto this subspace. Intertwining makes $\Pi$ commute with $T^{\mathbf y}_t$,
+hence with $Q_t:=t^{-1}(I-T^{\mathbf y}_t)$; orthogonal-projection contraction
+gives $\langle Q_t\Pi\Phi,\Pi\Phi\rangle\le\langle Q_t\Phi,\Phi\rangle$, and
+letting $t\downarrow0$ (with $\langle Q_t u,u\rangle\nearrow\cE(u)$,
+\citep[Lem.~1.3.4]{FOT}) yields $\cE_{\mathbf x}(P^{\mathbf y}_{\mathbf x}\Phi)
+\le\cE_{\mathbf y}(\Phi)$.
+\end{proof}
+
+The lemma is the abstract template, recorded for orientation; its symmetry
+and intertwining assumptions are \emph{not} claimed for the time-$T$-law
+forms of \cref{rem:reference-measure}, which is exactly the
+reference-measure subtlety, and the operative route to \textnormal{(P3)} in
+this paper is the explicit assembly under $(\mathrm{CKC}_2^{\flat})$
+(\cref{thm:deletion}).
+
+We separate the two roles that the projective conditions play, because they are
+often conflated. Fixed-sector closability is supplied by (P1) alone; the
+contraction (P3)/$(\mathrm{CKC}_2^{\flat})$ supplies the $2\to1$
+deletion-compatibility of the sectorwise pairs, not their closability.
+
+\begin{theorem}[Fixed-sector closability, from \textnormal{(P1)} alone]\label{thm:sectorclos}
+Under \cref{conv:LJR}, fix a tuple $\mathbf x$ with $|\mathbf x|\le2$. Under
+\textnormal{(P1)} at level $|\mathbf x|$, the lifted single-time energy form
+$\Ecyl$ restricted to the fixed sector $C_b^\infty(\R^{|\mathbf x|})$ is closable
+on $L^2(\mu_{\mathbf x})$ (equivalently, \cref{hyp:beta1} holds on that sector).
+No \textnormal{(P3)} is required: within a fixed sector the deletion projection is
+the identity, so closability is exactly the sector-form closability
+\textnormal{(P1)}.
+\end{theorem}
+\begin{proof}
+Work within the fixed sector: let $(F_n)\subset C_b^\infty(\R^{|\mathbf x|})$, all
+on the tuple $\mathbf x$, with $F_n\to0$ in $L^2(\mu_{\mathbf x})$ and
+$\Ecyl(F_n-F_m)\to0$. Every element lies on the same fixed tuple $\mathbf x$, so
+the projection onto that tuple acts as the identity, $P_{\mathbf x}F_n=F_n$, and
+the deletion contraction (P3) plays no role here (it would hold with
+equality). Hence $\Ecyl(F_n)=\cE_{\mathbf x}(F_n)$ throughout, with
+$\cE_{\mathbf x}(F_n-F_m)\to0$ and $F_n\to0$ in $L^2(\mu_{\mathbf x})$; by (P1) at
+level $|\mathbf x|$, $\cE_{\mathbf x}(F_n)\to0$, i.e.\ $\Ecyl(F_n)\to0$. \qed
+\end{proof}
+
+\begin{theorem}[Pairwise deletion-compatibility, from $(\mathrm{CKC}_2^{\flat})$]\label{thm:deletion}
+Under $(\mathrm{CKC}_2^{\flat})$, the conditional expectation deleting one
+coordinate is energy-contracting on the diagonal-flat sector,
+\[
+  \cE_{\mathbf x}(P^{\mathbf y}_{\mathbf x}\Phi)\;\le\;\cE_{\mathbf y}(\Phi),
+  \qquad \Phi\in\cD^{\flat}_{\mathbf y}\quad(\mathbf x\subset\mathbf y\text{ the }2\to1\text{ deletion}),
+\]
+which is \textnormal{(P3)} there, so the one-point and two-point
+fixed-sector closed pairs of \cref{thm:sectorclos} are compatible under the
+$2\to1$ deletion on that sector. This is a statement about
+deletion-compatibility, not about closability of either sector.
+\end{theorem}
+\begin{proof}
+Two routes exist and carry different assumptions, which we keep separate. If
+the deletion projection intertwined the relevant semigroups in the sense of
+\cref{lem:foldfactor}, the contraction would be the abstract
+conditional-expectation contraction of a Dirichlet form, in the manner
+of~\citep[Thm.~1.6.1]{FOT}; but the forms here are integrated against the
+time-$T$ laws, not against symmetrizing measures, and the symmetry and
+intertwining assumptions of that route are exactly what
+\cref{rem:reference-measure} flags as unavailable. The operative route is
+therefore the explicit reduction of the body: by
+\cref{prop:amended-star} and the trace inequalities \eqref{eq:traces}, the
+deletion deficit $D(\Phi)=\cE_{\mathbf y}(\Phi)-\cE_{\mathbf x}(P\Phi)$ is
+bounded below by the assembly of \cref{app:assembly}, restricted to the
+diagonal-flat sector where the moving-atom term is rotated into the
+center-of-mass direction and absorbed by the diagonal energy
+(\cref{cor:neumann-subcore}); under $(\mathrm{CKC}_2^{\flat})$, whose
+margin requirement $\kappa_\xi>0$ is part of the stated condition (and which, by
+\cref{prop:invariant-fails}, genuinely excludes the translation-invariant
+reference), the assembled lower bound is nonnegative, $D(\Phi)\ge0$ for
+all $\Phi$ in the sector, which is \textnormal{(P3)} there. \qed
+\end{proof}
+
+Thus fixed-sector closability is \textnormal{(P1)} (\cref{thm:sectorclos}), while
+$(\mathrm{CKC}_2^{\flat})$/\textnormal{(P3)} supplies the $2\to1$
+deletion-compatibility of the sectorwise closed pairs (\cref{thm:deletion}), not
+closability. The full linear span $\Apair$ of all pairwise sectors lies outside the
+criterion: across sectors, $P_{\mathbf x}$ of a functional on a different
+pair $\mathbf y$ is a conditional expectation involving the joint law of
+$\mathbf x\cup\mathbf y$, up to three and four points ($m\ge3$), neither assumed
+nor proved here. The closed-pair operators $(\DN,\divN)$ of \cref{thm:pairwise-ito}
+are correspondingly built per fixed sector (\cref{rem:sectorwise}); there is
+no single global operator and no global pairwise algebra.
+
+%==============================================================
+\section{Sharpness and remaining obstructions}\label{sec:sharpness}
+%==============================================================
+
+This appendix collects the supporting results that sharpen, without closing,
+the two remaining structural fronts: the full reflecting case beyond the
+diagonal-flat sector, and the $m\ge3$ compatibility. Together with the coalescing failure (\cref{prop:co-failure}) and the two-well
+tension (\cref{rem:two-well}), they delimit how far the three main results can
+be pushed with the present tools.
+
+\subsection{The moving-atom trace is a theorem on the second-order sub-core}
+
+\begin{proposition}[Agmon discharge of \cref{hyp:dtrace} in phase (R)]\label{prop:agmon}
+Assume phase \textnormal{(R)}. Fix $\xi$ with
+$P_0(\xi):=\inf_{|\eta-\xi|\le\delta}p(\xi,\eta)>0$ (such $\delta>0$ exists for
+$\mu_\xi$-a.e.\ $\xi$ by \cref{lem:checkB}\textnormal{(R)}). Then for every
+$\Phi\in C_b^\infty(\R^2)$,
+\[
+  |\partial_\eta\Phi(\xi,\xi)|^2\;\le\;
+  C_{\mathrm{tr}}(\xi)\,\Bigl[\,G_\eta(\xi)
+  +\bigl\langle(\partial_\eta^2\Phi)^2\bigr\rangle_p(\xi)\Bigr],
+  \qquad
+  C_{\mathrm{tr}}(\xi)\;=\;\frac{1}{P_0(\xi)}\max\Bigl(\frac2\delta,\;\delta\Bigr).
+\]
+In particular \cref{hyp:dtrace} holds in phase \textnormal{(R)} on the
+second-order sub-core, with the enhanced norm
+$\mathcal E_{\eta,\xi}(\Phi):=G_\eta(\xi)+\langle(\partial_\eta^2\Phi)^2\rangle_p(\xi)$
+and the explicit constant above: $\tau_{\mathrm{at}}(\xi)\le C_{\mathrm{tr}}(\xi)<\infty$.
+\end{proposition}
+\begin{proof}
+One-dimensional Agmon bound: for $h\in C^1([0,\delta])$ and $s\in[0,\delta]$,
+$h(0)^2=h(s)^2-\int_0^s(h^2)'\le h(s)^2+2\int_0^\delta|h\,h'|$; averaging over
+$s\in[0,\delta]$ and using $2AB\le\delta^{-1}A^2+\delta B^2$,
+\[
+  h(0)^2\;\le\;\frac1\delta\int_0^\delta h^2
+  +2\Bigl(\int_0^\delta h^2\Bigr)^{1/2}\Bigl(\int_0^\delta h'^2\Bigr)^{1/2}
+  \;\le\;\frac2\delta\int_0^\delta h^2+\delta\int_0^\delta h'^2 .
+\]
+Apply this to $h(s):=\partial_\eta\Phi(\xi,\xi+s)$, so $h(0)=\partial_\eta\Phi(\xi,\xi)$,
+$h'=\partial_\eta^2\Phi$, and convert Lebesgue to weighted integrals by
+$\int_0^\delta(\cdot)\,ds\le P_0(\xi)^{-1}\int(\cdot)\,p(\xi,\xi+s)\,ds
+\le P_0(\xi)^{-1}\langle\cdot\rangle_p$.
+\end{proof}
+
+\begin{remark}[Why this does not yet give the full reflecting theorem: the order mismatch]\label{rem:order-mismatch}
+\Cref{prop:agmon} converts \cref{hyp:dtrace} from condition to theorem
+on the $H^2$ sub-core, with $C_{\mathrm{tr}}\sim1/\inf p$ exactly as
+anticipated in \cref{rem:dtrace-gamma2}, and it degrades as $p\to0$ at the
+coalescing endpoint, consistently with \cref{thm:wall-endpoint}. What it does
+not give is the deletion contraction \textnormal{(P3)} for the
+first-order forms beyond the flat sector: in the assembly
+(\cref{app:assembly}), the $\tau_{\mathrm{at}}$-payments now draw on the
+second-order budget $\langle(\partial_\eta^2\Phi)^2\rangle_p$, which the
+first-order energy $\cE_{\mathbf y}$ does not contain. Under the value-part of
+$\CKC$ and $\Lambda:=\operatorname*{ess\,sup}_\xi
+q(\xi)\bigl(q(\xi)+A\bigr)C_{\mathrm{tr}}(\xi)<\infty$ one obtains, by the
+existing assembly, only the mixed deletion inequality
+\[
+  \cE_{\mathbf x}(P\Phi)\;\le\;\cE_{\mathbf y}(\Phi)
+  +\Lambda\!\int\!\bigl\langle(\partial_\eta^2\Phi)^2\bigr\rangle_p\,d\mu_\xi ,
+  \qquad\Phi\in C_b^\infty(\R^2),
+\]
+first-order out, second-order in. A single-form \textnormal{(P3)}, for either
+the first-order or the enhanced pair, requires the conditional expectation to
+intertwine with the second-order structure; this is exactly the open content
+of \cref{prob:fullreflecting}, now isolated as the only missing
+element (the trace itself no longer being one).
+\end{remark}
+
+\subsection{The polarity route to a three-point failure is blocked}
+
+The conjecture of \cref{prob:m3} rested on codimension-two polarity: at $m=3$
+the triple apex has two $\Gamma$-blind difference directions, and a point in
+two dimensions is polar for an elliptic Dirichlet integral, suggesting a probe
+defeating \textnormal{(P3)}. This mechanism in fact fails, because the energy at
+$m=3$ is not purely two-dimensional: the partial-coincidence strata carry
+one-dimensional energies, and one-dimensional points have positive
+capacity. We isolate the needed property of the (uncharacterized) three-point
+law as a named condition.
+
+\begin{hypothesis}[$(\mathrm R_3)$: pairwise-stratum regularity of the
+three-point law]\label{hyp:r3}
+For the three-point time-$T$ law from pairwise-distinct starts, in phase
+\textnormal{(R)}, the partial-coincidence stratum
+$\Delta_{23}=\{\eta_1=\eta_2\}$ carries the singular part of
+$\mu^{(3)}_{\mathbf y}$ with cluster carr\'e coefficient $c_{\theta,2}>0$
+\eqref{eq:sos}, and the pushforward of that stratum weight under the surviving
+gap coordinate $w=\eta-\xi$ ($\eta$ the common position) has density bounded
+below, $\rho_S(w)\ge\rho_0>0$ for $|w|\le\delta$.
+\end{hypothesis}
+
+This is the three-point analogue of \cref{lem:checkB}\textnormal{(R)}
+(pairwise stickiness should populate the pairwise strata with positive density
+near the triple apex); it concerns the $m=3$ law that \citep{LJR-FCN,LJR-circle-noise}
+do not characterize, which is why it enters as a stated condition.
+
+\begin{proposition}[The difference-direction witness cannot close at $m=3$]\label{prop:m3-blocked}
+Assume phase \textnormal{(R)} and $(\mathrm R_3)$. Let
+$\Phi=g(\eta_1-\xi,\eta_2-\xi)$ with $g\in C_b^\infty(\R^2)$, $g(0,0)=1$, be a
+probe pinned at the triple apex, and suppose its restriction to the stratum,
+$h(w):=g(w,w)$, satisfies $\int_{\delta/2\le|w|\le\delta}h^2\rho_S\,dw\le
+\tfrac{1}{16}\rho_0\delta$ (as any \textnormal{(P3)}-defeating sequence must,
+$\Phi_n\to0$ in $L^2(\mu^{(3)}_{\mathbf y})$ forcing $h_n\to0$ in
+$L^2(\rho_S)$). Then
+\[
+  \cE^{(3)}_{\mathbf y}(\Phi)\;\ge\;\frac{c_{\theta,2}\,\rho_0}{8\,\delta}\;>\;0 .
+\]
+In particular no sequence of such probes can send
+$\cE^{(3)}_{\mathbf y}(\Phi_n)\to0$ while remaining pinned at the apex: the
+witness mechanism conjectured in \cref{prob:m3} is blocked by the
+one-dimensional capacity of the pairwise strata.
+\end{proposition}
+\begin{proof}
+On $\Delta_{23}$ the surviving cluster derivative of \eqref{eq:sos} acts on
+$\Phi$ by $(\partial_{\eta_1}+\partial_{\eta_2})\Phi=
+(\partial_1g+\partial_2g)(w,w)=h'(w)$, so
+\[
+  \cE^{(3)}_{\mathbf y}(\Phi)\;\ge\;\frac{c_{\theta,2}}2
+  \int h'(w)^2\,\rho_S(w)\,dw .
+\]
+By the $L^2$-smallness assumption there is $w^*\in[\delta/2,\delta]$ with
+$|h(w^*)|\le\tfrac12$: otherwise $|h|>\tfrac12$ on all of $[\delta/2,\delta]$
+and $\int_{\delta/2\le|w|\le\delta}h^2\rho_S\ge\tfrac14\,\rho_0\,\tfrac\delta2
+=\tfrac18\rho_0\delta>\tfrac1{16}\rho_0\delta$, a contradiction. Then, by
+Cauchy--Schwarz with the resistance of $\rho_S$ on $[0,\delta]$,
+\[
+  \tfrac12\le|h(0)-h(w^*)|\le\int_0^{\delta}|h'|\,dw
+  \le\Bigl(\int h'^2\rho_S\Bigr)^{1/2}\Bigl(\int_0^{\delta}\frac{dw}{\rho_S}\Bigr)^{1/2}
+  \le\Bigl(\int h'^2\rho_S\Bigr)^{1/2}\Bigl(\frac{\delta}{\rho_0}\Bigr)^{1/2},
+\]
+so $\int h'^2\rho_S\ge\rho_0/(4\delta)$, and the stratum lower bound gives
+$\cE^{(3)}_{\mathbf y}(\Phi)\ge\tfrac{c_{\theta,2}}2\cdot\rho_0/(4\delta)
+=c_{\theta,2}\rho_0/(8\delta)$.
+\end{proof}
+
+%==============================================================
+\bibliographystyle{alea3}
+\bibliography{blackito}
+
+\end{document}

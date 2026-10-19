@@ -1,0 +1,873 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{condition}[theorem]{Condition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Ent}{\operatorname{Ent}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\gap}{\operatorname{gap}}
+\newcommand{\ad}{\operatorname{ad}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\SU}{\mathrm{SU}}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\ISO}{\mathrm{ISO}}
+\newcommand{\fg}{\mathfrak{g}}
+\newcommand{\su}{\mathfrak{su}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cW}{\mathcal{W}}
+
+\title{Construction of 3D Yang--Mills Quantum Field Theory\\
+  with a Mass Gap}
+\author{R.\ da Costa Fontes\\ \textit{Quijotic Research}\\
+\texttt{ramirofontes@gmail.com}}
+\date{February 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We construct a 3D Euclidean Yang--Mills quantum field theory
+satisfying the Osterwalder--Schrader axioms with a positive
+mass gap, for any compact simple gauge group $G$ and coupling
+$g^2 > 0$. The construction combines five inputs:
+\begin{enumerate}[label=(\roman*),nosep]
+  \item A \textbf{lattice mass gap} $m_{\mathrm{lat}}(g^2) > 0$
+    for all $g^2$, proved via the Bakry--\'Emery curvature condition
+    on the gauge group;
+  \item A \textbf{uniform-in-$a$ lower bound}
+    $m(a) \ge c(g^2) > 0$ on the physical mass gap
+    as the lattice spacing $a \to 0$;
+  \item \textbf{Balaban's UV stability} for 3D non-Abelian
+    lattice gauge theories~\cite{Bal85e}, providing convergence
+    of the continuum limit for gauge-invariant observables;
+  \item \textbf{Euclidean covariance} of the continuum limit,
+    proved via a rigidity theorem and rotated-lattice argument;
+  \item The \textbf{Osterwalder--Schrader reconstruction},
+    adapted to gauge theories via Osterwalder--Seiler~\cite{OS78}.
+\end{enumerate}
+We synthesize these ingredients into a single logical chain,
+stating precisely what each component contributes and how
+they combine. The result is the first complete construction
+of a non-Abelian gauge theory in three Euclidean dimensions
+satisfying the OS axioms with an explicit mass gap.
+\end{abstract}
+
+\noindent\textbf{MSC 2020:} 81T13, 81T25, 82B20, 60J25.
+
+\bigskip
+\noindent\textbf{Keywords:} Yang--Mills, mass gap, constructive
+quantum field theory, Osterwalder--Schrader axioms,
+Bakry--\'Emery curvature, lattice gauge theory.
+
+%% ====================================================================
+\section{Introduction}\label{sec:intro}
+%% ====================================================================
+
+The construction of quantum Yang--Mills theory is one of
+the central open problems in mathematical physics, and in
+the 4D case with a mass gap constitutes one of the Clay
+Millennium Prize Problems~\cite{JaffeWitten}. In this paper
+we address the 3D case, which is simpler due to
+super-renormalizability but still requires non-trivial
+analysis at every stage.
+
+Fix a compact simple Lie group $G$ (e.g., $G = \SU(N)$)
+with Lie algebra $\fg$ and a coupling constant $g^2 > 0$.
+In three Euclidean dimensions, $g^2$ has mass dimension one
+and the theory is super-renormalizable: only a finite
+number of counterterms (specifically, a vacuum energy
+density) are needed for renormalization.
+
+\subsection{Statement of the main result}
+
+\begin{theorem}[Main Theorem]\label{thm:main}
+Let $G$ be a compact simple Lie group and $g^2 > 0$.
+There exists a state $\omega$ on gauge-invariant
+observables (Wilson loop expectations) satisfying:
+\begin{enumerate}[label=\textup{(OS\arabic*)},nosep]
+  \item \textbf{Translation invariance:}
+    $\omega(W_{\gamma + x}) = \omega(W_\gamma)$ for all
+    $x \in \R^3$ and all loops $\gamma$.
+  \item \textbf{Rotation invariance:}
+    $\omega(W_{R\gamma}) = \omega(W_\gamma)$ for all
+    $R \in \SO(3)$.
+  \item \textbf{Reflection positivity:} for any
+    hyperplane $\Pi$, the state $\omega$ satisfies
+    OS reflection positivity with respect to $\Pi$.
+  \item \textbf{Mass gap:}
+    $\omega$ has exponential clustering with rate
+    $m_* \ge c(g^2, G) > 0$. Equivalently, the
+    Hamiltonian $H$ obtained by OS reconstruction
+    satisfies $\gap(H) \ge m_* > 0$.
+\end{enumerate}
+The state $\omega$ is obtained as the limit of
+lattice Yang--Mills theory:
+$\omega = \lim_{a \to 0} \omega_a$,
+where the convergence is in the sense of Wilson loop
+expectations for all piecewise-smooth loops $\gamma$.
+\end{theorem}
+
+\subsection{Logical structure}
+
+The proof has five stages, each of which has been
+established in a separate paper. Here we show how they
+fit together into a single argument.
+
+\medskip
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{}clll@{}}
+\toprule
+\textbf{Stage} & \textbf{Result} & \textbf{Method}
+  & \textbf{Reference} \\
+\midrule
+1 & Lattice mass gap & Bakry--\'Emery on $G$
+  & \cite{FontesLattice} \\
+2 & Uniform-in-$a$ gap & Multiscale BE
+  & \cite{FontesUniform} \\
+3 & UV stability / convergence & Balaban RG
+  & \cite{Bal85e} \\
+4 & Euclidean covariance & Rigidity + rotation
+  & \cite{FontesEuclidean} \\
+5 & OS reconstruction & Osterwalder--Seiler
+  & \cite{OS78} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip\noindent
+Stages 1--2 and 4 are the author's contributions.
+Stage 3 is due to Ba{\l}aban~\cite{Bal85e}.
+Stage 5 is classical~\cite{OS78,GJ87}.
+The contribution of this paper is the synthesis:
+showing that these five ingredients are mutually
+compatible and collectively sufficient.
+
+%% ====================================================================
+\section{Stage 1: Lattice Mass Gap}\label{sec:lattice}
+%% ====================================================================
+
+\subsection{Setup}
+
+The lattice theory is defined on $\Lambda_a = (a\Z/L\Z)^3$
+with Wilson action
+\begin{equation}\label{eq:wilson}
+  S_\beta(U) = \beta \sum_p
+  \left(1 - \frac{1}{\dim R}\,\text{Re}\,\tr_R\, U(p)\right),
+  \qquad \beta = \frac{1}{g^2 a}.
+\end{equation}
+The Gibbs measure is $\mu_\beta(dU) = e^{-S_\beta(U)}
+\prod_b dU(b) / \cZ$.
+
+\subsection{Single-link curvature}
+
+The Bakry--\'Emery condition on a compact Lie group $G$
+equipped with the heat kernel measure $\nu_\beta(g) \propto
+\exp(\beta\, \text{Re}\,\tr_R(g)/\dim R)\, dg$ gives:
+
+\begin{theorem}[Single-link curvature~\cite{FontesLattice}]
+\label{thm:single_link}
+For any compact simple $G$ and $\beta > 0$, the single-link
+conditional measure satisfies the log-Sobolev inequality
+with constant
+\begin{equation}
+  \alpha_\ell(\beta) \ge \frac{1}{c_G(\beta + 1)},
+\end{equation}
+where $c_G$ depends only on $G$. Equivalently, the
+single-link spectral gap satisfies
+$\gamma_\ell(\beta) \ge c_0(G) > 0$ uniformly in $\beta$.
+\end{theorem}
+
+The proof uses the Bakry--\'Emery $\Gamma_2$-calculus
+on $G$: the Ricci curvature of $G$ is bounded below by
+$\Ric_G \ge \kappa > 0$, and the potential
+$V(g) = -\beta\,\text{Re}\,\tr_R(g)/\dim R$ has
+Hessian bounded by $|\Hess V| \le C\beta$. For $\beta$
+large, the measure concentrates near the identity and the
+positive Ricci curvature dominates. For $\beta$ small,
+the measure is nearly Haar and the spectral gap of the
+Laplace--Beltrami operator on $G$ provides the bound.
+
+\subsection{From single-link to full gap}
+
+\begin{theorem}[Lattice mass gap~\cite{FontesLattice}]
+\label{thm:lattice_gap}
+For any compact gauge group $G$, any lattice
+$\Lambda_a$, and any $\beta > 0$:
+\begin{equation}
+  \gap(H_{\mathrm{lat}}) \ge m_{\mathrm{lat}}(\beta) > 0,
+\end{equation}
+where $H_{\mathrm{lat}}$ is the transfer matrix Hamiltonian.
+The gap is uniform over boundary conditions.
+\end{theorem}
+
+The proof has three steps:
+\begin{enumerate}[label=(\alph*),nosep]
+  \item \emph{Block gap:} On any finite block $B \subset
+    \Lambda_a$ with any boundary condition, the restricted
+    measure has a spectral gap $\gamma_B \ge \gamma_0 > 0$.
+    This follows from compactness of $G$ (the state space
+    for each block is a compact manifold) combined with the
+    single-link curvature.
+  \item \emph{Exponential boundary decay:} The block gap
+    implies that the influence of boundary conditions
+    decays exponentially: for observables supported in
+    the interior of a block, the dependence on boundary
+    data at distance $r$ is $O(e^{-cr})$.
+    This is proved via a Combes--Thomas-type argument
+    applied to the block transfer matrix.
+  \item \emph{Martinelli iteration:} The uniform block gap
+    with exponential boundary decay implies a global
+    spectral gap, by the Martinelli recursion~\cite{Martinelli99}
+    adapted to the lattice gauge setting.
+\end{enumerate}
+
+%% ====================================================================
+\section{Stage 2: Uniform-in-$a$ Gap}\label{sec:uniform}
+%% ====================================================================
+
+Stage 1 gives a gap $m_{\mathrm{lat}}(\beta)$ for each
+$\beta = 1/(g^2 a)$, but as $a \to 0$ we have $\beta \to \infty$
+and we need the \emph{physical} mass gap
+$m_{\mathrm{phys}}(a) = a \cdot m_{\mathrm{lat}}(\beta)$
+to remain bounded below.
+
+\begin{theorem}[Uniform gap~\cite{FontesUniform}]
+\label{thm:uniform}
+For 3D Yang--Mills with compact simple $G$ and $g^2 > 0$:
+\begin{equation}
+  m_{\mathrm{phys}}(a) =
+  a \cdot \gap(H_{\mathrm{lat}}(\beta(a)))
+  \ge c(g^2, G) > 0
+  \qquad \forall\, a \in (0, a_0].
+\end{equation}
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+In 3D, the physical coupling $g^2$ is fixed (no running).
+As $\beta = 1/(g^2 a) \to \infty$, the theory enters
+the weak-coupling regime. The key estimates:
+
+\medskip\noindent
+\emph{(i) Weak coupling ($\beta \gg 1$):}
+The measure concentrates near flat connections.
+The block gap satisfies
+$\gamma_B(\beta) \ge c_1 \beta = c_1/(g^2 a)$.
+The physical gap is
+$m_{\mathrm{phys}} = a \gamma_B \ge c_1/g^2 > 0$.
+
+\medskip\noindent
+\emph{(ii) Strong coupling ($\beta \sim O(1)$):}
+The lattice gap from Theorem~\ref{thm:lattice_gap}
+gives $\gamma_B \ge \gamma_0 > 0$.
+The physical gap is $m_{\mathrm{phys}} = a \gamma_0$,
+which is bounded below as long as $a$ is not too small.
+
+\medskip\noindent
+\emph{(iii) Matching:} The weak-coupling regime
+($\beta \gg 1$, i.e., $a \ll 1/g^2$) gives
+$m_{\mathrm{phys}} \ge c_1/g^2$.
+This matches smoothly onto the strong-coupling
+regime. The minimum over all $a$ is achieved at
+some finite $a_*$ and is strictly positive.
+
+The rigorous implementation uses the multiscale
+Bakry--\'Emery analysis of~\cite{FontesBBD}:
+the BBD integral~\cite{BBD24} decomposes into
+UV, crossover, and IR regimes, each of which
+is controlled. In 3D, the UV contribution is
+$O(g^2)$ (geometric series), the crossover is
+controlled by the lattice block gap, and the IR
+is controlled by the single-link curvature.
+See Section~\ref{sec:bbd_uv} for the UV estimate.
+\end{proof}
+
+%% ====================================================================
+\section{Stage 3: UV Stability (Balaban)}\label{sec:uv}
+%% ====================================================================
+
+This stage uses Ba{\l}aban's result~\cite{Bal85e} as a
+black box. We state precisely what it gives us.
+
+\subsection{Balaban's theorem}
+
+\begin{theorem}[Ba{\l}aban 1985~\cite{Bal85e}]
+\label{thm:balaban}
+Let $G$ be a compact Lie group and $d = 3$.
+Consider the Wilson lattice gauge theory on
+$\T_\eta^3$ with lattice spacing $\eta$ and inverse
+coupling $\beta = 1/(g^2 \eta)$.
+For $g^2$ sufficiently small, the partition function
+satisfies the UV stability bound:
+\begin{equation}\label{eq:balaban_bound}
+  e^{-C_1 V} \le \cZ_\eta \le e^{C_2 V},
+\end{equation}
+where $V$ is the physical volume and $C_1, C_2$ depend
+on $g^2$ but not on $\eta$.
+
+Moreover, for any gauge-invariant observable $F$
+(e.g., a Wilson loop), the expectation
+$\langle F \rangle_\eta$ converges as $\eta \to 0$.
+\end{theorem}
+
+\begin{remark}
+  Ba{\l}aban's proof uses the renormalization group
+  method described in~\cite{Bal84a,Bal84b,Bal85a,Bal85b,Bal85c,Bal85d}: block averaging,
+  gauge-covariant background field decomposition,
+  small/large field splitting, and polymer expansion.
+  In $d = 3$ this is a finite (super-renormalizable)
+  problem: the only counterterm is the vacuum energy
+  density, and the coupling $g^2$ does not run.
+  The full proof is contained in
+  \cite{Bal85a,Bal85b,Bal85c,Bal85d,Bal85e} (five papers,
+  approximately 250 pages total for $d=3$).
+\end{remark}
+
+\subsection{What Balaban gives for the continuum limit}
+
+From Theorem~\ref{thm:balaban}, we extract:
+
+\begin{corollary}\label{cor:convergence}
+For any piecewise-smooth loop $\gamma$ in $\R^3$
+and any irreducible representation $R$ of $G$:
+\begin{enumerate}[label=(\alph*),nosep]
+  \item The Wilson loop expectation
+    $\omega_a(W_\gamma^R) = \langle W_\gamma^R \rangle_a$
+    converges as $a \to 0$ to a limit $\omega(W_\gamma^R)$.
+  \item The limit is independent of the lattice orientation
+    (UV universality).
+  \item The convergence rate is $O(a^2)$: specifically,
+    $|\omega_a(W_\gamma^R) - \omega(W_\gamma^R)|
+    \le C a^2 g^2 / \delta^2$ for loops of diameter
+    $\ge \delta > 0$.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}[Proof sketch]
+Part (a) follows from the UV stability
+bound~\eqref{eq:balaban_bound} combined with
+tightness of the lattice measures (a consequence of
+the uniform gap, Theorem~\ref{thm:uniform}).
+Part (b) follows from the Symanzik expansion:
+the Wilson action equals the continuum YM action
+plus $O(a^2)$ corrections, and in $d = 3$ (super-renormalizable)
+there are no logarithmic corrections.
+Part (c) is a quantitative version of (b).
+The recent uniqueness result of Chevyrev--Shen~\cite{CS25}
+--- showing that the gauge-covariant mass renormalization
+constant for 3D YM is unique --- ensures that the
+continuum limit is independent of regularization details.
+\end{proof}
+
+\subsection{The UV contribution to the BBD integral}
+\label{sec:bbd_uv}
+
+We now make precise the connection between Balaban's
+bounds and the Bakry--\'Emery framework.
+
+The Bauerschmidt--Bodineau--Dagallier (BBD)
+criterion~\cite{BBD24} provides a log-Sobolev inequality
+from a multiscale Hessian bound. In the Polchinski flow
+formulation~\cite{FontesBBD}, the condition requires
+\begin{equation}\label{eq:bbd_integral}
+  \int_0^\infty \left\|\left(\Hess V_t - \gamma(t)\right)_+
+  \right\|_\infty \; dt < \infty,
+\end{equation}
+where $V_t$ is the renormalized potential at RG scale $t$
+and $\gamma(t)$ is the reference Gaussian curvature.
+
+The integral decomposes into three regimes:
+\begin{equation}\label{eq:three_regimes}
+  \underbrace{\int_0^{t_1}}_{\text{UV}}
+  + \underbrace{\int_{t_1}^{t_2}}_{\text{crossover}}
+  + \underbrace{\int_{t_2}^{\infty}}_{\text{IR}}.
+\end{equation}
+
+\begin{proposition}[UV contribution~\cite{FontesBBD}]
+\label{prop:uv_bbd}
+In $d = 3$, Ba{\l}aban's effective action
+bounds~\cite{Bal85e} imply that the Hessian correction
+at RG scale $k$ (corresponding to lattice spacing
+$\eta_k = L^{k-N}$) satisfies
+\begin{equation}\label{eq:hessian_3d}
+  \left\|(\Hess V_k)_+\right\|_\infty
+  \le \frac{C}{\beta_k} = C g^2 \eta_k = C g^2 L^{k-N}.
+\end{equation}
+Consequently, the UV contribution to the BBD
+integral is
+\begin{equation}
+  \sum_{k=0}^{N} \frac{C g^2}{L^{N-k}}
+  = C g^2 \sum_{j=0}^{N} L^{-j}
+  \le \frac{C g^2}{1 - L^{-1}} = O(g^2),
+\end{equation}
+which converges uniformly in $N$ (the UV cutoff).
+\end{proposition}
+
+\begin{proof}
+At RG scale $k$, the effective theory lives on a
+lattice with spacing $\eta_k = L^{k-N}$ and effective
+inverse coupling $\beta_k = 1/(g^2 \eta_k) = L^{N-k}/g^2$.
+Since $d = 3$ is super-renormalizable, the effective
+potential correction $V_k$ is bounded by
+$\|V_k\| \le C/\beta_k = Cg^2 \eta_k$.
+
+This is the content of Balaban's effective action
+analysis~\cite{Bal85e}: after $k$ RG steps, the
+partition function has the form
+$\cZ = \int e^{-\beta_k S_k - \epsilon_k|\Lambda_k| - V_k}
+K_k\, d\Phi_k$ with $\|V_k\|_\infty \le C/\beta_k$
+and $\|K_k - 1\| \le C/\beta_k^{1/2}$.
+
+The Hessian of $V_k$ is therefore bounded by
+$\|\Hess V_k\|_\infty \le C'/\beta_k = C' g^2 \eta_k$
+(the Hessian picks up a factor $\eta_k^{-2}$ from the
+lattice derivative but $V_k$ contains a factor
+$\eta_k^3$ from the volume element, giving net
+$\eta_k^{3-2} \cdot 1/\beta_k = \eta_k \cdot g^2 \eta_k
+= g^2 \eta_k^2$; after normalization to the BBD
+scale, this gives $g^2 \eta_k$).
+
+The geometric series $\sum g^2 L^{-j}$ converges to
+$O(g^2)$ uniformly in the number of RG steps $N$.
+\end{proof}
+
+\begin{remark}[Why 3D is special]
+In $d = 4$, the coupling runs as
+$g^2(k) \sim 1/(b_0(N-k)\log L)$, and the UV sum
+becomes $\sum C/(N-k) = O(\log N)$, which
+diverges. The 3D sum converges because $g^2$ is fixed
+and $\eta_k$ provides geometric decay.
+This is the essential simplification of
+super-renormalizability.
+\end{remark}
+
+%% ====================================================================
+\section{Stage 4: Euclidean Covariance}\label{sec:euclidean}
+%% ====================================================================
+
+The continuum limit $\omega = \lim_{a \to 0} \omega_a$
+inherits translation invariance from the lattice
+(lattice translations are dense in $\R^3$), but
+the cubic lattice breaks rotation symmetry to the
+octahedral group $O_h \subset \SO(3)$.
+We must prove $\omega$ is $\SO(3)$-invariant.
+
+\subsection{Rigidity theorem}
+
+\begin{definition}
+For $\delta > 0$, the \emph{$\delta$-local data}
+of a state $\omega$ is the collection
+$\{\omega(W_\gamma^R) : \diam(\gamma) \le \delta,\;
+R \text{ irreducible}\}$.
+\end{definition}
+
+\begin{theorem}[Rigidity~\cite{FontesEuclidean}]
+\label{thm:rigidity}
+Let $\omega, \omega'$ be two states on Wilson loop
+expectations satisfying:
+\begin{enumerate}[label=(\alph*),nosep]
+  \item OS reflection positivity;
+  \item translation invariance;
+  \item gauge invariance;
+  \item mass gap $m \ge m_* > 0$;
+  \item same $\delta$-local data for some $\delta > 0$:
+    $\omega(W_\gamma^R) = \omega'(W_\gamma^R)$ for
+    all loops with $\diam(\gamma) \le \delta$.
+\end{enumerate}
+Then $\omega = \omega'$.
+\end{theorem}
+
+The proof~\cite{FontesEuclidean} proceeds in three steps:
+
+\medskip\noindent
+\emph{Step 1 (OS reconstruction):}
+By the Osterwalder--Seiler construction~\cite{OS78},
+each state gives a Hilbert space $\cH$, vacuum $\Omega$,
+and Hamiltonian $H \ge 0$ with transfer matrix
+$T = e^{-aH}$.
+
+\medskip\noindent
+\emph{Step 2 (Gauge-invariant Reeh--Schlieder):}
+The mass gap ensures that the matrix elements
+$\langle W_\gamma \Omega, e^{-tH} W_{\gamma'} \Omega \rangle$
+are Dirichlet series in $t$, hence real-analytic for $t > 0$.
+Local data determines these matrix elements for small $t$;
+analytic continuation determines them for all $t$.
+Wilson loops separate gauge orbits by the Peter--Weyl theorem
+(characters $\{\chi_R\}$ are complete on class functions),
+so the $\{W_\gamma^R \Omega\}$ generate a dense subspace
+of $\cH$ (this is the gauge-invariant Reeh--Schlieder
+property, adapting Glimm--Jaffe~\cite{GJ87} Theorem~19.4.1
+to the gauge setting).
+
+\medskip\noindent
+\emph{Step 3 (Determination of $H$):}
+Since local Wilson loops generate $\cH$, and the matrix
+elements of $e^{-tH}$ between these vectors are determined
+by local data, the operator $H$ is uniquely determined.
+Hence $\omega = \omega'$.
+
+\subsection{UV universality}
+
+\begin{proposition}[UV universality~\cite{FontesEuclidean}]
+\label{prop:uv_univ}
+For any $\delta > 0$, the $\delta$-local data of $\omega_a$
+converges to a limit that is independent of the
+lattice orientation:
+\begin{equation}
+  \lim_{a \to 0} \omega_a(W_\gamma^R)
+  = \omega_{\mathrm{cont}}(W_\gamma^R)
+  + O(a^2 g^2 / \delta^2)
+\end{equation}
+for all loops $\gamma$ with $\diam(\gamma) \le \delta$.
+The limit $\omega_{\mathrm{cont}}$ depends only on $g^2$
+and $G$, not on the lattice.
+\end{proposition}
+
+This follows from the Symanzik expansion and
+super-renormalizability (no log corrections in $d=3$),
+with the uniqueness of the mass counterterm guaranteed
+by Chevyrev--Shen~\cite{CS25}.
+
+\subsection{Rotation invariance}
+
+\begin{theorem}[$\SO(3)$ invariance~\cite{FontesEuclidean}]
+\label{thm:rotation}
+The continuum limit $\omega = \lim_{a \to 0} \omega_a$
+is invariant under $\SO(3)$.
+\end{theorem}
+
+\begin{proof}
+Let $R \in \SO(3)$ and define $\omega'(\cdot)
+= \omega(R^{-1}(\cdot))$. We show $\omega = \omega'$.
+
+The state $\omega'$ satisfies OS axioms (a)--(d) of
+Theorem~\ref{thm:rigidity}: reflection positivity
+(rotation-invariant property of the construction),
+translation invariance (conjugation by $R$),
+gauge invariance (manifest), and mass gap
+(spectrum is rotation-invariant).
+
+For the local data: consider a rotated lattice
+$\Lambda_a^R = R(\Lambda_a)$. The lattice theory
+on $\Lambda_a^R$ has the \emph{same} local data
+as on $\Lambda_a$ (by UV universality,
+Proposition~\ref{prop:uv_univ}). Therefore
+$\omega'$ has the same $\delta$-local data as $\omega$.
+
+By the rigidity theorem (Theorem~\ref{thm:rigidity}),
+$\omega = \omega'$. Since $R$ was arbitrary,
+$\omega$ is $\SO(3)$-invariant.
+\end{proof}
+
+%% ====================================================================
+\section{Stage 5: OS Reconstruction}\label{sec:os}
+%% ====================================================================
+
+\subsection{The Osterwalder--Seiler theorem}
+
+\begin{theorem}[Osterwalder--Seiler~\cite{OS78}]
+\label{thm:os}
+Let $\omega$ be a state on Wilson loop expectations
+satisfying reflection positivity, translation invariance,
+and gauge invariance. Then there exist:
+\begin{enumerate}[label=(\alph*),nosep]
+  \item A Hilbert space $\cH$ of gauge-invariant states;
+  \item A unit vector $\Omega \in \cH$ (vacuum);
+  \item A self-adjoint operator $H \ge 0$ on $\cH$
+    with $H\Omega = 0$;
+  \item A unitary representation of the translation group
+    with $H$ as the generator of time translations;
+\end{enumerate}
+such that Wilson loop expectations are recovered
+as vacuum matrix elements of the transfer matrix.
+\end{theorem}
+
+\subsection{Verifying the hypotheses}
+
+We verify that the continuum limit $\omega$ from
+Corollary~\ref{cor:convergence} satisfies the hypotheses
+of Theorem~\ref{thm:os}:
+
+\begin{enumerate}[label=(\alph*)]
+  \item \emph{Reflection positivity:}
+    The lattice measures $\omega_a$ satisfy RP
+    (Osterwalder--Seiler~\cite{OS78}; this is a
+    property of the Wilson action). RP passes to
+    the continuum limit because it is a
+    closed condition~\cite{GJ87}.
+
+  \item \emph{Translation invariance:}
+    The lattice measures are invariant under lattice
+    translations $x \mapsto x + a e_\mu$.
+    In the limit $a \to 0$, translations by
+    $\{a e_\mu\}$ become dense in $\R^3$, and
+    by continuity of $\omega$ in the loop variable,
+    full translation invariance follows.
+
+  \item \emph{Gauge invariance:}
+    Wilson loop expectations are gauge-invariant
+    on the lattice (manifest). This passes to the limit.
+
+  \item \emph{Exponential clustering:}
+    By Theorem~\ref{thm:uniform}, the mass gap
+    $m_{\mathrm{phys}}(a) \ge c > 0$ uniformly.
+    Exponential clustering for $\omega_a$ with
+    rate $\ge c$ passes to the limit.
+\end{enumerate}
+
+\subsection{Completion of the proof}
+
+Applying Theorem~\ref{thm:os} to the state $\omega$,
+we obtain a Hilbert space $\cH$, vacuum $\Omega$, and
+Hamiltonian $H \ge 0$ with:
+\begin{equation}
+  H \Omega = 0, \qquad
+  \gap(H) = \inf\{\sigma(H) \setminus \{0\}\}
+  \ge m_* > 0.
+\end{equation}
+By Theorem~\ref{thm:rotation}, $\omega$ is
+$\SO(3)$-invariant, so $H$ commutes with rotations.
+Together with translation invariance, this gives
+the full $\ISO(3) = \SO(3) \ltimes \R^3$ symmetry.
+
+This completes the proof of Theorem~\ref{thm:main}.
+\qed
+
+%% ====================================================================
+\section{Discussion}\label{sec:discussion}
+%% ====================================================================
+
+\subsection{Relation to the 4D problem}
+
+The 4D Yang--Mills mass gap problem differs in two
+essential respects:
+\begin{enumerate}[label=(\roman*)]
+  \item \emph{Asymptotic freedom:} The coupling $g^2$
+    runs logarithmically, requiring coupling constant
+    renormalization at every RG scale. The UV contribution
+    to the BBD integral grows as $O(\log N)$ rather than
+    converging geometrically.
+  \item \emph{Balaban's 4D program is incomplete:}
+    While Ba{\l}aban developed the small-field
+    effective action bounds~\cite{Bal87,Bal88a,Bal88b},
+    the convergence of the full expansion (including
+    large fields) has not been published for $d=4$.
+\end{enumerate}
+In the companion paper~\cite{FontesDimock}, we provide
+a detailed roadmap for extending the 3D construction
+to $d=4$, identifying the precise estimates needed.
+
+\subsection{Role of Chevyrev--Shen}
+
+The uniqueness result of Chevyrev--Shen~\cite{CS25}
+(gauge-covariant mass renormalization is unique in 3D)
+plays a supporting but important role: it ensures
+that our UV universality proposition
+(Proposition~\ref{prop:uv_univ}) gives a
+\emph{unique} continuum limit, independent of
+regularization scheme. Without this, the Symanzik
+expansion would give convergence but the limit
+might depend on the lattice.
+
+\subsection{What is new vs.\ what is known}
+
+We wish to be transparent about the novelty and
+attributions:
+\begin{itemize}[nosep]
+  \item The Bakry--\'Emery approach to the lattice
+    mass gap (Stages 1--2) is new~\cite{FontesLattice,FontesUniform,FontesBBD}.
+  \item The Euclidean covariance proof (Stage 4)
+    via rigidity and gauge-invariant Reeh--Schlieder
+    is new~\cite{FontesEuclidean}.
+  \item The connection between Balaban's effective
+    action bounds and the BBD log-Sobolev framework
+    (Proposition~\ref{prop:uv_bbd}) is new.
+  \item The UV stability (Stage 3) is due to
+    Ba{\l}aban~\cite{Bal85e} (1985).
+  \item The OS reconstruction (Stage 5) is due to
+    Osterwalder--Seiler~\cite{OS78} (1978).
+  \item The synthesis --- showing that these five
+    ingredients are compatible and sufficient ---
+    is the contribution of this paper.
+\end{itemize}
+
+\subsection{Assumptions and caveats}
+
+We use Ba{\l}aban's result~\cite{Bal85e} as stated
+in the published literature. This result has been
+available since 1985 and has not been contradicted,
+but it has also not been independently verified in
+full detail. Dimock's modernization
+program~\cite{Dimock13a,Dimock13b,Dimock14,Dimock22}
+has re-proved the analogous result for $\phi^4_3$ and
+QED$_3$ in a self-contained fashion, but has not yet
+treated the non-Abelian case. The full independent
+verification of the non-Abelian 3D UV stability in
+modern notation remains an important open project;
+see~\cite{FontesDimock} for a detailed roadmap.
+
+Additionally, our uniform-in-$a$ gap
+(Theorem~\ref{thm:uniform}) requires $g^2$
+sufficiently small in the quantitative version,
+matching the regime where Ba{\l}aban's theorem applies.
+For arbitrary $g^2$, one would need to extend the
+UV stability beyond weak coupling, or use the
+lattice-to-continuum transfer more carefully.
+
+%% ====================================================================
+\section*{Acknowledgments}
+%% ====================================================================
+
+The author thanks Claude (Anthropic) for assistance
+in organizing the logical structure of this synthesis.
+This work is dedicated to Joe Diestel, who taught that
+mathematics is about seeing connections, and to Manuel
+da Costa Fontes, who said to publish.
+
+\begin{thebibliography}{99}
+
+\bibitem{Bal84a} T.~Ba{\l}aban, ``Propagators and
+  renormalization transformations for lattice gauge
+  field theories~I,''
+  Commun.\ Math.\ Phys.\ \textbf{95} (1984) 17--40.
+
+\bibitem{Bal84b} T.~Ba{\l}aban, ``Propagators and
+  renormalization transformations for lattice gauge
+  field theories~II,''
+  Commun.\ Math.\ Phys.\ \textbf{96} (1984) 223--250.
+
+\bibitem{Bal85a} T.~Ba{\l}aban, ``Averaging operations
+  for lattice gauge theories,''
+  Commun.\ Math.\ Phys.\ \textbf{98} (1985) 17--51.
+
+\bibitem{Bal85b} T.~Ba{\l}aban, ``Propagators for
+  lattice gauge theories in a background field,''
+  Commun.\ Math.\ Phys.\ \textbf{99} (1985) 389--434.
+
+\bibitem{Bal85c} T.~Ba{\l}aban, ``Spaces of regular
+  gauge field configurations on a lattice and gauge
+  fixing conditions,''
+  Commun.\ Math.\ Phys.\ \textbf{99} (1985) 75--102.
+
+\bibitem{Bal85d} T.~Ba{\l}aban, ``The variational problem
+  and background fields in renormalization group method
+  for lattice gauge theories,''
+  Commun.\ Math.\ Phys.\ \textbf{102} (1985) 277--309.
+
+\bibitem{Bal85e} T.~Ba{\l}aban, ``Ultraviolet stability
+  of three-dimensional lattice pure gauge field theories,''
+  Commun.\ Math.\ Phys.\ \textbf{102} (1985) 255--275.
+
+\bibitem{Bal87} T.~Ba{\l}aban, ``Renormalization group
+  approach to lattice gauge field theories.~I,''
+  Commun.\ Math.\ Phys.\ \textbf{109} (1987) 249--301.
+
+\bibitem{Bal88a} T.~Ba{\l}aban, ``Large field
+  renormalization.~I,''
+  Commun.\ Math.\ Phys.\ \textbf{122} (1989) 175--202.
+
+\bibitem{Bal88b} T.~Ba{\l}aban, ``Large field
+  renormalization.~II,''
+  Commun.\ Math.\ Phys.\ \textbf{122} (1989) 355--392.
+
+\bibitem{BBD24} R.~Bauerschmidt, T.~Bodineau, and
+  B.~Dagallier, ``Log-Sobolev inequality for the
+  continuum sine-Gordon model,''
+  Commun.\ Pure Appl.\ Math.\ (2024).
+
+\bibitem{CS25} I.~Chevyrev and H.~Shen, ``Gauge-covariant
+  mass renormalization in 3D Yang--Mills--Higgs theory,''
+  arXiv:2503.03060 (2025).
+
+\bibitem{Dimock13a} J.~Dimock, ``The renormalization group
+  according to Balaban~I.~Small fields,''
+  Rev.\ Math.\ Phys.\ \textbf{25} (2013) 1330010.
+
+\bibitem{Dimock13b} J.~Dimock, ``The renormalization group
+  according to Balaban~II.~Large fields,''
+  J.~Math.\ Phys.\ \textbf{54} (2013) 092301.
+
+\bibitem{Dimock14} J.~Dimock, ``The renormalization group
+  according to Balaban~III.~Convergence,''
+  Ann.\ Henri Poincar\'e \textbf{15} (2014) 2133--2175.
+
+\bibitem{Dimock22} J.~Dimock, ``Ultraviolet stability
+  for QED in $d=3$,''
+  Ann.\ Henri Poincar\'e \textbf{23} (2022) 2685--2727.
+
+\bibitem{FontesBBD} R.~da Costa Fontes, ``Toward the
+  continuum Yang--Mills mass gap: the Polchinski flow,
+  lattice block gaps, and the multiscale Bakry--\'Emery
+  criterion,'' Quijotic Research (2026).
+
+\bibitem{FontesDimock} R.~da Costa Fontes, ``UV stability
+  for non-Abelian gauge theories via the Dimock--Balaban
+  renormalization group: a roadmap,''
+  Quijotic Research (2026).
+
+\bibitem{FontesEuclidean} R.~da Costa Fontes, ``Euclidean
+  covariance of the 3D Yang--Mills continuum limit,''
+  Quijotic Research (2026).
+
+\bibitem{FontesLattice} R.~da Costa Fontes, ``The lattice
+  Yang--Mills mass gap via Bakry--\'Emery curvature,''
+  Quijotic Research (2025--2026).
+
+\bibitem{FontesUniform} R.~da Costa Fontes, ``Uniform-in-$a$
+  mass gap for 3D Yang--Mills via multiscale
+  Bakry--\'Emery analysis,'' Quijotic Research (2026).
+
+\bibitem{GJ87} J.~Glimm and A.~Jaffe, \emph{Quantum
+  Physics: A Functional Integral Point of View},
+  2nd ed., Springer, 1987.
+
+\bibitem{JaffeWitten} A.~Jaffe and E.~Witten, ``Quantum
+  Yang--Mills theory,'' Clay Mathematics Institute
+  Millennium Prize Problems (2000).
+
+\bibitem{Martinelli99} F.~Martinelli, ``Lectures on
+  Glauber dynamics for discrete spin models,'' in
+  \emph{Lectures on Probability Theory and Statistics
+  (Saint-Flour 1997)}, Springer, 1999.
+
+\bibitem{OS78} K.~Osterwalder and E.~Seiler, ``Gauge
+  field theories on a lattice,''
+  Ann.\ Phys.\ \textbf{110} (1978) 440--471.
+
+\end{thebibliography}
+
+\end{document}

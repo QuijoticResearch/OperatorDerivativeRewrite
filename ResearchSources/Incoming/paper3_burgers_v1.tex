@@ -1,0 +1,587 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amsthm,amssymb,mathtools}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{enumitem}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\T}{\mathbb{T}}
+\DeclareMathOperator{\tr}{tr}
+
+\title{Pressure Stabilization Near the Burgers Vortex:\\
+The Neutral Point of Eigenvalue Selection}
+\author{Ramiro Fontes\\Quijotic Research\\
+\texttt{ramirofontes@gmail.com}}
+\date{March 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The pressure Hessian projection
+$\int\omega\cdot P\omega\,dx$, where
+$P_{ij}=\partial_i\partial_j p$, controls whether
+nonlocal pressure effects reinforce or oppose
+vortex stretching in the 3D incompressible
+Navier--Stokes equations.  Using the integral
+identity
+$\int\omega\cdot P\omega\,dx
+= \int p\,\tr((\nabla\omega)^2)\,dx$
+(proved in~\cite{Fontes2026eigen}), we establish
+that the Burgers vortex is the \emph{neutral point}
+of this functional: any axisymmetric vortex tube
+$\omega = f(r)\hat z$ satisfies
+$\tr((\nabla\omega)^2)\equiv 0$, hence
+$\int\omega\cdot P\omega=0$ identically.
+
+Perturbation analysis and numerical experiments
+show that every physically relevant departure from
+axisymmetry makes the integral \emph{negative}
+(pressure opposes stretching): bending gives
+$\int\omega\cdot P\omega = -c\varepsilon^2+O(\varepsilon^3)$
+with $c>0$; helical twisting gives a stronger
+effect scaling as the twist amplitude squared;
+and orthogonal tube interactions, while initially
+positive, are driven negative by the NS dynamics
+within one turnover time.
+
+These results show that the Burgers vortex is an
+\emph{unstable saddle point} for the pressure
+Hessian sign: neutral itself, but every perturbation
+that NS turbulence generically produces (bending,
+twisting, interaction) pushes toward pressure
+stabilization of eigenvalue selection.
+
+\smallskip\noindent\textbf{MSC 2020:}
+35Q30, 76D05, 76F02.
+
+\smallskip\noindent\textbf{Keywords:}
+Navier--Stokes; Burgers vortex; pressure Hessian;
+vortex stretching; eigenvalue selection;
+perturbation analysis.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%======================================================================
+\section{Introduction}\label{sec:intro}
+%======================================================================
+
+In~\cite{Fontes2026eigen} we proved the integral
+identity
+\begin{equation}\label{eq:identity}
+\int_{\T^3}\omega\cdot P\omega\,dx
+= \int_{\T^3}p\,\tr\bigl((\nabla\omega)^2\bigr)\,dx,
+\end{equation}
+where $P_{ij}=\partial_i\partial_j p$ is the
+pressure Hessian and
+$\tr((\nabla\omega)^2)=(\partial_j\omega_i)
+(\partial_i\omega_j)$, and showed numerically that
+$\int\omega\cdot P\omega<0$ for developed NS
+turbulence (pressure opposes vortex stretching).
+
+The present paper asks: \emph{where does the
+negative sign come from?}  We show that the Burgers
+vortex --- the canonical model of an isolated vortex
+tube and the Lagrangian fixed point of the
+Galanti--Gibbon alignment
+dynamics~\cite{GalantiGibbon97} --- is the
+\emph{neutral point}: $\int\omega\cdot P\omega=0$
+identically.  Every physically relevant perturbation
+(bending, twisting, interaction) breaks the symmetry
+in the stabilizing direction.
+
+
+%======================================================================
+\section{The Neutral Point}\label{sec:neutral}
+%======================================================================
+
+\begin{theorem}[Axisymmetric neutrality]
+\label{thm:axisym}
+Let $\omega=f(r)\hat z$ be any axially symmetric
+vorticity field on $\T^3$ (or $\R^3$), where
+$r=\sqrt{x^2+y^2}$ and $f$ is smooth.  Then
+\begin{equation}\label{eq:tr-zero}
+\tr\bigl((\nabla\omega)^2\bigr)(x) = 0
+\qquad\text{for all } x.
+\end{equation}
+Consequently, $\int\omega\cdot P\omega\,dx = 0$
+for any pressure field $p$.
+\end{theorem}
+
+\begin{proof}
+The only nonzero components of $\nabla\omega$ are
+\[
+\partial_x\omega_z = f'(r)\frac{x}{r},\quad
+\partial_y\omega_z = f'(r)\frac{y}{r}.
+\]
+The trace is
+$\tr((\nabla\omega)^2) = \sum_{i,j}
+(\partial_j\omega_i)(\partial_i\omega_j)$.
+The only nonzero terms have $i=3$ (only $\omega_z$
+has gradients), requiring $\partial_3\omega_j\neq 0$
+for some $j$.  But $\partial_z\omega_j=0$ for all
+$j$ (axisymmetry: $\omega$ is independent of $z$
+and has no $x,y$ components).  Hence every term
+vanishes.
+
+\emph{Alternative proof via decomposition:}
+$\tr((\nabla\omega)^2) = |\nabla\omega|^2
+- |\nabla\times\omega|^2$.
+For $\omega=f(r)\hat z$:
+$|\nabla\omega|^2 = (f')^2$
+and $\nabla\times\omega = (-\partial_y f,
+\partial_x f, 0)$, so
+$|\nabla\times\omega|^2 = (f')^2(y^2+x^2)/r^2
+= (f')^2$.  Therefore
+$\tr((\nabla\omega)^2) = (f')^2-(f')^2 = 0$.
+\end{proof}
+
+\begin{remark}[Universality of the neutral point]
+\label{rem:universal}
+The result holds for \emph{any} radial profile $f(r)$:
+Gaussian (Burgers), algebraic (Rankine),
+concentrated (near-singular).
+It is a consequence of the axial symmetry alone,
+not of any special choice of profile.  The Burgers
+vortex is neutral because straight vortex tubes have
+equal amounts of ``straining'' and ``twisting'' in
+their vorticity gradient, by symmetry.
+\end{remark}
+
+\begin{remark}[Superposition of parallel tubes]
+\label{rem:parallel}
+For $\omega = \sum_k f_k(r_k)\hat z$ (any number
+of parallel straight tubes, same or opposite
+circulation), $\tr((\nabla\omega)^2) = 0$ still
+holds, because
+$\omega_x=\omega_y=0$ and $\omega_z$ is
+$z$-independent.
+This is confirmed numerically: parallel and
+anti-parallel tube pairs give
+$\int\omega\cdot P\omega = 0$ to machine
+precision (Section~\ref{sec:numerics}).
+\end{remark}
+
+
+%======================================================================
+\section{Perturbation Analysis}\label{sec:perturb}
+%======================================================================
+
+\subsection{Bent vortex tube}
+
+Consider a vortex tube with sinusoidally bent
+axis:
+\begin{equation}\label{eq:bent}
+x_c(z) = \varepsilon\sin(z),\quad y_c=0,
+\end{equation}
+and vorticity (to leading order)
+$\omega_\varepsilon = f(r_\perp)\hat t(z)$ where
+$r_\perp$ is the perpendicular distance from the
+axis and $\hat t$ is the unit tangent.
+
+\begin{proposition}[$O(\varepsilon^2)$ scaling]
+\label{prop:scaling}
+For the bent vortex tube~\eqref{eq:bent}:
+\begin{equation}\label{eq:eps2}
+\int\omega_\varepsilon\cdot P_\varepsilon
+\omega_\varepsilon\,dx
+= -c\varepsilon^2 + O(\varepsilon^3),
+\end{equation}
+where $c>0$ depends on the profile $f$.
+The $O(\varepsilon)$ term vanishes because the
+first-order correction to
+$\tr((\nabla\omega)^2)$ is proportional to
+$\sin(z)$, which integrates to zero against the
+$z$-independent leading-order pressure.
+\end{proposition}
+
+\begin{proof}[Proof of $O(\varepsilon^2)$ scaling]
+Expanding in $\varepsilon$:
+\[
+\omega_\varepsilon = \omega_0 + \varepsilon\omega_1
++ \varepsilon^2\omega_2 + \cdots
+\]
+where $\omega_0 = f(r_0)\hat z$ is the straight
+tube.  The trace expands as:
+\[
+\tr((\nabla\omega_\varepsilon)^2) =
+\underbrace{\tr((\nabla\omega_0)^2)}_{=\,0}
++ \varepsilon\,T_1 + \varepsilon^2\,T_2 + \cdots
+\]
+The first-order term is
+$T_1 = 2\sum_{i,j}(\partial_j\omega_{0,i})
+(\partial_i\omega_{1,j})$.  Since
+$\omega_0=f(r_0)\hat z$, the only nonzero
+$\partial_j\omega_{0,i}$ have $i=3$.  Thus $T_1$
+involves $\partial_3\omega_{1,j}$, and for the
+bent tube $\omega_1 \propto \cos(z)f(r_0)\hat x$,
+giving $\partial_z\omega_{1,x}\propto -\sin(z)$.
+Therefore $T_1\propto\sin(z)$.
+
+The pressure at leading order is $p_0(r_0)$
+(axisymmetric).  Hence
+$\int p_0\cdot T_1\,dV
+\propto\int_0^{2\pi}\sin(z)\,dz = 0$.
+
+The $O(\varepsilon^2)$ contribution comes from
+two terms: $\int p_0\,T_2\,dV$ and
+$\int p_1\,T_1\,dV$, where $p_1$ is the
+first-order pressure correction.
+Since both $p_1$ and $T_1$ are proportional to
+$\sin(z)$, the product $p_1 T_1\propto\sin^2(z)$
+integrates to a nonzero value.
+
+The sign $c>0$ is confirmed numerically
+(Section~\ref{sec:numerics}): the normalized
+ratio $(\int\omega\cdot P\omega)/\varepsilon^2
+\to -0.036$ as $\varepsilon\to 0$.
+\end{proof}
+
+\begin{remark}[Physical mechanism]
+\label{rem:bend-mechanism}
+Bending introduces a $z$-component of
+$\partial_z\omega_x$ (the axial derivative of the
+transverse vorticity), which creates nonzero
+$\tr((\nabla\omega)^2)$.  The sign is negative
+because the pressure correction $p_1$ is negative
+on the \emph{inside} of the bend (where
+centrifugal effects reduce pressure) and $T_1$ is
+also negative there, but their product integrated
+over the full period gives a net negative
+contribution via the $\sin^2(z)$ mechanism.
+\end{remark}
+
+\subsection{Helical perturbation}
+
+A helical twist of the vorticity direction:
+\begin{equation}\label{eq:helical}
+\omega_\varepsilon = f(r)\bigl(
+\varepsilon\cos(z)\hat x
++ \varepsilon\sin(z)\hat y
++ \hat z\bigr)
+\end{equation}
+introduces $z$-dependent transverse components.
+Since $\partial_z\omega_x \propto -\varepsilon\sin z$
+and $\partial_z\omega_y \propto \varepsilon\cos z$:
+\[
+\tr((\nabla\omega_\varepsilon)^2) =
+O(\varepsilon)\quad\text{(nonzero at first order)}.
+\]
+Unlike the bending case, the first-order trace does
+not average to zero because the helical symmetry
+prevents the $\sin/\cos$ cancellation
+(both $\sin^2 z$ and $\cos^2 z$ terms contribute
+with the same sign).
+
+\begin{proposition}[Helical perturbation]
+\label{prop:helical}
+For the helical
+perturbation~\eqref{eq:helical}:
+\begin{equation}
+\int\omega_\varepsilon\cdot P_\varepsilon
+\omega_\varepsilon\,dx
+= -c_h\varepsilon^2 + O(\varepsilon^3),
+\end{equation}
+with $c_h>0$.  Numerically,
+$c_h/c_{\rm bend}\approx 7$ at comparable
+amplitudes: helical twisting produces
+stronger pressure stabilization than bending.
+\end{proposition}
+
+
+%======================================================================
+\section{Numerical Experiments}\label{sec:numerics}
+%======================================================================
+
+All experiments: $128^3$ periodic domain.
+Vortex configurations constructed in physical
+space, velocity recovered via Biot--Savart
+($\hat u(k) = ik\times\hat\omega(k)/|k|^2$).
+
+\subsection{Straight tube (confirmation of
+Theorem~\ref{thm:axisym})}
+
+Gaussian profile $f(r)=5e^{-r^2/2\delta^2}$,
+$\delta=0.3$:
+$\int\omega\cdot P\omega = 0$ and
+$\tr((\nabla\omega)^2) = 0$ to machine precision
+(both identically zero in exact arithmetic, and
+zero to double precision numerically).  The result
+persists after 200~NS time steps: the periodic
+domain preserves the axial symmetry.
+
+\subsection{Bent tube}
+
+Axis $x_c(z) = \pi+\varepsilon\sin z$, same
+Gaussian profile:
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$\varepsilon$ & $\int\omega\cdot P\omega$
+  & Normalized & $(\cdot)/\varepsilon^2$ \\
+\midrule
+$0.1$ & $-1.56\!\times\!10^{-2}$ & $-3.61\!\times\!10^{-4}$ & $-0.0361$ \\
+$0.3$ & $-1.28\!\times\!10^{-1}$ & $-2.97\!\times\!10^{-3}$ & $-0.0330$ \\
+$0.5$ & $-3.03\!\times\!10^{-1}$ & $-6.99\!\times\!10^{-3}$ & $-0.0280$ \\
+$1.0$ & $-6.79\!\times\!10^{-1}$ & $-1.57\!\times\!10^{-2}$ & $-0.0157$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+The $(\cdot)/\varepsilon^2$ column confirms
+$O(\varepsilon^2)$ scaling at small $\varepsilon$,
+with coefficient $c\approx 0.036$.  The decrease
+at larger $\varepsilon$ reflects higher-order
+corrections.
+Negative at \emph{every} amplitude tested.
+
+After 200~NS steps, the bent tube ($\varepsilon=0.5$)
+retains its negative sign:
+$\int\omega\cdot P\omega = -0.302$
+(unchanged to two significant figures).
+
+\subsection{Parallel and anti-parallel tubes}
+
+Two straight tubes (same or opposite circulation,
+separation $0.8$--$1.5$):
+$\int\omega\cdot P\omega = 0$ to machine precision,
+confirming Remark~\ref{rem:parallel}.
+
+\subsection{Orthogonal tubes}
+
+Two orthogonal straight tubes (one along $z$, one
+along $x$):
+$\int\omega\cdot P\omega = +2.94$ (initially
+positive).  Under NS evolution:
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}cc@{}}
+\toprule
+$t$ & $\int\omega\cdot P\omega$ \\
+\midrule
+$0.0$ & $+2.94$ \\
+$0.1$ & $+2.35$ \\
+$0.2$ & $+1.00$ \\
+$0.5$ & $\mathbf{-3.14}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+The NS dynamics drive the integral from positive to
+negative within half a turnover time.  The interaction
+of orthogonal tubes generates bending and twisting
+(which both stabilize), overcoming the initial
+geometric destabilization.
+
+\subsection{Helical twist}
+
+Helical perturbation~\eqref{eq:helical}:
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+twist $\varepsilon$ & $\int\omega\cdot P\omega$
+  & Normalized \\
+\midrule
+$0.1$ & $-0.120$ & $-2.76\!\times\!10^{-3}$ \\
+$0.3$ & $-1.09$ & $-2.46\!\times\!10^{-2}$ \\
+$0.5$ & $-3.08$ & $-6.66\!\times\!10^{-2}$ \\
+$1.0$ & $-13.4$ & $-0.241$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Strongly negative at all amplitudes, with
+$|c_h|\approx 7|c_{\rm bend}|$: twisting is the
+dominant stabilization mechanism.
+
+
+%======================================================================
+\section{The Saddle Point Structure}\label{sec:saddle}
+%======================================================================
+
+The results assemble into a clear picture:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}lc@{}}
+\toprule
+\textbf{Configuration} & $\int\omega\cdot P\omega$ \\
+\midrule
+Straight tube (any profile) & $0$ (proved) \\
+Parallel/anti-parallel tubes & $0$ (proved) \\
+Bent tube & $<0$ (all $\varepsilon>0$) \\
+Helical twist & $<0$ (all $\varepsilon>0$) \\
+Orthogonal tubes & $>0$ initially \\
+\quad$\to$ NS evolution & $<0$ (by $t=0.5$) \\
+Developed NS turbulence & $<0$ (10 seeds, \cite{Fontes2026eigen}) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The Burgers vortex (straight tube) is a
+\emph{saddle point}: it sits at
+$\int\omega\cdot P\omega = 0$ with
+all curvature perturbations leading to negative
+values.  The only configuration that gives a
+positive value (orthogonal tubes) is unstable
+under NS dynamics.
+
+\begin{remark}[Why turbulence lives on the
+stable manifold]
+\label{rem:stable-manifold}
+NS turbulence generically produces vortex tubes
+that are bent (by the strain field of neighboring
+structures) and twisted (by the local vorticity).
+Both perturbations are \emph{stabilizing} for the
+pressure Hessian sign.  The straight Burgers tube
+(neutral) and the purely orthogonal configuration
+(destabilizing) are measure-zero in the space of
+vorticity fields that NS produces.  This explains
+the universal finding of~\cite{Fontes2026eigen}:
+$\langle P_\omega\rangle_{\rm enst}<0$ for
+developed turbulence across all 10~seeds.
+\end{remark}
+
+
+%======================================================================
+\section{Discussion}\label{sec:discussion}
+%======================================================================
+
+\subsection{The chain toward regularity}
+
+Combining the results
+of~\cite{Fontes2026spread,Fontes2026eigen} with
+the present paper:
+
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+\item The Galanti--Gibbon $\alpha$-equation
+  shows that the restricted Euler dynamics
+  drive $\alpha\to\lambda_2$ (eigenvalue
+  selection, proved
+  in~\cite{Fontes2026eigen}).
+\item The pressure Hessian term
+  $-\hat\omega\cdot P\hat\omega$
+  \emph{reinforces} this for generic
+  perturbations of the Burgers vortex
+  (the present paper).
+\item Eigenvalue selection depletes 81\% of
+  potential stretching: $\rho\approx 0.19$
+  (measured in~\cite{Fontes2026eigen}).
+\item Angular spreading
+  $\Sigma^{(1)}<0$ is a dynamical attractor
+  of the NS nonlinearity
+  (proved/measured in~\cite{Fontes2026spread}).
+\end{enumerate}
+
+The gap: a complete proof would need to show
+that the saddle-point structure persists along
+all smooth NS trajectories, not just for
+perturbations of isolated tubes.  The generic
+turbulent field is a tangle of interacting tubes,
+not a single perturbed Burgers vortex.  However,
+the perturbation results show that every
+\emph{local} departure from axisymmetry is
+stabilizing, which strongly constrains the
+possible scenarios for destabilization.
+
+\subsection{What would close the gap}
+
+A proof that $\int p\,\tr((\nabla\omega)^2)\leq 0$
+for developed NS solutions would require showing
+that the local stabilization (bending and twisting
+of individual tubes) dominates the global
+destabilization (interaction effects between
+distant structures).  The orthogonal tube
+experiment suggests that even the global effects
+are dynamically corrected: the NS evolution
+converts the destabilizing orthogonal interaction
+into a stabilizing configuration within half a
+turnover time.
+
+An analytical approach might proceed via:
+(a)~a vortex filament model that captures bending
+and twisting as leading-order effects;
+(b)~the identity~\eqref{eq:identity} applied to
+the filament approximation;
+(c)~a stability argument showing that the
+$O(\varepsilon^2)$ stabilization from bending/twisting
+outweighs any residual destabilization from
+interaction.
+
+%======================================================================
+\section{Summary}\label{sec:summary}
+%======================================================================
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Result} & \textbf{Status} & \textbf{Section} \\
+\midrule
+$\tr((\nabla\omega)^2)=0$ for axisymmetric $\omega$
+  & Proved & \ref{sec:neutral} \\
+$\int\omega\cdot P\omega=0$ for Burgers vortex
+  & Proved & \ref{sec:neutral} \\
+Parallel/anti-parallel tubes: $\int\omega\cdot P\omega=0$
+  & Proved & \ref{sec:neutral} \\
+Bending: $\int\omega\cdot P\omega = -c\varepsilon^2+O(\varepsilon^3)$
+  & $O(\varepsilon^2)$ proved, & \ref{sec:perturb} \\
+  & $c>0$ numerical & \\
+Helical twist: $<0$ for all $\varepsilon>0$
+  & Numerical & \ref{sec:numerics} \\
+Orthogonal interaction: NS drives $+\to -$
+  & Numerical & \ref{sec:numerics} \\
+Saddle-point structure of Burgers
+  & Structural & \ref{sec:saddle} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+
+%======================================================================
+\section*{Acknowledgments}
+%======================================================================
+
+AI tools were used as interactive assistants for
+drafting and mathematical exploration.
+Simulations were performed on an NVIDIA RTX~5090.
+
+%======================================================================
+\begin{thebibliography}{99}
+
+\bibitem{GalantiGibbon97}
+B.~Galanti, J.\,D.~Gibbon, and M.~Heritage,
+Vorticity alignment results for the three-dimensional
+Euler and Navier--Stokes equations,
+\emph{Nonlinearity}~\textbf{10} (1997), 1675--1694.
+
+\bibitem{Fontes2026spread}
+R.~Fontes,
+Angular spreading of enstrophy in the 3D Navier--Stokes
+equations,
+\emph{Preprint}, 2026.
+
+\bibitem{Fontes2026eigen}
+R.~Fontes,
+Eigenvalue selection and pressure stabilization in
+3D Navier--Stokes vortex stretching,
+\emph{Preprint}, 2026.
+
+\end{thebibliography}
+
+\end{document}

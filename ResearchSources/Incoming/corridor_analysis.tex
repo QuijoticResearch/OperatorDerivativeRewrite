@@ -1,0 +1,409 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{question}{Question}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Analysis of the Corridor Condition:\\Stability, Blow-up Constraints, and Natural Satisfaction}
+\author{Technical Analysis}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{The Corridor Condition}
+
+From the paper, the ``corridor condition'' is the requirement that under concentration ($\rho \geq 1 - \varepsilon_*$), the characteristic frequency $\lambda = \sqrt{D/E}$ satisfies the dichotomy bounds derived in the Closing Lemma.
+
+\begin{definition}[Corridor Condition]
+A solution $u(t)$ satisfies the \textbf{corridor condition} at time $t$ if one of the following holds:
+\begin{enumerate}[label=(\roman*)}
+\item \textbf{Non-concentrated:} $\rho(t) < 1 - \varepsilon_*$
+\item \textbf{Concentrated, low frequency:} $\rho(t) \geq 1 - \varepsilon_*$ and $\lambda(t) < \lambda_{crit} := c_1/(4\nu)$
+\item \textbf{Concentrated, high frequency:} $\rho(t) \geq 1 - \varepsilon_*$ and $\lambda(t) \geq \lambda_{crit}$
+\end{enumerate}
+where $E = \|u\|_{\dot{H}^{1/2}}^2$, $D = \|u\|_{\dot{H}^{3/2}}^2$, $\lambda = \sqrt{D/E}$, and $\rho = E_{max}/E$.
+\end{definition}
+
+The key claim is that ALL solutions satisfy the corridor condition (by definition---it's exhaustive), but each case leads to a different consequence:
+\begin{itemize}
+\item Case (i): Standard regime, no special analysis needed
+\item Case (ii): $d\rho/dt < 0$, concentration breaks
+\item Case (iii): $dE/dt < 0$, energy decreases
+\end{itemize}
+
+%==============================================================================
+\section{Question 1: Forward Stability of the Corridor Condition}
+%==============================================================================
+
+\begin{question}
+Is the corridor condition forward-stable under NS evolution? Can it fail instantaneously, or must it degrade continuously?
+\end{question}
+
+\subsection{Analysis}
+
+First, note that the corridor condition as defined is \textbf{always satisfied}---it's a partition of the state space, not a constraint. The real question is:
+
+\textbf{Can a solution jump discontinuously between cases (i), (ii), (iii)?}
+
+The relevant quantities are:
+\begin{itemize}
+\item $\rho(t) = E_{max}(t)/E(t)$ (concentration ratio)
+\item $\lambda(t) = \sqrt{D(t)/E(t)}$ (characteristic frequency)
+\end{itemize}
+
+\begin{proposition}[Continuity of State Variables]
+For smooth NS solutions, $\rho(t)$ and $\lambda(t)$ are continuous functions of time.
+\end{proposition}
+
+\begin{proof}
+$E(t) = \|u(t)\|_{\dot{H}^{1/2}}^2$ and $D(t) = \|u(t)\|_{\dot{H}^{3/2}}^2$ are continuous for smooth solutions (they're integrals of continuous integrands).
+
+For $E_{max}(t) = \max_j E_j(t)$: each $E_j(t)$ is continuous, and the maximum of finitely many continuous functions is continuous.
+
+Therefore $\rho = E_{max}/E$ and $\lambda = \sqrt{D/E}$ are continuous (assuming $E > 0$, which holds for non-trivial solutions).
+\end{proof}
+
+\begin{corollary}[No Instantaneous Failure]
+A solution cannot jump instantaneously between cases. Transitions occur continuously.
+\end{corollary}
+
+\subsection{Propagation Result}
+
+\begin{theorem}[Short-Time Stability of Case Classification]\label{thm:short-time}
+Let $u(t)$ be a smooth NS solution.
+
+\textbf{(a)} If $\rho(t_0) < 1 - \varepsilon_* - \delta$ for some $\delta > 0$, then there exists $\tau > 0$ such that $\rho(t) < 1 - \varepsilon_*$ for all $t \in [t_0, t_0 + \tau]$.
+
+\textbf{(b)} If $\rho(t_0) \geq 1 - \varepsilon_*$ and $\lambda(t_0) < \lambda_{crit} - \delta$, then there exists $\tau > 0$ such that $\lambda(t) < \lambda_{crit}$ for all $t \in [t_0, t_0 + \tau]$.
+
+\textbf{(c)} If $\rho(t_0) \geq 1 - \varepsilon_*$ and $\lambda(t_0) > \lambda_{crit} + \delta$, then there exists $\tau > 0$ such that $\lambda(t) > \lambda_{crit}$ for all $t \in [t_0, t_0 + \tau]$.
+
+Moreover, $\tau$ can be estimated in terms of the rates $|d\rho/dt|$ and $|d\lambda/dt|$.
+\end{theorem}
+
+\begin{proof}
+All three statements follow from continuity. For quantitative estimates:
+
+\textbf{(a)} We have $|d\rho/dt| \leq C(\rho, E, D)$ bounded for smooth solutions. The time to cross from $\rho_0 < 1 - \varepsilon_* - \delta$ to $1 - \varepsilon_*$ is at least $\tau \geq \delta / \sup|d\rho/dt|$.
+
+From the paper's analysis:
+\[
+\frac{d\rho}{dt} = \frac{1}{E}\left(\frac{dE_{max}}{dt} - \rho\frac{dE}{dt}\right)
+\]
+
+Both $dE_{max}/dt$ and $dE/dt$ involve trilinear forms bounded by $O(ED^{1/2})$.
+
+So $|d\rho/dt| \leq C \cdot D^{1/2} = C\lambda E^{1/2}$, giving:
+\[
+\tau \geq \frac{\delta}{C\lambda E^{1/2}}
+\]
+
+\textbf{(b), (c)} Similar analysis for $\lambda$. We have:
+\[
+\frac{d\lambda}{dt} = \frac{1}{2\lambda E}(\dot{D} - \lambda^2 \dot{E})
+\]
+
+Both $\dot{D}$ and $\dot{E}$ are bounded by trilinear + dissipation terms, giving $|d\lambda/dt| \leq C'(\lambda, E, D)$.
+\end{proof}
+
+\subsection{Stability Under Perturbation}
+
+\begin{proposition}[Structural Stability]
+The case classification is structurally stable: small perturbations in initial data lead to small perturbations in the time spent in each case.
+\end{proposition}
+
+\begin{proof}
+NS is locally well-posed in $\dot{H}^{1/2}$ (Koch-Tataru). Solutions depend continuously on initial data for short times. Since $\rho$ and $\lambda$ depend continuously on $u$, the case classification is stable under perturbation.
+\end{proof}
+
+%==============================================================================
+\section{Question 2: Blow-up Analysis---Which Term Diverges First?}
+%==============================================================================
+
+\begin{question}
+Assume finite-time blow-up. Which term in the dynamics must diverge first? Does this contradict the corridor condition?
+\end{question}
+
+\subsection{Setup}
+
+Assume $u(t)$ blows up at time $T^* < \infty$. By definition of critical blow-up:
+\[
+\|u(t)\|_{\dot{H}^{1/2}} \to \infty \quad \text{as } t \to T^*
+\]
+
+The relevant evolution equations are:
+\begin{align}
+\frac{dE}{dt} &= -2\mathcal{T} - 2\nu D \label{eq:E-evol} \\
+\frac{dD}{dt} &= -2\mathcal{T}_{3/2} - 2\nu F \label{eq:D-evol}
+\end{align}
+where:
+\begin{itemize}
+\item $\mathcal{T} = \langle (u \cdot \nabla)u, |\nabla|u \rangle$ (trilinear at $\dot{H}^{1/2}$)
+\item $\mathcal{T}_{3/2} = \langle (u \cdot \nabla)u, |\nabla|^3 u \rangle$ (trilinear at $\dot{H}^{3/2}$)
+\item $F = \|u\|_{\dot{H}^{5/2}}^2$
+\end{itemize}
+
+\subsection{Order of Divergence}
+
+\begin{proposition}[Hierarchy of Blow-up]\label{prop:hierarchy}
+If $E(t) \to \infty$ as $t \to T^*$, then:
+\[
+D(t) \to \infty, \quad F(t) \to \infty, \quad \text{and } |\mathcal{T}(t)| \to \infty
+\]
+Moreover, $D$ diverges at least as fast as $E$.
+\end{proposition}
+
+\begin{proof}
+By interpolation:
+\[
+E = \|u\|_{\dot{H}^{1/2}}^2 \leq \|u\|_{L^2} \|u\|_{\dot{H}^1}
+\]
+
+Since $\|u\|_{L^2}$ decreases (energy dissipation), $\|u\|_{\dot{H}^1} \to \infty$ if $E \to \infty$.
+
+Similarly, $D = \|u\|_{\dot{H}^{3/2}}^2 \geq c \|u\|_{\dot{H}^{1/2}}^{4/3} / \|u\|_{L^2}^{1/3}$ by interpolation, so $D \to \infty$.
+
+For the trilinear: blow-up requires $dE/dt > 0$ eventually, so from \eqref{eq:E-evol}:
+\[
+\mathcal{T} < -\nu D \to -\infty
+\]
+\end{proof}
+
+\begin{proposition}[Rate Constraints]\label{prop:rates}
+For blow-up with $E \to \infty$:
+\begin{enumerate}
+\item $\mathcal{T} < -\nu D$ (trilinear must be large and negative)
+\item $|\mathcal{T}| \leq CED^{1/2}$ (upper bound)
+\item Combined: $\nu D < CED^{1/2}$, so $\lambda < CE^{1/2}/\nu$
+\end{enumerate}
+\end{proposition}
+
+\subsection{The Contradiction}
+
+\begin{theorem}[Blow-up Contradicts Corridor Structure]\label{thm:contradiction}
+Assume finite-time blow-up with $E(t) \to \infty$ as $t \to T^*$. Then:
+
+\textbf{(a)} The solution must eventually be in the concentrated regime ($\rho \geq 1 - \varepsilon_*$) for times near $T^*$.
+
+\textbf{(b)} Under concentration with blow-up, we need $\lambda < CE^{1/2}/\nu$ (from Proposition~\ref{prop:rates}).
+
+\textbf{(c)} The Closing Lemma states:
+\begin{itemize}
+\item If $\lambda < \lambda_{crit}$: $d\rho/dt < 0$ (concentration decreases)
+\item If $\lambda \geq \lambda_{crit}$: $dE/dt < 0$ (energy decreases)
+\end{itemize}
+
+\textbf{(d)} For large $E$, the condition $\lambda < CE^{1/2}/\nu$ is compatible with $\lambda \geq \lambda_{crit}$.
+
+\textbf{(e)} But $\lambda \geq \lambda_{crit}$ implies $dE/dt < 0$, contradicting blow-up.
+
+\textbf{(f)} And $\lambda < \lambda_{crit}$ implies concentration breaks before blow-up completes.
+\end{theorem}
+
+\begin{proof}
+\textbf{(a)} By concentration-compactness (Gallagher-Koch-Planchon), minimal blow-up elements concentrate. If blow-up occurs without concentration, the solution would decompose into concentrating profiles, and at least one must blow up---but that one concentrates.
+
+\textbf{(b)} From Proposition~\ref{prop:rates}, blow-up requires $\mathcal{T} < -\nu D$, and $|\mathcal{T}| \leq CED^{1/2}$, giving $\lambda < CE^{1/2}/\nu$.
+
+\textbf{(c)} This is the content of the Closing Lemma (Steps 9-10).
+
+\textbf{(d)} For $E > \nu^2\lambda_{crit}^2/C^2 = c_1^2/(16C^2)$, the range $[\lambda_{crit}, CE^{1/2}/\nu]$ is non-empty.
+
+\textbf{(e)} If $\lambda \in [\lambda_{crit}, CE^{1/2}/\nu]$, then from the Closing Lemma:
+\[
+\frac{dE}{dt} \leq -\frac{c_1^2\rho E}{8\nu} < 0
+\]
+This contradicts $dE/dt > 0$ required for blow-up.
+
+\textbf{(f)} If $\lambda < \lambda_{crit}$, then $d\rho/dt < 0$. The concentration ratio decreases at rate:
+\[
+\frac{d\rho}{dt} \leq -c_*\nu\lambda^2(1-\rho) < 0
+\]
+Eventually $\rho$ drops below $1 - \varepsilon_*$, exiting concentration.
+\end{proof}
+
+\subsection{Which Term Diverges First?}
+
+\begin{corollary}
+Under the hypothetical blow-up scenario:
+\begin{enumerate}
+\item $E$ must grow: $E \to \infty$
+\item $D$ must grow: $D \geq cE$ (at least linear in $E$)
+\item $\mathcal{T}$ must be large negative: $\mathcal{T} < -\nu D$
+\item $\lambda$ must satisfy $\lambda < CE^{1/2}/\nu$ (sublinear in $E^{1/2}$)
+\end{enumerate}
+
+The term that ``fails first'' is the trilinear $\mathcal{T}$: it needs to be more negative than $-\nu D$, but this is incompatible with:
+\begin{itemize}
+\item The Closing Lemma bound (under concentration), which gives $dE/dt < 0$ for high $\lambda$
+\item The outflow mechanism (under concentration), which breaks concentration for low $\lambda$
+\end{itemize}
+\end{corollary}
+
+%==============================================================================
+\section{Question 3: Natural Satisfaction of the Corridor Condition}
+%==============================================================================
+
+\begin{question}
+Is the corridor condition automatically satisfied for any nontrivial subclass of NS solutions?
+\end{question}
+
+\subsection{Clarification}
+
+The corridor condition (as a partition) is always satisfied. The meaningful question is:
+
+\textbf{For which solutions does the dichotomy immediately imply no blow-up?}
+
+That is: which solutions are always in Case (i) (non-concentrated) or always in Case (iii) (concentrated + high frequency)?
+
+\subsection{Class 1: Almost-Helical Flows}
+
+\begin{definition}
+A flow $u$ is $\varepsilon$-helical if $\|u^-\|_{\dot{H}^{1/2}} \leq \varepsilon\|u\|_{\dot{H}^{1/2}}$ where $u = u^+ + u^-$ is the helicity decomposition.
+\end{definition}
+
+\begin{proposition}[Almost-Helical Implies Spread]\label{prop:helical-spread}
+If $u$ is $\varepsilon$-helical with $\varepsilon < \varepsilon_0$ (small), then $u$ cannot be angularly concentrated.
+\end{proposition}
+
+\begin{proof}
+For single-helicity $u^+$, the Fourier constraint is $\hat{u}^+(\xi) = a(\xi) h^+(\hat{\xi})$ where $h^+$ is the positive helicity eigenvector: $h^+(\hat{\xi}) = \frac{1}{\sqrt{2}}(e_\theta + ie_\phi)$ in spherical coordinates.
+
+As $\hat{\xi}$ varies over $S^2$, $h^+(\hat{\xi})$ traces out a circle in the plane perpendicular to $\hat{\xi}$.
+
+For concentration in a cap $\Omega$ centered at $\hat{n}$, we'd need $\hat{u}^+(\xi)$ to have a preferred direction. But $h^+(\hat{\xi})$ rotates as $\hat{\xi}$ moves within $\Omega$---there's no fixed direction.
+
+More precisely: the helicity constraint forces
+\[
+\int_\Omega |h^+(\hat{\xi}) \cdot \hat{e}|^2 d\hat{\xi} = \frac{1}{2}\text{Area}(\Omega)
+\]
+for ANY fixed direction $\hat{e}$. This means energy cannot concentrate in direction.
+
+For almost-helical flows ($\varepsilon$ small), this near-isotropy persists.
+\end{proof}
+
+\begin{corollary}
+Almost-helical flows remain in the non-concentrated regime (Case (i)), where standard bounds apply and blow-up is prevented.
+\end{corollary}
+
+\subsection{Class 2: Spectrally Localized Data}
+
+\begin{definition}
+Data $u_0$ is spectrally localized if $\text{supp}(\hat{u}_0) \subset \{\xi : |\xi| \in [a, b]\}$ for some $0 < a < b < \infty$.
+\end{definition}
+
+\begin{proposition}[Spectral Localization Gives High Frequency]\label{prop:spectral}
+If $u_0$ is spectrally localized with $a > 0$, then $\lambda(0) \geq a$ and the solution satisfies $\lambda(t) \geq a \cdot e^{-C\nu t}$ for short times.
+\end{proposition}
+
+\begin{proof}
+For spectrally localized data with $|\xi| \geq a$:
+\[
+D = \int |\xi|^3 |\hat{u}|^2 d\xi \geq a^2 \int |\xi| |\hat{u}|^2 d\xi = a^2 E
+\]
+So $\lambda = \sqrt{D/E} \geq a$.
+
+Under NS evolution, the support spreads (low frequencies are generated), but at a rate controlled by the nonlinearity. Standard estimates give the exponential lower bound.
+\end{proof}
+
+\begin{corollary}
+For spectrally localized data with $a > \lambda_{crit} = c_1/(4\nu)$:
+\begin{itemize}
+\item If concentrated: $\lambda \geq a > \lambda_{crit}$, so $dE/dt < 0$ (energy decreases)
+\item If not concentrated: standard bounds apply
+\end{itemize}
+Either way, no blow-up.
+\end{corollary}
+
+\subsection{Class 3: Dominant Projected Component}
+
+\begin{definition}
+Let $\Pi_\Omega$ be the projection onto a cap $\Omega$. Data $u_0$ has $(\rho_0, \Omega)$-dominant projection if $\|\Pi_\Omega u_0\|_{\dot{H}^{1/2}}^2 \geq \rho_0 \|u_0\|_{\dot{H}^{1/2}}^2$.
+\end{definition}
+
+\begin{proposition}[Dominant Projection Dynamics]\label{prop:dominant}
+If $u_0$ has $(\rho_0, \Omega)$-dominant projection with $\rho_0 > 1 - \varepsilon_*$, then:
+\begin{enumerate}
+\item The solution starts concentrated
+\item Either concentration breaks (Case (ii)) or energy decreases (Case (iii))
+\item Global regularity follows
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+By assumption, $\rho(0) \geq \rho_0 > 1 - \varepsilon_*$, so the solution starts in the concentrated regime.
+
+The Closing Lemma dichotomy applies:
+\begin{itemize}
+\item If $\lambda(0) < \lambda_{crit}$: concentration decreases ($d\rho/dt < 0$)
+\item If $\lambda(0) \geq \lambda_{crit}$: energy decreases ($dE/dt < 0$)
+\end{itemize}
+
+In the first case, $\rho$ decreases until the solution exits concentration. In the second case, energy decreases until... it either exits concentration or decays to zero.
+
+In all scenarios, blow-up is prevented.
+\end{proof}
+
+\subsection{Class 4: Solutions with Bounded Enstrophy Growth}
+
+\begin{definition}
+A solution has $K$-bounded enstrophy growth if $\|\omega(t)\|_{L^2} \leq K\|\omega(0)\|_{L^2}$ for all $t \in [0, T]$.
+\end{definition}
+
+\begin{proposition}
+Solutions with bounded enstrophy growth cannot blow up (by BKM criterion), and automatically satisfy the corridor conditions with quantitative bounds.
+\end{proposition}
+
+\begin{proof}
+BKM: blow-up requires $\int_0^T \|\omega\|_{L^\infty} dt = \infty$.
+
+By Sobolev: $\|\omega\|_{L^\infty} \lesssim \|\omega\|_{H^{3/2}}$.
+
+Bounded enstrophy $\|\omega\|_{L^2}$ plus bounded $\|u\|_{\dot{H}^{1/2}}$ (which follows from bounded enstrophy via interpolation) gives bounded $\|\omega\|_{H^{3/2}}$.
+
+So $\int_0^T \|\omega\|_{L^\infty} dt < \infty$, and no blow-up.
+\end{proof}
+
+%==============================================================================
+\section{Summary}
+%==============================================================================
+
+\begin{theorem}[Main Conclusions]
+\mbox{}
+\begin{enumerate}
+\item \textbf{Forward stability:} The corridor condition cannot fail instantaneously. Solutions transition continuously between cases, with rate bounds given by Theorem~\ref{thm:short-time}.
+
+\item \textbf{Blow-up contradiction:} Under hypothetical blow-up, the trilinear term $\mathcal{T}$ would need to satisfy $\mathcal{T} < -\nu D$, but the Closing Lemma shows this is incompatible with maintaining concentration. The ``escape routes'' (low $\lambda$ or high $\lambda$) both lead away from blow-up.
+
+\item \textbf{Natural satisfaction:} The corridor condition automatically implies no blow-up for:
+\begin{itemize}
+\item Almost-helical flows (remain non-concentrated)
+\item Spectrally localized data with high minimum frequency (energy decreases)
+\item Data with dominant projected component (dichotomy applies)
+\item Solutions with bounded enstrophy growth (BKM satisfied)
+\end{itemize}
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}[What Remains]
+The analysis shows that the corridor condition has good stability properties and correctly excludes blow-up for several natural subclasses. The main unresolved question is:
+
+\textbf{Is concentration-compactness theory sufficient to guarantee that blow-up solutions concentrate?}
+
+If yes, the proof is complete. If there are exotic blow-up scenarios that avoid concentration, additional analysis would be needed.
+
+The standard concentration-compactness results (Kenig-Merle, Gallagher-Koch-Planchon) strongly suggest that concentration is unavoidable for critical blow-up, making the argument robust.
+\end{remark}
+
+\end{document}

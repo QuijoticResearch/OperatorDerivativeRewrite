@@ -1,0 +1,1377 @@
+\documentclass[11pt,reqno]{amsart}
+
+%==============================================================
+% The Even Pseudo-Process Bridge to the Riemann Hypothesis:
+% the Endpoint Dichotomy and the Moment-Oscillation Theorem
+%==============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\emergencystretch=3em
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{problem}[theorem]{Open problem}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\E}{\mathbb E}
+\newcommand{\LP}{\mathcal{LP}}
+\newcommand{\T}{\mathcal T}
+\newcommand{\Mcal}{\mathcal M}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Log}{Log}
+
+\title[Failure of the even-cone bridge to RH]{Moment Oscillation and the
+Failure of a One-Sided Even Pseudo-Process Cone Bridge\\ to the Riemann
+Hypothesis}
+\author{Ramiro Fontes}
+\address{Quijotic Research}
+\email{ramirofontes@gmail.com}
+\urladdr{www.quijotic.com}
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+The de Bruijn--Newman flow $H_{t}(x)=\int_0^\infty
+e^{tu^2}\Phi(u)\cos(xu)\,du$ embeds in the symbol family
+$H_{t,\alpha}=\int_0^\infty e^{tu^\alpha}\Phi(u)\cos(xu)\,du$, and the
+Riemann hypothesis is $\Lambda\le0$ for its real-rooting threshold. The
+companion paper~\cite{Fsymbol} closed the first-order route along the
+\emph{logarithmic} tangent $u^2\log u=\partial_\alpha u^\alpha|_{\alpha=2}$:
+the self-dual extremality hypothesis fails because the tilt numerator is
+strictly positive. This paper examines the other first-order route a reader
+naturally tries, the one carried by the \emph{even integer} exponents
+$\alpha=2m$, $m=2,3,4,\dots$, the backward higher-order heat
+pseudo-processes of Krylov--Hochberg. Perturbing $u^2\rightsquigarrow
+u^2+\epsilon u^{2m}$ at a nondegenerate positive-$\Lambda$ collision
+$(x_*,\Lambda)$ moves the collision time at the explicit rate
+$T_m'(0)=-M_m/M_1$, with $M_m:=\int_0^\infty
+u^{2m}e^{\Lambda u^2}\Phi(u)\cos(x_*u)\,du$. A one-sided ``cone'' bridge to
+RH would require the response moments $M_m$ to be eventually of one sign;
+the bridge breaks because they are not. We prove this through a single
+structural mechanism, the \emph{endpoint dichotomy}. Shifting the cosine
+transform to the contour height $h\in(0,\pi/8)$, the forced sign of a
+response is carried entirely by the imaginary part of the symbol on the
+ray $u=iy$: for the logarithmic weight that imaginary part is $-\tfrac\pi2
+y^2$, producing the positive Laplace transform of~\cite{Fsymbol}; for every
+pure even power $u^{2m}$ the symbol $(iy)^{2m}=(-1)^my^{2m}$ is \emph{real},
+the vertical segment contributes nothing, and $M_m$ is left as the bare
+oscillatory horizontal ray. The same imaginary-part density
+$y^\alpha\cos\tfrac{\pi(\alpha+1)}2$ governs all three phenomena of the
+program at once: it is the infrared-catastrophe coefficient of the odd
+exponents, its $\alpha$-derivative at $2$ is the tilt positivity, and its
+vanishing on the even integers is precisely the present oscillation. We
+then prove the \emph{moment-oscillation theorem}: for $x_*\neq0$ the
+sequence $M_m$ obeys $M_m=A_m\cos(x_*u_m+\theta_m)(1+o(1))$ with $A_m>0$,
+$\theta_m\to0$ and the arithmetic saddle $u_m=\tfrac14\log m-\tfrac14\log\log
+m+O(1)\to\infty$, so $M_m$ changes sign infinitely often; in particular
+$\{M_m\}$ is neither eventually one-signed nor a Stieltjes moment sequence,
+which closes the one-sided even-cone bridge in both its eventual-sign and
+positive-moment forms --- not every conceivable first-order mechanism, but
+the natural cone a reader is led to try. Numerics on the Riemann kernel
+confirm the oscillation: at the surrogate collision sites
+$x_*=2\gamma_1\approx28.27$ and $x_*=2\gamma_3\approx50.02$ the velocity
+sign $\sgn(-M_m/M_1)$ reverses four and six times across $m\le30$, faster at
+the larger site exactly as the saddle requires, and stably under the flow
+$t$. The level-$p$ Clark--Ocone calculus of~\cite{Fpseudo} supplies the
+rigorous language for the response-measure pairing and, more pointedly, the
+reason the route cannot succeed: for the orders $p=2m\ge4$ that would have to
+supply the cone there is no positive path-space law, no orthogonal chaos,
+and no Laguerre--P\'olya preservation; the pseudo-process's own moments are
+sign-regular, $\E[X_T^{pn}]=\tfrac{(pn)!}{n!}c_p^nT^n$, but the
+\emph{arithmetic} response moments $M_m$ carry the zero's phase
+$\cos(x_*u)$ and oscillate, and these are moments of different measures
+between which the calculus does not transfer. The first-order even bridge
+therefore closes; what survives is not a pointwise sign but a global
+analytic question on the function $\Mcal(\beta)=\int_0^\infty
+u^{2\beta}e^{\Lambda u^2}\Phi\cos(x_*u)\,du$, and the one even exponent that
+keeps genuine positivity, the quartic $\alpha=4$ iterated-Brownian flow,
+whose global real-rootedness is the surviving frontier.
+\end{abstract}
+
+\maketitle
+
+%==============================================================
+\section{Introduction}\label{sec:intro}
+%==============================================================
+
+\subsection*{The flow, the constant, and the two first-order routes}
+The Riemann $\xi$-function has the Fourier representation
+\begin{equation}\label{eq:xi-rep}
+  \tfrac18\,\xi\!\left(\tfrac12+\tfrac{ix}{2}\right)
+  =\int_0^\infty \Phi(u)\cos(xu)\,du,
+  \quad
+  \Phi(u)=\sum_{n\ge1}\bigl(2\pi^2n^4e^{9u}-3\pi n^2e^{5u}\bigr)
+  e^{-\pi n^2e^{4u}},
+\end{equation}
+with $\Phi$ positive, even, and decaying like $\exp(-\pi e^{4u})$; the
+evenness is the theta modularity~\cite{Titchmarsh,Polya27}. The de
+Bruijn--Newman flow~\cite{deBruijn,Newman}
+\begin{equation}\label{eq:dbn}
+  H_t(x):=\int_0^\infty e^{tu^2}\Phi(u)\cos(xu)\,du
+\end{equation}
+has only real zeros exactly for $t\ge\Lambda$, the Riemann hypothesis is
+$\Lambda\le0$, and $\Lambda\ge0$ is known~\cite{RodgersTao}, so RH is the
+equality $\Lambda=0$: the flow is critical now, and a positive $\Lambda$
+would be attained at a real collision of two zeros confined to a compact
+set (effective Ki--Kim--Lee, \cite{Polymath15}, and the companion's
+\cite{Fsymbol} compact-criticality theorem).
+
+The companion paper~\cite{Fsymbol} deforms the \emph{generator} rather than
+the time, through
+\begin{equation}\label{eq:family}
+  H_{t,\alpha}(x):=\int_0^\infty e^{tu^\alpha}\Phi(u)\cos(xu)\,du,
+  \qquad (t,\alpha)\in\R\times(0,\infty),
+\end{equation}
+so $H_{t,2}=H_t$. At a real collision $x_*$ of multiplicity exactly two and
+time $\Lambda$, the collision time $T_*(\alpha)$ tracked through the family
+is real-analytic near $\alpha=2$ and moves at the rate $T_*'(2)=-\Lambda
+B_*$, where
+\begin{equation}\label{eq:Bstar}
+  B_*=\frac{N(x_*,\Lambda)}{D(x_*,\Lambda)},\quad
+  D(x,t)=\!\int_0^\infty\! u^2e^{tu^2}\Phi\cos(xu)\,du,\ \
+  N(x,t)=\!\int_0^\infty\! u^2\log u\,e^{tu^2}\Phi\cos(xu)\,du,
+\end{equation}
+and $D=-\partial_x^2H$. The hoped-for ``self-dual extremality'' (SD) made
+$\alpha=2$ a local minimum of $T_*$, forcing $T_*'(2)=0$ and hence (with
+$\Lambda>0$) a contradiction --- that was the route to RH. The
+companion~\cite{Fsymbol} \emph{refutes} (SD): the tilt numerator
+$N(x,t)>0$ for all $x\ge27$, $t\in[0,\tfrac12]$, by a contour shift, so
+$B_*\neq0$ and the first-order route along the \emph{logarithmic} tangent
+$u^2\log u=\partial_\alpha u^\alpha|_{\alpha=2}$ closes negatively.
+
+That tangent is one direction in the family. A reader who has seen it close
+asks the obvious next question. The even integers $\alpha\in\{4,6,8,\dots\}$
+are the only \emph{other} exponents in \eqref{eq:family} that do not
+instantly destroy real-rootedness (the infrared catastrophe
+of~\cite{Fsymbol} makes $\Lambda(\alpha)=+\infty$ for every
+$\alpha\notin2\N$); they are the backward higher-order heat
+\emph{pseudo-processes} of Krylov and Hochberg~\cite{Krylov,Hochberg},
+whose representation calculus is the companion~\cite{Fpseudo}. Does the
+\emph{even pseudo-process hierarchy} open a route that the single
+logarithmic tangent could not?
+
+\subsection*{The even pseudo-process bridge}
+Perturb the heat generator by a higher even power,
+\begin{equation}\label{eq:Gm}
+  G^{(m)}_{s,\epsilon}(x):=\int_0^\infty
+  e^{su^2+\epsilon u^{2m}}\,\Phi(u)\cos(xu)\,du,\qquad m\ge1,
+\end{equation}
+and track the collision. The first-order motion is the response moment
+ratio
+\begin{equation}\label{eq:Tm}
+  T_m'(0)=-\frac{M_m}{M_1},\qquad
+  M_m:=\int_0^\infty u^{2m}e^{\Lambda u^2}\Phi(u)\cos(x_*u)\,du,
+\end{equation}
+with $M_1=D(x_*,\Lambda)=-H_\Lambda''(x_*)\neq0$
+(\cref{thm:velocity}). The bridge a reader hopes for is a \emph{cone}: that
+every higher even direction pushes the collision the same way, i.e.\ that
+$\sgn(T_m'(0))$ --- equivalently $\sgn(M_m)$ --- is eventually constant in
+$m$. A fixed sign would say the bad collision is variationally one-sided
+against the whole even cone, which, combined with the oscillatory growth of
+the moment order, is the contradiction sought. The entire question is the
+sign behavior of the sequence $\{M_m\}$.
+
+\subsection*{Three results, and the verdict}
+The verdict is that the bridge closes, and the reason is a single mechanism.
+\begin{enumerate}
+\item \textbf{The collision velocity} (\cref{sec:velocity}). At a
+nondegenerate positive-$\Lambda$ collision the even direction $u^{2m}$ moves
+the collision time at the rate \eqref{eq:Tm}; the derivation is the
+implicit function theorem of~\cite{Fsymbol} with $\epsilon$ in place of
+$\alpha$.
+\item \textbf{The endpoint dichotomy} (\cref{sec:dichotomy}). Shift the
+cosine transform to the contour $[0,ih]\cup[ih,ih+\infty)$, $h\in(0,\pi/8)$.
+The forced part of a response is the real part of the vertical segment, and
+that real part is the \emph{imaginary part of the symbol on the imaginary
+axis}: for $u^\alpha$ it is the density $y^\alpha\cos\tfrac{\pi(\alpha+1)}2$.
+This one density runs the whole program: it is the
+infrared-catastrophe coefficient of~\cite{Fsymbol} for $\alpha\notin2\N$,
+its $\alpha$-derivative at $\alpha=2$ is the tilt positivity
+$+\tfrac\pi2y^2$ of~\cite{Fsymbol}, and it \emph{vanishes identically on the
+even integers}. Hence the even moments $M_m$ have no forced segment term at
+all (\cref{thm:dichotomy}); they are carried entirely by the oscillatory
+ray.
+\item \textbf{The moment-oscillation theorem} (\cref{sec:oscillation}). For
+$x_*\neq0$,
+\[
+   M_m=A_m\cos(x_*u_m+\theta_m)\,(1+o(1)),\quad A_m>0,\ \theta_m\to0,\
+   u_m=\tfrac14\log m-\tfrac14\log\log m+O(1)\to\infty,
+\]
+so $M_m$ changes sign infinitely often (\cref{thm:oscillation}). The
+sequence is therefore neither eventually one-signed nor a Stieltjes moment
+sequence: the one-sided even-cone bridge fails in both its eventual-sign and
+positive-moment forms (\cref{cor:nogo}).
+\end{enumerate}
+\Cref{sec:closure} assembles the closure and unifies it with the (SD)
+refutation through the response measure $\mu_*$ and the function
+$R(\beta)=\int u^{2\beta}d\mu_*$: the value $R(1)=1$ and the slope
+$R'(1)=2B_*>0$ are \emph{forced} (the trivial and logarithmic directions,
+both endpoint-singular), while the integer samples $R(m)$ \emph{oscillate}
+(the even pseudo-process directions, endpoint-smooth). The discriminant is
+endpoint regularity, nothing else. \Cref{sec:probabilistic} reads the
+result through the level-$p$ Clark--Ocone calculus~\cite{Fpseudo}, which
+supplies both the representation language and the structural reason the cone
+cannot exist. \Cref{sec:numerics} reports the confirming computation.
+\Cref{sec:frontier} states what survives: not a pointwise sign but a global
+analytic question, and the quartic flow.
+
+\begin{center}
+\fbox{\begin{minipage}{0.93\linewidth}\small
+\textbf{What this paper settles.} The first-order route to RH along the even
+pseudo-process hierarchy $\alpha=2m$ closes, because the response moments
+$M_m$ oscillate in sign. The oscillation is not arithmetic bad luck: it is
+forced by the same contour mechanism that, on the singular directions,
+forces a definite sign. The level-$p$ Clark--Ocone
+calculus~\cite{Fpseudo} confirms the obstruction --- the orders $p=2m\ge4$
+have no positivity to donate --- rather than removing it. Together
+with~\cite{Fsymbol}, both first-order deformation routes (logarithmic and
+even-integer) are now resolved negatively: one because its invariant is too
+positive to vanish, the other because its invariant has no fixed sign.
+\end{minipage}}
+\end{center}
+
+%==============================================================
+\section{The collision velocity along even pseudo-process directions}
+\label{sec:velocity}
+%==============================================================
+
+We work at a base collision furnished by the unconditional compact
+criticality of the companion paper. Recall from~\cite{Fsymbol} that if
+$\Lambda>0$ then $H_\Lambda$ has a real zero $x_*$ of multiplicity at least
+two with $|x_*|>27.2$, confined to a compact set; nondegeneracy (ND) is the
+statement that the multiplicity is exactly two, i.e.\ $H_\Lambda''(x_*)\neq0$.
+All integrals below converge absolutely and may be differentiated under the
+integral sign because $\Phi$ decays doubly exponentially while
+$e^{su^2+\epsilon u^{2m}}$ grows only like $\exp(O(u^{2m}))$; the data
+$(s,\epsilon,x)\mapsto G^{(m)}_{s,\epsilon}(x)$ of \eqref{eq:Gm} are jointly
+real-analytic (the well-posedness lemma of~\cite{Fsymbol} applies verbatim,
+$u^{2m}$ being a smooth even symbol).
+
+\begin{theorem}[Even-direction collision velocity]\label{thm:velocity}
+Suppose $\Lambda>0$ and $H_\Lambda$ has a real zero $x_*$ of multiplicity
+exactly two. Fix an integer $m\ge1$. There are real-analytic functions
+$\epsilon\mapsto(x_m(\epsilon),T_m(\epsilon))$ near $\epsilon=0$, with
+$(x_m(0),T_m(0))=(x_*,\Lambda)$, such that $G^{(m)}_{T_m(\epsilon),\epsilon}$
+has a real zero of multiplicity two at $x_m(\epsilon)$, and
+\begin{equation}\label{eq:velocity}
+  T_m'(0)=-\frac{M_m}{M_1},
+  \qquad
+  M_m=\int_0^\infty u^{2m}e^{\Lambda u^2}\Phi(u)\cos(x_*u)\,du,
+\end{equation}
+where $M_1=D(x_*,\Lambda)=-H_\Lambda''(x_*)\neq0$.
+\end{theorem}
+
+\begin{proof}
+Apply the implicit function theorem to the map
+$(x,s)\mapsto\bigl(G^{(m)}_{s,\epsilon}(x),\partial_xG^{(m)}_{s,\epsilon}(x)\bigr)$
+at $(x_*,\Lambda,0)$. At the base point $G^{(m)}_{\Lambda,0}=H_\Lambda$, so
+$G=\partial_xG=0$ and $\partial_x^2G=H_\Lambda''(x_*)\neq0$. The
+$(x,s)$-Jacobian is
+\[
+  \det\begin{pmatrix}\partial_xG & \partial_sG\\
+  \partial_x^2G & \partial_x\partial_sG\end{pmatrix}
+  =\det\begin{pmatrix}0 & \partial_sG\\ \partial_x^2G & *\end{pmatrix}
+  =-\,\partial_sG\,\partial_x^2G .
+\]
+Now $\partial_sG^{(m)}_{\Lambda,0}(x_*)=\int u^2e^{\Lambda u^2}\Phi\cos(x_*u)\,du
+=D(x_*,\Lambda)=-H_\Lambda''(x_*)$ by the heat equation
+$\partial_sH=-\partial_x^2H$ at $\alpha=2$, so the Jacobian equals
+$(H_\Lambda''(x_*))^2\neq0$ and the collision manifold
+$(x_m(\epsilon),T_m(\epsilon))$ exists and is real-analytic. Differentiating
+$G^{(m)}_{T_m(\epsilon),\epsilon}(x_m(\epsilon))=0$ in $\epsilon$ and using
+$\partial_xG=0$ at the collision to kill the $x_m'(\epsilon)$ term gives
+$\partial_sG\cdot T_m'(0)+\partial_\epsilon G=0$. Since
+$\partial_\epsilon G^{(m)}_{\Lambda,0}(x_*)=\int u^{2m}e^{\Lambda u^2}\Phi
+\cos(x_*u)\,du=M_m$ and $\partial_sG=M_1$, this is \eqref{eq:velocity}.
+\end{proof}
+
+\begin{remark}[The bridge in one line]\label{rem:bridge}
+By \eqref{eq:velocity} the sign of the collision velocity along $u^{2m}$ is
+$-\sgn(M_m/M_1)$. A one-sided cone --- all higher even directions pushing
+the same way --- is exactly the statement that $\sgn(M_m)$ is eventually
+constant. The remainder of the paper computes that sign and finds it is
+not.
+\end{remark}
+
+The companion's general response calculus~\cite{Fsymbol} packages all
+directions at once. For a symbol direction $\sigma$ of polynomial growth,
+the collision responds at the rate
+$\frac{d}{d\epsilon}T_*|_\sigma=-\Lambda\int_0^\infty\sigma\,d\mu_*$ against
+the single signed \emph{response measure}
+\begin{equation}\label{eq:mustar}
+  d\mu_*(u):=\frac{e^{\Lambda u^2}\Phi(u)\cos(x_*u)}{D(x_*,\Lambda)}\,du,
+  \qquad \int_0^\infty u^2\,d\mu_*=1 .
+\end{equation}
+\Cref{thm:velocity} is the case $\sigma=u^{2m}$:
+$\int u^{2m}d\mu_*=M_m/M_1$. The measure $\mu_*$ is signed precisely because
+of the factor $\cos(x_*u)$, and that sign is the whole story.
+
+%==============================================================
+\section{The endpoint dichotomy}\label{sec:dichotomy}
+%==============================================================
+
+This section isolates the mechanism. Both the companion's tilt positivity
+and the present moment oscillation are decided by what the symbol does on
+the imaginary axis, and they sit at the two ends of one explicit density.
+
+\subsection{The imaginary-axis density}
+Write $g_t(u):=e^{tu^2}\Phi(u)$. By the theta modularity $\Phi$ is even and
+real on $\R$ and extends holomorphically to the strip $|\Im u|<\pi/8$, where
+$\Re(\pi n^2e^{4u})>0$; by Schwarz reflection $\Phi(iy)$ is real for real
+$y$ with $|y|<\pi/8$, hence so is $g_t(iy)=e^{-ty^2}\Phi(iy)$. For a weight
+$w$ smooth on $(0,\infty)$ consider the response transform
+\begin{equation}\label{eq:Iw}
+  I_w(x;t):=\int_0^\infty w(u)\,g_t(u)\cos(xu)\,du
+  =\Re\int_0^\infty w(u)\,g_t(u)\,e^{ixu}\,du ,
+\end{equation}
+the second equality holding when $w$ is real on $(0,\infty)$. Fix
+$h\in(0,\pi/8)$ and deform the ray $[0,\infty)$ to the vertical segment
+$[0,ih]$ followed by the horizontal ray $[ih,ih+\infty)$; the integrand is
+holomorphic between the contours and decays as $\Re u\to\infty$ because
+$g_t$ super-decays and $|e^{ixu}|=e^{-x\Im u}\le1$. Thus
+\begin{equation}\label{eq:split}
+  I_w(x;t)=\Re\!\int_{[0,ih]}\!w\,g_t\,e^{ixu}\,du
+          +\Re\!\int_{[ih,ih+\infty)}\!w\,g_t\,e^{ixu}\,du .
+\end{equation}
+On the segment $u=iy$, $du=i\,dy$, $e^{ixu}=e^{-xy}$, and $g_t(iy)$ is real,
+so the segment integrand is $i\,w(iy)\,g_t(iy)e^{-xy}\,dy$ and
+\begin{equation}\label{eq:segment}
+  \Re\!\int_{[0,ih]}w\,g_t\,e^{ixu}\,du
+  =-\int_0^h \bigl(\Im\,w(iy)\bigr)\,g_t(iy)\,e^{-xy}\,dy .
+\end{equation}
+The segment --- the only part of \eqref{eq:split} that is not exponentially
+small in $x$ over the whole admissible range, the ray being
+$O(e^{-hx})$ --- sees the weight only through $\Im\,w(iy)$. This is the
+mechanism.
+
+\begin{lemma}[Imaginary-axis density of the pure power]\label{lem:density}
+For $w(u)=u^\alpha$ (principal branch), $\Im\,w(iy)=y^\alpha
+\sin\tfrac{\pi\alpha}2$, so the segment density of \eqref{eq:segment} is
+\begin{equation}\label{eq:density}
+  -\Im\,(iy)^\alpha=-y^\alpha\sin\tfrac{\pi\alpha}2,
+  \qquad\text{equivalently, after the factor }i:\quad
+  y^\alpha\cos\tfrac{\pi(\alpha+1)}2 .
+\end{equation}
+In particular $\Im\,(iy)^{2m}=0$ for every integer $m$: a pure even power is
+real on the imaginary axis and contributes \emph{nothing} to the segment.
+For the logarithmic weight $w(u)=u^2\log u$,
+$w(iy)=(iy)^2\Log(iy)=-y^2(\log y+\tfrac{i\pi}2)$, so $\Im\,w(iy)=-\tfrac\pi2
+y^2$ and the segment density is $+\tfrac\pi2 y^2$.
+\end{lemma}
+
+\begin{proof}
+$(iy)^\alpha=y^\alpha e^{i\pi\alpha/2}$ gives the first line; multiplying by
+the contour factor $i=e^{i\pi/2}$ turns the exponent into
+$\tfrac{\pi(\alpha+1)}2$, whose cosine is the displayed density and matches
+the catastrophe normalization of~\cite{Fsymbol}. The logarithmic line is
+the stated computation, the branch of $\Log$ taken off $(-\infty,0]$ so that
+$\Log(iy)=\log y+\tfrac{i\pi}2$ for $y>0$.
+\end{proof}
+
+\subsection{One density, three phenomena}
+The density $\kappa(\alpha,y):=y^\alpha\cos\tfrac{\pi(\alpha+1)}2$ of
+\eqref{eq:density} is the common root of the deformation program.
+
+\begin{enumerate}
+\item[(i)] \emph{Infrared catastrophe} (\cite{Fsymbol}). For
+$\alpha\notin2\N$, $\kappa(\alpha,\cdot)\not\equiv0$, and the segment
+produces the sign-definite power tail
+$H_{t,\alpha}(x)=t\,\Phi(0)\,\Gamma(\alpha+1)\cos\tfrac{\pi(\alpha+1)}2\,
+x^{-\alpha-1}+\cdots$; the coefficient is the value
+$\cos\tfrac{\pi(\alpha+1)}2$ that vanishes exactly on the even integers, so
+real-rooting deformation lives only on $2\N$.
+\item[(ii)] \emph{Tilt positivity} (\cite{Fsymbol}). The logarithmic tangent
+is $u^2\log u=\partial_\alpha u^\alpha|_{\alpha=2}$, and
+$\partial_\alpha\kappa(\alpha,y)|_{\alpha=2}
+=y^2\bigl[\log y\cos\tfrac{3\pi}2-\tfrac\pi2\sin\tfrac{3\pi}2\bigr]
+=+\tfrac\pi2y^2$, the positive Laplace density that proves $N(x,t)>0$ and
+refutes (SD).
+\item[(iii)] \emph{Moment oscillation} (this paper). The pure even powers
+sit \emph{at the zeros} of $\kappa$: $\kappa(2m,\cdot)\equiv0$. They have no
+segment term, hence no forced sign; their response is the horizontal ray
+alone, and \cref{sec:oscillation} shows it oscillates.
+\end{enumerate}
+
+The three are one statement read at three values of $\alpha$: off $2\N$ the
+density is nonzero (catastrophe), its derivative across $\alpha=2$ is
+positive (tilt), and it vanishes on $2\N$ (oscillation). We record (iii) as
+a theorem.
+
+\begin{theorem}[Even moments carry no forced segment term]
+\label{thm:dichotomy}
+Let $m\ge1$ be an integer, $t\in\R$, and $h\in(0,\pi/8)$. Then the vertical
+segment in \eqref{eq:split} contributes zero to
+\[
+  M_m(x;t):=\int_0^\infty u^{2m}g_t(u)\cos(xu)\,du,
+\]
+so that
+\begin{equation}\label{eq:Mray}
+  M_m(x;t)=\Re\int_0^\infty (s+ih)^{2m}\,g_t(s+ih)\,e^{ix(s+ih)}\,ds,
+  \qquad
+  |M_m(x;t)|\le C_m(t)\,e^{-hx},
+\end{equation}
+with $C_m(t)=\int_0^\infty|s+ih|^{2m}\,|g_t(s+ih)|\,ds<\infty$. Equivalently,
+by the Erd\'elyi--Watson endpoint lemma of~\cite{Fsymbol}, the smooth even
+weight $u^{2m}g_t(u)$ has an all-even-integer Taylor expansion at $u=0$,
+whence its cosine transform is $O(x^{-K})$ for every $K$: $M_m$ has no
+power tail. This is in exact contrast with the logarithmic weight, for
+which the segment is the strictly positive Laplace transform
+$N(x,t)=\tfrac\pi2\int_0^h y^2e^{-ty^2}\Phi(iy)e^{-xy}\,dy+O(e^{-hx})$
+of~\cite{Fsymbol}.\footnote{The companion's endpoint asymptotics lemma
+(Erd\'elyi--Watson form) states that a weight with an all-even-integer
+Taylor scale at $u=0$ has cosine transform $O(x^{-K})$ for every $K$, every
+even exponent carrying a vanishing cosine factor $\cos\tfrac{\pi(2j+1)}2=0$.}
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:segment} with $w=u^{2m}$ and \cref{lem:density},
+$\Im\,(iy)^{2m}=0$, so the segment real part is
+$-\int_0^h0\cdot g_t(iy)e^{-xy}dy=0$. Hence $M_m(x;t)$ equals the real part
+of the horizontal ray, which is \eqref{eq:Mray}; the bound is
+$|e^{ix(s+ih)}|=e^{-hx}$ pulled out of the absolutely convergent integral
+(finite because $g_t(s+ih)$ super-decays on the strip, with
+$|\Phi(s+ih)|\le\sum_n(2\pi^2n^4e^{9s}+3\pi n^2e^{5s})
+e^{-\pi n^2e^{4s}\cos4h}$ and $\cos4h>0$). The endpoint statement is the
+companion's Erd\'elyi--Watson endpoint lemma: an all-even-integer Taylor
+scale carries the vanishing cosine factor $\cos\tfrac{\pi(2j+1)}2=0$ at
+every exponent.
+\end{proof}
+
+\Cref{thm:dichotomy} is the precise sense in which the even pseudo-process
+directions are \emph{invisible to the positivity engine}. The contour shift
+that makes the logarithmic response positive passes straight through the
+even powers, leaving them to the oscillatory ray. We now show the ray
+oscillates.
+
+%==============================================================
+\section{The moment-oscillation theorem}\label{sec:oscillation}
+%==============================================================
+
+The horizontal ray of \cref{thm:dichotomy} is an oscillatory integral whose
+sign, at fixed $x_*\neq0$ and growing order $m$, is governed by a real
+saddle that marches to infinity. We compute it on the real axis, where the
+arithmetic of $\Phi$ is transparent.
+
+\subsection{The arithmetic saddle}
+For large $u$ the $n=1$, leading term of \eqref{eq:xi-rep} dominates:
+\begin{equation}\label{eq:Phitail}
+  \Phi(u)=2\pi^2e^{9u-\pi e^{4u}}\bigl(1+O(e^{-4u})+O(e^{-3\pi e^{4u}})\bigr),
+  \qquad
+  \log\Phi(u)=9u-\pi e^{4u}+\log2\pi^2+o(1),
+\end{equation}
+the $-3\pi e^{5u}$ correction and the $n\ge2$ terms being smaller by the
+indicated super-exponential gaps. Write the amplitude exponent of
+$M_m=\int_0^\infty e^{\rho_m(u)}e^{ix_*u}\,du$, with
+$\rho_m(u):=2m\log u+tu^2+\log\Phi(u)$.
+
+\begin{lemma}[Saddle location and curvature]\label{lem:saddle}
+For each large $m$ there is a unique maximizer $u_m>0$ of $\rho_m$, with
+\begin{equation}\label{eq:saddle}
+  4\pi e^{4u_m}=\frac{2m}{u_m}+2tu_m+9,
+  \qquad
+  u_m=\tfrac14\log m-\tfrac14\log\log m+O(1)\to\infty,
+\end{equation}
+and $\rho_m''(u_m)=-16\pi e^{4u_m}+2t-\tfrac{2m}{u_m^2}
+=-\dfrac{8m}{u_m}\bigl(1+o(1)\bigr)\to-\infty$, so the saddle is sharp with
+width $\sigma_m:=|\rho_m''(u_m)|^{-1/2}=\sqrt{u_m/8m}\,(1+o(1))\to0$.
+Moreover $u_m=u(m)$ is the restriction to integers of a function smooth in
+real $m$, with $u'(m)=\tfrac1{4m}(1+o(1))$, so the increments
+$u_{m+1}-u_m=\tfrac1{4m}(1+o(1))\to0$.
+\end{lemma}
+
+\begin{proof}
+$\rho_m'(u)=\tfrac{2m}{u}+2tu+9-4\pi e^{4u}$ is strictly decreasing for
+$u>0$ once $m$ is large (the $-16\pi e^{4u}$ in $\rho_m''$ dominates), from
+$+\infty$ at $0^+$ to $-\infty$, giving a unique root $u_m$; that is the
+first identity in \eqref{eq:saddle}. To leading order
+$4\pi e^{4u_m}\sim 2m/u_m$, so $4u_m=\log m-\log(2\pi u_m)+o(1)$ and
+$u_m=\tfrac14\log m-\tfrac14\log\log m+O(1)$. Substituting into
+$\rho_m''$ and using $16\pi e^{4u_m}\sim 8m/u_m$ gives the curvature. For the
+increment, the implicit function theorem applied to \eqref{eq:saddle} ---
+whose $u$-derivative $16\pi e^{4u}+2m/u^2-2t$ is positive --- makes $u(m)$
+smooth in real $m$; differentiating \eqref{eq:saddle} gives
+$u'(m)=\bigl(2/u\bigr)\big/\bigl(16\pi e^{4u}+2m/u^2-2t\bigr)
+=\tfrac1{4m}(1+o(1))$ by $16\pi e^{4u_m}\sim8m/u_m$, and the mean value
+theorem yields $u_{m+1}-u_m=\tfrac1{4m}(1+o(1))\to0$. (Thus the $O(1)$ term
+in \eqref{eq:saddle} has vanishing increments: it is a slowly varying
+correction, not a bounded jitter.)
+\end{proof}
+
+\begin{lemma}[First-passage equidistribution]\label{lem:firstpassage}
+Let $(\phi_m)_{m\ge1}\subset\R$ satisfy $\phi_m\to+\infty$ and
+$\phi_{m+1}-\phi_m\to0$. Then $\{\phi_m\bmod2\pi\}$ meets every nonempty open
+arc infinitely often; in particular $\cos\phi_m>\tfrac12$ for infinitely many
+$m$, and $\cos\phi_m<-\tfrac12$ for infinitely many $m$. Genuine divergence
+is essential: mere unboundedness of $\phi_m$ does not suffice, since a
+trajectory with vanishing steps can turn back below an odd multiple of $\pi$
+forever.
+\end{lemma}
+
+\begin{proof}
+Fix a nonempty open arc; inside it take a closed sub-arc $J'$ of length
+$\ell\in(0,2\pi)$, and choose $N$ with $|\phi_{m+1}-\phi_m|<\ell$ for all
+$m\ge N$. Lift $J'$ to the disjoint real intervals $I_n=[a_n,a_n+\ell]$,
+$a_{n+1}=a_n+2\pi$. For an arbitrary threshold $T$, divergence gives some
+$m_0\ge N$ with $\phi_{m_0}>T+2\pi$; let $n$ be the largest index with
+$a_n\le\phi_{m_0}$, so $a_n>T$. Put $k=\min\{j\ge m_0:\phi_j>a_n+\ell\}$,
+finite since $\phi_j\to+\infty$. By minimality $\phi_{k-1}\le a_n+\ell$, and
+$\phi_{k-1}\ge a_n$ --- else the single step $\phi_k-\phi_{k-1}>\ell$ would
+contradict $|\phi_k-\phi_{k-1}|<\ell$ ($k-1\ge N$). Hence $\phi_{k-1}\in I_n$,
+i.e.\ $\phi_{k-1}\bmod2\pi\in J'$ with $\phi_{k-1}\ge a_n>T$. As $T$ is
+arbitrary, infinitely many such indices exist. The cosine statements follow
+with the arcs $(-\tfrac\pi6,\tfrac\pi6)$ and $(\pi-\tfrac\pi6,\pi+\tfrac\pi6)$,
+where $|\cos|>\tfrac{\sqrt3}2>\tfrac12$; if $\phi_m\to-\infty$ apply the
+result to $-\phi_m$.
+\end{proof}
+
+\subsection{Oscillation}
+\begin{theorem}[Moment oscillation]\label{thm:oscillation}
+Fix $t\in\R$ and a real $x_*\neq0$. As $m\to\infty$,
+\begin{equation}\label{eq:osc}
+  M_m=\int_0^\infty u^{2m}e^{tu^2}\Phi(u)\cos(x_*u)\,du
+  =A_m\cos\bigl(x_*u_m+\theta_m\bigr)\,\bigl(1+o(1)\bigr),
+\end{equation}
+with $A_m=\sqrt{2\pi}\,\sigma_m\,e^{\rho_m(u_m)}>0$ and a phase
+$\theta_m=O(\sigma_m)\to0$. Consequently $M_m$ changes sign infinitely
+often: both $\{m:M_m>0\}$ and $\{m:M_m<0\}$ are infinite, and the velocity
+sign $\sgn(T_m'(0))=-\sgn(M_m/M_1)$ of \cref{thm:velocity} is not eventually
+constant.
+\end{theorem}
+
+\begin{proof}
+By \cref{lem:saddle} the mass of $e^{\rho_m(u)}$ concentrates in a window of
+width $\sigma_m\to0$ about $u_m$, where the smooth phase $x_*u$ varies by
+$O(x_*\sigma_m)=o(1)$. Laplace's method with a bounded analytic phase factor
+gives
+\[
+  \int_0^\infty e^{\rho_m(u)}e^{ix_*u}\,du
+  =\sqrt{2\pi}\,\sigma_m\,e^{\rho_m(u_m)}\,e^{i x_*u_m}\bigl(1+O(\sigma_m)\bigr),
+\]
+the $O(\sigma_m)$ collecting the cubic saddle correction
+$\rho_m'''\sigma_m^3$ and the phase curvature $x_*^2\sigma_m^2$; the
+contribution outside $|u-u_m|\le\sigma_m\log m$ is super-exponentially
+smaller, and the $n\ge2$ and $e^{5u}$ corrections to \eqref{eq:Phitail} are
+absorbed in $1+o(1)$. Taking real parts yields \eqref{eq:osc} with
+$\theta_m=\arg(1+O(\sigma_m))=O(\sigma_m)\to0$. Finally set
+$\phi_m:=x_*u_m+\theta_m$; we may take $x_*>0$, $\cos$ being even. By
+\cref{lem:saddle} $\phi_m\to+\infty$ (genuine divergence, as
+$u_m\to+\infty$), and
+$\phi_{m+1}-\phi_m=x_*(u_{m+1}-u_m)+(\theta_{m+1}-\theta_m)
+=\tfrac{x_*}{4m}(1+o(1))\to0$ (the second increment vanishing because
+$\theta_m$ converges). \Cref{lem:firstpassage} then gives $\cos\phi_m>\tfrac12$
+for infinitely many $m$ and $\cos\phi_m<-\tfrac12$ for infinitely many $m$;
+since $A_m>0$ and the relative error in \eqref{eq:osc} is $o(1)$, it follows
+that $M_m>0$ infinitely often and $M_m<0$ infinitely often.
+\end{proof}
+
+\begin{corollary}[Failure of the one-sided even-cone bridge]
+\label{cor:nogo}
+At every nondegenerate positive-$\Lambda$ collision $(x_*,\Lambda)$ with
+$x_*\neq0$ (which holds always, since $H_\Lambda(0)=\int e^{\Lambda u^2}
+\Phi>0$), the response-moment sequence $\{M_m\}_{m\ge1}$ satisfies:
+\begin{enumerate}
+\item[$(\mathrm i)$] it is \emph{not eventually one-signed}, so no cone
+condition $\sgn(M_m)\equiv\text{const}$ holds and the one-sided variational
+bridge fails;
+\item[$(\mathrm{ii})$] it is \emph{not a Stieltjes moment sequence}: there is
+no positive measure $\nu$ on $[0,\infty)$ with $M_m=\int w^m\,d\nu(w)$, since
+such moments are nonnegative; so the response functional is not a positive
+functional on the even generator cone, refuting the Hankel-positivity form
+of the bridge.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+$(\mathrm i)$ is the last clause of \cref{thm:oscillation}. $(\mathrm{ii})$:
+a Stieltjes moment sequence is nonnegative, contradicting $(\mathrm i)$.
+\end{proof}
+
+\Cref{cor:nogo} closes the one-sided even-cone bridge in its two clean forms
+--- an eventual sign of $T_m'(0)$, equivalently of $\{M_m\}$, and a
+positive-moment (Stieltjes) structure on $\{M_m\}$. It does not claim to
+exclude every conceivable first-order mechanism, only the natural cone a
+reader is led to try; through that cone the even pseudo-process hierarchy
+does not reach RH.
+
+%==============================================================
+\section{The closure, and unification with the logarithmic route}
+\label{sec:closure}
+%==============================================================
+
+The two first-order routes now read as one picture. Recall the response
+measure $\mu_*$ of \eqref{eq:mustar} and the companion's clock function
+\begin{equation}\label{eq:R}
+  R(\beta):=\int_0^\infty u^{2\beta}\,d\mu_*
+  =\frac{1}{D(x_*,\Lambda)}\int_0^\infty u^{2\beta}e^{\Lambda u^2}
+   \Phi(u)\cos(x_*u)\,du,
+\end{equation}
+analytic in the half-plane $\Re\beta>-\tfrac12$, where the integral
+converges: the super-exponential decay of $\Phi$ controls $u\to\infty$ for
+every $\beta$, while at the endpoint $u\to0$ the factor $u^{2\beta}$ is
+integrable against $\Phi(0)\neq0$ exactly when $\Re\beta>-\tfrac12$. As the
+Mellin transform of the smooth even datum $e^{\Lambda u^2}\Phi(u)\cos(x_*u)$,
+$R$ continues meromorphically to $\C$, with simple poles only at the
+negative half-integers $\beta=-\tfrac12,-\tfrac32,\dots$ (the endpoint Taylor
+scale), the residue at $-\tfrac12$ being $\Phi(0)/\bigl(2D(x_*,\Lambda)\bigr)$
+--- the same endpoint constant that governs the catastrophe and the tilt.
+Every value used below --- the germ at $\beta=1$, the integer samples
+$m\ge1$, and the real zeros $\beta_k>0$ of \cref{sec:arithmetic} --- lies in
+the half-plane of analyticity.
+Its real samples are the data of both routes:
+\begin{equation}\label{eq:samples}
+  R(1)=1,\qquad
+  R'(1)=2B_*=2\,\frac{N(x_*,\Lambda)}{D(x_*,\Lambda)},\qquad
+  R(m)=\frac{M_m}{M_1}\ \ (m\in\N).
+\end{equation}
+Here $R(1)=1$ is the normalization $\int u^2d\mu_*=1$; $R'(1)=2\int u^2\log
+u\,d\mu_*=2B_*$ by differentiating under the integral; and $R(m)=M_m/M_1$ is
+\eqref{eq:velocity}.
+
+\begin{theorem}[The two routes, unified]\label{thm:unified}
+At a nondegenerate positive-$\Lambda$ collision the clock function $R$ of
+\eqref{eq:R} satisfies:
+\begin{enumerate}
+\item[$(\mathrm i)$] \emph{Forced value and slope, from the
+endpoint-singular directions.} $R(1)=1$ is pinned by time-rescaling, and
+$R'(1)=2B_*>0$ is forced positive by the tilt positivity of~\cite{Fsymbol};
+the latter refutes self-dual extremality, $T_*'(2)=-\Lambda B_*\neq0$.
+\item[$(\mathrm{ii})$] \emph{Oscillating integer samples, from the
+endpoint-smooth directions.} $R(m)=M_m/M_1$ changes sign infinitely often
+(\cref{thm:oscillation}); no cone exists.
+\end{enumerate}
+The discriminant between $(\mathrm i)$ and $(\mathrm{ii})$ is the regularity
+of the symbol at the endpoint $u=0$: singular weights ($\log$, fractional
+powers) carry the imaginary-axis density $\kappa$ and a forced sign, smooth
+even weights sit at the zeros of $\kappa$ and oscillate. Both first-order
+routes to $\Lambda\le0$ therefore close, for complementary reasons.
+\end{theorem}
+
+\begin{proof}
+$(\mathrm i)$ is \eqref{eq:samples} together with the companion's tilt
+theorem ($N>0$ on the admissible range) and collision-velocity formula.
+$(\mathrm{ii})$ is \cref{thm:oscillation}. The discriminant statement is
+\cref{thm:dichotomy} and the three-phenomena reading of
+\cref{sec:dichotomy}.
+\end{proof}
+
+\begin{remark}[Why the slope is forced but the samples are free]
+\label{rem:freevalue}
+The companion's clock proposition already isolated the structural fact:
+inside the subordination strip the clock sector fixes $R(1)=1$ and
+\emph{leaves $R'(1)$ free}. \Cref{thm:unified} fills in both ends with the
+arithmetic of $\Phi$. The slope $R'(1)=2B_*$ is forced by the one singular
+tangent in the strip, where the contour segment is active; the values
+$R(m)$, $m\ge2$, are free of any segment and realize their freedom by
+oscillating. The companion was pointing at the right place --- the content
+sits in the derivative, not the value --- and the present theorem shows the
+even hierarchy adds no new pinned quantity: it samples the free part of $R$,
+and the free part has no fixed sign.
+\end{remark}
+
+The function $R$ is thus an object with a forced germ at $\beta=1$
+($R(1)=1$, $R'(1)>0$) and oscillating integer values --- perfectly possible
+for a function analytic in $\Re\beta>-\tfrac12$, and exactly what occurs.
+Any surviving route must
+constrain $R$ \emph{globally}, not through the sign of any one sample; this
+is taken up in \cref{sec:frontier}.
+
+%==============================================================
+\section{The probabilistic reading: what the level-$p$ calculus contributes}
+\label{sec:probabilistic}
+%==============================================================
+
+The even members of \eqref{eq:family} are not an arbitrary test family: for
+$\alpha=2m$ the multiplier $e^{tu^{2m}}$ is the symbol of the order-$2m$
+heat pseudo-process of Krylov and Hochberg~\cite{Krylov,Hochberg}, run in
+the \emph{backward} (growing) direction that is the de Bruijn--Newman
+direction. The companion paper~\cite{Fpseudo} builds the representation
+calculus for these pseudo-processes. We read the present result through it,
+and find that it supplies the language of the response measure and,
+decisively, the reason the bridge cannot succeed.
+
+\subsection{The pseudo-process behind $\alpha=2m$}
+The order-$p$ pseudo-process $X^{(p)}$ has characteristic functional
+$\E[e^{ikX^{(p)}_t}]=e^{c_p(ik)^pt}$ and signed transition kernel $K_p$
+(Gaussian at $p=2$, Airy at $p=3$, Hochberg's biharmonic at
+$p=4$)~\cite{Fpseudo}. For $p=2m$ even the Fourier symbol is
+$e^{c_{2m}(-1)^mk^{2m}t}$; matching the de Bruijn--Newman weight $e^{tu^{2m}}$
+on the cosine side ($k\leftrightarrow u$, sign $c_{2m}(-1)^m=+1$) identifies
+$H_{t,2m}$ as $H_0$ evolved by the order-$2m$ pseudo-process semigroup in
+its backward, non-contractive direction --- the direction outside the
+probabilistic strip, where~\cite{Fsymbol} already located the catastrophe
+and~\cite{Fpseudo} the loss of every positive structure.
+
+\subsection{The representer dictionary}
+The response formula $\frac{d}{d\epsilon}T_*|_\sigma=-\Lambda\int\sigma\,
+d\mu_*$ of \eqref{eq:mustar} is a Clark--Ocone pairing in the precise sense
+of~\cite{Fpseudo}: the derivative of the observable $T_*$ along a direction
+$\sigma$ is the pairing of $\sigma$ against one fixed representer $\mu_*$,
+exactly as a centered functional of a noise pairs against its
+representer, and the order-$p$ calculus is what makes ``derivative defined
+by adjointness against a divergence, with no positivity'' a theorem rather
+than an analogy. In that dictionary the extremality hypothesis along the
+stable tangent is a first-chaos-type orthogonality
+$B_*=\int u^2\log u\,d\mu_*=0$, and the even-hierarchy cone is the family of
+samples $R(m)=\int u^{2m}d\mu_*$. The companion~\cite{Fpseudo} gives these
+pairings a rigorous home; it does not, by itself, decide their signs.
+
+\subsection{Why the calculus forecloses the cone rather than enabling it}
+The decisive contribution of~\cite{Fpseudo} is negative and sharp. The cone
+the bridge needs is a \emph{positivity} statement about the even generator
+directions; the orders $p=2m\ge4$ that would have to supply it are exactly
+the orders from which positivity has been stripped. Three facts
+of~\cite{Fpseudo} bear directly:
+\begin{enumerate}
+\item[$(\mathrm i)$] For $p\ge3$ there is no positive path-space law: the
+pseudo-pairing is signed, $\E[X_T^2]=0$, and $X^{(p)}$ is not a
+semimartingale. There is no positive measure whose moments are the responses,
+which is \cref{cor:nogo}$(\mathrm{ii})$ seen from the process side.
+\item[$(\mathrm{ii})$] Orthogonal chaos exists if and only if $p=2$
+(\cite{Fpseudo}, orthogonality theorem): the Appell--Gram matrix is diagonal
+only in the Gaussian case. There is no orthogonal first chaos for the even
+direction to be orthogonal \emph{to}; only a triangular, biorthogonal
+structure survives, which carries no sign.
+\item[$(\mathrm{iii})$] Correspondingly --- and this is the companion's
+even-exponent rigidity~\cite{Fsymbol} --- no $e^{\epsilon u^{2m}}$,
+$m\ge2$, is a P\'olya universal factor: the Laguerre--P\'olya preservation
+that real-rootedness needs exists only at $p=2$. A direction that does not
+preserve real-rootedness cannot point uniformly into the real-rooted side,
+so its collision response has no reason to be one-signed --- and is not.
+\end{enumerate}
+
+\subsection{The separation of the two moment systems}
+The cleanest statement of why the calculus cannot transfer is that the
+pseudo-process carries \emph{two different moment systems}, and RH needs the
+one the calculus does not control. The process's own moments are
+sign-regular and explicit,
+\begin{equation}\label{eq:procmoments}
+  \E\bigl[(X^{(p)}_T)^{pn}\bigr]=\frac{(pn)!}{n!}\,c_p^{\,n}\,T^n,
+  \qquad \E\bigl[(X^{(p)}_T)^{m}\bigr]=0\ \ (p\nmid m),
+\end{equation}
+a single sign $\sgn(c_p^n)$, governed by the grading $p\mid m$
+of~\cite{Fpseudo}. The \emph{arithmetic} response moments, by contrast, are
+\begin{equation}\label{eq:arithmoments}
+  M_m=\int_0^\infty u^{2m}\,e^{\Lambda u^2}\Phi(u)\cos(x_*u)\,du,
+\end{equation}
+moments of the \emph{signed} measure $\mu_*$, whose sign is twisted by the
+zero's phase $\cos(x_*u)$. The level-$p$ Clark--Ocone calculus governs
+\eqref{eq:procmoments}: the grading, the representation, the Stein identity,
+the carr\'e du champ. It is silent on \eqref{eq:arithmoments}, because the
+$\cos(x_*u)$ factor is not part of the pseudo-process data but of the
+\emph{arithmetic} of $\Phi$ at the collision. The two systems agree only in
+the trivial sector; the calculus cannot lend its sign-regularity to the
+oscillating one. That silence is the precise sense in which the
+pseudo-process framework, however complete as probability, does not open the
+Riemann hypothesis.
+
+\begin{remark}[The honest summary of {\cite{Fpseudo}}'s role]
+\label{rem:honest}
+The level-$p$ Clark--Ocone paper helps in two ways and not in a third. It
+gives the rigorous backbone for the response-measure / representer language
+used throughout~\cite{Fsymbol} and here (the adjoint definition of the
+operator derivative, the uniqueness of the representer up to chronological
+equivalence). And it diagnoses the obstruction: the cone is a positivity
+condition, and the orders that would carry it are positivity-free. What it
+does not do --- what nothing in the pseudo-process category does --- is
+constrain the signed arithmetic moments $M_m$; those are decided by the
+contour mechanism of \cref{sec:dichotomy}, which lives in the analysis of
+$\Phi$, not in the probability of $X^{(p)}$.
+\end{remark}
+
+%==============================================================
+\section{Numerical confirmation}\label{sec:numerics}
+%==============================================================
+
+We confirm the oscillation directly on the Riemann kernel. The integrals
+$M_m(x_0;t)=\int_0^\infty u^{2m}e^{tu^2}\Phi(u)\cos(x_0u)\,du$ are evaluated
+by subdivided tanh--sinh quadrature on $u\in[0,2.1]$ at $50$-digit working
+precision, $\Phi$ summed until the terms underflow. Two checks pin the
+conventions: $\Phi(0)=0.44669690$, matching a direct $30$-digit summation of
+$\sum_{n\ge1}(2\pi^2n^4-3\pi n^2)e^{-\pi n^2}=0.4466969004671234$, and
+$H_0(2\gamma_1)=\int\Phi\cos(2\gamma_1u)\,du=-4.6\times10^{-14}$, vanishing
+to the working precision, where $\gamma_1=14.134725$ is the first zeta
+ordinate. Since the collision site of a hypothetical positive-$\Lambda$
+scenario is not known (its existence is RH), we exhibit the mechanism at the
+real surrogate sites $x_0=2\gamma_j$, where the oscillation is generic in
+$x_0\neq0$; \cref{thm:oscillation} applies verbatim at any genuine
+collision.
+
+\begin{center}
+\begin{tabular}{rrcrc}
+\toprule
+$m$ & $M_m(x_0;0)$ & $\sgn M_m$ & $-M_m/M_1$ & $\sgn T_m'$\\
+\midrule
+1  & $-5.009\times10^{-5}$ & $-$ & $-1.000$            & $-$\\
+2  & $\phantom{-}3.709\times10^{-6}$ & $+$ & $\phantom{-}0.0740$ & $+$\\
+3  & $\phantom{-}1.752\times10^{-7}$ & $+$ & $\phantom{-}0.00350$ & $+$\\
+4  & $-6.033\times10^{-10}$ & $-$ & $-1.20\times10^{-5}$ & $-$\\
+5  & $-1.119\times10^{-9}$ & $-$ & $-2.24\times10^{-5}$ & $-$\\
+$\vdots$ & $\vdots$ & $-$ & $\vdots$ & $-$\\
+9  & $-1.144\times10^{-13}$ & $-$ & $-2.28\times10^{-9}$ & $-$\\
+10 & $\phantom{-}5.151\times10^{-15}$ & $+$ & $\phantom{-}1.03\times10^{-10}$ & $+$\\
+$\vdots$ & $\vdots$ & $+$ & $\vdots$ & $+$\\
+20 & $\phantom{-}1.376\times10^{-21}$ & $+$ & $\phantom{-}2.75\times10^{-17}$ & $+$\\
+21 & $\phantom{-}4.976\times10^{-25}$ & $+$ & $\phantom{-}9.93\times10^{-21}$ & $+$\\
+22 & $-8.387\times10^{-23}$ & $-$ & $-1.67\times10^{-18}$ & $-$\\
+$\vdots$ & $\vdots$ & $-$ & $\vdots$ & $-$\\
+30 & $-1.840\times10^{-26}$ & $-$ & $-3.67\times10^{-22}$ & $-$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent At $x_0=2\gamma_1=28.2694$, $t=0$, the sign pattern of $M_m$ over
+$m=1,\dots,30$ is
+\[
+  -\,+\,+\,-\,-\,-\,-\,-\,-\,+\,+\,+\,+\,+\,+\,+\,+\,+\,+\,+\,+\,
+  -\,-\,-\,-\,-\,-\,-\,-\,-,
+\]
+with \textbf{four sign reversals}; the near-vanishing $M_{21}=4.98\times
+10^{-25}$, three orders below its neighbours, is the amplitude dip of a
+cosine crossing zero, an incipient fifth reversal. Three readings confirm
+the theorem. First, the magnitudes fall geometrically, $|M_m|$ shrinking
+by roughly an order per step, as the saddle amplitude
+$A_m=\sqrt{2\pi}\sigma_me^{\rho_m(u_m)}$ requires (the weight $u^{2m}$ at the
+sub-unit saddle $u_m<1$ contracts the integral). Second, the oscillation is
+\emph{faster at larger $x_0$}: at $x_0=2\gamma_3=50.0217$ the same sweep
+reverses sign \textbf{six} times, matching the saddle spacing
+$\Delta(\log m)=4\pi/x_0$ between reversals (a factor $e^{4\pi/x_0}$ in $m$),
+which predicts the ratio $50/28\approx1.8$ in reversal counts against the
+observed $6/4=1.5$, the discrepancy being the slow onset of the asymptotic
+at small $m$. Third, the pattern is \emph{stable under the flow}: repeating
+at $t=0.2$ leaves the sign sequence and reversal count unchanged
+($-{+}{+}{-}\cdots$, four reversals), as \cref{thm:oscillation} requires,
+the leading constant being $t$-independent. The velocity sign
+$\sgn(T_m'(0))=-\sgn(M_m/M_1)$ inherits the reversals exactly: the even
+pseudo-process directions push the collision time alternately forward and
+backward, and no cone exists. Simulation code accompanies the source.
+
+%==============================================================
+\section{The arithmetic of the clock function}\label{sec:arithmetic}
+%==============================================================
+
+The frontier object is the clock function $R(\beta)=\Mcal(\beta)/\Mcal(1)$
+of \eqref{eq:Mcal}. It is not a generic analytic function: at the critical
+value $\Lambda=0$ it is the even-derivative family of the completed zeta
+function at the collision height, so its samples are arithmetic and its real
+zeros are a log-periodic spectrum whose period is the collision location.
+
+\subsection{The exact zeta identity}
+Recall the classical $H_0(x)=\tfrac18\,\Xi(x/2)$, with $\Xi(t)=\xi(\tfrac12+
+it)$ the Riemann $\Xi$-function, real and even on $\R$.
+
+\begin{theorem}[The clock samples are even derivatives of $\Xi$]
+\label{thm:xi}
+For $\Lambda=0$, every integer $m\ge0$, and every real $x_*$,
+\begin{equation}\label{eq:xi-id}
+  M_m=\int_0^\infty u^{2m}\Phi(u)\cos(x_*u)\,du
+     =(-1)^m H_0^{(2m)}(x_*)
+     =\frac{(-1)^m}{8\cdot4^m}\,\Xi^{(2m)}\!\Bigl(\frac{x_*}{2}\Bigr).
+\end{equation}
+In particular $\Mcal(0)=\tfrac18\Xi(x_*/2)$, which vanishes precisely when
+$\tfrac12+i\tfrac{x_*}2$ is a nontrivial zero of $\zeta$. For $\Lambda>0$ the
+same identities hold with $H_0$ replaced by the heat-flowed $H_\Lambda$; at
+a genuine collision $\Mcal(0)=H_\Lambda(x_*)=0$ automatically, $x_*$ being a
+zero of $H_\Lambda$.
+\end{theorem}
+
+\begin{proof}
+Differentiating $H_0(x)=\int_0^\infty\Phi(u)\cos(xu)\,du$ under the integral
+and using $\tfrac{d^{2m}}{dx^{2m}}\cos(xu)=(-1)^mu^{2m}\cos(xu)$ gives
+$H_0^{(2m)}(x_*)=(-1)^mM_m$; the chain rule on $H_0(x)=\tfrac18\Xi(x/2)$ gives
+$H_0^{(2m)}(x)=\tfrac1{8\cdot4^m}\Xi^{(2m)}(x/2)$. The $\zeta$-zero statement
+is the classical representation. The $\Lambda>0$ version replaces $\Phi$ by
+$e^{\Lambda u^2}\Phi$ and $H_0$ by $H_\Lambda$.
+\end{proof}
+
+Identity \eqref{eq:xi-id} was confirmed to $35$ digits by evaluating both
+sides independently --- the moment integral over $\Phi$, and the Taylor
+derivatives of $\Xi$ obtained from $\zeta$ --- at the zero height
+$x_*=2\gamma_1$ (where $\Mcal(0)$ and $\Xi(\gamma_1)$ both vanish to
+$10^{-14}$) and at a generic height. This identity, which the Mellin
+structure of $\Phi$ makes natural, is exact: the clock function is the
+moment/derivative family of completed zeta at the collision height, and the
+continuous-$\beta$ clock is its fractional even-derivative interpolation. The Dirichlet-polynomial structure --- each
+$n$-term of $\Phi$ contributing the character $n^{-1/2-ix_*/2}$ after the
+Mellin exchange $v=e^{4u}$ --- is exactly the Riemann--Siegel expansion of
+the $\zeta(\tfrac12+i\tfrac{x_*}2)$ inside $\Xi$, read through the
+$\beta$-derivatives, with the classical cutoff $n\lesssim\sqrt{\beta/2\pi}$
+furnished by the per-term saddle; it is zeta's own approximate functional
+equation, not a new one.
+
+\begin{corollary}[The oscillation is a P\'olya--Jensen sign failure]
+\label{cor:jensen}
+\Cref{thm:oscillation} is the statement that the even derivatives
+$\Xi^{(2m)}(x_*/2)$ do not settle to the alternating sign $(-1)^m$. The cone
+condition $\sgn(M_m)\equiv\text{const}$ is the sign-regularity of the
+P\'olya--Jensen sequence $\bigl\{(-1)^m\Xi^{(2m)}(x_*/2)\bigr\}_m$ shifted to
+height $x_*/2$. At the central height $x_*=0$ this sequence is of one sign,
+$M_m(0)=\int u^{2m}\Phi>0$, the Laguerre--P\'olya positivity whose Jensen
+polynomials Griffin--Ono--Rolen--Zagier prove eventually
+hyperbolic~\cite{GORZ}; \cref{thm:oscillation} shows the sign-regularity
+fails at every other height. The cone holds exactly at $x_*=0$, which is
+never a collision ($H_\Lambda(0)>0$). This is why every heuristic in the
+program degenerated ``unless $x_*=0$'': the central height is the one place
+the P\'olya--Jensen sequence is monotone in sign.
+\end{corollary}
+
+\subsection{The frequency law and approximate discrete scale invariance}
+The real zeros of $R$ inherit the saddle of \cref{thm:oscillation}: a zero
+needs $x_*u_\beta=\tfrac\pi2+k\pi$ with $u_\beta=\tfrac14\log\beta-\tfrac14
+\log\log\beta+O(1)$, whence
+\begin{equation}\label{eq:freq}
+  \log\beta_k=\frac{4\pi}{x_*}\,k+\log k+O(1).
+\end{equation}
+The real zeros form an asymptotic geometric progression of ratio
+$e^{4\pi/x_*}$: a log-periodic (discrete-scale-invariant) spectrum whose
+log-period $4\pi/x_*$ is the collision location read as a frequency. The
+progression is only asymptotic --- the drift $\beta_{k+1}/\beta_k=
+e^{4\pi/x_*}(1+\tfrac1k+o(\tfrac1k))$ decays like $1/k$. Numerically, the
+sign-change gaps of $M_m$ at $x_*=2\gamma_1$ are $0.92,0.79,0.65,0.63$ across
+$m\le120$, matching the second-order law $4\pi/x_*+\tfrac1k=0.94,0.78,0.69,
+0.64$ at $k=2,\dots,5$: the data confirm the $\log k$ correction of
+\eqref{eq:freq}, not merely its limit $4\pi/x_*=0.444$ (the first period,
+$k=1$, with zeros near $\beta=1.2,4.0$, is pre-asymptotic). At $x_*=2\gamma_3$
+ten periods track the same law toward $0.251$. The
+breaking of exact scale invariance is the arithmetic of \cref{thm:xi}:
+discrete scale invariance is the leading shadow of the zeta derivatives, and
+the dilation generator whose spectrum this is, is the Mellin dilation
+itself, acting on the auxiliary $\beta$-plane, not a Hilbert--P\'olya
+operator on the zeros of $\zeta$.
+
+\subsection{Self-reference, and why it does not propagate}
+By \cref{thm:xi} the order-$m$ clock sample, as the height $x_*$ varies,
+traces $\Xi^{(2m)}(x_*/2)$. The zero heights are marked \emph{exactly} at
+$m=0$, where $\Mcal(0)=\tfrac18\Xi$ vanishes at every ordinate; but the
+marking does not survive differentiation. Sweeping $x_*$ across
+$2\gamma_1=28.269$ and $2\gamma_2=42.044$: at $\beta=0$ the zeros of $M_0$
+sit on the ordinates; at $\beta=3$ the only zero of $M_3$ in $[26,45]$ lies
+$3.5$ and $10.3$ away from them; at $\beta=10$ the nearest zero of $M_{10}$
+misses $2\gamma_1$ by $0.23$ and $2\gamma_2$ by $1.9$. The zero-height
+signature is exact at the bottom of the ladder and effectively gone within a
+few rungs: the high even moments that defeat the cone are decoupled from the
+\emph{locations} of the zeros, even though they are built from $\Xi$. This is
+the differentiation form of the decoupling that \cref{sec:probabilistic}
+reads probabilistically; the response is arithmetic, but the arithmetic that
+survives to high order is the local Taylor data of $\Xi$, not its zero set.
+
+\subsection{The quartic flow and the decoherence of the zero field}
+\label{subsec:quartic}
+The self-reference asked how far \emph{up in $\beta$} the zero-coherence of
+the clock survives; the companion's quartic flow $H_{t,4}$ poses the partner
+question, how far \emph{up in $x$} the interlacing of the zeros survives
+under averaging. It is the one even member inside the probabilistic strip:
+the iterated-Brownian (Funaki) average $H_{t,4}=\E_{s\sim N(0,2t)}[H_s]$ of
+the de Bruijn--Newman flow over a Gaussian of signed times, validated here
+to $13$--$15$ digits. Every nonreal zero of $H_{t,4}$ is therefore a
+cancellation in an average of mixands each of which (for $s\ge\Lambda$) is
+real-rooted --- the average destroying a realness that each term possesses.
+Fine-grid tracking exhibits it directly. Under the flow the pair of zeros at
+$2\gamma_4=60.85$ and $2\gamma_5=65.87$ closes (to $62.19,\,63.81$ at
+$t=6$), collides near $x\approx63$, and lifts off: the value $H_{t,4}(63)$
+between them passes from a near-zero touching ($8\times10^{-13}$ at $t=6$,
+two real zeros) to a non-crossing dip that recedes from the axis
+($5\times10^{-11}$ at $t=7$, $1.7\times10^{-10}$ at $t=8$, no real zero) ---
+the sign-indefinite unfolding of the companion resolving to the nonreal
+side. The pair stays nonreal through $t=10$, so numerically
+\begin{equation}\label{eq:lam4}
+  \Lambda(4)>10,
+\end{equation}
+a first quantitative lower bound; the proven window-realness of the
+companion is thus a large-$t$ \emph{re}-coherence, absent at moderate times.
+
+The pre-registered coherence criterion --- decoherence when the de
+Bruijn--Newman zero displacement across the window, $|v_j|\sqrt{2t}$ with
+$v_j=\partial_sx_j=H_0''/H_0'$, reaches the half-gap $h_j$, i.e.\ at
+$t_c(x_j)=h_j^2/2v_j^2$ --- assigns the \emph{smallest} coherence time to
+exactly this pair ($t_c=3.45$ at $2\gamma_4$, the minimum over the low
+zeros) and predicts the onset to a factor of two ($3.45$ against
+$\approx6.5$). To that extent the interlacing lens is right: it names the
+first-colliding pair. But the velocities $|v_j|$ are $O(1)$ and fluctuating
+(mean $0.66$ over $\gamma\le95$, no monotone trend), so there is no smooth
+polynomial $x_c(t)$; the decoherence is configuration-specific, set by the
+local minimum of $h_j^2/v_j^2$, and the nucleation height $x\approx63$ sits
+near the upper (saddle) edge $x\sim t\log^3t$ of the companion's band at
+$t\approx6.5$, not its lower edge. The lens predicts which pair, and roughly
+when, but not a scaling law.
+
+%==============================================================
+\section{What survives: the global frontier}\label{sec:frontier}
+%==============================================================
+
+The first-order even bridge is closed, but the closure is sharp enough to
+say where an opening, if one exists, must now live. It cannot be a pointwise
+sign of a response; those oscillate. It must be a \emph{global} constraint
+on the function
+\begin{equation}\label{eq:Mcal}
+  \Mcal(\beta):=\int_0^\infty u^{2\beta}\,e^{\Lambda u^2}\Phi(u)
+  \cos(x_*u)\,du,
+  \qquad R(\beta)=\Mcal(\beta)/\Mcal(1),
+\end{equation}
+whose germ at $\beta=1$ is forced ($R(1)=1$, $R'(1)=2B_*>0$) and whose
+integer samples oscillate. Three problems sharpen this.
+
+\begin{problem}[The Jensen-sequence form of the global bridge]
+\Cref{sec:arithmetic} identifies $\Mcal$ exactly: its integer samples are
+the shifted P\'olya--Jensen sequence $(-1)^m\Xi^{(2m)}(x_*/2)$
+(\cref{thm:xi}), and its real zeros are the log-periodic spectrum
+\eqref{eq:freq}. The global bridge is therefore not a question about generic
+analytic functions but the sharp arithmetic question: can the
+P\'olya--Jensen sequence of $\Xi$ at a height $x_*/2$ be sign-regular when
+$x_*$ is the site of a real multiplicity-two zero of the flowed $\Xi$? By
+\cref{cor:jensen} sign-regularity holds only at the central height $x_*=0$,
+which is never a collision; the open content is whether the collision
+constraint (a double zero of $H_\Lambda$ at $x_*$, with the
+Laguerre--P\'olya structure of $H_\Lambda$ in force) can coexist with the
+oscillation forced by \cref{thm:oscillation}. Because the relevant
+$\beta$-aspect data is zeta's own Dirichlet polynomial (\cref{thm:xi}), the
+tools of the Dirichlet-polynomial genre apply --- Tur\'an power sums,
+zero-density estimates --- but to the same hard object as $\zeta$ itself: the
+reframing arithmetizes the bridge without escaping zeta's difficulty, and is
+self-referential, the response spectrum at $x_*$ being built from zeta data
+at $x_*$. Unlike the first-order signs, it is not a pointwise positivity and
+not obviously doomed.
+
+\smallskip\noindent\emph{Partial resolution (an $\mathcal{LP}$ reformulation).}
+Since $x_*$ is a double zero of $H_\Lambda\in\mathcal{LP}$, write
+$H_\Lambda(x_*+s)=s^2h(s)$ with $h\in\mathcal{LP}$ and
+$h(0)=\tfrac12H_\Lambda''(x_*)\neq0$ (removing a real double zero preserves
+the Laguerre--P\'olya class). Then
+\begin{equation}\label{eq:LPform}
+  M_m=(-1)^m H_\Lambda^{(2m)}(x_*)=(-1)^m(2m)(2m-1)\,h^{(2m-2)}(0),
+\end{equation}
+so the cone $\sgn(M_m)\equiv\text{const}$ is exactly sign-regularity of the
+even Taylor data of $h$. For a \emph{one-sided} zero set --- e.g.\ $h$ of
+genus zero with all zeros negative, $h(s)=h(0)\prod_k(1+s/a_k)$, $a_k>0$ ---
+every $h^{(j)}(0)>0$ and the cone holds; the collision's zeros, the remaining
+zeros of $H_\Lambda$ shifted to straddle the origin, are two-sided, and
+\cref{thm:oscillation} shows that two-sidedness breaks the regularity. This
+recovers the oscillation inside $\mathcal{LP}$ and locates its cause in the
+\emph{bulk} position of the collision; it is structurally consistent with
+$\Lambda>0$, so the obstruction, if any, is in the global zero geometry, not
+the local Jensen data.
+\end{problem}
+
+\begin{problem}[A second invariant beyond first order]
+The velocity law $T_*'(2)=-\Lambda B_*$ fixes the corner slope of $R$; the
+even samples fix nothing. Following the companion's open
+problem~\cite{Fsymbol}, seek a \emph{second} collision invariant, forced in
+every positive-$\Lambda$ scenario and incompatible with both the
+nondegenerate velocity $T_*'(2)\neq0$ and the degenerate cusp. The natural
+candidates are the fractional clock responses $\mathcal G_\beta H$ at the
+collision (the companion's clock calculus), among which a forced relation
+would be a constraint a positive-$\Lambda$ scenario must satisfy; the even
+hierarchy supplies the integer-$\beta$ values of this family, now known to
+oscillate, which constrains the interpolating $R$.
+
+\smallskip\noindent\emph{Partial resolution (the forced germ).} The contour
+engine of \cref{thm:dichotomy} pins not only $R'(1)$ but the entire germ of
+$R$ at $\beta=1$. Each log-moment
+$N_k=\int_0^\infty u^2(\log u)^k e^{\Lambda u^2}\Phi\cos(x_*u)\,du$ is
+endpoint-dominated, its segment density $-\Im[(iy)^2\Log^k(iy)]$ giving
+$N_k/N_1\sim k\,G^{(k-1)}(3)/G(3)$ with $G(s)=\Gamma(s)x_*^{-s}$; e.g.\
+$N_2/N_1\sim2(\psi(3)-\log x_*)$, confirmed numerically to under one percent
+by $x_*\ge120$ and exactly at $x_*=480$. Summing the tower
+($R^{(k)}(1)/R'(1)=2^{k-1}k\,G^{(k-1)}(3)/G(3)$) resums to a closed form,
+\begin{equation}\label{eq:germ}
+  R(\beta)=1+B_*\,(\beta-1)\,\Gamma(2\beta+1)\,x_*^{-2(\beta-1)}
+  \;+\;(\text{beyond all orders}),
+\end{equation}
+a $\Gamma$-factor times the scale $x_*^{-2(\beta-1)}$ --- the $\Gamma$-factor
+coefficient anticipated by the $\beta$-aspect reading of \cref{thm:xi}. So the
+second invariant, and indeed a whole tower, \emph{is} found, in closed form;
+but it is determined by the two endpoint numbers $B_*$ and $x_*$ alone and is
+consistent with every $\Lambda>0$. The RH-relevant content is not in the
+forced germ but in the beyond-all-orders remainder --- the oscillatory zeros
+$\beta_k$ of \eqref{eq:freq} --- exactly where the arithmetic of
+\cref{sec:arithmetic} lives.
+\end{problem}
+
+\begin{problem}[The quartic flow: the one positive even direction]
+\label{prob:quartic}
+Among the even exponents only $\alpha=4$ lies in the probabilistic
+subordination strip $[2,4]$: the quartic backward flow is the
+iterated-Brownian (Funaki) evolution of $\Xi$, a Gaussian average of the de
+Bruijn--Newman trajectory at a random signed time~\cite{Fsymbol,Funaki},
+and it is the one even pseudo-process that retains a positive clock. The
+companion proves $H_{t,4}$ real-rooted on every fixed window for large $t$;
+whether $\Lambda(4)<\infty$ globally is open, and \cref{subsec:quartic} now
+bounds it from below, $\Lambda(4)>10$, by exhibiting a bulk collision that
+lifts a conjugate pair off the axis at $t\approx6.5$. This is the surviving
+frontier where positivity is not lost: a global real-rootedness theorem for
+the quartic flow would constrain the de Bruijn--Newman flow underneath it
+through the Gaussian average, a mechanism the sign-oscillating odd-order
+even powers cannot provide. The even hierarchy fails as a \emph{cone};
+whether its single positive member fares better as an \emph{average} is
+settled below, and it does not.
+
+\smallskip\noindent\emph{Partial resolution (toward $\Lambda(4)=\infty$).}
+Tracking the lifted pair of \cref{subsec:quartic} to larger $t$ sharpens
+\eqref{eq:lam4}: its normalized axis distance
+$\min_{[58,68]}|H_{t,4}|/\max_{[58,68]}|H_{t,4}|$ holds near $0.02$--$0.04$
+through $t=300$ with no sign of return, so $\Lambda(4)>300$. But more than the
+bound, the geometry tells against re-coherence ever winning. Two scales run
+opposite ways. A pair re-coheres only when the Laplace window $x\sim t^{1/4}$
+climbs to its height --- cost $t\sim x^4$, polynomial and slow. Decoherence,
+by contrast, reaches \emph{up}: the linear criterion of \cref{subsec:quartic}
+gives onset $t_c(x)\sim h(x)^2/2v^2$, and as the height grows the zero gaps
+close, $h(x)\sim2\pi/\log x\to0$, while the velocities stay $O(1)$, so
+$t_c(x)\to0$. Hence at every fixed $t>0$ there are heights --- all
+sufficiently large $x$ --- whose pairs have already lifted off, and the
+decohered region descends from $x=\infty$ as fast as the gaps close while the
+real-rooted window rises only as $t^{1/4}$. The band between them never
+empties, so $H_{t,4}$ carries nonreal zeros at every $t$, and conjecturally
+\begin{equation}\label{eq:lam4inf}
+  \Lambda(4)=\infty .
+\end{equation}
+This is consistent with the companion's fixed-window realness --- that window
+is exactly the climbing $t^{1/4}$ edge --- and is, we expect, provable: it
+needs only an effective Laplace lower edge and a gap-compression estimate
+exhibiting a genuine lifted pair above it at each $t$. The quartic average
+does not rescue real-rootedness; its positivity is precisely what fills the
+dips and lifts the pairs.
+\end{problem}
+
+\subsection{The global object, and where the barrier sits}
+\label{subsec:global}
+The three partial resolutions agree: the obstruction to $\Lambda\le0$, if it
+exists, is in no local or forced datum --- not the germ \eqref{eq:germ}, the
+local Jensen sequence \eqref{eq:LPform}, or the finite-$t$ quartic --- but in
+the global structure. That structure has an exact name. Suppose $\Lambda>0$
+with a nondegenerate collision $(x_*,\Lambda)$, and define the \emph{collision
+trajectory}
+\begin{equation}\label{eq:traj}
+  \varphi(s):=\frac{H_{\Lambda+s}(x_*)}{D},
+  \qquad D=D(x_*,\Lambda)=-H_\Lambda''(x_*),
+\end{equation}
+the de Bruijn--Newman flow read at the fixed collision height as a function
+of flow time. It is entire in $s$, with $\varphi(0)=0$ (the collision is a
+zero) and $\varphi'(0)=\partial_tH_\Lambda(x_*)/D=1$. Since $H_\Lambda(x_*)=0$,
+the clock calculus of~\cite{Fsymbol} makes the entire clock function the
+Marchaud fractional derivative of $\varphi$ from the pre-threshold side:
+\begin{equation}\label{eq:globalclock}
+  R(\beta)=\frac{\beta(\beta-1)}{\Gamma(2-\beta)}\int_0^\infty
+  \bigl[\varphi(-r)+r\bigr]\,r^{-1-\beta}\,dr,\qquad 1<\beta<2,
+\end{equation}
+the compensator $+r$ converging because $\varphi(-r)+r=O(r^2)$. The whole
+program collapses onto this one object: $R$ is an order-$\beta$ fractional
+derivative of $\varphi$; its forced germ \eqref{eq:germ} is $\varphi$ near
+$s=0$; its log-periodic zeros \eqref{eq:freq} are the oscillation of
+$\varphi(-r)$ in $r$. The Riemann hypothesis is the statement that no such
+trajectory exists with $\Lambda>0$.
+
+This is a faithful reduction, and it shows precisely why it is not an escape.
+The trajectory is not free. At $s=-\Lambda$,
+\begin{equation}\label{eq:barrier}
+  \varphi(-\Lambda)=\frac{H_0(x_*)}{D}=\frac{\Xi(x_*/2)}{8D},
+\end{equation}
+the completed zeta function at the collision height, and for $s<-\Lambda$ the
+backward continuation of the flow past $t=0$. The clock $R$ therefore encodes
+the flow trajectory \emph{through} the value $\Xi(x_*/2)$: the global object
+is zeta itself, read through the heat flow. The local shots showed the
+obstruction is not in the germ; the global object shows that the germ's
+complement is the arithmetic. We have localized where $\Lambda\le0$ must be
+decided --- the Mellin/fractional structure of the single trajectory
+$\varphi$, equivalently the oscillation of the backward flow at the collision
+height --- without dissolving it, because that trajectory is the Riemann
+$\Xi$-function in motion. This is the honest endpoint of the deformation
+program: a complete map of the obstruction's location, and a barrier exactly
+as hard as the hypothesis.
+
+\begin{remark}[Even-data blindness: why every route meets the same barrier]
+\label{rem:blind}
+There is a single structural reason behind all of the above. Since
+$\partial_t=-\partial_x^2$, the trajectory \eqref{eq:traj} records only the
+\emph{even} $x$-derivatives of the flow,
+\begin{equation}\label{eq:evenonly}
+  \varphi^{(n)}(s)=(-1)^n\,\frac{H_{\Lambda+s}^{(2n)}(x_*)}{D}\,;
+\end{equation}
+hence $\varphi$ --- and every functional of it: the moments
+$M_m=(-1)^mH_\Lambda^{(2m)}(x_*)$, the clock $R(\beta)$ (recovered from the
+integer moments by Carlson's theorem, $M(\beta)$ being of exponential type
+$0$ and bounded on $i\R$), the germ \eqref{eq:germ}, the frequency law
+\eqref{eq:freq} --- depends on $H_\Lambda$ only through the even-derivative
+sequence $\{H_\Lambda^{(2n)}(x_*)\}_{n\ge0}$. But real-rootedness is not an
+even-derivative functional. The Laguerre--P\'olya conditions couple
+consecutive derivatives, and the left--right asymmetry of the zero field
+about $x_*$ --- the very two-sidedness that \eqref{eq:LPform} pinned as the
+cause of the oscillation --- lives in the \emph{odd} derivatives
+$\{H_\Lambda^{(2n+1)}(x_*)\}$, which $\varphi$ discards: two functions
+agreeing in their even derivatives at $x_*$, one Laguerre--P\'olya and one
+not, yield the same clock. No object of the program can therefore decide
+$\Lambda\le0$. This is the one phenomenon behind every shot --- the cone
+closing, the germ being forced, the self-reference washing out, the global
+object reducing to $\Xi(x_*/2)$ without contradiction: each is the program
+reading magnitude data that is blind to real-rootedness. What would decide
+the Riemann hypothesis is an object sensitive to the odd, asymmetry data ---
+the positions of the zeros on the two sides of $x_*$, not the value of the
+flow through it.
+\end{remark}
+
+\subsection{The odd data: the asymmetry, and where the dynamics takes over}
+\label{subsec:odd}
+\Cref{rem:blind} names what is missing; there is a canonical object that
+supplies it. Partner the value-trajectory \eqref{eq:traj} with the
+\emph{slope trajectory}
+\begin{equation}\label{eq:slopetraj}
+  \psi(s):=H_{\Lambda+s}'(x_*),\qquad
+  \psi^{(n)}(s)=(-1)^nH_{\Lambda+s}^{(2n+1)}(x_*),
+\end{equation}
+which records exactly the odd derivatives $\varphi$ discards, with $\psi(0)=0$
+and $\psi'(0)=-H_\Lambda'''(x_*)$. Its leading datum is not another blind
+oscillation: it is the global asymmetry of the zero field. Following the
+midpoint $m(s)$ of the pair that the collision unfolds --- the cubic
+correction to $(x-x_*)^2=2s$ shifts both roots equally --- and matching
+against the de Bruijn--Newman repulsion $\dot x_j=\sum_{k\ne j}2/(x_j-x_k)$
+gives
+\begin{equation}\label{eq:drift}
+  \dot m(0)=\frac{2}{3}\,\frac{H_\Lambda'''(x_*)}{H_\Lambda''(x_*)}
+  =2\sum_{k}\frac{1}{x_*-x_k}=:2S,
+\end{equation}
+the Hadamard regular part of $H_\Lambda'/H_\Lambda$ at $x_*$, the net
+inverse-distance to the other zeros. So the odd datum $H_\Lambda'''(x_*)$
+\emph{is} the lopsidedness of the zero field about the collision --- the net
+force the rest of the spectrum exerts on the colliding pair. On the zeta
+zeros this $S$ is concrete and sign-changing: $+0.30$ at $x=30$ (the ordinate
+$2\gamma_1=28.3$ pulling from just below), $-0.25$ at $x=35$ (pulled up by
+$2\gamma_2=42.0$), $+0.69$ at $x=43$ (the near ordinate below dominating) ---
+the asymmetry the even program cannot see, read straight off the neighbouring
+ordinates.
+
+This is where the deformation program ends and the dynamics begins. The
+quantity $S$ --- the repulsion, the asymmetry --- is of exactly the type
+whose collective behavior the zero-flow analysis of Rodgers and
+Tao~\cite{RodgersTao} controls to prove $\Lambda\ge0$: their bound is a
+statement about these forces, not about any value-functional. The two halves
+meet at \eqref{eq:drift}: the even-data deformation program maps the
+obstruction to perfect precision and is blind to it; the odd-data dynamics
+touches the obstruction and has so far pinned it only from below,
+$\Lambda\ge0$. The Riemann hypothesis is the matching upper control --- that
+the asymmetry $S$ at a threshold collision cannot take the form a genuine
+$\Lambda>0$ landing would require. That is no longer a deformation question.
+The program, having carried the even data to its wall, hands the problem
+across \eqref{eq:drift} to the dynamics of $S$, which is where $\Lambda\le0$
+must now be won.
+
+\subsection*{Conclusion}
+Three routes to the Riemann hypothesis through generator deformation are now
+resolved, negatively and for complementary reasons. The logarithmic tangent
+of~\cite{Fsymbol} fails because its invariant $B_*$ is forced strictly
+positive --- too definite to vanish. The even pseudo-process hierarchy of
+this paper fails because its invariants $M_m$ have no fixed sign --- too
+oscillatory to cone; the two are one phenomenon, the endpoint dichotomy, the
+contour segment forcing a sign on the singular directions and falling silent
+on the smooth even ones, with the even integers sitting at the zeros of the
+imaginary-axis density that runs the program, and the level-$p$ Clark--Ocone
+calculus~\cite{Fpseudo} confirming that the orders which would carry a cone
+have no positivity to carry it with. And the quartic flow, the one even
+direction that keeps genuine positivity, fails \emph{for} that positivity:
+\cref{subsec:quartic} shows its Gaussian average over signed times fills the
+dips of the de Bruijn--Newman flow and lifts conjugate pairs off the axis, so
+the average manufactures nonreal zeros rather than removing them
+($\Lambda(4)=\infty$ conjecturally, \cref{prob:quartic}). Too definite, too
+oscillatory, too positive.
+
+One structural cause underlies all three. By \cref{rem:blind} every object the
+program builds at a collision --- moment, clock, germ, trajectory --- is a
+functional of the even $x$-derivatives $\{H_\Lambda^{(2n)}(x_*)\}$ alone, and
+real-rootedness is not such a functional: it is decided by the odd, asymmetry
+data, the positions of the zeros on the two sides of $x_*$, which the even
+program discards. The program is complete as a map of the obstruction and
+constitutively unable to touch it.
+
+What the map delivers, in the end, is the handoff. The odd datum the program
+discards is not inert: by \eqref{eq:drift} it is the asymmetry
+$S=\sum_k1/(x_*-x_k)$, the net repulsion the rest of the zero field exerts on
+the colliding pair --- exactly the dynamical quantity whose statistics
+Rodgers and Tao~\cite{RodgersTao} control to obtain $\Lambda\ge0$. Generator
+deformation, carried to its wall, hands the Riemann hypothesis across the
+midpoint-drift identity \eqref{eq:drift}, from the value data it exhausts to
+the asymmetry $S$, on whose ledger $\Lambda\ge0$ already sits and
+$\Lambda\le0$ remains to be won. That is the honest endpoint: not a proof, but
+a complete account of how far deformation reaches, why it stops exactly there,
+and the one identity across which the problem passes to the dynamics.
+
+\section*{Acknowledgements}
+AI tools were used as interactive assistants for drafting, reorganizing, and
+generating mathematical arguments and computations, under the author's
+direction. The author is responsible for all mathematical content and any
+errors. Simulation code and raw output for the computational claims
+accompany the source.
+
+%==============================================================
+\begin{thebibliography}{99}
+
+\bibitem{Fsymbol} R.~Fontes, \emph{Symbol deformations of the de
+Bruijn--Newman flow: infrared catastrophe, collision sensitivity, and
+even-exponent rigidity}, preprint, 2026.
+
+\bibitem{Fpseudo} R.~Fontes, \emph{A level-$p$ Clark--Ocone calculus for
+higher-order heat pseudo-processes}, preprint, 2026.
+
+\bibitem{deBruijn} N.~G.~de Bruijn, \emph{The roots of trigonometric
+integrals}, Duke Math.\ J.\ \textbf{17} (1950), 197--226.
+
+\bibitem{Newman} C.~M.~Newman, \emph{Fourier transforms with only real
+zeros}, Proc.\ Amer.\ Math.\ Soc.\ \textbf{61} (1976), 245--251.
+
+\bibitem{CSV} G.~Csordas, W.~Smith and R.~S.~Varga, \emph{Lehmer pairs of
+zeros, the de Bruijn--Newman constant $\Lambda$, and the Riemann
+hypothesis}, Constr.\ Approx.\ \textbf{10} (1994), 107--129.
+
+\bibitem{RodgersTao} B.~Rodgers and T.~Tao, \emph{The de Bruijn--Newman
+constant is non-negative}, Forum Math.\ Pi \textbf{8} (2020), e6.
+
+\bibitem{Polymath15} D.~H.~J.~Polymath, \emph{Effective approximation of
+heat flow evolution of the Riemann $\xi$-function, and a new upper bound for
+the de Bruijn--Newman constant}, Res.\ Math.\ Sci.\ \textbf{6} (2019),
+no.~31.
+
+\bibitem{Polya27} G.~P\'olya, \emph{\"Uber trigonometrische Integrale mit
+nur reellen Nullstellen}, J.\ Reine Angew.\ Math.\ \textbf{158} (1927),
+6--18.
+
+\bibitem{Titchmarsh} E.~C.~Titchmarsh, \emph{The Theory of the Riemann
+Zeta-function}, 2nd ed., revised by D.~R.~Heath-Brown, Oxford University
+Press, 1986.
+
+\bibitem{Erdelyi} A.~Erd\'elyi, \emph{Asymptotic Expansions}, Dover, 1956.
+
+\bibitem{Krylov} V.~Yu.~Krylov, \emph{Some properties of the distribution
+corresponding to the equation $\partial u/\partial t=(-1)^{q+1}
+\partial^{2q}u/\partial x^{2q}$}, Soviet Math.\ Dokl.\ \textbf{1} (1960),
+760--763.
+
+\bibitem{Hochberg} K.~J.~Hochberg, \emph{A signed measure on path space
+related to Wiener measure}, Ann.\ Probab.\ \textbf{6} (1978), 433--458.
+
+\bibitem{Funaki} T.~Funaki, \emph{Probabilistic construction of the solution
+of some higher order parabolic differential equation}, Proc.\ Japan Acad.\
+Ser.\ A Math.\ Sci.\ \textbf{55} (1979), 176--179.
+
+\bibitem{GORZ} M.~Griffin, K.~Ono, L.~Rolen and D.~Zagier, \emph{Jensen
+polynomials for the Riemann zeta function and other sequences}, Proc.\
+Natl.\ Acad.\ Sci.\ USA \textbf{116} (2019), 11103--11110.
+
+\end{thebibliography}
+
+\end{document}

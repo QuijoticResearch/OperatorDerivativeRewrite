@@ -1,0 +1,39 @@
+namespace DraftReflectedScalarIto
+variable (f : ℝ → ℝ) (hf : ContDiff ℝ 2 f) (K1 : ℝ≥0)
+  (h1 : ∀ x, ‖deriv (deriv f) x‖ ≤ (K1 : ℝ))
+theorem drift_coeFn (T : ℝ≥0) :
+    drift f hf K1 h1 T =ᵐ[gaussianProduct]
+      fun ω => ∫ s in 0..(T : ℝ), deriv (deriv f) |clockPath ω s.toNNReal| := by
+  let μ : Measure ℝ := volume.restrict (Ioc 0 (T : ℝ))
+  let v : ℝ → GaussianL2 := fun s => GaussianC2Ito.curvatureValue
+    (corrected f) (corrected_C2 hf) K1 (bound1 f hf K1 h1) s.toNNReal
+  let g : ℝ × SampleSpace → ℝ := fun z => deriv (deriv f) |sigma z|
+  have hv : Integrable v μ :=
+    (intervalIntegrable_iff_integrableOn_Ioc_of_le T.coe_nonneg).mp
+      (GaussianC2Ito.curvature_integral_tendsto (corrected f) (corrected_C2 hf) K1
+        (bound1 f hf K1 h1) T).1
+  have hg : AEStronglyMeasurable g (μ.prod gaussianProduct) :=
+    (((hf.deriv' (n := 1)).continuous_deriv_one).measurable.comp
+      (continuous_abs.measurable.comp sigma_measurable)).aestronglyMeasurable
+  have hvg : ∀ᵐ s ∂μ, v s =ᵐ[gaussianProduct] fun ω => g (s,ω) := by
+    apply Filter.Eventually.of_forall
+    intro s
+    filter_upwards [GaussianC2Ito.curvatureValue_coeFn (corrected f) (corrected_C2 hf) K1
+      (bound1 f hf K1 h1) s.toNNReal, clockPath_coordinate_ae s.toNNReal] with ω hc hw
+    change v s ω = deriv (deriv (corrected f)) (process s.toNNReal ω) at hc
+    rw [hc, ← hw, corrected_second_deriv hf]
+    rfl
+  have he := BochnerL2RepresentativeFubini.integral_coeFn_ae v hv g hg hvg
+  simpa only [drift, intervalIntegral.integral_of_le T.coe_nonneg, μ, v, g, sigma] using he
+variable (K0 : ℝ≥0) (h0 : ∀ x, ‖deriv f x‖ ≤ (K0 : ℝ))
+include K0 h0 in
+theorem reflected_ito_pathwise (T : ℝ≥0) :
+    (fun ω => f |clockPath ω T|-f 0) =ᵐ[gaussianProduct]
+      fun ω => itoIntegral (running f hf K1 h1 T) ω+
+        deriv f 0*BrownianMassContinuousLimit.limitPath ω T+
+        (1/2 : ℝ)*(∫ s in 0..(T : ℝ), deriv (deriv f) |clockPath ω s.toNNReal|) := by
+  filter_upwards [reflected_ito_ae f hf K0 K1 h0 h1 T,
+    drift_coeFn f hf K1 h1 T] with ω hi hd
+  rw [hd] at hi
+  exact hi
+end DraftReflectedScalarIto

@@ -1,0 +1,878 @@
+%==============================================================================
+%  Beyond the Schoenberg Wall:
+%  Signed Bakry--Emery Geometry of Higher-Order Heat Pseudo-Processes
+%
+%  Paper 3 of the Hurst-line program.
+%   Paper 1 (arXiv:2602.19192): fractional-Laplacian curvature = fBM covariance.
+%   Paper 2 (tower):            exact graded curvature tower, operator/chaos.
+%   Paper 3 (this):             H > 1, where positivity fails -> signed geometry.
+%
+%  Headline: pseudo-processes. IBM appears only as the first post-wall station.
+%
+%  Build:  pdflatex hurst_line_signed_curvature.tex   (twice for refs)
+%==============================================================================
+\documentclass[11pt,reqno]{amsart}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+% honest status box (package-free)
+\newenvironment{ledger}
+  {\par\medskip\noindent\rule{\linewidth}{0.4pt}\par\nopagebreak\smallskip\small}
+  {\par\nopagebreak\smallskip\noindent\rule{\linewidth}{0.4pt}\par\medskip}
+
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\HH}{\mathcal{H}}
+\newcommand{\KK}{\mathcal{K}}
+\newcommand{\Had}{\mathbin{\circ}}
+\newcommand{\LP}{\mathcal{LP}}
+\newcommand{\Gam}{\Gamma}
+\DeclareMathOperator{\spec}{spec}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\sig}{sig}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\diag}{diag}
+
+\title[Beyond the Schoenberg wall]{Beyond the Schoenberg Wall:\\
+Signed Bakry--\'Emery Geometry of\\ Higher-Order Heat Pseudo-Processes}
+\author{Ramiro Fontes}
+\address{Quijotic Research}
+\email{ramirofontes@gmail.com}
+\urladdr{https://www.quijotic.com}
+\date{\today}
+
+\subjclass[2020]{Primary 60J76, 47B50; Secondary 60G22, 30C15, 42A82}
+\keywords{Bakry--\'Emery curvature; carr\'e du champ; higher-order heat
+pseudo-processes; fractional Brownian motion; Schoenberg positivity; Krein space;
+indefinite inner product; Laguerre--P\'olya class; real-rootedness}
+
+\begin{document}
+
+\begin{abstract}
+On the Hurst line $H=\gamma/2\in(0,\infty)$ the carr\'e du champ of the stable
+generator of order $\gamma$ is, on positive frequencies, the fractional-Brownian
+covariance kernel $R_H$. For $H\in(0,1]$ this kernel is positive: the regime of
+genuine jump processes and fractional Brownian motion, where the graded
+positive-side Bakry--\'Emery curvature theory lives. At the heat point
+$H=1$ the kernel degenerates to the rank-one form $R_1(s,t)=st$. Past it, for
+$H>1$, the kernel is \emph{indefinite}, and the objects of the positive theory ---
+the energy space, the tensor tower, the curvature pencil --- continue formally
+into a Krein space. This paper develops that continuation.
+
+The location of the wall itself is classical: by Schoenberg's theorem $R_H$ is
+positive semidefinite iff $H\in(0,1]$, and we recall it only to fix the boundary.
+Our contributions lie past it. (i) A \emph{signature classification} of the even
+stations $H=m$: $\Psi_{2m}$ has rank $2m-1$ and signature
+$(m-1+\mathbf 1_{m\text{ odd}},\,m-1+\mathbf 1_{m\text{ even}})$, the biharmonic
+order $H=2$ being the unique even station retaining a single positive direction,
+signature $(1,2)$. (ii) A \emph{curvature--dimension dichotomy}: integrated (weak)
+Bakry--\'Emery survives for all $H>1$ and yields Poincar\'e, while the strong
+(local) theory is obstructed --- by the signed, non-Markov semigroup throughout
+$H>1$, and at $H=2$ additionally by an indefinite pencil whose discriminant is the
+very one making the curvature operator's spectrum complex. (iii) To show the
+signed structure is not merely descriptive, outputs the spectral gap cannot give:
+a \emph{local lower curvature bound}
+$\Gam(f,f)(x)\ge\lambda_{\min}(R_H^{(N)})\,\|f\|_{L^2}^2$ whose constant is negative
+\emph{exactly} past the wall, a positive-index constraint, and --- beyond the
+inertia --- the \emph{full pencil spectrum} $\spec(A_k)$ as the structure constants
+of the inter-level relation $\Gam_k=\Re\spec(A_k)\,\Gam_{k-1}
++\Im\spec(A_k)\,\Gam^{\perp}_{k-1}$, with a matching no-go proving $\spec(A_k)$ can
+never be a heat-flow decay rate. The signed apparatus thus earns its keep as a
+\emph{static} curvature calculus --- provably not a dynamical one. We frame the
+signed Bakry--\'Emery data intrinsically (inertia together with the pencil
+spectrum), and quarantine all conjectural and speculative material to a fenced
+ledger.
+\end{abstract}
+
+\maketitle
+
+%==============================================================================
+\section{Introduction}\label{sec:intro}
+%==============================================================================
+
+\subsection*{The Hurst line}
+Let $L_\gamma=-(-\Delta)^{\gamma/2}$ on $\T=\R/2\pi\Z$, $\gamma\in(0,2)$, with
+carr\'e du champ $\Gam$ and iterated carr\'e du champ
+$\Gam_2=\tfrac12(L_\gamma\Gam-2\Gam(\cdot,L_\gamma\cdot))$. On positive-frequency
+trigonometric polynomials its kernel is
+\begin{equation}\label{eq:psi}
+  \Psi_\gamma(\xi,\eta)=\tfrac12\bigl(|\xi|^\gamma+|\eta|^\gamma-|\xi-\eta|^\gamma\bigr)
+  =R_H(\xi,\eta),\qquad H=\tfrac\gamma2,
+\end{equation}
+the covariance of fractional Brownian motion with Hurst parameter $H$; this is the
+identity underlying the positive-side fractional Bakry--\'Emery
+theory~\cite{FontesPartI} on the range $0<H<1$, where $R_H$ is a bona fide
+covariance.
+
+The kernel \eqref{eq:psi}, however, is defined for every $\gamma$, and the natural
+parameter is the Hurst exponent $H=\gamma/2\in(0,\infty)$. Three regimes appear:
+\begin{itemize}[leftmargin=1.5em]
+\item $H\in(0,1)$ --- genuine pure-jump processes and fractional Brownian motion;
+  $R_H$ positive; the positive Bakry--\'Emery theory of~\cite{FontesPartI}.
+\item $H=1$ ($\gamma=2$) --- the heat point; $R_1(s,t)=st$ collapses to rank one.
+\item $H>1$ --- the \emph{higher-order heat pseudo-processes}, generated by
+  $\partial_x^{2m}$ at the even stations $H=m$; $R_H$ \emph{indefinite}. There is
+  no probability measure here, only a signed pseudo-process in the sense of
+  Hochberg~\cite{Hochberg}, and the geometry is governed by an indefinite inner
+  product.
+\end{itemize}
+
+The companion paper~\cite{FontesPartI} developed the positive-side theory on
+$0<H<1$. The present paper asks what remains beyond the endpoint $H=1$, where
+positivity fails. The answer is a
+\emph{signed} Bakry--\'Emery geometry: the same carr\'e-du-champ tower
+$\Gam_k\leftrightarrow R_H^{\Had k}$, now read in a Krein space, where curvature
+is no longer a single positive constant but an inertia.
+
+\subsection*{Results}
+Write $R_H=[R_H(n,m)]$, $A^{\Had k}$ for the $k$-th Hadamard power, and
+$\sig(\cdot)=(p,q)$ for the inertia (numbers of positive and negative eigenvalues).
+
+\begin{itemize}[leftmargin=1.5em]
+\item \textbf{The wall} (Theorem~\ref{thm:wall}). $R_H$ is positive semidefinite
+  iff $H\in(0,1]$; at $H=1$ it is rank one, $R_1(s,t)=st$; for $H>1$ it is
+  indefinite. The positive theory ends exactly at the heat point.
+\item \textbf{Signature of the even stations} (Theorem~\ref{thm:sig}). For
+  $H=m\in\N$, $\Psi_{2m}$ has rank $2m-1$ and signature
+  $\bigl(m-1+\mathbf 1_{m\text{ odd}},\ m-1+\mathbf 1_{m\text{ even}}\bigr)$. The
+  biharmonic order $m=2$ is the unique even order past heat with a single positive
+  direction, $\sig=(1,2)$.
+\item \textbf{The dictionary} (Theorem~\ref{thm:dict}). For even order $2m$ the
+  following are equivalent: (a) $\Psi_{2m}\succeq0$; (b) $e^{t\partial_x^{2m}}$
+  preserves the Laguerre--P\'olya class $\LP$; (c) $2m=2$.
+\item \textbf{Signed curvature} (Section~\ref{sec:signed}). In the Krein energy
+  space the realization $\Gam_k(f,f)=[\,\iota_k\mathbf b,\iota_k\mathbf b\,]$
+  survives, but the curvature invariant is the inertia of $R_H^{\Had k}$ together
+  with the spectrum of the indefinite pencil $(R_H^{\Had k},R_H^{\Had(k-1)})$,
+  which may leave $[0,\infty)$.
+\end{itemize}
+
+\begin{remark}[Independence and scope]\label{rem:indep}
+This paper may be read independently of the positive-side theory~\cite{FontesPartI};
+the needed positive-side facts are recalled as used. The iterated-Brownian / biharmonic case
+$H=2$ enters only as the first concrete station past the wall; the organizing
+object is the family of higher-order heat pseudo-processes, not any single one.
+\end{remark}
+
+%==============================================================================
+\section{The Schoenberg wall}\label{sec:wall}
+%==============================================================================
+
+The location of the wall is classical --- it is Schoenberg's 1938
+theorem~\cite{Schoenberg} in the guise of fBM, recorded here only to fix the
+boundary of the signed region. The new content of this paper begins in
+Section~\ref{sec:sig}.
+
+\begin{theorem}[The positive theory ends at the heat point;
+{\rm \cite{Schoenberg}}]\label{thm:wall}
+The fractional-Brownian kernel
+$R_H(s,t)=\tfrac12\bigl(|s|^{2H}+|t|^{2H}-|s-t|^{2H}\bigr)$ is positive
+semidefinite on $\R$ if and only if $H\in(0,1]$. At $H=1$ it degenerates to the
+rank-one form $R_1(s,t)=st$. For $H>1$ it is indefinite.
+\end{theorem}
+
+\begin{proof}
+By Schoenberg's theorem~\cite{Schoenberg}, $-|s-t|^{\alpha}$ is conditionally
+negative definite iff $\alpha\in(0,2]$, and $R_H$ is the covariance obtained from
+$|s-t|^{2H}$ by the
+standard centering; hence $R_H\succeq0$ iff $2H\le2$, i.e.\ $H\le1$. At $H=1$,
+$|s-t|^{2}=s^2-2st+t^2$ gives $R_1(s,t)=\tfrac12(s^2+t^2-(s-t)^2)=st$, rank one and
+positive semidefinite. For $H>1$ indefiniteness is exhibited already on two points
+by the even-station computation of Theorem~\ref{thm:sig} (and, for non-integer
+$H>1$, by a direct $2\times2$ minor); the kernel is no longer a covariance.
+\end{proof}
+
+The heat point is thus a genuine \emph{wall}: on $0<H<1$ the admissible energies
+form a full-dimensional positive cone (on which the whole Hadamard tower
+$R_H^{\Had k}$ is positive), which at $H=1$ collapses to the single line spanned by
+$s\mapsto s$. Beyond it, for $H>1$, the cone reopens with the wrong signature.
+
+%==============================================================================
+\section{Signature of the even stations}\label{sec:sig}
+%==============================================================================
+
+The even stations $H=m$ ($\gamma=2m$) are the generators $\partial_x^{2m}$ of the
+higher-order heat pseudo-processes, whose multiplier $e^{tu^{2m}}$ drives the
+corresponding flow. Their carr\'e-du-champ kernels are polynomial, and their
+inertia is computable in closed form.
+
+\begin{remark}[Which form the signature is of]\label{rem:class}
+To keep the paper self-contained (cf.\ Remark~\ref{rem:indep}), we state precisely
+the object whose inertia is computed. For $f=\sum_{n\ge1}a_n e^{inx}$ a
+positive-frequency trigonometric polynomial, the carr\'e du champ is
+$\Gam(f,f)(x)=\sum_{n,m\ge1}a_n\bar a_m e^{i(n-m)x}\,\Psi_\gamma(n,m)$, and we
+study the Hermitian \emph{positive-frequency form}
+$Q_\gamma(\mathbf a)=\mathbf a^{*}[\Psi_\gamma(n,m)]\mathbf a=\Gam(f,f)(0)$ on
+$\mathbf a\in\C^{N}$. Theorem~\ref{thm:sig} computes the signature of
+$[\Psi_\gamma(n,m)]$, i.e.\ of $Q_\gamma$. A genuine real function on $\T$ mixes
+$\pm n$; its carr\'e du champ is governed by the larger Hermitian kernel
+$[\Psi_\gamma(n,m)]_{n,m\in\Z\setminus\{0\}}$, which decomposes under
+$n\mapsto-n$ into the positive-frequency block and its conjugate, so the
+signed geometry of real functions is two commuting copies of $Q_\gamma$ (the
+cross-sign couplings $\Psi_\gamma(n,-m)$ vanish only at the Cauchy point $\gamma=1$
+and are part of the positive-side analysis). All statements below concern
+$Q_\gamma$ on positive frequencies unless noted.
+\end{remark}
+
+\begin{theorem}[Even-order signature]\label{thm:sig}
+For $\xi,\eta>0$ and $m\ge1$,
+\[
+  \Psi_{2m}(\xi,\eta)=\tfrac12\bigl(\xi^{2m}+\eta^{2m}-(\xi-\eta)^{2m}\bigr)
+  =\sum_{a=1}^{2m-1}\tfrac12\binom{2m}{a}(-1)^{a+1}\,\xi^{a}\eta^{2m-a},
+\]
+a kernel of rank $2m-1$ supported on the monomials $\xi,\dots,\xi^{2m-1}$. Its
+Gram matrix in the coordinates $(\xi,\dots,\xi^{2m-1})$ is the persymmetric
+anti-diagonal matrix $M$ with $M_{a,2m-a}=\tfrac12\binom{2m}{a}(-1)^{a+1}$, and
+its signature is
+\begin{equation}\label{eq:sig}
+  \sig\Psi_{2m}=\bigl(\,m-1+\mathbf 1_{m\textup{ odd}}\,,\ \
+  m-1+\mathbf 1_{m\textup{ even}}\,\bigr).
+\end{equation}
+In particular $m=1$ (heat) gives $(1,0)$ (rank one, positive); $m=2$ gives
+$(1,2)$; $m=3$ gives $(3,2)$; $m=4$ gives $(3,4)$. The biharmonic order $m=2$ is
+the \emph{unique} even order with exactly one positive direction past the wall.
+\end{theorem}
+
+\begin{proof}
+The expansion of $(\xi-\eta)^{2m}$ and the cancellation of the $a=0,2m$ terms give
+the displayed form; since $(-1)^{2m-a}=(-1)^{a}$, the surviving coefficients are
+$\tfrac12\binom{2m}{a}(-1)^{a+1}$, all nonzero, so $\rank M=2m-1$ and $M$ is
+supported on the anti-diagonal. $M$ is symmetric: $M_{2m-a,a}
+=\tfrac12\binom{2m}{2m-a}(-1)^{(2m-a)+1}=\tfrac12\binom{2m}{a}(-1)^{a+1}=M_{a,2m-a}$.
+For each pair $a\in\{1,\dots,m-1\}$ the indices $a$ and $2m-a$ span a
+$2\times2$ block $\left(\begin{smallmatrix}0&d_a\\ d_a&0\end{smallmatrix}\right)$
+with $d_a=M_{a,2m-a}\neq0$, contributing eigenvalues $\pm|d_a|$ --- one positive,
+one negative. The central index $a=m$ contributes the diagonal entry
+$M_{m,m}=\tfrac12\binom{2m}{m}(-1)^{m+1}$, a single eigenvalue of sign
+$(-1)^{m+1}$: positive if $m$ is odd, negative if $m$ is even. Summing the $m-1$
+pairs and the center gives \eqref{eq:sig}.
+\end{proof}
+
+For $m=2$ the matrix is
+$M=\left(\begin{smallmatrix}0&0&2\\0&-3&0\\2&0&0\end{smallmatrix}\right)$ with
+eigenvalues $\{2,-2,-3\}$; already on $\{1,2\}$ one has
+$\Psi_4=\left(\begin{smallmatrix}1&8\\8&16\end{smallmatrix}\right)$, $\det=-48<0$.
+
+\begin{remark}[The cone collapses to a line]
+For $0<H<1$ the carr\'e du champ is an fBM covariance with a full-dimensional
+positive cone carrying the whole positive tower; at $H=1$ it collapses to rank
+one. At $H=2$ the cone has collapsed further to
+the single energy direction $\Psi_4(\xi,\xi)=\xi^4>0$ against a two-dimensional
+negative part. The semigroup $e^{t\partial_x^4}$ no longer contracts an energy: it
+has one stabilizing and two destabilizing modes. This is the spectral form of the
+fact that $e^{t\partial_x^4}$ does not preserve real-rootedness
+(Theorem~\ref{thm:dict}).
+\end{remark}
+
+%==============================================================================
+\section{The total-positivity dictionary}\label{sec:dict}
+%==============================================================================
+
+The Laguerre--P\'olya class $\LP$ is the closure, under locally uniform
+convergence, of real polynomials with only real zeros; equivalently, the entire
+functions arising as limits of such. A linear flow $e^{tT}$ \emph{preserves}
+$\LP$ if it maps $\LP$ into itself for all $t\ge0$. The heat semigroup
+$e^{t\partial_x^2}$ preserves $\LP$ (P\'olya); the question past the wall is which
+higher-order heat flows do.
+
+\begin{theorem}[Classification of the $\LP$-preserving even stations]\label{thm:dict}
+For each integer $m\ge1$ the following are equivalent:
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2.2em]
+\item the carr\'e-du-champ kernel $\Psi_{2m}$ is positive semidefinite;
+\item the semigroup $e^{t\partial_x^{2m}}$ preserves the Laguerre--P\'olya class;
+\item $2m=2$ (the heat semigroup).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+$(a)\Rightarrow(c)$: by Theorem~\ref{thm:sig}, $\sig\Psi_{2m}=(1,0)$ only at $m=1$;
+for $m\ge2$ the signature has a negative part, so $\Psi_{2m}\not\succeq0$.
+$(c)\Rightarrow(b)$ is P\'olya's theorem. For $(b)\Rightarrow(c)$ we show $(b)$
+fails at every $m\ge2$. The operator $e^{t\partial_x^{2m}}=\varphi(\partial_x)$
+has symbol $\varphi(u)=e^{tu^{2m}}$; by the P\'olya--Schur master
+theorem~\cite{BorceaBranden}, a differential operator $\varphi(\partial_x)$
+preserves $\LP$ iff $\varphi\in\LP$, and $e^{tu^{2m}}$ has order $2m>2$ for
+$m\ge2$, hence is not in $\LP$. We make the case $m=2$ fully explicit, in the
+paper's spirit: take
+\[
+  p(x)=(x^2-1)(x^2-4)=x^4-5x^2+4\in\LP\quad(\text{roots }\pm1,\pm2).
+\]
+Since $p''''=24$ and $p^{(8)}=0$, $e^{t\partial_x^4}p=p+24t=x^4-5x^2+(4+24t)$.
+Substituting $u=x^2$, the roots are real iff $25-4(4+24t)\ge0$, i.e.\ iff
+$t\le\tfrac{3}{32}$; for $t>\tfrac3{32}$ the roots in $u$ are complex, so
+$e^{t\partial_x^4}p\notin\LP$. Thus heat ($m=1$) is the last even station to
+preserve $\LP$, and the three statements are equivalent to $m=1$.
+\end{proof}
+
+\begin{remark}
+Theorem~\ref{thm:dict} is a \emph{classification}, not an identification: both
+kernel positivity and $\LP$-preservation single out $m=1$, so their failure loci
+coincide, but the two conditions are genuinely different objects. Indeed
+\S\ref{sec:dichotomy} exhibits energy-positive functions that are not real-rooted,
+so the energy cone strictly contains the real-rooted one. What the dictionary says
+is the modest and correct thing: among even stations, the heat flow is the last to
+keep \emph{either} property.
+\end{remark}
+
+%==============================================================================
+\section{Signed Bakry--\'Emery geometry}\label{sec:signed}
+%==============================================================================
+
+We now state what the curvature tower becomes past the wall. The positive-side
+construction is recalled as follows: an energy space $\HH=\R^N$ with
+$\langle e_n,e_m\rangle=R_H(n,m)$, a stochastic representative
+$\Phi_f(x)=\sum_n b_n(x)e_n$, and the diagonal tensor lift
+$\iota_k(\mathbf v)=\sum_n v_n e_n^{\otimes k}$, for which
+$\Gam_k(f,f)=\langle\iota_k\mathbf b,\iota_k\mathbf b\rangle_{\HH^{\otimes k}}
+=\mathbf b^{*}R_H^{\Had k}\mathbf b$.
+
+For $H>1$ the form $\langle\cdot,\cdot\rangle$ is no longer positive: by
+Theorem~\ref{thm:wall}, $R_H$ is indefinite, so $\HH$ is a finite-dimensional
+\emph{Krein space} --- a nondegenerate inner-product space with indefinite form
+$[\cdot,\cdot]$ and fundamental symmetry $J$ ($J=J^{*}$, $J^{2}=I$,
+$[x,y]=\langle Jx,y\rangle$) \cite{Bognar}. The tensor powers $\HH^{\otimes k}$
+inherit indefinite forms with Gram matrices $R_H^{\Had k}$, and the realization
+\begin{equation}\label{eq:krein-real}
+  \Gam_k(f,f)(x)=[\,\iota_k\mathbf b(x),\,\iota_k\mathbf b(x)\,]_{\HH^{\otimes k}}
+  =\mathbf b(x)^{*}R_H^{\Had k}\,\mathbf b(x)
+\end{equation}
+survives verbatim --- it never used positivity, only the bilinear pairing. What
+does not survive is the \emph{interpretation} of curvature, and the purpose of
+this section is to say precisely what replaces it.
+
+\subsection{The curvature pencil is $J$-self-adjoint}
+The level-$k$ curvature on the positive range was the optimal constant in
+$\Gam_k\ge\kappa\,\Gam_{k-1}$, i.e.\ the smallest generalized eigenvalue of the
+pencil $(R_H^{\Had k},R_H^{\Had(k-1)})$. Past the wall the same pencil defines an
+operator, but its spectrum is no longer real.
+
+\begin{proposition}[Spectral symmetry of the curvature operator]\label{prop:Jself}
+Assume $R_H^{\Had(k-1)}$ is nonsingular and let
+$A_k:=\bigl(R_H^{\Had(k-1)}\bigr)^{-1}R_H^{\Had k}$. Then $A_k$ is self-adjoint
+with respect to the indefinite form $G:=R_H^{\Had(k-1)}$, i.e.\
+$G A_k=A_k^{\top}G$ (so $A_k$ is $J$-self-adjoint in the Krein space with Gram
+$G$). Consequently $\spec(A_k)$ is symmetric under complex conjugation: nonreal
+eigenvalues occur in conjugate pairs $\lambda,\bar\lambda$, and real eigenvalues
+may have either sign.
+\end{proposition}
+
+\begin{proof}
+$GA_k=R_H^{\Had k}$ is symmetric, and $A_k^{\top}G=R_H^{\Had k}\,
+\bigl(R_H^{\Had(k-1)}\bigr)^{-1}R_H^{\Had(k-1)}=R_H^{\Had k}$; hence
+$GA_k=A_k^{\top}G$. A $G$-self-adjoint operator with real $G$ has a real
+characteristic polynomial, so its spectrum is conjugation-symmetric; for definite
+$G$ this forces real spectrum, but for indefinite $G$ conjugate complex pairs are
+admissible.
+\end{proof}
+
+\begin{definition}[Signed Bakry--\'Emery data]\label{def:signed}
+For $H>1$ the signed curvature data of the tower at level $k$ is the triple
+\[
+  \Bigl(\ \sig R_H^{\Had k},\quad \spec(A_k),\quad \kappa_+^{(k)}\ \Bigr),
+\]
+consisting of the inertia of the level-$k$ form, the spectrum of the
+$J$-self-adjoint curvature operator $A_k$ of Proposition~\ref{prop:Jself}, and the
+\emph{positive-cone curvature}
+\[
+  \kappa_+^{(k)}:=\inf\Bigl\{\ \tfrac{\mathbf v^{*}R_H^{\Had k}\mathbf v}
+  {\mathbf v^{*}R_H^{\Had(k-1)}\mathbf v}\ :\
+  \mathbf v^{*}R_H^{\Had(k-1)}\mathbf v>0\ \Bigr\},
+\]
+the best curvature constant on the maximal positive subspace of $\Gam_{k-1}$.
+\end{definition}
+
+We stress that Definition~\ref{def:signed} is \emph{proposed data}, not yet a
+curvature--dimension theory. In particular $\kappa_+^{(k)}$ need not be finite:
+as $\mathbf v$ approaches the boundary of the positive cone, the denominator
+$\mathbf v^{*}R_H^{\Had(k-1)}\mathbf v\downarrow0$ while the numerator stays
+bounded away from zero, so the infimum is generically $-\infty$. Thus
+$\kappa_+^{(k)}$ is canonical as a definition but is not, on its own, a usable
+curvature lower bound; whether some renormalization of it controls a functional
+inequality is exactly the open problem (\S\ref{sec:dichotomy}).
+
+On the positive range all three pieces collapse to the single number
+$\kappa^{(k)}=\lambda_{\min}>0$; past the wall they genuinely separate, and the
+following computation shows that the spectrum of $A_k$ is the part that fails to
+be real.
+
+\begin{proposition}[The biharmonic curvature is complex]\label{prop:complex}
+At the biharmonic station $H=2$, on the two frequencies $\{1,2\}$, the level-two
+carr\'e-du-champ data are
+\[
+  R_2=\Psi_4=\begin{pmatrix}1&8\\8&16\end{pmatrix},\qquad
+  \Psi_4^{\Had2}=\begin{pmatrix}1&64\\64&256\end{pmatrix},
+\]
+and the curvature operator $A_2=\Psi_4^{-1}\Psi_4^{\Had2}$ has
+$\tr A_2=\tfrac{47}{3}$, $\det A_2=80$, hence eigenvalues
+\[
+  \spec(A_2)=\Bigl\{\ \tfrac{47\pm i\sqrt{671}}{6}\ \Bigr\}
+  \;\approx\;7.83\pm 4.32\,i\ \notin\ \R .
+\]
+In particular there is no real curvature constant at $H=2$: the curvature operator
+of the first crossing of the wall is genuinely complex.
+\end{proposition}
+
+\begin{proof}
+$\det\Psi_4=-48$ and $\det\Psi_4^{\Had2}=-3840$, so $\det A_2=\det\Psi_4^{\Had2}/
+\det\Psi_4=80$; a direct multiplication gives
+$A_2=\tfrac1{-48}\left(\begin{smallmatrix}-496&-1024\\56&-256\end{smallmatrix}\right)$
+with $\tr A_2=752/48=47/3$. The characteristic polynomial
+$\lambda^{2}-\tfrac{47}{3}\lambda+80$ has discriminant $-\tfrac{671}{9}<0$, giving
+the stated complex-conjugate pair.
+\end{proof}
+
+\begin{ledger}
+\noindent\textbf{The central open problem.}
+On the positive range, $\mathrm{CD}(\kappa,\infty)$ drives the Bakry--\'Emery
+machine: a curvature lower bound yields gradient contraction, Poincar\'e, and
+log-Sobolev inequalities for the semigroup \cite{BGL}. Past the wall that machine
+has no input: by Proposition~\ref{prop:complex} the curvature operator $A_k$ is
+$J$-self-adjoint with genuinely complex spectrum, so there is no $\kappa$ to feed
+it. Three candidate replacements are on the table --- the inertia
+\eqref{eq:sig}, the spectral radius / real-part envelope of $\spec(A_k)$, and the
+positive-cone curvature $\kappa_+^{(k)}$ of Definition~\ref{def:signed} --- and the
+problem this paper leaves open is to determine which (if any) controls a
+semigroup functional inequality for the signed pseudo-process. Turning
+Definition~\ref{def:signed} into a curvature--dimension calculus for Krein-space
+Dirichlet forms is the natural next theorem, not a corollary of the present one.
+\end{ledger}
+
+\begin{remark}[The mildness of the biharmonic crossing]
+Among the even stations, $m=2$ is distinguished twice: it is the unique order with
+a single positive direction (Theorem~\ref{thm:sig}), and it is the first station
+past heat, so its negative part is only two-dimensional. In this precise sense the
+iterated-Brownian / biharmonic pseudo-process is the \emph{mildest} crossing of
+the wall --- one positive direction still standing --- but, as
+\eqref{eq:sig} shows, this mildness is special to it and not the beginning of a
+pattern: at $m\ge3$ the positive and negative parts are nearly balanced.
+\end{remark}
+
+%==============================================================================
+\section{The Krein--Bakry--\'Emery dichotomy}\label{sec:dichotomy}
+%==============================================================================
+
+Section~\ref{sec:signed} left curvature past the wall as \emph{proposed data}.
+We now determine what part of the Bakry--\'Emery machine actually survives. The
+outcome is a sharp split: the \emph{integrated} (weak) theory survives the wall
+unconditionally for all $H>1$, while the \emph{local} (strong) theory --- the half
+that yields log-Sobolev and hypercontractivity --- is obstructed for all $H>1$ by
+the signed semigroup, and at the biharmonic station $H=2$ by the curvature
+signature as well.
+
+\subsection{Two conditions}
+Integrating the carr\'e-du-champ identities over $\T$ collapses the off-diagonal
+of $R_H^{\Had k}$, where the indefiniteness lives, and leaves the manifestly
+positive quantities
+\[
+  \mathcal E_1(f)=\int_\T\Gam(f,f)\,d\mu=\langle f,-Lf\rangle=\sum_n\lambda_n|\hat f_n|^2,
+  \qquad
+  \mathcal E_2(f)=\int_\T\Gam_2(f,f)\,d\mu=\|Lf\|^2=\sum_n\lambda_n^2|\hat f_n|^2,
+\]
+where $-Le_n=\lambda_n e_n$, $\lambda_n=|n|^{\gamma}\ge1$. Define
+\[
+  \mathrm{CD}_{\mathrm{int}}(\kappa):\ \mathcal E_2\ge\kappa\,\mathcal E_1\ \forall f,
+  \qquad
+  \mathrm{CD}_{\mathrm{loc}}(\kappa):\ \Gam_2(f,f)(x)\ge\kappa\,\Gam(f,f)(x)\ \forall f,x
+  \ \ \Longleftrightarrow\ \ R_H^{\Had2}\succeq\kappa R_H .
+\]
+
+\begin{theorem}[Dichotomy at the wall]\label{thm:dichotomy}
+\textup{(i)} $\mathrm{CD}_{\mathrm{int}}(1)$ holds for \emph{all} $H>0$ --- it is
+the spectral gap $\lambda_n^2\ge\lambda_1\lambda_n$ with $\lambda_1=1$ --- and
+yields the Poincar\'e inequality $\mathrm{Var}(f)\le\mathcal E_1(f)$ for the
+pseudo-process, unconditionally past the wall.
+\textup{(ii)} At the biharmonic station $H=2$, $\mathrm{CD}_{\mathrm{loc}}(\kappa)$
+fails for every real $\kappa$.
+\end{theorem}
+
+\begin{proof}
+(i) is immediate from $\lambda_n\ge\lambda_1=1$. For (ii), the principal
+$\{1,2\}$ minor requires $R^{\Had2}-\kappa R\succeq0$, hence
+$\det\ge0$: $(1-\kappa)(256-16\kappa)-(64-8\kappa)^2\ge0$, i.e.\
+$\kappa^2-\tfrac{47}{3}\kappa+80\le0$, whose discriminant $-\tfrac{671}{9}<0$
+makes it unsatisfiable; this minor obstructs $R^{\Had2}-\kappa R\succeq0$ for all
+$N\ge2$.
+\end{proof}
+
+\begin{remark}[The uniform statement over $H>1$ is open --- and subtle near the wall]
+\label{rem:uniform}
+We do \emph{not} claim $\mathrm{CD}_{\mathrm{loc}}$ fails throughout the signed
+region: it does not follow from the $\{1,2\}$ minor. With $a:=2^{2H}$ that minor
+is $R_H=\bigl(\begin{smallmatrix}1&a/2\\a/2&a\end{smallmatrix}\bigr)$,
+$R_H^{\Had2}=\bigl(\begin{smallmatrix}1&a^2/4\\a^2/4&a^2\end{smallmatrix}\bigr)$,
+and $\det(R_H^{\Had2}-\kappa R_H)$ is a downward parabola in $\kappa$ (for $a>4$)
+with discriminant proportional to $-(a^3-6a^2+8a-4)$. That cubic is negative for
+$a\in(4,a_*)$, $a_*\approx4.38$, i.e.\ for $H\in(1,\ {\approx}\,1.065)$, where the
+parabola has real roots and the minor \emph{admits} a real $\kappa$ (e.g.\ at
+$H=1.03$ every $\kappa\in[-19.1,-0.45]$ makes the $\{1,2\}$ block PSD). It first
+obstructs at $a=a_*$ and is obstructed at $H=2$ ($a=16$). So whether the
+\emph{form} obstruction holds throughout $H>1$ --- or the strong theory survives,
+with negative curvature, in a layer just above the wall --- requires a separate
+finite-minor argument and is genuinely open near $H=1^+$. The dichotomy below does
+not depend on it: the strong theory is killed for \emph{all} $H>1$ by the second
+obstruction (O2), independently of any curvature bound.
+\end{remark}
+
+\begin{proposition}[The strong-side obstruction is the complex spectrum]\label{prop:disc}
+The discriminant $-\tfrac{671}{9}$ of Theorem~\ref{thm:dichotomy}(ii) is exactly
+the one making $\spec(A_2)=\tfrac{47\pm i\sqrt{671}}{6}$ non-real
+(Proposition~\ref{prop:complex}): on a $2\times2$ block, a real local curvature
+constant exists iff the curvature pencil there has real spectrum. The biharmonic
+block has complex spectrum, so no real local constant exists --- the obstruction
+of Theorem~\ref{thm:dichotomy}(ii) and the complex eigenvalues of
+Proposition~\ref{prop:complex} are one computation.
+\end{proposition}
+
+\subsection{Why the strong theory fails}
+The strong Bakry--\'Emery conclusions (gradient contraction, log-Sobolev) come
+from the interpolation
+$\partial_s\bigl[P_s\,\Gam(P_{t-s}f)\bigr]=2\,P_s\,\Gam_2(P_{t-s}f)$, which needs
+\emph{two} things: a pointwise bound $\Gam_2\ge\kappa\Gam$, and a
+positivity-preserving $P_s$ to push it through. Past the wall the second fails
+universally.
+
+\smallskip\noindent\textbf{(O2) Non-Markov semigroup --- for all $H>1$.} For
+$\gamma>2$ the kernel of $e^{tL}=e^{-t(-\Delta)^{\gamma/2}}$ is \emph{signed}
+(this is precisely the pseudo-process), so $e^{tL}$ is not positivity-preserving.
+A nonnegative integrand need not stay nonnegative under the signed $P_s$, so the
+interpolation breaks \emph{even if} a local curvature bound held. This obstruction
+holds throughout the signed region, independently of any form inequality, and is
+what makes the strong theory fail for every $H>1$.
+
+\smallskip\noindent\textbf{(O1) Indefinite form --- at the biharmonic station.}
+At $H=2$ there is in addition no curvature bound to feed the interpolation:
+by Proposition~\ref{prop:disc}, $\mathrm{CD}_{\mathrm{loc}}(\kappa)$ holds for no
+real $\kappa$. Whether (O1) extends to all $H>1$ is open
+(Remark~\ref{rem:uniform}); (O2) does not need it.
+
+\smallskip
+The integrated identity $\tfrac{d}{ds}\mathcal E_1(P_sf)=-2\,\mathcal E_2(P_sf)$
+needs neither obstruction and powers the surviving Poincar\'e decay. So past the
+wall the weak Bakry--\'Emery theory is intact for all $H>1$, while the strong
+theory (log-Sobolev, hypercontractivity) is obstructed for all $H>1$ by (O2) ---
+and at $H=2$ doubly so, by (O1) as well.
+
+\subsection{What the signed structure produces}\label{sub:produces}
+The surviving Poincar\'e inequality of Theorem~\ref{thm:dichotomy}(i) uses none of
+the signed apparatus: it is the spectral gap $\lambda_n\ge\lambda_1=1$, true for
+every $H>0$ and provable without ever mentioning inertia or the indefinite pencil.
+It is fair to ask what, if anything, the signed geometry adds. The spectral gap
+controls only the \emph{mean} $\int_\T\Gam(f,f)\,d\mu=\mathcal E_1\ge0$; it is
+blind to the carr\'e du champ \emph{as a function of $x$}, which dips negative past
+the wall. That pointwise behaviour is exactly what the inertia governs.
+
+\begin{proposition}[Two outputs of the signed structure]\label{prop:produces}
+Let $f=\sum_{n=1}^{N}a_ne^{inx}$, so $\Gam(f,f)(x)=\mathbf b(x)^{*}R_H\mathbf b(x)$
+with $\mathbf b(x)_n=a_ne^{inx}$ and $\|\mathbf b(x)\|^2=\sum_n|a_n|^2=\|f\|^2_{L^2}$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.2em]
+\item \textbf{Local lower curvature bound.} For every $x$,
+\begin{equation}\label{eq:floor}
+  \Gam(f,f)(x)\ \ge\ \lambda_{\min}\!\bigl(R_H^{(N)}\bigr)\,\|f\|^2_{L^2},
+\end{equation}
+and the constant is optimal. Its sign \emph{detects the wall}:
+$\lambda_{\min}(R_H^{(N)})\ge0$ for $H\le1$ \textup(so \eqref{eq:floor} is the
+vacuous $\Gam\ge0$ there\textup), while $\lambda_{\min}(R_H^{(N)})<0$ for $H>1$,
+quantifying the negative excursion of the carr\'e du champ. The spectral gap is
+silent about this floor, as it controls only $\int\Gam\,d\mu$.
+\item \textbf{Positive-index constraint.} At $H=2$, the form $Q_4$ has positive
+index $1$ (Theorem~\ref{thm:sig}). Hence for any two linearly independent
+$f,g\in\mathcal T_N^{+}$ there is a nontrivial combination $h=\alpha f+\beta g$
+with $\Gam(h,h)(0)\le0$. In the positive theory $H<1$ no such $h$ exists
+($\Gam\ge0$ always); the constraint is a genuine feature of the signed regime.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) is the Rayleigh bound $\mathbf b^{*}R_H\mathbf b\ge\lambda_{\min}(R_H)
+\|\mathbf b\|^2$, with equality when $\mathbf a$ is a bottom eigenvector and $x=0$;
+the sign statement is Theorem~\ref{thm:wall} together with
+$\lambda_{\min}(R_H)<0\Leftrightarrow R_H\not\succeq0$. (ii) is the Courant--Fischer
+index theorem: if the positive eigenspace of $R_H$ has dimension $1$, every
+$2$-dimensional subspace meets the non-positive part nontrivially; take
+$\mathbf a=\alpha\hat f+\beta\hat g$ there and read $\Gam(h,h)(0)=\mathbf a^{*}
+R_H\mathbf a\le0$.
+\end{proof}
+
+These are modest --- a lower bound and an index count --- but they are the first
+statements in the paper that the spectral gap cannot reach, and their constants
+are inertia data of the signed form. They use only the bottom eigenvalue of
+$R_H$; the \emph{full} pencil spectrum does more. Section~\ref{sub:pencil} shows
+that $\spec(A_k)$ --- real and imaginary parts both --- is the set of structure
+constants relating consecutive carr\'e-du-champ levels, while a matching no-go
+(Proposition~\ref{prop:nogo}) shows it can nonetheless never be a decay rate of the
+heat flow: the vindication is static, and provably not dynamical.
+
+\subsection{The pencil spectrum as static curvature data}\label{sub:pencil}
+The inertia outputs of \S\ref{sub:produces} use only the extreme eigenvalues of
+$R_H$. The full pencil spectrum --- the object that distinguishes the signed
+theory --- turns out to be the set of structure constants tying $\Gam_k$ to
+$\Gam_{k-1}$, with its real and imaginary parts both carrying meaning. Write
+$[\mathbf x,\mathbf y]_{k-1}=\mathbf x^{*}R_H^{\Had(k-1)}\mathbf y$ and
+$\Gam_j(f,f)(0)=\mathbf b^{*}R_H^{\Had j}\mathbf b$, $\mathbf b=(a_n)$.
+
+\begin{proposition}[Spectral decomposition of the curvature tower]\label{prop:decomp}
+Let $W$ be a $2$-dimensional $[\cdot,\cdot]_{k-1}$-nondegenerate, $A_k$-invariant
+subspace on which $A_k=(R_H^{\Had(k-1)})^{-1}R_H^{\Had k}$ has the complex
+eigenpair $\rho_k\pm i r_k$ \textup($r_k>0$\textup). On $W$:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.2em]
+\item $A_k=\rho_k I+r_k J_0$ with $J_0$ \emph{$[\cdot,\cdot]_{k-1}$-self-adjoint},
+$J_0^2=-I$, and $[J_0\mathbf b,J_0\mathbf b]_{k-1}=-[\mathbf b,\mathbf b]_{k-1}$:
+the complex structure $J_0$ \emph{reverses the sign} of the carr\'e du champ.
+\item With the conjugate energy
+$\Gam^{\perp}_{k-1}(f):=[\mathbf b,J_0\mathbf b]_{k-1}$,
+\begin{equation}\label{eq:decomp}
+  \Gam_k(f,f)(0)=\rho_k\,\Gam_{k-1}(f,f)(0)+r_k\,\Gam^{\perp}_{k-1}(f),
+\end{equation}
+so $\Re\spec(A_k)$ and $\Im\spec(A_k)$ are exactly the coefficients of the
+carr\'e du champ and of its conjugate.
+\item The pair obeys the sharp curvature ellipse
+\begin{equation}\label{eq:ellipse}
+  \bigl(\Gam_k-\rho_k\Gam_{k-1}\bigr)^2+r_k^2\,\Gam_{k-1}^2
+  = r_k^2\,\bigl|\det R_H^{\Had(k-1)}\big|_W\bigr|\,\mathrm{area}_W(\mathbf b)^2,
+\end{equation}
+centred at $\rho_k\Gam_{k-1}$. At $H=2$ on $\{1,2\}$:
+$\rho_2=\tfrac{47}{6}$, $r_2=\tfrac{\sqrt{671}}{6}$, $|\det R|=48$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) Cayley--Hamilton for the real $2\times2$ block $A_k|_W$ with eigenvalues
+$\rho_k\pm ir_k$ gives $(A_k-\rho_k)^2=-r_k^2 I$, so $J_0:=(A_k-\rho_k)/r_k$ has
+$J_0^2=-I$; it is $[\cdot,\cdot]_{k-1}$-self-adjoint because $A_k$ is
+(Proposition~\ref{prop:Jself}) and $\rho_k,r_k$ are real, whence
+$[J_0\mathbf b,J_0\mathbf b]_{k-1}=[\mathbf b,J_0^2\mathbf b]_{k-1}
+=-[\mathbf b,\mathbf b]_{k-1}$. (ii) $\Gam_k(f,f)(0)=\mathbf b^{*}R_H^{\Had k}\mathbf b
+=[\mathbf b,A_k\mathbf b]_{k-1}=\rho_k[\mathbf b,\mathbf b]_{k-1}
++r_k[\mathbf b,J_0\mathbf b]_{k-1}$. (iii) In the basis $\{\mathbf b,J_0\mathbf b\}$
+the form $[\cdot,\cdot]_{k-1}$ has Gram
+$\left(\begin{smallmatrix}\Gam_{k-1}&\Gam^{\perp}\\ \Gam^{\perp}&-\Gam_{k-1}\end{smallmatrix}\right)$,
+whose determinant equals
+$\det(R_H^{\Had(k-1)}|_W)\,|\det[\mathbf b\,|\,J_0\mathbf b]|^2$ by change of basis;
+as $W$ carries a complex pair it is hyperbolic, $\det(R_H^{\Had(k-1)}|_W)<0$, and
+$-\Gam_{k-1}^2-(\Gam^{\perp})^2=\det(R_H^{\Had(k-1)}|_W)\,\mathrm{area}_W^2$
+rearranges to the circle identity; substituting
+$\Gam^{\perp}=(\Gam_k-\rho_k\Gam_{k-1})/r_k$ gives \eqref{eq:ellipse}.
+\end{proof}
+
+\begin{proposition}[No heat-flow rate equals $\spec(A_k)$]\label{prop:nogo}
+The semigroup $P_t=e^{tL}$ is diagonal, $\widehat{P_tf}_n=e^{-\lambda_n t}\hat f_n$.
+Hence every integrated energy
+$\mathcal E_j(P_tf)=\sum_n\lambda_n^{j}e^{-2\lambda_n t}|\hat f_n|^2$ and every
+pointwise level $\Gam_k(P_tf,P_tf)(x)
+=\sum_{n,m}e^{-(\lambda_n+\lambda_m)t}\hat f_n\bar{\hat f}_m e^{i(n-m)x}R_H^{\Had k}(n,m)$
+decay through the generator rates $\{2\lambda_n\}$ and $\{\lambda_n+\lambda_m\}$
+only. Since $\spec(A_k)$ is built from Hadamard ratios of the $\Psi_\gamma(n,m)$ ---
+which enter the \emph{coefficients}, never the exponents --- no such functional
+decays at a rate equal to $\Re\spec(A_k)$. In particular the Poincar\'e/decay rate
+of $\mathcal E_1$ is the spectral gap $2\lambda_1$, and no Krein--Poincar\'e or
+gradient inequality for $P_t$ can carry the constant $\Re\spec(A_k)$.
+\end{proposition}
+
+\begin{remark}[Vindication, exactly bounded]
+Together, Propositions~\ref{prop:decomp} and~\ref{prop:nogo} settle the status of
+the indefinite pencil. \emph{Statically} it is the genuine curvature datum past the
+wall: its full complex spectrum is the set of structure constants of the
+inter-level relation \eqref{eq:decomp}, with $\Re\spec(A_k)$ the centre and
+$\Im\spec(A_k)$ the amplitude of the conjugate energy the wall switches on ---
+not the inertia of \S\ref{sub:produces}, but the whole eigenvalue. \emph{Dynamically}
+it does no work: the only flow on which $\spec(A_k)$ is a rate is the internal
+Krein rotation $e^{sJ_0}$, under which $(\Gam_{k-1},\Gam^{\perp}_{k-1})$ revolves on
+the circle \eqref{eq:ellipse} and $\Gam_k$ oscillates about $\rho_k\Gam_{k-1}$ with
+amplitude $r_k|\Gam^{\perp}_{k-1}|$. The pencil governs the curvature's internal
+geometry, not the heat semigroup's decay --- which is the structural reason the
+strong theory does not return, and the precise sense in which the signed apparatus
+earns its keep: as a static curvature calculus, not a dynamical one.
+\end{remark}
+
+\subsection{Curvature versus real-rootedness}
+Real-rootedness is governed by a different cone. Write
+$\mathcal C=\{f:\Gam(f,f)(x)>0\ \forall x\}$ for the energy-positive cone and
+$\LP$ for the real-rooted (Laguerre--P\'olya) cone.
+
+\begin{proposition}[Energy-positivity is strictly weaker than real-rootedness]
+\label{prop:LPC}
+At $H=2$ on the frequencies $\{1,2\}$, with $f=a_1e^{ix}+a_2e^{2ix}$,
+\[
+  \Gam(f,f)(x)=|a_1|^2+16|a_2|^2+16\,\Re\!\bigl(a_1\bar a_2e^{-ix}\bigr).
+\]
+The zero of $f=e^{ix}(a_1+a_2e^{ix})$ sits at $e^{ix}=-a_1/a_2$, which corresponds
+to a real $x$ iff it lies on the unit circle, i.e.\ iff $|a_1|=|a_2|$. Every such
+real-rooted $f$ has $\min_x\Gam(f,f)=|a_1|^2>0$, so $\LP\subseteq\mathcal C$. But
+$f_0=e^{ix}+2e^{2ix}$ has $\Gam(f_0,f_0)(x)=65+32\cos x\ge33>0$, so
+$f_0\in\mathcal C$, while $|a_1|=1\ne2=|a_2|$ puts its zero off the unit circle
+($x\notin\R$), so $f_0\notin\LP$. Hence $\LP\subsetneq\mathcal C$.
+\end{proposition}
+
+So the curvature tower certifies only membership in $\mathcal C$ --- a condition
+\emph{necessary but not sufficient} for real-rootedness. It cannot tell $f_0$
+apart from a real-rooted competitor. The gap $\mathcal C\setminus\LP$ is exactly
+the test-function dependence the inertia does not see. In particular, for any
+threshold programme based on a flow $P_t$, the cone-exit time
+$\Lambda_\Gamma(f)=\inf\{T:P_tf\in\mathcal C\ \forall t\ge T\}$ is at most the
+real-rootedness threshold; so curvature-positivity can furnish a \emph{necessary}
+condition for such problems --- the de Bruijn--Newman setting among them
+(\S\ref{sec:ledger}) --- but never a sufficient one.
+
+\subsection{The negative-dimension escape, and its limit}
+A dimension term $\tfrac1n(Lf)^2$ with $n>0$ \emph{strengthens}
+$\mathrm{CD}(\kappa,\infty)$ and cannot help. Negative effective dimension $n<0$
+weakens it: with $\lambda=(\lambda_n)_n$ ($\lambda_n=n^4$ at $H=2$), the dimension
+term has rank-one Gram $\lambda\lambda^\top$, and $\mathrm{CD}(\kappa,n)$ becomes
+\[
+  R_H^{\Had2}-\kappa R_H+\tfrac1{|n|}\,\lambda\lambda^\top\ \succeq\ 0 .
+\]
+
+\begin{proposition}[A rank-one repair, of bounded reach]\label{prop:dim}
+\textup{(i)} At $N=2$, $H=2$, the choice $\kappa=-100$, $|n|^{-1}=9000$
+\textup(i.e.\ $n=-\tfrac1{9000}$\textup) gives a matrix with positive diagonal and
+$\det=16960>0$, so $\mathrm{CD}(\kappa,n)$ holds: the biharmonic crossing admits a
+finite negative-dimension curvature bound.
+\textup{(ii)} The correction $\tfrac1{|n|}\lambda\lambda^\top$ is rank one, so it
+raises the inertia by at most one negative direction; since the negative inertia
+of $R_H^{\Had2}-\kappa R_H$ grows with $N$, for $N$ large \emph{no} finite $n$
+repairs $\mathrm{CD}_{\mathrm{loc}}$.
+\textup{(iii)} Where it does hold, $\kappa<0$, so it yields at best a
+Brascamp--Lieb / weighted-Poincar\'e inequality, never log-Sobolev; and it leaves
+\textup{(O2)} untouched.
+\end{proposition}
+
+The moral is structural: a \emph{scalar} dimension, even a negative one, is
+exactly one rank short of the problem. Repairing the growing negative inertia
+would require a matrix-valued curvature--dimension condition
+$\mathrm{CD}(\kappa,\mathbf n)$, and even then the non-Markov obstruction (O2)
+would keep the strong inequalities out of reach. This is the precise sense in
+which the open problem of Section~\ref{sec:signed} is settled: there \emph{is} a
+Bakry--\'Emery theory past the wall, it is the weak (integrated) theory; the
+strong theory is obstructed for all $H>1$ by the signed semigroup (O2), and at the
+biharmonic station additionally by the curvature signature (O1), in a way no
+scalar curvature--dimension bound can repair. (Whether the form obstruction (O1)
+extends throughout $H>1$, or the strong theory partially survives just above the
+wall, is left open by Remark~\ref{rem:uniform}.)
+
+%==============================================================================
+\section{Ledger: proved, conjectured, dreamt}\label{sec:ledger}
+%==============================================================================
+
+The grand motivation for crossing the wall is the de Bruijn--Newman circle of
+questions: the even stations $H=m$ are exactly the higher-order analogues of the
+heat flow whose $H=1$ instance carries the de Bruijn--Newman constant $\Lambda$
+(known to be nonnegative~\cite{RodgersTao}), and one would like to read the
+location of zeros off the signed curvature. We are
+deliberately conservative about how far this is established.
+
+\begin{ledger}
+\noindent\textbf{Proved here} (and independent of any speculation):
+the Schoenberg wall (Theorem~\ref{thm:wall}); the even-order signature
+\eqref{eq:sig} (Theorem~\ref{thm:sig}); the total-positivity dictionary
+(Theorem~\ref{thm:dict}); the Krein-space realization \eqref{eq:krein-real} of the
+carr\'e-du-champ tower past the wall; and the dichotomy of
+Section~\ref{sec:dichotomy} --- weak (integrated) Bakry--\'Emery survives the wall
+and gives Poincar\'e for all $H>1$ (Theorem~\ref{thm:dichotomy}), the strong
+(local) theory is killed for all $H>1$ by the non-Markov semigroup (O2) and, at
+the biharmonic station $H=2$, additionally by the signature/complex-spectrum
+obstruction (Proposition~\ref{prop:disc}), the energy cone strictly contains the
+real-rooted one (Proposition~\ref{prop:LPC}), and the negative-dimension repair is
+rank-one, local to small $N$, and cannot reach log-Sobolev
+(Proposition~\ref{prop:dim}); and the static/dynamical resolution of the pencil ---
+$\spec(A_k)$ is the structure constants of the inter-level curvature relation
+(Proposition~\ref{prop:decomp}) but provably never a heat-flow rate
+(Proposition~\ref{prop:nogo}).
+
+\smallskip\noindent\textbf{Conjectured} (computationally supported, not proved):
+that $\gamma=1$ maximizes the level-$k$ curvature for every $k$ on the positive
+range (the level-$2$ case is the phase transition of~\cite{FontesPartI}); and that
+the higher-order de Bruijn--Newman constants $\Lambda(2m)$ are finite, with the
+quartic value $\Lambda(4)$ governed by the detachment of the saddle of
+$g(u)=tu^{4}+\log\Phi(u)$ at $u_*=\tfrac34$, $t_*=\tfrac{64}{27}\pi e^{3}$. We
+flag explicitly that the first form of the associated $\Lambda(4)$
+``re-coherence'' law was tested and \emph{refuted}; what is supported is finiteness
+via the saddle mechanism, with uniformity in $t$ unproved.
+
+\smallskip\noindent\textbf{Speculative} (the frontier, recorded as such):
+the reading of the Riemann hypothesis as a critical tangency of the curvature
+flow; zero dynamics as a curvature/Ricci flow on the Hurst line; and the existence
+of a single analytic operator interpolating the positive and signed sides across
+the wall $H=1$. The earlier claim that ``tower positivity \emph{is}
+real-rootedness'' is \emph{false} --- tower positivity is test-function
+independent --- and has been replaced by the dictionary of
+Section~\ref{sec:dict} and the positive-side critical-line reading (the secular
+polynomial $z^{k}-(z-1)^{k}$, all of whose zeros lie on $\Re=\tfrac12$).
+\end{ledger}
+
+\begin{remark}[Outlook]
+The signed structure has earned a definite, if bounded, role. It yields
+inequalities beyond the spectral gap (Proposition~\ref{prop:produces}), and its
+pencil spectrum is the static curvature datum of the tower
+(Proposition~\ref{prop:decomp}) --- while a no-go (Proposition~\ref{prop:nogo})
+shows it cannot be a heat-flow rate, so the calculus is static, not dynamical. Two
+questions remain genuinely open. First, whether the local obstruction holds
+throughout $H>1$ or the strong theory survives in a layer just above the wall
+(Remark~\ref{rem:uniform}). Second --- the natural way to seek a dynamical theory ---
+whether the internal Krein rotation $e^{sJ_0}$ can be coupled to the heat flow on a
+doubled (complexified) state space, so that $\spec(A_k)$ becomes a genuine rate of
+some semigroup; the no-go forbids this for $P_t$ alone, not for an enlarged
+dynamics.
+\end{remark}
+
+%==============================================================================
+\begin{thebibliography}{9}
+
+\bibitem{FontesPartI}
+R.~Fontes,
+\emph{Bakry--\'Emery curvature of the fractional Laplacian via fractional
+Brownian covariance},
+arXiv:2602.19192 [math.PR], 2026.
+
+\bibitem{Schoenberg}
+I.~J.~Schoenberg,
+\emph{Metric spaces and positive definite functions},
+Trans.\ Amer.\ Math.\ Soc.\ \textbf{44} (1938), 522--536.
+
+\bibitem{Bognar}
+J.~Bogn\'ar,
+\emph{Indefinite Inner Product Spaces},
+Ergebnisse der Mathematik \textbf{78}, Springer, 1974.
+
+\bibitem{BGL}
+D.~Bakry, I.~Gentil, and M.~Ledoux,
+\emph{Analysis and Geometry of Markov Diffusion Operators},
+Grundlehren \textbf{348}, Springer, 2014.
+
+\bibitem{BorceaBranden}
+J.~Borcea and P.~Br\"and\'en,
+\emph{P\'olya--Schur master theorems for circular domains and their boundaries},
+Ann.\ of Math.\ (2) \textbf{170} (2009), 465--492.
+
+\bibitem{RodgersTao}
+B.~Rodgers and T.~Tao,
+\emph{The de Bruijn--Newman constant is non-negative},
+Forum Math.\ Pi \textbf{8} (2020), e6.
+
+\bibitem{Hochberg}
+K.~J.~Hochberg,
+\emph{A signed measure on path space related to Wiener measure},
+Ann.\ Probab.\ \textbf{6} (1978), 433--458.
+
+\end{thebibliography}
+
+\end{document}

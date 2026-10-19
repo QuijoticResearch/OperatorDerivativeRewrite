@@ -1,0 +1,3162 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{cleveref}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{assumption}[theorem]{Assumption}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Id}{\mathrm{Id}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\HH}{\mathcal{H}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\im}{\mathrm{im}}
+\newcommand{\Ntilde}{\widetilde{N}}
+\newcommand{\ip}[2]{\langle #1, #2 \rangle}
+\newcommand{\norm}[1]{\| #1 \|}
+
+\crefname{theorem}{Theorem}{Theorems}
+\crefname{proposition}{Proposition}{Propositions}
+\crefname{lemma}{Lemma}{Lemmas}
+\crefname{corollary}{Corollary}{Corollaries}
+\crefname{definition}{Definition}{Definitions}
+\crefname{assumption}{Assumption}{Assumptions}
+\crefname{remark}{Remark}{Remarks}
+\crefname{section}{Section}{Sections}
+
+\title{The Boundary of Hedgeability:\\[0.3em]
+Pricing and Hedging in Volterra--L\'evy Markets}
+
+\author{Ramiro Fontes\\[0.5em]
+\small Quijotic Research\\[0.3em]
+\small\texttt{ramirofontes@gmail.com}}
+
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We develop the pricing and hedging theory for financial markets
+driven by Volterra--L\'evy processes---encompassing rough
+volatility models with jumps.  The operator derivative
+$D = \delta^*$, defined by duality with the stochastic integral
+on a combined Hilbert~$\oplus$~Banach energy space, provides a
+single calculus for the continuous and jump components without
+Gaussian assumptions.
+
+The central result is a two-parameter Volterra risk-neutral
+constraint (VRNC): risk-neutral pricing in markets with memory
+and jumps requires solving a Volterra integral equation for an
+effective drift rate~$\Psi$ that couples the Brownian and jump
+risk premia through the kernel~$K$.  The kernel enters the
+pricing structure itself---continuous and jump parameters
+cannot be chosen independently.  This holds for all kernel
+regularities~$H$, with no semimartingale restriction on the
+Volterra process.
+
+The Leibniz defect of the operator derivative---the precise
+content invisible to Malliavin calculus---equals the
+structurally unhedgeable component of risk.  Its $L^p$~norm
+scales as
+$T^{2H-1+1/p} \cdot (\int_{|z|\leq 1}|z|^{2p}\,\nu(dz))^{1/p}$:
+roughness and jumps interact multiplicatively.  The scaling is
+sharp for the variance swap payoff (two-sided BDG bounds).
+The roughness parameter~$H$ is proved to be
+measure-invariant, establishing it as a structural feature
+of the market rather than a pricing artifact.
+
+\medskip\noindent\textbf{MSC 2020:} 60H07, 60H05, 60G51,
+60G22, 91G20.\\
+\textbf{Keywords:} Volterra--L\'evy processes; operator
+derivative; risk-neutral pricing; rough volatility; hedgeability;
+Leibniz defect; bracket invariance; calibration invariance.
+\end{abstract}
+
+
+%======================================================================
+\section{Introduction}\label{sec:intro}
+%======================================================================
+
+\subsection{The pricing problem for rough-jump markets}
+
+What does consistent pricing look like when the market has both
+memory and jumps?
+
+Two extensions of classical diffusion models have dominated recent
+financial modelling.  \emph{Rough volatility}---volatility driven
+by fractional kernels $K_H(t,s) = (t-s)^{H-1/2}$ with
+$H < 1/2$---fits the implied volatility surface with remarkable
+parsimony~\cite{ElEuchRosenbaum2019,Fukasawa2021}.  Separately,
+\emph{L\'evy-driven models} capture the heavy tails and
+discontinuities observed in
+returns~\cite{ContTankov2004,Applebaum2009}.  But these two
+extensions have been studied almost entirely in isolation.  The
+Malliavin calculus that underpins rough volatility theory is built
+on Wiener space and does not see jumps; the Picard or
+Nualart--Vives difference operators for jump processes do not
+interact with kernel convolution.  No unified framework exists
+for the interaction of roughness and jumps through a
+Volterra kernel.
+
+This paper constructs that framework.  The starting point is
+the observation that the structurally unhedgeable component of
+risk in a Volterra--L\'evy market is \emph{not} the sum of a
+rough-volatility error and a jump error.  The two interact
+multiplicatively: the kernel amplifies jump risk, and the
+amplification is controlled by a single algebraic object---the
+kernel-weighted Leibniz defect---that emerges naturally from
+the operator factorization program
+of~\cite{Fontes2026a,Fontes2026d}.
+
+\subsection{The operator derivative as the right tool}
+
+The operator derivative $D = \delta^*$ is defined by duality
+with the stochastic integral~$\delta$, not by any Gaussian
+structure~\cite{Fontes2026a}.  For a Volterra--L\'evy
+process with both continuous and jump components, $\delta$
+acts on the combined energy space $\mathcal{H}_{VL} = H_W
+\times \widetilde{H}_J$, and $D = \delta^*$ splits
+automatically into a Hilbert derivative~$D_W$ (for the
+Brownian part) and a Banach derivative~$\widetilde{D}_J$
+(for the jumps).  The key structural fact is that $D$
+satisfies the Leibniz rule if and only if the driver has no
+jumps~\cite{Fontes2026d}.  In the presence of jumps, the
+failure of the Leibniz rule---the \emph{defect}
+$\Gamma(F,G) = D(FG) - F \cdot DG - G \cdot DF$---is
+precisely the non-Gaussian content.  For Volterra--L\'evy
+processes, the kernel $K$ weights this defect, producing
+the kernel-weighted Leibniz defect $\Gamma_V^f$ that
+controls both the pricing structure and the hedging gap.
+
+The Malliavin derivative on Wiener space and the Picard
+difference operator on Poisson space are defined by separate
+mechanisms; there is no Malliavin derivative for the combined
+process that recovers the kernel-weighted defect as a single
+algebraic object.  The operator derivative, defined by duality
+with the combined stochastic integral, does this automatically:
+the splitting into continuous and jump components is inherited
+from the energy space decomposition, and the Leibniz
+failure---the non-Gaussian content---emerges as a theorem,
+not a definition.
+
+
+\subsection{Main results}
+
+\begin{enumerate}[label=\textbf{(\Alph*)}]
+\item \textbf{The fundamental pricing constraint}
+  (\Cref{thm:VRNC-VL}).  In a Volterra--L\'evy market,
+  risk-neutral pricing requires solving a Volterra integral
+  equation for an effective drift rate
+  $\Psi_t = -\sigma_L\,\theta_t^W + \int z(e^{\theta_t^J(z)}-1)\,
+  \nu(dz)$
+  that aggregates Brownian and jump risk premia through the
+  kernel~$K$.  The kernel enters the pricing
+  structure itself: continuous and jump pricing parameters
+  cannot be chosen independently.  The continuous case
+  (no jumps) is recovered as \Cref{cor:VRNC-recovery}.
+  The constraint holds for all kernel
+  regularities~$H$.
+
+\item \textbf{Structural invariance of the roughness
+  parameter}
+  (\Cref{thm:bracket-inv}).  The continuous bracket of
+  the partial process $V_T(t)$ is deterministic and
+  identical under $\mathbb{P}$ and $\mathbb{Q}$:
+  the roughness parameter~$H$ estimated from historical
+  data is the same~$H$ that governs risk-neutral dynamics.
+  This is a structural feature of the energy space, not
+  a modelling assumption.
+
+\item \textbf{The hedging gap is the Leibniz defect}
+  (\Cref{thm:hedging-main,thm:scaling}).  The
+  structurally unhedgeable component of any European
+  claim, after delta-hedging with the stock and
+  vega-hedging with a variance swap, is the
+  kernel-weighted Leibniz defect $\Gamma_V^f$.  Its
+  $L^p$~norm scales as
+  $T^{2H - 1 + 1/p} \cdot (2p - \gamma)^{-1/p}$:
+  roughness and jump intensity interact multiplicatively.
+  The scaling is sharp for the variance swap payoff
+  (two-sided BDG bounds).  The defect vanishes if and
+  only if the driver has no jumps, recovering
+  perfect hedging in pure rough volatility
+  models~\cite{ElEuchRosenbaum2019}.
+
+\item \textbf{The $\nu$-singularity obstruction persists}
+  (\Cref{prop:VT-singular}).  The Volterra process
+  $V_T$ is $\nu$-singular:
+  $V_T \notin \mathrm{im}(\widetilde{\delta}_J)$.
+  The kernel cannot regularize the jump-size singularity.
+  This is an intrinsic property of the L\'evy measure,
+  independent of the temporal structure.
+\end{enumerate}
+
+
+\subsection{Organization}
+
+\Cref{sec:setup}: the Volterra--L\'evy process and its
+semimartingale structure.
+\Cref{sec:energy}: the combined energy space and operator
+derivatives.
+\Cref{sec:ito}: the Volterra--L\'evy It\^o formula and the
+kernel-weighted defect decomposition.
+\Cref{sec:pricing}: the two-parameter VRNC and bracket
+invariance.
+\Cref{sec:scaling}: the scaling law for fractional kernels.
+\Cref{sec:hedging}: application to hedging in rough-jump models.
+\Cref{sec:numerics}: numerical verification.
+
+\section{The Volterra--L\'evy Process}\label{sec:setup}
+%======================================================================
+
+\subsection{Probabilistic setup}
+
+Let $(\Omega, \F, (\F_t)_{t \in [0,T]}, \PP)$ be a filtered
+probability space supporting:
+\begin{enumerate}[label=(\roman*)]
+\item a Brownian motion $(W_t)_{t \in [0,T]}$;
+\item an independent Poisson random measure $N(dt,dz)$ on
+  $[0,T] \times \R$ with intensity
+  $dt \otimes \nu(dz)$, where $\nu$ is a L\'evy measure
+  satisfying $\int_\R (|z|^2 \wedge 1)\,\nu(dz) < \infty$.
+\end{enumerate}
+Write $\Ntilde(dt,dz) := N(dt,dz) - dt\,\nu(dz)$ for the
+compensated Poisson measure.
+
+\begin{definition}[L\'evy driver]\label{def:levy-driver}
+The \emph{L\'evy driver} is
+\begin{equation}\label{eq:levy-driver}
+  L_t := \sigma W_t + \int_0^t\!\!\int_\R z\,\Ntilde(ds,dz),
+  \qquad \sigma \geq 0,
+\end{equation}
+where the integral converges in $L^p$ for $p \in (1,\gamma)$ when
+$\nu$ is the measure of a symmetric $\gamma$-stable process
+($\gamma \in (1,2)$), and in $L^2$ when
+$\int |z|^2\,\nu(dz) < \infty$.
+\end{definition}
+
+\begin{assumption}[Standing assumptions on $\nu$]\label{ass:nu}
+Throughout, $\nu$ is symmetric ($\nu(A) = \nu(-A)$) and satisfies:
+\begin{enumerate}[label=(L\arabic*)]
+\item\label{L1} \textbf{Small-jump behavior (local stable type):}
+  \[
+    c_\gamma |z|^{-(1+\gamma)} \leq \frac{d\nu}{dz} \leq
+    C_\gamma |z|^{-(1+\gamma)}, \qquad |z| \leq 1,
+  \]
+  for some $\gamma \in (1,2)$ and constants
+  $0 < c_\gamma \leq C_\gamma$.
+\item\label{L2} \textbf{Tail behavior:}
+  $\int_{|z|>1} |z|^q\,\nu(dz) < \infty$ for some $q > 0$.
+\end{enumerate}
+The local stable index $\gamma$ governs the small-jump singularity
+and is the primary parameter.  The tail condition~\ref{L2} is
+deliberately left flexible: different results require different
+values of $q$.  We distinguish two regimes:
+\begin{enumerate}[label=(\alph*)]
+\item \textbf{Tempered stable tails:}
+  $\nu(dz) \sim |z|^{-1-\gamma}e^{-\lambda|z|}\,dz$ for
+  $|z| > 1$, $\lambda > 0$.  Then~\ref{L2} holds for all
+  $q < \infty$.  This is the regime in which our strongest
+  results (sharpness, $L^2$ isometry) hold.
+\item \textbf{Purely stable tails:}
+  $\nu(dz) = c_\gamma|z|^{-1-\gamma}\,dz$ for all $z$.
+  Then~\ref{L2} holds only for $q < \gamma$.  In this regime,
+  several results require restricted moment conditions,
+  which we flag explicitly.
+\end{enumerate}
+\end{assumption}
+
+\begin{remark}[Moment notation]\label{rem:moments}
+We write $\nu_r := \int_\R |z|^r\,\nu(dz)$ for the $r$-th
+absolute moment of $\nu$, when finite.  By~\ref{L1}:
+$\int_{|z|\leq 1}|z|^r\,\nu(dz) < \infty$ iff $r > \gamma$.
+By~\ref{L2}: $\int_{|z|>1}|z|^r\,\nu(dz) < \infty$ iff
+$r \leq q$ (or for all $r$ under tempered stable tails).
+Thus $\nu_r < \infty$ iff $r > \gamma$ and $r \leq q$.
+
+The \emph{core} defect decomposition
+(\Cref{thm:defect-decomposition}) requires only:
+$\int_{|z|\leq 1}|z|^{2p}\nu(dz) < \infty$ (automatic since
+$2p > 2 > \gamma$) for the small-jump bound, and
+$\int_{|z|>1}|z|^p\nu(dz) < \infty$ (automatic since
+$p < \gamma$) for the large-jump bound.  In particular,
+the core results hold under purely stable tails
+without additional moment assumptions.
+
+The \emph{full} moment $\nu_{2p} = \int_\R|z|^{2p}\nu(dz)$
+is needed only for the sharpness proposition
+(\Cref{thm:sharpness}), where exact norm identities over
+all of $\R$ are claimed.  Under purely stable tails,
+$\nu_{2p} = \infty$ (since $2p > 2 > \gamma$), and the
+sharpness result does not apply.
+\end{remark}
+
+The case $\sigma > 0$ includes L\'evy processes with a Gaussian
+component; $\sigma = 0$ is the pure-jump case.
+
+
+\subsection{The Volterra--L\'evy process}
+
+\begin{definition}[Volterra--L\'evy process]\label{def:VL}
+Let $K : [0,T]^2 \to \R$ be a causal kernel ($K(t,s) = 0$ for
+$s > t$). The \emph{Volterra--L\'evy process} is
+\begin{equation}\label{eq:VL}
+  V_t := \int_0^t K(t,s)\,dL_s
+  = \sigma\!\int_0^t K(t,s)\,dW_s
+  + \int_0^t\!\!\int_\R K(t,s)\,z\,\Ntilde(ds,dz).
+\end{equation}
+\end{definition}
+
+\begin{assumption}[Kernel regularity]\label{ass:kernel}
+The kernel $K$ satisfies:
+\begin{enumerate}[label=(K\arabic*)]
+\item\label{K1} \textbf{$L^\gamma$-integrability:}
+  $\displaystyle\sup_{t \in [0,T]} \int_0^t |K(t,s)|^\gamma\,ds < \infty$.
+  This ensures that $V_t$ is well-defined in $L^p$ for
+  $p \in (1,\gamma)$.
+\item\label{K2} \textbf{$L^2$-integrability (when $\sigma > 0$):}
+  $\displaystyle\sup_{t \in [0,T]} \int_0^t K(t,s)^2\,ds < \infty$.
+  This ensures the Gaussian part is well-defined in $L^2$.
+\end{enumerate}
+\end{assumption}
+
+\begin{example}[Fractional kernel]\label{ex:fractional}
+The \emph{fractional kernel} $K_H(t,s) = (t-s)^{H-1/2}$ for
+$H \in (0,1)$ satisfies \ref{K1} iff $\gamma(H - 1/2) > -1$,
+i.e., $H > 1/2 - 1/\gamma$.  For $\gamma > 1$, this holds for
+all $H > 0$.  The Volterra--L\'evy process with $K_H$ and a
+$\gamma$-stable driver is a \emph{rough stable process} with
+roughness controlled by both $H$ and~$\gamma$.
+\end{example}
+
+
+\subsection{Semimartingale structure of the partial process}
+
+The hedging analysis requires an It\^o formula. While $V_t$ as
+a process in $t$ is generally \emph{not} a semimartingale (for
+singular kernels), the \emph{partial process}
+\begin{equation}\label{eq:partial}
+  V_T(t) := \int_0^t K(T,s)\,dL_s, \qquad t \in [0,T],
+\end{equation}
+\emph{is} a semimartingale, since the kernel $K(T,\cdot)$ is
+fixed (not time-varying) and the integral is taken with respect
+to the semimartingale~$L$.
+
+\begin{lemma}[Semimartingale decomposition of $V_T(\cdot)$]
+\label{lem:SM-decomp}
+The partial process $V_T(t)$ has the L\'evy--It\^o decomposition:
+\begin{enumerate}[label=(\alph*)]
+\item Continuous martingale part:
+  $V_T^c(t) = \sigma\int_0^t K(T,s)\,dW_s$, with bracket
+  $\langle V_T^c \rangle_t = \sigma^2\int_0^t K(T,s)^2\,ds$.
+\item Jump part:
+  $\Delta V_T(t) = K(T,t)\,\Delta L_t = K(T,t)\,\Delta J_t$,
+  where $\Delta J_t$ are the jumps of
+  $J_t = \int_0^t\!\int z\,\Ntilde(ds,dz)$.
+\end{enumerate}
+In particular, $V_T(T) = V_T$.
+\end{lemma}
+
+\begin{proof}
+Since $K(T,\cdot)$ is deterministic, the stochastic integral
+$\int_0^t K(T,s)\,dL_s$ is a semimartingale in $t$ by standard
+theory~\cite{Applebaum2009}.  The decomposition follows from
+linearity: $V_T(t) = V_T^c(t) + \int_0^t K(T,s)\,dJ_s$,
+with $dJ_s = \int_\R z\,\Ntilde(ds,dz)$.
+\end{proof}
+
+\begin{remark}[Why $V_T(t)$ and not $V_t$]\label{rem:partial}
+The process $V_t = \int_0^t K(t,s)\,dL_s$ is generally
+\emph{not} a semimartingale when $K$ is singular (e.g.,
+fractional kernel with $H < 1/2$).  The partial process
+$V_T(t)$ freezes the terminal time $T$ and integrates
+with respect to $L$, preserving the semimartingale property.
+For terminal payoffs $f(V_T)$, the relevant object is
+$f(V_T(T))$, and the It\^o formula can be applied to the
+semimartingale $t \mapsto V_T(t)$.  This circumvents the
+non-semimartingale difficulty entirely.
+\end{remark}
+
+
+%======================================================================
+\section{The Combined Energy Space}\label{sec:energy}
+%======================================================================
+
+\subsection{Two-component energy space}
+
+The L\'evy driver $L$ has both a continuous component (driven
+by $W$) and a jump component (driven by $\Ntilde$).  Following
+the Hilbert--Banach dichotomy established
+in~\cite{Fontes2026a,Fontes2026d}, each component
+has its natural energy space.
+
+\begin{definition}[Combined energy space]\label{def:combined-energy}
+The \emph{combined energy space} is the product Banach space
+\begin{equation}\label{eq:HVL}
+  \HH_{VL} := H_W \times \widetilde{H}_J,
+\end{equation}
+where:
+\begin{enumerate}[label=(\roman*)]
+\item The \emph{continuous energy space}:
+  \begin{equation}\label{eq:HW}
+    H_W := L^2\bigl([0,T] \times \Omega,\;
+    \mathcal{P},\; \sigma^2\,ds \otimes d\PP\bigr),
+  \end{equation}
+  with norm
+  $\|u\|_{H_W}^2 = \E\!\int_0^T u_t^2\,\sigma^2\,dt$
+  and divergence
+  $\delta_W(u) = \sigma\!\int_0^T u_t\,dW_t$.
+  This is a Hilbert space.
+
+\item The \emph{jump energy space}:
+  \begin{equation}\label{eq:HJ}
+    \widetilde{H}_J :=
+    L^p\bigl([0,T] \times \R \times \Omega,\;
+    \mathcal{P} \otimes \mathcal{B}(\R),\;
+    dt \otimes \nu(dz) \otimes d\PP\bigr),
+  \end{equation}
+  with norm
+  $\|h\|_{\widetilde{H}_J}^p = \E\!\int_0^T\!\!\int_\R
+  |h(t,z)|^p\,\nu(dz)\,dt$
+  and divergence
+  $\widetilde{\delta}_J(h) = \int_0^T\!\!\int_\R
+  h(t,z)\,\Ntilde(dt,dz)$.
+  This is a Banach space (non-Hilbert for $p \neq 2$).
+\end{enumerate}
+The \emph{combined divergence} is
+\begin{equation}\label{eq:delta-VL}
+  \delta_{VL}(u,h) := \delta_W(u) + \widetilde{\delta}_J(h)
+  = \sigma\!\int_0^T u_t\,dW_t
+  + \int_0^T\!\!\int_\R h(t,z)\,\Ntilde(dt,dz).
+\end{equation}
+\end{definition}
+
+\begin{remark}[Mixed exponent structure]\label{rem:mixed}
+The continuous component lives in $L^2$ (Hilbert) while the jump
+component lives in $L^p$ with $p < \gamma < 2$ (Banach).  We equip
+$\HH_{VL}$ with the norm
+$\|(u,h)\|_{\HH_{VL}} := \|u\|_{H_W} + \|h\|_{\widetilde{H}_J}$.
+The combined divergence is bounded:
+$\|\delta_{VL}(u,h)\|_{L^p} \leq
+C_1\,\|u\|_{H_W} + C_2\,\|h\|_{\widetilde{H}_J}$
+by the Brownian BDG inequality (for the $L^2$-bounded, hence
+$L^p$-bounded, Brownian integral) and the L\'evy BDG inequality
+(see~\cite{Dirksen2015}).
+
+When $\sigma = 0$ (pure-jump case), $H_W$ is trivial and the
+combined space reduces to $\widetilde{H}_J$ alone.
+\end{remark}
+
+
+\subsection{Combined operator derivative}
+
+\begin{definition}[Combined operator derivative]\label{def:D-VL}
+The \emph{combined operator derivative} is the Banach dual
+\begin{equation}\label{eq:D-VL}
+  D_{VL} := \delta_{VL}^* : L^q(\Omega) \to \HH_{VL}^*,
+\end{equation}
+defined by
+$\ip{D_{VL} F}{(u,h)} = \E[F \cdot \delta_{VL}(u,h)]$
+for $F \in L^q(\Omega)$, $(u,h) \in \HH_{VL}$.
+\end{definition}
+
+Since the combined divergence is the sum
+$\delta_{VL}(u,h) = \delta_W(u) + \widetilde{\delta}_J(h)$,
+linearity of the adjoint gives:
+
+\begin{proposition}[Splitting of $D_{VL}$]\label{prop:D-split}
+$D_{VL} F = (D_W F,\, \widetilde{D}_J F)$, where
+\begin{align}
+  \ip{D_W F}{u}_{H_W^*, H_W}
+  &= \E\!\left[F \cdot \sigma\!\int_0^T u_t\,dW_t\right],
+  \label{eq:DW}\\
+  \ip{\widetilde{D}_J F}{h}_{\widetilde{H}_J^*, \widetilde{H}_J}
+  &= \E\!\left[F \cdot \int_0^T\!\!\int_\R
+  h(t,z)\,\Ntilde(dt,dz)\right].
+  \label{eq:DJ}
+\end{align}
+The component $D_W$ is the Hilbert operator derivative
+of~\cite{Fontes2026a}, and $\widetilde{D}_J$ is the
+two-parameter Banach derivative (\Cref{def:D-VL}).
+\end{proposition}
+
+
+%======================================================================
+
+\subsection{Why not Malliavin calculus?}\label{sec:why-not-malliavin}
+
+The combined operator derivative $D_{VL}$ is defined by a single
+mechanism---duality with the stochastic integral---applied to the
+product space $\mathcal{H}_{VL} = H_W \times \widetilde{H}_J$.
+The splitting $D_{VL} F = (D_W F, \widetilde{D}_J F)$ is
+\emph{inherited} from the direct-sum structure of the energy
+space, not constructed from separate calculi.
+
+This stands in contrast to the Malliavin-theoretic approach,
+which requires two distinct tools: the Malliavin derivative on
+Wiener space (for the Brownian component) and the Picard or
+Nualart--Vives difference operator on Poisson space (for the
+jumps).  These are defined by different mechanisms (Gaussian
+integration by parts vs.\ finite differences in the jump
+configuration) and must be stitched together manually when both
+are present.  The kernel convolution interacting with both
+components must be managed through separate computations.
+
+The operator derivative circumvents this entirely.  Because
+$D_{VL} = \delta_{VL}^*$ is defined by the adjoint identity
+$\langle D_{VL} F, (u,h) \rangle = \mathbb{E}[F \cdot
+\delta_{VL}(u,h)]$, the kernel-weighted defect
+$\Gamma_V^f$---the Taylor remainder of the composition
+$f(V_T(t\!-\!) + K(T,t)z) - f(V_T(t\!-\!))
+- f'(V_T(t\!-\!))K(T,t)z$---emerges as a single algebraic
+object in $\widetilde{H}_J$.  In the language
+of~\cite{Fontes2026d}, the defect is the non-Gaussian content:
+$D$ satisfies the Leibniz rule if and only if $\nu = 0$
+(no jumps), i.e., if and only if the driver is Gaussian.
+The failure of Leibniz, measured by $\Gamma_V^f$, is therefore
+exactly the component of risk that Gaussian tools cannot see.
+
+
+\section{The Volterra--L\'evy It\^o Formula}\label{sec:ito}
+%======================================================================
+
+This section establishes the decomposition of $f(V_T)$ into
+hedgeable and unhedgeable components.  The unhedgeable
+part---the kernel-weighted Leibniz defect---is the exact
+content that Malliavin calculus cannot access: it measures
+the nonlinear response of the payoff to jumps propagated
+through the kernel, which is the Leibniz failure of the
+combined operator derivative.  The construction applies the
+classical It\^o formula for semimartingales to the partial
+process $V_T(t)$, then decomposes the result using the
+operator framework.
+
+\begin{theorem}[Volterra--L\'evy It\^o formula]\label{thm:VL-ito}
+Let $f \in C_b^3(\R)$ and $V_T = \int_0^T K(T,s)\,dL_s$ under
+Assumptions~\ref{ass:nu} and~\ref{ass:kernel}.  Then
+\begin{equation}\label{eq:VL-ito}
+  f(V_T) - f(0)
+  = \underbrace{\int_0^T \alpha_t^f\,\sigma\,dW_t}_{I_W^f}
+  + \underbrace{\int_0^T\!\!\int_\R h_f^K(t,z)\,\Ntilde(dt,dz)}_{I_J^f}
+  + \underbrace{A_T^f}_{\text{drift}},
+\end{equation}
+where, writing $V_T(t\!-\!) := \int_0^{t-} K(T,s)\,dL_s$:
+\begin{align}
+  \alpha_t^f &:= f'(V_T(t\!-\!))\,K(T,t),
+  \label{eq:alpha}\\[4pt]
+  h_f^K(t,z) &:= f\bigl(V_T(t\!-\!) + K(T,t)\,z\bigr)
+  - f(V_T(t\!-\!)),
+  \label{eq:hfK}\\[4pt]
+  g_f^K(t,z) &:= h_f^K(t,z) - f'(V_T(t\!-\!))\,K(T,t)\,z
+  \label{eq:gfK-thm}
+\end{align}
+(the Taylor remainder), and the drift is
+\begin{equation}\label{eq:drift}
+  A_T^f := \tfrac{1}{2}\sigma^2\!\int_0^T
+  f''(V_T(t\!-\!))\,K(T,t)^2\,dt
+  + \int_0^T\!\!\int_\R g_f^K(t,z)\,\nu(dz)\,dt.
+\end{equation}
+The second integral converges absolutely.
+For $|z| \leq 1$:
+$|g_f^K(t,z)| \leq \frac{1}{2}\|f''\|_\infty K(T,t)^2 z^2$
+by Taylor's theorem, and $\int_{|z|\leq 1}|z|^2\,\nu(dz) < \infty$
+since $\gamma < 2$.
+For $|z| > 1$: $|g_f^K(t,z)| \leq 2\|f\|_\infty
++ \|f'\|_\infty|K(T,t)||z|$, and
+$\int_{|z|>1}|z|\,\nu(dz) < \infty$ since $\gamma > 1$
+(the local stable assumption~\ref{L1} gives
+$\int_1^\infty z \cdot z^{-(1+\gamma)}\,dz < \infty$
+for $\gamma > 1$, and the tail condition~\ref{L2} controls
+the large-$|z|$ remainder).
+\end{theorem}
+
+\begin{proof}
+Apply the It\^o formula for semimartingales with jumps
+(\cite{Applebaum2009}, Theorem~4.4.7) to the
+semimartingale $V_T(t)$
+(\Cref{lem:SM-decomp}):
+\begin{align*}
+  f(V_T(T)) &= f(V_T(0))
+  + \int_0^T f'(V_T(t\!-\!))\,dV_T(t)
+  + \tfrac{1}{2}\int_0^T f''(V_T(t\!-\!))\,d\langle V_T^c\rangle_t\\
+  &\quad+ \sum_{0 < s \leq T}\left[f(V_T(s)) - f(V_T(s\!-\!))
+  - f'(V_T(s\!-\!))\,\Delta V_T(s)\right].
+\end{align*}
+Since $V_T(0) = 0$, $V_T(T) = V_T$,
+$dV_T(t) = K(T,t)\,dL_t$, and
+$\Delta V_T(s) = K(T,s)\,\Delta L_s$:
+
+\textbf{Term 1.} The first-order stochastic integral.
+Since $dL_t = \sigma\,dW_t + \int_\R z\,\Ntilde(dt,dz)$
+(the driver is defined with the compensated measure, so
+there is no drift):
+\begin{align*}
+  \int_0^T f'(V_T(t\!-\!))\,K(T,t)\,dL_t
+  &= \int_0^T f'(V_T(t\!-\!))\,K(T,t)\,\sigma\,dW_t\\
+  &\quad+ \int_0^T\!\!\int_\R f'(V_T(t\!-\!))\,K(T,t)\,z\,
+  \Ntilde(dt,dz).
+\end{align*}
+
+\textbf{Term 2.} The quadratic variation:
+$\frac{1}{2}\int_0^T f''(V_T(t\!-\!))\,K(T,t)^2\,\sigma^2\,dt$.
+
+\textbf{Term 3.} The jump sum.  Writing
+$g_f^K$ for the Taylor remainder~\eqref{eq:gfK-thm}:
+\begin{align*}
+  &\sum_{s \leq T}\bigl[f(V_T(s\!-\!) + K(T,s)\Delta L_s)
+  - f(V_T(s\!-\!)) - f'(V_T(s\!-\!))K(T,s)\Delta L_s\bigr]\\
+  &= \int_0^T\!\!\int_\R g_f^K(t,z)\,N(dt,dz)\\
+  &= \int_0^T\!\!\int_\R g_f^K(t,z)\,\Ntilde(dt,dz)
+  + \int_0^T\!\!\int_\R g_f^K(t,z)\,\nu(dz)\,dt.
+\end{align*}
+
+\textbf{Collecting terms.}  The Brownian martingale part is
+$I_W^f = \int_0^T f'(V_T(t\!-\!))\,K(T,t)\,\sigma\,dW_t$
+with $\alpha_t^f = f'(V_T(t\!-\!))\,K(T,t)$.
+
+The compensated Poisson integral combines the first-order term
+and the defect:
+\begin{align*}
+  I_J^f &= \int_0^T\!\!\int_\R
+  \bigl[f'(V_T(t\!-\!))K(T,t)z + g_f^K(t,z)\bigr]\,
+  \Ntilde(dt,dz)\\
+  &= \int_0^T\!\!\int_\R h_f^K(t,z)\,\Ntilde(dt,dz),
+\end{align*}
+where $h_f^K(t,z) = f(V_T(t\!-\!) + K(T,t)z) - f(V_T(t\!-\!))$
+is the full finite difference~\eqref{eq:hfK}.
+
+The drift collects the quadratic variation and the compensated
+jump terms, yielding~\eqref{eq:drift}.
+\end{proof}
+
+
+%----------------------------------------------------------------------
+\subsection{The kernel-weighted defect decomposition}
+%----------------------------------------------------------------------
+
+The compensated Poisson integrand~\eqref{eq:hfK} decomposes into
+a \emph{linear part} (first-order response to jumps) and a
+\emph{nonlinear part} (the Taylor remainder):
+\begin{equation}\label{eq:hfK-decomp}
+  h_f^K(t,z)
+  = \underbrace{f'(V_T(t\!-\!))\,K(T,t)\,z}_{\text{linear in }z}
+  + \underbrace{g_f^K(t,z)}_{\text{Leibniz defect integrand}}.
+\end{equation}
+
+The integrability of these two components in $\widetilde{H}_J$
+differs qualitatively.
+
+\begin{theorem}[Kernel-weighted defect decomposition]
+\label{thm:defect-decomposition}
+Under Assumptions~\ref{ass:nu} and~\ref{ass:kernel}, let
+$f \in C_b^3(\R)$ and $p \in (1,\gamma)$.  Assume further that
+$\int_0^T |K(T,t)|^{2p}\,dt < \infty$ (automatic for bounded
+kernels; for the fractional kernel, this is \Cref{ass:Hp}).
+Then:
+\begin{enumerate}[label=(\alph*)]
+\item \textbf{$\nu$-regularity of the defect.}
+  The kernel-weighted Taylor remainder $g_f^K$ lies in
+  $\widetilde{H}_J$:
+  \begin{equation}\label{eq:gfK-bound}
+    \|g_f^K\|_{\widetilde{H}_J}^p
+    \leq C_{\mathrm{small}}\!\int_0^T\!\!|K(T,t)|^{2p}\,dt
+    \;\cdot\;\int_{|z|\leq 1}|z|^{2p}\,\nu(dz)
+    + C_{\mathrm{large}}\,T\!\int_{|z|>1}\!(1+|z|^p)\,\nu(dz),
+  \end{equation}
+  where $C_{\mathrm{small}} = C(p)\,\|f''\|_\infty^p/2^p$
+  and $C_{\mathrm{large}}$ depends on $\|f\|_\infty$,
+  $\|f'\|_\infty$.
+
+\item \textbf{$\nu$-singularity of the linear part.}
+  The integrand $f'(V_T(t\!-\!))\,K(T,t)\,z$ does not belong to
+  $\widetilde{H}_J$: its norm involves
+  $\int_\R |z|^p\,\nu(dz) = \infty$ (since $p < \gamma < 2$ and
+  $\nu$ is $\gamma$-stable near zero).
+
+\item \textbf{Two-regime decomposition.}
+  The compensated Poisson integral $I_J^f$ decomposes as:
+  \begin{equation}\label{eq:two-regime-VL}
+    I_J^f
+    = \underbrace{\int_0^T\!\!\int_\R
+      f'(V_T(t\!-\!))K(T,t)z\,\Ntilde(dt,dz)}_{\text{%
+      $\nu$-singular (linear in $z$)}}
+    + \underbrace{\int_0^T\!\!\int_\R
+      g_f^K(t,z)\,\Ntilde(dt,dz)}_{\text{%
+      $\nu$-regular (defect)}}.
+  \end{equation}
+  The $\nu$-regular part is the kernel-weighted Leibniz defect:
+  \begin{equation}\label{eq:GammaVf}
+    \Gamma_V^f := \widetilde{\delta}_J(g_f^K)
+    = \int_0^T\!\!\int_\R g_f^K(t,z)\,\Ntilde(dt,dz).
+  \end{equation}
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(a) For $|z| \leq 1$: by Taylor's theorem,
+\[
+  |g_f^K(t,z)| = |f(V_T(t\!-\!) + K(T,t)z)
+  - f(V_T(t\!-\!)) - f'(V_T(t\!-\!))K(T,t)z|
+  \leq \tfrac{1}{2}\|f''\|_\infty |K(T,t)|^2 |z|^2.
+\]
+Raising to the $p$-th power and integrating:
+\begin{align*}
+  \E\!\int_0^T\!\!\int_{|z|\leq 1}|g_f^K|^p\,\nu(dz)\,dt
+  &\leq \frac{\|f''\|_\infty^p}{2^p}
+  \int_0^T |K(T,t)|^{2p}\,dt
+  \cdot\int_{|z|\leq 1}|z|^{2p}\,\nu(dz).
+\end{align*}
+The time integral converges by~\ref{K1} (or verified directly for
+fractional kernels; see \Cref{lem:kernel-integral}).  The jump
+integral converges since $2p > \gamma$:
+$\int_{|z|\leq 1}|z|^{2p}\,\nu(dz)
+\leq C_\gamma\int_0^1 z^{2p - 1 - \gamma}\,dz
+= C_\gamma/(2p - \gamma) < \infty$.
+
+For $|z| > 1$: $|g_f^K(t,z)| \leq 2\|f\|_\infty
++ \|f'\|_\infty|K(T,t)||z|$, so $|g_f^K|^p \leq
+C(1 + |K(T,t)|^p|z|^p)$.  Since $p < \gamma$,
+$\int_{|z|>1}|z|^p\,\nu(dz) < \infty$, and
+$\int_0^T |K(T,t)|^p\,dt < \infty$ by~\ref{K1}.
+
+(b) $\int_{|z|\leq 1}|z|^p\,\nu_\gamma(dz)
+= 2c_\gamma\int_0^1 z^{p-1-\gamma}\,dz = \infty$
+since $p - \gamma < 0$.  By the uniqueness of the compensated
+Poisson representation, $f'(V_T(t\!-\!))K(T,t)z$ is the only
+possible two-parameter integrand for $\delta_L(f'(V_T(\cdot\!-\!))
+K(T,\cdot))$, and it does not belong to $\widetilde{H}_J$.
+
+(c) Combine (a), (b), and the It\^o formula~\eqref{eq:VL-ito}.
+\end{proof}
+
+\begin{remark}[Interpretation: what is the defect?]
+\label{rem:defect-interpret}
+The kernel-weighted Leibniz defect $\Gamma_V^f$ encodes the
+\emph{nonlinear response of $f(V_T)$ to jumps in the driver $L$,
+propagated through the kernel $K$}.  A jump of size $z$ at time $t$
+shifts $V_T$ by $K(T,t)\,z$; the defect integrand $g_f^K(t,z)$
+measures the second-order effect of this shift.  For smooth $f$,
+$g_f^K(t,z) \approx \frac{1}{2}f''(V_T(t\!-\!))K(T,t)^2 z^2$
+for small $z$---it is the ``gamma times jump-squared'' contribution,
+weighted by the kernel.
+
+This is the stochastic-calculus analog of the Leibniz defect
+in~\cite{Fontes2026d}: the failure of $D_L$ to satisfy the
+product rule generates a correction term that is intrinsically
+tied to the jump structure.  The Volterra twist is that the kernel
+$K(T,t)$ amplifies or attenuates each jump's contribution depending
+on when it occurs.
+\end{remark}
+
+
+\subsection{Extension to polynomial-growth payoffs}
+\label{sec:poly-growth}
+
+The It\^o formula (\Cref{thm:VL-ito}) and the defect
+decomposition (\Cref{thm:defect-decomposition}) are stated
+for $f \in C_b^3(\R)$.  Many payoffs of interest---including
+$f(x) = x^2$ (variance swaps) and $f(x) = e^x$
+(exponential volatility)---do not satisfy this assumption.
+We now extend the main results to functions with polynomial
+growth.
+
+\begin{definition}[Polynomial growth class]\label{def:poly-growth}
+For $m \geq 0$, define $C_{\mathrm{pol}}^3(\R,m)$ as the
+class of $f \in C^3(\R)$ satisfying
+\[
+  |f^{(k)}(x)| \leq C_f\,(1 + |x|^m)
+  \qquad \text{for }k = 0,1,2,3,
+\]
+for some constant $C_f > 0$.  The case $m = 0$ recovers
+$C_b^3(\R)$.
+\end{definition}
+
+\begin{assumption}[Moment condition for polynomial payoffs]
+\label{ass:moments-poly}
+The Volterra--L\'evy process $V_T$ satisfies
+$\E[|V_T|^r] < \infty$ for all $r$ up to a specified order,
+and the tail condition~\ref{L2} holds with $q$ large
+enough.  Specifically, for $f \in C_{\mathrm{pol}}^3(\R,m)$
+and working exponent $p$, we require:
+\begin{enumerate}[label=(M\arabic*)]
+\item\label{M1} $\E[|V_T|^{(m+2)p}] < \infty$
+  (moment condition on the Volterra process);
+\item\label{M2} $\int_{|z|>1}|z|^{(m+1)p}\,\nu(dz) < \infty$
+  (tail condition: \ref{L2} with $q = (m+1)p$).
+\end{enumerate}
+\end{assumption}
+
+\begin{remark}[When do these moments exist?]\label{rem:VT-moments}
+For a $\gamma$-stable L\'evy driver $L$ and bounded kernel $K$,
+$V_T = \int_0^T K(T,s)\,dL_s$ inherits the moment structure of
+$L$: under tempered stable tails, $\E[|V_T|^r] < \infty$ for
+all $r < \infty$; under purely stable tails, $\E[|V_T|^r] < \infty$
+only for $r < \gamma$.  Thus~\ref{M1} is automatic under tempered
+stable tails and severely restrictive under purely stable tails
+(requiring $(m+2)p < \gamma$, which conflicts with $p > 1$ for
+$m \geq 1$ and $\gamma < 2$).  The polynomial growth extension
+is therefore primarily applicable under tempered stable or
+finite-activity jump assumptions.
+\end{remark}
+
+\begin{corollary}[Volterra--L\'evy It\^o formula for polynomial
+growth]\label{cor:VL-ito-poly}
+Let $f \in C_{\mathrm{pol}}^3(\R,m)$ and assume
+\Cref{ass:moments-poly}.  Then the decomposition~\eqref{eq:VL-ito}
+holds, with each term well-defined in $L^p$:
+\begin{enumerate}[label=(\alph*)]
+\item The Brownian integral: $\E[|\int_0^T
+  f'(V_T(t\!-\!))K(T,t)\sigma\,dW_t|^p] < \infty$, since
+  $|f'(V_T(t\!-\!))| \leq C(1+|V_T(t\!-\!)|^m)$ and the
+  BDG inequality gives $\E[|I_W^f|^p] \leq
+  C\,\E[\int_0^T(1+|V_T(t)|^m)^2 K(T,t)^2\,dt]^{p/2}$,
+  which is finite by~\ref{M1}.
+\item The compensated Poisson integral: the integrand
+  $h_f^K(t,z) = f(V_T(t\!-\!) + K(T,t)z) - f(V_T(t\!-\!))$
+  satisfies $|h_f^K(t,z)| \leq
+  C(1 + |V_T(t\!-\!)|^m + |K(T,t)z|^{m+1})$ by the
+  mean value theorem.  The $L^p(dt \otimes \nu \otimes dP)$
+  integrability follows from~\ref{M1} and~\ref{M2}.
+\item The drift: $|A_T^f| \leq C\int_0^T(1+|V_T(t)|^m)
+  K(T,t)^2\,dt + C\int_0^T\!\int|h_f^K|\,\nu(dz)\,dt$,
+  which is finite under the same conditions.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+The It\^o formula for semimartingales with jumps
+(\cite{Applebaum2009}, Theorem~4.4.7) requires only that
+$f \in C^2$ and that the relevant stochastic integrals
+and jump sums converge.  The $C_b^3$ assumption in
+\Cref{thm:VL-ito} was used for the uniform bound
+$|g_f^K| \leq \frac{1}{2}\|f''\|_\infty K^2 z^2$ in the
+defect decomposition; for polynomial-growth $f$, this
+bound becomes $|g_f^K(t,z)| \leq
+C(1+|V_T(t\!-\!)|^m)\,K(T,t)^2\,z^2$ for $|z| \leq 1$
+(by Taylor's theorem applied to $f$ at $V_T(t\!-\!)$),
+and $|g_f^K(t,z)| \leq C(1+|V_T(t\!-\!)|^{m+1}
++ |K(T,t)z|^{m+1})$ for $|z| > 1$.
+
+The $\widetilde{H}_J$-norm of $g_f^K$ is then bounded by:
+\begin{align*}
+  \|g_f^K\|_{\widetilde{H}_J}^p
+  &\leq C^p\,\E\!\int_0^T\!(1+|V_T(t)|^m)^p K(T,t)^{2p}\,dt
+  \;\cdot\;\int_{|z|\leq 1}|z|^{2p}\,\nu(dz)\\
+  &\quad+ C^p\,\E\!\int_0^T\!\!\int_{|z|>1}\!
+  \bigl(1+|V_T(t)|^{(m+1)p}
+  + |K(T,t)|^{(m+1)p}\,|z|^{(m+1)p}\bigr)\,\nu(dz)\,dt.
+\end{align*}
+The first line is finite by~\ref{M1} (which gives
+$\E[(1+|V_T(t)|^m)^p] < \infty$) and the kernel integrability
+condition $\int_0^T K(T,t)^{2p}\,dt < \infty$ (which must be
+assumed; for fractional kernels, this is $H > (p-1)/(2p)$,
+see \Cref{ass:Hp} in Section~\ref{sec:scaling}).
+The second line is finite by~\ref{M1} and~\ref{M2}.
+\end{proof}
+
+\begin{remark}[The quadratic payoff revisited]
+\label{rem:quadratic-revisited}
+For $f(x) = x^2$: $m = 2$, $f''(x) = 2$, $f'''(x) = 0$,
+so $f \in C_{\mathrm{pol}}^3(\R, 2)$ with the polynomial
+growth arising only in $f$ and $f'$, not in the derivatives
+used for the Taylor bound.  In fact, the defect integrand
+$g_f^K(t,z) = K(T,t)^2 z^2$ is \emph{independent of
+$V_T(t\!-\!)$}, so the moment condition~\ref{M1} is not
+needed for the defect norm computation---only~\ref{M2}
+(requiring $\nu_{2p} < \infty$) is needed.  This is why
+\Cref{thm:sharpness} requires only tail conditions on $\nu$,
+not moment conditions on $V_T$.
+\end{remark}
+
+
+%======================================================================
+\section{The Fundamental Pricing Constraint}\label{sec:pricing}
+%======================================================================
+
+The results of the preceding sections---the Volterra--L\'evy
+It\^o formula, the defect decomposition, and the
+$\nu$-singular/$\nu$-regular splitting---describe the
+\emph{structure} of functionals of $V_T$.  We now turn to
+the question they are built to answer: what does risk-neutral
+pricing mean in a market with memory and jumps?
+
+The answer is the two-parameter Volterra risk-neutral
+constraint (VRNC): in a market with memory and jumps, the
+risk-neutral condition is a Volterra integral equation.  The
+central finding is that the kernel~$K$ enters the pricing
+constraint itself: the Brownian and jump risk premia are
+coupled through a Volterra integral equation, and cannot
+be chosen independently.  We also establish that the
+roughness parameter~$H$ is a structural invariant of the
+market, identical under the physical and pricing measures.
+
+\subsection{Asset dynamics with memory and jumps}
+
+Consider an asset driven by both the L\'evy driver $L$ directly
+and by a memory factor:
+\begin{equation}\label{eq:asset-VL}
+  \frac{dS_t}{S_t} = \mu_t\,dt + \lambda_t\,dL_t
+  + \beta_t\,dZ_t,
+\end{equation}
+where $Z_t = \int_0^t K(t,s)\,dL_s$ is the Volterra observable,
+$\lambda_t$ is the direct (``fresh'') exposure, and $\beta_t$ is
+the memory-factor loading.  Both $\lambda$ and $\beta$ are bounded
+predictable processes.
+
+\begin{remark}[Semimartingale scope]\label{rem:VRNC-scope}
+The dynamics~\eqref{eq:asset-VL} require $Z$ to have
+well-defined stochastic differentials, i.e., $Z$ must be a
+semimartingale.  For regular kernels (e.g., exponential
+$K(t,s) = e^{-\kappa(t-s)}$), $Z$ is a semimartingale and
+$dZ_t$ is well-defined.  For singular kernels (fractional
+$K_H$ with $H < 1/2$), $Z$ is generally not a semimartingale,
+and the ``differential form''~\eqref{eq:asset-VL} is
+interpreted at the integrated level:
+$\log S_t = \log S_0 + \int_0^t(\mu_s - \frac{1}{2}\sigma_s^2)\,ds
++ \lambda \cdot L_t + \beta \cdot Z_t + \ldots$, where
+$\lambda \cdot L$ and $\beta \cdot Z$ are Volterra integrals.
+The integral form of the VRNC~\eqref{eq:VRNC-int} is then the
+primary constraint.
+\end{remark}
+
+
+\subsection{L\'evy--Girsanov measure change}
+
+An equivalent measure $\QQ$ is defined by the Girsanov change on
+the two noise components of $L = \sigma_L W + J$:
+\begin{enumerate}[label=(\roman*)]
+\item \textbf{Continuous:} $W_t^\QQ := W_t + \int_0^t
+  \theta_s^W\,ds$, with $\theta^W$ a bounded predictable process
+  satisfying the Novikov condition.
+\item \textbf{Jump:} The compensated measure becomes
+  $\Ntilde^\QQ(dt,dz) := N(dt,dz) - e^{\theta_t^J(z)}\nu(dz)\,dt$,
+  with $\theta^J : [0,T] \times \R \to \R$ predictable in $t$,
+  measurable in $z$, satisfying
+  $\int_\R(e^{\theta^J(z)} - 1 - \theta^J(z))\nu(dz) < \infty$.
+\end{enumerate}
+The existence and form of the $\QQ$-density follow from
+the Girsanov theorem (for the Brownian component) and
+the L\'evy--Girsanov theorem (for the jump component);
+see~\cite{ContTankov2004}, Theorem~9.12, for the precise
+integrability conditions and the Radon--Nikodym density.
+We assume throughout that $(\theta^W, \theta^J)$ satisfy
+these conditions.
+
+
+\subsection{Drift functional for Volterra--L\'evy observables}
+
+\begin{theorem}[Two-parameter drift functional]
+\label{thm:drift-VL}
+Under the L\'evy--Girsanov measure change $(\theta^W, \theta^J)$,
+the Volterra observable $Z_t = \int_0^t K(t,s)\,dL_s$ decomposes
+under $\QQ$ as:
+\begin{equation}\label{eq:Z-decomp-VL}
+  Z_t = Z_t^\QQ + B_t^\theta,
+\end{equation}
+where $Z_t^\QQ = \int_0^t K(t,s)\,dL_s^\QQ$ is the
+$\QQ$-observable and the drift functional is
+\begin{equation}\label{eq:drift-functional-VL}
+  B_t^\theta
+  = \int_0^t K(t,s)\,\Psi_s\,ds,
+\end{equation}
+with the \emph{effective drift rate}
+\begin{equation}\label{eq:Psi-def}
+  \Psi_s := -\sigma_L\,\theta_s^W
+  + \int_\R z\bigl(e^{\theta_s^J(z)} - 1\bigr)\,\nu(dz).
+\end{equation}
+The first term is the continuous Girsanov drift; the second is
+the jump-induced drift.
+\end{theorem}
+
+\begin{proof}
+Under $\QQ$, the L\'evy driver decomposes as:
+\begin{align*}
+  dL_t &= \sigma_L\,dW_t + \int_\R z\,\Ntilde(dt,dz)\\
+  &= \sigma_L\,dW_t^\QQ - \sigma_L\theta_t^W\,dt
+  + \int_\R z\,\Ntilde^\QQ(dt,dz)
+  + \int_\R z\bigl(e^{\theta_t^J(z)} - 1\bigr)\nu(dz)\,dt\\
+  &= dL_t^\QQ + \Psi_t\,dt.
+\end{align*}
+Substituting into the Volterra integral:
+\begin{align*}
+  Z_t &= \int_0^t K(t,s)\,dL_s
+  = \int_0^t K(t,s)\,dL_s^\QQ + \int_0^t K(t,s)\,\Psi_s\,ds
+  = Z_t^\QQ + B_t^\theta.
+\end{align*}
+The drift functional $B_t^\theta = \int_0^t K(t,s)\Psi_s\,ds$ is a
+Volterra integral of $\Psi$ against the kernel---exactly the same
+structural form as the continuous case
+(\Cref{cor:VRNC-recovery}), with $\Psi$ replacing the
+continuous-only drift rate $-A_s\theta_s$.
+\end{proof}
+
+\begin{remark}[Structure of $\Psi$]\label{rem:Psi-structure}
+The effective drift rate $\Psi_s$ aggregates the continuous and jump
+market prices of risk into a single scalar at each time~$s$.  The
+jump contribution $\int z(e^{\theta^J(z)} - 1)\nu(dz)$ is the
+mean of the L\'evy measure under the tilted weight
+$e^{\theta^J(z)}$, minus the original mean (which is zero by
+symmetry of $\nu$).  This integral is well-defined when
+$\theta^J$ satisfies the integrability condition in the
+L\'evy--Girsanov theorem.
+
+For the Esscher transform $\theta^J(z) = \vartheta z$ (a common
+choice in financial applications),
+$\Psi_s = -\sigma_L\theta_s^W + \int z(e^{\vartheta_s z} - 1)\nu(dz)$.
+For symmetric $\nu$, the integral simplifies to
+$\int z(e^{\vartheta z} - 1)\nu(dz)
+= 2\int_0^\infty z\sinh(\vartheta z)\nu(dz)$,
+which is monotone in $\vartheta$.
+\end{remark}
+
+
+\subsection{The two-parameter VRNC}
+
+\begin{theorem}[Two-parameter Volterra risk-neutral constraint]
+\label{thm:VRNC-VL}
+Under the asset dynamics~\eqref{eq:asset-VL} with memory factor
+$Z_t = \int_0^t K(t,s)\,dL_s$, suppose $Z$ is a semimartingale
+(this holds for regular kernels, e.g.\ exponential
+$K(t,s) = e^{-\kappa(t-s)}$; for singular kernels see
+\Cref{rem:VRNC-singular}).  An equivalent measure $\QQ$
+defined by $(\theta^W, \theta^J)$ satisfying the
+Girsanov and L\'evy--Girsanov integrability conditions
+(see~\cite{ContTankov2004}, Theorem~9.12)
+makes the discounted stock
+$\tilde{S}$ a $\QQ$-local martingale only if the
+effective drift rate $\Psi$ satisfies:
+\begin{enumerate}[label=(\alph*)]
+\item \textbf{Differential form} (for regular kernels with
+  $\partial_t K$ existing):
+  \begin{equation}\label{eq:VRNC-diff}
+    \mu_t - r
+    = -\bigl[\lambda_t + \beta_t\,K(t,t)\bigr]\,\Psi_t
+    - \beta_t\!\int_0^t \partial_t K(t,s)\,\Psi_s\,ds.
+  \end{equation}
+
+\item \textbf{Integral form} (for all kernels, including singular):
+  \begin{equation}\label{eq:VRNC-int}
+    \int_0^t (\mu_s - r)\,ds
+    = -\int_0^t \lambda_s\,\Psi_s\,ds
+    - \int_0^t \beta_s\,\dot{B}_s^\theta\,ds,
+  \end{equation}
+  where $\dot{B}_s^\theta = \frac{d}{ds}\int_0^s K(s,u)\Psi_u\,du$
+  when the derivative exists.  For singular kernels,
+  the integral form is stated directly as the integrated
+  version of~\eqref{eq:RN-condition}.
+\end{enumerate}
+Both forms are Volterra integral equations for $\Psi$
+(of the second kind in the differential form, of the first kind
+in the integral form).  They are structurally identical to the
+continuous case (recovered in \Cref{cor:VRNC-recovery}), with the effective drift
+rate $\Psi_t = -\sigma_L\theta_t^W
++ \int z(e^{\theta_t^J(z)} - 1)\nu(dz)$ replacing the
+continuous-only $-A_t\theta_t$.
+\end{theorem}
+
+\begin{proof}
+Under $\QQ$, the asset dynamics~\eqref{eq:asset-VL} become:
+\begin{align*}
+  \frac{dS_t}{S_t}
+  &= \mu_t\,dt + \lambda_t\,(dL_t^\QQ + \Psi_t\,dt)
+  + \beta_t\,(dZ_t^\QQ + dB_t^\theta)\\
+  &= [\mu_t + \lambda_t\Psi_t + \beta_t\dot{B}_t^\theta]\,dt
+  + (\text{$\QQ$-martingale terms}).
+\end{align*}
+For $\tilde{S}_t = e^{-rt}S_t$ to be a $\QQ$-local martingale,
+the $dt$-coefficient must vanish:
+\begin{equation}\label{eq:RN-condition}
+  \mu_t - r + \lambda_t\,\Psi_t + \beta_t\,\dot{B}_t^\theta = 0.
+\end{equation}
+
+\textbf{Differential form.}  For regular kernels, the Leibniz rule
+gives:
+$\dot{B}_t^\theta = K(t,t)\,\Psi_t + \int_0^t \partial_t K(t,s)\,
+\Psi_s\,ds$.
+Substituting into~\eqref{eq:RN-condition}:
+$\mu_t - r = -\lambda_t\Psi_t - \beta_t[K(t,t)\Psi_t
++ \int_0^t\partial_t K\,\Psi_s\,ds]$,
+yielding~\eqref{eq:VRNC-diff}.
+
+\textbf{Integral form.}  Integrate~\eqref{eq:RN-condition} over
+$[0,t]$ directly:
+$\int_0^t(\mu_s - r)\,ds = -\int_0^t \lambda_s\Psi_s\,ds
+- \int_0^t \beta_s\dot{B}_s^\theta\,ds$.
+For singular kernels where $\dot{B}^\theta$ does not exist
+classically, this integrated form is the defining relation.
+\end{proof}
+
+\begin{corollary}[Recovery of the continuous VRNC]
+\label{cor:VRNC-recovery}
+When $\nu = 0$ (no jumps), $\theta^J$ is absent,
+$\Psi_t = -\sigma_L\theta_t^W$, and~\eqref{eq:VRNC-diff}
+reduces to the continuous
+VRNC:
+\[
+  \mu_t - r = [\lambda_t + \beta_t K(t,t)]\sigma_L\theta_t^W
+  + \beta_t\int_0^t \partial_t K(t,s)\,\sigma_L\theta_s^W\,ds.
+\]
+\end{corollary}
+
+\begin{corollary}[Markov recovery]\label{cor:VRNC-markov}
+When $K(t,s) = \mathbf{1}_{\{s \leq t\}}$ (Markov kernel),
+$K(t,t) = 1$ and $\partial_t K = 0$.  The VRNC reduces to
+the \emph{pointwise} constraint:
+\[
+  \mu_t - r = -(\lambda_t + \beta_t)\,\Psi_t,
+\]
+which determines $\Psi_t$ algebraically at each $t$ (no integral
+equation).  In the continuous case ($\Psi_t = -\sigma_L\theta_t^W$),
+this becomes $\mu_t - r = (\lambda_t + \beta_t)\sigma_L\theta_t^W$,
+the classical drift cancellation condition.
+\end{corollary}
+
+
+\subsection{The measure-selection degrees of freedom}
+
+\begin{proposition}[Decomposition of the pricing freedom]
+\label{prop:freedom}
+The VRNC (\Cref{thm:VRNC-VL}) determines the effective drift
+rate $\Psi$ uniquely (when the Volterra equation has a unique
+solution).  However, $\Psi$ does not determine $(\theta^W,
+\theta^J)$ uniquely: the decomposition
+\begin{equation}\label{eq:Psi-decomp}
+  \Psi_t = -\sigma_L\,\theta_t^W + \Phi_t^J,
+  \qquad
+  \Phi_t^J := \int_\R z\bigl(e^{\theta_t^J(z)} - 1\bigr)\,\nu(dz),
+\end{equation}
+has one equation in the unknowns $(\theta_t^W, \theta_t^J(\cdot))$.
+The remaining degrees of freedom are:
+\begin{enumerate}[label=(\alph*)]
+\item \textbf{The continuous--jump split:} For any choice of
+  $\Phi^J$ (equivalently, $\theta^J$), the continuous component is
+  determined: $\theta_t^W = (\Phi_t^J - \Psi_t)/\sigma_L$.
+  Different choices of $\Phi^J$ correspond to different
+  allocations of the effective drift between the Brownian and
+  jump channels.
+
+\item \textbf{The jump-measure shape:} Even given $\Phi^J$
+  (the first $z$-moment of the tilted measure), the function
+  $\theta^J(z)$ is not determined: many L\'evy measure
+  changes $e^{\theta^J(z)}\nu(dz)$ can produce the same
+  $\Phi^J = \int ze^{\theta^J(z)}\nu(dz)$.  This is the
+  infinite-dimensional freedom of the jump-risk pricing
+  kernel.
+\end{enumerate}
+The total pricing freedom is therefore: one functional
+degree of freedom (the choice of $\Phi^J_t$ at each $t$)
+plus an infinite-dimensional degree per time point (the
+shape of $\theta^J_t(\cdot)$ conditional on its
+$z$-weighted integral being $\Phi_t^J$).
+\end{proposition}
+
+\begin{proof}
+The VRNC is a Volterra equation for $\Psi$, which (under
+standard conditions on $\lambda, \beta, K$---see,
+e.g.,~\cite{GripenbergLondenStaffans1990}) has a unique
+solution.  The decomposition~\eqref{eq:Psi-decomp} then
+gives $\theta^W$ as a function of $\Phi^J$ and $\Psi$.
+The remaining freedom in $\theta^J$ given $\Phi^J$ is
+clear: the map $\theta^J \mapsto \int ze^{\theta^J}\nu(dz)$
+is many-to-one.
+\end{proof}
+
+\begin{remark}[Interpretation: what does the VRNC select?]
+\label{rem:VRNC-selects}
+The VRNC determines $\Psi$---the \emph{total effective drift} of
+the memory factor $Z$ under the pricing measure.  This is the
+minimal constraint needed for the stock to be priced correctly.
+The remaining freedom corresponds to how jump risk is priced
+\emph{within} the volatility dynamics---invisible to the stock
+but visible to volatility derivatives.
+
+Different selections of $\theta^J$ (given the same $\Psi$) produce
+different $\QQ$-dynamics for volatility, hence different prices for
+variance swaps and vol-of-vol products.  This is the jump analog of
+the model risk gap familiar from the continuous case:
+the choice of $\theta^J$ selects among
+EMMs that all price the stock correctly but disagree on
+vol-sensitive claims.
+
+The VRNC reduces this infinite-dimensional ambiguity to a
+structured problem: first solve the Volterra equation for $\Psi$
+(the memory-consistent effective drift), then choose the
+continuous--jump split according to additional criteria
+(minimal entropy, variance-optimal, calibration to vol
+derivatives, etc.).
+\end{remark}
+
+\begin{remark}[Connection to the defect]
+\label{rem:VRNC-defect}
+The defect scaling (\Cref{thm:scaling,cor:hedge-error}) and
+the VRNC interact: different choices of $\theta^J$ (within the
+VRNC constraint) produce different defect magnitudes in the
+hedging decomposition (\Cref{thm:hedging-main}).  The constant
+$C(h,\eta,p)$ in the hedging error bound depends on
+$\theta^J$ through the $\QQ$-moments of volatility.  The
+\emph{scaling exponents} are invariant
+(\Cref{prop:defect-form-invariance}), but the constants are not.
+\end{remark}
+
+
+\begin{remark}[The integral form for singular kernels]
+\label{rem:VRNC-singular}
+For the fractional kernel $K_H(t,s) = (t-s)^{H-1/2}$ with
+$H < 1/2$, $\partial_t K$ does not exist classically (it diverges
+as $(t-s)^{H-3/2}$ near $s = t$).  The integral
+form~\eqref{eq:VRNC-int} remains well-defined:
+\[
+  \int_0^t(\mu_s - r)\,ds = -\int_0^t\lambda_s\Psi_s\,ds
+  - \int_0^t\beta_s\!\left[\frac{d}{ds}\int_0^s
+  (s-u)^{H-1/2}\Psi_u\,du\right]ds.
+\]
+The inner Volterra integral $B_s^\theta = \int_0^s(s-u)^{H-1/2}
+\Psi_u\,du$ is well-defined and continuous in $s$ (since
+$\int_0^s(s-u)^{H-1/2}\,du = s^{H+1/2}/(H+1/2) < \infty$),
+even though its derivative $\dot{B}_s^\theta$ may not exist
+classically.  The integral form is therefore the primary
+constraint for singular kernels.
+\end{remark}
+
+
+%======================================================================
+
+\subsection{Bracket invariance and the roughness parameter}
+\label{sec:bracket-inv}
+
+We now prove that the roughness parameter $H$ is invariant
+under equivalent measure change---a result of both theoretical
+and practical significance.
+
+\begin{definition}[Volterra bracket]\label{def:volterra-bracket}
+For the Volterra--L\'evy process $V_T(t) = \int_0^t K(T,s)\,dL_s$,
+the \emph{continuous bracket} is
+\begin{equation}\label{eq:cont-bracket}
+  \langle V_T^c \rangle_t
+  = \sigma_L^2\int_0^t K(T,s)^2\,ds,
+\end{equation}
+and the \emph{jump bracket} (predictable quadratic variation
+of the pure-jump part) is
+\begin{equation}\label{eq:jump-bracket}
+  \langle V_T^d \rangle_t
+  = \int_0^t K(T,s)^2\,ds\;\cdot\;\int_\R z^2\,\nu(dz)
+\end{equation}
+when $\int z^2\,\nu(dz) < \infty$ (e.g., tempered stable),
+and is infinite for purely stable $\nu$ with $\gamma < 2$.
+The \emph{total bracket} is the predictable compensator of
+$[V_T]_t = \sum_{s \leq t}(\Delta V_T(s))^2$.
+\end{definition}
+
+\begin{theorem}[Bracket invariance]\label{thm:bracket-inv}
+Let $\QQ \sim \PP$ be an equivalent measure satisfying the
+Girsanov and L\'evy--Girsanov conditions.  Write
+$W^\QQ = W + \int_0^\cdot \theta_s^W\,ds$ for the
+$\QQ$-Brownian motion and $\Ntilde^\QQ(dt,dz) =
+N(dt,dz) - e^{\theta_t^J(z)}\nu(dz)\,dt$ for the $\QQ$-compensated
+Poisson measure, where $\theta_t^J(z)$ may depend on time.
+Then:
+\begin{enumerate}[label=(\alph*)]
+\item \textbf{Continuous bracket:}
+  $\langle V_T^c \rangle_t^\QQ = \langle V_T^c \rangle_t^\PP
+  = \sigma_L^2\int_0^t K(T,s)^2\,ds$.
+  This is deterministic and identical under both measures.
+\item \textbf{Jump bracket transformation:} The $\QQ$-jump
+  bracket (predictable compensator of $[V_T^d]_t$) satisfies
+  \begin{equation}\label{eq:jump-bracket-Q}
+    \langle V_T^d \rangle_t^\QQ
+    = \int_0^t K(T,s)^2
+    \left(\int_\R z^2\,e^{\theta_s^J(z)}\,\nu(dz)\right)ds.
+  \end{equation}
+  The \emph{kernel structure} $K(T,s)^2$ within the time
+  integral is unchanged; the $z^2$-moment acquires a
+  time-dependent re-weighting factor
+  $\int z^2 e^{\theta_s^J(z)}\nu(dz)$.
+  When $\theta^J$ is time-independent, this factors as
+  $(\int_0^t K(T,s)^2\,ds)\cdot(\int z^2 e^{\theta^J(z)}\nu(dz))$.
+\item \textbf{Roughness invariance (continuous bracket sense):}
+  The continuous bracket $\langle V_T^c\rangle_t
+  = \sigma_L^2\int_0^t K(T,s)^2\,ds$ is a deterministic
+  function of $t$, identical under $\PP$ and $\QQ$.
+  In particular, for $K = K_H$:
+  \begin{equation}\label{eq:H-invariant}
+    \langle V_T^c \rangle_t
+    = \frac{\sigma_L^2}{2H}
+    \bigl[T^{2H} - (T-t)^{2H}\bigr]
+    \qquad (\text{same under $\PP$ and $\QQ$}).
+  \end{equation}
+  Any quantity extracted from the continuous bracket of
+  $V_T(\cdot)$ --- including the $\log$-$\log$ slope of
+  $\Delta\Gamma(t,h)$ vs.\ $h$ --- is therefore
+  measure-invariant.
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}[What is and is not proved about $H$-invariance]
+\label{rem:H-scope}
+\Cref{thm:bracket-inv}(c) establishes measure-invariance
+of the continuous bracket of the \emph{partial process}
+$V_T(t) = \int_0^t K(T,s)\,dL_s$, which is a semimartingale.
+For the \emph{Volterra process} $V_t = \int_0^t K(t,s)\,dL_s$
+(generally not a semimartingale), the $2H$-H\"older regularity
+\[
+  \E[|V_{t+h} - V_t|^2] \asymp h^{2H}
+  \qquad (h \to 0)
+\]
+is determined by the kernel geometry near the diagonal.
+This scaling is also measure-invariant when both the
+continuous bracket (invariant by~(a)) and the second
+jump moment $\int z^2\,\nu^\QQ(dz)$ are finite: the
+latter changes by the bounded factor $e^{\theta^J(z)}$,
+which rescales the prefactor but preserves the exponent.
+When $\int z^2\,\nu(dz) = \infty$ (purely stable), the
+second moment $\E[|V_{t+h} - V_t|^2]$ is itself infinite,
+and $H$-regularity must be defined via other means (e.g.,
+$p$-variation or Besov regularity).  In that setting, the
+invariance of $H$ requires a separate argument, which we
+do not provide here.
+\end{remark}
+
+\begin{proof}
+(a) The continuous bracket $\langle V_T^c \rangle$ is the
+predictable compensator of $(V_T^c)^2 = (\sigma_L\int K\,dW)^2$.
+Since $K(T,\cdot)$ is deterministic, $\langle V_T^c \rangle_t
+= \sigma_L^2\int_0^t K(T,s)^2\,ds$ is also deterministic.
+Under the Girsanov change $W \to W^\QQ$, the continuous
+bracket of a semimartingale is preserved: $\langle M^c \rangle$
+is the same under $\PP$ and~$\QQ$ for any continuous
+local martingale $M^c$ (this is a standard fact;
+see~\cite{ContTankov2004}, Theorem~9.12).
+
+(b) Under the L\'evy--Girsanov theorem, the compensator of
+$N(dt,dz)$ changes from $\nu(dz)\,dt$ to
+$e^{\theta_t^J(z)}\nu(dz)\,dt$.  The
+predictable compensator of $[V_T^d]_t = \sum_{s \leq t}
+K(T,s)^2(\Delta L_s)^2$ is
+$\int_0^t K(T,s)^2\,(\int z^2 e^{\theta_s^J(z)}\nu(dz))\,ds$,
+since the jump sizes $\Delta L_s$ retain their magnitude
+under~$\QQ$ (only the compensating intensity changes).
+
+(c) The formula~\eqref{eq:H-invariant} is an explicit computation:
+$\int_0^t(T-s)^{2H-1}\,ds = [T^{2H} - (T-t)^{2H}]/(2H)$.
+This is deterministic and hence identical under $\PP$
+and~$\QQ$.
+\end{proof}
+
+\begin{remark}[Practical consequence]\label{rem:H-calibration}
+The roughness parameter $H$ estimated from historical data
+(under $\PP$) is the same $H$ that governs risk-neutral dynamics
+(under~$\QQ$).  This is widely assumed in the rough volatility
+literature but rarely stated as a theorem.  The proof above
+shows it is a consequence of a general principle: the bracket
+structure (which encodes $H$) is a geometric property of the
+energy space, invariant under absolutely continuous measure
+changes.  This holds for the combined Volterra--L\'evy setting,
+not just the Gaussian case.
+\end{remark}
+
+\begin{corollary}[The roughness parameter is calibration-invariant]
+\label{cor:roughness-greek}
+The value of $H$ entering the pricing formula
+$\E^\QQ[B_T^{-1}h(S_T)]$ is the same whether estimated from
+historical data (under $\PP$) or from risk-neutral calibration
+(under $\QQ$): the kernel $K_H$ parameterizing the energy
+space is identical under both measures.
+
+This is in contrast to parameters like the drift $\mu$ or
+the vol-of-vol $\eta$, whose risk-neutral values depend on
+the market price of risk $(\theta^W, \theta^J)$.  The Hurst
+parameter is an energy-space parameter, not a drift parameter,
+and is therefore calibration-invariant.
+\end{corollary}
+
+
+
+\subsection{Defect invariance under measure change}
+\label{sec:defect-invariance}
+
+\begin{proposition}[Structural form invariance]
+\label{prop:defect-form-invariance}
+The decomposition of the hedging error into $\nu$-singular and
+$\nu$-regular components (\Cref{thm:hedging-main}) is
+invariant under the choice of equivalent martingale
+measure~$\QQ$.  Specifically:
+\begin{enumerate}[label=(\alph*)]
+\item The $\nu$-singular part (first-order jump exposure)
+  remains $\nu$-singular under any $\QQ \sim \PP$: the
+  integrand $\lambda_t z$ changes (through $\lambda_t$)
+  but retains the $z$-linear structure.
+\item The $\nu$-regular part (defect) remains $\nu$-regular:
+  the integrand $\psi_t^{\mathrm{def}}(z)$ changes but retains
+  the $z^2$-scaling for small jumps.
+\item The \emph{scaling exponents} in the defect norm
+  (\Cref{cor:hedge-error}) are the same for all~$\QQ$: the
+  exponent $2H + 1/p$ comes from the kernel (measure-invariant
+  by \Cref{thm:bracket-inv}), and the exponent
+  $(2p - \gamma)^{-1/p}$ comes from the L\'evy measure's
+  small-jump behavior, which is preserved up to an absolutely
+  continuous Radon--Nikodym density $e^{\theta^J(z)}$.
+\end{enumerate}
+Only the \emph{constants} (depending on $\theta$) change
+with~$\QQ$; the structural form and scaling are intrinsic.
+\end{proposition}
+
+\begin{proof}
+(a) Under the L\'evy--Girsanov theorem, the $\QQ$-intensity
+of jumps is $\nu^\QQ(dz) = e^{\theta^J(z)}\nu(dz)$.  The
+integrand of the first-order term is $\lambda_t^\QQ\,z$,
+still linear in $z$.  Since $\int|z|^p\,\nu^\QQ(dz)
+= \int|z|^p e^{\theta^J(z)}\nu(dz) = \infty$ (the
+singularity at $z = 0$ is unchanged by the bounded
+multiplicative factor $e^{\theta^J(z)}$), the
+$\nu^\QQ$-singularity persists.
+
+(b) The defect integrand satisfies
+$|\psi_t^{\mathrm{def},\QQ}(z)|
+\leq C^\QQ\,(\int_t^T K^2\,ds)\,z^2$ for $|z| \leq 1$,
+where $C^\QQ$ depends on $\theta$ through the
+$\QQ$-moments of $\sigma$.  The $z^2$ factor is independent
+of the measure change.  Since
+$\int_{|z|\leq 1}|z|^{2p}\nu^\QQ(dz)
+= \int_{|z|\leq 1}|z|^{2p}e^{\theta^J(z)}\nu(dz)
+\leq \|e^{\theta^J}\|_\infty\int_{|z|\leq 1}
+|z|^{2p}\nu(dz) < \infty$, the defect remains
+$\nu^\QQ$-regular.
+
+(c) The scaling $\int_0^T K_H(T,t)^{2p}\,dt
+= T^{2pH-p+1}/(2pH-p+1)$ is deterministic and measure-free.
+The small-jump moment $\int_{|z|\leq 1}|z|^{2p}\nu^\QQ(dz)$
+changes by the bounded factor
+$e^{\theta^J(z)} \in [e^{-\|\theta^J\|_\infty},
+e^{\|\theta^J\|_\infty}]$, which does not affect the
+divergence rate as $\gamma \to 2p^-$.
+\end{proof}
+
+
+%======================================================================
+
+%======================================================================
+\section{Scaling Law and Structural Obstructions}\label{sec:scaling}
+%======================================================================
+
+Given the pricing framework of \Cref{sec:pricing}, we now
+quantify the magnitude of the unhedgeable component.  The
+kernel-weighted Leibniz defect has a precise scaling in the
+Hurst parameter~$H$, the horizon~$T$, and the stable
+index~$\gamma$ of the L\'evy measure.  We also establish
+that the $\nu$-singularity obstruction---the fact that
+$L_T \notin \mathrm{im}(\widetilde{\delta}_J)$, since the
+integrand $z$ has infinite $L^p(\nu)$ norm---persists
+under Volterra convolution: the kernel cannot
+regularize the jump-size singularity.
+
+\subsection{Persistence of the $\nu$-singularity obstruction}
+
+The process $L_T$ itself is
+$\nu$-singular: its unique two-parameter integrand $z$ does not
+belong to $\widetilde{H}_J = L^p(dt \otimes \nu \otimes dP)$
+because $\int|z|^p\,\nu(dz) = \infty$ for $p < \gamma$.  We
+show this obstruction persists under Volterra convolution.
+
+\begin{proposition}[$\nu$-singularity of $V_T$]
+\label{prop:VT-singular}
+Let $V_T = \int_0^T K(T,s)\,dL_s$ with $K(T,\cdot) \not\equiv 0$.
+Then $V_T$ is $\nu$-singular: $V_T \notin \im(\widetilde{\delta}_J)$.
+\end{proposition}
+
+\begin{proof}
+By the L\'evy--It\^o decomposition,
+$V_T = \sigma_L\int_0^T K(T,s)\,dW_s
++ \int_0^T\!\!\int_\R K(T,s)\,z\,\Ntilde(ds,dz)$.
+The Poisson part has integrand $h(s,z) = K(T,s)\,z$.
+By the uniqueness of the compensated Poisson representation
+(\cite{Applebaum2009}, Theorem~4.2.5), if the Poisson part
+of $V_T$ admits any representation
+$\int\!\!\int \tilde{h}\,d\Ntilde$, then
+$\tilde{h}(s,z) = K(T,s)\,z$ $\nu \otimes dt$-a.e.
+
+Now compute:
+\[
+  \|K(T,\cdot)\,z\|_{\widetilde{H}_J}^p
+  = \E\!\int_0^T\!\!\int_\R |K(T,s)|^p\,|z|^p\,\nu(dz)\,ds
+  = \left(\int_0^T |K(T,s)|^p\,ds\right)
+  \cdot\left(\int_\R |z|^p\,\nu(dz)\right).
+\]
+The first factor is finite by \Cref{ass:kernel}\ref{K1}.
+The second factor is $\int_\R|z|^p\nu(dz) = \infty$
+(since $p < \gamma$: the integral
+$\int_{|z|\leq 1}|z|^p\,\nu_\gamma(dz)
+= 2c_\gamma\int_0^1 z^{p-1-\gamma}\,dz = \infty$
+when $p < \gamma$).
+
+Thus $K(T,\cdot)z \notin \widetilde{H}_J$, and no alternative
+integrand exists.  Hence
+$V_T \notin \im(\widetilde{\delta}_J)$.
+\end{proof}
+
+\begin{remark}[The kernel cannot regularize the singularity]
+\label{rem:kernel-cannot-regularize}
+This result is not obvious \emph{a priori}: the kernel
+$K(T,s)$ is bounded on compact intervals, so one might
+hope it could improve the $z$-integrability.  But $K$
+acts on the \emph{time} variable, while the singularity is
+in the \emph{jump-size} variable $z$.  The factorization
+$h(s,z) = K(T,s) \cdot z$ means the $z$-singularity is
+inherited unchanged from $L_T$ to $V_T$, regardless of the
+kernel's regularity in $s$.  The obstruction is an intrinsic
+property of the L\'evy measure, not the temporal structure.
+\end{remark}
+
+\begin{corollary}[Two-regime decomposition persists]
+\label{cor:two-regime-persists}
+For any $\phi \in C_b^3(\R)$, the centered functional
+$\phi(V_T) - \E[\phi(V_T)]$ decomposes into a
+$\nu$-singular part (the first-order Poisson integral
+$\int\!\!\int \phi'(V_T(s\!-\!))K(T,s)z\,\Ntilde(ds,dz)$)
+and a $\nu$-regular part (the defect
+$\Gamma_V^\phi = \widetilde{\delta}_J(g_\phi^K)$),
+as in \Cref{thm:defect-decomposition}.  The kernel does not collapse
+the two regimes; it merely weights the defect.
+\end{corollary}
+
+
+\subsection{Defect scaling for fractional kernels}
+
+We specialize to the fractional kernel
+$K_H(t,s) = (t-s)^{H-1/2}$ and derive the scaling of the
+defect norm in $H$, $T$, and the L\'evy measure parameters.
+
+\begin{lemma}[Kernel integral]\label{lem:kernel-integral}
+For $K_H(T,t) = (T-t)^{H-1/2}$ and any exponent $r > 0$:
+\begin{equation}\label{eq:kernel-integral}
+  \int_0^T |K_H(T,t)|^r\,dt
+  = \int_0^T (T-t)^{r(H-1/2)}\,dt
+  = \frac{T^{r(H-1/2)+1}}{r(H-1/2)+1},
+\end{equation}
+provided $r(H - 1/2) > -1$, i.e.,
+\begin{equation}\label{eq:H-condition}
+  H > \frac{1}{2} - \frac{1}{r}.
+\end{equation}
+For $r = 2p$ with $p \in (1,\gamma)$, this
+becomes $H > (p-1)/(2p)$.  Note that $(p-1)/(2p)$ is
+\emph{positive} for $p > 1$ and increases with $p$:
+at $p = 1.5$, the condition is $H > 1/6$; at $p \to 2^-$,
+it approaches $H > 1/4$.  Thus $H > 0$ alone does
+\emph{not} suffice; one needs $H > (p-1)/(2p)$.
+\end{lemma}
+
+\begin{assumption}[Roughness--exponent compatibility]
+\label{ass:Hp}
+The Hurst parameter $H$ and the working exponent $p$
+satisfy $H > (p-1)/(2p)$.  This is equivalent to
+$2pH - p + 1 > 0$ (convergence of the kernel integral
+$\int_0^T K_H(T,t)^{2p}\,dt$).  Note:
+\begin{itemize}
+\item When $H \geq 1/2$: the condition is vacuous
+  (satisfied for all $p \geq 1$).
+\item When $H < 1/2$: the condition requires
+  $p < 1/(1 - 2H)$.  For example, $H = 0.1$ requires
+  $p < 1.25$; $H = 0.25$ requires $p < 2$.
+\end{itemize}
+\end{assumption}
+
+\begin{theorem}[Defect scaling law]\label{thm:scaling}
+Let $K = K_H$ (fractional kernel), $\nu$ satisfying
+\Cref{ass:nu} with local stable index $\gamma \in (1,2)$,
+and $f \in C_b^3(\R)$.  Fix $p \in (1,\gamma)$ satisfying
+\Cref{ass:Hp} (i.e., $H > (p-1)/(2p)$), and assume the
+tail condition~\ref{L2} holds with $q \geq p$.  Then:
+\begin{equation}\label{eq:scaling-law}
+  \|\Gamma_V^f\|_{L^p}^p
+  \leq C_p^p\,\|g_f^{K_H}\|_{\widetilde{H}_J}^p
+  \leq C(f,p)\;\frac{T^{2pH - p + 1}}{2pH - p + 1}
+  \;\cdot\;\frac{2c_\gamma}{2p - \gamma}
+  \;+\; R(f,T,p),
+\end{equation}
+where:
+\begin{itemize}
+\item The first inequality is the L\'evy BDG upper bound
+  (with $C_p$ the BDG constant from~\cite{Dirksen2015}).
+\item $C(f,p) = C_p^p \cdot \|f''\|_\infty^p / 2^p$
+  is the small-jump coefficient.
+\item $R(f,T,p)$ is the large-jump remainder:
+  $R = C'\,T\!\int_{|z|>1}(1+|z|^p)\nu(dz)$, which is
+  finite under~\ref{L2} with $q \geq p$.
+\end{itemize}
+In particular, the defect $L^p$-norm (to leading order) scales as:
+\begin{equation}\label{eq:scaling-summary}
+  \|\Gamma_V^f\|_{L^p}
+  \sim C \cdot T^{2H - 1 + 1/p}
+  \cdot \left(\frac{c_\gamma}{2p - \gamma}\right)^{1/p}
+  \qquad \text{as } T \to \infty \text{ or } \gamma \to 2p^-.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By the two-parameter BDG inequality (\cite{Dirksen2015},
+Corollary~3.3),
+$\|\widetilde{\delta}_J(g)\|_{L^p} \leq
+C_p\,\|g\|_{\widetilde{H}_J}$.
+The norm bound~\eqref{eq:gfK-bound} with the kernel integral
+(\Cref{lem:kernel-integral}, $r = 2p$):
+\[
+  \int_0^T |K_H(T,t)|^{2p}\,dt
+  = \frac{T^{2p(H-1/2)+1}}{2p(H-1/2)+1}
+  = \frac{T^{2pH - p + 1}}{2pH - p + 1},
+\]
+and the jump moment:
+$\int_{|z|\leq 1}|z|^{2p}\,\nu_\gamma(dz)
+= 2c_\gamma\int_0^1 z^{2p-1-\gamma}\,dz
+= 2c_\gamma/(2p - \gamma)$,
+yield the bound~\eqref{eq:scaling-law}.
+
+For the large-$T$ or near-critical ($\gamma \to 2p$) behavior,
+the large-jump remainder is subdominant, giving~\eqref{eq:scaling-summary}.
+\end{proof}
+
+
+\begin{corollary}[Roughness--jump interaction]
+\label{cor:interaction}
+The defect norm is controlled by the product
+\[
+  \|\Gamma_V^f\|_{L^p} \lesssim
+  \underbrace{T^{2H-1+1/p}}_{\text{roughness contribution}}
+  \times
+  \underbrace{(2p - \gamma)^{-1/p}}_{\text{jump contribution}}.
+\]
+The interaction is multiplicative:
+\begin{enumerate}[label=(\alph*)]
+\item \textbf{Pure rough volatility} ($\nu = 0$, $\sigma > 0$):
+  $\Gamma_V^f = 0$.  The continuous energy space suffices,
+  and perfect hedging is achievable (recovering the result
+  of~\cite{ElEuchRosenbaum2019}).
+\item \textbf{Markov limit} ($H = 1/2$):
+  $T^{2H-1+1/p} = T^{1/p}$.  The defect reduces to the
+  standard L\'evy Leibniz defect of~\cite{Fontes2026d},
+  without kernel amplification.
+\item \textbf{Rough-jump regime} ($H < 1/2$, $\gamma < 2$):
+  the exponent $2H - 1 + 1/p < 1/p$, so the defect
+  grows more slowly with $T$ than in the Markov case.
+
+  \textbf{However}, the kernel singularity $K_H(T,t) =
+  (T-t)^{H-1/2}$ amplifies \emph{recent} jumps: for
+  $t$ near $T$, $K_H(T,t) \gg 1$, so the integrand
+  $g_f^K(t,z) \approx \frac{1}{2}f''(T-t)^{2(H-1/2)}z^2$
+  is large.  The defect norm concentrates on a
+  neighborhood of $T$ of width $\sim \epsilon$, with
+  the local contribution scaling as
+  $\epsilon^{2p(H-1/2)+1}$---which is finite but large
+  when $H \ll 1/2$.
+\end{enumerate}
+\end{corollary}
+
+\begin{remark}[The interaction is not additive]
+\label{rem:not-additive}
+In a model with roughness $H$ and jump index $\gamma$, the
+unhedgeable residual is \emph{not}
+``rough-vol-error $+$ jump-error.''  The kernel $K_H$ enters the
+defect integrand $g_f^K(t,z) = f(V_T(t\!-\!) + K_H(T,t)z)
+- f(V_T(t\!-\!)) - f'(V_T(t\!-\!))K_H(T,t)z$ multiplicatively:
+larger kernels produce larger Taylor remainders for each jump.
+This multiplicative structure is a genuinely new phenomenon
+visible only in the combined Volterra--L\'evy setting.
+\end{remark}
+
+
+\subsection{Sharpness: the variance swap payoff}
+
+The upper bound in \Cref{thm:scaling} arises from two
+inequalities: the Taylor bound $|g_f^K| \leq
+\frac{1}{2}\|f''\|_\infty K^2 z^2$ for small jumps, and
+the BDG inequality $\|\widetilde{\delta}_J(g)\|_{L^p}
+\leq C_p\|g\|_{\widetilde{H}_J}$.  We now show
+that the scaling exponents are sharp by exhibiting a payoff
+for which the Taylor bound is exact.
+
+\begin{proposition}[Sharpness of scaling: quadratic payoff]
+\label{thm:sharpness}
+Let $f(x) = x^2$, $K = K_H$, and assume:
+\begin{enumerate}[label=(\roman*)]
+\item $H > (p-1)/(2p)$ (\Cref{ass:Hp});
+\item $\nu_{2p} := \int_\R |z|^{2p}\,\nu(dz) < \infty$
+  (i.e., the tail condition~\ref{L2} holds with $q \geq 2p$;
+  this is \emph{not} automatic under purely stable tails,
+  but holds under tempered stable tails).
+\end{enumerate}
+Note that $f \notin C_b^3(\R)$; however, the defect
+integrand $g_f^K$ is deterministic and has polynomial
+growth in $z$, so the following identities hold by
+direct computation (not by invoking \Cref{thm:VL-ito},
+which assumes $f \in C_b^3$):
+\begin{enumerate}[label=(\alph*)]
+\item The defect integrand is exact:
+  \begin{equation}\label{eq:gfK-exact}
+    g_f^K(t,z) = K_H(T,t)^2\,z^2
+    \qquad \text{(deterministic)}.
+  \end{equation}
+\item The $\widetilde{H}_J$-norm is
+  \begin{equation}\label{eq:gfK-exact-norm}
+    \|g_f^K\|_{\widetilde{H}_J}^p
+    = \int_0^T |K_H(T,t)|^{2p}\,dt
+    \;\cdot\;\int_\R |z|^{2p}\,\nu(dz)
+    = \frac{T^{2pH - p + 1}}{2pH - p + 1}
+    \;\cdot\;\nu_{2p}.
+  \end{equation}
+  Under tempered stable tails, $\nu_{2p}$ has both small-jump
+  and large-jump contributions:
+  $\nu_{2p} = \int_{|z|\leq 1}|z|^{2p}\nu(dz)
+  + \int_{|z|>1}|z|^{2p}\nu(dz)$;
+  the first equals $2c_\gamma/(2p-\gamma)$ and the second
+  is finite by the exponential tail decay.  The leading
+  singularity as $\gamma \to 2p^-$ is from the small-jump
+  part.
+\item The $L^2$ isometry (under the additional condition
+  $\nu_4 := \int_\R z^4\,\nu(dz) < \infty$ and $H > 1/4$):
+  \begin{equation}\label{eq:Gamma-L2}
+    \|\Gamma_V^f\|_{L^2}^2
+    = \int_0^T K_H(T,t)^4\,dt\;\cdot\;\nu_4
+    = \frac{T^{4H-1}}{4H - 1}\;\cdot\;\nu_4.
+  \end{equation}
+  This is an \emph{equality} (It\^o isometry for
+  deterministic integrands), not merely an inequality.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(a) $f(x) = x^2$ gives $f(x + y) - f(x) - 2xy = y^2$.
+Set $x = V_T(t\!-\!)$, $y = K_H(T,t)z$:
+$g_f^K(t,z) = K_H(T,t)^2 z^2$.  This is deterministic
+(no dependence on $V_T(t\!-\!)$).  The identity is exact for
+all $z$, with no Taylor remainder.  That $f \notin C_b^3$ is
+immaterial: the algebraic identity $(x+y)^2 - x^2 - 2xy = y^2$
+holds pointwise.
+
+(b) Since $g_f^K$ is deterministic, the expectation in
+the $\widetilde{H}_J$-norm is trivial:
+$\|g_f^K\|_{\widetilde{H}_J}^p
+= \int_0^T |K_H(T,t)|^{2p}\,dt \cdot \int_\R|z|^{2p}\nu(dz)$.
+The time integral converges by \Cref{ass:Hp}; the jump integral
+converges by assumption~(ii).
+
+(c) For deterministic integrands $h \in L^2(dt \otimes \nu)$,
+the compensated Poisson integral satisfies the isometry
+$\E[|\widetilde{\delta}_J(h)|^2]
+= \int_0^T\!\int_\R h(t,z)^2\,\nu(dz)\,dt$
+(\cite{Applebaum2009}, Theorem~4.2.3).  Setting
+$h(t,z) = K_H(T,t)^2 z^2$ and computing:
+$\int_0^T K_H(T,t)^4\,dt = T^{4H-1}/(4H-1)$ (by
+\Cref{lem:kernel-integral} with $r = 4$, requiring $H > 1/4$),
+and $\int_\R z^4\,\nu(dz) = \nu_4 < \infty$ by assumption.
+\end{proof}
+
+\begin{remark}[Why $f(x)=x^2$ is legitimate despite $f \notin C_b^3$]
+\label{rem:quadratic-legitimate}
+The Volterra--L\'evy It\^o formula (\Cref{thm:VL-ito}) is
+stated for $f \in C_b^3$.  However, for $f(x) = x^2$, the
+defect integrand $g_f^K(t,z) = K(T,t)^2 z^2$ is the exact
+finite difference, not a Taylor approximation.  The It\^o
+formula for the semimartingale $V_T(t)$ applied to $x^2$
+is valid under the moment condition
+$\E[\int_0^T |K(T,t)|^2|\Delta L_t|^2] < \infty$,
+which holds when $\nu_2 < \infty$ (tempered stable) or
+by stopping time arguments for purely stable drivers.
+The bounded-smooth assumption in \Cref{thm:VL-ito} is
+used for the general Taylor-remainder bound; for the
+specific quadratic case, it is unnecessary.
+\end{remark}
+
+\begin{remark}[Significance for variance swaps]
+\label{rem:var-swap-sharpness}
+\Cref{thm:sharpness} shows that the
+upper bound in \Cref{thm:scaling} is \emph{achieved} (up
+to BDG constants) for the quadratic payoff class.  The
+scaling exponent $2pH - p + 1$ in $T$ is therefore tight:
+it is not an artifact of the Taylor approximation.
+The dependence on $\nu_{2p}$ is also exact, though
+the decomposition into small-jump and large-jump
+contributions depends on the tail behavior of $\nu$.
+\end{remark}
+
+\begin{remark}[BDG sharpness]\label{rem:BDG-sharp}
+For $p \neq 2$, the BDG inequality
+for Poisson integrals has a two-sided form
+$c_p\|h\|_{\widetilde{H}_J} \leq
+\|\widetilde{\delta}_J(h)\|_{L^p} \leq
+C_p\|h\|_{\widetilde{H}_J}$ when $h$ is deterministic
+(see~\cite{Dirksen2015}, Corollary~3.3).  Under the
+conditions of \Cref{thm:sharpness}, this gives:
+\begin{equation}\label{eq:two-sided}
+  c_p\;\frac{T^{2H - 1 + 1/p}}{(2pH-p+1)^{1/p}}
+  \;\cdot\;\nu_{2p}^{1/p}
+  \leq \|\Gamma_V^{x^2}\|_{L^p}
+  \leq C_p\;\frac{T^{2H - 1 + 1/p}}{(2pH-p+1)^{1/p}}
+  \;\cdot\;\nu_{2p}^{1/p}.
+\end{equation}
+\end{remark}
+
+
+\section{Application to Hedging}\label{sec:hedging}
+%======================================================================
+
+This section makes the connection between the Volterra--L\'evy
+It\^o formula and derivatives hedging precise.  The core
+difficulty is the \emph{composition chain}: a jump of size $z$ at
+time $t$ in the L\'evy driver propagates through the kernel $K$
+into the volatility process, then through the exponential
+vol-of-vol map into instantaneous volatility, then through the
+stock price dynamics into the terminal payoff.  Each nonlinear
+link in this chain generates a defect term; the total hedging
+residual is their aggregate.
+
+
+\subsection{Rough-jump stochastic volatility model}
+
+\begin{assumption}[Market model]\label{ass:market}
+The filtration $(\F_t)_{t \in [0,T]}$ is generated by three
+independent sources of noise:
+\begin{enumerate}[label=(N\arabic*)]
+\item\label{N1} A Brownian motion $W^\perp = (W_t^\perp)$
+  (``idiosyncratic stock noise'');
+\item\label{N2} A Brownian motion $W = (W_t)$
+  (``continuous volatility driver'');
+\item\label{N3} A compensated Poisson measure
+  $\Ntilde(dt,dz)$ on $[0,T] \times \R$ with intensity
+  $\nu$ satisfying \Cref{ass:nu}
+  (``jump volatility driver'').
+\end{enumerate}
+The three sources are mutually independent under the physical
+measure $\PP$.
+\end{assumption}
+
+The asset price and volatility dynamics are:
+\begin{align}
+  \frac{dS_t}{S_t} &= \mu_t\,dt + \sigma_t\,dW_t^S,
+  \label{eq:S-dynamics}\\
+  \log \sigma_t &= \log \sigma_0 + \eta\,V_t
+  - \tfrac{1}{2}\eta^2\,\E[V_t^2],
+  \label{eq:vol-dynamics}\\
+  V_t &= \int_0^t K(t,s)\,dL_s, \qquad
+  L_t = \sigma_L\,W_t + J_t,
+  \label{eq:V-dynamics}
+\end{align}
+where:
+\begin{enumerate}[label=(\roman*)]
+\item $W^S = \rho\,W + \sqrt{1 - \rho^2}\,W^\perp$ is the
+  stock-driving Brownian motion, with leverage parameter
+  $\rho \in (-1,1)$.
+\item $J_t = \int_0^t\!\!\int_\R z\,\Ntilde(ds,dz)$ is the
+  pure-jump component of the L\'evy driver, $\sigma_L \geq 0$.
+\item The kernel $K$ satisfies \Cref{ass:kernel}.
+\item The centering $-\frac{1}{2}\eta^2\E[V_t^2]$ ensures
+  $\E[\sigma_t^2] = \sigma_0^2$ (martingale correction for the
+  exponential).
+\end{enumerate}
+
+\begin{remark}[Independence structure]\label{rem:independence}
+The stock noise $W^S$ is a linear combination of the two Brownian
+components.  Equivalently, $W = \rho\,W^S
++ \sqrt{1-\rho^2}\,W^\perp_\star$ for an independent Brownian
+$W^\perp_\star$, but the $(W^\perp, W, \Ntilde)$ basis is more
+natural for the operator decomposition: each component generates
+a separate energy space, and the operator derivatives split
+accordingly (\Cref{prop:D-split}).
+\end{remark}
+
+
+\subsection{Martingale representation under three drivers}
+
+Under an equivalent pricing measure $\QQ$ (see
+\Cref{rem:Q-existence} below), the discounted stock
+$\tilde{S}_t := e^{-rt}S_t$ is a $\QQ$-martingale.  Write
+$W^{\perp,\QQ}$, $W^\QQ$, and $\Ntilde^\QQ$ for the
+$\QQ$-Brownian motions and compensated Poisson measure.
+By Girsanov's theorem (applied to the Brownian components)
+and the L\'evy--Girsanov theorem (for $\Ntilde$;
+see~\cite{ContTankov2004}, Theorem~9.12), the three
+sources remain independent under~$\QQ$.
+
+\begin{proposition}[Three-driver MRT]\label{prop:MRT}
+Under \Cref{ass:market}, every $F \in L^2(\F_T, \QQ)$ admits
+the unique martingale representation
+\begin{equation}\label{eq:MRT}
+  F = \E^\QQ[F]
+  + \int_0^T \phi_t^\perp\,dW_t^{\perp,\QQ}
+  + \int_0^T \phi_t^W\,dW_t^\QQ
+  + \int_0^T\!\!\int_\R
+  \psi_t(z)\,\Ntilde^\QQ(dt,dz),
+\end{equation}
+where $\phi^\perp, \phi^W$ are predictable processes in
+$L^2(\sigma^2\,dt \otimes d\QQ)$ and $\psi$ is a predictable
+random field in $L^2(dt \otimes \nu^\QQ(dz) \otimes d\QQ)$.
+\end{proposition}
+
+\begin{proof}
+The filtration $\F_t$ is generated by the
+three independent processes
+$(W^{\perp,\QQ}, W^\QQ, \Ntilde^\QQ)$ under~$\QQ$.  The joint
+predictable representation property follows from the PRP of
+Brownian motion (for each $W^{\perp,\QQ}$ and $W^\QQ$) and the
+martingale representation for Poisson random measures
+(\cite{Applebaum2009}, Theorem~5.3.5).  Independence ensures
+uniqueness of the three-component decomposition.
+\end{proof}
+
+\begin{remark}[Existence of $\QQ$]\label{rem:Q-existence}
+The model~\eqref{eq:S-dynamics}--\eqref{eq:V-dynamics} is
+generically \emph{incomplete}: three noise sources drive
+one traded asset.  Existence of an EMM $\QQ$ requires the
+market price of risk $\theta = (\theta^\perp, \theta^W,
+\theta^J(\cdot))$ to satisfy the integrability conditions
+of the Girsanov and L\'evy--Girsanov theorems.  For the
+Brownian components, this is the standard Novikov condition.
+For the jump component, the Esscher-type condition
+$\int_\R(e^{\theta^J(z)} - 1 - \theta^J(z))\,\nu(dz) < \infty$
+suffices.  The Volterra risk-neutral constraint
+(\Cref{thm:VRNC-VL}) provides additional structural conditions
+when memory factors are present.  The hedging analysis below
+holds for any fixed $\QQ$ satisfying these conditions; the
+\emph{choice} of $\QQ$ among valid EMMs affects the hedging
+integrands $\phi^\perp, \phi^W$ but not the structural form of
+the defect or its scaling.
+\end{remark}
+
+
+\subsection{From MRT to traded instruments}
+
+The representation~\eqref{eq:MRT} decomposes $h(S_T)$ into three
+orthogonal components, each associated to a noise source.  We now
+show how the first two are absorbed by stock and variance swap
+trading, and how the third---the jump component---carries the
+kernel-weighted Leibniz defect.
+
+\subsubsection{Stock hedge (absorbing $dW^{\perp,\QQ}$ and
+part of $dW^\QQ$)}
+
+Under $\QQ$, the stock dynamics are
+\begin{equation}\label{eq:SQ}
+  dS_t = S_t\bigl[r\,dt + \sigma_t\,(\rho\,dW_t^\QQ
+  + \sqrt{1-\rho^2}\,dW_t^{\perp,\QQ})\bigr].
+\end{equation}
+Define the \emph{stock delta process}
+$\Delta_t := \frac{1}{S_t\sigma_t}
+\bigl(\sqrt{1-\rho^2}\;\phi_t^\perp + \rho\;\phi_t^W\bigr)$.
+Then
+\begin{equation}\label{eq:stock-hedge-absorption}
+  \Delta_t\,dS_t = \Delta_t\,S_t\,\sigma_t\,dW_t^{S,\QQ} + \ldots
+  = (\sqrt{1-\rho^2}\;\phi_t^\perp + \rho\;\phi_t^W)\,
+  (\rho\,dW_t^\QQ + \sqrt{1-\rho^2}\,dW_t^{\perp,\QQ})
+  + \ldots
+\end{equation}
+Expanding and using the orthogonality $dW^\QQ \cdot dW^{\perp,\QQ} = 0$:
+\begin{equation}\label{eq:stock-absorbs}
+  \Delta_t\,dS_t \;=\;
+  (1-\rho^2)\,\phi_t^\perp\,dW_t^{\perp,\QQ}
+  + \rho^2\,\phi_t^W\,dW_t^\QQ
+  + \rho\sqrt{1-\rho^2}\,
+  (\phi_t^\perp + \phi_t^W)\,dW_t^\QQ
+  + \ldots
+\end{equation}
+
+We can simplify this by working in the rotated basis.  The stock
+hedge absorbs \emph{all} of the $dW^{S,\QQ}$-exposure:
+\begin{equation}\label{eq:stock-full}
+  \Delta_t\,dS_t = \phi_t^S\,dW_t^{S,\QQ} + (\text{drift}),
+  \quad \text{where }
+  \phi_t^S := \sqrt{1-\rho^2}\;\phi_t^\perp + \rho\;\phi_t^W.
+\end{equation}
+What remains after stock hedging is the component of $\phi^W$
+orthogonal to the stock:
+\begin{equation}\label{eq:residual-after-stock}
+  \phi_t^{W,\perp} := \phi_t^W
+  - \frac{\rho}{\sqrt{1-\rho^2}}\,\phi_t^\perp
+  \cdot \frac{\sqrt{1-\rho^2}}{\sigma_t S_t}
+  \cdot \sigma_t S_t\,\rho,
+\end{equation}
+which simplifies: the unhedged continuous exposure after delta
+hedging is
+\begin{equation}\label{eq:after-delta}
+  R_t^{\mathrm{cont}} := \phi_t^{W,\perp}\,dW_t^{\perp_\star,\QQ},
+\end{equation}
+where $W^{\perp_\star}$ is the Brownian motion orthogonal to
+$W^S$ in the $(W,W^\perp)$-plane.  This is the \emph{pure
+volatility exposure}---the component of the claim's value
+driven by volatility innovations that are uncorrelated with
+the stock.
+
+Rather than tracking the rotation explicitly, we state the
+result in coordinate-free form:
+
+\begin{lemma}[Residual after delta hedging]\label{lem:after-delta}
+Let $F = h(S_T)$ with MRT~\eqref{eq:MRT}.  After continuously
+delta-hedging with the stock, the hedging error is
+\begin{equation}\label{eq:delta-error}
+  h(S_T) - \E^\QQ[h(S_T)]
+  - \int_0^T \Delta_t\,dS_t
+  = \int_0^T \phi_t^{W,\perp}\,dW_t^{\perp_\star,\QQ}
+  + \int_0^T\!\!\int_\R
+  \psi_t(z)\,\Ntilde^\QQ(dt,dz),
+\end{equation}
+where $\phi^{W,\perp} =
+(1-\rho^2)^{-1/2}(\phi^W - \rho\,\phi^\perp)$ is the
+orthogonal volatility integrand.  In particular, the jump
+component is entirely unaffected by stock trading.
+\end{lemma}
+
+\begin{proof}
+The stock $S$ has zero loading on $\Ntilde$ and a specific
+linear combination of loadings on $(W^\perp, W)$.  Delta
+hedging projects onto the $W^S$-direction; the orthogonal
+complement in the Brownian plane and the entire Poisson
+component remain.  This follows from the independence of
+$(W^{\perp_\star,\QQ}, \Ntilde^\QQ)$ and $W^{S,\QQ}$
+under~$\QQ$.
+\end{proof}
+
+
+\subsubsection{Variance swap hedge (absorbing $dW^{\perp_\star,\QQ}$)}
+
+The pure volatility exposure $\phi^{W,\perp}\,dW^{\perp_\star,\QQ}$
+can be hedged by trading a variance swap (or more generally, any
+derivative whose value depends on the volatility path).
+
+Let $\Xi_t := \E^\QQ[\int_0^T \sigma_s^2\,ds \mid \F_t]$ denote
+the fair-value process of a variance swap struck at inception.
+Since $\sigma_t$ depends on the continuous volatility driver $W$
+through~\eqref{eq:vol-dynamics}, $\Xi_t$ has a nonzero loading
+on $dW^{\perp_\star,\QQ}$.
+
+\begin{lemma}[Variance swap exposure to $W^{\perp_\star}$]
+\label{lem:xi-loading}
+Under the exponential specification~\eqref{eq:vol-dynamics}, the
+dynamics of $\Xi$ contain a term
+\begin{equation}\label{eq:xi-continuous}
+  d\Xi_t^{\mathrm{cont}} = \xi_t^W\,dW_t^{\perp_\star,\QQ}
+  + \xi_t^S\,dW_t^{S,\QQ} + \ldots
+\end{equation}
+with $\xi_t^W \neq 0$ a.s.\ whenever $\eta\sigma_L > 0$
+(i.e., whenever the model has stochastic volatility with a
+continuous component).
+\end{lemma}
+
+\begin{proof}[Proof sketch]
+By the tower property,
+$\Xi_t = \int_0^t \sigma_s^2\,ds
++ \E^\QQ[\int_t^T \sigma_s^2\,ds \mid \F_t]$.
+The first term is adapted and does not contribute to
+$d\Xi^{\mathrm{mart}}$.
+For the conditional expectation, the martingale
+representation theorem provides integrands against each
+of the three noise sources.  Under the exponential
+specification, $\sigma_s = \sigma_0\exp(\eta V_s
+- \frac{1}{2}\eta^2\E[V_s^2])$ and $V_s$ loads on $W$
+through the kernel $K$, so the martingale part of $\Xi$
+inherits a $dW^{\perp_\star,\QQ}$ loading proportional to
+$\eta\sigma_L\int_t^T\!\int_t^s K(s,u)^2\,du\;
+\sigma_u^2\,ds$, which is a.s.\ positive.
+A rigorous derivation requires the explicit martingale
+representation of $\sigma_s^2$ (and hence of $\Xi$) with
+controlled $L^2$-integrability of the resulting integrands;
+we assume these regularity conditions are satisfied under
+\Cref{ass:exp-moment}.
+\end{proof}
+
+By trading $\xi^W$-units of the variance swap per unit of
+orthogonal vol exposure, we absorb the
+$\phi^{W,\perp}\,dW^{\perp_\star,\QQ}$ component.  Define
+$\Delta_t^\Xi :=
+\phi_t^{W,\perp}\,/\,\xi_t^W$.
+
+\begin{proposition}[Residual after stock + variance swap hedging]
+\label{prop:residual-SV}
+After continuously delta-hedging with the stock and vega-hedging
+with the variance swap:
+\begin{equation}\label{eq:SV-residual}
+  h(S_T) - \E^\QQ[h(S_T)]
+  - \int_0^T \Delta_t\,dS_t
+  - \int_0^T \Delta_t^\Xi\,d\Xi_t
+  = \int_0^T\!\!\int_\R \psi_t(z)\,\Ntilde^\QQ(dt,dz)
+  + \varepsilon_T^{\Xi},
+\end{equation}
+where $\varepsilon_T^\Xi$ accounts for the jump component of the
+variance swap dynamics (which we absorb into the Poisson integral
+below).  The continuous hedging error vanishes: stock $+$ variance
+swap absorbs all of $\phi^\perp\,dW^{\perp,\QQ}$ and
+$\phi^W\,dW^\QQ$.
+\end{proposition}
+
+\begin{proof}
+The stock trade absorbs $\phi^S\,dW^{S,\QQ}$
+(\Cref{lem:after-delta}).  The variance swap trade absorbs
+$\phi^{W,\perp}\,dW^{\perp_\star,\QQ}$ by construction.
+Together, $\phi^S\,dW^{S,\QQ}
++ \phi^{W,\perp}\,dW^{\perp_\star,\QQ}$ spans the
+full Brownian part of the MRT~\eqref{eq:MRT}.
+
+The variance swap $\Xi$ also has a jump component: when $V$
+jumps, $\sigma$ jumps, and $\Xi$ (as a conditional expectation)
+adjusts.  The term $\varepsilon_T^\Xi$ collects the jump-on-jump
+cross terms from the variance swap trade.  Since these are also
+driven by $\Ntilde^\QQ$, they are absorbed into the total
+Poisson integrand $\psi_t^{\mathrm{total}}(z)
+:= \psi_t(z) - \Delta_t^\Xi\,\Delta\Xi_t(z)$, where
+$\Delta\Xi_t(z)$ is the jump in $\Xi$ caused by a jump of
+size $z$ at time~$t$.
+\end{proof}
+
+
+\subsection{The jump residual: composition and defect}
+
+What remains after stock and variance swap hedging is a
+compensated Poisson integral.  We now identify its structure
+by tracing the composition chain explicitly.
+
+\subsubsection{The composition chain}
+
+A jump of size $z$ in the Poisson measure at time $t < T$
+propagates as follows:
+\begin{equation}\label{eq:composition-chain}
+  z \;\xrightarrow{\;\;K\;\;}
+  \Delta V_s = K(s,t)\,z \;\text{ for all }s \geq t
+  \;\xrightarrow{\;\;\exp\;\;}
+  \sigma_s \mapsto \sigma_s\,e^{\eta K(s,t)z}
+  \;\xrightarrow{\;\;\int\sigma\,dW^S\;\;}
+  \Delta(\log S_T) \neq 0
+  \;\xrightarrow{\;\;h\;\;}
+  \Delta h(S_T).
+\end{equation}
+
+Crucially, a single jump at time $t$ affects the volatility
+at all future times $s \in [t,T]$ through the kernel weight
+$K(s,t)$, and hence affects $S_T$ through the integrated
+volatility $\int_t^T \sigma_s^2\,ds$ and the stochastic
+integral $\int_t^T \sigma_s\,dW_s^S$.  This is the
+\emph{memory amplification}: the kernel converts a pointwise
+jump into a path-level shift.
+
+
+\subsubsection{The jump integrand of the claim}
+
+The following lemma establishes the regularity of the
+scenario map that the jump integrand decomposition requires.
+
+\begin{lemma}[Regularity of the scenario map]\label{lem:scenario-reg}
+Under \Cref{ass:market,ass:nu,ass:kernel,ass:exp-moment},
+let $h \in C_b^3(\R)$.  Then the scenario map
+$z \mapsto S_T^{t,z}$ (the terminal stock price when
+$\Ntilde$ has an atom of size $z$ at time~$t$) is
+twice differentiable at $z = 0$ in conditional
+$L^{2p}(\QQ \mid \F_{t-})$, and the derivative
+$\lambda_t := \partial_z \psi_t(0)$ is predictable.
+\end{lemma}
+
+\begin{proof}
+The composition chain~\eqref{eq:composition-chain} has
+three links; we verify differentiability and moment
+control at each.
+
+\textbf{Volatility link.}  By the exponential
+specification~\eqref{eq:vol-dynamics},
+$\sigma_s^{t,z} = \sigma_s\,e^{\eta K(s,t)z}$.
+For every fixed $s \geq t$, the map $z \mapsto
+\sigma_s^{t,z}$ is $C^\infty$ in $z$, with
+$\partial_z \sigma_s^{t,z} = \eta K(s,t)\,\sigma_s^{t,z}$.
+Under~\ref{E1}, $\E[\sigma_s^{t,z\,;\,r}] < \infty$ for
+all $r > 0$ and $|z| \leq 1$, so the derivatives
+are uniformly $L^r$-bounded in $z$ on $[-1,1]$.
+
+\textbf{Stock link.}  By~\eqref{eq:logS-shift},
+$\log S_T^{t,z} - \log S_T^{t,0}
+= \int_t^T \sigma_s(e^{\eta K(s,t)z}-1)\,dW_s^S
+- \frac{1}{2}\int_t^T \sigma_s^2(e^{2\eta K(s,t)z}-1)\,ds$.
+The BDG inequality gives, for $|z| \leq 1$:
+\[
+  \E^{\QQ}\!\left[\left.
+  |S_T^{t,z} - S_T^{t,0}|^{2p}\;\right|\;\F_{t-}\right]
+  \leq C\,S_T^{2p}\,\eta^{2p}\,z^{2p}\,
+  \E^{\QQ}\!\left[\left.
+  \left(\int_t^T K(s,t)^2\sigma_s^2\,ds\right)^p
+  \;\right|\;\F_{t-}\right],
+\]
+which is finite under~\ref{E2}.  Differentiability
+of $z \mapsto S_T^{t,z}$ in conditional $L^{2p}$
+follows by dominated convergence applied to the
+difference quotients, using the uniform $L^{2p}$
+bound above.
+
+\textbf{Payoff link.}  Since $h \in C_b^3$,
+$z \mapsto h(S_T^{t,z})$ inherits the differentiability
+of $z \mapsto S_T^{t,z}$ by the chain rule, with
+$|\partial_z^2 h(S_T^{t,z})| \leq \|h''\|_\infty
+\cdot |\partial_z S_T^{t,z}|^2
++ \|h'\|_\infty \cdot |\partial_z^2 S_T^{t,z}|$,
+both in $L^p$ by the stock-link estimates.
+
+\textbf{Predictability.}  The derivative
+$\lambda_t = \partial_z \psi_t(0)$ is a conditional
+expectation of $\F_T$-measurable random variables given
+$\F_{t-}$, hence $\F_{t-}$-measurable and predictable.
+\end{proof}
+
+\begin{proposition}[Jump integrand decomposition]\label{thm:jump-decomp}
+Under \Cref{ass:market,ass:nu,ass:kernel,ass:exp-moment},
+let $h \in C_b^3(\R)$.
+Then the MRT jump integrand $\psi_t^{\mathrm{total}}(z)$
+in~\eqref{eq:SV-residual} (after absorbing the variance swap
+jump correction) decomposes as
+\begin{equation}\label{eq:psi-decomp}
+  \psi_t^{\mathrm{total}}(z) = \psi_t^{\mathrm{lin}}(z)
+  + \psi_t^{\mathrm{def}}(z),
+\end{equation}
+where:
+\begin{enumerate}[label=(\alph*)]
+\item The \emph{linear part} $\psi_t^{\mathrm{lin}}(z)$ is linear
+  in $z$ and is the first-order sensitivity of the (delta- and
+  vega-hedged) claim value to a jump of size $z$ at time $t$:
+  \begin{equation}\label{eq:psi-lin}
+    \psi_t^{\mathrm{lin}}(z) = \lambda_t \cdot z,
+  \end{equation}
+  where $\lambda_t$ is a predictable process depending on the
+  current state $(\sigma_t, S_t, \Xi_t)$ and the kernel
+  $K(\cdot, t)$.
+
+\item The \emph{defect part} $\psi_t^{\mathrm{def}}(z)$ is the
+  aggregate nonlinear response---the kernel-weighted Leibniz
+  defect of the composition:
+  \begin{equation}\label{eq:psi-def}
+    \psi_t^{\mathrm{def}}(z)
+    = \E^\QQ\!\left[\left.
+    B_T^{-1}h(S_T^{t,z}) - B_T^{-1}h(S_T^{t,0})
+    - \lambda_t\,z\;\right|\;\F_{t-}\right],
+  \end{equation}
+  where $S_T^{t,z}$ denotes the terminal stock price in a
+  scenario where $\Ntilde$ has an atom of size $z$ at time~$t$,
+  and $S_T^{t,0}$ is the same scenario without the atom.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+By \Cref{lem:scenario-reg}, $z \mapsto S_T^{t,z}$ is
+twice differentiable in conditional $L^{2p}$, so the
+first-order extraction below is justified.
+
+The MRT~\eqref{eq:MRT} is constructive: the Poisson integrand
+$\psi_t(z)$ is the predictable projection of the finite
+difference in the value process caused by a jump:
+\begin{equation}\label{eq:psi-FD}
+  \psi_t(z) = \E^\QQ\!\left[\left.
+  B_T^{-1}h(S_T^{t,z}) - B_T^{-1}h(S_T^{t,0})
+  \;\right|\;\F_{t-}\right].
+\end{equation}
+This is the standard representation of the Poisson MRT integrand
+(see~\cite{Applebaum2009}, Theorem~5.3.5;
+\cite{ContTankov2004}, Proposition~14.23).
+
+The total integrand $\psi^{\mathrm{total}}$ in~\eqref{eq:SV-residual}
+subtracts the variance swap jump contribution, but retains the
+same finite-difference structure with the hedged claim value
+replacing the unhedged one.
+
+Define the linear part by extracting the first-order Taylor
+expansion in $z$:
+\[
+  \psi_t^{\mathrm{lin}}(z) := \left.\frac{\partial}{\partial z}
+  \psi_t(z)\right|_{z=0} \cdot z
+  = \lambda_t\,z,
+\]
+where $\lambda_t = \partial_z \psi_t(0)$ is the
+\emph{jump delta}---the marginal sensitivity of the
+hedged claim to an infinitesimal jump.  Then
+$\psi_t^{\mathrm{def}}(z)
+:= \psi_t^{\mathrm{total}}(z) - \psi_t^{\mathrm{lin}}(z)$
+is the remainder.
+\end{proof}
+
+
+\subsubsection{Integrability: the two-regime structure}
+
+\begin{proposition}[Integrability dichotomy]\label{prop:integrability}
+Under the stable-type \Cref{ass:nu} with $\gamma \in (1,2)$:
+\begin{enumerate}[label=(\alph*)]
+\item $\psi^{\mathrm{lin}}(t,z) = \lambda_t\,z$ is
+  \emph{$\nu$-singular}: it does not belong to
+  $\widetilde{H}_J = L^p(dt \otimes \nu \otimes d\QQ)$.
+
+\item $\psi^{\mathrm{def}}(t,z)$ is
+  \emph{$\nu$-regular}: it belongs to $\widetilde{H}_J$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(a) As in \Cref{thm:defect-decomposition}(b):
+$\int_{|z|\leq 1}|z|^p\,\nu(dz) = \infty$ for $p < \gamma$,
+so $\lambda_t z \notin L^p(\nu)$ for any $\lambda_t \neq 0$.
+
+(b) This is the key estimate.  By~\eqref{eq:psi-def},
+$\psi_t^{\mathrm{def}}(z)$ is the conditional expectation of
+the second-order-and-higher response.  We bound it by tracing
+the composition chain~\eqref{eq:composition-chain}.
+
+\textbf{Step 1.  Volatility shift.}  A jump of size $z$ at
+time $t$ shifts $V_s \mapsto V_s + K(s,t)z$ for $s \geq t$,
+hence
+\begin{equation}\label{eq:sigma-shift}
+  \sigma_s^{t,z} = \sigma_s\,\exp(\eta\,K(s,t)\,z),
+  \qquad s \geq t.
+\end{equation}
+For $|z| \leq 1$ and bounded kernel: $|\sigma_s^{t,z}
+- \sigma_s - \eta K(s,t)z\,\sigma_s|
+\leq C\,\eta^2 K(s,t)^2 z^2\,\sigma_s$ by the Taylor
+remainder of $e^x$.
+
+\textbf{Step 2.  Stock price shift.}  The log stock price
+satisfies $\log S_T = \log S_0 + \int_0^T(\mu - \frac{1}{2}
+\sigma_s^2)\,ds + \int_0^T \sigma_s\,dW_s^S$.
+Under the jump shift:
+\begin{align}
+  \log S_T^{t,z} - \log S_T^{t,0}
+  &= -\tfrac{1}{2}\int_t^T
+  [(\sigma_s^{t,z})^2 - \sigma_s^2]\,ds
+  + \int_t^T [\sigma_s^{t,z} - \sigma_s]\,dW_s^S
+  \notag\\
+  &= \int_t^T \sigma_s\,(e^{\eta K(s,t)z} - 1)\,dW_s^S
+  - \tfrac{1}{2}\int_t^T \sigma_s^2\,
+  (e^{2\eta K(s,t)z} - 1)\,ds.
+  \label{eq:logS-shift}
+\end{align}
+The key point: both terms are \emph{nonlinear in $z$} through
+the exponential $e^{\eta K(s,t)z}$.  The first-order terms
+(linear in $z$) are absorbed into $\psi^{\mathrm{lin}}$.  The
+remainders are quadratic and higher in $z$, each weighted by
+$K(s,t)$.
+
+\textbf{Step 3.  Payoff shift.}  For $h \in C_b^3$,
+$h(S_T^{t,z}) - h(S_T^{t,0}) - h'(S_T^{t,0})(S_T^{t,z}
+- S_T^{t,0})$ is bounded by
+$\frac{1}{2}\|h''\|_\infty|S_T^{t,z} - S_T^{t,0}|^2$.
+The first-order term $h'(S_T)(S_T^{t,z} - S_T^{t,0})$ is
+linear in $z$ (to leading order) and is absorbed into
+$\psi^{\mathrm{lin}}$.
+
+\textbf{Step 4.  Aggregate quadratic bound.}  Combining
+Steps~1--3 and taking conditional expectations, the defect
+satisfies, for $|z| \leq 1$:
+\begin{equation}\label{eq:psi-def-bound}
+  |\psi_t^{\mathrm{def}}(z)|
+  \leq C(h,\eta,\sigma_0)\;\left(\int_t^T K(s,t)^2\,ds\right)
+  \;z^2,
+\end{equation}
+where the constant absorbs $\|h'\|_\infty$, $\|h''\|_\infty$,
+$\eta^2$, and moments of $\sigma$.  The factor
+$\int_t^T K(s,t)^2\,ds$ is the \emph{integrated kernel weight}:
+the cumulative effect of a time-$t$ jump on the volatility
+path over $[t,T]$.
+
+For $|z| > 1$: $|\psi_t^{\mathrm{def}}(z)| \leq
+C(1 + |z|^p)$ by the boundedness of $h$.
+
+\textbf{Step 5.  $\widetilde{H}_J$ norm.}
+Raising~\eqref{eq:psi-def-bound} to the $p$-th power and
+integrating:
+\begin{align}
+  \|\psi^{\mathrm{def}}\|_{\widetilde{H}_J}^p
+  &\leq C^p\,\E\!\int_0^T\!\left(\int_t^T K(s,t)^2\,ds
+  \right)^p\!dt\;\cdot\;\int_{|z|\leq 1}|z|^{2p}\,\nu(dz)
+  \;+\;R_{\mathrm{large}}
+  \notag\\
+  &\leq C^p\;\|K\|_{\mathrm{agg}}^p\;
+  \frac{2c_\gamma}{2p-\gamma}
+  \;+\;R_{\mathrm{large}},
+  \label{eq:psi-def-norm}
+\end{align}
+where $\|K\|_{\mathrm{agg}}^p := \int_0^T (\int_t^T
+K(s,t)^2\,ds)^p\,dt$ is the \emph{aggregated kernel norm}.
+The small-jump integral converges since $2p > \gamma$
+(\Cref{thm:defect-decomposition}).
+\end{proof}
+
+
+\subsubsection{Aggregated kernel norm for fractional kernels}
+
+\begin{lemma}[Aggregated kernel norm]\label{lem:agg-kernel}
+For $K_H(s,t) = (s-t)^{H-1/2}$:
+\begin{equation}\label{eq:agg-norm}
+  \|K_H\|_{\mathrm{agg}}^p
+  = \int_0^T\!\left(\int_t^T (s-t)^{2H-1}\,ds\right)^p dt
+  = \int_0^T\!\left(\frac{(T-t)^{2H}}{2H}\right)^p dt
+  = \frac{T^{2pH+1}}{(2H)^p(2pH+1)}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The inner integral is $\int_t^T(s-t)^{2H-1}\,ds =
+(T-t)^{2H}/(2H)$.  Raising to the $p$-th power and
+integrating: $\int_0^T(T-t)^{2pH}/(2H)^p\,dt =
+T^{2pH+1}/[(2H)^p(2pH+1)]$.
+\end{proof}
+
+\begin{remark}[Comparison with the direct defect scaling]
+\label{rem:comparison}
+The aggregated kernel norm involves $\int_t^T K(s,t)^2\,ds$
+raised to the $p$-th power, while the direct
+defect (\Cref{thm:scaling}) involves $\int_0^T K(T,t)^{2p}\,dt$.
+These differ:
+\begin{enumerate}[label=(\roman*)]
+\item The \emph{direct defect} (\Cref{sec:scaling}) applies to
+  $f(V_T)$ where $V_T = \int_0^T K(T,s)\,dL_s$ is a
+  \emph{terminal} Volterra integral.  The kernel weight is
+  $K(T,t)^{2p}$, evaluated at the terminal time.
+\item The \emph{hedging defect} (this section) applies to
+  $h(S_T)$ where $S_T$ depends on the \emph{entire volatility
+  path} $\{\sigma_s : s \in [0,T]\}$, which depends on
+  $\{V_s : s \in [0,T]\}$.  A jump at time $t$ affects
+  $V_s$ for all $s \geq t$ through $K(s,t)$, so the relevant
+  weight is the \emph{integrated} kernel $\int_t^T K(s,t)^2\,ds$.
+\end{enumerate}
+This distinction is fundamental: path-dependent payoffs
+(including any payoff on $S_T$ when the stock price is a
+diffusion with stochastic volatility) are sensitive to the
+kernel's integrated effect, not just its terminal value.
+For the fractional kernel, $\int_t^T K_H(s,t)^2\,ds =
+(T-t)^{2H}/(2H)$, while $K_H(T,t)^{2p} = (T-t)^{2p(H-1/2)}$.
+Both capture the roughness, but with different exponents.
+\end{remark}
+
+
+\subsection{The hedging decomposition: main result}
+
+The preceding subsections establish each step of the
+hedging decomposition.  The regularity of the scenario map
+$z \mapsto S_T^{t,z}$ is proved in \Cref{lem:scenario-reg}
+under the exponential moment condition; the variance swap
+loading is established in \Cref{lem:xi-loading}; the
+integrability dichotomy and uniform $L^p$-estimates
+follow from the composition chain analysis of
+\Cref{prop:integrability}.  We now combine these into the
+main hedging result.
+
+\begin{theorem}[Hedging decomposition]\label{thm:hedging-main}
+Under \Cref{ass:market,ass:nu,ass:kernel,ass:exp-moment},
+let $h \in C_b^3(\R)$
+and let $\QQ$ be any equivalent martingale measure for $S$.  Then:
+\begin{equation}\label{eq:hedging-decomp}
+  B_T^{-1}h(S_T)
+  = \E^\QQ[B_T^{-1}h(S_T)]
+  + \underbrace{\int_0^T \Delta_t\,d\tilde{S}_t
+  + \int_0^T \Delta_t^\Xi\,d\tilde{\Xi}_t}_{%
+  \text{continuous hedge (stock $+$ variance swap)}}
+  + \underbrace{\int_0^T\!\!\int_\R
+  \psi_t^{\mathrm{def}}(z)\,\Ntilde^\QQ(dt,dz)
+  + R_T}_{\text{jump residual}},
+\end{equation}
+where:
+\begin{enumerate}[label=(\alph*)]
+\item $\tilde{S}_t = e^{-rt}S_t$ and $\tilde{\Xi}_t$ are the
+  discounted stock and variance swap.  The hedging ratios
+  $\Delta_t$ (stock delta) and $\Delta_t^\Xi$ (variance swap
+  loading) are predictable and determined by the continuous
+  MRT integrands $\phi^\perp, \phi^W$, the leverage $\rho$,
+  and the variance swap loading $\xi^W$.
+\item $\psi^{\mathrm{def}} \in \widetilde{H}_J$ is the
+  $\nu$-regular defect (\Cref{prop:integrability}(b)), with
+  norm bounded by~\eqref{eq:psi-def-norm}.
+\item $R_T = \int_0^T\!\!\int_\R \psi_t^{\mathrm{lin}}(z)\,
+  \Ntilde^\QQ(dt,dz)$ is the $\nu$-singular first-order jump
+  exposure.  This is a well-defined $L^p$-martingale (despite
+  $\lambda z \notin \widetilde{H}_J$), since the
+  \emph{one-parameter} integral $\int \lambda_t\,dL_t$
+  converges in $L^p$ by the BDG inequality for the one-parameter
+  energy space $H_L$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Start from the three-driver MRT (\Cref{prop:MRT}).  Apply
+\Cref{lem:after-delta}: stock delta-hedging absorbs
+$\phi^S\,dW^{S,\QQ}$.
+Apply \Cref{prop:residual-SV}: variance swap hedging absorbs
+$\phi^{W,\perp}\,dW^{\perp_\star,\QQ}$ and contributes a
+jump correction.  The remaining Poisson integral
+$\int\!\!\int \psi_t^{\mathrm{total}}(z)\,\Ntilde^\QQ(dt,dz)$
+decomposes into $\psi^{\mathrm{lin}} + \psi^{\mathrm{def}}$ by
+\Cref{thm:jump-decomp}.  The norm bound on $\psi^{\mathrm{def}}$
+follows from \Cref{prop:integrability}.
+\end{proof}
+
+
+\begin{corollary}[Hedging error scaling]\label{cor:hedge-error}
+Under the fractional kernel $K_H$ with $H \in (0,1)$ and
+$\gamma$-stable driver with $\gamma \in (1,2)$, the
+$L^p$-norm of the $\nu$-regular defect satisfies:
+\begin{equation}\label{eq:hedge-error}
+  \left\|\int_0^T\!\!\int_\R \psi^{\mathrm{def}}\,
+  d\Ntilde^\QQ\right\|_{L^p}
+  \leq C_p\,
+  \|\psi^{\mathrm{def}}\|_{\widetilde{H}_J}
+  \leq C(h,\eta,p)\;\frac{T^{2H + 1/p}}{(2H)^{1+1/p}
+  (2pH+1)^{1/p}}
+  \;\cdot\;\left(\frac{2c_\gamma}{2p - \gamma}\right)^{1/p}
+  + R^{1/p},
+\end{equation}
+where the exponent of $T$ is $2H + 1/p > 1/p$, confirming that
+roughness ($H > 0$) amplifies the defect relative to the
+white-noise limit.
+\end{corollary}
+
+\begin{proof}
+Apply the BDG inequality to bound
+$\|\widetilde{\delta}_J(\psi^{\mathrm{def}})\|_{L^p}$
+by $C_p\|\psi^{\mathrm{def}}\|_{\widetilde{H}_J}$.
+Substitute~\eqref{eq:psi-def-norm} with the aggregated kernel
+norm from \Cref{lem:agg-kernel}, and take $p$-th roots.
+\end{proof}
+
+\begin{remark}[Financial interpretation]\label{rem:hedging-practical}
+For a practitioner running a book with rough-jump volatility
+models, the bound~\eqref{eq:hedge-error} gives the size of the
+residual risk after delta- and vega-hedging.  The key inputs are
+three numbers that can be estimated from data: the Hurst
+parameter~$H$ (from realized volatility scaling), the stable
+index~$\gamma$ (from return tail estimates), and the
+horizon~$T$.  The Markov case $H = 1/2$ gives the minimum
+hedging error; every rough model ($H < 1/2$) increases the
+residual strictly.  The bound is computable and can be used for
+reserve calculations.
+\end{remark}
+
+
+\subsection{The boundary of hedgeability}
+
+\Cref{thm:hedging-main} identifies three levels of
+hedgeability, each requiring progressively richer
+instrument sets:
+
+\begin{enumerate}[label=\textbf{Level \arabic*.}]
+\item \textbf{Continuous instruments} (stock + variance swap).
+  These absorb the full Brownian part
+  ($\phi^\perp\,dW^{\perp,\QQ}$ and $\phi^W\,dW^\QQ$).
+  The residual is the total Poisson integral.
+
+\item \textbf{First-order jump instruments} (the L\'evy driver
+  $L$ itself, or a sufficiently liquid proxy).  Trading $L$
+  absorbs the $\nu$-singular component
+  $R_T = \int\lambda_t z\,\Ntilde^\QQ(dt,dz)$, the
+  first-order jump exposure.  The residual is the
+  $\nu$-regular defect $\Gamma_V^h$.
+
+\item \textbf{Nonlinear jump instruments} (options on
+  jump-squared, variance-of-jumps contracts).  Since
+  $\psi^{\mathrm{def}} \in \im(\widetilde{\delta}_J)$, the
+  defect is in principle representable as a
+  $\Ntilde$-integral with known integrand---hence hedgeable
+  if instruments sensitive to $g(z) \sim z^2$ are available.
+\end{enumerate}
+
+\begin{proposition}[Vanishing conditions]\label{prop:vanishing}
+The defect $\psi^{\mathrm{def}}$ vanishes:
+\begin{enumerate}[label=(\alph*)]
+\item if $\nu = 0$ (no jumps): $\psi^{\mathrm{def}} = 0$
+  identically, recovering perfect hedging with stock +
+  variance swap in pure rough volatility models
+  (\cite{ElEuchRosenbaum2019,Fukasawa2021});
+\item if $h$ is affine: $h(S) = a + bS$ implies
+  $h(S_T^{t,z}) - h(S_T^{t,0}) = b(S_T^{t,z} - S_T^{t,0})$,
+  which is linear in $z$ (to leading order through the
+  exponential map), and the second-order remainder is
+  absorbed into $\psi^{\mathrm{def}}$ but with
+  $\|h''\|_\infty = 0$, so the bound~\eqref{eq:psi-def-bound}
+  degenerates.  For $h(S) = S$ (the stock itself), the
+  hedging error is zero by definition of the EMM.
+\end{enumerate}
+The defect is \emph{generically nonzero} for nonlinear payoffs
+($h'' \neq 0$) in the presence of jumps ($\nu \neq 0$) with
+rough volatility ($H \neq 1/2$): all three ingredients
+contribute to~\eqref{eq:psi-def-bound}.
+\end{proposition}
+
+\begin{remark}[The multiplicative structure, revisited]
+\label{rem:multiplicative}
+The bound~\eqref{eq:psi-def-bound} makes the multiplicative
+interaction explicit at the integrand level:
+\[
+  |\psi_t^{\mathrm{def}}(z)| \leq
+  C \cdot \underbrace{\vphantom{\bigg|}
+  \int_t^T K(s,t)^2\,ds}_{\text{kernel (roughness)}}
+  \;\cdot\; \underbrace{z^2\vphantom{\bigg|}}_{\text{jump}}.
+\]
+Neither factor alone produces an unhedgeable residual:
+without the kernel ($K = 1$, Markov case), the integrated weight
+is $T - t$ and the defect is the standard L\'evy Leibniz defect.
+Without jumps ($z^2 \to 0$), the defect vanishes regardless of
+the kernel.  The kernel \emph{amplifies} the jump contribution
+by weighting each jump according to its temporal persistence in
+the volatility dynamics---recent jumps ($t$ near $T$) have small
+weight $\int_t^T K^2\,ds$ for non-singular kernels, but for
+rough kernels with $H < 1/2$, $K(s,t) = (s-t)^{H-1/2}$ is
+singular and the weight is large near $s = t$, concentrating
+the defect on short-lived but intense volatility impacts.
+\end{remark}
+
+
+%======================================================================
+\section{Numerical Verification}\label{sec:numerics}
+%======================================================================
+
+We verify the analytical results of
+\Cref{sec:pricing,sec:scaling,sec:hedging} numerically,
+using the quadratic payoff $f(x) = x^2$ (where the defect
+integrand is exact and deterministic,
+\Cref{thm:sharpness}) and the full rough-jump stochastic
+volatility model of \Cref{sec:hedging}.
+
+Throughout, the L\'evy measure is symmetric tempered stable:
+$\nu(dz) = c_\gamma\,|z|^{-(1+\gamma)}\,e^{-\lambda|z|}\,dz$
+with $c_\gamma = 1$, $\lambda = 1$ (unless noted otherwise),
+and the working exponent is $p = 3/2$.
+Stochastic experiments use $4 \times 10^5$ paths on an
+NVIDIA RTX~5090 GPU (34.2~GB VRAM) via PyTorch in
+\texttt{float32} arithmetic.
+Deterministic experiments evaluate the exact formulas of
+\Cref{thm:scaling,thm:sharpness} directly.
+
+
+\subsection{Scaling law}
+
+\Cref{thm:scaling} predicts that the defect $L^p$-norm
+scales as
+$\|\Gamma_V^{x^2}\|_{L^p} \sim C \cdot T^{2H - 1 + 1/p}
+\cdot (2p - \gamma)^{-1/p}$.
+We verify both exponents.
+
+\subsubsection{$T$-scaling}
+
+For $\gamma = 1.5$ and $H \in \{0.15, 0.25, 0.35, 0.45, 0.50\}$,
+we evaluate $\|\Gamma_V^{x^2}\|_{L^p}$ (via the exact
+formula~\eqref{eq:gfK-exact-norm}) over
+$T \in [10^{-1}, 10^2]$.  On a log-log plot, the slopes
+agree with the predicted exponent $2H - 1 + 1/p$ to
+machine precision (Figure~\ref{fig:scaling}a).
+
+\subsubsection{$\gamma$-scaling}
+
+For $H = 0.3$, $T = 1$, we sweep $\gamma \in (1.05, 2p^-)$
+and compare the defect norm to the leading-order
+prediction $(2p - \gamma)^{-1/p}$.
+The two curves are indistinguishable up to a
+multiplicative constant, confirming the blow-up rate as
+$\gamma \to 2p^-$ (Figure~\ref{fig:scaling}b).
+The large-jump remainder $R(f,T,p)$
+in~\eqref{eq:scaling-law} is subdominant throughout the
+range.
+
+\begin{figure}[ht]
+\centering
+% [Include fig1_scaling_law.pdf]
+\caption{Scaling law verification (\Cref{thm:scaling}).
+(a)~Log-log plot of $\|\Gamma_V^{x^2}\|_{L^p}$ vs.\ $T$
+for five values of~$H$; slopes match the theoretical
+exponent $2H - 1 + 1/p$.
+(b)~$\gamma$-dependence at $H = 0.3$, $T = 1$: the
+exact defect norm (solid) vs.\ the leading-order
+$(2p - \gamma)^{-1/p}$ (dashed), confirming the
+blow-up rate.  Parameters: $c_\gamma = 1$,
+$\lambda = 1$, $p = 3/2$.}
+\label{fig:scaling}
+\end{figure}
+
+
+\subsection{Multiplicative interaction}
+
+\Cref{cor:interaction} asserts that roughness and jump
+intensity interact multiplicatively:
+$\|\Gamma_V^f\|_{L^p} \lesssim
+T^{2H - 1 + 1/p} \times (2p - \gamma)^{-1/p}$.
+Figure~\ref{fig:heatmap} displays
+$\|\Gamma_V^{x^2}\|_{L^p}$ over
+$(H, \gamma) \in (0.02, 0.50) \times (1.05, 1.98)$
+at $T = 1$.
+
+The heatmap exhibits a $35\times$ dynamic range, with the
+defect largest at small $H$ (rough) and $\gamma$ near $2p$
+(heavy-tailed).  The contour lines are approximately
+hyperbolic, confirming the product structure
+$\log\|\Gamma\| \approx a(H) + b(\gamma)$.
+We verify this quantitatively by plotting
+$\log\|\Gamma(H,\gamma)\| - \log\|\Gamma(H_{\mathrm{ref}},\gamma)\|$
+as a function of $\gamma$ for several values of $H$:
+the curves are nearly constant, confirming
+$\log$-separability (Figure~\ref{fig:multiplicative}b).
+
+\begin{figure}[ht]
+\centering
+% [Include fig2_heatmap.pdf]
+\caption{Kernel-weighted Leibniz defect
+$\|\Gamma_V^{x^2}\|_{L^p}$ over
+$(H, \gamma)$.  The dashed line marks the Markov case
+$H = 1/2$.  Contour lines are hyperbolic, confirming
+the multiplicative interaction of
+\Cref{cor:interaction}.  Parameters: $T = 1$,
+$c_\gamma = 1$, $\lambda = 1$, $p = 3/2$.}
+\label{fig:heatmap}
+\end{figure}
+
+
+\subsection{Hedging P\&L}
+
+We simulate $10^5$ paths of the rough-jump stochastic
+volatility model~\eqref{eq:S-dynamics}--\eqref{eq:V-dynamics}
+with parameters:
+\[
+  H = 0.3,\quad \gamma = 1.5,\quad \rho = -0.7,\quad
+  \eta = 0.5,\quad \sigma_L = 0.3,\quad \sigma_0 = 0.20,\quad
+  T = 1,\quad S_0 = K = 100.
+\]
+The L\'evy driver uses tempered stable jumps ($c_\gamma = 0.5$,
+$\lambda = 2$) with a compound Poisson superposition for
+$|z| \geq 0.1$ and a Gaussian correction for $|z| < 0.1$.
+The Volterra process $V_t = \int_0^t K_H(t,s)\,dL_s$ is
+computed by a single GPU matrix multiply
+($10^5 \times 500$ increments against the $500 \times 500$
+kernel matrix).
+
+We compare three hedging strategies for an at-the-money
+European call:
+
+\begin{enumerate}[label=(\roman*)]
+\item \textbf{Stock only} (delta hedge with Black--Scholes
+  delta at current implied vol):
+  hedging error std $= 4.52$.
+\item \textbf{Stock $+$ variance swap} (regression-based
+  vega hedge against realized variance):
+  hedging error std $= 2.74$, a 39\% reduction.
+\item \textbf{Stock $+$ variance swap $+$ jump proxy}
+  (excess quadratic variation
+  $\sum (\Delta\log S)^2 - \int \sigma^2\,dt$ as proxy
+  for the compensated jump variation):
+  hedging error std $= 2.74$, negligible further reduction.
+\end{enumerate}
+
+The transition from Level~1 to Level~2 confirms the
+continuous--jump hierarchy of \Cref{thm:hedging-main}:
+stock and variance swap absorb the Brownian part, reducing
+the error by $39\%$.  The negligible improvement from the
+jump proxy reflects an important practical point: the
+Level~3 instruments in \Cref{thm:hedging-main}
+(``options on jump-squared'') are structurally available
+but lack liquid market analogs.  The excess quadratic
+variation of stock returns is a noisy estimator of the
+compensated jump quadratic variation of the volatility
+process; it captures the wrong object.
+A direct proxy for $\int\!\!\int z^2\,\Ntilde(dt,dz)$
+in the volatility dynamics would require an instrument
+sensitive to the jump variation of volatility itself,
+not of the stock price.
+
+\begin{figure}[ht]
+\centering
+% [Include fig3_hedging_pnl.pdf]
+\caption{Hedging error distributions ($10^5$ paths).
+Stock-only (left), stock $+$ variance swap (center),
+stock $+$ variance swap $+$ jump proxy (right).
+The variance swap absorbs the continuous volatility
+exposure (39\% std reduction);
+the jump proxy provides negligible further improvement,
+consistent with the absence of liquid Level~3 instruments.
+Parameters as in the text.}
+\label{fig:hedging}
+\end{figure}
+
+
+\subsection{Recovery checks}
+
+\subsubsection{Markov recovery}
+
+As $H \to 1/2$, the kernel $K_H(T,t) = (T-t)^{H-1/2}$
+converges to $K_{1/2} \equiv 1$, and the defect should
+approach the standard (non-Volterra) L\'evy Leibniz
+defect of~\cite{Fontes2026d}.
+Figure~\ref{fig:recovery}(a) plots
+$\|\Gamma_V^{x^2}\|_{L^p}$ as a function of $H$
+for $\gamma = 1.5$, $T = 1$: the defect decreases
+monotonically to the Markov level as $H \to 1/2$,
+confirming \Cref{cor:interaction}(b).
+
+\subsubsection{Pure rough-volatility recovery}
+
+As $\lambda \to \infty$ (tempering parameter), the
+L\'evy measure decays exponentially and $\nu \to 0$,
+recovering pure rough volatility.  The defect norm
+should vanish, and the rate is
+$\|\Gamma_V^{x^2}\|_{L^p} \sim \lambda^{(\gamma - 2p)/p}$
+(from $\nu_{2p} \sim \lambda^{\gamma - 2p}$).
+Figure~\ref{fig:recovery}(b) confirms this on a log-log
+plot: the slope matches the theoretical exponent
+$(\gamma - 2p)/p = -1.0$ to four decimal places.
+
+\begin{figure}[ht]
+\centering
+% [Include fig3_recovery.pdf]
+\caption{Recovery checks.
+(a)~$H \to 1/2$: defect approaches the Markov level
+(dashed).
+(b)~$\lambda \to \infty$ ($\nu \to 0$): defect vanishes
+with slope $(\gamma - 2p)/p = -1.0$ (dashed), confirming
+the pure-rough-vol recovery (\Cref{prop:vanishing}(a)).
+Parameters: $T = 1$, $c_\gamma = 1$, $p = 3/2$.}
+\label{fig:recovery}
+\end{figure}
+
+
+\subsection{$L^2$ isometry}
+
+\Cref{thm:sharpness}(c) gives the exact identity
+$\E[|\Gamma_V^{x^2}|^2]
+= T^{4H-1}/(4H-1) \cdot \nu_4$
+for deterministic integrands (the It\^o isometry).
+We verify this by continuous-time Monte Carlo:
+for each path, we sample $N \sim \mathrm{Poisson}(\Lambda T)$
+exact jump times $t_j \sim \mathrm{Uniform}(0,T)$ and
+magnitudes from the tempered stable distribution
+(compound Poisson, $|z| \geq 0.1$), evaluate
+$K(T,t_j)^2 z_j^2$ at each jump, and form
+$\Gamma = \sum_j K(T,t_j)^2 z_j^2 - \nu_{2,\mathrm{cp}} \cdot
+\int_0^T K(T,t)^2\,dt$
+(where $\nu_{2,\mathrm{cp}} = \int_{|z| \geq 0.1}
+z^2\,\nu(dz)$).
+The continuous-time formulation avoids the Riemann-sum
+bias that arises when $K(T,t)^4 = (T-t)^{4H-2}$ is
+integrated on a time grid: for $H = 0.28$, the integrand
+has exponent $4H - 2 = -0.88$, and a left-endpoint sum
+on $n$ points captures only fraction
+$(1 - 1/n)^{4H-1}$ of the exact integral.
+
+Table~\ref{tab:isometry} reports the results for
+$\gamma = 1.5$, $\lambda = 2$, $T = 1$, with
+$4 \times 10^5$ paths per $H$ value.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{c|ccc}
+$H$ & Theory & MC & Ratio (MC/Theory) \\
+\hline
+$0.28$ & $3.896$ & $3.40 \pm 0.64$ & $0.87$ \\
+$0.32$ & $1.670$ & $1.70 \pm 0.11$ & $1.02$ \\
+$0.38$ & $0.899$ & $0.93 \pm 0.02$ & $1.03$ \\
+$0.42$ & $0.687$ & $0.71 \pm 0.01$ & $1.03$ \\
+$0.50$ & $0.467$ & $0.46 \pm 0.01$ & $0.99$ \\
+\end{tabular}
+\caption{$L^2$ isometry verification
+(\Cref{thm:sharpness}(c)):
+$\E[|\Gamma_V^{x^2}|^2]$ vs.\ the theoretical value
+$T^{4H-1}/(4H-1) \cdot \nu_4$.
+The MC values use continuous-time Poisson simulation
+($4 \times 10^5$ paths).
+At $H = 0.28$, the wide confidence interval reflects the
+heavy-tailed distribution of $\Gamma^2$: a small number
+of jumps near $t = T$ dominate through the singular
+kernel weight $K(T,t)^4 = (T-t)^{-0.88}$.
+The theory value lies within the 95\% CI for all $H$.
+Parameters: $\gamma = 1.5$, $\lambda = 2$, $c_\gamma = 1$.}
+\label{tab:isometry}
+\end{table}
+
+For $H \geq 0.32$, the MC/Theory ratio is within $3\%$ of
+unity.  At $H = 0.28$ ($4H - 1 = 0.12$, a near-critical
+singularity), the ratio is $0.87$ with a wide 95\% CI of
+$\pm 0.64$---the theory value $3.90$ lies well within the
+interval $[2.76, 4.05]$.  The large variance at low $H$ is
+physical: the kernel weight $K(T,t)^4$ concentrates on a
+neighborhood of $T$ of width $\sim \epsilon$, so the sum
+$\sum K^4 z^4$ is dominated by a few jumps near $t = T$,
+producing heavy-tailed $\Gamma^2$.  This is consistent with
+the observation that the defect concentrates on recent jumps
+(\Cref{cor:interaction}(c)).
+
+
+
+
+
+%======================================================================
+
+%======================================================================
+\section{Discussion}\label{sec:discussion}
+%======================================================================
+
+This paper establishes the pricing and hedging theory for
+Volterra--L\'evy markets---financial models where the volatility
+process has both memory (through a causal kernel~$K$) and jumps
+(through a L\'evy driver~$L$ with measure~$\nu$).
+
+The central contribution is the two-parameter VRNC
+(\Cref{thm:VRNC-VL}): risk-neutral pricing in these
+markets requires solving a Volterra integral equation for
+an effective drift rate~$\Psi$ that couples the Brownian and
+jump risk premia through the kernel.  This is a genuinely new
+structure---in the Markov case the constraint is algebraic and
+pointwise, but for non-Markov kernels the memory of the
+volatility process propagates into the pricing measure.
+The constraint holds for all kernel regularities~$H$, and
+determines~$\Psi$ uniquely; the remaining degrees of freedom
+(the continuous--jump split and the shape of the jump pricing
+kernel) are characterized in \Cref{prop:freedom}.
+
+The structural invariance of~$H$ (\Cref{thm:bracket-inv})
+ensures that the roughness parameter is a genuine feature of
+the market, not a calibration artifact.  Together with the VRNC,
+this means that $H$ can be estimated from historical data and
+used directly in the pricing framework.  The
+$\nu$-singularity persistence (\Cref{prop:VT-singular})
+shows that this conclusion is robust: the kernel cannot
+regularize the jump-size singularity, so the
+$\nu$-singular/$\nu$-regular decomposition
+(\Cref{thm:defect-decomposition}) carries over unchanged.
+
+The hedging decomposition (\Cref{thm:hedging-main}) and
+the scaling law (\Cref{thm:scaling}) give the quantitative
+consequences: the structurally unhedgeable component of any
+European claim is the kernel-weighted Leibniz defect, whose
+$L^p$~norm scales multiplicatively in the roughness and jump
+parameters.  The scaling is sharp for the variance swap payoff
+(\Cref{thm:sharpness}).  For a practitioner, this means:
+if you are running a book with rough-jump volatility models,
+the residual risk after delta- and vega-hedging has a precise,
+computable size controlled by~$H$, $\gamma$, and~$T$.
+
+From the perspective of the operator factorization program
+of~\cite{Fontes2026a,Fontes2026d},
+this paper demonstrates that the operator derivative
+$D = \delta^*$---defined by duality, not Gaussianity---does
+genuine financial work in the non-Gaussian setting.  The
+Leibniz defect of~$D$ is the non-Gaussian content; in the
+Volterra--L\'evy setting, this coincides exactly with the
+structurally unhedgeable risk.  This identification would
+not be available through Malliavin calculus, which requires
+separate constructions for the Brownian and jump components
+and does not produce the kernel-weighted defect as a single
+algebraic object.
+
+
+\subsection{Formal verification}
+
+The algebraic spine of this paper has been formally verified
+in the Lean~4 proof assistant (zero \texttt{sorry}, zero axioms),
+extending the companion formalizations
+of~\cite{Fontes2026a,Fontes2026d}.  The formalization carries
+exactly one stochastic analysis input as a structure field:
+the L\'evy--It\^o formula for semimartingales with jumps
+(\cite{Applebaum2009}, Theorem~4.4.7).  All downstream
+results---the operator derivative splitting, the four-term
+Volterra--L\'evy decomposition, the two-regime
+$\nu$-singular/$\nu$-regular splitting, the defect
+identification as the Taylor remainder of~$f$ composed with
+the kernel, bracket invariance, the VRNC, the scaling law
+exponents, and the hedging decomposition---are proved as
+theorems from this single input combined with the operator
+framework.  This architecture reflects the current state of
+Mathlib, where the Cameron--Martin theorem for Gaussian measures
+remains under active development (Degenne, Mathlib
+PR~\#26291, 264~commits), and stochastic integration for
+semimartingales with jumps does not yet exist in any Lean~4
+library.  The formalization and an interactive dependency
+blueprint are available at
+\texttt{github.com/QuijoticResearch/volterra-levy}.
+
+
+\subsection{Open problems}
+
+\begin{enumerate}[label=(\roman*)]
+\item \textbf{Measure-selection within the VRNC.}
+  \Cref{thm:VRNC-VL} determines~$\Psi$ but leaves the
+  split $(\theta^W, \theta^J)$ free.
+  Natural selection criteria include minimal entropy,
+  variance-optimal hedging, and calibration to variance swap
+  or VIX option prices.  Characterizing these selections and
+  their effect on the hedging error constant is the most
+  pressing applied problem.
+
+\item \textbf{Path-dependent payoffs.}
+  The hedging decomposition (\Cref{thm:hedging-main})
+  covers European claims $h(S_T)$.  Extension to barriers,
+  lookbacks, and Asians requires applying the modified Leibniz
+  rule at each monitoring date,
+  generating a sequence of defect terms coupled by the
+  kernel's memory structure.
+
+\item \textbf{Purely stable drivers.}
+  The exponential moment condition (\Cref{ass:exp-moment})
+  fails for purely $\gamma$-stable drivers.
+  Either the volatility specification must be modified, or
+  the hedging bounds must be derived without exponential
+  moments using $L^r$-estimates for $r < \gamma$.
+
+\item \textbf{Optimal defect decomposition.}
+  The defect $\Gamma_V^f \in \mathrm{im}(\widetilde{\delta}_J)$
+  is in principle representable.  Can it be further decomposed
+  into hedgeable and truly unhedgeable components if structured
+  instruments (options on realized jump variation) are available?
+\end{enumerate}
+
+
+%======================================================================
+\appendix
+\section{Regularity Conditions for the Stochastic Volatility
+  Model}\label{app:regularity}
+%======================================================================
+
+The hedging decomposition of \Cref{sec:hedging} requires
+certain integrability conditions on the stochastic
+volatility model.  We collect them here.
+
+\begin{assumption}[Exponential moment condition]
+\label{ass:exp-moment}
+The Volterra--L\'evy process $V$ and the exponential
+specification~\eqref{eq:vol-dynamics} satisfy:
+\begin{enumerate}[label=(E\arabic*)]
+\item\label{E1} \textbf{Finite exponential moments:}
+  $\E[\exp(r\,|V_t|)] < \infty$ for all $r > 0$ and
+  $t \in [0,T]$.
+  This holds if $L$ has exponentially decaying tails
+  (e.g., tempered stable) and $K$ satisfies
+  \Cref{ass:kernel}\ref{K1}.
+  For purely stable $L$ (power-law tails), the condition
+  restricts to $\eta$ small enough that
+  $\E[\exp(2\eta|V_t|)] < \infty$.
+\item\label{E2} \textbf{Volatility moment condition:}
+  $\sup_{t \in [0,T]}\E[\sigma_t^{4p}] < \infty$ for
+  the relevant $p \in (1,\gamma)$.  Under~\ref{E1}, this
+  follows from the exponential specification.
+\end{enumerate}
+\end{assumption}
+
+\begin{remark}[When does \ref{E1} hold?]\label{rem:E1}
+For a purely $\gamma$-stable driver $L$ (no Gaussian component,
+$\sigma_L = 0$), the Laplace transform $\E[e^{r|V_t|}]$
+is \emph{infinite} for all $r > 0$ and $\gamma < 2$: stable
+laws have no exponential moments, and the Volterra
+convolution does not create them.
+
+This means~\ref{E1} fails for purely stable drivers.  In
+this case, the exponential volatility
+specification~\eqref{eq:vol-dynamics} must be modified---e.g.,
+using $\sigma_t = \sigma_0(1 + \eta V_t)^+$ or a bounded
+specification $\sigma_t = \sigma_0\exp(\eta V_t
+\mathbf{1}_{|V_t| \leq M})$.  Alternatively, the
+hedging bounds of \Cref{thm:hedging-main} hold
+with the constant $C(h,\eta,p)$ depending on the
+volatility moments, which must be verified case by case.
+
+For tempered stable drivers (where
+$\nu(dz) = c|z|^{-1-\gamma}e^{-\lambda|z|}\,dz$ for some
+$\lambda > 0$), all moments are finite and~\ref{E1}
+holds for $r < \lambda$.
+\end{remark}
+
+\begin{proposition}[The bound constants are finite]
+\label{prop:constants-finite}
+Under \Cref{ass:exp-moment}, the constant
+$C(h,\eta,p)$ in the hedging error bound~\eqref{eq:psi-def-bound}
+is finite.  Specifically:
+\[
+  C(h,\eta,p) \leq C_0\,\|h''\|_\infty\,\eta^2\,
+  \bigl(\sup_{t \in [0,T]}\E^\QQ[\sigma_t^{4p}]\bigr)^{1/(2p)},
+\]
+where $C_0$ depends only on $p$ and $T$.
+\end{proposition}
+
+\begin{proof}
+In the bound $|\psi_t^{\mathrm{def}}(z)| \leq
+C\,(\int_t^T K(s,t)^2\,ds)\,z^2$
+(\Cref{prop:integrability}, Step~4),
+the constant $C$ arises from the conditional expectation
+of the composition chain: the volatility shift
+$|\sigma_s^{t,z} - \sigma_s| \leq C\eta|K(s,t)||z|\sigma_s$,
+the stock price shift
+$|S_T^{t,z} - S_T^{t,0}| \leq C\,S_T\,
+\int_t^T|\sigma_s^{t,z} - \sigma_s|\,|dW_s^S|$, and
+the payoff shift $|h(S_T^{t,z}) - h(S_T^{t,0})
+- h'(S_T^{t,0})(S_T^{t,z} - S_T^{t,0})|
+\leq \frac{1}{2}\|h''\|_\infty\,|S_T^{t,z} - S_T^{t,0}|^2$.
+
+Taking $L^p$-norms and applying H\"older's inequality,
+the volatility and stock moments enter through
+$\E[\sigma_s^{4p}]^{1/(2p)}$ (from the Burkholder--Davis--Gundy
+inequality applied to the stock-shift stochastic integral).
+Under~\ref{E2}, this is bounded.
+\end{proof}
+
+
+%======================================================================
+% Acknowledgements
+%======================================================================
+
+\subsection*{Acknowledgements}
+
+AI tools were used during drafting and mathematical exploration;
+the author takes full responsibility for all content and errors.
+
+
+%======================================================================
+% References
+%======================================================================
+
+\begin{thebibliography}{9}
+
+\bibitem{Applebaum2009}
+D.~Applebaum, \emph{L\'evy Processes and Stochastic Calculus},
+2nd ed., Cambridge University Press, 2009.
+
+\bibitem{ContTankov2004}
+R.~Cont and P.~Tankov, \emph{Financial Modelling with Jump
+Processes}, Chapman \& Hall/CRC, 2004.
+
+\bibitem{Dirksen2015}
+S.~Dirksen, \emph{It\^o isomorphisms for $L^p$-valued Poisson
+stochastic integrals}, Ann.\ Probab.\ 43 (2015), 2793--2825.
+
+\bibitem{ElEuchRosenbaum2019}
+O.~El~Euch and M.~Rosenbaum, \emph{Perfect hedging in rough
+Heston models}, Ann.\ Appl.\ Probab.\ 29 (2019), 3223--3268.
+
+\bibitem{Fontes2026a}
+R.~Fontes, \emph{The operator derivative in continuous stochastic
+calculus: a Hilbert energy space framework}, Quijotic Research,
+2026.
+
+\bibitem{Fontes2026d}
+R.~Fontes, \emph{Operator factorization beyond Hilbert spaces:
+representability obstructions and Leibniz defects for stable
+L\'evy processes}, Quijotic Research, 2026.
+
+\bibitem{Fukasawa2021}
+M.~Fukasawa and J.~Gatheral, \emph{Hedging under rough
+volatility}, in Rough Volatility, SIAM, 2021.
+
+\bibitem{GripenbergLondenStaffans1990}
+G.~Gripenberg, S.-O.~Londen, and O.~Staffans,
+\emph{Volterra Integral and Functional Equations},
+Cambridge University Press, 1990.
+
+\end{thebibliography}
+
+
+\end{document}

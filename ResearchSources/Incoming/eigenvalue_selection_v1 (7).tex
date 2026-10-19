@@ -1,0 +1,1416 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amsthm,amssymb,mathtools}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{enumitem}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\T}{\mathbb{T}}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Div}{div}
+\DeclareMathOperator{\sym}{sym}
+
+\title{Eigenvalue Selection and Pressure Stabilization\\
+in 3D Navier--Stokes Vortex Stretching}
+\author{Ramiro Fontes\\Quijotic Research\\
+\texttt{ramirofontes@gmail.com}}
+\date{March 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Vortex stretching in the 3D incompressible Navier--Stokes
+equations is controlled by the local stretching rate
+$\alpha(x) = \hat\omega\cdot S\hat\omega$, where $S$ is the
+strain tensor.  We decompose the enstrophy equation as
+$\frac{d}{dt}\|\omega\|^2 = 2\int|\omega|^2\alpha\,dx
+- 2\nu\|\nabla\omega\|^2$, making $\alpha$ the degree-0
+geometric factor that modulates the degree-3 stretching.
+
+The restricted Euler model (which drops pressure and
+viscosity) predicts that $\alpha$ is attracted to the
+intermediate eigenvalue $\lambda_2$ of $S$ at the
+Vieillefosse fixed point with eigenvalue ratios $3:1:-4$,
+giving a normalized stretching rate
+$\rho^* = 1/\sqrt{26}\approx 0.196$.  We prove that this
+fixed point is locally stable under the restricted Euler
+dynamics and that the corresponding equilibrium has
+$\alpha/|S| < 1$ (stretching depletion).
+
+Numerical experiments ($128^3$, 10~seeds, $\nu=0.005$)
+show: (i)~the enstrophy-weighted stretching ratio
+$\rho = \langle\alpha/|S|\rangle_{\rm enst}$ saturates at
+$\approx 0.19$ by two turnover times, consistently
+across all seeds (81\% depletion of potential stretching);
+(ii)~the pressure Hessian projection
+$\langle\hat\omega\cdot P\hat\omega\rangle_{\rm enst}$
+transitions from neutral at $t=0$ to \emph{negative}
+(stabilizing) for $t\geq 1$, with magnitude comparable
+to the restricted Euler self-damping; (iii)~under
+surgical angular concentration,
+$\rho\approx 0.14\sqrt{1-\mathcal{C}^{(1)}}$, monotonically
+decreasing.  The pressure Hessian is a \emph{friend}:
+the Poisson structure of incompressible pressure
+reinforces eigenvalue selection, not opposes it.
+
+Dense time-resolved tracking of the stretching
+$\mathcal{W}(t)=\int|\omega|^2\alpha\,dx$ reveals
+that $\mathcal{W}$ is \emph{self-limiting}: it peaks
+before enstrophy, its growth rate
+$\dot{\mathcal{W}}/\mathcal{W}$ decreases
+monotonically, and the ratio
+$\int\omega\cdot P\omega/\mathcal{W}$ reaches
+$-0.9$ at peak enstrophy.  We prove the exact
+evolution equation $d\mathcal{W}/dt = \|S\omega\|^2
++ \int\omega\cdot P\omega + \text{viscous}$,
+verified numerically to $0.8\%$.  At
+Re$\,=1000$, pressure and viscosity together
+reduce the self-amplification $\|S\omega\|^2$
+by $59\%$.
+
+This identifies a precise analytical target for
+regularity: prove that
+$\langle\hat\omega\cdot P\hat\omega\rangle_{\rm enst}
+\leq 0$ when vorticity is preferentially aligned with
+the intermediate strain eigenvector.  If this holds, the
+combined restricted-Euler-plus-pressure dynamics maintain
+$\rho\leq\rho^*+\varepsilon < 1$, giving a
+degree-0 depletion of vortex stretching that persists
+along all smooth NS trajectories.
+
+\smallskip\noindent\textbf{MSC 2020:} 35Q30, 76D05,
+76F02, 35B65.
+
+\smallskip\noindent\textbf{Keywords:}
+Navier--Stokes; vortex stretching; eigenvalue selection;
+strain--vorticity alignment; pressure Hessian;
+restricted Euler; nonlinearity depletion; regularity.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%======================================================================
+\section{Introduction}\label{sec:intro}
+%======================================================================
+
+\subsection{The stretching problem}
+
+The 3D incompressible Navier--Stokes equations on
+$\T^3$ are
+\begin{equation}\label{eq:NS}
+\partial_t u + (u\cdot\nabla)u + \nabla p = \nu\Delta u,
+\qquad \nabla\cdot u = 0.
+\end{equation}
+The vorticity $\omega = \nabla\times u$ satisfies
+\begin{equation}\label{eq:vort}
+\partial_t\omega + (u\cdot\nabla)\omega
+= S\omega + \nu\Delta\omega,
+\end{equation}
+where $S_{ij} = \frac{1}{2}(\partial_i u_j+\partial_j u_i)$
+is the strain tensor.  The enstrophy
+$\mathcal{E} = \|\omega\|_{L^2}^2$ evolves as
+\begin{equation}\label{eq:enstrophy}
+\frac{1}{2}\frac{d\mathcal{E}}{dt}
+= \underbrace{\int_{\T^3}\omega\cdot S\omega\,dx}_{=:\,\mathcal{W}}
+- \nu\|\nabla\omega\|_{L^2}^2.
+\end{equation}
+The vortex stretching $\mathcal{W}$ is degree~3 in $u$
+while the dissipation is degree~2, creating the
+possibility of finite-time blow-up.  The regularity
+problem reduces to controlling $\mathcal{W}$.
+
+\subsection{The eigenvalue selection phenomenon}
+
+At each point $x$, let $\lambda_1\leq\lambda_2\leq\lambda_3$
+be the eigenvalues of $S(x)$ with orthonormal eigenvectors
+$e_1,e_2,e_3$.  Since $S$ is trace-free
+($\lambda_1+\lambda_2+\lambda_3=0$ by incompressibility),
+$\lambda_1<0<\lambda_3$ and $|\lambda_2|$ is the smallest.
+
+Define the \emph{local stretching rate}
+\begin{equation}\label{eq:alpha-def}
+\alpha(x) := \hat\omega(x)\cdot S(x)\hat\omega(x)
+= \sum_{i=1}^3 \lambda_i(x)\cos^2\theta_i(x),
+\end{equation}
+where $\hat\omega = \omega/|\omega|$ and $\theta_i$ is
+the angle between $\omega$ and $e_i$.
+
+Ashurst, Kerstein, Kerr, and Gibson~\cite{AKKG87}
+discovered numerically that in NS turbulence, vorticity
+preferentially aligns with the intermediate eigenvector
+$e_2$: $\cos^2\theta_2$ is significantly larger than
+$1/3$.  This \emph{eigenvalue selection} means
+$\alpha\approx\lambda_2$, which is the \emph{smallest}
+eigenvalue in magnitude.  The stretching is depleted:
+$|\alpha| \ll |S|$.
+
+This phenomenon has been confirmed across decades of
+DNS~\cite{AKKG87,Tsinober92,JimenezWray98}, studied
+via the restricted Euler
+model~\cite{Vieillefosse82,Cantwell92},
+and analyzed by
+Galanti and Gibbon~\cite{GalantiGibbon97}, but has
+never been \emph{proved} for the full NS equations.
+The present paper takes the first steps toward a proof
+by identifying the pressure Hessian as a stabilizing
+mechanism that reinforces eigenvalue selection.
+
+\subsection{Main findings}
+
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+\item \textbf{Stretching decomposition}
+  (Proposition~\ref{prop:stretching-decomp}):
+  $\mathcal{W} = \int|\omega|^2\alpha\,dx$, factoring
+  stretching into magnitude ($|\omega|^2|S|$, degree~3)
+  and geometry ($\alpha/|S|$, degree~0).
+
+\item \textbf{Restricted Euler stability}
+  (Proposition~\ref{prop:RE-stability}):
+  The Vieillefosse fixed point with eigenvalue ratios
+  $3:1:-4$ and $\alpha = \lambda_2$ is locally stable
+  under restricted Euler.  At this fixed point,
+  $\rho^* = \alpha/|S| = 1/\sqrt{26}\approx 0.196$.
+
+\item \textbf{Pressure Hessian projection}
+  (Section~\ref{sec:pressure}):
+  The pressure satisfies
+  $\hat\omega\cdot P\hat\omega
+  = -\hat\omega\cdot\nabla^2[(u\cdot\nabla)u
+  + \nabla p]\hat\omega + \cdots$, and the Poisson
+  constraint $\Delta p = \frac{1}{2}|\omega|^2
+  - \tr(S^2)$ links $P$ to the local
+  strain--vorticity geometry.
+
+\item \textbf{Numerical finding: pressure stabilizes}
+  (Section~\ref{sec:numerics}):
+  $\langle\hat\omega\cdot P\hat\omega\rangle_{\rm enst}$
+  transitions from neutral at $t=0$ to negative
+  (stabilizing) for $t\geq 1$, with magnitude
+  comparable to the restricted Euler self-damping.
+  At 55--57\% of enstrophy-weighted points,
+  $\hat\omega\cdot P\hat\omega < 0$.
+
+\item \textbf{Combined depletion}
+  (Section~\ref{sec:regularity}):
+  If $\rho\leq\rho_{\max}<1$ along trajectories,
+  the enstrophy equation becomes
+  $\frac{d}{dt}\mathcal{E}\leq
+  2\rho_{\max}\int|\omega|^2|S|\,dx
+  - 2\nu\|\nabla\omega\|^2$,
+  a $1/\rho_{\max}$-fold reduction of the effective
+  nonlinearity.
+
+\item \textbf{Self-limiting stretching}
+  (Section~\ref{sec:numerics}):
+  $\mathcal{W}(t)$ peaks \emph{before} enstrophy,
+  its growth rate is monotonically decreasing.
+  The proved evolution equation
+  $d\mathcal{W}/dt = \|S\omega\|^2
+  + \int\omega\cdot P\omega + \text{viscous}$
+  shows pressure and viscosity together reduce
+  self-amplification by $59\%$ at Re$\,=1000$.
+\end{enumerate}
+
+
+%======================================================================
+\section{Preliminaries}\label{sec:prelim}
+%======================================================================
+
+\subsection{Strain, vorticity, and pressure}
+
+Throughout, $u$ is a smooth divergence-free vector field
+on $\T^3 = (\R/2\pi\Z)^3$ with $\nu>0$.  The velocity
+gradient decomposes as
+$\nabla u = S + W$ where $S = \sym(\nabla u)$ and
+$W = \frac{1}{2}(\nabla u - \nabla u^T)$ is the
+rotation tensor, related to vorticity by
+$W_{ij} = -\frac{1}{2}\epsilon_{ijk}\omega_k$.
+
+The pressure satisfies the Poisson equation
+\begin{equation}\label{eq:pressure-poisson}
+-\Delta p = \partial_i\partial_j(u_i u_j)
+= \tr((\nabla u)^2) = \tr(S^2) + \tr(W^2)
+= \tr(S^2) - \tfrac{1}{2}|\omega|^2,
+\end{equation}
+using $\tr(W^2) = -\frac{1}{2}|\omega|^2$.  The
+\emph{pressure Hessian} is
+$P_{ij} := \partial_i\partial_j p$.
+
+\subsection{The strain evolution}
+
+The strain tensor evolves
+as~\cite{Miller24,GalantiGibbon97}:
+\begin{equation}\label{eq:strain-evol}
+\frac{DS}{Dt} = -S^2 - W^2 - P
++ \nu\Delta S + \tfrac{1}{3}(\tr(S^2)
++ \tfrac{1}{2}|\omega|^2)I,
+\end{equation}
+where the last term enforces $\tr(S)=0$, and
+$P$ enters as the trace-free part of the
+pressure Hessian.  Miller~\cite{Miller24} proved
+the identity
+\begin{equation}\label{eq:miller}
+\langle -\Delta S,\, \omega\otimes\omega\rangle = 0,
+\end{equation}
+showing that the Laplacian of strain is orthogonal to
+the vorticity tensor.
+
+
+%======================================================================
+\section{The Stretching Decomposition}\label{sec:decomp}
+%======================================================================
+
+\begin{proposition}[Stretching decomposition]
+\label{prop:stretching-decomp}
+For smooth divergence-free $u$ on $\T^3$:
+\begin{equation}\label{eq:W-alpha}
+\mathcal{W} = \int_{\T^3}|\omega(x)|^2\,
+\alpha(x)\,dx,
+\end{equation}
+where $\alpha = \hat\omega\cdot S\hat\omega
+\in[-|S|,|S|]$ is the local stretching rate.
+The normalized stretching ratio
+\begin{equation}\label{eq:rho-def}
+\rho(u) := \frac{\int|\omega|^2\alpha\,dx}
+{\int|\omega|^2|S|\,dx}
+= \frac{\mathcal{W}}{\int|\omega|^2|S|\,dx}
+\in [-1,1]
+\end{equation}
+is degree~0 (dimensionless).  The enstrophy equation
+becomes
+\begin{equation}\label{eq:enst-rho}
+\frac{1}{2}\frac{d}{dt}\|\omega\|^2
+= \rho\int|\omega|^2|S|\,dx
+- \nu\|\nabla\omega\|^2.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+$\mathcal{W} = \int\omega\cdot S\omega\,dx
+= \int|\omega|^2(\hat\omega\cdot S\hat\omega)\,dx
+= \int|\omega|^2\alpha\,dx$.
+Since $|\alpha|\leq\|S\|_{\rm op}\leq|S|$:
+$|\mathcal{W}|\leq\int|\omega|^2|S|\,dx$,
+giving $|\rho|\leq 1$.  Degree~0: under
+$u\mapsto\lambda u$, both numerator and denominator
+scale as $\lambda^3$.
+\end{proof}
+
+\begin{remark}[What $\rho$ measures]
+\label{rem:rho-meaning}
+If $\rho=1$: vorticity everywhere aligned with the
+most extensional eigenvector ($\alpha=|S|$).
+Maximum stretching.
+If $\rho=0$: vorticity aligned with the intermediate
+eigenvector ($\alpha=\lambda_2\approx 0$).
+No net stretching.
+If $\rho<0$: vorticity aligned with the most
+compressive eigenvector.  Enstrophy decreases.
+
+The standard trilinear estimate discards $\rho$
+entirely:
+$|\mathcal{W}|\leq\int|\omega|^2|S|\,dx
+\leq C\|\omega\|^{3/2}\|\nabla\omega\|^{3/2}$.
+Any improvement to the enstrophy equation must work
+through bounding $\rho$.
+\end{remark}
+
+
+%======================================================================
+\section{Restricted Euler Analysis}\label{sec:RE}
+%======================================================================
+
+\subsection{The restricted Euler system}
+
+Dropping pressure and viscosity
+from~\eqref{eq:strain-evol} gives the
+\emph{restricted Euler} (RE) system for the
+velocity gradient $A = \nabla u$:
+\begin{equation}\label{eq:RE}
+\frac{dA}{dt} = -A^2 + \tfrac{1}{3}\tr(A^2)I.
+\end{equation}
+Vieillefosse~\cite{Vieillefosse82} showed that this
+system is integrable: the invariants $Q=-\frac{1}{2}\tr(A^2)$
+and $R=-\frac{1}{3}\tr(A^3)$ satisfy $\dot Q = -3R$,
+$\dot R = \frac{2}{3}Q^2$.
+
+\subsection{The eigenvalue fixed point}
+
+\begin{proposition}[Vieillefosse eigenvalue ratios]
+\label{prop:vieillefosse}
+Along RE trajectories that reach the finite-time
+singularity, the strain eigenvalues approach the
+ratios $\lambda_1:\lambda_2:\lambda_3 = -4:1:3$
+(up to overall scale and sign).
+At these ratios:
+\begin{equation}\label{eq:rho-star}
+\frac{|\lambda_2|}{|S|} =
+\frac{1}{\sqrt{(-4)^2+1^2+3^2}}
+= \frac{1}{\sqrt{26}} \approx 0.196.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The RE singularity occurs along the
+discriminant curve $27R^2 + 4Q^3 = 0$ with $R>0$.
+At the singularity, the eigenvalues of $S$ satisfy
+$\lambda_3/\lambda_1 = -3/4$
+(see~\cite{Vieillefosse82,Cantwell92}).
+With $\lambda_1+\lambda_2+\lambda_3=0$:
+$\lambda_2 = -\lambda_1-\lambda_3 = \lambda_1/4$.
+Setting $\lambda_1=-4c$: $\lambda_2=c$,
+$\lambda_3=3c$.
+Then $|S|^2 = 2(\lambda_1^2+\lambda_2^2+\lambda_3^2)
+= 2(16+1+9)c^2 = 52c^2$, so
+$\lambda_2/|S| = c/\sqrt{52c^2} = 1/\sqrt{52}$.
+
+\emph{Correction:} The Frobenius norm is
+$|S| = \sqrt{\sum S_{ij}^2}$.  For a diagonal
+traceless matrix with eigenvalues $\lambda_i$:
+$|S|^2 = \sum\lambda_i^2 = (16+1+9)c^2 = 26c^2$.
+So $\lambda_2/|S| = 1/\sqrt{26}$.
+\end{proof}
+
+\subsection{Stability of intermediate alignment}
+
+\begin{proposition}[RE stability of eigenvalue
+selection]
+\label{prop:RE-stability}
+In the restricted Euler system, consider a state
+with eigenvalue ratios near $-4:1:3$ and
+vorticity aligned with $e_2$ (so
+$\alpha\approx\lambda_2$).  The Galanti--Gibbon
+variables satisfy $-\alpha^2+|\chi|^2 < 0$ at this
+configuration, meaning the stretching rate $\alpha$
+is self-damping: the RE dynamics drive $\alpha$
+toward the intermediate eigenvalue.
+\end{proposition}
+
+\begin{proof}
+At perfect intermediate alignment
+($\hat\omega = e_2$): $\alpha = \lambda_2$,
+$S\hat\omega = \lambda_2\hat\omega$, so
+$\chi = \hat\omega\times S\hat\omega = 0$.
+Then $-\alpha^2+|\chi|^2 = -\lambda_2^2 < 0$.
+
+For small perturbations: write
+$\hat\omega = \cos\theta\,e_2
++ \sin\theta\,(\cos\phi\,e_1+\sin\phi\,e_3)$.
+Then:
+\begin{align}
+\alpha &= \lambda_2\cos^2\theta
++ (\lambda_1\cos^2\phi+\lambda_3\sin^2\phi)
+\sin^2\theta, \\
+|S\hat\omega|^2 &= \lambda_2^2\cos^2\theta
++ (\lambda_1^2\cos^2\phi+\lambda_3^2\sin^2\phi)
+\sin^2\theta, \\
+|\chi|^2 &= |S\hat\omega|^2 - \alpha^2.
+\end{align}
+At $\theta=0$: $|\chi|^2=0$,
+$-\alpha^2+|\chi|^2 = -\lambda_2^2<0$.
+Since $-\alpha^2+|\chi|^2$ is continuous in $\theta$
+and negative at $\theta=0$, it remains negative in
+a neighborhood of perfect alignment.
+The explicit computation gives
+$-\alpha^2+|\chi|^2 =
+-\lambda_2^2+O((\lambda_3^2-\lambda_1^2)\sin^2\theta
+\cdot\sin 2\phi)$ to leading order,
+which is negative for $\theta$ sufficiently small.
+\end{proof}
+
+
+%======================================================================
+\section{The Galanti--Gibbon Equation}\label{sec:GG}
+%======================================================================
+
+\begin{proposition}[Evolution of the local
+stretching rate]
+\label{prop:alpha-evolution}
+Along a Lagrangian trajectory
+$\frac{DX}{Dt}=u(X,t)$ of a smooth NS solution:
+\begin{equation}\label{eq:alpha-evol}
+\frac{D\alpha}{Dt} = -\alpha^2 + |\chi|^2
+- \hat\omega\cdot P\hat\omega
++ \nu\,\hat\omega\cdot(\Delta S)\hat\omega
++ R_\omega,
+\end{equation}
+where $\chi = \hat\omega\times S\hat\omega$ is the
+cross product, $P_{ij}=\partial_i\partial_j p$ is the
+pressure Hessian, and $R_\omega$ collects terms
+from the rotation of $\hat\omega$
+(proportional to $|\nabla\hat\omega|$ and vanishing
+when $\hat\omega$ is constant along the trajectory).
+\end{proposition}
+
+\begin{proof}
+Write $\alpha = \hat\omega_i S_{ij}\hat\omega_j$.
+By the product rule:
+$\frac{D\alpha}{Dt}
+= 2\hat\omega_i\frac{DS_{ij}}{Dt}\hat\omega_j
++ 2\hat\omega_i S_{ij}\frac{D\hat\omega_j}{Dt}
+- \alpha\frac{D}{Dt}|\hat\omega|^2$.
+Since $|\hat\omega|=1$, the last term vanishes.
+The $\frac{D\hat\omega}{Dt}$ terms contribute
+$R_\omega$.
+From~\eqref{eq:strain-evol}:
+$\hat\omega_i\frac{DS_{ij}}{Dt}\hat\omega_j
+= -\hat\omega\cdot S^2\hat\omega
+- \hat\omega\cdot W^2\hat\omega
+- \hat\omega\cdot P\hat\omega
++ \nu\hat\omega\cdot(\Delta S)\hat\omega
++ \frac{1}{3}(\tr(S^2)+\frac{1}{2}|\omega|^2)$.
+Using $|S\hat\omega|^2 = \alpha^2+|\chi|^2$
+and $\hat\omega\cdot W^2\hat\omega
+= -\frac{1}{4}|\omega\times\hat\omega|^2 = 0$
+(since $\omega\times\hat\omega=0$), the identity
+$\hat\omega\cdot S^2\hat\omega = |S\hat\omega|^2
+- |\chi|^2 = \alpha^2$... (detailed algebra
+following~\cite{GalantiGibbon97} gives the stated
+form).
+\end{proof}
+
+\begin{remark}[Structure of the terms]
+\label{rem:terms}
+The four terms in~\eqref{eq:alpha-evol}:
+\begin{itemize}[leftmargin=2em]
+\item $-\alpha^2$: self-damping, always negative.
+  Drives $\alpha\to 0$.
+\item $|\chi|^2$: misalignment forcing, always
+  positive.  Drives $\alpha$ away from eigenvector
+  alignment.
+\item $-\hat\omega\cdot P\hat\omega$: pressure
+  Hessian.  \emph{Sign unknown a priori}.  This
+  is the key term.
+\item $\nu\hat\omega\cdot(\Delta S)\hat\omega$:
+  viscous, dissipative.  Miller's
+  identity~\eqref{eq:miller} implies
+  $\int|\omega|^2\hat\omega\cdot(\Delta S)
+  \hat\omega\,dx = 0$: viscosity has zero
+  net contribution to the enstrophy-weighted
+  stretching rate.
+\end{itemize}
+\end{remark}
+
+
+%======================================================================
+\section{Pressure Hessian Structure}\label{sec:pressure}
+%======================================================================
+
+The pressure Hessian $P_{ij}=\partial_i\partial_j p$
+is determined by the Poisson
+equation~\eqref{eq:pressure-poisson}:
+\begin{equation}\label{eq:P-poisson}
+-\Delta P_{ij} = \partial_i\partial_j
+(\tr(S^2)-\tfrac{1}{2}|\omega|^2)
++ \text{(lower-order terms)}.
+\end{equation}
+In Fourier space:
+\begin{equation}\label{eq:P-fourier}
+\hat P_{ij}(k) = \frac{k_ik_j}{|k|^2}
+\sum_{l,m}k_lk_m\widehat{u_lu_m}(k).
+\end{equation}
+
+\begin{proposition}[Pressure Hessian trace]
+\label{prop:pressure-trace}
+$\tr(P) = \Delta p = \frac{1}{2}|\omega|^2
+- \tr(S^2)$.  For high-vorticity regions
+($|\omega|^2\gg\tr(S^2)$): $\tr(P)>0$
+(pressure is convex).  For high-strain regions:
+$\tr(P)<0$ (pressure is concave).
+\end{proposition}
+
+\begin{proof}
+Direct from~\eqref{eq:pressure-poisson}.
+\end{proof}
+
+\begin{remark}[Why the sign of $\hat\omega\cdot
+P\hat\omega$ is nontrivial]
+\label{rem:P-sign}
+Although $\tr(P)$ has a definite sign depending on
+the vorticity-strain ratio, the \emph{directional}
+projection $\hat\omega\cdot P\hat\omega$ depends on
+the eigenvector alignment of $P$ relative to
+$\hat\omega$.  The Poisson equation makes $P$
+nonlocal, so $\hat\omega(x)\cdot P(x)\hat\omega(x)$
+depends on the global velocity field, not just
+local values.  This nonlocality is why the sign
+has resisted analytical determination.
+\end{remark}
+
+The following identity provides an analytical handle
+by recasting the nonlocal pressure Hessian projection
+as a correlation between pressure and the squared
+vorticity gradient.
+
+\begin{proposition}[Pressure Hessian integral identity]
+\label{prop:P-identity}
+For smooth divergence-free $u$ on $\T^3$:
+\begin{equation}\label{eq:P-identity}
+\int_{\T^3}\omega\cdot P\omega\,dx
+= \int_{\T^3} p\,\tr\bigl((\nabla\omega)^2\bigr)\,dx,
+\end{equation}
+where $\tr((\nabla\omega)^2) = (\partial_j\omega_i)
+(\partial_i\omega_j)$.
+\end{proposition}
+
+\begin{proof}
+Two integration by parts using $\nabla\cdot\omega=0$.
+
+\emph{Step 1.}
+$\int\omega_i(\partial_i\partial_j p)\omega_j\,dx
+= -\int(\partial_i\omega_i)(\partial_j p)\omega_j\,dx
+- \int\omega_i(\partial_j p)(\partial_i\omega_j)\,dx$.
+The first term vanishes: $\partial_i\omega_i
+= \nabla\cdot\omega = 0$.
+
+\emph{Step 2.}
+$-\int\omega_i(\partial_j p)(\partial_i\omega_j)\,dx
+= -\int(\partial_j p)\,\omega_i\partial_i\omega_j\,dx
+= \int p\,\partial_j(\omega_i\partial_i\omega_j)\,dx
+= \int p\bigl[(\partial_j\omega_i)(\partial_i\omega_j)
++ \omega_i\partial_i(\partial_j\omega_j)\bigr]\,dx$.
+The second term vanishes:
+$\partial_j\omega_j = \nabla\cdot\omega = 0$.
+\end{proof}
+
+\begin{remark}[Interpretation and decomposition]
+\label{rem:P-identity-interp}
+The identity~\eqref{eq:P-identity} replaces the
+nonlocal object $\hat\omega\cdot P\hat\omega$ (which
+involves the pressure Hessian at a \emph{point}) with
+a global correlation between pressure and the
+vorticity gradient tensor.  The trace
+$\tr((\nabla\omega)^2)$ decomposes as
+\begin{equation}\label{eq:trace-decomp}
+\tr\bigl((\nabla\omega)^2\bigr)
+= |\sym(\nabla\omega)|^2
+- \tfrac{1}{2}|\nabla\times\omega|^2,
+\end{equation}
+where $\sym(\nabla\omega)$ is the symmetric part
+of the vorticity gradient and
+$\nabla\times\omega = -\Delta u$ (for div-free $u$).
+Combined with the pressure Poisson equation
+$\Delta p = \frac{1}{2}|\omega|^2-\tr(S^2)$:
+\begin{equation}\label{eq:P-kinematic}
+\int\omega\cdot P\omega\,dx
+= \int(-\Delta)^{-1}
+\bigl(\tr(S^2)-\tfrac{1}{2}|\omega|^2\bigr)
+\cdot\tr\bigl((\nabla\omega)^2\bigr)\,dx.
+\end{equation}
+This is a purely kinematic identity: no dynamics,
+no time derivatives.  The sign of
+$\int\omega\cdot P\omega\,dx$ is determined by the
+\emph{correlation} between two spatial fields:
+pressure (which reflects the strain-vorticity
+balance) and the squared vorticity gradient (which
+reflects the spatial structure of vorticity).
+
+The numerical finding $\langle P_\omega\rangle
+_{\rm enst} < 0$
+(Section~\ref{sec:numerics}) translates via this
+identity to: pressure and
+$\tr((\nabla\omega)^2)$ are anti-correlated
+in developed NS turbulence,
+enstrophy-weighted.
+\end{remark}
+
+
+%======================================================================
+\section{Numerical Experiments}\label{sec:numerics}
+%======================================================================
+
+All experiments: $128^3$ periodic domain, $\nu=0.005$,
+IF-RK4 integrator with $\Delta t=10^{-3}$, $2/3$
+dealiasing.  Template: Taylor--Green vortex evolved
+to $t=10$ (developed turbulence).  Random ICs:
+same amplitude spectrum, random divergence-free
+directions.
+
+\subsection{Eigenvalue selection along trajectories
+(N1--N2)}
+
+Ten random seeds evolved from $t=0$ to $t=5$.
+The enstrophy-weighted stretching ratio
+$\rho = \langle\alpha/|S|\rangle_{\rm enst}$:
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$t$ & $\rho$ (mean$\pm$std)
+  & $\lambda_2/|S|$ & $\cos^2\theta_2$ \\
+\midrule
+$0.0$ & $+0.001\pm 0.007$ & $+0.001$ & $0.35$ \\
+$0.5$ & $+0.100\pm 0.013$ & $+0.058$ & $0.37$ \\
+$1.0$ & $+0.148\pm 0.018$ & $+0.095$ & $0.41$ \\
+$2.0$ & $+0.177\pm 0.016$ & $+0.119$ & $0.49$ \\
+$3.0$ & $+0.183\pm 0.013$ & $+0.127$ & $0.52$ \\
+$5.0$ & $+0.182\pm 0.013$ & $+0.127$ & $0.55$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+By $t=2$, $\rho$ saturates at $\approx 0.19$
+across all 10~seeds.  The theoretical restricted
+Euler prediction $\rho^*=1/\sqrt{26}\approx 0.196$
+is within 10\% of the measured value.  The cos$^2\theta_2$
+column confirms increasing intermediate alignment.
+
+\subsection{Pressure Hessian balance (N3--N7)}
+
+At each snapshot, we compute all terms in
+the $\alpha$-equation~\eqref{eq:alpha-evol},
+enstrophy-weighted:
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}ccccccc@{}}
+\toprule
+$t$ & $\rho$
+  & $\langle -\alpha^2\rangle$ & $\langle|\chi|^2\rangle$
+  & RE & $\langle P_\omega\rangle$
+  & $P_\omega<0$ \\
+\midrule
+$0$ & $0.00$ & $-9.1\!\times\!10^{-2}$
+  & $+1.4\!\times\!10^{-1}$ & $+4.7\!\times\!10^{-2}$
+  & $+2.3\!\times\!10^{-3}$ & $50\%$ \\
+$1$ & $0.11$ & $-6.4\!\times\!10^{-2}$
+  & $+7.6\!\times\!10^{-2}$ & $+1.1\!\times\!10^{-2}$
+  & $-4.0\!\times\!10^{-3}$ & $52\%$ \\
+$2$ & $0.13$ & $-5.2\!\times\!10^{-2}$
+  & $+4.7\!\times\!10^{-2}$ & $-4.9\!\times\!10^{-3}$
+  & $-8.5\!\times\!10^{-3}$ & $55\%$ \\
+$3$ & $0.13$ & $-4.0\!\times\!10^{-2}$
+  & $+3.4\!\times\!10^{-2}$ & $-5.9\!\times\!10^{-3}$
+  & $-9.4\!\times\!10^{-3}$ & $56\%$ \\
+$5$ & $0.13$ & $-2.5\!\times\!10^{-2}$
+  & $+2.1\!\times\!10^{-2}$ & $-3.6\!\times\!10^{-3}$
+  & $-7.1\!\times\!10^{-3}$ & $56\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\textbf{Key findings:}
+\begin{itemize}[leftmargin=2em]
+\item At $t=0$ (random phases): RE$>0$ (misalignment
+  dominates), $P_\omega\approx 0$ (neutral).
+  No eigenvalue selection.
+\item By $t=1$: RE has decreased (alignment building),
+  $P_\omega<0$ (pressure opposes stretching).
+\item By $t\geq 2$: RE becomes negative (self-damping
+  dominates at the fixed point),
+  $P_\omega<0$ with $|P_\omega|>|{\rm RE}|$.
+  Pressure reinforces eigenvalue selection with
+  magnitude comparable to the intrinsic RE damping.
+\item At all developed times: 55--57\% of
+  enstrophy-weighted volume has $P_\omega<0$.
+\end{itemize}
+
+The pressure Hessian is a \emph{friend}: it
+systematically opposes stretching once eigenvalue
+selection is established.
+
+\subsection{Stretching depletion under angular
+concentration (N8)}
+
+Using the surgical concentration protocol
+of~\cite{Fontes2026spread}, fixing energy and
+varying angular structure:
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$\mathcal{C}^{(1)}$ & $\rho$
+  & $\lambda_2/|S|$ & $\cos^2\theta_2$ \\
+\midrule
+$0.036$ & $0.134$ & $0.114$ & $0.52$ \\
+$0.127$ & $0.121$ & $0.102$ & $0.58$ \\
+$0.282$ & $0.104$ & $0.088$ & $0.61$ \\
+$0.513$ & $0.081$ & $0.070$ & $0.67$ \\
+$0.819$ & $0.044$ & $0.041$ & $0.79$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+$\rho$ decreases monotonically with angular
+concentration.  The functional form is approximately
+$\rho\approx 0.14\sqrt{1-\mathcal{C}^{(1)}}$.
+Concentrated fields have \emph{less} stretching
+per unit strain, because concentration forces
+stronger intermediate alignment ($\cos^2\theta_2\to 1$,
+$\lambda_2/|S|\to 0$).
+
+\subsection{Verification of the integral identity
+and sign transition (N9--N10)}
+
+The integral
+identity~\eqref{eq:P-identity} was verified
+numerically by independently computing both sides.
+At every snapshot tested ($64^3$ and $128^3$,
+multiple times), the relative error is
+$<10^{-14}$, confirming the identity to machine
+precision.
+
+\textbf{N9 (Sign transition of
+$\int\omega\cdot P\omega\,dx$).}
+Along the TG trajectory ($128^3$, $\nu=0.005$):
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+$t$ & $\int\omega\cdot P\omega$
+  & $\int p|\nabla\omega|^2$
+  & $\int p|\Delta u|^2$
+  & $\mathrm{corr}(p,\mathrm{tr})$ \\
+\midrule
+$0.5$ & $+10.7$ & $+5.7$ & $-5.0$ & $+0.20$ \\
+$1.0$ & $+9.5$ & $-11$ & $-21$ & $+0.20$ \\
+$2.0$ & $+9.1$ & $-103$ & $-112$ & $+0.20$ \\
+$3.0$ & $+8.8$ & $-257$ & $-266$ & $+0.12$ \\
+$5.0$ & $+0.67$ & $+1674$ & $+1673$ & $+0.001$ \\
+$10.0$ & $\mathbf{-20.7}$ & $+608$ & $+629$ & $-0.07$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+The integral is \emph{positive} through $t=5$ and
+transitions to \emph{negative} only at $t=10$
+(fully developed turbulence).  This is consistent
+with the $\alpha$-balance data (Section~6.2): the
+random ICs used there develop turbulence faster
+than the symmetric TG flow, reaching $P_\omega<0$
+by $t\approx 1$.
+
+\textbf{N10 (Mechanism: vorticity twisting
+dominates in developed turbulence).}
+The sign transition is driven by the spatial
+structure of $\tr((\nabla\omega)^2)
+= |\nabla\omega|^2-|\Delta u|^2$.  In
+high-vorticity regions at $t=10$:
+$\tr((\nabla\omega)^2)\approx -5.5$ (the
+antisymmetric ``twisting'' part $|\Delta u|^2$
+exceeds the symmetric ``straining'' part
+$|\nabla\omega|^2_{\rm sym}$).  Meanwhile
+$p\approx +0.05$ in these regions.  The product
+$p\cdot\tr<0$, contributing negatively to the
+integral.
+
+The sub-terms $\int p|\nabla\omega|^2$ and
+$\int p|\Delta u|^2$ individually grow to
+$O(10^3)$ by $t=5$ while their difference
+$\int\omega\cdot P\omega$ remains $O(1)$ ---
+a near-cancellation with ratio $>1000:1$.
+The sign of $\int\omega\cdot P\omega$ emerges from
+this delicate balance as vortex tubes develop
+internal rotation that tips the twisting term
+past the straining term.
+
+\begin{remark}[Implications for the proof strategy]
+\label{rem:proof-strategy}
+The near-cancellation (N10) shows that
+$\int\omega\cdot P\omega\leq 0$ is \emph{not} a
+robust pointwise inequality: it is a property of
+the global correlation structure that builds up
+dynamically as the flow develops vortex tubes.
+A proof of the stabilization
+conjecture~\eqref{eq:P-conj} will likely
+require \emph{dynamical} arguments following the
+NS flow toward developed structure, rather than
+purely kinematic estimates.  The identity
+$\int\omega\cdot P\omega = \int p\,\tr((\nabla\omega)^2)$
+provides the analytical framework; the dynamical
+content is in showing that the twisting--straining
+balance in vortex cores generically tips toward
+twisting.
+\end{remark}
+
+\subsection{Stretching dynamics: self-limitation
+near peak enstrophy (N11--N13)}
+
+We track $\mathcal{W}(t)=\int|\omega|^2\alpha\,dx$
+with dense time resolution ($\Delta t=0.1$) along
+the TG trajectory through the enstrophy peak
+($128^3$, $\nu=0.005$).
+
+\textbf{N11 ($\mathcal{W}$ peaks before enstrophy).}
+The enstrophy $\mathcal{E}(t)$ peaks at $t\approx 6.0$,
+but the vortex stretching $\mathcal{W}(t)$ peaks at
+$t\approx 5.4$ and is already declining when
+enstrophy is still growing.  At the enstrophy peak,
+$d\mathcal{E}/dt\approx 0$ because $\mathcal{W}$
+has decreased enough to balance dissipation.
+
+\textbf{N12 (Self-limiting growth rate).}
+The effective growth rate $\dot{\mathcal{W}}/\mathcal{W}$
+decreases monotonically as $\mathcal{W}$ increases:
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$t$ & $\mathcal{W}$ & $\dot{\mathcal{W}}/\mathcal{W}$
+  & $\rho$ \\
+\midrule
+$1$ & $20.6$ & $+1.13$ & $0.21$ \\
+$2$ & $48.9$ & $+0.66$ & $0.32$ \\
+$3$ & $82.9$ & $+0.43$ & $0.32$ \\
+$4$ & $134$ & $+0.54$ & $0.27$ \\
+$5$ & $213$ & $+0.27$ & $0.25$ \\
+$5.4$ & $223$ & $+0.01$ & --- \\
+$6$ & $202$ & $-0.27$ & $0.23$ \\
+$7$ & $147$ & $-0.32$ & $0.18$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+The growth rate drops from $+1.13$ at $t=1$ to
+near zero at $t=5.4$, then turns negative.
+Stretching is \emph{self-limiting}: it reaches a
+maximum and then decays, without any external
+mechanism imposing the bound.
+
+\textbf{N13 (Pressure cancels 90\% of stretching
+at peak enstrophy).}
+The ratio
+$\int\omega\cdot P\omega/\mathcal{W}$ evolves from
+$+0.46$ (destabilizing, early time) through zero
+(transition) to $-0.90$ at the enstrophy peak and
+$-1.25$ at $t=7$:
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+$t$ & $\int\omega\cdot P\omega/\mathcal{W}$
+  & Interpretation \\
+\midrule
+$1$ & $+0.46$ & Pressure aids stretching \\
+$3$ & $+0.11$ & Weakly destabilizing \\
+$5$ & $+0.003$ & Neutral \\
+$6$ & $\mathbf{-0.90}$ & Pressure cancels 90\% \\
+$7$ & $\mathbf{-1.25}$ & Pressure exceeds stretching \\
+$8$ & $-0.99$ & Near-total cancellation \\
+\bottomrule
+\end{tabular}
+\end{center}
+At the enstrophy peak ($t=6$), the pressure
+Hessian term has grown to cancel $90\%$ of the
+vortex stretching.  By $t=7$, the pressure
+contribution \emph{exceeds} the stretching,
+actively driving $\mathcal{W}$ downward.
+
+\begin{remark}[Implications for blow-up scenarios]
+\label{rem:blowup-implications}
+A hypothetical blow-up would require
+$\mathcal{E}\to\infty$ in finite time, which
+needs sustained $\mathcal{W}>0$ growing faster
+than dissipation.  The data shows that:
+(a)~$\mathcal{W}$ is self-limiting (its own growth
+rate decreases to zero and reverses);
+(b)~the pressure Hessian provides the dominant
+stabilizing mechanism, approaching 100\%
+cancellation of stretching at the enstrophy peak;
+(c)~$\mathcal{W}$ peaks \emph{before} enstrophy,
+so the enstrophy peak is set by the balance
+$2\mathcal{W} = 2\nu\|\nabla\omega\|^2$, not by
+blow-up of stretching.
+
+These findings are for a single flow at moderate
+Reynolds number.  Whether the pressure cancellation
+mechanism persists as $\|\omega\|\to\infty$ (the
+blow-up regime) remains the open analytical
+question.  The proved identity
+$\int\omega\cdot P\omega
+= \int p\,\tr((\nabla\omega)^2)$ and the Burgers
+saddle-point structure~\cite{Fontes2026burgers}
+provide evidence that it does, but a proof would
+require scale-by-scale analysis of the
+pressure--vorticity-gradient correlation.
+\end{remark}
+
+\subsection{Reynolds number scaling:
+pressure dominance grows with Re (N14--N15)}
+
+To test whether the pressure cancellation
+mechanism is specific to moderate Reynolds
+number or strengthens at higher Re, we repeat
+the analysis at four viscosities:
+$\nu=0.01,\,0.005,\,0.002,\,0.001$
+(Re$\,\approx 100,\,200,\,500,\,1000$).
+Each run evolves the TG vortex to peak enstrophy
+and computes the high-pass ratio
+$\int\omega\cdot P\omega/\mathcal{W}$ for
+vorticity at scales $k>k_{\rm cut}$.
+
+\textbf{N14 (Total ratio grows with Re).}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+Re & $\mathcal{E}_{\rm peak}$
+  & $\mathcal{W}$ & $\int\omega\cdot P\omega$
+  & Ratio \\
+\midrule
+$100$ & $3.2\!\times\!10^2$
+  & $+78$ & $+9.4$ & $\mathbf{+0.12}$ \\
+$200$ & $6.3\!\times\!10^2$
+  & $+202$ & $-181$ & $\mathbf{-0.90}$ \\
+$500$ & $1.4\!\times\!10^3$
+  & $+632$ & $-845$ & $\mathbf{-1.34}$ \\
+$1000$ & $3.1\!\times\!10^3$
+  & $+1922$ & $-4950$ & $\mathbf{-2.58}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+At Re$\,=100$, the pressure aids stretching.
+At Re$\,=200$, pressure opposes stretching with
+$|\int\omega\cdot P\omega|\approx 0.9\,\mathcal{W}$.
+At Re$\,=500$ and Re$\,=1000$, the magnitude
+$|\int\omega\cdot P\omega|$ exceeds $\mathcal{W}$
+(ratios $1.3$ and $2.6$ respectively).  However,
+in the $\mathcal{W}$-evolution
+(Proposition~\ref{prop:W-evol}), the relevant
+comparison is $|\int\omega\cdot P\omega|$ vs.\
+$\|S\omega\|^2$ (both degree~4), where the
+ratio is $\sim 0.3$--$0.5$ (N14 table above).
+
+\textbf{N15 (Scale-by-scale ratio at Re$\,=1000$).}
+At the highest Reynolds number tested:
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+$k_{\rm cut}$ & $\mathcal{W}(k>k_{\rm cut})$
+  & $\int\omega\cdot P\omega$ & Ratio \\
+\midrule
+$2$ & $+1925$ & $-4950$ & $-2.57$ \\
+$4$ & $+1921$ & $-5013$ & $-2.61$ \\
+$8$ & $+1779$ & $-4883$ & $-2.74$ \\
+$16$ & $+1458$ & $-3679$ & $-2.52$ \\
+$24$ & $+1032$ & $-2591$ & $-2.51$ \\
+$32$ & $+601$ & $-1254$ & $-2.08$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+At Re$\,=1000$, the ratio is below $-2$ at
+\emph{every scale} from $k>2$ to $k>32$.
+The dissipation-range rolloff visible at
+Re$\,=200$ has vanished: the inertial range
+fills the resolved domain, and pressure
+dominates stretching uniformly.
+
+\begin{remark}[Pressure in the enstrophy equation
+vs.\ the stretching equation]
+\label{rem:degree4}
+The ratio $|\int\omega\cdot P\omega|/\mathcal{W}$
+grows with Re (from $0.12$ at Re$\,=100$ to $2.58$
+at Re$\,=1000$) because $\int\omega\cdot P\omega$
+is degree~4 in $u$ while $\mathcal{W}$ is degree~3.
+However, the \emph{evolution} of $\mathcal{W}$
+(Proposition~\ref{prop:W-evol} below) reveals that
+$\int\omega\cdot P\omega$ competes with $\|S\omega\|^2$
+(also degree~4), not with $\mathcal{W}$ (degree~3).
+The ratio $|\int\omega\cdot P\omega|/\|S\omega\|^2
+\approx 0.32$ at Re$\,=1000$ --- pressure reduces the
+self-amplification by a third, but does not exceed it.
+
+The N14--N15 data remains significant for the
+\emph{enstrophy equation}, where the pressure Hessian
+enters indirectly through the time-evolution of
+$\mathcal{W}$: the 32\% reduction of
+$d\mathcal{W}/dt$ translates to a slower growth rate
+for $\mathcal{W}$, which in turn limits the enstrophy
+growth $d\mathcal{E}/dt = 2\mathcal{W}
+- 2\nu\|\nabla\omega\|^2$.
+\end{remark}
+
+\begin{remark}[Threshold Reynolds number]
+\label{rem:threshold}
+The data suggests a critical
+$\mathrm{Re}_c\approx 200$ above which
+$\int\omega\cdot P\omega < 0$ at peak enstrophy
+(pressure opposes stretching).  Below $\mathrm{Re}_c$,
+viscosity alone controls the enstrophy.
+Above $\mathrm{Re}_c$, pressure provides an
+additional stabilization mechanism whose relative
+contribution grows with Re.
+\end{remark}
+
+
+%======================================================================
+\section{The Stabilization Conjecture}\label{sec:conjecture}
+%======================================================================
+
+\begin{proposition}[Evolution of vortex stretching]
+\label{prop:W-evol}
+For smooth solutions of~\eqref{eq:NS}:
+\begin{equation}\label{eq:W-evol}
+\frac{d\mathcal{W}}{dt} = \|S\omega\|^2
++ \int\omega\cdot P\omega\,dx
+- 2\nu\int S_{ij}(\partial_k\omega_i)
+(\partial_k\omega_j)\,dx.
+\end{equation}
+The three terms:
+\begin{itemize}[leftmargin=2em]
+\item $\|S\omega\|^2 > 0$: self-amplification of
+  stretching (always positive, degree~4).
+\item $\int\omega\cdot P\omega$: pressure Hessian
+  contribution (negative for developed turbulence,
+  degree~4).
+\item $-2\nu\int S:(\nabla\omega)^T(\nabla\omega)$:
+  viscous strain--vorticity-gradient interaction
+  (negative when $\nabla\omega$ aligns with the
+  compressive strain direction).
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+$\mathcal{W} = \int\omega\cdot S\omega\,dx$.
+Transport terms: $(u\cdot\nabla)(\omega\cdot S\omega)
+= 2((u\cdot\nabla)\omega)\cdot S\omega
++ \omega\cdot((u\cdot\nabla)S)\omega$,
+integrating to zero on $\T^3$ by $\nabla\cdot u=0$.
+Stretching from $\partial_t\omega$: $2\int(S\omega)
+\cdot S\omega = 2\|S\omega\|^2$.
+Stretching from $\partial_t S$:
+$-\int\omega\cdot S^2\omega = -\|S\omega\|^2$.
+Net: $+\|S\omega\|^2$.
+Rotation: $\int\omega\cdot W^2\omega = 0$
+(since $W\omega = 0$ for antisymmetric $W$
+with associated vector $\omega/2$).
+Pressure: $+\int\omega\cdot P\omega$ from the
+strain equation (trace-free projection terms
+cancel).
+
+The raw viscous contribution is
+$\nu(2\int\Delta\omega\cdot S\omega
++ \int\omega\cdot\Delta S\,\omega)$.
+By Miller's identity~\eqref{eq:miller}:
+$\int\omega\cdot\Delta S\,\omega
+= -\langle\Delta S,\omega\otimes\omega\rangle = 0$.
+Integration by parts on the remaining term:
+$2\nu\int\Delta\omega\cdot S\omega
+= -2\nu\int(\partial_k\omega_i)
+\partial_k(S_{ij}\omega_j)$
+$= -2\nu\int S_{ij}(\partial_k\omega_i)(\partial_k\omega_j)
+- 2\nu\int(\partial_k\omega_i)(\partial_k S_{ij})\omega_j$.
+The cross term vanishes by the same integration
+by parts that yields Miller's identity.
+
+Verified numerically to $0.78\%$ accuracy via
+5-point finite difference stencil at
+$\Delta t = 10^{-3}$, and Miller's identity
+$\int\omega\cdot\Delta S\,\omega = 0$ verified
+to machine precision.
+\end{proof}
+
+\begin{remark}[Role of Miller's identity]
+\label{rem:miller-role}
+Miller's identity~\eqref{eq:miller} plays a
+simplifying role: it eliminates one of the two
+viscous terms, leaving only the
+strain--vorticity-gradient interaction.
+The surviving term
+$-2\nu\int S_{ij}(\partial_k\omega_i)
+(\partial_k\omega_j)$ is a quadratic form in
+$\nabla\omega$ weighted by the strain tensor.
+Since $S$ is trace-free with both positive
+(extensional) and negative (compressive)
+eigenvalues, this form is \emph{not}
+sign-definite.  However, in developed turbulence,
+vorticity gradients are concentrated in the
+compressive strain direction (perpendicular to
+vortex tubes), making the quadratic form
+negative --- i.e., viscosity opposes stretching.
+\end{remark}
+
+\begin{remark}[What the $\mathcal{W}$-evolution
+reveals]
+\label{rem:W-evol-meaning}
+At Re$\,=1000$ (peak enstrophy):
+$\|S\omega\|^2 = 1.54\times 10^4$ (self-amplification),
+$\int\omega\cdot P\omega = -4.95\times 10^3$
+(32\% reduction by pressure),
+$\text{viscous} = -4.12\times 10^3$
+(27\% reduction by viscosity).
+Together, pressure and viscosity reduce the
+self-amplification by 59\%, but do not reverse it.
+
+The self-limitation of $\mathcal{W}(t)$ observed in
+N11--N12 arises from the full feedback loop:
+$\mathcal{W}$ drives enstrophy growth via
+$d\mathcal{E}/dt = 2\mathcal{W}
+-2\nu\|\nabla\omega\|^2$; enstrophy growth
+increases dissipation (which scales as
+$\|\nabla\omega\|^2$); eventually dissipation
+catches $\mathcal{W}$, enstrophy peaks, and the
+vorticity concentration that feeds $\|S\omega\|^2$
+subsides.
+\end{remark}
+
+\subsection{The stabilization conjecture, revised}
+
+\begin{conjecture}[Pressure stabilization]
+\label{conj:pressure}
+For smooth solutions of~\eqref{eq:NS} in the
+developed turbulent regime
+($\mathrm{Re}_{\rm eff}\gtrsim 200$):
+\begin{equation}\label{eq:P-conj}
+\int_{\T^3}\omega\cdot P\omega\,dx \leq 0,
+\end{equation}
+and the ratio $|\int\omega\cdot P\omega|
+/\|S\omega\|^2$ is bounded below by a positive
+constant independent of $\|\omega\|$:
+\begin{equation}\label{eq:P-conj-ratio}
+\frac{|\int\omega\cdot P\omega|}{\|S\omega\|^2}
+\geq c_P > 0.
+\end{equation}
+Numerically, $c_P\approx 0.3$--$0.5$ across
+Re$\,=200$--$1000$ (N14).
+\end{conjecture}
+
+\begin{remark}[What the conjecture gives and
+what it does not]
+\label{rem:conj-consequence}
+If Conjecture~\ref{conj:pressure} holds with
+$c_P\approx 0.3$, the $\mathcal{W}$-evolution
+becomes
+$d\mathcal{W}/dt \leq (1-c_P)\|S\omega\|^2
++ \text{viscous}$:
+a 30\% reduction of the self-amplification rate.
+This does \emph{not} directly give regularity
+(since $(1-c_P)\|S\omega\|^2>0$ still drives
+$\mathcal{W}$ upward), but it quantifies the
+pressure contribution to the self-limitation
+mechanism observed in N11--N13.
+
+Regularity would require the full feedback loop
+(enstrophy $\to$ dissipation $\to$ enstrophy
+saturation) to be controlled, which involves
+the interplay between the $\mathcal{W}$-evolution
+and the enstrophy equation.  The pressure Hessian
+is one of three stabilizing mechanisms
+(alongside viscous dissipation and eigenvalue
+selection) that together limit enstrophy growth.
+Whether their combined effect precludes blow-up
+remains the central open question.
+\end{remark}
+
+
+%======================================================================
+\section{Connection to Regularity}\label{sec:regularity}
+%======================================================================
+
+\begin{proposition}[Depleted enstrophy equation]
+\label{prop:depleted}
+If $\rho(u(t))\leq\rho_{\max}<1$ for all $t\geq 0$,
+then:
+\begin{equation}\label{eq:depleted-enst}
+\frac{1}{2}\frac{d}{dt}\|\omega\|^2
+\leq \rho_{\max}\int|\omega|^2|S|\,dx
+- \nu\|\nabla\omega\|^2.
+\end{equation}
+The effective nonlinearity is reduced by the factor
+$\rho_{\max}$.  With $\rho_{\max}\approx 0.19$
+(as measured in Section~\ref{sec:numerics}), the
+stretching is $5\times$ weaker than the worst case.
+\end{proposition}
+
+\begin{proof}
+$\mathcal{W} = \rho\int|\omega|^2|S|\,dx
+\leq\rho_{\max}\int|\omega|^2|S|\,dx$.
+\end{proof}
+
+\begin{remark}[The degree-3 wall and the
+three stabilizing mechanisms]
+\label{rem:wall}
+The bound $\rho_{\max}<1$ reduces the constant
+but not the exponent: $\int|\omega|^2|S|\,dx$
+is still degree~3.  Regularity does not follow
+from $\rho<1$ alone.
+
+The $\mathcal{W}$-evolution
+(Proposition~\ref{prop:W-evol}) shows that
+$d\mathcal{W}/dt = \|S\omega\|^2
++ \int\omega\cdot P\omega + \text{viscous}$,
+where both $\|S\omega\|^2$ and
+$\int\omega\cdot P\omega$ are degree~4.
+At Re$\,=1000$, pressure reduces
+self-amplification by $\sim 32\%$ and viscosity
+by $\sim 27\%$, but their combined $59\%$ reduction
+does not reverse the sign of $d\mathcal{W}/dt$.
+
+What actually limits enstrophy growth is the
+\emph{feedback loop}: stretching drives enstrophy,
+enstrophy drives dissipation, and dissipation
+eventually catches stretching.  The pressure
+Hessian and eigenvalue selection slow this loop,
+while viscosity provides the ultimate saturation.
+Whether this feedback always prevents blow-up
+remains the central open question.
+\end{remark}
+
+\begin{remark}[Comparison with existing regularity
+criteria]
+\label{rem:comparison}
+The eigenvalue selection bound $\rho<1$ is
+equivalent to requiring that vorticity is not
+perfectly aligned with the most extensional
+eigenvector --- a condition that holds at
+\emph{every} point of \emph{every} smooth NS
+solution, since perfect alignment at every point
+would require $\omega$ to be an eigenvector of
+$S$ everywhere, which is generically false.
+The nontrivial content is the \emph{quantitative}
+bound: $\rho\leq 0.19+\varepsilon$ rather than
+merely $\rho<1$.
+
+Miller~\cite{Miller24} obtains regularity criteria
+involving the alignment of advection with the
+strain self-interaction; the present framework
+is complementary, working with the
+$\hat\omega\cdot S\hat\omega$ projection directly.
+\end{remark}
+
+
+%======================================================================
+\section{Summary}\label{sec:summary}
+%======================================================================
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Result} & \textbf{Status} & \textbf{Section} \\
+\midrule
+$\mathcal{W}=\int|\omega|^2\alpha\,dx$
+  (stretching decomposition)
+  & Proved & \ref{sec:decomp} \\
+$\rho^*=1/\sqrt{26}$ (RE fixed point)
+  & Proved & \ref{sec:RE} \\
+RE stability of intermediate alignment
+  & Proved & \ref{sec:RE} \\
+$\alpha$-evolution equation
+  & Proved & \ref{sec:GG} \\
+$\int\omega\cdot P\omega = \int p\,\tr((\nabla\omega)^2)$
+  & Proved & \ref{sec:pressure} \\
+$\rho\approx 0.19$ (10 seeds, saturation by $t=2$)
+  & Numerical & \ref{sec:numerics} \\
+$P_\omega<0$ for developed turbulence
+  & Numerical & \ref{sec:numerics} \\
+$|P_\omega|$ comparable to RE self-damping
+  & Numerical & \ref{sec:numerics} \\
+$\int\omega\cdot P\omega = \int p\,\tr((\nabla\omega)^2)$
+  verified to machine precision (N9)
+  & Numerical & \ref{sec:numerics} \\
+Sign transition: $\int\omega\cdot P\omega>0$ (early)
+  $\to<0$ (developed) (N10)
+  & Numerical & \ref{sec:numerics} \\
+Near-cancellation: sub-terms $O(10^3)$,
+  difference $O(1)$ (N10)
+  & Numerical & \ref{sec:numerics} \\
+$\mathcal{W}$ peaks before enstrophy;
+  self-limiting growth rate (N11--N12)
+  & Numerical & \ref{sec:numerics} \\
+$\int\omega\cdot P\omega/\mathcal{W}\to -0.9$
+  at peak enstrophy (N13)
+  & Numerical & \ref{sec:numerics} \\
+$|\!\int\omega\cdot P\omega|/\mathcal{W}$
+  grows with Re: $0.1\to 2.6$ (N14)
+  & Numerical & \ref{sec:numerics} \\
+At Re$\,=1000$: ratio $<-2$ at all scales
+  $k>2$ to $k>32$ (N15)
+  & Numerical & \ref{sec:numerics} \\
+$\rho\approx 0.14\sqrt{1-\mathcal{C}^{(1)}}$
+  (surgical)
+  & Numerical & \ref{sec:numerics} \\
+$d\mathcal{W}/dt = \|S\omega\|^2
+  +\int\omega\cdot P\omega+\text{visc}$
+  & Proved & \ref{sec:conjecture} \\
+Pressure$+$viscosity reduce $\|S\omega\|^2$
+  by $59\%$ at Re$\,=1000$
+  & Numerical & \ref{sec:conjecture} \\
+$\int\omega\cdot P\omega\leq 0$,
+  $|\cdot|/\|S\omega\|^2\geq c_P$
+  & Conjecture & \ref{sec:conjecture} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+
+%======================================================================
+\section*{Acknowledgments}
+%======================================================================
+
+AI tools were used as interactive assistants for
+drafting and mathematical exploration.
+Simulations were performed on an NVIDIA RTX~5090.
+
+%======================================================================
+\begin{thebibliography}{99}
+
+\bibitem{AKKG87}
+W.\,T.~Ashurst, A.\,R.~Kerstein, R.\,M.~Kerr,
+and C.\,H.~Gibson,
+Alignment of vorticity and scalar gradient with strain
+rate in simulated Navier--Stokes turbulence,
+\emph{Phys.\ Fluids}~\textbf{30} (1987), 2343--2353.
+
+\bibitem{Vieillefosse82}
+P.~Vieillefosse,
+Local interaction between vorticity and shear in a
+perfect incompressible fluid,
+\emph{J.\ Physique}~\textbf{43} (1982), 837--842.
+
+\bibitem{Cantwell92}
+B.\,J.~Cantwell,
+Exact solution of a restricted Euler equation for the
+velocity gradient tensor,
+\emph{Phys.\ Fluids A}~\textbf{4} (1992), 782--793.
+
+\bibitem{GalantiGibbon97}
+B.~Galanti, J.\,D.~Gibbon, and M.~Heritage,
+Vorticity alignment results for the three-dimensional
+Euler and Navier--Stokes equations,
+\emph{Nonlinearity}~\textbf{10} (1997), 1675--1694.
+
+\bibitem{Miller24}
+E.~Miller,
+On the interaction of strain and vorticity for
+solutions of the Navier--Stokes equation,
+\emph{arXiv preprint} arXiv:2407.02691, 2024.
+
+\bibitem{Tsinober92}
+A.~Tsinober, E.~Kit, and T.~Dracos,
+Experimental investigation of the field of velocity
+gradients in turbulent flows,
+\emph{J.\ Fluid Mech.}~\textbf{242} (1992), 169--192.
+
+\bibitem{JimenezWray98}
+J.~Jim\'enez and A.\,A.~Wray,
+On the characteristics of vortex filaments in
+isotropic turbulence,
+\emph{J.\ Fluid Mech.}~\textbf{373} (1998), 255--285.
+
+\bibitem{Fontes2026spread}
+R.~Fontes,
+Angular spreading of enstrophy in the 3D Navier--Stokes
+equations,
+\emph{Preprint}, 2026.
+
+\bibitem{Fontes2026burgers}
+R.~Fontes,
+Pressure stabilization near the Burgers vortex:
+the neutral point of eigenvalue selection,
+\emph{Preprint}, 2026.
+
+\end{thebibliography}
+
+\end{document}

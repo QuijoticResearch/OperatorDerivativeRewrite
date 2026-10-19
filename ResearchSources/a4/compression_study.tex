@@ -1,0 +1,306 @@
+\documentclass[11pt,reqno]{amsart}
+
+%==============================================================
+% Volatility-Adaptive Lossless Coding of ECG Beats FLAC.
+%==============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem*{finding}{Finding}
+
+\newcommand{\R}{\mathbb{R}}
+\DeclareMathOperator{\ACF}{ACF}
+
+\title[Volatility-adaptive lossless coding of ECG beats FLAC]{Volatility-Adaptive Lossless Coding of ECG\\
+  Beats FLAC}
+\author{Ramiro Fontes}
+\address{Quijotic Research}
+\email{ramirofontes@gmail.com}
+\urladdr{www.quijotic.com}
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+A lossless compressor predicts the next sample and entropy-codes the residual;
+on a bursty signal the residual scale (volatility) clusters, and modeling it is
+the main lever beyond a fixed-scale code. We build a codec---an AR predictor, a
+Student-$t$ residual law, a conditional-volatility scale, and a Witten--Neal--Cleary
+arithmetic coder---and test it byte-for-byte (canonical raw input, exact
+round-trip, all overhead in the file) against gzip/bzip2/xz and against the
+\emph{actual, parameter-tuned} \texttt{flac} binary. The result is a real,
+boss-beating win in one domain: on electrocardiogram (ECG) data the codec beats
+tuned FLAC by $+3.4\%$ (SciPy recording) and $+4.9\%$ (MIT-BIH record~100), a
+win that reproduces across two independent recordings; on $16$-bit speech, by
+contrast, FLAC's audio-specific tuning beats the codec by $\sim 8\%$. We also
+settle which volatility model does the work: against the right opponents, a
+fractional (Mittag-Leffler) long-memory kernel beats only the one-parameter
+EWMA and is matched or beaten by GARCH and FIGARCH, so the lever is conditional
+volatility modeling plus arithmetic coding versus FLAC's Rice coder---not the
+fractional form, and not ``long memory'' per se. We are explicit about scope:
+FLAC is the general-purpose lossless standard, not a domain ECG codec. Methods
+that model the quasi-periodic beat structure (wavelet and long-term-prediction
+ECG coders) exploit structure our AR predictor ignores and remain the unfought
+opponent; the claim here is strictly that we beat the general-purpose standard.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+\label{sec:intro}
+
+A lossless compressor is a predictive model followed by an entropy coder. The
+coder---arithmetic, range, ANS, or Rice---realizes the model's code length to
+within a fraction of a bit, so the whole contest is whether the predictive
+distribution assigns shorter ideal code length than a baseline. After a linear
+predictor removes the mean structure of a bursty signal, the residual is not
+stationary in scale: it clusters into quiet and violent stretches. Modeling that
+time-varying scale---the conditional volatility---is the main lever beyond a
+fixed-scale residual code, and it is the lever this paper exploits.
+
+The reference point that matters is FLAC, the de facto general-purpose lossless
+standard for $16$-bit signals. FLAC's core is a linear predictor followed by
+\emph{Rice} coding of the residual---a fast, parameter-light coder that does not
+model conditional volatility. Our hypothesis is that replacing Rice coding with
+a Student-$t$ residual law whose scale tracks the conditional volatility, driven
+through an arithmetic coder, recovers bits FLAC leaves on the table on signals
+with strong volatility clustering. ECG is the natural candidate: long quiet
+baselines punctuated by violent QRS complexes.
+
+We are careful about two things a result like this can over-claim. First,
+\emph{which} part does the work: we test the volatility model against the right
+opponents (GARCH, FIGARCH), not only the weak EWMA baseline. Second,
+\emph{scope}: beating FLAC proves we beat the general-purpose standard, not the
+domain-specific ECG codecs (\cref{sec:scope}). Both qualifications are load-bearing
+and stated up front.
+
+\section{Method and data}
+\label{sec:method}
+
+\paragraph{Datasets.} ECG: the SciPy electrocardiogram ($108$k samples) and
+MIT-BIH record~100 (channel MLII, $650$k samples, an independent
+subject/lead) \cite{mitbih,physionet}. Speech: real mono $16$-bit PCM. S\&P~500
+pooled daily log-returns are used for the volatility-model comparison.
+
+\paragraph{Codec.} Residuals are formed by an order-$p$ AR predictor (rounded so
+the reconstruction is exact). The residual is coded with a Student-$t$ law
+(empirically the best tail) whose scale $s_t$ is a conditional volatility from
+one of: a fixed scale, EWMA, fitted GARCH$(1,1)$ \cite{garch}, fitted FIGARCH
+(long memory, ARCH-$\infty$ with hyperbolic fractional-differencing weights)
+\cite{figarch}, or the Mittag-Leffler kernel $w_k=k^{\alpha-1}E_{\alpha,\alpha}
+(-\lambda k^\alpha)$ of a fractional-relaxation clock \cite{mem,GKMR}. The coder
+is a Witten--Neal--Cleary arithmetic coder \cite{wnc} over a per-symbol
+cumulative-frequency table with a guaranteed nonzero floor.
+
+\paragraph{Byte-level protocol.} The input is frozen as canonical little-endian
+raw bytes; every method sees exactly those bytes. The codec must
+$\textsf{encode}\to\textsf{decode}\to$ reproduce the input \emph{byte for byte}
+(verified), and its compressed file carries all overhead (AR coefficients,
+volatility parameters, alphabet), so it is fully self-decoding. Baselines are
+actual bytes from gzip\,$-9$, bzip2\,$-9$, xz\,$-9$. The FLAC baseline is the
+real \texttt{flac} $1.4.3$ binary, swept over its strong settings
+($-8$, $-e$, $-p$, higher LPC order, and block size, with \texttt{--lax}) and
+reported at its best; our codec is likewise reported at its best over AR order
+and volatility model. The comparison is therefore best-configuration versus
+best-configuration.
+
+\section{Which volatility model does the work}
+\label{sec:vol}
+
+Before claiming a win we isolate the lever. We compare the Mittag-Leffler kernel
+against EWMA, GARCH, and FIGARCH by a paired per-block test: a single fit over
+each recording, then the models' actual per-symbol arithmetic code length
+aggregated into $256$-sample blocks (header-free, isolating the model).
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lrrr}
+\toprule
+dataset & ML vs.\ EWMA & ML vs.\ GARCH & ML vs.\ FIGARCH\\
+\midrule
+synthetic long-mem & $+0.07\%$ (win $76\%$) & $+0.01\%$ (tie) & $-0.02\%$ (loses)\\
+ECG (SciPy)        & $+0.64\%$ (win $96\%$) & $-0.60\%$ (win $12\%$) & $-0.59\%$ (win $14\%$)\\
+ECG (MIT-BIH 100)  & $+0.80\%$ (win $99.8\%$) & $-1.00\%$ (win $0.5\%$) & $-1.05\%$ (win $1.4\%$)\\
+S\&P returns       & $+0.05\%$ (win $75\%$) & $-0.00\%$ (tie) & $-0.04\%$ (loses)\\
+\bottomrule
+\end{tabular}
+\caption{Per-block code-length comparison of the Mittag-Leffler volatility
+kernel against three opponents (win rate = fraction of blocks ML is smaller).
+ML beats only the one-parameter EWMA; it ties or loses to GARCH and loses to
+FIGARCH on every dataset.}
+\label{tab:vol}
+\end{table}
+
+\begin{finding}
+The fractional (Mittag-Leffler) kernel reliably beats EWMA but is matched or
+beaten by GARCH and FIGARCH everywhere. ``Long memory is the lever'' is at most
+weakly true---FIGARCH is the aggregate-best volatility model, but only by
+$\sim0.03\%$---and the specific fractional-clock form is never best. The lever is
+conditional volatility modeling in general; the choice among GARCH/FIGARCH/ML
+moves the result by under $1\%$.
+\end{finding}
+
+The earlier impression that the fractional kernel was special came from racing it
+only against EWMA, which is short-memory by construction and is nobody's frontier.
+Against the production-grade volatility models the fractional advantage
+evaporates. We therefore use GARCH and FIGARCH as the codec's volatility model
+in the byte-level results below, and treat ``volatility-adaptive arithmetic
+coding,'' not Mittag-Leffler, as the mechanism.
+
+\section{Against general-purpose compressors}
+\label{sec:general}
+
+On the frozen raw bytes, the codec beats every general-purpose compressor,
+with exact round-trip and all overhead included.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lrr}
+\toprule
+method (ECG, 216\,kB int16) & bytes & vs xz\\
+\midrule
+gzip$-9$            & $118{,}619$ & $-37\%$\\
+xz$-9$              & $86{,}772$  & ---\\
+bzip2$-9$           & $73{,}690$  & $+15\%$\\
+AR$+$Gaussian       & $61{,}505$  & $+29\%$\\
+AR$+$Student-$t$    & $60{,}797$  & $+30\%$\\
+AR$+$Student-$t+$EWMA & $60{,}062$ & $+31\%$\\
+\textbf{AR$+$Student-$t+$GARCH} & $\mathbf{59{,}318}$ & $\mathbf{+32\%}$\\
+\bottomrule
+\end{tabular}
+\caption{Actual compressed bytes (exact round-trip). The codec beats gzip,
+bzip2, and xz; most of the margin is AR$+$arithmetic coding, with the volatility
+model adding a final $\sim3\%$. On S\&P returns the codec likewise beats xz by
+$\sim8\%$.}
+\label{tab:general}
+\end{table}
+
+The honest decomposition: plain AR$+$Gaussian already reaches $+29\%$ over xz;
+the heavy tail and volatility model add the final few percent. Beating
+general-purpose tools on a predictable numeric signal is expected---they do not
+model the signal---so this is a sanity check, not the headline.
+
+\section{Against real FLAC}
+\label{sec:flac}
+
+The headline is the comparison with the real, parameter-tuned \texttt{flac}
+binary, best-configuration versus best-configuration, on the same samples.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lrrr}
+\toprule
+signal & best FLAC & best ours & ours vs.\ FLAC\\
+\midrule
+ECG (SciPy)        & $61{,}379$  & $59{,}318$ (GARCH)   & $\mathbf{+3.4\%}$\\
+ECG (MIT-BIH 100)  & $332{,}017$ & $315{,}602$ (FIGARCH)& $\mathbf{+4.9\%}$\\
+speech (16\,kHz)   & $192{,}765$ & $208{,}026$ (FIGARCH)& $-7.9\%$\\
+\bottomrule
+\end{tabular}
+\caption{Lossless bytes, exact round-trip, both encoders at their swept best.
+The volatility-adaptive codec beats tuned FLAC on ECG---on two independent
+recordings---and loses to it on speech.}
+\label{tab:flac}
+\end{table}
+
+\begin{finding}
+A volatility-adaptive Student-$t$ arithmetic codec beats the general-purpose
+lossless standard (tuned FLAC) on ECG by $3$--$5\%$, reproducibly across two
+recordings. The win is robust to the volatility model: EWMA, GARCH, FIGARCH, and
+Mittag-Leffler all beat FLAC on ECG, with GARCH/FIGARCH best. On speech FLAC's
+audio-specific machinery (LPC order/precision search, apodization, partitioned
+Rice) wins by $\sim8\%$, and we make no audio claim.
+\end{finding}
+
+The asymmetry is informative: ECG's long quiet baselines and impulsive QRS make
+conditional volatility a large lever that FLAC's Rice coder cannot use, whereas
+on speech FLAC's decades of audio-specific tuning dominate. The method is a
+biosignal codec, not an audio codec. In an ambulatory/Holter setting---continuous
+multi-hour recording, naturally large coding blocks, high device-volume---a
+$3$--$5\%$ reduction over the deployed general-purpose standard is real currency.
+
+\section{Scope: the unfought boss}
+\label{sec:scope}
+
+One caveat is essential and we state it plainly. FLAC is the general-purpose
+lossless standard; it is \emph{not} an ECG-specific codec. The biosignal
+literature has domain codecs---wavelet-based and long-term-prediction methods
+\cite{ecgcomp}---that explicitly model the quasi-periodic beat structure of ECG.
+Our AR predictor models only short-range linear dependence; it does not exploit
+beat-to-beat self-similarity at all. A domain ECG coder that predicts the
+current beat from previous beats removes structure our residual still contains,
+and could plausibly erase our margin. Beating FLAC establishes that
+volatility-adaptive arithmetic coding beats the general-purpose standard on ECG;
+it does \emph{not} establish that it beats ECG-specific codecs. That comparison
+is the next decisive test---the same role FIGARCH played for the volatility
+question in \cref{sec:vol}---and it is unfought here. We flag it before, not
+after, the result invites excitement.
+
+\section{Verdict}
+\label{sec:verdict}
+
+\begin{itemize}
+\item \textbf{A real codec, byte-for-byte, beating the standard on ECG.} With
+  exact round-trip and all overhead included, the codec beats tuned FLAC on ECG
+  by $+3.4\%$ and $+4.9\%$ on two independent recordings, and beats gzip/bzip2/xz
+  throughout.
+\item \textbf{The lever is conditional volatility modeling, not the fractional
+  form.} Against GARCH and FIGARCH the Mittag-Leffler kernel only ties or loses;
+  it beats only EWMA. ``Long memory'' helps marginally (FIGARCH best by
+  $\sim0.03\%$); the fractional clock is not special. The win over FLAC is robust
+  to the volatility model.
+\item \textbf{Scope is narrow and named.} The method loses to FLAC on speech by
+  $\sim8\%$, and the comparison that would make ``beats FLAC'' into ``beats the
+  ECG state of the art''---against wavelet / long-term-prediction ECG codecs---is
+  not run here. The honest claim is: a volatility-adaptive arithmetic codec
+  beats the general-purpose lossless standard on ECG by $3$--$5\%$.
+\end{itemize}
+
+\section*{Reproducibility}
+All experiments are pure Python (NumPy/SciPy; \texttt{mpmath} for the
+Mittag-Leffler function), with the real \texttt{flac} $1.4.3$ binary for the FLAC
+baseline. Scripts: the volatility-model comparison (\texttt{lm\_vs\_garch.py});
+the byte-level codec with exact round-trip and gzip/bzip2/xz baselines
+(\texttt{bench.py}, with EWMA/GARCH/FIGARCH/Mittag-Leffler volatility models);
+the parameter-fair FLAC comparison (\texttt{flac\_sweep.py}); and the
+cross-recording tests (\texttt{ecg\_repeat.py}, \texttt{mit\_test.py}). ECG data:
+the SciPy electrocardiogram and MIT-BIH record~100. The arithmetic coder is
+round-trip verified lossless.
+
+\begin{thebibliography}{9}
+\bibitem{garch} T.~Bollerslev, \emph{Generalized autoregressive conditional
+  heteroskedasticity}, J.\ Econometrics \textbf{31} (1986), 307--327.
+\bibitem{figarch} R.~T.~Baillie, T.~Bollerslev, and H.~O.~Mikkelsen,
+  \emph{Fractionally integrated generalized autoregressive conditional
+  heteroskedasticity}, J.\ Econometrics \textbf{74} (1996), 3--30.
+\bibitem{mem} R.~Fontes, \emph{The Fractional Memory Process: Well-Posedness,
+  Spectral Decomposition, and Discrete Representation}, 2026.
+\bibitem{GKMR} R.~Gorenflo, A.~A.~Kilbas, F.~Mainardi, and S.~V.~Rogosin,
+  \emph{Mittag-Leffler Functions, Related Topics and Applications}, Springer,
+  2014.
+\bibitem{wnc} I.~H.~Witten, R.~M.~Neal, and J.~G.~Cleary, \emph{Arithmetic
+  coding for data compression}, Comm.\ ACM \textbf{30} (1987), 520--540.
+\bibitem{flac} J.~Coalson, \emph{FLAC---Free Lossless Audio Codec}, xiph.org.
+\bibitem{mitbih} G.~B.~Moody and R.~G.~Mark, \emph{The impact of the MIT-BIH
+  Arrhythmia Database}, IEEE Eng.\ Med.\ Biol.\ \textbf{20} (2001), 45--50.
+\bibitem{physionet} A.~L.~Goldberger et al., \emph{PhysioBank, PhysioToolkit,
+  and PhysioNet}, Circulation \textbf{101} (2000), e215--e220.
+\bibitem{ecgcomp} M.~S.~Manikandan and S.~Dandapat, \emph{Wavelet-based
+  electrocardiogram signal compression methods and their performances: a
+  prospective review}, Biomed.\ Signal Process.\ Control \textbf{14} (2014),
+  73--107.
+\end{thebibliography}
+
+\end{document}

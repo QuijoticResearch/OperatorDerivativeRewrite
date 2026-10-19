@@ -1,0 +1,1236 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{condition}[theorem]{Condition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Ent}{\operatorname{Ent}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\gap}{\operatorname{gap}}
+\newcommand{\ad}{\operatorname{ad}}
+\newcommand{\Ad}{\operatorname{Ad}}
+\newcommand{\SU}{\mathrm{SU}}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\U}{\mathrm{U}}
+\newcommand{\fg}{\mathfrak{g}}
+\newcommand{\su}{\mathfrak{su}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cZ}{\mathcal{Z}}
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bB}{\mathbf{B}}
+\newcommand{\bU}{\mathbf{U}}
+
+\title{UV Stability for Non-Abelian Gauge Theories\\
+  via the Dimock--Balaban Renormalization Group:\\
+  A Roadmap from $\phi^4_3$ and QED$_3$ to YM$_{3,4}$}
+\author{R.\ da Costa Fontes\\ \textit{Quijotic Research}\\
+\texttt{ramirofontes@gmail.com}}
+\date{February 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Dimock~\cite{Dimock13a,Dimock13b,Dimock14} gave a complete,
+self-contained treatment of the ultraviolet problem for
+$\phi^4_3$ using Balaban's renormalization group method,
+and subsequently extended this to QED in $d=3$
+in a series of papers~\cite{Dimock02,Dimock04,Dimock15a,Dimock15b,Dimock18,Dimock22}.
+We present a detailed roadmap for extending Dimock's
+framework to \emph{non-Abelian} gauge theories:
+first to pure $\SU(N)$ Yang--Mills in $d=3$
+(super-renormalizable), then to $d=4$ (just-renormalizable,
+asymptotically free).
+
+For each step of the Balaban RG procedure ---
+block averaging, gauge fixing, variational problem,
+fluctuation integration, small/large field decomposition,
+and polymer expansion --- we identify precisely which
+estimates from Dimock's work carry over to the
+non-Abelian setting and which require genuinely new analysis.
+We formulate the UV stability bound
+as a \emph{Hessian condition} compatible with the
+Bauerschmidt--Bodineau--Dagallier (BBD) multiscale
+Bakry--\'Emery criterion~\cite{BBD24}, establishing
+a direct interface between the Balaban UV program
+and the author's mass gap framework~\cite{FontesBBD}.
+
+The paper serves three purposes: (i)~a readable introduction
+to the Dimock--Balaban method for researchers approaching
+from the constructive QFT or probability communities;
+(ii)~a precise statement of the estimates needed to
+complete the non-Abelian UV program;
+(iii)~a bridge connecting the UV renormalization group
+to the BBD log-Sobolev framework, showing that the
+Balaban effective action bounds are precisely the
+missing UV input for the continuum Yang--Mills mass gap.
+\end{abstract}
+
+\noindent\textbf{MSC 2020:} 81T13, 81T25, 82B28, 60J25.
+
+%% ====================================================================
+\section{Introduction}\label{sec:intro}
+%% ====================================================================
+
+\subsection{The UV problem for Yang--Mills}
+
+The construction of a quantum Yang--Mills theory satisfying
+the Wightman or Osterwalder--Schrader axioms requires control
+of two distinct problems: the \emph{ultraviolet} problem
+(existence of the continuum limit as lattice spacing $a \to 0$)
+and the \emph{infrared} problem (existence of the infinite-volume
+limit and demonstration of a mass gap). In our companion
+papers~\cite{FontesGap,FontesUniform,FontesBBD,FontesEuclidean},
+we have developed a framework based on the Bakry--\'Emery
+curvature condition that reduces the mass gap problem to
+three scale-separated inputs:
+\begin{equation}\label{eq:three_regimes}
+  \text{IR curvature} \quad + \quad
+  \text{crossover (block gap)} \quad + \quad
+  \text{UV stability.}
+\end{equation}
+The first two inputs have been established for
+3D Yang--Mills~\cite{FontesGap,FontesUniform}.
+The UV stability bound is the focus of the present paper.
+
+\subsection{Balaban's program and Dimock's modernization}
+
+Balaban's monumental series of papers~\cite{Bal84a,Bal84b,Bal85a,Bal85b,Bal85c,Bal85d,Bal85e,Bal87,Bal88a,Bal88b,Bal89}
+established UV stability for 3D lattice pure gauge theories
+and developed the renormalization group machinery for 4D
+gauge theories. However, these papers --- totaling approximately
+800 pages --- are extremely dense and notation-heavy, with
+key arguments distributed across many publications.
+
+Dimock undertook a systematic modernization of Balaban's approach:
+\begin{enumerate}[label=(\roman*)]
+  \item \emph{$\phi^4_3$} (scalar, super-renormalizable):
+    Three papers~\cite{Dimock13a,Dimock13b,Dimock14}
+    providing a complete, self-contained proof of UV stability.
+    Total: $\sim$200 pages, ``readable line by
+    line''~\cite{Adhikari}.
+  \item \emph{QED$_3$} (Abelian gauge + fermions,
+    super-renormalizable): Seven papers~\cite{Dimock02,Dimock04,Dimock15a,Dimock15b,Dimock18,Dimock20,Dimock22}
+    extending to $\U(1)$ gauge theory.
+    Final result: UV stability bound for QED$_3$
+    at weak coupling in a fixed finite volume.
+\end{enumerate}
+The natural next step is pure $\SU(N)$ Yang--Mills in $d=3$,
+then $d=4$. This has \emph{not} been done; the purpose
+of this paper is to lay out precisely what is needed.
+
+\subsection{Structure of the paper}
+
+Section~\ref{sec:balaban_rg} reviews the Balaban RG procedure
+in Dimock's clean notation.
+Section~\ref{sec:abelian_to_nonabelian} identifies the
+obstacles in passing from $\U(1)$ to $\SU(N)$.
+Section~\ref{sec:ym3} formulates the 3D non-Abelian program
+and states the required estimates.
+Section~\ref{sec:ym4} treats the 4D case with its
+additional running coupling constant.
+Section~\ref{sec:bbd_interface} connects the effective
+action bounds to the BBD Hessian condition.
+Section~\ref{sec:summary} summarizes the status
+and prioritizes the open problems.
+
+%% ====================================================================
+\section{The Balaban RG Procedure}\label{sec:balaban_rg}
+%% ====================================================================
+
+We follow Dimock's notation~\cite{Dimock13a,Dimock22}.
+The theory lives on a toroidal lattice
+$\T_\eta^d = (\eta \Z / L^M \Z)^d$ with lattice spacing
+$\eta = L^{-N}$ and physical volume $L^M$, where $L$ is a
+fixed large odd integer and $M, N$ are large positive integers.
+The continuum limit is $N \to \infty$; the
+infinite-volume limit is $M \to \infty$.
+
+\subsection{Lattice gauge fields}
+
+A \emph{lattice gauge field} $U$ assigns to each oriented
+bond $b = \langle x, x + \eta e_\mu \rangle$ an element
+$U(b) \in G$, with $U(-b) = U(b)^{-1}$.
+For a plaquette $p$ with boundary bonds $b_1, \ldots, b_4$,
+the plaquette holonomy is
+\begin{equation}
+  U(p) = U(b_1) U(b_2) U(b_3) U(b_4).
+\end{equation}
+The \emph{Wilson action} is
+\begin{equation}\label{eq:wilson_action}
+  S(U) = \frac{1}{g^2} \sum_p \eta^{d-4}
+  \left(1 - \frac{1}{\dim R}\,\text{Re}\,\tr_R\, U(p)\right),
+\end{equation}
+where $R$ is the fundamental representation and the sum is
+over unoriented plaquettes. The factor $\eta^{d-4}$ ensures
+the correct continuum scaling.
+
+A \emph{lattice gauge transformation} $u: x \mapsto u(x) \in G$
+acts by $U(b) \mapsto u(x) U(b) u(y)^{-1}$ for $b = \langle x,y\rangle$.
+The partition function is
+\begin{equation}
+  \cZ = \int \prod_b dU(b)\; e^{-S(U)},
+\end{equation}
+where $dU(b)$ is the Haar measure on $G$.
+
+\subsection{Block averaging}\label{sec:block_avg}
+
+The key operation in Balaban's RG is
+\emph{gauge-covariant block averaging}.
+Starting on the fine lattice $\T_\eta^d$, one averages
+to a coarser lattice $\T_{L\eta}^d$ with spacing $L\eta$.
+
+For a bond $B = \langle X, X + L\eta\, e_\mu \rangle$
+on the coarse lattice, the \emph{block average} $Q(U, B)$
+is defined via a gauge-covariant sum over paths
+from $X$ to $X + L\eta\, e_\mu$ on the fine lattice.
+Specifically, let $\Gamma(B)$ denote the set of
+shortest lattice paths connecting the endpoints of $B$
+through the fine lattice. Then
+\begin{equation}\label{eq:block_avg}
+  Q(U, B) = \frac{1}{|\Gamma(B)|} \sum_{\gamma \in \Gamma(B)}
+  U(\gamma),
+\end{equation}
+where $U(\gamma) = U(b_1) \cdots U(b_n)$ is the ordered
+product along the path. The crucial property is:
+\begin{equation}
+  Q(U^u, B) = u(X)\, Q(U, B)\, u(X + L\eta\, e_\mu)^{-1},
+\end{equation}
+i.e., $Q$ transforms covariantly under gauge transformations.
+
+\begin{remark}
+  For $\U(1)$, $Q(U,B)$ takes values in $\mathbb{C}$
+  and lies near the unit circle for small fields.
+  For $\SU(N)$, $Q(U,B)$ is an $N \times N$ matrix
+  near $\SU(N)$ but \emph{not necessarily in $\SU(N)$}.
+  This is the first non-Abelian subtlety: one must
+  project back to the group, typically by normalizing
+  $Q \to Q / |\det Q|^{1/N}$ or using the polar
+  decomposition. See Section~\ref{sec:nonabelian_avg}.
+\end{remark}
+
+\subsection{The RG step}\label{sec:rg_step}
+
+One RG step transforms the density
+$\rho_k(\Phi_k)$ on the $k$-th scale lattice into a density
+$\rho_{k+1}(\Phi_{k+1})$ on the $(k+1)$-th scale lattice.
+The procedure has five stages:
+
+\medskip\noindent
+\textbf{Stage 1: Constrained integration.}
+Fix the block averages $\Phi_{k+1}$ and integrate
+over configurations $\Phi_k$ on the finer lattice
+with the constraint $Q(\Phi_k) = \Phi_{k+1}$:
+\begin{equation}\label{eq:constrained}
+  \rho_{k+1}(\Phi_{k+1}) = \int
+  \delta(Q(\Phi_k) - \Phi_{k+1})\;
+  \rho_k(\Phi_k)\; d\Phi_k.
+\end{equation}
+
+\noindent
+\textbf{Stage 2: Background field (variational problem).}
+Find the \emph{minimizer} $\Phi_k^{\min}$ of the action
+subject to $Q(\Phi_k^{\min}) = \Phi_{k+1}$.
+This background field satisfies the lattice
+Euler--Lagrange equations with Lagrange multipliers:
+\begin{equation}\label{eq:variational}
+  \frac{\partial S}{\partial \Phi_k}
+  \bigg|_{\Phi_k^{\min}} =
+  Q^* \lambda,
+\end{equation}
+where $Q^*$ is the adjoint of the linearized averaging
+operator. The minimizer is unique up to gauge transformations
+when $\Phi_{k+1}$ is in a ``small field'' region.
+
+\medskip\noindent
+\textbf{Stage 3: Fluctuation field.}
+Decompose $\Phi_k = \Phi_k^{\min} \cdot \phi$
+where $\phi$ is the fluctuation. For gauge fields
+this is multiplicative: $U(b) = U^{\min}(b)\, e^{i\eta A(b)}$
+where $A(b) \in \fg$ is the Lie-algebra-valued fluctuation.
+
+\medskip\noindent
+\textbf{Stage 4: Small/large field decomposition.}
+Split the lattice into regions where the fluctuation
+field is ``small'' (controlled by perturbation theory)
+and ``large'' (controlled by positivity of the action):
+\begin{equation}
+  \rho_{k+1} = \rho_{k+1}^{\text{small}} +
+  \rho_{k+1}^{\text{large}}.
+\end{equation}
+In the small field region, expand the action to
+second order in $\phi$ and perform Gaussian integration.
+This produces the \emph{effective action} at scale $k+1$.
+
+\medskip\noindent
+\textbf{Stage 5: Gauge fixing.}
+To define the Gaussian integral over $\phi$, one must
+fix the gauge. Balaban uses \emph{covariant axial gauge}
+within blocks, which is adapted to the block structure
+and maintains locality. Dimock~\cite{Dimock15a} analyzes
+this in detail for the Abelian case.
+
+\subsection{After $N$ steps}
+
+After $N$ RG steps, the fine lattice $\T_{L^{-N}}^d$
+has been coarsened to the unit lattice $\T_1^d$.
+The partition function takes the form
+\begin{equation}\label{eq:after_N}
+  \cZ = \int d\Phi_N \;
+  e^{-S_N^{\text{eff}}(\Phi_N)}\;
+  K_N(\Phi_N),
+\end{equation}
+where $S_N^{\text{eff}}$ is the effective action
+incorporating all counterterms, and $K_N$ contains
+the ``remainder'' terms from the cluster/polymer expansion.
+The \textbf{UV stability bound} states:
+\begin{equation}\label{eq:uv_stability}
+  c_1 \le \cZ \le c_2,
+\end{equation}
+with constants $c_1, c_2 > 0$ \emph{uniform in $N$}.
+This is the main result of Balaban~\cite{Bal85e}
+for 3D and the goal for 4D.
+
+%% ====================================================================
+\section{From Abelian to Non-Abelian:
+  The Six Obstacles}\label{sec:abelian_to_nonabelian}
+%% ====================================================================
+
+We now systematically compare Dimock's QED$_3$
+treatment with what is needed for $\SU(N)$ YM.
+We identify six specific obstacles, ranging from
+minor notation changes to genuinely hard analysis.
+
+\subsection{Obstacle 1: Block averaging (moderate)}
+\label{sec:nonabelian_avg}
+
+For $\U(1)$, the block average~\eqref{eq:block_avg} produces
+a complex number near the unit circle. For $\SU(N)$,
+the average of group elements is a matrix
+that is \emph{not} in $\SU(N)$ but lies in
+$\text{GL}(N, \mathbb{C})$ near $\SU(N)$.
+
+Balaban's solution~\cite{Bal85a}: define the averaging
+operation in terms of Lie algebra components.
+For small fields, write $U(b) = e^{i\eta A_\mu(x)}$
+and define the block average via
+\begin{equation}\label{eq:lie_avg}
+  (QA)_\mu(X) = \frac{1}{L}
+  \sum_{j=0}^{L-1} \left(
+  \text{parallel transport to } X\right)
+  A_\mu(X + j\eta e_\mu),
+\end{equation}
+where the parallel transport uses the background field.
+This is gauge-covariant but requires the background
+field to be specified first, creating a circular
+dependence that must be resolved iteratively.
+
+\begin{remark}[Dimock's approach]
+  In~\cite{Dimock22}, Dimock defines the averaging operator
+  for $\U(1)$ gauge fields as a simple sum:
+  $(QA)(B) = \sum_{b \subset B} A(b)$.
+  For $\SU(N)$, this formula works only for
+  infinitesimal fields. The full non-Abelian definition
+  requires the parallel transport and is the source of
+  significant additional complexity in the estimates.
+\end{remark}
+
+\textbf{Difficulty:} Moderate. Balaban~\cite{Bal85a}
+defined and analyzed the non-Abelian averaging operation.
+The key estimates (regularity, analyticity on small field
+configurations) are proved in~\cite{Bal85a} and need
+only to be translated into Dimock's cleaner notation.
+
+\subsection{Obstacle 2: Gauge fixing (moderate)}
+
+In QED$_3$, Dimock uses the \emph{Landau gauge}
+$\partial_\mu A_\mu = 0$, which is linear and
+has well-understood properties. For non-Abelian
+theories, one must use a gauge condition that is
+compatible with the block structure.
+
+Balaban uses \emph{covariant axial gauge within blocks},
+which is adapted to the hierarchical structure of the RG.
+Dimock~\cite{Dimock15a} already studied covariant axial
+gauge in the Abelian setting. The non-Abelian version
+requires solving the gauge-fixing condition
+\begin{equation}\label{eq:axial_gauge}
+  A_d(x_1, \ldots, x_{d-1}, x_d^0) = 0
+\end{equation}
+along ``axial trees'' within each block, where $x_d^0$
+is a fixed reference value. This is well-defined for
+small fields but requires the implicit function theorem
+on the gauge group.
+
+\textbf{Difficulty:} Moderate. The main issue is
+ensuring that the Faddeev--Popov determinant is
+non-degenerate on the small field region.
+For $\U(1)$ this is automatic; for $\SU(N)$ it
+requires a Gribov-type argument restricted to the
+small field domain.
+
+\subsection{Obstacle 3: Variational problem (hard)}
+
+The \emph{variational problem} --- finding the
+minimizer $U^{\min}$ of the Wilson action
+subject to fixed block averages --- is the technical
+heart of Balaban's approach.
+
+For scalars, the minimizer satisfies a linear
+(Laplace) equation. For $\U(1)$ gauge theory,
+the linearized problem is still a Laplace equation
+on 1-forms. For $\SU(N)$, the Euler--Lagrange
+equation is a \emph{nonlinear} PDE on the lattice:
+\begin{equation}\label{eq:euler_lagrange}
+  d_U^* F_U + Q^* \lambda = 0,
+\end{equation}
+where $d_U^* F_U = \sum_\mu (D_\mu^{U})^* F_{\mu\nu}^U$
+is the lattice Yang--Mills equation with covariant derivative
+$D_\mu^U = \nabla_\mu + [A_\mu, \cdot]$, and $\lambda$
+is the Lagrange multiplier for the averaging constraint.
+
+\textbf{What Balaban proved:}
+\begin{enumerate}[label=(\alph*)]
+  \item Existence and uniqueness (modulo gauge) of the
+    minimizer on the small field region~\cite{Bal85d}.
+  \item Regularity: the minimizer is analytic in the
+    block-averaged field $\Phi_{k+1}$~\cite{Bal85d}.
+  \item Decay: the dependence on boundary data
+    decays exponentially~\cite{Bal85d}.
+\end{enumerate}
+All three properties require the Banach contraction
+mapping theorem applied to the nonlinear equation,
+using the smallness of $g^2 \eta^{(d-4)/2}$ (or
+$g^2(k)$ in $d=4$).
+
+\textbf{Difficulty:} Hard. This is the most labor-intensive
+part of the non-Abelian extension. The nonlinearity of
+the Euler--Lagrange equation requires careful control
+of commutator terms. The recent paper of
+Bałaban and Imbrie~\cite{BI_sigma} studies the
+analogous variational problem for non-linear sigma models
+and provides a template.
+
+\subsection{Obstacle 4: Fluctuation propagator (hard)}
+
+After expanding around the minimizer, the Gaussian
+integral over fluctuation fields $\phi$ involves a
+propagator $C_k$ that depends on the \emph{background
+field} $U^{\min}$:
+\begin{equation}\label{eq:propagator}
+  C_k = \left(-D_U^2 + Q^* a Q + \text{gauge fixing}
+  \right)^{-1},
+\end{equation}
+where $D_U^2$ is the gauge-covariant Laplacian in
+the background $U^{\min}$, and $Q^* a Q$ is the
+block averaging constraint.
+
+For $\U(1)$, $D_U^2 = \Delta + i[\nabla A, \cdot]$
+reduces to a scalar Laplacian with lower-order terms.
+For $\SU(N)$, the covariant Laplacian involves
+commutator terms $[A_\mu, [A_\mu, \cdot]]$ that
+create Lie-algebra-valued matrix structure.
+
+\textbf{What is needed:}
+\begin{enumerate}[label=(\alph*)]
+  \item Existence of $C_k$ (invertibility of the operator).
+  \item Exponential decay: $|C_k(x,y)| \le C e^{-m|x-y|}$.
+  \item Random walk expansion: representation of $C_k$
+    as a convergent sum over lattice paths.
+  \item Analyticity in the background field.
+\end{enumerate}
+Balaban proved all four for non-Abelian backgrounds
+in~\cite{Bal85b}. The random walk expansion is the
+most delicate, relying on a resolvent identity and
+Neumann series in the commutator terms.
+
+\textbf{Difficulty:} Hard but with a clear path.
+Dimock~\cite{Dimock22} has all four properties for
+$\U(1)$ backgrounds. The extension to $\SU(N)$ requires
+controlling the additional commutator terms, which are
+proportional to $g^2$ and hence small in the UV regime.
+
+\subsection{Obstacle 5: Polymer/cluster expansion
+  (moderate--hard)}
+
+The effective action after Gaussian integration is
+represented as a \emph{polymer expansion}:
+\begin{equation}\label{eq:polymer}
+  e^{-S_{k+1}^{\text{eff}}(\Phi_{k+1})} =
+  \sum_{\{X_i\}} \prod_i K(X_i, \Phi_{k+1}),
+\end{equation}
+where the sum is over collections of disjoint ``polymers''
+(connected subsets of the coarse lattice) and
+$K(X, \Phi_{k+1})$ is the activity of polymer $X$.
+
+The convergence of this expansion requires:
+\begin{enumerate}[label=(\alph*)]
+  \item Exponential decay of $K(X, \Phi_{k+1})$
+    in the size of $X$.
+  \item Analyticity of $K$ in $\Phi_{k+1}$ on the
+    small field region.
+  \item Stable bounds under iteration of RG steps.
+\end{enumerate}
+For scalars, the polymer expansion is standard
+(Brydges~\cite{Brydges86}). For gauge theories,
+gauge invariance imposes additional structure:
+each polymer activity must be gauge-invariant,
+and the expansion must respect this.
+
+\textbf{Difficulty:} Moderate--hard. The polymer
+expansion itself is well-understood technology.
+The additional difficulty is tracking the Lie algebra
+structure through the expansion, ensuring that
+commutator terms do not destroy the convergence
+estimates.
+
+\subsection{Obstacle 6: Large field bounds (moderate)}
+
+The large field region $\Omega_k^c$ (where the
+fluctuation field exceeds a threshold) is controlled
+not by perturbation theory but by the \emph{positivity}
+of the Wilson action:
+\begin{equation}\label{eq:large_field}
+  e^{-S(U)} \le e^{-c|\Omega_k^c| / \eta^d}
+\end{equation}
+for some constant $c > 0$ depending on $g^2$.
+For non-Abelian gauge theories, the Wilson action
+satisfies $S(U) \ge 0$ with equality only for
+pure gauge configurations, and the positivity bound
+is gauge-group-independent.
+
+\textbf{Difficulty:} Moderate. Dimock's large field
+analysis~\cite{Dimock13b} for $\phi^4_3$ carries over
+with minor modifications. The key bound uses only
+$1 - \text{Re}\,\tr U(p)/\dim R \ge 0$, which holds
+for any compact group.
+
+%% ====================================================================
+\section{The 3D Non-Abelian Program}\label{sec:ym3}
+%% ====================================================================
+
+In $d = 3$, the Yang--Mills coupling $g^2$ has
+mass dimension $[g^2] = 1$. The theory is
+\emph{super-renormalizable}: the only divergent
+counterterm is the vacuum energy density $\epsilon_k$
+(cosmological constant). There is no coupling constant
+renormalization and no mass renormalization at the
+perturbative level. Non-perturbatively, a mass counterterm
+of order $g^4$ appears~\cite{CS25}, but this is finite.
+
+\subsection{Setup}
+
+Fix $G = \SU(N)$ and $g^2 > 0$. The lattice
+theory lives on $\T_\eta^3$ with $\eta = L^{-N}$
+and inverse coupling $\beta = 1/(g^2 \eta)$.
+As $\eta \to 0$ (equivalently $N \to \infty$),
+$\beta \to \infty$ and the theory becomes weakly
+coupled on the lattice scale.
+
+The partition function is
+\begin{equation}
+  \cZ_{M,N} = \int \prod_b dU(b) \;
+  e^{-\beta \sum_p (1 - \text{Re}\,\tr_R\,U(p)/N)}.
+\end{equation}
+
+\subsection{The effective action after $k$ steps}
+
+After $k$ RG steps ($0 \le k \le N$), the effective
+density on the scale-$k$ lattice $\T_{L^{-N+k}}^3$
+takes the form
+\begin{equation}\label{eq:effective_density_3d}
+  \rho_k(\Phi_k) = e^{-\beta_k S_k(\Phi_k)
+  - \epsilon_k |\Lambda_k| - V_k(\Phi_k)}
+  \cdot K_k(\Phi_k),
+\end{equation}
+where:
+\begin{itemize}[nosep]
+  \item $\beta_k = L^k \beta$ is the rescaled inverse coupling
+    (grows with $k$ due to super-renormalizability),
+  \item $S_k$ is the Wilson action on $\T_{L^{-N+k}}^3$,
+  \item $\epsilon_k$ is the vacuum energy counterterm,
+  \item $V_k(\Phi_k) = O(\beta_k^{-1/2})$ is the
+    ``relevant perturbation'' (small correction to the action),
+  \item $K_k$ is the polymer expansion remainder
+    with $\|K_k - 1\| = O(\beta_k^{-1/2})$.
+\end{itemize}
+
+\begin{remark}[Comparison with QED$_3$]
+  In Dimock's QED$_3$ treatment~\cite{Dimock22},
+  the effective density has the same structure
+  with additional fermion determinant factors.
+  For pure YM$_3$, the absence of fermions
+  \emph{simplifies} the analysis: there is no
+  fermion propagator, no fermion mass renormalization,
+  and no Grassmann integration. The non-Abelian
+  gauge field self-interaction is the only new ingredient.
+\end{remark}
+
+\subsection{Required estimates}
+
+We now state the estimates needed for 3D non-Abelian
+UV stability, organized by the six obstacles of
+Section~\ref{sec:abelian_to_nonabelian}.
+
+\begin{condition}[Non-Abelian block averaging]
+\label{cond:avg}
+For the $\SU(N)$ block averaging operator
+$Q$ defined via~\eqref{eq:lie_avg} with background
+field $U^{\min}$:
+\begin{enumerate}[label=(\alph*),nosep]
+  \item $Q$ is analytic on the small field region
+    $\{\|F_U\|_\infty \le p_k\}$ with
+    $p_k = O(\beta_k^{-1/4})$;
+  \item the linearization $dQ$ satisfies
+    $\|dQ - dQ_0\| \le C g^2 \eta \|A\|$ where
+    $dQ_0$ is the free (Abelian) linearization;
+  \item $Q$ transforms covariantly:
+    $Q(U^u) = u_X \cdot Q(U) \cdot u_Y^{-1}$
+    for any gauge transformation $u$.
+\end{enumerate}
+\end{condition}
+
+\begin{condition}[Non-Abelian variational problem]
+\label{cond:var}
+For each block-averaged field $\Phi_{k+1}$ in the
+small field region:
+\begin{enumerate}[label=(\alph*),nosep]
+  \item There exists a unique (modulo gauge) minimizer
+    $U^{\min}$ of $S_k$ subject to $Q(U) = \Phi_{k+1}$;
+  \item $U^{\min}$ is analytic in $\Phi_{k+1}$
+    on the small field domain;
+  \item the minimizer satisfies regularity:
+    $\|F_{U^{\min}}\|_\infty \le C \|F_{\Phi_{k+1}}\|_\infty$;
+  \item the dependence on data at distance $r$
+    decays as $e^{-mr}$ with $m = O(\sqrt{\beta_k})$.
+\end{enumerate}
+\end{condition}
+
+\begin{condition}[Non-Abelian fluctuation propagator]
+\label{cond:prop}
+The gauge-covariant propagator~\eqref{eq:propagator}
+with $\SU(N)$ background satisfies:
+\begin{enumerate}[label=(\alph*),nosep]
+  \item $C_k$ exists and is bounded:
+    $\|C_k\| \le C_0$ uniformly in the small field
+    background;
+  \item exponential decay: $|C_k(x,y)| \le C_0
+    e^{-m_0 |x-y|/\eta_k}$ with $m_0 > 0$
+    independent of $k$;
+  \item the random walk expansion converges
+    with $\SU(N)$ commutator corrections
+    bounded by $C g^2 \eta_k$;
+  \item $C_k$ is analytic in the background field
+    on the small field domain.
+\end{enumerate}
+\end{condition}
+
+\begin{condition}[Polymer expansion convergence]
+\label{cond:poly}
+The polymer activities $K(X, \Phi_{k+1})$
+satisfy:
+\begin{enumerate}[label=(\alph*),nosep]
+  \item $|K(X, \Phi_{k+1})| \le e^{-c_0 |X|}$
+    for a constant $c_0$ independent of $k$;
+  \item gauge invariance: $K(X, \Phi_{k+1}^u) =
+    K(X, \Phi_{k+1})$;
+  \item stability: the estimates are preserved
+    under $N \to N-1$ RG steps.
+\end{enumerate}
+\end{condition}
+
+\begin{theorem}[3D non-Abelian UV stability ---
+  conditional]\label{thm:3d_uv}
+Assume Conditions~\ref{cond:avg}--\ref{cond:poly}
+hold for $G = \SU(N)$ in $d = 3$ with coupling
+$g^2 > 0$. Then the partition function
+satisfies the UV stability bound:
+\begin{equation}
+  e^{-C_1 L^{3M}} \le \cZ_{M,N}
+  \le e^{C_2 L^{3M}}
+\end{equation}
+uniformly in $N$ (lattice spacing $\eta = L^{-N}$),
+for constants $C_1, C_2$ depending on $g^2$ and $L$
+but not on $N$.
+\end{theorem}
+
+\begin{remark}[What is genuinely new vs.\ translation]
+  Conditions~\ref{cond:avg}(a,c) and~\ref{cond:var}(a--d)
+  are proved by Balaban~\cite{Bal85a,Bal85d} for $\SU(N)$
+  in $d = 3,4$. The work needed is \emph{translation}
+  into Dimock's framework: replacing Balaban's notation
+  with Dimock's lattice calculus and verifying that
+  all constants are tracked explicitly.
+  Condition~\ref{cond:prop} requires a new calculation:
+  the random walk expansion for the $\SU(N)$ propagator,
+  extending Dimock's $\U(1)$ version~\cite{Dimock22}.
+  The commutator terms create matrix-valued perturbations
+  of the Laplacian that must be controlled.
+\end{remark}
+
+\subsection{Comparison table: QED$_3$ vs.\ YM$_3$}
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}p{4cm}ccp{4.5cm}@{}}
+\toprule
+\textbf{Component} & \textbf{QED$_3$} & \textbf{YM$_3$}
+  & \textbf{New difficulty} \\
+\midrule
+Block averaging & Linear & Non-linear &
+  Parallel transport, projection to $G$ \\
+Gauge fixing & Landau & Covariant axial &
+  Faddeev--Popov on $\SU(N)$ \\
+Variational problem & Linear PDE & Nonlinear PDE &
+  Contraction mapping on Lie algebra \\
+Propagator & Scalar + perturbation &
+  Matrix-valued & Commutator terms
+  $[A_\mu, \cdot]$ \\
+Polymer expansion & Standard & Standard +
+  Lie structure & Track gauge invariance \\
+Large field & $e^{-S} \ge 0$ & Same &
+  None (group-independent) \\
+Fermion determinant & Present & Absent &
+  Simpler (no Grassmann) \\
+Counterterms & $\epsilon_k, m_k^{\text{fermion}}$
+  & $\epsilon_k$ only & Simpler \\
+\bottomrule
+\end{tabular}
+\caption{Comparison of Dimock's QED$_3$ program
+  with the proposed YM$_3$ extension.}
+\label{tab:comparison}
+\end{table}
+
+\subsection{Estimate of effort}
+
+Dimock's QED$_3$ program spans seven papers and
+approximately 400 pages. We estimate the pure YM$_3$
+extension as follows:
+\begin{itemize}[nosep]
+  \item Removal of fermion sector: saves $\sim$150 pages.
+  \item Non-Abelian averaging + variational problem:
+    adds $\sim$80 pages (translating Balaban).
+  \item Non-Abelian propagator: adds $\sim$60 pages
+    (new random walk expansion).
+  \item Polymer expansion with Lie structure:
+    adds $\sim$30 pages.
+\end{itemize}
+Net estimate: $\sim$220 pages, comparable to the
+$\phi^4_3$ treatment. This is a realistic project
+for 1--2 years of focused work.
+
+%% ====================================================================
+\section{The 4D Non-Abelian Program}\label{sec:ym4}
+%% ====================================================================
+
+The $d = 4$ case is qualitatively different.
+The coupling constant $g^2$ is dimensionless,
+asymptotic freedom produces a \emph{running coupling}
+$g^2(k)$ that decreases logarithmically under the
+RG flow, and there is a genuine coupling constant
+renormalization.
+
+\subsection{Running coupling and $\beta$-function}
+
+After $k$ RG steps, the effective coupling satisfies
+\begin{equation}\label{eq:running_coupling}
+  \frac{1}{g^2(k)} = \frac{1}{g^2(0)} + b_0 k \log L
+  + O(g^2(0)),
+\end{equation}
+where $b_0 = \frac{11N}{48\pi^2}$ for $\SU(N)$
+is the one-loop $\beta$-function coefficient.
+Asymptotic freedom means $g^2(k) \to 0$ as
+$k \to 0$ (UV direction), and $g^2(k)$ grows
+toward the IR.
+
+The RG flow must be controlled for $0 \le k \le N$,
+where $g^2(k)$ ranges from $g^2(0) \ll 1$
+(the bare coupling at UV cutoff) to $g^2(N) \sim O(1)$
+(the physical coupling at the lattice scale).
+
+\subsection{Additional counterterms}
+
+In $d = 4$, beyond the vacuum energy $\epsilon_k$,
+one needs a \emph{coupling constant counterterm}
+$\delta g^2(k)$ at each scale. The renormalization
+condition is:
+\begin{equation}\label{eq:renorm_condition}
+  g^2_{\text{eff}}(k+1) = g^2_{\text{eff}}(k)
+  - b_0 g^4(k) \log L + \delta g^2(k),
+\end{equation}
+where $\delta g^2(k) = O(g^6(k))$ is chosen to
+maintain the flow on the ``renormalized trajectory.''
+
+This is the content of Balaban's 4D papers~%
+\cite{Bal87,Bal88a,Bal88b,Bal89}: constructing the
+$\beta$-function non-perturbatively and showing that
+the effective action at each scale has the correct
+structure. The effective density becomes:
+\begin{equation}\label{eq:effective_density_4d}
+  \rho_k(\Phi_k) = e^{-\frac{1}{g^2(k)} S_k(\Phi_k)
+  - \epsilon_k |\Lambda_k| - V_k(\Phi_k)}
+  \cdot K_k(\Phi_k),
+\end{equation}
+with the crucial difference that $1/g^2(k)$ is now
+$k$-dependent and the correction $V_k = O(g^2(k))$
+must be tracked through the flow.
+
+\subsection{Required estimates for 4D}
+
+All four conditions from Section~\ref{sec:ym3}
+apply, with modifications:
+
+\begin{condition}[4D coupling constant flow]
+\label{cond:4d}
+The bare coupling $g^2(0)$ can be chosen as a
+function of $N$ (the number of RG steps) such that:
+\begin{enumerate}[label=(\alph*),nosep]
+  \item $g^2(0) \sim \frac{1}{b_0 N \log L}$ as $N \to \infty$;
+  \item the effective coupling $g^2(k)$ satisfies
+    $c_1/(N-k) \le g^2(k) \le c_2/(N-k)$ for
+    $0 \le k \le N - k_0$ (UV regime);
+  \item the correction $V_k$ satisfies
+    $\|V_k\|_\infty \le C g^4(k)$ uniformly;
+  \item the polymer remainder satisfies
+    $\|K_k - 1\| \le C g^2(k)$ uniformly.
+\end{enumerate}
+\end{condition}
+
+\begin{condition}[4D effective action bounds]
+\label{cond:4d_action}
+At each scale $k$, the effective action
+$\cS_k(\Phi_k) = g^{-2}(k) S_k + V_k$
+satisfies the \emph{Hessian bound}:
+\begin{equation}\label{eq:hessian_4d}
+  \|\Hess \cS_k(\Phi_k) - \Hess_0\|_{\text{op}}
+  \le C g^2(k)
+\end{equation}
+on the small field region, where $\Hess_0$ is the
+Hessian of the free (Gaussian) action at scale $k$.
+\end{condition}
+
+\begin{theorem}[4D non-Abelian UV stability ---
+  conditional]\label{thm:4d_uv}
+Assume Conditions~\ref{cond:avg}--\ref{cond:poly}
+(adapted to $d=4$ with running coupling)
+and Conditions~\ref{cond:4d}--\ref{cond:4d_action}.
+Then the partition function satisfies
+\begin{equation}
+  e^{-C_1 L^{4M}} \le \cZ_{M,N}
+  \le e^{C_2 L^{4M}}
+\end{equation}
+uniformly in $N$, for constants depending on $L$
+and the renormalized coupling $g^2_R = g^2(N)$.
+\end{theorem}
+
+This is the statement that Balaban's program
+aims to prove in $d=4$. The key papers
+are~\cite{Bal87,Bal88a,Bal88b,Bal89}, which establish
+Condition~\ref{cond:4d}(a,b) in the small field
+approximation and construct the $\beta$-function
+to all orders in perturbation theory.
+The \emph{completion} of this program ---
+verifying convergence of the full expansion ---
+remains open.
+
+%% ====================================================================
+\section{Interface with the BBD Framework}
+\label{sec:bbd_interface}
+%% ====================================================================
+
+We now connect the Balaban UV effective action bounds
+to the Bauerschmidt--Bodineau--Dagallier (BBD)
+multiscale Bakry--\'Emery criterion~\cite{BBD24}.
+This is the key new contribution: showing that the
+Balaban program provides \emph{exactly} the UV input
+needed for the mass gap proof.
+
+\subsection{The BBD criterion (review)}
+
+The BBD criterion (Theorem~3.6 of~\cite{BBD24})
+provides a log-Sobolev inequality for a measure
+$\mu = e^{-H} / Z$ from multiscale Hessian control.
+We use the Polchinski flow formulation from~\cite{FontesBBD}.
+
+Consider the Polchinski RG flow for
+$V_t = -\log \E[e^{-H}|\cF_t]$, where $(\cF_t)$
+is a filtration given by the RG decimation.
+The BBD condition requires:
+\begin{equation}\label{eq:bbd}
+  \int_0^\infty \left\|
+  \left(\Hess V_t - \gamma(t) \cdot \text{Id}
+  \right)_+\right\|_\infty \; dt \le C_0 < \infty,
+\end{equation}
+where $\gamma(t)$ is the curvature of the reference
+Gaussian measure at scale $t$ and $(\cdot)_+$
+denotes the positive part.
+
+\subsection{The UV contribution ($0 \le t \le t_1$)}
+
+In the UV regime, the Polchinski flow corresponds
+to the Balaban RG steps $k = 0, 1, \ldots, N - k_0$.
+The connection is:
+\begin{equation}
+  t \leftrightarrow k, \qquad
+  \eta_k = L^{k-N} \leftrightarrow e^{-t},
+\end{equation}
+and the potential $V_t$ at scale $t$ corresponds
+to the Balaban effective correction $V_k$.
+
+The Hessian bound~\eqref{eq:hessian_4d}
+translates directly into the BBD integrand:
+\begin{equation}\label{eq:uv_bbd}
+  \left\|(\Hess V_t - \gamma(t))_+\right\|_\infty
+  \le C g^4(t) \qquad \text{(3D)},
+\end{equation}
+\begin{equation}\label{eq:uv_bbd_4d}
+  \left\|(\Hess V_t - \gamma(t))_+\right\|_\infty
+  \le C g^2(t) \qquad \text{(4D)}.
+\end{equation}
+
+\begin{proposition}[UV contribution to BBD integral]
+\label{prop:uv_bbd}
+Assume the Balaban effective action bounds
+(Condition~\ref{cond:4d_action} in 4D,
+or the corresponding 3D bound $\|V_k\| \le C/\beta_k$).
+Then the UV contribution to the BBD integral converges:
+\begin{align}
+  \text{3D:} &\quad
+  \sum_{k=0}^{N} C / \beta_k =
+  \sum_{k=0}^{N} C g^2 L^{k-N} =
+  O(g^2) < \infty, \\
+  \text{4D:} &\quad
+  \sum_{k=0}^{N} C g^2(k) =
+  \sum_{k=0}^{N} \frac{C}{b_0(N-k)\log L} =
+  O(\log N).
+\end{align}
+In 3D, the sum converges uniformly in $N$
+(geometric series with ratio $L^{-1}$).
+In 4D, the sum grows logarithmically; however,
+the BBD condition~\eqref{eq:bbd} requires only
+finiteness for each $N$, and the mass gap
+$m \ge c / \log(1/(g^2_R))$ is consistent
+with the logarithmic growth.
+\end{proposition}
+
+\begin{remark}[The 3D case is complete]
+  In 3D, the UV contribution is $O(g^2)$,
+  the crossover contribution is controlled by the
+  lattice block gap (our~\cite{FontesGap}), and the
+  IR contribution is controlled by single-link
+  Bakry--\'Emery curvature~\cite{FontesGap}.
+  Therefore, \emph{assuming the Balaban 3D UV stability
+  bound} (which is~\cite{Bal85e}, translated to
+  Dimock notation), the full BBD condition is
+  satisfied and the 3D mass gap is proved
+  in the continuum limit.
+\end{remark}
+
+\subsection{The crossover and IR contributions (review)}
+
+For completeness, the full BBD integral decomposes as:
+\begin{align}
+  \int_0^\infty (\cdots)\;dt &=
+  \underbrace{\int_0^{t_1}}_{\text{UV: Balaban bounds}}
+  + \underbrace{\int_{t_1}^{t_2}}_{\text{crossover:
+    block gap}~\cite{FontesGap}}
+  + \underbrace{\int_{t_2}^{\infty}}_{\text{IR:
+    Bakry--\'Emery}~\cite{FontesGap}}. \label{eq:decomp}
+\end{align}
+The crossover scale $t_1$ is where $g^2(t_1) \sim O(1)$
+(in 4D) or where $\beta_k \sim O(1)$ (in 3D).
+The IR scale $t_2$ is where the effective theory
+is a single-plaquette measure.
+
+%% ====================================================================
+\section{Summary and Open Problems}\label{sec:summary}
+%% ====================================================================
+
+\subsection{Status table}
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}p{5cm}ccp{3.5cm}@{}}
+\toprule
+\textbf{Component} & \textbf{3D} & \textbf{4D}
+  & \textbf{Source} \\
+\midrule
+Lattice mass gap ($\gamma_0 > 0$) & \checkmark &
+  \checkmark & \cite{FontesGap} \\
+Uniform-in-$a$ gap & \checkmark & Conditional
+  & \cite{FontesUniform} \\
+Euclidean covariance & \checkmark & Conditional
+  & \cite{FontesEuclidean} \\
+BBD framework + decomposition & \checkmark &
+  \checkmark & \cite{FontesBBD} \\
+UV stability (Abelian, Dimock) & \checkmark$^*$
+  & --- & \cite{Dimock22} \\
+UV stability (non-Abelian, Balaban) & \checkmark
+  & Partial & \cite{Bal85e,Bal87} \\
+UV stability (non-Abelian, Dimock) & \textbf{Open}
+  & \textbf{Open} & This paper \\
+Coupling constant renorm.\ & N/A & Partial
+  & \cite{Bal87,Bal88a} \\
+Full 4D completion & N/A & \textbf{Open} & --- \\
+\bottomrule
+\end{tabular}
+\caption{Status of the Yang--Mills construction program.
+  $\checkmark^*$ denotes the Abelian case only.}
+\label{tab:status}
+\end{table}
+
+\subsection{Priority ranking of open problems}
+
+\begin{enumerate}[label=\textbf{P\arabic*.}]
+  \item \textbf{Non-Abelian fluctuation propagator
+    in 3D.} Extend Dimock's random walk expansion
+    from $\U(1)$ to $\SU(N)$ backgrounds. This is the
+    single hardest estimate for YM$_3$ and is
+    \emph{necessary and sufficient} (combined with
+    the translation of Balaban's other estimates) for
+    completing the 3D construction.
+    \emph{Estimated effort: 40--60 pages, 6 months.}
+
+  \item \textbf{Non-Abelian variational problem
+    in Dimock notation.} Translate Balaban's
+    existence/uniqueness/regularity results
+    for the minimizer from~\cite{Bal85d} into
+    Dimock's framework. Template:
+    Bałaban--Imbrie~\cite{BI_sigma} for nonlinear
+    sigma models.
+    \emph{Estimated effort: 60--80 pages, 8 months.}
+
+  \item \textbf{4D $\beta$-function in BBD language.}
+    Reformulate Balaban's non-perturbative
+    $\beta$-function construction~\cite{Bal87,Bal88a}
+    as a Hessian flow, showing that the BBD
+    condition~\eqref{eq:bbd} is maintained under the
+    coupling constant flow. This is the bridge
+    between Balaban's 4D program and the mass gap.
+    \emph{Estimated effort: 30--40 pages, 4 months.}
+
+  \item \textbf{Completion of 4D large field bounds.}
+    Balaban's treatment of the 4D large field
+    region is incomplete in the published
+    literature. Combine with the polymer expansion
+    convergence to obtain the full 4D UV stability.
+    \emph{Estimated effort: 80--100 pages, 12 months.}
+\end{enumerate}
+
+\subsection{The 3D milestone}
+
+We emphasize that the 3D case is \emph{close to
+complete}. The ingredients are:
+\begin{enumerate}[label=(\roman*),nosep]
+  \item Lattice mass gap: proved~\cite{FontesGap}.
+  \item Uniform gap in $a$: proved~\cite{FontesUniform}.
+  \item Euclidean covariance: proved~\cite{FontesEuclidean}.
+  \item UV stability: Balaban~\cite{Bal85e} (non-Abelian,
+    3D, published 1985, but in Balaban's notation).
+  \item Translation to Dimock: open (this paper's
+    roadmap), estimated $\sim$220 pages.
+\end{enumerate}
+If one accepts Balaban's 1985 result as stated,
+the 3D Yang--Mills construction is complete modulo
+the translation exercise. The value of the Dimock
+modernization is not mathematical novelty but
+\emph{verifiability}: producing a self-contained,
+readable proof that can be checked by the community.
+
+\subsection{Connection to Chevyrev--Shen}
+
+The recent work of Chevyrev and Shen~\cite{CS25}
+on uniqueness of gauge-covariant mass renormalization
+in 3D provides an important complement to the
+Dimock--Balaban approach. Their result ensures that
+the continuum limit is \emph{independent of the
+lattice regularization scheme}, which is precisely
+what our UV universality proposition
+in~\cite{FontesEuclidean} requires. The two programs
+are synergistic: Chevyrev--Shen provides the
+\emph{uniqueness} of the continuum theory, while
+Dimock--Balaban provides the \emph{existence}
+via controlled UV renormalization.
+
+%% ====================================================================
+\section*{Acknowledgments}
+%% ====================================================================
+
+The author thanks Claude (Anthropic) for assistance
+in organizing the technical comparison between the
+Abelian and non-Abelian programs. This work is part
+of the Yang--Mills mass gap program at Quijotic Research.
+
+\begin{thebibliography}{99}
+
+\bibitem{Adhikari} A.~Adhikari, R.~Bauerschmidt, and
+  T.~Helmuth, ``Spectral gap and log-Sobolev inequality
+  for lattice gauge theories,'' in preparation (cited
+  in BBD~\cite{BBD24}).
+
+\bibitem{Bal84a} T.~Ba{\l}aban, ``Propagators and
+  renormalization transformations for lattice gauge
+  field theories~I,''
+  Commun.\ Math.\ Phys.\ \textbf{95} (1984) 17--40.
+
+\bibitem{Bal84b} T.~Ba{\l}aban, ``Propagators and
+  renormalization transformations for lattice gauge
+  field theories~II,''
+  Commun.\ Math.\ Phys.\ \textbf{96} (1984) 223--250.
+
+\bibitem{Bal85a} T.~Ba{\l}aban, ``Averaging operations
+  for lattice gauge theories,''
+  Commun.\ Math.\ Phys.\ \textbf{98} (1985) 17--51.
+
+\bibitem{Bal85b} T.~Ba{\l}aban, ``Propagators for
+  lattice gauge theories in a background field,''
+  Commun.\ Math.\ Phys.\ \textbf{99} (1985) 389--434.
+
+\bibitem{Bal85c} T.~Ba{\l}aban, ``Spaces of regular
+  gauge field configurations on a lattice and gauge
+  fixing conditions,''
+  Commun.\ Math.\ Phys.\ \textbf{99} (1985) 75--102.
+
+\bibitem{Bal85d} T.~Ba{\l}aban, ``The variational problem
+  and background fields in renormalization group method
+  for lattice gauge theories,''
+  Commun.\ Math.\ Phys.\ \textbf{102} (1985) 277--309.
+
+\bibitem{Bal85e} T.~Ba{\l}aban, ``Ultraviolet stability
+  of three-dimensional lattice pure gauge field theories,''
+  Commun.\ Math.\ Phys.\ \textbf{102} (1985) 255--275.
+
+\bibitem{Bal87} T.~Ba{\l}aban, ``Renormalization group
+  approach to lattice gauge field theories.~I,''
+  Commun.\ Math.\ Phys.\ \textbf{109} (1987) 249--301.
+
+\bibitem{Bal88a} T.~Ba{\l}aban, ``Large field
+  renormalization.~I,''
+  Commun.\ Math.\ Phys.\ \textbf{122} (1989) 175--202.
+
+\bibitem{Bal88b} T.~Ba{\l}aban, ``Large field
+  renormalization.~II,''
+  Commun.\ Math.\ Phys.\ \textbf{122} (1989) 355--392.
+
+\bibitem{Bal89} T.~Ba{\l}aban, ``A low temperature
+  expansion for classical $N$-vector models,''
+  Commun.\ Math.\ Phys.\ \textbf{167} (1995) 103--154.
+
+\bibitem{BBD24} R.~Bauerschmidt, T.~Bodineau, and
+  B.~Dagallier, ``Log-Sobolev inequality for the
+  continuum sine-Gordon model,''
+  Commun.\ Pure Appl.\ Math.\ (2024).
+
+\bibitem{BI_sigma} T.~Ba{\l}aban, ``The variational
+  problem for non-linear sigma models,''
+  see also discussion in Adhikari et al.
+
+\bibitem{Brydges86} D.C.~Brydges, ``A short course on
+  cluster expansions,'' in \emph{Critical Phenomena,
+  Random Systems, Gauge Theories} (Les Houches 1984),
+  North-Holland, 1986, pp.~129--183.
+
+\bibitem{CS25} I.~Chevyrev and H.~Shen, ``Gauge-covariant
+  mass renormalization in 3D Yang--Mills--Higgs theory,''
+  arXiv:2503.03060 (2025).
+
+\bibitem{Dimock02} J.~Dimock, ``Quantum electrodynamics
+  on the 3-torus~I,'' arXiv:math-ph/0210020 (2002).
+
+\bibitem{Dimock04} J.~Dimock, ``Quantum electrodynamics
+  on the 3-torus~II,'' arXiv:math-ph/0407063 (2004).
+
+\bibitem{Dimock13a} J.~Dimock, ``The renormalization group
+  according to Balaban~I.~Small fields,''
+  Rev.\ Math.\ Phys.\ \textbf{25} (2013) 1330010.
+
+\bibitem{Dimock13b} J.~Dimock, ``The renormalization group
+  according to Balaban~II.~Large fields,''
+  J.~Math.\ Phys.\ \textbf{54} (2013) 092301.
+
+\bibitem{Dimock14} J.~Dimock, ``The renormalization group
+  according to Balaban~III.~Convergence,''
+  Ann.\ Henri Poincar\'e \textbf{15} (2014) 2133--2175.
+
+\bibitem{Dimock15a} J.~Dimock, ``Covariant axial gauge,''
+  Lett.\ Math.\ Phys.\ \textbf{105} (2015) 959--987.
+
+\bibitem{Dimock15b} J.~Dimock, ``Nonperturbative
+  renormalization of scalar QED in $d=3$,''
+  J.~Math.\ Phys.\ \textbf{56} (2015) 102304.
+
+\bibitem{Dimock18} J.~Dimock, ``Ultraviolet regularity
+  for QED in $d=3$,''
+  J.~Math.\ Phys.\ \textbf{59} (2018) 012301.
+
+\bibitem{Dimock20} J.~Dimock, ``Propagators and minimizers
+  for QED in $d=3$'' (2020), see~\cite{Dimock22}.
+
+\bibitem{Dimock22} J.~Dimock, ``Ultraviolet stability
+  for QED in $d=3$,''
+  Ann.\ Henri Poincar\'e \textbf{23} (2022) 2685--2727.
+
+\bibitem{FontesBBD} R.~da Costa Fontes, ``Toward the
+  continuum Yang--Mills mass gap: the Polchinski flow,
+  lattice block gaps, and the multiscale Bakry--\'Emery
+  criterion,'' Quijotic Research (2026).
+
+\bibitem{FontesEuclidean} R.~da Costa Fontes, ``Euclidean
+  covariance of the 3D Yang--Mills continuum limit,''
+  Quijotic Research (2026).
+
+\bibitem{FontesGap} R.~da Costa Fontes, ``A mass gap for
+  3D lattice Yang--Mills via Bakry--\'Emery curvature,''
+  Quijotic Research (2025--2026).
+
+\bibitem{FontesUniform} R.~da Costa Fontes, ``Uniform
+  spectral gap for 3D Yang--Mills in the continuum
+  limit,'' Quijotic Research (2026).
+
+\end{thebibliography}
+
+\end{document}

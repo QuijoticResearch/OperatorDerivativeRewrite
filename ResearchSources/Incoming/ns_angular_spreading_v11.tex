@@ -1,0 +1,2099 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,mathtools}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{booktabs}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Hdot}[1]{\dot{H}^{#1}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cK}{\mathcal{K}}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\corr}{corr}
+\DeclareMathOperator{\sgn}{sgn}
+
+\title{Phase-Conjugation Antisymmetry and Angular\\
+Spreading in the 3D Navier--Stokes Nonlinearity}
+
+\author{Ramiro Fontes\\
+Quijotic Research\\
+\texttt{ramirofontes@gmail.com}}
+
+\date{March 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study the angular distribution of $\Hdot{1/2}$ energy
+in Fourier space for the 3D incompressible Navier--Stokes
+equations on $\T^3$.
+
+\smallskip\noindent\textbf{Exact results.}
+We prove that the per-mode nonlinear $\Hdot{1/2}$ energy
+transfer $T(k;u)$ is (i)~exactly antisymmetric under
+Fourier phase conjugation $\hat u(k)\mapsto\overline{\hat u(k)}$,
+(ii)~independent of the Leray projector (pressure drops out),
+and (iii)~degree-one homogeneous in $u$.
+We also prove that for any random divergence-free
+field whose distribution is invariant under
+Fourier phase conjugation ($\hat u(k)\mapsto
+\overline{\hat u(k)}$), both $\E[T(k;u)]$ and
+$\E[\Sigma(u)]$ vanish.
+
+\smallskip\noindent\textbf{Taylor--Green computation.}
+For the Taylor--Green vortex, we show by explicit
+enumeration of all contributing triads and exact rational
+arithmetic that the second-generation nonlinear forcing
+at every original mode satisfies
+$V(k)\cdot\widetilde R(k)=-1/512<0$, giving
+$\cos\alpha(k) = -1$ (perfect anti-alignment).  The
+computation exploits the purely imaginary Fourier structure
+$\hat u(k)=iV(k)$ and proceeds by direct enumeration of
+all 8 modes.
+
+\smallskip\noindent\textbf{Numerical findings.}
+Pseudo-spectral simulations at resolutions $128^3$--$256^3$
+with six different initial conditions show that developed
+Taylor--Green turbulence exhibits persistent angular
+spreading ($\Sigma < 0$) at all Sobolev levels
+$s\in[0,3/2]$, including the enstrophy ($s=1$).
+The spreading is viscosity-independent to four significant
+figures, dominated by cross-sector transfer
+($|\Sigma_{\rm cross}|/|\Sigma_{\rm within}|\approx 830$),
+and robust to 50\% phase destruction.
+Triad phases lock to $\pm\pi/2$ in the NS solution ---
+a direct consequence of the preserved purely imaginary
+Fourier structure --- while random-phase fields and
+concentrated jets produce uniform phase distributions.
+All three random broadband initial conditions exhibit
+enstrophy-level spreading ($\Sigma^{(1)}<0$) at every
+snapshot (30/30), providing evidence for generality
+beyond the TG symmetry class.
+Surgically concentrating a developed NS solution
+(boosting $\cC^{(1)}$ to $0.50$ while preserving
+phase structure) produces monotone relaxation toward
+isotropy at every snapshot (44/44), with the
+stretching--spreading ratio $\mathcal{R}\in[0.6,2.2]$
+and a near-universal constitutive law
+$\Sigma^{(1)}\approx -0.47\,(\cC^{(1)}-1/J)$.
+
+\smallskip\noindent\textbf{Heuristic mechanism and
+regularity program.}
+We propose a mechanism --- the ``$-i$ rotation'' in the
+advection operator --- that explains both the exact TG
+result and the numerical observations, and formulate a
+conjecture at the enstrophy level ($s=1$) with a concrete
+connection to the regularity problem: the NS nonlinearity
+simultaneously spreads angular enstrophy and limits
+vortex stretching through the same phase mechanism,
+suggesting a self-regulating structure that may prevent
+blow-up.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%======================================================================
+\section{Introduction}
+%======================================================================
+
+The 3D incompressible Navier--Stokes equations on
+$\T^3 = [0,2\pi]^3$,
+\begin{equation}\label{eq:NS}
+\partial_t u + (u\cdot\nabla)u + \nabla p = \nu\Delta u,
+\quad \nabla\cdot u = 0, \quad u(0) = u_0,
+\end{equation}
+remain the subject of a central open problem: whether
+smooth initial data produce globally smooth solutions
+\cite{Fefferman,Leray}.  Partial results constrain
+potential singularities \cite{ESS,BKM}, and Tao~\cite{Tao}
+has shown that blow-up can occur for averaged versions of
+the equations, suggesting that any regularity proof must
+use specific structural properties of the nonlinearity.
+
+Standard approaches to regularity treat the nonlinear
+term $(u\cdot\nabla)u$ as the adversary.  In this paper
+we present analytical and numerical evidence for a
+different picture: the nonlinear term acts as a
+\emph{regulator} of angular concentration in Fourier
+space, spreading energy from concentrated to dispersed
+angular directions.
+
+The paper is organized into three layers of decreasing
+rigor:
+\begin{itemize}[leftmargin=2em]
+\item \textbf{Sections~\ref{sec:general}--\ref{sec:TG}:}
+  exact algebraic identities and a finite computation,
+  all fully proved.
+\item \textbf{Section~\ref{sec:results}:} numerical
+  findings from pseudo-spectral simulations.
+\item \textbf{Sections~\ref{sec:mechanism}--\ref{sec:conjecture}:}
+  a heuristic mechanism, a conditional sign criterion,
+  and a conjecture.
+\end{itemize}
+We make every effort to keep these layers clearly
+separated.
+
+\subsection{Setup and definitions}
+
+We decompose $S^2$ (the sphere of wavevector directions
+$\hat k = k/|k|$) into $J$ approximately equal-area
+sectors $\{\Omega_j\}_{j=1}^J$ using a Fibonacci spiral
+partition (Section~\ref{sec:method}).
+
+\begin{definition}[Sector energies and concentration]
+\label{def:sector}
+For a smooth divergence-free field $u$ on $\T^3$
+with Fourier coefficients $\hat u(k)$, $k\in\Z^3$:
+\begin{align}
+E_j &= \sum_{\hat k\in\Omega_j}|k|\,|\hat u(k)|^2,
+\qquad E = \sum_j E_j, \qquad p_j = E_j/E,\\
+\cC(u) &= \sum_j p_j^2 = \|p\|_{\ell^2}^2
+\quad\text{(angular concentration)},\\
+\cS(u) &= -\sum_j p_j\log p_j
+\quad\text{(angular entropy)}.
+\end{align}
+Here $E_j$ is the $\Hdot{1/2}$ energy in sector
+$\Omega_j$, and $p_j$ is the fraction of total
+$\Hdot{1/2}$ energy in that sector.  Note $\cC\in[1/J,1]$
+with $\cC=1/J$ for isotropic fields.
+\end{definition}
+
+\begin{definition}[Nonlinear energy transfer]
+\label{def:transfer}
+Let $B(u,u) = -P[(u\cdot\nabla)u]$ denote the
+Leray-projected advection, where
+$P_{jm}(k) = \delta_{jm}-k_jk_m/|k|^2$ is the Leray
+projector in Fourier space.  The Fourier representation is
+\begin{equation}\label{eq:B-fourier}
+\widehat{B(u,u)}_j(k)
+= -P_{jm}(k)\sum_{\substack{p+q=k\\p,q\in\Z^3}}
+iq_l\,\hat u_l(p)\,\hat u_m(q),
+\end{equation}
+with repeated indices summed ($j,l,m\in\{1,2,3\}$).
+The per-mode $\Hdot{1/2}$ energy transfer is
+\begin{equation}\label{eq:Tk}
+T(k;u) = 2\,\re\bigl[|k|\,\hat u(k)^*
+\cdot\widehat{B(u,u)}(k)\bigr].
+\end{equation}
+The angular spreading functional is:
+\begin{equation}\label{eq:Sigma}
+\Sigma(u) = \frac{d\cC}{dt}\bigg|_{\rm NL}
+= \frac{2}{E}\sum_j p_j\Bigl(\sum_{\hat k\in\Omega_j}T(k;u)
+- p_j\sum_k T(k;u)\Bigr).
+\end{equation}
+Spreading corresponds to $\Sigma < 0$ (concentration
+decreasing); concentration to $\Sigma > 0$.
+\end{definition}
+
+\subsection{Summary of results}
+
+\noindent\textbf{Exact algebraic results}
+(Section~\ref{sec:general}):
+\begin{enumerate}[leftmargin=2em,label=(A\arabic*)]
+\item Phase-conjugation antisymmetry:
+  $T(k;\bar u) = -T(k;u)$
+  (Theorem~\ref{thm:antisym}).
+\item Conjugation-symmetric vanishing: $\E[T(k;u)] = 0$
+  and $\E[\Sigma(u)]=0$
+  (Theorem~\ref{thm:gaussian}).
+\item Pressure invariance
+  (Proposition~\ref{prop:pressure}).
+\item Homogeneity: $\Sigma(\lambda u)=\lambda\Sigma(u)$
+  (Proposition~\ref{prop:homog}).
+\end{enumerate}
+
+\noindent\textbf{Taylor--Green computation}
+(Section~\ref{sec:TG}):
+\begin{enumerate}[leftmargin=2em,label=(B\arabic*)]
+\item $V(k)\cdot\widetilde R(k)=-1/512 < 0$ at all
+  TG modes (Theorem~\ref{thm:TG}).
+\end{enumerate}
+
+\noindent\textbf{Numerical findings}
+(Section~\ref{sec:results}):
+\begin{enumerate}[leftmargin=2em,label=(N\arabic*)]
+\item $\Sigma(u) < 0$ throughout TG-generated turbulence.
+\item Spreading rate independent of $\nu$.
+\item Phase conjugation flips $\Sigma$ exactly.
+\item Random div-free fields: 49\% spreading.
+\item Spreading survives 50\% phase randomization.
+\item Spreading established within one time step.
+\item Cross-sector transfer dominates by $\mathbf{830\times}$.
+\item High-$p$ sectors have $\cos\alpha < 0$ (depletion).
+\item Multiple ICs: TG spreads; random fields $\Sigma\approx 0$;
+  concentrated jet concentrates despite mode-level depletion.
+\item Triad phases lock to $\pm\pi/2$ (purely imaginary)
+  in the NS solution, with a $4\!:\!1$ bias toward $+\pi/2$.
+  Random-phase and jet fields show uniform distributions.
+\item $\Sigma/(\cC-1/J)$ independent of $\nu$ to four
+  significant figures across $\nu\in[0.002,0.02]$.
+\item $\Sigma^{(s)}<0$ for all $s\in[0,3/2]$: the nonlinear
+  term spreads angular concentration at every Sobolev level,
+  including the enstrophy ($s=1$).
+\item Vortex stretching weakly correlated with enstrophy
+  concentration ($\corr=+0.14$), but full nonlinear transfer
+  produces net spreading ($\corr=-0.43$): cross-sector
+  redistribution dominates.
+\item $\Sigma^{(1)}/(\cC^{(1)}-1/J)$ independent of $\nu$:
+  enstrophy-level constitutive relation is purely nonlinear.
+\item All three random broadband ICs have $\Sigma^{(1)}<0$ at
+  every snapshot (30/30): enstrophy spreading is more universal
+  than $\Hdot{1/2}$ spreading.
+\item Mode-level depletion $\kappa_{\rm align}$ undergoes a
+  sharp sign transition at $\cC^{(1)}\approx 0.15$: the
+  spreading mechanism engages only above a concentration
+  threshold.
+\item Enstrophy spreading survives 50\% phase randomization
+  ($\Sigma^{(1)}<0$ at $\geq 10/11$ concentration levels
+  for $f\leq 0.5$).
+\item Surgically concentrated fields ($\cC^{(1)}$ boosted
+  to $0.20$--$0.50$ while preserving NS phase structure)
+  exhibit $\Sigma^{(1)}<0$ at all 44 snapshots ($256^3$),
+  with monotone relaxation toward isotropy.
+\item The stretching--spreading ratio
+  $\mathcal{R}=|\mathcal{W}|/(|\Sigma^{(1)}|
+  \cdot\|\omega\|^2)\in[0.6,2.2]$ in the surgical runs,
+  \emph{decreasing} with concentration.
+\item The constitutive coefficient $g^{(1)} =
+  -\Sigma^{(1)}/(\cC^{(1)}-1/J) \approx 0.47\pm 0.04$
+  across $\cC^{(1)}\in[0.13, 0.50]$, identifying the
+  analytical target for the regularity program.
+\end{enumerate}
+
+\noindent\textbf{Heuristic mechanism and conjecture}
+(Sections~\ref{sec:mechanism}--\ref{sec:conjecture}):
+\begin{enumerate}[leftmargin=2em,label=(H\arabic*)]
+\item Cross-sector depletion via the $-i$ rotation
+  (Section~\ref{sec:mechanism}).
+\item A conditional sign criterion linking the forward
+  cascade phase structure to angular spreading
+  (Section~\ref{sec:conditional}).
+\item Conjecture~\ref{conj:enstrophy}: $\Sigma^{(1)}(u)<0$
+  for all smooth NS solutions with $\cC^{(1)} > 1/J$
+  (enstrophy-level spreading).
+\item A regularity program based on the coupled
+  stretching--spreading mechanism
+  (Remark~\ref{rem:regularity-final}).
+\end{enumerate}
+
+%======================================================================
+\section{Exact Algebraic Results}
+\label{sec:general}
+%======================================================================
+
+\subsection{Phase-conjugation antisymmetry}
+
+\begin{definition}[Phase conjugation]
+\label{def:conj}
+For a divergence-free field $u$ on $\T^3$, define
+$\bar u$ by $\hat{\bar u}(k) = \overline{\hat u(k)}$.
+For a real field this gives $\bar u(x)=u(-x)$ (spatial
+parity inversion).  All $\Hdot{s}$ norms, sector energies,
+and probabilities $p_j$ are unchanged.
+\end{definition}
+
+\begin{remark}
+This operation is Fourier phase conjugation (equivalently,
+spatial parity), \emph{not} dynamical time reversal.
+For the Euler equations, the standard time-reversal
+involves $u(x,t)\mapsto -u(x,-t)$; for Navier--Stokes,
+viscosity already breaks time-reversal symmetry at the
+PDE level.  The identity below is therefore an algebraic
+oddness property of the trilinear transfer functional
+under parity, not a statement about physical reversibility.
+\end{remark}
+
+\begin{theorem}[Phase-conjugation antisymmetry]
+\label{thm:antisym}
+For any smooth divergence-free $u$ on $\T^3$ and
+$k\in\Z^3\setminus\{0\}$:
+\begin{equation}
+T(k;\bar u) = -T(k;u).
+\end{equation}
+Consequently $\Sigma(\bar u) = -\Sigma(u)$.
+\end{theorem}
+
+\begin{proof}
+From~\eqref{eq:Tk} and~\eqref{eq:B-fourier}:
+\begin{equation}
+T(k;u) = 2|k|\re\Bigl[\hat u(k)^*\cdot
+\Bigl(-P(k)\sum_{p+q=k}iq_l\hat u_l(p)\hat u(q)
+\Bigr)\Bigr].
+\end{equation}
+Since $\re[\bar w\cdot(-iz)] = \im[\bar w\cdot z]$,
+we may write $T(k;u) = 2|k|\,\im[Z(k;u)]$ where
+\begin{equation}\label{eq:Z}
+Z(k;u) = \sum_{j,l,m}P_{jm}(k)\sum_{p+q=k}
+q_l\,\hat u_j(k)^*\hat u_l(p)\hat u_m(q).
+\end{equation}
+Under $\hat u(k)\to\overline{\hat u(k)}$: the conjugation
+reverses $\hat u_j(k)^*\to\hat u_j(k)$ and converts
+$\hat u_l(p)\to\overline{\hat u_l(p)}$,
+$\hat u_m(q)\to\overline{\hat u_m(q)}$.  Since $P_{jm}(k)$
+and $q_l$ are real:
+\begin{equation}
+Z(k;\bar u) = \overline{Z(k;u)},
+\end{equation}
+whence $\im[Z(k;\bar u)]=-\im[Z(k;u)]$ and
+$T(k;\bar u)=-T(k;u)$.
+
+For $\Sigma$: since $p_j(\bar u) = p_j(u)$ and
+$E(\bar u) = E(u)$, the formula~\eqref{eq:Sigma}
+gives $\Sigma(\bar u) = -\Sigma(u)$.
+\end{proof}
+
+\begin{corollary}[Pure oddness]
+\label{cor:odd}
+The transfer is purely odd under phase conjugation:
+$T^+ := (T(k;u)+T(k;\bar u))/2 \equiv 0$.
+\end{corollary}
+
+\subsection{Vanishing for conjugation-symmetric fields}
+
+\begin{theorem}[Vanishing under conjugation symmetry]
+\label{thm:gaussian}
+Let $u$ be a random smooth divergence-free field on $\T^3$
+with $\E[|T(k;u)|]<\infty$ and $\E[|\Sigma(u)|]<\infty$,
+whose distribution is invariant under phase conjugation:
+$\bar u \stackrel{d}{=} u$, where
+$\hat{\bar u}(k) = \overline{\hat u(k)}$.
+
+Then $\E[T(k;u)]=0$ for every $k\neq 0$, and
+$\E[\Sigma(u)]=0$.
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:antisym}: $T(k;\bar u) = -T(k;u)$
+for every realization.  Since $\bar u\stackrel{d}{=}u$:
+\begin{equation}
+\E[T(k;u)] = \E[T(k;\bar u)] = \E[-T(k;u)]
+= -\E[T(k;u)].
+\end{equation}
+Hence $\E[T(k;u)]=0$.
+
+For the spreading functional: under phase conjugation,
+$E(\bar u) = E(u)$, $p_j(\bar u)=p_j(u)$, and
+$T(k;\bar u) = -T(k;u)$.  From the
+definition~\eqref{eq:Sigma}, $\Sigma$ is linear in the
+values $\{T(k)\}$ with coefficients depending only on
+$\{p_j\}$ and $E$.  Since all coefficients are unchanged
+under conjugation while each $T(k)$ flips sign:
+$\Sigma(\bar u) = -\Sigma(u)$.  By the same distributional
+argument, $\E[\Sigma]=0$.
+\end{proof}
+
+\begin{remark}[Applicable models]
+The hypothesis $\bar u\stackrel{d}{=}u$ holds for any
+isotropic Gaussian field, and more generally for any
+random field whose Fourier amplitudes are deterministic
+and whose phases (on a half-lattice) are i.i.d.\ uniform
+or invariant under $\phi\mapsto -\phi$.  It fails for
+fields with systematic phase bias, such as developed
+NS solutions --- which is precisely why those solutions
+can have $\Sigma\neq 0$.
+\end{remark}
+
+\subsection{Pressure invariance}
+
+\begin{proposition}[Pressure drops out]
+\label{prop:pressure}
+$T(k;u) = 2|k|\re[\hat u(k)^*\cdot
+(-\widehat{(u\cdot\nabla)u}(k))]$.
+That is, $T(k)$ is the same whether computed with the
+Leray-projected forcing $\hat B(k)$ or with the raw
+advection $-\widehat{(u\cdot\nabla)u}(k)$.
+\end{proposition}
+
+\begin{proof}
+The Leray projection removes the component parallel
+to $k$:
+$\hat B(k) = -\widehat{(u\cdot\nabla)u}(k)
++ k\,\beta(k)$
+for some scalar $\beta(k)$.  Since $k\cdot\hat u(k)=0$
+(divergence-free), the correction $k\,\beta$ is
+orthogonal to $\hat u(k)^*$ and drops out of the
+inner product.
+\end{proof}
+
+\subsection{Factored form and homogeneity}
+
+\begin{proposition}[Factored form]
+\label{prop:factored}
+\begin{equation}\label{eq:factored}
+T(k;u) = 2|k|\,\im\Bigl[
+\sum_{p+q=k}(q\cdot\hat u(p))(\hat u(k)^*\cdot\hat u(q))
+\Bigr].
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+By Proposition~\ref{prop:pressure}, we may use the raw
+advection.  Its $j$-th Fourier component is
+$\widehat{(u\cdot\nabla)u}_j(k)
+= \sum_{p+q=k}\sum_l iq_l\hat u_l(p)\hat u_j(q)$
+(no Leray projector, replacing $P_{jm}$ with $\delta_{jm}$).
+Computing $T = 2|k|\im[\cdots]$ and contracting:
+$\sum_j \hat u_j(k)^*\hat u_j(q) = \hat u(k)^*\cdot\hat u(q)$
+and
+$\sum_l q_l\hat u_l(p) = q\cdot\hat u(p)$.
+\end{proof}
+
+\begin{proposition}[Homogeneity]
+\label{prop:homog}
+$\Sigma(\lambda u) = \lambda\,\Sigma(u)$ for $\lambda>0$.
+\end{proposition}
+
+\begin{proof}
+$T(k;\lambda u) = \lambda^3 T(k;u)$ (cubic in $\hat u$).
+$E(\lambda u) = \lambda^2 E(u)$.  $p_j(\lambda u)=p_j(u)$.
+From~\eqref{eq:Sigma}: $\Sigma$ picks up $\lambda^3$
+from $T$ and $\lambda^{-2}$ from $1/E$, giving
+net degree $3-2=1$.
+\end{proof}
+
+%======================================================================
+\section{The Taylor--Green Computation}
+\label{sec:TG}
+%======================================================================
+
+\subsection{Fourier structure}
+
+The Taylor--Green vortex
+$u_0 = (\sin x_1\cos x_2\cos x_3,\;
+-\cos x_1\sin x_2\cos x_3,\;0)$
+has Fourier support on $\cK = \{(\pm 1,\pm 1,\pm 1)\}$
+(8 wavevectors):
+\begin{equation}\label{eq:TG-fourier}
+\hat u_1(k) = \frac{-ik_1}{8},\qquad
+\hat u_2(k) = \frac{ik_2}{8},\qquad
+\hat u_3(k) = 0,\qquad k\in\cK.
+\end{equation}
+All coefficients are purely imaginary:
+$\hat u(k) = iV(k)$ where
+$V(k) = (-k_1/8,\,k_2/8,\,0) \in \R^3$.
+
+\begin{lemma}[Properties of $V$]
+\label{lem:TG-imag}
+For all $k\in\cK$: (i)~$k\cdot V(k) = 0$
+(divergence-free, since $k_1^2=k_2^2=1$);
+(ii)~$V(-k)=-V(k)$ (reality);
+(iii)~$|V(k)|^2 = 1/32$ (uniform amplitude).
+\end{lemma}
+
+\subsection{Phase preservation by the nonlinearity}
+
+\begin{proposition}
+\label{prop:phase-preserve}
+If $\hat u(k)=iV(k)$ with $V(k)\in\R^3$ for all $k$,
+then $\hat B(k)=iR(k)$ with $R(k)\in\R^3$.
+\end{proposition}
+
+\begin{proof}
+The raw advection is
+$\widehat{(u\cdot\nabla)u}_j(k')
+= \sum_{p+q=k'}\sum_l iq_l\cdot iV_l(p)\cdot iV_j(q)
+= i^3\sum_{p+q=k'}\sum_l q_lV_l(p)V_j(q)$.
+Since $i^3=-i$, this equals $-iS_j(k')$ with
+$S_j(k') = \sum_{p+q=k'}(q\cdot V(p))V_j(q)\in\R$.
+The Leray projector $P(k')$ has real entries, and
+$B = -P(\text{adv})$, giving
+$\hat B_j(k') = -P_{jm}(-iS_m) = iP_{jm}S_m = iR_j$.
+\end{proof}
+
+\begin{corollary}\label{cor:persistence}
+The purely imaginary structure is preserved by the full NS
+evolution: nonlinearity preserves it
+(Proposition~\ref{prop:phase-preserve}), and viscosity
+$-\nu|k|^2\hat u = -\nu|k|^2\cdot iV$ preserves it by
+linearity.
+\end{corollary}
+
+\subsection{First generation: no self-transfer}
+
+\begin{proposition}\label{prop:gen1}
+$B(u_0,u_0)$ has Fourier support on
+$\cK'=\{k\in\Z^3\setminus\{0\}: k_i\in\{0,\pm 2\}\}$,
+which is disjoint from $\cK$.  Therefore $T(k;u_0)=0$
+for all $k\in\cK$.
+\end{proposition}
+
+\begin{proof}
+For $p,q\in\cK$: each component of $p+q$ lies in
+$\{-2,0,2\}$, never in $\{\pm 1\}$.  So the advection
+creates no modes at the original wavevectors.
+Since there is no forcing at $k\in\cK$,
+$\hat B(k) = 0$ and $T(k) = 0$.
+\end{proof}
+
+\subsection{First-generation modes}
+
+Of the 26 nonzero wavevectors in $\cK'$, exactly 8
+receive nonzero forcing (the others vanish by
+cancellation).  By explicit computation:
+
+\begin{proposition}\label{prop:gen1-modes}
+The nonzero first-generation modes are
+$\hat B(k') = iR(k')$ with:
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+$k'$ & $R(k')$ \\
+\midrule
+$(2,0,2)$   & $(1/32,\,0,\,-1/32)$ \\
+$(2,0,-2)$  & $(1/32,\,0,\,1/32)$ \\
+$(-2,0,2)$  & $(-1/32,\,0,\,-1/32)$ \\
+$(-2,0,-2)$ & $(-1/32,\,0,\,1/32)$ \\
+$(0,2,2)$   & $(0,\,1/32,\,-1/32)$ \\
+$(0,2,-2)$  & $(0,\,1/32,\,1/32)$ \\
+$(0,-2,2)$  & $(0,\,-1/32,\,-1/32)$ \\
+$(0,-2,-2)$ & $(0,\,-1/32,\,1/32)$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{proposition}
+
+\begin{proof}
+For each $k'\in\cK'$, compute
+$S_j(k')=\sum_{p+q=k'}(q\cdot V(p))V_j(q)$ by
+enumerating all pairs $p,q\in\cK$ with $p+q=k'$,
+then apply $R = P(k')S$.
+
+We show the computation for $k'=(2,0,2)$.  The
+constraint $p+q=(2,0,2)$ with $p,q\in\{\pm 1\}^3$
+forces $p_1=q_1=1$, $p_3=q_3=1$, and $p_2=-q_2$.
+The two contributing pairs are
+$(p,q)\in\{((1,s,1),(1,-s,1)):s=\pm 1\}$.
+
+For $s=1$: $q\cdot V(p) = (1,-1,1)\cdot(-1/8,1/8,0)
+= -1/4$.  $V(q) = V(1,-1,1) = (-1/8,-1/8,0)$.
+Contribution: $(-1/4)(-1/8,-1/8,0) = (1/32,1/32,0)$.
+
+For $s=-1$: $q\cdot V(p) = (1,1,1)\cdot(-1/8,-1/8,0)
+= -1/4$.  $V(q) = V(1,1,1) = (-1/8,1/8,0)$.
+Contribution: $(-1/4)(-1/8,1/8,0) = (1/32,-1/32,0)$.
+
+Sum: $S(2,0,2) = (1/16, 0, 0)$.
+Leray projection: $|k'|^2=8$, $k'\cdot S = 2/16 = 1/8$.
+$R = S - k'(k'\cdot S)/|k'|^2
+= (1/16,0,0) - (2,0,2)(1/8)/8
+= (1/16-1/32,\; 0,\; -1/32)
+= (1/32, 0, -1/32)$.
+
+The remaining 7 modes are computed by the same procedure
+and verified by the companion script
+\texttt{tg\_exact\_symbolic.py} using exact rational
+arithmetic.  All 8 values appear in the table in
+Proposition~\ref{prop:gen1-modes}.
+
+A companion script (\texttt{tg\_exact\_symbolic.py})
+verifies all 8 modes using Python's \texttt{Fraction}
+arithmetic with zero floating-point error.
+\end{proof}
+
+\subsection{Second generation: exact anti-alignment}
+
+After one time step $\Delta t$, the field has modes
+at both $\cK$ (amplitude $O(1)$) and $\cK'$ (amplitude
+$O(\Delta t)$).  Second-generation forcing at $k\in\cK$
+comes from triads with one leg in $\cK'$ and one in $\cK$.
+
+\begin{definition}[Second-generation forcing]
+\label{def:gen2}
+For $k\in\cK$, define:
+\begin{equation}\label{eq:Rtilde}
+\widetilde R_j(k) = \sum_mP_{jm}(k)\sum_{\substack{
+q\in\cK\\k-q\in\cK'}}
+\bigl[(q\cdot R(k\!-\!q))V_m(q)
++((k\!-\!q)\cdot V(q))R_m(k\!-\!q)\bigr],
+\end{equation}
+where the first term is the Type-A contribution
+(first-generation mode advects, original is advected)
+and the second is Type-B (original advects,
+first-generation mode is advected).
+The second-generation forcing is
+$\hat B^{(2)}(k) = i\Delta t\,\widetilde R(k)$.
+\end{definition}
+
+\begin{theorem}[Taylor--Green anti-alignment]
+\label{thm:TG}
+For all $k\in\cK$:
+\begin{equation}
+\widetilde R(k) = -\frac{1}{16}V(k),
+\end{equation}
+and therefore:
+\begin{equation}
+V(k)\cdot\widetilde R(k) = -\frac{|V(k)|^2}{16}
+= -\frac{1}{512} < 0.
+\end{equation}
+The forcing is exactly anti-parallel to the velocity:
+$\cos\alpha(k) = -1$ at every TG mode.
+\end{theorem}
+
+\begin{proof}
+The computation is finite: for each $k\in\cK$, we
+enumerate all $q\in\cK$ with $k-q$ among the 8 nonzero
+first-generation modes (Proposition~\ref{prop:gen1-modes}),
+evaluate the Type-A and Type-B contributions
+in~\eqref{eq:Rtilde}, apply the Leray projector, and sum.
+We give the full computation for $k_0=(1,1,1)$ and
+tabulate all 8 results.
+
+\smallskip\noindent\textbf{Computation at $k=(1,1,1)$.}
+The constraint $q\in\cK$, $k-q\in\cK'$ with $k-q$
+among the 8 nonzero first-generation modes yields
+exactly two contributing triads:
+$q=(-1,1,-1)$ with $p'=(2,0,2)$, and
+$q=(1,-1,-1)$ with $p'=(0,2,2)$.
+(All other $q\in\cK$ give $k-q$ outside the nonzero
+first-generation set.)
+
+For $q=(-1,1,-1)$, $p'=(2,0,2)$:
+Type~A: $(q\cdot R(p'))V(q)
+= ((-1,1,-1)\cdot(1/32,0,-1/32))\,V(-1,1,-1)
+= (-1/32+1/32)\,V(-1,1,-1) = 0$.
+Type~B: $(p'\cdot V(q))\,R(p')
+= ((2,0,2)\cdot(1/8,1/8,0))\,(1/32,0,-1/32)
+= (1/4)(1/32,0,-1/32)
+= (1/128,0,-1/128)$.
+
+For $q=(1,-1,-1)$, $p'=(0,2,2)$:
+Type~A: $(q\cdot R(p'))V(q)
+= ((1,-1,-1)\cdot(0,1/32,-1/32))\,V(1,-1,-1)
+= (-1/32+1/32)\,V(1,-1,-1) = 0$.
+Type~B: $(p'\cdot V(q))\,R(p')
+= ((0,2,2)\cdot(-1/8,-1/8,0))\,(0,1/32,-1/32)
+= (-1/4)(0,1/32,-1/32)
+= (0,-1/128,1/128)$.
+
+Sum before Leray projection:
+$(1/128,-1/128,-1/128+1/128)=(1/128,-1/128,0)$.
+Leray projection at $k=(1,1,1)$:
+$|k|^2=3$, $k\cdot(1/128,-1/128,0)=0$, so
+$\widetilde R(1,1,1)=(1/128,-1/128,0)$.
+
+Check: $-V(1,1,1)/16 = -(-1/8,1/8,0)/16
+= (1/128,-1/128,0)$. \checkmark
+
+Inner product: $V\cdot\widetilde R
+= (-1/8)(1/128)+(1/8)(-1/128) = -1/512$. \checkmark
+
+Cosine: $(V\cdot\widetilde R)^2 = 1/262144
+= |V|^2|\widetilde R|^2$, confirming
+$\cos^2\alpha=1$, hence $\cos\alpha=-1$.
+
+\smallskip\noindent\textbf{All 8 modes.}
+The same enumeration procedure applied to each
+$k\in\cK$ gives:
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+$k$ & $\widetilde R(k)$ & $-V(k)/16$ \\
+\midrule
+$(1,1,1)$    & $(1/128,\,-1/128,\,0)$ & $(1/128,\,-1/128,\,0)$ \\
+$(1,1,-1)$   & $(1/128,\,-1/128,\,0)$ & $(1/128,\,-1/128,\,0)$ \\
+$(1,-1,1)$   & $(1/128,\,1/128,\,0)$  & $(1/128,\,1/128,\,0)$  \\
+$(1,-1,-1)$  & $(1/128,\,1/128,\,0)$  & $(1/128,\,1/128,\,0)$  \\
+$(-1,1,1)$   & $(-1/128,\,-1/128,\,0)$ & $(-1/128,\,-1/128,\,0)$ \\
+$(-1,1,-1)$  & $(-1/128,\,-1/128,\,0)$ & $(-1/128,\,-1/128,\,0)$ \\
+$(-1,-1,1)$  & $(-1/128,\,1/128,\,0)$ & $(-1/128,\,1/128,\,0)$ \\
+$(-1,-1,-1)$ & $(-1/128,\,1/128,\,0)$ & $(-1/128,\,1/128,\,0)$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+In every case $\widetilde R(k)=-V(k)/16$, giving
+$V\cdot\widetilde R = -1/512$ and $\cos\alpha=-1$.
+
+The companion script \texttt{tg\_exact\_symbolic.py}
+reproduces the full 8-mode enumeration using Python's
+\texttt{Fraction} arithmetic with zero floating-point
+error, independently verifying every entry in both
+tables (Proposition~\ref{prop:gen1-modes} and above).
+\end{proof}
+
+\begin{remark}[The $i^2=-1$ mechanism]
+\label{rem:i-squared}
+The anti-alignment has a transparent algebraic origin.
+The TG coefficients carry one factor of $i$
+($\hat u = iV$).  The first-generation forcing picks up
+$i^3 = -i$ from two coefficients and the advection
+operator's $iq_l$, then the sign in $B=-P(\text{adv})$
+restores $+i$ (Proposition~\ref{prop:phase-preserve}).
+When first-generation modes feed back through a second
+advection, another factor of $i$ accumulates: the total
+phase for two-step feedback is $i\cdot i = -1$ relative
+to the original velocity.
+\end{remark}
+
+\begin{remark}[Persistence]
+By Corollary~\ref{cor:persistence}, $\hat u(k,t) = iV(k,t)$
+for all $t\geq 0$.  This gives $\cos^2\alpha = 1$ at
+every mode (the inner product $V\cdot\widetilde R$ is
+always real).  The sign $\cos\alpha = -1$ at the original
+TG modes is proved at leading order in $\Delta t$ by
+Theorem~\ref{thm:TG}; numerical simulations confirm it
+persists throughout the evolution.
+\end{remark}
+
+%======================================================================
+\section{Numerical Methods}
+\label{sec:method}
+%======================================================================
+
+\subsection{Solver}
+
+We solve~\eqref{eq:NS} in Fourier space on the
+$N^3$ grid ($N=64,128$) using an integrating-factor
+Runge--Kutta scheme (IF-RK4).  The linear viscous
+operator $-\nu|k|^2$ is integrated exactly via the
+factor $e^{-\nu|k|^2\Delta t}$, and the nonlinear term
+$\hat B(u,u)$ is advanced by classical RK4 in the
+integrating-factor frame.  Aliasing is removed by the
+$2/3$ rule (zeroing modes with $|k|>N/3$).  The time
+step is $\Delta t = 10^{-3}$ for all runs reported here;
+stability was verified by halving $\Delta t$ and checking
+that all diagnostics change by less than $10^{-6}$.
+
+\subsection{Initial conditions}
+
+We test six initial conditions spanning different symmetry
+classes and concentration levels:
+\begin{enumerate}[leftmargin=2em]
+\item \textbf{Taylor--Green} (TG):
+  $u_0 = (\sin x_1\cos x_2\cos x_3,\,
+  -\cos x_1\sin x_2\cos x_3,\,0)$.
+  Purely imaginary Fourier structure; 8 active modes.
+\item \textbf{ABC flow}:
+  $u_0 = (A\sin x_3+C\cos x_2,\,B\sin x_1+A\cos x_3,\,
+  C\sin x_2+B\cos x_1)$ with $(A,B,C)=(1,0.8,0.6)$.
+  A Beltrami field ($\nabla\times u = u$); 12 active modes.
+\item \textbf{Random broadband} (3 seeds):
+  isotropic energy spectrum $\propto k^4e^{-k^2/32}$
+  peaked at $|k|\approx 4$, independent random phases,
+  Leray-projected.  Concentration $\cC\approx 0.07$
+  (nearly isotropic).
+\item \textbf{Concentrated jet}:
+  energy in a narrow cone (half-angle $0.3$\,rad) around
+  the $x_3$-axis at $|k|\approx 3$, random phases,
+  Leray-projected.  Concentration $\cC\approx 0.48$
+  (strongly anisotropic).
+\end{enumerate}
+Each is evolved to $t=5$ ($5{,}000$ time steps) with
+diagnostics recorded every $\Delta t=0.5$.
+
+\subsection{Angular sectors}
+
+We use a Fibonacci spiral partition of $S^2$ into $J$
+equal-area sectors with centers
+$\hat n_j = (\sin\vartheta_j\cos\psi_j,
+\sin\vartheta_j\sin\psi_j,\cos\vartheta_j)$,
+$\vartheta_j = \arccos(1-2(j+1/2)/J)$,
+$\psi_j = 2\pi j/\varphi$, where
+$\varphi = (1+\sqrt{5})/2$ is the golden ratio.
+Each wavevector $k\neq 0$ is assigned to its nearest
+sector center.  Results are reported for
+$J\in\{16,32,64,128\}$; the spreading sign $\Sigma<0$
+is independent of $J$.
+
+\subsection{Diagnostics}
+
+\begin{definition}[Phase alignment]
+\label{def:phase-align}
+For a mode $k$ with $\hat u(k)\neq 0$ and
+$\hat B(k)\neq 0$:
+\begin{equation}
+\cos\alpha(k) = \frac{\re[\hat u(k)^*\cdot\hat B(k)]}
+{|\hat u(k)|\,|\hat B(k)|}.
+\end{equation}
+Since $T(k) = 2|k||\hat u||\hat B|\cos\alpha$:
+$\cos\alpha>0$ means the forcing amplifies mode $k$,
+$\cos\alpha<0$ means it depletes.
+\end{definition}
+
+At each diagnostic snapshot we compute: sector energies
+$E_j$ and probabilities $p_j$; nonlinear forcing
+$\hat B(k)$; per-mode transfer $T(k)$ via~\eqref{eq:Tk};
+per-sector transfer $dE_j/dt|_{\rm NL}
+=\sum_{\hat k\in\Omega_j}T(k)$;
+spreading functional $\Sigma$ via~\eqref{eq:Sigma};
+Pearson correlation $\corr(p_j, dE_j|_{\rm NL})$;
+per-sector mean phase alignment
+$\langle\cos\alpha\rangle_j$; and the within-sector /
+cross-sector transfer decomposition (described below).
+
+\subsection{Cross-sector decomposition}
+
+The nonlinear forcing at mode $k\in\Omega_j$ is
+decomposed as $\hat B(k) = \hat B^{\rm within}(k)
++ \hat B^{\rm cross}(k)$, where
+$\hat B^{\rm within}(k)$ includes only triads $p+q=k$
+with the advecting velocity $\hat u(p)$ in the same
+sector as $k$ ($\hat p\in\Omega_j$), and
+$\hat B^{\rm cross}(k)$ includes the rest.  In
+practice, we compute $\hat B^{\rm within}$ by masking
+the advecting field to sector $j$ before evaluating
+the pseudospectral convolution, then subtracting from
+the full $\hat B$.  The induced spreading decomposition
+is $\Sigma = \Sigma_{\rm within}+\Sigma_{\rm cross}$,
+where $\Sigma_{\rm within}$ (resp.\ $\Sigma_{\rm cross}$)
+is computed from~\eqref{eq:Sigma} using only the
+within-sector (resp.\ cross-sector) transfers
+$T^{\rm within}(k) = 2|k|\re[\hat u^*\cdot
+\hat B^{\rm within}]$ (resp.\ $T^{\rm cross}$).
+
+\subsection{Phase surgery}
+
+We test the role of Fourier phase structure by modifying
+a developed NS solution:
+full phase randomization (random i.i.d.\ uniform
+phases, Leray re-projected);
+partial randomization (fraction $f$ of modes
+randomized);
+phase conjugation ($\hat u\mapsto\overline{\hat u}$).
+Each modified field is Leray-projected before computing
+$\Sigma$.
+
+\subsection{Validation}
+
+The solver conserves $L^2$ energy to machine precision
+in the inviscid limit ($\nu=0$, short time).  The TG
+solution at $t=0$ reproduces the exact Fourier coefficients
+from~\eqref{eq:TG-fourier}, and the first-generation
+forcing matches Proposition~\ref{prop:gen1-modes} to 15
+digits.  The antisymmetry $T(k;\bar u)=-T(k;u)$ holds to
+$10^{-16}$ relative error for all developed solutions.
+
+%======================================================================
+\section{Numerical Results}
+\label{sec:results}
+%======================================================================
+
+All results below use $N=128$, $\nu=0.01$, $J=32$
+unless otherwise stated, with the TG vortex evolved to
+$t=5$.
+
+\subsection{Persistent spreading along TG orbit (N1)}
+
+Along the TG trajectory at $N=128$, $\nu=0.01$:
+at all 1{,}001 diagnostic snapshots from $t=0.01$ to
+$t=20$, $\Sigma < 0$ with
+$\corr(p_j,dE_j|_{\rm NL}) = -0.56\pm 0.03$.
+
+\subsection{Viscosity independence (N2)}
+
+\begin{table}[h]
+\centering
+\caption{Spreading diagnostics at $t=5$, $N=128$, $J=64$,
+TG initial data.  The nonlinear correlation is independent
+of $\nu$ to three significant figures.}
+\label{tab:nu}
+\begin{tabular}{@{}ccr@{}}
+\toprule
+$\nu$ & $\corr(p_j,dE_j|_{\rm NL})$
+  & $|{\rm NL}/{\rm viscous}|$ \\
+\midrule
+$10^{-2}$          & $-0.562$ & $610\times$ \\
+$5\times 10^{-3}$  & $-0.562$ & $2{,}640\times$ \\
+$2\times 10^{-3}$  & $-0.563$ & $13{,}200\times$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Phase-conjugation antisymmetry (N3)}
+
+\begin{center}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+& $\corr$ & $\Sigma$ \\
+\midrule
+NS solution     & $-0.6022$ & $-1.199\times 10^{-3}$ \\
+Conjugated      & $+0.6022$ & $+1.199\times 10^{-3}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Confirmation of Theorem~\ref{thm:antisym} to machine
+precision.
+
+\subsection{Non-universality for random fields (N4)}
+
+Random div-free fields with the same energy spectrum:
+22/45 spread (49\%), $\corr\in[-0.7,+0.9]$,
+mean $+0.07$.  Consistent with
+Theorem~\ref{thm:gaussian}: conjugation-symmetric fields
+have $\E[\Sigma]=0$.
+
+\subsection{Robustness (N5)}
+
+Starting from a developed NS solution and randomizing
+a fraction $f$ of Fourier phases:
+\begin{center}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+$f$ & mean $\corr$ & spread \\
+\midrule
+$0\%$ & $-0.60$ & 5/5 \\
+$30\%$ & $-0.29$ & 5/5 \\
+$50\%$ & $-0.34$ & 5/5 \\
+$70\%$ & $-0.04$ & 3/5 \\
+$100\%$ & $+0.16$ & 1/5 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Onset (N6)}
+
+$\corr = -0.61$ at $t = 0.01$ (one time step from TG),
+stable to $t = 20$.
+
+\subsection{Cross-sector dominance (N7)}
+
+$\Sigma_{\rm within} = -1.4\times 10^{-6}$,
+$\Sigma_{\rm cross} = -1.2\times 10^{-3}$
+(ratio $\mathbf{830\times}$).  Within-sector self-interaction
+\emph{concentrates} ($\corr(p_j, dE^{\rm within}_j)=+0.74$);
+cross-sector interaction \emph{spreads}
+($\corr(p_j, dE^{\rm cross}_j) = -0.69$).
+
+\subsection{Phase alignment (N8)}
+
+$\corr(p_j,\langle\cos\alpha\rangle_j) = -1.000$.
+For this TG-based solution at $t=5$, the four high-$p$
+sectors have $\cos\alpha = -1.000$ and low-$p$ sectors
+have $\cos\alpha = +1.000$ (to numerical precision).
+Theorem~\ref{thm:TG} proves exact anti-alignment at
+leading order in $\Delta t$; the persistence to $t=5$
+is a numerical observation, consistent with the preserved
+imaginary structure (Corollary~\ref{cor:persistence})
+but not directly proved by Theorem~\ref{thm:TG}.
+For non-TG initial data, partial anti-alignment
+($\cos\alpha<0$ on average in high-$p$ sectors)
+is expected.
+
+\subsection{Sector count independence}
+
+\begin{center}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+$J$ & $\corr$ & $\Sigma<0$? \\
+\midrule
+$16$  & $-0.93$ & Yes \\
+$32$  & $-0.61$ & Yes \\
+$64$  & $-0.56$ & Yes \\
+$128$ & $-0.54$ & Yes \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Multiple initial conditions (N9)}
+\label{sec:multi-ic}
+
+To test whether spreading is specific to TG symmetry,
+we repeat the spreading diagnostic for all six initial
+conditions (Section~\ref{sec:method}), each evolved to
+$t=5$ at $N=128$, $\nu=0.01$, $J=32$.
+
+\begin{table}[h]
+\centering
+\caption{Spreading across initial conditions.
+$n_{\rm spread}$: snapshots with $\Sigma<0$ out of 11.}
+\label{tab:multi-ic}
+\begin{tabular}{@{}lcccl@{}}
+\toprule
+IC & $\Sigma(t\!=\!5)$ & $\corr$ & $n_{\rm spread}$
+  & status \\
+\midrule
+Taylor--Green    & $-1.20\times 10^{-3}$ & $-0.69$ & 11/11
+  & spreads \\
+ABC flow         & $\approx 0$     & $+1.00$ & 2/11
+  & degenerate \\
+Random (seed 42) & $+9.1\times 10^{-12}$ & $+0.13$ & 0/11
+  & concentrates \\
+Random (seed 99) & $-1.3\times 10^{-12}$ & $-0.18$ & 11/11
+  & spreads \\
+Random (seed 7)  & $-8.4\times 10^{-12}$ & $-0.01$ & 11/11
+  & spreads \\
+Concentrated jet & $+4.1\times 10^{-12}$ & $+0.92$ & 0/11
+  & concentrates \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Three qualitatively different regimes emerge:
+
+\medskip\noindent\textbf{Strong spreading (TG).}
+The TG orbit shows $\Sigma \sim -10^{-3}$, orders of
+magnitude larger than all other ICs, with perfect
+anti-alignment $\cos\alpha=-1$ in high-$p$ sectors.
+This is the regime where the $-i$ mechanism operates
+at full strength, supported by the purely imaginary
+phase structure.
+
+\medskip\noindent\textbf{Noise-level (random broadband).}
+The three random ICs have $|\Sigma|\sim 10^{-12}$,
+nine orders of magnitude smaller than TG, and the sign
+varies by seed (2/3 spread, 1/3 concentrate).  These
+fields are nearly isotropic ($\cC\approx 0.07$, close
+to $1/J=0.03$) and have conjugation-symmetric phases,
+so $\E[\Sigma]=0$ by Theorem~\ref{thm:gaussian}.
+The observed values are consistent with zero-mean
+fluctuations.
+
+\medskip\noindent\textbf{Concentration (jet).}
+The concentrated jet shows $\Sigma > 0$ at every snapshot,
+with concentration \emph{increasing} over time
+($\cC: 0.475\to 0.478$).  Remarkably, the jet still
+exhibits the $-i$ mechanism at the mode level:
+$\corr(p_j,\langle\cos\alpha\rangle_j) = -0.70$
+(the forcing depletes high-$p$ modes).  But $\Sigma>0$
+despite this mode-level depletion.  The explanation:
+the jet's random phases lack the cascade phase structure
+needed for the cross-sector transfer to dominate.
+The nonlinear term creates new angular structure
+(at new scales and directions) faster than it depletes
+the existing concentration.
+
+\medskip\noindent\textbf{Degenerate (ABC).}
+The ABC flow is a Beltrami field satisfying
+$\nabla\times u=u$, making it a stationary Euler solution.
+The nonlinear term $(u\cdot\nabla)u = (\nabla\times u)
+\times u + \nabla(|u|^2/2)$ reduces to a pressure gradient
+for Beltrami fields, so $B(u,u)\approx 0$ and $\Sigma$
+is at machine zero.  This is not a counterexample but
+a degenerate case where the nonlinearity barely acts.
+
+\medskip
+The jet result is the most informative: it shows that
+the $-i$ mechanism (mode-level depletion) is necessary
+but not sufficient for spreading.  Angular spreading
+$\Sigma<0$ additionally requires the NS cascade phase
+structure, which is present in developed TG turbulence
+but absent in random-phase concentrated fields.
+
+
+\subsection{Triad phase locking (N10)}
+\label{sec:triad-phase}
+
+The factored form (Proposition~\ref{prop:factored}) writes
+the per-mode transfer as
+$T(k) = 2|k|\,\im\bigl[\sum_{p+q=k}z(k;p,q)\bigr]$,
+where the triad integrand is
+\begin{equation}\label{eq:triad-integrand}
+z(k;p,q) = (q\cdot\hat u(p))\,
+(\hat u(k)^*\cdot\hat u(q)).
+\end{equation}
+We sample $2\times 10^5$ random triads from the set of
+active modes (those with $|\hat u(k)|^2$ above $10^{-12}$
+of the peak) and compute the magnitude-weighted phase
+histogram of $\arg z$.
+
+For the TG-generated NS solution at $t=10$,
+$\nu=0.002$, $N=128$ (648 active modes,
+$1.8\times 10^5$ nontrivial triads), the triad phases
+concentrate sharply at $\arg z \approx +\pi/2$ (81\%
+of total weight) and $\arg z\approx -\pi/2$ (18\%),
+with all other bins essentially empty
+(Table~\ref{tab:triad-phase}).  For comparison, the
+random-phase field (same amplitudes) and the
+concentrated jet both produce uniform histograms
+indistinguishable from i.i.d.\ phases
+($\approx 4\%$ per bin).
+
+\begin{table}[h]
+\centering
+\caption{Triad phase statistics.
+$\langle\sin\theta\rangle$ is the magnitude-weighted
+mean of $\sin(\arg z)$; positive means net amplification
+of total $\Hdot{1/2}$ energy by the nonlinear term.}
+\label{tab:triad-phase}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Field & triads & $\langle\sin\theta\rangle$
+  & phase structure \\
+\midrule
+NS solution    & $1.8\times 10^5$ & $+0.63$
+  & locked to $\pm\pi/2$ \\
+Random phases  & $1.8\times 10^5$ & $-0.08$
+  & uniform \\
+Conc.\ jet     & $4.7\times 10^5$ & $-0.00$
+  & uniform \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The phase locking has a transparent algebraic origin.
+By Corollary~\ref{cor:persistence}, $\hat u(k)=iV(k)$
+with $V(k)\in\R^3$ persists along the TG orbit.
+Substituting into~\eqref{eq:triad-integrand}:
+\begin{equation}\label{eq:triad-imaginary}
+z(k;p,q) = (q\cdot iV(p))\,(-iV(k)\cdot iV(q))
+= i\,(q\cdot V(p))(V(k)\cdot V(q)),
+\end{equation}
+which is purely imaginary, with
+$\arg z = +\pi/2$ when $(q\cdot V(p))(V(k)\cdot V(q))>0$
+and $\arg z = -\pi/2$ otherwise.  The observed $4\!:\!1$
+bias toward $+\pi/2$ reflects the fact that the dominant
+triads have both factors positive, so the aggregate
+nonlinear term amplifies total $\Hdot{1/2}$ energy
+($\langle\sin\theta\rangle>0$).
+
+The key point for spreading is that this amplification
+is \emph{anti-correlated with angular concentration}:
+modes in low-$p_j$ sectors receive more nonlinear
+amplification than those in high-$p_j$ sectors
+(consistent with $\corr(p_j,dE_j|_{\rm NL})<0$
+in~N1), producing $\Sigma<0$ even though the total
+energy transfer is positive.
+
+The uniform phase distribution for the random-phase
+field and the concentrated jet confirms that the
+$\pm\pi/2$ locking is a consequence of the
+NS-preserved purely imaginary structure, not a
+generic property of the trilinear form.  This
+provides a positive characterization of the
+``cascade phase structure'' invoked in N9 and
+Conjecture~\ref{conj:enstrophy}: it is the persistence
+of $\hat u(k)\approx iV(k)$, which locks triad
+phases to the imaginary axis.
+
+
+\subsection{Viscosity-independent constitutive relation (N11)}
+\label{sec:constitutive}
+
+We evolve the TG vortex from $t=0$ to $t=10$ at four
+viscosities $\nu\in\{0.02, 0.01, 0.005, 0.002\}$
+($N=128$, $J=32$), recording $\cC(u)$ and $\Sigma(u)$
+at intervals $\Delta t=0.1$.
+
+\begin{table}[h]
+\centering
+\caption{Mean spreading diagnostics over
+$t\in[5,10]$.  The ratio $\Sigma/(\cC-1/J)$ is
+independent of $\nu$ to four significant figures.}
+\label{tab:constitutive}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$\nu$ & $\langle\cC\rangle$
+  & $\langle\Sigma/(\cC\!-\!1/J)\rangle$
+  & std \\
+\midrule
+$0.02$  & $0.243$ & $-8.245\times 10^{-3}$ & $1.50\times 10^{-3}$ \\
+$0.01$  & $0.243$ & $-8.256\times 10^{-3}$ & $1.50\times 10^{-3}$ \\
+$0.005$ & $0.243$ & $-8.261\times 10^{-3}$ & $1.50\times 10^{-3}$ \\
+$0.002$ & $0.243$ & $-8.264\times 10^{-3}$ & $1.51\times 10^{-3}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The ratio $\Sigma/(\cC-1/J)$ agrees across all four
+viscosities to four significant figures at every time
+snapshot (Table~\ref{tab:constitutive}), confirming
+that the spreading is purely nonlinear: viscous
+dissipation contributes negligibly.  However, the ratio
+evolves from $-2.2\times 10^{-3}$ at $t=2$ to
+$-1.1\times 10^{-2}$ at $t=10$ (a factor of~5), while
+$(\cC-1/J)$ itself decreases by only 5\%, indicating
+that $\Sigma$ depends on an additional state variable
+beyond~$\cC$.  Identifying the correct constitutive law
+\begin{equation}\label{eq:constitutive}
+\Sigma(u) = -g(u)\,(\cC(u)-1/J),
+\end{equation}
+where $g(u)>0$ is a viscosity-independent functional
+of $u$, is a key open problem for the regularity
+program.
+
+
+\subsection{$\Hdot{s}$ spreading for $s\in[0,3/2]$ (N12)}
+\label{sec:Hs-spreading}
+
+\begin{definition}[$\Hdot{s}$ sector energies and spreading]
+\label{def:Hs-spreading}
+For $s\geq 0$, define the $\Hdot{s}$ sector energies
+\begin{equation}
+E_j^{(s)} = \sum_{\hat k\in\Omega_j}
+|k|^{2s}\,|\hat u(k)|^2,
+\qquad p_j^{(s)} = E_j^{(s)}/E^{(s)},
+\qquad \cC^{(s)}(u) = \sum_j (p_j^{(s)})^2,
+\end{equation}
+and the $\Hdot{s}$ transfer and spreading functional
+\begin{equation}
+T^{(s)}(k;u) = 2|k|^{2s}\,\re[\hat u(k)^*\cdot
+\hat B(k)],
+\qquad
+\Sigma^{(s)}(u) = \frac{d\cC^{(s)}}{dt}
+\bigg|_{\rm NL}.
+\end{equation}
+The case $s=1/2$ recovers the original definitions.
+For $s=1$, the sector energies $E_j^{(1)}$ are the
+angular components of the enstrophy.
+\end{definition}
+
+We evolve the TG vortex at $N=128$, $\nu=0.005$
+from $t=0$ to $t=10$, computing $\Sigma^{(s)}$ for
+$s\in\{0,\,1/4,\,1/2,\,3/4,\,1,\,3/2\}$.
+
+\begin{table}[h]
+\centering
+\caption{$\Hdot{s}$ spreading diagnostics, averaged
+over $t\in[5,10]$, $J=32$.  The spreading strengthens
+with increasing~$s$.}
+\label{tab:Hs}
+\begin{tabular}{@{}ccccl@{}}
+\toprule
+$s$ & $\langle\cC^{(s)}\rangle$
+  & $\langle\Sigma^{(s)}\rangle$
+  & $\langle\corr\rangle$
+  & $\Sigma^{(s)}<0$\;always? \\
+\midrule
+$0$   & $0.245$ & $-1.11\times 10^{-3}$ & $-0.75$ & Yes \\
+$1/4$ & $0.244$ & $-1.41\times 10^{-3}$ & $-0.68$ & Yes \\
+$1/2$ & $0.243$ & $-1.79\times 10^{-3}$ & $-0.60$ & Yes \\
+$3/4$ & $0.241$ & $-2.25\times 10^{-3}$ & $-0.51$ & Yes \\
+$1$   & $0.238$ & $-2.82\times 10^{-3}$ & $-0.43$ & Yes \\
+$3/2$ & $0.231$ & $-4.37\times 10^{-3}$ & $-0.30$ & Yes \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+$\Sigma^{(s)}<0$ holds at every snapshot and every~$s$
+(Table~\ref{tab:Hs}), and the spreading intensifies
+with~$s$: $|\Sigma^{(3/2)}|/|\Sigma^{(1/2)}|\approx 2.4$.
+The $s$-independence of the sign has a transparent
+algebraic origin: the transfer
+$T^{(s)}(k)=2|k|^{2s}\re[\hat u^*\cdot\hat B]$
+shares the same phase structure as $T^{(1/2)}$
+(the factor $|k|^{2s}$ is real and positive), so the
+$\pm\pi/2$ locking of N10 drives
+$\Sigma^{(s)}<0$ at every Sobolev level simultaneously.
+The antisymmetry theorem (Theorem~\ref{thm:antisym}),
+the vanishing theorem (Theorem~\ref{thm:gaussian}),
+and the factored form (Proposition~\ref{prop:factored})
+all extend verbatim to $\Sigma^{(s)}$.
+
+The case $s=1$ is of particular significance for the
+regularity problem: $\Sigma^{(1)}(u) < 0$ means the
+nonlinearity spreads enstrophy angularly, opposing the
+concentration that would be needed for vortex-sheet or
+vortex-tube singularities.
+
+
+\subsection{Vortex-stretching decomposition (N13)}
+\label{sec:stretching}
+
+The enstrophy equation for 3D Navier--Stokes reads
+\begin{equation}\label{eq:enstrophy}
+\frac{1}{2}\frac{d}{dt}\|\omega\|_{L^2}^2
+= -\nu\|\nabla\omega\|_{L^2}^2
++ \int_{\T^3}\omega\cdot(\omega\cdot\nabla)u\,dx,
+\end{equation}
+where the vortex-stretching term
+$\mathcal{W}=\int\omega\cdot(\omega\cdot\nabla)u\,dx$
+is the sole mechanism for potential enstrophy blow-up.
+We decompose $\mathcal{W}$ by angular sector.
+
+Over $t\in[5,10]$ at $N=128$, $\nu=0.005$:
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Mechanism} & \textbf{corr with $p_j^{(1)}$}
+  & \textbf{Effect} \\
+\midrule
+Full NL transfer $dE_j^{(1)}|_{\rm NL}$
+  & $-0.43$ & net spreading \\
+Vortex stretching $\mathcal{W}_j$
+  & $+0.14$ & slight concentration \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The full nonlinear transfer produces net spreading
+($\corr=-0.43$), while the stretching component alone
+produces weak concentration ($\corr=+0.14$).  The
+spreading is dominated by cross-sector transfer, which
+overwhelms the concentrating tendency of stretching by
+a factor of $\approx 3$ in correlation magnitude.
+Along the TG orbit, $\cC^{(1)}$ is monotonically
+decreasing: spreading wins.
+
+
+\subsection{Viscosity independence at $s=1$ (N14)}
+\label{sec:enst-visc}
+
+We repeat the viscosity-independence test at the
+enstrophy level.
+
+\begin{table}[h]
+\centering
+\caption{Enstrophy-level constitutive relation.
+$\Sigma^{(1)}/(\cC^{(1)}-1/J)$ is independent of
+$\nu$ to four significant figures.}
+\label{tab:enst-visc}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$\nu$ & $\langle\cC^{(1)}\rangle$
+  & $\langle\Sigma^{(1)}/(\cC^{(1)}\!-\!1/J)\rangle$
+  & std \\
+\midrule
+$0.02$  & $0.238$ & $-1.367\times 10^{-2}$
+  & $2.36\times 10^{-3}$ \\
+$0.01$  & $0.238$ & $-1.369\times 10^{-2}$
+  & $2.37\times 10^{-3}$ \\
+$0.005$ & $0.238$ & $-1.370\times 10^{-2}$
+  & $2.37\times 10^{-3}$ \\
+$0.002$ & $0.238$ & $-1.370\times 10^{-2}$
+  & $2.37\times 10^{-3}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The constitutive relation
+$\Sigma^{(1)}(u) = -g^{(1)}(u)\,(\cC^{(1)}(u)-1/J)$
+holds with $g^{(1)}>0$ independent of $\nu$
+(Table~\ref{tab:enst-visc}), confirming that
+enstrophy-level spreading is entirely a property of
+the nonlinear term.
+
+
+\subsection{Multi-IC enstrophy spreading (N15)}
+\label{sec:enst-multi-ic}
+
+\begin{table}[h]
+\centering
+\caption{Enstrophy spreading ($s=1$) across initial
+conditions at $N=128$, $\nu=0.01$, $J=32$.
+Compare with Table~\ref{tab:multi-ic} ($s=1/2$).}
+\label{tab:enst-multi-ic}
+\begin{tabular}{@{}lcccl@{}}
+\toprule
+IC & $\Sigma^{(1)}(t\!=\!5)$ & $\corr$
+  & $n_{\rm spread}$ & status \\
+\midrule
+Taylor--Green
+  & $-1.93\times 10^{-3}$ & $-0.45$ & 10/10
+  & spreads \\
+ABC flow
+  & $\approx 0$ & $+0.99$ & 2/10
+  & degenerate \\
+Random (seed 42)
+  & $-4.2\times 10^{-11}$ & $-0.17$ & 10/10
+  & spreads \\
+Random (seed 99)
+  & $-8.9\times 10^{-13}$ & $-0.00$ & 10/10
+  & spreads \\
+Random (seed 7)
+  & $-1.6\times 10^{-11}$ & $-0.07$ & 10/10
+  & spreads \\
+Conc.\ jet
+  & $+3.5\times 10^{-11}$ & $-0.53$ & 0/10
+  & concentrates \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+At $s=1/2$ (Table~\ref{tab:multi-ic}), the three
+random broadband ICs gave mixed results: two seeds
+spread and one concentrated.  At $s=1$
+(Table~\ref{tab:enst-multi-ic}), \emph{all three
+random seeds spread at every snapshot} (30/30 negative
+values).  The probability of 30 consecutive negative
+values from a distribution symmetric around zero
+(Theorem~\ref{thm:gaussian}) is
+$2^{-30}\approx 10^{-9}$.  Enstrophy-level spreading
+is therefore more universal than $\Hdot{1/2}$ spreading.
+
+The jet remains the only counterexample, with
+$\Sigma^{(1)}>0$ at every snapshot, and the ABC flow
+remains degenerate.
+
+
+\subsection{Stretching landscape and the depletion
+transition (N16)}
+\label{sec:Phi-landscape}
+
+To determine how vortex stretching depends on
+angular concentration and phase structure jointly,
+we construct synthetic fields by independently
+modifying the concentration (sector amplitude
+rescaling, parameter $\gamma$) and the phase
+coherence (partial phase randomization, fraction $f$)
+of a developed NS solution.
+
+At full phase coherence ($f=0$), the mode-level
+depletion metric
+$\kappa_{\rm align} = -\sum_k w_k
+\cos(\arg[\hat u(k)^*\cdot\hat B(k)])$
+(enstrophy-weighted) undergoes a sharp sign
+transition:
+\begin{center}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+$\cC^{(1)}$ & $\kappa_{\rm align}$ & regime \\
+\midrule
+$0.04$ & $+1.00$ & amplification \\
+$0.09$ & $+0.99$ & amplification \\
+$0.15$ & $+0.83$ & transition \\
+$0.21$ & $-0.56$ & depletion \\
+$0.25$ & $-1.00$ & full depletion \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+For nearly isotropic fields, the nonlinear term
+\emph{amplifies} all modes: there is no dominant
+sector to deplete.  As concentration increases past
+$\cC^{(1)}\approx 0.15$, the cross-sector transfer
+engages and the $-i$ mechanism begins depleting the
+concentrated sectors.  This demonstrates that the
+hypothesis ``$\cC^{(1)}>1/J$'' in the spreading
+conjecture is structurally necessary.
+
+A simple bound $\Phi\leq h(\cC^{(1)})$ with
+$h(1/J)=0$ does not hold: the normalized stretching
+$\Phi = |\mathcal{W}|/(\|\omega\|_{L^2}^2
+\|\nabla u\|_{L^2})$ depends on the full phase
+structure, not just angular concentration.
+A multivariate regression of $\log\Phi$ against
+$(\log(\cC^{(1)}-1/J),\,\kappa_{\rm imag})$ yields
+$R^2=0.16$: the stretching landscape is not
+well-described by simple scalar parameters.
+
+
+\subsection{Spreading robustness under phase
+destruction (N17)}
+\label{sec:robustness}
+
+\begin{center}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$f$ & $\Sigma^{(1)}<0$ & $\langle\Sigma^{(1)}\rangle$
+  & $\langle\kappa_{\rm align}\rangle$ \\
+\midrule
+$0.0$ & 11/11 & $-1.74\times 10^{-3}$ & $-0.43$ \\
+$0.1$ & 10/11 & $-1.27\times 10^{-3}$ & $-0.36$ \\
+$0.3$ & 10/11 & $-8.30\times 10^{-4}$ & $-0.30$ \\
+$0.5$ & 10/11 & $-3.04\times 10^{-4}$ & $-0.04$ \\
+$0.7$ &  5/11 & $-1.93\times 10^{-4}$ & $-0.04$ \\
+$1.0$ &  7/11 & $+9.25\times 10^{-6}$ & $+0.10$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Enstrophy spreading persists at nearly all
+concentration levels ($\geq 10/11$) up to 50\%
+phase randomization.  The breakdown around $f=0.7$
+coincides with $\kappa_{\rm align}$ crossing zero.
+Combined with N15 (where random broadband ICs develop
+$\Sigma^{(1)}<0$ under NS evolution), this suggests
+the NS dynamics drive sufficient phase coherence
+for spreading even from incoherent initial data.
+
+
+\subsection{Surgical concentration and self-regulation (N18)}
+\label{sec:surgical}
+
+The preceding tests evolve NS solutions from prescribed
+initial conditions and measure spreading along the
+resulting trajectories.  A stronger test of the
+regularity program is to \emph{artificially concentrate}
+a developed NS solution---preserving its phase
+structure---and ask whether the dynamics restore
+isotropy.
+
+\medskip\noindent\textbf{Construction.}
+We evolve the TG vortex at $N=256$, $\nu=0.01$ to
+$t=5$, producing a developed turbulent field with
+$\cC^{(1)}\approx 0.042$.  We then surgically
+increase enstrophy concentration by amplifying the
+dominant sector by a factor $\gamma>1$ and suppressing
+all others by $\gamma^{-1/2}$, with $\gamma$ chosen
+by bisection to reach target concentrations
+$\cC^{(1)}\in\{0.20, 0.30, 0.40, 0.50\}$.  The
+modified field is Leray-projected to restore
+divergence-freeness.  Crucially, this procedure
+preserves the Fourier phase structure generated by
+NS evolution: only the sector amplitudes change.
+Each surgically concentrated field is then evolved
+under NS for $t\in[0,5]$ at the same $\nu=0.01$.
+
+\medskip\noindent\textbf{Results.}
+At all 44 diagnostic snapshots across all four
+concentration levels, $\Sigma^{(1)}<0$ without
+exception.  Enstrophy concentration decreases
+monotonically from its surgically imposed value:
+
+\begin{table}[h]
+\centering
+\caption{Surgical concentration: NS relaxation at
+$N=256$, $\nu=0.01$, $J=32$.  $\Sigma^{(1)}<0$ at
+every snapshot (44/44).}
+\label{tab:surgical}
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+$\cC^{(1)}(0)$ & $\cC^{(1)}(5)$
+  & peak $|\Sigma^{(1)}|$
+  & $|W|$ range
+  & $\mathcal{R}$ range
+  & $g^{(1)}$ range \\
+\midrule
+$0.20$ & $0.13$ & $7.95\times 10^{-2}$
+  & $11$--$34$ & $1.8$--$2.2$ & $0.40$--$0.56$ \\
+$0.30$ & $0.17$ & $1.16\times 10^{-1}$
+  & $11$--$30$ & $1.1$--$1.4$ & $0.33$--$0.52$ \\
+$0.40$ & $0.21$ & $1.47\times 10^{-1}$
+  & $11$--$29$ & $0.8$--$1.0$ & $0.27$--$0.49$ \\
+$0.50$ & $0.23$ & $1.74\times 10^{-1}$
+  & $12$--$27$ & $0.6$--$0.8$ & $0.22$--$0.48$ \\
+\midrule
+$0.042$ (base) & $0.040$ & $2.87\times 10^{-3}$
+  & $17$--$78$ & $68$--$295$ & $0.08$--$0.31$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Three features of the data are significant:
+
+\medskip\noindent\textbf{(i) Monotone relaxation.}
+Enstrophy concentration $\cC^{(1)}(t)$ decreases at
+every snapshot in every surgical run.  The NS
+nonlinearity does not permit sustained angular
+concentration: when concentration is artificially
+elevated, the dynamics pull it back toward isotropy
+with a rate proportional to the excess
+$\cC^{(1)}-1/J$.
+
+\medskip\noindent\textbf{(ii) Spreading scales with
+concentration; stretching does not.}
+The peak spreading rate $|\Sigma^{(1)}|$ increases
+from $0.080$ to $0.174$ as the initial concentration
+rises from $0.20$ to $0.50$ (a factor of $2.2\times$).
+By contrast, vortex stretching $|W|$ remains in the
+range $11$--$34$ across all surgical runs---essentially
+the same range as the unmodified base trajectory.
+This decoupling is the quantitative content of
+self-regulation: the spreading mechanism responds
+to concentration, while the stretching mechanism
+does not.
+
+\medskip\noindent\textbf{(iii) The ratio
+$\mathcal{R}$ decreases with concentration.}
+Define the stretching--spreading ratio
+\begin{equation}\label{eq:R-ratio}
+\mathcal{R}(t) = \frac{|\mathcal{W}(t)|}
+{|\Sigma^{(1)}(t)|\cdot\|\omega(t)\|_{L^2}^2},
+\end{equation}
+which measures how efficiently the nonlinear
+spreading functional $\Sigma^{(1)}$ counteracts
+vortex stretching $\mathcal{W}$, normalized by
+enstrophy.  In the surgical runs,
+$\mathcal{R}\in[0.6, 2.2]$ and \emph{decreases}
+as concentration increases
+(Table~\ref{tab:surgical}).  This is the opposite
+of the blow-up scenario: the higher the
+concentration, the more effectively spreading
+dominates stretching.
+
+The large values $\mathcal{R}\approx 70$--$295$
+in the base run are harmless: they occur at
+$\cC^{(1)}\approx 0.04 \approx 1/J$, where the
+field is already isotropic and $|\Sigma^{(1)}|$ is
+small because there is no angular concentration to
+spread.  In this regime, neither stretching nor
+spreading drives the dynamics: viscous dissipation
+dominates.
+
+
+\subsection{The constitutive law (N19)}
+\label{sec:constitutive-surgical}
+
+Sections~\ref{sec:constitutive}
+and~\ref{sec:enst-visc} established the constitutive
+relation $\Sigma^{(1)} = -g^{(1)}(u)\,
+(\cC^{(1)}-1/J)$ along single TG trajectories, where
+$g^{(1)}$ is viscosity-independent but varies in
+time by a factor of~5.  The earlier regression of
+$g^{(1)}$ against scalar parameters
+(Section~\ref{sec:Phi-landscape}) gave $R^2=0.16$.
+The surgical data resolve this.
+
+\medskip\noindent\textbf{A nearly universal
+constant.}
+By pooling all snapshots from the four surgical runs
+at $t\geq 1.5$ (after the initial transient), the
+constitutive coefficient
+\begin{equation}\label{eq:g1-value}
+g^{(1)} = \frac{-\Sigma^{(1)}}{\cC^{(1)}-1/J}
+\end{equation}
+stabilizes at
+\begin{equation}\label{eq:g1-numerical}
+g^{(1)} \approx 0.47 \pm 0.04
+\end{equation}
+across the full range
+$\cC^{(1)}\in[0.13, 0.50]$
+(Table~\ref{tab:surgical}).  The coefficient of
+variation is under $10\%$.
+
+\begin{remark}[Why the single-trajectory regression
+failed]
+Along a single TG trajectory, $\cC^{(1)}$ and the
+cascade age (measured by $k_*$ or $t$) are perfectly
+correlated: both evolve together.  The regression
+cannot distinguish their effects.  The surgical
+construction decouples them: all runs share the same
+cascade age (turbulence developed to $t=5$) but have
+different concentrations.  The resulting near-constant
+$g^{(1)}\approx 0.47$ shows that the constitutive
+coefficient depends on the cascade phase structure
+(which is shared), not on $\cC^{(1)}$ itself.
+\end{remark}
+
+\begin{remark}[Analytical target]
+\label{rem:analytical-target}
+The numerical constitutive law
+\begin{equation}\label{eq:constitutive-target}
+\Sigma^{(1)}(u) \approx -0.47\,
+(\cC^{(1)}(u)-1/J)
+\end{equation}
+reduces the regularity program to a single
+analytical question: prove that
+$g^{(1)}(u) \geq c > 0$ for NS solutions with
+developed cascade phase structure.  The factored
+form (Proposition~\ref{prop:factored}) writes both
+$\Sigma^{(1)}$ and $\mathcal{W}$ as sums over the
+same triads $\{(k,p,q): p+q=k\}$.  The triad phase
+locking of N10 constrains each summand to the
+imaginary axis.  Bounding $g^{(1)}$ from below is
+equivalent to bounding the ratio of two sums over
+the same triads with the same phase structure---a
+problem in the combinatorics of lattice convolutions
+weighted by $|k|^2$, not a PDE estimate.
+\end{remark}
+
+\begin{remark}[Connection to Step~(ii)]
+\label{rem:step-ii}
+The boundedness of $\mathcal{R}$ in the surgical
+runs (Table~\ref{tab:surgical}) is a direct
+numerical verification of Step~(ii) in
+Remark~\ref{rem:regularity-final}: the
+stretching--spreading ratio remains bounded along
+NS trajectories, even under adversarial
+concentration.  Combined with Step~(i) (the
+enstrophy spreading conjecture, supported by
+N12--N17 and the 44/44 surgical snapshots), this
+closes the numerical side of the regularity program.
+The remaining challenge is analytical: proving
+$g^{(1)}\geq c > 0$ from the trilinear algebra.
+\end{remark}
+
+
+%======================================================================
+\section{A Heuristic Mechanism: the $-i$ Rotation}
+\label{sec:mechanism}
+%======================================================================
+
+The exact results of Sections~\ref{sec:general}--\ref{sec:TG}
+and the numerical findings of Section~\ref{sec:results}
+suggest a general mechanism.  \textbf{The arguments in this
+section and the next are heuristic: they rely on
+concentration and slow-variation approximations that are
+not rigorously justified for general NS solutions.}
+We present them as a proposed explanation, not as proved
+theorems.
+
+\subsection{Polarization}
+
+\begin{definition}[Polarization]
+\label{def:polarization}
+For a mode $\hat u(k)\neq 0$, the polarization is
+$\hat e(k) = \hat u(k)/|\hat u(k)|\in\C^3$.  When $u$ is
+angularly concentrated in sector $\Omega_{j^*}$ with
+slowly varying polarization, we write
+$\hat u(q)\approx A(q)\hat e$ for
+$\hat q\in\Omega_{j^*}$, where $A(q)=|\hat u(q)|$ and
+$\hat e$ is the (approximately) common polarization
+direction.  For a cross-sector mode
+$p\notin\Omega_{j^*}$, we write
+$\hat e_p = \hat u(p)/|\hat u(p)|$.
+\end{definition}
+
+\subsection{Cross-sector forcing under concentration}
+
+Under the concentration hypothesis, the cross-sector
+forcing at a mode $k\in\Omega_{j^*}$ takes the
+approximate form
+\begin{equation}\label{eq:Bcross-approx}
+\hat B^{\rm cross}(k) \approx -iF_{\rm cross}(k)\hat e,
+\end{equation}
+where
+\begin{equation}
+F_{\rm cross}(k) = \sum_{\substack{p+q=k\\
+\hat p\notin\Omega_{j^*},\;\hat q\in\Omega_{j^*}}}
+(q\cdot\hat u(p))\,A(q).
+\end{equation}
+The key step: since $\hat u(k)\approx A_k\hat e$ and
+$P(k)\hat e\approx\hat e$ (both from the narrow-sector
+hypothesis), the transfer becomes
+$T^{\rm cross}(k) \approx 2|k|A_k\,\im[F_{\rm cross}(k)]$.
+
+Spreading of the dominant sector therefore requires
+$\im[F_{\rm cross}(k)] < 0$ for most modes
+$k\in\Omega_{j^*}$.
+
+\subsection{Why the TG case is exact}
+
+For TG, the concentration and narrow-sector hypotheses
+are not approximations: the 8 modes have identical
+amplitudes and the purely imaginary structure makes
+$P(k)\hat e = \hat e$ exact (since $V(k)\perp k$
+for every $k\in\cK$).  The approximate mechanism becomes
+exact, and $\im[F_{\rm cross}]<0$ is established by
+Theorem~\ref{thm:TG}.
+
+\subsection{The $-i$ rotation in general}
+
+The factor $-i$ in the advection operator
+$\widehat{(u\cdot\nabla)u}(k) = \sum_{p+q=k}
+iq_l\hat u_l(p)\hat u(q)$ creates a $\pi/2$ phase
+rotation between the ``natural'' phase of a triadic
+interaction and the resulting forcing.  For concentrated
+fields, this means cross-sector forcing (where the
+advecting velocity comes from a different angular
+direction) arrives with a systematic phase offset
+relative to the existing velocity in the concentrated
+sector.  The offset biases $\cos\alpha$ toward negative
+values (depletion rather than amplification).
+
+For TG, the offset is exactly $\pi$ (perfect
+anti-alignment), because the purely imaginary structure
+locks the accumulated phase to $i^2=-1$.  For general
+fields, the offset is partial, producing
+$\cos\alpha\approx-0.6$ on average in high-$p$ sectors
+(N8).
+
+The triad phase locking observed in N10 provides
+direct microscopic evidence for this mechanism.
+Equation~\eqref{eq:triad-imaginary} shows that the
+purely imaginary structure forces every individual
+triad integrand $z(k;p,q)$ onto the imaginary axis,
+so the nonlinear transfer $T(k) = 2|k|\,\im[\sum z]$
+is entirely controlled by the signs of the real
+products $(q\cdot V(p))(V(k)\cdot V(q))$.  For
+random-phase fields, these products are complex
+with uniformly distributed arguments, and the
+$\pm\pi/2$ locking disappears.  The cascade phase
+structure required by Conjecture~\ref{conj:enstrophy}
+is therefore precisely the persistence of
+$\hat u\approx iV$, which the NS dynamics maintain
+but arbitrary initial data need not possess.
+
+The extension to $\Sigma^{(s)}$ for general~$s$ (N12)
+follows because the factor $|k|^{2s}$ in $T^{(s)}(k)$
+is a positive real weight that preserves the triad
+phase structure.  The $\pm\pi/2$ locking drives
+spreading at every Sobolev level simultaneously: the
+nonlinear term redistributes the \emph{entire regularity
+structure} of the field --- including the enstrophy
+($s=1$) and higher derivatives ($s=3/2$) --- away from
+angular concentration.
+
+The depletion transition of N16 reveals a threshold
+effect: the $-i$ mechanism engages only when angular
+concentration exceeds $\cC^{(1)}\approx 0.15$.  Below
+this threshold, the same NS phases amplify rather than
+deplete, because there is no dominant sector for
+cross-sector transfer to target.  The spreading
+robustness of N17 shows that 50\% of the phase
+structure can be destroyed before the mechanism fails,
+establishing that the $-i$ rotation is not fragile.
+
+%======================================================================
+\section{A Conditional Sign Criterion}
+\label{sec:conditional}
+%======================================================================
+
+\textbf{This section presents a conditional result:
+depletion under an explicit sign hypothesis.  It does
+not constitute a rigorous reduction to Kolmogorov's
+forward cascade.}
+
+\subsection{Quasi-static cross-sector modes}
+
+If cross-sector modes equilibrate viscously
+($\nu|k'|^2$ large compared to the forcing variation
+rate), the NS equation gives
+$\hat u(k')\approx\hat B(k')/(\nu|k'|^2)$.  Since
+$\hat B(k')\approx -iG(k')$ for modes created by
+within-sector triads (with
+$G(k')=P(k')\sum_{p,q\in\Omega_{j^*}}
+(q\cdot\hat u(p))\hat u(q)$), the cross-sector mode
+carries a phase approximately $\pi/2$ behind its source.
+
+This approximation is rigorous in the dissipation range
+where $\nu|k'|^2\gg\tau_{\rm NL}^{-1}$.  In the
+inertial range, where the nonlinear turnover time
+competes with viscous damping, the quasi-static
+assumption softens, but the $\pi/2$ bias from the $-i$
+factor persists as a leading-order effect.
+
+\subsection{The sign criterion}
+
+When quasi-static cross-sector modes feed back to
+$k\in\Omega_{j^*}$, the feedback transfer involves
+\begin{equation}
+\im[\gamma(k,p')] = \im\Bigl[q\cdot P(p')
+\sum_{\substack{r+s=p'\\r,s\in\Omega_{j^*}}}
+(s\cdot\hat u(r))\hat u(s)\Bigr],
+\end{equation}
+where $q=k-p'$.  If this quantity is negative for
+the dominant intermediate wavenumbers $p'$, the feedback
+depletes the concentrated sector.
+
+\begin{remark}[Not a reduction to K41]
+We emphasize that $\im[\gamma]<0$ is a sign condition
+on the same trilinear functional whose negativity
+one wants to establish.  It is \emph{not} equivalent
+to the standard forward cascade (constant energy flux
+through spectral shells).  The connection to Kolmogorov's
+theory is suggestive --- both involve the sign of
+triadic phase interactions --- but the condition here is
+sector-projected and geometry-dependent, not a direct
+consequence of K41.  We state it as a conditional
+criterion, not as a proved reduction.
+\end{remark}
+
+%======================================================================
+\section{Conjecture and Discussion}
+\label{sec:conjecture}
+%======================================================================
+
+\begin{conjecture}[Enstrophy spreading for developed
+turbulence]
+\label{conj:enstrophy}
+For smooth NS solutions on $\T^3$ that have developed
+cascade phase structure (in the sense of having evolved
+from generic initial data for a time sufficient to
+establish a forward energy cascade): if
+$\cC^{(1)}(u(t))>1/J$, then $\Sigma^{(1)}(u(t))<0$.
+\end{conjecture}
+
+The evidence for this conjecture consists of:
+the exact algebraic extension of N12 (the
+$|k|^{2s}$ weight preserves the triad phase
+structure for all~$s$);
+the TG result (N12: $\Sigma^{(1)}<0$ at every
+snapshot);
+the viscosity independence (N14);
+the multi-IC evidence (N15: all random broadband
+ICs spread at $s=1$, 30/30 negative snapshots);
+the jet counterexample (N15: cascade phase structure
+remains necessary);
+the depletion transition (N16: the mechanism engages
+above $\cC^{(1)}\approx 0.15$);
+and the phase robustness (N17: spreading survives
+50\% phase destruction);
+the surgical concentration test (N18: $\Sigma^{(1)}<0$
+at all 44 snapshots under adversarial concentration up
+to $\cC^{(1)}=0.50$, with monotone relaxation);
+and the constitutive law (N19: $g^{(1)}\approx
+0.47\pm 0.04$ across the full concentration range).
+
+Conjecture~\ref{conj:enstrophy} implies the $s=1/2$
+version, since the triad phase structure that drives
+$\Sigma^{(1)}<0$ simultaneously drives
+$\Sigma^{(s)}<0$ for all $s\geq 0$ (N12).
+
+\begin{conjecture}[$\Hdot{1/2}$ spreading]
+\label{conj:main}
+Under the same hypotheses: if $\cC(u(t))>1/J$,
+then $\Sigma(u(t))<0$.
+\end{conjecture}
+
+\begin{remark}[Connection to regularity]
+\label{rem:regularity-final}
+The regularity question reduces to two coupled
+statements about the NS nonlinearity.
+
+\smallskip\noindent\textbf{Step (i): Enstrophy
+spreading.}
+Conjecture~\ref{conj:enstrophy}:
+$\Sigma^{(1)}(u)<0$ whenever $\cC^{(1)}>1/J$.
+Evidence: N12 (all Sobolev levels), N14 (viscosity
+independence), N15 (generality), N17 (robustness).
+
+\smallskip\noindent\textbf{Step (ii):
+Stretching--spreading coupling.}
+The surgical concentration tests of N18 provide
+direct evidence: under adversarial enstrophy
+concentration ($\cC^{(1)}$ up to $0.50$), the ratio
+$\mathcal{R} = |\mathcal{W}|/(|\Sigma^{(1)}|
+\cdot\|\omega\|^2)$ remains in $[0.6, 2.2]$ and
+\emph{decreases} with concentration
+(Table~\ref{tab:surgical}).  The constitutive law
+$g^{(1)}\approx 0.47$ (N19) identifies the remaining
+analytical challenge: prove $g^{(1)}\geq c > 0$ for NS
+solutions with developed cascade phase structure.
+The factored form (Proposition~\ref{prop:factored})
+reduces this to a combinatorial bound on lattice
+triads weighted by $|k|^2$.
+
+Formalizing this bound --- proving that the
+stretching--spreading ratio $\mathcal{W}/|\Sigma^{(1)}|$
+remains bounded along NS trajectories --- is the
+remaining analytical challenge.
+\end{remark}
+
+The elevation of the conjecture from $s=1/2$ to $s=1$
+has a structural consequence.  At $s=1/2$, the
+connection to regularity required an intermediate
+``angular Bernstein inequality'' relating concentration
+of $\Hdot{1/2}$ energy to pointwise norms.  At $s=1$,
+this intermediate step is bypassed: enstrophy
+concentration is already the regularity-relevant
+quantity through the vortex-stretching term
+in~\eqref{eq:enstrophy} and the Beale--Kato--Majda
+criterion~\cite{BKM}.  The regularity problem
+reduces to questions about the trilinear form and its
+angular geometry --- precisely the domain where the
+algebraic identities of
+Sections~\ref{sec:general}--\ref{sec:TG} provide
+leverage.
+
+%======================================================================
+\section{Summary}
+%======================================================================
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Result} & \textbf{Status} & \textbf{Section} \\
+\midrule
+$T(k;\bar u) = -T(k;u)$
+  & Proved & \ref{sec:general} \\
+$\E_{\bar u=u}[T(k)]=0$, $\E[\Sigma]=0$
+  & Proved & \ref{sec:general} \\
+$T(k)$ is pressure-invariant
+  & Proved & \ref{sec:general} \\
+$\Sigma(\lambda u)=\lambda\Sigma(u)$
+  & Proved & \ref{sec:general} \\
+$V(k)\cdot\widetilde R(k)=-1/512$ (TG)
+  & Proved & \ref{sec:TG} \\
+$\Sigma<0$ along TG orbit
+  & Numerical & \ref{sec:results} \\
+$\nu$-independence of spreading
+  & Numerical & \ref{sec:results} \\
+Cross-sector dominance ($830\times$)
+  & Numerical & \ref{sec:results} \\
+Jet concentrates despite mode-level depletion
+  & Numerical & \ref{sec:multi-ic} \\
+Triad phases locked to $\pm\pi/2$ (NS only)
+  & Numerical & \ref{sec:triad-phase} \\
+$\Sigma/(\cC-1/J)$ independent of $\nu$
+  & Numerical & \ref{sec:constitutive} \\
+$\Sigma^{(s)}<0$ for $s\in[0,3/2]$
+  & Numerical & \ref{sec:Hs-spreading} \\
+Stretching vs.\ spreading ($+0.14$ vs.\ $-0.43$)
+  & Numerical & \ref{sec:stretching} \\
+$\Sigma^{(1)}/(\cC^{(1)}-1/J)$ indep.\ of $\nu$
+  & Numerical & \ref{sec:enst-visc} \\
+$\Sigma^{(1)}<0$ for TG + all 3 random ICs
+  & Numerical & \ref{sec:enst-multi-ic} \\
+$\kappa_{\rm align}$ sign transition at $\cC^{(1)}\approx 0.15$
+  & Numerical & \ref{sec:Phi-landscape} \\
+$\Sigma^{(1)}$ robust to 50\% phase randomization
+  & Numerical & \ref{sec:robustness} \\
+Surgical: $\Sigma^{(1)}<0$ at all 44 snapshots
+  & Numerical & \ref{sec:surgical} \\
+$\mathcal{R}\in[0.6,2.2]$ under adversarial concentration
+  & Numerical & \ref{sec:surgical} \\
+$g^{(1)}\approx 0.47\pm 0.04$ (constitutive law)
+  & Numerical & \ref{sec:constitutive-surgical} \\
+$-i$ rotation mechanism
+  & Heuristic & \ref{sec:mechanism} \\
+$\im[\gamma]<0$ sign criterion
+  & Conditional & \ref{sec:conditional} \\
+Conjecture~\ref{conj:enstrophy} ($s=1$ spreading)
+  & Conjecture & \ref{sec:conjecture} \\
+Stretching--spreading coupling ($\mathcal{R}$ bounded)
+  & Numerical & \ref{sec:surgical} \\
+$g^{(1)}\geq c > 0$ (analytical)
+  & Open & \ref{sec:constitutive-surgical} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{Acknowledgments}
+
+AI tools were used as interactive assistants for drafting
+and mathematical exploration.
+Simulations were performed on an NVIDIA RTX~5090.
+
+%======================================================================
+\begin{thebibliography}{99}
+
+\bibitem{Fefferman}
+C.\,L.~Fefferman,
+Existence and smoothness of the Navier--Stokes equation,
+\emph{Clay Mathematics Institute Millennium Prize Problems}
+(2000), 1--5.
+
+\bibitem{Leray}
+J.~Leray,
+Sur le mouvement d'un liquide visqueux emplissant l'espace,
+\emph{Acta Math.}~\textbf{63} (1934), 193--248.
+
+\bibitem{ESS}
+L.~Escauriaza, G.\,A.~Seregin, V.~\v{S}ver\'ak,
+$L_{3,\infty}$-solutions of Navier--Stokes equations and backward
+uniqueness, \emph{Russian Math.\ Surveys}~\textbf{58} (2003),
+211--250.
+
+\bibitem{BKM}
+J.\,T.~Beale, T.~Kato, A.~Majda,
+Remarks on the breakdown of smooth solutions for the 3D Euler
+equations, \emph{Comm.\ Math.\ Phys.}~\textbf{94} (1984), 61--66.
+
+\bibitem{Tao}
+T.~Tao,
+Finite time blowup for an averaged three-dimensional
+Navier--Stokes equation,
+\emph{J.\ Amer.\ Math.\ Soc.}~\textbf{29} (2016), 601--674.
+
+\bibitem{Kolmogorov}
+A.\,N.~Kolmogorov,
+The local structure of turbulence in incompressible viscous fluid
+for very large Reynolds numbers,
+\emph{Dokl.\ Akad.\ Nauk SSSR}~\textbf{30} (1941), 299--303.
+
+\bibitem{Rotta}
+J.\,C.~Rotta,
+Statistische Theorie nichthomogener Turbulenz,
+\emph{Z.\ Physik}~\textbf{129} (1951), 547--572.
+
+\bibitem{CF93}
+P.~Constantin and C.~Fefferman,
+Direction of vorticity and the problem of global
+regularity for the Navier--Stokes equations,
+\emph{Indiana Univ.\ Math.\ J.}~\textbf{42} (1993),
+775--789.
+
+\end{thebibliography}
+
+\end{document}

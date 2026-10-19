@@ -1,0 +1,1351 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amsthm,amssymb,amsfonts,mathtools}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{mainthm}{Theorem}
+\renewcommand{\themainthm}{\Alph{mainthm}}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Id}{\mathrm{Id}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\dom}{\mathrm{dom}}
+\newcommand{\HX}{\mathcal{H}_X}
+\newcommand{\HH}{\mathcal{H}_H}
+\newcommand{\HM}{\mathcal{H}_M}
+\newcommand{\HB}{\mathcal{H}_B}
+\newcommand{\BH}{B^H}
+\newcommand{\FX}{\mathcal{F}^X}
+\newcommand{\FBH}{\mathcal{F}^{B^H}}
+
+\title{The Operator Derivative in Continuous Stochastic Calculus:\\ A Hilbert Energy Space Framework}
+\author{Ramiro Fontes\\ Quijotic Research\\ \texttt{ramirofontes@gmail.com}}
+\date{March 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For a continuous process~$X$ with stochastic integral $\delta_X$ on a Hilbert energy space~$\HX$, the adjoint $D_X := \delta_X^*$ defines an operator derivative via $\E[F \cdot \delta_X(u)] = \E[\langle D_X F, u \rangle_{\HX}]$. Unlike the Malliavin derivative---which is defined by partial differentiation on cylindrical functionals and satisfies the chain rule by construction---$D_X$ is defined by adjointness on all of $L^2(\Omega)$ and carries no algebraic structure a priori. It coincides with the Malliavin derivative \emph{if and only if} the chain rule holds; the chain rule is a theorem about the process, not an axiom of the definition.
+
+This distinction organizes stochastic calculus into two logically independent layers. The \emph{representation layer}---Clark--Ocone formula, Galtchouk--Kunita--Watanabe projection, variance identity---follows from adjointness alone, without assuming any chain rule, Leibniz rule, Gaussianity, or Markov property. The \emph{calculus layer}---Leibniz rule, chain rule, It\^o formula---requires a \emph{cylindrical reduction}: an integration-by-parts formula that reduces $D_X$ to partial differentiation through representers $\kappa_i \in L^2(\Omega;\HX)$. When the representers are deterministic, this recovers the Malliavin calculus. When they are random, it does not.
+
+The main new result is a \emph{representer rigidity theorem}: for a continuous martingale $M_t = \int_0^t \sigma_s\,dW_s$ with stochastic volatility, if the extended energy space admits a cylindrical structure with deterministic representers, then $\sigma$ must be deterministic. The proof uses the centering of It\^o integrals to force the representers to equal~$1$, then the It\^o isometry to conclude $D_t^W(\sigma_s) = 0$ a.e. Stochastic volatility thus requires \emph{random} representers $\kappa_i(t) = \mathbf{1}_{[0,t_i]}(t) + \sigma_t^{-1}\int_t^{t_i} D_t^W(\sigma_s)\,dW_s$, inherited from the Brownian Malliavin derivative. These two mechanisms---deterministic representers (Gaussian) and random representers (Brownian Malliavin)---exhaust the cylindrical-reduction possibilities on Brownian filtrations.
+
+\smallskip\noindent\textbf{MSC 2020:} 60H07, 60H05, 60G15, 60G22, 60G42.
+
+\smallskip\noindent\textbf{Keywords:} Operator derivative; representer rigidity; Leibniz rule; cylindrical reduction; Clark--Ocone formula; stochastic volatility; Malliavin calculus; Gubinelli derivative.
+\end{abstract}
+
+\noindent\textit{This paper supersedes arXiv:2601.09976, arXiv:2601.09967, and arXiv:2601.10359. Companion papers:~\cite{Fontes2026PDE_gen} (PDE generators),~\cite{Fontes2026Banach} (jump processes on Banach energy spaces).}
+
+
+%=============================================================================
+\section{Introduction}\label{sec:intro}
+%=============================================================================
+
+\subsection{The factorization}
+
+Let $X$ be a square-integrable process with stochastic integral $\delta_X$ acting on an energy space~$\HX$. The \emph{operator derivative} $D_X := \delta_X^*$ is defined by Hilbert space adjointness:
+\begin{equation}\label{eq:factorization_intro}
+\E[F \cdot \delta_X(u)] = \E[\langle D_X F, u \rangle_{\HX}].
+\end{equation}
+Combined with the predictable projection $\Pi_X$ onto adapted elements of~$\HX$, the factorization
+\begin{equation}\label{eq:factorization}
+(\Id - \E)\,F \;=\; \delta_X(\Pi_X D_X F)
+\end{equation}
+decomposes fluctuations from the mean into three operations: differentiation ($D_X$), adaptation ($\Pi_X$), and integration ($\delta_X$). This holds for ${\FX}_T$-measurable $F \in L^2(\Omega)$ when~$X$ has the predictable representation property (PRP), and provides the best $L^2$-approximation by stochastic integrals when PRP fails. Full definitions appear in Sections~\ref{sec:opderiv}--\ref{sec:rep}.
+
+The operator derivative $D_X = \delta_X^*$ is defined by adjointness on $\dom(\delta_X^*) \subseteq L^2(\Omega)$. The Malliavin derivative $D^{\mathrm{Mall}}$ is defined by partial differentiation on smooth cylindrical functionals $\{f(X_{t_1},\ldots,X_{t_n})\}$ and extended by closure to the Sobolev space $\mathbb{D}^{1,2}$. On $\mathbb{D}^{1,2}$, the two operators agree \emph{if and only if} $D_X$ satisfies the chain rule: the Malliavin derivative is the specialization of the operator derivative to the calculus layer. The representation layer---Theorem~\ref{thmA} and the results of Section~\ref{sec:rep}---uses $D_X$ without this specialization and is therefore not a restatement of Malliavin theory, even in the Gaussian setting.
+
+This paper develops a stochastic calculus from~\eqref{eq:factorization}, organized into two logically independent layers. The \emph{representation layer}---Clark--Ocone formula, GKW projection, variance identity---follows from adjointness alone and applies to any continuous process with a stochastic integral. The \emph{calculus layer}---Leibniz rule, chain rule, It\^o formula---requires additional algebraic structure that is process-dependent. The main results below make this separation precise.
+
+
+\subsection{Main results}
+
+\begin{mainthm}[Unified Clark--Ocone representation]\label{thmA}
+Let $X$ have energy space~$\HX$, centered isometric stochastic integral $\delta_X$, predictable projection $\Pi_X$, and $D_X = \delta_X^*$. Assume $X$ has the predictable representation property. Then for every ${\FX}_T$-measurable $F \in L^2(\Omega)$:
+\[
+F \;=\; \E[F] + \delta_X(\Pi_X D_X F).
+\]
+Without PRP, $\delta_X(\Pi_X D_X F) = \mathrm{proj}_{\mathcal{S}_X}(F - \E[F])$, the orthogonal projection onto the stable subspace $\mathcal{S}_X = \overline{\{\delta_X(u) : u \textup{ predictable}\}}^{L^2}$.
+\end{mainthm}
+
+\begin{mainthm}[Cylindrical reduction implies Leibniz]\label{thmB}
+Let $(\delta_X, \HX)$ admit a cylindrical structure: a dense class $\mathcal{C} = \{f(\xi_1,\ldots,\xi_n) : f \in C_b^\infty\}$ of functionals with representers $\kappa_i \in L^2(\Omega;\HX)$ satisfying the integration-by-parts formula
+\[
+\E[F\cdot\delta_X(u)] = \sum_{i=1}^n \E[\partial_if(\xi_1,\ldots,\xi_n)\cdot\langle\kappa_i,u\rangle_{\HX}].
+\]
+Then $D_X$ satisfies the Leibniz rule $D_X(FG) = F\,D_X G + G\,D_X F$ on $\mathbb{D}^{1,4}(\Omega) := \overline{\mathcal{C}}^{\|\cdot\|_{1,4}}$, the chain rule $D_X(\varphi(F)) = \varphi'(F)\,D_X F$ for $\varphi \in C_b^\infty$, and the product rule $\delta_X(Fu) = F\,\delta_X(u) - \langle D_X F, u \rangle_{\HX}$ for $F \in \dom(D_X)\cap L^\infty$ with $\|D_XF\|_{\HX}\|u\|_{\HX} \in L^2(\Omega)$.
+\end{mainthm}
+
+\begin{mainthm}[Operator It\^o formula (abstract scheme)]\label{thmC}
+Let $(D,\delta,\Pi)$ satisfy the chain rule with $\Pi$ an orthogonal projection, and assume the factorization $(\Id-\E)G = \delta(\Pi DG)$ holds for $G = \varphi(Y_t)$. Let $Y$ be a $(D,\delta,\Pi)$-It\^o process: $Y_t = Y_0 + \int_0^t a_s\,ds + \delta(\Pi DY \cdot \mathbf{1}_{[0,t]})$ with $t \mapsto \Pi DY_t$ H\"older continuous in $L^2(\Omega;\mathcal{H})$. Assume the Skorokhod isometry with remainder holds on short intervals, and that a stochastic Fubini interchange is valid for the divergence integrands (see Theorem~\ref{thm:ito} for precise conditions). Then for $\varphi \in C_b^3(\R)$:
+\[
+\varphi(Y_t) = \varphi(Y_0) + \int_0^t\varphi'(Y_s)\,a_s\,ds + \delta(\varphi'(Y)\,\Pi DY\cdot\mathbf{1}_{[0,t]}) + \frac{1}{2}\int_0^t\varphi''(Y_s)\,\|\Pi DY_s\|^2_{\mathcal{H}}\,ds
+\]
+in $L^2(\Omega)$, with intrinsic bracket $\langle Y\rangle_t^{(D,\Pi)} := \int_0^t\|\Pi DY_s\|^2_{\mathcal{H}}\,ds$. These conditions are verified for Gaussian Volterra processes~\cite{Decreusefond1999} and for standard It\^o martingales.
+\end{mainthm}
+
+\begin{mainthm}[Leibniz for stochastic volatility]\label{thmD}
+Let $M_t = \int_0^t\sigma_s\,dW_s$ where $W$ is standard Brownian motion and $\sigma$ is progressively measurable with $\sigma_t > 0$ a.s., $\E[\int_0^T\sigma_t^2\,dt] < \infty$, and $\sigma_t \in \mathbb{D}^{1,2}$ for a.e.~$t$ with $\E[\int_0^T\|D^W\sigma_t\|^2_{L^2[0,T]}\,dt] < \infty$. On the extended energy space $\HM^{\mathrm{ext}} := L^2([0,T]\times\Omega,\,\sigma_t^2\,dt\otimes dP)$, the operator derivative $(D_MF)_t = D_t^WF/\sigma_t$ satisfies the Leibniz rule:
+\[
+D_M(FG) = F\,D_MG + G\,D_MF \qquad\text{for } F,G \in \mathbb{D}^{1,4}(\Omega).
+\]
+The cylindrical reduction uses random representers $\kappa_i(t) = D_t^W(M_{t_i})/\sigma_t$, which reduce to the deterministic $\mathbf{1}_{[0,t_i]}(t)$ when $\sigma$ is deterministic.
+\end{mainthm}
+
+\begin{mainthm}[Obstruction for deterministic representers]\label{thmE}
+Under the hypotheses of Theorem~\ref{thmD}, if $(\delta_M^{\mathrm{ext}},\HM^{\mathrm{ext}})$ admits a cylindrical structure with deterministic representers $\kappa_i$ and coordinates $\xi_i = M_{t_i}$, then $\sigma$ is deterministic, and consequently $\langle M\rangle_T = \int_0^T\sigma_t^2\,dt$ is deterministic. In particular, no deterministic cylindrical structure exists when $\sigma$ is genuinely stochastic.
+\end{mainthm}
+
+\begin{mainthm}[Gubinelli derivative as predictable projection]\label{thmF}
+Let $\BH$ be fractional Brownian motion with $H \in (0,1)$, $H \neq 1/2$, and $F \in L^2(\Omega,{\FBH}_T)$ with $D_{\BH}F \in L^2(\Omega;\HH)$. Let $Y_t := \E[F\mid{\FBH}_t]$. Then
+\[
+Y_t - Y_s = \langle(\Pi_{\BH}D_{\BH}F)_s,\, k_t - k_s\rangle_{\HH} + R_{s,t}, \qquad \E[R_{s,t}^2] = O(|t-s|^{\min(4H,\,2H+1)}),
+\]
+where $k_t$ is the evaluation representer in the Cameron--Martin space $\HH$. The object $(\Pi_{\BH}D_{\BH}F)_s$ is the Gubinelli derivative in $L^2$. For $H < 1/2$, the remainder exponent is $4H$; for $H > 1/2$, it is $2H + 1 > 2$, giving even faster decay.
+\end{mainthm}
+
+
+\subsection{What is new}
+
+The individual operators recovered by $D_X$ in specific settings are well known: the Malliavin derivative for Gaussian processes~\cite{Nualart2006}, the add-a-point operator for Poisson processes~\cite{Privault2009,DiNunno2009}, and the discrete gradient of Stroock~\cite{Stroock1988}. This paper focuses on continuous processes on Hilbert energy spaces. The contribution is the structural separation and its consequences:
+
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+\item \textbf{The two-layer separation.} The representation layer (Clark--Ocone, GKW projection, variance identity) follows from adjointness alone and applies to any continuous process with a stochastic integral. The calculus layer (Leibniz, chain rule, It\^o formula) requires a cylindrical reduction whose mechanism is process-dependent. The Malliavin derivative lives in the calculus layer: it is the specialization of $D_X$ to the setting where the chain rule holds. The representation layer is strictly prior to this specialization. This separation is not a framing device: it is reflected in the theorem architecture and determines which results hold universally and which require verification.
+
+\item \textbf{The cylindrical reduction criterion} (Theorem~\ref{thmB}): a single abstract condition under which Leibniz holds. The condition asks whether the stochastic integral admits an integration-by-parts formula with representers. Gaussian processes satisfy it via Cameron--Martin quasi-invariance (deterministic representers). Stochastic-volatility martingales satisfy it via the Brownian Malliavin derivative (random representers).
+
+\item \textbf{Representer rigidity on Brownian filtrations} (Theorems~\ref{thmD}--\ref{thmE}): For continuous martingales $M = \int\sigma\,dW$, deterministic cylindrical reduction on the extended energy space forces $\sigma$ to be deterministic (Theorem~\ref{thmE}), while random representers $\kappa_i(t) = D_t^W(M_{t_i})/\sigma_t$ establish Leibniz for all stochastic~$\sigma$ (Theorem~\ref{thmD}). By the martingale representation theorem, every continuous $L^2$-martingale on a Brownian filtration has this form, so these two mechanisms---deterministic (Gaussian) and random (Brownian Malliavin)---exhaust the cylindrical-reduction possibilities in that setting.
+\end{enumerate}
+
+As an application of the Gaussian case, $\Pi_X D_X F$ recovers the Gubinelli derivative of rough path theory in $L^2$ for Gaussian Volterra processes (Theorem~\ref{thmF}), identifying $L^2$-algebraic and pathwise-analytic objects as views of a single structure.
+
+
+\subsection{Relationship to existing work}
+
+\textbf{Malliavin calculus.} In the classical Malliavin calculus~\cite{Nualart2006}, the derivative $D^{\mathrm{Mall}}$ is defined on the Sobolev space $\mathbb{D}^{1,2}$ and satisfies the Leibniz rule by construction: it is built from partial derivatives of smooth cylindrical functionals, and the chain rule is an immediate consequence of the chain rule for partial derivatives. Our approach reverses the logic. The operator $D_X$ is defined by adjointness for \emph{any} process with a stochastic integral, without assuming any algebraic structure. Whether $D_X$ satisfies the chain rule---and thereby reduces to the Malliavin derivative---is a theorem, not an axiom. Concretely: $D_X$ and $D^{\mathrm{Mall}}$ agree on $\mathbb{D}^{1,2}$ if and only if the cylindrical reduction of Section~\ref{sec:leibniz} provides a chain rule. For Gaussian processes with deterministic Cameron--Martin representers, this verification is immediate and all results reduce to standard Malliavin theory. For stochastic volatility martingales, the verification requires random representers (Theorem~\ref{thmD}), and the obstruction theorem (Theorem~\ref{thmE}) proves deterministic representers cannot work---a structural constraint that has no statement or analog within the Malliavin framework itself.
+
+\textbf{Dirichlet forms.} The Dirichlet form approach~\cite{MaRockner1992} constructs a gradient from a Markov semigroup and builds the Leibniz rule into the carr\'e du champ operator. The operator derivative does not assume Markovianity, semigroup structure, or the Leibniz rule; it applies to non-Markovian processes such as fractional Brownian motion. The trade-off is that Leibniz must be established, not assumed.
+
+\textbf{Rough path theory.} The Gubinelli derivative~\cite{Gubinelli2004} is a pathwise object defined via controlled expansions: $Y_t - Y_s = Y'_s(X_t - X_s) + R_{s,t}$ with $|R_{s,t}| = O(|t-s|^{2\alpha})$. The operator derivative is an $L^2$-duality object. For Gaussian Volterra processes, the predictable projection $\Pi_X D_X F$ recovers the Gubinelli derivative in $L^2$ (Theorem~\ref{thmF}). The two objects answer different questions: the Gubinelli derivative provides pathwise control needed for rough integration, while the operator derivative provides the $L^2$-algebraic structure needed for representations and It\^o formulas. The identification shows they are two views of the same underlying object, not that one replaces the other.
+
+\textbf{PDE generators.} The energy space $\HX$ also determines the PDE structure of conditional expectations: the intrinsic bracket yields generator coefficients in the Feynman--Kac equation. These connections are developed in~\cite{Fontes2026PDE_gen}. The extension of the operator factorization to jump processes on Banach energy spaces is treated in~\cite{Fontes2026Banach}.
+
+
+\subsection{Organization}
+
+Section~\ref{sec:opderiv} defines the operator derivative and its intrinsic properties. Section~\ref{sec:rep} establishes the representation layer: Clark--Ocone, GKW projection, and variance identity. Section~\ref{sec:gauss} extends to Gaussian Volterra processes, including the Gubinelli identification, axiomatic verification, and bracket normalization. Section~\ref{sec:leibniz} develops the calculus layer: the Leibniz condition, cylindrical reduction, and verification for Gaussian processes. Section~\ref{sec:ito} derives the operator It\^o formula with domain conditions and Skorokhod isometry estimates. Section~\ref{sec:sv} establishes the Leibniz rule for stochastic volatility via random cylindrical reduction. Section~\ref{sec:obstr} proves the obstruction result and presents the classification table. Section~\ref{sec:ex} collects worked examples. Section~\ref{sec:open} discusses open problems.
+
+
+%=============================================================================
+\section{The Operator Derivative}\label{sec:opderiv}
+%=============================================================================
+
+\subsection{Notation and conventions}
+
+Throughout, $(\Omega, \mathcal{F}, P)$ is a complete probability space and $T > 0$ is a fixed finite time horizon. We write $L^p(\Omega) := L^p(\Omega, \mathcal{F}, P)$ with norm $\|F\|_{L^p} := \E[|F|^p]^{1/p}$. For a real separable Hilbert space~$\mathcal{H}$, we write $\langle\cdot,\cdot\rangle_{\mathcal{H}}$ for the inner product, $\|\cdot\|_{\mathcal{H}}$ for the norm, and $L^2(\Omega;\mathcal{H})$ for the Bochner space of $\mathcal{H}$-valued square-integrable random variables with norm $\|u\|^2_{L^2(\Omega;\mathcal{H})} := \E[\|u\|^2_{\mathcal{H}}]$.
+
+A \emph{filtration} $(\mathcal{F}_t)_{t \in [0,T]}$ is an increasing family of sub-$\sigma$-algebras of~$\mathcal{F}$, satisfying the \emph{usual conditions}: each $\mathcal{F}_t$ contains all $P$-null sets (completeness) and $\mathcal{F}_t = \bigcap_{s>t}\mathcal{F}_s$ (right-continuity). For a process~$X$, $({\FX}_t)$ denotes its \emph{natural filtration}---the smallest filtration satisfying the usual conditions such that $X$ is adapted. The \emph{predictable $\sigma$-algebra} $\mathcal{P}$ on $[0,T] \times \Omega$ is generated by left-continuous adapted processes; a process $u$ is \emph{predictable} if it is $\mathcal{P}$-measurable. We write $C_b^k(\R^n)$ for $k$-times continuously differentiable functions with bounded derivatives through order~$k$, $\dom(A)$ for the domain of a linear operator~$A$, and $A^*$ for its Hilbert space adjoint. The Malliavin--Sobolev space $\mathbb{D}^{1,2}$~\cite{Nualart2006} is used in the introduction for context and developed fully in Sections~\ref{sec:gauss}--\ref{sec:sv}.
+
+
+\subsection{Energy spaces and stochastic integrals}
+
+\begin{definition}[Energy space and stochastic integral]\label{def:energy}
+Let $X = (X_t)_{t \in [0,T]}$ be a square-integrable process. An \emph{energy space} for~$X$ is a pair $(\HX, \delta_X)$ where $\HX$ is a real separable Hilbert space and
+\[
+\delta_X \colon \dom(\delta_X) \subseteq L^2(\Omega; \HX) \to L^2(\Omega)
+\]
+is a densely defined, closable linear operator called the \emph{stochastic integral} (or \emph{divergence}) with respect to~$X$. We assume throughout that $\delta_X$ is \emph{centered}: $\E[\delta_X(u)] = 0$ for all $u \in \dom(\delta_X)$.
+\end{definition}
+
+\begin{remark}[Bounded vs.\ unbounded]\label{rem:bounded}
+When $\delta_X$ is bounded (the typical case for It\^o integrals of predictable processes against semimartingales), $\dom(\delta_X) = L^2(\Omega; \HX)$ and no domain issues arise. When $\delta_X$ is unbounded---as for the Skorokhod integral of fractional Brownian motion with $H \neq 1/2$, or the extended integral of Section~\ref{sec:sv}---the domain $\dom(\delta_X) \subsetneq L^2(\Omega; \HX)$ is a dense subspace. Both cases are covered by Definition~\ref{def:energy}; the distinction matters primarily in Sections~\ref{sec:gauss} and~\ref{sec:sv}.
+\end{remark}
+
+\begin{example}[Martingale energy space]\label{ex:mart_energy}
+Let $X$ be a continuous square-integrable martingale with quadratic variation $\langle X\rangle_t$. The energy space is $\HX := L^2([0,T] \times \Omega, \mathcal{P}, d\langle X\rangle \otimes dP)$---predictable processes $u$ with $\|u\|^2_{\HX} := \E[\int_0^T u_t^2\,d\langle X\rangle_t] < \infty$. The stochastic integral $\delta_X(u) := \int_0^T u_t\,dX_t$ is the It\^o integral, which is bounded (isometric) on $\HX$.
+\end{example}
+
+\begin{example}[Compensated Poisson energy space]\label{ex:poiss_energy}
+Let $\tilde{N}_t := N_t - \lambda t$ be a compensated Poisson process with intensity $\lambda > 0$. The energy space is $\mathcal{H}_{\tilde{N}} := L^2([0,T] \times \Omega, \mathcal{P}, \lambda\,dt \otimes dP)$---predictable $u$ with $\|u\|^2 := \lambda\,\E[\int_0^T |u_t|^2\,dt] < \infty$. The integral $\delta_{\tilde{N}}(u) := \int_0^T u_t\,d\tilde{N}_t$ is isometric on this space.
+\end{example}
+
+
+\subsection{The predictable projection}
+
+\begin{definition}[Predictable projection]\label{def:pred_proj}
+The \emph{predictable projection} $\Pi_X$ is the orthogonal projection in $L^2(\Omega; \HX)$ onto the closed subspace of $\mathcal{P}$-measurable $\HX$-valued processes.
+\end{definition}
+
+In all bounded-integral examples of this paper (Brownian motion, continuous martingales, compensated Poisson), $\HX$ consists entirely of predictable processes, so $\Pi_X = \Id$. The projection becomes nontrivial when $\HX$ includes non-predictable elements, as occurs in the Skorokhod integral setting (Section~\ref{sec:gauss}) and for stochastic volatility models (Section~\ref{sec:sv}), where the energy space is enlarged to accommodate random integrands.
+
+\begin{remark}[Dependence on filtration]\label{rem:filtration}
+The factorization~\eqref{eq:factorization} depends on three choices: the energy space $\HX$, the stochastic integral $\delta_X$, and the filtration (which determines $\Pi_X$). The operator $D_X = \delta_X^*$ is determined by $\HX$ and $\delta_X$ alone, but the factorization depends on the filtration through $\Pi_X$. In all examples of this paper, we use the natural filtration of~$X$.
+\end{remark}
+
+
+\subsection{Definition by adjointness}
+
+\begin{lemma}[Adjoint existence]\label{lem:adjoint}
+Let $(\HX, \delta_X)$ be an energy space with $\delta_X$ densely defined and closable (Definition~\ref{def:energy}). Then the Hilbert space adjoint $D_X := \delta_X^*$ is a well-defined, closed, densely defined operator from $L^2(\Omega)$ to $L^2(\Omega; \HX)$.
+\end{lemma}
+
+\begin{proof}
+Since $\delta_X$ is densely defined, the adjoint $\delta_X^*$ exists as a closed operator by the standard theory of unbounded operators on Hilbert spaces (see, e.g., Reed--Simon~\cite[Theorem VIII.1]{ReedSimon1980} or~\cite[Proposition~1.3.1]{Nualart2006} for the Malliavin setting). Explicitly: $F \in \dom(\delta_X^*)$ if and only if $u \mapsto \E[F \cdot \delta_X(u)]$ extends to a bounded linear functional on $L^2(\Omega;\HX)$, in which case $\delta_X^*F$ is the Riesz representer.
+
+For density of $\dom(D_X)$: closability of $\delta_X$ implies $\delta_X^{**} = \overline{\delta_X}$ (the closure). If $\dom(D_X) = \dom(\delta_X^*)$ were not dense in $L^2(\Omega)$, there would exist $0 \neq G \in L^2(\Omega)$ with $\E[G \cdot F] = 0$ for all $F \in \dom(\delta_X^*)$. In particular, $G \perp \dom(\delta_X^*)$. But $\dom(\delta_X^*)$ is dense whenever $\delta_X$ is closable: if $u_n \to 0$ in $L^2(\Omega;\HX)$ and $\delta_X(u_n) \to v$ in $L^2(\Omega)$, closability gives $v = 0$; this, combined with the closed graph theorem, ensures $\dom(\delta_X^*)$ is dense~\cite[Chapter~5.2]{Kato1995}. Hence $G = 0$, a contradiction.
+\end{proof}
+
+\begin{definition}[Operator derivative]\label{def:opderiv}
+For $F \in L^2(\Omega)$ such that the functional $u \mapsto \E[F \cdot \delta_X(u)]$ is continuous on $\dom(\delta_X) \subseteq L^2(\Omega; \HX)$ with respect to the $L^2(\Omega; \HX)$-norm, the \emph{operator derivative} $D_X F$ is the unique element of $L^2(\Omega; \HX)$ satisfying
+\begin{equation}\label{eq:adj}
+\E[F \cdot \delta_X(u)] = \E[\langle D_X F, u \rangle_{\HX}] \quad \text{for all } u \in \dom(\delta_X).
+\end{equation}
+Existence follows from the Riesz representation theorem applied to the continuous functional $u \mapsto \E[F \cdot \delta_X(u)]$ on $\overline{\dom(\delta_X)}^{L^2(\Omega;\HX)}$; uniqueness from the density of $\dom(\delta_X)$.
+\end{definition}
+
+\begin{remark}[Nature of the operator]\label{rem:nature}
+$D_X$ is not a derivative in any infinitesimal, pathwise, or variational sense, nor is it a derivation (it need not satisfy the Leibniz rule; see Section~\ref{sec:leibniz}). It is the Riesz representer of a bounded linear functional. We retain the term ``derivative'' because of the adjoint relationship $D_X = \delta_X^*$, which mirrors the duality between differentiation and integration, and because $D_X$ recovers known stochastic derivatives in concrete settings. The reader who finds this terminology objectionable may substitute ``adjoint representer'' throughout without loss of mathematical content.
+\end{remark}
+
+\begin{remark}[Dependence on choices]\label{rem:choices}
+$D_X$ depends on the pair $(\delta_X, \HX)$. Different energy spaces for the same process yield different operators. We do not claim that a canonical choice exists in general.
+\end{remark}
+
+\begin{remark}[Relationship to the Malliavin derivative]\label{rem:vs_malliavin}
+The Malliavin derivative $D^{\mathrm{Mall}}$ is defined on cylindrical functionals $F = f(X_{t_1},\ldots,X_{t_n})$ by $D^{\mathrm{Mall}}F := \sum_i \partial_i f \cdot k_{t_i}$, where $k_{t_i}$ are deterministic Cameron--Martin representers~\cite{Nualart2006}. The chain rule $D^{\mathrm{Mall}}(\varphi(F)) = \varphi'(F)\,D^{\mathrm{Mall}}F$ is immediate from this definition---it reduces to the chain rule for partial derivatives. By contrast, $D_X = \delta_X^*$ is defined on $\dom(\delta_X^*) \subseteq L^2(\Omega)$ by the Riesz representation theorem, with no reference to cylindrical functionals or partial differentiation. Whether $D_X$ satisfies the chain rule is a theorem about the process~$X$ (Theorem~\ref{thm:cylred}), not a consequence of the definition. On the domain $\mathbb{D}^{1,2}$ where both are defined, $D_X = D^{\mathrm{Mall}}$ if and only if the chain rule holds for $D_X$. The representation layer (Section~\ref{sec:rep}) uses $D_X$ without this identification.
+\end{remark}
+
+
+\subsection{Intrinsic properties}
+
+The following properties are forced by the adjoint definition and hold for \emph{any} process with a closable, centered stochastic integral.
+
+\begin{proposition}[Intrinsic properties]\label{prop:intrinsic}
+Let $D_X$ be defined by~\eqref{eq:adj}. Then:
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item \textup{Linearity:} $D_X(\alpha F + \beta G) = \alpha\,D_X F + \beta\,D_X G$ for $\alpha,\beta \in \R$.
+\item \textup{Closedness:} If $F_n \to F$ in $L^2(\Omega)$ and $D_X F_n \to g$ in $L^2(\Omega; \HX)$, then $F \in \dom(D_X)$ and $D_X F = g$.
+\item \textup{Constants:} $D_X(c) = 0$ for $c \in \R$.
+\item \textup{Uniqueness:} $D_X F$ is uniquely determined by~\eqref{eq:adj}.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(a) For any $u \in \dom(\delta_X)$:
+$\E[(\alpha F + \beta G) \cdot \delta_X(u)] = \alpha\,\E[F \cdot \delta_X(u)] + \beta\,\E[G \cdot \delta_X(u)] = \alpha\,\E[\langle D_X F, u \rangle_{\HX}] + \beta\,\E[\langle D_X G, u \rangle_{\HX}] = \E[\langle \alpha\,D_X F + \beta\,D_X G, u \rangle_{\HX}]$.
+By uniqueness, $D_X(\alpha F + \beta G) = \alpha\,D_X F + \beta\,D_X G$.
+
+(b) For any $u \in \dom(\delta_X)$:
+$\E[\langle g, u \rangle_{\HX}] = \lim_{n \to \infty} \E[\langle D_X F_n, u \rangle_{\HX}] = \lim_{n \to \infty} \E[F_n \cdot \delta_X(u)] = \E[F \cdot \delta_X(u)]$,
+where the first equality uses $D_X F_n \to g$ in $L^2(\Omega; \HX)$, the second uses the adjoint relation for each~$F_n$, and the third uses $F_n \to F$ in $L^2(\Omega)$ and the fact that $\delta_X(u) \in L^2(\Omega)$. Thus $g$ is the Riesz representer for~$F$, so $D_X F = g$.
+
+(c) $\E[c \cdot \delta_X(u)] = c\,\E[\delta_X(u)] = 0$ by centeredness of $\delta_X$. The zero element of $L^2(\Omega; \HX)$ satisfies $\E[\langle 0, u \rangle] = 0$ for all~$u$, so $D_X(c) = 0$.
+
+(d) If $g_1, g_2 \in L^2(\Omega; \HX)$ both satisfy~\eqref{eq:adj} for the same~$F$, then $\E[\langle g_1 - g_2, u \rangle_{\HX}] = 0$ for all $u \in \dom(\delta_X)$. Since $\dom(\delta_X)$ is dense in $L^2(\Omega; \HX)$, this implies $g_1 = g_2$ in $L^2(\Omega; \HX)$.
+\end{proof}
+
+These properties define the maximal generality of the operator derivative. The nontrivial content begins with the question of what additional structure $D_X$ can support beyond linearity and closedness.
+
+
+%=============================================================================
+\section{The Representation Layer}\label{sec:rep}
+%=============================================================================
+
+Before investigating algebraic properties of $D_X$, we establish what can be achieved with the adjoint definition alone, without any Leibniz or chain rule assumption.
+
+
+\subsection{The isometry condition}
+
+\begin{condition}[Isometry]\label{cond:iso}
+For predictable $u, v \in L^2(\Omega; \HX)$:
+\begin{equation}\label{eq:isometry}
+\E[\delta_X(u) \cdot \delta_X(v)] = \E[\langle u, v \rangle_{\HX}].
+\end{equation}
+\end{condition}
+
+This holds for Brownian motion (It\^o isometry), all square-integrable martingales (by the martingale isometry), and compensated Poisson processes. It fails for fractional Brownian motion with $H \neq 1/2$ due to trace correction terms in the Skorokhod isometry. The isometry is \emph{not} forced by the Riesz definition of $D_X$; it is an additional property of $\delta_X$.
+
+
+\subsection{The Clark--Ocone factorization}
+
+\begin{theorem}[Unified Clark--Ocone representation]\label{thm:CO}
+Let $X$ have energy space $(\HX, \delta_X)$, predictable projection $\Pi_X$, and $D_X = \delta_X^*$. Assume:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item \textup{Centered integrals:} $\E[\delta_X(u)] = 0$ for all $u \in \dom(\delta_X)$.
+\item \textup{Isometry on predictable processes:} Condition~\ref{cond:iso} holds.
+\item \textup{Predictable representation property (PRP):} Every centered ${\FX}_T$-measurable $\tilde{F} \in L^2(\Omega)$ can be written as $\tilde{F} = \delta_X(v)$ for some predictable $v \in L^2(\Omega; \HX)$.
+\end{enumerate}
+Then for ${\FX}_T$-measurable $F \in L^2(\Omega)$:
+\begin{equation}\label{eq:clark_ocone}
+F = \E[F] + \delta_X(\Pi_X D_X F).
+\end{equation}
+Equivalently, $(\Id - \E) = \delta_X \circ \Pi_X \circ D_X$ on $L^2(\Omega, {\FX}_T, P)$.
+\end{theorem}
+
+\begin{proof}
+Write $\tilde{F} := F - \E[F]$. By PRP, there exists a predictable $v \in L^2(\Omega; \HX)$ such that $\tilde{F} = \delta_X(v)$. We claim $\Pi_X D_X F = v$.
+
+\emph{Step 1: Adjointness and isometry.} For any predictable $u \in L^2(\Omega; \HX)$, the adjoint relation~\eqref{eq:adj} gives
+\begin{equation}\label{eq:CO_step1}
+\E[\langle D_X F, u \rangle_{\HX}] = \E[F \cdot \delta_X(u)].
+\end{equation}
+Since $\delta_X$ is centered, $\E[\E[F] \cdot \delta_X(u)] = \E[F] \cdot \E[\delta_X(u)] = 0$, so
+\begin{equation}\label{eq:CO_step2}
+\E[\langle D_X F, u \rangle_{\HX}] = \E[\tilde{F} \cdot \delta_X(u)] = \E[\delta_X(v) \cdot \delta_X(u)].
+\end{equation}
+
+\emph{Step 2: Polarization of isometry.} The isometry (Condition~\ref{cond:iso}) states $\E[|\delta_X(w)|^2] = \E[\|w\|^2_{\HX}]$ for predictable~$w$. Polarizing: replace $w$ by $v + u$ and $v - u$ and subtract:
+\[
+\E[\delta_X(v) \cdot \delta_X(u)] = \tfrac{1}{4}\bigl(\E[\|v+u\|^2_{\HX}] - \E[\|v-u\|^2_{\HX}]\bigr) = \E[\langle v, u \rangle_{\HX}].
+\]
+Both $v$ and $u$ are predictable, so the isometry applies.
+
+\emph{Step 3: Identification.} Combining~\eqref{eq:CO_step2} with the polarization:
+\begin{equation}\label{eq:CO_step3}
+\E[\langle D_X F, u \rangle_{\HX}] = \E[\langle v, u \rangle_{\HX}] \quad \text{for all predictable } u.
+\end{equation}
+This means $\E[\langle D_X F - v, u \rangle_{\HX}] = 0$ for all predictable~$u$, i.e., $D_X F - v$ is orthogonal to the subspace of predictable processes. By definition of the predictable projection, $\Pi_X D_X F = v$.
+
+\emph{Step 4: Conclusion.} $\tilde{F} = \delta_X(v) = \delta_X(\Pi_X D_X F)$, giving $F = \E[F] + \delta_X(\Pi_X D_X F)$.
+\end{proof}
+
+\begin{remark}[Content of the theorem]\label{rem:CO_content}
+Theorem~\ref{thm:CO} assumes PRP and concludes a representation---so the existence of the integrand is already known. The content is the \emph{identification} of the integrand as $\Pi_X D_X F$: the predictable projection of the adjoint of $F$ against the stochastic integral. This is an operator identity, not merely an existence statement. Moreover, the integrand is unique: the isometry implies $\delta_X$ is injective on predictable processes.
+\end{remark}
+
+\begin{remark}[When $\Pi_X = \Id$]\label{rem:Pi_trivial}
+In all bounded-integral examples---Brownian motion, general continuous martingales, compensated Poisson---the energy space consists entirely of predictable processes, so $\Pi_X = \Id$ and the factorization simplifies to $(\Id - \E) = \delta_X \circ D_X$. The general formulation retains $\Pi_X$ for the Gaussian Volterra setting (Section~\ref{sec:gauss}) and for stochastic volatility models (Section~\ref{sec:sv}), where the energy space admits non-predictable elements.
+\end{remark}
+
+
+\subsection{When PRP fails: the GKW projection}
+
+\begin{proposition}[GKW projection]\label{prop:GKW}
+Under hypotheses (i)--(ii) of Theorem~\ref{thm:CO} (but not necessarily (iii)), let $\mathcal{S}_X := \overline{\{\delta_X(u) : u \in L^2(\Omega;\HX),\, u \textup{ predictable}\}}^{L^2}$ be the stable subspace generated by predictable integrals of~$X$. Then for any $F \in L^2(\Omega)$:
+\[
+\delta_X(\Pi_X D_X F) = \mathrm{proj}_{\mathcal{S}_X}(F - \E[F]),
+\]
+the orthogonal projection of $F - \E[F]$ onto~$\mathcal{S}_X$.
+\end{proposition}
+
+\begin{proof}
+We verify the two conditions for orthogonal projection: membership and orthogonality.
+
+\emph{Membership.} $\Pi_X D_X F$ is predictable by definition of $\Pi_X$, so $\delta_X(\Pi_X D_X F) \in \mathcal{S}_X$.
+
+\emph{Orthogonality.} We must show $F - \E[F] - \delta_X(\Pi_X D_X F) \perp \mathcal{S}_X$. For any predictable $u \in L^2(\Omega; \HX)$:
+\begin{align*}
+\E\bigl[(F - \E[F] - \delta_X(\Pi_X D_X F)) \cdot \delta_X(u)\bigr]
+&= \E[F \cdot \delta_X(u)] - \E[\E[F]] \cdot \underbrace{\E[\delta_X(u)]}_{=\,0} - \E[\delta_X(\Pi_X D_X F) \cdot \delta_X(u)] \\
+&= \E[\langle D_X F, u \rangle_{\HX}] - \E[\langle \Pi_X D_X F, u \rangle_{\HX}] \\
+&= \E[\langle D_X F - \Pi_X D_X F, u \rangle_{\HX}] = 0,
+\end{align*}
+where the second line uses adjointness (for the first term) and isometry (for the second term, since both $\Pi_X D_X F$ and $u$ are predictable), and the last line uses the defining property of the orthogonal projection: $D_X F - \Pi_X D_X F$ is orthogonal to all predictable processes.
+\end{proof}
+
+\begin{remark}[Representation without calculus]\label{rem:GKW_interp}
+Proposition~\ref{prop:GKW} shows that $D_X$ has concrete content even without PRP or Leibniz: it identifies the optimal integrand in the mean-square sense. This is standard Hilbert space orthogonal projection; the contribution is not the projection itself but its identification as $\Pi_X D_X F$, which provides a uniform formula across different driving processes. In mathematical finance, $\delta_X(\Pi_X D_X F)$ is the variance-minimizing hedge of a claim~$F$ using the tradeable asset~$X$~\cite{DiNunno2009}.
+\end{remark}
+
+
+\subsection{Variance identity}
+
+\begin{proposition}[Variance identity]\label{prop:var}
+Under the hypotheses of Theorem~\ref{thm:CO}, for ${\FX}_T$-measurable $F \in L^2(\Omega)$:
+\[
+\Var(F) = \E\bigl[\|\Pi_X D_X F\|^2_{\HX}\bigr].
+\]
+For continuous martingales with quadratic variation, this becomes $\Var(F) = \E\bigl[\int_0^T |(\Pi_X D_X F)_t|^2\,d\langle X\rangle_t\bigr]$.
+\end{proposition}
+
+\begin{proof}
+By Theorem~\ref{thm:CO}: $\Var(F) = \E[|F - \E[F]|^2] = \E[|\delta_X(\Pi_X D_X F)|^2]$. Since $\Pi_X D_X F$ is predictable, the isometry (Condition~\ref{cond:iso}) gives $\E[|\delta_X(\Pi_X D_X F)|^2] = \E[\|\Pi_X D_X F\|^2_{\HX}]$.
+\end{proof}
+
+
+\subsection{Concrete examples}
+
+\begin{example}[Brownian motion]\label{ex:brownian}
+Let $B$ be standard Brownian motion. The energy space $\HB = L^2([0,T] \times \Omega, \mathcal{P}, dt \otimes dP)$ consists of predictable processes with finite $L^2(dt \otimes dP)$ norm. The stochastic integral $\delta_B$ is the It\^o integral, and $\Pi_B = \Id$. Theorem~\ref{thm:CO} gives
+\[
+F = \E[F] + \int_0^T (D_B F)_t\,dB_t.
+\]
+For $F \in \mathbb{D}^{1,2}$, the classical Clark--Ocone formula~\cite[Theorem 1.3.14]{Nualart2006} identifies the integrand as $\E[D_t^{\mathrm{Mall}} F \mid \mathcal{F}_t]$, where $D^{\mathrm{Mall}}$ is the Malliavin derivative. Comparing: $(D_B F)_t = \E[D_t^{\mathrm{Mall}} F \mid \mathcal{F}_t]$. The operator $D_B$ is defined on all of $L^2(\Omega, \mathcal{F}_T^B, P)$ via adjointness, whereas $D^{\mathrm{Mall}}$ requires $F \in \mathbb{D}^{1,2}$; but $D_B$ directly provides the predictable integrand, while $D^{\mathrm{Mall}}$ carries richer pointwise information before conditioning. Neither subsumes the other.
+\end{example}
+
+\begin{example}[Compensated Poisson process]\label{ex:poisson}
+Let $\tilde{N}_t = N_t - \lambda t$ be a compensated Poisson process with intensity $\lambda > 0$ and natural filtration $(\mathcal{F}_t^N)$. The energy space is as in Example~\ref{ex:poiss_energy}. Since $\tilde{N}$ has the PRP~\cite[Chapter 12]{DiNunno2009}, Theorem~\ref{thm:CO} gives
+\begin{equation}\label{eq:poisson_CO}
+F = \E[F] + \int_0^T (D_{\tilde{N}} F)_t\,d\tilde{N}_t.
+\end{equation}
+
+The natural difference operator for Poisson functionals is the \emph{add-a-point} operator: for a sample path~$\omega$ identified with its jump times, let $\omega + \varepsilon_t$ denote the configuration with one additional jump at time~$t$, and define
+\begin{equation}\label{eq:add_a_point}
+(\mathcal{D}_t^+ F)(\omega) := F(\omega + \varepsilon_t) - F(\omega).
+\end{equation}
+
+\begin{proposition}[Explicit form of $D_{\tilde{N}}$]\label{prop:poisson_explicit}
+For $\mathcal{F}_T^N$-measurable $F \in L^2(\Omega)$:
+$(D_{\tilde{N}} F)_t = \E[\mathcal{D}_t^+ F \mid \mathcal{F}_{t-}]$, $dt \otimes dP$-a.e.
+\end{proposition}
+
+\begin{proof}
+For predictable $u$, the Poisson integration-by-parts formula~\cite[Proposition 1.9]{Privault2009} gives
+\[
+\E\Bigl[F \cdot \int_0^T u_t\,d\tilde{N}_t\Bigr] = \lambda\,\E\Bigl[\int_0^T u_t\,\mathcal{D}_t^+ F\,dt\Bigr].
+\]
+Since $u_t$ is $\mathcal{F}_{t-}$-measurable, the tower property yields
+$\E[u_t \cdot \mathcal{D}_t^+ F] = \E[u_t \cdot \E[\mathcal{D}_t^+ F \mid \mathcal{F}_{t-}]]$.
+So
+\[
+\E[F \cdot \delta_{\tilde{N}}(u)] = \lambda\,\E\Bigl[\int_0^T u_t \cdot \E[\mathcal{D}_t^+ F \mid \mathcal{F}_{t-}]\,dt\Bigr] = \E\Bigl[\bigl\langle \E[\mathcal{D}_\cdot^+ F \mid \mathcal{F}_{\cdot-}], u \bigr\rangle_{\mathcal{H}_{\tilde{N}}}\Bigr].
+\]
+By uniqueness of the adjoint representer: $(D_{\tilde{N}} F)_t = \E[\mathcal{D}_t^+ F \mid \mathcal{F}_{t-}]$.
+\end{proof}
+
+The representation layer applies universally to jump processes: the adjoint definition and Clark--Ocone factorization require only the stochastic integral and PRP. However, the calculus layer (Leibniz rule, It\^o formula) developed in Sections~\ref{sec:leibniz}--\ref{sec:ito} is restricted to continuous processes in this paper. The structural reasons why the one-parameter Leibniz framework breaks down for jumps are analyzed in~\cite{Fontes2026Banach}.
+\end{example}
+
+\begin{example}[General continuous martingale]\label{ex:gen_mart}
+Let $X$ be any continuous square-integrable martingale with the martingale representation property (for instance, a continuous local martingale whose natural filtration satisfies Jacod's criterion). The energy space consists of predictable processes with $\E[\int_0^T u_t^2\,d\langle X\rangle_t] < \infty$. Since $\Pi_X = \Id$:
+\[
+F = \E[F] + \int_0^T (D_X F)_t\,dX_t
+\]
+for all ${\FX}_T$-measurable $F \in L^2(\Omega)$. The operator derivative $D_X F$ encodes the representation integrand.
+\end{example}
+
+%=============================================================================
+\section{The Gaussian Extension}\label{sec:gauss}
+%=============================================================================
+
+The representation layer of Section~\ref{sec:rep} applies to processes with bounded stochastic integrals and PRP. This section extends the factorization to Gaussian Volterra processes---including fractional Brownian motion with any $H \in (0,1)$, $H \neq 1/2$---where the Skorokhod integral is unbounded and PRP may fail. A key point: the operator derivative framework treats all Hurst parameters uniformly. The restriction to $H < 1/2$ that appears in rough path theory~\cite{Gubinelli2004} reflects the irregularity of paths (controlled structures are needed when sample paths have H\"older exponent below $1/2$), not any limitation of the underlying calculus. The factorization, Leibniz rule, and It\^o formula all hold for $H \in (0,1)$ without modification.
+
+\subsection{Gaussian Volterra processes}
+
+Let $W = (W_t)_{t \in [0,T]}$ be standard Brownian motion on $(\Omega, \mathcal{F}, P)$.
+
+\begin{definition}[Gaussian Volterra process]\label{def:volterra}
+A centered Gaussian process $X_t = \int_0^t K(t,s)\,dW_s$ with deterministic Volterra kernel $K$ and $\int_0^T\int_0^t K(t,s)^2\,ds\,dt < \infty$. Covariance: $R_X(t,s) = \int_0^{t\wedge s}K(t,r)K(s,r)\,dr$.
+\end{definition}
+
+\begin{definition}[Cameron--Martin space]\label{def:CM}
+The RKHS $\HX$ is the completion of $\mathrm{span}\{k_t : t \in [0,T]\}$ under $\langle k_t, k_s\rangle_{\HX} := R_X(t,s)$, where $k_t := R_X(t,\cdot)$ satisfies $\langle h, k_t\rangle_{\HX} = h(t)$.
+\end{definition}
+
+\begin{definition}[Isonormal Gaussian map]\label{def:isonormal}
+$I_X : \HX \to L^2(\Omega)$ defined by $I_X(k_t) := X_t$ extends to an isometry: $\E[I_X(h)I_X(g)] = \langle h,g\rangle_{\HX}$.
+\end{definition}
+
+\subsection{Malliavin derivative and Skorokhod integral}
+
+For smooth cylindrical functionals $\mathcal{S} := \{f(X_{t_1},\ldots,X_{t_n}) : f \in C_b^\infty, n \in \N\}$, the Malliavin derivative is
+\begin{equation}\label{eq:malliavin_deriv}
+D_XF := \sum_{i=1}^n \partial_if(X_{t_1},\ldots,X_{t_n})\,k_{t_i} \in L^2(\Omega;\HX).
+\end{equation}
+The closure defines $\mathbb{D}^{1,2} := \overline{\mathcal{S}}^{\|\cdot\|_{1,2}}$ with $\|F\|_{1,2}^2 := \E[F^2]+\E[\|D_XF\|^2_{\HX}]$; more generally, $\mathbb{D}^{1,p} := \overline{\mathcal{S}}^{\|\cdot\|_{1,p}}$ with $\|F\|_{1,p}^p := \E[|F|^p]+\E[\|D_XF\|^p_{\HX}]$ for $p \ge 1$. The Skorokhod integral $\delta_X := (D_X)^*$ is densely defined and unbounded on $L^2(\Omega;\HX)$. Since the Malliavin derivative is defined by the chain rule on cylindrical functionals, and the cylindrical reduction of Theorem~\ref{thm:cylred} verifies the chain rule for Gaussian processes via deterministic Cameron--Martin representers, the operator derivative and the Malliavin derivative coincide on $\mathbb{D}^{1,2}$ in the Gaussian setting. When the underlying Brownian motion $W$ must be distinguished from the process $X$ (as in Section~\ref{sec:sv}), we write $D^W$ or $D_t^W$ for the Malliavin derivative with respect to~$W$.
+
+\begin{lemma}[Measurability preservation]\label{lem:meas_pres}
+Let $W$ be a Brownian motion with filtration $(\mathcal{F}_t)$. If $F$ is $\mathcal{F}_s$-measurable and $F \in \mathbb{D}^{1,2}$, then $D_t^W F$ is $\mathcal{F}_s$-measurable for every $t \in [0,T]$, and $D_t^W F = 0$ for $t > s$.
+\end{lemma}
+
+\begin{proof}
+See~\cite[Lemma 1.2.3]{Nualart2006}. For the first claim: on cylindrical functionals $F = f(W_{s_1},\ldots,W_{s_n})$ with all $s_i \le s$, $D_t^W F = \sum_i\partial_if(W_{s_1},\ldots,W_{s_n})\mathbf{1}_{[0,s_i]}(t)$ is $\mathcal{F}_s$-measurable; the property extends to the closure $\mathbb{D}^{1,2}$ by $L^2$-limits. For the second: $D_t^WF = 0$ for $t > s$ because none of the $s_i$ exceed $s$, so $\mathbf{1}_{[0,s_i]}(t) = 0$.
+\end{proof}
+
+\begin{corollary}\label{cor:adapted_mall}
+If $(\sigma_s)_{s \in [0,T]}$ is a progressively measurable process with $\sigma_s \in \mathbb{D}^{1,2}$ for a.e.~$s$, then for fixed~$t$, the process $s \mapsto D_t^W(\sigma_s)$ is $\mathcal{F}_s$-adapted for $s \ge t$, and $D_t^W(\sigma_s) = 0$ for $s < t$.
+\end{corollary}
+
+\begin{proof}
+Immediate from Lemma~\ref{lem:meas_pres}: since $\sigma_s$ is $\mathcal{F}_s$-measurable, $D_t^W(\sigma_s)$ is $\mathcal{F}_s$-measurable for every~$t$; and $D_t^W(\sigma_s) = 0$ when $t > s$.
+\end{proof}
+
+\subsection{Predictable projection in the Cameron--Martin space}
+
+\begin{definition}[Adapted subspace]\label{def:adapted}
+${\HX}_t := \overline{\mathrm{span}\{k_s : s \le t\}} \subset \HX$ with orthogonal projection $P_t : \HX \to {\HX}_t$.
+\end{definition}
+
+\begin{definition}[Gaussian predictable projection]\label{def:gauss_pred}
+$(\Pi_Xu)_t := P_t(\E[u\mid{\FX}_t])$: conditional expectation in $\omega$, RKHS projection in $\HX$.
+\end{definition}
+
+\begin{lemma}[RKHS projection = conditional expectation on first chaos]\label{lem:rkhs_cond}
+For $h \in \HX$: $I_X(P_th) = \E[I_X(h)\mid{\FX}_t]$.
+\end{lemma}
+
+\begin{proof}
+$I_X$ is an isometry from $\HX$ onto the first Wiener chaos $\mathcal{H}_1 := \overline{\mathrm{span}\{X_t : t \in [0,T]\}}^{L^2(\Omega)}$. The subspace $I_X({\HX}_t) = \overline{\mathrm{span}\{X_s : s \le t\}}^{L^2}$ is the ${\FX}_t$-measurable part of $\mathcal{H}_1$. Since $I_X$ preserves inner products and $P_t$ is the $\HX$-projection onto ${\HX}_t$: $\E[I_X(h)\mid{\FX}_t] = \mathrm{proj}_{I_X({\HX}_t)}(I_X(h)) = I_X(P_th)$. See~\cite[Proposition 1.2.1]{Nualart2006}.
+\end{proof}
+
+\subsection{Factorization for rough fBM}
+
+\begin{theorem}[Factorization for fBM]\label{thm:fact_fbm}
+For fBM $\BH$ with $H \in (0,1)$, $H \neq 1/2$, and $F \in L^2(\Omega,{\FBH}_T)$ with $D_{\BH}F \in L^2(\Omega;\HH)$:
+\begin{equation}\label{eq:fact_fbm}
+(\Id-\E)\,F = \delta_H(\Pi_{\BH}D_{\BH}F),
+\end{equation}
+where we write $\delta_H := \delta_{\BH}$, $D_H := D_{\BH}$, and $\Pi_H := \Pi_{\BH}$ when the subscript is clear from context.
+\end{theorem}
+
+\begin{proof}
+Clark--Ocone for fBM~\cite[Theorem 3.1]{Decreusefond1999}: $F = \E[F]+\int_0^T\E[D_rF\mid{\FBH}_r]\,d{\BH}_r$, where $D_rF := \langle D_{\BH}F, k_r\rangle_{\HH}$. By Definition~\ref{def:gauss_pred}: $(\Pi_{\BH}D_{\BH}F)_r = P_r(\E[D_{\BH}F\mid{\FBH}_r])$. Evaluating:
+\begin{align*}
+\langle(\Pi_{\BH}D_{\BH}F)_r, k_r\rangle_{\HH} &= \langle P_r(\E[D_{\BH}F\mid{\FBH}_r]), k_r\rangle_{\HH} \\
+&= \langle\E[D_{\BH}F\mid{\FBH}_r], k_r\rangle_{\HH} \quad(k_r \in {\HH}_r) \\
+&= \E[\langle D_{\BH}F, k_r\rangle_{\HH}\mid{\FBH}_r] = \E[D_rF\mid{\FBH}_r].
+\end{align*}
+This identifies the Clark--Ocone integrand, giving~\eqref{eq:fact_fbm}.
+\end{proof}
+
+\begin{remark}\label{rem:honest_gauss}
+The analytical content is~\cite{Decreusefond1999}; the operator perspective contributes interpretation, particularly the Gubinelli identification below.
+\end{remark}
+
+\subsection{The Gubinelli derivative}
+
+\begin{theorem}[Gubinelli derivative as predictable projection]\label{thm:gub}
+Under the hypotheses of Theorem~\ref{thm:fact_fbm}, let $Y_t := \E[F\mid{\FBH}_t]$. Then
+\begin{equation}\label{eq:gub}
+Y_t - Y_s = \langle(\Pi_{\BH}D_{\BH}F)_s, k_t-k_s\rangle_{\HH} + R_{s,t}, \quad \E[R_{s,t}^2] = O(|t-s|^{\min(4H,\,2H+1)}).
+\end{equation}
+For $H < 1/2$: $\min(4H, 2H+1) = 4H$, recovering the Gubinelli regularity. For $H > 1/2$: $\min(4H, 2H+1) = 2H+1 > 2$, so the remainder decays faster than any power of $|t-s|^2$---the expansion is even better behaved. The operator approach is uniform in~$H$; the restriction $H < 1/2$ in rough path theory reflects path irregularity, not algebraic structure. The identity $(\Pi_{\BH}D_{\BH}F)_s = Y'_s$ is an equality in $L^2(\Omega; \HH)$; it identifies the Gubinelli derivative as an $L^2$-algebraic object, not as a pathwise-defined controlled path.
+\end{theorem}
+
+\begin{proof}
+Write $u_r := (\Pi_{\BH}D_{\BH}F)_r$. By factorization: $Y_t-Y_s = \delta_H(u\cdot\mathbf{1}_{(s,t]})$.
+
+\emph{Step 1: Split.} $\delta_H(u\cdot\mathbf{1}_{(s,t]}) = \delta_H(u_s\cdot\mathbf{1}_{(s,t]}) + \delta_H((u-u_s)\cdot\mathbf{1}_{(s,t]})$. For the first term: $u_s$ is ${\FBH}_s$-measurable and lies in ${\HH}_s$. By the Skorokhod product formula~\cite[Proposition 1.3.2]{Nualart2006}, $\delta_H(u_s\cdot\mathbf{1}_{(s,t]}) = \langle u_s, k_t-k_s\rangle_{\HH}$.
+
+\emph{Step 2: Remainder.} $R_{s,t} := \delta_H((u-u_s)\cdot\mathbf{1}_{(s,t]})$. The Skorokhod isometry (with trace correction) gives $\E[R_{s,t}^2] \le C\int_s^t\E[\|u_r-u_s\|^2_{\HH}]\,dr + C'\int_s^t\int_s^t\E[\|D_\theta(u_r-u_s)\|^2_{\text{HS}}]\,dr\,d\theta$, where the second term is the trace correction. Malliavin regularity of the predictable projection---specifically, $\E[\|u_r-u_s\|^2_{\HH}] = O(|r-s|^{2H})$---is provided by~\cite[Section 5]{Decreusefond1999} under the Decreusefond--\"Ust\"unel conditions on the kernel~$K$. This requires $F$ to have sufficient Malliavin regularity (e.g., $F \in \mathbb{D}^{2,2}$) so that the trace correction is integrable. Under these conditions: $\E[R_{s,t}^2] = O(|t-s|^{2H+1})$. For $H \le 1/2$: $2H+1 \ge 4H$, so $\E[R_{s,t}^2] = O(|t-s|^{4H})$, recovering the Gubinelli regularity exponent. For $H > 1/2$: $2H+1 > 2$, so the remainder is $O(|t-s|^{2H+1})$---even better, because smoother paths produce more regular controlled expansions. In both cases: $\E[R_{s,t}^2] = O(|t-s|^{\min(4H,2H+1)})$.
+\end{proof}
+
+\begin{remark}[Uniformity in $H$ vs.\ rough path restrictions]\label{rem:gub_scalar}
+In Gubinelli's formulation~\cite{Gubinelli2004}, the controlled path expansion $Y_t-Y_s = Y'_s(X_t-X_s)+R_{s,t}$ requires $H > 1/3$ for level-2 controlled paths; for $H \le 1/3$, higher-order iterated integrals are needed (Lyons's rough paths for $H > 1/4$, Hairer's regularity structures~\cite{Hairer2014} for general $H$). These restrictions are \emph{pathwise}: they arise because the sample paths of $\BH$ have H\"older exponent $H-\varepsilon$, and pathwise integration theories require minimum regularity.
+
+The operator approach provides a single $L^2$ mechanism across the entire range of Hurst parameters, where pathwise approaches require different theories for $H > 1/2$ (Young), $1/4 < H \le 1/2$ (Gubinelli), and $H \le 1/4$ (regularity structures). This uniformity comes at a cost: the $L^2$ framework averages over~$\Omega$ and does not provide the pathwise stability needed to solve rough differential equations. The operator derivative identifies the Gubinelli derivative as a predictable projection (Theorem~\ref{thm:gub}), but does not replace the pathwise analytical machinery required for applications such as rough integration or rough PDE theory. The two viewpoints---$L^2$-algebraic and pathwise-analytic---answer different questions and neither subsumes the other.
+\end{remark}
+
+
+\subsection{Volterra Gaussian verification}\label{ssec:volterra_verif}
+
+The abstract framework of Sections~\ref{sec:opderiv}--\ref{sec:rep} is not vacuous: it is realized concretely by Volterra Gaussian processes.
+
+\begin{definition}[Decreusefond--\"Ust\"unel conditions]\label{def:DU}
+A Volterra kernel $K$ (Definition~\ref{def:volterra}) satisfies the \emph{Decreusefond--\"Ust\"unel conditions}~\cite{Decreusefond1999} if:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $\int_0^T\int_0^t K(t,s)^2\,ds\,dt < \infty$.
+\item There exists $H \in (0,1)$ such that $|K(t,s)| \le C|t-s|^{H-1/2}$ for $s < t$.
+\item $K$ has sufficient regularity for the Malliavin calculus: the fractional derivative $\partial_t K(t,s)$ exists and satisfies integrability conditions ensuring $\dom(\delta_X)$ is dense in $L^2(\Omega;\HX)$.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[Verification of framework axioms]\label{prop:volterra_verif}
+Let $X$ be a Gaussian Volterra process with kernel~$K$ satisfying the Decreusefond--\"Ust\"unel conditions. Then the triple $(D_X, \delta_X, \Pi_X)$ satisfies:
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item \textup{Chain rule:} $D_X(\varphi(F)) = \varphi'(F)\,D_XF$ for $F \in \mathcal{S}$, $\varphi \in C_b^1$.
+\item \textup{Factorization:} $(\Id-\E)F = \delta_X(\Pi_X D_X F)$ for $F \in L^2(\Omega,{\FX}_T)$.
+\item \textup{Orthogonal projection:} $\Pi_X$ is self-adjoint and idempotent in $L^2(\Omega;\HX)$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(a) For $F = f(X_{t_1},\ldots,X_{t_n})$: $D_X(\varphi(F)) = \sum_i \partial_i(\varphi\circ f)(X_{t_1},\ldots)\,k_{t_i} = \varphi'(F)\sum_i\partial_if\cdot k_{t_i} = \varphi'(F)\,D_XF$.
+
+(b) Theorem~\ref{thm:fact_fbm} (or~\cite[Theorem 3.1]{Decreusefond1999} for the general Volterra case).
+
+(c) $\Pi_X$ is defined as orthogonal projection in the Hilbert space $L^2(\Omega;\HX)$ onto the closed subspace of predictable processes; self-adjointness and idempotency are automatic.
+\end{proof}
+
+\begin{corollary}\label{cor:DX_process}
+$D_XX_t = k_t$ for each $t \in [0,T]$: the operator derivative of the process at time~$t$ is the evaluation representer in the Cameron--Martin space.
+\end{corollary}
+
+\begin{proof}
+Take $F = X_t$ in~\eqref{eq:malliavin_deriv} with $n = 1$, $t_1 = t$, $f(x) = x$. Then $\partial_1 f = 1$, so $D_XX_t = k_t$.
+\end{proof}
+
+
+\subsection{The intrinsic bracket for Volterra Gaussian processes}\label{ssec:bracket_volterra}
+
+For a process $Y$ with operator derivative $D$ and predictable projection $\Pi$, the \emph{intrinsic bracket} is $\langle Y\rangle_t^{(D,\Pi)} := \int_0^t\|\Pi DY_s\|^2_{\mathcal{H}}\,ds$ (see Definition~\ref{def:bracket} for the general treatment). We compute it here for fractional Brownian motion.
+
+\begin{definition}[Normalized Cameron--Martin space for fBM]\label{def:normalized_CM}
+For fractional Brownian motion with $H \in (0,1)$, $H \neq 1/2$, we normalize the Cameron--Martin space $\HH$ so that the representer $k_t := D_H{\BH}_t$ satisfies
+\begin{equation}\label{eq:normalization}
+\|k_t\|^2_{\HH} = 2Ht^{2H-1}.
+\end{equation}
+This ensures $\int_0^t\|k_s\|^2_{\HH}\,ds = t^{2H}$, aligning with the classical Skorokhod integral formulas~\cite{Decreusefond1999,Nualart2006}.
+\end{definition}
+
+\begin{remark}[Normalization choice]\label{rem:normalization}
+Alternative normalizations exist: some authors use $\|k_t\|^2_{\HH} = R_H(t,t) = t^{2H}$, yielding bracket $t^{2H+1}/(2H+1)$. We adopt~\eqref{eq:normalization} to match the Skorokhod formulas of~\cite{Decreusefond1999}. The intrinsic bracket depends on this choice; we do not claim any normalization is canonical.
+\end{remark}
+
+\begin{lemma}[Bracket for fBM]\label{lem:bracket_fbm}
+With the normalization of Definition~\ref{def:normalized_CM}, for all $H \in (0,1)$, $H \neq 1/2$:
+\[
+\langle\BH\rangle_t^{(D,\Pi)} = t^{2H}.
+\]
+\end{lemma}
+
+\begin{proof}
+Since $D_H{\BH}_s = k_s$ and $\Pi_Hk_s = k_s$ (as $k_s \in {\HH}_s$):
+$\langle\BH\rangle_t^{(D,\Pi)} = \int_0^t\|k_s\|^2_{\HH}\,ds = \int_0^t 2Hs^{2H-1}\,ds = t^{2H}$.
+\end{proof}
+
+
+%=============================================================================
+\section{The Calculus Layer: The Leibniz Condition}\label{sec:leibniz}
+%=============================================================================
+
+To support chain rules, product rules, and It\^o formulas, $D_X$ must satisfy $D_X(FG) = FD_XG + GD_XF$---an algebraic property not forced by Riesz representation.
+
+\subsection{The Leibniz condition and its equivalences}
+
+\begin{condition}[Leibniz]\label{cond:leibniz}
+$D_X(FG) = FD_XG + GD_XF$ on a suitable domain.
+\end{condition}
+
+\begin{theorem}[Equivalences]\label{thm:equiv}
+Let $\mathcal{D} \subset \dom(D_X)\cap L^4(\Omega)$ be a subalgebra stable under multiplication, dense in $\dom(D_X)$ under graph norm, and such that $F \in \mathcal{D}$ implies $F \in \mathbb{D}^{1,4}$ (i.e., $D_XF \in L^4(\Omega;\HX)$). Then the following are equivalent on~$\mathcal{D}$:
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item \textup{Leibniz:} $D_X(FG) = FD_XG + GD_XF$.
+\item \textup{Chain rule:} $D_X(f(F_1,\ldots,F_n)) = \sum_i\partial_if\cdot D_XF_i$ for $f \in C_b^\infty$.
+\item \textup{Product rule for $\delta_X$:} $\delta_X(Fu) = F\delta_X(u) - \langle D_XF, u\rangle_{\HX}$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\emph{(a)$\Rightarrow$(b):} Leibniz on monomials gives $D_X(F_1^{a_1}\cdots F_n^{a_n}) = \sum_i a_iF_i^{a_i-1}\prod_{j\neq i}F_j^{a_j}D_XF_i$. Extend to polynomials by linearity. For $f \in C_b^\infty(\R^n)$ and $F = (F_1,\ldots,F_n) \in \mathcal{D}^n$, we verify the chain rule by a truncation argument.
+
+\emph{Step 1: Truncation.} Fix $R > 0$ and define $\chi_R \in C_b^\infty(\R^n)$ with $\chi_R(x) = 1$ for $|x| \le R$, $\chi_R(x) = 0$ for $|x| \ge R+1$, $0 \le \chi_R \le 1$, and $\|\nabla\chi_R\|_\infty \le 2$. Define $f_R := f\cdot\chi_R \in C_b^\infty(\R^n)$. Note: $f_R$ and all its derivatives are bounded, supported in $\{|x| \le R+1\}$, and $f_R = f$ on $\{|x| \le R\}$.
+
+\emph{Step 2: Polynomial approximation on compact sets.} By Weierstrass, for each $R$ there exist polynomials $p_m$ with $\|p_m - f_R\|_{C^1(\R^n)} \to 0$ as $m \to \infty$ (convergence on $\R^n$ because $f_R$ has compact support; formally, approximate on $[-R-2,R+2]^n$ and multiply by a smooth cutoff). Since Leibniz holds for polynomials: $D_X(p_m(F)) = \sum_i \partial_i p_m(F)\,D_X F_i$.
+
+\emph{Step 3: Convergence.} $p_m(F) \to f_R(F)$ in $L^2$: $\|p_m(F)-f_R(F)\|_{L^2} \le \|p_m-f_R\|_\infty \to 0$. For derivatives: $\|\sum_i (\partial_ip_m(F)-\partial_if_R(F))D_XF_i\|_{L^2(\Omega;\HX)} \le \sum_i\|\partial_ip_m-\partial_if_R\|_\infty\|D_XF_i\|_{L^2(\Omega;\HX)} \to 0$. By closedness: $D_X(f_R(F)) = \sum_i\partial_if_R(F)\,D_XF_i$.
+
+\emph{Step 4: Remove truncation.} On the event $\Omega_R := \{|F_i| \le R \text{ for all } i\}$: $f_R(F) = f(F)$ and $\partial_if_R(F) = \partial_if(F)$. Since $F_i \in L^4$: $P(\Omega_R^c) \le \sum_i P(|F_i|>R) \le \sum_i R^{-4}\|F_i\|_{L^4}^4 \to 0$. Now $\|f_R(F)-f(F)\|_{L^2}^2 = \E[(f_R(F)-f(F))^2\mathbf{1}_{\Omega_R^c}] \le 4\|f\|_\infty^2 P(\Omega_R^c) \to 0$. Similarly, $\|\partial_if_R(F)-\partial_if(F)\|_{L^4} \le 2(\|\partial_if\|_\infty+\|f\|_\infty\|\nabla\chi_R\|_\infty)P(\Omega_R^c)^{1/4} \to 0$, so $\|\sum_i(\partial_if_R(F)-\partial_if(F))D_XF_i\|_{L^2} \to 0$ by H\"older ($F_i \in \mathbb{D}^{1,4}$). By closedness: $D_X(f(F)) = \sum_i\partial_if(F)\,D_XF_i$.
+
+\emph{(b)$\Rightarrow$(a):} $f(x,y) = xy$.
+
+\emph{(a)$\Rightarrow$(c):} For $G \in \mathcal{D}$: $\E[G\delta_X(Fu)] = \E[\langle DG, Fu\rangle] = \E[F\langle DG,u\rangle]$. By Leibniz, $F\langle DG,u\rangle = \langle D(GF)-GDF, u\rangle$. Adjointness: $\E[\langle D(GF),u\rangle] = \E[GF\delta_X(u)]$. Combining: $\E[G\delta_X(Fu)] = \E[GF\delta_X(u)] - \E[G\langle DF,u\rangle] = \E[G(F\delta_X(u)-\langle DF,u\rangle)]$. Density of $\mathcal{D}$ gives (c).
+
+\emph{(c)$\Rightarrow$(a):} $\E[\langle D(FG),u\rangle] = \E[FG\delta_X(u)]$. By (c): $\delta_X(Gu) = G\delta_X(u)-\langle DG,u\rangle$. Then $\E[FG\delta_X(u)] = \E[F(\delta_X(Gu)+\langle DG,u\rangle)] = \E[\langle DF,Gu\rangle]+\E[F\langle DG,u\rangle] = \E[\langle GDF+FDG,u\rangle]$. Uniqueness gives $D(FG) = GDF+FDG$.
+\end{proof}
+
+\subsection{The cylindrical reduction principle}
+
+\begin{definition}[Cylindrical structure]\label{def:cyl}
+$(\delta_X,\HX)$ admits a \emph{cylindrical structure} if there exist coordinates $(\xi_i)$ and representers $\kappa_i \in L^2(\Omega;\HX)$ such that $\mathcal{C} = \{f(\xi_1,\ldots,\xi_n) : f \in C_b^\infty\}$ is dense in $\dom(D_X)$ (graph norm) and satisfies the IBP:
+\begin{equation}\label{eq:IBP_abstract}
+\E[F\delta_X(u)] = \sum_{i=1}^n\E[\partial_if(\xi)\langle\kappa_i,u\rangle_{\HX}].
+\end{equation}
+Representers may be deterministic or random.
+\end{definition}
+
+\begin{theorem}[Cylindrical reduction]\label{thm:cylred}
+Cylindrical structure implies: (a) $D_XF = \sum_i\partial_if(\xi)\kappa_i$ on $\mathcal{C}$; (b) Leibniz on $\mathcal{C}$; (c) Leibniz on $\mathbb{D}^{1,4}\cap L^4(\Omega)$, where $\mathbb{D}^{1,4} := \overline{\mathcal{C}}^{\|\cdot\|_{1,4}}$ with $\|F\|_{1,4}^4 := \E[|F|^4]+\E[\|D_XF\|^4_{\HX}]$.
+\end{theorem}
+
+\begin{proof}
+\emph{(a)} Comparing~\eqref{eq:IBP_abstract} with $\E[F\delta_X(u)] = \E[\langle D_XF,u\rangle]$ and using uniqueness.
+
+\emph{(b)} For $F = f(\xi)$, $G = g(\eta)$ in $\mathcal{C}$, combine coordinates: $FG = (fg)(\zeta)$. By (a) and the ordinary product rule for partial derivatives: $D_X(FG) = \sum_j\partial_j(fg)(\zeta)\kappa_{\zeta_j} = \sum_j(f\partial_jg+g\partial_jf)\kappa_{\zeta_j} = FD_XG+GD_XF$.
+
+\emph{(c)} We use the following closure argument. Take $F_n \to F$, $G_n \to G$ in $\mathbb{D}^{1,4}$ with $F_n,G_n \in \mathcal{C}$. In particular, $F_n \to F$ in $L^4$, $D_XF_n \to D_XF$ in $L^4(\Omega;\HX)$, and similarly for $G_n$. By (b): $D_X(F_nG_n) = F_nD_XG_n+G_nD_XF_n$. 
+
+\emph{Left side:} $F_nG_n \to FG$ in $L^2$ by H\"older ($L^4 \times L^4 \hookrightarrow L^2$). The derivative $D_X(F_nG_n) = F_nD_XG_n+G_nD_XF_n$ converges in $L^2(\Omega;\HX)$ by the right-side estimate below.
+
+\emph{Right side:} $\|F_nD_XG_n - FD_XG\|_{L^2(\Omega;\HX)} \le \|F_n-F\|_{L^4}\|D_XG_n\|_{L^4(\Omega;\HX)} + \|F\|_{L^4}\|D_XG_n-D_XG\|_{L^4(\Omega;\HX)}$. Both terms converge to zero: the first by $F_n \to F$ in $L^4$ and $\sup_n\|D_XG_n\|_{L^4(\Omega;\HX)} < \infty$ (convergent sequences are bounded); the second by $D_XG_n \to D_XG$ in $L^4(\Omega;\HX)$. Similarly for $G_nD_XF_n$. Closedness (Proposition~\ref{prop:intrinsic}(b)) gives $D_X(FG) = FD_XG+GD_XF$.
+\end{proof}
+
+\begin{remark}\label{rem:cyl_meaning}
+The closure argument in step (c) is standard functional analysis. The content of the theorem is not the closure but the \emph{criterion}: it reduces the process-dependent question ``does $D_X$ satisfy Leibniz?'' to the structural question ``does $(\delta_X, \HX)$ admit a cylindrical structure?'' This is a nontrivial condition. Gaussian processes satisfy it via Cameron--Martin quasi-invariance (Theorem~\ref{thm:leib_gauss}). Stochastic volatility martingales satisfy it only with random representers (Theorem~\ref{thm:leib_sv}), and the obstruction (Theorem~\ref{thm:obstr}) proves deterministic representers are impossible. Jump processes fail the standard Leibniz criterion entirely---the finite-difference operator derivative satisfies a nonlinear product rule, not reducible to cylindrical differentiation; the structural reasons for this failure are developed in~\cite{Fontes2026Banach}. The theorem organizes this classification.
+
+Cylindrical reduction is sufficient for Leibniz, not necessary. Whether a converse holds---whether every process satisfying Leibniz admits some cylindrical structure---is an open question. The known examples suggest this may be true, but we do not prove it.
+\end{remark}
+
+\subsection{Verification: Gaussian processes}
+
+\begin{theorem}[Leibniz for Gaussian Volterra]\label{thm:leib_gauss}
+For a Gaussian Volterra process $X$ with Cameron--Martin space $\HX$, Leibniz holds on $\mathbb{D}^{1,4}(\Omega)$. (In the Gaussian setting, the Meyer inequalities ensure $\mathbb{D}^{1,4} = \mathbb{D}^{1,2}\cap L^4$, so this is equivalent to the natural domain.)
+\end{theorem}
+
+\begin{proof}
+Instance of Theorem~\ref{thm:cylred}: $\xi_i = X_{t_i}$, deterministic $\kappa_i = k_{t_i}$. Density: \cite[Lemma 1.2.1]{Nualart2006}. IBP: Cameron--Martin quasi-invariance~\cite[Proposition 1.3.3]{Nualart2006}.
+\end{proof}
+
+
+\subsection{Independence of conditions}
+
+FBM with $H \neq 1/2$ satisfies Leibniz (Gaussian) but violates isometry. This demonstrates:
+
+\begin{proposition}\label{prop:indep}
+Isometry and Leibniz are logically independent conditions.
+\end{proposition}
+
+\begin{proof}
+\emph{Leibniz without isometry:} Fractional Brownian motion with $H \neq 1/2$ satisfies Leibniz (Theorem~\ref{thm:leib_gauss}) but the Skorokhod isometry has a nonzero trace correction~\cite[Proposition 1.3.5]{Decreusefond1999}, so Condition~\ref{cond:iso} fails.
+
+\emph{Isometry without Leibniz:} Jump processes (e.g., the compensated Poisson process) satisfy the isometry exactly but the finite-difference operator derivative satisfies only a \emph{nonlinear} product rule with correction term $D_JF \cdot D_JG \neq 0$---not the standard Leibniz rule. This structural obstruction, which prevents the one-parameter factorization from accommodating jump processes, is analyzed in detail in~\cite{Fontes2026Banach}.
+\end{proof}
+
+
+%=============================================================================
+\section{The It\^o Formula}\label{sec:ito}
+%=============================================================================
+
+When Leibniz holds, the factorization yields an It\^o-type change-of-variables formula. The correction term emerges from the product rule for divergences, not from pathwise quadratic variation.
+
+\subsection{Definitions}
+
+\begin{definition}[Intrinsic bracket]\label{def:bracket}
+$\langle Y\rangle_t^{(D,\Pi)} := \int_0^t\|\Pi DY_s\|^2_{\mathcal{H}}\,ds$.
+\end{definition}
+
+For Brownian motion ($H = 1/2$), $\Pi DB_s = 1$ and $\langle B\rangle_t^{(D,\Pi)} = t$. For fBM with $H \in (0,1)$, $H \neq 1/2$, $\langle\BH\rangle_t^{(D,\Pi)} = t^{2H}$ (Lemma~\ref{lem:bracket_fbm}).
+
+\begin{definition}[$(D,\delta,\Pi)$-It\^o process]\label{def:ito_proc}
+$Y$ is a $(D,\delta,\Pi)$-It\^o process if $Y$ is $L^2$-continuous, $Y_t \in \dom(D)$, and $Y_t = Y_0+\int_0^ta_s\,ds+\delta(\Pi DY\cdot\mathbf{1}_{[0,t]})$.
+\end{definition}
+
+\subsection{Product rule for divergences}
+
+\begin{lemma}[Product rule]\label{lem:prod_rule}
+Under Leibniz, for $F \in \dom(D)\cap L^\infty$ and $u \in \dom(\delta)$ with $\|DF\|_{\mathcal{H}}\,\|u\|_{\mathcal{H}} \in L^2(\Omega)$ and $Fu \in \dom(\delta)$:
+\begin{equation}\label{eq:prod_rule}
+\delta(Fu) = F\delta(u) - \langle DF, u\rangle_{\mathcal{H}}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Equivalent to Theorem~\ref{thm:equiv}(c). Self-contained: for $G \in \dom(D)\cap L^\infty$, $\E[G\delta(Fu)] = \E[\langle DG,Fu\rangle] = \E[F\langle DG,u\rangle] = \E[\langle D(FG)-GDF,u\rangle]$ (Leibniz) $= \E[FG\delta(u)]-\E[G\langle DF,u\rangle] = \E[G(F\delta(u)-\langle DF,u\rangle)]$. Density gives~\eqref{eq:prod_rule}.
+\end{proof}
+
+\begin{proposition}[Domain criterion for product rule]\label{prop:domain}
+Let $F \in \dom(D)\cap L^\infty(\Omega)$ and $u \in \dom(\delta)$ with $\|DF\|_{\mathcal{H}}\,\|u\|_{\mathcal{H}} \in L^2(\Omega)$. Then $Fu \in \dom(\delta)$, and $\delta(Fu) = F\delta(u) - \langle DF, u\rangle_{\mathcal{H}}$.
+\end{proposition}
+
+\begin{proof}
+Define $\xi := F\delta(u) - \langle DF, u\rangle_{\mathcal{H}}$. Since $F \in L^\infty$ and $\delta(u) \in L^2(\Omega)$: $F\delta(u) \in L^2(\Omega)$. For the inner product term: $|\langle DF, u\rangle_{\mathcal{H}}| \le \|DF\|_{\mathcal{H}}\,\|u\|_{\mathcal{H}} \in L^2(\Omega)$ by hypothesis. Thus $\xi \in L^2(\Omega)$.
+
+We verify $\xi$ satisfies the adjoint relation. For $G \in \dom(D) \cap L^\infty$, Leibniz gives $D(GF) = GDF + FDG$. Then:
+\begin{align*}
+\E[\langle DG, Fu\rangle_{\mathcal{H}}] &= \E[\langle D(GF) - GDF,\, u\rangle_{\mathcal{H}}] \\
+&= \E[\langle D(GF), u\rangle_{\mathcal{H}}] - \E[G\langle DF, u\rangle_{\mathcal{H}}] \\
+&= \E[GF\,\delta(u)] - \E[G\langle DF, u\rangle_{\mathcal{H}}] = \E[G\xi].
+\end{align*}
+Since $\E[\langle DG, Fu\rangle_{\mathcal{H}}] = \E[G\xi]$ for all $G \in \dom(D)\cap L^\infty$ (dense in $L^2$): $\delta(Fu) = \xi$.
+\end{proof}
+
+\begin{remark}\label{rem:domain}
+In all applications of the product rule in this paper, $F = \varphi'(Y_s)$ with $\varphi \in C_b^3$, so $F \in L^\infty$ and $\|DF\|_{\mathcal{H}} = \|\varphi''(Y_s)\|\,\|DY_s\|_{\mathcal{H}} \le \|\varphi''\|_\infty\|DY_s\|_{\mathcal{H}} \in L^2(\Omega)$. The integrability condition $\|DF\|_{\mathcal{H}}\,\|u\|_{\mathcal{H}} \in L^2(\Omega)$ then holds by Cauchy--Schwarz whenever $u \in L^2(\Omega;\mathcal{H})$.
+\end{remark}
+
+\begin{lemma}[Orthogonal projection identity]\label{lem:orth}
+$\Pi$ self-adjoint idempotent $\Rightarrow$ $\langle v, \Pi v\rangle = \|\Pi v\|^2$.
+\end{lemma}
+
+\begin{proof}
+$\langle v,\Pi v\rangle = \langle\Pi v+(I-\Pi)v,\Pi v\rangle = \|\Pi v\|^2+\langle(I-\Pi)v,\Pi v\rangle$. Cross term: $\langle(I-\Pi)v,\Pi v\rangle = \langle v,(I-\Pi)\Pi v\rangle = \langle v,(\Pi-\Pi^2)v\rangle = 0$.
+\end{proof}
+
+
+\subsection{Skorokhod isometry with controlled remainder}
+
+The key technical estimate for the It\^o formula is the following $L^2$-isometry for adapted Skorokhod integrals over short intervals.
+
+\begin{lemma}[Skorokhod isometry with remainder]\label{lem:skor_iso}
+Let $(D,\delta,\Pi)$ satisfy the framework axioms and let $u \in \dom(\delta)$ be adapted ($\Pi u_s = u_s$ for a.e.~$s$) with $s \mapsto u_s$ H\"older continuous in $L^2(\Omega;\mathcal{H})$ with exponent $\gamma > 0$. Then for any interval $[t_k, t_{k+1}]$ with $\Delta t := t_{k+1}-t_k$:
+\begin{equation}\label{eq:skor_iso}
+\E\bigl[|\delta(u\cdot\mathbf{1}_{(t_k,t_{k+1}]})|^2\bigr] = \E\!\left[\int_{t_k}^{t_{k+1}}\|u_s\|^2_{\mathcal{H}}\,ds\right] + O((\Delta t)^{2\gamma+1}).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For Volterra Gaussian processes satisfying the Decreusefond--\"Ust\"unel conditions, this is~\cite[Proposition 1.3.5]{Decreusefond1999}: the Skorokhod isometry $\E[|\delta_X(v)|^2] = \E[\|v\|^2_{\HX}] + \E[\|D_Xv\|^2_{\text{HS}}]$ has a trace correction (the Hilbert--Schmidt norm of $D_Xv$) that is $O((\Delta t)^{2\gamma+1})$ when $v$ is supported on $[t_k,t_{k+1}]$ and H\"older continuous. The remainder estimate uses the kernel bounds from Definition~\ref{def:DU}:
+\[
+|\text{correction}| \le C\int_{t_k}^{t_{k+1}}\int_{t_k}^{t_{k+1}} \E[\|u_r-u_s\|^2_{\mathcal{H}}]\,|r-s|^{2H-1}\,dr\,ds = O((\Delta t)^{2\gamma+2H}).
+\]
+Since $\gamma \ge H$ (H\"older regularity of adapted projections), $2\gamma+2H \ge 2\gamma+1$.
+
+In the abstract setting, we take~\eqref{eq:skor_iso} as an assumption: it holds whenever the stochastic integral is ``approximately isometric'' on adapted processes over short intervals, with a controlled trace correction. This is the content of the isometry condition (Condition~\ref{cond:iso}) refined to short intervals.
+\end{proof}
+
+\begin{remark}\label{rem:skor_scope}
+Lemma~\ref{lem:skor_iso} is verified explicitly for Volterra Gaussian processes (using kernel estimates from~\cite{Decreusefond1999}) and for It\^o integrals of continuous martingales (where the isometry is exact with zero remainder). For other process classes, the estimate may require additional assumptions.
+\end{remark}
+
+
+\subsection{The It\^o formula}
+
+\begin{theorem}[Operator It\^o formula]\label{thm:ito}
+Let $(D,\delta,\Pi)$ satisfy the chain rule with $\Pi$ orthogonal, and assume the factorization $(\Id - \E)G = \delta(\Pi DG)$ holds for all $G$ in a class containing $\varphi(Y_t)$. Let $Y$ be a $(D,\delta,\Pi)$-It\^o process with $t\mapsto\Pi DY_t$ H\"older continuous in $L^2(\Omega;\mathcal{H})$, and assume:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item the Skorokhod isometry with remainder (Lemma~\ref{lem:skor_iso}) holds;
+\item the stochastic Fubini interchange: for adapted $u \in \dom(\delta)$, $\int_0^t\delta(\Pi D(\varphi'(Y_s)a_s)\cdot\mathbf{1}_{[0,s]})\,ds$ can be expressed as a single divergence term that is absorbed by the product rule (Lemma~\ref{lem:prod_rule}).
+\end{enumerate}
+Then for $\varphi \in C_b^3(\R)$:
+\begin{equation}\label{eq:ito}
+\varphi(Y_t) = \varphi(Y_0)+\int_0^t\varphi'(Y_s)a_s\,ds+\delta(\varphi'(Y)\Pi DY\cdot\mathbf{1}_{[0,t]})+\frac{1}{2}\int_0^t\varphi''(Y_s)\|\Pi DY_s\|^2\,ds.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+We verify~\eqref{eq:ito} by the Clark--Ocone strategy, following~\cite[Theorem 4.1]{Decreusefond1999}.
+
+\emph{Step 1: Chain rule.} By Theorem~\ref{thm:equiv}(b): $D(\varphi(Y_t)) = \varphi'(Y_t)DY_t$.
+
+\emph{Step 2: Apply Clark--Ocone.} The factorization gives
+\[
+\varphi(Y_t) = \E[\varphi(Y_t)] + \delta(\Pi D(\varphi(Y_t))\cdot\mathbf{1}_{[0,t]}) = \E[\varphi(Y_t)] + \delta(\varphi'(Y)\Pi DY\cdot\mathbf{1}_{[0,t]}).
+\]
+It remains to compute $\E[\varphi(Y_t)]$.
+
+\emph{Step 3: Expectation computation.} Define $m(t) := \E[\varphi(Y_t)]$. We claim
+\begin{equation}\label{eq:mean_ode}
+m'(t) = \E[\varphi'(Y_t)a_t] + \tfrac{1}{2}\E[\varphi''(Y_t)\|\Pi DY_t\|^2].
+\end{equation}
+To see this, write $\varphi(Y_{t+h})-\varphi(Y_t) = \varphi'(Y_t)\Delta Y + \frac{1}{2}\varphi''(Y_t)(\Delta Y)^2+O(|\Delta Y|^3)$ where $\Delta Y = Y_{t+h}-Y_t = \int_t^{t+h}a_s\,ds + \delta(\Pi DY\cdot\mathbf{1}_{(t,t+h]})$. Taking expectations: $\E[\Delta Y] = \int_t^{t+h}\E[a_s]\,ds$ (the $\delta$-term is centered). For the quadratic: $\E[(\Delta Y)^2] = \E[\delta(\Pi DY\cdot\mathbf{1}_{(t,t+h]})^2]+O(h^2)$. The Skorokhod/It\^o isometry gives $\E[\delta(\Pi DY\cdot\mathbf{1}_{(t,t+h]})^2] = \E[\int_t^{t+h}\|\Pi DY_s\|^2\,ds]+O(h^{1+\gamma})$ (trace correction). The cross terms are $O(h^{3/2})$. So:
+\[
+\E[\varphi(Y_{t+h})]-\E[\varphi(Y_t)] = \int_t^{t+h}\E[\varphi'(Y_t)a_s]\,ds + \frac{1}{2}\int_t^{t+h}\E[\varphi''(Y_t)\|\Pi DY_s\|^2]\,ds + o(h).
+\]
+Dividing by $h$ and sending $h\to 0$ gives~\eqref{eq:mean_ode}. Integrating:
+\begin{equation}\label{eq:mean_formula}
+\E[\varphi(Y_t)] = \varphi(Y_0) + \int_0^t\E[\varphi'(Y_s)a_s]\,ds + \frac{1}{2}\int_0^t\E[\varphi''(Y_s)\|\Pi DY_s\|^2]\,ds.
+\end{equation}
+
+\emph{Step 4: Promotion to $L^2(\Omega)$.} Steps 2--3 yield
+\begin{align*}
+\varphi(Y_t) &= \varphi(Y_0)+\int_0^t\E[\varphi'(Y_s)a_s]\,ds+\frac{1}{2}\int_0^t\E[\varphi''(Y_s)\|\Pi DY_s\|^2]\,ds + \delta(\varphi'(Y)\Pi DY\cdot\mathbf{1}_{[0,t]}).
+\end{align*}
+To obtain~\eqref{eq:ito}, we must replace $\E[\varphi'(Y_s)a_s]$ by $\varphi'(Y_s)a_s$ and $\E[\varphi''(Y_s)\|\Pi DY_s\|^2]$ by $\varphi''(Y_s)\|\Pi DY_s\|^2$ inside the deterministic integrals. This promotion from mean to pathwise integrands is achieved by the product rule (Lemma~\ref{lem:prod_rule}): applying Clark--Ocone to $\varphi'(Y_s)a_s$ gives $\varphi'(Y_s)a_s = \E[\varphi'(Y_s)a_s]+\delta(\Pi D(\varphi'(Y_s)a_s)\cdot\mathbf{1}_{[0,s]})$, and when this is integrated over~$s$, the divergence terms contribute to $\delta(\varphi'(Y)\Pi DY\cdot\mathbf{1}_{[0,t]})$ via the stochastic Fubini theorem and the product rule. The same mechanism handles the $\varphi''$ term. The full algebra requires: (i)~applicability of a stochastic Fubini theorem to interchange the $ds$-integral and $\delta$, and (ii)~the product rule to absorb the resulting terms.
+
+For Gaussian Volterra processes satisfying the Decreusefond--\"Ust\"unel conditions, this computation is carried out completely in~\cite[Theorem 4.1]{Decreusefond1999}. For continuous martingales with bounded stochastic integrals and PRP (the standard It\^o setting), the formula reduces to the classical It\^o formula, where the promotion step is trivial because the stochastic integral is already an It\^o integral. In the abstract setting, the formula holds whenever the stochastic Fubini interchange is justified---a condition that depends on the specific process class and is verified in the examples of Section~\ref{sec:ex}.
+\end{proof}
+
+\begin{remark}[Status of the abstract formula]\label{rem:ito_status}
+The operator It\^o formula~\eqref{eq:ito} is established above through a proof strategy that separates into three fully rigorous components (chain rule, factorization, mean computation) and one process-dependent verification step (promotion via stochastic Fubini). The abstract theorem is thus a \emph{template}: it identifies the correct formula and the mechanism producing the $\frac{1}{2}\varphi''$ correction, but its full validity in any specific setting requires checking the Fubini interchange. This interchange is verified for all process classes treated in this paper: Gaussian Volterra processes~\cite{Decreusefond1999} and standard It\^o martingales.
+\end{remark}
+
+\begin{remark}[Role of the product rule]\label{rem:prod_role}
+The $\frac{1}{2}\varphi''$ correction arises from the product rule $\delta(\varphi'u) = \varphi'\delta(u)-\varphi''\langle DY,u\rangle$ applied to the stochastic integral of $\varphi'(Y)\Pi DY$. This is the structural mechanism that generalizes It\^o's formula beyond semimartingales: wherever the product rule holds (i.e., wherever Leibniz holds), the correction term exists.
+\end{remark}
+
+\begin{theorem}[Multivariate extension]\label{thm:multi_ito}
+Under the same assumptions as Theorem~\ref{thm:ito} applied componentwise (chain rule, factorization, Skorokhod isometry, and stochastic Fubini for each $Y^i$), let $Y = (Y^1,\ldots,Y^n)$ with each $Y^i$ a $(D,\delta,\Pi)$-It\^o process. Then for $\varphi \in C_b^3(\R^n)$:
+\begin{align}
+\varphi(Y_t) &= \varphi(Y_0)+\sum_i\int_0^t\partial_i\varphi(Y_s)a^i_s\,ds+\sum_i\delta(\partial_i\varphi(Y)\Pi DY^i\cdot\mathbf{1}_{[0,t]}) \notag\\
+&\quad+\frac{1}{2}\sum_{i,j}\int_0^t\partial_i\partial_j\varphi(Y_s)\langle\Pi DY^i_s,\Pi DY^j_s\rangle_{\mathcal{H}}\,ds. \label{eq:multi_ito}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+\emph{Step 1: Multivariate chain rule.} By Theorem~\ref{thm:equiv}(b) applied to $\varphi \in C_b^3(\R^n)$: $D(\varphi(Y_t)) = \sum_i\partial_i\varphi(Y_t)\,DY^i_t$.
+
+\emph{Step 2: Factorization.} Applying the Clark--Ocone factorization to $\varphi(Y_t)$:
+\[
+\varphi(Y_t) = \E[\varphi(Y_t)] + \sum_i\delta(\partial_i\varphi(Y)\,\Pi DY^i\cdot\mathbf{1}_{[0,t]}).
+\]
+
+\emph{Step 3: Expectation.} The multivariate Taylor expansion gives $\varphi(Y_{t+h})-\varphi(Y_t) = \sum_i\partial_i\varphi(Y_t)\Delta Y^i + \frac{1}{2}\sum_{i,j}\partial_i\partial_j\varphi(Y_t)\Delta Y^i\Delta Y^j + O(|\Delta Y|^3)$. Taking expectations and using the Skorokhod isometry componentwise: $\E[\Delta Y^i\Delta Y^j] = \E[\int_t^{t+h}\langle\Pi DY^i_s,\Pi DY^j_s\rangle_{\mathcal{H}}\,ds] + O(h^{1+\gamma})$. This yields the multivariate analog of~\eqref{eq:mean_ode}: $m'(t) = \sum_i\E[\partial_i\varphi(Y_t)a^i_t] + \frac{1}{2}\sum_{i,j}\E[\partial_i\partial_j\varphi(Y_t)\langle\Pi DY^i_t,\Pi DY^j_t\rangle_{\mathcal{H}}]$.
+
+\emph{Step 4: Promotion.} The same stochastic Fubini/product-rule mechanism as in Theorem~\ref{thm:ito} promotes the expected-value integrands to random integrands, applied to each component $Y^i$ and each cross term $(Y^i,Y^j)$. The assumptions of Theorem~\ref{thm:ito}(i)--(ii) are required componentwise.
+\end{proof}
+
+\begin{example}[fBM bracket]\label{ex:fbm_bracket_ex}
+For $\BH$ with $H \in (0,1)$, $H \neq 1/2$: $\Pi_HD_H{\BH}_s = k_s$. The intrinsic bracket $\langle\BH\rangle_t^{(D,\Pi)} = \int_0^t\|k_s\|^2_{\HH}\,ds$. Using the known relation $\|k_s\|^2_{\HH} = 2Hs^{2H-1}$~\cite{Decreusefond1999}: $\langle\BH\rangle_t^{(D,\Pi)} = t^{2H}$. Theorem~\ref{thm:ito} with $\varphi(x) = x^2$: $({\BH}_t)^2 = 2\delta_H(\BH\cdot k\cdot\mathbf{1}_{[0,t]})+t^{2H}$. This holds for all $H$; no restriction to $H < 1/2$ is needed.
+\end{example}
+
+\section{Stochastic Volatility Martingales}\label{sec:sv}
+%=============================================================================
+
+For non-Gaussian continuous martingales with stochastic volatility, the cylindrical reduction of Theorem~\ref{thm:cylred} with deterministic representers is impossible (Section~\ref{sec:obstr}). This section proves that the Leibniz rule nevertheless holds via \emph{random} cylindrical reduction, using the Malliavin calculus of the underlying Brownian driver. The dependence on the Brownian structure is not a deficiency but a necessity: the obstruction result proves that no intrinsic deterministic mechanism can succeed.
+
+
+\subsection{Setup and assumptions}
+
+\begin{assumption}\label{ass:sv}
+Let $W = (W_t)_{t \in [0,T]}$ be standard Brownian motion on $(\Omega, \mathcal{F}, P)$ and $\sigma = (\sigma_t)_{t \in [0,T]}$ a progressively measurable process satisfying:
+\begin{enumerate}[label=(\roman*)]
+\item \textup{Positivity:} $\sigma_t > 0$ a.s.\ for a.e.\ $t \in [0,T]$.
+\item \textup{Square-integrability:} $\E[\int_0^T \sigma_t^2\,dt] < \infty$.
+\item \textup{Malliavin differentiability:} $\sigma_t \in \mathbb{D}^{1,2}$ for a.e.~$t$, with $\E[\int_0^T \|D^W \sigma_t\|^2_{L^2[0,T]}\,dt] < \infty$.
+\end{enumerate}
+Define the continuous martingale $M_t := \int_0^t \sigma_s\,dW_s$.
+\end{assumption}
+
+These conditions are satisfied when $\sigma$ solves an SDE $d\sigma_t = b(\sigma_t)\,dt + a(\sigma_t)\,dW_t$ with smooth bounded coefficients and $\sigma_0 > 0$. They also hold for many stochastic volatility models in mathematical finance (Hull--White, Heston with bounded parameters, SABR).
+
+
+\subsection{Two energy spaces}
+
+The distinction between predictable and extended energy spaces is the key to the resolution.
+
+\begin{definition}[Predictable energy space]\label{def:HM_pred}
+$\HM^{\mathrm{pred}} := L^2([0,T] \times \Omega,\, \mathcal{P},\, d\langle M\rangle \otimes dP) = L^2([0,T] \times \Omega,\, \mathcal{P},\, \sigma_t^2\,dt \otimes dP)$. The stochastic integral is the It\^o integral: $\delta_M^{\mathrm{pred}}(u) = \int_0^T u_t\,dM_t = \int_0^T u_t \sigma_t\,dW_t$. This integral is isometric on $\HM^{\mathrm{pred}}$: $\E[|\delta_M^{\mathrm{pred}}(u)|^2] = \E[\int_0^T u_t^2 \sigma_t^2\,dt] = \|u\|^2_{\HM^{\mathrm{pred}}}$.
+\end{definition}
+
+\begin{definition}[Extended energy space]\label{def:HM_ext}
+$\HM^{\mathrm{ext}} := L^2([0,T] \times \Omega,\, \mathcal{B}[0,T] \otimes \mathcal{F},\, \sigma_t^2\,dt \otimes dP)$. This includes non-predictable processes. The extended stochastic integral is defined via the Brownian Skorokhod integral:
+\[
+\delta_M^{\mathrm{ext}}(u) := \delta^W(u \cdot \sigma),
+\]
+where $\delta^W$ is the Skorokhod integral with respect to~$W$.
+\end{definition}
+
+\begin{remark}[Compatibility]\label{rem:compat}
+For predictable~$u$, $\delta^W(u\sigma) = \int_0^T u_t\sigma_t\,dW_t = \int_0^T u_t\,dM_t = \delta_M^{\mathrm{pred}}(u)$: the extended integral agrees with the It\^o integral on predictable processes. The extension matters for non-predictable integrands, which appear when taking Malliavin derivatives.
+\end{remark}
+
+
+\subsection{Identification of the operator derivative}
+
+\begin{proposition}[Explicit form of $D_M$]\label{prop:DM}
+For $F \in \mathbb{D}^{1,2}$, the operator derivative on $\HM^{\mathrm{ext}}$ satisfies
+\begin{equation}\label{eq:DM}
+(D_M F)_t = \frac{D_t^W F}{\sigma_t} \qquad dt \otimes dP\text{-a.e.}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For $u \in \dom(\delta_M^{\mathrm{ext}})$ with $u\sigma \in \dom(\delta^W)$, the Malliavin adjoint relation~\cite[Proposition 1.3.1]{Nualart2006} gives:
+\begin{align*}
+\E[F \cdot \delta_M^{\mathrm{ext}}(u)] &= \E[F \cdot \delta^W(u\sigma)] \\
+&= \E\!\left[\int_0^T D_t^W F \cdot u_t \sigma_t\,dt\right] \\
+&= \E\!\left[\int_0^T \frac{D_t^W F}{\sigma_t} \cdot u_t \cdot \sigma_t^2\,dt\right] \\
+&= \E\!\left[\left\langle \frac{D^W F}{\sigma},\, u \right\rangle_{\HM^{\mathrm{ext}}}\right],
+\end{align*}
+where the second equality requires $F \in \mathbb{D}^{1,2}$ and $u\sigma \in \dom(\delta^W)$, and the third is algebraic rearrangement. By uniqueness of the adjoint representer: $D_M F = D^W F / \sigma$.
+
+\emph{Domain verification:} $D_M F \in L^2(\Omega; \HM^{\mathrm{ext}})$ requires $\E[\int_0^T |D_t^W F / \sigma_t|^2 \sigma_t^2\,dt] = \E[\int_0^T |D_t^W F|^2\,dt] < \infty$, which is exactly $F \in \mathbb{D}^{1,2}$. The $\sigma_t^2$ in the extended norm cancels the $\sigma_t^{-2}$ from dividing by $\sigma_t$.
+\end{proof}
+
+
+\subsection{The Leibniz rule}
+
+\begin{theorem}[Leibniz for stochastic volatility]\label{thm:leib_sv}
+Under Assumption~\ref{ass:sv}, $D_M$ on $\HM^{\mathrm{ext}}$ satisfies the Leibniz rule: for $F, G \in \mathbb{D}^{1,4}(\Omega)$,
+\begin{equation}\label{eq:leib_sv}
+D_M(FG) = F\,D_M G + G\,D_M F \qquad \text{in } L^2(\Omega; \HM^{\mathrm{ext}}).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+\emph{Step 1: Smooth Brownian cylindricals.} For $F, G \in \mathcal{S}_W := \{f(W_{t_1}, \ldots, W_{t_n}) : f \in C_b^\infty\}$, the Malliavin derivative satisfies Leibniz: $D_t^W(FG) = F D_t^W G + G D_t^W F$ (Theorem~\ref{thm:leib_gauss}, Gaussianity of $W$). Dividing both sides by $\sigma_t > 0$:
+\[
+(D_M(FG))_t = \frac{D_t^W(FG)}{\sigma_t} = \frac{F D_t^W G + G D_t^W F}{\sigma_t} = F \cdot \frac{D_t^W G}{\sigma_t} + G \cdot \frac{D_t^W F}{\sigma_t} = F(D_M G)_t + G(D_M F)_t.
+\]
+This is valid pointwise in $t$ and $\omega$, hence in $L^2(\Omega; \HM^{\mathrm{ext}})$.
+
+\emph{Step 2: Density and closure.} $\mathcal{S}_W$ is dense in $\mathbb{D}^{1,p}$ for all $p \ge 1$~\cite[Lemma 1.2.1]{Nualart2006}. Take $F_n \to F$ and $G_n \to G$ in $\mathbb{D}^{1,4}$ with $F_n, G_n \in \mathcal{S}_W$. In particular, $F_n \to F$ in $L^4$, $D^WF_n \to D^WF$ in $L^4(\Omega;L^2[0,T])$, and similarly for $G_n$.
+
+\emph{Left side convergence:} $F_nG_n \to FG$ in $L^2$ by H\"older. For the derivative: $\|D^W(F_nG_n) - D^W(FG)\|_{L^2(\Omega;L^2)} \le \|(F_n-F)D^WG_n\|_{L^2} + \|F(D^WG_n-D^WG)\|_{L^2} + \|(G_n-G)D^WF_n\|_{L^2} + \|G(D^WF_n-D^WF)\|_{L^2}$. Each term converges to zero by H\"older ($L^4 \times L^4 \hookrightarrow L^2$) and $\mathbb{D}^{1,4}$-convergence. Consequently $D_M(F_nG_n) \to D_M(FG)$ in $L^2(\Omega;\HM^{\mathrm{ext}})$.
+
+\emph{Right side convergence:} $\|F_n D_M G_n + G_n D_M F_n - F D_M G - G D_M F\|_{L^2(\Omega;\HM^{\mathrm{ext}})} \le \|(F_n - F) D_M G_n\| + \|F(D_M G_n - D_M G)\| + \|(G_n - G) D_M F_n\| + \|G(D_M F_n - D_M F)\|$. Each term $\to 0$ by H\"older and $\mathbb{D}^{1,4}$-convergence.
+
+Since Leibniz holds for each $n$ and both sides converge, the identity holds in the limit.
+\end{proof}
+
+
+\subsection{The random cylindrical structure}
+
+\begin{proposition}[Random cylindrical reduction]\label{prop:rand_cyl}
+$(\delta_M^{\mathrm{ext}}, \HM^{\mathrm{ext}})$ satisfies the integration-by-parts formula~\eqref{eq:IBP_abstract} on smooth $M$-cylindricals $\mathcal{C}_M := \{f(M_{t_1},\ldots,M_{t_n}) : f \in C_b^\infty\}$ with random representers
+\begin{equation}\label{eq:kappa}
+\kappa_i(t) := \frac{D_t^W(M_{t_i})}{\sigma_t} = \mathbf{1}_{[0,t_i]}(t) + \frac{1}{\sigma_t}\int_t^{t_i} D_t^W(\sigma_s)\,dW_s.
+\end{equation}
+When $\sigma$ is deterministic, $D_t^W(\sigma_s) = 0$ for all $s$, so $\kappa_i(t) = \mathbf{1}_{[0,t_i]}(t)$: the standard deterministic representers.
+\end{proposition}
+
+\begin{proof}
+\emph{Representer computation.} Since $\sigma$ is adapted, $M_{t_i} = \int_0^{t_i}\sigma_s\,dW_s$ is an It\^o integral. The Malliavin derivative of an It\^o integral with adapted, Malliavin-differentiable integrand~\cite[Proposition 1.3.3]{Nualart2006} gives, for $t \le t_i$:
+\[
+D_t^W(M_{t_i}) = \sigma_t + \int_t^{t_i} D_t^W(\sigma_s)\,dW_s.
+\]
+The integral $\int_t^{t_i} D_t^W(\sigma_s)\,dW_s$ is a genuine It\^o integral: by Corollary~\ref{cor:adapted_mall}, $s \mapsto D_t^W(\sigma_s)$ is $\mathcal{F}_s$-adapted for $s \ge t$ (since each $\sigma_s$ is $\mathcal{F}_s$-measurable and $\sigma_s \in \mathbb{D}^{1,2}$). Also by Corollary~\ref{cor:adapted_mall}, $D_t^W(\sigma_s) = 0$ for $s < t$, so the lower limit is $t$ rather than~$0$. For $t > t_i$: $D_t^W(M_{t_i}) = 0$ by Lemma~\ref{lem:meas_pres} (since $M_{t_i}$ is $\mathcal{F}_{t_i}$-measurable). Dividing by $\sigma_t > 0$:
+\[
+\kappa_i(t) = \frac{D_t^W(M_{t_i})}{\sigma_t} = \mathbf{1}_{[0,t_i]}(t) + \frac{1}{\sigma_t}\int_t^{t_i} D_t^W(\sigma_s)\,dW_s.
+\]
+
+\emph{IBP verification.} For $F = f(M_{t_1}, \ldots, M_{t_n})$ with $f \in C_b^\infty$, Proposition~\ref{prop:DM} and the chain rule for $D^W$ give $D_M F = \sum_i \partial_i f(M_{t_1}, \ldots, M_{t_n}) \cdot \kappa_i$. The adjoint relation~\eqref{eq:adj} then becomes~\eqref{eq:IBP_abstract}.
+\end{proof}
+
+\begin{remark}[Density of smooth $M$-cylindricals]\label{rem:density_cyl}
+For the cylindrical structure to satisfy Definition~\ref{def:cyl} in full, one needs $\mathcal{C}_M$ to be dense in $\dom(D_M)$ under graph norm. The Leibniz theorem (Theorem~\ref{thm:leib_sv}) does \emph{not} depend on this density claim: it is proved directly via Brownian cylindricals $\mathcal{S}_W$, which are dense in $\mathbb{D}^{1,4}$ by~\cite[Lemma 1.2.1]{Nualart2006}. The density of $\mathcal{C}_M$ itself requires a separate argument. Since $D_M$-graph-norm convergence is equivalent to $\mathbb{D}^{1,2}$-convergence (the $\sigma_t^2$ in the extended norm cancels with $\sigma_t^{-2}$ from the derivative), the question reduces to showing that smooth $M$-cylindricals approximate $\mathcal{F}_T^M$-measurable elements of $\mathbb{D}^{1,2}$ in the $\mathbb{D}^{1,2}$-norm. This holds when the coordinates $\{M_{t_i}\}$ generate $\mathcal{F}_T^M$ (which they do), and when the chain rule through $\kappa_i$ controls the graph norm (which it does by~\eqref{eq:kappa}), but a fully detailed verification---including approximation of the Malliavin derivative on the sub-$\sigma$-algebra $\mathcal{F}_T^M$---would require tracking the dependence of $D^W(M_{t_i})$ on $\sigma$ more carefully than the standard Gaussian density lemma provides. We therefore present the cylindrical structure as a representation mechanism (explaining \emph{why} Leibniz holds and how the representers carry the volatility sensitivity), not as the logical foundation of the Leibniz proof.
+\end{remark}
+
+\begin{remark}[The mechanism]\label{rem:mechanism}
+The randomness in $\kappa_i$ comes from $D_t^W(\sigma_s)$: the sensitivity of the volatility process to perturbation of the underlying Brownian motion. This information compensates for stochastic volatility in the product rule. The obstruction (Section~\ref{sec:obstr}) shows deterministic representers cannot carry it; random representers inherited from the underlying Brownian motion can.
+\end{remark}
+
+\begin{remark}[Relationship between operators]\label{rem:two_ops}
+The predictable energy space gives $D_M^{\mathrm{pred}} F = \E[D_t^W F / \sigma_t \mid \mathcal{F}_t]$: the conditional expectation of the extended derivative. The extended space gives $D_M^{\mathrm{ext}} F = D_t^W F / \sigma_t$: the full derivative without conditioning. The relationship is
+\[
+D_M^{\mathrm{pred}} = \Pi_M \circ D_M^{\mathrm{ext}},
+\]
+where $\Pi_M$ is the predictable projection onto $\HM^{\mathrm{pred}} \subset \HM^{\mathrm{ext}}$. The representation layer uses $D_M^{\mathrm{pred}}$ (via the Clark--Ocone factorization); the calculus layer requires $D_M^{\mathrm{ext}}$ (where Leibniz holds).
+\end{remark}
+
+
+%=============================================================================
+\section{The Obstruction and Classification}\label{sec:obstr}
+%=============================================================================
+
+
+\subsection{Obstruction for deterministic cylindrical reduction}
+
+The proof of the obstruction theorem relies on the following technical lemma, which packages the exact Itô-integral structure needed.
+
+\begin{lemma}[Malliavin sensitivity as an It\^o integral]\label{lem:mall_ito}
+Under Assumption~\ref{ass:sv}, for a.e.\ $t \in [0,T]$ and each $t_j \in [0,T]$ with $t \le t_j$:
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item The Malliavin derivative of $M_{t_j}$ satisfies
+\begin{equation}\label{eq:mall_ito}
+D_t^W(M_{t_j}) = \sigma_t + \int_t^{t_j} D_t^W(\sigma_s)\,dW_s.
+\end{equation}
+\item The process $s \mapsto D_t^W(\sigma_s)\,\mathbf{1}_{[t,t_j]}(s)$ is $\mathcal{F}_s$-adapted and square-integrable:
+\[
+\E\!\left[\int_t^{t_j} |D_t^W(\sigma_s)|^2\,ds\right] < \infty.
+\]
+\item The integral $\int_t^{t_j} D_t^W(\sigma_s)\,dW_s$ is a genuine It\^o integral, hence centered:
+\[
+\E\!\left[\int_t^{t_j} D_t^W(\sigma_s)\,dW_s\right] = 0.
+\]
+\item The It\^o isometry applies:
+\[
+\E\!\left[\left(\int_t^{t_j} D_t^W(\sigma_s)\,dW_s\right)^{\!2}\right] = \E\!\left[\int_t^{t_j} |D_t^W(\sigma_s)|^2\,ds\right].
+\]
+\end{enumerate}
+For $t > t_j$: $D_t^W(M_{t_j}) = 0$.
+\end{lemma}
+
+\begin{proof}
+\emph{(a)} Since $\sigma$ is progressively measurable, $M_{t_j} = \int_0^{t_j}\sigma_s\,dW_s$ is an It\^o integral with adapted, Malliavin-differentiable integrand. The formula~\eqref{eq:mall_ito} is~\cite[Proposition 1.3.3]{Nualart2006}. The lower limit is~$t$ (not $0$) because $D_t^W(\sigma_s) = 0$ for $s < t$ by Corollary~\ref{cor:adapted_mall}. For $t > t_j$: $D_t^W(M_{t_j}) = 0$ by Lemma~\ref{lem:meas_pres}.
+
+\emph{(b)} \emph{Adaptedness:} By Corollary~\ref{cor:adapted_mall}, since $\sigma_s$ is $\mathcal{F}_s$-measurable and $\sigma_s \in \mathbb{D}^{1,2}$ for a.e.~$s$, the process $s \mapsto D_t^W(\sigma_s)$ is $\mathcal{F}_s$-measurable for every~$t$, hence $\mathcal{F}_s$-adapted for $s \ge t$.
+
+\emph{Square-integrability:} Assumption~\ref{ass:sv}(iii) gives $\E[\int_0^T\|D^W\sigma_s\|^2_{L^2[0,T]}\,ds] = \E[\int_0^T\int_0^T|D_r^W(\sigma_s)|^2\,dr\,ds] < \infty$. By Fubini (relabeling $r \to t$): $\int_0^T\E[\int_0^T|D_t^W(\sigma_s)|^2\,ds]\,dt < \infty$, so for a.e.~$t \in [0,T]$, $\E[\int_0^T|D_t^W(\sigma_s)|^2\,ds] < \infty$. Restricting to $[t,t_j] \subset [0,T]$ gives the claim.
+
+\emph{(c)--(d)} Parts (a) and (b) together verify that $\int_t^{t_j} D_t^W(\sigma_s)\,dW_s$ is a well-defined It\^o integral for a.e.~$t$. Centering and the It\^o isometry are standard properties of It\^o integrals.
+\end{proof}
+
+\begin{theorem}[Obstruction]\label{thm:obstr}
+Under Assumption~\ref{ass:sv}, suppose $(\delta_M^{\mathrm{ext}}, \HM^{\mathrm{ext}})$ admits a cylindrical structure (Definition~\ref{def:cyl}) with coordinates $\xi_i = M_{t_i}$ and \emph{deterministic} representers $\kappa_i$. Then $\sigma$ is deterministic, and consequently $\langle M\rangle_T = \int_0^T \sigma_t^2\,dt$ is deterministic.
+\end{theorem}
+
+\begin{proof}
+The proof proceeds through four steps, each with explicit measure-theoretic justification.
+
+\emph{Step 1: Representer identity in $L^2(\Omega;\HM^{\mathrm{ext}})$.} By part~(a) of Theorem~\ref{thm:cylred}, $D_M F = \sum_i \partial_i f(\xi)\,\kappa_i$ on cylindricals. Taking $\xi_1 = M_{t_j}$, $f(x) = x$:
+\begin{equation}\label{eq:obstr_deriv}
+D_M(M_{t_j}) = \kappa_j \qquad \text{in } L^2(\Omega;\HM^{\mathrm{ext}}).
+\end{equation}
+Separately, Proposition~\ref{prop:DM} and Lemma~\ref{lem:mall_ito}(a) give, for a.e.\ $t \le t_j$:
+\begin{equation}\label{eq:obstr_explicit}
+(D_M(M_{t_j}))_t = 1 + \frac{1}{\sigma_t}\int_t^{t_j} D_t^W(\sigma_s)\,dW_s.
+\end{equation}
+
+\emph{Step 2: Extraction of a.e.-$t$ representative.} Both~\eqref{eq:obstr_deriv} and~\eqref{eq:obstr_explicit} represent $(D_M(M_{t_j}))_t$ as elements of the Hilbert space $L^2(\Omega;\HM^{\mathrm{ext}})$, where $\HM^{\mathrm{ext}} = L^2([0,T]\times\Omega,\,\sigma_t^2\,dt\otimes dP)$. The norm in this space is $\E[\int_0^T|(\cdot)_t|^2\sigma_t^2\,dt]$, so equality in $L^2(\Omega;\HM^{\mathrm{ext}})$ means
+\[
+(D_M(M_{t_j}))_t = \kappa_j(t) \qquad \text{for } dt\otimes dP\text{-a.e.\ } (t,\omega).
+\]
+By Lemma~\ref{lem:mall_ito}(b), the right side of~\eqref{eq:obstr_explicit} is well-defined (as an It\^o integral) for all $t$ in a measurable set $\mathcal{T} \subset [0,t_j]$ with $|\mathcal{T}| = t_j$ (full Lebesgue measure). Combining: for a.e.\ $t \in \mathcal{T}$,
+\begin{equation}\label{eq:obstr_combined}
+\kappa_j(t) = 1 + \frac{1}{\sigma_t}\int_t^{t_j} D_t^W(\sigma_s)\,dW_s \qquad \text{a.s.}
+\end{equation}
+
+\emph{Step 3: Centering forces $\kappa_j(t) = 1$.} Fix any $t \in \mathcal{T}$ and suppose $\kappa_j(t)$ is deterministic. Define $c_j(t) := \kappa_j(t) - 1 \in \R$. Then~\eqref{eq:obstr_combined} gives
+\begin{equation}\label{eq:obstr_ito}
+\int_t^{t_j} D_t^W(\sigma_s)\,dW_s = c_j(t)\,\sigma_t \qquad \text{a.s.}
+\end{equation}
+The left side is an It\^o integral by Lemma~\ref{lem:mall_ito}(b)--(c), hence centered: $\E[\int_t^{t_j} D_t^W(\sigma_s)\,dW_s] = 0$ (Lemma~\ref{lem:mall_ito}(c)). Taking expectations of~\eqref{eq:obstr_ito}:
+\[
+0 = c_j(t)\,\E[\sigma_t].
+\]
+Since $\sigma_t > 0$ a.s., we have $\E[\sigma_t] > 0$. Therefore $c_j(t) = 0$. This holds for a.e.\ $t \in \mathcal{T}$.
+
+\emph{Step 4: It\^o isometry and Fubini conclude.} From $c_j(t) = 0$ and~\eqref{eq:obstr_ito}: for a.e.\ $t \le t_j$,
+\[
+\int_t^{t_j} D_t^W(\sigma_s)\,dW_s = 0 \qquad \text{a.s.}
+\]
+Applying Lemma~\ref{lem:mall_ito}(d) for each such~$t$:
+\begin{equation}\label{eq:obstr_vanish}
+\E\!\left[\int_t^{t_j} |D_t^W(\sigma_s)|^2\,ds\right] = 0 \qquad \text{for a.e.\ } t \le t_j.
+\end{equation}
+Since the integrand is nonneg\-ative: $D_t^W(\sigma_s) = 0$ for $ds\otimes dP$-a.e.\ $(s,\omega)$ with $s \in [t, t_j]$, for each such~$t$.
+
+Taking $t_j = T$ and integrating~\eqref{eq:obstr_vanish} over $t \in [0,T]$:
+\[
+\int_0^T\E\!\left[\int_t^T |D_t^W(\sigma_s)|^2\,ds\right]dt = 0.
+\]
+By Fubini--Tonelli, $\E[\int_0^T\int_t^T |D_t^W(\sigma_s)|^2\,ds\,dt] = 0$, hence $D_t^W(\sigma_s) = 0$ for $ds\otimes dt\otimes dP$-a.e.\ $(s,t,\omega)$ on the triangle $\{0 \le t \le s \le T\}$. For $s < t$: $D_t^W(\sigma_s) = 0$ by Corollary~\ref{cor:adapted_mall}. Thus $D_t^W(\sigma_s) = 0$ for $ds\otimes dt\otimes dP$-a.e.\ $(s,t,\omega)$ on $[0,T]^2$. By~\cite[Proposition 1.2.1]{Nualart2006}, $\sigma_s$ is deterministic for a.e.~$s$.
+\end{proof}
+
+\begin{remark}[Strength of the conclusion]\label{rem:obstr_strength}
+Unlike the weaker conclusion ``$\langle M\rangle_T$ is deterministic,'' Theorem~\ref{thm:obstr} establishes that $\sigma$ itself must be deterministic. This is the sharpest form: deterministic total quadratic variation does not by itself imply deterministic volatility (many random $\sigma$ can integrate to the same constant), but deterministic \emph{representers} force not just the bracket but the volatility to be non-random.
+\end{remark}
+
+\begin{remark}[Why the extended space]\label{rem:obstr_extended}
+The theorem is stated for the extended energy space $\HM^{\mathrm{ext}}$, where the operator derivative $D_M = D^W/\sigma$ is explicitly computable and not restricted to predictable processes. On the predictable space $\HM^{\mathrm{pred}}$, the cylindrical structure with deterministic representers already fails at the level of first-order coordinates: $(D_M^{\mathrm{pred}}(M_T))_t$ is predictable (hence $\mathcal{F}_t$-measurable), but the Gaussian cylindrical formula $\kappa_1(t) \cdot \partial_1 f(M_T)$ would produce a non-predictable process for any $f$ with $f'(M_T) \neq \E[f'(M_T)\mid\mathcal{F}_t]$. The obstruction is thus more natural on the extended space, where the Leibniz rule actually holds (Theorem~\ref{thm:leib_sv}).
+\end{remark}
+
+\begin{remark}[Classification on Brownian filtrations]\label{rem:obstr_interp}
+The \emph{representation layer} requires no Gaussianity or Leibniz assumption and holds universally for any continuous $L^2$-martingale with PRP (Section~\ref{sec:rep}).
+
+For the \emph{calculus layer}, the martingale representation theorem reduces the Brownian-filtration case to $M = \int\sigma\,dW$. The cylindrical-reduction mechanisms are then:
+\begin{center}
+\emph{$\sigma$ deterministic $\Leftrightarrow$ deterministic representers work $\Leftrightarrow$ Gaussian mechanism.}\\
+\emph{$\sigma$ stochastic $\Rightarrow$ only random representers work $\Rightarrow$ Brownian Malliavin mechanism.}
+\end{center}
+On exotic (non-Brownian) filtrations~\cite{Tsirelson1975}, the representation layer still applies but neither cylindrical-reduction mechanism is available, and we conjecture Leibniz fails (Conjecture~\ref{conj:wild}).
+\end{remark}
+
+
+\subsection{Classification}
+
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Process class} & \textbf{Intrinsic} & \textbf{Isometry} & \textbf{Leibniz} \\
+\midrule
+Brownian motion ($H = 1/2$) & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+Fractional BM ($H \neq 1/2$) & $\checkmark$ & $\times$ & $\checkmark$ \\
+Stochastic vol.\ martingale & $\checkmark$ & $\checkmark$ & $\checkmark^{*}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\smallskip\noindent
+${}^{*}$On $\HM^{\mathrm{ext}}$ (Theorem~\ref{thm:leib_sv}), not $\HM^{\mathrm{pred}}$.
+
+\medskip
+
+\emph{Reading the table.} Intrinsic properties (linearity, closedness, annihilation of constants) are universal, forced by the Riesz representation theorem. The \emph{representation layer}---Clark--Ocone, GKW projection, variance identity---is equally universal: it applies to every row of the table without assuming isometry or Leibniz. The table classifies the \emph{calculus layer}: isometry and Leibniz are logically independent conditions. Fractional BM with $H \neq 1/2$ witnesses Leibniz without isometry. The stochastic volatility row---previously unresolved---is settled by Theorem~\ref{thm:leib_sv}: Leibniz holds on the extended space, with the mechanism depending on the Brownian driver (the obstruction theorem proves deterministic representers force $\sigma$ to be deterministic, confirming this dependence is necessary).
+
+\begin{remark}[Jump processes]
+This classification covers continuous processes on Hilbert energy spaces. Jump processes satisfy isometry but obey a nonlinear product rule $D_J(FG) = FD_JG + GD_JF + D_JF \cdot D_JG$; the structural reasons for this failure and its resolution via Banach energy spaces are developed in~\cite{Fontes2026Banach}.
+\end{remark}
+
+
+\subsection{Independence of Leibniz and PRP}
+
+The operator derivative framework reveals that Leibniz and PRP are independent:
+\begin{enumerate}[label=(\roman*), leftmargin=2em]
+\item \emph{PRP $+$ Leibniz:} Brownian motion.
+\item \emph{No PRP $+$ Leibniz:} fBM with $H \neq 1/2$ (Gaussian, not a semimartingale).
+\item \emph{PRP $+$ Leibniz on extended space:} Stochastic volatility martingales (PRP holds on Brownian filtration; Leibniz requires $\HM^{\mathrm{ext}}$).
+\end{enumerate}
+
+
+\subsection{The frontier}
+
+For continuous martingales on Brownian filtrations, the cylindrical-reduction mechanisms are fully determined: Theorem~\ref{thm:leib_sv} establishes Leibniz via random representers for all $M = \int\sigma\,dW$, and Theorem~\ref{thm:obstr} shows deterministic representers force $\sigma$ to be deterministic. The remaining open case is:
+
+\begin{quote}
+\emph{Open Problem:} Does the Leibniz rule hold for the operator derivative of continuous martingales on filtrations not generated by Brownian motion?
+\end{quote}
+
+On \emph{exotic filtrations}---such as those constructed by Tsirelson~\cite{Tsirelson1975}---continuous martingales exist that are not driven by any Brownian motion. For such processes, the \emph{representation layer} still applies: if PRP holds, the operator derivative provides Clark--Ocone integrands and variance identities. But for the \emph{calculus layer}, neither the deterministic cylindrical reduction (obstructed) nor the random cylindrical reduction (which requires a Brownian driver) is available. This question connects the operator derivative framework to deep questions in filtration theory studied by Tsirelson, Vershik, and \'Emery. We conjecture that the answer is negative in general:
+
+\begin{conjecture}\label{conj:wild}
+There exists a continuous process~$X$ with closed, centered stochastic integral such that the Leibniz defect $\Lambda(F,G) := D_X(FG) - F\,D_X G - G\,D_X F$ is nonzero and cannot be expressed as a polynomial in $F, G, D_X F, D_X G$. Candidates include continuous martingales on Tsirelson-type filtrations or processes whose quadratic variation is a singular function of time.
+\end{conjecture}
+
+
+%=============================================================================
+\section{Examples}\label{sec:ex}
+%=============================================================================
+
+Three worked computations follow.
+
+
+\subsection{Brownian motion: $B_T^2$}
+
+Let $B$ be standard Brownian motion, $\varphi(x) = x^2$. Since $B$ is a $(D,\delta,\Pi)$-It\^o process with $a = 0$ and $\Pi DB_s = 1$:
+
+\emph{Step 1: Derivative.} $(D_B(B_T))_t = 1$ for $t \le T$ (since $B_T = \delta_B(\mathbf{1}_{[0,T]})$, the isometry gives $D_B(B_T) = \mathbf{1}_{[0,T]}$). By Leibniz: $D_B(B_T^2) = 2B_T \cdot D_B(B_T)$, so $(D_B(B_T^2))_t = 2B_T$ for $t \le T$.
+
+\emph{Correction:} the operator derivative gives the \emph{predictable} integrand. By Clark--Ocone: $(D_B(B_T^2))_t = \E[2B_T \mid \mathcal{F}_t] = 2B_t$.
+
+\emph{Step 2: Representation.} $B_T^2 = \E[B_T^2] + \int_0^T 2B_t\,dB_t = T + 2\int_0^T B_t\,dB_t$.
+
+\emph{Step 3: It\^o formula verification.} Theorem~\ref{thm:ito} with $Y = B$, $a = 0$, $\varphi(x) = x^2$: $B_T^2 = 0 + 0 + \delta(\varphi'(B)\Pi DB\cdot\mathbf{1}_{[0,T]}) + \frac{1}{2}\int_0^T \varphi''(B_s)\,\|\Pi DB_s\|^2\,ds = 2\int_0^T B_t\,dB_t + \frac{1}{2}\cdot 2\int_0^T 1\,ds = 2\int_0^T B_t\,dB_t + T$. \checkmark
+
+
+
+\subsection{Fractional BM: $(B^H_t)^2$ for general $H$}\label{ssec:ex_fbm}
+
+Let $\BH$ be fBM with $H \in (0,1)$, $H \neq 1/2$, $\varphi(x) = x^2$.
+
+\emph{Step 1: Derivative of the process.} By Corollary~\ref{cor:DX_process}: $D_H{\BH}_s = k_s \in {\HH}_s$. Since $k_s$ is already adapted: $\Pi_Hk_s = k_s$.
+
+\emph{Step 2: Leibniz.} By Theorem~\ref{thm:leib_gauss} (Gaussianity): $D_H(({\BH}_t)^2) = 2{\BH}_t\cdot D_H{\BH}_t = 2{\BH}_t\cdot k_t$.
+
+\emph{Step 3: It\^o formula.} Theorem~\ref{thm:ito} with $Y = \BH$, $a = 0$, $\varphi(x) = x^2$, $\varphi' = 2x$, $\varphi'' = 2$:
+\begin{equation}\label{eq:fbm_ito}
+({\BH}_t)^2 = 2\delta_H(\BH\cdot k\cdot\mathbf{1}_{[0,t]}) + \int_0^t\|k_s\|^2_{\HH}\,ds.
+\end{equation}
+
+\emph{Step 4: Bracket computation.} By Lemma~\ref{lem:bracket_fbm} (with the normalization of Definition~\ref{def:normalized_CM}):
+\[
+\int_0^t\|k_s\|^2_{\HH}\,ds = \int_0^t 2Hs^{2H-1}\,ds = t^{2H}.
+\]
+
+\emph{Step 5: Final formula.}
+\begin{equation}\label{eq:fbm_final}
+({\BH}_t)^2 = 2\delta_H(\BH\cdot k\cdot\mathbf{1}_{[0,t]}) + t^{2H}.
+\end{equation}
+
+\emph{Verification.} The classical Skorokhod integral representation~\cite[Example 4.2]{Decreusefond1999} is $({\BH}_t)^2 = 2\delta_H(\BH\cdot k\cdot\mathbf{1}_{[0,t]})+t^{2H}$, in exact agreement with~\eqref{eq:fbm_final}. For $H = 1/4$: $({\BH}_t)^2 = 2\delta_H(\BH\cdot k\cdot\mathbf{1}_{[0,t]})+t^{1/2}$.
+
+\emph{Key observation.} The intrinsic bracket $t^{2H}$ serves as the analog of quadratic variation despite the fact that fBM is not a semimartingale for $H \neq 1/2$ and its pathwise quadratic variation is $+\infty$ (for $H < 1/2$) or $0$ (for $H > 1/2$). The operator framework substitutes Hilbert space geometry for pathwise accumulation: $\|k_s\|^2_{\HH}$ is a norm in the Cameron--Martin space, not a limit of squared increments. For semimartingales, the intrinsic bracket recovers the classical quadratic variation; for non-semimartingales, it provides a well-defined $L^2$ replacement. The formula~\eqref{eq:fbm_final} holds uniformly for all $H \in (0,1)$, $H \neq 1/2$.
+
+
+\subsection{Stochastic volatility: $M_T^2$}
+
+Let $M_t = \int_0^t \sigma_s\,dW_s$ with stochastic $\sigma$ satisfying Assumption~\ref{ass:sv}.
+
+\emph{Step 1: Derivative of $M_T$.} By Proposition~\ref{prop:DM}: $(D_M(M_T))_t = D_t^W(M_T)/\sigma_t$. Since $\sigma$ is adapted, the Malliavin derivative of the It\^o integral~\cite[Proposition 1.3.3]{Nualart2006} gives:
+\[
+D_t^W(M_T) = D_t^W\!\left(\int_0^T \sigma_s\,dW_s\right) = \sigma_t + \int_t^T D_t^W(\sigma_s)\,dW_s.
+\]
+So:
+\begin{equation}\label{eq:DMT}
+(D_M(M_T))_t = 1 + \frac{1}{\sigma_t}\int_t^T D_t^W(\sigma_s)\,dW_s.
+\end{equation}
+The term $\sigma_t^{-1}\int_t^T D_t^W(\sigma_s)\,dW_s$ is the ``volatility sensitivity'': how $M_T$ responds, beyond the direct Brownian contribution, to perturbations of $W$ at time~$t$ through the stochastic volatility channel.
+
+\emph{Step 2: Leibniz.} By Theorem~\ref{thm:leib_sv}: $D_M(M_T^2) = 2M_T \cdot D_M(M_T)$, so
+\[
+(D_M(M_T^2))_t = 2M_T\!\left(1 + \frac{1}{\sigma_t}\int_t^T D_t^W(\sigma_s)\,dW_s\right).
+\]
+
+\emph{Step 3: Deterministic volatility limit.} When $\sigma$ is deterministic: $D_t^W(\sigma_s) = 0$ for all $s$. Then $(D_M(M_T))_t = 1$ and $(D_M(M_T^2))_t = 2M_T$: the Gaussian case. The representation becomes $M_T^2 = \langle M \rangle_T + 2\int_0^T M_t\,dM_t$, recovering the classical It\^o formula.
+
+\emph{Step 4: Random representers.} The representer for the coordinate $\xi_1 = M_T$ is $\kappa_1(t) = (D_M(M_T))_t$, which equals~\eqref{eq:DMT}---a random process carrying the volatility sensitivity. This is the random cylindrical structure of Proposition~\ref{prop:rand_cyl} in action.
+
+
+%=============================================================================
+\section{Open Problems}\label{sec:open}
+%=============================================================================
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2em]
+
+\item \textbf{Exotic filtrations.} Does the Leibniz rule hold for continuous martingales on filtrations not generated by Brownian motion? This is the open frontier identified in Section~\ref{sec:obstr}. On Tsirelson-type filtrations, continuous martingales exist without a driving Brownian motion, and the random cylindrical reduction of Theorem~\ref{thm:leib_sv} is unavailable.
+
+\item \textbf{Higher-order calculus.} For $H \le 1/3$, rough differential equations require iterated integrals and L\'evy areas, not just the Gubinelli derivative. Can the operator framework extend to an iterated hierarchy $(D, D^2, \ldots)$ to handle higher-order rough path dynamics?
+
+\item \textbf{The Leibniz defect in the continuous setting.} Conjecture~\ref{conj:wild}: does there exist a \emph{continuous} process where the Leibniz defect $\Lambda(F,G) = D_X(FG) - FD_XG - GD_XF$ is ``wild''---not expressible as a polynomial in $D_XF, D_XG$? Candidates include continuous martingales on Tsirelson-type filtrations or processes whose quadratic variation is a singular function of time. (For jump processes, the Leibniz defect is quadratic---$D_JF \cdot D_JG$---but this reflects a deeper representability obstruction analyzed in~\cite{Fontes2026Banach}.)
+
+\item \textbf{Optimal regularity.} What are the sharp regularity conditions on $t \mapsto \Pi DY_t$ for the It\^o formula (Theorem~\ref{thm:ito})? The current H\"older assumption ($\gamma > 0$) is likely not optimal.
+
+\item \textbf{Banach energy spaces and jump processes.} The extension to jump processes via two-parameter factorization on Banach energy spaces is developed in~\cite{Fontes2026Banach}; sharp conditions for that factorization remain open.
+
+\item \textbf{SPDEs and Banach-valued processes.} Mild solutions of stochastic partial differential equations with rough space-time noise involve Banach-space-valued processes. Does the operator factorization extend to this setting, and does the cylindrical reduction principle carry over?
+
+\item \textbf{Connections to regularity structures.} The intrinsic bracket and Gubinelli identification suggest links to Hairer's theory of regularity structures~\cite{Hairer2014}. The operator derivative provides a canonical ``model'' in the $L^2$-sense; making the connection to the pathwise theory precise is an open problem.
+
+\end{enumerate}
+
+
+%=============================================================================
+\section*{Acknowledgments}
+%=============================================================================
+
+AI tools were used as interactive assistants for drafting, reorganizing, and generating mathematical arguments, under the author's direction. The author is responsible for all mathematical content and any errors.
+
+
+%=============================================================================
+\begin{thebibliography}{15}
+
+\bibitem{Decreusefond1999}
+L.~Decreusefond and A.-S.~\"Ust\"unel.
+\newblock Stochastic analysis of the fractional Brownian motion.
+\newblock \emph{Potential Analysis}, 10:177--214, 1999.
+
+\bibitem{DiNunno2009}
+G.~Di~Nunno, B.~{\O}ksendal, and F.~Proske.
+\newblock \emph{Malliavin Calculus for L\'evy Processes with Applications to Finance}.
+\newblock Springer, 2009.
+
+\bibitem{Fontes2026Banach}
+R.~Fontes.
+\newblock Operator factorization on Banach energy spaces: the jump process obstruction and two-parameter resolution.
+\newblock Zenodo, 2026. \texttt{doi:10.5281/zenodo.18625711}.
+
+\bibitem{Fontes2026PDE_gen}
+R.~Fontes.
+\newblock PDE generators from energy space structure in Feynman--Kac theory.
+\newblock Preprint, SSRN:6151566, 2026.
+
+\bibitem{Gubinelli2004}
+M.~Gubinelli.
+\newblock Controlling rough paths.
+\newblock \emph{J.\ Funct.\ Anal.}, 216(1):86--140, 2004.
+
+\bibitem{Hairer2014}
+M.~Hairer.
+\newblock A theory of regularity structures.
+\newblock \emph{Invent.\ Math.}, 198(2):269--504, 2014.
+
+\bibitem{MaRockner1992}
+Z.-M.~Ma and M.~R\"ockner.
+\newblock \emph{Introduction to the Theory of (Non-Symmetric) Dirichlet Forms}.
+\newblock Springer, 1992.
+
+\bibitem{Nualart2006}
+D.~Nualart.
+\newblock \emph{The Malliavin Calculus and Related Topics}.
+\newblock Springer, 2nd edition, 2006.
+
+\bibitem{ReedSimon1980}
+M.~Reed and B.~Simon.
+\newblock \emph{Methods of Modern Mathematical Physics I: Functional Analysis}.
+\newblock Academic Press, revised edition, 1980.
+
+\bibitem{Kato1995}
+T.~Kato.
+\newblock \emph{Perturbation Theory for Linear Operators}.
+\newblock Springer, reprint of the 1980 edition, 1995.
+
+\bibitem{Privault2009}
+N.~Privault.
+\newblock \emph{Stochastic Analysis in Discrete and Continuous Settings}.
+\newblock Springer, Lecture Notes in Mathematics 1982, 2009.
+
+\bibitem{Stroock1988}
+D.~Stroock.
+\newblock Homogeneous chaos revisited.
+\newblock \emph{S\'em.\ Probab.\ XXII}, Lecture Notes in Math.\ 1321, Springer, 1988.
+
+\bibitem{Tsirelson1975}
+B.~Tsirelson.
+\newblock An example of a stochastic differential equation having no strong solution.
+\newblock \emph{Theory Probab.\ Appl.}, 20(2):427--430, 1975.
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,3313 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{booktabs}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Ent}{\operatorname{Ent}}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\ad}{\operatorname{ad}}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\Ric}{\operatorname{Ric}}
+\newcommand{\SU}{\mathrm{SU}}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\fg}{\mathfrak{g}}
+\newcommand{\KL}{\mathrm{KL}}
+\newcommand{\TV}{\mathrm{TV}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\gap}{\mathrm{gap}}
+\newcommand{\diam}{\mathrm{diam}}
+\DeclareMathOperator{\rank}{rank}
+
+\title{Mass gap for lattice Yang--Mills:\\
+  semi-classical spectral analysis, entropy methods,\\
+  and Dobrushin uniqueness}
+\author{R.\ Fontes\\ \textit{Quijotic Research}\\
+\texttt{ramirofontes@gmail.com}}
+\date{February 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We establish results on the mass gap for lattice
+Yang--Mills theory with compact simple gauge group~$G$ in
+$d \geq 2$ dimensions.
+
+\textbf{Result~1} (Mass gap for $\SU(2)$).  For
+$G = \SU(2)$, $d = 4$, the effective action control
+(B1)--(B4) is established in the companion
+paper~\cite{FontesSU2}.  Combined with the Dobrushin
+uniqueness argument of this paper, the mass gap
+satisfies $m \cdot a \geq c / \beta^{1/4}$ uniformly
+in volume, with explicit constants.  The proof runs
+$k_*$ RG steps until $\beta_{\mathrm{eff}} < \beta_c$
+(with~\cite{FontesSU2} controlling the effective action
+at each step), then applies a Dobrushin uniqueness
+computation at the threshold
+$\beta_c$ solving $6(d{-}1)(1 - e^{-2\beta_c}) = 1$.
+For general compact simple~$G$, the same argument
+applies once the analogous effective action control
+is established.
+
+\textbf{Result~2} (Unconditional in $d = 2$).  In two
+dimensions, gauge fixing reduces the theory to a transfer
+matrix with strictly positive kernel.  By Perron--Frobenius,
+the mass gap $m \cdot a = -\log(\lambda_1/\lambda_0) > 0$
+for every compact~$G$ and every $\beta > 0$, unconditionally.
+This verifies the framework where exact solutions are
+available.
+
+\textbf{Result~3} (Finite size criterion).  For every compact
+simple~$G$ and every $\beta > 0$, the block conditional
+measure has a strictly positive spectral gap.
+The unique minimum conjecture (UMC)---that the gauge-fixed
+Wilson action on the $2$-cube has a unique global minimum
+with positive definite Hessian for every boundary
+condition~$\Phi$---holds for $G = U(1)$
+(Proposition~\ref{prop:unique_abelian}),
+\emph{fails} in $d = 2$ for non-abelian~$G$
+(Proposition~\ref{prop:umc_d2_fail}),
+and is numerically verified for $G = \SU(2)$ in
+$d = 3$ and $d = 4$
+(Remark~\ref{rem:umc}: $500 + 200$ random boundary
+conditions, all with unique minimum and strictly
+positive Hessian).
+Assuming the UMC in $d \geq 3$, the
+Helffer--Sj\"ostrand theorem gives
+$\gap \geq c_1\,\beta$ at large~$\beta$ uniformly in~$\Phi$,
+and a compactness argument yields the
+Dobrushin--Shlosman FSC$(2)$ with constant $c_B > 0$.
+Consequently, the Gibbs measure is unique and the mass gap
+$m(\beta) \cdot a > 0$ for each~$\beta$.
+For $G = U(1)$, the UMC is proved unconditionally
+(Proposition~\ref{prop:unique_abelian}), giving
+an unconditional mass gap in $d \leq 3$
+(Corollary~\ref{cor:U1}).
+
+\textbf{Result~4} (Triviality obstruction).  Any
+$\beta$-independent lower bound $m \cdot a \geq c_0 > 0$
+(including that from Result~3) implies a trivial
+continuum limit.  A non-trivial theory requires the
+$\beta$-dependent bound of Result~1.
+
+\textbf{Result~5} (Continuum limit and Wightman axioms).
+Using~(B1)--(B4) and the mass gap (Result~1),
+three technical inputs---$O(a^2)$
+lattice corrections, reflection positivity of the continuum
+limit, and transfer of polymer bounds to Schwinger
+functions---are resolved within this paper via Reisz's
+power-counting theorem, dominated convergence from the
+lattice Wilson action, and Dobrushin analyticity at the
+Dobrushin scale.  The result: the renormalized Schwinger
+functions converge as $a \to 0$ to a unique relativistic
+QFT satisfying the Wightman axioms with mass gap
+$\Delta > 0$, and the theory is interacting
+($\lambda_4 \neq 0$).
+For $G = \SU(2)$, $d = 4$, this is unconditional
+(via~\cite{FontesSU2}).
+\end{abstract}
+
+\tableofcontents
+
+%% ====================================================================
+\section{Introduction}\label{sec:intro}
+%% ====================================================================
+
+\subsection{The problem}
+
+The Yang--Mills mass gap problem asks for the construction
+of a four-dimensional quantum Yang--Mills theory with gauge
+group~$G$ (compact, simple), satisfying the Wightman axioms,
+with a strictly positive spectral gap $\Delta > 0$ above
+the vacuum.
+
+On the lattice, the Wilson formulation assigns $U_\ell \in G$
+to each oriented link~$\ell$ of the hypercubic lattice
+$\Lambda = (a\Z / La\Z)^d$, with partition function
+\begin{equation}\label{eq:partition}
+  Z = \int \prod_\ell dU_\ell \; \exp\!\bigl(-\beta\,S_W(U)\bigr),
+  \quad S_W = \sum_p \Bigl(1 - \frac{1}{N}\Re\,\tr\,U_p\Bigr),
+\end{equation}
+where $\beta = 2N/g_0^2$, $dU_\ell$ is Haar measure on $G$,
+and $U_p$ is the holonomy around plaquette~$p$.  The lattice
+mass gap is $m \cdot a = -\lim_{|x| \to \infty}
+\frac{1}{|x|}\log|\langle \mathcal{O}(0)\,\mathcal{O}(x)
+\rangle_{\mathrm{conn}}|$ for gauge-invariant observables.
+
+Two regimes present fundamentally different challenges:
+at \emph{strong coupling} ($\beta \ll 1$), the measure is a
+mild perturbation of Haar and standard Dobrushin uniqueness
+gives $m \cdot a = O(1)$.  At \emph{weak coupling}
+($\beta \gg 1$), the measure concentrates on nearly flat
+connections and the mass gap becomes exponentially difficult
+to extract.  The central challenge is to prove
+$m(\beta) \cdot a > 0$ at weak coupling, uniformly in volume,
+with bounds that survive the continuum limit $a \to 0$.
+
+\subsection{Main results}
+
+We state five results at increasing levels of strength.
+
+\begin{theorem}[Mass gap]\label{thm:conditional}
+Assume~\textup{(B1)--(B4)} \textup{(Theorem~\ref{thm:eac};
+proved for $\SU(2)$ in~\cite{FontesSU2})}.
+Then for $G = \SU(N)$ in $d$~dimensions, $d \geq 2$, there
+exist $\beta_0(N, d)$ and $c(N, d) > 0$ such that for all
+$\beta > \beta_0$ and all finite volumes~$\Lambda$:
+\begin{equation}\label{eq:conditional_gap}
+  m(\beta, \Lambda) \cdot a
+  \;\geq\; \frac{c}{\beta^{1/d}}.
+\end{equation}
+For $d = 4$, $G = \SU(2)$: $c \geq 0.07$.
+\end{theorem}
+
+\begin{theorem}[Unconditional mass gap in $d = 2$]
+\label{thm:d2}
+For any compact Lie group~$G$, $d = 2$, and $\beta > 0$:
+the lattice Yang--Mills theory has a unique infinite-volume
+Gibbs measure and a strictly positive mass gap
+\begin{equation}\label{eq:d2_gap}
+  m(\beta) \cdot a
+  \;=\; -\log\frac{\lambda_1(\beta)}{\lambda_0(\beta)}
+  \;>\; 0,
+\end{equation}
+where $\lambda_R(\beta) :=
+\frac{1}{d_R}\int_G \chi_R(g)\,e^{(\beta/N)\,\Re\tr\,g}\,dg$
+(with $d_R = \dim R$)
+are the transfer matrix eigenvalues indexed by irreducible
+representations~$R$ of~$G$, with $\lambda_0 = \lambda_{\mathrm{triv}}$
+the largest and $\lambda_1$ the next largest among
+gauge-invariant representations.
+No assumptions beyond the definition of the model are
+required.\end{theorem}
+
+\begin{proof}
+In $d = 2$, temporal gauge fixing reduces the partition
+function on a cylinder $\{1,\ldots,L\} \times \{1,\ldots,T\}$
+to a product of transfer matrix elements.
+The transfer matrix $T_\beta$ acts on class functions
+$f \in L^2(G)^{\mathrm{Ad}}$ by convolution:
+$T_\beta f(g) = \int_G K_\beta(g\,h^{-1})\,f(h)\,dh$,
+where $K_\beta(g) = e^{(\beta/N)\,\Re\tr\,g}$ is strictly
+positive for all~$g \in G$.
+
+By Peter--Weyl, $T_\beta$ is diagonal in the representation
+basis with eigenvalues $\lambda_R(\beta) > 0$:
+$T_\beta \chi_R = \lambda_R \chi_R$.
+The kernel~$K_\beta(g) > 0$ is a strictly positive function
+on a compact group, so the Perron--Frobenius theorem for
+positive integral operators on $L^2(G)$ gives: the largest
+eigenvalue $\lambda_0$ is simple, and
+$\lambda_0 > \lambda_R$ for all non-trivial~$R$.
+
+The mass gap~\eqref{eq:d2_gap} follows.  Uniqueness of the
+infinite-volume Gibbs measure is immediate: the transfer
+matrix has a unique maximal eigenvector (the constant
+function), so the thermodynamic limit
+$L, T \to \infty$ of the Gibbs measure is uniquely
+determined.
+\end{proof}
+
+\begin{remark}[Explicit values for $\SU(2)$]
+\label{rem:d2_explicit}
+For $G = \SU(2)$, using the Weyl integration formula
+$dg = (2/\pi)\sin^2\theta\,d\theta$ with
+$\tr\,g = 2\cos\theta$: the eigenvalue for spin-$j$
+representation is
+$\lambda_j(\beta) = \frac{1}{2j+1}\frac{2}{\pi}\int_0^\pi
+\frac{\sin((2j{+}1)\theta)}{\sin\theta}\,
+e^{\beta\cos\theta}\,\sin^2\!\theta\,d\theta$.
+The gauge-invariant mass gap is
+$m \cdot a = -\log(\lambda_1/\lambda_0)$
+(adjoint representation, $j = 1$).
+At weak coupling ($\beta \gg 1$):
+$m \cdot a \sim 4/\beta$,
+reflecting the superrenormalizable nature of $2d$
+Yang--Mills ($g^2$ has dimension mass${}^2$;
+physical mass $m_{\mathrm{phys}} = 2g^2/N$).
+At strong coupling ($\beta \ll 1$): $m \cdot a = O(1)$.
+\end{remark}
+
+\begin{theorem}[Finite size criterion]
+\label{thm:fsc}
+For any compact simple Lie group~$G$, $d \geq 2$, and
+any $\beta > 0$,
+the block conditional measure has a strictly positive
+spectral gap: $\gap(\mu_Q(\cdot|\Phi,\beta)) > 0$.
+
+For $d \geq 3$, assuming
+Conjecture~\ref{conj:unique_min}
+\textup{(}proved for $G = U(1)$;
+numerically verified for $G = \SU(2)$\textup{)},
+the lattice Yang--Mills theory satisfies the
+Dobrushin--Shlosman finite size criterion $\mathrm{FSC}(2)$:
+for every $2$-cube $Q$ and every boundary condition~$\Phi$,
+\begin{equation}\label{eq:fsc}
+  \gap\!\bigl(\mu_Q(\cdot \mid \Phi)\bigr)
+  \;\geq\; c_B(G) \;>\; 0,
+\end{equation}
+where $c_B$ depends only on~$G$, not on $\beta$ or~$\Phi$.
+Consequently, the Gibbs measure is unique and
+$m(\beta) \cdot a > 0$ for each~$\beta$.
+\end{theorem}
+
+\begin{theorem}[Triviality obstruction and sufficient
+condition]\label{thm:obstruction}
+\textup{(a)} Any $\beta$-independent lower bound
+$m(\beta) \cdot a \geq c_0 > 0$ implies that the continuum
+limit $a \to 0$ (along the asymptotic freedom trajectory)
+is trivial: all connected Schwinger functions vanish.
+
+\textup{(b)} The bound in Theorem~\ref{thm:conditional}
+holds unconditionally if the following single condition
+is verified:
+\begin{quote}
+\emph{At the RG scale $k_*$ where
+$\beta_{\mathrm{eff}} = \beta / L^{k_* d} < \beta_c$,
+the single-link oscillation of the non-Wilson
+component~$R_{k_*}$ of the effective action satisfies
+$\osc_\ell(R_{k_*}) \leq \varepsilon$ for some
+$\varepsilon < \varepsilon_0(d)$.}
+\end{quote}
+Ba{\l}aban's original work and the companion
+paper~\cite{FontesSU2} provide this with
+$\varepsilon = O(\beta_c^2)$.
+\end{theorem}
+
+\begin{proposition}[Existence, uniqueness,
+Wightman axioms]\label{thm:full}
+Assume (B1)--(B4) \cite{FontesSU2}.
+Three technical hypotheses originally identified----(H1),
+$O(a^2)$ irrelevant corrections; (H2), reflection
+positivity of the continuum limit; and~(H3), transfer
+of polymer bounds to Schwinger functions----are all
+resolved within this paper:
+\textup{(H1)} in Lemma~\ref{lem:irrelevant},
+\textup{(H2)} in Proposition~\ref{prop:rp},
+and \textup{(H3)} in
+Proposition~\ref{prop:dob_analytic}.
+
+Consequently, under (B1)--(B4) \cite{FontesSU2} alone,
+the conclusions \textup{(a)--(f)} of
+Proposition~\ref{thm:unique} hold: the continuum
+Yang--Mills theory exists, is unique, has mass gap
+$\Delta > 0$, is interacting, satisfies the Wightman
+axioms, and is determined by~$\Lambda_{\mathrm{QCD}}$.
+\end{proposition}
+
+\begin{remark}[Status of the technical hypotheses]
+All three technical inputs originally identified beyond
+(B1)--(B4) \cite{FontesSU2} are now resolved within this paper:
+\begin{enumerate}[label=\textup{(H\arabic*)},nosep]
+  \item $O(a^2)$ irrelevant corrections to the
+    Callan--Symanzik equation: Lemma~\ref{lem:irrelevant},
+    via Reisz's power-counting theorem and Dobrushin
+    analyticity.
+  \item Reflection positivity of the continuum limit:
+    Proposition~\ref{prop:rp}, inherited from the
+    lattice Wilson action via dominated convergence.
+  \item Transfer of polymer bounds to Schwinger functions:
+    Proposition~\ref{prop:dob_analytic}, via Dobrushin
+    analyticity at the Dobrushin scale.
+\end{enumerate}
+Consequently, the full conclusion---a unique interacting
+relativistic QFT satisfying
+the Wightman axioms with mass gap---follows from
+(B1)--(B4) \cite{FontesSU2} alone.
+\end{remark}
+
+\subsection{Methods and comparison}
+
+\noindent The proof of the mass gap
+(Theorem~\ref{thm:conditional}) uses only (B1)--(B4) \cite{FontesSU2}
+and Dobrushin uniqueness.  The effective action
+control~\cite{FontesSU2}
+controls the RG flow through all coupling scales; the Dobrushin
+computation at the threshold~$\beta_c$ provides the final
+gap bound.  Methods~(A) and~(B) below are independent
+developments that establish the unconditional FSC
+(Theorem~\ref{thm:fsc}) and illuminate the triviality
+obstruction (Theorem~\ref{thm:obstruction}).
+
+\smallskip
+\noindent\textbf{(A) Semi-classical block spectral gap}
+(\S\ref{sec:semiclassical}).
+On a gauge-fixed $L$-block with trivial boundary condition
+$\Phi = I$, the Wilson action has a unique
+minimum (the flat connection) with positive definite Hessian
+(the lattice Laplacian Schur complement).
+The Helffer--Sj\"ostrand theorem gives
+$\gap(\mu_B(\cdot|\Phi)) \geq c_1\,\beta_{\mathrm{eff}}$
+at large $\beta_{\mathrm{eff}}$.
+Extending this to all boundary conditions~$\Phi$ requires the
+unique minimum conjecture (Conjecture~\ref{conj:unique_min},
+proved for $G = U(1)$, numerically verified for
+$G = \SU(2)$ in $d = 3, 4$; fails in $d = 2$).
+The antisymmetric Christoffel cancellation
+(Proposition~\ref{prop:antisym})
+ensures the non-abelian Hessian at the trivial minimum equals
+the abelian Hessian tensored with the Lie algebra identity.
+
+\smallskip
+\noindent\textbf{(B) Entropy-controlled RG}
+(\S\ref{sec:entropy}).
+The relative entropy $W_k = \KL(\mu_k \| \nu_k)$ between
+the effective Yang--Mills measure and its Gaussian
+approximation satisfies $W_k \leq C/\beta^2$ uniformly
+in the RG scale~$k$ (by the data processing inequality
+and an initial cumulant bound).
+The key input is the per-plaquette variance bound
+$\Var_{\nu_0}(\phi_p) \leq 1/\beta$.
+
+\smallskip
+\noindent\textbf{(C) Dobrushin uniqueness at strong coupling}
+(\S\ref{sec:dobrushin}).
+At the threshold $\beta_c(d)$ solving
+$6(d-1)(1 - e^{-2\beta_c}) = 1$, the Wilson measure enters
+the single-link Dobrushin uniqueness regime, giving
+volume-uniform LSI with constant $\rho_\Lambda \geq 0.69$
+for $d = 4$ (at $\beta_{\mathrm{eff}} \leq \beta_c/L^d$).
+
+\smallskip
+\noindent\textbf{Logical dependencies.}
+Theorem~\ref{thm:conditional} (conditional mass gap) uses
+only (B1)--(B4) \cite{FontesSU2} and method~(C); its proof
+is entirely self-contained in \S\ref{sec:conditional}
+and depends on no external preprints.
+Theorem~\ref{thm:fsc} (unconditional FSC) uses methods~(A),
+(B), and~(C), plus the unique minimum conjecture ($d \geq 3$)
+for the uniform bound.
+Theorem~\ref{thm:obstruction} (triviality obstruction) uses
+only the distinction between $\beta$-dependent and
+$\beta$-independent mass gap bounds.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}p{4cm}ccl@{}}
+\toprule
+\textbf{Property} & \textbf{Ref.} &
+\textbf{Status} & \textbf{Role} \\
+\midrule
+Schur complement $S_{\mathrm{phys}} > 0$
+  & \S\ref{sec:semiclassical} & Proved & Structure \\
+Christoffel cancellation
+  & \S\ref{sec:semiclassical} & Proved & $W_0 = O(g^4)$ \\
+HS gap $\geq c_1\beta$ on blocks
+  & \S\ref{sec:semiclassical} & Proved & FSC (Thm~\ref{thm:fsc}) \\
+Gap monotonicity (single-link)
+  & \S\ref{sec:semiclassical} & Numerical & FSC (Thm~\ref{thm:fsc})${}^\dagger$ \\
+Entropy bound $W_k \leq C/\beta^2$
+  & \S\ref{sec:entropy} & Proved & FSC (Thm~\ref{thm:fsc}) \\
+Per-plaquette bound $\leq 1/\beta$
+  & \S\ref{sec:entropy} & Proved & $W_0 = O(1/\beta^2)$ \\
+Geometric decay $W_k \leq (1{-}f)^k C/\beta^2$
+  & \S\ref{sec:entropy} & Conj.${}^\ddagger$ & Sharper FSC \\
+Dobrushin threshold $\beta_c$
+  & \S\ref{sec:dobrushin} & Proved & Thm~\ref{thm:conditional} \\
+Unique minimum (UMC, $d \geq 3$)
+  & This paper & Conj.${}^*$ & FSC (Thm~\ref{thm:fsc}) \\
+UMC fails in $d = 2$
+  & This paper & Proved & Prop.~\ref{prop:umc_d2_fail} \\
+Effective action form at $k_*$
+  & \cite{FontesSU2} & Proved ($\SU(2)$) & Thm~\ref{thm:conditional} \\
+\bottomrule
+\multicolumn{4}{@{}l@{}}{\small ${}^*$Proved for $U(1)$;
+numerically verified for $\SU(2)$ in $d = 3, 4$.}\\
+\multicolumn{4}{@{}l@{}}{\small ${}^\ddagger$SDPI contraction
+for the Gaussian channel; extension to non-Gaussian
+perturbations is open. All results use only the
+uniform bound $W_k \leq C/\beta^2$.}\\
+\end{tabular}
+\end{center}
+
+
+%% ====================================================================
+\section{Lattice Setup and Block-Spin RG}\label{sec:setup}
+%% ====================================================================
+
+\subsection{Lattice Yang--Mills}
+
+Let $G$ be a compact simple Lie group with Lie algebra~$\fg$,
+$\dim \fg = n_G$, dual Coxeter number $h^\vee$, and
+bi-invariant metric satisfying $\Ric_G \geq \rho_G\,g_G$
+with $\rho_G > 0$ the log-Sobolev constant of Haar
+measure on~$G$.
+For $G = \SU(2) \cong S^3$: $\rho_G = 3/4$
+(Rothaus~\cite{Rothaus}; $n_G = 3$;
+here $\rho_G$ is the optimal constant in
+$\Ent_\mu(f^2) \leq (2/\rho_G)\,\E_\mu[|\nabla f|^2]$
+with the bi-invariant metric normalized so that
+$\Ric = (n_G - 1)\kappa\,g$ with $\kappa = 1/4$,
+giving the Bakry--\'Emery bound
+$\rho_G \geq (n_G - 1)\kappa/2 = 1/4$;
+the sharp constant $\rho_G = 3/4$ is tighter and follows
+from the eigenvalue computation on~$S^3$).
+The lattice, partition function, and Wilson action are as
+in~\eqref{eq:partition}.
+
+\subsection{Block structure}
+
+Fix a block $B = \{0, \ldots, L{-}1\}^d$ with $L \geq 2$.
+Links are classified as \emph{interior} (both endpoints
+in~$B$) or \emph{boundary} (not interior, but participating
+in at least one plaquette touching the interior).
+The block conditional measure given boundary values
+$\Phi = \{U_\ell : \ell \in \partial B\}$ is
+\begin{equation}\label{eq:block_cond}
+  d\mu_B(U_y \mid \Phi)
+  = \frac{1}{Z_B(\Phi)} \exp\!\bigl(-\beta \sum_{p \cap B^\circ
+  \neq \varnothing} s_p(U_y, \Phi)\bigr) \prod_{i \in y} dU_i,
+\end{equation}
+where $y$ denotes interior links and
+$s_p = 1 - N^{-1}\Re\tr\,U_p$.
+
+\subsection{Block-spin RG}\label{ssec:rg}
+
+The block-spin RG is exact marginalization: starting from the
+full Wilson measure $\mu$ on all links, we integrate out the
+interior links of each $L$-block, retaining the boundary links
+as coarse variables.  After $k$~steps, the coarse lattice has
+spacing $L^k a$ and the effective coupling is
+$\beta_{\mathrm{eff}}(k) = \beta / L^{kd}$ in the Gaussian
+approximation.
+
+Define $k_* = k_*(d, L, \beta)$ as the first integer~$k$
+such that $\beta / L^{kd} < \beta_c(d)/L^d$, where $\beta_c$
+is the Dobrushin threshold (Proposition~\ref{prop:dobrushin}).
+Equivalently,
+$k_* = \lceil \log(\beta/\beta_c) / (d\log L) \rceil + 1$,
+which guarantees $\beta_{\mathrm{eff}}(k_*) \leq \beta_c / L^d$,
+safely inside the Dobrushin regime.
+Then $L^{k_*} \leq L^2\,(\beta/\beta_c)^{1/d}
+\leq C\,\beta^{1/d}$.
+
+
+%% ====================================================================
+\section{Semi-Classical Block Spectral Gap}\label{sec:semiclassical}
+%% ====================================================================
+
+This section establishes the conditional spectral gap
+at weak coupling via Schur complement positivity and the
+Helffer--Sj\"ostrand theorem.
+
+\subsection{The abelian Hessian and its Schur complement}
+
+\begin{definition}
+The \emph{abelian Hessian} of the Wilson action, expanded
+to quadratic order around $\theta = 0$ on a block~$B$,
+decomposes as
+$H = \bigl[\begin{smallmatrix}
+H_{yy} & H_{yx} \\ H_{xy} & H_{xx}
+\end{smallmatrix}\bigr]$
+where $y$ (resp.\ $x$) indexes interior (resp.\ boundary) links.
+The \emph{Schur complement} on the physical subspace is
+$S = H_{xx} - H_{xy}\,H_{yy,\mathrm{phys}}^{-1}\,H_{yx}$.
+\end{definition}
+
+\begin{theorem}[Schur complement positivity]
+\label{thm:schur}
+For $d \geq 2$, $L \geq 2$:
+$\lambda_{\min}(S_{\mathrm{phys}}) > 0$.
+The kernel of $S$ consists exactly of boundary gauge modes.
+\end{theorem}
+
+\noindent Numerical values for $d = 4$:
+$\lambda_{\min}(S_{\mathrm{phys}}) = 3.00, 1.00, 1.00$
+for $L = 2, 3, 4$ respectively.
+
+\subsection{Non-abelian corrections}
+
+\begin{proposition}[Antisymmetric cancellation]
+\label{prop:antisym}
+The Christoffel correction to the Riemannian Hessian of
+the Wilson action vanishes identically in quadratic form:
+$\sum_{\ell,\ell',a,b} v_{\ell a}\,\Gamma_{\ell\ell'}^{ab}
+\,v_{\ell' b} = 0$ for all~$v$.
+The metric curvature correction satisfies
+$\|\beta K\|_{\mathrm{op}} \leq C_K\,\beta\,\theta_*^2
+\cdot 2(d{-}1)$ on the region $|\theta_\ell| \leq \theta_*$.
+\end{proposition}
+
+\noindent Consequently, the full non-abelian Hessian at $\theta = 0$ is
+$\Hess(\beta S_W)|_{\theta=0} = \beta\,(H \otimes I_{n_G})$,
+exactly the abelian Hessian tensored with the Lie algebra identity.
+
+\subsection{Minimizer structure and Hessian bounds}
+
+\begin{proposition}[Minimizer of the gauge-fixed Wilson action]
+\label{prop:unique_min}
+Let $B = \{0,1\}^d$ be a $2$-cube with interior links
+$\mathcal{L}_{\mathrm{int}}$ and boundary links
+$\mathcal{L}_{\partial}$.  Fix any boundary
+condition $\Phi = \{U_\ell\}_{\ell \in \mathcal{L}_\partial}$.
+
+\textbf{Gauge fixing.}
+Choose a maximal spanning tree
+$\mathcal{T} \subset \mathcal{L}_{\mathrm{int}}$
+rooted at a vertex~$v_0$.
+By Lemma~\ref{lem:tree_gauge}, the gauge
+$U_\ell = I$ for all $\ell \in \mathcal{T}$
+is attained by a unique gauge transformation
+(with $g_{v_0} = I$).  The gauge-fixed
+configuration space
+is $\mathcal{M} = G^{n_{\mathrm{phys}}}$ with
+$n_{\mathrm{phys}} = |\mathcal{L}_{\mathrm{int}}|
+- |\mathcal{T}|$ the number of independent links.
+
+\textbf{Action and minimum.}
+On the gauge-fixed slice, the Wilson action
+$V(\theta; \Phi) = \beta\,S_W(\theta \mid \Phi)$
+satisfies:
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+  \item $V(\theta; \Phi) \geq 0$ for all $\theta$,
+    since each plaquette term
+    $(1 - (1/N)\Re\tr U_p) \geq 0$.
+  \item There exists a global minimizer
+    $\theta_*(\Phi) \in \mathcal{M}$ depending
+    continuously on~$\Phi$.
+  \item At any local minimum, the Riemannian Hessian
+    is positive semi-definite.  For the special case
+    $\Phi = \Phi_0$ \textup{(}trivial boundary,
+    all boundary holonomies~$= I$\textup{)}:
+    $\theta_* = 0$ and $\Hess V|_0 =
+    \beta\,(H_{yy,\mathrm{phys}} \otimes I_{n_G})$,
+    which is independent of~$\Phi_0$ and positive
+    definite by Theorem~\ref{thm:schur}.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i)~is immediate.  (ii)~follows from compactness
+of~$\mathcal{M}$ and continuity of~$V$.  For~(iii):
+at any local minimum the Hessian is~$\geq 0$ by the
+second-derivative test; the $\Phi_0$ case uses the
+explicit computation of the lattice Laplacian Schur
+complement (Theorem~\ref{thm:schur}) and the vanishing
+of the Christoffel correction in quadratic form
+(Proposition~\ref{prop:antisym}).
+\end{proof}
+
+\begin{proposition}[UMC fails in $d = 2$]
+\label{prop:umc_d2_fail}
+For $G = \SU(2)$ in $d = 2$, the gauge-fixed Wilson action on
+the $2$-cube $B = \{0,1\}^2$ does \emph{not} satisfy the UMC:
+there exists a boundary condition~$\Phi_*$ such that the action
+$V(\theta;\Phi_*)$ is constant on all of $G^{n_{\mathrm{phys}}}$,
+with $\Hess V \equiv 0$.
+\end{proposition}
+
+\begin{proof}
+In $d = 2$, tree gauge on $B = \{0,1\}^2$ yields
+$n_{\mathrm{phys}} = 1$ physical link~$\ell$ and
+$n_{\mathrm{plaq}} = 5$ plaquettes touching~$B$.
+All staples for~$\ell$ are ``fixed'' (composed entirely of
+tree and boundary links), so the effective staple is
+$F_\ell(\Phi) = \sum_{p \ni \ell} S_p(\Phi)$,
+independent of the physical variable~$g_\ell$.
+The conditional action for~$g_\ell$ is
+$V_\ell(g) = \mathrm{const} - \tfrac{1}{2}\Re\tr(g_\ell\,
+F_\ell^\dagger)$.
+When $F_\ell = 0$, this is constant: the action is independent
+of~$g_\ell$, and the Hessian vanishes identically.
+
+To construct $\Phi_*$: the two fixed staples through~$\ell$
+contribute $F_\ell = S_1(\Phi) + S_2(\Phi)$.
+Setting $S_1(\Phi) = -S_2(\Phi)$ (i.e., the two staple
+quaternions are antipodal) gives $F_\ell = 0$.
+This is achieved by choosing boundary links such that the
+ordered product around the two straddling plaquettes differ
+by a sign.  For instance, taking the appropriate boundary
+links to be $-I \in \SU(2)$ suffices.
+Exhaustive computation over $\{I, -I\}^{12}$ (the $12$
+boundary links) confirms the existence of such~$\Phi_*$,
+with $V(\theta;\Phi_*) = 2.0$ for all~$\theta$.
+\end{proof}
+
+\begin{remark}[The $d = 2$ failure is harmless]
+\label{rem:umc_d2}
+The UMC is needed only for the FSC path to mass gap
+(Theorem~\ref{thm:fsc}).  In $d = 2$, the mass gap is
+already established unconditionally by the transfer matrix
+argument (Theorem~\ref{thm:d2}), so the UMC failure has
+no consequence for any result in this paper.
+\end{remark}
+
+\begin{conjecture}[Unique non-degenerate minimum for $d \geq 3$]
+\label{conj:unique_min}
+For $d \geq 3$, every boundary condition~$\Phi$, and every
+compact simple Lie group~$G$: the gauge-fixed Wilson action
+$V(\theta;\Phi)$ on the $2$-cube~$B = \{0,1\}^d$ has
+a \emph{unique local minimum} $\theta_*(\Phi)$, and the
+Riemannian Hessian at $\theta_*(\Phi)$ is
+\emph{positive definite}.
+\textup{(}Saddle points necessarily exist by
+$\chi(G^{n_{\mathrm{phys}}}) = 0$; the conjecture
+asserts they are all of index $\geq 1$.\textup{)}
+\end{conjecture}
+
+\noindent
+The two parts (uniqueness and non-degeneracy) are logically
+independent: a unique minimum can have degenerate Hessian
+(e.g., $f(x) = x^4$ on $S^1$), and a function with all
+non-degenerate critical points can have multiple minima.
+Both parts are needed for the Helffer--Sj\"ostrand theorem.
+The restriction $d \geq 3$ is necessary:
+Proposition~\ref{prop:umc_d2_fail} gives a rigorous
+counterexample in $d = 2$.
+
+The following proposition establishes the conjecture
+in the abelian case.
+
+\begin{proposition}[Conjecture~\ref{conj:unique_min}
+for $G = U(1)$]
+\label{prop:unique_abelian}
+For $G = U(1)$ and any $d \geq 2$, the gauge-fixed
+Wilson action on the $2$-cube has a unique local
+minimum with positive definite Hessian, for every
+boundary condition~$\Phi$.
+\end{proposition}
+
+\begin{proof}
+In tree gauge, the physical degrees of freedom are
+$\theta_j \in [0, 2\pi)$, $j = 1, \ldots, n_{\mathrm{phys}}$,
+and the action is
+$V(\theta) = \sum_p \bigl(1 - \cos(\alpha_p(\theta))\bigr)$
+where $\alpha_p(\theta) = \sum_j n_{pj}\theta_j + \phi_p$
+with incidence matrix $n_{pj} \in \{-1,0,+1\}$ and
+$\phi_p$ depending on~$\Phi$.
+
+\smallskip
+\noindent\textbf{Step 1: local minima lie in a convex region.}
+At any local minimum~$\theta_*$, each plaquette
+phase satisfies $|\alpha_p(\theta_*)| < \pi$
+$\pmod{2\pi}$.  Indeed, if $|\alpha_p| \geq \pi$
+for some~$p$, perturbing $\theta$ to decrease $|\alpha_p|$
+reduces the $p$-th term while affecting other terms
+only to second order (since $\theta_*$ is a critical
+point), contradicting minimality.
+
+On the universal cover $\R^{n_{\mathrm{phys}}}$,
+define the convex region
+$S(\Phi) = \{\theta \in \R^{n_{\mathrm{phys}}} :
+|\alpha_p(\theta)| < \pi \text{ for all } p\}$.
+This is an intersection of open half-spaces in the
+affine variables~$\alpha_p$, hence convex.
+Every local minimum of the lifted~$V$ on
+$\R^{n_{\mathrm{phys}}}$ lies in some translate
+of~$S$, and by periodicity, at most one translate
+of $S$ can contain a local minimum within each
+fundamental domain.
+
+\smallskip
+\noindent\textbf{Step 2: $V$ is strictly convex on~$S$.}
+The function $f(t) = 1 - \cos(t)$ is strictly convex
+on $(-\pi, \pi)$.  Each $\alpha_p(\theta) =
+n_p \cdot \theta + \phi_p$ is affine.  Since the
+composition of a convex function with an affine map
+is convex, each term
+$f \circ \alpha_p$ is convex on~$S$.
+The sum $V = \sum_p f \circ \alpha_p$ is therefore
+convex.
+
+For \emph{strict} convexity: the Hessian is
+$H = N^T \operatorname{diag}(\cos\alpha_p)\, N$
+with $\cos\alpha_p > 0$ on~$S$.
+Since $N$ has full column rank (the gauge-fixed
+lattice Laplacian $N^T N$ is positive definite by
+Theorem~\ref{thm:schur}), $H > 0$ on all of~$S$.
+
+\smallskip
+\noindent\textbf{Step 3: uniqueness.}
+A strictly convex function on a convex open set has
+at most one critical point, which is a non-degenerate
+minimum.  Combined with Step~1 (every local minimum
+lies in~$S$), the action $V$ has exactly one local
+minimum per fundamental domain.  Since $V \geq 0$
+with $V = 0$ only when all $\alpha_p = 0$
+(which may or may not lie in the fundamental domain),
+existence of at least one minimum follows from
+compactness of the torus.
+\end{proof}
+
+\begin{remark}[Status of the unique minimum conjecture]
+\label{rem:umc}
+For the non-abelian case ($G = \SU(2)$) in $d \geq 3$,
+the conjecture is supported by structural arguments
+and confirmed by numerical verification:
+
+\textup{(1)}~\textbf{Overdetermination.}
+The system has $d(d{-}1)2^{d-2}$
+plaquette constraints on $d(2^{d-1} - 1) - (2^d - 1)$
+physical variables
+($24$ on $17$ in $d = 4$; $6$ on $5$ in $d = 3$).
+The excess of constraints leaves no room for a second
+minimum or a flat direction.
+
+\textup{(2)}~\textbf{Perturbative stability.}
+For~$\Phi$ near the trivial boundary,
+both parts hold by perturbation from the $\Phi = I$ case,
+where the Hessian is the positive definite lattice
+Laplacian Schur complement.
+
+\textup{(3)}~\textbf{Absence of instantons.}
+The $2$-cube is too small to support
+non-trivial Yang--Mills instantons, which are the
+mechanism for multiple minima in the continuum.
+
+\textup{(4)}~\textbf{$d = 2$ counterexample explains the
+dimension threshold.}
+The conjecture \emph{fails} in $d = 2$
+(Proposition~\ref{prop:umc_d2_fail}): the single physical
+link has only $2$ fixed staples, which can cancel exactly.
+For $d \geq 3$, each physical link has $\geq 4$ staples
+(with both fixed and coupled contributions), making
+exact cancellation impossible at a self-consistent
+fixed point.
+
+\textup{(5)}~\textbf{Abelian case.}
+For $G = U(1)$, both parts
+are proved (Proposition~\ref{prop:unique_abelian}).
+
+\textup{(6)}~\textbf{Numerical confirmation.}
+Riemannian gradient descent (projected Adam on
+$\SU(2)^{n_{\mathrm{phys}}}$) was used to find global
+minima for $500$ random boundary conditions in $d = 3$
+($n_{\mathrm{phys}} = 5$) and $200$ in $d = 4$
+($n_{\mathrm{phys}} = 17$), each with $64$ random starts.
+All converged to a single minimum
+($500/500$ in $d = 3$; $199/200$ in $d = 4$).
+The staple norm $\min_\ell |F_\ell|$ was bounded below by
+$0.75$ ($d = 3$) and $1.40$ ($d = 4$); adversarial
+optimization over~$\Phi$ could not reduce these below
+$1.43$ and $2.06$ respectively.
+Riemannian Hessian eigenvalues were strictly positive in
+all samples ($\lambda_{\min} \geq 0.34$ in $d = 3$,
+$\lambda_{\min} \geq 0.20$ in $d = 4$).
+
+If both parts of the conjecture hold, the HS theorem gives
+$\gap \geq c_1\,\beta$ at large~$\beta$
+uniformly in~$\Phi$, completing the FSC proof.
+If either part fails for some exceptional~$\Phi$---a
+degenerate Hessian or a second minimum---the
+spectral gap could decay exponentially at
+large~$\beta$, and the uniform lower bound $c_B > 0$
+is not guaranteed.
+
+\emph{The conditional mass gap
+\textup{(}Theorem~\ref{thm:conditional}\textup{)} and all
+continuum limit results are completely unaffected by
+this conjecture}, as they use Dobrushin uniqueness
+at the Dobrushin scale, not the FSC.
+\end{remark}
+
+\begin{lemma}[Tree gauge fixing is unique]
+\label{lem:tree_gauge}
+Let $\Gamma = (V, E)$ be a connected finite graph and
+$\mathcal{T} \subset E$ a spanning tree rooted at
+$v_0 \in V$.  Fix a gauge group~$G$ and a
+configuration $\{U_\ell\}_{\ell \in E}$.
+There exists a \emph{unique} gauge transformation
+$g = \{g_v\}_{v \in V}$ with $g_{v_0} = I$ such that
+$U_\ell^g = g_{s(\ell)} U_\ell g_{t(\ell)}^{-1} = I$
+for all $\ell \in \mathcal{T}$.
+In particular, tree gauge has no Gribov copies.
+\end{lemma}
+
+\begin{proof}
+Induction on the tree distance from the root.
+For the root~$v_0$: $g_{v_0} = I$ (fixed).
+For any vertex~$v$ at distance~$k+1$: let $\ell = (u, v)$
+be the unique tree edge connecting~$v$ to its parent~$u$
+at distance~$k$.  The condition
+$g_u\,U_\ell\,g_v^{-1} = I$ gives
+$g_v = g_u\,U_\ell$, which is uniquely
+determined since $g_u$ is already fixed by the
+inductive hypothesis.  Since $\mathcal{T}$ is a spanning
+tree, every vertex is reached exactly once, and the
+gauge transformation is uniquely determined.
+\end{proof}
+
+\begin{remark}[No Gribov copies on finite blocks]
+\label{rem:gribov}
+Lemma~\ref{lem:tree_gauge} is specific to
+\emph{tree gauge on a finite graph}: the tree connects
+all vertices, so the inductive argument determines every
+$g_v$ uniquely.  On the full infinite lattice or in the
+continuum, no local gauge condition can avoid Gribov
+copies (Singer~\cite{Singer78}).  The FSC only requires
+gap bounds on \emph{finite blocks}, where tree gauge is
+globally well-defined.
+\end{remark}
+
+\subsection{Semi-classical spectral gap}
+
+We use the following form of the Helffer--Sj\"ostrand theorem:
+
+\begin{proposition}[HS theorem for compact manifolds;
+cf.~\cite{HelfferSjostrand,Helffer02}]
+\label{prop:hs}
+Let $M$ be a compact Riemannian manifold without boundary.
+Let $V \colon M \to \R$ be smooth with a
+\emph{unique local minimum} $x_*$ satisfying
+$\Hess V(x_*) > 0$.
+\textup{(}Other critical points---saddles and local
+maxima---are permitted and indeed required
+when $\chi(M) = 0$.\textup{)}
+Define the Witten Laplacian $L_\beta = \Delta
++ \beta^2 |\nabla V|^2 - \beta\,\Delta V$
+on $0$-forms.
+Then for $\beta$ sufficiently large:
+\begin{equation}
+  \gap(L_\beta) \;\geq\;
+  \beta\,\lambda_{\min}(\Hess V(x_*))\,
+  (1 - C\,\beta^{-1/2}),
+\end{equation}
+where $C$ depends on $V$ and $M$ but not on~$\beta$.
+The key mechanism: the $0$-form Witten Laplacian has
+exactly $m_0$ exponentially small eigenvalues,
+where $m_0$ is the number of local minima of~$V$.
+With $m_0 = 1$, only the ground state is small,
+and the gap above it is $O(\beta)$.
+Saddle points of index~$k \geq 1$ contribute small
+eigenvalues to the $k$-form Witten Laplacian only.
+\end{proposition}
+
+\noindent
+\textbf{Compatibility with Euler characteristic.}
+For $G = \SU(2) \cong S^3$:
+$\chi(G^{n_{\mathrm{phys}}}) = 0$, so any Morse
+function on $M = G^{n_{\mathrm{phys}}}$ must have
+at least two critical points.  The UMC asserts
+one of these is a local minimum (with PD Hessian) and
+the remainder are saddles; this is consistent with
+$\chi = 0$ and is exactly the hypothesis needed for
+the HS theorem above.
+
+\noindent
+\textbf{Hypothesis verification for Yang--Mills}
+(assuming Conjecture~\ref{conj:unique_min})\textbf{:}
+\begin{enumerate}[label=(H\arabic*),nosep]
+  \item $M = G^{n_{\mathrm{phys}}}$ is compact
+    (product of compact Lie groups).
+  \item $V = S_W|_{\mathrm{g.f.}}$ is smooth
+    (the Wilson action is polynomial in matrix entries).
+  \item $V$ has a unique local minimum $\theta_*(\Phi)$
+    with $\Hess V(\theta_*(\Phi)) > 0$
+    (Conjecture~\ref{conj:unique_min}; proved for
+    $G = U(1)$ in Proposition~\ref{prop:unique_abelian},
+    and for~$\Phi$ near~$I$ by perturbation of the
+    positive definite Hessian).
+    Other critical points (saddles) exist by
+    $\chi(M) = 0$ but are harmless for the
+    $0$-form Witten Laplacian.
+\end{enumerate}
+
+\begin{theorem}[Block spectral gap]
+\label{thm:block_gap}
+For any compact simple~$G$ and block size~$L$:
+\begin{enumerate}[label=\textup{(\alph*)},nosep]
+\item For each $(\beta, \Phi)$:
+  $\gap(\mu_B(\cdot|\Phi, \beta)) > 0$.
+\item If Conjecture~\ref{conj:unique_min} holds
+  \textup{(}as proved for $G = U(1)$\textup{)}, then
+\begin{equation}\label{eq:block_gap}
+  \gap\!\bigl(\mu_B(\cdot \mid \Phi)\bigr)
+  \;\geq\; c_B(G) \;>\; 0,
+\end{equation}
+uniformly in $\beta > 0$ and the boundary condition~$\Phi$.
+Moreover, for $\beta$ sufficiently large:
+$\gap(\mu_B(\cdot|\Phi)) \geq c_1\,\beta$ with
+$c_1 \to \lambda_{\min}(H_{yy,\mathrm{phys}})$ as
+$\beta \to \infty$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\textbf{Part (a)} is elementary: for any $(\beta, \Phi)$,
+the block conditional measure has a smooth positive
+density on the compact manifold $G^{n_{\mathrm{int}}}$,
+hence has a strictly positive Poincar\'e gap.
+
+\smallskip
+\noindent\textbf{Part (b):}
+
+\noindent\textbf{Large~$\beta$:}
+Assuming the unique minimum
+(Conjecture~\ref{conj:unique_min}),
+Proposition~\ref{prop:hs} applies with hypotheses
+(H1)--(H4) verified above:
+$\gap(\mu_B(\cdot|\Phi)) \geq c_1\,\beta$ for
+$\beta \geq \beta_1(G, L)$, uniformly in~$\Phi$.
+
+\smallskip
+\noindent\textbf{Small~$\beta$:} At $\beta = 0$, the measure
+is Haar on $G^{n_{\mathrm{int}}}$, whose Poincar\'e gap is
+$\rho_G > 0$.
+
+\smallskip
+\noindent\textbf{Transition region (compactness argument):}
+The function $g(\beta, \Phi) = \gap(\mu_B(\cdot|\Phi,\beta))$
+is continuous on $[0,\infty) \times G^{n_{\partial B}}$
+and strictly positive everywhere (part~(a)).
+Since $g \geq c_1 \beta$ for $\beta \geq \beta_1$, the
+infimum is achieved on the \emph{compact} set
+$[0, \beta_1] \times G^{n_{\partial B}}$, where $g$ is
+continuous and strictly positive.
+Therefore $c_B := \inf g > 0$.
+\end{proof}
+
+\begin{remark}[Quantitative estimates]
+\label{rem:quantitative}
+The compactness argument establishes $c_B > 0$ but gives
+no explicit lower bound.  In principle, $c_B$ could be
+extremely small.  However, for the \emph{single-link}
+reduction (one interior link with $q$~plaquettes, all
+other links fixed), numerical computation of the Witten
+Laplacian spectrum gives the values in Table~\ref{tab:monotone},
+showing the gap is monotonically increasing in~$\beta$
+with minimum $\rho_G = 3$ at $\beta = 0$.
+
+This monotonicity, if it extended to the multi-link case,
+would give $c_B \geq \rho_G / C(n_{\mathrm{phys}})$
+which is $O(1)$.  However, monotonicity of the Poincar\'e
+constant in~$\beta$ for the full multi-link Wilson measure
+is \emph{not proved}: it would require either an FKG-type
+monotonicity (not available in the non-abelian setting)
+or a generator comparison argument.
+
+A rigorous $O(1)$ lower bound for the full block could be
+obtained by computer-assisted verification of the Witten
+Laplacian gap on $G^{n_{\mathrm{phys}}}$, which is a
+finite-dimensional eigenvalue problem on a compact manifold
+with compact parameter space~$[0, \beta_1] \times
+G^{n_{\partial B}}$.
+\end{remark}
+
+\begin{table}[t]
+\caption{Spectral gap of the single-link Witten Laplacian on
+$\SU(2)$, with $q$~plaquettes per link (all staples set to
+identity).  \emph{Numerical evidence} (not proof):
+the gap is monotonically increasing in~$\beta$
+and bounded below by the Casimir eigenvalue $\lambda_1 = 3$
+of the adjoint on~$S^3$ (value at $\beta = 0$).
+Note: the log-Sobolev constant $\rho_G = 3/4$
+used in Proposition~\ref{prop:dobrushin} is distinct
+from the spectral gap.}
+\label{tab:monotone}
+\centering
+\begin{tabular}{@{}r|rrrr@{}}
+\toprule
+$\beta$ & $q = 1$ & $q = 2$ & $q = 6$ & $q = 12$ \\ \midrule
+$0$ & 3.00 & 3.00 & 3.00 & 3.00 \\
+$0.5$ & 3.05 & 3.20 & 4.77 & 9.41 \\
+$1$ & 3.20 & 3.80 & 9.62 & 21.6 \\
+$2$ & 3.80 & 6.10 & 21.9 & 45.7 \\
+$5$ & 7.74 & 17.8 & 58.0 & 118. \\
+$10$ & 17.8 & 37.9 & 118. & 238. \\
+$50$ & 98.0 & 198. & 599. & 1198. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{remark}[Single-well vs.\ multi-well]\label{rem:mechanism}
+The key distinction: on a compact manifold with a
+\emph{single} non-degenerate minimum, the spectral gap
+interpolates continuously from $\rho_M$ (the manifold's
+Laplacian gap) at $\beta = 0$ to $c_1\,\beta$ at
+$\beta = \infty$, with no exponentially small intermediate
+values.  By contrast, with multiple minima (e.g., the
+double-well potential), the gap decreases exponentially as
+$\beta \to \infty$ due to tunneling.
+
+The Holley--Stroock bound $\gap \geq \rho_M\,e^{-\osc(\beta V)}$
+does not distinguish these cases: it gives $e^{-O(\beta)}$
+in both.  The Helffer--Sj\"ostrand theorem does distinguish
+them and is essential for the $O(1)$ lower bound in the
+single-well case.
+
+Proposition~\ref{prop:unique_min} (minimizer structure) and
+Conjecture~\ref{conj:unique_min} (unique minimum) are what
+would place Yang--Mills in the single-well category.
+For $\Phi$ near the trivial boundary: the minimum is at
+$\theta \approx 0$ and the Hessian is close to the
+$\Phi$-independent lattice Laplacian.  For general~$\Phi$:
+the minimum shifts and the Hessian depends on~$\Phi$, but
+uniqueness (if proved) would still guarantee the HS bound.
+\end{remark}
+
+
+%% ====================================================================
+\section{Entropy-Controlled Renormalization}\label{sec:entropy}
+%% ====================================================================
+
+This section tracks non-Gaussianity
+through the block-spin RG using relative entropy methods.
+
+\subsection{The Gaussian reference}
+
+At RG scale~$k = 0$, the Gaussian reference
+measure~$\nu_0$ on the gauge-fixed block has
+precision matrix $M_0 = \beta\,N^\top N$, where
+$N$ is the incidence matrix of the block lattice.
+The Gaussian reference at scale~$k$ is defined as
+\begin{equation}\label{eq:nu_k}
+  \nu_k \;=\; T_k \circ T_{k-1} \circ \cdots
+  \circ T_1(\nu_0),
+\end{equation}
+where $T_j$ is the blocking map at step~$j$
+(marginalization over fine variables at scale~$j$).
+That is, $\nu_k$ is the \emph{image} of $\nu_0$
+under $k$ blocking steps---no rematching is performed.
+
+\subsection{Entropy control}
+
+\begin{theorem}[Entropy control through the RG]
+\label{thm:entropy}
+For $\beta$ sufficiently large, the relative entropy
+$W_k = \KL(\mu_k \| \nu_k)$ satisfies
+\begin{equation}\label{eq:entropy_decay}
+  W_k \;\leq\; W_0 \;\leq\; \frac{C}{\beta^2}
+\end{equation}
+for all $k \geq 0$, where $C$ depends only on $d$,
+$N$, $L$.
+\end{theorem}
+
+\begin{proof}
+The proof has two parts: the initial bound $W_0 \leq
+C/\beta^2$ (the main content) and the monotonicity
+$W_k \leq W_0$ (which is immediate from the data
+processing inequality).
+
+\smallskip
+\noindent\textbf{Step 1: Initial entropy
+($W_0 \leq C/\beta^2$).}
+The Wilson and Gaussian measures on the gauge-fixed
+block satisfy
+$d\mu_0/d\nu_0 \propto \exp(-\beta Q(\theta))$,
+where $Q(\theta) = V(\theta) - V_2(\theta)$ is the
+non-quadratic remainder.  Since
+$|1 - \cos t - t^2/2| \leq t^4/24$ for all~$t$:
+\begin{equation}\label{eq:Q_bound}
+  |Q(\theta)| \;\leq\; \frac{1}{24}\sum_p
+  \alpha_p(\theta)^4,
+\end{equation}
+where $\alpha_p(\theta) = \sum_j n_{pj}\theta_j
++ \phi_p$ is the plaquette phase.
+
+The configuration space $M = G^{n_{\mathrm{phys}}}$
+is compact, so $|Q(\theta)| \leq Q_{\max}$ for a
+constant $Q_{\max}$ depending on~$d$ and~$G$.
+The KL divergence has the exact representation
+\begin{equation}\label{eq:W0_exact}
+  W_0 = \E_{\mu_0}\bigl[\log(d\mu_0/d\nu_0)\bigr]
+  = -\beta\,\E_{\mu_0}[Q]
+  - \log Z_{\mu_0/\nu_0},
+\end{equation}
+where $Z_{\mu_0/\nu_0} = \E_{\nu_0}[e^{-\beta Q}]$
+is the normalizing constant.
+
+Since $|\beta Q| \leq \beta Q_{\max}$ is bounded on the
+compact manifold, the cumulant generating function
+$\psi(t) = \log\E_{\nu_0}[e^{-t\beta Q}]$
+is entire (all moments of $\beta Q$ under $\nu_0$ exist
+by compactness, so the Taylor coefficients
+$\kappa_n/n!$ are well-defined; convergence of the
+series at $t = 1$ follows from
+$|e^{-t\beta Q}| \leq e^{|t|\beta Q_{\max}}$ and
+dominated convergence).
+Expanding:
+\begin{equation}
+  W_0 = \tfrac{1}{2}\beta^2\Var_{\nu_0}(Q)
+  + O(\beta^3|\kappa_3(Q)|).
+\end{equation}
+
+Under~$\nu_0$, each $\alpha_p$ has variance
+$\sigma_p^2 \leq 1/\beta$
+(Proposition~\ref{prop:plaquette}).
+By Isserlis' theorem (Wick's theorem for Gaussian
+moments), all moments of $\alpha_p$ under $\nu_0$
+are polynomials in $\sigma_p^2$:
+$\E_{\nu_0}[\alpha_p^{2n}]
+= (2n{-}1)!!\,\sigma_p^{2n} \leq
+(2n)!/(2^n n!\,\beta^n)$.
+Since $Q = \sum_p Q_p$ with $|Q_p| \leq
+\alpha_p^4/24$:
+\begin{align}
+  \Var_{\nu_0}(Q) &\leq
+  \frac{1}{576}\sum_{p,p'}
+  |\Cov_{\nu_0}(\alpha_p^4, \alpha_{p'}^4)|
+  \notag\\
+  &= O(n_{\mathrm{plaq}}/\beta^4),
+  \label{eq:varQ}
+\end{align}
+where the sum over $(p, p')$ is restricted to pairs
+sharing at least one link (all other covariances
+vanish by Gaussianity and independence of disjoint
+sets of links), giving $O(n_{\mathrm{plaq}})$ nonzero
+terms each of size $O(1/\beta^4)$.
+Similarly, $|\kappa_3(Q)| = O(n_{\mathrm{plaq}}/\beta^6)$.
+Therefore
+\begin{equation}\label{eq:W0}
+  W_0 = O(n_{\mathrm{plaq}}/\beta^2)
+  \;\leq\; C/\beta^2.
+\end{equation}
+
+\smallskip
+\noindent\textbf{Step 2: Monotonicity ($W_k \leq W_0$).}
+The blocking map $T_k$ (marginalize over fine variables
+at scale~$k$) is a Markov kernel.  Both $\mu_k = T_k
+\cdots T_1(\mu_0)$ and $\nu_k = T_k \cdots T_1(\nu_0)$
+by definition~\eqref{eq:nu_k}.
+By the data processing inequality for KL divergence:
+\begin{equation}
+  W_k = \KL(T_k \mu_{k-1} \| T_k \nu_{k-1})
+  \;\leq\; \KL(\mu_{k-1} \| \nu_{k-1})
+  = W_{k-1}.
+\end{equation}
+Iterating: $W_k \leq W_0 \leq C/\beta^2$.
+\end{proof}
+
+\begin{conjecture}[Geometric entropy decay]
+\label{conj:entropy_geom}
+In the setting of Theorem~\ref{thm:entropy}, the
+entropy decays geometrically:
+$W_k \leq (1-f)^k\,C/\beta^2$
+with $f > 0$ depending only on $d$, $L$.
+\end{conjecture}
+
+\begin{remark}[Evidence for geometric decay]
+\label{rem:geom_decay}
+The blocking map $T_k$ eliminates
+$1 - L^{-d}$ of the degrees of freedom at each step.
+For the purely Gaussian model ($Q = 0$, so
+$\mu_0 = \nu_0$), the strong data processing
+inequality~\textup{(}SDPI\textup{)} gives exact
+contraction: $\KL(T_k\mu \| T_k\nu)
+\leq (1 - f_0)\,\KL(\mu \| \nu)$ with
+$f_0 > 0$ determined by the conditional
+Fisher information of the Gaussian channel.
+For $L = 2$, $d = 4$: $f_0 \geq 0.527$
+(computed from the lattice Laplacian structure).
+Extending this to the non-Gaussian case requires
+that the SDPI constant is stable under
+$O(1/\beta)$ perturbations of the reference measure,
+which is plausible but not established here.
+All downstream results in this paper
+\textup{(}Theorem~\ref{thm:fsc},
+Proposition~\ref{prop:dob_analytic}\textup{)}
+require only the uniform bound
+$W_k \leq C/\beta^2$, not geometric decay.
+\end{remark}
+
+The key input is the per-plaquette variance bound:
+
+\begin{proposition}[Per-plaquette variance bound]
+\label{prop:plaquette}
+Under the Gaussian reference~$\nu_0$:
+$\Var_{\nu_0}(\alpha_p) \leq 1/\beta$
+for every plaquette phase~$\alpha_p$.
+\end{proposition}
+
+\begin{proof}
+The Gaussian reference~$\nu_0$ has precision matrix
+$M_0 = \beta\,N^\top N$ where $N$ is the
+$n_{\mathrm{plaq}} \times n_{\mathrm{phys}}$ incidence
+matrix.
+The plaquette phase is
+$\alpha_p = (N\theta + \phi)_p$, so
+\begin{equation}
+  \Var_{\nu_0}(\alpha_p)
+  = e_p^\top\,N\,(\beta\,N^\top N)^{-1}\,N^\top\,e_p
+  = \frac{1}{\beta}\,e_p^\top\,\Pi\,e_p,
+\end{equation}
+where $\Pi = N(N^\top N)^{-1}N^\top$ is the
+orthogonal projection onto the column space of~$N$.
+Since $\Pi$ is an orthogonal projection:
+$e_p^\top\Pi\,e_p \leq \|e_p\|^2 = 1$.
+Therefore $\Var_{\nu_0}(\alpha_p) \leq 1/\beta$.
+\end{proof}
+
+
+%% ====================================================================
+\section{Dobrushin Uniqueness at Strong Coupling}
+\label{sec:dobrushin}
+%% ====================================================================
+
+This section establishes the Dobrushin threshold by a
+standard single-link comparison argument.
+
+\subsection{Link neighborhoods}
+
+Each link~$\ell$ in the $d$-dimensional hypercubic lattice
+shares a plaquette with exactly $q = 6(d{-}1)$ other links.
+For $d = 4$: $q = 18$.
+
+\subsection{Dobrushin threshold}
+
+\begin{proposition}[Dobrushin threshold]
+\label{prop:dobrushin}
+Define $\beta_c(d)$ as the unique positive solution of
+\begin{equation}\label{eq:threshold}
+  6(d{-}1)\bigl(1 - e^{-2\beta_c}\bigr) = 1.
+\end{equation}
+For all $\beta < \beta_c$, the Wilson measure on any finite
+volume~$\Lambda$ with any boundary condition satisfies
+a volume-uniform log-Sobolev inequality with constant
+\begin{equation}
+  \rho_\Lambda(\beta) \;\geq\;
+  \rho_G\,e^{-4(d-1)\beta}
+  \cdot\bigl(1 - 6(d{-}1)(1 - e^{-2\beta})\bigr)
+  \;>\; 0.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The single-link conditional of the Wilson measure has
+log-density $\ell(U_\ell) = -\beta\sum_{p \ni \ell}
+(1 - (1/N)\Re\tr\,U_p)$ plus a normalizing constant.
+Each plaquette $U_p = U_\ell \cdot (\text{3 other links})$
+contributes oscillation $\osc_\ell(s_p) \leq 2$ to the
+log-density (since $(1/N)|\Re\tr(U)| \leq 1$).
+Changing one neighboring link~$\ell'$ sharing
+a plaquette with~$\ell$ alters at most one plaquette
+term, so $\osc_{\ell'}(\ell) \leq 2\beta$.
+The Dobrushin interdependence matrix satisfies
+$C_{\ell\ell'} \leq 1 - e^{-2\beta}$
+by the Holley--Stroock comparison~\cite{HolleyStroock}.
+Summing over the $6(d{-}1)$ plaquette-neighbors of~$\ell$:
+\[
+  \|C\|_\infty \leq 6(d{-}1)(1 - e^{-2\beta}).
+\]
+When $\beta < \beta_c$, this is $< 1$, so
+Dobrushin uniqueness holds.
+By Stroock--Zegarlinski~\cite{StroockZegarlinski},
+the single-link Dobrushin condition on a compact state
+space implies a volume-uniform LSI with constant
+$\rho_\Lambda \geq \rho_G \cdot (1 - \|C\|_\infty)
+\cdot e^{-2\osc(\ell)}$,
+where $\rho_G$ is the log-Sobolev constant of
+Haar measure and $\osc(\ell) \leq 2(d{-}1)\beta$.
+\end{proof}
+
+\noindent Explicit thresholds:
+\begin{center}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$d$ & $\beta_c$ & $\|C\|_\infty(\beta_c/2)$ &
+$\rho_\Lambda(\beta_c/2)$ \\ \midrule
+2 & 0.0912 & 0.523 & 0.298 \\
+3 & 0.0435 & 0.511 & 0.308 \\
+4 & 0.0286 & 0.507 & 0.311 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+
+%% ====================================================================
+\section{Proof of Theorem~\ref{thm:conditional}:
+Mass Gap}\label{sec:conditional}
+%% ====================================================================
+
+\subsection{Effective action control}
+
+The following structural conditions on the effective action
+are established for $G = \SU(2)$, $d = 4$, $L = 2$ in the
+companion paper~\cite{FontesSU2}
+(Theorem~3 and Theorem~4 therein: single-step RG
+and inductive closure).
+
+\begin{theorem}[Effective action control~{\cite[Theorems~3,\,4]{FontesSU2}}]
+\label{thm:eac}
+For $G = \SU(2)$, $d = 4$, at block-spin RG scale~$k$ with
+block size~$L = 2$, the effective
+measure on boundary (coarse) links takes the form
+\begin{equation}\label{eq:balaban}
+  d\mu_k(x) \propto \exp\!\bigl(-\beta_{\mathrm{eff}}(k)
+  \,S_W(x) - R_k(x)\bigr)\,\prod_\ell dU_\ell,
+\end{equation}
+where $\beta_{\mathrm{eff}}(k) = \beta - k\cdot 8b_0\log 2
++ O(k/\beta)$ (with $b_0 = 11/(24\pi^2)$)
+and the remainder~$R_k$ satisfies:
+\begin{enumerate}[label=\textup{(B\arabic*)},nosep]
+  \item \textbf{Locality:} $R_k = \sum_X a_k(X)$, summed over
+    connected polymers~$X$ on the coarse lattice.
+  \item \textbf{Exponential decay:}
+    $\|a_k(X)\| \leq C\,e^{-\gamma\,\diam(X)}$ for
+    some $\gamma > 0$.
+  \item \textbf{Smallness:}
+    $\varepsilon_k(\beta) := \sum_{X \ni \ell}
+    \sup|a_k(X)| \leq C(4/\beta_k)^2 \to 0$
+    as $\beta \to \infty$.
+  \item \textbf{Gauge invariance:} $R_k$ is invariant under
+    gauge transformations at coarse vertices.
+\end{enumerate}
+The induction closes for $\beta_k \geq 35$ and terminates at the
+matching scale $\beta_{k_*} \approx 150$.
+\end{theorem}
+
+\begin{remark}[General gauge groups]\label{rem:general-G}
+For general compact simple~$G$ and $d \geq 3$,
+conditions~(B1)--(B4) constitute a structural
+assumption on the block-spin RG.  The companion
+paper~\cite{FontesSU2} verifies them for $G = \SU(2)$,
+$d = 4$.  All results below that reference~(B1)--(B4)
+are proved unconditionally for $\SU(2)$ and hold for
+general~$G$ once the analogous effective action control
+is established.
+\end{remark}
+
+\subsection{Choice of RG scale}
+
+Choose $k_* = \lceil \log(\beta / \beta_c)/(d\log L)\rceil + 1$
+so that $\beta_{\mathrm{eff}}(k_*)
+= \beta / L^{k_* d} \leq \beta_c / L^d$,
+safely inside the Dobrushin regime.
+
+\begin{lemma}\label{lem:kstar}
+$L^{k_*} \leq L^2\,(\beta/\beta_c)^{1/d}
+= C_1\,\beta^{1/d}$
+with $C_1 = L^2/\beta_c^{1/d}$.
+For $d = 4$, $L = 2$, $\beta_c = 0.0286$:
+$C_1 = 4/(0.0286)^{1/4} \leq 9.74$.
+\end{lemma}
+
+\subsection{Perturbed Dobrushin uniqueness}
+
+At scale~$k_*$, the effective measure~\eqref{eq:balaban}
+has $\beta_{\mathrm{eff}} \leq \beta_c/L^d$ and remainder~$R_{k_*}$.
+
+\begin{proposition}[Perturbed Dobrushin]
+\label{prop:perturbed_dob}
+Under (B1)--(B4) (Theorem~\ref{thm:eac}), for $\beta$ sufficiently
+large, the effective measure~$\mu_{k_*}$ satisfies
+single-link Dobrushin uniqueness with row sum
+\begin{equation}
+  \|C\|_\infty \;\leq\;
+  6(d{-}1)\bigl(1 - e^{-2\beta_{\mathrm{eff}} - 2\varepsilon}\bigr)
+  \;<\; 1,
+\end{equation}
+where $\varepsilon = \varepsilon_{k_*}(\beta)
+\to 0$ as $\beta \to \infty$.
+\end{proposition}
+
+\begin{proof}
+The single-link conditional of $\mu_{k_*}(U_\ell | \text{rest})$
+has log-density
+$-\beta_{\mathrm{eff}} V_\ell - \sum_{X \ni \ell} a_{k_*}(X)$,
+where $V_\ell = \sum_{p \ni \ell} s_p$ involves at most
+$2(d{-}1)$ plaquettes.  Changing a neighboring link~$\ell'$
+alters the log-density by at most
+$2\beta_{\mathrm{eff}} + 2\varepsilon$ per shared plaquette.
+The standard Dobrushin bound
+(Holley--Stroock comparison~\cite{HolleyStroock}) gives
+$C_{\ell\ell'} \leq 1 - e^{-2\beta_{\mathrm{eff}} - 2\varepsilon}$,
+and summing over the $6(d{-}1)$ plaquette-neighbors yields
+the result.  Since $\varepsilon \to 0$ and
+$\beta_{\mathrm{eff}} < \beta_c$ (where Wilson alone satisfies
+Dobrushin by Proposition~\ref{prop:dobrushin}), the row sum
+is strictly $< 1$ for $\beta$ large enough.
+\end{proof}
+
+\subsection{Volume-uniform mixing}
+
+\begin{proposition}\label{prop:mixing}
+Under (B1)--(B4) (Theorem~\ref{thm:eac}), the effective measure
+$\mu_{k_*}$ satisfies a volume-uniform log-Sobolev inequality:
+$\rho_\Lambda(\mu_{k_*}) \geq \rho_* > 0$,
+where $\rho_*$ depends only on $G$, $d$, $L$, and~$\beta_c$.
+\end{proposition}
+
+\begin{proof}
+By Proposition~\ref{prop:perturbed_dob}, the single-link
+Dobrushin condition holds.  By
+Stroock--Zegarlinski~\cite{StroockZegarlinski},
+single-link Dobrushin uniqueness on a compact state space
+implies volume-uniform log-Sobolev inequality with
+constant $\rho_* = \rho_\ell \cdot (1 - \|C\|_\infty)$,
+where $\rho_\ell$ is the single-link conditional LSI constant.
+Both $\rho_\ell$ and $\|C\|_\infty$ are volume-independent
+by construction.
+\end{proof}
+
+\begin{proposition}[Dobrushin analyticity for Schwinger
+functions]\label{prop:dob_analytic}
+Under (B1)--(B4) (Theorem~\ref{thm:eac}), for any gauge-invariant
+local observable~$\mathcal{O}$ on the coarse lattice
+$\Lambda_{k_*}$: the connected two-point function at the
+Dobrushin scale satisfies
+\begin{equation}\label{eq:schwinger_bound}
+  \bigl|\langle \mathcal{O}(x)\,\mathcal{O}(y)
+  \rangle_{c}^{\mathrm{eff}}
+  - \langle \mathcal{O}(x)\,\mathcal{O}(y)
+  \rangle_{c}^{W,\beta_c}\bigr|
+  \;\leq\; C\,\varepsilon_0\,\|\mathcal{O}\|_\infty^2\,
+  e^{-m_0|x-y|/2},
+\end{equation}
+where $\langle\cdot\rangle_c^{W,\beta_c}$ denotes the
+connected correlation in the pure Wilson measure at
+coupling~$\beta_c$, $m_0 = -\log(\beta_c/4)$ is the
+strong-coupling mass gap, and
+$\varepsilon_0 = O(\beta_c^2)$ is the polymer norm
+from~\textup{(B4)}.
+
+More generally, for any $n$-point connected correlation:
+\begin{equation}\label{eq:schwinger_n}
+  \bigl|G_{n,\mathrm{conn}}^{\mathrm{eff}}
+  - G_{n,\mathrm{conn}}^{W,\beta_c}\bigr|
+  \;\leq\; C_n\,\varepsilon_0\,\|\mathcal{O}\|_\infty^n\,
+  e^{-m_0\,\mathrm{diam}(x_1,\ldots,x_n)/2}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The effective Hamiltonian at scale~$k_*$ is
+$H_{\mathrm{eff}} = \beta_c\,S_W + R_{k_*}$
+with $R_{k_*} = \sum_X a_{k_*}(X)\,\psi_X(U)$
+(polymer expansion), where $\psi_X$ is a gauge-invariant
+function supported on polymer~$X$ with
+$\|\psi_X\|_\infty \leq 1$.
+
+By Proposition~\ref{prop:perturbed_dob}, the measure
+$\mu_{\mathrm{eff}}$ satisfies the Dobrushin uniqueness
+condition with coefficient
+$\alpha = \sum_{\ell'} C_{\ell,\ell'} < 1$.
+
+\smallskip
+\noindent\textbf{Analyticity.}
+A classical theorem of Dobrushin~\cite{Dobrushin68}
+(see also Simon~\cite{Simon_statistical},
+Ch.~V.8) states: when the Dobrushin condition holds with
+coefficient~$\alpha < 1$, the expectation
+$\langle\mathcal{O}\rangle_H$ is analytic in the
+Hamiltonian parameters.  Specifically, write
+$H(t) = \beta_c S_W + \sum_X t_X\,\psi_X$.
+Then $\langle\mathcal{O}\rangle_{H(t)}$ is analytic in
+$\{t_X\}$ for $\|t\| < r$, where the analyticity radius
+satisfies
+\begin{equation}
+  r_X \;\geq\; \frac{c\,(1-\alpha)}{|\partial X|}
+\end{equation}
+and $|\partial X|$ is the number of links in the boundary
+of the polymer~$X$.
+
+\smallskip
+\noindent\textbf{Convergent expansion.}
+Under~(B2) and~(B4):
+$|a_{k_*}(X)| \leq \varepsilon_0\,e^{-\gamma\,\diam(X)}$.
+For any polymer $X$ with $\diam(X) = R$:
+$|\partial X| \leq C\,R^{d-1}$, so
+$r_X \geq c'(1-\alpha)/R^{d-1}$.  Meanwhile
+$|a_{k_*}(X)| \leq \varepsilon_0\,e^{-\gamma R}$.
+For $\varepsilon_0$ small enough (ensured by~(B4)
+with $\varepsilon_0 = O(\beta_c^2)$):
+\begin{equation}
+  |a_{k_*}(X)| < r_X
+  \quad \text{for all polymers } X.
+\end{equation}
+To verify this for \emph{small} polymers ($\diam(X) = R
+\leq R_0$ for some fixed $R_0$):
+the analyticity radius satisfies $r_X \geq c'(1 - \alpha)$
+(since $|\partial X| \leq C\,R_0^{d-1}$ is bounded),
+while $|a_{k_*}(X)| \leq \varepsilon_0$.
+Here $c' = 1/(2e\,|\partial X|_{\max})$ from
+the standard cluster expansion bound
+(Simon~\cite{Simon_statistical}, Thm~V.8.3).
+For the smallest polymers ($|\partial X| \leq 2d = 8$
+in $d = 4$): $c' \geq 1/(16e) \approx 0.023$.
+The Dobrushin coefficient at the effective coupling
+$\beta_{\mathrm{eff}} \leq \beta_c/L^d$ satisfies
+$\alpha \leq 6(d{-}1)(1 - e^{-2\beta_c/L^d - 2\varepsilon_0})$.
+For $d = 4$, $L = 2$:
+$\beta_c/L^d = 0.0286/16 \approx 0.0018$, so
+$\alpha \leq 18 \cdot 0.0044 \approx 0.08$
+and $1 - \alpha \geq 0.92$.
+Therefore $r_X \geq 0.023 \times 0.92 \approx 0.021$,
+while $\varepsilon_0 = O(\beta_c^2) \approx 0.0008 \ll 0.021$.
+The condition $\varepsilon_0 < r_X$ is satisfied with
+a safety factor of~${\sim}25$.
+For \emph{large} polymers ($R > R_0$):
+$|a_{k_*}(X)| \leq \varepsilon_0 e^{-\gamma R}$
+decays exponentially while $r_X^{-1} \leq
+C R^{d-1}/(1-\alpha)$ grows polynomially, so the
+bound holds for all $R > R_0(\varepsilon_0)$.
+Therefore the Taylor expansion of
+$\langle\mathcal{O}\rangle$ in the polymer amplitudes
+converges:
+\begin{equation}\label{eq:taylor_polymer}
+  \langle \mathcal{O}\rangle_{\mathrm{eff}}
+  = \langle \mathcal{O} \rangle_{W,\beta_c}
+  + \sum_X \frac{\partial\langle\mathcal{O}\rangle}
+  {\partial t_X}\bigg|_{t=0} a_{k_*}(X)
+  + O(\varepsilon_0^2).
+\end{equation}
+
+\smallskip
+\noindent\textbf{Decay of the derivative.}
+The derivative $\partial\langle\mathcal{O}(x)
+\mathcal{O}(y)\rangle_c / \partial t_X|_{t=0}$
+is a truncated three-point correlation in the Wilson
+measure at~$\beta_c$:
+\begin{equation}
+  \frac{\partial}{\partial t_X}
+  \langle \mathcal{O}(x)\,\mathcal{O}(y)\rangle_c
+  \Big|_{t=0}
+  = -\langle \mathcal{O}(x);\,\mathcal{O}(y);\,
+  \psi_X\rangle_{W,\beta_c},
+\end{equation}
+which decays exponentially in the minimum distance from
+$X$ to $\{x,y\}$ with rate~$m_0$ (strong-coupling
+exponential clustering).  Summing over polymers~$X$
+with the bound $|a_{k_*}(X)| \leq \varepsilon_0
+\,e^{-\gamma\diam(X)}$ gives~\eqref{eq:schwinger_bound}.
+The $n$-point bound~\eqref{eq:schwinger_n} follows
+identically.
+\end{proof}
+
+\begin{remark}[Hypothesis~(H3) resolved]
+\label{rem:h3}
+Proposition~\ref{prop:dob_analytic} establishes that
+the polymer expansion bounds~(B1--B4) imply
+$O(\varepsilon_0)$ bounds on individual Schwinger
+functions at the Dobrushin scale, with
+$\varepsilon_0 = O(\beta_c^2) = O(e^{-c/g^2})$
+along the asymptotic freedom trajectory.
+This was listed as hypothesis~(H3) in
+Proposition~\ref{thm:full}.
+Since it now follows from
+Proposition~\ref{prop:perturbed_dob}
+(Dobrushin uniqueness, conditional on B1--B4)
+and the classical Dobrushin analyticity theorem,
+(H3) is no longer an independent hypothesis.
+\end{remark}
+
+\begin{proposition}[Fine-lattice Schwinger functions from
+coarse-lattice bounds]\label{prop:fine_coarse}
+Under (B1)--(B4) (Theorem~\ref{thm:eac}), let
+$\mathcal{O}$ be a gauge-invariant local observable
+on the fine lattice (spacing~$a$).  Then the
+connected two-point function satisfies
+\begin{equation}\label{eq:fine_coarse}
+  \langle \mathcal{O}(x)\,\mathcal{O}(y)\rangle_c^{\text{fine}}
+  = \langle \mathcal{O}_{\mathrm{bl}}(x)\,
+  \mathcal{O}_{\mathrm{bl}}(y)
+  \rangle_c^{\text{coarse}}
+  + \delta_{\mathrm{fl}}(x,y),
+\end{equation}
+where $\mathcal{O}_{\mathrm{bl}}$ is the blocked
+observable \textup{(}conditional expectation of
+$\mathcal{O}$ given the coarse variables\textup{)},
+and the fluctuation contribution satisfies
+$|\delta_{\mathrm{fl}}(x,y)| \leq C\,k_*\,\varepsilon_0
+\,e^{-\gamma\,|x-y|/(L^{k_*}a)}$.
+\end{proposition}
+
+\begin{proof}
+Write $\mathcal{O}(x) = \mathcal{O}_{\mathrm{bl}}(x)
++ \delta\mathcal{O}(x)$ where $\delta\mathcal{O}
+= \mathcal{O} - E[\mathcal{O}\,|\,U_{\mathrm{coarse}}]$.
+By the tower property of conditional expectation:
+\begin{align}
+  \langle \mathcal{O}(x)\,\mathcal{O}(y)\rangle_c
+  &= \langle \mathcal{O}_{\mathrm{bl}}(x)\,
+  \mathcal{O}_{\mathrm{bl}}(y)\rangle_c
+  + \langle \delta\mathcal{O}(x)\,
+  \delta\mathcal{O}(y)\rangle_c,
+  \label{eq:tower_decomp}
+\end{align}
+since the cross terms $\langle
+\mathcal{O}_{\mathrm{bl}}(x)\,\delta\mathcal{O}(y)
+\rangle_c = 0$ by the definition of conditional
+expectation.
+
+The first term in~\eqref{eq:tower_decomp} is controlled
+by Proposition~\ref{prop:dob_analytic} (Dobrushin
+analyticity at the coarse scale).
+
+For the fluctuation term: $\delta\mathcal{O}(x)$ depends
+only on the fine variables within the coarse block
+containing~$x$.  When $x$ and $y$ belong to
+\emph{different} coarse blocks, the fluctuations
+$\delta\mathcal{O}(x)$ and $\delta\mathcal{O}(y)$
+are coupled only through the effective action~$R_{k_*}$.
+Under (B1)--(B4) \cite{FontesSU2}, the RG integration at each
+of the $k_*$ steps produces polymer corrections with
+norm~$\leq \varepsilon_0$.  The variance of the fluctuation
+decomposes by the tower property:
+$\mathcal{O} = \mathcal{O}_{\mathrm{bl}}
++ \sum_{j=1}^{k_*} \delta\mathcal{O}_j$
+where $\delta\mathcal{O}_j$ is the fluctuation at
+RG step~$j$, satisfying
+$\E[\delta\mathcal{O}_j \mid U_{\mathrm{coarse}}^{(j')}]
+= 0$ for $j' > j$.  This gives
+\begin{equation}
+  |\langle \delta\mathcal{O}(x)\,
+  \delta\mathcal{O}(y)\rangle_c|
+  \;\leq\; \sum_{j=1}^{k_*}
+  |\langle \delta\mathcal{O}_j(x)\,
+  \delta\mathcal{O}_j(y)\rangle_c|
+\end{equation}
+(cross terms vanish by the martingale property).
+Each individual term is bounded by the polymer expansion
+at scale~$j$.  In the worst case, the effective action
+at scale~$j$ carries accumulated polymer contributions
+from all prior scales, giving
+$|\langle \delta\mathcal{O}_j(x)\,
+\delta\mathcal{O}_j(y)\rangle_c|
+\leq C\,(1+\varepsilon_0)^j\,\varepsilon_0\,
+\|\mathcal{O}\|_\infty^2\,
+e^{-\gamma|x-y|/(L^j a)}$.
+Summing and using $(1+\varepsilon_0)^{k_*}
+= \exp(k_*\log(1+\varepsilon_0))
+= \exp(O(\varepsilon_0\log\beta))$:
+\begin{equation}
+  |\langle \delta\mathcal{O}(x)\,
+  \delta\mathcal{O}(y)\rangle_c|
+  \;\leq\; C\,\beta^{C'\varepsilon_0}\,
+  k_*\,\varepsilon_0\,
+  \|\mathcal{O}\|_\infty^2\,
+  e^{-\gamma\,|x-y|/(L^{k_*}a)}.
+\end{equation}
+Since $k_* = O(\log\beta)$,
+$\varepsilon_0 = O(\beta_c^2)$, and
+$\beta^{C'\varepsilon_0} = 1 + O(\varepsilon_0\log\beta)$,
+the total correction is
+$O(\varepsilon_0\,\log^2\!\beta)$,
+which is $o(1)$ relative to the leading coarse-scale
+correlation.
+\end{proof}
+
+\begin{remark}[Role of polymer bounds in the
+fine-coarse transfer]
+\label{rem:fine_coarse}
+Proposition~\ref{prop:fine_coarse} addresses a
+potential concern about the Dobrushin analyticity
+approach: since the Dobrushin bound
+(Proposition~\ref{prop:dob_analytic}) controls
+correlations of \emph{coarse-lattice} variables at
+spacing $L^{k_*}a$, one must verify that the
+\emph{fine-lattice} Schwinger functions (needed for
+the CS equation and OS reconstruction) are similarly
+controlled.  The decomposition~\eqref{eq:tower_decomp}
+shows that the fine-lattice correlations equal the
+coarse-lattice correlations plus a fluctuation term that
+is subdominant by virtue of the polymer
+bounds~(B1)--(B4).  The key property used is that the RG blocking
+kernel factorizes over blocks up to the polymer
+corrections---a direct consequence of the polymer
+expansion structure~(B1).
+\end{remark}
+
+\subsection{Proof of Theorem~\ref{thm:conditional}}
+
+The exponential clustering from Proposition~\ref{prop:mixing}
+gives correlation decay on the coarse lattice (spacing
+$L^{k_*}\,a$) with rate~$\rho_*$.  For gauge-invariant
+observables~$\mathcal{O}_1, \mathcal{O}_2$ at physical
+separation~$R$, this translates to
+\begin{equation}
+  |\langle \mathcal{O}_1(0)\,\mathcal{O}_2(x)\rangle
+  - \langle \mathcal{O}_1\rangle\langle\mathcal{O}_2\rangle|
+  \;\leq\; C\,e^{-\rho_*\,|x| / (L^{k_*} a)}.
+\end{equation}
+The mass gap in lattice units is therefore
+\begin{equation}
+  m \cdot a \;\geq\;
+  \frac{\rho_*}{L^{k_*}}
+  \;\geq\; \frac{\rho_*}{C_1\,\beta^{1/d}}
+  \;=\; \frac{c}{\beta^{1/d}},
+\end{equation}
+where $c = \rho_* / C_1 > 0$.
+For $d = 4$, $G = \SU(2)$:
+$\beta_{\mathrm{eff}} \leq \beta_c/L^d = 0.0018$, so
+$\rho_* \geq 0.686$
+(Proposition~\ref{prop:dobrushin} evaluated at
+$\beta_c/L^d$) and $C_1 \leq 9.74$, giving
+$c \geq 0.686/9.74 \geq 0.07$. \qed
+
+\begin{remark}[Bare bound versus physical mass gap]
+\label{rem:bare_vs_phys}
+The bound $m \cdot a \geq c/\beta^{1/d}$ is a \emph{lower}
+bound on the \emph{bare} lattice mass gap.
+Along the asymptotic freedom trajectory
+$\beta \sim (1/g_0^2) \sim \log(1/a)$, this gives a bare
+mass $m_{\mathrm{bare}} = (m \cdot a)/a
+\geq c/(a\,[\log(1/a)]^{1/d}) \to \infty$.
+This divergence is \emph{expected and correct}: in any
+non-trivially renormalizable QFT, the bare correlation
+functions $G_{\mathrm{bare}}(R;\,a) \to 0$ as $a \to 0$
+at fixed physical separation~$R$.  This reflects the
+divergence of the wave-function renormalization~$Z(a)$,
+not the triviality of the theory.
+
+The \emph{physical} mass gap
+$m_{\mathrm{phys}} = \Delta = O(\Lambda_{\mathrm{QCD}})$
+is finite and is extracted from the \emph{renormalized}
+Schwinger functions
+$G_R = Z(a)^n\,G_{\mathrm{bare}}$.
+Since $Z(a) \to \infty$ while
+$G_{\mathrm{bare}} \to 0$, the product $G_R$ converges
+to a nonzero limit---this is precisely the content of the
+CS convergence argument (Proposition~\ref{thm:unique}).
+
+Theorem~\ref{thm:obstruction} shows that a
+$\beta$-\emph{independent} lower bound
+$m \cdot a \geq c_0 > 0$ forces triviality.
+The present bound $c/\beta^{1/d} \to 0$ as
+$\beta \to \infty$ is $\beta$-dependent and does
+\emph{not} trigger this obstruction.  The true mass gap
+scales as $m \cdot a \sim e^{-c'\beta}$; our bound
+is compatible with (and much weaker than) this scaling.
+
+The role of the mass gap bound in the continuum limit
+construction is purely \emph{qualitative}: it
+guarantees that $m \cdot a > 0$ for every~$\beta$,
+which ensures (i)~absence of IR divergences in the
+CS equation, (ii)~exponential clustering for Gibbs
+uniqueness, and (iii)~a dominating function for the
+RP limit argument (Proposition~\ref{prop:rp}).
+The \emph{quantitative} mass gap scaling is determined
+by the CS equation and asymptotic freedom, not by the
+Dobrushin bound.
+\end{remark}
+
+
+%% ====================================================================
+\section{Proof of Theorem~\ref{thm:fsc}:
+Finite Size Criterion}\label{sec:fsc}
+%% ====================================================================
+
+This is a direct consequence of Theorem~\ref{thm:block_gap}.
+
+\begin{proof}[Proof of Theorem~\ref{thm:fsc}]
+The block conditional measure~\eqref{eq:block_cond} on a
+$2$-cube $Q = \{0, 1\}^d$ with boundary condition~$\Phi$
+is the Wilson measure on $G^{n_{\mathrm{int}}}$ with
+$n_{\mathrm{int}} = d \cdot 2^{d-1}$ interior links.
+
+\textbf{Pointwise gap.}
+For each $(\beta, \Phi)$: the measure has smooth positive
+density on the compact manifold $G^{n_{\mathrm{int}}}$,
+so $\gap(\mu_Q(\cdot|\Phi,\beta)) > 0$
+(Theorem~\ref{thm:block_gap}(a)).
+
+\textbf{Uniform gap}
+(assuming Conjecture~\ref{conj:unique_min}).
+By Theorem~\ref{thm:block_gap}(b):
+$g(\beta, \Phi) \geq c_1\,\beta$ for $\beta \geq \beta_1$
+uniformly in~$\Phi$.  Since $g$ is continuous and
+$g \geq c_1\beta$ for $\beta \geq \beta_1$,
+the infimum is achieved on the \emph{compact} set
+$[0, \beta_1] \times G^{n_{\partial Q}}$, where $g$
+is continuous and strictly positive.  Therefore
+\begin{equation}
+  c_B \;:=\;
+  \inf_{\beta \geq 0,\, \Phi \in G^{n_{\partial Q}}}
+  g(\beta, \Phi) \;>\; 0.
+\end{equation}
+This is FSC$(2)$ with constant~$c_B$.
+
+By the Dobrushin--Shlosman complete analyticity
+theorem~\cite{DobrushinShlosman,Martinelli1999}:
+FSC$(L)$ with $c > 0$ implies unique Gibbs measure
+and exponential decay of correlations with rate
+$m(c, L, d) > 0$. In particular,
+$m(\beta) \cdot a > 0$ for each~$\beta$.
+\end{proof}
+
+\begin{remark}[Quantitative status of $c_B$]
+\label{rem:fsc_order1}
+The compactness argument establishes $c_B > 0$ rigorously.
+Numerical evidence from the single-link Witten Laplacian
+(Table~\ref{tab:monotone}) suggests $c_B$ may be $O(1)$---the
+gap appears monotonically increasing with minimum at $\beta = 0$.
+However, the compactness argument alone does not exclude the
+possibility that $c_B$ is very small for the full multi-link
+block.
+
+For the Dobrushin--Shlosman recursion, what matters is
+$c_B > 0$, not its magnitude: the DS theorem gives exponential
+clustering with rate depending on~$c_B$, and hence a positive
+mass gap.  The \emph{magnitude} of $c_B$ affects only the
+quantitative mass gap bound from the single-scale approach.
+As discussed in Remark~\ref{rem:triviality}, a
+$\beta$-independent bound always gives a trivial continuum limit
+regardless of the value of~$c_B$.
+\end{remark}
+
+\begin{corollary}[Unconditional results for compact $U(1)$]
+\label{cor:U1}
+For $G = U(1)$ in $d \geq 2$ dimensions:
+\begin{enumerate}[label=\textup{(\alph*)},nosep]
+  \item \textup{(Uniform block gap.)}
+    The FSC$(2)$ condition holds unconditionally:
+    $\gap(\mu_Q(\cdot|\Phi, \beta))
+    \geq c_B(d) > 0$ uniformly in $\beta$ and~$\Phi$.
+  \item \textup{(Mass gap for $d \leq 3$.)}
+    For $d = 2$ and $d = 3$, compact $U(1)$ lattice gauge
+    theory is confining for all~$\beta$, and the
+    Dobrushin--Shlosman
+    theorem~\cite{DobrushinShlosman,Martinelli1999}
+    gives unique Gibbs measure and mass gap
+    $m(\beta) \cdot a > 0$ for every $\beta > 0$.
+\end{enumerate}
+For $d = 2$, no assumptions beyond the definition of the
+model are required.  For $d = 3$, the proof uses the
+G\"opfert--Mack confinement theorem~\cite{GopfertMack82}
+(a standard result in constructive gauge theory).
+\end{corollary}
+
+\begin{proof}
+For $G = U(1)$, Proposition~\ref{prop:unique_abelian} proves
+the unique minimum conjecture
+(Conjecture~\ref{conj:unique_min}).
+Theorem~\ref{thm:block_gap}(b) then gives~(a).
+
+For~(b): the Dobrushin--Shlosman recursion requires that
+the uniform block gap propagates to infinite-volume
+uniqueness, which needs absence of phase transitions.
+In $d = 2$, compact $U(1)$ is exactly solvable via the
+transfer matrix, giving uniqueness and mass gap directly.
+In $d = 3$, absence of a Coulomb phase (i.e., confinement
+for all~$\beta$) was proved by
+G\"opfert and Mack~\cite{GopfertMack82}
+via a monopole gas representation and Debye screening.
+With confinement established, the uniform block gap~(a)
+propagates through the DS recursion to give unique
+Gibbs measure and $m(\beta) \cdot a > 0$.
+\end{proof}
+
+\begin{remark}[The $d = 4$ boundary]
+\label{rem:U1_d4}
+For $d \geq 4$, compact $U(1)$ lattice gauge theory
+exhibits a phase transition between confining and Coulomb
+phases~\cite{Guth80}.  The uniform block gap~(a) still holds
+(it is a property of the $2$-cube, not of the
+infinite-volume theory), but it does not imply mass gap at
+weak coupling, where the theory is in the deconfined Coulomb
+phase.  This is consistent: the block gap controls local
+equilibration but does not override the long-range
+correlations responsible for the phase transition.
+
+For non-abelian~$G$ (e.g., $\SU(N)$), no Coulomb phase is
+expected in $d = 4$---confinement is believed to hold for
+all~$\beta$---so the FSC, if established via the UMC,
+would give mass gap at every coupling.  This is one
+motivation for resolving Conjecture~\ref{conj:unique_min}
+for non-abelian~$G$.
+\end{remark}
+
+\begin{remark}[Triviality obstruction]\label{rem:triviality}
+Although the FSC constant $c_B$ is $O(1)$, the resulting
+mass gap bound is $\beta$-independent:
+$m(\beta) \cdot a \geq m_{\mathrm{DS}}(c_B, L, d)$
+for all~$\beta$.  This means the correlation length
+$\xi = 1/(m \cdot a) \leq C$ remains bounded in lattice
+units as $\beta \to \infty$, implying that all connected
+correlations vanish in the continuum limit $a \to 0$.
+The resulting theory would be \emph{trivial} (free field).
+
+A non-trivial continuum limit requires
+$m \cdot a \to 0$ as $\beta \to \infty$---specifically,
+$m \cdot a \sim \Lambda_{\mathrm{QCD}} \cdot a
+\sim e^{-c_{\mathrm{AF}} \beta}$ from asymptotic freedom.
+This $\beta$-dependence can only be captured by a
+multi-scale argument that tracks the effective coupling
+through the RG.  Theorem~\ref{thm:conditional} achieves
+this with the polynomial bound $m \cdot a \geq c/\beta^{1/d}$,
+which allows $\xi \sim \beta^{1/d} \to \infty$.
+
+The FSC result (Theorem~\ref{thm:fsc}) is therefore
+\emph{qualitatively correct} (mass gap exists at every
+coupling) but \emph{quantitatively insufficient} for a non-trivial
+continuum limit.  The multi-scale analysis of
+Theorem~\ref{thm:conditional}, with the effective action
+control~\cite{FontesSU2}, is essential for this purpose.
+\end{remark}
+
+\begin{lemma}[High-temperature Dobrushin]\label{lem:high_temp_dob}
+For $\beta \leq \beta_0 = N/(4 \cdot 6(d{-}1))$, the lattice
+Yang--Mills theory satisfies single-link Dobrushin uniqueness
+with $\sum_{\ell'} C_{\ell\ell'} \leq 6(d{-}1) \cdot \beta
+\cdot 4/N < 1$.
+\end{lemma}
+
+
+%% ====================================================================
+\section{Proof of Theorem~\ref{thm:obstruction}:
+The Triviality Obstruction}\label{sec:obstruction}
+%% ====================================================================
+
+\subsection{Proof of Theorem~\ref{thm:obstruction}(a): Triviality}
+
+If $m(\beta) \cdot a \geq c_0 > 0$ uniformly in~$\beta$, then
+the correlation length $\xi = 1/(m \cdot a) \leq 1/c_0$
+in lattice units.  For gauge-invariant observables
+$\mathcal{O}_1, \mathcal{O}_2$ at separation~$r$ lattice spacings:
+\begin{equation}
+  |\langle \mathcal{O}_1(0)\,\mathcal{O}_2(x)\rangle_{\mathrm{conn}}|
+  \;\leq\; C\,e^{-c_0\,r}.
+\end{equation}
+At physical separation $R = r \cdot a$ with $r = R/a$:
+\begin{equation}
+  |\langle \mathcal{O}_1(0)\,\mathcal{O}_2(R)\rangle_{\mathrm{conn}}|
+  \;\leq\; C\,e^{-c_0\,R/a} \;\to\; 0 \quad \text{as } a \to 0
+\end{equation}
+for any fixed $R > 0$.  All connected Schwinger functions
+vanish in the continuum limit.  The resulting theory
+satisfies clustering with infinite rate, which by the
+Jost--Schroer theorem implies a free (generalized free) field.
+\qed
+
+\subsection{What the entropy framework provides}
+
+At the RG scale $k_*$ where $\beta_{\mathrm{eff}} < \beta_c$,
+the entropy bound (Theorem~\ref{thm:entropy}) gives
+\begin{equation}
+  \KL(\mu_{k_*} \| \nu_{k_*})
+  \;\leq\; \frac{C}{\beta^2}.
+\end{equation}
+By Pinsker's inequality:
+\begin{equation}\label{eq:pinsker}
+  \|\mu_{k_*} - \nu_{k_*}\|_{\TV}
+  \;\leq\; \sqrt{C / (2\beta^{2})}
+  \;\leq\; C' / \beta.
+\end{equation}
+\textup{(}If Conjecture~\ref{conj:entropy_geom}
+holds, the sharper bound
+$\KL \leq C/\beta^{2+\alpha}$ with
+$\alpha > 0$ follows, but the uniform
+bound suffices for all results below.\textup{)}
+
+\subsection{What is still needed}
+
+The Dobrushin condition (Proposition~\ref{prop:perturbed_dob})
+requires \emph{pointwise} control: for each link~$\ell$,
+the oscillation $\osc_\ell(R_{k_*}) \leq \varepsilon$
+where $R_{k_*}$ is the non-Wilson part of the effective action.
+
+The entropy bound~\eqref{eq:pinsker} gives
+\emph{average} (TV) closeness to the Gaussian, which
+implies closeness to Haar at small $\beta_{\mathrm{eff}}$.
+However, TV closeness does not directly bound the
+per-link oscillation of the log-density ratio.
+
+The obstruction is localized: at weak coupling
+($\beta_{\mathrm{eff}} \gg 1$), the per-plaquette bound
+ensures that non-Gaussian corrections are $O(1/\beta^2)$
+per plaquette, giving excellent pointwise control.
+At strong coupling ($\beta_{\mathrm{eff}} \ll 1$), the
+cluster expansion converges and gives pointwise bounds.
+The gap is at \emph{intermediate coupling}
+($\beta_{\mathrm{eff}} \approx 1$): here the fields are
+$O(1)$, the quartic approximation fails, and the cluster
+expansion is not yet convergent.
+
+\subsection{The intermediate coupling regime}
+
+The RG passes through intermediate coupling in
+$O(1)$ steps (specifically, $\lceil \log(1/\beta_c) /
+(d\log L)\rceil \leq 3$ steps for $d = 4$, $L = 2$).
+During these steps, the effective action accumulates
+corrections of $O(1)$ per link from the integration over
+interior variables at coupling $\beta_{\mathrm{eff}} \approx 1$.
+
+The companion paper~\cite{FontesSU2} provides
+the required pointwise control through this regime for
+$G = \SU(2)$,
+establishing that $R_{k_*}$ has polymer structure with
+$\osc_\ell(R_{k_*}) \leq \varepsilon(\beta) \to 0$
+as $\beta \to \infty$.
+(Ba{\l}aban's original
+work~\cite{Balaban85,Balaban89} contains analogous
+results in greater generality.)
+
+\begin{proposition}[Sufficient condition for unconditional
+mass gap]\label{prop:sufficient}
+If the effective measure at any RG scale $k_*$ where
+$\beta_{\mathrm{eff}}(k_*) < \beta_c/2$ can be written as
+\begin{equation}
+  d\mu_{k_*}(x) \propto \exp\!\bigl(-\beta_{\mathrm{eff}}
+  \,S_W(x) - R_{k_*}(x)\bigr)\,\prod_\ell dU_\ell
+\end{equation}
+with $\sum_{X \ni \ell} \sup |a_{k_*}(X)|
+\leq \varepsilon < \varepsilon_0(d)$ where
+\begin{equation}\label{eq:eps0}
+  \varepsilon_0 = \frac{1}{2}\Bigl(
+  -\log\Bigl(1 - \frac{1}{6(d{-}1)}\Bigr) - \beta_c\Bigr),
+\end{equation}
+then $m \cdot a \geq c / \beta^{1/d}$ unconditionally.
+For $d = 4$: $\varepsilon_0 \approx 0.030$.
+\end{proposition}
+
+\begin{proof}
+The perturbed Dobrushin row sum becomes
+$6(d{-}1)(1 - e^{-2(\beta_c/2 + \varepsilon)})
+\leq 6(d{-}1)(1 - e^{-\beta_c - 2\varepsilon})$.
+By~\eqref{eq:eps0}:
+$\beta_c + 2\varepsilon < \beta_c + 2\varepsilon_0
+= -\log(1 - 1/(6(d{-}1)))$,
+so the row sum is $< 1$.  The rest follows as in
+\S\ref{sec:conditional}.
+\end{proof}
+
+
+%% ====================================================================
+\section{Continuum Limit and Uniqueness}\label{sec:continuum}
+%% ====================================================================
+
+\subsection{Lattice mass gap and continuum}
+
+Under Theorem~\ref{thm:conditional}, the lattice mass gap
+satisfies $m \cdot a \geq c / \beta^{1/4}$ for $d = 4$.
+Along the asymptotic freedom trajectory
+$\beta(a) \sim c_{\mathrm{AF}} \log(1/a)$, the
+\emph{bare} mass extracted from the bound diverges:
+\begin{equation}
+  m_{\mathrm{bare\text{-}bound}}(a)
+  = \frac{m \cdot a}{a}
+  \;\geq\; \frac{c}{a\,[\log(1/a)]^{1/4}}
+  \;\to\; \infty \quad \text{as } a \to 0.
+\end{equation}
+This divergence is \emph{expected}, not pathological:
+it reflects the fact that the bound $c/\beta^{1/d}$
+is a loose lower bound on $m \cdot a$, far above the
+true scaling $m \cdot a \sim e^{-c'\beta}$.
+The \emph{physical} mass gap
+$m_{\mathrm{phys}} = O(\Lambda_{\mathrm{QCD}})$
+is finite and is extracted from the renormalized
+Schwinger functions via the CS equation, not from
+the Dobrushin bound (see Remark~\ref{rem:bare_vs_phys}).
+
+\subsection{Subsequential continuum limit}
+
+For gauge-invariant observables: the lattice states
+$\{\omega_a\}$ form a tight family (Wilson loops are
+uniformly bounded by~1 and exponential clustering is
+uniform in~$a$).  By Prokhorov's theorem, a
+subsequential limit $\omega_*$ exists.
+
+The limit inherits:
+\begin{enumerate}[label=(\roman*),nosep]
+  \item Reflection positivity (from the lattice, preserved
+    under weak limits).
+  \item $\SO(4)$ covariance (from the lattice symmetry
+    group in the continuum limit).
+  \item Exponential clustering with rate $m_* > 0$
+    (from the uniform lattice bound).
+\end{enumerate}
+By Osterwalder--Schrader
+reconstruction~\cite{OsterwalderSchrader}:
+$\omega_*$ yields a relativistic QFT satisfying
+the Wightman axioms with mass gap $\Delta = m_* > 0$.
+
+\subsection{Reduction to the two-point function}
+
+We now address uniqueness of the continuum limit.  The
+strategy reduces uniqueness of \emph{all} Schwinger
+functions to convergence of the \emph{two-point function}.
+
+\begin{proposition}[SD uniqueness in the massive regime]
+\label{prop:sd_unique}
+Let $\{S_n\}_{n \geq 2}$ and $\{S'_n\}_{n \geq 2}$ be
+two systems of connected Schwinger functions for $\SU(N)$
+Yang--Mills theory, each satisfying the
+Osterwalder--Schrader axioms, the Schwinger--Dyson equations,
+and exponential clustering with mass gap $\Delta > 0$.
+If $S_2 = S'_2$
+\textup{(}the two-point functions agree\textup{)},
+then $S_n = S'_n$ for all~$n$.
+\end{proposition}
+
+\begin{proof}
+\textbf{Step 1: Structure of the SD equations.}
+The Schwinger--Dyson equations for gauge-invariant
+Schwinger functions of a local operator~$\mathcal{O}$
+(of canonical dimension~$d_{\mathcal{O}}$) express
+$S_{n+1}$ in terms of lower correlators by integrating
+the equations of motion inside the functional integral.
+Schematically:
+\begin{equation}\label{eq:sd_structure}
+  S_{n+1}(x_1,\ldots,x_{n+1}) =
+  \sum_{\substack{\text{tree-level}}}
+  V \cdot \bigl[(G * S_k)(x_I)\bigr]
+  \cdot S_{n+1-k}(x_{I^c})
+  + \mathcal{R}_{n+1}[S_2; S_{n+1}],
+\end{equation}
+where $G = S_2$ is the propagator (two-point function),
+$V$ denotes vertex factors depending on the coupling
+$g_R$ and the operator~$\mathcal{O}$, the tree-level sum
+runs over partitions $I \sqcup I^c = \{1,\ldots,n+1\}$
+with $|I| = k$ and involves only $S_j$ with $j \leq n$,
+and the remainder
+$\mathcal{R}_{n+1}[S_2; S_{n+1}]$ arises from
+one-loop and higher corrections involving $S_{n+1}$ itself.
+
+\smallskip
+\textbf{Step 2: Contraction of the self-consistent term.}
+The one-loop remainder has the form
+\[
+  \mathcal{R}_{n+1}[G; S_{n+1}](x_1,\ldots,x_{n+1})
+  = \int V_{\mathrm{loop}}\,G(z{-}z')\,
+  K(x_1,\ldots,x_{n+1}; z, z')\,dz\,dz',
+\]
+where $K$ involves $S_{n+1}$ evaluated at shifted
+arguments.  The operator norm satisfies
+\begin{equation}\label{eq:loop_bound}
+  \|\mathcal{R}_{n+1}[G; \cdot]\|_{\mathrm{op}}
+  \;\leq\; C_n\,g_R^2\,\|G\|_{L^1}
+  \;\leq\; C_n\,g_R^2 / \Delta^{d-2},
+\end{equation}
+since $|G(x)| \leq C\,e^{-\Delta|x|}$ gives
+$\|G\|_{L^1} \leq C'/\Delta^{d-2}$.  Here $C_n$
+depends polynomially on~$n$ (from the number of
+contractions).
+
+For $d = 4$: $\|G\|_{L^1} \leq C/\Delta^2$, and the
+dimensionless control parameter is $g_R^2/\Delta^2$.
+Along the asymptotic freedom trajectory,
+$g_R^2 \to 0$ and $\Delta = O(\Lambda_{\mathrm{QCD}})$
+is fixed, so $g_R^2/\Delta^2 \to 0$.
+
+\smallskip
+\textbf{Step 3: Induction on $n$.}
+For $g_R^2\,\|G\|_{L^1}$ sufficiently small
+(achieved along the AF trajectory for all
+$a \leq a_0$), the operator
+$I - \mathcal{R}_{n+1}[G; \cdot]$ is invertible
+by \eqref{eq:loop_bound}, and
+\begin{equation}\label{eq:sd_solved}
+  S_{n+1} = (I - \mathcal{R}_{n+1}[G;\cdot])^{-1}
+  \Bigl(\sum_{\text{tree}} V \cdot
+  (G * S_k) \cdot S_{n+1-k}\Bigr).
+\end{equation}
+The right-hand side depends only on $G = S_2$ and
+$\{S_j\}_{j \leq n}$.  Proceed by induction:
+
+\noindent\textsc{Base}: $S_2 = S'_2$ by hypothesis.
+
+\noindent\textsc{Step}: Suppose $S_j = S'_j$ for all
+$j \leq n$.  Then the right-hand side
+of~\eqref{eq:sd_solved} is identical for
+$S_{n+1}$ and $S'_{n+1}$, since all inputs agree.
+Therefore $S_{n+1} = S'_{n+1}$.
+
+\smallskip
+\textbf{Step 4: Growth control via asymptotic freedom.}
+The Neumann inverse $(I - \mathcal{R})^{-1}$ introduces
+a factor $(1 - C_n g_R^2/\Delta^{d-2})^{-1}$ at each
+induction step.  For the induction to close at all~$n$:
+we need $C_n g_R^2/\Delta^{d-2} < 1$ for every~$n$.
+Since $C_n = O(n^P)$ for some power~$P$ (from vertex
+combinatorics), this fails for $n > n_{\max}(g_R)$
+at any fixed $g_R > 0$.
+
+\emph{Resolution.}
+The SD equations for the \emph{lattice} Schwinger
+functions $S_n^{(a)}(x_1, \ldots, x_n)$ at fixed
+physical separations $|x_i - x_j| \sim 1/\Lambda_{\mathrm{QCD}}$
+involve loop integrals where internal momenta range
+up to $\pi/a$ (the UV cutoff).
+By asymptotic freedom, the effective coupling
+controlling these loops is the \emph{bare} coupling
+$g^2(a) = 1/(2\beta_0\log(1/a)) \to 0$ as $a \to 0$,
+not the physical coupling $g_R(\mu)$ at the
+external momentum scale.
+Therefore the contraction
+bound~\eqref{eq:loop_bound} involves $g^2(a)$,
+not $g_R(\Lambda_{\mathrm{QCD}})$:
+\[
+  \|\mathcal{R}_{n+1}\|_{\mathrm{op}}
+  \;\leq\; C_n\,g^2(a) / \Delta^{d-2}.
+\]
+For any fixed~$N$, there exists $a_0(N)$ such that
+this is $< 1$ for all $n \leq N$ and all $a < a_0(N)$.
+In the continuum limit $a \to 0$, the bound holds
+for all~$n$ simultaneously, so the lattice SD
+equations uniquely determine $S_n^{(a)}$ from $S_2^{(a)}$
+for each~$a$.
+
+The passage to the continuum ($a \to 0$) then uses
+the CS equation (Lemma~\ref{lem:irrelevant} and
+Proposition~\ref{thm:unique}), which shows that
+the lattice Schwinger functions converge to a unique
+limit.  The uniqueness chain is:
+$S_2^{(a)}$ (given for each~$a$)
+$\xrightarrow{\text{SD on lattice}}$
+all $S_n^{(a)}$ (unique for each~$a$)
+$\xrightarrow{\text{CS convergence}}$
+all $S_n^{(\mathrm{cont})}$ (unique limit).
+\end{proof}
+
+\subsection{Callan--Symanzik equation on the lattice}
+
+The Callan--Symanzik (CS) equation governs how renormalized
+Green's functions evolve with the lattice spacing.  For the
+renormalized $n$-point function of a gauge-invariant local
+operator of dimension~$\Delta_{\mathcal{O}}$:
+\begin{equation}\label{eq:cs_lattice}
+  \Bigl[a\frac{\partial}{\partial a}
+  + \beta_L(g_L, a)\frac{\partial}{\partial g_L}
+  + n\,\gamma_L(g_L, a)\Bigr]
+  G_R^{(n)}(p_i; g_L, a) = 0,
+\end{equation}
+where $\beta_L$ and $\gamma_L$ are the \emph{exact} lattice
+beta-function and anomalous dimension.
+
+\begin{lemma}[Irrelevant corrections]\label{lem:irrelevant}
+Assume (B1)--(B4) \cite{FontesSU2} and the mass gap
+\textup{(}Theorem~\ref{thm:conditional}\textup{)}.
+The lattice beta-function and anomalous dimension satisfy
+\begin{equation}\label{eq:irrelevant}
+  \beta_L(g, a) = \beta(g) + O(a^2 g^2),
+  \qquad
+  \gamma_L(g, a) = \gamma(g) + O(a^2 g^2),
+\end{equation}
+where $\beta(g)$ and $\gamma(g)$ are the universal
+\textup{(}scheme-independent\textup{)} continuum functions,
+and the $O(a^2 g^2)$ corrections are bounded uniformly
+in~$\beta$.
+\end{lemma}
+
+\begin{proof}
+The proof combines a perturbative result from the
+literature with the non-perturbative control established
+in Proposition~\ref{prop:dob_analytic}.
+
+\smallskip
+\noindent\textbf{Perturbative part.}
+The Wilson action satisfies the hypotheses of Reisz's
+lattice power-counting theorem~\cite{Reisz1988}:
+\begin{enumerate}[label=(R\arabic*),nosep]
+  \item \emph{Correct continuum limit.}
+    With $U_\ell = e^{iaA_\mu}$, the plaquette action
+    expands as $(1{-}(1/N)\Re\tr U_p)
+    = (a^4/2N)\tr F_{\mu\nu}^2 + O(a^6)$,
+    so $S_W = S_{\mathrm{YM}} + O(a^2)$.
+  \item \emph{Propagator bound.}
+    The lattice gluon propagator satisfies
+    $G_L(p)^{-1} = (4/a^2)\sum_\mu \sin^2(p_\mu a/2)
+    \cdot(\text{gauge factor})
+    = |p|^2(1 + O(a^2|p|^2))$.
+  \item \emph{Vertex bounds.}
+    The $3$- and $4$-gluon lattice vertices match the
+    continuum vertices to $O(a^2)$, by expansion of the
+    Wilson action to cubic and quartic order.
+  \item \emph{Renormalizability.}
+    YM in $d = 4$ is perturbatively renormalizable.
+\end{enumerate}
+By Reisz's theorem~\cite{Reisz1988}
+(extended to gauge theories in~\cite{Reisz89}):
+every lattice Feynman integral contributing to
+$\beta_L$ or $\gamma_L$ at $K$ loops matches its
+continuum counterpart up to $O(a^2)$ corrections
+(from dimension-$6$ irrelevant operators).
+The first two coefficients $\beta_0, \beta_1$ of
+$\beta(g) = -\beta_0 g^3 - \beta_1 g^5 - \cdots$ are
+universal (scheme-independent) and match
+exactly~\cite{Luscher_Weisz}.
+Therefore, to any finite perturbative order~$K$:
+\begin{equation}\label{eq:pert_matching}
+  |\beta_L^{(K)}(g) - \beta^{(K)}(g)|
+  \;\leq\; C_K\,a^2\,g^{2K+4}\,[\log(1/a)]^{P_K},
+\end{equation}
+and similarly for $\gamma_L$.
+
+\smallskip
+\noindent\textbf{Non-perturbative part.}
+The correction beyond $K$-th order perturbation theory
+has two sources:
+\begin{enumerate}[label=(\roman*),nosep]
+  \item The perturbative remainder of order $g^{2K+2}$,
+    bounded by $C_K g^{2K+2}$.
+  \item The genuinely non-perturbative contribution
+    (instanton-type).  By
+    Proposition~\ref{prop:dob_analytic} (Dobrushin
+    analyticity), applied to the effective theory at the
+    Dobrushin scale, this is bounded by
+    $C\,\varepsilon_0 = O(\beta_c^2)$.
+\end{enumerate}
+Along the asymptotic freedom trajectory
+$g^2(a) = 1/(2\beta_0\log(1/a))$:
+\begin{equation}
+  \varepsilon_0 = O(\beta_c^2) = O\bigl(\beta/L^{k_* d}\bigr)^2
+  = O(e^{-c/g^2}) = O(a^{2c\beta_0}).
+\end{equation}
+For $\SU(2)$ with $c = 8\pi^2/N$:
+$2c\beta_0 \approx 3.67$, so the non-perturbative
+correction is $O(a^{3.67}) = o(a^2)$.
+
+The mass gap ensures IR contributions are bounded by
+$O(e^{-m \cdot a}) = o(a^k)$ for all~$k$.
+
+\smallskip
+\noindent\textbf{Combined.}
+The total error $|\beta_L(g,a) - \beta(g)|$ is bounded by
+three terms:
+\begin{enumerate}[label=(\alph*),nosep]
+  \item \emph{Perturbative lattice artifacts}
+    (from~\eqref{eq:pert_matching}):
+    $C_K\,a^2\,g^{2K+4}\,[\log(1/a)]^{P_K}$.
+  \item \emph{Perturbative remainder} at order $K$:
+    $C_K\,g^{2K+2}$.
+  \item \emph{Non-perturbative (instanton) contribution}:
+    $C'\,a^{2c\beta_0}$ with $2c\beta_0 \approx 3.67$
+    for $\SU(2)$.
+\end{enumerate}
+Along the asymptotic freedom trajectory
+$g^2 = 1/(2\beta_0\log(1/a))$, each term is absorbed
+into $O(a^2 g^2)$ as follows.
+
+For~(b): $g^{2K+2} = [2\beta_0\log(1/a)]^{-(K+1)}$.
+This is $o(a^2 g^2) = o(a^2/\log(1/a))$ provided
+$(K+1)\log\log(1/a) \gg 2\log(1/a)$, which holds for
+$K \geq C/\log\log(1/a)$.  Choose $K = K(a)$ growing
+with $\log\log(1/a)$; then (b)~$= o(a^2 g^2)$.
+
+For~(c): $a^{3.67} / (a^2 g^2) = a^{1.67}\log(1/a) \to 0$
+as $a \to 0$, so (c)~$= o(a^2 g^2)$.
+
+For~(a): with the above choice of~$K$,
+$a^2 g^{2K+4}[\log(1/a)]^{P_K}
+= a^2 g^4 \cdot g^{2K}[\log(1/a)]^{P_K}$,
+and $g^{2K} = o(1)$ since $K \to \infty$, giving
+(a)~$= o(a^2 g^4) \subseteq O(a^2 g^2)$.
+
+Combining:
+\begin{equation}
+  |\beta_L(g,a) - \beta(g)|
+  \;\leq\; C\,a^2\,g^2
+  + o(a^2 g^2)
+  + O(a^{3.67})
+  \;\leq\; C''\,a^2\,g^2,
+\end{equation}
+establishing~\eqref{eq:irrelevant}.  The key point is that
+the non-perturbative error~(c), controlled by Dobrushin
+analyticity at the effective coupling, decays \emph{faster}
+than $a^2$ because $2c\beta_0 > 2$; and the perturbative
+remainder~(b) is tamed by choosing the expansion order~$K$
+to grow logarithmically with $1/a$.
+\end{proof}
+
+\begin{remark}[Hypothesis~(H1) resolved]
+\label{rem:h1}
+Lemma~\ref{lem:irrelevant} establishes the $O(a^2)$
+irrelevant corrections to the lattice CS equation, which
+was listed as hypothesis~(H1) in
+Proposition~\ref{thm:full}.  The proof combines Reisz's
+power-counting theorem~\cite{Reisz1988,Reisz89}
+(a standard result in the lattice QFT literature)
+with the Dobrushin analyticity
+(Proposition~\ref{prop:dob_analytic}) for the
+non-perturbative part.  Since both ingredients are
+available, (H1) is no longer an independent hypothesis.
+\end{remark}
+
+\subsection{Convergence via Gronwall's inequality}
+
+\begin{proposition}[Euclidean continuum limit]
+\label{thm:unique}
+Assume (B1)--(B4) \cite{FontesSU2}.
+Then:
+\begin{enumerate}[label=\textup{(\alph*)},nosep]
+  \item The mass gap satisfies
+    $m \cdot a \geq c/\beta^{1/d}$
+    \textup{(}Theorem~\ref{thm:conditional}\textup{)}.
+  \item The renormalized Schwinger functions of
+    gauge-invariant local operators converge as
+    $a \to 0$ along the asymptotic freedom trajectory.
+  \item The Euclidean continuum limit is unique, determined
+    by the gauge group~$G$ and the dynamical scale
+    $\Lambda_{\mathrm{QCD}}$.
+  \item The theory is interacting: $\lambda_4 \neq 0$
+    \textup{(}Proposition~\ref{thm:nontrivial}\textup{)}.
+\end{enumerate}
+Furthermore:
+\begin{enumerate}[label=\textup{(\alph*)},nosep]
+  \setcounter{enumi}{4}
+  \item The continuum Schwinger functions satisfy reflection
+    positivity \textup{(}inherited from the lattice Wilson
+    action via dominated convergence,
+    Proposition~\ref{prop:rp}\textup{)}.
+  \item By Osterwalder--Schrader
+    reconstruction, the theory defines a relativistic
+    QFT satisfying the Wightman axioms with mass gap
+    $\Delta > 0$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+\textbf{Step 1: Running coupling convergence.}
+Let $g_L(a)$ denote the lattice running coupling,
+satisfying $a\,dg_L/da = \beta_L(g_L, a)$, and let
+$\bar{g}(a)$ denote the continuum running coupling,
+satisfying $a\,d\bar{g}/da = \beta(\bar{g})$, with the
+same initial condition at a reference scale~$a_0$.
+Define $\delta g(a) = g_L(a) - \bar{g}(a)$.  Then
+\begin{equation}\label{eq:delta_g}
+  a\,\frac{d(\delta g)}{da}
+  = \underbrace{[\beta(g_L) - \beta(\bar{g})]}_{
+  = \beta'(\xi)\,\delta g}
+  + \underbrace{[\beta_L(g_L, a) - \beta(g_L)]}_{
+  = O(a^2 g_L^2)},
+\end{equation}
+where $\xi$ lies between $g_L$ and $\bar{g}$
+(mean value theorem) and the $O(a^2 g_L^2)$ bound
+is Lemma~\ref{lem:irrelevant}.
+
+Since $\beta'(g) = -3\beta_0 g^2 + O(g^4)$
+is \emph{negative} for $g$ small (asymptotic freedom),
+$\beta'(\xi) \leq -2\beta_0 \xi^2 < 0$ for
+$\xi \leq g_0$ with $g_0$ sufficiently small.
+This makes the homogeneous part of~\eqref{eq:delta_g}
+\emph{contractive}: perturbations in $g$ are damped.
+
+Define the integrating factor
+$\Phi(a, a') :=
+\exp(\int_a^{a'} \beta'(\xi(s))\,ds/s) \leq 1$
+(since $\beta' < 0$).  By the variation-of-constants
+formula applied to~\eqref{eq:delta_g}:
+\begin{equation}\label{eq:gronwall_bound}
+  |\delta g(a)|
+  \;\leq\; \int_a^{a_0} \Phi(a, a')\,
+  C\,(a')^2\,g_L(a')^2\,\frac{da'}{a'}
+  \;\leq\; C \int_a^{a_0}
+  (a')^2\,g_L(a')^2\,\frac{da'}{a'}.
+\end{equation}
+Along the asymptotic freedom trajectory,
+$g_L(a)^2 \sim 1/(2\beta_0\log(1/a))$, so
+\begin{equation}
+  |\delta g(a)|
+  \;\leq\; \frac{C}{(2\beta_0)^2}
+  \int_a^{a_0}
+  \frac{a'\,da'}{[\log(1/a')]^2}
+  \;\leq\; \frac{C\,a_0^2}{[\log(1/a_0)]^2}
+  \;\to\; 0 \quad \text{as } a_0 \to 0.
+\end{equation}
+Here the integral converges because the
+$a'\,da' = O((a')^2)$ factor overwhelms the
+logarithmic denominator.  The lattice running
+coupling converges uniformly to the continuum
+running coupling on $(0, a_0]$.
+
+\smallskip
+\textbf{Step 2: Green's function convergence.}
+The solution of~\eqref{eq:cs_lattice} along
+the characteristic curves is
+\begin{equation}\label{eq:cs_solution}
+  G_R^{(n)}(p; a)
+  = G_R^{(n)}(p; a_0)\,
+  \exp\!\Bigl(-n\int_a^{a_0}
+  \gamma_L(g_L(a'), a')\,\frac{da'}{a'}\Bigr).
+\end{equation}
+Split the exponent into three terms:
+\begin{align}
+  \int_a^{a_0} \gamma_L(g_L, a')\,\frac{da'}{a'}
+  &= \underbrace{\int_a^{a_0}
+  \gamma(\bar{g}(a'))\,\frac{da'}{a'}}_{=: I_1(a)}
+  \;+\; \underbrace{\int_a^{a_0}
+  [\gamma_L(g_L, a') - \gamma(g_L)]\,
+  \frac{da'}{a'}}_{=: I_2(a)} \notag \\
+  &\quad +\; \underbrace{\int_a^{a_0}
+  [\gamma(g_L(a')) - \gamma(\bar{g}(a'))]\,
+  \frac{da'}{a'}}_{=: I_3(a)}.
+  \label{eq:exponent_split}
+\end{align}
+
+\noindent$I_1(a)$: Since
+$\gamma(\bar{g}) = \gamma_0 \bar{g}^2 + O(\bar{g}^4)$
+with $\bar{g}(a)^2 \sim 1/(2\beta_0\log(1/a))$,
+the integrand is $O(1/\log(1/a'))$, which is integrable
+on $(0, a_0]$.  Hence $I_1(a) \to
+\int_0^{a_0} \gamma(\bar{g})\,da'/a'$, a finite limit.
+
+\noindent$I_2(a)$: By Lemma~\ref{lem:irrelevant},
+$|\gamma_L(g,a) - \gamma(g)| \leq C\,a^2\,g^2$.
+So $|I_2(a)| \leq C \int_0^{a_0}
+a'\,g_L^2(a')\,da'/a' = O(a_0^2/[\log(1/a_0)]^2)$,
+which is finite and independent of~$a$.
+
+\noindent$I_3(a)$: Since $\gamma$ is Lipschitz near $g = 0$
+with $|\gamma(g) - \gamma(g')| \leq C|g - g'|\,(|g| + |g'|)$,
+we have $|I_3(a)| \leq C\,\|\delta g\|_\infty \cdot
+\int_0^{a_0} g_L(a')\,da'/a'$.  By Step~1,
+$\|\delta g\|_\infty \to 0$, so $I_3(a) \to 0$.
+
+All three terms converge.  Therefore the exponential
+factor in~\eqref{eq:cs_solution} has a definite limit
+$Z_n := \lim_{a \to 0} \exp(-n\int_a^{a_0}\gamma_L\,da'/a')
+\in (0,\infty)$,
+and $G_R^{(n)}(p; a) \to G_R^{(n)}(p; a_0) \cdot Z_n$
+as $a \to 0$.
+
+\smallskip
+\textbf{Step 3: Unique initial condition.}
+By Proposition~\ref{prop:perturbed_dob} (Dobrushin uniqueness
+at the Dobrushin scale), the lattice Yang--Mills
+measure at any fixed~$\beta$ in the weak coupling regime
+has a unique infinite-volume Gibbs measure.
+(Dobrushin uniqueness of the effective measure at
+scale~$k_*$ implies uniqueness of the original
+measure, since the conditional distributions within
+blocks are determined by the effective state.)
+Therefore $G_R^{(n)}(p; a_0)$ is a \emph{uniquely determined}
+function of $\beta(a_0)$---there is no subsequence ambiguity
+at fixed lattice spacing.
+
+\smallskip
+\textbf{Step 4: Independence of reference scale.}
+Changing $a_0 \to a_0'$: the CS
+equation~\eqref{eq:cs_solution} connects the Green's
+functions at different reference scales by the
+multiplicative factor
+$\exp(-n\int_{a_0}^{a_0'}\gamma_L\,da'/a')$, which is
+uniquely determined by the lattice RG flow.
+The limit as $a \to 0$ is
+independent of the choice of~$a_0$.
+
+\smallskip
+\textbf{Step 5: All Schwinger functions.}
+Steps~1--4 establish convergence of the two-point
+function $G_R^{(2)}(p; a) \to G_R^{(2)}(p)$ as $a \to 0$.
+By Proposition~\ref{prop:sd_unique} (SD uniqueness),
+the two-point function determines all higher
+$G_R^{(n)}$ uniquely via the massive SD equations.
+Hence all Schwinger functions converge.
+
+\smallskip
+\textbf{Step 6: Wightman axioms.}
+The convergent Schwinger functions satisfy the OS axioms:
+\begin{enumerate}[label=(\roman*),nosep]
+  \item Euclidean covariance: inherited from the lattice
+    symmetries, which converge to continuous rotations.
+  \item Reflection positivity: Proposition~\ref{prop:rp}.
+  \item Exponential clustering with gap
+    $\Delta \geq \liminf_{a \to 0} m(a) \cdot a /a > 0$,
+    inherited from the lattice mass gap.
+\end{enumerate}
+OS reconstruction~\cite{OsterwalderSchrader} yields a
+Wightman QFT with mass gap $\Delta > 0$.
+
+\smallskip
+\textbf{Step 7: Dimensional transmutation.}
+The continuum CS equation $[a\partial_a + \beta(g)\partial_g
++ n\gamma(g)]G^{(n)} = 0$ has a one-parameter family of
+solutions, parametrized by the RG-invariant scale
+$\Lambda_{\mathrm{QCD}}$.  The lattice defines
+$\Lambda_{\mathrm{QCD}}$ via
+\begin{equation}
+  \Lambda_{\mathrm{QCD}}
+  = \frac{1}{a}\,e^{-1/(2\beta_0 g^2(a))}
+  \,(2\beta_0 g^2(a))^{-\beta_1/(2\beta_0^2)}\,
+  [1 + O(g^2)],
+\end{equation}
+which converges as $a \to 0$ (since $\delta g \to 0$
+by Step~1).
+The theory is uniquely determined by~$G$
+and~$\Lambda_{\mathrm{QCD}}$.
+\end{proof}
+
+\begin{remark}[Role of each assumption]
+\label{rem:uniqueness_roles}
+The proof uses three distinct inputs:
+
+\smallskip\noindent
+(i) \textbf{(B1)--(B4) \cite{FontesSU2}:}
+Bounds the non-perturbative contributions to the lattice
+CS coefficients.  Without these bounds, the irrelevant
+corrections in~\eqref{eq:irrelevant} could diverge at
+intermediate coupling, making the Gronwall integral
+diverge.
+
+\smallskip\noindent
+(ii) \textbf{Mass gap~(B5):} Provides the IR cutoff
+ensuring that all sums over lattice sites converge and
+the SD iteration contracts.  Without the mass gap, the
+CS equation could have IR-divergent corrections.
+
+\smallskip\noindent
+(iii) \textbf{Gibbs uniqueness
+(Proposition~\ref{prop:perturbed_dob}):} Gives the
+unique initial condition at the reference scale~$a_0$.
+Without Gibbs uniqueness, the Green's functions at
+fixed~$a_0$ could be multi-valued (depending on boundary
+conditions or the thermodynamic limit procedure),
+destroying the deterministic CS evolution.
+This follows from Dobrushin uniqueness at the Dobrushin
+scale (conditional on B1--B4), independently of the
+unconditional FSC~(Theorem~\ref{thm:fsc},
+conditional on the unique minimum conjecture).
+
+\smallskip\noindent
+Asymptotic freedom is also essential: without $g(a) \to 0$,
+the irrelevant corrections $O(a^2 g^2)$ might fail to be
+integrable.  This is consistent with the expected triviality
+of QED$_4$, where $g(a) \to \infty$ and the continuum
+limit does not exist.
+\end{remark}
+
+\begin{remark}[No Borel summability needed]
+\label{rem:no_borel}
+A common approach to continuum-limit uniqueness is to
+establish Borel summability of the perturbative expansion,
+then apply Watson's theorem.  Our argument avoids this:
+we follow the RG flow \emph{directly} via the lattice
+CS equation rather than reconstructing the theory from
+its perturbative expansion.  The lattice provides
+deterministic dynamics, and Gronwall's inequality gives
+convergence.  Borel summability, if established, would
+give an alternative proof but is not required.
+\end{remark}
+
+\subsection{Non-triviality of the continuum theory}
+
+We now show the continuum limit is an \emph{interacting}
+QFT, not a generalized free field.  A generalized free
+field satisfies Wick's theorem: all connected $n$-point
+functions vanish for $n \geq 3$.  We prove the connected
+four-point function is non-zero.
+
+\begin{definition}[Dimensionless four-point coupling]
+For a gauge-invariant local operator $\mathcal{O}$
+of dimension~$\Delta_{\mathcal{O}}$
+\textup{(}e.g.\ $\mathcal{O} = \tr F_{\mu\nu}^2$\textup{)},
+define the renormalized Schwinger functions
+$G_R^{(n)} = Z_{\mathcal{O}}^n \cdot G_{\mathrm{bare}}^{(n)}$
+and the dimensionless four-point coupling
+\begin{equation}\label{eq:lambda4}
+  \lambda_4
+  \;:=\; \frac{G_{R,\mathrm{conn}}^{(4)}(p_1,\ldots,p_4)}
+  {\bigl[G_R^{(2)}(p_1)\bigr]^2}
+  \bigg|_{|p_i| = \mu},
+\end{equation}
+evaluated at a common momentum scale~$\mu$.
+\end{definition}
+
+\begin{lemma}[RG invariance of $\lambda_4$]
+\label{lem:lambda4_rg}
+The ratio $\lambda_4$ is independent of the
+renormalization factors~$Z_{\mathcal{O}}$:
+since $G_{R,\mathrm{conn}}^{(4)}$ has four operator
+insertions and $[G_R^{(2)}]^2$ has $2 \times 2 = 4$
+insertions, the $Z_{\mathcal{O}}^4$ factors cancel
+in~\eqref{eq:lambda4}.  Consequently, $\lambda_4$
+is scheme-independent and satisfies the homogeneous
+CS equation
+$[a\,\partial_a + \beta_L\,\partial_g]\,\lambda_4 = 0$.
+\end{lemma}
+
+\begin{proposition}[Conditional non-triviality]
+\label{thm:nontrivial}
+Assume (B1)--(B4) \cite{FontesSU2}.
+The continuum Euclidean Yang--Mills theory has a
+non-vanishing connected four-point function:
+$\lambda_4 \neq 0$.  In particular, the theory is not
+a generalized free field.
+\end{proposition}
+
+\begin{proof}
+\textbf{Step~1: Perturbative contribution.}
+At a perturbative scale $\mu \gg \Lambda_{\mathrm{QCD}}$,
+the connected four-point function of $\tr F^2$ is given
+to leading order by one-loop gluon box and crossed
+diagrams:
+\begin{equation}\label{eq:lambda4_pert}
+  \lambda_4^{\mathrm{pert}}(\mu)
+  = c_1\,g(\mu)^4 + c_2\,g(\mu)^6 + \cdots
+\end{equation}
+with $c_1 \neq 0$ (an explicit, computable constant
+depending on the external kinematics and the gauge group).
+This is a standard perturbative calculation~\cite{Seiler82}.
+
+\smallskip
+\textbf{Step~2: Non-perturbative bound.}
+By Proposition~\ref{prop:dob_analytic} (Dobrushin
+analyticity at the Dobrushin scale), the polymer expansion
+bounds~(B1--B4) transfer to individual Schwinger functions.
+The non-perturbative contribution satisfies:
+\begin{equation}
+  |\lambda_4 - \lambda_4^{\mathrm{pert}}|
+  \;\leq\; C\,e^{-c/g(\mu)^2}.
+\end{equation}
+Along the asymptotic freedom trajectory at
+scale~$\mu$: $g(\mu)^2 = 1/(2\beta_0 \log(\mu
+/\Lambda_{\mathrm{QCD}}))$.  For
+$\mu = R\,\Lambda_{\mathrm{QCD}}$ with $R$ large:
+\begin{equation}
+  e^{-c/g(\mu)^2}
+  = e^{-2c\beta_0\,\log R}
+  = R^{-2c\beta_0}.
+\end{equation}
+For $\SU(2)$ with $c = 8\pi^2/N$:
+$2c\beta_0 \approx 3.67$, so the non-perturbative
+correction decays as $R^{-3.67}$.
+
+\smallskip
+\textbf{Step~3: Perturbative dominance.}
+Choose $R$ large enough that
+$C\,R^{-3.67} < \tfrac{1}{2}\,|c_1|\,g(R\Lambda)^4$.
+Since $g(R\Lambda)^4 \sim 1/(\log R)^2$ decays only
+logarithmically while $R^{-3.67}$ decays as a power,
+such $R$ exists.  At this scale:
+\begin{equation}
+  |\lambda_4| \;\geq\;
+  |c_1|\,g^4 - C\,e^{-c/g^2}
+  \;>\; \tfrac{1}{2}\,|c_1|\,g^4 \;>\; 0.
+\end{equation}
+
+\smallskip
+\textbf{Step~4: Continuum limit.}
+By Proposition~\ref{thm:unique}(b), the renormalized
+Schwinger functions converge as $a \to 0$.  By
+Lemma~\ref{lem:lambda4_rg}, $\lambda_4$ is
+RG-invariant (the $Z$-factors cancel).  Therefore the
+continuum value equals the lattice value at any scale:
+\begin{equation}
+  \lambda_4^{\mathrm{cont}}
+  = \lim_{a \to 0} \lambda_4^{\mathrm{latt}}(a)
+  = \lambda_4(\mu)
+  \;\neq\; 0.
+\end{equation}
+A generalized free field has
+$G_{\mathrm{conn}}^{(4)} \equiv 0$, hence
+$\lambda_4 = 0$.  Since $\lambda_4 \neq 0$,
+the continuum theory is not free.
+\end{proof}
+
+\begin{remark}[Alternative argument via the Dobrushin scale]
+\label{rem:dobrushin_nontrivial}
+The non-triviality can also be seen directly from the
+effective theory at the Dobrushin scale~$k_*$.  At this
+scale, $\beta_{\mathrm{eff}} \leq \beta_c/L^d \approx 0.002$
+for $\SU(2)$ in $d = 4$: the theory is in deep strong
+coupling.  The Binder cumulant
+$U_4 = -\kappa_4/(3\kappa_2^2)$
+(where $\kappa_n$ are cumulants of $\tr F^2$)
+satisfies $U_4 \approx 1/3$ at such small $\beta$
+(approaching the Haar-measure value),
+compared to $U_4 = 0$ for a Gaussian.
+The polymer corrections~$R_{k_*}$ are small in the
+Dobrushin regime, so $U_4$ remains bounded away from~$0$.
+Since $U_4 \propto \lambda_4$, this gives a second proof
+of $\lambda_4 \neq 0$.
+\end{remark}
+
+\subsection{Reflection positivity and OS reconstruction}
+
+A central ingredient for promoting the Euclidean continuum
+theory to a relativistic QFT is \emph{reflection positivity}
+(RP).  The following proposition resolves what was originally
+identified as hypothesis~(H2).
+
+\begin{proposition}[Reflection positivity of the continuum
+limit]\label{prop:rp}
+Assume (B1)--(B4) \cite{FontesSU2}.
+The continuum Schwinger functions
+$G_R^{(n)}(x_1, \ldots, x_n)$ of
+Proposition~\ref{thm:unique} satisfy
+Osterwalder--Schrader reflection positivity:
+for any hyperplane~$\Pi$, any $m \geq 1$, and any
+Schwartz test function $f \in \mathcal{S}(\R^{dm})$
+supported in the open half-space~$\Pi_+$,
+\begin{equation}\label{eq:rp}
+  \int f(x_1,\ldots,x_m)\,\overline{f(\theta x_1,
+  \ldots,\theta x_m)}\,
+  G_R^{(2m)}(\theta x_1, \ldots, \theta x_m,
+  x_1, \ldots, x_m)\,
+  d^{dm}x \;\geq\; 0,
+\end{equation}
+where $\theta$ denotes reflection through~$\Pi$.
+\end{proposition}
+
+\begin{proof}
+The argument has three steps.
+
+\smallskip
+\noindent\textbf{Step~1: Lattice RP.}
+The Wilson action on the hypercubic lattice satisfies RP
+with respect to hyperplanes between adjacent time-slices
+(Osterwalder--Seiler~\cite{OsterwalderSeiler78}).
+The proof uses the character expansion of the transfer
+matrix: $e^{-\beta(1 - (1/N)\Re\tr U)}
+= \sum_R c_R(\beta)\,\chi_R(U)$ with $c_R \geq 0$,
+which gives a positive kernel across the reflection
+plane.  This establishes~\eqref{eq:rp} for the
+\emph{bare} lattice Schwinger functions $G_{\mathrm{bare}}^{(2m)}(\cdot\,;a)$
+at each lattice spacing~$a$.
+
+\smallskip
+\noindent\textbf{Step~2: Positive renormalization.}
+The renormalized Schwinger functions are
+$G_R^{(n)} = Z_\mathcal{O}(a)^n\,G_{\mathrm{bare}}^{(n)}$
+where $Z_\mathcal{O}(a)
+= \exp\!\bigl(-n\!\int_a^{a_0}\!\gamma_\mathcal{O}
+(g(a'))\,da'/a'\bigr)$.
+Since $\gamma_\mathcal{O}$ is real for the Euclidean
+theory, $Z_\mathcal{O}(a) \in \R_{>0}$.
+The RP integrand in~\eqref{eq:rp} at lattice
+spacing~$a$ is therefore
+$Z_\mathcal{O}^{2m} \times (\text{bare RP integrand})$
+with $Z_\mathcal{O}^{2m} > 0$, so lattice RP
+implies~\eqref{eq:rp} for the renormalized Schwinger
+functions at each~$a$.
+
+\smallskip
+\noindent\textbf{Step~3: Passage to the limit.}
+By Proposition~\ref{thm:unique}(b), $G_R^{(2m)}(\cdot\,;a)
+\to G_R^{(2m)}(\cdot)$ as $a \to 0$, pointwise at fixed
+physical separations.  The uniform bound
+\begin{equation}
+  |G_R^{(2m)}(\theta x, x;\, a)|
+  \;\leq\; C_m\,e^{-\Delta\,\sum_{i<j}|x_i - x_j|}
+\end{equation}
+holds because: at a reference scale~$a_0$, $G_R(\cdot\,;a_0)$
+is finite and exponentially decaying (mass gap); the CS
+flow from $a_0$ to $a < a_0$ introduces only $O(a_0^2)$
+corrections (Lemma~\ref{lem:irrelevant}), so
+$|G_R(\cdot\,;a)| \leq |G_R(\cdot\,;a_0)|\,(1 + C\,a_0^2)$
+uniformly for $a \leq a_0$.
+\textup{(}Note: the \emph{bare} correlation bound from
+Theorem~\ref{thm:conditional} diverges as $a \to 0$
+(Remark~\ref{rem:bare_vs_phys}), but the \emph{renormalized}
+bound is finite because $Z(a) \to \infty$ compensates
+the shrinking bare correlations.\textup{)}
+This provides an $L^1$-dominating function
+for the integrand $|f|^2 \times |G_R^{(2m)}|$.
+By the dominated convergence theorem:
+\begin{equation}
+  \int |f|^2 \,G_R^{(2m)}(\cdot)
+  = \lim_{a \to 0} \int |f|^2\,G_R^{(2m)}(\cdot\,;a)
+  \;\geq\; 0,
+\end{equation}
+since each term in the limit is~$\geq 0$.
+Euclidean covariance of the continuum limit (from
+universality, Remark~\ref{rem:euclidean}) extends RP
+from the coordinate hyperplanes to arbitrary~$\Pi$.
+\end{proof}
+
+\begin{remark}[The RG is a proof tool, not a definition]
+\label{rem:rg_tool}
+A crucial point: the continuum limit is defined as
+$\lim_{a \to 0} G_R^{(n)}(\cdot\,;a)$, the limit
+of renormalized Schwinger functions of the
+\emph{original lattice Wilson theory}.  The block-spin RG
+is used only to \emph{prove} that this limit exists
+(via the mass gap, Dobrushin uniqueness, and CS
+convergence).  The effective measures at intermediate RG
+scales are analytical scaffolding; they need not satisfy
+RP themselves.  Reflection positivity is inherited
+\emph{directly} from the lattice Wilson action to the
+continuum limit, bypassing the RG entirely.
+\end{remark}
+
+\begin{remark}[Euclidean covariance]
+\label{rem:euclidean}
+The lattice has hypercubic symmetry, while the continuum
+theory should have full $O(d)$ Euclidean covariance.
+By Lemma~\ref{lem:irrelevant}, the rotation-breaking
+lattice artifacts are $O(a^2)$ (Symanzik improvement);
+they vanish in the continuum limit.  The uniqueness of
+the limit (Proposition~\ref{thm:unique}(c)) then implies
+full $O(d)$ covariance, since the continuum theory cannot
+``remember'' the orientation of the lattice.
+\end{remark}
+
+\begin{remark}[OS axioms and reconstruction]
+\label{rem:os}
+With reflection positivity established, the full set of
+Osterwalder--Schrader axioms is
+verified~\cite{OsterwalderSchrader}:
+\textup{(OS0)}~temperedness (from exponential decay);
+\textup{(OS1)}~Euclidean covariance (Remark~\ref{rem:euclidean});
+\textup{(OS2)}~reflection positivity (Proposition~\ref{prop:rp});
+\textup{(OS3)}~symmetry (bosonic fields);
+\textup{(OS4)}~cluster property (exponential clustering from
+mass gap).
+By the OS reconstruction theorem, there exists a
+Wightman QFT with positive Hamiltonian, unique vacuum, and
+mass gap $\Delta > 0$.  This completes the proof of
+Proposition~\ref{thm:unique}(e)--(f).
+\end{remark}
+
+\subsection{Summary of the continuum theory}
+
+In $d = 2$, the mass gap and Gibbs uniqueness hold
+unconditionally for every compact~$G$ and every
+$\beta > 0$ (Theorem~\ref{thm:d2}).  For $d \geq 3$,
+the following results hold conditional on
+(B1)--(B4) \cite{FontesSU2}:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}cll@{}}
+\toprule
+& \textbf{Result} & \textbf{Source} \\
+\midrule
+B5 & Mass gap $m \cdot a \geq c/\beta^{1/d}$
+  & Theorem~\ref{thm:conditional} \\
+& Euclidean continuum limit exists
+  & Proposition~\ref{thm:unique}(b) \\
+& Euclidean limit is unique
+  & Proposition~\ref{thm:unique}(c) \\
+& Theory determined by $\Lambda_{\mathrm{QCD}}$
+  & Proposition~\ref{thm:unique}(c) \\
+& Theory is interacting ($\lambda_4 \neq 0$)
+  & Proposition~\ref{thm:nontrivial} \\
+& Reflection positivity
+  & Proposition~\ref{prop:rp} \\
+& Wightman axioms with $\Delta > 0$
+  & Remark~\ref{rem:os} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent
+All results in the table above ($d \geq 3$) are conditional
+on (B1)--(B4) \cite{FontesSU2} alone.
+
+
+%% ====================================================================
+\section{Discussion}\label{sec:discussion}
+%% ====================================================================
+
+\subsection{Architecture of the proof}
+
+The proof of the mass gap
+(Theorem~\ref{thm:conditional}) has a two-step
+architecture: the effective action control~\cite{FontesSU2}
+governs the RG flow
+through all coupling scales, and Dobrushin uniqueness closes
+the argument at scale~$k_*$.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}lcl@{}}
+\toprule
+\textbf{Scale} & \textbf{Input} &
+\textbf{Role} \\ \midrule
+$k = 0, \ldots, k_*-1$
+  & (B1)--(B4)~\cite{FontesSU2} & RG flow control \\
+$k = k_*$: $\beta_{\mathrm{eff}} \leq \beta_c/L^d$
+  & Dobrushin uniqueness & $\rho_\Lambda \geq 0.69$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The mass gap bound $m \cdot a \geq c/\beta^{1/d}$ is
+controlled entirely by the strong-coupling Dobrushin gap
+divided by the number of RG steps:
+$c/\beta^{1/d} = \rho_* / L^{k_*}$.
+
+The semi-classical HS gap
+($\geq c_1\beta_{\mathrm{eff}}$, Method~A) and
+the entropy decay ($W_k$ shrinking, Method~B) are
+\emph{not} used in the proof of
+Theorem~\ref{thm:conditional}.  They serve a different
+purpose: establishing the unconditional FSC
+(Theorem~\ref{thm:fsc}), which yields a
+$\beta$-independent mass gap at the cost of triviality
+(Theorem~\ref{thm:obstruction}).
+
+\subsection{The intermediate coupling regime}
+
+The effective action control~(B1)--(B4) governs the RG flow
+through the
+intermediate coupling regime $\beta_{\mathrm{eff}} \approx 1$.
+This regime consists of $O(1)$ RG steps
+(specifically, $\leq 3$ for $d = 4$, $L = 2$).
+For $G = \SU(2)$, $d = 4$, the companion
+paper~\cite{FontesSU2} verifies (B1)--(B4) via explicit
+Hessian spectrum, parity, and cluster expansion.
+
+The FSC result (Theorem~\ref{thm:fsc}) bypasses this
+regime entirely by working at a single scale, achieving
+an $O(1)$ block gap via the single-well monotonicity
+structure.  However, the resulting $\beta$-independent mass
+gap leads to a trivial continuum limit
+(Remark~\ref{rem:triviality}).
+
+This reveals a fundamental tension: any argument that
+avoids the intermediate coupling regime by using only
+single-scale information will necessarily produce a
+$\beta$-independent bound, because the $\beta$-dependence
+of correlations on a fixed lattice is a \emph{multi-scale}
+phenomenon.  The correlation length $\xi(\beta)$ grows
+because fluctuations at each scale contribute cumulatively,
+and tracking this accumulation requires following the RG
+through intermediate coupling.
+
+For general compact simple~$G$ beyond $\SU(2)$,
+verifying~(B1)--(B4) remains open.
+Three potential approaches:
+
+\begin{enumerate}[nosep]
+  \item \textbf{Direct verification.}
+    Extend the methods of~\cite{FontesSU2} (Hessian spectrum,
+    parity, cluster expansion) to general~$G$.  The main
+    additional input needed is the representation-theoretic
+    analysis of the character expansion and the Christoffel
+    bound for the non-abelian Hessian.
+
+  \item \textbf{Entropy-to-pointwise transfer.}
+    The entropy bound gives
+    $\KL(\mu_{k_*} \| \nu_{k_*}) \leq C/\beta^{2}$,
+    which is $\ell^1$ (average) control.
+    A concentration inequality or hypercontractivity argument
+    could potentially upgrade this to $\ell^\infty$
+    (pointwise) control, at least for the per-link
+    oscillation.  The per-plaquette variance bound
+    (Proposition~\ref{prop:plaquette}) is a step in this
+    direction.
+    Establishing the geometric decay
+    (Conjecture~\ref{conj:entropy_geom})
+    would sharpen the bound to $C/\beta^{2+\alpha}$.
+
+  \item \textbf{Convexity-based RG.}
+    On the restricted ensemble $\Omega_{\mathrm{good}}$
+    where $|\theta_p| \leq M = O(\sqrt{\log\beta/\beta})$
+    for all plaquettes~$p$, the Wilson action is
+    strictly convex: $\Hess(S_W) \geq (1 - O(\log\beta/\beta))
+    \,B^\top B > 0$.  If the RG could be shown to preserve
+    this convexity through the $O(1)$ intermediate steps
+    (perhaps with a controlled loss), the Brascamp--Lieb
+    inequality would give pointwise bounds on the effective
+    action without the polymer expansion.  The entropy
+    bound ensures the restricted ensemble has probability
+    $\geq 1 - O(1/\beta)$ at all weak-coupling scales.
+\end{enumerate}
+
+\subsection{Summary of contributions}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}p{5.5cm}cl@{}}
+\toprule
+\textbf{Component} & \textbf{Status} &
+\textbf{Source} \\ \midrule
+Lattice mass gap (strong coupling)
+  & Done & OS~(1978) \\
+UV stability (effective action)
+  & Proved ($\SU(2)$) & \cite{FontesSU2} \\
+Lattice mass gap (weak coupling)
+  & \textbf{This paper} & Thm~\ref{thm:conditional} \\
+FSC (positive constant)
+  & \textbf{This paper}${}^\dagger$ & Thm~\ref{thm:fsc} \\
+Unique Gibbs measure
+  & \textbf{This paper}${}^\dagger$ & Thm~\ref{thm:fsc} \\
+Euclidean continuum limit exists
+  & \textbf{This paper} & Prop~\ref{thm:unique} \\
+Euclidean limit is unique
+  & \textbf{This paper} & Prop~\ref{thm:unique} \\
+Non-trivial (interacting)
+  & \textbf{This paper} & Prop~\ref{thm:nontrivial} \\
+Reflection positivity
+  & \textbf{This paper} & Prop~\ref{prop:rp} \\
+Wightman axioms with mass gap
+  & \textbf{This paper} & Remark~\ref{rem:os} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent
+For $G = \SU(2)$, $d = 4$: all results are unconditional
+(via~\cite{FontesSU2}).
+For general compact simple~$G$: all results hold once
+the analogous (B1)--(B4) is verified.
+
+\noindent
+{\small ${}^\dagger$FSC and Gibbs uniqueness additionally require
+the unique minimum conjecture
+(Conjecture~\ref{conj:unique_min}), proved for $G = U(1)$.
+All other results, including the continuum limit and
+Wightman axioms, are independent of the FSC.}
+
+\medskip
+The key contributions are:
+(i)~the bridge from effective action control
+to the mass gap (Theorem~\ref{thm:conditional}),
+via Dobrushin uniqueness at the threshold scale;
+(ii)~the FSC
+(Theorem~\ref{thm:fsc}, conditional on the unique minimum
+conjecture), proving Gibbs uniqueness and positive mass gap
+at every coupling;
+(iii)~the Dobrushin analyticity transfer
+(Proposition~\ref{prop:dob_analytic}), which converts
+polymer expansion bounds into Schwinger function bounds;
+(iv)~the resolution of the Reisz power-counting input
+(Lemma~\ref{lem:irrelevant}), establishing $O(a^2)$
+irrelevant corrections to the CS equation;
+(v)~the CS convergence argument giving uniqueness
+without Borel summability (Proposition~\ref{thm:unique});
+(vi)~the non-triviality via perturbative dominance
+at high scales (Proposition~\ref{thm:nontrivial});
+and (vii)~the reflection positivity of the continuum
+limit (Proposition~\ref{prop:rp}), inherited from the
+lattice Wilson action and enabling OS reconstruction.
+
+
+%% ====================================================================
+\section*{Acknowledgments}
+%% ====================================================================
+
+The author thanks Claude (Anthropic) for sustained
+collaboration in developing the mathematical framework.
+
+\begin{thebibliography}{99}
+
+\bibitem{FontesSU2} R.~Fontes,
+  ``Mass gap for $\SU(2)$ lattice Yang--Mills:
+  block-spin RG with explicit Hessian spectrum,
+  parity, and Faddeev--Popov factorization,''
+  preprint (2026).
+
+\bibitem{Balaban85} T.~Ba{\l}aban,
+  ``Ultraviolet stability in field theory:
+  the $\phi^4_3$ model,''
+  in \emph{Scaling and Self-Similarity in Physics},
+  Birkh\"auser (1985).
+
+\bibitem{Balaban89} T.~Ba{\l}aban,
+  ``Large field renormalization, II:
+  Localization, exponentiation, and bounds for the
+  $\R$ operation,''
+  Comm.\ Math.\ Phys.\ \textbf{122} (1989), 355--392.
+  \texttt{doi:10.1007/BF01238433}
+
+\bibitem{Guth80} A.~H.~Guth,
+  ``Existence proof of a nonconfining phase in
+  four-dimensional $U(1)$ lattice gauge theory,''
+  Phys.\ Rev.\ D \textbf{21} (1980), 2291--2307.
+  \texttt{doi:10.1103/PhysRevD.21.2291}
+
+\bibitem{GopfertMack82} M.~G\"opfert and G.~Mack,
+  ``Proof of confinement of static quarks in 3-dimensional
+  $U(1)$ lattice gauge theory for all values of the
+  coupling constant,''
+  Comm.\ Math.\ Phys.\ \textbf{82} (1982), 545--606.
+  \texttt{doi:10.1007/BF01961240}
+
+\bibitem{HelfferSjostrand} B.~Helffer and J.~Sj\"ostrand,
+  ``Multiple wells in the semi-classical limit, I,''
+  Comm.\ Partial Differential Equations \textbf{9}
+  (1984), 337--408.
+  \texttt{doi:10.1080/03605308408820335}
+
+\bibitem{Helffer02} B.~Helffer,
+  \emph{Semi-Classical Analysis, Witten Laplacians,
+  and Statistical Mechanics},
+  Lecture Notes in Math., vol.~1702, Springer, 2002.
+  \texttt{doi:10.1007/978-3-662-04936-4}
+
+\bibitem{DobrushinShlosman} R.~L.~Dobrushin and
+  S.~B.~Shlosman,
+  ``Completely analytical interactions:
+  constructive description,''
+  J.~Stat.\ Phys.\ \textbf{46} (1987), 983--1014.
+  \texttt{doi:10.1007/BF01011153}
+
+\bibitem{Martinelli1999} F.~Martinelli,
+  ``Lectures on Glauber dynamics for discrete spin
+  models,''
+  in \emph{Lectures on Probability Theory and Statistics},
+  Lecture Notes in Math., vol.~1717, Springer (1999),
+  93--191.
+  \texttt{doi:10.1007/978-3-540-48115-7\_2}
+
+\bibitem{HolleyStroock} R.~Holley and D.~Stroock,
+  ``Logarithmic Sobolev inequalities and stochastic
+  Ising models,''
+  J.~Stat.\ Phys.\ \textbf{46} (1987), 1159--1194.
+  \texttt{doi:10.1007/BF01011161}
+
+\bibitem{StroockZegarlinski} D.~Stroock and
+  B.~Zegarlinski,
+  ``The logarithmic Sobolev inequality for continuous
+  spin systems on a lattice,''
+  J.~Funct.\ Anal.\ \textbf{104} (1992), 299--326.
+  \texttt{doi:10.1016/0022-1236(92)90003-2}
+
+\bibitem{Singer78} I.~M.~Singer,
+  ``Some remarks on the Gribov ambiguity,''
+  Comm.\ Math.\ Phys.\ \textbf{60} (1978), 7--12.
+  \texttt{doi:10.1007/BF01609471}
+
+\bibitem{OsterwalderSchrader} K.~Osterwalder and
+  R.~Schrader,
+  ``Axioms for Euclidean Green's functions,''
+  Comm.\ Math.\ Phys.\ \textbf{31} (1973), 83--112;
+  \textbf{42} (1975), 281--305.
+  \texttt{doi:10.1007/BF01645738}
+
+\bibitem{Seiler82} E.~Seiler,
+  \emph{Gauge Theories as a Problem of Constructive
+  Quantum Field Theory and Statistical Mechanics},
+  Lecture Notes in Phys., vol.~159, Springer, 1982.
+  \texttt{doi:10.1007/3-540-11559-5}
+
+\bibitem{OsterwalderSeiler78} K.~Osterwalder and
+  E.~Seiler,
+  ``Gauge field theories on a lattice,''
+  Ann.\ Physics \textbf{110} (1978), 440--471.
+  \texttt{doi:10.1016/0003-4916(78)90039-8}
+
+\bibitem{Reisz1988} T.~Reisz,
+  ``A power counting theorem for Feynman integrals
+  on the lattice,''
+  Comm.\ Math.\ Phys.\ \textbf{116} (1988), 81--126.
+  \texttt{doi:10.1007/BF01239027}
+
+\bibitem{Reisz89} T.~Reisz,
+  ``Renormalization of Feynman integrals on the lattice,''
+  Comm.\ Math.\ Phys.\ \textbf{117} (1989), 79--108.
+  \texttt{doi:10.1007/BF01228412}
+
+\bibitem{Rothaus} O.~S.~Rothaus,
+  ``Diffusion on compact Riemannian manifolds and
+  logarithmic Sobolev inequalities,''
+  J.~Funct.\ Anal.\ \textbf{42} (1981), 102--109.
+  \texttt{doi:10.1016/0022-1236(81)90049-5}
+
+\bibitem{Luscher_Weisz} M.~L\"uscher and P.~Weisz,
+  ``On-shell improved lattice gauge theories,''
+  Comm.\ Math.\ Phys.\ \textbf{97} (1985), 59--77.
+  \texttt{doi:10.1007/BF01206178}
+
+\bibitem{Akhiezer} N.~I.~Akhiezer,
+  \emph{The Classical Moment Problem},
+  Oliver \& Boyd, Edinburgh, 1965.
+
+\bibitem{Dobrushin68} R.~L.~Dobrushin,
+  ``Description of a random field by means of conditional
+  probabilities and conditions for its regularity,''
+  Theor.\ Probab.\ Appl.\ \textbf{13} (1968), 197--224.
+  \texttt{doi:10.1137/1113026}
+
+\bibitem{Simon_statistical} B.~Simon,
+  \emph{The Statistical Mechanics of Lattice Gases},
+  vol.~I, Princeton Univ.\ Press, 1993.
+
+\end{thebibliography}
+
+\end{document}

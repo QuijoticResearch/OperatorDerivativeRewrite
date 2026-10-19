@@ -1,0 +1,158 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{hyperref}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\dt}{\partial_t}
+\newcommand{\dz}{\partial_z}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+
+\title{Gershgorin-type velocity bounds for higher-order zero flow}
+\author{}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+We bound the zero velocities of $\dt p=\dz^m p$ by a single, geometrically
+explicit quantity built only from inter-zero distances. We call these
+``Gershgorin-type'' because, exactly as Gershgorin disks localize eigenvalues
+by row-sums of off-diagonal magnitudes, here the velocity of a zero is
+controlled by a neighbor-distance sum.
+
+\section{The neighbor-sum and the basic estimate}
+
+Recall (companion note \texttt{derivation\_zero\_odes.tex}) that on simple
+times
+\begin{equation}\label{eq:ode}
+  \dot z_j=-m!\,e_{m-1}\!\Bigl(\bigl\{(z_j-z_a)^{-1}\bigr\}_{a\neq j}\Bigr),
+\end{equation}
+where $e_{r}$ is the degree-$r$ elementary symmetric polynomial.
+
+\begin{definition}\label{def:Sj}
+For a simple configuration $\{z_k\}$ set
+\[
+  S_j:=\sum_{k\neq j}\frac{1}{\abs{z_j-z_k}},\qquad
+  x_k:=\frac{1}{\abs{z_j-z_k}}\ \ (k\neq j),\quad\text{so } S_j=\textstyle\sum_k x_k .
+\]
+\end{definition}
+
+\begin{lemma}[Triangle inequality on the symmetric sum]\label{lem:tri}
+\begin{equation}\label{eq:tri}
+  \abs{\dot z_j}
+  \le m!\!\!\sum_{\substack{A\subseteq\{1,\dots,N\}\setminus\{j\}\\ |A|=m-1}}
+        \;\prod_{a\in A}\frac{1}{\abs{z_j-z_a}}
+   = m!\,e_{m-1}(x).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Apply $\abs{\cdot}$ to \eqref{eq:ode} and the triangle inequality termwise;
+$\abs{\prod_a (z_j-z_a)^{-1}}=\prod_a x_a$.
+\end{proof}
+
+\section{Reduction to a single power of $S_j$}
+
+\begin{lemma}[Elementary symmetric vs.\ power of the sum]\label{lem:macl}
+For nonnegative reals $x_1,\dots,x_{n}$ and $1\le r\le n$,
+\begin{equation}\label{eq:macl}
+  e_r(x)\;\le\;\frac{1}{r!}\,\Bigl(\sum_k x_k\Bigr)^{r}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Let $p_1=\sum_k x_k$. Expanding $p_1^{\,r}=\bigl(\sum_k x_k\bigr)^r$ as a sum
+over \emph{all} ordered $r$-tuples $(k_1,\dots,k_r)$ gives a sum of nonnegative
+terms. The subsum over tuples with \emph{distinct} entries equals
+$r!\,e_r(x)$ (each unordered $r$-subset appears in $r!$ orders). Since the
+remaining terms (tuples with a repeat) are nonnegative,
+$r!\,e_r(x)\le p_1^{\,r}$, which is \eqref{eq:macl}.
+\end{proof}
+
+\begin{remark}
+Inequality \eqref{eq:macl} is the elementary half of the Maclaurin/Newton
+inequalities; we only need the crude form, which holds with the explicit
+constant $1/r!$ and requires nothing beyond nonnegativity.
+\end{remark}
+
+\begin{proposition}[Master bound]\label{prop:master}
+On any simple time, for every $j$,
+\begin{equation}\label{eq:master}
+  \abs{\dot z_j}\;\le\;m!\,e_{m-1}(x)\;\le\;m\,S_j^{\,m-1}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Combine \eqref{eq:tri} with \eqref{eq:macl} at $r=m-1$:
+$m!\,e_{m-1}(x)\le m!\cdot\frac{1}{(m-1)!}S_j^{\,m-1}=m\,S_j^{\,m-1}$.
+\end{proof}
+
+\section{The motivating cases}
+
+\begin{corollary}[$m=2$]\label{cor:m2}
+\[
+  \abs{\dot z_j}\le 2\sum_{k\neq j}\frac{1}{\abs{z_j-z_k}}=2\,S_j .
+\]
+\end{corollary}
+
+\begin{corollary}[$m=4$, IBM / fourth order]\label{cor:m4}
+\begin{equation}\label{eq:m4}
+  \abs{\dot z_j}
+  \;\le\;24\!\!\sum_{\substack{a<b<c\\ a,b,c\neq j}}
+        \frac{1}{\abs{z_j-z_a}\,\abs{z_j-z_b}\,\abs{z_j-z_c}}
+  \;\le\;4\,S_j^{\,3}.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+The first inequality is \eqref{eq:tri} with $m=4$ (so $e_3$ over distinct
+triples). For the second, \eqref{eq:macl} at $r=3$ gives
+$e_3(x)\le \tfrac{1}{6}S_j^3$, hence $24\,e_3(x)\le 4\,S_j^3$.
+\end{proof}
+
+\section{Geometric consequences}
+
+\begin{corollary}[Separation controls speed]\label{cor:sep}
+Let $r_j=\min_{k\neq j}\abs{z_j-z_k}$ be the nearest-neighbor distance of $z_j$.
+Then $S_j\le (N-1)/r_j$ and therefore
+\[
+  \abs{\dot z_j}\;\le\;m\left(\frac{N-1}{r_j}\right)^{m-1}.
+\]
+A well-isolated zero (large $r_j$) is slow; only near-collisions produce large
+velocities, and the higher order $m=4$ amplifies near-neighbor effects
+cubically rather than linearly.
+\end{corollary}
+
+\begin{corollary}[A priori confinement window]\label{cor:window}
+Suppose along the flow $r_j(t)\ge\rho>0$ for $t\in[0,T]$. Then
+$\abs{z_j(t)-z_j(0)}\le t\cdot m\bigl((N-1)/\rho\bigr)^{m-1}$ for $t\le T$;
+in particular each zero stays within a disk whose radius grows at most linearly
+in $t$ with the stated explicit rate. (This is a conditional statement: it
+presumes the separation lower bound, which is exactly what fails at a
+collision.)
+\end{corollary}
+
+\begin{remark}[Sharpness]
+The bound $m!\,e_{m-1}(x)\le m\,S_j^{\,m-1}$ (for $m>2$) is \emph{saturated} in
+spread-out regimes, where the inverse-gap mass is shared among many comparable
+terms so that $\max_k x_k/S_j\to0$ and the distinct $(m-1)$-tuples dominate; it is
+\emph{poor} when one or a few neighbors dominate (if all but one $x_k\to0$ then
+$e_{m-1}\to0$ and the slack is maximal). The spread-out, saturated regime is
+exactly the spectral edge (see \texttt{edge\_gershgorin.tex},
+Prop.\ on saturation). The intermediate quantity $m!\,e_{m-1}(x)$ in
+\eqref{eq:master} is the honest one and is what the code reports alongside the
+crude $m\,S_j^{m-1}$.
+\end{remark}
+
+\end{document}

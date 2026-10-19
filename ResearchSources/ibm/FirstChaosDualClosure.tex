@@ -1,0 +1,1309 @@
+\documentclass[11pt,reqno]{amsart}
+
+%==============================================================
+% First-Chaos Dual Closure of the IBM Ito Correction
+% Sequel to: Energy-First Stochastic Calculus (EnergyFirst.tex)
+% Scope: Tier-B only. Close the L^2-divergent first scenery-chaos
+% sector of the mollified IBM correction in H^{-1}.
+%==============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{mathrsfs}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+\emergencystretch=3em
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{assumption}[theorem]{Assumption}
+
+\theoremstyle{remark}
+\newtheorem*{sketch}{Proof sketch}
+\newtheorem*{risk}{Risk}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\Hilb}{\mathcal{H}}
+\newcommand{\Dom}{\mathrm{Dom}}
+\newcommand{\Energy}{\mathcal{E}}
+\newcommand{\Source}{\mathsf{S}}
+\newcommand{\Obs}{\mathsf{Z}}
+\newcommand{\IBM}{Z}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\sgn}{sgn}
+
+\title{First-Chaos Dual Closure of the\\
+       Iterated Brownian Motion It\^o Correction}
+\author{Ramiro Fontes}
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+For iterated Brownian motion $\IBM_t=X_{|Y_t|}$ with independent
+two-sided Brownian scenery $X$ and Brownian clock $Y$, the companion
+paper~\cite{Fontes-EnergyFirst} proved a mollified pathwise It\^o
+identity together with the analytic obstruction that the first
+scenery-chaos projection of the mollified It\^o correction
+$C_{\IBM,\varepsilon}(f;t)$ has variance diverging to $+\infty$ in
+$L^{2}(\Omega)$ as $\varepsilon\to 0$, driven by the rank-one
+$\partial_{r}^{2}X^{\varepsilon}$ kernel and by the Bouleau--Yor
+spatial quadratic variation of the Brownian local time.
+
+We close that divergent sector in the natural \emph{negative Sobolev
+/ quartic observable-energy dual} topology. Writing
+$\mathrm{Proj}_{1}^{X}C_{\IBM,\varepsilon}(f;t)=I_{1}^{X}(K_{\varepsilon}(\cdot\mid Y))$
+with the exact kernel decomposition
+\[
+ K_{\varepsilon}\;=\;K_{\varepsilon}^{\mathrm{bdy}}
+ \;+\;\tfrac12\bigl(T_{1}^{\varepsilon}+T_{2}^{\varepsilon}+T_{3}^{\varepsilon}\bigr)
+ \;+\;R_{\varepsilon}^{\mathrm{layer}},
+\]
+where the first three summands extend the
+bulk-Stein-extrapolated terms of the companion paper to all of
+$[0,\infty)$ and the residual $R_{\varepsilon}^{\mathrm{layer}}$
+captures the $r\in[0,c\varepsilon]$ boundary layer where the Stein
+cancellation fails, we prove:
+\begin{enumerate}
+\item (Interior, \cref{thm:interior}) For every $f\in\mathscr S(\R)$,
+both the bulk-extrapolated kernel
+$K_{\varepsilon}^{\mathrm{int}}\coloneqq\tfrac12(T_{1}^{\varepsilon}+T_{2}^{\varepsilon}+T_{3}^{\varepsilon})$
+and the actual interior kernel
+$K_{\varepsilon}^{\mathrm{int,exact}}\coloneqq K_{\varepsilon}^{\mathrm{int}}+R_{\varepsilon}^{\mathrm{layer}}$
+converge to the same limit
+\[
+ K^{\mathrm{int}}(w\mid Y)=\tfrac12\bigl[T_{1}^{*}(w\mid Y)
+ +B(w)L(w)-\partial_{w}\!\bigl(C(w)L(w)\bigr)\bigr]
+\]
+in $L^{2}(\Omega_{Y};H^{-1}(\R,dw))$, with the boundary-layer
+residual vanishing in the stronger space
+$L^{2}(\Omega_{Y};L^{2}(\R))$ at rate $O(\varepsilon^{1/2})$
+(\cref{lem:bdy-layer-vanish}). Here $L=L_{t}^{\cdot}(|Y|)$, and
+$A,B,C$ are the heat-semigroup coefficients
+$\tfrac14P_{|\cdot|}f^{(5)}$, $P_{|\cdot|}f'''$, $P_{|\cdot|}f'$
+from a self-contained Stein/covariance audit.
+\item (Boundary, \cref{thm:boundary})
+$K_{\varepsilon}^{\mathrm{bdy}}\to L_{t}^{0}(Y)\,f'(x)\,\delta_{0}$ in
+$L^{2}(\Omega_{Y};H^{-1/2-\delta}(\R))$ at rate
+$\varepsilon^{\delta\wedge 1/2}$ for every $\delta>0$. The
+$\delta_{0}'$ contribution conjectured from naive Malliavin
+expansion vanishes identically because
+$\Cov(X_{0}^{\varepsilon},\partial_{r}X_{r}^{\varepsilon}|_{r=0})=0$
+(\cref{lem:bdy-cov-zero}).
+\item (Combined, \cref{cor:combined})
+$K_{\varepsilon}\to K^{\mathrm{int}}+L_{t}^{0}(Y)f'(x)\delta_{0}$ in
+$L^{2}(\Omega_{Y};H^{-1}(\R))$, using the continuous embedding
+$H^{-1/2-\delta}\subset H^{-1}$ for $0<\delta<1/2$.
+\item (Quantitative rate, \cref{prop:interior-rate}) Under
+\cref{assu:lt-moment} below, the interior rate is
+$\varepsilon^{1/2-\eta}$ for every $\eta\in(0,1/2)$.
+\end{enumerate}
+
+Under the EnergyFirst nondegeneracy hypothesis $(P_{\eta}f')(x)\not\equiv 0$
+on $(0,\infty)$, this convergent $H^{-1}$ sector is precisely the
+sector whose $L^{2}(\Omega)$-variance diverges, so the dual closure
+above is sharp at the topology selected by the proved obstruction.
+
+The label \emph{quartic} refers throughout to
+operator-derivative / test-energy order, not Wiener chaos degree
+(\cref{rem:quartic-not-chaos}); the singular object is genuinely
+first-$X$-chaos, but it is a contraction channel of the quartic IBM
+correction. We do not construct $C_{\IBM}(f;t)$ in the full
+$\Energy_{\IBM}^{(4),-}$ here; the $(m,n)$-bidegrees with $m\ge 2$,
+the full Wiener--It\^o assembly, and the semigroup correction
+$u(t,x)-f(x)$ remain the Tier-A problem (\cref{sec:scope}).
+Filtration-level obstructions (Tsirelson-type noises etc.) are an
+independent direction and play no role here.
+\end{abstract}
+
+\maketitle
+
+%==============================================================
+\section{Introduction}\label{sec:intro}
+
+\subsection*{The proved obstruction.}
+For mollified IBM $\IBM_{t}^{\varepsilon}=x+X^{\varepsilon}_{|Y_{t}|}$
+with $X^{\varepsilon}=\rho_{\varepsilon}*X$,
+$f\in\mathscr S(\R)$, and
+$g_{\varepsilon}(r)=f(x+X^{\varepsilon}_{r})$, the mollified pathwise
+It\^o theorem of~\cite{Fontes-EnergyFirst} establishes the identity
+(writing $\delta_{Y}$ for the Skorohod divergence on the clock
+factor):
+\begin{equation}\label{eq:flagship}
+ f(\IBM_{t}^{\varepsilon})-f(\IBM_{0}^{\varepsilon})
+  =\delta_{Y}\bigl(B_{f,\varepsilon}(t)\bigr)+C_{\IBM,\varepsilon}(f;t),
+\end{equation}
+\begin{equation}\label{eq:Ceps}
+ C_{\IBM,\varepsilon}(f;t)
+  =g_{\varepsilon}'(0)\,L_{t}^{0}(Y)
+  +\tfrac12\!\int_{0}^{t}g_{\varepsilon}''(|Y_{s}|)\,ds,
+\end{equation}
+with $g_{\varepsilon}'(r)=f'(x+U_{r})V_{r}$ and
+$g_{\varepsilon}''(r)=f''(x+U_{r})V_{r}^{2}+f'(x+U_{r})W_{r}$ for
+$U_{r}=X^{\varepsilon}_{r}$, $V_{r}=\partial_{r}X^{\varepsilon}_{r}$,
+$W_{r}=\partial_{r}^{2}X^{\varepsilon}_{r}$. The same paper proves
+the obstruction
+\begin{equation}\label{eq:obstruction}
+ \liminf_{\varepsilon\to 0}\,
+ \Var\bigl(\mathrm{Proj}_{1}^{X}\,C_{\IBM,\varepsilon}(f;t)\bigr)
+  =+\infty
+\end{equation}
+under the nondegeneracy hypothesis
+\begin{equation}\label{eq:nondegen}
+ C(\eta)\coloneqq(P_{\eta}f')(x)\not\equiv 0
+ \quad\text{on }(0,\infty),
+\end{equation}
+so the first-$X$-chaos projection of $C_{\IBM,\varepsilon}$ has no
+$L^{2}(\Omega)$ limit. \Cref{eq:obstruction} is sharp at the
+$L^{2}(\Omega)$ level, but it does not preclude a limit in a weaker,
+\emph{structurally identified}, topology.
+
+\subsection*{Strategy: where the dropped derivative goes.}
+The proof of~\eqref{eq:obstruction} in~\cite{Fontes-EnergyFirst}
+isolates a single offending piece:
+$T_{3}^{\varepsilon}(w)=-\partial_{w}(\rho_{\varepsilon}*C_{\varepsilon}L)(w)$
+with $C_{\varepsilon}\to C$ uniformly on compacts of $(0,\infty)$ and
+$L=L_{t}^{\cdot}(|Y|)$. The $L^{2}(\R)$ blow-up is exactly
+``$\chi C L\notin H^{1}(\R)$'', a Bouleau--Yor failure. Dropping one
+spatial derivative absorbs the blow-up:
+$L\in H^{1/2-\eta}_{\mathrm{loc}}$ a.s., so
+$\partial_{w}(CL)\in H^{-1/2-\eta}\subset H^{-1}(\R)$ a.s.\ and
+$T_{3}^{\varepsilon}\to-\partial_{w}(CL)$ in $H^{-1}$.
+
+The same one-derivative drop on the spatial scenery variable absorbs
+all three interior pieces
+$T_{1}^{\varepsilon},T_{2}^{\varepsilon},T_{3}^{\varepsilon}$ and,
+after a separate treatment in $H^{-1/2-\delta}$, the boundary piece
+$K_{\varepsilon}^{\mathrm{bdy}}$.
+
+\subsection*{Conceptual rule: ``quartic'' means operator order, not chaos degree.}
+The companion paper labels the natural unmollified target
+$C_{\IBM}(f;t)$ as living in the dual of a \emph{quartic composite
+observable energy}
+$\Energy_{\IBM}^{(4)}=\Energy_{\IBM}^{(2)}\otimes\Energy_{\IBM}^{(2)}$.
+The label \emph{quartic} refers throughout to the order of the
+operator derivative producing the kernel: the second derivative
+$D_{\Source}^{(2)}$ acts twice in the assembly of $g''_{\varepsilon}$,
+and the test side requires four-fold structure when paired with the
+correction. The singular object \eqref{eq:obstruction} is genuinely
+first-$X$-chaos in the Wiener decomposition, and the closure topology
+we identify is the negative Sobolev space $H^{-1}(\R)$ on the
+spatial scenery variable; this is a single \emph{contraction channel}
+of the four-fold composite, not a four-variable kernel space. We
+make this distinction definitional in~\cref{sec:test-dual} and refer
+to it throughout (\cref{rem:quartic-not-chaos}).
+
+\subsection*{Main results.}
+The following are stated informally; precise hypotheses are in
+\cref{sec:test-dual,sec:audit,sec:interior,sec:boundary}.
+\begin{itemize}
+\item (Interior, \cref{thm:interior}) For every $f\in\mathscr S(\R)$,
+the interior portion of $\mathrm{Proj}_{1}^{X}\,C_{\IBM,\varepsilon}$
+has a Malliavin kernel $K_{\varepsilon}^{\mathrm{int}}$ converging to
+an explicit limit in $L^{2}(\Omega_{Y};H^{-1}(\R,dw))$.
+\item (Quantitative rate, \cref{prop:interior-rate}) Under explicit
+assumptions on the boundary-layer kernel and on local-time Sobolev
+moments, the interior rate is $\varepsilon^{1/2-\eta}$ for every
+$\eta\in(0,1/2)$.
+\item (Boundary, \cref{thm:boundary}) The boundary portion converges
+to $L_{t}^{0}(Y)\,f'(x)\,\delta_{0}$ in
+$L^{2}\bigl(\Omega_{Y};\,H^{-1/2-\delta}(\R)\bigr)$ at rate
+$\varepsilon^{\delta\wedge 1/2}$.
+\item (Combined, \cref{cor:combined}) The full first-$X$-chaos
+Malliavin kernel converges in $L^{2}(\Omega_{Y};H^{-1}(\R))$ via
+the embedding $H^{-1/2-\delta}\subset H^{-1}$,
+$\delta\in(0,1/2)$.
+\item (Sharpness vs.\ obstruction) Under~\eqref{eq:nondegen}, the
+$H^{-1}$-convergent first-$X$-chaos sector above is precisely the
+sector whose $L^{2}(\Omega)$-variance diverges in
+\cite{Fontes-EnergyFirst}.
+\end{itemize}
+
+\subsection*{What this paper does not prove.}\label{sec:not}
+We do \emph{not} construct $C_{\IBM}(f;t)$ as an element of the full
+quartic-energy dual $\Energy_{\IBM}^{(4),-}$. We do \emph{not}
+recover the Brownian-time semigroup correction $u(t,x)-f(x)$ from
+the first-chaos sector, because first chaos has mean zero; the
+semigroup correction lives in the $(0,n)$ pure-clock and
+$(2,n)$ second-energy-contraction sectors (in Gaussian coordinates,
+the latter is the Wick-square sector), not addressed here. We do \emph{not} pursue
+filtration-level obstructions (Tsirelson-type noises etc.); they are
+a separate direction and are not used in any argument below. The
+sole goal is to close the $L^{2}(\Omega)$-divergent first-scenery-chaos
+sector identified by~\eqref{eq:obstruction} in the dual topology
+that the structure of the obstruction selects.
+
+\subsection*{Outline.}
+\Cref{sec:test-dual} defines the first-chaos test/dual block.
+\Cref{sec:audit} re-derives the Stein/covariance audit of the
+mollified kernel from first principles, including the boundary
+covariance identity $\Cov(U_{0},V_{0})=0$ that determines the
+boundary limit. \Cref{sec:interior} proves the interior convergence
+theorem (unconditional) and the conditional rate proposition.
+\Cref{sec:boundary} proves the boundary theorem.
+\Cref{sec:combined} states the combined first-chaos dual closure and
+its scope. \Cref{sec:imports} records the lemmas imported from
+\cite{Fontes-EnergyFirst}; \cref{sec:risks} lists the points that
+must be verified.
+
+%==============================================================
+\section{The first-chaos test/dual block}\label{sec:test-dual}
+
+We do not build the full quartic dual $\Energy_{\IBM}^{(4),-}$ here.
+Only its first-$X$-chaos slice is needed.
+
+\begin{definition}[First-chaos test space and dual]\label{def:first-chaos-block}
+Set
+\[
+ \Energy_{\IBM,1,*}^{(4),+}\;\coloneqq\;H^{1}(\R,dw),
+ \qquad
+ \Energy_{\IBM,1,*}^{(4),-}\;\coloneqq\;H^{-1}(\R,dw),
+\]
+the standard Bessel-potential Hilbert spaces on the scenery variable
+$w\in\R$, with duality pairing
+$\langle K,\phi\rangle_{H^{-1},H^{1}}$ extending the
+$L^{2}(\R)$-inner product. The \emph{first-chaos pairing} between a
+first-$X$-chaos random variable $F=I_{1}^{X}(K)$ with conditional
+Malliavin kernel $K(\cdot\mid Y)\in L^{2}(\Omega_{Y};H^{-1}(\R))$
+and a deterministic test integrand $\phi\in H^{1}(\R)$ is
+\[
+ \bigl\langle F,\phi\bigr\rangle_{1,*}
+ \;\coloneqq\;\E_{Y}\!\bigl[\langle K(\cdot\mid Y),\phi\rangle_{H^{-1},H^{1}}\bigr],
+\]
+finite by Cauchy--Schwarz once $K(\cdot\mid Y)\in H^{-1}(\R)$ a.s.\ in
+$L^{2}(\Omega_{Y})$. When $K(\cdot\mid Y)\in L^{2}(\R)$ a.s.\ the
+duality pairing reduces to the $L^{2}(\R)$-pairing.
+\end{definition}
+
+\begin{remark}[``Quartic'' = operator order, not Wiener-chaos degree]
+\label{rem:quartic-not-chaos}
+\Cref{def:first-chaos-block} concerns elements of the first scenery
+Wiener chaos $\Hilb_{1}^{X}$. The label \emph{quartic} attached to
+the dual $\Energy_{\IBM,1,*}^{(4),-}$ refers to the order of the
+operator-derivative composition that produced the kernel
+($D_{\Source}^{(2)}$ acting twice in the assembly of
+$g_{\varepsilon}''$, paired against second-order tensor test
+integrands), \emph{not} the Wiener chaos degree of the resulting
+random variable. The first-scenery-chaos sector is a single
+contraction channel of the four-fold composite identified in the
+rigged-quartic hierarchy of~\cite{Fontes-EnergyFirst}, and is the
+only sector closed in this paper.
+\end{remark}
+
+\begin{remark}[Energy contraction vs.\ Wick]\label{rem:energy-contraction}
+In the Gaussian scenery used for IBM, the contractions appearing
+below may be represented by Wiener-chaos/Wick bookkeeping. However
+the mechanism used here is weaker: it is the subtraction or
+isolation of lower-order energy contractions determined by the
+observable-energy pairing. Thus Wick ordering is not a primitive
+of the framework; it is the Gaussian realization of the more
+intrinsic energy-contraction operation. We accordingly use the
+phrases \emph{energy contraction}, \emph{observable contraction},
+\emph{compensated energy product}, \emph{lower-order contraction
+subtraction}, and \emph{contraction channel} throughout, reserving
+the word \emph{Wick} for explicit references to classical Gaussian
+Wiener-chaos bookkeeping (e.g.\ when comparing with the
+contraction-renormalised correction candidate
+of~\cite{Fontes-EnergyFirst}).
+\end{remark}
+
+\begin{remark}[Why \texorpdfstring{$H^{-1}$}{H\textasciicircum-1} is a robust energy-dual block]\label{rem:why-Hminus1}
+$H^{-1}(\R)$ is a robust, canonical energy-dual block for the
+first-chaos sector because two minimal facts are available:
+$\partial_{w}\colon L^{2}(\R)\to H^{-1}(\R)$ is bounded, and
+$\rho_{\varepsilon}*C_{\varepsilon}L\to CL$ in $L^{2}(\R)$ for the
+offending kernel of~\eqref{eq:obstruction}
+in~\cite{Fontes-EnergyFirst}. Together these close the singular
+channel in $H^{-1}$. We do not claim $H^{-1}$ is the optimal Sobolev
+target: the sharper local threshold is governed by
+Bouleau--Yor regularity, which puts $L=L_{t}^{\cdot}(|Y|)\in H^{1/2-\eta}_{\mathrm{loc}}$
+and hence $\partial_{w}(CL)\in H^{-1/2-\eta}_{\mathrm{loc}}\subset H^{-1}_{\mathrm{loc}}$
+a.s. The point is structural: $L^{2}(\Omega)$ is too strong to host
+the unmollified first-chaos correction, while the negative
+Sobolev / energy-dual topology closes the singular channel.
+
+In particular, ordinary Wick-square renormalisation
+(the Gaussian-coordinate realisation of a second-energy-contraction
+subtraction) does not remove the rank-one first-chaos singularity
+carried by $\partial_{r}^{2}X^{\varepsilon}$; the correct repair is
+negative Sobolev / quartic-dual closure.
+\end{remark}
+
+\begin{remark}[Clock variable; full quartic space]
+We do not introduce a clock-side regularity index here. The
+first-chaos closure is entirely about the scenery variable $w$; the
+clock variable enters only through the random $L_{t}^{\cdot}(|Y|)$
+coefficient, expectation in $Y$ replaces clock-Sobolev pairing. A
+clock-graded test space becomes necessary only at the $(m,n)$
+mixed-bidegree level, deferred to Tier-A.
+\end{remark}
+
+%==============================================================
+\section{Stein and covariance audit; the kernel}\label{sec:audit}
+
+We re-derive the first-chaos Malliavin kernel of
+$\mathrm{Proj}_{1}^{X}\,C_{\IBM,\varepsilon}(f;t)$ from first
+principles. No coefficient is trusted from~\cite{Fontes-EnergyFirst}
+until re-checked.
+
+\subsection*{Setup.}
+$X$ is two-sided Brownian scenery on $\R$, white-noise representation
+$X_{z}=\int_{\R}\sigma_{z}(w)\,d\xi(w)$ with
+$\sigma_{z}(w)=\sgn(z)\mathbf 1_{[0,z]_{*}}(w)$ and
+$\Cov(X_{z},X_{z'})=\tfrac12(|z|+|z'|-|z-z'|)$. The mollifier $\rho$
+is even, non-negative, $C_{c}^{\infty}$ with support in $[-c,c]$,
+$\int\rho=1$;
+$\rho_{\varepsilon}(\cdot)=\varepsilon^{-1}\rho(\cdot/\varepsilon)$,
+$c_{\rho}^{(1)}\coloneqq\int(\rho')^{2}$,
+$c_{\rho}\coloneqq\int|v|\rho(v)\,dv$.
+
+\subsection*{Mollified scenery: Malliavin kernels.}
+$U_{r}=X^{\varepsilon}_{r}=\int\rho_{\varepsilon}(r-z)X_{z}\,dz$,
+$V_{r}=\partial_{r}U_{r}$, $W_{r}=\partial_{r}^{2}U_{r}$.
+By integration by parts in the white-noise representation
+($\rho_{\varepsilon}$ compactly supported),
+\begin{equation}\label{eq:VW-rep}
+ V_{r}=\int\rho_{\varepsilon}(r-z)\,d\xi(z),
+ \qquad
+ W_{r}=\int\rho_{\varepsilon}'(r-z)\,d\xi(z),
+\end{equation}
+so the Malliavin derivatives are
+\begin{equation}\label{eq:Dw}
+ D_{w}U_{r}=\xi_{r,\varepsilon}(w),\quad
+ D_{w}V_{r}=\rho_{\varepsilon}(r-w),\quad
+ D_{w}W_{r}=\rho_{\varepsilon}'(r-w),
+\end{equation}
+with
+$\xi_{r,\varepsilon}(w)=\int\rho_{\varepsilon}(r-z)\sigma_{z}(w)\,dz$.
+
+\subsection*{Bulk covariances.}
+$\Var(U_{r})=\sigma_{\varepsilon}^{2}(r)$ with
+$\sigma_{\varepsilon}^{2}(r)=
+\int\rho_{\varepsilon}(r-z)|z|\,dz
+-\tfrac12\iint\rho_{\varepsilon}(r-z_{1})\rho_{\varepsilon}(r-z_{2})|z_{1}-z_{2}|\,dz_{1}dz_{2}$.
+For $|r|>c\varepsilon$, the first integral equals $|r|$ and the
+second equals $\tfrac12 K_{\rho}\varepsilon$ for a finite constant
+$K_{\rho}$ independent of $r$; hence
+$\sigma_{\varepsilon}^{2}(r)=|r|+O(\varepsilon)$ uniformly in
+$|r|>c\varepsilon$. Differentiating, in the bulk:
+\begin{equation}\label{eq:bulk-cov}
+ (\sigma_{\varepsilon}^{2})'(r)=1,\qquad
+ \Cov(U_{r},V_{r})=\tfrac12,\qquad
+ \sigma_{V}^{2}=c_{\rho}^{(1)}/\varepsilon,\qquad
+ \Cov(U_{r},W_{r})=-c_{\rho}^{(1)}/\varepsilon.
+\end{equation}
+The last identity follows by differentiating
+$2\Cov(U_{r},V_{r})=(\sigma_{\varepsilon}^{2})'(r)=1$ once more:
+$2(\sigma_{V}^{2}+\Cov(U_{r},W_{r}))=0$.
+
+\subsection*{Gaussian Stein identities (re-derived).}
+For jointly centred Gaussian $(U,V)$ and smooth $h$,
+$\E[h(U)V]=\Cov(U,V)\E[h'(U)]$ (Stein, direct). Iterating once on
+$g(U,V)=h(U)V$ via the vector Stein identity
+$\E[Vg(U,V)]=\Cov(V,U)\E[\partial_{U}g]+\Var(V)\E[\partial_{V}g]$
+gives
+\begin{equation}\label{eq:Stein-sq}
+ \E[h(U)V^{2}]=\Cov(U,V)^{2}\E[h''(U)]+\sigma_{V}^{2}\E[h(U)].
+\end{equation}
+
+\subsection*{Bulk Stein cancellation.}
+Apply $D_{w}$ to
+$g_{\varepsilon}''(r)=f''(x+U_{r})V_{r}^{2}+f'(x+U_{r})W_{r}$
+and take expectation in $X$:
+\begin{align*}
+ \E_{X}[D_{w}g_{\varepsilon}''(r)]
+ &=\E_{X}[f'''(x+U_{r})V_{r}^{2}+f''(x+U_{r})W_{r}]\,\xi_{r,\varepsilon}(w)\\
+ &\quad+2\E_{X}[f''(x+U_{r})V_{r}]\,\rho_{\varepsilon}(r-w)
+ +\E_{X}[f'(x+U_{r})]\,\rho_{\varepsilon}'(r-w).
+\end{align*}
+In the bulk, \eqref{eq:Stein-sq} and~\eqref{eq:bulk-cov} give
+$\E_{X}[f'''(x+U_{r})V_{r}^{2}]=\sigma_{V}^{2}\E_{X}[f'''(x+U_{r})]+\tfrac14\E_{X}[f^{(5)}(x+U_{r})]$
+and
+$\E_{X}[f''(x+U_{r})W_{r}]=\Cov(U_{r},W_{r})\E_{X}[f'''(x+U_{r})]
+=-\sigma_{V}^{2}\E_{X}[f'''(x+U_{r})]$,
+so the $\varepsilon^{-1}$ contributions cancel exactly. Setting
+\begin{equation}\label{eq:ABC}
+ A_{\varepsilon}(r)=\tfrac14\E_{X}[f^{(5)}(x+U_{r})],\quad
+ B_{\varepsilon}(r)=\E_{X}[f'''(x+U_{r})],\quad
+ C_{\varepsilon}(r)=\E_{X}[f'(x+U_{r})],
+\end{equation}
+we obtain, in the bulk,
+\begin{equation}\label{eq:kernel-form}
+ \E_{X}[D_{w}g_{\varepsilon}''(r)]
+ =A_{\varepsilon}(r)\xi_{r,\varepsilon}(w)+B_{\varepsilon}(r)\rho_{\varepsilon}(r-w)
+ +C_{\varepsilon}(r)\rho_{\varepsilon}'(r-w).
+\end{equation}
+Each $A_{\varepsilon},B_{\varepsilon},C_{\varepsilon}$ is uniformly
+bounded in $(r,\varepsilon)$ with pointwise heat-semigroup limits
+\begin{equation}\label{eq:ABC-limit}
+ A(r)=\tfrac14(P_{|r|}f^{(5)})(x),\quad
+ B(r)=(P_{|r|}f''')(x),\quad
+ C(r)=(P_{|r|}f')(x),
+\end{equation}
+the limit $C(r)$ matching~\eqref{eq:nondegen}.
+
+\subsection*{Boundary covariance:
+\texorpdfstring{$\Cov(U_{0},V_{0})=0$}{Cov(U\_0,V\_0)=0}.}
+
+\begin{lemma}[Boundary covariance vanishes]\label{lem:bdy-cov-zero}
+For two-sided Brownian scenery $X$ and even mollifier $\rho$,
+\[
+ \Cov(U_{0},V_{0})\;=\;\tfrac12(\sigma_{\varepsilon}^{2})'(0)\;=\;0,
+ \qquad\text{hence } U_{0}\perp V_{0}.
+\]
+\end{lemma}
+
+\begin{proof}
+$(\sigma_{\varepsilon}^{2})'(r)=I_{1}'(r)-\tfrac12 I_{2}'(r)$ with
+$I_{1}(r)=\int\rho_{\varepsilon}(r-z)|z|\,dz$ and
+$I_{2}(r)=\iint\rho_{\varepsilon}(r-z_{1})\rho_{\varepsilon}(r-z_{2})|z_{1}-z_{2}|\,dz_{1}dz_{2}$.
+At $r=0$, by translation,
+$I_{1}'(0)=-\int\rho_{\varepsilon}'(-z)|z|\,dz=\int\rho_{\varepsilon}'(z)|z|\,dz$,
+which vanishes by odd-even pairing. For $I_{2}'(0)$, the integrand
+is symmetric in $(z_{1},z_{2})$, so
+$I_{2}'(0)=-2\iint\rho_{\varepsilon}'(-z_{1})\rho_{\varepsilon}(-z_{2})|z_{1}-z_{2}|\,dz_{1}dz_{2}
+=2\iint\rho_{\varepsilon}'(z_{1})\rho_{\varepsilon}(z_{2})|z_{1}-z_{2}|\,dz_{1}dz_{2}$.
+Integration by parts in $z_{1}$, using compact support of
+$\rho_{\varepsilon}$, gives
+$I_{2}'(0)=-2\iint\rho_{\varepsilon}(z_{1})\rho_{\varepsilon}(z_{2})\sgn(z_{1}-z_{2})\,dz_{1}dz_{2}=0$
+by antisymmetry of $\sgn(z_{1}-z_{2})$ against the symmetric
+product measure. Hence $(\sigma_{\varepsilon}^{2})'(0)=0$. Joint
+Gaussianity of $(U_{0},V_{0})$ and vanishing covariance imply
+independence.
+\end{proof}
+
+\begin{remark}[Consequence for the boundary kernel]
+\label{rem:bdy-coeff}
+Because $V_{0}\perp U_{0}$, $\E_{X}[f''(x+U_{0}^{\varepsilon})V_{0}]
+=\E[V_{0}]\,\E_{X}[f''(x+U_{0}^{\varepsilon})]=0$. The
+``$\xi_{0,\varepsilon}$ piece'' in $\E_{X}[D_{w}g_{\varepsilon}'(0)]$
+vanishes identically, leaving only the $\rho_{\varepsilon}$ kernel
+with $C_{\varepsilon}(0)$ coefficient. This rules out the naively
+conjectured $\delta'_{0}$ term in the limit of
+$K_{\varepsilon}^{\mathrm{bdy}}$; see \cref{thm:boundary}.
+\end{remark}
+
+\subsection*{Kernel decomposition.}
+Combining the Stein audit with the IBM identity~\eqref{eq:Ceps} and
+the occupation-density formula
+$\int_{0}^{t}h(|Y_{s}|)\,ds=\int_{0}^{\infty}h(r)L_{t}^{r}(|Y|)\,dr$
+($L\coloneqq L_{t}^{\cdot}(|Y|)$), the \emph{exact} conditional
+Malliavin kernel of $\mathrm{Proj}_{1}^{X}C_{\IBM,\varepsilon}(f;t)$
+in $L^{2}(\R,dw)$ is
+\begin{equation}\label{eq:Keps-decomp}
+ K_{\varepsilon}(w\mid Y)
+ =K_{\varepsilon}^{\mathrm{bdy}}(w\mid Y)
+ +\tfrac12\bigl(T_{1}^{\varepsilon}+T_{2}^{\varepsilon}+T_{3}^{\varepsilon}\bigr)(w\mid Y)
+ +R_{\varepsilon}^{\mathrm{layer}}(w\mid Y),
+\end{equation}
+with
+\begin{align}
+ K_{\varepsilon}^{\mathrm{bdy}}(w\mid Y)
+ &=L_{t}^{0}(Y)\cdot C_{\varepsilon}(0)\,\rho_{\varepsilon}(w),\label{eq:Kbdy}\\
+ T_{1}^{\varepsilon}(w\mid Y)
+ &=\int_{0}^{\infty}A_{\varepsilon}(r)L(r)\,\xi_{r,\varepsilon}(w)\,dr,\label{eq:T1}\\
+ T_{2}^{\varepsilon}(w\mid Y)
+ &=\bigl(\rho_{\varepsilon}*B_{\varepsilon}L\bigr)(w),\label{eq:T2}\\
+ T_{3}^{\varepsilon}(w\mid Y)
+ &=-\partial_{w}\bigl(\rho_{\varepsilon}*C_{\varepsilon}L\bigr)(w),\label{eq:T3}
+\end{align}
+where the $T_{j}^{\varepsilon}$ are defined using the
+\emph{bulk-extrapolated} coefficients $A_{\varepsilon},B_{\varepsilon},
+C_{\varepsilon}$ of~\eqref{eq:ABC} integrated over all of
+$[0,\infty)$, and the \emph{boundary-layer residual} is
+\begin{equation}\label{eq:R-layer}
+ R_{\varepsilon}^{\mathrm{layer}}(w\mid Y)
+ =\tfrac12\!\int_{0}^{c\varepsilon}\!\!\bigl[\Delta_{A}(r)\,\xi_{r,\varepsilon}(w)
+ +\Delta_{B}(r)\,\rho_{\varepsilon}(r-w)\bigr]L(r)\,dr,
+\end{equation}
+with
+\begin{equation}\label{eq:DeltaAB}
+\begin{aligned}
+ \Delta_{A}(r)&=\bigl(\sigma_{V}^{2}+\Cov(U_{r},W_{r})\bigr)\E_{X}[f'''(x+U_{r})]
+ +\bigl(\Cov(U_{r},V_{r})^{2}-\tfrac14\bigr)\E_{X}[f^{(5)}(x+U_{r})],\\
+ \Delta_{B}(r)&=\bigl(2\Cov(U_{r},V_{r})-1\bigr)\E_{X}[f'''(x+U_{r})],
+\end{aligned}
+\end{equation}
+both supported on $r\in[0,c\varepsilon]$ (zero in the bulk by the
+cancellation~\eqref{eq:kernel-form}).
+(In~\eqref{eq:Kbdy} we have used
+$\rho_{\varepsilon}(0-w)=\rho_{\varepsilon}(w)$ by evenness, and
+\cref{lem:bdy-cov-zero} to kill the $\xi_{0,\varepsilon}$
+contribution at $r=0$.)
+
+\subsection*{Boundary layer of the bulk identity.}\label{ssec:boundary-layer}
+The cancellation~\eqref{eq:kernel-form} that yields
+$T_{1}^{\varepsilon},T_{2}^{\varepsilon},T_{3}^{\varepsilon}$ from
+the bulk coefficients $A_{\varepsilon},B_{\varepsilon},C_{\varepsilon}$
+uses $(\sigma_{\varepsilon}^{2})'(r)=1$, which holds only for
+$|r|>c\varepsilon$. The residual $R_{\varepsilon}^{\mathrm{layer}}$
+defined by~\eqref{eq:R-layer}--\eqref{eq:DeltaAB} captures the
+deviation in the interior layer $r\in[0,c\varepsilon]$. Its
+vanishing in $L^{2}(\Omega_{Y};L^{2}(\R))$, with the explicit
+$\varepsilon^{1/2}$ rate~\eqref{eq:R-layer-bound} used in
+\cref{prop:interior-rate}, is the content of
+\cref{lem:bdy-layer-vanish} below.
+
+%==============================================================
+\section{Interior first-chaos convergence}\label{sec:interior}
+
+We separate the qualitative convergence statement (unconditional,
+\cref{thm:interior}, supported by the qualitative
+\cref{lem:bdy-layer-vanish}) from the quantitative rate
+(\cref{prop:interior-rate}, conditional on two stronger
+assumptions).
+
+\subsection*{Qualitative boundary-layer vanishing.}
+
+\begin{lemma}[Boundary-layer residual vanishing]\label{lem:bdy-layer-vanish}
+For every $f\in\mathscr S(\R)$, the boundary-layer residual
+$R_{\varepsilon}^{\mathrm{layer}}$ of~\eqref{eq:R-layer}--\eqref{eq:DeltaAB}
+satisfies
+\[
+ R_{\varepsilon}^{\mathrm{layer}}\;\xrightarrow[\varepsilon\to 0]{}\;0
+ \quad\text{in }L^{2}\bigl(\Omega_{Y};\,L^{2}(\R,dw)\bigr),
+\]
+and hence in $L^{2}(\Omega_{Y};H^{-1}(\R))$ via the continuous
+embedding $L^{2}\hookrightarrow H^{-1}$.
+\end{lemma}
+
+\begin{proof}
+\emph{Step 1: closed form for $(\sigma_{\varepsilon}^{2})''$.}
+Writing $\sigma_{\varepsilon}^{2}(r)=\E[(X_{r}^{\varepsilon})^{2}]$
+and using $\Cov(X_{z_{1}},X_{z_{2}})=\tfrac12(|z_{1}|+|z_{2}|-|z_{1}-z_{2}|)$
+for two-sided Brownian scenery, change variables
+$u_{i}=r-z_{i}$ in
+$\sigma_{\varepsilon}^{2}(r)=\iint\rho_{\varepsilon}(r-z_{1})\rho_{\varepsilon}(r-z_{2})\Cov(X_{z_{1}},X_{z_{2}})\,dz_{1}dz_{2}$
+to obtain
+\begin{equation}\label{eq:sigma2-closed-form}
+ \sigma_{\varepsilon}^{2}(r)
+ \;=\;\bigl(\rho_{\varepsilon}*|\cdot|\bigr)(r)\,-\,K_{\rho}\,\varepsilon,
+ \qquad
+ K_{\rho}\;\coloneqq\;\tfrac12\!\iint\rho(v_{1})\rho(v_{2})|v_{1}-v_{2}|\,dv_{1}dv_{2}.
+\end{equation}
+Differentiating the smooth convolution
+$(\rho_{\varepsilon}*|\cdot|)$ twice in $r$ gives
+$(\sigma_{\varepsilon}^{2})'(r)=(\rho_{\varepsilon}*\sgn)(r)$ and
+\begin{equation}\label{eq:sigma2-second-derivative}
+ (\sigma_{\varepsilon}^{2})''(r)\;=\;2\,\rho_{\varepsilon}(r),
+\end{equation}
+using $(\sgn)'=2\delta_{0}$ in the distributional sense (the
+convolution with $\rho_{\varepsilon}\in C_{c}^{\infty}$ regularises
+to a smooth function on $\R$).
+
+\emph{Step 2: layer factor bounds.}
+From~\eqref{eq:sigma2-second-derivative} and
+$2(\sigma_{V}^{2}+\Cov(U_{r},W_{r}))=(\sigma_{\varepsilon}^{2})''(r)$,
+\begin{equation}\label{eq:sigmaV-W-bound}
+ \bigl|\sigma_{V}^{2}+\Cov(U_{r},W_{r})\bigr|
+ \;=\;\rho_{\varepsilon}(r)
+ \;\le\;\|\rho\|_{\infty}/\varepsilon
+ \qquad\text{for }r\in[0,c\varepsilon],
+\end{equation}
+and the left-hand side vanishes for $r>c\varepsilon$, confirming
+the bulk cancellation~\eqref{eq:kernel-form}. Similarly
+$2\Cov(U_{r},V_{r})=(\sigma_{\varepsilon}^{2})'(r)=(\rho_{\varepsilon}*\sgn)(r)\in[-1,1]$,
+and by oddness of $\sgn$ and evenness of $\rho_{\varepsilon}$ takes
+value $0$ at $r=0$ (\cref{lem:bdy-cov-zero}); for $r\in[0,c\varepsilon]$
+it transitions monotonically from $0$ to $1$, so
+$\Cov(U_{r},V_{r})\in[0,1/2]$, hence
+$|\Cov(U_{r},V_{r})^{2}-\tfrac14|\le\tfrac14$ and
+$|2\Cov(U_{r},V_{r})-1|\le 1$. For $f\in\mathscr S(\R)$, every
+derivative $f^{(k)}$ is bounded, and
+$|\E_{X}[f^{(k)}(x+U_{r})]|\le\|f^{(k)}\|_{\infty}$. Combining,
+for $r\in[0,c\varepsilon]$,
+\begin{equation}\label{eq:Delta-bounds}
+ |\Delta_{A}(r)|\;\le\;C_{f}\,\rho_{\varepsilon}(r)+\tfrac14\|f^{(5)}\|_{\infty},
+ \qquad
+ |\Delta_{B}(r)|\;\le\;\|f'''\|_{\infty},
+\end{equation}
+with $C_{f}=\|f'''\|_{\infty}$.
+
+\emph{Step 3: $L^{2}(\R)$ bound on $R_{\varepsilon}^{\mathrm{layer}}$.}
+The scenery-derivative kernel estimate
+of~\cite{Fontes-EnergyFirst} (mollifier $L^{2}$-rate and kernel
+bound) gives
+$\|\xi_{r,\varepsilon}\|_{L^{2}(\R)}^{2}\le|r|+C_{\rho}\varepsilon$,
+so
+$\|\xi_{r,\varepsilon}\|_{L^{2}(\R)}\le(c+C_{\rho})^{1/2}\,\varepsilon^{1/2}$
+for $r\in[0,c\varepsilon]$. Also
+$\|\rho_{\varepsilon}\|_{L^{2}(\R)}=(\int\rho^{2})^{1/2}\,\varepsilon^{-1/2}$.
+Apply the triangle inequality in $L^{2}(\R,dw)$ to the
+representation~\eqref{eq:R-layer}, writing $L=L_{t}^{\cdot}(|Y|)$
+and $\|L\|_{\infty}\coloneqq\sup_{r\ge 0}L_{t}^{r}(|Y|)$:
+\begin{align*}
+ \|R_{\varepsilon}^{\mathrm{layer}}\|_{L^{2}(\R)}
+ &\le\tfrac12\!\int_{0}^{c\varepsilon}\!|\Delta_{A}(r)|L(r)\|\xi_{r,\varepsilon}\|_{L^{2}}\,dr
+  +\tfrac12\!\int_{0}^{c\varepsilon}\!|\Delta_{B}(r)|L(r)\|\rho_{\varepsilon}\|_{L^{2}}\,dr\\
+ &\le\tfrac12(c+C_{\rho})^{1/2}\varepsilon^{1/2}\|L\|_{\infty}\!\int_{0}^{c\varepsilon}\!|\Delta_{A}(r)|\,dr
+  +\tfrac12\bigl(\textstyle\int\rho^{2}\bigr)^{1/2}\varepsilon^{-1/2}\|L\|_{\infty}\!\int_{0}^{c\varepsilon}\!|\Delta_{B}(r)|\,dr.
+\end{align*}
+Using~\eqref{eq:Delta-bounds} and
+$\int_{0}^{c\varepsilon}\rho_{\varepsilon}(r)\,dr\le 1$,
+$\int_{0}^{c\varepsilon}1\,dr=c\varepsilon$,
+\[
+ \int_{0}^{c\varepsilon}|\Delta_{A}(r)|\,dr\le C_{f}+\tfrac14\|f^{(5)}\|_{\infty}\,c\varepsilon,
+ \qquad
+ \int_{0}^{c\varepsilon}|\Delta_{B}(r)|\,dr\le\|f'''\|_{\infty}\,c\varepsilon.
+\]
+Substituting,
+\begin{equation}\label{eq:R-layer-bound}
+ \|R_{\varepsilon}^{\mathrm{layer}}\|_{L^{2}(\R)}
+ \;\le\;C(f,\rho)\,\varepsilon^{1/2}\,\|L\|_{\infty}
+ \qquad\text{a.s.\ in }Y,
+\end{equation}
+for some finite $C(f,\rho)$ depending only on
+$\|f'''\|_{\infty},\|f^{(5)}\|_{\infty}$, on $c$, on $\|\rho\|_{\infty}$,
+and on $\int\rho^{2}$.
+
+\emph{Step 4: $L^{2}(\Omega_{Y})$ assembly and conclusion.}
+Squaring~\eqref{eq:R-layer-bound} and taking $\E_{Y}$,
+\[
+ \E_{Y}\!\bigl[\,\|R_{\varepsilon}^{\mathrm{layer}}\|_{L^{2}(\R)}^{2}\,\bigr]
+ \;\le\;C(f,\rho)^{2}\,\varepsilon\,\E_{Y}[\,\|L\|_{\infty}^{2}\,].
+\]
+The spatial supremum $\|L\|_{\infty}=\sup_{r\ge 0}L_{t}^{r}(|Y|)$
+of the spatial Brownian local time at the reflected Brownian motion
+$|Y|$ has finite moments of every order: writing
+$L_{t}^{r}(|Y|)=L_{t}^{r}(Y)+L_{t}^{-r}(Y)$ for $r>0$ and using the
+finite-moment estimate
+$\E[\sup_{x\in\R}L_{t}^{x}(Y)^{p}]<\infty$ for one-sided Brownian
+local time (\cite[Theorem 9.4.1]{MarcusRosen}), we obtain
+$\E_{Y}[\|L\|_{\infty}^{2}]\le 4\,\E[\sup_{x\in\R}L_{t}^{x}(Y)^{2}]<\infty$.
+Hence
+$\E_{Y}\|R_{\varepsilon}^{\mathrm{layer}}\|_{L^{2}(\R)}^{2}\to 0$ at
+rate $O(\varepsilon)$ as $\varepsilon\to 0$, proving convergence in
+$L^{2}(\Omega_{Y};L^{2}(\R))$. The $L^{2}(\Omega_{Y};H^{-1}(\R))$
+statement is immediate from the continuous embedding
+$L^{2}(\R)\hookrightarrow H^{-1}(\R)$ with operator norm $\le 1$.
+\end{proof}
+
+\subsection*{Quantitative input (for the rate).}
+
+The boundary-layer ingredient needed by the rate
+\cref{prop:interior-rate} is already provided in explicit form by
+\cref{lem:bdy-layer-vanish}: the proof
+yields~\eqref{eq:R-layer-bound}, i.e.\
+\[
+ \|R_{\varepsilon}^{\mathrm{layer}}\|_{L^{2}(\R)}
+ \;\le\;C(f,\rho)\,\varepsilon^{1/2}\,\|L_{t}^{\cdot}(|Y|)\|_{\infty}
+ \quad\text{a.s.\ in }Y,
+\]
+with $C(f,\rho)$ depending only on $\|f'''\|_{\infty},\|f^{(5)}\|_{\infty}$,
+on the support constant $c$, and on $\|\rho\|_{\infty},\int\rho^{2}$.
+Together with $\E_{Y}[\|L_{t}^{\cdot}(|Y|)\|_{\infty}^{2}]<\infty$
+(Marcus--Rosen, used in Step~4 of the proof of
+\cref{lem:bdy-layer-vanish}) this gives an
+$L^{2}(\Omega_{Y};L^{2}(\R))$-bound of size $O(\varepsilon^{1/2})$
+on $R_{\varepsilon}^{\mathrm{layer}}$, with no further assumption.
+
+The only quantitative input not already proved here is the spatial
+Sobolev regularity of the local time:
+
+\begin{assumption}[Local-time Sobolev moments]\label{assu:lt-moment}
+For every $\eta\in(0,1/2)$ and $p\ge 2$,
+\[
+ \E_{Y}\bigl[\,\|L_{t}^{\cdot}(|Y|)\|_{H^{1/2-\eta}([0,M_{t}])}^{p}\,\bigr]<\infty.
+\]
+\end{assumption}
+
+\Cref{assu:lt-moment} is a Marcus--Rosen-type moment estimate for
+the spatial Sobolev regularity of the reflected-BM local time
+(\cite{MarcusRosen}, Theorem 9.4.1 and Chapter 10). Qualitative
+convergence (\cref{thm:interior}) needs only the proved
+\cref{lem:bdy-layer-vanish}; the $\varepsilon^{1/2-\eta}$ rate
+(\cref{prop:interior-rate}) additionally needs
+\cref{assu:lt-moment}.
+
+\subsection*{Qualitative convergence.}
+
+Define the \emph{bulk-extrapolated interior kernel} and the
+\emph{actual interior kernel}, respectively, as
+\[
+ K_{\varepsilon}^{\mathrm{int}}\;\coloneqq\;\tfrac12\bigl(T_{1}^{\varepsilon}+T_{2}^{\varepsilon}+T_{3}^{\varepsilon}\bigr),
+ \qquad
+ K_{\varepsilon}^{\mathrm{int,exact}}\;\coloneqq\;K_{\varepsilon}^{\mathrm{int}}+R_{\varepsilon}^{\mathrm{layer}};
+\]
+$K_{\varepsilon}^{\mathrm{int,exact}}$ is the actual integrand-derived
+contribution to~\eqref{eq:Keps-decomp}, excluding only the boundary
+local-time piece $K_{\varepsilon}^{\mathrm{bdy}}$ of~\eqref{eq:Kbdy}.
+
+\begin{theorem}[Interior first-chaos
+\texorpdfstring{$H^{-1}$}{H\textasciicircum-1} convergence]
+\label{thm:interior}
+Let $f\in\mathscr S(\R)$. Then both
+$K_{\varepsilon}^{\mathrm{int}}$ and
+$K_{\varepsilon}^{\mathrm{int,exact}}=K_{\varepsilon}^{\mathrm{int}}+R_{\varepsilon}^{\mathrm{layer}}$
+converge to the same limit
+\[
+ K_{\varepsilon}^{\mathrm{int}},\,K_{\varepsilon}^{\mathrm{int,exact}}
+ \;\xrightarrow[\varepsilon\to 0]{}\;K^{\mathrm{int}}
+ \quad\text{in }L^{2}\bigl(\Omega_{Y};\,H^{-1}(\R,dw)\bigr),
+\]
+with
+\begin{equation}\label{eq:Kint-limit}
+ K^{\mathrm{int}}(w\mid Y)
+ =\tfrac12\bigl[T_{1}^{*}(w\mid Y)+B(w)L(w)-\partial_{w}\bigl(C(w)L(w)\bigr)\bigr],
+\end{equation}
+where $T_{1}^{*}(w\mid Y)=\mathbf 1_{w\ge 0}\int_{w}^{M_{t}}A(r)L(r)\,dr$,
+$L=L_{t}^{\cdot}(|Y|)$, $M_{t}=\sup_{[0,t]}|Y_{s}|$, and $A,B,C$ are
+as in~\eqref{eq:ABC-limit}.
+\end{theorem}
+
+\begin{remark}[Relation to the
+\texorpdfstring{$L^{2}(\Omega)$}{L\textasciicircum 2(Omega)} obstruction]
+\label{rem:relation-to-obstruction}
+\Cref{thm:interior} does not use the nondegeneracy
+hypothesis~\eqref{eq:nondegen}; the convergence holds for every
+$f\in\mathscr S(\R)$. The role of~\eqref{eq:nondegen} is to certify
+that the present $H^{-1}$-convergent sector is the same sector
+whose $L^{2}(\Omega)$-variance diverges in~\cite{Fontes-EnergyFirst}:
+under~\eqref{eq:nondegen}, $C\not\equiv 0$ on $(0,\infty)$, so the
+$T_{3}^{*}=-\partial_{w}(CL)$ summand in~\eqref{eq:Kint-limit} is
+non-trivial, and the divergence in~\eqref{eq:obstruction} is
+precisely the $L^{2}(\R)$-norm failure of the same summand. Without
+\eqref{eq:nondegen}, the limit~\eqref{eq:Kint-limit} still exists in
+$H^{-1}$; it is simply not witnessed by an $L^{2}$ obstruction.
+\end{remark}
+
+\begin{proof}
+By the triangle inequality, $K_{\varepsilon}^{\mathrm{int,exact}}-K^{\mathrm{int}}
+=(K_{\varepsilon}^{\mathrm{int}}-K^{\mathrm{int}})+R_{\varepsilon}^{\mathrm{layer}}$,
+and $R_{\varepsilon}^{\mathrm{layer}}\to 0$ in
+$L^{2}(\Omega_{Y};L^{2}(\R))\hookrightarrow L^{2}(\Omega_{Y};H^{-1}(\R))$
+by \cref{lem:bdy-layer-vanish}. It therefore suffices to prove
+$K_{\varepsilon}^{\mathrm{int}}\to K^{\mathrm{int}}$ in
+$L^{2}(\Omega_{Y};H^{-1}(\R))$. Throughout we use the continuous
+inclusion $L^{2}(\R)\hookrightarrow H^{-1}(\R)$
+($\|\cdot\|_{H^{-1}}\le\|\cdot\|_{L^{2}}$).
+
+Decompose
+$K_{\varepsilon}^{\mathrm{int}}-K^{\mathrm{int}}
+=\tfrac12\sum_{j=1}^{3}\Delta_{j}^{\varepsilon}$
+with $\Delta_{j}^{\varepsilon}=T_{j}^{\varepsilon}-T_{j}^{*}$.
+
+\smallskip\noindent\emph{(a) $T_{1}^{\varepsilon}\to T_{1}^{*}$ in
+$L^{2}(\Omega_{Y};L^{2}(\R))$.}
+Write $\Delta_{1}^{\varepsilon}(w)=I_{\varepsilon}(w)+J_{\varepsilon}(w)$ with
+\[
+ I_{\varepsilon}(w)=\!\int_{0}^{\infty}\![A_{\varepsilon}(r)-A(r)]L(r)\,\xi_{r,\varepsilon}(w)\,dr,
+ \quad
+ J_{\varepsilon}(w)=\!\int_{0}^{\infty}\!A(r)L(r)\,[\xi_{r,\varepsilon}(w)-\sigma_{r}(w)]\,dr.
+\]
+Since $L$ has compact support in $[0,M_{t}]$, the inner integrals
+are over $r\in[0,M_{t}]$. By heat-semigroup time-continuity
+(\cref{lem:heat-rate}), $A_{\varepsilon}(r)\to A(r)$ uniformly in
+$r\in[0,M_{t}]$ a.s.\ in $Y$, while the bulk bound
+$\|\xi_{r,\varepsilon}\|_{L^{2}(\R)}^{2}\le|r|+C_{\rho}\varepsilon$
+of~\cite{Fontes-EnergyFirst} gives
+$\|\xi_{r,\varepsilon}\|_{L^{2}}\le(M_{t}+C_{\rho})^{1/2}$.
+Minkowski in $w$ then yields
+$\|I_{\varepsilon}\|_{L^{2}(\R)}\le\|A_{\varepsilon}-A\|_{L^{\infty}([0,M_{t}])}
+\cdot t\cdot(M_{t}+C_{\rho})^{1/2}\to 0$ a.s.\ in $Y$.
+For $J_{\varepsilon}$, the scenery-derivative kernel rate
+$\|\xi_{r,\varepsilon}-\sigma_{r}\|_{L^{2}(\R)}\le C'_{\rho}\,\varepsilon^{1/2}$
+of~\cite{Fontes-EnergyFirst} gives
+$\|J_{\varepsilon}\|_{L^{2}(\R)}\le\|A\|_{\infty}\cdot t\cdot C'_{\rho}\,\varepsilon^{1/2}\to 0$
+a.s.\ in $Y$. Both bounds are dominated by $C(f,\rho)\,t\cdot(1+M_{t}^{1/2})$
+which is in $L^{2}(\Omega_{Y})$ since $\E_{Y}[M_{t}]<\infty$
+classically; dominated convergence concludes
+$\E_{Y}\|\Delta_{1}^{\varepsilon}\|_{L^{2}(\R)}^{2}\to 0$.
+
+\smallskip\noindent\emph{(b) $T_{2}^{\varepsilon}\to BL$ in
+$L^{2}(\Omega_{Y};L^{2}(\R))$.}
+$\Delta_{2}^{\varepsilon}=\rho_{\varepsilon}*((B_{\varepsilon}-B)L)
++(\rho_{\varepsilon}*BL-BL)$. By Young's inequality and
+$\|B_{\varepsilon}-B\|_{L^{\infty}([0,M_{t}])}\to 0$
+(\cref{lem:heat-rate}),
+$\|\rho_{\varepsilon}*((B_{\varepsilon}-B)L)\|_{L^{2}}\le
+\|B_{\varepsilon}-B\|_{\infty}\|L\|_{L^{2}}\to 0$ a.s.\ in $Y$. By
+standard $L^{2}$-mollifier convergence,
+$\|\rho_{\varepsilon}*BL-BL\|_{L^{2}}\to 0$ a.s.\ in $Y$. Both terms
+are dominated by $\|B\|_{\infty}\|L\|_{L^{2}}\in L^{2}(\Omega_{Y})$;
+dominated convergence concludes.
+
+\smallskip\noindent\emph{(c) $T_{3}^{\varepsilon}\to-\partial_{w}(CL)$
+in $L^{2}(\Omega_{Y};H^{-1}(\R))$.}
+The operator $\partial_{w}\colon L^{2}(\R)\to H^{-1}(\R)$ has norm
+$\le 1$, since for $\phi\in H^{1}(\R)$,
+$|\langle\partial_{w}f,\phi\rangle|=|\langle f,\phi'\rangle|\le\|f\|_{L^{2}}\|\phi'\|_{L^{2}}\le\|f\|_{L^{2}}\|\phi\|_{H^{1}}$.
+Hence
+$\|\Delta_{3}^{\varepsilon}\|_{H^{-1}}=\|\partial_{w}(\rho_{\varepsilon}*C_{\varepsilon}L-CL)\|_{H^{-1}}
+\le\|\rho_{\varepsilon}*C_{\varepsilon}L-CL\|_{L^{2}}\to 0$ a.s.\ in $Y$
+by the same Young + mollifier argument as (b) applied to $g=CL$.
+Domination by $\|C\|_{\infty}\|L\|_{L^{2}}\in L^{2}(\Omega_{Y})$
+finishes via dominated convergence.
+
+\smallskip Combining (a)--(c) and applying
+$\|\cdot\|_{H^{-1}}\le\|\cdot\|_{L^{2}}$ to (a) and (b),
+$\|K_{\varepsilon}^{\mathrm{int}}-K^{\mathrm{int}}\|_{L^{2}(\Omega_{Y};H^{-1}(\R))}\to 0$.
+\end{proof}
+
+\subsection*{Quantitative rate (conditional).}
+
+\begin{proposition}[Quantitative interior rate]\label{prop:interior-rate}
+Assume \cref{assu:lt-moment}. Then for every
+$\eta\in(0,1/2)$,
+\begin{equation}\label{eq:int-rate}
+ \bigl\|K_{\varepsilon}^{\mathrm{int,exact}}-K^{\mathrm{int}}\bigr\|_{L^{2}(\Omega_{Y};H^{-1}(\R))}
+ \;\le\;C(f,t,\rho,\eta)\,\varepsilon^{1/2-\eta}.
+\end{equation}
+The same bound holds with $K_{\varepsilon}^{\mathrm{int}}$ in place
+of $K_{\varepsilon}^{\mathrm{int,exact}}$.
+\end{proposition}
+
+\begin{proof}
+By \cref{thm:interior},
+$K_{\varepsilon}^{\mathrm{int,exact}}-K^{\mathrm{int}}
+=\tfrac12\sum_{j=1}^{3}\Delta_{j}^{\varepsilon}+R_{\varepsilon}^{\mathrm{layer}}$.
+The residual is controlled by \cref{lem:bdy-layer-vanish}
+(eq.~\eqref{eq:R-layer-bound}):
+$\|R_{\varepsilon}^{\mathrm{layer}}\|_{L^{2}(\Omega_{Y};L^{2}(\R))}^{2}
+\le C(f,\rho)^{2}\,\varepsilon\,\E_{Y}[\|L\|_{\infty}^{2}]$,
+so $\|R_{\varepsilon}^{\mathrm{layer}}\|_{L^{2}(\Omega_{Y};H^{-1}(\R))}\le
+C(f,\rho)\,\varepsilon^{1/2}\cdot\E_{Y}[\|L\|_{\infty}^{2}]^{1/2}$.
+We refine the three $\Delta_{j}^{\varepsilon}$-estimates of
+\cref{thm:interior}.
+
+\smallskip\noindent\emph{(a) Rate for
+$\Delta_{1}^{\varepsilon}=T_{1}^{\varepsilon}-T_{1}^{*}$.}
+Continuing the splitting
+$\Delta_{1}^{\varepsilon}=I_{\varepsilon}+J_{\varepsilon}$ of
+\cref{thm:interior}(a): by \cref{lem:heat-rate},
+$\|A_{\varepsilon}-A\|_{L^{\infty}([0,M_{t}])}\le C_{f}\,\varepsilon$
+(uniform); by \cite{Fontes-EnergyFirst} (scenery-derivative kernel
+rate), $\|\xi_{r,\varepsilon}-\sigma_{r}\|_{L^{2}(\R)}\le
+C'_{\rho}\,\varepsilon^{1/2}$ uniformly in $r$. Hence
+$\|I_{\varepsilon}\|_{L^{2}(\R)}\le C_{f}\,\varepsilon\cdot t\cdot(M_{t}+C_{\rho})^{1/2}$
+and $\|J_{\varepsilon}\|_{L^{2}(\R)}\le\|A\|_{\infty}\cdot t\cdot C'_{\rho}\,\varepsilon^{1/2}$,
+a.s.\ in $Y$. Combining and squaring,
+$\|\Delta_{1}^{\varepsilon}\|_{L^{2}(\R)}^{2}\le
+C(f,\rho)^{2}\,(t^{2}(1+M_{t}))\,\varepsilon$, so
+$\E_{Y}\|\Delta_{1}^{\varepsilon}\|_{L^{2}(\R)}^{2}\le
+C(f,\rho)^{2}\,t^{2}(1+\E_{Y}[M_{t}])\,\varepsilon$ (classical
+$\E_{Y}[M_{t}]<\infty$).
+
+\smallskip\noindent\emph{(b) Rate for
+$\Delta_{2}^{\varepsilon}=T_{2}^{\varepsilon}-BL$.}
+$\Delta_{2}^{\varepsilon}=\rho_{\varepsilon}*((B_{\varepsilon}-B)L)
++(\rho_{\varepsilon}*BL-BL)$. By Young,
+$\|\rho_{\varepsilon}*((B_{\varepsilon}-B)L)\|_{L^{2}}\le
+\|B_{\varepsilon}-B\|_{L^{\infty}([0,M_{t}])}\,\|L\|_{L^{2}}\le C_{f}\,\varepsilon\,\|L\|_{L^{2}}$.
+For the second summand, the standard mollifier estimate against
+$H^{s}$ for $s\in(0,1]$ states
+$\|\rho_{\varepsilon}*g-g\|_{L^{2}}\le C_{\rho}\,\varepsilon^{s}\,\|g\|_{H^{s}}$
+(Plancherel: $\int(1+k^{2})^{-s}(1+k^{2})^{s}|\hat g(k)|^{2}|\hat\rho(\varepsilon k)-1|^{2}dk$
+with $|\hat\rho(\varepsilon k)-1|\le c_{\rho}\,\varepsilon^{s}(1+k^{2})^{s/2}$
+for $s\le 1$). Apply with $g=BL$ and $s=1/2-\eta$: by
+\cref{lem:heat-rate}, $B\in C_{b}^{\infty}([0,\infty))$, so
+$\|BL\|_{H^{1/2-\eta}}\le C_{f}\,\|L\|_{H^{1/2-\eta}}$, and
+\cref{assu:lt-moment} gives
+$\E_{Y}\|L\|_{H^{1/2-\eta}}^{2}<\infty$. Combining,
+$\E_{Y}\|\Delta_{2}^{\varepsilon}\|_{L^{2}(\R)}^{2}\le
+C(f,\rho)^{2}\,\varepsilon^{1-2\eta}$ for every $\eta\in(0,1/2)$.
+
+\smallskip\noindent\emph{(c) Rate for
+$\Delta_{3}^{\varepsilon}=T_{3}^{\varepsilon}-T_{3}^{*}$ in
+$H^{-1}$.}
+Set $u_{\varepsilon}=\rho_{\varepsilon}*(C_{\varepsilon}L)$. By the
+same argument as (b) applied to $g=CL$ and $s=1/2-\eta$,
+$\E_{Y}\|u_{\varepsilon}-CL\|_{L^{2}(\R)}^{2}\le
+C(f,\rho)^{2}\,\varepsilon^{1-2\eta}$. Continuity of
+$\partial_{w}\colon L^{2}(\R)\to H^{-1}(\R)$ with norm $\le 1$ gives
+$\E_{Y}\|\Delta_{3}^{\varepsilon}\|_{H^{-1}(\R)}^{2}\le
+\E_{Y}\|u_{\varepsilon}-CL\|_{L^{2}(\R)}^{2}\le
+C(f,\rho)^{2}\,\varepsilon^{1-2\eta}$.
+
+\smallskip Combining
+$\|\cdot\|_{H^{-1}}\le\|\cdot\|_{L^{2}}$ on (a) and (b),
+$\|\Delta_{j}^{\varepsilon}\|_{L^{2}(\Omega_{Y};H^{-1}(\R))}\le
+C(f,t,\rho)\,\varepsilon^{1/2-\eta}$ for each $j=1,2,3$, and the
+$R_{\varepsilon}^{\mathrm{layer}}$ contribution above is
+$O(\varepsilon^{1/2})\le O(\varepsilon^{1/2-\eta})$. Summing
+yields~\eqref{eq:int-rate}.
+\end{proof}
+
+\begin{remark}[Why the rate is sharp at
+\texorpdfstring{$\varepsilon^{1/2}$}{epsilon\textasciicircum 1/2}]
+The Bouleau--Yor regularity $L\in H^{1/2-\eta}$ is sharp at
+$s=1/2$, and the mollifier rate
+$\|\rho_{\varepsilon}*g-g\|_{L^{2}}\sim\varepsilon^{s}$ for
+$g\in H^{s}$ is sharp at the regularity index of $g$. The
+$\eta$-loss is intrinsic to the Brownian local-time regularity, not
+an artefact of the proof.
+\end{remark}
+
+%==============================================================
+\section{Boundary first-chaos convergence}\label{sec:boundary}
+
+\begin{theorem}[Boundary first-chaos
+\texorpdfstring{$H^{-1/2-\delta}$}{H\textasciicircum-1/2-delta} convergence]
+\label{thm:boundary}
+For every $f\in\mathscr S(\R)$ and every $\delta>0$,
+\[
+ K_{\varepsilon}^{\mathrm{bdy}}\;\xrightarrow[\varepsilon\to 0]{}\;L_{t}^{0}(Y)\cdot f'(x)\,\delta_{0}
+ \quad\text{in }L^{2}\bigl(\Omega_{Y};\,H^{-1/2-\delta}(\R)\bigr),
+\]
+with rate
+\[
+ \bigl\|K_{\varepsilon}^{\mathrm{bdy}}-L_{t}^{0}(Y)f'(x)\delta_{0}\bigr\|_{L^{2}(\Omega_{Y};H^{-1/2-\delta}(\R))}
+ \le C_{f,\rho}\,\varepsilon^{\delta\wedge 1/2}.
+\]
+No $\delta'_{0}$ contribution arises (\cref{lem:bdy-cov-zero},
+\cref{rem:bdy-coeff}).
+\end{theorem}
+
+\begin{proof}
+By~\eqref{eq:Kbdy}, $K_{\varepsilon}^{\mathrm{bdy}}=L_{t}^{0}(Y)\,C_{\varepsilon}(0)\,\rho_{\varepsilon}$.
+Split
+\begin{equation}\label{eq:bdy-split}
+ K_{\varepsilon}^{\mathrm{bdy}}-L_{t}^{0}(Y)\,f'(x)\,\delta_{0}
+ \;=\;L_{t}^{0}(Y)\,\bigl(C_{\varepsilon}(0)-f'(x)\bigr)\,\rho_{\varepsilon}
+ \;+\;L_{t}^{0}(Y)\,f'(x)\,\bigl(\rho_{\varepsilon}-\delta_{0}\bigr).
+\end{equation}
+
+\emph{Step 1: coefficient rate.}
+$C_{\varepsilon}(0)=(P_{\sigma_{\varepsilon}^{2}(0)}f')(x)$, and
+$\sigma_{\varepsilon}^{2}(0)=I_{1}(0)-\tfrac12 I_{2}(0)$ in the
+notation of \cref{lem:bdy-cov-zero}; from
+$I_{1}(0)=\int\rho_{\varepsilon}(z)|z|\,dz=c_{\rho}\varepsilon$ and
+$I_{2}(0)=O(\varepsilon)$, $\sigma_{\varepsilon}^{2}(0)=O(\varepsilon)$.
+By \cref{lem:heat-rate}, $|C_{\varepsilon}(0)-f'(x)|\le
+\tfrac12\sigma_{\varepsilon}^{2}(0)\,\|f'''\|_{\infty}\le C_{f}\,\varepsilon$.
+
+\emph{Step 2: distribution rate.}
+For $s>1/2$, Plancherel and $\hat{\rho}_{\varepsilon}(k)=\hat\rho(\varepsilon k)$:
+\[
+ \|\rho_{\varepsilon}-\delta_{0}\|_{H^{-s}}^{2}
+ \;=\;\int_{\R}(1+k^{2})^{-s}\,|\hat\rho(\varepsilon k)-1|^{2}\,dk.
+\]
+Using $|\hat\rho(\varepsilon k)-1|\le\min(2,c_{\rho}\,\varepsilon^{2}k^{2})$
+(the bound $c_{\rho}\,\varepsilon^{2}k^{2}$ holds for $|\varepsilon k|\le 1$
+by Taylor with $\hat\rho(0)=1$, $\hat\rho'(0)=0$ by evenness; the
+bound $2$ holds always), split the integral at $|k|=1/\varepsilon$:
+\[
+ \|\rho_{\varepsilon}-\delta_{0}\|_{H^{-s}}^{2}
+ \;\le\;c_{\rho}^{2}\,\varepsilon^{4}\!\int_{|k|\le 1/\varepsilon}\!(1+k^{2})^{-s}k^{4}\,dk
+ \;+\;4\!\int_{|k|>1/\varepsilon}\!(1+k^{2})^{-s}\,dk.
+\]
+For $1/2<s<5/2$, the first integral is $O(\varepsilon^{-(5-2s)})$ so
+the first term is $O(\varepsilon^{4-(5-2s)})=O(\varepsilon^{2s-1})$;
+the second is $O(\varepsilon^{2s-1})$. Hence
+$\|\rho_{\varepsilon}-\delta_{0}\|_{H^{-s}}\le C\,\varepsilon^{s-1/2}$
+for $s\in(1/2,5/2)$. Applying with $s=1/2+\delta$,
+$\|\rho_{\varepsilon}-\delta_{0}\|_{H^{-1/2-\delta}}\le C\,\varepsilon^{\delta}$.
+
+\emph{Step 3: assemble.}
+Since $\|\rho_{\varepsilon}\|_{H^{-1/2-\delta}}\le
+\|\rho_{\varepsilon}\|_{H^{-1/2-\delta}}-\|\delta_{0}\|_{H^{-1/2-\delta}}+\|\delta_{0}\|_{H^{-1/2-\delta}}\le C(\delta)$
+(uniform in $\varepsilon$ for small $\varepsilon$, with
+$\|\delta_{0}\|_{H^{-1/2-\delta}}<\infty$ since $\delta_{0}\in H^{-1/2-\delta}$),
+take $L^{2}(\Omega_{Y};H^{-1/2-\delta}(\R))$-norm
+in~\eqref{eq:bdy-split} via the triangle inequality and the
+random-scalar pull-out:
+\begin{align*}
+ \bigl\|K_{\varepsilon}^{\mathrm{bdy}}-L_{t}^{0}(Y)f'(x)\delta_{0}\bigr\|_{L^{2}(\Omega_{Y};H^{-1/2-\delta})}
+ &\le\|L_{t}^{0}(Y)\|_{L^{2}(\Omega_{Y})}\,|C_{\varepsilon}(0)-f'(x)|\,\|\rho_{\varepsilon}\|_{H^{-1/2-\delta}}\\
+ &\quad+\|L_{t}^{0}(Y)\|_{L^{2}(\Omega_{Y})}\,|f'(x)|\,\|\rho_{\varepsilon}-\delta_{0}\|_{H^{-1/2-\delta}}\\
+ &\le C_{\delta}\,C_{f}\,\varepsilon\,\|L_{t}^{0}(Y)\|_{L^{2}(\Omega_{Y})}
+  + C\,|f'(x)|\,\varepsilon^{\delta}\,\|L_{t}^{0}(Y)\|_{L^{2}(\Omega_{Y})}.
+\end{align*}
+$\E[L_{t}^{0}(Y)^{2}]<\infty$ is classical (Brownian local-time
+second moment at zero,
+\cite[Theorem 6.1.1]{MarcusRosen}). Capping the two
+contributions $\varepsilon$ and $\varepsilon^{\delta}$ by their
+slower component $\varepsilon^{\delta\wedge 1/2}$ (conservative
+rate, accommodating later $H^{-1/2-\delta}\hookrightarrow H^{-1}$
+use in \cref{cor:combined}, valid for $\delta\in(0,1/2)$) yields
+the claimed bound.
+\end{proof}
+
+\begin{remark}[Why
+\texorpdfstring{$H^{-1/2-\delta}$}{H\textasciicircum-1/2-delta},
+not \texorpdfstring{$H^{-1}$}{H\textasciicircum-1}, for the boundary]
+$\delta_{0}\in H^{s}(\R)$ iff $s<-1/2$, so $\delta_{0}\notin H^{-1/2}$
+and $\delta_{0}\in H^{-1/2-\delta}$ for every $\delta>0$. Asking
+for convergence in $H^{-1/2}$ is impossible at the boundary because
+the limit object is not in that space. The natural boundary space is
+$H^{-1/2-\delta}$. Since $H^{-1/2-\delta}\subset H^{-1}$ for
+$\delta\in(0,1/2)$, the boundary kernel also converges in $H^{-1}$,
+which is used in~\cref{cor:combined}.
+\end{remark}
+
+%==============================================================
+\section{Combined first-chaos dual closure}\label{sec:combined}
+
+\begin{corollary}[Combined first-chaos
+\texorpdfstring{$H^{-1}$}{H\textasciicircum-1} convergence]
+\label{cor:combined}
+For every $f\in\mathscr S(\R)$ and every $\delta\in(0,1/2)$, the
+full first-$X$-chaos Malliavin kernel
+\[
+ K_{\varepsilon}
+ \;=\;K_{\varepsilon}^{\mathrm{bdy}}+K_{\varepsilon}^{\mathrm{int,exact}}
+ \;=\;K_{\varepsilon}^{\mathrm{bdy}}+K_{\varepsilon}^{\mathrm{int}}+R_{\varepsilon}^{\mathrm{layer}}
+\]
+satisfies
+\[
+ K_{\varepsilon}\;\xrightarrow[\varepsilon\to 0]{}\;K
+ \;\coloneqq\;L_{t}^{0}(Y)f'(x)\delta_{0}+K^{\mathrm{int}}
+ \quad\text{in }L^{2}\bigl(\Omega_{Y};\,H^{-1}(\R,dw)\bigr).
+\]
+The boundary contribution converges in $H^{-1/2-\delta}\subset H^{-1}$
+(continuous embedding for $\delta\in(0,1/2)$); the interior
+contribution $K_{\varepsilon}^{\mathrm{int,exact}}$ converges in
+$L^{2}(\R)\subset H^{-1}$ via \cref{thm:interior,lem:bdy-layer-vanish}.
+Under \cref{assu:lt-moment}, the combined rate is
+$\varepsilon^{(1/2-\eta)\wedge\delta}$ for every $\eta\in(0,1/2)$
+and $\delta\in(0,1/2)$; choosing $\delta=1/2-\eta$ optimises to
+$\varepsilon^{1/2-\eta}$.
+\end{corollary}
+
+\begin{proof}
+Combine \cref{thm:interior,thm:boundary}. The embedding
+$H^{-1/2-\delta}\hookrightarrow H^{-1}$ for $\delta\in(0,1/2)$ is
+the standard continuous Sobolev inclusion
+($H^{s}\subset H^{s'}$ for $s\ge s'$, applied with
+$s=-1/2-\delta\ge -1=s'$ iff $\delta\le 1/2$); the operator norm of
+the embedding is $\le 1$. The interior $L^{2}(\R)\subset H^{-1}(\R)$
+embedding is even more direct ($\|\cdot\|_{H^{-1}}\le\|\cdot\|_{L^{2}}$).
+\end{proof}
+
+\begin{corollary}[First-chaos dual closure of
+\texorpdfstring{$\mathrm{Proj}_{1}^{X}C_{\IBM,\varepsilon}$}{Proj\textasciicircum X\_1 C\_\{IBM,eps\}}]
+\label{cor:proj1-closure}
+Let $\Energy_{\IBM,1,*}^{(4),-}=H^{-1}(\R,dw)$. The first-scenery-chaos
+projection $\mathrm{Proj}_{1}^{X}C_{\IBM,\varepsilon}(f;t)$, viewed
+as a $Y$-conditioned first-chaos element with conditional Malliavin
+kernel in $L^{2}(\Omega_{Y};\Energy_{\IBM,1,*}^{(4),-})$, converges
+to an explicit $Y$-conditioned first-chaos element with kernel $K$
+given by \cref{cor:combined} as $\varepsilon\to 0$. Pairing
+against any deterministic $\phi\in H^{1}(\R)$ gives
+\[
+ \bigl\langle\mathrm{Proj}_{1}^{X}C_{\IBM,\varepsilon}(f;t),\phi\bigr\rangle_{1,*}
+ \;\xrightarrow[\varepsilon\to 0]{}\;
+ \E_{Y}\!\bigl[\langle K(\cdot\mid Y),\phi\rangle_{H^{-1},H^{1}}\bigr].
+\]
+Under \cref{assu:lt-moment}, the rate is
+$\varepsilon^{(1/2-\eta)\wedge\delta}$ for every $\eta\in(0,1/2)$
+and $\delta\in(0,1/2)$; choosing $\delta=1/2-\eta$ optimises to
+$\varepsilon^{1/2-\eta}$.
+\end{corollary}
+
+\subsection*{Scope: what this closes and what it does not.}\label{sec:scope}
+\Cref{cor:combined,cor:proj1-closure} close the
+$L^{2}(\Omega)$-divergent first scenery-chaos sector of
+$C_{\IBM,\varepsilon}(f;t)$ in the first-$X$-chaos block of the
+quartic dual. They do \emph{not} prove:
+\begin{itemize}
+\item that $C_{\IBM}(f;t)$ exists in the full quartic dual
+$\Energy_{\IBM}^{(4),-}$: the $(m,n)$-bidegree projections with
+$m\ge 2$, including the second-energy-contraction sector
+controlled by the contraction-renormalised correction candidate
+of~\cite{Fontes-EnergyFirst} (whose Gaussian-coordinate realisation
+is the Wick-square subtraction), are not addressed;
+\item that the full unmollified IBM It\^o
+identity~\eqref{eq:flagship} survives the $\varepsilon\to 0$ limit
+in any dual topology;
+\item that the Brownian-time semigroup correction
+$u(t,x)-f(x)$ of~\cite{Fontes-EnergyFirst} arises from the
+first-chaos sector: it cannot, because first chaos has mean zero, so
+$\E[\mathrm{Proj}_{1}^{X}C_{\IBM}(f;t)]=0$.
+\end{itemize}
+
+Filtration-level obstructions (Tsirelson-type non-Brownian noises
+etc.) are an independent direction and play no role in any argument
+above.
+
+%==============================================================
+\section{Lemmas imported from EnergyFirst}\label{sec:imports}
+
+We cite (do not re-prove) the following inputs from
+\cite{Fontes-EnergyFirst}, referring to them by descriptive name
+rather than internal label number:
+
+\begin{enumerate}
+\item \emph{Mollifier $L^{2}$-rate.}
+$\E[(X^{\varepsilon}_{x}-X_{x})^{2}]\le C_{\rho}\varepsilon$
+uniformly in $x\in\R$. Used implicitly in $C_{\varepsilon}\to C$ and
+$\sigma_{\varepsilon}^{2}(0)=O(\varepsilon)$.
+\item \emph{Scenery-derivative kernel $L^{2}$-bound and rate.}
+$\|H_{\varepsilon}(y,\cdot)\|_{L^{2}}^{2}\le|y|+C_{\rho}\varepsilon$
+and $\|H_{\varepsilon}(y,\cdot)-\sigma_{y}\|_{L^{2}}^{2}\le
+C'_{\rho}\varepsilon$. Used in \cref{thm:interior}(a) and
+\cref{prop:interior-rate}(a).
+\item \emph{Pointwise variance of $\partial_{y}X^{\varepsilon}$.}
+$\Var(\partial_{y}X^{\varepsilon}(y))=c_{\rho}^{(1)}/\varepsilon$ in
+the bulk. Used in \cref{sec:audit} bulk-covariance computation.
+\item \emph{Kernel decomposition (\cite{Fontes-EnergyFirst}
+Proposition on $L^{2}$-divergence, Steps 1--4).} The decomposition
+$K_{\varepsilon}=K_{\varepsilon}^{\mathrm{bdy}}+\tfrac12(T_{1}^{\varepsilon}+T_{2}^{\varepsilon}+T_{3}^{\varepsilon})$
+of~\eqref{eq:Keps-decomp} on which this paper builds. Re-derived in
+\cref{sec:audit}.
+\item \emph{Local-time non-Sobolev regularity.}
+$L_{t}^{\cdot}(Y)\notin H^{1}_{\mathrm{loc}}$ a.s.\ on
+$\{M_{t}>b\}$. Used as the sharp lower bound matching the
+$H^{-1}$ upper bound (cf.\ \cref{rem:why-Hminus1}).
+\end{enumerate}
+
+\noindent\textbf{New auxiliary lemmas, stated here (proofs deferred):}
+
+\begin{lemma}[Heat-semigroup time-Lipschitz]\label{lem:heat-rate}
+For $h\in\mathscr S(\R)$ and $\eta_{1},\eta_{2}\ge 0$,
+$\|P_{\eta_{1}}h-P_{\eta_{2}}h\|_{L^{\infty}(\R)}\le
+\tfrac12|\eta_{1}-\eta_{2}|\,\|h''\|_{L^{\infty}}$. In particular
+$|C_{\varepsilon}(r)-C(r)|\le C_{f}|\sigma_{\varepsilon}^{2}(r)-|r||\le
+C_{f}\varepsilon$ uniformly in $|r|\ge c\varepsilon$, and
+$|C_{\varepsilon}(0)-f'(x)|\le C_{f}\varepsilon$.
+\end{lemma}
+
+\begin{lemma}[Reflected-BM spatial local-time Sobolev regularity]
+\label{lem:lt-H12-eta}
+For every $t>0$ and $\eta\in(0,1/2)$,
+$L_{t}^{\cdot}(|Y|)\in H^{1/2-\eta}([0,M_{t}])$ a.s. Equivalently,
+$L_{t}^{x}(|Y|)=L_{t}^{x}(Y)+L_{t}^{-x}(Y)$ on $(0,\infty)$, and
+each summand is the spatial Brownian local time of two-sided BM.
+\end{lemma}
+
+\Cref{lem:heat-rate} is classical. \Cref{lem:lt-H12-eta} is standard
+from the Marcus--Rosen literature on local-time regularity;
+\cref{assu:lt-moment} is the integrated form whose precise reference
+will appear in the final version.
+
+%==============================================================
+\section{Risk checklist}\label{sec:risks}
+
+The following items concern sharpening and validating the
+\emph{quantitative} statements (\cref{prop:interior-rate} and the
+combined rate in \cref{cor:combined,cor:proj1-closure}). The
+\emph{qualitative} theorems
+(\cref{thm:interior,thm:boundary,cor:combined})
+are supported by proved lemmas
+(\cref{lem:bdy-cov-zero,lem:bdy-layer-vanish}) and do not depend on
+the items below; only the rate and the explicit constants do.
+
+\begin{risk}[\textbf{1.} Reflected BM local-time regularity]
+\label{rsk:reflected-lt}
+\Cref{lem:lt-H12-eta} for $|Y|$ rather than $Y$. The decomposition
+$L_{t}^{x}(|Y|)=L_{t}^{x}(Y)+L_{t}^{-x}(Y)$ for $x>0$ is standard,
+and each summand is $H^{1/2-\eta}_{\mathrm{loc}}$ a.s.\ on
+$(0,\infty)$, so $L_{t}^{\cdot}(|Y|)\in H^{1/2-\eta}_{\mathrm{loc}}((0,\infty))$.
+At $x=0$ the formula gives $L_{t}^{0}(|Y|)=2L_{t}^{0}(Y)$ (Tanaka),
+and the function $x\mapsto L_{t}^{x}(|Y|)$ is continuous and
+$H^{1/2-\eta}$ on $[0,M_{t}]$ a.s. \textbf{Verify} the relevant
+Marcus--Rosen reference and confirm uniform constants on
+$\{M_{t}\le R\}$ before integrating tails.
+\end{risk}
+
+\begin{risk}[\textbf{2.}
+\texorpdfstring{$\varepsilon^{1/2-\eta}$}{epsilon\textasciicircum 1/2-eta} rate in
+\texorpdfstring{$L^{2}(\Omega_{Y})$}{L\textasciicircum 2(Omega\_Y)}]
+\label{rsk:rate-L2Y}
+\Cref{prop:interior-rate} requires \cref{assu:lt-moment}, the
+integrated form of $L_{t}^{\cdot}(|Y|)\in H^{1/2-\eta}_{\mathrm{loc}}$.
+The classical $\E_{Y}[M_{t}^{p}]<\infty$ for all $p$ is one half;
+the other half is uniformity of the Marcus--Rosen constant on
+$\{M_{t}\le R\}$ with tail control via Gaussian moments of $M_{t}$.
+\textbf{Verify}.
+\end{risk}
+
+\begin{risk}[\textbf{3.} Boundary kernel coefficient]
+\label{rsk:bdy-coefficient}
+\Cref{lem:bdy-cov-zero} establishes $\Cov(U_{0},V_{0})=0$, killing
+the $\xi_{0,\varepsilon}$ piece in $\E_{X}[D_{w}g_{\varepsilon}'(0)]$
+and ruling out a $\delta'_{0}$ contribution. \textbf{Verify} that
+the calculation is robust under the choice of two-sided scenery
+convention $\Cov(X_{z},X_{z'})=\tfrac12(|z|+|z'|-|z-z'|)$, and that
+the integration by parts in the proof respects compact support of
+$\rho_{\varepsilon}$ (no boundary terms).
+\end{risk}
+
+\begin{risk}[\textbf{4.} ``Quartic'' versus Wiener chaos degree]
+\label{rsk:quartic-label}
+\Cref{rem:quartic-not-chaos} states that the quartic label refers
+to operator-energy / test-space order, not Wiener chaos degree.
+\textbf{Audit} every occurrence of ``quartic'' to ensure consistency
+with this convention; in particular check the introduction and the
+abstract do not encourage the misreading that the first-chaos
+sector lies in the fourth Wiener chaos.
+\end{risk}
+
+\begin{risk}[\textbf{5.} Bochner measurability into
+\texorpdfstring{$H^{-1}$}{H\textasciicircum-1}]
+\label{rsk:bochner}
+The limit kernel $K\in L^{2}(\Omega_{Y};H^{-1}(\R))$ must be
+Bochner-measurable. Each $K_{\varepsilon}$ is Bochner-measurable in
+$L^{2}(\Omega_{Y};L^{2}(\R))$; $L^{2}\hookrightarrow H^{-1}$
+continuous, so $K_{\varepsilon}\in L^{2}(\Omega_{Y};H^{-1}(\R))$.
+The limit is strongly measurable as a Cauchy limit. Standard but
+worth recording.
+\end{risk}
+
+\begin{risk}[\textbf{6.} Pairing identity for first-chaos elements]
+\label{rsk:pairing}
+\Cref{def:first-chaos-block} writes the pairing as
+$\E_{Y}\langle K(\cdot\mid Y),\phi\rangle_{H^{-1},H^{1}}$.
+\textbf{Verify} the identity
+$\E[I_{1}^{X}(K)I_{1}^{X}(\phi)\mid Y]=\langle K(\cdot\mid Y),\phi\rangle$
+in the form required: at finite $\varepsilon$ this is the
+$L^{2}(\R)$-pairing via the conditional Wiener isometry on the
+scenery factor; in the limit, $K(\cdot\mid Y)\in H^{-1}(\R)$ and the
+pairing extends by duality since $\phi\in H^{1}(\R)$. Confirm no
+measurability or domain subtleties.
+\end{risk}
+
+\begin{risk}[\textbf{7.} Heat-semigroup boundary at
+\texorpdfstring{$r\to 0^{+}$}{r->0+}]
+\label{rsk:heat-bdy}
+$C(r)=(P_{|r|}f')(x)$ is $C^{\infty}$ at $r>0$ but the limit
+$C(0)=f'(x)$ is only continuous in $r$ from above. \textbf{Verify}
+that $C,B,A$ extend to $C^{\infty}([0,\infty))$ via the heat
+semigroup acting on Schwartz functions, so that $T_{1}^{*},BL,CL$
+are genuine elements of $L^{2}([0,M_{t}])$ a.s.\ and that
+$\partial_{w}(CL)$ in \cref{thm:interior}(c) is a well-defined
+$H^{-1}(\R)$ element.
+\end{risk}
+
+\smallskip
+\noindent\textbf{Resolution priority.}
+\Cref{rsk:reflected-lt,rsk:rate-L2Y} are
+load-bearing for the quantitative rate
+\cref{prop:interior-rate} and its consequences in
+\cref{cor:combined,cor:proj1-closure}; they do not affect the
+qualitative convergence
+\cref{thm:interior,thm:boundary,cor:combined}, which rests on the
+proved \cref{lem:bdy-cov-zero,lem:bdy-layer-vanish} and classical
+local-time facts. \Cref{rsk:bdy-coefficient} is resolved subject to
+checking the scenery convention. \Cref{rsk:quartic-label} is
+editorial. \Cref{rsk:bochner,rsk:pairing,rsk:heat-bdy} are routine.
+
+%==============================================================
+\begin{thebibliography}{9}
+\bibitem{Fontes-EnergyFirst}
+R.~Fontes, \emph{Energy-First Stochastic Calculus: Iterated Brownian
+Motion as a Test Case}, manuscript, \today.
+
+\bibitem{MarcusRosen}
+M.~B.~Marcus and J.~Rosen, \emph{Markov Processes, Gaussian
+Processes, and Local Times}, Cambridge Studies in Advanced
+Mathematics \textbf{100}, Cambridge University Press, 2006.
+\end{thebibliography}
+
+\end{document}

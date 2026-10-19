@@ -1,0 +1,1121 @@
+\documentclass[11pt,reqno]{amsart}
+
+%==============================================================
+% A Bidegree Atlas for the IBM Ito Correction
+%   Sequel to:
+%     Fontes-EnergyFirst (mollified pathwise IBM Ito + L^2 obstruction)
+%     Fontes-FCDC        (H^{-1} closure of first-X-chaos sector)
+%   Scope: low-bidegree atlas of C_{IBM,eps} along Hilb_m^X (x) Hilb_n^Y;
+%          (0,*), (1,*), (2,0) only; Tier-A summability deferred.
+%==============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{mathrsfs}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+\emergencystretch=3em
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{assumption}[theorem]{Assumption}
+
+\theoremstyle{remark}
+\newtheorem*{sketch}{Proof sketch}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\Hilb}{\mathcal{H}}
+\newcommand{\Dom}{\mathrm{Dom}}
+\newcommand{\Energy}{\mathcal{E}}
+\newcommand{\IBM}{Z}
+\newcommand{\Pir}{\Pi}
+\newcommand{\Channel}[1]{\mathsf{C}_{#1}}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\sgn}{sgn}
+
+\title{A Bidegree Atlas for the\\
+       Iterated-Brownian-Motion It\^o Correction}
+\author{Ramiro Fontes}
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+For mollified iterated Brownian motion
+$\IBM_t^{\,\varepsilon}=x+X^{\varepsilon}_{|Y_t|}$, the energy-first
+calculus of~\cite{Fontes-EnergyFirst} establishes a pathwise It\^o
+identity at every $\varepsilon>0$ together with an explicit correction
+$C_{\IBM,\varepsilon}(f;t)$ whose first-$X$-chaos projection has
+variance diverging to $+\infty$ as $\varepsilon\to 0$; the companion
+paper~\cite{Fontes-FCDC} closes that divergent sector in
+$L^{2}(\Omega_Y;H^{-1}(\R))$. We construct the joint
+\emph{bidegree atlas} of $C_{\IBM,\varepsilon}(f;t)$ along the
+joint Wiener decomposition
+$L^{2}(\Omega)=\bigoplus_{m,n\ge 0}\Hilb_m^X\otimes\Hilb_n^Y$,
+working at fixed $\varepsilon>0$. We prove:
+
+\begin{itemize}
+\item[\textbf{(A)}] (\Cref{thm:atlas}) the bidegree decomposition
+$C_{\IBM,\varepsilon}(f;t)=\sum_{m,n}\Pir_{m,n}C_{\IBM,\varepsilon}(f;t)$
+converges in $L^{2}(\Omega)$ for every $\varepsilon>0$;
+\item[\textbf{(B)}] (\Cref{thm:pure-clock}) the pure-clock sector
+satisfies
+$\Pir_{0}^X C_{\IBM,\varepsilon}(f;t)=\tfrac12\!\int_0^t\psi_\varepsilon(|Y_s|)\,ds$
+with full scalar coefficient
+$\psi_\varepsilon(r)=\E_X[g_\varepsilon''(r)]$, which admits an
+interior/boundary-layer split $\psi_\varepsilon=\phi_\varepsilon^{\mathrm{int}}+b_\varepsilon$;
+the two pieces produce the bi-Laplacian shadow and the
+$t^{-1/2}$ Brownian-time source respectively, with
+$\Pir_{0,0}C_{\IBM,\varepsilon}=\E[C_{\IBM,\varepsilon}]\to u(t,x)-f(x)$;
+\item[\textbf{(C)}] (\Cref{thm:first-chaos}) the first-$X$-chaos
+sector decomposes block-wise as
+$\Pir_{1,n}C_{\IBM,\varepsilon}=I_1^X(\Pir_n^Y K_\varepsilon(\cdot\mid Y))$;
+in particular the clock-averaged block
+$\Pir_{1,0}C_{\IBM,\varepsilon}=I_1^X(\E_Y K_\varepsilon(\cdot\mid Y))$
+has zero expectation but need not vanish; each block inherits the
+FCDC $H^{-1}$ closure;
+\item[\textbf{(D)}] (\Cref{thm:2-0}) the scenery second-chaos sector
+admits an explicit Gaussian-product-formula representation
+$\Pir_{2,0}C_{\IBM,\varepsilon}=\E_Y[\Pir_2^X C_{\IBM,\varepsilon}]$
+as a finite sum of six energy-contraction channels indexed by the
+constraint $p+q-2j=2$.
+\end{itemize}
+
+Malliavin/Stroock kernels appear only as Gaussian-coordinate
+bookkeeping; the organising structure is the decomposition into
+observable energy-contraction channels, and the Wick-square
+realisation of $V_r^{2}$ is identified explicitly as such. We do
+\emph{not} assert $\varepsilon\to 0$ convergence of
+$\Pir_{m,n}C_{\IBM,\varepsilon}$ for any $m\ge 2$, nor of the
+$Y$-fluctuation blocks $\Pir_{0,n}$ for $n\ge 1$; full summability
+across all bidegrees in the quartic observable-energy dual remains
+the open Tier-A problem.
+\end{abstract}
+
+\maketitle
+
+%==============================================================
+\section{Introduction}\label{sec:intro}
+
+\subsection*{The mollified correction.}
+For two-sided Brownian scenery $X=(X_z)_{z\in\R}$, independent
+Brownian clock $Y=(Y_t)_{t\ge 0}$, mollifier $\rho$ (even,
+non-negative, $C_c^\infty$, $\int\rho=1$,
+$\supp\rho\subseteq[-c,c]$), and
+$X^\varepsilon=\rho_\varepsilon*X$ with
+$\rho_\varepsilon(\cdot)=\varepsilon^{-1}\rho(\cdot/\varepsilon)$,
+the mollified iterated Brownian motion is
+$\IBM_t^{\,\varepsilon}=x+X^\varepsilon_{|Y_t|}$. The
+energy-first It\^o formula of~\cite{Fontes-EnergyFirst} establishes
+the pathwise identity
+\begin{equation}\label{eq:flagship}
+ f(\IBM_t^{\,\varepsilon})-f(\IBM_0^{\,\varepsilon})
+  =\delta_Y\bigl(B_{f,\varepsilon}(t)\bigr)
+  +C_{\IBM,\varepsilon}(f;t),
+\end{equation}
+for $f\in\mathscr S(\R)$, where $\delta_Y$ is the clock Skorohod
+divergence and the mollified pathwise correction is
+\begin{equation}\label{eq:Ceps}
+ C_{\IBM,\varepsilon}(f;t)
+  \;=\;g_\varepsilon'(0)\,L_t^{0}(Y)
+  +\tfrac12\!\int_0^t g_\varepsilon''(|Y_s|)\,ds,
+\end{equation}
+with $g_\varepsilon(r)=f(x+X^\varepsilon_r)$,
+$g_\varepsilon'(r)=f'(x+U_r)V_r$ and
+$g_\varepsilon''(r)=f''(x+U_r)V_r^{2}+f'(x+U_r)W_r$ in the notation
+$U_r=X^\varepsilon_r$, $V_r=\partial_rX^\varepsilon_r$,
+$W_r=\partial_r^2X^\varepsilon_r$.
+
+\subsection*{The obstruction and its first-chaos closure.}
+The same paper proves that, under the non-degeneracy condition
+$(P_\eta f')(x)\not\equiv 0$ on $(0,\infty)$,
+\begin{equation}\label{eq:obstr}
+ \Var\bigl(\Pir_1^X\,C_{\IBM,\varepsilon}(f;t)\bigr)\longrightarrow+\infty
+ \qquad(\varepsilon\to 0),
+\end{equation}
+i.e.\ the first scenery-chaos projection of the correction has no
+$L^{2}(\Omega)$ limit. The companion paper~\cite{Fontes-FCDC} closes
+this divergent sector in the natural negative-Sobolev / quartic
+observable-energy dual: writing
+$\Pir_1^X\,C_{\IBM,\varepsilon}=I_1^X(K_\varepsilon(\cdot\mid Y))$,
+the conditional Malliavin kernel $K_\varepsilon$ admits the
+decomposition
+\begin{equation}\label{eq:K-decomp}
+ K_\varepsilon
+ \;=\;K_\varepsilon^{\mathrm{bdy}}
+   +\tfrac12\bigl(T_1^\varepsilon+T_2^\varepsilon+T_3^\varepsilon\bigr)
+   +R_\varepsilon^{\mathrm{layer}},
+\end{equation}
+and converges to $K^{\mathrm{int}}+L_t^0(Y)f'(x)\delta_0$ in
+$L^{2}(\Omega_Y;H^{-1}(\R))$, with the boundary-layer residual
+$R_\varepsilon^{\mathrm{layer}}$ vanishing in the stronger space
+$L^{2}(\Omega_Y;L^{2}(\R))$ at rate $O(\varepsilon^{1/2})$.
+
+\subsection*{What is missing between obstruction and closure.}
+\Cref{eq:obstr,eq:K-decomp} identify and close one sector of
+$C_{\IBM,\varepsilon}$. The remaining structural problem is to
+identify which other sectors of $C_{\IBM,\varepsilon}$ carry which
+parts of any candidate limit: the deterministic mass, the
+fourth-order Brownian-time PDE shadow, the $t^{-1/2}$
+boundary/source term, and the second-energy contraction channel.
+The natural coordinates for this are the joint Wiener bidegrees.
+
+\subsection*{The bidegree atlas.}
+Let
+\[
+ L^{2}(\Omega_X\times\Omega_Y)
+ \;=\;\bigoplus_{m,n\ge 0}\Hilb_m^X\otimes\Hilb_n^Y
+\]
+be the joint Wiener chaos decomposition of the source probability
+space. For each pair $(m,n)$, $\Pir_{m,n}$ is the orthogonal
+projection onto the bidegree-$(m,n)$ block. At every fixed
+$\varepsilon>0$, $C_{\IBM,\varepsilon}(f;t)\in L^{2}(\Omega)$ admits
+the bidegree decomposition
+\begin{equation}\label{eq:atlas}
+ C_{\IBM,\varepsilon}(f;t)
+ \;=\;\sum_{m,n\ge 0}\Pir_{m,n}C_{\IBM,\varepsilon}(f;t).
+\end{equation}
+We compute the low-bidegree blocks $(0,\bullet)$, $(1,\bullet)$, and
+$(2,0)$ in closed form at every $\varepsilon>0$, identify their
+distinct structural roles, and locate the FCDC closure of the
+singular $(1,\bullet)$ sector inside the atlas.
+
+\subsection*{Main results.}
+\begin{itemize}
+\item[\textbf{(A)}] (\Cref{thm:atlas}) The bidegree decomposition
+\eqref{eq:atlas} converges in $L^{2}(\Omega)$ for every
+$\varepsilon>0$.
+
+\item[\textbf{(B)}] (\Cref{thm:pure-clock}) Setting
+$\psi_\varepsilon(r)\coloneqq\E_X[g_\varepsilon''(r)]$,
+\[
+ \Pir_0^X\,C_{\IBM,\varepsilon}(f;t)
+ \;=\;\tfrac12\!\int_0^t\!\psi_\varepsilon(|Y_s|)\,ds,
+\]
+and $\psi_\varepsilon=\phi_\varepsilon^{\mathrm{int}}+b_\varepsilon$ with
+$\phi_\varepsilon^{\mathrm{int}}(r)=\tfrac14\E_X[f^{(4)}(x+U_r)]$ the
+bulk-extrapolated coefficient and $b_\varepsilon$ supported in the
+boundary layer $r\lesssim c\varepsilon$. After expectation, the two
+pieces carry the bi-Laplacian shadow and the singular
+$\Delta f(x)/(2\sqrt{2\pi t})$ source, respectively, and
+\[
+ \Pir_{0,0}\,C_{\IBM,\varepsilon}(f;t)
+ \;=\;\E\bigl[C_{\IBM,\varepsilon}(f;t)\bigr]
+ \;\longrightarrow\;u(t,x)-f(x).
+\]
+The clock-fluctuation blocks $\Pir_{0,n}=\Pir_n^Y F_\varepsilon$ for
+$n\ge 1$ are written as Stroock--Clark--Ocone projections of the
+scalar functional $F_\varepsilon=\tfrac12\!\int_0^t\psi_\varepsilon(|Y_s|)\,ds$.
+
+\item[\textbf{(C)}] (\Cref{thm:first-chaos}) For
+$K_\varepsilon$ the FCDC conditional Malliavin kernel,
+\[
+ \Pir_{1,n}\,C_{\IBM,\varepsilon}(f;t)
+ \;=\;I_1^X\!\bigl(\Pir_n^Y K_\varepsilon(\cdot\mid Y)\bigr),
+ \qquad n\ge 0.
+\]
+In particular, $\Pir_{1,0}=I_1^X(\E_Y K_\varepsilon(\cdot\mid Y))$,
+which has zero full expectation but is generally non-zero. Each block
+inherits the $H^{-1}$ closure of FCDC.
+
+\item[\textbf{(D)}] (\Cref{thm:2-0}) The second-scenery-chaos /
+scalar-clock block satisfies
+$\Pir_{2,0}\,C_{\IBM,\varepsilon}=\E_Y[\Pir_2^X C_{\IBM,\varepsilon}]$
+and admits the Gaussian-product-formula expansion
+\[
+ \Pir_2^X\bigl[f''(x+U_r)V_r^2+f'(x+U_r)W_r\bigr]
+ \;=\;\sum_{\substack{p,q,j\ge 0\\p+q-2j=2}}\!\!\!j!\binom{p}{j}\binom{q}{j}
+   I_2^X(h^{(\bullet)}_{p,r}\otimes_j \kappa^{(\bullet)}_{q,r})
+\]
+which truncates to six explicit energy-contraction channels: four
+from $f''(x+U_r)V_r^2$ across chaos orders $\{0,2,4\}$ of
+$f''(x+U_r)$, with $p=2$ contributing two distinct channels through
+the $q\in\{0,2\}$ split $V_r^2=\sigma_V^2+{:}V_r^2{:}$, and two from
+$f'(x+U_r)W_r$ across chaos orders $\{1,3\}$ of $f'(x+U_r)$; the
+channels are written in closed form.
+\end{itemize}
+
+\subsection*{Scope: what this paper does not prove.}\label{sec:scope}
+We do \emph{not} prove $\varepsilon\to 0$ convergence of
+$\Pir_{m,n}C_{\IBM,\varepsilon}$ for any $m\ge 2$, nor of the
+clock-fluctuation blocks $\Pir_{0,n}$ for $n\ge 1$. We do \emph{not}
+construct an unmollified $C_\IBM(f;t)$ as an element of any global
+quartic observable-energy dual $\Energy_\IBM^{(4),-}$; FCDC built
+only the first-chaos slice. We do \emph{not} treat any sector
+$(m,n)$ with $m\ge 3$, and we do \emph{not} treat the mixed
+$(2,n)$, $n\ge 1$, in detail. We do \emph{not} address
+filtration-level obstructions of Tsirelson type; these are
+independent and not used.
+
+\subsection*{On Wick and energy contraction.}\label{sec:wick}
+In Gaussian scenery, the second-chaos contractions appearing in
+$(2,0)$ admit a Wick-square realisation: $V_r^2=\sigma_V^2+:V_r^2:$
+with $:V_r^2:\in\Hilb_2^X$ a centred Wiener double integral. We use
+this representation only as Gaussian-coordinate bookkeeping; the
+organising mechanism is the energy-first contraction structure of
+the observable-energy framework~\cite{Fontes-EnergyFirst},
+specifically the subtraction or isolation of lower-order energy
+contractions determined by the observable-energy pairing. Wick
+ordering is not a primitive of the framework; it is the Gaussian
+realisation of an intrinsic energy-contraction operation. Throughout
+the paper we therefore use the phrases \emph{energy contraction},
+\emph{observable contraction}, and \emph{contraction channel},
+reserving the word \emph{Wick} for explicit references to
+Gaussian-coordinate bookkeeping.
+
+Similarly, Malliavin--Stroock kernels of $f^{(k)}(x+U_r)$ are used
+below only as Gaussian coordinates for the bidegree projections; the
+intrinsic organising structure is the energy-contraction
+decomposition of $\Pir_2^X g_\varepsilon''$ and not the particular
+Hermite/Stroock representation chosen.
+
+%==============================================================
+\section{Setup and bidegree notation}\label{sec:setup}
+
+\subsection*{Source data.}
+We work on a probability space $(\Omega,\mathcal F,\Prob)$ carrying
+two independent Gaussian families: a two-sided Brownian scenery
+$X=(X_z)_{z\in\R}$, $\Var(X_z)=|z|$, and a one-sided Brownian clock
+$Y=(Y_t)_{t\ge 0}$, $Y_0=0$. We write
+$\mathcal F_X=\sigma(X)$, $\mathcal F_Y=\sigma(Y)$, $\Omega_X$ and
+$\Omega_Y$ for the marginal probability spaces, and $\E_X$, $\E_Y$
+for the corresponding partial expectations. The composite is the
+mollified iterated Brownian motion
+$\IBM_t^{\,\varepsilon}=x+X^\varepsilon_{|Y_t|}$ with
+$X^\varepsilon=\rho_\varepsilon*X$ as in
+\Cref{sec:intro}. The test function $f\in\mathscr S(\R)$ and the
+basepoint $x\in\R$ are fixed.
+
+\subsection*{Scenery Malliavin coordinates.}
+$X$ admits the white-noise representation
+$X_z=\int_\R\sigma_z(w)\,d\xi(w)$ with
+$\sigma_z(w)=\sgn(z)\mathbf 1_{[0,z]_*}(w)$ and
+$\Cov(X_z,X_{z'})=\tfrac12(|z|+|z'|-|z-z'|)$. Set
+$U_r=X^\varepsilon_r=\int\rho_\varepsilon(r-z)X_z\,dz$,
+$V_r=\partial_rU_r$, $W_r=\partial_r^2U_r$. Integration by parts in
+the white-noise representation gives
+\begin{equation}\label{eq:VW-rep}
+ V_r=\int\rho_\varepsilon(r-z)\,d\xi(z),\qquad
+ W_r=\int\rho_\varepsilon'(r-z)\,d\xi(z),
+\end{equation}
+so $V_r,W_r\in\Hilb_1^X$ are centred Gaussian elements of the first
+scenery chaos. We write $\sigma_\varepsilon^2(r)=\Var(U_r)$ and
+$\sigma_V^2=\Var(V_r)$ (independent of $r$).
+
+\subsection*{Bulk covariance identities.}
+For $r$ in the bulk $|r|>c\varepsilon$,
+\begin{equation}\label{eq:bulk-cov}
+ (\sigma_\varepsilon^2)'(r)=1,\qquad
+ \Cov(U_r,V_r)=\tfrac12,\qquad
+ \sigma_V^2+\Cov(U_r,W_r)=0,
+\end{equation}
+the last by differentiating
+$2\Cov(U_r,V_r)=(\sigma_\varepsilon^2)'(r)=1$ once more. These are
+derived from first principles in~\cite[Sec.\ 3]{Fontes-FCDC} and are
+used below without reproof. The boundary covariance
+$\Cov(U_0,V_0)=0$ is established in~\cite[Lem.\ 3.2]{Fontes-FCDC}
+via odd-even pairing on the mollifier, and is used here as a
+single one-line input.
+
+\subsection*{Joint Wiener decomposition.}
+The joint Wiener chaos decomposition of the source probability space
+is
+\begin{equation}\label{eq:joint-chaos}
+ L^{2}(\Omega_X\times\Omega_Y)
+ \;=\;\bigoplus_{m,n\ge 0}\Hilb_m^X\otimes\Hilb_n^Y,
+\end{equation}
+where $\Hilb_m^X\subset L^{2}(\Omega_X)$ and
+$\Hilb_n^Y\subset L^{2}(\Omega_Y)$ are the $m$-th scenery and
+$n$-th clock Wiener chaoses. We write $\Pir_m^X$, $\Pir_n^Y$ for
+the projections onto $\Hilb_m^X$ and $\Hilb_n^Y$ extended to the
+joint space as $\Pir_m^X\otimes\mathrm{Id}_Y$ and
+$\mathrm{Id}_X\otimes\Pir_n^Y$. These commute:
+$\Pir_m^X\Pir_n^Y=\Pir_n^Y\Pir_m^X=\Pir_{m,n}$, the bidegree-$(m,n)$
+projection.
+
+\begin{definition}[Bidegree projection]\label{def:bidegree}
+For $F\in L^{2}(\Omega_X\times\Omega_Y)$, the bidegree-$(m,n)$
+projection is
+\[
+ \Pir_{m,n}F\;\coloneqq\;\Pir_m^X\Pir_n^Y F
+ \;=\;\Pir_n^Y\Pir_m^X F.
+\]
+The joint partial sums $\sum_{m\le M,n\le N}\Pir_{m,n}F$ converge to
+$F$ in $L^{2}(\Omega_X\times\Omega_Y)$ as $M,N\to\infty$.
+\end{definition}
+
+\begin{remark}[Partial-projection identities]\label{rem:partial}
+Two identities used below: $\Pir_0^Y=\E_Y$ (conditional expectation
+on $X$-coordinates), and $\Pir_0^X=\E_X$ (conditional expectation on
+$Y$-coordinates). Consequently $\Pir_{m,0}=\Pir_m^X\E_Y$ and
+$\Pir_{0,n}=\E_X\,\Pir_n^Y=\Pir_n^Y\E_X$ on
+$L^{2}(\Omega_X\times\Omega_Y)$.
+\end{remark}
+
+%==============================================================
+\section{Existence of the bidegree atlas}\label{sec:atlas}
+
+\begin{theorem}[A: bidegree decomposition exists at every \texorpdfstring{$\varepsilon$}{epsilon}]
+\label{thm:atlas}
+For every $f\in\mathscr S(\R)$, $t\ge 0$, and $\varepsilon>0$,
+$C_{\IBM,\varepsilon}(f;t)\in L^{2}(\Omega_X\times\Omega_Y)$ and the
+joint bidegree decomposition
+\begin{equation}\label{eq:atlas-conv}
+ C_{\IBM,\varepsilon}(f;t)
+ \;=\;\sum_{m,n\ge 0}\Pir_{m,n}\,C_{\IBM,\varepsilon}(f;t)
+\end{equation}
+converges in $L^{2}(\Omega_X\times\Omega_Y)$. The decomposition
+applies summand-by-summand to the two terms
+$g_\varepsilon'(0)L_t^0(Y)$ and
+$\tfrac12\!\int_0^t g_\varepsilon''(|Y_s|)\,ds$ of
+\eqref{eq:Ceps}.
+\end{theorem}
+
+\begin{proof}
+That $C_{\IBM,\varepsilon}(f;t)\in L^{2}(\Omega)$ for every fixed
+$\varepsilon>0$ is the content of the $\varepsilon^{-1}$-moment
+bound in~\cite[Sec.\ 8]{Fontes-EnergyFirst}: each of the random
+quantities $g_\varepsilon'(0)$, $g_\varepsilon''(r)$ has uniform
+$L^{2}(\Omega_X)$ bounds independent of $r$ at fixed $\varepsilon$
+(both involve $f^{(k)}(x+U_r)$ for $k\le 5$, smooth bounded, and the
+Gaussian factors $V_r,V_r^2,W_r$, all in $L^{p}(\Omega_X)$ for every
+$p$); $L_t^0(Y)$ is in $L^{p}(\Omega_Y)$ for every $p$; and the
+$\int_0^t$ integral preserves $L^{2}$ by Minkowski. Hence
+$C_{\IBM,\varepsilon}(f;t)\in L^{2}(\Omega_X\times\Omega_Y)$, and
+\eqref{eq:atlas-conv} is the orthogonal expansion in the joint
+Wiener chaos basis~\eqref{eq:joint-chaos}, which converges in
+$L^{2}$ by the joint Wiener--It\^o theorem~\cite{Nualart,Janson}.
+Summand-wise expansion follows from $\Pir_{m,n}$ being a bounded
+linear operator on $L^{2}(\Omega)$.
+\end{proof}
+
+\Cref{thm:atlas} is structural; its content is to fix a convention.
+The substantive theorems below identify the low-bidegree blocks
+explicitly.
+
+%==============================================================
+\section{The pure-clock sector \texorpdfstring{$(0,\bullet)$}{(0,*)}}\label{sec:pure-clock}
+
+\subsection*{The full scalar coefficient.}
+Define
+\begin{equation}\label{eq:psi-def}
+ \psi_\varepsilon(r)\;\coloneqq\;\E_X[g_\varepsilon''(r)]
+ \;=\;\E_X[f''(x+U_r)V_r^2+f'(x+U_r)W_r],
+\end{equation}
+the full $X$-expectation of the scalar integrand of \eqref{eq:Ceps}.
+The two-variable Gaussian Stein identity for a centred Gaussian
+$(U,V)$ and smooth $h$,
+\begin{equation}\label{eq:Stein-sq}
+ \E[h(U)V^2]=\Cov(U,V)^2\,\E[h''(U)]+\sigma_V^2\,\E[h(U)],
+\end{equation}
+applied to $(U,V)=(U_r,V_r)$ with $h=f''$, gives
+$\E_X[f''(x+U_r)V_r^2]=\Cov(U_r,V_r)^2\E_X[f^{(4)}(x+U_r)]+\sigma_V^2\E_X[f''(x+U_r)]$.
+The scalar Stein identity
+$\E[f'(x+U_r)W_r]=\Cov(U_r,W_r)\E_X[f''(x+U_r)]$ then yields
+\begin{equation}\label{eq:psi-decomp}
+ \psi_\varepsilon(r)
+ \;=\;\Cov(U_r,V_r)^2\,\E_X[f^{(4)}(x+U_r)]
+   +\bigl[\sigma_V^2+\Cov(U_r,W_r)\bigr]\,\E_X[f''(x+U_r)].
+\end{equation}
+
+\subsection*{Interior/boundary split.}
+By~\eqref{eq:bulk-cov}, $\Cov(U_r,V_r)^2=\tfrac14$ and
+$\sigma_V^2+\Cov(U_r,W_r)=0$ for $r\ge c\varepsilon$. Set
+\begin{equation}\label{eq:phi-int-def}
+ \phi_\varepsilon^{\mathrm{int}}(r)
+ \;\coloneqq\;\tfrac14\,\E_X[f^{(4)}(x+U_r)],
+\qquad
+ b_\varepsilon(r)
+ \;\coloneqq\;\psi_\varepsilon(r)-\phi_\varepsilon^{\mathrm{int}}(r).
+\end{equation}
+Then $\phi_\varepsilon^{\mathrm{int}}$ is defined and smooth on all
+of $\R_+$, and from \eqref{eq:psi-decomp}--\eqref{eq:bulk-cov}
+\begin{equation}\label{eq:b-eps}
+ b_\varepsilon(r)
+ \;=\;\bigl[\Cov(U_r,V_r)^2-\tfrac14\bigr]\,\E_X[f^{(4)}(x+U_r)]
+   +\bigl[\sigma_V^2+\Cov(U_r,W_r)\bigr]\,\E_X[f''(x+U_r)],
+\end{equation}
+both bracket factors vanishing identically on $\{r\ge c\varepsilon\}$.
+Hence $\supp\,b_\varepsilon\subseteq[0,c\varepsilon]$, the
+boundary layer where the bulk Stein cancellation breaks down.
+
+\begin{lemma}[Boundary-layer regularity of \texorpdfstring{$b_\varepsilon$}{b\_epsilon}]
+\label{lem:b-eps}
+The boundary-layer scalar residual $b_\varepsilon$ is smooth on
+$[0,\infty)$, supported in $[0,c\varepsilon]$, and satisfies the
+mass bound
+\[
+ \sup_{r\ge 0}|b_\varepsilon(r)|\le C_f\,\varepsilon^{-1},
+ \qquad
+ \int_0^\infty|b_\varepsilon(r)|\,dr\le C_f,
+\]
+with $C_f$ depending on $\|f^{(2)}\|_\infty,\|f^{(4)}\|_\infty$ but
+not on $\varepsilon$.
+\end{lemma}
+
+\begin{proof}
+Smoothness of $b_\varepsilon$ on $[0,\infty)$ follows from
+\eqref{eq:b-eps} together with smoothness of the underlying
+covariance functions $r\mapsto\Cov(U_r,V_r)$, $r\mapsto\Cov(U_r,W_r)$
+(smooth as Gaussian covariances of mollified processes at fixed
+$\varepsilon$). The support property follows from
+\eqref{eq:bulk-cov}: both bracket factors in \eqref{eq:b-eps} vanish
+identically for $r\ge c\varepsilon$, hence
+$\supp b_\varepsilon\subseteq[0,c\varepsilon]$.
+
+For the pointwise bound, the covariance audit
+of~\cite[Sec.\ 3]{Fontes-FCDC} establishes that, with $K_\rho$ and
+$C_\rho$ constants depending only on $\rho$,
+\begin{align*}
+ \bigl|\sigma_V^2+\Cov(U_r,W_r)\bigr|
+ &\;\le\;C_\rho\,\varepsilon^{-1}\,\mathbf 1_{[0,c\varepsilon]}(r),\\
+ \bigl|\Cov(U_r,V_r)^2-\tfrac14\bigr|
+ &\;\le\;K_\rho\,\mathbf 1_{[0,c\varepsilon]}(r),
+\end{align*}
+both vanishing outside the boundary layer by the bulk identities
+\eqref{eq:bulk-cov}, and bounded by the indicated rates inside it.
+For $f\in\mathscr S(\R)$, the heat-semigroup type expectations
+$|\E_X[f^{(k)}(x+U_r)]|\le\|f^{(k)}\|_\infty$ are uniform in
+$(r,\varepsilon)$. Combining these with \eqref{eq:b-eps},
+\[
+ |b_\varepsilon(r)|\;\le\;\bigl(K_\rho\|f^{(4)}\|_\infty
+   +C_\rho\,\varepsilon^{-1}\|f^{(2)}\|_\infty\bigr)\mathbf 1_{[0,c\varepsilon]}(r)
+ \;\le\;C_f\,\varepsilon^{-1}\mathbf 1_{[0,c\varepsilon]}(r),
+\]
+which is the pointwise bound. Integration on $[0,c\varepsilon]$
+gives $\int_0^\infty|b_\varepsilon(r)|\,dr\le c\,C_f$, which is the
+$L^{1}$-mass bound up to renaming the constant.
+\end{proof}
+
+\subsection*{The pure-clock identity.}
+We now isolate the $X$-expectation of $C_{\IBM,\varepsilon}$.
+
+\begin{lemma}[Boundary Tanaka piece vanishes after \texorpdfstring{$\E_X$}{E\_X}]
+\label{lem:bdy-zero}
+$\E_X[g_\varepsilon'(0)]=0$.
+\end{lemma}
+
+\begin{proof}
+$\E_X[g_\varepsilon'(0)]=\E_X[f'(x+U_0)V_0]=\Cov(U_0,V_0)\E_X[f''(x+U_0)]=0$
+by the scalar Stein identity and the boundary covariance
+$\Cov(U_0,V_0)=0$ of~\cite[Lem.\ 3.2]{Fontes-FCDC}.
+\end{proof}
+
+\begin{theorem}[B: pure-clock sector and expectation limit]
+\label{thm:pure-clock}
+For every $f\in\mathscr S(\R)$, $t\ge 0$, $\varepsilon>0$:
+\begin{enumerate}
+\item (Scalar identity)
+\[
+ \Pir_0^X\,C_{\IBM,\varepsilon}(f;t)
+ \;=\;F_\varepsilon(Y;t)
+ \;\coloneqq\;\tfrac12\!\int_0^t\!\psi_\varepsilon(|Y_s|)\,ds,
+\]
+with $\psi_\varepsilon=\phi_\varepsilon^{\mathrm{int}}+b_\varepsilon$
+as in \eqref{eq:phi-int-def}--\eqref{eq:b-eps}.
+\item (Bidegree slices) For every $n\ge 0$,
+\[
+ \Pir_{0,n}\,C_{\IBM,\varepsilon}(f;t)
+ \;=\;\Pir_n^Y F_\varepsilon(Y;t).
+\]
+\item (Expectation limit)
+\[
+ \Pir_{0,0}\,C_{\IBM,\varepsilon}(f;t)
+ \;=\;\E\!\bigl[C_{\IBM,\varepsilon}(f;t)\bigr]
+ \;\xrightarrow{\;\varepsilon\to 0\;}\;u(t,x)-f(x),
+\]
+where $u(t,x)=\E[f(x+X_{|Y_t|})]$ is the Brownian-time semigroup
+applied to $f$. The limit decomposes as
+\[
+ u(t,x)-f(x)
+ \;=\;\underbrace{\lim_{\varepsilon\to 0}\tfrac12\!\E_Y\!\int_0^t\!\phi_\varepsilon^{\mathrm{int}}(|Y_s|)\,ds}_{\text{interior bi-Laplacian shadow}}
+   \;+\;\underbrace{\lim_{\varepsilon\to 0}\tfrac12\!\E_Y\!\int_0^t\!b_\varepsilon(|Y_s|)\,ds}_{\text{boundary-layer source}};
+\]
+the boundary-layer piece converges in expectation to
+$\int_0^t\Delta f(x)/(2\sqrt{2\pi s})\,ds$ via the EF Brownian-time
+PDE consistency~\cite[Thm.\ 6.4]{Fontes-EnergyFirst}; we identify
+this limit only at the level of expectations, not as a full random
+$L^{2}(\Omega_Y)$ limit of the boundary-layer functional.
+\item (Clock-fluctuation blocks) For $n\ge 1$,
+$\Pir_{0,n}=\Pir_n^Y F_\varepsilon$ is a centred element of
+$\Hilb_n^Y$, and in particular
+\[
+ \Pir_{0,1}\,C_{\IBM,\varepsilon}(f;t)
+ \;=\;I_1^Y\!\bigl(\E_Y[D^Y_\cdot F_\varepsilon(Y;t)]\bigr)
+\]
+by the Stroock--Clark--Ocone formula, where
+$D^Y_u|Y_s|=\sgn(Y_s)\mathbf 1_{u\le s}$ on the standard
+Bouleau--Hirsch domain.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(1) Using $\Pir_0^X=\E_X$ on $L^{2}(\Omega_X\times\Omega_Y)$
+(\Cref{rem:partial}),
+\[
+ \Pir_0^X\,C_{\IBM,\varepsilon}(f;t)
+ =\E_X[g_\varepsilon'(0)]\,L_t^0(Y)
+  +\tfrac12\!\int_0^t\!\E_X[g_\varepsilon''(|Y_s|)\mid Y]\,ds.
+\]
+The first term vanishes by \Cref{lem:bdy-zero}. By independence of
+$X$ and $Y$, $\E_X[g_\varepsilon''(|Y_s|)\mid Y]=\psi_\varepsilon(|Y_s|)$
+as a deterministic function of $|Y_s|$. This yields the boxed
+identity with $F_\varepsilon$ as defined.
+
+(2) For each $n$, $\Pir_{0,n}=\Pir_n^Y\E_X=\Pir_n^Y\Pir_0^X$ by
+commutativity (\Cref{rem:partial}); applied to (1) this gives
+$\Pir_{0,n}C_{\IBM,\varepsilon}=\Pir_n^Y F_\varepsilon$.
+
+(3) $\Pir_{0,0}C_{\IBM,\varepsilon}=\E_Y\E_X[C_{\IBM,\varepsilon}]
+=\E[C_{\IBM,\varepsilon}]$. By~\cite[Thm.\ 6.5]{Fontes-EnergyFirst}
+(the mollified-pathwise to semigroup-consistency theorem),
+$\E[C_{\IBM,\varepsilon}(f;t)]\to u(t,x)-f(x)$ as
+$\varepsilon\to 0$, where $u(t,x)$ satisfies the Brownian-time PDE
+\[
+ \partial_t u\;=\;\tfrac18\,\Delta^2 u\;+\;\Delta f(x)/(2\sqrt{2\pi t}),
+ \qquad u(0,x)=f(x);
+\]
+integrating from $0$ to $t$ gives
+$u(t,x)-f(x)=\tfrac18\!\int_0^t\!\Delta^2u(s,x)\,ds
++\int_0^t\!\Delta f(x)/(2\sqrt{2\pi s})\,ds$. The interior piece
+$\tfrac12\E_Y\!\int_0^t\phi_\varepsilon^{\mathrm{int}}(|Y_s|)\,ds
+=\tfrac18\E_Y\!\int_0^t\E_X[f^{(4)}(x+U_{|Y_s|}^\varepsilon)]\,ds
+\to\tfrac18\!\int_0^t\!\Delta^2 u(s,x)\,ds$ by $\phi_\varepsilon^{\mathrm{int}}(r)\to\tfrac14(P_{|r|}f^{(4)})(x)$
+uniformly on compacts of $(0,\infty)$ and dominated convergence
+under the half-normal law of $|Y_s|$. The complementary identity
+\[
+ \tfrac12\E_Y\!\int_0^t\!b_\varepsilon(|Y_s|)\,ds
+ \;\xrightarrow{\;\varepsilon\to 0\;}\;
+ \int_0^t\!\frac{\Delta f(x)}{2\sqrt{2\pi s}}\,ds
+\]
+then follows by subtraction from the total expectation limit. (The
+boundary residual concentrates at scale $\varepsilon$ near $r=0$,
+where the half-normal density of $|Y_s|$ takes the value
+$\sqrt{2/(\pi s)}$, producing the stated $s^{-1/2}$ singularity.)
+
+(4) For $n\ge 1$, $\Pir_n^Y F_\varepsilon\in\Hilb_n^Y$ is centred by
+definition of higher chaos; the Stroock--Clark--Ocone representation
+$\Pir_1^Y F_\varepsilon=I_1^Y(\E_Y[D^Y_\cdot F_\varepsilon])$ is the
+$n=1$ specialisation~\cite{Nualart}. The Malliavin derivative
+$D^Y_u|Y_s|=\sgn(Y_s)\mathbf 1_{u\le s}$ is the standard one on the
+Bouleau--Hirsch domain (the absolute value is locally Lipschitz; the
+zero set of $Y$ has Lebesgue measure zero a.s.).
+\end{proof}
+
+\begin{remark}[On the \texorpdfstring{$L^{2}(\Omega_Y)$}{L2(Omega\_Y)} status of \texorpdfstring{$b_\varepsilon$}{b\_epsilon}]
+\label{rem:b-eps-L2}
+\Cref{lem:b-eps} gives $b_\varepsilon$ with concentrated mass at
+scale $\varepsilon$ near $r=0$, and \Cref{thm:pure-clock}(3) shows
+that $\E_Y\!\int_0^t b_\varepsilon(|Y_s|)\,ds$ converges to the
+$t^{-1/2}$-source-term mass. We make \emph{no} claim about the
+$L^{2}(\Omega_Y)$ limit of the random functional
+$\int_0^t b_\varepsilon(|Y_s|)\,ds$ as $\varepsilon\to 0$; the
+natural candidate is a clock local-time at $0$ object, but
+identifying and controlling it falls outside the scope of this
+paper. The decomposition $\psi_\varepsilon=\phi_\varepsilon^{\mathrm{int}}+b_\varepsilon$
+is therefore only used at the level of \emph{expectations}
+(\Cref{thm:pure-clock}(3)); the $(0,n)$ slices for $n\ge 1$ are
+treated only via the projection formula~\Cref{thm:pure-clock}(4)
+at fixed $\varepsilon$.
+\end{remark}
+
+\begin{remark}[Stroock kernels as Gaussian coordinates]
+\label{rem:stroock-as-coords}
+The Stroock--Clark--Ocone formula
+$\Pir_1^Y F_\varepsilon=I_1^Y(\E_Y D^Y_\cdot F_\varepsilon)$ is used
+here strictly as a Gaussian-coordinate expression for the bidegree
+projection. The intrinsic content of the $(0,1)$ block is the
+zero-mean clock fluctuation of the same scalar functional
+$F_\varepsilon$ that produces, after $\E_Y$-averaging, the
+deterministic mass of \Cref{thm:pure-clock}(3). The choice of
+clock-Hermite vs.\ Stroock vs.\ Gaussian-coordinate expansion is a
+representation issue; the underlying object is a single observable.
+\end{remark}
+
+%==============================================================
+\section{The first-scenery-chaos sector \texorpdfstring{$(1,\bullet)$}{(1,*)}}\label{sec:first-chaos}
+
+\subsection*{The conditional Malliavin kernel.}
+The first-scenery-chaos projection of $C_{\IBM,\varepsilon}$
+satisfies
+\[
+ \Pir_1^X\,C_{\IBM,\varepsilon}(f;t)
+ \;=\;I_1^X\!\bigl(K_\varepsilon(\cdot\mid Y)\bigr),
+\]
+where $K_\varepsilon(\cdot\mid Y)$ is the random conditional
+Malliavin kernel of~\cite[Sec.\ 3]{Fontes-FCDC},
+\begin{equation}\label{eq:K-detail}
+ K_\varepsilon(w\mid Y)
+ \;=\;K_\varepsilon^{\mathrm{bdy}}(w\mid Y)
+   +\tfrac12\bigl(T_1^\varepsilon+T_2^\varepsilon+T_3^\varepsilon\bigr)(w\mid Y)
+   +R_\varepsilon^{\mathrm{layer}}(w\mid Y),
+\end{equation}
+with $K_\varepsilon^{\mathrm{bdy}}(\cdot\mid Y)$ the boundary
+Tanaka kernel attached to $L_t^0(Y)$, the three $T_i^\varepsilon$ the
+interior bulk-Stein-extrapolated kernels, and
+$R_\varepsilon^{\mathrm{layer}}$ the boundary-layer residual; see
+\cite[Sec.\ 3]{Fontes-FCDC}, which we cite as a black box.
+
+\subsection*{The bidegree slices.}
+The next theorem decomposes $\Pir_1^X C_{\IBM,\varepsilon}$ along
+the $Y$-chaos lattice and corrects the naive ``$\Pir_{1,0}=0$''
+statement.
+
+\begin{theorem}[C: first-scenery-chaos bidegree slices]
+\label{thm:first-chaos}
+For every $f\in\mathscr S(\R)$, $t\ge 0$, $\varepsilon>0$, $n\ge 0$:
+\begin{enumerate}
+\item (Block formula)
+\[
+ \Pir_{1,n}\,C_{\IBM,\varepsilon}(f;t)
+ \;=\;I_1^X\!\bigl(\Pir_n^Y K_\varepsilon(\cdot\mid Y)\bigr).
+\]
+\item (Clock-averaged block, $n=0$)
+\[
+ \Pir_{1,0}\,C_{\IBM,\varepsilon}(f;t)
+ \;=\;I_1^X\!\bigl(\E_Y K_\varepsilon(\cdot\mid Y)\bigr).
+\]
+This sector has zero full expectation
+($\E[\Pir_{1,0}C_{\IBM,\varepsilon}]=\E[I_1^X(\E_Y K_\varepsilon)]=0$)
+but is generally non-zero as an element of $\Hilb_1^X$.
+\item (FCDC closure inheritance, at the level of kernels) The FCDC
+convergence~\cite[Thm.\ 5.3]{Fontes-FCDC} of the conditional
+Malliavin kernel descends block-by-block to the $Y$-chaos
+projections: as $\varepsilon\to 0$,
+\[
+ \Pir_n^Y K_\varepsilon(\cdot\mid Y)
+ \;\longrightarrow\;\Pir_n^Y K^{\mathrm{lim}}(\cdot\mid Y)
+\quad\text{in }L^{2}(\Omega_Y;H^{-1}(\R)),
+\]
+where $K^{\mathrm{lim}}=K^{\mathrm{int}}+L_t^0(Y)f'(x)\delta_0$ is
+the FCDC limit kernel. In particular, the clock-averaged kernels
+satisfy $\E_Y K_\varepsilon\to\E_Y K^{\mathrm{lim}}$ in $H^{-1}(\R)$.
+The corresponding first-chaos dual element
+$\Pir_{1,n}C_{\IBM,\varepsilon}=I_1^X(\Pir_n^Y K_\varepsilon)$ is
+therefore convergent in the first-chaos dual topology of FCDC, i.e.\
+the topology induced on $\Hilb_1^X$-valued objects with conditional
+kernel in $L^{2}(\Omega_Y;H^{-1}(\R))$; we do \emph{not} assert that
+the limit lies in $L^{2}(\Omega)$ as an ordinary random variable.
+Under the additional EF non-degeneracy condition
+$(P_\eta f')(x)\not\equiv 0$ on $(0,\infty)$, the $(1,\bullet)$
+sector closed here is precisely the one whose classical
+$L^{2}(\Omega)$ variance diverges (\eqref{eq:obstr}), so the
+dual-topology closure is forced by the failure of classical
+$L^{2}(\Omega)$ convergence; we do not claim $H^{-1}(\R)$ is the
+optimal Sobolev threshold.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(1) $\Pir_{1,n}=\Pir_1^X\Pir_n^Y$. Applying $\Pir_n^Y$ to
+$I_1^X(K_\varepsilon(\cdot\mid Y))$ acts on the $Y$-randomness of
+the conditional kernel only:
+$\Pir_n^Y[I_1^X(K_\varepsilon(\cdot\mid Y))]=I_1^X(\Pir_n^Y K_\varepsilon(\cdot\mid Y))$,
+because the first-$X$-chaos integration is linear and commutes with
+$\Pir_n^Y$ (which acts only on $\Omega_Y$). Then
+$\Pir_1^X$ is the identity on this element of $\Hilb_1^X$,
+finishing the identity.
+
+(2) Specialising (1) with $\Pir_0^Y=\E_Y$ gives the formula.
+Zero expectation:
+$\E[I_1^X(\E_Y K_\varepsilon)]=\E_X[I_1^X(\E_Y K_\varepsilon)]=0$,
+since every element of $\Hilb_1^X$ is centred in $X$ (independence
+of $X,Y$ then gives zero full expectation). Non-vanishing in general:
+the FCDC limit kernel $K^{\mathrm{lim}}$ has explicit non-trivial
+$Y$-average (interior part contains
+$-\partial_w(C(w)L_t^w(|Y|))$ whose $Y$-expectation involves the
+heat-semigroup mean local time, which is not identically zero); the
+mollified $K_\varepsilon$ inherits a non-trivial $\E_Y$ for small
+$\varepsilon$.
+
+(3) FCDC~\cite[Thm.\ 5.3]{Fontes-FCDC} establishes
+$K_\varepsilon\to K^{\mathrm{lim}}$ in
+$L^{2}(\Omega_Y;H^{-1}(\R))$. The $Y$-chaos projection $\Pir_n^Y$
+acts on $L^{2}(\Omega_Y)$-valued objects continuously
+(it is an orthogonal projection), so it is a bounded linear operator
+on $L^{2}(\Omega_Y;H^{-1}(\R))$ as well, with
+$\|\Pir_n^Y K\|_{L^{2}(\Omega_Y;H^{-1})}\le\|K\|_{L^{2}(\Omega_Y;H^{-1})}$.
+Applying it to the FCDC convergence gives
+$\Pir_n^Y K_\varepsilon\to\Pir_n^Y K^{\mathrm{lim}}$ in
+$L^{2}(\Omega_Y;H^{-1}(\R))$. The $n=0$ specialisation is the
+$\E_Y$-statement, with $H^{-1}(\R)$ topology on the deterministic
+limit kernel $\E_Y K^{\mathrm{lim}}$ (Cauchy--Schwarz / Jensen for
+the $L^{2}(\Omega_Y)\to\R$ averaging). The corresponding
+$I_1^X(\cdot)$ object is defined as the FCDC first-chaos dual
+element associated to the limiting conditional kernel; we do not
+identify it with an $L^{2}(\Omega)$ random variable.
+\end{proof}
+
+\begin{remark}[Locating the FCDC boundary local time]
+\label{rem:bdy-local-time}
+The FCDC boundary kernel $K_\varepsilon^{\mathrm{bdy}}$ converges to
+$L_t^0(Y)f'(x)\delta_0$ in $L^{2}(\Omega_Y;H^{-1/2-\delta}(\R))$;
+this boundary singularity is a feature of the $(1,\bullet)$ block,
+distributed across $(1,n)$ for various $n$ via the $Y$-chaos
+expansion of $L_t^0(Y)$. The $Y$-expectation
+$\E_Y[L_t^0(Y)]=\sqrt{2t/\pi}$ contributes to $\Pir_{1,0}$ in
+particular; the higher $Y$-chaos pieces of $L_t^0(Y)$ contribute to
+$\Pir_{1,n}$, $n\ge 1$. This is the precise sense in which the
+boundary Tanaka object of FCDC ``sits inside $\Pir_1^X$ and is
+spread across the $Y$-chaos lattice.''
+\end{remark}
+
+\begin{remark}[Why this paper does not reprove FCDC]
+The four blocks of \eqref{eq:K-detail} are constructed and shown to
+converge in $H^{-1}$ in~\cite{Fontes-FCDC}; reproving any of them
+would essentially duplicate that paper. The bidegree atlas's
+contribution to the $(1,\bullet)$ sector is structural: it locates
+the FCDC closure inside the joint chaos lattice via the block
+formula \Cref{thm:first-chaos}(1) and corrects the naive
+$\Pir_{1,0}=0$ claim.
+\end{remark}
+
+%==============================================================
+\section{The energy-contraction channel \texorpdfstring{$(2,0)$}{(2,0)}}\label{sec:contraction}
+
+\subsection*{Setup.}
+The bidegree-$(2,0)$ projection averages out all clock randomness:
+\begin{equation}\label{eq:2-0-collapse}
+ \Pir_{2,0}\,C_{\IBM,\varepsilon}(f;t)
+ \;=\;\E_Y\!\bigl[\Pir_2^X C_{\IBM,\varepsilon}(f;t)\bigr]
+\end{equation}
+by \Cref{rem:partial}. The intrinsic content of $(2,0)$ is therefore
+the $Y$-averaged second scenery chaos of the integrand of
+$C_{\IBM,\varepsilon}$.
+
+\subsection*{Scenery chaos content of \texorpdfstring{$V_r^2$}{V\_r\^{}2} and \texorpdfstring{$W_r$}{W\_r}.}
+$V_r\in\Hilb_1^X$ is a centred Gaussian. Its square decomposes as
+\begin{equation}\label{eq:Vr2-decomp}
+ V_r^2\;=\;\sigma_V^2+{:}V_r^2{:},\qquad
+ {:}V_r^2{:}=I_2^X(\rho_\varepsilon(r-\cdot)^{\otimes 2})\in\Hilb_2^X,
+\end{equation}
+the Wick-square realisation of the energy-contraction
+$V_r^2-\sigma_V^2$. We use \eqref{eq:Vr2-decomp} only as
+Gaussian-coordinate bookkeeping (compare \Cref{sec:wick}); the
+intrinsic object is the second-energy contraction
+$V_r^2-\langle V_r,V_r\rangle_{\Energy}$ where the inner product is
+the observable-energy pairing of~\cite{Fontes-EnergyFirst}.
+$W_r\in\Hilb_1^X$ is itself a first-chaos kernel,
+$W_r=I_1^X(\rho_\varepsilon'(r-\cdot))$.
+
+\subsection*{Stroock kernels of \texorpdfstring{$f^{(k)}(x+U_r)$}{f\^{}(k)(x+U\_r)}.}
+For each $r\ge 0$ and $k\in\N$, $f^{(k)}(x+U_r)\in L^{2}(\Omega_X)$
+admits the scenery-chaos expansion
+\begin{equation}\label{eq:Stroock}
+ f^{(k)}(x+U_r)\;=\;\sum_{m\ge 0}I_m^X\!\bigl(h^{(k)}_{m,r,\varepsilon}\bigr),
+\qquad
+ h^{(k)}_{m,r,\varepsilon}\;=\;\frac{1}{m!}\,\E_X[f^{(k+m)}(x+U_r)]\,
+   \xi_{r,\varepsilon}^{\otimes m},
+\end{equation}
+where $\xi_{r,\varepsilon}(w)=D^X_w U_r=\int\rho_\varepsilon(r-z)\sigma_z(w)\,dz$
+is the Malliavin derivative of $U_r$. \Cref{eq:Stroock} is the
+Stroock formula for the Gaussian $U_r$. For each fixed $m,k$ used
+below ($m\le 4$, $k\le 2$ in this paper), the kernel
+$h^{(k)}_{m,r,\varepsilon}$ is bounded in $L^{2}(\R^m)$ uniformly in
+$r$ at fixed $\varepsilon>0$: $\E_X[f^{(k+m)}(x+U_r)]$ is bounded by
+$\|f^{(k+m)}\|_\infty$ (independent of $r,\varepsilon$, finite for
+$f\in\mathscr S(\R)$ at the finitely many $m+k$ values we use), and
+$\xi_{r,\varepsilon}^{\otimes m}$ is bounded in $L^{2}(\R^m)$ by
+$\|\xi_{r,\varepsilon}\|_{L^{2}(\R)}^m=\sigma_\varepsilon(r)^m$,
+which is bounded uniformly in $r$ on compacts at fixed $\varepsilon$.
+We make no uniform-in-$m$ claim: the full series \eqref{eq:Stroock}
+appears only as a formal Gaussian-coordinate expansion, and only its
+projections onto chaoses $\le 4$ enter the calculation below.
+All kernel arguments of $I_m^X(\cdot)$ are tacitly symmetrised in
+their $m$ variables (the Wiener integrals depend only on the
+symmetric part of the kernel). We treat \eqref{eq:Stroock} as a
+Gaussian-coordinate computation (\Cref{rem:stroock-as-coords}).
+
+\subsection*{Gaussian product formula.}
+For $p,q\ge 0$ and symmetric kernels $a\in L^2(\R^p)$,
+$b\in L^2(\R^q)$,
+\begin{equation}\label{eq:prod-formula}
+ I_p^X(a)\,I_q^X(b)\;=\;\sum_{j=0}^{p\wedge q}j!\binom{p}{j}\binom{q}{j}
+ \,I_{p+q-2j}^X(a\otimes_j b),
+\end{equation}
+where $a\otimes_j b$ is the symmetric $j$-fold $L^{2}(\R)$
+contraction~\cite[Sec.\ 1.1.3]{Nualart}. The chaos-2 projection
+isolates $p+q-2j=2$.
+
+\subsection*{The six energy-contraction channels.}
+Applying \eqref{eq:Vr2-decomp}--\eqref{eq:prod-formula} to
+$f^{(k)}(x+U_r)$ paired with $V_r^2\in\Hilb_{\{0,2\}}^X$ or
+$W_r\in\Hilb_1^X$, the chaos-2 selector $p+q-2j=2$ with $q\le 2$
+(resp.\ $q=1$) forces $p\le q+2$ and $p$ to share parity with
+$q+2$. The six surviving channels are:
+
+\begin{proposition}[Channel enumeration]\label{prop:channels}
+For every fixed $\varepsilon>0$ and $r\ge 0$,
+\begin{align*}
+ \Pir_2^X\!\bigl[f''(x+U_r)V_r^2\bigr]
+ &=\;\Channel{0,0}+\Channel{2,V}+\Channel{2,\mathrm{c}}+\Channel{4},\\
+ \Pir_2^X\!\bigl[f'(x+U_r)W_r\bigr]
+ &=\;\Channel{1}+\Channel{3},
+\end{align*}
+where, writing $h^{(k)}_{m,r}$ for $h^{(k)}_{m,r,\varepsilon}$ to
+declutter:
+\begin{align*}
+ \Channel{0,0}\;\;&\coloneqq\;\E_X[f''(x+U_r)]\cdot I_2^X(\rho_\varepsilon(r-\cdot)^{\otimes 2})
+   &&\text{(scalar $\cdot$ $:V_r^2:$),}\\
+ \Channel{2,V}&\coloneqq\;\sigma_V^2\cdot I_2^X(h^{(2)}_{2,r})
+   &&\text{($\sigma_V^2$ $\cdot$ chaos-2 of $f''$),}\\
+ \Channel{2,\mathrm{c}}&\coloneqq\;4\cdot I_2^X\bigl(h^{(2)}_{2,r}\otimes_1\rho_\varepsilon(r-\cdot)^{\otimes 2}\bigr)
+   &&\text{(1-contraction, chaos-2 of $f''$ vs.\ $:V_r^2:$),}\\
+ \Channel{4}&\coloneqq\;12\cdot I_2^X\bigl(h^{(2)}_{4,r}\otimes_2\rho_\varepsilon(r-\cdot)^{\otimes 2}\bigr)
+   &&\text{(2-contraction, chaos-4 of $f''$ vs.\ $:V_r^2:$),}\\
+ \Channel{1}&\coloneqq\;I_2^X\bigl(h^{(1)}_{1,r}\,\widetilde\otimes\,\rho_\varepsilon'(r-\cdot)\bigr)
+   &&\text{(no-contraction $I_1\cdot I_1$, chaos-1 of $f'$ vs.\ $W_r$),}\\
+ \Channel{3}&\coloneqq\;3\cdot I_2^X\bigl(h^{(1)}_{3,r}\otimes_1\rho_\varepsilon'(r-\cdot)\bigr)
+   &&\text{(1-contraction, chaos-3 of $f'$ vs.\ $W_r$).}
+\end{align*}
+There are no further chaos-2 contributions: for $q\in\{0,2\}$
+(arising from $V_r^2$), $p+q-2j=2$ and $j\le\min(p,q)$ together
+force $p\in\{0,2,4\}$ with $p$ even; for $q=1$ (arising from $W_r$),
+$p+1-2j=2$ forces $p$ odd with $p\le q+2=3$.
+\end{proposition}
+
+\begin{proof}
+Direct substitution of \eqref{eq:Stroock} into the
+$\Pir_2^X$ projection and application of \eqref{eq:prod-formula}.
+The chaos parity constraint $p+q\equiv 2\pmod 2$ rules out $p$ odd
+when $q$ is even, and $p$ even when $q$ is odd. The bound
+$j\le\min(p,q)$ together with $p+q-2j=2$ rules out $p\ge q+3$ (which
+would force $j\ge(p-2)/2$, but $j\le q\le 2$, so $p\le q+2$). The
+enumeration of allowed $(p,q,j)$ is finite, and the listed channels
+exhaust it: $(0,2,0)$, $(2,0,0)$, $(2,2,1)$, $(4,2,2)$ for the
+$V_r^2$ factor, and $(1,1,0)$, $(3,1,1)$ for the $W_r$ factor.
+Coefficients $j!\binom{p}{j}\binom{q}{j}$ evaluate to $1,1,4,12,1,3$
+in order.
+\end{proof}
+
+\subsection*{The \texorpdfstring{$(2,0)$}{(2,0)} block.}
+We now write $\Pir_{2,0}C_{\IBM,\varepsilon}$ explicitly.
+
+\begin{theorem}[D: \texorpdfstring{$(2,0)$}{(2,0)} energy-contraction channel decomposition]
+\label{thm:2-0}
+For every $f\in\mathscr S(\R)$, $t\ge 0$, $\varepsilon>0$,
+\begin{equation}\label{eq:2-0-explicit}
+ \Pir_{2,0}\,C_{\IBM,\varepsilon}(f;t)
+ \;=\;\sqrt{\tfrac{2t}{\pi}}\,\Pir_2^X\!\bigl[f'(x+U_0)V_0\bigr]
+   +\tfrac12\!\int_0^t\!\!\!\E_Y\!\bigl[\Pir_2^X g_\varepsilon''(|Y_s|)\bigr]\,ds,
+\end{equation}
+with the second-chaos integrand given explicitly by
+\Cref{prop:channels} as the six-channel sum
+$\Channel{0,0}+\Channel{2,V}+\Channel{2,\mathrm{c}}+\Channel{4}+\Channel{1}+\Channel{3}$
+evaluated at $r=|Y_s|$. The whole expression lies in
+$\Hilb_2^X\otimes\Hilb_0^Y\subset L^{2}(\Omega)$ at every
+$\varepsilon>0$.
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:2-0-collapse} and \eqref{eq:Ceps},
+\[
+ \Pir_{2,0}C_{\IBM,\varepsilon}
+ =\E_Y\!\bigl[\Pir_2^X(g_\varepsilon'(0)L_t^0(Y))\bigr]
+  +\tfrac12\!\int_0^t\!\E_Y\!\bigl[\Pir_2^X g_\varepsilon''(|Y_s|)\bigr]\,ds.
+\]
+For the boundary term, $g_\varepsilon'(0)=f'(x+U_0)V_0$ is
+$Y$-independent, so
+$\Pir_2^X[g_\varepsilon'(0)L_t^0(Y)]=L_t^0(Y)\Pir_2^X[f'(x+U_0)V_0]$;
+taking $\E_Y$ gives $\E[L_t^0(Y)]\Pir_2^X[f'(x+U_0)V_0]=\sqrt{2t/\pi}\,\Pir_2^X[f'(x+U_0)V_0]$
+(by Tanaka's formula $\E[L_t^0(Y)]=\E|Y_t|$, and $|Y_t|$ has the
+half-normal distribution with mean $\sqrt{2t/\pi}$). The
+interior term is read off directly from
+\Cref{prop:channels} applied at $r=|Y_s|$.
+
+Membership in $L^{2}(\Omega)$ follows from \Cref{thm:atlas} and the
+boundedness of $\Pir_{2,0}$ on $L^{2}(\Omega)$.
+\end{proof}
+
+\subsection*{The boundary \texorpdfstring{$(2,0)$}{(2,0)} piece.}
+The boundary scalar $\Pir_2^X[f'(x+U_0)V_0]$ admits a parallel
+product-formula expansion. Note $\Cov(U_0,V_0)=0$ (boundary
+covariance, \cite[Lem.\ 3.2]{Fontes-FCDC}), so $U_0\perp V_0$ as
+centred Gaussians.
+
+\begin{proposition}[Boundary \texorpdfstring{$(2,0)$}{(2,0)} kernel]\label{prop:2-0-bdy}
+\[
+ \Pir_2^X[f'(x+U_0)V_0]
+ \;=\;I_2^X\!\bigl(h^{(1)}_{1,0,\varepsilon}\,\widetilde\otimes\,\rho_\varepsilon(0-\cdot)\bigr)
+   +3\cdot I_2^X\!\bigl(h^{(1)}_{3,0,\varepsilon}\otimes_1\rho_\varepsilon(0-\cdot)\bigr).
+\]
+\end{proposition}
+
+\begin{proof}
+$V_0=I_1^X(\rho_\varepsilon(0-\cdot))\in\Hilb_1^X$, $q=1$. The
+parity/index analysis of \Cref{prop:channels} with $q=1$ singles
+out $p\in\{1,3\}$. Coefficients are $1$ and $3$. The
+expansion~\eqref{eq:Stroock} of $f'(x+U_0)$ at $r=0$ supplies the
+kernels.
+\end{proof}
+
+\begin{remark}[On the structural label of \texorpdfstring{$(2,0)$}{(2,0)}]\label{rem:2-0-status}
+The $(2,0)$ sector is the cleanest realisation of the
+energy-contraction mechanism of~\cite{Fontes-EnergyFirst}. Each of
+the six channels $\Channel{0,0},\dots,\Channel{3}$ admits an
+intrinsic reading as a contraction of one observable-energy datum
+against another, with the Stroock/Wick representations
+\eqref{eq:Vr2-decomp}--\eqref{eq:Stroock} merely supplying explicit
+Gaussian coordinates. The label \emph{Wick} is reserved for the
+explicit notation $:V_r^2:$; in the body of the theorem the
+contractions are referred to as energy-contraction channels.
+
+We make no claim about $\varepsilon\to 0$ behaviour of any
+individual channel, nor of their sum. The leading scalar channel
+$\Channel{0,0}$ involves the $\Hilb_2^X$ kernel
+$\rho_\varepsilon(r-\cdot)^{\otimes 2}$, whose $L^{2}(\R^2)$ norm is
+$\|\rho_\varepsilon\|_{L^{2}}^2=O(\varepsilon^{-1})$; the kernel is
+multiplied by the scalar coefficient $\E_X[f''(x+U_r)]$, which is
+$O(1)$ in $\varepsilon$. The channel is therefore \emph{potentially
+singular as $\varepsilon\to 0$}, with $\varepsilon$-dependent
+norm whose precise scaling, and whether an energy-contraction
+subtraction stabilises it, are part of the contraction-channel
+companion problem to the $H^{-1}$ closure of $(1,\bullet)$. We do
+not provide a proof of any specific rate here; the question is left
+as Tier-A.
+\end{remark}
+
+%==============================================================
+\section{Sector atlas and scope}\label{sec:atlas-table}
+
+\subsection*{Sector role table.}
+The bidegree atlas of $C_{\IBM,\varepsilon}$ at fixed $\varepsilon>0$
+is summarised in \Cref{tab:atlas}.
+
+\begin{table}[h!]
+\caption{Bidegree atlas of $C_{\IBM,\varepsilon}(f;t)$ at fixed
+$\varepsilon$.}
+\label{tab:atlas}
+\small
+\begin{tabular}{lll}
+\textbf{Sector} & \textbf{Object} & \textbf{Status (this paper)}\\[2pt]
+\hline\\[-6pt]
+$(0,0)$, interior of $\psi_\varepsilon$
+ & bi-Laplacian shadow & explicit (\Cref{thm:pure-clock})\\
+$(0,0)$, boundary residual $b_\varepsilon$
+ & singular $t^{-1/2}$ source & expectation limit explicit\\
+$(0,0)$, combined
+ & deterministic mass $u(t,x)-f(x)$ & EF-proved\\
+$(0,n)$, $n\ge 1$
+ & pure-clock zero-mean fluctuations & projection formula\\
+$(1,0)$
+ & clock-averaged scenery $I_1^X(\E_Y K_\varepsilon)$
+ & FCDC-closed in $H^{-1}$\\
+$(1,n)$, $n\ge 1$
+ & $Y$-resolved singular scenery channels & FCDC-closed in $H^{-1}$\\
+FCDC bdy: $L_t^0(Y)f'(x)\delta_0$
+ & first-chaos boundary local time
+ & spread over $(1,n)$\\
+$(2,0)$
+ & six-channel energy-contraction kernel
+ & explicit (\Cref{thm:2-0})\\
+$(2,n)$, $n\ge 1$
+ & clock-resolved second-scenery channels & Tier-A\\
+$(m,n)$, $m\ge 3$
+ & higher scenery contractions & Tier-A\\
+\end{tabular}
+\end{table}
+
+Three structural distinctions in \Cref{tab:atlas} are worth
+restating.
+\begin{itemize}
+\item \emph{Deterministic mass vs.\ zero expectation.} Only
+$\Pir_{0,0}$ has non-zero full expectation. Every other $\Pir_{m,n}$
+($m+n\ge 1$) is centred. ``Zero expectation'' is strictly weaker
+than ``zero bidegree''; the prototypical example is $\Pir_{1,0}=
+I_1^X(\E_Y K_\varepsilon)$, generally non-zero
+(\Cref{thm:first-chaos}).
+\item \emph{Two distinct boundary objects.} The $(0,0)$ boundary
+residual $b_\varepsilon$ is an $X$-expectation-level object
+producing the $t^{-1/2}$ source at the level of $\E$;
+the FCDC boundary local time
+$L_t^0(Y)f'(x)\delta_0$ is a $Y$-randomness-level object inside
+$\Pir_1^X$. They are not the same and they live in different
+bidegree rows.
+\item \emph{The $(2,0)$ contraction channel does not remove the
+$(1,\bullet)$ singularity.} The six-channel decomposition of
+\Cref{thm:2-0} is in the second scenery chaos; the obstruction
+\eqref{eq:obstr} is in the first scenery chaos. Wick-square
+renormalisation, i.e.\ the energy-contraction subtraction acting on
+$V_r^2-\sigma_V^2$, leaves the first-chaos rank-one
+$\partial_r^2X^\varepsilon$ singularity untouched
+(cf.~\cite[Prop.\ 8.4]{Fontes-EnergyFirst}).
+\end{itemize}
+
+\subsection*{Tier-A roadmap.}
+Convergence of $\sum_{m,n}\Pir_{m,n}C_{\IBM,\varepsilon}$ as
+$\varepsilon\to 0$ in any quartic observable-energy dual
+$\Energy_\IBM^{(4),-}$ requires, beyond this paper:
+\begin{enumerate}
+\item A norm on the $(2,0)$ block in which the six energy-contraction
+channels of \Cref{thm:2-0} (or a suitable subtraction thereof)
+converge as $\varepsilon\to 0$. FCDC defined only the first-chaos
+slice $H^{-1}(\R,dw)$; the second-chaos analogue requires a
+tensor-product Bessel-potential structure not built here.
+\item Control of the mixed $(2,n)$, $n\ge 1$, sectors. The block
+formula of \Cref{prop:channels} extends to the $\Pir_n^Y$-resolved
+random integrand, but a $Y$-Sobolev companion to the scenery
+$H^{-1}$ norm is needed.
+\item A tail estimate for $\Pir_{m,n}C_{\IBM,\varepsilon}$,
+$m\ge 3$. We have not proved any non-trivial $\varepsilon$-uniform
+bound here.
+\item Identification of the $L^{2}(\Omega_Y)$ limit of
+$\int_0^t b_\varepsilon(|Y_s|)\,ds$ as $\varepsilon\to 0$. The
+expectation limit is identified (\Cref{thm:pure-clock}(3)); the
+random-functional limit is plausibly a clock local-time-at-zero
+object but is not addressed here.
+\end{enumerate}
+
+The atlas of this paper does not depend on any of (1)--(4). The
+bidegree decomposition of \Cref{thm:atlas}, the pure-clock identity
+of \Cref{thm:pure-clock}, the first-chaos block formula of
+\Cref{thm:first-chaos}, and the six-channel decomposition of
+\Cref{thm:2-0} are all valid at fixed $\varepsilon>0$; they
+locate the FCDC $H^{-1}$ closure inside the joint chaos lattice and
+expose what additional analysis the full Tier-A theorem requires.
+
+%==============================================================
+\begin{thebibliography}{99}
+\bibitem{Fontes-EnergyFirst}
+R.~Fontes.
+\newblock Energy-First Stochastic Calculus and the Iterated Brownian
+  Motion It\^o Formula.
+\newblock Manuscript, 2026.
+
+\bibitem{Fontes-FCDC}
+R.~Fontes.
+\newblock First-Chaos Dual Closure of the Iterated Brownian Motion
+  It\^o Correction.
+\newblock Manuscript, 2026.
+
+\bibitem{Nualart}
+D.~Nualart.
+\newblock \emph{The Malliavin Calculus and Related Topics}.
+\newblock Probability and Its Applications, Springer, second
+  edition, 2006.
+
+\bibitem{Janson}
+S.~Janson.
+\newblock \emph{Gaussian Hilbert Spaces}.
+\newblock Cambridge Tracts in Mathematics, vol.~129, Cambridge
+  University Press, 1997.
+\end{thebibliography}
+
+\end{document}

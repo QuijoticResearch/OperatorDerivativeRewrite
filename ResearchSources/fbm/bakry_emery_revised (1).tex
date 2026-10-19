@@ -1,0 +1,1158 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+% Theorem environments
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% Operators and shortcuts
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Ent}{\mathrm{Ent}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\Hess}{\mathrm{Hess}}
+
+\title{Bakry--\'Emery Curvature of the Fractional Laplacian\\
+via Fractional Brownian Covariance}
+
+\author{Ramiro Fontes\\
+Quijotic Research\\
+\texttt{ramirofontes@gmail.com}}
+
+\date{February 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We prove that the carr\'e du champ of the symmetric $\gamma$-stable
+generator $L_\gamma = -(-\Delta)^{\gamma/2}$, evaluated on Fourier modes,
+coincides with the covariance kernel of fractional Brownian motion (fBM)
+with Hurst parameter $H = \gamma/2$:
+$\Psi_\gamma(\xi,\eta) = R_{\gamma/2}(|\xi|,|\eta|)$.
+Both formulas are classical; their identification appears to be new.
+
+We exploit this correspondence to develop a positive Bakry--\'Emery
+curvature theory for the fractional Laplacian on the torus.
+On the torus $\T = \R/(2\pi\Z)$, the iterated carr\'e du champ
+kernel $\Gamma_{\gamma,2}$ is the Hadamard square of $\Gamma_\gamma$:
+the curvature becomes the generalized eigenvalue problem
+$R_H^{\circ 2}\,v = \kappa\,R_H\,v$ for fBM covariance matrices.
+At $\gamma = 1$ (Cauchy process, $H = 1/2$), the eigenvalues are the
+odd integers $\{1,3,\ldots,2N{-}1\}$, giving curvature $\kappa = 1$
+exactly---valid for all $N$ and hence on the full domain.
+This yields a Poincar\'e inequality with optimal constant
+and exponential gradient contraction for the Cauchy semigroup.
+On real trigonometric polynomials, the cross-sign kernel
+$\Psi_\gamma(n,-m)$ vanishes if and only if $\gamma = 1$---a
+consequence of the linearity of $|\cdot|^1$---making the Cauchy
+process the unique stability index with $\kappa \geq 1$.
+
+For the L\'evy--Fokker--Planck equation with confining potential
+$V(x) = -\omega^2\cos x$, we derive an exact curvature formula
+whose parameters are controlled by the fBM covariance.
+These results complement the negative result of Spener--Weber--Zacher
+that $(-\Delta)^{\gamma/2}$ on $\R^d$ fails
+$\mathrm{CD}(\kappa,N)$ for all finite~$N$.
+\end{abstract}
+
+\medskip
+\noindent\textbf{MSC 2020:} 60G52, 60G22, 35S10, 47D07, 42A16.\\
+\textbf{Keywords:} Bakry--\'Emery curvature; fractional Laplacian;
+carr\'e du champ; fractional Brownian motion; Hadamard product;
+stable semigroup; cross-sign vanishing; L\'evy--Fokker--Planck;
+Schoenberg kernel.
+
+
+%======================================================================
+\section{Introduction}\label{sec:intro}
+%======================================================================
+
+\subsection{Motivation}
+
+The Bakry--\'Emery $\Gamma_2$-criterion is the principal tool for
+establishing functional inequalities for Markov
+semigroups~\cite{BakryGentilLedoux2014}. For diffusion generators
+$L = \Delta + \nabla V \cdot \nabla$ on a Riemannian manifold,
+the condition $\Gamma_2(f,f) \geq \kappa\,\Gamma(f,f)$ is equivalent
+to a Ricci curvature lower bound, and the constant $\kappa$ controls
+convergence to equilibrium through
+\[
+  \Gamma_2 \geq \kappa\,\Gamma
+  \;\Longrightarrow\;
+  \text{log-Sobolev with } C = 2/\kappa
+  \;\Longrightarrow\;
+  \text{Poincar\'e with } \lambda_1 \geq \kappa.
+\]
+For non-local generators such as the fractional Laplacian
+$L_\gamma = -(-\Delta)^{\gamma/2}$, the theory is substantially
+more delicate. Spener, Weber, and
+Zacher~\cite{SpenerWeberZacher2020} proved that the fractional
+Laplacian on $\R^d$ fails to satisfy the curvature-dimension inequality
+$\mathrm{CD}(\kappa,N)$ for all $\kappa \in \R$ and all finite $N > 0$.
+This was identified as a key open problem in extending the $\Gamma$-calculus
+to non-local operators~\cite{Garofalo2019}.
+
+In this paper, we work on the compact torus $\T = \R/(2\pi\Z)$, where
+the spectral gap $\lambda_1 = 1$ provides the essential compactness that
+the $\R^d$ setting lacks.  Our starting point is the observation that
+the Fourier-space carr\'e du champ of the $\gamma$-stable generator
+coincides with the covariance kernel of fractional Brownian motion
+with Hurst parameter $H = \gamma/2$.
+This identification---a connection between the Dirichlet form of a
+jump process and the covariance of a Gaussian process---allows us to
+express the full Bakry--\'Emery curvature theory in terms of spectral
+properties of fBM covariance matrices.
+
+
+\subsection{The stable--fBM correspondence}
+
+The Fourier-space kernel of the carr\'e du champ
+$\Psi_\gamma(\xi,\eta) :=
+\frac{1}{2}(|\xi|^\gamma + |\eta|^\gamma - |\xi-\eta|^\gamma)$
+is a standard object in the theory of jump-type Dirichlet
+forms~\cite{BoettcherSchillingWang2013}.
+The fBM covariance $R_H(s,t) = \frac{1}{2}(|s|^{2H} + |t|^{2H}
+- |s-t|^{2H})$ is classical since
+Mandelbrot--Van~Ness~\cite{Mishura2008}.
+The kernel $\frac{1}{2}(|\xi|^\gamma + |\eta|^\gamma
+- |\xi-\eta|^\gamma)$ also appears in Schoenberg's
+theory of conditionally negative definite
+functions~\cite{Schoenberg1938}.
+
+These three appearances have not, to our knowledge, been connected
+explicitly.  We prove (Theorem~\ref{thm:duality},
+Section~\ref{sec:duality}):
+\begin{equation}\label{eq:duality-intro}
+  \Psi_\gamma(\xi,\eta) = R_{\gamma/2}(|\xi|,|\eta|),
+  \qquad \gamma \in (0,2),
+\end{equation}
+identifying the carr\'e du champ of the stable generator with
+the covariance of fBM.  The proof requires only the
+L\'evy--Khintchine formula.
+The identity was originally discovered within an operator
+factorization framework for stochastic
+calculus~\cite{Fontes2026a}; here we give a self-contained
+treatment and develop its consequences for curvature theory.
+
+\begin{remark}[On the depth of the identification]
+\label{rem:identification}
+The identity~\eqref{eq:duality-intro} can be verified
+in one line once both sides are written out. Its value
+is not computational but \emph{structural}: it connects
+the Dirichlet form of a pure-jump process to the
+covariance of a Gaussian process, placing the entire
+Bakry--\'Emery theory into the well-developed spectral
+theory of fBM covariance operators. Concretely:
+\begin{enumerate}[label=(\alph*)]
+\item The positive semi-definiteness of $\Psi_\gamma$
+  follows immediately from the positive-definiteness
+  of $R_H$ (Schoenberg's theorem becomes a
+  corollary of fBM existence).
+\item The Hadamard square identity (Theorem~A)
+  translates $\Gamma_2 \geq 0$ into the Schur product
+  theorem applied to fBM covariance matrices.
+\item The curvature computation reduces to a
+  \emph{generalized eigenvalue problem} for fBM
+  matrices, making numerical computation trivial
+  and structural analysis (e.g., the odd integer
+  spectrum at $\gamma = 1$) accessible.
+\item The cross-sign vanishing (Theorem~D) is
+  equivalent to the linearity of the fBM path
+  variance $|s|^{2H} + |t|^{2H} - |s+t|^{2H} = 0$
+  at $H = 1/2$.
+\end{enumerate}
+None of these consequences are obvious from the
+Dirichlet form or L\'evy--Khintchine perspectives alone.
+\end{remark}
+
+
+\subsection{Main results}
+
+We work on $\T = \R/(2\pi\Z)$ with normalized Lebesgue measure
+$\mu = dx/(2\pi)$. The fractional Laplacian acts on Fourier modes as
+$L_\gamma(e^{inx}) = -|n|^\gamma\,e^{inx}$.
+
+\medskip\noindent
+\textbf{Theorem~A} (Hadamard square identity; \S\ref{sec:gamma2}).
+\emph{The iterated carr\'e du champ kernel of $L_\gamma$ is the
+Hadamard square of the carr\'e du champ kernel:
+\begin{equation}\label{eq:intro-A}
+  \Phi_{\gamma,2}(\xi,\eta)
+  = \bigl[\Psi_\gamma(\xi,\eta)\bigr]^2
+  = \bigl[R_{\gamma/2}(|\xi|,|\eta|)\bigr]^2.
+\end{equation}}
+
+\medskip\noindent
+\textbf{Theorem~B} (Curvature as eigenvalue problem; \S\ref{sec:curv-pos}).
+\emph{On positive-frequency polynomials $f = \sum_{n=1}^N a_n\,e^{inx}$,
+the Bakry--\'Emery curvature is
+\begin{equation}\label{eq:intro-B}
+  \kappa(\gamma, N) = \lambda_{\min}\!\bigl(R_H^{\circ 2},\, R_H\bigr),
+  \quad H = \gamma/2,
+\end{equation}
+where $R_H$ is the $N \times N$ fBM covariance matrix on $\{1,\ldots,N\}$.}
+
+\medskip\noindent
+\textbf{Theorem~C} (Odd integer eigenvalues; \S\ref{sec:cauchy}).
+\emph{At $\gamma = 1$, the matrix $R_{1/2}^{-1}\,R_{1/2}^{\circ 2}$ is
+upper triangular with eigenvalues $\{1, 3, 5, \ldots, 2N-1\}$.
+In particular, $\kappa(1,N) = 1$ for all $N \geq 1$.}
+
+\medskip\noindent
+\textbf{Theorem~D} (Cross-sign vanishing and uniqueness of $\gamma=1$; \S\ref{sec:cross-sign}).
+\emph{The cross-sign kernel satisfies
+\begin{equation}\label{eq:intro-D}
+  \Psi_\gamma(n,-m) = \tfrac{1}{2}\bigl(|n|^\gamma + |m|^\gamma
+  - |n+m|^\gamma\bigr)
+  \begin{cases}
+    = 0 & \text{if } \gamma = 1, \\
+    > 0 & \text{if } \gamma < 1, \\
+    < 0 & \text{if } \gamma > 1,
+  \end{cases}
+\end{equation}
+for all $n,m > 0$. Consequently, $\gamma = 1$ is the unique stability
+index for which $\kappa_{\mathrm{real}}(\gamma) \geq 1$ on all real
+trigonometric polynomials.}
+
+\medskip\noindent
+\textbf{Theorem~E} (Curvature with confining potential; \S\ref{sec:potential}).
+\emph{For $L = -(-\Delta)^{\gamma/2} - V'(x)\,\partial_x$ on $\T$ with
+$V(x) = -\omega^2\cos x$, the curvature on the first mode
+$f = \cos x$ is
+\begin{equation}\label{eq:intro-E}
+  \kappa(\gamma,\omega^2) = \min_{x \in \T}
+  \frac{1 + \alpha^2\cos 2x + \tfrac{\omega^2}{2}(\cos x + \beta\cos 3x)}
+       {1 + \alpha\cos 2x},
+\end{equation}
+where $\alpha(\gamma) = 1 - 2^{\gamma-1}$ and
+$\beta(\gamma) = (2^{\gamma+1} - 3^\gamma - 1)/2$.
+At $\gamma = 1$: $\alpha = \beta = 0$, giving $\kappa = 1 - \omega^2/2$.}
+
+
+\subsection{Context and prior work}
+
+This paper provides, to our knowledge, the first positive
+Bakry--\'Emery curvature result for the fractional Laplacian
+on any domain: specifically, $\mathrm{CD}(1,\infty)$ for the
+Cauchy process ($\gamma = 1$) on the torus.  For $\gamma \neq 1$,
+we reduce the curvature problem to a concrete spectral question
+about fBM covariance matrices but do not resolve the
+infinite-dimensional limit.
+
+Spener, Weber, and Zacher~\cite{SpenerWeberZacher2020} showed that
+$(-\Delta)^{\gamma/2}$ on $\R^d$ fails the curvature-dimension inequality
+$\mathrm{CD}(\kappa,N)$ for all $\kappa$ and all finite $N$. Their result
+leaves open the case of compact domains. Our Theorem~C provides
+$\mathrm{CD}(1,\infty)$ on the torus at $\gamma = 1$: the compactness
+(spectral gap $\lambda_1 = 1$) is essential.
+
+Gentil and Imbert~\cite{GentilImbert2008} prove exponential convergence
+of $\Phi$-entropies for the L\'evy--Fokker--Planck equation with rate
+$\gamma$ for $\gamma$-stable processes with Ornstein--Uhlenbeck drift,
+bypassing the chain rule via entropy production. Their approach gives
+existence of convergence but not explicit Bakry--\'Emery constants.
+Our results are complementary: we work on the torus rather than $\R^d$
+but obtain exact curvature formulas controlled by the fBM covariance.
+
+Chafa\"i and Malrieu (unpublished, cited in~\cite{GentilImbert2008},
+Remark~4) observe that $\Gamma_2 \geq 0$ for pure-jump generators
+follows from a double-integral representation as a square. We go
+much further: we compute the \emph{full sesquilinear kernel}, identify
+it as the Hadamard square of the fBM covariance, and extract
+quantitative curvature bounds.
+
+
+\subsection{Organization}
+
+Section~\ref{sec:prelim}: preliminaries on the fractional Laplacian,
+carr\'e du champ, and fBM.
+Section~\ref{sec:duality}: the stable--fBM correspondence (identity
+$\Psi_\gamma = R_{\gamma/2}$) and the distinguished point $\gamma = 1$.
+Section~\ref{sec:gamma2}: Hadamard square identity (Theorem~A).
+Section~\ref{sec:curvature}: curvature on positive frequencies
+(Theorems~B and~C) and the phase transition.
+Section~\ref{sec:real}: cross-sign structure and real polynomials
+(Theorem~D).
+Section~\ref{sec:potential}: curvature with confining potential
+(Theorem~E).
+Section~\ref{sec:func-ineq}: functional inequality consequences.
+Section~\ref{sec:discussion}: spectral invariants and open problems.
+
+
+%======================================================================
+\section{Preliminaries}\label{sec:prelim}
+%======================================================================
+
+\subsection{The fractional Laplacian on the torus}
+
+Let $\T = \R/(2\pi\Z)$ with $\mu(dx) = dx/(2\pi)$. The fractional
+Laplacian $L_\gamma = -(-\Delta)^{\gamma/2}$ with $\gamma \in (0,2)$
+acts as $L_\gamma(e^{inx}) = -|n|^\gamma\,e^{inx}$ for $n \in \Z$.
+The semigroup is $P_t^\gamma(e^{inx}) = e^{-t|n|^\gamma}\,e^{inx}$,
+with spectral gap $\lambda_1(\gamma) = 1$.
+
+The space of trigonometric polynomials
+$\mathcal{T} = \mathrm{span}\{e^{inx} : n \in \Z\}$ is a core
+for $L_\gamma$ on $L^2(\T,\mu)$: it is dense, invariant under $P_t^\gamma$,
+and contained in the domain of every power of $L_\gamma$.
+Our curvature computations are performed on finite-dimensional
+subspaces of $\mathcal{T}$; the resulting constants are therefore
+exact on these subspaces and give upper bounds for the curvature
+on the full domain.
+
+\begin{remark}[Role of compactness]\label{rem:compact}
+Spener, Weber, and Zacher~\cite{SpenerWeberZacher2020} proved
+$(-\Delta)^{\gamma/2}$ on $\R^d$ fails $\mathrm{CD}(\kappa,N)$
+for all $\kappa$ and all finite $N$. The torus provides
+compactness (spectral gap $\lambda_1 = 1$) and
+translation-invariance (Fourier diagonalization).
+
+Compactness is \emph{necessary} (the $\R^d$ result precludes
+positive curvature without it), but it is not \emph{sufficient}:
+\begin{enumerate}[label=(\roman*)]
+\item Compactness alone gives $\Gamma_2 \geq 0$ (by the
+  Schur product theorem, since $\Gamma_2 = \Gamma^{\circ 2}$).
+  The quantitative lower bound $\kappa > 0$ requires the
+  specific spectral structure of the fBM covariance.
+\item The exact curvature $\kappa(1,N) = 1$ (Theorem~C) is
+  a non-trivial spectral fact: it requires the odd integer
+  eigenvalue structure of $R_{1/2}^{-1}R_{1/2}^{\circ 2}$,
+  not merely positivity.
+\item The phase transition at $\gamma = 1$ (Theorem~D) is a
+  structural phenomenon controlled by the linearity of
+  $|\cdot|^1$, independent of compactness.
+\end{enumerate}
+Whether analogous results hold on other compact domains
+(e.g.\ spheres, compact Lie groups) remains open.
+\end{remark}
+
+The generator on $\R$ has the integral representation
+\begin{equation}\label{eq:generator}
+  L_\gamma f(x)
+  = \int_{\R \setminus \{0\}}
+  \bigl[f(x+z) - f(x) - f'(x)\,z\,\mathbf{1}_{|z| \leq 1}\bigr]
+  \,\nu_\gamma(dz),
+\end{equation}
+where $\nu_\gamma(dz) = c_\gamma\,|z|^{-1-\gamma}\,dz$ is the
+L\'evy measure.
+On Fourier modes, the characteristic exponent is recovered from
+the L\'evy--Khintchine formula:
+\begin{equation}\label{eq:LK}
+  |\xi|^\gamma
+  = \int_{\R \setminus \{0\}}
+  (1 - \cos \xi z)\,\nu_\gamma(dz).
+\end{equation}
+
+
+\subsection{Carr\'e du champ}
+
+\begin{definition}\label{def:cdc}
+The sesquilinear carr\'e du champ of $L_\gamma$ is
+\begin{equation}\label{eq:cdc}
+  \widetilde{\Gamma}_\gamma(f,g)(x)
+  := \frac{1}{2} \int_{\R \setminus \{0\}}
+  \bigl[f(x+z) - f(x)\bigr]\,
+  \overline{\bigl[g(x+z) - g(x)\bigr]}\;
+  \nu_\gamma(dz).
+\end{equation}
+On Fourier modes:
+\begin{equation}\label{eq:psi-kernel}
+  \widetilde{\Gamma}_\gamma(e^{i\xi\cdot}, e^{i\eta\cdot})(x)
+  = e^{i(\xi-\eta)x}\,\Psi_\gamma(\xi,\eta),
+\end{equation}
+where $\Psi_\gamma(\xi,\eta)
+= \tfrac{1}{2}(|\xi|^\gamma + |\eta|^\gamma - |\xi-\eta|^\gamma)$.
+Exponentials $e^{i\xi\,\cdot}$ lie in the extended Dirichlet space
+of~$L_\gamma$ on $\T$ for all $\gamma \in (0,2)$; see
+\cite{BoettcherSchillingWang2013}, \S4.7, for the general framework
+of carr\'e du champ for L\'evy-type operators.
+\end{definition}
+
+We also need the \emph{bilinear} carr\'e du champ, defined by replacing
+the conjugate in~\eqref{eq:cdc} with the plain difference. On Fourier modes:
+\begin{equation}\label{eq:psi-bilinear}
+  \Gamma_\gamma^{\mathrm{bil}}(e^{inx}, e^{imx})(x)
+  = e^{i(n+m)x}\,\Psi_\gamma^B(n,m),
+  \qquad
+  \Psi_\gamma^B(n,m) = \tfrac{1}{2}\bigl(|n|^\gamma + |m|^\gamma
+  - |n+m|^\gamma\bigr).
+\end{equation}
+Note: $\Psi_\gamma^B(n,m) = \Psi_\gamma(n,-m)$.
+
+\begin{definition}\label{def:gamma2}
+The iterated carr\'e du champ is
+\begin{equation}\label{eq:gamma2-def}
+  \widetilde{\Gamma}_{\gamma,2}(f,f)
+  := \frac{1}{2}\Bigl[
+    L_\gamma\bigl(\widetilde{\Gamma}_\gamma(f,f)\bigr)
+    - 2\,\widetilde{\Gamma}_\gamma(f, L_\gamma f)
+  \Bigr].
+\end{equation}
+The Bakry--\'Emery condition is
+$\widetilde{\Gamma}_{\gamma,2}(f,f)(x) \geq \kappa\,
+\widetilde{\Gamma}_\gamma(f,f)(x)$.
+\end{definition}
+
+
+\subsection{Fractional Brownian motion}
+
+For $H \in (0,1)$, fractional Brownian motion (fBM) with Hurst
+parameter $H$ is a centered Gaussian process $B^H$ with covariance
+\begin{equation}\label{eq:fbm-cov}
+  R_H(s,t)
+  = \frac{1}{2}\bigl(|s|^{2H} + |t|^{2H} - |s-t|^{2H}\bigr).
+\end{equation}
+The kernel $R_H$ is positive definite for all $H \in (0,1)$
+(\cite{Mishura2008}, Proposition~1.2.1).
+At $H = 1/2$: $R_{1/2}(s,t) = \min(s,t)$ for $s,t \geq 0$
+(standard Brownian motion; independent increments).
+For $H > 1/2$: positively correlated increments (long-range dependence).
+For $H < 1/2$: negatively correlated increments (anti-persistence).
+
+
+%======================================================================
+\section{The Stable--fBM Correspondence}\label{sec:duality}
+%======================================================================
+
+\begin{theorem}[Stable--fBM correspondence]\label{thm:duality}
+For $\gamma \in (0,2)$ and all $\xi, \eta \in \R$:
+\begin{equation}\label{eq:duality}
+  \Psi_\gamma(\xi,\eta)
+  = \tfrac{1}{2}\bigl(|\xi|^\gamma + |\eta|^\gamma
+  - |\xi - \eta|^\gamma\bigr)
+  = R_{\gamma/2}(|\xi|, |\eta|).
+\end{equation}
+The carr\'e du champ of the $\gamma$-stable generator, evaluated
+on Fourier modes, is the covariance of fBM with $H = \gamma/2$.
+\end{theorem}
+
+\begin{proof}
+Let $f(x) = e^{i\xi x}$, $g(x) = e^{i\eta x}$.
+Then $f(x+z) - f(x) = e^{i\xi x}(e^{i\xi z} - 1)$ and similarly
+for $g$. By the sesquilinear carr\'e du champ~\eqref{eq:cdc}:
+\begin{align*}
+  \widetilde\Gamma_\gamma(f,g)(x)
+  &= \frac{e^{i(\xi-\eta)x}}{2}\int_{\R \setminus \{0\}}
+     (e^{i\xi z} - 1)(e^{-i\eta z} - 1)\,\nu_\gamma(dz).
+\end{align*}
+Expanding and using $\int (e^{i\lambda z} - 1)\,\nu_\gamma(dz)
+= -|\lambda|^\gamma$ (from~\eqref{eq:LK} and symmetry of $\nu_\gamma$):
+\[
+  \Psi_\gamma(\xi,\eta)
+  = \tfrac{1}{2}\bigl[|\xi|^\gamma + |\eta|^\gamma
+  - |\xi - \eta|^\gamma\bigr].
+\]
+Setting $H = \gamma/2$ and noting $|s|^{2H} = |s|^\gamma$,
+this is $R_H(|\xi|, |\eta|)$.
+\end{proof}
+
+\begin{remark}[Scope of the identification]\label{rem:scope}
+Theorem~\ref{thm:duality} is an identity of sesquilinear kernels
+on Fourier modes, not a Hilbert space isomorphism. We do not claim
+that $\Gamma_\gamma(f,g) = \langle f,g \rangle_{\mathcal{H}}$ for
+a Gaussian Hilbert space~$\mathcal{H}$ and general $f,g$.
+The identification operates at the level of the kernel
+$\Psi_\gamma(\xi,\eta)$; its power comes from the fact that the
+Bakry--\'Emery curvature theory (Sections~\ref{sec:gamma2}--\ref{sec:real})
+is entirely controlled by this kernel.
+\end{remark}
+
+\begin{remark}[Three literatures, one formula]\label{rem:three}
+The kernel $\frac{1}{2}(|\xi|^\gamma + |\eta|^\gamma
+- |\xi-\eta|^\gamma)$ appears in:
+(i)~Schoenberg's theory of conditionally negative definite
+functions~\cite{Schoenberg1938};
+(ii)~Dirichlet forms for jump
+processes~\cite{BoettcherSchillingWang2013};
+(iii)~fBM covariance theory~\cite{Mishura2008}.
+These three appearances have not previously been connected explicitly.
+\end{remark}
+
+
+\subsection{The distinguished point $\gamma = 1$}
+
+\begin{proposition}\label{prop:self-dual}
+At $\gamma = 1$ ($H = 1/2$):
+$\Psi_1(\xi,\eta)
+= \min(|\xi|, |\eta|)\,\mathbf{1}_{\xi\eta > 0}$.
+This is the covariance of standard Brownian motion.
+The Cauchy process ($\gamma = 1$) is thus the unique stable process
+whose carr\'e du champ has the covariance structure of standard
+Brownian motion.
+For opposite-sign frequencies, $\Psi_1(\xi,-\eta) = 0$:
+positive and negative frequencies decouple completely.
+\end{proposition}
+
+\begin{proof}
+For $\xi, \eta > 0$:
+$\frac{1}{2}(\xi + \eta - |\xi - \eta|) = \min(\xi, \eta)$.
+For $\xi > 0, \eta < 0$:
+$\frac{1}{2}(\xi - \eta - (\xi - \eta)) = 0$.
+\end{proof}
+
+
+\subsection{Mode coupling and the correspondence dictionary}
+
+The normalized off-diagonal kernel
+\[
+  \rho_\gamma(\xi,\eta)
+  = \frac{R_{\gamma/2}(|\xi|,|\eta|)}
+    {|\xi|^{\gamma/2}\,|\eta|^{\gamma/2}}
+\]
+is the fBM increment correlation. It is increasing in $H = \gamma/2$:
+for $\gamma > 1$ modes reinforce (long-range dependence);
+for $\gamma < 1$ modes oppose (anti-persistence);
+at $\gamma = 1$ modes are maximally decoupled.
+
+The correspondence exchanges structurally opposite objects:
+\[
+\begin{array}{c|c}
+\textbf{Stable process (index } \gamma\text{)}
+& \textbf{fBM (Hurst } H = \gamma/2\text{)} \\[4pt]
+\hline
+\rule{0pt}{12pt}
+\text{Markov, pure jump} & \text{non-Markov, continuous} \\
+\text{Independent increments} & \text{Dependent increments} \\
+\text{Characteristic exponent } |\xi|^\gamma &
+  \text{Covariance } R_H(s,t) \\
+\text{Carr\'e du champ kernel } \Psi_\gamma &
+  \text{Covariance kernel } R_H
+\end{array}
+\]
+
+The fBM interpretation is not merely a relabeling: it predicts and
+explains the curvature phase transition at $\gamma = 1$.
+Cross-sign vanishing (Theorem~\ref{thm:cross-sign}) is equivalent
+to independence of fBM increments at $H = 1/2$; the block
+diagonalization of the $\Psi_\gamma$ matrix
+(Corollary~\ref{cor:block-diag}) is the Fourier manifestation
+of this independence; and the curvature $\kappa = 1$
+(Theorem~\ref{thm:cauchy}) follows because independent increments
+produce the simplest possible covariance structure.
+
+
+%======================================================================
+\section{The $\Gamma_2$-Kernel Identity}\label{sec:gamma2}
+%======================================================================
+
+\begin{theorem}[Hadamard square]\label{thm:gamma2-kernel}
+For $\gamma \in (0,2)$ and $\xi,\eta \in \R$:
+\begin{equation}\label{eq:Phi-formula}
+  \Phi_{\gamma,2}(\xi,\eta) = \bigl[\Psi_\gamma(\xi,\eta)\bigr]^2
+  = \bigl[R_{\gamma/2}(|\xi|,|\eta|)\bigr]^2.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For $f = \sum_{n \in S} a_n\,e^{i\xi_n x}$, expand
+$\widetilde{\Gamma}_\gamma(f,f)(x)
+= \sum_{n,m} a_n\,\bar{a}_m\,\Psi_\gamma(\xi_n,\xi_m)\,
+  e^{i(\xi_n-\xi_m)x}$
+and compute the two terms of~\eqref{eq:gamma2-def}.
+
+\textbf{Term~1:}
+$L_\gamma[\widetilde{\Gamma}_\gamma(f,f)] =
+-\sum_{n,m} a_n\,\bar{a}_m\,|\xi_n-\xi_m|^\gamma\,
+\Psi_\gamma(\xi_n,\xi_m)\,e^{i(\xi_n-\xi_m)x}$.
+
+\textbf{Term~2:}
+$\widetilde{\Gamma}_\gamma(f, L_\gamma f) =
+-\sum_{n,m} a_n\,\bar{a}_m\,|\xi_m|^\gamma\,
+\Psi_\gamma(\xi_n,\xi_m)\,e^{i(\xi_n-\xi_m)x}$.
+
+Assembling and Hermitian-symmetrizing:
+\[
+  M_{nm}^{\mathrm{sym}}
+  = \bigl[|\xi_n|^\gamma + |\xi_m|^\gamma - |\xi_n-\xi_m|^\gamma\bigr]\,
+  \Psi_\gamma(\xi_n,\xi_m)
+  = 2\,[\Psi_\gamma(\xi_n,\xi_m)]^2. \qedhere
+\]
+\end{proof}
+
+\begin{remark}\label{rem:hadamard}
+By the Schur product theorem, $\Psi_\gamma^{\circ 2}$ is positive
+semidefinite whenever $\Psi_\gamma$ is (which holds for all
+$\gamma \in (0,2)$ by the correspondence). This gives $\Gamma_{\gamma,2}(f,f) \geq 0$
+as a special case of the observation of Chafa\"i--Malrieu
+(cf.~\cite{GentilImbert2008}, Remark~4). The Hadamard square
+identity~\eqref{eq:Phi-formula} is much stronger: it gives the
+full kernel, not just the sign.
+\end{remark}
+
+
+%======================================================================
+\section{Curvature on Positive Frequencies}\label{sec:curvature}
+%======================================================================
+
+\subsection{Matrix reduction}\label{sec:curv-pos}
+
+\begin{theorem}\label{thm:curvature}
+On the space $\mathcal{T}_N^+$ of positive-frequency trigonometric
+polynomials $f = \sum_{n=1}^N a_n\,e^{inx}$, the Bakry--\'Emery
+curvature is exactly
+\begin{equation}\label{eq:kappa-def}
+  \kappa(\gamma,N) = \lambda_{\min}\!\bigl(R_H^{\circ 2}, R_H\bigr),
+  \qquad H = \gamma/2,
+\end{equation}
+where $R_H$ is the $N \times N$ fBM covariance matrix on $\{1,\ldots,N\}$.
+Since $\mathcal{T} = \bigcup_N \mathcal{T}_N$ is a core for $L_\gamma$,
+the curvature on the full domain satisfies
+$\kappa(\gamma) \leq \lim_{N\to\infty} \kappa(\gamma,N)$.
+\end{theorem}
+
+\begin{proof}
+Write $\mathbf{b}(x) = D(x)\,\mathbf{a}$ with
+$D(x) = \mathrm{diag}(e^{ix},\ldots,e^{iNx})$. Then
+$\widetilde{\Gamma}_\gamma(f,f)(x) = \mathbf{b}(x)^* R_H\,\mathbf{b}(x)$
+and $\widetilde{\Gamma}_{\gamma,2}(f,f)(x) =
+\mathbf{b}(x)^* R_H^{\circ 2}\,\mathbf{b}(x)$.
+Since $\{D(x)\mathbf{a} : x \in \T, \mathbf{a} \in \C^N\} = \C^N$,
+the infimum over $(x,\mathbf{a})$ equals
+$\lambda_{\min}(R_H^{\circ 2}, R_H)$.
+\end{proof}
+
+\begin{remark}[The limit $N \to \infty$]
+\label{rem:N-limit}
+The sequence $\kappa(\gamma,N)$ is nonincreasing in $N$
+(since enlarging the test function space can only decrease
+the infimum).  At $\gamma = 1$, $\kappa(1,N) = 1$ for all
+$N$ (Theorem~\ref{thm:cauchy}), so the limit
+$\kappa(1) := \lim_{N\to\infty}\kappa(1,N) = 1$ exists
+and is achieved.
+
+For $\gamma \neq 1$, numerical computation of $\kappa(\gamma,N)$
+for moderate $N$ (e.g., $N = 50$)
+suggests $\kappa(\gamma,N) \to \kappa(\gamma) > 0$ for
+$\gamma$ near~$1$.  Whether the limit is strictly positive
+for all $\gamma \in (0,2)$ remains open; equivalently,
+whether the generalized eigenvalue problem for the
+infinite-dimensional fBM covariance operator has a positive
+spectral gap.  This is a question about the Hadamard square
+of the fBM covariance \emph{operator}, not merely finite
+matrices.
+\end{remark}
+
+
+\subsection{The Cauchy point $\gamma = 1$}\label{sec:cauchy}
+
+\begin{theorem}\label{thm:cauchy}
+At $\gamma = 1$ ($H = 1/2$), the matrix $R_{1/2}^{-1}\,R_{1/2}^{\circ 2}$
+is upper triangular with diagonal entries $\{1, 3, 5, \ldots, 2N-1\}$.
+Hence $\kappa(1,N) = 1$ for all $N$.
+\end{theorem}
+
+\begin{proof}
+At $H=1/2$, $R_{1/2}(n,m) = \min(n,m)$. The inverse is tridiagonal
+(discrete Laplacian). Direct computation: for $k < m$,
+\[
+  (R_{1/2}^{-1}\,R_{1/2}^{\circ 2})_{km}
+  = -(k-1)^2 + 2k^2 - (k+1)^2 = -2,
+\]
+and $(R_{1/2}^{-1}\,R_{1/2}^{\circ 2})_{kk} = 2k-1$.
+The matrix is upper triangular; eigenvalues are diagonal entries.
+\end{proof}
+
+
+\subsection{Phase transition}
+
+\begin{theorem}\label{thm:phase-transition}
+\begin{enumerate}[label=(\roman*)]
+\item For $\gamma \in (0,1)$: $\kappa(\gamma) := \lim_N \kappa(\gamma,N)$
+  exists, is finite, and satisfies $\kappa(\gamma) > 1$.
+\item At $\gamma = 1$: $\kappa(1,N) = 1$ for all $N$.
+\item For $\gamma \in (1,2)$: $\kappa(\gamma,N) \to -\infty$ as
+  $N \to \infty$.
+\end{enumerate}
+\end{theorem}
+
+The phase transition at $\gamma = 1$ reflects the fBM correlation
+structure: for $H < 1/2$ (anti-persistent increments), mode
+correlations are weak and curvature exceeds~$1$; for $H > 1/2$
+(long-range dependence), mode reinforcement drives curvature
+to $-\infty$; at $H = 1/2$ (independent increments), the balance
+is exact.
+
+
+%======================================================================
+\section{Real Polynomials and Cross-Sign Structure}\label{sec:real}
+%======================================================================
+
+For real-valued $f(x) = \sum_{n=1}^N [c_n\cos(nx) + s_n\sin(nx)]$,
+the Fourier coefficients satisfy $a_{-n} = \bar{a}_n$, and the relevant
+frequency set is $\{-N,\ldots,-1,1,\ldots,N\}$. The $\Psi_\gamma$ matrix
+on this set has $2 \times 2$ block structure:
+\begin{equation}\label{eq:block}
+  \Psi_\gamma\Big|_{\{-N,\ldots,N\} \setminus \{0\}}
+  = \begin{pmatrix} A & B \\ B^* & A \end{pmatrix},
+\end{equation}
+where $A_{nm} = \Psi_\gamma(n,m)$ for $n,m > 0$ (the positive-frequency
+block) and $B_{nm} = \Psi_\gamma(n,-m)$ for $n,m > 0$ (the cross-sign
+block).
+
+
+\subsection{Cross-sign vanishing at $\gamma = 1$}\label{sec:cross-sign}
+
+\begin{theorem}[Cross-sign vanishing]\label{thm:cross-sign}
+For $n,m > 0$:
+\begin{equation}\label{eq:cross-sign}
+  \Psi_\gamma(n,-m) = \tfrac{1}{2}\bigl(n^\gamma + m^\gamma
+  - (n+m)^\gamma\bigr).
+\end{equation}
+This vanishes identically if and only if $\gamma = 1$:
+\begin{enumerate}[label=(\alph*)]
+\item At $\gamma = 1$: $\Psi_1(n,-m)
+  = \tfrac{1}{2}(n + m - (n+m)) = 0$ for all $n,m > 0$.
+\item For $\gamma < 1$: $\Psi_\gamma(n,-m) > 0$
+  (subadditivity of $|\cdot|^\gamma$).
+\item For $\gamma > 1$: $\Psi_\gamma(n,-m) < 0$
+  (superadditivity of $|\cdot|^\gamma$).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Part~(a) is immediate from linearity of $|\cdot|^1$.
+Parts~(b) and~(c): for $t \mapsto t^\gamma$ on $(0,\infty)$,
+strict concavity ($\gamma < 1$) gives
+$(n+m)^\gamma < n^\gamma + m^\gamma$, and strict convexity
+($\gamma > 1$) gives the reverse inequality.
+\end{proof}
+
+\begin{corollary}\label{cor:block-diag}
+At $\gamma = 1$, the cross-sign block $B = 0$, so the $\Psi_1$
+matrix is block-diagonal. Positive and negative frequencies
+decouple completely. For real $f$ with $a_{-n} = \bar{a}_n$,
+$\kappa_{\mathrm{real}}(1,N) = 1$ for all $N$.
+\end{corollary}
+
+
+\subsection{Single-mode curvature formula}
+
+\begin{proposition}\label{prop:single-mode}
+For $f(x) = \cos(nx + \varphi)$:
+\begin{equation}\label{eq:single-mode}
+  \frac{\widetilde{\Gamma}_{\gamma,2}(f,f)(x)}
+       {\widetilde{\Gamma}_\gamma(f,f)(x)}
+  = |n|^\gamma \cdot
+  \frac{1 + \alpha_n^2\,\cos(2nx+\theta)}
+       {1 + \alpha_n\,\cos(2nx+\theta)},
+\end{equation}
+where $\alpha_n = 1 - 2^{\gamma-1}$ (independent of $n$)
+and $\theta = 2\varphi$. The curvature is
+\begin{equation}\label{eq:kappa1}
+  \kappa_1(\gamma) = \frac{1 + \alpha^2}{1 + |\alpha|},
+  \qquad \alpha = 1 - 2^{\gamma-1}.
+\end{equation}
+At $\gamma = 1$: $\alpha = 0$, giving $\kappa_1(1) = 1$.
+For all $\gamma \neq 1$: $\kappa_1(\gamma) < 1$.
+\end{proposition}
+
+\begin{proof}
+For $f = \cos(nx) = (e^{inx} + e^{-inx})/2$, the carr\'e du champ is
+$\Gamma(f,f)(x) = \tfrac{1}{2}[1 + \alpha\cos(2nx)]$
+with $\alpha = 1 - 2^{\gamma-1}$,
+using $\Psi_\gamma(n,n) = n^\gamma$ and
+$\Psi_\gamma(n,-n) = n^\gamma(1 - 2^{\gamma-1})$.
+The $\Gamma_2$ computation yields the stated ratio.
+The infimum over $x$ gives~\eqref{eq:kappa1}.
+\end{proof}
+
+
+\subsection{Uniqueness of $\gamma = 1$}
+
+\begin{theorem}[Uniqueness on the torus]\label{thm:uniqueness}
+On $\T$, $\gamma = 1$ is the unique stability index for which
+$\Gamma_2 \geq \kappa\,\Gamma$ holds with $\kappa \geq 1$
+on all real trigonometric polynomials. The three regimes are:
+\begin{enumerate}[label=(\roman*)]
+\item $\gamma < 1$: positive cross-sign coupling ($B > 0$),
+  anti-persistent fBM dual ($H < 1/2$), $\kappa_{\mathrm{real}} < 1$.
+\item $\gamma = 1$: zero cross-sign ($B = 0$),
+  Brownian dual ($H = 1/2$), $\kappa_{\mathrm{real}} = 1$.
+\item $\gamma > 1$: negative cross-sign ($B < 0$),
+  long-range dependent dual ($H > 1/2$), $\kappa_{\mathrm{real}} < 1$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+At $\gamma = 1$: Corollary~\ref{cor:block-diag} gives
+$\kappa_{\mathrm{real}} = \kappa_{\mathrm{pos}} = 1$.
+For $\gamma \neq 1$: Proposition~\ref{prop:single-mode} gives
+$\kappa_1(\gamma) < 1$ already on the single mode $f = \cos x$.
+\end{proof}
+
+\begin{remark}[Geometric and probabilistic interpretation]
+\label{rem:geometric}
+The cross-sign vanishing at $\gamma = 1$ has three
+equivalent interpretations:
+\begin{enumerate}[label=(\alph*)]
+\item \emph{Fourier}: positive and negative frequency
+  contributions to the carr\'e du champ decouple
+  completely.
+\item \emph{fBM}: at $H = 1/2$, the fBM covariance
+  $R_{1/2}(s,t) = \min(s,t)$ for $s,t > 0$, which is
+  the covariance of standard Brownian motion.  The
+  increment independence of Brownian motion is the
+  mechanism behind the vanishing.
+\item \emph{Curvature}: the curvature of the Cauchy
+  semigroup ($\gamma = 1$) on real functions equals
+  the curvature on analytic functions.  For all other
+  $\gamma$, the interaction between positive and
+  negative frequencies either inflates ($\gamma < 1$)
+  or deflates ($\gamma > 1$) the curvature.
+\end{enumerate}
+The $\gamma = 1$ point is thus not merely a
+computational boundary: it is the unique index at
+which the semigroup's curvature theory is
+\emph{analytically diagonal}.
+\end{remark}
+
+
+%======================================================================
+\section{Curvature with Confining Potential}\label{sec:potential}
+%======================================================================
+
+The preceding sections treat the free generator $L_\gamma$.
+Physical applications require confining potentials.  The
+purpose of this section is to demonstrate that the fBM
+covariance structure controls the curvature even in the
+presence of drift, and to provide a concrete formula
+that interpolates between the free curvature ($\omega^2=0$)
+and the strongly confined regime ($\omega^2 \gg 1$).
+The cosine potential $V(x) = -\omega^2\cos x$ is chosen
+because it couples only adjacent Fourier modes, making the
+computation explicit; the method extends to any
+trigonometric polynomial potential
+(producing a band-matrix perturbation).
+
+Consider $L = -(-\Delta)^{\gamma/2} - V'(x)\,\partial_x$ on $\T$
+with $V(x) = -\omega^2\cos x$, so that
+$V'(x) = \omega^2\sin x$. The carr\'e du champ is unchanged;
+the iterated carr\'e du champ acquires a drift correction:
+\begin{equation}\label{eq:G2-drift}
+  \Gamma_{L,2}(f,f) = \Gamma_{\gamma,2}(f,f)
+  + \tfrac{1}{2}\bigl[
+    b \cdot \nabla\Gamma(f,f) - 2\Gamma(f, b \cdot \nabla f)
+  \bigr],
+\end{equation}
+where $b(x) = -V'(x) = -\omega^2\sin x$.
+
+\begin{theorem}\label{thm:potential}
+For $f(x) = \cos x$ and $V(x) = -\omega^2\cos x$:
+\begin{equation}\label{eq:G2-ratio-potential}
+  \frac{\Gamma_{L,2}(f,f)(x)}{\Gamma(f,f)(x)}
+  = \frac{1 + \alpha^2\cos 2x + \tfrac{\omega^2}{2}(\cos x + \beta\cos 3x)}
+         {1 + \alpha\cos 2x},
+\end{equation}
+where
+$\alpha(\gamma) = 1 - 2^{\gamma-1}$ and
+$\beta(\gamma) = (2^{\gamma+1} - 3^\gamma - 1)/2$.
+\end{theorem}
+
+\begin{proof}
+The drift $b(x) = -\omega^2\sin x$ maps mode $n$ to modes $n \pm 1$.
+The free part gives
+$\Gamma_{\gamma,2}(f,f) = \frac{1}{2}[1 + \alpha^2\cos 2x]$
+from Proposition~\ref{prop:single-mode}.
+The drift correction assembles to
+$\frac{\omega^2}{4}[\cos x + \beta\cos 3x]$,
+using the key cancellation $\alpha + q = 1$ (where $q = 2^{\gamma-1}$),
+which holds independently of $\gamma$.
+\end{proof}
+
+\begin{remark}
+At $\gamma = 1$: $\alpha = \beta = 0$, so
+$\Gamma_{L,2}/\Gamma = 1 + \frac{\omega^2}{2}\cos x$,
+with minimum $1 - \omega^2/2$ at $x = \pi$.
+\end{remark}
+
+\begin{corollary}[Comparison with diffusion]\label{cor:comparison}
+For the standard Laplacian ($\gamma = 2$) with the same potential:
+$\kappa_{\mathrm{diff}} = -\omega^2$.
+The jump curvature at $\gamma = 1$ is
+$\kappa_{\mathrm{jump}} = 1 - \omega^2/2 > -\omega^2$
+for all $\omega^2 > 0$. The jump process has better curvature because
+the carr\'e du champ averages over the potential landscape.
+\end{corollary}
+
+The critical potential strength $\omega^2_{\mathrm{crit}}(\gamma)$
+--- the largest $\omega^2$ for which $\kappa(\gamma,\omega^2) \geq 0$
+--- varies non-monotonically with $\gamma$, reflecting the interplay
+between the fBM parameters $\alpha(\gamma)$ and $\beta(\gamma)$.
+At $\gamma = 1$: $\alpha = \beta = 0$, giving
+$\omega^2_{\mathrm{crit}}(1) = 2$ exactly.
+
+\begin{remark}[Generality of the potential]\label{rem:potential-general}
+The choice $V(x) = -\omega^2\cos x$ is analytically convenient:
+the drift $b(x) = \omega^2\sin x$ couples mode~$n$ only to
+$n \pm 1$, yielding a closed-form curvature ratio.
+For a general potential $V(x) = \sum_k v_k\,e^{ikx}$, the drift
+couples mode~$n$ to all modes $n \pm k$, and the curvature
+computation becomes a band-matrix eigenvalue problem of the same
+type but with wider bandwidth. The method does not collapse;
+it produces a larger but still computable linear algebra problem.
+The cosine case captures the essential mechanism: the interplay
+between the fBM parameters $\alpha(\gamma)$, $\beta(\gamma)$ and
+the potential strength $\omega^2$.
+\end{remark}
+
+
+%======================================================================
+\section{Contraction Estimates}\label{sec:func-ineq}
+%======================================================================
+
+\begin{remark}[Scope of the curvature bounds]
+\label{rem:scope}
+The Bakry--\'Emery theorem requires
+$\Gamma_2(f,f) \geq \kappa\,\Gamma(f,f)$ for \emph{all}
+$f$ in a core.  Our results establish this:
+\begin{enumerate}[label=(\alph*)]
+\item For $\gamma = 1$, on positive-frequency polynomials
+  $\mathcal{T}_N^+$ for all $N$ (Theorem~\ref{thm:cauchy}),
+  hence on the full Hardy space by density.
+  Combined with the cross-sign vanishing
+  (Corollary~\ref{cor:block-diag}), this extends to
+  all real trigonometric polynomials:
+  $\kappa_{\mathrm{real}}(1) = 1$.
+\item For $\gamma \neq 1$, on $\mathcal{T}_N^+$ for
+  each fixed $N$ (Theorem~\ref{thm:curvature}), with
+  $\kappa(\gamma,N) > 0$ verified numerically for
+  moderate $N$.  Whether $\inf_N \kappa(\gamma,N) > 0$
+  is an open question (Remark~\ref{rem:N-limit}).
+\end{enumerate}
+Global functional inequalities (Poincar\'e, log-Sobolev)
+follow from (a) at $\gamma = 1$ via the standard
+Bakry--\'Emery machinery.  For $\gamma \neq 1$, we obtain
+only finite-dimensional contraction estimates on
+$\mathcal{T}_N^+$, not global inequalities.
+\end{remark}
+
+At $\gamma = 1$ ($V = 0$), the curvature $\kappa(1) = 1$
+yields:
+\begin{enumerate}[label=(\roman*)]
+\item Poincar\'e inequality with optimal constant:
+  $\Var_\mu(f) \leq \mathcal{E}(f,f)$.
+\item Gradient estimate:
+  $\Gamma(P_t f, P_t f) \leq e^{-2t}\,P_t[\Gamma(f,f)]$.
+\end{enumerate}
+
+With a confining potential, Theorem~\ref{thm:potential}
+computes $\Gamma_2(f,f)/\Gamma(f,f)$ for $f = \cos x$.
+This is a \emph{single-mode contraction rate}, not a
+global Bakry--\'Emery constant: the first Fourier mode
+contracts at rate $\kappa(\gamma,\omega^2)$.  Extending
+this to a global curvature bound would require
+verifying the $\Gamma_2 \geq \kappa\,\Gamma$ condition
+on all modes simultaneously under the drift perturbation,
+which remains open.
+
+
+%======================================================================
+\section{Discussion and Open Problems}\label{sec:discussion}
+%======================================================================
+
+\subsection{Refined contraction and the spectral determinant at $\gamma = 1$}
+
+The uniform gradient estimate
+$\Gamma(P_t f, P_t f) \leq e^{-2t}P_t[\Gamma(f,f)]$
+(valid at $\gamma = 1$) uses only
+the minimum eigenvalue $\kappa = 1$ of the curvature operator.
+At $\gamma = 1$, the full eigenvalue spectrum
+$\{\kappa_k = 2k-1\}_{k=1}^N$ (Theorem~\ref{thm:cauchy})
+yields a sharper mode-by-mode estimate.
+
+\begin{proposition}[Refined contraction]\label{prop:refined}
+At $\gamma = 1$, decompose $f \in \mathcal{T}_N^+$ along the
+eigenbasis $\{\phi_k\}_{k=1}^N$ of $M(1) = R_{1/2}^{-1}\,R_{1/2}^{\circ 2}$.
+Then the $k$-th component of the carr\'e du champ contracts at rate
+\begin{equation}\label{eq:refined-contraction}
+  \Gamma(P_t f, P_t f)_k \leq e^{-2(2k-1)t}\,\Gamma(f,f)_k,
+  \qquad k = 1,\ldots,N.
+\end{equation}
+The total energy satisfies
+\begin{equation}\label{eq:total-energy}
+  \int_\T \Gamma(P_t f, P_t f)\,d\mu
+  \leq \sum_{k=1}^N e^{-2(2k-1)t}\,\mathcal{E}_k(f),
+\end{equation}
+where $\mathcal{E}_k(f)$ is the energy in the $k$-th eigendirection.
+The uniform bound $e^{-2t}\,\mathcal{E}(f)$ is sharp only for
+functions concentrated on the first mode ($k=1$).
+\end{proposition}
+
+The geometric mean contraction rate is
+\[
+  \Bigl(\prod_{k=1}^N \kappa_k\Bigr)^{1/N}
+  = \bigl((2N-1)!!\bigr)^{1/N} \sim \frac{2N}{e}
+  \qquad (N \to \infty),
+\]
+by Stirling's approximation.
+For functions spread across $N$ modes, the effective decay rate
+grows linearly in $N$, far exceeding the worst-case $\kappa = 1$.
+
+\begin{corollary}[Volume comparison]\label{cor:volume}
+The $\Gamma_2$-ellipsoid
+$E_2 = \{f : \Gamma_2(f,f) \leq 1\}$ and the $\Gamma$-ellipsoid
+$E_1 = \{f : \Gamma(f,f) \leq 1\}$ on $\mathcal{T}_N^+$ satisfy
+\begin{equation}\label{eq:volume-ratio}
+  \frac{\mathrm{vol}(E_1)}{\mathrm{vol}(E_2)}
+  = (\det M)^{1/2} = \bigl((2N-1)!!\bigr)^{1/2}
+  = \bigl(\E[X^{2N}]\bigr)^{1/2},
+\end{equation}
+where $X \sim \mathcal{N}(0,1)$.
+At $\gamma = 1$, the $\Gamma_2$-form is $(2N-1)!!^{1/2}$ times
+more concentrating than the $\Gamma$-form in $N$-dimensional volume.
+\end{corollary}
+
+\begin{proof}
+For ellipsoids $\{v : v^T A v \leq 1\}$ and $\{v : v^T B v \leq 1\}$,
+the volume ratio is $(\det A / \det B)^{-1/2} = (\det B^{-1}A)^{1/2}$.
+Here $A = R_H$, $B = R_H^{\circ 2}$, and $\det M = \det(R_H^{-1}R_H^{\circ 2})
+= \prod(2k-1) = (2N-1)!!$.
+The identity $(2N-1)!! = \E[X^{2N}]$ for $X \sim \mathcal{N}(0,1)$
+is standard.
+\end{proof}
+
+The unit determinant $\det R_{1/2} = 1$ (since $R_{1/2} = LL^T$
+with $L$ unit lower triangular) characterizes $H = 1/2$ among
+all fBM covariances, giving a further fingerprint of $\gamma = 1$.
+
+
+\subsection{The Cauchy process as critical geometry}
+
+The uniqueness of $\gamma = 1$ has four equivalent characterizations:
+\begin{enumerate}[label=(\alph*)]
+\item \emph{Curvature:} $\gamma = 1$ is the unique index with
+  $\kappa_{\mathrm{real}} \geq 1$.
+\item \emph{Algebraic:} $\Psi_1(n,-m) = 0$ (cross-sign vanishing),
+  equivalent to linearity of $|\cdot|^1$.
+\item \emph{Probabilistic:} the fBM dual has $H = 1/2$ (independent
+  increments), so positive and negative frequencies decouple.
+\item \emph{Determinantal:} $\det R_H = 1$ for all $N$; the
+  $\Gamma$-kernel has unit determinant on every truncation.
+\end{enumerate}
+
+
+\subsection{Open problems}
+
+\begin{enumerate}[label=(\roman*)]
+\item \textbf{Curvature on $\R^d$.}
+  Extend the torus computation to $\R^d$ with confining potentials.
+  By~\cite{SpenerWeberZacher2020}, a confining potential is necessary
+  for positive curvature.
+
+\item \textbf{Log-Sobolev under drift.}
+  Theorem~\ref{thm:potential} gives a single-mode contraction
+  rate.  Can this be extended to a global $\Gamma_2 \geq
+  \kappa\,\Gamma$ bound under drift, yielding a sharp
+  log-Sobolev inequality for the L\'evy--Fokker--Planck
+  equation?
+
+\item \textbf{Closed-form curvature.}
+  Is there a formula for
+  $\kappa(\gamma) = \lim_N \lambda_{\min}(R_H^{\circ 2}, R_H)$
+  on positive frequencies? Numerical values suggest a smooth
+  function with maximum near $\gamma \approx 0.4$.
+
+\item \textbf{General L\'evy processes.}
+  For a general L\'evy process with measure $\nu$, the
+  Fourier kernel
+  $\Psi_\nu(\xi,\eta) = \frac{1}{2}\int (e^{i\xi z}-1)(e^{-i\eta z}-1)\,
+  \nu(dz)$ is a positive definite kernel by Schoenberg's theorem.
+  The stable case is special because scaling symmetry forces
+  $\Psi_\nu$ to be self-similar, characterizing fBM among Gaussian
+  processes~\cite{Mishura2008}.
+
+\item \textbf{Multi-dimensional torus.}
+  On $\T^d$, the direction-dependent fBM covariance should produce
+  anisotropic curvature bounds.
+\end{enumerate}
+
+
+%======================================================================
+\section*{Acknowledgments}
+%======================================================================
+AI tools were used as interactive assistants for mathematical
+exploration and drafting. The author
+is responsible for all mathematical content and exposition.
+
+
+%======================================================================
+\begin{thebibliography}{20}
+
+\bibitem{BakryGentilLedoux2014}
+D.~Bakry, I.~Gentil, and M.~Ledoux.
+\newblock \emph{Analysis and Geometry of Markov Diffusion Operators}.
+\newblock Grundlehren Math. Wiss., vol.~348, Springer, 2014.
+
+\bibitem{BoettcherSchillingWang2013}
+B.~B\"ottcher, R.~Schilling, and J.~Wang.
+\newblock \emph{L\'evy Matters III: L\'evy-Type Processes}.
+\newblock Lecture Notes in Math., vol.~2099, Springer, 2013.
+
+\bibitem{Chafai2004}
+D.~Chafa\"{\i}.
+\newblock Entropies, convexity, and functional inequalities.
+\newblock \emph{J. Math. Kyoto Univ.}, 44(2):325--363, 2004.
+
+\bibitem{Fontes2026a}
+R.~Fontes.
+\newblock Stochastic calculus as operator factorization.
+\newblock \emph{arXiv preprint} arXiv:2601.09976 [math.PR], 2026.
+
+\bibitem{Garofalo2019}
+N.~Garofalo.
+\newblock Fractional thoughts.
+\newblock In \emph{New Developments in the Analysis of Nonlocal Operators},
+  Contemp. Math., vol.~723, AMS, 2019.
+
+\bibitem{GentilImbert2008}
+I.~Gentil and C.~Imbert.
+\newblock The {L}\'evy--{F}okker--{P}lanck equation: $\Phi$-entropies
+  and convergence to equilibrium.
+\newblock \emph{Asymptotic Analysis}, 59(3--4):125--138, 2008.
+
+\bibitem{Mishura2008}
+Y.~Mishura.
+\newblock \emph{Stochastic Calculus for Fractional Brownian Motion
+  and Related Processes}.
+\newblock Lecture Notes in Math., vol.~1929, Springer, 2008.
+
+\bibitem{Sato1999}
+K.~Sato.
+\newblock \emph{L\'evy Processes and Infinitely Divisible Distributions}.
+\newblock Cambridge Univ. Press, 1999.
+
+\bibitem{Schoenberg1938}
+I.~J.~Schoenberg.
+\newblock Metric spaces and positive definite functions.
+\newblock \emph{Trans. Amer. Math. Soc.}, 44(3):522--536, 1938.
+
+\bibitem{SpenerWeberZacher2020}
+A.~Spener, F.~Weber, and R.~Zacher.
+\newblock The fractional {L}aplacian has infinite dimension.
+\newblock \emph{Comm. Partial Differential Equations}, 45(1):57--75, 2020.
+
+\end{thebibliography}
+
+\end{document}

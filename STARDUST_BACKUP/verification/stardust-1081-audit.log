@@ -1,0 +1,466 @@
+AUDIT PASSED: 30249 declarations; only propext, Classical.choice, Quot.sound
+@OperatorDerivativeRewrite.Foundation.BochnerLinearIsometry.lift : {X : Type u_1} →
+  {E : Type u_2} →
+    {F : Type u_3} →
+      [inst : MeasurableSpace X] →
+        (μ : MeasureTheory.Measure X) →
+          {𝕜 : Type u_4} →
+            [inst_1 : NontriviallyNormedField 𝕜] →
+              [inst_2 : NormedAddCommGroup E] →
+                [inst_3 : NormedSpace 𝕜 E] →
+                  [inst_4 : NormedAddCommGroup F] →
+                    [inst_5 : NormedSpace 𝕜 F] →
+                      (E →ₗᵢ[𝕜] F) → ↥(MeasureTheory.Lp E 2 μ) →ₗᵢ[𝕜] ↥(MeasureTheory.Lp F 2 μ)
+@OperatorDerivativeRewrite.Foundation.BochnerLinearIsometry.lift_coeFn : ∀ {X : Type u_1} {E : Type u_2} {F : Type u_3}
+  [inst : MeasurableSpace X] (μ : MeasureTheory.Measure X) {𝕜 : Type u_4} [inst_1 : NontriviallyNormedField 𝕜]
+  [inst_2 : NormedAddCommGroup E] [inst_3 : NormedSpace 𝕜 E] [inst_4 : NormedAddCommGroup F] [inst_5 : NormedSpace 𝕜 F]
+  (J : E →ₗᵢ[𝕜] F) (u : ↥(MeasureTheory.Lp E 2 μ)),
+  ↑↑((OperatorDerivativeRewrite.Foundation.BochnerLinearIsometry.lift μ J) u) =ᵐ[μ] fun x => J (↑↑u x)
+@OperatorDerivativeRewrite.Foundation.BochnerLinearIsometry.lift_norm : ∀ {X : Type u_1} {E : Type u_2} {F : Type u_3}
+  [inst : MeasurableSpace X] (μ : MeasureTheory.Measure X) {𝕜 : Type u_4} [inst_1 : NontriviallyNormedField 𝕜]
+  [inst_2 : NormedAddCommGroup E] [inst_3 : NormedSpace 𝕜 E] [inst_4 : NormedAddCommGroup F] [inst_5 : NormedSpace 𝕜 F]
+  (J : E →ₗᵢ[𝕜] F) (u : ↥(MeasureTheory.Lp E 2 μ)),
+  ‖(OperatorDerivativeRewrite.Foundation.BochnerLinearIsometry.lift μ J) u‖ = ‖u‖
+@OperatorDerivativeRewrite.Foundation.BochnerLinearIsometry.lift_eq_zero_iff : ∀ {X : Type u_1} {E : Type u_2}
+  {F : Type u_3} [inst : MeasurableSpace X] (μ : MeasureTheory.Measure X) {𝕜 : Type u_4}
+  [inst_1 : NontriviallyNormedField 𝕜] [inst_2 : NormedAddCommGroup E] [inst_3 : NormedSpace 𝕜 E]
+  [inst_4 : NormedAddCommGroup F] [inst_5 : NormedSpace 𝕜 F] (J : E →ₗᵢ[𝕜] F) (u : ↥(MeasureTheory.Lp E 2 μ)),
+  (OperatorDerivativeRewrite.Foundation.BochnerLinearIsometry.lift μ J) u = 0 ↔ u = 0
+@OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.realPart : {X : Type u_1} →
+  [inst : MeasurableSpace X] → (μ : MeasureTheory.Measure X) → ↥(MeasureTheory.Lp ℂ 2 μ) →L[ℝ] ↥(MeasureTheory.Lp ℝ 2 μ)
+@OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.imagPart : {X : Type u_1} →
+  [inst : MeasurableSpace X] → (μ : MeasureTheory.Measure X) → ↥(MeasureTheory.Lp ℂ 2 μ) →L[ℝ] ↥(MeasureTheory.Lp ℝ 2 μ)
+@OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.ofReal : {X : Type u_1} →
+  [inst : MeasurableSpace X] → (μ : MeasureTheory.Measure X) → ↥(MeasureTheory.Lp ℝ 2 μ) →L[ℝ] ↥(MeasureTheory.Lp ℂ 2 μ)
+@OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.combine : {X : Type u_1} →
+  [inst : MeasurableSpace X] →
+    (μ : MeasureTheory.Measure X) → ↥(MeasureTheory.Lp ℝ 2 μ) → ↥(MeasureTheory.Lp ℝ 2 μ) → ↥(MeasureTheory.Lp ℂ 2 μ)
+@OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.combine_ae : ∀ {X : Type u_1} [inst : MeasurableSpace X]
+  (μ : MeasureTheory.Measure X) (r i : ↥(MeasureTheory.Lp ℝ 2 μ)),
+  ↑↑(OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.combine μ r i) =ᵐ[μ] fun x =>
+    ↑(↑↑r x) + Complex.I * ↑(↑↑i x)
+@OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.norm_sq_parts : ∀ {X : Type u_1} [inst : MeasurableSpace X]
+  (μ : MeasureTheory.Measure X) (f : ↥(MeasureTheory.Lp ℂ 2 μ)),
+  ‖f‖ ^ 2 =
+    ‖(OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.realPart μ) f‖ ^ 2 +
+      ‖(OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.imagPart μ) f‖ ^ 2
+@OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.realPart_combine : ∀ {X : Type u_1} [inst : MeasurableSpace X]
+  (μ : MeasureTheory.Measure X) (r i : ↥(MeasureTheory.Lp ℝ 2 μ)),
+  (OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.realPart μ)
+      (OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.combine μ r i) =
+    r
+@OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.imagPart_combine : ∀ {X : Type u_1} [inst : MeasurableSpace X]
+  (μ : MeasureTheory.Measure X) (r i : ↥(MeasureTheory.Lp ℝ 2 μ)),
+  (OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.imagPart μ)
+      (OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.combine μ r i) =
+    i
+@OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.combine_parts : ∀ {X : Type u_1} [inst : MeasurableSpace X]
+  (μ : MeasureTheory.Measure X) (f : ↥(MeasureTheory.Lp ℂ 2 μ)),
+  OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.combine μ
+      ((OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.realPart μ) f)
+      ((OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.imagPart μ) f) =
+    f
+@OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.combine_norm_sq : ∀ {X : Type u_1} [inst : MeasurableSpace X]
+  (μ : MeasureTheory.Measure X) (r i : ↥(MeasureTheory.Lp ℝ 2 μ)),
+  ‖OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.combine μ r i‖ ^ 2 = ‖r‖ ^ 2 + ‖i‖ ^ 2
+@OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.liftLinear : {X : Type u_1} →
+  {Y : Type u_2} →
+    [inst : MeasurableSpace X] →
+      [inst_1 : MeasurableSpace Y] →
+        (μ : MeasureTheory.Measure X) →
+          (ν : MeasureTheory.Measure Y) →
+            (↥(MeasureTheory.Lp ℝ 2 μ) →ₗᵢ[ℝ] ↥(MeasureTheory.Lp ℝ 2 ν)) →
+              ↥(MeasureTheory.Lp ℂ 2 μ) →ₗ[ℝ] ↥(MeasureTheory.Lp ℂ 2 ν)
+@OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.liftLinear_apply : ∀ {X : Type u_1} {Y : Type u_2}
+  [inst : MeasurableSpace X] [inst_1 : MeasurableSpace Y] (μ : MeasureTheory.Measure X) (ν : MeasureTheory.Measure Y)
+  (J : ↥(MeasureTheory.Lp ℝ 2 μ) →ₗᵢ[ℝ] ↥(MeasureTheory.Lp ℝ 2 ν)) (f : ↥(MeasureTheory.Lp ℂ 2 μ)),
+  (OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.liftLinear μ ν J) f =
+    OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.combine ν
+      (J ((OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.realPart μ) f))
+      (J ((OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.imagPart μ) f))
+@OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.lift : {X : Type u_1} →
+  {Y : Type u_2} →
+    [inst : MeasurableSpace X] →
+      [inst_1 : MeasurableSpace Y] →
+        (μ : MeasureTheory.Measure X) →
+          (ν : MeasureTheory.Measure Y) →
+            (↥(MeasureTheory.Lp ℝ 2 μ) →ₗᵢ[ℝ] ↥(MeasureTheory.Lp ℝ 2 ν)) →
+              ↥(MeasureTheory.Lp ℂ 2 μ) →ₗᵢ[ℝ] ↥(MeasureTheory.Lp ℂ 2 ν)
+@OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.lift_apply : ∀ {X : Type u_1} {Y : Type u_2}
+  [inst : MeasurableSpace X] [inst_1 : MeasurableSpace Y] (μ : MeasureTheory.Measure X) (ν : MeasureTheory.Measure Y)
+  (J : ↥(MeasureTheory.Lp ℝ 2 μ) →ₗᵢ[ℝ] ↥(MeasureTheory.Lp ℝ 2 ν)) (f : ↥(MeasureTheory.Lp ℂ 2 μ)),
+  (OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.lift μ ν J) f =
+    OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.combine ν
+      (J ((OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.realPart μ) f))
+      (J ((OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.imagPart μ) f))
+@OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.realPart_ofReal : ∀ {X : Type u_1} [inst : MeasurableSpace X]
+  (μ : MeasureTheory.Measure X) (f : ↥(MeasureTheory.Lp ℝ 2 μ)),
+  (OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.realPart μ)
+      ((OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.ofReal μ) f) =
+    f
+@OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.imagPart_ofReal : ∀ {X : Type u_1} [inst : MeasurableSpace X]
+  (μ : MeasureTheory.Measure X) (f : ↥(MeasureTheory.Lp ℝ 2 μ)),
+  (OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.imagPart μ)
+      ((OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.ofReal μ) f) =
+    0
+@OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.lift_ofReal : ∀ {X : Type u_1} {Y : Type u_2}
+  [inst : MeasurableSpace X] [inst_1 : MeasurableSpace Y] (μ : MeasureTheory.Measure X) (ν : MeasureTheory.Measure Y)
+  (J : ↥(MeasureTheory.Lp ℝ 2 μ) →ₗᵢ[ℝ] ↥(MeasureTheory.Lp ℝ 2 ν)) (f : ↥(MeasureTheory.Lp ℝ 2 μ)),
+  (OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.lift μ ν J)
+      ((OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.ofReal μ) f) =
+    (OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.ofReal ν) (J f)
+OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure : NNReal →
+  MeasureTheory.Measure (ℝ × OperatorDerivativeRewrite.Foundation.InfiniteGaussian.SampleSpace)
+OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.trimEquiv : (T : NNReal) →
+  ↥(OperatorDerivativeRewrite.Foundation.GaussianPredictableHorizon.PredictableDomain T) ≃ₗᵢ[ℝ]
+    ↥(MeasureTheory.Lp ℝ 2 (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T))
+OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.realIto : (T : NNReal) →
+  ↥(MeasureTheory.Lp ℝ 2 (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T)) →ₗᵢ[ℝ]
+    ↥OperatorDerivativeRewrite.Foundation.InfiniteGaussian.GaussianL2
+OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.realIto_trim : ∀ (T : NNReal)
+  (u : ↥(OperatorDerivativeRewrite.Foundation.GaussianPredictableHorizon.PredictableDomain T)),
+  (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.realIto T)
+      ((OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.trimEquiv T) u) =
+    (OperatorDerivativeRewrite.Foundation.GaussianPredictableHorizon.itoIntegral T) u
+OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.integral : (T : NNReal) →
+  ↥(MeasureTheory.Lp ℂ 2 (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T)) →ₗᵢ[ℝ]
+    ↥(MeasureTheory.Lp ℂ 2 OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct)
+OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.realToComplex : (T : NNReal) →
+  ↥(MeasureTheory.Lp ℝ 2 (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T)) →L[ℝ]
+    ↥(MeasureTheory.Lp ℂ 2 (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T))
+OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.integral_norm : ∀ (T : NNReal)
+  (u : ↥(MeasureTheory.Lp ℂ 2 (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T))),
+  ‖(OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.integral T) u‖ = ‖u‖
+OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.integral_trim_ofReal : ∀ (T : NNReal)
+  (u : ↥(OperatorDerivativeRewrite.Foundation.GaussianPredictableHorizon.PredictableDomain T)),
+  (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.integral T)
+      ((OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.realToComplex T)
+        ((OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.trimEquiv T) u)) =
+    (OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.ofReal
+        OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct)
+      ((OperatorDerivativeRewrite.Foundation.GaussianPredictableHorizon.itoIntegral T) u)
+OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableL2_secondCountable : ∀ (T : NNReal),
+  SecondCountableTopology
+    ↥(MeasureTheory.Lp ℂ 2 (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T))
+OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.realPredictableL2_secondCountable : ∀ (T : NNReal),
+  SecondCountableTopology
+    ↥(MeasureTheory.Lp ℝ 2 (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T))
+@OperatorDerivativeRewrite.Foundation.GaussianParameterizedIto.realIntegral : {P : Type u_1} →
+  [inst : MeasurableSpace P] →
+    (ν : MeasureTheory.Measure P) →
+      [MeasureTheory.SFinite ν] →
+        [SecondCountableTopology ↥(MeasureTheory.Lp ℝ 2 ν)] →
+          (T : NNReal) →
+            ↥(MeasureTheory.Lp (↥(MeasureTheory.Lp ℝ 2 ν)) 2
+                  (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T)) →ₗᵢ[ℝ]
+              ↥(MeasureTheory.Lp (↥(MeasureTheory.Lp ℝ 2 ν)) 2
+                  OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct)
+@OperatorDerivativeRewrite.Foundation.GaussianParameterizedIto.realIntegral_tensor : ∀ {P : Type u_1}
+  [inst : MeasurableSpace P] (ν : MeasureTheory.Measure P) [inst_1 : MeasureTheory.SFinite ν]
+  [inst_2 : SecondCountableTopology ↥(MeasureTheory.Lp ℝ 2 ν)] [SecondCountableTopology ↥(MeasureTheory.Lp ℂ 2 ν)]
+  (T : NNReal)
+  (a : ↥(MeasureTheory.Lp ℝ 2 (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T)))
+  (h : ↥(MeasureTheory.Lp ℝ 2 ν)),
+  (OperatorDerivativeRewrite.Foundation.GaussianParameterizedIto.realIntegral ν T)
+      (OperatorDerivativeRewrite.Foundation.BochnerClosedOperator.tensor
+        (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T) a h) =
+    OperatorDerivativeRewrite.Foundation.BochnerClosedOperator.tensor
+      OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct
+      ((OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.realIto T) a) h
+@OperatorDerivativeRewrite.Foundation.GaussianParameterizedIto.realFlat : {P : Type u_1} →
+  [inst : MeasurableSpace P] →
+    (ν : MeasureTheory.Measure P) →
+      [MeasureTheory.SFinite ν] →
+        [SecondCountableTopology ↥(MeasureTheory.Lp ℝ 2 ν)] →
+          (T : NNReal) →
+            ↥(MeasureTheory.Lp ℝ 2
+                  ((OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T).prod ν)) →ₗᵢ[ℝ]
+              ↥(MeasureTheory.Lp ℝ 2 (OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct.prod ν))
+@OperatorDerivativeRewrite.Foundation.GaussianParameterizedIto.complexFlat : {P : Type u_1} →
+  [inst : MeasurableSpace P] →
+    (ν : MeasureTheory.Measure P) →
+      [MeasureTheory.SFinite ν] →
+        [SecondCountableTopology ↥(MeasureTheory.Lp ℝ 2 ν)] →
+          (T : NNReal) →
+            ↥(MeasureTheory.Lp ℂ 2
+                  ((OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T).prod ν)) →ₗᵢ[ℝ]
+              ↥(MeasureTheory.Lp ℂ 2 (OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct.prod ν))
+@OperatorDerivativeRewrite.Foundation.GaussianParameterizedIto.integral : {P : Type u_1} →
+  [inst : MeasurableSpace P] →
+    (ν : MeasureTheory.Measure P) →
+      [MeasureTheory.SFinite ν] →
+        [SecondCountableTopology ↥(MeasureTheory.Lp ℝ 2 ν)] →
+          [SecondCountableTopology ↥(MeasureTheory.Lp ℂ 2 ν)] →
+            (T : NNReal) →
+              ↥(MeasureTheory.Lp (↥(MeasureTheory.Lp ℂ 2 ν)) 2
+                    (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T)) →ₗᵢ[ℝ]
+                ↥(MeasureTheory.Lp (↥(MeasureTheory.Lp ℂ 2 ν)) 2
+                    OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct)
+@OperatorDerivativeRewrite.Foundation.GaussianParameterizedIto.integral_norm : ∀ {P : Type u_1}
+  [inst : MeasurableSpace P] (ν : MeasureTheory.Measure P) [inst_1 : MeasureTheory.SFinite ν]
+  [inst_2 : SecondCountableTopology ↥(MeasureTheory.Lp ℝ 2 ν)]
+  [inst_3 : SecondCountableTopology ↥(MeasureTheory.Lp ℂ 2 ν)] (T : NNReal)
+  (u :
+    ↥(MeasureTheory.Lp (↥(MeasureTheory.Lp ℂ 2 ν)) 2
+        (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T))),
+  ‖(OperatorDerivativeRewrite.Foundation.GaussianParameterizedIto.integral ν T) u‖ = ‖u‖
+@OperatorDerivativeRewrite.Foundation.GaussianParameterizedItoTensor.realFlat_tensor : ∀ {P : Type u_1}
+  [inst : MeasurableSpace P] (ν : MeasureTheory.Measure P) [inst_1 : MeasureTheory.SFinite ν]
+  [inst_2 : SecondCountableTopology ↥(MeasureTheory.Lp ℝ 2 ν)] [SecondCountableTopology ↥(MeasureTheory.Lp ℂ 2 ν)]
+  (T : NNReal)
+  (a : ↥(MeasureTheory.Lp ℝ 2 (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T)))
+  (h : ↥(MeasureTheory.Lp ℝ 2 ν)),
+  (OperatorDerivativeRewrite.Foundation.GaussianParameterizedIto.realFlat ν T)
+      (OperatorDerivativeRewrite.Foundation.ProductL2Curry.productTensor
+        (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T) ν a h) =
+    OperatorDerivativeRewrite.Foundation.ProductL2Curry.productTensor
+      OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct ν
+      ((OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.realIto T) a) h
+@OperatorDerivativeRewrite.Foundation.GaussianParameterizedItoTensor.realPart_tensor : ∀ {P : Type u_1}
+  [inst : MeasurableSpace P] (ν : MeasureTheory.Measure P) [inst_1 : MeasureTheory.SFinite ν]
+  [SecondCountableTopology ↥(MeasureTheory.Lp ℝ 2 ν)] [SecondCountableTopology ↥(MeasureTheory.Lp ℂ 2 ν)] {X : Type u_2}
+  [inst_4 : MeasurableSpace X] (μ : MeasureTheory.Measure X) [MeasureTheory.SFinite μ] (a : ↥(MeasureTheory.Lp ℝ 2 μ))
+  (h : ↥(MeasureTheory.Lp ℂ 2 ν)),
+  (OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.realPart (μ.prod ν))
+      (OperatorDerivativeRewrite.Foundation.ProductL2Curry.productTensor μ ν a h) =
+    OperatorDerivativeRewrite.Foundation.ProductL2Curry.productTensor μ ν a
+      ((OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.realPart ν) h)
+@OperatorDerivativeRewrite.Foundation.GaussianParameterizedItoTensor.imagPart_tensor : ∀ {P : Type u_1}
+  [inst : MeasurableSpace P] (ν : MeasureTheory.Measure P) [inst_1 : MeasureTheory.SFinite ν]
+  [SecondCountableTopology ↥(MeasureTheory.Lp ℝ 2 ν)] [SecondCountableTopology ↥(MeasureTheory.Lp ℂ 2 ν)] {X : Type u_2}
+  [inst_4 : MeasurableSpace X] (μ : MeasureTheory.Measure X) [MeasureTheory.SFinite μ] (a : ↥(MeasureTheory.Lp ℝ 2 μ))
+  (h : ↥(MeasureTheory.Lp ℂ 2 ν)),
+  (OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.imagPart (μ.prod ν))
+      (OperatorDerivativeRewrite.Foundation.ProductL2Curry.productTensor μ ν a h) =
+    OperatorDerivativeRewrite.Foundation.ProductL2Curry.productTensor μ ν a
+      ((OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.imagPart ν) h)
+@OperatorDerivativeRewrite.Foundation.GaussianParameterizedItoTensor.combine_tensors : ∀ {P : Type u_1}
+  [inst : MeasurableSpace P] (ν : MeasureTheory.Measure P) [inst_1 : MeasureTheory.SFinite ν]
+  [SecondCountableTopology ↥(MeasureTheory.Lp ℝ 2 ν)] [SecondCountableTopology ↥(MeasureTheory.Lp ℂ 2 ν)] {X : Type u_2}
+  [inst_4 : MeasurableSpace X] (μ : MeasureTheory.Measure X) [MeasureTheory.SFinite μ] (a : ↥(MeasureTheory.Lp ℝ 2 μ))
+  (h : ↥(MeasureTheory.Lp ℂ 2 ν)),
+  OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.combine (μ.prod ν)
+      (OperatorDerivativeRewrite.Foundation.ProductL2Curry.productTensor μ ν a
+        ((OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.realPart ν) h))
+      (OperatorDerivativeRewrite.Foundation.ProductL2Curry.productTensor μ ν a
+        ((OperatorDerivativeRewrite.Foundation.ComplexL2Isometry.imagPart ν) h)) =
+    OperatorDerivativeRewrite.Foundation.ProductL2Curry.productTensor μ ν a h
+@OperatorDerivativeRewrite.Foundation.GaussianParameterizedItoTensor.complexFlat_tensor : ∀ {P : Type u_1}
+  [inst : MeasurableSpace P] (ν : MeasureTheory.Measure P) [inst_1 : MeasureTheory.SFinite ν]
+  [inst_2 : SecondCountableTopology ↥(MeasureTheory.Lp ℝ 2 ν)] [SecondCountableTopology ↥(MeasureTheory.Lp ℂ 2 ν)]
+  (T : NNReal)
+  (a : ↥(MeasureTheory.Lp ℝ 2 (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T)))
+  (h : ↥(MeasureTheory.Lp ℂ 2 ν)),
+  (OperatorDerivativeRewrite.Foundation.GaussianParameterizedIto.complexFlat ν T)
+      (OperatorDerivativeRewrite.Foundation.ProductL2Curry.productTensor
+        (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T) ν a h) =
+    OperatorDerivativeRewrite.Foundation.ProductL2Curry.productTensor
+      OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct ν
+      ((OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.realIto T) a) h
+@OperatorDerivativeRewrite.Foundation.GaussianParameterizedItoTensor.integral_tensor : ∀ {P : Type u_1}
+  [inst : MeasurableSpace P] (ν : MeasureTheory.Measure P) [inst_1 : MeasureTheory.SFinite ν]
+  [inst_2 : SecondCountableTopology ↥(MeasureTheory.Lp ℝ 2 ν)]
+  [inst_3 : SecondCountableTopology ↥(MeasureTheory.Lp ℂ 2 ν)] (T : NNReal)
+  (a : ↥(MeasureTheory.Lp ℝ 2 (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T)))
+  (h : ↥(MeasureTheory.Lp ℂ 2 ν)),
+  (OperatorDerivativeRewrite.Foundation.GaussianParameterizedIto.integral ν T)
+      (OperatorDerivativeRewrite.Foundation.BochnerClosedOperator.tensor
+        (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T) a h) =
+    OperatorDerivativeRewrite.Foundation.BochnerClosedOperator.tensor
+      OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct
+      ((OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.realIto T) a) h
+@OperatorDerivativeRewrite.Foundation.GaussianParameterizedItoTensor.integral_scalarization : ∀ {P : Type u_1}
+  [inst : MeasurableSpace P] (ν : MeasureTheory.Measure P) [inst_1 : MeasureTheory.SFinite ν]
+  [inst_2 : SecondCountableTopology ↥(MeasureTheory.Lp ℝ 2 ν)]
+  [inst_3 : SecondCountableTopology ↥(MeasureTheory.Lp ℂ 2 ν)] (T : NNReal) (L : ↥(MeasureTheory.Lp ℂ 2 ν) →L[ℝ] ℝ)
+  (u :
+    ↥(MeasureTheory.Lp (↥(MeasureTheory.Lp ℂ 2 ν)) 2
+        (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T))),
+  (ContinuousLinearMap.compLpL 2 OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct L)
+      ((OperatorDerivativeRewrite.Foundation.GaussianParameterizedIto.integral ν T) u) =
+    (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.realIto T)
+      ((ContinuousLinearMap.compLpL 2
+          (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T) L)
+        u)
+OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.Domain : (T : NNReal) →
+  Submodule ℂ
+    ↥(MeasureTheory.Lp (BesselPotentialSpace ℝ ℂ (-1) 2) 2
+        (OperatorDerivativeRewrite.Foundation.PredictableRealL2.horizonMeasure T
+          OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct))
+OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.trimEquiv : (T : NNReal) →
+  ↥(OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.Domain T) ≃ₗᵢ[ℂ]
+    ↥(MeasureTheory.Lp (BesselPotentialSpace ℝ ℂ (-1) 2) 2
+        (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T))
+OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.encode : (T : NNReal) →
+  ↥(MeasureTheory.Lp (BesselPotentialSpace ℝ ℂ (-1) 2) 2
+        (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T)) →ₗᵢ[ℂ]
+    ↥(MeasureTheory.Lp (↥(MeasureTheory.Lp ℂ 2 MeasureTheory.volume)) 2
+        (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T))
+OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.decode : ↥(MeasureTheory.Lp
+      (↥(MeasureTheory.Lp ℂ 2 MeasureTheory.volume)) 2
+      OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct) →ₗᵢ[ℂ]
+  ↥(MeasureTheory.Lp (BesselPotentialSpace ℝ ℂ (-1) 2) 2
+      OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct)
+OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.integral : (T : NNReal) →
+  ↥(OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.Domain T) →
+    ↥(MeasureTheory.Lp (BesselPotentialSpace ℝ ℂ (-1) 2) 2
+        OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct)
+OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.integral_norm : ∀ (T : NNReal)
+  (u : ↥(OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.Domain T)),
+  ‖OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.integral T u‖ = ‖u‖
+OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.integral_isometry : ∀ (T : NNReal),
+  Isometry (OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.integral T)
+OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.integral_add : ∀ (T : NNReal)
+  (u v : ↥(OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.Domain T)),
+  OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.integral T (u + v) =
+    OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.integral T u +
+      OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.integral T v
+OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.integral_zero : ∀ (T : NNReal),
+  OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.integral T 0 = 0
+OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.integral_real_smul : ∀ (T : NNReal) (r : ℝ)
+  (u : ↥(OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.Domain T)),
+  OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.integral T (↑r • u) =
+    ↑r • OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.integral T u
+OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.integralIsometry : (T : NNReal) →
+  ↥(OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.Domain T) →ₗᵢ[ℝ]
+    ↥(MeasureTheory.Lp (BesselPotentialSpace ℝ ℂ (-1) 2) 2
+        OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct)
+OperatorDerivativeRewrite.Foundation.IBMPhysicalClockItoTensor.tensor : (T : NNReal) →
+  ↥(MeasureTheory.Lp ℝ 2 (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T)) →
+    BesselPotentialSpace ℝ ℂ (-1) 2 → ↥(OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.Domain T)
+OperatorDerivativeRewrite.Foundation.IBMPhysicalClockItoTensor.coefficientTensor : ↥OperatorDerivativeRewrite.Foundation.InfiniteGaussian.GaussianL2 →
+  BesselPotentialSpace ℝ ℂ (-1) 2 →
+    ↥(MeasureTheory.Lp (BesselPotentialSpace ℝ ℂ (-1) 2) 2
+        OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct)
+OperatorDerivativeRewrite.Foundation.IBMPhysicalClockItoTensor.tensor_ae : ∀ (T : NNReal)
+  (a : ↥(MeasureTheory.Lp ℝ 2 (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T)))
+  (h : BesselPotentialSpace ℝ ℂ (-1) 2),
+  ↑↑↑(OperatorDerivativeRewrite.Foundation.IBMPhysicalClockItoTensor.tensor T a
+            h) =ᵐ[OperatorDerivativeRewrite.Foundation.PredictableRealL2.horizonMeasure T
+      OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct]
+    fun z => ↑(↑↑a z) • h
+OperatorDerivativeRewrite.Foundation.IBMPhysicalClockItoTensor.coefficientTensor_ae : ∀
+  (a : ↥OperatorDerivativeRewrite.Foundation.InfiniteGaussian.GaussianL2) (h : BesselPotentialSpace ℝ ℂ (-1) 2),
+  ↑↑(OperatorDerivativeRewrite.Foundation.IBMPhysicalClockItoTensor.coefficientTensor a
+          h) =ᵐ[OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct]
+    fun ω => ↑(↑↑a ω) • h
+OperatorDerivativeRewrite.Foundation.IBMPhysicalClockItoTensor.encode_tensor : ∀ (T : NNReal)
+  (a : ↥(MeasureTheory.Lp ℝ 2 (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T)))
+  (h : BesselPotentialSpace ℝ ℂ (-1) 2),
+  (OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.encode T)
+      ((OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.trimEquiv T)
+        (OperatorDerivativeRewrite.Foundation.IBMPhysicalClockItoTensor.tensor T a h)) =
+    OperatorDerivativeRewrite.Foundation.BochnerClosedOperator.tensor
+      (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T) a h.toLp
+OperatorDerivativeRewrite.Foundation.IBMPhysicalClockItoTensor.decode_tensor : ∀
+  (a : ↥OperatorDerivativeRewrite.Foundation.InfiniteGaussian.GaussianL2) (h : BesselPotentialSpace ℝ ℂ (-1) 2),
+  OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.decode
+      (OperatorDerivativeRewrite.Foundation.BochnerClosedOperator.tensor
+        OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct a h.toLp) =
+    OperatorDerivativeRewrite.Foundation.IBMPhysicalClockItoTensor.coefficientTensor a h
+OperatorDerivativeRewrite.Foundation.IBMPhysicalClockItoTensor.integral_tensor : ∀ (T : NNReal)
+  (a : ↥(MeasureTheory.Lp ℝ 2 (OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.predictableMeasure T)))
+  (h : BesselPotentialSpace ℝ ℂ (-1) 2),
+  OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.integral T
+      (OperatorDerivativeRewrite.Foundation.IBMPhysicalClockItoTensor.tensor T a h) =
+    OperatorDerivativeRewrite.Foundation.IBMPhysicalClockItoTensor.coefficientTensor
+      ((OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.realIto T) a) h
+OperatorDerivativeRewrite.Foundation.IBMPhysicalClockItoTensor.integral_native_tensor : ∀ (T : NNReal)
+  (a : ↥(OperatorDerivativeRewrite.Foundation.GaussianPredictableHorizon.PredictableDomain T))
+  (h : BesselPotentialSpace ℝ ℂ (-1) 2),
+  OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.integral T
+      (OperatorDerivativeRewrite.Foundation.IBMPhysicalClockItoTensor.tensor T
+        ((OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.trimEquiv T) a) h) =
+    OperatorDerivativeRewrite.Foundation.IBMPhysicalClockItoTensor.coefficientTensor
+      ((OperatorDerivativeRewrite.Foundation.GaussianPredictableHorizon.itoIntegral T) a) h
+OperatorDerivativeRewrite.Foundation.IBMPhysicalClockItoTensor.integral_native_tensor_ae : ∀ (T : NNReal)
+  (a : ↥(OperatorDerivativeRewrite.Foundation.GaussianPredictableHorizon.PredictableDomain T))
+  (h : BesselPotentialSpace ℝ ℂ (-1) 2),
+  ↑↑(OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.integral T
+          (OperatorDerivativeRewrite.Foundation.IBMPhysicalClockItoTensor.tensor T
+            ((OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.trimEquiv T) a)
+            h)) =ᵐ[OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct]
+    fun ω => ↑(↑↑((OperatorDerivativeRewrite.Foundation.GaussianPredictableHorizon.itoIntegral T) a) ω) • h
+OperatorDerivativeRewrite.Foundation.IBMPhysicalClockItoTensor.tensor_native_ae : ∀ (T : NNReal)
+  (a : ↥(OperatorDerivativeRewrite.Foundation.GaussianPredictableHorizon.PredictableDomain T))
+  (h : BesselPotentialSpace ℝ ℂ (-1) 2),
+  ↑↑↑(OperatorDerivativeRewrite.Foundation.IBMPhysicalClockItoTensor.tensor T
+            ((OperatorDerivativeRewrite.Foundation.GaussianComplexHorizonIto.trimEquiv T) a)
+            h) =ᵐ[OperatorDerivativeRewrite.Foundation.PredictableRealL2.horizonMeasure T
+      OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct]
+    fun z => ↑(↑↑↑a z) • h
+OperatorDerivativeRewrite.Foundation.IBMSchwartzPhysicalClockIntegral.restriction : (T : NNReal) →
+  ↥(MeasureTheory.Lp (BesselPotentialSpace ℝ ℂ (-1) 2) 2
+        OperatorDerivativeRewrite.Foundation.GaussianTimeProductL2.timeProbability) →L[ℂ]
+    ↥(MeasureTheory.Lp (BesselPotentialSpace ℝ ℂ (-1) 2) 2
+        (OperatorDerivativeRewrite.Foundation.PredictableRealL2.horizonMeasure T
+          OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct))
+OperatorDerivativeRewrite.Foundation.IBMSchwartzPhysicalClockIntegral.integrand : SchwartzMap ℝ ℝ →
+  ℝ → ℕ → (T : NNReal) → ↥(OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.Domain T)
+OperatorDerivativeRewrite.Foundation.IBMSchwartzPhysicalClockIntegral.limitIntegrand : SchwartzMap ℝ ℝ →
+  ℝ → (T : NNReal) → ↥(OperatorDerivativeRewrite.Foundation.IBMPhysicalClockIto.Domain T)
+OperatorDerivativeRewrite.Foundation.IBMSchwartzPhysicalClockIntegral.integrand_tendsto : ∀ (g : SchwartzMap ℝ ℝ)
+  (a : ℝ) (T : NNReal),
+  Filter.Tendsto (fun n => OperatorDerivativeRewrite.Foundation.IBMSchwartzPhysicalClockIntegral.integrand g a n T)
+    Filter.atTop (nhds (OperatorDerivativeRewrite.Foundation.IBMSchwartzPhysicalClockIntegral.limitIntegrand g a T))
+OperatorDerivativeRewrite.Foundation.IBMSchwartzPhysicalClockIntegral.integralValue : SchwartzMap ℝ ℝ →
+  ℝ →
+    ℕ →
+      NNReal →
+        ↥(MeasureTheory.Lp (BesselPotentialSpace ℝ ℂ (-1) 2) 2
+            OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct)
+OperatorDerivativeRewrite.Foundation.IBMSchwartzPhysicalClockIntegral.limitIntegralValue : SchwartzMap ℝ ℝ →
+  ℝ →
+    NNReal →
+      ↥(MeasureTheory.Lp (BesselPotentialSpace ℝ ℂ (-1) 2) 2
+          OperatorDerivativeRewrite.Foundation.InfiniteGaussian.gaussianProduct)
+OperatorDerivativeRewrite.Foundation.IBMSchwartzPhysicalClockIntegral.integralValue_tendsto : ∀ (g : SchwartzMap ℝ ℝ)
+  (a : ℝ) (T : NNReal),
+  Filter.Tendsto (fun n => OperatorDerivativeRewrite.Foundation.IBMSchwartzPhysicalClockIntegral.integralValue g a n T)
+    Filter.atTop (nhds (OperatorDerivativeRewrite.Foundation.IBMSchwartzPhysicalClockIntegral.limitIntegralValue g a T))
+OperatorDerivativeRewrite.Foundation.IBMSchwartzPhysicalClockIntegral.integralValue_difference_norm : ∀
+  (g : SchwartzMap ℝ ℝ) (a : ℝ) (n m : ℕ) (T : NNReal),
+  ‖OperatorDerivativeRewrite.Foundation.IBMSchwartzPhysicalClockIntegral.integralValue g a n T -
+        OperatorDerivativeRewrite.Foundation.IBMSchwartzPhysicalClockIntegral.integralValue g a m T‖ =
+    ‖OperatorDerivativeRewrite.Foundation.IBMSchwartzPhysicalClockIntegral.integrand g a n T -
+        OperatorDerivativeRewrite.Foundation.IBMSchwartzPhysicalClockIntegral.integrand g a m T‖
+OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.corrected : (ℝ → ℝ) → ℝ → ℝ
+OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.slope : (ℝ → ℝ) → ℝ → ℝ
+@OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.glue_zero : ∀ {F p n : ℝ → ℝ} {d : ℝ},
+  HasDerivAt p d 0 → HasDerivAt n d 0 → (∀ (x : ℝ), 0 ≤ x → F x = p x) → (∀ x ≤ 0, F x = n x) → HasDerivAt F d 0
+OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.corrected_pos : ∀ (f : ℝ → ℝ) {x : ℝ},
+  0 ≤ x → OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.corrected f x = f x - x * deriv f 0
+OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.corrected_neg : ∀ (f : ℝ → ℝ) {x : ℝ},
+  x ≤ 0 → OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.corrected f x = f (-x) + x * deriv f 0
+OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.slope_pos : ∀ (f : ℝ → ℝ) {x : ℝ},
+  0 ≤ x → OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.slope f x = deriv f x - deriv f 0
+OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.slope_neg : ∀ (f : ℝ → ℝ) {x : ℝ},
+  x ≤ 0 → OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.slope f x = deriv f 0 - deriv f (-x)
+@OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.corrected_hasDerivAt : ∀ {f : ℝ → ℝ},
+  Differentiable ℝ f →
+    ∀ (x : ℝ),
+      HasDerivAt (OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.corrected f)
+        (OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.slope f x) x
+@OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.slope_hasDerivAt : ∀ {f : ℝ → ℝ},
+  ContDiff ℝ 2 f →
+    ∀ (x : ℝ), HasDerivAt (OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.slope f) (deriv (deriv f) |x|) x
+@OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.corrected_C2 : ∀ {f : ℝ → ℝ},
+  ContDiff ℝ 2 f → ContDiff ℝ 2 (OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.corrected f)
+@OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.corrected_deriv : ∀ {f : ℝ → ℝ},
+  Differentiable ℝ f →
+    deriv (OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.corrected f) =
+      OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.slope f
+@OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.corrected_second_deriv : ∀ {f : ℝ → ℝ},
+  ContDiff ℝ 2 f →
+    ∀ (x : ℝ),
+      deriv (deriv (OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.corrected f)) x = deriv (deriv f) |x|
+@OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.corrected_deriv_bound : ∀ {f : ℝ → ℝ},
+  Differentiable ℝ f →
+    ∀ {C : ℝ},
+      (∀ (x : ℝ), ‖deriv f x‖ ≤ C) →
+        ∀ (x : ℝ), ‖deriv (OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.corrected f) x‖ ≤ 2 * C
+@OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.corrected_second_deriv_bound : ∀ {f : ℝ → ℝ},
+  ContDiff ℝ 2 f →
+    ∀ {C : ℝ},
+      (∀ (x : ℝ), ‖deriv (deriv f) x‖ ≤ C) →
+        ∀ (x : ℝ), ‖deriv (deriv (OperatorDerivativeRewrite.Foundation.ReflectedC2Primitive.corrected f)) x‖ ≤ C
