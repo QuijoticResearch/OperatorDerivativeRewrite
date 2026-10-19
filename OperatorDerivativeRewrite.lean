@@ -1614,3 +1614,6 @@ import Foundation.IBMClockRegularizedSlope
 import Foundation.GaussianHorizonChaosIntertwining
 import Foundation.GaussianSourceHorizonRegularization
 import Foundation.IBMRegularizedStochasticIdentity
+import Foundation.GaussianPredictableSourceSlices
+import Foundation.IBMRegularizedPredictableSlices
+import Foundation.IBMRegularizedTimeLimit
