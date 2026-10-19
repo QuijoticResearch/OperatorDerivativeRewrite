@@ -1576,3 +1576,7 @@ import Foundation.IBMPhysicalClockIto
 import Foundation.IBMPhysicalClockItoTensor
 import Foundation.IBMSchwartzPhysicalClockIntegral
 import Foundation.ReflectedC2Primitive
+import Foundation.IBMSchwartzPhysicalGlobalBounds
+import Foundation.IBMPhysicalClockItoScalar
+import Foundation.GaussianReflectedC2Ito
+import Foundation.IBMSchwartzPhysicalReflectedIto
