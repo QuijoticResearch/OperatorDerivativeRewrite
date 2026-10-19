@@ -1635,3 +1635,7 @@ import Foundation.IBMCompactVarianceGeometry
 import Foundation.IBMDilatedVarianceGeometry
 import Foundation.IBMCompactClockMass
 import Foundation.IBMDilatedClockMassLimit
+import Foundation.IBMCompactSourceAverage
+import Foundation.IBMCompactWeightedBoundary
+import Foundation.IBMCompactBoundaryRemainder
+import Foundation.IBMCompactOriginalBoundary
