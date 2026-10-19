@@ -1740,3 +1740,5 @@ import Foundation.RiemannQuarticFarCorrection
 import Foundation.GaussianOscillatoryTail
 import Foundation.RiemannQuarticFarRemainder
 import Foundation.RiemannQuarticFarSignedIntegral
+import Foundation.RiemannQuarticFarGaussianLocal
+import Foundation.RiemannQuarticFarGaussianLimit
