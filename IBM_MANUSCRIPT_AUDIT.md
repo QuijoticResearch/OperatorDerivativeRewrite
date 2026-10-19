@@ -872,3 +872,54 @@ Exact remaining obligations: an explicit physical FUNCTION identity for Q_(rho',
 F3 joint clock-domain membership and intrinsic-core density/nondensity remain open. In particular, this physical scenery realization does not prove density of F_Z-measurable elements in the joint derivative domain. The complete source-zero/all-clock family from1074, complete all-source/clock-zero family from1076, and concrete F2 closure are preserved. IBM remains active; no successor gate is released.
 
 All62 public declaration types from the four new modules are inspected at the checkpoint. No added mathematical axiom, dependency/toolchain change, elaboration resource increase, manuscript modification or unrelated research branch. Incoming remains43 files/42 exact hashes, with the four IBM archive baselines and dictionary hash preserved.
+
+## Discovery1078: explicit physical derivative kernels and the whole Schwartz first-chaos correction
+
+Resumed at terminal time2026-10-18T21:17:05-04:00 from verified d8d9b6662a37730b60b7ae4595e219ca337c9473. The previous goal turn made verified progress; this turn closes1077's explicitly missing derivative-kernel identity and identifies the whole first-source correction kernel. IBM remains immediate, with the successor gates and October31 hard stop unchanged.
+
+`IBMPhysicalDerivativeColumn` proves the scalar column calculation with its sign and both compact-support endpoints. For every C1 compactly supported rho,
+
+integral rho'(x-r) v_r(w)dr = rho(x-w).
+
+Here v_r(w)=1_(w<=r)-1_(w<=0) is the already constructed two-sided oriented Brownian indicator. The derivative is with respect to rho's argument. A compactly supported primitive -rho(x-r) has derivative +rho'(x-r); its integral over[w,infinity) is +rho(x-w), while its whole-line derivative integral is zero. Thus the anchoring-at-zero term cancels. The proof establishes actual scalar integrability, joint measurability and an explicit bounded spatial-support estimate; no formal delta-function integration is used.
+
+`IBMPhysicalDerivativeKernel` lifts that calculation to the ACTUAL physical Lebesgue-L2 class. It reuses `BochnerL2Fubini.integral_eq_of_slices` on a compact parameter interval, supplying an independently realized translated-rho L2 class. The uniform majorant is a constant times a bounded-interval indicator in the physical variable w and is proved to belong to L2(R,dw). Compact support and derivative bounds are discharged from C1 and compact support; callers supply no radius, majorant or density hypothesis. The resulting theorem is
+
+Q_(rho',x) = [w -> rho(x-w)] in physical L2(R,dw).
+
+Applying it again to rho' identifies Q_(rho'',x) with [w -> rho'(x-w)] for a C2 kernel. `physicalJet_one_coeFn` and `physicalJet_two_coeFn` instantiate the actual compact bump sequence. These are positive rho and positive rho' representatives in the physical coordinate; they must not be confused with taking d/dw, which reverses the sign of a translate. No physical distributional differentiation identity is silently substituted.
+
+`IBMSchwartzFirstCoefficient` proves the full first-chaos coefficient of the ACTUAL nonlinear Schwartz curvature. It reuses the independently realized quadratic/cubic products and existing mixed Stein pairings, so all test products are on proved GaussianL2 domains. Let U=W(u), V=W(v), R=W(w), d=<u,v>, e=<u,w>, q=||v||^2 and Q_j=E[g^(j)(a+U)]. Then
+
+firstChaosEmbedding* [g''(a+U)V^2+g'(a+U)R]
+= ((q+e)Q_3+d^2 Q_5)u +2d Q_3 v+Q_1 w.
+
+The fifth derivative term is retained. This holds for every actual source direction, including zero/dependent directions, and every real shift a and Schwartz g. There is no variance division, finite-chaos truncation assumption, or claim that a polynomial is itself a Schwartz test. The proof also supplies the separate weighted-linear and weighted-square adjoint formulas.
+
+`IBMSchwartzPhysicalFirstKernel` transports that exact coefficient through1077's fixed physical noise isometry. For the ACTUAL concrete triple at radius r define u_n(r),v_n(r),w_n(r), q_n,d_n,e_n,Q_(j,n) accordingly, and
+
+A_n(r)=(q_n(r)+e_n(r))Q_(3,n)(r)+d_n(r)^2 Q_(5,n)(r),
+B_n(r)=2d_n(r)Q_(3,n)(r).
+
+The actual physical curvature kernel is therefore
+
+K_n(r;w)=A_n(r)Q_(rho_n,r)(w)+B_n(r)rho_n(r-w)+Q_(1,n)(r)rho_n'(r-w).
+
+The zeroth term remains the genuine Bochner-L2 Brownian convolution kernel from1077; the other two terms have the explicit translated representatives proved above. The exact covariance d_n(0)=0 is reused at the origin, rather than replacing it by its interior value. Consequently the actual first-source origin kernel is Q_(1,n)(0)rho_n(-w).
+
+The module constructs the whole kernel, including the genuine Tanaka mass L_T,
+
+K_n^whole(T,Y;w)=L_T(Y) Q_(1,n)(0)rho_n(-w)
+ + (1/2) integral_0^T K_n(|Y_s|;w)ds.
+
+`wholeKernel_eq_pullback` proves that this is exactly the physical pullback of the first-chaos coefficient of the existing whole correction. `wholeKernel_embeds` proves the stronger image identity with the full actual first-chaos coefficient, so no unexamined orthogonal coefficient component is lost by the adjoint pullback. `wholeKernel_realizes_projection` applies the genuine physical noise to recover the ENTIRE `GaussianPastFirstChaos.projection` of the actual whole correction at each chosen clock representative. All finite-time Bochner interchanges have actual continuity/integrability proofs.
+
+`wholeKernelClass` constructs a genuine L2(clock;L2(physical space)) class for every mollifier index and every nonnegative horizon. Its AE representative is the explicit whole kernel. The exact lifted reconstruction theorem recovers the first-chaos projection of the existing whole source-valued correction class, retaining all clock variability and performing no clock averaging. The previously verified joint/literal realization of that whole class is preserved; no new stochastic law is assumed for it.
+
+An exact obstruction-preservation theorem is also proved: physical-L2 differences between two whole kernels equal Gaussian-source-L2 differences between the corresponding first-chaos projections. Therefore this coordinate identification provides no native L2 regularization. Any inherited native non-Cauchy obstruction survives; a singular limit still requires an independently justified weaker topology or cancellation.
+
+Remaining F1 work is now more concrete. The full finite-mollifier FIRST-source kernel, including its origin term and all clock variability, is identified here; its convergence in L2(clock;H^-1(physical space)) has NOT been proved.1077's convergence of d_w Q_(rho_n,|Y_t|) is a different kernel limit and does not certify convergence of K_n^whole. In particular, the weighted translated derivative term, the localized covariance combination q_n+e_n, and the origin mass must be handled together with their precise signs and domains. No bulk replacement q_n+e_n=0 is made at the origin. Higher positive-source/positive-clock sectors and common dual/global summation remain open. F3 joint clock-domain and intrinsic-core density remain open. All prior edge-family limits and concrete F2 closure remain preserved; IBM stays active.
+
+A candidate reuse route, not a theorem, is to apply the verified clock stochastic-integration machinery to the physical first-source primitive Q_(1,n)(r)Q_(rho_n,r). Its formal first spatial derivative contains an approximate physical Dirac kernel, while its second derivative is the exact K_n identified above. A genuine reflected-clock Ito/Tanaka argument in the completed physical H^-1 target could potentially avoid constructing an unrelated occupation-field infrastructure. The existing smooth Ito theorem is scalar with bounded-derivative C3 hypotheses; it does NOT automatically supply this Hilbert-valued reflected/singular theorem. The required target-valued adapted integral, boundary formula, and uniform limit estimates must first be supplied through actual theorem reuse or proved extensions. Do not treat this candidate as F1 closure.
+
+All34 public declaration types from the four new modules are inspected at the checkpoint. The modules use default elaboration resource settings. Incoming remains43 files/42 hashes and all four IBM archive baselines plus the dictionary hash remain unchanged. No manuscript, dependency/toolchain, unrelated document or successor campaign is modified.

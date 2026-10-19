@@ -1556,3 +1556,7 @@ import Foundation.IBMPhysicalNoiseVectors
 import Foundation.IBMPhysicalNoiseRealization
 import Foundation.IBMPhysicalNoiseCalculus
 import Foundation.IBMPhysicalNoiseClock
+import Foundation.IBMPhysicalDerivativeColumn
+import Foundation.IBMPhysicalDerivativeKernel
+import Foundation.IBMSchwartzFirstCoefficient
+import Foundation.IBMSchwartzPhysicalFirstKernel
