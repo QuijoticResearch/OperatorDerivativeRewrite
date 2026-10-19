@@ -1580,3 +1580,7 @@ import Foundation.IBMSchwartzPhysicalGlobalBounds
 import Foundation.IBMPhysicalClockItoScalar
 import Foundation.GaussianReflectedC2Ito
 import Foundation.IBMSchwartzPhysicalReflectedIto
+import Foundation.GaussianRealParameterizedItoScalar
+import Foundation.GaussianSourceClockIto
+import Foundation.IBMSchwartzFullGlobalBounds
+import Foundation.IBMSchwartzFullReflectedIto
