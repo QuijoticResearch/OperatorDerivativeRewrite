@@ -1596,3 +1596,4 @@ import Foundation.GaussianAnalyticCoordinateIBP
 import Foundation.GaussianFiniteGradientTransport
 import Foundation.GaussianClosedChainRule
 import Foundation.IBMNonlinearAverageGraph
+import Foundation.IBMFiniteAverageCore
