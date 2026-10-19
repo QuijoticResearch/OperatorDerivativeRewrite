@@ -1545,3 +1545,10 @@ import Foundation.IBMSchwartzSourceZeroJoint
 import Foundation.IBMSchwartzSourceZeroTails
 import Foundation.IBMSchwartzSourceDerivative
 import Foundation.IBMFullSchwartzTerminal
+import Foundation.IBMSourceProductBounds
+import Foundation.IBMSchwartzSourceSecondDerivative
+import Foundation.IBMFullSchwartzHeatBoundary
+import Foundation.IBMFullSchwartzHeatHalfLine
+import Foundation.IBMFullSchwartzHeatFubini
+import Foundation.IBMFullSchwartzClockMean
+import Foundation.IBMFullSchwartzNativeMean

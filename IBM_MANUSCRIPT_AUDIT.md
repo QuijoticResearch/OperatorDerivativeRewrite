@@ -777,3 +777,47 @@ Exact remaining connection: identify the entire clock-averaged correction with t
 The F3 reuse search found existing zero-occupation/Tanaka-mass and heat occupation-mean results, but did not establish a full spatial local-time field or the uniform joint derivative estimate needed for a time-smoothed intrinsic-core argument. The previously verified partial scenery derivative remains valid. Neither joint clock Sobolev membership nor intrinsic-core density/nondensity was proved in this checkpoint. No F3 conclusion follows from the bounded multiplier construction. The concrete F2 limit and all prior verifications remain preserved.
 
 All27 new public declaration types are inspected in the checkpoint audit. Original manuscripts and the43-file/42-hash Incoming inventory are preserved. No source, dependency or toolchain changes; no unrelated campaign, resource increase, or added mathematical axiom.
+
+
+## Discovery1076: full nonlinear IBM curvature and every scenery sector after clock averaging
+
+The previous goal turn made verified progress in d729526d70b861ee97f822ab6476ee553df54dec. This checkpoint closes that turn's precise missing second-derivative and heat-identification connection. IBM remains the immediate campaign. The IBM → A(4) → A(2) → final full multichannel campaign gates and October31 hard stop remain in force; no successor has started.
+
+`IBMSourceProductBounds` reuses the actual centered quadratic bilinear calculus and polarized Gaussian cubic classes. It identifies the independently realized raw product with the centered cross product plus its covariance vacuum term, constructs its bounded bilinear map, and proves ||W(u)W(v)||_L2 <= 3||u||||v||. Separate scalar homogeneity of the actual polarized mixed cube, including both zero directions, converts the existing bounded-ball cubic estimate into
+
+||W(u)W(v)^2||_L2 <= 12||u||||v||^2.
+
+This is a bound on products of actual Gaussian first-chaos variables. It does not assert a bounded product on arbitrary L2 classes. The separate factors, rather than one common ball bound, are what make the next operator-norm remainder tend to zero at the required rate.
+
+`IBMSchwartzSourceSecondDerivative` constructs a bounded bilinear Hessian for the entire actual nonlinear observable O_j(u)=g^(j)(a+W(u)):
+
+D^2 O_j(u)[h,k]=g^(j+2)(a+W(u)) W(h)W(k).
+
+Taylor's scalar remainder is multiplied by the genuine first-chaos direction and compared in L2 with the already realized mixed cubic. The resulting source-operator remainder is bounded by
+
+||DO_j(v)-DO_j(u)-D^2 O_j(u)[v-u]||_op <= 6 seminorm(g^(j+3)) ||v-u||^2.
+
+Thus DO_j is Frechet differentiable in operator norm on the entire source coefficient Hilbert space, including zero variance. The proof is uniform in the differentiated direction. Applying the genuine bounded-operator chain and evaluation rules gives the full spatial derivative of the actual weighted slope. Along the constructed mollified coefficient curve, u'=v and v'=w, it yields
+
+d^2/dr^2 g(a+X_n(r)) = g''(a+X_n(r)) (X_n'(r))^2 + g'(a+X_n(r)) X_n''(r)
+
+as equality in native Gaussian source L2, before every source-chaos projection. `spatial_second_deriv` identifies this derivative with the existing actual `IBMSchwartzSecondProjection.mollifiedClass`, despite that module's historical name. No formal differentiation of an infinite chaos sum or pointwise differentiation of an unmollified Brownian path occurs.
+
+`IBMFullSchwartzHeatBoundary`, `IBMFullSchwartzHeatHalfLine`, `IBMFullSchwartzHeatFubini` and `IBMFullSchwartzClockMean` reuse the earlier heat-potential, Gaussian-tail, reflected-clock-law, actual origin-mass and product-Fubini arguments on this full source-L2 primitive. Fixed-mollifier slope growth and unprojected curvature growth are justified using the existing verified bounds. Both spatial endpoint terms tend to zero. All time/space and time/clock integrals used in swapping are proved absolutely Bochner-integrable, including the singular initial-time heat endpoint. The reflection factor2 and the origin coefficient are inherited from their existing actual law and Tanaka-mass proofs, not assumed.
+
+For every Schwartz g, real shift a, concrete mollifier index n and positive horizon T, the full actual clock-averaged correction satisfies
+
+E_Y[L_T g'(a+X_n(0))X_n'(0) + (1/2) integral_0^T {g''(a+X_n(|Y_s|))(X_n'(|Y_s|))^2 + g'(a+X_n(|Y_s|))X_n''(|Y_s|)} ds]
+= E_Y[g(a+X_n(|Y_T|))]-g(a+X_n(0)).
+
+The equality is in actual Gaussian source L2. It includes the origin layer before cancellation. It retains all source chaos degrees simultaneously. The right-hand side is exactly1075's full terminal-minus-origin candidate, so its already verified strong source-L2 limit now applies to the actual clock-averaged correction, rather than merely to an unidentified candidate. The limit is E_Y[g(a+X(|Y_T|))]-g(a), with the actual constructed Brownian scenery and independent continuous clock sections already identified in1075.
+
+`IBMFullSchwartzNativeMean` connects this full Bochner mean to the existing independently realized literal scalar correction using the actual joint sections, representative Fubini and independent-source conditional expectation. Coordinates remain(clock,source); no source or conditional-projection definitions are replaced. Its exact native identity, `literal_native_mean_eq_all`, is
+
+condExp_source(literalClass_n) = sourceLift(terminal_n-spatial_n(0)).
+
+It proves strong native joint-L2 convergence for every nonnegative horizon, retaining the entire source-chaos family with clock degree0. Actual zero-time clock and time-integral identities handle T=0 separately; no positive-time heat-potential identity is substituted there. The native eventual uniform source-tail bound chooses N0,n0 before either source cutoff N>=N0 or mollifier index n>=n0 varies. It is a tail estimate for this actual conditional correction, not just for a terminal observable or for one fixed source degree. In particular, the earlier isolated(2,0) result is now part of a whole-family theorem.
+
+Precise limits of this advance: the complete source-zero/all-clock family was verified in1074, and the complete all-source/clock-zero family is verified here. The genuinely mixed sectors with positive source degree AND positive clock degree, their common physical test-dual topology, and their global summability remain open. Clock averaging is an actual bounded projection and may remove singular behavior; this result does not bypass the random first-chaos obstruction or prove convergence of the full unprojected random correction. Physical white-noise-coordinate H^-1 identification is still absent. F3 joint clock-domain membership and intrinsic-core density/nondensity remain open. The concrete F2 result and all earlier work are preserved. These unresolved central obligations keep IBM active.
+
+All69 public declaration types from the seven new modules are inspected at the checkpoint. The modules use default elaboration resource settings; only the existing spectral-space second-countability and exponent facts are used where needed. No new mathematical axiom, dependency, toolchain change, manuscript write, extra research branch or resource increase. Incoming remains43 files/42 exact content hashes; the four IBM archive baselines and the Yang–Mills/Navier–Stokes dictionary hash remain unchanged.
