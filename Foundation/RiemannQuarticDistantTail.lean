@@ -59,8 +59,8 @@ theorem saddle_right_boundary_slope (t u : ℝ) (ht : 0 ≤ t) (hu : 1 ≤ u) (h
   change (complexSlope t (w+(R : ℂ))).re-z.im ≤ -Q*R
   nlinarith
 
-theorem saddle_right_distant_tail (t u : ℝ) (ht : 0 < t) (hu : 2 ≤ u) (hs : phaseSlope t u=0)
-    (z w : ℂ) (hy : z.im ≤ 0) (hw : w ∈ closedBall (u : ℂ) (1/102400))
+theorem saddle_right_distant_tail_yupper (t u : ℝ) (ht : 0 < t) (hu : 2 ≤ u) (hs : phaseSlope t u=0)
+    (z w : ℂ) (hy : z.im ≤ t/4) (hw : w ∈ closedBall (u : ℂ) (1/102400))
     (hstat : complexSlope t w= -(Complex.I*z)) (R : ℝ) (hR0 : 0 < R) (hR : R ≤ 1/819200) :
     ‖∫ x : ℝ in Ioi (w.re+R), saddleWeight t z ((x : ℂ)+(w.im : ℂ)*Complex.I)‖ ≤
       ‖saddleWeight t z w‖*Real.exp (-((3/4 : ℝ)*(t*u^3+1))*R^2)/((t*u^3+1)*R) := by
@@ -75,14 +75,22 @@ theorem saddle_right_distant_tail (t u : ℝ) (ht : 0 < t) (hu : 2 ≤ u) (hs : 
   have hslope := saddle_right_boundary_slope t u ht.le hu1 hs z w hw hstat R hR0.le hR
   rw [← hp] at hslope
   have hk : 0 < (t*u^3+1)*R := by positivity
-  have hi := (right_signed_tail_bound t w.im (w.re+R) ((t*u^3+1)*R) z ht him hy ha hk (by simpa only [neg_mul] using hslope)).2
+  have hi := (right_signed_tail_bound_yupper t w.im (w.re+R) ((t*u^3+1)*R) z ht him hy ha hk (by simpa only [neg_mul] using hslope)).2
   have hlocal := actual_local_gaussian_envelope t u ht.le hu1 hs z w hw hstat R
     (by simpa only [abs_of_pos hR0] using hR)
   rw [hp] at hi
   simpa only [neg_mul] using hi.trans (div_le_div_of_nonneg_right hlocal hk.le)
 
-theorem saddle_left_distant_segment (t u : ℝ) (ht : 0 < t) (hu : 2 ≤ u) (hs : phaseSlope t u=0)
+
+theorem saddle_right_distant_tail (t u : ℝ) (ht : 0 < t) (hu : 2 ≤ u) (hs : phaseSlope t u=0)
     (z w : ℂ) (hy : z.im ≤ 0) (hw : w ∈ closedBall (u : ℂ) (1/102400))
+    (hstat : complexSlope t w= -(Complex.I*z)) (R : ℝ) (hR0 : 0 < R) (hR : R ≤ 1/819200) :
+    ‖∫ x : ℝ in Ioi (w.re+R), saddleWeight t z ((x : ℂ)+(w.im : ℂ)*Complex.I)‖ ≤
+      ‖saddleWeight t z w‖*Real.exp (-((3/4 : ℝ)*(t*u^3+1))*R^2)/((t*u^3+1)*R) := by
+  exact saddle_right_distant_tail_yupper t u ht hu hs z w (by linarith) hw hstat R hR0 hR
+
+theorem saddle_left_distant_segment_yupper (t u : ℝ) (ht : 0 < t) (hu : 2 ≤ u) (hs : phaseSlope t u=0)
+    (z w : ℂ) (hy : z.im ≤ t/4) (hw : w ∈ closedBall (u : ℂ) (1/102400))
     (hstat : complexSlope t w= -(Complex.I*z)) (R : ℝ) (hR0 : 0 < R) (hR : R ≤ 1/819200) :
     ‖∫ x : ℝ in 1..(w.re-R), saddleWeight t z ((x : ℂ)+(w.im : ℂ)*Complex.I)‖ ≤
       (w.re-R-1)*(‖saddleWeight t z w‖*Real.exp (-((3/4 : ℝ)*(t*u^3+1))*R^2)) := by
@@ -98,7 +106,7 @@ theorem saddle_left_distant_segment (t u : ℝ) (ht : 0 < t) (hu : 2 ≤ u) (hs 
   have hsre : (complexSlope t ((w.re : ℂ)+(w.im : ℂ)*Complex.I)).re=z.im := by
     rw [hp0,hstat]
     simp [Complex.mul_re]
-  have hshape := (horizontal_norm_sq_shape t w.im w.re z ht him hy (by linarith) hsre).1
+  have hshape := (horizontal_norm_sq_shape_yupper t w.im w.re z ht him hy (by linarith) hsre).1
   have hlocal := actual_local_gaussian_envelope t u ht.le hu1 hs z w hw hstat (-R)
     (by simpa only [abs_neg,abs_of_pos hR0] using hR)
   simp only [neg_sq] at hlocal
@@ -114,5 +122,13 @@ theorem saddle_left_distant_segment (t u : ℝ) (ht : 0 < t) (hu : 2 ≤ u) (hs 
       Real.exp (-((3/4 : ℝ)*(t*u^3+1))*R^2)) volume 1 (w.re-R) := intervalIntegrable_const
   have hb := intervalIntegral.norm_integral_le_of_norm_le ha (Eventually.of_forall hpoint) hg
   simpa only [intervalIntegral.integral_const,smul_eq_mul] using hb
+
+
+theorem saddle_left_distant_segment (t u : ℝ) (ht : 0 < t) (hu : 2 ≤ u) (hs : phaseSlope t u=0)
+    (z w : ℂ) (hy : z.im ≤ 0) (hw : w ∈ closedBall (u : ℂ) (1/102400))
+    (hstat : complexSlope t w= -(Complex.I*z)) (R : ℝ) (hR0 : 0 < R) (hR : R ≤ 1/819200) :
+    ‖∫ x : ℝ in 1..(w.re-R), saddleWeight t z ((x : ℂ)+(w.im : ℂ)*Complex.I)‖ ≤
+      (w.re-R-1)*(‖saddleWeight t z w‖*Real.exp (-((3/4 : ℝ)*(t*u^3+1))*R^2)) := by
+  exact saddle_left_distant_segment_yupper t u ht hu hs z w (by linarith) hw hstat R hR0 hR
 
 end OperatorDerivativeRewrite.Foundation.RiemannQuarticDistantTail

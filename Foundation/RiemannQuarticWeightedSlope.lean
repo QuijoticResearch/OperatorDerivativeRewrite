@@ -128,8 +128,49 @@ theorem normalizedSlope_hasDerivAt (t h y x : ℝ) (hx : 1 ≤ x) (hh : |h| ≤ 
     try simp only [id_eq]
     ring
 
-theorem normalizedSlope_strictAntiOn (t h y : ℝ) (ht : 0 < t)
-    (hh : |h| ≤ 1/102400) (hy : y ≤ 0) :
+theorem scalar_upper_y_budget (t x h y E E' : ℝ) (ht : 0 < t) (hx : 1 ≤ x)
+    (hh : |h| ≤ 1/102400) (hy : y ≤ t/4) (hE : |E| ≤ 1) (hE' : E' ≤ 32) :
+    4*t*(x^2*(3-4*x)+h^2*(12*x-3))-36+4*y+E'-4*E ≤ -t := by
+  have hb := polynomial_bracket_bound x h hx hh
+  have hm := mul_le_mul_of_nonneg_left hb (by positivity : 0 ≤ 4*t)
+  have hElow := (abs_le.mp hE).1
+  have hx3 : 1 ≤ x^3 := by nlinarith [mul_nonneg (sub_nonneg.mpr hx) (sq_nonneg x)]
+  have hp := mul_le_mul_of_nonneg_left hx3 ht.le
+  nlinarith
+
+theorem actual_operator_budget_yupper (t x h y : ℝ) (ht : 0 < t) (hx : 1 ≤ x)
+    (hh : |h| ≤ 1/102400) (hy : y ≤ t/4) :
+    (deriv (complexSlope t) ((x : ℂ)+(h : ℂ)*Complex.I)).re-
+      4*((complexSlope t ((x : ℂ)+(h : ℂ)*Complex.I)).re-y) ≤ -t := by
+  let w := (x : ℂ)+(h : ℂ)*Complex.I
+  have hw16 : w ∈ closedBall (x : ℂ) (1/16) := horizontal_point_mem x h _ (hh.trans (by norm_num))
+  have hw32 : w ∈ closedBall (x : ℂ) (1/32) := horizontal_point_mem x h _ (hh.trans (by norm_num))
+  have he := slope_model_error_on_neighborhood t x hx w hw16
+  have hd := slope_error_inner_cauchy_bound t x hx w hw32 1
+  simp only [iteratedDeriv_one,Nat.factorial_one,Nat.cast_one,pow_one,one_mul] at hd
+  have ha := slope_analytic_on_neighborhood t x hx w hw16
+  have hm : AnalyticAt ℂ (modelDerivative t) w := by unfold modelDerivative; fun_prop
+  change ‖deriv (complexSlope t - modelDerivative t) w‖ ≤ 32 at hd
+  rw [deriv_sub ha.differentiableAt hm.differentiableAt] at hd
+  let E := (complexSlope t w-modelDerivative t w).re
+  let E' := (deriv (complexSlope t) w-deriv (modelDerivative t) w).re
+  have hE : |E| ≤ 1 := (Complex.abs_re_le_norm _).trans he
+  have hE' : E' ≤ 32 := (Complex.re_le_norm _).trans hd
+  have hb := scalar_upper_y_budget t x h y E E' ht hx hh hy hE hE'
+  have hid : (deriv (complexSlope t) w).re-4*((complexSlope t w).re-y)=
+      4*t*(x^2*(3-4*x)+h^2*(12*x-3))-36+4*y+E'-4*E := by
+    dsimp [E,E']
+    try simp only [Complex.sub_re]
+    dsimp [w]
+    rw [model_real_re,model_deriv_real_re]
+    ring
+  change (deriv (complexSlope t) w).re-4*((complexSlope t w).re-y)≤-t
+  rw [hid]
+  exact hb
+
+
+theorem normalizedSlope_strictAntiOn_yupper (t h y : ℝ) (ht : 0 < t)
+    (hh : |h| ≤ 1/102400) (hy : y ≤ t/4) :
     StrictAntiOn (normalizedSlope t h y) (Ici 1) := by
   apply strictAntiOn_of_deriv_neg (convex_Ici 1)
   · intro x hx
@@ -137,14 +178,20 @@ theorem normalizedSlope_strictAntiOn (t h y : ℝ) (ht : 0 < t)
   · intro x hx
     have hx1 : 1 ≤ x := interior_subset hx
     rw [(normalizedSlope_hasDerivAt t h y x hx1 hh).deriv]
-    exact mul_neg_of_pos_of_neg (Real.exp_pos _) (actual_operator_budget t x h y ht hx1 hh hy)
+    exact mul_neg_of_pos_of_neg (Real.exp_pos _) ((actual_operator_budget_yupper t x h y ht hx1 hh hy).trans_lt (by linarith))
 
-theorem shifted_slope_signs (t h y a : ℝ) (ht : 0 < t)
-    (hh : |h| ≤ 1/102400) (hy : y ≤ 0) (ha : 1 ≤ a)
+
+theorem normalizedSlope_strictAntiOn (t h y : ℝ) (ht : 0 < t)
+    (hh : |h| ≤ 1/102400) (hy : y ≤ 0) :
+    StrictAntiOn (normalizedSlope t h y) (Ici 1) := by
+  exact normalizedSlope_strictAntiOn_yupper t h y ht hh (by linarith)
+
+theorem shifted_slope_signs_yupper (t h y a : ℝ) (ht : 0 < t)
+    (hh : |h| ≤ 1/102400) (hy : y ≤ t/4) (ha : 1 ≤ a)
     (hs : (complexSlope t ((a : ℂ)+(h : ℂ)*Complex.I)).re=y) :
     (∀ x : ℝ, 1 ≤ x → x < a → y < (complexSlope t ((x : ℂ)+(h : ℂ)*Complex.I)).re) ∧
     (∀ x : ℝ, a < x → (complexSlope t ((x : ℂ)+(h : ℂ)*Complex.I)).re < y) := by
-  have hanti := normalizedSlope_strictAntiOn t h y ht hh hy
+  have hanti := normalizedSlope_strictAntiOn_yupper t h y ht hh hy
   have hzero : normalizedSlope t h y a=0 := by simp [normalizedSlope,hs]
   constructor
   · intro x hx hxa
@@ -162,5 +209,13 @@ theorem shifted_slope_signs (t h y a : ℝ) (ht : 0 < t)
         change Real.exp (-4*x)*((complexSlope t ((x : ℂ)+(h : ℂ)*Complex.I)).re-y)<0 at hneg
         nlinarith [Real.exp_pos (-4*x)]
     linarith
+
+
+theorem shifted_slope_signs (t h y a : ℝ) (ht : 0 < t)
+    (hh : |h| ≤ 1/102400) (hy : y ≤ 0) (ha : 1 ≤ a)
+    (hs : (complexSlope t ((a : ℂ)+(h : ℂ)*Complex.I)).re=y) :
+    (∀ x : ℝ, 1 ≤ x → x < a → y < (complexSlope t ((x : ℂ)+(h : ℂ)*Complex.I)).re) ∧
+    (∀ x : ℝ, a < x → (complexSlope t ((x : ℂ)+(h : ℂ)*Complex.I)).re < y) := by
+  exact shifted_slope_signs_yupper t h y a ht hh (by linarith) ha hs
 
 end OperatorDerivativeRewrite.Foundation.RiemannQuarticWeightedSlope

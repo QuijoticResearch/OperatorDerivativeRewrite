@@ -1716,3 +1716,8 @@ import Foundation.RiemannQuarticHalflineApproximation
 import Foundation.RiemannQuarticSaddleGrowth
 import Foundation.RiemannQuarticErrorLimits
 import Foundation.RiemannQuarticUniformSaddle
+import Foundation.RiemannQuarticValueCells105To124
+import Foundation.RiemannQuarticSignedContour
+import Foundation.RiemannQuarticSuppressedSaddle
+import Foundation.RiemannQuarticPairedSaddle
+import Foundation.RiemannQuarticFrequencyRegion

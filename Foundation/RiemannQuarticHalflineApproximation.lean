@@ -55,8 +55,8 @@ theorem actual_halfline_split (t : ℝ) (z w : ℂ) (R : ℝ) (hR : 0 ≤ R)
     (∫ x : ℝ in 0..(w.re+R), f x) at hs2
   linear_combination -hsplit-hs1-hs2
 
-theorem halfline_error_of_compact_bound (t u : ℝ) (ht : 0 < t) (hu : 2 ≤ u) (hs : phaseSlope t u=0)
-    (z w : ℂ) (hy : z.im ≤ 0) (hw : w ∈ closedBall (u : ℂ) (1/102400))
+theorem halfline_error_of_compact_bound_yupper (t u : ℝ) (ht : 0 < t) (hu : 2 ≤ u) (hs : phaseSlope t u=0)
+    (z w : ℂ) (hy : z.im ≤ t/4) (hw : w ∈ closedBall (u : ℂ) (1/102400))
     (hstat : complexSlope t w= -(Complex.I*z)) (r R B : ℝ) (hr : 0 < r) (hrR : r ≤ R)
     (hR : R ≤ 1/819200) (hsmall : 204800*(t*u^3+1)*r^3 ≤ 1)
     (hcompact : ‖∫ x : ℝ in 0..1, saddleWeight t z ((x : ℂ)+(w.im : ℂ)*Complex.I)‖ ≤
@@ -75,8 +75,8 @@ theorem halfline_error_of_compact_bound (t u : ℝ) (ht : 0 < t) (hu : 2 ≤ u) 
   simp only [Complex.sub_re,Complex.ofReal_re] at hre
   have ha : 1 ≤ w.re-R := by linarith [(abs_le.mp hre).1]
   have hsplit := actual_halfline_split t z w R hR0.le (him.trans (by norm_num)) ha
-  have hleft := saddle_left_distant_segment t u ht hu hs z w hy hw hstat R hR0 hR
-  have hright := saddle_right_distant_tail t u ht hu hs z w hy hw hstat R hR0 hR
+  have hleft := saddle_left_distant_segment_yupper t u ht hu hs z w hy hw hstat R hR0 hR
+  have hright := saddle_right_distant_tail_yupper t u ht hu hs z w hy hw hstat R hR0 hR
   have hwindow := fixed_window_gaussian_error t u ht.le (by linarith) hs z w hw hstat r R hr hrR hR hsmall
   have he : (∫ x : ℝ in Ioi 0, f x)-A*G=
       ((∫ x : ℝ in 0..1, f x)+(∫ x : ℝ in 1..(w.re-R), f x))+
@@ -97,8 +97,20 @@ theorem halfline_error_of_compact_bound (t u : ℝ) (ht : 0 < t) (hu : 2 ≤ u) 
   simp only [horizontalBudget,neg_mul,div_eq_mul_inv] at hleft hright hwindow hn1 hn2 hn3 hcompact ⊢
   nlinarith
 
-theorem halfline_relative_error_of_compact_bound (t u : ℝ) (ht : 0 < t) (hu : 2 ≤ u) (hs : phaseSlope t u=0)
+
+theorem halfline_error_of_compact_bound (t u : ℝ) (ht : 0 < t) (hu : 2 ≤ u) (hs : phaseSlope t u=0)
     (z w : ℂ) (hy : z.im ≤ 0) (hw : w ∈ closedBall (u : ℂ) (1/102400))
+    (hstat : complexSlope t w= -(Complex.I*z)) (r R B : ℝ) (hr : 0 < r) (hrR : r ≤ R)
+    (hR : R ≤ 1/819200) (hsmall : 204800*(t*u^3+1)*r^3 ≤ 1)
+    (hcompact : ‖∫ x : ℝ in 0..1, saddleWeight t z ((x : ℂ)+(w.im : ℂ)*Complex.I)‖ ≤
+      ‖saddleWeight t z w‖*B) :
+    ‖(∫ x : ℝ in Ioi 0, saddleWeight t z ((x : ℂ)+(w.im : ℂ)*Complex.I))-
+      saddleWeight t z w*((Real.pi : ℂ)/(-(deriv (complexSlope t) w)/2))^(1/2 : ℂ)‖ ≤
+      ‖saddleWeight t z w‖*(B+horizontalBudget (t*u^3+1) w.re r R) := by
+  exact halfline_error_of_compact_bound_yupper t u ht hu hs z w (by linarith) hw hstat r R B hr hrR hR hsmall hcompact
+
+theorem halfline_relative_error_of_compact_bound_yupper (t u : ℝ) (ht : 0 < t) (hu : 2 ≤ u) (hs : phaseSlope t u=0)
+    (z w : ℂ) (hy : z.im ≤ t/4) (hw : w ∈ closedBall (u : ℂ) (1/102400))
     (hstat : complexSlope t w= -(Complex.I*z)) (r R B : ℝ) (hr : 0 < r) (hrR : r ≤ R)
     (hR : R ≤ 1/819200) (hsmall : 204800*(t*u^3+1)*r^3 ≤ 1)
     (hcompact : ‖∫ x : ℝ in 0..1, saddleWeight t z ((x : ℂ)+(w.im : ℂ)*Complex.I)‖ ≤
@@ -122,7 +134,7 @@ theorem halfline_relative_error_of_compact_bound (t u : ℝ) (ht : 0 < t) (hu : 
   have hc : 0 < c := by dsimp [c]; positivity
   have hGpos : 0 < ‖G‖ := by nlinarith [norm_nonneg G]
   have hGne : G ≠ 0 := norm_pos_iff.mp hGpos
-  have hmain := halfline_error_of_compact_bound t u ht hu hs z w hy hw hstat r R B hr hrR hR hsmall hcompact
+  have hmain := halfline_error_of_compact_bound_yupper t u ht hu hs z w hy hw hstat r R B hr hrR hR hsmall hcompact
   change ‖J-A*G‖ ≤ ‖A‖*E at hmain
   have hE : 0 ≤ E := by nlinarith [norm_nonneg (J-A*G)]
   have hm := mul_le_mul_of_nonneg_left hG (mul_nonneg hApos.le hE)
@@ -131,6 +143,18 @@ theorem halfline_relative_error_of_compact_bound (t u : ℝ) (ht : 0 < t) (hu : 
   change ‖J/(A*G)-1‖ ≤ c*E
   rw [hid,norm_div,norm_mul]
   exact (div_le_iff₀ (mul_pos hApos hGpos)).mpr hscaled
+
+
+theorem halfline_relative_error_of_compact_bound (t u : ℝ) (ht : 0 < t) (hu : 2 ≤ u) (hs : phaseSlope t u=0)
+    (z w : ℂ) (hy : z.im ≤ 0) (hw : w ∈ closedBall (u : ℂ) (1/102400))
+    (hstat : complexSlope t w= -(Complex.I*z)) (r R B : ℝ) (hr : 0 < r) (hrR : r ≤ R)
+    (hR : R ≤ 1/819200) (hsmall : 204800*(t*u^3+1)*r^3 ≤ 1)
+    (hcompact : ‖∫ x : ℝ in 0..1, saddleWeight t z ((x : ℂ)+(w.im : ℂ)*Complex.I)‖ ≤
+      ‖saddleWeight t z w‖*B) :
+    ‖(∫ x : ℝ in Ioi 0, saddleWeight t z ((x : ℂ)+(w.im : ℂ)*Complex.I))/
+      (saddleWeight t z w*((Real.pi : ℂ)/(-(deriv (complexSlope t) w)/2))^(1/2 : ℂ))-1‖ ≤
+      40*Real.sqrt (t*u^3+1)*(B+horizontalBudget (t*u^3+1) w.re r R) := by
+  exact halfline_relative_error_of_compact_bound_yupper t u ht hu hs z w (by linarith) hw hstat r R B hr hrR hR hsmall hcompact
 
 theorem branch_halfline_relative_error (t u : ℝ) (ht : 0 < t) (hu : 2 ≤ u)
     (hm : IsMaxOn (weighted 0 t 0) (Ici 0) u) (hs : phaseSlope t u=0)

@@ -39,12 +39,12 @@ theorem horizontal_norm_sq_hasDerivAt (t h x : ℝ) (z : ℂ) (hx : 1 ≤ x)
   simp [Complex.inner,mul_assoc,Complex.mul_conj',Complex.mul_re,Complex.mul_im,
     ← Complex.ofReal_pow,sub_eq_add_neg]
 
-theorem horizontal_norm_sq_shape (t h a : ℝ) (z : ℂ) (ht : 0 < t)
-    (hh : |h| ≤ 1/102400) (hy : z.im ≤ 0) (ha : 1 ≤ a)
+theorem horizontal_norm_sq_shape_yupper (t h a : ℝ) (z : ℂ) (ht : 0 < t)
+    (hh : |h| ≤ 1/102400) (hy : z.im ≤ t/4) (ha : 1 ≤ a)
     (hs : (complexSlope t ((a : ℂ)+(h : ℂ)*Complex.I)).re=z.im) :
     MonotoneOn (fun x : ℝ => ‖saddleWeight t z ((x : ℂ)+(h : ℂ)*Complex.I)‖^2) (Icc 1 a) ∧
     AntitoneOn (fun x : ℝ => ‖saddleWeight t z ((x : ℂ)+(h : ℂ)*Complex.I)‖^2) (Ici a) := by
-  have hsign := shifted_slope_signs t h z.im a ht hh hy ha hs
+  have hsign := shifted_slope_signs_yupper t h z.im a ht hh hy ha hs
   constructor
   · apply monotoneOn_of_deriv_nonneg (convex_Icc 1 a)
     · intro x hx
@@ -66,16 +66,33 @@ theorem horizontal_norm_sq_shape (t h a : ℝ) (z : ℂ) (ht : 0 < t)
       rw [(horizontal_norm_sq_hasDerivAt t h x z (le_trans ha hax.le) hh).deriv]
       exact mul_nonpos_of_nonpos_of_nonneg (by linarith [hsign.2 x hax]) (sq_nonneg _)
 
+
+theorem horizontal_norm_sq_shape (t h a : ℝ) (z : ℂ) (ht : 0 < t)
+    (hh : |h| ≤ 1/102400) (hy : z.im ≤ 0) (ha : 1 ≤ a)
+    (hs : (complexSlope t ((a : ℂ)+(h : ℂ)*Complex.I)).re=z.im) :
+    MonotoneOn (fun x : ℝ => ‖saddleWeight t z ((x : ℂ)+(h : ℂ)*Complex.I)‖^2) (Icc 1 a) ∧
+    AntitoneOn (fun x : ℝ => ‖saddleWeight t z ((x : ℂ)+(h : ℂ)*Complex.I)‖^2) (Ici a) := by
+  exact horizontal_norm_sq_shape_yupper t h a z ht hh (by linarith) ha hs
+
+theorem right_slope_bound_yupper (t h y b : ℝ) (ht : 0 < t)
+    (hh : |h| ≤ 1/102400) (hy : y ≤ t/4) (hb : 1 ≤ b)
+    (hneg : (complexSlope t ((b : ℂ)+(h : ℂ)*Complex.I)).re-y ≤ 0)
+    (x : ℝ) (hbx : b ≤ x) :
+    (complexSlope t ((x : ℂ)+(h : ℂ)*Complex.I)).re-y ≤
+      (complexSlope t ((b : ℂ)+(h : ℂ)*Complex.I)).re-y := by
+  have hm := (normalizedSlope_strictAntiOn_yupper t h y ht hh hy).antitoneOn hb (hb.trans hbx) hbx
+  have he : Real.exp (-4*x) ≤ Real.exp (-4*b) := Real.exp_le_exp.mpr (by linarith)
+  have hp := mul_le_mul_of_nonpos_right he hneg
+  exact (mul_le_mul_iff_right₀ (Real.exp_pos (-4*x))).mp (hm.trans hp)
+
+
 theorem right_slope_bound (t h y b : ℝ) (ht : 0 < t)
     (hh : |h| ≤ 1/102400) (hy : y ≤ 0) (hb : 1 ≤ b)
     (hneg : (complexSlope t ((b : ℂ)+(h : ℂ)*Complex.I)).re-y ≤ 0)
     (x : ℝ) (hbx : b ≤ x) :
     (complexSlope t ((x : ℂ)+(h : ℂ)*Complex.I)).re-y ≤
       (complexSlope t ((b : ℂ)+(h : ℂ)*Complex.I)).re-y := by
-  have hm := (normalizedSlope_strictAntiOn t h y ht hh hy).antitoneOn hb (hb.trans hbx) hbx
-  have he : Real.exp (-4*x) ≤ Real.exp (-4*b) := Real.exp_le_exp.mpr (by linarith)
-  have hp := mul_le_mul_of_nonpos_right he hneg
-  exact (mul_le_mul_iff_right₀ (Real.exp_pos (-4*x))).mp (hm.trans hp)
+  exact right_slope_bound_yupper t h y b ht hh (by linarith) hb hneg x hbx
 
 theorem tilted_norm_sq_hasDerivAt (t h b k x : ℝ) (z : ℂ) (hx : 1 ≤ x)
     (hh : |h| ≤ 1/102400) :
@@ -89,8 +106,8 @@ theorem tilted_norm_sq_hasDerivAt (t h b k x : ℝ) (z : ℂ) (hx : 1 ≤ x)
   · dsimp
     ring
 
-theorem right_weight_exponential_decay (t h b k : ℝ) (z : ℂ) (ht : 0 < t)
-    (hh : |h| ≤ 1/102400) (hy : z.im ≤ 0) (hb : 1 ≤ b) (hk : 0 ≤ k)
+theorem right_weight_exponential_decay_yupper (t h b k : ℝ) (z : ℂ) (ht : 0 < t)
+    (hh : |h| ≤ 1/102400) (hy : z.im ≤ t/4) (hb : 1 ≤ b) (hk : 0 ≤ k)
     (hslope : (complexSlope t ((b : ℂ)+(h : ℂ)*Complex.I)).re-z.im ≤ -k)
     (x : ℝ) (hbx : b ≤ x) :
     ‖saddleWeight t z ((x : ℂ)+(h : ℂ)*Complex.I)‖ ≤
@@ -104,7 +121,7 @@ theorem right_weight_exponential_decay (t h b k : ℝ) (z : ℂ) (ht : 0 < t)
       exact (tilted_norm_sq_hasDerivAt t h b k v z (hb.trans (interior_subset hv)) hh).differentiableAt.differentiableWithinAt
     · intro v hv
       have hbv : b ≤ v := interior_subset hv
-      have hs := right_slope_bound t h z.im b ht hh hy hb (by linarith) v hbv
+      have hs := right_slope_bound_yupper t h z.im b ht hh hy hb (by linarith) v hbv
       rw [(tilted_norm_sq_hasDerivAt t h b k v z (hb.trans hbv) hh).deriv]
       exact mul_nonpos_of_nonpos_of_nonneg
         (mul_nonpos_of_nonneg_of_nonpos (by positivity) (by linarith)) (sq_nonneg _)
@@ -122,8 +139,17 @@ theorem right_weight_exponential_decay (t h b k : ℝ) (z : ℂ) (ht : 0 < t)
       mul_le_mul_of_nonneg_left hl (Real.exp_pos _).le
     _ = _ := mul_comm _ _
 
-theorem right_signed_tail_bound (t h b k : ℝ) (z : ℂ) (ht : 0 < t)
-    (hh : |h| ≤ 1/102400) (hy : z.im ≤ 0) (hb : 1 ≤ b) (hk : 0 < k)
+
+theorem right_weight_exponential_decay (t h b k : ℝ) (z : ℂ) (ht : 0 < t)
+    (hh : |h| ≤ 1/102400) (hy : z.im ≤ 0) (hb : 1 ≤ b) (hk : 0 ≤ k)
+    (hslope : (complexSlope t ((b : ℂ)+(h : ℂ)*Complex.I)).re-z.im ≤ -k)
+    (x : ℝ) (hbx : b ≤ x) :
+    ‖saddleWeight t z ((x : ℂ)+(h : ℂ)*Complex.I)‖ ≤
+      ‖saddleWeight t z ((b : ℂ)+(h : ℂ)*Complex.I)‖*Real.exp (-k*(x-b)) := by
+  exact right_weight_exponential_decay_yupper t h b k z ht hh (by linarith) hb hk hslope x hbx
+
+theorem right_signed_tail_bound_yupper (t h b k : ℝ) (z : ℂ) (ht : 0 < t)
+    (hh : |h| ≤ 1/102400) (hy : z.im ≤ t/4) (hb : 1 ≤ b) (hk : 0 < k)
     (hslope : (complexSlope t ((b : ℂ)+(h : ℂ)*Complex.I)).re-z.im ≤ -k) :
     IntegrableOn (fun x : ℝ => saddleWeight t z ((x : ℂ)+(h : ℂ)*Complex.I)) (Ioi b) ∧
     ‖∫ x : ℝ in Ioi b, saddleWeight t z ((x : ℂ)+(h : ℂ)*Complex.I)‖ ≤
@@ -134,7 +160,7 @@ theorem right_signed_tail_bound (t h b k : ℝ) (z : ℂ) (ht : 0 < t)
   have hbound : ∀ᵐ (x : ℝ) ∂volume.restrict (Ioi b),
       ‖saddleWeight t z ((x : ℂ)+(h : ℂ)*Complex.I)‖ ≤ (B*Real.exp (k*b))*Real.exp ((-k)*x) := by
     filter_upwards [ae_restrict_mem measurableSet_Ioi] with x hx
-    have hd := right_weight_exponential_decay t h b k z ht hh hy hb hk.le hslope x (show b ≤ x from le_of_lt hx)
+    have hd := right_weight_exponential_decay_yupper t h b k z ht hh hy hb hk.le hslope x (show b ≤ x from le_of_lt hx)
     convert hd using 1
     rw [mul_assoc,← Real.exp_add]
     congr 1
@@ -150,5 +176,14 @@ theorem right_signed_tail_bound (t h b k : ℝ) (z : ℂ) (ht : 0 < t)
         calc
           _ = B*(Real.exp (k*b)*Real.exp ((-k)*b))/k := by ring
           _ = _ := by rw [he,mul_one]
+
+
+theorem right_signed_tail_bound (t h b k : ℝ) (z : ℂ) (ht : 0 < t)
+    (hh : |h| ≤ 1/102400) (hy : z.im ≤ 0) (hb : 1 ≤ b) (hk : 0 < k)
+    (hslope : (complexSlope t ((b : ℂ)+(h : ℂ)*Complex.I)).re-z.im ≤ -k) :
+    IntegrableOn (fun x : ℝ => saddleWeight t z ((x : ℂ)+(h : ℂ)*Complex.I)) (Ioi b) ∧
+    ‖∫ x : ℝ in Ioi b, saddleWeight t z ((x : ℂ)+(h : ℂ)*Complex.I)‖ ≤
+      ‖saddleWeight t z ((b : ℂ)+(h : ℂ)*Complex.I)‖/k := by
+  exact right_signed_tail_bound_yupper t h b k z ht hh (by linarith) hb hk hslope
 
 end OperatorDerivativeRewrite.Foundation.RiemannQuarticShiftedAmplitude
