@@ -6,10 +6,11 @@ open MeasureTheory
 open scoped ENNReal
 namespace OperatorDerivativeRewrite.Foundation.BochnerLinearIsometry
 variable {X E F : Type*} [MeasurableSpace X] (μ : Measure X)
-  [NormedAddCommGroup E] [NormedSpace ℝ E]
-  [NormedAddCommGroup F] [NormedSpace ℝ F]
+  {𝕜 : Type*} [NontriviallyNormedField 𝕜]
+  [NormedAddCommGroup E] [NormedSpace 𝕜 E]
+  [NormedAddCommGroup F] [NormedSpace 𝕜 F]
 
-def lift (J : E →ₗᵢ[ℝ] F) : Lp E 2 μ →ₗᵢ[ℝ] Lp F 2 μ where
+def lift (J : E →ₗᵢ[𝕜] F) : Lp E 2 μ →ₗᵢ[𝕜] Lp F 2 μ where
   toLinearMap := (J.toContinuousLinearMap.compLpL 2 μ).toLinearMap
   norm_map' u := by
     rw [Lp.norm_def, Lp.norm_def]
@@ -20,13 +21,13 @@ def lift (J : E →ₗᵢ[ℝ] F) : Lp E 2 μ →ₗᵢ[ℝ] Lp F 2 μ where
     rw [hx]
     exact J.norm_map (u x)
 
-theorem lift_coeFn (J : E →ₗᵢ[ℝ] F) (u : Lp E 2 μ) :
+theorem lift_coeFn (J : E →ₗᵢ[𝕜] F) (u : Lp E 2 μ) :
     lift μ J u =ᵐ[μ] fun x => J (u x) := J.toContinuousLinearMap.coeFn_compLp u
 
-theorem lift_norm (J : E →ₗᵢ[ℝ] F) (u : Lp E 2 μ) : ‖lift μ J u‖ = ‖u‖ :=
+theorem lift_norm (J : E →ₗᵢ[𝕜] F) (u : Lp E 2 μ) : ‖lift μ J u‖ = ‖u‖ :=
   (lift μ J).norm_map u
 
-theorem lift_eq_zero_iff (J : E →ₗᵢ[ℝ] F) (u : Lp E 2 μ) : lift μ J u = 0 ↔ u = 0 :=
+theorem lift_eq_zero_iff (J : E →ₗᵢ[𝕜] F) (u : Lp E 2 μ) : lift μ J u = 0 ↔ u = 0 :=
   (lift μ J).injective.eq_iff' (map_zero _)
 
 end OperatorDerivativeRewrite.Foundation.BochnerLinearIsometry

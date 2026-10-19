@@ -1567,3 +1567,12 @@ import Foundation.IBMPhysicalDirac
 import Foundation.IBMPhysicalNegativeEmbedding
 import Foundation.IBMSchwartzPhysicalSlope
 import Foundation.IBMSchwartzPhysicalSlopeClock
+import Foundation.BochnerLinearIsometry
+import Foundation.ComplexL2Isometry
+import Foundation.GaussianComplexHorizonIto
+import Foundation.GaussianParameterizedIto
+import Foundation.GaussianParameterizedItoTensor
+import Foundation.IBMPhysicalClockIto
+import Foundation.IBMPhysicalClockItoTensor
+import Foundation.IBMSchwartzPhysicalClockIntegral
+import Foundation.ReflectedC2Primitive
