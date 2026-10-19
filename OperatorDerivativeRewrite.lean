@@ -1594,3 +1594,5 @@ import Foundation.IBMFirstSourceClockGraph
 import Foundation.IBMClockAverageGraph
 import Foundation.GaussianAnalyticCoordinateIBP
 import Foundation.GaussianFiniteGradientTransport
+import Foundation.GaussianClosedChainRule
+import Foundation.IBMNonlinearAverageGraph
