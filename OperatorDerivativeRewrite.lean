@@ -1691,3 +1691,6 @@ import Foundation.RiemannThetaDerivativeBounds
 import Foundation.RiemannQuarticRealSaddle
 import Foundation.RiemannQuarticSaddleTimes
 import Foundation.RiemannQuarticSaddleBranch
+import Foundation.RiemannQuarticValueCells005To024
+import Foundation.RiemannQuarticCurvature
+import Foundation.RiemannQuarticSaddleNeighborhood

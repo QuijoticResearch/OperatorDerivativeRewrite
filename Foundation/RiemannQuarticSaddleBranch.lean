@@ -1,8 +1,8 @@
 import Foundation.RiemannQuarticSaddleTimes
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.Analytic
 /-! Actual analytic complex saddle branches near frequency zero.
-A nonexceptional positive global maximum supplies an invertible exact phase
-slope. The analytic inverse theorem constructs a branch and its derivative,
+A positive global maximum with a nonzero exact phase derivative supplies
+an invertible slope. The original nonexceptional-time wrapper is retained. The analytic inverse theorem constructs a branch and its derivative,
 remaining locally in the theta convergence/nonvanishing domain. No uniform
 frequency radius, global continuation or integrated contour bound is asserted. -/
 noncomputable section
@@ -40,9 +40,8 @@ theorem complexSlope_analyticAt (t u : ℝ) (hu : 0 < u) :
   have ha := kernelComplex_analyticAt (u : ℂ) he
   exact (analyticAt_const.mul (analyticAt_id.pow 3)).add (ha.deriv.div ha hk)
 
-theorem complexSlope_deriv_ne_zero (t u : ℝ) (ht : t ∉ exceptionalTimes) (hu : 0 < u)
-    (hm : IsMaxOn (weighted 0 t 0) (Ici 0) u) :
-    deriv (complexSlope t) (u : ℂ) ≠ 0 := by
+theorem complexSlope_deriv_ne_zero_of_real (t u : ℝ) (hu : 0 < u)
+    (hreal : deriv (phaseSlope t) u ≠ 0) : deriv (complexSlope t) (u : ℂ) ≠ 0 := by
   have ha := complexSlope_analyticAt t u hu
   have hr : HasDerivAt (phaseSlope t) (deriv (complexSlope t) (u : ℂ)).re u := by
     convert ha.differentiableAt.hasDerivAt.real_of_complex using 1
@@ -52,7 +51,12 @@ theorem complexSlope_deriv_ne_zero (t u : ℝ) (ht : t ∉ exceptionalTimes) (hu
   intro hz
   have he := hr.deriv
   rw [hz,Complex.zero_re] at he
-  exact nonexceptional_max_nondegenerate t u ht hu hm he
+  exact hreal he
+
+theorem complexSlope_deriv_ne_zero (t u : ℝ) (ht : t ∉ exceptionalTimes) (hu : 0 < u)
+    (hm : IsMaxOn (weighted 0 t 0) (Ici 0) u) :
+    deriv (complexSlope t) (u : ℂ) ≠ 0 :=
+  complexSlope_deriv_ne_zero_of_real t u hu (nonexceptional_max_nondegenerate t u ht hu hm)
 
 theorem complexSlope_zero_at_max (t u : ℝ) (hu : 0 < u)
     (hm : IsMaxOn (weighted 0 t 0) (Ici 0) u) : complexSlope t (u : ℂ)=0 := by
@@ -63,15 +67,15 @@ theorem complexSlope_zero_at_max (t u : ℝ) (hu : 0 < u)
     exact max_real_stationary t u hu hm
   rw [hs,Complex.ofReal_zero]
 
-theorem exists_local_saddle_branch (t u : ℝ) (ht : t ∉ exceptionalTimes) (hu : 0 < u)
-    (hm : IsMaxOn (weighted 0 t 0) (Ici 0) u) :
+theorem exists_local_saddle_branch_of_deriv_ne_zero (t u : ℝ) (hu : 0 < u)
+    (hm : IsMaxOn (weighted 0 t 0) (Ici 0) u)
+    (hn : deriv (complexSlope t) (u : ℂ) ≠ 0) :
     ∃ branch : ℂ → ℂ, branch 0=(u : ℂ) ∧ AnalyticAt ℂ branch 0 ∧
       HasStrictDerivAt branch (-Complex.I/deriv (complexSlope t) (u : ℂ)) 0 ∧
       ∀ᶠ z in nhds (0 : ℂ), complexSlope t (branch z)=-(Complex.I*z) ∧
         0 < (Complex.exp (4*branch z)).re ∧ kernelComplex (branch z) ≠ 0 := by
   have ha := complexSlope_analyticAt t u hu
   have hf := ha.hasStrictDerivAt
-  have hn := complexSlope_deriv_ne_zero t u ht hu hm
   have hz := complexSlope_zero_at_max t u hu hm
   let inv := hf.localInverse (complexSlope t) (deriv (complexSlope t) (u : ℂ)) (u : ℂ) hn
   have hleft : inv (complexSlope t (u : ℂ))=(u : ℂ) :=
@@ -116,4 +120,14 @@ theorem exists_local_saddle_branch (t u : ℝ) (ht : t ∉ exceptionalTimes) (hu
       simpa only [ContinuousAt,mul_zero,neg_zero,hbase] using h
     filter_upwards [hc.eventually hright,hb.eventually hd,hb.eventually hkn] with z hz hd hk
     exact ⟨hz,hd,hk⟩
+
+theorem exists_local_saddle_branch (t u : ℝ) (ht : t ∉ exceptionalTimes) (hu : 0 < u)
+    (hm : IsMaxOn (weighted 0 t 0) (Ici 0) u) :
+    ∃ branch : ℂ → ℂ, branch 0=(u : ℂ) ∧ AnalyticAt ℂ branch 0 ∧
+      HasStrictDerivAt branch (-Complex.I/deriv (complexSlope t) (u : ℂ)) 0 ∧
+      ∀ᶠ z in nhds (0 : ℂ), complexSlope t (branch z)=-(Complex.I*z) ∧
+        0 < (Complex.exp (4*branch z)).re ∧ kernelComplex (branch z) ≠ 0 := by
+  exact exists_local_saddle_branch_of_deriv_ne_zero t u hu hm
+    (complexSlope_deriv_ne_zero t u ht hu hm)
+
 end OperatorDerivativeRewrite.Foundation.RiemannQuarticSaddleBranch
