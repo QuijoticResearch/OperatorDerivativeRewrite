@@ -1836,3 +1836,5 @@ import Foundation.RiemannRealOrderBranchObstruction
 import Foundation.RiemannQuarticThresholdZeros
 import Foundation.RiemannQuarticThresholdCompactness
 import Foundation.RiemannQuarticThresholdCollision
+import Foundation.RiemannRealOrderFourierDecay
+import Foundation.RiemannRealOrderRealUniform
