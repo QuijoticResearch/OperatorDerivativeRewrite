@@ -62,15 +62,17 @@ theorem phase_im_lower_bound (x r s D : ℝ) (Φ : ℂ → ℂ)
   rw [hconj,hn,hn,Complex.norm_real,Real.norm_eq_abs,abs_of_pos hs] at h
   nlinarith
 
-theorem local_real_simple_zero (t x r s D : ℝ) (E Φ : ℂ → ℂ)
+theorem local_real_simple_zero_of_differentiable (g : ℂ → ℂ)
+    (hg : Differentiable ℂ g) (hgconj : ∀ z : ℂ, g (conj z)=conj (g z))
+    (x r s D : ℝ) (E Φ : ℂ → ℂ)
     (hs : 0 < s) (hr : 0 < r) (hD : 0 ≤ D)
     (hscaled : D/s ≤ 1/1000000) (hbuffer : 1/s ≤ r/2)
     (hglobal : ∀ z : ℂ, E z ≠ 0 ∧ E (conj z)=conj (E z) ∧ Φ (conj z)=conj (Φ z))
     (hlocal : ∀ z : ℂ, ‖z-(x : ℂ)‖ < r → AnalyticAt ℂ E z ∧ AnalyticAt ℂ Φ z ∧
       ‖deriv Φ z-(s : ℂ)‖ ≤ D ∧
-      ‖RiemannQuarticFlow.flow t z/E z-Complex.cos (Φ z)‖ ≤ (1/1000000)*Real.cosh (Φ z).im)
-    (z : ℂ) (hz : ‖z-(x : ℂ)‖ < r/2) (hzero : RiemannQuarticFlow.flow t z=0) :
-    z.im=0 ∧ deriv (RiemannQuarticFlow.flow t) z ≠ 0 := by
+      ‖g z/E z-Complex.cos (Φ z)‖ ≤ (1/1000000)*Real.cosh (Φ z).im)
+    (z : ℂ) (hz : ‖z-(x : ℂ)‖ < r/2) (hzero : g z=0) :
+    z.im=0 ∧ deriv (g) z ≠ 0 := by
   have herror := fun y hy => (hlocal y hy).2.2.2
   have hEa := fun y hy => (hlocal y hy).1
   have hΦa := fun y hy => (hlocal y hy).2.1
@@ -81,7 +83,7 @@ theorem local_real_simple_zero (t x r s D : ℝ) (E Φ : ℂ → ℂ)
   let p := z.re
   let a := (Φ (p : ℂ)).re
   let L := fun q : ℂ => (p : ℂ)+(q-(a : ℂ))/(s : ℂ)
-  let F := fun y : ℂ => RiemannQuarticFlow.flow t y/E y
+  let F := fun y : ℂ => g y/E y
   let f := fun q : ℂ => F (L q)
   let q₀ := (a : ℂ)+(s : ℂ)*(z-(p : ℂ))
   have hspos : 0 < s := hs
@@ -138,7 +140,7 @@ theorem local_real_simple_zero (t x r s D : ℝ) (E Φ : ℂ → ℂ)
     exact h.trans (hm.trans hbound)
   have hf : ∀ q ∈ closedBall (a : ℂ) 1, DifferentiableAt ℂ f q := by
     intro q hq
-    exact (((RiemannQuarticFlow.flow_differentiable t).analyticAt (L q)).div
+    exact ((hg.analyticAt (L q)).div
       (hEa (L q) (hinside (L q) (hLmem q hq))) (hglobal (L q)).1).differentiableAt.comp q (by dsimp [L]; fun_prop)
   have hconj : ∀ q, f (conj q)=conj (f q) := by
     intro q
@@ -147,7 +149,7 @@ theorem local_real_simple_zero (t x r s D : ℝ) (E Φ : ℂ → ℂ)
     dsimp only [f]
     rw [hLc]
     dsimp [F]
-    rw [RiemannQuarticNormalizedAnalytic.flow_conj,(hglobal (L q)).2.1,map_div₀]
+    rw [hgconj,(hglobal (L q)).2.1,map_div₀]
   have hclose : ∀ q ∈ closedBall (a : ℂ) 1, ‖f q-Complex.cos q‖ ≤ 1/1000 := by
     intro q hq
     have hlin := hlinear q hq
@@ -194,8 +196,8 @@ theorem local_real_simple_zero (t x r s D : ℝ) (E Φ : ℂ → ℂ)
     exact (mul_eq_zero.mp hlocal.1).resolve_left hspos.ne'
   refine ⟨hzreal,?_⟩
   intro hbad
-  have hFn : HasDerivAt (RiemannQuarticFlow.flow t) 0 z := by
-    simpa only [hbad] using (RiemannQuarticFlow.flow_differentiable t z).hasDerivAt
+  have hFn : HasDerivAt (g) 0 z := by
+    simpa only [hbad] using (hg z).hasDerivAt
   have hEn : E z ≠ 0 := (hglobal z).1
   have hEd := (hEa z (by linarith)).differentiableAt.hasDerivAt
   have hF0 : HasDerivAt F 0 z := by
@@ -210,6 +212,19 @@ theorem local_real_simple_zero (t x r s D : ℝ) (E Φ : ℂ → ℂ)
     · funext y; rfl
     · simp only [zero_mul]
   exact hlocal.2 hfc.deriv
+
+theorem local_real_simple_zero (t x r s D : ℝ) (E Φ : ℂ → ℂ)
+    (hs : 0 < s) (hr : 0 < r) (hD : 0 ≤ D)
+    (hscaled : D/s ≤ 1/1000000) (hbuffer : 1/s ≤ r/2)
+    (hglobal : ∀ z : ℂ, E z ≠ 0 ∧ E (conj z)=conj (E z) ∧ Φ (conj z)=conj (Φ z))
+    (hlocal : ∀ z : ℂ, ‖z-(x : ℂ)‖ < r → AnalyticAt ℂ E z ∧ AnalyticAt ℂ Φ z ∧
+      ‖deriv Φ z-(s : ℂ)‖ ≤ D ∧
+      ‖RiemannQuarticFlow.flow t z/E z-Complex.cos (Φ z)‖ ≤ (1/1000000)*Real.cosh (Φ z).im)
+    (z : ℂ) (hz : ‖z-(x : ℂ)‖ < r/2) (hzero : RiemannQuarticFlow.flow t z=0) :
+    z.im=0 ∧ deriv (RiemannQuarticFlow.flow t) z ≠ 0 := by
+  exact local_real_simple_zero_of_differentiable (RiemannQuarticFlow.flow t)
+    (RiemannQuarticFlow.flow_differentiable t) (RiemannQuarticNormalizedAnalytic.flow_conj t)
+    x r s D E Φ hs hr hD hscaled hbuffer hglobal hlocal z hz hzero
 
 theorem bounded_ratio_real_simple_zeros (M : ℝ) (hM : 0 ≤ M) :
     ∀ R : ℝ, 0 ≤ R → ∀ᶠ t : ℝ in atTop, ∃ u : ℝ,
