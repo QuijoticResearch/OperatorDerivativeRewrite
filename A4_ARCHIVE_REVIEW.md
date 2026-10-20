@@ -1,5 +1,7 @@
 # A(4) archive review and theorem reuse audit
 
+> Latest1221 stopping review: A(4) COMPLETE/FROZEN at mathematical97906a4, preserving all11 original full-file reviews/hashes. Exact finite attained threshold, endpoint reality/collision and nonreal-zero confinement are in A4_CAMPAIGN_STOPPING_AUDIT.md. Competing finite/infinite conjectures are resolved for the literal transform; numerical thresholds and RH/initial-membership conclusions are not certified. Exact private stopping/report verification gates integer resumption; older status entries below are historical.
+
 > Current stopping update (October20 checkpoint1197): A(4) review is COMPLETE/FROZEN at mathematical e36dae9. Lean proves a finite attained actual eventual split-polynomial threshold strictly above8, actual nonreal zeros near8 and eventual global real/simple zeros. Historical missing-converse/nonemptiness/attainment gaps below are superseded FOR THIS ACTUAL FLOW. Exact limits and verification are in A4_CAMPAIGN_STOPPING_AUDIT.md. Resume integer A(2k), A(6) first, ONLY AFTER1197 stopping/report commit is exactly privately verified. Preserve audited A6 through652d0a0 and review unfinished sources before adoption. STARDUST_CAMPAIGN_QUEUE.md is authoritative; real-order/limit stages remain conditional and unopened, October31 hard stop unchanged.
 
 Review completed October 19, 2026, after the frozen IBM checkpoint

@@ -12,16 +12,21 @@ is required by these instructions.
 # Persistent research priorities
 
 Read `STARDUST_CAMPAIGN_QUEUE.md` for the authoritative current queue and campaign gates.
-A(4) resumed review is COMPLETE/FROZEN at mathematical e36dae9 after fresh
-stopping audit1197. Lean proves a finite ATTAINED actual eventual split-polynomial
-threshold strictly above8, eventual global real/simple zeros and nonreal zeros
-near8. Preserve historical proofs/audits and exact domain/quantifier limits.
-No numerical upper/optimal threshold, initial membership, endpoint multiplicity,
-general LP classification, A2 or RH implication is claimed.
-Resume integer A(2k), A(6) first, ONLY AFTER the1197 stopping/report commit is
-audited, committed and exactly privately verified. Reuse audited A6 through652d0a0.
-Preserve and review unfinished ComplexGaussian/Central sources before repair,
-import or commit after that gate. Never certify unfinished drafts.
+A(4) resumed review is COMPLETE/FROZEN at mathematical
+97906a446305ae1f95bae25bea333680d01fbcf8, subject to the fresh1221
+stopping/report commit being audited and exactly privately verified before transition.
+Lean proves a finite attained actual eventual split-polynomial threshold A>8,
+all zeros real at every t>=A, a positive real threshold zero of finite multiplicity
+at least two, actual nonreal zeros near8 and arbitrarily close below A, confinement
+of every nonreal zero at every t>=1 to one finite disk, and eventual global simplicity.
+Preserve exact domains and quantifiers; no numerical threshold, initial membership,
+exact double collision, individual pair history, A2 or RH implication is claimed.
+After the1221 exact private gate, resume integer A(2k), A(6) first, by directly
+auditing/reusing actual global A6 checkpoint884dec8 and coherent integer hierarchy
+f0f112d. Preserve previously audited real-family construction1989b97 and its saved
+conditional gate; do not erase results or repeat foundations. The unfinished
+RiemannRealOrderBranchObstruction source/import stays preserved and uncertified
+until reviewed and fully audited in its authorized stage. Never certify drafts.
 Only after a
 coherent, reusable integer theorem supplies a justified foundation, investigate
 real k > 1 and a natural interpolating family F_k(z), with explicit normalization,

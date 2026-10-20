@@ -1,5 +1,7 @@
 # Integer higher-even-order Xi-flow campaign
 
+> Current1221 transition: resumed A(4) review COMPLETE/FROZEN mathematical97906a4. INTEGER reuse audit resumes ONLY AFTER the fresh stopping/report commit is exactly verified on PRIVATE main/research. Reuse actual global A6 result884dec8 and coherent integer hierarchyf0f112d; preserve actual real-family result1989b97 and its1216 conditional gate. No previous mathematics is erased, no all-orders-global-zero gate added, and no unfinished BranchObstruction draft certified. Reconfirm the precise integer foundation before conditional real work. Independent A2/final multichannel remain queued; October31 hard stop. See STARDUST_CAMPAIGN_QUEUE.md; older active labels are historical.
+
 A(6) is ACTIVE after the fresh A(4) stopping audit `dffe824980b81e440dcddbf85a150237f2aa3bc5` was privately verified. A(4) is frozen at mathematical `1da27a39d23f6dc7c10fd9fbdcd11131dbca9737`, including its actual split-polynomial/nonemptiness/strict-infimum bridge. Earlier status and gap statements below are historical. The authoritative queue is STARDUST_CAMPAIGN_QUEUE.md. Real exponents, their limit, independent A(2), and final multichannel remain later gated stages. October31,2026 is the hard stop.
 
 ## Exact object and verified initial result (checkpoint 1161)
