@@ -1828,3 +1828,4 @@ import Foundation.RiemannSixthTransitionGaussian
 import Foundation.RiemannSixthTransitionContour
 import Foundation.RiemannSixthTransitionCompact
 import Foundation.RiemannSixthTransitionComplexPairing
+import Foundation.RiemannSixthTransitionCosinePhase
