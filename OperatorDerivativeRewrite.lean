@@ -1769,3 +1769,4 @@ import Foundation.RiemannQuarticTransitionCorrection
 import Foundation.RiemannQuarticTransitionGaussian
 import Foundation.RiemannQuarticTransitionContour
 import Foundation.RiemannQuarticTransitionCompact
+import Foundation.RiemannQuarticTransitionReflection
