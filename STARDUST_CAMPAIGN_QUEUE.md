@@ -1,5 +1,13 @@
 # Project Stardust: persistent campaign queue
 
+## User reaffirmation: interpolation and zero escape (October 20, 2026)
+
+Preserve the order: finish A(4); integer A(2k), beginning with A(6); conditional real k > 1; justified k -> 1+ analysis and independent A(2); final multichannel campaign. A(4) has already reached the verified frozen checkpoint recorded below, so this reaffirmation does not reopen it or interrupt the active integer campaign.
+
+At the conditional real-order stage, construct and test a natural interpolating F_k (retaining time explicitly when necessary), prove its agreement with the integer constructions and local uniform convergence to the correctly normalized classical target, or identify the exact obstruction. Audit branches, analyticity, uniform estimates and nonreal-zero behavior, including possible escape from every compact as k -> 1+. Apply Hurwitz only after establishing its hypotheses. No real-rootedness or RH implication is assumed. These are saved future objectives, not authorization to begin the gated investigation now.
+
+This instruction-only update must preserve active uncommitted proofs. Back up its exact commit privately without treating unfinished working-tree mathematics as an audited checkpoint; main promotion still requires the complete verification procedure below.
+
 ## Current campaign and transition gates (fresh stopping audit1197)
 
 The latest resumed A(4) review is COMPLETE/FROZEN at mathematical commit `e36dae9212d46afaf03aebc69af709ed93e75990`. It preserves actual global eventual zero reality/simplicity, actual nonreal zeros near time8, actual split-polynomial approximation and finite eventual starting times with strict infimum>8. It now also proves the threshold is ATTAINED: the EXISTING polynomialLimitStarts is exactly the closed ray from its infimum, including polynomial approximation of the actual transform AT that infimum. See A4_CAMPAIGN_STOPPING_AUDIT.md for exact definitions and limits. No numerical upper/optimal threshold, initial membership, endpoint multiplicity, general LP classification, A2/RH or threshold relation is claimed. Earlier mathematical/stopping checkpoints remain preserved historical records.
