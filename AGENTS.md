@@ -12,6 +12,11 @@ is required by these instructions.
 # Persistent research priorities
 
 Read `STARDUST_CAMPAIGN_QUEUE.md` for the authoritative current queue and campaign gates.
+LATEST October20 instruction: after this queue-only checkpoint is committed and
+privately verified, resume A(4) review. Historical stopping results below are
+preserved; their active/frozen labels are superseded by the latest queue entry.
+Pause A(6) at audited652d0a0 and preserve its unfinished untracked drafts.
+Do not open real-exponent or limiting investigations now.
 A(4) is FROZEN at mathematical checkpoint1da27a39d23f6dc7c10fd9fbdcd11131dbca9737
 after fresh stopping audit1186. Lean constructs actual split-polynomial limits,
 proves a finite eventual starting time and8<sInf(polynomialLimitStarts), and

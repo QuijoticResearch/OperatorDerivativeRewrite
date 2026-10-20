@@ -1,5 +1,11 @@
 # Project Stardust: persistent campaign queue
 
+## Latest instruction: resumed A(4) review (October 20, 2026)
+
+The latest human instruction is to update and privately back up this queue, then resume A(4). Accordingly A(4) review is ACTIVE again; the historical verified stopping checkpoints below remain preserved mathematical results. Pause integer A(6) work at its audited checkpoint `652d0a0743fc60df23b280e2f194a94f6099ac7c`. Preserve its unfinished untracked complex-Gaussian and central-integral drafts without importing, staging or certifying them. Complete a reasonable A(4) review/stopping checkpoint before returning to the integer hierarchy. This paragraph supersedes historical active/frozen labels below.
+
+The order remains: finish A(4); integer A(2k), beginning with A(6); conditional real k>1 only after a coherent reusable integer theorem; justified k->1+ study and the independent A(2) investigation; final multichannel campaign. In the future real-order stage, construct the actual normalized family interpolating the integer constructions and prove local uniform convergence to the correctly identified classical target. Investigate branches, analyticity, uniform estimates, nonreal zeros and possible escape from every compact; prove all hypotheses before using Hurwitz. If interpolation fails, identify its exact obstruction. The detailed gates below, independent verification, private backup requirements and October31 hard stopping date remain unchanged. Do not begin the real-exponent or limit investigation now.
+
 Updated October 20, 2026 at fresh A(4) stopping audit1186 to preserve the user-directed order and require exact private verification before integer-order work resumes. All completed stopping audits and mathematical checkpoints remain preserved. This file supersedes older active/future-order statements in campaign reports and recovery handoffs; historical mathematical records remain unchanged. It changes research instructions only, not the existing autonomous goal.
 
 ## Current campaign and transition gates
