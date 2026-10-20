@@ -1,3 +1,4 @@
+import Foundation.RiemannSixthCriticalValue
 import Foundation.RiemannSixthFarComplexPairing
 import Foundation.RiemannQuarticFarGaussianPhase
 /-! Actual A6 Gaussian amplitude and a normalized analytic phase.
@@ -173,36 +174,7 @@ theorem actual_weight_hasDerivAt (z : ℂ) (hz : ‖z-(x : ℂ)‖ < 1) :
     HasDerivAt (fun y => weight 3 t y (branch t x ht hx w hr hi hp hs y))
       (Complex.I*branch t x ht hx w hr hi hp hs z*
         weight 3 t z (branch t x ht hx w hr hi hp hs z)) z := by
-  let v := branch t x ht hx w hr hi hp hs z
-  let d := -Complex.I/deriv (complexSlope 3 t) v
-  have hb : HasDerivAt (branch t x ht hx w hr hi hp hs) d z :=
-    (branch_hasStrictDerivAt t x ht hx w hr hi hp hs z hz).hasDerivAt
-  have hdom := branch_domain t x ht hx w hr hi hp hs z hz.le
-  have hparam : 0 < (Complex.exp (4*v)).re :=
-    RiemannQuarticKernelReflection.strip_domain v (by
-      change -Real.pi/8 < v.im ∧ v.im < Real.pi/8
-      simpa only [neg_div] using (abs_lt.mp hdom.2.1))
-  have hk := kernelComplex_hasDerivAt v hparam
-  have hslope := (branch_spec t x ht hx w hr hi hp hs z hz.le).2
-  change 6*(t : ℂ)*v^5+deriv kernelComplex v/kernelComplex v= -(Complex.I*z) at hslope
-  rw [hk.deriv] at hslope
-  have hstation : 6*(t : ℂ)*v^5*kernelComplex v+kernelDerivative v=
-      -(Complex.I*z)*kernelComplex v := by
-    have hdiv : kernelDerivative v/kernelComplex v= -(Complex.I*z)-6*(t : ℂ)*v^5 := by
-      linear_combination hslope
-    have hm := (div_eq_iff hdom.2.2).mp hdiv
-    linear_combination hm
-  have he := ((hb.pow 6).const_mul (t : ℂ)).add
-    ((((hasDerivAt_id z).const_mul Complex.I).mul hb))
-  have hp' := he.cexp.mul (hk.comp z hb)
-  convert hp' using 1
-  · funext y
-    rfl
-  · change Complex.I*v*(Complex.exp ((t : ℂ)*v^6+Complex.I*z*v)*kernelComplex v)=
-      Complex.exp ((t : ℂ)*v^6+Complex.I*z*v)*
-        ((t : ℂ)*(6*v^5*d)+(Complex.I*1*v+Complex.I*z*d))*kernelComplex v+
-      Complex.exp ((t : ℂ)*v^6+Complex.I*z*v)*(kernelDerivative v*d)
-    linear_combination -Complex.exp ((t : ℂ)*v^6+Complex.I*z*v)*d*hstation
+  exact RiemannSixthCriticalValue.criticalValue_hasDerivAt t x ht hx w hr hi hp hs z hz
 
 theorem amplitude_hasDerivAt (z : ℂ) (hz : ‖z-(x : ℂ)‖ < 1) :
     HasDerivAt (fun y => modelGaussianAmplitude t y (B y))
