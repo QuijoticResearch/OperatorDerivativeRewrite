@@ -9,12 +9,14 @@ it does not commit work or require Codex to be running. Keep `.lake/stardust-syn
 its referenced scanner when cleaning unrelated caches. No additional agent delegation
 is required by these instructions.
 
-For measured optional preliminary type feedback, follow
-`STARDUST_VERIFICATION_PIPELINE.md` and `tools/stardust_type_review.py`.
-Its selected-module output is never checkpoint approval: retain the final full root
-build, complete transitive axiom audit, final human type/proof review and source checks.
-Keep the existing combined final audit/type pass; do not duplicate completed checks
-without changed inputs, a failure, or a specific unresolved concern.
+Every future session must consult and follow `STARDUST_BUILD_OPTIMIZATION.md` before
+building or verifying Lean. This is permanent workflow infrastructure, not a campaign.
+Prefer the verified incremental commands and preliminary type helper during proof
+development; preserve all complete milestone builds, transitive axiom audits, final
+human type/proof reviews and source checks. Never suppress errors, change theorem
+semantics or substitute partial checks for complete audits. Rebenchmark after material
+hardware, toolchain or repository-structure changes; retain original settings unless
+an improvement is measured. See the document for evidence, limits and rollback.
 
 # Persistent research priorities
 

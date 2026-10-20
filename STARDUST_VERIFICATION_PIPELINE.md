@@ -1,5 +1,7 @@
 # Stardust verification pipeline: measured Windows workflow
 
+Permanent operating configuration, mandatory future-session consultation, rebenchmark triggers and rollback are recorded in `STARDUST_BUILD_OPTIMIZATION.md`. This file retains the detailed October 20 benchmark report.
+
 Measured October 20, 2026 at mathematical commit `c2c2e36b30c538454ade7f2bb5e903a5881330df`, using native Windows Lean 4.34.1/Lake 5.0.0 and the unchanged Mathlib manifest (`d13f23b723b8a846827a245b89c10fc7d3f11612`). The registry identifies an Intel Core Ultra 9 285K; Windows reports 24 logical processors and 63.4 GiB usable physical RAM. These are warm-workspace wall-clock measurements, not cold-build or general hardware-performance claims. No research source was edited for benchmarking.
 
 ## Adopted improvement: preliminary type review
