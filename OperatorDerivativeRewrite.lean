@@ -1806,3 +1806,4 @@ import Foundation.RiemannQuarticActualPolynomialLimit
 import Foundation.RiemannSixthFarRightTail
 import Foundation.RiemannSixthFarLeftCompact
 import Foundation.RiemannSixthFarHalfline
+import Foundation.RiemannSixthFarPairing
