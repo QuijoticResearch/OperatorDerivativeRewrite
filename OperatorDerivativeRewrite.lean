@@ -1747,3 +1747,5 @@ import Foundation.RiemannQuarticFarGaussianFixed
 import Foundation.RiemannQuarticFarRightTail
 import Foundation.RiemannThetaSmallParameter
 import Foundation.RiemannQuarticFarLeftCompact
+import Foundation.RiemannQuarticFarLeftAnnulus
+import Foundation.RiemannQuarticFarHalfline
