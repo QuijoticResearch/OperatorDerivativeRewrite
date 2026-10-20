@@ -1,21 +1,23 @@
 # Project Stardust: persistent campaign queue
 
-Updated October 19, 2026 by explicit user instruction. This file supersedes older future-order statements in campaign reports and recovery handoffs; historical mathematical records remain unchanged. It changes research instructions only, not the existing autonomous goal.
+Updated October 20, 2026 at the user-authorized A(4) stopping transition. This file supersedes older active/future-order statements in campaign reports and recovery handoffs; historical mathematical records remain unchanged. It changes research instructions only, not the existing autonomous goal.
 
 ## Current campaign and transition gates
 
-IBM is frozen at verified checkpoint `89460761948de953f47da4564c38c255749f06f3`. A(4) remains ACTIVE through its verified stopping checkpoint. Do not divert its current saddle-point and global far-field investigation or start the next campaign early. Consult A4_ARCHIVE_REVIEW.md and PROJECT_STARDUST_REPORT.md for the latest mathematical checkpoint and exact open obligations. A verified finite-time negative Laguerre witness and expanding real/simple-zero windows do not decide eventual global re-entry.
+IBM is frozen at verified checkpoint `89460761948de953f47da4564c38c255749f06f3`. A(4) is FROZEN at audited mathematical checkpoint `b02f945f6f1f8714f877c9c3717bc0578b7ae3dd`; the final stopping audit is `A4_CAMPAIGN_STOPPING_AUDIT.md`. Lean proves eventual global zero reality and all actual analytic hypotheses, including subquadratic growth. The conclusion `8 <= A(4) < infinity` also uses the explicitly identified classical Laguerre-Polya characterization; that characterization and infimum conclusion are not themselves Lean formalized. No numerical upper threshold or RH implication is claimed. These frozen boundaries and unresolved obligations must be preserved.
+
+The ACTIVE campaign is now general integer A(2k), k >= 2, with A(6) first and verified A(4) results as base. Begin with a theorem-level reuse and source/literature audit. No arbitrary-order, real-exponent, limiting or quadratic result is assumed. Confirm the stopping/report checkpoint is committed and privately backed up before beginning new A(6) proofs.
 
 The ordered remaining queue is:
 
-1. Finish A(4) at its verified stopping checkpoint, recording established results and exact unresolved obligations. A(4) remains the immediate proof priority.
-2. Investigate general higher-even-order Riemann Xi flows A(2k), beginning with integer k >= 2. Use the verified A(4) results as the base case and k = 3 / A(6) as the first generalization; unresolved A(4) claims remain unresolved. Establish a coherent, reusable integer theorem before opening the conditional real-exponent stage.
-3. Only on that justified integer foundation, investigate real k > 1, including a natural family F_k(z) (or F_{k,t}(z) when a flow parameter must be retained) interpolating the integer constructions. Apply the exact gate and objectives below. This remains a conditional stage of the planned hierarchy, not permission to start during A(4).
+1. Preserve the frozen IBM and A(4) checkpoints and the exact classical/Lean distinction in the A(4) stopping audit.
+2. ACTIVE: investigate general higher-even-order Riemann Xi flows A(2k), beginning with integer k >= 2. Use the verified A(4) results as the base case and k = 3 / A(6) as the first generalization; unresolved A(4) claims remain unresolved. Establish a coherent, reusable integer theorem before opening the conditional real-exponent stage.
+3. Only on that justified integer foundation, investigate real k > 1, including a natural family F_k(z) (or F_{k,t}(z) when a flow parameter must be retained) interpolating the integer constructions. Apply the exact gate and objectives below. This remains conditional, not permission to open the real-exponent stage at the start of the integer campaign.
 4. On a rigorously constructed real-exponent family, study the k -> 1+ limit and its relationship to the appropriate classical A(2) function. Then conduct the queued independent classical A(2) investigation, retaining the theorem-level reuse audit and the requested OpenAI quasi-Riemann paper/formalization and follow-up review; verify exact sources and claims when it opens. If interpolation fails or the real-exponent gate is not discharged, document the obstruction and do not invent a limiting argument; the independent A(2) investigation remains queued. No relation between thresholds or RH implication is assumed.
 5. Conduct the final focused full multichannel higher-order heat pseudoprocess Clark-Ocone campaign, starting from the verified signed calculus, adapted integral and finite-grid reconstruction. Test all three biharmonic channels, including centered cubic cylinders, then the general (p-1)-channel formula and completed analytic domain with precise convergence topology. One- and two-channel obstructions do not establish impossibility of full reconstruction.
 6. Freeze the work and stop. No new campaigns. October 31, 2026 remains the hard research stopping date; queued work does not extend it. Record any unfinished or unstarted stages at that deadline.
 
-## Higher-even-order Xi-flow campaign objectives (QUEUED, not started)
+## Higher-even-order Xi-flow campaign objectives (ACTIVE integer stage; A(6) first)
 
 - Begin with a theorem-level reuse audit of verified A(4) machinery and relevant literature and existing manuscripts. Audit sources before asserting novelty. Preserve all original manuscript bytes and hashes.
 - Generalize theta-kernel, saddle-point, contour and zero-localization results to arbitrary even order wherever mathematically justified. State domains, signs, parameter ranges and quantifiers explicitly.
@@ -26,7 +28,7 @@ The ordered remaining queue is:
 
 ## Conditional real-exponent objective within A(2k) (GATED, not started)
 
-Only if the integer-order investigation establishes a coherent, reusable theorem, evaluate whether its mathematically justified foundation supports extending the hierarchy to real exponents k > 1 using the Fourier multiplier |u|^(2k). Record the exact integer theorem and its hypotheses before opening this branch. A formal substitution of a real parameter, numerical evidence, or analogy alone does not discharge this gate. Do not begin this investigation during the current A(4) campaign.
+Only if the integer-order investigation establishes a coherent, reusable theorem, evaluate whether its mathematically justified foundation supports extending the hierarchy to real exponents k > 1 using the Fourier multiplier |u|^(2k). Record the exact integer theorem and its hypotheses before opening this branch. A formal substitution of a real parameter, numerical evidence, or analogy alone does not discharge this gate. The frozen A(4) base case alone does not discharge the integer-hierarchy gate; do not open this branch at the beginning of A(6).
 
 Investigate whether a natural family F_k(z), or F_{k,t}(z) with the flow parameter explicit, agrees with the integer constructions on their proved domains and converges locally uniformly in z to the appropriate classical function as k approaches 1 from above. Identify the exact limiting target, its normalization and its flow-parameter regime before asserting convergence; do not silently identify a nonzero-time quadratic deformation with the undeformed Riemann Xi function. Prove interpolation and convergence rather than treating formal substitution of k as a construction.
 

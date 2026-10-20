@@ -12,8 +12,12 @@ is required by these instructions.
 # Persistent research priorities
 
 Read `STARDUST_CAMPAIGN_QUEUE.md` for the authoritative current queue and campaign gates.
-A(4) remains active. After its verified stopping checkpoint: general integer
-A(2k), k >= 2, with verified A(4) results as base and A(6) first. Only after a
+A(4) is frozen at its audited mathematical checkpoint
+`b02f945f6f1f8714f877c9c3717bc0578b7ae3dd`; see
+`A4_CAMPAIGN_STOPPING_AUDIT.md` for the explicit classical/Lean boundary.
+The active campaign is general integer A(2k), k >= 2, with verified A(4)
+results as base and A(6) first. Begin with theorem and source/literature audits.
+Only after a
 coherent, reusable integer theorem supplies a justified foundation, investigate
 real k > 1 and a natural interpolating family F_k(z), with explicit normalization,
 branches, analyticity and uniform estimates. Then study the justified k -> 1+
