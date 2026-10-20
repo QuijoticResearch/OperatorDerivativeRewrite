@@ -1832,6 +1832,7 @@ import Foundation.RiemannSixthTransitionCosinePhase
 import Foundation.RiemannSixthTransitionSimpleZeros
 import Foundation.RiemannEvenEntireGrowth
 import Foundation.RiemannRealOrderLimit
+import Foundation.RiemannRealOrderBranchObstruction
 import Foundation.RiemannQuarticThresholdZeros
 import Foundation.RiemannQuarticThresholdCompactness
 import Foundation.RiemannQuarticThresholdCollision
