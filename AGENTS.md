@@ -12,13 +12,17 @@ is required by these instructions.
 # Persistent research priorities
 
 Read `STARDUST_CAMPAIGN_QUEUE.md` for the authoritative current queue and campaign gates.
-A(4) review is complete and FROZEN at audited mathematical checkpoint
+A(4) results remain preserved at audited mathematical checkpoint
 `4f36db3a5fcd68b8fc1af7033326995ab0799501`, extending the preserved base
 `b02f945f6f1f8714f877c9c3717bc0578b7ae3dd` with global simplicity.
 See `A4_CAMPAIGN_STOPPING_AUDIT.md` for the unchanged classical/Lean boundary.
-After the stopping/report commit is privately verified, the ACTIVE campaign is
+The latest instruction restores A(4) review as the immediate ACTIVE priority.
+Review its precise remaining obligations without erasing its completed stopping
+audit or claiming that the proved global-simplicity gap remains open.
+After the resumed A(4) stopping decision and private verification, continue
 integer A(2k), k >= 2, using verified A(4) as base and A(6) first.
-Begin with theorem/source reuse and finish auditing the preserved integer work.
+Preserve and reuse all already audited integer work through checkpoint 1171;
+defer its pending contour work until after A(4) review.
 Only after a
 coherent, reusable integer theorem supplies a justified foundation, investigate
 real k > 1 and a natural interpolating family F_k(z), with explicit normalization,
