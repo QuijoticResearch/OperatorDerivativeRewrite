@@ -1,5 +1,25 @@
 # Project Stardust: persistent campaign queue
 
+## Authoritative user update: queue backup, then resume A(4) review (October 20, 2026)
+
+This latest instruction supersedes the active-stage labels below. Pause integer and real-order investigation now. Preserve every verified result, the frozen A(4) mathematics at `97906a446305ae1f95bae25bea333680d01fbcf8`, its stopping/report checkpoint `9d886401b6dc7eaaf063f37ee6dbf9ae0f577124`, and all subsequent audited work. Preserve the uncommitted `Foundation/RiemannRealOrderCubicDensity.lean` byte for byte; its targeted build is not full certification. Commit and privately back up this instruction-only update, then resume A(4) review without erasing or duplicating established results. Do not begin or continue the future interpolation investigation during this update.
+
+The ordered queue is:
+
+1. Finish the resumed A(4) review and close its verified stopping checkpoint.
+2. Generalize to integer A(2k), k >= 2, using verified A(4) as base and A(6) as the first generalization. Directly reuse established integer results.
+3. Only conditional on a coherent, reusable integer theorem, investigate real k > 1. Record and audit the exact theorem and hypotheses licensing the extension.
+4. Study the justified k -> 1+ limit and its relationship to the appropriate classical A(2) function, then retain the independent A(2) investigation.
+5. Conduct the final multichannel pseudoprocess campaign, then freeze and stop. October 31, 2026 remains the hard stopping date.
+
+At the authorized real-order stage, investigate a natural family F_k(z), or F_{k,t}(z) with time explicit, interpolating the integer constructions. Prove agreement on the actual domains and locally uniform convergence as k -> 1+ to the correctly normalized classical target. A nonzero-time quadratic deformation must not be silently identified with undeformed Xi. Reuse existing verified construction and convergence results, while independently checking their exact hypotheses and limits.
+
+Study normalization, nontriviality, branch choices, analyticity, common domains, uniform estimates and parameter-dependent constants. Distinguish the real multiplier |u|^(2k) from a holomorphic complex power. Justify any continuation, contour, interchange of limits and derivatives, and possible degeneration of zero-localization regions.
+
+Determine whether actual nonreal zeros can escape every compact as k -> 1+. Distinguish an escaping sequence from eventual absence of nonreal zeros on each compact, and from nonreal zeros converging to real zeros in a bounded region. Local uniform convergence alone is not global zero control. Apply Hurwitz-type arguments only after proving all hypotheses of the exact theorem used, including holomorphy on a common domain, locally uniform convergence, a nonzero limit, and any required zero-free or boundary conditions. Assume neither real-rootedness nor an RH implication. If interpolation or a proposed inference fails, identify the precise obstruction.
+
+All full-build, complete transitive axiom-audit, unabridged public-type review, source-integrity, research-ledger, Git and exact private-backup standards remain in force. This instruction-only checkpoint changes no mathematical source or result and certifies no unfinished proof. Existing audited integer and real-order results remain preserved; they do not override the latest immediate priority. The existing autonomous goal is unchanged. Older entries below are historical where inconsistent with this section.
+
 ## Current branch: conditional real-order audit resumed after verified integer reuse
 
 Checkpoint1223 extends this branch to genuine Fourier decay and uniform real-axis order control. For each fixed time, the actual flow and all Fourier jets decay at both real frequency infinities; the actual flow is not polynomial. Order convergence is now proved uniformly on the ENTIRE real frequency axis, including the same-time quadratic limit as k->1+, and a product-filter limit gives joint order/real-frequency decay. These are real-axis value estimates, with time fixed; no complex zero-location or zero-escape conclusion is inferred. A(4) stays frozen and the independent A(2)/final multichannel stages remain queued.

@@ -12,6 +12,15 @@ is required by these instructions.
 # Persistent research priorities
 
 Read `STARDUST_CAMPAIGN_QUEUE.md` for the authoritative current queue and campaign gates.
+The latest October20 user update takes precedence over historical active-stage labels:
+pause integer/real-order work, commit and privately back up the instruction-only queue
+update, then resume A(4) review. Preserve all established results and the uncommitted
+RiemannRealOrderCubicDensity.lean byte for byte; do not certify it from a targeted build.
+After A(4)'s verified stopping checkpoint: integer A(2k), A(6) first; conditional real
+k>1 on a coherent integer theorem; justified k->1+ interpolation/zero-escape analysis
+and independent A(2); final multichannel campaign. The detailed requirements and
+unchanged verification/October31 gates are in the authoritative top queue section.
+The following older transition notes are historical where inconsistent with that update.
 A(4) resumed review is COMPLETE/FROZEN at mathematical
 97906a446305ae1f95bae25bea333680d01fbcf8, subject to the fresh1221
 stopping/report commit being audited and exactly privately verified before transition.
