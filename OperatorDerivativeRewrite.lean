@@ -1798,3 +1798,4 @@ import Foundation.RiemannSixthFarGaussianLimit
 import Foundation.RiemannSixthFarGaussianFixed
 import Foundation.RiemannQuarticZeroFreeRigidity
 import Foundation.RiemannQuarticZeroCounting
+import Foundation.RiemannQuarticDiskDecomposition
