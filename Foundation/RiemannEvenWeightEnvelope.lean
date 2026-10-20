@@ -59,13 +59,13 @@ theorem horizontal_exp_real_identity (v : ℂ) (s : ℝ) :
   rw [hid]
   simp only [Complex.mul_re,Complex.ofReal_re,Complex.ofReal_im,zero_mul,sub_zero]
 
-theorem model_frequency_exp_bound (m : ℕ) (t x : ℝ) (ht : 0 ≤ t) (hx : 0 < x)
-    (w : ℂ) (hp : (2*m : ℝ)*t*‖w‖^(2*m-1)+9 ≤ x/2)
-    (hs : modelDerivative m t w= -(Complex.I*(x : ℂ))) :
-    x ≤ 32*Real.exp (4*w.re) := by
-  have hn : ‖modelDerivative m t w‖=x := by
+theorem model_frequency_exp_bound_complex (m : ℕ) (t : ℝ) (c : ℂ) (ht : 0 ≤ t) (hx : 0 < ‖c‖)
+    (w : ℂ) (hp : (2*m : ℝ)*t*‖w‖^(2*m-1)+9 ≤ ‖c‖/2)
+    (hs : modelDerivative m t w= -(Complex.I*c)) :
+    ‖c‖ ≤ 32*Real.exp (4*w.re) := by
+  have hn : ‖modelDerivative m t w‖=‖c‖ := by
     rw [hs]
-    simp only [norm_neg,norm_mul,Complex.norm_I,Complex.norm_real,Real.norm_eq_abs,abs_of_pos hx,one_mul]
+    simp only [norm_neg,norm_mul,Complex.norm_I,Complex.norm_real,Real.norm_eq_abs,one_mul]
   have htri := norm_sub_le (((2*m : ℕ) : ℂ)*(t : ℂ)*w^(2*m-1)+9)
     (4*(Real.pi : ℂ)*Complex.exp (4*w))
   have hadd := norm_add_le (((2*m : ℕ) : ℂ)*(t : ℂ)*w^(2*m-1)) (9 : ℂ)
@@ -79,5 +79,13 @@ theorem model_frequency_exp_bound (m : ℕ) (t x : ℝ) (ht : 0 ≤ t) (hx : 0 <
   have hE : ‖Complex.exp (4*w)‖=Real.exp (4*w.re) := by rw [Complex.norm_exp]; simp [Complex.mul_re]
   rw [hE] at htri hpi
   nlinarith
+
+theorem model_frequency_exp_bound (m : ℕ) (t x : ℝ) (ht : 0 ≤ t) (hx : 0 < x)
+    (w : ℂ) (hp : (2*m : ℝ)*t*‖w‖^(2*m-1)+9 ≤ x/2)
+    (hs : modelDerivative m t w= -(Complex.I*(x : ℂ))) :
+    x ≤ 32*Real.exp (4*w.re) := by
+  have hn : ‖(x : ℂ)‖=x := by simp [abs_of_pos hx]
+  simpa only [hn] using model_frequency_exp_bound_complex m t (x : ℂ) ht
+    (by simpa only [hn] using hx) w (by simpa only [hn] using hp) hs
 
 end OperatorDerivativeRewrite.Foundation.RiemannEvenWeightEnvelope
