@@ -1830,3 +1830,4 @@ import Foundation.RiemannSixthTransitionCompact
 import Foundation.RiemannSixthTransitionComplexPairing
 import Foundation.RiemannSixthTransitionCosinePhase
 import Foundation.RiemannSixthTransitionSimpleZeros
+import Foundation.RiemannEvenEntireGrowth
