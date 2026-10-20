@@ -1825,3 +1825,4 @@ import Foundation.RiemannSixthTransitionCorrection
 import Foundation.RiemannSixthTransitionAnalyticBranch
 import Foundation.RiemannSixthTransitionGaussianPhase
 import Foundation.RiemannSixthTransitionGaussian
+import Foundation.RiemannSixthTransitionContour
