@@ -1795,3 +1795,4 @@ import Foundation.RiemannSixthCriticalValue
 import Foundation.RiemannQuarticOpenObstruction
 import Foundation.RiemannEvenNaturalContour
 import Foundation.RiemannSixthFarGaussianLimit
+import Foundation.RiemannSixthFarGaussianFixed
