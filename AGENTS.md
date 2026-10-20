@@ -12,11 +12,15 @@ is required by these instructions.
 # Persistent research priorities
 
 Read `STARDUST_CAMPAIGN_QUEUE.md` for the authoritative current queue and campaign gates.
-A(4) remains active. After its verified stopping checkpoint: general A(2k), k >= 2
-(verified A(4) results as base; first generalization k = 3 / A(6)). Within that
-campaign, evaluate real k > 1 and uniform control as k approaches 1 from above
-only after a coherent, reusable integer-order theorem provides a justified
-foundation; see the exact gate in STARDUST_CAMPAIGN_QUEUE.md. Then A(2), followed
-by the final multichannel pseudoprocess attempt. No limiting real-rootedness or RH
-implication is assumed.
-October 31, 2026 remains the hard stopping date. Do not start queued campaigns early.
+A(4) remains active. After its verified stopping checkpoint: general integer
+A(2k), k >= 2, with verified A(4) results as base and A(6) first. Only after a
+coherent, reusable integer theorem supplies a justified foundation, investigate
+real k > 1 and a natural interpolating family F_k(z), with explicit normalization,
+branches, analyticity and uniform estimates. Then study the justified k -> 1+
+limit, local uniform convergence to the appropriate classical target and the
+behavior/possible compact escape of nonreal zeros, using Hurwitz only after its
+hypotheses are proved. Preserve the independent A(2) investigation afterward,
+then the final multichannel pseudoprocess campaign. See the exact gates and
+failure-obstruction requirements in STARDUST_CAMPAIGN_QUEUE.md. No limiting
+real-rootedness, threshold relation or RH implication is assumed.
+October 31, 2026 remains the hard stopping date. Do not start queued stages early.
