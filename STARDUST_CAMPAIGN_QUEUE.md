@@ -1,5 +1,15 @@
 # Project Stardust: persistent campaign queue
 
+## Latest user instruction: queue update, backup, then A(4) review (October 20, 2026)
+
+This entry supersedes older active-priority labels below. Resume A(4) REVIEW after this instruction-only commit is privately backed up. Preserve its verified stopping mathematics at e36dae9212d46afaf03aebc69af709ed93e75990 and all subsequent audited integer and real-order results; do not erase or reinterpret historical work. Pause further integer/real-order investigation and preserve the unfinished branch-obstruction source and root import byte for byte. Do not begin the requested future interpolation/limit investigation during this queue update.
+
+The order remains: (1) finish the resumed A(4) review and its verified stopping checkpoint; (2) integer A(2k), starting with A(6); (3) real k>1 only on a coherent, reusable integer theorem, with its exact gate audited; (4) justified k->1+ analysis and its relationship to the correctly normalized classical A(2) function, retaining the independent A(2) investigation; (5) the final multichannel campaign, then stop. Existing proofs of the integer foundation and real-family construction remain established historical results, not authorization to bypass the latest immediate priority.
+
+At the authorized real-order stage, test a natural F_{k,t}(z) interpolating the integer constructions and prove local uniform convergence to the appropriate classical function as k->1+. Keep normalization and time explicit. Audit complex branches, analyticity, common domains, nontriviality, uniform integral/derivative estimates and parameter-dependent constants. Determine the behavior of actual nonreal zeros, including possible escape from every compact; distinguish an escaping sequence from eventual absence of nonreal zeros on each compact and from convergence to real zeros. Invoke Hurwitz only with every hypothesis proved. If interpolation or a proposed inference fails, identify its exact obstruction. Do not assume real-rootedness, any threshold relation, or an RH implication.
+
+All source-integrity, full-build, complete transitive axiom-audit, public-type review, research-ledger and exact private-backup requirements remain in force. An instruction-only commit certifies no unfinished mathematics. October 31, 2026 remains the hard stopping date; the existing autonomous goal is unchanged.
+
 ## Conditional real-order gate audit (October 20, 2026; checkpoint1216)
 
 The conditional construction branch within A(2k) is now opened on the verified integer foundation at `f0f112d0e2700f2530631095b62434f88073a9cb`, preserving global actual A(6) zero control at `884dec8a1863b5e98b0ae490f744e7727377e5d2`. This does not reorder the remaining campaigns or open the independent A(2) campaign.
