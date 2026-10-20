@@ -1775,3 +1775,4 @@ import Foundation.RiemannQuarticTransitionGaussianPhase
 import Foundation.RiemannQuarticTransitionComplexPairing
 import Foundation.RiemannQuarticTransitionCosinePhase
 import Foundation.RiemannQuarticTransitionSimpleZeros
+import Foundation.RiemannQuarticUniformFarScale
