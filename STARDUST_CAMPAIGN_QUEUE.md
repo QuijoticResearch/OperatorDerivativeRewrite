@@ -2,6 +2,8 @@
 
 ## Current branch1226: conditional real-order derivative and Fourier-tail audit
 
+Checkpoint1228 evaluates the actual cubic endpoint coefficients: g'_t(0)=0 and g'''_t(0)=6tPhi(0). It proves x^4*F_(3/2,t)(x)->6tPhi(0) at BOTH real infinities for every fixed realt. For t!=0, the real part eventually has the sign of t, the actual flow is nonzero sufficiently far along the real axis, and its distinct REAL zero set is finite. No nonreal-zero existence, global real-rootedness, near1 order limit or uniform-in-time zero cutoff follows yet. The separate finite-zero/factorization inference is the next question; all queued objectives and gates remain intact.
+
 Checkpoint1227 now proves genuine half-line Fourier integration by parts, the actual fourfold cosine identity and vanishing fourth-derivative remainder at BOTH real-frequency infinities. Endpoint coefficients remain explicit: x^4*F_(3/2,t)(x)=-x^2*g'_t(0)+g'''_t(0)+C4(t,x), with C4->0. Their evaluation, eventual sign and any zero-location inference remain open. This continues the authorized branch and does not open independent A(2) or change the remaining queue.
 
 A(4) review1225 is FROZEN at `f287f71e1d867194bac98830b15661b981c80ea2`, exactly verified on PRIVATE main/research. AFTER that gate, the complete current EvenEntireGrowth, EvenWindowZeros, SixthTransitionSimpleZeros, EvenDomain, EvenFlow and EvenEvolution proofs were reread. The precise finite-integer common-majorant/jet/operator foundationf0f112d and actual globalA6884dec8 are reconfirmed in `.lake/stardust-1226-post-private-integer-gate.json` BEFORE conditional real-order work resumed. No new all-integer global-zero gate is imposed. Independent A(2) and final multichannel remain queued.

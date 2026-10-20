@@ -1840,3 +1840,4 @@ import Foundation.RiemannRealOrderFourierDecay
 import Foundation.RiemannRealOrderRealUniform
 import Foundation.RiemannRealOrderCubicDensity
 import Foundation.RiemannRealOrderCubicFourier
+import Foundation.RiemannRealOrderCubicEndpoint
