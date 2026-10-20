@@ -141,7 +141,7 @@ theorem actual_gaussian_mass_envelope (t : ℝ) (c₀ : ℂ) (hcenter : c₀.im 
       mul_le_mul_of_nonneg_left (mul_le_mul_of_nonneg_right Real.exp_one_lt_three.le (Real.exp_pos _).le) (by positivity)
     _ = _ := by dsimp [C]; ring
 
-private theorem gaussian_tail_majorant (F : ℝ → ℂ) (hF : Continuous F)
+theorem gaussian_tail_majorant (F : ℝ → ℂ) (hF : Continuous F)
     (A b : ℝ) (hA : 0 ≤ A) (hb : 0 < b)
     (hbound : ∀ s : ℝ, -1 ≤ s → ‖F s‖ ≤ A*Real.exp (-b*s^2)) :
     IntegrableOn F (Ioi (-1)) ∧
