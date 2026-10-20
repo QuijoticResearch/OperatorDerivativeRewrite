@@ -12,18 +12,17 @@ is required by these instructions.
 # Persistent research priorities
 
 Read `STARDUST_CAMPAIGN_QUEUE.md` for the authoritative current queue and campaign gates.
-A(4) renewed review is COMPLETE and FROZEN at audited mathematical checkpoint
-`cf903f8b52eb0037e4416aad0e62cff276c5f45c`, preserving global simplicity at
-`4f36db3a5fcd68b8fc1af7033326995ab0799501` and the original verified base.
-See `A4_CAMPAIGN_STOPPING_AUDIT.md` for the precise updated classical/Lean boundary.
-The lower polynomial-limit bridge and open-time exclusion are now formalized;
-the strict infimum lower bound explicitly assumes actual start-set nonemptiness.
-General converse factorization/nonemptiness remains external, so do not claim
-an unconditional Lean finite threshold. The classical conclusion is 8 < A(4) < infinity.
-After checkpoint 1174 stopping/report private verification, the ACTIVE stage is
-integer A(2k), k >= 2, using verified A(4) as base and A(6) first.
-Preserve and reuse all already audited integer work through checkpoint 1171;
-resume its pending genuine signed-contour work after that backup gate.
+A(4) review is ACTIVE again under the latest human instruction. Preserve the
+completed renewed-review mathematical checkpoint cf903f8 and stopping/report
+a48c988 as historical verified work, including global simplicity and the precise
+classical/Lean boundary in A4_CAMPAIGN_STOPPING_AUDIT.md. Review the remaining
+general converse factorization/nonemptiness and quantitative threshold obligations;
+do not claim an unconditional Lean finite threshold. The classical conclusion
+remains 8 < A(4) < infinity. After a fresh audited, committed and privately verified
+A(4) stopping checkpoint: integer A(2k), k >= 2, with A(6) first. Preserve and reuse
+all audited integer results through checkpoint 1177. Preserve the unfinished
+uncommitted right-tail sources without importing or committing them in this
+instruction-only checkpoint; defer further integer proofs until that gate.
 Only after a
 coherent, reusable integer theorem supplies a justified foundation, investigate
 real k > 1 and a natural interpolating family F_k(z), with explicit normalization,
