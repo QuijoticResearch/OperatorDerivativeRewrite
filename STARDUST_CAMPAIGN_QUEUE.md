@@ -1,5 +1,13 @@
 # Project Stardust: persistent campaign queue
 
+## Conditional real-order gate audit (October 20, 2026; checkpoint1216)
+
+The conditional construction branch within A(2k) is now opened on the verified integer foundation at `f0f112d0e2700f2530631095b62434f88073a9cb`, preserving global actual A(6) zero control at `884dec8a1863b5e98b0ae490f744e7727377e5d2`. This does not reorder the remaining campaigns or open the independent A(2) campaign.
+
+Exact reusable foundation: `RiemannEvenEntireGrowth.weighted_tilt_bound`, `exists_uniform_jet_growth`, and `exists_uniform_spatial_derivative_growth` provide a genuine common integrable majorant and uniform whole-plane growth for every finite INTEGER hierarchy m<=N, all t<=T with T>=0, and each fixed derivative order. `RiemannEvenDomain.weighted_integrable`, `RiemannEvenFlow.jet_hasDerivAt`, and `RiemannEvenEvolution.flow_iteratedDeriv` connect those bounds to actual arithmetic-kernel integrals and operator derivatives. `RiemannEvenWindowZeros.actual_real_simple_window` supplies actual expanding integer windows; its full proof and quantifier limits have been reviewed. This is a coherent hierarchy theorem, rather than inference from two fixed orders.
+
+The justified next question is whether the same majorant can be extended to bounded real orders by proving the real-axis power comparison at u<=1 and u>=1. Only that construction/analytic-continuity investigation is licensed by this audit. Real-axis |u|^(2k) is not a chosen holomorphic complex power; integer saddle contours, global zero control, LP approximation, and zero estimates are not presumed to extend. Prove interpolation, analyticity, nontriviality and the exact limiting normalization separately. Any failure must be recorded. The existing k->1+, independent A(2), final multichannel, verification, source-preservation and October31 stopping requirements remain unchanged.
+
 ## User reaffirmation: interpolation and zero escape (October 20, 2026)
 
 Preserve the order: finish A(4); integer A(2k), beginning with A(6); conditional real k > 1; justified k -> 1+ analysis and independent A(2); final multichannel campaign. A(4) has already reached the verified frozen checkpoint recorded below, so this reaffirmation does not reopen it or interrupt the active integer campaign.
