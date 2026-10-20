@@ -12,21 +12,17 @@ is required by these instructions.
 # Persistent research priorities
 
 Read `STARDUST_CAMPAIGN_QUEUE.md` for the authoritative current queue and campaign gates.
-A(4) review is ACTIVE again under the latest human instruction. Preserve the
-completed renewed-review mathematical checkpoint cf903f8 and stopping/report
-a48c988 as historical verified work, including global simplicity and the precise
-classical/Lean boundary in A4_CAMPAIGN_STOPPING_AUDIT.md. Checkpoint1185 closes
-the actual split-polynomial limit/nonemptiness bridge:
-Lean proves an actual finite eventual starting time and
-8 < sInf(polynomialLimitStarts), with actual nonreal zeros near t=8.
-A general entire-function LP classification and numerical upper/optimal thresholds
-are not claimed. Complete a fresh stopping/reuse audit against the saved objectives;
-do not open a later campaign before its verified stopping/private gate.
-After a fresh audited, committed and privately verified
-A(4) stopping checkpoint: integer A(2k), k >= 2, with A(6) first. Preserve and reuse
-all audited integer results through checkpoint 1177. Preserve the unfinished
-uncommitted right-tail sources without importing or committing them during this
-resumed A(4) review; defer further integer proofs until that gate.
+A(4) is FROZEN at mathematical checkpoint1da27a39d23f6dc7c10fd9fbdcd11131dbca9737
+after fresh stopping audit1186. Lean constructs actual split-polynomial limits,
+proves a finite eventual starting time and8<sInf(polynomialLimitStarts), and
+proves nonreal zeros near t=8. Preserve historical audits and exact domains.
+No numerical upper/optimal threshold, initial membership, generic LP
+classification or RH implication is claimed. See A4_CAMPAIGN_STOPPING_AUDIT.md.
+Resume integer A(2k), k>=2, A(6) first, ONLY AFTER the1186 stopping/report
+commit is audited, committed and privately verified. Begin/resume the theorem
+and source/literature reuse audit. Preserve and reuse all audited integer work
+through1177. Preserve the unfinished right-tail source bytes and review those
+sources before importing or committing them after the gate.
 Only after a
 coherent, reusable integer theorem supplies a justified foundation, investigate
 real k > 1 and a natural interpolating family F_k(z), with explicit normalization,
