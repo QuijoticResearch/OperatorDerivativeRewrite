@@ -128,3 +128,12 @@ The actual derivative and growth obligations from1181 are now closed. RiemannQua
 RiemannQuarticCanonicalLimit.exists_actual_locally_uniform_remainders constructs actual families with radii in(2R,2R+1) and proves g_R->0, exp(g_R)->1 AND h_R/h_R(0)->1 locally uniformly on C, for every real time. No zero-reality assumption is needed for this remainder statement. An independent check finds a point where H_t is zero but the constructed remainder is nonzero, so the missing zero factors cannot be discarded.
 
 The actual paired split-polynomial construction, denominator product convergence and reconstruction through all zeros remain open; actual start-set nonemptiness and unconditional Lean finiteness are not claimed. The external classical8<A(4)<infinity boundary is unchanged. Full exact statements and verification are in PROJECT_STARDUST_REPORT.md checkpoint1182. A(4) remains ACTIVE with later campaigns gated.
+
+
+## Active resumed review: reconstruction and actual rational-product limit (checkpoint1183)
+
+RiemannQuarticCanonicalReconstruction proves the actual reciprocal canonical product analytic on a neighborhood of each closed disk, including the original zeros, and upgrades the off-discrete decomposition to the exact identity H_t=B_R*h on the ENTIRE closed disk. The analytic identity principle and continuous boundary extension have their domains verified. The inverse-product normalization at0 is nonzero.
+
+RiemannQuarticCanonicalProductLimit.exists_actual_product_approximation constructs actual families and proves B_{r_R}/B_{r_R}(0)->H_t/H_t(0) and H_t(0)*B_{r_R}/B_{r_R}(0)->H_t locally uniformly, for every real t. These are rational finite products, not split real polynomials. Independent checks locate an actual retained zero in the finite product and show the rational approximation at t=8 coexists with the proved split-polynomial obstruction there.
+
+Opposite-pair polynomial construction, multiplicity-aware denominator convergence and the actual split-polynomial limit remain open; start-set nonemptiness/unconditional Lean finiteness are not inferred from rational convergence. The external classical8<A(4)<infinity boundary is unchanged. See PROJECT_STARDUST_REPORT.md checkpoint1183 for exact declarations and verification. A(4) remains ACTIVE with later campaigns gated.

@@ -1800,3 +1800,4 @@ import Foundation.RiemannQuarticZeroFreeRigidity
 import Foundation.RiemannQuarticZeroCounting
 import Foundation.RiemannQuarticDiskDecomposition
 import Foundation.RiemannQuarticCanonicalLimit
+import Foundation.RiemannQuarticCanonicalProductLimit
