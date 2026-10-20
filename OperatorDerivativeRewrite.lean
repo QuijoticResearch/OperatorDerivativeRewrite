@@ -1826,3 +1826,4 @@ import Foundation.RiemannSixthTransitionAnalyticBranch
 import Foundation.RiemannSixthTransitionGaussianPhase
 import Foundation.RiemannSixthTransitionGaussian
 import Foundation.RiemannSixthTransitionContour
+import Foundation.RiemannSixthTransitionCompact
