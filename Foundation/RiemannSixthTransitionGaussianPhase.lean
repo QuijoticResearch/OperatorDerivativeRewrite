@@ -52,36 +52,12 @@ theorem model_curvature_norm_bound (v : ℂ) (hv : ‖v-w‖ ≤ 1/K) :
 
 theorem model_real_curvature (v : ℂ) (hv : ‖v-w‖ ≤ 1/K) :
     (deriv (modelDerivative 3 t) v).re ≤ -3*t*w.re^5 := by
-  have hb := scaled_model_deriv_bound t K w v ht hK (by linarith) hnorm hE hv
-  let A : ℂ := -(16 : ℂ)*(Real.pi : ℂ)*Complex.exp (4*w)
-  have he : A.re= -16*Real.pi*(Complex.exp (4*w)).re := by simp [A,Complex.mul_re]
-  have hre := Complex.re_le_norm (deriv (modelDerivative 3 t) v-A)
-  rw [Complex.sub_re,he] at hre
-  nlinarith
+  exact scaled_model_real_curvature_of_margin t K w v ht hK hr hmargin hnorm hE hv
 
 theorem gaussian_coefficient_norm_bounds (v : ℂ) (hv : ‖v-w‖ ≤ 1/K) :
     t*w.re^5 ≤ ‖-(deriv (modelDerivative 3 t) v)/2‖ ∧
       ‖-(deriv (modelDerivative 3 t) v)/2‖ ≤ 64*K := by
-  have hreal := model_real_curvature t K x r w ht hK hr hmargin hi hnorm hs hE hsmall hrpos hradius v hv
-  have hQ0 : 0 ≤ t*w.re^5 := by positivity
-  have hR0 : 0 ≤ (Complex.exp (4*w)).re := by nlinarith [Real.pi_pos]
-  have hpi := mul_le_mul_of_nonneg_right Real.pi_lt_four.le hR0
-  have hnormexp := (Complex.re_le_norm (Complex.exp (4*w))).trans hE
-  have hQ : t*w.re^5 ≤ 16*K := by nlinarith
-  have hb := scaled_model_deriv_bound t K w v ht hK (by linarith) hnorm hE hv
-  have hnA : ‖-(16 : ℂ)*(Real.pi : ℂ)*Complex.exp (4*w)‖ ≤ 64*K := by
-    simp only [norm_mul,norm_neg,Complex.norm_ofNat,Complex.norm_real,
-      Real.norm_eq_abs,abs_of_pos Real.pi_pos]
-    have hmul := mul_le_mul Real.pi_lt_four.le hE (norm_nonneg _) (by norm_num : (0 : ℝ) ≤ 4)
-    nlinarith
-  have htri := norm_add_le (deriv (modelDerivative 3 t) v-(-(16 : ℂ)*(Real.pi : ℂ)*Complex.exp (4*w)))
-    (-(16 : ℂ)*(Real.pi : ℂ)*Complex.exp (4*w))
-  rw [sub_add_cancel] at htri
-  have hre := Complex.re_le_norm (-(deriv (modelDerivative 3 t) v)/2)
-  simp only [Complex.div_ofNat_re,Complex.neg_re] at hre
-  rw [norm_div,norm_neg,Complex.norm_ofNat] at hre
-  rw [norm_div,norm_neg,Complex.norm_ofNat]
-  constructor <;> nlinarith
+  exact scaled_gaussian_coefficient_norm_bounds_of_margin t K w v ht hK hr hmargin hnorm hE hv
 
 def gaussian (z : ℂ) : ℂ :=
   ∫ s : ℝ, Complex.exp (deriv (modelDerivative 3 t) (B z)*(s : ℂ)^2/2)

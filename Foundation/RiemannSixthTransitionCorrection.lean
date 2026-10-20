@@ -11,10 +11,9 @@ open RiemannSixthTransitionSaddle RiemannThetaComplexKernel
 open RiemannQuarticQuantitativeSaddle RiemannQuarticFarCorrection
 open RiemannQuarticTransitionSaddle (realScale realScale_pos movingAnchor)
 
-theorem scaled_neighbor_domain (t K : ℝ) (z w v : ℂ)
+theorem scaled_neighbor_domain_of_margin (t K : ℝ) (w v : ℂ)
     (ht : 1 ≤ t) (hK : 8 ≤ K) (hr : 10000 ≤ w.re)
-    (hmargin : t*w.re^5+8 ≤ 4*Real.pi*(Complex.exp (4*w)).re) (hi : |w.im| ≤ 1/2)
-    (hy : z.im ≤ 1) (hs : modelDerivative 3 t w= -(Complex.I*z))
+    (hmargin : t*w.re^5+8 ≤ 4*Real.pi*(Complex.exp (4*w)).re)
     (hE : ‖Complex.exp (4*w)‖ ≤ K) (hv : ‖v-w‖ ≤ 2/K) :
     0 ≤ v.re ∧ 1 ≤ (Complex.exp (4*v)).re ∧
       t*w.re^5/32 ≤ (Complex.exp (4*v)).re := by
@@ -32,6 +31,15 @@ theorem scaled_neighbor_domain (t K : ℝ) (z w v : ℂ)
   have hc := (Complex.abs_re_le_norm (v-w)).trans hd
   simp only [Complex.sub_re] at hc
   refine ⟨by linarith [(abs_le.mp hc).1], by nlinarith, by nlinarith⟩
+
+theorem scaled_neighbor_domain (t K : ℝ) (z w v : ℂ)
+    (ht : 1 ≤ t) (hK : 8 ≤ K) (hr : 10000 ≤ w.re)
+    (hmargin : t*w.re^5+8 ≤ 4*Real.pi*(Complex.exp (4*w)).re) (hi : |w.im| ≤ 1/2)
+    (hy : z.im ≤ 1) (hs : modelDerivative 3 t w= -(Complex.I*z))
+    (hE : ‖Complex.exp (4*w)‖ ≤ K) (hv : ‖v-w‖ ≤ 2/K) :
+    0 ≤ v.re ∧ 1 ≤ (Complex.exp (4*v)).re ∧
+      t*w.re^5/32 ≤ (Complex.exp (4*v)).re := by
+  exact scaled_neighbor_domain_of_margin t K w v ht hK hr hmargin hE hv
 
 theorem scaled_neighbor_error (t K : ℝ) (z w v : ℂ)
     (ht : 1 ≤ t) (hK : 8 ≤ K) (hr : 10000 ≤ w.re)
@@ -162,6 +170,47 @@ theorem scaled_model_deriv_bound (t K : ℝ) (w v : ℂ)
     nlinarith
   have hpi := mul_le_mul Real.pi_lt_four.le he8 (norm_nonneg _) (by norm_num : (0 : ℝ) ≤ 4)
   nlinarith
+
+theorem scaled_model_real_curvature_of_margin (t K : ℝ) (w v : ℂ)
+    (ht : 1 ≤ t) (hK : 8 ≤ K) (hr : 120020 ≤ w.re)
+    (hmargin : t*w.re^5+8 ≤ 4*Real.pi*(Complex.exp (4*w)).re)
+    (hnorm : ‖w‖ ≤ 2*w.re) (hE : ‖Complex.exp (4*w)‖ ≤ K)
+    (hv : ‖v-w‖ ≤ 1/K) :
+    (deriv (modelDerivative 3 t) v).re ≤ -3*t*w.re^5 := by
+  have hb := scaled_model_deriv_bound t K w v ht hK (by linarith) hnorm hE hv
+  let A : ℂ := -(16 : ℂ)*(Real.pi : ℂ)*Complex.exp (4*w)
+  have he : A.re= -16*Real.pi*(Complex.exp (4*w)).re := by simp [A,Complex.mul_re]
+  have hre := Complex.re_le_norm (deriv (modelDerivative 3 t) v-A)
+  rw [Complex.sub_re,he] at hre
+  nlinarith
+
+theorem scaled_gaussian_coefficient_norm_bounds_of_margin (t K : ℝ) (w v : ℂ)
+    (ht : 1 ≤ t) (hK : 8 ≤ K) (hr : 120020 ≤ w.re)
+    (hmargin : t*w.re^5+8 ≤ 4*Real.pi*(Complex.exp (4*w)).re)
+    (hnorm : ‖w‖ ≤ 2*w.re) (hE : ‖Complex.exp (4*w)‖ ≤ K)
+    (hv : ‖v-w‖ ≤ 1/K) :
+    t*w.re^5 ≤ ‖-(deriv (modelDerivative 3 t) v)/2‖ ∧
+      ‖-(deriv (modelDerivative 3 t) v)/2‖ ≤ 64*K := by
+  have hreal := scaled_model_real_curvature_of_margin t K w v ht hK hr hmargin hnorm hE hv
+  have hQ0 : 0 ≤ t*w.re^5 := by positivity
+  have hR0 : 0 ≤ (Complex.exp (4*w)).re := by nlinarith [Real.pi_pos]
+  have hpi := mul_le_mul_of_nonneg_right Real.pi_lt_four.le hR0
+  have hnormexp := (Complex.re_le_norm (Complex.exp (4*w))).trans hE
+  have hQ : t*w.re^5 ≤ 16*K := by nlinarith
+  have hb := scaled_model_deriv_bound t K w v ht hK (by linarith) hnorm hE hv
+  have hnA : ‖-(16 : ℂ)*(Real.pi : ℂ)*Complex.exp (4*w)‖ ≤ 64*K := by
+    simp only [norm_mul,norm_neg,Complex.norm_ofNat,Complex.norm_real,
+      Real.norm_eq_abs,abs_of_pos Real.pi_pos]
+    have hmul := mul_le_mul Real.pi_lt_four.le hE (norm_nonneg _) (by norm_num : (0 : ℝ) ≤ 4)
+    nlinarith
+  have htri := norm_add_le (deriv (modelDerivative 3 t) v-(-(16 : ℂ)*(Real.pi : ℂ)*Complex.exp (4*w)))
+    (-(16 : ℂ)*(Real.pi : ℂ)*Complex.exp (4*w))
+  rw [sub_add_cancel] at htri
+  have hre := Complex.re_le_norm (-(deriv (modelDerivative 3 t) v)/2)
+  simp only [Complex.div_ofNat_re,Complex.neg_re] at hre
+  rw [norm_div,norm_neg,Complex.norm_ofNat] at hre
+  rw [norm_div,norm_neg,Complex.norm_ofNat]
+  constructor <;> nlinarith
 
 theorem scaled_actual_deriv_bound (t K : ℝ) (z w v : ℂ)
     (ht : 1 ≤ t) (hK : 8 ≤ K) (hr : 10000 ≤ w.re)

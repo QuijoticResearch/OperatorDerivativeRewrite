@@ -18,7 +18,7 @@ open RiemannQuarticFarGaussianLocal (exponential_cubic_remainder)
 open RiemannQuarticErrorLimits
 
 section Scaled
-variable (t K c : ℝ) (w v : ℂ)
+variable (t K : ℝ) (c w v : ℂ)
   (ht : 1 ≤ t) (hK : 8 ≤ K) (hr : 120020 ≤ w.re)
   (hmargin : t*w.re^5+8 ≤ 4*Real.pi*(Complex.exp (4*w)).re) (hi : |w.im| ≤ 1/2)
   (hn : ‖w‖ ≤ 2*w.re)
@@ -34,8 +34,7 @@ theorem horizontal_neighbor_domain (s : ℝ) (hsr : |s| ≤ 1/16) :
   have hK0 : 0 < K := by linarith
   have hd2 : ‖v-w‖ ≤ 2/K := hv.trans (by
     apply (div_le_div_iff_of_pos_right hK0).mpr; norm_num)
-  have hd := scaled_neighbor_domain t K (c : ℂ) w v ht hK (by linarith)
-    hmargin hi (by simp) hs hE hd2
+  have hd := scaled_neighbor_domain_of_margin t K w v ht hK (by linarith) hmargin hE hd2
   have hExp := horizontal_exp_real_lower v (by linarith [hd.2.1]) s hsr
   have hv8 : ‖v-w‖ ≤ 1/8 := hv.trans ((div_le_iff₀ hK0).mpr (by linarith))
   have hre := (Complex.abs_re_le_norm (v-w)).trans hv8
@@ -186,10 +185,7 @@ theorem corrected_polynomial_scale : t*(42*(‖v‖+1)^3) ≤ K := by
   nlinarith
 
 theorem model_real_curvature : (deriv (modelDerivative 3 t) v).re ≤ -3*t*w.re^5 := by
-  exact RiemannSixthTransitionGaussianPhase.model_real_curvature t K c (1/K) w ht hK hr hmargin hi hn hs hE harith (by positivity) (by
-      apply (div_le_div_iff_of_pos_right (show 0 < K by linarith)).mpr
-      have hp : 1 ≤ w.re^5 := one_le_pow₀ (by linarith : 1 ≤ w.re)
-      nlinarith) v hv
+  exact scaled_model_real_curvature_of_margin t K w v ht hK hr hmargin hn hE hv
 
 theorem quadratic_norm_le_one (s : ℝ) :
     ‖Complex.exp (deriv (modelDerivative 3 t) v*(s : ℂ)^2/2)‖ ≤ 1 := by
@@ -382,10 +378,7 @@ theorem actual_local_full_gaussian_error (z : ℂ) (hstat : complexSlope 3 t v= 
 theorem gaussian_coefficient_norm_bounds :
     t*w.re^5 ≤ ‖-(deriv (modelDerivative 3 t) v)/2‖ ∧
       ‖-(deriv (modelDerivative 3 t) v)/2‖ ≤ 64*K := by
-  exact RiemannSixthTransitionGaussianPhase.gaussian_coefficient_norm_bounds t K c (1/K) w ht hK hr hmargin hi hn hs hE harith (by positivity) (by
-      apply (div_le_div_iff_of_pos_right (show 0 < K by linarith)).mpr
-      have hp : 1 ≤ w.re^5 := one_le_pow₀ (by linarith : 1 ≤ w.re)
-      nlinarith) v hv
+  exact scaled_gaussian_coefficient_norm_bounds_of_margin t K w v ht hK hr hmargin hn hE hv
 
 theorem gaussian_normalization_lower :
     1 ≤ 8*Real.sqrt K*‖∫ s : ℝ, Complex.exp (deriv (modelDerivative 3 t) v*(s : ℂ)^2/2)‖ := by
@@ -456,7 +449,7 @@ theorem relative_local_error_bound (z : ℂ) (hstat : complexSlope 3 t v= -(Comp
 
 end Scaled
 theorem eventually_uniform_relative_central_error (C ε : ℝ) (hC : 0 < C) (hε : 0 < ε) :
-    ∀ᶠ Q : ℝ in atTop, ∀ (t K c : ℝ) (w v z : ℂ),
+    ∀ᶠ Q : ℝ in atTop, ∀ (t K : ℝ) (c w v z : ℂ),
       1 ≤ t → 8 ≤ K → 120020 ≤ w.re → t*w.re^5+8 ≤ 4*Real.pi*(Complex.exp (4*w)).re → |w.im| ≤ 1/2 → ‖w‖ ≤ 2*w.re →
       modelDerivative 3 t w= -(Complex.I*(c : ℂ)) → ‖Complex.exp (4*w)‖ ≤ K → (30005*Real.exp (-w.re))*K ≤ t*w.re^5/4 → ‖v-w‖ ≤ 1/K →
       complexSlope 3 t v= -(Complex.I*z) → Q=t*w.re^5 → K ≤ C*Q →

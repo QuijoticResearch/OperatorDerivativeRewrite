@@ -12,7 +12,7 @@ open RiemannSixthTransitionCorrection RiemannSixthTransitionGaussian RiemannSixt
 open RiemannEvenModelPhase RiemannEvenSaddleBranch RiemannEvenComplexWeight
 open RiemannThetaComplexKernel RiemannQuarticErrorLimits
 section Scaled
-variable (t K c₀ : ℝ) (w v : ℂ)
+variable (t K : ℝ) (c₀ w v : ℂ)
   (ht : 1 ≤ t) (hK : 8 ≤ K) (hr : 120020 ≤ w.re)
   (hmargin : t*w.re^5+8 ≤ 4*Real.pi*(Complex.exp (4*w)).re) (hi : |w.im| ≤ 1/2)
   (hn : ‖w‖ ≤ 2*w.re)
@@ -150,7 +150,7 @@ theorem compact_budget_tendsto_zero (C : ℝ) :
   · ring
 
 theorem eventually_uniform_horizontal_error (C ε : ℝ) (hC : 0 < C) (hε : 0 < ε) :
-    ∀ᶠ Q : ℝ in atTop, ∀ (t K c₀ : ℝ) (w v z : ℂ),
+    ∀ᶠ Q : ℝ in atTop, ∀ (t K : ℝ) (c₀ w v z : ℂ),
       1 ≤ t → 8 ≤ K → 120020 ≤ w.re → t*w.re^5+8 ≤ 4*Real.pi*(Complex.exp (4*w)).re → |w.im| ≤ 1/2 → ‖w‖ ≤ 2*w.re →
       modelDerivative 3 t w= -(Complex.I*(c₀ : ℂ)) → ‖Complex.exp (4*w)‖ ≤ K → (30005*Real.exp (-w.re))*K ≤ t*w.re^5/4 → ‖v-w‖ ≤ 1/K →
       complexSlope 3 t v= -(Complex.I*z) → |z.im| ≤ 1 → Q=t*w.re^5 → K ≤ C*Q →
