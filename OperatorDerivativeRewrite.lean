@@ -1774,3 +1774,4 @@ import Foundation.RiemannQuarticTransitionAnalyticBranch
 import Foundation.RiemannQuarticTransitionGaussianPhase
 import Foundation.RiemannQuarticTransitionComplexPairing
 import Foundation.RiemannQuarticTransitionCosinePhase
+import Foundation.RiemannQuarticTransitionSimpleZeros
