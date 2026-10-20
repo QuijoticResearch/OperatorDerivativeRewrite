@@ -1743,3 +1743,5 @@ import Foundation.RiemannQuarticFarSignedIntegral
 import Foundation.RiemannQuarticFarGaussianLocal
 import Foundation.RiemannQuarticFarGaussianLimit
 import Foundation.RiemannQuarticFarAnnulus
+import Foundation.RiemannQuarticFarGaussianFixed
+import Foundation.RiemannQuarticFarRightTail
