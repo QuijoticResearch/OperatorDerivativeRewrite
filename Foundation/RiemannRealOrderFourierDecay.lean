@@ -45,6 +45,12 @@ private theorem half_line_decay (f : ℝ → ℂ) :
     Real.fourierChar (-(u*(-x/(2*Real.pi)))) • g u) (cocompact ℝ) (𝓝 0) at hrl
   simpa only [he] using hrl
 
+theorem half_line_genuine_and_decay (f : ℝ → ℂ) (hf : Integrable f halfLine) :
+    Integrable f halfLine ∧
+      Tendsto (fun x : ℝ => ∫ u : ℝ, Complex.exp (I*(u : ℂ)*(x : ℂ))*f u ∂halfLine)
+        (cocompact ℝ) (𝓝 0) :=
+  ⟨hf,half_line_decay f⟩
+
 theorem jet_real_genuine_and_decay (a : ℝ) (ha : 0 ≤ a) (j : ℕ) (t : ℝ) :
     (∀ x : ℝ, Integrable (integrand a j t (x : ℂ)) halfLine) ∧
       Tendsto (fun x : ℝ => jet a j t (x : ℂ)) (cocompact ℝ) (𝓝 0) := by
