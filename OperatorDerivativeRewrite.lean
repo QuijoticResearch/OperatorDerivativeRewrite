@@ -1753,3 +1753,4 @@ import Foundation.RiemannQuarticFarPairing
 import Foundation.RiemannQuarticFarAnalyticBranch
 import Foundation.RiemannQuarticFarGaussianPhase
 import Foundation.RiemannQuarticFarRealZeros
+import Foundation.RiemannQuarticFarComplexPairing
