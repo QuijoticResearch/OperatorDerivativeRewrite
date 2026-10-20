@@ -12,22 +12,16 @@ is required by these instructions.
 # Persistent research priorities
 
 Read `STARDUST_CAMPAIGN_QUEUE.md` for the authoritative current queue and campaign gates.
-LATEST October20 instruction: after this queue-only checkpoint is committed and
-privately verified, resume A(4) review. Historical stopping results below are
-preserved; their active/frozen labels are superseded by the latest queue entry.
-Pause A(6) at audited652d0a0 and preserve its unfinished untracked drafts.
-Do not open real-exponent or limiting investigations now.
-A(4) is FROZEN at mathematical checkpoint1da27a39d23f6dc7c10fd9fbdcd11131dbca9737
-after fresh stopping audit1186. Lean constructs actual split-polynomial limits,
-proves a finite eventual starting time and8<sInf(polynomialLimitStarts), and
-proves nonreal zeros near t=8. Preserve historical audits and exact domains.
-No numerical upper/optimal threshold, initial membership, generic LP
-classification or RH implication is claimed. See A4_CAMPAIGN_STOPPING_AUDIT.md.
-Resume integer A(2k), k>=2, A(6) first, ONLY AFTER the1186 stopping/report
-commit is audited, committed and privately verified. Begin/resume the theorem
-and source/literature reuse audit. Preserve and reuse all audited integer work
-through1177. Preserve the unfinished right-tail source bytes and review those
-sources before importing or committing them after the gate.
+A(4) resumed review is COMPLETE/FROZEN at mathematical e36dae9 after fresh
+stopping audit1197. Lean proves a finite ATTAINED actual eventual split-polynomial
+threshold strictly above8, eventual global real/simple zeros and nonreal zeros
+near8. Preserve historical proofs/audits and exact domain/quantifier limits.
+No numerical upper/optimal threshold, initial membership, endpoint multiplicity,
+general LP classification, A2 or RH implication is claimed.
+Resume integer A(2k), A(6) first, ONLY AFTER the1197 stopping/report commit is
+audited, committed and exactly privately verified. Reuse audited A6 through652d0a0.
+Preserve and review unfinished ComplexGaussian/Central sources before repair,
+import or commit after that gate. Never certify unfinished drafts.
 Only after a
 coherent, reusable integer theorem supplies a justified foundation, investigate
 real k > 1 and a natural interpolating family F_k(z), with explicit normalization,
