@@ -12,14 +12,13 @@ is required by these instructions.
 # Persistent research priorities
 
 Read `STARDUST_CAMPAIGN_QUEUE.md` for the authoritative current queue and campaign gates.
-A(4) is the immediate research priority under the latest user instruction.
-Its existing audited mathematical checkpoint remains preserved at
-`b02f945f6f1f8714f877c9c3717bc0578b7ae3dd`; see
-`A4_CAMPAIGN_STOPPING_AUDIT.md` for the explicit classical/Lean boundary.
-Resume A(4) review at that checkpoint, preserving its explicit formal boundary;
-do not start further integer-order proofs before its next stopping checkpoint.
-Then pursue general integer A(2k), k >= 2, with verified A(4) results as base
-and A(6) first. Preserve existing uncommitted integer work without approving it.
+A(4) review is complete and FROZEN at audited mathematical checkpoint
+`4f36db3a5fcd68b8fc1af7033326995ab0799501`, extending the preserved base
+`b02f945f6f1f8714f877c9c3717bc0578b7ae3dd` with global simplicity.
+See `A4_CAMPAIGN_STOPPING_AUDIT.md` for the unchanged classical/Lean boundary.
+After the stopping/report commit is privately verified, the ACTIVE campaign is
+integer A(2k), k >= 2, using verified A(4) as base and A(6) first.
+Begin with theorem/source reuse and finish auditing the preserved integer work.
 Only after a
 coherent, reusable integer theorem supplies a justified foundation, investigate
 real k > 1 and a natural interpolating family F_k(z), with explicit normalization,

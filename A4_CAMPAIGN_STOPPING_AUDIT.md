@@ -74,3 +74,9 @@ The latest user instruction restored A(4) review priority after the historical f
 Fresh full root build:5889 jobs; COMPLETE transitive axiom audit:35351 declarations, only the standard three axioms; all three new public types and complete proofs reviewed. Manifest1814 and all107 archive/43Incoming/11A4 manuscript hashes verified. Deferred integer-order sources/imports are excluded from this audited commit and preserved. See PROJECT_STARDUST_REPORT.md checkpoint1159 and its evidence paths.
 
 The classical LP characterization, LP necessary-inequality bridge and final A(4) infimum statement remain outside Lean; numerical upper and optimal thresholds remain open. No RH, initial LP membership, quadratic or noninteger conclusion is added. Consult STARDUST_CAMPAIGN_QUEUE.md for the latest active priority; this historical audit does not authorize an early campaign transition.
+
+## Resumed review: final stopping decision (checkpoint 1160)
+
+The resumed review is COMPLETE at mathematical commit `4f36db3a5fcd68b8fc1af7033326995ab0799501`. The known global-simplicity gap has been closed and the exact finite-threshold statement checked. The core finiteness decision and actual analytic/global-zero proof chain retain the precise classical/Lean boundary above. Numerical upper/optimal thresholds and the general LP/infimum formalization remain explicitly unproved in Lean; they are not concealed assumptions or claims of this freeze.
+
+This report-only stopping audit rechecks the unchanged full1814 source universe, fullbuild5889/audit35351/type reviews, manuscript hashes and exact private mathematical commit. Under the ordered queue, the next authorized stage is integer A(2k), A(6) first, after this stopping/report commit is privately verified. No real-exponent/limiting stage is opened. See PROJECT_STARDUST_REPORT.md checkpoint1160 and STARDUST_CAMPAIGN_QUEUE.md.
