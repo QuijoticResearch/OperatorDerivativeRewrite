@@ -12,17 +12,18 @@ is required by these instructions.
 # Persistent research priorities
 
 Read `STARDUST_CAMPAIGN_QUEUE.md` for the authoritative current queue and campaign gates.
-A(4) results remain preserved at audited mathematical checkpoint
-`4f36db3a5fcd68b8fc1af7033326995ab0799501`, extending the preserved base
-`b02f945f6f1f8714f877c9c3717bc0578b7ae3dd` with global simplicity.
-See `A4_CAMPAIGN_STOPPING_AUDIT.md` for the unchanged classical/Lean boundary.
-The latest instruction restores A(4) review as the immediate ACTIVE priority.
-Review its precise remaining obligations without erasing its completed stopping
-audit or claiming that the proved global-simplicity gap remains open.
-After the resumed A(4) stopping decision and private verification, continue
+A(4) renewed review is COMPLETE and FROZEN at audited mathematical checkpoint
+`cf903f8b52eb0037e4416aad0e62cff276c5f45c`, preserving global simplicity at
+`4f36db3a5fcd68b8fc1af7033326995ab0799501` and the original verified base.
+See `A4_CAMPAIGN_STOPPING_AUDIT.md` for the precise updated classical/Lean boundary.
+The lower polynomial-limit bridge and open-time exclusion are now formalized;
+the strict infimum lower bound explicitly assumes actual start-set nonemptiness.
+General converse factorization/nonemptiness remains external, so do not claim
+an unconditional Lean finite threshold. The classical conclusion is 8 < A(4) < infinity.
+After checkpoint 1174 stopping/report private verification, the ACTIVE stage is
 integer A(2k), k >= 2, using verified A(4) as base and A(6) first.
 Preserve and reuse all already audited integer work through checkpoint 1171;
-defer its pending contour work until after A(4) review.
+resume its pending genuine signed-contour work after that backup gate.
 Only after a
 coherent, reusable integer theorem supplies a justified foundation, investigate
 real k > 1 and a natural interpolating family F_k(z), with explicit normalization,
