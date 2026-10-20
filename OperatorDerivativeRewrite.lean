@@ -1788,3 +1788,4 @@ import Foundation.RiemannEvenConcentration
 import Foundation.RiemannEvenCompactMass
 import Foundation.RiemannEvenNormalization
 import Foundation.RiemannEvenNormalizedCompact
+import Foundation.RiemannEvenFourierMoment
