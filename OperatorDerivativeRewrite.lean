@@ -1770,3 +1770,5 @@ import Foundation.RiemannQuarticTransitionGaussian
 import Foundation.RiemannQuarticTransitionContour
 import Foundation.RiemannQuarticTransitionCompact
 import Foundation.RiemannQuarticTransitionReflection
+import Foundation.RiemannQuarticTransitionAnalyticBranch
+import Foundation.RiemannQuarticTransitionGaussianPhase
