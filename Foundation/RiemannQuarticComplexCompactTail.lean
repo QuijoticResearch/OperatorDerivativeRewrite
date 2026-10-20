@@ -58,7 +58,7 @@ theorem missing_frequency_term_counterexample :
   norm_num [Complex.exp_re]
   linarith
 
-private theorem center_weight_lower (t : ℝ) (z v : ℂ) (hv : 0 ≤ v.re)
+theorem center_weight_lower (t : ℝ) (z v : ℂ) (hv : 0 ≤ v.re)
     (hE : 1 ≤ (Complex.exp (4*v)).re) :
     Real.exp (((t : ℂ)*v^4+Complex.I*z*v).re+9*v.re-Real.pi*(Complex.exp (4*v)).re) ≤
       ‖saddleWeight t z v‖ := by
