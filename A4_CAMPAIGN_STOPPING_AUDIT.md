@@ -66,3 +66,11 @@ Evidence: `.lake/stardust-1156-full-build.log`, `.lake/stardust-1156-audit.log`,
 ## Authorized next campaign
 
 A(4) is **FROZEN at this verified stopping point**. The next authorized campaign is integer **A(2k), k >= 2**, using A(4) as the verified base and **A(6) first**, beginning with theorem-level and source/literature audits. Real exponents remain gated on a coherent reusable integer theorem; their `k -> 1+` study and independent A(2) remain afterward, followed by the final multichannel campaign. October 31, 2026 remains the hard stop. No new research campaign is authorized.
+
+## October 20 resumed-review addendum: global simplicity (checkpoint 1159)
+
+The latest user instruction restored A(4) review priority after the historical freeze. The historical audit above remains an exact record of b02f945; its missing global-simplicity conclusion is now superseded by `RiemannQuarticGlobalSimpleZeros.eventually_all_zeros_real_simple`. For every sufficiently late real t, EVERY complex zero of the actual quartic flow is real and has nonzero complex derivative. The proof uses one actual stationary center for the bounded disk and far complement, the existing uniform far local simplicity theorem, and derivative oddness under reflection. The exact finite-threshold interpretation is separately Lean checked.
+
+Fresh full root build:5889 jobs; COMPLETE transitive axiom audit:35351 declarations, only the standard three axioms; all three new public types and complete proofs reviewed. Manifest1814 and all107 archive/43Incoming/11A4 manuscript hashes verified. Deferred integer-order sources/imports are excluded from this audited commit and preserved. See PROJECT_STARDUST_REPORT.md checkpoint1159 and its evidence paths.
+
+The classical LP characterization, LP necessary-inequality bridge and final A(4) infimum statement remain outside Lean; numerical upper and optimal thresholds remain open. No RH, initial LP membership, quadratic or noninteger conclusion is added. Consult STARDUST_CAMPAIGN_QUEUE.md for the latest active priority; this historical audit does not authorize an early campaign transition.

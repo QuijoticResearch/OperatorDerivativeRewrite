@@ -1777,3 +1777,4 @@ import Foundation.RiemannQuarticTransitionCosinePhase
 import Foundation.RiemannQuarticTransitionSimpleZeros
 import Foundation.RiemannQuarticUniformFarScale
 import Foundation.RiemannQuarticEntireGrowth
+import Foundation.RiemannQuarticGlobalSimpleZeros
