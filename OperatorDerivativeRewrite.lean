@@ -1801,3 +1801,4 @@ import Foundation.RiemannQuarticZeroCounting
 import Foundation.RiemannQuarticDiskDecomposition
 import Foundation.RiemannQuarticCanonicalLimit
 import Foundation.RiemannQuarticCanonicalProductLimit
+import Foundation.RiemannQuarticPolynomialFactors
