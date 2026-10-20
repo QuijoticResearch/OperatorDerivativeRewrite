@@ -1834,3 +1834,4 @@ import Foundation.RiemannEvenEntireGrowth
 import Foundation.RiemannRealOrderLimit
 import Foundation.RiemannQuarticThresholdZeros
 import Foundation.RiemannQuarticThresholdCompactness
+import Foundation.RiemannQuarticThresholdCollision
