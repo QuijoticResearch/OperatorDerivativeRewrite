@@ -1777,4 +1777,7 @@ import Foundation.RiemannQuarticTransitionCosinePhase
 import Foundation.RiemannQuarticTransitionSimpleZeros
 import Foundation.RiemannQuarticUniformFarScale
 import Foundation.RiemannQuarticEntireGrowth
+import Foundation.RiemannEvenDomain
+import Foundation.RiemannEvenFlow
+import Foundation.RiemannEvenEvolution
 import Foundation.RiemannQuarticGlobalSimpleZeros
