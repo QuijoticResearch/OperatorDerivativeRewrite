@@ -1761,3 +1761,4 @@ import Foundation.RiemannQuarticComplexModelSaddle
 import Foundation.RiemannQuarticComplexCorrection
 import Foundation.RiemannQuarticComplexGaussian
 import Foundation.RiemannQuarticComplexAnnulus
+import Foundation.RiemannQuarticComplexCompactTail
