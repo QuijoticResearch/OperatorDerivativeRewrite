@@ -1790,3 +1790,4 @@ import Foundation.RiemannEvenNormalization
 import Foundation.RiemannEvenNormalizedCompact
 import Foundation.RiemannEvenFourierMoment
 import Foundation.RiemannEvenWindowZeros
+import Foundation.RiemannSixthFarConstruction
