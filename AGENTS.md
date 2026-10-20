@@ -9,6 +9,13 @@ it does not commit work or require Codex to be running. Keep `.lake/stardust-syn
 its referenced scanner when cleaning unrelated caches. No additional agent delegation
 is required by these instructions.
 
+For measured optional preliminary type feedback, follow
+`STARDUST_VERIFICATION_PIPELINE.md` and `tools/stardust_type_review.py`.
+Its selected-module output is never checkpoint approval: retain the final full root
+build, complete transitive axiom audit, final human type/proof review and source checks.
+Keep the existing combined final audit/type pass; do not duplicate completed checks
+without changed inputs, a failure, or a specific unresolved concern.
+
 # Persistent research priorities
 
 Read `STARDUST_CAMPAIGN_QUEUE.md` for the authoritative current queue and campaign gates.
