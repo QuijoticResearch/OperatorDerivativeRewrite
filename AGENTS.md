@@ -15,14 +15,18 @@ Read `STARDUST_CAMPAIGN_QUEUE.md` for the authoritative current queue and campai
 A(4) review is ACTIVE again under the latest human instruction. Preserve the
 completed renewed-review mathematical checkpoint cf903f8 and stopping/report
 a48c988 as historical verified work, including global simplicity and the precise
-classical/Lean boundary in A4_CAMPAIGN_STOPPING_AUDIT.md. Review the remaining
-general converse factorization/nonemptiness and quantitative threshold obligations;
-do not claim an unconditional Lean finite threshold. The classical conclusion
-remains 8 < A(4) < infinity. After a fresh audited, committed and privately verified
+classical/Lean boundary in A4_CAMPAIGN_STOPPING_AUDIT.md. Checkpoint1185 closes
+the actual split-polynomial limit/nonemptiness bridge:
+Lean proves an actual finite eventual starting time and
+8 < sInf(polynomialLimitStarts), with actual nonreal zeros near t=8.
+A general entire-function LP classification and numerical upper/optimal thresholds
+are not claimed. Complete a fresh stopping/reuse audit against the saved objectives;
+do not open a later campaign before its verified stopping/private gate.
+After a fresh audited, committed and privately verified
 A(4) stopping checkpoint: integer A(2k), k >= 2, with A(6) first. Preserve and reuse
 all audited integer results through checkpoint 1177. Preserve the unfinished
-uncommitted right-tail sources without importing or committing them in this
-instruction-only checkpoint; defer further integer proofs until that gate.
+uncommitted right-tail sources without importing or committing them during this
+resumed A(4) review; defer further integer proofs until that gate.
 Only after a
 coherent, reusable integer theorem supplies a justified foundation, investigate
 real k > 1 and a natural interpolating family F_k(z), with explicit normalization,
