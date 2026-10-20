@@ -1821,3 +1821,4 @@ import Foundation.RiemannSixthComplexHalfline
 import Foundation.RiemannSixthComplexReflectedDominance
 import Foundation.RiemannSixthFarZeroControl
 import Foundation.RiemannSixthTransitionSaddle
+import Foundation.RiemannSixthTransitionCorrection
