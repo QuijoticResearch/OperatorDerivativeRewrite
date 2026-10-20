@@ -56,4 +56,31 @@ theorem horizontal_decomposition (m : ℕ) (t : ℝ) (z v : ℂ) (hh : |v.im| < 
   linear_combination -hshift-h3-h2-h1+hfirst
 
 
+
+theorem neighborhood_decomposition (m : ℕ) (t : ℝ) (z v : ℂ)
+    (hh : |v.im| < Real.pi/8) (r R : ℝ) (hr0 : 0 ≤ r) (hrR : r ≤ R) :
+    (∫ s : ℝ in -R..R, weight m t z (v+(s : ℂ)))=
+      (∫ s : ℝ in -r..r, weight m t z (v+(s : ℂ)))+
+      (∫ s : ℝ in r..R, weight m t z (v+((-s : ℝ) : ℂ)))+
+      (∫ s : ℝ in r..R, weight m t z (v+(s : ℂ))) := by
+  let f := fun s : ℝ => weight m t z (v+(s : ℂ))
+  let F := fun s : ℝ => weight m t z ((s : ℂ)+(v.im : ℂ)*Complex.I)
+  have hfun : f=(fun s : ℝ => F (s+v.re)) := by
+    funext s
+    dsimp [f,F]
+    rw [Complex.ofReal_add]
+    congr 1
+    apply Complex.ext <;> simp <;> ring
+  have hc : Continuous f := by
+    rw [hfun]
+    exact (shifted_weight_continuous m t z v.im hh).comp (continuous_id.add_const v.re)
+  have h1 := intervalIntegral.integral_add_adjacent_intervals
+    (hc.intervalIntegrable (μ := volume) (-R) (-r)) (hc.intervalIntegrable (μ := volume) (-r) r)
+  have h2 := intervalIntegral.integral_add_adjacent_intervals
+    (hc.intervalIntegrable (μ := volume) (-R) r) (hc.intervalIntegrable (μ := volume) r R)
+  have hneg := intervalIntegral.integral_comp_neg (a := r) (b := R) f
+  change (∫ s : ℝ in -R..R, f s)=(∫ s : ℝ in -r..r, f s)+
+    (∫ s : ℝ in r..R, f (-s))+(∫ s : ℝ in r..R, f s)
+  linear_combination -h2-h1-hneg
+
 end OperatorDerivativeRewrite.Foundation.RiemannEvenHorizontalDecomposition

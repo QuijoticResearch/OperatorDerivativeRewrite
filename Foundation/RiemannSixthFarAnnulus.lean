@@ -319,7 +319,7 @@ theorem relative_actual_annulus_bound (t x : ℝ) (ht : 1 ≤ t) (hx : 10000 ≤
   nlinarith
 
 
-private theorem annulus_budget_identity (R x : ℝ) (hx : 0 < x) :
+theorem annulus_budget_identity (R x : ℝ) (hx : 0 < x) :
     2*Real.sqrt x*(1542/(x*centralRadius x)+6*(100000000/x)*R^2)=annulusBudget R x := by
   have hpre : Real.sqrt x/x=x^(-1/2 : ℝ) := by
     calc
