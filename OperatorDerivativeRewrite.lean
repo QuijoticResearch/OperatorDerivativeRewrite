@@ -1841,3 +1841,5 @@ import Foundation.RiemannRealOrderRealUniform
 import Foundation.RiemannRealOrderCubicDensity
 import Foundation.RiemannRealOrderCubicFourier
 import Foundation.RiemannRealOrderCubicEndpoint
+import Foundation.SubquadraticFiniteZeroFactorization
+import Foundation.RiemannRealOrderComplexZeros
