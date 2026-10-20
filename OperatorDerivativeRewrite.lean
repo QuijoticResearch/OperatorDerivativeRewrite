@@ -1759,3 +1759,4 @@ import Foundation.RiemannQuarticLocalCosineZeros
 import Foundation.RiemannQuarticFarSimpleZeros
 import Foundation.RiemannQuarticComplexModelSaddle
 import Foundation.RiemannQuarticComplexCorrection
+import Foundation.RiemannQuarticComplexGaussian

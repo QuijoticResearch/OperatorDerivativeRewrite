@@ -30,7 +30,7 @@ private theorem horizontal_phase_hasDerivAt (H : ℝ → ℂ) (R : ℝ) (hR : 0 
     (hH.stronglyMeasurableAtFilter isOpen_Ioo s hs)
     (hH.continuousAt (isOpen_Ioo.mem_nhds hs))
 
-private theorem normalized_real_ode (W H : ℝ → ℂ) (R : ℝ) (hR : 0 < R)
+theorem normalized_real_ode (W H : ℝ → ℂ) (R : ℝ) (hR : 0 < R)
     (hH : ContinuousOn H (Ioo (-R) R))
     (hW : ∀ s ∈ Ioo (-R) R, HasDerivAt W (H s*W s) s)
     (s : ℝ) (hs : s ∈ Ioo (-R) R) :
