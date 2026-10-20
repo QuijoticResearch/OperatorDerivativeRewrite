@@ -1804,3 +1804,4 @@ import Foundation.RiemannQuarticCanonicalProductLimit
 import Foundation.RiemannQuarticPolynomialFactors
 import Foundation.RiemannQuarticActualPolynomialLimit
 import Foundation.RiemannSixthFarRightTail
+import Foundation.RiemannSixthFarLeftCompact
