@@ -1762,3 +1762,4 @@ import Foundation.RiemannQuarticComplexCorrection
 import Foundation.RiemannQuarticComplexGaussian
 import Foundation.RiemannQuarticComplexAnnulus
 import Foundation.RiemannQuarticComplexCompactTail
+import Foundation.RiemannQuarticComplexContour
