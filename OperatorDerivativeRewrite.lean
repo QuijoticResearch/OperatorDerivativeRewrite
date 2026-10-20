@@ -1785,3 +1785,5 @@ import Foundation.RiemannEvenRealSaddle
 import Foundation.RiemannEvenSaddleBranch
 import Foundation.RiemannEvenSaddleTimes
 import Foundation.RiemannEvenConcentration
+import Foundation.RiemannEvenCompactMass
+import Foundation.RiemannEvenNormalization
