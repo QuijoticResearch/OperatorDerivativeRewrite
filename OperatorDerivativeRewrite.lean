@@ -1766,3 +1766,4 @@ import Foundation.RiemannQuarticComplexContour
 import Foundation.RiemannQuarticReflectedDominance
 import Foundation.RiemannQuarticTransitionSaddle
 import Foundation.RiemannQuarticTransitionCorrection
+import Foundation.RiemannQuarticTransitionGaussian
