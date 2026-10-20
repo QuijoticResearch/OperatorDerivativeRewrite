@@ -1809,3 +1809,4 @@ import Foundation.RiemannSixthFarHalfline
 import Foundation.RiemannSixthFarPairing
 import Foundation.RiemannSixthFarComplexPairing
 import Foundation.RiemannSixthFarRealZeros
+import Foundation.RiemannSixthFarSimpleZeros
