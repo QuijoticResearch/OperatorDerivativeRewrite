@@ -12,6 +12,15 @@ is required by these instructions.
 # Persistent research priorities
 
 Read `STARDUST_CAMPAIGN_QUEUE.md` for the authoritative current queue and campaign gates.
+Resumed A(4) review1225 is COMPLETE, preserving mathematical97906a4 and all later
+verified work. Its new stopping/report commit must pass exact receipt and PRIVATE
+main/research verification BEFORE transition. Then resume INTEGER A(2k), A(6) first,
+by direct reuse/review of actualA6884dec8 and coherentintegerf0f112d. Reconfirm the
+exact integer gate before conditional real-order resumption. Preserve the uncommitted
+CubicDensity draft byte for byte, unimported and uncertified until its authorized stage.
+All detailed future objectives, verification and October31 stopping rules remain intact.
+This stopping entry supersedes the following historical immediate-priority notes
+only after its private transition gate closes.
 The latest October20 user update takes precedence over historical active-stage labels:
 pause integer/real-order work, commit and privately back up the instruction-only queue
 update, then resume A(4) review. Preserve all established results and the uncommitted

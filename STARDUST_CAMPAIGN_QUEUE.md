@@ -1,5 +1,13 @@
 # Project Stardust: persistent campaign queue
 
+## Resumed A(4) review1225 complete: private stopping checkpoint required
+
+October20,2026. The review requested at instruction-only `24b89de51bac970bf317dd2255dcb2a2b1e2b20b` is COMPLETE. Preserve mathematical `97906a446305ae1f95bae25bea333680d01fbcf8` and every later verified result. Fresh full6065-job root build, complete36645-declaration standard-three transitive axiom audit, actual combined stopping contract and independent manuscript-quantifier counterchecks pass. The actual finite attained threshold A>8, endpoint reality/finite multiple zero, pre-threshold nonreal zeros, uniform confinement for t>=1 and eventual global simplicity retain their exact existing contracts. No new mathematical source or claim is introduced.
+
+Freeze this A(4) review at its stopping/report commit ONLY AFTER exact receipt and PRIVATE main/research verification. Before that gate, do not resume the paused draft. Afterward, resume INTEGER A(2k), A(6) first, through theorem-level reuse of the already verified actual A6 result884dec8 and coherent integer hierarchyf0f112d. Reconfirm their exact types and hypotheses before any conditional real-order resumption; do not duplicate foundations or invent an additional all-integer global-zero gate. The user-directed remaining order and ALL interpolation, normalization, branch, analyticity, uniform-estimate, actual zero-escape, Hurwitz and obstruction requirements in the next section remain operative. Independent A(2) and final multichannel stay queued. October31 is the hard stop.
+
+The preserved uncommitted CubicDensity source remains UNIMPORTED, UNSTAGED and UNCERTIFIED. Fresh source/inventory checks cover all1916 committed Foundation/root sources,107 archive files,43Incoming and11 fully reviewed A4 manuscripts/exact recursive filenames. No manuscript changes. This entry supersedes older active-stage labels only after its explicit private gate; the indefinite goal remains active.
+
 ## Authoritative user update: queue backup, then resume A(4) review (October 20, 2026)
 
 This latest instruction supersedes the active-stage labels below. Pause integer and real-order investigation now. Preserve every verified result, the frozen A(4) mathematics at `97906a446305ae1f95bae25bea333680d01fbcf8`, its stopping/report checkpoint `9d886401b6dc7eaaf063f37ee6dbf9ae0f577124`, and all subsequent audited work. Preserve the uncommitted `Foundation/RiemannRealOrderCubicDensity.lean` byte for byte; its targeted build is not full certification. Commit and privately back up this instruction-only update, then resume A(4) review without erasing or duplicating established results. Do not begin or continue the future interpolation investigation during this update.
