@@ -1782,3 +1782,4 @@ import Foundation.RiemannEvenFlow
 import Foundation.RiemannEvenEvolution
 import Foundation.RiemannQuarticGlobalSimpleZeros
 import Foundation.RiemannEvenRealSaddle
+import Foundation.RiemannEvenSaddleBranch
