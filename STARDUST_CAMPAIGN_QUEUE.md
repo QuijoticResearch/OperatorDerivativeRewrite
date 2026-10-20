@@ -1,5 +1,11 @@
 # Project Stardust: persistent campaign queue
 
+## Current branch1226: conditional real-order derivative and Fourier-tail audit
+
+A(4) review1225 is FROZEN at `f287f71e1d867194bac98830b15661b981c80ea2`, exactly verified on PRIVATE main/research. AFTER that gate, the complete current EvenEntireGrowth, EvenWindowZeros, SixthTransitionSimpleZeros, EvenDomain, EvenFlow and EvenEvolution proofs were reread. The precise finite-integer common-majorant/jet/operator foundationf0f112d and actual globalA6884dec8 are reconfirmed in `.lake/stardust-1226-post-private-integer-gate.json` BEFORE conditional real-order work resumed. No new all-integer global-zero gate is imposed. Independent A(2) and final multichannel remain queued.
+
+The preserved CubicDensity draft has now been reviewed and completed for this authorized stage. It proves actual one-sided cubic-profile derivative integrability and vanishing boundary limits, plus a genuine integral representation of the actual order3/2 flow. It is adopted only through this checkpoint's full build, complete axiom audit, actual public-type/source review, explicit commit, receipt and private backup. Its positive-half-line agreement does not identify it with the EVEN density at negative arguments. No Fourier asymptotic, eventual sign, actual nonreal-zero existence/escape or near1 conclusion follows yet. Reuse the established interpolation/limit/branch/decay results and preserve EVERY detailed future objective below. October31 remains the hard stop; the existing goal stays active.
+
 ## Resumed A(4) review1225 complete: private stopping checkpoint required
 
 October20,2026. The review requested at instruction-only `24b89de51bac970bf317dd2255dcb2a2b1e2b20b` is COMPLETE. Preserve mathematical `97906a446305ae1f95bae25bea333680d01fbcf8` and every later verified result. Fresh full6065-job root build, complete36645-declaration standard-three transitive axiom audit, actual combined stopping contract and independent manuscript-quantifier counterchecks pass. The actual finite attained threshold A>8, endpoint reality/finite multiple zero, pre-threshold nonreal zeros, uniform confinement for t>=1 and eventual global simplicity retain their exact existing contracts. No new mathematical source or claim is introduced.

@@ -12,6 +12,15 @@ is required by these instructions.
 # Persistent research priorities
 
 Read `STARDUST_CAMPAIGN_QUEUE.md` for the authoritative current queue and campaign gates.
+Current1226: A4 stoppingf287f71 is exactly PRIVATE verified. The complete current
+integer hierarchy/domain/jet/operator proofs were reread AFTER that gate and the
+coherent integer foundation reconfirmed BEFORE conditional real-order resumption.
+Current work is actual real-order density derivatives/Fourier tails within A2k.
+CubicDensity is now reviewed for adoption through full checkpoint1226 standards;
+older instructions to preserve it as an untouched paused draft are historical after
+this authorized resumption. IndependentA2/finalmultichannel remain queued; no
+actual zero-escape/RH inference. Preserve all detailed top-queue objectives and audits.
+This current entry supersedes historical active-stage labels below.
 Resumed A(4) review1225 is COMPLETE, preserving mathematical97906a4 and all later
 verified work. Its new stopping/report commit must pass exact receipt and PRIVATE
 main/research verification BEFORE transition. Then resume INTEGER A(2k), A(6) first,
