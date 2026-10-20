@@ -1750,3 +1750,4 @@ import Foundation.RiemannQuarticFarLeftCompact
 import Foundation.RiemannQuarticFarLeftAnnulus
 import Foundation.RiemannQuarticFarHalfline
 import Foundation.RiemannQuarticFarPairing
+import Foundation.RiemannQuarticFarAnalyticBranch
