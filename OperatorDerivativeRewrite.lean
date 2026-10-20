@@ -1816,3 +1816,4 @@ import Foundation.RiemannSixthFarUnitStrip
 import Foundation.RiemannQuarticThresholdEndpoint
 import Foundation.RiemannSixthComplexCentral
 import Foundation.RiemannSixthComplexRightTail
+import Foundation.RiemannSixthComplexLeftCompact
