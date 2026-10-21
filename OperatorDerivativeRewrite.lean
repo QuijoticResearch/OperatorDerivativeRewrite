@@ -1917,3 +1917,6 @@ import Foundation.HigherHeatPolynomialPredictableField
 import Foundation.HigherHeatPolynomialItoData
 import Foundation.HigherHeatPolynomialIto
 import Foundation.HigherHeatTerminalPolynomialIto
+import Foundation.HigherHeatInnovationMoments
+import Foundation.HigherHeatCenteredPowerLimits
+import Foundation.HigherHeatPolynomialInnovationLimits

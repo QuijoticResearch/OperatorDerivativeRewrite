@@ -1,5 +1,24 @@
 # Project Stardust: persistent campaign queue
 
+## Current1283: FINAL multichannel — centered native innovations remove drift
+
+Current1283: FINAL multichannel ACTIVE. Exact signed critical innovation
+centering cancels top drift; all centered powers q>=p vanish in dual norm
+under actual adapted uniform bounds. For EVERY past monomial all bounds/L1
+premises are discharged: exactly q<p channels survive. Time-weighted Appell
+fields/canonical terminal, multitime and completed Clark-Ocone remain OPEN.
+Consult authoritative top queue and STARDUST_MULTICHANNEL_CAMPAIGN.md.
+Preserve every verification/private gate and October31 hard stop; no later campaign.
+
+NEXT actual time-weighted backward-heat/Appell fields, right-time native
+approximation/uniform bounds/L1 limits, exact finite Taylor/Doob telescope,
+then canonical terminal reconstruction. Full multitime/completed-observable
+reconstruction and tensor/integrand injectivity remain OPEN. No completed-
+probe/observable confusion, positive variation, signed path measure or
+complex-noise substitution. Prior ordinary-Ito centering obstruction remains
+valid. A4/integer/conditional-real/A2 FROZEN. October31 HARDSTOP, then STOP.
+
+
 ## Current1282: FINAL multichannel — all terminal-polynomial signed Itô formulas verified
 
 Current1282: FINAL multichannel ACTIVE. Actual signed Itô formula now holds

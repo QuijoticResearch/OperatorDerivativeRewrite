@@ -1,5 +1,13 @@
 # Clark–Ocone manuscript audit and mathematical repair ledger
 
+Current1283: FINAL multichannel ACTIVE. Exact signed critical innovation
+centering cancels top drift; all centered powers q>=p vanish in dual norm
+under actual adapted uniform bounds. For EVERY past monomial all bounds/L1
+premises are discharged: exactly q<p channels survive. Time-weighted Appell
+fields/canonical terminal, multitime and completed Clark-Ocone remain OPEN.
+Consult authoritative top queue and STARDUST_MULTICHANNEL_CAMPAIGN.md.
+Preserve every verification/private gate and October31 hard stop; no later campaign.
+
 Current1282: FINAL multichannel ACTIVE. Actual signed Itô formula now holds
 for EVERY real terminal polynomial and every positive even heat order, with
 all genuine predictable L1 fields/native sum limits proved. Ordinary Itô
@@ -1625,3 +1633,78 @@ u(s,x)=exp((-1)^(m+1)*T*(1-s)*D^(2m))P(x) is a candidate, not yet a proved
 canonical coefficient theorem here. No unrelated campaign or new space.
 FINAL ACTIVE; A4/integer/conditional-real/A2 FROZEN. October31 HARD STOP;
 freeze/document/STOP then, NO new campaigns. Existing indefinite goal ACTIVE.
+
+
+## Checkpoint1283: exact signed drift cancellation and all centered-power limits
+
+For EVERY m>0,p=2m,T>0, define actual native centered innovations
+  sum_j F_j*(delta_j^q-M_q((-1)^(m+1)*physical cell duration)).
+HigherHeatInnovationMoments identifies the exact critical moment and actual
+top channel: I_p(B_j JF)=M_p(cell)*JF. This identity is valid for every
+polynomial coefficient F, before adaptation. Below p, positive moments are
+zero. Above p, the moment is bounded by a proved finite nonnegative constant
+times normalized mesh squared, including the nondivisible moment-zero case.
+No positive variance or finite signed path measure is invoked.
+
+HigherHeatCenteredPowerLimits then proves EXACT critical cancellation for
+actual ADAPTED coefficients: J(centered p-power sum) is precisely the old
+channel remainder. Its norm is at most C(m,T,p)*mesh*M, and hence tends to
+zero for every genuinely uniform actual coefficient-dual bound M. The
+actual_critical_probe_vanish theorem identifies convergence against EVERY
+real polynomial cylinder G as literal cylindrical signed expectation tending
+to zero. It follows from dual-norm convergence, not merely zero signed mean.
+For every q>p, both the raw sum and its moment compensation vanish in dual
+norm under the same actual uniform bound; L1 convergence is NOT needed for
+the discarded powers. For 1<=q<p, centered sums equal raw sums and converge
+to I_q(A) when the actual coefficient fields converge to A in genuine L1.
+The explicit domains and adaptation hypotheses remain visible in all types.
+
+HigherHeatPolynomialInnovationLimits.past_power_innovation_limit discharges
+ALL coefficient uniform bounds and native L1 premises for EVERY past power
+degree d and EVERY innovation order q=r+1. With no residual analytic premise,
+the limit is I_q(powerField d) if q<p and zero if q>=p, in the ENTIRE
+completed analytic TEST DUAL NORM. Its critical rate uses the existing
+coordinateCurve sup norm and powerConstant; no new foundational space,
+degree-uniform bound or stronger coefficient-domain continuity is assumed.
+This is the exact p-1 cutoff needed for a canonical centered Taylor/Doob
+passage, not a proof that all observables have yet been reconstructed.
+
+The finite-mesh distinction is essential. Six independent Lean examples
+PASS: p6 moment5 zero; p8 critical moment -40320*T*mesh; p4 moment8-minus-
+moment4-squared=19584*T^2*mesh^2; p4 critical limit with past^5; p6 surviving
+fifth channel with past^4; p8 discarded ninth channel with past^3.
+Independent exact rational signed moments check 10260 product cell identities,
+2160 adapted critical cancellations and576 higher-moment bounds across
+p2/4/6/8, three horizons, four meshes and nonconstant past/probe polynomials.
+For F=1 and probe X_T^p, the centered p-power sum at N cells equals
+((2p)!/2-(p!)^2)*T^2/N, NONZERO at each finite mesh. For p4 this is19584*T^2/N.
+The latter general finite-grid diagnostic is an independent exact computation,
+not a newly claimed separate universal Lean pairing theorem. All test code
+and exact output are retained in STARDUST_CENTERED_INNOVATION_VERIFICATION.json.
+
+NEXT: construct the actual time-weighted backward-heat/Appell coefficient
+fields and native right-time approximations, prove their uniform bounds and
+genuine L1 limits, and identify the finite Taylor/Doob telescope with those
+fields. Reuse PureOrderAppellTransition.actual_signed_transition and
+PureOrderTaylorInnovations.centered_taylor_eval, then pass using the new
+centered cutoff. Canonical terminal Clark-Ocone, general multitime and
+completed OBSERVABLE reconstruction remain OPEN. Completed TEST probes do
+not constitute completed-observable reconstruction. The old ordinary-Ito
+centering obstruction remains valid; these corrected innovations are not
+the unchanged ordinary-Ito fields. Full tensor/integrand injectivity OPEN.
+
+Full root 6191 jobs TERMINAL0 in 25.800922s;
+complete transitive audit 38424 safe Foundation declarations standard3 only
+TERMINAL0 in 35.313570s. ALL17 final public types
+actually read UNABRIDGED with pp.proofs true; ALL249 final source/helper lines
+reviewed. Independent six-example Lean run TERMINAL0 in
+26.156443s. Source/config hashes pinned BEFORE
+fresh full root build; all2019 prior source bytes unchanged except root3
+imports; all107 recursive archive paths/hashes, Incoming43/42distinct, A4eleven
+and original Clark SHA preserved. Permanent build configuration unchanged.
+The previous optimization-only turn verified existing workflow evidence but
+did not advance mathematics; this turn revalidated the available draft and
+made concrete PROGRESS. Existing goal stays ACTIVE. FINAL multichannel stays
+ACTIVE, earlier campaigns FROZEN, October31 hard stop, no campaign afterward.
+Private backup is pending until this exact audited commit's receipt and sync
+finish; the ignored closure record will retain actual post-push verification.

@@ -20,6 +20,14 @@ an improvement is measured. See the document for evidence, limits and rollback.
 
 # Persistent research priorities
 
+Current1283: FINAL multichannel ACTIVE. Exact signed critical innovation
+centering cancels top drift; all centered powers q>=p vanish in dual norm
+under actual adapted uniform bounds. For EVERY past monomial all bounds/L1
+premises are discharged: exactly q<p channels survive. Time-weighted Appell
+fields/canonical terminal, multitime and completed Clark-Ocone remain OPEN.
+Consult authoritative top queue and STARDUST_MULTICHANNEL_CAMPAIGN.md.
+Preserve every verification/private gate and October31 hard stop; no later campaign.
+
 Current1282: FINAL multichannel ACTIVE. Actual signed Itô formula now holds
 for EVERY real terminal polynomial and every positive even heat order, with
 all genuine predictable L1 fields/native sum limits proved. Ordinary Itô

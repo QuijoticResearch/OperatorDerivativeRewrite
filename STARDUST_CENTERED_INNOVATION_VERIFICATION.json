@@ -1,0 +1,103 @@
+{
+  "checkpoint": 1283,
+  "time_utc": "2026-10-21T20:57:58.743895+00:00",
+  "campaign": "FINAL multichannel pseudoprocess",
+  "previous_private_checkpoint": "89a244b76029353dd9429358a18d81e2434c6abb",
+  "source_count": 2022,
+  "prior_source_count": 2019,
+  "prior_sources_unchanged_except_root": true,
+  "root_only_three_imports": true,
+  "configuration_unchanged": true,
+  "full_build_jobs": 6191,
+  "audit_declarations": 38424,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "terminal_results": {
+    "full-build": {
+      "stage": "full-build",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "build"
+      ],
+      "wall_seconds": 25.800922399997944,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T20:56:04.808957+00:00"
+    },
+    "audit": {
+      "stage": "audit",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1283-audit.lean"
+      ],
+      "wall_seconds": 35.31357019999996,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T20:56:50.477216+00:00"
+    },
+    "independent": {
+      "stage": "independent",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1283-independent.lean"
+      ],
+      "wall_seconds": 26.156443099986063,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T20:55:32.124210+00:00"
+    }
+  },
+  "public_types_actually_read_unabridged": 17,
+  "proof_arguments_visible": true,
+  "complete_final_source_lines_reviewed": 249,
+  "new_public_theorems": 15,
+  "new_definitions": 2,
+  "physical_order": "Every p=2m, integer m>0",
+  "positive_physical_horizon_required": true,
+  "normalized_time": "[0,1]",
+  "native_centered_innovation": "sum_j F_j*(delta_j^q-M_q(signed cell parameter))",
+  "critical_cancellation": "q=p: exact completed-dual equality with old quadratic-mesh channel remainder; norm<=C(m,T,p)*mesh*M",
+  "higher_moments": "q>p: abs(M_q(cell))<=C(m,T,q)*mesh^2, with proved finite nonnegative C",
+  "higher_centered_vanishing": "q>p: completed-dual norm limit zero under actual adapted uniform coefficient bound, no L1 premise",
+  "lower_centered_channels": "1<=q<p: old channel q with actual adapted uniform coefficient bound and genuine L1 convergence",
+  "actual_signed_probe_consequence": "Critical centered sums tested against EVERY real polynomial cylinder converge to zero as literal finite signed expectations",
+  "unconditional_past_polynomials": "For EVERY d,r, coefficients past^d: native centered (r+1)-power sums tend to channel r(powerField d) when r+1<p, and zero otherwise; ALL uniform bound/L1 premises discharged",
+  "finite_mesh_zero_claimed": false,
+  "finite_mesh_diagnostic": "p4: M8(cell)-M4(cell)^2=19584*T^2*mesh^2; independent Lean proof. For constant coefficients and terminal fourth probe, exact moment test gives 19584*T^2*mesh, nonzero at every finite mesh.",
+  "canonical_time_weighted_Appell_fields_proved": false,
+  "canonical_terminal_Clark_Ocone_proved": false,
+  "general_multitime_polynomial_reconstruction_proved": false,
+  "arbitrary_completed_observable_reconstruction_proved": false,
+  "degree_uniform_completed_extension_proved": false,
+  "universal_completed_Clark_Ocone_proved": false,
+  "positive_variation_or_finite_signed_path_measure_claimed": false,
+  "Lean_test_code": "import Foundation.HigherHeatPolynomialInnovationLimits\n\nopen OperatorDerivativeRewrite.Foundation\nopen HigherHeatPolynomialCylinders HigherHeatAnalyticCylinderDomain HigherHeatCompletedPairing\nopen HigherHeatPairedDualCausality HigherHeatCenteredPowerLimits HigherHeatInnovationMoments\nopen HigherHeatPolynomialInnovationLimits HigherHeatPolynomialPredictableField\nopen HigherHeatAllChannelNormalization HigherHeatWeakTimeAdjoint\nopen scoped NNReal Topology BigOperators\n\nexample (n : \u2115) (T : \u211d\u22650) : cellMoment n 3 T 5 = 0 :=\n  low_moment_zero n 3 (by decide) T 5 (by decide) (by decide)\n\nexample (n : \u2115) (T : \u211d\u22650) : cellMoment n 4 T 8 =\n    -40320*(T:\u211d)*(HigherHeatDyadicLaws.duration 1 n:\u211d) := by\n  rw [moment_order n 4 (by decide) T]\n  norm_num\n\nexample (n : \u2115) (T : \u211d\u22650) :\n    cellMoment n 2 T 8 - (cellMoment n 2 T 4)^2 =\n      19584*(T:\u211d)^2*(HigherHeatDyadicLaws.duration 1 n:\u211d)^2 := by\n  have h8 := PseudoPolynomialStein.moment_multiple 4 (by decide)\n    ((-1:\u211d)^3*(HigherHeatDyadicLaws.duration T n:\u211d)) 2\n  have h4 := moment_order n 2 (by decide) T\n  change PseudoPolynomialStein.moment 4 _ 8 - _ = _\n  rw [h8, h4, \u2190 HigherHeatDyadicStepAgreement.duration_scale T n]\n  norm_num\n  ring\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    Filter.Tendsto (fun n => pairing 2 (by decide) T hT\n      (core (cylinderOf n (centeredPower n 2 T 4 (powerPast n 5)))))\n      Filter.atTop (\ud835\udcdd (0:Dual)) := by\n  simpa using past_power_innovation_limit 2 (by decide) T hT 5 3\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    Filter.Tendsto (fun n => pairing 3 (by decide) T hT\n      (core (cylinderOf n (centeredPower n 3 T 5 (powerPast n 4)))))\n      Filter.atTop (\ud835\udcdd (channel 3 T 4 (powerField 3 (by decide) T hT 4))) := by\n  simpa using past_power_innovation_limit 3 (by decide) T hT 4 4\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    Filter.Tendsto (fun n => pairing 4 (by decide) T hT\n      (core (cylinderOf n (centeredPower n 4 T 9 (powerPast n 3)))))\n      Filter.atTop (\ud835\udcdd (0:Dual)) := by\n  simpa using past_power_innovation_limit 4 (by decide) T hT 3 8\n",
+  "Lean_test_code_sha256": "753DD4116BFF363FD687727EA038DA8BEB4F151CA2C1A349DACA571196036BCD",
+  "Lean_test_log_sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+  "independent_Lean_tests": 6,
+  "exact_signed_test_code": "from fractions import Fraction as Q\nfrom math import factorial, comb\nfrom functools import lru_cache\n\ndef moment(p,r,a):\n    return Q(0) if r%p else Q(factorial(r),factorial(r//p))*a**(r//p)\ndef falling(n,r):\n    return 0 if n<r else factorial(n)//factorial(n-r)\n@lru_cache(None)\ndef triple(p,d,q,g,a,s,h):\n    if q<0 or g<0:return Q(0)\n    return sum(comb(g,i)*comb(g-i,j)*moment(p,d+i,a*s)*moment(p,q+j,a*h)*\n               moment(p,g-i-j,a*(1-s-h))\n               for i in range(g+1) for j in range(g-i+1))\n\ncells=0;critical=0;bounds=0\nfor m in range(1,5):\n    p=2*m\n    for T in [Q(1),Q(1,2),Q(5,7)]:\n        a=(-1)**(m+1)*T\n        for N in [1,2,4,8]:\n            h=Q(1,N)\n            for j in sorted({0,N//2,N-1}):\n                s=j*h\n                for d in [0,1,2,3]:\n                    for q in sorted({1,p-1,p,p+1,2*p}):\n                        for g in [0,1,p-1,p,p+1]:\n                            raw=triple(p,d,q,g,a,s,h)\n                            product=sum(falling(q-1,k)*p*a*h*comb(p-1,k)*falling(g,p-1-k)*\n                                        triple(p,d,q-1-k,g-p+1+k,a,s,h)\n                                        for k in range(min(p,q)))\n                            assert raw==product\n                            if q==p:\n                                centered=raw-moment(p,p,a*h)*triple(p,d,0,g,a,s,h)\n                                remainder=sum(falling(p-1,k)*p*a*h*comb(p-1,k)*falling(g,p-1-k)*\n                                              triple(p,d,p-1-k,g-p+1+k,a,s,h) for k in range(p-1))\n                                assert centered==remainder\n                                critical+=1\n                            cells+=1\n            actual=N*(moment(p,2*p,a*h)-moment(p,p,a*h)**2)\n            exact=Q(factorial(2*p),2)-factorial(p)**2\n            assert actual==exact*a*a/N\n            assert actual!=0\n            for q in range(p+1,3*p+3):\n                C=Q(0) if q%p else Q(factorial(q),factorial(q//p))*T**(q//p)\n                assert abs(moment(p,q,a*h))<=C*h*h\n                bounds+=1\nprint(dict(passed=True,exact_signed_cell_tests=cells,critical_cancellations=critical,\n           higher_moment_bounds=bounds,finite_mesh_nonzero_diagnostic=True,\n           scope='Exact finite signed moments and multinomial expansion; p=2,4,6,8. '\n                 'Critical limit is not exact finite-mesh zero; no positivity or full Clark-Ocone inferred.'))\n",
+  "exact_signed_test_output": "{'passed': True, 'exact_signed_cell_tests': 10260, 'critical_cancellations': 2160, 'higher_moment_bounds': 576, 'finite_mesh_nonzero_diagnostic': True, 'scope': 'Exact finite signed moments and multinomial expansion; p=2,4,6,8. Critical limit is not exact finite-mesh zero; no positivity or full Clark-Ocone inferred.'}",
+  "exact_signed_cell_tests": 10260,
+  "critical_cancellations": 2160,
+  "higher_moment_bounds": 576,
+  "new_source_sha256": {
+    "Foundation/HigherHeatInnovationMoments.lean": "581105F2F3BEEED180CA28F042D067C34FBFFD2AEE90D6DA4056C568F3B96385",
+    "Foundation/HigherHeatCenteredPowerLimits.lean": "2533D13D182C1620714BF61BC8566742677FA8F49773ACE627DF3F0EE4F273C4",
+    "Foundation/HigherHeatPolynomialInnovationLimits.lean": "F4BFDD7461EB51F2A9F8B253B3E9661C0DD7675D649CBA7A4A97CEE4D97CF54C"
+  },
+  "source_integrity": {
+    "archive": 107,
+    "exact_recursive_paths": true,
+    "incoming": 43,
+    "incoming_distinct": 42,
+    "a4": 11,
+    "Clark_manuscript_hash_preserved": true
+  },
+  "private_backup_pending": true,
+  "hard_stop": "2026-10-31",
+  "goal": "ACTIVE"
+}
