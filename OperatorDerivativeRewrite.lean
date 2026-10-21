@@ -1880,3 +1880,4 @@ import Foundation.SymmetricPolynomialHeatLimit
 import Foundation.RiemannQuadraticGlobalStrip
 import Foundation.RiemannQuadraticStripEvolution
 import Foundation.RiemannQuadraticArithmeticHeat
+import Foundation.RiemannEvenRealityClosed

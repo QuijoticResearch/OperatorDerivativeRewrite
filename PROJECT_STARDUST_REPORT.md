@@ -27150,3 +27150,87 @@ arithmetic/domain limitations are now documented. Zero-time reality/RH, exact
 Newman threshold and stronger Xi-specific estimates remain OPEN. A2 ACTIVE;
 explicit audited stopping still required before final multichannel. No pivot;
 integer/real frozen; October31 hard stop and all private/verification gates hold.
+
+
+## Checkpoint1273: actual all-real time sets CLOSED; exact finite-boundary obligation isolated
+
+Foundation/RiemannEvenRealityClosed.lean proves CLOSEDNESS of the ACTUAL all-real
+time set for EVERY natural integer-even order m, with no m>0, t>=0 or real-zero
+assumption at the limiting time. This supports active A2 and reuses existing
+general declarations; no frozen campaign is reopened. realTimes m is defined
+literally as {t | forall z:Complex, flow m t z=0 -> Im(z)=0}.
+
+upper_vertical_bound starts at an explicit all-real actual H_(m,t). The existing
+generic real divisor polynomials have EXACT initial zero tests and actual local-
+uniform convergence. Actual analyticity, nonzero origin, evenness, conjugation
+and subquadratic growth discharge ALL input hypotheses for every m,t. Thus each
+finite polynomial has only real zeros, and PolynomialStripLimit.limit_upper_bound
+gives vertical modulus monotonicity above the real axis. No new split theorem,
+new approximation construction, Gaussian budget or diagonal selection is needed.
+
+For a convergent real time sequence s_n->t, the EXISTING even_order_heat_equation
+gives true pointwise time continuity at each fixed complex argument. Every H_s_n
+inherits the vertical inequality; passing the two norm limits preserves it for
+ACTUAL H_t. The previously verified entire identity argument excludes zeros
+above the real axis because H_t is entire and its origin is nonzero. Actual
+evenness handles negative imaginary parts. Hence reality_of_time_sequence and
+isClosed_realTimes hold. This is NOT a general pointwise Hurwitz theorem: the
+global polynomial-derived modulus property is the essential additional structure.
+No assertion of local-uniform time convergence is needed or made by this proof.
+No root branch, simplicity, multiplicity bound or boundedness of approaching
+zeros is assumed. The local-uniform DIVISOR approximation remains genuinely used.
+
+For ACTUAL quadratic flow, once-real preservation gives quadratic_upper and
+the unconditional classical half theorem gives quadratic_nonempty. IF the
+all-real set is bounded below, quadratic_infimum_mem proves its infimum attained,
+quadratic_eq_Ici identifies the entire set with that closed upper ray, and
+quadratic_nonreal_before supplies an ACTUAL nonreal zero at EVERY earlier time.
+The BddBelow premise is printed and has NOT been discharged. quadratic_dichotomy
+is unconditional: either ALL real times are all-real, or the set is Ici A for a
+real A<=1/2. quadratic_bddBelow_iff_nonreal_exists proves precisely that the
+missing lower-boundedness is equivalent to one ACTUAL nonreal zero at some time.
+This does not produce that witness or establish a finite Newman threshold.
+No RH/exact threshold/numerical improvement or quartic-to-quadratic inference.
+
+PRIMARY SOURCE: [Newman, Fourier Transforms with Only Real Zeros,
+Proc.AMS61,245-251](https://sites.math.northwestern.edu/~auffing/papers/Newman.pdf).
+Page247 was visually read. Its classification leads to a quartic density lower
+bound incompatible with the Xi density's faster decay. This external theorem
+is NOT Lean-verified or imported here. STARDUST_A2_NEWMAN_SOURCE_AUDIT.json records
+the exact PDF/render hashes and scope. The paper uses a different time convention;
+its normalization and all intervening analytic hypotheses still need verification.
+No unverified finite-threshold theorem is silently substituted for BddBelow.
+
+A promising NEXT INVESTIGATION, NOT A THEOREM: determine whether existing actual
+Gaussian smoothing, canonical polynomial products and density derivatives can
+prove the NEEDED lower-bound consequence directly, without formalizing the full
+measure classification. Required links include actual even-density realization,
+Gaussian approximate identity for needed derivatives, a uniform quartic lower
+bound under the all-negative-time reality hypothesis, and contradiction with the
+verified superexponential arithmetic tail. Each is presently an obligation; a
+formal density/expectation or unchecked normalization will not close it. Start
+with theorem reuse and read the relevant classification proof before choosing
+the shortest valid route. Keep actual-existence and conditional thresholds distinct.
+
+Verification: target4702jobs TERMINAL0,22.6494436s;
+fresh FULL6152jobs TERMINAL0,23.9231951s;
+COMPLETE37758-declaration transitive root/Foundation audit TERMINAL0,
+49.4433188s, ONLY propext/Classical.choice/Quot.sound. ALL11
+new public types ACTUALLY READ UNABRIDGED with pp.proofs true, no ellipses; ALL100
+final source/proof/helper lines read. Ten theorems and1definition; no explicit
+private production helper/global instance. TEN examples TERMINAL0,
+28.4037483s: closedness m1/m3/m0; conditionalnegative
+constant-time sequence; decreasing t+1/(n+1) boundary; conditional attained
+infimum/nonreal earlier point; unconditional dichotomy; actual nonreal witness
+implies BddBelow; actual vertical bound. Initial scratch repaired generic argument
+order and the explicit local-uniform-on-univ conversion; no false weakening.
+Source1983 hashes pinned; prior1982 unchanged except root; configs/toolchain/
+resource/cache/full gates unchanged. Exact107archive paths/hashes,43Incoming
+42distinct,11A4 unchanged; unrelated12drafts/tmp preserved. The external PDF is
+only an ignored cache source; no manuscript edited/renamed/deleted/committed.
+Private exact-commit receipt/sync complete the checkpoint afterward.
+
+A2 ACTIVE; no stopping from this conditional boundary theorem. Exact finite
+lower bound, stronger Xi estimates, exact Newman value and zero-time RH remain
+OPEN. Integer/real frozen; finalmultichannel ONLY AFTER explicit audited A2
+stopping; October31 hard stop and all verification/private gates unchanged.

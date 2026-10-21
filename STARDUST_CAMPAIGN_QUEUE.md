@@ -1,6 +1,23 @@
 # Project Stardust: persistent campaign queue
 
 
+## Current1273: actual all-real time sets CLOSED; lower-bound obligation explicit
+
+For EVERY natural m, ACTUAL all-real time set is CLOSED. Polynomial-divisor
+vertical modulus bounds + actual heat time continuity + nonzero entire identity
+argument give the limit, without a general pointwise Hurwitz assumption.
+Quadratic all-real set is upward closed/nonempty. IF BddBelow, its infimum is
+attained and it equals Ici infimum; EVERY earlier time has an actual nonreal zero.
+Unconditional dichotomy: either ALL real times or Ici A with real A<=1/2.
+BddBelow iff one actual nonreal zero exists at some time; that witness is OPEN.
+NEXT A2: audit Newman1976 lower-bound proof and existing actual Gaussian/product/
+density machinery for a rigorous finite-threshold obstruction. Source/formula
+review is external, not a Lean theorem; no hidden classification axiom allowed.
+Exact finite lower bound/threshold, stronger Xi estimates and zero-time RH OPEN.
+A2 ACTIVE; no stopping yet. Integer/real FROZEN; final multichannel ONLY AFTER
+explicit audited A2 stopping. October31/full-build/axiom/type/source/private gates hold.
+
+
 ## Current1272: general arithmetic-to-heat transfer and its limitations verified
 
 ACTUAL initial half-plane boundary theta, under EXPLICIT actual-zeta nonvanishing,
