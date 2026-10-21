@@ -1,5 +1,21 @@
 # Project Stardust: persistent campaign queue
 
+## Current1257: EXHAUSTIVE actual local zero clusters verified; global strip next
+
+At every actual quadratic-flow zero, finite positive multiplicity m now gives a
+FIXED small closed physical disk containing EXACTLY m zeros at time t+h^2 for all
+sufficiently small punctured real h. ALL are spatially simple; ALL are real if the
+original zero is real. The monic Hermite product plus fixed-budget joint remainder
+prove annular confinement; compact-gap exclusion and local uniqueness close the
+upper count. This supersedes the previous lower-count-only status. Constants are
+LOCAL, with no uniform all-zero/time bound. Global strip contraction remains OPEN.
+Next: theorem-level polynomial heat strip-control reuse and rigorous approximation/
+domain transfer to the ACTUAL Xi function. No finite-truncation substitute, new
+threshold or RH claim. Independent A2 ACTIVE; prior integer/real campaigns FROZEN;
+final multichannel AFTER A2 stopping; October31 hard stop; all verification and
+exact private-backup gates intact. Permanent build optimization retained.
+This entry supersedes historical immediate-proof labels below.
+
 ## Current1256: exact model count and m actual zeros verified; confinement next
 
 The existing Hermite family is now identified with pure-order Appell(2,1): monic

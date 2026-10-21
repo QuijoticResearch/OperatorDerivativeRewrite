@@ -1864,3 +1864,4 @@ import Foundation.RiemannQuadraticParabolic
 import Foundation.RiemannQuadraticAllOrders
 import Foundation.RiemannQuadraticZeroTransfer
 import Foundation.RiemannQuadraticCluster
+import Foundation.RiemannQuadraticConfinement

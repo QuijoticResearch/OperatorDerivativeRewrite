@@ -25708,3 +25708,72 @@ Hermite mechanism under the prior literature/normalization audit; no novelty cla
 Independent A2 ACTIVE; prior integer/real campaigns FROZEN; finalmultichannel AFTER
 A2 stopping; October31 hard stop. All full-build, axiom, type/proof, source-integrity
 and exact private-backup gates remain; backup pending at this precommit entry.
+
+
+## Checkpoint1257: actual annular confinement and EXHAUSTIVE local zero clusters
+
+Foundation/RiemannQuadraticConfinement.lean proves the previously open upper-count
+obligation for the ACTUAL quadratic Xi flow. The existing Hermite polynomial has
+its exact finite monic root product. With M=1+sum(root norms), norm Q_m(w) is at
+least (norm w/2)^m for norm w>=2M. This uses the exact m-root cardinality already
+verified through the Appell bridge, including m=0, rather than a numerical root list.
+
+At lower-derivative vanishing through order m-1 and nonzero D^mH_t(z), set
+ d=D^mH_t(z), B=budget_0(t,z,1), k=norm d/(m!*2^m)>0,
+ E=B*2^(m+1), R=max(1,2M), delta=min(1/4,k/(2*(E+1)))>0.
+The joint actual integral remainder and product lower bound prove:
+ h!=0, |h|<=delta, norm v<=delta, H_(t+h^2)(z+v)=0
+ IMPLY norm v<R*|h|.
+Indeed, in the opposite annulus norm v>=|h|>0, the leading norm is at least
+k*norm v^m, while the error is <=E*delta*norm v^m<=k/2*norm v^m.
+This is a genuine fixed-physical-disk confinement proof even when v/h is unbounded.
+The chosen delta simplifies the previously proposed sufficient constant; all its
+positivity, domain, factorial and norm-cancellation obligations are Lean verified.
+
+EXHAUSTIVENESS follows without a new argument principle or assumed zero count.
+Take the compact scaled disk of radius R outside the union of the finitely many
+local Hermite-root neighborhoods. The limiting model is nonzero there, so the
+existing IsCompact.exists_forall_le' gives a positive norm gap, including the
+empty-compact case. Existing uniform convergence excludes every actual scaled
+zero from that complement. Local uniqueness covers every remaining actual zero
+by at most m physical points. The previously verified m distinct simple actual
+zeros in the open physical delta disk then force equality of the finite sets.
+
+actual_exact_cluster: for EVERY natural m, real t and complex z satisfying the
+precise derivative conditions, there exists delta>0 such that for ALL sufficiently
+small punctured REAL h there is S with card S=m and, for EVERY complex zeta,
+ zeta in S IFF zeta in CLOSED ball(z,delta) AND H_(t+h^2)(zeta)=0.
+Every such zero is spatially simple. If z.im=0, every such zero is REAL.
+Thus this is an exhaustive count, not the previous selected-set lower count.
+Every actual zero supplies a positive finite m by direct earlier theorem reuse.
+Complex original zeros require no realness assumption and carry no false realness
+conclusion. Both signs of h are included; the time increment is positive h^2.
+The m=0 case gives an actual zero-free fixed disk near any nonzero value.
+
+Fresh FULL6104job root build TERMINAL0 (41.0365026s),
+COMPLETE37352declaration transitive root/Foundation audit TERMINAL0
+(36.4519673s), only propext/Classical.choice/Quot.sound.
+All NINE public types actually read UNABRIDGED and all223 final source lines
+actually reviewed (eight theorems, one definition; no private helper or instance).
+SIX independent Lean controls TERMINAL0 (25.6411309s):
+empty product, exact quadratic heat sign, degree7 product lower bound, m=0 actual
+zero-free disk, EXACT two actual simple real zeros at a real double-zero base,
+and exhaustive positive finite cluster for an arbitrary complex actual zero.
+Draft repair closed the identity z+(zeta-z)=zeta with ring; final cleanup removed
+an unreachable tactic and used a local let for the finite instance. No resources,
+axioms, theorem semantics or verification gates were weakened or suppressed.
+All1955 production source hashes pinned; previous1954 unchanged except root import.
+All107 manuscript hashes and EXACT recursive paths, Incoming43/42distinct and all
+11 A4 files/exact paths preserved. Lean/Mathlib/build configuration unchanged.
+Permanent optimized workflow was consulted and retained; only preliminary type
+feedback has a measured speedup, not the complete build/audit. No cache deletion.
+
+This closes the local finite-multiplicity collision mechanism. It does NOT give a
+uniform delta across all zeros/times, global strip contraction, a new threshold,
+RH, or a new novelty claim. NEXT: audit/reuse global polynomial heat zero-strip
+control and the approximation/domain bridge to actual Xi. Do not replace this
+bridge with a finite Euler/Taylor truncation, or infer global bounds from local
+clusters. Independent A2 remains ACTIVE; prior integer/real-order campaigns remain
+FROZEN; final multichannel only after A2's audited stopping checkpoint. October31
+hard stop; all exact-commit receipt and private-backup requirements remain intact.
+Private backup is pending at this precommit entry; closure is recorded locally.
