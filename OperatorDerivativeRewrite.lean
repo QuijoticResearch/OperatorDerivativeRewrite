@@ -1881,3 +1881,5 @@ import Foundation.RiemannQuadraticGlobalStrip
 import Foundation.RiemannQuadraticStripEvolution
 import Foundation.RiemannQuadraticArithmeticHeat
 import Foundation.RiemannEvenRealityClosed
+import Foundation.NewmanFourPointBound
+import Foundation.RiemannQuadraticDensitySmoothing

@@ -2426,3 +2426,100 @@ A2 ACTIVE; no stopping from this conditional boundary theorem. Exact finite
 lower bound, stronger Xi estimates, exact Newman value and zero-time RH remain
 OPEN. Integer/real frozen; finalmultichannel ONLY AFTER explicit audited A2
 stopping; October31 hard stop and all verification/private gates unchanged.
+
+
+## Checkpoint1274: actual-flow four-point bound and genuine Gaussian density smoothing
+
+NewmanFourPointBound.lean proves the following necessary inequality for ACTUAL
+H_(m,t), under the EXPLICIT hypothesis that ALL its complex zeros are real.
+For any real A,B,C and y>=1, put Q(v)=A-B*v+log(norm(H_(m,t)(i*C*sqrt(v)))). Then
+  Q(y)>=Q(1)+(y-1)*(Q(2)-Q(1))
+        -2*(y-1)^2*(2*Q(1/2)-Q(0)-Q(1)).
+This is an ACTUAL function-value theorem, not a purely formal product or assumed
+representation. All natural m and real t are included; the reality hypothesis is
+retained. No actual nonreal witness/finite threshold/RH follows yet. No novelty
+or new numerical-record claim. Its purpose is the precise outstanding1273 gap.
+
+The proof starts from elementary real-log estimates. For c>=0 the backward gap
+D=2log(1+c/2)-log(1+c) satisfies (c/(1+c))²<=4D. Write u=c/(1+c),v=y-1 and use
+log(1+u*v)>=u*v-(u*v)²/2 and log(1+u)<=u. This proves the scalar four-point bound.
+It is preserved by nonnegative finite sums and addition of ANY affine A-B*y.
+The finite log profile allows arbitrary nonnegative alpha, including0/emptysets.
+
+For a COMPLEX polynomial P whose roots are all real and P(0)!=0, the COMPLETE
+root MULTISET and exact leading-coefficient/FTA identity give the imaginary-axis
+log-norm profile constant+(1/2)*sum_root log(1+(C/Re(root))²*y), y>=0. Root0 is
+excluded by P(0)!=0; every denominator and log argument is justified, and every
+multiplicity retained. No simple-root or real-leading-coefficient premise.
+The polynomial four-point inequality includes complex leading phase, constants,
+C=0 and repeated roots. No infinite product or classification is assumed.
+
+For ACTUAL H_(m,t), the existing exact generic divisor polynomials transfer the
+given real-zero property to every polynomial, and their origins equal the actual
+nonzero origin. Their genuine local-uniform limit gives the needed five point
+limits. Reality plus the nonzero origin excludes zeros at ALL imaginary-axis
+arguments. This justifies continuity of real log of norm at each limiting value.
+All five inequalities pass to the actual function. No uniform-degree assumption,
+infinite factorial-jet membership, zero-time RH or unchecked logarithm limit.
+
+RiemannQuadraticDensitySmoothing.lean defines the ACTUAL even density
+rho(x)=RiemannQuarticKernel.kernel(abs(x)). It is continuous and strictly positive.
+The existing actual global maximum of the untilted theta kernel gives a global
+finite bound, without new tail estimates or smoothness of an even extension.
+For every REAL epsilon,x, define the GENUINE probability integral
+  smoothing(epsilon,x)=E[rho(x+epsilon*Y)], Y~law1=gaussianReal(0,2).
+Integrability is proved BEFORE limit use; the integral is strictly positive.
+Existing Gaussian pushforwards identify it EXACTLY with integral rho against
+gaussianReal(mean=x,variance=2epsilon²), including negativeepsilon and the
+epsilon0 Dirac case. No assumed law or fictitious random process is substituted.
+For EVERY real sequence epsilon_n->0, dominated convergence on that SAME fixed
+Gaussian probability space proves smoothing(epsilon_n,x)->rho(x) at each x.
+The bound is global and actual. No peak-support condition, measure classification,
+four derivative convergence, or new foundational measure infrastructure is needed.
+
+The [Newman primary paper](https://sites.math.northwestern.edu/~auffing/papers/Newman.pdf)
+necessity proof was selectively visually read on printed248-249. It motivates the
+Gaussian/product comparison, but its classification is NOT imported into Lean.
+Source PDF and render hashes/scope are updated in STARDUST_A2_NEWMAN_SOURCE_AUDIT.
+The four-point proof here was independently constructed and checked; no claim that
+the paper states this exact inequality or that it is novel. No source manuscript
+was altered. Poppler read-only renders stay in ignored cache.
+
+CRUCIAL REMAINING LINK, NOT VERIFIED: for epsilon!=0, s=1/(4epsilon²)>0, prove as
+an ACTUAL integral identity that complex(smoothing(epsilon,x)) equals
+  complex(2sqrt(s/pi)*exp(-s*x²))*H_(1,-s)(i*2s*x).
+The factor2, Gaussian variance, half-line split, norm/log conversion and all L1
+conditions must be proved. Exact distribution above is not that completed-square
+heat identity and does not complete the lower-bound argument. With that link,
+the new inequality could transfer at five positive limiting density values to
+log(rho(sqrt(y))), y>=1, needing only the proved pointwise Gaussian limit.
+No independent uniform derivative/constant estimates would be needed.
+
+Further reuse located: RiemannEvenRealSaddle.weighted_tendsto_zero 2 T ALREADY
+proves exp(T*x^4)*kernel(x)->0 for EVERY real T. A four-point lower quadratic
+polynomial in y=x² would imply a finite quartic exponential lower bound, potentially
+contradicting exactly that existing tail. This is a NEXT proof obligation, not a
+newly established contradiction or a quartic-threshold-to-A2 implication. All-real
+times could still be UNIV in the currently proved1273 dichotomy; BddBelow OPEN.
+
+Verification: targeted4704jobs TERMINAL0,29.0448847s;
+fresh FULL6154jobs TERMINAL0,25.3424462s;
+COMPLETE37784-declaration transitive root/Foundation axiom audit TERMINAL0,
+37.2428715s, standard3 ONLY. ALL20 new public types ACTUALLY READ
+UNABRIDGED pp.proofs true, no ellipses; ALL296 source/proof/helper lines read
+(217+79). Eighteen theorems,2definitions; no explicit private production helper
+or global instance. TEN examples TERMINAL0,36.0186119s:
+log endpoint, empty/affine profile, repeated root with complex leading phase,
+conditional ACTUAL flow values, literal P=X origin-zero counterexample, negative
+epsilon integrability, positive zero-variance smoothing, exactepsilon0 value,
+reciprocal-epsilon pointwise limit, exact arbitrary-epsilon distribution. Failed
+scratch/test probes were repaired without changing theorem domains or weakening
+checks. Some style/unused-tactic warnings remain visible; no linter/check disabled.
+Source1985 hashes pinned; prior1983 unchanged except root imports; configuration,
+versions, resource/cache/full-audit settings unchanged. Exact107 recursive archive
+paths/hashes,43Incoming42distinct,11A4 preserved. Unrelated12drafts/tmp untouched.
+Exact receipt and PRIVATE main/research verification close this checkpoint.
+
+A2 ACTIVE: finish the ACTUAL Gaussian/heat link and test the finite-lower-bound
+route. No stopping or premature finalmultichannel transition. Integer/real frozen;
+October31 hard stop and all source/verification/private backup gates preserved.

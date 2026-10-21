@@ -1,6 +1,23 @@
 # Project Stardust: persistent campaign queue
 
 
+## Current1274: actual-flow four-point bound and genuine Gaussian smoothing verified
+
+Under EXPLICIT all-real zeros of actual H_(m,t), Q(v)=A-Bv+log norm H_(m,t)(iC√v)
+satisfies the four-point quadratic lower bound for every y>=1. Complete root
+multisets, nonzero-origin/log domains and actual divisor limits are checked.
+Actual positive bounded even theta density has strictly positive integrable
+Gaussian smoothing with EXACT mean x/variance2epsilon² law and pointwise limit
+for ANY epsilon_n->0, includingdegenerateepsilon0. No classification imported.
+NEXT A2: prove ACTUAL completed-square heat identity with factor2 and
+s=1/(4epsilon²), epsilon!=0. Then transfer the four-point bound through the
+proved density limit and confront EXISTING exp(T*x^4)*kernel(x)->0, all realT.
+Identity/final contradiction/finite lower bound are OPEN, not inferred from
+separate Gaussian and polynomial results. A2 ACTIVE; no stopping yet. Integer/
+real FROZEN; final multichannel ONLY AFTER explicit audited A2 stopping.
+October31 and all full-build/axiom/type/source/private gates unchanged.
+
+
 ## Current1273: actual all-real time sets CLOSED; lower-bound obligation explicit
 
 For EVERY natural m, ACTUAL all-real time set is CLOSED. Polynomial-divisor
