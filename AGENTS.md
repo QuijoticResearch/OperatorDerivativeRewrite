@@ -20,6 +20,14 @@ an improvement is measured. See the document for evidence, limits and rollback.
 
 # Persistent research priorities
 
+Current1287: FINAL multichannel ACTIVE. Exact common-degree native MULTITIME
+signed jet reconstruction and actual signed mean are now proved. For EVERY
+fixed multitime cylinder, centered q>=p channels vanish in completed-dual
+norm under refinement, with all bounds/adaptation discharged. Surviving q<p
+field L1 convergence/full multitime p-1/completed OBSERVABLE reconstruction
+remain OPEN. NEXT one-cell heat correction/causal field convergence.
+Preserve all verification/private gates, October31 hard stop, no later campaign.
+
 Current1286: FINAL multichannel ACTIVE. Actual native MULTITIME predictable
 Taylor jets and L1 fields now have degree/grid-independent bounds exp(T)/q!
 in source norm, with genuine signed conditional-step identity and adaptation.

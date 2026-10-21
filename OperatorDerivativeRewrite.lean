@@ -1931,3 +1931,6 @@ import Foundation.HigherHeatTerminalClarkOcone
 import Foundation.HigherHeatPredictableJetBounds
 import Foundation.HigherHeatPredictableJetIdentity
 import Foundation.HigherHeatPredictableJetFields
+import Foundation.HigherHeatPredictableJetDegree
+import Foundation.HigherHeatMultitimeJetTelescope
+import Foundation.HigherHeatRefinedPredictableJets

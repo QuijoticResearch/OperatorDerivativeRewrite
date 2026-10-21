@@ -1,5 +1,23 @@
 # Project Stardust: persistent campaign queue
 
+## Current1287: FINAL multichannel — multitime telescope and discarded-channel limits
+
+Current1287: FINAL multichannel ACTIVE. Exact common-degree native MULTITIME
+signed jet reconstruction and actual signed mean are now proved. For EVERY
+fixed multitime cylinder, centered q>=p channels vanish in completed-dual
+norm under refinement, with all bounds/adaptation discharged. Surviving q<p
+field L1 convergence/full multitime p-1/completed OBSERVABLE reconstruction
+remain OPEN. NEXT one-cell heat correction/causal field convergence.
+Preserve all verification/private gates, October31 hard stop, no later campaign.
+
+NEXT actual heat-shift correction, surviving-field L1 convergence/cofinal
+bounded source operators, refinement degree control and justified completion.
+Finite multitime reconstruction is not the full limiting p-1 theorem.
+Keep source causal-time continuity obstruction and tensor/integrand/domain
+gaps explicit. A4/integer/conditional-real/A2 FROZEN. October31 HARDSTOP:
+document exact gaps, freeze and STOP; no new campaign afterward.
+
+
 ## Current1286: FINAL multichannel — uniform actual multitime jet bounds
 
 Current1286: FINAL multichannel ACTIVE. Actual native MULTITIME predictable

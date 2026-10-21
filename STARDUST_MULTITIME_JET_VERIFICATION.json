@@ -1,0 +1,104 @@
+{
+  "checkpoint": 1287,
+  "time_utc": "2026-10-21T22:10:49.962812+00:00",
+  "campaign": "FINAL multichannel pseudoprocess",
+  "previous_private_checkpoint": "1e8c547143a3a2d9d9ad4460eb47fe69b72efbe6",
+  "source_count": 2036,
+  "prior_source_count": 2033,
+  "prior_sources_unchanged_except_root": true,
+  "root_only_three_imports": true,
+  "configuration_unchanged": true,
+  "full_build_jobs": 6205,
+  "audit_declarations": 38630,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "terminal_results": {
+    "full-build": {
+      "stage": "full-build",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "build"
+      ],
+      "wall_seconds": 26.57194850000087,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T22:08:55.620129+00:00"
+    },
+    "audit": {
+      "stage": "audit",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1287-audit.lean"
+      ],
+      "wall_seconds": 37.04216889999225,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T22:10:25.866003+00:00"
+    },
+    "independent": {
+      "stage": "independent",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1287-independent.lean"
+      ],
+      "wall_seconds": 26.697947899985593,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T22:08:04.273433+00:00"
+    }
+  },
+  "public_types_actually_read_unabridged": 19,
+  "proof_arguments_visible": true,
+  "complete_final_source_lines_reviewed": 194,
+  "new_public_theorems": 18,
+  "new_definitions": 1,
+  "physical_order": "Every p=2m, integer m>0",
+  "positive_physical_horizon_required_for_actual_mean": true,
+  "conditioning_degree": "Actual finite signed polynomial conditioning does not increase total degree",
+  "common_degree_bound": "Every native slice degree<=input totalDegree, all cells and evaluation points; jets above input degree identically zero",
+  "exact_native_multitime_reconstruction": "For EVERY native P, P-actual empty-past signed conditional mean=sum_{q=1}^{totalDegree(P)} centeredPower(q,predictableJet_q(P))",
+  "actual_signed_identity": "Whole completed test dual finite reconstruction and actual finite signed expectation against every polynomial cylinder probe; mean is identified with actual signed grid expectation",
+  "refined_input": "Exact transfer of fixed base multitime cylinder for n>=base; zero only for the finite prefix n<base, explicitly identified",
+  "refined_source_and_L1_bounds": "ALL uniform coefficient and actual L1 field bounds follow from the fixed original core norm, independent of refinement",
+  "critical_refined_vanishing": "For EVERY base multitime P, centered critical power q=p with actual predictable jets tends to zero in entire completed analytic TEST DUAL NORM; ALL adaptation/M premises discharged",
+  "higher_refined_vanishing": "For EVERY fixed q>p, corresponding actual refined predictable centered sums tend to zero in entire completed TEST DUAL NORM; no L1 premise needed",
+  "surviving_refinement_L1_convergence_proved": false,
+  "cofinal_completed_source_operator_construction_proved": false,
+  "full_multitime_pminusone_Clark_Ocone_proved": false,
+  "arbitrary_completed_observable_reconstruction_proved": false,
+  "positive_variation_or_finite_signed_path_measure_claimed": false,
+  "Lean_test_code": "import Foundation.HigherHeatRefinedPredictableJets\n\nopen OperatorDerivativeRewrite.Foundation\nopen HigherHeatPolynomialCylinders HigherHeatPredictableJetBounds HigherHeatPredictableJetDegree\nopen HigherHeatDyadicConditioning HigherHeatMultitimeJetTelescope HigherHeatRefinedPredictableJets\nopen HigherHeatAnalyticCylinderDomain HigherHeatCompletedPairing HigherHeatPairedDualCausality\nopen HigherHeatCenteredPowerLimits\nopen scoped NNReal Topology BigOperators\n\ndef first : Fin (size 1) := \u27e80,by decide\u27e9\ndef last : Fin (size 1) := \u27e81,by decide\u27e9\nnoncomputable def mixed (q : \u2115) : Test 1 := MvPolynomial.X first*(MvPolynomial.X last)^q\n\nexample (m : \u2115) (T : \u211d\u22650) : predictableJet 1 m T last 6 (mixed 4) = 0 := by\n  apply jet_zero_above_degree\n  have h := MvPolynomial.totalDegree_mul (MvPolynomial.X first:Test 1) ((MvPolynomial.X last)^4)\n  have hp := MvPolynomial.totalDegree_pow (MvPolynomial.X last:Test 1) 4\n  simp only [MvPolynomial.totalDegree_X] at h hp\n  change (MvPolynomial.X first*(MvPolynomial.X last)^4:Test 1).totalDegree < 6\n  omega\n\nexample (n m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (c : \u211d) :\n    localProjection m T n \u2205 (MvPolynomial.C c) = MvPolynomial.C c := by\n  have h := positive_power_telescope n m hm T (MvPolynomial.C c)\n  simp only [MvPolynomial.totalDegree_C, Finset.sum_range_zero] at h\n  exact (sub_eq_zero.mp h).symm\n\nexample (P : Test 2) : refinedInput 2 P 1 = 0 := by\n  rw [refinedInput, dif_neg (by decide)]\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    Filter.Tendsto (fun n => pairing 2 (by decide) T hT (core (cylinderOf n\n      (centeredPower n 2 T 4 (fun j => predictableJet n 2 T j 4 (refinedInput 1 (mixed 4) n))))))\n      Filter.atTop (\ud835\udcdd (0:Dual)) := critical_refined_vanish 1 (mixed 4) 2 (by decide) T hT\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    Filter.Tendsto (fun n => pairing 2 (by decide) T hT (core (cylinderOf n\n      (centeredPower n 2 T 5 (fun j => predictableJet n 2 T j 5 (refinedInput 1 (mixed 5) n))))))\n      Filter.atTop (\ud835\udcdd (0:Dual)) := higher_refined_vanish 1 (mixed 5) 2 (by decide) T hT 4 (by decide)\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    Filter.Tendsto (fun n => pairing 3 (by decide) T hT (core (cylinderOf n\n      (centeredPower n 3 T 6 (fun j => predictableJet n 3 T j 6 (refinedInput 1 (mixed 6) n))))))\n      Filter.atTop (\ud835\udcdd (0:Dual)) := critical_refined_vanish 1 (mixed 6) 3 (by decide) T hT\n",
+  "Lean_test_code_sha256": "C12D603E62A63ECF3D25028B88A98784E27B5591942116DC3C5D1D55F29AEF50",
+  "Lean_test_log_sha256": "DBC3BC0091FB218506D2C260164880B1D86DD3B21A854918649CA9A412E4C267",
+  "independent_Lean_examples": 6,
+  "exact_refined_test_code": "from fractions import Fraction as Q\nfrom math import factorial,comb\nfrom functools import lru_cache\ndef clean(P):return {e:c for e,c in P.items() if c}\ndef add(P,R):\n    A=P.copy()\n    for e,c in R.items():A[e]=A.get(e,Q(0))+c\n    return clean(A)\ndef scale(c,P):return clean({e:c*v for e,v in P.items()})\ndef mul(P,R):\n    A={}\n    for e,c in P.items():\n        for f,d in R.items():\n            k=tuple(x+y for x,y in zip(e,f));A[k]=A.get(k,Q(0))+c*d\n    return clean(A)\ndef moment(p,a,r):return Q(0) if r%p else Q(factorial(r),factorial(r//p))*a**(r//p)\ndef cond(P,k,p,a):\n    A={}\n    for e,c in P.items():\n        for i in range(k,len(e)):c*=moment(p,a,e[i])\n        f=tuple(v if i<k else 0 for i,v in enumerate(e));A[f]=A.get(f,Q(0))+c\n    return clean(A)\ndef jet(P,j,q):\n    return clean({tuple(v if i<j else 0 for i,v in enumerate(e)):c\n                  for e,c in P.items() if e[j]==q})\n@lru_cache(None)\ndef position_monomial(e):\n    n=len(e);A={(0,)*n:Q(1)}\n    for i,r in enumerate(e):\n        B={}\n        for k in ([r] if i==0 else range(r+1)):\n            f=[0]*n;f[i]=k\n            if i:f[i-1]=r-k\n            B[tuple(f)]=Q(comb(r,k)*(-1)**(r-k))\n        A=mul(A,B)\n    return A\ndef norm(P):\n    A={}\n    for e,c in P.items():A=add(A,scale(c,position_monomial(e)))\n    return sum(factorial(sum(e))*abs(c) for e,c in A.items())\nfrom math import comb\ndef power(P,r,n):\n    A={(0,)*n:Q(1)}\n    for _ in range(r):A=mul(A,P)\n    return A\ndef centered_probe(p,q,g,a,N):\n    h=Q(1,N);total=Q(0)\n    for i in range(g+1):\n        for j in range(g-i+1):\n            total+=comb(g,i)*comb(g-i,j)*moment(p,a/2,1+i)*(\n                moment(p,a*h,q+j)-moment(p,a*h,q)*moment(p,a*h,j))*moment(p,a*(Q(1,2)-h),g-i-j)\n    return N*total/2\njets=0;critical=0;higher=0;examples=[]\nfor m in range(1,5):\n    p=2*m;K=Q(factorial(2*p),2)-factorial(p)**2\n    for T in [Q(1),Q(1,2),Q(5,7)]:\n        a=(-1)**(m+1)*T\n        for N in [2,4,8,16]:\n            for q in [p,p+1]:\n                if N<=8:\n                    X=[]\n                    for j in range(N):e=[0]*N;e[j]=1;X.append({tuple(e):Q(1)})\n                    A={};B={}\n                    for V in X[:N//2]:A=add(A,V)\n                    for V in X[N//2:]:B=add(B,V)\n                    P=mul(A,power(B,q,N))\n                    for j in range(N):\n                        J=jet(cond(P,j+1,p,a/N),j,q)\n                        assert J==(A if j>=N//2 else {});jets+=1\n            c=centered_probe(p,p,2*p-1,a,N)\n            expected=Q(comb(2*p-1,p-1)*factorial(p),4)*K*a**3/N\n            assert c==expected and c!=0;critical+=1\n            d=centered_probe(p,p+1,2*p-2,a,N)\n            expected_high=Q(comb(2*p-2,p-1)*factorial(p)*factorial(2*p),8)*a**3/N\n            assert d==expected_high and d!=0;higher+=1\n            if p==4 and T==1:examples.append(dict(cells=N,critical_probe=str(c),above_order_probe=str(d)))\nprint(dict(passed=True,actual_refined_jet_identifications=jets,nonzero_critical_mesh_tests=critical,\n           nonzero_above_order_mesh_tests=higher,examples=examples,\n           scope='Exact fixed nonterminal coarse cylinder A*B^q, independent half-interval blocks. '\n                 'Actual signed conditional jets identified on refinements2/4/8; signed moment probes2/4/8/16. '\n                 'Discarded channels are nonzero at each finite mesh and decay exactly1/N; no L1 convergence of surviving fields inferred.'))\n",
+  "exact_refined_test_output": "{'passed': True, 'actual_refined_jet_identifications': 336, 'nonzero_critical_mesh_tests': 48, 'nonzero_above_order_mesh_tests': 48, 'examples': [{'cells': 2, 'critical_probe': '-2056320', 'above_order_probe': '-1209600'}, {'cells': 4, 'critical_probe': '-1028160', 'above_order_probe': '-604800'}, {'cells': 8, 'critical_probe': '-514080', 'above_order_probe': '-302400'}, {'cells': 16, 'critical_probe': '-257040', 'above_order_probe': '-151200'}], 'scope': 'Exact fixed nonterminal coarse cylinder A*B^q, independent half-interval blocks. Actual signed conditional jets identified on refinements2/4/8; signed moment probes2/4/8/16. Discarded channels are nonzero at each finite mesh and decay exactly1/N; no L1 convergence of surviving fields inferred.'}",
+  "actual_refined_jet_identifications": 336,
+  "nonzero_critical_mesh_tests": 48,
+  "nonzero_above_order_mesh_tests": 48,
+  "exact_common_degree_test_code": "from fractions import Fraction as Q\nfrom math import factorial,comb\nfrom functools import lru_cache\ndef clean(P):return {e:c for e,c in P.items() if c}\ndef add(P,R):\n    A=P.copy()\n    for e,c in R.items():A[e]=A.get(e,Q(0))+c\n    return clean(A)\ndef scale(c,P):return clean({e:c*v for e,v in P.items()})\ndef mul(P,R):\n    A={}\n    for e,c in P.items():\n        for f,d in R.items():\n            k=tuple(x+y for x,y in zip(e,f));A[k]=A.get(k,Q(0))+c*d\n    return clean(A)\ndef moment(p,a,r):return Q(0) if r%p else Q(factorial(r),factorial(r//p))*a**(r//p)\ndef cond(P,k,p,a):\n    A={}\n    for e,c in P.items():\n        for i in range(k,len(e)):c*=moment(p,a,e[i])\n        f=tuple(v if i<k else 0 for i,v in enumerate(e));A[f]=A.get(f,Q(0))+c\n    return clean(A)\ndef jet(P,j,q):\n    return clean({tuple(v if i<j else 0 for i,v in enumerate(e)):c\n                  for e,c in P.items() if e[j]==q})\n@lru_cache(None)\ndef position_monomial(e):\n    n=len(e);A={(0,)*n:Q(1)}\n    for i,r in enumerate(e):\n        B={}\n        for k in ([r] if i==0 else range(r+1)):\n            f=[0]*n;f[i]=k\n            if i:f[i-1]=r-k\n            B[tuple(f)]=Q(comb(r,k)*(-1)**(r-k))\n        A=mul(A,B)\n    return A\ndef norm(P):\n    A={}\n    for e,c in P.items():A=add(A,scale(c,position_monomial(e)))\n    return sum(factorial(sum(e))*abs(c) for e,c in A.items())\ncells=0;bounds=0;telescopes=0\nfor m in range(1,5):\n    p=2*m\n    for T in [Q(1),Q(1,2),Q(5,7)]:\n        for n in [1,2,4]:\n            z=(0,)*n;X=[]\n            for j in range(n):e=[0]*n;e[j]=1;X.append({tuple(e):Q(1)})\n            terminal={}\n            for V in X:terminal=add(terminal,V)\n            A={z:Q(1)}\n            for d in range(8):\n                for P in [A,mul(A,X[0]),add(add(A,scale(3,mul(X[0],X[0]))),scale(-2,X[-1]))]:\n                    degree=max(map(sum,P),default=0);K=sum(T**k/factorial(k) for k in range(degree//p+1));B=norm(P)\n                    total={}\n                    for j in range(n):\n                        R=cond(P,j+1,p,(-1)**(m+1)*T/n);rebuild={}\n                        for q in range(degree+2):\n                            J=jet(R,j,q)\n                            assert norm(J)<=K*B/factorial(q);bounds+=1\n                            e=[0]*n;e[j]=q;innovation=add({tuple(e):Q(1)},{z:-moment(p,(-1)**(m+1)*T/n,q)})\n                            rebuild=add(rebuild,mul(J,innovation))\n                        actual=add(R,scale(-1,cond(P,j,p,(-1)**(m+1)*T/n)))\n                        assert rebuild==actual;cells+=1;total=add(total,rebuild)\n                    assert total==add(P,scale(-1,cond(P,0,p,(-1)**(m+1)*T/n)));telescopes+=1\n                A=mul(A,terminal)\nprint(dict(passed=True,actual_conditional_cell_identities=cells,uniform_position_norm_bounds=bounds,\n           multitime_polynomial_telescopes=telescopes,\n           scope='Exact finite signed polynomial conditioning/strict-past jets and factorial position norms; '\n                 'p=2,4,6,8,one/two/four cells,three rational horizons. '\n                 'Uniform finite-degree telescope tested here; no completed observable extension inferred.'))\n",
+  "exact_common_degree_test_output": "{'passed': True, 'actual_conditional_cell_identities': 2016, 'uniform_position_norm_bounds': 12012, 'multitime_polynomial_telescopes': 864, 'scope': 'Exact finite signed polynomial conditioning/strict-past jets and factorial position norms; p=2,4,6,8,one/two/four cells,three rational horizons. Uniform finite-degree telescope tested here; no completed observable extension inferred.'}",
+  "conditional_cell_tests": 2016,
+  "position_norm_tests": 12012,
+  "multitime_polynomial_telescopes": 864,
+  "new_source_sha256": {
+    "Foundation/HigherHeatPredictableJetDegree.lean": "ED8774D9364D628DEEFDC4EC9B28DFA21870F52A398A6B6D70F9862F30AE37B2",
+    "Foundation/HigherHeatMultitimeJetTelescope.lean": "86E7FB29D4E5B5DDA52272B6FEEF8C2998C099AF8190CFE46D5EBCF0FB7F49CD",
+    "Foundation/HigherHeatRefinedPredictableJets.lean": "EF0E50B37A3C3458FBA23E0D6E16266BD5C17EB875BE7350F67759B8A900326C"
+  },
+  "source_integrity": {
+    "archive": 107,
+    "exact_recursive_paths": true,
+    "incoming": 43,
+    "incoming_distinct": 42,
+    "a4": 11,
+    "Clark_manuscript_hash_preserved": true
+  },
+  "private_backup_pending": true,
+  "hard_stop": "2026-10-31",
+  "goal": "ACTIVE"
+}

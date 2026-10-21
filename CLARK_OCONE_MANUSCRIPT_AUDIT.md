@@ -1,5 +1,13 @@
 # Clark–Ocone manuscript audit and mathematical repair ledger
 
+Current1287: FINAL multichannel ACTIVE. Exact common-degree native MULTITIME
+signed jet reconstruction and actual signed mean are now proved. For EVERY
+fixed multitime cylinder, centered q>=p channels vanish in completed-dual
+norm under refinement, with all bounds/adaptation discharged. Surviving q<p
+field L1 convergence/full multitime p-1/completed OBSERVABLE reconstruction
+remain OPEN. NEXT one-cell heat correction/causal field convergence.
+Preserve all verification/private gates, October31 hard stop, no later campaign.
+
 Current1286: FINAL multichannel ACTIVE. Actual native MULTITIME predictable
 Taylor jets and L1 fields now have degree/grid-independent bounds exp(T)/q!
 in source norm, with genuine signed conditional-step identity and adaptation.
@@ -1992,3 +2000,96 @@ original Clark SHA preserved. Previous/current goal turns PROGRESS, goal
 ACTIVE. Prior campaigns FROZEN. October31 HARDSTOP, no campaign afterward.
 Private backup pending until exact audited commit receipt and actual sync
 close; ignored closure JSON will retain actual post-push verification.
+
+
+## Checkpoint1287: exact native multitime telescope and actual discarded-channel limits
+
+HigherHeatPredictableJetDegree proves that actual finite signed conditioning
+does not increase total degree, by the retained-monomial exponent inequality.
+All predictable jets above the INPUT total degree vanish identically, and
+EVERY univariate conditional slice has degree at most that same input degree,
+independently of cell and evaluation point. This removes the point-dependent
+slice-degree restriction left at1286 without introducing new Taylor machinery.
+
+HigherHeatMultitimeJetTelescope.cell_identity is now an EXACT multivariate
+polynomial equality for EVERY native multitime polynomial P. Its sum has
+one common finite bound P.totalDegree+1 for every cell and point. The actual
+past projections at adjacent cells telescope to
+  P-Pi_empty(P)=sum(q=1..totalDegree(P)) centeredPower(q,predictableJet_q(P)).
+The q0 innovation is identically0 and is removed explicitly. All critical
+and higher powers remain in the finite-mesh identity. empty_projection_actual_mean
+identifies Pi_empty(P) with C(real part of the ACTUAL signed grid expectation).
+native_dual_identity proves the finite reconstruction on the ENTIRE completed
+analytic TEST DUAL; actual_signed_identity identifies it with the literal
+finite signed expectation against ANY real polynomial cylinder probe G.
+This is genuine finite signed multitime reconstruction, not a finite complex
+noise representation or a claim that only p-1 channels suffice at fixed mesh.
+
+HigherHeatRefinedPredictableJets.refinedInput transfers a fixed base
+multitime polynomial exactly to every finer grid n>=base. It is0 only for
+the finite prefix n<base, where that native representation is unavailable;
+refined_core explicitly proves exact original cylinder identity on the
+entire tail. Bounds on its core, actual predictable coefficient duals and
+genuine native L1 fields are proved uniformly by the ORIGINAL fixed input
+core norm. There is no residual bound or adaptation assumption.
+critical_refined_vanish and higher_refined_vanish prove that, for EVERY
+fixed base multitime cylinder and EVERY q>=p, the actual centered q-power
+sums with these predictable jets tend to0 in ENTIRE completed TEST DUAL
+NORM. q=p uses exact drift cancellation; q>p uses both raw-sum and moment
+compensation bounds. All analytic/adaptation hypotheses are discharged;
+L1 convergence of the discarded-channel coefficient fields is not required.
+No positivity, isometry, signed variation/path measure or complex noise.
+
+Six independent Lean examples PASS: mixed two-cell input X_first*X_last^4
+has sixth jet0; constant polynomials retain their exact empty-past value;
+the explicit finite-prefix zero case; nonterminal biharmonic critical q4
+vanishing for X_first*X_last^4; above-order q5 vanishing for
+X_first*X_last^5; and sixth-order critical q6 vanishing for
+X_first*X_last^6. Exact rational tests identify336 actual refined jets on
+two/four/eight cells for p2/4/6/8 and three horizons, and verify48 critical
+plus48 above-order signed probe values on two/four/eight/sixteen cells.
+
+The fixed nonterminal input is A*B^q, where A and B are increments of the
+first and second half intervals. Its highest q jet is A on second-half
+cells and0 on first-half cells. For biharmonic p4,T=1, the critical q4 sum
+tested on X_T^7 is -4112640/N; the above-order q5 sum for A*B^5 tested on
+X_T^6 is -2419200/N. These values are NONZERO at EVERY tested finite mesh,
+and decay exactly1/N. This explicitly guards against confusing dual-norm
+vanishing with finite-mesh cancellation. The displayed scalar formulas
+are independent exact calculations, not newly asserted separate universal
+Lean scalar-value theorems. Fresh replay of the full common-degree signed
+polynomial test also passes2016 cell identities,12012 position-norm bounds
+and864 multitime telescopes. Both complete standalone test programs/output
+are retained in STARDUST_MULTITIME_JET_VERIFICATION.json.
+
+BOUNDARY: exact finite multitime signed reconstruction and all individual
+critical/higher refined channel limits are proved. Surviving q<p coefficient
+field L1 convergence is NOT yet proved for general multitime inputs. Neither
+the full p-1 multitime Clark-Ocone theorem nor arbitrary completed OBSERVABLE
+reconstruction follows from the uniform bounds and discarded-channel limits
+alone. Uniform common input-degree control through refinement should also
+be identified before interchanging any resulting finite channel sums. The
+terminal-polynomial p-1 theorem1285 remains fully verified. Full tensor/
+chronological/integrand injectivity gaps remain explicit; completed TEST
+probes are not completed OBSERVABLES. The campaign stays ACTIVE.
+
+NEXT: compare the strict-past Taylor jets with causal projected derivatives
+through the one-cell heat correction, prove an actual vanishing L1 error,
+and establish surviving-field convergence using the existing bounded
+completed projections/derivatives. Reuse the proved native uniform estimates;
+verify all cofinal/refinement and completion hypotheses before density.
+Do not assume the historically false strong source causal-time continuity.
+No unrelated campaign or infrastructure. October31 HARD STOP remains.
+
+Full root 6205 jobs TERMINAL0 26.571949s;
+complete transitive audit 38630 safe Foundation declarations standard3 only
+TERMINAL0 37.042169s. ALL19 final public types
+actually read UNABRIDGED pp.proofs true; ALL194 final source/helper lines
+reviewed. Six-example Lean run TERMINAL0 26.697948s.
+Hashes pinned BEFORE fresh full build; all2033 prior source bytes unchanged
+except root3 imports, configuration unchanged. All107 recursive archive
+paths/hashes intact, Incoming43/42distinct/A4eleven and original Clark SHA
+preserved. Previous/current goal turns PROGRESS, goal ACTIVE. Prior campaigns
+FROZEN, NO campaign after the final attempt. Private backup pending until
+exact audited commit receipt and actual private sync close; ignored closure
+JSON will retain actual post-push verification.
