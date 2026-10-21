@@ -1858,3 +1858,4 @@ import Foundation.RiemannRealOrderTransitionRate
 import Foundation.RiemannRealOrderQuarticLimitZeros
 import Foundation.RiemannQuadraticXiTransfer
 import Foundation.RiemannQuadraticGaussian
+import Foundation.RiemannFactorialObstruction

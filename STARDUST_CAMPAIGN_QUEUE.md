@@ -1,5 +1,20 @@
 # Project Stardust: persistent campaign queue
 
+## Current1249: independent A2 domain obstruction and source audit ACTIVE
+
+Actual Gaussian flow/jet realizations1248 remain verified. New1249 proves the
+actual Xi flow at EVERY real time is outside FactorialAnalyticFunctions.realize:
+positive actual Fourier moments force nonsummable derivatives, with the required
+real/complex derivative bridge proved. This excludes that exact lp-one bounded-shift
+domain; it does not exclude other operator domains or imply anything about RH.
+Next faithful upstream replay must apply the published dependency patches and
+matching options in the isolated audit workspace before any independent certificate.
+Raw replay's failure is not a configured-project failure or mathematical refutation.
+Continue selective A2 reuse/source audit; integer/real-order campaigns stay FROZEN,
+final multichannel stays AFTER A2. October31 hard stop; existing goal ACTIVE.
+All complete verification, source-integrity and exact private backup gates remain.
+This entry supersedes historical stage labels below.
+
 ## Current1248: independent A2 actual Gaussian realization and source audit ACTIVE
 
 The actual quadratic Xi flow now has verified Gaussian translation and all-jet

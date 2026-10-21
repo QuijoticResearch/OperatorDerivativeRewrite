@@ -24999,3 +24999,42 @@ the target because our setup omitted published compatibility patches. The proper
 patched/configured replay and exact-target axiom audit remain OPEN; this checkpoint
 does not certify or refute that external result. Continue current A2 reuse/source
 audit; final multichannel follows its stopping checkpoint. October31 hard stop.
+
+
+## Checkpoint1249: actual Xi-flow obstruction to the factorial analytic domain
+
+RiemannFactorialObstruction proves a precise incompatibility with the existing
+FactorialAnalyticDomain.H = lp(real sequences,1), whose shift is bounded and whose
+realization recovers all derivative coordinates at zero. For every natural order m
+and every real time t, the ACTUAL integer-even arithmetic Xi flow has
+D^(2n)H_t(0)=(-1)^n times its positive 2n-th Fourier moment. Positivity and
+continuity of the actual weight on [2,3] give d>0 with EVERY n satisfying
+norm(D^(2n)H_t(0))>=d*2^(2n). Its derivative norms are therefore not summable,
+and no H vector can equal all complex derivative coordinates at zero.
+
+The real/complex derivative bridge is ALSO proved, for every derivative order
+and real point, using the existing symmetricJet derivative theorem. Consequently
+NO u:H has FactorialAnalyticFunctions.realize u x = Re(H_t(x)) for every real x.
+This is actual function nonrepresentation, not merely failure of a guessed vector.
+In particular it applies to quadratic flow m=1 at every time and, at t=0, to the
+already normalized entire Xi function. Polynomial realization remains valid.
+This rules out this exact bounded-shift domain as a direct Xi realization; it does
+NOT rule out other operator domains, unbounded generators, or the genuine Gaussian
+integrals verified at1248. No zero-location, threshold, or RH conclusion follows.
+The general m quantifier is direct reuse within A2, not reopening frozen campaigns.
+
+Fresh FULL6098job root build TERMINAL0 (39.3869544s);
+COMPLETE37186declaration transitive root/Foundation axiom audit TERMINAL0
+(36.7959668s), standard3 only. All9 public types ACTUALLY READ
+UNABRIDGED, all150 final source lines/proofs reviewed; no private helpers/defs.
+EIGHT independent tests TERMINAL0 (26.0156850s): quadratic
+zero/negative time, general quartic time, signed second derivative, fourth moment,
+odd third real derivative at nonzero point, actual normalized Xi nonrepresentation,
+and positive polynomial realization control. First draft needed explicit interval
+volume and simplification before Nat injectivity; no resource increases or weakening.
+All1949 source hashes pinned, prior1948 unchanged except root import. Archive107,
+Incoming43/42distinct,A4eleven/exactpaths and pinned configuration unchanged.
+Exact private backup pending at this precommit entry. Independent A2 remains ACTIVE;
+next return to faithful published-patch upstream replay and concrete theorem reuse.
+External quasi-RH proof remains unverified here, not refuted; previous raw setup
+omitted required patches. Final multichannel follows A2; October31 hard stop.
