@@ -1,5 +1,13 @@
 # Pseudoprocess calculus — audited campaign freeze
 
+Current1286: FINAL multichannel ACTIVE. Actual native MULTITIME predictable
+Taylor jets and L1 fields now have degree/grid-independent bounds exp(T)/q!
+in source norm, with genuine signed conditional-step identity and adaptation.
+Terminal-polynomial p-1 theorem1285 preserved. NEXT common-degree telescope,
+native field L1 convergence/cofinal operators and justified completion;
+full multitime/completed OBSERVABLE reconstruction remains OPEN.
+Preserve all verification/private gates, October31 hard stop, no later campaign.
+
 Current1285: FINAL multichannel ACTIVE. Canonical signed p-1 Clark-Ocone is
 now proved for EVERY real TERMINAL polynomial and positive even heat order,
 with actual signed mean, adapted L1 fields, exact native telescope and all

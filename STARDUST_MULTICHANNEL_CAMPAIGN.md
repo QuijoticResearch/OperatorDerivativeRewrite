@@ -1,6 +1,96 @@
 # Final higher-heat multichannel campaign
 
 
+## Checkpoint1286: degree-independent bounds for ACTUAL multitime predictable jets
+
+The uniform native coefficient estimate previously missing beyond terminal
+polynomials is now proved for EVERY native multivariate polynomial P,
+EVERY grid n/cell j/order q, and every physical m>0,T>0:
+  ||core(jet_jq(P))|| <= exp(T)/q! * ||core(P)||.
+The constant is independent of polynomial degree, grid size and cell. This
+is a proved SOURCE-NORM estimate, not a signed-variance bound or a bound
+assumed to justify completion. It directly reuses the existing contractive
+coordinate derivatives and position clamping, plus the verified exp(T)
+bound for actual finite signed conditioning.
+
+HigherHeatPredictableJetBounds defines nextConditioned=P conditioned on
+coordinates up to and including j. The jet is D_j^q/q! of that polynomial,
+then strictly earlier coordinates are retained by clampBefore. For the
+first cell clampBefore is the existing full-zeroing operator; for positive
+past it is the existing zeroFuture/clampPositions operator at j-1. Thus
+the norm contraction is proved in the correct POSITION factorial norm,
+including the empty-past boundary, without assuming strong source-norm
+continuity of causal projections (historically false even in the Gaussian
+case). The predictable_jet_coefficient theorem identifies evaluation of
+this jet with the literal q-th coefficient of the actual one-coordinate
+slice through the strictly earlier past. The factorial normalization is
+derived from the verified Hasse/ordinary derivative identity.
+
+HigherHeatPredictableJetIdentity identifies the slice at the actual current
+increment with nextConditioned(P)(x). Its actual signed one-cell mean is
+Pi_left(P)(x), proved by existing coordinate heat-then-zero, signed
+conditioning tower and future-coordinate independence. actual_step is the
+exact centered Taylor identity of the ACTUAL conditional increment, with
+all positive and critical/higher powers retained (the q0 innovation is0).
+actual_kernel_step explicitly identifies the one-cell mean with the
+genuine signed heat-kernel expectation at positive physical cell duration.
+The current finite upper limit is the slice natDegree at the evaluated x;
+no new common-degree multivariate polynomial telescope is silently claimed.
+
+HigherHeatPredictableJetFields proves that all retained variables are
+strictly earlier than j, hence ALL native jet arrays are actually adapted.
+The source estimate transfers to the common completed core and to its
+paired dual. Summing real L1 cell norms, with actual cell mass mesh and
+size*mesh=1, gives the degree/grid-independent bound
+  ||adaptedField(jets_q(P))||_L1 <= ||J_T||*exp(T)/q!*||core(P)||.
+This is an actual native field in the EXISTING L1 space; no new foundational
+completion, probability L2/isometry, signed variation assumption or finite
+complex noise is introduced. Under exact cylinder refinement the input core
+is unchanged, so this estimate supplies uniform bounds for the corresponding
+refined inputs. It does NOT by itself prove those fields converge in L1.
+
+Six independent Lean examples PASS: strict current-coordinate removal;
+retention of an actual earlier coordinate; empty-first-cell full zeroing;
+the actual two-cell multitime coefficient jet_q4(X_first*X_last^4)=X_first
+at the second cell; every jet missing its own current variable; and genuine
+signed one-cell kernel mean equals the earlier conditional projection for
+ALL polynomials. Independent exact rational tests pass2016 conditional cell
+identities,12012 factorial POSITION-norm jet estimates and864 multitime
+polynomial telescopes, across p2/4/6/8, one/two/four cells and three horizons.
+The exact position norm expands increment coordinates as y0 and yi-y(i-1),
+including cancellations, and the tested upper bound uses a finite heat
+exponential sum. The universal exp(T) estimate is proved in Lean. The common
+finite-degree polynomial telescope is tested independently here, not newly
+proved universally in Lean. Complete programs/output are preserved in
+STARDUST_PREDICTABLE_JET_VERIFICATION.json.
+
+NEXT: place the exact conditional jet expansion under one common finite
+degree bound, identify the full native multitime polynomial telescope, and
+prove L1 convergence of these bounded native fields under refinement.
+Investigate cofinal bounded source-to-field operators and identification
+with the completed causal/derivative machinery; verify refinement agreement
+and all domain hypotheses before extending by density. The terminal-polynomial
+canonical theorem1285 remains fully verified. General multitime reconstruction,
+refinement L1 convergence, cofinal completed-source operators and arbitrary
+completed OBSERVABLE reconstruction remain OPEN. Uniform native estimates
+are now established, but convergence/completion are not inferred from bounds
+alone. Completed TEST probes do not settle completed OBSERVABLES. No new
+campaign or unrelated infrastructure. FINAL multichannel stays ACTIVE.
+
+Full root 6202 jobs TERMINAL0 24.697914s;
+complete transitive audit 38606 safe Foundation declarations standard3 only
+TERMINAL0 36.104652s. ALL22 final public types
+actually read UNABRIDGED pp.proofs true; ALL274 final source/helper lines
+reviewed. Six-example Lean run TERMINAL0 25.365743s.
+Source/config hashes pinned BEFORE fresh full build; all2030 prior source
+bytes unchanged except root3 imports, configuration unchanged. All107
+recursive manuscript paths/hashes intact, Incoming43/42distinct/A4eleven and
+original Clark SHA preserved. Previous/current goal turns PROGRESS, goal
+ACTIVE. Prior campaigns FROZEN. October31 HARDSTOP, no campaign afterward.
+Private backup pending until exact audited commit receipt and actual sync
+close; ignored closure JSON will retain actual post-push verification.
+
+
 ## Checkpoint1285: canonical signed p-1 Clark-Ocone for EVERY terminal polynomial
 
 For EVERY m>0,p=2m,T>0 and EVERY real polynomial P,

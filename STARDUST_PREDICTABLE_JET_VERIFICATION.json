@@ -1,0 +1,101 @@
+{
+  "checkpoint": 1286,
+  "time_utc": "2026-10-21T21:53:48.190449+00:00",
+  "campaign": "FINAL multichannel pseudoprocess",
+  "previous_private_checkpoint": "c8f2598b8453a952ace2df490bd19fba46f618f6",
+  "source_count": 2033,
+  "prior_source_count": 2030,
+  "prior_sources_unchanged_except_root": true,
+  "root_only_three_imports": true,
+  "configuration_unchanged": true,
+  "full_build_jobs": 6202,
+  "audit_declarations": 38606,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "terminal_results": {
+    "full-build": {
+      "stage": "full-build",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "build"
+      ],
+      "wall_seconds": 24.69791429999168,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T21:51:52.171845+00:00"
+    },
+    "audit": {
+      "stage": "audit",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1286-audit.lean"
+      ],
+      "wall_seconds": 36.104652200010605,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T21:53:22.460968+00:00"
+    },
+    "independent": {
+      "stage": "independent",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1286-independent.lean"
+      ],
+      "wall_seconds": 25.365742699999828,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T21:51:15.836235+00:00"
+    }
+  },
+  "public_types_actually_read_unabridged": 22,
+  "proof_arguments_visible": true,
+  "complete_final_source_lines_reviewed": 274,
+  "new_public_theorems": 17,
+  "new_definitions": 5,
+  "physical_order": "Every p=2m, integer m>0",
+  "positive_physical_horizon_required_for_kernel": true,
+  "normalized_time": "[0,1]",
+  "actual_native_predictable_jet": "1/q! times strict-past clamp of D_j^q of actual right-past conditional projection of the input polynomial",
+  "normalized_source_bound": "For ALL native n,j,q,P, ||core(jet)||<=exp(T)/q!*||core(P)||; no degree-dependent or mesh-dependent constant",
+  "actual_Taylor_identification": "Jet evaluated at x equals q-th coefficient of the actual conditioned univariate slice",
+  "actual_conditional_increment": "Pointwise finite centered Taylor identity Q_j(x)-Pi_left(P)(x)=sum_q jet_jq(x)*(delta_j^q-M_q(cell)); finite upper limit is the slice natDegree at x",
+  "actual_kernel_mean": "Actual signed heat kernel expectation of slice equals Pi_left(P)(x); explicit positive-horizon kernel step theorem proved",
+  "adaptation": "ALL native jets depend only on strictly earlier coordinates, including empty-past first cell",
+  "native_L1_bound": "||adaptedField(jets)||<=||J_T||*exp(T)/q!*||core(P)||, independent of polynomial degree, mesh or cell",
+  "canonical_terminal_Clark_Ocone_preserved": true,
+  "general_multitime_reconstruction_proved": false,
+  "common_degree_polynomial_telescope_new_Lean_theorem": false,
+  "native_jet_refinement_L1_convergence_proved": false,
+  "cofinal_completed_source_operator_construction_proved": false,
+  "arbitrary_completed_observable_reconstruction_proved": false,
+  "positive_variation_or_finite_signed_path_measure_claimed": false,
+  "Lean_test_code": "import Foundation.HigherHeatPredictableJetFields\nimport Foundation.HigherHeatAllPowerSteps\n\nopen OperatorDerivativeRewrite.Foundation\nopen HigherHeatPolynomialCylinders HigherHeatPredictableJetBounds HigherHeatPredictableJetIdentity\nopen HigherHeatPredictableJetFields HigherHeatDyadicConditioning HigherHeatAllPowerSteps\nopen HigherHeatAdaptedStepDuality PureOrderPolynomialConditioning\nopen scoped NNReal BigOperators\n\ndef first : Fin (size 1) := \u27e80,by decide\u27e9\ndef last : Fin (size 1) := \u27e81,by decide\u27e9\n\nexample : clampBefore 1 last (MvPolynomial.X last) = 0 := by\n  rw [clampBefore_X, if_neg (lt_irrefl _)]\n\nexample : clampBefore 1 last (MvPolynomial.X first) = MvPolynomial.X first := by\n  rw [clampBefore_X, if_pos (by decide)]\n\nexample (P : Test 0) : clampBefore 0 \u27e80,by decide\u27e9 P = HigherHeatEmptyPastBound.zeroAll 0 P := by\n  rw [clampBefore, dif_pos rfl]\n\nexample (T : \u211d\u22650) :\n    predictableJet 1 2 T last 4 (MvPolynomial.X first*(MvPolynomial.X last)^4) = MvPolynomial.X first := by\n  have hs : initialPast 1 (last.val+1) = Finset.univ := by\n    change initialPast 1 (size 1) = Finset.univ\n    ext i\n    simp only [initialPast, Finset.mem_filter, Finset.mem_univ, true_and, iff_true]\n    exact i.isLt\n  have hp : nextConditioned 1 2 T last (MvPolynomial.X first*(MvPolynomial.X last)^4) =\n      MvPolynomial.X first*(MvPolynomial.X last)^4 := by\n    rw [nextConditioned, hs, localProjection, conditioning_univ]\n  rw [predictableJet, hp, increment_power_jets 1 last (MvPolynomial.X first)\n    (by simp [MvPolynomial.vars_X, first, last]) 4 4]\n  simp only [Nat.descFactorial_self, Nat.sub_self, pow_zero, mul_one,\n    map_nsmul, clampBefore_X]\n  simp only [\u2190 Nat.cast_smul_eq_nsmul \u211d, smul_smul]\n  norm_num [first, last]\n\nexample (n m : \u2115) (T : \u211d\u22650) (q : \u2115) (P : Test n) :\n    \u2200 j, j \u2209 (predictableJet n m T j q P).vars := by\n  intro j hj\n  exact (lt_irrefl j) (predictable_jets_adapted n m T q P j j hj)\n\nexample (n m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (j : Fin (size n))\n    (P : Test n) (x : Fin (size n) \u2192 \u211d) :\n    HigherHeatPolynomialRealization.kernelExpectation m hm (HigherHeatDyadicLaws.duration T n)\n      (HigherHeatDyadicLaws.duration_pos T hT n) (slice n m T j P x) =\n      MvPolynomial.eval x (localProjection m T n (initialPast n j.val) P) := by\n  rw [HigherHeatPolynomialRealization.kernelExpectation_eq_moments]\n  exact slice_expectation n m hm T j P x\n",
+  "Lean_test_code_sha256": "829A688967109A2511CCD1056B7E9F1B883E0D0D2B72E700FACFA41485E4257F",
+  "Lean_test_log_sha256": "E5497951B390FDDBCFC6CDA2466947CA760827B262CCF03C0C99E42870ED2FD2",
+  "independent_Lean_examples": 6,
+  "exact_test_code": "from fractions import Fraction as Q\nfrom math import factorial,comb\nfrom functools import lru_cache\ndef clean(P):return {e:c for e,c in P.items() if c}\ndef add(P,R):\n    A=P.copy()\n    for e,c in R.items():A[e]=A.get(e,Q(0))+c\n    return clean(A)\ndef scale(c,P):return clean({e:c*v for e,v in P.items()})\ndef mul(P,R):\n    A={}\n    for e,c in P.items():\n        for f,d in R.items():\n            k=tuple(x+y for x,y in zip(e,f));A[k]=A.get(k,Q(0))+c*d\n    return clean(A)\ndef moment(p,a,r):return Q(0) if r%p else Q(factorial(r),factorial(r//p))*a**(r//p)\ndef cond(P,k,p,a):\n    A={}\n    for e,c in P.items():\n        for i in range(k,len(e)):c*=moment(p,a,e[i])\n        f=tuple(v if i<k else 0 for i,v in enumerate(e));A[f]=A.get(f,Q(0))+c\n    return clean(A)\ndef jet(P,j,q):\n    return clean({tuple(v if i<j else 0 for i,v in enumerate(e)):c\n                  for e,c in P.items() if e[j]==q})\n@lru_cache(None)\ndef position_monomial(e):\n    n=len(e);A={(0,)*n:Q(1)}\n    for i,r in enumerate(e):\n        B={}\n        for k in ([r] if i==0 else range(r+1)):\n            f=[0]*n;f[i]=k\n            if i:f[i-1]=r-k\n            B[tuple(f)]=Q(comb(r,k)*(-1)**(r-k))\n        A=mul(A,B)\n    return A\ndef norm(P):\n    A={}\n    for e,c in P.items():A=add(A,scale(c,position_monomial(e)))\n    return sum(factorial(sum(e))*abs(c) for e,c in A.items())\ncells=0;bounds=0;telescopes=0\nfor m in range(1,5):\n    p=2*m\n    for T in [Q(1),Q(1,2),Q(5,7)]:\n        for n in [1,2,4]:\n            z=(0,)*n;X=[]\n            for j in range(n):e=[0]*n;e[j]=1;X.append({tuple(e):Q(1)})\n            terminal={}\n            for V in X:terminal=add(terminal,V)\n            A={z:Q(1)}\n            for d in range(8):\n                for P in [A,mul(A,X[0]),add(add(A,scale(3,mul(X[0],X[0]))),scale(-2,X[-1]))]:\n                    degree=max(map(sum,P),default=0);K=sum(T**k/factorial(k) for k in range(degree//p+1));B=norm(P)\n                    total={}\n                    for j in range(n):\n                        R=cond(P,j+1,p,(-1)**(m+1)*T/n);rebuild={}\n                        for q in range(degree+2):\n                            J=jet(R,j,q)\n                            assert norm(J)<=K*B/factorial(q);bounds+=1\n                            e=[0]*n;e[j]=q;innovation=add({tuple(e):Q(1)},{z:-moment(p,(-1)**(m+1)*T/n,q)})\n                            rebuild=add(rebuild,mul(J,innovation))\n                        actual=add(R,scale(-1,cond(P,j,p,(-1)**(m+1)*T/n)))\n                        assert rebuild==actual;cells+=1;total=add(total,rebuild)\n                    assert total==add(P,scale(-1,cond(P,0,p,(-1)**(m+1)*T/n)));telescopes+=1\n                A=mul(A,terminal)\nprint(dict(passed=True,actual_conditional_cell_identities=cells,uniform_position_norm_bounds=bounds,\n           multitime_polynomial_telescopes=telescopes,\n           scope='Exact finite signed polynomial conditioning/strict-past jets and factorial position norms; '\n                 'p=2,4,6,8,one/two/four cells,three rational horizons. '\n                 'Uniform finite-degree telescope tested here; no completed observable extension inferred.'))\n",
+  "exact_test_output": "{'passed': True, 'actual_conditional_cell_identities': 2016, 'uniform_position_norm_bounds': 12012, 'multitime_polynomial_telescopes': 864, 'scope': 'Exact finite signed polynomial conditioning/strict-past jets and factorial position norms; p=2,4,6,8,one/two/four cells,three rational horizons. Uniform finite-degree telescope tested here; no completed observable extension inferred.'}",
+  "actual_conditional_cell_identities": 2016,
+  "uniform_position_norm_bounds": 12012,
+  "multitime_polynomial_telescopes": 864,
+  "new_source_sha256": {
+    "Foundation/HigherHeatPredictableJetBounds.lean": "F05E230563ECE4FBEB272352DFA843DFB679277206393F62BD330085DDE242BC",
+    "Foundation/HigherHeatPredictableJetIdentity.lean": "4F3AC67F6EB4AB459135221D2D29F60DC6D265C26683BD14977975E0F8A1DBDD",
+    "Foundation/HigherHeatPredictableJetFields.lean": "788D196B1EEE9BFC1ACA501065B840CE8C6837B7FFE857EAA5B2AAE77AFCAB43"
+  },
+  "source_integrity": {
+    "archive": 107,
+    "exact_recursive_paths": true,
+    "incoming": 43,
+    "incoming_distinct": 42,
+    "a4": 11,
+    "Clark_manuscript_hash_preserved": true
+  },
+  "private_backup_pending": true,
+  "hard_stop": "2026-10-31",
+  "goal": "ACTIVE"
+}

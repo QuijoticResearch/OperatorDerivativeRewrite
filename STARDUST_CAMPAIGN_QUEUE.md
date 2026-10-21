@@ -1,5 +1,23 @@
 # Project Stardust: persistent campaign queue
 
+## Current1286: FINAL multichannel — uniform actual multitime jet bounds
+
+Current1286: FINAL multichannel ACTIVE. Actual native MULTITIME predictable
+Taylor jets and L1 fields now have degree/grid-independent bounds exp(T)/q!
+in source norm, with genuine signed conditional-step identity and adaptation.
+Terminal-polynomial p-1 theorem1285 preserved. NEXT common-degree telescope,
+native field L1 convergence/cofinal operators and justified completion;
+full multitime/completed OBSERVABLE reconstruction remains OPEN.
+Preserve all verification/private gates, October31 hard stop, no later campaign.
+
+NEXT common finite-degree multivariate conditional telescope, native jet
+refinement L1 convergence, cofinal source-to-field operators and density.
+The native uniform estimate is proved; it is not convergence or completion.
+Retain source causal-time continuity obstruction and all tensor/integrand
+uniqueness/domain gaps. A4/integer/conditional-real/A2 FROZEN. October31
+HARDSTOP: document exact gaps, freeze and STOP; no new campaign afterward.
+
+
 ## Current1285: FINAL multichannel — full terminal-polynomial p-1 reconstruction
 
 Current1285: FINAL multichannel ACTIVE. Canonical signed p-1 Clark-Ocone is

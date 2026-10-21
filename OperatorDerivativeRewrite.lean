@@ -1928,3 +1928,6 @@ import Foundation.HigherHeatAppellInnovationLimits
 import Foundation.PureOrderAppellCenteredStep
 import Foundation.HigherHeatAppellNativeTelescope
 import Foundation.HigherHeatTerminalClarkOcone
+import Foundation.HigherHeatPredictableJetBounds
+import Foundation.HigherHeatPredictableJetIdentity
+import Foundation.HigherHeatPredictableJetFields
