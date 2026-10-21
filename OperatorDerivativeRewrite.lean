@@ -1860,3 +1860,4 @@ import Foundation.RiemannQuadraticXiTransfer
 import Foundation.RiemannQuadraticGaussian
 import Foundation.RiemannFactorialObstruction
 import Foundation.RiemannQuadraticHermite
+import Foundation.RiemannQuadraticParabolic

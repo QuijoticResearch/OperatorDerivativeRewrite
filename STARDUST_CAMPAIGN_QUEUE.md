@@ -1,5 +1,20 @@
 # Project Stardust: persistent campaign queue
 
+## Current1253: actual double-zero uniform limit verified; all multiplicities next
+
+The ACTUAL quadratic flow now has a proved cubic parabolic remainder, bounded by
+8 times an actual weighted L1 integral at time t+2 and tilt norm z+2R. At any
+H=H'=0, H_(t+h²)(z+hw)/h² converges UNIFORMLY on each fixed complex disk to
+H''(z)*(w²-2)/2, through punctured real h. Direct existing Hermite reuse is proved.
+No arithmetic double zero existence, higher multiplicity, actual zero counts,
+real/simple splitting, global strip contraction, new threshold or RH is asserted.
+PRIORITIZE the all-order finite regrouping/coefficient identity and actual Fourier
+remainder, then finite-multiplicity Hermite limits and actual zero splitting.
+Preserved truncation-counter draft is deferred unless directly useful. Independent
+A2 ACTIVE; prior integer/real campaigns FROZEN; final multichannel AFTER A2 stopping;
+October31 hard stop. All complete verification/private-backup gates remain intact.
+This entry supersedes historical immediate-proof labels below.
+
 ## Current1252: quadratic Hermite support verified; actual parabolic limit OPEN
 
 All roots of the existing variance-two Gaussian Hermite polynomials are now

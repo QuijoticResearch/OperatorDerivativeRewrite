@@ -25363,3 +25363,76 @@ parabolic integral remainder and zero-splitting connection. Preserve October31
 hard stop. Permanent build optimization is already complete: original full-build,
 thread, cache and complete-audit settings remain, only the preliminary type helper
 has a measured23.19percent benefit. Exact private checkpoint backup is pending.
+
+
+## Checkpoint1253: actual quadratic-flow double-zero parabolic limit
+
+Foundation/RiemannQuadraticParabolic.lean proves a GENUINE actual Fourier-integral
+expansion, with no assumed factorial analytic-domain membership and no infinite
+Taylor/integral interchange. For every real t, complex z, Fourier jet j, real |h|<=1
+and complex |w|<=R, the actual jet at (t+h^2,z+h*w) differs from
+jet_j+h*w*jet_(j+1)+h^2*(w^2/2-1)*jet_(j+2) by at most C_j(t,z,R)*|h|^3.
+The explicit finite budget is C_j=8 integral_halfLine weighted 1 j (t+2)
+(norm z+2R). The EXISTING actual weighted-integrability theorem supplies its L1
+domain. The actual integrand phase identity is proved first. Its second-order
+remainder is genuinely integrable for ALL h,w; the uniform bound only needs |h|<=1.
+For Q=norm a+norm b, factorial exponential estimates absorb polynomial factors
+into 8 exp(2Q); this is exactly the time+2, tilt+2R enlargement above. Integrability
+is established BEFORE integral linearity and remainder identification.
+
+Pairing the two actual Fourier jets gives the ACTUAL symmetric flow expansion
+H_(t+h^2)(z+hw)=H_t(z)+hw H'_t(z)+h^2*(w^2/2-1)H''_t(z)+E,
+with norm E<=C_0*|h|^3. In particular, if H_t(z)=H'_t(z)=0, then
+H_(t+h^2)(z+hw)/h^2 converges to (w^2/2-1)*H''_t(z), UNIFORMLY on EVERY fixed
+complex disk, as real h tends to0 through h!=0. Both TendstoUniformlyOn and the
+explicit error bound C_0*|h| are proved. A direct verified identity identifies the
+limit with RiemannQuadraticHermite.value 2 w/2 times H''_t(z). The limit theorem
+does NOT require H''!=0; that extra hypothesis would be needed for a nonzero
+quadratic model and for a subsequent zero-splitting application. No existence of
+an actual arithmetic double zero is assumed or asserted.
+
+Fresh FULL6100job root build TERMINAL0 (39.4160129s);
+COMPLETE37236declaration transitive root/Foundation audit TERMINAL0
+(36.2564636s), standard3 axioms ONLY. ALL16 public types
+ACTUALLY READ UNABRIDGED; COMPLETE271 source/proof lines including three definitions
+ACTUALLY reviewed; no private helpers/instances. TEN independent Lean tests
+TERMINAL0 (25.1651215s): exact phase/heat-sign algebra,
+large-h integrability, budget nonnegativity even at negative formal radius,
+actual w=0 flow sign, h=-1 with w=I, seventh-jet specialization, scaled w=0 bound,
+w=sqrt2 Hermite-model cancellation, and the actual uniform Hermite statement.
+Initial tests required explicit subtraction normalization; production mathematics
+was unchanged. Draft repairs handled lexical spacing, namespace placement,
+function-level Pi addition, exponent regrouping and a looping general neg_pow
+simplification; no resource increases, disabled checks or new axioms.
+All1951 mathematical hashes pinned; previous1950 unchanged except root import.
+Pinned toolchain/Mathlib/configuration unchanged. All107 recursive manuscript
+paths/hashes preserved, Incoming43/42distinct,A4eleven/exactpaths unchanged.
+
+Independent finite quadrature of the literal arithmetic Phi kernel checked BOTH
+positive and negative h, w=0/sqrt2/1+i, three grids1024/2048/4096. Correct normalized
+errors decrease with |h|; the wrong heat sign stays around0.00142. Maximum grid
+change 1.2821114e-13. This is EXPLORATORY ONLY: no
+certified integral tail or roundoff bound; it is NOT used by any Lean proof.
+
+The main A2 obligation remains higher multiplicity, then ACTUAL zero counts and
+real/simple splitting, plus global strip contraction. The present double-zero
+case is substantial actual-flow progress, NOT completion of arbitrary-multiplicity
+collision analysis or the A2 campaign. Prior classical Proposition3.1 comparison
+is retained; this is a formalization of the known local Hermite mechanism, not a
+novel RH or de Bruijn-Newman bound. No global zero/RH conclusion follows.
+
+Next all-order proof strategy, NOT YET LEAN VERIFIED: truncate exp(h*b+h^2*a)
+at analytic degree N, expand each finite binomial, retain h-degrees<=N, and bound
+the remaining terms by |h|^(N+1)*exp(Q). The analytic tail contributes
+|h|^(N+1)*Q^(N+1)*exp(Q). Since Q^(N+1)<=(N+1)!*exp(Q), a proposed coarse bound
+is ((N+1)!+1)*|h|^(N+1)*exp(2Q), with the SAME time+2/tilt+2R actual L1 mechanism.
+Finite exact rational regrouping/Hermite closed-coefficient checks passed N=0..12,
+not a general proof. Still needed: general finite reindexing, coefficient identity
+with the EXISTING Gaussian Hermite family, actual all-order integral expansion,
+then locally uniform finite-multiplicity scaling and zero-count/uniqueness results.
+The preserved finite heat-truncation counterexample draft remains uncertified
+and is deferred unless directly needed; do not replace the full exponential by
+an unproved zero-preserving truncation or distract from actual all-order work.
+Independent A2 ACTIVE; prior integer/real campaigns FROZEN; final multichannel
+AFTER A2 stopping. October31 hard stop. All verification and private backup gates
+remain unchanged; exact private backup pending at this precommit entry.
