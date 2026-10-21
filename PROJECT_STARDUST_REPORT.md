@@ -26384,3 +26384,87 @@ nor branchwise1258 alone supplies those theorems. Independent A2 ACTIVE; prior
 integer/real FROZEN; final multichannel AFTER A2 stopping; October31 hard stop.
 Explicit commit, exact audit receipt and private synchronization close this
 checkpoint; terminal closure remains in the local verification record.
+
+
+## Checkpoint1265: spatially locally uniform actual Xi heat convergence
+
+Foundation/GaussianCompactHeat.lean supplies the previously missing compact-
+uniform Gaussian limit theorem, using Mathlib's EXISTING Banach space C(K,C).
+For each Gaussian argument y, the actual shifted map z|->F_n(z+c*y) is realized
+as a continuous map on K. The proof verifies continuity in y via continuous
+uncurrying and proves convergence in the compact-open topology from the given
+local-uniform F_n->f. On compact K, the existing supremum norm is used; no new
+function-space foundations or assumed uniform-integral interchange are added.
+
+The Fernique majorant1264 is extended to ALL z in a bounded spatial disk: one
+nonnegative integrable g(y) bounds EVERY n and EVERY z in that disk. The same
+small-quadratic-growth hypothesis, with constants chosen BEFORE n,z, is retained.
+Actual C(K,C)-valued shifted functions and their limit are strongly measurable
+and genuinely Bochner L1 BEFORE dominated convergence. Dominated convergence
+therefore gives convergence of their ACTUAL integrals in the supremum norm.
+ContinuousMap.evalCLM and integral_comp_comm identify evaluation of each genuine
+Banach-valued integral with the actual scalar Gaussian integral at z. This proves
+uniform scalar convergence on K, hence local-uniform convergence on WHOLE C.
+
+The generic theorem applies to any actual real Gaussian measure and continuous
+F_n,f with the stated local-uniform limit and uniform small-quadratic budget;
+analyticity is not silently required. Compact K may be EMPTY. The helper that
+forms shifted continuous maps and its compact-open convergence do not require
+K itself compact; the compactness premise is explicitly used for the Banach
+supremum-norm integral step. A redundant M>=0 hypothesis was removed: the
+majorant is valid for any real M, with its bound asserted when norm(z)<=M.
+Degenerate Gaussian measures remain included. No uniformity over varying
+Gaussian laws or heat times is inferred from this fixed-measure theorem.
+
+Foundation/RiemannQuadraticUniformHeat.lean specializes this to the SAME
+verified actual time-zero Xi polynomial sequence. It retains real even
+coefficients, actual origin normalization, the initial width-one zero strip,
+initial compact-uniform convergence, uniform Gaussian budget and genuine L1
+of every shifted polynomial. For EVERY fixed s>=0,c and REAL delta with
+c^2=delta, the actual Gaussian heat averages now converge LOCALLY UNIFORMLY
+ON WHOLE C to actual H_(-s*delta). In particular the actual forward imaginary-
+Gaussian averages converge uniformly on every compact complex set to H_s.
+The chosen polynomial sequence is independent of s,c,delta and of the spatial
+compact set. Cutoffs may depend on those fixed parameters, as the theorem states.
+The previous merely-pointwise limitation1264 is now resolved for spatial limits.
+
+This supplies the correct topology for a FUTURE Hurwitz/zero-transfer argument;
+it does NOT establish its remaining finite-polynomial zero hypotheses. The
+exact algebraic polynomial heat/operator identification and GLOBAL finite-
+polynomial strip contraction across collisions/switches remain OPEN. The
+existing uppermost differentiable branch result1258 is not promoted to a global
+maximum theorem. No new Newman threshold, RH result or novelty claim is made.
+
+Verification: target4648 jobs TERMINAL0,39.0039483s; fresh FULL6134 jobs
+TERMINAL0,24.8037893s; COMPLETE37591-declaration transitive root/Foundation
+axiom audit TERMINAL0,37.0383852s, only propext/Classical.choice/Quot.sound.
+ALL8 public types ACTUALLY READ UNABRIDGED with proof arguments visible and no
+ellipses. COMPLETE197 final source/proof lines read:7 theorems,1 definition,
+no explicitly declared private helper or new global instance. EIGHT independent
+Lean controls TERMINAL0,27.2007406s: exact compact-shift evaluation; forward
+uniformity on every closed disk (all real radii, including empty disks); backward
+real-shift local uniformity; doubled-imaginary clock4s; zero-variance local
+uniformity; empty compact set; two-point compact set{0,i}; and zero spatial
+shift at arbitrary Gaussian time. Production inputs unchanged after full build.
+The scratch proofs passed; unused compactness/sign hypotheses on helpers were
+removed before adoption. No axiom, setting, semantic or verification weakening.
+
+All1971 source hashes pinned; prior1969 unchanged except root import. Exact107
+recursive archive paths/hashes,43 Incoming/42 distinct and11 A4 preserved. No
+manuscript edited; original toolchain/build/cache/resource settings retained.
+
+THEOREM REUSE AUDIT for next operator step: PureOrderPolynomialTransport.lean
+was selectively reread in full. Its transport2a, transport_eval, transport_add,
+transport_derivative and transport_iterate_derivative are the existing finite
+polynomial calculus. PseudoMomentGaussianBoundary.expectation_nonnegative_gaussian
+and gaussianExpectation_eq_expectation identify actual N(0,2a) real moments
+for a>=0. The next complex-shift identity must match transport2(s*delta) to the
+actual Gaussian polynomial average when c^2=delta; forward Xi time c=i therefore
+uses transport2(-s). This sign is a proposed next theorem, NOT proved here.
+GaussianPolynomialHeat instead uses d_t+(1/2)d_x^2 and requires its clock to be
+rescaled by2 for the present law. Do not duplicate these verified operators or
+infer the complex-shift identity from a real expectation statement alone.
+
+Independent A2 ACTIVE; prior integer/real FROZEN; final multichannel AFTER A2
+stopping; October31 hard stop. Explicit commit/exact receipt/private sync close
+this checkpoint; terminal closure retained in the local verification record.

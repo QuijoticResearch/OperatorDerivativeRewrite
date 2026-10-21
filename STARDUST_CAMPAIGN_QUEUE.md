@@ -1,6 +1,22 @@
 # Project Stardust: persistent campaign queue
 
 
+## Current1265: spatially local-uniform actual Gaussian heat limit verified
+
+Actual Xi polynomial heat averages now converge LOCALLY UNIFORMLY on WHOLE C,
+for every fixed Gaussian time/complex shift with real c², to H_(-s*c²). Genuine
+C(K,C) Bochner integrability, compact-uniform domination and evaluation/integral
+identities are proved. Same real even sequence, initial strip1/origin/budget;
+empty compacts and zero-variance laws included. No joint time uniformity claimed.
+NEXT: exact finite polynomial/Gaussian/operator identification via existing
+PureOrderPolynomialTransport (proposed parameter s*delta), then GLOBAL strip
+contraction across collisions/switches and checked Hurwitz transfer to actual Xi.
+Local-uniform heat topology is closed; the finite zero hypotheses remain OPEN.
+No new threshold/RH claim. A2 ACTIVE; integer/real FROZEN; final multichannel
+AFTER A2 stopping; October31 hard stop and all verification/private gates retained.
+This entry supersedes historical immediate-proof labels below.
+
+
 ## Current1264: actual polynomial Gaussian L1 and heat convergence
 
 Complete actual Xi time-zero divisor polynomials now have uniform arbitrarily

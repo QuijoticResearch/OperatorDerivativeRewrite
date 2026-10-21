@@ -1872,3 +1872,4 @@ import Foundation.GaussianHeatTopology
 import Foundation.RiemannQuadraticPolynomial
 import Foundation.RiemannQuadraticZeroProductTails
 import Foundation.RiemannQuadraticPolynomialHeat
+import Foundation.RiemannQuadraticUniformHeat
