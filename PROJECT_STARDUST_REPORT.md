@@ -26133,3 +26133,84 @@ OPEN. No new threshold or RH claim. Independent A2 ACTIVE; integer/real stages
 FROZEN; final multichannel AFTER A2 stopping; October31 hard stop unchanged.
 Explicit checkpoint commit and exact PRIVATE receipt/sync close this checkpoint;
 terminal closure is recorded in the local verification record.
+
+
+## Checkpoint1262: actual A2 real-polynomial approximation with exact disk zeros
+
+Foundation/EvenEntirePolynomialApproximation.lean proves the missing polynomial
+step for an ACTUAL entire even f, f(0)!=0, conjugation symmetry, and explicit
+growth norm(f(z))<=C exp(norm(z)*sqrt(norm(z))). It reuses the verified canonical
+remainder/product approximation, actual divisor-mass bound, complex canonical
+pair identities and finite power-product estimate. NO all-real or simple-zero
+hypothesis is introduced. The finite numerator uses actual divisor multiplicities.
+
+The selector Re(a)>0 OR (Re(a)=0 AND Im(a)>0) selects precisely one of a,-a for
+every nonzero complex a. The former real-root pairing could not cover imaginary-
+axis roots. The generalized finite-product identity works in ANY commutative
+monoid. Pairwise canonical algebra yields P_R(z)=D_R(z) B_R(z)/B_R(0) on the
+closed radius-R disk. The denominator is nonzero there, and its error is bounded
+by exp(norm(z)^2 times the verified weighted closed-disk divisor mass)-1.
+Hence D_R->1 locally uniformly, and the canonical rational limits1260 give
+genuine complex-polynomial numerator convergence on the WHOLE complex plane.
+
+Conjugation symmetry propagates through actual derivatives, iterated derivatives,
+analytic/meromorphic zero orders, actual disk divisors and finite zero support.
+An unpaired linear-factor identity proves the numerator polynomial is fixed by
+coefficientwise conjugation. Taking real parts of coefficients then gives an
+EXACTLY EQUAL genuine real polynomial after scalar extension; this is NOT merely
+symmetrization that might alter zeros. A separate exact zero-set theorem proves
+P_R(z)=0 IFF norm(z)<R AND f(z)=0 for EVERY z, retaining imaginary-axis and
+nonreal roots and excluding spurious roots anywhere in C. Multiplicities occur
+as the actual toNat divisor exponents in both proved paired/unpaired products;
+no separate polynomial-multiplicity-equality theorem is asserted here.
+
+The strongest combined theorem supplies r(R) in(2R,2R+1) for R>=1, r->infinity,
+and a sequence of genuine EVEN real polynomials whose origin value equals the
+ACTUAL f(0), whose zeros are EXACTLY the actual f zeros in the radius-r(n+1)
+disk, and which converge LOCALLY UNIFORMLY to ACTUAL f on the WHOLE C.
+
+Foundation/RiemannQuadraticPolynomial.lean discharges every analytic, origin,
+evenness, growth and conjugation hypothesis for ACTUAL flow 1 t, for EVERY REAL t.
+It proves that any explicitly supplied global zero-strip bound transfers to
+EVERY approximating polynomial, together with origin normalization and full
+compact-uniform convergence. This is a genuine link between actual Xi zero
+geometry and finite real polynomials WITHOUT assuming RH or all zeros real.
+The strip theorem is conditional on the stated bound; no stronger strip, heat
+contraction, threshold or RH result is inferred. Generic approximation is not
+claimed novel, and the earlier quartic split-polynomial results are preserved.
+
+The Gaussian heat discontinuity1261 remains decisive: this checkpoint does NOT
+justify passing Gaussian heat through the limit. Individual polynomial L1 and
+compact-uniform convergence are insufficient. NEXT: prove a UNIFORM admissible
+growth/tail budget for THESE actual divisor polynomials, before any heat-domain
+convergence. A possible route is zero-count controlled paired products or
+canonical disk estimates plus polynomial exterior bounds. Both require proofs;
+no uniform subquadratic approximant bound is assumed from the limit function.
+Global polynomial maximum control across collisions/switches and actual Xi strip
+contraction remain OPEN. Exhaustive actual clusters1257, branchwise1258 and all
+prior frozen campaign work remain intact.
+
+Verification: targeted4616-job build TERMINAL0,38.3155218s; fresh FULL6114-job
+root build TERMINAL0,25.0871194s; COMPLETE37538-declaration transitive root/
+Foundation axiom audit TERMINAL0,37.7000228s, only propext/Classical.choice/
+Quot.sound. ALL41 public types ACTUALLY READ UNABRIDGED; COMPLETE587 final
+source/proof lines read across both modules:35 theorems,6 definitions, no new
+private helper or instance (existing classical decidability is locally enabled).
+EIGHT independent Lean controls TERMINAL0: imaginary-axis selector; finite pairing
+of i,-i; actual polynomial root i for1+z^2; actual nonreal quartet root1+i for
+4+z^4; EXACT real-coefficient recovery; repeated-root input (1+z^2)^2 with origin
+excluded; actual A2 conditional-strip transfer; explicit nonreal source root.
+The first control run needed test-only classical decidability and complex real/
+imaginary simplification repairs. Production inputs unchanged after full build.
+
+Draft repairs involved explicit section hypotheses, correct finite-product
+division orientation, normalized polynomial C-power algebra, and renaming the
+analytic witness to avoid membership-binder shadowing; a scratch text substitution
+also misspelled halfZeroSupport and was repaired before the successful build.
+No theorem weakened, axiom/resource setting changed or error suppressed.
+All1965 source hashes pinned; prior1963 unchanged except root import. Exact107
+recursive archive paths/hashes,43 Incoming/42 distinct,11 A4 preserved. No
+manuscript edited. Permanent build optimization retained, no new setting adopted.
+Independent A2 ACTIVE; prior integer/real FROZEN; final multichannel AFTER A2
+stopping; October31 hard stop. Explicit commit/exact receipt/PRIVATE sync close
+this checkpoint, with terminal status retained in the local verification record.

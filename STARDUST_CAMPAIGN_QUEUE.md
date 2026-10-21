@@ -1,6 +1,22 @@
 # Project Stardust: persistent campaign queue
 
 
+## Current1262: genuine actual A2 real polynomials with exact disk zeros
+
+For EVERY real t, EVEN real polynomials converge locally uniformly on WHOLE C to
+ACTUAL quadratic Xi flow, preserve its actual origin value, and have EXACTLY its
+zeros inside expanding disks, including nonreal and imaginary-axis zeros. Actual
+divisor exponents retained in paired/unpaired products; no all-real assumption.
+Any explicitly proved global strip bound transfers to EVERY approximant.
+NEXT: uniform admissible growth/tail control for THESE divisor polynomials, then
+valid Gaussian heat convergence. Counterexample1261 forbids bare compact-uniform
+plus individual-L1 reasoning. Global collision/switch control and actual Xi strip
+contraction remain OPEN; no new threshold/RH claim. Independent A2 ACTIVE;
+integer/real stages FROZEN; final multichannel AFTER A2 audited stopping.
+October31 hard stop; all full-build/audit/type/source/private gates retained.
+This entry supersedes historical immediate-proof labels below.
+
+
 ## Current1261: actual Gaussian heat-limit obstruction verified
 
 Even real polynomials p_n(0)=1 converge locally uniformly to1 on the WHOLE C,
