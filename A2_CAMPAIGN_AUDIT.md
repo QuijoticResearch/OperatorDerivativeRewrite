@@ -1406,3 +1406,82 @@ manuscript edited. Permanent build optimization retained, no new setting adopted
 Independent A2 ACTIVE; prior integer/real FROZEN; final multichannel AFTER A2
 stopping; October31 hard stop. Explicit commit/exact receipt/PRIVATE sync close
 this checkpoint, with terminal status retained in the local verification record.
+
+
+## Checkpoint1263: actual Xi inverse-square moments and annular Gaussian bounds
+
+Foundation/EvenEntireInverseSquareTails.lean links the actual divisor polynomials
+to derivatives of the actual entire function. Finite normalized polynomial jets
+give P_R''(0)=-2*S_R, S_R=sum over the selected opposite-root representatives of
+actual divisor multiplicity divided by a^2. Mathlib's holomorphic compact-uniform
+derivative theorem is applied TWICE to the genuine polynomial approximants1262.
+It proves S_r(R) -> -f''(0)/(2*f(0)), together with the SAME radii and SAME scaled
+polynomial convergence. The proof does not exchange an infinite sum or Gaussian
+integral with a derivative. The analytic and nonzero-origin domains are explicit.
+
+For a!=0 with 2*abs(Im a)<=norm(a), Lean proves
+ norm(1/a^2)<=2*Re(1/a^2),
+including natural multiplicity weights. Under an EXPLICIT fixed zero-strip bound
+abs(Im a)<=b, every root outside radius2b satisfies that inequality. Nested actual
+disk supports have identical actual divisor multiplicities on common roots;
+the difference of two actual S-values is exactly the annular finite sum. Thus
+the ABSOLUTE annular inverse-square mass is at most twice the real part of that
+complex difference, for outer radius>=inner radius>=2b. Complex cancellation
+alone is not promoted to an absolute estimate: at a=i the geometric inequality
+is explicitly false, and the two inverse squares at1+i,1-i explicitly cancel.
+
+Consequently, for every epsilon>0, there is an index cutoff N such that ALL real
+indices i,j>=N with r(i)<=r(j) have absolute annular inverse-square mass<epsilon.
+The established finite product estimate then proves the actual annular polynomial
+factor has norm<=exp(epsilon*norm(z)^2) for EVERY COMPLEX z. The cutoff is chosen
+BEFORE z, not separately on each compact disk. The same witness retains expanding
+radii, actual compact-uniform polynomial convergence and the inverse-square
+moment limit. No real-root or simple-root assumption is used.
+
+Foundation/RiemannQuadraticZeroProductTails.lean specializes the complex moment
+limit to ACTUAL quadratic Xi flow H_t for EVERY real t. It also establishes the
+UNCONDITIONAL CLASSICAL time-zero strip abs(Im z)<=1 at every actual H_0 zero:
+direct reuse of Mathlib riemannZeta_ne_zero_of_one_lt_re, the existing exact Xi
+coordinate/normalization bridge and actual conjugation symmetry. Source:
+Mathlib/NumberTheory/LSeries/Dirichlet.lean, theorem at line326, pinned Mathlib
+d13f23b723b8a846827a245b89c10fc7d3f11612. The exceptional completed-zeta coordinates
+are already handled by the verified imaginary-axis bridge. This is the classical
+width-one strip, NOT the external7/8 improvement and NOT a new zero-free theorem.
+No external OpenAI formalization dependency or assumed RH is introduced.
+
+That actual strip discharges the generic tail premise at timeZERO. Hence the
+arbitrarily small Gaussian-growth annular bound is UNCONDITIONAL for actual Xi
+time-zero divisor polynomials. This does NOT supply a strip for every later time,
+an absolute infinite-series theorem, a whole-polynomial Gaussian majorant or a
+heat-limit interchange. In particular, the fixed finite INNER product still must
+be bounded uniformly and combined with the tail estimate. Gaussian integrability
+and dominated convergence must then be proved for the actual shifted evaluations.
+Counterexample1261 forbids skipping those remaining obligations.
+
+Verification: target4643 jobs TERMINAL0,37.6227359s; fresh FULL6130 jobs
+TERMINAL0,24.3066986s. COMPLETE37568-declaration transitive root/Foundation audit
+TERMINAL0,37.8257757s; only propext/Classical.choice/Quot.sound. Initial
+complete audit also passed (34.6574481s); final repeat was justified because the
+type printer hid explicit analytic-witness arguments. The final output enables
+pp.proofs, contains no ellipses, and ALL21 public types were ACTUALLY READ
+UNABRIDGED. COMPLETE389 final source/proof lines read:20 theorems,1 definition,
+no new private helper or instance. No source changed after the full build.
+EIGHT independent Lean controls TERMINAL0,28.338232s: repeated paired-factor
+second derivative -3/2; failure of cone estimate at i; valid estimate at2+i;
+explicit inverse-square cancellation at1+i,1-i; empty product; actual classical
+strip; actual nonvanishing at2i; and actual annular whole-plane bound with
+epsilon=1/100. A test-only nonexistent numeral-imaginary lemma was replaced by
+an explicit norm_num identity. Draft repairs used explicit function extensionality
+for derivative functions, actual real-part sum mapping, section hypotheses and
+correct finite-set difference identities; no axiom or check was weakened.
+
+All1967 source hashes pinned; prior1965 unchanged except root import. Exact107
+recursive manuscript paths/hashes,43 Incoming/42 distinct and11 A4 preserved.
+No manuscripts edited. Original toolchain/build/cache/resource configuration and
+permanent verification optimization retained. NEXT: finite inner-product bounds,
+uniform arbitrarily small quadratic growth of the COMPLETE actual approximants,
+then genuine Gaussian heat-domain convergence. Global polynomial collision/switch
+control and actual Xi strip contraction remain OPEN. No threshold/RH/novelty claim.
+Independent A2 ACTIVE; prior integer/real FROZEN; final multichannel AFTER A2
+stopping; October31 hard stop. Explicit commit/exact receipt/private sync close
+the checkpoint; terminal closure retained in the local verification record.

@@ -1,6 +1,22 @@
 # Project Stardust: persistent campaign queue
 
 
+## Current1263: actual inverse-square moments and Gaussian annular tails
+
+Actual divisor inverse-square sums tend to -H_t''(0)/(2H_t(0)) for EVERY real t,
+via compact holomorphic derivative convergence of the actual polynomials. Fixed
+zero strips turn annular complex differences into ABSOLUTE tail control. The
+classical time-zero strip abs(Im z)<=1 is now independently Lean instantiated
+from Mathlib zeta nonvanishing Re(s)>1. Thus actual time-zero annular factors
+satisfy norm<=exp(epsilon*norm(z)^2) on WHOLE C after cutoffs chosen BEFORE z.
+NEXT: fixed finite INNER products, uniform growth for COMPLETE approximants,
+then genuine Gaussian domination/heat convergence. No integral interchange yet.
+Global collisions/switches and actual Xi strip contraction OPEN; no new threshold
+or RH claim. A2 ACTIVE; integer/real FROZEN; final multichannel AFTER A2 stopping.
+October31 hard stop and all full-build/audit/type/source/private gates retained.
+This entry supersedes historical immediate-proof labels below.
+
+
 ## Current1262: genuine actual A2 real polynomials with exact disk zeros
 
 For EVERY real t, EVEN real polynomials converge locally uniformly on WHOLE C to
