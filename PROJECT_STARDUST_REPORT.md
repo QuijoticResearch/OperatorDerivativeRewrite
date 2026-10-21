@@ -25116,3 +25116,197 @@ then run the prepared exact-target standard3 axiom/type audit if it succeeds.
 Continue focused A2 reuse and decisive missing bridges; no campaign transition.
 Finalmultichannel remains after the A2 stopping checkpoint; October31 hard stop.
 Exact private backup pending for this documentation checkpoint; goal ACTIVE.
+
+
+## In-progress1251: actual A2 parabolic double-zero target (UNVERIFIED IN LEAN)
+
+The corrected upstream target replay18862 remains live; no simultaneous Lean
+proof/build is launched. A focused actual-integral route to double-zero splitting
+has been derived, using the existing arithmetic Fourier jets and finite exponential
+remainders rather than the excluded factorial-coefficient domain. The target is
+D^j H_(t+h^2)(z+hw)=D^j H_t(z)+hw D^(j+1)H_t(z)+
+h^2*(w^2/2-1)D^(j+2)H_t(z)+O(|h|^3), uniformly for complex w in each fixed disk.
+A proposed actual L1 remainder budget is3(1+R)^3 times the sum of four existing
+weighted moments at indices j,j+2,j+4,j+6, coefficients1,3,3,1, time t+1 and
+tilt norm(z)+R. This avoids any infinite-series/integral interchange.
+
+At an ASSUMED double zero H=H'=0 the intended locally uniform scaled limit is
+(H''/2)*(w^2-2). Nonzero H'' would give limiting simple roots +/-sqrt2, but actual
+root existence/multiplicity requires a separate verified argument. Higher-order
+collisions and global strip contraction remain open. No arithmetic double zero
+is asserted to exist. Supporting scratch .lake/stardust-1251-parabolic-exp-candidate.lean
+contains two proposed proofs, UNCOMPILED/UNIMPORTED; the full derivation and exact
+remaining obligations are .lake/stardust-1251-parabolic-derivation.md. This ledger
+entry is a research target, not a theorem certificate or completed milestone.
+Current A2/October31/full verification/private backup requirements remain unchanged.
+
+
+Independent exploratory check1251: Python standard-library finite Simpson
+quadrature of the literal arithmetic kernel used t=0.125,z=1+i/3,u in[0,2],
+theta terms1..8, grids1024/2048/4096 and h=1/4,1/8,1/16,1/32. At w=0,sqrt2,1+i,
+the correct normalized second-order residual decreases; the opposite time sign
+leaves a residual near0.00142. The largest grid difference in scaled error was
+1.279e-13. Runtime0.235s. This is EXPLORATORY ONLY: no tail/roundoff certificate,
+no asserted double zero, no Lean theorem. Exact code/results are
+.lake/stardust-1251-numerical-parabolic.py/.json. No package install or toolchain
+change was made (mpmath was unavailable; standard-library quadrature sufficed).
+
+
+Further1251 mathematical development (still UNVERIFIED IN LEAN): finite binomial
+regrouping extends the proposed parabolic expansion to every finite order N.
+For a=u^2,b=iuw, the coefficient of h^k is (iu)^k Q_k(w)/k!, where Q_k is the
+variance-two Hermite polynomial. Truncating exp(hb+h^2a) gives a remainder bounded
+by |h|^(N+1)*(Q^(N+1)+1)*exp(Q), Q=norm(a)+norm(b). An actual common L1 budget
+uses2(1+R)^(N+1) times the binomial sum of existing moments I_(j+2ell),
+ell=0..N+1. Thus the intended multiplicity-m locally uniform limit is
+D^m H_t(z)*Q_m(w)/m! under explicit vanishing of ALL lower derivatives. The
+full derivation is preserved in .lake/stardust-1251-parabolic-derivation.md.
+This agrees with the normalization in the known collision law of
+[Polymath Proposition3.1(ii)](https://arxiv.org/html/1904.12438v2), whose statement
+and proof were selectively reviewed. It is not a novelty or RH claim.
+
+A direct Hermite-root route reuses GaussianTimeSpaceHermite.polynomial 2 n.
+The recurrence has a Christoffel-Darboux identity with REAL energy E_0=1,
+E_(n+1)=norm(Q_(n+1))^2+2(n+1)E_n>0. At a complex root it forces z=conj(z).
+Consecutive polynomials cannot share a root; derivative lowering then gives
+simplicity. Proposed Lean proofs are UNCOMPILED/UNIMPORTED in
+.lake/stardust-1251-hermite-roots-candidate.lean. Independent exact integer
+coefficient checks using the closed Hermite formula verified the CD identity
+through n=12; this is not an all-degree Lean certificate. No new spectral
+framework is needed for this route. Actual scaled-flow convergence, zero counts,
+Rouche/uniqueness and global strip contraction remain open.
+
+Concrete method obstruction: P=(z^2+1)(z^2+1/4) has four SIMPLE roots in the
+height-one strip. At s=1/2, a single Euler step gives
+P-(1/2)P''=z^4-(19/4)z^2-1, with explicit NONREAL root
+z=i*sqrt((sqrt425-19)/8). The COMPLETE heat operator gives
+P-(1/2)P''+(1/8)P''''=z^4-(19/4)z^2+2, whose squared roots
+(19+sqrt233)/8 and (19-sqrt233)/8 are positive/distinct. Exact rational
+coefficient and radical-sign checks are .lake/stardust-1251-exact-euler-control.py
+and its JSON. This disproves replacing full sharp strip contraction by the same
+bound for ONE Euler step; it does not refute actual heat contraction or any Xi
+claim. Lean formalization remains pending; the floating root residual is merely
+illustrative. No unfinished mathematical work is approved or committed.
+
+Upstream source check1251: CappedWidthInduction and Hecke.CommonProbe were fully
+read. UniformCommonProbe chooses omega,sigma BEFORE quantifying over primitive
+characters, giving the required uniform saving min(beta-7/8-omega,sigma)>0.
+Hecke.Dirichlet's final transfer was selectively read: at s=1 the zeta theorem
+uses the existing Mathlib riemannZeta_one_ne_zero; it preserves the principal-pole
+exception for Dirichlet L. No pole convention mismatch was found. A TEXT scan of
+2945 OAI/PNT/Rellich sources found none of the inspected kernel-bypass/native
+axiom markers; this is explicitly NOT a transitive axiom/kernel audit. The same
+corrected replay18862 remains live, with the target and exact-target audit pending.
+
+
+Further finite-operator obstruction1251 (Lean formalization PENDING): every FIXED
+Taylor order K has a counterexample to substituting the sharp full-heat strip
+bound for that finite approximation. Take m=K+1,P_K=(z^2+1)^m and
+T_K=sum(k=0..K)(-1/2)^k D^(2k)/k!. Its constant coefficient is the alternating
+sum with positive terms a_k=choose(m,k)*(2k)!/(2^k*k!); successive ratios are
+(2k+1)*(m-k)/(k+1)>=2 for k<K. Thus (-1)^K c_K>0, while the leading sign on the
+imaginary axis is (-1)^(K+1). Continuity gives a nonzero imaginary root. The
+full argument and exact scope are in the parabolic derivation notebook; exact
+rational tests for K=0..20, including opposite-sign brackets, passed. This does
+not preclude exact degree-dependent truncations, justified limits, or actual
+Xi error estimates, and is not a theorem about Xi zeros.
+
+The second Taylor approximation can fail even real-rootedness preservation.
+For P=z^8 it gives z^4*((z^2-14)^2+14), with nonreal root
+Complex.sqrt(14+i*Real.sqrt14). For the EVEN, initially split input
+P=(z^2-1)^4 with P(0)=1, it gives
+Q=z^8-32z^6+276z^4-220z^2+23. Exact arithmetic yields
+Q(4)=1623,Q'(4)=3360,Q''(4)=36168, and Q'(4)^2-Q(4)Q''(4)=-47411064.
+The existing verified split-polynomial Laguerre inequality rules out Q.Splits
+once the proposed concrete computation is formalized. The seven-lemma scratch
+.lake/stardust-1251-heat-truncation-candidate.lean is UNCOMPILED/UNIMPORTED.
+Exact rational checks are saved in .lake/stardust-1251-finite-heat-obstructions.py
+and JSON. No all-order Lean certificate, production adoption, completed milestone,
+new commit or audit approval is claimed. The actual full exponential must not
+be replaced silently by these finite approximations. Upstream18862 is still live.
+
+
+Selective manuscript-domain review1251 within CURRENT A2: the archived
+ResearchSources/a4/ibm_laguerre_polya.tex was revisited only for LP/domain/operator
+claims (selected lines78--138,250--315), not for a reopened A4 campaign. Its hash
+EAF31754F5F993EF8EB33A1917484D70F6B62F5B37A907AD85F097C3C5589D96 exactly matches
+the preserved inventory; no manuscript was changed. The detailed review is
+.lake/stardust-1251-manuscript-domain-review.md.
+
+Its unqualified eq:heatLP needs an admissible-domain restriction. The source's
+canonical LP definition includes f(z)=exp(-z^2/2), but the actual imaginary
+Gaussian average at heat time1/2 and spatial0 requires E exp(Y^2/2) under the
+standard Gaussian. EXISTING VERIFIED GaussianCriticalExponential proves its
+nonintegrability and infinite nonnegative integral; checkpoint1248 independently
+checked the complex identity. This is not a counterexample to the source's
+separate order-at-most-one proposition (this f has order2), nor to Polya's theorem
+on its admissible domain, nor to actual Xi-flow Gaussian integrability.
+
+Split polynomials P_n(z)=(1-z^2/(2n))^n converge locally uniformly to that f,
+but their FULL polynomial heat images at time1/2 have origin values
+A_n=sum(k=0..n)choose(n,k)(2k)!/((4n)^k*k!). The positive Gaussian integrands
+(1+Y^2/(2n))^n converge pointwise to the verified nonintegrable critical function;
+Fatou therefore supplies a route to liminf A_n=infinity, without false domination.
+The new locally-uniform/Fatou bridge is NOT Lean formalized yet. Exact rational
+finite values n=1..256 and a proposed n^(1/4) lower bound were independently
+checked in .lake/stardust-1251-gaussian-domain-control.py/json; those finite
+checks are not a limit certificate. No fourth Lean draft or new infrastructure
+is added; prioritize completing the already pending actual A2 parabolic work.
+
+The source's discussion after eq:family must also distinguish frequency-symbol
+smoothness/branches from spatial entireness. EXISTING VERIFIED
+RiemannRealOrderFlow.flow_differentiable proves the ACTUAL spatial transform is
+entire for every a>=0 and every real time, including non-even exponents alpha=2a.
+The frequency corner does not refute that theorem. This is direct reuse of frozen
+real-order work, not reopening it. The source's heat-sign distinction is correct;
+previous A4 archive sign/domain corrections remain preserved. No new mathematical
+certificate, source edit, audit approval or campaign transition is claimed.
+
+
+## Checkpoint1251: corrected upstream target replay and exact axiom audit PASSED
+
+On October21,2026 at04:21EDT the corrected isolated replay completed ALL7059jobs,
+TERMINAL0, in9561.4299975seconds. The exact-target audit then completed TERMINAL0
+in46.6159779seconds. Both actual entries passed Lean.collectAxioms transitively:
+OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re and
+OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re. Each uses ONLY
+propext, Classical.choice, Quot.sound. BOTH printed types were ACTUALLY READ
+UNABRIDGED. They refer to actual Mathlib riemannZeta / DirichletCharacter.LFunction;
+the Dirichlet principal-character pole exception is retained. The explicit example
+checking the actual riemannZeta target also passed, with no surrogate replacement.
+
+After replay, ALL2924 OAI source hashes, ALL30 effective support hashes, raw support
+preservation and effective configuration hash were rechecked. Nineteen support
+files match the pinned published patches. Native Lean4.34.1/Mathlibd13f23b and the
+audited options remain unchanged. No upstream theorem is imported as an axiom.
+STARDUST_A2_UPSTREAM_VERIFICATION.json preserves the exact scope, pins, timings,
+log hashes, complete audit source/output and target types. The old raw failed
+replay remains a setup error, not a refutation. Its two missing patch sets and
+options were supplied before this successful corrected replay.
+
+Scope is INDEPENDENT KERNEL REPLAY/AXIOM VERIFICATION OF THESE TWO TARGETS. It is
+not a complete human review of the16,677-line paper, a separately audited Hecke
+entrypoint, or independent verification of every followup claim. Selective method
+and followup review remain open. This supplies the audited external hypothesis
+for the existing conditional A2 zero-time transfer; it does not itself formalize
+global strip contraction, a new A2 threshold, or RH. No dependency/version change
+is made to production Stardust. The external actual conditional proof can now be
+instantiated in an isolated integration check when useful.
+
+This finite checkpoint contains ONLY reports and external verification metadata.
+All1949 production mathematical inputs and main configuration are IDENTICAL to
+fully audited d1bd18a. Under the explicit permanent documentation-only rule, its
+COMPLETE6098job build, COMPLETE37186declaration transitive standard3 audit, all9
+public-type/150lineproof review and eight tests are retained on those EXACT inputs.
+Fresh archive107/Incoming43(42distinct)/A4eleven hashes and exact recursive paths
+are unchanged. The three parabolic/Hermite/truncation scratch drafts and all new
+limit arguments above remain UNCOMPILED/UNCERTIFIED, outside this certificate.
+The executable files are not adopted into production or approved as mathematics.
+
+The compiler is now FREE: upstream18862 and target audit88905 are TERMINAL0;
+do NOT poll either completed handle or call them live. Next compile and repair
+the three preserved A2 supporting drafts serially, then pursue the ACTUAL all-order
+parabolic Fourier remainder, locally uniform Hermite collision limit and zero counts.
+Do not stop at the supporting counterexamples or generic Hermite facts. Global
+strip control still remains open in Lean. Current A2 remains ACTIVE; finalmultichannel
+follows its stopping checkpoint; October31 hard stop. Exact private backup pending.

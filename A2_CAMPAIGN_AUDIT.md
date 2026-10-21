@@ -1,5 +1,11 @@
 # A(2) reuse and source audit
 
+> Current1251: the CORRECTED published-patch replay and exact-target audit are
+> TERMINAL0. Actual zeta and Dirichlet entries independently passed standard3
+> transitive axioms and full type review. See STARDUST_A2_UPSTREAM_VERIFICATION.json.
+> Old raw-replay warnings below are historical; broad paper/followup review and
+> A2 global strip contraction remain open. Pending scratch mathematics is uncertified.
+
 > Current1247 correction: isolated replay66544 is TERMINAL1. It omitted the
 > upstream project's required dependency patches and is not a faithful configured
 > replay. The published PNT patch removes the two raw admitted decay lemmas.
@@ -447,3 +453,52 @@ then run the prepared exact-target standard3 axiom/type audit if it succeeds.
 Continue focused A2 reuse and decisive missing bridges; no campaign transition.
 Finalmultichannel remains after the A2 stopping checkpoint; October31 hard stop.
 Exact private backup pending for this documentation checkpoint; goal ACTIVE.
+
+
+## Checkpoint1251: corrected upstream target replay and exact axiom audit PASSED
+
+On October21,2026 at04:21EDT the corrected isolated replay completed ALL7059jobs,
+TERMINAL0, in9561.4299975seconds. The exact-target audit then completed TERMINAL0
+in46.6159779seconds. Both actual entries passed Lean.collectAxioms transitively:
+OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re and
+OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re. Each uses ONLY
+propext, Classical.choice, Quot.sound. BOTH printed types were ACTUALLY READ
+UNABRIDGED. They refer to actual Mathlib riemannZeta / DirichletCharacter.LFunction;
+the Dirichlet principal-character pole exception is retained. The explicit example
+checking the actual riemannZeta target also passed, with no surrogate replacement.
+
+After replay, ALL2924 OAI source hashes, ALL30 effective support hashes, raw support
+preservation and effective configuration hash were rechecked. Nineteen support
+files match the pinned published patches. Native Lean4.34.1/Mathlibd13f23b and the
+audited options remain unchanged. No upstream theorem is imported as an axiom.
+STARDUST_A2_UPSTREAM_VERIFICATION.json preserves the exact scope, pins, timings,
+log hashes, complete audit source/output and target types. The old raw failed
+replay remains a setup error, not a refutation. Its two missing patch sets and
+options were supplied before this successful corrected replay.
+
+Scope is INDEPENDENT KERNEL REPLAY/AXIOM VERIFICATION OF THESE TWO TARGETS. It is
+not a complete human review of the16,677-line paper, a separately audited Hecke
+entrypoint, or independent verification of every followup claim. Selective method
+and followup review remain open. This supplies the audited external hypothesis
+for the existing conditional A2 zero-time transfer; it does not itself formalize
+global strip contraction, a new A2 threshold, or RH. No dependency/version change
+is made to production Stardust. The external actual conditional proof can now be
+instantiated in an isolated integration check when useful.
+
+This finite checkpoint contains ONLY reports and external verification metadata.
+All1949 production mathematical inputs and main configuration are IDENTICAL to
+fully audited d1bd18a. Under the explicit permanent documentation-only rule, its
+COMPLETE6098job build, COMPLETE37186declaration transitive standard3 audit, all9
+public-type/150lineproof review and eight tests are retained on those EXACT inputs.
+Fresh archive107/Incoming43(42distinct)/A4eleven hashes and exact recursive paths
+are unchanged. The three parabolic/Hermite/truncation scratch drafts and all new
+limit arguments above remain UNCOMPILED/UNCERTIFIED, outside this certificate.
+The executable files are not adopted into production or approved as mathematics.
+
+The compiler is now FREE: upstream18862 and target audit88905 are TERMINAL0;
+do NOT poll either completed handle or call them live. Next compile and repair
+the three preserved A2 supporting drafts serially, then pursue the ACTUAL all-order
+parabolic Fourier remainder, locally uniform Hermite collision limit and zero counts.
+Do not stop at the supporting counterexamples or generic Hermite facts. Global
+strip control still remains open in Lean. Current A2 remains ACTIVE; finalmultichannel
+follows its stopping checkpoint; October31 hard stop. Exact private backup pending.

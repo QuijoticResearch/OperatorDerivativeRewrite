@@ -1,0 +1,53 @@
+{
+  "time_utc": "2026-10-21T08:25:24.149221+00:00",
+  "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "scope": "Actual zeta and Dirichlet nonvanishing entrypoint ONLY; not independent full Hecke, followup or paper verification",
+  "build": {
+    "exit_code": 0,
+    "finished": "2026-10-21T04:21:41.5050257-04:00",
+    "seconds": 9561.4299975
+  },
+  "audit": {
+    "seconds": 46.6159779,
+    "finished": "2026-10-21T04:24:34.2460392-04:00",
+    "exit_code": 0
+  },
+  "oai_sources_rechecked": 2924,
+  "effective_support_rechecked": 30,
+  "patched_support": 19,
+  "raw_support_preserved": true,
+  "exact_types_actually_read_unabridged": true,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "targets": [
+    "OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re",
+    "OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re"
+  ],
+  "production_sources_unchanged": 1949,
+  "production_config_unchanged": true,
+  "artifacts": {
+    ".lake/stardust-1250-upstream-build.log": "B4031A0B7BD0C117E92632504D4634D84FE66F1D184227BF55745F05CFC57397",
+    ".lake/stardust-1250-upstream-exact-audit.log": "D347428178D953963FBABD810F1504363472DC70CC4A72F5D9B997C965FD1F82",
+    ".lake/stardust-1247-upstream/exact-audit.lean": "5DF113DB34709DF8ABCC9E619D28F6422CA4A9A2AD211EADA97E555F116061EB"
+  },
+  "proof_replay_complete": true,
+  "private_checkpoint_pending": true,
+  "goal": "ACTIVE",
+  "raw_source_inventory": "STARDUST_A2_UPSTREAM_IMPORT_INVENTORY.json",
+  "effective_source_inventory": "STARDUST_A2_PATCHED_SUPPORT_INVENTORY.json",
+  "toolchain": "leanprover/lean4:v4.34.1",
+  "Mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "audit_source": "import OAI.NumberTheory.DirichletL.Nonvanishing\nimport Lean\n\nopen Lean Elab Command in\nrun_cmd do\n  for name in [``OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re,\n      ``OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re] do\n    let axioms \u2190 Lean.collectAxioms name\n    for ax in axioms do\n      unless ax == ``propext || ax == ``Classical.choice || ax == ``Quot.sound do\n        throwError \"Forbidden transitive axiom {ax} in {name}\"\n    logInfo m!\"EXACT TARGET AUDIT PASSED: {name}; {axioms}\"\n\nset_option pp.universes true\nset_option pp.fullNames true\n#check @OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re\n#check @OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re\n\n-- Check the actual Mathlib target, not a renamed local analytic surrogate.\nexample {s : \u2102} (hs : (7/8 : \u211d) < s.re) : riemannZeta s \u2260 0 :=\n  OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re hs\n",
+  "audit_output_unabridged": "EXACT TARGET AUDIT PASSED: OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re; [propext, Classical.choice, Quot.sound]\nEXACT TARGET AUDIT PASSED: OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re; [propext,\n Classical.choice,\n Quot.sound]\n@OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re : \u2200 {s : \u2102}, LT.lt.{0} (7 / 8) s.re \u2192 Ne.{1} (riemannZeta s) 0\n@OAI.DirichletCharacter.LFunction_ne_zero_of_seven_eighths_lt_re : \u2200 {q : \u2115} [inst : NeZero.{0} q]\n  (\u03c7 : DirichletCharacter.{0} \u2102 q) {s : \u2102},\n  LT.lt.{0} (7 / 8) s.re \u2192 \u00ac(Eq.{1} \u03c7 1 \u2227 Eq.{1} s 1) \u2192 Ne.{1} (DirichletCharacter.LFunction \u03c7 s) 0\n",
+  "build_terminal_output": "\u2714 [7057/7059] Built OAI.NumberTheory.DirichletL.Energy.CertifiedExistence (14s)\n\u2714 [7058/7059] Built OAI.NumberTheory.DirichletL.Detector.FinalAssemblyUnconditional (14s)\n\u2714 [7059/7059] Built OAI.NumberTheory.DirichletL.Nonvanishing (14s)\nBuild completed successfully (7059 jobs).",
+  "certificate_scope_limitations": [
+    "Not a complete human review of the paper",
+    "Not a separately audited Hecke or followup target",
+    "No external source added to production dependencies",
+    "No RH or new A2 threshold claim"
+  ],
+  "production_mathematical_input_commit": "d1bd18a83da8e9c06ed4ccabb9705a1c0f4dd1a6"
+}

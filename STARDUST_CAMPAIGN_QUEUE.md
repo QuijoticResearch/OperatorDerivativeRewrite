@@ -1,5 +1,19 @@
 # Project Stardust: persistent campaign queue
 
+## Current1251: independent upstream targets VERIFIED; A2 proof development ACTIVE
+
+The corrected7059job upstream replay and exact-target transitive axiom audit are
+TERMINAL0: actual zeta/Dirichlet entries use only standard3 axioms; full types read.
+This is not a complete human paper review or separately audited Hecke/followup result.
+No RH/new A2 threshold follows. The compiler is now free; completed18862/88905 must
+not be treated as live. Compile/repair the preserved A2 Hermite, phase-remainder
+and truncation-obstruction drafts serially, then pursue actual all-order parabolic
+Fourier limits/zero splitting. Scratch drafts remain UNCERTIFIED until all gates.
+Do not substitute supporting facts for the actual collision/global-zero obligations.
+Prior integer/real campaigns stay FROZEN; final multichannel remains AFTER A2.
+Existing goal ACTIVE; October31 hard stop; all verification/private-backup rules intact.
+This entry supersedes historical running-stage labels below.
+
 ## Current1250: independent A2 reuse audit; corrected upstream replay in progress
 
 Mathematical1249 remains fully audited and exactly PRIVATE. Published dependency
