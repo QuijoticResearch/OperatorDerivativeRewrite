@@ -1,5 +1,15 @@
 # Clark–Ocone manuscript audit and mathematical repair ledger
 
+Current1290: FINAL multichannel ACTIVE. For EVERY fixed multitime polynomial,
+EVERY q and positive even order/horizon, actual causal and native predictable
+fields now converge to the SAME genuine L1 signed-dual limit. Adapted-domain
+membership and degree-independent original-source norm bounds are proved;
+refinement preserves total degree. Surviving-field convergence gap DISCHARGED.
+Full multitime p-1 reconstruction and completed OBSERVABLE extension remain
+OPEN. NEXT assemble actual signed telescope/channel limits, then cofinal
+consistency/linearity and bounded completion; test all biharmonic channels.
+Preserve all verification/private gates, October31 hard stop, no later campaign.
+
 Current1289: FINAL multichannel ACTIVE. The physical heat-shifted native jet
 is EXACTLY (1/q!)*Pi_left(D_j^q P), using retained-coordinate commutation
 and actual signed slice expectation. Actual causal/native field difference
@@ -2258,3 +2268,103 @@ timings, not a new optimization claim. Previous/current goal turns PROGRESS,
 goal ACTIVE. All prior campaigns FROZEN, October31 HARD STOP; no new campaign.
 Private backup pending exact receipt and actual sync; ignored closure JSON
 will retain actual post-push PRIVATE verification.
+
+
+## Checkpoint1290: genuine multitime coefficient-field L1 convergence
+
+HigherHeatRefinementDegree proves that polynomial substitution with every
+variable image of total degree<=1 cannot increase total degree. The actual
+block pullbacks, dyadic steps and transfers therefore preserve the ORIGINAL
+input degree upper bound, as does refinedInput including its finite prefix.
+This fixes the number of channels in the multitime native telescope under
+arbitrarily fine refinement; no growing-degree premise is substituted.
+
+HigherHeatConditionalCellBound reuses the existing actual signed moments and
+increment-power bounds. Every positive cell moment is O(mesh); centering and
+strict-past adaptation give a paired-dual bound for each centered term. For
+each fixed degree D, conditional_cell_bound constructs K_D>=0, uniform over
+ALL grids, cells and native inputs of degree<=D:
+  norm(J(nextConditioned P-Pi_left P)) <= K_D*mesh*norm(core P).
+HigherHeatConditionalCutBound telescopes this estimate between arbitrary
+ordered cuts a<=c<=size(n), giving K_D*(c-a)*mesh*norm(core P). Its refined
+version uses the ORIGINAL fixed input norm and degree. These are actual
+completed analytic TEST-DUAL estimates, not false source-norm continuity.
+
+HigherHeatCausalRefinementBound extends the EXISTING derivative_pullback chain
+rule to every q and proves exact coarse/fine left-projection compatibility.
+A coarse left endpoint is exactly the corresponding even fine cut. An odd
+fine cut differs by just ONE fine cell. Derivative powers do not increase
+degree and are contractive in the existing source norm. Consequently, for
+ALL q and degree<=D inputs, the adjacent refined causal coefficient error is
+at most (q!)^-1*K_D*mesh(n+1)*norm(core P). The constant is independent of the
+grid, cell and derivative order. No new stochastic law or tensor space is used.
+
+HigherHeatCausalFieldCauchy proves fine-cell containment in its parent cell and
+lifts this SAME quantitative estimate to the ACTUAL step fields in
+L1(timeMeasure, completed analytic test dual). This is genuine time-L1
+convergence of signed-dual coefficients, not L1 of an invented path measure.
+HigherHeatMultitimeFieldLimits proves the cofinal actual refined fields are
+Cauchy because their adjacent error bounds form a SUMMABLE geometric series.
+Completeness yields an L1 limit. The already verified causal/native L1 error
+then proves actual native predictable Taylor-jet fields converge to the SAME
+limit. ALL fixed multitime polynomials, ALL q, m>0 and T>0 are covered.
+This discharges the surviving-field L1 convergence obligation left open at1289.
+
+HigherHeatMultitimePredictableFields.field names the unique L1 limit for each
+fixed native input presentation. field_tendsto and causal_tendsto prove the
+two actual approximations. field_mem proves membership in the existing closed
+adapted field domain. field_bound gives
+  norm(field) <= norm(J)*(q!)^-1*exp(T)*norm(core(original P)),
+independent of polynomial degree and refinement. field_zero_above_degree
+proves the field is identically0 if q exceeds the ORIGINAL total degree.
+Fields with q>=p need NOT vanish merely because of the heat order; the
+previous1287 result instead says their CENTERED STOCHASTIC SUMS vanish.
+No absolute signed variation, positive isometry, strong source causal-time
+continuity or finite signed path-space probability realization is assumed.
+
+Full multitime p-1 Clark-Ocone reconstruction is NOT YET a new theorem at this
+checkpoint. NEXT combine the fixed-degree finite signed telescope, the actual
+L1 field limits above, existing signed adapted integral agreement, and the
+proved q>=p centered-sum limits. Obtain the actual p-1 identity with every
+channel normalization and mean correct. Then prove cofinal presentation
+consistency/linearity of the bounded limit-field maps and extend them to the
+completed OBSERVABLE domain. The uniform source bound is now available, but
+completion hypotheses are not silently assumed. Completed TEST probes are
+not completed OBSERVABLES. Preserve tensor/chronological/integrand uniqueness
+gaps and the one-/two-channel obstructions; do not confuse them with failure
+of all three biharmonic channels. Explicit centered-cubic/all-three-channel
+regressions remain a priority when assembling the reconstruction theorem.
+
+Six independent Lean examples pass: general native-field convergence for all
+orders/channels/multitime inputs; actual adapted membership of the mixed
+X_first*X_last^4 third-channel field at p4; arbitrary multitime p6/q5 Cauchy;
+actual p4/q3 limit-field norm bound; mixed-degree5 q6 field identically0;
+and arbitrary p4 degree<=5 cut bound. Final regression uses explicit operator
+norm scalar/domain arguments and typed Fin indices/polynomials; library
+proofs/settings were unchanged during those annotation repairs.
+Independent EXACT rational block substitution, signed conditioning, jets and
+heat moments check288 degree bounds,864 common-degree conditional cell
+identities,3024 partial telescopes and4320 adjacent causal coefficient
+identifications. There are1125 NONZERO odd-cell corrections; all even-cut
+comparisons agree exactly. Full standalone code/output is committed in
+STARDUST_MULTITIME_FIELD_LIMIT_VERIFICATION.json. Tests supplement the universal
+Lean proofs and do not replace them with numerical conjectures.
+
+Full root 6217 jobs TERMINAL0 39.240370s;
+complete transitive audit 38706 safe Foundation declarations standard3 only
+TERMINAL0 35.725272s. ALL29 final public types
+actually read UNABRIDGED pp.proofs true; ALL484 final source/helper lines
+reviewed. Six-example Lean run TERMINAL0 45.498061s.
+Hashes pinned BEFORE fresh full build; all2041 prior source bytes unchanged
+except root7 imports, configuration unchanged. All107 prior manuscript hashes are unchanged. There are now
+112 exact recursive source paths; 5 additions were observed during
+checkpointing and hash-inventoried without textual ingestion. Incoming43/
+42distinct/A4eleven and original Clark SHA are preserved. The dated exact
+snapshot STARDUST_RESEARCH_SOURCE_INVENTORY_1290.json records every path/hash
+and identifies unreviewed arrivals. Later external arrivals require separate
+inventory; no new manuscript is used in this proof or committed to Git.
+Permanent measured build workflow unchanged; these timings are verification
+observations, not a new optimization claim. Previous/current goal turns
+PROGRESS, goal ACTIVE. Prior campaigns FROZEN, October31 HARD STOP, no later
+campaign. Private backup pending exact receipt and actual private sync;
+ignored closure JSON will retain actual post-push verification.

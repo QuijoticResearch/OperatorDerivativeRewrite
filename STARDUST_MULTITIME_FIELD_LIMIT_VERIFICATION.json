@@ -1,0 +1,115 @@
+{
+  "checkpoint": 1290,
+  "time_utc": "2026-10-21T23:09:24.732162+00:00",
+  "campaign": "FINAL multichannel pseudoprocess",
+  "previous_private_checkpoint": "3622c36be4d0a8dab0b182feec645abf56f1ce1a",
+  "source_count": 2048,
+  "prior_source_count": 2041,
+  "prior_sources_unchanged_except_root": true,
+  "root_only_seven_imports": true,
+  "configuration_unchanged": true,
+  "full_build_jobs": 6217,
+  "audit_declarations": 38706,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "terminal_results": {
+    "full-build": {
+      "stage": "full-build",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "build"
+      ],
+      "wall_seconds": 39.24036959998193,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T22:57:46.160326+00:00"
+    },
+    "audit": {
+      "stage": "audit",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1290-audit.lean"
+      ],
+      "wall_seconds": 35.72527180000907,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T22:58:55.824982+00:00"
+    },
+    "independent": {
+      "stage": "independent",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1290-independent.lean"
+      ],
+      "wall_seconds": 45.49806099999114,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T23:06:18.442373+00:00"
+    }
+  },
+  "public_types_actually_read_unabridged": 29,
+  "proof_arguments_visible": true,
+  "complete_final_source_and_helper_lines_reviewed": 484,
+  "new_public_theorems": 27,
+  "new_definitions": 2,
+  "refinement_degree_control_proved": true,
+  "degree_control": "Every affine polynomial substitution of degree<=1 is degree nonincreasing; actual block pullbacks, steps, transfers and refinedInput preserve the original upper degree bound",
+  "conditional_cell_bound": "For each D, exists K_D>=0, uniform in every grid/cell/input of degree<=D: paired-dual norm of conditional cell increment<=K_D*mesh*norm(original core)",
+  "conditional_cut_bound": "Same K_D gives actual paired-dual cut difference<=K_D*(number of intervening cells)*mesh*norm(core input)",
+  "actual_derivative_refinement": "All qth coordinate derivatives commute with actual block pullback to the parent coordinate; uses existing verified derivative_pullback",
+  "adjacent_causal_coefficient_bound": "Uniform in n,P of degree<=D,i,q: coefficient difference<=qfactorial^-1*K_D*mesh(n+1)*norm(core P); coarse left cut aligns exactly with even fine cut",
+  "genuine_L1_adjacent_field_bound": "Same bound for actual causal fields in L1(timeMeasure, completed analytic test dual)",
+  "surviving_refinement_L1_convergence_proved": true,
+  "all_channel_coefficient_limits": "For EVERY fixed multitime polynomial, EVERY q, EVERY positive even heat order and positive horizon, actual refined causal fields are Cauchy in genuine L1 and native predictable Taylor fields converge to the SAME L1 limit",
+  "canonical_fixed_presentation_field": "field b P m hm T hT q is the unique L1 limit for that native input; full cofinal presentation consistency/linearity is not yet claimed",
+  "actual_adapted_membership_proved": true,
+  "limiting_field_bound": "norm(field)<=norm(pairing)*qfactorial^-1*exp(T)*norm(core(original P)), independent of degree and grid",
+  "zero_above_original_degree": true,
+  "all_coefficients_at_or_above_heat_order_zero_claimed": false,
+  "cofinal_completed_source_operator_construction_proved": false,
+  "full_multitime_pminusone_Clark_Ocone_proved": false,
+  "arbitrary_completed_observable_reconstruction_proved": false,
+  "next_required_work": "Combine fixed-degree native finite telescope, these actual L1 limits, existing signed integral agreement and actual centered q>=p vanishing to prove full multitime p-1 reconstruction. Then prove cofinal consistency/linearity and extend bounded field maps to completed observable domain. Explicitly test all three biharmonic channels and centered cubic; preserve uniqueness/domain limits.",
+  "Lean_test_code": "import Foundation.HigherHeatMultitimePredictableFields\nnoncomputable section\nopen scoped NNReal Topology\nopen OperatorDerivativeRewrite.Foundation\nopen HigherHeatPolynomialCylinders HigherHeatPredictableJetBounds HigherHeatRefinedPredictableJets\nopen HigherHeatDyadicStepAgreement HigherHeatWeakTimeAdjoint HigherHeatMultitimePredictableFields\nopen HigherHeatCausalFieldCauchy HigherHeatMultitimeFieldLimits Filter\nexample (b : \u2115) (P : Test b) (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (q : \u2115) :\n    Tendsto (fun n => adaptedField n m hm T hT\n      (fun j => predictableJet n m T j q (refinedInput b P n)))\n      atTop (\ud835\udcdd (field b P m hm T hT q)) := field_tendsto b P m hm T hT q\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    field 1 ((MvPolynomial.X (\u27e80,by decide\u27e9:Fin (size 1)))*(MvPolynomial.X (\u27e81,by decide\u27e9:Fin (size 1)))^4)\n      2 (by omega) T hT 3 \u2208 HigherHeatAdaptedIntegralClosure.space 2 (by omega) T hT :=\n  field_mem 1 _ 2 (by omega) T hT 3\nexample (b : \u2115) (P : Test b) (T : \u211d\u22650) (hT : 0 < T) :\n    CauchySeq (fun k => causalField (b+k) 3 (by omega) T hT 5 (refinedInput b P (b+k))) :=\n  refined_fields_cauchy b P 3 (by omega) T hT 5\nexample (b : \u2115) (P : Test b) (T : \u211d\u22650) (hT : 0 < T) :\n    \u2016field b P 2 (by omega) T hT 3\u2016 \u2264 (ContinuousLinearMap.opNorm (\ud835\udd5c := \u211d) (\ud835\udd5c\u2082 := \u211d) (E := HigherHeatAnalyticCylinderDomain.Domain) (F := HigherHeatPairedDualCausality.Dual) (HigherHeatCompletedPairing.pairing 2 (by omega) T hT))*\n      (((3:\u2115).factorial:\u211d)\u207b\u00b9*Real.exp (T:\u211d)*\u2016HigherHeatAnalyticCylinderDomain.core (cylinderOf b P)\u2016) :=\n  field_bound b P 2 (by omega) T hT 3\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    field 1 ((MvPolynomial.X (\u27e80,by decide\u27e9:Fin (size 1)))*(MvPolynomial.X (\u27e81,by decide\u27e9:Fin (size 1)))^4)\n      2 (by omega) T hT 6 = 0 := by\n  apply field_zero_above_degree\n  have h : (((MvPolynomial.X (\u27e80,by decide\u27e9:Fin (size 1)))*(MvPolynomial.X (\u27e81,by decide\u27e9:Fin (size 1)))^4) : Test 1).totalDegree \u2264 5 := by\n    apply (MvPolynomial.totalDegree_mul _ _).trans\n    simp\n  omega\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    \u2203 K : \u211d, 0 \u2264 K \u2227 \u2200 n (P : Test n), P.totalDegree \u2264 5 \u2192\n      \u2200 a c : \u2115, a \u2264 c \u2192 c \u2264 size n \u2192\n      \u2016HigherHeatCompletedPairing.pairing 2 (by omega) T hT\n        (HigherHeatAnalyticCylinderDomain.core (cylinderOf n\n          (HigherHeatDyadicConditioning.localProjection 2 T n (HigherHeatDyadicConditioning.initialPast n c) P-\n            HigherHeatDyadicConditioning.localProjection 2 T n (HigherHeatDyadicConditioning.initialPast n a) P)))\u2016 \u2264\n        K*((c-a:\u2115):\u211d)*(HigherHeatDyadicLaws.duration 1 n:\u211d)*\n          \u2016HigherHeatAnalyticCylinderDomain.core (cylinderOf n P)\u2016 :=\n  HigherHeatConditionalCutBound.conditional_cut_bound 2 (by omega) T hT 5\n",
+  "Lean_test_code_sha256": "40B41F36CACF511B32C3ACE72B6ABF8A37DAF69C8EC3B989CE63F54111EEF9A6",
+  "Lean_test_log_sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+  "independent_Lean_examples": 6,
+  "exact_test_code": "from fractions import Fraction as F\nfrom math import factorial as fac,comb\n\ndef add_term(out,d,c):\n out[d]=out.get(d,F(0))+c\n if out[d]==0:del out[d]\ndef deriv(P,j,q):\n out={}\n for d,c in P.items():\n  if d[j]<q:continue\n  e=list(d);e[j]-=q\n  add_term(out,tuple(e),c*F(fac(d[j]),fac(d[j]-q)))\n return out\ndef moment(p,a,n):\n return F(fac(n),fac(n//p))*a**(n//p) if n%p==0 else F(0)\ndef cond(P,p,a,S):\n out={}\n for d,c in P.items():\n  for i in range(len(d)):\n   if i not in S:c*=moment(p,a[i],d[i])\n  add_term(out,tuple(d[i] if i in S else 0 for i in range(len(d))),c)\n return out\ndef heat(P,p,a,j):\n out={}\n for d,c in P.items():\n  for k in range(d[j]//p+1):\n   e=list(d);e[j]-=p*k\n   add_term(out,tuple(e),c*F(fac(d[j]),fac(e[j])*fac(k))*a**k)\n return out\ndef clamp(P,S):\n return {d:c for d,c in P.items() if all(d[i]==0 for i in range(len(d)) if i not in S)}\ndef scale(P,c):return {d:v*c for d,v in P.items() if v*c}\n\nfrom itertools import product\n\ndef plus(P,Q):\n out=dict(P)\n for d,c in Q.items():add_term(out,d,c)\n return out\ndef minus(P,Q):return plus(P,scale(Q,F(-1)))\ndef degree(P):return max([sum(d) for d in P]+[0])\ndef pull(P):\n out={}\n for d,c in P.items():\n  for ks in product(*(range(di+1) for di in d)):\n   e=[];v=c\n   for di,ki in zip(d,ks):e.extend([ki,di-ki]);v*=comb(di,ki)\n   add_term(out,tuple(e),v)\n return out\ndef jet(P,p,a,j,q):return scale(clamp(deriv(cond(P,p,a,set(range(j+1))),j,q),set(range(j))),F(1,fac(q)))\ndef innovation(J,p,a,j,q):\n out=scale(J,-moment(p,a[j],q))\n for d,c in J.items():\n  e=list(d);e[j]+=q;add_term(out,tuple(e),c)\n return out\ndegree_checks=cell_checks=cut_checks=coefficient_checks=nonzero=0\nfor p in [2,4,6,8]:\n for N in [1,2]:\n  for T in [F(1,2),F(1),F(3,2)]:\n   a=[(-1)**(p//2+1)*T/N]*N;af=[a[0]/2]*(2*N)\n   for seed in range(12):\n    P={};add_term(P,tuple((seed+i)%5 for i in range(N)),F(2,3))\n    add_term(P,tuple((seed+2*i+1)%4 for i in range(N)),F(-3,5))\n    if seed%3==0:add_term(P,(p+2,)+(0,)*(N-1),F(1,seed+2))\n    R=pull(P);D=degree(P)\n    assert degree(R)<=D;degree_checks+=1\n    cells=[]\n    for j in range(2*N):\n     c={}\n     for q in range(1,D+1):c=plus(c,innovation(jet(R,p,af,j,q),p,af,j,q))\n     expected=minus(cond(R,p,af,set(range(j+1))),cond(R,p,af,set(range(j))))\n     assert c==expected\n     assert jet(R,p,af,j,D+1)=={}\n     cells.append(c);cell_checks+=1\n     parent=j//2\n     for q in range(p):\n      Q=deriv(P,parent,q);Qfine=deriv(R,j,q)\n      assert Qfine==pull(Q)\n      coarse=pull(scale(cond(Q,p,a,set(range(parent))),F(1,fac(q))))\n      fine=scale(cond(Qfine,p,af,set(range(j))),F(1,fac(q)))\n      at_even=scale(cond(Qfine,p,af,set(range(2*parent))),F(1,fac(q)))\n      assert coarse==at_even\n      assert minus(fine,coarse)==scale(minus(cond(Qfine,p,af,set(range(j))),\n        cond(Qfine,p,af,set(range(2*parent)))),F(1,fac(q)))\n      if j%2==0:assert fine==coarse\n      nonzero+=fine!=coarse;coefficient_checks+=1\n    for lo in range(2*N+1):\n     for hi in range(lo,2*N+1):\n      c={}\n      for j in range(lo,hi):c=plus(c,cells[j])\n      assert c==minus(cond(R,p,af,set(range(hi))),cond(R,p,af,set(range(lo))))\n      cut_checks+=1\nprint(dict(passed=True,refinement_degree_checks=degree_checks,common_degree_cell_identities=cell_checks,\n partial_conditional_telescopes=cut_checks,adjacent_causal_coefficient_identifications=coefficient_checks,\n nonzero_odd_cell_corrections=nonzero))\n",
+  "exact_test_output": "{'passed': True, 'refinement_degree_checks': 288, 'common_degree_cell_identities': 864, 'partial_conditional_telescopes': 3024, 'adjacent_causal_coefficient_identifications': 4320, 'nonzero_odd_cell_corrections': 1125}",
+  "refinement_degree_checks": 288,
+  "common_degree_cell_identities": 864,
+  "partial_conditional_telescopes": 3024,
+  "adjacent_causal_coefficient_identifications": 4320,
+  "nonzero_odd_cell_corrections": 1125,
+  "positive_variation_or_finite_signed_path_measure_claimed": false,
+  "source_norm_causal_time_continuity_assumed": false,
+  "new_source_sha256": {
+    "Foundation/HigherHeatRefinementDegree.lean": "F89EADBDC6CC2C25C1C569D2B2470F8906BF804919B9E6A7FC7FF06BBC421D2A",
+    "Foundation/HigherHeatConditionalCellBound.lean": "42DA29EE12FC0824EFF618E1D8AF4B15B8FF9C22A077B331832EE70415266171",
+    "Foundation/HigherHeatConditionalCutBound.lean": "CD1A5C61113FCFC7A69B1002162E82A3348250DE8081B50C9449C8FD32006346",
+    "Foundation/HigherHeatCausalRefinementBound.lean": "8B33C6A4FD110E7B3DF09334D1F164221732D9A49EFA5E2611C177AB85DCBA5F",
+    "Foundation/HigherHeatCausalFieldCauchy.lean": "2861F36D4A8172FEFA2C9C9444A73352727E601BA25DA889CF0FE59244053ECB",
+    "Foundation/HigherHeatMultitimeFieldLimits.lean": "6441CFB4761E5F61D6EB3F32D0CEDB928E60A4DA9A45F9A5664E262A9AF217E2",
+    "Foundation/HigherHeatMultitimePredictableFields.lean": "AA81053A048DD49A7D781E00B43FC9E0DF51F4BC6F0A4F153DCB7A8C33802B19"
+  },
+  "source_integrity": {
+    "archive": 112,
+    "prior_archive": 107,
+    "prior_manuscripts_unchanged": true,
+    "new_unreviewed_manuscripts": 5,
+    "inventory_file": "STARDUST_RESEARCH_SOURCE_INVENTORY_1290.json",
+    "inventory_observed_utc": "2026-10-21T23:09:22.652556+00:00",
+    "exact_recursive_paths": true,
+    "incoming": 43,
+    "incoming_distinct": 42,
+    "a4": 11,
+    "Clark_manuscript_hash_preserved": true
+  },
+  "private_backup_pending": true,
+  "hard_stop": "2026-10-31",
+  "goal": "ACTIVE"
+}

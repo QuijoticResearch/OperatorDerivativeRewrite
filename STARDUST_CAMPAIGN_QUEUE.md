@@ -1,5 +1,18 @@
 # Project Stardust: persistent campaign queue
 
+## Current1290: FINAL multichannel — actual multitime L1 coefficient limits
+
+Current1290: FINAL multichannel ACTIVE. For EVERY fixed multitime polynomial,
+EVERY q and positive even order/horizon, actual causal and native predictable
+fields now converge to the SAME genuine L1 signed-dual limit. Adapted-domain
+membership and degree-independent original-source norm bounds are proved;
+refinement preserves total degree. Surviving-field convergence gap DISCHARGED.
+Full multitime p-1 reconstruction and completed OBSERVABLE extension remain
+OPEN. NEXT assemble actual signed telescope/channel limits, then cofinal
+consistency/linearity and bounded completion; test all biharmonic channels.
+Preserve all verification/private gates, October31 hard stop, no later campaign.
+
+
 ## Current1289: FINAL multichannel — actual causal derivative identification
 
 Current1289: FINAL multichannel ACTIVE. The physical heat-shifted native jet
