@@ -1851,3 +1851,4 @@ import Foundation.RiemannRealOrderFractionalFourier
 import Foundation.RiemannRealOrderFractionalZeros
 import Foundation.RiemannRealOrderRelativeObstruction
 import Foundation.RiemannRealOrderCutoffConcentration
+import Foundation.RiemannRealOrderUniformCutoff
