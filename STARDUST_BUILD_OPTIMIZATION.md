@@ -129,3 +129,15 @@ Raw evidence is `.lake/stardust-1259-*-time.json` and the corresponding logs, wi
 cached observations in `.lake/stardust-1259-warm-timings.json`. Mathematical inputs
 were hash-pinned before and after the timing checks. This does not reopen a separate
 workflow campaign or change A2 priorities.
+
+
+Checkpoint1260 continued the shared-proof extraction (1962 sources,6111 jobs),
+preserving all18 prior theorem statements and the old inverse-product definition.
+With the same pinned environment and original resource/cache settings, the
+invalidating complete build took229.2174812s; cached target
+`Foundation.RiemannQuadraticCanonical` took7.4310564s;
+cached incremental root took9.8462918s; complete
+37436declaration audit plus all41 final types took35.2526738s.
+All terminal0. Raw evidence uses `.lake/stardust-1260-*-time.json`, corresponding
+logs and `stardust-1260-warm-timings.json`. These are validation observations,
+not a matched speedup study. No additional optimization or weaker gate is adopted.

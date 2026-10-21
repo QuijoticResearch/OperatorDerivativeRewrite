@@ -1,5 +1,21 @@
 # Project Stardust: persistent campaign queue
 
+## Current1260: ACTUAL A2 canonical remainder and rational-product limits verified
+
+For EVERY real t, actual normalized canonical logs tend locally uniformly to0,
+remainders to1, and finite rational zero products (with H_t(0) restored) to the
+ACTUAL quadratic Xi flow on the whole complex plane. Reconstruction holds at
+zeros too; all multiplicities and complex zeros retained. No all-real premise.
+All18 prior quartic theorem headers and the old inverse-product definition body
+preserved through shared proofs. Next: true real-polynomial approximation and
+uniform heat-domain control; rational growing-disk analyticity/local uniformity
+alone do not establish Gaussian heat convergence. Test the normalized-monomial
+heat-limit candidate recorded in PROJECT before assuming such continuity.
+Global polynomial collisions/switches and actual Xi strip contraction OPEN.
+Independent A2 ACTIVE; prior integer/real stages FROZEN; final multichannel AFTER
+A2 stopping; October31 hard stop; full verification/private-backup gates retained.
+This entry supersedes historical immediate-proof labels below.
+
 ## Current1259: actual A2 divisor mass and even canonical disk logs verified
 
 Shared Jensen/canonical proofs now instantiate to ACTUAL A2 at EVERY real time:

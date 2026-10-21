@@ -25962,3 +25962,110 @@ and actual Xi global strip contraction remain OPEN. No new threshold, RH result,
 blanket order<2 theorem or novelty claim. A2 ACTIVE; previous integer/real stages
 FROZEN; final multichannel only after A2 stopping. October31 hard stop; exact receipt
 and PRIVATE backup pending precommit, terminal closure recorded locally.
+
+
+## Checkpoint1260: ACTUAL A2 locally uniform canonical remainder and product limits
+
+Foundation/EvenEntireCanonicalApproximation.lean extracts the existing quartic
+remainder bounds, convergence and reconstruction into shared ENTIRE-function
+proofs. All18 old theorem headers in four refactored quartic modules are EXACTLY
+preserved. The retained inverseZeroProduct definition BODY is also byte-identical.
+The old quartic theorems call the shared proofs; no old mathematical conclusion
+is changed or silently reinterpreted as an A2 result.
+
+For actual entire f with f(0)!=0, the finite canonical product has norm1 on its
+zero-free boundary sphere and norm>=1 at0. Consequently the genuine canonical
+remainder h satisfies norm h(0)>=norm f(0) and its closed-disk norm is bounded by
+the proved boundary bound, using the maximum principle. If norm f(z)<=C exp(norm z
+sqrt(norm z)), these estimates give for the normalized log on an intermediate
+radius r in (2R,2R+1):
+ Re g(z)<=A+6R sqrt(R), norm z<2R, R>=1.
+The origin lower bound is proved BEFORE division; no uncontrolled quotient or
+assumed inverse bound is introduced. Generic helper theorems state only their
+needed analytic/nonvanishing hypotheses; evenness is used at the next limit stage.
+
+For ENTIRE EVEN f with f(0)!=0 and that explicit growth bound, choose genuine
+canonical h_R,g_R with g_R(0)=g_R'(0)=0 and exp(g_R)=h_R/h_R(0). The existing
+EvenDiskLogLimit now applies with ALL hypotheses discharged, proving
+ g_R ->0, exp(g_R)->1, h_R/h_R(0)->1
+LOCALLY UNIFORMLY ON THE WHOLE COMPLEX PLANE as REAL R->+infinity. The witnesses
+retain all radius, boundary-divisor, analyticity, derivative and real-part-bound
+data. This closes the previously open convergence obligation, not merely the
+construction of a finite-disk logarithm.
+
+B_f(R,z)=product_a canonicalFactor(R,a,z)^(-divisor(f,ball(0,R))(a)) is an ACTUAL
+finite reciprocal canonical product. Its reciprocal-factor rational identity and
+nonzero denominators prove analyticity on the closed disk INCLUDING original
+zero locations. Analytic uniqueness upgrades the canonical codiscrete identity to
+ f(z)=B_f(R,z)*h(z)
+EVERYWHERE on the closed disk, including the zeros. At valid radii B_f(R,0)!=0.
+With the chosen r(R) in (2R,2R+1), normalized B_f(r(R),z)/B_f(r(R),0) converges
+locally uniformly to f(z)/f(0); multiplying by f(0) converges locally uniformly
+to the ACTUAL f, with its normalization restored. Multiplicities and complex zeros
+are retained; no real-root or simple-root assumption is present.
+
+Foundation/RiemannQuadraticCanonical.lean specializes BOTH complete quantified
+limit statements to the ACTUAL H_t=RiemannEvenFlow.flow 1 t for EVERY REAL t,
+using the verified analytic, positive-origin, even and subquadratic-growth facts.
+Thus ACTUAL A2 now has the proved zero-free normalized remainder limit and a
+proved finite rational zero-product approximation, uniformly on every compact
+complex set. These are rational products analytic on growing disks; they are NOT
+yet entire real-polynomial approximants or inputs certified for a global Gaussian
+heat integral. No local-uniform-to-heat-limit interchange has been assumed.
+
+Fresh FULL6111job root build TERMINAL0 (229.2174812s),
+COMPLETE37436declaration transitive root/Foundation audit TERMINAL0
+(35.2526738s), only propext/Classical.choice/Quot.sound.
+ALL41 public types ACTUALLY READ UNABRIDGED (22new/19retained interfaces).
+COMPLETE679 final source/proof lines across six modules ACTUALLY READ, including
+the two new definitions and the unchanged quartic inverse-product definition;
+20 new theorems, no new private helper or instance. TWO new source modules and
+four audited proof extractions; root import only otherwise. Full build rechecked
+all downstream quartic canonical/polynomial/threshold conclusions.
+SEVEN independent Lean controls TERMINAL0 (25.6360142s):
+reciprocal factor value0 AT its original zero; analyticity there; genuine generic
+product approximation to3(1+z^2), explicitly proving its subquadratic growth and
+restoring the NONUNIT origin scale3; ACTUAL A2 scaled product limit for all t;
+EVERY actual A2 zero is an eventual exact zero of the finite products; actual
+normalized remainder limit; and explicit nonreal root i of3(1+z^2). The private
+control growth proof was reviewed. Test-only repairs used the explicit argument
+of Real.pow_div_factorial_le_exp and the ring-multiplication norm identity;
+production mathematics was unchanged. Draft transfer repaired a shadowed analytic
+witness. The first generated A2 wrapper duplicated the growth binder and omitted
+its namespace end; both syntax errors were corrected before the successful target
+and full builds. Explicit quartic namespaces avoid accidental name resolution.
+No resource settings, axioms, error checks or theorem semantics were weakened.
+
+All1962 production source hashes pinned; prior1960 unchanged except four audited
+proof extractions and the root import. Lean/Mathlib/build settings unchanged.
+All107 archived manuscript hashes and EXACT recursive paths, Incoming43/42distinct,
+A4eleven/exactpaths preserved. Post-import validation: cached target
+7.4310564s, cached full root 9.8462918s, terminal0;
+not a matched optimization comparison. Original permanent workflow retained.
+
+SELECTIVE MANUSCRIPT / HEAT-DOMAIN AUDIT: ResearchSources/a4/ibm_laguerre_polya.tex, introduction lines78-97,
+SHA256 EAF31754F5F993EF8EB33A1917484D70F6B62F5B37A907AD85F097C3C5589D96, reread without modification. Its LP definition uses
+locally uniform polynomial limits, followed by a background backward-heat closure
+claim. The prior critical-Gaussian domain obstruction remains relevant; this
+checkpoint does not promote that unqualified assertion to an admissible-domain
+theorem. In particular, the NEW rational local-uniform limit cannot alone justify
+passing a heat operator through an approximation. A focused NEXT TEST is
+ q_n(z)=(-1)^n n!/(2n)! z^(2n), heat time1.
+Exact rational finite controls for n=1..30 verify the finite polynomial heat value
+at0 equals1 and (n!)^2<=(2n)!, suggesting the disk bound R^(2n)/n! and local-uniform
+q_n->0. The GENERAL locally-uniform theorem and identification with the GENUINE
+imaginary-Gaussian integral are NOT YET Lean verified here. They must be proved
+before claiming a topological obstruction. This test does not refute continuity
+on a restricted canonical/strip-controlled sequence with uniform Gaussian domination,
+or valid admissible-domain Polya theorems. No manuscript file was edited.
+
+NEXT: form genuine REAL polynomial approximants without assuming all zeros real;
+audit conjugation and imaginary-axis/pairing conditions, remove the rational
+denominators with the verified weighted mass, and prove the heat-domain convergence
+actually needed. Investigate the normalized-monomial test before any bare locally
+uniform heat-continuity assertion. Global finite-polynomial maximum control across
+collisions/switches and ACTUAL Xi global strip contraction remain OPEN. Existing
+local clusters1257 and uppermost-branch1258 remain available. No new threshold,
+RH implication or novelty claim. A2 ACTIVE; prior integer/real campaigns FROZEN;
+final multichannel AFTER A2 stopping; October31 hard stop. Exact-commit receipt and
+PRIVATE backup pending precommit; terminal closure recorded locally.
