@@ -1,5 +1,22 @@
 # Project Stardust: persistent campaign queue
 
+## Current1245 stopping decision: integer/real-order campaign freeze gated on private backup
+
+The theorem-level audit is A2K_REAL_ORDER_STOPPING_AUDIT.md, mathematical baseline41b8ca1.
+Freeze the focused integer/conditional-real-order campaign ONLY AFTER checkpoint1245
+passes full build, complete transitive axiom audit, actual theorem-type/report review,
+source-integrity checks, commit, exact receipt and PRIVATE main/research verification.
+Until then independent A2 remains unopened. After that exact gate, start independent
+A2 with theorem-level reuse and external normalization review, then verify the requested
+OpenAI quasi-Riemann paper/repository and improvements against actual primary sources.
+Do not assume that the requested result exists or has its stated theorem. Explicitly
+OPEN: global integer orders>=4, noninteger orders>2, sharp/uniform complex localization,
+unconditional quadratic real/simple hypotheses, and external classical normalization.
+The stopping point does not claim universal completion or RH progress. All established
+mathematics, manuscript integrity and historical instructions remain preserved.
+Final multichannel follows A2; October31 hard stop. Existing goal ACTIVE, no new campaign.
+This current entry supersedes historical NEXT labels below only after its private gate.
+
 ## Current branch1226: conditional real-order derivative and Fourier-tail audit
 
 Checkpoint1244 proves ACTUALfourth/fifth derivative cancellation, true L1/endpoint cosineIBP andx^4F reconstruction, thenactual fractional asymptotics for3/2<a<2. MERGED:EVERY1<a<2,EVERYt!=0 has FINITELY MANY REALzeros and INFINITELY MANY NONREALzeros; no eventualallreal threshold or split-real-polynomial limit there. Atlatequartictimes ACTUALorder2has ONLYREAL,SIMPLEzeros whileexplicitfractionalorders2-1/(n+3) admit actualnonrealzeros, and ANYselectednonrealzero sequencewithorders->2escapesALLcompacts. NoRH/quadratic-hypothesis removal/allordersabove2 claim. NEXT: theorem-level real-order stopping audit and precise remaining-gap ledger; doNOTopen independentA2 before its verified stopping/private gate. All campaign/verification/private-backup/October31 requirements remain unchanged.

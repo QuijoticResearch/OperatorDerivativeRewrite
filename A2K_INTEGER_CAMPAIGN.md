@@ -1858,3 +1858,40 @@ NEXT: conduct a theorem-level stopping audit of the cumulative conditional real-
 
 
 Checkpoint1244 FINAL verification: fullroot99851 TERMINAL0,6095jobs,24.2131694seconds; complete transitive audit57686 TERMINAL0,37143declarations,36.7380178seconds, onlypropext/Classical.choice/Quot.sound. ALL61publictypes ACTUALLY READ UNABRIDGED (audit463lines reviewed in two overlapping complete chunks) and all899finalsource lines/allproofs/definitions/fourprivatehelpers read. SEVENTEEN independent tests60713 TERMINAL0 FIRSTrun,26.7129273seconds: fifthBell quartic coefficient24544 atz1; ACTUALD5exp(z^4)at1=24544*exp1; R4endpoint at a7/4,t-1has targetK4; genuine wholeR4' L1atnegative time; actualD4L1 atpositive time; negative-frequency cosineIBP sign att-1,x-2; actualx4F=C4atx2,t-1; actuala7/4 asymptotic exponent9/2; upperintervalinfiniteNONREALatnegative time; upperintervalfiniteREALatpositive time; mergedlowera5/4infiniteNONREAL; mergedcubica3/2infiniteNONREAL; noeventualallreal thresholda7/4; nosplit-real-polynomiallimita7/4,t-1; latequarticANYselectednonrealzeroescape; latequarticONLYREAL+SIMPLEandEXISTINGfractionalnonrealzerosescaping; explicitfirstapproachorder5/3andALLordersin(3/2,2). None requires RH or a new zero-reality/simplicity assumption. The endpoint result specifies the finite valueK4; it does NOTproveK4!=0 and the Fourier proof does not need that assertion. Allfinal mathematical bytes unchanged after fullbuild/audit. Source/manuscript integrity recorded in verification.json; exact receipt/private gates follow. Timings are current unequal workload observations, not a fresh optimization speedup claim. Goal staysACTIVE, later campaign gates unchanged.
+
+
+## Checkpoint1245: integer/real-order stopping audit (October21,2026)
+
+The requirement-level review is recorded in A2K_REAL_ORDER_STOPPING_AUDIT.md,
+against mathematical41b8ca123a3571756a5cc3dce9f74b66b93352eb. It distinguishes
+actual integer hierarchy/A6 global zero control, expanding integer windows,
+genuine real-order interpolation and same-time quadratic locally uniform limit,
+uniform absolute near1 Fourier control and failed uniform relative control,
+ALL1<a<2 nonreal-zero obstruction, unconditional EXISTENTIAL escaping zeros
+near1, CONDITIONAL ANY-sequence quadratic escape, and actual late-quartic
+ANY-sequence escape. No RH, universal integer/noninteger classification,
+sharp complex escape rate or external Xi normalization theorem is inferred.
+
+Stopping decision: freeze this focused integer/conditional-real-order campaign
+only AFTER this report checkpoint is fully audited, committed and exactly
+PRIVATE verified on main/research. Explicit open problems remain global orders
+>=4, noninteger orders>2, sharp/uniform complex localization, unconditional
+quadratic real/simple hypotheses and external classical normalization.
+These gaps are recorded, not relabeled as proved. No mathematical source or
+manuscript changes are made. Independent A2 remains gated pending closure;
+then its first task is theorem-level reuse/normalization and exact primary-source
+verification of the user-requested OpenAI result. Final multichannel stays after
+A2; October31 hard stop and existing autonomous goal remain unchanged.
+
+
+Checkpoint1245 final verification: fresh full root build6095jobs TERMINAL0
+(10.6893133s), fresh complete37143declaration transitive
+axiom audit TERMINAL0 (51.4139574s), only propext,
+Classical.choice,Quot.sound. All24 central public theorem types actually read
+UNABRIDGED and the complete stopping report reviewed against their hypotheses.
+All1946 mathematical source bytes are identical to audited/private41b8ca1;
+the prior17 independent tests remain applicable without new proof changes.
+All107 archived,43 Incoming/42distinct,11 fully read A4 manuscripts and exact
+recursive A4 paths are preserved. No mathematical sources/configuration changed.
+The stopping/private transition gate remains pending until exact receipt and
+PRIVATE main/research commit verification. Existing goal ACTIVE.
