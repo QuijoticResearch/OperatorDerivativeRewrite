@@ -26764,3 +26764,116 @@ limits from the proved H norm limit. This route need not construct a new global
 complex analytic realization of H or a central limit theorem.
 A2 ACTIVE; integer/real FROZEN; final multichannel ONLY AFTER A2 stopping;
 October31 hard stop. No new Newman threshold/RH/novelty claim or campaign pivot.
+
+
+## Checkpoint1269: ACTUAL scaled symmetric shifts converge locally uniformly to heat
+
+The missing finite-shift/heat scaling limit is now proved. For EVERY finite real
+polynomial P and EVERY real s>=0, set h_n=sqrt(2s/(n+1)) and take n+1 ACTUAL
+symmetric shifts S_(h_n)(P_C)(z)=(P_C(z+i*h_n)+P_C(z-i*h_n))/2. Their evaluations
+converge LOCALLY UNIFORMLY ON WHOLE C to (transport 2 (-s) P)_C(z). By1266 that
+limit is the genuine imaginary Gaussian polynomial heat average at variance2s.
+This is a limit theorem for actual finite polynomial functions, not an assumed
+operator identity or a formal generating-series computation. The theorem includes
+s=0, constants and the zero polynomial; no real-rootedness premise is used.
+
+Foundation/SymmetricPolynomialTaylor.lean first proves the complex finite Taylor
+formula using EXISTING taylor_eval, taylor_coeff and finite eval_eq_sum_range'.
+A short finite induction splits a sufficiently long Taylor sum into even/odd
+indices. Odd powers of the two opposite imaginary displacements cancel; even
+powers give EXACT real coefficients (-1)^j*h^(2j). The real polynomial
+  evenTaylor(h,N,P)=sum_(j=0..N) (-1)^j*h^(2j)*HasseDerivative_(2j)(P)
+therefore complexifies to ACTUAL S_h(P_C) when natDegree(P)<2(N+1). The degree
+of this real polynomial is <=natDegree(P), with no hidden nonzero assumption.
+Thus the SAME sufficiently large cutoff is justified through EVERY finite
+iteration, rather than being silently changed with the current polynomial.
+
+The old factorial_smul_hasseDeriv and polynomial_iterate_derivative identify
+its actual factorial jets with the finite derivative sum, including every
+factorial. A real coefficient identity under h^2=2s/(n+1) matches this EXACTLY
+to Id+correction(N,s,n)/(n+1) from1268 when evenTaylor's cutoff is N+1. Iteration
+then gives the actual power of that existing bounded operator. No new derivative,
+function-space completion, central limit theorem, assumed infinite-series
+interchange or global nilpotence is introduced.
+
+The selected actual real sequence scaledEvenTaylor(s,n,P) uses the fixed cutoff
+natDegree(P)+1 and n+1 iterations. Its degree is bounded by natDegree(P) for
+ALL n. Its complexification is EXACTLY scaledShift(s,n,P_C), for all real s.
+For s>=0, Real.sq_sqrt justifies the clock, so1268 gives factorial-jet NORM
+convergence to polynomial(transport2(-s)P). All necessary cutoff, iteration and
+clock identities are proved before invoking that norm limit. The map identity
+alone holds for negative s because both sides use the same real sqrt definition;
+the heat-limit theorem correctly requires s>=0 and does not extrapolate it.
+
+Foundation/SymmetricPolynomialHeatLimit.lean proves the compact-uniform step
+using EXISTING C(C,C) with its compact-open topology. A finite real coefficient
+vector a:Fin L->R evaluates to the actual continuous polynomial sum a_j*z^j.
+Its dependence on a is continuous by joint continuity in (a,z) and existing
+continuous-uncurry machinery. Finite coordinate convergence therefore gives
+local-uniform convergence on WHOLE C through the established compact-open
+characterization, with no unproved bounded-domain-to-global inference.
+
+For actual real polynomials under a COMMON FINITE degree bound, this finite
+vector is exactly their coefficient vector and its evaluation is exactly their
+complexified polynomial. Each coefficient limit follows from the genuine
+factorial-jet norm limit via lp.evalCLM and division by the NONZERO factorial.
+The limiting polynomial's degree bound is inherited from the same coordinate
+limits, not separately assumed for the application. These results combine with
+the exact scaled Taylor realization to prove scaledShift_locally_uniform.
+This closes BOTH remaining identifications from1268: actual shifts and complex
+local-uniform topology. It does not claim a uniform error over varying polynomial
+degrees or over time. Each finite P is fixed BEFORE its inner shift limit.
+
+TEN independent Lean examples pass: exact quadratic shift z^2-h^2; a concrete
+insufficient-cutoff quartic counterexample (truncated origin0 versus actual
+shift origin1); zero-time local-uniform identity for arbitrary P; zero polynomial
+limit; uniform convergence on every closed complex disk (all real radii);
+empty finite coefficient vector; simultaneous exact real realization and degree
+bound; the repeated-root quartic scaled-shift origin value tends to2 at s=1/2;
+an explicit real Taylor degree control; and NEGATIVE-TIME counterexample.
+For EVERY n, scaledShift(-1,n,X^2) has origin0, while transport2(+1)X^2 has
+origin2. Thus dropping s>=0 would give a false heat-identification claim. The
+positive-time quartic limit also preserves the earlier finite-first-step0 versus
+Gaussian2 distinction; a limit, rather than finite equality, is now established.
+Initial scratch rewriting, coercion and redundant-tactic errors were corrected
+before adoption; no theorem hypothesis or semantics was weakened to pass tests.
+
+Verification: target3927 jobs TERMINAL0,36.4297051s;
+fresh FULL6147 jobs TERMINAL0,24.7868938s;
+COMPLETE37717-declaration transitive root/Foundation axiom audit TERMINAL0,
+35.4092755s, only propext/Classical.choice/Quot.sound.
+ALL30 public types ACTUALLY READ UNABRIDGED with pp.proofs true, no ellipses;
+COMPLETE312 final source/proof lines read:26 theorems,4 definitions, no explicit
+private production helper or global instance. Ten independent examples
+TERMINAL0,26.0459419s. Sources unchanged after the
+successful full build. All1978 Foundation/root hashes pinned; prior1976
+unchanged except root import, original toolchain/configuration unchanged.
+Exact107 recursive archive paths/hashes,43Incoming42distinct and11A4 preserved;
+no manuscript edits/commits, unrelated12 MD drafts/tmp untouched. Permanent
+build configuration retained; no new performance speedup is claimed. Explicit
+Git commit/exact receipt/private backup close the checkpoint afterward.
+
+NEXT CENTRAL OPEN: transfer1267's GLOBAL strip bound of the actual scaled
+polynomials through the just-proved limit, giving GLOBAL finite heat zero control,
+then through1266's OUTER actual Xi polynomial approximation. These are two
+separate limits: FIRST fix each finite initial polynomial and prove its heat
+zero bound, THEN use the actual Xi approximating family. No uniform-in-degree
+or diagonal interchange is assumed. No global actual Xi zero bound or new
+Newman threshold is claimed at this checkpoint; no RH implication or novelty.
+
+THEOREM REUSE AUDIT: RealRootedVerticalLimit.lean was read IN FULL. It already
+proves real-rooted polynomial vertical-modulus monotonicity, preservation under
+local-uniform limits and exclusion of nonreal zeros by analytic isolated-zero/
+identity arguments. A promising directly supporting generalization is one-sided
+vertical monotonicity ABOVE A FIXED ROOT STRIP: each linear factor grows with
+y for y>=b when its root has Im<=b. Multiplying over the full root multiset
+and passing to the limit yields the same monotonicity. A zero above b would
+then force a vertical sequence of zeros approaching x+i*b, contradicting entire
+nontriviality by the EXISTING analytic identity theorem. Negation handles the
+lower half-plane. This remains a PROPOSED proof, not a verified global strip
+closure theorem; it may avoid adding a new general Hurwitz foundation. Reuse
+existing FTA/root-product and isolated-zero machinery, preserving multiplicities
+and an explicit nonzero entire limit. The current local-uniform topology is
+proved regardless of which valid zero-transfer proof is selected.
+A2 ACTIVE; integer/real FROZEN; final multichannel ONLY AFTER A2 stopping;
+October31 hard stop and all verification/private gates retained. No pivot.

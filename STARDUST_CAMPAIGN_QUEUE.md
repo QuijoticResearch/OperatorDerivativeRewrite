@@ -1,6 +1,24 @@
 # Project Stardust: persistent campaign queue
 
 
+## Current1269: actual symmetric-shift / heat local-uniform limit verified
+
+For EVERY finite real P and s>=0, the ACTUAL n+1 symmetric shifts of size
+sqrt(2s/(n+1)) converge LOCALLY UNIFORMLY ON WHOLE C to transport2(-s)P.
+Exact finite Hasse-Taylor realization, preserved common degree, factorial-jet
+operator identity and compact-open finite coefficient evaluation are verified.
+Zero time and zero P included. Negative-time explicit counterexample preserves
+the s>=0 domain. Actual Xi is NOT placed in bounded factorial H.
+NEXT CENTRAL OPEN: global strip closure through this inner limit, yielding
+finite heat zero control; then1266's OUTER actual Xi polynomial limit. No
+uniform-degree or diagonal limit interchange. Existing RealRootedVerticalLimit
+was reread fully; investigate its fixed-strip vertical-modulus generalization
+and analytic identity theorem before introducing new Hurwitz infrastructure.
+No actual global heat-strip theorem/new threshold/RH claim yet. A2 ACTIVE;
+integer/real FROZEN; final multichannel ONLY AFTER A2 stopping. October31 and
+all build/axiom/type/source/private gates remain. This supersedes older proof labels.
+
+
 ## Current1268: finite polynomial even-derivative Euler limit verified
 
 A vector-specific Euler theorem avoids assuming globally nilpotent derivatives.
