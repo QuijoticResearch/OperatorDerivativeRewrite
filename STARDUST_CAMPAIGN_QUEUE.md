@@ -1,5 +1,22 @@
 # Project Stardust: persistent campaign queue
 
+
+## Current1261: actual Gaussian heat-limit obstruction verified
+
+Even real polynomials p_n(0)=1 converge locally uniformly to1 on the WHOLE C,
+and every p_n(iY) is genuinely L1 for the existing time-one N(0,2) law, yet its
+integral is always2 while the limit integral is1. Exact L1 distance is always1;
+no common integrable domination exists. Algebraic negative-parameter p2 moments
+agree with these actual imaginary-Gaussian values. Bare local uniformity plus
+individual integrability is insufficient; this does not refute restricted-domain
+heat theorems or imply failure for a uniformly controlled Xi sequence.
+Next: genuine actual-A2 real-polynomial approximants and uniform heat-domain/tail
+control, reusing verified divisor/canonical estimates without all-real assumptions.
+Global collision/switch control and actual Xi strip contraction remain OPEN.
+Independent A2 ACTIVE; prior integer/real stages FROZEN; final multichannel AFTER
+A2 stopping; October31 hard stop and all full-build/audit/private gates retained.
+This entry supersedes historical immediate-proof labels below.
+
 ## Current1260: ACTUAL A2 canonical remainder and rational-product limits verified
 
 For EVERY real t, actual normalized canonical logs tend locally uniformly to0,

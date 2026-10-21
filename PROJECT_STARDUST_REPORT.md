@@ -26069,3 +26069,67 @@ local clusters1257 and uppermost-branch1258 remain available. No new threshold,
 RH implication or novelty claim. A2 ACTIVE; prior integer/real campaigns FROZEN;
 final multichannel AFTER A2 stopping; October31 hard stop. Exact-commit receipt and
 PRIVATE backup pending precommit; terminal closure recorded locally.
+
+
+## Checkpoint1261: genuine Gaussian heat discontinuity and exact L1 obstruction
+
+Foundation/GaussianHeatTopology.lean resolves the normalized-monomial test from
+1260 for ALL natural indices, using existing genuine Gaussian moments and the
+verified polynomial expectation calculus. Set
+ q_n(z)=(-1)^n n! z^(2n)/(2n)!, p_n(z)=1+q_(n+1)(z).
+The p_n are genuine even REAL-coefficient polynomials with p_n(0)=1. The proved
+factorial inequality gives norm(q_n(z))<=R^(2n)/n! on each radius-R disk, hence
+q_n->0 and p_n->1 LOCALLY UNIFORMLY on the WHOLE complex plane.
+
+Every imaginary-Gaussian integrand is genuinely L1. Transport of standard N(0,1)
+by sqrt(2) is proved equal to the existing time-one law N(0,2). For Y with that
+POSITIVE probability law, integral q_n(iY)=1 and integral p_n(iY)=2 for EVERY n,
+whereas integral 1=1. Moreover integral norm(p_n(iY)-1)=1 for EVERY n, and no
+single integrable real function dominates all norm(p_n(iY)) almost everywhere.
+Thus compact-uniform convergence plus individual Gaussian integrability is
+INSUFFICIENT for heat convergence; the exact L1 distance identifies the missing
+tail control. The common quadratic bound norm(q_n(z))<=exp(norm(z)^2) is proved,
+but no uniform subquadratic or admissible Gaussian domination is inferred.
+
+The pure-order p=2 algebraic expectation at parameter -1 of the actual polynomial
+p_n equals2 and agrees with its genuine imaginary-Gaussian heat value. This is a
+sequence-level connection to existing operator/pseudomoment machinery, not a
+negative-variance probability law or a new higher-order stochastic realization.
+The variance control independently distinguishes standard-Gaussian q_1 integral
+1/2 from the heat-law integral1. No real-rootedness or fixed zero-strip hypothesis
+is imposed on this counterexample sequence. It does NOT refute valid admissible-
+domain Polya/de Bruijn results or establish failure for a properly controlled
+actual Xi approximation. No novelty claim is made.
+
+Source context remains the selective 1260 reading of
+ResearchSources/a4/ibm_laguerre_polya.tex, introduction78-97, SHA256
+EAF31754F5F993EF8EB33A1917484D70F6B62F5B37A907AD85F097C3C5589D96.
+Its unqualified background heat-closure sentence cannot supply the missing
+domain/limit theorem. The actual A2 canonical rational limits1260 remain valid;
+they alone do not license a Gaussian integral interchange.
+
+Verification: fresh FULL6112-job root build TERMINAL0,40.8507006s; COMPLETE37478
+declaration transitive root/Foundation axiom audit TERMINAL0,38.3165691s, only
+propext/Classical.choice/Quot.sound. ALL35 public types ACTUALLY READ UNABRIDGED;
+COMPLETE262 final source lines reviewed,30 theorems and5 definitions, no private
+helper or instance. SEVEN independent Lean controls TERMINAL0,26.6384087s:
+explicit quadratic/quartic first polynomials; algebraic/actual integral agreement;
+standard-versus-heat variance control; n=23 native-law integrability/integral/L1
+distance; nonconvergence of L1 distances; and joint local-uniform/origin/heat
+nonconvergence statements. A test-only nonexistent integral_div_const rewrite
+was replaced by div_eq_mul_inv and integral_mul_const before the successful run.
+Production proofs and mathematical inputs were unchanged after the full build.
+All1963 source hashes pinned; prior1962 unchanged except root import. Exact107
+recursive manuscript paths/hashes,43 Incoming/42 distinct and11 A4 preserved.
+Toolchain/configuration/cache/resource settings unchanged. Permanent measured
+build workflow retained; no redundant warm benchmark for this ordinary new leaf.
+
+NEXT: genuine real-polynomial approximants to actual A2, without assuming all
+zeros real, and the uniform growth/tail estimates needed for valid heat-domain
+convergence. Reuse verified divisor mass and canonical remainder controls;
+prove conjugation/pairing and denominator removal hypotheses. Global polynomial
+maximum control across collisions/switches and actual Xi strip contraction stay
+OPEN. No new threshold or RH claim. Independent A2 ACTIVE; integer/real stages
+FROZEN; final multichannel AFTER A2 stopping; October31 hard stop unchanged.
+Explicit checkpoint commit and exact PRIVATE receipt/sync close this checkpoint;
+terminal closure is recorded in the local verification record.
