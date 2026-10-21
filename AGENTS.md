@@ -20,6 +20,13 @@ an improvement is measured. See the document for evidence, limits and rollback.
 
 # Persistent research priorities
 
+Current1276: consult the authoritative TOP of STARDUST_CAMPAIGN_QUEUE.md.
+A2 stopping audit is STARDUST_A2_STOPPING_AUDIT.md, mathematical baseline ae2b484.
+Only after its audited1276 commit/receipt and exact PRIVATE main/research gate:
+freeze A2 and start the FINAL multichannel pseudoprocess attempt. Earlier active
+stage labels below are historical. Preserve all gaps, full verification and
+October31 hard stop; no new campaign after the final attempt.
+
 Read `STARDUST_CAMPAIGN_QUEUE.md` for the authoritative current queue and campaign gates.
 Current1226: A4 stoppingf287f71 is exactly PRIVATE verified. The complete current
 integer hierarchy/domain/jet/operator proofs were reread AFTER that gate and the

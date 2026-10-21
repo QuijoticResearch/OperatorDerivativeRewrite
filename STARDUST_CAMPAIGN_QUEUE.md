@@ -1,5 +1,31 @@
 # Project Stardust: persistent campaign queue
 
+## Current1276: explicit A(2) stopping audit; final transition requires PRIVATE gate
+
+A2 mathematics is frozen at ae2b484e9f58f194d006a9af4120e4f93e338cfc after
+the stopping audit in STARDUST_A2_STOPPING_AUDIT.md. The ACTUAL finite attained
+Lambda criterion for ALL real times is proved, production Lambda<=1/2, isolated
+actual audited arithmetic integration Lambda<=9/32. Threshold value/sign,
+zero-time reality/RH, stronger arithmetic and endpoint collision/simplicity
+remain OPEN. All64 paper statement blocks and selected complete continuation/
+parameter-order proofs reviewed; no claim of full human paper-proof audit or
+separate Hecke/follow-up replay. SAME fixed3/16+epsilon low estimate has NO
+positive saving below7/8; stronger arithmetic is not ruled out.
+
+BEFORE transition, complete1276 fresh full root build, complete transitive
+standard3 axiom audit, unabridged central public-type/source/report review,
+exact archive/source checks, explicit commit/receipt and EXACT PRIVATE main/
+research verification. Until those succeed, final multichannel remains GATED.
+AFTER that exact gate, A2 FROZEN and FINAL MULTICHANNEL ACTIVE automatically:
+reuse signed calculus/adapted integral/finite-grid reconstruction; test ALL
+THREE biharmonic channels including centered cubic; then general p-1 channels
+and completed analytic domain with explicit convergence topology. One-/two-
+channel obstructions do NOT imply full-channel impossibility. No new foundation
+campaign or unrelated branch. A4/integer/conditional-real remain FROZEN.
+October31 hard stop: document exact remaining obstruction, freeze and STOP;
+NO research campaigns after this final attempt. Existing indefinite goal and
+all verification/source-integrity/private-backup requirements remain preserved.
+
 
 ## Current1275: ACTUAL finite attained classical quadratic threshold verified
 

@@ -27445,3 +27445,65 @@ endpoint obligations above. A2 remains ACTIVE until an explicit audited stopping
 checkpoint is committed and exactly PRIVATE verified. Only then may the queued
 final multichannel campaign start. Integer/real campaigns remain frozen; no
 unrelated branch or premature pivot. October31 hard stop and full gates preserved.
+
+
+## Checkpoint1276: explicit A2 stopping audit, with all transition gates retained
+
+STARDUST_A2_STOPPING_AUDIT.md completes the saved theorem-level reuse and
+mathematical/domain audit. Mathematical baseline remains ae2b484e9f58f194d006a9af4120e4f93e338cfc:
+ALL1987 Foundation/root source bytes and all configuration inputs are UNCHANGED.
+No new Lean theorem, axiom, trust setting, mathematical result or manuscript
+edit is introduced by this documentation checkpoint. A2 freezes ONLY AFTER
+this stopping commit's exact receipt and PRIVATE main/research verification.
+After that gate the previously queued FINAL multichannel pseudoprocess campaign
+opens automatically; A4/integer/conditional-real remain frozen, no new campaign
+is added, and October31 remains the hard stop.
+
+The actual finite attained Lambda, actual all-real iff Lambda<=t for EVERY
+realt, actual nonreal-zero iff t<Lambda, production Lambda<=1/2 and isolated
+actual audited Lambda<=9/32 are retained. The Gaussian/heat factor2, positive
+variance and clock, five positive logarithmic limits, density-decay contradiction,
+nonzero-origin domain, actual Xi normalization and finite-polynomial/entire-limit
+operator bridge were reviewed. Generic polynomial/real-axis, zero-variance and
+bounded-factorial-domain counterexamples retain their precise scopes. Forward
+t+h² Hermite splitting is not a backward branch/threshold-collision proof.
+OPEN: exact Lambda/sign, actualH0 reality/RH, stronger arithmetic, global control
+of pre-threshold nonreal-zero locations, endpoint collision and simplicity.
+These are rigorous stopping boundaries, not claims of completed RH or full
+classification. No quartic-to-quadratic threshold implication is assumed.
+
+The pinned 16,677-line OpenAI paper now has ALL64 theorem/proposition/lemma/
+corollary STATEMENT BLOCKS read, plus selective complete continuation and final
+parameter-order proofs (source363-556 and16186-16473). Exact statement anchors,
+SHA/pin and human/kernel scope are committed in STARDUST_A2_PAPER_METHOD_REVIEW.json.
+This is NOT a complete human proof audit of the whole paper. The two previously
+kernel-replayed actual zeta/Dirichlet targets remain the ONLY certified external
+entrypoints; no separate Hecke/follow-up replay is claimed. All2924OAI/30effective/
+30raw support hashes and isolated config were freshly rechecked; the former
+7059job build is not repeated or misreported as a new replay.
+
+Direct estimate reuse has a precise obstruction: final C(beta)=beta-11/16
+minus the fixed compensated low exponent3/16+epsilon is beta-7/8-epsilon.
+It has NO positive saving when beta<=7/8, invariant under common power rescaling
+of probe and signal. This written algebra conclusion is not a new Lean theorem,
+and does not rule out better arithmetic estimates. Fixed-boundary target-uniform
+positive savings differ from boundary-uniform constants: the latter are NOT
+required if ALL actual half-plane statements above1/2 were established, as the
+existing asymptotic_half_planes_real_forward already proves. Exact-rational
+independent checks: 27 instances including exponent shifts, negative gaps,
+and the actual paper's supply/endpoint numerical margins. Not a proof of the
+missing arithmetic bounds. Existing follow-up real-axis scope remains explicit.
+
+Fresh FULL6156jobs TERMINAL0 10.3805729s; COMPLETE37815
+transitive root/Foundation audit TERMINAL0 39.2752488s, ONLY
+propext/Classical.choice/Quot.sound. ALL32 central public types ACTUALLY READ
+UNABRIDGED with pp.proofs true/no ellipses. Complete source/proof reviews from
+1275 and earlier exact-source checkpoints retained after proving input identity;
+no mathematical changes and no invented new-source review count. Earlier12
+independent Lean examples and isolated2-target threshold integration retained
+on those identical inputs, not relabeled as reruns. Exact107recursive manuscript
+paths/hashes, Incoming43/42distinct and A4eleven preserved; unrelated12drafts/tmp,
+all dependencies/caches and sync scanner untouched. No source material staged.
+Permanent optimization configuration remains a2846f7/502fb4d: original complete
+build/audit/cache/thread configuration retained, no new speedup claimed.
+Exact receipt and PRIVATE verification close the stopping milestone.

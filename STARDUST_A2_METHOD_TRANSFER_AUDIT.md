@@ -1,5 +1,12 @@
 # A(2): arithmetic and operator method transfer audit
 
+Current checkpoint 1276: the closedness and finite-lower-bound questions in
+the historical final section below are CLOSED by 1273-1275. See
+`STARDUST_A2_STOPPING_AUDIT.md` for the current theorem-level audit, exact
+remaining obligations and gated freeze decision, and
+`STARDUST_A2_PAPER_METHOD_REVIEW.json` for the expanded paper review. The
+historical 1272 text is preserved; its open-work labels are not current status.
+
 Checkpoint 1272; October 21, 2026. The active campaign remains A(2).
 The hard stopping date and final multichannel gate remain unchanged.
 
