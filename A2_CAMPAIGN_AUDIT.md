@@ -369,3 +369,81 @@ Exact private backup pending at this precommit entry. Independent A2 remains ACT
 next return to faithful published-patch upstream replay and concrete theorem reuse.
 External quasi-RH proof remains unverified here, not refuted; previous raw setup
 omitted required patches. Final multichannel follows A2; October31 hard stop.
+
+
+## Checkpoint1250: corrected upstream configuration and A2 theorem-reuse audit
+
+This is a DOCUMENTATION/SOURCE-METADATA checkpoint. All1949 production source
+bytes and main Lake/toolchain/Mathlib configuration are IDENTICAL to fully audited
+and exactly privately backed-up d1bd18a. The permanent explicit documentation-only
+rule retains that complete6098job build,37186declaration standard3 transitive
+audit, all9type/150lineproof review and eight tests on those EXACT mathematical
+inputs. No partial check or external replay replaces them. Fresh archive107,
+Incoming43/42distinct,A4eleven hashes and exact recursive paths are unchanged.
+
+The corrected isolated upstream replay was observed LIVE on October21 at01:50EDT,
+session18862/LakePID51120, compiling actual OAI/Rellich modules. Target completion
+and exact-target axiom audit remain PENDING, not certified by this checkpoint.
+Raw failed66544 remains TERMINAL1 and is not restarted. Its missing published
+patches/options were our configuration error, not a mathematical refutation.
+
+The30 raw support source files have been preserved separately. Nineteen effective
+files match the published pinned PNT/Rellich patches; each hunk context/count and
+old/new Git blob was checked. The effective import closure needs no new support
+module:30 support and2924 byte-identical OAI sources. The actual pinned support
+package configurations were read: OAI/PNT/Rellich autoImplicit=false; Architect
+defaulttrue. The published PNT package patch moves its option to the main library
+and removes prior extra global options. These choices are now matched in the
+isolated target build. Production dependencies, versions and caches are preserved.
+STARDUST_A2_PATCHED_SUPPORT_INVENTORY.json records raw/effective source hashes,
+patch hashes/Git blobs, exact upstream pins, support configs and effective options.
+The older source inventory remains the RAW inventory, not the patched certificate.
+
+The actual entry/assembly, CertifiedExistence, FinalAssemblyCertifiedBands and
+DetectorPlainMomentParameters were fully read; CappedAnalyticSuccessor was read
+only through its first145lines. The terminal certificate uses finite certified-band
+induction, a capped low stage, high/zero stages and radial transport. For the
+detector, Delta=beta-7/8 and kappaPlain=3/4+2Delta=2beta-1. Arithmetic source,
+character, inverse/marked/unmarked moment hypotheses remain essential. No generic
+Gaussian-flow zero theorem follows just from that architecture. The generic
+ContinuationShiftedGaussian source was fully read: its contour equality requires
+holomorphy throughout the vertical strip and an actual polynomial-Gaussian bound.
+Those hypotheses cannot be replaced by the word Gaussian or by formal operators.
+
+Paper-source lines411--512 were selectively read. Its reciprocal-L Mellin argument
+requires a positive saving epsilon chosen INDEPENDENTLY of the target character;
+implied constants and thresholds may depend on that character. Separate endpoint
+estimates give local uniform Mellin convergence, then Fourier inversion identifies
+the reciprocal before continuation. This is an explicitly arithmetic route, not
+an automatic consequence of Stardust's saddle or Gaussian-translation identities.
+The full16,677-line paper, deeper estimates and follow-up proofs remain unaudited.
+
+### Exact reuse map for the actual quadratic arithmetic flow
+
+| Existing verified declaration | Actual A2 applicability and limit |
+|---|---|
+| RiemannEvenEvolution.even_order_heat_equation, m=1 | Actual time generator -D^2, same positive-time convention; no zero-preservation inference. |
+| RiemannQuadraticGaussian.shifted_jet_average / shifted_flow_average | Actual Bochner domain and Gaussian identity, all Fourier jets; real-square coefficient restriction retained. |
+| RiemannEvenEntireGrowth.actual_real_entire_nonzero_subquadratic, m=1 | Actual entire, real-on-real, nonzero at0, order<=3/2 bound for every real time; no root-reality hypothesis. |
+| RiemannEvenWindowZeros.eventually_real_simple_on_each_disk, m=1 | For EACH fixed disk, eventually all its actual zeros are real/simple. Time threshold depends on disk; no single global threshold follows. |
+| RiemannEvenWindowZeros.eventually_nonreal_zeros_outside_each_disk, m=1 | Existing actual large-time compact escape conditional on selecting nonreal zeros; does not assert such zeros exist. |
+| RiemannRealOrderComplexZeros.actual_complex_zero_set_infinite, a=1, with flow_nat | Actual infinitely many quadratic complex-plane zeros at every time; says nothing by itself about nonreal zeros. |
+| RiemannRealOrderZeroLimits.quadratic_compact_zero_stability / quadratic_nonreal_zero_escape | Varying ORDER at fixed time, requiring actual quadratic ALLREAL and SIMPLE hypotheses. They are not unconditional and do not vary time. |
+| RiemannQuarticFrequencyBranch.scalar_ball_lower_bound | Generic local injectivity bound can be reused. QuarticThresholdCollision's global threshold/compactness conclusions cannot be specialized to m=1. |
+| RealRootedLaguerreLimit.laguerre_nonneg_of_locally_uniform_split_polynomials_on | Requires actual split-polynomial approximants and locally uniform complex convergence. Subquadratic growth alone does not supply them. |
+| RiemannFactorialObstruction.no_factorial_realization, m=1 | Actual quadratic flow outside this specific lp-one bounded-shift function domain, despite its genuine Gaussian realization. |
+
+Classical comparison: [Polymath1904.12438v2](https://arxiv.org/html/1904.12438v2),
+equations1--4, Proposition3.1 and Theorem3.2 match the normalization. Strip
+contraction sends upper zero height y to sqrt(max(y^2-2s,0)). Conditional7/8
+therefore gives y=3/4 and classical9/32, weaker than the paper's0.22. That global
+contraction/threshold is NOT proved in Stardust Lean. Zero motion needs a
+convergent interaction expansion; collisions and far-field control require
+separate proofs. Gaussian averaging or per-disk eventual reality does not close
+those obligations. No novelty/RH claim.
+
+Next: let the existing corrected replay finish without duplication/interruption,
+then run the prepared exact-target standard3 axiom/type audit if it succeeds.
+Continue focused A2 reuse and decisive missing bridges; no campaign transition.
+Finalmultichannel remains after the A2 stopping checkpoint; October31 hard stop.
+Exact private backup pending for this documentation checkpoint; goal ACTIVE.

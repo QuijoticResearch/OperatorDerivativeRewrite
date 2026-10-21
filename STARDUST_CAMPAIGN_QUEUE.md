@@ -1,5 +1,19 @@
 # Project Stardust: persistent campaign queue
 
+## Current1250: independent A2 reuse audit; corrected upstream replay in progress
+
+Mathematical1249 remains fully audited and exactly PRIVATE. Published dependency
+patches and correct OAI/PNT/Rellich options are now applied in the isolated replay;
+raw support sources are preserved. Target completion and exact-target axiom audit
+remain OPEN. The failed raw replay is not a mathematical refutation.
+Actual A2 reuse includes the existing per-disk eventual real/simple theorem and
+subquadratic growth, alongside1248 Gaussian identities and1249 domain obstruction.
+Per-disk thresholds are NOT global zero control. Classical strip contraction and
+any new threshold require their own rigorous verification; no RH claim follows.
+Continue this A2 work; integer/real campaigns remain FROZEN, final multichannel
+stays AFTER A2. October31 hard stop; existing goal ACTIVE; all gates unchanged.
+This entry supersedes historical stage labels below.
+
 ## Current1249: independent A2 domain obstruction and source audit ACTIVE
 
 Actual Gaussian flow/jet realizations1248 remain verified. New1249 proves the
