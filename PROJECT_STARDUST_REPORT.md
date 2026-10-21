@@ -26877,3 +26877,125 @@ and an explicit nonzero entire limit. The current local-uniform topology is
 proved regardless of which valid zero-transfer proof is selected.
 A2 ACTIVE; integer/real FROZEN; final multichannel ONLY AFTER A2 stopping;
 October31 hard stop and all verification/private gates retained. No pivot.
+
+
+## Checkpoint1270: GLOBAL finite heat strips and the ACTUAL classical Xi upper bound
+
+The long-standing global zero-transfer obligation is now CLOSED for the stated
+finite-polynomial and actual zero-time-to-forward-Xi domains. The new actual
+RiemannQuadraticGlobalStrip.flow_zero_strip proves, with ONLY t>=0 and H_t(z)=0:
+  (Im z)^2 <= max(1-2*t,0).
+Here H_t is the ACTUAL RiemannEvenFlow.flow 1 t, not a surrogate polynomial,
+assumed process, formal expectation or conditional zero-free object. The existing
+exact zero-time Xi normalization and Gaussian/operator bridge are retained.
+RiemannQuadraticGlobalStrip.real_zeros_after_half proves ALL zeros real at EVERY
+real t>=1/2; classical_half_all_real specializes to t=1/2. These are the classical
+coarse de Bruijn upper bound in the verified normalization. They are NOT an RH
+proof, a new numerical record, an exact Newman threshold or an A4-to-A2 inference.
+The printed theorem types contain no assumed RH, initial zero-strip or external
+zero-free theorem. All such premises needed internally are mechanically discharged.
+
+Foundation/PolynomialStripLimit.lean generalizes the existing verified vertical-
+modulus method to arbitrary complex root strips. For each linear factor,
+|x+i*a-r|<=|x+i*b-r| when Im(r)<=a<=b. Multiplication over the COMPLETE complex
+root multiset, including multiplicities, and the exact leading-coefficient/FTA
+factorization give the corresponding polynomial bound above any fixed root
+strip. Its passage to the limit requires only ACTUAL pointwise convergence at
+the two fixed evaluation points. No arbitrary integral/derivative interchange
+or holomorphy of a merely pointwise limit is asserted.
+
+The limit is EXPLICITLY assumed entire and nontrivial. If it had a zero above
+height beta, the vertical bound forces zeros at
+  Re(z)+i*(beta+(Im(z)-beta)/(n+1)),
+which approach Re(z)+i*beta and are distinct from it. The EXISTING analytic
+identity theorem then makes the entire function zero everywhere, contradicting
+the nonzero witness. This proves upper-strip closure. Negating the polynomial
+variable and the limit function proves lower-strip closure. Thus a nonzero
+ENTIRE pointwise limit of polynomials whose zeros all satisfy |Im|<=b has the
+same zero strip. Complex coefficients are permitted. This is a SPECIAL
+polynomial-strip class argument, not a new general pointwise Hurwitz theorem.
+Entire/nonzero hypotheses are explicit and independently checked in applications.
+
+The existing transport group law and zero-time identity prove transport2(a)P
+is nonzero for nonzero P, all real a. For s>0,1267 gives the global squared strip
+max(b^2-2s,0) for EVERY actual scaled symmetric shift.1269 supplies its genuine
+local-uniform heat limit; the new closure theorem transfers the bound to actual
+(transport2(-s)P)_C. Nontriviality of that limiting polynomial comes from group
+invertibility and polynomial evaluation, not an unproved limiting argument.
+s=0 is proved separately from the exact transport identity. Therefore
+PolynomialStripLimit.quadratic_heat_strip holds for EVERY finite nonzero real P,
+EVERY s>=0, and ANY real b bounding the SQUARE of every initial root height:
+  transported zero z => (Im z)^2<=max(b^2-2s,0).
+All multiplicities, collisions and changes of the uppermost root are included;
+no simple-root trajectory or discriminant-continuation hypothesis occurs.
+quadratic_heat_real_roots gives real zeros once b^2<=2s.1258's interior upward-
+motion counterexample is preserved; it does not contradict the GLOBAL bound.
+
+Foundation/RiemannQuadraticGlobalStrip.lean applies this FIRST to EACH FIXED
+actual finite polynomial from1266. Its nonzero status follows from the exact
+actual H0(0) normalization and verified positive/nonzero origin value. Its
+initial width-one strip comes from the existing independently verified classical
+zeta nonvanishing Re(s)>1 construction1263. Each evolved polynomial therefore
+has the same global bound max(1-2t,0). ONLY THEN does the1266 OUTER actual Xi
+operator approximation pass to H_t, with its independently verified ENTIREness
+and NONZERO origin. The new strip-closure theorem transfers the global bound
+again. There is no uniform-in-degree or diagonal inner/outer limit interchange.
+Actual Xi is never placed in the bounded factorial-analytic domain excluded by
+1249. Genuine Gaussian domains, L1 before integration and compact-uniform heat
+convergence from1264-1266 are preserved, not replaced by formal calculus.
+
+TEN independent Lean examples pass: explicit failure of vertical monotonicity
+below the root strip; zero-input-polynomial counterexample to dropping P!=0;
+ACTUAL nonvanishing constant polynomials 1/(n+1) converging to the zero entire
+function, showing why the NONZERO LIMIT premise is essential; a boundary root
+at i for a complex-coefficient polynomial in the width-one closure theorem;
+QUANTITATIVE SHARPNESS using initial z^2+1 with ALL initial roots in width1
+and a genuine heat zero at s=1/4 with Im(z)^2=1/2 and Im(z)!=0; preservation of
+real roots for arbitrary finite nonzero real P under forward heat; actual Xi
+initial width1; actual Xi t=1/4 squared width1/2; actual Xi t=1/2 real zeros;
+and actual Xi t=1 real zeros. The sharp quadratic is a GENERIC polynomial,
+not the Xi function: it neither exhibits an actual Xi nonreal zero nor refutes
+RH. It proves the universal width-only polynomial estimate cannot in general
+force all-real zeros earlier. Additional Xi-specific information is required
+for stronger arithmetic conclusions. Initial scratch coercion/evaluation and
+rational simplification failures were fixed without production changes.
+
+PRIMARY SOURCE CHECK: de Bruijn1950, The roots of trigonometric integrals,
+Duke17,197-226, DOI10.1215/S0012-7094-50-01720-0, publisher PDF
+https://pure.tue.nl/ws/files/1769368/597490.pdf . Existing ignored-cache copy
+SHA256 C538EFAF0CA02AED0AFCCA4060B0AB3D9324AC89BAE594B5E89E74DA105260E0
+was selectively rendered and VISUALLY READ at pp204-205. Theorem13 uses a
+Gaussian multiplier with coefficient lambda^2/2 and narrows squared width by
+lambda^2. Thus lambda^2=2t matches the verified clock. The general theorem has
+weight hypotheses from Theorem10; this checkpoint independently proves the
+stated finite-polynomial and actual-Xi instances, not its full arbitrary-weight
+version. No novelty claim. The original archive and all manuscripts remain intact.
+
+Verification: targeted4699 jobs TERMINAL0,41.7498331s;
+fresh FULL6149 jobs TERMINAL0,24.4199383s;
+COMPLETE37730-declaration transitive root/Foundation axiom audit TERMINAL0,
+36.0429923s, only propext/Classical.choice/Quot.sound.
+ALL13 public types ACTUALLY READ UNABRIDGED with pp.proofs true, no ellipses;
+COMPLETE230 final source/proof lines read:13 theorems,0 new definitions, no
+explicit private production helper or global instance. Ten examples TERMINAL0,
+26.6084968s. Production inputs unchanged after full
+build.1980 source hashes pinned; prior1978 unchanged except root import and
+all configuration/toolchain unchanged. Exact107 recursive archive paths/hashes,
+43Incoming42distinct and11A4 preserved; no manuscript edited/committed,
+unrelated12 draft MDs/tmp untouched. Permanent build settings retained; no new
+speedup claimed. Exact-commit receipt/private sync close the checkpoint afterward.
+
+NEXT A2 TASK, not yet proved: audit reuse for actual contraction from an
+ARBITRARY starting time t0 under an explicit initial strip b, then t0+s has
+squared bound max(b^2-2s,0). This should directly reuse generic exact divisor
+polynomials/zero tests, subquadratic Gaussian budgets and shifted_flow_average
+at t0 rather than duplicating the zero-time construction. It would give actual
+once-real-always-real and precise conditional transfer of any stronger initial
+arithmetic zero strip. Compare with the already audited pinned OpenAI result
+without treating its isolated replay as a new production import; preserve exact
+theorem/dependency/domain boundaries. Exact Newman value, zero-time reality/RH
+and stronger arithmetic estimates remain OPEN. Do not declare A2 stopped solely
+from the classical1/2 theorem; a later explicit audited stopping checkpoint must
+record the strongest proved transfer and the precise remaining obstruction.
+A2 ACTIVE; integer/real FROZEN; final multichannel ONLY AFTER A2 stopping;
+October31 hard stop and full verification/private gates retained. No pivot.

@@ -1,6 +1,24 @@
 # Project Stardust: persistent campaign queue
 
 
+## Current1270: actual classical quadratic Xi GLOBAL strip bound verified
+
+ACTUAL H_t=RiemannEvenFlow.flow 1 t now satisfies, for EVERY t>=0 and EVERY zero:
+Im(z)²<=max(1-2t,0). Hence ALL zeros real at EVERY t>=1/2. This independently
+formalizes the classical coarse bound, not RH/new numerical record/exact threshold.
+Global finite-polynomial heat contraction through multiplicities/collisions and
+the OUTER actual Xi zero transfer are CLOSED. Explicit nonzero entire limits,
+full root multisets, analytic identity theorem, exact Gaussian/operator domains
+and separate inner/outer limits are verified. Actual Xi remains outside H.
+NEXT: theorem-level reuse for contraction from arbitrary initial time/strip,
+once-real-always-real and precise conditional stronger arithmetic-strip transfer.
+Keep isolated pinned OpenAI replay distinct from production theorem import.
+Exact threshold/zero-time RH and stronger Xi-specific estimates remain OPEN.
+A2 ACTIVE; no stopping declared from the known1/2 bound alone. Integer/real
+FROZEN; final multichannel ONLY AFTER A2 stopping. October31 and all build,
+axiom, type, source and private gates remain. This supersedes older proof labels.
+
+
 ## Current1269: actual symmetric-shift / heat local-uniform limit verified
 
 For EVERY finite real P and s>=0, the ACTUAL n+1 symmetric shifts of size
