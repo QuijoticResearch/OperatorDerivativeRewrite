@@ -1,5 +1,22 @@
 # Project Stardust: persistent campaign queue
 
+## Current1259: actual A2 divisor mass and even canonical disk logs verified
+
+Shared Jensen/canonical proofs now instantiate to ACTUAL A2 at EVERY real time:
+N_t(R)<=K_t R sqrt(R), N_t(R)/R^2->0, weighted divisor mass->0, and genuine disk
+canonical logs with g(0)=g'(0)=0. No real/simple-zero assumption. Existing quartic
+public statements preserved exactly through shared-proof reuse. Next: transfer
+remainder bounds and prove local uniform log/remainder convergence; construction
+alone does not imply convergence (even g_R=z^2 is a counterexample without growth).
+Then actual complex-root product/polynomial approximation and heat-domain limit;
+audit conjugate pairing/no-imaginary-axis conditions instead of assuming all-real.
+Global polynomial collision/switch control and actual Xi strip contraction OPEN.
+Prior exhaustive actual clusters1257 and uppermost-branch1258 preserved. No new
+threshold/RH claim. Independent A2 ACTIVE; prior integer/real stages FROZEN; final
+multichannel AFTER A2 stopping; October31 hard stop; all full-build, transitive
+axiom, type/proof/source-integrity and exact private-backup gates retained.
+This entry supersedes historical immediate-proof labels below.
+
 ## Current1258: branchwise polynomial strip bound; actual interior-root obstruction
 
 Verified finite-root interaction and genuine heat-factor differentiation give

@@ -106,3 +106,26 @@ Rebenchmark after material hardware, toolchain/Mathlib version, repository/impor
 Immediate rollback of the only new optimization is to stop using the preliminary helper and use the original root-import type file with `lake env lean`. Continue the unchanged complete milestone procedure. No compiler setting, global environment, cache layout or mathematical source needs restoration. If retiring the helper permanently, make a reviewed workflow-only Git change to this document, the helper and its `AGENTS.md` instruction; do not reset the repository, revert mathematical commits wholesale or delete protected caches. Retain the raw benchmark record as history.
 
 Permanent workflow ownership does not open a separate campaign or change mathematical priorities. Resume the authoritative saved research directive after workflow maintenance.
+
+
+## Shared-import extraction validation, October 21, 2026
+
+Checkpoint1259 extracts existing Jensen/canonical proofs into shared modules and
+instantiates them for A2, preserving all19 existing theorem statements in three
+refactored modules. Hardware, pinned toolchain, cache and resource configuration
+remain unchanged. The new graph contains1960 Foundation/root source files and
+6109 full-build jobs. A natural-checkpoint recheck measured:
+
+- Dependency-invalidating full root build: 351.4603888s, terminal0.
+- Cached target `lake build Foundation.RiemannQuadraticDivisor`: 8.2245605s, terminal0.
+- Cached incremental `lake build`: 10.0008153s, terminal0.
+- Complete transitive audit with all51 final public-type checks: 33.9355979s, terminal0;37414 declarations, only the standard three axioms.
+
+The invalidating rebuild and cached builds are different workloads. These are
+validation observations after an import-graph change, not a matched speedup study;
+no additional optimization is adopted. The measured preliminary helper and the
+original full-build/audit settings, verification gates and rollback remain in force.
+Raw evidence is `.lake/stardust-1259-*-time.json` and the corresponding logs, with
+cached observations in `.lake/stardust-1259-warm-timings.json`. Mathematical inputs
+were hash-pinned before and after the timing checks. This does not reopen a separate
+workflow campaign or change A2 priorities.

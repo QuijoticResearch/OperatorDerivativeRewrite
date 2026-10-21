@@ -1057,3 +1057,100 @@ new threshold, all-paper novelty claim or RH implication. Independent A2 ACTIVE;
 prior integer/real campaigns FROZEN; final multichannel only AFTER the A2 audited
 stopping gate. October31 hard stop. Exact receipt/private backup pending precommit;
 terminal closure is recorded locally. Original permanent build configuration retained.
+
+
+## Checkpoint1259: actual A2 divisor estimates and normalized canonical logarithms
+
+The theorem-level reuse audit found that the quartic ACTUAL real split-polynomial
+limit assumes all zeros real. It cannot be cited to prove A2 strip contraction
+from an initial NONREAL zero strip. The Jensen and canonical logarithm proofs,
+however, depend on explicit entire-function hypotheses already verified for A2.
+They are now extracted into shared proofs, and the existing quartic public results
+call those shared proofs. No quartic conclusion is silently applied to another flow.
+All19 old public theorem headers across the three refactored modules are EXACTLY
+unchanged; their names, domains and mathematical statements survive the refactor.
+
+EntireSubquadraticZeroCounting: for an ACTUAL entire complex f with f(0)!=0 and
+norm f(z)<=C exp(norm z*sqrt(norm z)), C>0, the ACTUAL disk DIVISOR multiplicity
+count N_f(R)=sum_z divisor(f,closedBall(0,R))(z) is nonnegative and satisfies
+ N_f(R)<=K R sqrt(R), R>=1, and N_f(R)/R^2 ->0.
+Also 0<=sum_z multiplicity(z)*norm(z)^2/R^4<=N_f(R)/R^2 for R>0, so this
+weighted divisor mass tends to zero. The count includes multiplicities and is
+not an assumed enumeration of distinct or simple zeros. Bounds/nonnegativity
+use the precise needed hypotheses; in particular some do not require f(0)!=0,
+whereas finite-zero order, compact zero finiteness and Jensen normalization do.
+No theorem for every entire function without a growth bound is asserted.
+
+EntireDiskDecomposition uses actual compact zero finiteness to choose a zero-free
+sphere r in (R,R+1), R>=0, and Mathlib exists_ecanonicalDecomp. The existing
+EvenDiskLogRemainder constructs a genuine zero-free analytic remainder h and a
+normalized logarithm g on the disk: exp(g(z))=h(z)/h(0), g(0)=0, and the exact
+HasDerivAt g (h'/h) identity. EvenEntireCanonicalDerivative generalizes the actual
+opposite-divisor and finite logarithmic-product cancellation: for ENTIRE EVEN f,
+f(0)!=0, its canonical remainder h has h'(0)=0, hence the constructed g'(0)=0.
+All multiplicities are kept; no real-root or simple-root assumption is introduced.
+The chain rule at complex zero is explicitly typed; local analytic hypotheses
+remain distinct from local root-membership witnesses and logarithm normalization.
+
+Foundation/RiemannQuadraticDivisor.lean discharges ALL these hypotheses for the
+ACTUAL flow RiemannEvenFlow.flow 1 t at EVERY REAL t, using existing analyticity,
+RiemannEvenNormalizedCompact.actual_flow_zero_pos and
+RiemannEvenEntireGrowth.exists_subquadratic_growth. Thus A2 now has ACTUAL
+multiplicity counts, vanishing normalized/weighted mass, and canonical disk logs
+with g(0)=g'(0)=0. Constants K depend on t; no uniform time or global zero strip is
+inferred. Earlier actual Gaussian L1 identities and exhaustive local clusters remain.
+
+Fresh FULL6109job root build TERMINAL0 (351.4603888s),
+COMPLETE37414declaration transitive root/Foundation audit TERMINAL0
+(33.9355979s), only propext/Classical.choice/Quot.sound.
+ALL51 public types ACTUALLY READ UNABRIDGED:31 new and20 retained interfaces.
+COMPLETE652 final source/proof lines across seven affected modules ACTUALLY READ,
+including both new definitions and the retained quartic count definition; no new
+private helper or instance. There are29 new theorems and2 new definitions, with
+19 old theorem contracts preserved. FOUR new source modules, three refactored
+prior modules, root import only otherwise. Full downstream build rechecked the
+quartic threshold/canonical polynomial results and real-order branch results.
+THIRTEEN independent Lean controls TERMINAL0 (28.5535195s):
+constant count0 and normalized limit; explicit nonreal zeros of1+z^2; genuine disk
+log with derivative0 for that polynomial; actual A2 count at t=-100; actual finite
+zero set at t=0; normalized count limit at t=42; weighted mass nonnegativity;
+actual radius0 disk logarithm at every t; failure of origin-nonzero for f=z;
+zero-free exp with nonzero derivative0; exact divisor multiplicity3 for(z-i)^3;
+and nonconvergence of the even normalized log family g_R(z)=z^2 to zero.
+The last control shows that g(0)=g'(0)=0 and evenness alone do NOT prove the next
+logarithm limit; a genuine growth estimate is indispensable. Exp(z) separately
+shows zero-freeness alone does not give zero derivative. Test-only repairs used
+7+1=8 normalization and the correct locally-uniform-on pointwise-limit interface;
+production proofs were unchanged. Generic proof repairs addressed explicit section
+hypotheses, shadowed analytic/origin witnesses and complex chain-rule typing.
+No resources, axioms, errors or mathematical verification gates were weakened.
+
+All1960 source hashes pinned; prior1956 unchanged except the three audited proof
+extractions and root import. Lean/Mathlib/build settings unchanged. All107 archived
+manuscripts and EXACT recursive paths, Incoming43/42distinct and A4eleven/exactpaths
+preserved; no source manuscripts edited. Permanent build policy consulted. Because
+shared imports changed, timings were rechecked at this natural proof break:
+cached target 8.2245605s and cached full root 10.0008153s,
+with fresh audit/type time above. The351.46s dependency-invalidating full build is
+not compared as a performance regression against a cached build. No new speedup
+or compiler/cache/thread configuration is claimed or adopted.
+
+NEXT / REMAINING: transfer canonical remainder boundary/origin/growth estimates,
+then use existing EvenDiskLogLimit for ACTUAL A2 local uniform remainder convergence.
+Construction and g'(0)=0 do NOT by themselves prove that limit. Reconstruct the
+actual zero product and real polynomial approximants with a justified NONREAL strip
+domain, then establish the correct heat-domain convergence. The reviewed quartic
+DenominatorLimit.denominator_error_bound proof uses no real-zero fact except the
+phantom real-zero argument of denominatorProduct; its weighted-mass ingredient is
+now verified for A2. Generic paired_denominator_ne_zero and
+normalized_reciprocal_pair already allow complex roots. In contrast,
+opposite_finite_product currently uses the real-zero premise to exclude Re(a)=0,
+and numeratorPoly uses it for REAL coefficients. These must be generalized with
+precise no-imaginary-axis/conjugation hypotheses, or another valid pairing scheme;
+no circular all-real premise may be assumed. The quartic imaginary-axis positivity
+proof was reread; its cosine/cosh positivity argument is a candidate for A2 reuse,
+not yet an A2 zero-free-axis theorem here. Global polynomial collisions/switches
+and actual Xi global strip contraction remain OPEN. No new threshold, RH result,
+blanket order<2 theorem or novelty claim. A2 ACTIVE; previous integer/real stages
+FROZEN; final multichannel only after A2 stopping. October31 hard stop; exact receipt
+and PRIVATE backup pending precommit, terminal closure recorded locally.

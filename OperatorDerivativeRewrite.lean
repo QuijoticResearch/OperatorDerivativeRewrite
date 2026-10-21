@@ -1866,3 +1866,4 @@ import Foundation.RiemannQuadraticZeroTransfer
 import Foundation.RiemannQuadraticCluster
 import Foundation.RiemannQuadraticConfinement
 import Foundation.RiemannQuadraticRootMotion
+import Foundation.RiemannQuadraticDivisor
