@@ -1865,3 +1865,4 @@ import Foundation.RiemannQuadraticAllOrders
 import Foundation.RiemannQuadraticZeroTransfer
 import Foundation.RiemannQuadraticCluster
 import Foundation.RiemannQuadraticConfinement
+import Foundation.RiemannQuadraticRootMotion

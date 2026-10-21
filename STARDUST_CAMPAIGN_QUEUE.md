@@ -1,5 +1,22 @@
 # Project Stardust: persistent campaign queue
 
+## Current1258: branchwise polynomial strip bound; actual interior-root obstruction
+
+Verified finite-root interaction and genuine heat-factor differentiation give
+(Im r(t))^2<=(Im r(s))^2-2(t-s) on an explicitly differentiable positive UPPERMOST
+root branch with all stated interval hypotheses. This is not yet a global finite-
+polynomial maximum theorem. A genuine backward-heat polynomial trajectory through
+(z^2+1)(z^2+4) has a local root at i with height derivative +1/3: applying the
+bound to every individual nonreal root is FALSE. Global collisions/switches remain.
+Actual Xi exhaustive clusters1257 remain verified. Next: global polynomial maximum
+control and exact canonical/polynomial approximation transfer to actual A2; reuse
+RiemannEvenEntireGrowth at m=1 and generic paired-product identities, without
+assuming quartic-specific declarations already apply. Actual heat-domain/limit
+control required. No global contraction/new threshold/RH claim. Independent A2
+ACTIVE; prior integer/real stages FROZEN; final multichannel AFTER A2 stopping;
+October31 hard stop and all verification/private-backup gates retained.
+This entry supersedes historical immediate-proof labels below.
+
 ## Current1257: EXHAUSTIVE actual local zero clusters verified; global strip next
 
 At every actual quadratic-flow zero, finite positive multiplicity m now gives a

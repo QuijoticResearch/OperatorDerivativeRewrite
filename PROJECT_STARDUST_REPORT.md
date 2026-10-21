@@ -25777,3 +25777,91 @@ clusters. Independent A2 remains ACTIVE; prior integer/real-order campaigns rema
 FROZEN; final multichannel only after A2's audited stopping checkpoint. October31
 hard stop; all exact-commit receipt and private-backup requirements remain intact.
 Private backup is pending at this precommit entry; closure is recorded locally.
+
+
+## Checkpoint1258: finite heat-root strip mechanism and an actual upward branch
+
+Foundation/RiemannQuadraticRootMotion.lean connects genuine polynomial heat
+motion to the exact interaction mechanism needed for a global A2 strip proof.
+For a finite set S of DISTINCT complex roots let P_S=product_(b in S)(X-b).
+Mathlib logDeriv_prod gives P_S'/P_S=sum 1/(z-b) off S. Factoring out a root
+and differentiating twice gives, for EVERY a in S,
+ P_S''(a)/P_S'(a)=2 sum_(b in S erase a) 1/(a-b).
+P_S'(a)!=0 is separately proved; the ratio is never certified through 0/0.
+
+For a.im>0, conj(a) in S and EVERY b in S satisfying b.im<=a.im, the imaginary
+part of this ratio is <=-1/a.im. The conjugate term is EXACTLY -1/a.im; every
+other term is nonpositive. No full real-coefficient assumption is hidden: the
+precise conjugate-member and uppermost hypotheses are explicit in the theorem.
+The heat sign and factor2 agree with the ACTUAL quadratic flow convention H_t=-H_zz.
+
+heat_factor_velocity differentiates a genuine time-dependent factorization
+ P_s=(X-r(s))*Q_s
+at FIXED spatial r(t). Under HasDerivAt r v t, the explicit differentiability
+of Q_s(r(t)), the ACTUAL partial-time derivative -P_t''(r(t)), and P_t'(r(t))!=0,
+it proves v=P_t''/P_t'. No unproved global root labeling is supplied by this lemma.
+The root interaction then gives derivative[(Im r)^2]<=-2 along a differentiable
+positive uppermost branch. Existing convex mean-value machinery integrates this:
+ (Im r(t))^2 <= (Im r(s))^2-2(t-s).
+The interval theorem states EVERY derivative, root membership, positivity,
+conjugate membership, uppermost and velocity hypothesis for EVERY u in [s,t].
+It is a BRANCHWISE strip estimate, not an unconditional global polynomial theorem.
+
+A rigorous counterexample prevents a tempting incorrect extension. At t=0,
+ P_0(z)=z^4+5z^2+4=(z^2+1)(z^2+4)
+has simple roots +/-i,+/-2i, and P_0''(i)/P_0'(i)=i/3. Thus the INTERIOR root
+has POSITIVE imaginary velocity, despite the real coefficients and conjugate pairs.
+The example is realized by the GENUINE entire polynomial heat trajectory
+ P_t(z)=z^4+(5-12t)z^2+4-10t+12t^2,
+whose partial-time derivative equals -P_t'' at EVERY real t and complex z.
+Set D(t)=9-80t+96t^2 and
+ y(t)=sqrt((5-12t-sqrt(D(t)))/2).
+Lean proves y(0)=1 in an independent control and HasDerivAt y (1/3) 0, plus
+P_t(i*y(t))=0 under the TWO explicit square-root nonnegative-domain hypotheses.
+Continuity proves those hypotheses on an ACTUAL neighborhood of zero, so this
+is a genuine local root branch with upward height derivative, not merely a
+formal velocity assignment or a finite Euler step. The universal all-root
+height-monotonicity proposal is false. The uppermost-root estimate survives.
+This concerns a degree4 polynomial under QUADRATIC heat, not the A4 Xi campaign.
+
+Fresh FULL6105job build TERMINAL0 (42.0228765s),
+COMPLETE37383declaration transitive root/Foundation audit TERMINAL0
+(35.6751645s), only propext/Classical.choice/Quot.sound.
+ALL20 public types ACTUALLY read UNABRIDGED; COMPLETE251 final source lines
+ACTUALLY reviewed, including three definitions;17 theorems, no private helper or
+instance. EIGHT independent Lean controls TERMINAL0 (26.0868219s):
+empty root product, all-root simplicity, exact initial factorization, branch base i,
+actual imaginary-height derivative1/3, actual neighboring root identity, explicit
+failure of the interior downward bound, and a strictly bounded positive-branch
+lifetime. The first factorization control needed the explicit polynomial C(1+4)
+map-add identity; production proofs were unchanged. Exact rational controls for
+162 finite symmetric imaginary-root configurations verify the top-root square-rate
+bound and the interior1/3 velocity; no floating Xi zeros or external assumptions.
+Draft repairs used logDeriv/Polynomial.deriv, exact complex numeral projections,
+Pi function identities, Nat subtraction reduction and casts. A standard-heartbeat
+elaboration timeout in the explicit branch proof was repaired by direct reuse of
+Polynomial.hasDerivAt instead of a large convert expression. No resource limits,
+axioms, checks or theorem semantics were weakened. A ring diagnostic within a
+successful alternate branch is not being confused with an error; terminal codes,
+complete root build and complete transitive audit all passed.
+All1956 source hashes pinned; previous1955 unchanged except root import; pinned
+Lean/Mathlib/build settings unchanged. All107 manuscript hashes and EXACT recursive
+paths, Incoming43/42distinct and all11 A4 paths/hashes preserved; no manuscripts edited.
+
+REUSE AUDIT / REMAINING GLOBAL OBLIGATIONS: the existing quartic canonical-product
+approximation is stated for the ACTUAL quartic flow; it cannot simply be cited as
+an A2 approximation. RiemannEvenEntireGrowth.exists_subquadratic_growth already
+covers m=1 with exp(norm z*sqrt(norm z)) growth, and its uniform jet/spatial bounds
+were reread. They are candidates for transferring the existing canonical estimates.
+RiemannQuarticCanonicalPairs contains generic paired-denominator/opposite-product
+identities, while RiemannQuarticActualPolynomialLimit and PolynomialFactors need
+an exact theorem-level domain/reuse audit. No such transfer is certified here.
+Still required: root collisions and changes of the uppermost branch for a GLOBAL
+finite-polynomial maximum; actual Xi polynomial/canonical approximation, appropriate
+heat-domain uniform control, and a justified limit preserving the strip bound.
+The actual Gaussian L1 identity1248 and exhaustive local Xi clusters1257 remain
+available; neither replaces these missing global steps. No global contraction,
+new threshold, all-paper novelty claim or RH implication. Independent A2 ACTIVE;
+prior integer/real campaigns FROZEN; final multichannel only AFTER the A2 audited
+stopping gate. October31 hard stop. Exact receipt/private backup pending precommit;
+terminal closure is recorded locally. Original permanent build configuration retained.
