@@ -1854,3 +1854,4 @@ import Foundation.RiemannRealOrderCutoffConcentration
 import Foundation.RiemannRealOrderUniformCutoff
 import Foundation.RiemannRealOrderUniformEndpoint
 import Foundation.RiemannRealOrderUniformAsymptotic
+import Foundation.RiemannRealOrderTransitionRate
