@@ -1,0 +1,97 @@
+{
+  "checkpoint": 1289,
+  "time_utc": "2026-10-21T22:38:23.212527+00:00",
+  "campaign": "FINAL multichannel pseudoprocess",
+  "previous_private_checkpoint": "3071c94a5598ff7d5264d75f52ab7c1c9f41e133",
+  "source_count": 2041,
+  "prior_source_count": 2039,
+  "prior_sources_unchanged_except_root": true,
+  "root_only_two_imports": true,
+  "configuration_unchanged": true,
+  "full_build_jobs": 6210,
+  "audit_declarations": 38654,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "terminal_results": {
+    "full-build": {
+      "stage": "full-build",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "build"
+      ],
+      "wall_seconds": 25.533132299984572,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T22:34:15.647734+00:00"
+    },
+    "audit": {
+      "stage": "audit",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1289-audit.lean"
+      ],
+      "wall_seconds": 66.3794699999853,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T22:35:41.606042+00:00"
+    },
+    "independent": {
+      "stage": "independent",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1289-independent.lean"
+      ],
+      "wall_seconds": 44.73746180001763,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T22:37:02.511619+00:00"
+    }
+  },
+  "public_types_actually_read_unabridged": 9,
+  "proof_arguments_visible": true,
+  "complete_final_source_and_helper_lines_reviewed": 131,
+  "new_public_theorems": 8,
+  "new_definitions": 1,
+  "private_helpers": 2,
+  "retained_coordinate_commutation": "For every finite coordinate set, every signed polynomial conditioning, every retained coordinate j and every q: D_j^q Pi_S P=Pi_S D_j^q P",
+  "no_retained_hypothesis_dropped": true,
+  "exact_causal_jet_identity": "shiftedJet with physical signed cell parameter = (q!)^-1 Pi_left(D_j^q P), for EVERY native multitime input, all cells and q",
+  "heat_then_strict_past_factorization": "Exact actual signed slice expectation gives clampBefore(heat_current(nextConditioned P))=Pi_left P",
+  "genuine_L1_causal_approximation": "For every fixed multitime input, actual refined native predictable fields minus actual causal projected-derivative fields tend to zero in genuine L1; all heat-correction bounds/physical parameter limits discharged",
+  "causal_projected_derivative_identification_proved": true,
+  "surviving_refinement_L1_convergence_proved": false,
+  "cofinal_completed_source_operator_construction_proved": false,
+  "full_multitime_pminusone_Clark_Ocone_proved": false,
+  "arbitrary_completed_observable_reconstruction_proved": false,
+  "proposed_next_route_not_proved": "Preserve total degree under block refinement; bound partial finite conditional telescope by number of cells times mesh using existing positive_increment_bound and moment bounds; obtain paired-dual continuity on fixed cylinders, then density with uniform projection bounds; source-norm causal continuity remains false",
+  "Lean_test_code": "import Foundation.HigherHeatCausalJetIdentification\nnoncomputable section\nopen scoped NNReal Topology\nopen OperatorDerivativeRewrite.Foundation\nopen PureOrderPolynomialConditioning MultivariateFactorialDomain\nopen HigherHeatPolynomialCylinders HigherHeatDyadicConditioning HigherHeatCausalJetIdentification\nopen HigherHeatPredictableJetBounds HigherHeatJetHeatCorrection HigherHeatDyadicStepAgreement\nopen HigherHeatWeakTimeAdjoint HigherHeatRefinedPredictableJets Filter\nexample (p : \u2115) (a : Fin 1 \u2192 \u211d) :\n    MvPolynomial.pderiv (0:Fin 1) (conditioning p a \u2205 (MvPolynomial.X 0)) = 0 \u2227\n      conditioning p a \u2205 (MvPolynomial.pderiv (0:Fin 1) (MvPolynomial.X 0)) = 1 := by\n  constructor\n  \u00b7 change MvPolynomial.pderiv (0:Fin 1)\n      (conditioning p a \u2205 (MvPolynomial.monomial (Finsupp.single 0 1) 1)) = 0\n    rw [conditioning_monomial, MvPolynomial.pderiv_monomial, keep_apply]\n    simp\n  \u00b7 rw [MvPolynomial.pderiv_X_self]\n    change conditioning p a \u2205 (MvPolynomial.monomial 0 1) = MvPolynomial.monomial 0 1\n    rw [conditioning_monomial, keep_eq_self \u2205 0 (by intro i hi; rfl),\n      factor_of_supported p a \u2205 0 (by intro i hi; rfl)]\n    simp\nexample (n : \u2115) (T : \u211d\u22650) (j : Fin (size n)) (P : Test n) :\n    shiftedJet n 2 (by omega) T j 3\n      (-(HigherHeatDyadicLaws.duration T n:\u211d)) P = causalJet n 2 T j 3 P := by\n  simpa only [show (-1:\u211d)^(2+1) = -1 by norm_num, neg_one_mul] using\n    physical_shifted_jet_eq n 2 (by omega) T j 3 P\nexample (b : \u2115) (P : Test b) (T : \u211d\u22650) (hT : 0 < T) :\n    Tendsto (fun n => adaptedField n 2 (by omega) T hT (fun j =>\n      causalJet n 2 T j 3 (refinedInput b P n)) - adaptedField n 2 (by omega) T hT\n      (fun j => predictableJet n 2 T j 3 (refinedInput b P n)))\n      atTop (\ud835\udcdd (0:Field timeMeasure)) :=\n  causal_field_approximation b P 2 (by omega) T hT 3\nexample (n : \u2115) (T : \u211d\u22650) (j : Fin (size n)) (P : Test n) :\n    (polynomialDerivative (Pi.single j 1) : Test n \u2192 Test n)^[5]\n      (nextConditioned n 3 T j P) =\n      nextConditioned n 3 T j ((polynomialDerivative (Pi.single j 1) : Test n \u2192 Test n)^[5] P) :=\n  derivative_next n 3 T j 5 P\n",
+  "Lean_test_code_sha256": "D795ACB86BA0445C41FDE7CB27320B7FDAEA82745ECC4785227EA3231D7A4E1A",
+  "Lean_test_log_sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+  "independent_Lean_examples": 4,
+  "Lean_counterexample": "For ANY p and parameter a on Fin1, d/dX Pi_empty(X)=0 whereas Pi_empty(dX/dX)=1. Retained-coordinate hypothesis is necessary, including for Gaussian order.",
+  "exact_test_code": "from fractions import Fraction as F\nfrom math import factorial as fac\n\ndef add_term(out,d,c):\n out[d]=out.get(d,F(0))+c\n if out[d]==0:del out[d]\ndef deriv(P,j,q):\n out={}\n for d,c in P.items():\n  if d[j]<q:continue\n  e=list(d);e[j]-=q\n  add_term(out,tuple(e),c*F(fac(d[j]),fac(d[j]-q)))\n return out\ndef moment(p,a,n):\n return F(fac(n),fac(n//p))*a**(n//p) if n%p==0 else F(0)\ndef cond(P,p,a,S):\n out={}\n for d,c in P.items():\n  for i in range(len(d)):\n   if i not in S:c*=moment(p,a[i],d[i])\n  add_term(out,tuple(d[i] if i in S else 0 for i in range(len(d))),c)\n return out\ndef heat(P,p,a,j):\n out={}\n for d,c in P.items():\n  for k in range(d[j]//p+1):\n   e=list(d);e[j]-=p*k\n   add_term(out,tuple(e),c*F(fac(d[j]),fac(e[j])*fac(k))*a**k)\n return out\ndef clamp(P,S):\n return {d:c for d,c in P.items() if all(d[i]==0 for i in range(len(d)) if i not in S)}\ndef scale(P,c):return {d:v*c for d,v in P.items() if v*c}\nchecks=corrections=failures=0\nfor p in [2,4,6,8]:\n for N in [1,2,4]:\n  for T in [F(1,2),F(1),F(3,2)]:\n   a=[(-1)**(p//2+1)*T/N]*N\n   for j in range(N):\n    left=set(range(j));right=set(range(j+1))\n    for seed in range(24):\n     d=tuple((seed*(i+1)+i)%(2*p+3) for i in range(N))\n     e=tuple((seed+2*i+1)%(p+2) for i in range(N))\n     P={};add_term(P,d,F(2,3));add_term(P,e,F(-3,5))\n     for q in range(p+2):\n      D=deriv(P,j,q)\n      Dnext=deriv(cond(P,p,a,right),j,q)\n      assert Dnext==cond(D,p,a,right)\n      shifted=scale(clamp(heat(Dnext,p,a[j],j),left),F(1,fac(q)))\n      causal=scale(cond(D,p,a,left),F(1,fac(q)))\n      assert shifted==causal\n      native=scale(clamp(Dnext,left),F(1,fac(q)))\n      corrections+=shifted!=native;checks+=1\n    x=[0]*N;x[j]=1;x={tuple(x):F(1)}\n    assert deriv(cond(x,p,a,left),j,1)=={}\n    assert cond(deriv(x,j,1),p,a,left)=={(0,)*N:F(1)}\n    failures+=1\nprint(dict(passed=True,exact_retained_derivative_and_causal_jet_checks=checks,\n nonzero_finite_cell_corrections=corrections,discarded_coordinate_commutation_counterexamples=failures))\n",
+  "exact_test_output": "{'passed': True, 'exact_retained_derivative_and_causal_jet_checks': 14112, 'nonzero_finite_cell_corrections': 1242, 'discarded_coordinate_commutation_counterexamples': 84}",
+  "exact_retained_derivative_and_causal_jet_checks": 14112,
+  "nonzero_finite_cell_corrections": 1242,
+  "discarded_coordinate_commutation_counterexamples": 84,
+  "positive_variation_or_finite_signed_path_measure_claimed": false,
+  "new_source_sha256": {
+    "Foundation/RetainedCoordinateDifferentiation.lean": "8B66A8F47F30B6B0520CDF560E4CF3698F17387D7F04F7D72EB238774DF40D0A",
+    "Foundation/HigherHeatCausalJetIdentification.lean": "9340A32ED92FD93B88F6A7E0DD5C22DB5427469B78854F13431B80932979B546"
+  },
+  "source_integrity": {
+    "archive": 107,
+    "exact_recursive_paths": true,
+    "incoming": 43,
+    "incoming_distinct": 42,
+    "a4": 11,
+    "Clark_manuscript_hash_preserved": true
+  },
+  "private_backup_pending": true,
+  "hard_stop": "2026-10-31",
+  "goal": "ACTIVE"
+}

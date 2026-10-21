@@ -1937,3 +1937,5 @@ import Foundation.HigherHeatRefinedPredictableJets
 import Foundation.HigherHeatSmallTimeBound
 import Foundation.HigherHeatJetHeatCorrection
 import Foundation.HigherHeatJetCorrectionFields
+import Foundation.RetainedCoordinateDifferentiation
+import Foundation.HigherHeatCausalJetIdentification

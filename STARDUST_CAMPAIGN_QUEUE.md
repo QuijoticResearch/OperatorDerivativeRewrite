@@ -1,5 +1,18 @@
 # Project Stardust: persistent campaign queue
 
+## Current1289: FINAL multichannel — actual causal derivative identification
+
+Current1289: FINAL multichannel ACTIVE. The physical heat-shifted native jet
+is EXACTLY (1/q!)*Pi_left(D_j^q P), using retained-coordinate commutation
+and actual signed slice expectation. Actual causal/native field difference
+vanishes in genuine L1 for EVERY fixed multitime input. Current-derivative
+commutation through LEFT past fails: verified explicit counterexample.
+Surviving-field L1 convergence/full multitime p-1/completed OBSERVABLE
+reconstruction remain OPEN. NEXT refinement degree control, partial signed
+telescope and paired-dual causal continuity; no false source-time continuity.
+Preserve all verification/private gates, October31 hard stop, no later campaign.
+
+
 ## Current1288: FINAL multichannel — actual L1 jet heat-correction limit
 
 Current1288: FINAL multichannel ACTIVE. Actual one-cell shifted-jet error

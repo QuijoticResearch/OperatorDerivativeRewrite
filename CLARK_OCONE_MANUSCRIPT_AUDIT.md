@@ -1,5 +1,15 @@
 # Clark–Ocone manuscript audit and mathematical repair ledger
 
+Current1289: FINAL multichannel ACTIVE. The physical heat-shifted native jet
+is EXACTLY (1/q!)*Pi_left(D_j^q P), using retained-coordinate commutation
+and actual signed slice expectation. Actual causal/native field difference
+vanishes in genuine L1 for EVERY fixed multitime input. Current-derivative
+commutation through LEFT past fails: verified explicit counterexample.
+Surviving-field L1 convergence/full multitime p-1/completed OBSERVABLE
+reconstruction remain OPEN. NEXT refinement degree control, partial signed
+telescope and paired-dual causal continuity; no false source-time continuity.
+Preserve all verification/private gates, October31 hard stop, no later campaign.
+
 Current1288: FINAL multichannel ACTIVE. Actual one-cell shifted-jet error
 now vanishes in genuine L1 along refinements of EVERY fixed multitime input,
 with all bounds and physical signed-parameter limits discharged. This is
@@ -2167,3 +2177,84 @@ Existing goal ACTIVE, prior campaigns FROZEN, October31 HARD STOP. Private
 backup pending exact receipt and actual private sync; ignored closure JSON
 will retain post-push verification. NEXT actual causal derivative identity
 and surviving-field convergence; no new campaign or unrelated infrastructure.
+
+
+## Checkpoint1289: exact causal derivative identification and actual L1 approximation
+
+RetainedCoordinateDifferentiation proves for the ACTUAL finite signed polynomial
+conditioning operator, every retained j in S, all derivative orders q and all
+polynomials P,
+  D_j^q(Pi_S P) = Pi_S(D_j^q P).
+It first identifies the verified directional derivative along the j axis with
+Mathlib's genuine pderiv, then proves monomial exponent/conditioning-factor
+identities and extends linearly and by iteration. No positive conditional
+probability law is assumed. The retained-coordinate hypothesis is essential.
+
+HigherHeatCausalJetIdentification.derivative_next uses this theorem because
+nextConditioned retains the current coordinate. heat_then_clamp_next directly
+reuses the ACTUAL signed slice expectation theorem1286 and the verified heat
+transport: heating nextConditioned P in the current cell and clamping strict
+past equals Pi_left P exactly. No new support, process, or semigroup is assumed.
+physical_shifted_jet_eq consequently proves for EVERY native multitime input,
+all cells and q, m>0 and any nonnegative physical horizon,
+  shiftedJet(physical cell parameter,P) = (q!)^-1 Pi_left(D_j^q P).
+causalJet names this literal projected derivative; its mean/projection is the
+existing signed conditioning operator, not an analogy or a positive L2 object.
+
+causal_field_approximation now proves in the existing genuine L1 signed-dual
+field space that, along refinements of ANY fixed multitime cylinder, the
+DIFFERENCE between these actual causal projected-derivative fields and the
+actual native predictable Taylor-jet fields tends to zero. It reuses1288's
+proved heat-error limit and discharges the causal identification left open
+there. All physical parameter limits and uniform error bounds are discharged.
+The finite prefix zero padding is inherited unchanged from refinedInput;
+representations are exact on the entire cofinal tail n>=original grid.
+
+This identifies the true causal coefficients and their vanishing discrepancy;
+it does NOT yet prove L1 convergence/Cauchy of either individual field.
+Surviving-field convergence, bounded cofinal full-source field operators,
+refinement degree control and full completed OBSERVABLE reconstruction remain
+OPEN. Full multitime p-1 Clark-Ocone is not claimed. Previous verified terminal
+polynomial p-1, exact finite multitime telescope and discarded q>=p limits stay
+intact. Source causal projection is still not assumed strongly continuous.
+
+Four independent Lean examples pass. One is an explicit GENERIC counterexample:
+on Fin1, for ANY order p and real parameter a,
+  pderiv(Pi_empty(X))=0,  Pi_empty(pderiv(X))=1.
+Thus moving the current derivative through LEFT-past conditioning is false;
+it is moved only through RIGHT-past nextConditioned in the proof above.
+The other examples check the biharmonic third-channel physical sign, actual
+causal/native L1 approximation for arbitrary multitime input, and sixth-order
+fifth-derivative/right-conditioning commutation. Independent EXACT rational
+multivariate polynomial conditioning/differentiation/heat expansion checks
+14112 actual retained-derivative and causal-jet identities across p2/4/6/8,
+1/2/4 coordinates, three physical horizons and mixed polynomial inputs. There
+are1242 NONZERO finite-cell corrections and84 discarded-coordinate commutation
+counterexamples. These tests supplement, not replace, the universal Lean proofs.
+Full standalone test source/output is preserved in STARDUST_CAUSAL_JET_VERIFICATION.json.
+
+NEXT candidate route, NOT PROVED: preserve total degree under linear block
+refinement; apply the exact multitime conditional telescope to a subinterval
+of cells, keeping a fixed input-degree q bound. Existing positive_increment_bound
+and critical/higher moment estimates may bound its paired-dual norm by
+(number of cells)*mesh times a fixed-polynomial constant. This would give
+paired-dual causal continuity for a fixed dense polynomial, with degree-dependent
+constants allowed. Uniform completed projection bounds may then permit density.
+No infinite channel summability or false source-norm time continuity is needed
+for this candidate approach. Each partial-telescope/cofinal/density hypothesis
+still requires proof. Reuse the existing derivative pullback chain rule when
+relating a refined current derivative to the appropriate original coarse cell.
+
+Full root 6210 jobs TERMINAL0 25.533132s;
+complete transitive audit 38654 safe Foundation declarations standard3 only
+TERMINAL0 66.379470s. ALL9 final public types
+actually read UNABRIDGED pp.proofs true; ALL131 final source/helper lines
+reviewed. Four-example Lean run TERMINAL0 44.737462s.
+Hashes pinned BEFORE fresh full build; all2039 prior source bytes unchanged
+except root2 imports, configuration unchanged. All107 exact recursive source
+paths/hashes intact, Incoming43/42distinct/A4eleven and original Clark SHA
+preserved. Permanent build configuration unchanged; these are verification
+timings, not a new optimization claim. Previous/current goal turns PROGRESS,
+goal ACTIVE. All prior campaigns FROZEN, October31 HARD STOP; no new campaign.
+Private backup pending exact receipt and actual sync; ignored closure JSON
+will retain actual post-push PRIVATE verification.
