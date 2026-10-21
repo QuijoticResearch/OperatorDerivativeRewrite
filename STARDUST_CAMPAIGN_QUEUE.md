@@ -1,5 +1,21 @@
 # Project Stardust: persistent campaign queue
 
+## Current1248: independent A2 actual Gaussian realization and source audit ACTIVE
+
+The actual quadratic Xi flow now has verified Gaussian translation and all-jet
+identities on its genuine Bochner domain: Y~N(0,2s), c^2=delta real gives
+E H_t(z+cY)=H_(t-s*delta)(z), with actual product integrability established first.
+This does not imply zero preservation, RH, or applicability to every entire function.
+The external nonzero-time convention was compared to Polymath equations1--4;
+the whole-plane zero-time normalization was already verified. Upstream quasi-RH
+independent verification remains OPEN: raw replay omitted required published
+dependency patches and did not reach its target. Faithful patched replay/audit,
+selective technique reuse and concrete A2 consequences remain current objectives.
+Integer/real-order campaigns stay FROZEN at stopping492d503; final multichannel
+stays AFTER A2. Existing goal ACTIVE; October31 hard stop. All build, complete
+axiom, actual type/proof review, source-integrity and private backup gates remain.
+This current entry supersedes historical stage labels below.
+
 ## Current1246: independent A2 reuse and source audit ACTIVE
 
 Stopping492d5034b5b100ebfd83a601c1d606a6128964d8 is EXACTLY PRIVATE verified on

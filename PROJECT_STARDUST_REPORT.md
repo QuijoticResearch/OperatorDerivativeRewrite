@@ -24958,3 +24958,44 @@ rule. Manuscript hashes/paths are preserved. Only the reviewed reports and
 source metadata are eligible for this finite commit/receipt/private backup;
 uncompiled Gaussian, factorial-domain and Siegel drafts remain excluded.
 CurrentA2 and the full goal remain ACTIVE, finalmultichannel queued, Oct31 stop.
+
+
+## Checkpoint1248: genuine Gaussian translation of the actual quadratic Xi flow
+
+Within the active independent A2 campaign, RiemannQuadraticGaussian reuses the
+verified arithmetic kernel, weighted integrability and Mathlib Gaussian MGF.
+For Y with the actual probability law N(0,2s), s>=0 (including Dirac at s=0),
+Lean proves product Bochner integrability BEFORE Fubini and, for every real t,
+complex z,c and every Fourier jet j, actual Gaussian translation integrability.
+If c^2=delta is REAL, E[jet_j H_t(z+cY)]=jet_j H_(t-s*delta)(z).
+The same identity holds for the actual whole flow. Thus imaginary translation
+advances time to t+s; real translation goes to t-s. The exact inner norm is
+the existing weight at time t+s*(Im c)^2 and tilt -Im z. There is no restricted
+bandlimit, assumed factorial-coefficient membership, or unproved Fubini step.
+
+Scope: this is an actual integral realization on this arithmetic flow family,
+not a zero-preservation/RH/threshold theorem, nor an all-entire-function domain.
+The existing critical exponential counterexample gives an entire f(z)=exp(-z^2/2)
+whose f(iY) is not integrable under standard Gaussian measure. Also (1+i)^2
+is nonreal, so its integrability does not license a real-time-family identity.
+No new foundational function space or campaign is introduced.
+
+Fresh full6097job root build TERMINAL0 (41.2271903s);
+complete37175declaration root/Foundation transitive axiom audit TERMINAL0
+(35.7202334s), only propext, Classical.choice, Quot.sound.
+All17 public types ACTUALLY READ UNABRIDGED; all203 final source lines, 14theorems,
+2definitions and probability instance reviewed. TEN independent tests TERMINAL0
+(25.8077150s): Dirac0, opposite time directions, odd
+seventh jet/nonreal point, scaled imaginary shift, nonreal-square integrability,
+canceled-pole coordinate, critical nonintegrability/entire counterexample, and
+real-square restriction. First test run needed only arithmetic normalization of
+(1/2)*4=2; final production bytes unchanged. No errors or audits suppressed.
+All1948 source hashes pinned; prior1947 unchanged except root import. Archive107,
+Incoming43/42distinct,A4eleven/exactrecursivepaths unchanged; pinned configuration
+and Mathlib unchanged. Exact private backup pending at this precommit entry.
+
+Upstream quasi-RH status remains unchanged: the raw isolated replay failed before
+the target because our setup omitted published compatibility patches. The proper
+patched/configured replay and exact-target axiom audit remain OPEN; this checkpoint
+does not certify or refute that external result. Continue current A2 reuse/source
+audit; final multichannel follows its stopping checkpoint. October31 hard stop.
