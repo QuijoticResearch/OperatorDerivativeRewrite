@@ -1847,3 +1847,4 @@ import Foundation.RiemannRealOrderZeroLimits
 import Foundation.FractionalEndpointLaplace
 import Foundation.RiemannRealOrderFractionalDensity
 import Foundation.RiemannRealOrderFractionalRemainder
+import Foundation.RiemannRealOrderFractionalFourier
