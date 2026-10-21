@@ -1485,3 +1485,94 @@ control and actual Xi strip contraction remain OPEN. No threshold/RH/novelty cla
 Independent A2 ACTIVE; prior integer/real FROZEN; final multichannel AFTER A2
 stopping; October31 hard stop. Explicit commit/exact receipt/private sync close
 the checkpoint; terminal closure retained in the local verification record.
+
+
+## Checkpoint1264: actual polynomial Gaussian L1 and heat convergence
+
+Foundation/EvenEntireGaussianBudget.lean completes the missing finite-INNER
+product step. For a fixed finite set S and multiplicities, every subproduct
+T subset S has norm<=C_epsilon*exp(epsilon*norm(z)^2), with C_epsilon chosen
+BEFORE T and z. The proof uses delta=epsilon/(1+sum multiplicities), factor
+constants1+norm(c_a)/delta>=1, exponential domination and the nonnegative real
+finite-product inequalities. Actual nested numerator factorization uses the
+verified equality of divisor multiplicities on common roots.
+
+Combining that with actual annular tails1263 gives the COMPLETE normalized
+divisor-polynomial family, for every epsilon>0, one positive C_epsilon that
+bounds ALL indices R>=1 and ALL complex z. The proof handles early indices and
+later SMALLER radii using a common finite support at radius2i+1. It does NOT
+assume the chosen radii are monotone. Exact real-coefficient recovery1262 gives
+one sequence of genuine EVEN real polynomials with exact actual disk zeros,
+actual origin normalization, compact-uniform limit f, and the full uniform
+arbitrarily small quadratic-growth budget. Generic hypotheses remain entire,
+even, nonzero origin, explicit subquadratic growth, fixed zero strip and, for
+real coefficients, conjugation symmetry. No all-real-root premise is introduced.
+
+Genuine integration: direct reuse of Mathlib
+ProbabilityTheory.IsGaussian.exists_integrable_exp_sq (Fernique),
+Mathlib/Probability/Distributions/Gaussian/Fernique.lean line163, pinned Mathlib
+d13f23b723b8a846827a245b89c10fc7d3f11612. For ANY actual real Gaussian measure mu,
+every fixed complex affine shift z+cY admits a COMMON INTEGRABLE majorant for
+all approximants. The proof chooses epsilon from Fernique's positive coefficient
+and norm(c), and uses norm(z+cY)^2<=2norm(z)^2+2norm(c)^2 norm(Y)^2. Each shifted
+approximant AND its continuous compact-uniform limit are proved genuinely L1
+BEFORE dominated convergence. Lean then proves both convergence of the actual
+complex integrals and integral norm(F_n(z+cY)-f(z+cY))->0. Degenerate Gaussian
+laws are included by the existing IsGaussian machinery; no density division or
+positive-variance-only assumption is used.
+
+Foundation/RiemannQuadraticPolynomialHeat.lean discharges EVERY premise for the
+ACTUAL time-zero quadratic Xi flow, using the proved classical width-one strip.
+The SAME real polynomial sequence preserves actual origin and exact initial disk
+zeros, has every initial zero in abs(Im z)<=1, converges locally uniformly on
+WHOLE C to H_0, and satisfies the uniform budget. For EVERY s>=0 and fixed z,c,
+its actual shifted evaluations converge to H_0(z+cY) in L1 of law N(0,2s).
+If c^2=delta is REAL, their actual Gaussian averages converge to
+ H_(-s*delta)(z).
+This uses the EXISTING independently verified actual Gaussian flow identity;
+the integral/limit interchange is now rigorously justified for this sequence.
+In particular c=i gives H_s, c=1 gives H_(-s), and c=2i gives H_(4s).
+This is actual Gaussian integration, not a formal expectation functional or a
+negative-variance probability construction.
+
+The topology is PRECISE: local-uniform initial polynomial convergence; shifted
+Gaussian L1 for each fixed s,z,c; POINTWISE spatial convergence of the resulting
+heat averages. No spatially uniform heat convergence, global polynomial zero
+contraction, new Newman threshold or RH result is asserted. Those remain proof
+obligations before any Hurwitz/zero-transfer use. The Gaussian discontinuity1261
+is preserved: an independent Lean control proves that its normalized monomial
+FAMILY CANNOT satisfy the new uniform small-quadratic-growth hypothesis, since
+it would contradict its proved lack of an integrable common majorant. A fixed
+member DOES satisfy the budget, distinguishing individual polynomial domains
+from a uniform sequence domain. No novelty claim is made.
+
+Verification: successful target4646 jobs TERMINAL0,21.6600571s; fresh FULL6132
+jobs TERMINAL0,25.1765504s. COMPLETE37582-declaration transitive root/Foundation
+axiom audit TERMINAL0,35.0567498s, only propext/Classical.choice/Quot.sound.
+ALL13 public types ACTUALLY READ UNABRIDGED, proof arguments visible and no
+ellipses. COMPLETE400 final source/proof lines read:13 theorems, no new
+definition/private helper/global instance. EIGHT independent Lean controls
+TERMINAL0,29.1816547s: exclusion of the full counterexample family; admissibility
+of its fixed first member; empty finite subproduct; imaginary shift clock+s;
+real shift clock-s; zero-variance actual L1/integrability; arbitrary subproducts
+with repeated factors; and doubled-imaginary shift clock4s. All production
+inputs unchanged after the full build.
+
+Draft repairs used explicit complex norm identities; correct nonnegative-real
+product inequalities; spaces to avoid Lean's InitialSeg/PrincipalSeg notation;
+the conjugation and NNReal scopes; and explicit constants/composition for the
+L1 limit. The first actual target failed for a missing NNReal scope and was
+fixed before the successful target/full/audit. No resource setting, semantics,
+axiom allowance, error check or verification gate was weakened.
+All1969 source hashes pinned; prior1967 unchanged except root import. Exact107
+recursive archive paths/hashes,43 Incoming/42 distinct and11 A4 preserved.
+No manuscripts edited; no Lean/Mathlib/build/cache configuration change.
+
+NEXT: spatially local-uniform heat convergence and the exact finite polynomial
+heat/operator identification, reusing existing machinery. Then global finite-
+polynomial zero-strip contraction across collisions/switches and transfer to
+actual Xi, with every hypothesis checked. Neither pointwise heat convergence
+nor branchwise1258 alone supplies those theorems. Independent A2 ACTIVE; prior
+integer/real FROZEN; final multichannel AFTER A2 stopping; October31 hard stop.
+Explicit commit, exact audit receipt and private synchronization close this
+checkpoint; terminal closure remains in the local verification record.

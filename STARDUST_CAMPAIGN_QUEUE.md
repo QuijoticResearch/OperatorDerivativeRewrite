@@ -1,6 +1,22 @@
 # Project Stardust: persistent campaign queue
 
 
+## Current1264: actual polynomial Gaussian L1 and heat convergence
+
+Complete actual Xi time-zero divisor polynomials now have uniform arbitrarily
+small quadratic-growth budgets, preserving exact initial disk zeros, real even
+coefficients, origin and whole-C compact-uniform convergence. Fernique majorants
+prove genuine shifted Gaussian L1 convergence for EVERY fixed s>=0,z,c. If c²
+is real delta, actual Gaussian averages converge POINTWISE to H_(-s*delta)(z).
+The old counterexample family is proved to fail the new uniform-domain hypothesis.
+NEXT: spatially local-uniform heat convergence, exact finite polynomial/operator
+identification, then global collision/switch strip contraction and actual Xi
+zero transfer. No Hurwitz use from pointwise limits; no new threshold/RH claim.
+A2 ACTIVE; integer/real FROZEN; final multichannel AFTER A2 audited stopping.
+October31 hard stop and all build/audit/type/source/private gates retained.
+This entry supersedes historical immediate-proof labels below.
+
+
 ## Current1263: actual inverse-square moments and Gaussian annular tails
 
 Actual divisor inverse-square sums tend to -H_t''(0)/(2H_t(0)) for EVERY real t,
