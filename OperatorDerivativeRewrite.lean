@@ -1855,3 +1855,4 @@ import Foundation.RiemannRealOrderUniformCutoff
 import Foundation.RiemannRealOrderUniformEndpoint
 import Foundation.RiemannRealOrderUniformAsymptotic
 import Foundation.RiemannRealOrderTransitionRate
+import Foundation.RiemannRealOrderQuarticLimitZeros
