@@ -28778,3 +28778,49 @@ staged. Unrelated drafts, existing proof state, caches, sync task and goal are
 preserved. Evidence: `.lake/stardust-1291-working-manifest.json`, full-build and
 audit logs with their terminal timing records. This is an instruction-only
 checkpoint and certifies no unfinished mathematics.
+
+
+## Checkpoint 1292 — new Airy manuscript audit and exact signed resonance covariance
+
+Selectively reviewed the user-supplied read-only
+`ResearchSources/Incoming/renormalized_airy_ibp.tex`, SHA256
+`6012E74DF2B4178DEE3091815A7062F7AC5B7E1B25A60438A32F40FFFB7E12FB`.
+The detailed claim/domain/reuse audit is `RENORMALIZED_AIRY_IBP_AUDIT.md`.
+The oscillatory-side subtraction has a valid conditional integration-by-parts
+argument. Correct the odd-order forward/backward PDE sign; impose dissipativity
+for even kernels. Do not import the unsupported single-channel Itô input or
+graded chronological reconstruction. The restricted graded claim is unverified,
+not disproved by a linear counterexample outside its sector. Entrywise Airy
+equations and trace-class C1 differentiability do not imply determinant Ward
+or uniform hard-threshold identities. The normal-CDF Taylor derivatives give
+a concrete obstruction to directly embedding all regulated tests in the
+existing factorial-l1 completion.
+
+New `HigherHeatResonanceCovariance` proves exact finite-time integrated resonance
+covariance and identifies it with the ACTUAL signed even-order kernel integral
+of Fourier innovation products. It exhibits the quartic 4,6,4 response using
+the existing bracket, kernel and ordinary fundamental theorem of calculus;
+no stochastic Itô or reconstruction assumption is used. This is useful
+covariance/operator reuse, not completion of signed stochastic Clark–Ocone.
+
+Fresh final full build: 6,218 jobs, exit0, 46.391s. Complete
+transitive audit: 38,712 safe Foundation declarations, standard three axioms
+only, exit0, 36.433s. All five new public types were read
+unabridged together with the complete final definition/proof source. All prior
+Foundation sources are byte-identical; only the root import is added; all
+toolchain configurations unchanged. Independent exact tests: 2,704 polynomial
+covariance cases including odd-order FORMAL moments. Independent spectral
+quadrature: 60 cases, maximum absolute error 4e-15.
+These diagnostics supplement the Lean proof. Failed preliminary build/audit
+results are retained and explicitly excluded from final certification.
+
+All 113 manuscript paths/hashes are unchanged; exact dated inventory is
+`STARDUST_RESEARCH_SOURCE_INVENTORY_1292.json`. No manuscript is staged.
+Reproducible tests, verification scope and limitations are in
+`STARDUST_AIRY_IBP_VERIFICATION.json`. Exact-commit audit receipt and verified
+private main/research synchronization remain required after commit.
+
+Current multichannel campaign remains ACTIVE. Full multitime p-1 reconstruction,
+cofinal consistency/linearity and completed OBSERVABLE extension remain OPEN.
+Resume these obligations; intrinsic IBM follows only their justified verified
+stopping checkpoint. October31 remains a review milestone only; no hard stop.

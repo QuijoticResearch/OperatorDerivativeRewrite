@@ -1,0 +1,107 @@
+{
+  "checkpoint": 1292,
+  "scope": "Selective read-only renormalized Airy audit; actual even-order Fourier resonance covariance; multichannel remains active",
+  "time_utc": "2026-10-21T23:28:24.425273+00:00",
+  "full_build": {
+    "stage": "full-build",
+    "command": [
+      "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+      "build"
+    ],
+    "wall_seconds": 46.39091080002254,
+    "exit_code": 0,
+    "time_utc": "2026-10-21T23:26:18.907589+00:00"
+  },
+  "complete_axiom_audit": {
+    "stage": "audit",
+    "command": [
+      "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+      "env",
+      "lean",
+      ".lake/stardust-1292-audit.lean"
+    ],
+    "wall_seconds": 36.43262159998994,
+    "exit_code": 0,
+    "time_utc": "2026-10-21T23:27:24.338148+00:00"
+  },
+  "declaration_count": 38712,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "source_count": 2049,
+  "final_new_public_types": 5,
+  "new_public_names": {
+    "HigherHeatResonanceCovariance": [
+      "density",
+      "density_continuous",
+      "covariance_integral",
+      "actual_kernel_covariance",
+      "fourth_order_density"
+    ]
+  },
+  "new_lean_sha256": "EB8AABBA78F47308FE53CDC0D2432B390C73A1E3BCD09F147D4D30BB32DF0085",
+  "final_types_and_complete_new_source_reviewed": true,
+  "prior_sources_unchanged_except_root_import": true,
+  "configuration_unchanged": true,
+  "archive_count": 113,
+  "all_manuscript_hashes_unchanged": true,
+  "source_inventory": "STARDUST_RESEARCH_SOURCE_INVENTORY_1292.json",
+  "independent_moment_tests": {
+    "exact_monomial_covariance_cases": 2704,
+    "orders": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "degrees": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "p3_degree3_covariance_coefficient": 324,
+    "p3_degree6_covariance_coefficient": 19828800,
+    "scope": "Independent finite moment checks, including formal odd-order moments; not odd signed-measure realization, Reg extension, or stochastic reconstruction proof."
+  },
+  "independent_moment_test_code": "\"\"\"Independent exact arithmetic tests; diagnostics, not substitutes for Lean.\"\"\"\nfrom fractions import Fraction as Q\nfrom math import factorial as f, comb\nimport json\nfrom pathlib import Path\n\ndef moment(p,c,T,n):\n    return Q(0) if n%p else Q(f(n),f(n//p))*(c*T)**(n//p)\n\ndef covariance_integral(p,c,T,r,s):\n    result=Q(0)\n    for k in range(1,p):\n        if k>r or p-k>s: continue\n        for a in range((r-k)//p+1):\n            for b in range((s-(p-k))//p+1):\n                n=r+s-p-p*(a+b)\n                if n%p: continue\n                q=n//p\n                left=Q(f(r), f(r-k-p*a)*f(a))\n                right=Q(f(s), f(s-(p-k)-p*b)*f(b))\n                integral=Q(f(a+b)*f(q),f(a+b+q+1))*T**(a+b+q+1)\n                result+=comb(p,k)*left*right*Q(f(n),f(q))*c**(1+a+b+q)*integral\n    return result\n\ncount=0\nfor p in range(2,10):\n    for c,T in [(Q(1,3),Q(2,5)),(Q(-1),Q(3,2))]:\n        for r in range(13):\n            for s in range(13):\n                lhs=moment(p,c,T,r+s)-moment(p,c,T,r)*moment(p,c,T,s)\n                rhs=covariance_integral(p,c,T,r,s)\n                assert lhs==rhs,(p,c,T,r,s,lhs,rhs)\n                count+=1\nassert covariance_integral(3,Q(1),Q(1),6,6)==19828800\nassert covariance_integral(3,Q(1),Q(1),3,3)==324\nv={'exact_monomial_covariance_cases':count,'orders':list(range(2,10)),\n   'degrees':list(range(13)),'p3_degree3_covariance_coefficient':324,\n   'p3_degree6_covariance_coefficient':19828800,\n   'scope':'Independent finite moment checks, including formal odd-order moments; not odd signed-measure realization, Reg extension, or stochastic reconstruction proof.'}\nPath('.lake/stardust-1292-moment-tests.json').write_text(json.dumps(v,indent=2)+'\\n')\nprint(json.dumps(v))\n",
+  "independent_spectral_tests": {
+    "actual_even_orders": [
+      2,
+      4,
+      6,
+      8,
+      10
+    ],
+    "quadrature_cases": 60,
+    "simpson_cells": 4096,
+    "max_absolute_error": 3.9968028886505635e-15,
+    "tolerance": 1e-09,
+    "scope": "Numerical convention and finite-time response diagnostics; Lean supplies the exact proof."
+  },
+  "independent_spectral_test_code": "from math import exp,pi\nfrom pathlib import Path\nimport json\nerrors=[]\nfor m in range(1,6):\n for T in [0.2,1.5]:\n  for u,v in [(0.2,0.7),(0.5,0.5),(0.5,-0.5),(-0.4,-0.7),(0.0,0.7),(0.3,-0.2)]:\n   xi,eta=u/(2*pi),v/(2*pi)\n   a=(2*pi*(xi+eta))**(2*m)\n   b=(2*pi*xi)**(2*m)+(2*pi*eta)**(2*m)\n   n=4096;h=T/n\n   # Direct quadrature of the response, independently of its endpoint primitive.\n   def response(t):return (b-a)*exp(-t*a-(T-t)*b)\n   integral=h/3*(response(0)+response(T)+sum((4 if k%2 else 2)*response(k*h) for k in range(1,n)))\n   covariance=exp(-T*a)-exp(-T*(2*pi*xi)**(2*m))*exp(-T*(2*pi*eta)**(2*m))\n   error=abs(integral-covariance);assert error<1e-9,(m,T,u,v,error)\n   errors.append(error)\nv=dict(actual_even_orders=list(range(2,11,2)),quadrature_cases=len(errors),simpson_cells=4096,max_absolute_error=max(errors),tolerance=1e-9,scope='Numerical convention and finite-time response diagnostics; Lean supplies the exact proof.')\nPath('.lake/stardust-1292-spectral-tests.json').write_text(json.dumps(v,indent=2)+'\\n')\nprint(json.dumps(v))\n",
+  "initial_failed_checks": "Proof cleanup introduced a redundant ring tactic; caught by full build. The prematurely launched audit imported the old root and rejected all five unknown new names. Neither result accepted. Tactic restored; fresh final full root build and complete audit passed on the final source hashes.",
+  "private_backup_status": "PENDING: exact-commit receipt and actual private main/research synchronization must follow commit; not certified by this precommit file.",
+  "limitations": [
+    "No actual odd-order signed-kernel/process construction",
+    "No regulated-domain completion bridge",
+    "No stochastic Itô or Clark–Ocone completion",
+    "Restricted graded representation remains unverified, not refuted by the outside-sector linear witness",
+    "No Fredholm/KPZ result or premature IBM transition"
+  ]
+}

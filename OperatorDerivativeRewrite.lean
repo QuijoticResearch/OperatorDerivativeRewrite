@@ -1946,3 +1946,4 @@ import Foundation.HigherHeatCausalRefinementBound
 import Foundation.HigherHeatCausalFieldCauchy
 import Foundation.HigherHeatMultitimeFieldLimits
 import Foundation.HigherHeatMultitimePredictableFields
+import Foundation.HigherHeatResonanceCovariance

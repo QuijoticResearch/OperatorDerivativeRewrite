@@ -1,3 +1,12 @@
+> Checkpoint 1292: the user-supplied renormalized Airy manuscript has a
+> selective claim/domain audit in `RENORMALIZED_AIRY_IBP_AUDIT.md`. New verified
+> `HigherHeatResonanceCovariance` identifies the finite-time resonance integral
+> with actual signed Fourier covariance, including all quartic 4,6,4 terms.
+> This does not complete multitime Clark–Ocone or extend the observable domain
+> to all regulated thresholds. Current priorities and the authoritative
+> no-expiration directive below remain unchanged. Evidence is in
+> `STARDUST_AIRY_IBP_VERIFICATION.json` and the checkpoint1292 ledger.
+
 # Authoritative research directive — October 21, 2026
 
 This user-directed amendment supersedes every earlier scheduling or termination
