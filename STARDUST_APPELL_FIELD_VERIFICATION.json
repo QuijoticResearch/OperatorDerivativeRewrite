@@ -1,0 +1,107 @@
+{
+  "checkpoint": 1284,
+  "time_utc": "2026-10-21T21:15:45.316799+00:00",
+  "campaign": "FINAL multichannel pseudoprocess",
+  "previous_private_checkpoint": "3712947b3468610df5d48f867a79bf69e1390546",
+  "source_count": 2028,
+  "prior_source_count": 2022,
+  "prior_sources_unchanged_except_root": true,
+  "root_only_six_imports": true,
+  "configuration_unchanged": true,
+  "full_build_jobs": 6197,
+  "audit_declarations": 38519,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "terminal_results": {
+    "full-build": {
+      "stage": "full-build",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "build"
+      ],
+      "wall_seconds": 24.52202489998308,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T21:13:26.453900+00:00"
+    },
+    "audit": {
+      "stage": "audit",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1284-audit.lean"
+      ],
+      "wall_seconds": 37.278611500019906,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T21:15:21.723355+00:00"
+    },
+    "independent": {
+      "stage": "independent",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1284-independent.lean"
+      ],
+      "wall_seconds": 26.447830999997677,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T21:12:41.360869+00:00"
+    }
+  },
+  "public_types_actually_read_unabridged": 40,
+  "proof_arguments_visible": true,
+  "complete_final_source_lines_reviewed": 403,
+  "new_public_theorems": 27,
+  "new_definitions": 13,
+  "physical_order": "Every p=2m, integer m>0",
+  "positive_physical_horizon_required": true,
+  "normalized_time": "[0,1]",
+  "parameter_polynomial": "Actual Appell parameter dependence encoded in existing iterated polynomial ring; specialization and finite coefficient expansion proved",
+  "weighted_native_sampling": "For every continuous scalar weight on [0,1], weight at RIGHT endpoint times actual LEFT-past power",
+  "weighted_fields": "Actual strongly measurable L1 fields; native L1 convergence and membership in existing closed adapted space proved by compact uniform continuity on the product of two time intervals",
+  "actual_Appell_coefficients": "aeval(past) Appell(p,sign*T*(right time-1),N)",
+  "actual_Appell_fields": "Finite sums of continuous polynomial parameter weights times existing dual power curves; exact native field agreement, uniform bounds and actual L1 convergence proved",
+  "canonical_derivative": "D^q/q! of actual right-time backward Appell polynomial evaluated at actual left-past path; equals descFactorial(N,q)/q! times Appell(N-q)",
+  "canonical_integrand_membership": "Constructed canonical fields belong to existing closed adapted L1 space",
+  "canonical_native_signed_limits": "For EVERY N,r, actual centered (r+1)-power sums with canonical derivative coefficients tend in entire completed test dual norm to I_(r+1)(canonicalField) when r+1<p, otherwise zero; ALL bounds/L1 premises discharged",
+  "centered_step": "Exact universal scalar Appell/Taylor identity for every p>1,a,b,N,x,z, all positive powers1..N retained",
+  "endpoints": "Appell(p,0,N)=X^N; Appell(p,-a,N)(0)=actual pure-order moment(p,a,N)",
+  "native_grid_telescope_new_Lean_theorem": false,
+  "canonical_terminal_Clark_Ocone_proved": false,
+  "general_multitime_polynomial_reconstruction_proved": false,
+  "arbitrary_completed_observable_reconstruction_proved": false,
+  "degree_uniform_completed_extension_proved": false,
+  "universal_completed_Clark_Ocone_proved": false,
+  "positive_variation_or_finite_signed_path_measure_claimed": false,
+  "Lean_test_code": "import Foundation.HigherHeatAppellInnovationLimits\nimport Foundation.PureOrderAppellCenteredStep\n\nopen OperatorDerivativeRewrite.Foundation\nopen HigherHeatPolynomialCylinders HigherHeatAnalyticCylinderDomain HigherHeatCompletedPairing\nopen HigherHeatPairedDualCausality HigherHeatAppellPredictableFields HigherHeatAppellInnovationLimits\nopen HigherHeatCenteredPowerLimits HigherHeatAllChannelNormalization HigherHeatWeakTimeAdjoint\nopen PureOrderAppellCalculus PureOrderAppellParameter PureOrderAppellCenteredStep\nopen scoped NNReal Topology BigOperators\n\nexample (p n : \u2115) : appell p 0 n = (Polynomial.X:Polynomial \u211d)^n := zero_parameter p n\n\nexample (a : \u211d) : (appell 4 (-a) 4).eval 0 = 24*a := by\n  rw [initial_mean 4 (by decide) a 4]\n  have h := PseudoPolynomialStein.moment_multiple 4 (by decide) a 1\n  norm_num at h\n  exact h\n\nexample (n m : \u2115) (T : \u211d\u22650) (j : Fin (size n)) : canonicalPast n m T 3 4 j = 0 := by\n  simp [canonicalPast, Nat.descFactorial_of_lt (by decide : 3<4)]\n\nexample (n m : \u2115) (T : \u211d\u22650) (j : Fin (size n)) : canonicalPast n m T 3 3 j = 1 := by\n  norm_num [canonicalPast, appellPast, appell]\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    Filter.Tendsto (fun n => pairing 2 (by decide) T hT\n      (core (cylinderOf n (centeredPower n 2 T 3 (canonicalPast n 2 T 8 3)))))\n      Filter.atTop (\ud835\udcdd (channel 2 T 2 (canonicalField 2 (by decide) T hT 8 3))) := by\n  simpa using canonical_native_limit 2 (by decide) T hT 8 2\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    Filter.Tendsto (fun n => pairing 3 (by decide) T hT\n      (core (cylinderOf n (centeredPower n 3 T 6 (canonicalPast n 3 T 12 6)))))\n      Filter.atTop (\ud835\udcdd (0:Dual)) := by\n  simpa using canonical_native_limit 3 (by decide) T hT 12 5\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    Filter.Tendsto (fun n => pairing 4 (by decide) T hT\n      (core (cylinderOf n (centeredPower n 4 T 10 (canonicalPast n 4 T 12 10)))))\n      Filter.atTop (\ud835\udcdd (0:Dual)) := by\n  simpa using canonical_native_limit 4 (by decide) T hT 12 9\n",
+  "Lean_test_code_sha256": "A02695914414A85A4456E8ABB11C4593040E6F92CDE8F30FA847C02E0AA02AA0",
+  "Lean_test_log_sha256": "C982ED1FE60EF5C7C88135A7815A4E41F61E34873E2BB5E4C6E0D1DA06D388B2",
+  "independent_Lean_tests": 7,
+  "exact_test_code": "from fractions import Fraction as Q\nfrom math import factorial, comb\ndef fall(n,k):return 0 if k>n else factorial(n)//factorial(n-k)\ndef moment(p,a,n):return Q(0) if n%p else Q(factorial(n),factorial(n//p))*a**(n//p)\ndef appell(p,b,n):\n    A={0:Q(1)}\n    for _ in range(n):\n        B={r+1:c for r,c in A.items()}\n        for r,c in A.items():\n            if r>=p-1:B[r-p+1]=B.get(r-p+1,Q(0))-p*b*fall(r,p-1)*c\n        A={r:c for r,c in B.items() if c}\n    return A\ndef ev(A,x):return sum(c*x**r for r,c in A.items())\ndef deriv(A,q):return {r-q:c*fall(r,q) for r,c in A.items() if r>=q}\nsteps=0;telescopes=0;parameters=0\nfor m in range(1,5):\n    p=2*m\n    for T in [Q(1),Q(1,2),Q(5,7)]:\n        a=(-1)**(m+1)*T\n        for degree in range(13):\n            assert ev(appell(p,-a,degree),Q(0))==moment(p,a,degree)\n            for N in [1,2,4,8]:\n                h=Q(1,N);x=Q(0);total=Q(0)\n                for j in range(N):\n                    z=Q((-1)**j*(j+1),N+1);s=j*h;b=a*(s-1);right=appell(p,b+a*h,degree)\n                    actual=ev(right,x+z)-ev(appell(p,b,degree),x)\n                    expected=sum(ev(deriv(right,q),x)/factorial(q)*(z**q-moment(p,a*h,q))\n                                 for q in range(1,degree+1))\n                    assert actual==expected\n                    for q in range(degree+2):\n                        assert ev(deriv(right,q),x)==fall(degree,q)*ev(appell(p,b+a*h,max(degree-q,0)),x)\n                    total+=expected;x+=z;steps+=1\n                assert total==x**degree-moment(p,a,degree)\n                telescopes+=1\n            for b in [Q(0),Q(1),Q(-2),Q(3,7)]:\n                explicit={degree-p*k:Q(factorial(degree),factorial(k)*factorial(degree-p*k))*(-b)**k\n                          for k in range(degree//p+1)}\n                explicit={r:c for r,c in explicit.items() if c}\n                assert appell(p,b,degree)==explicit;parameters+=1\nassert appell(4,Q(2),8)=={8:Q(1),4:Q(-3360),0:Q(80640)}\nprint(dict(passed=True,canonical_centered_steps=steps,finite_grid_telescopes=telescopes,\n           parameter_polynomial_checks=parameters,scope='Independent exact rational recurrence/derivative/moment tests, '\n           'p=2,4,6,8 and degrees0..12. Native-grid telescope is tested here, not yet a new universal Lean theorem.'))\n",
+  "exact_test_output": "{'passed': True, 'canonical_centered_steps': 2340, 'finite_grid_telescopes': 624, 'parameter_polynomial_checks': 624, 'scope': 'Independent exact rational recurrence/derivative/moment tests, p=2,4,6,8 and degrees0..12. Native-grid telescope is tested here, not yet a new universal Lean theorem.'}",
+  "canonical_centered_steps": 2340,
+  "finite_grid_telescopes": 624,
+  "parameter_polynomial_checks": 624,
+  "new_source_sha256": {
+    "Foundation/PureOrderAppellParameter.lean": "C8C79E122D80586721F3BFD849045A866456E41AAD356CBEE827AC99844BB582",
+    "Foundation/HigherHeatWeightedPastFields.lean": "731534078622B2798530CEEDB2C95F06A6AC665D970E318BCF6FED12B1489BC9",
+    "Foundation/HigherHeatWeightedPastApproximation.lean": "679FDC1F5345A37C704523924D43622ADBEB7FDBE211F1FA6D2CCD5BD251DB48",
+    "Foundation/HigherHeatAppellPredictableFields.lean": "F527D7A59B51F9BE133BAB550A829BCF8D2FD9BBAE6386FC4407255DF85468DF",
+    "Foundation/HigherHeatAppellInnovationLimits.lean": "603A93C815F5E11FC52DFDDEB926AC9FB3551710B3825F9296F68E6FD30B41CD",
+    "Foundation/PureOrderAppellCenteredStep.lean": "C96A560ED9E5FC375951229BC0DF630BAD469F8D2818AFA0956E5C60EABE88ED"
+  },
+  "source_integrity": {
+    "archive": 107,
+    "exact_recursive_paths": true,
+    "incoming": 43,
+    "incoming_distinct": 42,
+    "a4": 11,
+    "Clark_manuscript_hash_preserved": true
+  },
+  "private_backup_pending": true,
+  "hard_stop": "2026-10-31",
+  "goal": "ACTIVE"
+}

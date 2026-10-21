@@ -20,6 +20,14 @@ an improvement is measured. See the document for evidence, limits and rollback.
 
 # Persistent research priorities
 
+Current1284: FINAL multichannel ACTIVE. Actual right-time backward Appell
+coefficient fields now have genuine adapted L1 realization, uniform bounds
+and native convergence. Canonical D^q/q! signed innovation limits are proved
+for EVERY N and every positive even order, with exactly q<p surviving.
+Exact one-step centered Appell identity/endpoints proved. NEXT native-grid
+telescope and terminal reconstruction; multitime/completed Clark-Ocone OPEN.
+Preserve every verification/private gate and October31 hard stop; no later campaign.
+
 Current1283: FINAL multichannel ACTIVE. Exact signed critical innovation
 centering cancels top drift; all centered powers q>=p vanish in dual norm
 under actual adapted uniform bounds. For EVERY past monomial all bounds/L1

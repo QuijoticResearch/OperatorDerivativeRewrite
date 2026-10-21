@@ -1,5 +1,24 @@
 # Project Stardust: persistent campaign queue
 
+## Current1284: FINAL multichannel — canonical Appell fields and signed limits
+
+Current1284: FINAL multichannel ACTIVE. Actual right-time backward Appell
+coefficient fields now have genuine adapted L1 realization, uniform bounds
+and native convergence. Canonical D^q/q! signed innovation limits are proved
+for EVERY N and every positive even order, with exactly q<p surviving.
+Exact one-step centered Appell identity/endpoints proved. NEXT native-grid
+telescope and terminal reconstruction; multitime/completed Clark-Ocone OPEN.
+Preserve every verification/private gate and October31 hard stop; no later campaign.
+
+NEXT actual native prefix one-step polynomial identity and finite telescope,
+initial/terminal cylinder identification, finite-sum limit and p-1 truncation.
+No completed terminal reconstruction claim before that Lean proof. General
+multitime/completed-observable reconstruction, uniform extension and full
+tensor/integrand injectivity remain OPEN. No positive variation, signed path
+measure or complex-noise substitution. A4/integer/conditional-real/A2 FROZEN.
+October31 HARDSTOP: document exact gaps, freeze and STOP; no later campaign.
+
+
 ## Current1283: FINAL multichannel — centered native innovations remove drift
 
 Current1283: FINAL multichannel ACTIVE. Exact signed critical innovation

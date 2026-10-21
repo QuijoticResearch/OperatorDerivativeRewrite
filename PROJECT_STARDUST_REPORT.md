@@ -28137,3 +28137,84 @@ made concrete PROGRESS. Existing goal stays ACTIVE. FINAL multichannel stays
 ACTIVE, earlier campaigns FROZEN, October31 hard stop, no campaign afterward.
 Private backup is pending until this exact audited commit's receipt and sync
 finish; the ignored closure record will retain actual post-push verification.
+
+
+## Checkpoint1284: actual canonical Appell coefficient fields and native signed limits
+
+The central time-weighted coefficient obligation is now resolved for ALL
+terminal monomial degrees N, ALL positive even orders p=2m and ALL T>0.
+PureOrderAppellParameter constructs finite polynomial dependence on the
+cumulant parameter in the EXISTING iterated polynomial ring. Its map at a
+real parameter is proved equal to the original actual Appell family; every
+spatial coefficient is a real polynomial in that parameter, and one FIXED
+finite support supplies the expansion for ALL parameter values. No new
+analytic completion or unproved infinite Appell series is introduced.
+
+HigherHeatWeightedPastFields and HigherHeatWeightedPastApproximation prove
+genuine adapted L1 realization for EVERY continuous scalar time weight w:
+native coefficients are w(RIGHT endpoint) times (LEFT past)^d. Both endpoint
+distances to a point in the cell are at most mesh. Compact uniform continuity
+of (s,t) -> w(s)*coordinateCurve_d(t) proves native L1 convergence directly,
+without imposing a gratuitous Lipschitz assumption or pretending signed
+variance is a norm estimate. Strong measurability, MemLp1, uniform actual
+coefficient-dual bounds and closed adapted membership are all proved.
+
+HigherHeatAppellPredictableFields uses the actual backward parameter
+a*(s-1), a=(-1)^(m+1)*T. appellPast is the literal Polynomial.aeval at past
+of Appell(p,a*(RIGHT time-1),N). Its finite expansion is EXACT, not an
+analogy with Gaussian Hermite chaos. It is adapted. Native fields agree with
+finite sums of the preceding weighted native fields, converge in genuine L1
+to appellField, and have one explicit finite uniform bound independent of
+the mesh/cell. The limit belongs to the EXISTING closed adapted space.
+
+HigherHeatAppellInnovationLimits identifies the canonical coefficient as
+D^q/q! of that literal right-time backward polynomial at LEFT past. The
+actual canonical field is descFactorial(N,q)/q! times appellField(N-q),
+with closed adapted membership proved. For EVERY N,r, the actual native
+centered (r+1)-power sum with this canonical derivative coefficient converges
+in the ENTIRE completed analytic TEST DUAL NORM to
+I_(r+1)(canonicalField) when r+1<p, and zero otherwise. ALL uniform-bound
+and Appell-field L1 premises are discharged by the new concrete construction.
+These are corrected backward-heat coefficients, not the old ordinary-Ito
+fields whose naive centering failed. The old obstruction is preserved.
+
+PureOrderAppellCenteredStep reuses the actual signed Appell transition and
+centered Taylor theorem to prove the EXACT one-step identity for EVERY p>1,
+real a,b,x,z and degree N:
+Appell(p,a+b,N)(x+z)-Appell(p,b,N)(x) equals the finite sum q=1..N of
+[D^q Appell(p,a+b,N)(x)/q!]*(z^q-M_q(p,a)). No critical or higher powers
+are omitted at finite mesh. The endpoints are proved: zero parameter gives
+X^N and Appell(p,-a,N)(0)=M_N(p,a). This includes degree0 and its mean1.
+
+Seven independent Lean tests PASS: arbitrary zero-parameter identity;
+p4 initial fourth mean24a; above-degree canonical coefficient zero; cubic
+third canonical coefficient1; p4 third-channel N8 limit; p6 critical N12
+vanishing; p8 above-order tenth N12 vanishing. Independent exact rational
+tests PASS2340 centered steps,624 native-grid telescopes,624 finite parameter
+coefficient tests across p2/4/6/8, degree0..12, three horizons/four meshes.
+All derivative factors through one above the degree are checked. The grid
+telescope is independently tested here, NOT yet a new universal Lean theorem.
+Complete test programs/output live in STARDUST_APPELL_FIELD_VERIFICATION.json.
+
+NEXT: formalize native-grid identification of the scalar centered_step with
+prefixPolynomial at adjacent cells; prove the finite Taylor/Doob telescope
+and exact initial/terminal cylinder identification. Then pass the finite sum
+using canonical_native_limit and truncate to p-1 surviving channels. This
+terminal canonical reconstruction remains OPEN until that proof is complete.
+General multitime polynomials, arbitrary completed OBSERVABLE reconstruction,
+degree-uniform extension bounds and full tensor/integrand injectivity remain
+OPEN. Arbitrary completed TEST probes do not settle completed observables.
+No positive variation, finite signed path measure or complex-noise substitute.
+
+Full root 6197 jobs TERMINAL0 24.522025s;
+complete transitive 38519 safe Foundation declaration audit standard3 only
+TERMINAL0 37.278612s. ALL40 final public types
+actually read unabridged pp.proofs true, ALL403 final source/helper lines
+reviewed. Seven-example Lean run TERMINAL0 26.447831s.
+Hashes pinned BEFORE fresh full build; all2022 prior source bytes unchanged
+except root6 imports, configuration unchanged. All107 recursive archive
+paths/hashes, Incoming43/42distinct, A4eleven and original Clark SHA preserved.
+Current/previous goal turns PROGRESS. FINAL multichannel ACTIVE, previous
+campaigns FROZEN. October31 hard stop, NO later campaign. Private backup
+pending until exact audited commit receipt and actual private sync close;
+ignored closure JSON will preserve actual post-push verification.
