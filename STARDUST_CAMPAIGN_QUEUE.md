@@ -1,5 +1,18 @@
 # Project Stardust: persistent campaign queue
 
+## Current1252: quadratic Hermite support verified; actual parabolic limit OPEN
+
+All roots of the existing variance-two Gaussian Hermite polynomials are now
+verified real and simple via finite positive Christoffel-Darboux energy and lowering.
+The actual Xi-flow parabolic remainder/limit, zero counts and global strip contraction
+remain OPEN. Do not stop at the supporting polynomial result. Isolated upstream
+integration proves the actual zero-time strip |Im z|<=3/4 with standard3 axioms;
+no production dependency was added and no new threshold/RH claim follows.
+Continue preserved phase/truncation drafts serially, then actual all-order integral
+scaling and zero splitting. Independent A2 ACTIVE, prior integer/real campaigns
+FROZEN; final multichannel AFTER A2 stopping; October31 hard stop, all gates intact.
+This current entry supersedes historical running-stage labels below.
+
 ## Current1251: independent upstream targets VERIFIED; A2 proof development ACTIVE
 
 The corrected7059job upstream replay and exact-target transitive axiom audit are

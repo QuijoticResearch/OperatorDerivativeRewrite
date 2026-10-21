@@ -25310,3 +25310,56 @@ parabolic Fourier remainder, locally uniform Hermite collision limit and zero co
 Do not stop at the supporting counterexamples or generic Hermite facts. Global
 strip control still remains open in Lean. Current A2 remains ACTIVE; finalmultichannel
 follows its stopping checkpoint; October31 hard stop. Exact private backup pending.
+
+
+## Checkpoint1252: real and simple Hermite roots; actual upstream flow integration
+
+Foundation/RiemannQuadraticHermite.lean directly evaluates the EXISTING
+GaussianTimeSpaceHermite.polynomial 2 n on complex z. It proves the variance-two
+recurrence Q_(n+2)=z Q_(n+1)-2(n+1)Q_n and the finite Christoffel-Darboux identity
+Q_(n+1) conjugate(Q_n)-Q_n conjugate(Q_(n+1))=(z-conjugate(z))E_n(z), where
+E_0=1 and E_(n+1)=|Q_(n+1)|^2+2(n+1)E_n>0. Consequently EVERY complex root of
+EVERY Q_n is real. No consecutive polynomials share a root; actual complex
+derivation lowers Q_(n+1) to (n+1)Q_n, so every root has nonzero derivative.
+The private multivariate-evaluation derivative lemma is proved by polynomial
+induction. These are precise supporting statements for parabolic zero splitting,
+NOT the actual Xi-flow parabolic limit, zero counts or global strip contraction.
+The exact all-order flow remainder and its zero-count application remain OPEN.
+
+Fresh FULL6099job root build TERMINAL0 (39.1532037s),
+COMPLETE37208declaration transitive root/Foundation audit TERMINAL0
+(44.3278380s), ONLY propext/Classical.choice/Quot.sound.
+ALL12 public types ACTUALLY READ UNABRIDGED, all110 source lines including two
+definitions and the private helper ACTUALLY reviewed. EIGHT independent Lean tests
+TERMINAL0 (23.2745665s): explicit Q2/Q3/Q4 coefficients,
+degree100 real-root and simplicity specializations, consecutive-degree25 exclusion,
+actual cubic root0 with derivative -6, positive energy at complex I. Separate exact
+integer-coefficient CD checks through degree12 used independent closed Hermite
+coefficients and closed energy sums; those finite checks are not the all-degree
+certificate. Raw elaboration needed Pi function normalization and explicit eta
+expansion, without resource increases, weakened checks or added axioms.
+All1950 source hashes pinned; prior1949 unchanged except the root import. Pinned
+configuration unchanged. All107 recursive ResearchSources paths/hashes preserved,
+Incoming43/42distinct and A4eleven/exactpaths unchanged. Manuscripts were not edited.
+
+The independently replayed upstream actual zeta theorem was ALSO instantiated in
+an ISOLATED test with the existing RiemannQuadraticXiTransfer. Two complete proofs
+now yield |Im z|<=3/4 for all actual zero-time flow zeros at every a>=0, including
+actual quadratic m=1. Both integrated proofs passed transitive standard3 audit and
+unabridged type/proof review, TERMINAL0 (42.4116798s).
+STARDUST_A2_UPSTREAM_VERIFICATION.json preserves complete integration code/output.
+An initial cast rewrite loop and then a non-definitional cast mismatch were repaired
+using only Nat.cast_one and the explicit flow_nat identity; failed probes were NOT
+certified. OAI artifacts were added ONLY to the child test process LEAN_PATH; no
+production dependency, package or toolchain changed. This proves compatibility
+with the ACTUAL flow, not just a similarly named analytic surrogate. No global
+contraction, new threshold or RH follows. The known classical 9/32 consequence
+would still require its separate global-flow theorem and is not a new bound.
+
+Independent A2 remains ACTIVE, previous integer/real-order campaigns stay FROZEN,
+final multichannel remains gated AFTER A2. Next compile the existing phase and
+truncation-obstruction drafts serially, then prioritize the genuine all-order actual
+parabolic integral remainder and zero-splitting connection. Preserve October31
+hard stop. Permanent build optimization is already complete: original full-build,
+thread, cache and complete-audit settings remain, only the preliminary type helper
+has a measured23.19percent benefit. Exact private checkpoint backup is pending.

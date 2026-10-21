@@ -49,5 +49,24 @@
     "No external source added to production dependencies",
     "No RH or new A2 threshold claim"
   ],
-  "production_mathematical_input_commit": "d1bd18a83da8e9c06ed4ccabb9705a1c0f4dd1a6"
+  "production_mathematical_input_commit": "d1bd18a83da8e9c06ed4ccabb9705a1c0f4dd1a6",
+  "actual_flow_integration_1252": {
+    "terminal_result": {
+      "exit_code": 0,
+      "ended": "2026-10-21T04:39:33.7860898-04:00",
+      "seconds": 42.4116798
+    },
+    "scope": "Isolated integration; no production OAI dependency",
+    "code": "import Foundation.RiemannQuadraticXiTransfer\nimport OAI.NumberTheory.DirichletL.Nonvanishing\nimport Lean\n\n/-! Isolated integration of independently audited upstream results with the\nexisting actual arithmetic flow. No production dependency/configuration change. -/\nopen OperatorDerivativeRewrite.Foundation\n\ntheorem stardust_upstream_zero_time_strip (a : \u211d) (ha : 0 \u2264 a) (z : \u2102)\n    (hz : RiemannRealOrderFlow.flow a 0 z=0) : |z.im| \u2264 (3/4 : \u211d) :=\n  RiemannQuadraticXiTransfer.zero_im_strip_of_seven_eighths\n    (fun s hs => OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re hs) a ha z hz\n\ntheorem stardust_upstream_quadratic_zero_time_strip (z : \u2102)\n    (hz : RiemannEvenFlow.flow 1 0 z=0) : |z.im| \u2264 (3/4 : \u211d) := by\n  apply stardust_upstream_zero_time_strip 1 (by norm_num) z\n  simpa only [Nat.cast_one] using (RiemannRealOrderFlow.flow_nat 1 0 z).trans hz\n\nopen Lean Elab Command in\nrun_cmd do\n  for name in [``stardust_upstream_zero_time_strip,\n      ``stardust_upstream_quadratic_zero_time_strip] do\n    let axioms \u2190 Lean.collectAxioms name\n    for ax in axioms do\n      unless ax == ``propext || ax == ``Classical.choice || ax == ``Quot.sound do\n        throwError \"Forbidden integrated transitive axiom {ax} in {name}\"\n    logInfo m!\"INTEGRATED ACTUAL TARGET AUDIT PASSED: {name}; {axioms}\"\n\nset_option pp.universes true\nset_option pp.fullNames true\n#check @stardust_upstream_zero_time_strip\n#check @stardust_upstream_quadratic_zero_time_strip\n",
+    "output_unabridged": ".lake/stardust-1252-upstream-transfer.lean:12:9: warning: Variable name `s` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _s\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nINTEGRATED ACTUAL TARGET AUDIT PASSED: stardust_upstream_zero_time_strip; [propext, Classical.choice, Quot.sound]\nINTEGRATED ACTUAL TARGET AUDIT PASSED: stardust_upstream_quadratic_zero_time_strip; [propext,\n Classical.choice,\n Quot.sound]\nstardust_upstream_zero_time_strip : \u2200 (a : \u211d),\n  LE.le.{0} 0 a \u2192\n    \u2200 (z : \u2102),\n      Eq.{1} (OperatorDerivativeRewrite.Foundation.RiemannRealOrderFlow.flow a 0 z) 0 \u2192 LE.le.{0} (abs.{0} z.im) (3 / 4)\nstardust_upstream_quadratic_zero_time_strip : \u2200 (z : \u2102),\n  Eq.{1} (OperatorDerivativeRewrite.Foundation.RiemannEvenFlow.flow 1 0 z) 0 \u2192 LE.le.{0} (abs.{0} z.im) (3 / 4)\n",
+    "code_sha256": "9DC9B16DCEFD94934617C98FEE2DB5BF0F2E67D82C9DBB83B86E8A417440E487",
+    "log_sha256": "7977845D6CDF610B9336EA8A24D3654F1270C1345D5963395A7C41970C653DEE",
+    "full_types_and_proofs_actually_reviewed": true,
+    "consequence": "All nonnegative order zero-time flow zeros have |Im z| <= 3/4; includes actual quadratic flow",
+    "not_claimed": [
+      "Global strip contraction",
+      "New threshold",
+      "RH"
+    ]
+  }
 }
