@@ -1,5 +1,12 @@
 # Final higher-heat multichannel campaign
 
+Current1279 closes the terminal-cubic reconstruction and quadratic predictable
+field obligations. The ACTUAL biharmonic centered terminal cube has a genuine
+three-channel signed identity on the completed test dual, with every native-sum
+limit and coefficient-field hypothesis discharged for every T>0. This does
+not prove reconstruction for every completed observable, the general p-1
+hierarchy or the source's full tensor causal calculus. See the1279 section.
+
 Current1278 closes the native cubic-sum limit and remainder-bound obligations
 listed at1277 below. It proves dual-NORM convergence with explicit uniform
 coefficient bounds and genuine L1 field convergence, and discharges both
@@ -170,3 +177,81 @@ affine-product machinery. The cubic-sum limit is now available for the third
 term of the telescoping identity; the existing past-coordinate field handles
 the second term. General p-1 channels, nonlinear causal closure and completed
 Clark-Ocone remain open, with the October31 stopping rule unchanged.
+
+## Checkpoint1279: actual three-channel terminal-cubic reconstruction
+
+For physical p=4, T>0, J_T is the existing actual signed density pairing into
+the completed analytic dual. The new result `HigherHeatCubicIto.cubic_ito` is
+
+```
+J_T(X_T^3) = 3*I1(A2) + 3*I2(A1) + I3(A0),
+A2(s) = the actual squared-coordinate dual curve,
+A1(s) = the existing actual coordinate dual curve,
+A0(s) = J_T(1),  normalized time 0<=s<=1.
+```
+
+All three inputs are genuine L1(time;Domain*) fields, and their native
+predictable approximations are proved to converge. A2 also belongs to the
+existing closed adapted domain used by the actual first signed integral.
+The second/third terms are identified with actual quadratic/cubic signed sum
+limits by the previous operator theorems, with their uniform coefficient bounds
+discharged here. There is no residual assumed bound or convergence premise in
+the final type beyond T>0. No new analytical completion or probability law is
+postulated. Every sum and curve uses the existing signed kernel/cylinder,
+cutoff derivative, weak transpose and bounded pairing machinery.
+
+This is equality of functionals on the WHOLE completed analytic test domain.
+`actual_signed_identity` separately identifies every real polynomial cylinder
+probe with the ACTUAL finite signed heat-kernel expectation of X_T^3*G, embedded
+in Complex as in the existing law API. The observable being reconstructed is
+the terminal cube; arbitrary completed PROBES do not mean arbitrary completed
+OBSERVABLES have been reconstructed. The already verified actual signed mean
+of X_T^3 is zero, and its fourth derivative is zero, so this is a centered
+three-channel reconstruction with zero fourth-order drift. The previous
+one-/two-channel obstruction remains true and is now overcome for this
+observable by the third channel.
+
+The quadratic input is constructed rigorously, not inferred from its values:
+
+- `HigherHeatPrefixFields` proves true L1 interval norms and the bound
+  `||B_t(a)-B_s(b)|| <= s*||a-b||+(t-s)*||a||`, 0<=s<=t<=1.
+  A bounded Lipschitz dual coefficient therefore gives a Lipschitz prefix field.
+- `HigherHeatPrefixSquareIdentity` proves exact coefficient-field partitioning
+  and sums the existing COMPLETED affine signed identity to obtain
+  `J(X_t^2)=I1(B_t(J(X_t)))+I2(B_t(J(1)))` at every native dyadic prefix.
+  The auxiliary coefficient J(X_t) is constant over (0,t] and anticipating;
+  it is not falsely labeled adapted in this identity.
+- `HigherHeatQuadraticDualCurve` uses those bounded operators to construct an
+  all-normalized-time Lipschitz dual curve, with exact native squared-prefix
+  agreement including times0 and1. This is a norm-continuous extension of
+  actual dyadic data. No separate all-time signed path measure or new
+  nondyadic finite-dimensional kernel identification is asserted.
+- `HigherHeatQuadraticPredictableField` proves actual uniform native dual
+  bounds, strong measurability/L1 membership, the native predictable error
+  `||A2_n-A2||_L1 <= K_T*duration(1,n)` for a genuine finite Lipschitz constant,
+  norm convergence, and membership in the closed adapted field domain.
+- `HigherHeatCubicIto` proves the actual polynomial telescope, then passes all
+  three native signed sums to their dual-norm limits. This proves the signed
+  stochastic identity, not merely the expectation-level higher heat equation.
+
+Six independent Lean tests check the quadratic curve at normalized times0/1,
+the reconstructed functional against terminal powers1/5/9, and the centered
+functional equality. The resulting signed moments are -24*T, 20160*T^2 and
+-79833600*T^3. Seventy-two independent exact signed moment/time-integration
+checks agree with the three-channel formula. At T=1 and a fifth-power probe,
+the WEIGHTED channel contributions are 8640,8640,2880, totaling20160; a
+ninth-power probe gives -49351680,-26127360,-4354560, totaling-79833600.
+These individual summand values are independent exact checks, not separately
+Lean-certified closed-form summand evaluations. The Lean theorem proves the
+complete identity and the independent Lean tests verify the total moments.
+Both test programs and exact source/verification scope are preserved in
+`STARDUST_BIHARMONIC_CUBIC_VERIFICATION.json`.
+
+OPEN: general polynomial/multitime-cylinder reconstruction; all p-1 channels
+at arbitrary higher even order; fourth-order drift and higher polynomial
+native-sum identification; canonical causal derivative coefficient maps on
+the completed analytic observable domain; full tensor projection/chronological
+integration; and any unquotiented integrand injectivity assertion. Existing
+signed path measure, positivity/isometry and D^p-only counterexamples stand.
+No full Clark-Ocone theorem or novel-publication claim is made. Continue the
+same final campaign, with October31 as the hard stop and no new campaign after it.

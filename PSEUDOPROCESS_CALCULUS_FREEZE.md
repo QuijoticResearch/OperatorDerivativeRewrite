@@ -1,5 +1,12 @@
 # Pseudoprocess calculus — audited campaign freeze
 
+Current1279: centered TERMINAL CUBIC now has the actual three-channel signed
+reconstruction on the completed test dual, with genuine quadratic predictable
+field and ALL native-sum limits proved. General observables/higher p-1/full
+Clark-Ocone remain open. Historical1045/1277/1278 boundaries below are preserved
+and superseded only for this explicit cubic result. Existing counterexamples,
+October31 hard stop and all verification/private gates remain unchanged.
+
 Current1278: the FINAL reopened campaign now verifies actual cubic signed-sum
 dual-norm convergence to I3 with explicit general premises, discharged for the
 nonzero actual constant field. Terminal cubic/full reconstruction remain open.

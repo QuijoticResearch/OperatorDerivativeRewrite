@@ -20,6 +20,13 @@ an improvement is measured. See the document for evidence, limits and rollback.
 
 # Persistent research priorities
 
+Current1279: FINAL multichannel ACTIVE. The actual centered terminal cubic now
+has a THREE-channel signed reconstruction in the completed test dual, with
+quadratic predictable field/native L1 approximation and all signed-sum limits
+verified. NEXT general polynomial/multitime and higher p-1/completed Clark-Ocone;
+those remain OPEN. Consult the authoritative top queue and campaign report.
+Preserve all gates and October31 hard stop; no subsequent campaign.
+
 Current1278: FINAL multichannel remains ACTIVE. Actual third biharmonic signed
 cubic sums now converge in completed-dual norm under explicit bounds/L1
 convergence, discharged for F1. Next is quadratic predictable-field control

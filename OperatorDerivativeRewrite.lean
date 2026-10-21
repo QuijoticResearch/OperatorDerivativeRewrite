@@ -1889,3 +1889,8 @@ import Foundation.HigherHeatThirdChannelSteps
 import Foundation.HigherHeatCubicStepIdentity
 import Foundation.HigherHeatCubicRemainder
 import Foundation.HigherHeatCubicChannelLimit
+import Foundation.HigherHeatPrefixFields
+import Foundation.HigherHeatPrefixSquareIdentity
+import Foundation.HigherHeatQuadraticDualCurve
+import Foundation.HigherHeatQuadraticPredictableField
+import Foundation.HigherHeatCubicIto

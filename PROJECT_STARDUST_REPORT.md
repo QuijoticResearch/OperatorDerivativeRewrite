@@ -27657,3 +27657,92 @@ and Clark SHA52671C5A5A77C892CEB8AFC183C7BFBA1520BF0EB3BA1A0E60AE0403063CC6C7 pr
 Unrelated12drafts/tmp, all caches and sync scanner untouched. No manuscript
 edited/renamed/deleted/committed. Exact receipt/private sync close this
 mathematical checkpoint, not the full final reconstruction objective.
+
+
+## Checkpoint1279: ACTUAL centered terminal cubic reconstructed by ALL THREE biharmonic channels
+
+The explicit centered-cubic obligation is now CLOSED. For ACTUAL p4/m2 signed
+heat calculus and EVERY physical T>0, HigherHeatCubicIto.cubic_ito proves
+  J_T(X_T³)=3I1(A2)+3I2(A1)+I3(A0)
+as an EQUALITY OF CONTINUOUS FUNCTIONALS on the ENTIRE completed analytic
+test domain. A2 is the NEW genuine squared-coordinate dual field; A1 is the
+existing coordinate dual field; A0=J_T1 is the actual constant field. Every
+native predictable approximation, uniform bound and native signed sum limit
+needed for these THREE inputs is PROVED, with NO residual convergence/bound
+premise in the final type beyond T>0. I1 uses the actual closed adapted integral
+domain. I2/I3 are connected to actual quadratic/cubic signed sums through the
+previous limit theorems with their hypotheses discharged here. The actual
+signed mean of X_T³ is zero and derivative4(x³)=0, already verified; hence this
+is a centered reconstruction with zero fourth-order drift. The two-channel
+obstruction remains true; it does NOT obstruct the correct three-channel result.
+
+HigherHeatCubicIto.actual_signed_identity identifies EVERY real polynomial
+cylinder probe with the literal finite signed kernel expectation of X_T³G
+(in the law API's Complex embedding). Completed PROBES are arbitrary; the
+reconstructed OBSERVABLE here is the terminal cube. This is NOT a theorem
+reconstructing every completed observable, not a full signed Clark-Ocone
+hierarchy, not a finite complex-noise substitute, and not a positive stochastic
+variation/path measure. All existing signed-measure/positivity/isometry and
+Dp-only source counterexamples retain their precise scopes.
+
+The supporting construction reuses existing domains, derivatives, signed
+pairing, weak adjoint, completed affine identity and dense native cylinders:
+HigherHeatPrefixFields gives genuine L1 interval norms, exact splitting and
+||B_t(a)-B_s(b)||<=s||a-b||+(t-s)||a||,0<=s<=t<=1. Thus bounded Lipschitz
+dual coefficients produce Lipschitz prefix fields. HigherHeatPrefixSquareIdentity
+partitions the actual fields exactly and sums the COMPLETED affine signed
+identity to prove J(X_t²)=I1(B_t(J(X_t)))+I2(B_t(J1)) at every dyadic prefix.
+The auxiliary constant coefficient J(X_t) over(0,t] is ANTICIPATING, not
+declared adapted; its exact identity is used to CONSTRUCT the quadratic curve.
+HigherHeatQuadraticDualCurve gives an all-normalized-time norm-Lipschitz dual
+curve with exact native squared-prefix agreement including endpoints. No
+new all-time finite-dimensional kernel identification or path measure is
+asserted from that extension. HigherHeatQuadraticPredictableField proves
+uniform actual squared-prefix dual norms, strong measurability/true L1 fields,
+native predictable L1 error<=K_T*duration1n and convergence, then membership
+in the existing closed adapted field domain. This respects the older failure
+of coefficient-domain strong causal continuity: regularity is in the actual
+DUAL norm and L1 field topology, not silently in the stronger source topology.
+
+The actual cubic polynomial telescope is then passed to THREE genuine native
+sum limits. This is an actual signed stochastic identity, beyond the expectation-
+level generator formula. No new analytic completion or unproved integrand
+nondegeneracy/injectivity is imported. The quadratic field construction and
+terminal-cubic limit obligations from1277/1278 are CLOSED. The full campaign
+remains ACTIVE: general polynomial/multitime-cylinder Clark-Ocone, higher
+even p-1 channels, general fourth/higher drift, canonical causal derivative
+fields for ALL completed observables, completed reconstruction convergence,
+full tensor projection/chronological integration and unquotiented uniqueness
+remain OPEN. No novelty/publication or universal completion claim is made.
+
+SIX independent Lean examples pass: normalized-time0/1 quadratic-curve
+agreement; reconstructed functional against terminal powers1/5/9 gives actual
+signed moments -24T,20160T²,-79833600T³; and the CENTERED functional identity
+with its actual signed mean subtracted.72 independent exact signed moment/
+time-integration checks cover18degrees and4positive rational horizons. AtT1,
+fifth-power WEIGHTED channel contributions8640,8640,2880 total20160; ninth-power
+-49351680,-26127360,-4354560 total-79833600. Individual summand values are
+independent exact checks, NOT separately Lean-certified summand targets. Lean
+proves the complete identity and independently tests its actual total moments.
+STARDUST_BIHARMONIC_CUBIC_VERIFICATION.json preserves both full test programs,
+actual terminal results, source pins and exact scope.
+
+Verification: fresh hash-pinned FULL6165jobs TERMINAL0 25.9408013s;
+COMPLETE37986 safeFoundation transitive root audit TERMINAL0 41.5619601s,
+ONLY propext/Classical.choice/Quot.sound. ALL41 new public types ACTUALLY READ
+UNABRIDGED pp.proofs true/no ellipses,436auditloglines; ALL455 final source/
+helperproof lines read(75+81+87+109+103),32theorems9defs. SIX independent Lean
+tests TERMINAL0 26.0728847s,72exact checks PASS. No explicit private
+production helpers/instances. Elaboration repairs used explicit interval
+measurability/finite-measure witnesses, real norm/absolute value normalization,
+named Nat positivity proof under conversion, scalar casts, explicit unfolding
+and correct field-notation syntax. No resource increase, weakened theorem,
+suppressed check or source-semantic substitution. All1996 source hashes pinned;
+prior1991 unchanged except root's five imports; configurations/toolchain/deps/
+trust/resources unchanged. Exact107recursive manuscript paths/hashes,
+Incoming43/42distinct,A4eleven, Clark SHA52671C5A5A77C892CEB8AFC183C7BFBA1520BF0EB3BA1A0E60AE0403063CC6C7
+preserved. No manuscript edited/renamed/deleted/committed. Unrelated12drafts/tmp,
+all caches and sync scanner untouched. Previousb45c960 exact private checkpoint
+preserved; exact receipt/private synchronization close this milestone. FINAL
+campaign ACTIVE, A4/integer/conditional-real/A2 FROZEN, October31 HARD STOP,
+NO new campaign afterwards. Existing indefinite goal remains ACTIVE.

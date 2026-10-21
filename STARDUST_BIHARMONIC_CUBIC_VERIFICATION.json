@@ -1,0 +1,82 @@
+{
+  "checkpoint": 1279,
+  "time_utc": "2026-10-21T19:21:27.851586+00:00",
+  "campaign": "FINAL multichannel pseudoprocess",
+  "previous_private_checkpoint": "b45c960c00cab521241e613a6fedf391cf562c95",
+  "source_count": 1996,
+  "prior_source_count": 1991,
+  "prior_sources_unchanged_except_root": true,
+  "configuration_unchanged": true,
+  "full_build_jobs": 6165,
+  "audit_declarations": 37986,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "terminal_results": {
+    "full-build": {
+      "ended": "2026-10-21T15:08:52.8577217-04:00",
+      "exit_code": 0,
+      "seconds": 25.9408013
+    },
+    "audit": {
+      "seconds": 41.5619601,
+      "ended": "2026-10-21T15:11:38.5586829-04:00",
+      "exit_code": 0
+    },
+    "independent": {
+      "exit_code": 0,
+      "ended": "2026-10-21T15:17:41.7900095-04:00",
+      "seconds": 26.0728847
+    }
+  },
+  "public_types_actually_read_unabridged": 41,
+  "proof_arguments_visible": true,
+  "complete_final_source_lines_reviewed": 455,
+  "new_public_theorems": 32,
+  "new_definitions": 9,
+  "physical_order": 4,
+  "positive_physical_horizon_required": true,
+  "normalized_time": "[0,1]",
+  "quadratic_curve": "Actual norm-Lipschitz dual curve with exact native dyadic squared-prefix agreement",
+  "native_quadratic_predictable_L1_approximation_proved": true,
+  "quadratic_field_in_closed_adapted_domain": true,
+  "reconstruction": "J_T(X_T^3)=3*I1(A2)+3*I2(A1)+I3(A0)",
+  "reconstructed_observable": "Actual terminal cube, signed mean zero",
+  "topology": "Equality in completed analytic test dual; actual predictable coefficient fields converge in L1; all three native signed sums converge in dual norm",
+  "all_three_coefficient_hypotheses_discharged": true,
+  "actual_signed_kernel_identification_for_all_polynomial_cylinder_probes": true,
+  "entire_completed_probe_domain": true,
+  "arbitrary_completed_observable_reconstruction_proved": false,
+  "canonical_causal_coefficient_maps_for_all_observables_proved": false,
+  "universal_completed_Clark_Ocone_proved": false,
+  "general_p_minus_one_channels_proved": false,
+  "source_full_tensor_calculus_proved": false,
+  "Lean_test_code": "import Foundation.HigherHeatCubicIto\nimport Foundation.HigherHeatQuadraticItoBoundary\n\nopen OperatorDerivativeRewrite.Foundation\nopen HigherHeatPolynomialCylinders HigherHeatAnalyticCylinderDomain\nopen HigherHeatWeakTimeAdjoint HigherHeatSecondChannelSteps HigherHeatThirdChannelSteps\nopen HigherHeatCompletedPairing HigherHeatPairedDualCausality HigherHeatFirstChannelRange\nopen HigherHeatQuadraticItoFields HigherHeatQuadraticPredictableField HigherHeatQuadraticDualCurve\nopen HigherHeatCubicIto HigherHeatDyadicTimeDensity HigherHeatContinuousDualCoordinate\nopen scoped NNReal\n\nnoncomputable def reconstructed (T : \u211d\u22650) (hT : 0 < T) : Dual :=\n  (3:\u2115) \u2022 HigherHeatAdaptedIntegralClosure.integral 2 (by norm_num) T hT (quadraticInput T hT) +\n  (3:\u2115) \u2022 secondChannel 2 T (curveField 2 (by norm_num) T hT) +\n  thirdChannel T (constantField 2 (by norm_num) T hT)\n\nexample (T : \u211d\u22650) (hT : 0 < T) : quadraticCurve T hT zeroTime = 0 := by\n  change quadraticCurve T hT (node 0 (prefixNode 0 0 (Nat.zero_le _))) = 0\n  rw [quadratic_curve_prefix, HigherHeatQuadraticItoData.prefix_zero,\n    zero_pow (by decide : (2:\u2115) \u2260 0), map_zero, map_zero, map_zero]\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    quadraticCurve T hT \u27e81,zero_le_one,le_rfl\u27e9 =\n      pairing 2 (by norm_num) T hT (core (terminalCylinder^2)) := by\n  have ht : node 0 (prefixNode 0 (size 0) le_rfl) = \u27e81,zero_le_one,le_rfl\u27e9 := by\n    apply Subtype.ext\n    rw [prefix_time]\n    norm_num [size,HigherHeatDyadicLaws.gridSize,HigherHeatDyadicLaws.duration]\n  rw [\u2190 ht, quadratic_curve_prefix, HigherHeatQuadraticItoData.prefix_end, map_pow]\n  rfl\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    reconstructed T hT (core terminalCylinder) = -24*(T:\u211d) := by\n  unfold reconstructed\n  rw [\u2190 cubic_ito T hT, witness_pairing]\n  norm_num\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    reconstructed T hT (core (terminalCylinder^5)) = 20160*(T:\u211d)^2 := by\n  unfold reconstructed\n  rw [\u2190 cubic_ito T hT, pairing_core_real, \u2190 pow_add, terminal_moments]\n  have hm := PseudoPolynomialStein.moment_multiple 4 (by norm_num) (-(T:\u211d)) 2\n  norm_num [neg_pow] at hm \u22a2\n  nlinarith [hm]\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    reconstructed T hT (core (terminalCylinder^9)) = -79833600*(T:\u211d)^3 := by\n  unfold reconstructed\n  rw [\u2190 cubic_ito T hT, pairing_core_real, \u2190 pow_add, terminal_moments]\n  have hm := PseudoPolynomialStein.moment_multiple 4 (by norm_num) (-(T:\u211d)) 3\n  norm_num [neg_pow] at hm \u22a2\n  nlinarith [hm]\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    pairing 2 (by norm_num) T hT (core (terminalCylinder^3)) -\n      HigherHeatCompletedSignedMean.mean 2 (by norm_num) T hT (core (terminalCylinder^3)) \u2022\n        pairing 2 (by norm_num) T hT (core (1:Cylinder)) = reconstructed T hT := by\n  rw [witness_centered, zero_smul]\n  apply ContinuousLinearMap.ext\n  intro G\n  change pairing 2 (by norm_num) T hT (core (terminalCylinder^3)) G - 0 = reconstructed T hT G\n  unfold reconstructed\n  simpa only [_root_.sub_zero] using congrArg (fun \u03c6 : Dual => \u03c6 G) (cubic_ito T hT)\n",
+  "Lean_test_code_sha256": "5E6D01F3589E3CC639E4579787CCA825F44414CA137001E8C266AD6063B8F478",
+  "Lean_test_log_sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+  "independent_Lean_tests": 6,
+  "rational_channel_test_code": "from fractions import Fraction as Q\nfrom math import factorial,comb\ndef moment(n,T):\n return Q(0) if n%4 else Q(factorial(n),factorial(n//4))*(-T)**(n//4)\ndef falling(n,r):return Q(0) if n<r else Q(factorial(n),factorial(n-r))\ndef integrated_mixed(k,l,T):\n if l<0:return Q(0)\n ans=Q(0)\n for a in range(l+1):\n  if (k+a)%4 or (l-a)%4:continue\n  A=(k+a)//4;B=(l-a)//4\n  ans+=comb(l,a)*Q(factorial(k+a),factorial(A))*Q(factorial(l-a),factorial(B))*(-T)**(A+B)*Q(factorial(A)*factorial(B),factorial(A+B+1))\n return ans\nchecks=0;examples=[]\nfor T in [Q(1),Q(1,2),Q(2),Q(5,7)]:\n for g in range(18):\n  first=3*(-4*T)*falling(g,3)*integrated_mixed(2,g-3,T)\n  second=3*(-12*T)*falling(g,2)*integrated_mixed(1,g-2,T)\n  third=Q(0) if g==0 else -24*T*g*moment(g-1,T)\n  assert first+second+third==moment(g+3,T)\n  if g==1:assert (first,second,third)==(0,0,-24*T)\n  if g==5:assert (first,second,third)==(8640*T*T,8640*T*T,2880*T*T)\n  if T==1 and g in [1,5,9]:examples.append(dict(probe_degree=g,three_weighted_channels=[str(first),str(second),str(third)],actual_terminal_moment=str(moment(g+3,T))))\n  checks+=1\nprint(dict(exact_three_channel_tests=checks,passed=True,examples=examples,scope='Independent signed moment and exact time integration checks; completed-dual reconstruction is proved separately in Lean'))\n",
+  "rational_channel_test_output": "{'exact_three_channel_tests': 72, 'passed': True, 'examples': [{'probe_degree': 1, 'three_weighted_channels': ['0', '0', '-24'], 'actual_terminal_moment': '-24'}, {'probe_degree': 5, 'three_weighted_channels': ['8640', '8640', '2880'], 'actual_terminal_moment': '20160'}, {'probe_degree': 9, 'three_weighted_channels': ['-49351680', '-26127360', '-4354560'], 'actual_terminal_moment': '-79833600'}], 'scope': 'Independent signed moment and exact time integration checks; completed-dual reconstruction is proved separately in Lean'}",
+  "rational_channel_tests": 72,
+  "per_channel_closed_values_are_independent_checks_not_separate_Lean_targets": true,
+  "new_source_sha256": {
+    "Foundation/HigherHeatPrefixFields.lean": "AEE3E8843F5FBAE86C3D925B28D6695B5C07E884ADF6790568395593450A80EE",
+    "Foundation/HigherHeatPrefixSquareIdentity.lean": "24C17930175834AA8BF15A994C41F83A20AE4AD71E510E61D4C494780615EF67",
+    "Foundation/HigherHeatQuadraticDualCurve.lean": "0F2273E3FA2210D7FECAF73FD1C6DBFC7CE5CF96CA57A3B195ED54A6BEC6AB06",
+    "Foundation/HigherHeatQuadraticPredictableField.lean": "5205011CD06A36E320F716787ACB005E5C1E0B9C52AA3038443C1E2871A6767C",
+    "Foundation/HigherHeatCubicIto.lean": "19950A53CFAEC503438BC573D1EA79AAB8D2B9293CDB15AF503EF53C2753DE8E"
+  },
+  "source_integrity": {
+    "archive": 107,
+    "exact_recursive_paths": true,
+    "incoming": 43,
+    "incoming_distinct": 42,
+    "a4": 11,
+    "Clark_manuscript_hash_preserved": true
+  },
+  "private_backup_pending": true,
+  "hard_stop": "2026-10-31",
+  "goal": "ACTIVE"
+}

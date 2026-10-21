@@ -1,5 +1,25 @@
 # Project Stardust: persistent campaign queue
 
+## Current1279: FINAL multichannel — centered cubic THREE-channel reconstruction verified
+
+ACTUAL p4/m2,T>0: J(X_T³)=3I1(A2)+3I2(A1)+I3(A0), equality on WHOLEcompleted
+testdual; actual signed kernel expectation againstEVERYpolynomialcylinderprobe.
+Quadraticdualcurve Lipschitz/nativeagreement, uniformbounds, actualpredictable
+L1approximation and closedadapted membership PROVED. ALL3 native sum limits
+and coefficient hypotheses discharged. Centering/zero4thdrift checked. This
+resolves centeredcubic, NOTallcompleted OBSERVABLES or fullClark-Ocone. Existing
+one/twochannelobstructions remaintrue, notfullhierarchyimpossibility.
+NEXT: supporting general polynomial/multitime formulas and higher-order p-1
+channels; actual drift/native powers, canonical causal derivative fields and
+completedanalytic reconstruction with exact convergence topology. Reuse all
+existing machinery; no newfoundationalspace/unrelatedcampaign/complexnoise
+substitution. Fulltensorcausality/integrandinjectivity remainOPEN. See
+STARDUST_MULTICHANNEL_CAMPAIGN.md. FINALACTIVE; A4/integer/conditional-real/A2
+FROZEN. All fullbuild/axiom/unabridgedtype/proof/source/private gates preserved.
+October31 HARDSTOP: document exact remainingobstruction, freeze/STOP then;
+NO new campaign afterwards. Existing indefinite goal ACTIVE.
+
+
 ## Current1278: FINAL multichannel — genuine cubic signed-sum dual-norm limit verified
 
 Actual p4 cubic increment sums now converge in completed analytic DUAL NORM
