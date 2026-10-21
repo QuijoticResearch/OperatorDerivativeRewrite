@@ -1,0 +1,88 @@
+{
+  "checkpoint": 1281,
+  "time_utc": "2026-10-21T20:13:13.415570+00:00",
+  "campaign": "FINAL multichannel pseudoprocess",
+  "previous_private_checkpoint": "c30ae6843693bbc8b45fc6e77c41cedf90bcce9e",
+  "source_count": 2012,
+  "prior_source_count": 2004,
+  "prior_sources_unchanged_except_root": true,
+  "root_only_eight_imports": true,
+  "configuration_unchanged": true,
+  "full_build_jobs": 6181,
+  "audit_declarations": 38253,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "terminal_results": {
+    "full-build": {
+      "exit_code": 0,
+      "seconds": 24.447146
+    },
+    "audit": {
+      "exit_code": 0,
+      "seconds": 47.8879072
+    },
+    "independent": {
+      "exit_code": 0,
+      "seconds": 27.4686965
+    }
+  },
+  "public_types_actually_read_unabridged": 48,
+  "proof_arguments_visible": true,
+  "complete_final_source_lines_reviewed": 728,
+  "new_public_theorems": 41,
+  "new_definitions": 7,
+  "physical_order": "Every p=2m, integer m>0",
+  "positive_physical_horizon_required": true,
+  "normalized_time": "[0,1]",
+  "all_finite_product_channels_on_completed_test_dual": true,
+  "unrestricted_native_polynomial_coefficients": true,
+  "all_native_increment_powers_signed_kernel_identity": true,
+  "channel_normalization": "I_q = coefficient(m,T)*descFactorial(p-1,q-1)*transpose(timeMeasure,p-q), 1<=q<=p",
+  "actual_signed_sum_identification": "For each q<=p, adapted native q-power sums converge in completed-dual norm to I_q(A), assuming actual uniform coefficient dual bound M and genuine L1 field convergence to A",
+  "actual_coefficient_hypotheses_explicit": true,
+  "constant_coefficient_hypotheses_discharged_for_all_channels": true,
+  "native_order_drift": "Constant p-th power signed sums converge in completed-dual norm to (-1)^(m+1)*p!*T*J(1)",
+  "higher_native_power_sums": "Every q>p vanishes in completed-dual norm under actual uniform adapted coefficient bound; no field-convergence premise required",
+  "error_rate": "Sum remainder <= C(m,T,q)*normalized_mesh*M",
+  "norm_constants": "Nonnegative finite explicit recursion; C0=1, C(r+1)=p*T*sum_{{k<p}} choose(p-1,k)*descFactorial(r,k)*C(r-k)",
+  "coefficient_domain_or_degree_uniform_completed_reconstruction_bound": false,
+  "arbitrary_completed_observable_reconstruction_proved": false,
+  "canonical_causal_coefficient_maps_for_all_observables_proved": false,
+  "universal_completed_Clark_Ocone_proved": false,
+  "general_polynomial_terminal_or_multitime_Clark_Ocone_proved": false,
+  "source_full_tensor_calculus_proved": false,
+  "positive_variation_or_finite_signed_path_measure_claimed": false,
+  "Lean_test_code": "import Foundation.HigherHeatAllChannelLimit\n\nopen OperatorDerivativeRewrite.Foundation\nopen HigherHeatPolynomialCylinders HigherHeatAnalyticCylinderDomain HigherHeatCompletedPairing\nopen HigherHeatWeakTimeAdjoint HigherHeatPairedDualCausality HigherHeatQuadraticItoFields\nopen HigherHeatAllChannelNormalization HigherHeatAllChannelLimit HigherHeatAllPowerBounds\nopen HigherHeatAllProductChannels HigherHeatAllPowerSteps MultivariateFactorialDomain\nopen scoped NNReal Topology\n\nexample (T : \u211d\u22650) : channel 3 T 5 = (720*(T:\u211d)) \u2022 transpose timeMeasure 0 := by\n  simpa only [show 2*3=6 by decide, show (6:\u2115).factorial=720 by decide,\n    show (-1:\u211d)^(3+1)=1 by norm_num, mul_one, Nat.cast_ofNat] using drift_normalization 3 (by decide) T\n\nexample (T : \u211d\u22650) : channel 4 T 7 = (-40320*(T:\u211d)) \u2022 transpose timeMeasure 0 := by\n  simpa only [show 2*4=8 by decide, show (8:\u2115).factorial=40320 by decide,\n    show (-1:\u211d)^(4+1)= -1 by norm_num, mul_neg_one, Nat.cast_ofNat] using drift_normalization 4 (by decide) T\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    Filter.Tendsto (fun n => pairing 3 (by decide) T hT\n      (core (cylinderOf n (powerPolynomial n 6 (fun _ => 1))))) Filter.atTop\n        (\ud835\udcdd ((720*(T:\u211d)) \u2022 pairing 3 (by decide) T hT (core (1:Cylinder)))) := by\n  simpa only [show 2*3=6 by decide, show (6:\u2115).factorial=720 by decide,\n    show (-1:\u211d)^(3+1)=1 by norm_num, mul_one, Nat.cast_ofNat] using constant_order_sums_converge 3 (by decide) T hT\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    Filter.Tendsto (fun n => pairing 4 (by decide) T hT\n      (core (cylinderOf n (powerPolynomial n 8 (fun _ => 1))))) Filter.atTop\n        (\ud835\udcdd ((-40320*(T:\u211d)) \u2022 pairing 4 (by decide) T hT (core (1:Cylinder)))) := by\n  simpa only [show 2*4=8 by decide, show (8:\u2115).factorial=40320 by decide,\n    show (-1:\u211d)^(4+1)= -1 by norm_num, mul_neg_one, Nat.cast_ofNat] using constant_order_sums_converge 4 (by decide) T hT\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    Filter.Tendsto (fun n => pairing 2 (by decide) T hT\n      (core (cylinderOf n (powerPolynomial n 5 (fun _ => 1))))) Filter.atTop (\ud835\udcdd (0:Dual)) := by\n  apply higher_sums_vanish 2 (by decide) T hT (fun _ _ => 1)\n    HigherHeatQuadraticItoData.constants_adapted 4 (by decide)\n    \u2016pairing 2 (by decide) T hT (core (1:Cylinder))\u2016\n  intro n j\n  rw [map_one]\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    Filter.Tendsto (fun n => pairing 3 (by decide) T hT\n      (core (cylinderOf n (powerPolynomial n 7 (fun _ => 1))))) Filter.atTop (\ud835\udcdd (0:Dual)) := by\n  apply higher_sums_vanish 3 (by decide) T hT (fun _ _ => 1)\n    HigherHeatQuadraticItoData.constants_adapted 6 (by decide)\n    \u2016pairing 3 (by decide) T hT (core (1:Cylinder))\u2016\n  intro n j\n  rw [map_one]\n\nexample (n : \u2115) (j : Fin (size n)) :\n    (polynomialDerivative (Pi.single j 1) : Test n \u2192 Test n)^[7] ((MvPolynomial.X j)^9) =\n      (181440:\u2115) \u2022 ((MvPolynomial.X j)^2) := by\n  have h := increment_power_jets n j (1:Test n) (by simp) 9 7\n  simpa only [one_mul, show (9:\u2115).descFactorial 7=181440 by decide,\n    show 9-7=2 by decide] using h\n\nexample (T : \u211d\u22650) : powerConstant 2 T 4 =\n    24*(T:\u211d)+816*(T:\u211d)^2+1152*(T:\u211d)^3+256*(T:\u211d)^4 := by\n  norm_num [powerConstant, Finset.sum_range_succ] <;> ring\n\nexample (n : \u2115) (T : \u211d\u22650) (hT : 0 < T) (j : Fin (size n)) :\n    pairing 3 (by decide) T hT (core (cylinderOf n ((MvPolynomial.X j)^7*MvPolynomial.X j))) =\n      correction n 3 (by decide) T hT j ((MvPolynomial.X j)^7) :=\n  agreement_dual n 3 (by decide) T hT j _\n\nexample (T : \u211d\u22650) : channel 0 T 0 = 0 := channel_zero_above_order 0 T 0 (by decide)\n",
+  "Lean_test_code_sha256": "22CBD1280553D7F7C3D0195552B1D3F7357AA3C3284CD93ECC1C0DCA31505458",
+  "Lean_test_log_sha256": "25C02BAD1E067535427B9C5862810033CC9DC9473DCD1FF9B285E9976DF8F258",
+  "independent_Lean_tests": 10,
+  "rational_channel_test_code": "from fractions import Fraction as Q\nfrom math import factorial,comb\nfrom functools import lru_cache\n\ndef moment(p,n,a):\n return Q(0) if n%p else Q(factorial(n),factorial(n//p))*a**(n//p)\ndef falling(n,k):return 0 if n<k else factorial(n)//factorial(n-k)\n@lru_cache(None)\ndef bell(p,a,d,r):\n if r==0:return {0:Q(1)}\n out={}\n for k in range(min(p,r)):\n  c=p*a*d*comb(p-1,k)*falling(r-1,k)\n  for j,b in bell(p,a,d,r-1-k).items():\n   out[j+p-1-k]=out.get(j+p-1-k,Q(0))+c*b\n return {j:b for j,b in out.items() if b}\n@lru_cache(None)\ndef bound(p,T,r):\n return Q(1) if r==0 else p*T*sum(comb(p-1,k)*falling(r-1,k)*bound(p,T,r-1-k) for k in range(min(p,r)))\nchecks=0;bounds=0;channels=[]\nfor m in range(1,5):\n p=2*m\n for T in [Q(1),Q(1,2),Q(2),Q(5,7)]:\n  a=(-1)**(m+1)*T\n  for r in range(13):\n   for g in range(17):\n    ans=Q(0)\n    for k in range(min(p,r+1)):\n     j=p-1-k\n     if g<j:continue\n     ans+=p*a*comb(p-1,k)*falling(r,k)*falling(g,j)*moment(p,r-k+g-j,a)\n    assert ans==moment(p,r+1+g,a)\n    checks+=1\n  for r in range(1,21):\n   for scale in range(5):\n    d=Q(1,2**scale);R=bell(p,a,d,r);C=bound(p,T,r)\n    assert sum(abs(c) for c in R.values())<=C*d\n    if r>p:assert sum(abs(c) for c in R.values())<=C*d*d\n    if r<=p:\n     leading=p*a*falling(p-1,r-1)*d\n     j=p-r\n     assert R.get(j,Q(0))==leading\n     assert sum(abs(c) for i,c in R.items() if i!=j)<=C*d*d\n    assert sum(abs(c) for c in bell(p,a,Q(1),r).values())==C\n    bounds+=1\n  if T==1:\n   channels.append(dict(p=p,normalized_channel_coefficients=[str(p*a*falling(p-1,k)) for k in range(p)],drift=str((-1)**(m+1)*factorial(p)*T)))\nassert bell(4,Q(-1),Q(1),4)=={12:Q(256),8:Q(-1152),4:Q(816),0:Q(-24)}\nassert bound(4,Q(1),4)==2248\nprint(dict(passed=True,exact_signed_kernel_power_tests=checks,exact_Bell_mesh_bound_tests=bounds,channels=channels,scope='Exact independent algebra/moments for p=2,4,6,8; Lean proves all positive integer m. No completed-observable Clark-Ocone claim.'))\n",
+  "rational_channel_test_output": "{'passed': True, 'exact_signed_kernel_power_tests': 3536, 'exact_Bell_mesh_bound_tests': 1600, 'channels': [{'p': 2, 'normalized_channel_coefficients': ['2', '2'], 'drift': '2'}, {'p': 4, 'normalized_channel_coefficients': ['-4', '-12', '-24', '-24'], 'drift': '-24'}, {'p': 6, 'normalized_channel_coefficients': ['6', '30', '120', '360', '720', '720'], 'drift': '720'}, {'p': 8, 'normalized_channel_coefficients': ['-8', '-56', '-336', '-1680', '-6720', '-20160', '-40320', '-40320'], 'drift': '-40320'}], 'scope': 'Exact independent algebra/moments for p=2,4,6,8; Lean proves all positive integer m. No completed-observable Clark-Ocone claim.'}",
+  "exact_signed_kernel_power_tests": 3536,
+  "exact_Bell_mesh_bound_tests": 1600,
+  "explicit_Bell_polynomial_coefficients_are_independent_checks_not_new_Lean_polynomial_identity": true,
+  "new_source_sha256": {
+    "Foundation/HigherHeatIteratedLeibniz.lean": "8591A1397677A9B83851CFF61F4453BE9ABF33173C42A4B50C2411248F84E3CF",
+    "Foundation/HigherHeatMonomialJets.lean": "D89ACC69FDB562C6D3311DBF1E3220D9DFF86572249B50EAF90F327B20527F44",
+    "Foundation/HigherHeatAllProductChannels.lean": "D51CB40BE2100791DBF1D0615C58FC61595000F18A478FFD698930DAD442A5BE",
+    "Foundation/HigherHeatAllPowerSteps.lean": "7E07F7D28B07364A2B26D5F115DB46E379F2F268CFC46577443D94A865369B15",
+    "Foundation/HigherHeatAllPowerBounds.lean": "7FD492973ED3E923E4BC3243C7264F2E1327DF0F7F8CA2A982A99A34F088835B",
+    "Foundation/HigherHeatAllChannelNormalization.lean": "2F36C2685A364A90E28DFB11AF8F155631FDD2F3774907E38577292AA3952CCD",
+    "Foundation/HigherHeatAllChannelRemainder.lean": "51699114765200FBEB0890070302E150779AFEE7FD9DEC1F7C2863A087F83324",
+    "Foundation/HigherHeatAllChannelLimit.lean": "D09FB40F931E9E2B10887A0EA20A563DD4B372B453CB4DE829387A5BDC5483B5"
+  },
+  "source_integrity": {
+    "archive": 107,
+    "exact_recursive_paths": true,
+    "incoming": 43,
+    "incoming_distinct": 42,
+    "a4": 11,
+    "Clark_manuscript_hash_preserved": true
+  },
+  "private_backup_pending": true,
+  "hard_stop": "2026-10-31",
+  "goal": "ACTIVE"
+}

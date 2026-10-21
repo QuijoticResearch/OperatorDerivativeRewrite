@@ -27843,3 +27843,108 @@ argument and degree-uniform bounds, rather than treating each degree as full
 reconstruction. A4/integer/conditional-real/A2 stay FROZEN; FINAL remains
 ACTIVE. October31 HARD STOP, freeze/document/STOP then, NO new campaigns.
 Existing indefinite goal remains ACTIVE.
+
+
+## Checkpoint1281: every even-order signed channel identified with actual native power sums
+
+The finite-channel machinery is now GENERAL, for EVERY integer m>0, physical
+T>0 and p=2m. For 1<=q<=p, HigherHeatAllChannelLimit.power_sums_converge
+identifies actual adapted native q-th increment power sums with the bounded
+channel I_q(A) in COMPLETED ANALYTIC DUAL NORM, assuming an ACTUAL uniform
+coefficient dual bound M and ACTUAL native coefficient-field L1 convergence
+to A. These hypotheses are explicit, not silently assumed. Constant coefficients
+DISCHARGE both hypotheses for EVERY channel. The normalization is exactly
+  I_q=coefficient(m,T)*(p-1).descFactorial(q-1)*transpose(timeMeasure,p-q),
+where coefficient(m,T)=p*(-1)^(m+1)*T. The q=p channel is the genuine drift:
+constant p-th power sums converge to (-1)^(m+1)*p!*T*J_T(1), with no remaining
+bound/convergence premises beyond m>0,T>0. Thus p6 has drift+720T and p8
+has drift-40320T. First/second channels coincide with the older general ones;
+for p4 the third/fourth coincide exactly with the verified -24T channels.
+
+For EVERY q>p, HigherHeatAllChannelLimit.higher_sums_vanish proves actual
+adapted native q-th power sums tend to ZERO in completed-dual norm under an
+actual uniform coefficient bound. No L1 field-convergence premise is needed
+for this vanishing theorem. This supplies the rigorous high-order Taylor
+remainder mechanism beyond the prior cubic/quartic cases. It does not supply
+a completed-observable Clark-Ocone coefficient map or reconstruction by itself.
+
+HigherHeatIteratedLeibniz proves the full binomial product rule for EVERY
+iterate of the EXISTING polynomial directional derivative, reusing Mathlib's
+Finset.sum_choose_succ_nsmul (Data/Nat/Choose/Sum.lean), rather than hand
+expanding each degree/order. HigherHeatMonomialJets reuses Derivation.leibniz_pow
+(RingTheory/Derivation/Basic.lean:139) to prove D^k(F*A^r)=r.descFactorial(k)*
+F*A^(r-k) when DF=0 and DA=1. The exact vanishing for k>r is retained through
+the zero descending factorial, including r=0. No analytic assumptions or
+new formal polynomial derivative operator are substituted.
+
+HigherHeatAllProductChannels combines that product rule with ACTUAL finite
+signed heat-kernel coordinate Stein identities. For ANY native polynomial F,
+J(F delta)=sum_{k<p} B_k(step(D^k F)),
+B_k=coefficient(m,T)*choose(p-1,k)*transpose(timeMeasure,p-1-k).
+Refinement and every finer native probe then prove equality on the WHOLE
+completed analytic TEST DUAL. Auxiliary current-increment fields may anticipate;
+they are not claimed adapted. HigherHeatAllPowerSteps proves exact identities
+for EVERY positive native increment power and identifies every real polynomial
+cylinder probe with the literal finite signed kernel expectation. This is
+actual signed integration, not a finite complex-noise or expectation-only
+substitute. No positive isometry, positive variation or finite signed path
+measure is asserted.
+
+HigherHeatAllPowerBounds gives an explicit finite nonnegative recursion:
+C0=1; C(r+1)=p*T*sum_{k<p} choose(p-1,k)*r.descFactorial(k)*C(r-k).
+For a coefficient missing the current coordinate, all positive powers have
+dual norm <=Cq*d*||JF||; q>p improves to <=Cq*d²*||JF||, d=normalized mesh.
+HigherHeatAllChannelRemainder removes the normalized leading channel for
+q<=p and bounds the remaining anticipating correction by Cq*d²*||JF||.
+Summing uses size*d=1 and gives Cq*d*M->0. The constant Cq depends on degree;
+NO degree-uniform bound or completed-domain convergence is inferred from it.
+The stronger old sharp cubic/quartic bounds remain preserved. An independent
+Lean test recovers C(2,T,4)=24T+816T²+1152T³+256T⁴, agreeing with the earlier
+quartic normalization and the 19584=24*816 signed-variance connection.
+
+Ten independent Lean tests pass: p6/p8 normalized drift and actual constant
+native sum limits, p4 fifth/p6 seventh signed sums vanish, D^7(X^9)=181440X²,
+the exact quartic recursive constant, an unrestricted p6 current-coordinate
+coefficient X^7, and the zero-order operator boundary. Independent exact
+rational tests pass3536 signed kernel/step-moment identities for p2/4/6/8,
+13 coefficient powers,17 probe degrees and4 horizons, plus1600 Bell/mesh
+bound checks across20 powers and5 meshes. At T=1, p6 normalized coefficients
+are6,30,120,360,720,720; p8 are -8,-56,-336,-1680,-6720,-20160,-40320,-40320.
+The explicit Bell coefficient polynomials are INDEPENDENT checks, not new
+production Lean Bell-polynomial identities. Both test programs are preserved
+in STARDUST_ALL_CHANNEL_VERIFICATION.json. Scratch normalization required
+explicit Nat casts; a large reflected nsmul test hit a kernel timeout and was
+repaired with small explicit Nat identities, retaining the SAME ninth-power/
+seventh-derivative test and181440 coefficient. No resource limits increased.
+
+FULL root 6181 jobs TERMINAL0,24.447146s;
+COMPLETE transitive axiom audit 38253 safe Foundation declarations TERMINAL0,
+47.8879072s, only propext/Classical.choice/Quot.sound.
+ALL48 public types ACTUALLY read UNABRIDGED, pp.proofs true/noellipsis;
+ALL728 final source/proof/helper lines read,41 theorems7 definitions.
+Ten independent Lean tests TERMINAL0,27.4686965s;
+5136 exact checks PASS. All2012 mathematical hashes pinned BEFORE fresh full
+build; prior2004 unchanged except eight root imports, configuration/trust/
+toolchain/dependencies/resources unchanged. Exact107 recursive manuscript
+paths/hashes, Incoming43/42distinct,A4eleven, original Clark hash preserved.
+ResearchSources never edited/renamed/deleted/staged/committed. Unrelated12
+untracked drafts,tmp,caches and sync scanner preserved. Explicit checkpoint,
+exact receipt and actual PRIVATE main/research sync close this milestone;
+committed JSON honestly records pre-push pending state, ignored close record
+actual post-push success.
+
+The p-1 CHANNELS and drift/native-power LIMIT MACHINERY are general now;
+full p-1 RECONSTRUCTION is still OPEN. Remaining central obligations: canonical
+causal derivative coefficient fields for general polynomial/multitime observables,
+degree/domain-uniform operator bounds, genuine L1 realization on ALL completed
+observables and full Clark-Ocone identity. Full tensor source projection,
+chronological calculus and integrand injectivity remain open. The actual
+terminal cubic/quartic reconstructions remain proved at1279/1280. Do not
+conflate arbitrary completed PROBES with arbitrary completed OBSERVABLES or
+promote conditional native-field convergence to automatic convergence for all
+integrands. NEXT directly audit/reuse the bounded dyadic causal projections,
+paired-dual intertwining, cutoff derivatives and finite-grid reconstruction
+for canonical coefficient fields. Strong source-domain time continuity fails;
+Dual/L1 continuity may survive and needs proof. No unrelated campaign or new
+foundational space. FINAL ACTIVE, A4/integer/real/A2 FROZEN. October31 HARD
+STOP; freeze/document/STOP then. No further campaign. Existing goal ACTIVE.

@@ -1,5 +1,31 @@
 # Project Stardust: persistent campaign queue
 
+## Current1281: FINAL multichannel — general even-order signed channel limits verified
+
+Current1281: FINAL multichannel ACTIVE. For EVERY positive even heat order,
+all normalized native power channels and drift are identified in completed-dual
+norm under explicit uniform bound/L1 hypotheses; constant inputs discharge
+those hypotheses. Every higher power vanishes under the actual uniform bound.
+Full general/completed Clark-Ocone RECONSTRUCTION remains OPEN: canonical
+causal coefficient fields and uniform/domain convergence are still needed.
+Consult the authoritative top queue and STARDUST_MULTICHANNEL_CAMPAIGN.md.
+Preserve every verification/private gate and October31 hard stop; no later campaign.
+
+All m>0,p=2m,T>0: I_q=coefficient(m,T)*descFactorial(p-1,q-1)*transpose(p-q).
+For1<=q<=p, actual adapted q-power sums -> I_q(A) in completed-dual NORM,
+with explicit uniform actual coefficient bound M and native L1 convergence.
+Constant inputs discharge both; order-p drift=(-1)^(m+1)*p!*T J1.
+Allq>p sums ->0 under actual uniform M, no L1 convergence needed there.
+Explicit finite C(m,T,q) gives mesh rate; no degree-uniform bound inferred.
+Unrestricted native product/power identities hold on whole completed TEST
+DUAL. Full Clark-Ocone/general OBSERVABLE reconstruction remains OPEN.
+NEXT canonical causal derivative fields, polynomial/multitime reconstruction,
+L1 realization/domain-uniform bounds and completed extension. Reuse bounded
+dyadic projections/paired-dual intertwining/cutoff derivatives/finite grids.
+Full tensor source calculus/integrand injectivity OPEN. No new spaces or
+unrelated branches; A4/integer/real/A2 FROZEN. October31 HARDSTOP, STOP then.
+
+
 ## Current1280: FINAL multichannel — actual quartic Itô, drift and centered reconstruction
 
 Current1280: FINAL multichannel ACTIVE. Actual quartic signed Itô and centered

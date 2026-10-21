@@ -1902,3 +1902,11 @@ import Foundation.HigherHeatQuarticStepIdentity
 import Foundation.HigherHeatQuarticRemainder
 import Foundation.HigherHeatQuarticChannelLimit
 import Foundation.HigherHeatQuarticIto
+import Foundation.HigherHeatIteratedLeibniz
+import Foundation.HigherHeatMonomialJets
+import Foundation.HigherHeatAllProductChannels
+import Foundation.HigherHeatAllPowerSteps
+import Foundation.HigherHeatAllPowerBounds
+import Foundation.HigherHeatAllChannelNormalization
+import Foundation.HigherHeatAllChannelRemainder
+import Foundation.HigherHeatAllChannelLimit

@@ -1,5 +1,14 @@
 # Pseudoprocess calculus — audited campaign freeze
 
+Current1281: FINAL multichannel ACTIVE. For EVERY positive even heat order,
+all normalized native power channels and drift are identified in completed-dual
+norm under explicit uniform bound/L1 hypotheses; constant inputs discharge
+those hypotheses. Every higher power vanishes under the actual uniform bound.
+Full general/completed Clark-Ocone RECONSTRUCTION remains OPEN: canonical
+causal coefficient fields and uniform/domain convergence are still needed.
+Consult the authoritative top queue and STARDUST_MULTICHANNEL_CAMPAIGN.md.
+Preserve every verification/private gate and October31 hard stop; no later campaign.
+
 Current1280: FINAL multichannel ACTIVE. Actual quartic signed Itô and centered
 three-channel reconstruction are verified, with genuine cubic predictable L1
 field and FOURTH-power signed sums converging in completed-dual norm to -24T J1.
