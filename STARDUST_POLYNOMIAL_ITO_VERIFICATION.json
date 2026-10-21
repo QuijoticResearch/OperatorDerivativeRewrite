@@ -1,0 +1,89 @@
+{
+  "checkpoint": 1282,
+  "time_utc": "2026-10-21T20:37:36.909135+00:00",
+  "campaign": "FINAL multichannel pseudoprocess",
+  "previous_private_checkpoint": "5cfcd2bd6dc82fec12484c066317f55e43cb9158",
+  "source_count": 2019,
+  "prior_source_count": 2012,
+  "prior_sources_unchanged_except_root": true,
+  "root_only_seven_imports": true,
+  "configuration_unchanged": true,
+  "full_build_jobs": 6188,
+  "audit_declarations": 38391,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "terminal_results": {
+    "full-build": {
+      "exit_code": 0,
+      "seconds": 24.9209833
+    },
+    "audit": {
+      "exit_code": 0,
+      "seconds": 37.0562632
+    },
+    "independent": {
+      "exit_code": 0,
+      "seconds": 28.1500609
+    }
+  },
+  "public_types_actually_read_unabridged": 38,
+  "proof_arguments_visible": true,
+  "complete_final_source_lines_reviewed": 443,
+  "new_public_theorems": 28,
+  "new_definitions": 10,
+  "physical_order": "Every p=2m, integer m>0",
+  "positive_physical_horizon_required": true,
+  "normalized_time": "[0,1]",
+  "all_coordinate_power_curves": "Norm-Lipschitz curves in existing dual, exact native dyadic prefix agreement for all degrees",
+  "all_power_fields": "Actual strongly measurable L1 fields, native predictable error<=K(mesh), uniform native dual bounds and membership in existing closed adapted domain",
+  "lipschitz_constants": "Chosen from a proved finite existence theorem; no degree-uniform estimate claimed",
+  "actual_terminal_polynomial_Ito": "For EVERY real polynomial P, J(P(X_T)-P(0))=sum_{q=1}^p I_q(A_Pq)",
+  "polynomial_coefficient_field": "A_Pq=sum_{N in support P} c_N*choose(N,q)*powerField(N-q)",
+  "all_native_signed_sum_hypotheses_discharged": true,
+  "polynomial_field_native_finite_sum_L1_convergence_proved": true,
+  "reconstructed_observables": "Every univariate polynomial of the terminal coordinate; includes constant/zero degree with correct initial subtraction",
+  "topology": "Equality in entire completed analytic TEST dual; every actual native power sum converges in dual norm; coefficient fields converge in genuine L1",
+  "signed_kernel_identification": "Literal actual finite signed expectation against every real polynomial cylinder probe",
+  "all_time_nondyadic_finite_dimensional_law_identification_newly_proved": false,
+  "naive_centering_diagnostic": "p4,T1,P=X^8,G=X_T^4: Ito drift=-11450880, mean(P)*J1(G)=-483840, residue=-10967040",
+  "naive_centering_diagnostic_scope": "Independent exact signed moment/beta-integral calculation, not a new separate Lean component theorem; does not rule out full Clark-Ocone",
+  "canonical_backward_heat_or_causal_Clark_Ocone_fields_proved": false,
+  "general_multitime_polynomial_reconstruction_proved": false,
+  "arbitrary_completed_observable_reconstruction_proved": false,
+  "degree_uniform_completed_extension_proved": false,
+  "universal_completed_Clark_Ocone_proved": false,
+  "source_full_tensor_calculus_proved": false,
+  "positive_variation_or_finite_signed_path_measure_claimed": false,
+  "Lean_test_code": "import Foundation.HigherHeatTerminalPolynomialIto\n\nopen OperatorDerivativeRewrite.Foundation\nopen HigherHeatPolynomialCylinders HigherHeatAnalyticCylinderDomain HigherHeatCompletedPairing\nopen HigherHeatWeakTimeAdjoint HigherHeatPairedDualCausality HigherHeatAllChannelNormalization\nopen HigherHeatPolynomialCurveAgreement HigherHeatPolynomialDualCurve HigherHeatDyadicTimeDensity\nopen HigherHeatPolynomialPredictableField HigherHeatPolynomialIto HigherHeatTerminalPolynomialIto\nopen scoped NNReal Topology BigOperators\n\nnoncomputable def reconstructed (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (N : \u2115) : Dual :=\n  \u2211 q \u2208 Finset.range (2*m), N.choose (q+1) \u2022 channel m T q (powerField m hm T hT (N-(q+1)))\n\nexample (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (t : Interval) :\n    coordinateCurve m hm T hT 0 t = pairing m hm T hT (core (1:Cylinder)) := by\n  change powerFunction m T _ 0 t = _\n  rw [powerFunction]\n\nexample (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (N : \u2115) (hN : N \u2260 0) :\n    coordinateCurve m hm T hT N HigherHeatContinuousDualCoordinate.zeroTime = 0 := by\n  change coordinateCurve m hm T hT N (node 0 (prefixNode 0 0 (Nat.zero_le _))) = 0\n  rw [coordinate_curve_prefix, HigherHeatQuadraticItoData.prefix_zero,\n    zero_pow hN, map_zero, map_zero, map_zero]\n\nexample (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (N : \u2115) :\n    coordinateCurve m hm T hT N \u27e81,zero_le_one,le_rfl\u27e9 =\n      pairing m hm T hT (core (terminalCylinder^N)) := by\n  have ht : node 0 (prefixNode 0 (size 0) le_rfl) = \u27e81,zero_le_one,le_rfl\u27e9 := by\n    apply Subtype.ext\n    rw [HigherHeatQuadraticDualCurve.prefix_time]\n    norm_num [size,HigherHeatDyadicLaws.gridSize,HigherHeatDyadicLaws.duration]\n  rw [\u2190 ht, coordinate_curve_prefix, HigherHeatQuadraticItoData.prefix_end, map_pow]\n  rfl\n\nexample (T : \u211d\u22650) (hT : 0 < T) : reconstructed 3 (by decide) T hT 6 (core (1:Cylinder)) = 720*(T:\u211d) := by\n  unfold reconstructed\n  rw [\u2190 power_ito_channels]\n  simp only [zero_pow (by decide : (6:\u2115) \u2260 0), sub_zero]\n  rw [pairing_core_real, mul_one, terminal_moments]\n  have h := PseudoPolynomialStein.moment_multiple 6 (by decide) (T:\u211d) 1\n  norm_num at h \u22a2\n  nlinarith [h]\n\nexample (T : \u211d\u22650) (hT : 0 < T) : reconstructed 3 (by decide) T hT 12 (core (1:Cylinder)) = 239500800*(T:\u211d)^2 := by\n  unfold reconstructed\n  rw [\u2190 power_ito_channels]\n  simp only [zero_pow (by decide : (12:\u2115) \u2260 0), sub_zero]\n  rw [pairing_core_real, mul_one, terminal_moments]\n  have h := PseudoPolynomialStein.moment_multiple 6 (by decide) (T:\u211d) 2\n  norm_num at h \u22a2\n  nlinarith [h]\n\nexample (T : \u211d\u22650) (hT : 0 < T) : reconstructed 3 (by decide) T hT 5 (core terminalCylinder) = 720*(T:\u211d) := by\n  unfold reconstructed\n  rw [\u2190 power_ito_channels]\n  simp only [zero_pow (by decide : (5:\u2115) \u2260 0), sub_zero]\n  rw [pairing_core_real, \u2190 pow_succ, terminal_moments]\n  have h := PseudoPolynomialStein.moment_multiple 6 (by decide) (T:\u211d) 1\n  norm_num at h \u22a2\n  nlinarith [h]\n\nexample (T : \u211d\u22650) (hT : 0 < T) : reconstructed 4 (by decide) T hT 7 (core terminalCylinder) = -40320*(T:\u211d) := by\n  unfold reconstructed\n  rw [\u2190 power_ito_channels]\n  simp only [zero_pow (by decide : (7:\u2115) \u2260 0), sub_zero]\n  rw [pairing_core_real, \u2190 pow_succ, terminal_moments]\n  have h := PseudoPolynomialStein.moment_multiple 8 (by decide) (-(T:\u211d)) 1\n  norm_num at h \u22a2\n  nlinarith [h]\n\nexample (T : \u211d\u22650) (hT : 0 < T) : reconstructed 2 (by decide) T hT 8 (core (terminalCylinder^4)) = -79833600*(T:\u211d)^3 := by\n  unfold reconstructed\n  rw [\u2190 power_ito_channels]\n  simp only [zero_pow (by decide : (8:\u2115) \u2260 0), sub_zero]\n  rw [pairing_core_real, \u2190 pow_add, terminal_moments]\n  have h := PseudoPolynomialStein.moment_multiple 4 (by decide) (-(T:\u211d)) 3\n  norm_num [neg_pow] at h \u22a2\n  nlinarith [h]\n\nexample (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) : reconstructed m hm T hT 0 = 0 := by\n  unfold reconstructed\n  rw [\u2190 power_ito_channels]\n  simp only [pow_zero, sub_self, map_zero]\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    (\u2211 q \u2208 Finset.range (2*2), channel 2 T q\n      (polynomialField 2 (by decide) T hT ((Polynomial.X:Polynomial \u211d)^5+(3:\u211d) \u2022 Polynomial.X^2) q))\n        (core (terminalCylinder^3)) = 20160*(T:\u211d)^2 := by\n  rw [\u2190 polynomial_ito]\n  have he : Polynomial.aeval terminalCylinder ((Polynomial.X:Polynomial \u211d)^5+(3:\u211d) \u2022 Polynomial.X^2) -\n      Polynomial.aeval (0:Cylinder) ((Polynomial.X:Polynomial \u211d)^5+(3:\u211d) \u2022 Polynomial.X^2) =\n        terminalCylinder^5+(3:\u211d) \u2022 terminalCylinder^2 := by simp\n  rw [he]\n  simp only [map_add, map_smul, add_apply, smul_apply, smul_eq_mul]\n  rw [pairing_core_real, \u2190 pow_add, terminal_moments,\n    pairing_core_real, \u2190 pow_add, terminal_moments]\n  have h8 := PseudoPolynomialStein.moment_multiple 4 (by decide) (-(T:\u211d)) 2\n  have h5 := PseudoPolynomialStein.moment_off_order 4 (by decide) (-(T:\u211d)) 5 (by decide)\n  norm_num [neg_pow] at h8 h5 \u22a2\n  nlinarith [h8,h5]\n",
+  "Lean_test_code_sha256": "1A3D66C002971702B6186CB6ECAD639F47D51CF4958DBD52ED8D9B23C0854BE4",
+  "Lean_test_log_sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+  "independent_Lean_tests": 10,
+  "rational_channel_test_code": "from fractions import Fraction as Q\nfrom math import factorial,comb\n\ndef moment(p,n,a):return Q(0) if n%p else Q(factorial(n),factorial(n//p))*a**(n//p)\ndef falling(n,r):return 0 if n<r else factorial(n)//factorial(n-r)\ndef mixed(p,k,l,a,t):\n if l<0:return Q(0)\n return sum(comb(l,j)*moment(p,k+j,a*t)*moment(p,l-j,a*(1-t)) for j in range(l+1))\ndef integrated(p,k,l,a):\n if l<0:return Q(0)\n ans=Q(0)\n for j in range(l+1):\n  if (k+j)%p or (l-j)%p:continue\n  A=(k+j)//p;B=(l-j)//p\n  ans+=comb(l,j)*Q(factorial(k+j),factorial(A))*Q(factorial(l-j),factorial(B))*a**(A+B)*Q(factorial(A)*factorial(B),factorial(A+B+1))\n return ans\nito=0;prefix=0;examples=[]\nfor m in range(1,5):\n p=2*m\n for T in [Q(1),Q(1,2),Q(2),Q(5,7)]:\n  a=(-1)**(m+1)*T\n  for N in range(13):\n   for g in range(17):\n    channels=[]\n    for q in range(1,p+1):\n     channels.append(Q(0) if N<q or g<p-q else comb(N,q)*p*a*falling(p-1,q-1)*falling(g,p-q)*integrated(p,N-q,g-p+q,a))\n    assert sum(channels)==moment(p,N+g,a)-(moment(p,g,a) if N==0 else 0)\n    if T==1 and (p,N,g) in [(4,8,0),(4,8,4),(6,5,1),(6,6,0),(8,7,1)]:\n     examples.append(dict(p=p,N=N,probe=g,channels=[str(v) for v in channels],total=str(sum(channels))))\n    ito+=1\n  for t in [Q(0),Q(1,4),Q(1,2),Q(1)]:\n   for r in range(1,13):\n    for g in range(13):\n     rhs=Q(0)\n     for k in range(min(p,r)):\n      s=p-1-k\n      if g<s:continue\n      rhs+=t*p*a*comb(p-1,k)*falling(r-1,k)*falling(g,s)*mixed(p,r-1-k,g-s,a,t)\n     assert rhs==mixed(p,r,g,a,t)\n     prefix+=1\ndiagnostic_drift=comb(8,4)*4*Q(-1)*falling(3,3)*integrated(4,4,4,Q(-1))\ndiagnostic_mean_part=moment(4,8,Q(-1))*moment(4,4,Q(-1))\nassert diagnostic_drift==-11450880 and diagnostic_mean_part==-483840\nassert diagnostic_drift-diagnostic_mean_part==-10967040\nprint(dict(naive_centering_drift_residue=str(diagnostic_drift-diagnostic_mean_part),passed=True,exact_polynomial_Ito_tests=ito,exact_prefix_recursion_tests=prefix,examples=examples,scope='Independent exact signed moments and beta integrals; p=2,4,6,8. Lean proves every positive integer m and all terminal polynomials; no full Clark-Ocone claim.'))\n",
+  "rational_channel_test_output": "{'naive_centering_drift_residue': '-10967040', 'passed': True, 'exact_polynomial_Ito_tests': 3536, 'exact_prefix_recursion_tests': 9984, 'examples': [{'p': 4, 'N': 8, 'probe': 0, 'channels': ['0', '0', '0', '20160'], 'total': '20160'}, {'p': 4, 'N': 8, 'probe': 4, 'channels': ['-5160960', '-27095040', '-36126720', '-11450880'], 'total': '-79833600'}, {'p': 6, 'N': 5, 'probe': 1, 'channels': ['0', '0', '0', '0', '720', '0'], 'total': '720'}, {'p': 6, 'N': 6, 'probe': 0, 'channels': ['0', '0', '0', '0', '0', '720'], 'total': '720'}, {'p': 8, 'N': 7, 'probe': 1, 'channels': ['0', '0', '0', '0', '0', '0', '-40320', '0'], 'total': '-40320'}], 'scope': 'Independent exact signed moments and beta integrals; p=2,4,6,8. Lean proves every positive integer m and all terminal polynomials; no full Clark-Ocone claim.'}",
+  "exact_polynomial_Ito_tests": 3536,
+  "exact_prefix_recursion_tests": 9984,
+  "individual_channel_values_and_naive_centering_residue_are_independent_checks_not_separate_Lean_targets": true,
+  "new_source_sha256": {
+    "Foundation/HigherHeatPrefixPowerIdentity.lean": "313C990E8FF7E7DC275B7521557E16F71301C5BC991166CF711EF4D8DD6B134B",
+    "Foundation/HigherHeatPolynomialDualCurve.lean": "706733FF0F799FE692A60C0E51513144920CE945B80CDE86A6639DABBC550DD3",
+    "Foundation/HigherHeatPolynomialCurveAgreement.lean": "72F6251EE8654AC5FB3799FB0C11CE3B88E48E19F0FF03583880F1EBD74D61F5",
+    "Foundation/HigherHeatPolynomialPredictableField.lean": "176B30C82899BA763A6F22FB87C4F1F2B7150B1FD48DFB9D56A8FDBDE177F5C9",
+    "Foundation/HigherHeatPolynomialItoData.lean": "1B529E999DDE55F1F9F25E2D25962267BF8AB5F72F6AE2CD74E2CE6D2DB182EA",
+    "Foundation/HigherHeatPolynomialIto.lean": "B11CBEDDDB32116E3F8828412A14BFC692280D8B1FA41BC81EB607006503FA03",
+    "Foundation/HigherHeatTerminalPolynomialIto.lean": "8886EBCDD63D56BC93945B23C9F9467B5944736723E8241BD18DDD24E3733579"
+  },
+  "source_integrity": {
+    "archive": 107,
+    "exact_recursive_paths": true,
+    "incoming": 43,
+    "incoming_distinct": 42,
+    "a4": 11,
+    "Clark_manuscript_hash_preserved": true
+  },
+  "private_backup_pending": true,
+  "hard_stop": "2026-10-31",
+  "goal": "ACTIVE"
+}

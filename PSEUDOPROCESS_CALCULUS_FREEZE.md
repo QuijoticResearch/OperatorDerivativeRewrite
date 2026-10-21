@@ -1,5 +1,13 @@
 # Pseudoprocess calculus — audited campaign freeze
 
+Current1282: FINAL multichannel ACTIVE. Actual signed Itô formula now holds
+for EVERY real terminal polynomial and every positive even heat order, with
+all genuine predictable L1 fields/native sum limits proved. Ordinary Itô
+includes drift; it is NOT yet canonical p-1 Clark-Ocone. Backward-heat/causal
+cancellation, multitime and completed-observable reconstruction remain OPEN.
+Consult authoritative top queue and STARDUST_MULTICHANNEL_CAMPAIGN.md.
+Preserve every verification/private gate and October31 hard stop; no later campaign.
+
 Current1281: FINAL multichannel ACTIVE. For EVERY positive even heat order,
 all normalized native power channels and drift are identified in completed-dual
 norm under explicit uniform bound/L1 hypotheses; constant inputs discharge

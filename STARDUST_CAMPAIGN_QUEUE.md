@@ -1,5 +1,28 @@
 # Project Stardust: persistent campaign queue
 
+## Current1282: FINAL multichannel — all terminal-polynomial signed Itô formulas verified
+
+Current1282: FINAL multichannel ACTIVE. Actual signed Itô formula now holds
+for EVERY real terminal polynomial and every positive even heat order, with
+all genuine predictable L1 fields/native sum limits proved. Ordinary Itô
+includes drift; it is NOT yet canonical p-1 Clark-Ocone. Backward-heat/causal
+cancellation, multitime and completed-observable reconstruction remain OPEN.
+Consult authoritative top queue and STARDUST_MULTICHANNEL_CAMPAIGN.md.
+Preserve every verification/private gate and October31 hard stop; no later campaign.
+
+Allm>0,T>0,P in Real[X]: J(P(X_T)-P(0))=sum(q=1..2m) I_q(A_Pq), whole
+completed TEST DUAL. Actual native signed kernel probes, predictable L1 fields
+and every native limit hypothesis DISCHARGED. Generic dual curves/native
+agreement for all coordinate powers; real polynomial fields via finite sums.
+Degree0/initial0^0 handled. No degree-uniform completed-extension bound claimed.
+Ordinary Itô fields include top drift; independent exact X8/p4 diagnostic
+shows centering alone leaves drift residue. It does not rule out fullCO.
+NEXT canonical backward-heat/causal derivative fields and drift cancellation,
+then multitime/completed reconstruction with exact topology. Full tensor/
+integrand injectivity OPEN. No unrelated branches/new spaces. A4/integer/
+real/A2 FROZEN. October31 HARD STOP; document/freeze/STOP then, no campaign after.
+
+
 ## Current1281: FINAL multichannel — general even-order signed channel limits verified
 
 Current1281: FINAL multichannel ACTIVE. For EVERY positive even heat order,

@@ -27948,3 +27948,117 @@ for canonical coefficient fields. Strong source-domain time continuity fails;
 Dual/L1 continuity may survive and needs proof. No unrelated campaign or new
 foundational space. FINAL ACTIVE, A4/integer/real/A2 FROZEN. October31 HARD
 STOP; freeze/document/STOP then. No further campaign. Existing goal ACTIVE.
+
+
+## Checkpoint1282: actual signed Itô formula for EVERY terminal polynomial and even heat order
+
+For EVERY integer m>0, physical T>0 and EVERY real polynomial P,
+HigherHeatTerminalPolynomialIto.polynomial_ito proves
+  J_T(P(X_T)-P(0)) = sum(q=1..2m) I_q(A_Pq),
+as equality on the ENTIRE completed analytic TEST DUAL. The coefficient fields
+A_Pq are finite sums c_N*choose(N,q)*powerField(N-q), where c_N=P.coeff N.
+These are genuine strongly measurable L1 signed-dual fields in the EXISTING
+closed adapted space. ALL native predictable approximations, actual uniform
+bounds and signed-power-sum convergence hypotheses are DISCHARGED. The final
+universal theorem requires only m>0,T>0 and a real polynomial P; it does not
+assume a coefficient convergence theorem as a premise. Its actual_signed_identity
+identifies EVERY real polynomial cylinder probe with the literal finite signed
+heat-kernel expectation of (P(X_T)-P(0))*G. This is an actual signed stochastic
+identity, beyond an expectation-level generator formula or finite complex noise.
+The field topology is genuine L1; stochastic sums and final equality are in
+the completed analytic DUAL NORM. No positive isometry/variation/path measure.
+
+HigherHeatPrefixPowerIdentity reuses the ALL-order derivative jets, signed
+product identity and exact prefix-field partition. For EVERY degree r and
+native dyadic prefix, J(X_t^(r+1)) equals the finite sum of
+r.descFactorial(k)*productChannel(k)(B_t J(X_t^(r-k))). These auxiliary B_t
+coefficients may anticipate; they are NOT declared adapted. The recursion
+constructs HigherHeatPolynomialDualCurve.powerFunction in the EXISTING dual,
+with arbitrary initial dual a and no new completion. Its Lipschitz regularity
+is PROVED for every finite degree using the old prefix L1 estimate, bounded
+channels, finite sums and scalar multiplication. A finite NNReal Lipschitz
+constant is chosen from that proved existence theorem; it is not an assumption
+or a degree-uniform bound. The actual a=J1 coordinateCurve agrees EXACTLY
+with every native dyadic-prefix power, including degree0 and both endpoints.
+No new nondyadic finite-dimensional kernel law is claimed from that extension.
+
+HigherHeatPolynomialPredictableField proves native past^r adaptedness, strong
+measurability/true L1 membership, uniform native coefficient dual bounds,
+error<=K(m,T,r)*mesh and actual L1 convergence, then closed adapted membership.
+The preceding linear/quadratic/cubic constructions are preserved and their
+machinery reused. The new generic theorem handles ALL degrees and all m>0;
+it does not silently replace dual regularity with the historically false
+strong coefficient-domain causal continuity.
+
+HigherHeatPolynomialItoData proves the generic finite binomial increment
+identity and exact native telescope for ALL N, retaining the initial 0^N
+term. In particular 0^0=1 is handled correctly: constant observables subtract
+their true initial value. HigherHeatPolynomialIto.native_power_sums_tendsto
+discharges1281's bounds/L1 premises for every past monomial, using actual
+predictable fields. Higher powers vanish when q>2m. Finite sums of those
+limits give power_ito and power_ito_channels, exactly2m channels (extra degree
+terms vanish through channel-zero/choose-zero identities). Finally finite
+real coefficient linearity gives the theorem for ANY polynomial via actual
+Polynomial.aeval. polynomial_field_mem and polynomial_fields_tendsto verify
+both adapted-domain membership and native L1 finite-sum approximations of
+its fields. No related polynomial derivative/canonical causal projection
+identity is silently assumed: these ordinary Itô fields have explicit
+binomial coefficients, and backward/causal Clark-Ocone fields remain to prove.
+
+A precise diagnostic guards that boundary. For biharmonic p4,T=1,P=X^8 and
+probe G=X_T^4, independent EXACT signed moments/beta integrals give the top
+Itô drift channel -11450880, while E[P]*J1(G)=20160*(-24)=-483840.
+The centered drift residue is -10967040, NONZERO. Thus simply centering the
+ordinary Itô formula cannot generally remove its highest channel while
+retaining the same ordinary fields. This is an independent exact calculation,
+NOT a newly proved separate Lean component theorem. It does NOT obstruct a
+proper full p-1 Clark-Ocone reconstruction with corrected backward-heat/causal
+fields, and does NOT extend the old one/two-channel obstruction to impossibility
+of full reconstruction. The special centered cubic/quartic results remain true.
+
+Ten independent Lean tests PASS: degree0 curves equalJ1, positive-degree
+zero-time value0, terminal endpoint agreement ALL N; p6 E[X6]=720T and
+E[X12]=239500800T²; p6 reconstructed X5 tested on X_T gives720T; p8 X7 tested
+on X_T gives-40320T; p4 X8 tested on X_T4 gives-79833600T³; initial degree0
+identity and a mixed polynomial X5+3X² tested on X_T3 gives20160T².
+Independent exact tests pass3536 full Itô time-integral identities for
+p2/4/6/8,13 degrees17 probes4 horizons;9984 prefix-recursion tests across
+12 positive degrees,13 probes,4 cut times and4 horizons. AtT1,p4N8G4 weighted
+channels are -5160960,-27095040,-36126720,-11450880, total -79833600.
+Atp6N5G1 only channel5 contributes720; atp8N7G1 only channel7 contributes
+-40320. Individual channel values and the centered residue are independent
+checks, not separate new Lean targets. Both complete test programs are
+preserved in STARDUST_POLYNOMIAL_ITO_VERIFICATION.json.
+
+FULL root 6188 jobs TERMINAL0,24.9209833s;
+COMPLETE transitive axiom audit 38391 safe Foundation declarations TERMINAL0,
+37.0562632s, only propext/Classical.choice/Quot.sound.
+ALL38 public types ACTUALLY READ UNABRIDGED with pp.proofs true/noellipsis;
+ALL443 final source/proof/helper lines read,28 theorems10 definitions.
+Ten independent Lean tests TERMINAL0,28.1500609s;
+13520 exact checks PASS, plus the explicit centering diagnostic. A scratch
+zeroTime identifier was qualified to avoid Lean auto-implicit generalization,
+and Polynomial ℝ annotations resolved an ambiguous scratch eval coefficient
+ring. A production base-case rewrite used map_one(cylinderOf n), avoiding an
+invalid One instance on the analytic Domain. No mathematics/resource/trust/
+version/check was weakened or changed to force success. All2019 mathematical
+hashes pinned BEFORE fresh full root build; prior2012 unchanged except seven
+root imports, exact paths/configuration preserved. Exact107 recursive archive
+paths/hashes,Incoming43/42distinct,A4eleven, original Clark manuscript hash
+preserved. ResearchSources never edited/renamed/deleted/staged/committed.
+Unrelated12 drafts,tmp,caches/dependencies/sync scanner preserved. Explicit
+checkpoint/receipt/PRIVATE exact main/research synchronization close this
+milestone; committed JSON records honest pre-push pending state, ignored
+close record actual post-push success.
+
+Full Clark-Ocone is still OPEN: canonical backward-heat/causal derivative
+fields and cancellation for terminal polynomials, multitime weighted-past
+polynomial fields, bounds compatible with ALL completed observables, completed
+reconstruction, full source tensor causality/chronological calculus and
+integrand injectivity. NEXT seek the actual backward-heat or finite signed
+Doob martingale identity, using these proved fields and all-channel limits;
+the top drift must cancel rigorously. For terminal P, backward heat
+u(s,x)=exp((-1)^(m+1)*T*(1-s)*D^(2m))P(x) is a candidate, not yet a proved
+canonical coefficient theorem here. No unrelated campaign or new space.
+FINAL ACTIVE; A4/integer/conditional-real/A2 FROZEN. October31 HARD STOP;
+freeze/document/STOP then, NO new campaigns. Existing indefinite goal ACTIVE.
