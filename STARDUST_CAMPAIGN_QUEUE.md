@@ -1,5 +1,22 @@
 # Project Stardust: persistent campaign queue
 
+## Current1246: independent A2 reuse and source audit ACTIVE
+
+Stopping492d5034b5b100ebfd83a601c1d606a6128964d8 is EXACTLY PRIVATE verified on
+main/research; integer/conditional-real-order work is FROZEN with explicit gaps.
+Independent A2 is now authorized. First audit recovered the EXISTING whole-plane
+zero-time Xi bridge (argument1/2+I*z/2,factor1/8);1245's claim that this bridge was
+missing is corrected in its report. External nonzero-time convention remains to check.
+Current1246 develops an actual conditional7/8-to-abs(Imz)<=3/4 transfer, with the
+external riemannZeta theorem explicitly a hypothesis. No RH/quasi-RH proof claimed.
+OpenAI/math is pinned1581d4cbdd69a0faf34b2089614fe2a814316a6a; actual solution entry
+and comparator are distinct. Full upstream proof/dependency/axiom audit and follow-up
+review remain OPEN. Continue A2 theorem reuse/kernel hypotheses, normalization,
+primary-source techniques/dependencies and concrete transfers; see A2_CAMPAIGN_AUDIT.md.
+Do not mistake initial source inspection for independent verification. Final
+multichannel remains AFTER A2; October31 hard stop; existing goal ACTIVE.
+This current entry supersedes historical active/gated labels below.
+
 ## Current1245 stopping decision: integer/real-order campaign freeze gated on private backup
 
 The theorem-level audit is A2K_REAL_ORDER_STOPPING_AUDIT.md, mathematical baseline41b8ca1.

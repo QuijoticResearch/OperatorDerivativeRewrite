@@ -1,6 +1,14 @@
 # Integer and conditional real-order stopping audit
 
 October 21, 2026. Mathematical baseline: `41b8ca123a3571756a5cc3dce9f74b66b93352eb`.
+Correction from the first independent A(2) reuse audit: the existing
+`RiemannXiBridge.flow_zero_complex` already identifies the actual zero-time
+flow with `entireXi(1/2+I*z/2)/8` throughout the complex plane.
+`RiemannXiNormalization.entireXi_eq_completed` identifies its completed-zeta
+formula away from s=0,1. Earlier wording listing the zero-time identification
+as missing was an audit omission, not a missing proof. The external nonzero-time
+de Bruijn-Newman parameter convention still requires a separate comparison.
+
 This is a stopping audit of the focused integer/real-order investigation, not a
 claim that every higher-order zero problem has been solved. The existing goal
 remains active. The independent A(2) investigation opens only after this report's
@@ -28,11 +36,11 @@ the multiplier exponent is 2a. The cubic endpoint a=3/2 is not A(6).
 
 `RiemannRealOrderLimit.locally_uniform_quadratic_limit_from_above` has target
 `RiemannEvenFlow.flow 1 t` at the SAME fixed time t. Nonzero time is a quadratic
-deformation, not undeformed Xi. The present audit does not supply a Lean theorem
-identifying an externally normalized completed zeta function, its argument
-scaling, or its multiplicative constant with this repository object. Those
-identifications must be checked explicitly before any externally normalized
-classical claim. No RH result is asserted.
+deformation, not undeformed Xi. The existing `RiemannXiBridge.flow_zero_complex`
+supplies the exact zero-time identification with the entire completed-zeta
+function at argument1/2+I*z/2 and multiplicative factor1/8. Nonzero-time
+normalization against an external de Bruijn-Newman convention remains to be
+checked. No RH result is asserted.
 
 ## Requirement-to-theorem audit
 
@@ -97,8 +105,9 @@ explicit open problems:
 4. Unconditional reality and simplicity of all zeros of the same-time quadratic
    limit in any claimed parameter regime; eventual absence of nonreal zeros on
    every fixed compact near1 without retaining the required hypotheses.
-5. An explicit formal identification with the externally normalized classical
-   Xi/de Bruijn-Newman convention before drawing conclusions in that convention.
+5. Explicit comparison with an external nonzero-time de Bruijn-Newman convention
+   before transferring time thresholds. The zero-time Xi identification already
+   exists, as corrected above; it is not an open mathematical obligation.
 
 No novelty claim is made. The source/reuse audits and manuscript inventories in
 `A2K_INTEGER_CAMPAIGN.md`, `PROJECT_STARDUST_REPORT.md` and the frozen A(4) audit

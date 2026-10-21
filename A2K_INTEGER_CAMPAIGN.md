@@ -1895,3 +1895,36 @@ All107 archived,43 Incoming/42distinct,11 fully read A4 manuscripts and exact
 recursive A4 paths are preserved. No mathematical sources/configuration changed.
 The stopping/private transition gate remains pending until exact receipt and
 PRIVATE main/research commit verification. Existing goal ACTIVE.
+
+
+## Checkpoint1246: A2 actual Xi reuse and conditional zero-free transfer
+
+Independent A2 opened only AFTER stopping492d5034b5b100ebfd83a601c1d606a6128964d8
+was exactly PRIVATE verified on main/research. Existing goal remains ACTIVE.
+The initial reuse audit found an omission in1245: RiemannXiNormalization and
+RiemannXiBridge ALREADY prove the actual whole-plane zero-time completed-Xi
+identity, argument1/2+I*z/2 and factor1/8. Both full sources reread. The stopping
+report is corrected; zero-time normalization is NOT an open proof obligation.
+External nonzero-time deBruijn-Newman parameter comparison remains separate.
+
+New RiemannQuadraticXiTransfer directly reuses those proofs and flow_zero_time,
+flow_nat,flow_quartic. It identifies every actual real-order transform at time0
+with normalizedXi, proves exact coordinate formulas, completed-zeta zero
+equivalence awayfroms0,1, and a conditional actual zeta-half-plane transfer.
+Pole coordinates are handled by existing imaginary-axis nonvanishing. Under
+EXPLICIT7/8 actual riemannZeta nonvanishing, every actual zero at time0 has
+abs(Im z)<=3/4 (a>=0). No upstream theorem is imported/axiomatized; no quasi-RH
+or RH proof is claimed. Actual9 publictheorems+1definition,106lines.
+
+The public OpenAI/math source was pinned to1581d4cbdd69a0faf34b2089614fe2a814316a6a;
+nine files saved/hashed outside ResearchSources. Paper TeX SHA256
+42a5ee0febca59fd1def55cfd6c6808c322ef4237d7726303ea52f711deac6a3.
+Abstract/introduction/main theorem/initial proof overview and formalization
+scope/comparator config/actual solution entrypoint/direct assembly inspected.
+The comparator challenge contains a sorry TEMPLATE; solution is separate
+OAI.NumberTheory.DirichletL.Nonvanishing and has actual proof terms. Matching
+Lean4v4.34.1/Mathlibd13f23b found. No upstream build/full transitive axiom audit
+or complete16,677-line proof/follow-up review has yet been performed here.
+See A2_CAMPAIGN_AUDIT.md for exact immutable sources, theorem names, hypotheses,
+current coverage and next focused obligations. Finalmultichannel stays queued;
+no integer/real campaign reopening or new branch. October31 hard stop.
