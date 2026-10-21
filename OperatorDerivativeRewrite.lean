@@ -1883,3 +1883,5 @@ import Foundation.RiemannQuadraticArithmeticHeat
 import Foundation.RiemannEvenRealityClosed
 import Foundation.NewmanFourPointBound
 import Foundation.RiemannQuadraticDensitySmoothing
+import Foundation.RiemannQuadraticDensityHeat
+import Foundation.RiemannQuadraticFiniteThreshold

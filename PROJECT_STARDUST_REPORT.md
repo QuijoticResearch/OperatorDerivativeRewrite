@@ -27331,3 +27331,117 @@ Exact receipt and PRIVATE main/research verification close this checkpoint.
 A2 ACTIVE: finish the ACTUAL Gaussian/heat link and test the finite-lower-bound
 route. No stopping or premature finalmultichannel transition. Integer/real frozen;
 October31 hard stop and all source/verification/private backup gates preserved.
+
+
+## Checkpoint1275: ACTUAL finite attained quadratic Xi threshold, with the lower-bound proof CLOSED
+
+The central1273/1274 obligation is now CLOSED. For the ACTUAL
+H_t=RiemannEvenFlow.flow 1 t in the verified Xi normalization, the real number
+  Lambda=RiemannQuadraticFiniteThreshold.threshold=sInf(realTimes 1)
+is a FINITE, ATTAINED threshold. For EVERY REAL t:
+  (forall z:Complex,H_t(z)=0 -> Im(z)=0) iff Lambda<=t;
+  (exists z:Complex,H_t(z)=0 and Im(z)!=0) iff t<Lambda.
+These printed types have NO assumed BddBelow, RH, zero strip, external zeta
+theorem or classification premise. Lambda<=1/2 is proved unconditionally in
+production. An ACTUAL nonreal zero exists at some time, and also at a NEGATIVE
+time (for example the symbolic time Lambda-1). No numerical location for that
+zero or numerical lower bound for Lambda is computed. This formalizes the
+CLASSICAL finite de Bruijn-Newman threshold property, not a novelty, new numerical
+record, exact Lambda value, RH proof or A4-to-A2 threshold implication.
+
+Foundation/RiemannQuadraticDensityHeat.lean closes the actual Gaussian/heat link.
+For a Gaussian with mean x and strictly positive variance v, s=1/(2v),
+N=1/sqrt(2*pi*v), it proves as an ACTUAL complex equality:
+  complex(E_gaussian(x,v)[rho]) = complex(2*N*exp(-s*x²))*H_(-s)(i*2s*x).
+rho(u)=kernel(abs u) is the actual positive bounded continuous theta density.
+GaussianPDF*rho is proved L1 first. Reflection, a full-real half-line partition,
+the measure-preserving negation substitution, and the actual completed square
+produce the exact factor2. The real cosh integrand is independently L1 for ALL
+real t,y by the verified complex cosine integrability. The flow integral is
+literal H, not an assumed expectation or formal kernel. The native Gaussian
+normalizer is kept exact; no external paper's coordinate convention is assumed.
+
+For the1274 smoothing, variance=2epsilon², epsilon!=0, this gives the precise
+clock t=-1/(4epsilon²) and imaginary argument i*x/(2epsilon²). Positivity of
+the ACTUAL smoothing and coefficient proves the needed flow norm nonzero,
+so the real-log identity is justified without an assumed log domain. Negative
+epsilon is allowed. The nonzero variance/epsilon premise is ESSENTIAL: at v0
+the probability law is Dirac while its ordinary GaussianPDF is zero. The
+independent counterexample verifies that their rho integrals differ.
+
+Assume for CONTRADICTION that H_t has only real zeros for every real t.
+The1274 verified actual-flow four-point inequality, through the new log identity,
+then applies to log(smoothing(epsilon,sqrt(y))) for epsilon!=0,y>=1.
+Choose epsilon_n=1/(n+1). The genuine fixed-probability-space dominated limit
+of1274 and positivity of rho give convergence of each of the FIVE logarithmic
+values to log(rho(sqrt(y))). No uniform polynomial degree, diagonal polynomial
+selection, infinite factorial-jet vector, new measure-classification theorem,
+or limit of density derivatives is required.
+
+Foundation/RiemannQuadraticFiniteThreshold.lean proves that the ACTUAL density
+must VIOLATE this four-point inequality somewhere. If it held for all y>=1,
+the four anchor values would give a quadratic polynomial lower bound in y=x².
+The sum of the absolute coefficients bounds it below by -T*x^4 for some finite T.
+Exponentiation, using actual kernel positivity, gives
+  exp(T*x^4)*kernel(x)>=1 for x>=1.
+The EXISTING RiemannEvenRealSaddle.weighted_tendsto_zero 2 T proves that SAME
+actual quantity tends to0. This contradiction uses the common density's verified
+weighted decay, not a relation between quartic and quadratic zero thresholds.
+Thus the all-real-for-ALL-times alternative is impossible. Classical logic now
+gives an ACTUAL nonreal zero. The1273 equivalence supplies BddBelow; its CLOSED,
+nonempty, upward all-real set therefore equals the attained Ici Lambda.
+
+The earlier source-inspired candidate route is now fully connected without
+importing Newman's classification as an axiom. STARDUST_A2_NEWMAN_SOURCE_AUDIT.json
+records the new actual proof and Gaussian normalizer/clock scope; its selective
+external-paper review and unverified external-coordinate transfer remain explicit.
+The original source manuscripts and external PDFs are unchanged.
+
+The production threshold_le_seven_eighths keeps the exact arithmetic premise
+forallw,7/8<Re(w)->riemannZeta(w)!=0, and yields Lambda<=9/32. A NEW ISOLATED
+integration ACTUALLY supplies the prior independently replayed pinned
+OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re. Both the exact Lambda<=9/32
+target and existence of a finite attained threshold <=9/32 with the ACTUAL
+all-real iff criterion pass transitive standard3 axiom audits and unabridged
+type/full proof review. All2924OAI/30effective/30raw supports and isolated config
+were freshly hash-rechecked. STARDUST_A2_FINITE_THRESHOLD_UPSTREAM_INTEGRATION.json
+contains complete adapter code/output/pins/hashes. Only child-process LEAN_PATH
+adds old OAI artifacts; production dependencies/toolchain/trust remain unchanged.
+This known9/32 consequence is not claimed as a stronger numerical record.
+
+Precise OPEN boundaries: the value and sign of Lambda, threshold>=0 or <=0,
+and actual zero-time reality are NOT established here. zero_time_reality_iff
+states EXACTLY H0 all-real iff Lambda<=0; neither side is proved. No RH progress
+is claimed. There is no global bound on the approaching nonreal zeros before
+Lambda, no proof of a collision/multiple zero at Lambda, and no endpoint
+simplicity assertion. The true nonreal zeros before Lambda could evade any
+particular compactness argument; this checkpoint does not resolve that behavior.
+The bounded factorial-domain obstruction1249 remains intact. Stronger Xi-specific
+arithmetic estimates and broad human review of the external paper remain open.
+
+Verification: target4706jobs TERMINAL0,37.3874129s;
+fresh FULL6156jobs TERMINAL0,24.5914319s;
+COMPLETE37815-declaration transitive root/Foundation audit TERMINAL0,
+36.900095s, ONLY propext/Classical.choice/Quot.sound. ALL24
+public types ACTUALLY READ UNABRIDGED pp.proofs true/no ellipses; ALL282 final
+source/proof/helper lines read (151+131). Twenty-three theorems,1definition;
+no explicit private production helpers/global instances. TWELVE independent
+examples TERMINAL0,26.8547331s: centered/offset v1/2
+exact Gaussian clocks/normalizers; zero-variance Dirac/PDF counterexample;
+negativeepsilon/epsilon1 exact log clocks; actual threshold endpoint; a nonreal
+zero at a time<=-1/2; classical half time; exact zero-time criterion; conditional
+7/8 threshold bound; every strictly earlier threshold-epsilon has nonreal zero;
+strict y>1 actual-density four-point failure. Test repairs concern notation,
+variance coercions and scalar normalization, not weakened expected conclusions.
+Isolated two-target integration TERMINAL0,56.6504491s.
+All1987 source hashes pinned; prior1985 unchanged except root; configs/versions/
+resource/cache/full checks unchanged. Exact107recursive archivepaths/hashes,
+43Incoming42distinct,11A4 preserved; unrelated12drafts/tmp untouched. No manuscript
+edited/renamed/deleted/committed. Exact receipt/private backup close the milestone.
+
+NEXT: perform the A2 CAMPAIGN STOPPING AUDIT against the saved objectives, exact
+proved domains, actual external-integration scope and the remaining arithmetic/
+endpoint obligations above. A2 remains ACTIVE until an explicit audited stopping
+checkpoint is committed and exactly PRIVATE verified. Only then may the queued
+final multichannel campaign start. Integer/real campaigns remain frozen; no
+unrelated branch or premature pivot. October31 hard stop and full gates preserved.

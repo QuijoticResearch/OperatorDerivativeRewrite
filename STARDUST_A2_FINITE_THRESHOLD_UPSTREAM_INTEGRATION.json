@@ -1,0 +1,57 @@
+{
+  "checkpoint": 1275,
+  "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "scope": "Isolated exact finite-threshold integration; production remains independent of OAI",
+  "code": "import Foundation.RiemannQuadraticFiniteThreshold\nimport OAI.NumberTheory.DirichletL.Nonvanishing\nimport Lean\n\nopen OperatorDerivativeRewrite.Foundation\nopen RiemannQuadraticFiniteThreshold\n\ntheorem stardust_upstream_finite_threshold_bound : threshold \u2264 (9/32 : \u211d) :=\n  threshold_le_seven_eighths (fun _ hs => OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re hs)\n\ntheorem stardust_upstream_attained_threshold : \u2203 A : \u211d, A \u2264 9/32 \u2227\n    \u2200 t : \u211d, (\u2200 z : \u2102, RiemannEvenFlow.flow 1 t z = 0 \u2192 z.im = 0) \u2194 A \u2264 t :=\n  \u27e8threshold,stardust_upstream_finite_threshold_bound,real_zeros_iff\u27e9\n\nopen Lean Elab Command in\nrun_cmd do\n  for name in [``stardust_upstream_finite_threshold_bound, ``stardust_upstream_attained_threshold] do\n    let axioms \u2190 Lean.collectAxioms name\n    for ax in axioms do\n      unless ax == ``propext || ax == ``Classical.choice || ax == ``Quot.sound do\n        throwError \"Forbidden integrated transitive axiom {ax} in {name}\"\n    logInfo m!\"INTEGRATED ACTUAL THRESHOLD AUDIT PASSED: {name}; {axioms}\"\n\nset_option pp.universes true\nset_option pp.fullNames true\nset_option pp.proofs true\n#check @stardust_upstream_finite_threshold_bound\n#check @stardust_upstream_attained_threshold\n",
+  "code_sha256": "BDAD44BB83B57AD6A40AEF06B73EB62D812CE556F03A28CE79AC5128EA137CD7",
+  "output_unabridged": "INTEGRATED ACTUAL THRESHOLD AUDIT PASSED: stardust_upstream_finite_threshold_bound; [propext,\n Classical.choice,\n Quot.sound]\nINTEGRATED ACTUAL THRESHOLD AUDIT PASSED: stardust_upstream_attained_threshold; [propext, Classical.choice, Quot.sound]\nstardust_upstream_finite_threshold_bound : LE.le.{0}\n  OperatorDerivativeRewrite.Foundation.RiemannQuadraticFiniteThreshold.threshold (9 / 32)\nstardust_upstream_attained_threshold : \u2203 A,\n  LE.le.{0} A (9 / 32) \u2227\n    \u2200 (t : \u211d),\n      (\u2200 (z : \u2102), Eq.{1} (OperatorDerivativeRewrite.Foundation.RiemannEvenFlow.flow 1 t z) 0 \u2192 Eq.{1} z.im 0) \u2194\n        LE.le.{0} A t\n",
+  "log_sha256": "C090DA49122BC1C04AF236516F28351F8B370A15A919E60571A8AA41B3B860A9",
+  "terminal_result": {
+    "exit_code": 0,
+    "seconds": 56.6504491,
+    "ended": "2026-10-21T13:41:31.5445157-04:00"
+  },
+  "actual_stardust_modules": {
+    "Foundation/RiemannQuadraticDensityHeat.lean": "EF9D38DECBF3656100A057E421E90016644B5089C63422CC49BDA6801F81E375",
+    "Foundation/RiemannQuadraticFiniteThreshold.lean": "2DE7B191DA83906E017FAF5D9F9594134DC0EA85E12B09A0604351CF72FE3685"
+  },
+  "complete_production_build": {
+    "seconds": 24.5914319,
+    "ended": "2026-10-21T13:31:01.4873763-04:00",
+    "exit_code": 0
+  },
+  "complete_root_audit": {
+    "seconds": 36.900095,
+    "exit_code": 0,
+    "ended": "2026-10-21T13:32:42.7077397-04:00"
+  },
+  "audit_declarations": 37815,
+  "source_count": 1987,
+  "public_types_actually_read_unabridged": 24,
+  "exact_integrated_targets": [
+    "stardust_upstream_finite_threshold_bound",
+    "stardust_upstream_attained_threshold"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "integrated_types_and_proofs_actually_read_unabridged": true,
+  "upstream_source_rechecks": {
+    "oai": 2924,
+    "effective_support": 30,
+    "raw_support": 30,
+    "isolated_config_unchanged": true
+  },
+  "earlier_independent_target_verification": "STARDUST_A2_UPSTREAM_VERIFICATION.json",
+  "earlier_heat_link": "STARDUST_A2_HEAT_UPSTREAM_INTEGRATION.json",
+  "conclusion": "Actual finite attained real threshold <=9/32; actual H_t all zeros real iff threshold<=t, all real t",
+  "not_claimed": [
+    "RH",
+    "Exact threshold",
+    "New numerical record",
+    "Production OAI import",
+    "Full human classification/paper audit"
+  ]
+}

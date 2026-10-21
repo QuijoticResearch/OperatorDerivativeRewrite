@@ -1,6 +1,24 @@
 # Project Stardust: persistent campaign queue
 
 
+## Current1275: ACTUAL finite attained classical quadratic threshold verified
+
+Lambda=sInf(ACTUAL all-real times) is FINITE/ATTAINED. For EVERY realt, H_t
+ALLreal iff Lambda<=t, and an ACTUAL nonreal zero exists iff t<Lambda.
+NO BddBelow/RH/classification premise remains. Production Lambda<=1/2;
+isolated standard3-audited actual OAI integration gives Lambda<=9/32. Production
+stronger arithmetic bound keeps its explicit hypothesis. Known classical facts,
+not a new record/exact Lambda/RH proof. Exact Gaussian/heat identity, nonzero
+variance, five positive logarithmic limits and actual-density tail contradiction
+CLOSE the1273/1274 lower-bound gap. A negative-time nonreal zero exists.
+OPEN: Lambda value/sign, zero-time reality/RH, stronger arithmetic, endpoint
+collision/simplicity or control of approaching nonreal zero locations.
+NEXT A2: stopping audit against saved objectives and these exact domains/scopes;
+commit and exactly PRIVATE verify an EXPLICIT A2 stopping checkpoint BEFORE
+queued final multichannel begins. A2 ACTIVE until then. Integer/real FROZEN;
+October31/full-build/axiom/type/source/private gates unchanged. No pivot yet.
+
+
 ## Current1274: actual-flow four-point bound and genuine Gaussian smoothing verified
 
 Under EXPLICIT all-real zeros of actual H_(m,t), Q(v)=A-Bv+log norm H_(m,t)(iC√v)
