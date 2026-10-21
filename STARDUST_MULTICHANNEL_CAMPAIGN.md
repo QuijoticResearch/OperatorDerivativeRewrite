@@ -1,5 +1,102 @@
 # Final higher-heat multichannel campaign
 
+
+## Checkpoint1280: genuine quartic signed Itô identity and centered three-channel reconstruction
+
+For the actual biharmonic p=4/m=2 signed heat calculus and EVERY physical T>0,
+HigherHeatQuarticIto.quartic_ito proves
+  J_T(X_T^4)=4 I1(A3)+6 I2(A2)+4 I3(A1)-24T J_T(1).
+This is equality in the ENTIRE completed analytic TEST DUAL. A3 is the new
+actual predictable cubic-coordinate L1 field, A2 the verified quadratic field,
+and A1 the verified coordinate field. Every native approximation, uniform
+bound and all FOUR native signed-sum limits needed for these inputs are
+PROVED; the final theorem has NO additional boundedness/convergence premise.
+HigherHeatQuarticIto.centered_quartic removes the signed mean -24T and gives
+three-channel reconstruction of the centered terminal quartic. Its
+actual_signed_identity identifies the formula with literal finite signed
+heat-kernel expectations against EVERY real polynomial cylinder probe.
+Arbitrary completed PROBES do not mean arbitrary completed OBSERVABLES.
+This is a further actual signed stochastic identity, not only the expectation
+heat-generator formula. No finite signed path measure or positive isometry
+is introduced; all earlier obstructions preserve their scopes.
+
+The reusable new step theorem HigherHeatFourthChannelSteps.agreement_dual
+removes the old D^3F=0 restriction: for EVERY native polynomial coefficient F,
+J(F delta)=I1(BF)+I2(BDF)+(1/2)I3(BD²F)+(1/6)I4(BD³F), where
+I4=-24T transpose(timeMeasure,0). The full third-order product Leibniz rule,
+actual signed coordinate Stein identity, exact refinement and dense native
+probes prove equality on the whole completed test dual, including finer grids.
+Auxiliary correction fields may anticipate the current increment; they are
+not declared adapted. For F missing the current coordinate, the exact fourth
+increment identity is I1(F delta³)+3 I2(F delta²)+3 I3(F delta)+I4(F).
+
+HigherHeatQuarticRemainder proves genuine norm bounds, and
+HigherHeatQuarticChannelLimit proves the summed anticipating remainder is
+at most (816T²d+1152T³d²+256T⁴d³)M, hence tends to zero, with actual uniform
+coefficient bound M and actual native L1 convergence explicitly required.
+For constant coefficients those hypotheses are discharged and the fourth
+power signed sums converge in completed-dual norm to -24T J1. The old
+signed-second-moment theorem alone did NOT prove this topology: signed
+pairings are not positive and Cauchy-Schwarz cannot be used. The leading
+coefficient satisfies 24*816=19584, exactly matching the old signed quartic
+variance normalization. This is a consistency connection; the new norm proof
+is direct and independent of that signed-variance argument. The candidate
+Bell expansion of E[delta^4 G] with coefficients -24,816,-1152,256 was checked
+independently by exact rational moments, not separately formalized as a Lean
+target here. Do not promote the test to a general verified theorem.
+
+HigherHeatPrefixCubeIdentity sums the existing completed quadratic-coefficient
+identity and exact prefix-field partition. Its auxiliary anticipating formula
+has coefficients 1,2,1 (different from the adapted terminal-cubic 3,3,1).
+HigherHeatCubicDualCurve constructs the norm-Lipschitz all-time dual extension
+with EXACT native dyadic-prefix-cube agreement. HigherHeatCubicPredictableField
+proves strong measurability, true L1 membership, uniform native coefficient
+bounds and L1 error<=K_T*d, then membership in the EXISTING closed adapted
+space. No new completion is introduced. This does not assert stronger source-
+domain causal continuity or a new nondyadic finite-dimensional kernel law.
+The quartic polynomial telescope then passes to all four actual norm limits.
+
+Independent tests: E[X_T^4]=-24T, E[X_T^8]=20160T²,
+E[X_T^12]=-79833600T³; centered quartic tested on X_T^4 is19584T².
+Cubic-curve endpoints, native fourth-sum drift convergence, and an unrestricted
+current-coordinate degree-four coefficient are checked in Lean. At T=1,
+probe X_T^4 gives weighted channels4608,10368,4608 and drift576, total20160;
+probe X_T^8 gives -38707200,-32901120,-7741440 and drift -483840,
+total -79833600. Individual channel values are independent exact checks,
+not separate Lean targets. Eight Lean tests TERMINAL0,
+30.2660768s; 88 exact quartic time-integral tests plus
+88 exact fourth-step moment-expansion tests PASS. Both complete test programs
+are preserved in STARDUST_BIHARMONIC_QUARTIC_VERIFICATION.json.
+
+FULL root 6173 jobs TERMINAL0, 25.3864214s; COMPLETE
+transitive axiom audit 38126 safe Foundation declarations TERMINAL0,
+34.7514435s, only propext/Classical.choice/Quot.sound.
+ALL57 public types actually read UNABRIDGED with pp.proofs true/noellipsis;
+ALL820 final source/proof/helper lines read,45 theorems12 definitions. One
+rewrite elaboration hit the normal heartbeat bound; a direct pointwise scalar
+proof repaired it WITHOUT raising resource limits or changing the theorem.
+An implicit norm_nsmul_le argument and convergence-expression parentheses were
+corrected; no disabled checks, weakened statements or altered trust settings.
+All2004 mathematical source hashes pinned BEFORE the fresh full root build;
+prior1996 source bytes unchanged except eight root imports, exact path sets
+and configuration hashes checked. All107 recursive manuscript paths/hashes,
+Incoming43/42distinct,A4eleven and original Clark hash preserved. ResearchSources
+never modified/renamed/deleted/staged/committed. Unrelated12 drafts/tmp and all
+caches/dependencies/sync scanner preserved. Exact-commit receipt and PRIVATE
+main/research synchronization close this checkpoint; the committed evidence
+records its honest pre-push pending state, the ignored close record actual
+post-push success.
+
+Full Clark-Ocone remains OPEN: general polynomial/multitime observables,
+higher even p-1 channels, canonical causal derivative coefficient maps into
+L1 dual fields for ALL completed observables, and completed-domain convergence.
+Full source tensor causal/chronological calculus and integrand injectivity
+remain open. NEXT seek a reusable general polynomial/finite-Leibniz/Bell
+argument and degree-uniform bounds, rather than treating each degree as full
+reconstruction. A4/integer/conditional-real/A2 stay FROZEN; FINAL remains
+ACTIVE. October31 HARD STOP, freeze/document/STOP then, NO new campaigns.
+Existing indefinite goal remains ACTIVE.
+
 Current1279 closes the terminal-cubic reconstruction and quadratic predictable
 field obligations. The ACTUAL biharmonic centered terminal cube has a genuine
 three-channel signed identity on the completed test dual, with every native-sum

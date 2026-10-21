@@ -1,5 +1,13 @@
 # Pseudoprocess calculus — audited campaign freeze
 
+Current1280: FINAL multichannel ACTIVE. Actual quartic signed Itô and centered
+three-channel reconstruction are verified, with genuine cubic predictable L1
+field and FOURTH-power signed sums converging in completed-dual norm to -24T J1.
+Unrestricted polynomial signed step identity now includes fourth drift.
+General polynomial/multitime, higher p-1 and full completed Clark-Ocone remain
+OPEN. See STARDUST_MULTICHANNEL_CAMPAIGN.md and authoritative top queue.
+All verification/private gates and October31 hard stop remain; no later campaign.
+
 Current1279: centered TERMINAL CUBIC now has the actual three-channel signed
 reconstruction on the completed test dual, with genuine quadratic predictable
 field and ALL native-sum limits proved. General observables/higher p-1/full

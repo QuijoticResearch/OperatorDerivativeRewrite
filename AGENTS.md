@@ -20,6 +20,14 @@ an improvement is measured. See the document for evidence, limits and rollback.
 
 # Persistent research priorities
 
+Current1280: FINAL multichannel ACTIVE. Actual quartic signed Itô and centered
+three-channel reconstruction are verified, with genuine cubic predictable L1
+field and FOURTH-power signed sums converging in completed-dual norm to -24T J1.
+Unrestricted polynomial signed step identity now includes fourth drift.
+General polynomial/multitime, higher p-1 and full completed Clark-Ocone remain
+OPEN. See STARDUST_MULTICHANNEL_CAMPAIGN.md and authoritative top queue.
+All verification/private gates and October31 hard stop remain; no later campaign.
+
 Current1279: FINAL multichannel ACTIVE. The actual centered terminal cubic now
 has a THREE-channel signed reconstruction in the completed test dual, with
 quadratic predictable field/native L1 approximation and all signed-sum limits

@@ -1,0 +1,88 @@
+{
+  "checkpoint": 1280,
+  "time_utc": "2026-10-21T19:46:19.154927+00:00",
+  "campaign": "FINAL multichannel pseudoprocess",
+  "previous_private_checkpoint": "a44a23c8a6a48e2db4cf1339593d8767e8ba5119",
+  "source_count": 2004,
+  "prior_source_count": 1996,
+  "prior_sources_unchanged_except_root": true,
+  "root_only_eight_imports": true,
+  "configuration_unchanged": true,
+  "full_build_jobs": 6173,
+  "audit_declarations": 38126,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "terminal_results": {
+    "full-build": {
+      "exit_code": 0,
+      "seconds": 25.3864214
+    },
+    "audit": {
+      "exit_code": 0,
+      "seconds": 34.7514435
+    },
+    "independent": {
+      "seconds": 30.2660768,
+      "exit_code": 0
+    }
+  },
+  "public_types_actually_read_unabridged": 57,
+  "proof_arguments_visible": true,
+  "complete_final_source_lines_reviewed": 820,
+  "new_public_theorems": 45,
+  "new_definitions": 12,
+  "physical_order": 4,
+  "positive_physical_horizon_required": true,
+  "normalized_time": "[0,1]",
+  "cubic_curve": "Norm-Lipschitz dual curve with exact native dyadic cubed-prefix agreement",
+  "native_cubic_predictable_L1_approximation_proved": true,
+  "cubic_field_in_closed_adapted_domain": true,
+  "unrestricted_polynomial_step_identity": "J(F delta)=I1(BF)+I2(BDF)+(1/2)I3(BD2F)+(1/6)I4(BD3F), no coefficient-degree restriction",
+  "fourth_channel": "I4=-24T transpose(timeMeasure,0)",
+  "quartic_signed_sums_dual_norm_convergence": true,
+  "quartic_remainder_bound": "(816*T^2*d+1152*T^3*d^2+256*T^4*d^3)*M; d=normalized mesh",
+  "reconstruction": "J(X_T^4)=4 I1(A3)+6 I2(A2)+4 I3(A1)-24T J1",
+  "centered_quartic_three_channel_reconstruction": true,
+  "topology": "Equality in entire completed analytic test dual; actual predictable native fields converge in L1; all four signed sums converge in dual norm",
+  "final_quartic_theorem_has_only_T_positive_premise": true,
+  "actual_signed_kernel_identification_for_every_polynomial_cylinder_probe": true,
+  "arbitrary_completed_observable_reconstruction_proved": false,
+  "canonical_causal_coefficient_maps_for_all_observables_proved": false,
+  "universal_completed_Clark_Ocone_proved": false,
+  "general_p_minus_one_channels_proved": false,
+  "source_full_tensor_calculus_proved": false,
+  "signed_variance_not_used_as_positive_norm": true,
+  "coefficient_connection": "24*816=19584 matches earlier signed quartic variance, independently checked; no Cauchy-Schwarz transfer",
+  "Lean_test_code": "import Foundation.HigherHeatQuarticIto\nimport Foundation.HigherHeatQuadraticItoBoundary\n\nopen OperatorDerivativeRewrite.Foundation\nopen HigherHeatPolynomialCylinders HigherHeatAnalyticCylinderDomain\nopen HigherHeatWeakTimeAdjoint HigherHeatSecondChannelSteps HigherHeatThirdChannelSteps\nopen HigherHeatCompletedPairing HigherHeatPairedDualCausality HigherHeatFirstChannelRange\nopen HigherHeatQuadraticItoFields HigherHeatQuadraticPredictableField HigherHeatQuadraticDualCurve\nopen HigherHeatQuarticIto HigherHeatDyadicTimeDensity HigherHeatContinuousDualCoordinate\nopen HigherHeatCubicDualCurve HigherHeatCubicPredictableField HigherHeatFourthChannelSteps\nopen scoped NNReal\n\nnoncomputable def reconstructed (T : \u211d\u22650) (hT : 0 < T) : Dual :=\n  (4:\u2115) \u2022 HigherHeatAdaptedIntegralClosure.integral 2 (by norm_num) T hT (cubicInput T hT) +\n  (6:\u2115) \u2022 secondChannel 2 T (quadraticField T hT) +\n  (4:\u2115) \u2022 thirdChannel T (curveField 2 (by norm_num) T hT) +\n  (-24*(T:\u211d)) \u2022 pairing 2 (by norm_num) T hT (core (1:Cylinder))\n\nexample (T : \u211d\u22650) (hT : 0 < T) : cubicCurve T hT zeroTime = 0 := by\n  change cubicCurve T hT (node 0 (prefixNode 0 0 (Nat.zero_le _))) = 0\n  rw [cubic_curve_prefix, HigherHeatQuadraticItoData.prefix_zero,\n    zero_pow (by decide : (3:\u2115) \u2260 0), map_zero, map_zero, map_zero]\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    cubicCurve T hT \u27e81,zero_le_one,le_rfl\u27e9 =\n      pairing 2 (by norm_num) T hT (core (terminalCylinder^3)) := by\n  have ht : node 0 (prefixNode 0 (size 0) le_rfl) = \u27e81,zero_le_one,le_rfl\u27e9 := by\n    apply Subtype.ext\n    rw [HigherHeatQuadraticDualCurve.prefix_time]\n    norm_num [size,HigherHeatDyadicLaws.gridSize,HigherHeatDyadicLaws.duration]\n  rw [\u2190 ht, cubic_curve_prefix, HigherHeatQuadraticItoData.prefix_end, map_pow]\n  rfl\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    reconstructed T hT (core (1:Cylinder)) = -24*(T:\u211d) := by\n  unfold reconstructed\n  rw [\u2190 quartic_ito T hT, pairing_core_real, mul_one, terminal_moments]\n  have hm := PseudoPolynomialStein.moment_multiple 4 (by norm_num) (-(T:\u211d)) 1\n  norm_num at hm \u22a2\n  nlinarith [hm]\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    reconstructed T hT (core (terminalCylinder^4)) = 20160*(T:\u211d)^2 := by\n  unfold reconstructed\n  rw [\u2190 quartic_ito T hT, pairing_core_real, \u2190 pow_add, terminal_moments]\n  have hm := PseudoPolynomialStein.moment_multiple 4 (by norm_num) (-(T:\u211d)) 2\n  norm_num [neg_pow] at hm \u22a2\n  nlinarith [hm]\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    reconstructed T hT (core (terminalCylinder^8)) = -79833600*(T:\u211d)^3 := by\n  unfold reconstructed\n  rw [\u2190 quartic_ito T hT, pairing_core_real, \u2190 pow_add, terminal_moments]\n  have hm := PseudoPolynomialStein.moment_multiple 4 (by norm_num) (-(T:\u211d)) 3\n  norm_num [neg_pow] at hm \u22a2\n  nlinarith [hm]\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    Filter.Tendsto (fun n => pairing 2 (by norm_num) T hT\n      (core (cylinderOf n (HigherHeatQuarticChannelLimit.quarticPolynomial n (fun _ => 1)))))\n      Filter.atTop (nhds ((-24*(T:\u211d)) \u2022 pairing 2 (by norm_num) T hT (core (1:Cylinder)))) := by\n  rw [\u2190 fourth_constant T hT]\n  exact HigherHeatQuarticChannelLimit.constant_quartic_sums_converge T hT\n\nexample (n : \u2115) (T : \u211d\u22650) (hT : 0 < T) (j : Fin (size n)) :\n    pairing 2 (by norm_num) T hT (core (cylinderOf n ((MvPolynomial.X j)^4 * MvPolynomial.X j))) =\n      HigherHeatFourthChannelSteps.correction n T hT j ((MvPolynomial.X j)^4) :=\n  HigherHeatFourthChannelSteps.agreement_dual n T hT j _\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    (pairing 2 (by norm_num) T hT (core (terminalCylinder^4)) +\n      (24*(T:\u211d)) \u2022 pairing 2 (by norm_num) T hT (core (1:Cylinder)))\n        (core (terminalCylinder^4)) = 19584*(T:\u211d)^2 := by\n  simp only [add_apply, smul_apply, smul_eq_mul]\n  rw [pairing_core_real, \u2190 pow_add, terminal_moments,\n    pairing_core_real, one_mul, terminal_moments]\n  have h4 := PseudoPolynomialStein.moment_multiple 4 (by norm_num) (-(T:\u211d)) 1\n  have h8 := PseudoPolynomialStein.moment_multiple 4 (by norm_num) (-(T:\u211d)) 2\n  norm_num [neg_pow] at h4 h8 \u22a2\n  nlinarith [h4,h8]\n",
+  "Lean_test_code_sha256": "C1C2AC4EC8B2D611B148EB0CE870AE1A60FF9E263FAAB643E281604C32024727",
+  "Lean_test_log_sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+  "independent_Lean_tests": 8,
+  "rational_channel_test_code": "from fractions import Fraction as Q\nfrom math import factorial,comb\ndef moment(n,T):\n return Q(0) if n%4 else Q(factorial(n),factorial(n//4))*(-T)**(n//4)\ndef falling(n,r):return Q(0) if n<r else Q(factorial(n),factorial(n-r))\ndef integrated_mixed(k,l,T):\n if l<0:return Q(0)\n ans=Q(0)\n for a in range(l+1):\n  if (k+a)%4 or (l-a)%4:continue\n  A=(k+a)//4;B=(l-a)//4\n  ans+=comb(l,a)*Q(factorial(k+a),factorial(A))*Q(factorial(l-a),factorial(B))*(-T)**(A+B)*Q(factorial(A)*factorial(B),factorial(A+B+1))\n return ans\nchecks=0;step_checks=0;examples=[]\nfor T in [Q(1),Q(1,2),Q(2),Q(5,7)]:\n for g in range(22):\n  first=4*(-4*T)*falling(g,3)*integrated_mixed(3,g-3,T)\n  second=6*(-12*T)*falling(g,2)*integrated_mixed(2,g-2,T)\n  third=4*(-24*T)*falling(g,1)*integrated_mixed(1,g-1,T)\n  drift=-24*T*moment(g,T)\n  assert first+second+third+drift==moment(g+4,T)\n  if T==1 and g in [0,4,8,12]:examples.append(dict(probe_degree=g,three_weighted_channels=[str(first),str(second),str(third)],drift=str(drift),actual_terminal_moment=str(moment(g+4,T))))\n  checks+=1\n  terms=[-24*T*moment(g,T)]\n  for r,c in [(4,816*T*T),(8,-1152*T**3),(12,256*T**4)]:\n   terms.append(Q(0) if g<r else c*falling(g,r)*moment(g-r,T))\n  assert sum(terms)==moment(g+4,T)\n  step_checks+=1\n assert moment(8,T)-moment(4,T)**2==19584*T*T\n assert 24*816==19584\nprint(dict(exact_four_channel_tests=checks,exact_fourth_step_expansion_tests=step_checks,passed=True,examples=examples,scope='Independent exact signed moments and time integrals; dual-norm results separately proved in Lean'))\n",
+  "rational_channel_test_output": "{'exact_four_channel_tests': 88, 'exact_fourth_step_expansion_tests': 88, 'passed': True, 'examples': [{'probe_degree': 0, 'three_weighted_channels': ['0', '0', '0'], 'drift': '-24', 'actual_terminal_moment': '-24'}, {'probe_degree': 4, 'three_weighted_channels': ['4608', '10368', '4608'], 'drift': '576', 'actual_terminal_moment': '20160'}, {'probe_degree': 8, 'three_weighted_channels': ['-38707200', '-32901120', '-7741440'], 'drift': '-483840', 'actual_terminal_moment': '-79833600'}, {'probe_degree': 12, 'three_weighted_channels': ['536481792000', '287400960000', '45984153600'], 'drift': '1916006400', 'actual_terminal_moment': '871782912000'}], 'scope': 'Independent exact signed moments and time integrals; dual-norm results separately proved in Lean'}",
+  "rational_tests": 176,
+  "exact_step_Bell_expansion_and_individual_channel_values_are_independent_checks_not_separate_Lean_targets": true,
+  "new_source_sha256": {
+    "Foundation/HigherHeatPrefixCubeIdentity.lean": "170C210DCD2021F2BEE65B7A3FEB1D4C4CEE208EDD4ABC86A894D74B2EF4565B",
+    "Foundation/HigherHeatCubicDualCurve.lean": "9ECE661AA1C1B242B1C813D96884D03F6A02916295E9A48C338817EE672F149F",
+    "Foundation/HigherHeatCubicPredictableField.lean": "93D72008BCC0BC33733B40E50A69B93AA6E8A3260353954CFC4AA7C80CA84F41",
+    "Foundation/HigherHeatFourthChannelSteps.lean": "51C2DE15BC13DAC17BC774645A5BED3DC8D75F7130C36DCC8722CB3FDF5AAE3A",
+    "Foundation/HigherHeatQuarticStepIdentity.lean": "ECE90CE1D35F2D9DD336931119753C762D65940DCEA2DE8CEB5E2B007EBC35DB",
+    "Foundation/HigherHeatQuarticRemainder.lean": "AF074B305ADC1EC1F1211F03C1E07BBC3F2F71C37EBDCC77040DEE2567A1A75F",
+    "Foundation/HigherHeatQuarticChannelLimit.lean": "B8706B65820BF83D450F56DB0904BD68DAF32C97B5B9F4708D2005C8EA3C62BF",
+    "Foundation/HigherHeatQuarticIto.lean": "6475E62F67410DBA41582D35FF3FB745622113D37FB7398A88D70CB6B7552946"
+  },
+  "source_integrity": {
+    "archive": 107,
+    "exact_recursive_paths": true,
+    "incoming": 43,
+    "incoming_distinct": 42,
+    "a4": 11,
+    "Clark_manuscript_hash_preserved": true
+  },
+  "private_backup_pending": true,
+  "hard_stop": "2026-10-31",
+  "goal": "ACTIVE"
+}

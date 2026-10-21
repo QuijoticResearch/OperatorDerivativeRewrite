@@ -1,5 +1,29 @@
 # Project Stardust: persistent campaign queue
 
+## Current1280: FINAL multichannel — actual quartic Itô, drift and centered reconstruction
+
+Current1280: FINAL multichannel ACTIVE. Actual quartic signed Itô and centered
+three-channel reconstruction are verified, with genuine cubic predictable L1
+field and FOURTH-power signed sums converging in completed-dual norm to -24T J1.
+Unrestricted polynomial signed step identity now includes fourth drift.
+General polynomial/multitime, higher p-1 and full completed Clark-Ocone remain
+OPEN. See STARDUST_MULTICHANNEL_CAMPAIGN.md and authoritative top queue.
+All verification/private gates and October31 hard stop remain; no later campaign.
+
+J(X_T^4)=4I1(A3)+6I2(A2)+4I3(A1)-24T J1, every T>0, whole completed test dual.
+All predictable fields and native signed sum limits proved. A3 genuine cubic
+L1 field, norm-Lipschitz native dual curve. General native polynomial signed
+step formula now has no D3F restriction, with fourth drift channel.
+Fourth-power remainder <=(816T²d+1152T³d²+256T⁴d³)M->0; for constant inputs
+all hypotheses discharged. Signed variance alone was not a norm proof.
+NEXT general polynomial/multitime, higher-order p-1 and canonical causal
+coefficient fields/completed reconstruction with exact convergence topology;
+full tensor/integrand injectivity OPEN. Do not promote fixed quartic result
+to universal Clark-Ocone or independent exact Bell checks to Lean theorems.
+No unrelated branches/new foundational spaces. A4/integer/real/A2 FROZEN.
+Existing indefinite goal ACTIVE. October31 hard stop, NO campaign afterward.
+
+
 ## Current1279: FINAL multichannel — centered cubic THREE-channel reconstruction verified
 
 ACTUAL p4/m2,T>0: J(X_T³)=3I1(A2)+3I2(A1)+I3(A0), equality on WHOLEcompleted
