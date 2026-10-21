@@ -1851,3 +1851,108 @@ actual Xi remains excluded from that bounded factorial domain1249. Avoid new
 Banach/CLT infrastructure if finite nilpotence and this binomial theorem suffice.
 A2 ACTIVE; integer/real FROZEN; final multichannel ONLY AFTER A2 stopping;
 October31 hard stop. No campaign transition or RH implication.
+
+
+## Checkpoint1268: polynomial-specific Euler limit in the existing jet norm
+
+Foundation/NilpotentVectorEuler.lean proves a finite-vector Euler theorem using
+existing Mathlib binomial asymptotics and Banach exponential. Let E be a complete
+real normed space, A_n bounded operators with A_n->B in OPERATOR NORM, v a FIXED
+vector, and D a FIXED natural such that (A_n)^D(v)=0 for EVERY n. Then
+  (Id+A_n/(n+1))^(n+1)(v) -> exp(B)(v)
+in the norm of E. Global operator nilpotence is NOT assumed. Neither mutual
+commutation of A_n for different n, positivity, a new probability law, nor a
+new function-space completion is required. D=0 is admitted and forces v=0.
+
+The proof expands each finite power by the existing commuting binomial theorem
+(only Id and A_n must commute), proves every power j>=D kills v, and truncates
+the sum to the FIXED range D once n is large enough. The old
+ProbabilityTheory.tendsto_choose_mul_pow_atTop gives
+choose(n+1,j)/(n+1)^j -> 1/j!. Continuity of fixed powers and operator evaluation
+therefore permits a FINITE sum limit. The limit B also kills v at power D,
+proved by continuity and uniqueness of limits, not added as an assumption.
+The genuine existing exponential series, mapped by continuous evaluation at v,
+then reduces to that same finite sum. The preliminary finite-sum theorem needs
+no completeness; completeness is used only for the exponential statements.
+
+Foundation/PolynomialDerivativeEuler.lean instantiates this on EXISTING
+FactorialAnalyticDomain.H and its already verified bounded derivative shift D.
+For fixed natural N, real s, and natural n, its explicit bounded correction is
+  A_(N,s,n)=sum_(j=0..N)
+    [(-1)^(j+1)*(2s)^(j+1)/(2j+2)!]*(n+1)^(-j)*D^(2j+2).
+No new derivative, transport, norm or foundational space is constructed.
+The low-order term is EXACTLY -s*D^2; every other fixed term tends to zero,
+so A_(N,s,n)->-s*D^2 in operator norm. The zero-scalar identity in this concrete
+operator representation is proved coordinatewise when generic instance
+rewriting does not match; no axiom, semantic or typeclass setting is changed.
+Scratch elaboration failures were resolved before adoption.
+
+A coordinate support theorem proves that if u(k)=0 for k>=M, then
+(A_(N,s,n)^r u)(k)=0 whenever M<=k+2r. Thus for EVERY FINITE real polynomial P,
+the common power natDegree(P)+1 kills polynomial(P) for ALL n. The generic
+Euler theorem now proves, for EVERY fixed N, real s and finite P,
+  (Id+A_(N,s,n)/(n+1))^(n+1) polynomial(P)
+    -> polynomial(transport 2 (-s) P)
+in ACTUAL FACTORIAL-JET NORM. The final identity directly reuses
+FactorialAnalyticHeat.evolution_polynomial. Negative s and s=0 are included in
+this algebraic norm-limit statement. No zero-strip assertion for negative time
+is inferred. N=0 is allowed: it gives the ordinary finite-vector Euler scheme.
+For N>=1 the first fourth-derivative coefficient in A is s^2/(6(n+1)); its
+contribution in the one-step Euler operator is s^2/(6(n+1)^2), the expected
+finite cosine coefficient at h^2=2s/(n+1). That coefficient agreement alone
+is NOT treated as proof of the full shift identity.
+
+EXACT REMAINING CENTRAL OBLIGATIONS: identify the correctly truncated finite
+operator step with the ACTUAL symmetric polynomial shift S_h of1267, for each
+finite P and an adequate fixed cutoff; prove the identity survives iteration
+using a common degree bound; upgrade the resulting finite-polynomial jet-norm
+limit to LOCALLY UNIFORM convergence on WHOLE C. The present norm theorem
+alone is not stated as the scaledShift limit. In particular it does not yet
+transfer1267's finite-shift zero control to actual heat. Checked Hurwitz
+hypotheses must then give finite heat-strip control and the1266 actual Xi
+transfer. These are still OPEN. Actual Xi remains EXCLUDED from the bounded
+factorial domain by1249; only finite polynomial vectors are used here.
+
+TEN independent Lean controls (nine examples and one explicit private coefficient
+regression) pass: choose coefficient j=2 tends to1/2; the D=0 exponential case;
+EVERY global power of shift is NONZERO, witnessed using X^D; nevertheless the
+constant-polynomial vector meets the common annihilation premise with D=1;
+N=0 correction is exactly -s*D^2 for arbitrary s,n; s=0 correction vanishes
+for arbitrary N,n; the N=1,s=1/2,n=0 correction on z^4+2z^2+1 has origin value
+-1; its full one-step Euler value is0; all individual jet coordinates converge
+to those of the existing transported polynomial; and negative-time s=-1,N=4
+on X^7 has the verified opposite transport clock. These explicitly test vector-
+specific nilpotence, clock signs, zero boundaries and the first higher channel.
+Initial regression coercion/coefficient simplification failures were corrected
+without changing any production assumption or theorem. All use actual operators.
+
+Verification: targeted3921 jobs TERMINAL0,22.7633922s;
+fresh FULL6145 jobs TERMINAL0,25.9254745s;
+COMPLETE37680-declaration transitive root/Foundation axiom audit TERMINAL0,
+35.0485721s, only propext/Classical.choice/Quot.sound.
+ALL13 public types ACTUALLY READ UNABRIDGED, pp.proofs true, no ellipses;
+COMPLETE189 final source/proof lines read:12 theorems,1 definition; no explicit
+private production helper or new global instance. Ten controls TERMINAL0,
+25.0386543s. Sources unchanged after the full build.
+All1976 Foundation/root hashes pinned; prior1974 unchanged except root import.
+Exact107 recursive archive paths/hashes,43 Incoming/42distinct and11 A4 preserved;
+no ResearchSources change/commit, unrelated12 MD drafts/tmp untouched. Original
+compiler/thread/cache/full-audit settings retained; no new speedup claimed.
+Exact commit receipt/private synchronization close the checkpoint afterward.
+
+NEXT PROOF PLAN, NOT PROVED: existing Polynomial.taylor_eval, taylor_coeff and
+finite eval_eq_sum_range give the complex Taylor expansion with Hasse derivatives.
+Split a sufficiently long range into even/odd indices (a short finite induction
+can avoid new infrastructure); odd imaginary shifts cancel and even terms give
+real coefficients (-1)^j*h^(2j). The already available factorial_smul_hasseDeriv
+and polynomial_iterate_derivative should identify their factorial jets with the
+explicit Euler step above. Preserve a common finite degree bound under iteration.
+For compact-uniform convergence, reuse existing C(C,C) compact-open machinery:
+finite coefficient vectors evaluate jointly continuously as a finite polynomial
+sum. ContinuousMap.continuous_of_continuous_uncurry and
+ContinuousMap.tendsto_iff_forall_isCompact_tendstoUniformlyOn are already used
+in GaussianCompactHeat; coordinate projections lp.evalCLM give all coefficient
+limits from the proved H norm limit. This route need not construct a new global
+complex analytic realization of H or a central limit theorem.
+A2 ACTIVE; integer/real FROZEN; final multichannel ONLY AFTER A2 stopping;
+October31 hard stop. No new Newman threshold/RH/novelty claim or campaign pivot.

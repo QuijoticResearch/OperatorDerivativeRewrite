@@ -1,6 +1,23 @@
 # Project Stardust: persistent campaign queue
 
 
+## Current1268: finite polynomial even-derivative Euler limit verified
+
+A vector-specific Euler theorem avoids assuming globally nilpotent derivatives.
+Corrections converge in operator norm; Euler iterates converge in vector norm. On existing
+factorial H, the explicit finite even-derivative correction A_(N,s,n) tends to
+-s*D². Its n+1 Euler steps converge in JET NORM on EVERY finite real polynomial
+to existing transport2(-s), all real s and fixed N. Actual Xi remains outside H.
+NEXT CENTRAL OPEN: exact finite Taylor/symmetric-shift identification with an
+adequate cutoff and preserved degree bound, then COMPLEX LOCAL-UNIFORM limit.
+Do not infer the scaledShift limit or global heat zero control from the norm
+limit alone. After that: checked Hurwitz to finite heat and actual Xi via1266.
+No actual global heat-strip theorem/new threshold/RH claim. A2 ACTIVE;
+integer/real FROZEN; final multichannel ONLY AFTER A2 stopping. October31 and
+all full-build/axiom/type/source/private gates remain. This entry supersedes
+historical immediate-proof labels below.
+
+
 ## Current1267: global finite symmetric-shift strip contraction verified
 
 For nonzero real-coefficient P, symmetric imaginary shift S_h contracts EVERY

@@ -1875,3 +1875,4 @@ import Foundation.RiemannQuadraticPolynomialHeat
 import Foundation.RiemannQuadraticUniformHeat
 import Foundation.RiemannQuadraticOperatorApproximation
 import Foundation.SymmetricPolynomialStrip
+import Foundation.PolynomialDerivativeEuler
