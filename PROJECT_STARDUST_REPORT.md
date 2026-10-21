@@ -27073,3 +27073,80 @@ zero-time reality/RH, an exact Newman threshold and stronger Xi-specific arithme
 estimates remain OPEN. Do not claim A2 stopped simply from known classical bounds.
 An explicit audited stopping checkpoint is still required before final multichannel.
 A2 ACTIVE; integer/real frozen; October31 hard stop; no priority change or pivot.
+
+
+## Checkpoint1272: general arithmetic heat transfer, exact endpoint inputs and domain counterexamples
+
+Foundation/RiemannQuadraticArithmeticHeat.lean proves seven theorems by direct
+reuse of1271 and the prior actual completed-Xi/pole/positivity coordinate bridge.
+Under the EXPLICIT actual arithmetic premise forall w,theta<Re(w)->zeta(w)!=0:
+  zero_time_strip: ALL actual H0 zeros satisfy |Im|<=2theta-1;
+  heat_strip: ALL H_t zeros satisfy Im²<=max((2theta-1)²-2t,0), t>=0;
+  real_after_wait: ALL real at EVERY t>=(2theta-1)²/2.
+These allow arbitrary real theta under the premise, without silently replacing
+a negative initial strip width by its absolute value. No such arithmetic premise
+is supplied by this module. At theta1 this matches classical1/2; theta11/12 gives
+25/72; theta7/8 gives9/32; theta3/4 would give1/8, CONDITIONAL ONLY. The actual
+external7/8 theorem and isolated actual-heat link remain precisely audited1271,
+not a new production import. These are classical transfer statements, not novelty,
+an improved numerical record, an exact Newman threshold or RH progress.
+
+critical_half_plane_real_forward explicitly needs zero-free Re(s)>1/2.
+asymptotic_half_planes_real_forward explicitly needs independently zero-free
+Re(s)>1/2+epsilon for EVERY epsilon>0. It chooses epsilon less than a given gap;
+no Hurwitz, time-limit, extrapolation of7/8, or k->1 flow claim. The substantive
+strong arithmetic hypothesis is plainly visible in both printed theorem types.
+
+polynomial_strip_sharpness proves the concrete initial real polynomial
+P=X²+9/16 has ALL roots |Im|<=3/4, yet ACTUAL transport2(-1/4)P has nonreal zero
+i/4. It saturates squared width1/16. Thus width3/4 alone cannot force general
+polynomial heat reality by t1/4; stronger Xi conclusions need additional data.
+This is NOT an actual Xi counterexample or RH refutation.
+real_axis_exclusion_not_half_plane constructs f(z)=(z-1)²+1, entire AND conjugate
+symmetric, nonzero on EVERY real argument, but zero at1+i with Re>7/8. This
+refutes a generic real-axis-to-complex-half-plane inference, not a theorem about
+the special Dirichlet L-function class. The witnesses and domains are printed.
+
+STARDUST_A2_METHOD_TRANSFER_AUDIT.md records the selective HUMAN method audit:
+pinned paper abstract/introduction/overview, opening and closure of the7/8 final
+argument, full formalization note003, actual unconditional Dirichlet assembly,
+and the follow-up's README/Main/conclusion. Exact read ranges, source pin and
+prior verification scope are preserved. Nine initial external-source and six
+follow-up source hashes freshly rechecked. No broad claim to have human-audited
+all16,677paper lines, independently replayed the Hecke entrypoint or separate
+SiegelZeros proof is made. Published scope distinguishes these targets.
+
+The inspected arithmetic method uses completed cubic theta sums, Poisson/Mellin
+reciprocal-L signals, prime compensation, asymmetric scales and matched moment
+estimates with fixed exponent margins. Stardust supplies the DOWNSTREAM actual
+Gaussian/operator/global zero transfer; it does not supply those arithmetic
+estimates. No identity of the paper's arithmetic cubic theta object or auxiliary
+Gaussian with the positive Xi density or actual probability law is assumed.
+The real-zero/conductor logarithmic-gap follow-up, as STATED, is not a stronger
+complex-zeta half-plane theorem. Its primitive/nonprincipal/real-character and
+real-beta domains matter. The generic counterexample tests the logical domain
+jump; the separate follow-up proof is neither certified nor refuted here.
+
+Verification: target4701jobs TERMINAL0,23.6124477s;
+fresh FULL6151jobs TERMINAL0,24.6779511s;
+COMPLETE37743-declaration transitive root/Foundation audit TERMINAL0,
+34.9110838s, standard3 ONLY. ALL7 new public types ACTUALLY READ
+UNABRIDGED pp.proofs true/no ellipses, and ALL119 final source/helper/proof lines
+read. Seven theorems,0definitions/no explicit private helpers/global instances.
+Eight independent examples TERMINAL0,27.0092434s:
+theta1/7/8/11/12/3/4 waiting/widths, critical endpointt0, EVERYepsilon premise,
+polynomial nonreality and full entire/conjugate real-axis counterexample type.
+Source1982 manifest pinned; prior1981 unchanged except root import; all config/
+versions/resource/cache/check settings unchanged. Exact107 archivepaths/hashes,
+43Incoming42distinct and11A4 preserved; unrelated12drafts/tmp untouched.
+No manuscripts modified/committed. Exact private backup follows full audit.
+
+NEXT: theorem-level reuse audit for closedness of the actual all-real TIME SET
+and its boundary, using actual parameter continuity/local-uniform convergence
+and a nonzero holomorphic limit. Do NOT assume an attained finite threshold;
+do NOT infer holomorphic/no-zero limits from pointwise convergence without its
+extra polynomial-strip or uniform hypotheses. The general transfer and exact
+arithmetic/domain limitations are now documented. Zero-time reality/RH, exact
+Newman threshold and stronger Xi-specific estimates remain OPEN. A2 ACTIVE;
+explicit audited stopping still required before final multichannel. No pivot;
+integer/real frozen; October31 hard stop and all private/verification gates hold.

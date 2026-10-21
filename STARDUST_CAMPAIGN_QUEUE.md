@@ -1,6 +1,24 @@
 # Project Stardust: persistent campaign queue
 
 
+## Current1272: general arithmetic-to-heat transfer and its limitations verified
+
+ACTUAL initial half-plane boundary theta, under EXPLICIT actual-zeta nonvanishing,
+gives initial width2theta-1, then squared width max((2theta-1)²-2t,0) and ALLreal
+for EVERY t>=(2theta-1)²/2. Critical endpoint/EVERYepsilon premises stay explicit.
+Actual7/8 external input/heat link remain isolated audited1271. No RH/new record.
+Concrete polynomial saturates width3/4 at heat t1/4 with nonreal rooti/4;
+entire conjugate symmetric real-axis nonvanishing does not imply complex
+half-plane exclusion. Selective pinned paper/notes/follow-up method/domain audit
+is in STARDUST_A2_METHOD_TRANSFER_AUDIT.md; broader proof-review limits explicit.
+NEXT A2: exact reuse/domain audit for CLOSEDNESS of actual all-real time set and
+its boundary using actual parameter continuity/holomorphic nonzero limits.
+Do not assume finite/attained exact threshold. Exact Newman value/zero-time RH/
+stronger Xi estimates remain OPEN. A2 ACTIVE, no stopping yet. Integer/real FROZEN;
+final multichannel ONLY AFTER explicit audited A2 stopping. October31 and all
+full-build/axiom/type/source/private requirements unchanged.
+
+
 ## Current1271: arbitrary-time Xi strip propagation and actual upstream heat link verified
 
 ACTUAL H_t: any real starting time t and GLOBAL initial strip b imply squared
