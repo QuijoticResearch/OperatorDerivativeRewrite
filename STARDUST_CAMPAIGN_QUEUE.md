@@ -1,5 +1,20 @@
 # Project Stardust: persistent campaign queue
 
+## Current1254: all-order actual Hermite limits verified; ACTUAL zero transfer next
+
+ALL finite Taylor orders of the actual quadratic flow now have a genuine integral
+remainder with one N-independent budget at time t+1/tilt norm z+R, |h|<=1/2.
+For EVERY multiplicity m with lower derivatives zero, H_(t+h²)(z+hw)/h^m converges
+uniformly on every fixed complex disk to Q_m(w)D^mH_t(z)/m!, through punctured
+real h. The exact EXISTING Gaussian Hermite coefficient identity is verified.
+The nonzero LIMIT MODEL has real simple roots. ACTUAL zero existence/counts,
+uniqueness/real-simple splitting and global strip contraction remain OPEN.
+Prioritize actual zero transfer using existing Cauchy/injectivity/conjugation tools
+and a rigorous existence argument, not another supporting approximation domain.
+No new threshold or RH claim. Independent A2 ACTIVE; previous integer/real campaigns
+FROZEN; final multichannel AFTER A2 stopping; October31 hard stop, all gates intact.
+This entry supersedes historical immediate-proof labels below.
+
 ## Current1253: actual double-zero uniform limit verified; all multiplicities next
 
 The ACTUAL quadratic flow now has a proved cubic parabolic remainder, bounded by

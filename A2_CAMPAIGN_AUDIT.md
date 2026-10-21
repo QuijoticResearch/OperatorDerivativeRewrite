@@ -628,3 +628,88 @@ an unproved zero-preserving truncation or distract from actual all-order work.
 Independent A2 ACTIVE; prior integer/real campaigns FROZEN; final multichannel
 AFTER A2 stopping. October31 hard stop. All verification and private backup gates
 remain unchanged; exact private backup pending at this precommit entry.
+
+
+## Checkpoint1254: actual all-order expansion and every finite-multiplicity limit
+
+Foundation/RiemannQuadraticAllOrders.lean proves the ALL-ORDER actual quadratic-flow
+expansion and uniform Hermite scaling at EVERY finite multiplicity. It directly
+reuses GaussianTimeSpaceHermite through RiemannQuadraticHermite.value, rather than
+introducing an unrelated family with a matching name. Raising/lowering proves
+D_q^n exp(q*w-q^2)=Q_n(w-2q)*exp(q*w-q^2), hence the n-th derivative at0 is Q_n(w).
+Complex Taylor convergence gives the genuine generating HasSum for every complex
+q,w. Scaling q=c*h identifies every coefficient c^n Q_n(w)/n!, without the formerly
+proposed finite factorial reindexing. Hermite parity is also derived from this
+verified derivative identity.
+
+Cauchy's unit-circle derivative estimate gives, for EVERY n,c,w,
+norm(c^n Q_n(w)/n!)<=exp(norm c*norm w+norm c^2). The geometric remainder estimate
+then yields, for EVERY N and complex norm h<=1/2, a bound
+2 exp(norm c*norm w+norm c^2)*norm h^(N+1). This is stronger than the previous
+unverified factorial-dependent proposal and uses one majorant independent of N.
+Only the SCALAR exponential phase uses complex h; no new complex-time Xi flow is
+assumed. For ACTUAL flow integrals h remains REAL and time is exactly t+h^2.
+
+With c=i*u, the actual integrand factor is proved exactly. Every finite remainder
+is genuinely integrable for ALL h,w. For real |h|<=1/2 and complex norm w<=R its
+norm is bounded by 2*|h|^(N+1)*weighted 1 j (t+1) (norm z+R) u on u>=0.
+Existing actual weighted integrability supplies the L1 domain before integration.
+Only FINITE sums are integrated. There is NO infinite-series/integral interchange.
+Consequently the actual Fourier jet equals
+sum_(n=0)^N h^n Q_n(w) jet_(j+n)(t,z)/n! + error,
+with norm error<=B_j(t,z,R)*|h|^(N+1),
+B_j=2 integral_halfLine weighted 1 j (t+1) (norm z+R).
+Pairing +/- jets using verified Hermite parity gives the ACTUAL symmetric flow
+H_(t+h^2)(z+hw)=sum_(n=0)^N h^n Q_n(w) D^n H_t(z)/n! + error
+with the SAME budget B_0, for every real t and complex z. The budget is independent
+of truncation order N, h and w within the fixed disk. This is genuine arithmetic
+kernel integration, not merely a polynomial heat model or an assumed operator domain.
+
+If ALL D^n H_t(z)=0 for n<m, then the scaled ACTUAL flow H_(t+h^2)(z+hw)/h^m
+converges to Q_m(w)D^m H_t(z)/m!, UNIFORMLY on EVERY fixed complex w disk,
+as real h->0 through h!=0, with explicit error<=B_0*|h|. The statement covers all
+natural m, including vacuous m=0. Nonzero D^m is NOT needed for convergence; it is
+needed for a nonzero limiting model. With nonzero multiplier d, all roots of
+Q_m(w)d/m! are verified real and simple by direct reuse of the existing ALL-degree
+Hermite theorem. This MODEL-root result is not a theorem about nearby actual zeros.
+
+Fresh FULL6101job root build TERMINAL0 (39.0147886s);
+COMPLETE37279declaration transitive root/Foundation audit TERMINAL0
+(34.3704614s), ONLY propext/Classical.choice/Quot.sound.
+ALL30 public types ACTUALLY READ UNABRIDGED, COMPLETE340 source/proof lines including
+five definitions ACTUALLY reviewed, no private helpers/instances. TWELVE independent
+Lean tests TERMINAL0 (36.7768136s): explicit cubic phase
+derivative, generating sum at w=0, degree40 coefficient bound, large-h high-order
+remainder integrability, nonnegative budget, m=0 base, exact agreement of N=2 with
+the previously proved heat-sign formula, explicit cubic and quartic multiplicity
+limits, m=0 uniform continuity, cubic center-model cancellation, and nonzero cubic
+model derivative. The initial N=2 test needed ring normalization followed by simp;
+production mathematics was unchanged. Draft repairs handled function eta/Pi
+normalization, explicit Cauchy-center parameters and the disjunctive division-zero
+lemma. No resources, axioms or verification settings were weakened.
+All1952 source hashes pinned; previous1951 unchanged except root import. Pinned
+Lean/Mathlib/configuration unchanged. All107 recursive manuscript paths/hashes,
+Incoming43/42distinct and A4eleven/exactpaths preserved. Manuscripts were not edited.
+
+Independent exact integer-polynomial recurrence/closed-coefficient checks passed
+all degrees0..30. A further780 finite floating complex-phase checks through N=12
+included positive/negative/imaginary h and several complex c,w; maximum observed
+error/bound ratio 0.20897422. Floating checks are
+NOT roundoff certificates and are not used by Lean. The general theorem is proved
+by the kernel, not inferred from these finite controls.
+
+This resolves the all-order expansion/coefficient-identity and finite-multiplicity
+uniform-limit obligations left open at1253. It does NOT resolve ACTUAL zero
+existence/counts, uniqueness or real/simple splitting near each model root; nor
+does it resolve global strip contraction or produce any new threshold/RH claim.
+For actual zero transfer, next use the existing Cauchy derivative bounds, scalar
+ball injectivity and conjugation machinery; real sign-change/IVT or an equivalent
+verified local argument must establish existence. Exact zero counts also need
+an actual degree/root-count bridge for the existing Hermite polynomials. Do not
+claim a zero theorem merely from convergence to a polynomial with real simple roots.
+This is formalization of the known local Hermite mechanism under the prior
+Polymath normalization audit, not a novelty claim. Independent A2 remains ACTIVE;
+integer/real-order campaigns FROZEN, final multichannel AFTER A2 stopping; October31
+hard stop and all complete audits/private-backup requirements remain unchanged.
+The finite heat-truncation counterexample remains deferred and uncertified.
+Exact private backup pending at this precommit entry.
