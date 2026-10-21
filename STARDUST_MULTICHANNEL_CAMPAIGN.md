@@ -1,6 +1,95 @@
 # Final higher-heat multichannel campaign
 
 
+## Checkpoint1285: canonical signed p-1 Clark-Ocone for EVERY terminal polynomial
+
+For EVERY m>0,p=2m,T>0 and EVERY real polynomial P,
+HigherHeatTerminalClarkOcone.polynomial_reconstruction now proves
+  J_T(P(X_T)-E_T[P]*1) = sum(q=1..p-1) I_q(A_Pq),
+as equality on the ENTIRE completed analytic TEST DUAL. E_T[P] is identified
+by actual_centering_mean with the ACTUAL signed heat-kernel expectation,
+not an assumed probability law or merely a formal parameter. A_Pq is the
+finite real-coefficient sum of canonicalField(N,q). Its adapted L1-domain
+membership is proved. For monomials, canonicalField(N,q) equals
+descFactorial(N,q)/q! times the actual backward-heat Appell field(N-q),
+whose uniform native coefficient bounds and genuine L1 approximations were
+proved1284. The canonical coefficient is exactly D^q/q! of the right-time
+backward polynomial evaluated at left past. There is NO residual M, L1
+convergence or native-telescope hypothesis in the final reconstruction type.
+The actual_signed_identity identifies every real polynomial cylinder probe
+with the literal finite signed expectation of (P(X_T)-E_T[P])*G.
+
+HigherHeatAppellNativeTelescope proves the missing native-grid connection.
+prefixAppell(c)=aeval(prefixPolynomial(c)) Appell(p,a*(c*mesh-1),N), a=sign*T.
+The step relation is an EXACT multivariate polynomial identity, proved from
+the verified scalar centered_step using polynomial funext and algebra-map
+evaluation. The right-time heat parameter and physical signed cell moment
+are matched exactly. Its initial polynomial is C(M_N(p,a)); its terminal
+polynomial is terminal^N. Summing adjacent steps yields the finite native
+telescope with ALL centered powers1..N retained. Critical/higher powers
+are not prematurely omitted; only their previously proved DUAL-NORM limits
+vanish. The same finite polynomial telescope holds at degree0, with the
+correct mean1, so constant observables reconstruct zero.
+
+HigherHeatTerminalClarkOcone.native_identity maps the actual native
+telescope through cylinder embedding and J. reconstruction_finite passes
+the FINITE N sum using1284 canonical_native_limit and uniqueness of limits.
+canonical_field_above_degree and the explicit zero limits for q>=p justify
+truncating to exactly p-1 channels. Real polynomial linearity then proves
+the full terminal-polynomial result, with fields in the EXISTING closed
+adapted L1 space. No new completion, positive isometry/variance, finite
+signed path measure or finite complex-noise substitute is used.
+
+Seven independent Lean examples PASS, together with a generic all-N,g probe
+lemma proving reconstruction on X_T^g equals M_(N+g)-M_N*M_g: degree0 dual
+zero; p4 centered cubic on X_T gives-24T; p4 centered X8 on X_T4 gives
+-79349760*T^3; p6 centered X5 on X_T gives720T; p8 centered X7 on X_T gives
+-40320T; Gaussian p2 centered X4 on X_T4 gives1536*T^4; every centered
+monomial tested on1 has actual signed mean0. The p4X8 test addresses the
+earlier naive ordinary-Ito centering failure with CORRECTED canonical fields.
+Independent exact signed moments and beta integrals pass3536 reconstruction
+identities across p2/4/6/8, degrees0..12, probes0..16 and four horizons.
+AtT1,p4X8probeX4 the three channels are -7741440,-32901120,-38707200,
+total-79349760. For p4 centered cubic/linear probe, the first two channels
+are0 and the THIRD is-24; p6X5 requires channel5=720; p8X7 requires
+channel7=-40320. Individual component numbers are independent exact checks,
+not separate newly asserted universal Lean component theorems. Both full
+test programs and outputs are in STARDUST_TERMINAL_CLARK_OCONE_VERIFICATION.json.
+
+BOUNDARY: this establishes canonical reconstruction of EVERY TERMINAL
+POLYNOMIAL observable. It does NOT yet prove general multitime-polynomial
+reconstruction or arbitrary completed OBSERVABLE reconstruction. Full
+causal-projection identification of the coefficient field, uniform operator
+bounds needed for completion, tensor/chronological calculus and integrand
+injectivity remain OPEN. Arbitrary completed TEST probes are not arbitrary
+completed OBSERVABLES. The historical one/two-channel and same-ordinary-field
+centering obstructions remain true; they do NOT contradict this corrected
+full p-1 terminal theorem. The final campaign is NOT declared complete/frozen.
+
+NEXT prioritize actual multitime cylinders and coefficient identification
+with existing bounded causal projection/derivative machinery. Investigate
+whether norm bounds uniform in cylinder degree can be obtained from bounded
+completed projections rather than the current per-degree Appell constants;
+prove any completion passage only after those bounds and genuine L1 fields
+are established. Preserve exact domains and counterexamples; no new unrelated
+infrastructure or campaign. October31 hard stop still controls any remaining
+obligations; document exact gaps, freeze and STOP then.
+
+Full root 6199 jobs TERMINAL0 25.086061s;
+complete transitive audit 38561 safe Foundation declarations standard3 only
+TERMINAL0 36.650729s. ALL17 final public types
+actually read UNABRIDGED pp.proofs true; ALL198 final source/helper lines
+reviewed. Seven-example/generic-lemma Lean run TERMINAL0
+28.671240s. Source/config hashes pinned BEFORE
+fresh full build; all2028 prior source bytes unchanged except root2 imports,
+configuration unchanged. All107 recursive manuscript paths/hashes intact,
+Incoming43/42distinct/A4eleven/original Clark SHA preserved. Existing goal
+ACTIVE, previous/currentturn PROGRESS. FINAL multichannel ACTIVE, prior
+campaigns FROZEN, NO later campaign. Private backup pending until exact
+audited commit receipt and actual private sync close; ignored closure JSON
+will preserve the actual post-push verification.
+
+
 ## Checkpoint1284: actual canonical Appell coefficient fields and native signed limits
 
 The central time-weighted coefficient obligation is now resolved for ALL

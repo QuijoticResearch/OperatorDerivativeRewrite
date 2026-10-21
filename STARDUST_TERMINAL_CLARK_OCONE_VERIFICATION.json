@@ -1,0 +1,102 @@
+{
+  "checkpoint": 1285,
+  "time_utc": "2026-10-21T21:29:28.952270+00:00",
+  "campaign": "FINAL multichannel pseudoprocess",
+  "previous_private_checkpoint": "1b468a59c30cf45fb3e4516df48511795ef6ff20",
+  "source_count": 2030,
+  "prior_source_count": 2028,
+  "prior_sources_unchanged_except_root": true,
+  "root_only_two_imports": true,
+  "configuration_unchanged": true,
+  "full_build_jobs": 6199,
+  "audit_declarations": 38561,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "terminal_results": {
+    "full-build": {
+      "stage": "full-build",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "build"
+      ],
+      "wall_seconds": 25.086060999979964,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T21:27:05.792657+00:00"
+    },
+    "audit": {
+      "stage": "audit",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1285-audit.lean"
+      ],
+      "wall_seconds": 36.65072900001542,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T21:28:50.607630+00:00"
+    },
+    "independent": {
+      "stage": "independent",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1285-independent.lean"
+      ],
+      "wall_seconds": 28.671240299998317,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T21:26:01.534590+00:00"
+    }
+  },
+  "public_types_actually_read_unabridged": 17,
+  "proof_arguments_visible": true,
+  "complete_final_source_lines_reviewed": 198,
+  "new_public_theorems": 15,
+  "new_definitions": 2,
+  "physical_order": "Every p=2m, integer m>0",
+  "positive_physical_horizon_required": true,
+  "normalized_time": "[0,1]",
+  "native_grid_telescope": "Exact polynomial equality for every mesh, terminal monomial degree and positive even heat order, retaining ALL powers1..N before taking limits",
+  "endpoints": "Initial polynomial equals actual pure-order moment as constant; terminal polynomial equals actual terminal coordinate power",
+  "canonical_terminal_polynomial_reconstruction": "For EVERY real P, J_T(P(X_T)-actual signed kernel mean(P)*1)=sum_{q=1}^{p-1} I_q(A_Pq)",
+  "coefficient_fields": "Finite polynomial-coefficient sums of the existing canonical D^q/q! backward Appell L1 fields; closed adapted membership proved",
+  "no_residual_analytic_hypotheses": true,
+  "canonical_terminal_Clark_Ocone_proved": true,
+  "topology": "Actual native signed centered sums converge in entire completed analytic TEST DUAL NORM; Appell coefficient fields are genuine predictable L1 limits",
+  "actual_centering_mean_identified": true,
+  "actual_signed_identity_every_polynomial_cylinder_probe": true,
+  "correct_constant_degree_zero": true,
+  "critical_and_higher_powers_retained_at_finite_mesh": true,
+  "general_multitime_polynomial_reconstruction_proved": false,
+  "arbitrary_completed_observable_reconstruction_proved": false,
+  "degree_uniform_completed_extension_proved": false,
+  "full_causal_projection_field_identification_proved": false,
+  "universal_completed_Clark_Ocone_proved": false,
+  "positive_variation_or_finite_signed_path_measure_claimed": false,
+  "Lean_test_code": "import Foundation.HigherHeatTerminalClarkOcone\n\nopen OperatorDerivativeRewrite.Foundation\nopen HigherHeatPolynomialCylinders HigherHeatAnalyticCylinderDomain HigherHeatCompletedPairing\nopen HigherHeatPairedDualCausality HigherHeatAppellPredictableFields HigherHeatAppellInnovationLimits\nopen HigherHeatTerminalClarkOcone HigherHeatAllChannelNormalization HigherHeatWeakTimeAdjoint\nopen scoped NNReal Topology BigOperators\n\nnoncomputable def reconstructed (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (N : \u2115) : Dual :=\n  \u2211 r \u2208 Finset.range (2*m-1), channel m T r (canonicalField m hm T hT N (r+1))\n\nlemma reconstructed_probe (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (N g : \u2115) :\n    reconstructed m hm T hT N (core (terminalCylinder^g)) =\n      PseudoPolynomialStein.moment (2*m) (parameter m T) (N+g)-\n        PseudoPolynomialStein.moment (2*m) (parameter m T) N*\n          PseudoPolynomialStein.moment (2*m) (parameter m T) g := by\n  rw [reconstructed, \u2190 power_reconstruction]\n  simp only [map_sub, map_smul, ContinuousLinearMap.sub_apply, ContinuousLinearMap.smul_apply,\n    smul_eq_mul]\n  rw [pairing_core_real, pairing_core_real, \u2190 pow_add, one_mul, terminal_moments, terminal_moments]\n  simp only [Complex.ofReal_re]\n  rfl\n\nexample (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) : reconstructed m hm T hT 0 = 0 := by\n  rw [reconstructed, \u2190 power_reconstruction, PseudoPolynomialStein.moment_zero]\n  simp\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    reconstructed 2 (by decide) T hT 3 (core terminalCylinder) = -24*(T:\u211d) := by\n  rw [\u2190 pow_one terminalCylinder, reconstructed_probe]\n  have h4 := PseudoPolynomialStein.moment_multiple 4 (by decide) (-(T:\u211d)) 1\n  have h3 := PseudoPolynomialStein.moment_off_order 4 (by decide) (-(T:\u211d)) 3 (by decide)\n  norm_num [parameter] at h4 h3 \u22a2\n  rw [h4,h3]\n  ring\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    reconstructed 2 (by decide) T hT 8 (core (terminalCylinder^4)) = -79349760*(T:\u211d)^3 := by\n  rw [reconstructed_probe]\n  have h4 := PseudoPolynomialStein.moment_multiple 4 (by decide) (-(T:\u211d)) 1\n  have h8 := PseudoPolynomialStein.moment_multiple 4 (by decide) (-(T:\u211d)) 2\n  have h12 := PseudoPolynomialStein.moment_multiple 4 (by decide) (-(T:\u211d)) 3\n  norm_num [parameter, neg_pow] at h4 h8 h12 \u22a2\n  rw [h4,h8,h12]\n  ring\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    reconstructed 3 (by decide) T hT 5 (core terminalCylinder) = 720*(T:\u211d) := by\n  rw [\u2190 pow_one terminalCylinder, reconstructed_probe]\n  have h6 := PseudoPolynomialStein.moment_multiple 6 (by decide) (T:\u211d) 1\n  have h5 := PseudoPolynomialStein.moment_off_order 6 (by decide) (T:\u211d) 5 (by decide)\n  norm_num [parameter] at h6 h5 \u22a2\n  rw [h6,h5]\n  ring\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    reconstructed 4 (by decide) T hT 7 (core terminalCylinder) = -40320*(T:\u211d) := by\n  rw [\u2190 pow_one terminalCylinder, reconstructed_probe]\n  have h8 := PseudoPolynomialStein.moment_multiple 8 (by decide) (-(T:\u211d)) 1\n  have h7 := PseudoPolynomialStein.moment_off_order 8 (by decide) (-(T:\u211d)) 7 (by decide)\n  norm_num [parameter] at h8 h7 \u22a2\n  rw [h8,h7]\n  ring\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    reconstructed 1 (by decide) T hT 4 (core (terminalCylinder^4)) = 1536*(T:\u211d)^4 := by\n  rw [reconstructed_probe]\n  have h4 := PseudoPolynomialStein.moment_multiple 2 (by decide) (T:\u211d) 2\n  have h8 := PseudoPolynomialStein.moment_multiple 2 (by decide) (T:\u211d) 4\n  norm_num [parameter] at h4 h8 \u22a2\n  rw [h4,h8]\n  ring\n\nexample (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) (N : \u2115) :\n    reconstructed m hm T hT N (core (1:Cylinder)) = 0 := by\n  rw [\u2190 pow_zero terminalCylinder, reconstructed_probe]\n  simp only [Nat.add_zero, PseudoPolynomialStein.moment_zero, mul_one, sub_self]\n",
+  "Lean_test_code_sha256": "5C2A74FFB46B1A0E3152FE8135AD9AC6A3FF32AF48F28CBCC77F3D3D63AA5655",
+  "Lean_test_log_sha256": "F4CBB3E221B930B8F06DC5C86A17B4A48FDF6F4A894152B68FEF08F0B3A85260",
+  "independent_Lean_examples": 7,
+  "independent_generic_probe_lemma": "For ALL N,g, reconstruction tested on X_T^g equals M_(N+g)-M_N*M_g",
+  "exact_test_code": "from fractions import Fraction as Q\nfrom math import factorial,comb\ndef moment(p,n,a):return Q(0) if n%p else Q(factorial(n),factorial(n//p))*a**(n//p)\ndef fall(n,r):return 0 if r>n else factorial(n)//factorial(n-r)\ndef weighted_mixed_integral(p,d,l,k,a):\n    if l<0:return Q(0)\n    ans=Q(0)\n    for j in range(l+1):\n        if (d+j)%p or (l-j)%p:continue\n        A=(d+j)//p;B=(l-j)//p\n        ans+=comb(l,j)*Q(factorial(d+j),factorial(A))*Q(factorial(l-j),factorial(B))*a**(A+B)*Q(factorial(A)*factorial(B+k),factorial(A+B+k+1))\n    return ans\ntests=0;examples=[]\nfor m in range(1,5):\n    p=2*m\n    for T in [Q(1),Q(1,2),Q(2),Q(5,7)]:\n        a=(-1)**(m+1)*T\n        for N in range(13):\n            for g in range(17):\n                channels=[]\n                for q in range(1,p):\n                    I=Q(0)\n                    if N>=q and g>=p-q:\n                        n=N-q\n                        I=comb(N,q)*p*a*fall(p-1,q-1)*fall(g,p-q)*sum(\n                            Q(factorial(n),factorial(k)*factorial(n-p*k))*a**k*\n                            weighted_mixed_integral(p,n-p*k,g-p+q,k,a)\n                            for k in range(n//p+1))\n                    channels.append(I)\n                expected=moment(p,N+g,a)-moment(p,N,a)*moment(p,g,a)\n                assert sum(channels)==expected,(p,N,g,T,channels,expected)\n                if T==1 and (p,N,g) in [(4,3,1),(4,8,4),(6,5,1),(8,7,1),(2,4,4)]:\n                    examples.append(dict(p=p,N=N,probe=g,channels=list(map(str,channels)),centered_total=str(expected)))\n                tests+=1\nprint(dict(passed=True,exact_canonical_reconstruction_tests=tests,examples=examples,\n           scope='Independent exact signed moments and beta integrals for actual backward Appell canonical fields; '\n                 'p=2,4,6,8,degrees0..12,probes0..16,four horizons. No arbitrary completed observable extension inferred.'))\n",
+  "exact_test_output": "{'passed': True, 'exact_canonical_reconstruction_tests': 3536, 'examples': [{'p': 2, 'N': 4, 'probe': 4, 'channels': ['1536'], 'centered_total': '1536'}, {'p': 4, 'N': 3, 'probe': 1, 'channels': ['0', '0', '-24'], 'centered_total': '-24'}, {'p': 4, 'N': 8, 'probe': 4, 'channels': ['-7741440', '-32901120', '-38707200'], 'centered_total': '-79349760'}, {'p': 6, 'N': 5, 'probe': 1, 'channels': ['0', '0', '0', '0', '720'], 'centered_total': '720'}, {'p': 8, 'N': 7, 'probe': 1, 'channels': ['0', '0', '0', '0', '0', '0', '-40320'], 'centered_total': '-40320'}], 'scope': 'Independent exact signed moments and beta integrals for actual backward Appell canonical fields; p=2,4,6,8,degrees0..12,probes0..16,four horizons. No arbitrary completed observable extension inferred.'}",
+  "exact_canonical_reconstruction_tests": 3536,
+  "new_source_sha256": {
+    "Foundation/HigherHeatAppellNativeTelescope.lean": "8A91C1345972E50EEDD969B1903899B0DE5A7A073F6183412A5C9C66F6F48E1B",
+    "Foundation/HigherHeatTerminalClarkOcone.lean": "19D03F5EDEDB587C70D5704B5AA57D4F5D30AE8700797B6E264892ADB2DBC168"
+  },
+  "source_integrity": {
+    "archive": 107,
+    "exact_recursive_paths": true,
+    "incoming": 43,
+    "incoming_distinct": 42,
+    "a4": 11,
+    "Clark_manuscript_hash_preserved": true
+  },
+  "private_backup_pending": true,
+  "hard_stop": "2026-10-31",
+  "goal": "ACTIVE"
+}

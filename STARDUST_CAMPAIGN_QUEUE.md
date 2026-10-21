@@ -1,5 +1,23 @@
 # Project Stardust: persistent campaign queue
 
+## Current1285: FINAL multichannel — full terminal-polynomial p-1 reconstruction
+
+Current1285: FINAL multichannel ACTIVE. Canonical signed p-1 Clark-Ocone is
+now proved for EVERY real TERMINAL polynomial and positive even heat order,
+with actual signed mean, adapted L1 fields, exact native telescope and all
+native dual-norm limits discharged. General MULTITIME/completed OBSERVABLE
+reconstruction, causal coefficient identification/uniform bounds remain OPEN.
+Consult top queue/campaign report. Preserve all verification/private gates
+and October31 hard stop; do not declare full campaign complete or open another.
+
+NEXT actual multitime cylinders, causal derivative/projection coefficient
+identification, degree-uniform L1/operator bounds and justified completion.
+Terminal-polynomial theorem is not full completed-observable theorem. Keep
+tensor/chronological/integrand uniqueness gaps explicit; no positive path
+measure or finite complex-noise replacement. A4/integer/conditional-real/A2
+FROZEN. October31 HARDSTOP: document exact gaps, freeze and STOP, no campaign after.
+
+
 ## Current1284: FINAL multichannel — canonical Appell fields and signed limits
 
 Current1284: FINAL multichannel ACTIVE. Actual right-time backward Appell

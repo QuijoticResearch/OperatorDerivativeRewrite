@@ -1926,3 +1926,5 @@ import Foundation.HigherHeatWeightedPastApproximation
 import Foundation.HigherHeatAppellPredictableFields
 import Foundation.HigherHeatAppellInnovationLimits
 import Foundation.PureOrderAppellCenteredStep
+import Foundation.HigherHeatAppellNativeTelescope
+import Foundation.HigherHeatTerminalClarkOcone

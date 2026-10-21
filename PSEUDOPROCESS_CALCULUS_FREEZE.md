@@ -1,5 +1,13 @@
 # Pseudoprocess calculus — audited campaign freeze
 
+Current1285: FINAL multichannel ACTIVE. Canonical signed p-1 Clark-Ocone is
+now proved for EVERY real TERMINAL polynomial and positive even heat order,
+with actual signed mean, adapted L1 fields, exact native telescope and all
+native dual-norm limits discharged. General MULTITIME/completed OBSERVABLE
+reconstruction, causal coefficient identification/uniform bounds remain OPEN.
+Consult top queue/campaign report. Preserve all verification/private gates
+and October31 hard stop; do not declare full campaign complete or open another.
+
 Current1284: FINAL multichannel ACTIVE. Actual right-time backward Appell
 coefficient fields now have genuine adapted L1 realization, uniform bounds
 and native convergence. Canonical D^q/q! signed innovation limits are proved
