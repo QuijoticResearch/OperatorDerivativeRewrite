@@ -1,5 +1,20 @@
 # Project Stardust: persistent campaign queue
 
+## Current1256: exact model count and m actual zeros verified; confinement next
+
+The existing Hermite family is now identified with pure-order Appell(2,1): monic
+degree m, EXACTLY m distinct real roots. At an actual multiplicity-m zero, EVERY
+fixed small physical disk contains a selected set of m DISTINCT ACTUAL SIMPLE
+zeros for all sufficiently small punctured real h; selected zeros are real when
+the original zero is real. This is a LOWER count, not exhaustive cluster equality.
+The new actual joint remainder has a FIXED L1 budget times (|h|+norm v)^(m+1),
+valid even as v/h grows, for |h|+norm v<=1/2. Prioritize the monic product lower
+bound and annular confinement, then compact-gap exclusion/EXHAUSTIVE m count.
+These last steps and global strip contraction remain OPEN. No threshold/RH claim.
+Independent A2 ACTIVE; prior integer/real campaigns FROZEN; final multichannel
+AFTER A2 stopping; October31 hard stop; all verification/private-backup gates intact.
+This entry supersedes historical immediate-proof labels below.
+
 ## Current1255: ACTUAL local Hermite zero transfer verified; exhaustive count next
 
 At any finite-multiplicity actual quadratic-flow zero z and each Hermite root a,

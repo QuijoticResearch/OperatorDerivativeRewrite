@@ -25610,3 +25610,101 @@ is classical under the prior normalization audit, not claimed as novel research.
 Independent A2 remains ACTIVE; prior integer/real campaigns FROZEN; finalmultichannel
 AFTER A2 stopping; October31 hard stop. All complete verification and exact private
 backup requirements remain; backup pending at this precommit entry.
+
+
+## Checkpoint1256: exact Hermite count, simultaneous actual zeros, joint remainder
+
+Foundation/RiemannQuadraticCluster.lean closes the model root-count bridge by
+DIRECT theorem reuse from the pure-order pseudoprocess/Appell library. The verified
+Appell operator at p=2,a=1 is X*P-2P'. Mapping its polynomial to complex coefficients
+and comparing the exact recurrence proves its evaluation equals the EXISTING
+RiemannQuadraticHermite.value n w for every n,w. PureOrderAppellExpansion.
+appell_monic_degree supplies the monic degree n result; it is not reproved for an
+unrelated family. The actual Hermite derivative theorem then gives no repeated
+polynomial roots. Algebraic closure plus the monic degree yields EXACTLY n distinct
+complex roots, all real by existing verification. The finite root set is nonempty
+for n>0. The signed-calculus/Gaussian operator foundation is thus connected by a
+proved identity to the actual quadratic-flow zero analysis, with exact variance2
+and sign, not by an analogy or an assumed naming convention.
+
+The local actual-zero results are now simultaneous. At an actual order-m zero
+(lower derivatives vanish, D^m!=0), for EVERY physical radius rho>0 and ALL
+sufficiently small nonzero REAL h there is a FINITE SET S of cardinality m of
+ACTUAL zeros of H_(t+h^2), all inside ball(z,rho) and all spatially simple.
+When z is real, every selected actual zero is real. Finite simultaneous choice,
+the proved convergence of scaled branches to the distinct Hermite roots, and
+finite pairwise separation establish DISTINCTNESS. Multiplication by h!=0 makes
+the physical points distinct as well. This is an actual m-zero LOWER count.
+The cardinality m of the selected set is NOT an upper bound on every zero in the
+physical disk. Exhaustiveness is deliberately not asserted.
+
+A second advance addresses the gap outside fixed scaled windows. For EVERY N
+and complex h,w satisfying norm h*(1+norm w)<=1/2, the scalar phase remainder
+has norm at most 2 exp(norm c+norm c^2)*(norm h*(1+norm w))^(N+1). Rescale the
+already verified Cauchy estimate with A=1+norm w, c'=c/A and h'=A*h; c'h'=ch
+and all finite coefficients are unchanged. The exponent is now bounded independently
+of w. With c=i*u this gives the ACTUAL jet and symmetric-flow remainder bound
+B_j(t,z,1)*(|h|*(1+norm w))^(N+1), where the FIXED genuine L1 budget is
+B_j(t,z,1)=2 integral_halfLine weighted 1 j (t+1) (norm z+1).
+There is no growing tilt norm z+norm w hidden in this constant.
+
+In PHYSICAL coordinates v=h*w, with h!=0 and |h|+norm v<=1/2, the lower-derivative
+vanishing assumption gives the proved actual bound
+norm(H_(t+h^2)(z+v)-h^m Q_m(v/h) D^mH_t(z)/m!)
+ <=B_0(t,z,1)*(|h|+norm v)^(m+1).
+The constant remains fixed when v/h grows without bound. This closes the actual
+remainder-domain issue needed for an annular confinement proof. It does NOT by
+itself prove confinement or exclude additional cluster zeros. All integration
+uses existing weighted integrability and finite sums; no infinite exchange or new
+complex-time Xi flow is assumed.
+
+Fresh FULL6103job root build TERMINAL0 (42.7823671s);
+COMPLETE37335declaration transitive root/Foundation audit TERMINAL0
+(36.0755111s), ONLY propext/Classical.choice/Quot.sound.
+ALL19 public types ACTUALLY READ UNABRIDGED; COMPLETE295 source/proof lines,
+including two definitions, ACTUALLY reviewed; no private helpers/instances.
+TWELVE independent Lean controls TERMINAL0 (25.4226521s):
+exact quadratic polynomial, root sets at0/1, nine distinct real roots, sqrt2 root,
+monic degree7, three actual distinct simple zeros at a complex base, two actual
+real zeros at a real base, exact physical quadratic heat sign, scalar joint bound
+with w=10000, negative-h seventh-jet joint bound, and actual existence of a real
+root in degree17. Initial controls only removed an already-closed tactic and
+normalized numerical casts; production mathematics was unchanged. Draft repairs
+used the polynomial algebra-map identity, multiplication associativity, absolute-
+value lexical spacing and explicit half-line membership types. No resources,
+axioms or verification checks were weakened.
+All1954 source hashes pinned; previous1953 unchanged except root import. Pinned
+Lean/Mathlib/configuration unchanged. All107 recursive manuscript paths/hashes,
+Incoming43/42distinct and A4eleven/exactpaths preserved. Manuscripts were not edited.
+
+Independent exact rational Sturm-sequence controls gave n real roots and constant
+terminal gcd for n=1..12. A further1040 floating joint-phase checks included
+scaled coordinates up to 22360679.77499790; maximum observed
+error/bound ratio 0.11660038. Floating controls
+are NOT roundoff certificates, arithmetic Xi zero computations or confinement
+proofs. The general degree/count and remainder claims are proved in Lean independently.
+
+NEXT CONFINEMENT STRATEGY, NOT YET LEAN VERIFIED: set d=norm(D^mH_t(z))>0,
+f=m!>0, B=B_0(t,z,1)>=0. Let M>=1 bound all existing Hermite root norms, and
+R>=max(1,2M). The proved monic polynomial with exactly m roots should yield
+norm Q_m(w)>=(norm w/2)^m when norm w>=R, by its product factorization.
+For v=h*w in that annulus, norm v>=|h| and the joint error is bounded by
+B*2^(m+1)*norm v^(m+1), while the leading term is at least
+[d/(f*2^m)]*norm v^m. Choosing
+ delta=min(1/4,d/(f*2^(2m+2)*(B+1)))>0
+should make the error at most half the leading term for norm v<=delta and
+|h|<=delta. A zero there is impossible. This would confine every zero in the
+physical delta disk to norm v<R*|h|. Still required: FORMAL monic product norm
+bound, exact constant/cancellation verification and the actual confinement theorem.
+
+After confinement, use compact nonvanishing of the limiting model on the bounded
+scaled disk outside the finitely many verified local zero neighborhoods. Uniform
+convergence should put EVERY scaled actual zero inside one of those neighborhoods;
+local uniqueness then makes it one of the selected m zeros. This compact-gap and
+bijection/exhaustive argument also remains OPEN. Neither the selected cardinality
+nor the joint remainder is being substituted for that proof. Global strip
+contraction/new thresholds/RH remain open. This continues the classical local
+Hermite mechanism under the prior literature/normalization audit; no novelty claim.
+Independent A2 ACTIVE; prior integer/real campaigns FROZEN; finalmultichannel AFTER
+A2 stopping; October31 hard stop. All full-build, axiom, type/proof, source-integrity
+and exact private-backup gates remain; backup pending at this precommit entry.
