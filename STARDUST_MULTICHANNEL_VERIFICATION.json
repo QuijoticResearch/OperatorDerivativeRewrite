@@ -1,0 +1,73 @@
+{
+  "checkpoint": 1277,
+  "time_utc": "2026-10-21T18:24:20.111576+00:00",
+  "campaign": "FINAL multichannel pseudoprocess",
+  "A2_stopping_gate": "3f30ef6e33e6a2954be7f5afd1b461068f701ca1",
+  "A2_private_gate_preceded_this_campaign": true,
+  "source_count": 1989,
+  "prior_source_count": 1987,
+  "prior_sources_unchanged_except_root": true,
+  "configuration_unchanged": true,
+  "full_build_jobs": 6158,
+  "audit_declarations": 37853,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "terminal_results": {
+    "full-build": {
+      "seconds": 9.7558037,
+      "ended": "2026-10-21T14:19:39.4330475-04:00",
+      "exit_code": 0
+    },
+    "audit": {
+      "seconds": 40.472546,
+      "exit_code": 0,
+      "ended": "2026-10-21T14:20:38.7396201-04:00"
+    },
+    "independent": {
+      "ended": "2026-10-21T14:22:38.7636243-04:00",
+      "exit_code": 0,
+      "seconds": 24.848493
+    }
+  },
+  "public_types_actually_read_unabridged": 13,
+  "proof_arguments_visible": true,
+  "complete_final_source_lines_reviewed": 254,
+  "new_public_theorems": 11,
+  "new_definitions": 2,
+  "all_time_fields": "Actual L1(time;analytic completed dual)",
+  "physical_order": 4,
+  "third_channel": "-24*T*transpose(timeMeasure,1)",
+  "completed_quadratic_coefficient_identity": true,
+  "arbitrary_finer_grid_tests": true,
+  "completed_cubic_step_identity": true,
+  "actual_signed_kernel_cylinder_identification": true,
+  "cubic_native_sum_convergence_proved": false,
+  "terminal_cubic_continuum_reconstruction_proved": false,
+  "universal_completed_Clark_Ocone_proved": false,
+  "general_p_minus_one_channels_proved": false,
+  "Lean_test_code": "import Foundation.HigherHeatCubicStepIdentity\nimport Foundation.HigherHeatQuadraticItoBoundary\n\nopen OperatorDerivativeRewrite.Foundation\nopen HigherHeatPolynomialCylinders HigherHeatAnalyticCylinderDomain\nopen HigherHeatWeakTimeAdjoint HigherHeatSecondChannelSteps HigherHeatThirdChannelSteps\nopen HigherHeatCubicStepIdentity HigherHeatDyadicStepAgreement HigherHeatCompletedPairing\nopen HigherHeatFirstChannelRange HigherHeatQuadraticItoBoundary HigherHeatPairedDualCausality\nopen scoped NNReal\n\nlocal instance : NeZero (size 0) := \u27e8by norm_num [size, HigherHeatDyadicLaws.gridSize]\u27e9\n\nexample (n : \u2115) (T : \u211d\u22650) (hT : 0 < T) (j : Fin (size n)) (G : Cylinder) :\n    ((firstChannel 2 T (coefficientField n 2 (by norm_num) T hT j ((MvPolynomial.X j)^2))\n          (core G) +\n      secondChannel 2 T (coefficientField n 2 (by norm_num) T hT j (MvPolynomial.X j))\n          (core G) +\n      secondChannel 2 T (coefficientField n 2 (by norm_num) T hT j (MvPolynomial.X j))\n          (core G) +\n      thirdChannel T (coefficientField n 2 (by norm_num) T hT j 1) (core G) : \u211d) : \u2102) =\n      cylindricalExpectation 2 (by norm_num) T hT (cylinderOf n ((MvPolynomial.X j)^3)*G) := by\n  simpa only [one_mul] using cubic_step_actual n T hT j 1 (by simp) G\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    thirdChannel T (coefficientField 0 2 (by norm_num) T hT 0 1) (core terminalCylinder) =\n      -24*(T:\u211d) := by\n  have hx : (HigherHeatMultivariateMoments.terminal : Test 0) = MvPolynomial.X 0 := by\n    change (\u2211 i : Fin 1, (MvPolynomial.X i : MvPolynomial (Fin 1) \u211d)) = MvPolynomial.X 0\n    simp only [Fin.sum_univ_one]\n  have hc : cylinderOf 0 ((1:Test 0)*(MvPolynomial.X 0)^3) = terminalCylinder^3 := by\n    simp only [terminalCylinder, hx, one_mul, map_pow]\n  have he := congrArg (fun \u03c6 : Dual => \u03c6 (core terminalCylinder))\n    (cubic_step_dual 0 T hT 0 1 (by simp))\n  rw [hc] at he\n  simp only [add_apply, firstChannel_terminal_zero 2 (by norm_num),\n    secondChannel_terminal_zero 2 (by norm_num), zero_add] at he\n  rw [\u2190 he, witness_pairing]\n  norm_num\n\nexample (T : \u211d\u22650) (hT : 0 < T) (A B : Field timeMeasure) :\n    firstChannel 2 T A + secondChannel 2 T B \u2260\n      pairing 2 (by norm_num) T hT (core (terminalCylinder^3)) :=\n  no_twoChannel_representation 2 (by norm_num) T hT A B\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    HigherHeatCompletedSignedMean.mean 2 (by norm_num) T hT (core (terminalCylinder^3)) = 0 :=\n  witness_centered 2 (by norm_num) T hT\n",
+  "Lean_test_code_sha256": "21E040A0A2DCA7D6E86BE3D9019B7C6888512B63644F56E21E306D5B0AC7DEA6",
+  "Lean_test_log_sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+  "independent_Lean_tests": 4,
+  "rational_moment_test_code": "from fractions import Fraction as Q\nfrom math import factorial\ndef moment(d,t):\n return Q(0) if d%4 else Q(factorial(d),factorial(d//4))*(-t)**(d//4)\ndef term(k,g,r,t):\n return Q(0) if g<r else Q(factorial(g),factorial(g-r))*moment(k+g-r,t)\nchecks=0\nfor t in [Q(1),Q(1,2),Q(1,32),Q(7,9)]:\n for k in range(3):\n  for g in range(16):\n   rhs=term(k,g,3,t)\n   if k:rhs+=3*k*term(k-1,g,2,t)\n   if k>=2:rhs+=3*k*(k-1)*term(k-2,g,1,t)\n   assert moment(k+g+1,t)==-4*t*rhs\n   checks+=1\n for g in range(16):\n  assert moment(3+g,t)==-24*t*term(0,g,1,t)+144*t*t*term(0,g,5,t)-64*t**3*term(0,g,9,t)\n  checks+=1\nprint(dict(exact_rational_signed_moment_tests=checks,passed=True,scope='Independent polynomial normalization tests, not a continuum reconstruction proof'))\n",
+  "rational_moment_test_output": "{'exact_rational_signed_moment_tests': 256, 'passed': True, 'scope': 'Independent polynomial normalization tests, not a continuum reconstruction proof'}",
+  "rational_moment_tests": 256,
+  "new_source_sha256": {
+    "Foundation/HigherHeatThirdChannelSteps.lean": "979E534D8A80D064C1E2DC7EA13465A8874C6D944F3B78EA003F7581FB27A8CE",
+    "Foundation/HigherHeatCubicStepIdentity.lean": "204E21D4101092F5499D0E9AAD4A2AAFB57D7D26FE26F7A6C476D159E671CDFD"
+  },
+  "source_integrity": {
+    "archive": 107,
+    "exact_recursive_paths": true,
+    "incoming": 43,
+    "incoming_distinct": 42,
+    "a4": 11,
+    "Clark_manuscript_hash_preserved": true
+  },
+  "private_backup_pending": true,
+  "hard_stop": "2026-10-31",
+  "goal": "ACTIVE"
+}

@@ -1,5 +1,13 @@
 # Pseudoprocess calculus — audited campaign freeze
 
+Current1277: the historical1045 freeze below remains preserved. The FINAL
+multichannel attempt reopened only AFTER the explicit A2 stopping commit
+3f30ef6e33e6a2954be7f5afd1b461068f701ca1 passed its exact receipt and PRIVATE
+main/research verification. See STARDUST_MULTICHANNEL_CAMPAIGN.md. The new third
+biharmonic signed STEP identity does not complete its native-sum limit, terminal
+cubic reconstruction or universal completed Clark-Ocone. Existing obstructions
+retain their exact scopes. October31 hard stop; no subsequent campaign.
+
 Effective at the verified discovery1045 Git checkpoint, 2026-10-18. This freezes the focused pseudoprocess campaign and releases the IBM F1–F3 gate after that commit. The indefinite Project Stardust goal remains active. ResearchSources remain immutable.
 
 ## Verified mathematical contract

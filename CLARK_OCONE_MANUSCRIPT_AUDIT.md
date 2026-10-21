@@ -1,5 +1,13 @@
 # Clark–Ocone manuscript audit and mathematical repair ledger
 
+Current1277: FINAL multichannel attempt ACTIVE only after A2 stopping3f30ef6
+passed exact PRIVATE main/research verification. ACTUAL third biharmonic signed
+step/cubic identities now extend to the completed test dual. Native cubic-sum
+limits, terminal cubic continuum reconstruction and full Clark-Ocone remain OPEN.
+See STARDUST_MULTICHANNEL_CAMPAIGN.md and the1277 entry below. Historical repair/
+IBM gate labels below are preserved and superseded where inconsistent. No new
+campaign after this final attempt; October31 hard stop and all audits remain.
+
 Source: `ResearchSources/Incoming/order_p_clark_ocone (7).tex` (read-only).
 SHA-256: `52671C5A5A77C892CEB8AFC183C7BFBA1520BF0EB3BA1A0E60AE0403063CC6C7`.
 Full text examined at the start of discovery1009, 2026-10-18. This ledger is a corrigendum alongside the source, not an alteration of it. Manuscript labels below identify claims independent of changing line numbers.
@@ -1020,3 +1028,74 @@ The drift conventions are checked. At order2, I2(B)=2T J_T(core1), the quadratic
 Following the user's explicit stopping instruction, defer that general extension at the certified cubic/two-channel boundary instead of growing an indefinite hierarchy of new foundations. Freeze this focused pseudoprocess campaign after the final full build, all-public-type/axiom/source audit and exact Git checkpoint. The detailed frozen contract is `PSEUDOPROCESS_CALCULUS_FREEZE.md`. Only after that commit, open the focused IBM F1–F3 audit anchored at the immutable `EJP2605-044RA0(2).pdf`. This transition does not certify the false manuscript or mark the indefinite Stardust goal complete. All43 source files retain42 hashes; the Clark–Ocone source remains SHA-256 `52671C5A5A77C892CEB8AFC183C7BFBA1520BF0EB3BA1A0E60AE0403063CC6C7`. No dependencies or resource limits changed.
 
 Final verification1045: target4312/full5561 jobs passed, exit0. All41 new public types inspected. Root transitive audit28406 safe Foundation declarations; only propext, Classical.choice and Quot.sound. Forbidden-token and direct/Git whitespace checks passed. All43 source files retain42 hashes; protected-source/dependency diffs empty; exact9-file index verified. No dependencies or resource limits increased. The restricted signed calculus, concrete quadratic Itô and explicit cubic/two-channel boundary are frozen at this checkpoint; the general multichannel extension is deferred. IBM F1–F3 opens after the corresponding Git commit. The indefinite Stardust goal remains active.
+
+
+## Checkpoint1277: FINAL multichannel campaign — ACTUAL third biharmonic signed step identity
+
+A2 stopping3f30ef6e33e6a2954be7f5afd1b461068f701ca1 passed its exact receipt,
+actual synchronization TERMINAL0 and PRIVATE main/research refs exactly BEFORE
+the final campaign opened. A4/integer/conditional-real/A2 remain FROZEN. The
+saved FINAL multichannel objective is now ACTIVE, no new campaign, October31
+HARD STOP. STARDUST_MULTICHANNEL_CAMPAIGN.md records the direct theorem reuse,
+exact new identities, unresolved reconstruction/convergence and next proof.
+Historical1045 freeze/source-audit labels are preserved with a current notice.
+
+Foundation/HigherHeatThirdChannelSteps.lean constructs the bounded actual
+L1(time;Domain*) -> Domain* channel I3=-24*T*transpose(timeMeasure,1), physical
+p4/m2. It uses the EXISTING common analytic domain, genuine Bochner field,
+cutoff derivative, weak transpose and signed pairing, with no new foundational
+space or signed path measure. For a polynomial coefficient F with D_j³F=0,
+the ACTUAL native signed-kernel identity is
+  J(F*deltaX_j)=I1(B_jF)+I2(B_jD_jF)+(1/2)I3(B_jD_j²F).
+Product-Leibniz coefficient1/2 is checked. Every derivative/refinement step
+is intertwined, the coefficient correction splits under grid doubling, and
+agreement is proved for EVERY finer-grid polynomial test. Dense core and
+boundedness give equality as continuous functionals on the ENTIRE analytic
+test completion, not solely native-grid tests or an expectation-level PDE.
+
+Foundation/HigherHeatCubicStepIdentity.lean gives, for j missing from F.vars,
+  J(F*deltaX_j³)=I1(B_j(F*deltaX_j²))+2I2(B_j(F*deltaX_j))+I3(B_jF).
+The actual signed cylinder expectation is identified against every cylinder
+probe. Truly past-adapted F is included, but the displayed correction fields
+contain the CURRENT increment and are not asserted to be adapted. These
+identities do NOT YET prove a native cubic-sum limit or terminal-cubic/full
+Clark-Ocone continuum reconstruction. One-/two-channel obstructions survive
+with their precise scope, not an impossibility theorem for all three channels.
+
+FOUR independent Lean examples pass: all-grid F1 cubic signed expectation;
+the new third-channel constant-cell pairing with terminal linear test is
+EXACTLY -24*T for EVERY T>0; the old two-channel terminal cubic obstruction;
+and centering of that actual terminal cubic. Thus the additional channel has
+the previously missing complementary probe, without claiming that the cubic
+equals I3 alone. 256 independent EXACT-RATIONAL signed moment checks test
+coefficient degrees0..2 and probe degrees0..15 at four positive scales, plus
+E[delta³G]=-24h E[G']+144h² E[G5]-64h³ E[G9]. They check normalization, not
+missing continuum convergence. STARDUST_MULTICHANNEL_VERIFICATION.json preserves
+both independent test programs and their actual terminal evidence.
+
+NEXT direct obligation: prove actual cubic anticipating-remainder bound and
+its dual-norm decay, then native cubic sums -> I3 under true L1 adapted-field
+convergence and a uniform coefficient dual-norm bound. Candidate global bound
+(144T²d+64T³d²)M is NOT YET verified. Then actual quadratic coefficient-field
+continuity/approximation and terminal cubic all-three-channel reconstruction,
+followed by generalp-1 and the completed analytic domain with exact topology.
+Universal reconstruction, tensor causal projection and integrand injectivity
+remain OPEN. No false manuscript positivity/isometry or Dp-only formula is
+reinstated. No finite complex-noise substitution for signed calculus.
+
+Verification: integrated build6158 TERMINAL0 64.0859124s, then mandatory
+fresh hash-pinned FULL6158 TERMINAL0 9.7558037s;
+COMPLETE37853 transitive root/Foundation audit TERMINAL0 40.472546s,
+ONLY propext/Classical.choice/Quot.sound. ALL13 public types ACTUALLY READ
+UNABRIDGED pp.proofs true,304loglines/no ellipses; ALL254 final source/helper
+proof lines read (178+76),11theorems2defs. Four Lean tests TERMINAL0
+24.848493s. Early elaboration issues were repaired by explicit
+polynomial-constant algebra, smaller refinement proof steps, existing namespace
+and Fin instance selection; no resource/version/trust/check weakening. All1989
+source hashes pinned, prior1987 unchanged except root's two new imports; all
+configuration inputs unchanged. Exact107recursive manuscripts/43Incoming42distinct/
+11A4, including Clark SHA52671C5A5A77C892CEB8AFC183C7BFBA1520BF0EB3BA1A0E60AE0403063CC6C7,
+preserved; no manuscript edited/renamed/deleted/committed. Unrelated12drafts/tmp,
+all dependencies/caches and sync scanner untouched. Permanent measured build
+optimization retained; timings are observations, no new speedup claim. Exact
+receipt/private backup close this research checkpoint, not the final objective.

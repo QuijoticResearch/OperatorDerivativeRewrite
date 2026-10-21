@@ -1885,3 +1885,5 @@ import Foundation.NewmanFourPointBound
 import Foundation.RiemannQuadraticDensitySmoothing
 import Foundation.RiemannQuadraticDensityHeat
 import Foundation.RiemannQuadraticFiniteThreshold
+import Foundation.HigherHeatThirdChannelSteps
+import Foundation.HigherHeatCubicStepIdentity

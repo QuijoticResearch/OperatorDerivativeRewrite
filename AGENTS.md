@@ -20,6 +20,13 @@ an improvement is measured. See the document for evidence, limits and rollback.
 
 # Persistent research priorities
 
+Current1277: FINAL multichannel pseudoprocess campaign ACTIVE after A2 stopping
+3f30ef6 passed exact PRIVATE gates. Consult the authoritative top queue and
+STARDUST_MULTICHANNEL_CAMPAIGN.md. New third-channel signed step identity is
+verified; native cubic limits and full reconstruction remain open. Earlier
+active-stage labels are historical. Preserve October31 hard stop and all gates;
+no further campaign after this final attempt.
+
 Current1276: consult the authoritative TOP of STARDUST_CAMPAIGN_QUEUE.md.
 A2 stopping audit is STARDUST_A2_STOPPING_AUDIT.md, mathematical baseline ae2b484.
 Only after its audited1276 commit/receipt and exact PRIVATE main/research gate:
