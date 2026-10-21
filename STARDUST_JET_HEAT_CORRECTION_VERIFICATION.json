@@ -1,0 +1,97 @@
+{
+  "checkpoint": 1288,
+  "time_utc": "2026-10-21T22:25:14.218749+00:00",
+  "campaign": "FINAL multichannel pseudoprocess",
+  "previous_private_checkpoint": "f3ed23f2a9104e4acb834650bb206efa3f31c7dd",
+  "source_count": 2039,
+  "prior_source_count": 2036,
+  "prior_sources_unchanged_except_root": true,
+  "root_only_three_imports": true,
+  "configuration_unchanged": true,
+  "full_build_jobs": 6208,
+  "audit_declarations": 38644,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "terminal_results": {
+    "full-build": {
+      "stage": "full-build",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "build"
+      ],
+      "wall_seconds": 41.24988559997291,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T22:22:43.462863+00:00"
+    },
+    "audit": {
+      "stage": "audit",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1288-audit.lean"
+      ],
+      "wall_seconds": 39.27902739998535,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T22:23:36.294671+00:00"
+    },
+    "independent": {
+      "stage": "independent",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1288-independent.lean"
+      ],
+      "wall_seconds": 27.57857780001359,
+      "exit_code": 0,
+      "time_utc": "2026-10-21T22:24:11.869920+00:00"
+    }
+  },
+  "public_types_actually_read_unabridged": 9,
+  "proof_arguments_visible": true,
+  "complete_final_source_lines_reviewed": 171,
+  "new_public_theorems": 8,
+  "new_definitions": 1,
+  "completed_heat_error": "For every p including p=0, every bounded direction and every completed factorial-domain u: norm(evolution(p,a)u-u)<=(exp(abs(a))-1)*norm(u)",
+  "native_transport_error": "Same degree-independent bound for actual signed polynomial transport in the position-coordinate norm",
+  "strict_past_heat_error": "Contractive strict-past projection preserves the heat error bound",
+  "shifted_jet_definition": "Exact transport of the qth derivative of nextConditioned input, then strict-past clamp and division by q factorial",
+  "shifted_jet_error": "qfactorial^-1*(exp(abs(a))-1)*exp(T)*norm(input), independent of cell, degree and grid",
+  "actual_L1_field_error": "For every fixed multitime input P, actual shifted and original predictable fields differ in L1 by at most norm(J)*qfactorial^-1*(exp(abs(a))-1)*exp(T)*norm(core(P))",
+  "actual_L1_error_convergence": "For every a_n tending to zero, the actual refined field difference tends to zero in L1; physical a_n=(-1)^(m+1)*duration(T,n) has no residual convergence premise",
+  "causal_projected_derivative_identification_proved": false,
+  "surviving_refinement_L1_convergence_proved": false,
+  "cofinal_completed_source_operator_construction_proved": false,
+  "full_multitime_pminusone_Clark_Ocone_proved": false,
+  "arbitrary_completed_observable_reconstruction_proved": false,
+  "positive_variation_or_finite_signed_path_measure_claimed": false,
+  "Lean_test_code": "import Foundation.HigherHeatJetCorrectionFields\nnoncomputable section\nopen scoped NNReal Topology\nopen OperatorDerivativeRewrite.Foundation\nopen HigherHeatPolynomialCylinders HigherHeatPolynomialCoordinates HigherHeatPredictableJetBounds\nopen HigherHeatJetHeatCorrection HigherHeatDyadicStepAgreement HigherHeatWeakTimeAdjoint\nopen HigherHeatRefinedPredictableJets Filter\nexample (b : \u2115) (P : Test b) (T : \u211d\u22650) (hT : 0 < T) :\n    Tendsto (fun n => adaptedField n 2 (by omega) T hT (fun j =>\n      shiftedJet n 2 (by omega) T j 3 ((-1:\u211d)^3*(HigherHeatDyadicLaws.duration T n:\u211d))\n        (refinedInput b P n)) - adaptedField n 2 (by omega) T hT (fun j =>\n      predictableJet n 2 T j 3 (refinedInput b P n))) atTop (\ud835\udcdd (0:Field timeMeasure)) :=\n  HigherHeatJetCorrectionFields.physical_cell_error_vanish b P 2 (by omega) T hT 3\nexample (b : \u2115) (P : Test b) (T : \u211d\u22650) (hT : 0 < T) :\n    Tendsto (fun n => adaptedField n 3 (by omega) T hT (fun j =>\n      shiftedJet n 3 (by omega) T j 5 ((-1:\u211d)^4*(HigherHeatDyadicLaws.duration T n:\u211d))\n        (refinedInput b P n)) - adaptedField n 3 (by omega) T hT (fun j =>\n      predictableJet n 3 T j 5 (refinedInput b P n))) atTop (\ud835\udcdd (0:Field timeMeasure)) :=\n  HigherHeatJetCorrectionFields.physical_cell_error_vanish b P 3 (by omega) T hT 5\nexample (n : \u2115) (j : Fin (size n)) (P : Test n) (a : \u211d) :\n    \u2016encode n (MultivariateDirectionalKernel.transport 4 (by omega) a (Pi.single j 1) P) -\n      encode n P\u2016 \u2264 (Real.exp |a|-1)*\u2016encode n P\u2016 :=\n  HigherHeatSmallTimeBound.transport_sub_identity_bound n 4 (by omega) a j P\nexample (u : MultivariateFactorialDomain.H (Fin 2)) :\n    \u2016MultivariateFactorialHeat.evolution 2 0 (fun _ => (1:\u211d)) (by intro i; norm_num) u-u\u2016 \u2264 0 := by\n  simpa using HigherHeatSmallTimeBound.evolution_sub_identity_bound 2 0\n    (fun _ : Fin 2 => (1:\u211d)) (by intro i; norm_num) u\n",
+  "Lean_test_code_sha256": "B0243A145C22FA5E3F6EA2C80B3B96327BE10D7F783E32ACC30445883D12604C",
+  "Lean_test_log_sha256": "3A29CBF3805353E34863342EC83A24E4D9BC4767E89992A7E6F2E53E8168F7A9",
+  "independent_Lean_examples": 4,
+  "exact_test_code": "from fractions import Fraction as F\nfrom math import factorial as fac,comb\n\ndef moment(p,a,n):\n return F(fac(n),fac(n//p))*a**(n//p) if n%p==0 else F(0)\ndef heat(poly,p,a):\n out={}\n for n,c in poly.items():\n  for k in range(n//p+1):\n   d=p*k\n   out[n-d]=out.get(n-d,F(0))+c*F(fac(n),fac(n-d)*fac(k))*a**k\n return out\ndef derivative(poly,q):\n return {n-q:c*F(fac(n),fac(n-q)) for n,c in poly.items() if q<=n}\ncount=nonzero=0\nfor p in [2,4,6,8]:\n for a in [F(-1,2),F(1,3),F(-1,16)]:\n  for future in [0,p,2*p]:\n   future_factor=moment(p,a,future)\n   for n in range(3*p+1):\n    for q in range(1,p):\n     P={n:future_factor}\n     actual=heat(derivative(P,q),p,a).get(0,F(0))/fac(q)\n     expected=comb(n,q)*moment(p,a,n-q)*future_factor if q<=n else F(0)\n     assert actual==expected\n     unshifted=derivative(P,q).get(0,F(0))/fac(q)\n     assert (actual-unshifted==0) if n<q+p else True\n     nonzero+=actual!=unshifted;count+=1\n# The heat correction survives on a finite cell: it cannot be omitted exactly.\nassert heat(derivative({7:F(1)},3),4,F(-1,16)).get(0)/fac(3)==F(-840,16)\nassert heat(derivative({3:F(1)},3),4,F(-1,16)).get(0)/fac(3)==1\nprint(dict(passed=True,exact_signed_heat_jet_tests=count,nonzero_finite_cell_corrections=nonzero,\n biharmonic_septic_third_jet='-840*duration',centered_cubic_third_jet=1))\n",
+  "exact_test_output": "{'passed': True, 'exact_signed_heat_jet_tests': 2844, 'nonzero_finite_cell_corrections': 288, 'biharmonic_septic_third_jet': '-840*duration', 'centered_cubic_third_jet': 1}",
+  "exact_signed_heat_jet_tests": 2844,
+  "nonzero_finite_cell_corrections": 288,
+  "exact_diagnostic_not_separate_universal_Lean_theorem": "For p4, P=X^7, q3, physical a=-duration: correction=-840*duration; third jet of X^3 remains1",
+  "new_source_sha256": {
+    "Foundation/HigherHeatSmallTimeBound.lean": "C594DED04DF964C2E3B67138F2C93397B1071CE6BB6711BDF5ABA2EF0502692B",
+    "Foundation/HigherHeatJetHeatCorrection.lean": "3E1D7243AE11E6278341A33CB4D90751EBC1EC810C0E53DCEC5CE918390A00DA",
+    "Foundation/HigherHeatJetCorrectionFields.lean": "32AF7057E784DB2BE1CF6B23303A19553457752BFAAF505F1AA2460573E88D66"
+  },
+  "source_integrity": {
+    "archive": 107,
+    "exact_recursive_paths": true,
+    "incoming": 43,
+    "incoming_distinct": 42,
+    "a4": 11,
+    "Clark_manuscript_hash_preserved": true
+  },
+  "private_backup_pending": true,
+  "hard_stop": "2026-10-31",
+  "goal": "ACTIVE"
+}

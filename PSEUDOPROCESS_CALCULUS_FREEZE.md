@@ -1,5 +1,14 @@
 # Pseudoprocess calculus — audited campaign freeze
 
+Current1288: FINAL multichannel ACTIVE. Actual one-cell shifted-jet error
+now vanishes in genuine L1 along refinements of EVERY fixed multitime input,
+with all bounds and physical signed-parameter limits discharged. This is
+convergence of the DIFFERENCE, not of either surviving coefficient field.
+Causal projected-derivative identity, surviving-field L1 convergence/full
+multitime p-1/completed OBSERVABLE reconstruction remain OPEN. NEXT actual
+conditioning/derivative factorization and surviving-field convergence.
+Preserve all verification/private gates, October31 hard stop, no later campaign.
+
 Current1287: FINAL multichannel ACTIVE. Exact common-degree native MULTITIME
 signed jet reconstruction and actual signed mean are now proved. For EVERY
 fixed multitime cylinder, centered q>=p channels vanish in completed-dual

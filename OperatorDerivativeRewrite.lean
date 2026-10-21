@@ -1934,3 +1934,6 @@ import Foundation.HigherHeatPredictableJetFields
 import Foundation.HigherHeatPredictableJetDegree
 import Foundation.HigherHeatMultitimeJetTelescope
 import Foundation.HigherHeatRefinedPredictableJets
+import Foundation.HigherHeatSmallTimeBound
+import Foundation.HigherHeatJetHeatCorrection
+import Foundation.HigherHeatJetCorrectionFields
