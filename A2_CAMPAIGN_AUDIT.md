@@ -1660,3 +1660,85 @@ infer the complex-shift identity from a real expectation statement alone.
 Independent A2 ACTIVE; prior integer/real FROZEN; final multichannel AFTER A2
 stopping; October31 hard stop. Explicit commit/exact receipt/private sync close
 this checkpoint; terminal closure retained in the local verification record.
+
+
+## Checkpoint1266: exact complex Gaussian / finite-polynomial operator bridge
+
+Foundation/ComplexGaussianPolynomialTransport.lean identifies GENUINE Gaussian
+integrals with the EXISTING PureOrderPolynomialTransport.transport. For EVERY
+s:NNReal, complex z,c, REAL delta with c^2=delta, and real polynomial P:
+  integral P_C(z+cY) law_s = (transport 2 (s*delta) P)_C(z),
+where law_s is the actual Gaussian N(0,2s), including its Dirac s=0 boundary.
+Thus imaginary c=i gives transport2(-s), real c=1 gives transport2(s), and c=2i
+has parameter -4s. The sign/variance are proved, not inferred from notation.
+
+The proof reuses the existing real Gaussian expectation theorem through an
+ACTUAL scaled-standard Gaussian law. All complex monomials and complex
+polynomials are proved genuinely L1. A polynomial Stein identity is established
+for actual complex integrals using the verified moment recurrence, and then
+for arbitrary complex affine shifts. Every use of integral_add has actual L1
+premises proved beforehand, including Y*P(z+cY), which is a polynomial in Y;
+no invalid claim that products of arbitrary L1 functions are L1 is used.
+
+The integral is realized as an actual real-linear functional on real polynomials.
+An independent purely algebraic uniqueness theorem says equal-normalized real-
+linear functionals with the SAME drift-Stein recurrence E(XP)=zE(P)+bE(P')
+are equal, for arbitrary COMPLEX drift z,b. The existing transport is shown
+to satisfy this recurrence by transport_eval, the old polynomial Stein identity
+and derivative commutation. Strong induction on powers then monomial linearity
+proves uniqueness. No positivity, extra measure or nonpolynomial completion is
+assumed in that uniqueness statement. The conclusion identifies actual Gaussian
+averages at complex z with the old transport on its precise finite domain.
+
+Foundation/RiemannQuadraticOperatorApproximation.lean combines this exact
+identity with1265. ONE actual real EVEN polynomial sequence has initial zero
+strip1, actual H0(0), compact-uniform convergence to H0 and the uniform small-
+quadratic growth budget. For EVERY FIXED s>=0, evaluations of the existing
+transport2(-s) applied to that SAME sequence converge LOCALLY UNIFORMLY ON WHOLE
+C to ACTUAL H_s. The sequence is chosen before s and the compact set. This is
+an actual operator approximation to the Xi flow, not merely a formal moment
+or expectation-level identity. No joint-time-uniformity is inferred.
+
+The existing FactorialAnalyticHeat.evolution_polynomial supplies the bounded
+operator interpretation for EACH FINITE polynomial. Its direct use is checked
+in an independent example. It does not put actual Xi in its bounded factorial-
+analytic domain: the derivative-growth obstruction1249 is preserved. The new
+bridge uses compact-uniform limits of actual evolved finite polynomials instead.
+
+EIGHT independent Lean controls pass: imaginary quadratic+1 gives z^2+1-2s;
+imaginary quartic gives z^4-12s*z^2+12s^2; real quadratic gives z^2+2s;
+doubled imaginary quadratic gives z^2-8s; arbitrary complex shift at zero
+variance evaluates the original polynomial; operator approximations converge
+uniformly on every closed disk (all real radii); genuinely nonreal quintic
+shift is L1; and bounded factorial evolution on finite polynomials equals the
+same old transport. Quadratic/cubic/quartic transport coefficients are separately
+derived from the commutator for those tests. Scratch test failures from polynomial
+coefficient casts and equality normalization were fixed; no production assumption,
+semantic, toolchain, option or check was changed to make the tests pass.
+
+Verification: target4683 jobs TERMINAL0,36.7766101s;
+fresh FULL6136 jobs TERMINAL0,24.1884884s;
+COMPLETE37619-declaration transitive root/Foundation axiom audit TERMINAL0,
+34.8876305s, only propext/Classical.choice/Quot.sound.
+ALL22 public types ACTUALLY READ UNABRIDGED, pp.proofs true, no ellipses.
+COMPLETE286 final source/proof lines read:21 theorems and1 definition;
+no explicitly declared private helper or new global instance. EIGHT independent
+controls TERMINAL0,27.265415s. Source inputs stayed
+hash-identical after the successful full build. Permanent optimization remains
+a2846f7/502fb4d: original build/thread/cache/full-audit settings, selected-import
+preliminary helper only. No fresh build speedup is claimed from these samples.
+
+All1973 Foundation/root source hashes pinned; prior1971 unchanged except root
+import. Exact107 recursive manuscript paths/hashes,43 Incoming/42 distinct and
+11 A4 preserved. No manuscript changed or committed. Unrelated12 draft MDs and
+tmp/ untouched. Explicit commit, exact receipt and PRIVATE remote verification
+are required before this checkpoint closes; closure is in the local record.
+
+NEXT OPEN: GLOBAL finite-polynomial zero-strip contraction under transport2(-s),
+including collisions and changes of the uppermost root.1258 proves only a
+simple differentiable uppermost branch estimate; its interior-upward-motion
+counterexample remains. The new operator approximation closes the previously
+missing analytic/algebraic identification but does not prove that global zero
+theorem. Hurwitz transfer still needs those finite zero hypotheses. No new
+Newman threshold/RH/novelty claim. A2 remains ACTIVE; integer/conditional-real
+FROZEN; final multichannel ONLY AFTER A2 audited stopping. October31 hard stop.

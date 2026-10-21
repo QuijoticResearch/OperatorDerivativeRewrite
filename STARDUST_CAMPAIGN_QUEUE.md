@@ -1,6 +1,22 @@
 # Project Stardust: persistent campaign queue
 
 
+## Current1266: exact actual Gaussian / finite polynomial operator identification
+
+Genuine complex-shift Gaussian averages equal existing transport2(s*delta) when
+c²=REALdelta, all s>=0, complex z, finite real polynomials. Actual L1 and complex
+Stein uniqueness are verified. Forward imaginary shift gives transport2(-s).
+ONE actual real even Xi-approximating sequence, with initial strip1/origin/budget,
+now evolves by that SAME transport and converges LOCALLY UNIFORMLY on WHOLE C
+to actual H_s for every fixed s>=0. Actual Xi is not placed in the bounded
+factorial-analytic domain; its earlier obstruction is preserved.
+NEXT: GLOBAL finite-polynomial zero-strip contraction across collisions/switches,
+then checked Hurwitz transfer. The finite global zero hypothesis remains OPEN;
+no new Newman threshold/RH claim. A2 ACTIVE; integer/real FROZEN; final multichannel
+ONLY AFTER A2 stopping. October31 and all build/audit/type/source/private gates
+remain. This entry supersedes historical immediate-proof labels below.
+
+
 ## Current1265: spatially local-uniform actual Gaussian heat limit verified
 
 Actual Xi polynomial heat averages now converge LOCALLY UNIFORMLY on WHOLE C,
