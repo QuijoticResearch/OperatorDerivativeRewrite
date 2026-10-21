@@ -24850,3 +24850,111 @@ Nine external public-source hashes are preserved in committed
 STARDUST_A2_OPENAI_SOURCE_INVENTORY.json. No upstream proof execution or
 independent upstream verification is claimed. Exact private backup pending;
 current A2 remains ACTIVE; finalmultichannel queued; October31 hard stop.
+
+## Checkpoint1247 in progress: independent upstream replay
+
+Pinned OpenAI1581d4cb source closure COMPLETE:2924 OAI modules/25,009,201bytes,
+every SHA256 and Git blob independently matched against untruncated subtree
+1e340710a6e6220842ad878bb89a1de4b1989af4. Required external mathematical
+imports:PrimeNumberTheoremAnd.Wiener and RellichKondrachov Euclidean.Rellich;
+Architect annotations also required. Thirty support modules fetched at the
+exact upstream manifest revisions. Metadata in
+STARDUST_A2_UPSTREAM_IMPORT_INVENTORY.json; details in A2_CAMPAIGN_AUDIT.md.
+Wiener has two admitted global Fourier-decay declarations prelim_decay_2/3;
+the isolated compiler confirms them. Their use in the target proof remains
+UNDETERMINED until exact transitive axiom collection. No premature acceptance
+or rejection of the target, and no production import/axiom introduced.
+
+Isolated target build is RUNNING (unified session66544), output
+.lake/stardust-1247-upstream-build.log; same Lean/Mathlib and existing nine
+package caches, no production source/configuration changes. Exact-target
+audit prepared at .lake/stardust-1247-upstream/exact-audit.lean for AFTER
+successful terminal build. The mathematical replay checkpoint is NOT complete;
+the separate documentation-only source-inventory checkpoint is described below.
+Preserve the live build; do not start a duplicate on an observation timeout.
+Current A2 remains ACTIVE, finalmultichannel queued, October31 hard stop.
+
+Primary Polymath1904.12438v2 equations1--4 confirm the quadratic time/sign/kernel
+normalization. Its Theorem3.2 strip contraction would CLASSICALLY yield9/32
+from an initial3/4strip, weaker than its0.22bound. This is a conditional
+compatibility observation, not a newly formalized threshold or RH progress;
+the actual general strip-contraction theorem is still not present in Lean.
+
+Continuation1247: static references confine Wiener prelim_decay_3 to decay_alt,
+with no textual use of decay_alt in the fetched closure. This is NOT a kernel
+axiom result; target collection still waits for live build66544 to finish.
+For a constructive A2 bridge, the genuine Gaussian inner-norm calculation
+reduces exp(t*u^2)K(u)exp(I*u*(z+cY)), Y centered variance2s, to the EXISTING
+weighted L1 domain at time t+s*Im(c)^2 and tilt -Im(z). Located APIs support
+product measurability, true Fubini and the exact Gaussian complexMGF. Candidate
+actual identities E H_t(z+IY)=H_(t+s)(z), E H_t(z+Y)=H_(t-s)(z) remain
+UNFORMALIZED; detailed derivation in .lake/stardust-1247-quadratic-gaussian-derivation.md.
+The polynomial z^2-1 tests the sign: real Gaussian variance2 gives z^2+1,
+whereas imaginary shifts give z^2-3. No zero-preservation or RH inference.
+No production Lean sources changed, no duplicate build started, no unfinished
+mathematics certified/committed. A2 and the existing goal remain ACTIVE.
+
+Continuation1247 draft implementation: the genuine Gaussian translation proof
+is now written under .lake/stardust-1247-quadratic-gaussian-candidate.lean,
+including product L1/Fubini/all Fourier jets/general real-square shift and
+opposite real/imaginary time directions. UNCOMPILED, UNIMPORTED, UNCERTIFIED;
+wait for live independent build66544 before serial testing/adoption.
+The Siegel follow-up comparator/actual Main/two conclusion sources were read
+and six files raw-byte hashed at .lake/stardust-1247-followup-source/inventory.json.
+Its local-isolated-Bezout proof route remains independently unaudited. Under
+the stronger7/8 Dirichlet nonvanishing premise, beta<=7/8 andq>=3 imply
+(1-beta)*logq>=log3/8, giving an explicit logarithmic gap. Short conditional
+draft .lake/stardust-1247-siegel-gap-candidate.lean is also UNCOMPILED.
+No mathematical result is adopted from these drafts or source-entry inspections.
+
+Continuation1247 domain audit: FactorialAnalyticDomain.H is lp1 of derivative
+coefficients, not a universal entire-function domain. The actual even derivative
+at0 is (-1)^n times the positive2n-th Fourier moment. Positivity and continuity
+of the actual base density on[2,3] give a common d>0 with derivative norm>=d*2^(2n).
+Thus the sequence is not summable, excluding direct derivative-coefficient
+membership in this existing bounded-shift space. Six-lemma proof draft in
+.lake/stardust-1247-factorial-obstruction-candidate.lean remains UNCOMPILED.
+The precise draft conclusion concerns coefficient identity; full real-function
+nonrepresentation would need the additional real/complex derivative bridge.
+This is a targeted obstruction supporting the genuine Gaussian/Fubini route,
+not a claim that all operator frameworks fail. Live upstream66544 continues;
+no concurrent build, production proof change, certification or new commit.
+
+Continuation1247 pinned API review corrected two uncompiled draft interfaces:
+one_le_pow0 has implicit exponent, and the actual Dirichlet LFunction definition
+requires DirichletContinuation rather than the narrower Dirichlet import.
+No theorem statement was weakened or source result certified. Original replay
+session66544/PID47312 remains live and progressing; full target audit pending.
+
+
+Existing verified reuse during1247: GaussianCriticalExponential.critical_not_integrable
+supplies the actual standard-Gaussian non-L1 function exp(y^2/2). The entire
+f(z)=exp(-z^2/2) has f(I*y)=exp(y^2/2), so entireness alone cannot justify the
+imaginary-Gaussian averaging domain. Scratch domain tests are UNCOMPILED;
+the actual theta-kernel product-L1 argument remains necessary. See A2 audit.
+
+## Checkpoint1247 terminal replay correction and documentation boundary
+
+Session66544 returned TERMINAL1; all Lake/Lean processes have stopped. Three raw
+Rellich support modules failed pointwise-function/elaboration type checks, so
+the target theorem and its exact transitive axiom audit were NOT reached.
+Inspection of the pinned upstream lakefile revealed required bundled dependency
+patches; the isolated setup omitted them. This was our setup omission, not an
+established failure of the configured upstream project or its mathematics.
+The published PrimeNumberTheoremAnd patch REMOVES the two unused admitted
+prelim_decay_2/prelim_decay_3 lemmas and decay_alt. Prior raw-source warnings
+must not be attributed to the configured project. Pinned patch/config bytes
+and Git blob IDs are recorded in STARDUST_A2_UPSTREAM_IMPORT_INVENTORY.json;
+no patch has yet been applied, no version/trust/production input changed.
+Proper replay still needs published patch application and matching OAI
+autoImplicit=false; no proof repair, unsupported theorem acceptance or rejection.
+
+The source inventory and reviewed ledger are a DOCUMENTATION-ONLY checkpoint,
+not completion/certification of the replay or any scratch proof. All1947
+production Lean sources and configuration are identical to auditedf38875b;
+the complete6096job build,37155declaration axiom audit, type/proof review and
+six independent tests are retained under the saved exact-input documentation
+rule. Manuscript hashes/paths are preserved. Only the reviewed reports and
+source metadata are eligible for this finite commit/receipt/private backup;
+uncompiled Gaussian, factorial-domain and Siegel drafts remain excluded.
+CurrentA2 and the full goal remain ACTIVE, finalmultichannel queued, Oct31 stop.

@@ -1,5 +1,16 @@
 # A(2) reuse and source audit
 
+> Current1247 correction: isolated replay66544 is TERMINAL1. It omitted the
+> upstream project's required dependency patches and is not a faithful configured
+> replay. The published PNT patch removes the two raw admitted decay lemmas.
+> No target theorem or axiom audit was reached; no mathematical refutation follows.
+> Preserve the log and raw hashes. Inspect/apply the pinned published patches in
+> isolation before retrying; do not run upstream lake update in production.
+> The reports/source inventory form a documentation-only checkpoint, with no
+> upstream or scratch proof certification. Historical RUNNING entries below
+> describe observations before this terminal result.
+
+
 October21,2026. Independent A(2) opened only after the integer/real-order
 stopping commit `492d5034b5b100ebfd83a601c1d606a6128964d8` passed its exact
 receipt and PRIVATE main/research verification. The existing goal remains active.
@@ -135,3 +146,146 @@ Nine external public-source hashes are preserved in committed
 STARDUST_A2_OPENAI_SOURCE_INVENTORY.json. No upstream proof execution or
 independent upstream verification is claimed. Exact private backup pending;
 current A2 remains ACTIVE; finalmultichannel queued; October31 hard stop.
+
+## In-progress checkpoint1247: complete source closure and isolated replay
+
+The pinned source-import closure of the actual nonvanishing solution contains
+2,924 OAI modules (25,009,201 bytes). The untruncated DirichletL Git subtree is
+`1e340710a6e6220842ad878bb89a1de4b1989af4`. Every downloaded OAI source was
+independently checked against its Git blob ID and its SHA256. The metadata is
+`STARDUST_A2_UPSTREAM_IMPORT_INVENTORY.json`; this is a source inventory, not a
+proof certificate. Two files in the subtree are outside the target's
+import closure. An incomplete whole-repository API listing was rejected before
+resolving this exact subtree.
+
+The external mathematical dependencies are `PrimeNumberTheoremAnd.Wiener`
+(repository revision `c39a751132c88b6e8080b74c74023fd95b3d8be0`) and
+`RellichKondrachov.Analysis.FunctionalSpaces.Sobolev.Euclidean.Rellich`
+(`70f85d4c1bf99c6e7d61e8be4daa6f3664d08d23`). The former also imports the
+Architect annotation package, pinned `468e8f58fb4ad6e6ad672a08da6d0d0531e95a97`.
+Their required closure has30 source modules. All were saved and hashed in the
+isolated scratch project. The OAI sources have no matched admission/axiom tokens
+in the source scan; that scan is not an axiom audit.
+
+The pinned Wiener source contains global declarations `prelim_decay_2` and
+`prelim_decay_3` with `sorry` proofs. The compiler confirms those admissions.
+Their presence in an imported module does not establish their occurrence in
+the target's proof term. Neither target acceptance nor rejection is justified
+until `Lean.collectAxioms` is run on the actual target. An exact-target audit
+file is prepared and will fail on `sorryAx` or any nonpermitted transitive axiom.
+
+The isolated replay is running with the same Lean4v4.34.1/Mathlibd13f23b and
+references the existing nine package caches by path. Production Lake/Lean
+configuration and all1947 mathematical source hashes are unchanged. Command:
+`lake -d .lake/stardust-1247-upstream build OAI.NumberTheory.DirichletL.Nonvanishing`.
+Its output is `.lake/stardust-1247-upstream-build.log`. It has NOT completed;
+no upstream theorem is certified or imported into production. Do not run another
+Lake build concurrently or restart this job merely because a poll times out.
+
+The classical normalization check against
+[Polymath, arXiv1904.12438v2, equations1--4 and Theorem3.2](https://arxiv.org/html/1904.12438)
+matches the actual quadratic kernel, positive time sign and factor1/8.
+Classically, its strip-contraction theorem would turn an initial3/4 strip into
+an all-real starting time9/32. That is weaker than the paper's0.22 bound. This
+is an external conditional deduction, not a new Lean threshold theorem or
+numerical improvement. The general strip-contraction bridge is still missing
+from the verified library.
+
+## Further proof-development observations while replay runs
+
+In the fetched auxiliary source, `prelim_decay_2` has no textual downstream use,
+and `prelim_decay_3` is referenced only by `decay_alt`; the latter has no textual
+use in the fetched closure. These observations are more precise than an
+import-level warning, but do not replace proof-term axiom collection.
+
+A direct Gaussian bridge has a concrete integrability route. For centered
+Gaussian Y of variance2s, s>=0, the expected norm of
+exp(t*u^2)K(u) exp(I*u*(z+cY)) equals the ACTUAL weighted domain at time
+t+s*Im(c)^2 and linear tilt -Im(z), for u>=0. Its outer integral is finite by
+the existing `RiemannEvenDomain.weighted_integrable`. The exact complex Gaussian
+MGF then gives the candidate genuine identities E H_t(z+IY)=H_(t+s)(z) and
+E H_t(z+Y)=H_(t-s)(z). The derivation and located Mathlib APIs are recorded in
+.lake/stardust-1247-quadratic-gaussian-derivation.md; Lean implementation and
+Fubini verification are still pending. No new verified theorem is claimed.
+
+The sign matters: real Gaussian averaging of z^2-1 at variance2 gives z^2+1,
+so ordinary positive convolution cannot be presumed to preserve real roots in
+the growing-flow direction. For higher pure orders, Gaussian averaging adds a
+quadratic frequency tilt instead of advancing quartic/sixth-order time. These
+are direct structural tests, not a statement about actual Xi zero locations.
+
+## Unverified implementation drafts and follow-up comparison
+
+The actual Gaussian bridge now has a proof draft at
+.lake/stardust-1247-quadratic-gaussian-candidate.lean. It includes the exact
+Gaussian phase integrals, norm integral, product L1, Fubini, all actual jets,
+flow integrability, and the general shift formula when c^2=delta is real:
+E H_t(z+cY)=H_(t-s*delta)(z). Real and imaginary shift corollaries retain the
+opposite time directions. It is NOT compiled, imported, committed or certified;
+the live independent replay remains the only build. Fix elaboration and run
+all production gates before any adoption.
+
+The pinned Siegel comparator maps to `OAI.NumberTheory.SiegelZeros.Main`, with
+targets `OAI.SiegelZeros.WeightedTorusJets.exists_absolute_real_zero_gap` and
+`dirichletRealZeroBound_proof`. Its entry and two conclusion sources were read;
+the first conclusion invokes a local-isolated-Bezout selection theorem, rather
+than the inspected7/8 solution entry. Its full dependencies and independent
+verification remain OPEN. Six exact source files and hashes are recorded at
+.lake/stardust-1247-followup-source/inventory.json; no second replay was started.
+
+The stated logarithmic-gap conclusion is a mathematical consequence of the
+fixed7/8 bound: for q>=3 and beta<=7/8, monotonicity of log and positivity give
+(1-beta)*log(q)>=log(3)/8>0. Thus an explicit c=log(3)/8 works under the stronger
+Dirichlet nonvanishing premise, without primitive/real-character restrictions
+on this elementary implication. This neither verifies nor refutes the
+follow-up's separate method. A short conditional Lean draft is at
+.lake/stardust-1247-siegel-gap-candidate.lean, likewise uncompiled/uncertified.
+
+## Factorial-domain obstruction: mathematical argument and uncompiled draft
+
+Direct source review sharpened the earlier domain caution.
+`FactorialAnalyticDomain.H` is lp1 of the derivative coefficients, with
+`sum_norm` proving absolute summability. `FactorialAnalyticFunctions.coordinate_recovery`
+identifies the coefficients of its realized function with derivatives at0.
+This is a substantive restriction, not a generic space of all entire functions.
+
+For the ACTUAL arithmetic integer-order transform, the verified integral and
+derivative identities give the mathematical formula
+H_t^(2n)(0)=(-1)^n integral u^(2n) exp(t*u^(2m)) K(u) du.
+On[2,3], the positive continuous base density has a positive minimum d. The
+integral, and therefore the derivative norm, is at least d*2^(2n). It cannot tend
+to0, so the full derivative-norm sequence cannot be summable. In particular
+there can be no vector in the existing lp1 space whose coordinates equal all
+these complex derivatives at0. This applies in particular to actual A2.
+
+The six-lemma draft .lake/stardust-1247-factorial-obstruction-candidate.lean
+implements the even derivative/moment identity, compact interval lower bound,
+exponential derivative lower bound, nonsummability, and the precise absence of
+a derivative-coefficient vector. It is UNCOMPILED/UNCERTIFIED. A stronger
+real-function nonrepresentation statement would additionally need the matching
+real/complex derivative bridge; the draft does not silently assume that step.
+No general impossibility of analytic operator domains is claimed. The direct
+Gaussian product-L1 proof avoids this particular lp1 membership problem.
+
+## Existing critical-Gaussian reuse and documentation checkpoint
+
+Entireness alone does not ensure imaginary-Gaussian integrability. For
+f(z)=exp(-z^2/2), f(I*y)=exp(y^2/2). The existing verified
+`GaussianCriticalExponential.critical_not_integrable` proves this real function
+is not L1 under `GaussianCore.γ`, the actual standard Gaussian.
+This is a direct mathematical counterexample to a
+domain-free extension, not a new claim about Xi zeros. Scratch domain tests at
+.lake/stardust-1247-gaussian-domain-tests.lean reuse that theorem and test that
+(1+I)^2 cannot equal a real delta. The tests are uncompiled; the actual
+theta-kernel product-L1 proof remains necessary.
+
+The completed source inventory and this reviewed report are preserved in a
+documentation-only checkpoint. It adopts no upstream result or scratch proof.
+All1947 production mathematical sources and the Lake/toolchain configuration
+must match audited/privatef38875b exactly before its receipt is recorded.
+Under STARDUST_BUILD_OPTIMIZATION.md's explicit documentation-only rule, the
+complete6096job build,37155declaration transitive axiom audit, actual10type/full
+source review and six independent tests from1246 are retained on those EXACT
+inputs; no partial check replaces them. The live upstream replay is not
+interrupted to rerun an unchanged production build. The upstream axiom audit
+and all draft verification remain OPEN and outside that certificate.
