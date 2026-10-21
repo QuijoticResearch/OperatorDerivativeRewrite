@@ -1,3 +1,36 @@
+# Current checkpoint 1293 — pseudoprocess stopping checkpoint; intrinsic IBM next
+
+The repaired higher-even-order signed multichannel calculus has reached its
+mathematically justified stopping theorem. `STARDUST_PSEUDOPROCESS_STOPPING_AUDIT.md`
+is the exact scope and limitation contract. Full multitime p-1 reconstruction,
+cofinal linear coefficients, bounded completed-OBSERVABLE extension, adapted
+membership and actual joint signed native approximation are now verified.
+The original D^p-only/isometry claims remain refuted; arbitrary tensor or
+integrand injectivity is not assumed.
+
+**Transition gate:** finish this checkpoint's full build, complete transitive
+axiom audit, unabridged public-type/proof/source review, manuscript integrity,
+Git commit, exact-commit receipt and PRIVATE main/research verification. Only
+AFTER that exact gate closes, freeze the pseudoprocess campaign and automatically
+make **intrinsic stochastic calculus for actual IBM ACTIVE**, resuming the
+existing F1–F3 verified foundations, manuscripts and audits. Until that gate,
+perform checkpoint closure, not IBM proofs. Do not reopen the pseudoprocess
+campaign merely to pursue stronger statements outside the stopping contract.
+
+IBM scope remains full intrinsic derivatives/adjoints, Itô formulas, integration
+by parts, stochastic integration, Clark–Ocone, precise domains and the required
+convergence/closure theorems for the ACTUAL process. Partial, conditional,
+sourcewise or formal operator results are not completion. Audit and reuse the
+existing source-resolved chaos and F1–F3 declarations before new proofs. After
+IBM, continue cumulative mathematically justified backlog research without an
+expiration date. October31 is REVIEW ONLY. All verification, build optimization,
+source preservation and private-backup requirements remain unchanged.
+
+This update supersedes older campaign-stage labels below. It retains the
+October21 no-expiration amendment and preserves every historical record.
+
+---
+
 # Clark–Ocone manuscript audit and mathematical repair ledger
 
 Current1290: FINAL multichannel ACTIVE. For EVERY fixed multitime polynomial,
@@ -2414,3 +2447,45 @@ Current multichannel campaign remains ACTIVE. Full multitime p-1 reconstruction,
 cofinal consistency/linearity and completed OBSERVABLE extension remain OPEN.
 Resume these obligations; intrinsic IBM follows only their justified verified
 stopping checkpoint. October31 remains a review milestone only; no hard stop.
+
+
+## Checkpoint1293 — full completed multichannel Clark–Ocone and actual signed diagonal
+
+The three central multichannel obligations from1290 are now DISCHARGED:
+full multitime p-1 reconstruction, cofinal consistency/linearity, and bounded
+extension to arbitrary completed OBSERVABLES. Six modules, 537 source lines,
+52 public declarations. For every positive even order p=2m, T>0, and u in the
+existing common analytic completion, the actual signed pairing of u-Eu equals
+the sum of all p-1 constructed signed channels of canonical adapted L1 fields.
+The theorem is HigherHeatCompletedClarkOcone.clark_ocone, with explicit
+channel_duality, canonical coefficient uniqueness and arbitrary synthesis
+uniqueness exactly modulo its kernel. This is a test-dual norm theorem, not
+unproved injectivity of the full completed pairing or a positive isometry.
+
+Actual native signed reconstruction and every surviving coefficient converge
+for fixed multitime polynomials. HigherHeatSignedDiagonalRealization proves a
+simultaneous diagonal for EVERY completed observable, in finite-product L1
+field topology times reconstruction dual norm, with growing refinement levels.
+The general sharpness theorem proves that all p-2 lower channels cannot recover
+the centered terminal power p-1. The centered quartic cubic requires its third
+channel. Independent exact tests:24 sharp instances,64 signed telescopes,
+344 linearity/scaling cases; eight independent Lean instantiations passed.
+
+Fresh full root build6224 jobs terminal0 29.511s.
+Complete safe-Foundation transitive audit38881 declarations, standard3only,
+terminal0 41.145s. All52 final types actually read
+unabridged (491loglines, proof arguments visible), all537 final source/private
+helper lines reviewed. Independent Lean examples terminal0
+39.734s. No resource/trust/toolchain change.
+All2049 prior Foundation/root bytes preserved exceptroot siximports; all113
+manuscript paths/hashes unchanged. Unrelated drafts remain untouched.
+
+STARDUST_PSEUDOPROCESS_STOPPING_AUDIT.md records the exact repaired calculus,
+old claims refuted, stronger claims NOT adopted, odd/regulated-domain limits,
+all existing polynomial signed Itô/adjoint/step results reused, and why this
+is a justified stopping checkpoint rather than success for the manuscript
+verbatim. STARDUST_PSEUDOPROCESS_STOPPING_VERIFICATION.json contains reproducible
+tests and honest precommit pending-backup status. The campaign freezes only
+after exact receipt and verified PRIVATE main/research backup close. Then
+actual intrinsic IBM calculus automatically becomes ACTIVE from the existing
+F1–F3/source-resolved foundations. October31 remains review-only, no expiration.

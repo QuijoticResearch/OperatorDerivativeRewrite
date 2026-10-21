@@ -1,3 +1,36 @@
+# Current checkpoint 1293 — pseudoprocess stopping checkpoint; intrinsic IBM next
+
+The repaired higher-even-order signed multichannel calculus has reached its
+mathematically justified stopping theorem. `STARDUST_PSEUDOPROCESS_STOPPING_AUDIT.md`
+is the exact scope and limitation contract. Full multitime p-1 reconstruction,
+cofinal linear coefficients, bounded completed-OBSERVABLE extension, adapted
+membership and actual joint signed native approximation are now verified.
+The original D^p-only/isometry claims remain refuted; arbitrary tensor or
+integrand injectivity is not assumed.
+
+**Transition gate:** finish this checkpoint's full build, complete transitive
+axiom audit, unabridged public-type/proof/source review, manuscript integrity,
+Git commit, exact-commit receipt and PRIVATE main/research verification. Only
+AFTER that exact gate closes, freeze the pseudoprocess campaign and automatically
+make **intrinsic stochastic calculus for actual IBM ACTIVE**, resuming the
+existing F1–F3 verified foundations, manuscripts and audits. Until that gate,
+perform checkpoint closure, not IBM proofs. Do not reopen the pseudoprocess
+campaign merely to pursue stronger statements outside the stopping contract.
+
+IBM scope remains full intrinsic derivatives/adjoints, Itô formulas, integration
+by parts, stochastic integration, Clark–Ocone, precise domains and the required
+convergence/closure theorems for the ACTUAL process. Partial, conditional,
+sourcewise or formal operator results are not completion. Audit and reuse the
+existing source-resolved chaos and F1–F3 declarations before new proofs. After
+IBM, continue cumulative mathematically justified backlog research without an
+expiration date. October31 is REVIEW ONLY. All verification, build optimization,
+source preservation and private-backup requirements remain unchanged.
+
+This update supersedes older campaign-stage labels below. It retains the
+October21 no-expiration amendment and preserves every historical record.
+
+---
+
 # Authoritative research directive — October 21, 2026
 
 This user-directed amendment supersedes every earlier scheduling or termination
