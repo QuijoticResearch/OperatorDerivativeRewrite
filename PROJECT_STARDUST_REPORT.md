@@ -28746,3 +28746,35 @@ The five source arrivals at this checkpoint include three exact duplicates:
 All five remain textually unreviewed in this campaign. The full hashes and
 matching prior paths are in `STARDUST_RESEARCH_SOURCE_INVENTORY_1290.json`.
 No manuscript claim was used to justify the multitime field-limit theorem.
+
+
+## Checkpoint 1291 — instruction-only queue amendment, October 21, 2026
+
+The user's authoritative amendment is prepended consistently to the campaign
+queue, AGENTS, multichannel state, pseudoprocess freeze notice, research recovery
+state and IBM state. All earlier document bytes remain preserved. October 31 is
+now only a review milestone; all earlier hard-stop/FINAL/no-subsequent-campaign
+scheduling restrictions are superseded permanently. Current multichannel
+pseudoprocess calculus continues to its mathematically justified fully verified
+stopping checkpoint, followed by full intrinsic calculus for actual IBM using
+the existing F1–F3 foundations, then cumulative backlog research without an
+expiration date. No campaign is opened prematurely and no result is changed.
+
+All 2,048 Foundation/root Lean sources and three pinned build configurations
+are byte-identical to checkpoint 1290. Fresh unchanged-source full root build:
+6,217 jobs, exit 0, 11.006s. Fresh complete transitive axiom
+audit: 38,706 safe Foundation declarations, only propext, Classical.choice,
+Quot.sound, exit 0, 71.165s. No new public mathematical types;
+the existing 29 checkpoint-1290 types are reprinted in the complete audit.
+Private backup closure requires the exact-commit receipt and subsequent
+verified main/research sync under STARDUST_SYNC.md; a commit alone is not closure.
+
+All 112 previously inventoried manuscripts retain their exact paths and hashes.
+One external arrival is recorded by hash only, unreviewed and unused:
+`ResearchSources/Incoming/renormalized_airy_ibp.tex`, SHA256
+`6012E74DF2B4178DEE3091815A7062F7AC5B7E1B25A60438A32F40FFFB7E12FB`.
+The exact recursive inventory is now 113 files. No manuscript was modified or
+staged. Unrelated drafts, existing proof state, caches, sync task and goal are
+preserved. Evidence: `.lake/stardust-1291-working-manifest.json`, full-build and
+audit logs with their terminal timing records. This is an instruction-only
+checkpoint and certifies no unfinished mathematics.

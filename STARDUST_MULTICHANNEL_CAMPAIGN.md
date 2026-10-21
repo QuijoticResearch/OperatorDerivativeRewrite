@@ -1,3 +1,65 @@
+# Authoritative research directive — October 21, 2026
+
+This user-directed amendment supersedes every earlier scheduling or termination
+instruction in this document and the other Stardust campaign records. The
+authoritative queue is `STARDUST_CAMPAIGN_QUEUE.md`. Historical checkpoint text
+below is preserved verbatim; its former ACTIVE/FINAL/STOP labels, October 31 hard
+stops, and prohibitions on subsequent campaigns are not current instructions.
+This supersession changes research scheduling only, never mathematical claims,
+proof status, domains, hypotheses, or verification requirements.
+
+**No research expiration date remains.** The October 31, 2026 hard stop is
+permanently removed. October 31 is a review milestone only: review progress,
+obstructions and priorities without automatically terminating research or
+freezing an unfinished proof. No later campaign is prohibited by an old FINAL,
+STOP, or "no subsequent campaign" restriction.
+
+1. **ACTIVE: higher-order heat multichannel pseudoprocess calculus.** Continue
+   the present proof through its mathematically justified, fully verified
+   stopping checkpoint. Reuse checkpoint 1290 and its exact remaining obligations:
+   full multitime (p-1)-channel signed Clark–Ocone reconstruction, cofinal
+   presentation consistency, and the completed observable-domain extension.
+   Convergence on completed test probes alone is not completed observable
+   reconstruction. Preserve precise domains, convergence topologies, uniqueness
+   qualifications, counterexamples and rigorously documented obstructions.
+   Do not interrupt the active proof or transition merely because of a date.
+2. **NEXT: complete intrinsic stochastic calculus for actual iterated Brownian
+   motion (IBM).** Begin only after the multichannel stopping checkpoint passes
+   its complete verification, Git and private-backup gates. Resume from the
+   existing IBM F1–F3 verified foundations, manuscripts and audits; first identify
+   exact reusable declarations and unresolved assumptions rather than rebuilding
+   established foundations. Pursue intrinsic derivatives and adjoints, Itô
+   formulas, integration by parts, stochastic integration, Clark–Ocone
+   representations, operator domains, and the necessary convergence and closure
+   theorems for the actual process. Repair gaps rigorously. Partial, conditional,
+   mollified, sourcewise or formal operator identities do not by themselves
+   complete intrinsic IBM calculus. Record which results are proved, conditional,
+   refuted or open, and verify every claimed connection to the actual process.
+3. **AFTER IBM: cumulative autonomous Stardust research.** Select mathematically
+   justified objectives from the existing backlog using all verified results and
+   precise open obligations. Continue without an arbitrary expiration date.
+   Existing frozen mathematical checkpoints remain valid historical records;
+   this update neither reopens every old campaign automatically nor assumes any
+   unproved manuscript claim, threshold relation or RH implication.
+
+Keep every existing Lean verification, complete root build, complete transitive
+axiom audit, unabridged public theorem-type and proof review, source-integrity,
+manuscript-preservation, research-ledger, explicit Git checkpoint and private
+backup requirement. Consult `STARDUST_BUILD_OPTIMIZATION.md` and follow
+`STARDUST_SYNC.md`: exact-commit audit receipt, then verified private main and
+research-branch synchronization. Never commit unfinished mathematical work or
+substitute a sync receipt for verification. Keep `ResearchSources` read-only.
+This instruction-only update modifies no mathematical result and creates no new
+research goal, session or campaign in parallel with the active proof.
+
+---
+
+## Preserved earlier checkpoint records and instructions
+
+The text below retains its historical wording. Its mathematical evidence and
+verification standards remain in force; scheduling and termination conflicts
+are resolved exclusively by the authoritative directive above.
+
 # Final higher-heat multichannel campaign
 
 
