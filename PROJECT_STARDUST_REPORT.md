@@ -26999,3 +26999,77 @@ from the classical1/2 theorem; a later explicit audited stopping checkpoint must
 record the strongest proved transfer and the precise remaining obstruction.
 A2 ACTIVE; integer/real FROZEN; final multichannel ONLY AFTER A2 stopping;
 October31 hard stop and full verification/private gates retained. No pivot.
+
+
+## Checkpoint1271: arbitrary-time actual Xi strip contraction and upstream heat transfer
+
+Foundation/RiemannQuadraticStripEvolution.lean proves six actual-flow theorems.
+For EVERY real starting time t (including negative times), an explicit GLOBAL
+initial strip |Im z|<=b for ALL zeros of H_t yields at time t+s, EVERY s>=0:
+  H_(t+s)(z)=0 => Im(z)^2 <= max(b^2-2s,0).
+strip_between_times expresses the same result for arbitrary real t<=u.
+real_after_strip_wait gives ALL zeros real at every u>=t+b^2/2.
+once_real_always_real includes arbitrary real initial times; no initial t>=0
+or simple-root, root-label, collision or bounded factorial-space hypothesis.
+H is the ACTUAL RiemannEvenFlow.flow 1, with the established Xi normalization.
+
+Proof reuses the GENERIC exact divisor polynomial approximation and Gaussian
+growth budget at H_t, not only at time zero. The actual origin is nonzero for
+every real t, so each approximating Pn is nonzero. Exact initial disk zero tests
+transfer the GIVEN global strip to every finite polynomial. Actual Gaussian
+integrability/domination/limit, the complex polynomial Gaussian transport
+identity and imaginary_gaussian_average identify the pointwise transported
+limit with ACTUAL H_(t+s). The1270 finite heat strip theorem and ENTIRE/NONZERO
+strip-closure theorem then give the global result. No new infrastructure, no
+uniform-degree assumption, diagonal limit or infinite Xi vector in H is used.
+The NNReal-to-real clock coercion was repaired explicitly; failed scratch runs
+were not certified. A transient unavailable Python launcher was a SETUP issue,
+resolved by revalidating the bundled runtime before writes; not a math failure.
+
+conditional_seven_eighths_strip keeps its exact arithmetic premise visible:
+  forall w:Complex, 7/8<Re(w) -> riemannZeta(w)!=0.
+The existing actual zero-time Xi transfer gives width3/4; hence squared width
+max(9/16-2t,0), and conditional_seven_eighths_real_zeros gives all-real zeros
+for EVERY t>=9/32. These are known classical transfer consequences, not RH or
+a claimed new numerical bound. No equivalence to quartic/real-order stages.
+
+The new ISOLATED integration actually supplies the previously independently
+kernel-replayed OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re from pinned
+OpenAI math1581d4cbdd69a0faf34b2089614fe2a814316a6a. BOTH resulting ACTUAL heat
+theorems are UNCONDITIONAL in that isolated environment, with exact types and
+transitive Lean.collectAxioms restricted to propext/Classical.choice/Quot.sound.
+Both types and the full integration proof source were ACTUALLY READ UNABRIDGED.
+STARDUST_A2_HEAT_UPSTREAM_INTEGRATION.json preserves code, exact output, hashes,
+pins and domains. Only the child process LEAN_PATH adds existing OAI artifacts.
+No production package/version/config/import change supplies the external theorem;
+production retains the explicit conditional premise. All2924 OAI sources,30
+effective supports,30 preserved raw supports and effective isolated config were
+freshly hash-rechecked. The prior7059job replay1251 and1252 zero-time integration
+remain intact; they were not rerun or falsely substituted for the fresh main build.
+Mathlib's riemannZeta at1 is a nonzero junk value (Harmonic/ZetaAsymp
+riemannZeta_one_ne_zero); the all-w arithmetic premise is not an accidental pole
+contradiction. Broader human paper and follow-up method review remains open.
+
+Verification: target4700jobs TERMINAL0,24.1808474s;
+fresh FULL6150jobs TERMINAL0,25.0242793s;
+COMPLETE37736-declaration transitive root/Foundation audit TERMINAL0,
+36.9680841s, standard3 only. ALL6 new public types ACTUALLY READ
+UNABRIDGED, pp.proofs true, no ellipses; ALL95 final source/proof lines read.
+Six theorems,0 definitions, no explicit private helpers/global instances. Seven
+examples TERMINAL0,28.0225714s: negative starting-time
+strip wait, negative-time once-real preservation, zero elapsed time, exact
+conditional t0 width9/16, t1/4 width1/16, t9/32 real boundary, and unconditional
+classical real preservation to t2. Isolated integration TERMINAL0,
+45.8554042s. All1981 production source hashes pinned;
+prior1980 unchanged except root import. All build/toolchain/cache/resource settings
+unchanged. Exact107 archive paths/hashes, Incoming43/42distinct and exact11A4
+preserved; manuscripts/unrelated12drafts/tmp untouched. Exact private sync follows.
+
+NEXT A2: theorem-level reuse for a GENERAL arithmetic half-plane parameter theta,
+carefully retaining endpoint, pole/normalization and conjugation hypotheses; then
+assess the precise remaining stronger-Xi estimate versus known external methods.
+The arbitrary-time propagation and once-real obligations are now CLOSED, but
+zero-time reality/RH, an exact Newman threshold and stronger Xi-specific arithmetic
+estimates remain OPEN. Do not claim A2 stopped simply from known classical bounds.
+An explicit audited stopping checkpoint is still required before final multichannel.
+A2 ACTIVE; integer/real frozen; October31 hard stop; no priority change or pivot.

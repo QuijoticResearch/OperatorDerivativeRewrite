@@ -1,0 +1,41 @@
+{
+  "checkpoint": 1271,
+  "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "toolchain": "leanprover/lean4:v4.34.1",
+  "Mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "terminal_result": {
+    "ended": "2026-10-21T12:08:53.8643962-04:00",
+    "seconds": 45.8554042,
+    "exit_code": 0
+  },
+  "scope": "Isolated exact integration; production retains explicit arithmetic hypothesis and no OAI dependency",
+  "code": "import Foundation.RiemannQuadraticStripEvolution\nimport OAI.NumberTheory.DirichletL.Nonvanishing\nimport Lean\n\nopen OperatorDerivativeRewrite.Foundation\n\ntheorem stardust_upstream_quadratic_heat_strip (t : \u211d) (ht : 0 \u2264 t)\n    (z : \u2102) (hz : RiemannEvenFlow.flow 1 t z = 0) :\n    z.im ^ 2 \u2264 max ((9/16 : \u211d) - 2*t) 0 :=\n  RiemannQuadraticStripEvolution.conditional_seven_eighths_strip\n    (fun _ hs => OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re hs) t ht z hz\n\ntheorem stardust_upstream_quadratic_heat_real_zeros (t : \u211d) (ht : 9/32 \u2264 t)\n    (z : \u2102) (hz : RiemannEvenFlow.flow 1 t z = 0) : z.im = 0 :=\n  RiemannQuadraticStripEvolution.conditional_seven_eighths_real_zeros\n    (fun _ hs => OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re hs) t ht z hz\n\nopen Lean Elab Command in\nrun_cmd do\n  for name in [``stardust_upstream_quadratic_heat_strip,\n      ``stardust_upstream_quadratic_heat_real_zeros] do\n    let axioms \u2190 Lean.collectAxioms name\n    for ax in axioms do\n      unless ax == ``propext || ax == ``Classical.choice || ax == ``Quot.sound do\n        throwError \"Forbidden integrated transitive axiom {ax} in {name}\"\n    logInfo m!\"INTEGRATED ACTUAL HEAT AUDIT PASSED: {name}; {axioms}\"\n\nset_option pp.universes true\nset_option pp.fullNames true\nset_option pp.proofs true\n#check @stardust_upstream_quadratic_heat_strip\n#check @stardust_upstream_quadratic_heat_real_zeros\n",
+  "code_sha256": "9855B0CBD2AA602B024F3CD441AB2B304C34114D7BACDD218BB43D3CFEB0BE52",
+  "output_unabridged": "INTEGRATED ACTUAL HEAT AUDIT PASSED: stardust_upstream_quadratic_heat_strip; [propext, Classical.choice, Quot.sound]\nINTEGRATED ACTUAL HEAT AUDIT PASSED: stardust_upstream_quadratic_heat_real_zeros; [propext,\n Classical.choice,\n Quot.sound]\nstardust_upstream_quadratic_heat_strip : \u2200 (t : \u211d),\n  LE.le.{0} 0 t \u2192\n    \u2200 (z : \u2102),\n      Eq.{1} (OperatorDerivativeRewrite.Foundation.RiemannEvenFlow.flow 1 t z) 0 \u2192\n        LE.le.{0} (HPow.hPow.{0, 0, 0} z.im 2) (Max.max.{0} (HSub.hSub.{0, 0, 0} (9 / 16) (HMul.hMul.{0, 0, 0} 2 t)) 0)\nstardust_upstream_quadratic_heat_real_zeros : \u2200 (t : \u211d),\n  LE.le.{0} (9 / 32) t \u2192\n    \u2200 (z : \u2102), Eq.{1} (OperatorDerivativeRewrite.Foundation.RiemannEvenFlow.flow 1 t z) 0 \u2192 Eq.{1} z.im 0\n",
+  "log_sha256": "5895991BFA09D952E9968FF647E6507CBE4F1092F3F7D504CFC273E1786AA62F",
+  "sources_rechecked": {
+    "oai": 2924,
+    "effective_support": 30,
+    "raw_support": 30,
+    "isolated_configuration_unchanged": true
+  },
+  "source_inventories": {
+    "STARDUST_A2_UPSTREAM_IMPORT_INVENTORY.json": "B4CD17874F17101ACF48605BEDA7E219754A372150DB4D5FE7F159BEB33DDF20",
+    "STARDUST_A2_PATCHED_SUPPORT_INVENTORY.json": "A80C4B9B95D729A95470388ADB25010D5CF32025B1FA3405CA226D9669AA6CBA",
+    "STARDUST_A2_UPSTREAM_VERIFICATION.json": "69665DE163134329AA720AC599A2182BD796A24E6724CCD8CD2D654CE4B04ECB"
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "all_types_and_proofs_actually_read_unabridged": true,
+  "consequence": "Actual H_t zeros satisfy Im(z)^2 <= max(9/16-2t,0), t>=0; all zeros real at every t>=9/32",
+  "not_claimed": [
+    "RH",
+    "A new numerical record",
+    "Exact Newman threshold",
+    "Production import of OAI",
+    "Full human review of external paper/followups"
+  ]
+}

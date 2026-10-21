@@ -1,6 +1,22 @@
 # Project Stardust: persistent campaign queue
 
 
+## Current1271: arbitrary-time Xi strip propagation and actual upstream heat link verified
+
+ACTUAL H_t: any real starting time t and GLOBAL initial strip b imply squared
+width max(b²-2(u-t),0) at EVERY u>=t. ALL real at u>=t+b²/2; once-real-always-real
+holds for arbitrary real starting times. No root simplicity/collision assumptions.
+Production arithmetic7/8 transfer is explicitly conditional; isolated checked
+integration supplies ACTUAL audited OAI theorem and gives actual squared width
+max(9/16-2t,0), t>=0, and ALL real at EVERY t>=9/32. Known classical consequence,
+not RH/new numerical record/exact threshold. External code/config remain isolated.
+NEXT A2: general arithmetic half-plane parameter transfer with exact domains,
+then precise stronger-Xi-estimate/method audit; broader paper/followup review open.
+Zero-time reality/RH/exact Newman value remain OPEN. A2 ACTIVE, no stopping yet;
+integer/real FROZEN; final multichannel ONLY AFTER explicit audited A2 stopping.
+October31 and all full-build/axiom/type/source/private gates remain unchanged.
+
+
 ## Current1270: actual classical quadratic Xi GLOBAL strip bound verified
 
 ACTUAL H_t=RiemannEvenFlow.flow 1 t now satisfies, for EVERY t>=0 and EVERY zero:

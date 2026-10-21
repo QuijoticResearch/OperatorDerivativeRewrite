@@ -1878,3 +1878,4 @@ import Foundation.SymmetricPolynomialStrip
 import Foundation.PolynomialDerivativeEuler
 import Foundation.SymmetricPolynomialHeatLimit
 import Foundation.RiemannQuadraticGlobalStrip
+import Foundation.RiemannQuadraticStripEvolution
