@@ -1742,3 +1742,112 @@ missing analytic/algebraic identification but does not prove that global zero
 theorem. Hurwitz transfer still needs those finite zero hypotheses. No new
 Newman threshold/RH/novelty claim. A2 remains ACTIVE; integer/conditional-real
 FROZEN; final multichannel ONLY AFTER A2 audited stopping. October31 hard stop.
+
+
+## Checkpoint1267: global finite-shift strip contraction, with multiplicities
+
+Foundation/SymmetricPolynomialStrip.lean independently verifies the finite-
+polynomial symmetric imaginary shift argument. The operator is ACTUALLY
+  S_h(P)(z)=(P(z+i*h)+P(z-i*h))/2.
+For ANY nonzero conjugation-fixed complex polynomial (hence any nonzero real
+polynomial mapped to C), h>0, and ANY real b such that ALL initial zeros satisfy
+(Im a)^2<=b^2, EVERY zero of S_h(P) satisfies
+  (Im z)^2<=max(b^2-h^2,0).
+Constants are handled separately; no positive-degree premise is hidden in the
+final strip theorem. The output remains nonzero and conjugation-fixed. Generic
+b need not be nonnegative, since its square is the stated budget. The zero
+polynomial is explicitly excluded, as the verified negative control requires.
+
+The key exact identity for each conjugate root pair is the difference of the
+products of squared norms at z+i*h and z-i*h:
+  8*h*Im(z)*((Re(z)-Re(a))^2+Im(z)^2+h^2-Im(a)^2).
+Above the target strip it is strictly positive. The proof multiplies comparisons
+over the COMPLETE ROOT MULTISET, including repeated roots. Conjugation permutes
+that multiset with ALL multiplicities, by the existing splitting/root-map
+machinery. Pair products over the full multiset become squares of the original
+norm products; nonnegativity justifies recovering the strict comparison. The
+fundamental theorem of algebra supplies the exact polynomial/root product and
+nonzero leading coefficient. The upper half-plane comparison forbids cancellation;
+conjugation gives the lower half-plane. No root enumeration by time, simple-root
+premise, discriminant premise, velocity or unproved collision continuation occurs.
+
+The finite iteration theorem is GLOBAL: for EVERY natural n, S_h iterated n
+times remains nonzero and conjugation-fixed, and every zero satisfies
+  (Im z)^2<=max(b^2-n*h^2,0).
+The proof carefully clips the budget at zero at each step; max(max(B,0)-q,0)=
+max(B-q,0) for q>=0. This verifies all-real preservation after the budget is
+spent. Repeated roots, switches of uppermost roots and arbitrary degrees are
+included directly in this static finite-shift result.
+
+For fixed REAL s>0, define scaledShift(s,n,P) using n+1 repetitions of
+h=sqrt(2*s/(n+1)). The clock (n+1)*h^2=2*s is proved, with no zero denominator.
+EVERY n therefore has the SAME bound max(b^2-2*s,0), remains nonzero and has
+real coefficients in the exact conjugation-fixed sense. An explicit wrapper
+instantiates actual real polynomials via coefficientwise complexification.
+All roots are real when b^2<=2*s. These statements are about FINITE SHIFTS.
+The s=0 identity is checked separately; positive-s scaling theorems do not
+silently include that boundary through a false strict-positive shift premise.
+
+The missing next theorem is STILL the scaling limit
+  scaledShift(s,n,P) -> (transport2(-s)P)_C
+locally uniformly on C for each fixed finite real polynomial P.1266 identifies
+the RIGHT-HAND SIDE with actual Gaussian heat, but does not identify it with
+each FINITE symmetric shift. An explicit checked quartic distinguishes them:
+for P(z)=(z^2+1)^2, S_1(P)=z^2(z^2-4), hence S_1(P)(0)=0, whereas the genuine
+imaginary Gaussian heat at s=1/2 has value2 at0. Thus finite-shift control cannot
+be transferred to heat by an exact finite equality. No such equality or limit
+is assumed here. Once the limit is proved, checked Hurwitz hypotheses still
+must transfer zero exclusion, first to each evolved polynomial, then through1266
+to actual Xi. Actual global heat strip contraction and a new threshold remain
+OPEN; this checkpoint does not settle A2 or RH.
+
+PRIMARY SOURCE/REUSE AUDIT: N.G. de Bruijn, The roots of trigonometric integrals,
+Duke Math.J.17(1950),197-226, DOI10.1215/S0012-7094-50-01720-0.
+Publisher PDF: https://pure.tue.nl/ws/files/1769368/597490.pdf . Selectively
+rendered and VISUALLY READ pp.199-202; Lemma1 and Theorems3-5, pp.200-202,
+contain the classical finite-shift comparison and strip contraction. The paper
+uses stronger disk/ellipse localization and general phase combinations. The
+present formalization proves the stated unweighted strip consequence, not those
+stronger geometric/phase results. No novelty claim is made. PDF is scanned:
+plain extraction gave no page text, so actual rendered pages were inspected.
+The local ignored research-cache copy has SHA256
+C538EFAF0CA02AED0AFCCA4060B0AB3D9324AC89BAE594B5E89E74DA105260E0.
+Earlier TU Delft fetches timed out; the TU Eindhoven publisher copy succeeded.
+No ResearchSources manuscript was created/changed by this external-source review.
+
+NINE independent Lean controls pass: constants are fixed; zero-size shift is
+identity; norm comparison reverses at a concrete point outside its hypotheses;
+zero-polynomial counterexample to dropping P!=0; repeated-root quartic exact
+shift z^2(z^2-4); ALL scaled iterates of that repeated-root quartic have only real
+zeros at s=1/2; arbitrary all-real polynomial remains all-real under finite
+iterates; finite quartic shift value0; genuine Gaussian quartic heat value2.
+The last pair independently blocks a premature finite-shift/heat identification.
+Scratch control coercion/tactic/syntax failures were repaired without changing
+any production theorem or premise. All tests use actual algebraic/Gaussian objects.
+
+Verification: target2949 jobs TERMINAL0,18.1515529s;
+fresh FULL6137 jobs TERMINAL0,24.8390029s;
+COMPLETE37648-declaration transitive root/Foundation axiom audit TERMINAL0,
+35.3914777s, only propext/Classical.choice/Quot.sound.
+ALL24 public types ACTUALLY READ UNABRIDGED, pp.proofs true, no ellipses;
+COMPLETE254 final source/proof lines read:20 theorems,4 definitions, no explicitly
+private helper or global instance. Nine controls TERMINAL0,
+28.2807654s. Source inputs unchanged after full build.
+Minimal mathematical imports use existing Mathlib polynomial/FTA/multiset results;
+no new foundational system, axiom, toolchain, setting or verification weakening.
+Permanent build configuration remains unchanged; no new speedup is claimed.
+All1974 sources pinned; prior1973 unchanged except root import. Exact107 archive
+paths/hashes,43Incoming42distinct and11A4 preserved; no manuscript committed,
+unrelated12 draft MDs/tmp untouched. Exact Git receipt/private synchronization
+required for closure and recorded locally afterward.
+
+NEXT REUSE CANDIDATE (NOT PROVED): finite derivative-polynomial binomial expansion
+of scaled shifts, truncating on fixed P by derivative nilpotence. Existing
+ProbabilityTheory.tendsto_choose_mul_pow_atTop (Mathlib Probability/Distributions/
+Poisson/PoissonLimitThm.lean55) already proves choose(n,j)*p_n^j -> r^j/j! if
+n*p_n->r. This may identify the fixed finite sum limit with the existing bounded
+FactorialAnalyticHeat.evolution_polynomial, used ONLY on finite polynomials;
+actual Xi remains excluded from that bounded factorial domain1249. Avoid new
+Banach/CLT infrastructure if finite nilpotence and this binomial theorem suffice.
+A2 ACTIVE; integer/real FROZEN; final multichannel ONLY AFTER A2 stopping;
+October31 hard stop. No campaign transition or RH implication.

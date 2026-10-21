@@ -1,6 +1,23 @@
 # Project Stardust: persistent campaign queue
 
 
+## Current1267: global finite symmetric-shift strip contraction verified
+
+For nonzero real-coefficient P, symmetric imaginary shift S_h contracts EVERY
+zero to squared strip budget max(b²-h²,0), all multiplicities included. Finite
+iterates contract to max(b²-n*h²,0), preserve reality and nonzero polynomials.
+With h=sqrt(2s/(n+1)), n+1 shifts have bound max(b²-2s,0) for EVERY n, s>0.
+Classical de Bruijn finite-shift argument independently formalized; no novelty claim.
+NEXT OPEN: prove scaled shifts converge locally uniformly to existing
+transport2(-s) on EACH FINITE polynomial, then checked Hurwitz transfer to its
+heat evolution and through1266 to ACTUAL Xi. Finite shift is NOT exact heat:
+checked repeated quartic gives0 versus genuine Gaussian2 at0 at matching clock.
+No actual global heat strip theorem/new threshold/RH claim yet. A2 ACTIVE;
+integer/real FROZEN; final multichannel ONLY AFTER A2 stopping. October31 and
+all full-build/axiom/type/source/private gates retained. This entry supersedes
+historical immediate-proof labels below.
+
+
 ## Current1266: exact actual Gaussian / finite polynomial operator identification
 
 Genuine complex-shift Gaussian averages equal existing transport2(s*delta) when
