@@ -713,3 +713,92 @@ integer/real-order campaigns FROZEN, final multichannel AFTER A2 stopping; Octob
 hard stop and all complete audits/private-backup requirements remain unchanged.
 The finite heat-truncation counterexample remains deferred and uncertified.
 Exact private backup pending at this precommit entry.
+
+
+## Checkpoint1255: ACTUAL local zero existence, uniqueness and real/simple splitting
+
+Foundation/RiemannQuadraticZeroTransfer.lean transfers the verified all-order
+Hermite limit to GENUINE zeros of the actual arithmetic quadratic flow. The key
+reuse is the already verified, GENERIC complex-ball machinery in
+RiemannQuarticQuantitativeSaddle.scalar_ball_surj / scalar_ball_injective and
+RiemannQuarticFrequencyBranch.scalar_ball_lower_bound. Their names do not impose
+quartic assumptions on their actual theorem types. Cauchy derivative bounds on
+an inner disk transfer uniform function closeness on a buffered outer disk into
+uniform derivative closeness. Ball surjectivity gives an ACTUAL zero; injectivity
+gives uniqueness. No new fixed-point foundation, unproved Rouche/Hurwitz step or
+assumed existence premise is introduced.
+
+The generic close-function criterion is explicit: f,g entire, g(b)=0, d!=0,
+model derivative within norm(d)/4 on radius r>0, and norm(f-g)<=epsilon on radius
+2r, with epsilon<=norm(d)*r/4. It proves a UNIQUE zero of f in the inner CLOSED
+disk, nonzero derivative at every such zero, and displacement<=2epsilon/norm(d).
+This works over the COMPLEX plane and does not assume real coefficients.
+
+For the ACTUAL quadratic flow at any real t and complex z, suppose all derivatives
+below m vanish and D^mH_t(z)!=0. For EACH root a of the EXISTING Hermite Q_m,
+there exist r>0 and C>=0 such that for every sufficiently small nonzero REAL h,
+there is EXACTLY ONE w in closedBall(a,r) satisfying H_(t+h^2)(z+hw)=0.
+Every actual zero in this disk has H'_(t+h^2)(z+hw)!=0 and norm(w-a)<=C*|h|.
+The derivative conclusion concerns the ACTUAL spatial flow, not just a model
+polynomial or the scaled function. Its affine-chain derivative is explicitly
+verified, as is equivalence of scaled and actual zeros when h!=0. The physical
+coordinate obeys norm((z+hw)-(z+ha))<=C*|h|^2 by a separate verified identity.
+Thus the local actual zero has z(h)=z+h*a+O(h^2). Constants and the eventual
+neighborhood depend on t,z,m,a; no global/uniform-in-all-roots threshold is claimed.
+No analytic choice of branch as a function of h is asserted.
+
+For an original REAL base point z=x, conjugation of the ACTUAL flow preserves
+the scaled zero disk centered at real Hermite root a. Uniqueness forces w real,
+and the PHYSICAL zero x+hw is explicitly proved real and simple. This reality
+assertion is restricted to real original base points. At a complex original
+base point the complex existence/uniqueness/simplicity theorem still applies;
+no false real-zero assertion is made. These local results use forward time
+exactly t+h^2, in the audited growing quadratic convention.
+
+In addition, EVERY actual quadratic-flow zero has finite POSITIVE multiplicity:
+there exists m>0 with precisely the required lower-derivative vanishing and
+nonzero m-th derivative. Entire analyticity, existing strict positivity at0 and
+the connected-domain identity theorem prove this; finite multiplicity is not an
+extra unverified analytic hypothesis about the arithmetic kernel.
+
+Fresh FULL6102job root build TERMINAL0 (38.4039775s);
+COMPLETE37297declaration transitive root/Foundation audit TERMINAL0
+(41.8011444s), ONLY propext/Classical.choice/Quot.sound.
+ALL12 public types ACTUALLY READ UNABRIDGED, COMPLETE229 source/proof lines
+including two definitions ACTUALLY reviewed, no private helpers/instances.
+TEN independent Lean controls TERMINAL0 (24.7439798s):
+complex translated linear zero, its explicitly nonreal location, simplicity/drift
+for arbitrary small complex translation, h=1/4 cubic derivative factor16,
+negative-h zero equivalence, automatic actual finite multiplicity, cubic-center
+actual zero existence at arbitrary complex base, real double-zero branch at
+sqrt2, the physical quadratic displacement identity, and the explicit nonreal
+root i*epsilon of w^2+epsilon^2 for epsilon>0. The last control explains why a
+multiple model root would not justify real-root transfer from closeness alone.
+Initial test repair changed only the global norm_one lemma name; production
+mathematics was unchanged. All raw generic/actual/real/multiplicity proofs passed
+without increased resources, added axioms or weakened checks.
+All1953 source hashes pinned; previous1952 unchanged except root import. Pinned
+Lean/Mathlib/configuration unchanged. All107 recursive manuscript paths/hashes,
+Incoming43/42distinct and A4eleven/exactpaths preserved. Manuscripts were not edited.
+
+A separate120-case floating Newton control used polynomial perturbations
+Q_m(w)+beta*h*Q_(m+1)(w), m=1..4, positive/negative h and real/complex beta.
+Real cases stayed real; maximum residual 2.797762e-14; maximum
+scaled displacement/|h| 0.52542112.
+These are NOT arithmetic Xi zero computations or roundoff certificates; no
+Lean proof depends on them. The actual-zero result above follows from verified
+surjectivity and the genuine Fourier-integral remainder, not numerical inference.
+
+What remains OPEN: exact degree/root counts for the existing Hermite family,
+simultaneous distinct branches for all m model roots, and an EXHAUSTIVE cluster
+statement excluding additional zeros in the remaining local region. A single
+small disk around each model root does not by itself count the entire physical
+cluster or control zeros outside every fixed scaled disk. Global strip contraction
+and any new de Bruijn-Newman threshold remain open. No RH conclusion follows.
+Next prioritize the actual degree/root-count bridge and simultaneous/exhaustive
+local counting, reusing the verified univariate/multivariate polynomial machinery
+and existing analytic finite-order tools. The local Hermite splitting mechanism
+is classical under the prior normalization audit, not claimed as novel research.
+Independent A2 remains ACTIVE; prior integer/real campaigns FROZEN; finalmultichannel
+AFTER A2 stopping; October31 hard stop. All complete verification and exact private
+backup requirements remain; backup pending at this precommit entry.

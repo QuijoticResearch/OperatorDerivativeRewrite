@@ -1,5 +1,20 @@
 # Project Stardust: persistent campaign queue
 
+## Current1255: ACTUAL local Hermite zero transfer verified; exhaustive count next
+
+At any finite-multiplicity actual quadratic-flow zero z and each Hermite root a,
+verified complex-ball surjectivity/injectivity now gives a UNIQUE nearby actual
+zero at time t+h², simple as a spatial flow zero, with z(h)=z+h*a+O(h²).
+For REAL original z, conjugation additionally proves the actual zero REAL.
+EVERY actual zero has verified finite positive multiplicity. No realness is
+asserted for complex original z. Constants/thresholds are local to each model root.
+OPEN: exact Hermite degree/root count, simultaneous distinct branches and an
+EXHAUSTIVE local cluster count excluding additional zeros outside those disks.
+Prioritize those count/confinement obligations, then global strip contraction.
+No new threshold/RH claim. Independent A2 ACTIVE; prior integer/real campaigns
+FROZEN; final multichannel AFTER A2 stopping; October31 hard stop, all gates intact.
+This entry supersedes historical immediate-proof labels below.
+
 ## Current1254: all-order actual Hermite limits verified; ACTUAL zero transfer next
 
 ALL finite Taylor orders of the actual quadratic flow now have a genuine integral

@@ -1862,3 +1862,4 @@ import Foundation.RiemannFactorialObstruction
 import Foundation.RiemannQuadraticHermite
 import Foundation.RiemannQuadraticParabolic
 import Foundation.RiemannQuadraticAllOrders
+import Foundation.RiemannQuadraticZeroTransfer
