@@ -20,6 +20,13 @@ an improvement is measured. See the document for evidence, limits and rollback.
 
 # Persistent research priorities
 
+Current1278: FINAL multichannel remains ACTIVE. Actual third biharmonic signed
+cubic sums now converge in completed-dual norm under explicit bounds/L1
+convergence, discharged for F1. Next is quadratic predictable-field control
+and terminal cubic reconstruction; full Clark-Ocone/generalp-1 remain OPEN.
+Consult the authoritative top queue and STARDUST_MULTICHANNEL_CAMPAIGN.md.
+Preserve all gates and October31 hard stop; no subsequent campaign.
+
 Current1277: FINAL multichannel pseudoprocess campaign ACTIVE after A2 stopping
 3f30ef6 passed exact PRIVATE gates. Consult the authoritative top queue and
 STARDUST_MULTICHANNEL_CAMPAIGN.md. New third-channel signed step identity is

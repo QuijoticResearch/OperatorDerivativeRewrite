@@ -1,5 +1,11 @@
 # Pseudoprocess calculus — audited campaign freeze
 
+Current1278: the FINAL reopened campaign now verifies actual cubic signed-sum
+dual-norm convergence to I3 with explicit general premises, discharged for the
+nonzero actual constant field. Terminal cubic/full reconstruction remain open.
+The1277 notice and1045 freeze below are historical where inconsistent. All
+source counterexamples, October31 and verification/private gates are preserved.
+
 Current1277: the historical1045 freeze below remains preserved. The FINAL
 multichannel attempt reopened only AFTER the explicit A2 stopping commit
 3f30ef6e33e6a2954be7f5afd1b461068f701ca1 passed its exact receipt and PRIVATE

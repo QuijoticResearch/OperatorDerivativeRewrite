@@ -1,0 +1,75 @@
+{
+  "checkpoint": 1278,
+  "time_utc": "2026-10-21T18:41:14.441263+00:00",
+  "campaign": "FINAL multichannel pseudoprocess",
+  "previous_private_checkpoint": "09f2903b226aeacfaa717cc4be5a0e4b2ae95f0e",
+  "source_count": 1991,
+  "prior_source_count": 1989,
+  "prior_sources_unchanged_except_root": true,
+  "configuration_unchanged": true,
+  "full_build_jobs": 6160,
+  "audit_declarations": 37890,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "terminal_results": {
+    "full-build": {
+      "seconds": 39.1308595,
+      "exit_code": 0,
+      "ended": "2026-10-21T14:34:51.7023384-04:00"
+    },
+    "audit": {
+      "seconds": 37.5079083,
+      "exit_code": 0,
+      "ended": "2026-10-21T14:35:53.3326513-04:00"
+    },
+    "independent": {
+      "ended": "2026-10-21T14:38:49.5749992-04:00",
+      "exit_code": 0,
+      "seconds": 27.7537662
+    }
+  },
+  "public_types_actually_read_unabridged": 17,
+  "proof_arguments_visible": true,
+  "complete_final_source_lines_reviewed": 234,
+  "new_public_theorems": 14,
+  "new_definitions": 3,
+  "physical_order": 4,
+  "topology": "Norm topology of the actual completed analytic test dual; L1 norm for coefficient-field input",
+  "remainder_bound": "(144*T^2*d+64*T^3*d^2)*M",
+  "actual_uniform_coefficient_bound_required": true,
+  "actual_L1_field_convergence_required": true,
+  "native_adapted_cubic_sums_converge_in_dual_norm": true,
+  "constant_coefficients_hypotheses_discharged": true,
+  "limiting_constant_channel_nonzero_test": true,
+  "limiting_constant_channel_linear_probe": "-24*T, every T>0",
+  "zero_time_channel_zero_test": true,
+  "terminal_cubic_continuum_reconstruction_proved": false,
+  "universal_completed_Clark_Ocone_proved": false,
+  "general_p_minus_one_channels_proved": false,
+  "Lean_test_code": "import Foundation.HigherHeatCubicChannelLimit\nimport Foundation.HigherHeatQuadraticItoBoundary\n\nopen OperatorDerivativeRewrite.Foundation\nopen HigherHeatPolynomialCylinders HigherHeatAnalyticCylinderDomain\nopen HigherHeatWeakTimeAdjoint HigherHeatThirdChannelSteps HigherHeatCubicStepIdentity\nopen HigherHeatCubicChannelLimit HigherHeatDyadicStepAgreement HigherHeatCompletedPairing\nopen HigherHeatFirstChannelRange HigherHeatQuadraticItoBoundary HigherHeatPairedDualCausality\nopen HigherHeatQuadraticItoFields HigherHeatAdaptedStepDuality Filter\nopen scoped NNReal Topology\n\nlocal instance : NeZero (size 0) := \u27e8by norm_num [size, HigherHeatDyadicLaws.gridSize]\u27e9\n\nlemma cell_linear (T : \u211d\u22650) (hT : 0 < T) :\n    thirdChannel T (coefficientField 0 2 (by norm_num) T hT 0 1) (core terminalCylinder) =\n      -24*(T:\u211d) := by\n  have hx : (HigherHeatMultivariateMoments.terminal : Test 0) = MvPolynomial.X 0 := by\n    change (\u2211 i : Fin 1, (MvPolynomial.X i : MvPolynomial (Fin 1) \u211d)) = MvPolynomial.X 0\n    simp only [Fin.sum_univ_one]\n  have hc : cylinderOf 0 ((1:Test 0)*(MvPolynomial.X 0)^3) = terminalCylinder^3 := by\n    simp only [terminalCylinder, hx, one_mul, map_pow]\n  have he := congrArg (fun \u03c6 : Dual => \u03c6 (core terminalCylinder))\n    (cubic_step_dual 0 T hT 0 1 (by simp))\n  rw [hc] at he\n  simp only [add_apply, firstChannel_terminal_zero 2 (by norm_num),\n    secondChannel_terminal_zero 2 (by norm_num), zero_add] at he\n  rw [\u2190 he, witness_pairing]\n  norm_num\n\nlemma constant_linear (T : \u211d\u22650) (hT : 0 < T) :\n    thirdChannel T (constantField 2 (by norm_num) T hT) (core terminalCylinder) = -24*(T:\u211d) := by\n  have hc : constantField 2 (by norm_num) T hT = coefficientField 0 2 (by norm_num) T hT 0 1 := by\n    rw [\u2190 constants_field_eq 0 2 (by norm_num) T hT]\n    change (\u2211 j : Fin 1, coefficientField 0 2 (by norm_num) T hT j 1) = _\n    simp only [Fin.sum_univ_one]\n    rfl\n  rw [hc]\n  exact cell_linear T hT\n\nexample (F : Fin (size 1) \u2192 Test 1) (hF : Adapted F) (M : \u211d)\n    (hM : \u2200 j, \u2016pairing 2 (by norm_num) 1 (by norm_num) (core (cylinderOf 1 (F j)))\u2016 \u2264 M) :\n    \u2016remainder 1 1 (by norm_num) F\u2016 \u2264 88*M := by\n  have h := remainder_bound 1 1 (by norm_num) F hF M hM\n  norm_num [HigherHeatDyadicLaws.duration,HigherHeatDyadicLaws.gridSize] at h\n  exact h\n\nexample (F : Fin (size 2) \u2192 Test 2) (hF : Adapted F) (M : \u211d)\n    (hM : \u2200 j, \u2016pairing 2 (by norm_num) 1 (by norm_num) (core (cylinderOf 2 (F j)))\u2016 \u2264 M) :\n    \u2016remainder 2 1 (by norm_num) F\u2016 \u2264 40*M := by\n  have h := remainder_bound 2 1 (by norm_num) F hF M hM\n  norm_num [HigherHeatDyadicLaws.duration,HigherHeatDyadicLaws.gridSize] at h\n  exact h\n\nexample (T : \u211d\u22650) (hT : 0 < T) : thirdChannel T (constantField 2 (by norm_num) T hT) \u2260 0 := by\n  intro hz\n  have h := constant_linear T hT\n  rw [hz, zero_apply] at h\n  have hp : 0 < (T:\u211d) := by exact_mod_cast hT\n  linarith\n\nexample : thirdChannel 0 = 0 := by\n  ext A G\n  simp [thirdChannel,coefficient]\n\nexample (T : \u211d\u22650) (hT : 0 < T) :\n    Tendsto (fun n => pairing 2 (by norm_num) T hT\n      (core (cylinderOf n (cubicPolynomial n (fun _ => 1)))) (core terminalCylinder)) atTop\n        (\ud835\udcdd (-24*(T:\u211d))) := by\n  have he := ((ContinuousLinearMap.apply \u211d \u211d (core terminalCylinder)).continuous.tendsto\n    (thirdChannel T (constantField 2 (by norm_num) T hT))).comp (constant_cubic_sums_converge T hT)\n  change Tendsto (fun n => pairing 2 (by norm_num) T hT\n    (core (cylinderOf n (cubicPolynomial n (fun _ => 1)))) (core terminalCylinder)) atTop\n      (\ud835\udcdd (thirdChannel T (constantField 2 (by norm_num) T hT) (core terminalCylinder))) at he\n  rw [constant_linear] at he\n  exact he\n",
+  "Lean_test_code_sha256": "AD015DDFBC6C5A53D9F2511A2A3C5F9F75DD63EC94646444D4947C7C50283E71",
+  "Lean_test_log_sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+  "independent_Lean_tests": 5,
+  "independent_Lean_helpers": 2,
+  "rational_moment_test_code": "from fractions import Fraction as Q\nfrom math import factorial,comb\ndef moment(d,t):\n return Q(0) if d%4 else Q(factorial(d),factorial(d//4))*(-t)**(d//4)\ndef differentiated_moment(g,r,t):\n return Q(0) if g<r else Q(factorial(g),factorial(g-r))*moment(g-r,t)\nchecks=0\nfor t in [Q(1),Q(1,2),Q(5,7)]:\n for N in [1,2,4,8,16]:\n  h=t/N\n  for g in range(18):\n   actual=N*sum((comb(g,a)*moment(a+3,h)*moment(g-a,t-h) for a in range(g+1)),Q(0))\n   limit=-24*t*differentiated_moment(g,1,t)\n   remainder=144*t*t/N*differentiated_moment(g,5,t)-64*t**3/N**2*differentiated_moment(g,9,t)\n   assert actual==limit+remainder\n   if g==1:assert actual==-24*t\n   if g==5:assert actual-limit==17280*t*t/N\n   checks+=1\nprint(dict(exact_signed_convolution_tests=checks,passed=True,scope='Finite signed polynomial moment and mesh scaling test; the dual-norm proof is separate Lean mathematics'))\n",
+  "rational_moment_test_output": "{'exact_signed_convolution_tests': 270, 'passed': True, 'scope': 'Finite signed polynomial moment and mesh scaling test; the dual-norm proof is separate Lean mathematics'}",
+  "rational_moment_tests": 270,
+  "new_source_sha256": {
+    "Foundation/HigherHeatCubicRemainder.lean": "F359B768A635AE658A0CC76CA31635B7C4D859F212F916F5BEB985802121E274",
+    "Foundation/HigherHeatCubicChannelLimit.lean": "C5B2008773CD0F6C816894B693C99250187613D37C5F46232904EE060F34086A"
+  },
+  "source_integrity": {
+    "archive": 107,
+    "exact_recursive_paths": true,
+    "incoming": 43,
+    "incoming_distinct": 42,
+    "a4": 11,
+    "Clark_manuscript_hash_preserved": true
+  },
+  "private_backup_pending": true,
+  "hard_stop": "2026-10-31",
+  "goal": "ACTIVE"
+}

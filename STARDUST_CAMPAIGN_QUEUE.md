@@ -1,5 +1,23 @@
 # Project Stardust: persistent campaign queue
 
+## Current1278: FINAL multichannel — genuine cubic signed-sum dual-norm limit verified
+
+Actual p4 cubic increment sums now converge in completed analytic DUAL NORM
+to I3(A), with EXPLICIT uniform actual coefficient-dual bound and actual L1
+field convergence. Actual adapted coefficients, finite signed kernel pairing,
+WHOLEcompletedtestdual. Remainder<=(144T²d+64T³d²)M ->0. F1 discharges both
+hypotheses: actualconstantfields at everygrid and M=||J1||. Its limitNONZERO,
+terminalLINEARprobe -24T, allT>0. This is NOTterminalcube reconstruction or a
+signedpathmeasure/positivevariation. NEXT: actual quadratic predictable-field
+uniform dual bound/timecontinuity/native L1 approximation; then terminalcubic
+all-three-channel identity. Generalp-1/completedClark-Ocone/tensorcausality
+still OPEN. Do not substitute finitecomplexnoise or infer fullimpossibility
+from one-/twochannel obstructions. A4/integer/conditional-real/A2 remainFROZEN;
+FINAL remainsACTIVE. See STARDUST_MULTICHANNEL_CAMPAIGN.md. All fullbuild/axiom/
+unabridgedtype/proof/source/private gates preserved. October31 HARDSTOP;
+freeze/document/STOP then, NO new campaign afterwards. Existing goal ACTIVE.
+
+
 ## Current1277: FINAL multichannel ACTIVE — actual third biharmonic signed step identity
 
 A2 STOPPING3f30ef6e33e6a2954be7f5afd1b461068f701ca1 exact receipt/sync/private

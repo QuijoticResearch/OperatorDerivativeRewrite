@@ -27578,3 +27578,82 @@ preserved; no manuscript edited/renamed/deleted/committed. Unrelated12drafts/tmp
 all dependencies/caches and sync scanner untouched. Permanent measured build
 optimization retained; timings are observations, no new speedup claim. Exact
 receipt/private backup close this research checkpoint, not the final objective.
+
+
+## Checkpoint1278: ACTUAL native cubic signed sums converge in completed analytic DUAL NORM
+
+The immediate1277 limit obligation is CLOSED, with precise domains. The final
+multichannel campaign remains ACTIVE, and A4/integer/conditional-real/A2 stay
+FROZEN. Prior09f2903 exact receipt and PRIVATE main/research backup were checked
+before continuing. No new campaign or goal; October31 remains the hard stop.
+
+Foundation/HigherHeatCubicRemainder.lean proves biharmonic second/third channel
+bounds12T/24T on the genuine L1dualfield space, and actual signed linear/quadratic
+increment estimates. For j absent fromF.vars, the anticipating cubic correction
+has DUALNORM <=(144T²d²+64T³d³)||J(F)||. These current-increment fields are
+retained and bounded, not declared adapted or discarded by formal degree alone.
+
+Foundation/HigherHeatCubicChannelLimit.lean proves the actual finite signed
+sum identity. For genuine adapted polynomial coefficient arrays and an actual
+uniform dual-norm boundM, it proves
+  ||R_n|| <=(144T²d_n+64T³d_n²)M ->0,
+where d_n=duration1n. If their ACTUAL L1 coefficient fields converge to A,
+then the ACTUAL signed cubic sums J(sum F_(n,j)delta_(n,j)³) converge to I3(A)
+in the NORM topology of the completed analytic dual. These are continuous
+functionals tested on the whole completed analytic domain; on every polynomial
+cylinder probe, the prior completed pairing identifies them with actual finite
+signed heat-kernel integrals. No formal expectation or finite complex-noise
+representation replaces that identification. M and L1 convergence remain
+EXPLICIT public hypotheses for general coefficient arrays, not consequences
+asserted from refinement alone.
+
+The concrete F_(n,j)=1 case discharges BOTH approximation hypotheses: its
+actual coefficient fields equal the existing constantField at every grid,
+and M=||J1|| works on every cell. Thus actual cubic signed sums converge in
+dual norm to I3(constantField). Independent Lean tests prove this limiting
+functional is NONZERO, pairs with terminalLINEAR as EXACTLY -24T for every
+T>0, and the corresponding actual linear-probe sums converge to -24T. This
+is not a positive cubic variation or a finite signed path measure. Terminal
+cubic reconstruction is NOT YET proved; the limiting cubic-increment sum
+is not identified with the terminal cube.
+
+Five independent Lean examples (two helper proofs) pass: T1 meshes1/2 and1/4
+give actual remainder constants88M/40M; the genuine constant-field limit is
+nonzero for ALLT>0; I3 at horizon0 is the zero operator; and actual signed
+cubic sums against the terminal-linear test converge to -24T. 270 exact
+independent signed convolution tests check eighteen terminal probe degrees,
+five grid sizes and three positive rational horizons:
+  E[sumdelta³ G(X_T)] = -24T E[G'] +(144T²/N)E[G5] -(64T³/N²)E[G9].
+The fifth-power correction17280T²/N is reproduced. These checks support
+normalization/mesh scaling; the independent Lean operator proof gives the
+actual dual-norm convergence, not a numerical inference or an optimal-rate
+claim. STARDUST_MULTICHANNEL_CUBIC_LIMIT_VERIFICATION.json preserves both
+complete test programs, actual terminal results, source hashes and scope.
+
+NEXT focused proof: the quadratic predictable coefficient dual field needed
+for terminal cubic Itô/Clark-Ocone. Establish its actual uniform bound, time
+continuity and native L1 approximation using existing position/Stein/affine
+machinery. The previously verified past-coordinate field handles the second
+telescoping term; the NEW genuine cubic-sum limit handles the third. General
+p-1 channel identification, completed reconstruction, full tensor causal
+projection and unquotiented integrand uniqueness remain OPEN. One-/two-channel
+obstructions do not refute a correct full hierarchy. No unrelated branch or
+new foundational space is introduced. Preserve all original source corrections.
+
+Verification: fresh hash-pinned FULL6160jobs TERMINAL0 39.1308595s;
+COMPLETE37890 transitive root/Foundation axiom audit TERMINAL0 37.5079083s,
+ONLY propext/Classical.choice/Quot.sound. ALL17 new public types ACTUALLY READ
+UNABRIDGED pp.proofs true/no ellipses,304auditloglines; ALL234 final source/
+helperproof lines read (138+96),14theorems3defs. Five independent Lean tests
+TERMINAL0 27.7537662s,270exact checks PASS. No explicit private
+production helpers/instances. Elaboration limits were respected: splitting
+the norm estimate into its two actual channel bounds fixed heartbeat failure;
+no resource increase or theorem weakening. Test glue used the canonical
+continuous evaluation map and a Fin-instance reflexivity step, not a changed
+conclusion. All1991 source hashes pinned; prior1989 unchanged except root's
+two new imports. All configuration/resource/toolchain/dependency/trust settings
+unchanged. Exact107recursive manuscriptpaths/hashes,43Incoming42distinct/11A4,
+and Clark SHA52671C5A5A77C892CEB8AFC183C7BFBA1520BF0EB3BA1A0E60AE0403063CC6C7 preserved.
+Unrelated12drafts/tmp, all caches and sync scanner untouched. No manuscript
+edited/renamed/deleted/committed. Exact receipt/private sync close this
+mathematical checkpoint, not the full final reconstruction objective.

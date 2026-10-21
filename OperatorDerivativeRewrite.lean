@@ -1887,3 +1887,5 @@ import Foundation.RiemannQuadraticDensityHeat
 import Foundation.RiemannQuadraticFiniteThreshold
 import Foundation.HigherHeatThirdChannelSteps
 import Foundation.HigherHeatCubicStepIdentity
+import Foundation.HigherHeatCubicRemainder
+import Foundation.HigherHeatCubicChannelLimit
