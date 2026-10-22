@@ -1,3 +1,25 @@
+# IBM scope clarification — preserve the completed focused F1–F3 results
+
+Checkpoint1107's focused F1–F3 results remain VERIFIED within their exact
+domains: K-smoothed full cross-sector correction convergence and stochastic
+reconstruction; the literal boundary-layer random-functional ordinary L2
+limit; and a dense maximal intrinsic core with CLOSED densely defined joint
+derivative and its actual Hilbert adjoint. See IBM_F1_F3_VERIFIED_CHECKPOINT.md.
+The later broader intrinsic campaign does not reopen these completed theorems.
+
+References below to open “intrinsic derivatives/adjoints” or “Itô–Tanaka/F1–F3
+completion” concern the full native process calculus BEYOND those verified
+domains: for example unrestricted unmollified corrections, native stochastic
+integration/adjoint identification, domain equality, representation and closure.
+They must not be read as declaring the existing F1–F3 theorems unproved.
+The lifted ambient divergence domain is not assumed equal to the entire
+intrinsic adjoint domain. No physical H^-1/common-clock-dual equivalence or
+ordinary raw full-correction L2 convergence is inferred. Exact existing
+theorem hypotheses and limitations remain unchanged. Current IBM campaign
+and queue unchanged; checkpoint1329's initial-coordinate theorem stands.
+
+---
+
 # Current IBM mathematics — checkpoint1329: actual coordinate initial germ ZERO
 
 IBM ACTIVE. For EVERY t>=0, actual IBM Z_t=W(abs(Y_t)) satisfies

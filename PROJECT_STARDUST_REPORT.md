@@ -30232,3 +30232,31 @@ STARDUST_IBM_OBSERVED_INITIAL_GERM_VERIFICATION.json. Exact receipt and
 PRIVATE main/research verification follow separately; precommit evidence
 claims no backup closure. IBM/indefinitegoal ACTIVE, queue unchanged,
 manuscriptsimmutable/unstaged, unrelated drafts preserved.
+
+
+## Checkpoint1329 scope clarification — focused F1–F3 preserved
+
+Checkpoint1107's focused F1–F3 results remain VERIFIED within their exact
+domains: K-smoothed full cross-sector correction convergence and stochastic
+reconstruction; the literal boundary-layer random-functional ordinary L2
+limit; and a dense maximal intrinsic core with CLOSED densely defined joint
+derivative and its actual Hilbert adjoint. See IBM_F1_F3_VERIFIED_CHECKPOINT.md.
+The later broader intrinsic campaign does not reopen these completed theorems.
+
+References below to open “intrinsic derivatives/adjoints” or “Itô–Tanaka/F1–F3
+completion” concern the full native process calculus BEYOND those verified
+domains: for example unrestricted unmollified corrections, native stochastic
+integration/adjoint identification, domain equality, representation and closure.
+They must not be read as declaring the existing F1–F3 theorems unproved.
+The lifted ambient divergence domain is not assumed equal to the entire
+intrinsic adjoint domain. No physical H^-1/common-clock-dual equivalence or
+ordinary raw full-correction L2 convergence is inferred. Exact existing
+theorem hypotheses and limitations remain unchanged. Current IBM campaign
+and queue unchanged; checkpoint1329's initial-coordinate theorem stands.
+
+
+Documentation-only clarification after direct declaration/source review. All2126
+Foundation/root source hashes and3 configuration hashes exactly match the
+fully built/audited1329 manifest; existing successful complete verification
+is retained only under this exact mathematical-input identity. No source,
+mathematical result, manuscript or campaign order changed.
