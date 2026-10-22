@@ -31079,3 +31079,38 @@ Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog;
 no expiration, pseudo frozen1293; all gates intact. No campaign transition.
 
 Fresh complete root build: 6353 jobs, 24.985s, terminal0. Complete transitive safe Foundation audit: 41210 declarations, 34.960s, terminal0; only propext/Classical.choice/Quot.sound. All16 unabridged public types, TWO printed definition bodies (actual energyDensity and reused complete ChainResult) and ALL204 final source/proof lines read. Six independent Lean examples FIRST-PASS0 (30.102s), empty log. Development logs retained: ambiguous coordinate, actual function-subtraction representative, scalar inner-product typing and elaboration timeouts repaired by factoring actual lemmas, never resource overrides. All2183 previous sources unchanged except one root import; three configs and113 archive paths/hashes unchanged. Exact original generator/energyL2 hypotheses, actual composed-domain output, AE unprojected L2 formula and projected delta graph are verified. Nonconstant fully regular input remains unconstructed; Poisson test retains GammaL2. No physical-time IBM generator identification or universal innovation. Full calculus incomplete; private gate pending exact commit/receipt/sync.
+
+
+## Checkpoint1350 — full original-domain weak L1 calculus and nonconstant actual clock potential
+
+# Current IBM mathematics — checkpoint1350: full weak L1 calculus and nonconstant clock potentials
+
+IBM ACTIVE. On ENTIRE ORIGINAL Dom(deltaD), for C2phi with boundedfirst/second
+continuous derivatives, CONSTRUCT F=phi(f) in original DomD and actual density
+w=phi'(f)*y-phi''(f)*Gamma(f) genuinelyL1/centered. EVERY bounded originalDomD
+test v has integrable v*w and <DF,Dv>=E[v*w]. NO GammaL2/gradientL4/boundedf
+assumption. Phi may be unbounded. See IBM_NATIVE_WEAK_GENERATOR_AUDIT.md.
+
+General weakDensity(g,u)=g*delta(u)-<Dg,u> is L1/centered for EVERY original
+gDomD,uDomdelta, without boundedg. With boundedg, actual native weighted-field
+weak pairing holds for ALL bounded originalDomD tests. Exact source-variable
+probability integrals; fullC1 twice, true product and originaladjoint reused.
+
+ALL existing centered Poisson solutions now satisfy sine weak law WITHOUT
+extraenergyL2. Concrete Y_T=Pobs(B_T^2-T) is centered/nonzeroT>0; its existing
+Poisson potential U_T lies in ORIGINAL composed graph (DU_T,Y_T)delta.graph.
+For EVERYT>0 DU_T NONZERO and U_T NOT any constant multiple of trueone.
+Actual U_T sine weak law and nontrivial conservation integral verified with
+NO extra regularity. No assertion sin(U_T) nonconstant or elementary formula.
+
+WEAKL1 is NOT strongDom(deltaD) closure; raw/projected wL2 and unrestricted
+unbounded-test extension remain OPEN.1349strongchain hypotheses preserved.
+No w/Gamma-observability or Pobs-preserves-DomD claim. Source calculus NOT
+physical-time IBM Itô/Tanaka/localtime, innovation or universalcausal CO.
+No pointIBM DomD assumption, initialgermtriviality or raw/germ equality.
+Full IBM calculus INCOMPLETE. Keep1347actualobserved integral,1348clockIBP,
+1349stronggraphchain and all focusedF1–F3 machinery exactscope. Queue IBM->
+Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog unchanged;
+no expiration, pseudo frozen1293, every audit/private gate intact.
+
+Fresh complete root build: 6356 jobs, 24.553s, terminal0. Complete transitive safe Foundation audit: 41278 declarations, 36.672s, terminal0; only propext/Classical.choice/Quot.sound. All27 unabridged public types, SEVEN complete printed bodies including WeakChainResult and reused ChainResult, and ALL280 final source/proof lines read. Six final independent Lean examples0 (25.874s), empty log. Four preliminary independent sine packagings timed out at default200k; retained ALL FOUR code/log/time sets. Final test verifies FULL universal weak contract plus separate scalar integral expansion, retaining every bounded-test claim; no resource-limit increase and temporary transparency heuristic removed. All2184 previous sources unchanged except three imports; three configs and113 archive paths/hashes unchanged. No resource/trust/toolchain override. This removes energyL2 at weak L1 level on the ENTIRE original generator domain and supplies concrete nonconstant original-domain actual IBM clock potentials. It does NOT prove strongL2 closure without its previous assumptions, a physical-time IBM Ito formula or universal causal reconstruction. Full calculus incomplete; private gate pending exact commit/receipt/sync.

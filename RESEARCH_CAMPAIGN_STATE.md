@@ -1,3 +1,35 @@
+# Current IBM mathematics — checkpoint1350: full weak L1 calculus and nonconstant clock potentials
+
+IBM ACTIVE. On ENTIRE ORIGINAL Dom(deltaD), for C2phi with boundedfirst/second
+continuous derivatives, CONSTRUCT F=phi(f) in original DomD and actual density
+w=phi'(f)*y-phi''(f)*Gamma(f) genuinelyL1/centered. EVERY bounded originalDomD
+test v has integrable v*w and <DF,Dv>=E[v*w]. NO GammaL2/gradientL4/boundedf
+assumption. Phi may be unbounded. See IBM_NATIVE_WEAK_GENERATOR_AUDIT.md.
+
+General weakDensity(g,u)=g*delta(u)-<Dg,u> is L1/centered for EVERY original
+gDomD,uDomdelta, without boundedg. With boundedg, actual native weighted-field
+weak pairing holds for ALL bounded originalDomD tests. Exact source-variable
+probability integrals; fullC1 twice, true product and originaladjoint reused.
+
+ALL existing centered Poisson solutions now satisfy sine weak law WITHOUT
+extraenergyL2. Concrete Y_T=Pobs(B_T^2-T) is centered/nonzeroT>0; its existing
+Poisson potential U_T lies in ORIGINAL composed graph (DU_T,Y_T)delta.graph.
+For EVERYT>0 DU_T NONZERO and U_T NOT any constant multiple of trueone.
+Actual U_T sine weak law and nontrivial conservation integral verified with
+NO extra regularity. No assertion sin(U_T) nonconstant or elementary formula.
+
+WEAKL1 is NOT strongDom(deltaD) closure; raw/projected wL2 and unrestricted
+unbounded-test extension remain OPEN.1349strongchain hypotheses preserved.
+No w/Gamma-observability or Pobs-preserves-DomD claim. Source calculus NOT
+physical-time IBM Itô/Tanaka/localtime, innovation or universalcausal CO.
+No pointIBM DomD assumption, initialgermtriviality or raw/germ equality.
+Full IBM calculus INCOMPLETE. Keep1347actualobserved integral,1348clockIBP,
+1349stronggraphchain and all focusedF1–F3 machinery exactscope. Queue IBM->
+Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog unchanged;
+no expiration, pseudo frozen1293, every audit/private gate intact.
+
+---
+
 # Current IBM mathematics — checkpoint1349: original native generator chain closure
 
 IBM ACTIVE. Let L=ORIGINAL deltaD, positive sign. If f in original DomD,

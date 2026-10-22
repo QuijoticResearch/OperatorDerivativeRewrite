@@ -2082,3 +2082,6 @@ import Foundation.IBMClockLinearDivergence
 import Foundation.IBMQuadraticClockMartingale
 import Foundation.IBMClockSteinIdentity
 import Foundation.IBMNativeGeneratorChain
+import Foundation.IBMNativeWeakL1Divergence
+import Foundation.IBMNativeWeakGeneratorChain
+import Foundation.IBMClockPoissonWeakCalculus
