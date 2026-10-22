@@ -24,7 +24,14 @@ domain, independent-test, counterexample and manuscript-preservation standards.
 Begin only after Bakry–Émery/fBM reaches its fully audited/private checkpoint;
 see `STARDUST_CAUCHY_QUEUED_AUDIT.md`. IBM remains ACTIVE and Bakry/fBM NEXT.
 
-After Cauchy, continue cumulative autonomous backlog research. No expiration date;
+**AFTER Cauchy:** give `ResearchSources/fractional_diffusion/main.tex` the
+same rigorous manuscript audit and Lean repair, with all existing verification,
+source-preservation and private-backup gates. Begin only after the Cauchy
+campaign's fully audited/private checkpoint; see
+`STARDUST_FRACTIONAL_DIFFUSION_QUEUED_AUDIT.md`. Do not start it early.
+
+After fractional diffusion, continue cumulative autonomous backlog research.
+No expiration date;
 October31 is REVIEW ONLY. All full-build, complete axiom-audit, public-type/proof
 review, independent-test, ledger, source-integrity, Git and verified PRIVATE
 main/research backup requirements remain unchanged. Consult and follow

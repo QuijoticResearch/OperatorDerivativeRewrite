@@ -8,7 +8,9 @@ then give the Cauchy paper the same rigorous treatment. Do not start this
 campaign before the preceding Bakry–Émery/fBM campaign reaches its
 mathematically justified, fully audited and privately backed-up checkpoint.
 Keep precise stopping qualifications; do not label a conditional or partial
-result as completion. After Cauchy, continue cumulative backlog research.
+result as completion. After Cauchy, the fractional-diffusion paper is next,
+as specified in `STARDUST_FRACTIONAL_DIFFUSION_QUEUED_AUDIT.md`; cumulative
+backlog research follows that campaign.
 
 The only file currently in `ResearchSources/cauchy` is
 `stochastic_cauchy_operator_v4.tex` (50050 bytes), SHA256

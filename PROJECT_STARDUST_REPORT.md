@@ -28949,3 +28949,20 @@ standard3 audit and actual public-type/proof review under the permanent
 documentation-only evidence-reuse rule. No new Lean declarations or proof
 changes. Unrelated drafts preserved. Exact-commit receipt and private main/
 research verification must follow this commit; no precommit backup claim.
+
+
+## Checkpoint1297 — fractional-diffusion paper queued after Cauchy
+
+User-directed instruction-only queue: actual intrinsic IBM ACTIVE, then
+Bakry–Émery/fBM, then Cauchy, then fractional diffusion, then backlog. Updated
+AGENTS, authoritative queue, IBM/general states and preceding queued plans.
+STARDUST_FRACTIONAL_DIFFUSION_QUEUED_AUDIT.md records full repair/verification
+scope and Cauchy-completion gate. No mathematical review or new campaign begun.
+Only file in fractional_diffusion: main.tex, SHA256 4726071A1433B7645D2C2504188C3F41DC65B9073EA3EE20D22FD11CA53CB130.
+Source preparation only; all113archive paths/hashes and2056Foundation/root
+sources/3configs unchanged. Retain exact1294 successful full6225job build,
+complete38898safeFoundation standard3 audit and actual public-type/proof review
+under the permanent docs-only input-identity rule. No new Lean declarations,
+proof changes or altered mathematical priorities. Unrelated drafts preserved.
+Commit, exact receipt and private main/research verification follow; no
+precommit record is a claim of successful backup. No arbitrary expiry.
