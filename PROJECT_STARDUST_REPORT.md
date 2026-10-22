@@ -29024,3 +29024,38 @@ elaboration budgets800000 only, no global build/audit setting change. Research
 archive/drafts/caches intact. Existing IBM ACTIVE/queued campaign order retained.
 Commit/receipt/private main+research verification follow; no precommit record
 claims backup closure. The indefinite goal remains ACTIVE, not completed.
+
+
+## Checkpoint1300 — actual bounded native source recovery and ordered IBM pair
+
+Proved genuine fiberwise Bochner integration-by-parts and the inclusion
+lift(T*) <= (lift T)*, retaining exact domain scope. Transferred the existing
+bounded Gaussian/Bochner recovery through verified native scenery/clock
+unitaries into ACTUAL source-adjoint graphs. Each Rs,Rc is a continuous linear
+contraction on all joint L2, with source/clock centered target as actual value;
+conditional intrinsic divergence identities are verified. No target Sobolev
+membership, polynomial graph density or measurable selection was assumed.
+
+Constructed actual factor-zero projectors Ps,Pc and centering splits. The
+explicit ordered pair (Rs f,Rc(Ps f)) belongs to the ORIGINAL ambient-pair
+domain and its full intrinsic divergence is P_IBM(f-Pc(Ps f)). This is not a
+tautologically defined residual. Global-constant/expectation identification
+of Pc Ps is the NEXT proof obligation; all-centered reconstruction is not
+claimed yet. No predictability, full lifted-adjoint domain equality, general
+intrinsic Clark-Ocone or complete unmollified Ito calculus is asserted.
+IBM_NATIVE_SOURCE_RECOVERY_AUDIT.md records exact scope and reuse.
+
+Two new modules179lines,19publics, all source/helper lines actually reviewed;
+all19 final types actually read unabridged (136loglines, proofargs
+visible). Fresh fullroot6229jobs0 22.940s;
+COMPLETE38994safeFoundation transitiveaudit0 35.875s
+standard3only. Three independent Lean Gaussian-vacuum/outer-coefficient tests
+plus their private helper passed0 24.987s.
+Exact867ordered-sector reconstruction and867inverse-number energy tests passed;
+these do not replace infinite-dimensional/global-mean/predictability proofs.
+Verification JSON embeds test code. Prior2058sources unchanged exceptroot
+twoimports;3configs and all113manuscript paths/hashes unchanged. One scoped
+local proof budget800000; no global resource/trust changes. Drafts/caches
+preserved. IBM ACTIVE, queued sequence unchanged, indefinite goal ACTIVE.
+Commit/receipt/private refs verification follow; precommit metadata is not
+backup closure.

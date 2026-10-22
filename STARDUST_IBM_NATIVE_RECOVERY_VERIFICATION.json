@@ -1,0 +1,115 @@
+{
+  "checkpoint": 1300,
+  "time_utc": "2026-10-22T00:51:58.055379+00:00",
+  "campaign": "Actual intrinsic IBM native bounded source recovery",
+  "baseline_commit": "55a6ec45aa517a74768ee5ef0a1ce45a962a14f7",
+  "source_count": 2060,
+  "prior_count": 2058,
+  "new_public_names": {
+    "BochnerLiftAdjointInclusion": [
+      "lift_formal",
+      "lift_adjoint_le"
+    ],
+    "IBMNativeSourceRecovery": [
+      "sourceRecovery",
+      "clockRecovery",
+      "sourceCenter",
+      "clockCenter",
+      "sourceVacuum",
+      "clockVacuum",
+      "fiber_center_split",
+      "source_center_split",
+      "clock_center_split",
+      "fiber_recovery_native_graph",
+      "source_recovery_graph",
+      "clock_recovery_graph",
+      "source_recovery_norm",
+      "clock_recovery_norm",
+      "intrinsic_source_recovery",
+      "intrinsic_clock_recovery",
+      "ordered_intrinsic_reconstruction"
+    ]
+  },
+  "new_public_count": 19,
+  "source_lines_reviewed": {
+    "BochnerLiftAdjointInclusion": 33,
+    "IBMNativeSourceRecovery": 146
+  },
+  "complete_source_and_helper_lines_reviewed": 179,
+  "public_types_actually_read_unabridged": true,
+  "proof_arguments_visible": true,
+  "type_log_lines": 136,
+  "full_root_build_jobs": 6229,
+  "complete_transitive_safe_Foundation_declarations": 38994,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "terminal_results": {
+    "full-build": {
+      "stage": "full-build",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "build"
+      ],
+      "wall_seconds": 22.94036739997682,
+      "exit_code": 0,
+      "time_utc": "2026-10-22T00:48:48.683737+00:00"
+    },
+    "audit": {
+      "stage": "audit",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1300-audit.lean"
+      ],
+      "wall_seconds": 35.87513190001482,
+      "exit_code": 0,
+      "time_utc": "2026-10-22T00:49:53.760878+00:00"
+    },
+    "independent": {
+      "stage": "independent",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1300-independent.lean"
+      ],
+      "wall_seconds": 24.986570800014306,
+      "exit_code": 0,
+      "time_utc": "2026-10-22T00:51:37.467498+00:00"
+    }
+  },
+  "prior_sources_unchanged_except_root_two_imports": true,
+  "configuration_unchanged": true,
+  "local_proof_budget": "800000 heartbeats on ordered native reconstruction only; no global build/audit setting change",
+  "new_source_sha256": {
+    "BochnerLiftAdjointInclusion": "B5E67005CC3239397DE058A4580B6AE43BE5A29B16E89D2036856E8811CA4AC3",
+    "IBMNativeSourceRecovery": "EE1A65E4803816845157F42429BCB47AA6CD0681C3A3AEB69C228E79B4E0F321"
+  },
+  "full_build_log_sha256": "363AB38F920604655C632BD6A753CB41BEC1158515E501945BC24FFA63D27E70",
+  "audit_log_sha256": "505A982FA0A5FCEE576133AF7159D7F62F79E59B4CCAA837AF9B82AB0937F2BA",
+  "independent_Lean_examples": 3,
+  "independent_private_helper_proofs_reviewed": 1,
+  "Lean_test_code": "import Foundation.IBMNativeSourceRecovery\nimport Foundation.GaussianDeterministicGraphCore\nopen MeasureTheory\nopen OperatorDerivativeRewrite.Foundation\nopen InfiniteGaussian GaussianNumberSectors GaussianDivergenceRecovery\nopen GaussianBochnerDivergenceRecovery\nnoncomputable section\n\nprivate theorem vacuumRecoveryZero : recovery gaussianOne = 0 := by\n  have hg : ((0 : GaussianVectorL2), gaussianOne - projection 0 gaussianOne) ∈\n      hilbertDivergence.graph := by\n    rw [projection_zero, GaussianDeterministicGraphCore.gaussianOne_inner_self,\n      one_smul, sub_self]\n    exact hilbertDivergence.graph.zero_mem\n  have hn := recovery_minimal_norm gaussianOne 0 hg\n  apply norm_eq_zero.mp\n  exact le_antisymm (hn.trans_eq (norm_zero)) (norm_nonneg _)\n\nexample : recovery ((7 : ℝ) • gaussianOne) = 0 := by\n  rw [recovery_smul, vacuumRecoveryZero, smul_zero]\n\nexample (a : GaussianL2) :\n    fiberRecovery gaussianProduct (BochnerClosedOperator.tensor gaussianProduct a gaussianOne) = 0 := by\n  apply Lp.ext\n  filter_upwards [fiberRecovery_coeFn gaussianProduct\n    (BochnerClosedOperator.tensor gaussianProduct a gaussianOne),\n    BochnerClosedOperator.tensor_coeFn gaussianProduct a gaussianOne,\n    Lp.coeFn_zero GaussianVectorL2 2 gaussianProduct] with x hr ht hz\n  rw [hr, ht, recovery_smul, vacuumRecoveryZero, smul_zero, hz]\n  rfl\n\nexample (a : GaussianL2) :\n    fiberCenter gaussianProduct (BochnerClosedOperator.tensor gaussianProduct a gaussianOne) = 0 := by\n  apply Lp.ext\n  filter_upwards [fiberCenter_coeFn gaussianProduct\n    (BochnerClosedOperator.tensor gaussianProduct a gaussianOne),\n    BochnerClosedOperator.tensor_coeFn gaussianProduct a gaussianOne,\n    Lp.coeFn_zero GaussianL2 2 gaussianProduct] with x hc ht hz\n  rw [hc, ht, map_smul, projection_zero,\n    GaussianDeterministicGraphCore.gaussianOne_inner_self, one_smul, sub_self, hz]\n  rfl\n",
+  "exact_test_code": "from fractions import Fraction as F\nfrom pathlib import Path\nimport json\nmode_checks=energy_checks=0\nfor m in range(17):\n for n in range(17):\n  for c in [F(-3,2),F(1),F(7,3)]:\n   a=c/F(m) if m else F(0)\n   b=c/F(n) if not m and n else F(0)\n   recovered=m*a+n*b\n   residual=c if not m and not n else F(0)\n   assert recovered+residual==c\n   mode_checks+=1\n   energy=m*a*a+n*b*b\n   assert energy<=c*c\n   energy_checks+=1\nv=dict(passed=True,ordered_spectral_reconstruction_cases=mode_checks,spectral_energy_cases=energy_checks,arithmetic='fractions.Fraction exact; source-first Gaussian number-sector model, not a proof of global vacuum identification or predictability')\nPath('.lake/stardust-1300-exact-tests.json').write_text(json.dumps(v,indent=2)+'\\n')\nprint(v)\n",
+  "exact_test_results": {
+    "passed": true,
+    "ordered_spectral_reconstruction_cases": 867,
+    "spectral_energy_cases": 867,
+    "arithmetic": "fractions.Fraction exact; source-first Gaussian number-sector model, not a proof of global vacuum identification or predictability"
+  },
+  "manuscript_count": 113,
+  "all_manuscript_paths_hashes_unchanged": true,
+  "inventory": "STARDUST_RESEARCH_SOURCE_INVENTORY_1292.json",
+  "theorem_contract": "Actual native source/clock adjoint recovery maps each contractive on all joint L2; ordered intrinsic divergence of (Rs f,Rc Ps f) equals actual conditional projection of f-Pc Ps f.",
+  "global_zero_mode_expectation_identification_proved": false,
+  "predictability_claimed": false,
+  "lifted_adjoint_full_domain_equality_claimed": false,
+  "all_centered_intrinsic_reconstruction_claimed": false,
+  "full_IBM_calculus_complete": false,
+  "queue_unchanged": true,
+  "private_backup_status": "PENDING exact-commit receipt before verified PRIVATE main/research sync; precommit record is not closure"
+}

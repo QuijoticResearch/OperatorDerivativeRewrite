@@ -1956,3 +1956,5 @@ import Foundation.HigherHeatSignedDiagonalRealization
 import Foundation.EnergySeedDensityObstruction
 import Foundation.ObservableProjectedDivergenceCore
 import Foundation.IBMIntrinsicDivergenceClosure
+import Foundation.BochnerLiftAdjointInclusion
+import Foundation.IBMNativeSourceRecovery

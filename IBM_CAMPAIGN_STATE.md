@@ -1,3 +1,17 @@
+# Current IBM mathematics — checkpoint1300: explicit native source recovery
+
+IBM ACTIVE. Existing Gaussian/Bochner recovery is now verified in the ACTUAL
+native source/clock adjoints and hence intrinsic divergence. Ordered explicit
+pair (Rs f,Rc Ps f) reconstructs P_IBM(f-Pc Ps f), retaining actual factor-zero
+projectors literally. Identify Pc Ps with the global constant/expectation
+projector NEXT; that identity is not yet claimed Lean-verified. Neither this
+static pair nor checkpoint1299 graph approximation is proved predictable.
+Read `IBM_NATIVE_SOURCE_RECOVERY_AUDIT.md`. Do not claim full IBM calculus or
+transition to queued campaigns. All verification/source/private gates remain;
+the authoritative saved queue is unchanged, October31 review-only/no expiry.
+
+---
+
 # Current IBM mathematics — checkpoint1299: full intrinsic divergence closure
 
 IBM remains ACTIVE; the authoritative sequential queue is unchanged. The full
