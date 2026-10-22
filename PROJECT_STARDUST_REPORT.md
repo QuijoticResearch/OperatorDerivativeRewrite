@@ -29240,3 +29240,40 @@ change. All2071prior sources unchanged except root3imports;3configs and113archiv
 files unchanged. Evidence: STARDUST_IBM_PAST_NATIVE_VERIFICATION.json. Commit/
 receipt/PRIVATE main+research checks follow; precommit record claims no backup
 closure. Existing indefinite goal and intrinsic IBM remain ACTIVE.
+
+
+## Checkpoint1306 — actual IBM clock-sign observation/innovation obstruction
+
+Audited F1native domain: BrownianCLOCK predictable with full independent scenery
+value space, not IBM-natural predictability. Existing actualsections theorem
+does identify unsmoothed endpoint g(a+Z_T)-g(a). Kclock-number smoothing remains
+in the proven source stochastic identity; no drop/inverse or adaptation inferred.
+Formalized actualglobalGaussian reflection andoddnessofALL firstchaosclasses
+viaunconditionalseries. Actualcontinuousclock reflection made simultaneous by
+countabledensetime+continuity, soENTIREconstructedIBMpath invariantonaONEfull-
+measureevent. Measurablefactorization provesALLactualobservableL2 fixed.
+All reflection-odd jointL2classes orthogonal, notobservablewhen nonzero, and
+conditionalprojectzero inEVERYactualpast. Signedclock E[Y_t|F_T^IBM]=0 ALLt,T;
+positiveclocktime nonmeasurable evenwithlaterhorizon, soactualclocknotstrongly
+adapted. Arbitraryscenerycoefficient times ANYfirst-clock-chaos alsovanishing.
+
+This is a precise temporal-channel obstruction, NOT a no-martingale/all-clock-
+Ito impossibility theorem. Existingactual HermiteIto integral Y_s dY_s at1 is
+EVEN andnonzero,squarednorm1/2, verified independently. Its IBM-past projection
+is not determined. No evenclock/Levy-noiseobservability/Brownianlaw assumed.
+Next investigate projectedEVENclockmartingale usingactualmoments/conditional
+Ito consistency andnontriviality. Preserve F1/F2 corrections/topologies and
+1305nativepastcalculus; fullIBMcalculus OPEN. No unrelatedresearch campaign.
+
+Four modules294lines,29public declarations; all final source/helper lines and
+29final types actually reviewed unabridged (180loglines,
+proof arguments visible). Fresh fullroot6247jobs0
+24.746s; COMPLETE39246safeFoundation transitive
+axiom audit0 34.938s standard3only. Four independent Lean
+later-horizon signedclockzero, mixednonconstant source/clockfirstchaoszero,
+signedclocknonmeasurability andnonzeroEVENactualIto witness checks0
+24.531s. No new proof-resource/trust override.
+All2074prior sources unchanged except root4imports;3configs and113archivefiles
+unchanged. Evidence: STARDUST_IBM_CLOCK_SYMMETRY_VERIFICATION.json. Commit/
+receipt/PRIVATE main+research checks follow; precommit record claims no backup
+closure. Existing indefinite goal and intrinsic IBM remain ACTIVE.

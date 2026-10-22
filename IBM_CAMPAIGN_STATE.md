@@ -1,3 +1,27 @@
+# Current IBM mathematics — checkpoint1306: actual clock-sign innovation obstruction
+
+IBM ACTIVE. Actual measure-preserving global clock reflection fixes the ENTIRE
+continuous IBM path on one probability-one event (countable dense times plus
+continuity). Every all-time IBM-observable L2 class is fixed; every reflection-
+odd joint L2 class is orthogonal and has zero conditional natural-past projection.
+E[Y_t|F_T^IBM]=0 for ALL t,T>=0. For t>0 the actual signed clock is not even
+a.e measurable in ANY finite IBM past, including later horizons; not strongly
+adapted. Arbitrary scenery coefficients times ANY first-clock-chaos class also
+project to zero. Read IBM_CLOCK_INNOVATION_SYMMETRY_AUDIT.md.
+This obstructs using the signed clock or its zero conditional projection as an
+IBM-natural innovation. It does NOT exclude even clock functionals, all clock
+Ito integrals, all intrinsic martingales or corrected temporal calculus.
+Independent Lean witness: integral Y_s dY_s at1 is reflection-EVEN, squarednorm
+1/2, so the odd obstruction cannot be applied indiscriminately. Its IBM-past
+projection/observability is not determined here. Existing1305native calculus
+remains valid. F1unsmoothed endpoint IS g(a+Z_T)-g(a); native field is CLOCK-
+predictable with scenery parameters, and endpoint clock-numberK smoothing
+cannot be silently dropped. Next investigate a concrete EVEN projected clock
+martingale and actual temporal conditional consistency/nontriviality, using
+verified actual moments/conditional Ito. No campaign transition or queue change.
+
+---
+
 # Current IBM mathematics — checkpoint1305: actual native past divergence and reconstruction
 
 IBM ACTIVE. Every maximal past-adjoint graph point is approximated by genuine
