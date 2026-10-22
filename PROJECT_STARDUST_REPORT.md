@@ -29832,3 +29832,43 @@ STARDUST_IBM_OBSERVED_TERMINAL_MARTINGALE_VERIFICATION.json and
 IBM_OBSERVED_TERMINAL_MARTINGALE_AUDIT.md. Exactreceipt/verifiedPRIVATE main+research
 closurefollowsseparately; precommitrecordclaims no backupclosure. IBM/existing
 indefinitegoal ACTIVE; queueunchanged.
+
+
+## Checkpoint1321 — actual zero-start nonconstant raw-observation IBM martingale
+
+Reused observed0=jointRealization(randomSourceL2 0), verified sourcezero and
+linear mapzero to getactual scalar IBM0 AEzero. Full raw-past0 L2 functions
+factor through the whole past process; every Iic0 index equals0, so the actual
+pastpath isAE zeropath. ALL rawpast0 L2 members therefore AEconstant g(0).
+Centered terminal F orthogonaltoallrawpast0 by actual scalar constant pairing;
+Hilbertprojection uniqueness yields initialrawprojection0. No completion/germ
+triviality assumed.
+
+Actual rawValue F t=E[F|rawnaturalIBM F_t] uses stronglymeasurable CEversions;
+rawClass=P_past F hasactualL2AEbridge, scalarprocessL2/mean preservation and FULL
+rawMartingale predicatebyactualtower theorem. F=observed1 startsAEzero, recovers
+ACTUALscalarIBM1 atEVERYt>=1 and hasAEunequalendpoints0/1, bypriornonzeroobserved1.
+Hence genuinelynonconstantactualrawobservationmartingale, sceneryoddclass.
+No claim actualcoordinateprocessZ_t itself ismartingale; oldobstructionpreserved.
+
+ForANYfixedF andEVERYstrictly-rightantitonecofinalsequence, actualrawprojection
+classesconverge STRONGL2 toexistingGrightgermchannel, byexistingdecreasingpast
+projection/cofinalintersection. Germprojectiontorawpresent recoversrawClass.
+Atorigin, geometricrawsequence convergesP_R0F, NOTsilentlyraw0. OddGinitialgerm
+zero, G0triviality andmodification stillOPEN. This establishesgenuinerawzero-start
+dynamicswithout assumingthose regularizationhypotheses. Next controlledactual
+odd-channelintegration/dynamicenergy orinitialgermcontrol, retainingproper
+weightedenergies. Nativeadjoints/randompredictabledomain/ClarkOcone/pathregularity/
+bracket/actualunsmoothedIBMItô remainOPEN. M/F/Z andF1/F2correction/Kdomains unchanged.
+
+Two modules145lines/all19publictypes andcompleteproofsactuallyreviewed. Four
+independentLeanchecks allrawinitialpastconstants/centeredprojectionzero; actual
+fullnonconstantrawmartingale+origin/terminal; concretegeometricoriginSTRONGL2limit
+withgerminitialretained; rawodd/mean/presentprojectioncomparison. Freshroot6278jobs0
+23.589s; COMPLETE39732safeFoundation transitiveaudit0
+34.236s standard3only; independent0 24.542s.
+Sequentialstagetimesverified. All2107prior sourcesunchangedexceptroot2imports,
+3configs/113archivepaths+hashespreserved; nonewresource/trustoverride. Evidence
+STARDUST_IBM_RAW_OBSERVED_MARTINGALE_VERIFICATION.json and IBM_RAW_OBSERVED_MARTINGALE_AUDIT.md.
+Exactreceipt/verifiedPRIVATE main+research backupclosesseparately; precommitrecord
+claims no backupclosure. IBM/existingindefinitegoal ACTIVE; queueunchanged.

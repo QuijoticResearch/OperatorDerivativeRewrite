@@ -1,3 +1,27 @@
+# Current IBM mathematics — checkpoint1321: nonconstant zero-start RAW martingale
+
+IBM ACTIVE. Actual IBM0 is AE zero; EVERY raw-past0 L2 member is AE constant,
+by full raw measurable past-factorization and Iic0 singleton. Thus every centered
+JointL2 terminal has zero raw initial projection. Actual scalar rawValue F t=
+E[F|rawF_t] is a FULL raw IBM-filtration martingale with genuine L2, mean
+preservation and projection-class AE bridge. F=actual observed IBM1 gives AE
+zero origin, actual scalar terminal recovery for every t>=1, and AE unequal
+endpoints0/1: genuinely nonconstant. Its raw class is scenery-odd.
+Read IBM_RAW_OBSERVED_MARTINGALE_AUDIT.md.
+
+EVERY strictly-right antitone cofinal raw projection sequence for ANY fixed F
+converges STRONGLY in JointL2 to the existing G-channel at t; germ projected
+back to raw present equals rawClass. Concrete origin sequence retains P_R0 F,
+NOT replaced by zero. Raw initial triviality is NOT G0/right-germ triviality;
+odd germ initial zero and a modification remain OPEN. Next controlled stochastic
+integration/dynamic energy for the actual nonconstant odd channel, or genuine
+initial-germ control. Native adjoints, random predictable domain, Clark–Ocone,
+regular versions/bracket and actual IBM Itô remain OPEN. Original M/F/Z and
+F1/F2 correction/K domains, queue, archive and all verification/private gates
+unchanged. Existing indefinite goal and intrinsic IBM campaign ACTIVE.
+
+---
+
 # Current IBM mathematics — checkpoint1320: genuine terminal-observable martingales
 
 IBM ACTIVE. For EVERY actual JointL2 F, P_R_t F with its canonical scalar

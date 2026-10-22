@@ -2005,3 +2005,5 @@ import Foundation.IBMRightGermCovarianceAdjoint
 import Foundation.IBMScenerySignSymmetry
 import Foundation.IBMDeterministicRangeObstruction
 import Foundation.IBMObservedTerminalMartingale
+import Foundation.IBMRawInitialPast
+import Foundation.IBMRawObservedMartingale
