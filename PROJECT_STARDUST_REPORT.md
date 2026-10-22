@@ -30637,3 +30637,37 @@ Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog;
 no expiration, pseudo frozen1293, every verification/private gate preserved.
 
 Fresh complete root build: 6324 jobs, 25.932s, terminal0. Complete transitive audit: 40538 declarations, 38.395s, terminal0, standard three axioms only. All18 actual unabridged public types and all205 final source/proof lines read. Five independent Lean tests FIRST PASS0 (27.475s): actual self-representation AND strong integrand convergence for all intrinsic targets; native-gradient identity on full D domain; actual NONZERO IBM1 stochastic target; constant1 excluded from ALL terminal channels; exact aggregate range plus strong horizons. All2153 prior sources unchanged except two root imports; three configs and113 archive paths/hashes unchanged. No proof-resource overrides. One measured expensive development compile explicitly stopped and factored; all final gates passed. Existing horizon/projection/actual integral/adjoint results reused; no new Gaussian, measure or stochastic-integral foundation. Verification JSON records inputs and test code. Private gate pending exact commit/receipt/sync. This target-indexed identity does not complete universal causal Clark–Ocone or IBM calculus.
+
+
+## Checkpoint1338 — explicit full-domain intrinsic IBM chain fields and energy control
+
+# Current IBM mathematics — checkpoint1338: explicit bounded C1 native chain calculus
+
+IBM ACTIVE. For EVERY f in FULL ORIGINAL jointDerivative.domain and EVERY
+bounded C1 phi with continuous bounded derivative dphi, the actual phi(f)
+belongs to the SAME domain. BOTH original native gradients are identified:
+clock field and scenery field (translated back from swapped coordinates)
+equal dphi(f) times their original fields, almost everywhere in actual jointL2.
+PROVED norm(D(phi(f)))<=B*norm(Df) when norm(dphi)<=B. Actual joint graph
+membership and measurable product gradient witnesses; no fiber selection.
+Read IBM_INTRINSIC_CHAIN_CALCULUS_AUDIT.md for domains and reuse.
+
+Domain preservation itself ALREADY existed in IBMFiniteAverageCore.bounded_chain;
+the new results RETAIN and IDENTIFY both gradient witnesses and energy bound,
+reusing GaussianClosedChainRule.bounded_product_chain_graph. No new Gaussian
+or measure foundation. Existing vector-valued measure-preserving Lp isometry
+handles source coordinate swap. Constants/sine/cosine, actual nonlinear native
+stochastic IBP and1337 target-indexed reconstruction independently tested.
+
+This is Gaussian SOURCE-variable calculus, not physical IBM time Ito.
+Unbounded Lipschitz/nonsmooth extensions, bounded-product Leibniz and weighted
+divergence product laws, second-order native generator formulas, physical-time
+versions/bracket and Itô, causal gradient identification/universal noise/CO
+remain OPEN. No arbitrary point-observation derivative membership assumed.
+The1336 Poisson/Poincare and1337 aggregate range/target-indexed identity remain
+valid; retain entire initial germ and target-dependent channels. Focused F1–F3
+exact-domain results unchanged. Full IBM calculus incomplete.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog;
+no expiration, pseudo frozen1293; every verification/private gate preserved.
+
+Fresh complete root build: 6326 jobs, 30.432s, terminal0. Complete transitive audit: 40579 declarations, 39.966s, terminal0, standard three axioms only. All22 actual unabridged public types and all252 final source/proof lines read. Five independent Lean tests FINAL PASS0 (29.859s): sine and cosine full native gradient fields in BOTH original coordinates plus contraction bounds; sine output actual native stochastic IBP for arbitrary terminal/integrand; sine of constant-one has zero derivative; nonlinear output actual target-indexed native stochastic reconstruction retaining entire initial germ. All2155 prior sources unchanged except two root imports; three configs and113 archive paths/hashes unchanged. Failed development logs retained; final proofs use default resources, explicit typed graph equalities and existing instances/vector isometry. No new foundational Gaussian/measure construction or altered operator. Verification JSON records input hashes and complete tests. Private gate pending exact commit/receipt/sync. Physical-time calculus and universal causal Clark–Ocone remain OPEN.

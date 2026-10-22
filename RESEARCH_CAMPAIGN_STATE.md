@@ -1,3 +1,34 @@
+# Current IBM mathematics — checkpoint1338: explicit bounded C1 native chain calculus
+
+IBM ACTIVE. For EVERY f in FULL ORIGINAL jointDerivative.domain and EVERY
+bounded C1 phi with continuous bounded derivative dphi, the actual phi(f)
+belongs to the SAME domain. BOTH original native gradients are identified:
+clock field and scenery field (translated back from swapped coordinates)
+equal dphi(f) times their original fields, almost everywhere in actual jointL2.
+PROVED norm(D(phi(f)))<=B*norm(Df) when norm(dphi)<=B. Actual joint graph
+membership and measurable product gradient witnesses; no fiber selection.
+Read IBM_INTRINSIC_CHAIN_CALCULUS_AUDIT.md for domains and reuse.
+
+Domain preservation itself ALREADY existed in IBMFiniteAverageCore.bounded_chain;
+the new results RETAIN and IDENTIFY both gradient witnesses and energy bound,
+reusing GaussianClosedChainRule.bounded_product_chain_graph. No new Gaussian
+or measure foundation. Existing vector-valued measure-preserving Lp isometry
+handles source coordinate swap. Constants/sine/cosine, actual nonlinear native
+stochastic IBP and1337 target-indexed reconstruction independently tested.
+
+This is Gaussian SOURCE-variable calculus, not physical IBM time Ito.
+Unbounded Lipschitz/nonsmooth extensions, bounded-product Leibniz and weighted
+divergence product laws, second-order native generator formulas, physical-time
+versions/bracket and Itô, causal gradient identification/universal noise/CO
+remain OPEN. No arbitrary point-observation derivative membership assumed.
+The1336 Poisson/Poincare and1337 aggregate range/target-indexed identity remain
+valid; retain entire initial germ and target-dependent channels. Focused F1–F3
+exact-domain results unchanged. Full IBM calculus incomplete.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog;
+no expiration, pseudo frozen1293; every verification/private gate preserved.
+
+---
+
 # Current IBM mathematics — checkpoint1337: actual target-indexed reconstruction
 
 IBM ACTIVE. Every intrinsic L2 target f has actual raw and right-germ horizon

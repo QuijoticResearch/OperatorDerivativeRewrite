@@ -2053,3 +2053,5 @@ import Foundation.IBMIntrinsicEnergyResolvent
 import Foundation.IBMIntrinsicPoisson
 import Foundation.IBMObservableHorizonLimit
 import Foundation.IBMTerminalSelfRepresentation
+import Foundation.IBMIntrinsicChainRule
+import Foundation.IBMIntrinsicChainEnergy
