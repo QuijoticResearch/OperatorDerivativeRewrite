@@ -1,3 +1,34 @@
+# Current directive — IBM active; Bakry–Émery / fBM queued afterward
+
+October 21 user amendment: finish the current intrinsic calculus for ACTUAL IBM
+before beginning the next campaign. Checkpoint1293's pseudoprocess transition
+gate is CLOSED; the pseudoprocess campaign is FROZEN. Checkpoint1294 is also
+fully audited and privately backed up. Historical stage labels below do not
+make either campaign active again.
+
+**NEXT after IBM completion and its fully verified/private checkpoint:** audit
+and rigorously repair `ResearchSources/bakry/bakry_emery_part2_v3 (1).tex` and
+`ResearchSources/bakry/bakry_emery_revised_v8 (2) (2).tex` using existing Lean
+machinery, proofs, corrected hypotheses and explicit counterexamples as needed.
+Survey the related `ResearchSources/fbm` archive, compare versions and verified
+results, then independently select the most promising focus and push its
+rigorous connections and implications. Audit BOTH primary manuscripts and
+survey the related material before choosing the follow-on focus. Preserve
+original manuscript bytes. The exact scope and gate are saved in
+`STARDUST_BAKRY_FBM_QUEUED_AUDIT.md`; filenames/hashes only were checked now.
+Do not begin this campaign early or divert the active IBM proof.
+
+Afterward continue cumulative autonomous backlog research. No expiration date;
+October31 is REVIEW ONLY. All full-build, complete axiom-audit, public-type/proof
+review, independent-test, ledger, source-integrity, Git and verified PRIVATE
+main/research backup requirements remain unchanged. Consult and follow
+`STARDUST_BUILD_OPTIMIZATION.md` and `STARDUST_SYNC.md`.
+
+This instruction-only amendment supersedes conflicting scheduling labels below,
+preserves historical records, and changes no mathematical result or hypothesis.
+
+---
+
 # Current checkpoint 1293 — pseudoprocess stopping checkpoint; intrinsic IBM next
 
 The repaired higher-even-order signed multichannel calculus has reached its

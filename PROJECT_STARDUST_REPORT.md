@@ -28907,3 +28907,28 @@ STARDUST_BLACKITO_VERIFICATION.json retains reproducible tests and honest pendin
 precommit backup status. Commit/receipt/private main+research verification are
 required next; a precommit report is not evidence of successful synchronization.
 The pseudo stopping checkpoint remains frozen; intrinsic IBM remains active.
+
+
+## Checkpoint1295 — user queues Bakry–Émery repair and related fBM after IBM
+
+Instruction-only update: intrinsic actual IBM remains ACTIVE; the two requested
+bakry manuscripts and related fbm survey are NEXT only after IBM completion and
+its verified private checkpoint. Audit both primary manuscripts, compare the
+related versions and existing Lean declarations, then independently choose a
+productive focus and investigate rigorous connections/implications ambitiously.
+No mathematical survey, new campaign, proof change or premature focus selection
+occurred. The exact future directive is STARDUST_BAKRY_FBM_QUEUED_AUDIT.md.
+AGENTS, authoritative queue and IBM/general campaign states agree; historical
+records are preserved. No expiry; all verification/private backup gates retained.
+
+Source preparation only:26files across bakry/fbm, 18distinct hashes;
+the three bakry files have exact fbm counterparts. Full paths/hashes/duplicate
+groups saved in STARDUST_BAKRY_FBM_SOURCE_INVENTORY.json. All113 archive paths
+and hashes preserved; original manuscripts and unrelated drafts untouched.
+All2056Foundation/root sources and all3configuration files are byte-identical
+to checkpoint1294. Per the permanent measured workflow, retain its successful
+full6225job build, complete38898declaration standard3 axiom audit and reviewed
+public types/proofs; no new Lean declarations or changed verification inputs.
+STARDUST_BAKRY_FBM_QUEUE_VERIFICATION.json records exact evidence identity.
+Commit/receipt/private main+research synchronization are required next; the
+precommit pending status is not a claim of successful backup.
