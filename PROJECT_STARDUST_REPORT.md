@@ -29355,3 +29355,45 @@ trust override. Evidence STARDUST_IBM_STOCHASTIC_STEP_VERIFICATION.json and
 IBM_INTRINSIC_STOCHASTIC_STEP_AUDIT.md. Git/exactreceipt/PRIVATE main+research
 gates follow separately; no precommit backup closure claimed. IBM/indefinite
 goal ACTIVE, queue unchanged.
+
+
+## Checkpoint1309 — actual refinement and countable IBM stochastic integration
+
+Finite retained-coefficient subdivision now preserves actual stochastic products
+POINTWISE and actual L2 classes along every finite nondecreasing chain, including
+repeated times. Explicit later-past transport retains the same function/bound.
+Unit-step classes equal actual M differences; conditional orthogonality plus
+1307Mnormbound gives unit energy<=2t^2. Actual a.e coefficient comparison and
+1308finite energy identity give uniform grid energy<=2C^2*T^2 on[0,T].
+Constructed actual orthogonal increment subspaces: endingfullIBMpast intersect
+orthogonal complement of startingpast. Every actual stochastic step belongs;
+verifiedexistingHilbert orthogonal-series theorem now proves summability when
+actual step energies are summable. Genuine finite stochastic sums converge in
+strong scalar L2 to their countable integral, with EXACT infinite energy identity.
+Uniformly bounded coefficient sequences on EVERY finite-horizon monotone grid
+automatically satisfy summability. Limit belongs to actual endingfullIBMpast.
+Continuity of the exact Hilbert conditional projection gives conditional closure;
+actual scalar conditional expectation of the limit equals the original finite
+sum at every grid time. No Gaussian increment independence or Brownian variance.
+
+Independent Lean checks: actual sin(Z1) coefficient retained through subdivision;
+entire actual sin(Z_tau_i) family strongL2 converges with bound on EVERY bounded
+monotone grid; same actual random integrals satisfy conditional closure; zero
+actual integrand on arbitrary grid has zero integral. Outside explicit summable
+domain totaltsum is not certified as stochastic integration. No continuum space,
+arbitrary-grid consistency, endpointM_T identification, bracket/path regularity,
+PRP or nativeadjoint identification claimed. Next endpoint/filtration continuity
+and common-refinement energy using existing actualcontinuousIBM/pastmachinery.
+Full intrinsicIBMcalculus OPEN; preserve F1/F2corrections andclock-numberK.
+
+Two modules234lines,23public declarations; all final types actually read
+unabridged (211loglines), all new source/helper arguments reviewed.
+Fresh fullroot6256jobs0 24.645s; COMPLETE
+39395safeFoundation transitive axiom audit0 35.652s,
+only standard3. Four independent Lean checks0 25.992s.
+All2085prior sources unchanged exceptroot2imports,3configs and113archivepaths/
+hashes unchanged. No new proofresource/trust overrides. Evidence
+STARDUST_IBM_COUNTABLE_INTEGRAL_VERIFICATION.json and
+IBM_INTRINSIC_COUNTABLE_INTEGRAL_AUDIT.md. Git/exactreceipt/PRIVATE main+research
+gates follow separately; no precommit backup closure claimed. Existing indefinite
+goal and IBM ACTIVE; queue unchanged.

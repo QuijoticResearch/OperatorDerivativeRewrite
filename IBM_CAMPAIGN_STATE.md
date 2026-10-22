@@ -1,3 +1,26 @@
+# Current IBM mathematics — checkpoint1309: actual countable-grid integration
+
+IBM ACTIVE. Retaining a bounded actual IBM-past coefficient through ANY finite
+monotone interval subdivision preserves its actual function integral and L2
+class. Uniform coefficient bound C gives finite-grid energy<=2C^2*T^2 on[0,T].
+On EVERY fixed deterministic nondecreasing countable grid, summable actual step
+energies give unconditional Hilbert summability, strong scalar L2 convergence
+of genuine stochastic sums and exact infinite energy. Uniformly bounded actual
+adapted coefficient sequences on finite-horizon grids discharge that premise.
+Limit lies in actual ending IBM past; its actual conditional expectation at
+each grid time recovers the original finite stochastic sum. Read
+IBM_INTRINSIC_COUNTABLE_INTEGRAL_AUDIT.md. Reuses existing Hilbert orthogonal-
+series theorem with ALL actual past/orthogonality hypotheses proved.
+Still OPEN: completed continuum predictable domain, arbitrary-grid consistency,
+accumulation endpoint identification, bracket/path regularity, PRP and native
+intrinsic adjoint identification. Total tsum outside summable domain is not
+certified as an integral. Fixed-grid integration is not full continuum calculus.
+Next actual endpoint/filtration continuity and common-refinement energy control,
+using continuous IBM paths and existing past-density/projection machinery.
+Preserve F1/F2 corrections and clock-number smoothing. No campaign transition.
+
+---
+
 # Current IBM mathematics — checkpoint1308: actual stochastic step integration
 
 IBM ACTIVE. Actual bounded predictable coefficients in the FULL raw IBM past

@@ -1983,3 +1983,5 @@ import Foundation.IBMClockInitialEnlargement
 import Foundation.IBMIntrinsicQuadraticMartingale
 import Foundation.IBMIntrinsicMartingaleStep
 import Foundation.IBMIntrinsicMartingaleGrid
+import Foundation.IBMIntrinsicMartingaleRefinement
+import Foundation.IBMIntrinsicMartingaleSeries
