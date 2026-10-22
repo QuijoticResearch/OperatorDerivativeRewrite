@@ -2024,3 +2024,6 @@ import Foundation.IBMClockGermLocalization
 import Foundation.IBMBoundedGermFactors
 import Foundation.IBMClippedForecastPairing
 import Foundation.IBMObservedInitialGerm
+import Foundation.IBMGermPredictableStep
+import Foundation.IBMGermIndicatorSupport
+import Foundation.IBMGermSupportContinuity

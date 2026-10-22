@@ -30260,3 +30260,59 @@ Foundation/root source hashes and3 configuration hashes exactly match the
 fully built/audited1329 manifest; existing successful complete verification
 is retained only under this exact mathematical-input identity. No source,
 mathematical result, manuscript or campaign order changed.
+
+
+## Checkpoint1330 — actual predictable support domination and continuity inputs
+
+Constructed genuine G^F-channel predictable steps by existing actual weighted
+terminal aF and pull-out, not hypothetical realization: G^(aF)_t-G^(aF)_s
+equals a*DeltaG AE. Existing RAW-past bounded coefficient type reused.
+Germ membership, starting projection0, earlier-past orthogonality, actual
+weighted energy and terminal pairing proved. Finite endpoint-separated
+idempotent coefficient sums have inner(F,I)=norm(I)^2. Actual finite time-
+process equality identifies the G sums through EXISTING endpoint-charge
+identity; intervals may overlap for identification, ordering retained.
+
+NEW support theorem: time process0 outside arbitrary ambient measurable A
+AE atEACHtime implies actual finite stochastic sum0 outsideA via onlyFINITELY
+many endpoint events. No uncountable AE intersection or path regularity.
+ActualL2terminal1_A*F then gives norm(I)^2<=integral_A F^2 for separated
+idempotent sums. A need NOT be past measurable; no future-event pullout used.
+This improves global bound and supports joint predictable-extension route.
+Idempotence ESSENTIAL: actual observed1 with constant2 on(0,1] gives2*F,
+energy4normF^2>normF^2; independently Lean-verified counterexample.
+
+Proved actual F^2-support integrals->0 under AE eventual exit from measurable
+A_n by dominated convergence. Therefore actual finite indicator stochastic
+sums->0 STRONGLY inJointL2, even with varying index types/cell data. Any
+bounded coefficient's right trim(s,tau_n] tends strongly0 for tau_n>=s->s,
+using verified strong weighted G-channel right continuity, not raw-path shortcut.
+
+Remaining joint-extension proof is explicit: construct actual eligible finite
+ring/content and common indicator presentations; prove finite additivity;
+assemble compact closed-time-fiber inner approximations with summably small
+trim errors; CONSTRUCT measurable projected sample supports from finite
+rectangle data; use new support control for continuity atempty, then prove
+JOINT sigma-subadditivity and apply exact Mathlib AddContent.measure gate.
+These ring/compact-fiber/projection/extension obligations remain OPEN.
+No joint predictable measure or arbitrary continuum integral asserted.
+Positive-time raw/G equality, regular versions/bracket, full native process
+integration/derivative-adjoint domain/representation/closure remain OPEN.
+Initial-coordinate zero1329 and completed focused F1–F3 exact domains,
+including actual closed dense derivative/Hilbertadjoint, remain preserved.
+Original M/F/Z and campaign order unchanged; IBM/fullgoal ACTIVE.
+
+Three modules295lines/all24 actual unabridged publictypes/fullproofs reviewed.
+Four independent tests random past-event step supported in container involving
+FUTURE IBM2 observation (no container adaptation); actual IBM tail-event
+terminal energy->0; random-coefficient positive-time right trims->0;
+constant2 counterexample. Fullroot6298jobs0
+25.499s; COMPLETE40004safeFoundation audit0
+40.556s standard3only; four independentchecks0
+27.636s. Stages sequential. All2126 prior
+sources unchangedexceptroot3imports,3configs/113archivepaths+hashes preserved,
+no resource/trust override. Evidence
+STARDUST_IBM_PREDICTABLE_SUPPORT_ENERGY_VERIFICATION.json and
+IBM_PREDICTABLE_SUPPORT_ENERGY_AUDIT.md. Exact receipt and PRIVATE main/research
+verification follow separately; precommit evidence claims no backup closure.
+Manuscriptsimmutable/unstaged, unrelated drafts preserved.

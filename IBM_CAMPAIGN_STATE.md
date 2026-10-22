@@ -1,3 +1,36 @@
+# Current IBM mathematics — checkpoint1330: actual support-sensitive energy control
+
+IBM ACTIVE. Actual right-germ terminal steps now reuse existing weighted
+terminals aF and pull-out: step=G^(aF)_t-G^(aF)_s equals actual a*DeltaG AE.
+Coefficients retain full bounded RAW-past measurability; no raw/G equality
+assumed. Finite endpoint-separated idempotent sums I have exact actual energy
+and inner(F,I)=norm(I)^2. Actual time-process equality identifies finite germ
+sums independent of presentation via existing endpoint-charge relations.
+
+NEW: if the actual time process vanishes outside ANY ambient measurable A
+AE at EACH time, the actual integral vanishes outside A and
+norm(I)^2<=integral_A F^2. A need NOT be adapted at any starting time.
+Proof uses actual indicator terminal1_A*F and squared-norm positivity, not
+invalid future-event pull-out. Idempotence essential: actual coefficient2
+on(0,1] for observed1 gives2*F and violates the unit support bound.
+AE eventually-disappearing support events give STRONG actual L2 zero limits
+for variable finite indicator sums. Actual right trims(s,tau_n] also vanish
+strongly for ANY bounded coefficient when tau_n>=s tends to s.
+Read IBM_PREDICTABLE_SUPPORT_ENERGY_AUDIT.md.
+
+JOINT predictable ring content, compact closed-fiber assembly, measurable
+sample-support projections, full ring continuity-at-empty, sigma-subadditivity
+and measure extension remain OPEN. These support/time estimates are inputs,
+not a declared joint measure or full continuum integral. Positive-time raw/G
+comparison, regular versions/bracket and full native representation/domain/
+closure remain OPEN. Terminal channels depend on F; not integration directly
+against the nonmartingale IBM coordinate. Initial-coordinate zero1329 and
+focused F1–F3 exact verified results (including closed dense joint derivative
+and actual Hilbert adjoint) preserved. Original M/F/Z, all existing theorem
+domains, queue and all verification/private gates unchanged.
+
+---
+
 # IBM scope clarification — preserve the completed focused F1–F3 results
 
 Checkpoint1107's focused F1–F3 results remain VERIFIED within their exact
