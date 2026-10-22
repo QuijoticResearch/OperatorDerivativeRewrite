@@ -1960,3 +1960,6 @@ import Foundation.BochnerLiftAdjointInclusion
 import Foundation.IBMNativeSourceRecovery
 import Foundation.IBMGlobalVacuum
 import Foundation.IBMCenteredSourceRepresentation
+import Foundation.IBMClockBacktracking
+import Foundation.IBMTemporalCovarianceObstruction
+import Foundation.IBMNaturalFiltrationObstruction

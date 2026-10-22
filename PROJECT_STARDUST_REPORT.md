@@ -29097,3 +29097,41 @@ no global resource/trust changes; unrelated drafts/caches preserved. Verificatio
 JSON embeds reproducible tests. Failed formatting build retained separately;
 all final gates fresh0. Commit/receipt/PRIVATE main+research verification follow;
 precommit pending metadata is not backup closure. Indefinite goal remainsACTIVE.
+
+
+## Checkpoint1302 — genuine IBM past projection and martingale obstruction
+
+Constructed a positive-probability actual Brownian clock witness Y1 in(1,2),
+Y2-Y1 in(-1,-1/2), using verified independent Gaussian laws and positive
+interval masses (Lebesgue domination, no Monte Carlo or assumed support).
+Transferred to actual continuous clock. For the ACTUAL IBM L2 curve, proved
+<Z_s,Z_t-Z_s>=-E[(|Y_s|-|Y_t|)_+], with integrable nonnegative gap and STRICT
+negative pairing at1,2. Every closed past subspace containing Z1 therefore
+fails to project Z2 to Z1. Defined actual IBM natural filtration/past L2 space;
+proved both condExpL2(Z2|F1) != Z1 and failure of scalar conditional expectation
+equality almost everywhere. Raw actual IBM is NOT a martingale in that
+filtration or ANY filtration on constructed joint probability space.
+
+Directly reused StickyNaturalMartingales.shrink for the larger-filtration
+exclusion: its generic transfer lemma is valid, its ambient-martingale premise
+fails for raw IBM. This connects verified sticky/IBM machinery without assuming
+their clocks or laws equivalent. No queued campaign began. Exact proof/scope
+in IBM_TEMPORAL_MARTINGALE_OBSTRUCTION_AUDIT.md. This rules out a compatible-
+prefix drift-free true-martingale representation of rawZ; NOT all local
+representations, NOT semimartingale status, NOT horizon-dependent terminal
+Doob representations or corrected/generalized Ito/CO. Static1301representation
+and F1/F2 corrections/topologies remain preserved. Next investigate actual
+past-localized domains/conditional Doob projection and one-sided time averages.
+
+Three modules251lines,24publics; all final sources/helpers and all24final types
+actually read unabridged (102loglines, proofargsvisible).
+Fresh fullroot6234jobs0 37.074s; COMPLETE
+39089safeFoundation transitiveaudit standard3only0 34.107s.
+Four independent Lean actualscenery inner-product direction/tie/zero regressions
+passed0 23.989s. Exact1089covariance-kernel checks and
+225witness-rectangle checks passed; no finite test substitutes for actual
+probability/filtration proofs. Verification JSON embeds code and immutable
+hashes. Prior2062sources unchangedexceptroot3imports; all113manuscripts and
+3configs unchanged. No new proof-resource/trust setting. Unrelated drafts/
+caches preserved. Commit/receipt/private main+research checks follow; no
+precommit record claims backup closure. Indefinite goal and IBM remainACTIVE.

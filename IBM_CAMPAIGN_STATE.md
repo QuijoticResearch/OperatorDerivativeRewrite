@@ -1,3 +1,22 @@
+# Current IBM mathematics — checkpoint1302: actual temporal martingale obstruction
+
+IBM ACTIVE. Constructed Brownian clock backtracks with strictly positive actual
+probability. Actual IBM satisfies <Z_s,Z_t-Z_s>=-E[(|Y_s|-|Y_t|)_+], strictly
+negative at1,2. Its actual own-past L2 and scalar conditional expectation at
+time1 do NOT send Z2 to Z1. Raw IBM is not a martingale in its own natural
+filtration, nor ANY filtration on the constructed joint probability space.
+Read `IBM_TEMPORAL_MARTINGALE_OBSTRUCTION_AUDIT.md` for exact proof and limits.
+This does NOT exclude corrected/generalized Ito or horizon-dependent terminal
+representations. No nonsemimartingale/local-martingale theorem is claimed.
+Static centered source representation remains valid but cannot be promoted to
+a compatible-prefix drift-free martingale integral for rawZ. Next use actual
+conditional past/terminal Doob martingales; audit past-localized intrinsic-core
+density (including one-sided horizon averages), not plain global density.
+Preserve F1/F2 exact corrections/topologies, all verification/private gates and
+queued order. No campaign transition; October31 review-only/no expiry.
+
+---
+
 # Current IBM mathematics — checkpoint1301: ALL centered static reconstruction
 
 IBM ACTIVE; full predictable/temporal calculus remains OPEN. The native

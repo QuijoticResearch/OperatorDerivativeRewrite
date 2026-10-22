@@ -1,0 +1,126 @@
+{
+  "checkpoint": 1302,
+  "time_utc": "2026-10-22T01:32:30.577006+00:00",
+  "campaign": "Actual IBM temporal conditional-projection obstruction",
+  "baseline_commit": "ce7ff9213170356fddbe7d7c0663d54b7d0d44bc",
+  "source_count": 2065,
+  "prior_count": 2062,
+  "new_public_names": {
+    "IBMClockBacktracking": [
+      "gaussian_interval_pos",
+      "witness",
+      "witness_positive",
+      "witness_backtracks",
+      "backtracking_positive",
+      "actual_clock_backtracking_positive"
+    ],
+    "IBMTemporalCovarianceObstruction": [
+      "gap",
+      "gap_nonneg",
+      "gap_integrable",
+      "expected_gap_positive",
+      "scenery_pair_gap",
+      "actual_increment_pairing",
+      "actual_increment_pairing_negative",
+      "past_projection_ne_previous"
+    ],
+    "IBMNaturalFiltrationObstruction": [
+      "point_stronglyMeasurable",
+      "naturalFiltration",
+      "point_stronglyAdapted",
+      "past",
+      "past_closed",
+      "previous_mem_past",
+      "conditional_L2_ne_previous",
+      "conditional_expectation_ne_previous",
+      "actual_not_martingale",
+      "no_martingale_filtration"
+    ]
+  },
+  "new_public_count": 24,
+  "source_lines_reviewed": {
+    "IBMClockBacktracking": 71,
+    "IBMTemporalCovarianceObstruction": 99,
+    "IBMNaturalFiltrationObstruction": 81
+  },
+  "complete_source_and_helper_lines_reviewed": 251,
+  "public_types_actually_read_unabridged": true,
+  "proof_arguments_visible": true,
+  "type_log_lines": 102,
+  "full_root_build_jobs": 6234,
+  "complete_transitive_safe_Foundation_declarations": 39089,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "terminal_results": {
+    "full-build": {
+      "stage": "full-build",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "build"
+      ],
+      "wall_seconds": 37.07366719999118,
+      "exit_code": 0,
+      "time_utc": "2026-10-22T01:27:08.332009+00:00"
+    },
+    "audit": {
+      "stage": "audit",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1302-audit.lean"
+      ],
+      "wall_seconds": 34.10718220000854,
+      "exit_code": 0,
+      "time_utc": "2026-10-22T01:29:25.296812+00:00"
+    },
+    "independent": {
+      "stage": "independent",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1302-independent.lean"
+      ],
+      "wall_seconds": 23.988690800004406,
+      "exit_code": 0,
+      "time_utc": "2026-10-22T01:31:41.313022+00:00"
+    }
+  },
+  "prior_sources_unchanged_except_root_three_imports": true,
+  "configuration_unchanged": true,
+  "new_proof_resource_overrides": false,
+  "new_source_sha256": {
+    "IBMClockBacktracking": "B7D3D6B2BA20890513D3E90DBFEDCD21A164E80E4A8DC8EA696916CA1EB0DF68",
+    "IBMTemporalCovarianceObstruction": "1DC4FC754092F3495FEAAC9C5371E3A9F4D35E48DBD92B2FE3252DEF09166854",
+    "IBMNaturalFiltrationObstruction": "5805F7374AF83FEDB7F220251868AD617E718D20D1E0377617C6BBA2D402243A"
+  },
+  "full_build_log_sha256": "A601AEC1962957F61B2C57E6DC7B068A15098F9A82CBA27ECA7C7DB222F1C431",
+  "audit_log_sha256": "6A640BF002E79DEA4AD08DFB1CC6C61A271CE3DB37BDC3C49F533CEC95AF68F6",
+  "independent_Lean_examples": 4,
+  "Lean_test_code": "import Foundation.IBMNaturalFiltrationObstruction\nopen OperatorDerivativeRewrite.Foundation\nopen IBMContinuousScenery IBMTemporalCovarianceObstruction\nnoncomputable section\n\nexample : inner ℝ (sourceScenery 2) (sourceScenery 1 - sourceScenery 2) = -1 := by\n  have h := scenery_pair_gap 2 1 (by norm_num) (by norm_num)\n  norm_num at h\n  exact h\n\nexample : inner ℝ (sourceScenery 1) (sourceScenery 2 - sourceScenery 1) = 0 := by\n  have h := scenery_pair_gap 1 2 (by norm_num) (by norm_num)\n  norm_num at h\n  exact h\n\nexample : inner ℝ (sourceScenery 1) (sourceScenery 1 - sourceScenery 1) = 0 := by\n  simp\n\nexample : inner ℝ (sourceScenery 1) (sourceScenery 0 - sourceScenery 1) = -1 := by\n  have h := scenery_pair_gap 1 0 (by norm_num) (by norm_num)\n  norm_num at h\n  exact h\n",
+  "exact_test_code": "from fractions import Fraction as Q\nfrom pathlib import Path\nimport json\nkernel=rect=0\nfor i in range(33):\n for j in range(33):\n  a,b=Q(i,4),Q(j,4)\n  cov=(a+b-abs(b-a))/2\n  defect=cov-a\n  assert defect==-max(a-b,Q(0))\n  assert (defect<0)==(b<a)\n  if a<=b:assert defect==0\n  kernel+=1\nfor i in range(17,32):\n for j in range(-31,-16):\n  x,d=Q(i,16),Q(j,32)\n  y=x+d\n  assert 1<x<2 and -1<d<Q(-1,2)\n  assert 0<y<x and abs(x)-abs(y)>Q(1,2)\n  rect+=1\nv=dict(passed=True,exact_covariance_kernel_cases=kernel,witness_rectangle_cases=rect,arithmetic='fractions.Fraction exact; no Monte Carlo and no numerical probability used to prove positivity')\nPath('.lake/stardust-1302-exact-tests.json').write_text(json.dumps(v,indent=2)+'\\n')\nprint(v)\n",
+  "exact_test_results": {
+    "passed": true,
+    "exact_covariance_kernel_cases": 1089,
+    "witness_rectangle_cases": 225,
+    "arithmetic": "fractions.Fraction exact; no Monte Carlo and no numerical probability used to prove positivity"
+  },
+  "manuscript_count": 113,
+  "all_manuscript_paths_hashes_unchanged": true,
+  "inventory": "STARDUST_RESEARCH_SOURCE_INVENTORY_1292.json",
+  "theorem_contract": "Actual Brownian clock backtracks with positive probability; <Z_s,Z_t-Z_s>=-E[(|Y_s|-|Y_t|)_+], strictly negative at1,2. Actual IBM own-past L2/conditional expectation fails previous-value identity. Raw IBM is not a martingale in ANY filtration on constructed joint probability space.",
+  "actual_process_backtracking_probability_proved": true,
+  "own_natural_filtration_conditional_expectation_obstruction_proved": true,
+  "all_filtrations_martingale_obstruction_proved": true,
+  "nonsemimartingale_theorem_claimed": false,
+  "local_martingale_impossibility_claimed": false,
+  "horizon_dependent_representation_impossibility_claimed": false,
+  "corrected_Ito_or_Clark_Ocone_impossibility_claimed": false,
+  "full_IBM_calculus_complete": false,
+  "queue_unchanged": true,
+  "private_backup_status": "PENDING exact-commit receipt before verified PRIVATE main/research sync; precommit record is not backup closure"
+}
