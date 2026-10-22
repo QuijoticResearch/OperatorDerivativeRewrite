@@ -2071,3 +2071,7 @@ import Foundation.IBMNativeWeightedDivergence
 import Foundation.IBMNativeContractionDomain
 import Foundation.IBMNativeIntegrableDivergence
 import Foundation.IBMNativeDeterministicFields
+import Foundation.IBMNativeDirectionalMaps
+import Foundation.IBMNativeDirectionalDrift
+import Foundation.IBMNativeUnboundedDirections
+import Foundation.IBMNativeClockDirection

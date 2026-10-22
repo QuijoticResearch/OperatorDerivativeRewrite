@@ -30896,3 +30896,48 @@ Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog unchang
 No expiration; pseudoprocess frozen1293. All verification/private gates intact.
 
 Fresh complete root build: 6342 jobs, 26.376s, terminal0. Complete transitive audit: 40964 declarations, 35.053s, terminal0; standard three axioms only. All30 unabridged public types, FIVE complete definition/specification bodies and all293 final source/proof lines read. Six independent final Lean tests0 (26.152s), empty log; first_pass=False. First attempt only required explicit divergence-domain-to-JointFieldSpace cast for channel indexing; no library change after gates. Exact test code and inputs in verification JSON. All2170 prior sources unchanged except three root imports; three configs and113 archive paths/hashes unchanged. No proof-resource/trust override. Actual deterministic nonzero fields and sine-of-genuine-IBM-average application verified; no sine nonconstancy or universally nonzero divergence claim. Full physical-time IBM calculus remains open. Private gate pending exact commit/receipt/sync.
+
+
+## Checkpoint1345 — unbounded actual IBM directional calculus and pure-clock kernel
+
+# Current IBM mathematics — checkpoint1345: unbounded directional calculus / clock kernel
+
+IBM ACTIVE. For EVERY f in FULL ORIGINALDomD, no value bound, multiplying
+actual deterministic native u_{h,k} by f preserves ORIGINALDomdelta whenever
+the actual product f*delta(u_{h,k}) is L2. Exact value:
+delta(f*u_{h,k})=P_IBM(f*delta(u_{h,k})-C_{h,k}(Df)).
+Actual directional lift and contraction are continuous linear maps in ORIGINAL
+coordinates; actual drift is MemLp.toLp product on its explicit L2 domain.
+See IBM_NATIVE_UNBOUNDED_DIRECTIONS_AUDIT.md for exact scope.
+
+Existing same-domain sine clips converge STRONGLY in L2 values and ORIGINAL
+native gradients. Actual clipped drift products converge STRONGLY in scalarL2
+under the drift-product condition. Directional maps and observable projection
+transport limits. ORIGINAL closed divergence graph gives actual membership/value.
+Independent test verifies complete bounded/unbounded output compatibility.
+
+Rigorous reflection connection: ambient deterministic clock divergence is the
+signed first-chaos clock lift; it is odd under the verified clock-sign reflection,
+while EVERY IBM observable is fixed. Full intrinsic projection is zero. Hence
+delta(u_{0,k})=0, but u_{0,k}!=0 if k!=0. Pure clock drift-product condition is
+automatic for EVERY full-domain f, including unbounded f, with actual formula
+delta(f*u_{0,k})=P_IBM(-C_{0,k}(Df)). No claim this RHS always vanishes.
+Independent test instantiates exact formula with genuine IBM nativeAverage T
+for ALL T>=0, WITHOUT extra integrability or boundedness assumptions. Arbitrary
+point observations are NOT placed in DomD. Existing nonzero EVEN clock channels
+are preserved; signed first-chaos clock is not an observed IBM innovation.
+
+Six FIRSTPASS independent tests: actual lift; full unbounded graph; actual
+clipped drift convergence; nonzero pure-clock kernel; unconditional genuine
+IBM-average formula; bounded-output compatibility. All32 public types, FIVE full
+actual definition bodies and all357 source/proof lines reviewed. Complete root
+build and transitive safe Foundation axiom audit pass, standard three axioms only.
+
+General source-direction drift integrability and full physical-time IBM
+Itô/Tanaka/local-time/versions/bracket, raw/germ comparison, universal causal CO
+remain OPEN. Preserve1337 fullG0/target-dependent channel and all earlier exact
+verified domains. Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise
+->backlog unchanged. No expiration; pseudo frozen1293. All verification/private
+backup gates intact; manuscripts immutable and uncommitted.
+
+Fresh complete root build: 6346 jobs, 26.309s, terminal0. Complete transitive audit: 41049 declarations, 35.476s, terminal0; standard three axioms only. All32 unabridged public types, FIVE complete actual definition bodies and all357 final source/proof lines read. Six independent FIRSTPASS Lean tests0 (26.206s), empty final log. Exact test code and inputs in verification JSON. All2173 prior sources unchanged except four root imports; three configs and113 archive paths/hashes unchanged. No proof-resource/trust override. Genuine unbounded IBM-average value identity proved in native source calculus; physical-time Itô remains open. Clock-sign kernel follows exact prior reflection/first-chaos/native-adjoint reuse and does not eliminate even observed clock channels. Private gate pending exact commit/receipt/sync.

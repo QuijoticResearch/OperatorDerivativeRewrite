@@ -1,3 +1,45 @@
+# Current IBM mathematics — checkpoint1345: unbounded directional calculus / clock kernel
+
+IBM ACTIVE. For EVERY f in FULL ORIGINALDomD, no value bound, multiplying
+actual deterministic native u_{h,k} by f preserves ORIGINALDomdelta whenever
+the actual product f*delta(u_{h,k}) is L2. Exact value:
+delta(f*u_{h,k})=P_IBM(f*delta(u_{h,k})-C_{h,k}(Df)).
+Actual directional lift and contraction are continuous linear maps in ORIGINAL
+coordinates; actual drift is MemLp.toLp product on its explicit L2 domain.
+See IBM_NATIVE_UNBOUNDED_DIRECTIONS_AUDIT.md for exact scope.
+
+Existing same-domain sine clips converge STRONGLY in L2 values and ORIGINAL
+native gradients. Actual clipped drift products converge STRONGLY in scalarL2
+under the drift-product condition. Directional maps and observable projection
+transport limits. ORIGINAL closed divergence graph gives actual membership/value.
+Independent test verifies complete bounded/unbounded output compatibility.
+
+Rigorous reflection connection: ambient deterministic clock divergence is the
+signed first-chaos clock lift; it is odd under the verified clock-sign reflection,
+while EVERY IBM observable is fixed. Full intrinsic projection is zero. Hence
+delta(u_{0,k})=0, but u_{0,k}!=0 if k!=0. Pure clock drift-product condition is
+automatic for EVERY full-domain f, including unbounded f, with actual formula
+delta(f*u_{0,k})=P_IBM(-C_{0,k}(Df)). No claim this RHS always vanishes.
+Independent test instantiates exact formula with genuine IBM nativeAverage T
+for ALL T>=0, WITHOUT extra integrability or boundedness assumptions. Arbitrary
+point observations are NOT placed in DomD. Existing nonzero EVEN clock channels
+are preserved; signed first-chaos clock is not an observed IBM innovation.
+
+Six FIRSTPASS independent tests: actual lift; full unbounded graph; actual
+clipped drift convergence; nonzero pure-clock kernel; unconditional genuine
+IBM-average formula; bounded-output compatibility. All32 public types, FIVE full
+actual definition bodies and all357 source/proof lines reviewed. Complete root
+build and transitive safe Foundation axiom audit pass, standard three axioms only.
+
+General source-direction drift integrability and full physical-time IBM
+Itô/Tanaka/local-time/versions/bracket, raw/germ comparison, universal causal CO
+remain OPEN. Preserve1337 fullG0/target-dependent channel and all earlier exact
+verified domains. Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise
+->backlog unchanged. No expiration; pseudo frozen1293. All verification/private
+backup gates intact; manuscripts immutable and uncommitted.
+
+---
+
 # Current IBM mathematics — checkpoint1344: total-contraction domain and concrete fields
 
 IBM ACTIVE. For bounded f in FULL ORIGINALDomD and u in ORIGINALDom(delta),
