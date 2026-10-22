@@ -1,3 +1,29 @@
+# Current IBM mathematics — checkpoint1356: actual clock graph-dual derivative
+
+IBM ACTIVE. At EVERY positive time the actual mollified clock-gradient L2
+norms tend to infinity, while their canonical embeddings converge STRONGLY
+in the dual of the FULL ORIGINAL clock-adjoint Hilbert graph. Quantitative
+dual error <= actual value L2 error <= sqrt(mollifier radius). Canonical
+ordinary-field embedding is injective and agrees on the original domain;
+ordinary representability is equivalent to ORIGINAL domain membership.
+The actual point derivative is nonzero at positive times, zero at time0,
+continuous in strong graph-dual norm, and has an integrable ACTUAL IBM
+expectation pairing for EVERY original adjoint test. Arbitrary original
+graph approximations have the same norm escape and dual limit.
+See IBM_CLOCK_GRAPH_DUAL_CALCULUS_AUDIT.md and verification JSON.
+
+This is Gaussian-clock sourcewise generalized calculus, NOT a physical-time
+Itô/Tanaka identity, adapted integral, samplewise derivative or full intrinsic
+Clark–Ocone theorem. Graph-dual space is NOT identified with manuscript
+spatial H^{-1}; a transfer theorem remains necessary. Original operators,
+domains, point exclusion1355, source calculus and exact F1–F3 scopes survive.
+Next compare existing spatial negative-Sobolev machinery and justified weak
+chain/product rules by theorem reuse before new infrastructure. IBM remains
+incomplete. Queue IBM -> Bakry/fBM -> Cauchy -> fractional diffusion -> black
+noise -> backlog; no expiration; pseudo frozen1293; all gates remain intact.
+
+---
+
 # Current IBM mathematics — checkpoint1355: ACTUAL point outside ORIGINAL clock/joint domains
 
 IBM ACTIVE. For EVERY t>0, actual unmollified intrinsicCurve(t) is OUTSIDE

@@ -2098,3 +2098,6 @@ import Foundation.IBMClockObservationConverse
 import Foundation.GaussianClockBochnerContraction
 import Foundation.IBMClockBochnerConverse
 import Foundation.IBMPointClockDomainObstruction
+import Foundation.ClosedOperatorEscapeEnergy
+import Foundation.ClosedOperatorGraphDualDerivative
+import Foundation.IBMClockGraphDualLimit

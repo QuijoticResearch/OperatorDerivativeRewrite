@@ -31296,3 +31296,47 @@ toolchainoverride. PRIVATE exactreceipt/sync closure recorded separately.
 
 Queue IBM -> Bakry/fBM -> Cauchy -> fractional diffusion -> black noise -> backlog.
 Pseudo frozen1293; noexpiration; October31REVIEWONLY. Allverificationgatesunchanged.
+
+
+## Checkpoint1356 — actual IBM clock norm escape and strong graph-dual repair
+
+# Current IBM mathematics — checkpoint1356: actual clock graph-dual derivative
+
+IBM ACTIVE. At EVERY positive time the actual mollified clock-gradient L2
+norms tend to infinity, while their canonical embeddings converge STRONGLY
+in the dual of the FULL ORIGINAL clock-adjoint Hilbert graph. Quantitative
+dual error <= actual value L2 error <= sqrt(mollifier radius). Canonical
+ordinary-field embedding is injective and agrees on the original domain;
+ordinary representability is equivalent to ORIGINAL domain membership.
+The actual point derivative is nonzero at positive times, zero at time0,
+continuous in strong graph-dual norm, and has an integrable ACTUAL IBM
+expectation pairing for EVERY original adjoint test. Arbitrary original
+graph approximations have the same norm escape and dual limit.
+See IBM_CLOCK_GRAPH_DUAL_CALCULUS_AUDIT.md and verification JSON.
+
+This is Gaussian-clock sourcewise generalized calculus, NOT a physical-time
+Itô/Tanaka identity, adapted integral, samplewise derivative or full intrinsic
+Clark–Ocone theorem. Graph-dual space is NOT identified with manuscript
+spatial H^{-1}; a transfer theorem remains necessary. Original operators,
+domains, point exclusion1355, source calculus and exact F1–F3 scopes survive.
+Next compare existing spatial negative-Sobolev machinery and justified weak
+chain/product rules by theorem reuse before new infrastructure. IBM remains
+incomplete. Queue IBM -> Bakry/fBM -> Cauchy -> fractional diffusion -> black
+noise -> backlog; no expiration; pseudo frozen1293; all gates remain intact.
+
+Fresh complete root build: 6372 jobs, 27.231s, terminal0.
+Complete transitive safe-Foundation audit: 41551 declarations,
+37.563s, terminal0; only propext, Classical.choice,
+Quot.sound. All36 unabridged public types, all12 relevant printed definitions,
+all489 audit-log lines and all285 final source/proof lines read. Seven independent
+Lean tests passed FIRST attempt (29.210s),
+including uniform full-graph test error, actual expectation/integrability,
+time0/continuity, native-domain uniqueness, nonzero/norm bound and arbitrary
+original-domain approximation sequences. Exact code in verification JSON.
+All2200 prior mathematical sources unchanged except three root imports; all
+three configs and113 archive paths/hashes unchanged. No resource/trust changes.
+Development repaired continuous versus algebraic dual precomposition and native
+unitary elaboration; a default-heartbeat timeout was solved by generic factoring,
+not increased resources. Reused HilbertRepresentation and closed bidual rather
+than adding weak compactness infrastructure. No spatial-H^-1 or physical-time
+calculus claim. Exact commit/receipt/private main+research gate pending.
