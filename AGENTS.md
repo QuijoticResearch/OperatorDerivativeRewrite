@@ -24,10 +24,20 @@ domain, independent-test, counterexample and manuscript-preservation standards.
 Begin only after Bakry–Émery/fBM reaches its fully audited/private checkpoint;
 see `STARDUST_CAUCHY_QUEUED_AUDIT.md`. IBM remains ACTIVE and Bakry/fBM NEXT.
 
-**AFTER Cauchy:** give `ResearchSources/fractional_diffusion/main.tex` the
+**IMMEDIATELY AFTER Cauchy:** attempt to prove A(2)=0 for the classical Riemann
+Xi flow and establish its precise relationship to RH. Reuse the entire verified
+library, including A(4), A(6), general A(2k), Fourier/zero dynamics and operator
+results where their hypotheses genuinely apply. Investigate rigorous bounds
+depending on k that could sandwich the classical threshold, and independently
+audit the cited OpenAI 7/8 result and any improvements before relying on them.
+These are proposed routes, not established implications. Do not begin early.
+See `STARDUST_A2_RH_QUEUED_RESEARCH.md` for the exact goal and proof gates.
+
+**AFTER the A(2)/RH attempt reaches its fully audited/private stopping
+checkpoint:** give `ResearchSources/fractional_diffusion/main.tex` the
 same rigorous manuscript audit and Lean repair, with all existing verification,
-source-preservation and private-backup gates. Begin only after the Cauchy
-campaign's fully audited/private checkpoint; see
+source-preservation and private-backup gates. Begin only after that A(2)
+checkpoint, retaining Cauchy's preceding completion gate; see
 `STARDUST_FRACTIONAL_DIFFUSION_QUEUED_AUDIT.md`. Do not start it early.
 
 **AFTER fractional diffusion:** return to `ResearchSources/Incoming/blackito.tex`

@@ -1,3 +1,19 @@
+# Current queue amendment — October22: A(2)/RH immediately after Cauchy
+
+IBM remains ACTIVE at verified checkpoint1365. New saved sequence:
+IBM -> Bakry–Émery/fBM -> Cauchy -> A(2)/RH proof attempt -> fractional diffusion
+-> black-noise manuscript repair -> cumulative backlog. Each transition retains
+its mathematically justified, fully audited and privately backed-up gate.
+See STARDUST_CAMPAIGN_QUEUE.md and STARDUST_A2_RH_QUEUED_RESEARCH.md.
+Attempt A(2)=0 for the actual classical Xi flow, rigorously auditing normalization,
+RH equivalence, reusable higher-order flow results and proposed k-dependent
+upper/lower bounds. The cited OpenAI bound and any transfer are research leads
+to verify, not established by this scheduling amendment. No campaign starts early,
+no mathematical result changes, no expiry, no weakened verification. Older queue
+labels below are historical and superseded only as to this new insertion.
+
+---
+
 # Current IBM mathematics — checkpoint1365: total-variation Cauchy–Schwarz and separate-energy representatives
 
 IBM ACTIVE. Full raw-predictable signed covariance is REAL bilinear and symmetric.

@@ -31830,3 +31830,39 @@ archive paths/hashes unchanged. No extra resources/trust/version, suppressed
 checks or manuscript edit. Actual opposite-channel variation equals original
 energy: independent normalization excludes cancellation-only reasoning.
 No novelty/full-functional-bound/full-calculus claim. Exact private gate pending.
+
+
+## Checkpoint1366 — post-Cauchy A(2)/RH campaign queued (instructions only)
+
+# Current queue amendment — October22: A(2)/RH immediately after Cauchy
+
+IBM remains ACTIVE at verified checkpoint1365. New saved sequence:
+IBM -> Bakry–Émery/fBM -> Cauchy -> A(2)/RH proof attempt -> fractional diffusion
+-> black-noise manuscript repair -> cumulative backlog. Each transition retains
+its mathematically justified, fully audited and privately backed-up gate.
+See STARDUST_CAMPAIGN_QUEUE.md and STARDUST_A2_RH_QUEUED_RESEARCH.md.
+Attempt A(2)=0 for the actual classical Xi flow, rigorously auditing normalization,
+RH equivalence, reusable higher-order flow results and proposed k-dependent
+upper/lower bounds. The cited OpenAI bound and any transfer are research leads
+to verify, not established by this scheduling amendment. No campaign starts early,
+no mathematical result changes, no expiry, no weakened verification. Older queue
+labels below are historical and superseded only as to this new insertion.
+
+The user requests an attempt at A(2)=0/RH, using the whole library and any
+productive resources, potentially a k-dependent sandwich or improved zero-free
+estimates. The saved directive preserves the principal objective and requires
+exact Xi-kernel applicability, threshold normalization, genuine transfer bounds,
+uniform/limit/Hurwitz hypotheses and independent verification of the cited
+OpenAI paper/formalization. No RH implication, bound improvement, novelty claim
+or manuscript validity is asserted here. Fractional diffusion and black noise
+remain queued afterward; IBM and Bakry/fBM keep their preceding priority.
+
+Documentation-only validation: exact2222 mathematical paths/hashes and3configuration
+hashes match the CLOSED1365 manifest and source set; all113 archive paths/hashes
+unchanged. Reuse1365 complete root6391jobs/40.121s/0 and complete transitive safe
+Foundation audit42157decl/36.806s/0, standard three axioms only, under the explicit
+documentation-only exact-input-identity rule in STARDUST_BUILD_OPTIMIZATION.md.
+Existing all20 public-type/proof reviews and eight passing independent tests
+retained; no changed theorem needs new type/proof review. No Lean build launched
+or productive proof interrupted for scheduling. Exact audit receipt/private
+main and research verification required after the instruction-only commit.

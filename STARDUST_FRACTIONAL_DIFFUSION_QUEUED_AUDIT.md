@@ -1,12 +1,13 @@
-# Queued after Cauchy: fractional-diffusion manuscript audit and Lean repair
+# Queued after the post-Cauchy A(2)/RH attempt: fractional-diffusion manuscript audit and Lean repair
 
 User directive, October 21, 2026. QUEUED; mathematical review not started.
 
 Sequential queue: complete actual intrinsic IBM calculus; complete the
 Bakry–Émery repairs/related fBM survey and selected focus; complete the Cauchy
-campaign; then give the fractional-diffusion paper the same rigorous treatment.
-Begin only after Cauchy reaches its mathematically justified, fully audited
-and privately backed-up checkpoint. Partial or conditional results must retain
+campaign; then undertake the A(2)/RH proof attempt added October22; then give the
+fractional-diffusion paper the same rigorous treatment. Begin only after that
+A(2) attempt reaches its mathematically justified, fully audited and privately
+backed-up stopping checkpoint. Keep Cauchy's preceding gate. Partial or conditional results must retain
 their qualifications. After this campaign, the black-noise manuscript repair
 is next, as specified in `STARDUST_BLACK_NOISE_QUEUED_AUDIT.md`; cumulative
 backlog research follows black noise.

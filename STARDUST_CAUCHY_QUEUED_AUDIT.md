@@ -8,7 +8,9 @@ then give the Cauchy paper the same rigorous treatment. Do not start this
 campaign before the preceding Bakry–Émery/fBM campaign reaches its
 mathematically justified, fully audited and privately backed-up checkpoint.
 Keep precise stopping qualifications; do not label a conditional or partial
-result as completion. After Cauchy, the fractional-diffusion paper is next,
+result as completion. October22 amendment: immediately after Cauchy, the A(2)/RH
+proof attempt is next, as specified in `STARDUST_A2_RH_QUEUED_RESEARCH.md`.
+Fractional diffusion follows its fully audited/private stopping checkpoint,
 as specified in `STARDUST_FRACTIONAL_DIFFUSION_QUEUED_AUDIT.md`; cumulative
 backlog research follows the subsequent black-noise campaign (see
 `STARDUST_BLACK_NOISE_QUEUED_AUDIT.md`).

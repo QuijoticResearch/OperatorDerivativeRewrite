@@ -2,7 +2,7 @@
 
 User directive, October 21, 2026. QUEUED; no early campaign activation.
 
-Saved sequence: IBM -> Bakry–Émery/fBM -> Cauchy -> fractional diffusion ->
+Saved sequence: IBM -> Bakry–Émery/fBM -> Cauchy -> A(2)/RH attempt -> fractional diffusion ->
 black noise -> cumulative backlog. IBM stays active. Start only after the
 fractional-diffusion campaign's mathematically justified, fully audited and
 privately backed-up checkpoint. Keep every preceding campaign gate intact.
