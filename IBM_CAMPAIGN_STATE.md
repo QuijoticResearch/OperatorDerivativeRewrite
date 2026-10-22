@@ -1,3 +1,41 @@
+# Current IBM mathematics — checkpoint1362: fixed countable actual stochastic family
+
+IBM ACTIVE. A SINGLE FIXED AT-MOST-COUNTABLE family (e_i,H_i,v_i), chosen BEFORE
+any target f, now gives actual stochastic reconstruction of EVERY intrinsic L2
+f minus its ENTIRE initial right-germ projection. This improves1337's target-
+indexed quantifier order in an exact countable-family sense. See
+IBM_FIXED_STOCHASTIC_FAMILY_AUDIT.md and exact verification JSON.
+
+K=IntrinsicSpace intersect rightPast(0)-orthogonal is a genuine closed Hilbert
+subspace of the original jointL2. Actual jointL2 separability proved using pinned
+Mathlib; existing Hilbert basis existence and Stardust orthonormal countability
+give fixed countable basis e_i. Existing ACTUAL self-representation constructs
+H_i in ORIGINAL PredictableL2(mu_ei), I_ei H_i=e_i, norm H_i=1. No new probability
+model, stochastic integral, domain or random multichannel completion. Classical
+choices in actual spaces, not explicit computational kernels.
+
+For EVERY intrinsic f, c_i=<e_i,f>=weakDerivative(f)(testOf(v_i)); v_i lies in
+ORIGINAL full intrinsic divergence domain, delta(v_i)=e_i, squared field norm
+<=2. On ORIGINAL DomD, c_i=<v_i,Df>. Same family for ALL targets. The genuine
+stochastic series I_ei(c_i H_i) converges STRONGLY in ORIGINAL jointL2,
+unconditionally over finite subsets, to f-G0f. Exact Parseval energy sum c_i^2
+=sum norm(c_i H_i)^2=norm(f-G0f)^2. Actual terminal outputs orthonormal; all c_i
+vanish EXACTLY on rightPast0. True constants remain in the germ.
+
+For EVERY ACTUAL IBM point, existing initial prediction0 removes its G0 term;
+IBM1 has a verified NONZERO coefficient. No ordinary point derivative assumed:
+1355/1360 point/sine domain obstructions remain intact and independently tested.
+Genuine finite stochastic/dictionary approximations to H_i and e_i verified.
+This is a fixed countable stochastic Hilbert expansion with deterministic scalar
+coefficients, NOT conditional temporal-gradient projection, a single fixed-noise
+PRP, or full causal Clark-Ocone. No arbitrary random multichannel isometry,
+independence/brackets/pathwise versions, germ triviality or physical-time Ito.
+Full IBM calculus INCOMPLETE; no queued campaign begins. Queue unchanged:
+IBM->Bakry/fBM->Cauchy->fractional diffusion->blackito->backlog. No expiration;
+pseudo frozen1293; all mathematical/source/audit/private-backup gates preserved.
+
+---
+
 # Current IBM mathematics — checkpoint1361: ordinary correction field and unbounded-factor products
 
 IBM ACTIVE. The full intrinsic Leibniz correction now has an ORDINARY two-channel

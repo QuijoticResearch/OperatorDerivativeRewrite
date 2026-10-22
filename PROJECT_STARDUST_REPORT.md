@@ -31603,3 +31603,64 @@ new axiom, suppressed check, process/law replacement or weakened domain. All2212
 prior sources unchanged except two root imports;3configs and113 exact immutable
 archive paths/hashes unchanged. Full root/audit inputs unchanged afterward.
 Private gate pending exact commit/receipt and verified PRIVATE main/research.
+
+
+## Checkpoint1362 — fixed countable actual stochastic family and native/graph-dual coefficients
+
+# Current IBM mathematics — checkpoint1362: fixed countable actual stochastic family
+
+IBM ACTIVE. A SINGLE FIXED AT-MOST-COUNTABLE family (e_i,H_i,v_i), chosen BEFORE
+any target f, now gives actual stochastic reconstruction of EVERY intrinsic L2
+f minus its ENTIRE initial right-germ projection. This improves1337's target-
+indexed quantifier order in an exact countable-family sense. See
+IBM_FIXED_STOCHASTIC_FAMILY_AUDIT.md and exact verification JSON.
+
+K=IntrinsicSpace intersect rightPast(0)-orthogonal is a genuine closed Hilbert
+subspace of the original jointL2. Actual jointL2 separability proved using pinned
+Mathlib; existing Hilbert basis existence and Stardust orthonormal countability
+give fixed countable basis e_i. Existing ACTUAL self-representation constructs
+H_i in ORIGINAL PredictableL2(mu_ei), I_ei H_i=e_i, norm H_i=1. No new probability
+model, stochastic integral, domain or random multichannel completion. Classical
+choices in actual spaces, not explicit computational kernels.
+
+For EVERY intrinsic f, c_i=<e_i,f>=weakDerivative(f)(testOf(v_i)); v_i lies in
+ORIGINAL full intrinsic divergence domain, delta(v_i)=e_i, squared field norm
+<=2. On ORIGINAL DomD, c_i=<v_i,Df>. Same family for ALL targets. The genuine
+stochastic series I_ei(c_i H_i) converges STRONGLY in ORIGINAL jointL2,
+unconditionally over finite subsets, to f-G0f. Exact Parseval energy sum c_i^2
+=sum norm(c_i H_i)^2=norm(f-G0f)^2. Actual terminal outputs orthonormal; all c_i
+vanish EXACTLY on rightPast0. True constants remain in the germ.
+
+For EVERY ACTUAL IBM point, existing initial prediction0 removes its G0 term;
+IBM1 has a verified NONZERO coefficient. No ordinary point derivative assumed:
+1355/1360 point/sine domain obstructions remain intact and independently tested.
+Genuine finite stochastic/dictionary approximations to H_i and e_i verified.
+This is a fixed countable stochastic Hilbert expansion with deterministic scalar
+coefficients, NOT conditional temporal-gradient projection, a single fixed-noise
+PRP, or full causal Clark-Ocone. No arbitrary random multichannel isometry,
+independence/brackets/pathwise versions, germ triviality or physical-time Ito.
+Full IBM calculus INCOMPLETE; no queued campaign begins. Queue unchanged:
+IBM->Bakry/fBM->Cauchy->fractional diffusion->blackito->backlog. No expiration;
+pseudo frozen1293; all mathematical/source/audit/private-backup gates preserved.
+
+Fresh complete root build: 6385 jobs, 25.983s, terminal0.
+COMPLETE transitive safe Foundation audit: 42047 declarations,
+38.717s, terminal0, standard three axioms only.
+All30 unabridged public types,10 printed old/new definitions, ALL221 audit-log
+lines and ALL205 final source/proof lines actually read. Seven independent
+Lean tests passed FIRST RUN in 28.830s, emptylog.
+Tests cover actual countable normalized orthogonal integral family; every
+intrinsic target's strong series and energy; original-domain native coefficients;
+actualIBM1 reconstruction/nonzero coefficient/nonordinary point derivative;
+genuine dictionary stochastic approximations; constants retained in germ;
+full graph-dual Parseval and original divergence test values/norms. Exact code
+and timings retained in JSON. Initial separability experiment failed instance
+lookup; existing Mathlib separable-measure import, explicit alias and proved
+exponent Fact fixed it. Final source uses that actual theorem, no extra assumption.
+Development fixed choice unfolding, orthogonality arguments, subtype transport,
+HasSum exponent precedence/zero typing, real inner symmetry and native norm
+wrapper. Final targeted build5 passed. No proof-resource/trust override,
+suppressed audit, changed process/domain, or novelty claim. All2214 prior
+sources unchanged except two root imports;3 pinned configurations and113 exact
+immutable archive paths/hashes unchanged. Root/audit inputs unchanged afterward.
+Private gate pending exact commit/receipt and verified PRIVATE main/research.

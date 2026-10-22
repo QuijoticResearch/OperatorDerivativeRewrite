@@ -2112,3 +2112,5 @@ import Foundation.IBMSineClockSectionObstruction
 import Foundation.IBMActualSineDomainObstruction
 import Foundation.IBMIntrinsicCorrectionField
 import Foundation.IBMIntrinsicDomainMultiplier
+import Foundation.IBMFixedStochasticFamily
+import Foundation.IBMFixedNativeReconstruction
