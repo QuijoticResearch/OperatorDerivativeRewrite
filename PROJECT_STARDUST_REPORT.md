@@ -28932,3 +28932,20 @@ public types/proofs; no new Lean declarations or changed verification inputs.
 STARDUST_BAKRY_FBM_QUEUE_VERIFICATION.json records exact evidence identity.
 Commit/receipt/private main+research synchronization are required next; the
 precommit pending status is not a claim of successful backup.
+
+
+## Checkpoint1296 — Cauchy manuscript queued after Bakry–Émery/fBM
+
+User-directed instruction-only queue: actual intrinsic IBM ACTIVE, then the
+two Bakry–Émery repairs/related fBM survey and chosen focus, then Cauchy, then
+cumulative backlog. Updated AGENTS, authoritative queue and IBM/general states;
+Bakry queued plan points to Cauchy next. No campaign started early.
+STARDUST_CAUCHY_QUEUED_AUDIT.md records scope and full verification/private gates.
+Only file in cauchy: stochastic_cauchy_operator_v4.tex, SHA256 3154D5C35AC6C1A1C984847CDA8F94D953E29AE783F4F4536933F8C973033E8C.
+Filename/hash preparation only; mathematical review is deferred until its gate.
+All113archive paths/hashes,2056Foundation/root sources and3configs unchanged.
+Retain exact1294 successful full6225job build, complete38898safeFoundation
+standard3 audit and actual public-type/proof review under the permanent
+documentation-only evidence-reuse rule. No new Lean declarations or proof
+changes. Unrelated drafts preserved. Exact-commit receipt and private main/
+research verification must follow this commit; no precommit backup claim.

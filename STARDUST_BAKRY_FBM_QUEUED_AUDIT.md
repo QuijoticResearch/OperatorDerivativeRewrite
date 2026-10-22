@@ -53,7 +53,9 @@ not authorization to launch unrelated campaigns in parallel.
 1. ACTIVE: intrinsic stochastic calculus for actual IBM.
 2. NEXT, after IBM completion and verified checkpoint: the two Bakry–Émery repairs,
    related fBM survey, then the independently selected productive focus above.
-3. AFTERWARD: cumulative autonomous Stardust research from the existing backlog.
+3. NEXT after this Bakry–Émery/fBM campaign: the Cauchy manuscript audit and
+   Lean repair in `STARDUST_CAUCHY_QUEUED_AUDIT.md`, with the same full gates.
+4. AFTERWARD: cumulative autonomous Stardust research from the existing backlog.
 
 No expiration date is introduced. October 31 remains a review milestone only.
 Keep complete root builds, complete transitive axiom audits, unabridged public

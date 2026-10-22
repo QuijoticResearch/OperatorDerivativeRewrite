@@ -18,7 +18,13 @@ original manuscript bytes. The exact scope and gate are saved in
 `STARDUST_BAKRY_FBM_QUEUED_AUDIT.md`; filenames/hashes only were checked now.
 Do not begin this campaign early or divert the active IBM proof.
 
-Afterward continue cumulative autonomous backlog research. No expiration date;
+**AFTER the Bakry–Émery/fBM campaign:** audit and rigorously repair
+`ResearchSources/cauchy/stochastic_cauchy_operator_v4.tex` with the same Lean,
+domain, independent-test, counterexample and manuscript-preservation standards.
+Begin only after Bakry–Émery/fBM reaches its fully audited/private checkpoint;
+see `STARDUST_CAUCHY_QUEUED_AUDIT.md`. IBM remains ACTIVE and Bakry/fBM NEXT.
+
+After Cauchy, continue cumulative autonomous backlog research. No expiration date;
 October31 is REVIEW ONLY. All full-build, complete axiom-audit, public-type/proof
 review, independent-test, ledger, source-integrity, Git and verified PRIVATE
 main/research backup requirements remain unchanged. Consult and follow
