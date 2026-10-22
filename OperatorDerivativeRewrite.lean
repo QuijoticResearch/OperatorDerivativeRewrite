@@ -2027,3 +2027,6 @@ import Foundation.IBMObservedInitialGerm
 import Foundation.IBMGermPredictableStep
 import Foundation.IBMGermIndicatorSupport
 import Foundation.IBMGermSupportContinuity
+import Foundation.IBMPredictableRectangles
+import Foundation.IBMPredictableFiniteIntegral
+import Foundation.IBMPredictableRingContent

@@ -1,3 +1,40 @@
+# Current IBM mathematics — checkpoint1331: actual predictable ring ENERGY content
+
+IBM ACTIVE. Eligible RAW-past rectangles(s,t]xA form a verified semiring;
+their finite-union closure is a verified ring, raw predictable and finitely
+time bounded. Ring PLUS explicit raw F0 origin sets generates the FULL
+Mathlib raw predictable sigma algebra. The positive-time ring ALONE is not
+claimed to generate it; origin extension remains necessary.
+
+Actual finite rectangle process/stochastic maps now have PROVED kernel
+inclusion by existing endpoint charges, so the ACTUAL stochastic map descends
+linearly to the actual finite SIMPLE-process range. No analytic completion,
+arbitrary bounded-coefficient range equality or presentation injectivity.
+Every ring indicator has an actual integral I_F(E), independent of finite
+presentation. Constructed nonnegative AddContent with FULL finite additivity,
+exact original-law rectangle increment-density agreement and uniform bound
+ofReal(normF^2). Disjoint rectangle steps are orthogonal even with overlapping
+TIME intervals: their sample events are then disjoint. Therefore for EVERY
+ring E, content_F(E)=ofReal(norm(I_F(E))^2) and inner(F,I_F(E))=norm(I_F(E))^2.
+
+ANY ambient measurable sample support A gives actual integral support and
+norm(I_F(E))^2<=integral_A F^2, with NO container adaptation. Measurable
+supports eventually disappearing AE give STRONG actual L2 ring-integral
+zero limits. Read IBM_PREDICTABLE_RING_CONTENT_AUDIT.md.
+
+Remaining: compact closed-time-fiber approximants and their measurable sample
+projections, continuity-at-empty for arbitrary decreasing ring sets, JOINT
+sigma-subadditivity/countable measure extension, explicit zero-origin
+extension and continuum integral/domain closure. Finite AddContent is NOT
+a countably additive measure. This is G^F terminal-dependent integration with
+RAW-past events, NOT raw N^F equality or direct integration against IBM Z.
+Positive-time raw/G comparison, regular versions/bracket/full native calculus
+remain OPEN. Focused F1–F3 exact verified results, closed dense derivative/
+actual Hilbert adjoint, initial-coordinate zero1329, M/F/Z, all existing
+theorem domains, campaign order and verification/private gates preserved.
+
+---
+
 # Current IBM mathematics — checkpoint1330: actual support-sensitive energy control
 
 IBM ACTIVE. Actual right-germ terminal steps now reuse existing weighted
