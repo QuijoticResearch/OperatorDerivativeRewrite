@@ -29630,3 +29630,46 @@ preserved; no new proof-resource/trust override. Evidence in
 STARDUST_IBM_RIGHT_GERM_ENERGY_VERIFICATION.json and IBM_RIGHT_GERM_ENERGY_AUDIT.md.
 Exact Git receipt and verified PRIVATE main+research backup follow separately;
 precommit record claims no closure. IBM/existing indefinite goal ACTIVE, queue unchanged.
+
+
+## Checkpoint1316 — actual IBM-germ deterministic stochastic integral completion
+
+Reused actual martingale right-germ projections and energy measure. Covariance
+inner(r_s,r_t)=E(min(s,t)) follows from nested self-adjoint projections. Actual
+time-energy L2 prefix indicators 1_(0,t] have exactly the SAME Gram matrix.
+Finite real dictionaries give paired-inner/norm equality and stochastic equality
+IFF time-L2 equality. Thus arbitrary finite integrand presentations that agree
+energy-AE give the same actual stochastic variable, without common-grid or
+nonoverlap assumptions. Actual interval (s,t] indicator equals prefix difference
+and maps to r_t-r_s. Scalar AE finite-sum realization is verified.
+
+Defined domain EXACTLY as closure of range(timeDictionary) in time-energy L2.
+Proved canonical embedding dense in THIS domain and invoked existing Mathlib
+LinearMap.extendOfIsometry using proved norm equality. Result is a genuine unique
+linear isometry to actual scalar JointL2, agreeing with every finite dictionary
+and interval sum. Actual scalar integral-of-square isometry and STRONG L2 limit
+for every filter/convergent dictionary approximation are verified. No new
+abstract process law, independence, Gaussian or time-variance normalization.
+
+This is a completed DETERMINISTIC integral on its specified closed domain.
+Full-space interval density is still OPEN, not assumed from closure. Random
+predictable control/domain completion and native derivative/adjoint connection,
+Clark–Ocone, regular versions, bracket and unsmoothed actual IBM Itô remain OPEN.
+Original raw M/F/Z unchanged; positive-time r=M remains iff unproved J_t=0.
+Do not factor random coefficients against deterministic energy or retarget old
+raw-M/F integrals without proofs. Next actual interval density and genuine
+random predictable control, retaining F1/F2 correction/K hypotheses.
+
+Two modules179lines/all25public types and complete proofs actually reviewed.
+Four independent Lean examples verify actual interval-indicator/increment;
+arbitrary time-energy-AE presentation consistency; arbitrary strong completion
+approximation with actual scalar isometry; overlapping-interval shared energy
+1/3 versus2/4. Fresh full root 6270jobs0 23.080s;
+COMPLETE 39591safeFoundation transitive audit0 34.367s,
+standard3only; independent0 24.507s. All2099prior
+sources unchanged except root2imports, all3configs and113archivepaths+hashes
+preserved; no new proof-resource/trust override. Evidence
+STARDUST_IBM_DETERMINISTIC_INTEGRAL_VERIFICATION.json and
+IBM_RIGHT_GERM_DETERMINISTIC_INTEGRAL_AUDIT.md. Exact receipt/PRIVATE main+research
+closure follows separately; precommit record claims no backup closure.
+IBM/existing indefinite goal ACTIVE; queue unchanged.

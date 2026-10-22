@@ -1,3 +1,28 @@
+# Current IBM mathematics — checkpoint1316: actual completed deterministic integral
+
+IBM ACTIVE. Actual time-energy prefix indicators and rightLimitClass t have
+equal Gram matrices E(min(s,t)). Finite dictionaries give paired-inner/norm
+equality and stochastic equality IFF actual time-L2 equality. Arbitrary finite
+energy-AE presentations, overlapping intervals and different grids are covered
+for DETERMINISTIC coefficients. Actual (s,t] indicator maps to r_t-r_s; finite
+dictionary scalar AE realization is proved. Existing dense-isometry extension
+constructs a unique linear isometry integral on the CLOSED RANGE of time
+dictionaries in time L2. Actual scalar isometry and strong L2 convergence for
+EVERY convergent dictionary approximation/filter are verified.
+See IBM_RIGHT_GERM_DETERMINISTIC_INTEGRAL_AUDIT.md.
+
+Full-space time-L2 density is NOT yet proved; the specified closed domain must
+not be called all time L2. Random predictable coefficient completion/control,
+native derivative-adjoint compatibility, PRP/Clark–Ocone and actual IBM Itô
+remain open. Deterministic energy does not factor random-coefficient energies.
+Original M/F/Z unchanged; no positive-time zero-jump/modification or regular
+sample-path/bracket claim. Full IBM calculus OPEN. Queue/archive unchanged.
+Next prove applicable interval density and develop genuine random predictable
+control/domain compatibility using actual martingale hypotheses, not Brownian
+independence. Preserve all F1/F2 correction/K and verification/private gates.
+
+---
+
 # Current IBM mathematics — checkpoint1315: actual right-germ time-energy measure
 
 IBM ACTIVE. Canonical rightLimitClass is STRONGLY L2 right continuous over the

@@ -1997,3 +1997,5 @@ import Foundation.IBMIntrinsicRightApproach
 import Foundation.IBMRightGermFiltration
 import Foundation.IBMRightGermContinuity
 import Foundation.IBMRightGermEnergyMeasure
+import Foundation.IBMRightGermDeterministicIntegral
+import Foundation.IBMRightGermIntegralCompletion
