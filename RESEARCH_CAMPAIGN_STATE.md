@@ -1,3 +1,25 @@
+# Current IBM mathematics — checkpoint1312: raw regularity and energy obstruction audit
+
+IBM ACTIVE. A fully constructed counterexample refutes a generic shortcut:
+Z_t=max(t,0)*xi has continuous paths, but rawF0 is trivial and EVERY positive
+past reveals the actual Gaussian xi. Raw filtration fails IsRightContinuous.
+M_t=xi for t>0,0 otherwise is a genuine centered square-integrable martingale
+there, with NO a.s right-continuous modification. Its exact energies on(0,t]
+are1 for EVERYt>0, so no countably additive time measure can realize them:
+shrinking(0,1/(n+1)] has empty intersection. Global measure finiteness not needed.
+Read IBM_RAW_REGULARITY_ENERGY_AUDIT.md. This is a GENERIC counterexample,
+NOT an assertion about actual IBM. Separately proved actual intrinsic IBM
+norm<=2t and STRONG L2 convergence at zero in NNReal topology, no monotone-
+sequence premise. Thus this specific origin jump is ruled out for actual IBM.
+Still OPEN: actual IBM positive-time right regularity/energy measure, general
+common refinements, continuum domain/energy null relation, bracket/PRP/native
+adjoint. Continuous observations alone cannot discharge those hypotheses.
+Investigate actual regularity/variance alongside finite refinements, preserving
+all prior actual integrals/endpoints, F1/F2 corrections/K domains and queue.
+No full-calculus completion or campaign transition claimed.
+
+---
+
 # Current IBM mathematics — checkpoint1311: actual predictable integrand processes
 
 IBM ACTIVE. Bounded full-IBM-past coefficients now have independently defined

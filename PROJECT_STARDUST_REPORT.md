@@ -29473,3 +29473,43 @@ trustoverride. Evidence STARDUST_IBM_PREDICTABLE_PROCESS_VERIFICATION.json and
 IBM_INTRINSIC_PREDICTABLE_PROCESS_AUDIT.md. Git/exactreceipt/PRIVATE main+research
 gates follow separately; precommit record claims no backupclosure. Existing
 indefinitegoal and IBM ACTIVE; queue andF1/F2correction/K domains unchanged.
+
+
+## Checkpoint1312 — rigorous raw-filtration regularity and energy-measure audit
+
+Constructed ACTUAL Gaussian-source counterexample Z_t=max(t,0)*xi with EVERY
+pathcontinuous. Its RAW naturalfiltration is bottom at t<=0 and revealsxi at
+EVERYpositive time. Explicit notstronglymeasurableatzero and exact rightCont
+intersectionprove failureofIsRightContinuous. M_t=xi for t>0,0otherwise has
+FULLMartingalepredicate, actualL2membership/centering and exactGaussianpositive
+marginals. Reused FixedLawPathObstruction toprove NOa.s rightcontinuous paths
+and NOa.s rightcontinuous modification preserving allfixed-time versions.
+Actualincrementenergy E[(M_t-M0)^2]=1 everyt>0. Shrinkingmeasurableintervals
+(0,1/(n+1)] areantitone withemptyintersection. Measurecontinuityfromabove proves
+NOcountablyadditive time measurecanhave theseIocenergies. Finitenessofonesuch
+intervalsuffices; globalfinitenessNOTassumed. This precisely refutesgeneric
+continuous-observation/rawL2martingale -> Iocenergymeasure/regularversion
+inference; doesNOTexcludeallalternativeconventions oractualIBMcalculus.
+
+SEPARATEACTUALIBMRESULT: prior ||M_tIBM||^2<=2t^2 impliesnorm<=2t and STRONG
+scalarL2limit0 as t->0 inNNReal ordinarytopology, no monotonicitypremise.
+This rulesoutthecounterexample'sspecificoriginjumpforactualIBM; positive-time
+rightregularity/energymeasure remain OPEN. No actualIBMno-measuretheorem or
+impossibility claimed. Next actualregularity/variancehypotheses alongsidecommon
+finite refinements/energynullrelations. DoNOTgrantusualconditionsfromcontinuous
+coordinatesornullaugmentation; preserveF1/F2corrections/clock-numberK/native
+domains, allactualintegration/endpointsandqueue. FullIBMcalculusOPEN.
+
+Three modules205lines,24publictypes actually reviewed unabridged
+(99loglines); all newsource/helper proofs reviewed. Fourindependent
+Leanchecks cover actualcontinuousobservation+L2martingale; rawnonRC+allmodification
+obstruction; directenergy1 at1/1000 versus0 at0 plusnomeasure; actualIBMstrongL2
+convergencealongpositive1/(n+1)times. Freshfullroot6262jobs0
+23.807s; COMPLETE39450safeFoundation transitiveaudit0
+35.583s standard3only; independentchecks0
+24.220s. All2090prior sources unchanged exceptroot3imports,
+3configs and113archivepaths/hashes unchanged; no resource/trustoverrides.
+Evidence STARDUST_IBM_RAW_REGULARITY_VERIFICATION.json and
+IBM_RAW_REGULARITY_ENERGY_AUDIT.md. Git/exactreceipt/PRIVATE main+research gates
+follow separately; precommit record claims no backupclosure. Existingindefinite
+goal and IBM ACTIVE, no campaign transition.

@@ -1988,3 +1988,6 @@ import Foundation.IBMIntrinsicMartingaleSeries
 import Foundation.IBMCofinalPast
 import Foundation.IBMIntrinsicMartingaleEndpoint
 import Foundation.IBMIntrinsicPredictableProcess
+import Foundation.ContinuousObservationFiltrationObstruction
+import Foundation.RawMartingaleEnergyMeasureObstruction
+import Foundation.IBMIntrinsicOriginContinuity
