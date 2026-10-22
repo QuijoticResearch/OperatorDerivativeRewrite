@@ -1,3 +1,44 @@
+# Current IBM mathematics — checkpoint1344: total-contraction domain and concrete fields
+
+IBM ACTIVE. For bounded f in FULL ORIGINALDomD and u in ORIGINALDom(delta),
+the ACTUAL TOTAL contraction sum_i<coordinate_i(D_i f),coordinate_i(u_i)>
+belonging to L2 suffices for M_f u in SAME Dom(delta), with exact value
+delta(M_f u)=P_IBM(M_f(delta u)-actualContraction(Df,u)).
+Separate bounded-gradient assumptions removed. Individual channel contractions
+need not separately be L2. Projection retained. This is a sufficient domain,
+not a maximality/necessity claim. See IBM_NATIVE_INTEGRABLE_DIVERGENCE_AUDIT.md.
+
+Actual contraction/pairing uses L2xL2->L1 channel integrability and bounded tests;
+reuse1343 strong bounded graph core and full adjoint representability. Bounded
+coefficient fields paired with L2 gradients, and L4xL4 fields, give verified L2
+criteria. No false L2xL2->L2 operation, replacement derivative/domain or integral.
+
+Concrete deterministic native fields now lie in ORIGINALDomdelta. Built from
+verified first-chaos divergence graph, true Bochner tensor/lift-adjoint inclusion
+and native unitary/observable restriction. Actual original coefficients=h,k,
+hence bounded. Field NONZERO if h!=0; nonzero divergence of every direction NOT
+claimed. EVERY bounded fullDomD observable can multiply these actual fields
+with strong projected divergence formula, without any gradient-bound premise.
+Independent tests construct actual sin(nativeAverage T) family for ALL T>=0
+and prove weighted deterministic-field membership for ALL h,k. Specific sine
+observable nonconstancy is not asserted; nativeAverage is actual IBM time average.
+
+Six independent tests pass: generalized value; bounded-field criterion; L4
+criterion; concrete nonzero native fields; actual sine-average construction;
+actual predictable stochastic-integral field membership under total contraction.
+All30 public types, FIVE full definition/specification bodies and all293 final
+source/proof lines reviewed. Fresh full root build and complete transitive safe
+Foundation audit pass, only standard three axioms. First test attempt needed
+one explicit native field cast before channel indexing; library unchanged.
+
+Full physical-time IBM Itô/Tanaka/local-time/versions/bracket and universal
+causal Clark–Ocone remain OPEN. Preserve1337 entireG0/target-dependent channel,
+1336 Poisson/Poincare,1338–1343 calculus and focusedF1–F3 exact verified domains.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog unchanged.
+No expiration; pseudoprocess frozen1293. All verification/private gates intact.
+
+---
+
 # Current IBM mathematics — checkpoint1343: STRONG weighted native divergence
 
 IBM ACTIVE. If f is in FULL ORIGINALDomD, its value is essentially bounded,

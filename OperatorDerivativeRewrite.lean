@@ -2068,3 +2068,6 @@ import Foundation.IBMNativeProductOperators
 import Foundation.IBMNativeContraction
 import Foundation.IBMNativeBoundedGraphCore
 import Foundation.IBMNativeWeightedDivergence
+import Foundation.IBMNativeContractionDomain
+import Foundation.IBMNativeIntegrableDivergence
+import Foundation.IBMNativeDeterministicFields

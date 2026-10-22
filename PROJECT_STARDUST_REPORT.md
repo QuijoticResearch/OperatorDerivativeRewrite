@@ -30852,3 +30852,47 @@ Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog unchang
 No expiration; pseudoprocess frozen1293. All verification and private gates intact.
 
 Fresh complete root build: 6339 jobs, 25.986s, terminal0. Complete transitive audit: 40890 declarations, 36.683s, terminal0; standard three axioms only. All22 unabridged public types, BOTH complete Prop bodies, full output definition and all261 final source/proof lines read. Five independent FIRSTPASS Lean tests0 (29.325s), empty final log. Exact test code and inputs in verification JSON. All2167 prior sources unchanged except three root imports; three configs and113 archive paths/hashes unchanged. No proof-resource/trust override. Strong weighted adjoint-domain law established on its exact bounded-value/bounded-gradient domain, projected actual L2 correction identified. Concrete rich nonconstant admissible observable instances remain to be constructed; full physical-time IBM calculus remains open. Private gate pending exact commit/receipt/sync.
+
+
+## Checkpoint1344 — total-contraction native divergence and concrete deterministic fields
+
+# Current IBM mathematics — checkpoint1344: total-contraction domain and concrete fields
+
+IBM ACTIVE. For bounded f in FULL ORIGINALDomD and u in ORIGINALDom(delta),
+the ACTUAL TOTAL contraction sum_i<coordinate_i(D_i f),coordinate_i(u_i)>
+belonging to L2 suffices for M_f u in SAME Dom(delta), with exact value
+delta(M_f u)=P_IBM(M_f(delta u)-actualContraction(Df,u)).
+Separate bounded-gradient assumptions removed. Individual channel contractions
+need not separately be L2. Projection retained. This is a sufficient domain,
+not a maximality/necessity claim. See IBM_NATIVE_INTEGRABLE_DIVERGENCE_AUDIT.md.
+
+Actual contraction/pairing uses L2xL2->L1 channel integrability and bounded tests;
+reuse1343 strong bounded graph core and full adjoint representability. Bounded
+coefficient fields paired with L2 gradients, and L4xL4 fields, give verified L2
+criteria. No false L2xL2->L2 operation, replacement derivative/domain or integral.
+
+Concrete deterministic native fields now lie in ORIGINALDomdelta. Built from
+verified first-chaos divergence graph, true Bochner tensor/lift-adjoint inclusion
+and native unitary/observable restriction. Actual original coefficients=h,k,
+hence bounded. Field NONZERO if h!=0; nonzero divergence of every direction NOT
+claimed. EVERY bounded fullDomD observable can multiply these actual fields
+with strong projected divergence formula, without any gradient-bound premise.
+Independent tests construct actual sin(nativeAverage T) family for ALL T>=0
+and prove weighted deterministic-field membership for ALL h,k. Specific sine
+observable nonconstancy is not asserted; nativeAverage is actual IBM time average.
+
+Six independent tests pass: generalized value; bounded-field criterion; L4
+criterion; concrete nonzero native fields; actual sine-average construction;
+actual predictable stochastic-integral field membership under total contraction.
+All30 public types, FIVE full definition/specification bodies and all293 final
+source/proof lines reviewed. Fresh full root build and complete transitive safe
+Foundation audit pass, only standard three axioms. First test attempt needed
+one explicit native field cast before channel indexing; library unchanged.
+
+Full physical-time IBM Itô/Tanaka/local-time/versions/bracket and universal
+causal Clark–Ocone remain OPEN. Preserve1337 entireG0/target-dependent channel,
+1336 Poisson/Poincare,1338–1343 calculus and focusedF1–F3 exact verified domains.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog unchanged.
+No expiration; pseudoprocess frozen1293. All verification/private gates intact.
+
+Fresh complete root build: 6342 jobs, 26.376s, terminal0. Complete transitive audit: 40964 declarations, 35.053s, terminal0; standard three axioms only. All30 unabridged public types, FIVE complete definition/specification bodies and all293 final source/proof lines read. Six independent final Lean tests0 (26.152s), empty log; first_pass=False. First attempt only required explicit divergence-domain-to-JointFieldSpace cast for channel indexing; no library change after gates. Exact test code and inputs in verification JSON. All2170 prior sources unchanged except three root imports; three configs and113 archive paths/hashes unchanged. No proof-resource/trust override. Actual deterministic nonzero fields and sine-of-genuine-IBM-average application verified; no sine nonconstancy or universally nonzero divergence claim. Full physical-time IBM calculus remains open. Private gate pending exact commit/receipt/sync.
