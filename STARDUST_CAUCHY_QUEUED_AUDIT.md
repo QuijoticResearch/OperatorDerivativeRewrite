@@ -10,7 +10,8 @@ mathematically justified, fully audited and privately backed-up checkpoint.
 Keep precise stopping qualifications; do not label a conditional or partial
 result as completion. After Cauchy, the fractional-diffusion paper is next,
 as specified in `STARDUST_FRACTIONAL_DIFFUSION_QUEUED_AUDIT.md`; cumulative
-backlog research follows that campaign.
+backlog research follows the subsequent black-noise campaign (see
+`STARDUST_BLACK_NOISE_QUEUED_AUDIT.md`).
 
 The only file currently in `ResearchSources/cauchy` is
 `stochastic_cauchy_operator_v4.tex` (50050 bytes), SHA256

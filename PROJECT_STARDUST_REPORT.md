@@ -28966,3 +28966,21 @@ under the permanent docs-only input-identity rule. No new Lean declarations,
 proof changes or altered mathematical priorities. Unrelated drafts preserved.
 Commit, exact receipt and private main/research verification follow; no
 precommit record is a claim of successful backup. No arbitrary expiry.
+
+
+## Checkpoint1298 — black-noise follow-up appended after fractional diffusion
+
+User asked whether black noise was absent from queue and requested it at end.
+Saved instructions had no future black-noise campaign; completed selective
+audit1294/counterexamples were preserved. Added dedicated repair campaign after
+fractional diffusion, reusing BLACKITO_MANUSCRIPT_AUDIT.md and exact unresolved
+realization/closure obligations. STARDUST_BLACK_NOISE_QUEUED_AUDIT.md saves scope.
+IBM stays ACTIVE; order IBM -> Bakry/fBM -> Cauchy -> fractional diffusion ->
+black noise -> cumulative backlog. Updated controlling and preceding queued
+instructions consistently. No premature activation or new mathematical claim.
+All113archive paths/hashes,2056Foundation/root sources/3configs unchanged.
+Retain exact1294 successful full6225job build, complete38898safeFoundation
+standard3 audit and actual public-type/proof review under permanent docs-only
+input-identity rule. Existing results/source remain intact; no new declarations.
+Unrelated drafts preserved. Commit, exact receipt and verified private main/
+research sync follow; precommit records do not establish successful backup.

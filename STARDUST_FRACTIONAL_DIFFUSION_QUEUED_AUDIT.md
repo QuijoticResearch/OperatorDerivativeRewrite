@@ -7,7 +7,9 @@ Bakry–Émery repairs/related fBM survey and selected focus; complete the Cauch
 campaign; then give the fractional-diffusion paper the same rigorous treatment.
 Begin only after Cauchy reaches its mathematically justified, fully audited
 and privately backed-up checkpoint. Partial or conditional results must retain
-their qualifications. After this campaign, continue cumulative backlog research.
+their qualifications. After this campaign, the black-noise manuscript repair
+is next, as specified in `STARDUST_BLACK_NOISE_QUEUED_AUDIT.md`; cumulative
+backlog research follows black noise.
 
 The only file currently in `ResearchSources/fractional_diffusion` is `main.tex`
 (70018 bytes), SHA256

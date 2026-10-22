@@ -30,7 +30,13 @@ source-preservation and private-backup gates. Begin only after the Cauchy
 campaign's fully audited/private checkpoint; see
 `STARDUST_FRACTIONAL_DIFFUSION_QUEUED_AUDIT.md`. Do not start it early.
 
-After fractional diffusion, continue cumulative autonomous backlog research.
+**AFTER fractional diffusion:** return to `ResearchSources/Incoming/blackito.tex`
+for a dedicated black-noise manuscript repair campaign, reusing the completed
+selective audit and verified counterexamples. Begin only after fractional
+diffusion's fully audited/private checkpoint. See
+`STARDUST_BLACK_NOISE_QUEUED_AUDIT.md` for exact scope and unresolved obligations.
+
+After black noise, continue cumulative autonomous backlog research.
 No expiration date;
 October31 is REVIEW ONLY. All full-build, complete axiom-audit, public-type/proof
 review, independent-test, ledger, source-integrity, Git and verified PRIVATE
