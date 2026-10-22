@@ -2101,3 +2101,5 @@ import Foundation.IBMPointClockDomainObstruction
 import Foundation.ClosedOperatorEscapeEnergy
 import Foundation.ClosedOperatorGraphDualDerivative
 import Foundation.IBMClockGraphDualLimit
+import Foundation.IBMClockWeakChain
+import Foundation.IBMClockCylinderChain

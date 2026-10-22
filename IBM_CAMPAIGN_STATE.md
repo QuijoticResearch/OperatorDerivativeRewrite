@@ -1,3 +1,29 @@
+# Current IBM mathematics — checkpoint1357: nonlinear multitime clock-chain dual limits
+
+IBM ACTIVE. For EVERY bounded real C1 phi with bounded continuous derivative,
+EVERY finite real linear combination Q=sum a_i IBM(t_i), all t_i>0, genuine
+original mollified clock chain fields phi'(Q_n)*D_clock Q_n now converge after
+canonical embedding STRONGLY in the FULL ORIGINAL adjoint graph dual.
+Error <= B*||Q_n-Q||L2 <= B*sum|a_i|*sqrt(radius_n). ANY original graph
+approximation with strongly convergent values gives the same nonlinear dual
+limit. Actual phi(Q) is in the EXISTING intrinsic observation space; original
+derivative membership is NOT assumed. EVERY original adjoint test has an
+integrable ACTUAL IBM expectation pairing. Pairings and strong-dual continuity
+in the finite time variables permit ALL nonnegative times, including zero.
+N=0 and zero coefficients allowed. See IBM_NONLINEAR_CLOCK_GRAPH_DUAL_AUDIT.md.
+
+No multiplication of the LIMITING distribution by phi'(Q) is defined. Ordinary
+L2 chain products are formed only at original graph approximants. No spatial
+H^-1 transfer, unbounded/nonsmooth extension, physical-time Itô/Tanaka,
+observation-intrinsic adapted integral or universal intrinsic CO is established.
+1355 actual positive-time original-domain exclusion and1356 actual clock norm
+escape remain intact. Full IBM calculus incomplete. Next justify generalized
+test multipliers or concrete spatial/kernel transfer; reuse existing machinery.
+Queue IBM -> Bakry/fBM -> Cauchy -> fractional diffusion -> blackito -> backlog.
+Pseudo frozen1293; no expiration; all verification and private gates intact.
+
+---
+
 # Current IBM mathematics — checkpoint1356: actual clock graph-dual derivative
 
 IBM ACTIVE. At EVERY positive time the actual mollified clock-gradient L2

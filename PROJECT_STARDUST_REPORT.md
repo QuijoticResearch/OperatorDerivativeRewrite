@@ -31340,3 +31340,51 @@ unitary elaboration; a default-heartbeat timeout was solved by generic factoring
 not increased resources. Reused HilbertRepresentation and closed bidual rather
 than adding weak compactness infrastructure. No spatial-H^-1 or physical-time
 calculus claim. Exact commit/receipt/private main+research gate pending.
+
+
+## Checkpoint1357 — actual nonlinear multitime clock-chain graph-dual calculus
+
+# Current IBM mathematics — checkpoint1357: nonlinear multitime clock-chain dual limits
+
+IBM ACTIVE. For EVERY bounded real C1 phi with bounded continuous derivative,
+EVERY finite real linear combination Q=sum a_i IBM(t_i), all t_i>0, genuine
+original mollified clock chain fields phi'(Q_n)*D_clock Q_n now converge after
+canonical embedding STRONGLY in the FULL ORIGINAL adjoint graph dual.
+Error <= B*||Q_n-Q||L2 <= B*sum|a_i|*sqrt(radius_n). ANY original graph
+approximation with strongly convergent values gives the same nonlinear dual
+limit. Actual phi(Q) is in the EXISTING intrinsic observation space; original
+derivative membership is NOT assumed. EVERY original adjoint test has an
+integrable ACTUAL IBM expectation pairing. Pairings and strong-dual continuity
+in the finite time variables permit ALL nonnegative times, including zero.
+N=0 and zero coefficients allowed. See IBM_NONLINEAR_CLOCK_GRAPH_DUAL_AUDIT.md.
+
+No multiplication of the LIMITING distribution by phi'(Q) is defined. Ordinary
+L2 chain products are formed only at original graph approximants. No spatial
+H^-1 transfer, unbounded/nonsmooth extension, physical-time Itô/Tanaka,
+observation-intrinsic adapted integral or universal intrinsic CO is established.
+1355 actual positive-time original-domain exclusion and1356 actual clock norm
+escape remain intact. Full IBM calculus incomplete. Next justify generalized
+test multipliers or concrete spatial/kernel transfer; reuse existing machinery.
+Queue IBM -> Bakry/fBM -> Cauchy -> fractional diffusion -> blackito -> backlog.
+Pseudo frozen1293; no expiration; all verification and private gates intact.
+
+Fresh complete root build6374jobs/24.201s terminal0;
+complete transitive safe-Foundation audit41656declarations/37.565s
+terminal0; only propext, Classical.choice, Quot.sound. All45 unabridged public
+types,11 defining bodies including the full TestFunction record,384 audit lines
+and286 complete final source/proof lines actually read. Seven independent
+Lean examples terminal0/27.016s;
+first_pass=False. Exact independent test source and any first
+failed attempt are preserved in verification JSON. Sine/cosine mixed-time
+limits, uniform full-graph residual, actual expectation/integrability/intrinsic
+measurability, arbitrary graph approximation, empty cylinder and time continuity
+tested. First independent run failed only in the empty-cylinder harness:
+zero-function reduction and anonymous-placeholder elaboration. Repaired by
+explicit scalar equalities and typed congruence; no mathematical source change
+or resource increase. Reused original Gaussian bounded product chain and actual
+point graphs; two time-continuity inference failures resolved explicitly.
+All2203 prior sources unchanged except two root imports; three configurations
+and113 manuscript paths/hashes unchanged. No assumption that mollifications
+are observable, that point gradients are ordinary L2, or that spatial H^-1 equals
+Gaussian clock graph dual. Full intrinsic IBM stochastic calculus remains open.
+Private exact-commit receipt/main+research gate pending.
