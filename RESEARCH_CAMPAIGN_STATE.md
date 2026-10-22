@@ -1,3 +1,27 @@
+# Current IBM mathematics — checkpoint1326: constructed cross-grid difference control
+
+IBM ACTIVE. ANY two monotone finite grids with matching start/end now have
+CONSTRUCTED positive common cells (max(lefts),min(rights)], with actual random
+difference coefficients adapted to the full raw past at max(lefts). Retain
+ONLY positive cells; proved separation and strong predictability on the SAME
+raw NNReal-time filtration. Their actual time process is EXACTLY H_tau-H_sigma
+pointwise. Genuine cell stochastic sum equals I_tau-I_sigma in JointL2 AND
+as an actual scalar AE identity, retaining N^F prediction increments.
+Actual difference-process bound C AE at EACH time implies stochastic
+energy <= C^2 ||F||_2^2. No supplied refinement/nesting/strictness; repeated
+times and empty horizons allowed. Read IBM_CROSS_GRID_DIFFERENCE_AUDIT.md.
+
+This resolves finite TWO-GRID disjoint realization/control, not arbitrary
+finite/countable domains or a continuum predictable energy measure/closure.
+Do not equate uniform essential-time control with the full predictable space
+or assume actual IBM integrand approximations converge in that topology.
+Next genuine control/closure and actual process approximation. Bracket/regular
+versions, intrinsic derivatives/adjoints/full Clark–Ocone/actual IBM Itô OPEN.
+N^F depends on F, not universal noise/nonmartingale Z. Original M/F/Z, F1/F2
+domains, queue and all source/verification/private gates unchanged.
+
+---
+
 # Current IBM mathematics — checkpoint1325: actual disjoint-process control
 
 IBM ACTIVE. ANY finite ordered interval family with pairwise endpoint

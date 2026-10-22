@@ -30042,3 +30042,48 @@ STARDUST_IBM_DISJOINT_PROCESS_CONTROL_VERIFICATION.json and
 IBM_DISJOINT_PROCESS_CONTROL_AUDIT.md. Exactreceipt/PRIVATE main+research
 closure follows separately; precommit evidence claims no backupclosure.
 IBM/existing indefinitegoal ACTIVE, queue unchanged, manuscriptsimmutable.
+
+
+## Checkpoint1326 — constructed actual common cells and cross-grid stochastic control
+
+Constructed positive intersections of ANY two monotone finite grids sharing
+start/end, using actual difference coefficients a_i-b_j transported by existing
+later to raw past max(lefts). Filtered L<R prevents invalid reversed candidates.
+Proved endpoint separation without sorting and strong predictability on the
+SAME raw NNReal-time filtration. Indicator intersection/double-sum algebra gives
+H_tau*U_sigma-U_tau*H_sigma; reused refined_timeSum for actual unit cover,
+proved support, then exact pointwise common-process identity H_tau-H_sigma.
+
+Existing1324 finite presentation identification applied to original plus
+negated second grid and the CONSTRUCTED cell presentation proves actual
+stochastic difference equality in JointL2; reused actual scalar/class bridge
+also gives an explicit scalar AE identity. Every increment is actual
+N^F_R-N^F_L, not substituted nonmartingale IBM coordinates. Existing1325 actual
+process control now proves ||I_tau-I_sigma||_2^2 <= C^2||F||_2^2 from the
+actual difference-process bound C AE at each time. Common-refinement existence
+is discharged for this TWO FINITE GRID case, with no nesting/strictness or
+supplied reference; repeated times/empty horizons allowed. No independent
+increments, Brownian variance law, product-time isometry or bracket assumed.
+
+Not yet arbitrary finite-family disjoint refinement, countable-presentation
+consistency, continuum predictable-energy measure/domain/closure, bracket or
+regular versions, intrinsic adjoints/full Clark–Ocone/actual IBM Itô. Uniform
+essential-time control is NOT the full predictable-energy domain; actual
+integrand convergence in this topology has not been assumed/proved. N^F
+terminal-dependent, not universal noise/nonmartingale Z. Original M/F/Z and
+F1/F2 correction/K domains preserved. Next actual control/closure/approximation.
+
+Two modules257lines/all21actualpublictypes/fullproofs reviewed. Four independent
+checks on crossing half/third grids: actual sine coefficients/predictability
+and class identity; reversed candidate exclusion; pointwise sine bound2 and
+actual stochastic energy control; explicit actual scalar identity with all
+prediction increments retained. Fresh fullroot6286jobs0
+22.900s; COMPLETE39851safeFoundation transitiveaudit0
+35.421s standard3only; independent0
+24.972s. Sequentialstages verified. All2115prior
+sources unchangedexceptroot2imports,3configs/113archivepaths+hashes preserved,
+no newresource/trust override. Evidence
+STARDUST_IBM_CROSS_GRID_DIFFERENCE_VERIFICATION.json and
+IBM_CROSS_GRID_DIFFERENCE_AUDIT.md. Exactreceipt/PRIVATE main+research follows
+separately; precommit evidence claims no backup closure. IBM/existing
+indefinitegoal ACTIVE, queue unchanged, manuscriptsimmutable/unstaged.
