@@ -1,3 +1,44 @@
+# Current IBM mathematics — checkpoint1363: signed predictable covariance and mixed stochastic energy
+
+IBM ACTIVE. Genuine SIGNED predictable covariance measure nu(F,G) constructed
+as one quarter of the difference of ORIGINAL finite predictable energy measures
+for F+G and F-G. Actual countable additivity from pinned Mathlib SignedMeasure,
+not an assigned name for a set function. Actual weighted/finite/ring terminal
+operators are bounded linear and identified with ORIGINAL stochastic objects.
+See IBM_MIXED_PREDICTABLE_ENERGY_AUDIT.md and exact verification JSON.
+
+On the elementary predictable ring, nu(F,G)(E)=<I_F(1_E),I_G(1_E)>.
+For arbitrary E,H in that ring, <I_F(1_E),I_G(1_H)>=nu(F,G)(E intersect H).
+Mixed disjoint-time/event/rectangle/ring orthogonality proved for UNRELATED
+actual channels. Exact mixedEnergy finite double grid formula, Cauchy-Schwarz
+bound, two-channel and EVERY finite-family Gram energy now verified, allowing
+arbitrary eligible random predictable steps and different grids. Applies to
+finite subsets of1362's FIXED actual channel family, not only scalar multiples.
+
+For H in ORIGINAL PredictableL2(mu_F) and K in ORIGINAL PredictableL2(mu_G),
+all strongly convergent dictionary approximations have mixedEnergy tending to
+<actualIntegral_F H,actualIntegral_G K>. Existing density supplies such genuine
+approximants for EVERY H,K; no new completion/domain is declared. Literal signed
+integral of arbitrary H*K against nu/its total variation NOT YET identified.
+
+Concrete ACTUAL IBM1 and opposite channel: nu(F,-F)((0,1]xOmega)=-norm(F)^2<0;
+the two unit-step stochastic sums cancel while the sum of separate diagonal
+energies is STRICTLY positive. Thus general channel energy cannot ignore cross
+terms. This dependent-channel counterexample is NOT a counterexample specifically
+for distinct orthonormal terminals of1362. Their localized covariance vanishing
+has not been proved. Original native divergence preimage of actual mixed finite
+sum independently constructed via existing recovery and adjoint linearity.
+
+Full random countable-channel integrand completion/null-space quotient,
+maximal-domain signed-integral identification, temporal conditional gradient/
+causal CO, pathwise brackets and physical-time IBM Ito/Tanaka remain unresolved
+outside earlier exact verified scopes. No output range renamed an integrand
+construction; no ordinary point-domain premise imposed. Full IBM INCOMPLETE.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->blackito->backlog unchanged.
+Pseudo frozen1293; no expiration; all audit/source/private-backup gates intact.
+
+---
+
 # Current IBM mathematics — checkpoint1362: fixed countable actual stochastic family
 
 IBM ACTIVE. A SINGLE FIXED AT-MOST-COUNTABLE family (e_i,H_i,v_i), chosen BEFORE

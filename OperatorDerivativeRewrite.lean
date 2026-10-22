@@ -2114,3 +2114,6 @@ import Foundation.IBMIntrinsicCorrectionField
 import Foundation.IBMIntrinsicDomainMultiplier
 import Foundation.IBMFixedStochasticFamily
 import Foundation.IBMFixedNativeReconstruction
+import Foundation.IBMPredictableCovarianceMeasure
+import Foundation.IBMMixedPredictableEnergy
+import Foundation.IBMActualMixedEnergyObstruction
