@@ -31546,3 +31546,60 @@ resource overrides, new axiom or manuscript edits. All2209 previous sources
 unchanged except three root imports, all3 pinned configs and113 exact archive
 paths/hashes unchanged. Full build/audit inputs remain identical. Private gate
 pending exact commit, receipt and verified PRIVATE main/research synchronization.
+
+
+## Checkpoint1361 — ordinary actual correction fields and original-domain unbounded-factor closure
+
+# Current IBM mathematics — checkpoint1361: ordinary correction field and unbounded-factor products
+
+IBM ACTIVE. The full intrinsic Leibniz correction now has an ORDINARY two-channel
+L2 representative for EVERY intrinsic L2 rough factor g. It is genuinely g*Df
+in BOTH original native field coordinates, constructed by existing Holder
+(2,infinity,2), with fixed bounded native Df. No boundedness assumption on g.
+For bounded g it agrees EXACTLY with the old native multiplier. All-field
+pairing equals the old correction contraction; full intrinsic adjoint graph
+equality, not merely a restricted test core. See
+IBM_INTRINSIC_CORRECTION_FIELD_AUDIT.md and exact verification JSON.
+
+Positive original-domain result: if f is in ORIGINAL jointD.domain, f bounded,
+BOTH native Df essentially bounded, then for EVERY g in ORIGINAL jointD.domain
+(NO boundedness of g), actual f*g belongs to the SAME ORIGINAL domain and
+D(f*g)=f*Dg+g*Df. Genuine random value and BOTH native field representatives
+verified. Original full-dual Leibniz plus representable_iff_domain and embedding
+injectivity prove membership and derivative, without redefining any operator.
+Strong value AND native gradient limits transfer under the corresponding two
+strong input limits. Gradient bound uses genuine multiply/correction operator
+norms; no sharp coefficient-only constant. Actual full-adjoint stochastic IBP
+and integrability verified, still with potentially unbounded g.
+
+For actual IBM point g=IBM_t, the correction alone is a genuine ordinary L2
+field with actual representative IBM_t*Df, strongly time-continuous. This does
+NOT make the entire weak derivative ordinary or put IBM_t into original DomD.
+The point and bounded sine obstructions1355/1360 remain intact. Original-domain
+product theorem cannot take those excluded classes as its g input. No new
+nonconstant regular coefficient is constructed; original coefficient premises
+remain exact. Source/operator IBP, not physical-time stochastic integration.
+Physical-time Ito/Tanaka, spatial H-minus-one, universal causal CO and full IBM
+calculus remain OPEN outside earlier exact verified scopes. Full IBM INCOMPLETE.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->blackito->backlog unchanged.
+Pseudo frozen1293; no expiration; all verification/private/source gates intact.
+
+Fresh complete root build: 6383 jobs, 24.941s, terminal0.
+COMPLETE transitive safe Foundation audit: 41994 declarations,
+37.038s, terminal0, standard three axioms only.
+All24 unabridged public types, all9 printed old/new definition bodies, all589
+audit-log lines and all267 final source/proof lines actually read. Eight
+independent Lean tests passed FIRST RUN in 29.719s,
+empty terminal log; exact code retained in verification JSON. Tests include
+actual-one coefficient calibration, arbitrary original-domain g without any
+boundedness premise, actual time1 point correction versus nonrepresentable
+point derivative, full adjoint pairing, simultaneous graph limits, actual IBM
+field representative, zero/time continuity, full stochastic IBP/integrability
+and norm bound. Development target histories/errors/times retained; repairs
+were namespaces, NNReal scope, proof-only section includes, explicit typed
+equality chains instead of expensive rewrite, AE filter/Lp-sum coercion and
+function composition. Final targeted build8 passed. No resource/trust override,
+new axiom, suppressed check, process/law replacement or weakened domain. All2212
+prior sources unchanged except two root imports;3configs and113 exact immutable
+archive paths/hashes unchanged. Full root/audit inputs unchanged afterward.
+Private gate pending exact commit/receipt and verified PRIVATE main/research.

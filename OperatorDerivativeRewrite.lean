@@ -2110,3 +2110,5 @@ import Foundation.IBMIntrinsicDualMultiplier
 import Foundation.IBMNonlinearFirstSource
 import Foundation.IBMSineClockSectionObstruction
 import Foundation.IBMActualSineDomainObstruction
+import Foundation.IBMIntrinsicCorrectionField
+import Foundation.IBMIntrinsicDomainMultiplier

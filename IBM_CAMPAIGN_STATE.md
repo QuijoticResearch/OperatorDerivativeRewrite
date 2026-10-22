@@ -1,3 +1,39 @@
+# Current IBM mathematics — checkpoint1361: ordinary correction field and unbounded-factor products
+
+IBM ACTIVE. The full intrinsic Leibniz correction now has an ORDINARY two-channel
+L2 representative for EVERY intrinsic L2 rough factor g. It is genuinely g*Df
+in BOTH original native field coordinates, constructed by existing Holder
+(2,infinity,2), with fixed bounded native Df. No boundedness assumption on g.
+For bounded g it agrees EXACTLY with the old native multiplier. All-field
+pairing equals the old correction contraction; full intrinsic adjoint graph
+equality, not merely a restricted test core. See
+IBM_INTRINSIC_CORRECTION_FIELD_AUDIT.md and exact verification JSON.
+
+Positive original-domain result: if f is in ORIGINAL jointD.domain, f bounded,
+BOTH native Df essentially bounded, then for EVERY g in ORIGINAL jointD.domain
+(NO boundedness of g), actual f*g belongs to the SAME ORIGINAL domain and
+D(f*g)=f*Dg+g*Df. Genuine random value and BOTH native field representatives
+verified. Original full-dual Leibniz plus representable_iff_domain and embedding
+injectivity prove membership and derivative, without redefining any operator.
+Strong value AND native gradient limits transfer under the corresponding two
+strong input limits. Gradient bound uses genuine multiply/correction operator
+norms; no sharp coefficient-only constant. Actual full-adjoint stochastic IBP
+and integrability verified, still with potentially unbounded g.
+
+For actual IBM point g=IBM_t, the correction alone is a genuine ordinary L2
+field with actual representative IBM_t*Df, strongly time-continuous. This does
+NOT make the entire weak derivative ordinary or put IBM_t into original DomD.
+The point and bounded sine obstructions1355/1360 remain intact. Original-domain
+product theorem cannot take those excluded classes as its g input. No new
+nonconstant regular coefficient is constructed; original coefficient premises
+remain exact. Source/operator IBP, not physical-time stochastic integration.
+Physical-time Ito/Tanaka, spatial H-minus-one, universal causal CO and full IBM
+calculus remain OPEN outside earlier exact verified scopes. Full IBM INCOMPLETE.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->blackito->backlog unchanged.
+Pseudo frozen1293; no expiration; all verification/private/source gates intact.
+
+---
+
 # Current IBM mathematics — checkpoint1360: bounded smooth actual point domain obstruction
 
 IBM ACTIVE. At EVERY positive time, the ACTUAL bounded NONCONSTANT observable
