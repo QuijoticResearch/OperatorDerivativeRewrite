@@ -1,3 +1,31 @@
+# Current IBM mathematics — checkpoint1329: actual coordinate initial germ ZERO
+
+IBM ACTIVE. For EVERY t>=0, actual IBM Z_t=W(abs(Y_t)) satisfies
+E[Z_t | EXISTING augmented right-germ G_0]=0 AE, and actual terminal
+channelClass(observed t)0=0. Full set-integral test on EVERY G_0 event,
+with actual indicator L2 membership, proves CE uniqueness. No source
+zero–one assumption or finite-coordinate restriction.
+
+Proof closes1328's bounded-factor, convergence and actual joint-pairing gaps:
+whole raw-past factorization plus GLOBAL clipping bounds, actual dominated
+pairing limits, proved joint integrability/Fubini and scenery-past pull-out.
+First early-past limit at fixed radius, then strong actual L2 forecast
+radius->0. Existing raw projection at0 is0; raw coordinate predictions
+tend strongly0 along ANY antitone positive horizons->0. Existing finite
+germ-terminal energy measure now has FULL observed-terminal mass on(0,t].
+Read IBM_OBSERVED_INITIAL_GERM_AUDIT.md.
+
+Full G_0 triviality, arbitrary-terminal initial prediction and positive-time
+raw/G equality remain OPEN.1327 raw-energy existence iff ALL-time equality
+is not discharged by the new initial-coordinate theorem. Joint predictable
+measure extension, continuum domain/closure, regular versions/bracket,
+intrinsic derivatives/adjoints, universal Clark–Ocone and actual unsmoothed
+IBM Itô–Tanaka/F1–F3 completion remain OPEN. Terminal-dependent channels
+support but do not complete actual IBM calculus. Original M/F/Z, F1/F2
+domains, campaign order and all verification/private gates unchanged.
+
+---
+
 # Current IBM mathematics — checkpoint1328: actual initial-germ localization inputs
 
 IBM ACTIVE. Whole ACTUAL positive Brownian scenery past predicts W_r by

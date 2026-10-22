@@ -30181,3 +30181,54 @@ STARDUST_IBM_INITIAL_GERM_LOCALIZATION_VERIFICATION.json and
 IBM_INITIAL_GERM_LOCALIZATION_AUDIT.md. Exactreceipt/PRIVATE main+research follows
 separately; precommit evidence claims no backup closure. IBM/indefinitegoal
 ACTIVE, archive immutable/unstaged, unrelated drafts preserved.
+
+
+## Checkpoint1329 — actual IBM initial-coordinate germ projection vanishes
+
+For EVERY t>=0, proved ACTUAL E[ibmValue t | EXISTING augmented right-germ
+G0]=0 AE and channelClass(observed t)0=0 in genuine joint L2. All G0 events
+have zero actual set integrals, using actual L2 indicators and existing
+germPast_eq, then Mathlib CE uniqueness. No assertion of full G0 triviality,
+arbitrary terminal zero prediction or positive-time raw/G equality.
+
+Closed1328's exact remaining argument: measurable ENTIRE raw-past factorization
+of bounded germ L2 tests, GLOBAL factor-map clipping preserves original AE
+realization and gives bounds on substituted clipped paths. Actual dominated
+pairing convergence against ANY integrable A uses norm(A)*C. Proved actual
+joint clipped-past forecast pairing by bounded-product integrability,
+product Fubini, AEclock conditional sections, whole-scenery-past measurability
+and conditional pull-out/integral preservation. Early-past limit atfixedradius
+gives inner(observed t,f)=inner(forecast(t,delta),f); actual strongL2
+forecast->0 gives bounded germ pairing0. No unjustified arbitrary L2 convergence
+or joint enlarged-filtration conditional law inferred from section statements.
+
+Existing raw/germ projection bridge gives raw initial0; ANY antitone positive
+horizons->0 give strong actual L2 raw coordinate predictions->0. Existing
+finite G-channel energy measure on(0,t] now has FULL massofReal(norm(observed t)^2),
+strictly positive at1. This is terminal-dependent martingale energy, not a
+pathwise bracket/universal integrator for the nonmartingale coordinate process.
+
+Precise OPEN gates: full initial-germ triviality and arbitrary terminals,
+positive-time raw/G equality (1327 raw time-measure criterion still requires
+ALL times), joint predictable rectangle extension, actual continuum random-
+integrand domain/closure/approximation, regular versions/bracket, intrinsic
+derivatives/adjoints/full Clark–Ocone/actual unsmoothed IBM Itô–Tanaka/F1–F3.
+No calculus completion or campaign transition; originals M/F/Z and F1/F2
+correction/K domains preserved. See IBM_OBSERVED_INITIAL_GERM_AUDIT.md.
+
+Three modules251lines, all18 actual unabridged publictypes/fullproofs reviewed.
+Independent checks actual G0 conditional zero/terminal1 projection; nonlinear
+sine of actual clipped past paired with terminal2 under the jointlaw; arbitrary
+completed-G0 event set integrals; positive full terminal1 energy and strong
+dyadic raw prediction convergence. Two test-only endpoint-subtype elaboration
+failures preserved, resolved with explicit NNReal index/membership annotations;
+mathematical sources unchanged after fullbuild. Final independent log empty. Fullroot6295jobs0
+23.537s; COMPLETE39973safeFoundation transitiveaudit0
+34.901s standard3only; four independentchecks0
+24.789s. Stages sequential; all2123 prior
+sources unchangedexceptroot3imports,3configs/113archivepaths+hashes preserved.
+No resource/trust override. Evidence
+STARDUST_IBM_OBSERVED_INITIAL_GERM_VERIFICATION.json. Exact receipt and
+PRIVATE main/research verification follow separately; precommit evidence
+claims no backup closure. IBM/indefinitegoal ACTIVE, queue unchanged,
+manuscriptsimmutable/unstaged, unrelated drafts preserved.

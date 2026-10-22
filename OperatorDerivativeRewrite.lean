@@ -2021,3 +2021,6 @@ import Foundation.IBMRawEnergyMeasureObstruction
 import Foundation.IBMSpatialSceneryForecast
 import Foundation.IBMClippedSceneryForecast
 import Foundation.IBMClockGermLocalization
+import Foundation.IBMBoundedGermFactors
+import Foundation.IBMClippedForecastPairing
+import Foundation.IBMObservedInitialGerm
