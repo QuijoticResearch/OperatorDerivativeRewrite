@@ -29589,3 +29589,44 @@ STARDUST_IBM_RIGHT_GERM_FILTRATION_VERIFICATION.json and
 IBM_RIGHT_GERM_FILTRATION_AUDIT.md. Exact Git receipt/PRIVATE main+research backup
 closure follows separately; this precommit record does not assert it completed.
 IBM and existing indefinite goal remain ACTIVE; queue unchanged.
+
+
+## Checkpoint1315 — actual IBM strong L2 right continuity and energy measure
+
+Proved intersection_{u>t} R_u=R_t by order density and actual future-past
+containment. Applied existing Hilbert projection convergence to complements
+indexed by the order dual of the ENTIRE strictly-right time interval. Explicit
+subtype-atBot/right-neighborhood identity gives strong L2 right continuity of
+P_R_u f for ANY actual joint L2 variable, then of rightLimitClass via its
+locally fixed future horizon. This covers arbitrary approaching sequences,
+without monotonicity; it is not merely test-probe/weak/grid convergence.
+
+E(t)=||r_t||^2 is increasing and right continuous. Existing Stieltjes machinery
+constructs a genuine countably additive Borel time-energy measure. Projection
+orthogonality gives E(t)-E(s)=||r_t-r_s||^2 for s<=t. Actual Lp subtraction and
+L2 integral identify this with integral(rightValue_t-rightValue_s)^2 under
+the original joint law. Measure is locally finite, positive on every (0,T]
+for T>0, zero on {0}, and bounded by ofReal(2T^2) there. No Brownian variance
+or independence normalization. Generic raw origin-jump counterexample remains
+valid; it lacks the actual right continuity now proved for this NEW martingale.
+
+This is deterministic EXPECTED energy, not a random bracket/pathwise quadratic
+variation or random-coefficient control measure. Original M/F/Z unchanged;
+positive-time equality r=M remains iff unproved zero jump. Joint measurability,
+right/cadlag sample paths, continuum predictable integral, native adjoint,
+Clark–Ocone and unsmoothed IBM Itô remain open. Next deterministic interval
+integration/common-refinement/energy-L2 closure or actual regular-version
+construction. Preserve every F1/F2 correction and K-domain limitation.
+
+Two modules162lines, all19public types and complete proofs actually reviewed.
+Four independent Lean examples: arbitrary right-approaching sequences; actual
+positive bounded interval measure/increment integral; temporal additivity of
+actual expected squared increments; actual increment energy vanishing over
+whole right neighborhoods. Fresh full root 6268jobs0 23.066s;
+COMPLETE 39538safeFoundation transitive audit0 34.250s,
+only standard3; independent0 24.540s. All2097prior
+sources unchanged except root2imports, all3configs/113archivepaths+hashes
+preserved; no new proof-resource/trust override. Evidence in
+STARDUST_IBM_RIGHT_GERM_ENERGY_VERIFICATION.json and IBM_RIGHT_GERM_ENERGY_AUDIT.md.
+Exact Git receipt and verified PRIVATE main+research backup follow separately;
+precommit record claims no closure. IBM/existing indefinite goal ACTIVE, queue unchanged.

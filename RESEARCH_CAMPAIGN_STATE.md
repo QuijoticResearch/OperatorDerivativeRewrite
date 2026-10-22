@@ -1,3 +1,26 @@
+# Current IBM mathematics — checkpoint1315: actual right-germ time-energy measure
+
+IBM ACTIVE. Canonical rightLimitClass is STRONGLY L2 right continuous over the
+WHOLE right neighborhood; arbitrary right-approaching sequences need no
+monotonicity. Proved by existing Hilbert projection convergence on complements
+over OrderDual(Ioi t), exact intersection_{u>t} R_u=R_t, and horizon independence.
+E(t)=||r_t||^2 is increasing/right continuous. Actual locally finite Stieltjes
+energyMeasure satisfies mu((s,t])=ofReal integral(rightValue_t-rightValue_s)^2
+for s<=t. Positive on every (0,T], zero on {0}, bound ofReal(2T^2).
+See IBM_RIGHT_GERM_ENERGY_AUDIT.md. Uses original joint law and actual scalar
+representatives; no Brownian variance or independence normalization.
+
+This deterministic expected-energy measure is NOT a pathwise quadratic
+variation, predictable bracket or general random-coefficient control measure.
+Original raw M/F/Z unchanged. Positive-time r=M still iff unresolved J_t=0;
+no modification, jointly time/sample measurable version or right/cadlag paths
+claimed. Next deterministic interval integrals/common-refinement and energy-L2
+completion, or an actual regular-version theorem with all hypotheses proved;
+retain random coefficient, intrinsic adjoint, F1/F2 correction/K obligations.
+Full IBM calculus OPEN. Existing campaign queue and source archive unchanged.
+
+---
+
 # Current IBM mathematics — checkpoint1314: actual right-germ martingale realized
 
 IBM ACTIVE. New explicit G=(ambient-null augmented raw IBM filtration).rightCont

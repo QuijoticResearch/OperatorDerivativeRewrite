@@ -1995,3 +1995,5 @@ import Foundation.IBMDecreasingPastProjection
 import Foundation.IBMIntrinsicRightGerm
 import Foundation.IBMIntrinsicRightApproach
 import Foundation.IBMRightGermFiltration
+import Foundation.IBMRightGermContinuity
+import Foundation.IBMRightGermEnergyMeasure
