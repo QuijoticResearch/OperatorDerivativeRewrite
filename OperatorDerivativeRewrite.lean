@@ -2107,3 +2107,6 @@ import Foundation.IBMIntrinsicGraphDual
 import Foundation.IBMIntrinsicWeakLeibniz
 import Foundation.IBMIntrinsicGraphMultiplier
 import Foundation.IBMIntrinsicDualMultiplier
+import Foundation.IBMNonlinearFirstSource
+import Foundation.IBMSineClockSectionObstruction
+import Foundation.IBMActualSineDomainObstruction

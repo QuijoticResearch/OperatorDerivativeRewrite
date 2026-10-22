@@ -1,3 +1,42 @@
+# Current IBM mathematics — checkpoint1360: bounded smooth actual point domain obstruction
+
+IBM ACTIVE. At EVERY positive time, the ACTUAL bounded NONCONSTANT observable
+sin(IBM_t) lies outside the ORIGINAL native clock and full intrinsic joint
+operator domains. Scalar sine is C-infinity; smoothness/boundedness alone
+cannot supply these original domain premises. At time0 the class is zero.
+See IBM_ACTUAL_BOUNDED_SINE_DOMAIN_AUDIT.md and exact verification JSON.
+
+Reuse existing mixed Stein regression and actual Gaussian characteristic law:
+P_first sin(B_r)=exp(-abs(r)/2)*B_r. The projected section at normalized clock
+scale c>0 retains squared increment lower bound exp(-c/2)^2*c*x on [0,1].
+The existing finite-energy AE primitive obstruction and COMMON-field recovery
+exclude native clock membership; actual Gaussian pullback identifies this
+with sin of the genuine constructed IBM. No formal surrogate replaces IBM.
+
+Positive counterpart: explicit ORIGINAL scenery-source gradient and graph at
+ALL times via existing actual point source gradient and bounded chain rule.
+This is a Gaussian-source derivative, NOT a pathwise spatial Brownian derivative;
+the clock operator likewise is NOT physical-time differentiation. The full
+intrinsic graph-dual derivative is strong-dual time-continuous, nonzero and
+not represented by an ordinary original joint field at positive times. Its
+pairing against EVERY full intrinsic adjoint test is an integrable actual
+stochastic expectation. Genuine original observable-domain approximants exist,
+embedded gradients converge strongly in the full adjoint graph dual, and EVERY
+original-domain value approximation has joint gradient norms tending to infinity.
+No explicit adapted/joint-time approximation family is constructed.
+
+Positive-time sinePoint cannot be a regular coefficient in1359 (DomD fails),
+but remains an allowed rough intrinsic L2 factor. Proper-domain chain rules,
+1337 derivative-free reconstruction and1357 generalized nonlinear limits survive.
+No analogous cosine/all-smooth exclusion or impossibility of alternative calculi,
+physical-time Ito/Tanaka, universal Clark-Ocone or complete IBM calculus is proved.
+Further work must respect the genuine original-domain obstruction. Full IBM
+calculus remains INCOMPLETE. Pseudoprocess frozen1293; no queued campaign opened.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->blackito->backlog.
+No expiration; all verification/source/private-backup requirements unchanged.
+
+---
+
 # Current IBM mathematics — checkpoint1359: bounded multiplication on ENTIRE intrinsic graph dual
 
 IBM ACTIVE. ORIGINAL full adjoint graph multiplication is now bounded: actual

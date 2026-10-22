@@ -31489,3 +31489,60 @@ paths/hashes unchanged. Closed-graph bound retains actual operator norm, with
 no sharp coefficient-only constant. Nonconstant coefficient construction and
 ordinary correction realization remain open, alongside physical-time calculus
 and universal CO. Exact commit/receipt/BOTH private ref gate pending.
+
+
+## Checkpoint1360 — actual bounded smooth sine obstruction and surviving source calculus
+
+# Current IBM mathematics — checkpoint1360: bounded smooth actual point domain obstruction
+
+IBM ACTIVE. At EVERY positive time, the ACTUAL bounded NONCONSTANT observable
+sin(IBM_t) lies outside the ORIGINAL native clock and full intrinsic joint
+operator domains. Scalar sine is C-infinity; smoothness/boundedness alone
+cannot supply these original domain premises. At time0 the class is zero.
+See IBM_ACTUAL_BOUNDED_SINE_DOMAIN_AUDIT.md and exact verification JSON.
+
+Reuse existing mixed Stein regression and actual Gaussian characteristic law:
+P_first sin(B_r)=exp(-abs(r)/2)*B_r. The projected section at normalized clock
+scale c>0 retains squared increment lower bound exp(-c/2)^2*c*x on [0,1].
+The existing finite-energy AE primitive obstruction and COMMON-field recovery
+exclude native clock membership; actual Gaussian pullback identifies this
+with sin of the genuine constructed IBM. No formal surrogate replaces IBM.
+
+Positive counterpart: explicit ORIGINAL scenery-source gradient and graph at
+ALL times via existing actual point source gradient and bounded chain rule.
+This is a Gaussian-source derivative, NOT a pathwise spatial Brownian derivative;
+the clock operator likewise is NOT physical-time differentiation. The full
+intrinsic graph-dual derivative is strong-dual time-continuous, nonzero and
+not represented by an ordinary original joint field at positive times. Its
+pairing against EVERY full intrinsic adjoint test is an integrable actual
+stochastic expectation. Genuine original observable-domain approximants exist,
+embedded gradients converge strongly in the full adjoint graph dual, and EVERY
+original-domain value approximation has joint gradient norms tending to infinity.
+No explicit adapted/joint-time approximation family is constructed.
+
+Positive-time sinePoint cannot be a regular coefficient in1359 (DomD fails),
+but remains an allowed rough intrinsic L2 factor. Proper-domain chain rules,
+1337 derivative-free reconstruction and1357 generalized nonlinear limits survive.
+No analogous cosine/all-smooth exclusion or impossibility of alternative calculi,
+physical-time Ito/Tanaka, universal Clark-Ocone or complete IBM calculus is proved.
+Further work must respect the genuine original-domain obstruction. Full IBM
+calculus remains INCOMPLETE. Pseudoprocess frozen1293; no queued campaign opened.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->blackito->backlog.
+No expiration; all verification/source/private-backup requirements unchanged.
+
+Fresh full root build: 6381 jobs, 29.469s, terminal0.
+Complete transitive safe Foundation audit: 41927 declarations,
+50.632s, terminal0; only propext, Classical.choice,
+Quot.sound. All51 unabridged public types, all13 printed old/new definitions,
+all361 audit-log lines and all433 final source/proof lines actually read.
+Eight final independent Lean checks0 in 33.382s.
+The first scratch run failed (27.558s) solely because scoped
+ENNReal infinity was inferred in the scalar C-infinity test; repaired by explicit
+WithTop Nat-infinity smooth order. Final source/proof inputs were unchanged.
+Exact first/final test code and failed log retained in verification JSON.
+Development repairs included wrapper normalization, probability norm factors,
+reserved section identifier and explicit AE transport; no weakened hypotheses,
+resource overrides, new axiom or manuscript edits. All2209 previous sources
+unchanged except three root imports, all3 pinned configs and113 exact archive
+paths/hashes unchanged. Full build/audit inputs remain identical. Private gate
+pending exact commit, receipt and verified PRIVATE main/research synchronization.
