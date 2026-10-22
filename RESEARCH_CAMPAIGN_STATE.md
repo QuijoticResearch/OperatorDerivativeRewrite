@@ -1,3 +1,32 @@
+# Current IBM mathematics — checkpoint1337: actual target-indexed reconstruction
+
+IBM ACTIVE. Every intrinsic L2 target f has actual raw and right-germ horizon
+projections converging strongly to f. Actual unit predictable rectangles give
+I_f(unit_(0,n])=G_n f-G_0 f and converge strongly to f-G_0 f. The actual closed
+isometric integral range gives H_f in L2(mu_f) with I_f H_f=f-G_0 f; unit
+integrands converge strongly in that actual predictable space. Exact UNION of
+all channel ranges = IntrinsicSpace intersect (rightPast0)^orthogonal.
+
+I_f(I_f* f)=f-G_0f for EVERY intrinsic L2 observable. Using the unchanged
+native adjoint bridge proves I_f(B_f* Df)=f-G_0f on the FULL ORIGINAL Dom(D).
+This is an actual stochastic identity with original operators and process.
+Read IBM_TERMINAL_SELF_REPRESENTATION_AUDIT.md for exact quantifiers/domains.
+
+TARGET-INDEXED: F=f, mu_f, I_f and B_f depend on the target. This does NOT
+give one fixed noise, universal predictable representation or identification
+of B_f* with causal gradient projection. Entire initial germ retained; merely
+mean-zero does not discharge G_0f=0. Actual NONZERO IBM1 integral recovery
+tested without derivative membership. Constant1 excluded from ALL channels.
+Aggregate range question discharged; fixed-channel range remains OPEN.
+Initial-germ triviality, temporal causal identity, raw/G positive-time and old
+RAW-series equality, physical versions/bracket and full native temporal
+chain/product/Itô/universal Clark–Ocone remain OPEN. Full calculus incomplete.
+Checkpoint1336 native Poisson/Poincare and focused F1–F3 unchanged and valid.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog;
+no expiration, pseudo frozen1293, every verification/private gate preserved.
+
+---
+
 # Current IBM mathematics — checkpoint1336: Poincare and centered native Poisson
 
 IBM ACTIVE. The unchanged native closed derivative D satisfies

@@ -2051,3 +2051,5 @@ import Foundation.IBMNativeRecoveryContraction
 import Foundation.IBMIntrinsicPoincare
 import Foundation.IBMIntrinsicEnergyResolvent
 import Foundation.IBMIntrinsicPoisson
+import Foundation.IBMObservableHorizonLimit
+import Foundation.IBMTerminalSelfRepresentation
