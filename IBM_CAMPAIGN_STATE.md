@@ -1,3 +1,29 @@
+# Current IBM mathematics — checkpoint1365: total-variation Cauchy–Schwarz and separate-energy representatives
+
+IBM ACTIVE. Full raw-predictable signed covariance is REAL bilinear and symmetric.
+Actual energy of F+cG is the exact quadratic polynomial for every real c and
+measurable predictable set, retaining zero/origin and degenerate cases.
+Genuine TOTAL VARIATION satisfies |nu(F,G)|(E)^2 <= mu_F(E)*mu_G(E),
+on EVERY measurable predictable set. No physical-time bracket is asserted.
+The proof scales1364's variation bound, then uses a nonnegative quadratic
+discriminant; no division by c or energy. Actual original objects unchanged.
+
+Variation is absolutely continuous with respect to EACH original energy.
+Arbitrary separate-energy representative changes preserve HK variation-AE and
+its literal signed integral. Representative-independence obligation DISCHARGED.
+This congruence does not itself prove integrability; undefined-integral convention
+is unchanged. Functional Kunita–Watanabe inequality, arbitrary separate-L2 product
+integrability and literal completed stochastic identity remain OPEN.
+No smaller common domain replaces the original maximal-domain objective.
+General random multichannel completion, causal CO and physical-time Ito remain
+open outside exact earlier scopes. IBM full calculus INCOMPLETE. Next: lift the
+setwise variation estimate to weighted functions and original completed inputs.
+See IBM_COVARIANCE_CAUCHY_SCHWARZ_AUDIT.md and exact verification JSON.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->blackito->backlog unchanged.
+Pseudo frozen1293; no expiry; all complete verification/private gates retained.
+
+---
+
 # Current IBM mathematics — checkpoint1364: full covariance control and literal finite signed integration
 
 IBM ACTIVE. ORIGINAL predictable energy measures now satisfy full-sigma-algebra

@@ -2119,3 +2119,4 @@ import Foundation.IBMMixedPredictableEnergy
 import Foundation.IBMActualMixedEnergyObstruction
 import Foundation.IBMCovarianceVariationControl
 import Foundation.IBMFiniteSignedCovarianceIntegral
+import Foundation.IBMCovarianceCauchySchwarz
