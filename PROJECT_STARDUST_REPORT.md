@@ -30775,3 +30775,38 @@ Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog.
 No expiration; pseudoprocess frozen1293. All verification and private gates intact.
 
 Fresh complete root build: 6334 jobs, 26.245s, terminal0. Complete transitive audit: 40743 declarations, 37.307s, terminal0; standard three axioms only. All24 unabridged public types, BOTH complete result-definition bodies and all249 final source/proof lines read. Five independent final Lean tests0 (28.827s); first_pass=False. First test attempt failed only because destructive witness extraction consumed hp in two tests; copy preserved before extraction, library unchanged. All2162 prior sources unchanged except three root imports; three configs and113 archive paths/hashes unchanged. No proof-resource/trust override. Exact test code and inputs in verification JSON. Actual bounded native algebra, not physical-time Itô or universal causal reconstruction. Private gate pending exact commit/receipt/sync.
+
+
+## Checkpoint1342 — actual native IBM multipliers and weak divergence calculus
+
+# Current IBM mathematics — checkpoint1342: native multipliers and weak divergence
+
+IBM ACTIVE. Actual arbitrary essentially bounded scalar multipliers now act as
+continuous linear SYMMETRIC operators on the ORIGINAL two-channel native field
+space. Both original-coordinate representatives equal actual a times original
+field. Source0 includes its existing coordinate swap; clock1 uses uncurry.
+Reuse MultiplierCore's boundedMultiplier and symmetry; no replacement operator
+domain or assumed IsDivergenceMultiplier. See IBM_NATIVE_FIELD_MULTIPLIER_AUDIT.md.
+
+For bounded full ORIGINALDomD inputs f,g, actual fg output F satisfies the
+native Hilbert equality DF=M_f Dg+M_g Df. For EVERY u in ORIGINALDom(delta),
+<delta u,F>=<M_f u,Dg>+<M_g u,Df>. Five first-pass Lean tests include both actual
+channels for arbitrary multipliers, symmetry, constants including negative/zero,
+native Leibniz, and actual predictable stochastic-integral field instantiation.
+All21 public types, BOTH full specification bodies and all199 source/proof lines
+reviewed. Complete root build and complete transitive safe Foundation audit pass.
+
+STRONG weighted divergence product law remains OPEN. Need extend bounded tests
+to allDomD via actual bounded graph approximants and construct L2 correction
+with precise estimates. Pointwise contraction of Df with arbitrary native u is
+ambient: its IBM-observable membership is not automatic. Intrinsic formula must
+justify observable projection or actual membership. This is a remaining domain
+obligation, NOT a proved universal counterexample. Do not claim M_f u inDomdelta
+yet. Full physical-time IBM calculus/versions/bracket/local-time and universal
+causal Clark–Ocone remain OPEN. Preserve1337 fullG0/target-dependent channel,
+1336 Poisson/Poincare,1338–1341 chains/products and focusedF1–F3 exact domains.
+
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog unchanged.
+No expiration; pseudoprocess frozen1293. All verification and private gates intact.
+
+Fresh complete root build: 6336 jobs, 25.625s, terminal0. Complete transitive audit: 40813 declarations, 40.782s, terminal0; standard three axioms only. All21 unabridged public types, BOTH complete result-definition bodies and all199 final source/proof lines read. Five independent FIRSTPASS Lean tests0 (31.694s), empty final log. Exact test code and inputs in verification JSON. All2165 prior sources unchanged except two root imports; three configs and113 archive paths/hashes unchanged. No proof-resource/trust override. Development repairs: explicit isometry-continuity coercions, existing closed-space completeness, factored coordinate/pairing identities and transparent full specifications. This proves weak divergence for bounded observable tests, not strong multiplier adjoint-domain invariance. Actual contraction correction requires L2 bounds and observable projection/membership; no counterexample has been asserted. Private gate pending exact commit/receipt/sync.

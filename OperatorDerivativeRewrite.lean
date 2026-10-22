@@ -2063,3 +2063,5 @@ import Foundation.IBMIntrinsicAbsoluteChain
 import Foundation.IBMTruncatedSquare
 import Foundation.IBMIntrinsicBoundedSquare
 import Foundation.IBMIntrinsicProductCalculus
+import Foundation.IBMNativeFieldMultiplier
+import Foundation.IBMNativeProductOperators

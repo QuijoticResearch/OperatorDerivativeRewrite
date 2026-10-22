@@ -1,3 +1,35 @@
+# Current IBM mathematics — checkpoint1342: native multipliers and weak divergence
+
+IBM ACTIVE. Actual arbitrary essentially bounded scalar multipliers now act as
+continuous linear SYMMETRIC operators on the ORIGINAL two-channel native field
+space. Both original-coordinate representatives equal actual a times original
+field. Source0 includes its existing coordinate swap; clock1 uses uncurry.
+Reuse MultiplierCore's boundedMultiplier and symmetry; no replacement operator
+domain or assumed IsDivergenceMultiplier. See IBM_NATIVE_FIELD_MULTIPLIER_AUDIT.md.
+
+For bounded full ORIGINALDomD inputs f,g, actual fg output F satisfies the
+native Hilbert equality DF=M_f Dg+M_g Df. For EVERY u in ORIGINALDom(delta),
+<delta u,F>=<M_f u,Dg>+<M_g u,Df>. Five first-pass Lean tests include both actual
+channels for arbitrary multipliers, symmetry, constants including negative/zero,
+native Leibniz, and actual predictable stochastic-integral field instantiation.
+All21 public types, BOTH full specification bodies and all199 source/proof lines
+reviewed. Complete root build and complete transitive safe Foundation audit pass.
+
+STRONG weighted divergence product law remains OPEN. Need extend bounded tests
+to allDomD via actual bounded graph approximants and construct L2 correction
+with precise estimates. Pointwise contraction of Df with arbitrary native u is
+ambient: its IBM-observable membership is not automatic. Intrinsic formula must
+justify observable projection or actual membership. This is a remaining domain
+obligation, NOT a proved universal counterexample. Do not claim M_f u inDomdelta
+yet. Full physical-time IBM calculus/versions/bracket/local-time and universal
+causal Clark–Ocone remain OPEN. Preserve1337 fullG0/target-dependent channel,
+1336 Poisson/Poincare,1338–1341 chains/products and focusedF1–F3 exact domains.
+
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog unchanged.
+No expiration; pseudoprocess frozen1293. All verification and private gates intact.
+
+---
+
 # Current IBM mathematics — checkpoint1341: actual bounded product calculus
 
 IBM ACTIVE. For any f,g in the FULL ORIGINAL jointDerivative.domain with
