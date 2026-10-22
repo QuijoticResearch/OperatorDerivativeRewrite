@@ -2047,3 +2047,7 @@ import Foundation.IBMNativeGaussianRecovery
 import Foundation.IBMNativeVacuumProjection
 import Foundation.IBMStochasticNativeDivergence
 import Foundation.IBMNativePredictableTransfer
+import Foundation.IBMNativeRecoveryContraction
+import Foundation.IBMIntrinsicPoincare
+import Foundation.IBMIntrinsicEnergyResolvent
+import Foundation.IBMIntrinsicPoisson

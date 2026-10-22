@@ -30575,3 +30575,33 @@ IBM_NATIVE_STOCHASTIC_DIVERGENCE_AUDIT.md and
 STARDUST_IBM_NATIVE_STOCHASTIC_DIVERGENCE_VERIFICATION.json. Audited explicit
 commit, exact receipt and verified PRIVATE main/research follow; no premature
 backup-closure assertion. IBM and indefinite goal ACTIVE, same campaign queue.
+
+
+## Checkpoint1336 — intrinsic Poincare, energy resolvent and centered Poisson
+
+# Current IBM mathematics — checkpoint1336: Poincare and centered native Poisson
+
+IBM ACTIVE. The unchanged native closed derivative D satisfies
+norm(f-mean(f)*1)<=norm(Df) on its FULL original domain; its kernel is exactly
+the constants. The existing ordered recovery and actual predictable transfer
+are contractions. Actual energy resolvent J=(1+delta D)^(-1) preserves mean
+and contracts CENTERED inputs by 1/2. For EVERY centered intrinsic L2 target x,
+the genuine fixed-point construction gives a unique centered u in Dom(D),
+Du in Dom(delta), delta Du=x, norm(u)<=norm(x), norm(Du)<=norm(x).
+Du minimizes norm among ALL native divergence preimages. Actual iterations
+converge strongly in centered L2. No differentiability of x is assumed.
+Read IBM_INTRINSIC_POISSON_POINCARE_AUDIT.md for exact domains and reuse audit.
+
+Reuse correction: static centered native divergence surjectivity already existed
+in IBMCenteredSourceRepresentation using source-first recovery. Checkpoint1335
+supplied the actual stochastic-integration/native-adjoint bridge with clock-first
+recovery; the static range theorem is not a new discovery. Both orders preserved.
+No optimal IBM Poincare constant or linear Poisson solution operator is claimed.
+Native energy delta D is not identified with physical-time IBM evolution.
+Temporal adaptedness/causal identification, actual stochastic range/residual,
+raw/G comparison, pathwise versions/bracket and full native Itô/Clark–Ocone
+remain OPEN. Focused F1–F3 exact-domain results and all prior mathematics stand.
+Queue unchanged: IBM -> Bakry/fBM -> Cauchy -> fractional diffusion -> black noise
+-> backlog. No expiration. Pseudo frozen1293. All verification/private gates stand.
+
+Fresh complete root build: 6322 jobs, 27.619s, terminal0. Complete transitive audit: 40515 declarations, 38.221s, terminal0, standard three axioms only. All49 actual unabridged public types and all410 final source/proof lines read. Five independent tests FIRST PASS0 (29.561s): actual transfer contraction; full-domain Poincare/kernel/nonzero constant; constant counterexample to global half-contraction; all centered targets with actual domains/minimum norm/strong iterations; actual nonzero IBM1 target without target differentiability. All2149 prior sources unchanged except four root imports; three configs and113 archive paths/hashes unchanged. No new proof-resource overrides. Verification JSON records inputs and independent code. Private gate pending exact commit/receipt/sync; no full IBM completion claimed.

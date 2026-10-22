@@ -1,3 +1,30 @@
+# Current IBM mathematics — checkpoint1336: Poincare and centered native Poisson
+
+IBM ACTIVE. The unchanged native closed derivative D satisfies
+norm(f-mean(f)*1)<=norm(Df) on its FULL original domain; its kernel is exactly
+the constants. The existing ordered recovery and actual predictable transfer
+are contractions. Actual energy resolvent J=(1+delta D)^(-1) preserves mean
+and contracts CENTERED inputs by 1/2. For EVERY centered intrinsic L2 target x,
+the genuine fixed-point construction gives a unique centered u in Dom(D),
+Du in Dom(delta), delta Du=x, norm(u)<=norm(x), norm(Du)<=norm(x).
+Du minimizes norm among ALL native divergence preimages. Actual iterations
+converge strongly in centered L2. No differentiability of x is assumed.
+Read IBM_INTRINSIC_POISSON_POINCARE_AUDIT.md for exact domains and reuse audit.
+
+Reuse correction: static centered native divergence surjectivity already existed
+in IBMCenteredSourceRepresentation using source-first recovery. Checkpoint1335
+supplied the actual stochastic-integration/native-adjoint bridge with clock-first
+recovery; the static range theorem is not a new discovery. Both orders preserved.
+No optimal IBM Poincare constant or linear Poisson solution operator is claimed.
+Native energy delta D is not identified with physical-time IBM evolution.
+Temporal adaptedness/causal identification, actual stochastic range/residual,
+raw/G comparison, pathwise versions/bracket and full native Itô/Clark–Ocone
+remain OPEN. Focused F1–F3 exact-domain results and all prior mathematics stand.
+Queue unchanged: IBM -> Bakry/fBM -> Cauchy -> fractional diffusion -> black noise
+-> backlog. No expiration. Pseudo frozen1293. All verification/private gates stand.
+
+---
+
 # Current IBM mathematics — checkpoint1335: ACTUAL native divergence transfer / IBP
 
 IBM ACTIVE. Every completed actual I_F H is IBM-observable and orthogonal to
