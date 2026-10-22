@@ -31150,3 +31150,39 @@ Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog;
 no expiration, pseudo frozen1293, all gates unchanged. No campaign transition.
 
 Fresh complete root build: 6358 jobs, 25.999s, terminal0. Complete transitive safe Foundation audit: 41314 declarations, 38.365s, terminal0; only propext/Classical.choice/Quot.sound. All16 unabridged public types, SIX complete printed bodies (conditional/realization/bounded pairing and reused full weak contract/densities) and ALL162 final source/proof lines read. Six final independent Lean examples0 (26.832s), empty log. First affine test needed explicit AE density=2*y; retained code/log/time, repaired scratch only. All2187 previous sources unchanged except two imports; three configs and113 archive paths/hashes unchanged. No resource/trust/toolchain override. Actual conditional object, original closed bounded graph core and adjoint construct graph, not merely postulated dual representer. Sufficient conditional-L2 hypothesis retained; necessity, automatic sine regularity and strictness example remain open. Full Hilbert pairing extends to unbounded DomD, NOT raw integral without additional integrability. Source operator closure is not physical-time IBM calculus. Private gate pending exact commit/receipt/sync.
+
+
+## Checkpoint1352 — exact original adjoint domain, uniform native tests and observable L1 uniqueness
+
+# Current IBM mathematics — checkpoint1352: exact conditional adjoint domain and L1 uniqueness
+
+IBM ACTIVE.1351conditional-L2 condition is now NECESSARY AND SUFFICIENT:
+for genuine qL1 and ALL bounded originalDomD pairings <U,Dv>=E[v*q],
+U belongs to ORIGINALDomdelta IFF actual E[q|ALL IBM observations] is L2.
+Original delta(U) equals this actual conditional density AE and equals its
+constructed intrinsicL2 realization. See IBM_EXACT_CONDITIONAL_ADJOINT_AUDIT.md.
+
+Key missing foundation PROVED: clip(x)=(|x+1|-|x-1|)/2 stays in ENTIRE
+originalDomD by existing shiftedabs rule. Unitbound/fixed endpoints/1-Lipschitz.
+Every unit-bounded observableL2 has uniformly UNITbounded originalDomD
+approximants converging stronglyL2; no gradientconvergence claimed. Actual
+AEsubsequence +integrable |a| majorant passes L1 pairings. Relative-observable
+sign test gives L1annihilator uniqueness. Observation sigma is ESSENTIAL,
+explicitly checked in actual theorem implicit types; ambient alone insufficient.
+
+Exactcriterion instantiated for boundedg originalnative multiplication uDomdelta
+and ANY originalDomD representative phi(f) of1350weakchain. Actual nonconstant
+clock-Poisson potential sine strong-domain criterion now IFF conditional
+densityL2. No automatic sine regularity/strong nonlinear invariance asserted.
+Six tests include trueboundary clipping, actualpotential sign AEsubsequence,
+actualclockdivergence value recovered by necessity, both domain IFFs, and
+NONZERO latentclocksource annihilating EVERYobservabletest (negativecontrol).
+
+Source operator calculus, NOT physical-time IBM Itô/Tanaka/localtime/versions,
+bracket or universalcausalCO. No arbitraryunbounded-test raw integrability,
+Pobs-preserves-DomD, initialgermtriviality, raw/germ equality or pointIBM
+derivative membership. FullIBM INCOMPLETE. Prior1347–1351 all preserved.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog;
+no expiration, pseudo frozen1293, all gates unchanged. No campaign transition.
+
+Fresh complete root build: 6361 jobs, 24.594s, terminal0. Complete transitive safe Foundation audit: 41337 declarations, 36.695s, terminal0; only propext/Classical.choice/Quot.sound. All21 unabridged public types, SIX complete printed definition bodies and ALL294 final source/proof lines read. Six independent Lean examples FIRST-PASS0 (28.658s), empty log. Supplemental focused actual-type sigma gate0 (27.886s): actual AEStronglyMeasurable observationSigma arguments for sign_observable and annihilator_zero inspected, checked by definitional equality and read. Oversized fully explicit instance dump was unsuitable and superseded, not used as the final gate. All2189 previous sources unchanged except three imports; three configs and113 archive paths/hashes unchanged. No resource/trust/toolchain override. Scalar clipping reuses full nonsmooth absolute chain; original dense domain and uniform bounds make L1 testing rigorous. Necessity now closes1351s domain characterization, while quantitative conditional-density regularity for concrete nonlinear inputs and physical-time IBM calculus remain open. Private gate pending exact commit/receipt/sync.

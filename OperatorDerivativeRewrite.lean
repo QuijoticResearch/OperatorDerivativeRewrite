@@ -2087,3 +2087,6 @@ import Foundation.IBMNativeWeakGeneratorChain
 import Foundation.IBMClockPoissonWeakCalculus
 import Foundation.IBMConditionalL1Realization
 import Foundation.IBMConditionalNativeCalculus
+import Foundation.IBMUniformBoundedNativeTests
+import Foundation.IBMNativeL1TestSeparation
+import Foundation.IBMConditionalAdjointDomain

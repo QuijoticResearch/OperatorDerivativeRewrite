@@ -1,3 +1,36 @@
+# Current IBM mathematics — checkpoint1352: exact conditional adjoint domain and L1 uniqueness
+
+IBM ACTIVE.1351conditional-L2 condition is now NECESSARY AND SUFFICIENT:
+for genuine qL1 and ALL bounded originalDomD pairings <U,Dv>=E[v*q],
+U belongs to ORIGINALDomdelta IFF actual E[q|ALL IBM observations] is L2.
+Original delta(U) equals this actual conditional density AE and equals its
+constructed intrinsicL2 realization. See IBM_EXACT_CONDITIONAL_ADJOINT_AUDIT.md.
+
+Key missing foundation PROVED: clip(x)=(|x+1|-|x-1|)/2 stays in ENTIRE
+originalDomD by existing shiftedabs rule. Unitbound/fixed endpoints/1-Lipschitz.
+Every unit-bounded observableL2 has uniformly UNITbounded originalDomD
+approximants converging stronglyL2; no gradientconvergence claimed. Actual
+AEsubsequence +integrable |a| majorant passes L1 pairings. Relative-observable
+sign test gives L1annihilator uniqueness. Observation sigma is ESSENTIAL,
+explicitly checked in actual theorem implicit types; ambient alone insufficient.
+
+Exactcriterion instantiated for boundedg originalnative multiplication uDomdelta
+and ANY originalDomD representative phi(f) of1350weakchain. Actual nonconstant
+clock-Poisson potential sine strong-domain criterion now IFF conditional
+densityL2. No automatic sine regularity/strong nonlinear invariance asserted.
+Six tests include trueboundary clipping, actualpotential sign AEsubsequence,
+actualclockdivergence value recovered by necessity, both domain IFFs, and
+NONZERO latentclocksource annihilating EVERYobservabletest (negativecontrol).
+
+Source operator calculus, NOT physical-time IBM Itô/Tanaka/localtime/versions,
+bracket or universalcausalCO. No arbitraryunbounded-test raw integrability,
+Pobs-preserves-DomD, initialgermtriviality, raw/germ equality or pointIBM
+derivative membership. FullIBM INCOMPLETE. Prior1347–1351 all preserved.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog;
+no expiration, pseudo frozen1293, all gates unchanged. No campaign transition.
+
+---
+
 # Current IBM mathematics — checkpoint1351: actual conditional L1 densities in ORIGINAL adjoint
 
 IBM ACTIVE. If genuine qL1 has actual conditional E[q|ALL IBM observations]
