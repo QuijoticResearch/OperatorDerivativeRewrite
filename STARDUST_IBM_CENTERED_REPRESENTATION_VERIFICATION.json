@@ -1,0 +1,125 @@
+{
+  "checkpoint": 1301,
+  "time_utc": "2026-10-22T01:10:02.992370+00:00",
+  "campaign": "Actual IBM global expectation and complete centered source representation",
+  "baseline_commit": "3b0a657f32fe0e408566de9a79fba2880e3e5d38",
+  "source_count": 2062,
+  "prior_count": 2060,
+  "new_public_names": {
+    "IBMGlobalVacuum": [
+      "one",
+      "clock_one",
+      "source_one",
+      "one_coeFn",
+      "one_inner_mean",
+      "one_intrinsic",
+      "source_clock_flip",
+      "clock_source_flip",
+      "factorMean",
+      "factor_vacuum_tensor",
+      "tensor_pairing",
+      "composed_vacuum",
+      "composed_vacuum_expectation"
+    ],
+    "IBMCenteredSourceRepresentation": [
+      "intrinsicOne",
+      "recoveryPair",
+      "partial_one_graph",
+      "source_one_graph",
+      "clock_one_graph",
+      "joint_one_graph",
+      "divergence_mean_zero",
+      "centered_reconstruction",
+      "centered_surjective",
+      "range_iff_centered",
+      "source_vacuum_norm",
+      "recovery_pair_bound_sq",
+      "recovery_pair_add",
+      "recovery_pair_smul",
+      "recoveryOperator"
+    ]
+  },
+  "new_public_count": 28,
+  "source_lines_reviewed": {
+    "IBMGlobalVacuum": 132,
+    "IBMCenteredSourceRepresentation": 138
+  },
+  "complete_source_and_helper_lines_reviewed": 270,
+  "public_types_actually_read_unabridged": true,
+  "proof_arguments_visible": true,
+  "type_log_lines": 160,
+  "full_root_build_jobs": 6231,
+  "complete_transitive_safe_Foundation_declarations": 39062,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "terminal_results": {
+    "full-build": {
+      "stage": "full-build",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "build"
+      ],
+      "wall_seconds": 54.392140400013886,
+      "exit_code": 0,
+      "time_utc": "2026-10-22T01:07:26.422578+00:00"
+    },
+    "audit": {
+      "stage": "audit",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1301-audit.lean"
+      ],
+      "wall_seconds": 34.128426100010984,
+      "exit_code": 0,
+      "time_utc": "2026-10-22T01:08:50.174591+00:00"
+    },
+    "independent": {
+      "stage": "independent",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1301-independent.lean"
+      ],
+      "wall_seconds": 23.91919179999968,
+      "exit_code": 0,
+      "time_utc": "2026-10-22T01:09:30.415165+00:00"
+    }
+  },
+  "prior_sources_unchanged_except_root_two_imports": true,
+  "configuration_unchanged": true,
+  "local_proof_budget": "800000 heartbeats on centered native reconstruction only; no global build/audit setting change",
+  "new_source_sha256": {
+    "IBMGlobalVacuum": "CA849EA73F04C0F7EB84BCEBA27DC47A11CEE47523681B0DFA068B1002A88917",
+    "IBMCenteredSourceRepresentation": "F2B9F2F4516872B28AA5D00210D5A6DAAEEB64A1FD07EEE7233F477836AD9DB8"
+  },
+  "full_build_log_sha256": "736B05EC9F4C8F4B582F88C1384468B9F0F725315100BEA670530836BF081AFE",
+  "audit_log_sha256": "115569E40933CE9A7B32EE6DE93B65029D9F4C4486B35A0170AC435CF4ED5C82",
+  "independent_Lean_examples": 3,
+  "independent_private_helper_proofs_reviewed": 1,
+  "Lean_test_code": "import Foundation.IBMCenteredSourceRepresentation\nopen MeasureTheory\nopen OperatorDerivativeRewrite.Foundation\nopen IBMTimeAveragedObservable IBMGlobalVacuum IBMNativeSourceRecovery\nnoncomputable section\n\nprivate theorem actual_one_integral :\n    (∫ ω, one ω ∂IBMSourceLaws.jointMeasure) = 1 := by\n  rw [integral_congr_ae one_coeFn]\n  simp\n\nexample : (∫ ω, one ω ∂IBMSourceLaws.jointMeasure) = 1 := actual_one_integral\n\nexample : ‖one‖ ^ 2 = 1 := by\n  rw [← real_inner_self_eq_norm_sq, L2_inner_eq_integral]\n  calc\n    (∫ ω, inner ℝ (one ω) (one ω) ∂IBMSourceLaws.jointMeasure) =\n        ∫ _ : IBMSourceLaws.JointSample, (1 : ℝ) ∂IBMSourceLaws.jointMeasure := by\n      apply integral_congr_ae\n      filter_upwards [one_coeFn] with ω hω\n      simp [hω]\n    _ = 1 := by simp\n\nexample : clockVacuum (sourceVacuum one) = one := by\n  rw [composed_vacuum_expectation, actual_one_integral, one_smul]\n",
+  "exact_test_code": "from fractions import Fraction as Q\nfrom pathlib import Path\nimport json\nchecks=0\nfor nx,ny in [(2,2),(2,3),(3,2),(3,4),(4,3)]:\n px=[Q(i+1,sum(range(1,nx+1))) for i in range(nx)]\n py=[Q(2*j+1,ny*ny) for j in range(ny)]\n assert sum(px)==sum(py)==1\n for seed in range(-20,21):\n  f=[[Q((i+1)*(j+2)+seed*(i-j),3) for j in range(ny)] for i in range(nx)]\n  source_mean=[sum(px[i]*f[i][j] for i in range(nx)) for j in range(ny)]\n  clock_mean=[sum(py[j]*f[i][j] for j in range(ny)) for i in range(nx)]\n  total=sum(px[i]*py[j]*f[i][j] for i in range(nx) for j in range(ny))\n  assert sum(py[j]*source_mean[j] for j in range(ny))==total\n  assert sum(px[i]*clock_mean[i] for i in range(nx))==total\n  for i in range(nx):\n   for j in range(ny):\n    source_center=f[i][j]-source_mean[j]\n    clock_center_after_source=source_mean[j]-total\n    assert source_center+clock_center_after_source==f[i][j]-total\n    checks+=1\nv=dict(passed=True,weighted_product_centering_checks=checks,product_models=5,target_matrices=205,arithmetic='fractions.Fraction exact; nonuniform independent product weights; not a proof of predictability')\nPath('.lake/stardust-1301-exact-tests.json').write_text(json.dumps(v,indent=2)+'\\n')\nprint(v)\n",
+  "exact_test_results": {
+    "passed": true,
+    "weighted_product_centering_checks": 1640,
+    "product_models": 5,
+    "target_matrices": 205,
+    "arithmetic": "fractions.Fraction exact; nonuniform independent product weights; not a proof of predictability"
+  },
+  "manuscript_count": 113,
+  "all_manuscript_paths_hashes_unchanged": true,
+  "inventory": "STARDUST_RESEARCH_SOURCE_INVENTORY_1292.json",
+  "theorem_contract": "Actual Pc Ps equals global expectation projector. For every actual IBM-observable L2 f, explicit bounded linear U(f) is in the natural intrinsic divergence domain and delta U(f)=f-Ef*1. Full range of delta is exactly centered intrinsic L2; squared field norm of U(f) at most twice input squared norm.",
+  "global_zero_mode_expectation_identification_proved": true,
+  "predictability_claimed": false,
+  "lifted_adjoint_full_domain_equality_claimed": false,
+  "all_centered_intrinsic_reconstruction_proved": true,
+  "full_IBM_calculus_complete": false,
+  "queue_unchanged": true,
+  "private_backup_status": "PENDING exact-commit receipt before verified PRIVATE main/research sync; precommit record is not closure"
+}

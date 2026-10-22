@@ -1,3 +1,21 @@
+# Current IBM mathematics — checkpoint1301: ALL centered static reconstruction
+
+IBM ACTIVE; full predictable/temporal calculus remains OPEN. The native
+composed factor-zero projector is now proved to be literal global expectation.
+For EVERY actual IBM-observable L2 f, explicit bounded linear U(f) has actual
+intrinsic divergence f-E[f]*1. Constants lie in the actual joint derivative
+kernel; every intrinsic divergence has mean zero. The FULL range is exactly
+centered intrinsic L2. Verified squared norm bound ||Uf||²<=2||f||² (not claimed
+optimal). Read `IBM_CENTERED_SOURCE_REPRESENTATION_AUDIT.md` for exact scope.
+Field codomain remains ambient source/clock Gaussian fields; no predictability,
+source-independent natural-time integration or full Ito/Clark-Ocone is proved.
+Next compare actual source predictable integrals and IBM filtration, requiring
+an exact invariance/projection/time-domain theorem. All F1/F2, source integrity,
+verification/private gates and queued order remain. No premature transition.
+October31 review-only/no expiry; indefinite mathematical goal stays ACTIVE.
+
+---
+
 # Current IBM mathematics — checkpoint1300: explicit native source recovery
 
 IBM ACTIVE. Existing Gaussian/Bochner recovery is now verified in the ACTUAL

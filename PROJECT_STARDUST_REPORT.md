@@ -29059,3 +29059,41 @@ local proof budget800000; no global resource/trust changes. Drafts/caches
 preserved. IBM ACTIVE, queued sequence unchanged, indefinite goal ACTIVE.
 Commit/receipt/private refs verification follow; precommit metadata is not
 backup closure.
+
+
+## Checkpoint1301 — global expectation and ALL centered actual IBM reconstruction
+
+Discharged1300's global-zero-mode identification. IBMGlobalVacuum proves actual
+native Pc Ps f=E[f]*1 for EVERY jointL2 target, using actual curry/flip factor
+order, Bochner tensor pairings and literal constant1 representatives under the
+actual joint probability measure. IBM-observable constant membership verified.
+IBMCenteredSourceRepresentation proves constants in the actual source/clock/
+joint derivative graphs with zero derivative; all intrinsic divergences have
+literal mean0. Explicit ordered native recovery pair U(f) reconstructs EVERY
+IBM-observable f-E[f]*1, without target Sobolev membership. Full natural intrinsic
+divergence range EXACTLY centered intrinsicL2 (both directions). U is linear,
+continuous and has squared field norm <=2||f||²; not asserted optimal/minimal.
+The actual original ambient-pair-domain membership from1300 is reused.
+
+This is a full STATIC centered source representation, not a predictable
+Clark-Ocone/Ito theorem. Codomain remains ambient source fields, no natural-time
+source-independent field identification assumed. Next audit exact transfer of
+actual source predictable integrals to IBM-generated filtration. Broad IBM
+calculus stays ACTIVE; no queued campaign released. Read
+IBM_CENTERED_SOURCE_REPRESENTATION_AUDIT.md for precise proof/scope/limits.
+
+Two modules270lines,28publics; all final sources/helpers actually reviewed,
+all28public types actually read unabridged (160loglines;
+proof arguments visible). Fresh root6231jobs0 54.392s;
+COMPLETE39062safeFoundation transitiveaudit standard3only0
+34.128s. Three independent Lean constant expectation,
+L2 norm and native composed projection regressions plusprivate normalization
+helper0 23.919s. Exact1640weighted product-centering
+checks on205nonuniform-target matrices/5independent product models passed.
+Tests do not prove predictability or replace infinite-dimensional Lean proof.
+Prior2060Foundation/root bytes unchanged exceptroot2imports; all113archive paths/
+hashes and3configs unchanged. One scoped800000budget on native reconstruction,
+no global resource/trust changes; unrelated drafts/caches preserved. Verification
+JSON embeds reproducible tests. Failed formatting build retained separately;
+all final gates fresh0. Commit/receipt/PRIVATE main+research verification follow;
+precommit pending metadata is not backup closure. Indefinite goal remainsACTIVE.

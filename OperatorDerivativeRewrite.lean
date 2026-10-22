@@ -1958,3 +1958,5 @@ import Foundation.ObservableProjectedDivergenceCore
 import Foundation.IBMIntrinsicDivergenceClosure
 import Foundation.BochnerLiftAdjointInclusion
 import Foundation.IBMNativeSourceRecovery
+import Foundation.IBMGlobalVacuum
+import Foundation.IBMCenteredSourceRepresentation
