@@ -2015,3 +2015,6 @@ import Foundation.IBMFiniteIntervalIdentification
 import Foundation.IBMDisjointProcessControl
 import Foundation.IBMGridIntersection
 import Foundation.IBMGridDifferenceControl
+import Foundation.IBMTerminalEnergyMeasure
+import Foundation.IBMWeightedTerminalEnergy
+import Foundation.IBMRawEnergyMeasureObstruction

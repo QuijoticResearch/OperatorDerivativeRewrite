@@ -1,3 +1,32 @@
+# Current IBM mathematics — checkpoint1327: localized measures and exact raw gate
+
+IBM ACTIVE. EVERY terminal F has a constructed globally FINITE actual
+Stieltjes energy measure for the EXISTING explicit right-germ channel G^F.
+Initial germ projection retained; no origin atom does NOT mean G^F_0=0.
+Actual bounded raw-past coefficient a gives actual terminal aF and future
+pull-out G^(aF)=a G^F. Finite localized coefficient/event time measures give
+E[a^2*(Delta G)^2], real time additivity and later-anchor consistency. Actual
+finite density measure (Delta G)^2 dmu on joint probability space agrees with
+event-time measures on eligible rectangles; countable past-event additivity
+proved. JOINT predictable content/extension still OPEN.
+
+EXACT RAW GATE: a finite usual (s,t] raw increment-energy time measure exists
+IFF raw and right-germ terminal projections agree at EVERY time for that F.
+Necessity already holds at ONE time by shrinking-interval continuity and
+verified raw strong right-approach limit; sufficiency constructs the measure.
+Neither gap vanishing nor an actual nonzero gap is proved. In particular,
+raw measure for observed1 would force its open odd initial germ to vanish.
+Read IBM_LOCALIZED_ENERGY_MEASURE_AUDIT.md.
+
+Do not relabel G-channel measures as measures for the earlier RAW sums.
+Next coherent predictable rectangle content/joint sigma-subadditivity and
+extension, or relevant raw-germ equality. Actual continuum domain/closure,
+bracket/regular versions, intrinsic adjoints/full Clark–Ocone/actual IBM Itô
+remain OPEN. Generic terminal channels support, not complete, IBM calculus.
+Original M/F/Z, F1/F2 domains, queue and all verification/private gates unchanged.
+
+---
+
 # Current IBM mathematics — checkpoint1326: constructed cross-grid difference control
 
 IBM ACTIVE. ANY two monotone finite grids with matching start/end now have

@@ -30087,3 +30087,55 @@ STARDUST_IBM_CROSS_GRID_DIFFERENCE_VERIFICATION.json and
 IBM_CROSS_GRID_DIFFERENCE_AUDIT.md. Exactreceipt/PRIVATE main+research follows
 separately; precommit evidence claims no backup closure. IBM/existing
 indefinitegoal ACTIVE, queue unchanged, manuscriptsimmutable/unstaged.
+
+
+## Checkpoint1327 — actual localized energy measures and exact raw-measure criterion
+
+Constructed globally FINITE actual Stieltjes time-energy measure for EVERY
+existing germ-terminal G^F, using actual nested projections/strongL2 right
+continuity and bound||F||^2. Exact increment norm/actual integral law.
+No origin atom does NOT imply zero G0; terminal mass explicitly retains
+||F||^2-||G0F||^2. Actual bounded full raw-past coefficient a gives aF in L2
+with AE bridge; actual conditional-expectation pull-out proves G^(aF)_t=aG^F_t
+for t>=s. Constructed finite localized coefficient/event time measures with
+E[a^2 DeltaG^2], REAL time additivity and later-anchor consistency.
+
+Also constructed ACTUAL finite probability-space measure with density
+(DeltaG)^2 against the original joint law. Proved measure formulas,
+agreement with past-event time measures on eligible ordered rectangles,
+and countable disjoint past-event additivity. These are genuine countably
+additive measures on both axes, not a declared joint predictable measure.
+Reviewed Mathlib AddContent.measure/measure_eq extension requirements:
+eligible rectangle semiring/content, JOINT sigma-subadditivity and generation
+remain OPEN; separate countable additivity does not silently discharge them.
+
+New decisive criterion: ANY usual raw increment-energy law on (s,t] at ONE
+fixed s forces actual raw/right-germ projections equal at s. Shrinking
+intervals(s,s+2^-n] decrease toempty; finite first mass+measure continuity
+forces energy0, while verified raw-right-limit identifies actual gapnorm.
+A FINITE raw law on ALL ordered intervals exists IFF projections agree at
+EVERY time; sufficiency uses newly constructed germ measure. Conditional
+nonexistence if a nonzero gap is given; neither actual nonzero gaps nor all
+gap vanishing proved. Raw measure for observed1 would force the OPEN odd
+initial germ0 by proved RAW zero origin. Cannot retarget G measures to RAW
+stochastic sums without resolving this exact gate. No bracket/version assumed.
+
+Actual continuum domain/closure/approximation, joint extension, raw/G equality,
+native derivatives/adjoints/full Clark–Ocone/actual unsmoothed IBM Itô remain
+OPEN. Generic terminal channels not IBM calculus completion. Original M/F/Z
+and F1/F2 correction/K domains preserved. Next actual joint content/extension
+or germ comparison, not abstract image-norm completion.
+
+Three modules317lines/all37actual publictypes/fullproofs reviewed. Four
+independent checks actual sine-weighted IBM endpoint+energy; observed
+event IBM1<=0 with finite measures onbothaxes; actual weighted time
+additivity/later-anchor agreement; raw-law implication for open odd G0.
+Fullroot6289jobs0 53.228s; COMPLETE39902safeFoundation
+transitiveaudit0 34.694s standard3only; independent0
+24.566s. Sequentialstages verified. All2117prior
+sources unchangedexceptroot3imports,3configs/113archivepaths+hashes preserved,
+no newresource/trust override. Evidence
+STARDUST_IBM_LOCALIZED_ENERGY_MEASURE_VERIFICATION.json and
+IBM_LOCALIZED_ENERGY_MEASURE_AUDIT.md. Exactreceipt/PRIVATE main+research follows
+separately; precommit evidence claims no backup closure. IBM/existing
+indefinitegoal ACTIVE, queue unchanged, manuscriptsimmutable/unstaged.
