@@ -1,3 +1,27 @@
+# Current IBM mathematics — checkpoint1322: actual random predictable terminal integration
+
+IBM ACTIVE. EVERY actual JointL2 terminal F now has actual bounded random
+predictable stochastic steps against rawValue F, reusing existing full raw-past
+Coefficient/time-process definitions. Genuine L2/scalar bridge, conditional
+zero mean, full-past projection/orthogonality and ordered disjoint-step
+orthogonality proved. EVERY monotone grid gives actual accumulated-sum
+Martingale under existing sampled full IBM past and exact actual weighted
+energy sum E[a_i^2*(Delta N_i)^2]. Coefficients and increments remain TOGETHER.
+Unit sums recover actual scalar IBM1 on zero-to-one grids for F=observed1.
+Fixed-horizon F=M_H steps and grids agree exactly with prior quadratic integral.
+Read IBM_TERMINAL_PREDICTABLE_INTEGRAL_AUDIT.md.
+
+This is actual FINITE presentation integration, NOT arbitrary random-process
+presentation consistency, countable-grid or continuum completion/control.
+Do not factor weighted energies or replace N_s with nonmartingale IBM Z_s.
+Next uniform energy/countable orthogonal closure and genuine process-domain
+identification/control, reusing prior machinery with proved hypotheses.
+Right-germ initial zero, regular versions/bracket, native adjoints, Clark–Ocone
+and actual IBM Itô remain OPEN. Original M/F/Z, F1/F2 correction/K domains,
+queue, archive and all verification/private gates unchanged. IBM/goal ACTIVE.
+
+---
+
 # Current IBM mathematics — checkpoint1321: nonconstant zero-start RAW martingale
 
 IBM ACTIVE. Actual IBM0 is AE zero; EVERY raw-past0 L2 member is AE constant,

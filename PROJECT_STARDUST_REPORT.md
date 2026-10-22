@@ -29872,3 +29872,43 @@ Sequentialstagetimesverified. All2107prior sourcesunchangedexceptroot2imports,
 STARDUST_IBM_RAW_OBSERVED_MARTINGALE_VERIFICATION.json and IBM_RAW_OBSERVED_MARTINGALE_AUDIT.md.
 Exactreceipt/verifiedPRIVATE main+research backupclosesseparately; precommitrecord
 claims no backupclosure. IBM/existingindefinitegoal ACTIVE; queueunchanged.
+
+
+## Checkpoint1322 — actual random predictable integration across terminal IBM channels
+
+Parameterized actual stochastic steps byANYactualJointL2 terminalF, integrator
+rawValueF_t=E[F|rawIBMpast_t]. Reused existing bounded full-past Coefficient s,
+actual predictable timeStep/timeSum and sampled gridFiltration. Genuine scalar
+product withactualNincrement isL2, AEidentifiedwithitsclass, conditionalmean0,
+belongsrawpastt, projectiontopasts0. OrthogonalitytoEVERYearlierpastL2 andordered
+disjointrandomsteporthogonality followfromactualconditioning, noindependence.
+Everymonotonegrid (repeatsallowed) givesactualaccumulatedsumMartingale and
+exactactualfiniteenergy E[sum^2]=sum E[a_i^2*(DeltaN_i)^2]. Randomcoefficientand
+incrementretainedtogether; no elapsedtime/independentincrementvariance inserted.
+
+Unit sums telescopepointwise andactualzero-to-one unitintegrationagainstodd
+terminalchannelF=observed1 recoversACTUALscalarIBM1 AEusingverifiedRAWzeroorigin.
+ForF=oldquadraticM_H, horizonprojection/scalarbridgesproveEVERYstepwithendpoints
+<=H andEVERYgridwithinH agreeswithpreviousverifiedquadraticintegral, samecoeffs.
+No unsupportedretargeting. Concrete observed-sine testretainsN_(1/2)prediction,
+notfalselyactualZ_(1/2). No newcoefficient/predictability/filtrationfoundation.
+
+Fullarbitraryrandomprocesspresentationconsistency, newchannelcountablegrid/
+continuumdomainandrandomcontrolmeasure remainOPEN; finitepresentationnotcalled
+fullcalculus. Nextuniformenergy/orthogonalseriesclosure andactualtime-process
+domainidentification, notformalimage-normcompletion. Raw/Ginitialdistinction,
+nativeadjoints/ClarkOcone/pathregularity/bracket/actualunsmoothedIBMItô OPEN.
+OriginalM/F/Z andF1/F2correction/Kdomains/allcampaigngates unchanged.
+
+Two modules241lines/all26publictypes andcompleteproofsactuallyreviewed. Four
+independentchecks concrete randomsineactualstep; fullrandomgridMartingale/
+weightedenergy; concrete two-cellunitactualIBM1recovery; same randomsineold
+quadraticagreement+predictability. Freshroot6280jobs0 25.785s;
+COMPLETE39767safeFoundation transitiveaudit0 34.330s standard3only;
+independent0 26.542s. Sequentialstagetimeschecked.
+All2109priorsourcesunchangedexceptroot2imports,3configs/113archivepaths+hashes
+preserved; nonewresource/trustoverride. Evidence
+STARDUST_IBM_TERMINAL_PREDICTABLE_INTEGRAL_VERIFICATION.json and
+IBM_TERMINAL_PREDICTABLE_INTEGRAL_AUDIT.md. Exactreceipt/PRIVATE main+research
+closurefollowsseparately; precommitrecordclaims no backupclosure. IBM/existing
+indefinitegoalACTIVE, queueunchanged.

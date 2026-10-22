@@ -2007,3 +2007,5 @@ import Foundation.IBMDeterministicRangeObstruction
 import Foundation.IBMObservedTerminalMartingale
 import Foundation.IBMRawInitialPast
 import Foundation.IBMRawObservedMartingale
+import Foundation.IBMTerminalPredictableStep
+import Foundation.IBMTerminalPredictableGrid
