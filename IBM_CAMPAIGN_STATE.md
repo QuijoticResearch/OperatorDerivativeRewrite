@@ -1,3 +1,36 @@
+# Current IBM mathematics — checkpoint1334: FULL bounded G-step identification
+
+IBM ACTIVE. Full bounded raw-past G-step identification is DISCHARGED.
+For EVERY existing Coefficient s, bounded only ORIGINAL-law AE, its genuine
+lifted mu_F L2 step exists and the completed integral EXACTLY equals the
+existing IBMGermPredictableStep.stepClass F s t a. Strong approximation is
+proved in BOTH actual energy L2 and original JointL2; actual coefficient^2
+energy identity and arbitrary finite-sum agreement are proved. Existing
+strong predictability, endpoint relations, Mathlib bounded simple approximation
+and Bochner L2 dominated convergence are reused directly.
+
+Original sample null sets transfer to energy-null eligible rectangles, so
+AE bounds are not silently strengthened to pointwise ones. On nondecreasing
+countable grids, actual G increment subspaces are orthogonal. SUMMABLE SQUARED
+stochastic norms imply genuine stochastic AND integrand summability. The
+completed integral equals the actual G-step series, with strong partial sums
+in BOTH L2 spaces; absolute norm summability is not required.
+Read IBM_BOUNDED_PREDICTABLE_IDENTIFICATION_AUDIT.md.
+
+IMPORTANT: older IBMTerminalPredictableSeries uses RAW projections N^F, not
+G^F. Its equality with the new integral remains UNPROVED pending an actual
+comparison theorem. The old quadratic M integrator is also preserved. Do not
+claim all old raw series identified from the proved G-step results.
+NEXT connect native closed derivative/Hilbert adjoint, exact domains and
+representations to actual integration; assess raw/G comparison when needed.
+Positive-time raw/G equality, regular scalar versions/bracket, universal noise,
+Itô/Clark–Ocone/full intrinsic IBM calculus remain OPEN. Focused F1–F3 exact1107
+results and actual closed dense derivative/adjoint, initial-coordinate zero1329,
+all original M/F/Z, prior domains, queue and verification/private gates intact.
+IBM/indefinite goal ACTIVE; pseudo FROZEN1293. No early later campaign.
+
+---
+
 # Current IBM mathematics — checkpoint1333: ALL actual predictable L2 integration
 
 IBM ACTIVE. Finite isometry, actual AE identification, FULL actual predictable

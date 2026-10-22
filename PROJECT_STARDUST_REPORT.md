@@ -30472,3 +30472,53 @@ preserved. See IBM_FULL_PREDICTABLE_INTEGRAL_AUDIT.md and
 STARDUST_IBM_FULL_PREDICTABLE_INTEGRAL_VERIFICATION.json. Exact-commit receipt
 and verified PRIVATE main/research follow audited explicit-path commit.
 No premature backup-closure assertion. IBM/indefinite goal ACTIVE; queue unchanged.
+
+
+## Checkpoint1334 — actual bounded predictable G-steps and square-energy series
+
+EVERY existing bounded raw-past Coefficient s now has genuine lifted energy
+L2 class. Completed integral EXACTLY equals existing IBMGermPredictableStep
+for every ordered s<=t. Strong predictability REUSED from old actual timeStep;
+original-law null rectangles become energy-null by actual increment withDensity
+absolute continuity. Hence original-AE bounds transfer correctly without
+pointwise strengthening or a product-law assumption.
+
+Raw simple-function range fibers give exact finite process realization;
+EXISTING endpoint relation identifies its actual stochastic sum. Mathlib
+approxBounded and EXISTING BochnerL2Approximation prove convergence in BOTH
+genuine mu_F L2 (constant cap majorant) and original JointL2 (cap times actual
+G increment). Completed integral continuity + unique limits establish full
+bounded G-step agreement. Proved actual weighted law integral_H^2dmu_F equals
+E_original[a^2*(DeltaG)^2]. Arbitrary finite sums agree with existing G sumClass.
+
+On ordered grids, genuine rightPast increment subspaces orthogonal. Existing
+Hilbert orthogonal-family theorem proves stochastic summability from SUMMABLE
+SQUARED norms. Exact isometry transfers finite-sum Cauchy criterion to actual
+predictable integrands. Therefore completed integral of the actual integrand
+series equals original G-step series, with BOTH strong partial-sum limits.
+No absolute norm summability or default-tsum outside domain substituted.
+
+Audit of EXISTING IBMTerminalPredictableSeries confirms its steps use RAW N^F
+projections, so it is NOT silently equated with G^F. Existing quadratic-M
+series also preserved. Full raw/G comparison, native closed derivative/actual
+adjoint domains/representation/Itô/Clark–Ocone connections remain OPEN. The
+actual bounded G-step, weighted-energy, finite sums and ordered square-energy
+G-series obligations now DISCHARGED. Focused F1–F3 exact1107 results and actual
+closed dense intrinsic derivative/Hilbert adjoint, all M/F/Z unchanged.
+
+Four modules363lines/29 public declarations, full source/proof and actual
+unabridged public-type review. Fresh root6313jobs0
+61.396s; COMPLETE transitive safe Foundation
+audit40299declarations0 38.751s standard3only.
+Five independent Lean checks FIRST PASS0 27.234s:
+nonlinear sin(actual IBM1) coefficient stochastic identification; actual weighted
+energy law; strong approximation in both measures; ORIGINAL-AE coefficient
+equality identifies actual energy-L2 integrands; countable square-energy domain
+with actual stochastic/integrand series identity. All stages sequential. All2140
+prior sources unchanged except EXACTLY4 root imports, all3 configs and113
+archive paths/hashes preserved. No resource/trust overrides, no manuscript staged.
+See IBM_BOUNDED_PREDICTABLE_IDENTIFICATION_AUDIT.md and
+STARDUST_IBM_BOUNDED_PREDICTABLE_IDENTIFICATION_VERIFICATION.json. Audited
+explicit-path commit followed by exact receipt and PRIVATE main/research
+verification; no premature backup closure. IBM/indefinite research ACTIVE,
+same queue, manuscript preservation and full verification gates.

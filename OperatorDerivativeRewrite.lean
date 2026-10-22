@@ -2038,3 +2038,7 @@ import Foundation.IBMPredictableFiniteIsometry
 import Foundation.IBMPredictableLpDictionary
 import Foundation.IBMPredictableDictionaryDensity
 import Foundation.IBMFullPredictableIntegral
+import Foundation.IBMPredictableCoefficientLift
+import Foundation.IBMPredictableSimpleCoefficient
+import Foundation.IBMPredictableBoundedApproximation
+import Foundation.IBMPredictableBoundedSeries
