@@ -28866,3 +28866,44 @@ tests and honest precommit pending-backup status. The campaign freezes only
 after exact receipt and verified PRIVATE main/research backup close. Then
 actual intrinsic IBM calculus automatically becomes ACTIVE from the existing
 F1–F3/source-resolved foundations. October31 remains review-only, no expiration.
+
+
+## Checkpoint 1294 — blackito selective manuscript audit and explicit obstructions
+
+User-requested read-only audit of ResearchSources/Incoming/blackito.tex, SHA256
+D86F4033700843827ACEA2A5CF670084C7E42321FD0E27817DC99256FD940F4D.
+Already inventoried, unique content hash; all113 archive paths/hashes preserved.
+BLACKITO_MANUSCRIPT_AUDIT.md records selected theorem/proof review, exact source
+labels, primary literature, conditional repairs and actual-process limits.
+
+The abstract Gamma axioms omit explicit L2 density: constants-only algebra with
+zero energy satisfies the displayed sequential closability condition but has a
+proper closed domain. Finite Galerkin margins cannot establish full contraction:
+an untested orthogonal mode can violate it. EnergySeedDensityObstruction proves
+these finite-coordinate obstructions (12publics,54lines); it does not claim to
+formalize an entire sticky Gamma module. The invariant-cutoff proof's claimed
+O(1) collar is invalid by Cauchy-Schwarz; the qualitative contraction failure
+may survive a corrected O(R) comparison and is not refuted here.
+
+The conditional static Green reconstruction survives with closed dense domain,
+constants kernel and spectral gap. The partitionwise dynamic Feller formula
+has a valid L2 mesh argument, but supplies neither a common completed adapted
+integrand space nor its closed continuum integral. Blackness only excludes
+specified additive interval-measurable representations, not all martingales.
+Actual CKC/tail bounds, higher-sector consistency and line blackness transfer
+remain unverified. Existing sticky martingales, terminal-law nonsymmetry,
+mixed-atom nonclosability and conditional factor-energy results are cross-linked.
+For IBM, preserve the distinction between intrinsic adjoint domain, terminal-law
+Green operator and actual process generator. No separate campaign has begun.
+
+Fullroot6225jobs terminal0 38.151s;
+complete38898 safe Foundation transitive audit standard3only terminal0
+38.830s; all12public types actually read unabridged,
+all54newsource lines reviewed. Six independent Lean regressions terminal0
+22.118s; exact rational checks25tested,
+24violating,135complement basis cases. Prior2055sources preserved exceptroot
+oneimport; toolchain/configuration unchanged; unrelated drafts untouched.
+STARDUST_BLACKITO_VERIFICATION.json retains reproducible tests and honest pending
+precommit backup status. Commit/receipt/private main+research verification are
+required next; a precommit report is not evidence of successful synchronization.
+The pseudo stopping checkpoint remains frozen; intrinsic IBM remains active.

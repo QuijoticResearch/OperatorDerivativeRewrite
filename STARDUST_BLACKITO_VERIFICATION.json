@@ -1,0 +1,104 @@
+{
+  "checkpoint": 1294,
+  "time_utc": "2026-10-22T00:05:19.251385+00:00",
+  "campaign": "Bounded blackito manuscript audit; intrinsic IBM priority unchanged",
+  "baseline_commit": "496d5c5f184a872005245b764cb59c9a83726e69",
+  "source_count": 2056,
+  "prior_count": 2055,
+  "new_public_names": {
+    "EnergySeedDensityObstruction": [
+      "constantDomain",
+      "constantDomain_closed",
+      "outside_constantDomain",
+      "constantDomain_not_dense",
+      "zeroSeed",
+      "zeroSeed_continuous",
+      "zeroSeed_graph_closed",
+      "zeroSeed_energy_vanishes",
+      "testEnergy",
+      "referenceEnergy",
+      "tested_sector_contraction",
+      "untested_sector_failure"
+    ]
+  },
+  "new_public_count": 12,
+  "source_lines_reviewed": {
+    "EnergySeedDensityObstruction": 54
+  },
+  "public_types_actually_read_unabridged": true,
+  "proof_arguments_visible": true,
+  "type_log_lines": 28,
+  "full_root_build_jobs": 6225,
+  "complete_transitive_safe_Foundation_declarations": 38898,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "terminal_results": {
+    "full-build": {
+      "stage": "full-build",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "build"
+      ],
+      "wall_seconds": 38.151366400008556,
+      "exit_code": 0,
+      "time_utc": "2026-10-22T00:02:34.232016+00:00"
+    },
+    "audit": {
+      "stage": "audit",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1294-audit.lean"
+      ],
+      "wall_seconds": 38.830422400002135,
+      "exit_code": 0,
+      "time_utc": "2026-10-22T00:03:52.131237+00:00"
+    },
+    "independent": {
+      "stage": "independent",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1294-independent.lean"
+      ],
+      "wall_seconds": 22.117543700005626,
+      "exit_code": 0,
+      "time_utc": "2026-10-22T00:04:37.381970+00:00"
+    }
+  },
+  "prior_sources_unchanged_except_root_one_import": true,
+  "configuration_unchanged": true,
+  "new_source_sha256": "85AAAF7C5CD7689DC2E3391484C05139BB908ED1E0FA6EC300D421652182092D",
+  "full_build_log_sha256": "D73CF5FF22C66F2D554EDD8C365C6EC43ACB92B99B2F04E3040464A1F3BD6279",
+  "audit_log_sha256": "75B72889D6923F58102A7B9E564767D12E9CF08756EA8C2CDA1373A5EAB382EA",
+  "independent_Lean_examples": 6,
+  "Lean_test_code": "import Foundation.EnergySeedDensityObstruction\nopen OperatorDerivativeRewrite.Foundation.EnergySeedDensityObstruction\n\n-- Direct coordinate tests, independent of the exported obstruction proofs.\nexample : ((3, 3) : ℝ × ℝ) ∈ constantDomain := by\n  norm_num [constantDomain]\nexample : ((3, 4) : ℝ × ℝ) ∉ constantDomain := by\n  norm_num [constantDomain]\nexample : testEnergy (4, 0) = 8 ∧ referenceEnergy (4, 0) = 16 := by\n  norm_num [testEnergy, referenceEnergy]\nexample : testEnergy (0, 3) = 18 ∧ referenceEnergy (0, 3) = 9 := by\n  norm_num [testEnergy, referenceEnergy]\nexample : testEnergy (1, 1) > referenceEnergy (1, 1) := by\n  norm_num [testEnergy, referenceEnergy]\nexample (a : ℝ) : testEnergy (a, 0) ≤ referenceEnergy (a, 0) := by\n  dsimp [testEnergy, referenceEnergy]\n  nlinarith [sq_nonneg a]\n",
+  "exact_test_code": "from fractions import Fraction as Q\nfrom pathlib import Path\nimport json\nvalues=[Q(i,3) for i in range(-12,13)]\ntested=violations=0\nfor a in values:\n assert a*a/2 <= a*a\n tested+=1\nfor b in values:\n if b:\n  assert 2*b*b>b*b\n  violations+=1\ncomplements=0\nfor n in range(2,17):\n # Every tested basis vector has eigenvalue 9/10; its orthogonal complement\n # contains a vector of eigenvalue 2. Increasing finite test size cannot help.\n for j in range(n-1):\n  v=[Q(int(i==j)) for i in range(n)]\n  energy=sum(Q(9,10)*x*x for x in v[:-1])+2*v[-1]**2\n  assert energy<=sum(x*x for x in v)\n  complements+=1\n v=[Q(0)]*(n-1)+[Q(1)]\n assert sum(Q(9,10)*x*x for x in v[:-1])+2*v[-1]**2>sum(x*x for x in v)\n complements+=1\nresult=dict(passed=True,tested_sector_cases=tested,untested_sector_violations=violations,complement_basis_cases=complements,arithmetic='Python fractions.Fraction; exact rational arithmetic')\nPath('.lake/stardust-1294-exact-tests.json').write_text(json.dumps(result,indent=2)+'\\n')\nprint(result)\n",
+  "exact_test_results": {
+    "passed": true,
+    "tested_sector_cases": 25,
+    "untested_sector_violations": 24,
+    "complement_basis_cases": 135,
+    "arithmetic": "Python fractions.Fraction; exact rational arithmetic"
+  },
+  "manuscript": "ResearchSources/Incoming/blackito.tex",
+  "manuscript_sha256": "D86F4033700843827ACEA2A5CF670084C7E42321FD0E27817DC99256FD940F4D",
+  "inventory": "STARDUST_RESEARCH_SOURCE_INVENTORY_1292.json",
+  "all_manuscript_paths_and_hashes_unchanged": true,
+  "manuscript_count": 113,
+  "formal_scope": "Finite-coordinate closed nondense zero-energy domain and untested-sector contraction counterexample; not a full Gamma-module or LJR realization",
+  "mathematical_audit_findings": [
+    "Missing explicit density hypothesis in foldB",
+    "Finite Galerkin certification lacks complement bound",
+    "Invariant cutoff collar cannot have O(1) derivative-square energy",
+    "foldA proof establishes span density",
+    "Conditional Green representation and dynamic Feller mesh argument survive with precise hypotheses",
+    "Common continuum adapted integral and actual full-flow realization remain unverified"
+  ],
+  "private_backup_status": "PENDING exact-commit receipt and verified PRIVATE main/research synchronization; this precommit record is not backup closure"
+}

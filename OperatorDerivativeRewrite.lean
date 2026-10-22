@@ -1953,3 +1953,4 @@ import Foundation.HigherHeatCompletedClarkOcone
 import Foundation.HigherHeatCompletedSignedApproximation
 import Foundation.HigherHeatMultichannelSharpness
 import Foundation.HigherHeatSignedDiagonalRealization
+import Foundation.EnergySeedDensityObstruction
