@@ -1981,3 +1981,5 @@ import Foundation.IBMEvenClockProjection
 import Foundation.IndependentInitialConditioning
 import Foundation.IBMClockInitialEnlargement
 import Foundation.IBMIntrinsicQuadraticMartingale
+import Foundation.IBMIntrinsicMartingaleStep
+import Foundation.IBMIntrinsicMartingaleGrid

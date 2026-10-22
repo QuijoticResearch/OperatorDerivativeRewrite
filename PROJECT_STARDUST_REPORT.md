@@ -29316,3 +29316,42 @@ proofresource/trust override. Evidence STARDUST_IBM_QUADRATIC_MARTINGALE_VERIFIC
 and IBM_INTRINSIC_QUADRATIC_MARTINGALE_AUDIT.md. Git/exactreceipt/PRIVATE main+research
 verification follow separately; precommit evidence does not claim backup closure.
 Existing indefinite goal and IBM ACTIVE. Queue unchanged.
+
+
+## Checkpoint1308 — actual IBM-natural stochastic step integration
+
+Built actual stochastic products of bounded coefficients measurable in the FULL
+raw IBM natural past against increments of1307 M_t=E[Y_t^2-t|F_t^IBM]. Every
+step is genuinely L2, in the ending natural past, conditionally centered in
+the starting past and mean zero. All earlier-past L2 variables are orthogonal
+to the step; ordered-disjoint actual random steps are orthogonal. No Gaussian
+law or increment independence is assumed. Existing GaussianPredictableStep
+requires IsPreBrownianReal and cannot simply be instantiated with M.
+For every deterministic nondecreasing tau:N->NNReal and every sequence of
+admissible bounded actual coefficients, sums are actual products on the original
+space, with explicit Lp identification, L2 membership and natural adaptation.
+Full Martingale predicate proved in the sampled FULL IBM filtration F_tau_n.
+Exact Hilbert and actual integral energy identities sum E[a_i^2*(Delta_i M)^2];
+repeated times allowed. No unjustified replacement with elapsed time.
+
+Independent Lean checks: unit[0,1]step equals actual M1 a.e and is nonzero;
+actual sin(Z1) coefficient[1,2] is admissible/L2/conditionally centered; those
+two actual random steps have orthogonality/exact energy additivity; time1/4
+squarednorm<=1/8<1/4 rigorously contradicts standard Brownian time variance
+normalization for this M. Not a no-time-change/innovation/calculus theorem.
+Continuum integrand completion, grid refinement consistency, bracket, path
+regularity, PRP and native derivative-adjoint identification remain OPEN.
+Next actual refinement invariance/energy completion with exact null directions
+and convergence; preserve all F1/F2 correction domains/clock-number smoothing.
+
+Two modules217lines,29reviewedpublic types including Coefficient constructor/
+fields; complete new source/helper arguments reviewed unabridged. Final audit
+log 164lines. Fresh fullroot6254jobs0
+23.080s; COMPLETE39355safeFoundation transitive
+axiom audit0 39.858s standard3only. Four independent Lean
+tests0 25.100s. All2083prior sources unchanged except
+root2imports,3configs and113archivepaths/hashes unchanged. No new proofresource/
+trust override. Evidence STARDUST_IBM_STOCHASTIC_STEP_VERIFICATION.json and
+IBM_INTRINSIC_STOCHASTIC_STEP_AUDIT.md. Git/exactreceipt/PRIVATE main+research
+gates follow separately; no precommit backup closure claimed. IBM/indefinite
+goal ACTIVE, queue unchanged.

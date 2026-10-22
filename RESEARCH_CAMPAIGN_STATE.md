@@ -1,3 +1,25 @@
+# Current IBM mathematics — checkpoint1308: actual stochastic step integration
+
+IBM ACTIVE. Actual bounded predictable coefficients in the FULL raw IBM past
+now integrate against M_t=E[Y_t^2-t|F_t^IBM] by actual products a*(M_t-M_s).
+L2 membership, natural-past membership, conditional centering, mean zero and
+ordered-disjoint random-step orthogonality are proved. For EVERY nondecreasing
+deterministic grid, actual accumulated sums form a martingale in F_{tau_n} and
+have exact energy sum E[a_i^2*(Delta_i M)^2]. No independent/Gaussian increment
+premise is used. Repeated times allowed; each coefficient has an explicit a.e
+finite bound. Read IBM_INTRINSIC_STOCHASTIC_STEP_AUDIT.md.
+Independent actual sin(Z_1) coefficient test, nonzero unit step, exact two-cell
+energy, and time1/4 energy<=1/8<1/4 obstruct standard elapsed-time Brownian
+normalization. No time-change impossibility follows. Continuum energy-domain
+completion, refinement consistency, bracket, path regularity, PRP and actual
+native-adjoint identification remain OPEN. Next refinement invariance and a
+norm-controlled completion of actual sums with null directions/convergence,
+reusing verified completion machinery only after checking its hypotheses.
+Full IBM calculus remains OPEN. Preserve F1/F2 corrections and clock-number
+smoothing; no campaign transition or queue change.
+
+---
+
 # Current IBM mathematics — checkpoint1307: genuine intrinsic quadratic martingale
 
 IBM ACTIVE. M_t=E[Y_t^2-t | F_t^IBM] is now a genuine square-integrable
