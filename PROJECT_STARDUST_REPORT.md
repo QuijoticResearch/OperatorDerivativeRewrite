@@ -30741,3 +30741,37 @@ OPEN. FullIBM calculus incomplete. Queue IBM->Bakry/fBM->Cauchy->fractional
 diffusion->black noise->backlog; no expiration, pseudo frozen1293; all gates intact.
 
 Fresh complete root build: 6331 jobs, 28.235s, terminal0. Complete transitive audit: 40694 declarations, 36.558s, terminal0; standard three axioms only. All12 unabridged public types, THREE complete result-definition bodies and all178 final source/proof lines read. Five independent final Lean tests0 (40.690s); first_pass=True. Exact test code and inputs in verification JSON. All2160 previous sources unchanged except two root imports; three configs and113 archive paths/hashes unchanged. No proof-resource/trust override; final root/audit inputs unchanged afterward. Explicit actual representative identity was the only development repair. This is native nonsmooth source calculus, not physical-time local time or universal causal Clark–Ocone. Private gate pending exact commit/receipt/sync.
+
+
+## Checkpoint1341 — actual bounded native IBM product and square calculus
+
+# Current IBM mathematics — checkpoint1341: actual bounded product calculus
+
+IBM ACTIVE. For any f,g in the FULL ORIGINAL jointDerivative.domain with
+finite nonnegative actual essential bounds, actual f*g belongs to the SAME
+domain. BOTH original-coordinate fields satisfy D_i(fg)=f D_i g+g D_i f AE.
+Actual bounded squares have fields 2f D_i f and norm bound 2R norm(Df).
+See IBM_INTRINSIC_PRODUCT_CALCULUS_AUDIT.md for the precise contract.
+
+Reuse1339 unbounded-value C1 chain theorem on the primitive of 2*clamp_R:
+continuous globally bounded derivative, actual equality with x^2 on [-R,R].
+Polarize squares of f+g and f-g in the original domain, using actual L2
+representatives, original derivative linearity and the existing coordinate swap.
+No replacement derivative, domain, measure or integral. Five independent tests
+include sine/cosine products, true constant one, actual stochastic IBP and
+1337 target-indexed reconstruction. Full ProductResult and ChainResult bodies
+printed and read, all24 public types and all249 source/proof lines reviewed.
+
+Weighted native divergence product law remains OPEN: require precise actual
+L2 multiplier/correction bounds and original adjoint-domain duality. Existing
+bounded graph approximants can extend bounded-test identities if those estimates
+are proved. No arbitrary unbounded product theorem or new product norm bound.
+Full physical IBM-time Itô/Tanaka/local-time calculus, raw/germ comparison,
+versions/bracket and universal causal Clark–Ocone remain OPEN. Retain entire
+G0 and target-dependent channel in1337, plus1336 Poisson/Poincare,1338–1340
+chain and nonsmooth calculus and focused F1–F3 verified exact domains.
+
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog.
+No expiration; pseudoprocess frozen1293. All verification and private gates intact.
+
+Fresh complete root build: 6334 jobs, 26.245s, terminal0. Complete transitive audit: 40743 declarations, 37.307s, terminal0; standard three axioms only. All24 unabridged public types, BOTH complete result-definition bodies and all249 final source/proof lines read. Five independent final Lean tests0 (28.827s); first_pass=False. First test attempt failed only because destructive witness extraction consumed hp in two tests; copy preserved before extraction, library unchanged. All2162 prior sources unchanged except three root imports; three configs and113 archive paths/hashes unchanged. No proof-resource/trust override. Exact test code and inputs in verification JSON. Actual bounded native algebra, not physical-time Itô or universal causal reconstruction. Private gate pending exact commit/receipt/sync.

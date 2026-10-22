@@ -1,3 +1,34 @@
+# Current IBM mathematics — checkpoint1341: actual bounded product calculus
+
+IBM ACTIVE. For any f,g in the FULL ORIGINAL jointDerivative.domain with
+finite nonnegative actual essential bounds, actual f*g belongs to the SAME
+domain. BOTH original-coordinate fields satisfy D_i(fg)=f D_i g+g D_i f AE.
+Actual bounded squares have fields 2f D_i f and norm bound 2R norm(Df).
+See IBM_INTRINSIC_PRODUCT_CALCULUS_AUDIT.md for the precise contract.
+
+Reuse1339 unbounded-value C1 chain theorem on the primitive of 2*clamp_R:
+continuous globally bounded derivative, actual equality with x^2 on [-R,R].
+Polarize squares of f+g and f-g in the original domain, using actual L2
+representatives, original derivative linearity and the existing coordinate swap.
+No replacement derivative, domain, measure or integral. Five independent tests
+include sine/cosine products, true constant one, actual stochastic IBP and
+1337 target-indexed reconstruction. Full ProductResult and ChainResult bodies
+printed and read, all24 public types and all249 source/proof lines reviewed.
+
+Weighted native divergence product law remains OPEN: require precise actual
+L2 multiplier/correction bounds and original adjoint-domain duality. Existing
+bounded graph approximants can extend bounded-test identities if those estimates
+are proved. No arbitrary unbounded product theorem or new product norm bound.
+Full physical IBM-time Itô/Tanaka/local-time calculus, raw/germ comparison,
+versions/bracket and universal causal Clark–Ocone remain OPEN. Retain entire
+G0 and target-dependent channel in1337, plus1336 Poisson/Poincare,1338–1340
+chain and nonsmooth calculus and focused F1–F3 verified exact domains.
+
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog.
+No expiration; pseudoprocess frozen1293. All verification and private gates intact.
+
+---
+
 # Current IBM mathematics — checkpoint1340: native absolute-value rules at every level
 
 IBM ACTIVE. For EVERY f in FULL ORIGINAL jointDerivative.domain and EVERY
