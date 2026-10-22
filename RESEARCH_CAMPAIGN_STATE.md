@@ -1,3 +1,24 @@
+# Current IBM mathematics — checkpoint1307: genuine intrinsic quadratic martingale
+
+IBM ACTIVE. M_t=E[Y_t^2-t | F_t^IBM] is now a genuine square-integrable
+martingale in the ACTUAL RAW natural IBM filtration. M_0=0 a.e; M_t is not
+a.e zero for every t>0; ||M_t||_2^2<=2t^2. Actual fourth-power observation
+detects the even channel: <Y_t^2-t,Z_t^4>=6t^2. All actual product moments,
+integrability, independent initial scenery conditioning and auxiliary clock
+martingale modification/inclusion are proved. IBM's target filtration is
+unchanged. Read IBM_INTRINSIC_QUADRATIC_MARTINGALE_AUDIT.md.
+This is temporal progress beyond static source reconstruction. The signed clock
+still projects to zero; no contradiction with1306. No path-regularity version,
+Brownian innovation, independent increments, quadratic variation or predictable
+representation is inferred. Nor is Y_t^2-t itself proved IBM-past measurable.
+Full intrinsic IBM calculus remains OPEN. Next actual predictable step integration
+and L2 control for this martingale, reusing existing finite-grid machinery;
+connect to the native derivative/adjoint only with exact domain proofs.
+Preserve F1/F2 correction terms, clock-number smoothing and every verification
+gate. No campaign transition or queue change.
+
+---
+
 # Current IBM mathematics — checkpoint1306: actual clock-sign innovation obstruction
 
 IBM ACTIVE. Actual measure-preserving global clock reflection fixes the ENTIRE

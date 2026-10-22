@@ -29277,3 +29277,42 @@ All2074prior sources unchanged except root4imports;3configs and113archivefiles
 unchanged. Evidence: STARDUST_IBM_CLOCK_SYMMETRY_VERIFICATION.json. Commit/
 receipt/PRIVATE main+research checks follow; precommit record claims no backup
 closure. Existing indefinite goal and intrinsic IBM remain ACTIVE.
+
+
+## Checkpoint1307 — genuine nonzero intrinsic IBM quadratic martingale
+
+Constructed M_t=E[Y_t^2-t|F_t^IBM] under the actual joint product law and
+UNCHANGED raw IBM natural filtration. Verified full Martingale predicate,
+strong adaptation, L2 membership, M_0=0 a.e, nonzero at every positive time,
+and squared L2 norm <=2t^2. Genuine temporal construction; full calculus OPEN.
+Auxiliary raw clock filtration knows independent full scenery initially.
+Product conditional expectation proved via rectangle/pi-lambda set-integral
+identity. Existing ambient-null augmentation transfers the second Hermite
+martingale to the actual continuous clock version. Actual IBM is adapted to
+this auxiliary filtration, giving exact natural-filtration inclusion; conditional
+tower then proves the intrinsic martingale identity. No usual-completion or
+right-continuity claim is used. Target raw IBM filtration is not altered.
+
+Actual scenery fourth/eighth moments, actual IBM conditional fourth/eighth
+moments and joint eighth-power integrability give an L2 fourth-power natural-
+past observation. Exact pairing <Y_t^2-t,Z_t^4>=6t^2 forces nonzero projection
+in every F_T with0<t<=T. This rigorously separates even surviving channels from
+the1306 zero conditional signed clock. No all-clock/no-martingale inference.
+No claim of path continuity, Brownian innovation, independent increments,
+quadratic variation, predictable representation, unprojected-clock observability
+or complete IBM Clark-Ocone. Next genuine predictable step integration against
+this M and connection to verified native domains, preserving F1/F2 corrections.
+
+Five modules411lines; all39public types actually reviewed unabridged
+(175loglines), complete new source proofs/helpers reviewed.
+Fresh fullroot6252jobs0 24.033s; COMPLETE
+39305safeFoundation transitive axiom audit0 35.421s,
+only propext/Classical.choice/Quot.sound. Four independent Lean tests0
+24.918s: exact time1pairing6, later-past even
+nonzero projection, signed-clock-zero alongside nonzero intrinsic martingale,
+and zero initial value/time2 squared norm<=8. All2078prior sources preserved
+exceptroot5imports,3configs and113archivepaths/hashes unchanged; no new
+proofresource/trust override. Evidence STARDUST_IBM_QUADRATIC_MARTINGALE_VERIFICATION.json
+and IBM_INTRINSIC_QUADRATIC_MARTINGALE_AUDIT.md. Git/exactreceipt/PRIVATE main+research
+verification follow separately; precommit evidence does not claim backup closure.
+Existing indefinite goal and IBM ACTIVE. Queue unchanged.
