@@ -2081,3 +2081,4 @@ import Foundation.IBMObservableClockKernel
 import Foundation.IBMClockLinearDivergence
 import Foundation.IBMQuadraticClockMartingale
 import Foundation.IBMClockSteinIdentity
+import Foundation.IBMNativeGeneratorChain

@@ -31046,3 +31046,36 @@ Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog;
 no expiration, pseudo frozen1293; all gates intact. No campaign transition.
 
 Fresh complete root build: 6352 jobs, 24.412s, terminal0. Complete transitive safe Foundation audit: 41175 declarations, 37.486s, terminal0; only propext/Classical.choice/Quot.sound. All14 unabridged public types, THREE printed actual definition bodies and ALL150 final source/proof lines read. Six final independent Lean examples0 (27.014s), empty log; sine, UNBOUNDED affine, simultaneous nonzero clock-gradient/projected-contraction-zero witness and constant atomic control included. First two test runs failed only explicit uncurry-isometry map_zero then local coefficient-space instances in constant test; retained BOTH code/log/time sets, scratch-only repairs. All2182 previous sources unchanged except one root import; three configs and113 archive paths/hashes unchanged. No resource/trust/toolchain override. Exact source-variable linear/nonlinear identities and all integrability clauses are genuine probability integrals, not physical-time IBM Itô. Nonvacuity is a rigorous existential dense-domain witness, not point-observation DomD membership. Full calculus incomplete; private gate pending exact commit/receipt/sync.
+
+
+## Checkpoint1349 — original native generator nonlinear graph closure
+
+# Current IBM mathematics — checkpoint1349: original native generator chain closure
+
+IBM ACTIVE. Let L=ORIGINAL deltaD, positive sign. If f in original DomD,
+(Df,y) in ORIGINAL delta graph, and Gamma(f)=sum of BOTH original-coordinate
+gradient norm squares is L2, then for C2 phi with bounded first/second
+derivatives, CONSTRUCT F=phi(f) in original DomD and actual jointL2 W with
+W=phi'(f)*y-phi''(f)*Gamma(f) AE, and (DF,P_IBM W) in ORIGINAL delta.graph.
+Thus actual original composed-domain membership, not formal expressions.
+Phi itself may be unbounded. See IBM_NATIVE_GENERATOR_CHAIN_AUDIT.md.
+
+Gamma(f) always nonnegative/L1 on fullDomD; actual integral=norm(Df)^2.
+L4 of BOTH actual coefficient gradients supplies the extra GammaL2 condition.
+No assertion GammaL2 follows just from DomD or DomL. Existing fullC1 chain
+twice and full weighted-divergence graph rule reused, no replacement operator.
+Sine test verifies PLUS sin(f)*Gamma correction for positive L; unbounded
+affine test, energy/norm/positivity, L4 criterion, actual Poisson-solution
+compatibility and constant-one control all pass. Poisson test RETAINS extra
+energyL2 hypothesis. No concrete nonconstant ALL-hypotheses input constructed.
+
+P_IBM retained; no Gamma-observability or P_IBM-preserves-DomD assumption.
+This is SOURCE-variable operator calculus, NOT physical-time IBM evolution,
+Ito/Tanaka/local time, or universalcausal CO. Weak L1 chain without extra
+GammaL2, explicit nonconstant strong inputs, physical versions/bracket and
+full intrinsic calculus remain OPEN. Keep1347 observed-martingale integral,
+1348 informative-clock IBP and all focusedF1–F3/native machinery exactscope.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog;
+no expiration, pseudo frozen1293; all gates intact. No campaign transition.
+
+Fresh complete root build: 6353 jobs, 24.985s, terminal0. Complete transitive safe Foundation audit: 41210 declarations, 34.960s, terminal0; only propext/Classical.choice/Quot.sound. All16 unabridged public types, TWO printed definition bodies (actual energyDensity and reused complete ChainResult) and ALL204 final source/proof lines read. Six independent Lean examples FIRST-PASS0 (30.102s), empty log. Development logs retained: ambiguous coordinate, actual function-subtraction representative, scalar inner-product typing and elaboration timeouts repaired by factoring actual lemmas, never resource overrides. All2183 previous sources unchanged except one root import; three configs and113 archive paths/hashes unchanged. Exact original generator/energyL2 hypotheses, actual composed-domain output, AE unprojected L2 formula and projected delta graph are verified. Nonconstant fully regular input remains unconstructed; Poisson test retains GammaL2. No physical-time IBM generator identification or universal innovation. Full calculus incomplete; private gate pending exact commit/receipt/sync.
