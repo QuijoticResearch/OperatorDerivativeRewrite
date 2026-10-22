@@ -29793,3 +29793,42 @@ Evidence STARDUST_IBM_DETERMINISTIC_RANGE_OBSTRUCTION_VERIFICATION.json and
 IBM_DETERMINISTIC_RANGE_OBSTRUCTION_AUDIT.md. Exactreceipt/verifiedPRIVATE main+
 research backupclosesseparately; precommitrecordclaims no backupclosure.
 IBM/existingindefinitegoal ACTIVE, queueunchanged.
+
+
+## Checkpoint1320 — actual IBM terminal-observable martingale channels
+
+Constructed channelClass(F,t)=P_R_t F for EVERY actualJointL2F and its actual
+canonicalscalarrepresentative. Existing G-past identification/representative
+theorem gives strongadaptation. Actual projection/CE plusnestedprojections gives
+FULLactualMartingale predicate underSAMEexplicitIBM G/originaljointMeasure.
+GenuineL2, norm<=||F||, actualmean preservation andwhole-neighborhood STRONGL2
+rightcontinuity reuseexistingverifiedprojectionmachinery. AnyF inRAWpastT is
+recoveredEXACTLYinclass/scalarAE atEVERYlater t>=T. No newmeasure/processlaw.
+
+Generalized actual sceneryprojectionequivariance to U P_K F=P_K U F on invariant
+spaces. ForF=actualobservedIBM_T, channeliscentered/sceneryodd. AtT=1 terminal
+classnonzero andactualscalarIBM1 recovered. Alltimepaircovariance withsceneryeven
+quadraticrightgermr iszero byparity. This constructs an actualmissing-parity
+terminal-recovery martingale after1319's deterministicevenchannelobstruction,
+without declaring general representation impossible.
+
+Initialnewchannel value P_R_0 F RETAINED, notprovedzero. NoG0triviality follows
+fromoldquadraticr0zero. No nonzero terminal-minus-initial innovation, independence,
+strongmartingaleorthogonality, jointmeasurable regularversion, bracket ornew
+channelstochasticintegral asserted. Nextcontrolinitialgerm/dynamicenergy oractual
+randompredictabledomain/nativeadjoints. FullIBMcalculus/ClarkOcone/unsmoothedItô
+OPEN. Original M/F/Z unchanged, retainF1/F2corrections/K domains andallgates.
+
+Module99lines/all18publictypes andcompleteproofsactuallyreviewed. Fourindependent
+Leanchecks actualfullMartingale+scalarterminalrecovery/nonzero; arbitraryterminal
+actualconditionalidentity1/2; everylaterrawterminalrecovery/L2continuity/bound;
+arbitrarytimecenteredoddchannel/covarianceseparation (noinitialzeroassumption).
+Fresh root6276jobs0 22.946s; COMPLETE39708safeFoundation
+transitiveaudit0 35.682s standard3only; independent0
+24.190s. Sequentialstagetimestampsverified. All2106prior
+sources unchangedexceptroot1import,3configs/113archivepaths+hashes preserved;
+no newresource/trustoverride. Evidence
+STARDUST_IBM_OBSERVED_TERMINAL_MARTINGALE_VERIFICATION.json and
+IBM_OBSERVED_TERMINAL_MARTINGALE_AUDIT.md. Exactreceipt/verifiedPRIVATE main+research
+closurefollowsseparately; precommitrecordclaims no backupclosure. IBM/existing
+indefinitegoal ACTIVE; queueunchanged.

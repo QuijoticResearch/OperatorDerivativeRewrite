@@ -1,3 +1,27 @@
+# Current IBM mathematics — checkpoint1320: genuine terminal-observable martingales
+
+IBM ACTIVE. For EVERY actual JointL2 F, P_R_t F with its canonical scalar
+representative is a FULL actual Martingale under existing explicit IBM germ
+filtration G and original jointMeasure. Strong adaptation, L2 norm<=||F||,
+mean preservation and whole-neighborhood strong L2 right continuity are proved.
+If F belongs to raw past T, every t>=T recovers F exactly in class and scalar AE.
+Actual scenery reflection commutes with invariant-space projections. Taking
+F=actual observed IBM at T gives a centered scenery-odd channel, covariance-zero
+against the even quadratic channel at ANY pair of times. Time-one terminal class
+is nonzero and recovers actual scalar IBM1. See
+IBM_OBSERVED_TERMINAL_MARTINGALE_AUDIT.md.
+
+Initial value is P_R_0 F, NOT proved zero for this channel. The quadratic r0=0
+theorem does not prove G0 trivial or this new initial germ zero; do not infer a
+nonzero terminal-minus-initial innovation yet. Unconditional covariance is NOT
+independence/strong martingale orthogonality. No regular sample paths, bracket
+or stochastic integration for this new channel is asserted. Next initial germ/
+dynamic increment energy or genuine random predictable control/native adjoints.
+Full intrinsic IBM calculus OPEN. Original M/F/Z, F1/F2 correction/K domains,
+queue, immutable archive and all verification/private gates unchanged.
+
+---
+
 # Current IBM mathematics — checkpoint1319: actual deterministic range obstruction
 
 IBM ACTIVE. Actual global scenery-sign involution negates continuous IBM path
