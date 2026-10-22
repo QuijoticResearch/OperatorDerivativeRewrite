@@ -1,3 +1,24 @@
+# Current IBM mathematics — checkpoint1310: actual cofinal stochastic endpoints
+
+IBM ACTIVE. Actual raw IBM past at T equals supremum of pasts at ANY deterministic
+tau_n<=T converging toT, by actual POINTWISE continuous IBM paths. Along monotone
+cofinal grids, conditional projections of EVERY jointL2 class converge strongly
+to its T-past projection. Existing intrinsic martingale M_tau_n -> M_T in strong
+L2, using its already verified martingale identity. Retained bounded actual
+starting-past coefficients now have countable-grid integral EXACTLY equal to
+the original endpoint product a*(M_T-M_tau_0), both L2 and actual a.e identity.
+Read IBM_INTRINSIC_ENDPOINT_CONTINUITY_AUDIT.md. This discharges1309's terminal
+accumulation gap for retained-coefficient cofinal refinements. No right continuity
+or usual completion is assumed. No sample continuity of M is proved.
+OPEN: general changing-integrand grid equivalence, independently defined complete
+continuum predictable domain/energy null relations, bracket/quadratic variation,
+PRP and native derivative-adjoint identification. Full intrinsic IBM calculus
+remains OPEN. Next common refinements of general bounded simple processes using
+actual time-dependent integrand equality and energy, then justified completion.
+Preserve F1/F2 corrections and clock-number smoothing. Queue unchanged.
+
+---
+
 # Current IBM mathematics — checkpoint1309: actual countable-grid integration
 
 IBM ACTIVE. Retaining a bounded actual IBM-past coefficient through ANY finite

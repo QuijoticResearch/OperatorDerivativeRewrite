@@ -29397,3 +29397,41 @@ STARDUST_IBM_COUNTABLE_INTEGRAL_VERIFICATION.json and
 IBM_INTRINSIC_COUNTABLE_INTEGRAL_AUDIT.md. Git/exactreceipt/PRIVATE main+research
 gates follow separately; no precommit backup closure claimed. Existing indefinite
 goal and IBM ACTIVE; queue unchanged.
+
+
+## Checkpoint1310 — actual cofinal IBM past and stochastic endpoint identification
+
+Proved EXACT RAW filtration equality F_T=Sup_n F_tau_n for EVERY deterministic
+sequence tau_n<=T converging toT. Actualpointwise continuous IBM paths makeZ_T
+measurable aspointwiselimit; eachstrictlyearliercoordinate occurs inonepast by
+cofinality. No monotonicity isneededforSIGMAequality; no usualcompletion/right
+continuity/pathhypothesis inserted. Existing increasingHilbertprojection theorem
+and LevyupwardL1 convergence identifiedbyuniquenessinmeasure give STRONGL2
+convergence ofP_tau_n f toP_T f forEVERYjointL2 f onmonotonecofinalgrids.
+ProjectionofalreadyverifiedM_T atanyearlierpastisM_s, so M_tau_n->M_TstrongL2;
+no newclockmomentcontinuity assumption needed.
+
+ActualL2 splitidentity andcoefficientnormbound controlretainedcoefficienttail
+steps. Finiteproducts converge tooriginalterminalproduct. Existingcountable
+energyintegral istherefore EXACTLY a*(M_T-M_tau_0), BOTHHilbertclassandactual
+a.e scalarfunction, forallboundedactualstarting-pastcoefficients. Resolves1309
+terminalaccumulationgap for RETAINEDcoefficientcofinalrefinements. DoesNOTprove
+arbitrarychangingintegrandgridindependence, continuumdomain/energynullrelations,
+Mpathregularity, bracket, PRP ornativeadjointconnection. Nextcommonrefinement
+ofactualboundedtime-simpleprocesses, thencompletionwithallhypothesesproved.
+FullIBMcalculusOPEN; F1/F2corrections/clock-numberK andqueuepreserved.
+
+FourindependentLeanchecks proveexplicitdyadicgrid tau_n=2-(1/2)^n monotone,
+boundedandconvergent; actualrawfiltrationrecoveryat2; nonlinearactualZ2^4
+conditionalstrongL2recovery; M_tau_nstrongL2endpoint; actualsin(Z_tau_0)
+retainedcountablestochasticendpointidentity. Two modules159lines,9publictypes
+andprivatepastprojectioninstanceactuallyreviewed; finaltype log
+83linesreadunabridged. Freshfullroot6258jobs0
+23.225s; COMPLETE39406safeFoundation transitiveaudit0
+34.714s standard3only; independentchecks0
+28.987s. All2087prior sources unchanged exceptroot2imports,
+3configs and113archivepaths/hashes unchanged; no newproofresource/trustoverride.
+Evidence STARDUST_IBM_ENDPOINT_CONTINUITY_VERIFICATION.json and
+IBM_INTRINSIC_ENDPOINT_CONTINUITY_AUDIT.md. Git/exactreceipt/PRIVATE main+research
+gates follow separately; precommit record claims no backupclosure. Existing
+indefinitegoal and IBM ACTIVE, queue unchanged.

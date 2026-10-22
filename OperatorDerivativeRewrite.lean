@@ -1985,3 +1985,5 @@ import Foundation.IBMIntrinsicMartingaleStep
 import Foundation.IBMIntrinsicMartingaleGrid
 import Foundation.IBMIntrinsicMartingaleRefinement
 import Foundation.IBMIntrinsicMartingaleSeries
+import Foundation.IBMCofinalPast
+import Foundation.IBMIntrinsicMartingaleEndpoint
