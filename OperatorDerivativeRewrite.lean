@@ -2103,3 +2103,5 @@ import Foundation.ClosedOperatorGraphDualDerivative
 import Foundation.IBMClockGraphDualLimit
 import Foundation.IBMClockWeakChain
 import Foundation.IBMClockCylinderChain
+import Foundation.IBMIntrinsicGraphDual
+import Foundation.IBMIntrinsicWeakLeibniz

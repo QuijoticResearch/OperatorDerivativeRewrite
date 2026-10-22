@@ -31388,3 +31388,55 @@ and113 manuscript paths/hashes unchanged. No assumption that mollifications
 are observable, that point gradients are ordinary L2, or that spatial H^-1 equals
 Gaussian clock graph dual. Full intrinsic IBM stochastic calculus remains open.
 Private exact-commit receipt/main+research gate pending.
+
+
+## Checkpoint1358 — actual intrinsic graph-dual IBM realization and rough-factor products
+
+# Current IBM mathematics — checkpoint1358: actual intrinsic graph-dual realization and weak products
+
+IBM ACTIVE. Generalized derivative now uses the ORIGINAL full intrinsic
+two-channel jointDerivative and its FULL intrinsic adjoint graph, not merely
+ambient clock tests. Every intrinsic L2 observable has genuine ORIGINAL-domain
+observable approximants, whose embedded gradients converge STRONGLY in graph
+dual norm, error<=value L2 error. For EVERY actual IBM point t>0, ALL such
+ordinary joint-gradient norms tend to infinity; its generalized derivative is
+nonzero and has no original ordinary field representative. Actual full-adjoint
+expectation/integrability and strong-dual time continuity hold. Time0 tested0.
+Original native graph agreement and representation/domain iff retained.
+Ambient source/clock lifted pairs agree on their verified inclusion only.
+
+Weak Leibniz now holds for ANY intrinsic L2 rough factor, including actual
+positive-time IBM, with coefficient in ORIGINAL joint domain, essentially
+bounded and BOTH native gradients essentially bounded. Existing FULL adjoint
+weighted-domain theorem reused. Actual product f*IBM(t) and integrable actual
+two-channel contraction pairing verified. See IBM_INTRINSIC_GRAPH_DUAL_PRODUCT_AUDIT.md.
+
+Approximation is nonconstructive for each fixed input/time, NOT an explicit
+jointly measurable/adapted family. No new nonconstant admissible coefficient
+example or bounded multiplier operator on ENTIRE abstract dual constructed.
+No spatial H^-1 identification, physical-time stochastic integral/Itô/Tanaka
+or universal intrinsic Clark–Ocone. Original domains, positive-point exclusion,
+F1–F3 and earlier exact scopes unchanged. Full IBM remains incomplete.
+Next audit bounded graph-test multiplier realization and actual coefficient
+examples or justified physical-kernel transfer, reusing existing tools.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->blackito->backlog.
+Pseudo frozen1293; no expiration; all verification/private gates intact.
+
+Fresh full root6376jobs/28.015s terminal0;
+complete transitive safe-Foundation41730 declarations/37.469s
+terminal0, only propext/Classical.choice/Quot.sound. All31 unabridged public types,
+11 printed old/new defining bodies,434 audit-log lines and278 complete final
+source/proof lines actually read. Eight independent Lean examples FIRSTPASS0,
+35.373s: actual time1 nonzero/no ordinary field;
+original-domain gradient uniqueness; time0; actual full-adjoint expectation and
+integrability; genuine observable graph approximation plus energy escape;
+rough-point weak Leibniz; actual ambient-pair compatibility; nonlinear two-time
+observable approximation from1357. Exact test source in verification JSON.
+Reused existing intrinsic density, closedness, conditional projection and FULL
+weighted-divergence invariance. Default-heartbeat timeouts repaired by typed
+existential transports, local irreducibility and explicit equality chains;
+no limit increase or hypothesis weakening. All2205 prior source hashes unchanged
+except two root imports;3configs and113 manuscript paths/hashes unchanged.
+The coefficient-class hypotheses and nonconstructive approximation limits remain
+explicit. Physical-time calculus, general dual multipliers and universal
+intrinsic Clark–Ocone remain open. Exact commit/receipt/private gates pending.

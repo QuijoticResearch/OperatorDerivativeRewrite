@@ -1,3 +1,35 @@
+# Current IBM mathematics — checkpoint1358: actual intrinsic graph-dual realization and weak products
+
+IBM ACTIVE. Generalized derivative now uses the ORIGINAL full intrinsic
+two-channel jointDerivative and its FULL intrinsic adjoint graph, not merely
+ambient clock tests. Every intrinsic L2 observable has genuine ORIGINAL-domain
+observable approximants, whose embedded gradients converge STRONGLY in graph
+dual norm, error<=value L2 error. For EVERY actual IBM point t>0, ALL such
+ordinary joint-gradient norms tend to infinity; its generalized derivative is
+nonzero and has no original ordinary field representative. Actual full-adjoint
+expectation/integrability and strong-dual time continuity hold. Time0 tested0.
+Original native graph agreement and representation/domain iff retained.
+Ambient source/clock lifted pairs agree on their verified inclusion only.
+
+Weak Leibniz now holds for ANY intrinsic L2 rough factor, including actual
+positive-time IBM, with coefficient in ORIGINAL joint domain, essentially
+bounded and BOTH native gradients essentially bounded. Existing FULL adjoint
+weighted-domain theorem reused. Actual product f*IBM(t) and integrable actual
+two-channel contraction pairing verified. See IBM_INTRINSIC_GRAPH_DUAL_PRODUCT_AUDIT.md.
+
+Approximation is nonconstructive for each fixed input/time, NOT an explicit
+jointly measurable/adapted family. No new nonconstant admissible coefficient
+example or bounded multiplier operator on ENTIRE abstract dual constructed.
+No spatial H^-1 identification, physical-time stochastic integral/Itô/Tanaka
+or universal intrinsic Clark–Ocone. Original domains, positive-point exclusion,
+F1–F3 and earlier exact scopes unchanged. Full IBM remains incomplete.
+Next audit bounded graph-test multiplier realization and actual coefficient
+examples or justified physical-kernel transfer, reusing existing tools.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->blackito->backlog.
+Pseudo frozen1293; no expiration; all verification/private gates intact.
+
+---
+
 # Current IBM mathematics — checkpoint1357: nonlinear multitime clock-chain dual limits
 
 IBM ACTIVE. For EVERY bounded real C1 phi with bounded continuous derivative,
