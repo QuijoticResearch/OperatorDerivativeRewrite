@@ -1,3 +1,36 @@
+# Current IBM mathematics — checkpoint1351: actual conditional L1 densities in ORIGINAL adjoint
+
+IBM ACTIVE. If genuine qL1 has actual conditional E[q|ALL IBM observations]
+in L2, construct its observable L2class R. If <U,Dv>=E[v*q] for EVERY bounded
+originalDomD test, then (U,R) belongs to ORIGINAL delta.graph. BOTH domain
+membership and exact value proved; original boundedgraphcore extends Hilbert
+pairing to ALL DomD. See IBM_CONDITIONAL_NATIVE_CALCULUS_AUDIT.md.
+
+Actual observation measurability and conditional pull-out/integral identities,
+finite trimmed measure and original adjoint used. NO replacement domain or
+operator. On EVERY rawL2 q, R equals old P_IBM q; observable inputs fixed.
+Boundedg/u originalDomdelta: multiplyg u now ORIGINALDomdelta with value
+E[g*delta(u)-<Dg,u>|IBM], provided ONLY this conditional density L2. Nonlinear
+C2 chain similarly upgrades1350weaklaw using conditional chain-densityL2,
+not RAW energyL2 or gradientL4. Actual clock-potential sine endpoint retains
+EXACT conditional-L2 assumption. Phi itself may be unbounded.
+
+Sufficient condition ONLY, not necessity/iff. No automatic condition for sine
+potential/generalDomL, no strictness example rawq outsideL2 constructed.
+Full-domain extension is HILBERT pairing; raw q*v integrals stay bounded-test
+unless extra integrability. Tests verify actualweighted domain/value, oldL2
+projection agreement, invisible oddclock, NONZERO even-clock target, UNBOUNDED
+affine closure with condition genuinely proved, and conditional sine endpoint.
+
+Source-variable adjoint/domain calculus, NOT physical-time IBM Itô/Tanaka,
+localtime/versions/bracket or universalcausal CO. No Pobs-preserves-DomD,
+initialgermtriviality, raw/germ equality or pointIBM derivative membership.
+FullIBM calculus INCOMPLETE. Preserve1347–1350 and all focusedF1–F3 exactscope.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog;
+no expiration, pseudo frozen1293, all gates unchanged. No campaign transition.
+
+---
+
 # Current IBM mathematics — checkpoint1350: full weak L1 calculus and nonconstant clock potentials
 
 IBM ACTIVE. On ENTIRE ORIGINAL Dom(deltaD), for C2phi with boundedfirst/second

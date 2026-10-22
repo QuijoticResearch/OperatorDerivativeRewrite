@@ -2085,3 +2085,5 @@ import Foundation.IBMNativeGeneratorChain
 import Foundation.IBMNativeWeakL1Divergence
 import Foundation.IBMNativeWeakGeneratorChain
 import Foundation.IBMClockPoissonWeakCalculus
+import Foundation.IBMConditionalL1Realization
+import Foundation.IBMConditionalNativeCalculus

@@ -31114,3 +31114,39 @@ Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog unchanged;
 no expiration, pseudo frozen1293, every audit/private gate intact.
 
 Fresh complete root build: 6356 jobs, 24.553s, terminal0. Complete transitive safe Foundation audit: 41278 declarations, 36.672s, terminal0; only propext/Classical.choice/Quot.sound. All27 unabridged public types, SEVEN complete printed bodies including WeakChainResult and reused ChainResult, and ALL280 final source/proof lines read. Six final independent Lean examples0 (25.874s), empty log. Four preliminary independent sine packagings timed out at default200k; retained ALL FOUR code/log/time sets. Final test verifies FULL universal weak contract plus separate scalar integral expansion, retaining every bounded-test claim; no resource-limit increase and temporary transparency heuristic removed. All2184 previous sources unchanged except three imports; three configs and113 archive paths/hashes unchanged. No resource/trust/toolchain override. This removes energyL2 at weak L1 level on the ENTIRE original generator domain and supplies concrete nonconstant original-domain actual IBM clock potentials. It does NOT prove strongL2 closure without its previous assumptions, a physical-time IBM Ito formula or universal causal reconstruction. Full calculus incomplete; private gate pending exact commit/receipt/sync.
+
+
+## Checkpoint1351 — actual conditional L1 densities realize the original adjoint
+
+# Current IBM mathematics — checkpoint1351: actual conditional L1 densities in ORIGINAL adjoint
+
+IBM ACTIVE. If genuine qL1 has actual conditional E[q|ALL IBM observations]
+in L2, construct its observable L2class R. If <U,Dv>=E[v*q] for EVERY bounded
+originalDomD test, then (U,R) belongs to ORIGINAL delta.graph. BOTH domain
+membership and exact value proved; original boundedgraphcore extends Hilbert
+pairing to ALL DomD. See IBM_CONDITIONAL_NATIVE_CALCULUS_AUDIT.md.
+
+Actual observation measurability and conditional pull-out/integral identities,
+finite trimmed measure and original adjoint used. NO replacement domain or
+operator. On EVERY rawL2 q, R equals old P_IBM q; observable inputs fixed.
+Boundedg/u originalDomdelta: multiplyg u now ORIGINALDomdelta with value
+E[g*delta(u)-<Dg,u>|IBM], provided ONLY this conditional density L2. Nonlinear
+C2 chain similarly upgrades1350weaklaw using conditional chain-densityL2,
+not RAW energyL2 or gradientL4. Actual clock-potential sine endpoint retains
+EXACT conditional-L2 assumption. Phi itself may be unbounded.
+
+Sufficient condition ONLY, not necessity/iff. No automatic condition for sine
+potential/generalDomL, no strictness example rawq outsideL2 constructed.
+Full-domain extension is HILBERT pairing; raw q*v integrals stay bounded-test
+unless extra integrability. Tests verify actualweighted domain/value, oldL2
+projection agreement, invisible oddclock, NONZERO even-clock target, UNBOUNDED
+affine closure with condition genuinely proved, and conditional sine endpoint.
+
+Source-variable adjoint/domain calculus, NOT physical-time IBM Itô/Tanaka,
+localtime/versions/bracket or universalcausal CO. No Pobs-preserves-DomD,
+initialgermtriviality, raw/germ equality or pointIBM derivative membership.
+FullIBM calculus INCOMPLETE. Preserve1347–1350 and all focusedF1–F3 exactscope.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog;
+no expiration, pseudo frozen1293, all gates unchanged. No campaign transition.
+
+Fresh complete root build: 6358 jobs, 25.999s, terminal0. Complete transitive safe Foundation audit: 41314 declarations, 38.365s, terminal0; only propext/Classical.choice/Quot.sound. All16 unabridged public types, SIX complete printed bodies (conditional/realization/bounded pairing and reused full weak contract/densities) and ALL162 final source/proof lines read. Six final independent Lean examples0 (26.832s), empty log. First affine test needed explicit AE density=2*y; retained code/log/time, repaired scratch only. All2187 previous sources unchanged except two imports; three configs and113 archive paths/hashes unchanged. No resource/trust/toolchain override. Actual conditional object, original closed bounded graph core and adjoint construct graph, not merely postulated dual representer. Sufficient conditional-L2 hypothesis retained; necessity, automatic sine regularity and strictness example remain open. Full Hilbert pairing extends to unbounded DomD, NOT raw integral without additional integrability. Source operator closure is not physical-time IBM calculus. Private gate pending exact commit/receipt/sync.
