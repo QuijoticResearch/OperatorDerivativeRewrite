@@ -1,3 +1,29 @@
+# Current IBM mathematics — checkpoint1319: actual deterministic range obstruction
+
+IBM ACTIVE. Actual global scenery-sign involution negates continuous IBM path
+on ONE common full-measure event. Raw IBM L2 pasts are invariant SUBSPACES,
+not pointwise fixed. Projection uniqueness shows original quadratic-clock
+optional M and right germ r are even. ALL full time-L2 deterministic integrals
+are even by actual strong dictionary limits. Actual observed Z_t is odd, centered
+and in its raw past, hence orthogonal to EVERY deterministic integral, with
+A Z_t=0, reconstruction=0, residual=Z_t. Z_1 nonzero by existing strict negative
+actual increment pairing. No deterministic full TimeL2 integrand represents actual
+scalar IBM at1 AE; exact ||Z_t-I f||^2=||Z_t||^2+||f||^2.
+Read IBM_DETERMINISTIC_RANGE_OBSTRUCTION_AUDIT.md.
+
+This refutes deterministic single-quadratic-channel representation of all
+centered IBM observables, NOT random predictable/full multichannel Clark–Ocone.
+Random coefficients need not be scenery-even. Next construct/identify a genuine
+odd-scenery intrinsic martingale channel or actual random predictable domain
+with correct weighted increment energies; existing right-germ projections and
+actual IBM terminal observables offer a direct route, with hypotheses to prove.
+Full native calculus, regular versions/bracket and actual IBM Itô remain OPEN.
+Original M/F/Z unchanged; positive-time r=M still iff unresolved zero jump.
+All F1/F2 correction/K domains, queue, archive and verification/private gates
+preserved. Existing indefinite goal and IBM campaign ACTIVE.
+
+---
+
 # Current IBM mathematics — checkpoint1318: actual covariance adjoint and residual
 
 IBM ACTIVE. Full deterministic integral I has actual bounded Hilbert adjoint

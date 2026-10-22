@@ -2002,3 +2002,5 @@ import Foundation.IBMRightGermIntegralCompletion
 import Foundation.IBMRightGermIntervalDensity
 import Foundation.IBMRightGermFullDeterministicIntegral
 import Foundation.IBMRightGermCovarianceAdjoint
+import Foundation.IBMScenerySignSymmetry
+import Foundation.IBMDeterministicRangeObstruction

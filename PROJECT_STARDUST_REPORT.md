@@ -29750,3 +29750,46 @@ STARDUST_IBM_COVARIANCE_ADJOINT_VERIFICATION.json and IBM_COVARIANCE_ADJOINT_AUD
 Exact Git receipt/verified PRIVATE main+research backup follows separately;
 precommit record claims no backupclosure. IBM/existing indefinite goal ACTIVE;
 queue unchanged.
+
+
+## Checkpoint1319 — actual centered IBM variable outside deterministic integral range
+
+Proved actual GLOBALscenery reflection: simultaneouscontinuousREALscenerypath
+negation from first-chaos coordinate reflection and denseSeq/continuity; actual
+jointproduct involution preserveslaw and negates IBM path at ALLtimes on ONE
+commonAEevent. Its actual L2 action is self-adjoint isometric involution.
+Raw IBM pasts invariant as SUBSPACES via actual past-factorization g(path)->g(-path),
+not everypastvariablefixed. Hilbertprojection uniqueness then fixes optional
+quadratic-clock M; futurepastintersection invariance fixes actual right germr.
+Full deterministic integrals fixed via genuine finite dictionary approximation
+and STRONG L2 continuity, not justfinite-scale parity.
+
+Actual observed Z_t has scalar IBM AE realization andrawpastmembership, isodd
+and centered. Isometry parity implies orthogonality to ALL full time-L2
+deterministic integrals, A Z_t=0, reconstruction0, residualZ_t=Z_t. At1 nonzero
+byreused verified strictnegative actualincrementpairing1/2. Thus nof in ALL
+deterministicTimeL2 represents ACTUAL scalarIBM1 AE. Exact quantitativeerror
+||Z_t-I f||²=||Z_t||²+||f||². This is an ACTUAL centeredobservable, not latent
+clockoddvariable outsideIBMobservations. Past-spacepointwiseinvariance is
+explicitlyrefuted bysamevariable, protecting projectionhypotheses.
+
+ThisdoesNOTexclude randompredictableintegrals orfullClarkOcone/otherchannels:
+randomcoefficients neednotbefixed bysceneryreflection. Next genuineodd-scenery
+intrinsic martingalechannel fromactualterminalobservations/rightgermprojections,
+oractualrandompredictablecontrol withweightedenergies; proveadaptation/parity/
+terminalrecovery andallprocesshypotheses. Nativeadjointidentification/fullIBM
+Itô/regularversions/bracket remainOPEN. OriginalM/F/Zunchanged, r=Mpositive-time
+iffunprovedzerojump. F1/F2corrections/Kdomains andallcampaigngatespreserved.
+
+Two modules245lines/all32publictypes andcompleteproofsactuallyreviewed. Four
+independentLeanchecks: actual centerednonzero pastobservable/zeroadjoint;
+fullTimeL2 actualscalar nonrepresentation; quantitativeerror+orthogonality;
+invariantpastsubspace withnonfixedactualpastmember. Fresh root6275jobs0
+24.816s; COMPLETE39689safeFoundation transitiveaudit0
+35.713s standard3only; independent0 25.302s.
+Sequentialstage timestampsverified. All2104prior sources unchanged exceptroot2
+imports,3configs/113archivepaths+hashes preserved; no newresource/trustoverride.
+Evidence STARDUST_IBM_DETERMINISTIC_RANGE_OBSTRUCTION_VERIFICATION.json and
+IBM_DETERMINISTIC_RANGE_OBSTRUCTION_AUDIT.md. Exactreceipt/verifiedPRIVATE main+
+research backupclosesseparately; precommitrecordclaims no backupclosure.
+IBM/existingindefinitegoal ACTIVE, queueunchanged.
