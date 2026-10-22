@@ -1,3 +1,30 @@
+# Current IBM mathematics — checkpoint1328: actual initial-germ localization inputs
+
+IBM ACTIVE. Whole ACTUAL positive Brownian scenery past predicts W_r by
+W_min(r,delta), with exact L2 energy min(r,delta). Constructed genuine clipped
+IBM W(min(abs(Y_t),delta)), continuous at every sample, jointly measurable,
+and identified with actual joint L2 forecast of norm <=sqrt(delta). This
+forecast tends strongly to zero as delta tends to zero. Conditional forecast
+sections hold with clock fixed; they are NOT conditional on raw IBM past.
+ANY measurable full clipped-past functional is spatial-past measurable.
+
+On one clock-zero/continuous-path event, ANY horizons tending to zero give
+eventual simultaneous clipped/original agreement at ALL early times. Arbitrary
+n-dependent full-past functionals sharing a fixed original realization then
+converge to it almost surely after clipping. This does NOT yet prove their
+strong L2 convergence or the odd initial germ vanishes.
+
+Next: bounded germ factorization/clamping, justified L2 or dominated pairing
+limits, actual product Fubini/conditional forecast pairing, then bounded-test
+characterization of initial observed-terminal projection. All remain OPEN.
+Read IBM_INITIAL_GERM_LOCALIZATION_AUDIT.md. Raw/germ equality at positive
+times, joint predictable extension, continuum domain/closure, regular versions,
+bracket, intrinsic adjoints/full Clark–Ocone/actual IBM Itô remain OPEN.
+Original M/F/Z, F1/F2 domains, campaign order and all verification/private gates
+unchanged. No full intrinsic IBM calculus completion is claimed.
+
+---
+
 # Current IBM mathematics — checkpoint1327: localized measures and exact raw gate
 
 IBM ACTIVE. EVERY terminal F has a constructed globally FINITE actual

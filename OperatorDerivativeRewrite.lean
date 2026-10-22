@@ -2018,3 +2018,6 @@ import Foundation.IBMGridDifferenceControl
 import Foundation.IBMTerminalEnergyMeasure
 import Foundation.IBMWeightedTerminalEnergy
 import Foundation.IBMRawEnergyMeasureObstruction
+import Foundation.IBMSpatialSceneryForecast
+import Foundation.IBMClippedSceneryForecast
+import Foundation.IBMClockGermLocalization

@@ -30139,3 +30139,45 @@ STARDUST_IBM_LOCALIZED_ENERGY_MEASURE_VERIFICATION.json and
 IBM_LOCALIZED_ENERGY_MEASURE_AUDIT.md. Exactreceipt/PRIVATE main+research follows
 separately; precommit evidence claims no backup closure. IBM/existing
 indefinitegoal ACTIVE, queue unchanged, manuscriptsimmutable/unstaged.
+
+
+## Checkpoint1328 — actual scenery forecast and shrinking-past germ localization
+
+Reused actual positive Brownian scenery W and the actual IBM W(abs(Y_t));
+proved entire scenery-past conditional forecast W_min(r,delta), its Gaussian
+L2 projection and exact energy min(r,delta). Built genuine clipped IBM
+W(min(abs(Y_t),delta)), all-sample continuous, jointly measurable and L2.
+Actual joint forecast class has norm <=sqrt(delta) and strongly tends tozero
+as radius tends tozero. Actual per-clock conditional sections proved; not
+raw IBM conditional law. Every measurable functional of the ENTIRE clipped
+past is spatial-past measurable with clock fixed, without cylinder restriction.
+
+Clock starts0 on one AE joint event. Continuity yields simultaneous all-times
+agreement of clipped and original IBM throughout sufficiently early intervals
+along ANY horizon sequence tending0. Arbitrary n-dependent full-past maps
+sharing a fixed original realization then approximate it AE pointwise after
+clipping. Only countable intersections used. No L2 limit inferred from AE alone.
+
+Odd initial G0(observed T)=0 remains OPEN: need bounded germ-factor maps and
+clamping, dominated/L2 convergence, actual product Fubini conditional pairing,
+and dense bounded-test/indicator CE argument. No full germ triviality, positive-
+time raw/G equality, predictable joint measure extension, continuum closure,
+regular bracket/version or full intrinsic IBM calculus asserted. Exact1327
+raw-measure gate retained. Existing M/F/Z, F1/F2 domains and queue preserved.
+
+Three modules303lines and all38 actual public types/full proofs read.
+Four independent checks: exact actual scenery prediction/energy; random-clock
+strong forecast limit and conditional sections; simultaneous early-path
+agreement; arbitrary measurable whole-past spatial measurability and conditional
+AE approximation. Two independent passes failed only on test NNReal/Real
+rewrite inference; explicit typed prediction_energy and norm_num coercion normalization repaired the test,
+with no source change. Both failed logs/timings preserved. Final test log empty.
+Fullroot6292jobs0 24.365s; COMPLETE39953safeFoundation
+transitiveaudit0 34.878s standard3only; independent0
+25.112s. Stages sequential. All2120 prior
+sources unchangedexceptroot3imports,3configs/113archivepaths+hashes preserved,
+no new resource/trust override. Evidence
+STARDUST_IBM_INITIAL_GERM_LOCALIZATION_VERIFICATION.json and
+IBM_INITIAL_GERM_LOCALIZATION_AUDIT.md. Exactreceipt/PRIVATE main+research follows
+separately; precommit evidence claims no backup closure. IBM/indefinitegoal
+ACTIVE, archive immutable/unstaged, unrelated drafts preserved.
