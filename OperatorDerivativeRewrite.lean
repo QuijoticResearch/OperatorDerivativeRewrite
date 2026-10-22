@@ -1954,3 +1954,5 @@ import Foundation.HigherHeatCompletedSignedApproximation
 import Foundation.HigherHeatMultichannelSharpness
 import Foundation.HigherHeatSignedDiagonalRealization
 import Foundation.EnergySeedDensityObstruction
+import Foundation.ObservableProjectedDivergenceCore
+import Foundation.IBMIntrinsicDivergenceClosure

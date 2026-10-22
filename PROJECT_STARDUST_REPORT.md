@@ -28984,3 +28984,43 @@ standard3 audit and actual public-type/proof review under permanent docs-only
 input-identity rule. Existing results/source remain intact; no new declarations.
 Unrelated drafts preserved. Commit, exact receipt and verified private main/
 research sync follow; precommit records do not establish successful backup.
+
+
+## Checkpoint1299 — FULL actual intrinsic IBM divergence graph closure
+
+Returned to active intrinsic IBM after the user-directed queue updates. Reused
+closed/dense actual source/clock operators, joint intrinsic graph/density,
+conditional projection, projected-divergence inclusion and Hilbert bidual
+machinery. No duplicate process/measure construction or mathematical axiom.
+ObservableProjectedDivergenceCore proves (P_V A*)*=A|V for closed dense A;
+with independent restriction density, closure(P_V A*)=(A|V)*. Generic paired
+assembly and actual strong graph-sequence extraction support the IBM instance.
+
+IBMIntrinsicDivergenceClosure proves S*=D and closure(S)=D* for ACTUAL IBM,
+S(a,b)=P_V(A*a+B*b), Dom(S)=Dom(A*)xDom(B*). full_graph_approximation covers
+EVERY natural intrinsic divergence integrand, with joint field L2 convergence
+AND strong intrinsic observable L2 convergence of projected sums.
+strong_graph_limit gives the converse domain/value identification. Neither
+unclosed-domain equality nor separate/unprojected divergence convergence is
+assumed. Approximants are genuine ambient-domain elements but not claimed
+explicit, polynomial or predictable. Thus the full divergence graph gap is
+discharged; general adapted integration/CO, intrinsic chain/product and full
+unmollified IBM Ito calculus remain open. Preserve original F1/F2 topologies.
+
+Two modules284lines,14publics; all final source/helper lines and types actually
+reviewed unabridged (148type-log lines, proof arguments visible).
+Fresh fullroot6227jobs0 46.898s; COMPLETE
+38940safeFoundation transitive audit standard3only0 34.563s.
+Six independent Lean ordered-channel/sign/cancellation/inner-normalization
+regressions0 24.661s. Exact rational495projected
+pairings,7growth/cancellation truncations,21tail bounds passed; finite tests
+are not substituted for the Lean proof of infinite-dimensional IBM closure.
+IBM_INTRINSIC_DIVERGENCE_CLOSURE_AUDIT.md records the exact argument and next
+explicit/predictable-core target. Verification JSON embeds reproducible tests.
+
+Prior2056Foundation/root sources unchanged exceptroot twoimports; all113archive
+paths/hashes unchanged;3configs/pinnedtoolchain unchanged. Two local proof
+elaboration budgets800000 only, no global build/audit setting change. Research
+archive/drafts/caches intact. Existing IBM ACTIVE/queued campaign order retained.
+Commit/receipt/private main+research verification follow; no precommit record
+claims backup closure. The indefinite goal remains ACTIVE, not completed.

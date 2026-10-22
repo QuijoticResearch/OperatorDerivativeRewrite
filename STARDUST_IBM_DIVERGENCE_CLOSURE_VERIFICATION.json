@@ -1,0 +1,112 @@
+{
+  "checkpoint": 1299,
+  "time_utc": "2026-10-22T00:38:59.931337+00:00",
+  "campaign": "Actual intrinsic IBM calculus; full divergence graph-closure identification",
+  "baseline_commit": "3ab814fe9e0a6efdc09889502ad61efe3cb744d7",
+  "source_count": 2058,
+  "prior_count": 2056,
+  "new_public_names": {
+    "ObservableProjectedDivergenceCore": [
+      "pairedOperator",
+      "graph_closure_sequence",
+      "projected_adjoint_eq_restriction",
+      "projected_closure_eq_adjoint"
+    ],
+    "IBMIntrinsicDivergenceClosure": [
+      "ambientPairOperator",
+      "pair_mem",
+      "pair_value",
+      "ambientPairOperator_dense",
+      "ambientPairOperator_formal",
+      "ambientPairOperator_adjoint",
+      "ambientPairOperator_closable",
+      "full_intrinsic_divergence_closure",
+      "full_graph_approximation",
+      "strong_graph_limit"
+    ]
+  },
+  "new_public_count": 14,
+  "source_lines_reviewed": {
+    "ObservableProjectedDivergenceCore": 106,
+    "IBMIntrinsicDivergenceClosure": 178
+  },
+  "complete_final_source_and_helper_lines_reviewed": 284,
+  "public_types_actually_read_unabridged": true,
+  "proof_arguments_visible": true,
+  "type_log_lines": 148,
+  "full_root_build_jobs": 6227,
+  "complete_transitive_safe_Foundation_declarations": 38940,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "terminal_results": {
+    "full-build": {
+      "stage": "full-build",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "build"
+      ],
+      "wall_seconds": 46.89839399998891,
+      "exit_code": 0,
+      "time_utc": "2026-10-22T00:36:07.430224+00:00"
+    },
+    "audit": {
+      "stage": "audit",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1299-audit.lean"
+      ],
+      "wall_seconds": 34.56285710001248,
+      "exit_code": 0,
+      "time_utc": "2026-10-22T00:36:46.187810+00:00"
+    },
+    "independent": {
+      "stage": "independent",
+      "command": [
+        "C:/Users/ramir/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lake.exe",
+        "env",
+        "lean",
+        ".lake/stardust-1299-independent.lean"
+      ],
+      "wall_seconds": 24.660985399998026,
+      "exit_code": 0,
+      "time_utc": "2026-10-22T00:38:06.751525+00:00"
+    }
+  },
+  "prior_sources_unchanged_except_root_two_imports": true,
+  "configuration_unchanged": true,
+  "local_elaboration_budgets": "800000 heartbeats, scoped to two actual IBM proofs only; no system/compiler/audit resource setting changed",
+  "new_source_sha256": {
+    "ObservableProjectedDivergenceCore": "6D0FD174418FB437990D987D333F5D280F5676467A7C424A7C0BADEAD88F36C7",
+    "IBMIntrinsicDivergenceClosure": "AB8C59D9B3446241CE81CF58AF2D87467C9C1155F4A0F8DCB59BE347BA98FAC7"
+  },
+  "full_build_log_sha256": "529C3A57C26D15A4927DEC93FA6037FE6546CD522D2CB273DE4A2C2A18FAABA4",
+  "audit_log_sha256": "B52A3589842BBBE47838BE8348CD498FDC60B648B482F585E80A91812EE3FEAC",
+  "independent_Lean_examples": 6,
+  "Lean_test_code": "import Foundation.IBMIntrinsicDivergenceClosure\nopen OperatorDerivativeRewrite.Foundation.ObservableProjectedDivergenceCore\nopen scoped Topology\nnoncomputable section\n\nprivate def P : ℝ →ₗ.[ℝ] ℝ := (ContinuousLinearMap.id ℝ ℝ).toPMap ⊤\nprivate def Q : ℝ →ₗ.[ℝ] ℝ := ((3 : ℝ) • ContinuousLinearMap.id ℝ ℝ).toPMap ⊤\n\nexample : pairedOperator P Q ⟨WithLp.toLp 2 ![2, -1], by trivial⟩ = -1 := by\n  change (2 : ℝ) + 3 * (-1) = -1\n  norm_num\nexample : pairedOperator P Q ⟨WithLp.toLp 2 ![-6, 2], by trivial⟩ = 0 := by\n  change (-6 : ℝ) + 3 * 2 = 0\n  norm_num\nexample : pairedOperator Q P ⟨WithLp.toLp 2 ![2, -1], by trivial⟩ = 5 := by\n  change (3 : ℝ) * 2 + (-1) = 5\n  norm_num\nexample (a b : ℝ) :\n    pairedOperator P Q ⟨WithLp.toLp 2 ![a, b], by trivial⟩ = a + 3*b := by\n  rfl\nexample (a b c : ℝ) :\n    inner ℝ (WithLp.toLp 2 ![a, b] : EuclideanSpace ℝ (Fin 2))\n      (WithLp.toLp 2 ![c, 3*c]) = (a+3*b)*c := by\n  simp [PiLp.inner_apply, Fin.sum_univ_two]\n  ring\nexample (a c : ℝ) :\n    inner ℝ (WithLp.toLp 2 ![a, -a] : EuclideanSpace ℝ (Fin 2))\n      (WithLp.toLp 2 ![c, c]) = 0 := by\n  simp [PiLp.inner_apply, Fin.sum_univ_two]\n",
+  "exact_test_code": "from fractions import Fraction as F\nfrom pathlib import Path\nimport json\ndot=lambda u,v:sum((x*y for x,y in zip(u,v)),F(0))\nprojection_pairings=0\nfor n in range(2,17):\n w=[F(i+1) for i in range(n)]\n for seed in range(-5,6):\n  a=[F((i+seed)%7-3,3) for i in range(n)]\n  b=[F((2*i-seed)%9-4,4) for i in range(n)]\n  da=[F(i+1)*x for i,x in enumerate(a)]\n  db=[F(2*i-1)*x for i,x in enumerate(b)]\n  value=[x+y for x,y in zip(da,db)]\n  projected=[dot(value,w)/dot(w,w)*x for x in w]\n  for c in [F(-2),F(0),F(3,2)]:\n   f=[c*x for x in w]\n   df1=[F(i+1)*x for i,x in enumerate(f)]\n   df2=[F(2*i-1)*x for i,x in enumerate(f)]\n   assert dot(projected,f)==dot(a,df1)+dot(b,df2)\n   projection_pairings+=1\ntail_checks=cancellations=0\nfor n in [1,2,4,8,16,32,64]:\n a=[F(1,j) for j in range(1,n+1)]\n d=[F(j)*x for j,x in enumerate(a,1)]\n assert dot(a,a)<=2 and dot(d,d)==n and d[0]==1\n assert [x-y for x,y in zip(d,d)]==[F(0)]*n\n cancellations+=1\n for m in [n+1,2*n,4*n]:\n  tail=sum((F(1,j*j) for j in range(n+1,m+1)),F(0))\n  assert tail<=F(1,n)-F(1,m)\n  tail_checks+=1\nv=dict(passed=True,projected_pairing_cases=projection_pairings,unprojected_divergence_growth_and_cancellation_cases=cancellations,exact_tail_checks=tail_checks,arithmetic='fractions.Fraction exact; finite truncation checks, not an independent proof of IBM graph density')\nPath('.lake/stardust-1299-exact-tests.json').write_text(json.dumps(v,indent=2)+'\\n')\nprint(v)\n",
+  "exact_test_results": {
+    "passed": true,
+    "projected_pairing_cases": 495,
+    "unprojected_divergence_growth_and_cancellation_cases": 7,
+    "exact_tail_checks": 21,
+    "arithmetic": "fractions.Fraction exact; finite truncation checks, not an independent proof of IBM graph density"
+  },
+  "manuscript_count": 113,
+  "all_manuscript_paths_and_hashes_unchanged": true,
+  "inventory": "STARDUST_RESEARCH_SOURCE_INVENTORY_1292.json",
+  "theorem_contract": "For actual IBM intrinsic D, full natural divergence D* equals graph closure of S(a,b)=conditional projection of actual source/clock divergences on Dom(A*)xDom(B*); S*=D. Every intrinsic graph point is a strong two-channel field / intrinsic observable L2 sequence limit, with converse.",
+  "full_intrinsic_divergence_graph_closure_proved": true,
+  "full_domain_graph_sequence_characterization_proved": true,
+  "unclosed_ambient_intrinsic_domain_equality_claimed": false,
+  "separate_unprojected_divergence_convergence_claimed": false,
+  "explicit_polynomial_graph_approximation_claimed": false,
+  "adapted_or_predictable_approximation_claimed": false,
+  "full_intrinsic_IBM_calculus_complete": false,
+  "queue_unchanged": true,
+  "private_backup_status": "PENDING exact-commit receipt then verified private main/research sync; precommit record is not backup closure"
+}

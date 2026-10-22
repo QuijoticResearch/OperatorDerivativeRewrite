@@ -1,3 +1,19 @@
+# Current IBM mathematics — checkpoint1299: full intrinsic divergence closure
+
+IBM remains ACTIVE; the authoritative sequential queue is unchanged. The full
+natural joint intrinsic divergence now equals the graph closure of the actual
+projected source/clock divergence sum. EVERY intrinsic integrand has a genuine
+ambient-pair approximating sequence in strong joint field L2 and projected-sum
+observable L2, with the converse closure theorem. Read
+`IBM_INTRINSIC_DIVERGENCE_CLOSURE_AUDIT.md` for exact domains and limitations.
+This resolves the graph-completion identification, not unclosed-domain equality,
+predictability, an explicit cylinder algorithm or the full IBM calculus.
+Next audit existing polynomial/step graph cores for actual intrinsic adapted
+approximation. Preserve F1–F3 topologies, all verification/private gates and
+every queued campaign; do not transition early. October31 review-only/no expiry.
+
+---
+
 # Current directive — IBM active; Bakry–Émery / fBM queued afterward
 
 October 21 user amendment: finish the current intrinsic calculus for ACTUAL IBM
