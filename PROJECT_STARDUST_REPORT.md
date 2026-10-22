@@ -29912,3 +29912,45 @@ STARDUST_IBM_TERMINAL_PREDICTABLE_INTEGRAL_VERIFICATION.json and
 IBM_TERMINAL_PREDICTABLE_INTEGRAL_AUDIT.md. Exactreceipt/PRIVATE main+research
 closurefollowsseparately; precommitrecordclaims no backupclosure. IBM/existing
 indefinitegoalACTIVE, queueunchanged.
+
+
+## Checkpoint1323 — actual countable random integration across terminal IBM channels
+
+For every fixed actual JointL2 F, raw prediction martingale N^F and bounded
+full raw-past random coefficients, proved uniform finite stochastic energy
+<= C^2 ||F||_2^2 on ANY monotone deterministic grid, without a bounded time
+horizon. Compared actual weighted increments to unit increments, used existing
+orthogonality/energy, telescoping and projection contraction. Genuine actual
+weighted energies are summable; no independence or Brownian variance inserted.
+
+Reused existing generic IBMIntrinsicMartingaleSeries.incrementSpace and its
+orthogonal family. Integral API requires monotonicity and actual norm-square
+summability, proved automatically for uniformly bounded coefficients. Strong
+actual L2 limit, exact infinite energy, terminal-past membership on bounded
+grids, projection closure and actual scalar conditional-expectation closure
+are proved. Cofinal unit integration is N^F_T-N^F_tau0 via the existing
+IBMCofinalPast theorem. Centered raw-past-T F and zero grid start give F,
+including actual scalar IBM1 using verified RAW origin projection. This
+terminal-dependent integrator is NOT universal Clark–Ocone or integration
+against the nonmartingale IBM coordinate. No zero right germ is presumed.
+
+Actual random-process common refinement/presentation consistency, continuum
+predictable domain/control, bracket/regular versions, intrinsic derivatives
+and adjoints, full Clark–Ocone and actual unsmoothed IBM Itô remain OPEN.
+Fixed-grid strong closure is not formal image-norm completion misrepresented
+as an actual continuum process domain. Original M/F/Z and F1/F2 correction/K
+domains remain. Next investigate actual presentation consistency and control.
+
+Both modules228lines/all20publictypes andcompleteproofs actually reviewed.
+Four independent Lean checks: observed-sine random coefficient summability
+on arbitrary grids; actual scalar conditional-expectation closure; actual
+cofinal IBM1 recovery; concrete unbounded integer grid energy. Full root
+6282jobs0 22.853s; COMPLETE39794safeFoundation
+transitive audit0 34.158s, standard3only; independent0
+24.766s. All stages sequential. All2111 prior
+sources unchanged exceptroot2imports, all3configs/113archivepaths+hashes
+preserved, no newresource/trust overrides. Evidence
+STARDUST_IBM_TERMINAL_PREDICTABLE_SERIES_VERIFICATION.json and
+IBM_TERMINAL_PREDICTABLE_SERIES_AUDIT.md. Precommit record does not claim
+private closure: exactreceipt and verified PRIVATE main/research follow.
+IBM/existing indefinitegoal ACTIVE, campaignqueue unchanged, archiveimmutable.

@@ -2009,3 +2009,5 @@ import Foundation.IBMRawInitialPast
 import Foundation.IBMRawObservedMartingale
 import Foundation.IBMTerminalPredictableStep
 import Foundation.IBMTerminalPredictableGrid
+import Foundation.IBMTerminalIntegralEnergy
+import Foundation.IBMTerminalPredictableSeries

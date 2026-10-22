@@ -1,3 +1,27 @@
+# Current IBM mathematics — checkpoint1323: actual countable terminal integration
+
+IBM ACTIVE. For every actual JointL2 terminal F, bounded full raw-past random
+coefficients on ANY monotone grid satisfy uniform stochastic energy
+||sum||_2^2 <= C^2 ||F||_2^2, without a bounded time horizon. Existing GENERIC
+orthogonal increment spaces are reused for genuine strong-L2 countable sums,
+exact infinite actual energy and actual scalar conditional-expectation closure.
+Integral API requires monotonicity and summable actual energy; bounded
+coefficients discharge the latter. Cofinal unit integration equals
+rawClass F T - rawClass F tau0. Centered raw-past-T terminal F and tau0=0 give
+F itself, including actual scalar IBM1, using proved RAW initial projection.
+Read IBM_TERMINAL_PREDICTABLE_SERIES_AUDIT.md.
+
+The integrator N^F DEPENDS on the terminal observable. This is not a universal
+Clark–Ocone theorem, native derivative identification, or integration against
+the nonmartingale IBM coordinate Z. Fixed-grid countable closure is not
+arbitrary process-presentation consistency or continuum predictable completion.
+Next actual common-refinement/time-process consistency and domain/control;
+random bracket, regular versions, intrinsic adjoints/full Clark–Ocone and
+actual unsmoothed IBM Itô remain OPEN. Raw/right-germ initial distinction stays.
+Original M/F/Z, F1/F2 corrections/K domains, all queue/private gates unchanged.
+
+---
+
 # Current IBM mathematics — checkpoint1322: actual random predictable terminal integration
 
 IBM ACTIVE. EVERY actual JointL2 terminal F now has actual bounded random
