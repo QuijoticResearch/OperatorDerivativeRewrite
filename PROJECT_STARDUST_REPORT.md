@@ -29715,3 +29715,38 @@ andhashes preserved; no new resource/trust override. Evidence
 STARDUST_IBM_FULL_TIME_L2_INTEGRAL_VERIFICATION.json and IBM_FULL_TIME_L2_INTEGRAL_AUDIT.md.
 Exact receipt/PRIVATE main+research backup closure follows separately; precommit
 record claims no backup closure. IBM/existing indefinite goal ACTIVE; queue unchanged.
+
+
+## Checkpoint1318 — actual deterministic integral covariance adjoint and residual
+
+Instantiated existing Hilbert adjoint machinery on actual full time-L2 stochastic
+integral I. Actual A=I* is bounded JointL2->TimeL2. For EVERY actual JointL2 F,
+integral_(s,t] A(F) d actualenergy = actual scalar integral F*(r_t-r_s) djointlaw.
+Proof uses actual interval indicator/increment identity, L2 set-integral duality,
+actual Lp representative subtraction and inner-product integral. A(I f)=f for
+EVERY full time-L2 f; A(actualincrement)=actualintervalindicator. No formal law
+or smooth-cylinder domain substitution. Reconstruction I A idempotent, residual
+orthogonal to all actual deterministic integrals, exact energy decomposition
+and adjoint norm contraction. Reconstruction=F exactly iff F is in ACTUAL rangeI,
+equivalently residual zero; no range surjectivity or discarded error term.
+
+Native Malliavin derivative/causal identification, random predictable control
+and domain, full Clark–Ocone, regular versions/bracket and actual unsmoothed
+IBM Itô remain open. Candidate scenery-reflection test for centered actual
+observable outside deterministic range needs actual symmetry/filtration/CE
+equivariance proofs; not claimed. Even such an obstruction would not exclude
+random predictable reconstruction. Original M/F/Z unchanged; positive-time r=M
+still iff unproved zero jump. Keep F1/F2 corrections/K-domain hypotheses.
+
+Module81lines/all13public types and complete proofs actually reviewed. Four
+independent Lean checks: actualincrement interval density; arbitrary actual
+scalar interval covariance; full time-L2 exact recovery; arbitrary-input residual
+orthogonality/energy with exact range condition. Fresh root 6273jobs0 27.052s;
+COMPLETE 39653safeFoundation transitive audit0 35.674s,
+standard3only; independent0 24.884s. Sequential
+stage timestamps verified. All2103prior sources unchanged except root1import,
+3configs/113archivepaths+hashes preserved; no newresource/trust override. Evidence
+STARDUST_IBM_COVARIANCE_ADJOINT_VERIFICATION.json and IBM_COVARIANCE_ADJOINT_AUDIT.md.
+Exact Git receipt/verified PRIVATE main+research backup follows separately;
+precommit record claims no backupclosure. IBM/existing indefinite goal ACTIVE;
+queue unchanged.

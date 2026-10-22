@@ -1,3 +1,25 @@
+# Current IBM mathematics — checkpoint1318: actual covariance adjoint and residual
+
+IBM ACTIVE. Full deterministic integral I has actual bounded Hilbert adjoint
+A:JointL2->TimeL2 with interval identity integral_(s,t] A(F) dnu = actual
+integral F*(rightValue_t-rightValue_s) d jointMeasure, for ALL JointL2 F.
+A(I f)=f on ALL timeL2; A(actual increment)=actual interval indicator.
+Reconstruction I A idempotent, residual orthogonal to EVERY actual deterministic
+integral; exact ||F||^2=||A F||^2+||residual F||^2 and ||A F||<=||F||.
+Reconstruction equals F IFF actual integral range membership/residual zero.
+See IBM_COVARIANCE_ADJOINT_AUDIT.md. No residual is silently discarded.
+
+This is an actual covariance-density adjoint, not yet identified with the native
+Malliavin derivative or full Clark–Ocone. Deterministic range not assumed all
+IBM observables. Random predictable control/domain, native adjoint connection,
+regular versions/bracket and unsmoothed actual IBM Itô remain OPEN. Scenery-
+sign symmetry is a candidate range-obstruction test, not a proved counterexample.
+Original M/F/Z unchanged; positive-time r=M still iff unproved zero jump.
+All F1/F2 corrections/K domains, queue, immutable archive and verification/private
+gates remain unchanged. Full intrinsic IBM calculus/existing goal remain ACTIVE.
+
+---
+
 # Current IBM mathematics — checkpoint1317: full deterministic time-L2 integral
 
 IBM ACTIVE. Interval density gap CLOSED: previous completed domain is ALL actual
