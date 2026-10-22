@@ -31186,3 +31186,36 @@ Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog;
 no expiration, pseudo frozen1293, all gates unchanged. No campaign transition.
 
 Fresh complete root build: 6361 jobs, 24.594s, terminal0. Complete transitive safe Foundation audit: 41337 declarations, 36.695s, terminal0; only propext/Classical.choice/Quot.sound. All21 unabridged public types, SIX complete printed definition bodies and ALL294 final source/proof lines read. Six independent Lean examples FIRST-PASS0 (28.658s), empty log. Supplemental focused actual-type sigma gate0 (27.886s): actual AEStronglyMeasurable observationSigma arguments for sign_observable and annihilator_zero inspected, checked by definitional equality and read. Oversized fully explicit instance dump was unsuitable and superseded, not used as the final gate. All2189 previous sources unchanged except three imports; three configs and113 archive paths/hashes unchanged. No resource/trust/toolchain override. Scalar clipping reuses full nonsmooth absolute chain; original dense domain and uniform bounds make L1 testing rigorous. Necessity now closes1351s domain characterization, while quantitative conditional-density regularity for concrete nonlinear inputs and physical-time IBM calculus remain open. Private gate pending exact commit/receipt/sync.
+
+
+## Checkpoint1353 — Actual IBM clock-section finite-energy obstruction
+
+IBM ACTIVE. The actual scenery-L2-valued section F(r)=sourceScenery|r|
+has NO finite-energy Bochner primitive on any nontrivial nonnegative interval.
+The obstruction survives positive rescaling, Gaussian energy weighting,
+arbitrary primitive constants, and both Gaussian/Lebesgue AE representatives.
+Its actual randomSourceClass identity and original unmollified SCENERY partial
+derivative graph are preserved. See IBM_CLOCK_SECTION_ENERGY_OBSTRUCTION_AUDIT.md.
+
+Proof: a primitive's squared increment <= interval length times local energy;
+actual Brownian spatial increments have squared norm = spatial distance.
+Every shrinking interval would require a fixed positive energy, contradicting
+integrability. A continuous AE representative cannot evade this contradiction.
+
+OPEN NEXT: necessity bridge from the ORIGINAL closed Gaussian clock derivative
+graph along the normalized clock observation to a scenery-valued Gaussian
+finite-energy primitive. Current scalar forward pullback_graph does NOT prove
+the vector converse. Do not claim actual point IBM outside originalDomD yet.
+Full IBM calculus remains INCOMPLETE; no physical-time Ito/Tanaka or universal CO.
+1352 exact conditional adjoint criterion and all previous mathematics preserved.
+
+Gates: fullroot6362 jobs/26.343s0; transitive safeFoundation41349/38.599s0,
+standard3axioms only. All11 unabridged public types, folded definition, all156
+source/proof lines reviewed. Six independent tests FIRSTPASS0/22.114s, one
+retained unused dummy integration-variable warning. All2192 prior sources,
+apart from exact root one-import extension, 3configs and113archive hashes intact.
+PRIVATE receipt/sync closure recorded separately at exact commit.
+
+Queue IBM -> Bakry/fBM -> Cauchy -> fractional diffusion -> black noise -> backlog.
+Pseudo frozen1293. No expiration; October31 REVIEW ONLY. All verification and
+private-backup requirements unchanged.

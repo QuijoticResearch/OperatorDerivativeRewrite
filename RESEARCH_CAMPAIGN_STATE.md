@@ -1,3 +1,37 @@
+# Current IBM mathematics — checkpoint1353: actual clock-section energy obstruction
+
+IBM ACTIVE. The actual scenery-L2-valued section F(r)=sourceScenery|r|
+has NO finite-energy Bochner primitive on any nontrivial nonnegative interval.
+The obstruction survives positive rescaling, Gaussian energy weighting,
+arbitrary primitive constants, and both Gaussian/Lebesgue AE representatives.
+Its actual randomSourceClass identity and original unmollified SCENERY partial
+derivative graph are preserved. See IBM_CLOCK_SECTION_ENERGY_OBSTRUCTION_AUDIT.md.
+
+Proof: a primitive's squared increment <= interval length times local energy;
+actual Brownian spatial increments have squared norm = spatial distance.
+Every shrinking interval would require a fixed positive energy, contradicting
+integrability. A continuous AE representative cannot evade this contradiction.
+
+OPEN NEXT: necessity bridge from the ORIGINAL closed Gaussian clock derivative
+graph along the normalized clock observation to a scenery-valued Gaussian
+finite-energy primitive. Current scalar forward pullback_graph does NOT prove
+the vector converse. Do not claim actual point IBM outside originalDomD yet.
+Full IBM calculus remains INCOMPLETE; no physical-time Ito/Tanaka or universal CO.
+1352 exact conditional adjoint criterion and all previous mathematics preserved.
+
+Gates: fullroot6362 jobs/26.343s0; transitive safeFoundation41349/38.599s0,
+standard3axioms only. All11 unabridged public types, folded definition, all156
+source/proof lines reviewed. Six independent tests FIRSTPASS0/22.114s, one
+retained unused dummy integration-variable warning. All2192 prior sources,
+apart from exact root one-import extension, 3configs and113archive hashes intact.
+PRIVATE receipt/sync closure recorded separately at exact commit.
+
+Queue IBM -> Bakry/fBM -> Cauchy -> fractional diffusion -> black noise -> backlog.
+Pseudo frozen1293. No expiration; October31 REVIEW ONLY. All verification and
+private-backup requirements unchanged.
+
+---
+
 # Current IBM mathematics — checkpoint1352: exact conditional adjoint domain and L1 uniqueness
 
 IBM ACTIVE.1351conditional-L2 condition is now NECESSARY AND SUFFICIENT:

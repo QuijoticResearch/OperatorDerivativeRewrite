@@ -2090,3 +2090,4 @@ import Foundation.IBMConditionalNativeCalculus
 import Foundation.IBMUniformBoundedNativeTests
 import Foundation.IBMNativeL1TestSeparation
 import Foundation.IBMConditionalAdjointDomain
+import Foundation.IBMClockSectionEnergyObstruction
