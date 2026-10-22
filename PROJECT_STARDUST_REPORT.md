@@ -30983,3 +30983,35 @@ diffusion->black noise->backlog unchanged. No expiration; pseudo frozen1293.
 All verification/private backup gates intact; manuscripts immutable/uncommitted.
 
 Fresh complete root build: 6349 jobs, 24.536s, terminal0. Complete transitive audit: 41090 declarations, 34.971s, terminal0; standard three axioms only. All29 unabridged public types, FOUR complete actual reflection-map bodies and all328 final source/proof lines read. Six independent final Lean tests0 (25.714s), empty log; first_pass=False. First attempt only required NNReal notation scope in the even-clock positive control; no library changes after full gates. Exact test code and inputs in verification JSON. All2177 prior sources unchanged except three root imports; three configs and113 archive paths/hashes unchanged. No proof-resource/trust override. Concrete nonzero actual IBM time1-weighted field lies in original divergence kernel WITHOUT point-observation derivative membership. Ambient clock gradients and even observed clock channels are not declared zero. Full physical-time IBM calculus remains open. Private gate pending exact commit/receipt/sync.
+
+
+## Checkpoint1347 — actual latent clock divergence and nonconstant observed integral
+
+# Current IBM mathematics — checkpoint1347: actual latent clock divergence and observed integral
+
+IBM ACTIVE. The actual original native field (0,B_T*h_T) belongs to ORIGINAL
+Dom(delta), with delta=P_IBM(B_T^2-T), NONZERO for T>0. Exact pairing with
+actual IBM X_T^4 is6T^2. This latent odd clock field is NOT any observable
+L2 weight times a deterministic clock direction;1346's kernel remains valid.
+See IBM_QUADRATIC_CLOCK_DIVERGENCE_AUDIT.md and its exact verification JSON.
+
+Existing observed terminal machinery gives M^T_s=P_rightPast(s)(B_T^2-T),
+a true germ-filtration L2 martingale, right-L2-continuous, centered and
+scenery-even; orthogonal to every linear actual IBM observation. For s>=T,
+its X_T^4 pairing=6T^2, so NONZERO. For STRICT s<T, it equals the existing
+quadratic rightLimitClass(s). Its existing origin bound proves M^T_0=0
+for T>0. Thus actual predictable unit integral=M^T_s, with NONZERO integrand
+for s>=T, and M^T_T!=M^T_0. Genuine probability-space observed-martingale
+integral; no new stochastic measure or replacement native derivative.
+
+Target-indexed integrator/energy measure, NOT physical-time IBM integration
+or universal causal Clark–Ocone. NO whole-initial-germ triviality assertion,
+NO raw/germ positive-time equality or s=T comparison with rightLimitClass,
+NO stopped-channel claim, NO pathwise continuous/cadlag version. Physical-
+time IBM Itô/Tanaka/local time and full intrinsic calculus remain OPEN.
+Reuse1337 reconstruction,1338–1345 full native rules,1346 parity/kernel,
+and all exact focusedF1–F3 results. Do not substitute this checkpoint for
+completion of IBM. Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->
+black noise->backlog; no expiration, pseudo frozen1293; all gates intact.
+
+Fresh complete root build: 6351 jobs, 26.215s, terminal0. Complete transitive safe Foundation audit: 41142 declarations, 39.136s, terminal0; only propext/Classical.choice/Quot.sound. All36 unabridged public types, SEVEN printed actual definition bodies and ALL262 final source/proof lines read. Six final independent Lean tests0 (30.374s), empty log. First run failed only scratch completeness/open names/wrong L2 qualification; retained code/log/time and fixed tests only. All2180 previous Foundation/root sources unchanged except two imports; three configs and113 archive paths/hashes unchanged. No proof-resource/trust/toolchain override. Exact test code, source manifests, logs and sequential stage timings in verification JSON. Existing mixed Gaussian graph, adjoint transports, actual fourth pairing, quadratic germ origin bound and actual predictable integral reused. This is a concrete native-to-observed-integral bridge, not a new universal innovation or physical-time IBM calculus. Private gate pending exact commit/receipt/sync.

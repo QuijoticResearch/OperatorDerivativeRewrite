@@ -2078,3 +2078,5 @@ import Foundation.IBMNativeClockDirection
 import Foundation.GaussianDerivativeReflection
 import Foundation.IBMClockDerivativeReflection
 import Foundation.IBMObservableClockKernel
+import Foundation.IBMClockLinearDivergence
+import Foundation.IBMQuadraticClockMartingale

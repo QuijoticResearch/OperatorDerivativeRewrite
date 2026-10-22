@@ -1,3 +1,32 @@
+# Current IBM mathematics — checkpoint1347: actual latent clock divergence and observed integral
+
+IBM ACTIVE. The actual original native field (0,B_T*h_T) belongs to ORIGINAL
+Dom(delta), with delta=P_IBM(B_T^2-T), NONZERO for T>0. Exact pairing with
+actual IBM X_T^4 is6T^2. This latent odd clock field is NOT any observable
+L2 weight times a deterministic clock direction;1346's kernel remains valid.
+See IBM_QUADRATIC_CLOCK_DIVERGENCE_AUDIT.md and its exact verification JSON.
+
+Existing observed terminal machinery gives M^T_s=P_rightPast(s)(B_T^2-T),
+a true germ-filtration L2 martingale, right-L2-continuous, centered and
+scenery-even; orthogonal to every linear actual IBM observation. For s>=T,
+its X_T^4 pairing=6T^2, so NONZERO. For STRICT s<T, it equals the existing
+quadratic rightLimitClass(s). Its existing origin bound proves M^T_0=0
+for T>0. Thus actual predictable unit integral=M^T_s, with NONZERO integrand
+for s>=T, and M^T_T!=M^T_0. Genuine probability-space observed-martingale
+integral; no new stochastic measure or replacement native derivative.
+
+Target-indexed integrator/energy measure, NOT physical-time IBM integration
+or universal causal Clark–Ocone. NO whole-initial-germ triviality assertion,
+NO raw/germ positive-time equality or s=T comparison with rightLimitClass,
+NO stopped-channel claim, NO pathwise continuous/cadlag version. Physical-
+time IBM Itô/Tanaka/local time and full intrinsic calculus remain OPEN.
+Reuse1337 reconstruction,1338–1345 full native rules,1346 parity/kernel,
+and all exact focusedF1–F3 results. Do not substitute this checkpoint for
+completion of IBM. Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->
+black noise->backlog; no expiration, pseudo frozen1293; all gates intact.
+
+---
+
 # Current IBM mathematics — checkpoint1346: full clock parity and observable-weight kernel
 
 IBM ACTIVE. FULL ORIGINAL Gaussian derivative graph now has proved reflection
