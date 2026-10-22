@@ -1,3 +1,42 @@
+# Current IBM mathematics — checkpoint1346: full clock parity and observable-weight kernel
+
+IBM ACTIVE. FULL ORIGINAL Gaussian derivative graph now has proved reflection
+covariance, extended from ACTUAL polynomial cylinders through its ORIGINAL
+closed graph. Product/Bochner intertwining transports the same reflection to
+the native IBM clock derivative. EVERY f in FULL ORIGINALDomD has an ODD actual
+clock-gradient coefficient field under clock-sign reflection.
+
+For EVERY deterministic direction k, P_IBM C_{0,k}(Df)=0. Exact directional
+lift/contraction duality and ORIGINAL adjoint representability then prove:
+for EVERY F in the ENTIRE actual IBM observable L2 space,
+lift_{0,k}(F) belongs to ORIGINALDomdelta and delta(lift_{0,k}(F))=0.
+NO derivative membership of F is required. Field NONZERO if k!=0 and F!=0.
+See IBM_OBSERVABLE_CLOCK_KERNEL_AUDIT.md for exact statements and limitations.
+
+Six independent tests: full original Gaussian graph covariance; full native
+clock-gradient parity; projected scalar contraction zero; arbitrary observable
+L2 weighted kernel; concrete NONZERO field weighted by actual IBM observed
+value at time1 with ZERO divergence; coexistence with verified NONZERO observed
+EVEN-clock quadratic projection. No point-coordinate DomD assumption. First
+test attempt only needed NNReal notation scope in positive control; library
+unchanged. All29 public types, FOUR complete actual reflection-map bodies and
+all328 final source/proof lines read. Fresh full build and complete transitive
+safe Foundation audit pass, only standard three axioms.
+
+This does NOT assert the ambient clock gradient itself is zero, no observed
+clock information, arbitrary native clock-field kernel, or zero output for
+latent odd coefficients. Observable scalar clock weights cannot provide nonzero
+native divergence outputs. Preserve this rigorous obstruction in any observable
+gradient/universal Clark–Ocone proposal; earlier target-dependent reconstruction
+and full initialG0 qualification remain unchanged. No new derivative or domain.
+
+Full physical-time IBM Itô/Tanaka/local-time/versions/bracket, raw/germ comparison
+and universal causal CO remain OPEN. Queue IBM->Bakry/fBM->Cauchy->fractional
+diffusion->black noise->backlog unchanged. No expiration; pseudo frozen1293.
+All verification/private backup gates intact; manuscripts immutable/uncommitted.
+
+---
+
 # Current IBM mathematics — checkpoint1345: unbounded directional calculus / clock kernel
 
 IBM ACTIVE. For EVERY f in FULL ORIGINALDomD, no value bound, multiplying

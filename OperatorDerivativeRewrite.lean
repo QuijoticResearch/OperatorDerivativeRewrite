@@ -2075,3 +2075,6 @@ import Foundation.IBMNativeDirectionalMaps
 import Foundation.IBMNativeDirectionalDrift
 import Foundation.IBMNativeUnboundedDirections
 import Foundation.IBMNativeClockDirection
+import Foundation.GaussianDerivativeReflection
+import Foundation.IBMClockDerivativeReflection
+import Foundation.IBMObservableClockKernel

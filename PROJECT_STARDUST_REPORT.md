@@ -30941,3 +30941,45 @@ verified domains. Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black nois
 backup gates intact; manuscripts immutable and uncommitted.
 
 Fresh complete root build: 6346 jobs, 26.309s, terminal0. Complete transitive audit: 41049 declarations, 35.476s, terminal0; standard three axioms only. All32 unabridged public types, FIVE complete actual definition bodies and all357 final source/proof lines read. Six independent FIRSTPASS Lean tests0 (26.206s), empty final log. Exact test code and inputs in verification JSON. All2173 prior sources unchanged except four root imports; three configs and113 archive paths/hashes unchanged. No proof-resource/trust override. Genuine unbounded IBM-average value identity proved in native source calculus; physical-time Itô remains open. Clock-sign kernel follows exact prior reflection/first-chaos/native-adjoint reuse and does not eliminate even observed clock channels. Private gate pending exact commit/receipt/sync.
+
+
+## Checkpoint1346 — full native clock-gradient parity and observable-weight kernel
+
+# Current IBM mathematics — checkpoint1346: full clock parity and observable-weight kernel
+
+IBM ACTIVE. FULL ORIGINAL Gaussian derivative graph now has proved reflection
+covariance, extended from ACTUAL polynomial cylinders through its ORIGINAL
+closed graph. Product/Bochner intertwining transports the same reflection to
+the native IBM clock derivative. EVERY f in FULL ORIGINALDomD has an ODD actual
+clock-gradient coefficient field under clock-sign reflection.
+
+For EVERY deterministic direction k, P_IBM C_{0,k}(Df)=0. Exact directional
+lift/contraction duality and ORIGINAL adjoint representability then prove:
+for EVERY F in the ENTIRE actual IBM observable L2 space,
+lift_{0,k}(F) belongs to ORIGINALDomdelta and delta(lift_{0,k}(F))=0.
+NO derivative membership of F is required. Field NONZERO if k!=0 and F!=0.
+See IBM_OBSERVABLE_CLOCK_KERNEL_AUDIT.md for exact statements and limitations.
+
+Six independent tests: full original Gaussian graph covariance; full native
+clock-gradient parity; projected scalar contraction zero; arbitrary observable
+L2 weighted kernel; concrete NONZERO field weighted by actual IBM observed
+value at time1 with ZERO divergence; coexistence with verified NONZERO observed
+EVEN-clock quadratic projection. No point-coordinate DomD assumption. First
+test attempt only needed NNReal notation scope in positive control; library
+unchanged. All29 public types, FOUR complete actual reflection-map bodies and
+all328 final source/proof lines read. Fresh full build and complete transitive
+safe Foundation audit pass, only standard three axioms.
+
+This does NOT assert the ambient clock gradient itself is zero, no observed
+clock information, arbitrary native clock-field kernel, or zero output for
+latent odd coefficients. Observable scalar clock weights cannot provide nonzero
+native divergence outputs. Preserve this rigorous obstruction in any observable
+gradient/universal Clark–Ocone proposal; earlier target-dependent reconstruction
+and full initialG0 qualification remain unchanged. No new derivative or domain.
+
+Full physical-time IBM Itô/Tanaka/local-time/versions/bracket, raw/germ comparison
+and universal causal CO remain OPEN. Queue IBM->Bakry/fBM->Cauchy->fractional
+diffusion->black noise->backlog unchanged. No expiration; pseudo frozen1293.
+All verification/private backup gates intact; manuscripts immutable/uncommitted.
+
+Fresh complete root build: 6349 jobs, 24.536s, terminal0. Complete transitive audit: 41090 declarations, 34.971s, terminal0; standard three axioms only. All29 unabridged public types, FOUR complete actual reflection-map bodies and all328 final source/proof lines read. Six independent final Lean tests0 (25.714s), empty log; first_pass=False. First attempt only required NNReal notation scope in the even-clock positive control; no library changes after full gates. Exact test code and inputs in verification JSON. All2177 prior sources unchanged except three root imports; three configs and113 archive paths/hashes unchanged. No proof-resource/trust override. Concrete nonzero actual IBM time1-weighted field lies in original divergence kernel WITHOUT point-observation derivative membership. Ambient clock gradients and even observed clock channels are not declared zero. Full physical-time IBM calculus remains open. Private gate pending exact commit/receipt/sync.
