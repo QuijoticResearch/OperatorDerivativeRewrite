@@ -1,3 +1,34 @@
+# Current IBM mathematics — checkpoint1340: native absolute-value rules at every level
+
+IBM ACTIVE. For EVERY f in FULL ORIGINAL jointDerivative.domain and EVERY
+real level a, actual abs(f-a) belongs to the SAME domain. BOTH original-
+coordinate gradients equal sign(f-a) times the corresponding original fields,
+and norm(Dabs(f-a))<=norm(Df). Sign(0)=0; NO atomless-law or level-avoidance
+assumption. Exact transparent ChainResult/GraphResult/RadiusResult bodies
+printed and read. See IBM_INTRINSIC_ABSOLUTE_CHAIN_AUDIT.md.
+
+Reuse actual scalar smooth-radius derivatives, slope bounds and EVERY-point
+sign limit from SmoothAbsoluteApproximation/BrownianTanakaApproximation.
+Reuse1339 unbounded C1 native graph to construct genuine radius domain outputs;
+actual probability uniform error gives STRONG valueL2 convergence and bounded
+native multipliers give BOTH strong coefficient-fieldL2 limits. ORIGINALclosed
+jointD graph gives actual nonsmooth rule. Existing true constant-one and D1=0
+handle shifts. No new measure, derivative, law or stochastic integral.
+Purely atomic constant input, all levels, simultaneous actual strong limits,
+nonsmooth actual stochastic IBP and1337 reconstruction independently tested.
+
+SOURCE-variable absolute/Tanaka-type chain rule only: physical-time IBM
+Tanaka/local-time/occupation identity NOT established. Brownian stochastic
+objects are NOT identified with IBM; only verified scalar facts reused.
+No arbitrary point-observation DomD membership. Retain1337 entire G0 and target-
+dependent channel,1336 Poisson/Poincare,1338–1339 C1 calculus and focusedF1–F3.
+Bounded-product/weighted-divergence rules, general Markov contraction theorem,
+physical versions/bracket/Itô, raw/germ comparison, causal universal CO remain
+OPEN. FullIBM calculus incomplete. Queue IBM->Bakry/fBM->Cauchy->fractional
+diffusion->black noise->backlog; no expiration, pseudo frozen1293; all gates intact.
+
+---
+
 # Current IBM mathematics — checkpoint1339: unbounded C1 native chain calculus
 
 IBM ACTIVE. The GLOBAL VALUE bound on phi is REMOVED. For EVERY f in FULL

@@ -2058,3 +2058,5 @@ import Foundation.IBMIntrinsicChainEnergy
 import Foundation.IBMIntrinsicChainApproximation
 import Foundation.IBMIntrinsicChainMultiplier
 import Foundation.IBMIntrinsicUnboundedChain
+import Foundation.IBMIntrinsicAbsoluteApproximation
+import Foundation.IBMIntrinsicAbsoluteChain

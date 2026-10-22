@@ -30707,3 +30707,37 @@ IBM calculus incomplete. Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->
 black noise->backlog; no expiration, pseudo frozen1293, all gates preserved.
 
 Fresh complete root build: 6329 jobs, 26.906s, terminal0. Complete transitive audit: 40660 declarations, 35.659s, terminal0; standard three axioms only. All30 unabridged public types, BOTH complete transparent result-definition bodies and all359 final source/proof lines read. Five independent FINAL Lean tests0 (28.999s); affine-helper normalization repaired after first test error, exact failed log/time retained. All2157 prior mathematical sources unchanged except three root imports; three configs and113 archive paths/hashes unchanged. No resource/trust override; all library inputs unchanged after fresh full build/audit. Reused RealSteklovApprox positive widths, Mathlib continuous sinc,1338 bounded chain, actual Lp multiplication, BochnerL2Approximation, native unitary transport and ORIGINAL closed joint graph. Public result specifications retain ALL actual domain/value/gradient/norm assertions. Physical-time/universal causal calculus remains OPEN. Private gate pending exact commit/receipt/sync.
+
+
+## Checkpoint1340 — full native absolute value and arbitrary-level chain calculus
+
+# Current IBM mathematics — checkpoint1340: native absolute-value rules at every level
+
+IBM ACTIVE. For EVERY f in FULL ORIGINAL jointDerivative.domain and EVERY
+real level a, actual abs(f-a) belongs to the SAME domain. BOTH original-
+coordinate gradients equal sign(f-a) times the corresponding original fields,
+and norm(Dabs(f-a))<=norm(Df). Sign(0)=0; NO atomless-law or level-avoidance
+assumption. Exact transparent ChainResult/GraphResult/RadiusResult bodies
+printed and read. See IBM_INTRINSIC_ABSOLUTE_CHAIN_AUDIT.md.
+
+Reuse actual scalar smooth-radius derivatives, slope bounds and EVERY-point
+sign limit from SmoothAbsoluteApproximation/BrownianTanakaApproximation.
+Reuse1339 unbounded C1 native graph to construct genuine radius domain outputs;
+actual probability uniform error gives STRONG valueL2 convergence and bounded
+native multipliers give BOTH strong coefficient-fieldL2 limits. ORIGINALclosed
+jointD graph gives actual nonsmooth rule. Existing true constant-one and D1=0
+handle shifts. No new measure, derivative, law or stochastic integral.
+Purely atomic constant input, all levels, simultaneous actual strong limits,
+nonsmooth actual stochastic IBP and1337 reconstruction independently tested.
+
+SOURCE-variable absolute/Tanaka-type chain rule only: physical-time IBM
+Tanaka/local-time/occupation identity NOT established. Brownian stochastic
+objects are NOT identified with IBM; only verified scalar facts reused.
+No arbitrary point-observation DomD membership. Retain1337 entire G0 and target-
+dependent channel,1336 Poisson/Poincare,1338–1339 C1 calculus and focusedF1–F3.
+Bounded-product/weighted-divergence rules, general Markov contraction theorem,
+physical versions/bracket/Itô, raw/germ comparison, causal universal CO remain
+OPEN. FullIBM calculus incomplete. Queue IBM->Bakry/fBM->Cauchy->fractional
+diffusion->black noise->backlog; no expiration, pseudo frozen1293; all gates intact.
+
+Fresh complete root build: 6331 jobs, 28.235s, terminal0. Complete transitive audit: 40694 declarations, 36.558s, terminal0; standard three axioms only. All12 unabridged public types, THREE complete result-definition bodies and all178 final source/proof lines read. Five independent final Lean tests0 (40.690s); first_pass=True. Exact test code and inputs in verification JSON. All2160 previous sources unchanged except two root imports; three configs and113 archive paths/hashes unchanged. No proof-resource/trust override; final root/audit inputs unchanged afterward. Explicit actual representative identity was the only development repair. This is native nonsmooth source calculus, not physical-time local time or universal causal Clark–Ocone. Private gate pending exact commit/receipt/sync.
