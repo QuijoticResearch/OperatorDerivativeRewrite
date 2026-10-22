@@ -29954,3 +29954,46 @@ STARDUST_IBM_TERMINAL_PREDICTABLE_SERIES_VERIFICATION.json and
 IBM_TERMINAL_PREDICTABLE_SERIES_AUDIT.md. Precommit record does not claim
 private closure: exactreceipt and verified PRIVATE main/research follow.
 IBM/existing indefinitegoal ACTIVE, campaignqueue unchanged, archiveimmutable.
+
+
+## Checkpoint1324 — arbitrary finite actual predictable presentation independence
+
+Resolved the finite presentation-consistency gap from1322/1323. For ANY fixed
+actual JointL2 terminal F and ANY two finite interval families with existing
+bounded full raw-past coefficients, equality of actual predictable time
+processes AE at EACH time implies equality of genuine stochastic sum classes.
+Intervals individually ordered, but families may overlap, repeat, have zero
+length, be internally unordered, and have different endpoints/cardinalities.
+The existing grid sumClass API now identifies two arbitrary monotone grids
+with different finite cell counts and repeated times. No shared strict grid.
+
+Proof uses finite endpoint charges, tail sums and maximum-endpoint induction,
+then pairs with x(v)-x(0) for ANY real path. Only a finite union of endpoint
+AE events is needed; no uncountable AE intersection or path regularity is
+assumed. Actual L2 sum/scalar bridges transfer the algebra to existing IBM
+steps, coefficient types and time processes. No new realization/filtration,
+quotient completion or control measure. Explicit reversed-interval example:
+timeStep(1,0] with unit coefficient is zero, but actual formal increment for
+F=observed1 is -observed1 !=0. Thus interval ordering is essential.
+
+Finite presentation independence is NOT arbitrary countable presentation
+consistency or continuum predictable-domain completion. No weakening from
+timewise AE to product-Lebesgue AE is claimed. Cross-grid limiting control,
+actual continuum domain, bracket/regular versions, native adjoints, full
+Clark–Ocone and actual unsmoothed IBM Itô remain OPEN. N^F depends on F,
+not a universal representation or nonmartingale IBM Z. Original M/F/Z and
+F1/F2 correction/K domains unchanged. Next actual process-domain/control.
+
+One module185lines/all11 actual publictypes and fullproofs reviewed. Four
+independent checks: actual observed-sine coefficient interval split; actual
+scalar energy across arbitrary finite families; actual scalar sums across
+different non-strict grids; actual reversed-interval counterexample.
+Fullroot6283jobs0 38.943s; COMPLETE39808safeFoundation
+transitiveaudit0 35.355s standard3only; independent0
+24.731s. Allstagessequential, all2113 prior
+sources unchangedexceptroot1import,3configs/113archivepaths+hashes preserved,
+no newresource/trust override. Evidence
+STARDUST_IBM_FINITE_PRESENTATION_IDENTIFICATION_VERIFICATION.json and
+IBM_FINITE_PRESENTATION_IDENTIFICATION_AUDIT.md. Exactreceipt/PRIVATE
+main+research closure follows separately; precommit evidence claims no
+backup closure. IBM/existing indefinitegoal ACTIVE, queue unchanged.

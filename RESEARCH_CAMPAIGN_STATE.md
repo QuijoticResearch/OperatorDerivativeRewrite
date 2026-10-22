@@ -1,3 +1,28 @@
+# Current IBM mathematics — checkpoint1324: arbitrary finite presentation independence
+
+IBM ACTIVE. ANY two actual bounded random predictable interval presentations
+of the SAME time process (AE at EACH deterministic time) now give the SAME
+JointL2 stochastic sum against each fixed terminal martingale N^F. Intervals
+must be ordered individually; arbitrary overlap, repetitions, zero lengths,
+different endpoints/cardinalities and unordered families are permitted.
+Existing sumClass API for two arbitrary monotone grids is connected, without
+strictness or shared-grid assumptions. Finite endpoint-charge algebra works
+for ANY real path and measure; only FINITELY many endpoint AE events are
+intersected. Actual reversed interval (1,0] gives zero time process but
+nonzero increment -observed1, proving the ordering gate necessary.
+Read IBM_FINITE_PRESENTATION_IDENTIFICATION_AUDIT.md.
+
+Finite presentation consistency is resolved, NOT arbitrary countable-domain
+or continuum predictable completion. Timewise AE equality is stronger than
+mere product-Lebesgue AE; no such weakening is claimed. Next actual domain
+and control/closure, cross-grid limiting consistency. Bracket/regular versions,
+native derivatives/adjoints/full Clark–Ocone/actual IBM Itô remain OPEN.
+The terminal-specific N^F is not a fixed universal representation noise or
+the nonmartingale IBM coordinate Z. Original M/F/Z, F1/F2 domains, queue,
+source-preservation and all full verification/private gates unchanged.
+
+---
+
 # Current IBM mathematics — checkpoint1323: actual countable terminal integration
 
 IBM ACTIVE. For every actual JointL2 terminal F, bounded full raw-past random
