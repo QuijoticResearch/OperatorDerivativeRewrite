@@ -31730,3 +31730,63 @@ vector signed-integration APIs located, not asserted formalized. No novelty
 claim. Mathematical inputs unchanged after complete root/audit; no duplicate
 gates for scratch-only repair. Private gate pending exact commit/receipt and
 verified PRIVATE main/research synchronization.
+
+
+## Checkpoint1364 — full predictable variation control and literal finite signed stochastic identity
+
+# Current IBM mathematics — checkpoint1364: full covariance control and literal finite signed integration
+
+IBM ACTIVE. ORIGINAL predictable energy measures now satisfy full-sigma-algebra
+parallelogram and REAL scalar-square homogeneity, including zero. Explicit
+countable generator cover includes origin and positive horizons; no assumed
+total-mass equality or dropped time-zero sets. Diagonal covariance equals the
+ORIGINAL positive energy measure converted to SignedMeasure. See
+IBM_SIGNED_COVARIANCE_INTEGRAL_AUDIT.md and exact verification JSON.
+
+Genuine covariance variation satisfies var(nu(F,G)) <= (mu_F+mu_G)/2 as positive
+measures on the FULL raw IBM predictable sigma algebra; finite variation PROVED.
+Use pinned variation algebra and new global measure parallelogram; NNReal and
+ENNReal coefficient transports explicit, no field division at infinity.
+
+For EVERY finite predictable l,k (arbitrary eligible random steps/different
+grids), actual H*K is integrable against var(nu). The LITERAL pinned Mathlib
+signed/vector integral satisfies integral H*K dnu = <actualI_F H,actualI_G K>
+and equals1363 mixedEnergy. Existing scalar signed integral's flipped lsmul
+map used exactly. Actual IBM1/opposite-channel negative integral, diagonal
+normalization and OWN-channel energy-AE presentation independence verified.
+All old completed-domain H,K admit genuine finite approximants whose LITERAL
+signed integrals tend to their actual stochastic-output pairing.
+
+Maximal-domain gap remains EXACT: from only H in L2(mu_F), K in L2(mu_G), need
+stronger variation/Kunita-Watanabe control establishing integral abs(H*K)
+dvar(nu), representative independence and literal limiting integral identity.
+The half-sum bound alone is not asserted sufficient; abs(signed integral) bound
+is not the variation integral bound. No counterexample to the desired actual
+maximal-domain theorem; no smaller common-control domain substituted as a solution.
+General random countable-channel completion/null-space quotient, temporal
+conditional-gradient/causal CO, pathwise brackets and physical-time IBM Ito
+remain unresolved outside exact earlier verified scopes. Full IBM INCOMPLETE.
+Original operators/process/filtrations/domains and prior counterexamples intact.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->blackito->backlog unchanged.
+Pseudo frozen1293; no expiration; all verification/source/private gates intact.
+
+Fresh complete root build: 6390 jobs, 27.264s, terminal0.
+COMPLETE transitive safe Foundation audit: 42133 declarations,
+40.795s, terminal0, standard three axioms only.
+All16 unabridged public types,8 printed old/new/Mathlib definition bodies,
+ALL162 combined audit-log lines and ALL203 final source/proof lines actually
+read. Eight independent Lean tests FIRST PASS0 in 30.759s,
+emptylog. Tests cover full measure parallelogram/real homogeneity, finite
+variation and ALL measurable-set half-sum bound, actual finite product variation
+integrability/literal signed identity, global diagonal normalization, actual
+negative IBM1 signed pairing, Cauchy bound, own-energy-AE presentation invariance,
+and actual old completed-domain signed finite approximation existence/limits.
+Exact test code and stage timings in JSON. Eight development target histories
+retained; repairs were explicit coercion/parentheses/origin/flip transports,
+nonzero-denominator ENNReal coe_div, missing scalar-zero simplification and real
+ring normalization. Target8 final passed. No resource/trust increase, timeout,
+suppressed check, new axiom or changed operator/process/domain. All2219 prior
+sources unchanged except TWO root imports;3configs and113 exact immutable
+archive paths/hashes unchanged. Inputs unchanged after complete root/audit.
+No novelty or maximal-domain completion claim. Private gate pending exact
+commit/receipt and verified PRIVATE main/research synchronization.

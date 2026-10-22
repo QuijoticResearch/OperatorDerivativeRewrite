@@ -2117,3 +2117,5 @@ import Foundation.IBMFixedNativeReconstruction
 import Foundation.IBMPredictableCovarianceMeasure
 import Foundation.IBMMixedPredictableEnergy
 import Foundation.IBMActualMixedEnergyObstruction
+import Foundation.IBMCovarianceVariationControl
+import Foundation.IBMFiniteSignedCovarianceIntegral

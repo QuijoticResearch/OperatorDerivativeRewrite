@@ -1,3 +1,41 @@
+# Current IBM mathematics — checkpoint1364: full covariance control and literal finite signed integration
+
+IBM ACTIVE. ORIGINAL predictable energy measures now satisfy full-sigma-algebra
+parallelogram and REAL scalar-square homogeneity, including zero. Explicit
+countable generator cover includes origin and positive horizons; no assumed
+total-mass equality or dropped time-zero sets. Diagonal covariance equals the
+ORIGINAL positive energy measure converted to SignedMeasure. See
+IBM_SIGNED_COVARIANCE_INTEGRAL_AUDIT.md and exact verification JSON.
+
+Genuine covariance variation satisfies var(nu(F,G)) <= (mu_F+mu_G)/2 as positive
+measures on the FULL raw IBM predictable sigma algebra; finite variation PROVED.
+Use pinned variation algebra and new global measure parallelogram; NNReal and
+ENNReal coefficient transports explicit, no field division at infinity.
+
+For EVERY finite predictable l,k (arbitrary eligible random steps/different
+grids), actual H*K is integrable against var(nu). The LITERAL pinned Mathlib
+signed/vector integral satisfies integral H*K dnu = <actualI_F H,actualI_G K>
+and equals1363 mixedEnergy. Existing scalar signed integral's flipped lsmul
+map used exactly. Actual IBM1/opposite-channel negative integral, diagonal
+normalization and OWN-channel energy-AE presentation independence verified.
+All old completed-domain H,K admit genuine finite approximants whose LITERAL
+signed integrals tend to their actual stochastic-output pairing.
+
+Maximal-domain gap remains EXACT: from only H in L2(mu_F), K in L2(mu_G), need
+stronger variation/Kunita-Watanabe control establishing integral abs(H*K)
+dvar(nu), representative independence and literal limiting integral identity.
+The half-sum bound alone is not asserted sufficient; abs(signed integral) bound
+is not the variation integral bound. No counterexample to the desired actual
+maximal-domain theorem; no smaller common-control domain substituted as a solution.
+General random countable-channel completion/null-space quotient, temporal
+conditional-gradient/causal CO, pathwise brackets and physical-time IBM Ito
+remain unresolved outside exact earlier verified scopes. Full IBM INCOMPLETE.
+Original operators/process/filtrations/domains and prior counterexamples intact.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->blackito->backlog unchanged.
+Pseudo frozen1293; no expiration; all verification/source/private gates intact.
+
+---
+
 # Current IBM mathematics — checkpoint1363: signed predictable covariance and mixed stochastic energy
 
 IBM ACTIVE. Genuine SIGNED predictable covariance measure nu(F,G) constructed
