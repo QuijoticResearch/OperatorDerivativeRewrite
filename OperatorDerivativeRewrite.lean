@@ -1991,3 +1991,6 @@ import Foundation.IBMIntrinsicPredictableProcess
 import Foundation.ContinuousObservationFiltrationObstruction
 import Foundation.RawMartingaleEnergyMeasureObstruction
 import Foundation.IBMIntrinsicOriginContinuity
+import Foundation.IBMDecreasingPastProjection
+import Foundation.IBMIntrinsicRightGerm
+import Foundation.IBMIntrinsicRightApproach

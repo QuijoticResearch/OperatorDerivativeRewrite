@@ -29513,3 +29513,42 @@ Evidence STARDUST_IBM_RAW_REGULARITY_VERIFICATION.json and
 IBM_RAW_REGULARITY_ENERGY_AUDIT.md. Git/exactreceipt/PRIVATE main+research gates
 follow separately; precommit record claims no backupclosure. Existingindefinite
 goal and IBM ACTIVE, no campaign transition.
+
+
+## Checkpoint1313 — actual intrinsic IBM strong L2 right germs and jump energy
+
+Reused Mathlib increasingprojectionconvergence on orthogonalcomplements ofactual
+closedpastspaces toprove decreasingpastprojectionconvergence. Limitspaceexactly
+intersection ofL2pasts. ActualM_tau_n=P_tau_n M_T yieldsstrongL2limitforallbounded
+decreasingsequences. Forstrictly-rightcofinalsequences, intersectionequalsR_t=
+intersectionALLfutureL2pasts, bycofinality. Nestedactualprojection/martingale
+identitiesprove horizonindependence. CanonicalrightLimitClass t=P_R_t M_(t+1),
+sameasP_R_t M_T ANYT>t, isstrongL2limitforEVERYboundedantitonecofinalrightsequence.
+Concreteapproach t+(1/2)^n: allpositivity/bounds/monotonicity/convergenceproved.
+
+ActualrightValue L2representativeonORIGINALjointspace hasmeasurableversion in
+EVERYstrictlyfuture rawIBMpast, and actualCE(rightValue_t|F_t)=M_t. Projection
+onto ENTIREpresentpastrecoversM_t, hencejump J_t orthogonaltoallpresentL2.
+Exactenergy ||rightLimit||^2=||M_t||^2+||J_t||^2; normrightgerm²<=2t² andjump²
+<=2t²-||M_t||². RightgermnonzeroEVERYpositive t byprioractualquarticobservation
+test. Rightgerm/jumpzeroatorigin. ActualAEequalitytooriginalM_t IFFJ_t=0,
+equivalentlyenergy equality; POSITIVE-TIMEzerojump remains OPEN.
+NO claim rawintersection-sigmaL2 equalsintersectionofcompletedL2pasts; actual
+right-germstrongadaptation, fullMartingalepredicate, jointtime/samplemeasurability,
+right/cadlagpaths or modification isnotinferred. Noenergymeasure/continuumdomain/
+PRP/nativeadjointcompletion. Next actualjump/variance andrepresentativeclosure;
+preservecommonrefinementandF1/F2correction/K obligations. FullIBMcalculusOPEN.
+
+Independent Leanchecks nonzeroactualgerm/CEpresent/sharpboundattime1; DIFFERENT
+concretecofinalrate1+(1/4)^n givesSAMErightlimit; alternativehorizon3 andactual
+conditionalrecoveryinfuturepast2; originAEequalitywithpositive-timecondition
+retainedaspreciseenergyIFF. Three modules260lines,35publictypes and2private
+projectioninstancesactuallyreviewed; finaltype log155linesreadunabridged.
+Freshfullroot6265jobs0 23.185s; COMPLETE
+39496safeFoundation transitiveaudit0 35.268s standard3only;
+independentchecks0 25.717s. All2093prior sources unchanged
+exceptroot3imports,3configs and113archivepaths/hashes preserved. No newresource/
+trustoverride. Evidence STARDUST_IBM_RIGHT_GERM_VERIFICATION.json and
+IBM_INTRINSIC_RIGHT_GERM_AUDIT.md. Git/exactreceipt/PRIVATE main+research gates
+follow separately; precommit record claims no backupclosure. Existingindefinite
+goal and IBM ACTIVE, queue unchanged.

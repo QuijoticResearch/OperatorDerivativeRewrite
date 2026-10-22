@@ -1,3 +1,26 @@
+# Current IBM mathematics — checkpoint1313: canonical actual strong L2 right germs
+
+IBM ACTIVE. Actual M_tau_n on EVERY bounded nonincreasing strictly-right
+cofinal sequence converges STRONG scalar L2 to one rightLimitClass t, independent
+of sequence and future horizon. A concrete t+(1/2)^n approach proves existence.
+Uses existing increasing Hilbert projection theorem on orthogonal complements
+of ACTUAL closed IBM pasts; rightPast t is their intersection for allu>t.
+Actual scalar rightValue is L2, AE measurable in EVERY strictly future raw past,
+and E[rightValue_t|F_t^IBM]=M_t. It is NOT yet a proved modification or raw-germ
+adapted martingale/path-regular process. Read IBM_INTRINSIC_RIGHT_GERM_AUDIT.md.
+Jump J_t=rightLimitClass t-M_t is orthogonal to ENTIRE present L2 past; exact
+energy decomposition, ||rightLimitClass t||^2<=2t^2 and ||J_t||^2<=2t^2-||M_t||^2.
+Nonzero right germ EVERYt>0. Right germ and jump zero at0. Atpositive times,
+actual equality to original M is equivalent to J_t=0/energy equality, stillOPEN.
+Do NOT identify intersection of L2 past spaces with raw intersection-sigma L2
+without a representative theorem; no right-germ strong adaptation, full actual
+Martingale predicate, joint measurability, right/cadlag paths or energy measure
+is claimed for rightValue. Next actual jump/variance and representative closure,
+preserving common-refinement/continuum-domain and native-adjoint obligations.
+Full IBM calculus OPEN. All F1/F2 correction/K domains and queue unchanged.
+
+---
+
 # Current IBM mathematics — checkpoint1312: raw regularity and energy obstruction audit
 
 IBM ACTIVE. A fully constructed counterexample refutes a generic shortcut:
