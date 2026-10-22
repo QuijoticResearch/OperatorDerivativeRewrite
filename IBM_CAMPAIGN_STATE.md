@@ -1,3 +1,27 @@
+# Current IBM mathematics — checkpoint1325: actual disjoint-process control
+
+IBM ACTIVE. ANY finite ordered interval family with pairwise endpoint
+separation now has exact actual random-step energy and a unit-increment
+Bessel bound sum ||Delta N^F||_2^2 <= ||F||_2^2. No grid, cover or horizon
+bound required; gaps/unordered families allowed. Actual time-process bound
+C AE at each time gives stochastic energy <= C^2 ||F||_2^2 independently
+of stored coefficient bounds. Positive cells recover coefficients at their
+right endpoints; zero-length steps vanish. Existing finite identification
+transfers control to ANY equal ordered finite presentation GIVEN an equal
+disjoint reference satisfying the exact separation hypothesis.
+Read IBM_DISJOINT_PROCESS_CONTROL_AUDIT.md.
+
+General disjoint refinement existence, actual cross-grid limiting control,
+continuum predictable domain/control measure and closure remain OPEN. Gaussian
+product-time isometry hypotheses are not transported to IBM. Next common
+intersection cells of two grids, actual difference-process identification,
+then justified limiting domain; no formal output-norm completion substituted.
+Bracket/regular versions, native derivatives/adjoints/full Clark–Ocone and
+actual IBM Itô remain OPEN. N^F depends on F, not universal noise or IBM Z.
+Original M/F/Z, F1/F2 domains, queue and all verification/private gates unchanged.
+
+---
+
 # Current IBM mathematics — checkpoint1324: arbitrary finite presentation independence
 
 IBM ACTIVE. ANY two actual bounded random predictable interval presentations

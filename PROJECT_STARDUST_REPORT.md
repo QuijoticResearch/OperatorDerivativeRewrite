@@ -29997,3 +29997,48 @@ STARDUST_IBM_FINITE_PRESENTATION_IDENTIFICATION_VERIFICATION.json and
 IBM_FINITE_PRESENTATION_IDENTIFICATION_AUDIT.md. Exactreceipt/PRIVATE
 main+research closure follows separately; precommit evidence claims no
 backup closure. IBM/existing indefinitegoal ACTIVE, queue unchanged.
+
+
+## Checkpoint1325 — actual disjoint predictable-process energy control
+
+For ANY fixed actual JointL2 terminal F, proved exact finite random-step
+energy on arbitrary finite ordered intervals with pairwise endpoint separation.
+No grid/cover/horizon is needed; gaps and unordered presentations allowed.
+Unit increments satisfy <F,Delta N>=||Delta N||_2^2 by existing raw-past
+projection orthogonality. Nonnegativity of ||F-sum Delta N||_2^2 plus finite
+orthogonality gives sum||Delta N||_2^2 <=||F||_2^2. Bounded coefficients then
+give stochastic energy <=C^2||F||_2^2 without variance factorization.
+
+Stronger actual process bound: H_r=sum 1_(s_i,t_i](r)*a_i bounded by C AE
+at EACH deterministic time implies the same stochastic bound, independent
+of stored coefficient constants. Recovered coefficients at positive cell
+right endpoints; proved zero-length steps vanish, requiring no coefficient
+bound there. Existing1324 actual presentation identification transfers the
+control to ANY equal ordered finite presentation GIVEN an explicit equal
+disjoint presentation with the stated separation. That existence gate is
+not claimed discharged. Exact separation is stronger than mere Ioc-set
+disjointness in some degenerate cases; all hypotheses remain explicit.
+
+Reuse audit: GaussianTimeStepIntegral/GaussianPredictableHorizon use their
+genuine pre-Brownian elapsed-time/product-time isometry. Those IBM hypotheses
+are unproved, so no Gaussian predictable measure is simply retargeted.
+Actual common-cell refinement and difference-process identity for two grids,
+cross-grid limiting control, actual continuum integrand domain/control measure
+and closure remain OPEN. No output-norm completion mislabeled an actual process
+domain. Bracket/regular versions, native adjoints/full Clark–Ocone/actual IBM
+Itô remain OPEN. Terminal-specific N^F not universal noise/nonmartingale Z.
+Original M/F/Z and F1/F2 correction/K domains remain. Next grid intersections.
+
+One module155lines/all8actualpublictypes/fullproofs reviewed. Four independent
+checks: actual sine coefficients on gapped reverse-order family; actual
+observed4 unit Bessel energy; sine coefficient stored bound1000 but actual
+process bound1; actual scalar energy transfer through supplied disjoint
+presentation. Fullroot6284jobs0 22.654s;
+COMPLETE39817safeFoundation transitiveaudit0 35.049s
+standard3only; independent0 24.421s. Sequential
+stages verified. All2114prior sources unchangedexceptroot1import,3configs/
+113archivepaths+hashes preserved, no newresource/trust override. Evidence
+STARDUST_IBM_DISJOINT_PROCESS_CONTROL_VERIFICATION.json and
+IBM_DISJOINT_PROCESS_CONTROL_AUDIT.md. Exactreceipt/PRIVATE main+research
+closure follows separately; precommit evidence claims no backupclosure.
+IBM/existing indefinitegoal ACTIVE, queue unchanged, manuscriptsimmutable.

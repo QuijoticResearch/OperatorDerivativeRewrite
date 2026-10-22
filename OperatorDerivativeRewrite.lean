@@ -2012,3 +2012,4 @@ import Foundation.IBMTerminalPredictableGrid
 import Foundation.IBMTerminalIntegralEnergy
 import Foundation.IBMTerminalPredictableSeries
 import Foundation.IBMFiniteIntervalIdentification
+import Foundation.IBMDisjointProcessControl
