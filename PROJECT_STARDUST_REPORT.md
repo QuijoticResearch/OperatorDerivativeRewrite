@@ -30376,3 +30376,49 @@ STARDUST_IBM_PREDICTABLE_RING_CONTENT_VERIFICATION.json and
 IBM_PREDICTABLE_RING_CONTENT_AUDIT.md. Exact receipt and PRIVATE main/research
 verification follow separately; precommit evidence claims no backup closure.
 Manuscriptsimmutable/unstaged, unrelated drafts preserved.
+
+
+## Checkpoint1332 — actual finite joint raw-predictable IBM energy measure
+
+For every actual JointL2 terminal F, constructed genuine countably additive,
+globally FINITE mu_F on FULL raw observed IBM predictable sigma algebra.
+Exact rectangle values equal existing actual original-law incrementMeasure;
+raw F0 origin events have measure0; total mass<=normF^2. For actual coordinate
+observed(t), exact total mass=norm(observed(t))^2 using initial-zero1329.
+
+Proved finite compact-fiber geometry, finite-construction measurability of
+projected sample supports and pointwise eventual exit via compact intersection.
+Actual right-trim strong L2 gives compact inner approximation with small
+predictable strip errors. For arbitrary decreasing ring E_n with empty
+intersection, summable error budgets plus actual residual support domination
+and DCT prove FULL energy/content continuity-at-empty. This proves JOINT
+sigma-subadditivity. Explicit zero-origin semiring extension has PROVED finite
+additivity and sigma-subadditivity by positive-time restriction. Only then use
+Mathlib AddContent.measure/measure_eq with actual FULL raw predictable generation.
+No cadlag modification/bracket/raw-filtration continuity or arbitrary measurable
+projection theorem is assumed. G^F is terminal-dependent, not a universal noise
+or direct IBM Z integrator. Origin-zero does not assert G^F_0=0 for arbitrary F.
+
+Four modules614lines/57 public declarations, all complete sources/proofs and
+actual unabridged final public types read. Fresh full root build6305jobs0
+25.311s; COMPLETE transitive audit40184
+safe Foundation declarations0 35.363s, only the
+standard3 axioms. Five independent Lean checks FIRST PASS0
+26.217s, empty log: actual density/origin,
+positive finite coordinate mass, infinite disjoint rectangle additivity,
+actual two-event compact approximation with small discarded MEASURE, and
+open-fiber projection counterexample WITH actual energy convergence.
+All stages sequential. All2132 prior sources except EXACTLY4 root imports,
+all3 configs and all113 archive paths/hashes unchanged. No resource override.
+
+NEXT actual simple-process isometry/density, completed predictable integral,
+bounded-step identification and native derivative/adjoint/representation
+connections. These and positive-time raw/G comparison, regular versions/bracket,
+full unsmoothed IBM calculus remain OPEN. Joint measure/origin extension now
+DISCHARGED, not future assumptions. Focused F1–F3 exact1107 domains and closed
+dense intrinsic derivative/actual Hilbert adjoint remain VERIFIED.
+See IBM_JOINT_PREDICTABLE_ENERGY_MEASURE_AUDIT.md and
+STARDUST_IBM_JOINT_PREDICTABLE_ENERGY_MEASURE_VERIFICATION.json.
+Exact-commit receipt/private main+research verification follows this fully
+audited explicit-path commit; no premature backup-closure assertion.
+Campaign queue, manuscript immutability, indefinite research unchanged.

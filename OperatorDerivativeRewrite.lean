@@ -2030,3 +2030,7 @@ import Foundation.IBMGermSupportContinuity
 import Foundation.IBMPredictableRectangles
 import Foundation.IBMPredictableFiniteIntegral
 import Foundation.IBMPredictableRingContent
+import Foundation.IBMCompactPredictableFibers
+import Foundation.IBMPredictableCompactApproximation
+import Foundation.IBMPredictableContentContinuity
+import Foundation.IBMJointPredictableEnergyMeasure

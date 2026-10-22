@@ -1,3 +1,34 @@
+# Current IBM mathematics — checkpoint1332: genuine joint predictable energy MEASURE
+
+IBM ACTIVE. Joint countable extension and explicit zero-origin extension are
+DISCHARGED. For EVERY actual JointL2 terminal F, constructed globally FINITE
+countably additive mu_F on the FULL RAW observed IBM predictable sigma algebra.
+Its eligible (s,t]xA values are EXACT actual original-law integrals of
+1_A*(G^F_t-G^F_s)^2. Raw F0 origin events have measure0. Total mass<=normF^2;
+for actual IBM coordinate terminal observed(t), total mass EXACTLY norm^2.
+
+Full ring continuity-at-empty is PROVED: finite compact time fibers with
+MEASURABLE sample projections, compact inner approximants with arbitrarily
+small actual predictable energy errors, dyadic budgets, and actual residual
+support domination/DCT. This yields JOINT sigma-subadditivity. Enlarged
+origin generators form a proved semiring with genuine finite additivity and
+sigma-subadditivity; only then apply AddContent.measure and actual generation.
+Independent open-fiber counterexample excludes a tempting invalid projection
+argument. Read IBM_JOINT_PREDICTABLE_ENERGY_MEASURE_AUDIT.md.
+
+NEXT: prove actual finite-simple-process L2(mu_F) isometry, density, completed
+predictable integration and agreement with the existing bounded stochastic
+steps/countable sums. These remain OPEN. Current G^F depends on F; no universal
+noise, direct integration against nonmartingale IBM Z, or positive-time raw/G
+comparison is claimed. Regular scalar versions/pathwise bracket and full
+native integration/derivative-adjoint domains/Clark–Ocone also remain OPEN.
+Keep focused F1–F3 exact1107 domains VERIFIED, including actual closed dense
+intrinsic derivative and Hilbert adjoint. Initial-coordinate zero1329,
+original M/F/Z, previous domains, queue and all verification gates preserved.
+IBM and indefinite research remain ACTIVE; pseudo FROZEN1293. No early campaign.
+
+---
+
 # Current IBM mathematics — checkpoint1331: actual predictable ring ENERGY content
 
 IBM ACTIVE. Eligible RAW-past rectangles(s,t]xA form a verified semiring;
