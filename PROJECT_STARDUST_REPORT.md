@@ -29552,3 +29552,40 @@ trustoverride. Evidence STARDUST_IBM_RIGHT_GERM_VERIFICATION.json and
 IBM_INTRINSIC_RIGHT_GERM_AUDIT.md. Git/exactreceipt/PRIVATE main+research gates
 follow separately; precommit record claims no backupclosure. Existingindefinite
 goal and IBM ACTIVE, queue unchanged.
+
+
+## Checkpoint1314 — genuine actual IBM right-germ martingale realization
+
+Constructed explicit G=(ambient-null augmented raw natural IBM filtration).
+rightCont using existing Foundation and Mathlib machinery. G is right continuous
+and contains raw F; actual IBM remains strongly adapted. Proved L2(G_t)=R_t,
+the previously verified intersection of all future L2 pasts. Forward direction
+uses augmentation-invariant conditional expectation to recover raw measurable
+versions. Reverse direction uses the SAME ambient-measurable canonical L2
+representative, made pointwise measurable in EVERY augmented future past by
+the existing ambient-null theorem, then its comap lies below their infimum.
+No uncountable full-measure intersection or raw sigma/L2 commutation is assumed.
+
+Actual conditional expectation in G equals R_t orthogonal projection. R_s<=R_t
+and future-horizon independence give P_R_s r_t=r_s; with strong adaptation this
+proves the FULL actual Martingale predicate for scalar rightValue on the original
+joint probability space. Prior L2 and squared-norm bound 2t^2 remain available.
+Original raw M, Z, F unchanged. Positive-time agreement with M is STILL exactly
+the unproved zero-jump condition; no modification/raw-F right continuity/path
+regularity/joint measurability/energy measure or full intrinsic calculus claimed.
+Next germ L2 right continuity and actual regular-version construction, retaining
+common-refinement, continuum-domain, adjoint, F1/F2 correction and K obligations.
+
+All15 public types read unabridged, all113 source lines/proofs reviewed. Four
+independent Lean examples check actual conditional expectation at times1/2 and
+actual IBM adaptation; arbitrary intersection representative measurability;
+new-filtration right continuity/raw inclusion; original conditioning and exact
+zero-jump equivalence. Fresh full root 6266jobs0 24.399s;
+COMPLETE 39513safeFoundation transitive audit0 35.057s,
+only propext/Classical.choice/Quot.sound; independent0 24.792s.
+All2096 prior sources unchanged except root one import, all3configs and113archive
+paths/hashes preserved; no proof-resource/trust override. Evidence in
+STARDUST_IBM_RIGHT_GERM_FILTRATION_VERIFICATION.json and
+IBM_RIGHT_GERM_FILTRATION_AUDIT.md. Exact Git receipt/PRIVATE main+research backup
+closure follows separately; this precommit record does not assert it completed.
+IBM and existing indefinite goal remain ACTIVE; queue unchanged.

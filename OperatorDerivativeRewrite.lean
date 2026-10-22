@@ -1994,3 +1994,4 @@ import Foundation.IBMIntrinsicOriginContinuity
 import Foundation.IBMDecreasingPastProjection
 import Foundation.IBMIntrinsicRightGerm
 import Foundation.IBMIntrinsicRightApproach
+import Foundation.IBMRightGermFiltration

@@ -1,3 +1,24 @@
+# Current IBM mathematics — checkpoint1314: actual right-germ martingale realized
+
+IBM ACTIVE. New explicit G=(ambient-null augmented raw IBM filtration).rightCont
+is right continuous, contains raw F, and keeps actual IBM strongly adapted.
+L2(G_t)=rightPast t is PROVED with the SAME canonical representative measurable
+in every augmented future past, avoiding an uncountable intersection of AE events.
+Actual scalar rightValue is strongly adapted and a FULL Martingale under G and
+the ORIGINAL joint probability law. Actual G conditional expectation equals
+rightPast projection; nested projections and horizon independence prove the
+martingale conditional identity. See IBM_RIGHT_GERM_FILTRATION_AUDIT.md.
+
+Original M, actual IBM Z, raw F and prior mathematics are unchanged. This is NOT
+a proved modification of original M: at positive time equality remains exactly
+the unresolved J_t=0 condition. No raw-F right continuity, jointly time/sample
+measurable version, right/cadlag paths, energy measure or continuum predictable
+domain is claimed. Next investigate actual germ L2 right continuity and regular
+versions, retaining refinement, adjoint and F1/F2 correction/K obligations.
+Full IBM calculus OPEN. All campaign gates and the existing queue unchanged.
+
+---
+
 # Current IBM mathematics — checkpoint1313: canonical actual strong L2 right germs
 
 IBM ACTIVE. Actual M_tau_n on EVERY bounded nonincreasing strictly-right
