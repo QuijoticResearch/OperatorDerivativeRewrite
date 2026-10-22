@@ -31440,3 +31440,52 @@ except two root imports;3configs and113 manuscript paths/hashes unchanged.
 The coefficient-class hypotheses and nonconstructive approximation limits remain
 explicit. Physical-time calculus, general dual multipliers and universal
 intrinsic Clark–Ocone remain open. Exact commit/receipt/private gates pending.
+
+
+## Checkpoint1359 — entire intrinsic IBM graph-dual multipliers and full dual Leibniz
+
+# Current IBM mathematics — checkpoint1359: bounded multiplication on ENTIRE intrinsic graph dual
+
+IBM ACTIVE. ORIGINAL full adjoint graph multiplication is now bounded: actual
+native N_f preserves delta-domain; its graph lift is linear/sequentially closed,
+hence continuous by existing Banach closed graph theorem. Transpose M_f acts
+on EVERY graph-dual element and agrees with actual native multiplication on
+ordinary embedded fields. Strong dual limits preserved, with multiplied
+gradient error <= original value L2 error * norm(graph lift). Actual original
+observable-domain approximations of IBM points are included.
+
+Full dual Leibniz: Dweak(f*g)=M_f(Dweak g)+correctionFunctional(g), EVERY intrinsic
+L2 rough g. Bounded correction map is identified with actual projected native
+two-channel contraction; actual IBM correction expectation/integrability holds.
+Coefficient class UNCHANGED: ORIGINAL DomD, bounded f and BOTH native gradients
+essentially bounded. Actual constant-one coefficient tested IDENTITY on ENTIRE
+abstract dual. See IBM_INTRINSIC_DUAL_MULTIPLIER_AUDIT.md and verification JSON.
+
+No sharp/uniform coefficient-only norm bound, new nonconstant admissible
+coefficient, general ordinary correction field, new original-domain product
+closure, spatial H^-1 transfer, physical-time integral/Itô/Tanaka or universal
+intrinsic CO proved. Original positive-point exclusion/gradient escape remains.
+Full IBM calculus incomplete. Next prioritize actual coefficient examples or
+rigorous obstructions and ordinary correction realization, reusing existing
+Gaussian/Bochner machinery rather than extending conditional formalism alone.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->blackito->backlog.
+Pseudo frozen1293; no expiration; full verification/private gates preserved.
+
+Fresh root6378jobs/24.185s terminal0;
+complete transitive safe-Foundation41831 declarations/44.104s
+terminal0, standard three axioms only. All27 unabridged public types,11 printed
+old/new defining bodies,675 audit lines and250 final source/proof lines read.
+Eight independent final examples0/34.416s;
+four failed prior harnesses retained with exact code/log/timing. Tests include
+ACTUAL intrinsic-one identity on ENTIRE dual, ordinary-field agreement, full
+dual difference bound, actual nonrepresentable time1 point Leibniz, actual
+correction/integrability, multiplied original-domain gradient limits, weighted
+full graph norm bound and quantitative value error. Harness repaired names,
+actual zero-L2 AE transport, canonical graph norm instance pinning and typed
+subtraction equality. No norm/topology replacement or resource increase.
+Source proof timeouts repaired through typed equality chains/local irreducibility.
+All2207 prior sources unchanged except EXACT2rootimports;3configs and113 archive
+paths/hashes unchanged. Closed-graph bound retains actual operator norm, with
+no sharp coefficient-only constant. Nonconstant coefficient construction and
+ordinary correction realization remain open, alongside physical-time calculus
+and universal CO. Exact commit/receipt/BOTH private ref gate pending.

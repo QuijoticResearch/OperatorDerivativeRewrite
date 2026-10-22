@@ -1,3 +1,32 @@
+# Current IBM mathematics — checkpoint1359: bounded multiplication on ENTIRE intrinsic graph dual
+
+IBM ACTIVE. ORIGINAL full adjoint graph multiplication is now bounded: actual
+native N_f preserves delta-domain; its graph lift is linear/sequentially closed,
+hence continuous by existing Banach closed graph theorem. Transpose M_f acts
+on EVERY graph-dual element and agrees with actual native multiplication on
+ordinary embedded fields. Strong dual limits preserved, with multiplied
+gradient error <= original value L2 error * norm(graph lift). Actual original
+observable-domain approximations of IBM points are included.
+
+Full dual Leibniz: Dweak(f*g)=M_f(Dweak g)+correctionFunctional(g), EVERY intrinsic
+L2 rough g. Bounded correction map is identified with actual projected native
+two-channel contraction; actual IBM correction expectation/integrability holds.
+Coefficient class UNCHANGED: ORIGINAL DomD, bounded f and BOTH native gradients
+essentially bounded. Actual constant-one coefficient tested IDENTITY on ENTIRE
+abstract dual. See IBM_INTRINSIC_DUAL_MULTIPLIER_AUDIT.md and verification JSON.
+
+No sharp/uniform coefficient-only norm bound, new nonconstant admissible
+coefficient, general ordinary correction field, new original-domain product
+closure, spatial H^-1 transfer, physical-time integral/Itô/Tanaka or universal
+intrinsic CO proved. Original positive-point exclusion/gradient escape remains.
+Full IBM calculus incomplete. Next prioritize actual coefficient examples or
+rigorous obstructions and ordinary correction realization, reusing existing
+Gaussian/Bochner machinery rather than extending conditional formalism alone.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->blackito->backlog.
+Pseudo frozen1293; no expiration; full verification/private gates preserved.
+
+---
+
 # Current IBM mathematics — checkpoint1358: actual intrinsic graph-dual realization and weak products
 
 IBM ACTIVE. Generalized derivative now uses the ORIGINAL full intrinsic

@@ -2105,3 +2105,5 @@ import Foundation.IBMClockWeakChain
 import Foundation.IBMClockCylinderChain
 import Foundation.IBMIntrinsicGraphDual
 import Foundation.IBMIntrinsicWeakLeibniz
+import Foundation.IBMIntrinsicGraphMultiplier
+import Foundation.IBMIntrinsicDualMultiplier
