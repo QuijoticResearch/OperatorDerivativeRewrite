@@ -29203,3 +29203,40 @@ root4imports;3configs and113archivefiles unchanged. No new proof-resource/trust
 override. Evidence: STARDUST_IBM_NATURAL_PAST_VERIFICATION.json. Commit/receipt/
 PRIVATE main+research verification follow; precommit record claims no backup
 closure. Existing indefinite goal and intrinsic IBM campaign remain ACTIVE.
+
+
+## Checkpoint1305 — actual IBM past native-divergence graph core and reconstruction
+
+Connected1304's maximal past adjoint to actual native scenery/clock divergences.
+Reused generic projected-adjoint closure with both density hypotheses proved,
+then1299 native graph approximation and bounded past projection to prove the
+STRONGER native pair graph closure equals the ENTIRE maximal past adjoint.
+Every maximal past integrand is a strong native-field limit with strong scalar
+L2 convergence of conditional projected divergence SUMS. Converse proved.
+Nested past/all-time projection equals actual raw-natural conditional L2
+expectation, plus scalar a.e conditional expectation. No unclosed-domain
+equality or separate unprojected divergence limits assumed. ALL horizons T>=0.
+
+Existing1301 recoveryPair is in genuine native product-domain and reconstructs
+each actual past f-E[f]1. Its maximal past-adjoint value agrees. Constants are
+actual past observables with zero derivative; Hilbert IBP proves all maximal
+past divergences centered. Range EXACTLY centered past L2. Restricted existing
+recoveryOperator is continuous linear with squarednorm<=2*squarednorm(f).
+This is STATIC native-source realization, not natural-time predictability,
+temporal integration or CO. No projection/derivative commutation is claimed.
+Full IBM calculus OPEN. Next actual temporal realization/causal convergence,
+reusingF1/F2 corrected identities/topologies; no unrelated campaign.
+
+Three modules342lines,27public declarations; all final source/helper lines and
+27final types actually reviewed unabridged (205loglines,
+proof arguments visible). Fresh fullroot6243jobs0
+23.690s; COMPLETE39217safeFoundation transitive
+axiom audit0 34.411s standard3only. Four independent Lean
+nonmartingale-projection consistency, constant-centering, arbitrary constant
+native-pair conditional-graph converse and noncentered-constant range obstruction
+checks0 24.972s. Six scoped800000-heartbeat
+elaboration budgets for actual nested graph witnesses; no trust/configuration
+change. All2071prior sources unchanged except root3imports;3configs and113archive
+files unchanged. Evidence: STARDUST_IBM_PAST_NATIVE_VERIFICATION.json. Commit/
+receipt/PRIVATE main+research checks follow; precommit record claims no backup
+closure. Existing indefinite goal and intrinsic IBM remain ACTIVE.

@@ -1969,3 +1969,6 @@ import Foundation.IBMPastEndpointCore
 import Foundation.IBMPastWeightedLaws
 import Foundation.IBMPastCoreDensity
 import Foundation.IBMPastIntrinsicOperators
+import Foundation.IBMPastDivergenceClosure
+import Foundation.IBMPastSourceRepresentation
+import Foundation.IBMPastConditionalDivergence

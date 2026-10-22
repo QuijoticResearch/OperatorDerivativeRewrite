@@ -1,3 +1,26 @@
+# Current IBM mathematics — checkpoint1305: actual native past divergence and reconstruction
+
+IBM ACTIVE. Every maximal past-adjoint graph point is approximated by genuine
+native scenery/clock divergence pairs: fields converge strongly and the actual
+conditional expectation of their SUM converges strongly in actual scalar L2.
+The converse is proved. Nested past/all-time projections equal genuine IBM
+conditional expectation in L2 and a.e. The maximal past adjoint is EXACTLY the
+graph closure of this native pair operator. No equality of unclosed domains or
+separate unprojected limits is assumed. Existing bounded recovery lies in the
+actual native product domain and reconstructs every past f minus E[f]1.
+Maximal past divergence range is exactly centered past L2; recovery norm squared
+<=2 norm squared. Read IBM_PAST_NATIVE_DIVERGENCE_AUDIT.md for exact contracts.
+All horizons including zero are covered. This remains STATIC source-valued
+reconstruction. No natural-time predictability, temporal Ito/Clark-Ocone or
+conditional-projection/derivative commutation is established. Full IBM calculus
+remains OPEN. Next isolate the actual temporal causal/integrand realization
+and closure obligations, directly reusing the existing F1/F2 identities and
+their corrected topologies. Do not equate scalar conditional projection with
+predictability of native source fields. Preserve1302rawnonmartingale obstruction.
+No campaign transition, source archive change or queue change.
+
+---
+
 # Current IBM mathematics — checkpoint1304: full actual natural-past density
 
 IBM ACTIVE. For EVERY nonnegative horizon T, including zero, the common
