@@ -30422,3 +30422,53 @@ STARDUST_IBM_JOINT_PREDICTABLE_ENERGY_MEASURE_VERIFICATION.json.
 Exact-commit receipt/private main+research verification follows this fully
 audited explicit-path commit; no premature backup-closure assertion.
 Campaign queue, manuscript immutability, indefinite research unchanged.
+
+
+## Checkpoint1333 — full actual predictable L2 integration for IBM terminal channels
+
+For EVERY actual JointL2 F, constructed linear isometry from ALL actual
+raw-predictable Lp Real 2 mu_F into original JointL2. The actual finite
+stochastic sum map is extended with exact agreement, not replaced by an
+unrelated formal operator. Proved arbitrary ring cross energy via disjoint
+splittings/actual orthogonality, true finite-process bilinear integral and
+isometry, genuine Lp dictionary, and stochastic equality IFF integrand AE
+equality for the actual measure. Overlapping-time/disjoint-events included.
+
+Proved FULL L2 density: orthogonal f has zero integrals on all ring sets;
+actual vector-density measure on time rectangles is zero on EXACT full
+predictable generator pi-system INCLUDING origin and on universe. Verified
+vector-measure uniqueness gives AE zero on every finite horizon. Countable
+positive-time coverage plus PROVED origin-zero gives f=0 globally. Closure
+equals TOP. Only then existing extendOfIsometry. Actual finite scalar AE
+sums and ring indicators agree; full domain norm/inner products/original-law
+energy, uniqueness, arbitrary-filter strong limits and existence of actual
+finite-process/stochastic-sum approximation sequences are proved. No image
+norm, assumed density or undefined completion domain.
+
+Four modules379lines/32 public declarations, complete source/proof review
+and all actual unabridged final types read. Fresh full root6309jobs0
+24.128s; COMPLETE transitive safe Foundation
+audit40246declarations0 35.631s, standard3only.
+Five independent Lean examples FINAL0 26.475s:
+actual IBM event-step agreement; EVERY domain integrand original-law energy
+and genuine actual sequence approximation; constant predictable process with
+strictly positive stochastic energy for observed1; complementary events on
+FULLY OVERLAPPING times zero covariance; full-domain unique extension.
+First independent pass failed on a premature test-only measure-mass rewrite;
+failure retained, test repaired with no library change and all5 then passed.
+No full build/audit rerun needed after unchanged library inputs. All stages
+sequential; all2136 prior sources unchanged except EXACTLY4 root imports,
+all3 configs and113 archive paths/hashes preserved. No resource override.
+
+Finite isometry, actual AE quotient, FULL L2 density and completed integration
+now DISCHARGED. Remaining NEXT: old FULL bounded-coefficient step agreement
+in actual energy L2 and old countable sums, then native derivative/adjoint
+domain and representation connections. Terminal-dependent G^F is NOT universal
+noise nor actual nonmartingale IBM Z integrator. Positive-time raw/G comparison,
+regular versions/bracket/full intrinsic Itô/Clark–Ocone calculus remain OPEN.
+Focused F1–F3 exact1107 verified domains and actual closed dense intrinsic
+derivative/Hilbert adjoint, initial-coordinate zero1329 and original M/F/Z
+preserved. See IBM_FULL_PREDICTABLE_INTEGRAL_AUDIT.md and
+STARDUST_IBM_FULL_PREDICTABLE_INTEGRAL_VERIFICATION.json. Exact-commit receipt
+and verified PRIVATE main/research follow audited explicit-path commit.
+No premature backup-closure assertion. IBM/indefinite goal ACTIVE; queue unchanged.

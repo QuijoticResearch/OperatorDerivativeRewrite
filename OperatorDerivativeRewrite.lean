@@ -2034,3 +2034,7 @@ import Foundation.IBMCompactPredictableFibers
 import Foundation.IBMPredictableCompactApproximation
 import Foundation.IBMPredictableContentContinuity
 import Foundation.IBMJointPredictableEnergyMeasure
+import Foundation.IBMPredictableFiniteIsometry
+import Foundation.IBMPredictableLpDictionary
+import Foundation.IBMPredictableDictionaryDensity
+import Foundation.IBMFullPredictableIntegral

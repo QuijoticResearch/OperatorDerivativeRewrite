@@ -1,3 +1,34 @@
+# Current IBM mathematics — checkpoint1333: ALL actual predictable L2 integration
+
+IBM ACTIVE. Finite isometry, actual AE identification, FULL actual predictable
+L2 density and completed integral are DISCHARGED. For EVERY actual JointL2
+terminal F, IBMFullPredictableIntegral.integral F is a LINEAR ISOMETRY from
+ALL Lp Real 2 mu_F on FULL RAW naturalFiltration.predictable to ORIGINAL
+JointL2. Exact agreement with actual finite stochastic sums and ring indicators,
+original-law squared-energy identity, inner products, uniqueness, arbitrary
+filter strong-limit bridge and actual sequence approximation for EVERY full
+domain integrand are proved. No image-norm or unspecified closure-domain trick.
+
+Arbitrary ring cross energy equals mu_F(E intersect H).toReal, including
+time-overlapping/disjoint-sample rectangles. Every finite process genuinely
+MemLp; products integrable. Finite stochastic sums equal IFF their actual
+integrands are mu_F-AE equal. Density reuses vector-measure uniqueness on
+time rectangles with EXACT ring-plus-origin generating pi-system, countable
+time exhaustion and verified origin-zero. Closure is proved TOP before
+existing extendOfIsometry. Read IBM_FULL_PREDICTABLE_INTEGRAL_AUDIT.md.
+
+NEXT identify completed integration with EVERY old bounded raw-past
+coefficient step by actual approximation in mu_F L2, then old countable sums
+and native derivative/adjoint domains/representations. These remain OPEN.
+G^F remains terminal-dependent: no universal noise, direct integration against
+nonmartingale IBM Z, positive-time raw/G equality or full native calculus.
+Focused F1–F3 exact1107 results and actual closed dense intrinsic derivative/
+Hilbert adjoint remain VERIFIED. Initial-coordinate zero1329, all original
+M/F/Z, earlier domains, queue and verification/private gates preserved.
+IBM and indefinite research ACTIVE; pseudo FROZEN1293. No early campaigns.
+
+---
+
 # Current IBM mathematics — checkpoint1332: genuine joint predictable energy MEASURE
 
 IBM ACTIVE. Joint countable extension and explicit zero-origin extension are
