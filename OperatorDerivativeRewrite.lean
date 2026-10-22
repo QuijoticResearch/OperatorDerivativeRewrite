@@ -1963,3 +1963,5 @@ import Foundation.IBMCenteredSourceRepresentation
 import Foundation.IBMClockBacktracking
 import Foundation.IBMTemporalCovarianceObstruction
 import Foundation.IBMNaturalFiltrationObstruction
+import Foundation.IBMPastAverageCore
+import Foundation.IBMPastCylinderClosure

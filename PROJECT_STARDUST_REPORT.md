@@ -29135,3 +29135,35 @@ hashes. Prior2062sources unchangedexceptroot3imports; all113manuscripts and
 3configs unchanged. No new proof-resource/trust setting. Unrelated drafts/
 caches preserved. Commit/receipt/private main+research checks follow; no
 precommit record claims backup closure. Indefinite goal and IBM remainACTIVE.
+
+
+## Checkpoint1303 — actual IBM finite-past core approximation
+
+Reused the actual natural filtration, native Bochner averages, common closed
+source/clock domain and chain rule. The prior global density proof takes right
+slopes and can look beyond a terminal horizon. New left slopes stay inside
+the actual finite past and recover every positive point t<=T in strong L2.
+Closed-past projection commutes with the actual Bochner integral; actual
+averages lie in that past. Bounded C1 composition with bounded derivative
+preserves the past domain and extends to its L2 closure. Every finite weighted
+actual positive-time cylinder (all t_i<=T) has this closure approximation,
+including terminal coordinates and signed weights. Domain monotonicity and
+closure containment are verified. No Gaussian observation law is assumed.
+
+Entire past-density, point derivative-domain membership, derivative graph-norm
+convergence and conditional-projection commutation are NOT established. Next
+reuse finite weighted-law uniqueness/generated-sigma density on the restricted
+time family, then investigate actual terminal Doob/past-domain operators.
+Full IBM intrinsic calculus remains open; no queued campaign begins.
+
+Two modules157lines,10public declarations; final sources and all10public types
+actually read unabridged (78loglines; proof arguments visible).
+Fresh fullroot 6236jobs0 39.028s;
+COMPLETE 39103safeFoundation transitive axiom audit0
+34.838s, standard3only. Four independent Lean endpoint,
+mixed signed-weight sine cylinder, actual derivative-domain average and
+zero-horizon/negative-window checks0 26.373s.
+All2065prior source bytes unchanged except root2imports;3configs and113archive
+files unchanged. No proof-resource/trust change. Full evidence is in
+STARDUST_IBM_PAST_CORE_VERIFICATION.json; exact-commit receipt/private branch
+checks follow, with no precommit backup closure claim. Existing goal ACTIVE.

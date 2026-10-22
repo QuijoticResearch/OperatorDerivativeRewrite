@@ -1,3 +1,21 @@
+# Current IBM mathematics — checkpoint1303: actual finite-past core approximation
+
+IBM ACTIVE. Actual averages up to T are measurable in its raw natural past.
+Left-sided L2 slopes recover every positive observation at t<=T, including
+the terminal endpoint, in the closure of the common source/clock derivative
+domain restricted to that past. Bounded C1 finite weighted actual point
+cylinders with bounded derivative also belong to this strong L2 closure.
+See IBM_PAST_CORE_APPROXIMATION_AUDIT.md for exact theorems and limitations.
+Full natural-past density remains OPEN: next adapt finite weighted-law/Fourier
+uniqueness and generated-sigma density with time-restricted indices, including
+zero-time normalization and the exact raw natural sigma. Do not infer density
+of an intersection from global core density. No point clock derivative-domain,
+graph convergence, projection/derivative commutation or natural-time CO theorem
+is claimed. Prior static source reconstruction and martingale obstruction are
+preserved. No campaign transition or manuscript changes; queue unchanged.
+
+---
+
 # Current IBM mathematics — checkpoint1302: actual temporal martingale obstruction
 
 IBM ACTIVE. Constructed Brownian clock backtracks with strictly positive actual
