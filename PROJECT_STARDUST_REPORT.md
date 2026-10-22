@@ -30810,3 +30810,45 @@ Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog unchang
 No expiration; pseudoprocess frozen1293. All verification and private gates intact.
 
 Fresh complete root build: 6336 jobs, 25.625s, terminal0. Complete transitive audit: 40813 declarations, 40.782s, terminal0; standard three axioms only. All21 unabridged public types, BOTH complete result-definition bodies and all199 final source/proof lines read. Five independent FIRSTPASS Lean tests0 (31.694s), empty final log. Exact test code and inputs in verification JSON. All2165 prior sources unchanged except two root imports; three configs and113 archive paths/hashes unchanged. No proof-resource/trust override. Development repairs: explicit isometry-continuity coercions, existing closed-space completeness, factored coordinate/pairing identities and transparent full specifications. This proves weak divergence for bounded observable tests, not strong multiplier adjoint-domain invariance. Actual contraction correction requires L2 bounds and observable projection/membership; no counterexample has been asserted. Private gate pending exact commit/receipt/sync.
+
+
+## Checkpoint1343 — strong weighted native IBM divergence and bounded graph core
+
+# Current IBM mathematics — checkpoint1343: STRONG weighted native divergence
+
+IBM ACTIVE. If f is in FULL ORIGINALDomD, its value is essentially bounded,
+and BOTH original-coordinate native coefficient gradient fields are L-infinity,
+then for EVERY u in ORIGINALDom(delta), the actual native field M_f u belongs
+to the SAME adjoint domain, with exact value
+delta(M_f u)=P_IBM(M_f(delta u)-C(Df,u)).
+Actual C is a genuine JointL2 scalar contraction of BOTH original-coordinate
+fields. Projection is the existing actual IBM observable projection. See
+IBM_NATIVE_WEIGHTED_DIVERGENCE_AUDIT.md for exact domains and scope.
+
+Actual bounded graph core established for EVERY full-domain input: same-domain
+bounded sine clips converge STRONGLY in intrinsicL2 value and original native
+fieldL2 derivative. Existing1339 actual approximants/limits reused. Correction
+uses existing L-infinity x L2 Holder-aware lpInner and its actual representatives.
+Prior1342 weak law gives representer on bounded tests; strong graph core and
+inner continuity extend to EVERY original-domain test. ORIGINAL adjoint
+representability proves actual weighted-field membership/value. No replacement
+D, assumed divergence multiplier or new full-domain product theorem needed.
+
+Five FIRSTPASS independent tests: full strong bounded graph core; actual two-
+channel correction; strong domain invariance; exact observable-case projection
+removal; strong weighted formula for native field representing an ACTUAL
+predictable stochastic integral. All22 public types, BOTH full Prop bodies,
+full output body and all261 final source/proof lines reviewed. Complete root
+build and complete transitive safe Foundation audit pass, standard three axioms.
+
+The bounded-gradient restriction remains explicit. Rich concrete nonconstant
+IBMobservable multiplier instances and weaker correction domains need further
+work; this checkpoint does not assert such a family. No physical-time IBM
+Itô/Tanaka/local-time/versions/bracket or universal causal CO conclusion.
+Retain1337 entireG0/target-dependent channel,1336 Poisson/Poincare,1338–1342
+chains/products/weak calculus and focusedF1–F3 exact verified domains.
+
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog unchanged.
+No expiration; pseudoprocess frozen1293. All verification and private gates intact.
+
+Fresh complete root build: 6339 jobs, 25.986s, terminal0. Complete transitive audit: 40890 declarations, 36.683s, terminal0; standard three axioms only. All22 unabridged public types, BOTH complete Prop bodies, full output definition and all261 final source/proof lines read. Five independent FIRSTPASS Lean tests0 (29.325s), empty final log. Exact test code and inputs in verification JSON. All2167 prior sources unchanged except three root imports; three configs and113 archive paths/hashes unchanged. No proof-resource/trust override. Strong weighted adjoint-domain law established on its exact bounded-value/bounded-gradient domain, projected actual L2 correction identified. Concrete rich nonconstant admissible observable instances remain to be constructed; full physical-time IBM calculus remains open. Private gate pending exact commit/receipt/sync.

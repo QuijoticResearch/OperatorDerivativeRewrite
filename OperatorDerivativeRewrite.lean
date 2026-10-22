@@ -2065,3 +2065,6 @@ import Foundation.IBMIntrinsicBoundedSquare
 import Foundation.IBMIntrinsicProductCalculus
 import Foundation.IBMNativeFieldMultiplier
 import Foundation.IBMNativeProductOperators
+import Foundation.IBMNativeContraction
+import Foundation.IBMNativeBoundedGraphCore
+import Foundation.IBMNativeWeightedDivergence

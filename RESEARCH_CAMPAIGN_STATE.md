@@ -1,3 +1,42 @@
+# Current IBM mathematics — checkpoint1343: STRONG weighted native divergence
+
+IBM ACTIVE. If f is in FULL ORIGINALDomD, its value is essentially bounded,
+and BOTH original-coordinate native coefficient gradient fields are L-infinity,
+then for EVERY u in ORIGINALDom(delta), the actual native field M_f u belongs
+to the SAME adjoint domain, with exact value
+delta(M_f u)=P_IBM(M_f(delta u)-C(Df,u)).
+Actual C is a genuine JointL2 scalar contraction of BOTH original-coordinate
+fields. Projection is the existing actual IBM observable projection. See
+IBM_NATIVE_WEIGHTED_DIVERGENCE_AUDIT.md for exact domains and scope.
+
+Actual bounded graph core established for EVERY full-domain input: same-domain
+bounded sine clips converge STRONGLY in intrinsicL2 value and original native
+fieldL2 derivative. Existing1339 actual approximants/limits reused. Correction
+uses existing L-infinity x L2 Holder-aware lpInner and its actual representatives.
+Prior1342 weak law gives representer on bounded tests; strong graph core and
+inner continuity extend to EVERY original-domain test. ORIGINAL adjoint
+representability proves actual weighted-field membership/value. No replacement
+D, assumed divergence multiplier or new full-domain product theorem needed.
+
+Five FIRSTPASS independent tests: full strong bounded graph core; actual two-
+channel correction; strong domain invariance; exact observable-case projection
+removal; strong weighted formula for native field representing an ACTUAL
+predictable stochastic integral. All22 public types, BOTH full Prop bodies,
+full output body and all261 final source/proof lines reviewed. Complete root
+build and complete transitive safe Foundation audit pass, standard three axioms.
+
+The bounded-gradient restriction remains explicit. Rich concrete nonconstant
+IBMobservable multiplier instances and weaker correction domains need further
+work; this checkpoint does not assert such a family. No physical-time IBM
+Itô/Tanaka/local-time/versions/bracket or universal causal CO conclusion.
+Retain1337 entireG0/target-dependent channel,1336 Poisson/Poincare,1338–1342
+chains/products/weak calculus and focusedF1–F3 exact verified domains.
+
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog unchanged.
+No expiration; pseudoprocess frozen1293. All verification and private gates intact.
+
+---
+
 # Current IBM mathematics — checkpoint1342: native multipliers and weak divergence
 
 IBM ACTIVE. Actual arbitrary essentially bounded scalar multipliers now act as
