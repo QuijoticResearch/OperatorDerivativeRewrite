@@ -1965,3 +1965,7 @@ import Foundation.IBMTemporalCovarianceObstruction
 import Foundation.IBMNaturalFiltrationObstruction
 import Foundation.IBMPastAverageCore
 import Foundation.IBMPastCylinderClosure
+import Foundation.IBMPastEndpointCore
+import Foundation.IBMPastWeightedLaws
+import Foundation.IBMPastCoreDensity
+import Foundation.IBMPastIntrinsicOperators

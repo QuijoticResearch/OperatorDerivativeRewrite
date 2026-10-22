@@ -1,3 +1,25 @@
+# Current IBM mathematics — checkpoint1304: full actual natural-past density
+
+IBM ACTIVE. For EVERY nonnegative horizon T, including zero, the common
+source/clock intrinsic domain intersect actual raw natural past is L2-dense
+in that ENTIRE past. Exact sigma identification uses natural_eq_comap and all
+times in Iic T, including zero. Zero-time native class is proved zero a.e;
+finite weighted positive laws/Fourier uniqueness and generated measurable
+cylinders prove density without any Gaussian IBM observation-law assumption.
+Every past L2 class and genuine terminal conditional L2 projection admits a
+strong core-approximation sequence. The existing joint derivative restricted
+to the entire past is closed/dense; its maximal adjoint is closed and satisfies
+Hilbert integration by parts. Read IBM_NATURAL_PAST_DENSITY_AUDIT.md.
+Fields retain native Gaussian source coordinates. No graph-norm convergence,
+conditional-projection/derivative commutation, natural-time predictability or
+temporal stochastic integral/Clark-Ocone identity is proved. Next connect the
+past adjoint to actual projected native divergence/graph closure and terminal
+reconstruction; isolate genuine temporal adaptation/convergence obligations.
+Prior F1/F2 corrections, static1301representation and1302rawnonmartingale
+obstruction remain intact. No campaign transition; queue unchanged.
+
+---
+
 # Current IBM mathematics — checkpoint1303: actual finite-past core approximation
 
 IBM ACTIVE. Actual averages up to T are measurable in its raw natural past.

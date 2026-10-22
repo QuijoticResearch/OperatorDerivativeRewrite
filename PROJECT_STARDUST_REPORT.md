@@ -29167,3 +29167,39 @@ All2065prior source bytes unchanged except root2imports;3configs and113archive
 files unchanged. No proof-resource/trust change. Full evidence is in
 STARDUST_IBM_PAST_CORE_VERIFICATION.json; exact-commit receipt/private branch
 checks follow, with no precommit backup closure claim. Existing goal ACTIVE.
+
+
+## Checkpoint1304 — full actual IBM natural-past density and adjoints
+
+Discharged1303's full-past density gap for EVERY nonnegative horizon including
+zero: closure_L2(intrinsicCore intersect pastT)=pastT. Proved zero-time native
+source class zero from actualGaussianclock zero law and exact norm identity;
+bounded C1 cylinders now include0<=t_i<=T. Reused generic characteristic-function
+uniqueness on finite POSITIVE laws weighted by positive/negative annihilator
+parts. Finite actual event annihilation extends by measurable-cylinder pi-system
+uniqueness. Exact raw natural sigma=comap(actual family over IicT), including
+zero. No Gaussian IBM law or projected-domain invariance assumed. All actual
+past classes and genuine conditional L2 projections have strong scalar L2
+common-domain approximation sequences. This is NOT derivative graph convergence.
+
+PastSpace covers the ENTIRE natural past inside the existing intrinsic space.
+The existing joint two-source derivative restricted there is closed and densely
+defined. Its maximal adjoint is closed and satisfies domain-exact Hilbert IBP.
+These are actual source-valued operator identities, NOT natural-time predictable
+integration or temporal Clark-Ocone. Full IBM calculus remains OPEN. Next actual
+native-divergence projection/closure and terminal reconstruction, then precise
+temporal causal/convergence obligations. Preserve existing F1/F2 and obstruction
+theorems. No queued campaign starts and no manuscript changes.
+
+Four modules370lines,28public declarations; all final source/helper lines and
+28final types actually reviewed unabridged (174loglines,
+proof arguments visible). Fresh fullroot6240jobs0
+65.886s; COMPLETE39141safeFoundation transitive
+axiom audit0 34.380s standard3only. Four independent Lean
+zero-horizon density, actual terminal Doob approximation, zero/terminal signed
+cosine cylinder and concrete past-domain average checks0
+25.356s. All2067prior sources unchanged except
+root4imports;3configs and113archivefiles unchanged. No new proof-resource/trust
+override. Evidence: STARDUST_IBM_NATURAL_PAST_VERIFICATION.json. Commit/receipt/
+PRIVATE main+research verification follow; precommit record claims no backup
+closure. Existing indefinite goal and intrinsic IBM campaign remain ACTIVE.
