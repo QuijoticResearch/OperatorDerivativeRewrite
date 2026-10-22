@@ -2091,3 +2091,6 @@ import Foundation.IBMUniformBoundedNativeTests
 import Foundation.IBMNativeL1TestSeparation
 import Foundation.IBMConditionalAdjointDomain
 import Foundation.IBMClockSectionEnergyObstruction
+import Foundation.GaussianClosedDerivativePrimitive
+import Foundation.GaussianWeakVectorPrimitive
+import Foundation.IBMClockWeakGraphObstruction

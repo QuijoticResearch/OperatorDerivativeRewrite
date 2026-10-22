@@ -1,3 +1,38 @@
+# Current IBM mathematics — checkpoint1354: original Gaussian graph primitive and weak vector obstruction
+
+IBM ACTIVE. ORIGINAL scalar Gaussian closedDerivative graph now implies an
+actual local Lebesgue primitive for EVERY graph pair, with no pointwise
+derivative assumption. Continuous representative FTC includes both endpoints.
+Common finite-energy vector scalar graphs force a genuine Bochner primitive.
+The actual GaussianBochnerL2 scenery section sourceScenery|c*x| has NO COMMON
+original scalar Gaussian derivative vector for ANY c>0. See
+IBM_GAUSSIAN_WEAK_GRAPH_OBSTRUCTION_AUDIT.md. All individual scalar projections
+are NOT claimed to fail; ONE COMMON finite-energy vector is the exact gate.
+
+This closes1353's scalar closed-graph-to-primitive necessity and its vector
+assembly. OPEN NEXT: native infinite-dimensional clock graph -> normalized
+1D Gaussian vector weak graphs, with actual Bochner pullback identification.
+Do not claim pointIBM outside originalnativeDomD yet. Existing scalar forward
+pullback_graph does NOT prove the converse. Potential route: adjoint tests
+against clock polynomial divergence fields, bounded common vector assembly.
+This route remains unproved. FullIBM calculus INCOMPLETE, no physical-time Ito/
+Tanaka or universalCO. Original unmollified SCENERY partial graph preserved.
+
+Gates fresh: fullroot6365/26.359s0;
+complete safeFoundation41380/37.978s0, standard3only.
+All14 unabridged public types,3 printed definition bodies and ALL229 final
+source/proof lines read. Six final independent tests0/22.680s,
+emptylog: nonpolynomial exponential/endpointFTC, nonconstant vector firstchaos,
+positive sqrt(T) obstruction, genuinezero-scale common derivative, old actual
+scenery graph. Three scratch coercion/zero-pair packaging failures retained.
+All2193 prior sources except exact root3imports,3configs,113archive hashes intact.
+PRIVATE receipt/sync closure recorded separately at exact commit.
+
+Queue IBM -> Bakry/fBM -> Cauchy -> fractional diffusion -> black noise -> backlog.
+Pseudo frozen1293. No expiration; October31 REVIEW ONLY. All gates unchanged.
+
+---
+
 # Current IBM mathematics — checkpoint1353: actual clock-section energy obstruction
 
 IBM ACTIVE. The actual scenery-L2-valued section F(r)=sourceScenery|r|
