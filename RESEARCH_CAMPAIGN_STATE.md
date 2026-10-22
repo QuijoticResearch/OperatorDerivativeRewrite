@@ -1,3 +1,31 @@
+# Current IBM mathematics — checkpoint1348: informative full-domain clock Stein calculus
+
+IBM ACTIVE. For EVERY observable f in FULL ORIGINAL jointDerivative.domain,
+E[f*(B_T^2-T)]=E[B_T*<D_clock f,h_T>], with BOTH integrands genuinely L1.
+No bounded f/gradient or extra scalar-productL2 hypothesis. For C1 phi with
+continuous globally bounded derivative, also
+E[phi(f)*(B_T^2-T)]=E[B_T*phi'(f)*<D_clock f,h_T>], BOTH sides L1; phi itself
+may be unbounded. Exact original clock coordinate, actual constructed B.
+See IBM_CLOCK_STEIN_IDENTITY_AUDIT.md and its exact verification JSON.
+
+For EVERY T>0 there EXISTS f in ORIGINAL DomD with NONZERO clock gradient
+and NONZERO weighted Stein pairing. Original-domain density and1347 nonzero
+native divergence prove this; no assumed point IBM derivative membership.
+Independent test COMBINES witness with1346: every projected deterministic-
+direction clock contraction STILL ZERO. LATENT clock weight supplies an
+informative pairing; do not conclude the native clock gradient vanishes.
+
+SOURCE-variable intrinsic IBP, NOT physical-time IBM Itô/drift/integration
+or universal causal Clark–Ocone. Existential witness, not explicit cylinder.
+NO assertion that P_IBM preserves DomD, no new closed observable derivative,
+no initial-germ triviality or positive-time raw/germ equality.1347 actual
+observed terminal-indexed integral retains its exact scope. Full IBM calculus
+remains INCOMPLETE. Preserve all focusedF1–F3 and1337–1347 verified machinery.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog;
+no expiration, pseudo frozen1293; all gates intact. No campaign transition.
+
+---
+
 # Current IBM mathematics — checkpoint1347: actual latent clock divergence and observed integral
 
 IBM ACTIVE. The actual original native field (0,B_T*h_T) belongs to ORIGINAL

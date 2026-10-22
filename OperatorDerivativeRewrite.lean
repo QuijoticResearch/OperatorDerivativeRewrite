@@ -2080,3 +2080,4 @@ import Foundation.IBMClockDerivativeReflection
 import Foundation.IBMObservableClockKernel
 import Foundation.IBMClockLinearDivergence
 import Foundation.IBMQuadraticClockMartingale
+import Foundation.IBMClockSteinIdentity

@@ -31015,3 +31015,34 @@ completion of IBM. Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->
 black noise->backlog; no expiration, pseudo frozen1293; all gates intact.
 
 Fresh complete root build: 6351 jobs, 26.215s, terminal0. Complete transitive safe Foundation audit: 41142 declarations, 39.136s, terminal0; only propext/Classical.choice/Quot.sound. All36 unabridged public types, SEVEN printed actual definition bodies and ALL262 final source/proof lines read. Six final independent Lean tests0 (30.374s), empty log. First run failed only scratch completeness/open names/wrong L2 qualification; retained code/log/time and fixed tests only. All2180 previous Foundation/root sources unchanged except two imports; three configs and113 archive paths/hashes unchanged. No proof-resource/trust/toolchain override. Exact test code, source manifests, logs and sequential stage timings in verification JSON. Existing mixed Gaussian graph, adjoint transports, actual fourth pairing, quadratic germ origin bound and actual predictable integral reused. This is a concrete native-to-observed-integral bridge, not a new universal innovation or physical-time IBM calculus. Private gate pending exact commit/receipt/sync.
+
+
+## Checkpoint1348 — actual full-domain informative clock Stein calculus
+
+# Current IBM mathematics — checkpoint1348: informative full-domain clock Stein calculus
+
+IBM ACTIVE. For EVERY observable f in FULL ORIGINAL jointDerivative.domain,
+E[f*(B_T^2-T)]=E[B_T*<D_clock f,h_T>], with BOTH integrands genuinely L1.
+No bounded f/gradient or extra scalar-productL2 hypothesis. For C1 phi with
+continuous globally bounded derivative, also
+E[phi(f)*(B_T^2-T)]=E[B_T*phi'(f)*<D_clock f,h_T>], BOTH sides L1; phi itself
+may be unbounded. Exact original clock coordinate, actual constructed B.
+See IBM_CLOCK_STEIN_IDENTITY_AUDIT.md and its exact verification JSON.
+
+For EVERY T>0 there EXISTS f in ORIGINAL DomD with NONZERO clock gradient
+and NONZERO weighted Stein pairing. Original-domain density and1347 nonzero
+native divergence prove this; no assumed point IBM derivative membership.
+Independent test COMBINES witness with1346: every projected deterministic-
+direction clock contraction STILL ZERO. LATENT clock weight supplies an
+informative pairing; do not conclude the native clock gradient vanishes.
+
+SOURCE-variable intrinsic IBP, NOT physical-time IBM Itô/drift/integration
+or universal causal Clark–Ocone. Existential witness, not explicit cylinder.
+NO assertion that P_IBM preserves DomD, no new closed observable derivative,
+no initial-germ triviality or positive-time raw/germ equality.1347 actual
+observed terminal-indexed integral retains its exact scope. Full IBM calculus
+remains INCOMPLETE. Preserve all focusedF1–F3 and1337–1347 verified machinery.
+Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog;
+no expiration, pseudo frozen1293; all gates intact. No campaign transition.
+
+Fresh complete root build: 6352 jobs, 24.412s, terminal0. Complete transitive safe Foundation audit: 41175 declarations, 37.486s, terminal0; only propext/Classical.choice/Quot.sound. All14 unabridged public types, THREE printed actual definition bodies and ALL150 final source/proof lines read. Six final independent Lean examples0 (27.014s), empty log; sine, UNBOUNDED affine, simultaneous nonzero clock-gradient/projected-contraction-zero witness and constant atomic control included. First two test runs failed only explicit uncurry-isometry map_zero then local coefficient-space instances in constant test; retained BOTH code/log/time sets, scratch-only repairs. All2182 previous sources unchanged except one root import; three configs and113 archive paths/hashes unchanged. No resource/trust/toolchain override. Exact source-variable linear/nonlinear identities and all integrability clauses are genuine probability integrals, not physical-time IBM Itô. Nonvacuity is a rigorous existential dense-domain witness, not point-observation DomD membership. Full calculus incomplete; private gate pending exact commit/receipt/sync.
