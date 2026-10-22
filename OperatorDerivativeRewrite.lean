@@ -2055,3 +2055,6 @@ import Foundation.IBMObservableHorizonLimit
 import Foundation.IBMTerminalSelfRepresentation
 import Foundation.IBMIntrinsicChainRule
 import Foundation.IBMIntrinsicChainEnergy
+import Foundation.IBMIntrinsicChainApproximation
+import Foundation.IBMIntrinsicChainMultiplier
+import Foundation.IBMIntrinsicUnboundedChain

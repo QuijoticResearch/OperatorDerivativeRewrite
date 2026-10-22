@@ -30671,3 +30671,39 @@ Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->black noise->backlog;
 no expiration, pseudo frozen1293; every verification/private gate preserved.
 
 Fresh complete root build: 6326 jobs, 30.432s, terminal0. Complete transitive audit: 40579 declarations, 39.966s, terminal0, standard three axioms only. All22 actual unabridged public types and all252 final source/proof lines read. Five independent Lean tests FINAL PASS0 (29.859s): sine and cosine full native gradient fields in BOTH original coordinates plus contraction bounds; sine output actual native stochastic IBP for arbitrary terminal/integrand; sine of constant-one has zero derivative; nonlinear output actual target-indexed native stochastic reconstruction retaining entire initial germ. All2155 prior sources unchanged except two root imports; three configs and113 archive paths/hashes unchanged. Failed development logs retained; final proofs use default resources, explicit typed graph equalities and existing instances/vector isometry. No new foundational Gaussian/measure construction or altered operator. Verification JSON records input hashes and complete tests. Private gate pending exact commit/receipt/sync. Physical-time calculus and universal causal Clark–Ocone remain OPEN.
+
+
+## Checkpoint1339 — unbounded C1 native IBM chain rule through strong graph limits
+
+# Current IBM mathematics — checkpoint1339: unbounded C1 native chain calculus
+
+IBM ACTIVE. The GLOBAL VALUE bound on phi is REMOVED. For EVERY f in FULL
+ORIGINAL jointDerivative.domain and EVERY C1 phi with continuous globally
+bounded derivative dphi, actual phi(f) lies in the SAME domain. BOTH actual
+original-coordinate gradients equal dphi(f) times the corresponding original
+fields, and norm(Dphi(f))<=Bnorm(Df). No bounded-input or phi(0)=0 hypothesis.
+ChainResult and GraphResult are EXACT transparent specifications, whose entire
+definition bodies are printed/read in the full audit. Read
+IBM_INTRINSIC_UNBOUNDED_CHAIN_AUDIT.md.
+
+Actual bounded approximants phi_n=sin(e_n phi)/e_n, e_n=1/(n+1), have uniform
+derivative boundB. Global Lipschitz growth proves actual phi(f) L2. Dominated
+convergence proves STRONG actual JointL2 value convergence and BOTH actual
+coefficient-valued L2 gradient limits. Verified curry isometries and finite
+joint-channel convergence feed the ORIGINAL CLOSED jointD graph. No new law,
+measure, derivative or stochastic-integral completion; existing1338 bounded
+chain and Bochner dominated convergence reused. Arbitrary affine a*x+c,
+identity, unbounded nonlinear x+sin(x), simultaneous strong approximations,
+actual nonlinear stochastic IBP and1337 reconstruction independently tested.
+
+Still Gaussian SOURCE-variable calculus, not physical-time IBM Itô. Unbounded
+derivative/local C1 functions (e.g. x^2 without further hypotheses), nonsmooth
+Lipschitz contractions, bounded-product Leibniz, weighted-divergence products,
+second-order generator formulas, physical-time versions/bracket and Itô,
+causal gradient identification/universal noise/CO remain OPEN. No arbitrary
+point-observation derivative membership. Retain entire initial germ and target-
+dependent channel qualifications in1337. Focused F1–F3 and1336–1338 unchanged.
+IBM calculus incomplete. Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->
+black noise->backlog; no expiration, pseudo frozen1293, all gates preserved.
+
+Fresh complete root build: 6329 jobs, 26.906s, terminal0. Complete transitive audit: 40660 declarations, 35.659s, terminal0; standard three axioms only. All30 unabridged public types, BOTH complete transparent result-definition bodies and all359 final source/proof lines read. Five independent FINAL Lean tests0 (28.999s); affine-helper normalization repaired after first test error, exact failed log/time retained. All2157 prior mathematical sources unchanged except three root imports; three configs and113 archive paths/hashes unchanged. No resource/trust override; all library inputs unchanged after fresh full build/audit. Reused RealSteklovApprox positive widths, Mathlib continuous sinc,1338 bounded chain, actual Lp multiplication, BochnerL2Approximation, native unitary transport and ORIGINAL closed joint graph. Public result specifications retain ALL actual domain/value/gradient/norm assertions. Physical-time/universal causal calculus remains OPEN. Private gate pending exact commit/receipt/sync.

@@ -1,3 +1,36 @@
+# Current IBM mathematics — checkpoint1339: unbounded C1 native chain calculus
+
+IBM ACTIVE. The GLOBAL VALUE bound on phi is REMOVED. For EVERY f in FULL
+ORIGINAL jointDerivative.domain and EVERY C1 phi with continuous globally
+bounded derivative dphi, actual phi(f) lies in the SAME domain. BOTH actual
+original-coordinate gradients equal dphi(f) times the corresponding original
+fields, and norm(Dphi(f))<=Bnorm(Df). No bounded-input or phi(0)=0 hypothesis.
+ChainResult and GraphResult are EXACT transparent specifications, whose entire
+definition bodies are printed/read in the full audit. Read
+IBM_INTRINSIC_UNBOUNDED_CHAIN_AUDIT.md.
+
+Actual bounded approximants phi_n=sin(e_n phi)/e_n, e_n=1/(n+1), have uniform
+derivative boundB. Global Lipschitz growth proves actual phi(f) L2. Dominated
+convergence proves STRONG actual JointL2 value convergence and BOTH actual
+coefficient-valued L2 gradient limits. Verified curry isometries and finite
+joint-channel convergence feed the ORIGINAL CLOSED jointD graph. No new law,
+measure, derivative or stochastic-integral completion; existing1338 bounded
+chain and Bochner dominated convergence reused. Arbitrary affine a*x+c,
+identity, unbounded nonlinear x+sin(x), simultaneous strong approximations,
+actual nonlinear stochastic IBP and1337 reconstruction independently tested.
+
+Still Gaussian SOURCE-variable calculus, not physical-time IBM Itô. Unbounded
+derivative/local C1 functions (e.g. x^2 without further hypotheses), nonsmooth
+Lipschitz contractions, bounded-product Leibniz, weighted-divergence products,
+second-order generator formulas, physical-time versions/bracket and Itô,
+causal gradient identification/universal noise/CO remain OPEN. No arbitrary
+point-observation derivative membership. Retain entire initial germ and target-
+dependent channel qualifications in1337. Focused F1–F3 and1336–1338 unchanged.
+IBM calculus incomplete. Queue IBM->Bakry/fBM->Cauchy->fractional diffusion->
+black noise->backlog; no expiration, pseudo frozen1293, all gates preserved.
+
+---
+
 # Current IBM mathematics — checkpoint1338: explicit bounded C1 native chain calculus
 
 IBM ACTIVE. For EVERY f in FULL ORIGINAL jointDerivative.domain and EVERY
