@@ -29435,3 +29435,41 @@ Evidence STARDUST_IBM_ENDPOINT_CONTINUITY_VERIFICATION.json and
 IBM_INTRINSIC_ENDPOINT_CONTINUITY_AUDIT.md. Git/exactreceipt/PRIVATE main+research
 gates follow separately; precommit record claims no backupclosure. Existing
 indefinitegoal and IBM ACTIVE, queue unchanged.
+
+
+## Checkpoint1311 — actual predictable time processes and common-grid equality
+
+Reused EXACT law-free GaussianPredictableStep coordinate-past factorization
+and predictability with observation process ACTUAL IBM Z. Every bounded actual
+F_s coefficient factors through the ENTIRE raw coordinate past; no polynomial/
+finite-coordinate or Brownian-law restriction. Actual Ioc(s,t] timeStep and
+finite timeSum defined independently of stochastic output, proved strongly
+predictable in FULL raw IBM natural filtration. INTEGRATOR remains verified M,
+not raw IBM or an assumed Brownian motion. Brownian integral/isometry theorems
+are not instantiated. Actual timeStep split via disjointIocunion and finite
+retained monotone refinement identity proved; consistent with prior stochastic
+output identities, including repeated-time retained subdivisions.
+
+On EVERY common STRICT grid, timeSum at a cell's right endpoint equals exactly
+its coefficient; every other cell is inactive. Time-process equality forces
+coefficientfunction equality and original actual stochastic-sum function/L2
+equality, independent of bound/proof fields. Fixed-time a.e time-process equality
+also yields coefficienta.e and L2integral equality using finite endpoints only;
+no unjustified all-time commonfullmeasure event. Different-grid commonrefinement,
+repeatedpoint normalization, time-product/energy a.e relation and independent
+continuum completion remain OPEN. FullIBMcalculus/bracket/PRP/nativeadjoint not
+complete. Next actual commonrefinements andenergyrepresentationconsistency.
+
+Independent Leanchecks: actual sin(Z1)strongpredictability; same randomcoefficient
+both time-process andactualL2splitconsistency; two-cellrightendpoint2recovers
+sin(Z1); actualsin(M0)zeroonlya.e coefficientversions produce same three-cellL2
+integral aspointwisezero. One module136lines,13publictypes actually reviewed
+unabridged (89loglines); all newsource/helper proofs reviewed.
+Freshfullroot6259jobs0 24.326s; COMPLETE
+39421safeFoundation transitiveaudit0 35.720s standard3only;
+independentchecks0 24.495s. All2089prior sources unchanged
+exceptroot1import,3configs and113archivepaths/hashes preserved. No newresource/
+trustoverride. Evidence STARDUST_IBM_PREDICTABLE_PROCESS_VERIFICATION.json and
+IBM_INTRINSIC_PREDICTABLE_PROCESS_AUDIT.md. Git/exactreceipt/PRIVATE main+research
+gates follow separately; precommit record claims no backupclosure. Existing
+indefinitegoal and IBM ACTIVE; queue andF1/F2correction/K domains unchanged.

@@ -1,3 +1,26 @@
+# Current IBM mathematics — checkpoint1311: actual predictable integrand processes
+
+IBM ACTIVE. Bounded full-IBM-past coefficients now have independently defined
+actual (s,t] time-step processes and finite time sums, all strongly predictable
+in the UNCHANGED raw IBM natural filtration. Directly reuses law-free coordinate-
+past factorization/predictability from GaussianPredictableStep with B=actual Z;
+integrator remains M_t=E[Y_t^2-t|F_t], not Z. No Brownian isometry premise used.
+Retained subdivisions preserve both actual time processes and previous actual
+stochastic integrals. On a COMMON STRICT grid, actual time-process equality
+recovers coefficients at right endpoints and identifies actual stochastic sums
+and L2 classes. Equality a.s at each fixed time also identifies L2 outputs,
+handling coefficient versions/bound fields. Read
+IBM_INTRINSIC_PREDICTABLE_PROCESS_AUDIT.md.
+Still OPEN: constructing common refinements for DIFFERENT grids, repeated-point
+normalization, correct time-product/energy null relation and independent complete
+continuum domain. Fixed-time a.e equality is not assumed equivalent to arbitrary
+time-product a.e equality. Full IBM calculus, bracket/PRP/native adjoint remain
+OPEN. Next general common refinements and energy representation consistency,
+then completion with exact hypotheses. Preserve F1/F2 correction/K domains.
+No campaign transition or queue change.
+
+---
+
 # Current IBM mathematics — checkpoint1310: actual cofinal stochastic endpoints
 
 IBM ACTIVE. Actual raw IBM past at T equals supremum of pasts at ANY deterministic

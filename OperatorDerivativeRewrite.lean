@@ -1987,3 +1987,4 @@ import Foundation.IBMIntrinsicMartingaleRefinement
 import Foundation.IBMIntrinsicMartingaleSeries
 import Foundation.IBMCofinalPast
 import Foundation.IBMIntrinsicMartingaleEndpoint
+import Foundation.IBMIntrinsicPredictableProcess
