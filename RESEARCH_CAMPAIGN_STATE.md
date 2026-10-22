@@ -1,3 +1,33 @@
+# Current IBM mathematics — checkpoint1335: ACTUAL native divergence transfer / IBP
+
+IBM ACTIVE. Every completed actual I_F H is IBM-observable and orthogonal to
+the ENTIRE initial right germ, hence centered. Reused Gaussian fiber recovery,
+Bochner adjoint inclusion and native unitary transport construct a genuine
+source/clock field R(f). Exact two-factor vacuum calculation proves delta R(f)=f
+for EVERY centered intrinsic observable, with norm(Rf)^2<=2 norm(f)^2, even if
+f is outside Dom(D). Existing native D and delta are UNCHANGED closed operators.
+
+Constructed bounded LINEAR B_F=R composed with actual I_F. For ALL actual
+predictable H: B_F H belongs to Dom(delta), delta B_F H=actual I_F H, and
+norm(B_F H)^2<=2norm(H)^2. Actual integration by parts holds for EVERY test in
+the existing full Dom(D). EXACT native-gradient identity B_F* Df=I_F* f on that
+domain. No new derivative name or formal substitute law. Read
+IBM_NATIVE_STOCHASTIC_DIVERGENCE_AUDIT.md.
+
+This native recovery field is NOT proved temporally adapted, minimal or a
+canonical causal projection of D. I_F range reconstruction for all centered
+observables, raw/G comparison, old RAW series equality, pathwise versions/
+bracket, intrinsic chain/product/Itô and general Clark–Ocone remain OPEN.
+The adjoint identity does not by itself prove I_F I_F* f=f. Constant one is
+an explicit counterexample to UNCENTERED reconstruction, not to correctly
+centered CO. Actual coordinate IBM1 is recovered as native divergence of a
+NONZERO field WITHOUT a derivative-domain assumption on IBM1.
+Focused F1–F3 exact1107 results, actual closed dense D/actual delta, all M/F/Z,
+initial-coordinate zero1329, earlier domains, queue and verification/private
+gates preserved. IBM/indefinite goal ACTIVE; pseudo FROZEN1293. No early campaigns.
+
+---
+
 # Current IBM mathematics — checkpoint1334: FULL bounded G-step identification
 
 IBM ACTIVE. Full bounded raw-past G-step identification is DISCHARGED.

@@ -2042,3 +2042,8 @@ import Foundation.IBMPredictableCoefficientLift
 import Foundation.IBMPredictableSimpleCoefficient
 import Foundation.IBMPredictableBoundedApproximation
 import Foundation.IBMPredictableBoundedSeries
+import Foundation.IBMPredictableIntegralObservable
+import Foundation.IBMNativeGaussianRecovery
+import Foundation.IBMNativeVacuumProjection
+import Foundation.IBMStochasticNativeDivergence
+import Foundation.IBMNativePredictableTransfer

@@ -30522,3 +30522,56 @@ STARDUST_IBM_BOUNDED_PREDICTABLE_IDENTIFICATION_VERIFICATION.json. Audited
 explicit-path commit followed by exact receipt and PRIVATE main/research
 verification; no premature backup closure. IBM/indefinite research ACTIVE,
 same queue, manuscript preservation and full verification gates.
+
+
+## Checkpoint1335 — actual stochastic integral / native divergence / gradient-adjoint bridge
+
+Every completed I_F H is proved observable in actual entire IBM IntrinsicSpace
+and orthogonal to the ENTIRE initial right germ, hence centered. Uses actual
+step rightPast membership, old past-to-intrinsic inclusion, full genuine
+dictionary approximation and closedness. No initial-germ triviality assumed.
+
+Constructed actual source/clock Gaussian recovery using EXISTING bounded fiber
+divergence recovery, Bochner adjoint inclusion and native unitary transports.
+Proved original ambient native adjoint graph values f-Pclock f, f-Psource f.
+Recovery pair Rf=(Rsource(Pclock f),Rclock f) lies in existing intrinsic delta
+domain with projected value f-Psource Pclock f. Exact actual flip/tensor/mean
+calculation proves double vacuum zero for globally centered targets, WITHOUT
+confusing global with separate fiber centering. Thus EVERY centered intrinsic
+observable has explicit delta preimage, even without target differentiability.
+Actual recovery squared norm <=2 target squared norm; no minimality assumed.
+
+Constructed bounded LINEAR recoveryOperator (bound sqrt2) and B_F=R composed
+with ACTUAL full predictable integral I_F. For EVERY H, delta B_F H=actual
+I_F H, genuine native-domain membership, norm bound, and stochastic integration
+by parts against EVERY f in ORIGINAL full Dom(D). Exact operator-calculus
+identity B_F.adjoint(Df)=I_F.adjoint(f) PROVED on this domain. Native D/delta
+remain unchanged actual closed derivative/Hilbert adjoint, not redefined by I_F.
+
+Five modules396lines/48 public declarations, all complete sources/proofs and
+actual unabridged public types reviewed. Fresh root6318jobs0
+24.640s; COMPLETE safe Foundation transitive
+audit40416declarations0 38.746s standard3only.
+Five independent Lean checks FIRST PASS0 31.610s:
+actual nonlinear sin(IBM1) stochastic output equals native divergence AE;
+EVERY centered intrinsic target preimage plus norm bound; actual NONZERO IBM1
+recovered as native divergence with NONZERO field using initial-zero/terminal
+theorems, no IBM1 derivative-domain hypothesis; ORIGINAL full-domain gradient
+transfer-adjoint identity; explicit constant-one uncentered-reconstruction
+counterexample. All stages sequential. All2144 prior sources unchanged except
+EXACTLY5 root imports;3configs113archivepaths/hashes preserved. No resource/trust
+overrides. A redundant wrapper for the EXISTING native graph sequence theorem
+hit default elaboration budget and was omitted; original theorem remains
+unchanged and applicable. Central new proofs compile at default resources.
+
+Remaining: temporal/causal identification of native recovery, genuine range
+reconstruction/residual-zero for centered stochastic representation, raw/G
+comparison/old RAW series equality, scalar versions/bracket and intrinsic
+Itô/Clark–Ocone/domain connections. B_F field not assumed adapted or minimal;
+adjoint identity alone is not all-observable CO. Constant-one counterexample
+does not refute correctly centered CO. Focused F1–F3 exact1107, closed dense
+D/actual delta, all M/F/Z/previous domains preserved. Read
+IBM_NATIVE_STOCHASTIC_DIVERGENCE_AUDIT.md and
+STARDUST_IBM_NATIVE_STOCHASTIC_DIVERGENCE_VERIFICATION.json. Audited explicit
+commit, exact receipt and verified PRIVATE main/research follow; no premature
+backup-closure assertion. IBM and indefinite goal ACTIVE, same campaign queue.
