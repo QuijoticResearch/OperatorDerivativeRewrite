@@ -29673,3 +29673,45 @@ STARDUST_IBM_DETERMINISTIC_INTEGRAL_VERIFICATION.json and
 IBM_RIGHT_GERM_DETERMINISTIC_INTEGRAL_AUDIT.md. Exact receipt/PRIVATE main+research
 closure follows separately; precommit record claims no backup closure.
 IBM/existing indefinite goal ACTIVE; queue unchanged.
+
+
+## Checkpoint1317 — full actual time-energy L2 deterministic stochastic integral
+
+Resolved checkpoint1316 interval density. Actual zero origin mass makes Iic t
+and Ioc0t agree AE; Iic horizons finite. Orthogonality to prefix indicators
+implies actual integral_Iic t f=0. On each finite horizon, actual L2 f is L1;
+its restricted vector measure with density f vanishes on all Iic t (restriction
+gives Iic(min(t,T))) and univ. Existing pi-system/Borel generation and vector-
+measure uniqueness yield zero measure; existing integrable-density uniqueness
+gives f=0 AE on horizon. Countable natural horizons cover NNReal, so f=0 globally.
+Closed domain's orthogonal complement is zero, hence domain=top and full density.
+No finite total time measure or global L1 assumption; missing origin handled.
+
+Actual deterministic integral now acts on ALL time-energy L2 as a genuine linear
+isometry with every paired covariance and actual scalar squared-integral identity.
+On (s,t] indicator gives actual r_t-r_s. Agrees with all finite stochastic sums,
+is unique among dictionary-agreeing linear isometries, and agrees with previous
+completed-domain integral. EVERY full input has actual finite dictionary sequences
+converging in time L2 and actual stochastic sums converging STRONGLY in JointL2.
+General convergence theorem still covers every filter. Reused existing Mathlib
+operator extension and vector-measure theorems; no new process law/infrastructure.
+
+This closes deterministic density, not random predictable integration/control,
+native derivative/adjoint compatibility, PRP/Clark–Ocone, regular versions/bracket
+or unsmoothed actual IBM Itô. Original raw M/F/Z unchanged; positive-time r=M
+still iff unproved J_t=0. Keep actual random coefficient energies, all F1/F2
+correction/K domains. Next genuine operator-adjoint/domain and random control.
+
+Two modules153lines/all19public types and complete proofs actually reviewed.
+Four independent Lean examples: arbitrary-input approximation existence; actual
+interval scalar increment; full covariance preservation/injectivity; previous-
+domain agreement plus actual scalar isometry. Fresh root 6272jobs0 23.572s;
+COMPLETE 39623safeFoundation transitive audit0 35.786s,
+standard3only; independent0 24.647s. Audit repeated
+sequentially after confirming build terminal because preliminary audit launch
+preceded explicit build-exit confirmation; final gate uses the clean later pass.
+All2101prior sources unchanged except root2imports, all3configs/113archivepaths
+andhashes preserved; no new resource/trust override. Evidence
+STARDUST_IBM_FULL_TIME_L2_INTEGRAL_VERIFICATION.json and IBM_FULL_TIME_L2_INTEGRAL_AUDIT.md.
+Exact receipt/PRIVATE main+research backup closure follows separately; precommit
+record claims no backup closure. IBM/existing indefinite goal ACTIVE; queue unchanged.

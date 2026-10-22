@@ -1,3 +1,26 @@
+# Current IBM mathematics — checkpoint1317: full deterministic time-L2 integral
+
+IBM ACTIVE. Interval density gap CLOSED: previous completed domain is ALL actual
+time-energy L2. Proved via zero origin mass, finite-horizon L2->L1, restricted
+vector-measure uniqueness on Borel-generating Iic pi-system and univ, density
+uniqueness, countable horizon cover, and closed orthogonal-complement theorem.
+No global L1 or finite total time measure assumed. Actual integral on ALL TimeL2
+is a linear isometry, preserves every covariance, gives actual interval random
+increments/scalar isometry, and agrees with previous completed-domain integral.
+EVERY input admits finite dictionary approximation with actual stochastic sums
+converging strongly in JointL2; arbitrary-filter convergence and uniqueness proved.
+See IBM_FULL_TIME_L2_INTEGRAL_AUDIT.md.
+
+This completes the deterministic time-L2 domain, NOT random predictable
+integration/control or full intrinsic IBM calculus. Native derivative/adjoint
+compatibility, PRP/Clark–Ocone, regular versions, bracket and actual IBM Itô remain
+open. Original M/F/Z unchanged; r=M at positive time still iff unproved zero jump.
+Next actual full-integral adjoint/domain connection and random predictable control,
+retaining actual coefficient energies and F1/F2 correction/K hypotheses.
+Existing campaign queue, archive and verification/private gates unchanged.
+
+---
+
 # Current IBM mathematics — checkpoint1316: actual completed deterministic integral
 
 IBM ACTIVE. Actual time-energy prefix indicators and rightLimitClass t have
