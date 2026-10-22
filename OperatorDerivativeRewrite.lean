@@ -2094,3 +2094,7 @@ import Foundation.IBMClockSectionEnergyObstruction
 import Foundation.GaussianClosedDerivativePrimitive
 import Foundation.GaussianWeakVectorPrimitive
 import Foundation.IBMClockWeakGraphObstruction
+import Foundation.IBMClockObservationConverse
+import Foundation.GaussianClockBochnerContraction
+import Foundation.IBMClockBochnerConverse
+import Foundation.IBMPointClockDomainObstruction

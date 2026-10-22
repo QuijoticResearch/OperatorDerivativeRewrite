@@ -1,3 +1,47 @@
+# Current IBM mathematics — checkpoint1355: ACTUAL point outside ORIGINAL clock/joint domains
+
+IBM ACTIVE. For EVERY t>0, actual unmollified intrinsicCurve(t) is OUTSIDE
+the ORIGINAL jointDerivative domain, and its actual joint L2class is OUTSIDE
+ORIGINAL native clockDomain. The SAME actual point remains IN ORIGINAL scenery
+sourceDomain at EVERY t>=0. This is proved from the actual Brownian clock and
+scenery classes, not a surrogate derivative definition. See
+IBM_ACTUAL_POINT_CLOCK_DOMAIN_AUDIT.md. The1353–1354 native point-domain bridge
+is now CLOSED by this verified negative result.
+
+Key bridge: normalized scalar observation has EXACT fullGaussian/scalarGaussian
+domain equivalence; full gradient rankone, recovered by J.adjoint.component(h).
+Arbitraryfieldrecoverycontractive; exactenergy onactualgraph. WeightedBochner
+contractions preserve ORIGINALclosedgraph. One common norm-controlled vector
+derivative is constructed by boundedrecovery+actualflip. Positive-timeclock
+normalization and equality ofactualBochnerpointpullback classes are proved.
+The1354weakvectorobstruction therefore applies to the ORIGINAL native domain.
+
+Actual mollified clock gradients have NO strongL2limit at t>0 despite valueL2
+convergence. Scenerygradients stillconverge in originalgraph. Time0coordinate0
+DOES belong tojointdomain; mollifiedpoints DO belong toclockdomain. No theorem
+of gradientnormdivergence, exclusion ofallnonlinearpointfunctions, impossibility
+ofothercalculi or refutation oftargetindexedL2representation is asserted.
+
+Next: use this exact native-domain restriction when pursuing actual point IBM
+calculus and mollifier limits. Any weaker/distributional clock derivative or
+alternate calculus needs independently justified domains/topology/agreement.
+Do not silently reinterpret originaloperators. Existingdenseaveragecalculus,
+sourcecalculus and verifiedF1–F3 remain intact. FullIBM INCOMPLETE; no physical-
+timeIto/Tanaka or universalCO established. Do not transition toBakry/fBM yet.
+
+Fresh gates: fullroot6369/25.002s0;
+complete safeFoundation41483/37.959s0 standard3only.
+All40 unabridgedpublictypes,12actualold/newdefinitionbodies, ALL459finalsource/
+prooflines and complete479-lineauditoutputread. Eight independent tests
+FIRSTPASS0/33.560s, emptylog. All2196oldsources except
+exactroot4imports,3configs,113archivepaths/hashes unchanged. No resource/trust/
+toolchainoverride. PRIVATE exactreceipt/sync closure recorded separately.
+
+Queue IBM -> Bakry/fBM -> Cauchy -> fractional diffusion -> black noise -> backlog.
+Pseudo frozen1293; noexpiration; October31REVIEWONLY. Allverificationgatesunchanged.
+
+---
+
 # Current IBM mathematics — checkpoint1354: original Gaussian graph primitive and weak vector obstruction
 
 IBM ACTIVE. ORIGINAL scalar Gaussian closedDerivative graph now implies an
