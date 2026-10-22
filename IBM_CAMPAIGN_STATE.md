@@ -1,3 +1,33 @@
+# Current IBM mathematics — checkpoint1367: literal completed signed covariance integral
+
+IBM ACTIVE. For EVERY H in ORIGINAL L2(mu_F), K in ORIGINAL L2(mu_G), HK is
+integrable against ACTUAL covariance VARIATION, with SHARP functional bound
+integral abs(HK) d|nu(F,G)| <= norm(H)*norm(K). Literal Mathlib signed integral
+integral HK dnu(F,G) equals inner(actualIntegral_F H, actualIntegral_G K).
+The maximal separate-energy product/identification gap from1363–1365 is CLOSED.
+No common-control L2/boundedness/smoothness/domain premises are substituted.
+
+Internal actual RN density control uses alpha=mu_F+mu_G, rational countable AE
+intersection then continuous extension to all reals and quadratic discriminant.
+Original arbitrary representatives handled by proved separate absolute continuity.
+Weighted Young and second discriminant prove the functional estimate. Product
+difference bound gives GENUINE L1(VARIATION) convergence for ANY two strong old
+L2 sequences; literal signed-integral continuity established with integrability.
+Old actual dictionary approximants and finite identity1364 identify the full
+completed pairing; NO density/convergence/integrability hypothesis left open.
+
+Full IBM calculus remains INCOMPLETE. General random countable-channel
+completion/null quotient, temporal conditional-gradient/causal CO and physical-time
+Ito/Tanaka/brackets remain open outside earlier exact verified scopes. Original
+rough-domain counterexamples, F1–F3 scopes, native adjoint and calculus retained.
+Next use the genuine completed cross-channel energies for multichannel calculus;
+do not pivot or declare full intrinsic calculus complete. See
+IBM_COMPLETED_SIGNED_COVARIANCE_AUDIT.md and exact verification JSON.
+Queue IBM->Bakry/fBM->Cauchy->A(2)/RH attempt->fractional diffusion->blackito
+->backlog unchanged. Pseudo frozen1293; no expiry; all full/private gates retained.
+
+---
+
 # Current queue amendment — October22: A(2)/RH immediately after Cauchy
 
 IBM remains ACTIVE at verified checkpoint1365. New saved sequence:
