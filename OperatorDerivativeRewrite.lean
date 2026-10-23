@@ -2209,3 +2209,5 @@ import Foundation.IBMClockNativeOccupation
 import Foundation.IBMClockNativeSpatial
 import Foundation.PositiveMollifierL2Contraction
 import Foundation.IBMClockOccupationStrong
+import Foundation.BochnerCoefficientParseval
+import Foundation.IBMClockAverageStrongGraph
