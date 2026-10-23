@@ -31917,3 +31917,55 @@ paths/hashes unchanged. No new resource/trust/version, timeout, suppressed check
 manuscript edit or false causal/physical-time theorem. Original maximal-domain
 integration objective fulfilled, not replaced by a smaller passing domain.
 Private gate pending exact commit/receipt and verified PRIVATE main/research refs.
+
+
+## Checkpoint1368 — genuine signed-energy random multichannel IBM completion
+
+# Current IBM mathematics — checkpoint1368: genuine random multichannel energy completion
+
+IBM ACTIVE. Arbitrary families of ORIGINAL full random predictable L2 inputs now
+have an ACTUAL finite stochastic sum and LITERAL full signed covariance Gram energy.
+Exact null kernel = zero JOINT energy. Genuine normed null quotient and pinned
+Hilbert completion constructed; finite inputs dense, actual integral isometric,
+agrees with every original integral, unique, range EXACT closed finite-output span.
+No false diagonal-only energy or component independence assumed.
+
+For the PREEXISTING FIXED COUNTABLE1362 actual channel family, completed quotient
+is isometrically equivalent to ENTIRE IntrinsicSpace intersect (rightPast0)^orth.
+Every intrinsic observable has a UNIQUE completed quotient preimage of f-G0f.
+The WHOLE original initial germ is retained. Joint full signed finite-energy tails
+are equivalent to unconditional summability of component embeddings. Under that
+exact criterion, constructed HasSum limits exist both in completed integrand space
+and ACTUAL stochastic L2. Raw nonzero opposite-IBM1 input collapsing to zero
+quotient/energy independently verified; null quotient is mathematically necessary.
+
+Completed inputs are joint-energy classes/limits. Coordinate-family representatives
+or joint time-index fields for EVERY arbitrary-family completed input are NOT
+proved. Fixed-basis explicit coordinate representatives may be obtained using the
+old scalar expansion, but that new representative theorem remains unproved here.
+Causal temporal-gradient/Clark–Ocone, physical-time Ito/Tanaka/brackets and full
+intrinsic IBM calculus remain OPEN outside earlier exact scopes. Next connect
+this actual completion to old native divergence/adjoint machinery and examine
+explicit fixed-family coordinate realization. No premature campaign transition.
+See IBM_MULTICHANNEL_COMPLETION_AUDIT.md and exact verification JSON.
+Queue IBM->Bakry/fBM->Cauchy->A(2)/RH attempt->fractional diffusion->blackito
+->backlog unchanged. Pseudo frozen1293; no expiry; all full/private gates retained.
+
+Fresh full root 6394jobs/41.659s/0.
+COMPLETE transitive safe Foundation audit 42259decl/35.430s/0,
+standard three axioms only. ALL46 named unabridged new types (including component
+helpers/quotient instances),13 printed old/new definitions, ALL379
+audit lines and249 final source/proof lines actually read. Eight independent tests
+final0/30.244s, emptylog. Two test-side failures
+25.464s and25.515s retained
+with exact code/logs. Default elaboration timeout in scratch6 was fixed using
+explicit computational decisions/coercions, NOT raised limits or changed semantics.
+All ten scratch histories retained. Full gates unchanged after final source.
+Tests include single actual integral/norm calibration, Gram and zero-equivalence,
+ACTUAL nonzero raw opposite-IBM1 cancellation, finite signed energy, observed
+point-time reconstruction, UNIQUE intrinsic quotient reconstruction, joint-energy
+HasSum/energy convergence and orthogonality to the original WHOLE initial germ.
+All2223 old sources unchanged except one root import,3configs and113 exact immutable
+archive paths/hashes unchanged. No manuscript edit, source deletion, new trust,
+resource override, suppressed checks, false coordinate/causal/full-calculus claim.
+Exact private gate pending audited commit/receipt and PRIVATE main/research refs.
