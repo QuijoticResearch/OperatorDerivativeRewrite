@@ -34188,3 +34188,67 @@ the separately constructed predictable martingale M remain intact. The full
 IBM campaign stopping contract is not met; no queued campaign is released.
 
 Checkpoint1398 gates: full root6446jobs/55.864984s/0; complete safe transitive43435declarations/40.873919s/0; all17public types (104unabridged lines), both complete new sources and eight downstream checks/31.067962s/0 reviewed. All2274source/3config and113immutable archive paths/hashes checked. Standard3axioms only; no resource/toolchain/trust changes. Original manuscripts, current private LaTeX/PDF pairs/index, queue and reflection records unchanged. Explicit five-path Git checkpoint, exact receipt and verified PRIVATE main/research follow in .lake/stardust-1398-verification.json.
+
+
+## Checkpoint1399 — actual unclipped nonlinear Simpson L2 closure (October23,2026)
+
+IBM remains ACTIVE. Starting audited baseline44794ea (1398). No campaign or
+housekeeping admission; October23 reflection already consumed. All statements
+below concern the OLD actual process Z_t=W(|B_t|) on its ORIGINAL joint law.
+
+`IBMActualIncrementMoments` reuses the verified Gaussian first-chaos scenery,
+continuous clock modifications, Gaussian absolute moments and product Fubini.
+For EVERY nonnegative s,t and natural q, actual even powers are integrable and
+E|Z_t-Z_s|^(2q) <= m_(2q)*sqrt(|t-s|)^q*m_q. Here m_j is the exact standard
+Gaussian absolute moment, not an assumed finite constant. Conditioning on the
+actual clock gives the EXACT inner expectation
+m_(2q)*abs(|B_t|-|B_s|)^q. Reflected-clock contraction and the original clock
+increment law yield the bound. No independence among IBM increments is used.
+
+`IBMFifthVariationL2.fifth_squared_integral_bound` proves, on EVERY uniform
+N=n+1 and EVERY horizon T>=0,
+E[(sum_i |Delta Z_i|^5)^2] <= m_10*m_5*T^2*sqrt(T/N).
+Finite Cauchy--Schwarz controls every cross term; tenth increment moments supply
+all integrability premises. `fifthClass_tendsto` is genuine L2 norm convergence
+to zero. This upgrades the older fifth-variation probability result rather
+than assuming a uniform-integrability or independent-increment assertion.
+
+`IBMSimpsonFifthError.error_bound` proves the global deterministic C5 estimate
+|S_(f')(x,y)-(f(y)-f(x))| <= M*|y-x|^5 when |f^(5)|<=M everywhere.
+The nonoptimal constant1 is intentional; only five derivatives are required.
+`IBMSimpsonL2Error.errorClass_tendsto` combines this with the actual moment
+estimate and old native finite telescope: actual UNCLIPPED Simpson error
+converges in L2 for every such f, T>=0, along all N=n+1. Membership and actual
+representatives are proved, not conditional moment assumptions.
+
+`IBMRawCosineSimpsonL2` instantiates f=sin with the verified global fifth
+bound1. Every original raw `IBMActualSimpson.sums Real.cos T n` is square
+integrable and observable; `intrinsicValue_actual_ae` identifies the value
+class with those SAME UNCLIPPED sums (including the old zero-time AE identity).
+`intrinsicValue_tendsto` gives strong observable-L2 convergence to the OLD
+`sinePoint T`. No clamp is present. `weakDerivative_tendsto` gives norm
+convergence in the FULL ORIGINAL joint adjoint graph dual; actual_pairing
+integrability/convergence holds for EVERY original joint-divergence-domain
+test. This is a genuine signed stochastic spatial Simpson integral identity,
+not merely an expectation heat formula or convergence on bounded tests.
+
+Limits of this checkpoint: positive-time sinePoint remains outside the strong
+joint derivative domain, and its dual derivative remains nonrepresentable by
+a strong joint field (old explicit obstruction). No finite raw sum is claimed
+to lie in that strong domain. No adapted/Skorohod interpretation, intrinsic
+strong clock gradient, causal projection or Clark--Ocone completion follows.
+The strong-domain problem for int_0^T phi(Z_t)dt is still OPEN: old bounded-chain
+results apply to phi(int Z_t dt), not int phi(Z_t)dt. A weighted clock-gradient
+estimate would require justified Gaussian cross-contractions/cancellations;
+the mere global bound on phi' does not supply it. Continue actual IBM calculus
+from these precise closure and adjoint statements, not a campaign transition.
+
+Independent checks: nonzero quintic Simpson error1/24 and reversed -1/24;
+exact cubic reconstruction; cross-term square inequality without independence;
+N^(-1/2) scaling cancellation; actual conditional tenth moment; T=0 L2 limit;
+finite raw L2 membership; surviving strong-domain obstruction; full original
+adjoint-test limit. These are exact Lean checks, not numerical novelty claims.
+Original manuscripts, all113 archive paths/hashes, queue, reflection accounting,
+curated documents, private LaTeX/PDF pairs and index are unchanged.
+
+Checkpoint1399 gates: complete root6451jobs/27.343525s/0; complete safe transitive43496declarations/40.162537s/0; all44public types (267unabridged lines), all five complete new sources and ten downstream Lean checks/29.716929s/0 reviewed. All2279source/3config hashes frozen; all pre-existing sources unchanged except root imports/AxiomAudit;113immutable archive paths/hashes checked. Only standard3axioms; no resource/toolchain/trust changes. Queue/reflection records, curated exposition and original/private manuscript artifacts unchanged. Explicit eight-path Git checkpoint, exact receipt and verified PRIVATE main/research closure follow in .lake/stardust-1399-verification.json.

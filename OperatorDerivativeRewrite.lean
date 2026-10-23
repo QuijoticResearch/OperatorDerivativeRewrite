@@ -2172,3 +2172,8 @@ import Foundation.IBMUniformTimeSpace
 import Foundation.IBMContinuousSimpsonRealization
 import Foundation.IBMBochnerTimeQuadrature
 import Foundation.IBMRampSimpsonNativeAverage
+import Foundation.IBMActualIncrementMoments
+import Foundation.IBMSimpsonFifthError
+import Foundation.IBMFifthVariationL2
+import Foundation.IBMSimpsonL2Error
+import Foundation.IBMRawCosineSimpsonL2
