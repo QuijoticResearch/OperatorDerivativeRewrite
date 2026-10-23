@@ -34868,3 +34868,105 @@ Original ResearchSources, queue, reflection accounts, curated exposition,
 private manuscripts/PDFs and Lean/Lake settings remain unchanged.
 
 Checkpoint1406 gates: complete root6471jobs/23.372369s/0; complete safe transitive43855declarations/35.094977s/0; all31public types (145unabridged lines), BOTH complete new proof/definition sources and ten independent mathematical Lean checks/32.067861s/0 reviewed. All2299sources/3configs frozen/rechecked; pre-existing sources unchanged except root imports/AxiomAudit;113immutable archive paths/hashes unchanged. Default200000 proof heartbeats, trust and toolchain retained. Five explicit Git paths; exact receipt and verified PRIVATE main/research closure follow in .lake/stardust-1406-verification.json.
+
+## Checkpoint1407 — strong actual source quadratures and samplewise vector-integral realization
+
+October23,2026. IBM ACTIVE, baseline4a6c10c. The preceding goal turn established
+the actual source-gradient Bochner-L2 formula. This checkpoint upgrades its
+native source approximants from weak to STRONG L2 convergence and identifies
+the limiting field with a genuine samplewise vector integral. No new campaign,
+reflection session, process law or archive change.
+
+`Foundation/IBMSineSourceContinuity.lean` starts with OLD two-sided scenery
+geometry: `direction_norm_sq` proves ||K(r)||^2=|r| for EVERY real r, including
+negative r. `value_four_bound` uses |cos|<=1 to bound the actual coefficient's
+fourth power by the actual clock's square. `clock_square_integrable` and
+`clock_square_integral` reuse the original constructed clock modification and
+OLD Gaussian process product law to establish E[Bt^2]=t. All fixed-time
+integrability is established before integral comparisons.
+
+`value_four_integrable`, `value_four_moment` and `value_memLp_four` prove
+E[||cos(Zt)K(|Bt|)||^4] <= t, in the internally transposed parameter order.
+`value_four_norm_bound` gives the actual uniform L4 bound T^(1/4) for t<=T.
+The fourth root is a REAL exponent, with positive finite higher exponent4;
+it is not an integer-division zero or a hypothetical moment constant.
+
+The cumulative library's OLD
+`HigherLpUniformIntegrability.finite_higher_ae_Lp_convergence` supplies the
+key reuse connection. `value_continuous` proves continuity of the ACTUAL
+coefficient path for every sample from the existing continuous IBM/clock
+paths and K's continuity. On any convergent time sequence the L4 bounds are
+uniform; the old higher-Lp theorem therefore gives genuine L2 convergence.
+`flat_continuous` identifies its actual L2 sections and proves strong L2
+time continuity. This route needs no new Holder machinery, clock maximum
+moment theorem or assumption that IBM increments are independent. The
+previously suggested fourth-INCREMENT estimate is not needed for this
+qualitative conclusion: bounded cosine and the clock second moment suffice.
+
+`Foundation/IBMSineSourceStrongQuadrature.lean` transports that continuity to
+the OLD `sineSourceGradient t` and the original-coordinate `nativeField t`.
+`gradientSum_tendsto` proves the actual1404 right-endpoint source graph
+quadratures converge STRONGLY to1404's SAME intrinsic channel0. The proof
+directly reuses OLD `IBMBochnerTimeQuadrature.rightSum_tendsto` and1406's
+actual source integral identity. `source_graph_tendsto` proves strong
+convergence of BOTH the value and output components of the original partial
+source graph. It does not assert common full-joint graph membership of
+the finite pointwise source quadratures.
+
+`nativeSum` contains finite right-endpoint sums of actual native coefficient
+L2 fields. `nativeSum_tendsto` proves ordinary joint-L2 NORM convergence to
+the realized intrinsic source gradient. `nativeSum_norm_tendsto` explicitly
+proves convergence of the field NORMS. These are stronger conclusions than
+the1405 weak field limits; no similar clock-channel upgrade is inferred.
+
+`Foundation/IBMSineSourcePathIntegral.lean` realizes the remaining samplewise
+formula. `sampleField` is the actual original-coordinate coefficient
+cos(Zt)*K(|Bt|), with proved joint measurability and continuous time paths
+for EVERY sample. `sampleSum` is its actual finite vector-valued time
+quadrature. `nativeSum_actual_ae` proves equality of each genuine L2 sum's
+representative and that sample sum, using actual finite-sum/smul AE laws.
+Only a COUNTABLE family of meshes is combined into a common null set.
+
+`sampleIntegral T` is the actual coefficient-space vector integral on [0,T].
+`sampleField_intervalIntegrable` proves its existence for every sample;
+`sampleIntegral_stronglyMeasurable` proves measurability of the raw integral
+by the standard Bochner parameter-integral theorem. `sampleSum_tendsto`
+holds for every sample. `nativeSum_ae_tendsto` and the NEW strong L2 limit
+therefore give two limits in measure of the same native sequence. Reusing
+the OLD `tendstoInMeasure_ae_unique` principle, `actual_source_integral_ae`
+identifies the genuine intrinsic source gradient with the samplewise vector
+integral ALMOST SURELY, for EVERY FIXED nonnegative horizon:
+realize(D_source F_T)(omega) = int_0^T cos(Zt(omega))*K(|Bt(omega)|)dt,
+where F_T=int_0^T sin(Zt)dt. `sampleIntegral_memLp` proves actual L2 membership.
+No unbounded pointwise evaluation map is passed through an L2 limit. The
+quantifier is fixed-T AE equality; a common null set for all uncountably
+many horizons is not asserted.
+
+This also connects the library's higher-norm/uniform-integrability machinery
+to its earlier continuous-modification/limit-in-measure uniqueness method.
+Both transfers apply to the existing positive joint Gaussian probability
+measure with their precise hypotheses; nothing is extrapolated to a signed
+pseudoprocess path law.
+
+Independent downstream Lean checks cover negative-coordinate variance; the
+actual fourth moment; the L4-root normalization at unit horizon; ordinary
+L2 time continuity; strong original source quadrature convergence; native
+field norm convergence; vector-integral existence for every sample; the
+explicit actual samplewise gradient formula; strong measurability of the
+raw integral; and the deterministic zero-horizon identity.
+
+The SOURCE strong-quadrature and samplewise integral gaps recorded at1406
+are DISCHARGED. Clock-channel explicit occupation realization and strong
+native clock convergence remain OPEN. A quantitative source convergence
+rate, broader actual nonlinear domains and full IBM stochastic-integration,
+Itô/Clark--Ocone identifications remain separate obligations. Full IBM
+calculus is not complete, and no later campaign is opened. Ordinary time
+quadrature in this source formula is not a claimed stochastic integral with
+respect to the rough IBM trajectory.
+
+All full-verification and source-integrity evidence is retained under
+`.lake/stardust-1407-*`. ResearchSources, queue, reflection accounts,
+curated exposition, private manuscripts/PDFs and Lean/Lake settings remain
+unchanged. No novelty claim is made.
+
+Checkpoint1407 gates: complete root6474jobs/26.652884s/0; complete safe transitive43893declarations/38.446863s/0; all29public types (121unabridged lines), all THREE complete new proof/definition sources and ten independent mathematical Lean checks/36.175154s/0 reviewed. All2302sources/3configs frozen/rechecked; pre-existing sources unchanged except root imports/AxiomAudit;113immutable archive paths/hashes unchanged. Default200000 proof heartbeats, trust and toolchain retained. Six explicit Git paths; exact receipt and verified PRIVATE main/research closure follow in .lake/stardust-1407-verification.json.
