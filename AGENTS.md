@@ -1,3 +1,14 @@
+# Periodic mathematical reflection — supporting workflow
+
+At natural completed, audited checkpoints, consult STARDUST_REFLECTION_POLICY.md.
+Reflection, synthesis and documentation share a MAXIMUM45minutes per local day
+TOTAL, recorded by the terminal clock in STARDUST_REFLECTION_SESSIONS.json.
+Skip active proofs, exhausted/reserved budgets and sessions with no useful work.
+Maintain the curated README, blueprint, mathematical commentary and focused
+drafts; preserve meaningful mathematical experience and exact open obligations.
+Never change the queue or ResearchSources, assert novelty without evidence,
+or replace any full verification/private-backup gate. This is not a campaign.
+
 # Current directive — IBM active; Bakry–Émery / fBM queued afterward
 
 October 21 user amendment: finish the current intrinsic calculus for ACTUAL IBM
