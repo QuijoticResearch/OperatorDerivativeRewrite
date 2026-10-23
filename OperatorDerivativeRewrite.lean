@@ -2126,3 +2126,5 @@ import Foundation.IBMCompletedCoordinates
 import Foundation.IBMCompletedNativeCalculus
 import Foundation.IBMPredictableTimeCutoff
 import Foundation.IBMCompletedTimeCutoff
+import Foundation.IBMJointPredictableMultiplier
+import Foundation.IBMCompletedPredictableMultiplier

@@ -32078,3 +32078,64 @@ retained and recorded, no analytic restriction. All2226 old sources unchanged ex
 and113 immutable archive paths/hashes unchanged. No manuscript edit, source
 deletion, new trust or false physical-time/gradient/path-regularity claim.
 Exact private gate pending audited commit/receipt and PRIVATE main/research refs.
+
+
+## Checkpoint1371 — full signed-energy bounded predictable multiplication and quantitative closure
+
+# Current IBM mathematics — checkpoint1371: bounded predictable action on genuine joint energy
+
+IBM ACTIVE. EVERY actual bounded raw-predictable g (explicit pointwise B>=0)
+multiplies EACH original random L2(mu_F) class. Old actual signed pairings plus
+c=sqrt(B²-g²) prove E(gH)+E(cH)=B²E(H), with EVERY signed cross term retained.
+Thus full finite joint energy and actual stochastic norm are bounded, including
+cancellation. No independent/diagonal/common-L2-domain assumption.
+
+For EVERY channel family, actual componentwise multiplication preserves the
+EXACT old stochastic null kernel, descends to the genuine energy quotient,
+and extends to a bounded operator M_g on its existing Hilbert completion.
+Original single/finite actual integrals agree, operator unique, norm<=B.
+Same pointwise function gives SAME operator regardless stored bound. Constants,
+sums, products, commutation and predictable-indicator idempotence proved.
+Literal (0,t] indicator agrees with old integrand cutoff and fixed completed
+stop1370. Any given original joint-energy HasSum can be multiplied with BOTH
+completed and ACTUAL stochastic L2 HasSum results. Every fixed-family completed
+input has its actual multiplied canonical series. No arbitrary-family coordinate
+representation is assumed. Uniform function error delta controls OPERATOR-NORM
+error; uniform approximations converge in operator norm, hence actual L2 outputs.
+
+Explicit NONZERO opposite-IBM1 raw cancellation survives EVERY g independently
+tested. Original positive-time ordinary-DomD obstruction preserved. The domain
+is pointwise bounded actual raw-predictable functions, not unspecified AE/unbounded
+classes. New operators are NOT yet identified with ordinary Ito integration
+against one terminal martingale P_tJz; the elementary random rectangle pull-out
+identity and required closure remain UNPROVED. Temporal-gradient/full Malliavin
+CO, physical-time Ito/Tanaka/brackets and full IBM remain OPEN. Predictability of
+sign(IBM_T) before T is not assumed. Next prioritize actual rectangle pull-out /
+associative stochastic integration, not more static algebra or a campaign pivot.
+See IBM_BOUNDED_PREDICTABLE_MULTIPLIER_AUDIT.md and exact verification JSON.
+Queue IBM->Bakry/fBM->Cauchy->A(2)/RH attempt->fractional diffusion->blackito
+->backlog unchanged. Pseudo frozen1293; no expiry; all full/private gates retained.
+
+Fresh full root 6400jobs/40.151s/0.
+COMPLETE transitive safe Foundation audit 42522decl/36.097s/0,
+standard three axioms only. ALL63 unabridged new public interface types include
+the record constructor/fields/three eliminators. Twelve printed old/new
+structures/definitions, ALL663 audit lines and462 final
+source/proof lines actually read. Eight independent tests final0/26.667s,
+emptylog. First test attempt1/27.050s was ONLY a missing
+Tendsto.clm_apply convenience; pinned actual evaluation map continuity repairs it.
+Exact failed code/log/time retained. Tests: original actual constant multiplier
+calibration; ACTUAL nonzero opposite-IBM1 raw input cancels after EVERY bounded
+predictable multiplier; full finite signed square-complement energy partition;
+same-function/different-bound independence and operator norm; product-operator
+actual canonical stochastic series; actual IBM point recovery alongside original
+ordinary derivative obstruction; literal time indicator/old stopped projection;
+uniform operator-norm limit and actual stochastic L2 output convergence.
+Eight development logs retained, no default resource timeout or raised limits.
+First signed integral implicit parameter/function wrapper, degree-four squared
+norm and dense induction motive repaired rigorously. Deprecated scratch aliases
+replaced in final source. Full-build style warnings retained, none suppressed.
+All2228 old sources unchanged except two root imports,3configs and113 immutable
+archive paths/hashes unchanged. No manuscript edit, source deletion, new trust,
+resource override, false AE-domain extension or ordinary-Ito-associativity claim.
+Exact private gate pending audited commit/receipt and PRIVATE main/research refs.
