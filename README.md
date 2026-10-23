@@ -69,6 +69,6 @@ remain gated by the authoritative queue; documentation does not release them.
 [Periodic reflection](STARDUST_REFLECTION_POLICY.md) is supporting work at
 natural verified checkpoints, capped at45minutes per local day total. It
 preserves mathematical experience, records precise cross-library opportunities,
-and maintains this overview, the blueprint and focused [paper drafts](docs/papers/IBM_STOCHASTIC_ASSOCIATIVITY_DRAFT.md).
+and maintains this overview, the blueprint and private [LaTeX/PDF manuscripts](manuscripts/INDEX.md).
 No novelty, publication readiness, Millennium Prize solution or RH progress
 is claimed merely from the size of the library.

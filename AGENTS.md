@@ -6,6 +6,9 @@ TOTAL, recorded by the terminal clock in STARDUST_REFLECTION_SESSIONS.json.
 Skip active proofs, exhausted/reserved budgets and sessions with no useful work.
 Maintain the curated README, blueprint, mathematical commentary and focused
 drafts; preserve meaningful mathematical experience and exact open obligations.
+Canonical paper drafts are LaTeX/PDF pairs under manuscripts/, listed in
+manuscripts/INDEX.md. Recompile substantive changes, check references/rendered
+pages, retain error logs, and keep all PDF work within the SAME daily cap.
 Never change the queue or ResearchSources, assert novelty without evidence,
 or replace any full verification/private-backup gate. This is not a campaign.
 

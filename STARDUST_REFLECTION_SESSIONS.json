@@ -12,10 +12,28 @@
       "setup_allowance_seconds": 120,
       "charged_seconds_before_finalization": 1137,
       "finalization_allowance_seconds": 180,
-      "conservative_total_charge_seconds": 1317,
+      "conservative_total_charge_seconds": 1272,
       "terminal_receipt": ".lake/stardust-1375-reflection-terminal.json",
-      "status": "FINALIZATION_PENDING_AT_COMMIT; receipt must prove closure before any new reflection admission",
-      "mathematical_checkpoint": "536c86647bd483eb547a264464dca7a2c0460026"
+      "status": "CLOSED; exact terminal receipt reconciled",
+      "mathematical_checkpoint": "536c86647bd483eb547a264464dca7a2c0460026",
+      "terminal_utc": "2026-10-23T03:10:52.637539+00:00",
+      "actual_accounted_seconds": 1272,
+      "unused_finalization_allowance_released_seconds": 45
+    },
+    {
+      "id": "2026-10-22-latex",
+      "local_date": "2026-10-22",
+      "start_utc": "2026-10-23T03:11:30.691534+00:00",
+      "precommit_accounting_utc": "2026-10-23T03:26:03.091329+00:00",
+      "observed_wall_seconds_before_finalization": 872.399795,
+      "setup_allowance_seconds": 30,
+      "charged_seconds_before_finalization": 903,
+      "finalization_allowance_seconds": 180,
+      "conservative_total_charge_seconds": 1083,
+      "prior_sessions_actual_seconds": 1272,
+      "conservative_total_local_day_seconds": 2355,
+      "terminal_receipt": ".lake/stardust-1376-reflection-terminal.json",
+      "status": "FINALIZATION_PENDING_AT_COMMIT; reconcile exact terminal receipt before next reflection"
     }
   ],
   "accounting_note": "Reconcile finalization allowance with exact terminal receipt before the next admission. Until receipt exists, no new reflection. All setup, verification and Git/private closure time is included; unused daily time is not a target."

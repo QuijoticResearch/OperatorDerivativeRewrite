@@ -1,0 +1,249 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{microtype}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Ltwo}{L^2}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\lean}[2]{\par\smallskip\noindent\textit{Lean reference:}\;
+  \texttt{\detokenize{#1}}\par\noindent
+  \hspace*{1em}\texttt{\detokenize{#2}}\par\smallskip}
+\newcommand{\status}[1]{\par\noindent\textbf{Status: #1.}\par}
+\title{Actual Predictable Change of Integrator\protect\\
+  for IBM-Observable Martingales}
+\author{Project Stardust\protect\\\small Private working draft}
+\date{Revision 1 --- October 22, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We organize verified change-of-integrator and stochastic-associativity results
+for terminal-observable martingales on a constructed iterated Brownian motion
+(IBM) probability space. The original predictable energy measure transforms
+by the square of the integrand. This yields a literal product isometry on the
+entire original output-energy domain and an actual stochastic associativity
+identity. A common bounded predictable multiplier is identified with the
+original stochastic integral on every completed multichannel input. We also
+record locally uniform process reconstruction and convergence in the original
+intrinsic divergence graph norm. These results do not establish a full
+physical-time It\^o--Tanaka calculus for the uncorrected IBM path.
+\end{abstract}
+
+\noindent\textbf{Verification boundary.}
+Theorems below summarize Lean-verified declarations at mathematical
+checkpoints 1373 and 1374. The latest mathematical baseline is
+\begin{quote}\small
+\texttt{536c86647bd483eb547a264464dca7a2c0460026}.
+\end{quote}
+This draft makes no novelty, publication-readiness, or complete IBM-calculus
+claim. All Lean names have prefix
+\texttt{OperatorDerivativeRewrite.Foundation.}
+Original manuscripts in \texttt{ResearchSources} are preserved unchanged.
+
+\section{Original stochastic objects and domains}\label{sec:setting}
+Let $(\Omega,\mathcal A,\mathbf P)$ be the existing product probability space
+of the independently constructed continuous scenery and clock. The actual
+IBM observations generate the original raw natural filtration. Write
+$\mathcal P$ for its original predictable sigma algebra on time--sample space.
+For $F$ in the original joint-source $\Ltwo$ space, write
+\[
+  P_tF=\mathbf E[F\mid\mathcal G_t]
+\]
+for the existing terminal-observable martingale in the right-germ filtration
+$\mathcal G$. The raw IBM path and this fixed-terminal martingale are different
+objects. No martingale property of raw IBM is assumed.
+
+The established finite predictable energy measure is denoted by $\mu_F$.
+On a rectangle $(s,t]\times A$, where $A$ belongs to the original raw past at
+$s\leq t$, its value is the actual increment energy
+\[
+  \mu_F((s,t]\times A)
+    =\mathbf E\!\left[\mathbf 1_A(P_tF-P_sF)^2\right].
+\]
+The pre-existing stochastic integral is an actual linear isometry
+\[
+  I_F:\Ltwo(\mathcal P,\mu_F)\longrightarrow \Ltwo(\mathbf P).
+\]
+Its domain is the entire original random predictable $\Ltwo$ space, with the
+original energy null ideal. The arguments below do not redefine the integral
+by declaring a desired output or by replacing its domain.
+
+\section{Energy transformation and literal associativity}\label{sec:product}
+\begin{theorem}[Change of predictable energy]\label{thm:energy}
+For every original $F$ and every $H\in\Ltwo(\mathcal P,\mu_F)$, put
+$Y=I_F(H)$. Then, on the entire original predictable sigma algebra,
+\begin{equation}\label{eq:energy}
+  \mu_Y=H^2\mu_F.
+\end{equation}
+Here $H$ is an actual strongly measurable representative of its original
+$\Ltwo$ class; the right side is the finite measure with density $H^2$.
+\end{theorem}
+\lean{IBMStochasticIntegratorEnergy}{energy_change}
+
+\begin{proof}[Verified proof mechanism]
+For a raw-past event $A$ at $s\leq t$, actual rectangle pull-out gives
+\[
+ I_F\!\left(\mathbf 1_{(s,t]\times A}H\right)
+     =\mathbf 1_A(P_t-P_s)Y.
+\]
+Taking genuine $\Ltwo$ energy identifies both sides of
+\eqref{eq:energy} on every adapted rectangle. Both measures are finite and
+vanish at the origin. The existing finite-ring partition and signed-measure
+uniqueness results therefore give equality on all of $\mathcal P$.
+The formal proof separately verifies finiteness, origin nullity and rectangle
+agreement before applying uniqueness.
+\end{proof}
+
+\begin{theorem}[Full-domain product isometry and associativity]\label{thm:assoc}
+Under the hypotheses of Theorem~\ref{thm:energy}, every
+$K\in\Ltwo(\mathcal P,\mu_Y)$ has a literal product
+$HK\in\Ltwo(\mathcal P,\mu_F)$. The map $K\mapsto HK$ is a linear isometry,
+and the original actual stochastic integrals satisfy
+\begin{equation}\label{eq:assoc}
+  I_Y(K)=I_F(HK),\qquad
+  \norm{HK}_{\Ltwo(\mu_F)}=\norm{K}_{\Ltwo(\mu_Y)}.
+\end{equation}
+No boundedness of $K$, finite-grid restriction, or finite-chaos hypothesis
+is imposed.
+\end{theorem}
+\lean{IBMStochasticProductAssociativity}{product_memLp, product_ae, productIsometry, actual_associativity}
+
+\begin{proof}[Verified proof mechanism]
+The density identity~\eqref{eq:energy} proves the precise product domain and
+norm equality. The actual product representative is then identified almost
+everywhere. Associativity is first calibrated on the original predictable
+cells using actual stochastic rectangle identities. Original dictionary
+density extends the equality to every $K$ in the stated output-energy domain.
+\end{proof}
+
+\begin{remark}[Different null ideals]
+If two representatives of $K$ agree only $\mu_Y$-almost everywhere, their
+$H$-weighted products agree $\mu_F$-almost everywhere. On the set $H=0$ both
+products vanish. Reverse absolute continuity of $\mu_F$ with respect to
+$\mu_Y$ is neither needed nor asserted. Products of arbitrary unrelated
+$\Ltwo$ functions are not claimed to belong to $\Ltwo$.
+\end{remark}
+\lean{IBMStochasticProductAssociativity}{weighted_ae}
+
+\section{Completed multichannel inputs}\label{sec:multi}
+Let $(F_i)_{i\in\mathcal I}$ be any original family. Let $\mathcal H_F$ be
+its existing completion after quotienting by the null relation of the
+\emph{full signed joint covariance energy}. Let
+$J_F:\mathcal H_F\to\Ltwo(\mathbf P)$ be its existing actual isometry.
+For a globally pointwise bounded original raw-predictable real function $g$,
+let $M_g$ be the previously verified bounded common-multiplier action.
+The same $g$ acts on every channel.
+
+\begin{theorem}[Actual bounded-action identification]\label{thm:multi}
+For every $z\in\mathcal H_F$ and every such $g$, set $Y=J_Fz$. Then
+\begin{equation}\label{eq:multi}
+  J_F(M_gz)=I_Y\!\left([g]_{\mu_Y}\right).
+\end{equation}
+In the completed input space itself, $M_gz$ equals the existing nested
+stochastic lift of $[g]_{\mu_Y}$.
+\end{theorem}
+\lean{IBMCompletedBoundedAssociativity}{actual_bounded_associativity, nested_identification}
+
+\begin{proof}[Verified proof mechanism]
+Append one original channel $G$ to the family. The verified full signed joint
+multiplier bound gives a comparison estimate against any single original
+integral $I_G(K)$. Existing terminal self-representation supplies an original
+single-integral representation of $Y$; this existence premise is discharged,
+not assumed conditionally. Equal actual outputs then force equal common-
+$g$-modified outputs. Theorem~\ref{thm:assoc} identifies the single-channel
+output with the original $I_Y([g]_{\mu_Y})$.
+\end{proof}
+\lean{IBMCompletedBoundedAssociativity}{comparison_bound}
+
+\section{Locally uniform process reconstruction}\label{sec:uniform}
+Let $(e_i)$ be the existing fixed countable family of actual stochastic
+integrals, and let $G_0$ denote projection onto the full initial right germ.
+For an IBM-observable $\Ltwo$ class $f$, write $L(f)$ for the canonical
+completed lift of $f-G_0f$, and $Q_S(f)$ for its finite-channel input over a
+finite set $S$. The exact error is
+\begin{equation}\label{eq:gap}
+ \norm{Q_S(f)-L(f)}^2
+   =\norm{f-G_0f}^2-\sum_{i\in S}c_i(f)^2.
+\end{equation}
+\lean{IBMUniformStochasticReconstruction}{error_sq}
+
+\begin{theorem}[Uniform actual reconstruction and native graph limit]\label{thm:uniform}
+For every continuous curve $u$ into actual IBM-observable $\Ltwo$ and every
+compact parameter set $K$, the canonical finite inputs converge to $L(u(t))$
+uniformly for $t\in K$. After applying the existing causal stopping operator
+$S_r$, the convergence is simultaneous and uniform over \emph{all} $r\geq0$.
+The corresponding literal finite sums of original predictable stochastic
+integrals converge in actual joint-source $\Ltwo$ to
+\[
+  P_r u(t)-G_0u(t).
+\]
+Their existing native transfers converge in the original intrinsic divergence
+graph norm, uniformly for $t\in K$ and all $r\geq0$.
+\end{theorem}
+\lean{IBMUniformStochasticReconstruction}{uniform_actual, uniform_native_graph}
+
+The error in~\eqref{eq:gap} is continuous, nonnegative, antitone in $S$ and
+converges pointwise to zero by Parseval. These hypotheses are proved before
+using Dini's theorem. Causal stopping is contractive. For original divergence-
+domain elements $V,W$, the graph metric is explicitly
+\[
+  \norm{V-W}_{\mathrm{field}}+\norm{\delta V-\delta W}_{\Ltwo}.
+\]
+For the existing native transfers of inputs $z,w$, this distance is at most
+$3\norm{z-w}$. Thus the fields \emph{and their original divergences} converge;
+this is not only convergence on graph-dual test probes.
+
+The actual IBM curve is strongly $\Ltwo$ continuous and satisfies $G_0Z_t=0$.
+Consequently the causal diagonal reconstructions converge uniformly on every
+finite interval $0\leq t\leq T$ in $\Ltwo$. The established bounded $C^1$ test
+class with bounded continuous slope also gives reconstruction of actual
+$\varphi(Z_t)$, retaining $G_0\varphi(Z_t)$.
+\lean{IBMUniformStochasticReconstruction}{actual_IBM_uniform, nonlinear_uniform}
+
+\section{Limitations and remaining obligations}\label{sec:open}
+\status{The preceding named results are verified; the following obligations remain open}
+\begin{enumerate}[leftmargin=*,itemsep=0.3em]
+\item Uniformity above means $\sup_t\norm{\mathrm{error}(t)}_{\Ltwo}\to0$.
+It is not $\Ltwo$ convergence of a samplewise time supremum and does not
+assert almost-sure uniform convergence or a c\`adl\`ag modification.
+\item No pathwise bracket, full physical-time It\^o--Tanaka formula or temporal
+conditional-gradient Clark--Ocone identity is inferred. The fixed-terminal
+martingale $P_rY$ remains distinct from the raw IBM path.
+\item Moving-terminal coefficients depend on $t$; the diagonal approximants
+are not automatically martingales. A martingale maximal inequality cannot
+be invoked without its hypotheses.
+\item Arbitrary channel-dependent multipliers $g_i$ are not asserted to preserve
+the full signed-energy null relation. Arbitrary unbounded multipliers are not
+asserted to define bounded operators on the entire completion.
+\item Actual rough point and sine observations remain outside the original
+joint derivative domain despite their stochastic reconstruction. Native
+divergence representation does not imply ordinary Malliavin differentiability.
+\end{enumerate}
+
+\section{Formal sources and revision contract}\label{sec:sources}
+The source modules are:
+\begin{itemize}[leftmargin=*,itemsep=0.2em]\small
+\item \texttt{Foundation/IBMStochasticIntegratorEnergy.lean}
+\item \texttt{Foundation/IBMStochasticProductAssociativity.lean}
+\item \texttt{Foundation/IBMCompletedBoundedAssociativity.lean}
+\item \texttt{Foundation/IBMUniformStochasticReconstruction.lean}
+\end{itemize}
+The detailed domain and verification contracts are the repository audits:
+\begin{itemize}[leftmargin=*,itemsep=0.2em]\small
+\item \texttt{IBM\_INTEGRATOR\_ENERGY\_PRODUCT\_ASSOCIATIVITY\_AUDIT.md}
+\item \texttt{IBM\_UNIFORM\_STOCHASTIC\_RECONSTRUCTION\_AUDIT.md}
+\end{itemize}
+
+The maintained source is this \LaTeX{} file. Its PDF must be rebuilt after
+substantive changes, with successful compilation, resolved internal references,
+and rendered-page inspection. Error logs are retained. The manuscript index
+records the latest revision and verification status. All artifacts remain
+private; nothing in this draft authorizes external publication or upload.
+\end{document}

@@ -64,3 +64,49 @@ Existing independent30-minute private Git synchronization is unchanged.
 
 IBM remains ACTIVE. Queue, all mathematical results and manuscripts are intact.
 Exact Git receipt and verified PRIVATE main/research closure follow this record.
+
+
+## Checkpoint1376 — private LaTeX/PDF manuscript compilation within shared reflection budget
+
+User's PDF-compilation directive is saved in AGENTS and the reflection policy.
+Canonical private drafts are colocated main.tex/main.pdf under manuscripts/;
+the index records title, source/PDF, exact Lean scope, revision and build/review
+status. Markdown exposition now links to the canonical source. Substantive
+changes require recompilation, resolved references and actual page review.
+If budget expires, preserve source/logs and mark PENDING. Existing queue intact.
+
+Actual Predictable Change of Integrator for IBM-Observable Martingales, revision1,
+October22,2026: local MiKTeX25.12/pdfTeX4.23 two-pass compilation succeeded;
+allFIVE final pages rendered by local Poppler110dpi and ACTUALLY INSPECTED.
+Measure/product identities, theorem labels, native graph norms, conditional
+domains and OPEN physical-time obligations remain aligned with Lean1373–1374.
+All14 cited Lean types were printed and read UNABRIDGED; source/PDF/Lean hashes
+are pinned. Internal references resolve; no missing glyphs/clipping/overlap or
+overfull boxes remain. PDF/source remain together in
+manuscripts/ibm-stochastic-associativity/. Index, local reproducible build helper,
+per-attempt logs, compiler metadata and visual freshness receipt preserved.
+
+First compilation itself succeeded but layout gate rejected four overfull
+reference/path lines. Those exact logs/metadata are retained; repairs passed.
+One preliminary PDF text test assumed the earlier four-page count; the corrected
+check uses actual five-page output, verifies nonempty pages and no unresolved
+markers, followed by full visual inspection. This was a test assumption, not a
+mathematical obstruction. No package installer, shell escape, remote compiler,
+publication, third-party upload, manuscript modification or new math claim.
+Only the standing explicitly authorized PRIVATE Git backup is used externally.
+
+Fresh root6408jobs/10.555s/0, COMPLETE safe Foundation
+transitive42711decl/36.492s/0, standard3only. All14types/
+179audit lines actually read. Five independent Lean checks
+FIRST0/37.758s, emptylog. All2236 math-source hashes,
+3configs and113 archive paths/hashes unchanged; queue unchanged. 33 local
+documentation links checked. No Lean limits/trust/checks changed. Aux build and
+render folders ignored; intended PDF/source and meaningful logs retained.
+
+Shared budget: previous closed session1272s; terminal start2026-10-23T03:11:30.691534+00:00,
+setup allowance30s; actual elapsed before finalization872.400s, charged
+903s plus explicit180s closing allowance. Conservative combined local-day
+charge2355s<2700s. Exact final elapsed/released allowance saved
+in .lake/stardust-1376-reflection-terminal.json after PRIVATE closure.
+No separate PDF budget. IBM remains ACTIVE; no queued campaign started.
+Exact Git receipt and verified PRIVATE main/research checkpoint follow.

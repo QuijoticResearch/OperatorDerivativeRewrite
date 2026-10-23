@@ -70,7 +70,9 @@ not theorem, commit or document counts.
   Identify conceptual links separately from literal Lean import dependencies.
 - STARDUST_MATHEMATICAL_COMMENTARY.md: concise explanations of constructions,
   obstacles, successful repairs and precise new opportunities.
-- docs/papers/: incremental coherent research drafts, theorem statements aligned
+- manuscripts/: canonical LaTeX drafts and corresponding private PDFs together,
+  indexed by manuscripts/INDEX.md. Follow the compilation policy below.
+- docs/papers/: supporting Markdown exposition, theorem statements aligned
   with Lean and explicit PROVED/OPEN/CONJECTURAL status. Do not rewrite original
   manuscripts or assert publication-level novelty without evidence.
 - STARDUST_REFLECTION_LOG.md and PROJECT_STARDUST_REPORT.md: bounded session
@@ -80,6 +82,36 @@ not theorem, commit or document counts.
 Historical snapshots are evidence of earlier understanding, not controlling
 current theorem status. Preserve originals and ResearchSources byte-for-byte;
 do not rename, delete or commit archive files. Keep unrelated drafts untouched.
+
+## LaTeX manuscript and PDF compilation
+
+Maintain mathematical paper drafts as main.tex and main.pdf in a clearly named
+subdirectory of manuscripts/. Preserve original ResearchSources manuscripts.
+The index lists title, source/PDF locations, verified mathematical scope,
+latest revision and compilation status. Markdown notes may link to the canonical
+LaTeX draft; they are not a competing unsynchronized manuscript source.
+
+Recompile after substantive manuscript changes, within the SAME45minute daily
+allowance. Use the installed local toolchain, not an external compiler or upload.
+The verified local route is tools/compile_stardust_manuscript.py with MiKTeX
+pdflatex; package installation and shell escape are disabled. Run two passes,
+check final references/labels and layout diagnostics, render and actually inspect
+every page for notation, clipping, spacing and readability. Never call a stale
+or uninspected PDF current. Preserve every failed compilation/layout log and
+repair errors only within the remaining budget. If time expires, retain source
+and logs, mark compilation PENDING in the index, and resume at a later eligible
+checkpoint. A successful compiler exit alone is not complete PDF verification.
+
+Keep source/PDF hashes and build metadata in build-status.json and a separate
+visual review receipt. Keep auxiliary builds/rendered pages ignored and organized;
+retain source, current PDF, index and meaningful compilation logs. No unnecessary
+cleanup of unrelated caches. All draft claims must match exact verified Lean
+statements/domains; speculative material must be labeled explicitly.
+
+All artifacts remain private. The existing explicitly authorized PRIVATE Git
+checkpoint backup remains permitted; no public release, external publication,
+third-party upload or remote compilation is authorized by this workflow.
+See manuscripts/README.md for local commands and manuscript freshness checks.
 
 ## Verification and recurrence
 

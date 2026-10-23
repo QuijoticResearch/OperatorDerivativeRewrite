@@ -1,5 +1,11 @@
 # Actual predictable change of integrator for IBM-observable martingales
 
+Canonical manuscript: [LaTeX source](../../manuscripts/ibm-stochastic-associativity/main.tex)
+and [compiled PDF](../../manuscripts/ibm-stochastic-associativity/main.pdf).
+These Markdown notes are supporting exposition. Maintain substantive paper
+changes in the LaTeX source and rebuild/review the PDF under the shared budget.
+See the [manuscript index](../../manuscripts/INDEX.md) for freshness and status.
+
 Working mathematical draft, grounded in checkpoint1373 and1374. This is not
 a submitted paper, a novelty claim, or a completed physical-time IBM calculus.
 The process being integrated is a terminal-observable martingale derived from
