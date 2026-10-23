@@ -35079,3 +35079,89 @@ assuming probability structure or novelty. Mathematical verification is reused
 ONLY after exact identity with all2303sources/3configs of CLOSED1408 is proved;
 113archive paths/hashes must remain unchanged. Explicit four-document Git and
 exact PRIVATE main/research closure follow in .lake/stardust-1409-verification.json.
+
+
+## Checkpoint1410 — actual signed clock-occupation identity on spatial tests
+
+IBM remains ACTIVE; the new iterated-pseudoprocess campaign stays queued under
+instruction-only1409. This checkpoint resolves1408's missing unsmoothed
+spatial-test identity for the LINEAR IBM average. ResearchSources, queue,
+reflection accounts and curated manuscript/PDF work are unchanged.
+
+`Foundation/IBMClockOccupationTests.lean` reuses1408's genuine random spatial
+kernel K[h,T], the OLD physical translated-class representation, the OLD
+normalized bump convolution convergence, the actual Brownian clock and the
+original L2 product laws. Every continuous compactly supported real phi is
+realized as the actual spatial Lebesgue-L2 `testClass phi hc hs`.
+
+`convolution_swap`, `convolution_bound`, `convolution_continuous` and
+`translated_test` prove the correctly oriented normalized convolution identity
+and a bound UNIFORM in mollifier width. The bound requires only a supplied
+uniform bound on phi; final compact-test statements discharge it using actual
+compact support. No spatial symmetry or kernel normalization is assumed in
+place of the existing proved bump laws.
+
+`occupationIntegrand` is the ACTUAL function
+
+    <h,clockDirection(t)> sign(B_t) phi(abs(B_t)) zeta(Y).
+
+Joint measurability and product(time,clock) integrability are proved.
+`occupationIntegrand_bound` uses the genuine Cameron--Martin direction norm,
+so on[0,T] its norm is at most ||h|| sqrt(T) M |zeta(Y)| for ||phi||<=M.
+Every zeta in the actual clock Gaussian L2 is integrable under its finite
+probability law. `convolution_integral_tendsto` uses the same majorant for
+ALL widths and the OLD pointwise approximate identity, proving convergence
+under the actual time/clock product measure by dominated convergence.
+
+`recovered_slice_pairing` identifies the true finite-width physical-kernel
+pairing with convolution at abs(B_t), retaining sign(B_t).
+`kernelApprox_pairing` integrates this equality with every Fubini and Bochner
+integrability premise discharged. `kernel_occupation_pairing` then compares
+this actual limit with1408's weak kernel limit, by uniqueness of scalar limits.
+For EVERY h, finite T>=0, continuous compactly supported phi and clock-L2 zeta:
+
+    <K[h,T], zeta tensor phi>_(L2(clock;L2(space)))
+      = integral_time,clock <h,clockDirection(t)>
+          sign(B_t) phi(abs(B_t)) zeta(Y).
+
+`actual_occupation_integrable` supplies the automatic compact-test domain.
+`kernel_actual_time_pairing` applies justified product Fubini and gives exactly
+
+    E_clock[ zeta(Y) * integral_0^T
+      <h,clockDirection(t)> sign(B_t(Y)) phi(abs(B_t(Y))) dt ].
+
+This is an actual stochastic signed-occupation test identity, not merely a
+scalar expectation with zeta=1 or a fractional PDE analogy. The source-noise
+realization and original closed clock derivative from1408 are the SAME kernel.
+No new occupation density, conditional independence, Brownian local time,
+pointwise white noise or stochastic integral is postulated. In particular,
+folding B to abs(B) NEVER discards the sign in its clock derivative.
+
+The previously OPEN spatial-test identification is now DISCHARGED in the
+precise all-continuous-compact-spatial/all-clock-L2 testing sense above.
+A fixed-test a.e. path identity, a single common null set for an appropriate
+countable determining family, full finite signed occupation-measure equality,
+support/variation statements and strong L2 convergence of K_n remain separate
+obligations. These have NOT been inferred from weak convergence. One possible
+next route is actual signed pushforward of the bounded time weight and an
+independently verified countable test-determination argument; spatial L2 alone
+is not global spatial L1. Alternatively prove a suitable smoothing/energy
+convergence theorem. Neither route is assumed completed here.
+
+Full coefficient-valued occupation regularity and the nonlinear sine-average
+clock reconstruction (spatial stochastic integration, correct drift and domains)
+remain OPEN. The source sine-average branch1407 and nonlinear weak branch1405
+are preserved. All IBM point-observation nondomain, clock-parity and prior F1--F3
+topology restrictions remain valid. Full IBM calculus is not complete, and no
+queued campaign is activated. No external novelty claim is made.
+
+Verification evidence is retained in `.lake/stardust-1410-*`. The first full
+build's failed Fubini elaboration is preserved; the final repair uses the
+existing product-integral symmetry theorem, without changing the mathematical
+statement or any resource/trust setting. All17public types and the complete
+new source/proofs are reviewed unabridged. Independent tests include the actual
+Brownian terminal clock weight, zero horizon, negative/positive/zero clock sign
+branches, exact constant-preserving mollifier normalization, and concrete bump
+spatial tests. Full gates and exact private closure follow below.
+
+Checkpoint1410 gates: complete root6476jobs/39.858851s/0; complete safe transitive43988declarations/37.843377s/0; all17public types and the complete final source/proofs read unabridged. Eight independent mathematical Lean checks passed (actual timing retained). All2304sources/3configs frozen/rechecked; pre-existing mathematical bytes unchanged except root/Axiom imports;113immutable archive paths/hashes unchanged. Default200000proof heartbeats/trust/toolchain unchanged. Four explicit Git paths; exact receipt/private main and research verification follow in .lake/stardust-1410-verification.json.
