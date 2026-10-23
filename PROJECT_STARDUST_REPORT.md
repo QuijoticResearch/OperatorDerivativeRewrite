@@ -32254,3 +32254,66 @@ All2232 prior sources unchanged except three root imports,3configs and113 immuta
 archive paths/hashes unchanged. No manuscript edits/deletions/new trust or false
 physical-time calculus claim. Exact private gate pending commit/receipt and
 verified PRIVATE main/research synchronization.
+
+
+## Checkpoint1374 — locally uniform actual stochastic reconstruction and original native graph convergence
+
+# Current IBM mathematics — checkpoint1374: uniform actual process reconstruction and native graph convergence
+
+IBM ACTIVE. For EVERY continuous curve u in actual IBM-observable L2 and EVERY
+compact parameter set K, canonical finite-channel inputs now converge UNIFORMLY
+on K to the existing completed stochastic lift of u-G0u. Exact finite Parseval
+gap, continuity, antitonicity and limit are proved before pinned Dini is used.
+Contraction gives SAME error control simultaneously for EVERY causal horizon
+r>=0. Actual finite sums use OLD predictable integrals and literal time cutoffs;
+outputs lie in ORIGINAL right-germ past r. They converge uniformly on K/ALL r
+to P_r u-G0u in ACTUAL joint-source L2. No new output-based integral is defined.
+
+ACTUAL IBM Z_t is strongly L2 continuous, belongs to its terminal past and has
+G0Z_t=0. Thus its diagonal causal finite sums converge uniformly for0<=t<=T in
+L2, for EVERY T including0. Coefficients depend on moving observation t, so the
+diagonal sums are NOT claimed martingales. Existing bounded C1 functions with
+bounded continuous slope also give actual nonlinear phi(Z_t), raw-past
+membership, L2 continuity and locally uniform reconstruction, retaining G0phi.
+Independent sine test identifies OLD sinePoint and retains its verified
+positive-time exclusion from ORIGINAL joint derivative domain.
+
+Existing native transfer puts every completed input in ORIGINAL delta domain.
+nativeGraphDistance=original field norm difference + ORIGINAL delta-output
+norm difference; exact bound<=3*completed norm difference proved. Uniform
+native graph convergence follows on K AND simultaneously over ALL causal r.
+This is actual original adjoint-domain convergence, not graph-dual-only tests.
+
+Topology is sup_t of L2 errors, NOT L2 of samplewise time supremum or almost-
+sure uniform convergence. No pathwise bracket/cadlag modification or physical-
+time Ito/Tanaka/temporal-gradient CO theorem inferred. Old ordinary point/sine
+DomD and actual IBM nonmartingale obstructions remain. Full IBM still OPEN.
+See IBM_UNIFORM_STOCHASTIC_RECONSTRUCTION_AUDIT.md and verification JSON.
+Queue IBM->Bakry/fBM->Cauchy->A(2)/RH attempt->fractional diffusion->blackito
+->backlog unchanged. Pseudo frozen1293; no expiry; all full/private gates retained.
+
+Fresh full root 6408jobs/29.993s/0.
+COMPLETE transitive safe Foundation audit 42711decl/40.774s/0,
+standard three axioms only. ALL30 unabridged new public types,12 printed old/new
+definitions, ALL370audit lines and266 final source/proof lines
+actually read. Eight independent tests FIRST run0/28.419s,
+emptylog. Tests exact nonnegative Parseval error; actual IBM uniform interval[0,2]
+reconstruction PLUS nonzero/nonmartingale; ALL unbounded causal horizons uniform
+on[0,3]; actual sinePoint AE identification AND positive-time joint-DomD exclusion;
+uniform sine reconstruction retaining full initial germ; uniform ORIGINAL delta
+graph over[0,1] and ALL horizons; any monotone covering finite-channel exhaustion;
+actual germ-past membership and zero horizon. Ten scratch logs retained. Attempts
+5–9 hit DEFAULT200000 heartbeat in repeated native domain expressions/generic
+operator rewrites. Reused original nativeTest and explicit original graph-distance
+definition; typed norm equality calculations resolve at defaults, no resource
+increase or weaker theorem. First four errors were typed/coercion/simplification
+issues; attempt10 emptylog passes. All style warnings retained, none suppressed.
+All2235 old sources unchanged except one root import,3configs and113 immutable
+archive paths/hashes unchanged. No manuscript edits/deletions/new trust, no
+false L2-supremum/pathwise/temporal-gradient/physical-time calculus completion.
+Exact private gate pending commit/receipt and verified PRIVATE main/research refs.
+
+Git whitespace gate rejected one extra EOF blank line before commit. It was
+replaced by the explicit norm-topology caveat, without changing any proof.
+Earlier successful build/audit/tests are retained separately; ALL complete
+gates repeated for the exact final bytes. No whitespace check bypassed.

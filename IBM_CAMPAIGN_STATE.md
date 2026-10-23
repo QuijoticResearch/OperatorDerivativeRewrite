@@ -1,3 +1,39 @@
+# Current IBM mathematics — checkpoint1374: uniform actual process reconstruction and native graph convergence
+
+IBM ACTIVE. For EVERY continuous curve u in actual IBM-observable L2 and EVERY
+compact parameter set K, canonical finite-channel inputs now converge UNIFORMLY
+on K to the existing completed stochastic lift of u-G0u. Exact finite Parseval
+gap, continuity, antitonicity and limit are proved before pinned Dini is used.
+Contraction gives SAME error control simultaneously for EVERY causal horizon
+r>=0. Actual finite sums use OLD predictable integrals and literal time cutoffs;
+outputs lie in ORIGINAL right-germ past r. They converge uniformly on K/ALL r
+to P_r u-G0u in ACTUAL joint-source L2. No new output-based integral is defined.
+
+ACTUAL IBM Z_t is strongly L2 continuous, belongs to its terminal past and has
+G0Z_t=0. Thus its diagonal causal finite sums converge uniformly for0<=t<=T in
+L2, for EVERY T including0. Coefficients depend on moving observation t, so the
+diagonal sums are NOT claimed martingales. Existing bounded C1 functions with
+bounded continuous slope also give actual nonlinear phi(Z_t), raw-past
+membership, L2 continuity and locally uniform reconstruction, retaining G0phi.
+Independent sine test identifies OLD sinePoint and retains its verified
+positive-time exclusion from ORIGINAL joint derivative domain.
+
+Existing native transfer puts every completed input in ORIGINAL delta domain.
+nativeGraphDistance=original field norm difference + ORIGINAL delta-output
+norm difference; exact bound<=3*completed norm difference proved. Uniform
+native graph convergence follows on K AND simultaneously over ALL causal r.
+This is actual original adjoint-domain convergence, not graph-dual-only tests.
+
+Topology is sup_t of L2 errors, NOT L2 of samplewise time supremum or almost-
+sure uniform convergence. No pathwise bracket/cadlag modification or physical-
+time Ito/Tanaka/temporal-gradient CO theorem inferred. Old ordinary point/sine
+DomD and actual IBM nonmartingale obstructions remain. Full IBM still OPEN.
+See IBM_UNIFORM_STOCHASTIC_RECONSTRUCTION_AUDIT.md and verification JSON.
+Queue IBM->Bakry/fBM->Cauchy->A(2)/RH attempt->fractional diffusion->blackito
+->backlog unchanged. Pseudo frozen1293; no expiry; all full/private gates retained.
+
+---
+
 # Current IBM mathematics — checkpoint1373: actual integrator energy and full product associativity
 
 IBM ACTIVE. Original predictable energy measure now transforms EXACTLY on the
