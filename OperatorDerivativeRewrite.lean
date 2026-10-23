@@ -2160,3 +2160,5 @@ import Foundation.IBMThirdPeano
 import Foundation.IBMSimpsonPeano
 import Foundation.IBMActualSimpson
 import Foundation.IBMSimpsonGraphDual
+import Foundation.IBMUniformSimpsonProcess
+import Foundation.IBMSimpsonRandomHorizon

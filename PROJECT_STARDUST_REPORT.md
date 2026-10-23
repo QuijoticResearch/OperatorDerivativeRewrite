@@ -33635,3 +33635,122 @@ and reflection accounting remain unchanged. No housekeeping interrupted this
 proof or verification cycle; no agent delegation or new campaign occurred.
 
 Checkpoint1392 gates: full root6434jobs/23.821221s/0; complete safe transitive43172declarations/36.777497s/0; all20public types (120lines), complete new source and eight downstream checks/33.525856s/0 reviewed. All2262source/3config and113immutable archive paths/hashes checked. Standard3axioms only; no resource/toolchain/trust changes. Exact Git/private closure: .lake/stardust-1392-verification.json.
+
+
+## Checkpoint1393 — continuous integral process, uniform prefixes, random horizons
+
+IBM remains ACTIVE. PROGRESS1392 established an exact clipped L2/graph-dual
+connection and strong-domain obstruction. This checkpoint advances the actual
+signed Simpson construction beyond a single fixed endpoint, without changing
+the process, original joint law, spatial integrand domain or operator meanings.
+
+IBMUniformSimpsonProcess defines genuine cumulative Simpson sums on a COMMON
+uniform physical grid, N=n+1, with m cells for every m<=N, including m=0.
+The target at each prefix is the independently defined oriented interval
+integral from Z_0 to Z_(mT/N). It is not the integral obtained by running a
+different N-cell grid up to mT/N. prefixSums at m=N agrees definitionally with
+the previous actual full Simpson sum. These exact grid conventions matter.
+
+For EVERY continuous spatial g, the candidate process
+
+    J_g(t,omega) = integral_(Z_0(omega))^(Z_t(omega)) g(z) dz
+
+is proved continuous in t for EVERY sample, jointly measurable in (t,omega),
+and measurable as an actual random variable in C(nonnegative real time,R).
+The proofs use the genuine ordinary primitive integral_0^x g and the existing
+every-sample continuity/joint measurability of actual Z=W(|B|). No assumed
+path regularity, new source law or stochastic integral symbol is introduced.
+Candidate-process existence under continuity is distinguished from the C3
+domain needed for the following stochastic approximation theorem.
+
+maximum_tendstoInMeasure PROVES, for every GLOBAL C3 g, fixed T>0 and ALL N=n+1,
+
+    max_(0<=m<=N) |sum_(i<m) S_g(Z_(iT/N),Z_((i+1)T/N))-J_g(mT/N)|
+      ->0 IN PROBABILITY under the ORIGINAL actual joint law.
+
+This is uniform convergence over all grid prefixes at once. It is stronger
+than separate convergence at each fixed prefix or only at T. The maximum
+is a measurable nonnegative finite function. No union bound growing with N
+or asserted independence of IBM increments is used.
+
+The finite error identity telescopes the actual primitive at each prefix.
+One compact Simpson Peano modulus controls ALL cells and ALL prefixes on a
+sample path. For each epsilon>0, eventually every prefix error is bounded by
+epsilon times the corresponding nonnegative quartic prefix mass; that mass
+is <=the full actual quartic sum. Taking the finite maximum therefore gives
+maxError_N<=epsilon*V4_N eventually on EVERY sample. Existing proved
+quartic_peano_tendstoInMeasure then supplies the probability limit. The proof
+uses the existing original-law quartic convergence and vanishing path mesh,
+not a stronger unproved pathwise quartic limit or new moment hypothesis.
+
+selected_error_tendstoInMeasure permits ANY sample-dependent index m_N<=N.
+Measurability of the selected errors and the selected actual signed sums is
+proved separately for measurable selectors, using the countable index space.
+This is a uniform-error consequence, not optional sampling or adaptedness.
+
+IBMSimpsonRandomHorizon constructs the CANONICAL left-grid index
+
+    k_N(r) = floor_nonnegative((r/T)*N),
+    r_N = (T/N)*k_N(r).
+
+For T>0 and 0<=r<=T, k_N(r)<=N. The exact bounds r_N<=r and
+0<=r-r_N<T/N are proved; hence r_N->r in nonnegative real time. The rounding
+convergence holds for every r>=0; the r<=T bound is what keeps the selected
+prefix inside this fixed horizon. Both index and rounded-time maps are
+measurable. A concrete test r=3/4,T=2,N=4 gives index1, rounded time1/2,
+so no exact-grid equality is assumed for a non-grid endpoint.
+
+stopped_sums_tendstoInMeasure PROVES, for EVERY measurable tau with the
+POINTWISE bound 0<=tau(omega)<=T, every GLOBAL C3 g, T>0 and ALL N=n+1,
+
+    sum_(i<k_N(tau)) S_g(Z_(iT/N),Z_((i+1)T/N))
+      -> J_g(tau(omega),omega) IN PROBABILITY.
+
+Actual sums and the actual random-time target are independently proved
+measurable. The proof starts from any subsequence of the uniform maximum,
+takes an a.e.-vanishing subsubsequence, and bounds the selected prefix error
+by that SAME maximum. On every sample the genuine continuous J_g process
+evaluated at the proved left-grid times tends to J_g(tau). Adding these two
+limits yields convergence of the actual sums to the actual random-time
+integral. No extra kernel, conditional mean or random-modulus assumption is
+supplied. The rounding mechanism and its convergence are proved rather than
+being hypotheses on a selected sequence.
+
+tau need NOT be a stopping time. The downstream future-dependent example
+chooses T when Z_T>=0 and T/2 otherwise; its measurability and bound are proved,
+and the cosine integral target is identified with sin(Z_tau)-sin(Z_0).
+This demonstrates the precise scope: an actual bounded random-horizon
+symmetric quadrature identity, NOT a martingale optional-sampling theorem.
+
+No continuous interpolation of the finite cumulative Simpson sums is
+constructed here. Thus the proved uniformity is over GRID PREFIXES, not a
+claimed supremum over every real time of an interpolated approximation.
+The LIMIT process itself is genuinely continuous and path-space measurable.
+No arbitrary partitions, unbounded random horizons, samplewise full-sequence
+or L1/L2 uniform convergence, arbitrary temporal/random integrands, causal
+Clark-Ocone or strong-domain adjoint identification is inferred. The fixed
+positive-time strong-domain sine obstruction is not automatically transferred
+to a random time which might be zero or specially chosen. Prior distinctions
+between physical Z, the intrinsic martingale M and graph-dual derivatives
+remain in force. Full IBM calculus remains OPEN and ACTIVE.
+
+Next investigate an actual time-weighted or two-variable smooth chain formula
+using the available uniform prefix bounds, discrete integration by parts and
+genuine time integrals. A continuous interpolated approximation/ucp theorem
+is another exact remaining obligation if required by that construction.
+Do not substitute an endpoint definition for a convergent finite stochastic
+prescription or treat this checkpoint as completion of the IBM campaign.
+
+Nine downstream Lean checks cover zero-time index/rounding; exact terminal
+index/rounding; a non-grid numerical floor; empty-prefix error; agreement of
+full prefix with the old sum; exact uniform error0 for the constant one-form;
+measurable continuous candidate paths for sqrt(abs z) without asserting C3
+convergence; the future-dependent cosine horizon; and unbounded exp(z^2)
+integrands at arbitrary measurable bounded times without moment hypotheses.
+Both complete new proof sources and all28 public types reviewed. Failed
+elaboration logs are preserved; repairs did not weaken hypotheses or increase
+resources. Original archive paths/hashes, manuscript/PDF/index, queue and
+reflection accounting are unchanged. No housekeeping interrupted the proof
+or verification cycle; no agent delegation or new campaign began.
+
+Checkpoint1393 gates: full root6436jobs/39.489916s/0; complete safe transitive43214declarations/36.002856s/0; all28public types (146lines), both complete new sources and nine downstream checks/32.723712s/0 reviewed. All2264source/3config and113immutable archive paths/hashes checked. Standard3axioms only; no resource/toolchain/trust changes. Exact Git/private closure: .lake/stardust-1393-verification.json.
