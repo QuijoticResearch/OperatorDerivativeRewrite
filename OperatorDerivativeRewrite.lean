@@ -2213,3 +2213,5 @@ import Foundation.BochnerCoefficientParseval
 import Foundation.IBMClockAverageStrongGraph
 import Foundation.IBMSineSpatialDistribution
 import Foundation.IBMCanonicalMollifiedScenery
+import Foundation.IBMNonlinearSpatialEnergy
+import Foundation.IBMNonlinearSpatialOperator
