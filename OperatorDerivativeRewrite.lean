@@ -2167,3 +2167,6 @@ import Foundation.IBMTimeWeightedSimpson
 import Foundation.IBMTimeSpacePeano
 import Foundation.IBMTimeSpaceQuadrature
 import Foundation.IBMTimeSpaceSimpson
+import Foundation.IBMTimeSpacePrefixQuadrature
+import Foundation.IBMUniformTimeSpace
+import Foundation.IBMContinuousSimpsonRealization

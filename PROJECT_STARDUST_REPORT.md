@@ -34007,3 +34007,96 @@ No new manuscript revision or second housekeeping session was admitted.
 No external novelty or literature-priority claim is made.
 
 Checkpoint1396 gates: full root6441jobs/63.809466s/0; complete safe transitive43308declarations/37.097407s/0; all27public types (204unabridged lines), all THREE complete new sources and nine downstream checks/28.361910s/0 reviewed. All2269source/3config and113immutable archive paths/hashes checked. Standard3axioms only; no resource/toolchain/trust changes. Original manuscripts, current private LaTeX/PDF pairs/index, queue and reflection records unchanged. Explicit six-path Git checkpoint, exact receipt and verified PRIVATE main/research follow in .lake/stardust-1396-verification.json.
+
+## Checkpoint1397 — actual continuous-path Simpson realization in supremum norm
+
+IBM remains ACTIVE. This mathematical proof checkpoint extends1396, not the
+daily reflection. October23's sole reflection remains CLOSED1395; no new
+housekeeping/PDF session, manuscript edit or queue change occurred.
+
+Main declaration: IBMContinuousSimpsonRealization.approximation_tendstoInMeasure.
+Actual signed time-space Simpson PREFIX sums Y_(N,m) on ONE common physical
+grid t_i=iT/N, N=n+1, are assembled into the explicit continuous polynomial
+  A_N(u)=sum_(m=0)^N binomial(N,m) u^m (1-u)^(N-m) Y_(N,m), 0<=u<=1.
+Under the ORIGINAL constructed independent scenery-clock joint probability
+law for Z=W(abs B), these actual stochastic polynomial paths converge IN
+PROBABILITY IN C([0,1],R) WITH ITS SUPREMUM NORM to
+  J_F(Tu)=F(Tu,Z_(Tu))-F(0,Z0)-integral_0^(Tu) partial_tF(s,Zs)ds.
+Thus the random error sup_(0<=t<=T)|A_N(t/T)-J_F(t)| tends to zero in
+probability. This is an actual samplewise-supremum topology, beyond the earlier
+fixed-horizon and grid-prefix conclusions. It is NOT an L2 supremum theorem,
+nor an upgrade of the separately constructed martingale-M reconstruction.
+
+Exact domain: fixed deterministic T>0, ALL uniform N=n+1; every frozen-time
+spatial F(t,.) is C4; every frozen-space time F(.,x) is C1; F itself, D_x4F
+and partial_tF are jointly continuous. Joint continuity of F is EXPLICIT in
+the continuous-path realization theorem. No mixed time derivative, fifth
+spatial derivative, global derivative/growth bound or expectation moment.
+The stronger grid-prefix theorem itself uses1396's original derivative
+continuity hypotheses and does NOT require the additional joint-F assumption.
+Every approximant and the limiting continuous path are measurable as random
+variables in the actual continuous-function space. The time integral remains
+a genuine finite Lebesgue integral on EVERY sample. Original Z0 is retained.
+
+The approximants are explicitly built from ACTUAL signed spatial Simpson
+increments, not from values of the proposed endpoint target. Their polynomial
+degree is n+1. approximation_zero proves A_N(0)=0; approximation_one proves
+A_N(1)=the ORIGINAL full-grid Simpson sum exactly, for every F/grid/sample.
+Bernstein smoothing is not piecewise-linear or exact interpolation of all
+interior nodes. It uses the whole base grid; no adaptedness/causality is
+claimed. Interior basis weight is generally positive for future coefficients.
+The limit theorem is a specified symmetric realization, not a predictable
+Itô integral against physical Z and not an automatic Skorohod identification.
+
+Proof and concrete reuse:
+- IBMTimeSpacePrefixQuadrature rescales a nonempty prefix to its actual shorter
+  horizon and reuses1396's genuine FTC cell-integral error bound. The empty
+  prefix is proved separately. All prefix errors share <=eta*T, rather than
+  eta times a growing count. Compact joint continuity of the time partial and
+  ANY continuous sample path then give errorMaximum_tendsto samplewise.
+- IBMUniformTimeSpace.spatialMaximum_eventual_bound uses the ONE compact joint
+  Peano modulus already proved1396. Every spatial prefix has total absolute
+  error <=epsilon times the FULL actual nonnegative quartic mass. The old
+  quartic Peano/tightness theorem gives spatial maximum probability decay.
+  Exact arbitrary-F prefix telescoping plus the deterministic maximum of time
+  errors gives maximum_tendstoInMeasure for the ACTUAL chain-rule node errors.
+  No union bound increasing with N, exchange of samplewise limits, independence
+  of increments or expected-value-only argument is used.
+- Existing Mathlib bernstein_nonneg and bernstein.probability prove
+  approximation_error_bound: ||A_N-B_N(J_F)||_sup <= max actual node error,
+  WITHOUT an N-dependent factor. Joint-F continuity, the actual continuous Z
+  path and ordinary continuous primitive give a genuine continuous J_F path.
+  Existing bernsteinApproximation_uniform applies ONLY after that hypothesis
+  is proved. It gives B_N(J_F)->J_F samplewise in continuous-path norm.
+- approximation_sequence_tendsto combines these two norm limits for arbitrary
+  cofinal index sequences. The original-law subsubsequence criterion supplies
+  actual continuous-path convergence in probability; evaluation measurability
+  establishes the required path-valued random variables.
+
+Nine independent Lean checks: exact terminal and initial values; actual IBM
+path convergence in the stated continuous-space topology; its limit is
+literally Z_(Tu)-Z0; genuine nonseparable exp(tx) instance with separately
+discharged joint-time-partial continuity; independent positive-basis error
+contraction with no grid-count factor; degree2 middle basis value1/2 (showing
+why smoothing is not node interpolation); supremum norm controls EVERY time
+evaluation. Every check passes with no output. No numerical experiment or
+external novelty claim is involved. Complete new types and all three proof
+sources reviewed.
+
+Lean's first final-limit elaboration hit the unchanged200000 heartbeat limit.
+The proof was factored into an actual deterministic sequence statement and
+the stochastic subsubsequence step; explicit norm squeeze and local definition
+opacity avoid gratuitous unfolding. Missing composition simplification and
+incorrect group-only Nat cofinality usage were repaired. Final source builds
+under original resource/trust settings. Failed logs retained; these were
+elaboration issues, not mathematical obstructions or relaxed verification.
+
+Still OPEN: raw piecewise-linear/current-time partial-cell quadrature versions,
+arbitrary partitions or full-sequence almost-sure/Lp convergence, sample-dependent
+smooth coefficients and arbitrary random integrands, physical-Z causal integral,
+full adjoint/Skorohod identification, nonsmooth intrinsic Itô–Tanaka and temporal
+Clark–Ocone. Existing raw first/second-rank divergence and sine strong-domain
+counterexamples remain intact. Continuous Bernstein realization does not
+remove them or close the full IBM stopping contract. No queued campaign opened.
+
+Checkpoint1397 gates: full root6444jobs/65.191182s/0; complete safe transitive43384declarations/35.697618s/0; all39public types (237unabridged lines), all THREE complete new sources and nine downstream checks/25.240493s/0 reviewed. All2272source/3config and113immutable archive paths/hashes checked. Standard3axioms only; no resource/toolchain/trust changes. Original manuscripts, current private LaTeX/PDF pairs/index, queue and reflection records unchanged. Explicit six-path Git checkpoint, exact receipt and verified PRIVATE main/research follow in .lake/stardust-1397-verification.json.
