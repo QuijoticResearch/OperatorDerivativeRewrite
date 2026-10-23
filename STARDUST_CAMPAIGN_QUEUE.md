@@ -24,7 +24,22 @@ domain, independent-test, counterexample and manuscript-preservation standards.
 Begin only after Bakry–Émery/fBM reaches its fully audited/private checkpoint;
 see `STARDUST_CAUCHY_QUEUED_AUDIT.md`. IBM remains ACTIVE and Bakry/fBM NEXT.
 
-**IMMEDIATELY AFTER Cauchy:** attempt to prove A(2)=0 for the classical Riemann
+**IMMEDIATELY AFTER Cauchy, BEFORE the A(2)/RH revisit:** investigate a rigorous calculus
+for iterated and time-changed higher-order pseudoprocesses, including signed
+pseudoprocess clocks. Reuse the completed IBM and signed multichannel libraries;
+construct actual signed composition functionals, precise domains and bounds,
+derivatives/adjoints, higher-order Ito identities and causal Clark--Ocone
+reconstruction where justified. The starting reference is Cinque--Orsingher,
+*Higher-order fractional equations and related time-changed pseudo-processes*
+(arXiv:2402.13691). See `STARDUST_ITERATED_PSEUDOPROCESS_QUEUED_RESEARCH.md` for
+all objectives, literature and obstruction gates. IBM completion is mandatory;
+retain all other campaign priorities and completion gates. No early activation or
+assumption of probability, martingales or conditional expectation for signed
+pseudoprocesses. After its fully audited/private stopping checkpoint,
+begin the A(2)/RH revisit below. This October23 priority amendment
+supersedes the former placement after black noise.
+
+**AFTER iterated pseudoprocess calculus:** attempt to prove A(2)=0 for the classical Riemann
 Xi flow and establish its precise relationship to RH. Reuse the entire verified
 library, including A(4), A(6), general A(2k), Fourier/zero dynamics and operator
 results where their hypotheses genuinely apply. Investigate rigorous bounds
@@ -46,18 +61,6 @@ selective audit and verified counterexamples. Begin only after fractional
 diffusion's fully audited/private checkpoint. See
 `STARDUST_BLACK_NOISE_QUEUED_AUDIT.md` for exact scope and unresolved obligations.
 
-**AFTER the existing black-noise campaign:** investigate a rigorous calculus
-for iterated and time-changed higher-order pseudoprocesses, including signed
-pseudoprocess clocks. Reuse the completed IBM and signed multichannel libraries;
-construct actual signed composition functionals, precise domains and bounds,
-derivatives/adjoints, higher-order Ito identities and causal Clark--Ocone
-reconstruction where justified. The starting reference is Cinque--Orsingher,
-*Higher-order fractional equations and related time-changed pseudo-processes*
-(arXiv:2402.13691). See `STARDUST_ITERATED_PSEUDOPROCESS_QUEUED_RESEARCH.md` for
-all objectives, literature and obstruction gates. IBM completion is mandatory;
-retain the order of all already queued campaigns. No early activation or
-assumption of probability, martingales or conditional expectation for signed
-pseudoprocesses. After this campaign, continue cumulative backlog research.
 
 No expiration date;
 October31 is REVIEW ONLY. All full-build, complete axiom-audit, public-type/proof

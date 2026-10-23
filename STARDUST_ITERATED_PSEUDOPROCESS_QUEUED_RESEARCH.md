@@ -4,13 +4,15 @@ User directive, October23,2026. QUEUED; IBM remains ACTIVE.
 
 ## Scheduling and activation gate
 
-Saved sequence: IBM -> Bakry--Emery/fBM -> Cauchy -> A(2)/RH attempt ->
-fractional diffusion -> black noise -> iterated pseudoprocess calculus ->
-cumulative backlog. IBM must first reach its mathematically justified complete,
-fully audited and privately backed-up checkpoint. Preserve all other existing
-campaign priorities and their transition gates: this new campaign is appended
-after the already named campaigns, rather than displacing Bakry/fBM or opening
-parallel work. No research campaign starts as part of this instruction update.
+October23 priority amendment: IBM -> Bakry--Emery/fBM -> Cauchy ->
+iterated pseudoprocess calculus -> A(2)/RH attempt -> fractional diffusion ->
+black noise -> cumulative backlog. Start this campaign only after Cauchy's
+mathematically justified, fully audited and privately backed-up checkpoint;
+IBM and Bakry/fBM completion remain preceding gates. After this campaign's
+fully audited/private stopping checkpoint, begin the A(2)/RH revisit. This
+supersedes the former placement after black noise. Preserve all other campaign
+priorities and gates; no parallel work or early activation is authorized.
+No research campaign starts as part of this instruction update.
 No expiration date; October31 remains review only. The old pseudoprocess
 checkpoint1293 stays frozen; this is a distinct future signed-composition
 question, not an instruction to reopen it during IBM.
@@ -66,7 +68,8 @@ literature evidence.
 5. Audit cross-campaign reuse theorem by theorem: actual IBM F1--F3 and subsequent
    intrinsic calculus, the existing signed higher-order multichannel calculus,
    analytic observable completions, causal step fields, signed integration,
-   operator-dual limits and any relevant later fractional-diffusion results.
+   operator-dual limits and any relevant already verified fractional-diffusion
+   results. The later queued fractional-diffusion campaign is not a prerequisite.
    Determine whether composition yields a substantive theorem unavailable from
    either calculus alone; a shared notation or formal analogy is insufficient.
 

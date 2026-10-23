@@ -4,7 +4,8 @@ User directive, October 21, 2026. QUEUED; mathematical review not started.
 
 Sequential queue: complete actual intrinsic IBM calculus; complete the
 Bakry–Émery repairs/related fBM survey and selected focus; complete the Cauchy
-campaign; then undertake the A(2)/RH proof attempt added October22; then give the
+campaign; then complete iterated/time-changed pseudoprocess calculus; then
+undertake the A(2)/RH proof attempt; then give the
 fractional-diffusion paper the same rigorous treatment. Begin only after that
 A(2) attempt reaches its mathematically justified, fully audited and privately
 backed-up stopping checkpoint. Keep Cauchy's preceding gate. Partial or conditional results must retain

@@ -1,13 +1,15 @@
-# Queued immediately after Cauchy: A(2)=0 / RH proof attempt
+# Queued after iterated pseudoprocess calculus: A(2)=0 / RH proof attempt
 
 User directive, October22, 2026. QUEUED; no early activation or mathematical
 result established by this instruction update. IBM remains active.
 
-Authoritative sequence: actual intrinsic IBM -> Bakry–Émery/fBM -> Cauchy ->
-A(2)/RH attempt -> fractional diffusion -> black-noise manuscript repair ->
-cumulative backlog. Finish each preceding campaign and its verified/private
-checkpoint before starting the next. This inserts the new campaign without
-dropping the fractional-diffusion or black-noise requests. No expiration date;
+October23 authoritative sequence: actual intrinsic IBM -> Bakry–Émery/fBM ->
+Cauchy -> iterated/time-changed pseudoprocess calculus -> A(2)/RH attempt ->
+fractional diffusion -> black-noise manuscript repair -> cumulative backlog.
+Finish each preceding campaign and its verified/private checkpoint before
+starting the next. The iterated-pseudoprocess campaign now immediately precedes
+this revisit; its fully audited/private stopping checkpoint is the activation
+gate. Fractional diffusion and black noise retain their subsequent positions. No expiration date;
 October31 remains a review milestone only.
 
 The principal objective is to attempt to prove A(2)=0 for the genuine classical

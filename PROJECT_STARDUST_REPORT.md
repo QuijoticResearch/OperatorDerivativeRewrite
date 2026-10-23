@@ -35742,3 +35742,28 @@ ordinary active IBM proof work. The future iterated/time-changed pseudoprocess
 campaign remains queued under its existing completion gates.
 
 Checkpoint1421 gates: complete root6496jobs/29.945352499955334s/0; complete safe transitive44362declarations/40.598001200007275s/0; ALL16public types (160 unabridged audit/type lines) and BOTH complete final source/proof files reviewed. Seven independent Lean checks/29.404077199986205s/0 cover strict cutoff endpoints, false negative-radius implication, actual zero-time mass, concrete positive-time tail, correlated nonmonotone sine-squared weight, two-tail envelope domination and concrete +4 envelope. Final independent log retained; all prior elaboration failures retained. Production sources unchanged after complete build/audit. All2324Foundation/root sources+3configs frozen/rechecked;113immutable archive paths/hashes unchanged. Default200000heartbeats/trust/toolchain unchanged. FIVE explicit Git paths; exact receipt and PRIVATE main/research closure recorded in .lake/stardust-1421-verification.json.
+
+## Checkpoint1422 — instruction-only queue priority amendment
+
+October23 user instruction: move iterated/time-changed pseudoprocess calculus
+immediately before the A(2)/RH revisit. Saved sequence is now IBM (ACTIVE) ->
+Bakry–Émery/fBM -> Cauchy -> iterated/time-changed pseudoprocess calculus ->
+A(2)/RH attempt -> fractional diffusion -> black noise -> cumulative backlog.
+Cauchy's fully audited/private stopping checkpoint activates iterated calculus;
+its fully audited/private stopping checkpoint activates A(2)/RH. The former
+placement after black noise is superseded. All other campaign ordering,
+mathematical objectives and verification/source/private-backup gates persist.
+No queued research begins; no active proof is interrupted or mathematical
+claim changed. Updated AGENTS, authoritative queue and five campaign contracts
+consistently; historical checkpoint records remain intact.
+
+Instruction-only verification: all2324Foundation/root source hashes and all
+3configuration hashes equal CLOSED1421, with113archive paths/hashes unchanged.
+Per STARDUST_BUILD_OPTIMIZATION's documentation-only rule, retain the exact
+successful1421 full-root build6496jobs/29.9453525s, complete transitive
+axiom audit44362declarations/40.5980012s, all16public-type/fullproof reviews
+and seven independent Lean checks/29.4040772s on identical mathematical inputs.
+No verification is weakened or substituted. Explicit eight-document commit,
+exact-commit receipt and PRIVATE main/research verification follow; terminal
+evidence is in .lake/stardust-1422-verification.json. Oct23 reflection remains
+already consumed; this user-directed queue update is not housekeeping.
