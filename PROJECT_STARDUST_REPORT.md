@@ -35353,3 +35353,106 @@ reflection records, curated drafts/PDFs and Lean/Lake settings are unchanged.
 No external novelty claim is made. Full gates and exact private closure follow.
 
 Checkpoint1412 gates: complete root6478jobs/41.541777s/0; complete safe transitive44049declarations/37.506586s/0; all23public types and the complete final source/proofs read unabridged. Eight independent mathematical Lean checks passed (exact timing retained). All2306sources/3configs frozen/rechecked; pre-existing mathematical bytes unchanged except root/Axiom imports;113immutable archive paths/hashes unchanged. Default200000proof heartbeats/trust/toolchain unchanged. Four explicit Git paths; exact receipt/private main and research verification follow in .lake/stardust-1412-verification.json.
+
+
+## Checkpoint1413 — original native kernels are genuine occupation-convolution L2 classes
+
+IBM remains ACTIVE. The native finite-width L2-class identification left OPEN
+at1412 is now DISCHARGED. This is the SAME `IBMClockPhysicalOccupation.kernelApprox`
+obtained from the ORIGINAL closed clock derivative of the actual mollified
+LINEAR IBM time average. It is not a newly defined approximation chosen to
+have a desired limit. Strong convergence is still an explicit next obligation.
+
+`Foundation/IBMClockNativeOccupation.lean` constructs the actual physical-Hilbert
+time field
+
+    <h,clockDirection(t)> sign(B_t(Y)) profileClass(n,abs(B_t(Y))).
+
+`profileClass_bounded` transfers the OLD unconditional source-column bound
+through the OLD physical-noise isometry. Joint strong measurability, native
+time-section agreement and genuine Bochner-time integrability are proved.
+The actual samplewise `pathField h n T Y` exists for EVERY clock sample and
+has a fixed-n deterministic Hilbert bound T ||h|| sqrt(T) C_n. It is strongly
+measurable and genuinely clock-L2. `kernelApprox_pathField_ae` applies the
+existing BochnerL2 Fubini theorem with its independently constructed L2 column
+class to identify the ORIGINAL native class with this actual Hilbert integral.
+There is no assumption that evaluation of an L2 representative commutes with
+integration. No stochastic maximum moment or new process is introduced.
+
+`Foundation/BochnerL2MajorantRealization.lean` supplies only the missing column
+construction for the EXISTING Fubini rule. Given a strongly measurable actual
+g(t,x), a finite time measure, a SFinite second measure and an ACTUAL L2
+majorant B(x), it proves the column integral is in L2 and applies the existing
+Fubini theorem to that constructed class. The proof uses the genuine
+measure-scaled norm bound; it does not assume the second measure is finite.
+The helper is used immediately in the spatial realization, rather than left
+as unused infrastructure. Both types and all proof bodies were reviewed.
+
+`Foundation/IBMClockNativeSpatial.lean` uses the already constructed continuous
+clock path on each finite interval. `clock_bound` proves a finite pathwise
+bound for EVERY stored sample, without imposing a new path hypothesis.
+`kernel_zero_of_far` proves the actual normalized bump is zero at and beyond
+its support radius, including endpoints. `spatial_majorant` then constructs
+an indicator of the finite spatial interval[-S,S] times the actual time-field
+bound, where S=R+rOut+1 and R bounds that particular clock path. This is a
+GENUINE spatial Lebesgue-L2 majorant. A constant bound on infinite spatial
+volume would be invalid and is not used. No moment of the random path bound
+is required for this samplewise spatial argument.
+
+`fieldValue_spatial_ae` identifies the physical-Hilbert time slices with the
+literal scalar signed occupation integrand. With the constructed majorant,
+`pathField_spatial_ae` proves the actual Hilbert integral has the raw scalar
+occupation convolution as its spatial representative, for EVERY stored clock
+sample. Combining with the native clock-L2 equality yields
+`kernelApprox_spatial_ae`. Finally1412's verified joint-convolution theorem
+identifies these SAME native kernels with mollification of the recovered K:
+
+    kernelApprox_convolution_ae:
+      for a.e. clock Y, for a.e. spatial x,
+        K_n[h,T](Y,x) = integral_r K[h,T](Y,r) rho_n(x-r) dr.
+
+`kernelApprox_all_widths_ae` gives one clock-full-measure event for EVERY n,
+with spatial AE equality. The literal integral version is independently tested.
+Direction h and horizon T remain fixed; no uncountable common event is claimed.
+
+The original native-field representative gap is DISCHARGED, including actual
+Bochner domains, physical scalar representation, support/normalization and
+SFinite-volume Fubini. The remaining strong L2 convergence is NOT inferred
+from weak convergence or from the new AE identities alone. Full signed
+occupation-measure equality/support/variation, nonlinear sine-clock spatial
+stochastic integration with its correct drift/domains, and full IBM calculus
+remain OPEN. All point-nondomain, parity and F1--F3 topology qualifications
+remain unchanged; no queued campaign is started.
+
+A potentially shorter NEXT strong-convergence route avoids building a general
+spatial convolution operator. Prove the L2 contraction of convolution by the
+positive normalized rho_n (positivity here concerns the MOLLIFIER, not the
+signed occupation kernel K). Weighted Cauchy--Schwarz/Jensen at each spatial
+point, followed by justified Tonelli/translation invariance, should give
+||K_n[h,T]||_2<=||K[h,T]||_2 using the NOW verified native convolution identity.
+Combined with1408's weak pairing convergence at the test K[h,T], the Hilbert
+norm-subtraction identity would yield strong convergence. That contraction
+estimate and every needed weighted integration premise are NOT yet proved.
+Pinned strong Lp translation continuity remains an alternative, not a required
+new abstraction. Preserve this exact proposed reduction for the next proof.
+
+Even strong convergence for EVERY FIXED directional kernel K[h,T] would NOT
+alone prove strong convergence of the entire coefficient-valued native clock
+gradient. A full tensor/trace or uniform tail argument is needed to control all
+clock directions together. Do not silently upgrade pointwise directional
+convergence to convergence in the full vector L2 norm. That distinction also
+matters before attempting a nonlinear sine-clock reconstruction.
+
+All24 new public types and all THREE complete source/proof files are reviewed
+unabridged. Eight independent checks cover raw and native zero horizon, ALL
+widths of the literal native spatial convolution on one clock event, the
+EVERY-sample Hilbert/scalar representative identity, both exact support-radius
+endpoints, actual unit-horizon clock bounds, original SOURCE white-noise
+realization of the mollified-average derivative, and the majorant helper on
+INFINITE spatial volume. Initial targeted elaboration failures are preserved;
+none constitutes a mathematical obstruction. Evidence is in
+`.lake/stardust-1413-*`. All archive/queue/reflection/curated manuscript/PDF
+bytes and pinned mathematical resource/trust settings are preserved. Full
+checkpoint gates and exact PRIVATE closure follow below.
+
+Checkpoint1413 gates: complete root6481jobs/40.137127s/0; complete safe transitive44100declarations/45.374502s/0; all24public types and ALL THREE complete final source/proof files read unabridged. Eight independent mathematical Lean checks/28.773585s/0. All2309sources/3configs frozen/rechecked; pre-existing mathematical bytes unchanged except root/Axiom imports;113immutable archive paths/hashes unchanged. Default200000proof heartbeats/trust/toolchain unchanged. SIX explicit Git paths; exact receipt/private main and research verification follow in .lake/stardust-1413-verification.json.
