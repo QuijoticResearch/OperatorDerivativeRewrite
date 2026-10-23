@@ -2224,3 +2224,8 @@ import Foundation.IBMEarlierWeightedOverlap
 import Foundation.IBMClockTailOverlap
 import Foundation.IBMNonlinearClockTailEnergy
 import Foundation.IBMNonlinearClockCutoffError
+import Foundation.BochnerCoefficientCauchy
+import Foundation.IBMNonlinearClockContraction
+import Foundation.IBMNonlinearClockLocalStrong
+import Foundation.IBMNonlinearClockStrongLimit
+import Foundation.IBMSineAverageStrongClock

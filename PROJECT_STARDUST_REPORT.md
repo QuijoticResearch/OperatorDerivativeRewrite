@@ -35836,3 +35836,100 @@ successful complete build. No manuscripts, queue, reflection/PDF artifacts or
 unrelated sources changed; Oct23 reflection remains already consumed1395.
 
 Checkpoint1423 gates: complete root6498jobs/40.75178809999488s/0; complete safe transitive44402declarations/38.744327799999155s/0; ALL24public types (228 unabridged audit/type lines) and BOTH entire final source/proof files reviewed. Eight independent Lean checks/26.854290799994487s/0. Exact logs/failure history retained. All2326Foundation/root sources+3configs frozen/rechecked;113archive paths/hashes unchanged. Default200000heartbeats, toolchain, trust and complete-audit whitelist unchanged. FIVE explicit Git paths; exact receipt and PRIVATE main/research closure recorded in .lake/stardust-1423-verification.json.
+
+## Checkpoint1424 — full native nonlinear IBM clock strong limit and ACTUAL intrinsic identification
+
+The remaining full coefficient assembly and unlocalized native clock strong
+limit from1423 are now proved for the actual IBM sine time-average. The result
+is int_0^T sin(Z_t) dt, not sin(int_0^T Z_t dt), for every finite T>=0 on the
+original independent Brownian scenery/clock construction. No scalar probe,
+finite coefficient truncation or spatial cutoff remains in the main strong
+limit theorem. This does not assert general Ito/Clark--Ocone completion.
+
+`IBMNonlinearClockContraction` proves that contraction of the SAME original
+full-vector localized average against h is EXACTLY1420's native localized
+occupation integral. The mask is explicitly chi(abs(B_t)); it is not silently
+identified with chi(B_t). Tensor contraction, source/clock order, clock-L2
+representatives and the time integral are all discharged. The existing generic
+`BochnerL2MajorantRealization` theorem justifies Bochner Fubini; no new Fubini
+foundation or supplied column identity is assumed. Existing actual nativeField
+strong convergence transfers to every coefficient contraction.
+
+`IBMNonlinearClockLocalStrong.finiteField_norm_le` bounds each localized
+directional field by M*||K(h,T)||, where
+
+    M = sqrt(1+4*(b-a)) * ||cutoffInput chi a b||.
+
+This bound is independent of smoothing width. The old EXACT physical-kernel
+norm equals the corresponding direction of the old actual LINEAR IBM average
+gradient. Its coefficient squares are summable by the verified nested
+source/clock Parseval theorem. Thus M^2*||K(e_i,T)||^2 is a genuine common
+summable coefficient majorant, with every assumption discharged. This is the
+missing information beyond directional convergence and bounded global L2.
+
+`BochnerCoefficientCauchy.cauchy_of_coordinates` applies old nested-L2 Parseval
+and Mathlib Tannery to the squared coefficient differences, bounded by 4b_i.
+Coordinate Cauchy convergence along the product order gives the zero coefficient
+limits; summable domination allows their sum to converge to zero; Parseval
+then yields the FULL vector Cauchy property. `localized_cauchy` and
+`exists_localized_limit` instantiate it with the ACTUAL nonlinear native fields,
+compact continuous 0<=chi<=1 and an explicit containing spatial interval.
+
+`IBMNonlinearClockStrongLimit` proves that the explicit smooth bump cutoffs
+have containing windows (-3(j+1),3(j+1)]. It applies1423's FULL uniform native
+tail estimate to the composed mask chi(abs(x)). Thus one radius controls the
+error for EVERY n, while fixed-radius localized fields are Cauchy. The resulting
+epsilon argument proves global `native_cauchy`; Hilbert completeness constructs
+`nativeLimit`, `native_tendsto`, uniqueness and its retained nonlinear energy
+bound. The global strong limit is the ORIGINAL `IBMNonlinearClockEnergy.average`,
+not a modified approximation sequence. The +4 correction and time-diagonal
+nullity from1423 remain in its justification.
+
+`IBMSineAverageStrongClock.nativeLimit_clock_eq` restores original source/clock
+order using the old clockField isometry, then identifies the strong limit with
+the EXISTING actual intrinsic gradient `IBMSineAverageIntrinsicCalculus.gradient
+T 1`. Its pairing limits agree with the independently established weak graph
+limit; Hilbert inner-product separation gives exact equality. This reuses the
+old actual-observable domain and joint-gradient construction, rather than
+postulating intrinsic membership for arbitrary fields or mollified observables.
+`clockGradient_tendsto` upgrades the original native clock gradients from weak
+to STRONG full-vector convergence. `original_clock_graph_tendsto` proves strong
+convergence of the actual value/gradient pair, and `limit_clock_graph` records
+the genuine original closed-clock graph. `native_joint_clock_tendsto` gives
+strong convergence of the actual coefficient-valued joint L2 fields in original
+source/clock order. Gradient norms converge too.
+
+Independent mathematical checks: self-tensor contraction with norm-squared
+factor; nonzero smooth cutoff full-vector limit; unlocalized vector error norm;
+actual zero-horizon limit and time-one energy bound; exact intrinsic clock
+component error norm; original joint-L2 native error norm; preserved positive-
+time point sine clock nondomain; and the explicit escaping-basis counterexample
+pair. For the latter, standard basis e_n is NOT Cauchy although each fixed
+coordinate tends to zero. This proves why coordinate convergence cannot justify
+the earlier unproved assembly without its summable majorant. The counterexample
+is a Lean proof, not numerical evidence. The first independent zero-horizon
+test encountered an NNReal-to-real rewrite mismatch; its log is retained and
+the final test uses the proved zero-time energy bound to force the zero vector.
+
+Remaining scope: this closes the exact sine-average nonlinear native strong
+clock approximation/identification obligation. It does NOT complete the full
+actual IBM campaign, nor prove pointwise clock differentiability, arbitrary
+nonlinear cylinder domain membership, classical adapted semimartingale Ito
+calculus, or general intrinsic Clark--Ocone. The existing point-observation
+nondomain, parity/chaos, F1/F2/F3 and domain/adjoint qualifications persist.
+Next audit the cumulative actual sine-average joint calculus and other saved
+IBM obligations before selecting the next direct theorem reuse; do not keep
+listing this now-closed strong clock limit as open. Explore productive
+generalizations only with exact domains and genuine process identifications.
+IBM remains ACTIVE and queue1422 is unchanged.
+
+All five complete final source/proof files and all20public types were reviewed
+unabridged. Targeted elaboration failures are retained: aliases/eta rewriting,
+local scalar majorant expansion, explicit real-inner-product/type parameters
+and chained projection parsing; none is a mathematical obstruction. Default
+200000heartbeats/trust/toolchain unchanged; no check or linter disabled. No
+production source changed after the successful complete build/audit. No archive,
+campaign queue, reflection/PDF or unrelated mathematical source was changed;
+Oct23 reflection remains already consumed1395.
+
+Checkpoint1424 gates: full root6503jobs/26.827450400043745s/0; safe transitive44433declarations/41.77548680000473s/0; ALL20public types (176 audit/type lines) and FIVE entire final proof sources reviewed. Ten independent Lean checks/32.12551089999033s/0. All2331Foundation/root sources+3configs frozen/rechecked;113immutable archive paths/hashes unchanged. Eight explicit Git paths; exact receipt and PRIVATE main/research closure follow in .lake/stardust-1424-verification.json.
