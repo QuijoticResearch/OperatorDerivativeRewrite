@@ -35456,3 +35456,103 @@ bytes and pinned mathematical resource/trust settings are preserved. Full
 checkpoint gates and exact PRIVATE closure follow below.
 
 Checkpoint1413 gates: complete root6481jobs/40.137127s/0; complete safe transitive44100declarations/45.374502s/0; all24public types and ALL THREE complete final source/proof files read unabridged. Eight independent mathematical Lean checks/28.773585s/0. All2309sources/3configs frozen/rechecked; pre-existing mathematical bytes unchanged except root/Axiom imports;113immutable archive paths/hashes unchanged. Default200000proof heartbeats/trust/toolchain unchanged. SIX explicit Git paths; exact receipt/private main and research verification follow in .lake/stardust-1413-verification.json.
+
+
+## Checkpoint1414 — strong convergence of actual native directional clock kernels
+
+IBM remains ACTIVE. The strong-convergence obligation for EVERY FIXED
+Cameron--Martin direction h and finite nonnegative horizon T is DISCHARGED.
+The approximants remain the ORIGINAL native physical `kernelApprox h n T`
+from the closed clock graph of the actual mollified LINEAR IBM average;
+the limit is the SAME recovered kernel K[h,T] constructed at1408.
+
+`Foundation/PositiveMollifierL2Contraction.lean` proves contraction for the
+ACTUAL normalized positive rho_n and arbitrary real spatial L2 inputs u,
+including signed u. The theorem does not assume the occupation kernel is
+nonnegative. `weighted_integrable` and `weighted_square_integrable` establish
+the actual spatial integrals using the existing translated physical L2 class,
+its compact kernel bound and the original square integrability of u.
+`convolution_square_le` integrates the nonnegative weighted variance
+
+    (u(r)-c)^2 rho_n(x-r),  c=integral_r u(r)rho_n(x-r)dr.
+
+All expanded terms are integrable; existing unit-mass identities give
+
+    (integral_r u(r)rho_n(x-r)dr)^2
+       <= integral_r u(r)^2 rho_n(x-r)dr.
+
+No new weighted probability space or general convolution operator is needed.
+`reverse_shifted_mass` uses the verified actual bump orientation.
+`square_product_integrable`, `energy_integrable` and `energy_mass` discharge
+full spatial product-Fubini and prove the exact total energy on the right is
+||u||_2^2. Physical Lebesgue volume is infinite throughout.
+`norm_sq_le` concludes ||v||_2^2<=||u||_2^2 whenever the GENUINE spatial L2
+class v has that convolution representative. It is not a stand-alone claim
+that an arbitrary symbolic output is in L2;1413 supplies precisely the
+needed actual output/domain for the IBM application.
+
+`Foundation/IBMClockOccupationStrong.lean` applies the contraction first
+samplewise to1413's proved native convolution identity, then integrates over
+the ACTUAL clock law. `spatial_norm_sq_le` and `kernel_norm_sq_le` prove,
+with no supplied convergence or energy hypothesis,
+
+    ||K_n[h,T]||_2^2 <= ||K[h,T]||_2^2.
+
+The OLD1408 genuine weak convergence is tested at K[h,T]. Together with the
+Hilbert squared-distance identity this bounds the error by
+
+    0 <= ||K_n-K||_2^2 <= 2||K||_2^2-2<K_n,K> -> 0.
+
+`kernel_tendsto` therefore proves ORDINARY STRONG
+L2(clock;L2(real spatial volume)) convergence for EVERY h and T>=0.
+`kernel_norm_tendsto` proves convergence of the actual norms too. This is
+not another completed-test or weak-probe limit and not an unproved upgrade
+from boundedness alone. The physical-noise isometry maps the SAME native
+approximants and limit to the original directional clock-derivative fields;
+`native_directional_tendsto` proves strong convergence in the original
+source/clock scalar L2 after contraction with h and the verified factor flip.
+`native_directional_norm_tendsto` proves their norm convergence.
+
+The genuinely new reuse connection within the library is exact: actual
+closed-graph weak convergence + native physical occupation realization +
+positive spatial-mollifier energy contraction -> strong native directional
+derivative convergence. This avoids rebuilding a general spatial translation
+or convolution CLM solely to prove this particular limit. Positivity is
+used ONLY for the mollifier on ordinary physical space and the actual clock
+probability measure; no signed pseudoprocess form is treated as positive.
+The general variance/Fubini facts are standard mathematical estimates, not
+an unsupported external novelty claim.
+
+Full coefficient-valued native clock-gradient convergence remains OPEN.
+Pointwise convergence in every h does not by itself prove convergence in
+that vector norm. A concrete next route is to apply the newly proved
+contraction to an orthonormal coordinate family of the clock coefficient
+space. A justified Parseval/finite-projection argument may sum these bounds
+to ||G_n||<=||G||; the OLD full weak pairing limit for the LINEAR G_n would
+then give full strong convergence by the same norm identity. Equivalently,
+coordinate domination could provide uniform tails and combine with the
+now strong finite-coordinate convergence. The actual coordinate isometries,
+trace identity and projection/tail theorem MUST be audited/reused/proved;
+no tensor or full-vector conclusion is claimed here.
+
+Nonlinear sine-average CLOCK reconstruction is still a separate OPEN problem;
+its source branch1407 remains strong/samplewise and its clock branch1405
+weak. Actual spatial nonlinear stochastic integration, its drift/domain,
+global signed occupation-measure equality/support/variation and full IBM
+calculus remain OPEN. All point-observation nondomain, clock-parity and
+F1--F3 topology restrictions survive. No queued campaign is activated.
+
+All15 new public types and BOTH complete final proof/source files are read
+unabridged. Independent tests cover a concrete Brownian clock direction/unit
+horizon; physical and original-native error norms tending to zero; actual
+energy mass for a signed physical input; unsquared contraction; explicitly
+negative convolutions; zero limit forcing every native approximant zero; and
+strong convergence under the actual source white-noise realization. An initial
+successful full build's proof-conversion diagnostic was replaced with an
+explicit scalar equality transport, then the entire root was rebuilt before
+final audit. No trust/resource change, sorry or new mathematical axiom is
+introduced. Evidence is in `.lake/stardust-1414-*`. All manuscript/queue/
+reflection/curated-draft/PDF bytes remain unchanged. Full gates and exact
+PRIVATE closure follow below.
+
+Checkpoint1414 gates: complete root6483jobs/41.001193s/0; complete safe transitive44116declarations/40.779700s/0; all15public types and BOTH complete final source/proof files read unabridged. Eight independent mathematical Lean checks passed (final exact timing retained); initial signed-test reduction failure/log preserved. All2311sources/3configs frozen/rechecked; pre-existing mathematical bytes unchanged except root/Axiom imports;113immutable archive paths/hashes unchanged. Default200000proof heartbeats/trust/toolchain unchanged. FIVE explicit Git paths; exact receipt/private main and research verification follow in .lake/stardust-1414-verification.json.

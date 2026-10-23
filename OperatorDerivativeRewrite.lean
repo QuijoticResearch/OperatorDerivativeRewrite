@@ -2207,3 +2207,5 @@ import Foundation.IBMClockOccupationConvolution
 import Foundation.BochnerL2MajorantRealization
 import Foundation.IBMClockNativeOccupation
 import Foundation.IBMClockNativeSpatial
+import Foundation.PositiveMollifierL2Contraction
+import Foundation.IBMClockOccupationStrong
