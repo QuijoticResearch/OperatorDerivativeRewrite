@@ -2229,3 +2229,4 @@ import Foundation.IBMNonlinearClockContraction
 import Foundation.IBMNonlinearClockLocalStrong
 import Foundation.IBMNonlinearClockStrongLimit
 import Foundation.IBMSineAverageStrongClock
+import Foundation.IBMSineAverageStrongJoint

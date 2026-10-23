@@ -35933,3 +35933,88 @@ campaign queue, reflection/PDF or unrelated mathematical source was changed;
 Oct23 reflection remains already consumed1395.
 
 Checkpoint1424 gates: full root6503jobs/26.827450400043745s/0; safe transitive44433declarations/41.77548680000473s/0; ALL20public types (176 audit/type lines) and FIVE entire final proof sources reviewed. Ten independent Lean checks/32.12551089999033s/0. All2331Foundation/root sources+3configs frozen/rechecked;113immutable archive paths/hashes unchanged. Eight explicit Git paths; exact receipt and PRIVATE main/research closure follow in .lake/stardust-1424-verification.json.
+
+## Checkpoint1425 — actual full native joint gradient and uniform stochastic IBP
+
+`IBMSineAverageStrongJoint` upgrades BOTH ORIGINAL native channels for the
+actual IBM observable X_T=int_0^T sin(Z_t)dt. `sourceGradient_continuous` reuses
+the old actual coefficient-field continuity `IBMSineSourceContinuity.flat_continuous`
+and exact `IBMSineSourceField.flat_eq` through the existing Gaussian curry
+isometry. The old Bochner right-quadrature theorem now applies to the UNCHANGED
+`IBMSineAverageSourceDomain.gradientSum T n`. Its source integral is EXACTLY
+the already constructed intrinsic source gradient, by
+`IBMSineSourceIntegral.sourceIntegral_eq_gradient`. This proves strong
+sourceGradient_tendsto to `IBMSineAverageIntrinsicCalculus.gradient T 0`.
+
+The existing `IBMNativeBoundedGraphCore.field_limit` assembles this with1424's
+native clock strong limit, without another finite-channel convergence helper.
+`nativePair_tendsto` proves full two-channel Hilbert-norm convergence of the
+UNCHANGED `IBMSineAverageWeakGradient.nativePair T n` to the ACTUAL joint
+intrinsic gradient, for every finite T>=0. `nativePair_error_tendsto` and
+`nativePair_norm_tendsto` record ordinary error and norm convergence. No scalar
+direction, finite coefficient truncation or weak topology remains here.
+
+`native_dual_tendsto` additionally proves convergence of these actual native
+fields through the EXISTING graph-dual embedding to the ACTUAL weak derivative.
+The independent test verifies ordinary operator-norm error on the graph-test
+dual, with the original canonical Hilbert-graph norm/scalar-space instances
+made explicit locally. No different norm, test space or topology is introduced.
+This identification does not infer full ambient differentiability from merely
+dual convergence: the actual gradient/domain was already independently verified.
+
+The main new stability connection is to ACTUAL stochastic divergence pairings.
+For every v in the original jointDivergence.domain, actual_integrability and
+the old intrinsic integration-by-parts identity give
+
+    | <nativePair_n,v> - E[X_T * jointDivergence(v)] |
+        <= ||nativePair_n-gradient_T|| * ||v||_FIELD.
+
+No uniform bound on the divergence OUTPUT is required. This is an ordinary
+integral for the actual constructed IBM, with each v's genuine adjoint-domain
+membership explicit. `actual_divergence_error_unit` yields a uniform field-unit-
+ball bound; `actual_divergence_error_uniform` proves one N works for ALL such
+tests simultaneously. `moving_actual_divergence_error_tendsto` allows v_n to
+vary arbitrarily with n under a common FIELD-norm bound, while each divergence
+only needs its own original domain condition. This is stronger than the old
+fixed-test weak pairing limit; it does not invent an adapted martingale or
+semimartingale interpretation for IBM.
+
+Independent tests verify: the native uncurried source error; full joint error;
+ordinary strong-dual operator-norm error; actual alternating-sign adjoint
+probes v_n=(-1)^n v; a common N for every unit-field-norm test at tolerance
+1/100; both literal original channels at zero horizon; preserved positive-time
+point sine clock nondomain; and the moving-basis counterexample pair. The
+standard basis has each fixed coordinate pairing tending to zero, yet pairing
+the moving basis vector with itself stays one. Thus weak convergence cannot
+justify the new moving-probe claim without genuine strong convergence.
+
+Scope qualification: the native pair combines source quadratures and clock
+mollifications. Strong convergence of that pair does NOT show it is the joint
+derivative of a SINGLE finite-stage graph input, or that the mollified values
+are IBM-observable. That common-input/observability identification remains
+separate. The limit is the actual already constructed joint gradient. General
+actual IBM Ito/Clark--Ocone and other domains, closures and process identities
+remain open; IBM stays ACTIVE and queue1422 remains unchanged.
+
+Possible next substantive domain extension: actual time-weighted sine
+functionals int_0^T g(t)sin(Z_t)dt for rough g in L2(0,T), using existing
+finite-horizon covariance/Schur bounds and dense step weights. A candidate
+clock energy bound has constant 8*peak(1)*T*sqrt(T)+4*T^2 multiplying ||g||_L2^2,
+from min(s,t)<=T and the proved timeKernel row mass. This is a proposed
+argument, NOT yet a verified weighted theorem or domain assertion. First audit
+existing weighted-process/operator declarations; reuse all verified machinery.
+
+Proof/audit diagnostics retained: the initial dual elaboration hit the DEFAULT
+200000heartbeat bound; local irreducibility of large gradient/embedding names
+resolved it without increasing resources. Eta/limit rewriting was repaired via
+the existing neighborhood equality. Independent explicit dual-norm tests exposed
+a canonical Hilbert-graph instance-search bridge: completeness alone did not
+resolve it; explicitly caching the EXISTING seminormed/scalar-space instances
+did. A proposed local reducibility annotation was rejected by Lean's validation
+and removed; no allowUnsafeReducibility override was used. Diagnostic traces and
+all failed logs remain available. No production source changed after successful
+full build/audit. No trust/resource/toolchain/check/linter setting was weakened.
+No manuscript, campaign queue, reflection/PDF artifact or unrelated mathematical
+source changed. Oct23 reflection remains already consumed1395.
+
+Checkpoint1425 gates: root6504jobs/41.49111979996087s/0; safe transitive44444declarations/37.92027329996927s/0; ALL10public types (107 unabridged audit/type lines) and entire final source/proofs reviewed. Nine independent Lean checks/30.518477600009646s/0. All2332Foundation/root sources+3configs frozen/rechecked;113archive paths/hashes unchanged. FOUR explicit Git paths; exact receipt and PRIVATE main/research closure recorded in .lake/stardust-1425-verification.json.
