@@ -36095,3 +36095,93 @@ definitions. Earlier failed elaboration logs are retained. Oct23 reflection
 was already consumed1395; ordinary proof reporting is not a second session.
 
 Checkpoint1426 gates: root6508jobs/46.32359099999303s/0; COMPLETE safe transitive44535declarations/39.671457800024655s/0; ALL40public types (267 unabridged audit/type lines) and all four final sources/proofs reviewed. Ten independent Lean examples plus five helper proofs/32.18643729999894s/0. All2336Foundation/root sources+3configs frozen/rechecked;113archive paths/hashes unchanged. SEVEN explicit Git paths; exact receipt and PRIVATE main/research closure recorded in .lake/stardust-1426-verification.json.
+
+## Checkpoint1427 — strong original native IBM clock limits for every L2 time weight
+
+This closes1426's specific weak-versus-strong gap for deterministic rough
+time weights. `IBMTimeWeightedClockOperator` packages the UNCHANGED actual
+`IBMTimeWeightedSineClock.nativeGradient n g T` as a continuous linear map
+from genuine time-L2 equivalence classes into the entire original clock
+field space. `native_congr` proves time-AE representative independence.
+`nativeLinear_bound` and `nativeOperator_difference` use precisely1426's
+actual energy, with width-independent operator bound
+
+    B_T = sqrt(8*peak(1)*T*sqrt(T)+4*T^2).
+
+This is not a coefficient cutoff, test-direction bound, or changed field norm.
+Linearity and norm control are proved from actual integrable Bochner fields.
+
+`IBMTimeWeightedClockDensity.convergent` is the linear subspace of actual time
+weights whose ORIGINAL native gradients converge strongly. Uniform B_T control
+makes this set closed: approximate a limiting time weight once within
+epsilon/(4*(B_T+1)), uniformly control both native errors, then use the chosen
+weight's genuine Cauchy property. The elementary metric argument is a PRIVATE
+helper, avoiding repeated unfolding of nested L2 classes during elaboration;
+no additional domain premise or weakened topology enters the public theorem.
+
+The existing `L2GeneratingIndicators.generatingIndicatorSpan_closure` proves
+the span of indicators of univ and all Iic(a) is dense in the FULL original
+time-L2 space. Its generating-pi-system hypotheses are verified for the Borel
+real line and the finite restricted Lebesgue time measure; the resulting
+lpMeas space is identified with the whole L2 space using mem_lpMeas_self.
+No unproved interval-step approximation is supplied as a hypothesis.
+
+`IBMTimeWeightedClockStrong.indicator_native` identifies arbitrary measurable
+indicator weights with the ORIGINAL native set integrals. `prefix_native`
+proves exact equality with the EXISTING original native averageGradient at
+the clipped horizon (min(a,T)).toNNReal. Negative prefixes and horizon
+endpoints are included by an explicit set identity. Existing1424 native
+prefix convergence therefore applies without redoing occupation/localization
+analysis. The closed convergence subspace contains all these generators;
+`convergent_eq_top` gives strong convergence for every actual time-L2 class.
+
+`native_tendsto` finally identifies that independently obtained strong limit
+with1426's ACTUAL intrinsic clock derivative: original fixed-field weak
+pairings identify the two Hilbert vectors by uniqueness. Strong convergence
+is proved before this identification; it is never inferred from weak
+convergence alone. `native_error_tendsto` is literal full-field norm error.
+`actual_clock_graph_tendsto` combines actual mollified VALUE convergence and
+native GRADIENT strong convergence in the original closed clock graph pair.
+
+`moving_time_weights_tendsto` goes further: ANY u_n -> g strongly in actual
+time L2 may be used at the SAME index n as spatial mollification. The bound
+||A_n(u_n)-A_n(g)|| <= B_T||u_n-g|| gives the actual intrinsic clock gradient
+as limit, with no separate order of limits or common pointwise time bound.
+This is strong convergence on each input and stable under strong time-L2
+approximation. No operator-NORM convergence, point-clock differentiability,
+ordinary semimartingale calculus, or RH connection is asserted.
+
+Independent Lean checks use t^(-1/4) on(0,1], first verifying its actual L2
+membership independently via the integrable t^(-1/2) square. Tests verify
+ordinary full-field norm error, actual clock graph-pair convergence, the
+negative singular input, negative-time prefix clipping to the old zero-
+horizon native gradient, the width-uniform Lipschitz bound on arbitrary time
+classes, a concrete simultaneous sequence (1+1/(n+1))*g, and an actual
+discontinuous half-horizon cutoff identified with the OLD native gradient.
+Seven examples plus two supporting proofs pass independently.
+
+Scope: general rough-weight strong native CLOCK convergence is now PROVED,
+not an open obligation. The existing actual weighted source formula and
+joint-domain/adjoint IBP1426 remain valid. This does not show that mollified
+values are IBM-observable or that a native source/clock pair comes from a
+SINGLE finite-stage INTRINSIC graph input. Full actual intrinsic IBM Ito,
+Clark--Ocone, broader domains and required convergence/closure remain open.
+IBM stays ACTIVE; queue1422, all other campaigns and source manuscripts are
+unchanged. No reflection/PDF session was admitted; Oct23 was consumed1395.
+
+Elaboration diagnostics: full nested L2 closure proof repeatedly exceeded the
+DEFAULT200000heartbeats. A private elementary metric helper allowed the same
+argument to compile without raising limits. Explicit scalar-smul identities,
+the original Bochner norm-square formula and typed congrArg integral identities
+resolved map/coercion elaboration. Diagnostic and failed target logs remain
+under1427. No new axiom, sorry, unsafe reducibility, toolchain change, heartbeat
+increase, error suppression, theorem weakening or manuscript edit was used.
+The first combined audit/type run correctly passed the transitive axiom scan
+but failed its type phase because a textual declaration extractor read
+"theorem reduces" inside a block comment as a name. The generator now removes
+block comments before enumerating these sources, the nonexistent print/check
+was removed, and the complete build and complete audit/type pass were rerun
+against a fresh frozen manifest. All21 actual public declarations are covered;
+the failed audit and its timing are preserved. No failed type gate was waived.
+
+Checkpoint1427 gates: root6511jobs/10.534143899974879s/0; COMPLETE safe transitive44602declarations/38.57667079998646s/0; ALL21public types (119 unabridged audit/type lines) and all three final sources/proofs reviewed. Seven independent Lean examples plus two helper proofs/28.567408900009468s/0. All2339Foundation/root sources+3configs frozen/rechecked;113archive paths/hashes unchanged. SIX explicit Git paths; exact receipt and PRIVATE main/research closure recorded in .lake/stardust-1427-verification.json.

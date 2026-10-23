@@ -2234,3 +2234,6 @@ import Foundation.IBMClockTimeWeightEnergy
 import Foundation.IBMTimeWeightedSineValue
 import Foundation.IBMTimeWeightedSineClock
 import Foundation.IBMTimeWeightedSineCalculus
+import Foundation.IBMTimeWeightedClockOperator
+import Foundation.IBMTimeWeightedClockDensity
+import Foundation.IBMTimeWeightedClockStrong
