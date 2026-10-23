@@ -33924,3 +33924,86 @@ unchanged; queue/AGENTS and original manuscripts unchanged; local curated
 links and source/PDF freshness verified. No mathematical results modified.
 Exact commit approval and terminal PRIVATE main/research verification follow
 in .lake/stardust-1395-verification.json. IBM remains ACTIVE; later gates unchanged.
+
+## Checkpoint1396 — actual nonseparable spacetime Simpson chain formula
+
+IBM remains ACTIVE. This is resumed mathematical proof work after CLOSED1395,
+not another reflection session. October23's one reflection date stays consumed;
+its exact terminal charge962seconds remains authoritative. No queue change.
+
+New files: Foundation/IBMTimeSpacePeano.lean,
+Foundation/IBMTimeSpaceQuadrature.lean, Foundation/IBMTimeSpaceSimpson.lean.
+The general time-space frontier recorded at1394/1395 is now resolved in the
+following precise domain, beyond the former separable h(t)f(z) theorem.
+
+IBMTimeSpaceSimpson.sums_tendstoInMeasure: for actual Z=W(abs B), original
+independent scenery-clock joint law, fixed T>0 and ALL uniform N=n+1 grids,
+  sum_i S_(partial_x F(t_i,.))(Z_(t_i),Z_(t_i+1))
+    -> F(T,ZT)-F(0,Z0)-integral_0^T partial_t F(t,Zt)dt
+IN PROBABILITY. The finite S is the old actual SIGNED spatial Simpson
+prescription, with the spatial midpoint (Z_i+Z_(i+1))/2, LEFT time t_i,
+and genuine actual process increments. It is not defined by the endpoint
+target. Time-space dependence need not be separable or a finite tensor sum.
+
+Exact hypotheses: every frozen-time spatial function F(t,.) is global C4;
+every frozen-space time function F(.,x) is global C1; the fourth spatial
+derivative and first time partial are jointly continuous on R². No mixed
+derivative, fifth spatial derivative, global derivative/growth bound,
+expectation moment, assumed independence of increments or stronger time C4
+regularity is supplied. Original Z0 retained in all finite/limit identities.
+All approximants and the target are proved measurable. The time correction
+is a genuine ordinary Lebesgue interval integral, finite on EVERY sample.
+
+Deterministic reuse and proof:
+- IBMTimeSpacePeano.horizontal_modulus uses compact time-space rectangles;
+  segment_bounds retains the spatial Lagrange point in the SAME rectangle.
+  Joint continuity of D_x^4 F supplies ONE time-uniform Peano modulus.
+  Existing third/fourth Lagrange identities and the old exact Simpson-error
+  identity then give spatial error <=epsilon*abs(delta)^4 uniformly in time.
+  Only spatial C4, with D³(Df)=D4f, is used; no hidden fifth derivative.
+- IBMTimeSpaceQuadrature.error_bound identifies EVERY fixed-spatial-endpoint
+  time increment with the actual integral of partial_t F via ordinary FTC.
+  Compact joint continuity of that partial and continuity of ANY path j give
+  a uniform cell-integrand oscillation. The total error is <=eta*T.
+  increments_tendsto therefore holds for EVERY continuous real path, without
+  variation or differentiability of that path and without stochastic premises.
+- IBMTimeSpaceSimpson.finite_chain is exact algebraic telescoping, valid for
+  arbitrary F on EVERY grid/sample. It separates left-time spatial increments
+  from time increments frozen at the RIGHT spatial endpoint.
+- The actual IBM spatial error is eventually bounded by epsilon times its
+  ACTUAL quartic mass on each sample. The existing quartic Peano/tightness
+  theorem gives probability decay. Every-sample deterministic time correction
+  convergence and the original-law subsubsequence criterion finish the chain.
+  Neither value-only separable approximation nor a formal stochastic product
+  rule was used to bypass the missing joint derivative estimate.
+
+Independent Lean checks: empty time grid; algebraic finite chain without any
+regularity; spatial constants give zero finite Simpson sum; exact recovery of
+the OLD time-independent spatial prescription; genuine nonseparable exp(tx)
+and translated quintic (t+x)^5 instances; translated quintic finite Simpson
+error (y-x)^5/24; arbitrary C1-time/C4-space separated instance (no joint C4
+premise); merely continuous path integrability example. The nonseparable
+examples explicitly discharge joint fourth/time-partial continuity. No
+numerical evidence or expectation-only heat identity substitutes for these.
+Scratch derivative-function power/cast/import elaboration errors were repaired
+and failed logs retained; they are not mathematical obstructions. No resource
+limits, axiom whitelist, toolchain or verification settings changed.
+
+Limits: fixed deterministic T and uniform grids only. No full time-uniform
+finite interpolation, arbitrary partitions, random F/time coefficients,
+unbounded random horizon, almost-sure full-sequence/Lp upgrade, adapted
+physical-Z stochastic integral, causal Clark–Ocone or Skorohod/adjoint
+identification follows. Prior raw-rank divergence and sine strong-domain
+obstructions persist. The separate predictable martingale integrator M is
+still not physical Z. Nonsmooth intrinsic Itô–Tanaka and full IBM calculus
+remain OPEN. A useful next focused question is controlling sample-dependent
+smooth coefficients on the original law, or obtaining continuous-time uniform
+realization from the actual joint compact Peano estimate. Preserve those
+actual domain/convergence gates; do not declare the IBM campaign complete.
+
+The1395 exposition is an explicitly dated historical synthesis of1383–1394;
+its then-open general-F obligation is superseded by this exact new theorem.
+No new manuscript revision or second housekeeping session was admitted.
+No external novelty or literature-priority claim is made.
+
+Checkpoint1396 gates: full root6441jobs/63.809466s/0; complete safe transitive43308declarations/37.097407s/0; all27public types (204unabridged lines), all THREE complete new sources and nine downstream checks/28.361910s/0 reviewed. All2269source/3config and113immutable archive paths/hashes checked. Standard3axioms only; no resource/toolchain/trust changes. Original manuscripts, current private LaTeX/PDF pairs/index, queue and reflection records unchanged. Explicit six-path Git checkpoint, exact receipt and verified PRIVATE main/research follow in .lake/stardust-1396-verification.json.
