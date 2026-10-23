@@ -2170,3 +2170,5 @@ import Foundation.IBMTimeSpaceSimpson
 import Foundation.IBMTimeSpacePrefixQuadrature
 import Foundation.IBMUniformTimeSpace
 import Foundation.IBMContinuousSimpsonRealization
+import Foundation.IBMBochnerTimeQuadrature
+import Foundation.IBMRampSimpsonNativeAverage

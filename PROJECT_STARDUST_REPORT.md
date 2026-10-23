@@ -34100,3 +34100,91 @@ counterexamples remain intact. Continuous Bernstein realization does not
 remove them or close the full IBM stopping contract. No queued campaign opened.
 
 Checkpoint1397 gates: full root6444jobs/65.191182s/0; complete safe transitive43384declarations/35.697618s/0; all39public types (237unabridged lines), all THREE complete new sources and nine downstream checks/25.240493s/0 reviewed. All2272source/3config and113immutable archive paths/hashes checked. Standard3axioms only; no resource/toolchain/trust changes. Original manuscripts, current private LaTeX/PDF pairs/index, queue and reflection records unchanged. Explicit six-path Git checkpoint, exact receipt and verified PRIVATE main/research follow in .lake/stardust-1397-verification.json.
+
+## Checkpoint1398 — actual signed Simpson L2 / native-average operator identification
+
+IBM remains ACTIVE. This is mathematical proof work, not a second reflection
+session. October23's reflection date remains consumed; queue, original
+manuscripts, maintained LaTeX/PDF pairs/index and reflection accounting untouched.
+
+IBMRampSimpsonNativeAverage.sums is the OLD ACTUAL signed stochastic prescription
+  R_N=sum_i (T-t_i) S_1(Z_(t_i),Z_(t_i+1)), t_i=iT/N, N=n+1,
+for the existing reflected-clock IBM Z=W(abs B), ORIGINAL joint probability
+law. finite_identity proves on EVERY sample/grid, retaining arbitrary Z0,
+  R_N=(T/N) sum_i Z_(t_i+1) - T Z0.
+Thus this is an identified actual signed quadrature, not an integral defined
+to equal a desired endpoint or mean. It is not an expectation-level heat identity.
+
+intrinsicValue_actual_ae identifies EVERY R_N with the concrete intrinsic
+observable-L2 right Riemann sum of the existing actual IBM L2 curve.
+The initial coordinate is zero ONLY almost everywhere; the old
+IBMRawInitialPast.ibm_zero_ae is used explicitly at this representative step,
+not to alter the finite every-sample identity. sums_memLp proves each ACTUAL
+unclipped stochastic quadrature belongs to L2 under its original law.
+intrinsicValue_tendsto proves strong observable-L2 convergence to the OLD
+intrinsicAverage(T), whose ambient L2 value is exactly nativeAverage(T) by
+IBMTimeAveragedObservable.nativeAverage_eq_intrinsicAverage. This holds for
+EVERY T>=0, including T=0; no extra envelope/moment assumption is supplied.
+The existing IBMClockAverageGraph.nativeAverage_path_integral_ae identifies
+that OLD native limit with the actual sample-path time integral of Z.
+
+The connection to the ORIGINAL operator is genuine:
+- average_mem_joint_domain reuses IBMFiniteAverageCore.nativeAverage_mem and
+  IBMJointIntrinsicDerivative.joint_domain_iff to discharge the FULL intersection
+  of source and clock domains for the SAME actual average.
+- averageGradient is the ORIGINAL jointDerivative applied to that domain
+  element, not a newly invented derivative or separately assumed candidate.
+- derivative_tendsto gives graph-dual NORM convergence of the weak derivatives
+  of these ACTUAL stochastic L2 approximants. averageGradient_embed proves
+  that the limiting weak derivative is exactly the embedding of this STRONG
+  joint derivative. The equality is named explicitly, rather than silently
+  changing operator spaces or passing an unproved domain closure.
+- actual_pairing_integrable and actual_pairing_tendsto establish genuine
+  integrable pairings for EVERY original jointDivergence-domain test v:
+    E[R_N * delta(v)] -> inner(averageGradient(T),v).
+  Both the actual stochastic representatives and full original adjoint domain
+  appear in the theorem. No test-core replacement or temporal-integrator
+  identification is assumed.
+
+A precise counterexample prevents an invalid upgrade: intrinsicValue_first
+proves the FIRST approximant is T*intrinsicCurve(T). For EVERY positive T,
+first_not_joint_domain uses the old actual point-domain obstruction and
+invertible scalar multiplication to prove it OUTSIDE jointDerivative.domain.
+The limiting average is INSIDE that domain. Therefore these L2 quadratures
+are not presented as a strong derivative graph sequence. No strong gradient
+of the finite point sums or strong graph convergence is claimed.
+
+Supporting mathematics is limited to IBMBochnerTimeQuadrature.right_error_bound
+and rightSum_tendsto in a complete normed real space. Compact continuity gives
+a shared cell oscillation bound eta; ordinary Bochner cell integrals give
+total norm error <=eta*T. Applied to the EXISTING continuous intrinsic L2
+curve, this proves the actual L2 limit without differentiating rough point
+observations. No process, law, derivative or stochastic integral was rebuilt.
+Finite Abel summation from1394 supplies the exact ramp identity.
+
+Independent checks cover a constant path in an arbitrary complete normed
+space, a nonconstant quadratic ordinary integral, the actual single-cell
+formula, zero horizon, the rough first L2 coordinate/domain exclusion,
+the strong-domain limit and the full original adjoint-test pairing statement.
+Complete new theorem types and BOTH full definition/proof sources reviewed.
+No numerical evidence, external novelty or full IBM completion claim.
+
+Proof-engineering issues: negative-division/cast and function-valued finite
+sum normalization, the exact MemLp AE-congruence interface and evaluation-map
+simplification were repaired. Rewriting a deeply expanded graph-dual target
+hit the unchanged200000-heartbeat limit. Separate named strong-representability
+equality plus direct weak-map continuity prove the SAME mathematical limit;
+local definition opacity avoids pointless operator unfolding. No resource
+limit, compiler/trust option, axiom whitelist or verification requirement
+changed. Failed logs remain evidence, not mathematical obstructions.
+
+Still OPEN: arbitrary time-weighted/nonlinear observable L2 signed integration,
+strong-domain identification for nonlinear path averages (phi(int Z) is NOT
+int phi(Z)), causal physical-Z integration, full Skorohod/adjoint integrand
+identification, nonsmooth intrinsic Itô–Tanaka, temporal Clark–Ocone, arbitrary
+partitions and stronger convergence where required. Prior point/sine domain
+obstructions, raw-rank divergence and the distinction between physical Z and
+the separately constructed predictable martingale M remain intact. The full
+IBM campaign stopping contract is not met; no queued campaign is released.
+
+Checkpoint1398 gates: full root6446jobs/55.864984s/0; complete safe transitive43435declarations/40.873919s/0; all17public types (104unabridged lines), both complete new sources and eight downstream checks/31.067962s/0 reviewed. All2274source/3config and113immutable archive paths/hashes checked. Standard3axioms only; no resource/toolchain/trust changes. Original manuscripts, current private LaTeX/PDF pairs/index, queue and reflection records unchanged. Explicit five-path Git checkpoint, exact receipt and verified PRIVATE main/research follow in .lake/stardust-1398-verification.json.
