@@ -2141,3 +2141,5 @@ import Foundation.IBMUniformClockMaximum
 import Foundation.IBMUniformClockOccupation
 import Foundation.IBMUniformQuarticFamily
 import Foundation.IBMUniformQuarticProbability
+import Foundation.IBMUniformCrossingPenalty
+import Foundation.IBMUniformQuarticVariation

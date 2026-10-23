@@ -32771,3 +32771,81 @@ Final gates and exact private closure: .lake/stardust-1382-verification.json.
 
 
 Checkpoint1382 gates: full root6415jobs/24.354756s/0; complete safe transitive Foundation42838declarations/38.274967s/0; all25newpublic types (158lines) and both complete source/proof files reviewed. Six downstream Lean checks/32.195918s/0: empty and zero-horizon residuals, exact one-interval mean and quartic sum, actual conditional residual integral0, original joint-probability theorem application. Initial simp-name collisions with Mathlib residual/segment repaired by namespace qualification, without any mathematical source change. All2243source/3config hashes and113immutable archive hashes checked. No queue/reflection/manuscript changes. Exact Git/private closure evidence: .lake/stardust-1382-verification.json.
+# Checkpoint1383 — actual uniform quartic variation equals3T in probability
+
+IBM remains ACTIVE. Previous goal turn PROGRESS: checkpoint1382 proved the
+actual joint-law centered quartic fluctuation limit. This checkpoint proves
+crossing-penalty decay, identifies the clock-conditional mean limit and
+obtains the actual uniform-grid quartic variation of the existing process
+Z_t=W(|B_t|), with both sources constructed on the original Gaussian factors.
+
+Foundation/IBMUniformCrossingPenalty.lean reuses the existing triangular
+kernel rather than building a new local-time or small-ball infrastructure.
+For delta>=0 and |b-a|<=delta,
+
+    crossingPenalty(a,b) <=delta*tent(delta,a).
+
+Inside |a|<=delta this follows from penalty<=(b-a)^2<=delta^2 and tent>=delta;
+outside, the increment bound forces equal endpoint signs and zero penalty.
+The actual clock's Gaussian law gives E tent(delta,B_s)<=16delta^2 peak(s)
+for s>0, with the initial time handled separately by tent<=2delta.
+
+The genuine near-zero envelope delta*sum_i tent(delta,B_(iT/N)) is integrable.
+Existing inverse-square-root grid estimates yield
+
+    E nearEnergy <=2delta^2+32peak(T)*N*delta^3.
+
+On the good maximum-increment event, total crossing penalty is bounded by this
+envelope. Its probability tails are bounded by the bad-clock probability plus
+the envelope mean divided by epsilon. At delta=N^(-4/9), the new mean rate is
+2N^(-8/9)+32peak(T)N^(-1/3), tending to0. Consequently
+penalty_tendstoInMeasure proves the ACTUAL total crossing correction tends to0
+IN PROBABILITY along ALL uniform-grid sizes. It does not silently assert global
+L1 decay of the correction on bad samples.
+
+Foundation/IBMUniformQuarticVariation.lean explicitly identifies the old
+GaussianBrownianQuadraticVariation uniformTime/Fin representation with the new
+grid/range representation. Finite-coordinate AE identities transfer the already
+verified Brownian L2 quadratic-variation theorem to the ACTUAL constructed
+clock. No new bracket or Brownian quadratic-variation law is assumed.
+
+The pointwise exact identity
+
+    clockMean(T,N)=3*clockSquare(T,N)-3*penalty(T,N)
+
+and the proved probability limits imply clockMean ->3T in probability.
+The original product law's clock marginal is identified exactly. Combining
+this mean limit with1382's joint-law centered fluctuation theorem proves
+IBMUniformQuarticVariation.quartic_tendstoInMeasure:
+
+    sum_(i=0..N-1)(Z_((i+1)T/N)-Z_(iT/N))^4 ->3T IN PROBABILITY,
+
+under IBMSourceLaws.jointMeasure, for every fixed T>0 and ALL N=n+1.
+The process is exactly IBMConstructedSources.ibmValue; only T>0 is a supplied
+parameter hypothesis. Existence, candidate process laws, independent IBM
+increments, vanishing variance and an assumed quartic bracket are not premises.
+
+Scope: uniform deterministic grids and fixed horizons, original joint law,
+convergence in probability. No joint L2, almost-sure, pathwise-uniform or
+arbitrary-partition convergence is claimed. This is quartic variation, not
+a classical semimartingale quadratic bracket or completion of the IBM calculus.
+
+Next substantive obligations include weighted quartic-variation measures,
+Taylor remainder limits and the actual physical-time Ito/Tanaka channels,
+together with their intrinsic derivative/adjoint and convergence domains.
+For example, a smooth random spatial weight cannot simply be inserted into the
+conditional Gaussian covariance calculation: it depends on the scenery factor.
+A weighted limit needs its own proof, potentially through cumulative positive
+quartic-variation measures and continuity. No such weighted theorem is asserted
+here. The existing associative stochastic reconstruction does not by itself
+identify physical-time integrals or resolve all F1/F2 closure obligations.
+
+Original manuscripts, paper source/PDF, queue and reflection policy unchanged.
+The current associativity manuscript's stated limitations were checked; they
+still describe open physical-time Ito/Tanaka, pathwise bracket, temporal-gradient
+and domain obligations, not a now-obsolete claim that this quartic limit is open.
+Final full-build, transitive axiom/type/proof review, downstream tests, integrity
+and private Git evidence: .lake/stardust-1383-verification.json at closure.
+
+
+Checkpoint1383 gates: full root6417jobs/40.872759s/0; complete safe transitive Foundation42868declarations/37.765328s/0; all26newpublic types (163lines) and both complete source/proof files reviewed. Seven downstream Lean checks/43.708639s/0: explicit nonzero crossing correction, same-sign far-field zero, empty penalty grid, actual one-interval clock QV, exact final grid endpoint, penalty probability limit and fully expanded actual unit-horizon quartic3 limit. Expanded-test unfolding and higher-order coercion/eta errors were repaired by local irreducibility and explicit pointwise a.e. identification without increasing resources or changing mathematical sources. All2245source/3config hashes and113immutable archive hashes checked. Queue/reflection/manuscripts unchanged. Exact Git/private closure: .lake/stardust-1383-verification.json.
