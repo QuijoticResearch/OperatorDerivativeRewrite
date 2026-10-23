@@ -35767,3 +35767,72 @@ No verification is weakened or substituted. Explicit eight-document commit,
 exact-commit receipt and PRIVATE main/research verification follow; terminal
 evidence is in .lake/stardust-1422-verification.json. Oct23 reflection remains
 already consumed; this user-directed queue update is not housekeeping.
+
+## Checkpoint1423 — uniform ACTUAL full-vector nonlinear native cutoff energy
+
+The time-integrated uniform native tail-energy obligation from1421 is proved.
+`IBMNonlinearClockTailEnergy` constructs the ORIGINAL coefficient-valued
+source-L2 clock field multiplied by w(B_t), for measurable 0<=w<=1. All
+joint measurability, actual clock L2 representatives, fixed-width time Bochner
+integrability and double-time inner-product Fubini hypotheses are discharged.
+The masked field uses the original `IBMNonlinearClockField.sectionField`;
+there is no covariance-only replacement. For every R>0 and measurable
+0<=w(x)<=1_{R<|x|}, every n and finite T>=0,
+
+    || integral_0^T w(B_t) ORIGINAL_n(t) dt ||^2
+       <= (T/R^2) * (8*peak(1)*T^2*sqrt(T) + 4*T^3).
+
+This is the FULL clock/source/coefficient Bochner-L2 norm, not just a scalar
+probe or one directional contraction. The proof uses1421's actual earlier-time
+weighted overlap bound and the old min(s,t)*(overlap_nm+4) source inner bound.
+Both mask factors are bounded by the earlier tail indicator. Ordered bounds
+are symmetrized, and the actual double-time diagonal is excluded ONLY through
+the old product-Lebesgue nullity theorem. The existing integrable timeKernel
+and its integral bound discharge time integration. The nonlinear +4 correction
+remains explicit. All bounds are independent of both smoothing widths in the
+two-time estimates, and independent of n in the native tail-energy conclusion.
+
+`IBMNonlinearClockCutoffError` proves actual field and averaged-field
+complement identities: for measurable 0<=chi<=1, the 1-chi field is precisely
+the original field minus its chi cutoff. If chi=1 on |x|<=R, the uniform energy
+bound therefore applies to the ACTUAL original-minus-cutoff vector difference.
+`cutoff_error_tendsto` proves its ordinary full-vector error norm tends to zero
+for ANY family of admissible cutoffs equal to one on |x|<=j+1 and ANY simultaneous
+smoothing sequence n(j); monotonicity or convergence of n(j) is not required.
+The concrete standard `ContDiffBump` cutoff has inner radius j+1, outer radius
+2(j+1), is continuous and compactly supported, and equals one on the entire
+closed inner interval. `native_cutoff_error_tendsto` discharges all its mask
+hypotheses. This is a nonzero actual cutoff family, not a vacuous conditional
+estimate. Squared-error convergence is independently checked as well.
+
+Scope: this closes the uniform native full-vector localization-tail obligation.
+It does NOT yet prove global convergence as n tends to infinity:1420 proves
+localized strong convergence for each fixed coefficient direction h, and its
+full coefficient-valued assembly must still be justified. A bounded full-vector
+L2 family plus directional convergence alone is insufficient. Reuse the old
+`BochnerCoefficientParseval.directional_hasSum`, the actual linear occupation
+kernel norm/trace, and1419's uniform local spatial-operator bound to seek a
+summable coefficient majorant for the localized nonlinear fields. That is a
+proposed NEXT argument, not a theorem claimed here. Then combine the local
+strong theorem with this proved uniform tail to obtain a full global Cauchy
+limit and verify its original/intrinsic graph identification. Full actual IBM
+Ito/Clark--Ocone calculus and the necessary domains/adjoints remain open.
+The positive-time point clock nondomain and all prior counterexamples persist.
+No masked field is asserted to be the derivative of chi(B)*sin(U_n(B)); the
+additional cutoff-derivative term is not silently dropped.
+
+Independent checks include the literal mask/original section identity,
+nonzero cutoff plateau/compact support/range, actual time-one radius bound,
+arbitrary quadratic width refinement with linear radius growth, squared-energy
+convergence, exact zero-horizon vector, pure tail-mask admissibility, and the
+explicit negative-cutoff counterexample to complement domination. All tests
+are ordinary Lean proofs. Target failures are preserved: reserved identifier,
+pointwise/Pi aliases, scalar norm and product association, natural/real binder
+inference, and function-composition normalization; these were elaboration
+issues, not mathematical obstructions. No heartbeat/resource/trust limit raised.
+One harmless unused congr tactic warning remains in the verified limit proof;
+no linter or check was disabled. No mathematical sources changed after the
+successful complete build. No manuscripts, queue, reflection/PDF artifacts or
+unrelated sources changed; Oct23 reflection remains already consumed1395.
+
+Checkpoint1423 gates: complete root6498jobs/40.75178809999488s/0; complete safe transitive44402declarations/38.744327799999155s/0; ALL24public types (228 unabridged audit/type lines) and BOTH entire final source/proof files reviewed. Eight independent Lean checks/26.854290799994487s/0. Exact logs/failure history retained. All2326Foundation/root sources+3configs frozen/rechecked;113archive paths/hashes unchanged. Default200000heartbeats, toolchain, trust and complete-audit whitelist unchanged. FIVE explicit Git paths; exact receipt and PRIVATE main/research closure recorded in .lake/stardust-1423-verification.json.

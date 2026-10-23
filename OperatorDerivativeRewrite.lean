@@ -2222,3 +2222,5 @@ import Foundation.IBMSourceValuedOccupation
 import Foundation.IBMNonlinearClockLocalization
 import Foundation.IBMEarlierWeightedOverlap
 import Foundation.IBMClockTailOverlap
+import Foundation.IBMNonlinearClockTailEnergy
+import Foundation.IBMNonlinearClockCutoffError
