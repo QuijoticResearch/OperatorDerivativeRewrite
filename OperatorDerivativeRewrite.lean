@@ -2191,3 +2191,5 @@ import Foundation.IBMClockVectorTranspose
 import Foundation.IBMNonlinearClockGraph
 import Foundation.IBMNonlinearClockAverageGraph
 import Foundation.IBMSineAverageClockDomain
+import Foundation.IBMSineAverageSourceDomain
+import Foundation.IBMSineAverageIntrinsicCalculus

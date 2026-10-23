@@ -34587,3 +34587,93 @@ Original ResearchSources bytes, private manuscripts/PDFs/index, reflection
 accounts, queue, curated exposition and Lean/Lake configuration are preserved.
 
 Checkpoint1403 gates: complete root6465jobs/23.940457s/0; complete safe transitive43725declarations/36.202048s/0; all45public types (249unabridged lines), all FOUR complete new proof/definition sources and eleven independent Lean checks/34.546237s/0 reviewed. All2293sources/3configs frozen and rechecked; pre-existing sources unchanged except root imports/AxiomAudit; all113immutable archive paths/hashes unchanged. Default200000 proof heartbeats retained; no resource/trust/version or verification changes. Seven explicit Git paths only; exact receipt and PRIVATE main/research closure follow in .lake/stardust-1403-verification.json.
+
+## Checkpoint1404 — actual nonlinear IBM average in the full intrinsic domain
+
+October23,2026. IBM ACTIVE, baseline5010c42. The previous goal turn made
+verified mathematical progress: actual sine-average clock-domain membership.
+This continuation closes its SOURCE and JOINT domain obligations, using the
+same actual process, same intrinsic observable and same original operators.
+No campaign transition, reflection session, archive ingestion or new goal.
+
+`Foundation/IBMSineAverageSourceDomain.lean` directly reuses the OLD
+`IBMActualSineDomainObstruction.sinePoint_source_graph` rather than rebuilding
+scenery differentiation. `slopeField_norm_le` and `sourceGradient_norm_le`
+prove that multiplying the actual source gradient by cosine cannot increase
+its genuine L2 norm. The bound is the norm of the OLD actual unsmoothed
+`IBMRandomTimeHilbert.randomSourceL2 t`, not a hypothetical independent
+process. `sourceGradient_bounded` obtains a finite bound on EVERY compact
+nonnegative time interval from the OLD strong-L2 time continuity.
+
+The finite `gradientSum` uses right endpoint times and weights T/(n+1).
+`quadrature_graph` proves that EVERY such sum is an actual ORIGINAL partial
+source graph pair, with value `rightSum valueCurve T (n+1)` after the correct
+source unitary. `gradientSum_norm_le` proves the n-independent bound T*C;
+all mesh times lie in [0,T]. OLD `IBMBochnerTimeQuadrature.rightSum_tendsto`
+gives strong convergence of VALUES. `valueCurve_integral` identifies the
+limit with the SAME `IBMSineAverageSimpson.average T` from1400/1403.
+`actual_average_source_domain` and `actual_average_in_sourceDomain` then use
+the OLD closed densely defined bounded-graph criterion to prove source-domain
+membership for EVERY T>=0, with all assumptions discharged.
+
+This finite-quadrature route avoids an unnecessary new product-measurability
+construction. It does not assume time measurability of the point derivative
+field or its strong convergence, and does not claim to identify the source
+derivative with an as-yet-unverified Bochner integral of point derivatives.
+That explicit field formula remains a separate useful obligation, not a
+missing premise of the now verified source-domain theorem.
+
+`Foundation/IBMSineAverageIntrinsicCalculus.lean` combines the new source
+domain,1403 clock domain and existing ACTUAL intrinsic observable membership
+through OLD `mem_intrinsicCore_iff` and `joint_domain_iff`.
+`average_joint_domain` proves the genuine path integral
+F_T = int_0^T sin(Zt)dt
+belongs to the ORIGINAL full two-channel intrinsic derivative domain, ALL
+T:NNReal, without any remaining conditional domain hypotheses. This is not
+sin of the linear time average. `domainAverage`, `gradient` and `average_graph`
+give its genuine strong-L2 two-channel derivative.
+
+`gradient_represents` identifies that field's canonical embedding with the
+OLD full-adjoint graph-dual derivative. `gradient_unique` proves uniqueness
+among ALL genuine strong fields using the OLD injective embedding.
+`simpson_derivative_tendsto` connects this SAME field to the established
+actual UNCLIPPED ramp-weighted cosine Simpson stochastic sums: their weak
+derivatives converge in the FULL original adjoint graph-dual norm to the
+embedding of this strong field. This is NOT a new assertion of strong-L2
+convergence of derivative fields or membership of all Simpson approximants
+in the joint strong domain.
+
+`actual_integration_by_parts` proves, for EVERY original joint-divergence
+domain test v, the actual stochastic identity
+<D F_T, v> = E[(int_0^T sin(Zt)dt) * delta(v)].
+`actual_adjoint_product_integrable` proves genuine integrability of the
+random product before treating it as that expectation. No restricted test
+core, formal substitute operator or new probability law is introduced.
+The old positive-time sine-POINT joint-domain counterexample remains valid.
+Time integration repairs this particular obstruction; point evaluation and
+path time integration still have materially different domains.
+
+Independent downstream Lean tests check norm control by the actual source
+class; the exact ONE-CELL time normalization; zero horizon at every mesh;
+actual finite original graph sums; both partial domains on the SAME limit;
+unconditional full joint membership; uniqueness of the strong-field
+representative; integrability for every original divergence test; and the
+preserved positive-time point-observable obstruction.
+
+The source/joint MEMBERSHIP gaps recorded at1403 are now DISCHARGED. Remaining
+work includes explicit native representatives and useful estimates for the
+limiting two-channel derivative, justified derivative-field convergence,
+broader actual nonlinear path-observable domains, and stronger actual
+stochastic-integration/Itô/Clark--Ocone identifications. Reuse the OLD
+`IBMIntrinsicPoincare` and native recovery machinery only with their exact
+domains. Full intrinsic IBM calculus is NOT declared complete; no queue gate
+opens. Proof-elaboration timeouts are not mathematical obstructions; the
+convergence corollary uses ordinary filter monotonicity and the proved limit
+equality within the unchanged default proof-resource limit.
+
+All source/configuration/archive integrity and full verification evidence is
+retained under `.lake/stardust-1404-*`; exact gates are appended after tests.
+ResearchSources, queue, reflection accounts, curated exposition and private
+manuscript/PDF artifacts remain unchanged.
+
+Checkpoint1404 gates: complete root6467jobs/23.526542s/0; complete safe transitive43792declarations/35.168347s/0; all20public types (107unabridged lines), BOTH complete new proof/definition sources and nine independent Lean checks/33.281654s/0 reviewed. All2295sources/3configs frozen/rechecked; pre-existing sources unchanged except root imports/AxiomAudit;113immutable archive paths/hashes unchanged. Default200000 proof heartbeats, trust and toolchain retained. Five explicit Git paths; exact receipt and verified PRIVATE main/research closure follow in .lake/stardust-1404-verification.json.
