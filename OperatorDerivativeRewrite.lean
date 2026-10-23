@@ -2148,3 +2148,5 @@ import Foundation.IBMUniformSubfamilyQuartic
 import Foundation.IBMUniformPrefixClock
 import Foundation.IBMUniformPrefixQuartic
 import Foundation.IBMUniformPrefixMaximum
+import Foundation.IBMRandomBlockQuartic
+import Foundation.IBMContinuousBlockWeights

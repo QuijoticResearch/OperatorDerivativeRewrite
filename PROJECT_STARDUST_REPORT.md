@@ -33056,3 +33056,96 @@ was used. Original manuscripts, canonical paper/PDF, queue, and daily
 reflection accounting remain unchanged; no housekeeping interrupted this cycle.
 
 Checkpoint1386 gates: full root6422jobs/26.018840s/0; complete safe transitive Foundation42977declarations/41.363401s/0; all19public types (86lines) and complete source/proof reviewed; eight downstream checks/34.056085s/0. Tests: nondivisible coarse endpoints; zero-size coverage; more coarse blocks than increments; nonmonotone interior-spike counterexample; actual zero-horizon maximum; exact one-interval actual maximum; unit-horizon maximum limit; actual sample-dependent selector measurability and limit. All2250source/3config hashes and113immutable archive hashes/pathset checked. Exact Git/private closure: .lake/stardust-1386-verification.json.
+
+
+## Checkpoint1387 — genuine random weighted quartic blocks and time integrals
+
+IBM remains ACTIVE. This checkpoint reuses1386's actual uniform prefix maximum
+for Z_t=W(|B_t|), exactly IBMConstructedSources.ibmValue under the ORIGINAL
+IBMSourceLaws.jointMeasure. It does not introduce another stochastic source.
+
+IBMRandomBlockQuartic.dominated_tendstoInMeasure proves that any MEASURABLE
+observable E_N with |E_N(omega)|<=C(omega)*maximum_N(omega) tends0 in probability.
+C is merely pointwise finite and fixed in N; no measurable-envelope or moment
+hypothesis is needed. The proof uses Mathlib's every-subsequence/admitting-an-
+a.e.-convergent-subsubsequence criterion, then an ordinary samplewise squeeze
+by the constant real C(omega). It does not claim a.s. convergence of the full
+sequence or treat a nonmeasurable envelope as a random variable.
+
+For a fixed finite family of blocks I, coefficients a_N,j and ordered integer
+endpoints 0<=l_N,j<=u_N,j<=N may all depend measurably on the sample. Coefficients
+may have either sign and depend on both sources; no adaptedness, stopping-time
+or independence premise is supplied. Their absolute sum over I must admit a
+pointwise finite bound C(omega) uniform in N. Each block's centered mass is a
+difference of two actual prefix errors, so the weighted total error is bounded
+by 2*(sum_j|a_N,j|)*maximum_N. The subsequence theorem above proves convergence.
+
+weightedQuartic_eq_Ico independently identifies the actual observable as
+
+    sum_j a_N,j sum_(l_N,j<=i<u_N,j)(Z_((i+1)T/N)-Z_(iT/N))^4.
+
+stepWeight is the ACTUAL real-time step function, the sum over j of a_N,j times
+the indicator of (l_N,j*T/N,u_N,j*T/N]. Its Lebesgue integrability is proved
+for each sample. timeIntegral_eq_integral proves its true integral equals the
+finite coefficient-times-interval-length expression for ORDERED endpoints.
+Overlapping blocks add linearly; disjointness is not a hidden premise.
+The zero-width case is included. The lower<=upper domain matters: an Ioc with
+reversed endpoints is empty and cannot represent a negative oriented length.
+
+blockError_identity, weighted_step_tendstoInMeasure and the actual integral
+identification together prove
+
+    weighted actual quartic block sum -3 integral_R stepWeight_N(t)dt
+      ->0 IN PROBABILITY,
+
+for each fixed T>0 and ALL N=n+1, with the stated measurable finite-family and
+uniform-envelope hypotheses. The limit is a centered difference with an
+N-dependent random step integral, not yet convergence to one prescribed
+continuous-time integral. The quartic observable and true step integral are
+separately proved measurable. No expectation-only heat formula is substituted.
+
+IBMContinuousBlockWeights removes the envelope ASSUMPTION for coefficients
+phi(Z_(tau_N,j)), where phi is any continuous real function and tau_N,j are
+measurable, sample-dependent observation times in [0,T]. Actual IBM path
+continuity and the existing compact-continuous-image bound produce a pointwise
+finite nonnegative pathBound. Hence sum_j|phi(Z_tau)|<=card(I)*pathBound for
+ALL N. No global boundedness of phi, Gaussian moment estimate or L1/L2 coefficient
+premise is required. The chosen envelope is not asserted measurable and is not
+integrated; the actual coefficients and observables ARE proved measurable.
+Observation times need not be adapted or lie at the block's left endpoint.
+
+This provides a rigorous route for unbounded spatial weights such as120z:
+the independent test proves f(z)=z^5 has f^(4)(z)=120z and applies the actual
+step theorem to that weight at terminal IBM observations. It does NOT identify
+the full continuously varying left-endpoint f^(4)(Z_t) quartic integral yet.
+
+The exact remaining central obligation is passing from a FIXED finite block
+family to the full continuous random weight. The bound card(I)*pathBound and
+a merely vanishing maximum cannot be used with card(I)=N without additional
+control. Nor may K->infinity be interchanged with N->infinity without proof.
+Possible continuation: approximate actual continuous path weights on fixed
+coarse time blocks, control the fine/coarse weighted-sum error by the compact
+modulus times total quartic mass, prove the corresponding real-time integral
+approximation, then justify the order of limits/localization. Alternatively,
+an a.s. subsubsequence of the maximum may permit a deterministic positive-
+measure/Riemann argument samplewise; the required deterministic weighted
+convergence theorem still needs proof.
+
+Reuse audit: GaussianRefiningPartitions.step_tendsto and its compact-bound/DCT
+arguments contain related sampling ideas, but their public codomain is
+GaussianL2, not the present scalar actual path weight. Likewise Gaussian
+adapted weighted quadratic-variation results do not automatically apply to
+IBM physical-time quartic increments. No such invalid transfer is made here.
+Direct reused machinery is1386's maximum/selected measurability, actual joint
+process measurability/continuous paths, compact bounds, finite sums and genuine
+Lebesgue indicator integrals, and Mathlib's subsequence characterization.
+
+Checkpoint1384's total Taylor remainder limit and the desired continuous
+weighted quartic limit would give the candidate1/8 fourth-derivative correction
+for the combined first three Taylor channels. That continuous limit, individual
+channel/temporal-gradient domains, adjoints and F1/F2 closure remain OPEN.
+No IBM completion or campaign transition is asserted. Canonical paper/PDF,
+queue, reflection accounting and all original archive manuscripts are unchanged.
+No housekeeping session interrupted this proof/verification cycle.
+
+Checkpoint1387 gates: full root6424jobs/24.884676s/0; complete safe transitive Foundation43002declarations/36.424934s/0; all23public types (243lines), both complete proof sources and eight downstream Lean checks/34.574181s/0 reviewed. Checks: zero-width and empty blocks; negative genuine step integral; signed overlapping blocks; actual two-increment Ico identification; f=z^5 fourth derivative; actual unbounded120Z terminal-weight comparison; exploding N-dependent coefficient counterexample. All2252source/3config hashes and113immutable archive hashes/pathset checked. No resource, toolchain, trust or audit weakening. Exact Git/private closure: .lake/stardust-1387-verification.json.
