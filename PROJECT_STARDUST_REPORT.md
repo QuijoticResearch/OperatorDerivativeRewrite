@@ -35165,3 +35165,101 @@ branches, exact constant-preserving mollifier normalization, and concrete bump
 spatial tests. Full gates and exact private closure follow below.
 
 Checkpoint1410 gates: complete root6476jobs/39.858851s/0; complete safe transitive43988declarations/37.843377s/0; all17public types and the complete final source/proofs read unabridged. Eight independent mathematical Lean checks passed (actual timing retained). All2304sources/3configs frozen/rechecked; pre-existing mathematical bytes unchanged except root/Axiom imports;113immutable archive paths/hashes unchanged. Default200000proof heartbeats/trust/toolchain unchanged. Four explicit Git paths; exact receipt/private main and research verification follow in .lake/stardust-1410-verification.json.
+
+
+## Checkpoint1411 — almost-sure literal spatial occupation identity
+
+IBM remains ACTIVE. Checkpoint1410's all-clock-L2 testing theorem is now
+converted into an actual clock-almost-sure spatial/time integral identity,
+for each fixed direction h, horizon T>=0 and continuous compact spatial test
+phi. `Foundation/IBMClockOccupationPath.lean` reuses the SAME physical kernel
+of1408 and original closed clock derivative of the actual LINEAR IBM average.
+No new process, derivative domain, local-time density or probabilistic clock
+law is introduced. The new iterated-pseudoprocess campaign remains queued;
+no priority, archive or reflection record changes.
+
+`value` is the literal signed integrand
+
+    <h,clockDirection(t)> sign(B_t(Y)) phi(abs(B_t(Y))).
+
+`value_measurable` proves joint(time,clock) measurability from the actual
+constructed Brownian clock. If |phi|<=M, `value_bound` gives
+||h|| sqrt(T) M on(0,T]. `value_time_integrable` proves actual time-integrability
+for EVERY clock sample, not merely almost every sample. `pathIntegral` is
+its raw samplewise integral; it is measurable and has the deterministic bound
+T ||h|| sqrt(T) M for EVERY sample. `pathIntegral_memLp` supplies the genuine
+clock L2 class on the continuous-compact-test domain, with all bounds discharged.
+These domains concern physical spatial tests, not unrestricted IBM point
+observables or all rough test distributions.
+
+`component` reuses the ordinary spatial Hilbert inner-product contraction,
+lifted to actual clock L2. `component_pairing` proves its exact tensor-test
+identity, with source/clock ordering unchanged. `pathClass_pairing` identifies
+the literal raw integral's actual L2 class. By1410's theorem for EVERY clock
+L2 weight, `component_kernel_eq` proves equality of these two genuine L2
+classes, rather than only equality of their expectations.
+
+`kernel_path_ae` and `kernel_spatial_integral_ae` therefore prove
+
+    integral_realspace K[h,T](Y,r) phi(r) dr
+      = integral_0^T <h,clockDirection(t)> sign(B_t(Y)) phi(abs(B_t(Y))) dt
+
+for almost every actual clock sample Y, for each FIXED h,T,phi.
+`kernel_test_integrable` proves the literal spatial product is integrable
+for EVERY stored clock representative, using its spatial L2 class and the
+actual compact test. No invalid point evaluation of white noise occurs.
+
+`kernel_spatial_integral_ae_family` proves a common full-measure clock event
+for ANY specified countable family of continuous compact spatial tests, with
+h and T fixed. It does NOT produce an uncountable common null set or silently
+assert a determining-family theorem for all finite signed measures. No
+signed-measure pushforward/global density equality or strong K_n convergence
+is inferred from this statement. Spatial L2 alone is not global spatial L1.
+
+The fixed-test AE spatial/time identification is DISCHARGED. Exact remaining
+work includes a full signed occupation-measure identification (requiring an
+appropriate actual measure construction/support/variation and determination
+argument), stronger physical kernel convergence, full coefficient-valued
+regularity, and nonlinear sine-clock spatial stochastic integration with its
+correct drift/domain. Full actual IBM calculus remains OPEN. All point
+nondomain, clock-parity and F1--F3 topology restrictions are preserved.
+
+A potentially shorter route toward strong convergence is to use1411 with
+translated mollifier spatial tests. For each translation separately an AE
+clock identity is now available. If joint measurability is verified, product
+Fubini may yield an AE(clock,translation) convolution identity without taking
+an uncountable intersection of null sets. Then identify the actual K_n with
+spatial mollification of K in the proper L2 space and use a proved strong
+approximate-identity theorem. Every joint-representative, convolution/domain,
+Fubini and L2 continuity premise remains to be proved; no such identification
+is claimed here. A quick reuse search found the existing Fourier-path
+translation group, whose analytic test-space domain is DIFFERENT from
+physical Lebesgue-L2; its strong continuity cannot simply be transplanted.
+The earlier graph-smoothing results likewise concern scenery graph fields,
+not arbitrary physical random kernels. Compiler alias repairs are not
+mathematical obstructions.
+
+Evidence is retained under `.lake/stardust-1411-*`. All18public types and the
+complete final source/proofs are reviewed unabridged; default200000 proof
+heartbeats and pinned trust/toolchain remain unchanged. Independent checks
+include every-sample zero-horizon and unit-horizon bounds/integrability,
+the actual Brownian direction min(1,t), a common event for the concrete
+countable bump family, tests vanishing on the nonnegative half-line,
+literal spatial integrability and the true L2 component norm bound.
+No manuscript/curated draft/PDF/queue/reflection edit is made. Full gates and
+exact PRIVATE main/research closure follow below.
+
+Additional reuse evidence1411: `ProductL2Equivalence.lean` constructs
+`ProductL2Curry.curryEquiv` under SFinite measures and a second-countable
+fiber L2 space, with no finite-measure restriction; its inverse is a candidate
+joint clock/spatial-Lebesgue representative. Pinned Mathlib
+`MeasureTheory/Function/LpSpace/ContinuousCompMeasurePreserving.lean` proves
+`Continuous.compMeasurePreservingLp` for1<=p<infinity, inner-regular source
+and locally finite target measures and continuous measure-preserving maps.
+`DomAct/Continuous.lean` supplies the corresponding continuous domain action.
+These are concrete candidates for physical Lebesgue-L2 translation continuity;
+no replacement translation theorem should be built before testing this reuse.
+Their actual instantiation, spatial convolution construction and strong
+approximate-identity proof are NOT yet verified in Stardust.
+
+Checkpoint1411 gates: complete root6477jobs/43.680367s/0; complete safe transitive44017declarations/39.390226s/0; all18public types and the complete final source/proofs read unabridged. Eight independent mathematical Lean checks passed; initial scratch elaboration errors/log retained, final timing in .lake/stardust-1411-independent-time.json. All2305sources/3configs frozen/rechecked; pre-existing mathematical bytes unchanged except root/Axiom imports;113immutable archive paths/hashes unchanged. Default200000proof heartbeats/trust/toolchain unchanged. Four explicit Git paths; exact receipt/private main and research verification follow in .lake/stardust-1411-verification.json.
