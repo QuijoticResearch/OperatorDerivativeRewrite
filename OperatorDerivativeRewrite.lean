@@ -2184,3 +2184,6 @@ import Foundation.IBMSineAverageSimpson
 import Foundation.GaussianMixedTrigCovariance
 import Foundation.GaussianCosineProductCovariance
 import Foundation.IBMNonlinearSceneryCovariance
+import Foundation.IBMNonlinearClockColumn
+import Foundation.IBMNonlinearClockField
+import Foundation.IBMNonlinearClockEnergy

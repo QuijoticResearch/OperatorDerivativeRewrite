@@ -34415,3 +34415,85 @@ and private LaTeX/PDF drafts/index remain unchanged.
 Further exact reuse audit: `ClosedOperatorEscapeEnergy.mem_domain_of_frequently_bounded_graph` already proves the needed positive closed-domain criterion for a closed densely defined Hilbert operator. Once genuine nonlinear graph approximants, value convergence and a frequently bounded gradient norm are verified, it gives domain membership directly; one need not invent a weak-compactness foundation or assume strong gradient convergence. Its hypotheses are NOT yet discharged for the nonlinear sine average.
 
 Checkpoint1401 gates: complete root6458jobs/24.951222s/0; complete safe transitive43584declarations/37.291082s/0; all23public types (295unabridged lines), all three complete new sources and ten downstream Lean checks/25.388912s/0 reviewed. All2286source/3config hashes frozen; all pre-existing sources unchanged except root imports/AxiomAudit;113immutable archive paths/hashes checked. Only standard3axioms; no resource/toolchain/trust changes. Queue/reflection, curated exposition and original/private manuscript artifacts unchanged. Explicit six-path Git checkpoint, exact receipt and verified PRIVATE main/research closure follow in .lake/stardust-1401-verification.json.
+
+
+## Checkpoint1402 — genuine nonlinear clock-field construction and uniform averaged energy (October23,2026)
+
+IBM remains ACTIVE. Baseline12b8dde (1401). This is mathematical proof work,
+not a second reflection/housekeeping admission. Preserve the actual sine
+average int_0^T sin(Zt)dt and its signed Simpson realization from1400.
+
+`IBMNonlinearClockColumn.value` uses the OLD actual jointly measurable dyadic
+scenery paths: cos(W_n(r))*W'_n(r). The construction does not assume joint
+measurability of arbitrary chosen first-chaos L2 representatives. `value_measurable`
+is genuine joint spatial/source measurability. `value_memLp` follows from the
+old derivative column and the actual bounded cosine factor. `column` uses OLD
+ProductL2Sections, with actual AE representatives, strong parameter measurability,
+comparison to the OLD derivative-column norm and proved fixed-mollifier global
+bounds. `column_firstChaos_ae` identifies precisely the1401 Gaussian product,
+so `column_inner_bound` inherits the PROVED actual overlap-plus4 covariance.
+No new process, law, Hilbert realization or probabilistic independence is used.
+
+`IBMNonlinearClockField.sectionField` constructs conditional-source vectorL2
+sections at the GENUINE reflected clock:
+sign(Bt)*cos(W_n(|Bt|))*W'_n(|Bt|)*direction(t).
+The source parameter is integrated inside the clock parameter. Joint time/
+clock strong measurability, actual section representatives, actual L2 membership,
+fixed-mollifier bounds, strongly measurable time curves and Bochner integrability
+on every [0,T], T>=0, are all established. `section_actual_ae` identifies the
+exact expression with the OLD `IBMConstructedSources.mollifiedValue n 0` and
+`mollifiedValue n 1`, for EVERY original clock sample and AE source sample.
+No common null set over uncountably many random spatial evaluations is assumed.
+
+`section_inner_bound` includes BOTH clock signs and the OLD Cameron-Martin
+pairing min(s,t). `field_inner_bound` rigorously integrates over the actual
+clock probability measure, after proving all fixed-mollifier integrability:
+|<field_n(s),field_m(t)>| <= min(s,t)*(covariance(n,m,s,t)+4), s,t>=0.
+The covariance is EXACTLY the OLD reflected-clock expectation of physical
+mollifier overlap. No independence between the nonlinear coefficients and
+source derivative columns is introduced. The absolute value remains outside
+the relevant Hilbert pairing/expectation, consistent with the1401 repair.
+
+`IBMNonlinearClockEnergy.average` is an actual Bochner-L2 averaged field,
+not a formal time integral. `inner_kernel_integrable` proves genuine absolute
+product-time integrability from the two L1 norm functions, including different
+mollifier widths, before Fubini. `average_inner` identifies its exact two-time
+Hilbert energy. `average_uniform_energy` gives the unconditional bound
+||average_n(T)||^2 <= 8*peak(1)*T^2*sqrt(T)+4*T^3, ALLn, ALLT>=0.
+The first term directly reuses `IBMClockOverlapEnergy.weightedCovariance_integral_bound`.
+The nonlinear term uses min(s,t)<=T and the proved product-window mass T^2;
+`constant_energy_integral` verifies4*T^3. This is a deliberately coarse finite
+correction, with NO smoothing-dependent constant. `average_norm_bound` supplies
+a single finite uniform Hilbert norm bound for the planned closure criterion.
+The fixed-time column bounds may depend on n; they are not claimed uniform
+and do not contradict the old positive-time point-gradient escape theorem.
+
+Independent exact Lean checks cover actual dyadic source representatives;
+bounded cosine norm comparison; joint section measurability; the original
+mollified-field formula for every clock sample; zero-time field; zero horizon;
+correct product-window scaling (T=2 gives32); uniform T=1 energy; genuine
+cross-mollifier Fubini integrability; and the finite norm bound for every n,T.
+
+Exact remaining obligation: these are GENUINE CANDIDATE fields, not yet proved
+members of the old closed clock derivative graph. They are organized with
+CLOCK outside and SOURCE inside; the old native clock derivative uses SOURCE
+outside and CLOCK inside. A justified vector-valued product-L2 transposition
+and actual representative identity is still required. Use the old Gaussian
+bounded chain rule on genuine mollified clock graph points, then identify its
+output with this field via the appropriate unitary; norm agreement alone is
+not an operator-graph identity. Mollified observables are not assumed to lie
+in the intrinsic IBM observable sigma-algebra. Work in the AMBIENT partial
+clock derivative until the final actual sine average is identified.
+Then prove value convergence to the SAME int sin(Zt)dt (not sin(intZt dt)),
+and reuse `ClosedOperatorEscapeEnergy.mem_domain_of_frequently_bounded_graph`
+with the verified graph pairs, value convergence and the new uniform norm
+bound. Its graph premises are NOT yet discharged. Source-domain integration
+and final intrinsic joint-domain identification remain separate. Strong clock/
+joint membership, strong-gradient convergence, causal/Skorohod integration and
+full IBM Clark--Ocone remain OPEN. No campaign transition or novelty claim.
+
+Source integrity: all113 immutable ResearchSources paths/hashes, original
+manuscripts, private LaTeX/PDF drafts/index, campaign queue, reflection accounts,
+curated exposition and Lean/Lake configuration remain unchanged.
+
+Checkpoint1402 gates: complete root6461jobs/24.919402s/0; complete safe transitive43630declarations/36.634201s/0; all29public types (172unabridged lines), all three complete new sources and ten downstream Lean checks/26.799353s/0 reviewed. All2289source/3config hashes frozen; all pre-existing sources unchanged except root imports/AxiomAudit;113immutable archive paths/hashes checked. Only standard3axioms; no resource/toolchain/trust changes. Queue/reflection, curated exposition and original/private manuscript artifacts unchanged. Explicit six-path Git checkpoint, exact receipt and verified PRIVATE main/research closure follow in .lake/stardust-1402-verification.json.
