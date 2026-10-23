@@ -32910,3 +32910,72 @@ Original manuscripts, canonical paper/PDF, queue and reflection accounting are
 unchanged. No housekeeping session was opened during this proof cycle.
 
 Checkpoint1384 gates: full root6418jobs/40.779178s/0; complete safe transitive Foundation42888declarations/36.622792s/0; all16public types (79lines) and full proof source reviewed; seven downstream checks/35.735592s/0. All2246source/3config hashes and113immutable archive hashes/pathset checked. Standard3axioms only; no resource/toolchain/trust changes. Exact Git/private closure evidence: .lake/stardust-1384-verification.json.
+
+
+## Checkpoint1385 — actual quartic prefixes on one common time grid
+
+IBM remains ACTIVE. The previous checkpoint1384 proved fifth absolute increment
+and total Taylor remainder decay. This checkpoint addresses the common-grid
+prefix gap needed for continuous random quartic weights. The actual process is
+still Z_t=W(|B_t|)=IBMConstructedSources.ibmValue under the original joint law.
+
+IBMUniformSubfamilyQuartic reuses the finite genuine scenery conditional
+expectation, conditional L2 and occupation-energy theorem. For any deterministic
+subfamily I of the full uniform interval family, count_square_mono proves that
+removing intervals decreases the integral of squared nonnegative spatial
+traversal multiplicity. Returns are counted regardless of orientation, with
+their multiplicities intact. The full-grid good-clock bound therefore controls
+every such conditional centered square by the SAME full endpoint energy.
+Bounded tail indicators, Fubini and conditional Chebyshev turn this into an
+actual joint probability estimate. At delta=N^(-4/9), existing Brownian bad-event
+and weighted-energy decay prove residual_tendstoInMeasure for ANY deterministic
+sequence of subfamilies I_N. No Brownian independence between IBM increments,
+conditional variance decay premise, or random scenery selection is introduced.
+
+prefixIntervals(T,N,m) selects exactly the first m intervals on the ORIGINAL
+horizon-T N-grid. It does not remesh the prefix on a different horizon.
+prefix_residual_tendstoInMeasure applies for every deterministic m_N<=N,
+including empty prefixes and sequences with no limiting proportion.
+
+IBMUniformPrefixClock reuses the complete Gaussian quadratic-variation error
+formula on the actual prefix partition, proving
+
+    ||Gaussian prefix clock error||_L2^2 = 2*m*(T/N)^2 <= 2*T^2/N.
+
+The exact deterministic endpoint is mT/N. For every deterministic m_N<=N this
+Gaussian L2 error tends0. Finite-coordinate a.e. identification transfers the
+result to the genuine constructed Brownian clock as convergence in probability;
+a source existence or bracket assumption is not a premise.
+
+IBMUniformPrefixQuartic proves the exact reflected-clock mean identity:
+mean(prefix)-3mT/N =3*(actual prefix clock error)-3*(prefix crossing penalty).
+The prefix crossing penalty is nonnegative and bounded by the already proved
+full-grid crossing penalty. Hence the mean error tends0 in clock probability.
+Combining this with the original joint-law subfamily fluctuation theorem and
+the exact clock marginal yields error_tendstoInMeasure:
+
+    sum_(i<m_N) (Z_((i+1)T/N)-Z_(iT/N))^4 -3*m_N*T/N ->0 IN PROBABILITY,
+
+for ALL N=n+1, each fixed T>0, and EVERY deterministic sequence 0<=m_N<=N.
+The physical prefix endpoint centering is proved, not assumed as a random
+conditional mean limit. No limiting proportion of m_N is required.
+
+Scope distinction: the theorem quantifies over deterministic prefix sequences.
+It does NOT yet prove a supremum over all prefixes tends0 in probability,
+allow random prefix choice, or supply the random-weighted quartic theorem.
+A proposed next route is to use positivity/monotonicity of cumulative quartic
+sums and finitely many coarse deterministic prefixes to control the supremum.
+Continuous path-dependent weights would then require their own localization
+and Stieltjes/Riemann argument. All such steps remain proof obligations.
+The new theorem removes the prior common-grid pointwise-prefix gap. Full
+physical-time Ito/Tanaka, intrinsic domains/adjoints and F1/F2 closure stay open.
+
+All three complete new sources and all46 public theorem/definition types were
+reviewed. A source comment was corrected during review to say returns retain
+multiplicities REGARDLESS of orientation; the traversal count is unoriented.
+The full build and complete audit were repeated after that source-comment edit;
+earlier logs were retained. No theorem semantics, resources or trust changed.
+Original archive manuscripts, canonical paper/PDF, queue and reflection
+accounting are unchanged. No housekeeping session interrupted this proof cycle.
+
+Checkpoint1385 gates: full root/62.118083s/0; complete safe transitive Foundation42951declarations/40.072673s/0; all46public types (267lines), three complete proof sources, eight downstream Lean checks/33.456113s/0. Checks cover empty subfamily, explicit common-grid endpoint4 for horizon6/grid3/prefix2, exact Gaussian error16 and empty error0, actual one-interval quartic error, empty physical prefix, changing half-grid prefixes, and fully expanded actual-process prefix convergence. All2249source/3config hashes and113immutable archive hashes/pathset checked. Exact Git/private closure: .lake/stardust-1385-verification.json.

@@ -2144,3 +2144,6 @@ import Foundation.IBMUniformQuarticProbability
 import Foundation.IBMUniformCrossingPenalty
 import Foundation.IBMUniformQuarticVariation
 import Foundation.IBMUniformFifthRemainder
+import Foundation.IBMUniformSubfamilyQuartic
+import Foundation.IBMUniformPrefixClock
+import Foundation.IBMUniformPrefixQuartic
