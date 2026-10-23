@@ -2136,3 +2136,4 @@ import Foundation.IBMCompletedBoundedAssociativity
 import Foundation.IBMUniformStochasticReconstruction
 import Foundation.IBMQuarticOccupationEnergy
 import Foundation.IBMClockTraversalEnvelope
+import Foundation.IBMUniformClockGridEnergy

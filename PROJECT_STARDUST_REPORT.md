@@ -32577,3 +32577,64 @@ edge cases, source integrity and private Git evidence are recorded at
 
 
 Checkpoint1379 gates: full root6410jobs/40.477310s/0; complete safe transitive Foundation42765declarations/40.889114s/0; all21newpublic types (138lines) and complete source/proofs reviewed. Five independent Lean checks/35.832982s/0, first-run pass: reversed overlaps, touching support, zero width, duplicate-time diagonal and actual initial-time law. All2238source/3config manifest hashes and113immutable archive hashes checked. Queue/reflection accounting/manuscript LaTeX/PDF unchanged. Final exact-commit receipt and PRIVATE both-ref evidence: .lake/stardust-1379-verification.json.
+# Checkpoint1380 — uniform-grid Brownian-clock envelope decay
+
+IBM remains ACTIVE. Previous goal turn PROGRESS: checkpoint1379 supplied the
+genuine Brownian-clock endpoint envelope and closed its full audit/private
+backup. This checkpoint proves its previously missing uniform-grid sum and
+weighted mean decay. No reflection session or queued campaign was opened.
+
+New module Foundation/IBMUniformClockGridEnergy.lean reuses
+IBMClockTraversalEnvelope.energy_mean_le and actual Brownian source laws.
+An elementary square-root telescoping inequality proves
+
+    sum_(k=1..N) 1/sqrt(k) <=2sqrt(N).
+
+It avoids incorrectly treating x^(-1/2) as antitone on a CLOSED interval
+containing0, where Lean's totalized value is0. A final-row reflection identity
+and an exact symmetric double-sum recurrence retain the genuine diagonal.
+For grid spacing h>0, the sum of endpoint pair bounds is at most
+
+    2delta*N +64delta^2*peak(h)*N*sqrt(N).
+
+The positivity of h is necessary: collapsed grid times are an entire diagonal
+block and do not obey an off-diagonal density estimate. Fixed positive horizon
+T and spacing h=T/N give peak(T/N)=peak(T)*sqrt(N), hence the ACTUAL
+Brownian-clock envelope expectation satisfies
+
+    E energy <=2N*delta +64peak(T)*N^2*delta^2.
+
+Multiplication by delta^3 gives the genuine nonnegative integrable envelope
+bound2N*delta^4+64peak(T)*N^2*delta^5. For delta=N^(-4/9), its explicit rate is
+
+    2N^(-7/9)+64peak(T)*N^(-2/9) ->0.
+
+actual_weighted_energy_tendsto verifies this for ALL positive uniform-grid
+sizes N=n+1, at every fixed T>0, not just a sparse subsequence. The constants,
+diagonal, positive horizon, real powers and convergence hypotheses are explicit.
+The existing energy integrability and nonnegativity make this an actual mean
+estimate, not an integral defaulting to zero for a nonintegrable function.
+
+This is ENVELOPE decay. The domination of actual traversal occupation energy
+still holds only on the event that all reflected spatial increments are
+<=delta. No deterministic almost-sure mesh bound, quartic partition limit,
+joint L2 statement or physical-time Ito/Tanaka formula is inferred.
+
+Next substantive obligation: measurable maximum-increment exceptional event
+and its probability bound. A promising UNVERIFIED route uses20th Brownian
+increment moments and a finite union bound: for N intervals, spacing T/N and
+delta=N^(-4/9), the expected algebraic rate is a constant times N^(-1/9).
+Combined with conditional Chebyshev on the good-clock event and the verified
+weighted energy decay, this could yield joint convergence in probability of
+quartic fluctuations to their actual conditional mean. It still requires a
+complete product-measure argument; fixed-clock conditional L2 alone is
+insufficient. Reflected-clock crossing-penalty decay remains a separate open
+obligation before identifying a physical-time limit with3T.
+
+All manuscript bytes, queue, reflection policy and compiler/audit trust settings
+remain unchanged. Full source/proof/type review, complete transitive audit,
+independent edge-case checks, source-integrity and Git/private closure evidence
+are recorded in .lake/stardust-1380-verification.json at checkpoint closure.
+
+
+Checkpoint1380 gates: full root6411jobs/27.376468s/0; complete safe transitive Foundation42786declarations/37.729725s/0; all17newpublic types (144lines) and complete source/proofs reviewed. Five downstream Lean checks/44.845497s/0: empty grid, exact single diagonal, collapsed-spacing diagonal block, explicit two-point off-diagonal coefficient, actual all-n limit application. Initial test numeral rewrite failed because it also captured a power exponent; narrowed to LHS, with no mathematical source change or weakened checks. All2239source/3config hashes and113immutable archive hashes checked. No queue/reflection/manuscript edits. Exact private closure: .lake/stardust-1380-verification.json.
