@@ -2212,3 +2212,4 @@ import Foundation.IBMClockOccupationStrong
 import Foundation.BochnerCoefficientParseval
 import Foundation.IBMClockAverageStrongGraph
 import Foundation.IBMSineSpatialDistribution
+import Foundation.IBMCanonicalMollifiedScenery
