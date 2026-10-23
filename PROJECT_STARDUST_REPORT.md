@@ -33410,3 +33410,119 @@ accounting and research queue remain unchanged. No housekeeping interrupted
 the proof cycle; no additional agent delegation or resource change occurred.
 
 Checkpoint1390 gates: full root6430jobs/37.984743s/0; complete safe transitive43107declarations/42.233660s/0; all16public types (83lines), complete new source and nine downstream checks/32.944376s/0 reviewed. All2258source/3config and113immutable archive paths/hashes checked. Standard3axioms only; no resource/toolchain/trust changes. Exact Git/private closure: .lake/stardust-1390-verification.json.
+
+
+## Checkpoint1391 — actual signed spatial Simpson integration and smooth IBP
+
+IBM remains ACTIVE. PROGRESS1390 proved that separate unrenormalized first and
+second raw Taylor ranks fail already for the quadratic polynomial. This
+checkpoint constructs a specific alternative by including cancellations in
+actual signed finite sums; it does not redefine success as full IBM calculus.
+
+For g:R->R, define the deterministic spatial Simpson increment independently
+of any primitive or candidate stochastic limit,
+
+    S_g(x,y) = (y-x)/6 * [g(x)+4g((x+y)/2)+g(y)].
+
+IBMActualSimpson.sums uses S_g(Z_i,Z_(i+1)) on the existing actual process
+Z_t=W(|B_t|), original joint law, uniform N=n+1 physical time grids. The midpoint
+is a SPATIAL arithmetic midpoint, NOT the process at the middle physical time.
+Orientation is signed; neither abs(DeltaZ) nor a positive path-length measure
+is substituted. The construction depends only on g and actual grid endpoints.
+
+sums_tendstoInMeasure PROVES for EVERY GLOBAL C3 real g and fixed T>0,
+
+    sum_i<N S_g(Z_(iT/N), Z_((i+1)T/N))
+       -> integral_(Z_0)^(Z_T) g(z) dz IN PROBABILITY.
+
+The target is a genuine oriented Lebesgue interval integral. It is finite for
+every sample, and separately proved measurable already when g is continuous.
+Actual sums are measurable for continuous g. No global bound on g or its
+derivatives, expectation moments, increment independence, new stochastic law,
+or supplied bracket is assumed. Finite sums are not defined by the endpoint
+integral: e.g. for g(z)=5z^4, the ONE-CELL error is exactly (y-x)^5/24 and
+usually nonzero. This downstream identity independently checks both the
+normalization and the substantive nature of convergence.
+
+IBMThirdPeano supplies the necessary deterministic C3 Taylor estimate. Using
+Mathlib's order-two Lagrange theorem, its third Taylor remainder equals
+(D3g(z)-D3g(x))*(y-x)^3/6, z in the segment. Compact uniform continuity gives
+o(|y-x|^3) uniformly on [-R,R]. This is supporting Taylor mathematics, not a
+new stochastic process infrastructure or an externally novel theorem claim.
+
+IBMSimpsonPeano.error_identity proves the EXACT error for a C4 primitive f:
+
+    S_(Df)(x,y) - [f(y)-f(x)]
+      = (y-x)/6 * [4 R3_(Df)(x,(x+y)/2)+R3_(Df)(x,y)] - R4_f(x,y),
+
+where R4 is the existing genuine IBMFourthTaylor.remainder. The midpoint stays
+inside the same compact interval; both C3 derivative Peano and C4 primitive
+Peano bounds then give, for every epsilon>0, a positive delta such that the
+absolute Simpson error is <=epsilon*|y-x|^4 for endpoints in [-R,R] with
+|y-x|<delta. No C5 primitive or fourth derivative of the integrand is needed.
+
+The finite stochastic error telescopes against actual grid endpoints0,T.
+Using the existing EVERY-sample path bound and vanishing mesh, eventually its
+absolute TOTAL error is <=epsilon*actual quartic variation for each sample.
+quartic_peano_tendstoInMeasure packages exactly this proved decay mechanism:
+measurable errors with these samplewise eventual bounds vanish in probability.
+On each subsequence use an a.e.-convergent subsubsequence of the already proved
+quartic limit3T; bound its quartic sums eventually by3T+1 and apply the
+epsilon/(2*(3T+1)) estimate. No pathwise full-sequence quartic upgrade, moment
+estimate or measurable selection of random compact moduli is assumed.
+
+derivative_sums_tendstoInMeasure gives the actual C4 primitive chain rule.
+For a general C3 g, primitive(g)(x)=integral_0^x g is an independently defined
+ordinary antiderivative. Mathlib FTC proves its derivative exactly g, and
+contDiff_succ_iff_deriv proves it is C4. Additivity of oriented interval
+integrals identifies its actual endpoint difference with the target interval
+integral. Thus the all-C3 domain is proved, not posited by choosing a limit.
+
+integration_by_parts_tendstoInMeasure PROVES for C4 spatial functions f,h
+that the sum of the TWO actual finite Simpson sums with integrands f*Dh and
+h*Df converges in probability to f(Z_T)h(Z_T)-f(Z_0)h(Z_0). Finite additivity
+of S_g and the ordinary derivative product rule identify this with the new
+primitive chain theorem. Each product integrand is C3, so the separate
+convergence theorem applies to it as well. These smooth SPATIAL chain and IBP
+formulas are consistent with1390's raw-rank obstruction: for g(z)=2z, the
+actual Simpson sum equals L_N+Q_N, never L_N alone.
+
+This is a specific nonadapted symmetric spatial integration prescription;
+right endpoint data are used. It does NOT establish predictable/adapted Itô
+integration, arbitrary random/time-dependent/path-dependent integrands, a
+causal martingale or Gaussian-source divergence identification, closed domains
+or adjoints, Clark-Ocone, nonsmooth Tanaka, arbitrary partitions, almost-sure
+full-sequence or L1/L2 convergence. No claim of a new external stochastic
+calculus or novelty is made. C3 is a sufficient domain; optimal regularity is
+not asserted. The full IBM campaign remains OPEN and ACTIVE, with its existing
+F1/F2, intrinsic-domain and convergence obligations preserved.
+
+Next audit the precise relation between this spatial symmetric construction
+and the verified source/observable adjoints, and whether temporal integrands
+or a compensated cubic prescription can be justified. The existing
+IBMMixedCubicStein.cube_pairing / mixedCube_integral and
+IBMCubicFirstChaos.adjoint_mixedCube are exact source-space contraction tools,
+not already physical-grid stochastic convergence. They cannot be substituted
+for missing joint-law cubic-sum estimates without identifying the actual
+clock-dependent kernels and controlling their sums.
+The focused reuse audit also checked IBMIntrinsicPredictableProcess: its
+timeStep_predictable and integral_eq_of_timeSum_eq refer to the IBM-generated
+observation filtration but integrate the separately constructed martingale M.
+That existing predictable calculus cannot be identified with integration
+against physical Z or the new Simpson construction merely from its filtration.
+
+Eleven downstream Lean checks cover signed orientation; exact quadratic and
+cubic one-form polynomial integration; the nonzero quintic primitive error;
+zero horizon; constant one-form target; zero actual quartic primitive error;
+actual cancellation of the two divergent quadratic ranks; exponential and
+fractional Real.rpow(z,7/2) C3 domains without moments; and a concrete
+polynomial-exponential integration-by-parts limit. The real-rpow convention
+is Mathlib's exact definition, not an unproved identification with abs(z)^p.
+All25 public types and three complete proof sources reviewed. Elaboration
+repairs changed no hypotheses, resource settings or existing mathematics.
+
+All original archive bytes/pathset, canonical manuscripts/PDF/index, saved
+queue and reflection accounting are preserved. No housekeeping interrupted
+this proof/verification cycle. No new campaign or agent delegation began.
+
+Checkpoint1391 gates: full root6433jobs/23.385617s/0; complete safe transitive43143declarations/35.237139s/0; all25public types (178lines), three complete sources and eleven downstream checks/35.312549s/0 reviewed. All2261source/3config and113immutable archive paths/hashes checked. Standard3axioms only; no resource/toolchain/trust changes. Exact Git/private closure: .lake/stardust-1391-verification.json.

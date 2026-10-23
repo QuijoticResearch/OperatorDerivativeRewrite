@@ -6,6 +6,9 @@ import Foundation.IBMUniformClockMaximum
 import Foundation.IBMUniformClockOccupation
 import Foundation.IBMUniformQuarticFamily
 import Foundation.IBMUniformQuarticProbability
+import Foundation.IBMThirdPeano
+import Foundation.IBMSimpsonPeano
+import Foundation.IBMActualSimpson
 import Foundation.IBMActualQuadraticDivergence
 import Foundation.IBMFourthPeano
 import Foundation.IBMActualPeanoRemainder
@@ -4463,3 +4466,30 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMActualQuadraticDivergence.quadratic_no_path_limit
 #print axioms OperatorDerivativeRewrite.Foundation.IBMActualQuadraticDivergence.quadratic_no_finite_limit
 #print axioms OperatorDerivativeRewrite.Foundation.IBMActualQuadraticDivergence.first_no_finite_limit
+
+-- Checkpoint1391: actual signed Simpson integration and smooth spatial IBP.
+#print axioms OperatorDerivativeRewrite.Foundation.IBMThirdPeano.polynomial
+#print axioms OperatorDerivativeRewrite.Foundation.IBMThirdPeano.remainder
+#print axioms OperatorDerivativeRewrite.Foundation.IBMThirdPeano.taylor_two_explicit
+#print axioms OperatorDerivativeRewrite.Foundation.IBMThirdPeano.remainder_lagrange
+#print axioms OperatorDerivativeRewrite.Foundation.IBMThirdPeano.compact_remainder_bound
+#print axioms OperatorDerivativeRewrite.Foundation.IBMSimpsonPeano.simpson
+#print axioms OperatorDerivativeRewrite.Foundation.IBMSimpsonPeano.error_identity
+#print axioms OperatorDerivativeRewrite.Foundation.IBMSimpsonPeano.compact_error_bound
+#print axioms OperatorDerivativeRewrite.Foundation.IBMActualSimpson.sums
+#print axioms OperatorDerivativeRewrite.Foundation.IBMActualSimpson.error
+#print axioms OperatorDerivativeRewrite.Foundation.IBMActualSimpson.sums_add
+#print axioms OperatorDerivativeRewrite.Foundation.IBMActualSimpson.sums_measurable
+#print axioms OperatorDerivativeRewrite.Foundation.IBMActualSimpson.error_measurable
+#print axioms OperatorDerivativeRewrite.Foundation.IBMActualSimpson.finite_error_identity
+#print axioms OperatorDerivativeRewrite.Foundation.IBMActualSimpson.error_eventual_bound
+#print axioms OperatorDerivativeRewrite.Foundation.IBMActualSimpson.quartic_peano_tendstoInMeasure
+#print axioms OperatorDerivativeRewrite.Foundation.IBMActualSimpson.derivative_sums_tendstoInMeasure
+#print axioms OperatorDerivativeRewrite.Foundation.IBMActualSimpson.primitive
+#print axioms OperatorDerivativeRewrite.Foundation.IBMActualSimpson.primitive_deriv
+#print axioms OperatorDerivativeRewrite.Foundation.IBMActualSimpson.primitive_contDiff
+#print axioms OperatorDerivativeRewrite.Foundation.IBMActualSimpson.lineIntegral
+#print axioms OperatorDerivativeRewrite.Foundation.IBMActualSimpson.lineIntegral_eq_primitive
+#print axioms OperatorDerivativeRewrite.Foundation.IBMActualSimpson.lineIntegral_measurable
+#print axioms OperatorDerivativeRewrite.Foundation.IBMActualSimpson.sums_tendstoInMeasure
+#print axioms OperatorDerivativeRewrite.Foundation.IBMActualSimpson.integration_by_parts_tendstoInMeasure

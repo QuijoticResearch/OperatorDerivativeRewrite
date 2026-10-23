@@ -2156,3 +2156,6 @@ import Foundation.IBMFourthPeano
 import Foundation.IBMActualPeanoRemainder
 import Foundation.IBMActualTaylorChain
 import Foundation.IBMActualQuadraticDivergence
+import Foundation.IBMThirdPeano
+import Foundation.IBMSimpsonPeano
+import Foundation.IBMActualSimpson
