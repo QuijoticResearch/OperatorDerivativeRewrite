@@ -2159,3 +2159,4 @@ import Foundation.IBMActualQuadraticDivergence
 import Foundation.IBMThirdPeano
 import Foundation.IBMSimpsonPeano
 import Foundation.IBMActualSimpson
+import Foundation.IBMSimpsonGraphDual
