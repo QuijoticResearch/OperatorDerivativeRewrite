@@ -6,6 +6,7 @@ import Foundation.IBMUniformClockMaximum
 import Foundation.IBMUniformClockOccupation
 import Foundation.IBMUniformQuarticFamily
 import Foundation.IBMUniformQuarticProbability
+import Foundation.IBMUniformPrefixMaximum
 import Foundation.IBMUniformSubfamilyQuartic
 import Foundation.IBMUniformPrefixClock
 import Foundation.IBMUniformPrefixQuartic
@@ -4343,3 +4344,24 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.IBMUniformPrefixQuartic.meanError_tendstoInMeasure
 #print axioms OperatorDerivativeRewrite.Foundation.IBMUniformPrefixQuartic.error
 #print axioms OperatorDerivativeRewrite.Foundation.IBMUniformPrefixQuartic.error_tendstoInMeasure
+
+-- Checkpoint1386: actual IBM maximum prefix quartic error and random prefix selection.
+#print axioms OperatorDerivativeRewrite.Foundation.IBMUniformPrefixMaximum.width
+#print axioms OperatorDerivativeRewrite.Foundation.IBMUniformPrefixMaximum.node
+#print axioms OperatorDerivativeRewrite.Foundation.IBMUniformPrefixMaximum.node_le
+#print axioms OperatorDerivativeRewrite.Foundation.IBMUniformPrefixMaximum.cover
+#print axioms OperatorDerivativeRewrite.Foundation.IBMUniformPrefixMaximum.cumulative
+#print axioms OperatorDerivativeRewrite.Foundation.IBMUniformPrefixMaximum.cumulative_mono
+#print axioms OperatorDerivativeRewrite.Foundation.IBMUniformPrefixMaximum.error_eq
+#print axioms OperatorDerivativeRewrite.Foundation.IBMUniformPrefixMaximum.error_measurable
+#print axioms OperatorDerivativeRewrite.Foundation.IBMUniformPrefixMaximum.coarse
+#print axioms OperatorDerivativeRewrite.Foundation.IBMUniformPrefixMaximum.maximum
+#print axioms OperatorDerivativeRewrite.Foundation.IBMUniformPrefixMaximum.maximum_nonneg
+#print axioms OperatorDerivativeRewrite.Foundation.IBMUniformPrefixMaximum.maximum_measurable
+#print axioms OperatorDerivativeRewrite.Foundation.IBMUniformPrefixMaximum.coarse_nonneg
+#print axioms OperatorDerivativeRewrite.Foundation.IBMUniformPrefixMaximum.squeeze_prefix
+#print axioms OperatorDerivativeRewrite.Foundation.IBMUniformPrefixMaximum.maximum_bound
+#print axioms OperatorDerivativeRewrite.Foundation.IBMUniformPrefixMaximum.coarse_tendstoInMeasure
+#print axioms OperatorDerivativeRewrite.Foundation.IBMUniformPrefixMaximum.maximum_tendstoInMeasure
+#print axioms OperatorDerivativeRewrite.Foundation.IBMUniformPrefixMaximum.selected_measurable
+#print axioms OperatorDerivativeRewrite.Foundation.IBMUniformPrefixMaximum.selected_tendstoInMeasure

@@ -2147,3 +2147,4 @@ import Foundation.IBMUniformFifthRemainder
 import Foundation.IBMUniformSubfamilyQuartic
 import Foundation.IBMUniformPrefixClock
 import Foundation.IBMUniformPrefixQuartic
+import Foundation.IBMUniformPrefixMaximum

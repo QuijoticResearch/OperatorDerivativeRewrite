@@ -32979,3 +32979,80 @@ Original archive manuscripts, canonical paper/PDF, queue and reflection
 accounting are unchanged. No housekeeping session interrupted this proof cycle.
 
 Checkpoint1385 gates: full root/62.118083s/0; complete safe transitive Foundation42951declarations/40.072673s/0; all46public types (267lines), three complete proof sources, eight downstream Lean checks/33.456113s/0. Checks cover empty subfamily, explicit common-grid endpoint4 for horizon6/grid3/prefix2, exact Gaussian error16 and empty error0, actual one-interval quartic error, empty physical prefix, changing half-grid prefixes, and fully expanded actual-process prefix convergence. All2249source/3config hashes and113immutable archive hashes/pathset checked. Exact Git/private closure: .lake/stardust-1385-verification.json.
+
+
+## Checkpoint1386 — actual quartic-variation error uniformly over all prefixes
+
+IBM remains ACTIVE. Checkpoint1385's deterministic prefix convergence is now
+upgraded to the measurable discrete maximum over EVERY prefix on the same
+uniform horizon-T grid. The process remains the exact reflected-clock
+Z_t=W(|B_t|)=IBMConstructedSources.ibmValue under IBMSourceLaws.jointMeasure.
+
+Foundation/IBMUniformPrefixMaximum.lean reuses actual prefix-error convergence
+and positivity of fourth powers. For N=n+1 and a FIXED coarse block count K>0,
+width=N/K+1 (natural division) and node(j)=min(j*width,N). cover proves every
+m<=N lies between consecutive nodes with index gap at most width, including
+empty horizons and repeated/truncated coarse nodes. The number of coarse
+endpoints is K+1, independent of the growing N. cumulative_mono is proved from
+nonnegative actual fourth powers; squeeze_prefix gives a deterministic bound
+for any monotone cumulative mass and nonnegative linear target.
+
+maximum is exactly max_(0<=m<=N)|Q_N(m)-3*m*T/N|, and is genuinely measurable
+and nonnegative. The samplewise bound is
+
+    maximum_N <= coarseMaximum_(N,K) + 3*T/K + 3*T/N.
+
+The floor/rounding term is bounded rigorously using Nat.cast_div_le; no grid
+endpoint is dropped and no random index is substituted into a deterministic
+limit without justification. At each fixed K, a finite union over K+1 endpoint
+events and checkpoint1385 prove coarseMaximum_(N,K)->0 in probability. Choosing
+K large and then N large proves maximum_tendstoInMeasure:
+
+    max_(0<=m<=N) |sum_(i<m)(Delta Z_i)^4 - 3*m*T/N| ->0 IN PROBABILITY,
+
+for each FIXED T>0, ALL N=n+1, under the original joint scenery-clock law.
+This is discrete uniform cumulative quartic control, not an assumed bracket.
+No new source, process law, independence between IBM increments or conditional
+variance-decay hypothesis is supplied.
+
+selected_tendstoInMeasure permits ANY sample-dependent m_N(omega)<=N by
+pointwise domination by that maximum. Its statement is Mathlib convergence in
+measure, which itself does not require measurability of the selected function.
+selected_measurable separately proves actual selected errors are measurable
+when the Nat-valued selector is measurable. Together they give ordinary
+probability convergence for measurable random selectors, without any adaptedness
+or stopping-time premise or assertion. The downstream test uses the genuinely
+sample-dependent choice m_N=N when Z_T>=0 and0 otherwise, proving both
+measurability and probability convergence of the actual selected error.
+
+The generic monotonicity hypothesis is essential: endpoint values Q(0)=Q(2)=0
+do not control an interior spike Q(1)=10. A downstream Lean counterexample
+explicitly refutes monotonicity of that sequence. Positivity of actual quartic
+increments supplies the valid hypothesis in the IBM application.
+
+The prior discrete supremum and measurable random-prefix obligations are now
+PROVED. The continuous-time step-CDF supremum statement has not been separately
+formalized; interpolation/rounding would require its own definition and bound.
+No a.s., L1/L2 or arbitrary-partition quartic convergence is claimed.
+Continuous random-weighted quartic convergence remains the next central task.
+A route is to approximate a continuous path weight by finitely many stepweights,
+use proved prefix errors for the corresponding block masses, localize finite
+random coefficients and the random compact modulus/bound, and control the
+approximation using positivity and total-quartic tightness. A weighted theorem
+has NOT yet been established by the unweighted maximum alone.
+
+With checkpoint1384's total Taylor-error decay on C5 functions with globally
+bounded fifth derivative, the desired weighted result could identify the
+combined first three Taylor channels with the candidate correction
+(1/8) integral f^(4)(Z_s)ds. This remains a target, not a proved physical-time
+Ito formula or completion of IBM. Intrinsic temporal derivatives/adjoints,
+operator domains and remaining F1/F2 closure obligations are still open.
+
+The countable-product measurability elaboration initially hit the unchanged
+default200k heartbeat limit. An explicit function argument and LOCAL
+irreducibility of the already proved prefix-error definition resolved it.
+No resource increase, axiom, suppressed error or mathematical domain weakening
+was used. Original manuscripts, canonical paper/PDF, queue, and daily
+reflection accounting remain unchanged; no housekeeping interrupted this cycle.
+
+Checkpoint1386 gates: full root6422jobs/26.018840s/0; complete safe transitive Foundation42977declarations/41.363401s/0; all19public types (86lines) and complete source/proof reviewed; eight downstream checks/34.056085s/0. Tests: nondivisible coarse endpoints; zero-size coverage; more coarse blocks than increments; nonmonotone interior-spike counterexample; actual zero-horizon maximum; exact one-interval actual maximum; unit-horizon maximum limit; actual sample-dependent selector measurability and limit. All2250source/3config hashes and113immutable archive hashes/pathset checked. Exact Git/private closure: .lake/stardust-1386-verification.json.
