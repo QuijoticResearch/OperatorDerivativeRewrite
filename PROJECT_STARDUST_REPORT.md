@@ -33871,3 +33871,56 @@ records remain unchanged. No housekeeping interrupted this proof/verification
 cycle; no agent delegation or unrelated campaign occurred.
 
 Checkpoint1394 gates: full root6438jobs/23.731758s/0; complete safe transitive43262declarations/35.169485s/0; all27public types (212lines), both complete new sources and eleven downstream checks/32.529078s/0 reviewed. All2266source/3config and113immutable archive paths/hashes checked. Standard3axioms only; no resource/toolchain/trust changes. Exact Git/private closure: .lake/stardust-1394-verification.json.
+
+
+## Checkpoint1395 — October23 bounded mathematical reflection; IBM ACTIVE
+
+Admitted exactly ONE America/New_York session at CLOSED1394, commit
+072793e54f7a08ba39afc4919ea987d11e5c69e2; no active proof or verification
+was interrupted. Terminal start09:00:31.674594 EDT; deadline09:45:31.674594.
+All setup, PDF, verification and Git/private closure share the45minute cap.
+Precommit observed848.594s plus explicit180s finalization allowance:
+conservative1029s<2700s. Exact terminal charge/released allowance will be
+recorded in .lake/stardust-1395-reflection-terminal.json and reconciled before
+any future admission. The date is consumed even if unused time remains.
+
+Synthesized verified1383–1394 physical IBM results in the new PRIVATE working
+draft manuscripts/ibm-signed-simpson/main.tex and matching main.pdf (revision1,
+six rendered pages actually inspected). Actual model Z=W(abs B), original law,
+all uniform N=n+1 grids. Precise claims: quartic3T probability limit; quadratic
+divergence and raw-rank no-finite-limit obstruction; C4 combined Taylor
+correction -1/8 integral D4f; C3 signed SPATIAL Simpson convergence; measurable
+continuous target process; uniform GRID-prefix maximum in probability;
+canonical bounded measurable random horizons; deterministic C1 time weights
+and separable C4-space chain rule; explicitly CLIPPED cosine sums in observable
+L2 and original graph-dual norm, all actual full-adjoint-domain pairings;
+strong sine-domain exclusion and gradient escape under explicit tracking.
+No arbitrary-partition, raw-sum L2, causal/Skorohod or full IBM completion claim.
+
+Updated curated README (ten selected results), conceptual reuse blueprint and
+mathematical commentary. Former opportunityR3 is resolved on uniform grids,
+not erased historically. New precise R4: general F(t,z) requires joint compact
+spatial Peano/derivative control and a genuine time-partial correction;
+value-only separable approximation is insufficient. This is an IBM proof
+frontier, not a new campaign. Distinguish the separate martingale M calculus,
+physical signed Simpson prescription and weak graph-dual differentiation.
+The old valid predictable-associativity paper remains byte-for-byte unchanged.
+
+Local MiKTeX two-pass compilation1.500197s succeeded with installer and shell
+escape disabled; no overfull boxes or unresolved references. Every PDF page
+rendered with local Poppler95dpi and visually checked. Initial host-cache
+permission failure and repaired namespace-line overfull failure retained in
+the draft logs. No external publication/upload; existing authorized private
+Git backup is the only external artifact synchronization. Exact rational
+coefficient test confirms S_(5z4)-(y5-x5)=(y-x)^5/24; no numerical extrapolation.
+
+Fresh full root build/10.222490s/0;
+complete43262-declaration transitive axiom audit/40.504189s/0,
+only propext/Classical.choice/Quot.sound; all16 cited public types
+(144unabridged lines) reviewed. Eleven existing independent
+Lean checks rerun/32.868326s/0, empty output.
+All2266mathematical sources/3configs and113immutable archive paths/hashes
+unchanged; queue/AGENTS and original manuscripts unchanged; local curated
+links and source/PDF freshness verified. No mathematical results modified.
+Exact commit approval and terminal PRIVATE main/research verification follow
+in .lake/stardust-1395-verification.json. IBM remains ACTIVE; later gates unchanged.

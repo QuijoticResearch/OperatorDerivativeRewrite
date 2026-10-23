@@ -33,6 +33,9 @@ types and detailed scopes before reuse.
 | Genuine IBM correction limits and native derivative foundation | `IBMDilatedPredictableLimit.correction_continuum_tendsto`; `IBMCompactOriginalBoundary.originalPathIntegral_continuum_tendsto`; `IBMJointIntrinsicDerivative.jointDerivative_dense` | F1 uses its clock-number common-dual topology; F2 is ordinary clock L2; the genuine joint native derivative is closed/densely defined. These are not full physical-time Ito calculus. [Exact F1–F3 scope](IBM_F1_F3_VERIFIED_CHECKPOINT.md). |
 | Actual stochastic change of integrator and full product associativity | `IBMStochasticIntegratorEnergy.energy_change`; `IBMStochasticProductAssociativity.actual_associativity`; `IBMCompletedBoundedAssociativity.actual_bounded_associativity` | Entire ORIGINAL output-energy L2 domain; literal HK product, correct null ideals, and bounded common predictable action on every completed family. [Audit](IBM_INTEGRATOR_ENERGY_PRODUCT_ASSOCIATIVITY_AUDIT.md). |
 | Uniform actual IBM reconstruction and original divergence graph convergence | `IBMUniformStochasticReconstruction.actual_IBM_uniform`; `uniform_actual`; `uniform_native_graph` | Compact-parameter uniform L2 and original graph norm, simultaneously over all causal horizons. This is not L2 of a samplewise supremum or temporal-gradient Clark–Ocone. [Audit](IBM_UNIFORM_STOCHASTIC_RECONSTRUCTION_AUDIT.md). |
+| Physical IBM variation and raw-channel obstruction | `IBMUniformQuarticVariation.quartic_tendstoInMeasure`; `IBMActualQuadraticDivergence.quadratic_lower_tail`; `first_no_finite_limit` | For actual Z=W(abs B), all uniform N-cell grids: quartic variation tends to 3T in probability, quadratic variation diverges, and raw first/second ranks cannot separately have finite probability limits. [Source](Foundation/IBMActualQuadraticDivergence.lean). |
+| Actual signed spatial Simpson calculus | `IBMActualSimpson.sums_tendstoInMeasure`; `IBMUniformSimpsonProcess.maximum_tendstoInMeasure`; `IBMTimeWeightedSimpson.derivative_weighted_tendstoInMeasure` | Global C3 spatial one-forms, grid-prefix probability convergence, bounded measurable random horizons; deterministic C1 time weights give a separable C4 spatial chain rule. [Private draft](manuscripts/ibm-signed-simpson/main.pdf). |
+| Bounded actual Simpson realization in the original graph dual | `IBMSimpsonGraphDual.actual_pairing_tendsto`; `limit_obstruction`; `tracked_graph_escape` | Explicitly CLIPPED cosine sums converge in observable L2 and original graph-dual norm. The sine limit remains outside the strong joint derivative domain; any strong-domain tracking sequence has divergent gradient norms. [Source](Foundation/IBMSimpsonGraphDual.lean). |
 | Actual quartic theta-flow eventual global real zeros | `RiemannQuarticUniformFarScale.eventually_all_zeros_real` | Every complex zero is real at every sufficiently late time of the genuine growing quartic integral. Local/far estimates share one scale. No RH implication is inferred. [Source](Foundation/RiemannQuarticUniformFarScale.lean), [full stopping scope](A4_CAMPAIGN_STOPPING_AUDIT.md). |
 
 ## Verification and reproducibility
@@ -62,8 +65,10 @@ ResearchSources is read-only and excluded from research commits.
 ## Research and exposition
 
 **Active:** intrinsic stochastic calculus for actual IBM. Physical-time
-Ito–Tanaka, pathwise variation/brackets and temporal-gradient representation
-remain open outside the exact verified scopes above. Subsequent campaigns
+Ito–Tanaka, causal/adjoint identification of the physical-time integral and
+temporal-gradient representation remain open. Uniform-grid quartic variation
+and signed Simpson convergence are proved in probability; this supplies neither
+a semimartingale bracket nor an almost-sure arbitrary-partition theorem. Subsequent campaigns
 remain gated by the authoritative queue; documentation does not release them.
 
 [Periodic reflection](STARDUST_REFLECTION_POLICY.md) is supporting work at

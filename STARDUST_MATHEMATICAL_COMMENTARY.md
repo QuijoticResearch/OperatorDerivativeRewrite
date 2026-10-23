@@ -93,14 +93,58 @@ zero-limit theorem assumes convergence of the zero locations. The quartic
 global theorem succeeds by matching near and far estimates with one scale,
 not by promoting a finite window to the whole plane.
 
-**Opportunity R3 — active-campaign next step.** For actual IBM quartic variation,
-the existing conditional fourth-moment and overlap double-sum identities give
-an explicit variance target. Obtain uniform overlap-sum and clock-crossing
-penalty estimates for a specified refining partition, then prove a genuine
-random-variable limit in a stated topology. Finite expectation equal to a
-time-scale expression is not that limit. See `IBMFiniteQuarticSecondMoment`,
-`IBMConditionalQuarticPair`, `IBMJointQuartic` and `IBMClockOverlapEnergy`.
-This is directly relevant to the active IBM calculus; no new campaign is opened.
+**Former opportunity R3 — RESOLVED on uniform grids.** The conditional fourth
+moments, overlap sums and reflected-clock crossing penalties were combined into
+`IBMUniformQuarticVariation.quartic_tendstoInMeasure`: actual quartic variation
+tends to 3T in probability for ALL uniform N=n+1 grids. The stronger prefix
+error maximum is controlled by `IBMUniformPrefixMaximum.maximum_tendstoInMeasure`.
+This closes the former variance/partition-limit obligation in that exact scope,
+not for arbitrary partitions or almost-sure full-sequence convergence. The
+earlier moment-only calculations remain useful proof inputs, rather than the
+final limit theorem.
+
+## A calculus through cancellation, and the topology it actually reaches
+
+Quartic tightness and compact spatial Peano control now turn the old variation
+work into an actual stochastic quadrature theorem. Every sample has compact
+range and vanishing mesh. Total absolute fourth-order error is eventually at
+most epsilon times its quartic mass. `IBMActualSimpson.sums_tendstoInMeasure`
+therefore requires only a global C3 one-form, not a fifth derivative, global
+growth bounds or moment estimates. Its spatial midpoint is NOT evaluation at
+a midpoint in physical time. This distinction belongs in every reuse.
+
+`IBMActualQuadraticDivergence.first_identity` gives exact raw-rank cancellation
+for z², while `quadratic_no_finite_limit` and `first_no_finite_limit` rule out
+separate finite probability limits. One must preserve the combined prescription.
+Simpson and lower Taylor prescriptions differ: quartic Taylor has the 3T
+correction, whereas the derivative's Simpson sum telescopes exactly. This is
+a useful counterexample to prescription-independent notions of integral.
+
+One compact error modulus controls ALL prefixes, avoiding an N-dependent union
+bound. Finite Abel summation then transfers prefix control to deterministic C1
+time weights via the compact bound B+KT. `IBMTimeWeightQuadrature.rightSum_tendsto`
+supplies the genuine time correction for every continuous path; no finite
+variation of the IBM path is assumed. `IBMTimeWeightedSimpson.derivative_weighted_tendstoInMeasure`
+is consequently a proved SEPARABLE spacetime chain rule, not general F(t,z).
+
+The operator connection has its own exact topology. Explicitly clipped cosine
+sums converge in observable L2, then in the ORIGINAL graph-dual norm and every
+full adjoint-domain test pairing (`IBMSimpsonGraphDual.actual_pairing_tendsto`).
+The sine target nevertheless stays outside the strong joint derivative domain.
+`tracked_graph_escape` shows that any strong-domain approximation tracking those
+actual sums must have gradient norms tending to infinity. Weak derivative
+existence, strong-domain membership and causal stochastic integration cannot
+be substituted for one another. No raw-sum L2 upgrade is established.
+
+**Opportunity R4 — active IBM obligation, UNPROVED here.** A full time-space
+chain theorem for F(t,z) requires spatial fourth-order Peano estimates UNIFORM
+over compact time intervals, plus the genuine time-partial integral along Z.
+Approximating only the values of F by separable functions is insufficient:
+one needs simultaneous control of the relevant derivatives and quadrature
+errors. First audit reuse of the compact Peano, uniform-prefix and deterministic
+time-integral machinery. Random coefficients, causal identification and
+nonsmooth Tanaka remain further separate obligations. This is a focused next
+proof question within IBM, not new infrastructure or a campaign transition.
 
 ## Experience worth retaining
 

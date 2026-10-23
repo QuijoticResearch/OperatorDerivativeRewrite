@@ -82,6 +82,12 @@ graph TD
   G --> I[Uniform process reconstruction]
   C --> J[Original divergence graph convergence]
   I --> J
+  A --> K[Actual quartic variation and vanishing spatial mesh]
+  K --> L[Signed spatial Simpson sums and uniform grid prefixes]
+  L --> M[Bounded random horizons and deterministic C1 time weights]
+  L --> N[Clipped observable L2 and original graph-dual limits]
+  C --> N
+  N --> O[Strong-domain exclusion and gradient escape]
 ```
 
 **F1–F3 foundation.** `IBMDilatedPredictableLimit.correction_continuum_tendsto`
@@ -108,10 +114,38 @@ horizons simultaneously. `uniform_native_graph` gives the corresponding
 ORIGINAL divergence graph-norm convergence.
 [Topology and limits](IBM_UNIFORM_STOCHASTIC_RECONSTRUCTION_AUDIT.md).
 
+**Physical-path calculus, distinct from the martingale integrator.** For actual
+Z=W(abs B), `IBMUniformQuarticVariation.quartic_tendstoInMeasure` proves quartic
+variation ->3T in probability on all uniform N=n+1 grids. Together with every-sample
+vanishing mesh, this implies `IBMActualQuadraticDivergence.quadratic_lower_tail`:
+quadratic variation exceeds any fixed level with probability tending to one.
+The raw first rank for z² also has no finite probability limit, despite exact
+first-plus-second-rank cancellation.
+
+`IBMActualSimpson.sums_tendstoInMeasure` instead proves that signed SPATIAL
+Simpson increments converge for every global C3 one-form g to the oriented
+integral from Z0 to ZT. The continuous target process is jointly measurable.
+`IBMUniformSimpsonProcess.maximum_tendstoInMeasure` controls the samplewise
+maximum over GRID PREFIXES in probability. `IBMSimpsonRandomHorizon.stopped_sums_tendstoInMeasure`
+then permits any measurable nonnegative tau pointwise bounded by T, without a
+stopping-time assumption. `IBMTimeWeightedSimpson.derivative_weighted_tendstoInMeasure`
+gives the actual separable spacetime formula for deterministic C1 h and C4 f:
+sum h(t_i) S_(Df)(Z_i,Z_(i+1)) -> h(T)f(ZT)-h(0)f(Z0)-integral h'(t)f(Zt)dt.
+All these stochastic limits use the ORIGINAL joint probability law.
+
+`IBMSimpsonGraphDual.actual_pairing_tendsto` identifies actual adjoint-test
+pairing limits of explicitly CLIPPED cosine sums. Their strong observable L2
+convergence gives original graph-dual norm convergence; `limit_obstruction`
+and `tracked_graph_escape` rule out a strong joint-field derivative of the sine
+limit and force gradient-norm divergence for any strong-domain tracking sequence.
+See the [private source/PDF draft](manuscripts/INDEX.md) for domains and prescriptions.
+
 **Open physical-time obligations.** The raw IBM path is not the fixed-terminal
-martingale P_rY. Current results do not construct a pathwise bracket, prove
+martingale P_rY. Current results do not construct a semimartingale bracket, prove
 L2 of a samplewise time supremum, or give a full physical-time Ito–Tanaka or
-temporal-gradient Clark–Ocone formula. The derivative-domain exclusion for
+temporal-gradient Clark–Ocone formula. General F(t,z), random coefficients,
+continuous finite-sum interpolation and arbitrary partitions remain unproved.
+The derivative-domain exclusion for
 the actual sine observation remains compatible with stochastic reconstruction.
 
 ## Arithmetic Xi flows
@@ -145,6 +179,9 @@ Quartic real zeros and order continuity do not themselves prove RH.
    in IBM is not control of the samplewise supremum. Locally uniform entire
    functions are not global zero localization. Each stronger topology requires
    its own estimate, not a change in terminology.
+   The newer signed Simpson theorem DOES bound a samplewise maximum over grid
+   prefixes in probability; it does not upgrade the older reconstruction to
+   an L2 samplewise-supremum theorem or to continuous-time finite-sum convergence.
 
 The [commentary](STARDUST_MATHEMATICAL_COMMENTARY.md) gives concrete follow-ups
 and classifies their proof status. They are opportunities, not queue amendments.

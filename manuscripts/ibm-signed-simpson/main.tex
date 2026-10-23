@@ -1,0 +1,294 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Pconv}{\xrightarrow{\mathbf P}}
+\newcommand{\lean}[2]{\par\smallskip\noindent\textit{Lean reference:}\;
+  \texttt{\detokenize{#1}}\par\noindent
+  \hspace*{1em}\texttt{\detokenize{#2}}\par\smallskip}
+\title{Signed Simpson Calculus for\protect\\
+  Reflected-Clock Iterated Brownian Motion}
+\author{Project Stardust\protect\\\small Private working exposition}
+\date{Revision 1 --- October 23, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We summarize verified stochastic constructions for the actual process
+$Z_t=W(|B_t|)$ on the existing independent scenery--clock probability space.
+Its uniform-grid quartic variation converges in probability to $3T$, whereas
+quadratic variation diverges. Separately convergent raw first and second
+Taylor channels already fail for the quadratic polynomial. Signed spatial
+Simpson sums nevertheless converge for every global $C^3$ one-form, with
+uniform control over grid prefixes, canonical bounded random horizons, and
+deterministic $C^1$ time weights. An explicit clipped cosine construction
+converges in observable $L^2$ and in the original intrinsic graph dual, while
+its limit stays outside the strong joint derivative domain. These are
+specified symmetric formulas, not completion of adapted physical-time
+It\^o--Tanaka calculus.
+\end{abstract}
+
+\noindent\textbf{Verification contract.}
+The mathematical baseline is the fully audited private commit
+\begin{quote}\small\texttt{072793e54f7a08ba39afc4919ea987d11e5c69e2}.\end{quote}
+Results below summarize checkpoints 1383--1394. Every cited name has prefix
+\begin{quote}\small\texttt{OperatorDerivativeRewrite.Foundation.}\end{quote}
+The original manuscripts are preserved unchanged. This exposition asserts no
+external novelty, publication readiness, or completion of the IBM campaign.
+
+\section{Process, prescription, and topology}\label{sec:model}
+Let $W$ be the constructed continuous Brownian scenery on nonnegative spatial
+time and $B$ the independent constructed Brownian clock. The process studied
+here is precisely
+\begin{equation}\label{eq:process}
+ Z_t=W(|B_t|),\qquad t\geq0,
+\end{equation}
+under the original product probability law. This fixes the reflected-clock
+convention; no equality with every other convention for iterated Brownian
+motion is asserted. Its paths are continuous for every sample in the chosen
+realization, and evaluation is jointly measurable. We retain $Z_0$ in finite
+identities and targets rather than simplify arbitrary $L^2$ representatives.
+
+Fix $T>0$ and $N=n+1$. Write $t_i=iT/N$, $Z_i=Z_{t_i}$ and
+$\Delta_iZ=Z_{i+1}-Z_i$. Unless stated otherwise, stochastic limits are in
+probability under this same original law, along all $n\to\infty$.
+Samplewise identities are distinguished from probability limits.
+
+\section{Variation and a concrete obstruction}\label{sec:variation}
+\begin{theorem}[Actual uniform-grid variation]\label{thm:variation}
+For each fixed positive $T$,
+\[
+ Q_{4,N}:=\sum_{i<N}(\Delta_iZ)^4\Pconv 3T,
+ \qquad
+ \mathbf P\!\left\{\sum_{i<N}(\Delta_iZ)^2\leq K\right\}\longrightarrow0
+ \quad(K\in\R).
+\]
+The maximum absolute grid increment tends to zero on every sample.
+\end{theorem}
+\lean{IBMUniformQuarticVariation}{quartic_tendstoInMeasure}
+\lean{IBMUniformFifthRemainder}{mesh_tendsto}
+\lean{IBMActualQuadraticDivergence}{quadratic_lower_tail}
+\begin{proof}[Verified mechanisms]
+The quartic theorem uses the actual conditional Gaussian contractions,
+overlap estimates and reflected-clock crossing penalty. It is not inferred
+from its expectation alone. The deterministic inequality
+\[
+ Q_{4,N}\leq\left(\max_{i<N}|\Delta_iZ|\right)^2 Q_{2,N}
+\]
+then forces divergence of $Q_{2,N}$ in probability. The formal proof first
+shows $(1+Q_{2,N})^{-1}\Pconv0$ and controls each lower-tail event by a
+strictly positive reciprocal threshold. No almost-sure full-sequence
+divergence or divergence rate is claimed.
+\end{proof}
+
+For $f(z)=z^2$, the two raw ranks satisfy, on every grid and sample,
+\begin{equation}\label{eq:cancellation}
+ L_N+Q_{2,N}=Z_T^2-Z_0^2,
+ \qquad L_N=\sum_{i<N}2Z_i\Delta_iZ.
+\end{equation}
+Neither $L_N$ nor $Q_{2,N}$ has any finite real-valued random probability
+limit. Thus convergence of a combined channel expression does not license
+separate unrenormalized integrals.
+\lean{IBMActualQuadraticDivergence}{first_identity}
+\lean{IBMActualQuadraticDivergence}{first_no_finite_limit}
+
+\section{Combined Taylor formula and signed Simpson sums}\label{sec:simpson}
+\begin{theorem}[Combined lower Taylor channels]\label{thm:taylor}
+For every global $C^4$ real function $f$,
+\begin{align*}
+ \sum_{i<N}\left[f'(Z_i)\Delta_iZ
+    +\frac12 f''(Z_i)(\Delta_iZ)^2
+    +\frac16 f'''(Z_i)(\Delta_iZ)^3\right]
+ \Pconv{}& f(Z_T)-f(Z_0)\\
+ &-\frac18\int_0^T f^{(4)}(Z_t)\,dt.
+\end{align*}
+No fifth derivative or globally bounded derivative is assumed.
+\end{theorem}
+\lean{IBMActualTaylorChain}{channels_tendstoInMeasure}
+The coefficient $1/8$ is $3/24$: the actual continuously weighted quartic
+limit supplies $3\int f^{(4)}(Z_t)dt$, while the fourth Taylor coefficient is
+$1/24$. Compact Peano control proves decay of the total absolute Taylor
+error on the entire $C^4$ domain. The channels in Theorem~\ref{thm:taylor}
+remain together.
+
+Define a signed increment using only its integrand and spatial endpoints:
+\begin{equation}\label{eq:simpson}
+ S_g(x,y)=\frac{y-x}{6}
+   \left[g(x)+4g\!\left(\frac{x+y}{2}\right)+g(y)\right].
+\end{equation}
+The middle argument is a \emph{spatial} midpoint, not $Z$ at a middle physical
+time. The sign of $y-x$ is retained.
+\begin{theorem}[Actual symmetric spatial integration]\label{thm:simpson}
+For every global $C^3$ real function $g$,
+\begin{equation}\label{eq:spatial-limit}
+ \sum_{i<N}S_g(Z_i,Z_{i+1})\Pconv J_g(T),
+ \qquad J_g(t)=\int_{Z_0}^{Z_t}g(z)\,dz.
+\end{equation}
+Each target is a genuine finite oriented Lebesgue integral. For continuous
+$g$, $J_g$ is already a jointly measurable process with continuous paths and
+a measurable realization in continuous-path space.
+\end{theorem}
+\lean{IBMActualSimpson}{sums_tendstoInMeasure}
+\lean{IBMUniformSimpsonProcess}{integralPath_measurable}
+\begin{proof}[Verified mechanism]
+For $f\in C^4$, the Simpson error relative to $f(y)-f(x)$ is uniformly
+$o(|y-x|^4)$ on compact spatial intervals. This follows from compact Peano
+control for $f$ and for the third-order Taylor remainder of $f'$.
+Every sample has a compact range and vanishing grid mesh. Total error is
+therefore eventually bounded by $\varepsilon Q_{4,N}$ for each
+$\varepsilon>0$. Quartic tightness and the subsequence criterion give
+probability convergence. For general $g\in C^3$, the independently defined
+ordinary primitive $f(x)=\int_0^xg$ is $C^4$ by FTC and has derivative $g$.
+\end{proof}
+
+This is convergence of an actual approximation, not an endpoint definition
+of the finite sums. For example,
+\[
+ S_{5z^4}(x,y)-(y^5-x^5)=\frac{(y-x)^5}{24},
+\]
+which is generally nonzero. In contrast, $S_{4z^3}(x,y)=y^4-x^4$ exactly.
+For $f(z)=z^4$, Theorem~\ref{thm:taylor} has correction $3T$, whereas the
+Simpson rule for $f'$ telescopes exactly. These are distinct prescriptions,
+consistent with the cancellation in~\eqref{eq:cancellation}.
+
+\section{Uniform prefixes and bounded random horizons}\label{sec:horizons}
+Let $P_{g,N}(m)=\sum_{i<m}S_g(Z_i,Z_{i+1})$ on the same $N$-cell grid.
+\begin{theorem}[Uniform grid-prefix realization]\label{thm:prefix}
+For every global $C^3$ one-form,
+\[
+ \max_{0\leq m\leq N}
+   |P_{g,N}(m)-J_g(mT/N)|\Pconv0.
+\]
+\end{theorem}
+\lean{IBMUniformSimpsonProcess}{maximum_tendstoInMeasure}
+One compact modulus controls every prefix; its quartic prefix mass is at
+most the full nonnegative quartic mass. No union bound growing with $N$ is
+used. This is uniformity at \emph{grid prefixes}. No continuous interpolation
+of the finite sums, or uniform real-time approximation theorem, is supplied.
+
+\begin{theorem}[Canonical bounded random endpoint]\label{thm:random}
+Let $\tau$ be any measurable nonnegative time with the pointwise bound
+$\tau\leq T$. Put
+\[
+ k_N(\tau)=\left\lfloor\frac{N\tau}{T}\right\rfloor,
+ \qquad \tau_N=\frac{T}{N}k_N(\tau).
+\]
+Then $k_N(\tau)\leq N$, $0\leq\tau-\tau_N<T/N$, and
+$P_{g,N}(k_N(\tau))\Pconv J_g(\tau)$ for every global $C^3$ one-form.
+The approximants and target are measurable.
+\end{theorem}
+\lean{IBMSimpsonRandomHorizon}{stopped_sums_tendstoInMeasure}
+Uniform prefix control and every-sample continuity of $J_g$ prove the result.
+The time need not be a stopping time; an example chooses $T$ or $T/2$
+according to the sign of $Z_T$. This is not optional sampling of a martingale.
+
+\section{Deterministic time weights and spacetime chains}\label{sec:time}
+\begin{theorem}[Actual time-weighted formula]\label{thm:weighted}
+For global $h\in C^1(\R)$ and $g\in C^3(\R)$,
+\[
+ \sum_{i<N}h(t_i)S_g(Z_i,Z_{i+1})
+ \Pconv h(T)J_g(T)-\int_0^T h'(t)J_g(t)\,dt.
+\]
+The time correction is finite on every sample and measurable. No global
+growth bound or expectation moment is assumed.
+\end{theorem}
+\lean{IBMTimeWeightedSimpson}{weighted_tendstoInMeasure}
+\begin{proof}[Verified mechanism]
+Finite Abel summation bounds the error in replacing Simpson increments by
+actual increments of $J_g$ by $M_N(B+KT)$, where $M_N$ is the prefix maximum
+from Theorem~\ref{thm:prefix}, $|h|\leq B$ on $[0,T]$, and $h$ has compact
+Lipschitz bound $K$. These constants follow from $C^1$ regularity, not global
+assumptions. Finite product telescoping identifies the remaining path sum.
+FTC and uniform continuity of each continuous sample path give
+$\sum J_g(t_{i+1})\Delta_i h\to\int h'J_g$ samplewise. The time integral is
+proved directly through cell integrals, rather than assumed as a formal
+Riemann--Stieltjes limit.
+\end{proof}
+
+In particular, for $f\in C^4$,
+\begin{align*}
+ \sum_{i<N}h(t_i)S_{f'}(Z_i,Z_{i+1})
+ \Pconv{}& h(T)f(Z_T)-h(0)f(Z_0)\\
+ &-\int_0^T h'(t)f(Z_t)\,dt.
+\end{align*}
+\lean{IBMTimeWeightedSimpson}{derivative_weighted_tendstoInMeasure}
+This is a separable spacetime chain rule. Examples $tZ_t$, $tZ_t^2$, and
+$t^2\sin(Z_t)$ are independently tested in Lean. General two-variable
+$F(t,z)$ and random time coefficients remain separate obligations.
+
+\section{A precise graph-dual connection and strong-domain limit}\label{sec:dual}
+Let $D$ be the existing closed, densely defined intrinsic joint derivative
+on the original observable $L^2$, and let $\delta=D^*$ denote its original
+Hilbert adjoint. Its full adjoint-domain graph tests support the pre-existing
+bounded graph-dual map $\mathfrak D$. Write $\operatorname{emb}$ for the
+existing embedding of strong two-channel fields into that test dual.
+
+Take the actual cosine Simpson sum $A_N=\sum S_{\cos}(Z_i,Z_{i+1})$ and define
+\[
+ C_N=\max(-1,\min(1,A_N)).
+\]
+Clipping is an explicit modification: already $S_{\cos}(0,2\pi)=-2\pi/3$.
+It is $1$-Lipschitz and fixes the sine target, so it preserves convergence in
+probability. The bounded actual functions $C_N$ are IBM observables.
+\begin{theorem}[Bounded realization in the original graph dual]\label{thm:dual}
+For every $T>0$, $C_N\to\sin(Z_T)$ strongly in observable $L^2$ and
+\[
+ \mathfrak D C_N\longrightarrow \mathfrak D\sin(Z_T)
+ \quad\hbox{in the original graph-dual norm}.
+\]
+For every $v\in\operatorname{Dom}(\delta)$, the actual integrable pairings obey
+\[
+ \mathbf E[C_N\,\delta v]
+   \longrightarrow (\mathfrak D\sin(Z_T))(\operatorname{testOf}v).
+\]
+\end{theorem}
+\lean{IBMSimpsonGraphDual}{valueClass_tendsto}
+\lean{IBMSimpsonGraphDual}{actual_pairing_tendsto}
+Bounded dominated convergence on a.e. subsubsequences supplies strong $L^2$
+convergence; continuity of the original graph-dual map and its evaluations
+then supplies the stated derivative and pairing limits. No $L^2$ convergence
+of the \emph{unclipped} sums is asserted.
+
+The previously verified sine observation is nevertheless outside
+$\operatorname{Dom}(D)$ for every positive $T$; its graph-dual derivative is
+nonzero and is not $\operatorname{emb}(V)$ for any strong joint field $V$.
+Any strong-domain sequence tracking $C_N$ in $L^2$ has embedded gradients
+converging in the graph dual, but its strong gradient norms tend to infinity.
+The tracking premise is explicit; the finite $C_N$ themselves are not asserted
+to lie in the strong domain.
+\lean{IBMSimpsonGraphDual}{limit_obstruction}
+\lean{IBMSimpsonGraphDual}{tracked_graph_escape}
+
+\section{What is established and what remains}\label{sec:scope}
+The results construct specified signed quadratures, genuine process-valued
+targets, grid-prefix and bounded random-horizon convergence, a deterministic
+time-weighted chain formula, and an exact bounded graph-dual realization.
+They do not identify the spatial one-form with a Skorohod integrand or the
+Simpson integral with a causal divergence.
+
+Existing predictable integration on the IBM observation filtration uses a
+separately constructed terminal-observable martingale. Sharing a filtration
+does not identify that integrator with physical $Z$. The earlier change-of-
+integrator draft concerns that verified martingale calculus, and remains
+valid on its own original domains.
+
+Open repository obligations include general $F(t,z)$, controlled random
+time-dependent coefficients, continuous finite-sum interpolation and its
+real-time uniform topology, arbitrary partitions, required causal or adjoint
+identifications, and nonsmooth physical-time It\^o--Tanaka formulas. Strong
+domain exclusions cannot be repaired by silently assuming membership.
+The verified stopping contract for the full IBM campaign has not been met.
+
+All statements refer to pinned Lean 4.34.1 and the existing Mathlib revision.
+The baseline complete transitive audit checks all safe Foundation declarations
+and admits only \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}. This source/PDF pair is a private working synthesis of
+those results, not an original manuscript from the research archive.
+\end{document}
