@@ -34497,3 +34497,93 @@ manuscripts, private LaTeX/PDF drafts/index, campaign queue, reflection accounts
 curated exposition and Lean/Lake configuration remain unchanged.
 
 Checkpoint1402 gates: complete root6461jobs/24.919402s/0; complete safe transitive43630declarations/36.634201s/0; all29public types (172unabridged lines), all three complete new sources and ten downstream Lean checks/26.799353s/0 reviewed. All2289source/3config hashes frozen; all pre-existing sources unchanged except root imports/AxiomAudit;113immutable archive paths/hashes checked. Only standard3axioms; no resource/toolchain/trust changes. Queue/reflection, curated exposition and original/private manuscript artifacts unchanged. Explicit six-path Git checkpoint, exact receipt and verified PRIVATE main/research closure follow in .lake/stardust-1402-verification.json.
+
+## Checkpoint1403 — genuine nonlinear averaged clock graphs and actual IBM sine-average domain
+
+October23,2026. IBM remains ACTIVE; no campaign transition, parallel session,
+reflection session or manuscript ingestion. Baseline11cfdd8b. The previous
+goal-turn eligibility check correctly declined a second reflection on the same
+local date. This checkpoint resumes the existing ordinary mathematical proof.
+
+The central1402 candidate-to-operator-graph obligation is now DISCHARGED.
+`Foundation/IBMClockVectorTranspose.lean` restores the SOURCE/CLOCK order of
+coefficient-valued fields using the OLD onto `ProductL2Curry.curryEquiv` and
+the OLD measure-preserving swap. `realize_ae_of_sections` and
+`clockField_sections` prove actual representative identities with explicit
+joint measurability. The fact that the two nested L2 types coincide is never
+used to identify their different parameter roles. Norm and Bochner-integral
+compatibility follow from the actual linear isometry. There is no new process,
+measure, probabilistic independence or assumed Hilbert representation.
+
+`Foundation/IBMNonlinearClockGraph.lean` identifies both the scalar mollified
+value and OLD linear clock-gradient representatives with the constructed
+continuous clock and scenery modifications. `input_ae`, `signed_input_ae`,
+`clockGradient_actual_ae` and `candidate_actual_ae` keep the actual sign(Bt),
+physical mollifier derivative and Cameron-Martin direction. The joint actual
+nonlinear field is exactly
+sign(Bt)*cos(W_n(|Bt|))*W'_n(|Bt|)*direction(t).
+The NEW `chainField_eq` proves equality of this transposed candidate and the
+OLD bounded Gaussian chain-rule output, not merely equality of their norms.
+`sine_clock_graph` therefore proves a genuine ORIGINAL closed partial clock
+graph pair for every mollifier and every positive time. No intrinsic IBM
+observable membership is assumed for the mollified inputs.
+
+`Foundation/IBMNonlinearClockAverageGraph.lean` proves continuity, genuine
+L2 norm bound1 and time integrability of the mollified sine values. The
+transported nonlinear derivative fields are genuinely Bochner integrable.
+`integral_clock_graph` reuses the OLD closed-graph quotient/Fubini argument;
+`average_clock_graph` integrates ACTUAL original partial clock graphs on
+the OLD window volume restricted to(0,T], including T=0. Its graph output
+is precisely the transposed1402 averaged field. Consequently
+`averageGradient_uniform_energy` bounds an ACTUAL derivative:
+||G_n(T)||^2 <= 8*peak(1)*T^2*sqrt(T)+4*T^3, every n and T>=0.
+`averageGradient_norm_bound` supplies a single finite n-independent bound.
+No strong convergence of these derivative outputs is asserted.
+
+`Foundation/IBMSineAverageClockDomain.lean` completes the value-limit and
+closed-domain passage. `average_error` proves the explicit strong L2 error
+<=T*sqrt((bump n).rOut). It uses the OLD uniform actual scenery smoothing
+estimate, sine's Lipschitz constant1 and actual Bochner integration.
+`average_tendsto` discharges strong value convergence. Actual joint
+measurability and OLD `BochnerL2RepresentativeFubini.integral_coeFn_ae` identify
+the limit representative with int_0^T sin(ibmValue(t))dt. Importantly,
+`limitAverage_eq_actual` proves it is the SAME intrinsic observable
+`IBMSineAverageSimpson.average T` already constructed as the strong L2 limit
+of ACTUAL UNCLIPPED ramp-weighted cosine Simpson stochastic sums at1400.
+It is not sin of the linear IBM time average, an abstract replacement, or a
+formal expectation-level formula.
+
+The main result `actual_average_clock_domain`, and its native-coordinate
+form `actual_average_in_clockDomain`, establish ORIGINAL partial clock-domain
+membership for this ACTUAL observable at EVERY nonnegative horizon. The proof
+directly reuses `ClosedOperatorEscapeEnergy.mem_domain_of_frequently_bounded_graph`
+with all graph, strong value-limit and uniform energy premises now proved.
+This closed-adjoint/bidual criterion needs bounded graph outputs; it does NOT
+silently assume their strong convergence or insert a weak compactness premise.
+
+Mathematical lesson: a positive-time point observable sin(Zt) remains outside
+the old clock domain, while its TIME AVERAGE is now inside. The verified
+two-time source covariance and reflected-clock overlap allow this smoothing
+effect even though fixed-time derivative norms need not stay bounded under
+removing mollification. The prior point obstruction is preserved, not
+reinterpreted as an obstruction to all actual IBM observables. No novelty or
+external open-problem resolution is claimed.
+
+Next exact obligations: integrate/reuse the OLD
+`IBMActualSineDomainObstruction.sinePoint_source_graph`, with genuine source
+gradient measurability/integrability, and identify its integral with this SAME
+actual average. Then combine both partial domains and existing intrinsic
+observable membership using `IBMFiniteAverageCore.mem_intrinsicCore_iff` and
+`IBMJointIntrinsicDerivative.joint_domain_iff`. Source-averaged graph and full
+joint intrinsic membership are NOT yet claimed here. Strong convergence of
+the clock-gradient approximants, explicit identification of the limiting
+strong clock field, broader nonlinear families, causal/Skorohod integration,
+adjoints and full IBM Clark--Ocone remain separate open obligations. IBM is
+not complete. The later Bakry/fBM and other queue gates remain unchanged.
+
+Verification and PRIVATE exact-commit closure evidence is retained under
+`.lake/stardust-1403-*`; the complete gate summary is appended after tests.
+Original ResearchSources bytes, private manuscripts/PDFs/index, reflection
+accounts, queue, curated exposition and Lean/Lake configuration are preserved.
+
+Checkpoint1403 gates: complete root6465jobs/23.940457s/0; complete safe transitive43725declarations/36.202048s/0; all45public types (249unabridged lines), all FOUR complete new proof/definition sources and eleven independent Lean checks/34.546237s/0 reviewed. All2293sources/3configs frozen and rechecked; pre-existing sources unchanged except root imports/AxiomAudit; all113immutable archive paths/hashes unchanged. Default200000 proof heartbeats retained; no resource/trust/version or verification changes. Seven explicit Git paths only; exact receipt and PRIVATE main/research closure follow in .lake/stardust-1403-verification.json.

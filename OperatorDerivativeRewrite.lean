@@ -2187,3 +2187,7 @@ import Foundation.IBMNonlinearSceneryCovariance
 import Foundation.IBMNonlinearClockColumn
 import Foundation.IBMNonlinearClockField
 import Foundation.IBMNonlinearClockEnergy
+import Foundation.IBMClockVectorTranspose
+import Foundation.IBMNonlinearClockGraph
+import Foundation.IBMNonlinearClockAverageGraph
+import Foundation.IBMSineAverageClockDomain
