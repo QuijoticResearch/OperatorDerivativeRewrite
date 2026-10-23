@@ -36018,3 +36018,80 @@ No manuscript, campaign queue, reflection/PDF artifact or unrelated mathematical
 source changed. Oct23 reflection remains already consumed1395.
 
 Checkpoint1425 gates: root6504jobs/41.49111979996087s/0; safe transitive44444declarations/37.92027329996927s/0; ALL10public types (107 unabridged audit/type lines) and entire final source/proofs reviewed. Nine independent Lean checks/30.518477600009646s/0. All2332Foundation/root sources+3configs frozen/rechecked;113archive paths/hashes unchanged. FOUR explicit Git paths; exact receipt and PRIVATE main/research closure recorded in .lake/stardust-1425-verification.json.
+
+## Checkpoint1426 — actual intrinsic IBM calculus for arbitrary L2 time weights
+
+Four modules extend the actual nonlinear observable beyond smooth or constant
+time weights. For every finite T>=0 and deterministic real g in L2((0,T]),
+`IBMTimeWeightedSineValue.actual g T` is constructed INSIDE the original closed
+IBM observable space as the Bochner integral of g(t) sin(Z_t). The literal
+sample-path integral is integrable for EVERY original continuous IBM sample;
+`actual_actual_ae` identifies its actual joint-law representative. These are
+not assumed observability or measurability hypotheses. Signed, discontinuous,
+and unbounded time weights are admitted; equality almost everywhere in time
+preserves both observable and actual intrinsic derivative.
+
+`IBMClockTimeWeightEnergy` proves a genuine original full-vector clock energy
+estimate for the native mollified fields, uniformly in smoothing width n:
+
+    ||int_0^T g(t) field_n(t) dt||^2
+      <= (8*peak(1)*T*sqrt(T)+4*T^2) int_0^T g(t)^2 dt.
+
+The proof uses the EXISTING actual covariance, its off-diagonal folded-kernel
+bound, and the actual row mass. The finite-width covariance is positive on
+the diagonal and is NEVER replaced by zero there. Product Lebesgue nullity
+discharges the off-diagonal estimate almost everywhere. Integrability first
+uses the bounded finite-width covariance; uniform energy then follows from
+symmetrization 2|g(s)g(t)|<=g(s)^2+g(t)^2 and min(s,t)<=T, retaining the +4
+correction. No positivity of g, uniform-in-time bound, or width-dependent
+assumption is hidden in the conclusion.
+
+`IBMTimeWeightedSineClock.mollified_clock_graph` integrates the existing true
+point-mollified clock graph with the arbitrary L2 weight. Actual mollified
+values converge strongly in JointL2: error <= ||g||_L1 sqrt(bump_n.rOut).
+Uniform clock energy and the existing closed-operator bounded-graph theorem
+then prove ORIGINAL clock-domain membership for the actual weighted observable.
+No strong native-gradient limit is supplied as a premise or inferred merely
+from boundedness. Separately, `IBMTimeWeightedSineCalculus.actual_source_graph`
+integrates the existing actual source derivative using its proved finite-time
+bound and continuity. `actual_joint_domain` assembles observability, actual
+clock membership and source membership in the ORIGINAL joint derivative.
+
+`gradient` is precisely that original closed operator applied to `domainValue`.
+`source_formula` identifies channel0 with the genuine weighted actual source
+integral. `clock_graph` places channel1 in the original actual clock graph.
+`gradient_represents` identifies the old graph-dual weak derivative, and
+`actual_integration_by_parts` proves the literal stochastic identity
+
+    <gradient(g,T),v> = E[(int_0^T g(t)sin(Z_t)dt) * jointDivergence(v)]
+
+for EVERY v in the original divergence domain, with product integrability
+explicitly verified. `native_clock_pairing_tendsto` proves convergence against
+every fixed original full field vector to the actual clock derivative. For
+general rough weights this checkpoint asserts ONLY this weak-pairing topology.
+The previously proved strong native joint convergence for unit weight1425
+remains valid; it is not weakened or extrapolated without proof.
+
+Independent Lean tests use the genuinely singular weight g(t)=t^(-1/4) on
+(0,1]. Its squared mass is proved exactly2 from the existing half-kernel
+integral, yielding the concrete native energy bound16*peak(1)+8. Tests verify
+actual joint membership, all-sample path integrability, actual law realization,
+the exact source channel, literal adjoint IBP and the precise weak clock limit.
+Changing the value at the excluded endpoint to37 leaves both observable and
+gradient unchanged. The negative singular weight is admissible. Finally, unit
+weight is identified with the EXISTING sine average and its SAME intrinsic
+gradient, rather than constructing an incompatible derivative. Ten substantive
+examples plus five helper propositions are checked independently.
+
+The campaign remains ACTUAL IBM, with full Ito/Clark--Ocone calculus, broader
+domains and required closure/convergence still open. General rough-weight
+strong native clock convergence and a common intrinsic finite-stage graph
+input for the native channel pair are not claimed. Queue1422 remains intact;
+no Bakry/fBM, iterated pseudoprocess, RH or other campaign starts here.
+No manuscript bytes, reflection/PDF artifacts, trust settings, toolchain,
+heartbeat limit, theorem semantics or checks were weakened. New proofs use
+the default200000heartbeat bound; local irreducibility controls large existing
+definitions. Earlier failed elaboration logs are retained. Oct23 reflection
+was already consumed1395; ordinary proof reporting is not a second session.
+
+Checkpoint1426 gates: root6508jobs/46.32359099999303s/0; COMPLETE safe transitive44535declarations/39.671457800024655s/0; ALL40public types (267 unabridged audit/type lines) and all four final sources/proofs reviewed. Ten independent Lean examples plus five helper proofs/32.18643729999894s/0. All2336Foundation/root sources+3configs frozen/rechecked;113archive paths/hashes unchanged. SEVEN explicit Git paths; exact receipt and PRIVATE main/research closure recorded in .lake/stardust-1426-verification.json.

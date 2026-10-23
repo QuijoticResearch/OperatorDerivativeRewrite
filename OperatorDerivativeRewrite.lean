@@ -2230,3 +2230,7 @@ import Foundation.IBMNonlinearClockLocalStrong
 import Foundation.IBMNonlinearClockStrongLimit
 import Foundation.IBMSineAverageStrongClock
 import Foundation.IBMSineAverageStrongJoint
+import Foundation.IBMClockTimeWeightEnergy
+import Foundation.IBMTimeWeightedSineValue
+import Foundation.IBMTimeWeightedSineClock
+import Foundation.IBMTimeWeightedSineCalculus
