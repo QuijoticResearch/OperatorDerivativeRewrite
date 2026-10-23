@@ -2128,3 +2128,5 @@ import Foundation.IBMPredictableTimeCutoff
 import Foundation.IBMCompletedTimeCutoff
 import Foundation.IBMJointPredictableMultiplier
 import Foundation.IBMCompletedPredictableMultiplier
+import Foundation.IBMPredictableRectanglePullout
+import Foundation.IBMCompletedStochasticAssociativity

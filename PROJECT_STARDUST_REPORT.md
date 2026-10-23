@@ -32139,3 +32139,62 @@ All2228 old sources unchanged except two root imports,3configs and113 immutable
 archive paths/hashes unchanged. No manuscript edit, source deletion, new trust,
 resource override, false AE-domain extension or ordinary-Ito-associativity claim.
 Exact private gate pending audited commit/receipt and PRIVATE main/research refs.
+
+
+## Checkpoint1372 — actual random rectangle pull-out and full original L2 stochastic range stability
+
+# Current IBM mathematics — checkpoint1372: actual rectangle pull-out and full L2 nested integration
+
+IBM ACTIVE. EVERY ORIGINAL random predictable H in L2(mu_F) now satisfies actual
+future-event pull-out I_F[1_(s,infty)xA H]=1_A(I_FH-P_sI_FH), and for s<=t,
+I_F[1_(s,t]xA H]=1_A(P_t-P_s)I_FH. A belongs to ORIGINAL raw natural past at s.
+Actual sample AE identity and equality to OLD stochastic stepClass proved,
+including empty/boundary cells. Existing bounded sample multiplier reused.
+
+For EVERY family F and completed z, Y=J_Fz,1371 rectangle multiplier has actual
+output 1_A(P_t-P_s)Y. Finite sums of these ORIGINAL rectangle operators give
+finiteInput(z,l), with J finiteInput=OLD integralLinear(Y,l) and EXACT norm equal
+to OLD dictionary(Y,l). Original dictionary density therefore constructs a
+UNIQUE isometric nestedIntegral(z): ENTIRE ORIGINAL random predictable L2(mu_Y)
+->Completed(F). For EVERY original H in that full domain, J nestedIntegral(z,H)
+=OLD I_YH. Finite approximations converge in ORIGINAL Y-energy L2, completed
+input norm AND actual source L2. Thus the actual range of EVERY completed family
+is stable under ALL original stochastic integrals of its output channels.
+No new process/measure/integral or conditional density premise substituted.
+
+This full nested domain includes genuine unbounded L2(mu_Y) inputs. It does NOT
+assert literal unbounded H*H_i integrability in each original mu_Fi. Nor is ALL
+bounded raw-predictable M_g identified with nestedIntegral(z,class(g)) yet:
+rectangle generators/finite linear combinations are proved; bounded/measure
+convergence or monotone-class identification remains OPEN. Uniform approximation
+alone does not give arbitrary measurable finite-rectangle approximation.
+Physical-time Ito/Tanaka for uncorrected IBM, temporal-gradient Malliavin CO,
+path brackets/regularity and full IBM remain OPEN. Actual IBM is still not a
+martingale in ANY filtration. Actual nonzero IBM1 nested recovery independently
+verified alongside that obstruction. Next close the general bounded-action /
+original L2 stochastic-integral identification, then pursue substantive formulas.
+See IBM_RANDOM_RECTANGLE_NESTED_INTEGRATION_AUDIT.md and exact verification JSON.
+Queue IBM->Bakry/fBM->Cauchy->A(2)/RH attempt->fractional diffusion->blackito
+->backlog unchanged. Pseudo frozen1293; no expiry; all full/private gates retained.
+
+Fresh full root 6402jobs/38.462s/0.
+COMPLETE transitive safe Foundation audit 42611decl/35.890s/0,
+standard three axioms only. ALL38 unabridged new public types,12 printed old/new
+definitions, ALL510 audit lines and403 final source/proof
+lines actually read. Eight independent tests final0/26.066s,
+emptylog. First attempt1/28.047s hit DEFAULT200000 heartbeat
+isDefEq ONLY on the composed nonzero-IBM recovery rewrite. Explicit typed equality
+calculation repairs that SAME nonzero test, no raised limits/changed claim.
+Exact failed code/log/time retained. Tests: original rectangle integral equals
+OLD actual stochastic step; empty s=t gives0; arbitrary-completed actual sample
+AE formula AND uncorrected IBM nonmartingale; exact OLD coefficientLp stochastic
+integral comparison; ALL original L2 nested norm and UNIQUE actual preimage;
+ACTUAL nonzero IBM1 has nonzero nested preimage; original dense approximations
+exist and converge in BOTH spaces; actual causal truncation after nested integral.
+Six scratch logs retained, no developmental resource timeout/override. Namespace,
+coefficient/AE/sample wrappers and finite evaluation beta reduction repaired.
+Full-build style warnings retained, none suppressed. All2230 old sources unchanged
+except two root imports,3configs and113 immutable archive paths/hashes unchanged.
+No manuscript edit, source deletion, new trust, false all-bounded-Mg identification,
+false literal unbounded product domain or full physical-time calculus claim.
+Exact private gate pending audited commit/receipt and PRIVATE main/research refs.
