@@ -2215,3 +2215,5 @@ import Foundation.IBMSineSpatialDistribution
 import Foundation.IBMCanonicalMollifiedScenery
 import Foundation.IBMNonlinearSpatialEnergy
 import Foundation.IBMNonlinearSpatialOperator
+import Foundation.IBMSineSpatialBoundary
+import Foundation.IBMNonlinearSpatialLimit
