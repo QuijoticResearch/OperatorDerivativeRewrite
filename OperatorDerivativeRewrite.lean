@@ -2200,3 +2200,4 @@ import Foundation.IBMSineSourceIntegral
 import Foundation.IBMSineSourceContinuity
 import Foundation.IBMSineSourceStrongQuadrature
 import Foundation.IBMSineSourcePathIntegral
+import Foundation.IBMClockPhysicalOccupation

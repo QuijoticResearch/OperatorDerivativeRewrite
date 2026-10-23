@@ -34970,3 +34970,94 @@ curated exposition, private manuscripts/PDFs and Lean/Lake settings remain
 unchanged. No novelty claim is made.
 
 Checkpoint1407 gates: complete root6474jobs/26.652884s/0; complete safe transitive43893declarations/38.446863s/0; all29public types (121unabridged lines), all THREE complete new proof/definition sources and ten independent mathematical Lean checks/36.175154s/0 reviewed. All2302sources/3configs frozen/rechecked; pre-existing sources unchanged except root imports/AxiomAudit;113immutable archive paths/hashes unchanged. Default200000 proof heartbeats, trust and toolchain retained. Six explicit Git paths; exact receipt and verified PRIVATE main/research closure follow in .lake/stardust-1407-verification.json.
+
+
+## Checkpoint1408 — actual spatial kernels for directional linear IBM clock derivatives
+
+IBM remains ACTIVE. The previous turn was an eligibility check: it verified
+that October23 reflection was already used and did not admit a second session.
+This research checkpoint resumes the existing clock-realization obligation;
+it does not reopen pseudoprocess work or change the queue.
+
+The reuse audit read `IBM_F1_F3_VERIFIED_CHECKPOINT.md`,
+`IBM_OBSERVABLE_CLOCK_KERNEL_AUDIT.md`, `IBM_CROSS_GRID_DIFFERENCE_AUDIT.md`
+and the actual `IBMClockAverageGraph`, `IBMClockAverageCandidate`,
+`IBMClockOverlapEnergy`, `IBMFoldedTransitionBound`, `IBMPhysicalNoiseClock`,
+`IBMPhysicalNoiseCalculus`, `IBMFirstSourceClockGraph` and
+`BochnerLinearIsometry` declarations. The earlier F1/F2 correction closures
+and signed-clock observable-projection obstruction have different domains
+from the present linear-average derivative. Neither is replaced or weakened.
+No new manuscript is ingested; the113 archived paths/hashes are preserved.
+
+`Foundation/IBMClockPhysicalOccupation.lean` constructs, for EVERY clock
+Cameron--Martin coefficient direction h and finite nonnegative horizon T,
+a genuine K[h,T] in L2(clock; L2(real spatial volume)). Its source white-noise
+image is EXACTLY the directional contraction of the ORIGINAL closed clock
+derivative of the actual linear IBM average integral_0^T Z_t dt.
+`gradient_graph` uses the old source-average graph/domain, whose native
+sample-path integral realization is already proved by
+`IBMClockAverageGraph.nativeAverage_path_integral_ae`. No new process or
+substitute derivative is introduced. `directional` contracts the actual
+coefficient-valued field and restores clock-outside/source-inside order by
+the verified scalar probability-factor flip; this ordering matters.
+
+The spatial map is the OLD isometric `IBMPhysicalNoiseRealization.physicalNoise`.
+`noiseLift` reuses `BochnerLinearIsometry.lift`; `recover` lifts the OLD actual
+physical kernel pullback. `recover_noiseLift` is an exact left inverse for
+arbitrary clock-random L2 spatial kernels. At each finite mollifier width,
+`sourceColumn_physical` identifies the first physical derivative convolution
+with the true Gaussian source column. `signedSource_physical` and
+`averageGradient_physical` prove the required physical-noise range identity.
+
+`gradient_pairing_tendsto` derives genuine weak L2 convergence from actual
+closed graphs, strong scalar-value convergence and the OLD unconditional
+uniform clock-energy bound. The private fixed-map lemma passes the finite
+range identity to this weak limit by Hilbert adjoints and uniqueness of
+scalar limits. It NEVER promotes boundedness/weak convergence to strong
+convergence. `gradient_physical` gives the actual limiting range identity;
+`kernel_realization`, `kernel_unique`, `kernel_norm` and
+`kernel_realization_ae` give existence, full random-L2 uniqueness, exact
+energy equality and a source-L2 noise realization for almost every clock
+sample. White noise is evaluated on an L2 spatial vector, never at a point.
+
+For EVERY width n, `recovered_signedSource_ae` identifies the physical
+random time slice as
+
+    sign(B_t) * rho_n(abs(B_t) - spatial_coordinate).
+
+`kernelApprox_integrable` and `kernelApprox_integral` prove the exact genuine
+Bochner L2(clock;L2(space)) weighted occupation approximation
+
+    K_n[h,T] = integral_0^T <h, clockDirection(t)>
+                         * recover(signedSource(n,t)) dt.
+
+The actual finite-width noise realization and norm identity are also proved.
+`kernel_pairing_tendsto` proves convergence to K[h,T] against EVERY random
+L2(clock;L2(space)) test, and `kernel_test_pairing` identifies each limit
+pairing with the actual directional derivative tested by the same physical
+noise. This is a precise weak topology, with no caller-supplied covariance
+limit, local-time density, or derivative-domain assumption.
+
+Remaining obligations are explicit. Identifying K[h,T] with the unsmoothed
+signed weighted occupation measure requires a verified spatial
+approximate-identity/test-function argument. Strong convergence of K_n is
+NOT proved, nor is convergence of their norms. A full coefficient-valued
+occupation density (simultaneously in all h), its finer regularity, and a
+nonlinear spatial stochastic formula for the sine-average clock derivative
+remain OPEN. In particular no product cos(W_r)*white_noise(r), source-adapted
+spatial integral, half-drift correction or nonlinear occupation pairing is
+postulated. The construction is for the LINEAR IBM average; checkpoint1407's
+source sine-average result and1405's weak nonlinear clock limit are retained.
+All original point-observation nondomain and observable clock-parity
+counterexamples remain valid. Full IBM stochastic calculus is not complete.
+
+The next productive step is to identify spatial-test pairings of these actual
+mollified kernels with the true signed occupation functional, then investigate
+strong convergence or the exact regularity needed for a nonlinear spatial
+chain formula. This reuses a constructed physical random kernel rather than
+assuming a local-time density from the manuscript. No external novelty claim
+is made. Verification evidence is under `.lake/stardust-1408-*`; archive,
+queue, reflection accounting, curated manuscripts and build settings stay
+unchanged.
+
+Checkpoint1408 gates: complete root6475jobs/46.370859s/0; complete safe transitive43965declarations/47.828471s/0; all31public types and the complete new proof/definition source reviewed unabridged. Eight independent mathematical Lean checks passed (actual terminal timing in .lake/stardust-1408-independent-time.json); initial scratch-test errors and logs preserved. All2303sources/3configs frozen/rechecked; pre-existing sources unchanged except root imports/AxiomAudit;113immutable archive paths/hashes unchanged. Default200000 proof heartbeats, trust and toolchain retained. FOUR explicit Git paths; exact receipt and verified PRIVATE main/research closure follow in .lake/stardust-1408-verification.json.
