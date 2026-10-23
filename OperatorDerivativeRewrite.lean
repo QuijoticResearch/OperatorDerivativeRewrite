@@ -2122,3 +2122,5 @@ import Foundation.IBMFiniteSignedCovarianceIntegral
 import Foundation.IBMCovarianceCauchySchwarz
 import Foundation.IBMCompletedSignedCovarianceIntegral
 import Foundation.IBMMultichannelCompletion
+import Foundation.IBMCompletedCoordinates
+import Foundation.IBMCompletedNativeCalculus

@@ -31969,3 +31969,55 @@ All2223 old sources unchanged except one root import,3configs and113 exact immut
 archive paths/hashes unchanged. No manuscript edit, source deletion, new trust,
 resource override, suppressed checks, false coordinate/causal/full-calculus claim.
 Exact private gate pending audited commit/receipt and PRIVATE main/research refs.
+
+
+## Checkpoint1369 — actual predictable coordinates and native completed IBM calculus
+
+# Current IBM mathematics — checkpoint1369: predictable coordinates and native completed calculus
+
+IBM ACTIVE. EVERY input of the preexisting FIXED1362 channel completion now has
+explicit ORIGINAL predictable L2 coordinates, jointly measurable on discrete
+countable labels times ORIGINAL raw predictable time/sample Space. Actual field
+classes equal those coordinates; unconditional HasSum reconstructs both the
+completed input and ACTUAL stochastic L2 output. Canonical field-square Parseval
+holds; general signed cross-energy/cancellation obstructions remain unchanged.
+
+For EVERY channel family, old recovery composed with actual completed integral
+maps into ORIGINAL native divergence domain, recovers the actual observable,
+and has squared norm at most2 times input squared norm. Original derivative
+integration by parts and T*Df=J*f proved. For fixed family J*f is EXACT inverse
+remainder f-G0f, so J(T*Df)=f-G0f on ORIGINAL DomD. For ALL intrinsic f, native
+full-graph test pairings uniquely identify J*f in the completed integrand space;
+J(J*f)=f-G0f and exact integrand energy proved. WHOLE initial germ retained.
+
+Actual IBM point observables remain outside original joint derivative domain,
+and their full weak derivatives remain nonrepresentable by ordinary ambient
+fields. Independent tests combine both obstructions with the new actual
+predictable-field reconstruction. No contradiction or enlarged ordinary domain.
+No conditional TEMPORAL gradient identification, causal Clark–Ocone formula,
+physical-time Ito/Tanaka/brackets or full IBM completion is claimed. Next examine
+literal predictable time cutoff/conditional observed projection intertwining;
+reuse original integrals and measures rather than define an algebraic projection
+and mistake it for a causal time cutoff. This connection remains UNPROVED.
+
+See IBM_COMPLETED_NATIVE_COORDINATES_AUDIT.md and exact verification JSON.
+Queue IBM->Bakry/fBM->Cauchy->A(2)/RH attempt->fractional diffusion->blackito
+->backlog unchanged. Pseudo frozen1293; no expiry; all full/private gates retained.
+
+Fresh full root 6396jobs/42.974s/0.
+COMPLETE transitive safe Foundation audit 42333decl/35.533s/0,
+standard three axioms only. ALL37 unabridged new public types,12 printed old/new
+definitions, ALL425 audit lines and253 final source/proof
+lines actually read. Eight independent tests final0/29.889s,
+emptylog. Exact three failed test versions/logs/timings retained; all default
+elaboration timeouts. Native scratch1-3 default200000 timeouts repaired using
+typed inner-product equalities. Final test transports through explicitly named
+completed native input, no new resources or source changes. Seven development
+scratch logs retained. Tests verify actual fields/energy, positive-time domain
+and ambient-representability obstructions alongside reconstruction, all-family
+native divergence/bound/IBP/adjoint, unique weak integrand, original-DomD actual
+field reconstruction/energy, and strong completed-to-original divergence graph
+convergence. All2224 old sources unchanged except two root imports,3configs and
+113 immutable archive paths/hashes unchanged. No manuscript edit, source deletion,
+new trust, resource override, suppressed check or causal/full-calculus claim.
+Exact private gate pending audited commit/receipt and PRIVATE main/research refs.

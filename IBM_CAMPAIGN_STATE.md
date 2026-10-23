@@ -1,3 +1,36 @@
+# Current IBM mathematics — checkpoint1369: predictable coordinates and native completed calculus
+
+IBM ACTIVE. EVERY input of the preexisting FIXED1362 channel completion now has
+explicit ORIGINAL predictable L2 coordinates, jointly measurable on discrete
+countable labels times ORIGINAL raw predictable time/sample Space. Actual field
+classes equal those coordinates; unconditional HasSum reconstructs both the
+completed input and ACTUAL stochastic L2 output. Canonical field-square Parseval
+holds; general signed cross-energy/cancellation obstructions remain unchanged.
+
+For EVERY channel family, old recovery composed with actual completed integral
+maps into ORIGINAL native divergence domain, recovers the actual observable,
+and has squared norm at most2 times input squared norm. Original derivative
+integration by parts and T*Df=J*f proved. For fixed family J*f is EXACT inverse
+remainder f-G0f, so J(T*Df)=f-G0f on ORIGINAL DomD. For ALL intrinsic f, native
+full-graph test pairings uniquely identify J*f in the completed integrand space;
+J(J*f)=f-G0f and exact integrand energy proved. WHOLE initial germ retained.
+
+Actual IBM point observables remain outside original joint derivative domain,
+and their full weak derivatives remain nonrepresentable by ordinary ambient
+fields. Independent tests combine both obstructions with the new actual
+predictable-field reconstruction. No contradiction or enlarged ordinary domain.
+No conditional TEMPORAL gradient identification, causal Clark–Ocone formula,
+physical-time Ito/Tanaka/brackets or full IBM completion is claimed. Next examine
+literal predictable time cutoff/conditional observed projection intertwining;
+reuse original integrals and measures rather than define an algebraic projection
+and mistake it for a causal time cutoff. This connection remains UNPROVED.
+
+See IBM_COMPLETED_NATIVE_COORDINATES_AUDIT.md and exact verification JSON.
+Queue IBM->Bakry/fBM->Cauchy->A(2)/RH attempt->fractional diffusion->blackito
+->backlog unchanged. Pseudo frozen1293; no expiry; all full/private gates retained.
+
+---
+
 # Current IBM mathematics — checkpoint1368: genuine random multichannel energy completion
 
 IBM ACTIVE. Arbitrary families of ORIGINAL full random predictable L2 inputs now
