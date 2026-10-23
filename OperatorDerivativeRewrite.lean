@@ -2152,3 +2152,6 @@ import Foundation.IBMRandomBlockQuartic
 import Foundation.IBMContinuousBlockWeights
 import Foundation.IBMContinuousQuadrature
 import Foundation.IBMContinuousWeightedQuartic
+import Foundation.IBMFourthPeano
+import Foundation.IBMActualPeanoRemainder
+import Foundation.IBMActualTaylorChain

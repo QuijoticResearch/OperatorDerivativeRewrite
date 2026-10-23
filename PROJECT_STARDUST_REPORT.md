@@ -33243,3 +33243,79 @@ reviewed unabridged. All original manuscripts, canonical paper/PDF, queue and
 reflection accounting remain unchanged. No housekeeping interrupted this proof.
 
 Checkpoint1388 gates: full root6426jobs/50.897983s/0; complete safe transitive Foundation43058declarations/35.137137s/0; all21public types (212lines), both full sources and eight downstream checks/34.209958s/0 reviewed. All2254source/3config hashes and113immutable archive paths/hashes checked. Standard3axioms only; no resource/toolchain/trust changes. Exact Git/private closure: .lake/stardust-1388-verification.json.
+
+
+## Checkpoint1389 — actual IBM C4 Taylor chain and compact Peano control
+
+IBM remains ACTIVE. For the actual process Z_t=W(|B_t|) under the original
+IBMSourceLaws.jointMeasure, IBMActualTaylorChain.channels_tendstoInMeasure
+PROVES, for every global C4 real function f, every fixed T>0 and ALL N=n+1,
+
+    sum_i<N [Df(Z_i) DeltaZ_i + D2f(Z_i) DeltaZ_i^2/2
+             + D3f(Z_i) DeltaZ_i^3/6]
+      -> f(Z_T)-f(Z_0) - (1/8) integral_0^T D4f(Z_t)dt
+
+IN PROBABILITY, with Z_i=Z_(iT/N). Each sum is the actual lower-three-rank
+Taylor sum, not a definition by the limiting endpoint expression. The target
+is the genuine pathwise Lebesgue time integral, finite for EVERY sample and
+measurable under the actual joint law. Both sums and target measurability are
+proved. The exact finite identity retains the original IBMFourthTaylor.remainder
+and IBMUniformFifthRemainder.remainderSum, before any limiting argument.
+
+The domain is strengthened beyond checkpoint1388's proposed C5/global-fifth-bound
+route: only C4 is required. No fifth derivative, global derivative bound,
+expectation moment, supplied stochastic source, independent-IBM-increment
+assumption, bracket or generator hypothesis is used. Existing C5 estimates
+remain intact; no historical theorem semantics were changed.
+
+IBMFourthPeano first identifies the actual fourth Taylor polynomial on C4.
+Mathlib's order-three Lagrange remainder yields the SAME old fourth remainder
+as (D4f(z)-D4f(x))*(y-x)^4/24, with z in the real segment joining x and y.
+Uniform continuity of D4f on [-R,R] then proves: for each epsilon>0 there is
+positive delta such that the absolute remainder is at most epsilon*|y-x|^4
+for endpoints in that interval and |y-x|<delta. The remainder is also proved
+jointly continuous in its two endpoints. This is ordinary Peano control,
+with compactness replacing a globally bounded fifth derivative.
+
+IBMActualPeanoRemainder combines the existing EVERY-sample continuous IBM
+path bound, EVERY-sample vanishing actual mesh, and compact Peano theorem.
+For every sample and epsilon>0, eventually TOTAL absolute Taylor remainder
+is at most epsilon times the actual quartic variation. The sum, not merely
+each summand, is controlled. On every subsequence, the already proved actual
+quartic limit supplies an a.e.-convergent subsubsequence, bounded eventually
+by3T+1. An explicit epsilon/(2*(3T+1)) estimate proves total absolute remainder
+vanishes in original-law probability. Signed remainder decay follows by the
+absolute-sum inequality. Random compact bounds need no measurability or moment
+premise because this compact estimate is applied samplewise; measurability
+of the actual remainder sums is proved separately.
+
+The exact finite Taylor sum telescopes at genuine uniform-grid endpoints0,T.
+The weighted quartic term converges to3 integral D4f(Z_t)dt by1388; multiplying
+by1/24 gives1/8. A two-tail union estimate combines this with remainder decay:
+thresholds12epsilon and epsilon/2 bound the channel error at epsilon. No L2
+convergence or unproved interchange of random approximations is invoked.
+
+Nine downstream Lean checks cover exact quadratic/cubic telescoping, vanishing
+old remainder on quartics, actual quartic drift3T, quintic weight120z, sextic
+weight360z^2, a fractional Real.rpow(z,9/2) C4 example using Mathlib's precise
+real-rpow convention, exp(z^2) without moment hypotheses, and zero horizon.
+The sextic lies outside a globally bounded fifth-derivative hypothesis. No
+non-C5 claim is asserted about the fractional example. Polynomial tests check
+actual endpoints and physical coefficients rather than merely reprinting the
+general theorem. Transient elaboration issues were repaired without raising
+heartbeats or suppressing checks; they are not mathematical obstructions.
+
+This resolves the combined first-three raw Taylor-channel limit on C4. It does
+NOT prove separate raw rank limits, almost-sure/L1/L2 convergence, arbitrary
+partitions, arbitrary integrand stochastic integration, intrinsic adjoints or
+closed domains, Clark-Ocone, nonsmooth Tanaka, or completion of IBM calculus.
+F1/F2 closure and intrinsic temporal calculus remain open. A promising next
+precise test is whether quartic variation plus vanishing mesh forces actual
+quadratic variation to diverge, obstructing separate unrenormalized channel
+limits; audit existing declarations before attempting a duplicate result.
+
+All22 new public types and all three complete proof sources reviewed. Original
+manuscripts, canonical drafts/PDFs, queue and reflection records remain unchanged.
+No reflection or housekeeping interrupted the active proof/verification cycle.
+
+Checkpoint1389 gates: full root6429jobs/65.846741s/0; complete safe transitive43087declarations/35.677462s/0; all22public types (134lines), three complete sources and nine downstream checks/34.364544s/0 reviewed. All2257source/3config and113immutable archive paths/hashes checked. Standard3axioms only; no resource/toolchain/trust changes. Exact Git/private closure: .lake/stardust-1389-verification.json.
