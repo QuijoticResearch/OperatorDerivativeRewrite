@@ -2137,3 +2137,5 @@ import Foundation.IBMUniformStochasticReconstruction
 import Foundation.IBMQuarticOccupationEnergy
 import Foundation.IBMClockTraversalEnvelope
 import Foundation.IBMUniformClockGridEnergy
+import Foundation.IBMUniformClockMaximum
+import Foundation.IBMUniformClockOccupation

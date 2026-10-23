@@ -32638,3 +32638,70 @@ are recorded in .lake/stardust-1380-verification.json at checkpoint closure.
 
 
 Checkpoint1380 gates: full root6411jobs/27.376468s/0; complete safe transitive Foundation42786declarations/37.729725s/0; all17newpublic types (144lines) and complete source/proofs reviewed. Five downstream Lean checks/44.845497s/0: empty grid, exact single diagonal, collapsed-spacing diagonal block, explicit two-point off-diagonal coefficient, actual all-n limit application. Initial test numeral rewrite failed because it also captured a power exponent; narrowed to LHS, with no mathematical source change or weakened checks. All2239source/3config hashes and113immutable archive hashes checked. No queue/reflection/manuscript edits. Exact private closure: .lake/stardust-1380-verification.json.
+# Checkpoint1381 — actual clock maximum tail and traversal-energy probability limit
+
+IBM remains ACTIVE. Previous goal turn PROGRESS: checkpoint1380 verified all-grid
+weighted endpoint-envelope mean decay and closed its private audited checkpoint.
+This step supplies the formerly missing maximum-increment control and transfers
+the decay to the ACTUAL traversal occupation energy. No reflection session or
+queued campaign was started.
+
+Foundation/IBMUniformClockMaximum.lean reuses GaussianAbsoluteMoments and the
+existing Brownian increment HasLaw, then transfers finite-coordinate identities
+to IBMConstructedSources.clockPath. Actual absolute increments have finite
+moments of every natural order. The exact twentieth moment is
+
+    E |B_t-B_s|^20 = |t-s|^10 * standardMoment(20).
+
+The standard-normal constant is already genuinely integrable and nonnegative;
+no unevaluated or assumed probability law is introduced. A measurable event
+bad(T,N,delta) records an unreflected increment of magnitude>=delta on the
+uniform N-interval grid. Markov's inequality and a finite union bound give
+
+    P bad <=N*(T/N)^10*standardMoment(20)/delta^20.
+
+For delta=N^(-4/9), the exact algebraic rate is
+T^10*standardMoment(20)*N^(-1/9), tending to0 along ALL positive grid sizes.
+The tail theorem also allows T=0; no density formula is used at zero variance.
+Off the bad event, every REFLECTED traversal increment is<=delta, proved by
+the absolute-value contraction, not assumed as a Brownian path hypothesis.
+
+Foundation/IBMUniformClockOccupation.lean constructs the genuine finite
+traversal energy occupation(T,N,omega)=integral N_omega(x)^2 dx. It is
+nonnegative and measurable; measurability is derived from the exact finite
+unsigned-overlap formula, retaining all repeated visits and orientations.
+On good samples it is bounded by checkpoint1379's endpoint energy.
+
+The probability decomposition, with delta>0 and epsilon>0, is now VERIFIED:
+
+    P{epsilon<=delta^3*occupation}
+      <=P bad + E[delta^3*endpoint_energy]/epsilon.
+
+Only the endpoint envelope is subjected to Markov's inequality, with its
+integrability proved. No global integrability of the traversal energy or
+invalid identification of a nonintegrable Bochner integral is used. Combining
+this bound with1380 and the new bad-event tail proves
+weighted_occupation_tendstoInMeasure: delta_N^3*occupation(T,N) ->0 IN PROBABILITY
+for the ACTUAL reflected Brownian clock, every fixed T>0, N=n+1 and
+delta_N=N^(-4/9). This is no longer merely a conditional decay hypothesis or
+an endpoint-only envelope result.
+
+OPEN: identify the uniform interval family with the existing actual finite
+quartic sums, apply the verified conditional variance bound on the good event,
+and prove the product-measure conditional Chebyshev/Fubini argument for
+centered IBM quartic fluctuations. Convergence in probability is the proposed
+topology; neither joint L2 nor pathwise uniform convergence is claimed.
+The actual conditional mean still requires reflected-clock crossing-penalty
+decay before a3T quartic limit can be asserted. Physical-time Ito/Tanaka and
+the full intrinsic IBM calculus remain unfinished.
+
+One development elaboration hit the default heartbeat limit while unfolding
+the enormous constructed-clock definition. Local irreducibility of existing
+definitions and explicit coercion normalization repaired it without changing
+any resource limit, statement, toolchain or trust setting. This is not a
+mathematical obstruction. Final build/audit/type/proof/test/integrity/private
+closure evidence is recorded in .lake/stardust-1381-verification.json.
+ResearchSources, manuscripts, mathematical queue and reflection policy stay unchanged.
+
+
+Checkpoint1381 gates: full root6413jobs/25.712636s/0; complete safe transitive Foundation42811declarations/37.453316s/0; all17newpublic types (136lines) and both complete source/proof files reviewed. Five downstream Lean checks/32.160186s/0: empty grid, zero horizon, zero-length twentieth moment, exact one-interval spatial energy and actual probability-topology application. Initial nested-absolute-value test syntax repaired without changing mathematical sources. All2241source/3config manifest hashes and113immutable archive hashes checked. Queue/reflection/manuscripts unchanged. Exact Git/private closure evidence: .lake/stardust-1381-verification.json.
