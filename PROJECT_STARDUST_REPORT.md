@@ -34770,3 +34770,101 @@ ResearchSources, queue, reflection accounts, curated exposition, private
 manuscripts/PDFs and Lean/Lake settings remain unchanged.
 
 Checkpoint1405 gates: complete root6469jobs/39.802382s/0; complete safe transitive43811declarations/39.291446s/0; all17public types (153unabridged lines), BOTH complete new proof/definition sources, nine independent mathematical Lean checks and four elaborated-topology assertions/38.464119s/0 reviewed. All2297sources/3configs frozen/rechecked; pre-existing sources unchanged except root imports/AxiomAudit;113immutable archive paths/hashes unchanged. Default200000 proof heartbeats, trust and toolchain retained. Five explicit Git paths; exact receipt and verified PRIVATE main/research closure follow in .lake/stardust-1405-verification.json.
+
+## Checkpoint1406 — explicit actual source-gradient Bochner formula for the IBM sine average
+
+October23,2026. IBM ACTIVE, baseline abb329d. The previous goal turn established
+the native weak two-channel limits and limiting clock energy. This continuation
+identifies the source component with a GENUINE Bochner-L2 integral of actual
+process coefficients. No queue transition, reflection session or archive change.
+
+`Foundation/IBMSineSourceField.lean` reuses the OLD actual unsmoothed source
+derivative, constructed continuous IBM and clock paths, Gaussian constant-field
+representatives, and `ProductL2Sections`. Its `direction r` is precisely the OLD
+spectral scenery direction embedded by the OLD Hilbert isometry into the
+existing coefficient space; denote it K(r). `direction_continuous` directly
+reuses `IBMContinuousScenery.direction_continuous`. No new Brownian process,
+Gaussian law, independence assumption or derivative operator is constructed.
+
+The internal source graph uses (clockY,sceneryX) order. `linear_gradient_ae`
+identifies its OLD unmollified source-gradient representative with K(|Bt|),
+including the actual continuous clock modification. `swapped_point_ae` restores
+the actual process value in that order. `source_gradient_ae` applies the OLD
+bounded Gaussian chain field and proves the actual coefficient
+cos(ibmValue(t,(X,Y))) * K(|clockPath(Y,t)|).
+This is the SOURCE channel: it has no clock-sign factor or mollified spatial
+derivative. Its normalization follows from the old source derivative graph.
+
+`linearField_jointly_measurable` and `value_jointly_measurable` establish joint
+measurability in time and BOTH samples. `value_memLp` proves genuine L2
+membership by equality with the old source gradient. `flat`, `flat_ae` and
+`flat_eq` construct actual L2 sections and identify them with the original
+uncurried source-gradient classes. `flat_stronglyMeasurable` and
+`sourceGradient_stronglyMeasurable` discharge time strong measurability rather
+than assuming it. These are fixed-time AE representative statements with
+proved joint measurable representatives; no universal null set for arbitrary
+uncountably many representative evaluations is inserted.
+
+`Foundation/IBMSineSourceIntegral.lean` proves the old source-gradient curve,
+the actual flat curve and the native curve are all Bochner integrable on EVERY
+nonnegative finite horizon. It reuses1404's genuine compact-time L2 bound and
+the OLD product isometries. `sourceIntegral` integrates the OLD point source
+gradients. `integral_graph` uses the already verified closed-graph integration
+theorem, with both integrability premises discharged, and identifies the value
+with the SAME actual `IBMSineAverageSimpson.average T`.
+`sourceIntegral_eq_gradient` then uses original graph-output uniqueness to
+prove equality with1404's canonical intrinsic gradient channel0.
+
+`nativeField t` is a genuine L2 coefficient field on the ORIGINAL (source,clock)
+joint sample space. `nativeField_ae` proves its actual representative is
+cos(Zt)*K(|Bt|); `nativeField_stronglyMeasurable` and `nativeField_integrable`
+justify integration. The main `native_source_formula` is the actual normed-space
+identity, valid for every T:NNReal:
+realize(D_source int_0^T sin(Zt)dt) = int_0^T [cos(Zt)*K(|Bt|)]_L2 dt.
+The integral on the right is a Bochner integral IN THE GENUINE JOINT L2 SPACE.
+It is not merely a scalar expectation identity or an unproved formal derivative
+passed through an integral. Its native source-field transport also agrees
+definitionally with OLD `IBMIntrinsicChainEnergy.sourceField`, checked by an
+independent downstream Lean theorem. No new transport foundation is needed.
+
+`actual_product_integrable` verifies actual fixed-time field/probe products
+for EVERY joint coefficient-valued L2 probe V. `actual_pairing` identifies
+those expectations, and `actual_time_pairing_integrable` proves outer time
+integrability. `actual_source_pairing` gives the fully justified actual
+double-integral identity
+<realize(D_source F_T),V> = int_0^T E[cos(Zt)*<K(|Bt|),V>]dt.
+It follows from the strong field identity and the established integrability.
+No interchange with an unbounded pointwise L2 evaluation functional is used.
+
+Independent downstream checks cover joint coefficient measurability; the exact
+native actual representative and parameter order; fixed-time L2 membership;
+time strong measurability of the OLD point derivative; actual Bochner
+integrability; equality with the SAME intrinsic source component; the genuine
+zero-horizon identity; actual field/probe product integrability; outer time
+integrability; and direct compatibility with the prior canonical source-field
+transport. All hypotheses concern established actual mathematical objects.
+
+The SOURCE Bochner realization/identification gap recorded at1404/1405 is now
+DISCHARGED. The formula's topology is explicit: equality in joint L2 of a
+Bochner time integral. A separately proved almost-sure identification with the
+pointwise vector integral for individual samples is not asserted here. Strong
+convergence of the original right-source quadratures still needs a valid
+continuity/approximation argument; time measurability and integrability alone
+do not imply it. Clock-component explicit occupation-field formulas, stronger
+native convergence, broader nonlinear domains and full actual IBM stochastic
+integration/Itô/Clark--Ocone remain open. Ordinary time integration in this
+source formula does not itself settle stochastic integration with respect to
+IBM. Full IBM calculus is not declared complete and no later campaign opens.
+
+The old domain closure and new realization serve different purposes:1404
+proved source-domain membership without assuming derivative-time measurability;
+this checkpoint proves that measurability from actual representatives and
+then identifies the derivative's actual Bochner formula. No old proof is
+replaced by a previously missing assumption. Source references and exact
+Lean declarations above support this connection; no novelty claim is made.
+
+Full verification/integrity evidence is retained under `.lake/stardust-1406-*`.
+Original ResearchSources, queue, reflection accounts, curated exposition,
+private manuscripts/PDFs and Lean/Lake settings remain unchanged.
+
+Checkpoint1406 gates: complete root6471jobs/23.372369s/0; complete safe transitive43855declarations/35.094977s/0; all31public types (145unabridged lines), BOTH complete new proof/definition sources and ten independent mathematical Lean checks/32.067861s/0 reviewed. All2299sources/3configs frozen/rechecked; pre-existing sources unchanged except root imports/AxiomAudit;113immutable archive paths/hashes unchanged. Default200000 proof heartbeats, trust and toolchain retained. Five explicit Git paths; exact receipt and verified PRIVATE main/research closure follow in .lake/stardust-1406-verification.json.
