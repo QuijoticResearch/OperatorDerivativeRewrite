@@ -32849,3 +32849,64 @@ and private Git evidence: .lake/stardust-1383-verification.json at closure.
 
 
 Checkpoint1383 gates: full root6417jobs/40.872759s/0; complete safe transitive Foundation42868declarations/37.765328s/0; all26newpublic types (163lines) and both complete source/proof files reviewed. Seven downstream Lean checks/43.708639s/0: explicit nonzero crossing correction, same-sign far-field zero, empty penalty grid, actual one-interval clock QV, exact final grid endpoint, penalty probability limit and fully expanded actual unit-horizon quartic3 limit. Expanded-test unfolding and higher-order coercion/eta errors were repaired by local irreducibility and explicit pointwise a.e. identification without increasing resources or changing mathematical sources. All2245source/3config hashes and113immutable archive hashes checked. Queue/reflection/manuscripts unchanged. Exact Git/private closure: .lake/stardust-1383-verification.json.
+
+
+## Checkpoint1384 — actual IBM fifth-variation and total Taylor-error decay
+
+IBM remains ACTIVE. Checkpoint1383's actual reflected-clock process is
+Z_t=W(|B_t|), exactly IBMConstructedSources.ibmValue under
+IBMSourceLaws.jointMeasure. ResearchSources and all campaign gates are preserved.
+The preceding policy-only reply made no mathematical progress; this continuation
+revalidated closed1383 and took the available next proof obligation.
+
+Foundation/IBMUniformFifthRemainder.lean reuses the ACTUAL continuous-path theorem,
+the proved uniform quartic probability limit and IBMFourthTaylor.remainder_bound.
+No new stochastic source, martingale property, Gaussian IBM-increment assumption
+or candidate process law is supplied.
+
+For each horizon T>=0, mesh is the maximum absolute actual IBM increment over
+ALL N=n+1 intervals of the uniform grid. mesh_measurable and mesh_nonneg are
+proved. mesh_tendsto proves mesh_N ->0 for EVERY sample: compact uniform
+continuity on [0,T], the exact endpoint bound and time step T/N ->0 suffice.
+This passes to convergence in probability under the original joint law.
+
+fifth_le proves the pointwise bound
+
+    sum_i |Delta Z_i|^5 <= mesh_N * sum_i (Delta Z_i)^4.
+
+dominated_tendstoInMeasure proves the needed tightness step explicitly.
+For |E_N|<=C mesh_N Q_N, C>=0, let K=C(3T+1)+1. The epsilon tail is contained
+in {mesh_N>=epsilon/K} union {|Q_N-3T|>=1}; both probabilities tend to zero.
+No convergence-in-mean or independence of successive increments is assumed.
+Thus fifth_tendstoInMeasure proves sum_i|Delta Z_i|^5 ->0 IN PROBABILITY
+for every fixed T>0 and all N=n+1.
+
+On the precise domain f in C5(R,R), with ||f^(5)(z)||<=M for ALL real z,
+the existing genuine fourth Taylor remainder gives
+
+    sum_i |R4(f;Z_left,Z_right)| <= (M/120) sum_i |Delta Z_i|^5.
+
+Both remainderSum_tendstoInMeasure and
+absoluteRemainderSum_tendstoInMeasure are proved. The latter controls TOTAL
+absolute error, not cancellation of signed remainders. M>=0 follows from the
+derivative-bound premise. No a.s., L1/L2, arbitrary-partition or merely C4
+extension is asserted. A global fifth-derivative bound is a genuine current
+domain restriction; pathwise localization is a possible later extension.
+
+This removes the Taylor-error obligation on that domain. It does NOT identify
+the weighted quartic term with 3 integral f^(4)(Z_s) ds, establish convergence
+of the first three channels individually, or complete physical-time Ito/Tanaka.
+The weighted term remains the substantive next issue: scenery-dependent weights
+cannot simply be inserted into conditional Gaussian variance calculations.
+Common-grid cumulative quartic convergence and continuous Stieltjes weights
+remain a possible route, with all hypotheses needing proof.
+
+Independent downstream Lean checks cover zero horizon without a pointwise
+Z0=0 assumption, the exact one-interval fifth sum and mesh, exact quartic
+polynomial remainder zero, nonzero finite fifth-degree remainder (0 to1 gives1),
+fully expanded unit-horizon actual fifth-increment convergence, and total
+absolute remainder convergence for f(z)=z^5 with its genuine bound M=120.
+Original manuscripts, canonical paper/PDF, queue and reflection accounting are
+unchanged. No housekeeping session was opened during this proof cycle.
+
+Checkpoint1384 gates: full root6418jobs/40.779178s/0; complete safe transitive Foundation42888declarations/36.622792s/0; all16public types (79lines) and full proof source reviewed; seven downstream checks/35.735592s/0. All2246source/3config hashes and113immutable archive hashes/pathset checked. Standard3axioms only; no resource/toolchain/trust changes. Exact Git/private closure evidence: .lake/stardust-1384-verification.json.
