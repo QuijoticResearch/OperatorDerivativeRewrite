@@ -2181,3 +2181,6 @@ import Foundation.IBMWeightedSimpsonL2Error
 import Foundation.IBMWeightedSimpsonL2Realization
 import Foundation.IBMWeightedSimpsonIntrinsic
 import Foundation.IBMSineAverageSimpson
+import Foundation.GaussianMixedTrigCovariance
+import Foundation.GaussianCosineProductCovariance
+import Foundation.IBMNonlinearSceneryCovariance

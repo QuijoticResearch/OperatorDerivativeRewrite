@@ -34332,3 +34332,86 @@ reflection accounting, curated exposition and all configuration remain unchanged
 Additional independent Lean obstruction test identifies the new family's constant-weight sine target with the OLD sinePoint and proves it OUTSIDE the strong joint domain at every positive horizon. This refutes a universal domain inference for this same family and makes no claim about the ramp sine average.
 
 Checkpoint1400 gates: complete root6455jobs/24.505420s/0; complete safe transitive43559declarations/36.824039s/0; all41public types (360unabridged lines), all four complete new sources and eleven downstream Lean checks/27.291103s/0 reviewed. All2283source/3config hashes frozen; all pre-existing sources unchanged except root imports/AxiomAudit;113immutable archive paths/hashes checked. Only standard3axioms; no resource/toolchain/trust changes. Queue/reflection, curated exposition and original/private manuscript artifacts unchanged. Explicit seven-path Git checkpoint, exact receipt and verified PRIVATE main/research closure follow in .lake/stardust-1400-verification.json.
+
+
+## Checkpoint1401 — actual nonlinear IBM source covariance and a repaired factorization (October23,2026)
+
+IBM remains ACTIVE. Mathematical baseline6cfca14 (1400). This is ordinary
+proof work, not another reflection session. The immediate objective is the
+strong clock-domain problem for the ACTUAL nonlinear sine time average already
+realized as a signed Simpson L2 limit. No campaign transition is made.
+
+The reuse audit located `IBMFirstChaosMixedStein.second_mixed`, including its
+bounded-C2 domain and degenerate-source case. `GaussianMixedTrigCovariance`
+uses direct polarization of that OLD verified theorem. No second Gaussian
+operator or duplicate Stein foundation is introduced. `bilinear_mixed` proves
+for arbitrary old isonormal coefficient directions w,a,b and C2 phi with
+separate global bounds on phi, phi' and phi'':
+E[W(a)W(b)phi(W(w))] = <a,b>E[phi(W(w))]
+                         + <w,a><w,b>E[phi''(W(w))].
+`bilinear_integrable` establishes genuine integrability from old diagonal
+moments, and the polarization is an AE identity of the actual L2 representatives.
+No nonsingularity or independence of the coefficient directions is assumed.
+
+For cosine, `cosine_mixed_integral` gives the exact correction
+E[W(a)W(b)cos W(w)] = (<a,b>-<w,a><w,b>)*mean(w),
+mean(w)=E cos W(w), |mean(w)|<=1. `mean_lower` proves
+mean(w)>=1-||w||^2/2 using the actual second moment and global cosine bound.
+`naive_factorization_fails` is a rigorous explicit obstruction: for EVERY unit
+w the left moment is0 while <w,w>*mean(w)>=1/2. Independent Lean checks
+instantiate an actual unit coefficient lp.single2 0 1, so this is nonvacuous.
+One cannot simply multiply an old derivative covariance by a nonlinear
+coefficient mean. This is a refutation of that inference, not of the desired
+nonlinear averaged Sobolev-domain theorem.
+
+`GaussianCosineProductCovariance` handles BOTH nonlinear clock-gradient
+coefficient factors. The actual integrable product W(a)W(b)cos W(w)cos W(v)
+splits into the two frequencies w+v,w-v. `product_formula` is exact, and
+`product_bound` proves its absolute EXPECTATION is at most
+|<a,b>|+4*C^2 if each of the four value/derivative mixed covariances is <=C
+in absolute value. Individual ||a|| and ||b|| do not occur in this bound.
+The absolute value is OUTSIDE the expectation; no absolute-moment bound or
+unjustified cancellation under an absolute value is asserted.
+
+`IBMNonlinearSceneryCovariance` DISCHARGES those four premises for the OLD
+actual IBM mollifiers, uniformly over BOTH smoothing indices and ALL real
+spatial points, including negative times and the origin. Physical Brownian
+indicator pairing with a translated positive unit-mass mollifier is <=1;
+Bochner convolution preserves this bound. `scenery_mixed_bound` transports it
+through the OLD physical isometry to the SAME Gaussian scenery;
+`coefficient_mixed_bound` identifies the OLD tripleCoefficient value/derivative
+directions, giving C=1 without an extra assumption.
+`nonlinear_source_bound` therefore proves, for every n,m,r,q,
+|E_source[W'_n(r)W'_m(q) cos(W_n(r))cos(W_m(q))]|
+    <= overlap(n,m,r,q)+4.
+Here every W_n/W'_n is the original verified smoothing/derivative source;
+overlap is the OLD nonnegative physical derivative-kernel overlap. Actual
+source integrability and all covariance premises are discharged, rather than
+postulated uniform bounds. No new law or replacement random process is used.
+
+This removes the precise nonlinear SOURCE covariance gap identified at1400.
+Remaining central work is explicit: establish jointly measurable nonlinear
+mollified clock-gradient fields on the old product law, prove the necessary
+Bochner/Fubini energy identity, integrate the overlap-plus-constant bound with
+the genuine reflected clock and Cameron-Martin time pairing, and use a justified
+closed-operator domain criterion to pass to the actual sine time average.
+Do not infer that strong graph closure from this source estimate alone.
+Existing `IBMClockOverlapEnergy` bounds the linear overlap integral and
+`IBMClockAverageGraph` integrates the linear mollified graph; those are the
+next reuse targets. Nonlinear graph closure, causal/adapted integration and
+full intrinsic IBM Clark--Ocone remain OPEN. Old phi(intZdt) chain rules still
+do not establish int phi(Zt)dt domains. The actual signed Simpson realization
+from1400 is preserved as the value-side bridge.
+
+Independent Lean checks cover an inhabited unit direction, zero corrected unit
+moment, strict positive mean, explicit failure of naive factorization, the
+valid orthogonal special case, constant-test covariance, the doubled-frequency
+two-factor formula, physical negative-time/origin coverage, genuine actual
+source-product integrability and the diagonal all-mollifier source bound.
+No novelty or Millennium implication is asserted. Original ResearchSources,
+all113 inventory paths/hashes, queue, reflection accounting, curated exposition
+and private LaTeX/PDF drafts/index remain unchanged.
+
+Further exact reuse audit: `ClosedOperatorEscapeEnergy.mem_domain_of_frequently_bounded_graph` already proves the needed positive closed-domain criterion for a closed densely defined Hilbert operator. Once genuine nonlinear graph approximants, value convergence and a frequently bounded gradient norm are verified, it gives domain membership directly; one need not invent a weak-compactness foundation or assume strong gradient convergence. Its hypotheses are NOT yet discharged for the nonlinear sine average.
+
+Checkpoint1401 gates: complete root6458jobs/24.951222s/0; complete safe transitive43584declarations/37.291082s/0; all23public types (295unabridged lines), all three complete new sources and ten downstream Lean checks/25.388912s/0 reviewed. All2286source/3config hashes frozen; all pre-existing sources unchanged except root imports/AxiomAudit;113immutable archive paths/hashes checked. Only standard3axioms; no resource/toolchain/trust changes. Queue/reflection, curated exposition and original/private manuscript artifacts unchanged. Explicit six-path Git checkpoint, exact receipt and verified PRIVATE main/research closure follow in .lake/stardust-1401-verification.json.
