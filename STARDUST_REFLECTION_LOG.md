@@ -110,3 +110,23 @@ charge2355s<2700s. Exact final elapsed/released allowance saved
 in .lake/stardust-1376-reflection-terminal.json after PRIVATE closure.
 No separate PDF budget. IBM remains ACTIVE; no queued campaign started.
 Exact Git receipt and verified PRIVATE main/research checkpoint follow.
+
+
+## October22 instruction amendment — once-per-day opportunistic reflection
+
+User explicitly tightened reflection admission to at most one session per
+America/New_York calendar day, only at natural completed audited checkpoints.
+AGENTS.md, STARDUST_REFLECTION_POLICY.md and the existing daily eligibility
+heartbeat now agree: never interrupt active proofs or verification, skip days
+without a suitable checkpoint, never force or make up a session. Reserve the
+date before work; partial sessions consume the date and unused budget never
+permits a second session. No new automation or research goal was created.
+STARDUST_REFLECTION_SESSIONS.json now records last_reflection_date=2026-10-22
+and reconciles checkpoint1376's terminal receipt: shared actual2443seconds.
+Historical earlier sessions are preserved. This user-directed instruction
+maintenance is not admission to another mathematical reflection session.
+The45minute ceiling, private artifacts and all mathematical gates are unchanged.
+No Lean/manuscript/queue content changed. Exact2236mathematical-source/3config
+identity and immutable113archive hashes were checked; retain successful1376
+full6408-job build, complete42711-declaration audit,14cited type reviews and
+five independent checks under the verified documentation-only reuse policy.

@@ -7,6 +7,17 @@ Git and PRIVATE main/research backup gates continue unchanged.
 
 ## Timing and admission
 
+October22 clarification: at most ONE opportunistic reflection/housekeeping
+session per America/New_York calendar day. Before admission, check both
+last_reflection_date and all historical sessions/reservations. Reserve the local
+date before any work; a partial or budget-limited session consumes that date,
+even if time remains. Record the most recent reflection date at closure.
+Never interrupt an active proof or verification cycle. A scheduled check is
+only an eligibility check, not an appointment. If no suitable natural verified
+checkpoint occurs, skip that day's session; no forced work or make-up sessions.
+Earlier multiple-session records are preserved as historical accounting and
+do not authorize additional sessions under this amended rule.
+
 Spend AT MOST45minutes TOTAL per America/New_York calendar day across ALL
 reflection, synthesis, documentation, associated verification and housekeeping
 sessions. This is a ceiling, not a daily target. Skip a day/session when nothing
@@ -15,7 +26,8 @@ audited checkpoint; never interrupt or restart an active proof or investigation.
 
 Use the terminal system clock, not token counts or discovery counts. Consult
 STARDUST_REFLECTION_SESSIONS.json before admission. Sum completed charges for
-the local date and any outstanding reservation; no concurrent reflection.
+the local date and any outstanding reservation; no concurrent reflection and
+no second session on a date already used.
 Reserve the remaining allowance and record start UTC, local date and deadline
 before work. Check actual elapsed time after verification/research stages.
 Count setup and all closure work. Reserve enough time for gates before editing;
@@ -125,7 +137,8 @@ reuse of previous audit evidence requires exact input identity as specified
 in the existing build policy; it never approves changed mathematical sources.
 
 The autonomous loop consults this policy at natural checkpoints. A quiet daily
-thread heartbeat checks eligibility; if a proof is active, eligibility is
+thread heartbeat checks eligibility; if a proof or verification cycle is active,
+the date was already used, eligibility is
 uncertain, the daily budget is reserved/exhausted, or no useful task exists,
 skip without changing campaign priority. Do not create a new research goal,
 parallel research session or duplicate automation. Notify only for a meaningful

@@ -29,12 +29,21 @@
       "setup_allowance_seconds": 30,
       "charged_seconds_before_finalization": 903,
       "finalization_allowance_seconds": 180,
-      "conservative_total_charge_seconds": 1083,
+      "conservative_total_charge_seconds": 1171,
       "prior_sessions_actual_seconds": 1272,
       "conservative_total_local_day_seconds": 2355,
       "terminal_receipt": ".lake/stardust-1376-reflection-terminal.json",
-      "status": "FINALIZATION_PENDING_AT_COMMIT; reconcile exact terminal receipt before next reflection"
+      "status": "CLOSED; exact terminal receipt reconciled",
+      "terminal_utc": "2026-10-23T03:30:31.641242+00:00",
+      "actual_accounted_seconds": 1171,
+      "actual_total_local_day_seconds": 2443,
+      "finalization_allowance_adjustment_seconds": 88
     }
   ],
-  "accounting_note": "Reconcile finalization allowance with exact terminal receipt before the next admission. Until receipt exists, no new reflection. All setup, verification and Git/private closure time is included; unused daily time is not a target."
+  "accounting_note": "Reconcile finalization allowance with exact terminal receipt before the next admission. Until receipt exists, no new reflection. All setup, verification and Git/private closure time is included; unused daily time is not a target.",
+  "max_sessions_per_calendar_day": 1,
+  "last_reflection_date": "2026-10-22",
+  "last_reflection_session_id": "2026-10-22-latex",
+  "last_reflection_terminal_utc": "2026-10-23T03:30:31.641242+00:00",
+  "admission_rule": "Reserve the America/New_York date before starting; any partial session consumes it. Check this date and every session/reservation; never admit a second session that day. Skip days without a natural verified checkpoint; never interrupt active proofs or verification. Historical pre-amendment multiple sessions remain evidence, not permission."
 }

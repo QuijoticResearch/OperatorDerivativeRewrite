@@ -1,6 +1,10 @@
 # Periodic mathematical reflection — supporting workflow
 
 At natural completed, audited checkpoints, consult STARDUST_REFLECTION_POLICY.md.
+Admit at most ONE reflection/housekeeping session per America/New_York calendar
+day. Check and reserve last_reflection_date in STARDUST_REFLECTION_SESSIONS.json
+before starting; partial sessions consume the date. Never interrupt an active
+proof or verification cycle. If no suitable checkpoint occurs, skip that day.
 Reflection, synthesis and documentation share a MAXIMUM45minutes per local day
 TOTAL, recorded by the terminal clock in STARDUST_REFLECTION_SESSIONS.json.
 Skip active proofs, exhausted/reserved budgets and sessions with no useful work.
