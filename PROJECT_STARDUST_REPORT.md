@@ -33149,3 +33149,97 @@ queue, reflection accounting and all original archive manuscripts are unchanged.
 No housekeeping session interrupted this proof/verification cycle.
 
 Checkpoint1387 gates: full root6424jobs/24.884676s/0; complete safe transitive Foundation43002declarations/36.424934s/0; all23public types (243lines), both complete proof sources and eight downstream Lean checks/34.574181s/0 reviewed. Checks: zero-width and empty blocks; negative genuine step integral; signed overlapping blocks; actual two-increment Ico identification; f=z^5 fourth derivative; actual unbounded120Z terminal-weight comparison; exploding N-dependent coefficient counterexample. All2252source/3config hashes and113immutable archive hashes/pathset checked. No resource, toolchain, trust or audit weakening. Exact Git/private closure: .lake/stardust-1387-verification.json.
+
+
+## Checkpoint1388 — continuously weighted ACTUAL IBM quartic variation
+
+IBM remains ACTIVE. The former fixed-block limitation is removed for the
+continuous spatial-weighted quartic theorem. The process is exactly
+Z_t=W(|B_t|)=IBMConstructedSources.ibmValue under IBMSourceLaws.jointMeasure.
+
+IBMContinuousQuadrature proves a deterministic positive-quadrature theorem.
+For T>=0,c>=0, arbitrary positive grid sizes N_n->infinity, nonnegative masses
+q_n,i, and a uniform cumulative error M_n->0,
+
+    |sum_(i<m)q_n,i - c*T*m/N_n| <= M_n, all m<=N_n,
+
+implies sum_i g(iT/N_n)q_n,i -> c integral_0^T g(t)dt for EVERY continuous
+real function g. The theorem allows arbitrary refining grid sizes so it can
+be applied on stochastic subsubsequences; no process or martingale premise
+is hidden in this deterministic statement.
+
+Proof components are verified separately: Abel summation bounds a finite
+weighted error by M times the final-weight bound plus total discrete weight
+variation; compact Lipschitz weights have variation<=KT. Telescoping genuine
+interval integrals and a cellwise bound give the left Riemann error<=KT^2/N.
+Consequently the Lipschitz quadrature error is at most
+
+    M*(B+KT) + c*K*T^2/N.
+
+Polynomial derivatives have verified compact bounds, giving the necessary
+Lipschitz constants. Mathlib's exists_polynomial_near_of_continuousOn supplies
+uniform polynomial approximation on [0,T]. Positivity of q bounds the
+approximation error by delta*(sum q+cT), while the full-prefix estimate bounds
+total mass by cT+M. An epsilon argument extends to every continuous g.
+The finite Abel bound explicitly requires N>0; this is satisfied by all
+actual grid sizes n+1. No empty-grid bound on an unconstrained weight is used.
+
+IBMContinuousWeightedQuartic proves measurability of the genuine sums and
+their genuine pathwise Lebesgue time-integral target, plus pathwise interval
+integrability for every sample. The real-time extension uses Real.toNNReal
+only to express the nonnegative-time process in the standard interval integral;
+the exact uniform real/NNReal grid identification is separately proved.
+
+weighted_tendstoInMeasure PROVES, for every fixed T>0, every continuous
+phi:R->R, and ALL N=n+1,
+
+    sum_(i=0..N-1) phi(Z_(iT/N))*(Z_((i+1)T/N)-Z_(iT/N))^4
+       -> 3 integral_0^T phi(Z_t)dt IN PROBABILITY.
+
+No global boundedness, Lipschitzness, differentiability, coefficient moments,
+or integrability under the sample law is assumed for phi. The target is an
+actual finite pathwise time integral and is measurable; no expectation-level
+heat formula replaces the stochastic statement. No new process-existence,
+independence-of-IBM-increments, bracket, conditional-mean or variance-decay
+hypothesis is supplied.
+
+The stochastic passage uses Mathlib's subsequence characterization of
+convergence in measure. On every subsequence,1386's measurable uniform prefix
+maximum admits an a.e.-vanishing subsubsequence. For each sample in that
+event, the deterministic theorem applies with g(t)=phi(Z_t), q_i=(DeltaZ_i)^4,
+c=3 and M equal to the actual maximum. Strictly increasing selected grid
+sizes tend to infinity. Actual path continuity is already proved for EVERY
+sample. Uniform prefix bounds and real/NNReal sampling identities are proved,
+not assumed. The deterministic polynomial chosen for a particular sample
+need not be jointly measurable: it appears only in a samplewise proof.
+Measurability of the ORIGINAL sum and target is established independently.
+This avoids an unjustified random approximation or K/N limit interchange.
+
+The prior full continuously spatial-weighted quartic obligation is now PROVED
+on this domain. Do not continue to list it as open merely because historical
+checkpoint1387 did so. The general abstract theorem for arbitrary jointly
+measurable random time weights is not separately asserted, although the proof
+suggests a later generalization. Nor are a.s., L1/L2, arbitrary-partition or
+path-uniform weighted convergence claims made.
+
+Next: instantiate phi=iteratedDeriv4 f with proved continuity on the C5 domain,
+then combine the EXACT finite fourth Taylor identity, this weighted limit and
+checkpoint1384's total Taylor-error decay to prove the combined first THREE
+Taylor-channel limit with coefficient3/24=1/8. That combined identity remains
+a formal proof obligation here. Separate channel convergence, intrinsic
+temporal derivatives/adjoints/domains, F1/F2 closure and full Ito/Tanaka still
+remain OPEN. Weighted variation alone does not define a semimartingale Ito
+integral or establish a fourth-order Markov generator. No IBM completion or
+campaign transition is declared.
+
+Downstream Lean checks recover ordinary continuous Riemann quadrature,
+exhibit a signed-mass counterexample to dropping positivity in the uniform
+approximation estimate, handle actual zero horizon, recover the old quartic3T
+limit at phi=1, check negative constant weight, and apply the FULL new theorem
+to120z andsqrt(abs z). The exp(z^2) example checks genuine time-integral
+measurability, pathwise integrability and sum measurability without asserting
+any expectation moment. Both full proof sources and all21 public types were
+reviewed unabridged. All original manuscripts, canonical paper/PDF, queue and
+reflection accounting remain unchanged. No housekeeping interrupted this proof.
+
+Checkpoint1388 gates: full root6426jobs/50.897983s/0; complete safe transitive Foundation43058declarations/35.137137s/0; all21public types (212lines), both full sources and eight downstream checks/34.209958s/0 reviewed. All2254source/3config hashes and113immutable archive paths/hashes checked. Standard3axioms only; no resource/toolchain/trust changes. Exact Git/private closure: .lake/stardust-1388-verification.json.

@@ -2150,3 +2150,5 @@ import Foundation.IBMUniformPrefixQuartic
 import Foundation.IBMUniformPrefixMaximum
 import Foundation.IBMRandomBlockQuartic
 import Foundation.IBMContinuousBlockWeights
+import Foundation.IBMContinuousQuadrature
+import Foundation.IBMContinuousWeightedQuartic
