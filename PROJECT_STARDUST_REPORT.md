@@ -35061,3 +35061,21 @@ queue, reflection accounting, curated manuscripts and build settings stay
 unchanged.
 
 Checkpoint1408 gates: complete root6475jobs/46.370859s/0; complete safe transitive43965declarations/47.828471s/0; all31public types and the complete new proof/definition source reviewed unabridged. Eight independent mathematical Lean checks passed (actual terminal timing in .lake/stardust-1408-independent-time.json); initial scratch-test errors and logs preserved. All2303sources/3configs frozen/rechecked; pre-existing sources unchanged except root imports/AxiomAudit;113immutable archive paths/hashes unchanged. Default200000 proof heartbeats, trust and toolchain retained. FOUR explicit Git paths; exact receipt and verified PRIVATE main/research closure follow in .lake/stardust-1408-verification.json.
+
+
+## Instruction-only checkpoint1409 — future iterated pseudoprocess calculus
+
+Saved the October23 user directive in
+`STARDUST_ITERATED_PSEUDOPROCESS_QUEUED_RESEARCH.md`, with matching authoritative
+AGENTS/queue entries. IBM remains ACTIVE, all previously named campaigns keep
+their order, and the new campaign follows black noise before general backlog.
+IBM completion and every preceding audited/private transition gate remain
+mandatory. No mathematical proof, manuscript, toolchain, reflection record or
+active campaign changed. The arXiv metadata/abstract were checked; the publisher
+returned403. Full literature/proof audit is deferred to campaign activation.
+Composition domains, signed clocks, causal replacements, higher-order Ito and
+Clark--Ocone, exact convergence/closure and sharp obstructions are saved without
+assuming probability structure or novelty. Mathematical verification is reused
+ONLY after exact identity with all2303sources/3configs of CLOSED1408 is proved;
+113archive paths/hashes must remain unchanged. Explicit four-document Git and
+exact PRIVATE main/research closure follow in .lake/stardust-1409-verification.json.

@@ -64,7 +64,19 @@ selective audit and verified counterexamples. Begin only after fractional
 diffusion's fully audited/private checkpoint. See
 `STARDUST_BLACK_NOISE_QUEUED_AUDIT.md` for exact scope and unresolved obligations.
 
-After black noise, continue cumulative autonomous backlog research.
+**AFTER the existing black-noise campaign:** investigate a rigorous calculus
+for iterated and time-changed higher-order pseudoprocesses, including signed
+pseudoprocess clocks. Reuse the completed IBM and signed multichannel libraries;
+construct actual signed composition functionals, precise domains and bounds,
+derivatives/adjoints, higher-order Ito identities and causal Clark--Ocone
+reconstruction where justified. The starting reference is Cinque--Orsingher,
+*Higher-order fractional equations and related time-changed pseudo-processes*
+(arXiv:2402.13691). See `STARDUST_ITERATED_PSEUDOPROCESS_QUEUED_RESEARCH.md` for
+all objectives, literature and obstruction gates. IBM completion is mandatory;
+retain the order of all already queued campaigns. No early activation or
+assumption of probability, martingales or conditional expectation for signed
+pseudoprocesses. After this campaign, continue cumulative backlog research.
+
 No expiration date;
 October31 is REVIEW ONLY. All full-build, complete axiom-audit, public-type/proof
 review, independent-test, ledger, source-integrity, Git and verified PRIVATE
