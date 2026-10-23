@@ -2124,3 +2124,5 @@ import Foundation.IBMCompletedSignedCovarianceIntegral
 import Foundation.IBMMultichannelCompletion
 import Foundation.IBMCompletedCoordinates
 import Foundation.IBMCompletedNativeCalculus
+import Foundation.IBMPredictableTimeCutoff
+import Foundation.IBMCompletedTimeCutoff

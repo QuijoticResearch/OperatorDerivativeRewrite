@@ -32021,3 +32021,60 @@ convergence. All2224 old sources unchanged except two root imports,3configs and
 113 immutable archive paths/hashes unchanged. No manuscript edit, source deletion,
 new trust, resource override, suppressed check or causal/full-calculus claim.
 Exact private gate pending audited commit/receipt and PRIVATE main/research refs.
+
+
+## Checkpoint1370 — literal predictable stopping and actual causal IBM stochastic series
+
+# Current IBM mathematics — checkpoint1370: literal stopping and causal stochastic reconstruction
+
+IBM ACTIVE. Literal C_t H=1_(0,t]H on EVERY ORIGINAL random predictable L2(mu_F)
+is a contraction, composes by min, starts at0, right-L2-continuous, tends toH
+along natural horizons, and has exact increment energy. ORIGINAL actual integral
+satisfies I_F C_t H=P_t I_F H. Actual original output representatives form a
+martingale in the unchanged right-germ filtration, not a changed IBM process.
+
+Fixed-family completed stop S_t=J*P_tJ has PROVED actual recovery J S_t=P_tJ,
+contraction/min composition/zero/right-continuity/horizon limit. Literal stopped
+ORIGINAL coordinates have unconditional HasSum BOTH in completed joint-energy
+quotient and actual stochastic L2, with exact result S_t z/J S_t z. Every embedded
+old single input agrees with literal cutoff. ALL arbitrary finite families have
+actual stopped-sum projection equality and FULL signed joint-energy contraction;
+exact cross-channel cancellation preserved, no diagonal-only energy assumption.
+
+EVERY intrinsic terminalf has actual stopped stochastic series reconstructing
+P_t f-P_0 f, WHOLE initial germ retained. At f=ACTUAL IBM_T and t=T, it equals
+ACTUAL IBM_T. Input depends on terminalT: NO single fixed martingale integrand
+for the entire uncorrected IBM path. Its no-martingale-filtration theorem and
+positive-time ordinary-DomD obstruction remain TRUE and independently tested.
+
+Conditional TEMPORAL gradient/true Malliavin Clark–Ocone, physical-time Ito/Tanaka,
+pathwise brackets/regularity, uniform-in-time convergence and full IBM remain
+OPEN beyond earlier exact scopes. Fixed-time causal conditional-observable
+reconstruction is stronger than static Hilbert recovery, but is NOT the entire
+intrinsic calculus. Next investigate a substantive intrinsic formula or closure
+connection using actual stopped integrals, not additional static notation.
+See IBM_PREDICTABLE_TIME_CUTOFF_AUDIT.md and exact verification JSON.
+Queue IBM->Bakry/fBM->Cauchy->A(2)/RH attempt->fractional diffusion->blackito
+->backlog unchanged. Pseudo frozen1293; no expiry; all full/private gates retained.
+
+Fresh full root 6398jobs/54.208s/0.
+COMPLETE transitive safe Foundation audit 42411decl/34.602s/0,
+standard three axioms only. ALL40 unabridged public types,12 printed old/new
+definitions, ALL429 audit lines and385 final source/proof
+lines actually read. Eight independent tests FIRST attempt0/25.733s,
+emptylog. Tests: literal AE cutoff/composition/origin; exact original unit-step
+projection calibration; actual stopped-integral martingale alongside actual IBM
+nonmartingale in the SAME filtration; original L2 right-continuity/horizon;
+ACTUAL positive-point stopped reconstruction alongside joint-domain obstruction;
+completed stopped-coordinate HasSum/projection/contraction; arbitrary full signed
+finite cancellation survives stopping with EXACT zero energy; original increment
+energy and completed right-continuity/horizon. Ten development logs retained;
+no default resource timeout, no raised limits. Fixes were wrapper/pointwise
+coercions, dependent-index min/max handling, function eta and explicit finite-sum
+Tendsto for unconditional series. Full build emits long-line STYLE warnings;
+none suppressed. Two finite-family signatures retain classically available
+DecidableEq index parameters; unusedDecidableInType style warnings likewise
+retained and recorded, no analytic restriction. All2226 old sources unchanged except two root imports,3configs
+and113 immutable archive paths/hashes unchanged. No manuscript edit, source
+deletion, new trust or false physical-time/gradient/path-regularity claim.
+Exact private gate pending audited commit/receipt and PRIVATE main/research refs.
