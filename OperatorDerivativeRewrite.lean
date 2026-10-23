@@ -2217,3 +2217,6 @@ import Foundation.IBMNonlinearSpatialEnergy
 import Foundation.IBMNonlinearSpatialOperator
 import Foundation.IBMSineSpatialBoundary
 import Foundation.IBMNonlinearSpatialLimit
+import Foundation.IBMNonlinearColumnContinuity
+import Foundation.IBMSourceValuedOccupation
+import Foundation.IBMNonlinearClockLocalization
