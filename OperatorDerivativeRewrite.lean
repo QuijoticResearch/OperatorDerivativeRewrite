@@ -2155,3 +2155,4 @@ import Foundation.IBMContinuousWeightedQuartic
 import Foundation.IBMFourthPeano
 import Foundation.IBMActualPeanoRemainder
 import Foundation.IBMActualTaylorChain
+import Foundation.IBMActualQuadraticDivergence

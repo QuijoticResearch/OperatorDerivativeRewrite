@@ -33319,3 +33319,94 @@ manuscripts, canonical drafts/PDFs, queue and reflection records remain unchange
 No reflection or housekeeping interrupted the active proof/verification cycle.
 
 Checkpoint1389 gates: full root6429jobs/65.846741s/0; complete safe transitive43087declarations/35.677462s/0; all22public types (134lines), three complete sources and nine downstream checks/34.364544s/0 reviewed. All2257source/3config and113immutable archive paths/hashes checked. Standard3axioms only; no resource/toolchain/trust changes. Exact Git/private closure: .lake/stardust-1389-verification.json.
+
+
+## Checkpoint1390 — actual IBM quadratic divergence; separate raw channels fail
+
+IBM remains ACTIVE. The previous turn was PROGRESS1389, a fully verified C4
+actual Taylor-chain checkpoint. This investigation follows that theorem's exact
+remaining separate-channel obligation. Searches of IBM variation/divergence
+sources found clock quadratic variation and intrinsic operator divergence,
+which are different objects; neither was substituted for physical variation.
+
+IBMActualQuadraticDivergence defines, on the original constructed actual
+Z_t=W(|B_t|), N=n+1 and the common uniform physical grid,
+
+    Q_N = sum_i (Z_((i+1)T/N)-Z_(iT/N))^2,
+    L_N = sum_i 2 Z_(iT/N) (Z_((i+1)T/N)-Z_(iT/N)).
+
+Both are proved measurable; Q_N is nonnegative on EVERY sample. A finite
+deterministic estimate proves actual quartic variation V4_N <= mesh_N^2 Q_N.
+It reuses the actual finite maximum mesh and exact increment definitions.
+There is no assumed IBM increment independence or new covariance hypothesis.
+
+The existing every-sample mesh_N->0 and actual V4_N->3T IN PROBABILITY imply
+reciprocal_N=1/(Q_N+1)->0 IN PROBABILITY for EVERY fixed T>0, all N=n+1.
+The proof chooses an a.e.-convergent subsubsequence of V4_N on any subsequence.
+Samplewise, if V4_N->c>0, eventually
+
+    0 <= 1/(Q_N+1) <= mesh_N^2/(c/2) ->0.
+
+The reciprocal has no singular denominator because Q_N>=0. Measurability is
+proved before using the convergence-in-measure subsequence criterion.
+
+quadratic_lower_tail PROVES, for EVERY real K,
+
+    P(Q_N <= K) ->0.
+
+This is precisely Q_N->POSITIVE INFINITY IN PROBABILITY. The lower-tail event
+is bounded by {reciprocal_N >=1/(|K|+1)}, whose probability tends to0. This
+strictly positive transform threshold handles negative and positive K without
+an unproved random-envelope truncation or an expectation divergence shortcut.
+quadratic_no_finite_limit independently proves that NO real-valued random
+variable Y can be its probability limit. No proposed-Y measurability premise
+is needed: a purported probability limit itself admits an a.e. subsequence.
+A common nested subsequence of that limit and V4_N contradicts reciprocal
+limit uniqueness; any finite nonnegative sample limit has reciprocal>0.
+
+first_identity proves, exactly at EVERY finite grid and sample,
+
+    L_N + Q_N = Z_T^2-Z_0^2.
+
+quadratic_channels_identity identifies this sum with the PREVIOUSLY VERIFIED
+IBMActualTaylorChain.channels for f(z)=z^2. Thus the combined theorem is fully
+consistent with the obstruction. first_no_finite_limit proves NO finite random
+variable can be the probability limit of L_N either: its exact compensation
+would force a finite Q_N limit on a nested samplewise quartic-limit subsequence.
+
+Consequently, attempting to split1389's combined formula into separately
+convergent UNRENORMALIZED first and second raw Taylor integrals fails already
+at the quadratic polynomial. The second rank is exactly Q_N since D2(z^2)/2=1;
+the first rank is exactly L_N. Their sum is constant in N. This is an actual
+stochastic counterexample, not merely an expectation-level or numerical test.
+It does not refute compensated, symmetrized, intrinsic, source-resolved or
+multichannel stochastic integration. In particular it does not refute the
+already proved combined C4 identity, nor imply impossibility of full IBM
+calculus. Any proposed channel calculus must account for this cancellation.
+
+No almost-sure full-sequence divergence, divergence rate, separate L_N->minus
+infinity tail theorem, arbitrary-partition theorem, semimartingale theorem,
+or complete adjoint/domain/Clark-Ocone/Itô-Tanaka closure is asserted. IBM
+remains ACTIVE; none of the queued campaigns begins. Next investigate a
+genuine compensated or symmetric integration prescription and its convergence,
+reusing the existing cross-sector/adjoint machinery rather than defining an
+arbitrary integral by its desired endpoint. Audit existing relevant results
+before new proofs. The raw-separate-channel obstruction is now PROVED and
+must no longer be listed merely as a conjectural next test.
+
+Nine downstream Lean checks cover zero horizon (where Q_N DOES converge to0,
+showing T>0 is essential), zero first sums, exact one-cell endpoints, the
+combined quadratic Taylor identity, identification of the second raw rank,
+failure of the tempting Brownian-clock target T for physical Q_N, failure of
+a random endpoint target for L_N, a large fixed lower-tail threshold1000,
+and positivity/finite boundedness of the reciprocal. Full new proof source
+and all16 public declarations reviewed. A redundant closing tactic in the
+new bridge caused one full-build failure and was removed; a fresh full build
+passed on the final frozen sources. This was an elaboration issue, not a
+mathematical obstruction; the failed log is preserved under .lake/.
+
+All original manuscript bytes/pathset, canonical draft/PDF/index, reflection
+accounting and research queue remain unchanged. No housekeeping interrupted
+the proof cycle; no additional agent delegation or resource change occurred.
+
+Checkpoint1390 gates: full root6430jobs/37.984743s/0; complete safe transitive43107declarations/42.233660s/0; all16public types (83lines), complete new source and nine downstream checks/32.944376s/0 reviewed. All2258source/3config and113immutable archive paths/hashes checked. Standard3axioms only; no resource/toolchain/trust changes. Exact Git/private closure: .lake/stardust-1390-verification.json.
