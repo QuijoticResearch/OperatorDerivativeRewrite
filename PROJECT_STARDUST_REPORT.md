@@ -33754,3 +33754,120 @@ reflection accounting are unchanged. No housekeeping interrupted the proof
 or verification cycle; no agent delegation or new campaign began.
 
 Checkpoint1393 gates: full root6436jobs/39.489916s/0; complete safe transitive43214declarations/36.002856s/0; all28public types (146lines), both complete new sources and nine downstream checks/32.723712s/0 reviewed. All2264source/3config and113immutable archive paths/hashes checked. Standard3axioms only; no resource/toolchain/trust changes. Exact Git/private closure: .lake/stardust-1393-verification.json.
+
+
+## Checkpoint1394 — actual time-weighted signed Simpson calculus and spacetime chain
+
+IBM remains ACTIVE. PROGRESS1393 constructed the continuous spatial integral
+process J_g and uniform prefix/random-horizon approximation. This checkpoint
+uses those verified cumulative errors to introduce genuine deterministic
+time dependence in the finite stochastic quadrature, without postulating an
+integral by its desired endpoint or substituting the separate martingale M.
+
+For global C1 h:R->R, global C3 g:R->R, fixed T>0 and ALL uniform N=n+1,
+IBMTimeWeightedSimpson.weighted_tendstoInMeasure PROVES under the ORIGINAL
+actual reflected-clock IBM law Z_t=W(|B_t|),
+
+    sum_i<N h(iT/N) S_g(Z_(iT/N), Z_((i+1)T/N))
+      -> h(T) J_g(T) - integral_0^T h'(t) J_g(t) dt IN PROBABILITY,
+
+where S_g is the independently defined SIGNED spatial Simpson increment and
+J_g(t)=integral_(Z_0)^(Z_t) g(z)dz is the previously constructed actual
+continuous process. The weight is sampled at the LEFT physical time; the
+spatial Simpson rule still uses right endpoint data. It is not a predictable
+Itô integral. Time weights are deterministic C1 functions in this theorem.
+
+The correction is a GENUINE Lebesgue time integral, proved finite for EVERY
+sample and measurable under the joint source law. Weighted finite sums, true
+path-increment comparison sums, their error, and the target are measurable.
+No global bound on h,g or their derivatives, no expectation moment, no new
+source existence/law, no IBM increment independence or supplied variance
+estimate is assumed. Compact derivative bounds are derived from C1 regularity.
+
+IBMTimeWeightQuadrature first proves ordinary deterministic time calculus.
+An exact finite product identity, valid even on the empty grid, is
+
+    sum a_i(b_(i+1)-b_i)
+      = a_N b_N-a_0 b_0-sum b_(i+1)(a_(i+1)-a_i).
+
+For continuous real j and C1 h on any fixed [0,T], rightSum_tendsto PROVES
+sum j(t_(i+1)) Delta h_i ->integral_0^T h'(t)j(t)dt. The proof does not assume
+this Riemann-Stieltjes identification. FTC expresses Delta h_i as the genuine
+integral of h' over its cell; its error is exactly the cell integral of
+h'(t)*(j(right_i)-j(t)). If |h'|<=K and j oscillates by<=eta over cell distances,
+the summed error is <=K*eta*T. Compact uniform continuity of j and mesh T/N->0
+then give the limit. Each integrability and cell partition equality is proved.
+
+Compact bounds B,K>=0 for h,h' and the K-Lipschitz bound for h on [0,T] follow
+from compactness and Mathlib's mean-value theorem. Existing
+IBMContinuousQuadrature.variation_bound bounds the discrete variation by KT.
+Combining the finite product identity with the proved right-sum limit yields
+the deterministic left increment-sum limit for EVERY continuous path j,
+without claiming that j itself has bounded variation.
+
+For actual stochastic sums, the difference between Simpson increments and
+increments of J_g has EXACT prefix cumulative error equal to checkpoint1393's
+error g T n m. Existing weighted_prefix_bound (Abel summation) therefore gives
+
+    |weightedSimpson_N - weightedActualPathIncrements_N|
+      <= maxPrefixError_N * (B+KT).
+
+This reuses the established maximum directly. No estimate of total raw IBM
+variation or limit of individual divergent raw Taylor ranks is attempted.
+For the probability proof, every-sample maxError<=eta*actualQuartic eventually
+with eta=epsilon/(B+KT+1) bounds the weighted error by epsilon*actualQuartic.
+The already verified quartic Peano tightness argument proves decay. Actual
+path-increment sums converge samplewise for EVERY sample by the deterministic
+theorem. A common a.e. subsubsequence combines both limits and identifies the
+original-law probability limit of the actual weighted Simpson sums.
+
+derivative_weighted_tendstoInMeasure obtains the explicit SEPARABLE spacetime
+chain formula. For global C4 spatial f and global C1 temporal h,
+
+    sum_i<N h(iT/N) S_(Df)(Z_i,Z_(i+1))
+      -> h(T)f(Z_T)-h(0)f(Z_0)
+           -integral_0^T h'(t)f(Z_t)dt IN PROBABILITY.
+
+The target identity is proved samplewise. The genuine oriented integral of
+Df equals f(Z_t)-f(Z_0) by FTC; distributing its time correction and using
+integral_0^T h'=h(T)-h(0) gives the displayed formula. No choice of an a.e.
+zero representative at Z_0 is required for this identity. No fifth derivative
+or global derivative bound is imposed on f. This is a concrete stochastic
+chain rule for h(t)f(Z_t), not an expectation-level heat equation or a claim
+that fourth-order symmetric corrections define a Markov generator.
+
+This resolves deterministic C1 time weights and separable C1-time/C4-space
+test functions for the SIGNED SIMPSON prescription. It does NOT establish a
+general two-variable F(t,z) theorem, arbitrary random time coefficients,
+adapted integration against physical Z, causal Clark-Ocone, strong joint
+operator-domain membership, or an identification with the original stochastic
+divergence. Prior sine strong-domain and separate raw-rank counterexamples
+remain valid. No uniform-in-time weighted convergence, continuous interpolation
+of finite sums, arbitrary partitions, unbounded horizons or L1/L2/ almost-sure
+full-sequence upgrades are asserted. IBM remains ACTIVE and full intrinsic
+calculus remains OPEN. No queued campaign begins.
+
+Next pursue a justified general time-space formula or a controlled random
+finite-variation time coefficient, reusing the genuine time integration and
+uniform prefix machinery. Any density/closure extension must control the
+correct derivative seminorms and convergence topology, rather than merely
+approximate function values. No external novelty claim is made about these
+ordinary deterministic principles or their formalized stochastic application.
+
+Eleven downstream Lean checks cover empty-grid integration by parts; exact
+right-sum telescoping for a constant path; right and left quadratic time sums
+with limits1/3 and2/3; constant weight recovery of the old finite Simpson sums;
+zero time weights; genuine formulas for tZ, tZ^2 and t^2*sin(Z); a C1 real-rpow
+time weight with unbounded exp(z^2) spatial integrand; and integrable/measurable
+candidate time corrections under continuity alone. The real-rpow convention
+is Mathlib's precise definition, with no unproved abs-power or optimality
+claim. Both complete proof sources and all27 public types reviewed.
+Elaboration repairs used explicit integrable functions, cast identities and
+existing FTC statements; no resources, checks or theorem semantics were
+weakened. Failed logs remain diagnostic evidence, not mathematical obstructions.
+
+All archive bytes/pathset, canonical manuscript/PDF/index, queue and reflection
+records remain unchanged. No housekeeping interrupted this proof/verification
+cycle; no agent delegation or unrelated campaign occurred.
+
+Checkpoint1394 gates: full root6438jobs/23.731758s/0; complete safe transitive43262declarations/35.169485s/0; all27public types (212lines), both complete new sources and eleven downstream checks/32.529078s/0 reviewed. All2266source/3config and113immutable archive paths/hashes checked. Standard3axioms only; no resource/toolchain/trust changes. Exact Git/private closure: .lake/stardust-1394-verification.json.

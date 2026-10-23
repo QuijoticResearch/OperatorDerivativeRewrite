@@ -2162,3 +2162,5 @@ import Foundation.IBMActualSimpson
 import Foundation.IBMSimpsonGraphDual
 import Foundation.IBMUniformSimpsonProcess
 import Foundation.IBMSimpsonRandomHorizon
+import Foundation.IBMTimeWeightQuadrature
+import Foundation.IBMTimeWeightedSimpson
