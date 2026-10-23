@@ -2220,3 +2220,5 @@ import Foundation.IBMNonlinearSpatialLimit
 import Foundation.IBMNonlinearColumnContinuity
 import Foundation.IBMSourceValuedOccupation
 import Foundation.IBMNonlinearClockLocalization
+import Foundation.IBMEarlierWeightedOverlap
+import Foundation.IBMClockTailOverlap

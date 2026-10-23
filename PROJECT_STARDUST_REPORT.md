@@ -35686,3 +35686,59 @@ No manuscripts, campaign queue, reflection/PDF documents, toolchain, mathematica
 Domain qualification1420: localization here multiplies the actual derivative integrand by chi(|B_t|). It is not asserted to be the clock derivative of the product observable chi(|B_t|)*sin(U_n(|B_t|)); differentiating that product would require its additional cutoff-derivative term. An observable graph/domain identification must be proved separately rather than inferred from the field name.
 
 Checkpoint1420 gates: complete root6494jobs/26.481015s/0; complete safe transitive44346declarations/38.406390s/0; all38public types and ALL THREE complete final source/proof files read unabridged. Ten independent mathematical Lean checks passed (final exact timing retained); independent checks cover exact covariance degeneration, ordinary column-continuity error norm, source-valued occupation, actual nonzero mollifier cutoff support, positive and negative cutoff convergence, containing-window consistency, literal raw source/time representation, finite-native equality, actual mollified-process coefficient and retained point-domain obstruction; exact final timing retained. Earlier targeted-source elaboration failures/logs retained; the raw-coefficient independent check required removal of a no-progress dsimp and explicit ContinuousMap constructor coercion simplification, with both failure logs preserved; production sources unchanged. Final independent timing/log retained. No sources changed after the successful full build. All2322sources/3configs frozen/rechecked; pre-existing mathematical bytes unchanged except root/Axiom imports;113immutable archive paths/hashes unchanged. Default200000proof heartbeats/trust/toolchain unchanged. SIX explicit Git paths; exact receipt/private main and research verification follow in .lake/stardust-1420-verification.json.
+
+## Checkpoint1421 — actual earlier-time weighted overlap tails; IBM active
+
+The proposed weighted-transition reduction from1420 is now proved in
+`IBMEarlierWeightedOverlap`. For any finite earlier marginal, nonzero later
+Gaussian increment variance v, and measurable weight 0<=w<=1, the product-law
+integral of w(a)*overlap_nm(|a|,|a+b|) is at most
+2*peak(v)*integral w(a). Product integrability and Gaussian translation are
+proved. Transport uses the EXISTING actual Gaussian clock's independent
+increment joint law, then the actual continuous clock modification. It does not
+assume that w(B_s) is independent of B_s, of the later state, or of a nonlinear
+source coefficient. All times satisfy 0<=s<t; no diagonal estimate is asserted.
+
+`IBMClockTailOverlap` uses the literal indicator tail_R(x)=1_{R<|x|}, R>0.
+The EXISTING actual continuous Brownian second moment gives E tail_R(B_s)
+<=s/R^2. Combining the two theorems proves, for EVERY n,m and s<t,
+
+    E[tail_R(B_s) overlap_nm(|B_s|,|B_t|)]
+        <= 2*peak(t-s)*s/R^2.
+
+The full nonlinear covariance envelope is also retained:
+
+    E[tail_R(B_s) (overlap_nm(|B_s|,|B_t|)+4)]
+        <= (2*peak(t-s)+4)*s/R^2.
+
+These constants are independent of BOTH mollifier widths. The integrals are
+ordinary integrals of genuine Gaussian/continuous-clock random variables;
+there is no signed expectation or new conditional-expectation assumption here.
+Weighted overlap integrability is verified separately, including arbitrary
+fixed times, while the uniform estimate requires strict time ordering.
+
+Scope: this is the two-time tail reduction needed for removing spatial
+localization, not yet the time-integrated coefficient-valued gradient theorem.
+The next obligation is to combine the earlier-tail estimate with the verified
+min(s,t)*(overlap+4) original vector-field covariance and integrable off-diagonal
+time kernel, prove a uniform native tail ENERGY bound, and then remove cutoffs
+in1420's actual localized strong convergence. Both-tail products are bounded by
+the earlier mask, as independently tested. The full unlocalized nonlinear clock
+gradient strong limit, graph identification and full intrinsic actual IBM
+calculus remain open. No local-to-global strong convergence is inferred from
+bounded L2 norms alone. No clock derivative of a cutoff-product observable is
+asserted without its extra product-rule term.
+
+The positive-radius hypothesis is essential for the pointwise second-moment
+domination: R=-2,x=0 gives R^2*tail_R(x)=4>x^2=0. Strict indicator boundaries
+are checked at x=+/-R. Existing point-clock domain and nonlinear covariance
+obstructions remain unchanged. Initial alias rewriting, measurable-absolute
+name, chained projection parsing and norm-coercion elaboration failures are
+preserved in targeted logs; no axiom, limit, trust or toolchain was changed.
+
+No manuscript bytes, queue, reflection/PDF artifacts or unrelated mathematical
+sources are modified. Oct23 reflection remains already consumed; this is
+ordinary active IBM proof work. The future iterated/time-changed pseudoprocess
+campaign remains queued under its existing completion gates.
+
+Checkpoint1421 gates: complete root6496jobs/29.945352499955334s/0; complete safe transitive44362declarations/40.598001200007275s/0; ALL16public types (160 unabridged audit/type lines) and BOTH complete final source/proof files reviewed. Seven independent Lean checks/29.404077199986205s/0 cover strict cutoff endpoints, false negative-radius implication, actual zero-time mass, concrete positive-time tail, correlated nonmonotone sine-squared weight, two-tail envelope domination and concrete +4 envelope. Final independent log retained; all prior elaboration failures retained. Production sources unchanged after complete build/audit. All2324Foundation/root sources+3configs frozen/rechecked;113immutable archive paths/hashes unchanged. Default200000heartbeats/trust/toolchain unchanged. FIVE explicit Git paths; exact receipt and PRIVATE main/research closure recorded in .lake/stardust-1421-verification.json.
