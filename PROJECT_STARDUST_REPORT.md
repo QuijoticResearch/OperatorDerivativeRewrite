@@ -34252,3 +34252,83 @@ Original manuscripts, all113 archive paths/hashes, queue, reflection accounting,
 curated documents, private LaTeX/PDF pairs and index are unchanged.
 
 Checkpoint1399 gates: complete root6451jobs/27.343525s/0; complete safe transitive43496declarations/40.162537s/0; all44public types (267unabridged lines), all five complete new sources and ten downstream Lean checks/29.716929s/0 reviewed. All2279source/3config hashes frozen; all pre-existing sources unchanged except root imports/AxiomAudit;113immutable archive paths/hashes checked. Only standard3axioms; no resource/toolchain/trust changes. Queue/reflection records, curated exposition and original/private manuscript artifacts unchanged. Explicit eight-path Git checkpoint, exact receipt and verified PRIVATE main/research closure follow in .lake/stardust-1399-verification.json.
+
+
+## Checkpoint1400 — genuine time-weighted nonlinear IBM stochastic L2 calculus (October23,2026)
+
+IBM remains ACTIVE; baseline bea66e8 (1399). This is mathematical proof work,
+not a second reflection/housekeeping session. Reuse the ORIGINAL actual IBM
+Z_t=W(|B_t|), its original joint law, old time-weighted spatial Simpson sums,
+old exact summation-by-parts/time-integral target and checkpoint1399 moments.
+No new process, Gaussian law, strong derivative or test-dual space is introduced.
+
+`IBMWeightedSimpsonL2Error.weighted_error_bound` proves for every C5 primitive
+f with global fifth-derivative bound M, every deterministic time weight bounded
+by B on [0,T], and all uniform N=n+1, the actual weighted Simpson error is at
+most B*M*sum|Delta Z|^5. No time differentiability is required for this ERROR
+bound. Actual measurability, L2 membership, representatives, norm bound and
+`errorClass_tendsto` follow from the PROVED actual tenth moments/fifth-variation
+L2 decay; no assumed independence or uniform-integrability premise is added.
+
+`IBMWeightedSimpsonL2Realization` closes the full time-dependent stochastic
+identity on the precise domain h in C1, f in C5, |f|<=F and |f^(5)|<=M globally.
+`pathSum_target_bound` reuses finite Abel summation and compact time bounds:
+all exact path sums and their actual target are bounded by
+C=2*F*(B+K*T), for |h|<=B and Lip(h|[0,T])<=K. This gives genuine original-law
+L2 membership and dominated L2 convergence of the exact sums. Adding the
+vanishing actual weighted error proves `valueClass_tendsto` for the SAME
+UNCLIPPED stochastic Simpson sums, all T>=0 and every N=n+1. Nonaffine C1
+weights are included. This upgrades the older original-law probability result
+on this stated bounded-C5 domain; no claim of optimality or novelty is made.
+
+`IBMWeightedSimpsonIntrinsic` verifies original IBM observability of all finite
+sums and uses the OLD closed observable subspace for their target. Its
+`intrinsicTarget_actual_ae` identifies the genuine stochastic limit as
+h(T)f(Z_T)-h(0)f(Z_0)-int_0^T h'(t)f(Z_t)dt.
+The time integral is the actual pathwise Lebesgue integral from the old theorem,
+not an expectation formula or a new formal drift. `intrinsicValue_tendsto`
+is STRONG observable L2 convergence. `weakDerivative_tendsto` gives norm
+convergence in the FULL ORIGINAL joint adjoint graph dual. Every ORIGINAL
+joint-divergence-domain test is allowed. `actual_pairing_integrable` and
+`target_pairing_integrable` establish actual integrability of both products;
+`dual_pairing_tendsto`, `target_actual_pairing`, `actual_pairing_tendsto` identify
+the limiting expectations, including the exact time-corrected original paths.
+Proofs are split and existing large operators kept opaque locally for ordinary
+elaboration; no resource, trust, check or mathematical semantics are changed.
+
+`IBMSineAverageSimpson` provides the concrete new actual-process realization:
+h(t)=T-t, f=sin. `value_actual_ae` is the OLD UNCLIPPED ramp-weighted COSINE
+Simpson sum; `average_actual_ae` is exactly int_0^T sin(Z_t)dt. `value_tendsto`
+proves their strong observable L2 convergence, including T=0, and the full
+original graph-dual derivative limit is identified. The zero-time sine term
+is removed ONLY with the old AE theorem, never as an all-sample assertion.
+This is a time average OF a nonlinear process. It is not sin(int Z_t dt).
+
+Independent exact Lean checks: zero one-form finite identity; first ramp-cell
+formula; all-sample T=0 identity without a false Z0 assertion; correct positive
+ramp time correction including the initial term; deterministic counterexample
+to interchanging averaging with a nonlinearity; actual raw ramp-cosine L2
+membership; actual sine-time-integral representative; BOTH global sine bounds;
+nonaffine h(t)=t^2 instantiation; full original graph-dual limit.
+
+Precise remaining obligations: no membership of this sine average or the
+general nonlinear time correction in the STRONG joint derivative domain is
+proved. Finite stochastic sums are not assumed in that domain. Old positive-
+time sine-point obstructions remain valid, including constant-weight members
+of the general family. No strong-gradient graph convergence, adapted/Skorohod
+integral, causal projected gradient or full IBM Clark--Ocone completion is
+inferred from these L2/dual results. Bounded primitive/global fifth bound are
+real domain restrictions; unbounded primitives are not silently included.
+Investigate the nonlinear averaged clock-gradient covariance/cancellation
+needed for a strong original operator-domain result, reusing the new actual
+signed stochastic realization and existing F1–F3/chaos machinery. Do not
+confuse old phi(int Zdt) chain rules with domains of int phi(Zt)dt. IBM remains
+unfinished and ACTIVE; no queued campaign is opened.
+
+Source integrity: all113 immutable ResearchSources paths/hashes preserved;
+original manuscripts and private paper drafts/PDF/index unchanged. Queue,
+reflection accounting, curated exposition and all configuration remain unchanged.
+
+Additional independent Lean obstruction test identifies the new family's constant-weight sine target with the OLD sinePoint and proves it OUTSIDE the strong joint domain at every positive horizon. This refutes a universal domain inference for this same family and makes no claim about the ramp sine average.
+
+Checkpoint1400 gates: complete root6455jobs/24.505420s/0; complete safe transitive43559declarations/36.824039s/0; all41public types (360unabridged lines), all four complete new sources and eleven downstream Lean checks/27.291103s/0 reviewed. All2283source/3config hashes frozen; all pre-existing sources unchanged except root imports/AxiomAudit;113immutable archive paths/hashes checked. Only standard3axioms; no resource/toolchain/trust changes. Queue/reflection, curated exposition and original/private manuscript artifacts unchanged. Explicit seven-path Git checkpoint, exact receipt and verified PRIVATE main/research closure follow in .lake/stardust-1400-verification.json.

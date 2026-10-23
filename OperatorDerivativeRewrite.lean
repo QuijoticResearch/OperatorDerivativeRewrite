@@ -2177,3 +2177,7 @@ import Foundation.IBMSimpsonFifthError
 import Foundation.IBMFifthVariationL2
 import Foundation.IBMSimpsonL2Error
 import Foundation.IBMRawCosineSimpsonL2
+import Foundation.IBMWeightedSimpsonL2Error
+import Foundation.IBMWeightedSimpsonL2Realization
+import Foundation.IBMWeightedSimpsonIntrinsic
+import Foundation.IBMSineAverageSimpson
