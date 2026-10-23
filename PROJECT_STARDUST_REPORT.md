@@ -32449,3 +32449,67 @@ No Lean/manuscript/queue content changed. Exact2236mathematical-source/3config
 identity and immutable113archive hashes were checked; retain successful1376
 full6408-job build, complete42711-declaration audit,14cited type reviews and
 five independent checks under the verified documentation-only reuse policy.
+# Checkpoint1378 — spatial return energy for actual IBM quartic sums
+
+IBM remains ACTIVE; no queued campaign or reflection session was opened. The
+previous goal turn made progress by closing the once-per-day instruction change.
+This checkpoint returns to the actual physical-time quartic-variation obligation.
+Sources reused: IBMFiniteQuarticSecondMoment's exact conditional variance,
+IBMSpatialOverlap's oriented Brownian covariance, GaussianQuarticWick,
+and IBMConstructedSources' genuine continuous independent Brownian factors.
+No ResearchSources manuscript was changed or needed to be ingested anew.
+
+New module: Foundation/IBMQuarticOccupationEnergy.lean. For a finite indexed
+family of spatial traversals [a_i,b_i], N(x) counts every visit to the unoriented
+half-open interval (min(a_i,b_i),max(a_i,b_i)]. All first and second count
+integrals are genuine finite Lebesgue integrals. The exact identity is
+
+    integral N(x)^2 dx = sum_i sum_j |signedOverlap(a_i,b_i,a_j,b_j)|.
+
+It includes reversed, repeated, disjoint and degenerate intervals. No temporal
+disjointness assumption is introduced. Under |b_i-a_i|<=delta, delta>=0, the
+verified eighth-moment covariance bound is
+
+    72 |b_i-a_i| |b_j-a_j| overlap^2 +24 overlap^4
+       <=96 delta^3 |overlap|.
+
+Consequently the ACTUAL scenery-conditional mean-square centered quartic sum
+is bounded by 96 delta^3 integral N^2, for each fixed clock sample. The proof
+first establishes genuine scenery L2 membership of the finite quartic sum and
+uses the probability-measure variance identities to identify the nonnegative
+mean-square error; it does not merely subtract formal moments. Instantiation
+actual_conditional_centered_square_le uses the existing constructed Brownian
+scenery and clock, with their modification and continuity facts discharged.
+
+If N<=M pointwise, the bound becomes 96 delta^3 M sum_i |b_i-a_i|.
+conditional_centered_square_tendsto proves a precise sequence criterion:
+weighted occupation energy delta_n^3 integral N_n^2 ->0 implies conditional
+mean-square convergence to the actual conditional mean. The energy decay is
+an explicit hypothesis, NOT a theorem about the Brownian clock in this checkpoint.
+
+An exact scaling test rules out replacing the energy condition by shrinking
+increments alone: n^2 repeated traversals of [0,1/n] have weighted energy
+(1/n)^3 integral N^2=1 for every positive integer n. This is a finite spatial
+family counterexample to that proposed shortcut, NOT a counterexample to IBM's
+Brownian-clock partition limit. Repeated-return energy grows quadratically in
+the number of traversals. The constant96 is attained for an identical pair of
+unit intervals in the exact covariance expression.
+
+OPEN: prove the required decay for actual reflected Brownian-clock partition
+families, with quantitative control of spatial returns and random maximum
+increments. A possible route is to dominate traversal counts by discrete
+occupation counts near clock endpoints and use genuine Brownian transition
+densities; the existing continuous-time mollifier covariance bound in
+IBMClockOverlapEnergy is NOT already a discrete-partition occupation estimate.
+Conditional mean convergence also requires the reflected-clock zero-crossing
+correction to vanish, in a proved topology. A fixed-clock conditional L2 limit
+does NOT by itself give joint L2, almost-sure convergence, a path supremum limit,
+or a physical-time Ito/Tanaka formula. Those central IBM obligations remain open.
+
+Verification status and exact full-build, complete transitive axiom-audit,
+public-type/proof review, independent tests, source integrity, Git and PRIVATE
+backup evidence are recorded in .lake/stardust-1378-verification.json at closure.
+No theorem semantics, resources, toolchain, audit whitelist or campaign gate changed.
+
+
+Checkpoint1378 gates: full root6409jobs/10.353521s/0; complete safe transitive Foundation42740declarations/40.107202s/0; all26newpublic types (287lines) and complete source/proofs reviewed; five independent Lean checks/35.503853s/0, first-run pass. All2237source/3config manifest hashes and113immutable archive hashes checked. New leaf, root import and explicit print-audit import/list are the only mathematical-source changes. Queue/reflection accounting/manuscript source/PDF unchanged. Exact closed Git/PRIVATE both-ref evidence: .lake/stardust-1378-verification.json.

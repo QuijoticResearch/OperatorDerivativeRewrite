@@ -2134,3 +2134,4 @@ import Foundation.IBMStochasticIntegratorEnergy
 import Foundation.IBMStochasticProductAssociativity
 import Foundation.IBMCompletedBoundedAssociativity
 import Foundation.IBMUniformStochasticReconstruction
+import Foundation.IBMQuarticOccupationEnergy
