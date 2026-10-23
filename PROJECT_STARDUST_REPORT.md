@@ -32705,3 +32705,69 @@ ResearchSources, manuscripts, mathematical queue and reflection policy stay unch
 
 
 Checkpoint1381 gates: full root6413jobs/25.712636s/0; complete safe transitive Foundation42811declarations/37.453316s/0; all17newpublic types (136lines) and both complete source/proof files reviewed. Five downstream Lean checks/32.160186s/0: empty grid, zero horizon, zero-length twentieth moment, exact one-interval spatial energy and actual probability-topology application. Initial nested-absolute-value test syntax repaired without changing mathematical sources. All2241source/3config manifest hashes and113immutable archive hashes checked. Queue/reflection/manuscripts unchanged. Exact Git/private closure evidence: .lake/stardust-1381-verification.json.
+# Checkpoint1382 — actual IBM centered quartic fluctuations under the joint law
+
+IBM remains ACTIVE. Previous goal turn PROGRESS: checkpoint1381 proved actual
+clock maximum tails and weighted traversal occupation convergence in probability.
+This checkpoint closes the previously proposed interval-identification and
+product-measure Chebyshev/Fubini argument. No reflection session or campaign
+transition was started.
+
+Foundation/IBMUniformQuarticFamily.lean defines actual uniform quartic sums
+directly from IBMConstructedSources.ibmValue, the existing genuine process
+Z_t=sceneryPath(X,|clockPath(Y,t)|), on the ORIGINAL product probability space.
+For fixed T>0 and N positive, let t_i=i*T/N. Define
+
+    Q_N(X,Y)=sum_(i=0..N-1)(Z_(t_(i+1))-Z_(t_i))^4,
+    m_N(Y)=3 sum_(i=0..N-1)(|B_(t_(i+1))|-|B_(t_i)|)^2.
+
+Positive grid spacing makes the interval-pair image injective. Exact finite
+reindexing identifies Q_N with IBMFiniteQuartic.quarticSum for the constructed
+source modifications and identifies its traversal occupation energy with
+checkpoint1381's indexed energy. This is a pointwise identification of actual
+process sums, not a new abstract Gaussian proxy.
+
+The exact scenery-conditional mean E_X Q_N=m_N is verified. Each finite
+conditional quartic sum belongs genuinely to scenery L2; the squared centered
+residual is integrable for every fixed clock sample. The good-clock squared
+error bound is discharged using the actual maximum event and previous
+occupation/envelope control:
+
+    E_X[(Q_N-m_N)^2] <=96 delta^3 endpoint_energy_N(Y)
+
+on Y outside bad(T,N,delta). Q_N,m_N and their residual are measurable.
+
+Foundation/IBMUniformQuarticProbability.lean constructs measurable tail events
+and conditional tail probabilities from actual bounded indicators. Their
+genuine integrability supplies Fubini's identity under the original joint law.
+Conditional Chebyshev and the bound R_N(Y)<=1 on bad samples give
+
+    P_joint{|Q_N-m_N|>=epsilon}
+      <=P_clock(bad(T,N,delta))
+        +(96/epsilon^2) E_clock[delta^3 endpoint_energy_N].
+
+All event, indicator, section and product-integral identities are proved.
+Only a bounded indicator and an integrable endpoint envelope are integrated;
+no joint L2 bound for the residual is assumed, and fixed-clock conditional L2
+is never silently promoted to joint L2.
+
+Taking delta=N^(-4/9), the two RHS limits are the ACTUAL probability and mean
+limits already verified in1380/1381. The new unconditional theorem is
+IBMUniformQuarticProbability.residual_tendstoInMeasure:
+
+    Q_N-m_N ->0 IN PROBABILITY under IBMSourceLaws.jointMeasure,
+
+for every fixed T>0 and ALL positive uniform-grid sizes N=n+1. Its only
+external parameter hypothesis is T>0; process existence, independence of IBM
+increments, conditional-variance decay and candidate process laws are not
+supplied assumptions. The source factors are the existing constructed ones.
+
+OPEN: prove reflected-clock crossing-penalty decay and convergence of m_N to3T
+before asserting a quartic-variation limit. The physical-time Ito/Tanaka formula,
+brackets, temporal derivative/closure and full intrinsic IBM calculus remain
+unfinished. No joint L2, almost-sure or uniform path convergence is claimed.
+Original manuscripts, queue and reflection instructions remain unchanged.
+Final gates and exact private closure: .lake/stardust-1382-verification.json.
+
+
+Checkpoint1382 gates: full root6415jobs/24.354756s/0; complete safe transitive Foundation42838declarations/38.274967s/0; all25newpublic types (158lines) and both complete source/proof files reviewed. Six downstream Lean checks/32.195918s/0: empty and zero-horizon residuals, exact one-interval mean and quartic sum, actual conditional residual integral0, original joint-probability theorem application. Initial simp-name collisions with Mathlib residual/segment repaired by namespace qualification, without any mathematical source change. All2243source/3config hashes and113immutable archive hashes checked. No queue/reflection/manuscript changes. Exact Git/private closure evidence: .lake/stardust-1382-verification.json.

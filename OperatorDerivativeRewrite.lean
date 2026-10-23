@@ -2139,3 +2139,5 @@ import Foundation.IBMClockTraversalEnvelope
 import Foundation.IBMUniformClockGridEnergy
 import Foundation.IBMUniformClockMaximum
 import Foundation.IBMUniformClockOccupation
+import Foundation.IBMUniformQuarticFamily
+import Foundation.IBMUniformQuarticProbability
