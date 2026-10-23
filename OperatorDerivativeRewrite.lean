@@ -2203,3 +2203,4 @@ import Foundation.IBMSineSourcePathIntegral
 import Foundation.IBMClockPhysicalOccupation
 import Foundation.IBMClockOccupationTests
 import Foundation.IBMClockOccupationPath
+import Foundation.IBMClockOccupationConvolution

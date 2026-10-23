@@ -35263,3 +35263,93 @@ Their actual instantiation, spatial convolution construction and strong
 approximate-identity proof are NOT yet verified in Stardust.
 
 Checkpoint1411 gates: complete root6477jobs/43.680367s/0; complete safe transitive44017declarations/39.390226s/0; all18public types and the complete final source/proofs read unabridged. Eight independent mathematical Lean checks passed; initial scratch elaboration errors/log retained, final timing in .lake/stardust-1411-independent-time.json. All2305sources/3configs frozen/rechecked; pre-existing mathematical bytes unchanged except root/Axiom imports;113immutable archive paths/hashes unchanged. Default200000proof heartbeats/trust/toolchain unchanged. Four explicit Git paths; exact receipt/private main and research verification follow in .lake/stardust-1411-verification.json.
+
+
+## Checkpoint1412 — joint actual spatial convolution identity across all widths
+
+IBM remains ACTIVE. `Foundation/IBMClockOccupationConvolution.lean` resolves
+1411's proposed joint-measurability/null-set step without an uncountable
+intersection and without assuming a spatial smoothing operator or strong
+convergence. The same actual clock, original linear-average derivative and
+1408 physical random kernel K[h,T] are retained.
+
+The ACTUAL normalized bump is even: `kernel_even` reuses its pinned
+`ContDiffBump.normed_neg` theorem and `kernel_sub_swap` proves the necessary
+orientation identity rho_n(a-b)=rho_n(b-a). This is a verified property of the
+specific mollifiers, not an assumption about arbitrary profiles. `profile`
+is rho_n(x-r); continuous compact support and its genuine physical L2 class
+are proved. `profileClass_noise` identifies this translated physical class
+with the OLD actual source column via the OLD physical white-noise isometry.
+`profileClass_continuous` then reuses the OLD source-column continuity through
+that isometry. No new translation-group infrastructure is built.
+
+`kernelConvolution h n T (x,Y)` is the actual Hilbert pairing of K[h,T](Y)
+with this translated spatial class. It is JOINTLY measurable in(x,Y): this
+uses strongly measurable clock-L2 sections and the continuous physical L2
+profile map. It does NOT assume arbitrary chosen fiber-Lp representatives
+are jointly pointwise measurable. `kernelConvolution_integral` proves its
+literal physical Lebesgue integral formula at EVERY location and sample:
+
+    integral_r K[h,T](Y,r) rho_n(x-r) dr.
+
+`occupationValue` is the raw genuine time/location/clock function
+
+    <h,clockDirection(t)> sign(B_t(Y)) rho_n(abs(B_t(Y))-x).
+
+Joint measurability is proved from the actual Brownian clock.
+`occupationValue_integrable` proves time-integrability for EVERY location,
+clock sample and finite nonnegative horizon, using the existing compact-test
+time bounds. `occupationConvolution` is its actual raw time integral and is
+JOINTLY measurable in(x,Y). `occupationValue_eq_test` and
+`occupationConvolution_eq_path` verify orientation and identify it with1411's
+same raw signed occupation functional for the translated mollifier test.
+
+For each fixed x,1411 supplies the AE-clock equality. Joint measurability now
+allows `convolution_product_ae` to apply the true product-measure AE theorem
+on FULL spatial Lebesgue volume times the clock law. No finite-volume cutoff
+or uncountable intersection is used. Swapping the product law yields
+`convolution_clock_ae`; the countable widths give `convolution_all_widths_ae`:
+
+    for almost every clock sample Y, for EVERY n, for almost every x,
+      integral_r K[h,T](Y,r) rho_n(x-r) dr
+        = integral_0^T <h,clockDirection(t)> sign(B_t(Y))
+                        rho_n(abs(B_t(Y))-x) dt.
+
+Direction h and horizon T are fixed in this quantifier statement. No common
+uncountable horizon/direction event is asserted. The final literal version
+is also instantiated by an independent Lean check.
+
+This DISCHARGES the joint spatial convolution representation of the RAW
+finite-width occupation functional. It does NOT yet identify its spatial/
+clock L2 class with the OLD stored `kernelApprox h n T`; that native Bochner
+representative/Fubini step remains explicit. Nor does product-AE equality
+alone give an L2 operator bound, strong approximate-identity convergence,
+convergence of norms, a finite signed occupation measure on all Borel sets,
+or nonlinear sine-clock integration. None is claimed. Full IBM calculus
+remains OPEN; all earlier domain/parity/F1--F3 restrictions are preserved.
+
+Next aim: prove the actual raw finite-width function is the representative
+of the OLD native kernelApprox, and prove strong L2 spatial smoothing.
+A useful native realization route is the physical-Hilbert time field
+<h,Dt>sign(Bt)*profileClass(n,absBt). It has a fixed-n uniform Hilbert bound
+via `sourceColumn_bounded` and the OLD physical-noise isometry, requiring NO
+new clock-maximum moment. Then apply the existing BochnerL2 Fubini theorem
+with an independently constructed genuine L2 column class. For the scalar
+spatial realization, justify a global L2 bound by Minkowski/time Cauchy--Schwarz
+and translation invariance of the mollifier's spatial L2 mass, or use a
+rigorously justified compact-support localization. A pointwise constant
+bound is NOT integrable over the whole infinite spatial volume. These are
+proof routes, not certified steps. Search and reuse pinned Lp integration/
+translation results before constructing any supporting infrastructure.
+
+All23 public types and the complete final source/proofs are reviewed
+unabridged. Independent tests cover the zero horizon; EVERY-sample/location
+time integrability; actual spatial-reflection orientation; the negative-clock
+sign; one event for ALL widths with literal spatial integrals; genuine spatial
+integrability at every point; the original source-noise translation at1; and
+exact spatial energy agreement with the actual mixed-kernel overlap.
+Evidence is under `.lake/stardust-1412-*`. ResearchSources, queued instructions,
+reflection records, curated drafts/PDFs and Lean/Lake settings are unchanged.
+No external novelty claim is made. Full gates and exact private closure follow.
+
+Checkpoint1412 gates: complete root6478jobs/41.541777s/0; complete safe transitive44049declarations/37.506586s/0; all23public types and the complete final source/proofs read unabridged. Eight independent mathematical Lean checks passed (exact timing retained). All2306sources/3configs frozen/rechecked; pre-existing mathematical bytes unchanged except root/Axiom imports;113immutable archive paths/hashes unchanged. Default200000proof heartbeats/trust/toolchain unchanged. Four explicit Git paths; exact receipt/private main and research verification follow in .lake/stardust-1412-verification.json.
