@@ -2130,3 +2130,6 @@ import Foundation.IBMJointPredictableMultiplier
 import Foundation.IBMCompletedPredictableMultiplier
 import Foundation.IBMPredictableRectanglePullout
 import Foundation.IBMCompletedStochasticAssociativity
+import Foundation.IBMStochasticIntegratorEnergy
+import Foundation.IBMStochasticProductAssociativity
+import Foundation.IBMCompletedBoundedAssociativity

@@ -1,3 +1,38 @@
+# Current IBM mathematics — checkpoint1373: actual integrator energy and full product associativity
+
+IBM ACTIVE. Original predictable energy measure now transforms EXACTLY on the
+ENTIRE original sigma algebra: mu_(I_FH)=withDensity(ofReal(H^2),mu_F).
+For EVERY K in ENTIRE ORIGINAL random predictable L2(mu_(I_FH)), literal H*K
+belongs to ORIGINAL L2(mu_F), with correct AE representative and EXACT norm.
+The product map is a linear isometry; OLD actual stochastic integrals satisfy
+I_F(H*K)=I_(I_FH)(K) throughout that full domain, including unbounded K.
+Weighted null-ideal transport handles H=0 without false reverse AC.
+
+For EVERY original family F, EVERY completed z and EVERY original raw-predictable
+globally pointwise bounded g, prior1371 common action M_g is NOW identified:
+J_F(M_g z)=OLD I_(J_Fz)(class_mu_(J_Fz)(g)); in the completed input itself,
+M_g z=OLD1372 nestedIntegral(z,class(g)). Prior1372 general bounded-action gap
+is CLOSED. Appending one original channel and the verified full signed joint
+norm bound yields an actual comparison inequality. Existing terminal self-
+representation DISCHARGES single-channel representation of completed outputs.
+No new conditional representation premise or replacement integral is used.
+Same g on all channels; arbitrary channel-dependent g_i are not claimed.
+
+Original measure/domain/integral/filtration retained. Actual nonzero IBM1
+reconstruction with nonzero product input, zero-integrator case and genuine
+L2 product/stochastic-output convergence independently tested. No arbitrary
+unrelated L2-product integrability or global unbounded multiplier claimed.
+Full IBM calculus remains OPEN: physical-time Ito/Tanaka, pathwise brackets/
+regularity, intrinsic closure/chain rules and temporal-gradient Malliavin CO
+require exact further theorems. Predictable energy equality alone is not a
+pathwise bracket. Fixed-terminal martingale P_tY is distinct from uncorrected
+IBM path; nonmartingale and ordinary point-DomD obstructions remain unchanged.
+See IBM_INTEGRATOR_ENERGY_PRODUCT_ASSOCIATIVITY_AUDIT.md and verification JSON.
+Queue IBM->Bakry/fBM->Cauchy->A(2)/RH attempt->fractional diffusion->blackito
+->backlog unchanged. Pseudo frozen1293; no expiry; all full/private gates retained.
+
+---
+
 # Current IBM mathematics — checkpoint1372: actual rectangle pull-out and full L2 nested integration
 
 IBM ACTIVE. EVERY ORIGINAL random predictable H in L2(mu_F) now satisfies actual
