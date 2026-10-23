@@ -2193,3 +2193,5 @@ import Foundation.IBMNonlinearClockAverageGraph
 import Foundation.IBMSineAverageClockDomain
 import Foundation.IBMSineAverageSourceDomain
 import Foundation.IBMSineAverageIntrinsicCalculus
+import Foundation.ClosedOperatorWeakGraphLimit
+import Foundation.IBMSineAverageWeakGradient
