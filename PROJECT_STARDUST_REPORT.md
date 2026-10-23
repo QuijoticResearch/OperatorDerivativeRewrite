@@ -32513,3 +32513,67 @@ No theorem semantics, resources, toolchain, audit whitelist or campaign gate cha
 
 
 Checkpoint1378 gates: full root6409jobs/10.353521s/0; complete safe transitive Foundation42740declarations/40.107202s/0; all26newpublic types (287lines) and complete source/proofs reviewed; five independent Lean checks/35.503853s/0, first-run pass. All2237source/3config manifest hashes and113immutable archive hashes checked. New leaf, root import and explicit print-audit import/list are the only mathematical-source changes. Queue/reflection accounting/manuscript source/PDF unchanged. Exact closed Git/PRIVATE both-ref evidence: .lake/stardust-1378-verification.json.
+# Checkpoint1379 — genuine Brownian-clock traversal envelope
+
+IBM remains ACTIVE. Previous goal turn PROGRESS: checkpoint1378 proved the
+actual fixed-clock conditional quartic occupation-energy bound and closed its
+full audit/private backup. This step addresses the missing discrete clock
+estimate rather than starting another campaign or reflection session.
+
+New source: Foundation/IBMClockTraversalEnvelope.lean. Define
+tent(delta,x)=max(2delta-|x|,0). It is continuous, nonnegative, integrable,
+bounded by2delta for delta>=0; its integral is bounded by8delta^2 using a
+rectangular majorant. This is deliberately an estimate, not an asserted exact
+mass formula. For arbitrary orientations, if |b-a|,|d-c|<=delta, then
+
+    |signedOverlap(a,b,c,d)| <= tent(delta,a-c).
+
+This geometric bound reduces spatial traversal counts to starting-point
+neighborhoods. It is valid for reversed, overlapping and degenerate intervals.
+No temporal independence of IBM increments is assumed.
+
+Reusing IBMFoldedTransitionBound.folded_average_le and the actual Gaussian
+independent-increment law gives, for s<t,
+
+    E tent(delta, |B_s|-|B_t|)
+      <=16delta^2 peak(|t-s|),  peak(v)=1/sqrt(2*pi*v).
+
+The actual continuous Brownian clock modification satisfies this estimate
+without any supplied process-existence, conditional-density or modification
+assumption. Equal times are treated at their genuine value2delta, never by
+inserting zero variance in a density estimate. Reversing the time order is
+justified by symmetry. The stochastic estimates include the initial time0.
+
+For every finite indexed endpoint family tau_i, the genuine envelope energy
+sum_i sum_j tent(delta,|B_tau_i|-|B_tau_j|) is integrable. Its expectation is
+bounded by the sum of pairBound:2delta when tau_i=tau_j, and
+16delta^2*peak(|tau_j-tau_i|) otherwise. Duplicate times remain allowed and
+their entire diagonal block is counted.
+
+On each actual clock sample where all reflected traversal increments are
+bounded by delta, occupation_le_energy bounds checkpoint1378's integral N^2
+by this endpoint energy. Together the verified results control ACTUAL
+conditional quartic fluctuations on the bounded-increment event. The mesh
+condition has not been dropped or claimed almost surely for deterministic delta.
+
+OPEN: bound the inverse-square-root time-gap double sum along uniform grids,
+and control the probability of violating the deterministic increment bound.
+A prospective route, NOT YET VERIFIED: with N uniform intervals, gap summation
+should give endpoint-energy mean of order N*delta + N^2*delta^2 for fixed
+positive horizon. Taking delta=N^(-alpha), 2/5<alpha<1/2, would make
+delta^3 times this bound decay. High Brownian increment moments could bound
+the exceptional maximum-increment event. This requires explicit constants,
+endpoint/diagonal handling, actual event measurability and a proved probability
+argument; it is not an established partition limit.
+
+Still also OPEN: reflected-clock crossing-penalty decay, joint convergence
+topology and the physical-time Ito/Tanaka calculus. Conditional fixed-clock
+L2 and the new endpoint expectation bound alone do not establish them.
+No novelty or full IBM-calculus completion claim is made. Manuscripts, queue
+and reflection policy remain unchanged; ResearchSources stays immutable.
+Final full-build, transitive axiom, unabridged type/proof review, independent
+edge cases, source integrity and private Git evidence are recorded at
+.lake/stardust-1379-verification.json when the checkpoint closes.
+
+
+Checkpoint1379 gates: full root6410jobs/40.477310s/0; complete safe transitive Foundation42765declarations/40.889114s/0; all21newpublic types (138lines) and complete source/proofs reviewed. Five independent Lean checks/35.832982s/0, first-run pass: reversed overlaps, touching support, zero width, duplicate-time diagonal and actual initial-time law. All2238source/3config manifest hashes and113immutable archive hashes checked. Queue/reflection accounting/manuscript LaTeX/PDF unchanged. Final exact-commit receipt and PRIVATE both-ref evidence: .lake/stardust-1379-verification.json.
