@@ -42562,3 +42562,118 @@ scalar identity A_N=T-C_N remains available, with P_IBM removed ONLY inside
 proved observable pairings. No Fock/projection commutation or norm transfer.
 No campaign transition or Oct24 reflection reservation; staleOct23 reflection
 accounting uncertainty retained. Continue the actual IBM proof.
+
+## Checkpoint1490 — actual random capped-clock QV mean and original IBM observable limit
+
+IBM remains ACTIVE; authoritative queue8280325 and every completion gate are
+unchanged. Previous mathematical turn1489 was PROGRESS, closed at private
+1230061629df4da4eda9d63cb2412bd84385c99f. The intervening AI queue confirmation
+made no research change; this turn revalidated the unfinished work and resumed
+it. Target11 had terminal FAILED log and no live Lean/Lake process before
+repair; no observation timeout was treated as process termination. No campaign
+transition, new goal, parallel research session or reflection admission occurs.
+
+Primary manuscript: ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+The actual process remains the repository's reflected-clock Z_t=B(|W_t|).
+No law identification with two-sided outer Brownian IBM is assumed. All113
+ResearchSources paths/hashes match inventory1292; manuscripts are read-only
+and excluded from this commit. No mathematical novelty claim is made.
+
+IBMTerminalRiemannOccupation is extended APPEND ONLY: all existing definitions,
+proofs and statements are preserved, checked against the frozen baseline's
+exact SHA and normalized full prefix. Its 175 added lines reuse private cell,
+left-node and finite-integral helpers instead of duplicating them. The new
+originBand is 1_{|x|<=delta}. For EVERY deterministic real sequence delta_N->0,
+the literal uniform left-node occupation sum tends to zero almost surely and
+in mean. Existing BrownianClockWeightedEnergy.sigma_nonzero supplies the
+zero-level occupation nullity through explicit measurable product/Fubini
+conversion; continuity controls the nodes and dominated convergence closes
+the time integral. Positivity or monotonicity of delta_N is not assumed.
+
+The actual strict-interior occupation functional is constructed measurably:
+ I_T(Y)=integral_(0,T] 1_{|clockPath(Y,t)|<|clockPath(Y,T)|} dt.
+It lies in [0,T], has an actual GaussianL2 representative, and the literal
+interior left-node sums converge almost surely, STRONGLY in original clock
+GaussianL2, and in mean to I_T. The random-terminal equality boundary is
+discarded only using1487's proved distance_positive_ae. Original process
+representatives and continuous paths are equated AE at all countably many
+grid coordinates; no pointwise Brownian representative identity is assumed.
+
+IBMOriginBoundaryEnergy reuses1488's generated-observation anticipative
+bracket estimate and1489's weightedValue/weightedMean. Actual squared clock
+increments weighted by originBand(delta_N) have mean tending to zero and
+converge STRONGLY in clock L1, for T>0 and every delta_N->0. Together with
+1489's outer-band L1 result, BOTH nonsmooth crossing boundaries are controlled.
+
+IBMClippedClockCrossing proves literal deterministic estimates for
+ cap(r,x)=min(|x|,|r|),
+ error(r,x,y)=(cap(r,y)-cap(r,x))^2-1_{|x|<|r|}(y-x)^2.
+All real r,x,y are allowed: r is the RAW terminal clock, with abs inside cap.
+There is no missing r>=0 hypothesis or substitution of r for |r|. The cap
+increment square and absolute error are bounded by (y-x)^2. Error is EXACTLY
+zero when |y-x|<=delta, delta<|x| and delta<||x|-|r||. Therefore its absolute
+value is bounded by (y-x)^2 times the SUM of the origin band, outer band and
+large-increment indicator. No boundary control is assumed to vanish pointwise.
+
+IBMClippedClockTail uses actual increment first-chaos equality and the existing
+fourth moment to prove E[(W_t-W_s)^4]=3(t-s)^2. Literal large-increment square
+energy has mean <=3T^2/((N+1)delta^2) for delta>0, with integrability proved.
+The explicit width delta_N=(sqrt(sqrt(N+1)))^(-1) is positive, tends to zero,
+has square 1/sqrt(N+1), and gives vanishing mean large-increment energy.
+This is genuine Brownian integration, not an assumed stochastic-integral law.
+
+IBMClippedClockLimit assembles the actual finite sums
+ C_N(Y)=sum_i [min(|W_right|,|W_T|)-min(|W_left|,|W_T|)]^2,
+ V_N(Y)=sum_i (W_right-W_left)^2 1_{|W_left|<|W_T|}.
+Their difference is an ACTUAL integrable function, identified with its clock
+Lp1 class, and tends STRONGLY to zero there. The finite difference bound is
+the sum of the three independently vanishing energy controls above. The
+existing interior-weight bracket mean error then gives
+ E C_N -> O_T := E I_T, with 0<=O_T<=T.
+C_N is identified EXACTLY with1486's ORIGINAL clippedSquares at h=T/(N+1).
+Finally nativeTerminalPairing_tendsto proves, for EVERY T>0,
+ inner(jointDivergence(gridInput(T/(N+1),N+1)),squareObservation(T))
+     -> T-O_T.
+The operator, input and observable are the ORIGINAL intrinsic IBM objects;
+squareObservation_actual already identifies the observable with actual Z_T^2.
+This discharges the own-terminal observable SCALAR LIMIT left open1486.
+
+Scope is deliberately exact: strong L1 convergence is proved for C_N-V_N,
+and strong L2 for UNWEIGHTED occupation sums. The surviving random weighted
+bracket V_N has only a proved MEAN limit here. Strong convergence of C_N,
+convergence of all projected intrinsic outputs, a full observable test domain,
+the native Ito identity and complete intrinsic IBM Clark--Ocone remain open.
+No full-calculus completion is claimed. Evaluating O_T from the actual joint
+Gaussian clock law is a concrete next route, alongside general observable
+tests and stronger surviving-bracket convergence; no numerical value is proved
+or assumed in these declarations. The all-anticipative-weight counterexample
+from1488 remains valid and prevents silently broadening the bracket theorem.
+
+SIXTEEN independent Lean checks pass on the second run. They cover actual
+origin nodal decay and L1 energy; strong interior L2 and literal integral;
+origin crossing error(2,1,-1)=-4; outer crossing error(2,1,3)=-3; invariance
+under negative terminal sign; an exact crossing-free example; the general
+crossing bound; actual fourth moment; positive-width quantitative tail bound;
+strong nonlinear comparison; exact OLD cappedSum agreement; OLD clipped mean
+limit; occupation bounds; and the ORIGINAL intrinsic divergence pairing limit
+with the operator/input written out explicitly. First-run test errors were
+only an ambiguous unqualified error name and a missing Nat lambda annotation;
+the failed log and timing are preserved. No theorem or source changed for them.
+
+Development target1--11 logs preserve failed elaboration checks. Target12
+passes the final source, repairing a functional-addition integral rewrite by
+direct integral_add equality composition. All four new modules and ENTIRE
+modified occupation source, including private proofs, were read in full.
+Every one of the62 new public declarations was printed and reviewed UNABRIDGED.
+Complete transitive Lean.collectAxioms audit covers47696 safe Foundation
+declarations and accepts ONLY propext, Classical.choice, Quot.sound. Full root
+build covers6656 jobs. All2484 Foundation/root source hashes, three unchanged
+configuration hashes and113 archive hashes are frozen and rechecked. The ONE
+reviewed preexisting mathematical source extension is explicitly allowlisted
+and separately append-only checked; the general source-integrity gate is not
+weakened. No compiler, toolchain, resource, Mathlib or trust setting changes.
+Existing style warnings are retained; no linter or verification is suppressed.
+
+Measured terminal wall seconds: full-build=26.701, audit=40.796, independent=27.498.
+Explicit-path Git checkpoint, exact audit receipt and verified PRIVATE main/research synchronization follow; unfinished unrelated files stay excluded.

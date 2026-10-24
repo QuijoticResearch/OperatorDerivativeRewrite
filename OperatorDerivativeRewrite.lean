@@ -2378,3 +2378,7 @@ import Foundation.IBMTerminalBracketWeights
 import Foundation.GaussianTerminalBracketObstruction
 import Foundation.IBMTerminalRiemannOccupation
 import Foundation.IBMRandomBoundaryEnergy
+import Foundation.IBMOriginBoundaryEnergy
+import Foundation.IBMClippedClockCrossing
+import Foundation.IBMClippedClockTail
+import Foundation.IBMClippedClockLimit
