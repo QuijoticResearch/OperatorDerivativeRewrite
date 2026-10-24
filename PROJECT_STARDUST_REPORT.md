@@ -38397,3 +38397,113 @@ main/research synchronization follow. Active proof work uses no reflection
 session or housekeeping budget. No original manuscript is edited or committed.
 
 Terminal timings: root 26.959264s; complete audit 45998 declarations, 37.977441s; independent checks 26.367187s; all exit0.
+
+## Checkpoint1453 — actual bounded predictable spatial sums: sharp fourth moments
+
+IBM ACTIVE; queue1422 unchanged. Investigation of whether the1452 particular
+ordinary-L2 obstruction can extend to probability convergence uncovered a
+missing supporting theorem: the old predictable-step library proves second
+moments but supplied no reusable spatial-Hilbert fourth-moment bound. This
+checkpoint CONSTRUCTS the needed finite-sum result from existing actual Gaussian
+laws and full-past independence, without postulating the desired moment estimate.
+It does NOT yet prove a tail/probability-convergence obstruction for the
+continuous-time integral. Source remains ResearchSources/ibm/EJP2605-044RA0.pdf,
+SHA256 5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All original archive bytes and every previously verified result are preserved.
+
+IBMClockPastMoments proves integrability of EVERY natural power of the actual
+Brownian increment. For ANY integrable real coefficient measurable for its
+full RAW clock past, past_power proves both genuine product integrability and
+exact expectation factorization against EVERY future increment power. It
+DIRECTLY REUSES measurable_natural_iff_exists_pastCoefficient and the EXISTING
+actual pre-Brownian independence theorem; no finite-coordinate, polynomial,
+bounded-coefficient or mutual-independence assumption is imposed. First and
+second moments reuse old normalized Brownian results; the third moment zero
+is proved from the actual Gaussian increment law and its negation symmetry;
+the fourth moment3*(b-a)^2 reuses IBMSourceMoments. Degenerate intervals remain
+included. These are actual Gaussian probability identities, not formal noise rules.
+
+IBMSpatialFourthStep expands ||S+dU||^4 in the ACTUAL real spatial Lebesgue-L2
+Hilbert space. Two private supporting proofs establish integrability of
+past scalar coefficients dominated by powers of a genuine fourth-integrable
+S, and the pointwise Hilbert norm inequality. The even cross terms use REAL
+Cauchy--Schwarz and the proved bound||U||<=kappa. BOTH odd terms are retained
+until their expectations are independently proved zero by full-past/future
+independence. Every term's integrability is proved before splitting integrals.
+fourth_step gives actual next-step fourth integrability and the estimate
+
+    E||S+U DeltaB||^4 <= E||S||^4
+      +6*(b-a)*kappa^2*E||S||^2+3*(b-a)^2*kappa^4.
+
+fourth_step_memLp converts that genuine integrability to MemLp4 using the
+EXISTING norm-rpow characterization. second_step proves the companion actual
+second moment bound by the same independence/centering argument. S and U may
+depend on the ENTIRE raw past and on each other. No Gaussianity of the
+nonlinear adapted stochastic sum is assumed. The step S fourth-moment premise
+is NOT silently regarded as an actual-integral fourth-moment theorem.
+
+IBMSpatialFourthSums constructs the actual recursive finite sum
+S_(j+1)=S_j+U_j*(B_(tau(j+1))-B_(tau(j))), starting at0. On every deterministic
+nondecreasing time sequence and for raw-past strongly measurable U_j with
+||U_j||<=kappa, partial_past proves raw-past measurability of EACH partial sum.
+partial_memLp PROVES fourth integrability at EVERY finite stage, starting from
+zero; thus the preceding step theorem's integrability premise is discharged
+inductively, not inherited as an extra assumption about the desired sum.
+partial_moments proves simultaneously, with t=tau(n)-tau(0),
+
+    E||S_n||^2 <= t*kappa^2;    E||S_n||^4 <= 3*t^2*kappa^4.
+
+The exact time telescoping and the nonnegative increment coefficient justify
+the induction; variable spacings, repeated times, arbitrary finite counts,
+zero widths and empty sums are retained. mollifier_partial_fourth instantiates
+the theorem for the ACTUAL signed translated-mollifier coefficient
+spatial(r,process(tau(j))) from1452. Its full-past measurability and uniform
+boundkappa=||profile_r|| are PROVED using old actual coordinate adaptation and
+the translated-profile norm bound. EVERY premise is discharged. This supports
+the particular realization problem; it is not unrelated martingale infrastructure.
+
+Six independent tests cover an UNBOUNDED past coefficient B_a^2 against the
+future fourth power; sharp factorTHREE for a deterministic spatial direction;
+arbitrary coefficients on repeated equal times give literal zero; actual
+mollifier sums on any bounded span have a grid-independent fourth bound;
+genuine random sign coefficients have fourth-integrable sums; and the ACTUAL
+rotating translated-mollifier sums have MemLp4 with every bound/adaptation
+premise discharged. Source failure logs retain function-power/integral-add
+normalization repairs, explicitly typed measures/real inner products, and
+renaming the reserved Lean keyword partial to sumProcess. No resource,
+heartbeat, compiler option, toolchain, axiom policy or hypothesis was weakened.
+The staged whitespace gate rejected one extra EOF blank line before any
+commit; that line was removed and ALL full build/independent/audit gates
+were rerun on a fresh manifest. The previously reviewed complete type log
+is retained for exact comparison. Historical ledger text remains unchanged.
+
+Exact remaining bridge: identify these ACTUAL finite spatial-L2 left-step
+sums with the EXISTING parameter-valued Ito map of their predictable inputs,
+and prove native ordinary spatial TIME-L2 convergence at each fixed mollifier
+width to the already constructed1452 input/integral. The sign coefficient
+is discontinuous at clock value0 and its GaussianL2 time curve is NOT continuous
+at time0. Do not apply a global-continuous-curve theorem without repair.
+Positive-time continuity follows plausibly from the actual continuous clock,
+zero Gaussian probability of B_t=0 at t>0, continuous translated profiles and
+bounded dominated convergence; a direct AE-time product-L2 argument should
+avoid new generic path-regularity infrastructure. Then an ACTUAL strong-L2
+subsequence/Fatou argument can transfer the finite fourth bound to I_r(T).
+Neither that passage nor a Paley--Zygmund/tail estimate is established here.
+
+Next actual-probability obligations remain: prove the continuous integral's
+fourth bound, actual scenery Gaussian fourth moment in joint probability,
+and a quantitative tail lower bound if valid. L2 norm divergence alone still
+does NOT prove failure of tightness, L1/probability/distribution convergence
+or impossibility of compensated calculus. Preserve1452's POSITIVE actual IBM
+compensated reconstruction and all physical H^-1 limits. Full nonlinear
+intrinsic actual IBM calculus remains open; no campaign transition or novelty
+claim. This is active proof work, not a reflection/housekeeping session.
+
+Verification: root6568jobs; COMPLETE TRANSITIVE axiom audit of EVERY safe
+Foundation declaration using ONLY propext/Classical.choice/Quot.sound;
+ALL15 UNABRIDGED public types and ENTIRE3sources/proofs INCLUDING private
+domination/pointwise proofs reviewed;6 independent examples.2396 Foundation/
+root sources+3configs+113 archive paths/hashes frozen and rechecked. Six
+explicit Git paths, exact receipt and PRIVATE main/research verification follow.
+
+Terminal timings: root 27.741979s; complete audit 46024 declarations, 36.397799s; independent checks 28.743604s; all exit0.

@@ -2291,3 +2291,6 @@ import Foundation.IBMPhysicalForwardIntegral
 import Foundation.IBMSpatialPointClockEnergy
 import Foundation.IBMSpatialPointClockRealization
 import Foundation.IBMSpatialPointClockObstruction
+import Foundation.IBMClockPastMoments
+import Foundation.IBMSpatialFourthStep
+import Foundation.IBMSpatialFourthSums
