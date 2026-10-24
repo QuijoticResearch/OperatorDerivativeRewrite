@@ -40006,3 +40006,105 @@ limit and actual literal nonlinear output, and scalar predictable non-Cauchy.
 No post-gate source edits, suppressed checks, or assertion of literature novelty.
 
 Final gates: complete root6608jobs 26.941536s; complete transitive audit 46667 safe Foundation declarations, only propext/Classical.choice/Quot.sound, 37.041774s; TEN independent Lean checks 29.457546s. All2436 Foundation/root sources and3 pinned configurations frozen/rechecked;113 archive paths/hashes unchanged. All prior mathematical source bytes preserved except root/AxiomAudit registration. Evidence .lake/stardust-1467-verification.json. Explicit commit, exact receipt and verified PRIVATE main/research gate follows; no campaign transition.
+
+
+## Checkpoint1468 — actual finite-energy nonlinear Gaussian-score clock construction
+
+IBM ACTIVE; queue1422 unchanged. Previous1467 is a fully verified PRIVATE
+checkpoint establishing the raw nonlinear native L2 obstruction. This work
+constructs a DIFFERENT actual finite-energy coefficient; it does not weaken
+or rename the refuted native-running scheme. All113 ResearchSources archive
+paths/hashes, including EJP2605-044RA0.pdf SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE,
+remain unchanged, read-only and uncommitted. No reflection/housekeeping session,
+new campaign, source manuscript change or queued-stage activation.
+
+ACTUAL CONSTRUCTION, every real Schwartz g and shift a:
+ f(r) = spatialLimit(g,a,|r|) in the ORIGINAL Gaussian source L2;
+ S_f(b,h) = h^(-1) integral z [z*(f(b+h*z)-f(b))] dN(0,1)(z);
+ H_f(b,v) = S_f(b,sqrt(v));
+ U_T(s,Y) = H_f(B_s(Y),T-s), on the ORIGINAL horizon measure.
+The integral is a real Banach Bochner integral, not symbolic noise notation.
+S_f(b,0)=0 and H_f(b,0)=0 are explicit totalization conventions, not assertions
+of a classical zero-variance derivative. Source sections of f at the actual
+clock coordinate equal g(a+ACTUAL IBM_T) for every fixed clock path, AE scenery.
+
+GaussianHalfHolderScore proves for ANY actual continuous complete-real-Banach
+curve with ||f(x)-f(y)||^2 <= C^2 |x-y|, C>=0, genuine integrability of the
+centered score integrand, joint strong measurability and
+ ||S_f(b,h)|| <= C*K/sqrt(h), h>0;
+ ||S_f(b,h)||^2 <= (C*K)^2/h,
+where K is the ACTUAL finite Gaussian integral of1+z^2. The cancellation bound
+uses |z|*||f(b+h*z)-f(b)|| <= C*sqrt(h)*(1+z^2); its polynomial Gaussian
+majorant is proved integrable before applying integral inequalities. The
+proof uses actual norm integrals, polynomial inequalities and original
+GaussianCore, without a new stochastic law or a formal differentiability
+assumption. Independent Lean normalization tests prove K=2, score of a scalar
+affine identity is1 for every nonzero scale, and score of a constant is0.
+Thus normalization and missing square-root/half-factor errors are tested by
+actual Gaussian integrals rather than merely restating the energy bound.
+
+IBMSchwartzHalfHolderHeat proves the required hypotheses for the ENTIRE actual
+nonlinear scenery, not its first-chaos projection. observation_difference
+uses original shiftedJet Lipschitz bounds and AE L2 representatives. The
+old first-chaos isometry, exact actual Brownian source increment energy and
+absolute-value contraction give curve_holder with
+ C=Real.toNNReal(Schwartz seminorm(0,1)(g)). The curve is continuous/bounded;
+actual_sections identifies it with literal nonlinear IBM sections. The
+centered score's squared norm is <= (C*K)^2/sqrt(v) for v>0, including the
+verified zero convention at v=0. energy_envelope_integrable proves integrability
+of (C*K)^2*(T-s)^(-1/2) up to terminalT using existing rpow interval integration.
+conditional_transition also proves the actual Gaussian Bochner heat expectation
+is conditional expectation on the ENTIRE original clock history, with actual
+integrability discharged by the bounded source curve. That theorem identifies
+the conditional VALUE, not yet its score derivative or stochastic coefficient.
+
+IBMSchwartzHeatPredictable constructs U_T and proves its actual joint strong
+measurability and Bochner MemLp2 on the ORIGINAL horizon measure. Energy is
+dominated by the deterministic integrable envelope, including the terminal
+endpoint convention, before any stochastic integral is defined. Smaller-sigma
+predictability is proved with the existing actual Hermite Brownian predictable
+version and deterministic nonnegative-time measurability; all AE substitutions
+and horizon time-coercion equalities are discharged. input is an actual element
+of ORIGINAL GaussianSourceClockIto.Domain(T), scalarInput is1466's ORIGINAL
+isometric flattening, and value is the ORIGINAL scalar joint clock Ito integral.
+native_sections identifies its clock sections with the ORIGINAL predictable
+scalar Ito integral for AE actual scenery. native_adjoint admits the explicit
+field to the ORIGINAL ambient clockDerivative.adjoint and identifies its value.
+value_energy gives exact actual joint L2 norm squared = integral ||U_T||^2.
+Every new domain/construction here is proved for T>=0; no positive-time premise
+is silently required at the zero horizon.
+
+PRECISE REMAINING OBLIGATION: identify this score with the derivative of the
+actual Bochner Gaussian heat expectation / canonical causal projected field,
+and prove its native integral equals actual terminal minus initial nonlinear
+scenery mean. Energy, predictability and adjoint admission alone do NOT prove
+reconstruction; no such conclusion is asserted. The nonlinear initial source
+adjoint, correct intrinsic observation projection, physical-time calculus and
+observed-filtration compatibility remain separate. Whole scenery used as a
+clock parameter is not assumed observed at IBM time0. The independent test
+also verifies1467's raw oddPart integral cannot converge in joint L2 to this
+new candidate's value: this is a new admissible coefficient, not a certified
+strong limit of the refuted raw inputs. No full IBM completion or novelty claim.
+
+Development targets1--7 retained. Fixed polynomial integral representative
+normalization, absolute-value token spacing, square-root algebra and positivity,
+and pointwise function-power coercion. Target4 hit the DEFAULT200000 heartbeat
+limit through elaborator unfolding of actual source/Bochner score definitions.
+Kept the SAME limit: existing ordinary curve/score/heatScore definitions were
+marked LOCALLY irreducible where needed, solely to stop semantic-irrelevant
+expansion. This changes no definition, theorem, proof domain or trust. No
+resource/version/trust option changes or error/linter suppression. Target7
+passed; all failed logs preserved. All39 public types and ENTIRE3 final modules,
+including the private predictable-time proof, were read unabridged. Twelve
+independent Lean tests include affine and constant normalization, actual K=2,
+source Holder energy, endpoint convention, actual Bochner/native domains,
+isometric energy, literal nonlinear IBM sections, retained raw obstruction,
+and original scalar native Ito sections. Checks are serialized and all source
+hashes frozen; no partial audit replaces the complete milestone audit.
+One independent K=2 normalization proof initially needed an explicit pointwise
+function-subtraction coercion and norm_num; its failed log is preserved as
+.lake/stardust-1468-independent-failure1.log. Only the scratch test was repaired;
+no mathematical source changed and no unchanged successful root/audit was repeated.
+
+Final gates: complete root6611jobs 26.481663s; complete transitive audit 46730 safe Foundation declarations, only propext/Classical.choice/Quot.sound, 36.721485s; TWELVE independent Lean tests 26.670563s. All2439 Foundation/root source hashes and3 pinned configurations frozen/rechecked;113 archive paths/hashes unchanged. All prior mathematical sources preserved except root/AxiomAudit registration. Evidence .lake/stardust-1468-verification.json. Explicit commit/exact receipt/verified PRIVATE main and research backup follows. IBM and the indefinite goal remain ACTIVE.

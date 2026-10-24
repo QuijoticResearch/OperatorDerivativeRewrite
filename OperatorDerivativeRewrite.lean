@@ -2334,3 +2334,6 @@ import Foundation.IBMSchwartzNativeJointIto
 import Foundation.IBMSchwartzSlopeLowerBound
 import Foundation.IBMSchwartzNativeCauchyCriterion
 import Foundation.IBMSchwartzNativeCounterexample
+import Foundation.GaussianHalfHolderScore
+import Foundation.IBMSchwartzHalfHolderHeat
+import Foundation.IBMSchwartzHeatPredictable
