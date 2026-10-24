@@ -36956,3 +36956,76 @@ All44 new public types read UNABRIDGED and final full sources/proofs reviewed.
 All2357 Foundation/root sources+3configs frozen/rechecked;113 archive paths and
 hashes unchanged. Six explicit Git paths only; exact-commit receipt and
 PRIVATE main/research verification are required before terminal closure.
+
+## Checkpoint1436 — actual physical primitive differentiability and quantitative remainder
+
+IBM remains ACTIVE; queue1422 unchanged. The purpose is to strengthen the
+deterministic spatial estimates behind the1434/1435 running stochastic
+correction, without mistaking fixed-time L2 closure for path regularity.
+The manuscript anchor remains ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+ResearchSources is unchanged. No new publication/novelty claim or housekeeping
+session is involved; this directly supports the active IBM campaign.
+
+Foundation/IBMPhysicalPrimitiveDerivative.lean defines Phi(r)=J(vector(r)),
+the ORIGINAL actual spatial indicator primitive embedded in physical H^-1.
+Phi_n(r)=J(convolutionKernel(rho_n,r)) uses the ORIGINAL mollified scenery
+kernel. native_hasDerivAt proves its derivative equals the ACTUAL translated
+physical mollifier. It does so by the original physical kernel pullback of
+the actual Gaussian scenery derivative, followed by the existing distributional
+derivative/translated-kernel identity. It does not differentiate a Lebesgue-L2
+indicator or assume an abstract process with that derivative.
+
+translated_uniform upgrades1434's explicit spatially uniform physical norm
+bound into genuine uniform convergence over ALL real positions, using the
+actual bump radius tending to zero. Native primitive pointwise convergence
+and EVERY native derivative hypothesis are discharged BEFORE invoking
+Mathlib hasDerivAt_of_tendstoUniformly (UniformLimitsDeriv.lean). Consequently
+Phi has a genuine Banach-valued derivative delta_r at EVERY real r; derivative
+continuity proves ContDiff real 1 Phi in the ORIGINAL physical H^-1 norm.
+Every physical real dual test inherits its correctly typed scalar derivative
+and C1 property. No higher differentiability or ordinary Gaussian-L2 Wiener
+extension is inferred; the1430 obstruction remains intact.
+
+The quantitative theorem taylor_remainder_bound proves, for EVERY r<=s,
+||Phi(s)-Phi(r)-(s-r)delta_r|| <= ||physicalDerivative|| sqrt(s-r)(s-r).
+It combines the verified physical Dirac one-half-Holder norm estimate with
+the existing Banach-valued mean-value theorem, including all interval bounds.
+origin_remainder_bound retains the delta_0 slope and controls the centered
+origin remainder by the SAME three-halves-order bound. The spatial fundamental
+theorem dirac_interval_integral proves the ACTUAL Bochner identity
+integral from r to s delta_x dx = Phi(s)-Phi(r), for ANY oriented interval,
+with the Dirac family's integrability discharged by its physical continuity.
+
+Independent tests: primitive recovered by an actual Dirac integral from zero;
+reversal cancellation on arbitrary signed intervals; actual physical IBM
+endpoint1435 equals Phi(|clockPath_T|) a.e.; nonlinear square-cylinder
+derivative with exact coefficient; all physical dual tests satisfy the Taylor
+norm bound; centered origin bound; every cofinal native derivative sequence;
+and actual physical differentiability. All eight compile. This connects the
+new deterministic theorem directly to the already constructed actual process
+and its physical stochastic integral, rather than certifying unrelated smooth
+test functions.
+
+Open: the reflected primitive's origin kink must be handled with its actual
+delta_0 local-time term. No physical reflected C1 theorem, Brownian zero-QV,
+bounded variation, uniform-in-time stochastic closure or full intrinsic IBM
+calculus is asserted here. The new uniform derivative/Taylor controls supply
+concrete inputs for that next proof. They do not themselves discharge it.
+Avoid rebuilding generic stochastic infrastructure; audit existing Gaussian
+quadratic variation/mean-value/approximation results for the exact required
+time topology and domains.
+
+Draft failures retained: function-composition representation, subtraction and
+scalar-action normalization in a Banach-valued derivative proof. An attempted
+local additive-group instance did not solve normalization and was REMOVED.
+Final proof uses typed change/conversion plus the ordinary module tactic.
+No compiler/heartbeat/trust option, norm, toolchain or hypothesis changed.
+
+Final gates: complete root6530jobs/25.697540800028946s/0;
+COMPLETE transitive 45227safe Foundation declarations/39.39427659998182s/0;
+eight independent checks/27.372743499989156s/0.
+All14 public types reviewed UNABRIDGED and full final source/proofs read.
+All2358 Foundation/root sources+3configs frozen/rechecked;113 archive paths and
+hashes unchanged. Four explicit Git paths only. Exact-commit receipt and
+PRIVATE main/research verification remain mandatory before terminal closure.

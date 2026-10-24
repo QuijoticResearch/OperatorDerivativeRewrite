@@ -2255,3 +2255,4 @@ import Foundation.IBMPhysicalRunningIto
 import Foundation.IBMPhysicalPointClockField
 import Foundation.IBMPhysicalPointClockIntegral
 import Foundation.IBMPhysicalPointKernelIto
+import Foundation.IBMPhysicalPrimitiveDerivative
