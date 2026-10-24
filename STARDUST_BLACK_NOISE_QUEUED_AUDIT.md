@@ -8,6 +8,12 @@ cumulative backlog. IBM stays active. Start only after the
 fractional-diffusion campaign's mathematically justified, fully audited and
 privately backed-up checkpoint. Keep every preceding campaign gate intact.
 
+October24 addition: after this campaign's fully audited, committed and verified
+PRIVATE stopping checkpoint, begin AI mathematics exploration under
+`STARDUST_AI_MATHEMATICS_QUEUED_RESEARCH.md`, then cumulative backlog.
+This supersedes only the former immediate return to backlog; all preceding
+priorities and this campaign's mathematical scope and gates remain intact.
+
 Source: `ResearchSources/Incoming/blackito.tex`, SHA256
 `D86F4033700843827ACEA2A5CF670084C7E42321FD0E27817DC99256FD940F4D`.
 The earlier selective audit is preserved in `BLACKITO_MANUSCRIPT_AUDIT.md`,

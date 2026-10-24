@@ -40212,3 +40212,32 @@ Only the scratch test was repaired; successful unchanged root/audit inputs
 were retained rather than redundantly rebuilding or weakening any gate.
 
 Final gates: complete root6614jobs 30.205905s; complete transitive audit 46756 safe Foundation declarations, only propext/Classical.choice/Quot.sound, 39.897088s; TEN independent Lean tests 27.528496s. All2442 Foundation/root source hashes and3 pinned configurations frozen/rechecked;113 archive paths/hashes unchanged. All prior mathematical source bytes preserved except root/AxiomAudit registration. Evidence .lake/stardust-1469-verification.json. Explicit commit/exact receipt/verified PRIVATE main and research backup follows. No campaign transition; IBM and the indefinite goal remain ACTIVE.
+
+## October24 instruction-only amendment — queued AI mathematics exploration
+
+Append AI mathematics exploration to the end of the named queue: IBM ACTIVE ->
+Bakry–Émery/fBM -> Cauchy -> iterated/time-changed pseudoprocess calculus ->
+A(2)/RH revisit -> fractional diffusion -> black noise -> AI mathematics ->
+cumulative backlog. Black noise's fully audited/private stopping checkpoint
+is the activation gate. No queued campaign starts, no IBM proof is changed,
+and no earlier completion or verification gate is weakened.
+
+Saved the full autonomous objective in STARDUST_AI_MATHEMATICS_QUEUED_RESEARCH.md:
+exact verified theorem reuse, concrete constructions, rigorous properties,
+published-research comparisons, computational advantages or obstructions,
+minimal useful experiments, falsification and distinct proof/evidence statuses.
+No novelty or AI benefit is asserted by registering this future campaign.
+Updated the authoritative queue, AGENTS and black-noise successor consistently;
+historical checkpoint records remain intact.
+
+Instruction-only verification rechecked all2442 committed Foundation/root
+source hashes and all3 configuration hashes against CLOSED1469, plus all113
+ResearchSources paths/hashes. The two uncommitted1470 Lean drafts are preserved
+byte-for-byte and excluded from this commit and its mathematical certification.
+The successful1469 full-root6614-job build, complete46756-declaration standard
+axiom audit, complete public-type/proof review and ten independent Lean checks
+remain the evidence for the identical committed mathematical inputs. No new
+mathematical theorem or audit result is claimed. This user-directed queue update
+is not a daily reflection session. Explicit five-document commit, exact-commit
+receipt and verified PRIVATE main/research backup follow; machine evidence is
+in .lake/stardust-ai-queue-verification.json.

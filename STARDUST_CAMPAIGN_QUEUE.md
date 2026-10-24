@@ -62,6 +62,20 @@ diffusion's fully audited/private checkpoint. See
 `STARDUST_BLACK_NOISE_QUEUED_AUDIT.md` for exact scope and unresolved obligations.
 
 
+**AFTER black noise: AI mathematics exploration.** Investigate autonomously
+whether the cumulative verified Stardust library yields unexpected mathematical
+principles useful for neural architectures, optimization, attention, memory,
+generative modeling, inference or complexity. Require exact theorem reuse,
+concrete constructions, rigorous properties, published-method comparisons,
+explicit computational advantages or obstructions, minimal experiments where
+useful, and attempts to disprove claimed advantages. Distinguish verified
+theorems, established mathematics, conjectures and empirical results. Avoid
+manufactured applications and repeatedly unproductive directions. Begin only
+after black noise's fully audited, committed and verified PRIVATE stopping
+checkpoint. See `STARDUST_AI_MATHEMATICS_QUEUED_RESEARCH.md`. This October24
+addition is the final named campaign before cumulative backlog; every earlier
+priority and verification gate remains unchanged. IBM stays ACTIVE.
+
 No expiration date;
 October31 is REVIEW ONLY. All full-build, complete axiom-audit, public-type/proof
 review, independent-test, ledger, source-integrity, Git and verified PRIVATE
