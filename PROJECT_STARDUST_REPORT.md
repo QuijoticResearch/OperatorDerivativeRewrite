@@ -42071,3 +42071,112 @@ new completion. The1484 empirical norm growth remains empirical, with rigorous
 energy asymptotics open. Full intrinsic IBM stochastic calculus remains ACTIVE
 and incomplete; no later campaign is opened. No Oct24 reflection date reserved;
 the stale Oct23 accounting uncertainty is preserved. No new numerical claim.
+
+## Checkpoint1486 — actual observable IBM tests isolate random clipped-clock QV
+
+IBM remains ACTIVE; queue8280325 and every campaign gate are unchanged. Previous
+goal turn1485 was PROGRESS: actual fixed quadratic-Wick source-test convergence,
+full audit, committed25df4500bb219450fb03c6711ae95e3c397ece5f and verified
+PRIVATE main/research. Its next-source-test route does not alone supply IBM
+observable tests. The current checkpoint directly addresses that difference,
+without launching another campaign or admitting a reflection session.
+
+Primary source remains ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All113 source archive paths/hashes remain EXACT inventory1292. No original
+manuscript is modified or committed. The actual process is B(|W_t|), as in the
+existing construction; no unverified identification with two-sided IBM.
+
+Reusable results were surveyed BEFORE proofs:1484 exact source kernels and
+native_grid_value;1485 exact source-test telescope;1482 rawObservable and actual
+stochastic compensation; existing physical/clock F2 boundary, compact weighted
+boundary and dilated occupation limits; original jointRealization isometry;
+GaussianTimeProcess exact increment variances; and original observable
+orthogonal projection. Existing F2 random-function limits are not being
+declared open again. They do not automatically instantiate the NEW cap
+|W_R|, a random terminal-dependent, nonsmooth threshold. No new external
+novelty claim is made for min-kernel covariance or Brownian contraction.
+
+Foundation/IBMRawGridObservableTests.lean constructs squareObservation(R)
+IN THE ORIGINAL IntrinsicSpace as -rawObservable(R,0). Its literal AE value
+is Z_R^2, using the verified ACTUAL ibm_zero_ae. MemLp2 is discharged. This
+is an observable test, not an assertion that Z_R^2 belongs to jointD's domain.
+The entire finite-grid output is the ORIGINAL jointDivergence(gridInput).
+
+For r_t=|W_t| and alpha_t=min(r_t,r_R), observable_pairing proves EXACTLY
+ inner(delta(gridInput(h,n)),Z_R^2)
+   = E_W[alpha_(hn)^2-sum_i(alpha_((i+1)h)-alpha_(ih))^2].
+All terms are literal actual stochastic objects. The proof first retains the
+source raw-square constant and cancels it using the proved source mean zero.
+The random-direction pairing is then identified via the ACTUAL min Brownian
+scenery covariance, not by applying1485's fixed-test limit to a random probe.
+The intrinsic projection is removed ONLY INSIDE pairing with the proved
+observable Z_R^2 by the original orthogonal-projection identity. It is NOT
+assumed to commute with source chaos, preserve energy, or act continuously
+on any new weak topology. Integrability of the resulting random clock energy
+is proved from the existing actual Bochner-L2 kernels.
+
+For every R,s,t and clock sample, the squared increment of min(|W_t|,|W_R|)
+is at most (W_t-W_s)^2. This is an exact real min/absolute-value contraction;
+it does not require the random cap to be adapted. clockSquares_integrable
+and clockSquares_mean reuse the ACTUAL Gaussian increment L2 norm and prove
+E_W sum_i(delta W_i)^2=hn, including empty/zero grids. All mean bounds are
+derived from these random squared increments; no expectation replaces them
+inside the pathwise identity.
+
+Consequently, for EVERY grid, EVERY R>=0, and terminal time T=hn, the actual
+observable pairing lies in [-T,T], independently of mesh and R. Against its
+OWN terminal square Z_T^2 it lies in [0,T]. This positivity is an ORDINARY
+EXPECTATION statement. It is not pathwise positivity of endpoint-minus-QV.
+The independent deterministic capped curve 0,2,0,1 has endpoint-minus-QV=-2,
+explicitly ruling out that stronger algebraic claim. No positive probability
+for this precise deterministic path is asserted.
+
+clippedSquares is the literal random capped-clock finite QV; measurability,
+nonnegativity, domination by clockSquares and Integrable are all proved. On
+N+1 uniform intervals, nativeTerminalPairing_reduction is the ORIGINAL
+observable scalar identity
+ nativeTerminalPairing(T,N)=T-terminalClippedMean(T,N).
+Both sequences lie in [0,T], with zero-horizon values zero. For EVERY real L,
+nativeTerminalPairing_tendsto_iff proves the exact necessary-and-sufficient
+scalar convergence reduction: the native terminal-square pairing tends to L
+IFF the actual clipped-QV expectation tends to T-L. This does NOT claim that
+either sequence converges, identify a limit, or prove any weak/strong limit
+of the entire intrinsic output.
+
+FOURTEEN independent Lean checks passed FIRST RUN: actual square AE; actual
+square MemLp2; NONZERO squareObservation(1), proved from actual positive second
+IBM moment; exact original divergence/observable pairing; arbitrary-R bounds;
+own-terminal mean positivity; uniform native bounds; uniform clipped means;
+both zero-horizon cases; both directions of exact convergence equivalence;
+actual min increment contraction; actual clock-square mean; negative
+deterministic capped-curve energy counterexample; and empty clipped-grid zero.
+
+Retained target1 exposed cross_self namespace and explicit max-bound inference;
+target2 exposed the actual wienerL2 namespace and Pi function application in
+Bochner integrals. Target3 passed the core observable pairing and bounds.
+Target4 added the exact clipped-QV reduction and exposed only explicit def
+unfolding and lambda normalization; target5 passed the final complete source.
+No resource, heartbeat, toolchain, trust or theorem-semantics relaxation.
+Full root6644 jobs PASSED25.722640s. COMPLETE transitive axiom audit47479
+safe Foundation declarations PASSED39.904113s, allowing ONLY propext,
+Classical.choice, Quot.sound. All28 public types read UNABRIDGED; ENTIRE final
+source including all private proofs read. Fourteen independent Lean checks
+PASSED28.093581s FIRST RUN. All2472 Foundation/root source hashes and three
+config hashes frozen/rechecked;113 archives unchanged; no math edits after
+final successful gates. Explicit-path commit, exact-commit receipt and PRIVATE
+main/research verification are mandatory closure steps.
+
+Exact remaining obligation: establish the random-level capped-clock QV limit,
+or an obstruction, in a topology sufficient for the displayed actual means.
+A candidate is the occupation integral of 1_{0<|W_t|<|W_T|}, but it remains a
+CANDIDATE, not a defined limit or theorem. Fixed deterministic-cap/fixed smooth
+Schwartz convergence cannot simply be evaluated at |W_T| without a uniform
+parameter theorem or a proved random-parameter argument. Existing F2 boundary
+control may help, but origin and random outer boundary must both be retained.
+Scalar boundedness does not imply sequence convergence or full weak L2
+convergence. These results do not prove projected output norm bounds or
+contradict1484's empirical UNPROJECTED source/field norm growth. No campaign
+completion, new priority or early transition. Oct24 reflection not reserved;
+staleOct23 reflection-accounting uncertainty retained. Next investigate the
+actual random-cap estimate using the existing F2 occupation and clock laws.

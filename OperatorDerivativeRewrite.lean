@@ -2369,3 +2369,4 @@ import Foundation.IBMRawGridSecondChaos
 import Foundation.GaussianSmoothQuadraticVariation
 import Foundation.IBMPhysicalWickTestDomain
 import Foundation.IBMRawGridWickLimit
+import Foundation.IBMRawGridObservableTests
