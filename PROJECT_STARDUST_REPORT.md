@@ -37518,3 +37518,86 @@ source/ledger paths. Exact-commit receipt and verified PRIVATE main/research
 backup follow and do not substitute for these checks.
 
 Terminal timings: root 26.012798s; complete transitive audit 45543 declarations, 38.815004s; independent checks 26.842139s; all exit0.
+
+## Checkpoint1443 — ORIGINAL physical correction splits into corrected residual and genuine local time
+
+IBM remains ACTIVE; queue1422 is unchanged. This resolves the exact origin/sign
+and Tanaka identification obligation left1442. The source anchor remains
+ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All manuscript bytes and old verified declarations are unchanged. No novelty
+claim, research transition or reflection/housekeeping session is made.
+
+IBMPhysicalOriginSplit constructs signDomain in the ORIGINAL finite-horizon
+scalar predictable space by restricting the EXISTING actual Brownian sign
+field. signDomain_ae proves its literal sign(sigma) representative. The old
+zero-extension/domain equivalence identifies its ORIGINAL scalar Ito value
+with the ALREADY VERIFIED BrownianSignIntegral.terminal; no new sign integral
+or assumed horizon identification is introduced. originDomain then DIRECTLY
+REUSES IBMPhysicalClockItoTensor.tensor and integral_native_tensor, with the
+actual origin Dirac as physical coefficient. originDomain_ae and
+origin_integral prove actual physical-domain and integral agreement.
+
+Using the1437 exact slope_sign_identity, original_domain_split establishes
+that the EXISTING signed-Dirac limitIntegrand equals the1442 corrected input
+plus the actual sign origin tensor. The equality is in the ORIGINAL physical
+predictable domain, with every membership/support/representative premise
+proved. Original integral linearity gives original_integral_split:
+old signed-Dirac running integral = corrected running integral + origin Dirac
+times the ACTUAL Brownian sign Ito integral. This is not merely a comparison
+of abstract operator expressions or an assumption of a random pullout law.
+
+IBMPhysicalCorrectionLocalTime combines this identity with1442's verified
+physical endpoint relation and BrownianMassLimitIdentification.tanaka_ae.
+That OLD theorem already identifies the ACTUAL continuous monotone local-time
+path with the scalar Tanaka residual; no replacement local time is defined.
+original_correction_actual proves, for EVERY fixed time, the literal
+almost-sure physical equality
+OLDcorrectionLimit = corrected residual + ACTUAL localTime * delta_0.
+localTimeClass is the original coefficientTensor of the existing GaussianL2
+Tanaka mass. Its AE representative is exactly the genuine continuous path
+times delta_0. original_correction_split is equality in ACTUAL physical
+GaussianL2, not only on selected tests, and native_correction_tendsto identifies
+the limit of the EXISTING mollified physical corrections with this exact sum.
+All clock chaos degrees in this first-scenery physical representation remain.
+
+originPath is the actual continuous local-time path times delta_0, and is
+continuous for EVERY sample under the established measurable continuous-path
+version. originPath_boundedVariation proves that, almost surely, it has
+bounded variation on EVERY compact interval [0,T]. It reuses actual path
+monotonicity/nonnegativity and a bounded physical linear map, with the scalar
+variation bounded on [0,T] by the terminal local time. The corrected residual
+is NOT claimed to have bounded variation. No ordinary Gaussian-L2 Wiener map
+on arbitrary physical H^-1 data is introduced; the1430 obstruction persists.
+
+The proved1442 strong-L1 zero uniform-grid square sums concern the corrected
+residual. This checkpoint retains and identifies the missing origin term;
+it does NOT silently promote continuity/bounded variation to an L1 square-sum
+limit or assert the ORIGINAL correction theorem yet. Next prove appropriate
+uniform-grid local-time square-sum convergence with actual integrable control
+(e.g. domination by terminal localTime squared, whose L1 membership follows
+from the existing scalar GaussianL2 realization), then combine the exact
+original split. Arbitrary partitions, random partitions, common continuous
+corrected-running versions, full nonlinear unprojected intrinsic IBM calculus
+and IBM-history martingale claims remain separate obligations.
+
+Eight independent Lean checks verify exact origin subtraction, original Ito
+sign tensor subtraction, literal actual-path correction difference, monotone
+scalar probes with nonnegative origin coefficient, zero initial origin,
+bounded variation under EVERY physical scalar test, strong native convergence
+after the SAME genuine local-time subtraction, and EXACT physical local-time
+energy ||mass||_L2^2 ||delta_0||^2. A first test failure was ordinary inherited
+real-scalar zero normalization; the final explicit module proof passes and
+the failed log is preserved. Development failures concerned coercions of old
+horizon equivalences and the explicit set argument to Monotone.monotoneOn;
+no mathematical hypotheses, heartbeat, compiler options or axiom policy changed.
+
+Verification: full root6546jobs, COMPLETE TRANSITIVE audit of all safe
+Foundation declarations with only propext/Classical.choice/Quot.sound;
+all16 unabridged public types and both complete final source/proofs reviewed;
+8 independent checks;2374 Foundation/root hashes,3 configuration hashes and
+113 archive path/hash entries frozen/rechecked. Explicit5-path Git commit,
+exact receipt and PRIVATE main/research verification follow. These backup
+gates never replace mathematical verification.
+
+Terminal timings: root 28.411764s; complete transitive audit 45588 declarations, 37.161256s; independent checks 28.274663s; all exit0.

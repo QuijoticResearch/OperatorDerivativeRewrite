@@ -2270,3 +2270,5 @@ import Foundation.IBMPhysicalPastIncrement
 import Foundation.IBMPhysicalFrozenSlope
 import Foundation.IBMPhysicalCorrectedRunning
 import Foundation.IBMPhysicalCorrectedVariation
+import Foundation.IBMPhysicalOriginSplit
+import Foundation.IBMPhysicalCorrectionLocalTime
