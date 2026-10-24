@@ -37774,3 +37774,97 @@ frozen/rechecked. Six explicit source/ledger Git paths, exact-commit receipt
 and verified PRIVATE main/research backup follow, preserving every gate.
 
 Terminal timings: root 69.941146s; complete transitive audit 45674 declarations, 37.032723s; independent checks 26.452628s; all exit0.
+
+## Checkpoint1446 — actual correction/clock covariation and joint product-rule limit
+
+IBM remains ACTIVE; queue1422 unchanged. This develops a genuine stochastic
+consequence of the arbitrary-partition physical variation theorem1445.
+Source anchor: ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+Every original manuscript and pre-existing verified mathematical result is
+unchanged. No novelty claim, campaign transition or reflection session.
+
+IBMPhysicalClockCrossVariation proves physical product integrability from
+ACTUAL GaussianL2 hypotheses using EXISTING Holder, and a mean-norm bound by
+the two square-root energies. This does NOT require past measurability,
+independence, martingale laws or a new stochastic integral. The actual clock
+increment MemLp and its EXACT energy b-a are proved from OLD clock coordinate
+identification and the established actual Wiener increment norm, for a<=b.
+Thus the relevant Brownian energy premise is DISCHARGED, not assumed.
+
+cross(tau,Y) is the literal physical sum of (Y_next-Y_left) multiplied by the
+ORIGINAL physical correctionLimit increment. Every summand and the sum are
+proved Bochner integrable BEFORE constructing their L1 class. Continuous
+Holder and finite-sum Cauchy--Schwarz, with exact telescoping of clock energy,
+give E||cross|| <=sqrt(span)*sqrt(E sum||Delta correctionLimit||^2).
+The1445 original-object theorem then proves cross_norm_mean_tendsto and
+crossClass_tendsto: STRONG L1 convergence to zero on EVERY deterministic
+monotone vanishing-mesh partition sequence of [0,T], with changing cell count,
+repeated points and nonnested grids allowed. The genuine origin local-time
+term is retained inside the ORIGINAL correction; it is not projected away.
+The bound is on the mean NORM of the actual stochastic vector sum, not only
+a zero expectation or formal operator pairing.
+
+IBMPhysicalClockProductRule defines the two literal left-point sums:
+sum Y_left * Delta(correctionLimit), and sum correctionLimit_left * DeltaY.
+Both are actually Bochner integrable, with all coefficient and product
+premises proved. finite_product_rule is an EXACT POINTWISE identity on every
+finite grid, even without monotonicity: terminal product minus initial
+product equals these two sums plus the actual cross sum. No limiting
+integration symbol is introduced by definition. endpointClass is the genuine
+Bochner-L1 endpoint product difference; pairClass is the genuine L1 class
+of the SUM of the two raw left sums. Their representatives and exact
+pairClass_identity =endpointClass-crossClass are proved independently.
+Consequently pairClass_tendsto gives a strong-L1 joint endpoint limit on
+arbitrary deterministic vanishing-mesh partitions of [0,T]. The actual clock
+origin is zero almost surely, as independently checked, so the endpoint
+class is the literal terminal clock times physical correction.
+
+Critical qualification: a convergent SUM does not establish convergence of
+each left sum. No separate stochastic integral, natural-filtration membership,
+canonical adjoint-domain identification or full integration-by-parts theorem
+is claimed for either summand yet. The finite identity and joint L1 limit
+are precisely the established product-rule result. Further work must prove
+individual limits/domains (or identify an obstruction) rather than define
+the missing integral by the joint identity. All results concern the actual
+clock probability with values in physical H^-1 first-scenery kernel space,
+retaining ALL clock chaos sectors. They do not imply raw scalar IBM zero
+quadratic variation, a raw IBM semimartingale, an ordinary H^-1 Gaussian
+Wiener extension, random-partition results, uniform-time topology, correction
+bounded variation or completion of unprojected nonlinear intrinsic IBM calculus.
+
+Supporting reuse audit for a common continuous version: the proved1445
+cell_rate has an actual second-moment exponent3/2, suggesting a Kolmogorov
+continuity construction. In the PINNED Mathlib, Probability/Process/Kolmogorov.lean
+provides IsKolmogorovProcess/IsAEKolmogorovProcess and moment/measurability
+lemmas. A completed continuous-modification theorem was NOT found in the
+source audit: whole-library Chentsov references appeared in that definition
+file and CoveringExponent/PairReduction documentation. Foundation's existing
+Brownian mass continuous construction uses smooth-path uniform probability
+Cauchy control and Borel--Cantelli, rather than a ready generic theorem.
+This is a precise reuse/API gap, NOT a mathematical impossibility. Do not
+invoke a nonexistent completed theorem or a Gaussian-only continuity result
+for this nonGaussian residual. Audit reusable dyadic/extension/uniform-Cauchy
+machinery before constructing the genuinely necessary continuous version.
+The new cross/product result proceeds without silently assuming such a version.
+
+Eight independent Lean checks cover empty grids, orientation reversal of a
+single cross cell, literal scalarization under EVERY physical real dual test,
+exact fixed-horizon energy normalization, actual cross L1 norm convergence,
+the literal zero-origin terminal product, the exact finite product remainder
+and commutation of the joint endpoint limit with physical scalarization.
+An initial scalarization check needed an explicit linear-map smul equality
+instead of simp through inherited real-space instances; its failed log is
+retained. Initial source errors concerned pointwise Pi scalar actions and
+a final process/coefficient definitional equality; no assumptions, axioms,
+heartbeat, compiler options or old mathematical semantics were changed.
+
+Verification: complete root6553jobs, COMPLETE safe-Foundation TRANSITIVE
+axiom audit with only propext/Classical.choice/Quot.sound, all25 UNABRIDGED
+public types and both entire final source/proofs (including private telescope)
+read,8 independent checks;2381 Foundation/root sources+3 configurations+
+113 archive path/hash entries frozen/rechecked. Five explicit Git paths,
+exact-commit receipt and PRIVATE main/research verification follow, preserving
+all mathematical and source-integrity gates.
+
+Terminal timings: root 55.018551s; complete transitive audit 45743 declarations, 40.096716s; independent checks 36.846579s; all exit0.

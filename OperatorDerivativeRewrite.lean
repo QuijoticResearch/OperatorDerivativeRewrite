@@ -2277,3 +2277,5 @@ import Foundation.IBMPhysicalOriginalVariation
 import Foundation.IBMPhysicalMeshVariation
 import Foundation.BrownianLocalTimeMesh
 import Foundation.IBMPhysicalOriginalMesh
+import Foundation.IBMPhysicalClockCrossVariation
+import Foundation.IBMPhysicalClockProductRule
