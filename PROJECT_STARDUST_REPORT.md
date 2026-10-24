@@ -40241,3 +40241,78 @@ mathematical theorem or audit result is claimed. This user-directed queue update
 is not a daily reflection session. Explicit five-document commit, exact-commit
 receipt and verified PRIVATE main/research backup follow; machine evidence is
 in .lake/stardust-ai-queue-verification.json.
+
+## Checkpoint1470 — all-source heat-score semigroup and transition increment duality
+
+IBM remains ACTIVE. The preceding goal turn made progress by saving and
+privately verifying instruction-only commit8280325: AI mathematics exploration
+is appended AFTER black noise. All prior campaign gates stay intact. This
+checkpoint resumes the preserved two1470 proof drafts; their earlier target
+logs were inspected and confirmed TERMINAL failures before any rebuild.
+No duplicate process, queued campaign or daily reflection session was started.
+ResearchSources remains read-only/uncommitted; all113 paths/hashes match the
+immutable inventory, including the IBM primary manuscript PDF SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+
+GaussianBoundedBanachStein proves genuine complete-real-Banach-valued Gaussian
+Stein identities. For bounded F with an ACTUAL everywhere derivative D that
+is strongly measurable and uniformly bounded, E[Z*F(Z)]=E[D(Z)]. A dominated
+direct translation derivative is compared with1469's verified likelihood
+derivative; no C2 or continuity-of-D assumption is inserted. scaled_stein
+proves E[X*F(b+X)]=v*E[D(b+X)] for X~N(0,v), ALL v>=0, through the actual
+scaled Gaussian law and sqrt(v)^2=v. The degenerate v=0 case is included
+without dividing by sqrt(v). Integrals are actual Bochner integrals, not
+formal expectations. These classical Gaussian identities are supporting
+reuse, with no novelty claim.
+
+IBMSchwartzHeatSemigroup applies actual Gaussian convolution and Fubini to
+the ORIGINAL all-chaos nonlinear scenery curve in source GaussianL2:
+  P_u(P_v f)(b)=P_(u+v)f(b), u,v>=0.
+Joint integrability follows from the existing Schwartz bound, before Fubini.
+heatMean_bound and heatScore_norm provide actual bounds; the score bound is
+C_g*mass/v^(1/4), valid v>0. gradient_semigroup proves
+  E_X[heatScore(g,a,b+X,v)]=heatScore(g,a,b,u+v), X~N(0,u), v>0,
+by justified dominated Banach differentiation of the VALUE semigroup and
+derivative uniqueness. It does not presume a time heat equation, pathwise
+smoothness of the rough scenery, native reconstruction or point DomD.
+
+IBMSchwartzHeatIncrement proves actual score integrability and the key
+ALL-SOURCE Bochner covariance
+  E_X[X*heatMean(g,a,b+X,v)] = u*heatScore(g,a,b,u+v),
+for u>=0,v>0. This combines the scaled Stein identity with the gradient
+semigroup, retaining every scenery chaos rather than testing only first-source
+physical probes. derivative_tower records the corresponding derivative of the
+actual Gaussian transition integral. conditional_score uses the EXISTING
+GaussianBrownianConditionalTransition on the ENTIRE earlier clock history:
+for S<=R and v>0, the actual conditional expectation of score(B_R,v) equals
+score(B_S,(R-S)+v), AE under the original clock law. Boundedness at fixed
+positive v discharges conditional integrability; R-S is explicitly NNReal
+before coercion, preventing an implicit truncated-subtraction mismatch.
+
+Exact remaining CENTRAL obligation: use this deterministic transition
+covariance with arbitrary measurable past weights to prove actual predictable
+step duality, including terminal b=T by justified convergence, then identify
+the1468 finite-energy input with the ORIGINAL native adjoint representer and
+prove its native integral equals actual nonlinear terminal minus initial mean.
+The new covariance and conditional-score identities DO NOT yet establish that
+reconstruction. The positive-v hypotheses are essential to the current proof;
+score(v=0)=0 is a totalized endpoint convention, not a rough-curve derivative.
+The entire initial scenery remains a parameter, not observed IBM time0.
+Observed-filtration and full intrinsic physical-time calculus remain open.
+Preserve1467's explicit raw nonlinear non-Cauchy/no-L2-limit counterexample;
+the finite-energy heat input is a different construction, not its limit.
+
+Development failures are retained in target1/2/4/5 logs: Banach chain-rule
+normalization, scalar-action normalization, implicit NNReal coercion and one
+default200000 isDefEq timeout. The latter was repaired by LOCAL irreducibility
+of existing ordinary definitions, leaving the definitions and theorem semantics
+unchanged. No resource, trust, toolchain or verification option was raised.
+All THREE complete final source files and ALL TEN public theorem types were
+read unabridged after the successful complete build/audit. Independent checks
+include nonconstant sine/cosine Stein sign, variance4 scaling, zero-variance
+Dirac behavior, zero outer heat time, actual terminal source curve, concrete
+positive covariance, zero increment, endpoint score convention, a concrete
+derivative tower and whole-history conditional score at0/1. Scratch failures,
+if any, are retained separately. Production source hashes are frozen.
+
+Final gates: complete root6617jobs 25.581912s; complete transitive audit 46766 safe declarations, standard three axioms only, 40.511154s; TEN independent Lean checks 42.242574s. All2445 Foundation/root sources+3configs+113archive hashes rechecked. Explicit SIX-path commit, exact receipt and verified PRIVATE main/research closure follow. Evidence .lake/stardust-1470-verification.json.

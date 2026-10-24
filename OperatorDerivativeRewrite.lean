@@ -2340,3 +2340,6 @@ import Foundation.IBMSchwartzHeatPredictable
 import Foundation.GaussianBoundedTiltDerivative
 import Foundation.GaussianBoundedHeatDerivative
 import Foundation.IBMSchwartzHeatDerivative
+import Foundation.GaussianBoundedBanachStein
+import Foundation.IBMSchwartzHeatSemigroup
+import Foundation.IBMSchwartzHeatIncrement
