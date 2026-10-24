@@ -2300,3 +2300,6 @@ import Foundation.IBMSpatialNativeFourth
 import Foundation.IBMSpatialNativeApproximation
 import Foundation.IBMSpatialIntegralFourth
 import Foundation.IBMSpatialJointFourth
+import Foundation.IBMSpatialIntegralTail
+import Foundation.IBMSpatialIntegralNoProbabilityLimit
+import Foundation.IBMSpatialCorrectionNoProbabilityLimit

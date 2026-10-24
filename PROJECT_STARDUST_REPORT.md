@@ -38704,3 +38704,103 @@ weakened check, compiler option/toolchain change or mathematical edit after
 the successful complete build. Explicit six-path Git checkpoint, exact-commit
 receipt and verified PRIVATE main/research synchronization remain required
 before terminal closure; none substitutes for the mathematical verification.
+
+## Checkpoint1456 — actual IBM integral and whole correction: probability-limit obstruction
+
+IBM ACTIVE; queue1422 unchanged. This completes the PARTICULAR-process
+probability-obstruction argument left open1452--1455, using actual joint
+random variables rather than inferring it from norm escape alone. Source:
+ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+Every original manuscript and earlier mathematical result remains unchanged.
+No reflection/housekeeping session or new campaign was started.
+
+A productive cross-campaign connection emerged: the pseudoprocess/complex-walk
+library ALREADY contains ProbabilityTailBound.mean_tail_square with genuine
+probability-space MemLp2 hypotheses. It is reused UNCHANGED for the actual
+IBM joint variable Z_r(T)=realize(I_r(T)). The compact-escape/non-tightness
+argument follows the existing ComplexRootPoissonNoWeakLimit/NonTightness proof
+pattern, now for these actual real laws. No duplicate Holder, Paley--Zygmund,
+Prokhorov or abstract convergence foundations were constructed. No novelty
+claim is made for these standard inequalities or compactness arguments.
+
+IBMSpatialIntegralTail defines value as EXACTLY1452's actual scenery-clock
+realization of the ORIGINAL parameter-Ito integral, not a substitute law.
+second computes E||Z||^2=T*||profile_r||^2; second_pos is proved for EVERY
+r and T>0, using the previously verified probe-profile pairing1 to exclude a
+zero profile. square_memLp discharges the tail theorem's ACTUAL MemLp2
+condition on ||Z||^2 from1455's proved joint MemLp4. fourth_bound proves
+E||Z||^4<=9*(E||Z||^2)^2. mean_tail_square then gives tail_mass_lower:
+for EVERY b>=0 with2b<=E||Z||^2, P(b<||Z||^2)>=1/36. All positivity,
+integrability and measurability assumptions are proved. second_tendsto uses
+the ACTUAL1452 norm escape, giving variance->infinity for each fixed T>0.
+This is a quantitative lower probability tail, not an L2-only inference.
+
+IBMSpatialIntegralNoProbabilityLimit constructs the ACTUAL pushforward law
+of Z_r(T), with its named probability instance and ProbabilityMeasure object.
+law_tail_mass_lower checks the actual measurable pushforward of the tail
+event. compact_escape proves: for EVERY compact K in R, eventually the law
+assigns AT LEAST1/36 to K-complement. There is no assertion that all mass
+escapes. not_tight_reindexed proves non-tightness for EVERY reindexing
+phi:N->N with phi->infinity, including all subsequences and cofinal repeated
+indices. A convergent ProbabilityMeasure sequence has a compact closure of
+its range together with its limit; Mathlib Prokhorov would make it tight.
+Thus not_tendsto_reindexed rules out ANY weak probability-law limit along
+EVERY such reindexing. Finally Mathlib's genuine convergence-in-probability
+implies convergence-in-distribution theorem proves not_tendstoInMeasure,
+including its cofinal form, to EVERY finite ordinary real random variable F.
+No assumed measurability of a candidate F weakens this: convergence itself
+would supply the needed AE measurability. T=0 is expressly excluded.
+
+IBMSpatialCorrectionNoProbabilityLimit retains the WHOLE correction from1452.
+compensated_identity and its actual AE form prove Z_r=E_r-C_r, where E_r is
+the actual jointly realized endpoint and C_r is the FULL jointly realized
+correction. Suppose C_(phi n) converged in probability to F. Extract an AE
+subsequence; E_(phi n) converges in actual joint L2 by the OLD endpoint
+theorem, so extract a further AE subsequence for E. Countably many exact
+compensated identities then force Z along the composite cofinal subsequence
+to converge AE to E-F, hence in probability. This contradicts the integral
+obstruction. Thus the WHOLE correction has NO probability limit, along ANY
+cofinal reindexing, to ANY finite real random variable. No origin layer,
+clock chaos sector or source coefficient was dropped in this transfer.
+The existing combined_joint_tendsto/source_actual remain valid: Z_r+C_r
+converges strongly in joint L2 to the ACTUAL IBM value. Cancellation survives
+although neither individual term has an ordinary probability limit.
+
+SIX independent Lean checks: the unconditional1/36 tail at half actual
+variance; arbitrary strictly increasing subsequences and arbitrary random
+targets; exclusion of ALL weak probability-law candidates; whole correction
+cannot approach ACTUAL IBM in probability; compensated sum DOES approach
+ACTUAL IBM in probability; and zero horizon is LITERALLY zero. These test
+both obstruction and its boundaries/positive counterpart. Development
+failures were representational elaboration: real norm fourth/squared powers,
+beta-reducing function compositions, and the sourceKernel namespace.
+Failed logs are preserved under .lake/stardust-1456-*.
+
+SCOPE AND REMAINING OBLIGATIONS: this refutes ordinary individual probability
+limits for the specified canonical actual mollified integral and WHOLE
+correction at positive horizon, even along cofinal subsequences. The integral
+additionally has no ordinary weak probability-law limit. Probability
+nonconvergence of the correction alone does NOT prove its weak-law
+nonconvergence; that stronger assertion is not made. No impossibility of
+all renormalizations, rescalings, alternative integrals, nonlinear intrinsic
+calculus or operator-dual realizations is proved. The positive physical
+H^-1/test-dual and compensated actual IBM constructions remain preserved.
+Continue the intrinsic IBM campaign by auditing the exact original domain,
+adjoint, nonlinear graph-closure and reconstruction obligations in light of
+this obstruction; do not declare the full calculus complete or start Bakry.
+
+Verification: complete root build6577 jobs (10.503441s); COMPLETE transitive
+collectAxioms audit 46164 safe Foundation declarations (39.438817s), only
+propext/Classical.choice/Quot.sound. All21 new public types, INCLUDING the
+named probability instance, were read unabridged; ENTIRE three sources/proofs
+reviewed. The explicit type inventory was expanded to include that instance,
+then the manifest and full build refreshed BEFORE final audits. No check
+was weakened and no mathematical theorem was changed by that adjustment.
+SIX independent Lean checks pass (26.003661s). All2405 Foundation/root
+sources+3configs frozen/rechecked; all113 archive paths/hashes unchanged;
+no sorry/admit/new axiom/compiler option/toolchain change. Evidence:
+.lake/stardust-1456-working-checkpoint.json, -full-build.log, -audit.log,
+-independent.log, timing JSON and -verification.json. Six explicit Git paths,
+exact-commit audit receipt and verified PRIVATE main/research synchronization
+remain mandatory before terminal closure. The autonomous IBM goal stays ACTIVE.
