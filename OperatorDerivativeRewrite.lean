@@ -2252,3 +2252,6 @@ import Foundation.IBMPhysicalSceneryTestClarkOcone
 import Foundation.IBMPhysicalRunningPrimitive
 import Foundation.IBMPhysicalRunningIntegrand
 import Foundation.IBMPhysicalRunningIto
+import Foundation.IBMPhysicalPointClockField
+import Foundation.IBMPhysicalPointClockIntegral
+import Foundation.IBMPhysicalPointKernelIto

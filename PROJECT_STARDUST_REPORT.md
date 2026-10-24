@@ -36874,3 +36874,85 @@ UNABRIDGED, complete final definitions/proofs read; all2354 Foundation/root
 sources+3configs frozen/rechecked;113 archive paths/hashes unchanged.
 Six explicit Git paths only. Exact-commit receipt and verified PRIVATE main
 and research synchronization are mandatory before checkpoint closure.
+
+## Checkpoint1435 — one physical stochastic integral realizing all actual point tests
+
+IBM remains ACTIVE; queue1422 unchanged. This reuses the EXISTING physical
+H^-1 Brownian integral, original predictable restriction and existing scalar
+stochastic agreement theorem; it does not rebuild a new integral framework.
+The previous checkpoint1434's scalar tested running identities now arise from
+a SINGLE physical object whose native sequence converges strongly BEFORE any
+choice of scalar test. ResearchSources/ibm/EJP2605-044RA0.pdf remains the
+primary physical-closure anchor, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+No original manuscript changes, new literature claims or novelty assertions.
+This is ordinary IBM proof development, not a reflection/housekeeping session.
+
+IBMPhysicalPointClockField constructs the actual H^-1-valued running coefficient
+sgn(Y_s)*translated_n(|Y_s|), and its actual signed-Dirac limit. The norm is
+the ORIGINAL physical Bessel-potential norm, with real scalars restricted from
+the existing complex Hilbert space. Explicit growth bounds and the already
+verified Brownian horizon moment prove genuine Bochner L2 membership. Dominated
+convergence gives strong time-probability L2 convergence. Predictability of
+BOTH fields is PROVED by composing their strongly measurable spatial maps
+with the existing Brownian predictable representative; the coefficient is
+zero outside the horizon because signum(0)=0. No conditional predictability
+or domain premise remains. Actual mollifier continuity follows through the
+existing physical source pullback of the actual continuous Gaussian scenery.
+
+IBMPhysicalPointClockIntegral restricts those fields into the ORIGINAL native
+physical integral Domain(T), with the measurability witnesses discharged.
+The existing physical Ito isometry proves strong L2(clock;H^-1) convergence
+of the actual stochastic integrals and exact difference-norm preservation.
+integrand_ae/limitIntegrand_ae identify the real signed spatial coefficients.
+integralValue_test and limitIntegralValue_test identify their action under
+EVERY physical real dual test L with the ORIGINAL actual scalar Brownian
+integrals1434. This is genuine stochastic scalarization, not an assumed
+commuting diagram or a formal pairing chosen to fit the formula.
+
+IBMPhysicalPointKernelIto uses the ORIGINAL physical sourceKernel(T) recovered
+from actual independent scenery sections; point(T)=J(sourceKernel(T)). Native
+endpoints are J(mollifiedKernel_n(T))-J(convolutionKernel_n(0)), as constant
+classes. They converge strongly to point(T). endpoint_test/point_test prove
+exact actual scenery-tested IBM agreement for all L. A physical native
+correction is defined as endpoint_n minus the actual physical native integral;
+its strong physical limit follows from the two separately proved convergences.
+This definition is expressly a residual REALIZATION: correction_test and
+correction_actual_ae then prove that EVERY physical scalar test is the
+independently defined original local-time plus curvature time integral1434.
+The physical residual is therefore connected to those actual native formulas,
+not asserted to be a new physical stochastic process merely by naming it.
+correctionLimit_test similarly identifies the same scalar limits. The result
+is strong convergence in a genuine physical Bochner space, stronger than
+separate scalar-test convergence or an unspecified weak negative norm.
+
+Exact remaining scope: fixed T, full original clock probability, original
+physical H^-1 topology, first-scenery physical kernels, ALL physical dual tests.
+The native vector class is characterized via its actual scalar local-time/
+curvature identities; no separate vector-valued path-integral formula for its
+curvature is claimed here. No uniform-in-time convergence, bounded variation,
+zero quadratic variation, raw-IBM semimartingale or full nonlinear intrinsic
+Clark--Ocone claim. This integral uses the BROWNIAN CLOCK filtration, not a
+silently substituted IBM history filtration. The1430 impossibility of an
+unrestricted continuous H^-1-to-ordinary-Gaussian-L2 Wiener extension remains
+valid. A physical kernel-valued object and a weak scenery realization do not
+remove that obstruction. IBM remains ACTIVE with full intrinsic actual-process
+closure and path/integration identification still requiring substantive work.
+
+Eight independent checks cover joint strong physical integral/correction
+convergence, the original exact Ito difference isometry, agreement at summed
+tests, every cofinal subsequence, arbitrary bounded physical-Bochner probes,
+literal actual-IBM expectation at the endpoint, the finite native tested Ito
+identity and uniqueness of any independent strong physical correction limit.
+Target failures retained: mechanical draft identifier replacement, an absent
+continuity lemma replaced by actual source-pullback continuity, and function
+composition normal form. No mathematical hypothesis, heartbeat, compiler/
+trust option, dependency version or verification requirement changed.
+
+Final gates: full root6529jobs/27.034227999974973s/0;
+COMPLETE transitive 45206safe Foundation declarations/40.906167900015134s/0;
+eight independent checks/32.35797420004383s/0.
+All44 new public types read UNABRIDGED and final full sources/proofs reviewed.
+All2357 Foundation/root sources+3configs frozen/rechecked;113 archive paths and
+hashes unchanged. Six explicit Git paths only; exact-commit receipt and
+PRIVATE main/research verification are required before terminal closure.
