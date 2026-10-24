@@ -36372,3 +36372,94 @@ frozen after successful full build/audit. Oct23 reflection remains consumed1395;
 no housekeeping/PDF session or unrelated campaign was started.
 
 Checkpoint1429 gates: root6515jobs/25.908019299968146s/0; COMPLETE safe transitive44729declarations/44.65122440003324s/0; ALL23public types (184 unabridged audit/type lines) and both final sources/proofs reviewed. Nine independent Lean examples plus two helper proofs/27.11520910001127s/0. All2343Foundation/root sources+3configs frozen/rechecked;113archive paths/hashes unchanged. FIVE explicit Git paths; exact receipt and PRIVATE main/research closure recorded in .lake/stardust-1429-verification.json.
+
+## Checkpoint1430 — physical H-minus-one closure cannot directly extend Wiener integration
+
+IBM remains ACTIVE. Queue1422 is unchanged. This is mathematical manuscript
+investigation and verification, not an additional daily reflection session.
+
+Primary source: ResearchSources/ibm/EJP2605-044RA0.pdf, 24 pages,
+SHA256 5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+Read the actual pages11--16, and visually inspected rendered pages11 and15;
+the original PDF and existing source-audit files remain byte-for-byte intact.
+The starting manuscript uses L2(Omega_Y;H^-1(R,dw)) and spatial H^1 tests
+(Definition5.1), with kernel decomposition5.6, qualitative interior closure5.9
+and boundary/correction closure5.12--5.13. This is a spatial negative norm,
+not the original intrinsic adjoint-domain graph norm. The zero-extended
+local-time Sobolev moment estimate in Assumption5.8 is an explicit assumption
+for its quantitative rate, not a premise silently discharged here. Its
+qualitative kernel convergence and boundary cancellation do not themselves
+identify a stochastic derivative or imply ordinary first-chaos L2 closure.
+An a.s. finite sectionwise L2 norm also does not alone imply its expected
+squared norm is finite. Historical manuscript F1--F3 open labels must not
+override later verified Stardust results.
+
+The theorem-level reuse audit distinguishes THREE existing constructions:
+(1) IBMNegativeSobolevRandom.randomDerivativeCLM, IBMDualAssembly.dualAssemblyCLM,
+IBMDualDistribution.assembly_toDistr_ae, IBMPhysicalDirac.translated_tendsto/
+mollifiedDirac_tendsto and the original physical reflected-Ito modules work
+with actual physical spatial distributions and clock-valued Bochner fields.
+IBMBesselDualitySharp.pairingCLM_norm_eq/pairingCLM_existsUnique provide sharp
+H^-1--H^1 duality; basic Bessel duality is not missing infrastructure.
+(2) IBMCrossSectorDualClosure.exists_cross_sector_dual_reconstruction and
+IBMDilatedDualClosure.correction_uniform_rectangular_tail/correction_dual_uniform/
+raw_clock_projection_tendsto/raw_block_tendsto already give genuine smoothed
+joint-source/clock reconstruction and independent rectangular chaos tails.
+Their dual norm is the common clock OU smoothing norm, not physical H^-1.
+The fixed-clock-sector statements do not assert unsmoothed full L2 closure.
+(3) IBMIntrinsicGraphDual.original_graph/representable_iff_domain/graph_dual_limit
+and checkpoint1429 use the ORIGINAL actual intrinsic joint derivative and its
+full divergence graph. The positive-time point nonrepresentability is preserved.
+None of these declarations identifies all three spaces or their limits.
+
+New verified source: Foundation/IBMPhysicalWhiteNoiseObstruction.lean,
+eight public declarations, DEFAULT200000 heartbeats, no new axiom or option.
+profile(n) is the ACTUAL normalized spatial mollifier at zero, an ordinary
+Lebesgue-L2 kernel from the existing IBMPhysicalDerivativeKernel construction.
+probe(n) is the shrinking interval indicator [-rOut(n),rOut(n)] with the
+standard a.e. endpoint convention. probe_tendsto proves probe(n)->0 in L2.
+probe_profile_pairing proves the EXACT pairing1 using kernel support and mass.
+profile_hminus_tendsto reuses the actual H^-1 Dirac convergence.
+whiteNoise_not_tendsto proves that the ACTUAL original scenery whiteNoise of
+these profiles has no strong Gaussian-L2 limit, whatever candidate is chosen.
+whiteNoise_norm_escape proves the stronger norm divergence to positive infinity
+using the exact pairing, vanishing probe and ordinary Cauchy--Schwarz inequality.
+no_continuous_extension excludes ANY map H^-1 -> original GaussianL2, even
+nonlinear, continuous at the origin Dirac, that agrees with actual whiteNoise
+on EVERY original physical L2 kernel. This is a verified obstruction to blindly
+applying the ordinary Wiener integral to a completed spatial H^-1 limit.
+
+Precise limits: no quantitative blowup rate is asserted. This does NOT refute
+the manuscript's qualitative spatial-kernel limit, a distribution-valued
+stochastic extension, a valid extension on a strictly smaller kernel family,
+or the existing common-clock smoothed closure. It does not prove that the
+actual combined boundary/interior correction necessarily has this bad kernel;
+its exact cancellation/identification still requires proof. Deterministic
+kernels suffice to refute a universal continuous extension, but no theorem
+about arbitrary random kernel families is silently inferred.
+
+The next productive transfer question must specify a weaker stochastic target
+and a bounded map of its tests into the physical H^1 test domain, prove its
+agreement with actual finite-width stochastic pairings, then identify the
+actual correction and convergence there. A shared H^-1 label supplies none
+of these. Restricted kernels with genuine L2 control remain a positive route;
+full actual intrinsic IBM Ito/Clark--Ocone remains open. No campaign transition.
+
+Seven independent Lean checks verify spatial Dirac convergence, original
+Gaussian norm escape, literal actual white-noise covariance1 against shrinking
+probes, impossibility for bounded real-linear and for nonlinear continuous
+extensions, rejection of a zero L2 limit, and the genuine finite-width normal
+law. The first scratch-test log is retained; its repairs opened the existing
+ProbabilityTheory and NNReal notation scopes, without changing any statement.
+Failed targeted logs1/2 are retained; repairs were explicit neg_zero and
+Function.comp_def simplification and the real inner-product scalar annotation.
+No increased heartbeat limit, unsafe reducibility, suppressed error, or altered
+norm/measure was used. All final source and all eight printed public types
+were read unabridged. Complete root build6516jobs and complete transitive
+audit44742safeFoundation declarations passed; only propext, Classical.choice,
+Quot.sound occur transitively. All2344Foundation/root sources,3configuration
+files and113original archive paths/hashes were frozen and rechecked. Exact
+terminal timings are in .lake/stardust-1430-verification.json. Four explicit
+Git paths only: new source, root import, axiom-audit import/prints, this ledger.
+Exact-commit receipt and verified PRIVATE main/research synchronization are
+mandatory closure gates, recorded by the terminal checkpoint receipt.

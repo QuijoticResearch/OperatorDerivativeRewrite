@@ -2241,3 +2241,4 @@ import Foundation.IBMTimeWeightedGraphOperator
 import Foundation.IBMTimeWeightedIntrinsicCore
 import Foundation.IBMSineTemporalRegularization
 import Foundation.IBMSineTemporalClockEscape
+import Foundation.IBMPhysicalWhiteNoiseObstruction
