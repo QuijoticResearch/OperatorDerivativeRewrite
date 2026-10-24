@@ -36275,3 +36275,100 @@ IBM remains ACTIVE; queue1422, manuscripts and all other work are preserved.
 No second reflection/PDF session was admitted; Oct23 was consumed1395.
 
 Checkpoint1428 gates: root6513jobs/28.893009699997492s/0; COMPLETE safe transitive44673declarations/37.94705740001518s/0; ALL25public types (183 unabridged audit/type lines) and both final sources/proofs reviewed. Seven independent Lean examples plus two helper proofs/29.281737499986775s/0. All2341Foundation/root sources+3configs frozen/rechecked;113archive paths/hashes unchanged. FIVE explicit Git paths; exact receipt and PRIVATE main/research closure recorded in .lake/stardust-1428-verification.json.
+
+## Checkpoint1429 — actual temporal point recovery: scenery convergence, clock escape
+
+Initial reuse audit examined GaussianCosineProductCovariance.product_formula/
+product_bound, GaussianMixedTrigCovariance.bilinear_mixed, the original scalar
+and mixed Stein declarations, and the actual sine clock-domain obstruction.
+The Fourier covariance identity permits arbitrary Gaussian directions, but
+does NOT by itself instantiate all additional process graphs, actual domain
+membership or uniform temporal limits needed for a broader Fourier family.
+No such extension is certified here. A concrete link between1428's actual
+time-average domain and the old ACTUAL point obstruction instead gives a
+rigorous boundary theorem for temporal regularization.
+
+`IBMSineTemporalRegularization.regularized T e` is the ORIGINAL intrinsic-domain
+element e^(-1)*(A((T+e).toNNReal)-A(T)), where A is the OLD actual sine average
+in the ORIGINAL jointDerivative.domain. This is not an independently named
+candidate gradient or a spatially mollified nonobservable input. All finite
+widths, including e=0 and clipped negative horizons, are defined by actual
+domain linear operations. `regularized_gradient` identifies the FULL actual
+joint gradient by original linearity; both channels share this one input.
+
+`valuePrimitive_integral` and `sourcePrimitive_integral` identify the actual
+average and its scenery derivative with the OLD genuine Bochner primitives.
+Their HasDerivAt theorems use the EXISTING actual point continuity and1425
+source-field continuity, via the actual Banach-valued fundamental theorem
+of calculus. They are ordinary TIME derivatives of averages, not a claim
+that the raw IBM point has a clock Malliavin derivative.
+
+For EVERY T>0 and EVERY sequence e_n of nonzero real numbers tending to zero,
+`value_tendsto` proves regularized(T,e_n)->sin(Z_T) strongly inside the actual
+observable Hilbert space. `source_tendsto` proves its ORIGINAL scenery
+gradient converges strongly to the ACTUAL sine source gradient at T. No
+positivity, one-sidedness, monotonicity, probabilistic independence or chosen
+subsequence is assumed. Positive, negative and alternating widths qualify.
+
+The regularized actual observable is UNIFORMLY bounded by one, for every T,
+every e and every original continuous IBM sample (then AE for its L2 class).
+`clipped_increment_bound` controls endpoint clipping; `actual_normalized_bound`
+uses the genuine actual-path interval-integral identity and |sin|<=1. Thus
+`regularized_bounded` is independent of width. The forthcoming clock escape
+is not attributable to unbounded observable values or an illegal integral.
+
+`IBMSineTemporalClockEscape.clock_norm_escape` proves
+
+    || D_clock regularized(T,e_n) || -> +infinity.
+
+It applies the EXISTING closed, densely defined original partial clock
+operator to the actual regularized graph pairs and uses the OLD independently
+proved fact that sin(Z_T) lies outside that operator's domain. `joint_norm_escape`
+similarly proves the FULL joint-gradient norm escapes. The scenery channel
+converges, so this identifies the precise surviving obstruction in the clock
+channel. No rate, constant or asymptotic power is claimed without a bound.
+Strong value convergence plus the valid source derivative cannot pass the
+unbounded clock derivative to the point, even for this uniformly bounded
+actual-observable sequence in the intrinsic common domain.
+
+Positive result in the correct topology: `graph_dual_tendsto` proves the FULL
+joint derivatives, under the ORIGINAL graph-dual embedding, converge STRONGLY
+to sineDerivative(T). Independent tests explicitly verify ordinary strong-dual
+OPERATOR-NORM error on the full original adjoint graph test space. This limit
+is nonzero by the old point audit and `dual_limit_not_representable` preserves
+the precise impossibility of representing it by any ordinary joint Hilbert
+field. No new noise, martingale, filtration or alternate Hilbert norm is used.
+
+`actual_stochastic_pairing` identifies every finite-width derivative pairing
+with a literal ordinary integral of actual normalized path-time averages times
+the original jointDivergence(v), for EVERY original adjoint-domain v.
+`point_pairing_limit` tends to E[sin(actualIBM_T)*jointDivergence(v)]. Independent
+testing separately verifies integrability of the actual finite-width product.
+This is actual stochastic integration by parts on its exact adjoint domain;
+it does not assert a classical adapted Ito integral or a semimartingale law.
+
+Connection to the F2/negative-Sobolev closure question: this gives an actual
+temporal regularization with sharp separation between the original Hilbert
+gradient topology and its adjoint GRAPH DUAL. The latter is constructed and
+verified, but it has NOT been identified with the manuscript's physical H^-1
+space or a completed IBM Ito--Tanaka boundary correction. That connection,
+its domains and any exact coefficient/residual remain separate obligations.
+The earlier one-sine point obstruction does not become a universal theorem
+for every nonconstant smooth observable. No full IBM calculus completion or
+campaign transition follows; IBM remains ACTIVE and queue1422 is unchanged.
+
+Nine independent Lean checks cover concrete right widths1/(n+1), left widths,
+signed alternating widths, full strong-dual operator-norm error, genuine
+L-infinity membership from the common bound1, exact zero-width behavior,
+literal actual stochastic pairing limits, nonrepresentability and actual
+product integrability. Two scalar helper proofs establish the concrete
+vanishing/nonzero widths. All pass under the DEFAULT200000heartbeat limit.
+Failed target logs1/2/4 remain; repairs use explicit function-composition,
+original linear-map coercions, typed real absolute-value bounds and Lebesgue
+measure arguments. No new axiom, sorry, unsafe reduction, resource increase,
+version change, suppressed check or modified manuscript was introduced.
+All final source/proofs and public types were read unabridged. Sources stayed
+frozen after successful full build/audit. Oct23 reflection remains consumed1395;
+no housekeeping/PDF session or unrelated campaign was started.
+
+Checkpoint1429 gates: root6515jobs/25.908019299968146s/0; COMPLETE safe transitive44729declarations/44.65122440003324s/0; ALL23public types (184 unabridged audit/type lines) and both final sources/proofs reviewed. Nine independent Lean examples plus two helper proofs/27.11520910001127s/0. All2343Foundation/root sources+3configs frozen/rechecked;113archive paths/hashes unchanged. FIVE explicit Git paths; exact receipt and PRIVATE main/research closure recorded in .lake/stardust-1429-verification.json.
