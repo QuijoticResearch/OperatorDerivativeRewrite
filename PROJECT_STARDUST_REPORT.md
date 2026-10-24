@@ -38924,3 +38924,112 @@ Evidence .lake/stardust-1457-working-checkpoint.json, -full-build.log,
 -audit.log, -independent.log, timing JSON and -verification.json. Explicit
 six-path Git checkpoint, exact-commit receipt and verified PRIVATE main/research
 synchronization remain mandatory before terminal closure. IBM stays ACTIVE.
+
+## Checkpoint1458 — actual scenery/clock stochastic Fubini and native scalar IBM terminal integration
+
+IBM ACTIVE; queue1422 unchanged. This discharges the precise stochastic-Fubini
+and native scalar-parameter integration identification left open1457. Source
+remains ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+Every original manuscript and earlier mathematical result remains unchanged.
+No reflection/housekeeping session or queued campaign was started.
+
+GaussianCrossParameterizedIto.realIntegral_map extends the EXISTING same-target
+naturality theorem to DIFFERENT S-finite parameter measures and EVERY bounded
+real map A between their ordinary real L2 spaces, with the stated separability
+hypotheses. It proves A commutes with the ORIGINAL parameter-Ito map on its
+ENTIRE genuine predictable-L2 domain. The PRIVATE map_tensor and old actual
+tensor-integral identity handle finite ranks; EXISTING Lp.induction and closed
+continuous equality supply the whole domain. No new stochastic integral,
+assumed tensor density, derivative premise or process law is introduced.
+No novelty claim is made for standard bounded-operator stochastic Fubini.
+
+IBMSceneryClockIto instantiates A as the ACTUAL physicalNoise isometry from
+ordinary spatial Lebesgue-L2 to the EXISTING scenery Gaussian L2. noiseInput
+is its actual Bochner lift; flatInput is the existing inverse product curry.
+Both retain the ORIGINAL predictable clock measure, not just joint ambient
+measurability. jointIntegral is EXACTLY the EXISTING realFlat scalar parameter
+integral, with the final existing factor swap to canonical (scenery X,clock Y)
+order. noise_integral and agreement prove equality with the ORIGINAL1452
+realize of the ORIGINAL spatial integral, for EVERY genuine spatial input.
+flatInput_norm/jointIntegral_norm give exact isometries, not conditional bounds.
+
+inputSections is the existing L2 flip/curry. joint_curry uses the previously
+verified flip_involution, not an unproved Fubini interchange. joint_sections
+identifies for AE actual scenery X the literal clock section with the OLD
+scalar realIto applied to inputSections. sectionPredictable is the ORIGINAL
+finite-horizon trim inverse; it is a member of the ORIGINAL scalar predictable
+DomainT, not a mere jointly measurable candidate. joint_sections_native proves
+that for AE X the output is the ORIGINAL native scalar predictable Ito integral
+of this genuine input. section_energy proves that the integral over scenery
+of the native predictable section norm squared is EXACTLY the original scalar
+product-input norm squared. Every measurability/integrability membership comes
+from actual Bochner L2/trim constructions. noiseInput_test identifies physical
+scenery pairings of these inputs with the original physical spatial dual action.
+
+IBMSceneryTerminalIto uses EXACTLY1457's actual canonical spatial input.
+terminalInput is the actual noiseInput and product curry, with no output-based
+definition. terminal_integral identifies its ORIGINAL scalar parameterized
+output with the OLD actual canonicalValue. actual_identity therefore proves
+ACTUAL IBM_T = jointIntegral(terminalInput(T)) + initialValue(T), AE under the
+ORIGINAL joint law. initial_actual strengthens the initial term: it is the
+literal scenery-only random variable physicalNoise(initialKernel(T))(X),
+independent of the clock Y in the joint AE sense. This follows from the OLD
+initial sections by measurable product Fubini and the existing measure-preserving
+swap, not an uncountable intersection of pointwise null sets.
+
+actual_native_sections proves for AE fixed ACTUAL scenery X that
+IBM_T(X,Y)-physicalNoise(initialKernel(T))(X) is the ORIGINAL native scalar
+clock Ito integral of sectionPredictable(T,terminalInput(T),X), AE in Y.
+clock_mean_actual proves, separately and literally,
+integral_Y IBM_T(X,Y) = physicalNoise(initialKernel(T))(X), for AE X.
+The proof FIRST obtains integrable clock sections from actual joint L2 IBM;
+then the actual section identity and the OLD native Ito centering theorem give
+the mean. This verifies the retained initial term's stochastic meaning rather
+than only its Bochner-kernel definition.
+
+terminal_energy is exact. finiteTerminalInput uses the OLD finite canonical
+spatial inputs, and finite_input_tendsto proves STRONG L2 convergence in the
+actual scalar product predictable domain BEFORE integration. The OLD integral
+isometry yields actual joint L2 output convergence. terminal_physical_coefficient
+proves every physical scenery test of the actual scalar input equals the
+ORIGINAL finite-horizon causal projected derivative of the EXISTING tested
+actual IBM clock point. All original derivative/past premises were discharged
+in1457 and are reused exactly; no excluded rough point is inserted into DomD.
+
+SEVEN independent Lean checks: actual tensor input gives the correctly ordered
+scenery-noise times scalar clock integral; exact integrated native section
+energy; literal fixed-scenery clock mean AND actual native scalar representation;
+finite input convergence in the scalar predictable PRODUCT domain; actual joint
+IBM equality; original physical Clark--Ocone coefficient after transformation;
+and preservation of1456's probability obstruction when the SAME transformation
+is applied to the OLD unprojected running inputs. All tests passed first run.
+Development repairs were typed beta normalization in section norms, qualifying
+Measure.ae_ae_of_ae_prod, converting AE representations rather than using an
+Eq.symm projection, and explicitly presenting the joint product measure before
+swap simplification. Failed logs retained under .lake/stardust-1458-*.
+
+SCOPE/OPEN: this is genuine source-parameterized scalar clock stochastic
+integration, using the ORIGINAL clock filtration and all scenery as a separate
+initial parameter. It does NOT identify that information with IBM's observed
+filtration or initial germ, make the RUNNING IBM path a martingale, enlarge the
+original joint derivative domain, or prove physical-time nonlinear Ito for
+running IBM. Terminal T indexes a FAMILY of integrands; it is not a statement
+that this family has one fixed running martingale integrand. The1456 obstruction
+and1457 eventual distinction from unprojected running inputs remain intact.
+Next pursue an explicit ordinary spatial causal folded heat coefficient with
+actual conditional/predictable agreement, or another substantive intrinsic
+domain/closure connection; do not repeat completed Fubini/representation work.
+No full intrinsic IBM completion or campaign transition is claimed.
+
+Verification: complete root build6583 jobs (29.259360s); COMPLETE transitive
+collectAxioms audit 46330 safe Foundation declarations (39.368966s), only
+propext/Classical.choice/Quot.sound. All26 public types read UNABRIDGED and
+ENTIRE three sources/private proofs reviewed. SEVEN independent Lean checks
+passed (33.667076s). All2411 Foundation/root sources+3configs frozen/
+rechecked; all113 archive paths/hashes unchanged; no sorry/admit/new axiom,
+compiler option/toolchain change or mathematical edit after the final build.
+Evidence .lake/stardust-1458-working-checkpoint.json, -full-build.log,
+-audit.log, -independent.log, timing JSON and -verification.json. Explicit
+six-path Git checkpoint, exact receipt and verified PRIVATE main/research sync
+remain mandatory before terminal closure. The autonomous IBM goal stays ACTIVE.

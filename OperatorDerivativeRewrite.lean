@@ -2306,3 +2306,6 @@ import Foundation.IBMSpatialCorrectionNoProbabilityLimit
 import Foundation.IBMSpatialCanonicalAdjoint
 import Foundation.IBMSpatialCanonicalRepresentation
 import Foundation.IBMSpatialTerminalReconstruction
+import Foundation.GaussianCrossParameterizedIto
+import Foundation.IBMSceneryClockIto
+import Foundation.IBMSceneryTerminalIto
