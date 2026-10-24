@@ -2348,3 +2348,5 @@ import Foundation.IBMSchwartzHeatTimePairing
 import Foundation.IBMSchwartzHeatCanonical
 import Foundation.IBMSchwartzHeatReconstruction
 import Foundation.IBMSchwartzHybridReconstruction
+import Foundation.IBMSchwartzSimpsonNative
+import Foundation.IBMGaussianMeanObstruction

@@ -40641,3 +40641,121 @@ zero-horizon graph and coexistence with OLD raw native non-Cauchy. No source
 manuscript or unrelated file was changed. Production inputs frozen/rechecked.
 
 Final gates: complete root6622jobs 26.001092s; complete safe transitive audit 46861 declarations, standard three axioms only, 41.182643s; TEN independent Lean checks 28.157634s. All2450 Foundation/root sources+3configs+113archive paths/hashes rechecked. Explicit FOUR-path commit, exact receipt and verified PRIVATE main/research backup follow; evidence .lake/stardust-1473-verification.json. IBM remains ACTIVE.
+
+## Checkpoint1474 — physical Simpson/native operator agreement and a necessary Gaussian mean obstruction
+
+IBM remains ACTIVE. Previous1473 /
+57363ed5aeaa46aad117ece85ed8140a011b41d9 made verified progress and passed
+all exact PRIVATE main/research gates. This turn began with the required
+theorem-level reuse audit rather than reopening completed F1-F3 or rebuilding
+Gaussian/IBM calculus. Queue8280325 unchanged; no early campaign or reflection
+session. All113 ResearchSources paths/hashes remain read-only/uncommitted and
+unchanged, including primary IBM EJP2605-044RA0.pdf SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+
+Reuse audit:1338/1339 already provide full ORIGINAL-domain source C1 chain
+rules;1350 gives weak L1 generator/product identities;1302 proves actual IBM
+nonmartingale in every filtration that could make it a martingale;1360 rules
+out the actual bounded sine point from the original strong clock/joint
+derivative domain. OLD IBMActualTaylorChain has a C4 combined first-three-rank
+physical Taylor limit in probability with random quartic drift1/8. OLD
+IBMActualSimpson/IBMSimpsonL2Error already prove signed Simpson convergence
+and genuine strong joint-L2 C5 error control from actual fifth-variation
+moments. These are preserved verified results, not claimed newly proved.
+The productive missing connection selected here is between those ACTUAL
+physical-time signed sums and1473's explicit ORIGINAL native source/clock
+adjoint reconstruction, including the generally necessary centering term.
+
+IBMSchwartzSimpsonNative.shifted_smooth and iterated_shifted discharge the
+OLD C5 hypotheses for EVERY real Schwartz primitive g and shift a. The fifth
+derivative is the actual existing shifted jet, bounded by the Schwartz
+seminorm of jet(g,5). errors reuses the ORIGINAL unclipped Simpson errorClass;
+it is not an assumed small error or a new numerical approximation scheme.
+physicalValue is the original actual terminal class minus the constant g(a).
+sumsClass_actual proves that errors+physicalValue is the ACTUAL finite signed
+Simpson sum of g'(a+IBM), using the existing actual zero-time IBM law.
+sums_memLp proves genuine joint-L2 membership of every UNCLIPPED actual sum.
+sumsClass_tendsto reuses the OLD genuine L2 error theorem and proves STRONG
+joint-L2 convergence, EVERY g,a,T>=0, with no additional moment hypothesis,
+clipping or positive-horizon restriction. No integral map is defined merely
+by prescribing a desired output; actual finite-sum identification and its
+verified stochastic error estimate precede the native interpretation.
+
+meanShift is the actual constant class
+ c(g,a,T)=E_joint[g(a+IBM_T)]-g(a),
+identified by meanShift_actual through1473's PROVED global_mean. native_limit
+uses the SAME prescribed1473 source/heat-clock pair u(g,a,T) and proves BOTH
+its ORIGINAL jointDivergence membership/value and the actual signed-sum limit:
+ physicalValue = ORIGINAL jointDivergence(u) + meanShift,
+ sumsClass_n -> ORIGINAL jointDivergence(u) + meanShift in jointL2.
+The native field is not selected after knowing the sum limit. Its explicit
+source recovery of M_T and canonical adapted-clock heat score were independently
+constructed, identified and audited1472/1473.
+
+native_duality gives the ORIGINAL derivative–adjoint identity for the centered
+physical limit against EVERY ORIGINAL jointDerivative-domain test F.
+actual_pairing_integrable proves every literal finite sum times EVERY jointL2
+test is integrable. pairing_tendsto proves convergence of these actual
+pairings for ALL jointL2 tests, not merely bounded or first-source probes.
+actual_pairing_tendsto specializes to every original derivative-domain test:
+ E[actual SimpsonSum_n * F]
+   -> inner(u,ORIGINAL D F) + inner(meanShift,F).
+This is actual stochastic integration by parts for the physical grid limit
+with the correct mean term; expectation-level heat evolution alone is not
+substituted for a stochastic identity. Source/clock native operators and the
+actual probability law remain the ORIGINAL ones throughout.
+
+IBMGaussianMeanObstruction supplies a concrete decisive counterexample to
+dropping the constant correction. Take the already constructed real Gaussian
+Schwartz g(x)=exp(-x^2), a=0,T=1. mean_less_one proves
+ E[g(IBM_1)]<1=g(0).
+The nonnegative integrable deficit1-exp(-IBM_1^2) cannot have zero expectation:
+otherwise the existing nonnegative-integral theorem forces it to vanish AE,
+exponential injectivity gives IBM_1=0 AE, and the actual L2 terminal would be
+zero, contradicting the existing verified observed_one_ne_zero. All quantities
+are under the ACTUAL joint law; no simulation, assumed density/full support
+or new nondegeneracy axiom is used. physical_mean_negative then proves the
+actual physical increment has strictly negative expectation. By the EXISTING
+original joint divergence mean-zero theorem, no_uncentered_divergence proves
+that NO u in its full natural domain can have divergence equal to this
+uncentered physical increment. This is stronger than failure of the particular
+chosen pair. The positive corrected reconstruction and this obstruction are
+both verified and explicitly tested together.
+
+Scope: smooth deterministic one-forms g'(a+x), every Schwartz primitive,
+fixed finite horizon and the ORIGINAL uniform physical grids. This is not
+an extension to arbitrary random/observed-predictable integrands, a
+semimartingale theorem, an observed-filtration adapted representation for
+the individual native fields, simultaneous-all-time scalar convergence or
+convergence of strong derivative fields. The target is not assumed in Dom(D).
+The deterministic meanShift is NOT the random quartic forward-Taylor drift
+(1/8)*integral g^(4)(a+IBM_s)ds. Signed Simpson and combined forward Taylor
+limits have different correction conventions; no equivalence of their raw
+channels or individual-rank convergence is asserted. Future connection to
+that quartic drift must use its actual time-averaged domains, native Fubini
+and correct convergence topology, rather than silently identifying terms.
+Focused F1-F3 stopping1107 stays established at its exact domains/topologies.
+The OLD raw mollifier integrals may still be non-Cauchy while these physical
+grid sums converge strongly; the independent oddPart test verifies coexistence.
+No novelty claim is made for classical Simpson or Gaussian centering facts;
+the contribution is the exact formal native/physical identification and
+actual-process obstruction using the cumulative verified library.
+
+All20 final public types and BOTH ENTIRE final sources/proofs were read
+unabridged. Failed target logs1–5,7–8 retained: endpoint normalization, explicit
+existing C5 theorem arguments, function eta/composition normalization,
+definition expansion at DEFAULT200000, explicit missing module imports and
+namespaces, an explicit real-exponential argument and constant representative
+normalization. Factoring ALL-L2 pairing convergence from its derivative-domain
+specialization and local irreducibility of ORDINARY definitions resolved
+elaboration without raising resources, adding trust or changing mathematics.
+TWELVE independent Lean tests passed FIRST run: shifted fifth derivative;
+actual unclipped finite MemLp/AE sum; actual zero horizon; concrete oddPart
+strong convergence; original native graph+limit; derivative-domain duality;
+all-L2 finite integrability/pairing convergence; original D-test native pairing;
+Gaussian meanShift nonzero derived by COMBINING construction and obstruction;
+OLD raw native non-Cauchy coexisting with strong actual physical-grid sums.
+No production source changed after complete root build/audit. All source,
+configuration and immutable archive hashes frozen/rechecked.
+
+Final gates: complete root6624jobs 27.228175s; complete safe transitive audit 46891 declarations, standard three axioms only, 39.918849s; TWELVE independent Lean checks 29.818829s. All2452 Foundation/root sources+3configs+113archive paths/hashes rechecked. Explicit FIVE-path commit, exact receipt and verified PRIVATE main/research backup follow; evidence .lake/stardust-1474-verification.json. IBM remains ACTIVE; no campaign transition or full-calculus completion asserted.
