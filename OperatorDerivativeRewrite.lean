@@ -2328,3 +2328,4 @@ import Foundation.IBMFoldedPhysicalPredictable
 import Foundation.IBMFoldedPredictableProjection
 import Foundation.IBMPhysicalSpatialInjection
 import Foundation.IBMFoldedCanonicalIdentification
+import Foundation.IBMSceneryNativeAdjoint

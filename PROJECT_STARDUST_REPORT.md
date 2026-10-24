@@ -39686,3 +39686,75 @@ final successful gates. Evidence .lake/stardust-1463-working-checkpoint.json,
 -full-build.log, -audit.log, -independent.log, timing JSON and -verification.json.
 Nine explicit-path Git checkpoint, exact receipt and verified PRIVATE main/research
 sync required before terminal closure. Research goal and IBM remain ACTIVE.
+
+
+## Checkpoint1464 — native parameter-Ito admission to original IBM clock adjoints
+
+IBM ACTIVE; authoritative queue1422 unchanged. The preceding turn confirmed the
+already committed queue and made no mathematical progress; this checkpoint
+resumes the original-adjoint domain bridge rather than repeating that status.
+ResearchSources remains read-only and uncommitted. All113 archive paths/hashes,
+including IBM anchor EJP2605-044RA0.pdf SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE,
+are unchanged. No reflection session, new campaign, delegation or manuscript edit.
+
+The new IBMSceneryNativeAdjoint module proves a concrete domain connection:
+EVERY actual scalar h in L2(predictableMeasure(T) x sceneryGaussian), T>=0,
+maps isometrically into the ORIGINAL Gaussian-vector Bochner field space.
+nativeField is exactly original trimEquiv inverse, finite-to-full zero extension,
+and original predictableField embedding. Its scalar graph value is original
+realIto(T), by the EXISTING full predictable divergence graph and finite/full
+integral agreement. No new stochastic integral or ambient derivative is defined.
+
+field(T,h) lifts nativeField pointwise to the ACTUAL scenery L2 parameter
+sections constructed1458. partial_graph first proves genuine AE fiber graph
+membership with a Bochner L2 OUTPUT, using joint_curry and both lift_coeFn
+identities. The EXISTING BochnerLiftAdjointInclusion then admits this pair to
+the ORIGINAL partialDerivative.adjoint. Original clockUnitary transport proves
+clock_mem and clock_value: ambient clock divergence of this field is EXACTLY
+the original jointIntegral(T,h). This extends the old elementary-tensor
+admission to arbitrary actual jointly L2 scenery-parameterized predictable
+inputs; it does not assume equality of full lifted/fiberwise adjoint domains.
+field_norm gives genuine isometry and hence injectivity/stability on these
+inputs. No original DomD hypothesis for the rough IBM point is used.
+
+intrinsic_value admits the same field to the ORIGINAL intrinsicClock.adjoint,
+and gives EXACTLY the existing orthogonal projection of jointIntegral onto
+IntrinsicSpace. The projection is deliberately retained: an arbitrary
+scenery-parameterized output need not be an IBM-observed observable. No
+ordinary conditional expectation, observed filtration, or time-zero whole
+scenery access is assumed for the intrinsic process.
+
+For EVERY FIXED T>0, actual_folded_value specializes to1463's explicit folded
+Gaussian coefficient: ORIGINAL ambient clock adjoint(field(T,scalarInput(T)))
+plus EXISTING initialValue(T) equals the ACTUAL IBM_T, AE under the ORIGINAL
+joint Gaussian law. folded_value also gives the equality in actual joint L2.
+finite_fields_tendsto transports1463's strong native predictable scalar-input
+approximation to STRONG convergence in ORIGINAL Gaussian-vector Bochner L2,
+BEFORE applying the unbounded adjoint. This uses only bounded isometries, not
+an invalid inference of adjoint convergence from field convergence alone;
+outputs are independently identified by clock_value and the original isometry.
+
+Scope still OPEN: explicitly connect initialValue's actual source Gaussian
+first-chaos realization to ORIGINAL source adjoint, combine both ambient
+channels with the correct IBM-observation projection, and distinguish that
+terminal representation from intrinsic physical-time Ito/Clark--Ocone calculus.
+No completion of IBM, causal observed-filtration PRP, simultaneous all-real-T
+pathwise native version, or new T=0 terminal formula follows. Old point/sine
+DomD obstructions and native unprojected non-tightness1456 remain intact.
+The old generic OU/native-adjoint recovery1374 is reused context, not a new
+existence result or substitute for the explicit terminal adapted coefficient.
+
+Proof development: target1 scalar/lift/transport passed. Target2 exposed an
+unnecessary norm rewrite and missing local intrinsic CompleteSpace instance;
+target3 exposed a subtype-coercion rewrite mismatch in intrinsic_value.
+The final proof uses the original projection theorem with an explicit domain
+element and transitivity; target4 passed. Failed logs preserved. No heartbeat,
+transparency, trust, version, resource or theorem-semantics override was added.
+All11 public types and the ENTIRE final source/proofs were read unabridged.
+Independent Lean checks cover arbitrary-input actual domain admission,
+injectivity, zero-horizon scalar graph, literal positive-horizon IBM identity,
+strong finite-field approximation, and divergence isometry on admitted inputs.
+All verification is serialized; no checks suppressed or replaced by a receipt.
+
+Final gates: complete root6603jobs 28.481659s; complete transitive audit 46594 safe Foundation declarations, only propext/Classical.choice/Quot.sound, 40.060212s; SIX independent checks 28.386533s. All2431 Foundation/root source hashes and3 pinned configurations frozen/rechecked,113 archive paths/hashes intact. All prior mathematical source bytes unchanged except required root/AxiomAudit imports. Detailed evidence .lake/stardust-1464-verification.json. Explicit commit/exact receipt/verified PRIVATE main and research backup gate follows; no transition is authorized by this checkpoint.
