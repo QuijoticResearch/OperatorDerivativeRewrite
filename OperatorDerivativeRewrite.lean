@@ -2266,3 +2266,5 @@ import Foundation.IBMPhysicalCellErrorRate
 import Foundation.IBMPhysicalLpSeparation
 import Foundation.IBMPhysicalHorizonCompatibility
 import Foundation.IBMPhysicalStoppedClockIntegral
+import Foundation.IBMPhysicalPastIncrement
+import Foundation.IBMPhysicalFrozenSlope

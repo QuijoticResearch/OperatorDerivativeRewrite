@@ -37350,3 +37350,81 @@ All14 public types read UNABRIDGED; complete final definitions/proofs reviewed.
 All2368 Foundation/root sources+3configs frozen/rechecked;113 archive paths and
 hashes unchanged. Six explicit Git paths only. Exact-commit receipt and
 PRIVATE main/research verification are mandatory before terminal closure.
+
+## Checkpoint1441 — actual random physical past coefficient and original Ito step identity
+
+IBM remains ACTIVE; queue1422 and all campaign gates remain unchanged. This
+closes the RANDOM physical past-coefficient obligation recorded1440, without
+substituting a constant spatial tensor. The source anchor remains
+ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All original manuscripts and old mathematical declarations are unchanged.
+No novelty claim or campaign transition is made. This is active IBM proof
+work, not a daily reflection/housekeeping session; no date was reserved.
+
+IBMPhysicalPastIncrement applies the EXISTING scalar full-past independence
+and step-integration theorem to the NORM of an arbitrary actual physical
+H^-1-valued square-integrable raw-past coefficient U. It proves that
+(Y_b-Y_a) U belongs to the ORIGINAL Gaussian L2 space whenever a<=b and
+U is measurable at a. No boundedness, finite chaos expansion, derivative
+or newly assumed independence premise is introduced. The actual product
+has exact energy (b-a)||U||^2. Every original real physical dual test commutes
+with it and gives the existing scalar pastIncrement. All measurability and
+product integrability are proved before the actual Lp class is constructed.
+
+integral_eq_product proves agreement with the ORIGINAL physical Ito map.
+Its explicit field premise states that the zero extension of an original
+physical-domain input is exactly 1_(a,b] U. Scalarization gives the OLD full
+Brownian Ito domain, whose original past-step theorem proves the actual
+scalar product identity. The verified1440 physical Lp separation theorem
+then gives equality in physical Gaussian L2. This is not a new integral
+defined to be the product, nor an uncountable intersection of exceptional
+sets. The general field-equality premise is explicit and retained.
+
+IBMPhysicalFrozenSlope DISCHARGES every premise for U=Gprime(Y_a), where
+G(r)=Phi(|r|)-|r| delta_0 is the actual corrected physical primitive1437.
+slope_square_bound gives ||Gprime(r)||^2 <= ||physicalDerivative||^2 |r|.
+Actual Brownian L2 implies its L1 moment, proving point_memLp. Raw-past
+measurability follows from continuity of the verified slope and actual
+Brownian adaptedness. point_ae identifies the actual continuous clock-path
+representative. The frozen field uses the EXISTING scalar pastClass(a,b),
+composed with Gprime; its physical L2 and raw predictable membership are
+both proved, as is the exact original-domain representative
+1_(a,b](s) Gprime(Y_a). Gprime(0)=0 justifies the value outside the cell.
+Its zero extension is proved using actual cell/horizon support, not assumed.
+
+Consequently frozen_integral_actual is the genuine original signed physical
+identity integral_(a,b] Gprime(Y_a) dY = (Y_b-Y_a) Gprime(Y_a), almost surely
+in the ACTUAL clock probability space with values in physical H^-1.
+frozen_energy gives its exact (b-a)||Gprime(Y_a)||_L2^2 energy. The sign in
+the derivative and the origin subtraction are preserved. This uses the
+Brownian CLOCK filtration; it does not assert an IBM-history martingale law
+or a raw joint-IBM semimartingale formula.
+
+Eight independent Lean checks cover arbitrary random product additivity,
+zero-length generic and actual frozen cells, the actual origin slope zero,
+centering under EVERY original physical test, the literal signed clock-path
+scalar product, compatibility with other parent horizons under exact field
+equality, and nonnegative chronological energy. An initial independent-check
+failure concerned inherited scalar/module normalization and zero-function
+representatives; its log is retained. Final checks use explicit pointwise
+normalization and the ordinary module tactic. No heartbeat, compiler option,
+axiom whitelist or existing theorem semantics changed.
+
+The remaining assembly is precise: define/identify the corrected running
+Ito value using the ORIGINAL physical map; prove its increments minus the
+actual frozen product equal the ALREADY VERIFIED cell-error integral1439;
+combine that identity with1438 Taylor and1439 strong-L1 square-sum limits.
+For the original reflected physical correction, retain and identify the
+actual delta_0 local-time term. No zero-quadratic-variation, bounded-variation,
+uniform-time result or completion of full unprojected intrinsic IBM calculus
+is claimed at this checkpoint.
+
+Verification: complete root build, COMPLETE safe-Foundation TRANSITIVE axiom
+audit (only propext/Classical.choice/Quot.sound), all21 public types read
+UNABRIDGED, both complete source/proofs read, and8 independent checks.
+All2370 Foundation/root sources,3 configurations and113 archive paths/hashes
+were frozen and rechecked. Explicit Git checkpoint and exact receipt/PRIVATE
+main+research verification follow; the receipt is not a substitute for gates.
+
+Terminal timings: root 24.803786s; complete transitive audit 45493 declarations, 40.512975s; independent checks 33.151028s; all exit0.
