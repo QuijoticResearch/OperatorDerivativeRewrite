@@ -41420,3 +41420,133 @@ with the original derivative outside the proved raw image. Full intrinsic IBM
 calculus remains unfinished; no early campaign transition is authorized.
 
 Verification: root6634 jobs, 42.022682s; complete 47166 safe transitive declarations, 40.039830s; TWELVE independent checks, 27.092677s, all exit0. All19 public types and the ENTIRE final source/private proofs were read unabridged. Source freeze/recheck covers 2462 Foundation/root sources, all3 configuration files and all113 archive paths/hashes. Explicit Git commit, exact receipt and verified PRIVATE main/research closure follow; this entry does not substitute for those gates.
+
+## Checkpoint1481 — completed RAW integration in the original intrinsic joint adjoint, and an actual random-step obstruction
+
+IBM remains ACTIVE; queue8280325 and its completion gates are unchanged.
+Prior1480/0b7d23b is fully audited and exactly verified PRIVATE on main and the
+research branch. All113 immutable manuscript paths/hashes remain unchanged,
+read-only and uncommitted. The actual primary IBM reference remains
+ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+This turn advances1480's original-operator connection, not another campaign.
+No manuscript assertion is assumed verified and no novelty claim is made.
+
+### Reuse audit and exact positive construction
+
+Foundation/IBMRawIntrinsicIntegral.lean directly reuses1479's bounded actual
+raw integral I on the EXISTING H=1/4 canonical spectral integrand space G,
+and1480's original source-gradient G_source(f), original source-adjoint
+membership and delta_source G_source(f)=I(f). Here G is not physical dt-L2;
+I has actual raw finite stochastic sum and interval agreement, not the old
+target-indexed observed-terminal martingale integral or right-germ isometry.
+The actual process is still the reflected-clock B(|W|), not a two-independent-
+outer-branch IBM substituted by notation.
+
+The old IBMJointIntrinsicDerivative.ambient_pair_divergence theorem transfers
+actual ambient source/clock adjoint inputs to the ORIGINAL joint intrinsic
+adjoint with orthogonal projection of the ambient output. Apply it to the
+SAME constructed source gradient and an actual zero clock-domain input. Since
+1479 already proves I(f) is an actual IBM observable, the projection fixes
+I(f). A private source_pair lemma isolates this direct one-sided transfer;
+no equality of ambient and intrinsic adjoint domains is asserted.
+
+The nativeField is a BOUNDED real-linear map from the completed canonical G
+into the ORIGINAL two-channel joint field space, explicitly
+U(f)=(G_source(f),0). value(f) is the SAME actual I(f), now an IntrinsicSpace
+vector. reconstruction/native_mem/nativeInput/native_value prove for EVERY
+completed f, without caller-supplied membership or approximation premises:
+
+* U(f) belongs to the ORIGINAL jointDivergence domain and delta U(f)=value(f).
+* actual_finite and actual_interval identify that SAME original divergence
+  with literal raw IBM finite sums and all oriented increments, including
+  zero/reversed/degenerate interval endpoints.
+* native_norm gives ||U(f)||=||I(f)||, native_bound the proved canonical bound;
+  native_inner gives the exact actual cross-energy, not the false scaled-Q
+  reference isometry.
+* integration_by_parts and actual_integration_by_parts hold for EVERY
+  original JOINT derivative-domain test F. The latter is the literal
+  joint-probability expectation of I(f)*F. Integrability follows from the
+  existing all-ambient-L2 product theorem, not an undefined formal integral.
+* native_adjoint identifies U.adjoint(D_joint F)=I.adjoint(F) on that exact
+  original domain. The right-hand operator is the actual completed raw
+  stochastic integral's Hilbert adjoint, not generic Gaussian recovery.
+* graph_limit proves STRONG convergence of BOTH original joint-adjoint graph
+  coordinates whenever actual finite reference inputs converge in G.
+  Thus1479's dense actual stochastic approximants converge together with
+  their original intrinsic divergence fields, for every completed input.
+
+This is a divergence representation and completed deterministic integration
+result, not a claim that its VALUE belongs to the joint derivative domain.
+The old positive-time point-domain obstruction remains true; an independent
+check establishes BOTH the point obstruction and its new explicit divergence
+representation in one statement. The field's zero clock channel does not
+make it observed-filtration predictable or imply raw IBM is a martingale.
+The existing intrinsic field space retains ambient source/clock coordinates;
+no new observable/adapted-field membership is silently assumed. There is no
+reference-norm isometry, injectivity, Gaussian-law transfer or complete
+intrinsic IBM Clark--Ocone/calculus claim.
+
+### Actual random coefficient test: a rigorous obstruction to naive extension
+
+The reuse audit found the ALREADY verified
+IBMTemporalCovarianceObstruction.actual_increment_pairing_negative and
+IBMNaturalFiltrationObstruction.previous_mem_past. They concern the ACTUAL
+process, not a model covariance kernel. Do not repeat their proof or treat
+raw IBM as a martingale in another filtration. The existing
+IBMCenteredSourceRepresentation.divergence_mean_zero applies to EVERY
+original joint-divergence input.
+
+Define rawLeftStep(p)=Z_1(p)*(Z_2(p)-Z_1(p)). Its coefficient Z_1 is an actual
+L2 vector in the natural past at1. The literal product is integrable, by
+existing L2-product integrability and actual point representatives.
+rawLeftStep_mean_negative transfers the old strict covariance test to its
+ordinary stochastic expectation. no_rawLeftStep_divergence then proves:
+NO original joint-divergence input has that literal uncorrected left-step
+representative. This is stronger than a failure of the PARTICULAR proposed
+source-gradient field, and precisely refutes any extension that promises
+all such uncorrected past-weighted steps as original divergence values.
+It does not rule out corrected integration, different operator domains,
+other calculi or any valid stochastic construction. No L2 membership of this
+product or full random-integrand closure is claimed merely from integrability.
+
+### Supporting reuse and verification experience
+
+The audit read IBMNativeWeightedDivergence through its final weighted_mem and
+weighted_value. It ALREADY establishes multiplier-domain invariance for an
+ORIGINAL joint-domain coefficient with a bounded value and BOTH coordinate
+gradients in L-infinity, using native correction and observable projection.
+Do not duplicate that calculus. Its hypotheses cannot be silently applied
+to point coefficients outside the joint derivative domain. The separate
+GaussianClosedChainRule.bounded_product_chain_graph is a scalar COMPOSITION
+chain rule, not a general two-function product rule. Existing
+IBMNativeWeakL1Divergence.product_integrable/product_mean are reused directly.
+
+Target1--5 preserve ordinary namespace/representation issues and deterministic
+200000-heartbeat elaboration failures. These were resolved by typed inner/norm
+calculations, local irreducibility of ORDINARY definitions, an explicitly
+constructed zero clock-domain subtype, a private corollary of the EXISTING
+ambient-pair theorem, and separating have from rcases before witness transport.
+No abbreviation (especially jointDivergence) is made irreducible. No compiler,
+resource, trust, Lean/Mathlib version, axiom whitelist or audit option changes.
+Target6 passed the transfer; target7 passed the actual random-step obstruction;
+then only final line wrapping changed before the complete root build.
+
+TWELVE independent Lean checks cover literal native-divergence finite sums;
+positive-time original point-domain failure coexisting with native divergence
+construction; zero clock channel; nonzero actual point energy; all oriented
+raw interval values; actual expectation IBP on the full original test domain;
+exact adjoint analysis; cross energy equal to actual K; strict +1,+1 failure
+of the false fractional reference isometry; existence of strong two-coordinate
+graph approximants for every completed f; actual natural-past coefficient,
+product integrability and negative mean; and impossibility of ANY original
+joint-divergence representation for the uncorrected past-value raw step.
+
+Next justified task: repair the RANDOM integration domain using actual
+corrections and measurable/native convergence, respecting the point-domain
+and noncentering obstructions. Reuse the existing weighted native theorem
+where its full hypotheses are genuinely verified, and distinguish projected
+intrinsic outputs from unprojected stochastic products. No early transition
+or full-calculus completion is authorized by this positive checkpoint.
+
+Verification: root6635 jobs, 42.806204s; complete 47215 safe transitive declarations, 37.893221s; TWELVE independent checks, 32.023831s, all exit0. All20 public types and the ENTIRE final source/private proofs were read unabridged. The frozen/rechecked source manifest covers 2463 Foundation/root sources, all3 configurations and all113 archive paths/hashes. Explicit Git, exact receipt and verified PRIVATE main/research closure follow. No mathematical source edit occurred after the final successful build/audit.
