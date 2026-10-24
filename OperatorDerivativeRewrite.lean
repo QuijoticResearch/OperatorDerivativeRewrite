@@ -2281,3 +2281,5 @@ import Foundation.IBMPhysicalClockCrossVariation
 import Foundation.IBMPhysicalClockProductRule
 import Foundation.IBMPhysicalPastMeasurability
 import Foundation.IBMPhysicalCorrectionSteps
+import Foundation.IBMPhysicalPredictableSteps
+import Foundation.IBMPhysicalNativeCorrectionSteps

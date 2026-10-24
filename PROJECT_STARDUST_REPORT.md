@@ -37962,3 +37962,103 @@ entries frozen/rechecked. Five explicit Git paths, exact receipt and verified
 PRIVATE main/research backup follow and do not replace mathematical gates.
 
 Terminal timings: root 25.400105s; complete transitive audit 45781 declarations, 39.046493s; independent checks 25.720092s; all exit0.
+
+## Checkpoint1448 — genuine physical predictable step construction and ORIGINAL-map correction sums
+
+IBM remains ACTIVE; queue1422 unchanged. This discharges the physical
+TIME-predictable input and original-map finite-step identification gap left1447.
+Source: ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+Original manuscripts and all pre-existing verified mathematical declarations
+are unchanged. No novelty claim, new research campaign or reflection session.
+
+IBMPhysicalPredictableSteps constructs the ACTUAL cell field
+1_(a,b](time)*U(sample) for EVERY physical GaussianL2 coefficient U with
+proved raw-clock-past measurability at a. Predictability is proved at the
+physical Banach-valued level, not inferred from its scalar probes. A private
+masked-sample map sends a nonnegative-time/sample pair to its sample inside
+the cell and to a fixed sample outside. Preimages are predictable rectangles
+(and their complements), using the EXISTING predictable-Ioc rectangle theorem.
+Composing a strongly measurable raw-past representative and applying the
+cell indicator gives a strongly predictable physical field. Pullback through
+the OLD nonnegative-time transport proves the real-time statement, including
+negative-time exclusion. The actual Lp coefficient is transferred by the
+proved quasi-measure-preserving projection AE identity. No countable physical
+basis, second-countable physical target assumption, Pettis shortcut,
+unjustified AE intersection or new conditional expectation is introduced.
+
+Actual ambient time-probability MemLp2 follows by DIRECT REUSE of the OLD
+scalar productTensor(intervalVector,normClass U): its representative supplies
+exactly the norm of the physical field. Holder/product independence is NOT
+assumed for this time tensor. The physical fieldClass is constructed only
+after this integrability proof. Restricting it gives input(a,b,T) in the
+ORIGINAL IBMPhysicalClockIto.Domain T, with raw predictable membership,
+actual representative and zero extension all PROVED. For a<=b<=T,
+integral_input identifies the ORIGINAL physical Ito output with the ALREADY
+VERIFIED actual random product U*(Y_b-Y_a). Every physical time-domain and
+support premise of the earlier conditional step theorem is now discharged.
+input_norm_sq proves its EXACT physical input energy (b-a)||U||_GaussianL2^2.
+There is no coefficient boundedness, polynomial or finite-chaos restriction.
+
+IBMPhysicalNativeCorrectionSteps applies this construction to the ACTUAL
+original correctionLimit using1447's proved raw-past property. partitionInput
+is an actual finite sum in ONE common ORIGINAL physical Domain T, with literal
+sum-of-cells representative. For monotone partitions whose last time is<=T,
+partition_integral identifies the original physical map with the ACTUAL
+physical GaussianL2 partitionClass1447; partition_integral_actual identifies
+the RAW correction-left sum from1446. partition_isometry gives the exact
+original physical norm identity, and partition_integral_mean_zero gives its
+FULL physical Bochner centering. This closes the previous scalar-only
+identification gap: the output is now from a CONSTRUCTED native physical
+predictable input and the ORIGINAL integral, not a new integral defined to
+be the desired sum. Cells share a parent horizon; larger parent horizons
+give the same outputs as independently checked.
+
+A verified independent example substitutes this actual ORIGINAL physical
+integral into the exact finite product formula1446. Another example connects
+every scalarized native output directly to the OLD closed clock derivative-
+adjoint hilbertDivergence graph. These are genuine reuse connections with all
+finite-step domain premises proved. Their finite nature remains explicit.
+
+Remaining continuous-time gate: convergence of the ACTUAL physical partition
+inputs has not yet been proved. Prove time-L2 regularity and Cauchy/limit
+properties of this correction coefficient family, then use the EXISTING
+closed predictable domain and ORIGINAL Ito isometry to construct and identify
+the individual continuous-time correction-left integral. Only AFTER that
+proof may the1446 joint product-rule limit yield a companion individual limit.
+The finite sum identity does not establish this limit by definition. A common
+continuous path version is still separate; it should not be assumed merely
+from per-time classes. The actual residual cell rate1445 and continuous local
+time with terminal-L2 domination provide a plausible direct time-L2 route
+that may avoid premature Kolmogorov infrastructure.
+
+Scope: actual Brownian CLOCK probability, physical H^-1 coefficient space,
+and the actual first-scenery physical IBM representation retaining ALL clock
+chaos sectors. A Hilbert-valued CLOCK Brownian integral for arbitrary H^-1
+coefficients does not contradict1430's obstruction to extending SPATIAL
+scenery white noise to an ordinary GaussianL2 Wiener map on H^-1. No raw IBM
+history/clock history identification, raw IBM semimartingale claim, random
+partition statement, full nonlinear unprojected IBM calculus or campaign
+completion is asserted.
+
+Eight independent Lean checks cover parent-horizon independence for arbitrary
+unbounded past coefficients, zero-width physical input, regression to the
+separately proved corrected-slope frozen input1441, empty native partitions,
+parent-horizon independence of complete actual correction-left sums, the
+exact finite product identity with the ORIGINAL physical stochastic integral,
+the OLD closed derivative-adjoint graph connection and BOTH open-left/
+closed-right endpoint conventions for arbitrary physical fields. Initial
+endpoint-test simp normalization needed an explicit indicator_of_notMem;
+its failed log is retained. Source development failures were namespace,
+indicator/time transport and subtype finite-sum coercions; all repaired
+without changing hypotheses, heartbeat, compiler options or axiom policy.
+
+Verification: complete root6557jobs, COMPLETE TRANSITIVE audit of EVERY safe
+Foundation declaration with whitelist propext/Classical.choice/Quot.sound,
+all17 UNABRIDGED public types and both ENTIRE final source/proofs (including
+private masked-sample/real-cell lemmas) reviewed,8 independent checks;
+2385 Foundation/root sources+3 configurations+113 archive entries frozen and
+rechecked. Five explicit Git paths, exact receipt and verified PRIVATE
+main/research backup follow and never substitute for mathematical gates.
+
+Terminal timings: root 24.529310s; complete transitive audit 45822 declarations, 36.677852s; independent checks 28.040297s; all exit0.
