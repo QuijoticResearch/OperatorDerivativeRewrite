@@ -2272,3 +2272,5 @@ import Foundation.IBMPhysicalCorrectedRunning
 import Foundation.IBMPhysicalCorrectedVariation
 import Foundation.IBMPhysicalOriginSplit
 import Foundation.IBMPhysicalCorrectionLocalTime
+import Foundation.BrownianLocalTimeSquares
+import Foundation.IBMPhysicalOriginalVariation

@@ -37601,3 +37601,90 @@ exact receipt and PRIVATE main/research verification follow. These backup
 gates never replace mathematical verification.
 
 Terminal timings: root 28.411764s; complete transitive audit 45588 declarations, 37.161256s; independent checks 28.274663s; all exit0.
+
+## Checkpoint1444 — ORIGINAL physical IBM correction has strong-L1 zero uniform-grid square sums
+
+IBM remains ACTIVE; queue1422 is unchanged. This completes the local-time
+square-sum and original-object assembly obligations recorded1443. Source:
+ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All original manuscripts and previously verified mathematical results remain
+unchanged. No novelty claim, research transition, reflection/housekeeping
+session or new research goal was introduced.
+
+BrownianLocalTimeSquares proves the required deterministic path estimate on
+the EXISTING n+1-cell uniform grid. increment_sum is an exact telescope.
+For continuous monotone f with f(0)=0, pathSquares_bound bounds the squared
+increment sum by K*f(T) whenever every increment is <=K. Monotonicity gives
+the uniform terminal-square bound. Compact uniform continuity, actual grid
+membership/endpoints and the PROVED physical mesh T/(n+1)->0 establish
+pathSquares_tendsto for every nonnegative horizon, including T=0. No
+unproved modulus, asymptotic partition premise or variation theorem is assumed.
+
+Applied to the EXISTING genuine BrownianMassContinuousLimit.limitPath, the
+path properties already verified (continuous, monotone, nonnegative, zero at
+origin) prove almost-sure convergence of the scalar local-time square sums
+for each horizon. Measurability is proved from the actual measurable
+continuous-path map. The crucial integrable dominator is terminal localTime
+squared: every grid sum <=localTime(T)^2 almost surely, and its integrability
+follows DIRECTLY from BrownianMassLimitIdentification.coordinate_memLp.
+Thus all dominated-convergence hypotheses are PROVED before taking means.
+squares_mean_tendsto and squaresClass_tendsto establish STRONG L1 convergence
+of the ACTUAL local-time sums to zero. This step does not conflate pathwise
+continuity/bounded variation with mean or norm convergence.
+
+IBMPhysicalOriginalVariation then uses the EXACT1443 decomposition of the
+ORIGINAL physical correctionLimit, retaining its genuine delta_0 local-time
+term, and the1442 corrected residual theorem. cell_bound holds for the ACTUAL
+physical random variables at any pair of times: squared original increment
+<=2*squared corrected-residual increment +2||delta_0||^2*(local-time increment)^2.
+Finite AE conjunctions give squares_bound on the existing grids. Original
+physical GaussianL2 membership independently proves integrability of every
+original squared-increment sum. The two already justified mean limits then
+prove squares_mean_tendsto. squaresClass_ae identifies its actual norm-class
+representative, and squaresClass_tendsto is STRONG L1(clock probability)
+convergence to ZERO of the ORIGINAL physical correction squared-increment
+sums, for EVERY finite nonnegative horizon. No coefficient/domain/field
+identification, local-time subtraction, integrability or limit premise is
+left conditional in this theorem.
+
+This establishes a property of the existing physical H^-1-valued first-scenery
+kernel representation with ALL clock chaos sectors retained. It is NOT a
+claim that raw scalar IBM has zero quadratic variation or is a semimartingale,
+and does not create a universal ordinary Wiener map on H^-1 (1430 rules
+that out). It does not yet prove arbitrary deterministic partitions,
+random partitions, uniform-in-time convergence, almost-sure convergence of
+the original correction's WHOLE square-sum sequence, a common continuous
+version of the physical integral/correction family, bounded variation of
+the correction, or full unprojected nonlinear intrinsic IBM calculus.
+The scalar local-time pathwise statement and the original correction L1
+statement have intentionally different topologies.
+
+Next mathematically useful obligations include extending actual deterministic
+mesh control beyond uniform grids, proving compatible continuous versions
+where needed, and deriving exact cross-variation/nonlinear change-of-variables
+identities with their actual domains. Audit and reuse existing process/graph
+and covariance results before constructing infrastructure. These are still
+within active IBM; no completion or queued-campaign transition is justified.
+
+Eight independent Lean checks include an EXACT linear-path mesh calculation
+(a normalization test independent of the convergence proof), the expectation
+bound by the OLD Tanaka mass GaussianL2 energy, pointwise zero horizon for the
+ORIGINAL correction, domination of EVERY physical scalar probe by the vector
+square sum, actual retained-origin L1 scaling, convergence of original L1
+norms and simultaneous two-horizon/pathwise and strong-L1 combinations.
+An initial independent-test failure concerned inherited scalar-module zero
+normalization and was repaired with an explicitly typed ordinary module
+identity; its failed log is retained. Source development errors concerned
+NNReal implicit order notation, explicit compact sets and pointwise finite
+sum measurability; no mathematical assumption, heartbeat, compiler option,
+axiom whitelist or pre-existing theorem semantics changed.
+
+Verification: complete root6548jobs, COMPLETE safe-Foundation TRANSITIVE
+axiom audit with only propext/Classical.choice/Quot.sound, all27 unabridged
+public types and both ENTIRE final source/proofs read,8 independent checks,
+and frozen/rechecked2376 Foundation/root sources+3 configurations+113
+archive path/hash entries. Five explicit Git paths, exact-commit receipt
+and verified PRIVATE main/research backup follow and do not replace gates.
+
+Terminal timings: root 25.544339s; complete transitive audit 45624 declarations, 38.891286s; independent checks 26.034190s; all exit0.
