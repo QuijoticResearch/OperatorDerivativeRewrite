@@ -42434,3 +42434,131 @@ original native observable output convergence, or full IBM calculus is
 established here. No P_IBM/Fock commutation or native norm bound is inferred.
 IBM remains ACTIVE. No Oct24 reflection reservation; staleOct23 accounting
 uncertainty preserved. No new campaign, numerical claim or goal completion.
+
+## Checkpoint1489 — actual discrete random-boundary energy vanishes strongly in L1
+
+IBM remains ACTIVE, instruction queue8280325 and all gates unchanged. Previous
+goal turn1488 was PROGRESS: actual terminal-anticipative bracket mean bound,
+domain counterexample, full audit and committed/private
+9ad97ee34a216c72dcf7d81f57f792d5339feb01. This checkpoint discharges the
+OUTER boundary's discrete increment-weighted decay obligation, rather than
+restating continuous-time occupation or assuming predictability. No new
+campaign, reflection admission, numerical claim or novelty assertion.
+
+Primary archive remains ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All113 archive paths/hashes match inventory1292 exactly. No manuscript is
+modified or committed. The process remains the original B(|W_t|), without
+an unproved identification with two-sided outer Brownian IBM.
+
+Foundation/IBMTerminalRiemannOccupation.lean reuses OLD uniformTime_covers,
+uniformTime_monotone, uniformTime_step and endpoint identities, the original
+continuous clockPath and its coordinate AE identities,1487's random terminal
+boundary avoidance, and existing BochnerL2Approximation. Private finite-cell
+arguments prove unique left-cell evaluation, containment and left-node
+convergence; no new floor, bridge or stochastic-integration foundation.
+The existing GaussianContinuousIntegrands cell/step tools were reviewed
+before the actual scalar finite-cell construction.
+
+For arbitrary scalar phi of two real coordinates, step(phi,T,N,t,Y) is the
+literal sum of Ioc-cell indicators times phi(clockPath(left_i),clockPath(T)).
+Joint measurability is proved when phi is Borel. step_integral proves EXACTLY
+that its Lebesgue integral over (0,T] equals
+ pathSum(phi,T,N,Y)=h*sum_i phi(clockPath(left_i),clockPath(T)), h=T/(N+1).
+This finite identity needs no measurability of phi globally: for fixed Y
+the finitely many sampled scalar values are time constants. Measurability
+and boundedness are explicit in subsequent random-variable statements.
+Finite-cell Lebesgue measures and the full horizon normalization are proved,
+including zero horizon, rather than assumed as a Riemann-sum convention.
+
+actualSum uses the ORIGINAL actual process representatives at the same nodes.
+actualSum_eq_pathSum proves AE agreement from finitely many coordinate AE
+identities, extended over all N only by a countable intersection. No joint
+samplewise continuity of the chosen GaussianL2 representatives is asserted.
+For Borel phi with |phi|<=1, actualSum is measurable, MemLp2 with proved
+majorant T, and sumClass is its actual original clock GaussianL2 class.
+
+For EVERY deterministic REAL width sequence delta_N->0 and EVERY T>=0,
+the outer boundary indicator is phi_N(x,r)=1_{||x|-|r||<=delta_N}.
+outer_pathSum_tendsto_ae proves the literal path sums tend to zero almost
+surely. For AE sample and AE time t<T,1487 gives a strictly positive distance
+from the random terminal folded-clock boundary. The selected left nodes
+converge to t; continuity of the actual clockPath and the shrinking widths
+make the sampled indicator eventually zero. Finite-time domination by one
+justifies taking its integral. Terminal t=T is still a null TIME singleton,
+not a null clock event. No positivity, monotonicity or rate of delta_N is
+assumed. A sample-dependent choice delta_N(Y) is not claimed.
+
+outer_actualSum_tendsto_ae transports this to the ORIGINAL process sums.
+outer_sumClass_tendsto proves STRONG original clock GaussianL2 convergence
+to zero, and outer_mean_tendsto proves convergence of their literal means.
+All finite stochastic representatives, measurability, integrability, limits
+and norm majorants are discharged. This is actual nodal sampling convergence,
+not merely the continuum occupation result1487.
+
+Foundation/IBMRandomBoundaryEnergy.lean constructs the actual finite random
+weightedValue(phi,T,N)=sum_i (delta W_i)^2*phi(W_left_i,W_T) and proves its
+integrability for every Borel |phi|<=1. weightedMean is its ordinary expectation.
+weightedMean_identity is the EXACT finite stochastic expectation identity
+ weightedMean = error1488(phi,T,N)+E actualSum(phi,T,N).
+The first summand is the ORIGINAL actual terminal-anticipative bracket mean
+error, not an assumed predictable integral or independence assertion.
+Using1488's uniform mean-error theorem and the new nodal mean limit proves
+outer_weightedMean_tendsto: the squared-increment-weighted OUTER random-band
+energy tends to zero in mean for EVERY deterministic delta_N->0 and T>0.
+
+The energy is nonnegative. outerEnergyClass is the genuine Lp(real,1,original
+gaussianProduct) class of the literal finite energy, with proved AE agreement.
+Its L1 norm equals its actual mean, so outerEnergyClass_tendsto proves STRONG
+L1 convergence to zero. This conclusion uses positivity of this PARTICULAR
+energy; it does NOT turn1488's general signed mean-error estimate into an
+L1 estimate or an assertion of strong clipped-QV convergence.
+
+FIFTEEN independent Lean checks passed on the SECOND RUN: exact finite
+step-integral identity; actual/node-path AE agreement; actualSum MemLp2;
+almost-sure nodal boundary decay; strong GaussianL2 nodal decay; literal
+mean limit; exact finite weightedMean/error identity; actual energy
+integrability; energy mean nonnegativity; actual L1 representative; strong
+L1 energy convergence; the concrete POSITIVE widths 1/(N+1) on horizon1;
+pointwise zero energy for NEGATIVE widths; pointwise zero increments/energy
+for zero horizon (without assuming the chosen process0 representative is
+everywhere zero); and constant-one cell sum normalization EXACTLY T.
+The first independent attempt only missed the natural-number type annotation
+on that concrete sequence index; its log/timing28.483750s is preserved.
+No mathematical source changed for this test-harness repair.
+
+Development logs retained: target1's only proof issue was a free product-time
+type in step_measurable; explicit annotation fixed it. Target2 passed actual
+geometry and path sums. Target3 passed nodal almost-sure/GaussianL2/mean
+limits. Targets4--5 exposed function Pi application normalization and explicit
+toL1 unfolding in energy integrability/finite identity/norm; target6 passed
+the final complete energy source. No heartbeat/resource/version/trust change,
+no suppressed errors or altered theorem semantics.
+
+Full root6652 jobs PASSED25.521835s. COMPLETE transitive axiom audit47609
+safe Foundation declarations PASSED37.715901s, accepting ONLY propext,
+Classical.choice, Quot.sound. All25 public types read UNABRIDGED; both
+ENTIRE final sources/private proofs read. Fifteen independent Lean checks
+PASSED25.901748s SECOND RUN. All2480 Foundation/root source hashes and three
+config hashes frozen/rechecked;113 archives unchanged. No math edits after
+final successful full/audit gates. Explicit-path commit, exact-commit receipt
+and verified PRIVATE main/research remain mandatory closure steps.
+
+Exact next obligations: OUTER discrete boundary energy decay is now PROVED;
+do not keep it as a generic open assumption or rebuild a bridge. The origin
+boundary still needs the analogous application, reusing OLD
+BrownianClockWeightedEnergy.sigma_nonzero (actual product-horizon clock
+nonzero AE) and the new literal step geometry. The interior indicator's nodal
+Riemann sums must still be identified with their actual occupation limit.
+Then prove the deterministic nonlinear crossing comparison for
+f_r(x)=min(|x|,r): away from origin and outer-cap bands and when |delta W| is
+small, the squared increment equals the interior indicator times delta W^2.
+Bound remaining terms by the now-controlled boundary energies plus the large
+increment tail, using ACTUAL fourth moments and an appropriate deterministic
+shrinking width. None of that crossing comparison, the candidate clipped-QV
+limit integral 1_{0<|W_t|<|W_T|}dt, its mean limit, original native observable
+output convergence, or full IBM calculus is established here. The1486 exact
+scalar identity A_N=T-C_N remains available, with P_IBM removed ONLY inside
+proved observable pairings. No Fock/projection commutation or norm transfer.
+No campaign transition or Oct24 reflection reservation; staleOct23 reflection
+accounting uncertainty retained. Continue the actual IBM proof.

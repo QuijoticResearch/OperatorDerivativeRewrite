@@ -2376,3 +2376,5 @@ import Foundation.GaussianTerminalBracketPrediction
 import Foundation.GaussianTerminalWeightedBracket
 import Foundation.IBMTerminalBracketWeights
 import Foundation.GaussianTerminalBracketObstruction
+import Foundation.IBMTerminalRiemannOccupation
+import Foundation.IBMRandomBoundaryEnergy
