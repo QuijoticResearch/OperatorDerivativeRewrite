@@ -37267,3 +37267,86 @@ All40 public types read UNABRIDGED; complete final definitions/proofs reviewed.
 All2365 Foundation/root sources+3configs frozen/rechecked;113 archive paths and
 hashes unchanged. Six explicit Git paths only. Exact-commit receipt and
 PRIVATE main/research verification are required before terminal closure.
+
+## Checkpoint1440 — original physical horizon compatibility and actual running increments
+
+IBM remains ACTIVE; queue1422 unchanged. This closes the horizon-compatibility
+assembly obligation left1439 and applies it to the EXISTING actual signed-Dirac
+running integral. The source anchor remains ResearchSources/ibm/EJP2605-044RA0.pdf,
+SHA256 5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+No original manuscript or pre-existing result changed; no novelty assertion
+or new research campaign. The proof/verification cycle crossed midnight
+October23/24 NewYork without starting a reflection or housekeeping session.
+
+IBMPhysicalLpSeparation proves that ALL real physical dual tests separate
+arbitrary actual L2(clock probability;H^-1) classes. annihilator_zero uses
+the EXISTING Lp simple-function induction and the original physical Hilbert
+inner product: zero scalarized fields give zero pairing against every simple
+physical random test, and continuity extends this to every L2 test. The field
+is then tested against itself. ext applies this to a difference. In particular,
+the proof NEVER takes an unjustified intersection of almost-everywhere sets
+over an uncountable family of physical tests. It does not assume a new
+physical Wiener realization or restrict to a finite set of spatial probes.
+
+IBMPhysicalHorizonCompatibility constructs testDomain(T,L,u) in the ORIGINAL
+scalar predictable domain for EVERY ORIGINAL physical Ito input u. Its raw
+predictable measurability is PROVED by continuous scalarization. The old
+horizonEmbedding and original full-domain equivalence produce scalarField,
+whose exact actual representative is the ZERO EXTENSION of L(u). The prior
+actual scalarization_full theorem then identifies L(integral_T(u)) with the
+ORIGINAL full Brownian Ito of that field. Thus if two original physical
+inputs, even on different horizons, have the SAME actual zero-extended
+predictable field, their OLD physical integral outputs are equal in the
+ORIGINAL physical Gaussian L2 space. The field-equality hypothesis is explicit
+and is fully discharged in the concrete application below.
+No new stochastic integral, law, filtration or synthetic running process is
+defined to make this compatibility true.
+
+IBMPhysicalStoppedClockIntegral uses the EXISTING1435 signed-Dirac global
+predictable field stopped at a and restricts it into the original Domain(T).
+All domain witnesses are discharged by the existing predictable representative.
+stopped(a,a) equals the original limitIntegrand(a) definitionally. For a<=T,
+zero_extension_ae PROVES its actual zero extension is EXACTLY the old global
+field at a, using its already proved physical support. integral_stopped
+therefore equals the OLD limitIntegralValue(a), with no rescaling by the
+larger parent horizon. interval(a,b,T) is the ordinary DIFFERENCE of those
+original stopped inputs; interval_integral proves its ORIGINAL physical Ito
+value is limitIntegralValue(b)-limitIntegralValue(a). Only containment of
+the endpoints in T is required, so reverse orientations remain valid.
+This is a concrete compatibility theorem for the verified actual IBM
+signed-Dirac clock integral, not only a general conditional operator lemma.
+
+Eight independent checks: physical test separation after common random
+translation; stopped-value norm preservation; two different containing
+horizons; reversed stochastic intervals; exact interval telescoping; actual
+scalar Brownian maps under EVERY physical dual test across horizons; parent-
+independence of interval values; and preservation of the original predictable
+input norm despite enlarging the horizon. One preliminary scalar test timed
+out under the unchanged DEFAULT200000 bound; explicit typed congrArg replaced
+generic congruence, and the retained failed log records it. Native draft
+zero-function representative normalization failures are also preserved.
+All eight final tests pass without changing statements or compiler limits.
+
+Remaining central assembly: the frozen RANDOM physical coefficient G'(Y_a)
+must still be pulled out of its actual cell Ito integral with a PROVED
+square-integrable physical product G'(Y_a)*(Y_b-Y_a). OLD constant-physical-
+tensor agreement alone is insufficient. Reuse the original scalar past-step
+identity for arbitrary past L2 coefficients, the new all-physical-test
+separation and exact scalarization; prove every physical product's L2 and
+past measurability premises. Existing Gaussian moment and conditional/past
+machinery should be audited before new foundations. With this identity and
+the corrected-slope versus signed-Dirac/origin-sign decomposition, assemble
+the already verified1438 Taylor and1439 stochastic square-sum bounds. Retain
+the ACTUAL delta_0 local-time term and its already proved monotone continuous
+mass. No complete correction zero-QV, bounded variation, uniform-in-time
+closure, raw IBM semimartingale or full nonlinear intrinsic IBM calculus is
+asserted here. Clock Brownian filtration remains distinct from IBM history;
+the full unprojected actual-process objective remains OPEN and ACTIVE.
+
+Final gates: full root6540jobs/25.238090500002727s/0;
+COMPLETE transitive 45444safe Foundation declarations/43.27492620004341s/0;
+eight independent checks/25.428301799984183s/0.
+All14 public types read UNABRIDGED; complete final definitions/proofs reviewed.
+All2368 Foundation/root sources+3configs frozen/rechecked;113 archive paths and
+hashes unchanged. Six explicit Git paths only. Exact-commit receipt and
+PRIVATE main/research verification are mandatory before terminal closure.

@@ -2263,3 +2263,6 @@ import Foundation.IBMPhysicalTaylorMean
 import Foundation.IBMPhysicalCellSlope
 import Foundation.IBMPhysicalCellSlopeActual
 import Foundation.IBMPhysicalCellErrorRate
+import Foundation.IBMPhysicalLpSeparation
+import Foundation.IBMPhysicalHorizonCompatibility
+import Foundation.IBMPhysicalStoppedClockIntegral
