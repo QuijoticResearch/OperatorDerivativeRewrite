@@ -2237,3 +2237,5 @@ import Foundation.IBMTimeWeightedSineCalculus
 import Foundation.IBMTimeWeightedClockOperator
 import Foundation.IBMTimeWeightedClockDensity
 import Foundation.IBMTimeWeightedClockStrong
+import Foundation.IBMTimeWeightedGraphOperator
+import Foundation.IBMTimeWeightedIntrinsicCore

@@ -36185,3 +36185,93 @@ against a fresh frozen manifest. All21 actual public declarations are covered;
 the failed audit and its timing are preserved. No failed type gate was waived.
 
 Checkpoint1427 gates: root6511jobs/10.534143899974879s/0; COMPLETE safe transitive44602declarations/38.57667079998646s/0; ALL21public types (119 unabridged audit/type lines) and all three final sources/proofs reviewed. Seven independent Lean examples plus two helper proofs/28.567408900009468s/0. All2339Foundation/root sources+3configs frozen/rechecked;113archive paths/hashes unchanged. SIX explicit Git paths; exact receipt and PRIVATE main/research closure recorded in .lake/stardust-1427-verification.json.
+
+## Checkpoint1428 — actual common-input intrinsic IBM graph approximation
+
+`IBMTimeWeightedGraphOperator` constructs the ACTUAL observable and its FULL
+original joint intrinsic derivative as bounded operators on time-L2 classes.
+The observable remains X_g=int_0^T g(t)sin(Z_t)dt with1426's verified actual
+path-law representative and all-sample integrability. `valueLinear` uses the
+actual Bochner integral inside the closed IBM observable space, and
+`valueOperator` has norm bound sqrt(T), using the EXISTING finite-measure L2
+integration inequality and original Bochner norm-square formula.
+
+`domainLinear` lifts this SAME actual observable into the ORIGINAL
+jointDerivative.domain using1426's proved membership for every L2 weight.
+`derivativeLinear` is the original joint operator composed with that domain
+lift, not an independently defined candidate field. `derivative_eq` identifies
+it with the previously verified actual gradient. `clock_bound` takes limits
+in1427's genuine strong native convergence, obtaining B_T*||g|| control for
+the actual clock derivative. `source_bound` uses the existing true source
+formula and finite-time source-gradient bound C_T, yielding C_T*sqrt(T)*||g||.
+The existence and hypotheses of C_T are discharged by the OLD
+sourceGradient_bounded theorem in `derivative_bounded`.
+
+Thus `derivativeOperator` is a bounded map into the ENTIRE original two-channel
+Hilbert space, with a proved bound C_T*sqrt(T)+B_T. `graphOperator` combines
+the actual observable and derivative. `graphOperator_mem` puts its output in
+the original intrinsic graph for EVERY time-L2 input. `graph_tendsto` proves
+simultaneous strong convergence of actual VALUES and BOTH intrinsic derivative
+channels under arbitrary strong time-L2 approximation. This uses graph/product
+topology, not only graph-dual probes or one-channel weak convergence.
+
+`IBMTimeWeightedIntrinsicCore.actual_one` identifies unit weight with the OLD
+actual sine average and its law. `value_indicator` is the genuine set integral.
+`value_prefix` and `graph_prefix` identify every Iic(a) input with the ORIGINAL
+actual sine-average value AND FULL joint gradient at (min(a,T)).toNNReal.
+The domain inputs are identified by original operator uniqueness; this is
+not merely equality of a proposed source/clock formula. Negative prefixes
+and time endpoints are included. Univ and the terminal prefix define exactly
+the same time-L2 class, with the equality proved using actual restricted
+Lebesgue measure rather than pointwise equality outside(0,T].
+
+`averageGraphSpan T` is the FINITE linear span of these original actual average
+graph pairs. The already verified generating-indicator time density and the
+new bounded graph map give `finite_average_graph_approximation`. Every
+weighted graph point is a strong limit of graph points in this finite span,
+and each approximant belongs to the ORIGINAL jointDerivative.graph.
+`actual_graph_in_average_closure` records the same ordinary product-topology
+closure as a set statement, avoiding unnecessary submodule coercion unfolding.
+
+The main common-input result `common_intrinsic_graph_approximation` is explicit:
+for EVERY g in timeL2 there exists f_n in ORIGINAL jointDerivative.domain,
+each (f_n,Df_n) in the finite span of ORIGINAL actual average graph pairs,
+and (f_n,Df_n)->(X_g,D X_g) STRONGLY. Both derivative channels therefore share
+ONE actual intrinsic-domain input at EVERY stage. This supplies a rigorous
+actual-observable approximation method for the whole weighted sine family.
+
+Scope distinction: this construction uses finite combinations of ACTUAL
+time averages. It does NOT retroactively prove that the OLD spatially
+mollified native values are IBM-observable or that their literal native
+source/clock pair has a single intrinsic input. The new sequence is an
+alternative, independently verified intrinsic graph approximation. Nor is
+averageGraphSpan claimed dense in the graph of EVERY IBM observable: the
+theorem concerns the precisely stated time-weighted sine family. No full
+Ito/Clark--Ocone completion or campaign transition follows from this result.
+
+Independent Lean tests verify a common ORIGINAL intrinsic-domain graph
+approximation for the singular t^(-1/4) time-L2 class, independently proving
+its membership via its integrable t^(-1/2) square. They test ordinary norm
+convergence of actual value PLUS full joint gradient for arbitrary time-L2
+sequences, actual stochastic divergence integral stability for EVERY fixed
+original adjoint-domain test, negative-prefix recovery of old zero-horizon
+value and BOTH channels, exact zero-class value/gradient, equality of the
+singular L2 representative with its literal weighted-process observable,
+and original joint graph membership. Seven examples plus two helper proofs
+pass independently. The divergence test uses the already proved ordinary
+actual IBP integral, not a newly named formal pairing.
+
+Elaboration diagnostics preserved: explicit typed real window-mass/sqrt
+identities and pointwise norm changes repaired aliases; the joint norm bound
+uses both nonnegative channel norms. Sequence extraction required the
+EXISTING Frechet-Urysohn instance for time-L2 cached locally, with explicit
+sequence/type parameters. The closure corollary uses ordinary set closure
+in the SAME product topology. Default200000heartbeats remains unchanged;
+failed target logs1..11 are retained, diagnostic traces removed from final
+sources. No new foundation, axiom, sorry, unsafe reducibility, toolchain
+change, error suppression or weakened mathematical hypothesis was introduced.
+Production sources stayed unchanged after the successful full-build/audit.
+IBM remains ACTIVE; queue1422, manuscripts and all other work are preserved.
+No second reflection/PDF session was admitted; Oct23 was consumed1395.
+
+Checkpoint1428 gates: root6513jobs/28.893009699997492s/0; COMPLETE safe transitive44673declarations/37.94705740001518s/0; ALL25public types (183 unabridged audit/type lines) and both final sources/proofs reviewed. Seven independent Lean examples plus two helper proofs/29.281737499986775s/0. All2341Foundation/root sources+3configs frozen/rechecked;113archive paths/hashes unchanged. FIVE explicit Git paths; exact receipt and PRIVATE main/research closure recorded in .lake/stardust-1428-verification.json.
