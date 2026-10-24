@@ -36800,3 +36800,77 @@ Foundation/root sources+3configs frozen/rechecked;113archive paths/hashes
 unchanged. SIX explicit Git paths: three new sources, root, axiom-audit imports/
 prints and this ledger. Exact-commit receipt and verified PRIVATE main/research
 closure remain mandatory and are recorded in the terminal checkpoint receipt.
+
+## Checkpoint1434 — actual scenery-tested running Ito and native correction closure
+
+IBM remains ACTIVE; authoritative queue1422 unchanged. This directly extends
+1433's fixed-terminal clock graph/IBP/Clark--Ocone results to a RUNNING native
+Ito identity. It does not declare full intrinsic actual IBM calculus complete.
+ResearchSources/ibm/EJP2605-044RA0.pdf remains the primary physical-closure
+anchor, SHA256 5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+Original manuscripts remain untouched. No new literature or novelty claim is
+asserted. Ordinary proof development, not a second daily reflection session.
+
+IBMPhysicalRunningPrimitive constructs f_n^L(r) as the ACTUAL ordinary scenery
+Gaussian inner product of testNoise(L) with the original mollified scenery.
+Both actual spatial derivatives are verified; f_n is C2 and its first/second
+derivatives have explicit finite globally uniform bounds for each n and L.
+Actual Wiener isometry identifies f_n' with L(translated physical mollifier)
+and f_n'' with the embedded translated derivative. No Schwartz assumption on
+the unbounded identity function is introduced. A new UNIFORM-IN-r estimate
+||translated_n(r)-delta_r|| <= ||physicalDerivative|| sqrt(bump_n.rOut)
+follows from the existing actual primitive error and distributional derivative.
+The spatially constant primitive offset f_n(0) tends to zero.
+
+IBMPhysicalRunningIntegrand uses the SAME original Brownian reflected-C2 Ito
+integrands. Their actual coefficients are the horizon indicator times
+sgn(Y_s) f_n'(|Y_s|). A single explicit growth majorant C_L(1+|Y_s|), with
+all time-probability L2 premises discharged, proves strong convergence to the
+actual coefficient sgn(Y_s)L(delta_|Y_s|). Closedness of the ORIGINAL full
+predictable subspace proves membership of this limit. The ORIGINAL Brownian
+Ito map therefore sends the native integrands strongly to the limit integral.
+No symbolic stochastic integral or assumed predictability is substituted.
+
+IBMPhysicalRunningIto defines correction_n BEFORE taking any limit as the
+actual class L(translated_n(0))*localTime_T(0) plus one half the ordinary
+time integral of f_n''(|Y_s|). correction_coeFn gives this literal expression;
+native_identity proves the EXACT finite original reflected Ito formula.
+The native endpoints are actual source contractions of original IBM smoothing,
+with only the scalar f_n(0) subtracted. They converge strongly to the actual
+F_T^L(Y)=E_X[IBM_T(X,Y)*testNoise(L)(X)]. Combined with the separately proved
+actual native Ito convergence, this proves STRONG Gaussian-L2 convergence of
+the EXPLICIT local-time-plus-curvature corrections along the full sequence.
+The limit is represented as F_T^L minus the running Ito integral, but the
+substantive assertion is the proved convergence of those independent native
+corrections, not an identity obtained just by naming a residual. The final
+actual_running_identity is a literal a.e. ordinary expectation identity.
+
+Precise limits: each statement fixes T and a physical dual test L; the
+convergence is strong L2(clock probability), and integrand convergence is
+strong L2(time times clock probability). Every clock chaos sector is retained.
+This is an ACTUAL scenery-tested IBM identity, not the unprojected joint IBM
+identity, not an IBM-natural-filtration integral, and not a declaration that
+the correction has bounded variation or that raw IBM is a semimartingale.
+The running integrand is not identified with 1433's fixed-terminal predictable
+Clark--Ocone representer. Uniform-in-time/path properties, higher scenery
+sectors/nonlinear intrinsic closure and the full actual IBM calculus remain
+open. These are the next substantive obligations; no campaign transition.
+
+Eight independent Lean checks test a two-spatial-point uniform error bound,
+squared coefficient convergence, joint endpoint/integral strong convergence,
+every cofinal subsequence, uniqueness of any independent strong correction
+limit, arbitrary Gaussian weak probes, actual finite integral extraction,
+and literal actual-IBM expectation reconstruction. The one initial independent
+failure was a namespace typo, retained in the failed log and corrected without
+changing the theorem. Earlier native-target failures (coercion normal forms,
+function representatives and additive associativity) are also retained. No
+heartbeat, compiler/trust setting, version or audit requirement was changed.
+
+Final gates: complete root6526jobs/24.706991899991408s/0;
+complete TRANSITIVE axiom audit 45101 safe Foundation declarations,
+38.46040600002743s/0; eight independent checks,
+27.116832999978215s/0. All51 public types reviewed
+UNABRIDGED, complete final definitions/proofs read; all2354 Foundation/root
+sources+3configs frozen/rechecked;113 archive paths/hashes unchanged.
+Six explicit Git paths only. Exact-commit receipt and verified PRIVATE main
+and research synchronization are mandatory before checkpoint closure.

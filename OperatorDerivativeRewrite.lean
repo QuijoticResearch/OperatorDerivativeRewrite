@@ -2249,3 +2249,6 @@ import Foundation.IBMPhysicalClockAdjointBridge
 import Foundation.IBMPhysicalSceneryTestClockGraph
 import Foundation.IBMPhysicalFullClockAdjoint
 import Foundation.IBMPhysicalSceneryTestClarkOcone
+import Foundation.IBMPhysicalRunningPrimitive
+import Foundation.IBMPhysicalRunningIntegrand
+import Foundation.IBMPhysicalRunningIto
