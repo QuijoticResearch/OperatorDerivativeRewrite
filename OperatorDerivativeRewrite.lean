@@ -2329,3 +2329,4 @@ import Foundation.IBMFoldedPredictableProjection
 import Foundation.IBMPhysicalSpatialInjection
 import Foundation.IBMFoldedCanonicalIdentification
 import Foundation.IBMSceneryNativeAdjoint
+import Foundation.IBMFoldedJointReconstruction

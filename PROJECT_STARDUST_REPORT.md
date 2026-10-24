@@ -39758,3 +39758,77 @@ strong finite-field approximation, and divergence isometry on admitted inputs.
 All verification is serialized; no checks suppressed or replaced by a receipt.
 
 Final gates: complete root6603jobs 28.481659s; complete transitive audit 46594 safe Foundation declarations, only propext/Classical.choice/Quot.sound, 40.060212s; SIX independent checks 28.386533s. All2431 Foundation/root source hashes and3 pinned configurations frozen/rechecked,113 archive paths/hashes intact. All prior mathematical source bytes unchanged except required root/AxiomAudit imports. Detailed evidence .lake/stardust-1464-verification.json. Explicit commit/exact receipt/verified PRIVATE main and research backup gate follows; no transition is authorized by this checkpoint.
+
+
+## Checkpoint1465 — explicit source/clock joint intrinsic IBM reconstruction
+
+IBM remains ACTIVE; authoritative queue1422 unchanged. Previous1464 made
+verified mathematical progress and closed its PRIVATE both-ref gate. This
+checkpoint connects its actual adapted-clock field with the ORIGINAL source
+adjoint, resolving its specific initial-scenery/joint-projection obligations.
+ResearchSources remains read-only and uncommitted. All113 archive paths/hashes
+including EJP2605-044RA0.pdf SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE
+are unchanged. No reflection, source manuscript edit or early queued campaign.
+
+Exact theorem reconstruction: for EVERY FIXED T>0, the EXPLICIT two-component
+integrand belongs to the ORIGINAL IBMJointIntrinsicDerivative.jointDivergence
+domain and its value equals the ORIGINAL intrinsicCurve(T), not merely a
+conditional formula or ambient projection of an unidentified output.
+Channel0 is the existing deterministic directionField of
+physicalToCoefficient(initialKernel(T)); channel1 is1464's ORIGINAL native
+clock field of1463's explicit folded Gaussian predictable coefficient.
+initialKernel(T) remains the verified Bochner mean of the actual source kernel;
+no new explicit scalar-tail formula is asserted. Neither channel is replaced
+by a generic OU inverse; previous generic recovery1374 remains verified context.
+
+IBMFoldedJointReconstruction.source_mem admits channel0 to the ORIGINAL source
+adjoint using old direction_partial_mem and source_adjoint_domain. The actual
+physicalNoise is ALREADY firstChaosEmbedding composed with physicalToCoefficient.
+initial_source_curry identifies ORIGINAL sourceUnitary(initialValue(T)) with
+the true gaussianOne/physicalNoise tensor. It unfolds only original realize,
+noiseLift and sourceUnitary, uses existing swap involution and curry inverse,
+then actual lift/constant/tensor AE representatives. source_value applies old
+firstChaos divergence value and native unitary transport. This is precise
+reuse of original first-chaos realizations, not a new source law or assumption
+of an H-minus white-noise extension.
+
+ambient_sum adds this exact initial source value and1464's exact folded clock
+value. By1463's canonical input identification,1457's canonical_identity, and
+the TWO independently verified actual IBM joint representatives, the sum is
+exactly intrinsicCurve(T) in the ORIGINAL joint L2. reconstruction then applies
+the EXISTING ambient_pair_divergence theorem. Its observable projection is
+removed ONLY for this proved observable SUM, by orthogonalProjectionOnto on
+the existing intrinsicCurve subtype. No component is individually assumed IBM
+observable, and no arbitrary projection is discarded. terminal_duality gives
+<IBM_T,F> = <explicitIntegrand(T),jointDerivative(F)> for EVERY F in the
+ORIGINAL jointDerivative.domain, by the ORIGINAL adjoint formal-duality theorem.
+There is no assumption that the rough IBM point belongs to that derivative
+domain; the old exclusion is preserved. Scalar source admission holds T>=0;
+new combined terminal reconstruction/duality are stated T>0 only.
+
+This is genuine actual-process intrinsic-adjoint terminal reconstruction with
+explicit native fields, not completion of full intrinsic IBM physical-time
+stochastic calculus. Whole scenery used as a clock-Ito parameter is not assumed
+observed at IBM time0. No observed-filtration martingale representation,
+nonlinear physical-time change-of-variables formula, time-consistent process
+integral, simultaneous-all-real-T native pathwise version, or unrestricted
+integrand uniqueness follows. Nonlinear/product domains and physical-time
+Ito/closure/convergence remain central open obligations. The verified F1-F3
+reductions and old point/sine DomD,1456 unprojected-integral non-tightness and
+whole-correction probability obstructions remain unchanged. No campaign gate
+closes by this theorem alone.
+
+Target1 failed on semireducible/typed-subtype rewrite patterns. The final proof
+uses exact swap involution congruence and explicitly typed native-domain
+equalities instead of modifying transparency or resources. Target2 needed rfl
+after reducing Function.const; target3 passed. All failed logs are retained.
+No heartbeat, transparency, trust, toolchain or mathematical-domain change.
+All10 public types and the ENTIRE final module/proofs were read unabridged.
+Six independent Lean checks exercise zero-horizon source admission, actual
+ambient two-channel sum, AE literal IBM from joint reconstruction, derivative
+duality without rough-point DomD, original physical coefficient in actual
+source coordinates, and independence of chosen domain-membership proof.
+These are checks of exact stated scope; none asserts full process calculus.
+
+Final gates: complete root6604jobs 27.514585s; complete transitive audit 46607 safe Foundation declarations with only propext/Classical.choice/Quot.sound, 40.247784s; SIX independent Lean checks 29.710340s. All2432 Foundation/root source hashes and3 pinned configurations frozen/rechecked,113 archive paths/hashes intact. All prior mathematical source bytes unchanged except root/AxiomAudit registration. Evidence .lake/stardust-1465-verification.json. Explicit commit/exact receipt and verified PRIVATE main/research gate follows. IBM and the indefinite goal remain active.
