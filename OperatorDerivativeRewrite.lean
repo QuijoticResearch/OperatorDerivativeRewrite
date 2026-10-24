@@ -2322,3 +2322,9 @@ import Foundation.IBMPhysicalSlopeConditional
 import Foundation.IBMPhysicalBochnerConditional
 import Foundation.IBMPhysicalConditionalPairing
 import Foundation.IBMPhysicalJointStepPairing
+import Foundation.GaussianPredictableStepExt
+import Foundation.IBMPhysicalMeasureSeparation
+import Foundation.IBMFoldedPhysicalPredictable
+import Foundation.IBMFoldedPredictableProjection
+import Foundation.IBMPhysicalSpatialInjection
+import Foundation.IBMFoldedCanonicalIdentification

@@ -39529,3 +39529,160 @@ all113 archive paths/hashes unchanged. Evidence .lake/stardust-1462-working-chec
 -full-build.log, -audit.log, -independent.log, timing JSON and -verification.json.
 Six explicit-path Git checkpoint, exact receipt and verified PRIVATE main/research
 sync required before terminal closure. Research goal and IBM remain ACTIVE.
+
+## Checkpoint1463 — explicit folded canonical IBM coefficient and actual terminal reconstruction
+
+IBM ACTIVE; queue1422 unchanged. This closes the whole-predictable projection,
+measure-separation and canonical coefficient-identification gaps left open1462.
+It does NOT finish full intrinsic observed-IBM stochastic calculus. Original
+source ResearchSources/ibm/EJP2605-044RA0.pdf remains SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All113 original archive paths/hashes preserved. No reflection/housekeeping,
+new campaign, source manuscript edit or queue amendment.
+
+EXACT POSITIVE RESULT, EVERY fixed T>0: the actual ordinary spatial L2 field
+
+ H_T(s,x,Y)=1_(x>0)[p_(T-s)(x-B_s(Y))-p_(T-s)(x+B_s(Y))], 0<s<T,
+
+with the already verified zero endpoint convention and predictable Bochner
+realization, equals the ORIGINAL spatial-Ito-adjoint representer of the ACTUAL
+IBM sourceKernel(T), in the ORIGINAL trimmed predictable L2 space. This is an
+UNCONDITIONAL coefficient identification:1460's coefficient-equality premise
+is now discharged, rather than merely repeated as a conditional hypothesis.
+
+Consequently the new folded-field scalar clock integral plus the existing
+scenery-only initial value equals ACTUAL IBM_T AE under the ORIGINAL joint law.
+For AE actual scenery X, IBM_T(X,Y)-physicalNoise(initialKernel(T))(X) is the
+ORIGINAL native scalar clock Ito integral of the actual folded coefficient's
+native predictable section, AE in Y. The initialKernel(T) is the EXISTING actual
+Bochner mean of sourceKernel(T); no new explicit tail formula is claimed here.
+All original source/noise realizations and maps are retained.
+
+GaussianPredictableStepExt.ext proves that equality against EVERY genuine
+past-L2 tensor step determines an element of the WHOLE independently defined
+fullPredictable domain. It reuses the ORIGINAL polynomial transportGenerators,
+transportRelation and closedProductSteps_eq_fullPredictable. The bounded inner
+functional on U-V vanishes on the actual generator span and its topological
+closure; U-V itself belongs to that closure. This is a proved density extension,
+not an assumed identification of pointwise conditional means with projection.
+No new predictable space or independent density infrastructure is invented.
+
+IBMPhysicalMeasureSeparation generalizes the EXISTING1440 Gaussian-only physical
+dual separation argument to ANY actual measure, using the ORIGINAL Lp.induction
+on finite-measure simple fields and bounded inner-functional closure. It has
+NO probability, finite-measure or SFinite hypothesis. This extension is required:
+the old Gaussian-only theorem could not be silently applied to predictableMeasure(T).
+It now applies to that precise smaller-sigma measure with the instance explicitly
+selected. No uncountable intersection of scalar null sets is taken.
+
+IBMFoldedPhysicalPredictable.finite is the ACTUAL bounded physical test applied
+to1460's original spatial predictable input. Its predictable membership is
+proved by CLM composition and actual class representatives. full is the EXISTING
+finite-to-full zero extension. full_ae gives its genuine horizon-indicator
+representative and full_supported its original time-cutoff identity. inner_step
+identifies its ambient time-clock L2 pairing with ANY unbounded past L2 step,
+using actual product/indicator AE identities and1462's genuine JOINT covariance.
+Every support and interval measure is the original Lebesgue/Gaussian one.
+
+IBMFoldedPredictableProjection.projected is the ORIGINAL Hilbert-space
+predictableProjection of the EXISTING physical-test closed clock derivative.
+point_past is discharged from actual sourceKernel past measurability and original
+physical_source_projection. projected_eq_adjoint uses ORIGINAL point_mem and
+derivative_value, with T>0 explicit. projected_supported reuses the actual old
+past_representer_supported theorem. projected_inner_step computes original
+adjoint/fieldEmbedding tensor pairings, actual time-indicator intersection and
+the exact duration b-a, with all constants and scalarTensor ordering reviewed.
+
+full_eq_projected proves equality in the WHOLE fullPredictable Hilbert space,
+for EVERY physical L,T>0. For arbitrary steps it uses original cut_inner and
+cut_tensor to clip at T, handles steps starting beyond T by actual empty
+interval zero, and matches the two verified step pairings. The new determination
+theorem then closes the whole domain. No pointwise-time representative is
+promoted to a joint projection without this explicit closure argument.
+finite_eq_adjoint uses the ORIGINAL extension isometry, restriction_extension_duality
+and finiteAdjoint_on_full_derivative to obtain equality with the ORIGINAL
+finite-horizon adjoint on the whole finite predictable domain.
+
+IBMPhysicalSpatialInjection proves injectivity of the ORIGINAL physical
+zero-order embedding spatialL2 -> H^-1, NOT of the auxiliary1454 Hilbert retract.
+real_test identifies its actual complex distribution action on complexified
+REAL Schwartz tests with the complexification of the actual real L2 pairing.
+All product integrability and integral/complexification commutation are proved.
+The EXISTING SchwartzMap.denseRange_toLpCLM in ordinary real spatial L2 then
+shows embedding(u)=0 implies u=0. compLp_injective derives the corresponding
+actual L2-map injectivity for ANY measure via AE coefficient identities.
+This asserts no bounded inverse and no forbidden ordinary whiteNoise extension
+on all of H^-1;1452/1456 obstructions are fully preserved.
+
+IBMFoldedCanonicalIdentification.trim_scalar verifies the actual smaller-sigma
+trim/test commutation through ae_eq_trim_of_measurable, lpMeasToLpTrim_ae_eq and
+actual CLM class representatives. physical_coefficient combines finite_eq_adjoint,
+ORIGINAL scalarAdjoint_eq/representer_dual and actual source projection to match
+EVERY physical test of the explicit and canonical coefficients. canonical_input
+uses the REQUIRED measure-general dual separation on predictableMeasure(T),
+actual embedding/dual composition and physical embedding injectivity to conclude
+full ordinary spatial coefficient equality. No finite test list, presumed
+physical-test surjectivity, norm equivalence or inverse map is used.
+
+actual_reconstruction discharges1460's conditional actual reconstruction theorem.
+native_value_eq_canonical and native_input_eq_terminal identify BOTH actual
+outputs and scalar predictable PRODUCT inputs, not just post-integration values.
+finite_scalar_inputs_tendsto transfers the OLD strong L2 convergence of finite
+canonical scalar inputs to the EXPLICIT folded input BEFORE integration.
+actual_native_sections identifies the ORIGINAL native scalar clock Ito integral
+for AE fixed actual scenery with the literal centered actual IBM terminal value.
+These are genuine stochastic identities, not expectation-level heat formulas.
+
+TWELVE independent Lean checks: full-domain projection equality; original finite
+adjoint equality; physical separation under ACTUAL trimmed predictable measure;
+ORIGINAL physical embedding injectivity; full canonical coefficient equality;
+operator uniqueness independently using the OLD actual spatial representation;
+actual joint-law IBM reconstruction; native scalar-clock sections; strong scalar
+input convergence BEFORE integration; preservation of the OLD divergent
+UNPROJECTED native sums (they cannot converge to this new value); actual joint
+output L2 convergence; and exact scalar input identification. The first scratch
+separation test exposed an ambient-versus-predictable sigma-algebra instance
+mismatch; ONLY the independent test was corrected to select the actual predictable
+space, then all twelve passed. Mathematical sources were unchanged. Failed log
+.lake/stardust-1463-independent-failure1.log retained.
+
+SCOPE / OPEN: source-parameter terminal calculus is now EXPLICIT and its canonical
+identification is proved. Do NOT continue reporting whole-predictable projection,
+physical embedding injection or canonical input equality as open. However all
+scenery is still a separate initial parameter for the scalar clock integral.
+Compatibility with IBM's OWN observed filtration/initial germ, original rough
+joint derivative domains, and a nonlinear PHYSICAL-TIME IBM Ito/closure calculus
+remain central OPEN obligations. The terminal family T -> coefficient(T) need
+not be one running martingale integrand; no running IBM martingale is claimed.
+The new theorems quantify fixed T>0 -> AE joint sample (or AE X -> AE Y), not
+one unproved full-measure set for every real T. No simultaneous continuous native
+integral version or T=0 extension is asserted here. Positive results coexist
+with all established unprojected-norm/probability and rough-domain obstructions.
+Full IBM campaign remains ACTIVE; no stopping/transition gate is asserted.
+
+Next use this exact explicit representation for substantive intrinsic-domain,
+observed-filtration or physical-time convergence questions, auditing existing
+IBM adjoint/chaos/F1-F3 results first. Do not duplicate the now closed terminal
+canonical construction or claim full intrinsic completion from it. No novelty
+claim is made for Gaussian Clark--Ocone, density or distributional injectivity;
+the concrete verified actual IBM connections and scope are recorded precisely.
+
+Development failures retained .lake/stardust-1463-target1..9.log. Repairs:
+actual pastCoefficient namespace; explicit finite-class function normalization;
+explicit derivative_value T hT L; correct real duration/toReal positivity;
+NNReal min coercions; smul/multiplication normalization for distribution tests;
+typed integral/complexification commutation; direct physical zero test through
+Schwartz density; precise original trimmed measure selections. Removed new
+long-line/letI lints without suppressing any check. DEFAULT200000 retained;
+no new axioms/admissions/options/toolchain changes or original-source edits.
+
+Verification: COMPLETE root6602 jobs (39.727002s); COMPLETE transitive
+collectAxioms audit 46564 safe Foundation declarations (36.357847s), only
+propext/Classical.choice/Quot.sound. All28 public types read UNABRIDGED and
+ENTIRE six final sources/private proofs reviewed. TWELVE independent Lean
+checks (25.534335s); all2430 Foundation/root sources+3configs frozen/
+rechecked and all113 archive paths/hashes unchanged. No mathematical edit after
+final successful gates. Evidence .lake/stardust-1463-working-checkpoint.json,
+-full-build.log, -audit.log, -independent.log, timing JSON and -verification.json.
+Nine explicit-path Git checkpoint, exact receipt and verified PRIVATE main/research
+sync required before terminal closure. Research goal and IBM remain ACTIVE.
