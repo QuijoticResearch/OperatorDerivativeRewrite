@@ -40853,3 +40853,115 @@ and zero_le application syntax; the retained second run verifies corrections.
 Production mathematics and complete build/audit inputs were unchanged.
 
 Final gates: complete root6625jobs/43.247819s/0; complete safe transitive axiom audit 46904 declarations, standard three axioms only/38.042672s/0; TEN independent checks/29.671400s/0. All2453 Foundation/root sources+3configs+113archive paths/hashes rechecked. Explicit FOUR-path commit, exact receipt and verified PRIVATE main/research backup follow. Evidence .lake/stardust-1475-verification.json. IBM remains ACTIVE; full calculus is not declared complete.
+
+## Checkpoint1476 — actual Schwartz time-average native reconstruction with every field domain discharged
+
+IBM remains ACTIVE; queue8280325 unchanged. Previous1475 /f35b10e passed
+all verification, exact receipt and PRIVATE main/research closure. This turn
+returns to the forward quartic-drift/native-calculus connection rather than
+repeating the ordinary-L2 obstruction. No reflection session, queued campaign
+or goal-completion claim. All113 archive paths/hashes remain unchanged and
+read-only/uncommitted, including IBM EJP2605-044RA0.pdf SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+
+The exact reuse audit mattered:1426/1427 time-weighted joint derivative
+domains concern sine observables, not every Schwartz fourth derivative.
+Point Schwartz observables need not be in the original strong joint domain.
+Instead,1473 already constructs explicit source recovery plus an actual native
+heat-clock field for every centered Schwartz terminal observable. The missing
+obligation for time averaging was genuine horizon measurability/integrability
+of THOSE fields, not generic existence of another OU representation. This
+checkpoint resolves it and constructs actual native time-average calculus.
+
+IBMNativeClockRecovery.scalar is EXACTLY old predictableField composed with
+old predictableAdjoint (the bounded adjoint of the original Ito isometry).
+scalar_native proves it recovers the EXISTING native finite-horizon clock
+field from its EXISTING realIto value, using original finite/full extension
+and predictableAdjoint_integral. joint applies this same bounded operator in
+actual clock sections after the original clockUnitary. joint_native identifies
+it with IBMSceneryNativeAdjoint.field for EVERY original flattened input and
+EVERY horizon, via the original joint_curry and actual Bochner lift slices.
+heat_native specializes to the1472 heat score. This is equality with the
+prescribed actual native field; no new inverse, output-defined integral or
+generic Gaussian recovery is substituted for the heat-clock integrand.
+
+IBMSchwartzHybridTime.test reuses the verified shifted Schwartz jets, bounds,
+derivative and original bounded-chain L2 composition. terminal_eq identifies
+the actual1473 terminal with that existing continuous composition of the
+actual intrinsic IBM curve. terminal_continuous proves continuity in the
+physical horizon T, in genuine jointL2. initial_continuous uses the verified
+actual Gaussian heatMean continuity, including T=0. clock_value_continuous
+uses the proved1472 reconstruction terminal minus the actual initial scenery
+mean. The fixed identified bounded map then proves clock_field_continuous
+for the SAME native heat field, avoiding an unproved parameter-dependent
+score-majorant or an uncountable intersection of scalar versions.
+
+source_field_continuous uses the EXISTING bounded Gaussian recoveryOperator
+and actual constant tensor; mean_continuous, centered_continuous and
+integrand_continuous assemble the SAME1473 source/clock pair in the ORIGINAL
+PiLp norm. centered_integrable and integrand_integrable follow on every finite
+physical interval from continuity, including horizon0. Thus actual field
+Bochner integrability is proved, not an extra assumption on the final theorem.
+Only local irreducibility of ORDINARY existing heat definitions was used to
+avoid default200000 elaboration expansion; no resource/trust option changed.
+
+IBMSchwartzNativeAverage.observable is the actual physical-time Bochner integral
+of1473 centered observables INSIDE the ORIGINAL closed IBM observable space.
+field is the time integral of the SAME prescribed1473 pair. observable_coe
+proves exact agreement with its ambient jointL2 Bochner integral.
+reconstruction integrates the actual original jointDivergence GRAPH, whose
+closedness follows from the already proved dense original jointDerivative
+domain and adjoint_isClosed. The closed-graph quotient proof uses genuine
+integrability of BOTH graph coordinates, exact pointwise graph membership,
+and integral_pair. It proves ORIGINAL divergence-domain membership and
+
+    ORIGINAL jointDivergence(field(g,a,T)) = observable(g,a,T).
+
+raw is the literal sample/time function g(a+IBM_t) minus the actual Gaussian
+heat mean. raw_measurable proves product measurability. centered_raw identifies
+it with1473 actual centered sections. raw_integrable proves genuine product
+integrability BEFORE representative Fubini; observable_actual then identifies
+the native output almost everywhere with
+
+    integral_(0,T] [g(a+IBM_t)-E_joint g(a+IBM_t)] dt.
+
+The expectation is the ACTUAL joint law, identified through1473 global_mean.
+duality holds against EVERY ORIGINAL jointDerivative-domain test. This is
+actual random time-average reconstruction, not merely an expectation heat
+formula or an arbitrary residual. Every shifted Schwartz g, every real a and
+every finite T>=0 is covered; the independent test instantiates jet(g,4), the
+specific nonlinear family required for the physical forward quartic drift.
+The source/clock fields are integrated as genuine original Hilbert vectors.
+No unproved coordinatewise triangular score/Fubini formula is claimed here.
+
+Remaining work is precise: combine the original endpoint reconstruction and
+this fourth-jet average with the OLD IBMActualTaylorChain first-three-rank
+limit in PROBABILITY. The correct constant is the endpoint mean shift minus
+1/8 times the integrated fourth-jet mean. It must NOT be confused with the
+random quartic drift, nor with1474 signed Simpson convention. This checkpoint
+does not yet assert that combined native Taylor theorem, separate raw-rank
+limits, observed-filtration adapted source fields, a universal random
+physical-time stochastic integral, strong averaged-target Dom(D), samplewise
+uniform limits, or a new literature novelty claim.1475 bounded-dt obstruction,
+1467 old raw-mollifier non-Cauchy and all focused F1-F3 stopping1107 scopes stay
+valid. The new fields differ from the refuted raw running mollifier fields.
+
+All27 public types and ALL THREE ENTIRE final sources/proofs were read
+unabridged. Failed targets1/2/4/5/7 retained: realIto namespace/CLM transport,
+explicit curry representative, direct missing bounded-chain import, finite
+PiLp continuity, ordinary heat-definition expansion, subtype realization,
+pair rather than product-measure integral and exact partial-domain graph
+extraction. No theorem hypothesis weakened. Target3/6/8 passed. A nonsemantic
+letI style suggestion was adopted before the final complete build.
+The first independent run rejected local irreducibility on jointDivergence,
+an ABBREVIATION: it was REMOVED; allowUnsafeReducibility was NEVER enabled.
+The second run verifies all TWELVE tests with unchanged production bytes.
+Tests cover scalar/native calibration for arbitrary horizon inputs, full
+scenery/clock calibration, native heat continuity including0, actual fourth-jet
+source continuity and original divergence graph, fourth-jet raw product
+integrability, actual centered time-average representative, zero-horizon
+fields/values, literal actual D-test pairing, coexistence with OLD raw integral
+non-Cauchy, coexistence with1475 no bounded dt integral, and actual mean-zero
+of the reconstructed time average. No extra Gaussian law is assumed.
+
+Final gates: complete root6628jobs/46.372538s/0; complete safe transitive axiom audit 46975 declarations, standard three axioms only/36.997934s/0; TWELVE independent checks/27.047201s/0. All2456 Foundation/root sources+3configs+113archive paths/hashes rechecked. Explicit SIX-path commit, exact receipt and verified PRIVATE main/research backup follow. Evidence .lake/stardust-1476-verification.json. IBM remains ACTIVE.
