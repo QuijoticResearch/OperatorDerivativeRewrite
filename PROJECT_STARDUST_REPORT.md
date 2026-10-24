@@ -38600,3 +38600,107 @@ Evidence: .lake/stardust-1454-working-checkpoint.json, -full-build.log,
 -audit.log, -independent.log, timing JSON and -verification.json.
 Explicit six-path Git commit and exact-commit receipt, then verified PRIVATE
 main/research closure, are mandatory before considering this checkpoint closed.
+
+## Checkpoint1455 — actual spatial-Ito native convergence and continuous/joint fourth bounds
+
+IBM ACTIVE; queue1422 unchanged. This discharges the two central supporting
+obligations explicitly left open1454: ordinary spatial TIME-L2 native
+approximation/identification and the fourth bound for the ACTUAL continuous
+integral. The source remains ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+No original manuscript or prior mathematical source was modified. No novelty
+claim is made for dominated convergence, Fatou, Gaussian moments or Fubini;
+the contribution is their fully verified application to these actual kernels
+and the original stochastic operators. No reflection/housekeeping date used.
+
+IBMSpatialNativeApproximation proves spatial_continuousAt for the ACTUAL
+signed translated-mollifier field at EVERY nonzero real clock value. The
+signum is locally constant on each open half-line; the existing translated
+profile curve is continuous. No false continuity at zero is asserted.
+step is the literal raw finite left-cell field, with exact cell evaluation
+and a uniform pointwise profile-norm bound. The PRIVATE cell_exists directly
+reuses GaussianRefiningPartitions.covers, retaining repeated grid times and
+zero horizons. No new partition-foundation or continuous-curve assumption
+is introduced.
+
+step_tendsto_ae uses countably MANY deterministic grid coordinates, never an
+uncountable intersection: existing clockPath_coordinate_ae identities are
+transferred to product/horizon measure for all grid N,j. Actual clock paths
+are continuous; finite coverage and the vanishing mesh put each sampled left
+time at the observation time. Existing sigma_nonzero T proves the continuous
+clock is nonzero AE(time,Y), so spatial_continuousAt applies there. The signed
+Gaussian-L2 time curve is NOT presumed continuous at0. This resolves the
+precise obstruction to blindly invoking1450's globally continuous-curve theorem.
+
+input_tendsto proves genuine ordinary TimeHilbert-valued L2 on the ORIGINAL
+finite-horizon time-probability measure. Both actual step and actual target
+fields have norm<=kappa=||profile_r||, so norm-square differences are dominated
+by the integrable constant4*kappa^2. ALL measurable/domain and convergence
+premises of dominated convergence are supplied. The Lp2 norm-square integral
+formula and continuous square root prove strong L2 convergence to the
+INDEPENDENT1452 input. integral_tendsto passes through the ORIGINAL trim
+isometry and ORIGINAL GaussianParameterizedIto.realIntegral, giving strong
+Gaussian-L2 convergence to the INDEPENDENT1452 integralValue. This applies
+to EVERY deterministic nondecreasing grid family with endpoints0,T and
+vanishing mesh, variable counts, repeated times and no nesting requirement.
+It is ordinary spatial L2 convergence, not inferred from physical H^-1.
+
+IBMSpatialIntegralFourth supplies a clamped Nat version of the existing
+uniform grid, proving monotonicity, endpoints and exact cell length. Its
+uniform_tendsto discharges EVERY premise of the preceding theorem. For the
+actual continuous-time I_r(T), integral_fourth extracts an AE subsequence
+from genuine Gaussian-L2 convergence and applies Mathlib Fatou to nonnegative
+fourth powers. Finite integrals of native sums are bounded by the ALREADY
+PROVED1454 bound3*T^2*kappa^4. The limit lower integral is finite, which proves
+actual fourth integrability BEFORE converting it to the real integral bound.
+Hence E||I_r(T)||^4<=3*T^2*kappa^4 and integral_memLp_four, with no supplied
+limit-integrability premise, Gaussian-law assumption for the integral, or
+circular definition of the limiting field. T=0 is included.
+
+IBMSpatialJointFourth reuses the ACTUAL scenery whiteNoise realization.
+noise_memLp_four/noise_fourth discharge real Gaussian first-chaos laws and
+compute the exact fourth moment3*||u||^4 for EVERY real spatial kernel u.
+realize_fourth handles EVERY Gaussian-L2 random spatial kernel U with actual
+MemLp4: the ORIGINAL1452 realize_sections yields actual scenery sections;
+sectionwise Gaussian fourth integrability plus the clock fourth integral
+prove JOINT integrability via integrable_prod_iff'. Only THEN does genuine
+Fubini give E_joint(realize U)^4=3*E_clock||U||^4. The joint output need not
+be Gaussian; it has the actual random spatial coefficient. realize_memLp_four
+converts the proved integrability. Applied to ACTUAL I_r(T), all premises are
+discharged and E_joint(realize I_r(T))^4<=9*T^2*kappa^4. This is the same
+actual joint integral whose second moment is exactly T*kappa^2 in1452.
+
+SIX independent Lean checks combine new results with exact1452 energy:
+continuous integral kurtosis bound3*||I||^4; ACTUAL joint kurtosis bound
+9*||realize I||^4; literal zero integral atT=0; convergence on nonconsecutive
+uniform refinements; exact attained Gaussian factor3 for a deterministic
+spatial kernel; and fully discharged actual joint MemLp4. Development failures
+were Lean elaboration details: eventuallyEq orientation, reducing raw/function
+composition after Tendsto.comp, explicit second-countability instance, let-V
+AE simplification, Nat/NNReal casts in uniform grid, theorem namespace,
+absolute fourth-power normalization and beta-normalization under integral.
+Failed logs remain under .lake/stardust-1455-*; no axiom/option changes.
+
+EXACT REMAINING CENTRAL QUESTION: combine the exact second and bounded fourth
+moments with a quantitative Paley--Zygmund/Cauchy--Schwarz tail argument and
+the known growing profile norm to test non-tightness/probability convergence
+of the PARTICULAR actual joint mollified integral. Neither1452 norm escape
+alone nor this fourth estimate alone is recorded as a probability obstruction.
+No failure of probability/L1/distribution convergence or generic renormalized
+calculus is claimed here. If a valid tail obstruction is proved, independently
+test transfer to the full correction via its ACTUAL bounded/convergent endpoint
+and exact compensated identity. Full intrinsic IBM graph closures, nonlinear
+domains and reconstruction remain open; IBM stays ACTIVE.
+
+Verification: complete root build6574 jobs (26.442842s); complete transitive
+collectAxioms audit 46134 safe Foundation declarations (36.944052s), only
+propext/Classical.choice/Quot.sound; ALL20 public types read UNABRIDGED and
+ENTIRE three new sources/private proofs reviewed. SIX independent mathematical
+Lean checks pass (25.884553s). All2402 Foundation/root sources+3configs
+frozen/rechecked; all113 archive paths/hashes unchanged. Evidence:
+.lake/stardust-1455-working-checkpoint.json, -full-build.log, -audit.log,
+-independent.log, timing JSON and -verification.json. No sorry/admit/new axiom,
+weakened check, compiler option/toolchain change or mathematical edit after
+the successful complete build. Explicit six-path Git checkpoint, exact-commit
+receipt and verified PRIVATE main/research synchronization remain required
+before terminal closure; none substitutes for the mathematical verification.

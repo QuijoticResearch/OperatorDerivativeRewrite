@@ -2297,3 +2297,6 @@ import Foundation.IBMSpatialFourthSums
 import Foundation.IBMSpatialHilbertRetract
 import Foundation.IBMSpatialPredictableSteps
 import Foundation.IBMSpatialNativeFourth
+import Foundation.IBMSpatialNativeApproximation
+import Foundation.IBMSpatialIntegralFourth
+import Foundation.IBMSpatialJointFourth
