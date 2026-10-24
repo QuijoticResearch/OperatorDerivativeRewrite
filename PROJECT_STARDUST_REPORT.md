@@ -40537,3 +40537,107 @@ atT0, native value0 atT0, literal oddPart actual/scalar-native reconstruction,
 its coexistence with OLD raw non-Cauchy, and ORIGINAL clock adjoint graph.
 
 Final gates: complete root6621jobs 25.901499s; complete safe transitive audit 46825 declarations, standard three axioms only, 42.475554s; TWELVE independent Lean checks 27.617729s. All2449 Foundation/root sources+3configs+113archive hashes rechecked. Explicit SIX-path commit, exact receipt and verified PRIVATE main/research backup follow. Evidence .lake/stardust-1472-verification.json. IBM remains ACTIVE, with no campaign completion or transition asserted.
+
+## Checkpoint1473 — explicit source and native-clock reconstruction in the original intrinsic joint divergence
+
+IBM remains ACTIVE. Previous goal turn made verified progress:1472 /
+5646ebad17fa7541739d15d3dde9367cf89ac954 passed full proof/build/audit/testing
+and exact PRIVATE main/research gates. This checkpoint discharges its initial
+scenery source-adjoint realization and combination with the explicit native
+clock field, with exact global centering and intrinsic observable membership.
+It does not declare full IBM calculus complete. Queue8280325 unchanged;
+no campaign transition, reflection session or parallel research agent.
+All113 read-only/uncommitted ResearchSources paths/hashes are preserved,
+including primary EJP2605-044RA0.pdf SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+
+The theorem-level reuse audit distinguished the OLD general native Gaussian
+recovery/zero-sector decomposition and1374's completed observed-channel series
+from1472's specific explicit nonlinear heat-score coefficient. Those OLD
+generic existence and convergence results are not new discoveries and do not
+by themselves identify this coefficient. The new construction instead keeps
+the ACTUAL1472 clock field and recovers only its identified initial scenery
+mean using the EXISTING GaussianDivergenceRecovery.recovery operator R.
+That operator is the convergent inverse-number-weighted Gaussian chaos
+gradient sum, with recovery_graph and inverse-energy identities already proved.
+No derivative-domain assumption on its L2 input is needed or inserted.
+
+Foundation/IBMSchwartzHybridReconstruction.lean sets
+ M_T=heatMean(g,a,0,T),
+ sourceField=Bochner tensor(gaussianOne,R(M_T)),
+ integrand=ORIGINAL pairField(sourceField,1472 nativeField(g,a,T)).
+The source field is thus an explicitly prescribed Gaussian source divergence
+preimage, not an unspecified existential field or a new output-defined
+stochastic integral. source_curry_const proves the exact native source/clock
+ordering for a constant clock family of source L2 values. source_partial_graph
+uses the OLD recovery_graph, OLD actual Bochner tensor graph and verified
+lift-adjoint inclusion to place this field in the ORIGINAL partial adjoint
+graph. source_mem and source_value transport through the ORIGINAL sourceUnitary
+and sourceDerivative.adjoint: its value is the actual joint realization of
+const(M_T-projection0 M_T). No full-adjoint-domain equality is presumed.
+
+terminal is the actual joint realization of the OLD nonlinear endpointLimit.
+terminal_actual proves literal g(a+IBM_T) equality AE actual joint law.
+terminal_observable proves membership in the ORIGINAL IntrinsicSpace via the
+existing actual intrinsicCurve and continuous composition theorem. meanValue
+is the joint realization of the zero-sector constant scenery class. Its
+literal value is inner(gaussianOne,M_T), and its intrinsic observable membership
+is proved from that constant AE representative. centered is their ACTUAL
+IntrinsicSpace difference; membership is not inferred from a formal notation.
+
+ambient_sum proves that ORIGINAL source adjoint(sourceField) plus ORIGINAL
+native clock integral equals centered, as STRONG joint-L2 equality. Then
+reconstruction proves that the SAME explicit pair lies in the ORIGINAL
+jointDivergence domain with value centered. It reuses ambient_pair_divergence
+and removes the observable projection ONLY after membership of the SUM is
+proved. Neither individual channel is assumed observable or observed-adapted.
+terminal_duality gives, for EVERY F in the ORIGINAL jointDerivative domain,
+ inner(centered,F)=inner(explicit integrand,jointDerivative F).
+No differentiability of the target terminal is assumed. This is genuine
+native adjoint/domain mathematics and actual-process duality, not merely a
+formal two-operator identity or a replacement graph-dual construction.
+
+global_mean independently identifies
+ E_joint[g(a+IBM_T)]=inner(gaussianOne,M_T)
+using the OLD joint realization isometry, actual constant-one representative,
+proved Bochner endpoint integrability and1472's initial_mean identity. The
+new centered_actual therefore states literal AE equality with
+ g(a+IBM_T)-E_joint[g(a+IBM_T)].
+The centering is NOT silently g(a). A source divergence and clock divergence
+reconstruct the centered quantity; a generally nonzero deterministic mean
+correction must remain in an uncentered change-of-variables formula.
+
+Scope and exact remaining work: for every real Schwartz g, real shift a and
+finite T>=0, this is an explicit source-Gaussian-divergence/native-clock
+reconstruction through the ORIGINAL intrinsic joint calculus, with all stated
+domains proved. It is NOT an observed-IBM-filtration adapted representation
+of the individual channels. The initial entire scenery parameter remains
+distinct from observed time-zero data. The source channel uses the OLD
+Gaussian pseudoinverse, not a new adapted source Ito theorem, source-field
+isometry or proof that M_T or the terminal is in a particular derivative
+domain. T is fixed; no simultaneous-all-time scalar version, T-independent
+integrand, physical-time Ito/Tanaka law or temporal-gradient Clark–Ocone theorem
+is asserted. Full observed filtration/physical-time calculus and exact F1-F3
+closure obligations still require their saved audits. Review those obligations
+before extending this now-completed explicit terminal reconstruction branch.
+Preserve1467's OLD raw non-Cauchy/no-L2-limit obstruction;1472's heat input is
+different. No convergence of refuted raw inputs is inferred.
+
+All19 final public types and the ENTIRE final source/private clock graph
+helpers were read unabridged. Target failures1–4 and6 retained: constant-family
+product transport, explicit measurable maps, definition expansion at the
+default200000 budget, and unfolding a local ordinary definition. A failed
+LOCAL irreducibility annotation on the partialDerivative ABBREVIATION was
+removed; no unsafe reducibility override was used. Only ordinary definitions
+are marked locally irreducible in the final source. Two small private clock
+membership/value lemmas reuse the VERIFIED1472 graph, avoiding repeated
+elaboration of its existential domain. No theorem semantics, trust, resource
+limits, toolchain or verification requirements changed. TEN independent tests
+passed FIRST run: exact source/clock constant transport; literal source-field
+coefficient; OLD inverse-number spectral energy specialized to actual M_T;
+ORIGINAL source graph; actual joint expectation; concrete oddPart centered
+representative and original joint divergence; EVERY original derivative test;
+zero-horizon graph and coexistence with OLD raw native non-Cauchy. No source
+manuscript or unrelated file was changed. Production inputs frozen/rechecked.
+
+Final gates: complete root6622jobs 26.001092s; complete safe transitive audit 46861 declarations, standard three axioms only, 41.182643s; TEN independent Lean checks 28.157634s. All2450 Foundation/root sources+3configs+113archive paths/hashes rechecked. Explicit FOUR-path commit, exact receipt and verified PRIVATE main/research backup follow; evidence .lake/stardust-1473-verification.json. IBM remains ACTIVE.
