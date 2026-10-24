@@ -39832,3 +39832,87 @@ source coordinates, and independence of chosen domain-membership proof.
 These are checks of exact stated scope; none asserts full process calculus.
 
 Final gates: complete root6604jobs 27.514585s; complete transitive audit 46607 safe Foundation declarations with only propext/Classical.choice/Quot.sound, 40.247784s; SIX independent Lean checks 29.710340s. All2432 Foundation/root source hashes and3 pinned configurations frozen/rechecked,113 archive paths/hashes intact. All prior mathematical source bytes unchanged except root/AxiomAudit registration. Evidence .lake/stardust-1465-verification.json. Explicit commit/exact receipt and verified PRIVATE main/research gate follows. IBM and the indefinite goal remain active.
+
+
+## Checkpoint1466 — all-chaos nonlinear native joint IBM Ito realization
+
+IBM ACTIVE; authoritative queue1422 unchanged. Previous1465 is a completed,
+audited PRIVATE checkpoint proving explicit linear terminal reconstruction.
+This checkpoint audits/reuses existing nonlinear results rather than applying
+an invalid DomD chain rule to the rough IBM point. Newly supplied AGENTS
+instructions preserve the same current IBM priority and verification gates.
+ResearchSources remains read-only/uncommitted; all113 archive paths/hashes,
+including EJP2605-044RA0.pdf SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE,
+are intact. No reflection/housekeeping, early queued campaign or manuscript edit.
+
+Reuse audit: IBMQuadraticSpatialCalculus already proves actual centered
+first-chaos-product bilinear bounds and derivatives; IBMQuadraticClockMartingale
+already constructs a genuine observed quadratic-clock martingale with original
+native divergence and retained germ-filtration qualifications. These are not
+new claims here. IBMIntrinsicBoundedSquare requires its input ALREADY in the
+ORIGINAL jointDerivative.domain, so cannot be applied to the rough IBM point.
+IBMFullSchwartzTerminal and IBMSchwartzFullReflectedIto already retain ALL
+scenery chaos, prove finite reflected Ito in actual clock-parametrized source
+L2, strong compensated endpoint convergence, and native integrand/correction
+Cauchy equivalence. Those old theorems are reused, not relabeled as new results.
+
+The new IBMSchwartzNativeJointIto module connects that entire nonlinear
+calculus to the ORIGINAL ambient clock adjoint and actual joint IBM law.
+flatten(T) is the explicit linear ISOMETRY from ORIGINAL GaussianSourceClockIto
+Domain(T), through its original trimmed predictable equivalence and actual
+product-L2 uncurrying, to scalar L2(predictableMeasure(T) x sceneryGaussian).
+integral_agreement holds for EVERY such source-valued predictable input:
+ORIGINAL scalar jointIntegral(flatten u) = original jointRealization of the
+source-valued integral. It is proved using the original curry inverse and
+native integral definitions, with no replacement noise, measure or isometry.
+
+For EVERY real Schwartz g, shift a, mollifier index n and horizon T>=0,
+scalarInput flattens the EXISTING actual signedSlope integrand, containing
+all source chaos sectors. field is1464's original Gaussian-vector native
+field. clock_mem admits it to ORIGINAL clockDerivative.adjoint; clock_value
+identifies its adjoint value with the ENTIRE source-valued integral realized
+in actual joint L2. native_sections proves that for AE scenery, its clock
+sections are the ORIGINAL scalar predictable-horizon Ito integral. There is
+no physical-test, first-chaos or fixed-source-projection restriction.
+
+finite_identity realizes the original exact mollifier identity as actual
+joint endpoint = ORIGINAL ambient clock adjoint(field) + correction.
+The correction is the original wholeClass under original jointRealization;
+its source-valued definition retains the local-time origin term and integrated
+curvature with coefficient1/2. No drift is dropped or presumed finite variation.
+compensated_tendsto proves STRONG actual JOINT L2 convergence of this SUM.
+actual_limit identifies the limiting L2 class AE under the ORIGINAL joint law
+with g(a+IBM_T)-g(a), using measurable actual IBM and the old all-source
+endpointLimitClass_actual_sections. This is not merely clock expectation or
+convergence after testing/truncating scenery chaos.
+
+correction_cauchy_iff transports the old sharp native equivalence through TWO
+actual isometries: the new joint correction is Cauchy iff the actual original
+trimmed scalar predictable input is Cauchy. Thus compensated convergence does
+NOT supply separate singular integral/correction limits. Such separate limits,
+sharp nonlinear non-Cauchy/nontightness, or an appropriate alternative
+renormalized domain remain substantive open problems. The linear native
+running-input obstruction1456 persists; it does not alone prove every nonlinear
+Schwartz case fails. A possible future route is a LOWER bound on all-source
+weighted slope energy via orthogonal Gaussian innovations; this is UNPROVED,
+not a result. First-chaos-only bounds can miss even-test parity and must not
+be assumed sufficient.
+
+The positive result is an actual joint-law nonlinear compensated native-Ito
+realization. It is NOT completion of intrinsic IBM physical-time stochastic
+calculus, observed-filtration PRP or independent singular-term closure. Whole
+scenery as a clock parameter is not assumed observed at IBM time0; no all-real-T
+simultaneous pathwise version, arbitrary integrand uniqueness or rough-point
+ordinary derivative domain membership follows. Current IBM priorities remain.
+
+Target1 had one Function.comp reduction mismatch in the convergence statement;
+adding explicit Function.comp_def resolved it, target2 passed. No resource,
+heartbeat, transparency, version, trust or theorem-semantics override; no source
+modification after final gates. All14 public types and ENTIRE final module and
+proofs were read unabridged. Seven independent Lean checks cover arbitrary
+source-input scalarization, full native adjoint admission, actual nonlinear
+joint-law limit, strong compensated convergence, exact original integrand
+energy, necessary Cauchy condition, and literal original scalar Ito sections.
+
+Final gates: complete root6605jobs 31.449097s; complete transitive audit 46645 safe Foundation declarations, only propext/Classical.choice/Quot.sound, 42.802845s; SEVEN independent Lean checks 36.397951s. All2433 Foundation/root source hashes and3 pinned configurations frozen/rechecked;113 archive paths/hashes unchanged. All prior mathematical source bytes preserved except root/AxiomAudit registration. Evidence .lake/stardust-1466-verification.json. Explicit commit, exact receipt and verified PRIVATE main/research gate follows; IBM and the indefinite goal remain active.
