@@ -2357,3 +2357,5 @@ import Foundation.IBMSchwartzNativeAverage
 import Foundation.IBMSchwartzNativeTaylor
 import Foundation.IBMFoldedClockAbsolute
 import Foundation.IBMRawTemporalKernel
+import Foundation.IBMSignedClockCompanion
+import Foundation.IBMRawDeterministicIntegral

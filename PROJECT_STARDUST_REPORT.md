@@ -41186,3 +41186,129 @@ Two harmless independent-script sequencing style warnings remain in its retained
 successful log; no verification was suppressed or repeated unnecessarily.
 
 Final gates: complete root6631jobs/24.522691s/0; complete safe transitive axiom audit 47040 declarations, standard three axioms only/51.780635s/0; TWELVE independent checks/31.975838s/0. All2459 Foundation/root sources+3configs+113archive paths/hashes rechecked. Explicit FIVE-path commit, exact receipt and verified PRIVATE main/research backup follow. Evidence .lake/stardust-1478-verification.json. IBM remains ACTIVE; no campaign transition.
+
+## Checkpoint1479 — genuine completed raw-IBM deterministic integration on the verified fractional domain
+
+IBM remains ACTIVE, queue8280325 unchanged. Previous1478 /688f978 passed its
+full verification, exact receipt and PRIVATE main/research closure. This turn
+resolves1478's proposed positive covariance-norm bridge rather than repeating
+the unit-factor obstruction or defining a tautological new completion. All113
+immutable archive paths/hashes remain unchanged/read-only/uncommitted; primary
+IBM EJP2605-044RA0.pdf SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+No queued fBM campaign, reflection session or new parallel goal is activated.
+
+Reuse audit found the EXISTING BrownianSignIntegral.signum and its actual
+measurability/uniform bound, avoiding new sign infrastructure. The similarly
+named old IBMFirstSourceClockGraph.signedSourceClass is a MOLLIFIED derivative
+column, not the unmollified signed IBM value needed here. The original
+FractionalGaussianProcess.integrandSpace, kernelVector, completeness and
+cameronMartinFunction_injective already supply the precise canonical reference
+Hilbert domain. Mathlib LinearMap.extendOfNorm, extendOfNorm_eq and its bound
+theorem provide the well-defined dense extension/quotient factorization.
+No new generic Hilbert completion or unverified kernel positivity is introduced.
+
+IBMSignedClockCompanion constructs source(t,Y)=signum(W_t(Y))*randomSourceClass(t,Y)
+in the ORIGINAL scenery GaussianL2. source_memLp proves genuine clock L2
+membership from actual strong measurability and signum_bound<=1. sourceL2 and
+jointRealization give an actual ambient JointL2 variable S_t. observed_actual
+proves its literal original joint-law representative is
+
+    S_t(X,Y)=signum(clockPath(Y,t))*ibmValue(t,(X,Y)).
+
+Actual source sections and coordinate law, not a substitute process or assumed
+joint density, establish this agreement. S is an AUXILIARY clock-sign process.
+It is not assumed IBM-observable, adapted to its observed filtration, Gaussian,
+or a two-independent-outer-branch IBM. Zero clock values are handled explicitly.
+
+signed_min_identity proves for ALL real x,y, including zeros,
+
+    signum(x)signum(y)min(|x|,|y|)=(|x+y|-|x-y|)/2.
+
+actual_inner identifies the actual S Gram kernel via the verified common-clock
+absolute moments1478. With c=standardMoment(1)>0 and Q the scaled quarter-Hurst
+reference kernel, this gives
+
+    R(s,t)=c*(sqrt(s+t+2min(s,t))-sqrt(|t-s|))/2,
+    K(s,t)+R(s,t)=2Q(s,t).
+
+energy_split proves the EXACT finite stochastic identity for EVERY finite
+coefficient/time family, with arbitrary signs and repeated times,
+
+    ||sum a_i IBM_(t_i)||^2 + ||sum a_i S_(t_i)||^2
+       =2*sum_i,j a_i*a_j*Q(t_i,t_j).
+
+Thus finite_energy_bound proves raw energy<=2Q on ALL finite combinations.
+This is a genuine positive-semidefinite transfer, not the invalid inference
+from pointwise kernel comparison refuted1478. It supplies a constructive
+positive counterpart to1475's no bounded ordinary physical-time L2 integral.
+
+IBMRawDeterministicIntegral.Domain is EXACTLY the pre-existing closed spectral
+span FractionalGaussianProcess.integrandSpace at H=1/4. Its kernelVector(t)
+is the canonical deterministic initial-interval vector. It is NOT ordinary
+L2(dt), and arbitrary function-profile/Sobolev membership is not asserted.
+reference maps finite endpoint coefficients to sums of these original vectors;
+finite maps the SAME coefficients to actual raw observed IBM values.
+kernel_inner/reference_energy prove exact reference energy in the original
+domain norm. finite_square_bound/finite_bound establish
+
+    ||finite(a)|| <= sqrt(2c)*||reference(a)||.
+
+In particular every reference relation0 has actual raw sum0, so finite stochastic
+values factor through the reference domain. reference_dense reuses the existing
+Cameron--Martin injectivity to prove the dense-range obligation. integral then
+uses Mathlib extendOfNorm to give a bounded real linear map from this EXISTING
+complete domain to ORIGINAL jointL2. Its bound is proved for EVERY domain vector:
+
+    ||integral(f)|| <= sqrt(2c)*||f||.
+
+integral_finite and actual_finite prove exact agreement with actual finite raw
+stochastic sums, including the literal joint-law representative. integral_kernel
+and integral_interval prove the original raw point/increment normalization;
+actual_interval gives AE literal IBM_t-IBM_s, including oriented/zero intervals.
+finite_limit proves strong jointL2 convergence along EVERY sequence converging
+in the reference norm, and exists_actual_approximation constructs such actual
+finite-sum approximants for EVERY domain vector. This is genuine completed
+stochastic realization, not an output-prescribed residual or a conditional
+bound whose hypotheses remain unproved.
+
+integral_observable proves that EVERY completed output lies in the ORIGINAL
+closed IBM observable space, from finite raw membership and continuity.
+integral_unique proves uniqueness among ALL bounded real linear maps on the
+stated domain agreeing with raw point vectors. Thus presentation/refinement
+consistency and completion are intrinsic to the proved norm and finite sums.
+No injectivity or surjectivity of the completed integral is inferred.
+
+The construction is DETERMINISTIC-integrand integration in the explicit
+canonical quarter-Hurst Hilbert domain. It does not copy Gaussian probability
+laws or declare an isometry. The independent test proves (+1,+1) energy exceeds
+c times the unscaled reference norm squared, preserving1478's non-isometry.
+1475's ordinary dt-L2 obstruction and the old right-germ isometry remain valid
+in their different domains/integrators. No arbitrary random predictable-domain
+extension, target strong Malliavin-domain claim or full IBM completion follows.
+The reflected-clock/BTBM scope from1478 remains precise; no transfer to the
+different two-independent-outer-branch process is certified. No novelty claim.
+
+One next operator question is now well-posed: extend the companion map on the
+SAME reference domain and prove the completed energy/frame identity, or identify
+the new raw integral's adjoint and its connection to original weak/native
+calculus. Finite energy splitting is proved, but the completed two-channel
+operator identity/reconstruction is NOT yet certified. A norm bound alone
+does not make I*I a projection or give a general Clark--Ocone formula.
+
+All33 public types and BOTH ENTIRE final sources/proofs were read unabridged.
+Target1 failed only default200000 expansion/sign-case search and an invalid
+nonlinear-arithmetic use of a multiplied kernel equality. It was repaired by
+typed actual measurability, ordinary local irreducibility, four sign quadrants
+with explicit zero cases, and exact ring/congruence factorization. No resource
+or trust setting changed. Targets2/3 passed. Target4 failed only pointwise
+finite-function sum normalization; Finset.sum_apply repaired it before the
+successful COMPLETE build. No production byte changed after complete gates.
+TWELVE independent checks passed FIRST run: actual companion realization,
+actual2Q-K kernel, all-finite raw bound, literal raw interval/finite sums,
+every-domain actual approximation, original observable membership, norm bound,
+uniqueness, nonzero actual integral, normalized non-isometry and coexistence
+with the valid ordinary dt-L2 obstruction/zero interval. All domains and
+constants are the original verified ones, with no new Gaussianity premise.
+
+Final gates: complete root6633jobs/41.172949s/0; complete safe transitive axiom audit 47108 declarations, standard three axioms only/41.146757s/0; TWELVE independent checks/28.002121s/0. All2461 Foundation/root sources+3configs+113archive paths/hashes rechecked. Explicit FIVE-path commit, exact receipt and verified PRIVATE main/research backup follow. Evidence .lake/stardust-1479-verification.json. IBM remains ACTIVE.
