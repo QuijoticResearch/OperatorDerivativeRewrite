@@ -38207,3 +38207,84 @@ rechecked. Five explicit Git paths, exact receipt and PRIVATE main/research
 verification follow. This is active proof work, not daily housekeeping.
 
 Terminal timings: root 29.210963s; complete audit 45891 declarations, 41.131534s; independent checks 26.204809s; all exit0.
+
+## Checkpoint1451 — actual physical forward integral and two-integral product identity
+
+IBM ACTIVE; queue1422 unchanged. The companion individual clock-left sum
+limit is now proved in actual Gaussian L1 of physical H^-1. Combined with
+the ORIGINAL physical Ito correction-left integral1450, this establishes
+the ACTUAL representative-level two-integral product identity. The preceding
+joint-limit theorem1446 alone did not justify either individual integral;
+the independent construction1450 supplied the missing premise.
+Source: ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+Every original archive byte and existing mathematical declaration is preserved.
+
+IBMPhysicalL2ToL1 constructs the ACTUAL Gaussian probability Lp2->Lp1
+inclusion for physical kernels from EXISTING MemLp.mono_exponent and toLp.
+value_ae proves literal AE agreement with the original random variable.
+The existing eLpNorm_le_eLpNorm_of_exponent_le and finite-norm toReal
+monotonicity give norm contractivity. Actual AE representatives prove the
+private linear map's additivity and REAL scalar compatibility. mkContinuous
+then gives inclusion, preserving actual representatives and norms <= original
+norm. inclusion_injective is proved by AE equality. There is no new measure,
+random process, formal Hilbert embedding, isometry assertion or renormalization.
+This standard integrability-exponent conversion is not asserted novel.
+
+IBMPhysicalForwardIntegral.native is the ACTUAL L1 class of the previously
+integrable sum of Y_left*(C_right-C_left), with C the ORIGINAL physical IBM
+correctionLimit. native_ae identifies its actual representative. The exact
+native_eq_pair_sub expresses it as the ALREADY defined joint left-sum class
+minus inclusion of the ALREADY proved physical GaussianL2 correction-left
+partitionClass. This identity uses literal AE sum/product representatives.
+The candidate integralValue is endpointClass minus inclusion of the ORIGINAL
+physical Ito integral1450. native_tendsto proves ACTUAL forward sums converge
+STRONGLY in L1 to it along EVERY deterministic monotone fixed-endpoint0,T
+vanishing mesh, including variable cell counts, repeated endpoints, nonnested
+meshes and T=0/empty partitions. It follows by continuous inclusion of the
+independently proved1450 native L2 limit and1446 actual joint L1 limit.
+Thus the candidate is identified by actual sums, not merely defined by a
+formal endpoint identity or an unproved integration-by-parts convention.
+
+product_identity gives the exact physical L1 class equality. Its ACTUAL AE
+version is Y_T*C_T-Y_0*C_0 = forwardIntegral(T)+ORIGINALphysicalIto(C)(T),
+with neither original endpoint nor the origin local-time contribution
+discarded. native_scalarization proves literal scalar native sums for EVERY
+real physical dual test, and scalarization_tendsto gives their strong scalar
+L1 convergence. The real-scalar structure inherited from complex physical
+Bessel space is reconciled explicitly through BesselPotentialSpace.ext and
+toDistr_smul; no change to scalar fields, hypotheses or operators is hidden.
+
+Six independent checks cover zero-horizon native sums, injectivity of
+exponent conversion followed by ORIGINAL Ito isometry (no nonzero input can
+be erased), L1 energy control for arbitrary unbounded physical past-step
+coefficients, actual product identities under EVERY physical dual test,
+recovery of the OLD joint limit from BOTH independently identified integrals,
+and agreement in L1 norm across two arbitrary nonnested meshes. Retained
+development logs record linear-map scalar/coercion elaboration and the two
+real physical smul instances. The independent zero-horizon test initially
+bound an unused index in its rewrite lemma; that failed log is retained and
+the correctly unindexed equality is used. A trailing-whitespace-only source
+cleanup was followed by a fresh manifest and complete build/test/audit cycle.
+Every issue is repaired with ordinary verified
+identities, no heartbeat increase, option change, new axiom or weaker check.
+
+Exact scope: a physical first-scenery IBM representation retaining ALL clock
+chaos sectors and the origin term, with a native forward integral for THIS
+clock weight against THIS original correction. This does not prove arbitrary
+integrand domains, a pathwise Young/Riemann--Stieltjes integral, bounded
+variation, random-partition convergence, raw IBM semimartingale behavior,
+equality of raw IBM and clock histories, or full nonlinear unprojected
+intrinsic IBM calculus. Those distinctions remain essential. Common physical
+continuous versions and their justified increment controls, broader graph/
+adjoint domains and full actual-process calculus remain open. No campaign
+transition or novelty claim; reflection budget is not used by active proof work.
+
+Verification: complete root6562jobs, COMPLETE TRANSITIVE audit of EVERY safe
+Foundation declaration, whitelist ONLY propext/Classical.choice/Quot.sound;
+ALL16 UNABRIDGED public types and ENTIRE final proofs/sources INCLUDING the
+private linear map reviewed;6 independent checks.2390 Foundation/root
+sources+3configs+113 archive paths/hashes frozen and rechecked. Five explicit
+Git paths, exact receipt and PRIVATE main/research verification follow.
+
+Terminal timings: root 39.115736s; complete audit 45922 declarations, 37.051657s; independent checks 28.350991s; all exit0.

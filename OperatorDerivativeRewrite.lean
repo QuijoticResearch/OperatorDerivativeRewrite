@@ -2286,3 +2286,5 @@ import Foundation.IBMPhysicalNativeCorrectionSteps
 import Foundation.IBMPhysicalCorrectionContinuity
 import Foundation.IBMPhysicalContinuousFields
 import Foundation.IBMPhysicalCorrectionIntegral
+import Foundation.IBMPhysicalL2ToL1
+import Foundation.IBMPhysicalForwardIntegral
