@@ -41550,3 +41550,141 @@ intrinsic outputs from unprojected stochastic products. No early transition
 or full-calculus completion is authorized by this positive checkpoint.
 
 Verification: root6635 jobs, 42.806204s; complete 47215 safe transitive declarations, 37.893221s; TWELVE independent checks, 32.023831s, all exit0. All20 public types and the ENTIRE final source/private proofs were read unabridged. The frozen/rechecked source manifest covers 2463 Foundation/root sources, all3 configurations and all113 archive paths/hashes. Explicit Git, exact receipt and verified PRIVATE main/research closure follow. No mathematical source edit occurred after the final successful build/audit.
+
+## Checkpoint1482 — an actual random raw-step calculus with source Wick and intrinsic clock compensation
+
+IBM remains ACTIVE; queue8280325 is unchanged. Prior1481/aeababc is fully
+audited and exactly PRIVATE verified. All113 immutable manuscript paths/hashes
+remain read-only, unchanged and uncommitted. Primary source remains
+ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+This is a direct response to1481's actual uncorrected-random-step obstruction,
+not a generic static inverse substituted for a physical stochastic field.
+No manuscript claim or literature novelty is assumed.
+
+### Direct theorem reuse, actual objects, and domain bounds
+
+Foundation/IBMRawStepSources.lean and IBMRawStepCompensation.lean use the SAME
+reflected-clock process Z_t=B(|W_t|), original Gaussian sources, native source
+unitary and original joint intrinsic adjoint. No fractional-Gaussian or
+independent-two-outer-branch replacement law is used. The old
+IBMSineSourceField.direction and IBMActualQuarticMoment.sceneryDirection_norm_sq
+give actual coefficient vectors d_t(Y) with ||d_t(Y)||^2=|W_t(Y)|.
+
+The audit found the exact reusable Gaussian rank theorem
+GaussianQuadraticSourceHodge.mixed_divergence_graph:
+delta_X[scalarTensor(u,firstChaosEmbedding(v))]=cross(u,v),
+where cross(u,v)=X(u)X(v)-inner(u,v). IBMQuadraticSpatialCalculus identifies
+cross with that original polynomial-core divergence target and supplies its
+bounded bilinear map. IBMSourceProductBounds.rawBilinear supplies the actual
+uncentered Gaussian product and its separate norm bound. The existing
+IBMClockAverageCandidate.scalarTensor_norm and scalarTensor_joint_continuous
+supply field bounds and measurability. Nothing here assumes multiplication is
+bounded on arbitrary L2 or that point coefficients belong to original joint D.
+
+For EVERY s,t>=0, construct the following actual source sections, with the
+clock outside and scenery inside, in the original native factor order:
+
+* rawSections(Y)=X(d_t-d_s) X(d_s).
+* crossSections(Y)=cross(d_t-d_s,d_s).
+* fieldSections(Y)=scalarTensor(d_t-d_s,firstChaosEmbedding(d_s)).
+
+A proved pointwise bound ||d_t-d_s|| ||d_s||<=2(|W_s|+|W_t|), together with
+existing Gaussian bounds, dominates ALL three norms by6(|W_s|+|W_t|).
+The ORIGINAL clock process has MemLp2; all three sections therefore have
+proved genuine Bochner L2 realizations, no caller-supplied energy or
+measurability hypotheses. Fiber divergence graph membership follows from the
+EXISTING mixed Gaussian theorem. The old lift_adjoint_le and exact source
+unitary transport then put that SAME rank field in the ORIGINAL source
+adjoint domain, with output the realized crossSections.
+
+### Literal stochastic identity and actual intrinsic integration
+
+field_actual_sections proves that the constructed field is actually
+Z_s(X,Y)*(d_t(Y)-d_s(Y)) in the scenery field coordinate. Its coefficient is the
+ACTUAL past point value, not a bounded joint-domain proxy or generic recovered
+field. raw_actual and compensated_actual identify genuine joint-L2 classes:
+
+R(s,t)=Z_s*(Z_t-Z_s),
+C(s,t)=min(|W_s|,|W_t|)-|W_s|,
+V(s,t)=R(s,t)-C(s,t).
+
+The source inner identity direction_correction is proved from the existing
+actual scenery min-kernel, not an assumed martingale covariance. In particular
+C is a clock backtracking term. raw_actual_memLp now proves the literal
+past-weighted raw step is L2 for EVERY pair of times, upgrading1481's L1-only
+obstruction scope. raw_observable separately proves R is measurable with
+respect to the ORIGINAL IBM-generated sigma algebra. The realized
+clockCorrection=rawStep-compensatedStep is ALSO a genuine L2 class and its
+literal representative is EXACTLY C(s,t).
+
+nativeField(s,t) is this asymmetric actual rank field in the source channel
+and zero in the clock channel. The existing ambient_pair_divergence theorem
+proves membership in the ORIGINAL joint intrinsic divergence domain and
+identifies its output as P_IBM V(s,t). It does NOT assume V or C individually
+is IBM-observable. Since R IS observable, stochastic_identity proves the
+strong actual-L2 equality
+
+    R(s,t) = delta_joint U(s,t) + P_IBM C(s,t).
+
+P_IBM is the EXISTING orthogonal projection/conditional L2 expectation onto
+the actual observed IBM sigma algebra. It is retained explicitly. No
+unprojected hidden-clock correction is silently declared observable; no
+deterministic expectation is substituted for the clock-dependent SOURCE Wick
+compensation. The new theorem corrected_duality pairs this identity with
+EVERY original JOINT derivative-domain test, with correction pairing against
+the SAME actual C. An independent Lean check further derives the literal
+ordinary-expectation form using actual product representatives and existing
+L2 product-mean identities.
+
+correction_nonpos proves C<=0 almost surely for all s,t. More decisively,
+projected_correction_ne_zero proves P_IBM C(1,2) is NONZERO: if it vanished,
+the new explicit native input would represent1481's impossible uncorrected
+Z_1*(Z_2-Z_1), contradicting the verified negative-mean obstruction. Thus the
+correction survives passage to the observed intrinsic calculus. NONCONSTANCY
+of that projection and an explicit observed-path expression are NOT proved
+by this result; do not infer them merely from the hidden-clock expression.
+
+### Limits, tests, and next mathematical question
+
+This is an actual stochastic rank-field/adjoint identity for random
+past-weighted steps, not only an expectation-level heat equation and not a
+tautological definition of a new divergence. It requires no false point joint-D
+membership. The native field is NOT asserted observed-filtration predictable;
+its source direction still depends on the actual clock. No continuum random
+integrand completion, uniform-grid convergence, general multitime polynomial
+calculus, full Itô/Clark--Ocone theorem or full IBM campaign completion follows
+from the one-step construction. Existing physical Taylor/quadratic-variation
+obstructions remain in force. Finite-step cancellation does not automatically
+justify cancellation or convergence of either surviving refinement field.
+
+TWELVE independent Lean checks cover actual L2 raw stochastic products;
+literal clock covariance representatives; actual past-coefficient field
+sections; exact original-divergence corrected identity; literal expectation
+duality for EVERY original test; NONZERO projected correction; nonpositive
+actual correction; zero raw value/correction for degenerate intervals;
+reversal changing the coefficient (sum of reversed raw steps=-increment^2);
+all source/value/field Bochner L2 domains without extra hypotheses; nonzero
+unprojected correction; and coexistence of the new corrected construction
+with the sharp no-uncorrected-divergence theorem.
+
+Targets1--2 retain namespace errors and function-Pi normalization failures;
+these were repaired with the actual source-continuity namespace, the ORIGINAL
+partialDerivative namespace, and Pi.add_apply. Target3 passed actual source
+construction. Target4 retained two normalization issues: function subtraction
+on the actual representative and an opaque ibmValue preventing native
+observable-sigma comparison. Explicit Pi.sub_apply and local unfolding of
+that ordinary definition repaired them. Target5 passed the full compensated
+identity and target6 the literal field representative/corrected duality.
+No resource, compiler, trust, toolchain, axiom or audit option changed; no
+abbreviation made irreducible. Full final sources were frozen before gates.
+
+Next: investigate finite-grid assembly and genuine refinement behavior of the
+ACTUAL asymmetric fields and the SAME observable clock corrections, reusing
+the existing physical quadratic/Taylor variation results. Determine whether a
+coherent random integration domain survives or a renormalized/weak topology
+is required. Preserve the explicit (1,2) obstruction and distinguish source
+Wick compensation, observed conditional correction and deterministic mean.
+Do not assert refinement convergence or reopen another campaign prematurely.
+
+Verification: full root6637 jobs, 25.462249s; complete 47279 safe transitive declarations, 39.447321s; TWELVE independent checks, 29.242345s, all exit0. All36 public types and BOTH ENTIRE final sources/private proofs read unabridged. Frozen/rechecked manifest covers 2465 Foundation/root sources, all3 configurations and all113 archive paths/hashes. Explicit Git, exact receipt and verified PRIVATE main/research closure follow; no mathematical edit after successful final build/audit.

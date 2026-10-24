@@ -2361,3 +2361,5 @@ import Foundation.IBMSignedClockCompanion
 import Foundation.IBMRawDeterministicIntegral
 import Foundation.IBMRawIntegralSourceCalculus
 import Foundation.IBMRawIntrinsicIntegral
+import Foundation.IBMRawStepSources
+import Foundation.IBMRawStepCompensation
