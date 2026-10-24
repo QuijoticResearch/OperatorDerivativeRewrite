@@ -41072,3 +41072,117 @@ original D-test IBP, exact actual mean formula, zero horizon, signed Simpson
 versus Taylor RANDOM-drift difference, and coexistence with OLD non-Cauchy.
 
 Final gates: complete root6629jobs/43.820774s/0; complete safe transitive axiom audit 47013 declarations, standard three axioms only/43.605497s/0; TWELVE independent checks/26.880914s/0. All2457 Foundation/root sources+3configs+113archive paths/hashes rechecked. Explicit FOUR-path commit, exact receipt and verified PRIVATE main/research backup follow. Evidence .lake/stardust-1477-verification.json. IBM remains ACTIVE.
+
+## Checkpoint1478 — exact raw temporal energy and a rigorous H=1/4 transfer obstruction
+
+IBM remains ACTIVE, queue8280325 unchanged. Previous1477 /c5f4a9d passed
+complete verification, exact receipt and verified PRIVATE main/research closure.
+The next actual integration-domain question follows1475's no bounded ordinary
+dt-L2 step integral. This is not a separate fBM campaign or queue amendment.
+All113 immutable archive paths/hashes remain unchanged/read-only/uncommitted,
+including EJP2605-044RA0.pdf SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+
+The exact reuse audit distinguishes existing completed predictable covariance
+integration from raw increments. IBMCompletedSignedCovarianceIntegral's final
+product/signed-limit/actual_completed_signed_identity section was read through
+closure. The literal finite dictionary in IBMPredictableFiniteIntegral uses
+eligible coefficients times channel(F,right)-channel(F,left). These are
+target-indexed observed terminal-martingale channels, not raw IBM increments.
+The existing right-germ deterministic isometry is also different; old verified
+actual IBM points are orthogonal to its deterministic range. Neither theorem
+can be silently relabeled as an ordinary raw-dIBM integration construction.
+
+Primary literature check, definitions only: Allouba--Zheng, Ann. Probab.29(2001),
+1780--1795, arXiv:1005.3801v1, Introduction0 defines X(|B_t|) as Brownian-time
+Brownian motion (BTBM) and distinguishes the excursion/two-branch IBM family.
+https://arxiv.org/html/1005.3801v1 (Introduction, definitions and Theorem0.1).
+The repository's literal ibmValue is the REFLECTED-clock process B(|W_t|), so
+that is the precise process in these theorems. No result is automatically
+transported to a two-independent-outer-branch IBM. This preserves all existing
+mathematics and names; terminology alone does not change a definition.
+Also located Abdurakhmanov--Allouba, Brownian-time Change of measure,
+arXiv:2605.07044v1 (7May2026), https://arxiv.org/abs/2605.07044 . Only metadata
+and abstract were checked, not its proof; no theorem from it is relied on.
+No novelty claim is made for elementary conditioning or Gaussian absolute moments.
+
+IBMFoldedClockAbsolute reuses the ACTUAL original GaussianTimeHilbert clock,
+its firstChaos isometry and verified GaussianAbsoluteMoments. absolute_isonormal
+gives the first absolute moment for EVERY clock Hilbert direction. clock_absolute,
+clock_sum_absolute and clock_sub_absolute identify actual expectations with
+c*sqrt(t), c*sqrt(s+t+2min(s,t)), and c*sqrt(|t-s|), where c=standardMoment(1)>0.
+The sum uses the ORIGINAL common clock covariance min(s,t); no independent
+replacement clock is inserted. min_absolute_identity proves for ALL real x,y
+
+    min(|x|,|y|)=|x|+|y|-(|x+y|+|x-y|)/2.
+
+clock_min_integrable discharges actual overlap integrability; clock_min_absolute
+then gives its exact expectation, justifying all integral subtractions/additions.
+Zero times and equal times are retained; no strict-time formula is extrapolated.
+
+IBMRawTemporalKernel.source_inner identifies actual positive-time scenery
+inner products with min(a,b), reusing the already verified scenery geometry.
+actual_inner transports through the SAME original jointRealization and actual
+randomSourceL2 sections. actual_product_integrable and actual_product give the
+literal original-joint-law cross moment. Precisely, for EVERY s,t>=0,
+
+    K(s,t)=E_joint[IBM_s*IBM_t]
+          =c*(sqrt(s)+sqrt(t)
+             -(sqrt(s+t+2min(s,t))+sqrt(|t-s|))/2).
+
+kernel_symm is proved via actual Hilbert symmetry. finite_energy proves for
+EVERY finite set of times, arbitrary real coefficients and repeated times,
+
+    ||sum_i a_i observed(t_i)||^2 = sum_i sum_j a_i*a_j*K(t_i,t_j).
+
+kernel_positive therefore proves positivity of EVERY such finite Gram form
+from an actual stochastic realization, not an assumed PSD surrogate. This
+gives concrete raw deterministic energy geometry; it does not yet construct
+a completed raw stochastic integral or establish an analytic integrand norm.
+
+quarterKernel Q(s,t)=c*(sqrt(s)+sqrt(t)-sqrt(|t-s|))/2 is connected by
+quarter_actual_covariance to the EXISTING verified FractionalGaussianProcess
+at H=1/4, with its exact hypotheses. It is c times that actual Gaussian
+covariance, not a claim that raw IBM is Gaussian or has the same law.
+diagonal proves K(t,t)=Q(t,t). off_diagonal_strict proves Q(s,t)<K(s,t) for
+EVERY0<s<t. This follows from the strict square-root inequality
+sqrt(s+t+2s)<sqrt(s)+sqrt(t), with c>0 justified by1475 actual nondegeneracy.
+
+Crucially, pointwise off-diagonal comparison is NOT covariance-form ordering.
+sum_energy_exceeds_quarter proves actual two-time (+1,+1) energy is strictly
+GREATER than the Q reference energy. difference_energy_below_quarter proves
+actual (-1,+1) energy is strictly SMALLER. Both hold EVERY0<s<t, and the
+independent test uses1,2. Thus neither unit-factor Gram-form ordering nor
+isometric identification with this normalized H=1/4 geometry survives.
+The explicit actual increment energy at1,2 is c*(sqrt(5)-sqrt(2)), whereas
+the reference increment energy is c. Matching point variance/self-similarity
+alone cannot justify copying a deterministic integrand norm or Gaussian calculus.
+No nonunit bounded embedding, norm equivalence or useful transfer is ruled out.
+
+A candidate POSITIVE direction is recorded, not certified: construct the actual
+joint-L2 companion S_t=sign(W_t)*B(|W_t|). The real identity
+sign(x)sign(y)min(|x|,|y|)=(|x+y|-|x-y|)/2 suggests its kernel is 2Q-K.
+If constructed and verified, its Gram positivity would prove raw energy<=2Q
+on ALL finite deterministic coefficients, enabling reuse of the existing H=1/4
+integrand space rather than a tautological new completion. Actual companion
+measurability/L2 realization, exact kernel, finite inequality, well-defined
+extension and raw step normalization all remain OPEN. Pointwise kernel
+comparison alone supplies none of them. Do not claim this conjectural bridge
+as already verified or extend it to arbitrary random integrands/probability laws.
+
+All22 public types and BOTH ENTIRE final sources/proofs were read unabridged.
+Failed targets1/2/3/5/7 retained: explicit isonormal/first-chaos and pointwise
+function normalization, actual min integrability via domination, real absolute
+identity syntax, justified scalar integral rewrites, typed nonnegative sqrt
+identities, Pi product normalization and finite-Gram transpose symmetry.
+Targets4/6/8 passed. DEFAULT200000 resources, trust, compiler configuration,
+toolchain and mathematical hypotheses unchanged. No new axiom/sorry or original
+manuscript modification. TWELVE independent tests passed FIRST run: scalar folded identity,
+actual common-clock sum moment, literal raw cross moment at1,2, cross integrability,
+consistency with1475 one-time variance, zero time, actual quarter-fBM covariance,
+nonidentical kernels, BOTH energy comparison directions, signed three-time finite
+energy, six-time Gram positivity with repeats, and explicit1,2 increment energy.
+Two harmless independent-script sequencing style warnings remain in its retained
+successful log; no verification was suppressed or repeated unnecessarily.
+
+Final gates: complete root6631jobs/24.522691s/0; complete safe transitive axiom audit 47040 declarations, standard three axioms only/51.780635s/0; TWELVE independent checks/31.975838s/0. All2459 Foundation/root sources+3configs+113archive paths/hashes rechecked. Explicit FIVE-path commit, exact receipt and verified PRIVATE main/research backup follow. Evidence .lake/stardust-1478-verification.json. IBM remains ACTIVE; no campaign transition.

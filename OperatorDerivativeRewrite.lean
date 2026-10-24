@@ -2355,3 +2355,5 @@ import Foundation.IBMNativeClockRecovery
 import Foundation.IBMSchwartzHybridTime
 import Foundation.IBMSchwartzNativeAverage
 import Foundation.IBMSchwartzNativeTaylor
+import Foundation.IBMFoldedClockAbsolute
+import Foundation.IBMRawTemporalKernel
