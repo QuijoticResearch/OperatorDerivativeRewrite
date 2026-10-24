@@ -2288,3 +2288,6 @@ import Foundation.IBMPhysicalContinuousFields
 import Foundation.IBMPhysicalCorrectionIntegral
 import Foundation.IBMPhysicalL2ToL1
 import Foundation.IBMPhysicalForwardIntegral
+import Foundation.IBMSpatialPointClockEnergy
+import Foundation.IBMSpatialPointClockRealization
+import Foundation.IBMSpatialPointClockObstruction

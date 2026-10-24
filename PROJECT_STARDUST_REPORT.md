@@ -38288,3 +38288,112 @@ sources+3configs+113 archive paths/hashes frozen and rechecked. Five explicit
 Git paths, exact receipt and PRIVATE main/research verification follow.
 
 Terminal timings: root 39.115736s; complete audit 45922 declarations, 37.051657s; independent checks 28.350991s; all exit0.
+
+## Checkpoint1452 — PARTICULAR native IBM terms diverge in ordinary joint L2; compensated sum is ACTUAL IBM
+
+IBM ACTIVE; queue1422 unchanged. A concrete realization question left open
+by1430 is now settled: not only is a UNIVERSAL physical H^-1 white-noise
+extension impossible, but the PARTICULAR canonical mollified signed-Dirac
+clock integral AND WHOLE original correction have diverging ordinary
+two-source probability L2 norms on EVERY positive horizon. The SAME native
+sequences converge strongly in physical GaussianL2(H^-1). Their sum DOES
+converge strongly in actual joint-probability L2 to the constructed IBM.
+This is a precise obstruction and a valid compensated reconstruction, not
+an assertion that all IBM stochastic calculus is impossible or complete.
+Source: ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+Original manuscript bytes, all prior verified declarations and queue preserved.
+
+IBMSpatialPointClockEnergy uses the EXISTING normalized compact smooth bump
+kernel rho_n, EXISTING translatedClass/profileClass and verified translation-
+invariant spatial L2 norm. The ACTUAL spatial field is sign(B_t) rho_n(|B_t|-x).
+Raw strong measurability, horizon MemLp2, and predictability are PROVED by
+composing an actual predictable Brownian representative, not postulated.
+input belongs to the existing lpMeas(TimeHilbert,REAL,predictable,2,horizon)
+domain. trim uses the EXISTING lpMeasToLpTrimLie. integralValue is the EXISTING
+GaussianParameterizedIto.realIntegral over SPATIAL Lebesgue L2, not H^-1 and
+not a newly assumed integral. Exact real Ito isometry, the OLD sigma_nonzero
+on the actual horizon, sign^2=1 AE, and translation-invariant profile norm give
+
+    ||I_n(T)||_L2(clock;L2(space))^2 = T ||rho_n||_L2(space)^2.
+
+At T=0 the integral is exactly zero. For EVERY T>0, the previously verified
+profile norm escape1430 proves ||I_n(T)|| -> infinity. No asymptotic profile
+formula, Gaussian rather than bump mollifier, independent sign/position
+assumption, random-time substitution or probability-filtration claim is used.
+
+IBMSpatialPointClockRealization proves the finite-width ordinary spatial
+integral embeds into the ORIGINAL physical H^-1 integral1435, exactly.
+spatial_embedding identifies the actual coefficients. The PRIVATE
+trim_scalar_match proves equality of the actual scalar integrands on the
+trimmed predictable measure, using measurable AE transfer and original field
+representatives. Existing real parameter-Ito scalarization and original
+physical-Ito scalarization, followed by the OLD physical Lp separation theorem,
+prove integral_embedding for ALL physical real dual tests. This is agreement
+of actual integration operators; no arbitrary embedding or new axiom is used.
+
+IBMSpatialPointClockObstruction defines the ACTUAL spatial mollified endpoint
+E_n(T)=mollifiedKernel(n,T)-constant(convolutionKernel(rho_n,0)). Existing
+mollifier convergence proves E_n -> sourceKernel(T) strongly in spatial Lp2.
+The ordinary correction C_n=E_n-I_n embeds EXACTLY into the ORIGINAL full
+physical correction1435. Consequently BOTH physical embedded sequences retain
+their original strong GaussianL2(H^-1) limits. The triangle inequality and
+convergence of E_n prove ||C_n|| -> infinity as well: a convergent endpoint
+cannot supply a separate ordinary L2 correction limit cancelling I_n's norm.
+
+realize is the EXISTING actual scenery white-noise isometry lifted in clock
+probability, then the EXISTING inverse Bochner/product-L2 equivalence and
+probability-factor swap into the ORIGINAL jointMeasure with order(X,Y).
+realize_sections proves literal AE clock/scenery white-noise agreement. No
+pointwise white noise at a Dirac mass is evaluated. Exact isometry transports
+BOTH norm escapes to actual two-source L2; integral_joint_not_tendsto and
+correction_joint_not_tendsto exclude EVERY possible strong jointL2 limit
+on EVERY positive horizon. These are PARTICULAR-sequence theorems beyond
+the old universal-extension obstruction, retaining ALL clock sectors.
+
+The positive result is equally essential: source_actual identifies
+realize(sourceKernel T) AE with IBMConstructedSources.ibmValue T on the SAME
+original joint probability. This uses the original actual scenery realization,
+measurable product Fubini and the proved factor swap, avoiding an uncountable
+intersection of section exceptional sets. combined_joint_tendsto proves
+realize(I_n)+realize(C_n) -> realize(sourceKernel T) STRONGLY in actual jointL2.
+Thus the compensated sum converges to ACTUAL IBM even though BOTH individual
+terms diverge in that norm. This supplies a rigorous reason to preserve paired
+or graph-dual/renormalized domains instead of asserting separate ordinary
+L2 limits. It is not by itself a nonlinear Itô or full Clark--Ocone theorem.
+
+Six independent checks verify the zero-horizon exception, nonzero ordinary
+joint integral at EVERY finite width/positive horizon from normalized profile
+pairing, correct sign reflection INCLUDING zero, exact two-source probability
+energy normalization, ACTUAL IBM realization/compensated jointL2 convergence,
+and simultaneous physical H^-1 convergence with failure of EVERY ordinary
+jointL2 whole-correction limit. Source failure logs preserve composition/
+constant and factor-swap normalization fixes. A default200000 isDefEq timeout
+in actual-IBM measurability elaboration was repaired by explicitly typing the
+parameter-pair map and local irreducibility of ORDINARY definitions realize
+and ibmValue, not increasing resources or changing mathematical semantics.
+The initial independent sign-reflection check used an overbroad simp/linarith
+split; its failed log is retained and the explicit negative/zero/positive
+trichotomy now verifies all cases. No compiler option, toolchain, new axiom
+or weaker check was introduced.
+
+Limits of the obstruction: no theorem here rules out convergence in
+probability, L1, distribution, compensated combinations, another justified
+renormalization, or graph-dual extensions. Norm escape ALONE would not justify
+those conclusions. No raw IBM semimartingale, equality of clock/IBM histories,
+ordinary white-noise integral on H^-1, general impossibility of full multichannel
+or intrinsic stochastic calculus, RH implication or novelty claim is asserted.
+Next investigate exact admissible compensated/nonlinear intrinsic graph domains
+using the already verified IBM derivatives/adjoints and source-resolved chaos,
+rather than repeatedly extending physical-only scalar weights while ignoring
+this ordinary-L2 realization obstruction. IBM remains ACTIVE; no new campaign.
+
+Verification: complete root6565jobs; COMPLETE TRANSITIVE safe Foundation
+axiom audit with ONLY propext/Classical.choice/Quot.sound; ALL33 UNABRIDGED
+public types and ENTIRE3sources/private-proof review;6 independent checks.
+2393 Foundation/root sources+3configs+113 archive paths/hashes frozen and
+rechecked. Six explicit Git paths, exact receipt and verified PRIVATE
+main/research synchronization follow. Active proof work uses no reflection
+session or housekeeping budget. No original manuscript is edited or committed.
+
+Terminal timings: root 26.959264s; complete audit 45998 declarations, 37.977441s; independent checks 26.367187s; all exit0.
