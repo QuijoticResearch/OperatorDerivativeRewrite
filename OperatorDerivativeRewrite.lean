@@ -2242,3 +2242,5 @@ import Foundation.IBMTimeWeightedIntrinsicCore
 import Foundation.IBMSineTemporalRegularization
 import Foundation.IBMSineTemporalClockEscape
 import Foundation.IBMPhysicalWhiteNoiseObstruction
+import Foundation.IBMPhysicalWeakWiener
+import Foundation.IBMSchwartzWeakWienerClosure

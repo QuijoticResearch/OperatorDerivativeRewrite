@@ -36463,3 +36463,111 @@ terminal timings are in .lake/stardust-1430-verification.json. Four explicit
 Git paths only: new source, root import, axiom-audit import/prints, this ledger.
 Exact-commit receipt and verified PRIVATE main/research synchronization are
 mandatory closure gates, recorded by the terminal checkpoint receipt.
+
+## Checkpoint1431 — actual physical Wiener pairings and first-source weak closure
+
+IBM remains ACTIVE, queue1422 unchanged. The obstruction1430 ruled out a
+universal physical H^-1 -> ordinary Gaussian-L2 Wiener extension. It did not
+rule out an actual stochastic test-dual extension. This checkpoint constructs
+that positive counterpart and applies it to the entire actual first-source
+IBM correction, retaining the origin layer and every clock chaos degree.
+
+The source remains ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE,
+whose physical closure question was audited1430. No original source was
+modified. This is direct mathematical investigation, not a daily housekeeping
+session or a new campaign. No novelty claim is made for the standard Riesz,
+bidual or Bochner constructions. Their concrete actual-process agreement
+and application are the present verified additions.
+
+Foundation/IBMPhysicalWeakWiener.lean reuses the EXISTING physical embedding
+J: real spatialL2 -> complex physicalH^-1 (viewed as a real Banach space),
+the EXISTING actual scenery whiteNoise isometry, ordinary Hilbert Riesz,
+and Mathlib's canonical inclusionInDoubleDual. Precisely,
+Kernel=H^-1, Tests=StrongDual_R Kernel WITH ITS ORIGINAL PHYSICAL DUAL NORM,
+kernelTest(L)=Riesz^-1(L composed J), testNoise(L)=whiteNoise(kernelTest(L)).
+These testNoise(L) are actual ordinary centered Gaussian random variables,
+not formal symbols. native(F)(L)=inner(F,testNoise(L)) is a bounded map on
+the ORIGINAL scenery GaussianL2. integral(U)(L)=L(U) is the ordinary bidual
+embedding, with EXACT norm ||integral(U)||=||U||_H^-1.
+
+actual_pairing/native_agreement/expectation_pairing prove, for EVERY ordinary
+real spatialL2 kernel u and physical dual test L, that native(whiteNoise(u))
+equals integral(Ju), and its action is the literal ordinary expectation of
+whiteNoise(u)*testNoise(L). There is no substitution of an abstract pairing
+for that stochastic identity. The integral(U) notation denotes a generalized
+Wiener TEST FUNCTIONAL, not a Gaussian-L2 random variable or a time Ito map.
+Its test norm is not the ambient Gaussian-L2 norm of testNoise(L).
+
+The closed real physical domain is physicalSpace=closure(range J), not the
+entire complex physical space interpreted as new real noise channels.
+annihilator/actual_test_consistency prove that invisible tests vanish and
+coincident ACTUAL Gaussian tests give identical actions on this domain.
+unique_on_physicalSpace proves uniqueness there among bounded real-linear
+extensions agreeing with all actual ordinary kernels; it asserts no arbitrary
+complex-channel uniqueness or injectivity of the test parametrization.
+dirac_mem_physicalSpace places the actual origin Dirac in the correct domain.
+dirac_native_limit gives actual mollifier-Wiener convergence in the STRONG
+test-dual norm, simultaneously with1430's escape in ordinary GaussianL2.
+Thus the obstruction and positive result apply to the SAME actual mollifiers.
+
+Foundation/IBMSchwartzWeakWienerClosure.lean lifts these maps to clock BochnerL2.
+weakField_norm proves the lift preserves EXACTLY the original spatial
+L2(clock;H^-1) norm, using EXISTING BochnerLinearIsometry.lift. field_agreement
+proves equality with actual finite-width scenery stochastic sections.
+correction_actual_projection directly reuses the EXISTING
+IBMSchwartzPhysicalFirstKernel.wholeKernelClass_realizes_projection: correction
+is nativeField applied to the ACTUAL first-SCENERY-chaos projection of the
+ORIGINAL full nonlinear reflected correction, not a replacement residual.
+ALL clock chaos degrees are retained; this is not a rectangular truncation.
+
+correction_tendsto is STRONG L2(clock;StrongDual_R Tests) convergence for every
+Schwartz g, real shift a and finite nonnegative horizon T. It reuses the
+EXISTING actual physical reflected Ito wholeClass_tendsto and actual native
+H^-1-valued CLOCK Brownian integral. correction_error_norm identifies the
+entire weak stochastic error norm EXACTLY with the verified physical kernel
+error norm. No further artificial norm weakening is hidden in this transfer.
+The limit is explicitly weakField(endpointLimitClass-limitIntegralValue);
+limiting_identity expresses the old native physical Ito relation after this
+verified transfer. It is not an independently invented residual definition:
+the convergence and exact actual projection identification establish its
+relation to the original finite-width stochastic corrections.
+
+correction_actual_pairing gives a SINGLE full-measure clock set at each finite
+width on which EVERY test L has the literal ordinary scenery expectation
+formula. limit_actual_test_consistency proves equality of limiting clock-L2
+classes whenever the associated actual Gaussian tests coincide. It does not
+claim an unproved simultaneous pathwise identity over an uncountable test
+family at the singular limit. Every finite-width expectation product is
+integrable by the ordinary L2 product theorem, independently checked.
+
+Limits of the result: this is FIRST-SCENERY-chaos closure for the specified
+Schwartz correction family, not full unprojected actual IBM calculus, a
+classical Gaussian-L2 singular stochastic integral, a semimartingale law or
+full intrinsic Clark--Ocone. Tests are the real continuous dual of physical
+H^-1; their explicit identification with any preferred H^1 realization or
+the ORIGINAL intrinsic full-divergence graph domain is NOT assumed. The
+common-clock OU-smoothed topology is also not silently identified with it.
+The next useful bridge needs actual test-domain maps and finite-width
+agreement with the original intrinsic adjoints, or an exact obstruction.
+No campaign completion or early transition follows.
+
+Ten independent Lean examples check actual Gaussian covariance, simultaneous
+native-norm escape/strong generalized convergence on the SAME mollifiers,
+actual Dirac domain membership, exact random-field norm, actual original
+first-source projection identification, strong clock-L2 evaluation limits,
+literal two-source iterated expectation agreement without an unproved Fubini
+interchange, finite-width integrability, limiting actual-test consistency,
+and qualified uniqueness at Dirac. Failed targeted log1 is retained: repairs
+used actual Real.inner_apply, explicit testNoise unfolding and the existing
+closed-submodule API. Subsequent unused tactics/long lines were removed;
+no norm, measure, axiom, heartbeat limit or compiler setting changed.
+Both final sources/proofs and ALL37 public types were read unabridged.
+
+Checkpoint1431 gates: root6518jobs/26.664140400011092s/0;
+COMPLETE safe transitive44842declarations/46.015124000026844s/0;
+ten independent checks/28.10323770000832s/0. All2346
+Foundation/root sources+3configs frozen/rechecked;113archive paths/hashes
+unchanged. FIVE explicit Git paths: two new sources, root, axiom-audit imports/
+prints, this ledger. Exact-commit receipt and verified PRIVATE main/research
+closure remain mandatory and are recorded in the terminal checkpoint receipt.
