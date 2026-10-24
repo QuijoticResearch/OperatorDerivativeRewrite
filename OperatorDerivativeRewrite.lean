@@ -2363,3 +2363,5 @@ import Foundation.IBMRawIntegralSourceCalculus
 import Foundation.IBMRawIntrinsicIntegral
 import Foundation.IBMRawStepSources
 import Foundation.IBMRawStepCompensation
+import Foundation.IBMRawGridCompensation
+import Foundation.IBMRawGridEscape

@@ -41688,3 +41688,137 @@ Wick compensation, observed conditional correction and deterministic mean.
 Do not assert refinement convergence or reopen another campaign prematurely.
 
 Verification: full root6637 jobs, 25.462249s; complete 47279 safe transitive declarations, 39.447321s; TWELVE independent checks, 29.242345s, all exit0. All36 public types and BOTH ENTIRE final sources/private proofs read unabridged. Frozen/rechecked manifest covers 2465 Foundation/root sources, all3 configurations and all113 archive paths/hashes. Explicit Git, exact receipt and verified PRIVATE main/research closure follow; no mathematical edit after successful final build/audit.
+
+## Checkpoint1483 — exact native grid assembly and an observable clock-correction refinement obstruction
+
+IBM remains ACTIVE; queue8280325 unchanged. Previous1482/ca54fca passed all
+verification and exact PRIVATE main/research gates. All113 manuscript paths
+and hashes remain read-only, unchanged and uncommitted. The primary IBM
+archive remains ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+No new campaign, manuscript edit, probability-law substitution or novelty
+claim is introduced. This turn tests1482's actual random-step construction
+under genuine fixed-horizon uniform refinement.
+
+### Exact finite stochastic assembly, not an inferred limit
+
+Foundation/IBMRawGridCompensation.lean directly reuses the ACTUAL past-value
+steps R(s,t)=Z_s*(Z_t-Z_s), the SAME rank-field inputs U(s,t), and the SAME
+clock correction C(s,t)=min(|W_s|,|W_t|)-|W_s| from1482. Finite sums are taken
+INSIDE the ORIGINAL jointDivergence domain, using its existing linear map.
+For every NNReal mesh h and every finite n, gridInput is the sum of those
+original domain inputs, rawSum the sum of actual observed raw-step classes,
+and correctionSum the sum of the original observable projections P_IBM C.
+finite_identity proves the exact intrinsic L2 equality
+
+    rawSum(h,n) = delta_joint gridInput(h,n) + correctionSum(h,n).
+
+rawSum_actual identifies the literal stochastic finite sum on the ORIGINAL
+joint law. uniform_rawSum_actual further proves it is exactly one half of
+IBMActualQuadraticDivergence.first(T,n) on the same N=n+1 uniform intervals.
+This directly reuses the prior physical Taylor/quadratic-variation library;
+it is not a formal change of integrator or an observed-terminal martingale.
+The old first_no_finite_limit already proves that physical first channel
+has no finite probability limit for positive T. Its proof is not repeated.
+
+clock_total_variation proves POINTWISE, for the actual continuous clock path,
+
+    2 sum C_i = |W_endpoint|-|W_0|-sum ||W_right|-|W_left||.
+
+This confirms the actual backtracking/total-variation mechanism, not merely
+an analogy. It does not automatically assert any limit of that expression
+or observability of the hidden clock term before projection.
+
+### Quantitative obstruction that survives intrinsic projection
+
+expectation is the existing original joint inner-product pairing with the
+constant intrinsic observable. The old one_inner_mean and
+IBMCenteredSourceRepresentation.divergence_mean_zero identify it with ordinary
+expectation and prove it vanishes on EVERY original joint divergence.
+The actual kernel theorem IBMRawTemporalKernel.actual_product and1482's
+literal raw representative give E R(s,t)=K(s,t)-K(s,s). Taking expectation
+of the EXACT stochastic_identity then proves
+
+    E[P_IBM C(s,t)] = K(s,t)-K(s,s).
+
+No assumption that C is observable is used. The actual reflected-clock
+kernel K, not the quarter-Hurst Gaussian covariance Q, is essential here.
+Using s<=t and sqrt(s+t+2s)>=2sqrt(s), step_mean_bound proves
+
+    K(s,t)-K(s,s) <= c*(sqrt(t)-sqrt(s)-sqrt(t-s)/2),
+    c=GaussianAbsoluteMoments.standardMoment1>0.
+
+The square-root endpoint differences telescope on the actual grid. Thus
+for EVERY h>=0 and n, with no caller-supplied estimates,
+
+    E[correctionSum(h,n)] <= c*(sqrt(h*n)-n*sqrt(h)/2).
+
+The constant intrinsic observable has original L2 norm1, proved using its
+actual constant representative. Cauchy--Schwarz gives -E F<=||F||. In
+Foundation/IBMRawGridEscape.lean, specialize h=T/(n+1). The exactly proved
+square-root scaling yields the quantitative bound
+
+    ||correctionSum(T/N,N)|| >= (c*sqrt(T)/2)*sqrt(N)-c*sqrt(T), N=n+1.
+
+For EVERY T>0, norm_escape proves these OBSERVABLE intrinsic correction norms
+tend to +infinity, and no_L2_limit rules out convergence to ANY finite
+original intrinsic L2 observable. This is stronger than the earlier nonzero
+single-step test: observation/conditional projection cannot remove the
+leading correction growth. It is a rigorous obstruction to passing the
+correction summand separately to a finite L2 limit in an unrenormalized
+continuum random-integration formula.
+
+### Scope and exact remaining mathematical question
+
+The result does NOT prove norm escape of gridInput, norm escape or convergence
+of its ORIGINAL divergence values, failure of their compensated limit, or
+impossibility of a corrected IBM calculus. An unbounded adjoint does not
+permit those conclusions from output/field behavior without a graph proof.
+It also does NOT assert probability escape of the projected correction:
+L2 norm divergence alone does not imply that. Centering, deterministic or
+random renormalization, weaker convergence and graph-dual extensions remain
+separate questions. The new theorem does not give a random-integrand
+completion, general Itô or Clark--Ocone theorem or a campaign stopping point.
+
+The finite identity plus old physical first-channel nonconvergence and the
+NEW projected-correction escape make cancellation/renormalization a central
+obligation, not an optional regularity assumption. The next useful target is
+the precise second-source-chaos kernel and covariance of the actual
+compensated native sums. Audit existing Gaussian quadratic/Hodge and IBM
+cross-sector weak-domain results before constructing new infrastructure.
+Do not infer convergence of the surviving field merely from exact finite
+stochastic identities or from cancellation of their divergent scalar means.
+The actual process remains B(|W|), with the original source/clock factor order;
+no independent-two-outer-branch or fractional-Gaussian law is substituted.
+
+### Verification and independent tests
+
+Targets1--2 preserve subtype-sum, numerical sqrt, NNReal cast and telescoping
+rewrite errors, repaired by exact subtype linearity, explicit numerical root,
+cast normalization and the explicitly instantiated old finite telescoping
+lemma. Targets3--4 preserve square-root division/scaling and function-composition
+normalization failures; exact typed congrArg equalities and explicit positive
+denominators repaired these without increasing resources. Target5 passed
+escape. Target6 retained a physical-function beta-normalization mismatch;
+explicitly changing to the literal physical sum fixed it. Target7 passed
+BOTH final modules. No resource, trust, compiler, toolchain, axiom whitelist
+or audit option changed; no abbreviation made irreducible. Historical style
+warnings are retained, never suppressed. Final sources frozen before gates.
+
+TWELVE independent Lean checks cover original intrinsic finite assembly;
+literal equality to the verified physical first Taylor channel; actual
+clock total-variation identity; exact expectation after observable projection;
+the ordered-step kernel estimate; the all-mesh finite-grid mean bound;
+the explicit normalized sqrt(N) norm lower bound; escape for EVERY positive
+horizon; no finite intrinsic L2 limit; IDENTICALLY ZERO correction at horizon0
+(positivity is essential); failure of every proposed finite norm bound; and
+coexistence with the OLD raw physical no-finite-probability-limit theorem.
+
+Independent attempt1 lacked the local CompleteSpace instance for the already
+closed IntrinsicSpace, needed solely to state its orthogonal projection.
+Its log/timing were preserved. Adding that existing proof as a LOCAL test
+instance repaired the test harness; the complete twelve-check second run
+passed. No mathematical source changed, so the already successful complete
+build/audit remained on exactly the same frozen inputs.
+
+Verification: complete root6639 jobs, 26.391591s; complete 47310 safe transitive declarations, 49.734308s; TWELVE independent checks, 26.561140s, all exit0. All19 public types and BOTH ENTIRE final sources/private proofs were read unabridged. Source freeze/recheck covers 2467 Foundation/root sources, all3 configurations and all113 manuscript paths/hashes. Explicit Git, exact receipt and verified PRIVATE main/research closure follow; no math edits after successful final build/audit.
