@@ -39276,3 +39276,132 @@ all113 archive paths/hashes unchanged. Evidence .lake/stardust-1460-working-chec
 -full-build.log, -audit.log, -independent.log, timing JSON and -verification.json.
 Seven explicit-path Git checkpoint, exact receipt and verified PRIVATE main/research
 sync remain mandatory before terminal closure. Goal/campaign remain ACTIVE.
+
+## Checkpoint1461 — actual signed physical Gaussian mean and fixed-time conditional coefficient
+
+IBM ACTIVE; queue1422 unchanged. Source anchor remains
+ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All113 original archive paths/hashes remain unchanged. No manuscript edit,
+reflection/housekeeping session, new campaign or priority change.
+
+GaussianSignedFold proves ACTUAL Banach-valued signed Gaussian folding. The
+negative branch gives a DIFFERENCE of reflected densities, never their sum:
+
+ integral signum(r) f(|r|) dNormal(b,v)
+   = integral_(x>0) [p_v(x-b)-p_v(x+b)] f(x) dx,  v>0.
+
+pdf_reflection and paired establish the exact algebra/signs. signed_integral
+splits the actual Lebesgue integral into Ioi0 and Iic0 using integrability,
+reflects the negative branch by OLD integral_comp_neg_Ioi, and recombines
+integrable positive-half-line fields. weighted_integrable uses ORIGINAL Gaussian
+withDensity and integrable_withDensity_iff_integrable_smul' to derive Lebesgue
+weighted integrability from actual Gaussian integrability. folded_integrable
+proves actual Bochner integrability of the resulting difference before later
+linear-map/integral interchange. gaussian_fold states its precise Gaussian
+integrability and nonzero-variance domain. No formal density manipulation or
+unproved cancellation of nonintegrable terms is used.
+
+IBMPhysicalGaussianFold.signed(r) is the ACTUAL physical H^-1 element
+signum(r) dirac(|r|), using the EXISTING Fourier/physical derivative Dirac family.
+signed_bound is a genuine linear-growth bound from vector_norm_sq, the bounded
+physicalDerivative, the actual deltaZeroHminusOne, and signum_bound. It implies
+signed_integrable for EVERY Normal(b,v), including its atomic v=0 case, via
+actual Gaussian first absolute moment. Strong measurability is proved first.
+
+Local scalar compatibility is explicit: reuse the existing physical normed
+additive group and NormedSpace.restrictScalars, selecting that module's own
+inherited real SMul. This resolves the direct Bessel-space scalar-action
+instance diamond for ContinuousSMul/NormSMulClass; it introduces no new norm,
+axiom, global instance or algebraic operation. Equality below is independently
+checked through EVERY original tempered-distribution test, ensuring actual
+physical compatibility rather than a new auxiliary Hilbert realization.
+
+folded_dirac_integrable and gaussian_mean_fold instantiate actual Bochner
+folding with the unbounded physical Dirac family. column_test identifies
+physicalEmbedding(column(b,v)) on EVERY complex Schwartz test, using its actual
+spatial AE representative, original complexify/Lp distribution and half-line
+indicator. gaussian_mean_embedding uses original bounded test maps and ACTUAL
+Bochner integral commutation, then BesselPotentialSpace.ext, to prove the
+H^-1 equality itself:
+
+ E_Normal(b,v)[signum(r) dirac(|r|)] = physicalEmbedding(column(b,v)), v>0.
+
+physical_test_mean follows for EVERY real continuous physical dual test L,
+with no restriction to a finite set or arbitrary test norm. The result is an
+actual physical Bochner identity, stronger than a scalar heat-expectation
+analogy. No novelty claim is made for Gaussian folding/distributional smoothing.
+
+zero_variance_mean separately proves the literal atomic-law value signed(b).
+It does NOT extend the positive-variance mean/embedding identity to v=0:
+1460's column(b,0) is zero, while the atomic Gaussian expectation retains its
+signed Dirac value. No general nonzero-Dirac counterexample theorem is claimed
+here; the exact atomic law is recorded and positive variance retained in every
+identification theorem. A terminal time endpoint cannot be silently substituted
+into the Gaussian density formula.
+
+IBMPhysicalSlopeConditional.testSlope(L,r)=signum(r)L(dirac(|r|)). testSlope_measurable,
+actual_ae and actual_memLp identify it on the ORIGINAL actual clock with the
+EXISTING evaluate(L,slopeLimit(T)) L2 class. Its integrability is DISCHARGED from
+that actual class, not imposed as a new hypothesis. conditional_slope uses1460's
+ENTIRE raw-past Gaussian transition with this function. shifted_mean uses the
+ACTUAL Gaussian shift law and physical_test_mean. conditional_column proves
+for EVERY S<T and physical L:
+
+ E[evaluate(L,slopeLimit(T)) | ORIGINAL naturalFiltration(S)]
+   = L(physicalEmbedding(column(B_S,T-S))), AE under ORIGINAL Gaussian law.
+
+conditional_actual_field then uses the genuine continuous clock coordinate AE
+identity and exact NNReal remaining-time equality to identify the RHS with
+L(physicalEmbedding(IBMFoldedHeatPredictable.raw(T,(S,Y)))) from1460. This
+DISCHARGES the signed Gaussian spatial integral and fixed-time actual conditional
+physical coefficient obligations. Existing IBMPhysicalSceneryTestClockGraph
+already proves gradient(T,L)=scalarTensor(direction(T),evaluate(L,slopeLimit(T)))
+and its actual closed derivative identity for T>0; that is the exact derivative
+connection being reused. The introductory module caveat refers to the still
+unproved WHOLE predictable coefficient, not a denial of these fixed-time results.
+
+EIGHT independent Lean checks: H^-1 Bochner mean/embedding equality; centered
+cancellation for ANY admissible Banach-valued f; actual raw-past conditioning of
+the OLD slope to the1460 genuine field for every physical L; actual slope L2
+membership; literal zero-variance atomic mean; EVERY Schwartz distribution test;
+all-parameter Gaussian integrability of the actual Dirac family; and preservation
+of1460's exact necessary-and-sufficient canonical input/output condition. All
+passed FIRST RUN. All exact function domains and strict S<T hypotheses reviewed.
+
+OPEN/NEXT: fixed S,L conditional AE equalities do NOT automatically identify a
+joint time-clock field or the Hilbert-space predictableProjection. Do not take
+an uncountable intersection of time/test null sets. Need correct time support,
+horizon/trim and conditional-projection duality, using actual L2 bounds and
+existing step density/orthogonality as warranted, then original physical dual
+separation. The original equality
+trim(T)=representer(T,actual sourceKernel(T)) remains UNPROVED, so1460's new
+explicit integral is NOT yet identified unconditionally with canonical IBM.
+Possible useful strengthening: condition the entire EXISTING signedDirac(T)
+H^-1 Bochner L2 class using1460's Banach-valued transition, actual signedDirac_ae
+and gaussian_mean_embedding. This could provide one common kernel-valued version
+before testing, without an invalid uncountable intersection. It does not by
+itself discharge the timewise predictableProjection argument.
+
+Intrinsic observed IBM filtration, original rough joint derivative domains,
+running martingale claims and nonlinear physical-time calculus remain separate
+OPEN obligations.1456 unprojected native-input norm/probability obstruction
+remains valid. No full IBM completion or campaign transition is claimed.
+
+Development failures retained .lake/stardust-1461-target1..10.log. Repairs:
+MemLp.ae_eq rather than nonexistent congr; implicit gaussianPDF_lt_top arguments;
+explicit weighted function comparison; physical complexify namespace; correct
+addition side in norm inequality; beta normalization before map_smul; coherent
+real scalar instance selection as explained; correct integral_dirac' arguments.
+No heartbeat/compiler option/version/trust changes; DEFAULT200000 retained.
+
+Verification: COMPLETE root6593 jobs (26.023022s); COMPLETE transitive
+collectAxioms audit 46459 safe Foundation declarations (37.649257s), only
+propext/Classical.choice/Quot.sound. All26 public types read UNABRIDGED and
+ENTIRE three final sources reviewed. EIGHT independent Lean checks passed
+(25.494992s). All2421 Foundation/root sources+3configs frozen/rechecked;
+all113 archive paths/hashes unchanged. No mathematical edit after final gates.
+Evidence .lake/stardust-1461-working-checkpoint.json, -full-build.log, -audit.log,
+-independent.log, timing JSON and -verification.json. Six explicit-path Git
+commit, exact receipt and verified PRIVATE main/research sync required before
+closure. Goal and IBM campaign remain ACTIVE.

@@ -2316,3 +2316,6 @@ import Foundation.IBMFoldedHeatField
 import Foundation.IBMFoldedHeatPredictable
 import Foundation.IBMFoldedHeatNativeIto
 import Foundation.GaussianBrownianConditionalTransition
+import Foundation.GaussianSignedFold
+import Foundation.IBMPhysicalGaussianFold
+import Foundation.IBMPhysicalSlopeConditional
