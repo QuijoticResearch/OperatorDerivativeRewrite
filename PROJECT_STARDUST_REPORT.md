@@ -40316,3 +40316,104 @@ derivative tower and whole-history conditional score at0/1. Scratch failures,
 if any, are retained separately. Production source hashes are frozen.
 
 Final gates: complete root6617jobs 25.581912s; complete transitive audit 46766 safe declarations, standard three axioms only, 40.511154s; TEN independent Lean checks 42.242574s. All2445 Foundation/root sources+3configs+113archive hashes rechecked. Explicit SIX-path commit, exact receipt and verified PRIVATE main/research closure follow. Evidence .lake/stardust-1470-verification.json.
+
+## Checkpoint1471 — arbitrary-past terminal step covariance, including the rough endpoint
+
+IBM remains ACTIVE. Previous goal turn made verified mathematical progress:
+checkpoint1470 / 0f601b52719451ae10ee049b30e91a526753dae5 passed its full
+build, complete transitive axiom audit, full source/type review, independent
+tests, exact receipt and verified PRIVATE main/research gate. This checkpoint
+discharges its missing arbitrary-past covariance and terminal-endpoint
+obligations. The native Ito reconstruction remains open. Queue8280325 is
+unchanged: AI mathematics is last after black noise, with all preceding gates.
+No reflection session, premature queued campaign or parallel research session.
+All113 read-only/uncommitted ResearchSources paths/hashes remain identical,
+including IBM manuscript EJP2605-044RA0.pdf SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+
+Foundation/IBMSchwartzConditionalIncrement.lean reuses1470's actual all-source
+Gaussian transition identities and the EXISTING independent-innovation
+conditioning theorem, actual Brownian increment laws, whole raw natural clock
+filtration, conditional-value version1469 and Mathlib's Bochner conditional
+expectation pull-out property. No new process, filtration, derivative or
+stochastic integral is defined. The private bounded_weight_integrable proves
+that an integrable scalar times a uniformly bounded strongly measurable Banach
+function is integrable. increment_memLp and increment_integrable discharge
+actual Gaussian increment and smoothed-vector integrability; Cauchy–Schwarz
+discharges products of arbitrary past L2 coefficients with clock increments.
+All these are genuine integrals under the original Gaussian product law.
+
+conditional_increment proves the actual conditional expectation of
+ (B_R-B_S)*heatMean(g,a,B_R,v)
+given the ENTIRE raw clock past at S equals
+ (R-S)*heatScore(g,a,B_S,R-S+v), S<=R,v>0.
+It conditions the joint function of the entire past and independent increment,
+not merely the current clock coordinate. weighted_increment extends the
+identity to EVERY real GaussianL2 coefficient V that is AE measurable in that
+past, including unbounded past weights. No auxiliary independence of V and
+the entire terminal observable is assumed. weighted_terminal separately proves
+the actual conditional-value pairing for EVERY integrable scalar weight U
+measurable in the clock past at R<=T; boundedness of the source curve supplies
+all product integrability. terminal_step combines these facts for S<=R<T.
+
+The terminal R=T case was NOT inferred by differentiating the rough curve or
+asserting an unproved endpoint limit. curve_increment directly proves
+ integral x*curve(g,a,b+x) dN(0,u) = u*heatScore(g,a,b,u), ALL u>=0,
+by the ACTUAL scaled Gaussian HasLaw and1469's centered_integral identity.
+For u>0, sigma=sqrt(u), sigma^2=u and u/sigma=sigma are justified before scalar
+normalization. For u=0, the Dirac Gaussian gives zero on both sides. The
+existing curve is only half-Holder in sourceL2; no derivative of it is needed.
+conditional_endpoint then conditions the actual rough terminal curve against
+the increment using the entire earlier history, with all integrability proved.
+weighted_endpoint extends it to EVERY pastL2 scalar weight V.
+
+The combined terminal_step_closed states the ALL-SOURCE Bochner identity
+ E_Y[V(Y)*(B_R-B_S)*curve(g,a,B_T)]
+   = (R-S)*E_Y[V(Y)*heatScore(g,a,B_S,T-S)]
+for EVERY S<=R<=T and EVERY V in the original real clock GaussianL2 that is
+AE measurable in the raw clock past at S. The value lives in the ORIGINAL
+scenery GaussianL2 and retains ALL scenery chaos. By the existing actual
+sections theorem, curve(g,a,B_T) represents literal g(a+IBM_T), AE scenery
+for each clock section. This checkpoint asserts the vector identity, not a
+new simultaneous-all-time scalar version or an observed-IBM-filtration law.
+Zero-length steps and T=S are included by exact zero factors, not a terminal
+rough-curve derivative claim. Explicit NNReal subtraction/coercion is justified
+by the time ordering before using real elapsed times.
+
+weighted_score also proves, for EVERY such V and S<=R,v>0,
+ E[V*score(B_R,v)] = E[V*score(B_S,R-S+v)].
+This supplies the weighted propagation needed for the upcoming time-integrated
+score pairing. All Bochner conditional and weighted integrability obligations
+are discharged. No first-source-only physical tests replace the source vector.
+These are standard Gaussian/conditional-expectation principles specialized
+and formally connected to the actual nonlinear IBM observation; no novelty
+claim is made for the underlying principles.
+
+CENTRAL remaining work: prove the actual time-integrated score pairing with
+proper time/clock Fubini and energy bounds, then clip steps at T, use the old
+full predictable step density and source tensor separation to identify1468's
+finite-energy input with the ORIGINAL native canonical adjoint representer.
+Only then conclude actual native integral = terminal minus the nonlinear
+initial scenery mean. Neither this covariance nor weighted score propagation
+alone is that reconstruction. Observed IBM filtration, initial source adjoint
+and full intrinsic physical-time calculus remain distinct open obligations.
+The entire initial scenery parameter is not observed IBM time-zero information.
+Preserve1467's raw oddPart non-Cauchy/no-L2-limit obstruction; the positive
+finite-energy heat input remains a DIFFERENT integrand, not its refuted limit.
+
+All target failures are retained (target1–9): measurable versus continuous
+composition, Pi scalar-action normalization, NNReal versus real subtraction,
+reversed truncated-subtraction telescoping, elementary square-root algebra,
+one continuation indentation error and a misnamed existing MemLp API. No
+mathematical hypothesis was weakened. Default200000 heartbeats, all options,
+toolchain, trust and pinned configurations unchanged. Existing ordinary
+definitions are marked LOCAL irreducible only to control elaboration.
+The ENTIRE final source and private proof, and ALL ELEVEN final public types,
+were read unabridged. TEN independent Lean tests passed on their first run:
+independent Brownian covariance0 and increment variance1; actual rough-curve
+increment at unit variance and Dirac zero variance; correlated V=B_1 at the
+terminal and strict preterminal cases; zero step; constant past-weight tower;
+arbitrary-past weighted score propagation and actual conditional endpoint0/1.
+Production mathematical inputs were frozen before full gates and rechecked.
+
+Final gates: complete root6618jobs 25.109088s; complete safe transitive audit 46778 declarations, standard three axioms only, 36.014823s; TEN independent Lean checks 26.153647s. All2446 Foundation/root sources+3configs+113archive hashes unchanged after gates. Explicit FOUR-path commit, exact receipt and verified PRIVATE main/research closure follow; evidence .lake/stardust-1471-verification.json. IBM remains ACTIVE.

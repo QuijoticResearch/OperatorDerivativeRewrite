@@ -2343,3 +2343,4 @@ import Foundation.IBMSchwartzHeatDerivative
 import Foundation.GaussianBoundedBanachStein
 import Foundation.IBMSchwartzHeatSemigroup
 import Foundation.IBMSchwartzHeatIncrement
+import Foundation.IBMSchwartzConditionalIncrement
