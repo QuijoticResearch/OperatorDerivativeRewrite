@@ -37868,3 +37868,97 @@ exact-commit receipt and PRIVATE main/research verification follow, preserving
 all mathematical and source-integrity gates.
 
 Terminal timings: root 55.018551s; complete transitive audit 45743 declarations, 40.096716s; independent checks 36.846579s; all exit0.
+
+## Checkpoint1447 — genuine physical clock-past measurability and unbounded correction-left stochastic steps
+
+IBM remains ACTIVE; queue1422 unchanged. This resolves the per-time raw-past
+measurability gap recorded1446 and upgrades the actual correction-left sums.
+Source: ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+Original manuscripts and all previously verified mathematical results remain
+unchanged. No novelty claim, new campaign or reflection/housekeeping session.
+
+IBMPhysicalPastMeasurability.past_of_scalar_tests lifts past measurability
+of EVERY original real physical dual scalarization to the full physical
+GaussianL2 random variable. It uses EXISTING Mathlib condExpL2, the PROVED
+condExpL2_comp_continuousLinearMap theorem and physical Lp separation1440.
+The physical conditional projection has raw-past values. Every scalar
+projection fixes its scalar input under the stated scalar past hypothesis;
+commutation and separation then force the physical projected class to be
+the original class. No assumed countable norming basis, new conditional
+expectation, physical Wiener extension or uncountable intersection of AE
+exceptional sets is used. This gives a reusable, actually proved lift for
+arbitrary physical GaussianL2 inputs, not only the current correction family.
+
+scalarField_cut proves that the existing scalarization field of ANY input
+in the ORIGINAL physical Ito Domain T is fixed by the actual time cutoff T.
+Original scalarization1440 and the OLD GaussianConditionalIto.integral_cut_mem_past
+then prove scalar_integral_past. The projection lift yields integral_past:
+EVERY original physical Ito output is AEStronglyMeasurable with respect to
+the ACTUAL Brownian clock naturalFiltration T. The physical point endpoint
+is past measurable by its PROVED representation as the continuous physical
+primitive at |actual clock_T|. Therefore the ORIGINAL correctionLimit is
+raw-past measurable, as is the corrected running integral. These statements
+are no longer assumed from per-time Lp classes or informal adaptedness.
+
+IBMPhysicalCorrectionSteps reuses the EXISTING1441 unbounded physical past
+increment product. All hypotheses for the ACTUAL correctionLimit at time a
+are now discharged. increment(a,b) is the genuine physical GaussianL2 class
+of (Y_b-Y_a)*correctionLimit(a), for a<=b. It has EXACT energy
+(b-a)||correctionLimit(a)||_L2^2 and is raw-clock-past measurable at b.
+There is no coefficient boundedness, finite chaos expansion or derivative
+assumption. Each physical real dual test identifies it with the OLD full
+predictable scalar Brownian Ito step, with its original raw-past domain
+witness CONSTRUCTED from the new actual correction measurability proof.
+
+partitionClass is the finite sum of these actual physical GaussianL2 steps.
+partitionClass_ae identifies the literal leftCorrectionSum from1446, upgrading
+that RAW sum from established L1 integrability to genuine L2 membership.
+partition_scalarization identifies EVERY physical test with the OLD scalar
+Ito integral of the corresponding finite predictable field. partition_past
+proves full physical past measurability at any parent horizon. Centering is
+proved first for all scalar tests and then for the FULL physical Bochner
+expectation: partition_mean_zero tests the actual mean against itself using
+the Hilbert dual and continuous-linear integral commutation. Thus physical
+mean zero is a genuine vector identity, not an unproved inference from a
+selected family of moments. These finite-step results retain every clock
+chaos sector of the actual physical first-scenery correction representation.
+
+Precise remaining integration gate: construction of a general physical
+TIME-predictable step field and identification with the ORIGINAL physical
+Ito MAP has not yet been completed for these arbitrary physical random
+coefficients. All scalar step domains and actual physical stochastic products
+are proved; this is not automatically a new physical time-domain theorem.
+Next assemble that input (using actual raw-past representatives, finite
+predictable rectangles and existing physical L2 product bounds), prove
+joint-time L2 regularity/approximation and the individual continuous-time
+correction-left sum limit. Only then identify a genuine separate integral
+and use1446's joint product rule to obtain the companion limit. Do not define
+a missing integral from the joint identity and call it complete. Common
+continuous versions, nonlinear full intrinsic IBM calculus and original
+unprojected IBM derivatives/adjoints remain separate open obligations.
+The filtration here is Brownian CLOCK history, not raw IBM history. No raw
+IBM semimartingale claim, random-partition assertion or ordinary Gaussian
+Wiener map on arbitrary H^-1 data is made;1430 remains valid.
+
+Eight independent Lean checks cover conditional expectation fixing the ACTUAL
+original correction, measurability of arbitrary original Ito outputs at later
+clock horizons, the full physical conditional projection fixed-point property
+under all scalar-test hypotheses, zero-length stochastic interval, actual RAW
+left sum L2 membership, exact scalar predictable-input norm/isometry, connection
+of actual scalarized step outputs to the EXISTING closed derivative-adjoint
+hilbertDivergence graph, and conditional expectation fixing completed physical
+step outputs. A projection test needed the standard explicit Fact that the
+clock-past sigma algebra is below the ambient algebra to synthesize its closed
+orthogonal projection; the failed log is retained. Source development fixes
+were indicator cutoff representatives and Finset.sum_apply. No mathematical
+hypothesis, toolchain, heartbeat, compiler option or axiom policy changed.
+
+Verification: complete root6555jobs, COMPLETE safe-Foundation TRANSITIVE
+axiom audit with only propext/Classical.choice/Quot.sound, all20 UNABRIDGED
+new public types and both entire final source/proofs reviewed,8 independent
+checks;2383 Foundation/root sources+3 configurations+113 archive path/hash
+entries frozen/rechecked. Five explicit Git paths, exact receipt and verified
+PRIVATE main/research backup follow and do not replace mathematical gates.
+
+Terminal timings: root 25.400105s; complete transitive audit 45781 declarations, 39.046493s; independent checks 25.720092s; all exit0.
