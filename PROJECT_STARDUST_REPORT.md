@@ -37428,3 +37428,93 @@ were frozen and rechecked. Explicit Git checkpoint and exact receipt/PRIVATE
 main+research verification follow; the receipt is not a substitute for gates.
 
 Terminal timings: root 24.803786s; complete transitive audit 45493 declarations, 40.512975s; independent checks 33.151028s; all exit0.
+
+## Checkpoint1442 — coherent actual corrected physical residual and strong-L1 zero square sums
+
+IBM remains ACTIVE; queue1422 and all campaign gates are unchanged. This
+assembles the actual running-increment obligation1441 and the independent
+Taylor1438 and stochastic1439 estimates into a physical residual theorem.
+The source anchor remains ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+No original manuscript or existing mathematical result changed. This is
+active IBM proof work, not a daily housekeeping session; no reservation or
+reflection date was consumed. No novelty assertion or campaign transition.
+
+IBMPhysicalCorrectedRunning constructs stopped(a,T) in the ORIGINAL physical
+Ito Domain T by composing the already verified corrected slope Gprime with
+the EXISTING stopped scalar Brownian integrand. Every physical-L2 and raw
+predictable-domain premise is PROVED using the old scalar L2/L1 bounds.
+stopped_ae gives exactly the stopped corrected slope; stopped_zero_extension
+proves its actual horizon support. The1440 original physical horizon theorem
+then proves stopped_integral(a,T)=running(a) whenever a<=T. running(a) is
+therefore a coherent family of ORIGINAL Ito outputs, not unrelated cell
+integrals or a postulated new stochastic operator.
+
+error_domain identifies the ORIGINAL1439 predictable error input as
+stopped(b,b)-stopped(a,b)-frozen(a,b), using actual physical representatives
+and complete support cases. Original integral linearity, proved horizon
+compatibility and1441 actual random coefficient identification give
+error_integral: old cell Ito = running(b)-running(a)-Gprime(Y_a)(Y_b-Y_a).
+error_integral_actual establishes this formula for the actual continuous
+Brownian clock coordinates, as an almost-sure physical H^-1 equality.
+
+IBMPhysicalCorrectedVariation uses the ACTUAL spatial primitive
+G(r)=Phi(|r|)-|r| delta_0, not a scalar polynomial surrogate.
+value_actual_ae identifies G(Y_t) with the EXISTING physical IBM endpoint
+minus |Y_t| delta_0. Its Gaussian-L2 membership follows by DIRECT REUSE of
+the established physical endpoint and the Brownian absolute-value L2 class;
+there is no new moment or abstract process foundation. residual(t,Y) is
+G(Y_t)-running(t)(Y), and residual_memLp/residualClass construct its actual
+physical L2 random variable at every time with exact AE agreement.
+
+The stochastic increment identity gives Delta(residual) = physical Taylor
+remainder - ORIGINAL cell-error Ito. Thus cell_bound proves squared residual
+increments <= twice squared Taylor remainder + twice squared stochastic cell
+error. This is an actual stochastic inequality, not only a formal expectation
+identity. On the EXISTING n+1-cell uniform grids, squares_bound, integrability
+and mean bounds follow with ALL premises proved. The verified1438 Taylor
+square-sum and1439 stochastic square-sum mean limits imply
+squares_mean_tendsto. squaresClass_tendsto gives STRONG convergence in
+L1(clock probability) of the actual nonnegative physical squared-increment
+sums to ZERO, for every finite nonnegative horizon T. No unproved
+integrability, coefficient identification or cell consistency remains in
+this particular theorem.
+
+Precise limits: uniform deterministic grids are the proved partition family.
+No arbitrary partitions, stopping-time grids, almost-sure convergence of the
+whole sequence, uniform-in-time topology, jointly continuous/adapted path
+version or bounded variation is asserted here. The per-time original Lp
+representatives and all finite grid equalities are legitimate; the proof
+does not silently promote them to a common continuous version. The calculus
+is for ACTUAL clock randomness with values in physical H^-1, retaining all
+clock chaos degrees and the first-scenery physical kernel representation.
+It is not an ordinary Gaussian-L2 Wiener extension of arbitrary H^-1 data
+(the1430 obstruction remains) or full unprojected nonlinear joint-IBM calculus.
+
+In particular, the ORIGINAL reflected physical correction includes the
+actual origin local-time term. The next obligation is to prove the signed
+Dirac coefficient = corrected slope + delta_0 times actual sign coefficient,
+identify the corresponding ORIGINAL integrals and actual Brownian Tanaka
+term, then transport the corrected-residual result to that original object
+with appropriate local-time control. Do not discard or assume vanishing of
+this term. IBM remains incomplete and active.
+
+Eight independent Lean checks test reconstruction of running increments
+from original cell error plus actual random product, parent-horizon consistency,
+the literal old physical endpoint/origin relation, completed-class increment
+agreement, control of EVERY physical scalar test by the vector square sum,
+convergence of actual L1 norms, pointwise zero horizon and finite-grid
+independence from Lp representatives. All passed. Initial development errors
+were missing namespace/pointwise finite-sum measurability and explicit
+unfolding/AE-transfer API issues; failed build logs remain. No heartbeat,
+compiler options, axiom whitelist or mathematical hypotheses were weakened.
+
+Verification: complete root build6544jobs, COMPLETE TRANSITIVE audit of every
+safe Foundation declaration with whitelist propext/Classical.choice/Quot.sound,
+all30 UNABRIDGED new public types and both entire source/proofs reviewed,
+8 independent Lean checks, and frozen/rechecked2372 Foundation/root sources,
+3 configurations and113 archive path/hash entries. Git uses only the5 explicit
+source/ledger paths. Exact-commit receipt and verified PRIVATE main/research
+backup follow and do not substitute for these checks.
+
+Terminal timings: root 26.012798s; complete transitive audit 45543 declarations, 38.815004s; independent checks 26.842139s; all exit0.

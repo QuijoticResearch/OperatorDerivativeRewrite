@@ -2268,3 +2268,5 @@ import Foundation.IBMPhysicalHorizonCompatibility
 import Foundation.IBMPhysicalStoppedClockIntegral
 import Foundation.IBMPhysicalPastIncrement
 import Foundation.IBMPhysicalFrozenSlope
+import Foundation.IBMPhysicalCorrectedRunning
+import Foundation.IBMPhysicalCorrectedVariation
