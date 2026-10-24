@@ -2344,3 +2344,6 @@ import Foundation.GaussianBoundedBanachStein
 import Foundation.IBMSchwartzHeatSemigroup
 import Foundation.IBMSchwartzHeatIncrement
 import Foundation.IBMSchwartzConditionalIncrement
+import Foundation.IBMSchwartzHeatTimePairing
+import Foundation.IBMSchwartzHeatCanonical
+import Foundation.IBMSchwartzHeatReconstruction

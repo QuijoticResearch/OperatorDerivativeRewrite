@@ -40417,3 +40417,123 @@ arbitrary-past weighted score propagation and actual conditional endpoint0/1.
 Production mathematical inputs were frozen before full gates and rechecked.
 
 Final gates: complete root6618jobs 25.109088s; complete safe transitive audit 46778 declarations, standard three axioms only, 36.014823s; TEN independent Lean checks 26.153647s. All2446 Foundation/root sources+3configs+113archive hashes unchanged after gates. Explicit FOUR-path commit, exact receipt and verified PRIVATE main/research closure follow; evidence .lake/stardust-1471-verification.json. IBM remains ACTIVE.
+
+## Checkpoint1472 — explicit nonlinear heat-score native stochastic reconstruction
+
+IBM remains ACTIVE. Previous1471 /6b3b455eb48af1378aa5e885aaa9e4881c54e4fa
+made verified mathematical progress and passed its exact PRIVATE main/research
+gate. This checkpoint DISCHARGES1471's central time-integrated pairing,
+canonical predictable-adjoint identification and ACTUAL native reconstruction
+obligations for the full Schwartz terminal family. It does NOT complete all
+intrinsic IBM calculus or the observed IBM filtration. Queue8280325 unchanged;
+no early queued campaign, no reflection session or parallel mathematical agent.
+All113 ResearchSources paths/hashes remain unchanged/read-only/uncommitted,
+including primary IBM PDF EJP2605-044RA0.pdf SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+
+Notation: f_{g,a}(r)=curve(g,a,r), the ORIGINAL scenery GaussianL2 class of
+g(a+W(|r|)); P_v f(b)=heatMean(g,a,b,v), an actual Bochner Gaussian mean.
+For fixed horizon T, the1468 integrand is the literal predictable field
+ H_T(s,Y)=heatScore(g,a,clockPath(Y,s),T-s), 0<s<=T,
+with terminal value0 by convention.1469 identified its genuine spatial heat
+derivative for s<T, and1468 proved its actual L2 energy and native membership.
+No new integral or process has been substituted for those existing objects.
+
+IBMSchwartzHeatTimePairing first proves weighted_integrable on the ACTUAL
+time-clock product measure for EVERY scalar clock GaussianL2 coefficient V,
+without assuming boundedness or past measurability. L2 lifting of V and1468's
+actual raw_memLp supply an integrable product of norms by Holder; this dominates
+the actual Banach scalar product. step_integrable restricts it to every
+(S,R] subset(0,T]. Only AFTER this proof are product and swapped integrals
+interchanged. row_pairing uses1471's weighted_score and the actual clockPath
+coordinate law for each fixed time, with all NNReal elapsed-time conversions
+proved. time_pairing integrates this identity; s=T is omitted only as an
+actual Lebesgue-null singleton, not assigned a false terminal derivative.
+step_duality and column_pairing now give, for EVERY S<=R<=T and EVERY past-S
+real GaussianL2 coefficient V, the FULL scenery GaussianL2 Bochner identity
+ integral_(S,R] E_Y[V*H_T(s,Y)] ds
+   = E_Y[V*(B_R-B_S)*f_{g,a}(B_T)].
+The clock/time Fubini hypotheses and endpoint handling are all discharged.
+
+IBMSchwartzHeatCanonical uses EVERY bounded real source functional L, not
+merely physical first-chaos tests. terminal is L applied to the EXISTING
+actual endpointLimit source-valued class; terminal_ae and terminal_past
+identify its literal L(f(B_T)) representative and the original pastL2 domain.
+finite is the actual scalarized1468 input in the independently defined native
+finite predictable space; full is its OLD zero extension. Their AE formulas
+and support atT are proved. inner_step turns the full-source step duality
+into the ORIGINAL L2 adjoint pairing against actual native Ito step products.
+Both terminal and time integrability are proved before moving L through
+Bochner integrals. full_eq_adjoint then tests ALL past L2 steps, clips arbitrary
+steps at T, uses OLD support of the original predictable representer and the
+verified GaussianPredictableStepExt full-domain density. It proves
+ full(g,a,T,L) = ORIGINAL predictableAdjoint(terminal(g,a,T,L)).
+The candidate is specified by the actual heat score BEFORE this equality;
+generic existence of some Brownian representer is not substituted for it.
+
+IBMSchwartzHeatReconstruction.scalar_reconstruction combines that equality
+with the ORIGINAL source-clock native scalarization and Brownian PRP on the
+PROVED past domain. source_reconstruction uses ALL bounded source duals and
+the existing separable dual-separation theorem, with the required Lp2
+non-infinite-exponent instance, to obtain STRONG equality in the actual
+Bochner clock-L2(scenery GaussianL2):
+ GaussianSourceClockIto.integral(T,input(g,a,T))
+   = endpointLimit(g,a,T) - const(E_clock endpointLimit(g,a,T)).
+Dual interchanges use actual Bochner integrability. No arbitrary intersection
+of uncountably many null sets is taken. initial_mean identifies the initial
+scenery class with P_T f(0) via the actual Brownian terminal Gaussian law.
+
+native_reconstruction transfers that equality through the EXISTING norm-
+preserving joint realization and1466's genuine native integral agreement.
+native_adjoint_reconstruction places the SAME original explicit field in the
+ORIGINAL IBM clockDerivative.adjoint graph with that value. native_actual
+states literal equality AE under the ACTUAL joint source/clock law:
+ value(g,a,T)(X,Y) = g(a+IBM_T(X,Y)) - heatMean(g,a,0,T)(X).
+actual_native_sections proves that for AE scenery X, the ORIGINAL scalar
+GaussianPredictableHorizon Ito integral of the ORIGINAL native field section
+equals that literal terminal difference AE clock Y. This is an actual native
+stochastic identity for EVERY real Schwartz g, real a and finite T>=0.
+No conditional regularity/energy premise remains in these reconstruction
+theorems. The specified coefficient retains all scenery chaos.
+
+Precise limits: T is fixed in the AE statements. No simultaneous-all-time
+scalar identity, T-independent integrand, observed-IBM natural-filtration PRP,
+or integral directly against dIBM is asserted. Entire initial scenery X is
+a parameter and is NOT observed IBM time-zero information. The initial term
+P_T f(0)(X) is horizon-dependent. Its source-adjoint realization and combination
+with the clock field in the ORIGINAL intrinsic joint calculus remain to be
+audited/proved, including the correct deterministic mean/centering. Do not
+assume g(a+IBM_T)-g(a) is centered for general g. Full intrinsic physical-time
+Ito/derivative/integration laws, observed filtration and remaining exact F1-F3
+closure questions are still open. Audit/reuse the existing general OU/source
+and joint decompositions before constructing additional machinery.
+
+This positive heat-score reconstruction does NOT contradict1467's raw running
+integrand obstruction. For g(x)=x exp(-x^2),a=0, the OLD native mollified running
+integrals are not Cauchy/no joint L2 limit. The NEW horizon-dependent heat
+integrand has genuine finite energy and exact actual native reconstruction.
+Independent Lean tests explicitly prove their coexistence. No convergence of
+the refuted old integrands to this new field is claimed. The standard Gaussian
+heat/PRP/dual-separation principles are not claimed novel; this checkpoint's
+contribution is their exact formal reuse with the actual nonlinear IBM family,
+explicit coefficient and original native/intrinsic clock operators.
+
+All THREE entire final source files/private proofs and ALL23 public types
+were read unabridged. Full audit covers every safe Foundation declaration and
+its complete transitive axiom closure. Production sources unchanged after the
+successful full build/audit. Target failures1/3/4/6/7/8 are retained: explicit
+measure notation/constant integral, CLM integral orientation, commutation,
+ordinary definition expansion at default200000, required finite Lp exponent
+instance, constant representative and Measure namespace normalization.
+LOCAL irreducibility of existing ordinary field/operator definitions resolved
+expansion; no definitions, theorem semantics, trust/resource/toolchain options
+or verification requirements were weakened. One failed independent scratch log
+is retained: only NNReal zero/unit coercions were normalized, with no
+production mathematical input changes or redundant full build/audit restart.
+TWELVE independent tests cover exact zero time interval, actual correlated
+past endpoint step/Fubini, arbitrary source Hilbert probes and canonical
+adjoint, scalar reconstruction, native nonlinear energy isometry, initial mean
+atT0, native value0 atT0, literal oddPart actual/scalar-native reconstruction,
+its coexistence with OLD raw non-Cauchy, and ORIGINAL clock adjoint graph.
+
+Final gates: complete root6621jobs 25.901499s; complete safe transitive audit 46825 declarations, standard three axioms only, 42.475554s; TWELVE independent Lean checks 27.617729s. All2449 Foundation/root sources+3configs+113archive hashes rechecked. Explicit SIX-path commit, exact receipt and verified PRIVATE main/research backup follow. Evidence .lake/stardust-1472-verification.json. IBM remains ACTIVE, with no campaign completion or transition asserted.
