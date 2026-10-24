@@ -37103,3 +37103,81 @@ All22 public types reviewed UNABRIDGED, final full definitions/proofs read.
 All2360 Foundation/root sources+3configs frozen/rechecked;113 archive paths and
 hashes unchanged. Five explicit Git paths only; exact-commit receipt and
 PRIVATE main/research verification are required before terminal closure.
+
+## Checkpoint1438 — actual Brownian cubic sums and physical Taylor squares vanish in L1
+
+IBM remains ACTIVE; queue1422 unchanged. This discharges the first precise
+probabilistic obligation left1437. The physical norm and actual Brownian clock
+are unchanged. The anchor remains ResearchSources/ibm/EJP2605-044RA0.pdf,
+SHA256 5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+No source manuscript, pre-existing mathematical result or campaign priority was altered.
+No new publication/novelty assertion or reflection/housekeeping session.
+
+IBMClockCubicVariation directly reuses GaussianAbsoluteMoments at p=3,
+including its existing integrability and actual first-chaos moment formula.
+incrementVector is the ORIGINAL Hilbert coordinate embedding of the actual
+time-indicator difference; increment_ae proves it realizes the ACTUAL
+clockPath(Y,t)-clockPath(Y,s). No new Gaussian process is postulated. For
+ordered times, its exact cubic moment is (t-s)*sqrt(t-s)*standardMoment(3),
+using the ORIGINAL timeVector norm and Gaussian isometry. The integrability
+theorem itself permits any time pair. All coordinate/a.e. identifications
+are proved, not taken from matching distributions alone.
+
+For the EXISTING uniformTime(T,n) grid with n+1 cells, cubic(T,n,Y) is the
+actual sum of absolute third clock increments. It is nonnegative and
+integrable, and its EXACT expectation is
+T*sqrt(T/(n+1))*standardMoment(3), including T=0 and n=0. Thus its mean and
+mean absolute norm tend to zero. cubicClass is the canonical actual Lp(real,1,
+gaussianProduct) class with its a.e. representative proved; cubicClass_tendsto
+establishes STRONG L1 norm convergence to zero, not just convergence against
+fixed tests or a heuristic Brownian scaling. No independent-increment premise
+is needed for the expectation of a finite sum.
+
+IBMPhysicalTaylorMean composes the ACTUAL corrected physical H^-1 primitive
+and its proved continuous slope with the actual clock path. The squared
+Taylor remainder is measurable: its deterministic spatial function is proved
+continuous before composing with the actual two clock coordinates. The sum
+on uniform time grids is pointwise dominated by16||physicalDerivative||^2
+times cubic(T,n,Y), exactly the1437 bound. All genuine integrability premises
+are discharged by that domination. Its mean is bounded by
+16||physicalDerivative||^2*T*sqrt(T/(n+1))*standardMoment(3) and tends to zero.
+The canonical remainderClass has an EXACT a.e. actual Taylor-square-sum
+representative and converges STRONGLY in the ORIGINAL clock L1 space.
+This is now a probabilistic norm-limit theorem for the actual physical
+remainders, rather than only the previous deterministic cubic domination.
+
+Eight independent Lean checks: zero horizon for EVERY sample; repeated-time
+zero moment; one-cell T^(3/2) mean; exact genuine L1 norm/rate; joint L1
+convergence of both classes; every cofinal uniform-grid subsequence; explicit
+physical remainder expectation rate; and equality of the remainderClass
+representative with the actual physical Taylor-square sum. No positive-time,
+bounded clock value, monotone clock VALUE or conjectural path assumption.
+
+Remaining SECOND central variation obligation: identify and bound the actual
+physical Ito increment minus the left-endpoint slope times the Brownian
+increment. The new Taylor sum alone does NOT prove zero quadratic variation
+of the physical correction, a uniform-in-time limit or bounded variation.
+Reuse the ORIGINAL physical Ito isometry, restriction and tensor agreement;
+all predictable-domain and interval identifications must be proved. Preserve
+the genuine delta_0 local-time term in the reflected decomposition. The
+existing continuous mass is monotone, but its combination with the physical
+running integral must still be verified at the required time topology.
+Full unprojected nonlinear intrinsic IBM calculus and integration in IBM's
+own history remain OPEN; the present Brownian CLOCK calculus is not a
+substitute for those objectives. IBM remains ACTIVE, no early transition.
+
+Failed draft logs retained: finite-sum API name and natural-cast algebra;
+then200000-heartbeat measurability normalization. The final proof first
+names/proves continuity of the specific physical spatial remainder and then
+performs the ordinary measurable clock-coordinate composition. Local
+irreducibility is used ONLY for ordinary existing corrected/slope/clockPath
+definitions; no unsafe reduction attribute, raised heartbeat, weakened trust,
+new axiom, norm, domain or compiler configuration. DEFAULT limits retained.
+
+Final gates: full root6534jobs/25.509536699973978s/0;
+COMPLETE transitive 45329safe Foundation declarations/38.47235569998156s/0;
+eight independent checks/26.186634400044568s/0.
+All29 public types reviewed UNABRIDGED; complete final definitions/proofs read.
+All2362 Foundation/root sources+3configs frozen/rechecked;113 archive paths and
+hashes unchanged. Five explicit Git paths only. Exact-commit receipt and
+verified PRIVATE main/research backup are mandatory before terminal closure.

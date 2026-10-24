@@ -2258,3 +2258,5 @@ import Foundation.IBMPhysicalPointKernelIto
 import Foundation.IBMPhysicalPrimitiveDerivative
 import Foundation.IBMPhysicalReflectedPrimitive
 import Foundation.IBMPhysicalReflectedTaylor
+import Foundation.IBMClockCubicVariation
+import Foundation.IBMPhysicalTaylorMean
