@@ -36682,3 +36682,121 @@ Foundation/root sources+3configs frozen/rechecked;113archive paths/hashes
 unchanged. FIVE explicit Git paths: two new sources, root, axiom-audit imports/
 prints and this ledger. Exact-commit receipt and verified PRIVATE main/research
 closure remain mandatory and are recorded in the terminal checkpoint receipt.
+
+## Checkpoint1433 — full clock-domain IBP and actual tested-IBM Clark--Ocone
+
+IBM remains ACTIVE; queue1422 is unchanged. This extends1432's linear clock
+test family to EVERY integrand of the ORIGINAL full Gaussian clock divergence
+domain, and constructs actual clock Clark--Ocone for the corresponding physical
+scenery-tested IBM observables. No restriction to a chosen chaos cutoff remains
+on the clock integrands. The restriction to the specified physical scenery-test
+family remains explicit; full intrinsic IBM calculus is not declared complete.
+
+The primary manuscript anchor remains ResearchSources/ibm/EJP2605-044RA0.pdf,
+SHA256 5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+No original manuscript was modified. This work addresses the remaining actual
+process/domain connection from1430--1432, not a new campaign or housekeeping
+session. Standard Gaussian representation theorems are reused, not asserted
+as novel. All assertions below concern actual ordinary Gaussian probability
+and the already constructed continuous IBM sources.
+
+Foundation/IBMPhysicalSceneryTestClockGraph.lean defines, for EVERY existing
+physical dual test L, F_t^L(Y)=E_X[actualIBM_t(X,Y)*testNoise(L)(X)]. point_actual_ae
+proves this literal ordinary expectation representative, and
+actual_scenery_product_integrable proves its product is integrable for almost
+every clock sample. The Bochner definition is the EXISTING bounded source
+contraction of the EXISTING actual IBM point, not a postulated new process.
+
+The original finite-width clock graphs are contracted by the same actual
+testNoise(L). gradientProjection_native identifies their EXACT contracted
+derivatives with direction(t) times the tested ORIGINAL signedSource(n,t).
+The verified physical signed-Dirac convergence1432 then gives strong GaussianL2
+convergence of BOTH actual native values AND their original derivatives.
+point_graph/point_mem/derivative_value use the ORIGINAL closed clock derivative
+graph to prove, for EVERY t>0 and L, that F_t^L is in its ACTUAL full domain and
+its derivative is direction(t) times L[sgn(Y_t)*delta_|Y_t|]. Both sides are
+genuine original Hilbert classes, with the physical test fixed. No derivative
+domain or graph-convergence premise is left for the caller to discharge.
+This reuses GaussianClockBochnerContraction.contract_graph/contract_comp/
+contract_flip, the actual mollified_clock_graph and physical point slope.
+
+Foundation/IBMPhysicalFullClockAdjoint.lean applies the actual original adjoint
+identity to this graph. clock_ibp and actual_clock_ibp hold for EVERY v in the
+original hilbertDivergence.domain, including arbitrary higher clock sectors:
+E_Y[F_t^L*delta_clock(v)] =
+E_Y[sgn(Y_t)*L(delta_|Y_t|)*inner(direction(t),v(Y))].
+The left side uses the literal ACTUAL IBM scenery expectation. Separate
+actual_clock_product_integrable/slope_product_integrable declarations verify
+both expectation products on their exact domains. No Fubini interchange or
+regularity of a separately guessed integrand is assumed.
+
+field(L,v)=testNoise(L)(X) times v(Y) has PROVED membership in the ORIGINAL
+lifted full clock-adjoint domain, with output testNoise(L) times delta_clock(v).
+BochnerLiftAdjointInclusion and the original divergence graph prove this for
+EVERY v, not only polynomial or adapted fields. clock_inner_bridge identifies
+its raw IBM pairing with the same physical signed-Dirac expression.
+intrinsic_adjoint_bridge transports it into the ORIGINAL full intrinsic joint
+divergence domain as pairField(0,field(L,v)), reusing1432's verified intrinsic
+projection and native-unitary transport. This removes the former linear-clock
+restriction while preserving the exact original operators and hypotheses.
+
+Foundation/IBMPhysicalSceneryTestClarkOcone.lean proves point_mem_past: F_t^L is
+measurable in the RAW Brownian clock past at t. The proof uses its actual
+continuous sourceScenery/process representative and the existing strongly
+adapted clock, not an assumption that all ambient Gaussian variables are
+Brownian-generated. The full closed derivative membership above and this
+measurability discharge BOTH prerequisites of the EXISTING
+GaussianBrownianPRP.clark_ocone and GaussianConditionalClarkOcone theorems.
+
+representer(t,L) is the ORIGINAL predictableProjection of the ACTUAL derivative
+just identified. representer_eq_adjoint proves equality with the actual bounded
+predictable adjoint of F_t^L. clark_ocone gives its centered terminal identity
+under the ORIGINAL genuine Brownian Ito integral. actual_clark_ocone states
+this as a literal ordinary almost-everywhere identity for the nested ACTUAL
+IBM expectation, including its correct mean. representer_supported proves
+the ACTUAL t-horizon cutoff; representer_unique proves uniqueness among all
+original full predictable integrands by the unchanged Ito isometry.
+conditional_clark_ocone supplies every clock-past cutoff s, with the genuine
+future-time truncated representer and no running-derivative substitution.
+
+Exact limitations: F_t^L is a SOURCE-TESTED clock observable. It is not the raw
+joint IBM point and is not asserted to be measurable in the intrinsic IBM
+history. The stochastic integral, filtration, conditional projection and
+predictability here are those of the ORIGINAL Brownian CLOCK. A fixed terminal
+Clark--Ocone identity does not assert that t -> F_t^L, or raw IBM, is a
+martingale. The raw point's ordinary clock/joint derivative-domain obstruction
+remains unchanged. This is not a full unprojected nonlinear IBM Ito theorem,
+intrinsic IBM-filtration Clark--Ocone, graph-norm density of all joint tests,
+or a proof that the physical, common-OU and intrinsic graph duals are equal.
+Higher SCENERY chaos/test domains and the full nonlinear intrinsic calculus
+remain open. IBM remains active; no campaign transition.
+
+Twelve independent Lean examples check strong simultaneous native graph
+convergence; membership in the ORIGINAL derivative graph; the literal actual
+IBM representative; inner/outer product integrability; full intrinsic-domain
+bridge for EVERY clock divergence v; actual Wick integrands of EVERY order;
+a concrete nonlinear quadratic clock field with CUBIC divergence; equality
+with the actual predictable adjoint; literal ordinary stochastic reconstruction;
+terminal-time support; predictable uniqueness; and conditional reconstruction.
+Two helper proofs instantiate EXISTING Wick divergence graphs; this is direct
+reuse, not a new chaos campaign. All final sources/proofs and all37 public
+types were read unabridged. DEFAULT200000 heartbeats, original norms/measures,
+no new axiom or final compiler option. Failed target logs1/3/4 are retained:
+repairs supplied the original Gaussian measure argument, explicit Lp aliases,
+the correct orientation of the actual clock-coordinate equality, the existing
+positive-time proof in derivative_value, and Pi.mul_apply for product functions.
+No mathematical claim was weakened or error suppressed.
+
+The next useful direction is actual higher-scenery/nonlinear test calculus or
+a physical kernel-valued clock formula, with exact correspondence to intrinsic
+IBM observables and every convergence/domain premise discharged. Do not mistake
+this completed source-tested clock calculus for completion of the whole IBM
+campaign. Reuse these graphs and representations rather than duplicating them.
+
+Checkpoint1433 gates: root6523jobs/26.946186499961186s/0;
+COMPLETE safe transitive45006declarations/36.38020520005375s/0;
+twelve independent checks/26.456743000017013s/0. All2351
+Foundation/root sources+3configs frozen/rechecked;113archive paths/hashes
+unchanged. SIX explicit Git paths: three new sources, root, axiom-audit imports/
+prints and this ledger. Exact-commit receipt and verified PRIVATE main/research
+closure remain mandatory and are recorded in the terminal checkpoint receipt.

@@ -2246,3 +2246,6 @@ import Foundation.IBMPhysicalWeakWiener
 import Foundation.IBMSchwartzWeakWienerClosure
 import Foundation.IBMPhysicalPointSlope
 import Foundation.IBMPhysicalClockAdjointBridge
+import Foundation.IBMPhysicalSceneryTestClockGraph
+import Foundation.IBMPhysicalFullClockAdjoint
+import Foundation.IBMPhysicalSceneryTestClarkOcone
