@@ -2354,3 +2354,4 @@ import Foundation.IBMPhysicalL2Obstruction
 import Foundation.IBMNativeClockRecovery
 import Foundation.IBMSchwartzHybridTime
 import Foundation.IBMSchwartzNativeAverage
+import Foundation.IBMSchwartzNativeTaylor

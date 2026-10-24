@@ -40965,3 +40965,110 @@ non-Cauchy, coexistence with1475 no bounded dt integral, and actual mean-zero
 of the reconstructed time average. No extra Gaussian law is assumed.
 
 Final gates: complete root6628jobs/46.372538s/0; complete safe transitive axiom audit 46975 declarations, standard three axioms only/36.997934s/0; TWELVE independent checks/27.047201s/0. All2456 Foundation/root sources+3configs+113archive paths/hashes rechecked. Explicit SIX-path commit, exact receipt and verified PRIVATE main/research backup follow. Evidence .lake/stardust-1476-verification.json. IBM remains ACTIVE.
+
+## Checkpoint1477 — actual native forward Taylor calculus with the random quartic drift and correct mean
+
+IBM remains ACTIVE; queue8280325 unchanged. Previous1476 /d4769aa passed its
+complete verification, exact receipt and verified PRIVATE main/research gates.
+This is mathematical progress toward actual intrinsic IBM calculus, not a
+campaign transition or housekeeping session. All113 archive paths/hashes remain
+unchanged and read-only/uncommitted, including EJP2605-044RA0.pdf SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+
+Reuse is exact: OLD IBMActualTaylorChain already proves that the actual
+combined FIRST THREE forward physical-time Taylor ranks of a C4 primitive
+converge in PROBABILITY to endpoint difference minus one eighth of its random
+fourth-derivative time integral.1473 gives the explicit native source/heat-clock
+endpoint reconstruction.1476 constructs actual centered Schwartz time averages
+as original divergences of the time integral of THOSE SAME prescribed fields,
+with all field continuity/integrability and actual representative Fubini proved.
+This checkpoint ASSEMBLES these actual stochastic constructions. It does not
+replace a singular raw field by generic OU existence or define an integral
+merely by choosing a desired output.
+
+New IBMSchwartzNativeTaylor.mean is the actual scalar heat mean, identified
+with E_joint[g(a+IBM_T)] by original global_mean. mean_integrable proves the
+deterministic time integrability on every finite interval. drift is the OLD
+literal intervalIntegral of shiftedJet(g,a,4) along the ACTUAL IBM paths.
+drift_path_integrable proves integrability for EVERY original continuous sample,
+not a supplied moment or path hypothesis. average_actual_split identifies
+the1476 fourth-jet observable with random drift minus its integrated mean.
+Integral subtraction is justified for both terms, and the actual Ioc physical
+window is matched to the original interval integral using T>=0. No expectation
+is silently swapped through an unjustified random time change.
+
+Let U_g(T) be the ORIGINAL1473 prescribed source/native heat-clock pair and
+let A_g4(T) be the ORIGINAL1476 integral of U_(jet g4)(s) ds. The native input is
+
+    u = U_g(T) - (1/8) A_g4(T).
+
+It is constructed INSIDE the ORIGINAL jointDivergence.domain by its genuine
+linear domain operations. Private endpointInput/averageInput only package the
+already proved graph memberships; they add no axiom or new preimage choice.
+input_field gives the exact coefficient-field formula. input_value, using
+LinearPMap.map_sub/map_smul, proves
+
+    delta u = centered(g,a,T) - (1/8) averageObservable(jet g4,a,T).
+
+The deterministic correction is
+
+    c = E[g(a+IBM_T)] - g(a)
+        - (1/8) integral_(0,T] E[(jet g4)(a+IBM_s)] ds.
+
+value is delta(u)+the constant class c. value_actual proves it equals AE under
+the ORIGINAL joint law the OLD actual Taylor limit
+
+    g(a+IBM_T)-g(a) - (1/8) integral_0^T g^(4)(a+IBM_s) ds.
+
+This uses the actual zero-time IBM law, original fourth-jet derivative identity,
+actual1476 drift reconstruction and exact representative arithmetic. EVERY
+Schwartz g, EVERY real shift a and EVERY finite T>=0 is covered. For T>0,
+channels_tendstoInMeasure transfers the OLD actual first-three-channel theorem
+to this specific native divergence plus c. Convergence remains in probability;
+the construction does NOT strengthen finite-channel convergence to strong L2.
+
+limit_memLp proves the ACTUAL limiting Taylor function belongs joint L2 for
+this entire family; this concerns the limit, not a uniform finite-sum estimate.
+actual_pairing_integrable proves its product with EVERY original jointL2 test
+is integrable. actual_pairing proves for EVERY ORIGINAL jointDerivative-domain F
+
+    E[actualTaylorLimit*F] = inner(u,D F) + c*E[F].
+
+This is genuine stochastic IBP for the actual limit, not only formal operator
+duality. actual_mean specializes to the EXISTING actual intrinsicOne with
+original derivative0 and proves E[actualTaylorLimit]=c. Thus the scalar
+normalization is independently identified as the actual expectation of the
+reconstructed random variable. No target Dom(D) assumption is introduced.
+The necessary CompleteSpace instance is the original observable space's
+already proved closedness; it is not a new completeness axiom.
+
+Limits and distinctions remain explicit. The RANDOM quartic drift is not the
+deterministic c or1474 Simpson meanShift. The independent test proves the
+actual native Taylor value minus the actual Simpson value is precisely
+-(1/8)*random drift. No individual raw rank limit, strong finite-channel L2
+convergence, uniform integrability, convergence of finite-channel expectations
+or pairings, observed-filtration adaptedness of separate native fields,
+universal random physical-time integration map, simultaneous-all-time scalar
+identity, or full IBM-calculus completion is asserted.1475 bounded ordinary
+dt-L2 obstruction and1467 OLD raw mollifier non-Cauchy remain valid. Schwartz
+is the exact positive domain here; the result is not silently extended to all
+C4 functions or non-Schwartz polynomials. Focused F1-F3 stopping1107 remains
+established at its exact earlier domains/topologies. No novelty claim is made.
+
+All16 public types and the ENTIRE final source, including private domain
+packaging, were read unabridged. Failed targets1/3/4/5 retained: explicit mean
+normalization, LinearPMap-specific linearity, fragile combined rewrite matching
+at DEFAULT200000, and the original intrinsic CompleteSpace instance. Explicit
+calc/congrArg2 and local irreducibility of ORDINARY input/value/correction
+definitions avoid expansion; no resource, trust or theorem semantics changed.
+Targets2 and6 passed. A long-line style repair preceded the successful COMPLETE
+build. First independent run failed only ambiguous correction namespace and
+pointwise function normalization at horizon0; second required explicit unfolding
+of the locally opaque correction in the mean test. The third run verifies all
+TWELVE tests with production bytes unchanged. Tests cover the actual native
+field coefficient/domain/value, fourth-jet actual mean split, nonzero-shift
+Gaussian actual identity and channel convergence, actual L2/product domains,
+original D-test IBP, exact actual mean formula, zero horizon, signed Simpson
+versus Taylor RANDOM-drift difference, and coexistence with OLD non-Cauchy.
+
+Final gates: complete root6629jobs/43.820774s/0; complete safe transitive axiom audit 47013 declarations, standard three axioms only/43.605497s/0; TWELVE independent checks/26.880914s/0. All2457 Foundation/root sources+3configs+113archive paths/hashes rechecked. Explicit FOUR-path commit, exact receipt and verified PRIVATE main/research backup follow. Evidence .lake/stardust-1477-verification.json. IBM remains ACTIVE.
