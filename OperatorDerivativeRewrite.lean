@@ -2256,3 +2256,5 @@ import Foundation.IBMPhysicalPointClockField
 import Foundation.IBMPhysicalPointClockIntegral
 import Foundation.IBMPhysicalPointKernelIto
 import Foundation.IBMPhysicalPrimitiveDerivative
+import Foundation.IBMPhysicalReflectedPrimitive
+import Foundation.IBMPhysicalReflectedTaylor

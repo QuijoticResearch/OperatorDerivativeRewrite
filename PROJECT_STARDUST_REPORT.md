@@ -37029,3 +37029,77 @@ All14 public types reviewed UNABRIDGED and full final source/proofs read.
 All2358 Foundation/root sources+3configs frozen/rechecked;113 archive paths and
 hashes unchanged. Four explicit Git paths only. Exact-commit receipt and
 PRIVATE main/research verification remain mandatory before terminal closure.
+
+## Checkpoint1437 — reflected-origin C1 repair and actual clock-grid cubic control
+
+IBM remains ACTIVE; queue1422 unchanged. This extends the actual physical
+primitive1436 toward stochastic path estimates for the correction1434/1435.
+It preserves the origin slope rather than dropping the local-time term.
+The source anchor remains ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+No manuscript changes, literature/novelty assertion or housekeeping session.
+
+IBMPhysicalReflectedPrimitive constructs G(r)=Phi(|r|)-|r|delta_0 in the
+ORIGINAL physical H^-1 norm. Its derivative is delta_r-delta_0 on the positive
+half-line and delta_0-delta_(-r) on the negative half-line. At the origin the
+derivative is PROVED zero by gluing actual HasDerivWithinAt statements on
+the two closed half-lines; no differentiability of absolute value at zero
+is assumed. Continuous gluing of the derivative proves genuine Banach C1.
+The exact slope_sign_identity identifies it as
+signum(r)*(delta_|r|-delta_0), and reflected_split keeps the original
+Phi(|r|)=G(r)+|r|delta_0 term. The physical origin remainder and slope norm
+bounds are explicit. This corrects a spatial origin kink, not the original
+IBM process or any archived manuscript bytes.
+
+IBMPhysicalReflectedTaylor proves a GLOBAL slope bound
+||G'(r)-G'(s)|| <= 2||physicalDerivative|| sqrt(|s-r|), including EVERY crossing
+of zero and arbitrarily large endpoints. Same-sign cases reuse actual physical
+Dirac difference bounds; crossings control BOTH origin-centered slopes.
+The Banach mean-value theorem gives the ordered Taylor remainder bound with
+constant2. Reversing an increment and explicitly retaining the slope difference
+then proves the ARBITRARY-DIRECTION bound with constant4. Thus for all r,s,
+||G(s)-G(r)-(s-r)G'(r)||^2 <= 16||physicalDerivative||^2 |s-r|^3.
+No monotonicity of the Brownian clock VALUES is imposed. Finally,
+clock_grid_remainder_bound instantiates those actual physical remainders
+on EVERY finite grid of the ALREADY CONSTRUCTED actual Brownian clock path,
+for EVERY sample Y, and bounds their squared sum by the same constant times
+the cubic absolute clock-increment sum. No probabilistic convergence premise
+or alternate Gaussian process is hidden in this deterministic pathwise theorem.
+
+Eight independent checks: evenness of G; odd derivative on reflected half-lines;
+the genuinely zero derivative at the origin; exact decomposition of the actual
+physical IBM endpoint1435; every physical scalar test's reflected derivative;
+a deliberately DECREASING origin-crossing increment; actual Brownian grid
+cubic domination; and crossings with arbitrary nonnegative endpoint magnitudes.
+The checks directly test the sign, origin and direction cases that would fail
+if the uncorrected reflected derivative or a monotone-clock assumption had
+been substituted.
+
+Next exact obligations: prove the actual Brownian cubic-increment sum tends
+to zero in the appropriate mean topology using existing moment/variation
+results; control the physical stochastic-integral versus left-step slope
+increment error using the ORIGINAL Ito isometry. Only after BOTH may a
+quadratic-variation conclusion for the continuous correction be asserted.
+The EXISTING BrownianMassContinuousLimit.limitPath_properties already proves
+the actual continuous local-time mass is monotone, nonnegative and zero at
+zero. Preserve this genuine origin term in any subsequent decomposition.
+No zero-QV, bounded variation, uniform-in-time limit, raw-IBM semimartingale
+or full unprojected nonlinear intrinsic calculus is claimed. Clock Brownian
+integration remains distinct from integration in IBM's own history.
+
+Failed draft logs retained: vector versus scalar derivative composition,
+half-line/function normalization, negative-zero normalization, selection of
+the EXISTING physical real scalar norm identity, and a broad neg_sub rewrite
+that changed a norm expression. Final code uses a typed exact |s-r|=r-s
+identity and original verified realNormSMul. The first module caches the
+EXISTING additive group inherited from its original NormedAddCommGroup;
+it introduces no new norm or algebraic assumption. DEFAULT heartbeat and
+all compiler/trust/version/audit requirements are unchanged.
+
+Final gates: full root6532jobs/44.0861701000249s/0;
+COMPLETE transitive 45271safe Foundation declarations/37.77150249999249s/0;
+eight independent checks/27.31268460000865s/0.
+All22 public types reviewed UNABRIDGED, final full definitions/proofs read.
+All2360 Foundation/root sources+3configs frozen/rechecked;113 archive paths and
+hashes unchanged. Five explicit Git paths only; exact-commit receipt and
+PRIVATE main/research verification are required before terminal closure.
