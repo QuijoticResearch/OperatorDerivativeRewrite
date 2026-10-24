@@ -39033,3 +39033,113 @@ Evidence .lake/stardust-1458-working-checkpoint.json, -full-build.log,
 -audit.log, -independent.log, timing JSON and -verification.json. Explicit
 six-path Git checkpoint, exact receipt and verified PRIVATE main/research sync
 remain mandatory before terminal closure. The autonomous IBM goal stays ACTIVE.
+
+## Checkpoint1459 — explicit folded Gaussian spatial energy and actual clock integrability
+
+IBM remains ACTIVE, queue1422 unchanged. This investigates the explicit candidate
+for1457's canonical terminal spatial input rather than rebuilding1458's completed
+stochastic-Fubini identification. The source anchor remains
+ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All113 original archive paths/hashes are preserved. No reflection/housekeeping
+session or later campaign was started. No novelty claim is made for elementary
+Gaussian convolution/energy identities.
+
+Candidate: H(b,v)(x)=1_(x>0)[p_v(x-b)-p_v(x+b)], v>0, where p is the
+ORIGINAL Mathlib normal density with variance v. For the proposed terminal
+coefficient b=B_s and v=T-s. This is a proposed conditional derivative, NOT the
+unprojected sign(B_s) delta_|B_s| whose ordinary spatial norm escapes1452/1456.
+
+IBMFoldedHeatEnergy proves the exact full-line square and cross Gaussian
+integrals by actual integrable Gaussian formulas and Lebesgue translation.
+PRIVATE square_pdf/cross_pdf complete the squares with all constants retained;
+actual square/cross integrability is discharged BEFORE integral subtraction.
+Antisymmetry of the difference implies evenness of its square; the OLD
+integral_comp_abs gives the exact half-line integral, including the factor1/2.
+The positive-half-line scalar function is genuinely MemLp2(volume); spatial
+is its actual toLp class with an explicit AE representative. Its EXACT norm is
+
+  ||spatial(b,v)||^2 = (1-exp(-b^2/v))/(2 sqrt(pi v)),   EVERY b real, v>0.
+
+The class is zero at b=0 but nonzero e.g. b=v=1. Its norm is invariant under
+b -> -b, and its AE representative has no negative-spatial channel. These facts
+are independently tested, not silently inferred from a formal energy symbol.
+
+IBMFoldedHeatTimeEnergy defines the scalar energy using real T-s, proves actual
+measurability and nonnegativity for s<=T, and the UNIFORM bound
+
+  energy(T,B,s) <= (2 sqrt(pi))^-1 (T-s)^(-1/2).
+
+The OLD intervalIntegrable_rpow' and reflection s -> T-s discharge the genuine
+terminal singularity. energy_intervalIntegrable holds for EVERY measurable
+real path B and T>=0, without boundedness, continuity, Gaussian law or finite
+variation assumptions. actual_spatial_energy identifies this energy with the
+norm of the actual spatial L2 class for EVERY s<T. The totalized s=T formula
+is zero, but no terminal spatial derivative or positive-variance theorem is
+asserted there; a single endpoint cannot substitute for singularity control.
+
+IBMFoldedHeatClockEnergy substitutes the EXISTING actual continuous Brownian
+clock sigma(s,Y), not a new abstract process. raw_measurable proves joint
+measurability. raw_integrable uses the OLD horizonMeasure_eq_product and a
+genuinely integrable time envelope times Gaussian probability to prove finite
+JOINT time-clock energy. clock_path_energy also holds for EVERY actual Y,
+not merely a time-dependent AE collection. clock_spatial_energy identifies
+each positive-remaining-time energy with the actual spatial class norm.
+
+EIGHT independent Lean checks: zero symmetry class; strict nonzero b=v=1;
+norm symmetry; AE negative-half-line support exclusion; unrestricted measurable
+path integrability; EVERY actual clock sample's time integrability; joint
+integrability under the ORIGINAL horizon law; and preservation of1458's actual
+IBM/native scalar-Ito terminal representation. All passed first run.
+Independent standard-library Python quadrature tested SIX b,v cases (including
+zero, negative mean and small/large variance), errors <=2.3e-16, and THREE time
+energy cases after a singularity-removing substitution, errors <=1.2e-16.
+The latter numerically tests the additional unproved EXPECTATION formula
+(2-sqrt(2))*sqrt(T/pi); it is NOT a Lean theorem or an identification proof.
+Evidence .lake/stardust-1459-numerical.json. No external numerical library or GPU
+was required and numerical agreement is not used as proof.
+
+REUSE AUDIT:1457 canonicalInput is the ORIGINAL spatial Ito adjoint applied to
+actual sourceKernel, with full representation/uniqueness and physical causal
+derivative coefficients.1458 supplies genuine scalar clock sections and initial
+clock mean. Existing IBMFoldedTransitionBound provides mollified folded-law
+L1-to-L-infinity estimates, not this exact energy/identification. Existing
+IndependentInnovationConditioning gives an independent-innovation conditional
+integral theorem on the COMAP of its specified past map; using it for the WHOLE
+natural filtration requires a proved suitable past-map identification or another
+valid full-past conditioning theorem. BrownianSignConditional concerns the
+integral of sign(B), not the proposed terminal folded coefficient. Existing
+GaussianDensityTranslation is a different weighted translation construction;
+no high-heartbeat settings from that old source were copied into these modules.
+
+PRECISE OPEN OBLIGATIONS: finite integrated pointwise spatial norms do NOT alone
+construct strong measurable L2-valued parameter maps, their predictable versions,
+or the actual conditional derivative. Need actual joint/Bochner realization
+and predictable-domain membership, then Gaussian full-past conditioning with
+correct signed folding and equality with1457 canonicalInput (e.g. original
+physical-test coefficient theorem plus actual dual separation/uniqueness).
+No exact expected total energy formula is proved here. No observed IBM-filtration
+compatibility, original rough joint-DomD membership, running-IBM martingale or
+physical-time nonlinear Ito theorem is claimed. Full intrinsic IBM stays OPEN.
+This positive finite-energy candidate does not invalidate the OLD unprojected
+running-input probability/norm obstructions. Keep investigating these central
+identification/domain obligations rather than declaring the campaign complete.
+
+Development failures retained in .lake/stardust-1459-target1..9.log: explicit
+function matching for translated integrals and function sums; using actual
+L2.inner_def instead of a Foundation alias not imported here; explicit real
+Lebesgue measure annotation; sqrt multiplication orientation; explicit
+Real.coe_toNNReal arguments; horizon membership is Ioc x univ (time bounds
+are hz.1.2), and raw must be unfolded before an energy rewrite. All repaired
+without new options, heartbeat changes, axioms or admissions.
+
+Verification: COMPLETE root build6586 jobs (25.619529s); COMPLETE transitive
+collectAxioms audit 46363 safe Foundation declarations (40.319461s), only
+propext/Classical.choice/Quot.sound. All26 public types read UNABRIDGED and
+ENTIRE final three sources/private proofs reviewed. EIGHT independent Lean
+checks (25.817814s); all2414 Foundation/root sources and3configs frozen
+and rechecked, all113 archive paths/hashes unchanged. No mathematical edit after
+the final successful gates. Evidence .lake/stardust-1459-working-checkpoint.json,
+-full-build.log, -audit.log, -independent.log, timing JSON and -verification.json.
+Six explicit Git paths, exact-commit receipt and verified PRIVATE main/research
+synchronization remain mandatory before closure. Research goal remains ACTIVE.

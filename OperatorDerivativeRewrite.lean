@@ -2309,3 +2309,6 @@ import Foundation.IBMSpatialTerminalReconstruction
 import Foundation.GaussianCrossParameterizedIto
 import Foundation.IBMSceneryClockIto
 import Foundation.IBMSceneryTerminalIto
+import Foundation.IBMFoldedHeatEnergy
+import Foundation.IBMFoldedHeatTimeEnergy
+import Foundation.IBMFoldedHeatClockEnergy
