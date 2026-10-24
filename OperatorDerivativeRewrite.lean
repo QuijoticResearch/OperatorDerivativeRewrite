@@ -2370,3 +2370,5 @@ import Foundation.GaussianSmoothQuadraticVariation
 import Foundation.IBMPhysicalWickTestDomain
 import Foundation.IBMRawGridWickLimit
 import Foundation.IBMRawGridObservableTests
+import Foundation.IBMRandomTerminalBoundary
+import Foundation.IBMRandomBoundaryOccupation

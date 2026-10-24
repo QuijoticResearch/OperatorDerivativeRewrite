@@ -42180,3 +42180,120 @@ contradict1484's empirical UNPROJECTED source/field norm growth. No campaign
 completion, new priority or early transition. Oct24 reflection not reserved;
 staleOct23 reflection-accounting uncertainty retained. Next investigate the
 actual random-cap estimate using the existing F2 occupation and clock laws.
+
+## Checkpoint1487 — strong actual random terminal-boundary occupation decay
+
+IBM remains ACTIVE; queue8280325 and every completion/verification gate remain
+unchanged. Previous goal turn1486 was PROGRESS: actual observable native-grid
+pairings, precise scalar convergence reduction, full audit and committed/private
+f9cad19975bc508d826b70f8122e85ea55a9b018. This checkpoint addresses its RANDOM
+outer clock boundary, using actual Gaussian laws and completed stochastic
+realizations. It does not reopen the frozen pseudoprocess campaign, launch
+another campaign, or admit a daily reflection session.
+
+Primary source remains ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All113 source archive paths/hashes match inventory1292 exactly. No original
+manuscript is changed/committed. Actual process remains B(|W_t|), without an
+assumed law transfer to two-sided outer Brownian IBM.
+
+The starting exact obligation is1486: against the original observable Z_T^2,
+the ORIGINAL jointDivergence uniform-grid pairing A_N equals T-C_N, where
+C_N is the actual mean squared-increment sum of min(|W_t|,|W_T|). Both are
+bounded in [0,T], but convergence is NOT implied by boundedness. Fixed smooth
+SOURCE tests1485 cannot simply be evaluated at this random nonsmooth cap.
+
+Reuse audit examined IBMFoldedClockAbsolute (actual isonormal sum/sub laws and
+norms), IBMFoldedTransitionBound pdf_le_peak, IBMClockTraversalEnvelope tent
+bounds, the existing F2 compact/dilated random occupation limits, actual
+clockPath modification measurability, and BochnerL2Approximation. A quantitative
+density route was considered: sums/differences have variances T+3t and T-t
+for t<T, suggesting a boundary probability bound proportional to width times
+their inverse square roots. This QUANTITATIVE estimate has NOT been proved.
+For the present strong occupation theorem, atomlessness plus Fubini and
+dominated convergence suffice, avoiding a new density or bridge foundation.
+No novelty claim is made for this standard measure-theoretic argument.
+
+Foundation/IBMRandomTerminalBoundary.lean constructs/proves the actual law
+of W_s+W_t as centered Gaussian with NNReal variance s+t+2min(s,t), reusing
+the ORIGINAL isonormal embedding, actual AE sum identity and timeVector norms.
+Gaussian atomlessness is required ONLY at nonzero variance and is discharged.
+For EVERY fixed 0<=s<t, |W_s| differs from |W_t| almost surely: equality
+forces W_s=W_t or W_s=-W_t; BOTH actual Gaussian sum/difference zero events
+are null. The original clockPath coordinates inherit this statement through
+the proved coordinate AE equalities. No independence of W_s and W_t is used.
+
+distance(T,(t,Y)) is the actual continuous-clock-path value
+ abs(abs(clockPath(Y,t.toNNReal))-abs(clockPath(Y,T))).
+Its joint measurability is proved. For EVERY fixed T>=0, distance_positive_ae
+proves that for almost every ORIGINAL clock sample, this distance is positive
+for Lebesgue almost every t in (0,T]. Fubini's hypotheses and both measures
+are explicit. The terminal point t=T, where equality holds for EVERY sample,
+is separately removed as a Lebesgue singleton. T=0 has empty time window.
+This is not a claim of pathwise noncollision at all times, nor a simultaneous
+full-probability event for every uncountable terminal time.
+
+Foundation/IBMRandomBoundaryOccupation.lean constructs the literal indicator
+ band(delta,T,t,Y)=1_{distance(T,t,Y)<=delta}
+and its actual pathwise Lebesgue time integral occupation(delta,T,Y). Joint
+measurability, time integrability, measurability in Y, nonnegativity, and the
+samplewise bound 0<=occupation<=T are proved for EVERY real delta. MemLp2
+and occupationClass are in the ORIGINAL clock GaussianL2. Its literal AE
+stochastic identification is proved, not replaced by a formal residual.
+
+For EVERY deterministic sequence delta_n of REAL widths tending to zero,
+occupation_tendsto_ae proves the actual integrals tend to zero almost surely.
+No monotonicity, positivity, decay rate or convergence assumption on a
+stochastic kernel is imposed. For the almost-everywhere positive distances,
+the band is eventually zero; domination by one on the finite time window
+justifies time integration. The separate deterministic bound T then gives
+occupationClass_tendsto STRONGLY in the ORIGINAL clock GaussianL2 by the
+already verified BochnerL2Approximation theorem. No new abstract completion,
+probability law, martingale or filtration is introduced.
+
+FOURTEEN independent Lean checks passed on the SECOND RUN. They verify the
+actual numerical sum law W_1+W_2 has variance5; strict-time folded noncollision;
+the positive-time initial comparison; an explicit rejection of terminal-time
+noncollision; distance(T,T,Y)=0 for EVERY sample; actual almost-everywhere
+time boundary avoidance; literal occupationClass integral; pointwise [0,T]
+bound; actual MemLp2; almost-sure decay; strong L2 decay; exact zero-width
+occupationClass=0 by uniqueness of limits; zero-horizon occupation=0; and
+band(delta,T,T,Y)=1 for EVERY nonnegative delta. The terminal countercheck
+guards against an invalid uniform-in-time noncollision claim.
+
+Development logs retained: target1 exposed HasLaw.congr orientation, NNReal
+zero/nndist arguments, absolute-value parsing and the existing window namespace
+(a cascading elaboration timeout was not resolved by increasing heartbeats).
+Targets2--4 fixed only explicit Lebesgue-restriction singleton nullity/arguments.
+Target5 reached the occupation proof and exposed function composition/constant
+Lp representative normalization. Targets6--8 retained remaining scalar norm
+rewrite mismatches; target9 passed by a direct actual bound and le_norm_self.
+No heartbeat/resource/trust/version change or suppressed error. Independent
+attempt1 log/timing preserved: only explicit arithmetic normalization to
+variance5 and a missing probability-measure nonzero proof in the endpoint
+countercheck failed. Both test-harness proofs were repaired; no mathematical
+source changed after final successful full/audit gates.
+
+Full root6646 jobs PASSED25.353255s. COMPLETE transitive axiom audit47505
+safe Foundation declarations PASSED42.863735s, accepting ONLY propext,
+Classical.choice, Quot.sound. All21 new public types read UNABRIDGED, both
+ENTIRE final sources/private proofs read. Fourteen independent checks
+PASSED25.511705s on second run (first28.897305s failed as documented).
+All2474 Foundation/root source hashes and three configs frozen/rechecked;
+all113 archives unchanged. Explicit-path commit, exact-commit receipt and
+verified PRIVATE main/research synchronization remain mandatory closure gates.
+
+Exact remaining gap: this is actual continuous-time Lebesgue boundary occupation
+decay. It does NOT yet control discrete sums weighted by squared Brownian
+increments near the random outer boundary. Those increments are correlated
+with the anticipative cap |W_T|; no predictable-integrand theorem can be
+instantiated silently. Needed next: compare the random capped finite QV with
+smoothly regularized cap QV, proving uniform boundary/increment estimates,
+then identify the surviving interior occupation drift. Neither the candidate
+clipped-QV limit integral 1_{0<|W_t|<|W_T|} dt nor its mean limit, original
+native-output convergence, or full intrinsic IBM calculus is established here.
+The existing F2 origin and random-functional results remain verified and must
+be reused, with the random outer boundary retained. Scalar boundedness and
+strong unweighted boundary-occupation decay are not full calculus completion.
+No campaign transition; no Oct24 reflection reservation; staleOct23 accounting
+uncertainty retained. Continue the actual IBM random-cap investigation.
