@@ -37181,3 +37181,89 @@ All29 public types reviewed UNABRIDGED; complete final definitions/proofs read.
 All2362 Foundation/root sources+3configs frozen/rechecked;113 archive paths and
 hashes unchanged. Five explicit Git paths only. Exact-commit receipt and
 verified PRIVATE main/research backup are mandatory before terminal closure.
+
+## Checkpoint1439 — genuine physical cell-error Ito integrals and vanishing stochastic energy
+
+IBM remains ACTIVE; queue1422 unchanged. This follows the1438 actual Taylor
+square-sum estimate with an ACTUAL stochastic-integral error estimate. The
+source anchor remains ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+No manuscript bytes or existing mathematical results changed; no novelty
+assertion, housekeeping session or new research campaign is involved.
+
+IBMPhysicalCellSlope builds two ORIGINAL scalar predictable fields: the
+difference of the existing stopped Brownian fields at b and a, and the OLD
+predictable past step with actual coefficient Y_a on (a,b]. The raw past
+measurability is discharged by the existing process_stronglyAdapted theorem.
+Both are restricted to the ORIGINAL finite-horizon measure at b. Composing
+with the genuine continuous physical corrected slope G' gives the error
+field. Its predictable representative is PROVED, and all physical Bochner
+L2 premises follow from the verified half-Holder bound and finite-horizon
+scalar L2-to-L1 integrability. integrand(a,b) therefore belongs to the
+ORIGINAL IBMPhysicalClockIto.Domain(b), without any assumed domain premise.
+integral(a,b) is that EXISTING physical stochastic integral, not a new map
+defined by a residual or desired isometry. Its original norm identity applies.
+
+IBMPhysicalCellSlopeActual proves the EXACT representatives: on the original
+time-probability domain the restricted current field is 1_(a,b](s)Y_s and
+the frozen past field is 1_(a,b](s)Y_a. Hence the ACTUAL physical coefficient
+is 1_(a,b](s)[G'(Y_s)-G'(Y_a)]. All support and endpoint statements are
+proved using original Brownian coordinate identities, product-tensor
+representatives, restriction witnesses and G'(0)=0. integral_energy and
+integral_actual_energy give exact genuine physical stochastic energy.
+The norm square is bounded by4||physicalDerivative||^2 times the actual
+joint integral of1_(a,b]|Y_s-Y_a|, whose integrability is independently
+proved. Every physical dual test agrees with the OLD actual scalar Ito map
+under the original predictable trim, via native_scalarization. No replacement
+of stochastic agreement by matching formal expressions is made.
+
+IBMPhysicalCellErrorRate reuses the actual first-chaos realization1438 and
+GaussianAbsoluteMoments at p=1. It proves the actual clock absolute first
+moment E|Y_b-Y_a|=sqrt(b-a)*m1 for a<=b, with m1=standardMoment(1).
+Product integration is justified by the already PROVED joint integrability.
+The exact cell support is retained: its time measure is b-a, not the whole
+parent horizon. The resulting rigorous bound is
+E||integral(a,b)||_H^-1^2 <=4||physicalDerivative||^2*m1*(b-a)*sqrt(b-a).
+This bound is not asserted optimal. Summing over the EXISTING uniformTime
+grid gives upper bound4||physicalDerivative||^2*m1*T*sqrt(T/(n+1)), tending
+to zero. cellSquares is the ACTUAL sum of squared norms of these original
+physical stochastic integral random variables. It is integrable, its mean
+equals the sum of their ORIGINAL L2 norm squares, and its canonical class
+converges STRONGLY in the original clock L1 space. Its a.e. representative
+is verified, with no omitted cell-domain or predictability assumptions.
+
+Eight independent checks: an explicit original physical Ito-domain witness
+with its actual coefficient; zero integral on EVERY reversed/empty cell;
+exact real-scaling stochastic energy; repeated-time Gaussian degeneracy;
+the genuine first-cell rate; JOINT strong L1 convergence of1438 Taylor and
+1439 stochastic square sums on the SAME clock probability; every cofinal
+uniform refinement; and the explicit actual expected stochastic-square rate.
+Initial test failures were only normalization of a zero-function representative
+and implicit NNReal zero_le syntax; the failed log is retained and all eight
+final checks pass. Native draft failures (namespace, function/norm and
+product-measure normal forms) are likewise preserved. DEFAULT200000 limit,
+original norms, toolchain, compiler/trust options and axiom requirements
+remain unchanged. Only ordinary existing definitions use local irreducibility.
+
+Exact remaining assembly: the cell integrals are genuine integrals of the
+correct actual error coefficient and their estimate is unconditional. They
+must STILL be identified with I_G(b)-I_G(a)-G'(Y_a)*(Y_b-Y_a) for a coherent
+running physical integral. This requires exact cross-horizon restriction
+compatibility and the frozen RANDOM H^-1-valued past-coefficient step
+identity; agreement for a constant physical tensor alone does not prove it.
+After this identification, assemble the Taylor and stochastic bounds to
+obtain the corrected residual's quadratic-variation statement. Retain the
+genuine delta_0 local-time term in the ORIGINAL reflected correction and
+use its already proved monotone continuous mass properties with the exact
+Tanaka/integral decomposition. NO zero-QV, bounded variation, uniform-in-time
+closure, raw-IBM semimartingale or full nonlinear intrinsic calculus is
+claimed yet. The full unprojected actual-process objective remains OPEN;
+Brownian clock integration is not silently identified with IBM's own history.
+
+Final gates: full root6537jobs/29.08823280001525s/0;
+COMPLETE transitive 45397safe Foundation declarations/41.56698040000629s/0;
+eight independent checks/34.91167529998347s/0.
+All40 public types read UNABRIDGED; complete final definitions/proofs reviewed.
+All2365 Foundation/root sources+3configs frozen/rechecked;113 archive paths and
+hashes unchanged. Six explicit Git paths only. Exact-commit receipt and
+PRIVATE main/research verification are required before terminal closure.

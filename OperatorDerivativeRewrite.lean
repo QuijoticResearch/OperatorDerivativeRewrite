@@ -2260,3 +2260,6 @@ import Foundation.IBMPhysicalReflectedPrimitive
 import Foundation.IBMPhysicalReflectedTaylor
 import Foundation.IBMClockCubicVariation
 import Foundation.IBMPhysicalTaylorMean
+import Foundation.IBMPhysicalCellSlope
+import Foundation.IBMPhysicalCellSlopeActual
+import Foundation.IBMPhysicalCellErrorRate
