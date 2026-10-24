@@ -37688,3 +37688,89 @@ archive path/hash entries. Five explicit Git paths, exact-commit receipt
 and verified PRIVATE main/research backup follow and do not replace gates.
 
 Terminal timings: root 25.544339s; complete transitive audit 45624 declarations, 38.891286s; independent checks 26.034190s; all exit0.
+
+## Checkpoint1445 — arbitrary deterministic mesh variation of the ORIGINAL physical IBM correction
+
+IBM remains ACTIVE; queue1422 unchanged. This discharges the deterministic
+partition restriction left1444, retaining its actual-process and physical
+H^-1 scope. Source: ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+Original manuscript bytes and all old mathematical declarations are unchanged.
+No novelty claim, new research campaign or reflection/housekeeping session.
+
+IBMPhysicalMeshVariation directly reuses the actual clock absolute cubic
+moment1438, global physical Taylor bound1437, actual original cell Ito
+energy1439 and exact running/residual increment identification1441--1442.
+It proves integrability and a one-cell mean-square residual rate
+E||R_b-R_a||^2 <= C (b-a) sqrt(b-a), for every a<=b, with the EXPLICIT constant
+C=32||physicalDerivative||^2 standardMoment(3)
+  +8||physicalDerivative||^2 standardMoment(1), proved nonnegative.
+No new stochastic law, conditional variance or coefficient regularity is
+assumed. Finite-sum integration and the EXISTING sum_fin_differences identity
+give the partition estimate E sum||Delta R||^2 <=C sqrt(epsilon)*span whenever
+all time increments are <=epsilon. Hence actual corrected-residual square
+sums converge STRONGLY in L1 along ANY deterministic sequence of monotone
+partitions with bounded spans and vanishing mesh bounds, even without a
+common initial time, equal spacing, nesting or fixed cell count.
+
+BrownianLocalTimeMesh extends the actual1444 local-time argument to general
+monotone finite partitions of [0,T]. Exact telescoping, monotonicity and
+compact uniform continuity prove pathwise square-sum convergence for every
+continuous monotone zero-origin path on ANY such vanishing-mesh sequence.
+Applied to the EXISTING continuous Tanaka mass, every sum is dominated almost
+surely by the SAME terminal localTime(T)^2. All actual measurability and
+integrability premises are proved; its GaussianL2 realization from the old
+coordinate_memLp supplies the integrable dominator. Dominated convergence
+then proves actual local-time square-sum mean convergence on arbitrary grids.
+This is a proved convergence theorem, not a premise substituted for the
+local-time or original-process construction.
+
+IBMPhysicalOriginalMesh combines the two limits using the EXACT1443 ORIGINAL
+physical correction decomposition, including delta_0 times genuine continuous
+local time. Finite AE conjunctions and the previously verified actual two-time
+identity give an original square-sum bound by twice the corrected-residual
+sum plus 2||delta_0||^2 times local-time sum. Integrability of ORIGINAL square
+sums follows directly from the existing physical GaussianL2 endpoints.
+squaresClass_ae identifies their literal physical norm-class representative.
+squaresClass_tendsto proves STRONG L1 convergence to ZERO for every finite
+T>=0 and EVERY deterministic partition sequence satisfying the stated
+monotonicity, endpoints 0,T and vanishing mesh bound. The dimension m(N) may
+change, partitions need not nest, and repeated points/empty partitions are
+handled by the types and exact sums (an empty [0,T] partition forces T=0).
+There is NO uniform-grid assumption or unproved stochastic/domain premise
+in this original-object theorem.
+
+Precise scope: this is the physical H^-1 first-scenery kernel representation
+with ALL clock chaos sectors, not raw scalar IBM zero quadratic variation or
+an ordinary universal Wiener map on H^-1. The1430 obstruction is unchanged.
+The sequence of partitions is deterministic and fixed before the almost-sure
+identifications; random/stopping-time partitions are not covered. No common
+continuous physical integral/correction version, uniform-time convergence,
+whole-sequence almost-sure convergence of ORIGINAL correction sums, bounded
+variation of the correction, raw IBM semimartingale law or completion of full
+unprojected nonlinear intrinsic IBM calculus is asserted. No unjustified
+uncountable intersection of AE exceptional sets occurs. The local-time
+pathwise statement and original-correction strong-L1 statement retain their
+distinct topologies. Remaining directions include continuous versions,
+rigorous cross-variation and nonlinear change-of-variables with exact domains.
+
+Eight independent Lean checks include exact unequal two-cell linear square
+sums, a repeated-point partition for an ARBITRARY path, pointwise empty-grid
+original sums, recovery of the old uniform corrected rate, the local-time
+mean bound by OLD Tanaka GaussianL2 energy, actual original L1 norm convergence
+with varying cell counts, agreement after subtraction of actual local-time
+L2 classes, and control of EVERY physical scalar probe on arbitrary grids.
+All checks passed. Development required only explicit unfolding of a squared
+remainder and typed congrArg for the existing telescope, resolving inherited
+normalization. Original sources/configurations/options/axioms/heartbeat were
+not changed; initial failed target logs remain. Only whitespace was tidied in
+the three new files before their FINAL full build and frozen verification.
+
+Verification: complete root6551jobs, COMPLETE TRANSITIVE audit of EVERY safe
+Foundation declaration (only propext/Classical.choice/Quot.sound), all34
+unabridged public types and all3 entire final source/proofs read,8 independent
+checks,2379 Foundation/root sources+3 configurations+113 archive entries
+frozen/rechecked. Six explicit source/ledger Git paths, exact-commit receipt
+and verified PRIVATE main/research backup follow, preserving every gate.
+
+Terminal timings: root 69.941146s; complete transitive audit 45674 declarations, 37.032723s; independent checks 26.452628s; all exit0.

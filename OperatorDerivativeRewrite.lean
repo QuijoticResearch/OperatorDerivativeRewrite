@@ -2274,3 +2274,6 @@ import Foundation.IBMPhysicalOriginSplit
 import Foundation.IBMPhysicalCorrectionLocalTime
 import Foundation.BrownianLocalTimeSquares
 import Foundation.IBMPhysicalOriginalVariation
+import Foundation.IBMPhysicalMeshVariation
+import Foundation.BrownianLocalTimeMesh
+import Foundation.IBMPhysicalOriginalMesh
