@@ -2350,3 +2350,4 @@ import Foundation.IBMSchwartzHeatReconstruction
 import Foundation.IBMSchwartzHybridReconstruction
 import Foundation.IBMSchwartzSimpsonNative
 import Foundation.IBMGaussianMeanObstruction
+import Foundation.IBMPhysicalL2Obstruction

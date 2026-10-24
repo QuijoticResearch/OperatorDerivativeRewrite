@@ -40759,3 +40759,97 @@ No production source changed after complete root build/audit. All source,
 configuration and immutable archive hashes frozen/rechecked.
 
 Final gates: complete root6624jobs 27.228175s; complete safe transitive audit 46891 declarations, standard three axioms only, 39.918849s; TWELVE independent Lean checks 29.818829s. All2452 Foundation/root sources+3configs+113archive paths/hashes rechecked. Explicit FIVE-path commit, exact receipt and verified PRIVATE main/research backup follow; evidence .lake/stardust-1474-verification.json. IBM remains ACTIVE; no campaign transition or full-calculus completion asserted.
+
+## Checkpoint1475 — an actual-process obstruction to ordinary physical-time L2 integration
+
+IBM remains ACTIVE. Previous1474 /986ae896544380f5fd0c502c33d33120bb79694d
+passed full verification, exact receipt and verified PRIVATE main/research
+closure. This turn is mathematical progress, not a new campaign or reflection
+session. Queue8280325 is unchanged. All113 archive paths/hashes and three
+configuration hashes are preserved, with ResearchSources read-only/uncommitted.
+The continuing IBM source is EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+
+Reuse audit: actual IBM deterministic integration already EXISTS on the
+verified right-germ energy measure and is an isometry. Its stochastic
+dictionary is made of right-germ innovations, not raw IBM increments;
+IBMDeterministicRangeObstruction already proves every actual IBM point
+orthogonal to that deterministic range. These facts do not answer whether
+the usual raw step normalization could extend on ordinary physical-time dt.
+Likewise1474 gives actual signed Simpson/native agreement for shifted
+Schwartz one-forms, not a bounded integral on arbitrary deterministic L2(dt).
+The selected question is this precise missing domain obstruction. Existing
+1426/1427 L2 time-weighted joint-domain results concern SINE observables;
+they cannot silently discharge every Schwartz fourth-derivative average in
+the forward Taylor drift. That broader native drift identification stays open.
+
+New Foundation/IBMPhysicalL2Obstruction.lean reuses original jointRealization,
+the actual source/clock tensor norm, randomSourceClass_norm_sq, actual
+clock_absolute_moment and original observed_one_ne_zero. observed_norm_sq
+proves for EVERY t>=0, under the ORIGINAL joint law and actual IBM class,
+
+    ||observed(t)||_jointL2^2 = sqrt(t)*c,  c=standardMoment(1).
+
+first_absolute_moment_pos proves c>0 from actual nondegeneracy at time1.
+No approximate process, replacement covariance, assumed scaling axiom or
+numerical Gaussian constant is introduced. The exact value sqrt(2/pi) is
+unnecessary and is not separately claimed formally here. The independent
+check derives the literal actual-process second-moment integral from this
+class identity and original observed_ae, verifying the probabilistic content.
+
+short_step_energy_unbounded proves EVERY T>0, EVERY C>=0 admits some actual
+0<t<=T with C*t < ||observed(t)||^2. The witness is explicit: set
+r=min(sqrt(T),c/(C+1))/2 and t=r^2. Then C*r<c. No assertion about a long-time
+asymptotic or increment independence is needed. PhysicalL2(T) is EXACTLY
+ordinary real L2(volume restricted to (0,T]), with the existing window measure.
+step(T,t) is the genuine indicatorConstLp class of 1_(0,t]. step_actual gives
+its actual almost-everywhere representative and step_norm_sq proves its
+squared norm is t whenever t<=T. The domain norm is never replaced by a
+covariance/right-germ/fractional norm in the obstruction.
+
+no_bounded_step_integral proves that NO continuous real linear map
+
+    J : L2((0,T],dt) -> L2(actual joint IBM probability law)
+
+can satisfy J(step(T,t))=observed(t) for every t<=T, for ANY T>0.
+The operator-norm inequality would give ||observed(t)||^2<=||J||^2*t,
+contradicting the explicit short-step energy theorem. no_actual_step_integral
+then states the same failure directly as literal almost-everywhere stochastic
+normalization J(1_(0,t])=IBM_t-IBM_0, using the ACTUAL IBM_0=0 law and original
+actual observed realization. Thus the obstruction is about a genuine candidate
+stochastic integration map, not merely a mismatch between abstract symbols.
+
+Scope is exact: bounded linear extension on ordinary deterministic L2(dt),
+with raw initial-interval increment normalization and ordinary output L2.
+This does NOT prove nonclosability of a densely defined integral, impossibility
+of every random/predictable calculus, impossibility of integration in a stronger
+covariance norm, or failure of weak/test-dual outputs. A bounded stochastic
+extension with an isometric deterministic L2(dt) inclusion and this exact
+normalization would restrict to the excluded map; such an abstract restriction
+principle is a mathematical implication, not an additional Lean theorem here.
+It is inappropriate to replace this obstruction with a blanket no-IBM-calculus
+claim. The already verified Simpson, native adjoint and right-germ isometries
+remain positive constructions in their PRECISE different domains. The T>0
+hypothesis is essential: an independent test constructs the zero-map solution
+at T=0. No new literature novelty claim is made for variance-scaling arguments.
+
+All NINE public types and the ENTIRE final production source/proofs were read
+unabridged. Final production bytes have not changed since successful complete
+root build and audit. Default200000 resources, trust, toolchain and compiler
+configuration unchanged; no new axiom, sorry, error suppression or manuscript
+modification. Failed targets1-4 and6 retained: power-one normalization, explicit
+nonnegative-square witness/coercions, exact terminal scalar lemmas instead of
+fragile rewrite matching, and actual zero-time normalization before transitivity.
+Target5 passed; the last actual-normalization repair passed the COMPLETE build.
+
+TEN independent Lean checks cover literal actual second moment, actual increment
+MemLp2, explicit t=1/16 input/output energy mismatch, arbitrary short horizons
+with energy constant1000000, actual indicator representative, literal-increment
+obstruction at T=1/100, all-positive-horizon abstract obstruction, the valid
+T=0 zero-map boundary, coexistence with OLD right-germ isometry/orthogonality,
+and coexistence with1474 strong actual Simpson convergence. The first test run
+failed ONLY at pointwise Pi subtraction, explicit NNReal inequality normalization
+and zero_le application syntax; the retained second run verifies corrections.
+Production mathematics and complete build/audit inputs were unchanged.
+
+Final gates: complete root6625jobs/43.247819s/0; complete safe transitive axiom audit 46904 declarations, standard three axioms only/38.042672s/0; TEN independent checks/29.671400s/0. All2453 Foundation/root sources+3configs+113archive paths/hashes rechecked. Explicit FOUR-path commit, exact receipt and verified PRIVATE main/research backup follow. Evidence .lake/stardust-1475-verification.json. IBM remains ACTIVE; full calculus is not declared complete.
