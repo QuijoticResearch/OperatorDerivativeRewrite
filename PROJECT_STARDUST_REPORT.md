@@ -41822,3 +41822,152 @@ passed. No mathematical source changed, so the already successful complete
 build/audit remained on exactly the same frozen inputs.
 
 Verification: complete root6639 jobs, 26.391591s; complete 47310 safe transitive declarations, 49.734308s; TWELVE independent checks, 26.561140s, all exit0. All19 public types and BOTH ENTIRE final sources/private proofs were read unabridged. Source freeze/recheck covers 2467 Foundation/root sources, all3 configurations and all113 manuscript paths/hashes. Explicit Git, exact receipt and verified PRIVATE main/research closure follow; no math edits after successful final build/audit.
+
+## Checkpoint1484 — actual compensated-grid second-chaos and field kernels; a loop obstruction and empirical energy test
+
+IBM remains ACTIVE, queue8280325 unchanged. Prior1483/a8ee04e is fully audited
+and exactly PRIVATE verified. All113 manuscript paths/hashes remain read-only,
+unchanged and uncommitted. Primary reference remains
+ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+This directly investigates1483's surviving actual compensated fields after
+clock-correction norm escape. No new campaign or full-calculus claim.
+
+### Theorem-level reuse and exact finite kernels
+
+Foundation/IBMRawGridSecondChaos.lean reuses IBMSecondChaosTesting's verified
+cross_wick_pairing, cross_mem_sector and completed second-chaos testing;
+IBMQuadraticSpatialCalculus.crossBilinear; IBMQuarticSecondChaos.wickTwo_sub;
+and GaussianTimeFieldNorm.scalarTensor_pair_inner. The existing matrix-field
+Hodge results were audited, including linearField_inner/energy and
+quadraticTarget_matrix_energy. Those orthonormal-basis formulas do not directly
+instantiate at the actual clock directions, which are highly nonorthogonal.
+The new cross_inner proves the exact unrestricted Gram covariance:
+
+    inner(cross(u,v),cross(a,b)) = inner(u,a)inner(v,b)+inner(u,b)inner(v,a).
+
+For ANY coefficient curve u_i, define delta_i=u_(i+1)-u_i,
+S_n=sum cross(delta_i,u_i), Q_n=sum cross(delta_i,delta_i), and the actual
+Gaussian rank field V_n=sum scalarTensor(delta_i,firstChaosEmbedding(u_i)).
+The proved telescope is
+
+    2 S_n = cross(u_n,u_n)-cross(u_0,u_0)-Q_n.
+
+source_mem_sector proves S_n belongs to the EXISTING sector2. source_wick_test
+gives exact pairings with all existing quadratic Wick probes, allowing later
+reuse of the ALREADY proved second-chaos separation theorem rather than a new
+density assumption. source_energy, field_energy, quadratic_energy and
+terminal_pairing give exact finite double-Gram sums, without orthogonality,
+independence or diagonal-only assumptions. If u_0=0, source_energy_endpoint gives
+
+    ||S_n||^2 = (1/2)*(||u_n||^4
+        -2 sum_i inner(u_n,delta_i)^2
+        +sum_(i,j) inner(delta_i,delta_j)^2).
+
+The off-diagonal clock-overlap terms are essential; no independent-increment
+scenery model is substituted after time change.
+
+### Genuine stochastic/native-field identification
+
+clockCurve(h,Y,i) is the SAME original clockDirection(grid(h,i),Y) used to
+construct1482's actual past-weighted native rank field. clockCurve_initial
+discharges its zero-initial-value premise ALMOST EVERYWHERE using the ORIGINAL
+GaussianTimeProcess.process_zero_ae. It is not assumed pointwise for an
+arbitrary chosen Gaussian representative.
+
+sourceGrid is the genuine clock Bochner-L2 sum of the ACTUAL crossSource
+classes, fieldGrid the sum of the ACTUAL source-field classes. Their AE
+identifications prove they are S_n and V_n at the actual random clock curve.
+actual_source_energy and actual_field_energy identify their TRUE L2 energies
+with the ordinary integrals of these exact conditional Gaussian energies.
+The original joint-domain vector gridInput is separately proved to equal
+pairField(fieldGrid,0), and native_grid_energy proves its ORIGINAL joint-field
+norm squared equals the field-kernel energy integral. This verifies the
+field whose convergence is in question, not an auxiliary replacement input.
+
+native_grid_value identifies the SAME original intrinsic joint divergence
+with P_IBM(jointRealization(sourceGrid)). The observable projection remains
+explicit. No claim that P_IBM commutes with source-chaos projections, preserves
+sector2, or preserves the source energy is made. Norm behavior before that
+projection cannot simply be transferred to its output.
+
+### Rigorous finite-loop obstruction
+
+For the deterministic coefficient loop u=(0,h,0), loop_source proves
+S_2=-cross(h,h)=-(wick(h,2)); loop_energy gives ||S_2||^2=2||h||^4. Every nonzero
+h therefore gives zero initial/final coefficients but a NONZERO compensated
+source sum. This rigorously disproves an endpoint-only reconstruction that
+drops Q_n. It is a Gaussian coefficient-curve counterexample, NOT an assertion
+that an exact prescribed Brownian loop has positive probability. No refinement
+norm escape or impossibility of compensated stochastic integration follows
+from this finite example alone.
+
+### Minimal reproducible computational test — empirical only
+
+New private artifacts:
+tools/stardust_ibm_second_chaos_probe.py and
+STARDUST_IBM_SECOND_CHAOS_PROBE_1484.json. Run:
+
+    python tools/stardust_ibm_second_chaos_probe.py --output RESULT.json --samples 256 --seed 1484
+
+The retained run uses the configured bundled Python, NumPy2.3.5, CPU float64, seed1484,
+256 coupled standard Brownian paths on the finest1024 grid, horizon1,
+subsampled at16/64/256/1024. Clock levels are folded by absolute value. Gaussian
+scenery is integrated analytically via min(a_i,a_j) and its finite differences;
+an independent Lean check verifies that min kernel is exactly the original
+scenery-direction inner product. No GPU setup or environment change was needed;
+actual probe runtime6.634479s. The standard pseudorandom finite simulation is
+numerical evidence, not a construction/proof of a probability law.
+
+Mean UNPROJECTED source-value energies (standard error):
+16:1.060844 (0.034813),64:2.237442 (0.045541),
+256:4.691976 (0.088881),1024:9.608281 (0.205276).
+Mean ORIGINAL native-field energies (standard error):
+16:0.761666 (0.032844),64:1.397892 (0.034105),
+256:2.655914 (0.044616),1024:5.129193 (0.095988).
+The two mathematically equivalent source-energy calculations agree on every
+sample to at most1.776357e-14 absolute residual. Checks explicitly reject
+significantly negative energies; no clipping masks failures. Dropping the
+quadratic channel produces a growing empirical discrepancy, consistent with
+the independent formal loop counterexample.
+
+These finite samples suggest investigating unbounded energies and weak or
+renormalized limits, but DO NOT prove any asymptotic growth rate, divergence,
+convergence, uniform bound failure, or projected-output behavior. In particular
+roughly sqrt(N) growth in mean SQUARED energies would concern N^(1/4) norms;
+it is not1483's sqrt(N) lower bound for the DIFFERENT clock correction.
+The numerical result must not be promoted to a verified native-field escape
+theorem. Both script/data hashes are frozen and rechecked with this checkpoint.
+
+### Verification experience and next obligation
+
+Targets1--2 retained a missing explicit Wick-telescope substitution, double-sum
+orientation, scalar-zero normalization and namespace errors. The old identities,
+explicit finite-sum transposition and typed zero expressions repaired them;
+target3 passed the central covariance/energy theorem. Target4 retained a zero
+continuous-map application in the finite-loop proof; existing map_zero/zero_apply
+fixed it and target5 passed. A first root pass was retained before the actual
+field-energy link was added. This addition was mathematically needed to verify
+that the empirical field statistic measures the ORIGINAL native grid input;
+its proofs passed targets6--7, then the FINAL changed source was frozen and the
+complete root build repeated on those final inputs before the axiom audit.
+No resources, compiler/trust/version, axiom whitelist or audit options changed;
+no abbreviation made irreducible or errors suppressed.
+
+FOURTEEN independent Lean checks cover unrestricted cross covariance; exact
+sector2 membership; the full telescope; all off-diagonal quadratic energy;
+endpoint energy with its precise initial premise; nonzero zero-endpoint loop;
+its exact negative Wick-square value; discharge of the initial-zero premise
+for ACTUAL clock curves; genuine source-energy integral; actual projected native
+output; exact min Gram entries; the empty-grid zero case; nonorthogonal field
+energy; and ORIGINAL native-grid input energy identification.
+
+Next rigorous question: use these exact ACTUAL clock-overlap Gram sums to prove
+or refute strong compensated native-field closure, and separately control the
+observable projection of its divergence. Reuse the cumulative Hodge/second-chaos,
+clock traversal/occupation and F1/F2 graph-dual machinery where the precise
+hypotheses apply. A weaker actual test-dual limit, if constructed, must not be
+called an ordinary L2 stochastic process or a completed Clark--Ocone theorem.
+IBM remains unfinished and active.
+
+Verification: full final root6640 jobs, 25.696669s; complete 47361 safe transitive declarations, 43.946934s; FOURTEEN independent checks, 28.891770s, all exit0. All27 public types, the ENTIRE final Lean source/private proofs and ENTIRE numerical script were read unabridged; numerical JSON/results inspected. Frozen/rechecked inputs cover 2468 Foundation/root sources, all3 configurations, both extra probe artifacts and all113 manuscript paths/hashes. Explicit Git, exact receipt and verified PRIVATE main/research closure follow. No mathematical edit after the FINAL successful root build/audit.
