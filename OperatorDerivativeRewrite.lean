@@ -2312,3 +2312,7 @@ import Foundation.IBMSceneryTerminalIto
 import Foundation.IBMFoldedHeatEnergy
 import Foundation.IBMFoldedHeatTimeEnergy
 import Foundation.IBMFoldedHeatClockEnergy
+import Foundation.IBMFoldedHeatField
+import Foundation.IBMFoldedHeatPredictable
+import Foundation.IBMFoldedHeatNativeIto
+import Foundation.GaussianBrownianConditionalTransition

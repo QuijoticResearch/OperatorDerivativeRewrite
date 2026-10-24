@@ -39143,3 +39143,136 @@ the final successful gates. Evidence .lake/stardust-1459-working-checkpoint.json
 -full-build.log, -audit.log, -independent.log, timing JSON and -verification.json.
 Six explicit Git paths, exact-commit receipt and verified PRIVATE main/research
 synchronization remain mandatory before closure. Research goal remains ACTIVE.
+
+## Checkpoint1460 — genuine folded predictable field, native integration, full-past Gaussian transition
+
+IBM ACTIVE, queue1422 unchanged. This discharges1459's actual Bochner realization
+and predictable-domain obligations, and supplies the exact full-past transition
+bridge needed for conditional coefficient identification. It does NOT discharge
+that final identification or finish intrinsic IBM calculus. Original source
+ResearchSources/ibm/EJP2605-044RA0.pdf remains SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All113 archive paths/hashes preserved; no source manuscript modification, daily
+reflection/housekeeping session, parallel campaign or queue change.
+
+IBMFoldedHeatField.scalar is the actual positive-half-line difference of the
+ORIGINAL normal densities with means b and -b, variance v. Its joint strong
+measurability is proved using Mathlib's measurable_uncurry_gaussianPDFReal and
+the actual spatial-half-line indicator. EVERY section is MemLp2(volume),
+including v=0 where the density and column are zero. column is the EXISTING
+ProductL2Sections.sectionL2 applied to this scalar field. Its existing theorem
+sectionL2_stronglyMeasurable yields GENUINE strong measurability in spatial L2,
+not merely a collection of AE pointwise sections. column_coeFn and
+column_eq_spatial identify it with1459's actual positive-variance spatial class.
+column_energy preserves the exact formula at every v>=0, with v=0 totalized.
+There is no claimed zero-variance Dirac in spatial L2.
+
+IBMFoldedHeatPredictable.raw(T,s,Y) = column(sigma(s,Y),(T-s).toNNReal), using
+the ORIGINAL continuous Brownian clock. Ambient strong measurability and exact
+norm agreement with1459's scalar energy imply genuine Bochner MemLp2 under the
+ORIGINAL horizon measure. PRIVATE nnTime_predictable proves the nonnegative
+time coordinate measurable for the ORIGINAL predictable sigma-algebra, directly
+from its Ioi generators and the existing real-time comap. This is not an
+assumption that the full real-time coordinate is predictable at negative times.
+The OLD hermiteIntegrand1 representative and brownian_field_joint supply an
+ACTUAL predictable Brownian representative. Composing it and predictable time
+with column proves raw_predictable; AE agreement is justified on the actual
+positive horizon with all time bounds explicit. No filtration enlargement,
+completion, hypothetical adaptation premise or new stochastic integral is used.
+
+input is an actual lpMeas element; trim uses ORIGINAL lpMeasToLpTrimLie, and
+integralValue is ORIGINAL GaussianParameterizedIto.realIntegral volume T trim.
+integral_energy is exactly the integral of1459's actual clock energy, using the
+original Ito isometry and AE representatives. No formal residual defines this
+integral. The terminal raw value is zero for EVERY Y; terminal-time singularity
+integrability comes from1459, not from assigning that endpoint zero.
+
+IBMFoldedHeatNativeIto.scalarInput uses the OLD physical-noise lift and product
+curry on this new genuine predictable input. value uses the ORIGINAL actual
+scalar parameterized clock Ito map on the ORIGINAL joint law. value_actual
+identifies it with the OLD actual white-noise realization of integralValue.
+native_sections is the ORIGINAL native scalar Ito integral on genuine clock
+predictable sections for AE actual scenery X. clock_mean_zero is the literal
+clock integral of value(X,Y), proved by actual native centering. value_energy
+and native_section_energy exactly match the actual time-clock energy. These
+are actual random variables/integrals, not expectation-level heat identities.
+
+canonical_agreement_iff proves the PRECISE missing equality:
+
+  value(T) =1457 canonicalValue(T)
+    IFF trim(T) = ORIGINAL spatial-Ito-adjoint representer(T,sourceKernel(T)).
+
+Both directions use ORIGINAL spatial Ito injectivity and the genuine scenery
+realization isometry, with1457's canonical coefficient definition. This is an
+honest necessary-and-sufficient reduction, not a proof of the right-hand side.
+actual_reconstruction_of_coefficient yields ACTUAL IBM_T = value(T)+initialValue(T)
+ONLY UNDER that explicitly stated coefficient equality. It is conditional;
+no unconditional new IBM reconstruction is claimed here.
+
+GaussianBrownianConditionalTransition.past is the full uncountable raw process
+history through S. past_measurable and history_eq_comap identify the ORIGINAL
+naturalFiltration(S) EXACTLY with its comap. past_increment_independent reuses
+Mathlib's actual pre-Brownian indepFun_shift and evaluation at T-S. increment_law
+uses the actual shifted pre-Brownian law, variance T-S, including S=T. Thus
+conditional_transition proves, for EVERY complete real Banach E and strongly
+measurable f with actual integrability of f(B_T),
+
+  E[f(B_T) | ENTIRE raw past at S] = integral f(B_S+y) dNormal(0,T-S), S<=T.
+
+This reuses IndependentInnovationConditioning without assuming its past comap
+is the natural filtration: that equality is proved first. No boundedness of f,
+current-value-only conditioning, resampled surrogate law or finite-dimensional
+past replacement is introduced. This is standard Brownian transition theory;
+no novelty claim. It is a substantive missing actual-process bridge for IBM.
+
+TEN independent Lean checks: actual zero-variance column; EVERY sample's
+terminal raw zero; smaller-sigma predictability; exact positive-half-line spatial
+representatives/signs; literal clock centering of the NEW actual integral;
+exact native-section energy; necessary-and-sufficient canonical input/output
+condition; full-past transition for UNBOUNDED quadratic f; Banach-valued
+transition for the ACTUAL IBM source f(r)=vector(|r|), with integrability
+discharged from sourceKernel's genuine L2 class and its actual coordinate
+agreement; and exact full-history sigma-algebra equality. Independent source tests needed explicit f due to elaborator inference and the
+correct IBMPhysicalNoiseCalculus.vector_continuous namespace; ONLY scratch tests
+changed, then all ten passed. Second failure log is retained as
+.lake/stardust-1460-independent-failure2.log. Initial diagnostic transcription is retained
+.lake/stardust-1460-independent-initial-failure.txt; original tool output records
+its exact failure. Mathematical sources were unchanged after full build.
+
+Reuse audit: GaussianPastFutureProducts and GaussianPredictableStep already
+supply entire-past/future independence and actual scalar products, reused rather
+than rebuilt. GaussianInstantaneousConditionalLaw concerns a DIFFERENT
+instantaneous-limit process and is NOT a Brownian-clock transition theorem;
+its suggestive name is insufficient. GaussianExponentialMarkovPrediction gives
+an OU projection comparison. GaussianSmoothConditional is an existing smooth
+conditional Dynkin theorem, not the missing arbitrary-integrable full-past
+transition statement. The new bridge specializes existing innovation machinery
+to the ORIGINAL constructed Brownian law and its complete raw past.
+
+OPEN/NEXT: apply this genuine full-past transition to the EXISTING physical-test
+clock derivative. Prove its exact signed folded Gaussian spatial integral and
+causal/predictable agreement, then discharge the coefficient equality above via
+original physical dual separation/uniqueness. Do not assume Gaussian conditioning
+alone proves the spatial derivative identity, or replace all physical tests by
+a finite set. Strongly measurable/predictable realization is now DISCHARGED;
+stop reporting that earlier gap as open. Completed observed IBM filtration,
+original rough joint derivative domains and nonlinear physical-time calculus
+remain separate central obligations. Sourcewise terminal representations do not
+make running IBM a martingale.1456 unprojected-input obstruction remains valid.
+
+Development logs .lake/stardust-1460-target1..10.log retain repairs: reserved
+Lean keyword section renamed column; ENNReal scope; explicit product coordinates
+for uncurry measurability; MemLp.zero; exact set-preimage identity for predictable
+time; continuous NNReal coercion measurability; sourceKernel's actual namespace;
+local existing separability instances; explicit past-process lambda and subtype
+membership. No compiler options, heartbeat limits, toolchain or trust changes.
+
+Verification: COMPLETE root6590 jobs (26.260546s); COMPLETE transitive
+collectAxioms 46425 safe Foundation declarations (40.485723s), only
+propext/Classical.choice/Quot.sound. All35 public types read UNABRIDGED; ENTIRE
+four final sources/private proofs reviewed. TEN independent checks passed
+(26.311270s). All2418 Foundation/root sources+3configs frozen/rechecked,
+all113 archive paths/hashes unchanged. Evidence .lake/stardust-1460-working-checkpoint.json,
+-full-build.log, -audit.log, -independent.log, timing JSON and -verification.json.
+Seven explicit-path Git checkpoint, exact receipt and verified PRIVATE main/research
+sync remain mandatory before terminal closure. Goal/campaign remain ACTIVE.
