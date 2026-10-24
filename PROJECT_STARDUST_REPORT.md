@@ -36571,3 +36571,114 @@ Foundation/root sources+3configs frozen/rechecked;113archive paths/hashes
 unchanged. FIVE explicit Git paths: two new sources, root, axiom-audit imports/
 prints, this ledger. Exact-commit receipt and verified PRIVATE main/research
 closure remain mandatory and are recorded in the terminal checkpoint receipt.
+
+## Checkpoint1432 — physical signed-Dirac slope meets the original IBM adjoints
+
+IBM remains ACTIVE and queue1422 is unchanged. This checkpoint connects the
+physical weak Wiener realization1431 to the ORIGINAL partial clock adjoint
+and the ORIGINAL full intrinsic joint divergence on an explicit common test
+family. No identification of the whole two test spaces is assumed.
+
+The starting manuscript remains ResearchSources/ibm/EJP2605-044RA0.pdf,
+SHA256 5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+The gap retained1430--1431 was a physical-versus-intrinsic domain connection,
+not the already verified physical first-source correction closure. This work
+reuses those results without editing the manuscript or declaring its entire
+calculus complete. No publication novelty is asserted.
+
+Foundation/IBMPhysicalPointSlope.lean constructs signedDirac(t) as the ACTUAL
+clock sign times the ACTUAL spatial Dirac at |clockPath(Y,t)|. It is a genuine
+L2(clock;physical H^-1) field, using the EXISTING sign bound, boundedMultiplier,
+physical Dirac class and original real restriction of its complex Hilbert norm.
+No new norm or measure is introduced. slopeLimit=weakField(signedDirac).
+signedDirac_ae/slopeLimit_ae identify the actual sections, including a common
+full-measure clock set working for EVERY physical test L. slope_pairing_integral
+gives the ordinary expectation of sign(Y_t)*L(delta_|Y_t|)*zeta(Y) for EVERY
+original Gaussian-L2 clock test zeta. The sign is not discarded.
+
+native_kernel_eq and native_slope_eq identify the ORIGINAL signedSource(n,t)
+with those actual signed mollifier kernels before taking any limit. They use
+IBMClockPhysicalOccupation.recovered_signedSource_ae/signedSource_physical,
+the original physical noise isometry and1431's actual finite-width pairing
+agreement. native_slope_tendsto proves STRONG L2(clock;StrongDual Tests)
+convergence of the ORIGINAL native scenery slope for every nonnegative t.
+This is not an independently named candidate or a residual definition.
+
+Foundation/IBMPhysicalClockAdjointBridge.lean constructs the actual tensor
+field V(L,a,b)=testNoise(L)(X) times [firstChaos(b)(Y) times a]. Here L ranges
+over the full REAL continuous physical dual from1431, and a,b over EVERY
+original coefficient-space direction. adjoint_graph/adjoint_mem/adjoint_value
+PROVE membership in the ORIGINAL lifted clock derivative's full Hilbert
+adjoint domain. Its adjoint is the original tensor testNoise(L) times the
+mixed quadratic clock target. These are not membership assumptions. Reuse is
+direct: GaussianQuadraticSourceHodge.mixed_divergence_graph,
+BochnerClosedOperator.tensor_graph and BochnerLiftAdjointInclusion.lift_adjoint_le.
+
+finite_gradient_pairing proves exact pairing of the original clockGradient(n,t)
+with V(L,a,b) as inner(evaluate(L,nativeField(signedSource(n,t))),firstChaos(b))
+times inner(direction(t),a). physical_pairing_limit then follows from actual
+strong physical convergence. Independently, clock_adjoint_bridge takes the
+EXISTING original full adjoint-GRAPH-dual limit of the SAME clock gradients.
+Uniqueness of their scalar limits proves equality with the physical signed
+Dirac slope on these original graph tests, for EVERY t>0, L,a,b.
+clock_inner_bridge is the exact scalar integration-by-parts form of that result.
+
+ambient_clock_compatibility proves the original ambient clock divergence is
+a valid ORIGINAL full intrinsic joint divergence when inserted as the clock
+channel with zero scenery channel. It explicitly handles the intrinsic
+orthogonal projection using the already verified actual observable subspace.
+intrinsic_adjoint_bridge proves existence of hp with pairField(0,V(L,a,b)) in
+the ORIGINAL jointDivergence.domain and identifies
+inner(intrinsicCurve(t),jointDivergence(pairField(0,V))) with the SAME physical
+signed-Dirac expression. The native unitary transports clock_point_transport/
+clock_pairing_transport identify the actual process, not a new symbolic curve.
+The independent tests verify its equivalent full intrinsic graph-dual action
+and the literal ordinary expectation involving actual IBM_t and its original
+joint divergence. Thus this is a genuine common-domain connection, not merely
+parallel convergence statements in unrelated dual spaces.
+
+Exact scope: this test family uses first-SCENERY-chaos physical Gaussian tests
+and LINEAR clock vector fields, whose divergence is quadratic. No density in
+the full adjoint graph norm is asserted; no bounded isomorphism between the
+physical test dual and original graph dual is claimed. This does not identify
+every unprojected nonlinear boundary correction or prove a full intrinsic
+Ito/Clark--Ocone theorem. The positive-time actual point still lies OUTSIDE
+the ordinary joint derivative domain. Its weak test action does not restore
+an ordinary Hilbert clock gradient. Existing norm-escape and no-extension
+counterexamples remain intact. IBM remains active; no campaign transition.
+
+Ten independent Lean checks cover actual signed-Dirac sections, native slope
+convergence, unconditional ORIGINAL clock-adjoint membership, its exact native
+quadratic output, exact finite-gradient pairing, full intrinsic-domain/action,
+equivalent original graph-dual action, literal actual IBM/clock-Dirac expectation
+identity, preserved point nondomain, and the required sign in the general
+clock-test integral. The existing actual_pairing_integrable theorem supplies
+integrability of every IBM/adjoint product; the slope evaluation is genuine L2.
+
+Implementation experience: the default200000heartbeat limit is preserved.
+Failed targeted logs1,2,4--18 are retained; none is a mathematical obstruction.
+Representatives required explicit alias conversion and a final rfl. Intrinsic
+transport repeatedly exhausted the budget while normalizing subtype zeros or
+expanding graph-dual notation. Explicit Submodule.coe_zero simplification,
+separate scalar clock transport, the existing pointDerivative_apply_test and
+typed transitivity resolved this without increasing heartbeats. Temporary
+diagnostic traces and an unhelpful local unification-option experiment were
+removed; NO final compiler-option or trust change remains. Local irreducibility
+only names existing definitions, and cached norm instances are the original
+ones. Four failed independent scratch logs are also retained. Two explicit
+scalar identification helpers, a typed original divergence-domain variable
+retaining its exact field equality, and direct unfolding rather than broad
+rewriting made the equivalent graph-dual/actual-expectation checks pass at
+the same default limit. An untyped RHS placeholder was replaced by the exact
+clock integral. Both final proofs and all26 public types were reviewed unabridged.
+The next meaningful extension is higher clock test sectors, graph-norm density
+or a bounded compatible test map, and ultimately the actual nonlinear intrinsic
+Ito/Clark--Ocone identities. Do not infer those from this tensor-family theorem.
+
+Checkpoint1432 gates: root6520jobs/28.919344199995976s/0;
+COMPLETE safe transitive44912declarations/36.667784699995536s/0;
+ten independent checks/26.447199999995064s/0. All2348
+Foundation/root sources+3configs frozen/rechecked;113archive paths/hashes
+unchanged. FIVE explicit Git paths: two new sources, root, axiom-audit imports/
+prints and this ledger. Exact-commit receipt and verified PRIVATE main/research
+closure remain mandatory and are recorded in the terminal checkpoint receipt.
