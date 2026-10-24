@@ -38123,3 +38123,87 @@ Four explicit Git paths, exact receipt and PRIVATE main/research verification
 follow; no partial check replaces any gate.
 
 Terminal timings: root 25.175879s; complete audit 45829 declarations, 38.084514s; independent checks 27.231927s; all exit0.
+
+## Checkpoint1450 — actual native correction-left integral in the ORIGINAL physical domain
+
+IBM ACTIVE; queue1422 unchanged. The individual correction-left sum limit,
+left open1446--1449, is now proved in actual Gaussian L2(physical H^-1).
+The limiting integral is the ORIGINAL physical clock Ito map, applied to an
+independently realized joint time-probability field with PROVED predictable
+membership. It is not defined from the joint product identity. Source remains
+ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+No original archive bytes, existing theorem or campaign priority was changed.
+
+IBMPhysicalContinuousFields instantiates the EXISTING generic real-Hilbert
+ProductL2Curry.curryEquiv for the actual physical H^-1 target. The necessary
+separability is discharged from its EXISTING isometric embedding into complex
+spatial L2 and Mathlib's standard separable-measure Lp instance; no basis,
+conditional expectation or spatial Wiener extension is invented. Actual
+finite physical product fields are built from existing productTensor.
+The independently defined field is the inverse product/Bochner equivalence
+of the actual horizon-truncated continuous GaussianL2-valued coefficient curve.
+Its time sections equal the original curve in physical GaussianL2.
+
+Physical left sampling is proved to converge at EVERY real time on EVERY
+deterministic monotone mesh with fixed endpoints0,T and maximum width bounded
+by epsilon_N->0. Existing GaussianRefiningPartitions.covers supplies the
+finite interval coverage; repeated endpoints, variable cell counts, nonnested
+meshes, T=0, and empty partitions cause no exception. Dominated convergence
+of squared physical GaussianL2 errors on the compact time horizon gives
+STRONG product L2 convergence. The bound4M^2 on (0,T] is explicitly proved
+from compact boundedness of the actual continuous coefficient curve. This
+is a physical-target extension of the old scalar continuous-integrand proof,
+not a new stochastic foundation or a claim that scalar probe convergence
+implies physical convergence. All original scalar declarations are preserved.
+
+IBMPhysicalCorrectionIntegral identifies the already verified1448 physical
+cell fieldClass with the EXISTING generic productTensor, and the ACTUAL
+partitionInput values with restriction of these product fields. Apply the
+physical field theorem to the ORIGINAL correctionLimit family, whose full
+time-L2 continuity was proved1449. The rawField is independent of partition
+choice. rawField_slices proves its literal actual representative agreement
+for almost every time and Gaussian sample, including zero outside(0,T].
+There is no uncountable intersection of fixed-time exceptional sets.
+
+input_values_tendsto proves all actual native inputs converge in physical
+time-probability L2 to the restriction of this rawField. The existing closedness
+theorem isClosed_aestronglyMeasurable, applied to ACTUAL predictable uniform
+step inputs, proves rawInput_predictable. Only then is integrand constructed
+in ORIGINAL IBMPhysicalClockIto.Domain T. integrand_tendsto proves convergence
+in that ORIGINAL subtype for EVERY deterministic vanishing mesh as above.
+The ORIGINAL Ito isometry gives native_tendsto: the ALREADY identified actual
+GaussianLp2 correction-left partitionClass converges strongly to integralValue,
+defined as ORIGINAL Ito(integrand), not an externally supplied limit.
+
+Six independent checks test zero-horizon/empty native sums, FULL physical
+raw-past measurability of the limiting integral, the OLD closed derivative-
+adjoint graph for EVERY real physical scalarization of that integral,
+actual negative-time section vanishing, arbitrary nonnested-mesh GaussianL2
+error convergence, and canonical uniform sums with EVERY mesh premise
+discharged. Development logs preserve the failed initial type/signature,
+missing imported coverage/local separability instances, subtype-sum and
+composition elaboration attempts. The independent graph check initially
+qualified hilbertDivergence in the wrong namespace; the failed log is retained
+and its actual InfiniteGaussian declaration is used. No heartbeat increase, compiler option,
+new axiom, resource change or hypothesis weakening was used.
+
+Exact next obligation: use the independent native L2 correction-left limit
+and the already proved1446 joint L1 product identity to construct and identify
+the companion leftClockSum limit in its valid L1 topology. This is now a
+justified next implication; it was not justified from the joint identity
+alone. Common continuous versions, any further graph/domain closure, and the
+full nonlinear UNPROJECTED actual IBM calculus remain separate obligations.
+Scope is physical first-scenery IBM retaining ALL clock sectors; no raw IBM
+semimartingale, equality of clock and IBM histories, random-partition result,
+full intrinsic campaign completion or novelty assertion is made. The1430
+obstruction to a spatial ordinary GaussianL2 Wiener extension remains intact.
+
+Verification: full root6560jobs; complete transitive audit of EVERY safe
+Foundation declaration with ONLY propext/Classical.choice/Quot.sound; ALL24
+UNABRIDGED public types and ENTIRE final sources/proofs reviewed;6 independent
+checks.2388 Foundation/root sources+3configs+113 archive entries hashed and
+rechecked. Five explicit Git paths, exact receipt and PRIVATE main/research
+verification follow. This is active proof work, not daily housekeeping.
+
+Terminal timings: root 29.210963s; complete audit 45891 declarations, 41.131534s; independent checks 26.204809s; all exit0.
