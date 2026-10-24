@@ -2337,3 +2337,6 @@ import Foundation.IBMSchwartzNativeCounterexample
 import Foundation.GaussianHalfHolderScore
 import Foundation.IBMSchwartzHalfHolderHeat
 import Foundation.IBMSchwartzHeatPredictable
+import Foundation.GaussianBoundedTiltDerivative
+import Foundation.GaussianBoundedHeatDerivative
+import Foundation.IBMSchwartzHeatDerivative

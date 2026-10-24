@@ -40108,3 +40108,107 @@ function-subtraction coercion and norm_num; its failed log is preserved as
 no mathematical source changed and no unchanged successful root/audit was repeated.
 
 Final gates: complete root6611jobs 26.481663s; complete transitive audit 46730 safe Foundation declarations, only propext/Classical.choice/Quot.sound, 36.721485s; TWELVE independent Lean tests 26.670563s. All2439 Foundation/root source hashes and3 pinned configurations frozen/rechecked;113 archive paths/hashes unchanged. All prior mathematical sources preserved except root/AxiomAudit registration. Evidence .lake/stardust-1468-verification.json. Explicit commit/exact receipt/verified PRIVATE main and research backup follows. IBM and the indefinite goal remain ACTIVE.
+
+
+## Checkpoint1469 — actual nonlinear heat derivative and continuous conditional clock process
+
+IBM ACTIVE; queue1422 unchanged. Previous1468 made verified progress and passed
+its exact PRIVATE gate. Its finite-energy coefficient is now identified as a
+GENUINE spatial heat derivative, discharging that specific open obligation.
+Canonical predictable coefficient and native stochastic reconstruction are
+still open. All113 read-only/uncommitted ResearchSources archive paths/hashes,
+including EJP2605-044RA0.pdf SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE,
+are unchanged. No reflection/housekeeping, source manuscript modification or
+new queued campaign activation.
+
+GaussianBoundedTiltDerivative reuses the ORIGINAL positive Gaussian kernel
+k(t,z)=exp(-t*z-t^2/2), tilted_eq_gaussian and actual Gaussian shift law.
+translation proves E[F(Z+t)]=E[k(-t,Z)*F(Z)] as a Banach Bochner identity.
+For bounded continuous complete-real-Banach F, weighted_hasDerivAt_zero
+rigorously differentiates t->E[k(t,Z)*F(Z)] at0 with derivative -E[Z*F(Z)].
+The observable F itself is NOT differentiated. The actual derivative kernel
+(-z-t)*k(t,z), its strong measurability and an integrable LOCAL majorant
+ M*(|z|+1)*(exp(z)+exp(-z)), |t|<1,
+are all proved. Gaussian polynomial and actual exponential MemLp2, followed
+by genuine Holder integrability, justify the majorant. Parameter-integral
+differentiation applies only after those hypotheses are discharged. The
+opposite translation sign gives translate_hasDerivAt_zero with +E[Z*F(Z)].
+No new Gaussian law, likelihood convention, trust axiom or resource override.
+
+GaussianBoundedHeatDerivative defines the ACTUAL heat mean
+ P_h f(b)=integral f(b+h*z) dN(0,1)(z).
+mean_integrable and linear_weight_integrable establish the real Bochner and
+weighted integrals for bounded continuous f. mean_continuous proves JOINT
+continuity in (b,h), including h=0, by actual dominated integration. The exact
+centered_integral identity uses E[Z]=0 and proved integrability before splitting
+integrals. mean_hasDerivAt proves for EVERY h!=0 that the spatial derivative
+of P_h f at b is EXACTLY1468's centered GaussianHalfHolderScore.score(f,b,h).
+The proof translates the bounded curve and applies the genuine Banach scomp
+chain rule to (x-b)/h; it assumes no derivative of the rough original f.
+This is the actual mean, not a newly defined derivative prescribed by notation.
+
+IBMSchwartzHeatDerivative applies that theorem to1468's ACTUAL all-chaos folded
+nonlinear scenery curve f(r)=g(a+W(|r|)) in the ORIGINAL Gaussian source L2.
+heatMean uses h=sqrt(v). heatMean_hasDerivAt, v>0, identifies the derivative
+with the already proved finite-energy heatScore; no first-source projection or
+rough-point DomD premise occurs. heatMean_gaussian uses the actual scaled
+Gaussian HasLaw to identify P_sqrt(v) with the Bochner Gaussian mean of
+variance v>=0. conditional_value combines it with the EXISTING whole-history
+conditional transition. conditional_gradient specifies the derivative of that
+particular heat-mean version at the original current clock coordinate S<T.
+actual_raw_derivative identifies1468's literal predictable raw field at EVERY
+fixed s<T,Y with that actual spatial derivative at the constructed clockPath.
+This closes the heat-derivative identification, not canonical integral recovery.
+
+heatProcess(T,Y,s)=heatMean(g,a,clockPath(Y,s.toNNReal),T-s) has CONTINUOUS
+SOURCE-L2-valued paths for every constructed clock path Y. heatProcess_terminal
+is exactly the original nonlinear source curve at the actual terminal clock;
+combined with1468's actual_sections it equals literal g(a+IBM_T) AE scenery.
+conditional_path_version proves that for EACH FIXED S<=T this process version
+equals actual Bochner conditional expectation on the ENTIRE raw clock history,
+AE under the original clock law. These are precise path/law statements about
+source-L2 values. No uncountable intersection of scalar null sets is taken.
+Continuity beyond the physical interval is merely the totalized formula:
+sqrt(v)=0 for v<=0; no Gaussian negative variance interpretation is claimed.
+Spatial derivative is asserted v>0, and conditional statements only S<=T.
+
+WHAT STILL DOES NOT FOLLOW: a spatial heat derivative, conditional-mean
+version and finite predictable energy alone do not prove that its native Ito
+integral equals the terminal minus nonlinear initial scenery mean. Canonical
+predictable-adjoint/step-duality identification, a justified time heat equation
+or alternative stochastic representation/closure argument remain to be proved.
+Nonlinear initial source adjoint and correct intrinsic observation projection
+also remain. Entire scenery is still a source parameter, not assumed observed
+at IBM time0. This is not observed-IBM-filtration PRP, full intrinsic physical-
+time calculus, or an all-horizon scalar native pathwise reconstruction. The
+raw-running nonlinear obstruction1467 and all prior verified work remain intact.
+
+Targets1--8 and failures retained. Repairs concerned exact pointwise density
+coercions, function additions, absolute-value token spacing, the REAL-BANACH
+scomp chain rule, local let-value rewriting, and disambiguation of source
+InfiniteGaussian.GaussianL2 from the scalar GaussianCore.GaussianL2. The latter
+produced ordinary error-recovery placeholders in a FAILED build; no source
+placeholder was inserted, and the final complete audit excludes sorryAx.
+Explicit scalar continuous-map bounds and mean unfolding resolved the scaled
+Gaussian law identification. Last target8 passed at DEFAULT200000, with no
+heartbeat/recdepth/trust/version changes. Existing ordinary curve/score/mean
+are LOCAL irreducible in the source specialization to avoid pointless expansion;
+this does not change their definitions or any mathematical hypothesis. No
+copied large options from the old likelihood files and no suppressed checks.
+All22 public types and ENTIRE3 final source/proofs, including private derivative
+and envelope lemmas, were read unabridged. Independent tests check actual tilt
+sign via standard Gaussian mean, constant heat mean and tilt derivative,
+bounded odd-Gaussian derivative and positive actual score, the rough source
+heat derivative, conditional continuous version, original raw coefficient,
+source-L2 path continuity and literal nonlinear terminal sections.
+One independent positive-score test initially required explicit positive-interval
+arithmetic, the ACTUAL Gaussian open-positive-measure instance obtained from
+volume-to-Gaussian absolute continuity, and pointwise zero-function coercion.
+The two failed logs are preserved as .lake/stardust-1469-independent-failure1.log
+and failure2.log; the final scalar positivity proof uses direct reassociation
+and Real.exp_nonneg rather than simplifying powers inside exponential arguments.
+Only the scratch test was repaired; successful unchanged root/audit inputs
+were retained rather than redundantly rebuilding or weakening any gate.
+
+Final gates: complete root6614jobs 30.205905s; complete transitive audit 46756 safe Foundation declarations, only propext/Classical.choice/Quot.sound, 39.897088s; TEN independent Lean tests 27.528496s. All2442 Foundation/root source hashes and3 pinned configurations frozen/rechecked;113 archive paths/hashes unchanged. All prior mathematical source bytes preserved except root/AxiomAudit registration. Evidence .lake/stardust-1469-verification.json. Explicit commit/exact receipt/verified PRIVATE main and research backup follows. No campaign transition; IBM and the indefinite goal remain ACTIVE.
