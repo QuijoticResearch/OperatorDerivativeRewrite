@@ -41971,3 +41971,103 @@ called an ordinary L2 stochastic process or a completed Clark--Ocone theorem.
 IBM remains unfinished and active.
 
 Verification: full final root6640 jobs, 25.696669s; complete 47361 safe transitive declarations, 43.946934s; FOURTEEN independent checks, 28.891770s, all exit0. All27 public types, the ENTIRE final Lean source/private proofs and ENTIRE numerical script were read unabridged; numerical JSON/results inspected. Frozen/rechecked inputs cover 2468 Foundation/root sources, all3 configurations, both extra probe artifacts and all113 manuscript paths/hashes. Explicit Git, exact receipt and verified PRIVATE main/research closure follow. No mathematical edit after the FINAL successful root build/audit.
+
+## Checkpoint1485 — actual quadratic-Wick source tests have strong clock-L2 limits
+
+IBM remains ACTIVE; instruction queue8280325 and every campaign gate are
+unchanged. This is direct continuation of1484's actual compensated source-grid
+investigation, not a new campaign or reflection/housekeeping admission. The
+previous goal turn checked the already-saved AI queue and changed no state;
+the present turn revalidated that state and resumed the existing pending proof.
+The old target8 process handle was absent and its retained log terminal FAILED;
+it was not restarted merely because observation timed out. Its final explicit
+Schwartz derivative-application error was repaired by definitional equality.
+
+The primary IBM archive remains ResearchSources/ibm/EJP2605-044RA0.pdf,
+SHA256 5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+The process is the repository's ACTUAL reflected-clock Z_t=B(|W_t|), not an
+unproved law identification with two-sided outer Brownian IBM. All113 archive
+paths/hashes match inventory1292. ResearchSources remains read-only/uncommitted.
+No new literature-based novelty claim is made for classical Brownian quadratic
+variation or Schwartz primitives. The new verified connection is to the exact
+surviving native-source kernels constructed1484.
+
+Foundation/GaussianSmoothQuadraticVariation.lean proves an actual strong L2
+quadratic-variation theorem for every C2 real f with bounded first and second
+derivatives: the literal uniform-grid sum of (f(W_right)-f(W_left))^2 converges
+to the clock Gaussian-L2 Bochner integral of (f'(W_t))^2. It reuses the existing
+GaussianSmoothIto, GaussianLipschitzQuadraticVariation, LipschitzIntegrands and
+TaylorRemainder declarations. Nothing is postulated about increment sums.
+The Taylor difference-of-squares error has pointwise bound AB|delta W|^3,
+one-cell L2 squared bound 15(AB)^2(delta t)^3, and full-grid squared bound
+15(AB)^2 T^3/(N+1). Its strong convergence to zero is proved. The surviving
+weighted Brownian quadratic-variation and Bochner Riemann-sum limits are then
+reused directly. The actual literal finite-sum identity is separately proved.
+
+Foundation/IBMPhysicalWickTestDomain.lean constructs the physical test g'
+as an actual spatial L2 Schwartz derivative and maps it by the ORIGINAL
+IBMPhysicalNoiseRealization.physicalToCoefficient isometry to k_g. FTC and
+the original scenery-vector pairing prove inner(d_r,k_g)=g(r)-g(0) for EVERY
+real r. For actual clock directions this is g(|W_t|)-g(0). ONLY when g is even
+is it replaced by g(W_t)-g(0). Both derivative bounds are discharged using
+actual Schwartz seminorms, rather than left as convergence assumptions.
+
+Foundation/IBMRawGridWickLimit.lean first proves the unrestricted exact identity
+inner(S(u,n),wick(k,2)) = inner(u_n,k)^2-inner(u_0,k)^2
+                         -sum_i (inner(u_(i+1),k)-inner(u_i,k))^2.
+Here S is1484's actual cross-chaos compensated source sum, with its original
+normalization. The quadratic channel is retained; this is NOT the raw product.
+action(g,T,N) is the bounded scenery inner-product map applied pointwise to
+the ACTUAL outer Bochner-L2 sourceGrid on N+1 uniform intervals. action_actual
+identifies the literal finite-source pairing almost everywhere in the clock.
+No new Gaussian noise or formal symbolic stochastic integral is substituted.
+
+For EVERY even real Schwartz g and EVERY T>=0, action_identity is an exact
+equality in the ORIGINAL clock GaussianL2:
+ action(g,T,N)=(g(W_T)-g(0))^2 - sum_i (g(W_right)-g(W_left))^2.
+The terminal square has proved actual MemLp2 via Schwartz bounds. Actual
+process_zero_ae, not a pointwise representative assumption, discharges the
+initial value. The old grid is matched exactly to the old uniformTime grid.
+action_tendsto consequently proves STRONG clock-L2 convergence to
+ (g(W_T)-g(0))^2 - integral_0^T (g'(W_t))^2 dt,
+with the integral precisely the displayed GaussianL2-valued Bochner integral.
+This is convergence for each fixed quadratic-Wick SOURCE probe. It is not a
+claim of strong source-kernel convergence, convergence of the projected
+ORIGINAL intrinsic joint-divergence outputs, or full IBM Clark--Ocone.
+
+TWELVE independent Lean checks passed FIRST RUN: general C2 actual QV limit;
+literal QV finite sums; physical primitive pairing; absolute-clock formula
+without evenness; exact finite actual action; strong fixed-test limit; explicit
+even Gaussian Schwartz primitive; its physical direction is NONZERO (using
+exp(-1)<1); its actual strong limit; finite closed-loop test equals
+-2 inner(h,k)^2 despite zero endpoint; actual terminal MemLp2; and literal
+finite source-grid action. Thus the even test class is not vacuous, and the
+endpoint-only false formula is explicitly rejected. This test suite does not
+assert that these source tests are measurable in the IBM observable sigma field.
+
+Retained development logs target1--8 document the preceding proof work;
+target9 repairs the explicit derivative application and passes. Target10
+exposed explicit telescope-function/type inference/grid-zero normalization;
+target11 left only the required nonzero exponent proof in zero_pow; target12
+passes. No heartbeat/resource/trust/toolchain change or error suppression.
+Full root6643 jobs PASSED in26.576830s; COMPLETE transitive audit47440 safe
+Foundation declarations PASSED in39.149774s, accepting ONLY propext,
+Classical.choice, Quot.sound. All36 new public types read UNABRIDGED, all three
+ENTIRE final source files/private proofs read; twelve independent Lean checks
+PASSED in29.080793s FIRST RUN. All2471 Foundation/root source hashes and three
+configurations frozen/rechecked;113 archives unchanged. No mathematical edits
+after final successful gates. Explicit-path commit and exact-receipt PRIVATE
+main/research verification are the mandatory closure steps.
+
+Exact open obligations: no bounded/completed quadratic test-domain extension
+or density theorem is claimed; no convergence against arbitrary source tests
+or clock-dependent nonsmooth observable tests is proved. A projected native
+value remains P_IBM(jointRealization(sourceGrid)); there is no unjustified
+commutation with source Fock projections. The observable terminal-square probe
+would involve a RANDOM scenery direction and nonsmooth clock overlap min,
+requiring the existing F2 boundary/occupation machinery. Connect this directly,
+and examine polarization/quantitative Schwartz seminorm control, before any
+new completion. The1484 empirical norm growth remains empirical, with rigorous
+energy asymptotics open. Full intrinsic IBM stochastic calculus remains ACTIVE
+and incomplete; no later campaign is opened. No Oct24 reflection date reserved;
+the stale Oct23 accounting uncertainty is preserved. No new numerical claim.

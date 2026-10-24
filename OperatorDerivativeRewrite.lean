@@ -2366,3 +2366,6 @@ import Foundation.IBMRawStepCompensation
 import Foundation.IBMRawGridCompensation
 import Foundation.IBMRawGridEscape
 import Foundation.IBMRawGridSecondChaos
+import Foundation.GaussianSmoothQuadraticVariation
+import Foundation.IBMPhysicalWickTestDomain
+import Foundation.IBMRawGridWickLimit
