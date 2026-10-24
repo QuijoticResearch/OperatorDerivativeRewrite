@@ -2294,3 +2294,6 @@ import Foundation.IBMSpatialPointClockObstruction
 import Foundation.IBMClockPastMoments
 import Foundation.IBMSpatialFourthStep
 import Foundation.IBMSpatialFourthSums
+import Foundation.IBMSpatialHilbertRetract
+import Foundation.IBMSpatialPredictableSteps
+import Foundation.IBMSpatialNativeFourth

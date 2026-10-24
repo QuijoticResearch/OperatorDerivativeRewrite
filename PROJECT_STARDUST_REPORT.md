@@ -38507,3 +38507,96 @@ root sources+3configs+113 archive paths/hashes frozen and rechecked. Six
 explicit Git paths, exact receipt and PRIVATE main/research verification follow.
 
 Terminal timings: root 27.741979s; complete audit 46024 declarations, 36.397799s; independent checks 28.743604s; all exit0.
+
+## Checkpoint1454 — original ordinary spatial Ito map and actual native fourth moments
+
+IBM ACTIVE; queue1422 unchanged. This directly closes the native ordinary
+spatial STEP identification missing from1453. The source remains
+ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+No original manuscript or earlier mathematical source was modified. This is
+active proof work, not a reflection/housekeeping session; no date reserved.
+
+IBMSpatialHilbertRetract constructs an AUXILIARY real-linear isometric model
+J:ordinary real spatial Lebesgue-L2 -> complex H^-1 viewed as a real Hilbert
+space. J is complexification followed by the inverse Bessel isometry. Its
+bounded real left inverse K is the Bessel isometry followed by real part;
+recover_model and recover_lift prove KJ=id, including Gaussian Bochner-L2.
+This J is NOT the physical zero-order Sobolev embedding from1430/1452 and
+has no interpretation as an extension of scenery white noise. In particular
+no invalid inverse of the physical negative embedding is introduced.
+
+IBMSpatialPredictableSteps reuses1440's FULL physical Lp test separation,
+1448's original predictable-cell input/product theorem and the EXISTING real
+parameter-Ito scalarization. Domain is the genuine ordinary TimeHilbert-valued
+predictable L2 subspace on the original finite horizon. trim is the original
+lpMeasToLpTrimLie; integral is EXACTLY GaussianParameterizedIto.realIntegral
+applied to trim, not defined as a stochastic sum or physical pullback.
+The PRIVATE trim_scalar_match explicitly transfers AE identities through
+the smaller predictable sigma algebra and proves agreement for EVERY real
+continuous dual test. model_integral then proves J commutes with the original
+integral, using full physical separation rather than assuming a density fact.
+
+input is K of the EXISTING physical predictable step J(U); its actual AE
+value is 1_(a,b] U and genuine predictability/MemLp2 are proved by the old
+domain and bounded K. model_input recovers precisely the original physical
+step J(U). product is K of the existing physical product, with its actual
+AE value (B_b-B_a) U proved. integral_input establishes equality of the
+ORIGINAL ordinary parameter-Ito output with this ACTUAL product, for EVERY
+Gaussian-L2 TimeHilbert coefficient measurable for the full raw clock past.
+No boundedness, simple-function, polynomial or finite-chaos restriction is
+used. Repeated times, zero horizons and arbitrary finite starting times are
+retained. The construction supplies missing operator agreement without
+duplicating the old rectangular predictable-set or independence machinery.
+
+IBMSpatialNativeFourth instantiates this step identity for the ACTUAL
+signed translated-mollifier coefficient sign(B_a)*rho_r(|B_a|-x).
+coefficient_memLp/coefficient_past prove every coefficient's integrability
+and raw-past membership. nativeInput is a genuine finite sum of predictable
+cells; nativeInput_ae identifies its literal time/sample step field.
+native_integral_actual proves the original parameter-Ito output is exactly
+the actual1453 sumProcess, for every deterministic nondecreasing time
+sequence and finite prefix whose endpoint lies in the horizon. Empty sums,
+repeated times and nonzero starting time are included.
+native_integral_memLp_four proves actual fourth integrability; the sharp
+bound is E||nativeIntegral||^4 <=3*(tau_n-tau_0)^2*||profile_r||^4.
+It directly reuses1453's independently proved Brownian fourth moments;
+no Gaussian law for a random-coefficient stochastic sum is assumed.
+
+SIX independent Lean examples check: arbitrary unbounded raw-past spatial
+step stochastic agreement; repeated-time integral literally zero; original
+exact Ito isometry; full-horizon fourth bound3*T^2*||profile_r||^4 on arbitrary
+monotone grids; actual translated-field fourth integrability; and a single
+cell starting at arbitrary a with the exact elapsed-span fourth bound.
+Development failures were elaboration issues, not counterexamples: real
+restriction of a LinearIsometry selected its LinearMap, fixed by explicitly
+proving the norm; dotted line-break parsing; a closed rw goal followed by
+redundant rfl; unspecified AE-restriction set; local integral-name ambiguity;
+Pi.add_apply normalization; MemLp.ae_eq API; and countable coefficient AE
+transfer moved individually to product/horizon before ae_all_iff.
+The failed logs are retained under .lake/stardust-1454-*.
+
+EXACT REMAINING OBLIGATIONS: these are FINITE native stochastic sums, not
+yet the continuous-time I_r(T) fourth estimate. Prove native ordinary
+spatial TIME-L2 convergence to the INDEPENDENT1452 raw input, using actual
+continuous clock paths, nonzero clock values AE and dominated convergence.
+The signed spatial field jumps at zero; its Gaussian-L2 time curve is not
+continuous at time0, so the1450 globally continuous-curve theorem cannot
+be applied without a new justified argument. Original-Ito isometry will
+then identify the limit; use a.e. subsequence/Fatou to transfer the uniform
+fourth bound, and actual scenery first-chaos fourth moments for a tail test.
+No lack of probability convergence/tightness has yet been proved;1452's
+norm escape alone does not imply it. No full intrinsic IBM completion,
+arbitrary nonlinear graph closure or new campaign activation is claimed.
+
+Verification: complete root build6571 jobs (25.698368s); complete
+transitive collectAxioms audit 46108 safe Foundation declarations
+(36.726091s), only propext/Classical.choice/Quot.sound; all27 public
+types read unabridged and ENTIRE three new sources including the private
+trim proof reviewed. SIX independent Lean checks pass (26.084827s).
+All2399 Foundation/root sources+3configs frozen/rechecked, all113 archive
+entries/hashes unchanged, no sorry/admit/new axiom/compiler-option change.
+Evidence: .lake/stardust-1454-working-checkpoint.json, -full-build.log,
+-audit.log, -independent.log, timing JSON and -verification.json.
+Explicit six-path Git commit and exact-commit receipt, then verified PRIVATE
+main/research closure, are mandatory before considering this checkpoint closed.
