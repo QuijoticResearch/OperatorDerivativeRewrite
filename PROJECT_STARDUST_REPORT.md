@@ -42297,3 +42297,140 @@ be reused, with the random outer boundary retained. Scalar boundedness and
 strong unweighted boundary-occupation decay are not full calculus completion.
 No campaign transition; no Oct24 reflection reservation; staleOct23 accounting
 uncertainty retained. Continue the actual IBM random-cap investigation.
+
+## Checkpoint1488 — actual anticipative bracket means via terminal Gaussian prediction
+
+IBM remains ACTIVE, queue8280325 and all gates unchanged. Previous goal turn1487
+was PROGRESS: actual random terminal-boundary occupation decay, complete audit,
+committed4b757aa88e3dfa7f6b2b96223aa1a5ac67912103 and exactly verified PRIVATE
+main/research. Its continuous-time boundary decay alone did not control
+discrete squared-increment weights. This checkpoint proves a concrete positive
+estimate for precisely those terminal-dependent weights, and a domain
+counterexample. No unrelated campaign or reflection admission.
+
+Primary archive remains ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All113 archive paths/hashes remain inventory1292 exactly; no manuscript altered
+or committed. The actual process is B(|W_t|), without unproved two-sided IBM
+law transfer. No external novelty claim is made for Brownian bridge moments;
+the contribution here is their verified reuse for the outstanding actual IBM
+random-cap bracket problem.
+
+Reuse audit considered GaussianWeightedQuadraticVariation and the aligned
+GaussianStoppedQuadraticVariation. Their raw-past coefficient hypotheses
+cannot be silently applied to weights depending on W_T. A coarse-block random
+weight approximation route was considered. A stronger direct route was found
+in EXISTING GaussianWickConditionalProjection: exact conditional Wick moments
+depend only on coefficient covariances. This avoids new bridge or integration
+foundations, retains ordinary stochastic meaning, and needs only uniform L2
+coefficient bounds rather than essential boundedness at the general level.
+
+Foundation/GaussianTerminalBracketPrediction.lean defines observation(s,T)
+using the actual coefficient directions for EVERY time r<=s, together with
+the actual terminal direction at T. generated(observation(s,T)) is the EXISTING
+completed GaussianL2 measurable subspace for this actual Gaussian family.
+It is an ordinary clock Gaussian observation domain, NOT the IBM observable
+projection or a signed pseudoprocess conditional expectation.
+
+For s<=t<=T and s<T, the actual increment direction u_(s,t) has the same
+covariances with this ENTIRE family as
+ v=((t-s)/(T-s))*u_(s,T).
+Both the terminal covariance and all past covariances are proved by reusing
+timeVector inner products and pastDirection_inner_increment. Membership of v
+in the actual observation source span is proved, including s=0 degeneracy.
+conditional_square is the exact existing conditionalProjection identity for
+the centered squared increment, equal to wick(v,2). Actual AE identification
+gives the ordinary Gaussian conditional-prediction representative
+ ((t-s)/(T-s))^2 * ((W_T-W_s)^2-(T-s)).
+The original conditionalProjection_ae_condExp supplies its ordinary conditional
+expectation interpretation. There is no assumption that the terminal value
+is independent of the increment or known in the original natural filtration.
+
+bridge_norm_sq is exactly (t-s)^2/(T-s). For EVERY actual L2 coefficient a
+in generated(observation(s,T)), generated_pairing and generated_pairing_bound
+prove the exact Wick prediction pairing and
+ |E[a*((W_t-W_s)^2-(t-s))]| <= 2*(t-s)^2/(T-s) * ||a||_L2.
+The literal product integrability and integral/inner-product agreement are
+proved separately; no formal pairing replaces the actual expectation.
+
+Foundation/GaussianTerminalWeightedBracket.lean assembles every N+1 uniform
+cell of horizon T>0. Coefficients a_(N,i) may vary arbitrarily with the grid
+and be unbounded random variables, provided EACH belongs to its ENTIRE
+past-plus-W_T Gaussian measurable domain and ||a_(N,i)||_L2<=M uniformly.
+The actual mean error satisfies
+ |E sum_i a_(N,i)*((delta W_i)^2-h)| <= 4*M*T/sqrt(N+1), h=T/(N+1).
+Consequently this REAL expectation tends to zero. The proof retains the last
+cell's positive remaining horizon and uses exact grid endpoints, reversed
+reciprocal summation, and the existing inverse_sqrt_sum bound; no cells or
+subsequences are omitted. meanError_actual gives the literal actual sum.
+The domain is not asserted for arbitrary future-path coefficients. The result
+is NOT an L1 norm bound on the random sum, nor strong random-variable
+convergence: the absolute value is OUTSIDE the expectation.
+
+Foundation/IBMTerminalBracketWeights.lean constructs actual L2 classes for
+EVERY bounded BOREL phi(R^2->R), value=phi(W_s,W_T). Actual AE agreement,
+past-plus-terminal generated membership and L2 norm bounds are ALL discharged.
+The same estimate and mean limit hold for a grid-varying Borel family phi_N
+with a common bound M. It is not limited to smooth or polynomial cylinders.
+Concrete measurable weights include interior(x,r)=1_{|x|<|r|} and
+outerBand(delta,x,r)=1_{||x|-|r||<=delta}. The latter has vanishing actual mean
+bracket error for EVERY sequence delta_N of real widths, with NO assumption
+that widths shrink. Thus squared-increment weights may be replaced by time
+steps in the MEAN of the actual random terminal-boundary sums, uniformly
+over widths. This is a new direct connection to1486/1487's exact obligations.
+
+Foundation/GaussianTerminalBracketObstruction.lean proves that the observation
+domain is substantive. On horizon1, put a_(N,i)=(N+1)*((delta W_i)^2-1/(N+1)).
+These are actual GaussianL2 variables with squared norms EXACTLY2, uniformly
+bounded norms<=2, and proved literal AE representatives. Yet meanError is
+EXACTLY2 on EVERY grid and does NOT tend to zero. At least one coefficient
+lies outside the required past-plus-terminal generated domain, proved using
+the positive theorem. This refutes extending that theorem to ALL anticipative
+L2 coefficients with only the same uniform norm bound. It does NOT refute
+the valid terminal-dependent boundary coefficients constructed above.
+
+SIXTEEN independent Lean checks passed FIRST RUN29.184401s: exact conditional
+square; actual AE conditional representative; bridge variance1/2 for s0,t1,T2;
+general generated coefficient bound; literal grid expectation; all-grid mean
+limit; actual Borel coefficient membership; explicit quantitative bound;
+arbitrary grid-varying boundary-width mean error; actual interior indicator
+mean error; counterexample exact norm2-squared; uniform norm<=2; mean error2;
+failure of zero convergence; domain exclusion; and actual counterexample
+increment formula. Actual stochastic products and the sharp domain caveat
+are checked, rather than only symbolic finite tensors.
+
+Retained targets1--2: explicit inner orientations, Iic membership, conditional
+projection unfolding and norm pairing. Targets3--4: exact Fin sum reindexing,
+NNReal/real casts, nonzero denominators, coefficient multiplication order and
+absolute-value convergence normalization. Target5 passed all three positive
+modules. A preliminary full root6649 jobs passed26.485514s and is RETAINED.
+The concrete mathematical domain obstruction was then added (target6 only
+an existential binder syntax error; target7 passed). FINAL full root was
+rerun because the certified source set changed, not as redundant verification.
+
+FINAL root6650 jobs PASSED27.154694s. COMPLETE transitive axiom audit47579
+safe Foundation declarations PASSED37.503524s, accepting ONLY propext,
+Classical.choice, Quot.sound. All43 public types read UNABRIDGED and all FOUR
+ENTIRE final Lean files/private proofs read. Sixteen independent checks
+PASSED FIRST RUN29.184401s. All2478 Foundation/root source hashes and three
+configs frozen/rechecked;113 archives unchanged. No resource/heartbeat/trust/
+version changes or suppressed errors; no math edits after final full/audit
+gates. Explicit-path Git commit, exact-commit receipt and verified PRIVATE
+main/research synchronization remain mandatory closure steps.
+
+Exact next obligations: the anticipative MEAN weight replacement is now
+proved, so do not rebuild a new stochastic bridge or treat that error as an
+unresolved hypothesis. Still prove actual terminal-dependent Riemann sums
+converge to their literal occupation integrals. For shrinking outer bands,
+1487's almost-everywhere boundary avoidance and actual clock continuity
+should permit bounded convergence of left-step fields, but grid-to-time
+and finite-sum/integral agreement must be verified. Combined with the present
+uniform mean estimate this would yield discrete boundary energy decay.
+Then compare nonlinear min(|W_t|,|W_T|) squared increments with interior-
+weighted Brownian squares. Retain origin and outer crossings and large-
+increment tails (actual fourth moments). Neither that comparison nor the
+candidate clipped-QV limit integral 1_{0<|W_t|<|W_T|}dt, its actual mean,
+original native observable output convergence, or full IBM calculus is
+established here. No P_IBM/Fock commutation or native norm bound is inferred.
+IBM remains ACTIVE. No Oct24 reflection reservation; staleOct23 accounting
+uncertainty preserved. No new campaign, numerical claim or goal completion.

@@ -2372,3 +2372,7 @@ import Foundation.IBMRawGridWickLimit
 import Foundation.IBMRawGridObservableTests
 import Foundation.IBMRandomTerminalBoundary
 import Foundation.IBMRandomBoundaryOccupation
+import Foundation.GaussianTerminalBracketPrediction
+import Foundation.GaussianTerminalWeightedBracket
+import Foundation.IBMTerminalBracketWeights
+import Foundation.GaussianTerminalBracketObstruction
