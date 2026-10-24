@@ -38804,3 +38804,123 @@ no sorry/admit/new axiom/compiler option/toolchain change. Evidence:
 -independent.log, timing JSON and -verification.json. Six explicit Git paths,
 exact-commit audit receipt and verified PRIVATE main/research synchronization
 remain mandatory before terminal closure. The autonomous IBM goal stays ACTIVE.
+
+## Checkpoint1457 — actual terminal IBM reconstruction by the original spatial Ito adjoint
+
+IBM ACTIVE; queue1422 unchanged. After1456 ruled out ordinary probability
+limits of the unprojected running integral and whole correction, this checkpoint
+constructs a POSITIVE sourcewise terminal counterpart. Source remains
+ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+Original archive bytes and prior mathematical results are untouched. No
+reflection/housekeeping session was admitted during this active investigation;
+the consulted policy's reservation/date gate and historical records are preserved.
+
+The theorem-level reuse audit found that IBMPhysicalClockAdjointBridge and
+IBMPhysicalFullClockAdjoint ALREADY prove the physical-test/original-adjoint
+comparison, including the entire original clock divergence domain. That work
+was NOT duplicated. The actual remaining constructive opportunity used
+GaussianFiniteHorizonAdjoint.finiteAdjoint_representation and the ORIGINAL
+GaussianParameterizedIto.realIntegral. No new stochastic integral is defined
+from a desired output. No novelty claim is made for standard Hilbert PRP or
+adjoint arguments; their concrete actual-process/operator agreement is verified.
+
+IBMSpatialCanonicalAdjoint defines representer T as the bounded Hilbert
+ADJOINT of the ORIGINAL ordinary spatial parameter-Ito map. It is everywhere
+defined and contractive. The PRIVATE tensor-inner identity, existing scalar
+testing of the original integral and ordinary adjoint duality prove exact
+representer_tensor and representer_scalarization. Riesz gives representer_dual
+for EVERY bounded real spatial dual test. scalarAdjoint_eq identifies the
+scalar adjoint with the EXISTING finiteAdjoint through the EXISTING trim
+isometry. scalar_representation therefore reuses the already verified scalar
+past-measurable L2 theorem; no pointwise/derivative hypothesis is added.
+
+IBMSpatialCanonicalRepresentation defines mean U as the existing bounded
+Bochner contraction with gaussianOne, and proves mean U=LITERAL integral U.
+center U=U-constant(mean U), with actual scalarization. The PRIVATE separation
+step reuses1454's auxiliary Hilbert model/retract and1440's full physical-Lp
+separation, plus Riesz; it does NOT identify the auxiliary model with the
+physical zero-order embedding. representation proves: for EVERY ordinary
+spatial Gaussian-Bochner-L2 U measurable for the FULL RAW clock past atT,
+the ORIGINAL parameter-Ito applied to representer T U equals center U.
+representation_unique proves uniqueness in the entire original predictable
+Lp2 target by the original Ito isometry. input is the original trim inverse
+of representer, so integral_input is an identity in the ORIGINAL1454 DomainT
+and operator. There is no replacement integral or assumed dense tensor range.
+
+IBMSpatialTerminalReconstruction discharges raw-past membership for the ACTUAL
+sourceKernel(T), actual mollifiedKernel(r,T) and full endpoint(r,T), using
+continuous physical kernels, actual raw Brownian coordinates and existing AE
+representatives. canonicalInput is the original predictable input of the
+actual terminal kernel. initialKernel is its clock Bochner mean; initialValue
+is its ACTUAL scenery white noise, with sections proved independent of the
+clock Y. This term is retained, not asserted zero. canonicalValue is ACTUAL
+realize of the ORIGINAL spatial Ito output. canonical_integral/identity and
+actual_reconstruction prove, under the ORIGINAL joint law,
+ACTUAL IBM_T = canonicalValue(T)+initialValue(T), almost everywhere.
+The sourcewise initial term is not identified with an intrinsic IBM observed
+initial germ. No conditional-expectation or filtration interpretation beyond
+the proved domains is silently substituted.
+
+For each finite mollifier width, finiteInput is the SAME canonical adjoint
+construction on the ACTUAL endpoint, and finite_integral equals its centered
+endpoint. finite_input_tendsto proves STRONG convergence in the ORIGINAL
+predictable domain norm; finite_joint_tendsto proves STRONG actual joint L2
+output convergence. This uses genuine native endpoint convergence and bounded
+operators, not only completed dual probes. finite_input_eventually_ne_running
+proves that at EVERY positive horizon, these canonical finite inputs EVENTUALLY
+DIFFER from the unprojected signed-Dirac running inputs of1452--1456: canonical
+input norms converge, whereas those running integral/input norms escape. Thus
+the positive representation does not relabel or falsely repair the refuted
+individual running limits. The negative1456 theorem remains fully preserved.
+
+physical_source_projection identifies EVERY physical scenery test of the
+actual ordinary sourceKernel with the EXISTING IBMPhysicalSceneryTestClockGraph
+point(T,L), using actual scenery expectation_pairing and actual IBM sections.
+physical_clark_ocone then PROVES that this physical test of the canonical
+predictable coefficient equals the original finite-horizon restriction of
+predictableProjection applied to the EXISTING CLOSED Gaussian clock gradient
+of that tested actual point. Original point_mem/derivative_value discharge all
+derivative-domain premises for EVERY physical test L and T>0. The gradient is
+the known direction tensor the tested signed physical Dirac slope; the causal
+projection is essential. This is an actual tested Clark--Ocone identification,
+not an assumed formula for untested rough IBM in its excluded original DomD.
+
+SIX independent Lean checks: actual terminal reconstruction with initial term;
+canonical original-domain norm bound; unique representer for ACTUAL kernel;
+constant spatial target has ZERO representer after retaining its mean;
+simultaneous canonical input convergence, eventual distinction from running
+input and old running nonprobability limit; and the tested actual closed-clock
+derivative Clark--Ocone scalar stochastic identity, with all past/domain
+premises independently discharged. Tests passed on their first run.
+Development repairs: correct predictable sigma instances and finite-p Fact,
+typed isometry/CLM changes, scalar mean Function.const reduction, explicit raw
+past measurability, correct gaussianOne namespace and neighborhood direction.
+An early isDefEq timeout was resolved by local irreducibility of the existing
+ordinary integral definition and typed norm proof, NOT raised heartbeat limits.
+Failed logs retained under .lake/stardust-1457-*; no source admissions survive.
+
+EXACT SCOPE/OPEN WORK: this is a sourcewise TERMINAL Brownian-clock
+representation in ordinary spatial L2, and its physical-test derivative
+identification. It does NOT make the uncorrected running IBM path a martingale,
+put actual IBM points in the ORIGINAL joint/clock derivative domain, prove a
+physical-time Ito formula for the running path, or complete intrinsic IBM.
+The clock-mean scenery term is not omitted. Scalar joint enlarged-filtration
+Ito identification after realizing the spatial input would require its own
+stochastic-Fubini/naturality theorem if that interpretation is asserted.
+Further work should identify explicit full ordinary spatial causal coefficients,
+the exact observation-filtration/intrinsic-domain relationship, and useful
+nonlinear closure, reusing1374's already verified intrinsic reconstruction.
+No generic no-renormalization statement or campaign transition is made.
+
+Verification: complete root build6580 jobs (25.485878s), COMPLETE transitive
+collectAxioms audit 46267 safe Foundation declarations (37.297461s), only
+propext/Classical.choice/Quot.sound; ALL34 public types read UNABRIDGED and
+ENTIRE three sources/private proofs reviewed. SIX independent Lean checks
+passed (27.007586s). All2408 Foundation/root sources+3configs frozen/
+rechecked; all113 archive paths/hashes unchanged; no sorry/admit/new axiom,
+changed compiler option/toolchain or mathematical edit after the final build.
+Evidence .lake/stardust-1457-working-checkpoint.json, -full-build.log,
+-audit.log, -independent.log, timing JSON and -verification.json. Explicit
+six-path Git checkpoint, exact-commit receipt and verified PRIVATE main/research
+synchronization remain mandatory before terminal closure. IBM stays ACTIVE.

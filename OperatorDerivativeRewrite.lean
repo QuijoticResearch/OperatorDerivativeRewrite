@@ -2303,3 +2303,6 @@ import Foundation.IBMSpatialJointFourth
 import Foundation.IBMSpatialIntegralTail
 import Foundation.IBMSpatialIntegralNoProbabilityLimit
 import Foundation.IBMSpatialCorrectionNoProbabilityLimit
+import Foundation.IBMSpatialCanonicalAdjoint
+import Foundation.IBMSpatialCanonicalRepresentation
+import Foundation.IBMSpatialTerminalReconstruction
