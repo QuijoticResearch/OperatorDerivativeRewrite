@@ -2359,3 +2359,4 @@ import Foundation.IBMFoldedClockAbsolute
 import Foundation.IBMRawTemporalKernel
 import Foundation.IBMSignedClockCompanion
 import Foundation.IBMRawDeterministicIntegral
+import Foundation.IBMRawIntegralSourceCalculus

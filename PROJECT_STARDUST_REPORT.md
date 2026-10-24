@@ -41312,3 +41312,111 @@ with the valid ordinary dt-L2 obstruction/zero interval. All domains and
 constants are the original verified ones, with no new Gaussianity premise.
 
 Final gates: complete root6633jobs/41.172949s/0; complete safe transitive axiom audit 47108 declarations, standard three axioms only/41.146757s/0; TWELVE independent checks/28.002121s/0. All2461 Foundation/root sources+3configs+113archive paths/hashes rechecked. Explicit FIVE-path commit, exact receipt and verified PRIVATE main/research backup follow. Evidence .lake/stardust-1479-verification.json. IBM remains ACTIVE.
+
+## Checkpoint1480 — original source calculus for the completed actual raw-IBM integral
+
+IBM remains ACTIVE; queue8280325 and all campaign gates are unchanged. The
+previous1479/b078dab checkpoint is fully audited and exactly privately backed
+up. This turn follows its operator-identification obligation rather than
+reopening a frozen campaign. All113 manuscript paths and bytes remain
+read-only, unchanged and uncommitted. The primary IBM archive remains
+ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+No manuscript claim is promoted to a theorem merely by citation.
+
+### Exact theorem-level reuse and mathematical construction
+
+Foundation/IBMRawIntegralSourceCalculus.lean reuses1479's actual bounded raw
+integral I on the EXISTING FractionalGaussianProcess.integrandSpace H=1/4.
+Its dense reference is finite sums of the original quarter-Hurst kernel
+vectors; I agrees with literal raw observed IBM sums and oriented increments.
+This is the same reflected-clock process B(|W_t|), not a silent substitution
+of an independent-two-branch outer Brownian motion or an observed terminal
+martingale. The domain is NOT ordinary physical-time L2 and not an assertion
+that every arbitrary time profile belongs to the canonical spectral span.
+
+source_curry proves the exact general native factor-order identity
+sourceUnitary(jointRealization u)=u, extending direct reuse beyond the old
+constant-fiber specialization. ambientGradient is the existing bounded
+firstChaosGradient lifted fiberwise after sourceUnitary. On arbitrary ambient
+inputs this is only the first-source projection-gradient. It is NOT asserted
+to equal the original unbounded derivative on all joint L2. Define G=ambientGradient
+composed with the already constructed actual raw integral I.
+
+The old IBMUnmollifiedSourceDerivative.randomSource_graph supplies the point
+SOURCE derivative graph. The old GaussianFirstChaosRecovery
+firstChaos_divergence_graph, the exact constant rank-one gradient identity,
+the actual randomSourceClass representative and BochnerLiftAdjointInclusion
+lift_adjoint_le give the ORIGINAL source-adjoint graph at every raw point.
+The full source adjoint is transported through the EXISTING sourceUnitary;
+no generic inverse is substituted for the native field. No hypothesis that
+raw point observables belong to the joint clock/source derivative domain is
+used. source_curry also verifies the native factor order in the return value.
+
+A private closed-submodule argument applies linearity on finite kernel sums,
+density of the original reference and continuity of I and G. Both the original
+sourceDerivative graph and its original adjoint graph are closed. Consequently,
+for EVERY f in the completed canonical domain, without caller-supplied graph
+or approximation hypotheses:
+
+* (I f,G f) is in the ORIGINAL sourceDerivative graph.
+* (G f,I f) is in its ORIGINAL adjoint graph.
+* Thus D_source I(f)=G(f) and delta_source G(f)=I(f), with actual domain values.
+* ||G(f)||=||I(f)|| and inner(G(f),G(g))=inner(I(f),I(g)). This is exact first-source
+  energy on the raw integral image, NOT an isometry from the reference norm.
+* For EVERY original source-derivative test F, E[I(f) F]=inner(G(f),D_source F).
+  The ordinary actual joint product is separately proved integrable for ALL
+  ambient L2 tests, so this is a genuine stochastic integration-by-parts
+  equality, not an undefined expectation or merely formal operator pairing.
+* For EVERY reference-convergent sequence, the actual finite stochastic values
+  AND their source gradients converge strongly in the product of original
+  joint L2 and original field L2. Combined with1479's existence theorem,
+  every completed input has such actual finite approximants.
+
+The new source reconstruction is a precise positive bridge between the
+completed raw stochastic integral and the existing native operator calculus.
+It is first-source reconstruction for deterministic canonical inputs, not a
+full intrinsic IBM Clark--Ocone theorem, random predictable integration map,
+clock derivative theorem or proof of joint strong point-domain membership.
+The old clock/joint point-domain obstructions, raw nonmartingale theorem,
+ordinary dt-L2 bounded-integration obstruction1475, and1478 reference-isometry
+counterexamples remain valid. No novelty claim is made; the proof uses the
+verified fiberwise Gaussian first-chaos mechanism under the actual random
+clock and a new completed-domain graph passage.
+
+### Independent mathematical checks and failed approaches
+
+TWELVE independent Lean checks cover the literal clock-section source-gradient
+representative; cross-gradient energy equal to the actual kernel K rather than
+Q; both original domains for every completed input; native source divergence
+agreeing with literal oriented raw stochastic increments; actual expectation
+of point products equal to K; nonzero point source energy; the strict +1,+1
+reference-norm NON-isometry surviving the source-energy identity; existence
+of simultaneous strong graph approximants for every input; source-gradient
+boundedness; the zero-time edge case; actual-product integrability and IBP
+for every source-domain test; and coexistence with the physical dt-L2 obstruction.
+
+Target logs1--8 preserve finite-sum normalization, namespace/notation and
+definitional-search failures, including default200000-heartbeat failures.
+They were repaired by exact congrArg transport, the existing scalarTensor AE
+representative, explicit qualified raw-integral notation, a PRIVATE generic
+closed-submodule proof and typed inner/norm equalities rather than repeated
+rewrite search through the concrete adjoint. Only ordinary definitions have
+local irreducibility annotations, including Mathlib's actual adjoint/graph
+DEFINITIONS; no abbreviation is made irreducible, no trust/resource/toolchain
+option is changed, and no unsafe reducibility is used. Target9 passed; the two
+final public identities were then included in the successful complete root
+build. Independent attempt1 failed solely on its missing local spectral
+second-countability instance and a tactic syntax error. Its log/timing were
+preserved, corrected test-only, and the complete twelve-check run repeated.
+There were no mathematical source edits after the successful final build/audit.
+
+Next justified work: extend actual deterministic raw integration to precisely
+admissible random coefficients only with genuine original derivative/adjoint
+product domains and stochastic-sum convergence, or complete the signed-clock
+companion's canonical-domain transfer/frame identity if it supplies a concrete
+operator or domain connection. Do not confuse bounded first-source projection
+with the original derivative outside the proved raw image. Full intrinsic IBM
+calculus remains unfinished; no early campaign transition is authorized.
+
+Verification: root6634 jobs, 42.022682s; complete 47166 safe transitive declarations, 40.039830s; TWELVE independent checks, 27.092677s, all exit0. All19 public types and the ENTIRE final source/private proofs were read unabridged. Source freeze/recheck covers 2462 Foundation/root sources, all3 configuration files and all113 archive paths/hashes. Explicit Git commit, exact receipt and verified PRIVATE main/research closure follow; this entry does not substitute for those gates.
