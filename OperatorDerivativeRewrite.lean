@@ -2319,3 +2319,6 @@ import Foundation.GaussianBrownianConditionalTransition
 import Foundation.GaussianSignedFold
 import Foundation.IBMPhysicalGaussianFold
 import Foundation.IBMPhysicalSlopeConditional
+import Foundation.IBMPhysicalBochnerConditional
+import Foundation.IBMPhysicalConditionalPairing
+import Foundation.IBMPhysicalJointStepPairing

@@ -39405,3 +39405,127 @@ Evidence .lake/stardust-1461-working-checkpoint.json, -full-build.log, -audit.lo
 -independent.log, timing JSON and -verification.json. Six explicit-path Git
 commit, exact receipt and verified PRIVATE main/research sync required before
 closure. Goal and IBM campaign remain ACTIVE.
+
+## Checkpoint1462 — common Bochner conditioning and actual joint predictable-step covariance
+
+IBM ACTIVE; queue1422 unchanged. The physical Gaussian identity and fixed-time
+scalar conditional coefficient were established1461; they are REUSED, not
+reproved. Original source ResearchSources/ibm/EJP2605-044RA0.pdf remains SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All113 archive paths/hashes preserved. No reflection/housekeeping session,
+parallel campaign, source manuscript change or priority amendment.
+
+IBMPhysicalBochnerConditional.actual_ae identifies the ORIGINAL signedDirac(T)
+physical H^-1 L2 class with1461's signed(process(T,Y)) function. It explicitly
+checks the inherited real-scalar actions through original BesselPotentialSpace
+physical distribution injectivity, rather than silently assuming two instance
+paths have identical representations. Actual signedDirac L2 membership gives
+actual_memLp. shifted_mean reuses the actual Gaussian shift and1461's Bochner
+mean/embedding theorem. The ORIGINAL Banach-valued full-past transition yields
+conditional_column and conditional_actual_field as H^-1-valued AE identities,
+BEFORE choosing any scalar physical test.
+
+common_physical_tests provides ONE full-measure clock set, at each fixed S<T,
+on which EVERY physical real continuous dual test agrees after applying it to
+this common Bochner conditional version. This does NOT intersect uncountably
+many scalar null sets and does NOT assert that independently selected scalar
+condExp representatives agree simultaneously for all L. It also does not
+supply a common clock set for every real time. The precise quantifiers are
+fixed S,T -> AE Y -> ALL L, not ALL S on one unproved Y set.
+
+IBMPhysicalConditionalPairing.row is the EXISTING GaussianConditionalIto
+pastProjection(S) of the ORIGINAL evaluate(L,slopeLimit(T)) L2 class. row_actual
+identifies its actual representative with tested(S,T,L,Y), the physical test
+of1460's actual spatial field. tested_memLp and actual_product_integrable give
+actual rowwise L2 membership and product integrability for EVERY Gaussian L2
+multiplier V, without boundedness. row_norm_le is the original orthogonal
+projection contraction, with no new norm or source-law assumption.
+
+past_covariance uses the ORIGINAL pastL2.starProjection_inner_eq_zero and actual
+row representatives to prove
+
+ integral_Y tested(S,T,L,Y) V(Y) = inner(evaluate(L,slopeLimit(T)),V)
+
+for EVERY V in the WHOLE raw-past L2 space at S and every S<T. The multiplier
+need not be bounded, polynomial, finite-chaos or independent of the clock.
+earlier_past_covariance uses actual filtration monotonicity for V measurable
+at any a<=S. This is actual conditional-expectation duality on precise domains,
+not a postulated stochastic integral or covariance kernel.
+
+integrated_covariance proves the literal time integral over EVERY interval
+[a,b], 0<=a<=b<=T, equals
+
+ (b-a)*inner(evaluate(L,slopeLimit(T)),V),   V in actual pastL2(a).
+
+The terminal time b=T IS allowed. The proof excludes only the singleton T
+using actual Lebesgue ae_ne, then checks all positive-time/coercion inequalities
+and uses the rowwise identity. It never evaluates1461's positive-remaining-
+variance formula at S=T. Degenerate a=b and T=0 are retained correctly.
+
+IBMPhysicalJointStepPairing.joint(T,L,z) is the ACTUAL physical test of1460's
+raw Bochner spatial field. joint_memLp uses the bounded original physical
+embedding/test CLM on the genuinely verified raw L2 field. PRIVATE
+past_lift_memLp restricts the OLD actual productTensor(timeVector(T),V) to the
+original horizon and proves its AE value is V(Y), supplying genuine time-clock
+L2 membership for unbounded V. joint_product_integrable uses actual L2 product
+integrability; NO adaptation is needed for this integrability statement.
+
+joint_step_covariance proves the SAME covariance as one genuine product-measure
+integral under (Lebesgue restricted to (a,b]) x ORIGINAL Gaussian clock law,
+for EVERY V in actual pastL2(a). Actual joint integrability is proved FIRST on
+the original horizon, then restricted using the exact rectangle inclusion and
+Measure.restrict_prod_eq_prod_univ. Only then is integral_prod/Fubini used.
+Real/nonnegative-time coordinates are matched on the positive interval and
+the already proved integrated_covariance applies. This discharges the actual
+joint step-pairing obligation; it is stronger than a formal equality of nested
+integrals lacking product integrability.
+
+EIGHT independent Lean checks: common full clock set for ALL physical tests of
+the Bochner conditional version; actual kernel-valued conditioning; covariance
+with arbitrary unbounded past L2 V; integrated intervals INCLUDING terminal T;
+actual product integrability even for arbitrary nonadapted L2 multipliers;
+actual product-measure step covariance for a<=b<=T; degenerate terminal interval
+T=T; and genuine joint L2 membership under the ORIGINAL time-clock law. All
+passed FIRST RUN. No mathematical edits after the final build/audit cycle.
+
+REUSE AUDIT / EXACT NEXT: existing GaussianPredictableAdjoint.predictableProjection
+is the adjoint of the actual fieldEmbedding on fullPredictable. Existing
+GaussianContinuousRigidity.fieldEmbedding_tensor and scalarTensor_pair_inner
+relate product/time fields to the original clock derivative. direction(T) is
+hilbertEmbedding(timeVector(T.toNNReal)); no new time vector is required.
+Existing PredictableRealL2.indicator_density gives the exact finite-horizon
+lpMeas domain from generatingIndicatorSpan. GaussianPredictableHorizon.zeroExtension_mem
+ALREADY handles its actual generators: univ -> (0,T] x univ, zero-time generator
+-> empty on the positive horizon, Ioi(s) x A -> (s,T] x A. Its proof supplies
+a direct template for a bounded-functional equality/density extension, not a
+new density campaign. GaussianFiniteHorizonAdjoint.restriction_extension_duality
+connects the finite/full predictable spaces. Use the NEW joint step covariance,
+actual indicator coefficients and the OLD derivative graph/adjoint pairing to
+extend equality through that EXISTING density. Then original physical dual
+separation can identify the spatial coefficient. Do not rebuild density or
+smuggle in a theorem equating pointwise conditional means with projection.
+
+STILL OPEN: the FINAL whole Hilbert-space predictableProjection equality and
+trim(T)=representer(T,actual sourceKernel(T)). The step identities alone are
+not yet the completed-domain closure theorem.1460 explicit scalar integral is
+not yet unconditionally identified with canonical IBM. Sourcewise terminal
+calculus, physical H^-1 conditional means, original rough joint derivative
+domains and IBM observed filtration remain distinct. No running IBM martingale,
+nonlinear physical-time calculus completion or campaign transition is claimed.
+1456 native unprojected-input norm/probability obstruction is preserved.
+
+Development failures retained .lake/stardust-1462-target1..5.log. Repairs:
+physical scalar-action comparison proved by toDistr injectivity; typed change
+of starProjection to pastProjection before scalar arithmetic; Set namespace;
+explicit IntegrableOn horizon type before mono_set, removing an unused tactic.
+No new axiom, admission, compiler option, heartbeat or toolchain change.
+
+Verification: COMPLETE root6596 jobs (25.279998s); COMPLETE transitive
+collectAxioms audit 46504 safe Foundation declarations (38.554553s), only
+propext/Classical.choice/Quot.sound. All19 public types read UNABRIDGED and
+ENTIRE three sources/private proofs reviewed. EIGHT independent Lean checks
+(26.705309s); all2424 Foundation/root sources+3configs frozen/rechecked,
+all113 archive paths/hashes unchanged. Evidence .lake/stardust-1462-working-checkpoint.json,
+-full-build.log, -audit.log, -independent.log, timing JSON and -verification.json.
+Six explicit-path Git checkpoint, exact receipt and verified PRIVATE main/research
+sync required before terminal closure. Research goal and IBM remain ACTIVE.
