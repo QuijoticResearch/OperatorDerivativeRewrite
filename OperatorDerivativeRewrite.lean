@@ -2331,3 +2331,6 @@ import Foundation.IBMFoldedCanonicalIdentification
 import Foundation.IBMSceneryNativeAdjoint
 import Foundation.IBMFoldedJointReconstruction
 import Foundation.IBMSchwartzNativeJointIto
+import Foundation.IBMSchwartzSlopeLowerBound
+import Foundation.IBMSchwartzNativeCauchyCriterion
+import Foundation.IBMSchwartzNativeCounterexample

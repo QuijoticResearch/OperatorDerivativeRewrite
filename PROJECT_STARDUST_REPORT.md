@@ -39916,3 +39916,93 @@ joint-law limit, strong compensated convergence, exact original integrand
 energy, necessary Cauchy condition, and literal original scalar Ito sections.
 
 Final gates: complete root6605jobs 31.449097s; complete transitive audit 46645 safe Foundation declarations, only propext/Classical.choice/Quot.sound, 42.802845s; SEVEN independent Lean checks 36.397951s. All2433 Foundation/root source hashes and3 pinned configurations frozen/rechecked;113 archive paths/hashes unchanged. All prior mathematical source bytes preserved except root/AxiomAudit registration. Evidence .lake/stardust-1466-verification.json. Explicit commit, exact receipt and verified PRIVATE main/research gate follows; IBM and the indefinite goal remain active.
+
+
+## Checkpoint1467 — nonlinear native Schwartz integral/correction L2 obstruction
+
+IBM ACTIVE; queue1422 unchanged. Previous1466 made verified progress and closed
+its exact PRIVATE gate. Its compensated all-chaos convergence is preserved;
+this checkpoint resolves a substantive individual-limit obstruction left open.
+ResearchSources remains read-only/uncommitted, all113 archive paths/hashes
+including IBM anchor EJP2605-044RA0.pdf SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE
+unchanged. No reflection/housekeeping, manuscript edit or queued campaign start.
+
+EXACT GENERAL RESULT: for EVERY real Schwartz g, shift a, and T>0, Cauchy
+convergence of the ORIGINAL all-chaos reflected native clock integrands forces
+g prime(a)=0. Here g prime(a) is precisely IBMCorrectionStein.jet g1a.
+Consequently if that derivative is nonzero, BOTH the original native clock
+integral and its whole correction are non-Cauchy in ACTUAL original joint L2.
+This is a necessary condition, NOT an iff. g prime(a)=0 does not establish
+convergence; even-test parity can hide the first-source obstruction.
+
+CONCRETE DISCHARGED EXAMPLE: g(x)=x exp(-x^2), a=0, using the EXISTING genuine
+Schwartz oddPart in NormalizedSignedScoreCounterexample. odd_jet_zero proves
+g prime(0)=1 from the actual Gaussian derivative and product rule. No hypothetical
+nonzero test or unverified Schwartz membership is used. For EVERY T>0,
+actual_integral_not_cauchy and actual_correction_not_cauchy exclude Cauchy
+convergence of the two actual joint L2 sequences. actual_integral_no_L2_limit
+and actual_correction_no_L2_limit exclude EVERY joint L2 candidate limit.
+Nevertheless1466's compensated sum still converges strongly to
+IBM_T exp(-(IBM_T)^2), AE the actual nonlinear terminal observable. The old
+all-chaos compensated formula is fully retained, not contradicted or weakened.
+
+IBMSchwartzSlopeLowerBound.weighted_lower uses the EXISTING exact first-source
+weighted_linear_adjoint, its genuine contraction and norm triangle inequality:
+ |M_j(u)| ||v|| <= ||weightedClass(g,a,u,j,W(v))||
+                  + |<u,v>| |M_(j+2)(u)| ||u||.
+The norm on the right is the ENTIRE nonlinear Gaussian source L2 class.
+spatial_lower substitutes the ACTUAL old tripleCoefficient source directions.
+The old covariance bound <=1 and jet_bound give an n- and r-independent
+error seminorm(jet(g,2)); the growing mollifier norm is now exposed in a LOWER
+bound. derivative_norm_escape reuses the ORIGINAL physical profile escape and
+old jet_one_norm/translated_norm. spatial_norm_escape uses ACTUAL coefficient
+convergence and mean continuity; its nonzero limiting first mean is explicit.
+No new Gaussian independence model, graph domain or resource override is needed.
+
+IBMSchwartzNativeCauchyCriterion is the crucial topology step. A Cauchy native
+input gives an actual ambient Bochner L2 limit. Existing convergence-in-measure
+extraction supplies one strictly monotone AE convergent subsequence. All
+countably many signedSlope representatives and original sigma_nonzero are
+combined on a common full-measure set. If the limiting mean were nonzero
+there, spatial_norm_escape survives that cofinal subsequence; signum has norm1,
+contradicting the finite pointwise norm limit. Thus native_cauchy_forces_mean_zero
+is proved on the ORIGINAL horizon measure, not assumed from pointwise limits.
+correction_cauchy_forces_mean_zero uses1466's exact scalar-input Cauchy equivalence.
+
+To reach an actual non-Cauchy result with no unproved positive-measure premise,
+the limiting mean is continuous in space. Fubini is justified for the measurable
+zero set and the original product horizon measure. Almost every actual clock
+path has zero initial value. For one such path with AE-time zero mean, the
+continuous mean along its path is zero on the WHOLE closed positive interval:
+Ioc/Icc restrictions agree up to the null endpoint, and Measure.eqOn_of_ae_eq
+applies with its closure/interior hypothesis proved for T>0. At time0 the mean
+is exactly g prime(a), as meanLimit_zero proves from the ORIGINAL zero scenery
+and the actual Gaussian integral. Hence native_cauchy_forces_origin_zero.
+This avoids guessing a quantitative Gaussian small-ball bound or interchanging
+strong L2 and all-time pointwise convergence.
+
+All native and correction Cauchy transports use original isometries; no original
+rough IBM DomD hypothesis is imposed. New nonlinear obstruction concerns this
+PARTICULAR original raw-running mollifier scheme and original joint L2 topology.
+It does NOT prove no convergence in probability, no tightness, no weak-law limit,
+integrated norm escape, or failure along every cofinal reindex. Those stronger
+claims for the linear1456 scheme cannot be silently generalized. Nor does this
+exclude backward-heat adapted integrands, renormalized spaces or a valid IBM
+stochastic calculus. Full intrinsic physical-time calculus and observed
+filtration compatibility remain open and IBM remains ACTIVE.
+
+Proof development logs1--8 retained: absolute-value token spacing and explicit
+norm arguments; lower-neighborhood direction fixed to lt_mem_nhds; explicit
+add_le_add avoided an opened-namespace add convention; sigma_nonzero namespace
+corrected; constant-function and measurable absolute-value reductions made
+explicit; final Gaussian product derivative used Pi.mul_def/id_eq. Last target8
+passed, with no heartbeat/transparency/trust/version/resource changes. All18
+public types and ENTIRE3 final sources, including the private contraction
+proof, were read unabridged. Independent Lean tests verify lower bound, spatial
+escape criterion, genuine origin necessity, concrete derivative1, native-input
+non-Cauchy, both individual no-L2-limit theorems, retained compensated strong
+limit and actual literal nonlinear output, and scalar predictable non-Cauchy.
+No post-gate source edits, suppressed checks, or assertion of literature novelty.
+
+Final gates: complete root6608jobs 26.941536s; complete transitive audit 46667 safe Foundation declarations, only propext/Classical.choice/Quot.sound, 37.041774s; TEN independent Lean checks 29.457546s. All2436 Foundation/root sources and3 pinned configurations frozen/rechecked;113 archive paths/hashes unchanged. All prior mathematical source bytes preserved except root/AxiomAudit registration. Evidence .lake/stardust-1467-verification.json. Explicit commit, exact receipt and verified PRIVATE main/research gate follows; no campaign transition.
