@@ -38062,3 +38062,64 @@ rechecked. Five explicit Git paths, exact receipt and verified PRIVATE
 main/research backup follow and never substitute for mathematical gates.
 
 Terminal timings: root 24.529310s; complete transitive audit 45822 declarations, 36.677852s; independent checks 28.040297s; all exit0.
+
+## Checkpoint1449 — time-L2 continuity of the ORIGINAL physical IBM correction
+
+IBM ACTIVE; authoritative queue1422 unchanged. The actual correction family
+from1435 is now continuous in the ORIGINAL Gaussian L2 of physical H^-1,
+uniformly on each compact nonnegative-time horizon. This is the next missing
+ingredient for completing the actual predictable left-step inputs1448.
+Source: ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All original archive bytes are preserved; no new manuscript claim certified.
+
+IBMPhysicalCorrectionContinuity.residual_energy transports the ALREADY
+VERIFIED1445 actual residual cell integral into the norm of its actual Lp2
+class, using exact AE representatives and the original Bochner squared norm
+identity. residual_energy_abs removes the time-order restriction by swapping
+the endpoints, giving ||R_b-R_a||^2 <= C |b-a| sqrt(|b-a|). There is no random
+time substitution, raw IBM increment assertion or extra moment hypothesis.
+The squeeze theorem and continuity of square root prove residual_continuous
+on ALL NNReal, including the origin and approaches from either direction.
+
+Crucial reuse: BrownianTanakaResidual.mass_continuous ALREADY proves the
+actual scalar GaussianL2 Tanaka mass continuity. Composing the EXISTING
+ComplexL2Isometry.ofReal and toSpanSingleton.compLpL proves physical
+localTime_continuous. No new local-time realization, dominated convergence
+theorem or Kolmogorov infrastructure is needed. The exact original correction
+split1443 then gives correction_continuous. Compactness gives the required
+uniform continuity on every Icc(0,T), with no deleted origin term. This
+retains ALL clock sectors of the first-scenery physical representation.
+
+Six independent Lean tests check the reversed-time energy estimate, actual
+correction convergence along arbitrary nonmonotone time sequences, all real
+physical dual scalarizations, locally bounded physical correction energies,
+genuine deterministic Bochner integrability of the L2-valued curve on each
+finite horizon, and physical local-time convergence at zero. Source failures
+were absolute-value token spacing and explicit continuity-point/function
+extensionality elaboration; both failed logs are retained. The independent
+boundedness check required the explicit Bornology.IsBounded namespace;
+its initial failed log is also retained. No heartbeat,
+compiler option, hypothesis, toolchain or axiom policy was changed.
+
+Exact remaining obligation: construct the predictable TIME-L2 limit of the
+ACTUAL original-domain partitionInput1448 and prove its native convergence.
+Pointwise time-L2 continuity does not alone identify a jointly measurable
+representative or prove predictable-domain membership of a proposed limit.
+Use completion of the already constructed original-domain inputs and
+verified uniform control, rather than silently replacing this obligation by
+an assumed process. Once input convergence is proved, ORIGINAL Ito isometry
+can identify the individual correction-left integral; only afterward use
+the1446 joint product identity for the companion limit. Full nonlinear
+unprojected intrinsic IBM calculus remains open; no campaign transition,
+raw IBM semimartingale assertion or novelty claim. This is proof work, not
+a reflection session.
+
+Verification: root6558jobs, complete transitive audit of EVERY safe Foundation
+declaration with ONLY propext/Classical.choice/Quot.sound, ALL6 UNABRIDGED
+public types and ENTIRE final proof/source reviewed,6 independent examples;
+2386 Foundation/root sources+3configs+113 archive paths/hashes rechecked.
+Four explicit Git paths, exact receipt and PRIVATE main/research verification
+follow; no partial check replaces any gate.
+
+Terminal timings: root 25.175879s; complete audit 45829 declarations, 38.084514s; independent checks 27.231927s; all exit0.

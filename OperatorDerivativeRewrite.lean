@@ -2283,3 +2283,4 @@ import Foundation.IBMPhysicalPastMeasurability
 import Foundation.IBMPhysicalCorrectionSteps
 import Foundation.IBMPhysicalPredictableSteps
 import Foundation.IBMPhysicalNativeCorrectionSteps
+import Foundation.IBMPhysicalCorrectionContinuity
