@@ -2439,3 +2439,5 @@ import Foundation.IBMWeakRandomEvaluation
 import Foundation.IBMSpatialRandomTestBounds
 import Foundation.IBMSpatialRandomTestConvergence
 import Foundation.IBMSpatialSignedRandomTests
+import Foundation.IBMNativeWeakObstruction
+import Foundation.IBMJointMixedSpatialTransport

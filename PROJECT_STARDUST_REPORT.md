@@ -44569,3 +44569,119 @@ and timing JSON, diagnostic1--5 and failed independent/target logs, and
 .lake/stardust-1506-verification.json. Explicit reviewed-path Git commit, exact
 receipt and BOTH PRIVATE main/research synchronization close separately.
 Unrelated untracked plans, tmp and source archive preserved.
+
+
+## Checkpoint1507 — original joint-source transport and weak-Hilbert obstruction
+
+October25,2026; terminal start03:01:05 America/New_York, final independent
+PASS03:20:41. IBM ACTIVE; queue8280325 unchanged. Previous1506 PROGRESS;
+current1507 PROGRESS. No reflection session, manuscript change or campaign switch.
+
+Two modules: IBMNativeWeakObstruction and IBMJointMixedSpatialTransport.
+The original process/observable projection, Gaussian factors, native grid input
+and divergence are unchanged. These results distinguish a valid distributional
+testing route from an impossible unrestricted Hilbert weak-closure claim.
+
+NEGATIVE result: existing1500 original_native_norm_escape proves that the
+norms of the ORIGINAL PROJECTED native divergences tend to infinity for each
+fixed positive horizon T. Applying Mathlib's banach_steinhaus to the actual
+Riesz functionals v->inner(native_N,v), on the complete intrinsic observable
+Hilbert space, proves exists_original_unbounded_observable:
+  for EVERY T>0, there EXISTS a FIXED actual intrinsic L2 observable v such
+  that for EVERY real C there EXISTS N with |inner(native_N,v)|>C.
+The observable may depend on T, but NOT on N or C. This is a NONCONSTRUCTIVE
+existence theorem; no explicit formula for v or a positive divergence rate of
+its scalar pairing is supplied. The proof uses only the original norm escape,
+standard complete-space uniform boundedness and the Riesz norm identity.
+
+exists_original_nonconvergent_observable proves that this fixed observable's
+pairing converges to NO finite scalar. no_original_weak_limit rules out a weak
+Hilbert limit of the ORIGINAL projected native grid at every positive horizon.
+no_original_weak_subsequence proves the same after ANY strictly increasing
+subsequence of grid indices, since original norm escape survives every such
+cofinal subsequence. The witness observable for different subsequences need not
+be the same. Quantifiers and positivity of T are retained exactly.
+
+This is NOT a claim of nonconvergence in probability, nonexistence of every
+renormalization, or impossibility of a distribution-valued IBM calculus. It
+rules out this precise ORIGINAL native sequence's unrestricted weak-Hilbert
+reconstruction, even by skipping to a cofinal subsequence. The actual signed
+spatial/random-test convergence1503--1506 remains valid and is consistent with
+this obstruction because its topology/domain differs from all intrinsic L2
+observables. No source norm escape is substituted for projected norm escape.
+
+POSITIVE original transport: for EVERY pair of real Schwartz primitives g,h
+and EVERY a in the original clock-factor GaussianL2, define the actual separated
+source test a(Y)*rawProduct(testDirection g,testDirection h), and restore native
+(source,clock) order through the original jointRealization isometry. jointTest_actual
+identifies the literal joint random variable
+  a(Y)*firstChaos(testDirection g)(X)*firstChaos(testDirection h)(X).
+The clock weight may be unbounded and may depend on the SAME clock driving the
+native kernel. No independence of that weight and the spatial action is used.
+The factor separation is the original independent Gaussian product structure,
+not an invented process or changed law.
+
+symbol(g,h,a) is an ACTUAL Bochner-L2 random completed spatial test, using the
+existing BochnerClosedOperator.tensor. source_spatial_ae identifies the original
+sourceGrid sections with the exact unhalved spatial endpoint-minus-kernel action.
+original_source_pairing and original_joint_pairing prove for EVERY N,T that
+original source/joint Hilbert pairings equal the actual expectation of the
+signed RANDOM spatial action on symbol(g,h,a). Actual L2 pairing integrability
+and1506 random-action L1 integrability justify those equalities.
+
+original_joint_pairing_tendsto transports1506 strong clockL1 convergence through
+the continuous L1 integral to convergence of these ORIGINAL joint-source scalar
+pairings. finite_family_pairing_tendsto covers EVERY finite family/sum of such
+probes and their exact limiting sum. Neither is an assertion of weak convergence
+on ALL joint L2 tests or of a bounded extension in that Hilbert norm.
+
+intrinsic_pairing_tendsto is the precise conditional observable corollary:
+IF an actual intrinsic observable v has underlying joint L2 class EXACTLY equal
+to the specified jointTest, THEN its pairing with the original native divergence
+has the stated limit. Projection is removed only inside this legitimate pairing,
+using the original native_grid_value and closed-subspace projection identity.
+Intrinsic membership is NOT inferred for arbitrary scenery/clock product tests.
+The negative result above prevents confusing these conditional/domain-qualified
+identities with universal observable reconstruction.
+
+Next: make the limiting functional presentation-independent on the ACTUAL
+finite original joint-test span, using exact finite-family identities and
+uniqueness of scalar limits. A zero actual joint-test presentation has zero
+pairings at every grid and hence zero limiting functional; do not assume
+injectivity of its spatial-symbol presentation. Then investigate a mathematically
+justified stronger test norm/completion and its relation to the intrinsic
+observable domain. A Hilbert-norm-bounded extension to all observables is not
+available for this native sequence. Preserve actual F1--F3 and source-resolved
+chaos obligations instead of manufacturing an impossible closure or declaring
+full IBM calculus complete.
+
+Verification: final positive targeted4 and strengthened obstruction targeted5
+PASS. Full root build6716jobs PASS26.708375s; COMPLETE transitive Lean.collectAxioms
+audit48721 safe Foundation declarations PASS38.523904s, only propext,
+Classical.choice,Quot.sound. All17 public types read UNABRIDGED; BOTH complete
+sources/proofs and root/AxiomAudit additions reviewed. No mathematical edits
+after these final full-build/audit gates.
+
+Independent12 mathematical Lean checks PASS26.427079s. Checks include a nonzero
+fixed actual intrinsic obstruction witness, rejection of universal zero weak
+limit, rejection along even cofinal indices, fixed-observable failure for every
+finite scalar, same-clock Gaussian weight a=wienerL2(T), exact finite original
+joint-source/spatial equality, two-probe finite-family convergence, conditional
+intrinsic membership gate, actual random symbol/joint product representatives,
+and zero source/joint tests. Failed independent44.374508s retained: even-index
+Nat/real coercion inference reached default200000heartbeats; named evenIndex
+keeps the SAME mathematical test and resolves elaboration. Zero function
+representatives also needed Pi.zero_apply. No limits/options raised, tests
+weakened, or mathematical sources changed. Earlier targeted failures retained
+(Nat binder inference, L1.integralCLM namespace and Function.comp_def in the
+integral-continuity proof). No unproved assumption or axiom added.
+
+All2543 Foundation/root sources and3configuration hashes frozen/rechecked;
+all113 manuscript/archive paths/hashes unchanged and never staged. Every external
+Lean job serialized and its handle followed to authoritative termination. No
+resource/compiler/toolchain/trust/transparency/linter changes. Evidence:
+.lake/stardust-1507-working-checkpoint.json, full-build/audit/independent logs
+and actual timing JSON, retained target1--5 and first-failed independent logs,
+.lake/stardust-1507-verification.json. Explicit reviewed-path Git commit, exact
+receipt and BOTH PRIVATE main/research synchronization close separately.
+Unrelated untracked plans,tmp and ResearchSources preserved.
