@@ -2420,3 +2420,8 @@ import Foundation.IBMFoldedSmoothQuadraticError
 import Foundation.IBMFoldedWeightedLoss
 import Foundation.IBMAllSchwartzWickLimit
 import Foundation.IBMAllSchwartzSourceReconstruction
+import Foundation.IBMSpatialKernelTesting
+import Foundation.IBMClockWeightedFoldedVariation
+import Foundation.IBMSpatialClockKernelError
+import Foundation.IBMSpatialKernelOccupation
+import Foundation.IBMSpatialKernelUniformBound

@@ -43998,3 +43998,117 @@ Evidence: .lake/stardust-1501-working-checkpoint.json,
 .lake/stardust-1501-verification.json. Explicit reviewed-path commit and exact
 receipt/PRIVATE main+research sync close this checkpoint separately. Unrelated
 untracked plans,tmp and ResearchSources remain untouched and uncommitted.
+
+## Checkpoint1502 — actual spatial kernel converges to clock diagonal occupation
+
+IBM remains ACTIVE; queue8280325 unchanged. Previous goal turn1501 was PROGRESS,
+fully closing all-Schwartz source tests atbfb53c0. This turn revalidated the
+worktree and followed its weak test-domain obligation. The saved1495 actual
+mixed-observation tests already exist and were not duplicated. Exploration
+identified a broader route through1499's actual spatial increment-square
+kernel. No campaign transition, reflection admission or parallel agent work.
+
+Primary IBM source remains ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All113 archive paths/hashes match inventory1292; none were edited or committed.
+The actual clock is W and actual IBM is B(|W|). No new external novelty claim
+is made for weak concentration, Taylor estimates, or Brownian QV.
+
+Let R_i=|W_(iT/(N+1))| and I_i=(min(R_i,R_(i+1)),max(R_i,R_(i+1))]. The OLD
+actual spatial kernel is K_N(x,y)=sum_i 1_(I_i)(x)1_(I_i)(y). For EVERY bounded
+Lipschitz REAL F on R^2 and EVERY T>0, IBMSpatialKernelOccupation.action_tendsto
+now proves strong convergence IN ORIGINAL CLOCK L1 of the literal action
+  integral_(R^2) K_N(x,y) F(x,y) dxdy
+ to the OLD clock-L2 Bochner integral of the field
+  F(|W_t|,|W_t|), 0<=t<=T,
+viewed through the ORIGINAL clockL1 lowering map. The finite action_actual_kernel
+AE identity proves agreement with the literal Lebesgue integral; it is not an
+operator defined only by assigning its desired limiting output. The target
+occupation is an explicit existing GaussianL2-valued Bochner integral of the
+Lipschitz composition field, not an assumed random local-time density.
+
+IBMSpatialKernelUniformBound proves for EVERY N,T>=0,
+ ||action(F,T,N)||_clockL1 <= C T whenever ||F(z)||<=C for allz.
+The limit satisfies the SAME bound forT>0. Constants depend only on the uniform
+test bound and horizon, not on grid or Lipschitz constant. This is the concrete
+quantitative foundation for a completed supremum-test domain. It is NOT yet a
+formal completed-domain construction or an identification with spatial H^{-1}.
+
+IBMSpatialKernelTesting defines the literal integral on one increment square.
+For ALL real x,y (including reversed/negative/zero endpoints), a K-Lipschitz
+bounded test has
+ |cellPair(F,x,y)-F(x,x)(y-x)^2| <=K |y-x|^3.
+Actual integrability, squared interval area and distance-to-diagonal estimates
+are proved on the ORIGINAL product Lebesgue measure. Both Lipschitz regularity
+and the global uniform bound are explicit hypotheses; arbitrary measurable
+unbounded tests are not admitted.
+
+IBMClockWeightedFoldedVariation generalizes1501's derivative-square weights
+to EVERY fixed bounded Lipschitz signed scalar weight psi. Its literal weighted
+folding loss has norm at most C times1499's unweighted loss. Actual MemLp1,
+AE representatives and strong zero limits are proved without positivity ofpsi.
+The exact weighted folded sum is lower(weighted ordinary Brownian QV) minus
+the actual weighted folding loss, and tends strongly L1 to the old Bochner
+integral of psi(W_t). No new conditional-independence assumption is inserted.
+
+IBMSpatialClockKernelError proves measurability of the actual variable-interval
+spatial integral by measurable parameter integration. The random cell-diagonal
+error is dominated by K times the ORIGINAL absolute Gaussian cubic increment.
+It is genuinely clockL2, with total error E_N satisfying
+ ||E_N||_2^2 <=15 K^2 T^3/(N+1), hence E_N->0 strongly L2.
+This follows from verified sixth Gaussian moments and finite-sum bounds; no
+assumed pathwise stochastic modulus or random-range distribution is needed.
+
+IBMSpatialKernelOccupation takes psi(x)=F(|x|,|x|), which has the SAME Lipschitz
+constant in the product maximum metric and the SAME uniform bound. Adding the
+actual cubic error to the folded weighted sum realizes the literal finite
+cell-pair sum. Its equality to integral K_N F, including all grid/index/interval
+identifications, is proved before the strong L1 limit. The initial clock zero
+and random local-time fields are not postulated.
+
+IBMSpatialKernelUniformBound additionally proves exact E(raw Brownian QV)=T
+and E(folded QV)<=T for allN,T. Actual integral domination gives the finite
+supremum-test bound. The limiting bound uses continuity of the norm and the
+proved strong convergence. Signed tests are retained throughout.
+
+This supplies a rigorous connection between1500's source-energy blow-up and
+a weaker actual spatial test topology: squared kernel L2 energies can diverge
+as mass concentrates near the diagonal while bounded-test actions have random
+L1 limits and uniform norm control. It does NOT establish whole ORIGINAL IBM
+observable weak convergence, a bounded Gaussian-L2 functional, a complete
+Malliavin/Clark--Ocone calculus, or convergence in a named Sobolev space. The
+positive increment-square kernel is only one part of the source endpoint
+identity; the signed endpoint-minus-kernel functional and its exact second-
+source Wick realization still require formal transport. Do not mistake the
+new spatial testing result for a completed intrinsic stochastic integral.
+
+Next: establish linearity/presentation consistency and uniform difference
+bounds for these actual test actions; extend with existing Lean completion
+machinery, rather than inventing new stochastic foundations. Then identify
+the signed endpoint-minus-kernel and its original mixed physical Wick probes.
+Clock-dependent probes and transfer to the ORIGINAL observable dual remain
+explicit obligations. Existing1500 projected native-grid norm escape and all
+old mixed/Schwartz source limits remain unchanged. No frozen campaign reopened.
+
+Verification: final targeted8 PASS; full root build6700 jobs PASS27.186788s;
+COMPLETE Lean.collectAxioms audit48384 safe Foundation declarations PASS38.469184s,
+only propext/Classical.choice/Quot.sound. ALL45 new public types printed/read
+unabridged and ALL5 new math files read in full, including private time_grid
+and actual integral/moment/domain proofs. Fourteen independent Lean checks PASS
+27.094221s: constant+1 and-1 spatial tests, reversed/negative/zero-length cells,
+explicit interval distance, positive/negative norm and limit tests, signed
+weighted loss, exact raw/folded QV means, diagonal Lipschitz constant, and EXACT
+identity of the unit-test action with the OLD foldedClass. The latter checks
+normalization, not merely convergence to an unspecified limit. New sources and
+root/AxiomAudit additions reviewed. All2527 Foundation/root files and three
+configuration hashes frozen/rechecked; only root/AxiomAudit changed among old
+Lean sources. No new resource, heartbeat, compiler, trust, linter or theorem-
+semantic changes. Original warnings and failed target1--7 logs retained;
+repairs concerned pointwise function normalization, namespaces and exact
+finite-sum/zero-class expressions. All external Lean jobs serialized/terminal.
+
+Evidence: .lake/stardust-1502-working-checkpoint.json,
+.lake/stardust-1502-{full-build,audit,independent}.log and timing JSON,
+.lake/stardust-1502-verification.json. Explicit reviewed-path Git commit and
+exact-commit receipt plus BOTH verified PRIVATE backup refs close separately.
+Unrelated untracked plans,tmp and ResearchSources remain untouched/uncommitted.
