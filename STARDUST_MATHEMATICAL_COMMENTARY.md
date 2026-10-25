@@ -136,15 +136,66 @@ actual sums must have gradient norms tending to infinity. Weak derivative
 existence, strong-domain membership and causal stochastic integration cannot
 be substituted for one another. No raw-sum L2 upgrade is established.
 
-**Opportunity R4 — active IBM obligation, UNPROVED here.** A full time-space
-chain theorem for F(t,z) requires spatial fourth-order Peano estimates UNIFORM
-over compact time intervals, plus the genuine time-partial integral along Z.
-Approximating only the values of F by separable functions is insufficient:
-one needs simultaneous control of the relevant derivatives and quadrature
-errors. First audit reuse of the compact Peano, uniform-prefix and deterministic
-time-integral machinery. Random coefficients, causal identification and
-nonsmooth Tanaka remain further separate obligations. This is a focused next
-proof question within IBM, not new infrastructure or a campaign transition.
+**Former opportunity R4 — RESOLVED in the deterministic smooth scope.**
+`IBMTimeSpaceSimpson.sums_tendstoInMeasure` uses C1 time slices, C4 space slices
+and joint continuity of the time partial/fourth spatial derivative. Its compact
+Peano control is uniform in time, and the genuine time integral is proved.
+`IBMUniformTimeSpace.maximum_tendstoInMeasure` controls all common-grid prefixes.
+With joint continuity of F, `IBMContinuousSimpsonRealization.approximation_tendstoInMeasure`
+gives Bernstein polynomial continuous-path approximants converging in probability
+in supremum norm. Value-only separable approximation was insufficient; the
+verified route supplied the missing derivative and quadrature estimates.
+Bernstein coefficients use all grid prefixes, so this is not a causal or linear
+interpolation theorem. Random coefficients and nonsmooth Tanaka remain separate.
+
+## Three operations that must not be conflated
+
+The original native grid outputs have divergent intrinsic Hilbert norms and,
+by Banach–Steinhaus, no weak Hilbert limit or weak convergent subsequence at a
+positive horizon (`IBMNativeWeakObstruction`). Later genuine Fourier
+source-lowered actions nevertheless converge in clock L2 and clock L1
+(`IBMFourierCylinderSeries.native_tendsto`, `source_native_tendsto`). This does
+not contradict Hilbert escape: a smaller tested action and a different topology
+were identified. The action limit is not the original observable.
+
+A different operation averages the scenery source of the actual IBM observable
+F. Its mean M involves exp(-Q/2), where Q is the actual folded covariance
+variance. GaussianAbsoluteMinimumGraph supplies the ORIGINAL first derivative
+of minimum through (f+h-|f-h|)/2, preserving collision and zero-level terms.
+This closes the classical cusp obstruction to original clock-graph membership
+of M. It supplies no second-derivative or divergence-domain theorem by itself.
+
+With curvature summability,1519 proves the completed actual mean has original
+gradient G. At1520, actual raw Brownian and finite-past measurability then let
+the existing genuine Brownian Clark–Ocone theorem apply: the unique predictable
+coefficient is U=predictableProjection G. The full-time and finite-horizon
+stochastic identities hold; PRP and support require only sumabsw, not the
+extra curvature hypothesis used to identify the full gradient.
+
+Source averaging destroys information. For an exact single-frequency pi/2
+example, F=-sin(Z_R), M=U=0 while F is nonconstant at every R>0 and remains
+outside the original joint derivative domain. Combining the existing static
+source recovery with the genuine predictable CLOCK field nevertheless gives
+`IBMFourierHybridReconstruction.reconstruction`: original joint divergence
+equals F-EF. The positive representation and negative strong-domain statement
+apply to the SAME actual observable. Neither licenses dropping the source
+channel or claiming full strong differentiability of F.
+
+**Opportunity R5 — exact active IBM frontier, UNPROVED here.** For a proposed
+OBSERVED-filtration coefficient K, prove membership in the original observed
+predictable integral domain, identify that actual integral with the desired
+physical prescription, and prove the residual F-EF-I_obs(K) vanishes in the
+required topology. A nonzero residual would delimit the proposal. The current
+U uses the hidden Brownian clock; the other channel is static source adjoint
+recovery. No theorem says projection to the intrinsic observable space preserves
+derivative domains or causal support. Audit existing stochastic-energy,
+occupation and native/adjoint results before constructing another map.
+This is an exact Stardust obligation, not a claim about an established external
+open problem, a novelty assertion, or a change of campaign.
+
+References and precise domains: [focused private LaTeX/PDF note](manuscripts/ibm-clock-hybrid/main.pdf),
+[updated signed Simpson draft](manuscripts/ibm-signed-simpson/main.pdf), and
+checkpoints1515–1520 in the research ledger.
 
 ## Experience worth retaining
 

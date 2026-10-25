@@ -12,12 +12,12 @@
 \newcommand{\R}{\mathbb R}
 \newcommand{\Pconv}{\xrightarrow{\mathbf P}}
 \newcommand{\lean}[2]{\par\smallskip\noindent\textit{Lean reference:}\;
-  \texttt{\detokenize{#1}}\par\noindent
+  \texttt{\detokenize{#1}}\par\nobreak\noindent
   \hspace*{1em}\texttt{\detokenize{#2}}\par\smallskip}
 \title{Signed Simpson Calculus for\protect\\
   Reflected-Clock Iterated Brownian Motion}
 \author{Project Stardust\protect\\\small Private working exposition}
-\date{Revision 1 --- October 23, 2026}
+\date{Revision 2 --- October 25, 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -42,6 +42,9 @@ Results below summarize checkpoints 1383--1394. Every cited name has prefix
 \begin{quote}\small\texttt{OperatorDerivativeRewrite.Foundation.}\end{quote}
 The original manuscripts are preserved unchanged. This exposition asserts no
 external novelty, publication readiness, or completion of the IBM campaign.
+The original scope is retained; the final section now records later verified
+time--space and continuous-path results through mathematical checkpoint 1520,
+so earlier open-problem labels are not mistaken for current proof status.
 
 \section{Process, prescription, and topology}\label{sec:model}
 Let $W$ be the constructed continuous Brownian scenery on nonnegative spatial
@@ -220,8 +223,9 @@ In particular, for $f\in C^4$,
 \end{align*}
 \lean{IBMTimeWeightedSimpson}{derivative_weighted_tendstoInMeasure}
 This is a separable spacetime chain rule. Examples $tZ_t$, $tZ_t^2$, and
-$t^2\sin(Z_t)$ are independently tested in Lean. General two-variable
-$F(t,z)$ and random time coefficients remain separate obligations.
+$t^2\sin(Z_t)$ are independently tested in Lean. The original scope of this
+section is separable; later nonseparable results are recorded below.
+Random time coefficients retain a separate proof obligation.
 
 \section{A precise graph-dual connection and strong-domain limit}\label{sec:dual}
 Let $D$ be the existing closed, densely defined intrinsic joint derivative
@@ -279,11 +283,27 @@ does not identify that integrator with physical $Z$. The earlier change-of-
 integrator draft concerns that verified martingale calculus, and remains
 valid on its own original domains.
 
-Open repository obligations include general $F(t,z)$, controlled random
-time-dependent coefficients, continuous finite-sum interpolation and its
-real-time uniform topology, arbitrary partitions, required causal or adjoint
-identifications, and nonsmooth physical-time It\^o--Tanaka formulas. Strong
-domain exclusions cannot be repaired by silently assuming membership.
+Later verified results resolve the former deterministic nonseparable
+$F(t,z)$ obligation: assume $C^1$ time slices, $C^4$ spatial slices, and joint
+continuity of the time partial and fourth spatial derivative. Actual signed
+spatial Simpson sums converge in probability to
+\[
+ F(T,Z_T)-F(0,Z_0)-\int_0^T\partial_tF(t,Z_t)\,dt.
+\]
+The maximum error over all prefixes of a common uniform grid also vanishes
+in probability. With joint continuity of $F$, explicit Bernstein polynomial
+approximants converge in probability in the continuous-path supremum norm.
+They are not claimed to be linear interpolants or causal processes: all grid
+prefixes enter their construction.
+\lean{IBMTimeSpaceSimpson}{sums_tendstoInMeasure}
+\lean{IBMUniformTimeSpace}{maximum_tendstoInMeasure}
+\lean{IBMContinuousSimpsonRealization}{approximation_tendstoInMeasure}
+
+Controlled random time-dependent coefficients, arbitrary partitions, the
+required physical-time causal or adjoint identifications, and nonsmooth
+physical-time It\^o--Tanaka formulas remain separate obligations. General
+causal continuous interpolants are not supplied by the Bernstein theorem.
+Strong domain exclusions cannot be repaired by silently assuming membership.
 The verified stopping contract for the full IBM campaign has not been met.
 
 All statements refer to pinned Lean 4.34.1 and the existing Mathlib revision.

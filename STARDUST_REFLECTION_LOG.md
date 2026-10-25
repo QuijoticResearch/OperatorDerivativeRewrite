@@ -183,3 +183,74 @@ unchanged; queue/AGENTS and original manuscripts unchanged; local curated
 links and source/PDF freshness verified. No mathematical results modified.
 Exact commit approval and terminal PRIVATE main/research verification follow
 in .lake/stardust-1395-verification.json. IBM remains ACTIVE; later gates unchanged.
+
+## Checkpoint1521 — October25 opportunistic reflection; IBM unchanged
+
+Admitted ONE America/New_York reflection session at CLOSED1520, mathematical
+commitc3381683f4d7abad527dee9575f4cf57deea0431. No active proof or verification
+was interrupted. Terminal start09:19:40.421516EDT; deadline10:04:40.421516EDT.
+Date reserved BEFORE substantive work. Reconciled the prior October23 session
+from its exact verified terminal receipt: actual962seconds, original conservative
+1029 preserved,67seconds released. Today's date is consumed even if time remains.
+Precommit observed1258.108seconds, charged1259 plus explicit300second Git/private
+finalization allowance: conservative1559seconds<2700. Exact final wall accounting
+will be in .lake/stardust-1521-reflection-terminal.json; reconcile that receipt
+before any future admission. Every setup, PDF, verification and closure minute
+belongs to this one shared budget. No new automation, goal or campaign.
+
+Corrected stale curated open labels: deterministic nonseparable F(t,z) Simpson
+calculus is verified with C1-time/C4-space slices and explicit joint continuity
+of the time partial/fourth spatial derivative. Common-grid prefix maximum and,
+with continuous F, explicit Bernstein continuous-path approximation in probability
+in supremum norm are verified too. Bernstein uses all grid prefixes; it is not
+asserted causal or a linear interpolant. Former opportunityR4 is resolved in that
+exact scope. Random coefficients, arbitrary partitions, nonsmooth Tanaka and
+observed-causal/adjoint identification are separate remaining obligations.
+
+Synthesized three distinct maps: original native grid outputs have no weak
+intrinsic Hilbert subsequence; restricted Fourier source-lowered actions can
+have genuine clockL2/L1 limits; actual source averaging gains original clock-
+graph regularity while losing odd-phase information. Original clock gradients
+project to the genuine hidden-Brownian-clock Clark--Ocone coefficient, and old
+STATIC source recovery restores the full centered actual observable through
+the ORIGINAL intrinsic joint divergence. Exact F=-sin(Z_R) has zero source mean
+and clock coefficient, but is nonconstant and remains outside the original
+joint derivative domain. A mean reconstruction is not full reconstruction;
+full hybrid reconstruction is not observed-filtration predictability.
+
+New precise opportunityR5: for a proposed OBSERVED-predictable coefficient,
+prove original integral-domain membership, identify the actual integral with
+the desired physical prescription, and prove F-EF-I_obs(K)=0 in the required
+topology, or exhibit an explicit nonzero residual. Hidden-clock PRP or projection
+alone establishes neither. This is an existing IBM frontier, not an externally
+verified open problem or novelty claim. Queue/AGENTS/priorities unchanged.
+
+Updated README (ten curated results), blueprint, commentary and manuscript index.
+New PRIVATE manuscripts/ibm-clock-hybrid/main.tex + main.pdf, revision1,5pages,
+mathematical baseline1520. Revised ibm-signed-simpson source/PDF to revision2,
+6pages, retaining the historical1383--1394 theorem scope while correcting later
+open-status labels. All11 CURRENT pages rendered locally95dpi and actually
+inspected: equations/notation legible, no clipping/overlap/missing glyphs,
+references resolved. Source/PDF hashes and independent visual receipts agree.
+The older predictable-associativity paper is unchanged.
+
+Existing local MiKTeX two-pass compiler used with installer/shell escape disabled.
+Final new-note compile1.529973s; revised Simpson compile1.572132s. Retained the
+initial6.6793pt overflow log, fixed by displaying the summability assumptions;
+visual inspection caught a two-page Lean reference split, repaired by keeping
+the reference block together. Compiler logs are preserved VERBATIM, including
+expected whitespace; raw diagnostic formatting is not rewritten for Git style.
+No external compilation/publication/upload; only authorized PRIVATE Git backup.
+
+Fresh full root build PASS6748jobs11.274177s. Complete safe transitive
+Lean.collectAxioms audit PASS49376declarations47.792590s, only the permitted3
+axioms. All33 cited public types read UNABRIDGED; relevant statements/proofs
+and revised draft/curated sources reviewed. Eighteen independent Lean checks
+PASS29.787635s, combining existing nonseparable/time-space counterexamples and
+current actual Fourier/sine, graph-domain, causal-support and hybrid checks.
+All2575 mathematical sources, configuration3, control documents4 and113original
+archive paths/hashes unchanged;58 local links and all manuscript freshness
+checks passed. No new mathematical theorem or hypothesis modified. Exact-commit
+receipt and terminal verified PRIVATE main/research gate follow. ResearchSources,
+unrelated plans/tmp and historical records preserved. Resume current IBM after
+closure; no second October25 reflection session.

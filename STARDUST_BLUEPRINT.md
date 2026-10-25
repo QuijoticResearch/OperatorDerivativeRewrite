@@ -88,6 +88,12 @@ graph TD
   L --> N[Clipped observable L2 and original graph-dual limits]
   C --> N
   N --> O[Strong-domain exclusion and gradient escape]
+  A --> P[Actual source mean and folded covariance]
+  P --> Q[Original Gaussian clock graph with collision terms]
+  Q --> R[Projected derivative and hidden-clock Clark--Ocone]
+  P --> R
+  R --> S[Source-adjoint plus predictable-clock reconstruction]
+  C --> S
 ```
 
 **F1–F3 foundation.** `IBMDilatedPredictableLimit.correction_continuum_tendsto`
@@ -140,13 +146,59 @@ and `tracked_graph_escape` rule out a strong joint-field derivative of the sine
 limit and force gradient-norm divergence for any strong-domain tracking sequence.
 See the [private source/PDF draft](manuscripts/INDEX.md) for domains and prescriptions.
 
+**Later time–space and continuous-path results.**
+`IBMTimeSpaceSimpson.sums_tendstoInMeasure` now supplies the nonseparable
+deterministic F(t,z) chain formula for C1 time slices, C4 spatial slices and
+jointly continuous time partial/fourth spatial derivative. The genuine time
+correction is integral partial_t F(t,Z_t) dt. `IBMUniformTimeSpace.maximum_tendstoInMeasure`
+controls all prefixes of one common uniform grid. With joint continuity of F,
+`IBMContinuousSimpsonRealization.approximation_tendstoInMeasure` gives explicit
+Bernstein polynomial continuous-path approximants converging in probability in
+the SUPREMUM NORM. They use all grid prefixes; causal or linear interpolation
+is not asserted. The earlier statements listing these as wholly open are
+superseded in this exact scope. [Revised source/PDF](manuscripts/ibm-signed-simpson/main.pdf).
+
+**Native Hilbert escape versus tested convergence.**
+`IBMNativeWeakObstruction.no_original_weak_limit` and
+`no_original_weak_subsequence` exclude a weak intrinsic-Hilbert limit of the
+specified ORIGINAL native grid outputs at positive horizons. This does not
+exclude every distribution-valued or restricted-test limit.
+`IBMFourierCylinderSeries.native_lower` identifies the actual source-lowered
+operator on curvature-summable Fourier observations; `native_tendsto` is strong
+clock L2 convergence and `source_native_tendsto` is the corresponding clock L1
+limit of the original lowered action. The limit is an occupation/covariance
+action, not reconstruction of the entire observable. Different maps, domains
+and topologies reconcile these positive and negative results.
+
+**Clock graph and hybrid reconstruction.** Let F be the actual multitime Fourier
+observable and M its preexisting source mean. `IBMFoldedSourceCovariance.variance_expansion`
+identifies Q_b=sum_ij b_i b_j min(|x_i|,|x_j|)>=0 with an actual squared scenery
+norm. `GaussianAbsoluteMinimumGraph.minimum_graph` handles the collisions in
+the ORIGINAL Gaussian graph, including ties and zero levels. Under sumabsw and
+curvature summability, `IBMFourierClockGraph.multitime_clock_graph` places M
+in that graph, with an explicit folded/collision gradient series G and strong
+scalar/vector L2 closure.
+
+`IBMFourierClockClarkOcone.projected_actual_derivative` identifies the unique
+genuine Brownian-clock coefficient U with predictableProjection G.
+`finite_reconstruction` and `coefficient_supported` use proved raw Brownian
+and finite-past measurability, not ambient Gaussian membership alone. The PRP
+and finite-horizon representation need only sumabsw; curvature summability is
+needed for the full original derivative identification.
+`IBMFourierHybridReconstruction.reconstruction` pairs existing STATIC source
+recovery with this predictable clock channel in the ORIGINAL intrinsic joint
+divergence and reconstructs F-EF. The clock is HIDDEN Brownian time; observed-IBM
+predictability of the pair is not proved. For F=-sin(Z_R), M=U=0 although F is
+nonconstant and has no strong joint derivative. The source channel preserves
+information lost by averaging. [Focused private note](manuscripts/ibm-clock-hybrid/main.pdf).
+
 **Open physical-time obligations.** The raw IBM path is not the fixed-terminal
-martingale P_rY. Current results do not construct a semimartingale bracket, prove
-L2 of a samplewise time supremum, or give a full physical-time Ito–Tanaka or
-temporal-gradient Clark–Ocone formula. General F(t,z), random coefficients,
-continuous finite-sum interpolation and arbitrary partitions remain unproved.
-The derivative-domain exclusion for
-the actual sine observation remains compatible with stochastic reconstruction.
+martingale P_rY. No semimartingale bracket, L2 samplewise-supremum upgrade, full
+nonsmooth physical-time Ito–Tanaka or observed-filtration temporal-gradient
+Clark–Ocone is inferred. Random coefficients, general causal continuous
+interpolants, arbitrary partitions and actual prescription/adjoint agreement
+retain separate obligations. The derivative-domain exclusion for the actual
+sine observation remains compatible with stochastic reconstruction.
 
 ## Arithmetic Xi flows
 
@@ -181,7 +233,15 @@ Quartic real zeros and order continuity do not themselves prove RH.
    its own estimate, not a change in terminology.
    The newer signed Simpson theorem DOES bound a samplewise maximum over grid
    prefixes in probability; it does not upgrade the older reconstruction to
-   an L2 samplewise-supremum theorem or to continuous-time finite-sum convergence.
+   an L2 samplewise-supremum theorem. Later Bernstein finite-sum convergence
+   DOES hold in the continuous-path supremum norm in probability; its use of
+   all grid prefixes does not provide a causal interpolant.
+4. **Regularization with information loss — verified identity, separate frontier.**
+   Source averaging gains original clock-graph regularity, while killing every
+   odd-phase Fourier source mean. The existing source adjoint restores the
+   lost residual in the hybrid divergence identity. Observed predictability
+   does not follow from either operation; a candidate observed coefficient
+   must have its actual integral/residual identified on the required domain.
 
 The [commentary](STARDUST_MATHEMATICAL_COMMENTARY.md) gives concrete follow-ups
 and classifies their proof status. They are opportunities, not queue amendments.
