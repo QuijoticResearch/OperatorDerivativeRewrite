@@ -2464,3 +2464,5 @@ import Foundation.IBMFourierRidgeCoefficients
 import Foundation.IBMFourierCylinderSeries
 import Foundation.IBMBoundedGaussianMeanDerivative
 import Foundation.IBMFourierSourceMeanCalculus
+import Foundation.IBMFoldedSourceCovariance
+import Foundation.IBMFourierClockMeanRegularity

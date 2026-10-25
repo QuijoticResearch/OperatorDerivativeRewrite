@@ -45680,3 +45680,122 @@ resource, transparency, linter, trust, cache or toolchain setting changed.
 ResearchSources remains untouched and uncommitted; unrelated drafts/plans/tmp
 are preserved. Exact-commit receipt and verified PRIVATE main/research closure
 are recorded by the unchanged synchronization and terminal-verifier procedure.
+
+
+## Checkpoint 1517 — folded covariance regularity and an actual source-mean cusp
+
+October25,2026. IBM remains ACTIVE; queue8280325 and all later priorities/gates
+are unchanged. Previous goal turn made progress:1516 closed at82c2b33 with
+exact PRIVATE main/research verification. No archive bytes or existing
+mathematical statements changed. Actual process remains B(|W_t|).
+
+### Reuse and the precise clock-regularity route
+
+The actual scenery direction is the existing normalized H=1/2 spectral vector
+embedded in the original source Hilbert space. Reusing normalized_inner,
+FractionalCovarianceMatrices.brownian_covariance and the original isometry,
+IBMFoldedSourceCovariance proves the actual reflected Gram identity
+
+    inner(d(x),d(y)) = min(|x|,|y|).
+
+Thus Q_b(x)=norm(sum_i b_i d(x_i))^2 is nonnegative and equals the FULL double
+sum b_i b_j min(|x_i|,|x_j|), including arbitrary signed coefficients and
+linearly dependent/repeated coordinates. This is identified pointwise with
+the original finite-ridge random clock-direction variance, not a replacement
+covariance model. Dropping mixed terms is explicitly disproved below.
+
+The minimum/absolute-value estimate proves
+
+    |Q_b(x)-Q_b(y)| <= (sum_i |b_i|)^2 norm(x-y)_infty.
+
+The bound is independent of clock coordinate size and observation times.
+It does not differentiate the half-Holder Hilbert direction map. Gaussian
+damping exp(-q/2) has Lipschitz constant1/2 on NONNEGATIVE q; nonnegativity is
+proved from the actual Hilbert norm rather than assumed for an arbitrary matrix.
+
+### Completed actual source mean and quantitative time control
+
+Using the existing1515 Fourier weights/phases/rows, define
+
+    G(x)=sum_k w_k cos(beta_k) exp(-Q_(a_k)(x)/2).
+
+Under the SAME value and curvature summability conditions, the new
+IBMFourierClockMeanRegularity.value_difference theorem proves G globally
+Lipschitz on the ENTIRE finite clock-coordinate space, with constant
+L=(1/2) sum_k |w_k| (sum_i |a_ki|)^2. Series subtraction, norm summability and
+termwise domination are all discharged. No bounded coordinate localization,
+positive observation time or new frequency assumption is introduced.
+
+sourceMean_eq identifies G exactly with1516's actual source mean on folded
+scenery directions. clockMean_actual then proves that the ORIGINAL Gaussian-one
+sourceUnitary/compLpL source-average class of the ACTUAL IBM observable agrees
+clock-AE with G((W_(r_i))_i). This explicitly connects the finite-coordinate
+estimate to the actual process and old averaging operator.
+
+The quantitative clock-L2 theorem is
+
+    norm(clockMean(r)-clockMean(s))_2 <= L sum_i sqrt(|r_i-s_i|).
+
+It is proved using actual scalar absolute increment L2 classes, finite sums,
+AE identities and the ORIGINAL Brownian increment norm. It applies at zero,
+with arbitrary ordering, repeated times and future/past observation choices.
+It is an L2 estimate, not a samplewise supremum estimate or an assumed
+Malliavin-domain theorem. The earlier source-Hilbert derivative alone did not
+supply this clock-coordinate regularity; the reflected covariance identity is
+the needed additional input.
+
+### Explicit cusp: why ordinary C1 composition still cannot be used
+
+For the single actual cosine observation, the source mean as a function of the
+clock coordinate is PROVED to be exactly exp(-|x|/2). Both the damping function
+and the literal actual Gaussian integral are proved NOT differentiable at0.
+The proof recovers |x| from -2 log(exp(-|x|/2)) and contradicts Mathlib's proved
+absolute-value nondifferentiability. This is a verified counterexample to
+inferring ordinary C1 clock regularity from source-Hilbert smoothness or the
+new global Lipschitz estimate.
+
+It is NOT a counterexample to a weak Sobolev/closed-graph chain rule, and does
+not imply failure of full intrinsic IBM calculus. The required next bridge is
+a weak clock-domain result handling folded/collision cusps, or a rigorous
+obstruction in the proposed domain. Original source-averaged classes are not
+automatically declared measurable with respect to the IBM observable sigma
+algebra; ambient clock-domain membership and intrinsic joint membership must
+be distinguished. No physical-time Ito/Tanaka or temporal-gradient Clark--Ocone
+theorem is inferred, and all previous native weak-Hilbert/sine obstructions stand.
+
+The reuse audit read the actual nonlinear clock-average graph theorem and
+strong linear-average gradient convergence. Their time-average domains are
+not silently enlarged to fixed nonlinear point observations. Next inspect the
+original Gaussian absolute/finite-gradient closure machinery to construct the
+needed weak clock chain with actual gradients and bounds; do not rebuild the
+source mean, introduce new stochastic processes or activate queued campaigns.
+
+### Independent tests and complete verification
+
+Twelve independent Lean checks PASS,35.416314seconds. They verify Gram values
+for opposite signed positions; exact reflected cancellation of opposing
+coefficients; the contradictory diagonal-only energy4 in that same zero-energy
+example; singleton folded variance; reflection invariance for all finite signed
+families; failure of the damping bound on negative input; full covariance
+positivity; absence of EVERY proposed actual classical derivative at0; the
+actual singleton half-Holder L2 bound; degenerate zero-time stability; exact
+Brownian square-root scaling at the origin; and horizon-independent variance
+stability. The zero-time check reduces to exact equality, without requiring a
+positive-time lemma. Its harmless unused-hypothesis warning is preserved.
+
+Full root build PASS,6741jobs,41.313699seconds. Complete transitive safe
+Foundation axiom audit PASS,49267declarations,38.960763seconds; only propext,
+Classical.choice and Quot.sound. All29 new public types were read unabridged;
+complete new mathematical sources and root/AxiomAudit edits were reviewed.
+Frozen manifest:2568 Foundation/root sources, configuration3 unchanged, all113
+archive paths and hashes identical to inventory1292. Only root/AxiomAudit changed
+among old Lean sources. Manuscripts and unrelated untracked drafts are preserved.
+
+Failed development logs retain finite-sum orientation, nested absolute-value
+parsing, missing notation scope, scalar damping normalization, explicit norm/abs
+conversions, the absent library absolute-Lipschitz alias and missing Abs import.
+The cusp theorem was finally verified by the full root build with the explicit
+Mathlib import. No failed target is certified. No toolchain/compiler resources,
+transparency, linter, trust, cache or mathematical hypothesis was modified.
+Exact-commit audit receipt and verified PRIVATE main/research closure follow
+the established procedure; IBM remains active beyond this checkpoint.
