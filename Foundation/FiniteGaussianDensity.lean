@@ -117,11 +117,29 @@ private theorem weighted_finite {Ω : Type*} [MeasurableSpace Ω]
     (weighted_integrable_iff hw hn).mpr (by simpa using hi)
   exact (integrable_const_iff.mp hc).resolve_left (by norm_num)
 
-/-- Orthogonality to all multivariate polynomials forces an L² vector to vanish.
+/-- Polynomial representing the power of a finite real linear observation. -/
+def linearPowerPolynomial (L : (ι → ℝ) →L[ℝ] ℝ) (n : ℕ) : MvPolynomial ι ℝ :=
+  by classical exact (∑ i, MvPolynomial.C (L (Pi.single i 1)) * MvPolynomial.X i) ^ n
+
+theorem linearPowerPolynomial_eval (L : (ι → ℝ) →L[ℝ] ℝ) (n : ℕ) (x : ι → ℝ) :
+    MvPolynomial.eval x (linearPowerPolynomial L n) = L x ^ n := by
+  classical
+  simp only [linearPowerPolynomial, map_pow, map_sum, map_mul,
+    MvPolynomial.eval_C, MvPolynomial.eval_X]
+  congr 1
+  rw [← ContinuousLinearMap.sum_comp_single ℝ (fun _ : ι => ℝ) L x]
+  apply Finset.sum_congr rfl
+  intro i _
+  have hh : Pi.single i (x i) = x i • Pi.single i (1 : ℝ) := by
+    ext j; by_cases hj : j = i <;> simp [hj]
+  simp [ContinuousLinearMap.comp_apply, ContinuousLinearMap.single_apply, hh, mul_comm]
+
+/-- Vanishing moments against powers of all real linear functionals forces an L² vector to vanish.
 The argument uses positive weighted measures, one-dimensional moment uniqueness,
 and characteristic-function uniqueness, rather than a density assumption. -/
-theorem eq_zero_of_productPolynomial_orthogonal (f : Lp ℝ 2 (productGaussian ι))
-    (hf : ∀ p : MvPolynomial ι ℝ, inner ℝ f (productPolynomialL2 p) = 0) : f = 0 := by
+theorem eq_zero_of_linear_power_integrals (f : Lp ℝ 2 (productGaussian ι))
+    (hf : ∀ (L : (ι → ℝ) →L[ℝ] ℝ) (n : ℕ),
+      (∫ x, f x * L x ^ n ∂productGaussian ι) = 0) : f = 0 := by
   classical
   let wp : (ι → ℝ) → ℝ := fun x => max (f x) 0
   let wn : (ι → ℝ) → ℝ := fun x => max (-f x) 0
@@ -148,26 +166,17 @@ theorem eq_zero_of_productPolynomial_orthogonal (f : Lp ℝ 2 (productGaussian �
     · intro n
       rw [integral_map (by fun_prop) (by fun_prop), integral_map (by fun_prop) (by fun_prop),
         weighted_integral hpm hpn, weighted_integral hnm hnn]
-      let p : MvPolynomial ι ℝ := (∑ i, MvPolynomial.C (L (Pi.single i 1)) * MvPolynomial.X i) ^ n
-      have he (x : ι → ℝ) : MvPolynomial.eval x p = L x ^ n := by
-        simp only [p, map_pow, map_sum, map_mul, MvPolynomial.eval_C, MvPolynomial.eval_X]
-        congr 1
-        rw [← ContinuousLinearMap.sum_comp_single ℝ (fun _ : ι => ℝ) L x]
-        apply Finset.sum_congr rfl
-        intro i _
-        have hh : Pi.single i (x i) = x i • Pi.single i (1 : ℝ) := by
-          ext j; by_cases hj : j = i <;> simp [hj]
-        simp [ContinuousLinearMap.comp_apply, ContinuousLinearMap.single_apply, hh, mul_comm]
-      have hpow : MemLp (fun x => L x ^ n) 2 (productGaussian ι) :=
-        by simpa only [he] using productPolynomial_memLp p 2 (by simp)
+      have hpow : MemLp (fun x => L x ^ n) 2 (productGaussian ι) := by
+        simpa only [← linearPowerPolynomial_eval L n] using
+          productPolynomial_memLp (linearPowerPolynomial L n) 2 (by simp)
       apply sub_eq_zero.mp
       rw [← integral_sub (mul_L2_integrable hp hpow) (mul_L2_integrable hn hpow)]
-      have hz := hf p
-      rw [L2_inner_eq_integral] at hz
-      have hae : (fun x => inner ℝ (f x) (productPolynomialL2 p x)) =ᵐ[productGaussian ι]
-          fun x => wp x * L x ^ n - wn x * L x ^ n := by
-        filter_upwards [productPolynomialL2_coeFn p] with x hx
-        rw [hx, he, Real.inner_apply, ← sub_mul, max_zero_sub_eq_self]
+      have hz := hf L n
+      have hae : (fun x => f x * L x ^ n) =ᵐ[productGaussian ι]
+          fun x => wp x * L x ^ n - wn x * L x ^ n :=
+        Filter.Eventually.of_forall fun x => by
+          change f x * L x ^ n = max (f x) 0 * L x ^ n - max (-f x) 0 * L x ^ n
+          rw [← sub_mul, max_zero_sub_eq_self]
       rwa [← integral_congr_ae hae]
   have hν : νp = νn := by
     apply Measure.ext_of_charFunDual
@@ -187,6 +196,18 @@ theorem eq_zero_of_productPolynomial_orthogonal (f : Lp ℝ 2 (productGaussian �
   change wp x - wn x = f x at hh
   rw [hw, sub_self] at hh
   exact hh.symm
+
+/-- Original polynomial totality, now obtained from the reusable linear-moment theorem. -/
+theorem eq_zero_of_productPolynomial_orthogonal (f : Lp ℝ 2 (productGaussian ι))
+    (hf : ∀ p : MvPolynomial ι ℝ, inner ℝ f (productPolynomialL2 p) = 0) : f = 0 := by
+  apply eq_zero_of_linear_power_integrals f
+  intro L n
+  have hz := hf (linearPowerPolynomial L n)
+  rw [L2_inner_eq_integral] at hz
+  convert hz using 1
+  apply integral_congr_ae
+  filter_upwards [productPolynomialL2_coeFn (linearPowerPolynomial L n)] with x hx
+  rw [hx, linearPowerPolynomial_eval, Real.inner_apply]
 
 /-- Multivariate polynomials are dense for every finite index type, including the empty type. -/
 theorem productPolynomialEmbedding_dense :

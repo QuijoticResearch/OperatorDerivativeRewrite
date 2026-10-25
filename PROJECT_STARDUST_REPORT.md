@@ -46876,6 +46876,48 @@ remain untouched. October25 reflection already consumed; no housekeeping run.
 The exact-commit receipt, terminal verification record and both PRIVATE
 main/research ref comparisons close this checkpoint after its explicit commit;
 no next proof or transition is certified by this pre-commit report alone.
+## Checkpoint 1529 investigation IN PROGRESS — universal Gaussian/IBM scenery prediction
+
+2026-10-25, terminal clock 13:04 America/New_York. Audited/private baseline is
+still 2a011530c297b0b87ed236260e165c9b63f1a29c (1528). No new milestone is
+certified or committed by this entry. IBM remains ACTIVE.
+
+The next proposed advance removes the one-ridge limitation. The existing
+finite Gaussian density proof has been factored through the stronger reusable
+`FiniteGaussian.eq_zero_of_linear_power_integrals`: orthogonality of an L2
+class to powers of EVERY finite real linear functional implies zero. It uses
+the existing positive/negative weighted-measure argument, Gaussian exponential
+integrability, scalar moment uniqueness and characteristic-function uniqueness.
+The original polynomial-totality statement remains unchanged and is recovered
+as a wrapper. This changed module successfully compiled in the current build;
+complete verification of the resulting checkpoint is still PENDING.
+
+`GaussianSingleObservationTotal.lean` is an UNVERIFIED draft deriving totality
+of the actual single-observation generated subspaces through finite-marginal
+pullback adjoints and the existing infinite-cylinder uniqueness theorem. It
+then attempts the general lifting theorem: strong decay of every first-chaos
+prediction implies strong decay to the Gaussian mean for every Gaussian L2
+input, without monotonicity or a finite observation index assumption.
+
+`IBMSceneryUniversalPrediction.lean` is an UNVERIFIED draft. The mathematical
+route projects arbitrary source directions onto the closed positive-scenery
+span, extends known directional limits by equicontinuity/closedness, and uses
+nested orthogonal projections to eliminate its orthogonal complement. If the
+totality and these arguments pass Lean, checkpoint1528's Bochner construction
+would extend to EVERY joint L2 input. Proposed consequences are all-target
+initial-channel reduction and source-vacuum fixedness of the whole IBM initial
+germ. These are NOT yet verified results; no germ triviality or full intrinsic
+stochastic-calculus completion is claimed.
+
+The foundational refactor invalidates dependent build artifacts. The serialized
+Lake build of GaussianSingleObservationTotal is still live at the recorded
+terminal observation; preserve/poll that SAME process rather than restarting.
+Runtime handle and exact logs are recorded in `.lake/stardust-1529-progress.json`.
+No second Lean process, options/resource change, proof weakening, queue change
+or reflection session was introduced. All 113 archive paths/hashes and all
+three configuration hashes were rechecked unchanged. All milestone gates,
+including full rebuild, transitive axiom/type/proof review, independent checks,
+explicit Git commit and both PRIVATE ref verifications, remain mandatory.
 
 ## October25 instruction-only queue amendment — bounded Yang–Mills audit
 
@@ -46903,3 +46945,439 @@ commit excludes every unfinished 1529 mathematical source and the preceding
 in-progress ledger entry. Its committed Lean/configuration tree must equal the
 fully audited 1528 baseline exactly; verification evidence is reused only for
 that unchanged committed mathematics, never for the active uncommitted drafts.
+### Checkpoint1529 progress update — universal prediction elaborates; full rebuild pending
+
+Terminal clock October25,13:41 America/New_York. The Gaussian totality module
+now passes its targeted Lake build (target6,3489 jobs); the complete universal
+IBM source passes preliminary raw Lean elaboration (universal-draft6). Earlier
+elaboration failures and their corrections remain in the numbered logs. These
+are preliminary proof checks, NOT the full checkpoint verification gate.
+
+The proposed one-ridge restriction has been removed at this preliminary level.
+`GaussianSingleObservationTotal.closed_submodule_eq_top` derives totality of
+all one-observation generated subspaces using the extracted finite linear-power
+moment theorem, original finite-marginal pullback adjoints and original infinite
+cylinder uniqueness. `prediction_all` then lifts strong decay of EVERY linear
+source prediction to every Gaussian L2 input. Small observation norms alone do
+not provide this hypothesis; the earlier scaled-direction obstruction remains.
+
+`IBMSceneryUniversalPrediction` extends actual shrinking-scenery source decay
+from the known scenery directions to their CLOSED span, then handles arbitrary
+ambient coefficients by nested projections. It does not assume the positive
+scenery directions span the ambient coefficient space. All Gaussian and all
+joint L2 scenery forecasts consequently tend strongly to the OLD source vacuum.
+Existing actual bounded-germ fixed pairings give all-target initial-channel
+reduction; self-adjoint limits give source-vacuum fixedness for EVERY germ class,
+including unbounded ones. Original tensor/curry/flip identities explicitly give
+G(X,Y)=m(Y) AE with m=`IBMGlobalVacuum.factorMean(sourceUnitary G)` in GaussianL2.
+This is clock-only dependence, NOT measurability in the shrinking clock germ or
+constancy. The full original observable-domain target-indexed reconstruction
+still retains channelClass(sourceVacuum F,0); it is not a physical universal
+Clark--Ocone formula or completion of intrinsic IBM calculus.
+
+The 2590 Foundation/root source files and all three configurations are frozen
+in `.lake/stardust-1529-working-checkpoint.json`; archive113 hashes agree exactly.
+The full ROOT build is LIVE (session84656; `.lake/stardust-1529-full-build.log`).
+The foundational proof refactor requires a broad dependent rebuild. No second
+Lean process or resource/settings override is used. Complete transitive audit,
+unabridged23 public-type reviews (22new plus touched original theorem), final
+three-source/proof review, ten prepared independent checks, final source/archive
+checks, Git and both PRIVATE backup gates remain PENDING. No unfinished
+mathematical change has been committed. Queue instruction b91ce91 is already
+privately verified and preserves IBM as ACTIVE; no queued campaign was begun.
+
+A concrete NEXT obligation is identified, not proved: use the already verified
+coordinatewise AE modification theorem to transfer raw IBM-past measurability
+to the scenery-plus-clock-past product sigma-algebra. Given G=ae m(Y), a product
+section should supply clock-past AE measurability of m for every positive time.
+Then prove SMALL-time predictable-cut convergence to zero using the actual
+horizon indicator, Lebesgue singleton-zero nullity and existing L2 domination;
+combine with original Brownian conditional representation to establish any
+valid clock-germ constancy. Existing large-horizon cut/projection convergence
+does not prove this small-time assertion. No new foundation or zero-one law is
+assumed, and no frozen source is edited during the active rebuild.
+
+### Checkpoint1529 source comparison and next-proof reduction — verification still pending
+
+Terminal October25,14:10 America/New_York; the SAME full-root build84656 is
+confirmed live. The canonical IBM anchor is
+`ResearchSources/ibm/EJP2605-044RA0.pdf`, SHA256
+`5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE`.
+Complete pages1,2,17,23 and the archived original page1 rendering were inspected
+selectively. Page17 separates filtration questions from first-chaos dual closure;
+page23 item6 again separates natural-filtration/Brownian-generation questions.
+This is not a complete literature audit or an assertion that those questions
+are resolved by the manuscript. Its two-sided-scenery formulation does not
+automatically justify transferring negative-branch mollifier/boundary identities
+to the existing actual nonnegative-branch IBM construction.
+
+The old `IBMGlobalVacuum.composed_vacuum_expectation` makes a precise distinction:
+the source-vacuum projection retains the WHOLE pure-clock (0,n) chaos row;
+applying the clock vacuum afterward gives the scalar expectation (0,0) block.
+The prepared independent pure-clock, centered unit-norm example tests why the
+two projections cannot be identified. It is NOT asserted to be an IBM germ
+element. That test remains unexecuted while the full build is running.
+
+The next small-time reduction can be simplified further: the actual
+`PredictableRealL2.horizon T` is `(0,T] × univ`, not `[0,T] × univ`.
+Consequently its indicators tend pointwise to zero as T tends to zero even at
+time zero; a separate singleton-nullity argument is unnecessary. This corrects
+the prospective route above, not an existing mathematical theorem. Two
+unimported, UNCHECKED scratch files under `.lake/stardust-1530-*draft.lean`
+record candidate proofs of small-time cutoff convergence/Brownian shrinking-past
+constancy and raw product-section/actual IBM-past transfer. No1530 Foundation
+source has been created, no concurrent Lean process started, and no zero-one
+law certified. First finish the full1529 verification and private checkpoint.
+
+Prospective continuation October25,14:26: the unchecked combined scratch
+`.lake/stardust-1530-germ-draft.lean` now includes a concrete end-to-end proof
+attempt: small-time cut convergence, strong Brownian past-projection convergence
+to its scalar mean, shrinking-past constancy, a raw product-section lemma,
+coordinatewise modification transfer for actual IBM pasts, clock-past membership
+of the fixed factorMean class, actual IBM germ constancy, and centered
+target-indexed reconstruction. It reuses the verified
+`IBMIntrinsicRightApproach.approach 0` and its positivity/convergence rather
+than constructing another shrinking sequence. Every prospective assertion
+remains UNCHECKED. Even a successful germ proof would leave the universal
+physical integrator, native domains and full intrinsic Itô/Clark--Ocone
+identification obligations open. The1529 closure script is prepared with
+explicit final-review, full-build, transitive-audit, ten-test and hash guards;
+it has not been run and does not attest to completed verification.
+
+### Checkpoint1529 rebuild diagnosis — read-only observation, no configuration change
+
+Terminal October25,14:36 America/New_York. The full-root session84656 remains
+live. Direct process inspection identifies the long-running Lean worker6180
+(started14:04:52) as `Foundation/RiemannQuarticGridChecks.lean`, compiling the
+existing 160 `decide +kernel` cell certificates. Its measured CPU time increased
+between observations; this is active kernel computation, not evidence of an
+abandoned build. No process was interrupted or resource/trust setting changed.
+
+A read-only local-import traversal records the shortest path from GridChecks
+to the modified FiniteGaussianDensity in
+`.lake/stardust-1529-dependency-diagnostic.json`. The path passes through quartic
+analytic certificates, complex exponential tilts, stopped Brownian Fourier
+martingales, Gaussian conditional Clark--Ocone/predictable density and finite
+Gaussian completeness. This explains why a Gaussian foundational proof refactor
+invalidated the expensive quartic certificate cache despite preserving the old
+public totality statement. It is a dependency observation, not a newly proved
+mathematical transfer or a measured optimization. Import separation may be worth
+benchmarking at a later suitable workflow checkpoint; no refactor, kernel-check
+replacement, weakened audit, cache deletion or parallel Lean process is adopted.
+The current frozen verification cycle must finish unchanged.
+
+### IBM literature cross-check during the unchanged1529 build — selective, not certified
+
+October25,14:48. Primary sources consulted:
+[Khoshnevisan--Lewis, *Iterated Brownian motion and its intrinsic skeletal structure*,
+1999](https://www.math.utah.edu/~davar/PPT/ARCHIVES/ibmsurvey.pdf),
+[Allouba--Zheng, *Brownian-Time Processes*, Theorem0.1](https://arxiv.org/html/1005.3801v1),
+and [Abdurakhmanov--Allouba, *Brownian-time Change of measure*,
+v1, May7,2026](https://arxiv.org/pdf/2605.07044). This limited search establishes
+no novelty or absence of an earlier germ theorem. The survey's Theorems3.1/4.1
+use clock-hitting skeletal partitions for two-sided X(Y_t); these hypotheses
+cannot be silently transferred to ordinary grids or the current B(|W_t|) law.
+The older PDE theorem concerns expectations, not intrinsic path reconstruction.
+The2026 Theorem1.1/Proposition2.1 concern a separate measure at EACH fixed time,
+not a proved consistent path-space Girsanov family.
+
+Independent normalization checks: for r>0, conditional Z has law N(0,rI).
+Completing the square gives
+E exp(t*mu.Z/r - t^2*||mu||^2/(2r))=1.
+The full quadratic penalty printed in2026 (1.8) instead gives
+exp(-t^2*||mu||^2/(2r))<1 when mu is nonzero. Thus that displayed extension
+requires the missing1/2. Also E[Z_t^2]=E|W_t|=sqrt(2t/pi), conflicting with
+the displayed2026 (2.6) second moment2*sqrt(t/pi), under its own standard-normal
+density convention. These observations do not refute the correctly normalized
+scalar fixed-time theorem. HTML and original-PDF extracted text agree on both
+printed formulas; rendered screenshots were unavailable (cache fetch failures).
+
+The independent midpoint-quadrature diagnostic
+`.lake/stardust-1529-literature-numerical-check.json` gives mass0.6065306597 for
+the wrong unit conditional tilt versus1 for the half-penalty tilt, and unit-time
+second moment0.7978845609 versus printed1.1283791671. Floating-point quadrature
+is NOT proof or an error-certified bound. An unimported UNCHECKED Lean scratch
+`.lake/stardust-1530-literature-normalization-draft.lean` reduces the first check
+to OLD `GaussianRandomDensityKernel.kernel_integral`; existing
+`GaussianLinearLikelihoodMoments.kernel_square_lintegral` supplies its
+conditional second-moment check. Relevant already verified process-law anchors
+are `IBMOneTimeMixture.absolute_value_law`, `signed_value_law` and
+`same_one_time_law`; the last is ONE-TIME equality, not equality of path laws.
+
+Additional analytic obstruction to investigate, NOT newly Lean-certified:
+the correctly normalized likelihood has conditional square expectation
+exp(mu^2*t^2/r). Mixing against the folded Brownian clock suggests infinite
+L2 norm for every nonzero mu and t>0, since its clock density stays positive
+near r=0 and exp(c/r) is not integrable there. Normalized L1 tilt therefore
+cannot simply be treated as a bounded L2 operator in the current calculus.
+Consistency across time, adaptation/measurability of the clock denominator in
+the ACTUAL observed filtration, and any path-law drift removal each require
+their own proofs. No failure of every possible Girsanov construction is claimed.
+This is supporting IBM source research during a live build, not a new campaign
+or completion of any stochastic-calculus obligation. No archive file was added,
+downloaded into ResearchSources, edited or committed; no second Lean process ran.
+
+Rebuild timing context: the preserved earlier GridChecks checkpoint records an
+uninterrupted exact-kernel recomputation taking10134 seconds (report's original
+160-cell completion entry). This is historical evidence, not a forecast or a
+new benchmark. The current long worker is therefore consistent with a known
+expensive dependency; elapsed observation timeouts must not trigger a restart,
+replacement of kernel checks or a false blocked/completed campaign state.
+
+### Supporting IBM obstruction: canonical fixed-time tilts need not be consistent
+
+October25,14:56; analytic reduction and independent numerical probe only,
+NO new Lean certification. Keep the1529 gate and next clock-germ proof first.
+For the ACTUAL reflected-clock process Z_t=X(|B_t|), set drift1 and use the
+corrected canonical joint-space density
+L_t=exp(t*Z_t/|B_t|-t^2/(2|B_t|)), with an arbitrary definition on the clock-zero
+null event. Conditional Gaussian normalization preserves the clock law.
+The proposed probability measures Q_t=L_t P are individually normalized.
+
+The two-time Gaussian tilt calculation gives
+E_Q1[Z_1]=1, whereas
+E_Q4[Z_1]=4 E[min(|B_1|,|B_4|)/|B_4|].
+There is a concrete route to a STRICT lower bound greater than1, with no
+uncertified decimal constant needed. Write A=B_1 and U=(B_4-B_1)/sqrt(3);
+these are independent standard normals. The event
+E={|A|>=|A+sqrt(3)U|} contains
+C={AU<=0 and |U|<=|A|}. Gaussian exchange/sign symmetry and zero mass on the
+boundary lines give P(C)=1/4. It also contains the disjoint open rectangle
+D={1<A<21/20, -9/8<U<-11/10}, of strictly positive Gaussian measure:
+sqrt(3)*(9/8)<2, while |U|>11/10>21/20>|A| on D.
+Thus P(E)>1/4, and the nonnegative ratio min(|B_1|,|B_4|)/|B_4| is1 on E.
+Here the ratio is1 AE on E, after excluding the Gaussian-null denominator-zero
+line. Consequently E_Q4[Z_1]>1. The needed integrability follows by conditional
+Gaussian translation: the shifted conditional mean has absolute value<=4,
+the conditional variance is |B_1|, and the clock law is unchanged.
+
+If all these reductions are formally verified, the two canonical joint-space
+tilts cannot restrict consistently across times1 and4 on ANY filtration whose
+time1 sigma-algebra contains Z_1. This would rule out interpreting THIS density
+family as a process-space Girsanov construction. It would not refute its
+fixed-time marginal statement, nor rule out every other change of measure.
+
+`.lake/stardust-1530-tilt-consistency-probe.json` independently computes the
+ratio expectation using both isotropic Gaussian directions and Gaussian
+regression/Cauchy-ratio coordinates:0.5508347419, predicting E_Q4[Z_1]
+approximately2.2033389675. The event probability is approximately0.2728144742.
+These are diagnostic quadratures, NOT certified numerical bounds or Lean
+proofs. The Gaussian tilt identity, integrability and strict wedge-measure
+argument are explicit remaining formal obligations. Relevant existing machinery
+includes actual Gaussian source/clock laws, finite Gaussian products and
+`GaussianRandomDensityKernel.kernel_integral`; the specialized
+`GaussianLinearTiltLaw` concerns a DIFFERENT likelihood and cannot be relabelled
+as this IBM theorem. No Cauchy-paper campaign or other queued campaign began.
+
+### Bounded-observable sharpening of the same supporting consistency test
+
+October25,15:04; still UNCHECKED in Lean, with the clock-germ proof NEXT.
+The same actual-process reduction can separate the tilts by the bounded smooth
+observable sin(Z_1/1000). This also prevents an alleged repair by merely
+projecting each endpoint density onto the observed filtration: conditional
+expectation preserves all bounded past-test pairings, so it cannot erase a
+genuine discrepancy on this test. This observation uses L1 conditional
+expectation, not an unjustified L2 projection of a likelihood.
+
+Here is an explicit analytic bound whose probabilistic premises remain to be
+formalized. On D above, each standard-normal coordinate density exceeds1/10:
+x^2/2<1 throughout both coordinate intervals, exp(1)<3, and sqrt(2*pi)<3.
+Hence P(D)>1/80000 and P(E)>1/4+1/80000. Put epsilon=1/1000. Under Q4,
+the clock-conditional sine mean is exp(-epsilon^2*|A|/2)*sin(4*epsilon*h),
+where0<=h<=1 and h=1 AE on E; the denominator-zero line is Gaussian-null.
+Nonnegativity outside E, exp(-x)>=1-x, E|A|<=1, and
+sin(4*epsilon)>=4*epsilon-(4*epsilon)^3/6 give the lower bound
+(4/1000-(4/1000)^3/6)*(1/4+1/80000-1/(2*1000^2)).
+Under Q1 the corresponding sine expectation is at most epsilon.
+The exact lower-minus-upper margin is1062497/23437500000000>0, checked by
+Python rational arithmetic in `.lake/stardust-1530-bounded-tilt-margin.json`.
+An UNRUN `norm_num` example for that arithmetic margin is appended to the
+literature-check scratch. The arithmetic does not discharge the Gaussian tilt,
+measurability, conditional-expectation, wedge or density-bound obligations.
+No completed Lean counterexample or path-space theorem is asserted here.
+
+### Joint path-law obstruction and a compatible positive construction to test
+
+October25,15:28. Supporting IBM analysis only; current1529 verification and
+then the clock-germ proof retain priority. These are analytic proof reductions
+with EXPLICIT formal obligations, not new Lean-certified results.
+
+A structural obstruction may avoid exponential integrals entirely. On the
+single full-measure source event X(0)=0, actual Z_t=X(|B_t|) satisfies
+B_t=0 => Z_t=0 SIMULTANEOUSLY for every t. For nonzero a, the pair
+(B_t,Z_t-a*t) has no simultaneous zero on[1,2] on that same event, under ANY
+Q absolutely continuous with respect to the original joint measure P.
+In contrast, the original pair (B,Z) has a simultaneous zero on[1,2] with
+positive P probability: the positive-probability clock event
+{1<B_1<2, -4<B_2-B_1<-3} forces a zero by continuity. No recurrence theorem,
+random-time AE substitution or claim about all uncountable coordinate null
+sets is required; the only source null event is the fixed value X(0).
+
+The separating path event is measurable. On compact time[1,2], the set of
+continuous path pairs admitting a simultaneous zero is CLOSED: it is the
+projection of the closed evaluation-zero set along a compact time factor.
+`isClosedMap_snd_of_compactSpace` supplies the existing topological mechanism.
+Thus the original pair's law and the law of (B,Z-a*t) under any Q<<P must
+differ. This would obstruct joint-law drift removal with the ORIGINAL clock
+coordinate, not every drift change for the OBSERVED Z law alone or for a
+different clock representation. It does not refute a fixed-time marginal tilt.
+Remaining formal obligations are the closed path-event construction, path-law
+measurability, positive Gaussian clock crossing and absolute-continuity transfer.
+Exact source anchors include `IBMConstructedSources.ibmValue_eq`,
+`ibmValue_continuous`, `ibmPath_measurable`, `clock_isBrownian`,
+`positiveScenery_isBrownian`, and Mathlib's
+`IsPreBrownianReal.indepFun_shift`/`eval_zero_ae_eq_zero` and positive Gaussian
+densities. These results were inspected for reuse, not newly reproved here.
+
+There is also a compatible POSITIVE candidate. For fixed finite R>0, reweight
+only the scenery by exp(a*X(R)-a^2*R/2). The standard Gaussian Cameron--Martin
+calculation predicts a Brownian shifted scenery X(r)-a*min(r,R), hence the
+genuine full-process composition Z_t-a*min(|B_t|,R), with the clock independent
+and unchanged. This drift respects repeated clock visits and clock zeros.
+The proposed SINGLE global density has second moment exp(a^2*R), unlike the
+singular endpoint density containing1/|B_t|. Conditional projection of this
+fixed global L2 density onto the observed past would give a consistent density
+martingale, but an explicit observed formula and native-domain/derivative
+transport would remain separate obligations. The latent scenery density is
+not automatically an intrinsic-observable class merely because it has an
+ambient Gaussian derivative. No generic full-path Cameron--Martin bridge has
+yet been matched to an exact verified declaration; specialized
+`GaussianLinearTiltLaw` and `GaussianTiltFiniteHorizon` use different likelihoods
+and must not be relabelled. This is a standard Gaussian-translation route to
+verify, not a novelty claim, completed IBM calculus or newly activated campaign.
+
+Domain qualification for the earlier inverse-clock likelihood obstruction:
+non-L2 integrability of a JOINT density does not imply non-L2 integrability of
+its conditional projection onto observed data. Such a projection may improve
+integrability. The bounded-test inconsistency argument, if verified, survives
+that projection because its bounded-past pairings are preserved.
+
+### Immediate germ-proof draft refinement, October25,15:39
+
+Static review of the UNCHECKED next proof corrected six mistaken namespace
+references: `gaussianOne`/`gaussianOne_coeFn` are in `InfiniteGaussian`, as
+declared in `InfiniteGaussianKernel.lean`. Frozen1529 sources were not touched.
+The combined `.lake/stardust-1530-germ-draft.lean` now attempts the stronger
+all-target identity P_0 F=E[F]*jointOne for EVERY ambient JointL2 F, not only
+zero initial projection for centered F. Its consequences include full original
+IntrinsicSpace target-indexed reconstruction with EXACT scalar expectation,
+and the existing native-gradient-adjoint representation on the original joint
+derivative domain. No extra differentiability or source-centering hypothesis
+is inserted into the observable-domain statement. All new proof terms remain
+UNRUN; no initial-germ theorem, full intrinsic calculus or universal physical
+integrator is certified. Complete1529 gates first, then elaborate this proof.
+
+### Theorem-level reuse audit: fixed-family completed integration ALREADY EXISTS
+
+October25,16:08. Read-only source review while the SAME full build84656 remains
+live. Do NOT build another countable-family or matrix-energy infrastructure.
+The existing results are stronger than a single target-indexed integral:
+
+- `IBMFixedStochasticFamily.basis` chooses a countable Hilbert basis of
+  `IntrinsicSpace` intersected with the orthogonal complement of the initial
+  germ. `terminal`, `integrand` and `integral_integrand` supply a FIXED family
+  of actual predictable stochastic integrals. `stochastic_reconstruction` and
+  `coefficient_energy` reconstruct every observable's remainder. The basis is
+  selected by classical choice; it is not an identified physical IBM driver.
+- `IBMMultichannelCompletion.completedIntegral` already completes the raw
+  cross-energy quotient, with an isometry into the original joint L2 space.
+  `fixedHilbertEquiv`/`fixed_reconstruction` give the full fixed-family range
+  and reconstruction of F-P_0F. No new universal completion is needed.
+- `IBMCompletedNativeCalculus.fixed_weak_reconstruction` applies to EVERY
+  original IntrinsicSpace target; `fixed_native_reconstruction` and
+  `native_adjoint` identify the ORIGINAL native derivative-adjoint formula
+  on its actual closed derivative domain. These exact domains must remain.
+- `IBMCompletedCoordinates.coordinates_actual_sum`, `field_actual_sum`,
+  `jointField_measurable` and `coordinateField_energy` provide actual
+  predictable coordinate fields, strong Hilbert sums and their energy.
+- `IBMCompletedSignedCovarianceIntegral.actual_completed_signed_identity`
+  already identifies mixed stochastic output inner products with literal
+  signed covariance integrals; `product_L1_limit` gives the relevant L1
+  total-variation product convergence.
+- `IBMUniformStochasticReconstruction.uniform_actual` already controls finite
+  sums uniformly over compact continuous target families and causal stopping
+  horizons in L2 norm. Its file explicitly excludes interpreting that result
+  as samplewise supremum convergence.
+
+This corrects any reading of an earlier open "universal physical integrator"
+label as claiming that the FIXED-FAMILY completion or native adjoint was absent.
+What remains different is identification with physical IBM correction channels,
+a pointwise causal derivative formula where valid, original native-domain
+obstructions and the required physical Itô/closure results. An arbitrary
+Hilbert-basis reconstruction is not that physical identification.
+
+The next germ theorem, if verified, can be reused DIRECTLY in all these existing
+results to replace P_0F by E[F]*jointOne. Three UNCHECKED direct-reuse corollaries
+are now in `.lake/stardust-1530-fixed-germ-consequences.txt`: completed weak
+mean reconstruction for all IntrinsicSpace targets, native mean reconstruction
+on the original joint derivative domain, and an actual fixed-family predictable
+series. They are included in the combined258-line germ draft via
+`.lake/stardust-1530-assemble-draft.py`. No new integral definition, driver
+family, energy measure or Foundation source was added, and no second Lean
+process was started. The scalar initial-germ proof itself remains UNVERIFIED;
+do not claim these new corollaries passed or that IBM calculus is complete.
+
+### Checkpoint1529 — universal Gaussian prediction and actual clock-only IBM germs verified
+
+October25,17:45 America/New_York. The full unchanged-configuration root build
+completed successfully:6763 jobs,14607.4329544 terminal wall seconds. The broad
+rebuild included the existing quartic exact-kernel certificates; it was allowed
+to finish without interruption. Complete transitive `Lean.collectAxioms` audit
+passed ALL49630 safe Foundation declarations, with ONLY propext, Classical.choice
+and Quot.sound, in41.4527709 seconds. All23 final public types (22new plus the
+touched original polynomial-totality theorem) were read UNABRIDGED; all three
+mathematical sources, including private arguments, were reviewed completely.
+
+All ten independent Lean checks now pass in31.3397864 seconds. They cover a
+correlated mixed high-degree Gaussian polynomial, an unbounded actual IBM
+quartic class, all-joint initial-channel norm/centering consequences, full
+original observable-domain reconstruction, unbounded germ source centering,
+the small-amplitude prediction obstruction, the explicit original clock
+representative, the empty finite-marginal degree-zero case, and a centered
+nonconstant unit-norm pure-clock vacuum-fixed counterexample. Initial test
+elaboration failures were retained. An equivalent ambient membership input
+removed a coercion-heavy timeout; explicit product-measure typing and a final
+function-composition reflexivity step repaired the representative test.
+NO mathematical source, resource limit, compiler, trust or linter setting was
+changed during these test repairs.
+
+Established mathematical scope:
+1. Finite Gaussian orthogonality to EVERY linear power determines an L2 class;
+   the former polynomial-totality statement and its hypotheses are preserved.
+2. Closed Gaussian L2 subspaces containing EVERY one-observation generated
+   subspace are the whole Gaussian L2. Consequently strong linear prediction
+   decay for every coefficient implies strong conditional prediction to the
+   mean for EVERY Gaussian L2 input, without a monotone-history assumption.
+3. Actual shrinking IBM scenery forecasts converge strongly in original joint
+   L2 to the OLD source-vacuum projection for EVERY joint target, without a
+   one-ridge, boundedness or cancellation restriction. The positive scenery
+   span is never assumed to be the whole ambient coefficient space.
+4. P_0F=P_0(sourceVacuum F) for EVERY ambient JointL2 target. Every actual
+   initial-germ class, including unbounded ones, is source-vacuum fixed and
+   has the explicit original-space representative G(X,Y)=m(Y) AE, with
+   m=`IBMGlobalVacuum.factorMean(sourceUnitary G)`.
+5. The original all-observable target-indexed reconstruction retains precisely
+   P_0(sourceVacuum F). This does not replace or duplicate the older fixed-family
+   completed integration/native-adjoint machinery audited above.
+
+Not established: that m belongs to EVERY shrinking clock past, initial-germ
+constancy/scalar expectation, the unrun next258-line germ draft, a physical
+driver identification, repaired point-observable joint derivative domains,
+all-Hilbert unaveraged native convergence, or full intrinsic physical IBM
+Itô/Clark--Ocone calculus. The external-paper normalization checks, two-time
+tilt inconsistencies, joint-path obstruction and compatible scenery-shift route
+in the exploratory notes remain separately UNVERIFIED in Lean.
+
+Final hashes match all2590 frozen Foundation/root sources, all three pinned
+configuration files and EVERY original113 archive file/path. ResearchSources
+remains unchanged and uncommitted. Verification receipt:
+`.lake/stardust-1529-verification.json`. The permanent build document records
+the dependency-invalidation observation without adopting a performance change
+or comparing this changed-input rebuild to cached timings.
+
+Next closure gate: explicit reviewed-path Git commit, exact-commit receipt and
+verified PRIVATE main/research synchronization. Only after that exact gate may
+the prepared clock-germ proof be elaborated. IBM stays ACTIVE; every queued
+campaign and its completion gate remains unchanged. This entry supersedes
+the earlier1529 PENDING build/audit/test labels only; future proof drafts remain
+unverified and no complete IBM calculus is claimed.

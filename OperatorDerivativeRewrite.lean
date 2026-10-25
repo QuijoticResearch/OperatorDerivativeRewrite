@@ -2486,3 +2486,5 @@ import Foundation.GeneratedFamilyModification
 import Foundation.IBMSceneryHistoryBridge
 import Foundation.IBMJointSceneryForecast
 import Foundation.IBMJointForecastGerm
+import Foundation.GaussianSingleObservationTotal
+import Foundation.IBMSceneryUniversalPrediction

@@ -1,5 +1,30 @@
 # Permanent Stardust build and verification configuration
 
+## October25,2026 dependency-invalidation observation
+
+Checkpoint1529 retains every command, resource, compiler and trust setting below.
+Its changed finite-Gaussian proof dependency caused a broad rebuild: the complete
+6763-job root build passed in14607.4329544 seconds, the complete49630-declaration
+axiom audit plus23 final types passed in41.4527709 seconds, and ten independent
+checks passed in31.3397864 seconds. The latter required only test-elaboration
+repairs; no heartbeat increase or mathematical source repair was used.
+
+The rebuild rechecked the existing160-cell quartic kernel certificates
+(`RiemannQuarticGridChecks`, Lake-reported9957 seconds) and downstream numerical
+value cells. A read-only import-path audit traced that dependency to
+`FiniteGaussianDensity` through Gaussian conditional calculus and quartic
+analytic certificates. A live worker without recent log output was still
+computing; successful bounded handle polls and increasing process CPU time
+confirmed this. Preserve the running process rather than restarting on an
+observation timeout. A completed module is not completion of the full root.
+
+These are closure timings on CHANGED proof inputs, not a controlled comparison
+with the cached October20 benchmarks. No speedup, regression attribution or new
+optimization configuration is adopted. Retain the original settings and all
+complete gates. Any future import separation or certificate-granularity change
+needs its own reproducible timing/resource evidence, full verification and
+reversible implementation before adoption.
+
 This is permanent workflow infrastructure, not a mathematical campaign. Future sessions must consult this document before choosing build or verification commands. The research priorities and stopping rules remain in `STARDUST_CAMPAIGN_QUEUE.md`.
 
 The adopted configuration is the measured October 20, 2026 configuration from commit `a2846f7f76c1aec6003c9beefbef0889ba13ff16`. Only preliminary theorem-type feedback demonstrated a reproducible improvement. **Retain the original build, compiler, parallelism and complete-audit configuration.** No full-build or full-audit speedup is claimed. The detailed experimental report is `STARDUST_VERIFICATION_PIPELINE.md`; raw commands and timings are in `STARDUST_PIPELINE_BENCHMARK_2026_10_20.json`.
