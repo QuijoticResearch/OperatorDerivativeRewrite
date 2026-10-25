@@ -2405,3 +2405,9 @@ import Foundation.IBMRidgeSeries
 import Foundation.IBMCenteredRawGrid
 import Foundation.IBMCenteredClockVariance
 import Foundation.IBMProjectedGridEscapeCriterion
+import Foundation.IBMFoldedClockQuadraticVariation
+import Foundation.IBMSpatialIncrementKernel
+import Foundation.IBMSpatialKernelConcentration
+import Foundation.IBMSpatialClockEnergy
+import Foundation.IBMClockGridPath
+import Foundation.IBMSourceEnergyGrowth

@@ -43681,3 +43681,103 @@ promote the numerical trend, the raw-source identities or the old uncentered
 compensation norm escape to a proof of the original projected-output escape.
 Preserve all weaker valid test-domain results whichever way the obstruction
 resolves. Native Ito/Clark--Ocone closure and full intrinsic IBM remain OPEN.
+
+## Checkpoint1499 — actual IBM source energy diverges by spatial concentration
+
+IBM remains ACTIVE; queue8280325 and every preceding campaign gate are unchanged.
+The preceding goal turn verified the already committed AI queue (no duplicate
+queue amendment). This turn resumed the saved IBM proof. Old PTY71912 was missing;
+its target10 log was terminal FAILED. Builds were serialized and subsequent
+failures retained as target11/12 logs. Target13 and final target14 passed.
+The calendar crossed October25 during proof development; no reflection session
+was admitted and no daily housekeeping budget was used for this research proof.
+
+The underlying process remains ACTUAL reflected-clock IBM Z_t=B(|W_t|). The
+primary IBM anchor is ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All113 archive paths/hashes match inventory1292; no archive bytes were modified
+or staged. This checkpoint uses existing verified Gaussian/QV, physical-noise,
+source-energy and clock-continuity machinery. No external novelty assertion is
+made for Cauchy--Schwarz, Brownian QV or subsequence/truncation arguments.
+
+For H>0 let h_N=H/(N+1), Q_N=||sourceGrid h_N (N+1)||^2 in the ORIGINAL
+clock/scenery source space, and V_N=||centeredClock h_N (N+1)||^2. The principal
+new theorem IBMSourceEnergyGrowth.source_energy_tendsto_atTop proves
+Q_N -> +infinity WITHOUT any additional convergence, asymptotic, variance or
+four-time Gaussian assumption. This discharges the actual source-energy growth
+obligation that remained explicit1498. It does NOT prove escape of the
+observable-projected native divergence: V_N remains a separate obligation.
+
+IBMFoldedClockQuadraticVariation transfers old Brownian QV to the literal
+sum_i (|W_right|-|W_left|)^2. The nonnegative loss against ordinary QV is bounded
+by the existing shrinking-origin-band weighted energy plus the fourth-moment
+large-increment tail. Both vanish in original clock L1. Thus foldedClass tends
+strongly in L1 to H, and the literal expected absolute error tends to zero.
+No pathwise convergence of every sample along every grid is asserted.
+
+IBMSpatialIncrementKernel constructs K_N(x,y)=sum_i 1_(I_i)(x)1_(I_i)(y), where
+I_i is the half-open interval between adjacent clock radii. Its integral equals
+sum_i (delta radius_i)^2; its squared L2 norm equals the finite sum of squared
+interval-overlap measures, hence the squared physical increment Gram sum.
+Orientations cancel only AFTER squaring; the physical interval-vector identity
+retains its sign. All integrability and actual Lebesgue identities are proved.
+
+IBMSpatialKernelConcentration computes the area of
+{(x,y):0<=x<=M, |y-x|<=delta} as 2Mdelta for nonnegative M,delta. A bounded
+nonnegative radius curve with mesh at most delta has its K supported there.
+Actual L2 Cauchy--Schwarz gives mass^2 <=2Mdelta*spatialEnergy. The unrestricted
+band-measure formula also handles negative widths via ENNReal.ofReal; no false
+positive area is assigned to empty negative-width bands.
+
+IBMSpatialClockEnergy transports the kernel through the ORIGINAL physical to
+coefficient isometry and the already verified source endpoint identity. For a
+clock starting at zero it proves spatialEnergy <=2q_path+2rawClockSquares,
+and hence mass^2 <=4Mdelta*(q_path+rawClockSquares). The source is the original
+finite cross-chaos source, not a new auxiliary random object. uniform_mass
+identifies the mass EXACTLY with the actual folded Gaussian-clock QV sum.
+
+IBMClockGridPath proves deterministic vanishing spatial mesh on each continuous
+compact clock path and a finite positive path bound. Countably many grid
+coordinates are identified simultaneously almost everywhere with the ORIGINAL
+Gaussian representatives. There is no assumed random-supremum distribution.
+
+IBMSourceEnergyGrowth uses total_N(Y)=q_path_N(Y)+rawClockSquares_N(Y)>=0,
+whose exact expectation is Q_N+H. Along any diverging subsequence with folded
+QV tending to H at a sample, shrinking spatial mesh and the concentration
+inequality force total_N(Y)->infinity. If Q_N failed to tend to infinity,
+choose a bounded-energy bad subsequence; L1 folded QV supplies a further AE
+convergent subsequence. Truncating total at any constant R>C+H and using dominated
+convergence contradicts E(total)<=C+H. This avoids any need to assume pathwise
+boundedness of raw clock QV or a uniform stochastic modulus estimate.
+
+uniform_native_escape and uniform_bounded_clock_escape reuse1498 with the Q_N
+hypothesis now discharged. ORIGINAL observable-projected output norms escape
+if eventually V_N<=C Q_N for some C>=0; an eventual constant bound V_N<=C is
+also sufficient. Neither bound has been established for the actual clock here.
+No claim that orthogonal projection preserves escaping source norms is made.
+No divergence RATE, IBM Ito--Tanaka completion, F1--F3 closure, or full intrinsic
+calculus is claimed. Next investigate actual centered clock total-variation
+variance or another direct observable pairing estimate; do not reopen frozen
+pseudoprocess work or start any queued campaign.
+
+Verification: full root build6686 jobs PASS in26.244020s; COMPLETE transitive
+Lean.collectAxioms audit48209 safe Foundation declarations PASS in39.717765s,
+only propext/Classical.choice/Quot.sound. ALL71 new public types printed/read
+unabridged; every line of all6 new sources (including private time_grid proof)
+reviewed, with root/AxiomAudit import/declaration additions checked. Twelve
+independent Lean checks PASS in27.473027s: same-sign and crossing loss, positive
+crossing obstruction, positive/negative band widths, concrete interval and
+one-cell mass/energy, actual positive-horizon source escape, folded absolute
+error convergence, impossibility of uniformly bounded source energy, and
+incompatibility with finite scalar energy limits. This complements, not
+replaces, the complete transitive audit. Original2513-source snapshot and
+three configuration hashes rechecked; only root/AxiomAudit changed among old
+Lean sources. Compiler/linter settings, trust and theorem semantics unchanged;
+style/deprecation warnings retained. Earlier failed proof-expression builds
+were repaired without weakening statements or increasing heartbeat limits.
+
+Checkpoint evidence: .lake/stardust-1499-working-checkpoint.json,
+.lake/stardust-1499-{full-build,audit,independent}.log and timing JSON,
+.lake/stardust-1499-verification.json. Explicit-path Git commit and exact-commit
+PRIVATE main/research receipt synchronization close this checkpoint separately;
+no unfinished source or unrelated untracked plan/archive is included.
