@@ -46261,3 +46261,85 @@ checks passed. No new mathematical theorem or hypothesis modified. Exact-commit
 receipt and terminal verified PRIVATE main/research gate follow. ResearchSources,
 unrelated plans/tmp and historical records preserved. Resume current IBM after
 closure; no second October25 reflection session.
+
+## Checkpoint1522 — actual IBM one-time source mean: physical-clock Ito
+
+October25,2026. IBM remains ACTIVE; queue8280325 and every campaign gate
+unchanged. This is mathematical proof development after closed1521, not another
+reflection/housekeeping session. Reuse GaussianReflectedC2Ito, its original
+predictable Ito integral and constructed Brownian mass, together with the actual
+IBM source-section theorem and Gaussian characteristic function. No manuscripts,
+toolchain, trust settings, original operators or probability spaces changed.
+
+PROVED in GaussianDampedReflectedIto: for every real c>=0, the actual continuous
+Brownian clock W and every fixed T>=0,
+
+    exp(-c |W_T|) - 1 = Ito(U_c,T) - c M_T
+                         + (c^2/2) integral_0^T exp(-c |W_s|) ds,
+
+almost everywhere on the ORIGINAL Gaussian source. M is the preexisting
+BrownianMassContinuousLimit.limitPath, in the repository's Tanaka normalization.
+The original fullPredictable field U_c,T is identified in timeProbability as
+1_(0,T] times -c sign(W_s) exp(-c |W_s|); membership and the actual stochastic
+integral come from the existing reflected C2 calculus. This is an actual signed
+identity of random variables, not just an expectation-level heat equation.
+
+Hypothesis repair: blindly using f(x)=exp(-cx) fails the global bounded-derivative
+hypotheses of that theorem on the negative half-line. We construct the genuine
+extension f_c(x)=exp(cx)-2cx for x<0 and exp(-cx) for x>=0. Both jets glue at
+zero: f_c(0)=1, f_c'(0)=-c, f_c''(0)=c^2. The library proves global C2 regularity,
+|f_c'|<=2c and |f_c''|<=c^2. This is sufficient for the original theorem; no
+axiom, new calculus infrastructure or weakened domain was substituted. The
+folded observable exp(-c|x|) itself was not asserted classically C2.
+
+PROVED in IBMOneTimeSourceMeanIto: the actual scenery-source integral
+
+    m_a(T,Y) = integral_X cos(a * ibmValue T (X,Y)) dgaussianProduct(X)
+
+equals exp(-(a^2/2)|clockPath Y T|) almost everywhere for EVERY real a and T>=0.
+The proof uses the actual unmollified section, linearity of firstChaosEmbedding,
+the exact scenery direction norm and mode_mean, rather than defining an abstract
+Gaussian surrogate. Consequently sourceMean_ito proves
+
+    m_a(T)-1 = Ito(U_(a^2/2),T) - (a^2/2) M_T
+                + (a^4/8) integral_0^T exp(-(a^2/2)|W_s|) ds.
+
+This is for the repository's reflected-clock IBM B(|W|). The equalities hold AE
+for EACH FIXED horizon; no common all-time event or continuous stochastic-integral
+modification is supplied by this checkpoint. Zero horizon/frequency and negative
+frequencies are included. The local-time sign and quartic drift are explicit.
+The mathematical identity is an application of known reflected Ito/Tanaka and
+Gaussian averaging; no external novelty or solution of intrinsic IBM is claimed.
+
+Connection and exact remaining obligation: checkpoint1520 gives the unique
+terminal Brownian-clock PRP/Clark--Ocone coefficient of this source mean. The
+current U_c,T is the RUNNING local coefficient and the displayed local-time/drift
+terms are finite-variation corrections. These two coefficients must not simply
+be identified. Their comparison requires representing the centered correction
+in the original L2/adjoint calculus. A productive next extension is the actual
+completed one-time Fourier source mean: bound and sum the running fields, mass
+coefficients and drifts with explicit fourth-frequency summability, using the
+existing L2 closure and bounded Ito map. Multitime collision local-time terms,
+observed-IBM-filtration causality, unaveraged physical Ito/Tanaka and the full
+intrinsic convergence/closure obligations remain OPEN. This checkpoint does not
+replace these by a source average or reopen any frozen campaign.
+
+Verification: full ROOT build PASS6750jobs60.183433s. Complete safe Foundation
+transitive Lean.collectAxioms audit PASS49406declarations42.237481s, only propext,
+Classical.choice and Quot.sound. All21 new public types read UNABRIDGED;
+complete new definitions/proofs and root/audit additions reviewed. Nine
+independent Lean checks PASS27.793070s: origin jets, actual negative-branch value,
+naive exponential derivative-bound counterexample, actual zero-frequency mean,
+evenness in frequency, predictable-field evenness, preserved folded cusp, and
+unit-frequency physical Ito constants. The initial independent check's `id`
+simplification failure and all targeted elaboration failures were retained in
+.lake/stardust-1522-* logs; they were compiler repairs, not mathematical
+obstructions. No resource/linter/trust suppression was introduced; remaining
+new linter advice is stylistic tactic sequencing.
+
+All2577 Foundation/root sources frozen for this checkpoint, configuration3 and
+all113 original archive paths/hashes verified unchanged from the authoritative
+inventory (except the two explicitly added mathematical sources and root/audit
+registration). ResearchSources and unrelated plans/tmp preserved without staging.
+Explicit audited Git commit, exact receipt and verified PRIVATE main/research
+synchronization close this checkpoint; no transition out of IBM is authorized.
