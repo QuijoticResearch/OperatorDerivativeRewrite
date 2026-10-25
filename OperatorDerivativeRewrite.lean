@@ -2411,3 +2411,8 @@ import Foundation.IBMSpatialKernelConcentration
 import Foundation.IBMSpatialClockEnergy
 import Foundation.IBMClockGridPath
 import Foundation.IBMSourceEnergyGrowth
+import Foundation.IBMFoldedVariationTanaka
+import Foundation.IBMCenteredAbsoluteVariation
+import Foundation.IBMFoldedVariationBound
+import Foundation.IBMClockVarianceBound
+import Foundation.IBMNativeGridEscape

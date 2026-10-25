@@ -43781,3 +43781,111 @@ Checkpoint evidence: .lake/stardust-1499-working-checkpoint.json,
 .lake/stardust-1499-verification.json. Explicit-path Git commit and exact-commit
 PRIVATE main/research receipt synchronization close this checkpoint separately;
 no unfinished source or unrelated untracked plan/archive is included.
+
+## Checkpoint1500 — ORIGINAL projected IBM native-grid outputs have no L2 limit
+
+IBM remains ACTIVE and queue8280325 unchanged. The previous goal turn made
+mathematical PROGRESS:1499 established unconditional source-energy growth and
+closed every audit/private gate. This turn revalidated99636a4 and continued its
+specific remaining centered-clock variance obligation. No new campaign, goal,
+parallel research session or reflection/housekeeping session was started.
+
+The process is still ACTUAL reflected-clock Z_t=B(|W_t|) in the original
+repository model, not an assumed two-sided-outer-Brownian law. The primary IBM
+anchor remains ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All113 archive paths/hashes match inventory1292. No manuscript bytes were
+changed or committed. No novelty claim is made for the elementary Tanaka
+remainder, Brownian independence, variance minimization or Ito isometry.
+
+The decisive new unconditional result is
+ IBMNativeGridEscape.original_native_norm_escape:
+ for EVERY H>0, ||jointDivergence(gridInput(H/(N+1))(N+1))|| -> +infinity.
+IBMNativeGridEscape.no_original_native_L2_limit consequently excludes convergence
+to EVERY vector of the ORIGINAL IBM intrinsic observable L2 space. This is the
+actual jointDivergence of the saved gridInput, including its original observable
+projection, rather than unprojected source divergence. The premise left open
+in1498/1499 is now discharged by
+ IBMNativeGridEscape.centeredClock_uniform_bound:
+ ||centeredClock(H/(N+1))(N+1)||^2 <= (9/2)H for EVERY N and H>=0.
+No variance-asymptotic, convergence rate or numerical estimate is assumed.
+
+The proof has a precise mathematical connection to discrete Tanaka calculus.
+IBMFoldedVariationTanaka defines, for real x,y,
+ c(x,y)=|y-x|-||y|-|x||,
+ r(x,y)=|y|-|x|-signum(x)(y-x), with signum(0)=0.
+It proves 0<=c<=r for ALL x,y, including zero and both crossing directions.
+The summed remainder telescopes into an absolute endpoint difference minus
+an ACTUAL predictable sign(W_left) increment sum. Its actual MemLp2 and
+second-moment bound by elapsed time reuse GaussianPredictableStep's finite
+Ito isometry with measurable whole-past coefficients; no new stochastic
+integral or conditional expectation is postulated.
+
+IBMCenteredAbsoluteVariation separately centers each ordinary |delta W| by
+its own exact expectation. Its centered-square identity is
+ E[(|delta W|-E|delta W|)^2]=delta t-(E|delta W|)^2.
+For disjoint ordered intervals the cross expectation vanishes by the ORIGINAL
+GaussianTimeProcess increment independence, applied to the measurable centered
+absolute-value maps. The centered finite sum has second moment <=elapsed time.
+This is NOT an uncentered total-variation bound; its growing mean is retained
+as an explicit deterministic shift. Empty/repeated-time partitions are allowed.
+
+IBMFoldedVariationBound constructs the literal sum C of crossing corrections
+and proves C>=0, C in actual L2 and E[C^2]<=4T for EVERY ordered finite partition
+starting at0 and ending atT. The bound uses C<=|W_T|-signSum almost everywhere
+and the already verified Brownian endpoint and predictable second moments.
+It requires neither a local-time limit nor an occupation-density assumption.
+
+IBMClockVarianceBound defines
+ A=(|W_T|-|W_0|-sum_i ||W_right|-|W_left||)/2
+and the deterministic shift m=sum_i E|delta W_i|. The exact identity
+ 2A+m=|W_T|-|W_0|-centeredAbsoluteVariation+C
+holds pointwise. Consequently E[(2A+m)^2]<=18T and Var(A)<=9T/2 for every ordered
+partition starting at0. The initial Gaussian representative is zero only AE;
+that actual AE fact is used rather than silently imposing pointwise W_0=0.
+All terms and squared integrals have proved MemLp/integrability domains. The
+constant9/2 is sufficient and is not claimed optimal.
+
+IBMNativeGridEscape first identifies A exactly with the finite min-radius
+clock correction and then identifies it AE with1498's actualClock on the
+uniform grid in the ORIGINAL joint measure. The countable clock-coordinate
+bridge and measure-preserving second projection transport the actual variance
+bound. It reuses1498's centered_clock_variance equality and1499's unconditional
+source energy Q_N->infinity, applying uniform_bounded_clock_escape directly.
+Thus no invalid inference from escape before an orthogonal projection occurs.
+
+This is a rigorous obstruction to this particular ORIGINAL projected native
+L2 grid construction. It does NOT assert that all IBM stochastic calculi,
+renormalizations, weaker topologies, alternate integrands or integration
+conventions are impossible. It does NOT prove convergence in probability is
+impossible, since L2 norm escape alone cannot establish that. It does NOT
+complete the intrinsic calculus, F1--F3, full Clark--Ocone, operator closure or
+bounded completed source-test domains. The earlier verified fixed-probe limits
+remain preserved; unbounded strong-grid norms are consistent with those limits.
+Next investigate a mathematically justified weak/dual or renormalized domain
+using the existing actual source-test limits and exact mixed-probe obligations,
+and compare the obstruction with the manuscript's proposed H^{-1} closure.
+Do not simply reassert an L2 reconstruction now contradicted by this theorem.
+
+Verification: final targeted13 PASS, full root build6691 jobs PASS25.522388s;
+COMPLETE transitive Lean.collectAxioms audit48257 safe declarations PASS38.165383s
+with only propext/Classical.choice/Quot.sound. ALL38 public types printed/read
+unabridged, ALL5 new sources reviewed in full including private time_grid and
+local scalar min identity. Fourteen independent Lean mathematical checks PASS
+30.118909s: same-sign/zero/both-crossing corrections, strict correction-vs-
+remainder examples, empty-grid sums, actual correction moment and uniform
+variance bounds, H=1 projected norm escape and no globally bounded projected
+norm sequence at any H>0. All2518 Foundation/root hashes and three configuration
+hashes frozen/rechecked; only root/AxiomAudit changed among old Lean sources.
+No heartbeat, linter, resource, trust, toolchain or theorem-semantic changes.
+Failed target1--12 logs are retained: abs-token syntax, scalar sign correction,
+function-valued integral normalization, inaccessible old private min lemma
+(reproved locally), and explicit finite-index/grid coercions were repaired.
+Targeted jobs serialized; no quiet timeout treated as terminal or restarted.
+
+Evidence: .lake/stardust-1500-working-checkpoint.json,
+.lake/stardust-1500-{full-build,audit,independent}.log and timing JSON,
+.lake/stardust-1500-verification.json. All mathematical gates are complete;
+explicit reviewed-path Git commit and exact-commit receipt plus verified
+PRIVATE main/research synchronization close the checkpoint separately. Only
+reviewed mathematics, audit/root imports and this ledger are included.
