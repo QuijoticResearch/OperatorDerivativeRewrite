@@ -2397,3 +2397,6 @@ import Foundation.IBMClippedClockCovariation
 import Foundation.IBMRawGridMixedObservable
 import Foundation.IBMMixedClockSelection
 import Foundation.IBMMixedClockLimit
+import Foundation.IBMRidgeNativeSource
+import Foundation.IBMBoundedMixedClockTesting
+import Foundation.IBMRidgeNativeLimit

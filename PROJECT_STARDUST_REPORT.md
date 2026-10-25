@@ -43271,3 +43271,134 @@ finite combinations; boundedness uniform in the observable norm must be PROVED,
 not inferred from convergence of individual pairings. Preserve the known raw
 source/anticipative counterexamples, full F1--F3 closure obligations and actual
 IBM domains. No campaign transition is justified by this checkpoint.
+
+
+## Checkpoint1496 — actual nonlinear multitime IBM observable tests
+
+IBM remains ACTIVE; queue8280325 and all earlier campaign completion gates are
+unchanged. Previous goal turn1495 was PROGRESS: its mixed-cap strong L1 theorem
+and actual mixed-observable native pairings were committed bd85446 and verified
+on BOTH private branches. This turn checked that saved state and advanced the
+pending actual-observable extension, without switching campaigns or starting
+parallel agents. No reflection/housekeeping date was admitted: preserved stale
+October23 accounting remains unresolved. Terminal clock readings started at
+October24 21:59:59 and were checked at proof/build/research checkpoints.
+
+Primary IBM archive remains ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All113 archived paths/hashes match inventory1292; ResearchSources remains
+read-only/uncommitted. No new manuscript was ingested or novelty claimed.
+The actual process is still Z_t=B(|W_t|), not two-sided outer Brownian IBM.
+
+The reusable theorem-level audit found exactly the needed ingredients:
+IBMScalarSecondProjection.shiftedJet_projection_two gives the FULL second-source
+projection of the actual nonlinear bounded Schwartz test;
+IBMSchwartzSourceDerivative.observable_continuous/observable_bound give its
+continuous bounded coefficient-Hilbert realization;
+IBMClockCylinderChain.value_actual_ae/value_intrinsic realize finite actual IBM
+linear combinations; IBMTimeAveragedObservable.jointRealization_ae_of_sections
+and IBMIntrinsicChainRule.composition_observable transfer the nonlinear section
+to the ORIGINAL intrinsic observable subspace. None of these source/observable
+results alone supplies membership in the FULL jointDerivative domain.
+
+For every finite d, arbitrary REAL coefficients c_j, arbitrary nonnegative
+fixed observation times tau_j, real shift a and real Schwartz g, define
+ U(Y)=sum_j c_j clockDirection(tau_j,Y),
+ F=g(a+sum_j c_j Z_(tau_j)).
+Foundation/IBMRidgeNativeSource.lean constructs a genuine original Bochner-L2
+source class with section observable(g,a,0,U(Y)), proves its joint AE
+representative is EXACTLY F, and proves the resulting class is IntrinsicSpace
+observable. No new process law, formal Gaussian variable or mollifier is
+substituted. Empty observation lists, zero coefficients, repeated times and
+zero times are included. Source and continuous sample-path identifications
+retain the necessary AE qualifiers; no uniform exceptional set is assumed.
+
+The same file constructs the actual bounded measurable clock curvature
+ K(Y)=E_scenery[g''(a+firstChaos(U(Y)))].
+Its identity with IBMShiftedJetMoments.M(g,a,U,2,0) and pointwise bound
+ |K(Y)|<=SchwartzMap.seminorm(0,0,jet g 2)
+are proved, including U=0. The old exact second-chaos projection and finite
+source telescope give, for ANY coefficient curve u and ANY finite n,
+ <sourceSum(u,n),observable(g,a,0,k)>
+ = (M(g,a,k,2,0)/2)*(<u_n,k>^2-<u_0,k>^2
+                         -sum_i (<u_(i+1),k>-<u_i,k>)^2).
+Thus the normalization 1/2 and surviving increment correction are retained.
+
+Foundation/IBMBoundedMixedClockTesting.lean proves a useful direct consequence
+of1495's ACTUAL strong L1 convergence: EVERY bounded measurable clock weight w
+can multiply the mixed-cap errors. Explicitly, the difference of the two
+weighted means is bounded by C times the OLD literal expectation absolute
+error whenever |w|<=C. Both weighted integrals are proved integrable, and the
+actual mixed-energy weighted means converge. The weight may depend on ALL
+observations and all clock information. This uses bounded multiplication of
+an established L1 limit; it is NOT an application of a one-observation
+conditional-projection theorem to a multi-observation sigma algebra. Unbounded
+weights or weights changing with the refinement are not asserted here.
+
+Foundation/IBMRidgeNativeLimit.lean expands the actual raw quadratic source
+at U into its finite mixed-source matrix and obtains exact finite native-grid
+pairing against F. Write A_i=min(|W_H|,|W_(tau_i)|), and let I_Hij be1495's
+literal occupation below min(|clockPath_(tau_i)|,|clockPath_(tau_j)|).
+For EVERY H>0, with the original gridInput(H/(N+1),N+1), the ORIGINAL
+jointDivergence pairing against the actual F converges to
+ (1/2)*sum_i sum_j c_i*c_j*E[K(Y)*(A_i*A_j-I_Hij)].
+All displayed finite and limiting integral domains are discharged using the
+proved K bound, not left as hypotheses. Both observations in each pair may be
+inside, outside or equal to H; no time separation, ordering, linear independence
+or nondegeneracy of the observation list is required. Finite identities include
+zero grid length; the limit theorem assumes H>0. Projection is removed ONLY
+inside pairing against the verified actual observable.
+
+Presentation consistency is also verified: equality of two actual ridge
+observables, even with DIFFERENT finite observation dimensions, implies equality
+of their limits. For any finite family of ridge presentations of a common
+arity d, every zero linear relation among their actual observables is preserved
+by the corresponding limits. This follows from convergence of the ORIGINAL
+finite pairings and uniqueness of scalar limits; it is not an assumed
+injectivity of a coefficient presentation. No completed normed ridge space,
+density theorem or bounded functional in the original observable L2 norm is
+claimed. Measurability in IntrinsicSpace does not assert jointDerivative-domain
+membership for these positive-time nonlinear point observables.
+
+FOURTEEN independent Lean tests passed SECOND RUN in26.111530s: empty-list
+limit zero; nonzero cancelling coefficients at repeated times give coefficient
+zero and limit zero; original empty-grid pairing zero using AE clock origin;
+nonlinear closed-loop source test has the surviving negative curvature term;
+constant coefficient curves have zero pairing; exact actual multitime
+representative and observable membership; curvature measurability and bound;
+a concrete Gaussian Schwartz ridge with signed coefficients and observations
+on BOTH sides of the horizon; presentation equality across dimensions2/3;
+preservation of a three-term relation; and a negative constant clock weight.
+The first test run27.471460s failed ONLY because the test needed a zero-function
+evaluation normalization and an explicit GaussianSchwartzKernel import. The
+failed log/timing were retained; mathematical sources stayed unchanged after
+the full verification freeze. No simulation substitutes for these proofs.
+
+Development logs target1--9 retained. Initial elaboration exposed a function-
+sum versus pointwise-sum conversion, missing section-variable inclusion,
+measurability composition/representative normalization, and a 200000-heartbeat
+type-inference timeout while unfolding actual IBM functions. Explicit function
+equality, explicit measurable finite sums and local irreducibility of supplied
+process definitions repaired inference; the heartbeat limit was NOT raised.
+The bounded-energy limit needed an explicit integral identity rather than an
+unresolved placeholder. Raw bilinear expansion needed the correct sum order;
+finite-relation proof needed an ordinary identifier instead of reserved lambda
+and the correct scalar limit equality orientation. Target9 passed all sources.
+
+Full root6675 jobs PASSED in26.283145s. COMPLETE transitive axiom audit48027
+safe Foundation declarations PASSED in40.500941s, accepting ONLY propext,
+Classical.choice, Quot.sound. All28 new public types read UNABRIDGED and all
+three final mathematical sources read fully, with every proof/definition.
+Frozen2502 Foundation/root sources+3configs rechecked; only root/AxiomAudit
+changed among old sources. No resource/toolchain/trust configuration changed.
+All archive113 hashes remain unchanged. Exact-commit receipt and verified
+PRIVATE main/research synchronization are separate required closure gates.
+
+NEXT: obtain meaningful uniform test-norm estimates for these actual ridges
+and finite combinations, then justify density/completion and a continuous
+extension OR identify an explicit obstruction. The bounded curvature coefficient
+alone does NOT bound the limit by the original observable L2 norm. A possible
+stronger test topology should be connected to existing graph-dual/Sobolev
+machinery before constructing another space. Full projected native-output
+convergence, native Ito/Clark--Ocone closure and full intrinsic actual IBM
+calculus remain OPEN; this checkpoint is not a campaign stopping checkpoint.
