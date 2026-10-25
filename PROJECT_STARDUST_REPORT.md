@@ -44251,3 +44251,95 @@ Evidence: .lake/stardust-1503-working-checkpoint.json,
 .lake/stardust-1503-verification.json. Explicit reviewed-path Git commit and
 exact receipt plus BOTH verified PRIVATE backups close separately. Unrelated
 untracked plans,tmp and ResearchSources remain untouched/uncommitted.
+
+
+## Checkpoint1504 — actual signed spatial reconstruction and original mixed source probes
+
+October25,2026; terminal-clock proof interval 01:52--02:02 America/New_York,
+with verification and private closure continuing afterward. IBM remains ACTIVE;
+queue8280325 unchanged. Previous goal turn yielded verified queue/backup evidence;
+this mathematical turn is PROGRESS. No campaign transition or reflection session.
+
+Three new modules: IBMSpatialEndpointOperator, IBMSpatialSignedReconstruction,
+IBMSpatialMixedWickTesting. All reuse the actual reflected clock |W_t| and the
+original scenery/source isometry. No two-sided-outer IBM substitution.
+
+For ALL bounded continuous real spatial tests F, the actual endpoint rectangle
+integral P_T(F)=integral_(0,|W_T|]^2 F is measurable and integrable, linear in F,
+and satisfies ||P_T(F)||_clockL1 <= T||F||_sup. The integrability proof uses the
+actual second moment E W_T^2=T. This is constructed before completion.
+
+Let E be checkpoint1503's completed inherited-supremum norm domain, realized
+isometrically as the uniform closure of bounded Lipschitz tests. On EVERY z:E,
+construct actual signed operators S_N(z)=P_T(realize z)-K_N(realize z), where
+K_N is the OLD literal spatial increment-square kernel. Finite operators and
+limit have bounds 2T||z||. For T>0, signed_tendsto proves STRONG clockL1
+convergence for EVERY completed test. signed_kernel_actual identifies the
+actual Lebesgue integral against rectangle_(0,|W_T|]^2 minus K_N. This is not
+merely a definition of an unrelated extension. No factor of one-half enters
+this testing action.
+
+The original source transport is exact: for EVERY pair of REAL Schwartz
+primitives g,h (neither required even), mixedTest(g,h)(x,y)=g'(x)h'(y) is bounded
+continuous Lipschitz, with constant B_g A_h+A_g B_h. cell_mixed proves its
+literal cell integral equals (g(y)-g(x))(h(y)-h(x)) for ALL real endpoints,
+including reverse orientation and zero-length intervals. Product integration
+and the actual fundamental theorem of calculus discharge the identity.
+
+sourceAction is the ORIGINAL sourceGrid paired with the actual Gaussian
+rawProduct(testDirection g,testDirection h), not a newly assumed process.
+source_signed_identity proves its clockL1 class equals S_N(mixedCore(g,h))
+for EVERY N,T. It directly uses IBMRawGridMixedObservable.source_mixed_test,
+physical clock_primitive and the actual initial clock zero. In particular the
+normalization is unhalved; the two cross contributions in the Gaussian source
+telescope must not be mistaken for a single half-normalized tensor coefficient.
+source_tendsto_explicit then proves strong clockL1 convergence to the actual
+endpoint product (g(|W_T|)-g(0))(h(|W_T|)-h(0)) minus the old diagonal occupation
+functional for g'(x)h'(y). endpoint_product_actual and limit_explicit identify
+both terms, and uniqueness of finite-action limits removes dependence on the
+chosen Lipschitz bound in the completed core construction.
+
+Scope: deterministic spatial tests -> random clockL1 classes. NOT a claim of
+strongly measurable whole-dual-valued random distributions, a common AE set for
+uncountably many tests, all-C_b density, Sobolev H^{-1} identification, operator-
+norm convergence, or arbitrary clock-dependent test continuity. Source probes
+are not silently treated as IBM observable vectors; no observable projection
+was removed in an illegitimate pairing. The previously proved original native
+PROJECTED L2 norm escape1500 remains valid. These results therefore construct
+an actual signed weak-testing calculus without claiming full intrinsic IBM
+calculus or strong convergence of its original stochastic integral.
+
+Next productive question: realize the diagonal occupation and signed limit
+pathwise, or justify a precise clock-dependent source/observable testing domain
+using the existing F1--F3 machinery. Check actual joint-source measurability,
+operator domains and boundedness before transporting a completed spatial action
+to a Gaussian or intrinsic-observable distribution. Do not assume that an
+arbitrary completed spatial test has such a transport.
+
+Verification: final targeted build5 PASS. Complete root build6707jobs
+PASS26.706567s. COMPLETE Lean.collectAxioms transitive audit48540 safe Foundation
+declarations PASS41.382554s, only propext/Classical.choice/Quot.sound. All34 new
+public types read UNABRIDGED; ALL3 complete sources, including the private grid
+identity, actual integral proofs and root/AxiomAudit additions, reviewed in full.
+Independent14 mathematical Lean checks PASS28.673796s, plus imported completion
+NormedSpace/CompleteSpace synthesis. Checks cover zero horizons, completed
+add/negative scalar laws, reverse endpoint/mixed exchange, zero cell, diagonal
+square, negative endpoints, concrete non-even oddPart with derivative1 at0,
+actual mixed source transport/convergence, exact unit endpoint mass W_T^2,
+and exact unit signed mass W_T^2-foldedSum. This tests normalization directly.
+First independent failure30.445774s retained: jet-vs-derivative notation needed
+explicit conversion; mathematical sources unchanged. Earlier targeted failures
+are retained (namespace, integral eta form and finite-sum elaboration), never
+suppressed. No unfinished/sorry proof is included; complete audit checks every
+safe declaration transitively.
+
+All2534 Foundation/root source hashes and3configuration hashes rechecked;
+all113 archive paths/hashes unchanged. No source under ResearchSources staged,
+modified or committed. No mathematical edit after final full-build/audit gates.
+External Lean jobs serialized; existing process handles followed to authoritative
+termination. No toolchain/compiler/resource/trust/linter/transparency changes.
+Evidence: .lake/stardust-1504-working-checkpoint.json, full-build/audit/independent
+logs and actual timing JSON, retained target1--5 and first-failed independent
+logs, .lake/stardust-1504-verification.json. Explicit reviewed-path Git commit,
+exact receipt and BOTH verified PRIVATE main/research backups close separately.
+Unrelated untracked plans, tmp and archive preserved.

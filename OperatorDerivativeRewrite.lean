@@ -2429,3 +2429,6 @@ import Foundation.IBMSpatialBoundedTestOperator
 import Foundation.IBMSpatialLipschitzTestLimit
 import Foundation.IBMSpatialCompletedTestLimit
 import Foundation.IBMSpatialCompletedKernelIdentity
+import Foundation.IBMSpatialEndpointOperator
+import Foundation.IBMSpatialSignedReconstruction
+import Foundation.IBMSpatialMixedWickTesting
