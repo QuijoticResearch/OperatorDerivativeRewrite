@@ -2450,3 +2450,5 @@ import Foundation.IBMJointRandomDistribution
 import Foundation.IBMActualQuadraticRandomReconstruction
 import Foundation.IBMMixedClockStrongL2
 import Foundation.IBMActualQuadraticL2Reconstruction
+import Foundation.IBMActualQuarticSourceTesting
+import Foundation.IBMActualQuarticRandomReconstruction

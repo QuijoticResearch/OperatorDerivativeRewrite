@@ -45009,3 +45009,102 @@ logs and timings, target1--6 and1510-verification.json. Explicit reviewed-path
 commit, exact-commit receipt and BOTH PRIVATE main/research verification close
 separately. Unrelated plans,tmp/archive preserved. No reflection admitted during
 proof/verification; uncertain old reservations preserved.
+
+
+## Checkpoint 1511 — actual fourth-power IBM source-native testing
+
+October 25, 2026. IBM ACTIVE; queue8280325 unchanged. Building on1510's strong
+quadratic clockL2 limit, this checkpoint tests an actual nonlinear IBM
+observation rather than assuming an abstract smooth-symbol representation.
+
+IBMActualQuarticSourceTesting.fourth_sections proves that the EXISTING source
+unitary of IBMActualQuarticMoment.fourthClass(R) has actual Gaussian quartic
+sections quartic(clockDirection(R,Y)). This is the actual fourth power of
+B(|W_R|), whose genuine jointL2 membership was already proved using eighth
+moments. ProductL2Curry.curry_coeFn, exact swap representatives, product AE
+transport, the continuous-clock coordinate modification and actual scenery
+first-chaos representatives establish the equality. The raw scenery direction
+is definitionally the verified actual sceneryDirection here. No distinct
+spectral-coordinate isometry, new quartic surrogate or Bochner-domain
+assumption is introduced; sourceUnitary already supplies that domain.
+
+second_pairing proves, for EVERY f in actual source sector2,
+
+    inner(f,quartic u) = 6*||u||^2 * inner(f,rawProduct u u).
+
+It uses the old exact quartic_projection_two and sector0 orthogonality, retaining
+all normalizations. Since actual sourceGrid sections lie in sector2, native_actual
+identifies the ORIGINAL joint-source contraction against fourthClass(R) BEFORE
+clock integration with 6*|W_R|*mixedEnergy(H,R,R,N). This is a source-section
+projection argument, not a commutation of source projection with intrinsic
+conditioning. The old second-chaos/pure-fourth cancellation is used exactly.
+
+IBMActualQuarticRandomReconstruction proves intrinsic observability of the
+ACTUAL fourthClass by its literal measurable IBM path representative and defines
+observation(R) with that same jointL2 class. weight(R):GaussianL2 has actual
+value6|W_R|. The limit is a genuine clockL1 product of that weight with the1510
+quadratic clockL2 reconstruction. Explicitly it is
+
+    6*|W_R| * (min(|W_H|,|W_R|)^2
+        - integral_(0,H] 1_{|W_t|<|W_R|} dt).
+
+For EVERY H>0 and R>=0, the actual source-native action against observation(R)
+converges strongly in clockL1 to this class. The proof reuses1510 arbitrary-L2
+clock-weighted mean-absolute convergence; no false independence, boundedness of
+6|W_R|, missing integrability or assumed native-grid convergence is used.
+Every finite action's expectation is EXACTLY the ORIGINAL projected intrinsic
+native divergence paired with observation(R). The scalar intrinsic pairing
+therefore converges to the expectation of this explicit random limit.
+
+Precise scope: reconstruction HERE is of SOURCE-NATIVE TESTING against the
+fourth-power observation. It is NOT a theorem reconstructing the fourth-power
+observable itself, an intrinsic fourth-power Ito formula, or convergence of
+the original projected native stochastic process. No quartic clockL2 topology,
+full intrinsic Clark--Ocone, completed all-observable domain, Banach test-domain
+membership, rough-kernel exclusion or full intrinsic calculus is claimed.
+These central calculus/domain obligations remain OPEN. Actual test membership
+in IntrinsicSpace is proved, rather than inferred from its source representation.
+The1507 original Hilbert weak obstruction remains intact.
+
+Next promising generalization: bounded C2 actual terminal tests phi(B(|W_R|)),
+with bounded phi,phi',phi''. Existing IBMFirstChaosMixedStein.second_centered_mixed
+and second_pairing_integral prove the required real Gaussian IBP, including
+zero directions. Polarization should give sourceGrid testing coefficient
+(1/2)*E_scenery[phi''(B(|W_R|))] times quadratic mixedEnergy(H,R,R,N). The old
+nondegenerate-regression argument already handles cancellation; do not divide
+by random |W_R| without checking zero directions. Construct the clock coefficient
+through the existing sourceUnitary of the actual bounded phi'' joint class and
+a bounded Gaussian mean functional, using compLpL and actual section/Fubini
+identities. This may avoid any new parameter-integral continuity infrastructure.
+Its actual bounded coefficient could transfer the1510 quadratic strongL2 limit
+to a broad nonlinear terminal-test class. This is a proposed route, not a proved
+identity or completion claim. Audit exact old declarations before new proofs.
+
+Verification: full root6727jobs PASS25.559762s. COMPLETE transitive
+Lean.collectAxioms audit48928 safe Foundation declarations PASS37.840824s,
+only propext/Classical.choice/Quot.sound. ALL13 new public types printed/read
+UNABRIDGED, both complete mathematical source/proofs, exact AE product/order
+transport, coefficient normalization, intrinsic membership, root/AxiomAudit
+additions and all independent proofs reviewed. No source edits after final gates.
+
+Independent9 mathematical Lean checks PASS32.243613s, first run: literal actual
+fourth-power observation; source-unitary actual sections; independent mixed Wick
+coefficient TWELVE; pure fourth chaos zero against every native source section;
+actual initial fourth-power class zero; future observation R=2H strong random
+convergence; R=H explicit6|W_H|*(W_H^2-occupation) representative; every strict-mono
+cofinal grid extraction; and actual intrinsic scalar-pairing convergence. No
+failed independent run. Retained target1--6 failures: standard local Fact needed
+for Lp countability, product-AE namespace, source/JointL2 expression coercions,
+sector theorem names, literal absolute-value multiplication spacing, dependent
+toLp rewriting and beta reduction before norm-integral rewriting. Repaired at
+ordinary defaults, with explicit typed identities and original domains. No
+heartbeat/resource/transparency/linter/compiler/toolchain/trust changes.
+
+All2554 Foundation/root hashes and3config hashes frozen/rechecked; all113
+ResearchSources paths/hashes unchanged, never modified/staged/committed.
+External Lean jobs serialized and followed to terminal state. Evidence:
+.lake/stardust-1511-working-checkpoint.json, final full-build/audit/independent
+logs and timings, target1--6 and1511-verification.json. Reviewed explicit-path
+commit, exact-commit receipt and BOTH PRIVATE main/research verification close
+separately. Unrelated plans,tmp/archive preserved. No reflection admitted during
+proof/verification; old uncertain reservations preserved.
