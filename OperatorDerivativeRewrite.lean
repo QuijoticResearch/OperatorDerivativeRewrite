@@ -2468,3 +2468,6 @@ import Foundation.IBMFoldedSourceCovariance
 import Foundation.IBMFourierClockMeanRegularity
 import Foundation.GaussianReflectedDampingGraph
 import Foundation.IBMSingleFourierClockGraph
+import Foundation.GaussianAbsoluteMinimumGraph
+import Foundation.IBMMultitimeClockVarianceGraph
+import Foundation.IBMFourierClockGraph

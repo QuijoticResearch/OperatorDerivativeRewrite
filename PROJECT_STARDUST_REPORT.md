@@ -45915,3 +45915,130 @@ linter, trust, cache or mathematical-hypothesis setting was changed.
 ResearchSources stays read-only/uncommitted; unrelated drafts/plans/tmp are
 preserved. Exact-commit receipt and verified PRIVATE main/research closure
 follow the unchanged gates. Full intrinsic IBM calculus remains active/open.
+
+## Checkpoint1519 — actual multitime covariance cusps and completed clock graph
+
+October25,2026, terminal closure preparation08:38 America/New_York. IBM remains
+ACTIVE; queue8280325 unchanged. This resolves the specific mixed-coordinate
+clock-graph obligation left open at1518, without changing any prior theorem.
+ResearchSources is preserved read-only and uncommitted.
+
+### Construction and exact domains
+
+GaussianAbsoluteMinimumGraph reuses the bounded sine clips and smooth absolute
+radii already verified in IBMIntrinsicChainApproximation and the original
+GaussianClosedChainRule. The clipped radii converge pointwise to absolute value;
+their derivatives converge to signum, including at zero. Actual scalar L2
+convergence follows from domination by |f|+1, and actual vector L2 convergence
+from the original bounded-multiplier theorem. Closedness is that of the ORIGINAL
+closedCylindricalDerivative graph, not a replacement operator defined to fit the
+answer. Thus every original graph pair (f,g) has absolute-value graph output
+signum(f)*g, with norm at most norm(g). Minimum follows through
+(f+h-|f-h|)/2. Its actual graph derivative is
+
+    (g+k-signum(f-h)*(g-k))/2.
+
+No assumption discards zero levels or collision events. The upper bound is
+norm(g)+norm(k); no sharpness is claimed. All graph assertions retain actual
+AE representatives rather than pretending Lp representatives add pointwise.
+
+IBMMultitimeClockVarianceGraph applies these rules to ACTUAL Gaussian clocks.
+For e_r=clockGradient_r, v_r=signum(W_r)*e_r, define
+
+    H_rs=(v_r+v_s-signum(|W_r|-|W_s|)*(v_r-v_s))/2.
+
+The original graph contains min(|W_r|,|W_s|) with output H_rs and norm bound
+sqrt(r)+sqrt(s). The exact diagonal identity H_rr=v_r holds pointwise. Finite
+sums give the actual covariance variance
+
+    Q_b=sum_ij b_i*b_j*min(|W_ri|,|W_rj|)
+       =norm(sum_i b_i*sceneryDirection(|W_ri|))^2 >=0,
+
+with output V_b=sum_ij b_i*b_j*H_ri,rj. Its L2 bound is varianceCost,
+sum_ij |b_i*b_j|*(sqrt(ri)+sqrt(rj)), at most
+2*amplitude(b)^2*sum_i sqrt(ri). Signed coefficients, duplicate clocks, zero
+times and empty finite observation types are included.
+
+The prior reflected damping closure then places exp(-Q_b/2) in the SAME graph,
+with output coefficient(1/2,Q_b)*V_b and norm at most varianceCost/2. This
+coefficient is -exp(-|Q_b|/2)*signum(Q_b)/2. Nonnegativity justifies removing
+the absolute value in the VALUE. The derivative retains signum(Q_b), including
+its zero convention; no unsupported null-level or locality shortcut is used.
+
+IBMFourierClockGraph now proves multitime_clock_graph and multitime_clock_domain
+for EVERY finite observation type and all nonnegative observation times.
+Assumptions are exactly the existing sum |w_k| finite and sum curvatureCost_k
+finite. The input is the preexisting actual source-averaged IBM observation
+IBMFourierSourceMeanCalculus.clockMean, with its original conditional averaging
+and actual Gaussian characteristic-function identification. It is not a newly
+manufactured random variable or merely a formal function of deterministic
+source directions. Its original clock derivative has AE formula
+
+    sum_k w_k*cos(beta_k)*dampingGradient(a_k,r).
+
+Both values and vector outputs have proved norm-summable series; strong L2
+convergence of the pair and ORIGINAL graph closedness establish the completed
+domain result. The output norm is at most
+(sum_k curvatureCost_k)*sum_i sqrt(ri). The older single-clock bound of half
+that constant is preserved; the general multitime bound is not claimed sharp.
+Original graph functionality gives presentation/approximation independence.
+Original derivative-adjoint graph duality yields integration by parts against
+every input in the original hilbertDivergence domain, checked independently.
+
+### Scope and remaining IBM obligations
+
+The1518 multitime collision-cusp clock-graph question is now RESOLVED for the
+actual finite covariance variances and the completed Fourier source-mean
+class. This goes beyond finite-mode scalar formulas and includes an infinite
+series with genuinely mixed two-clock rows. Classical nonsmoothness of folded
+covariance is compatible with the original weak Gaussian graph calculus.
+
+This remains an AMBIENT CLOCK Gaussian derivative of a source average. It does
+not establish that the source average or its gradient is an intrinsic function
+of the IBM observation sigma algebra. It does not put the original positive-
+time sine observable back into the obstructed original joint derivative
+domain, change the native weak-Hilbert obstruction, or supply a physical-time
+Ito/Tanaka or temporal Clark--Ocone theorem. Full intrinsic calculus for actual
+reflected-clock B(|W_t|) remains ACTIVE/OPEN. Next investigate precisely which
+of these clock derivatives descend through the actual IBM observable domain
+and how original adjoints can connect to the verified occupation/native
+calculus; do not confuse the present averaging graph with that missing descent.
+No Bakry, AI or other queued campaign is activated. No novelty claim is made.
+
+### Verification and preserved evidence
+
+Full root build PASS,6746jobs,26.748081seconds. Complete safe transitive
+Lean.collectAxioms audit PASS,49329declarations,41.628040seconds; only propext,
+Classical.choice,Quot.sound. All21 new public types read unabridged; all three
+complete modules and root/AxiomAudit changes reviewed. Frozen manifest covers
+2573 Foundation/root sources; only root/AxiomAudit changed among old sources.
+Configuration3 unchanged. All113 original archive paths and hashes equal
+inventory1292. No original manuscript bytes were modified or committed.
+
+Twelve independent Lean checks PASS,28.924337seconds: exact diagonal overlap
+gradient; actual equal-time covariance graph; signed cancelling duplicate-row
+variance; cancelling explicit gradient; empty observations; concrete scalar
+collision-cusp slopes; zero-time output for the completed series; original
+adjoint-domain IBP; graph-output uniqueness; infinite geometric genuinely
+mixed two-clock source mean domain; degenerate variance's zero-level damping
+coefficient; and duplicate-clock null variance versus nonzero singleton
+variance. Independent source and successful output are retained in .lake.
+
+Development failures and logs are retained: absolute-radius approximation
+composition normalization, width arithmetic, correct radius clip bound, norm
+representatives and domination; finite graph pair-sum normalization; actual
+Lp.coeFn_finsetSum argument order; and commuting the double-sum norm majorant.
+The final source proves every statement without sorry or new axioms. No
+resource, transparency, toolchain, cache, trust or linter setting changed.
+Exact-commit receipt and verified PRIVATE main/research closure follow the
+unchanged checkpoint gates. Unrelated untracked research plans/tmp remain.
+
+Final exact-byte closure reran ALL gates after removing one trailing blank line
+caught by git diff --cached --check; the first commit attempt made no commit.
+Final full build PASS6746jobs,30.694692seconds; final complete transitive audit
+PASS49329declarations,50.914440seconds; final12 independent checks PASS,
+28.316840seconds. Final audit/type output equals the earlier unabridged reviewed
+output BYTE FOR BYTE. Prior audit/check logs and timings are retained with the
+before-eof suffix. The final source freeze and archive/configuration equality
+were rechecked before Git closure. No mathematical statement or proof changed
+in that whitespace correction.
