@@ -1,3 +1,4 @@
+import Foundation.IBMClockNoiseRegularity
 import Foundation.GaussianSmallTimeCutoff
 import Foundation.IBMInitialGermTriviality
 import Foundation.IBMMeanReconstruction

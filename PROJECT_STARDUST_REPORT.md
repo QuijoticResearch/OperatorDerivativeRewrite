@@ -47451,3 +47451,122 @@ and pursue its physical/native obligations using the existing completed calculus
 A final root EOF whitespace cleanup was followed by a fresh complete root
 build and complete audit; the final public-type output is byte-identical to
 the already reviewed output. Earlier passing timings/logs are retained.
+
+### Checkpoint1531 — exact actual-IBM clock noise sensitivity and a sharp energy threshold
+
+October25,18:59 America/New_York. Continue IBM from PRIVATE-closed1530,
+`5a2c9bebea1793a62fbb9a8870b38af38eb8cdf3`. That goal turn made verified
+progress; the indefinite goal remains active. IBM and the linear campaign queue
+are unchanged. October25 reflection was already used; no second housekeeping
+or PDF session was started. ResearchSources remains original and read-only.
+
+The theorem-level reuse audit first found that the whole original generator-domain
+weak L1 chain rule (`IBMNativeWeakGeneratorChain.nonlinear_weak_chain`) and the
+point clock-gradient escape (`IBMSineTemporalClockEscape.clock_norm_escape`)
+already exist, so neither was rebuilt. The old physical/native Schwartz identities
+retain their exact regularization, tested-source and convergence domains; they
+are not silently promoted to an unrestricted physical IBM calculus. The selected
+next question is quantitative clock regularity of the ACTUAL unsmoothed endpoint,
+a possible input to a sharper justified clock topology, rather than another
+abstract integral completion or an operator/domain relabeling.
+
+New `Foundation/IBMClockNoiseRegularity.lean` proves the exact folded-scenery
+sensitivity for ANY two original Gaussian coefficient directions u,v:
+
+    E ||X(|W(u)|)-X(|W(v)|)||_scenery^2
+      = m1*(||u+v||+||u-v||-||u||-||v||),
+
+where the expectation is over the original Gaussian clock, the displayed source
+norm is the ORIGINAL Gaussian scenery L2 norm, and m1 is the already verified
+`GaussianAbsoluteMoments.standardMoment 1`. For unit u,v with correlation rho,
+this is m1*(sqrt(2+2rho)+sqrt(2-2rho)-2). The proof reuses the ACTUAL Brownian
+scenery metric, folded-clock minimum identity, genuine first-chaos Gaussian
+absolute moments and justified integrability/AE representative identities.
+For rho in[0,1], two-sided bounds compare it to m1*sqrt(2-2rho), with lower
+constant1/4 and upper constant1. The corresponding L2 norm FOURTH powers have
+explicit positive multiples of1-rho; these are inequalities, not just a heuristic
+noise exponent. Complete sign reversal rho=-1 is invisible to the folded clock,
+so a putative unfolded sensitivity formula would fail that test.
+
+The construction is tied back to original actual IBM. At every T>0 the existing
+normalized time direction is supplemented by the ACTUAL coefficient of the
+clock increment on[T,T+1]. Its norm1 and orthogonality are proved from original
+Brownian time-vector inner products. Rotate the normalized T-direction with
+rho=1-h, for0<=h<=1, retaining the original source/clock product space. The
+source-valued L2 class `clockPerturbed` is explicitly constructed by the OLD
+measure-preserving Gaussian section pullback. The literal path theorem
+`field_actual_ae` proves its joint realization agrees AE with the constructed
+continuous scenery path at the perturbed random clock radius. Product sections
+and measurable evaluation justify this transfer; no simultaneous uncountable
+null event is used. At h=0 it is EQUAL to the original endpoint class, not merely
+equal in law. No perturbed-path continuity or original-observed-filtration
+membership is assumed: the auxiliary direction uses a FUTURE clock increment
+and is a Gaussian regularity probe, not a causal stochastic integrator.
+
+Writing Z_T for the original actual IBM L2 class and Z_T^h for this explicit
+coupled endpoint, `actual_perturbation_exact` and the joint isometry prove
+
+    ||Z_T-Z_T^h||_joint^2
+      = sqrt(T)*m1*(sqrt(4-2h)+sqrt(2h)-2).
+
+The exact critical integrability theorem is
+
+    integral_(0,1) ||Z_T-Z_T^h||_joint^2 / h^(1+a) dh < infinity
+      IFF a < 1/2, for EVERY T>0 and EVERY real a.
+
+This is literally `joint_endpoint_energy_integrable_iff`, an IntegrableOn
+statement for the actual joint L2 norm. Its proof uses the two-sided radical
+bounds and Mathlib's sharp near-zero real-power integrability criterion, so
+failure at a=1/2 is PROVED, not inferred from failure of a bound. The scalar
+weight criterion is first established and then identified with the constructed
+endpoint curve on the exact integration interval. Zero-scale degeneracy and
+positive-time hypotheses remain explicit.
+
+Precise unresolved bridge: this CORRELATION ENERGY has NOT yet been identified
+with a fractional Gaussian number-operator/clock-Sobolev domain. Do not report
+an optimal Malliavin Sobolev exponent, replace the original derivative domain,
+or assert sharper full-correction convergence from this result alone. The next
+productive connection is the actual Mehler/conditional Hermite pairing and the
+clock sector norm: reuse `GaussianWickConditionalProjection.conditional_wick_projection`,
+`GaussianObservedSecondRegularization.pullback_normalizedHermite`, the existing
+Gaussian number sectors and Bochner clock lifts, then prove all completion,
+interchange and norm equivalences before claiming that connection. No new
+semigroup infrastructure is justified merely by this plan. Physical/canonical
+channel identification, full intrinsic physical Ito/Clark–Ocone and remaining
+convergence/closure obligations still remain OPEN. IBM is not complete.
+
+A primary-source web search for fractional Malliavin regularity and iterated
+Brownian motion was exploratory and supplied no theorem used in this proof.
+This is a verified consequence of the exact existing covariance/moment machinery;
+NO novelty or exhaustive literature-search claim is made. Independent direct
+800x800 product-normal midpoint diagnostics compare the folded-radius expectation
+with the formula at rho=-1,-1/2,0,1/2,0.9,0.99,1; maximum discrepancy is below
+6.43e-5. Stable small-h ratios tend numerically toward1. Those diagnostics are
+not rigorous quadrature certificates or the proof of the critical threshold;
+the exact claims above are Lean proofs.
+
+Verification: fresh final complete6767-job root build PASSED in44.1116469 wall
+seconds; complete transitive Lean.collectAxioms audit PASSED ALL49701 safe
+Foundation declarations in39.3179303 seconds, accepting ONLY propext,
+Classical.choice and Quot.sound. ALL32 public types were read unabridged,
+including both fully expanded rotation-proof lets. The final first31 types are
+byte-identical to the previously reviewed complete output, and the added literal
+path type was read completely. All final source, eight private helper arguments,
+all definitions, remaining public proofs and root/audit diffs were reviewed.
+EIGHT independent Lean checks passed in26.7690438 seconds: folded sign reversal,
+zero-scale collapse, joint actual subcritical49/100 energy, critical divergence,
+all supercritical exponents, finite weaker energy together with native-domain
+EXCLUSION, exact original h=0 endpoint and literal constructed-path realization.
+One test needed a final ring reduction after norm_num; failures are retained.
+Development retained the raw AE/measurability, real-power, proof/instance and
+integral-rewrite failures. The final literal bridge caused a fresh complete build,
+audit and all-eight-tests run. No resource/trust/linter settings, pinned versions,
+old theorem semantics or old mathematical source outside root/audit imports and
+print lists were changed. No verification was disabled or replaced.
+
+All2594 frozen Foundation/root source hashes, configuration3 and original113
+archive paths/hashes match. Evidence is `.lake/stardust-1531-verification.json`
+and its manifest/log/review/test/diagnostic records. Explicit reviewed-path commit,
+exact-commit audit receipt and BOTH verified PRIVATE backup refs are the remaining
+closure gate at this entry; only terminal verification and the canonical handoff
+may declare that gate closed. Retain IBM priority and every queued campaign gate.
