@@ -43402,3 +43402,135 @@ stronger test topology should be connected to existing graph-dual/Sobolev
 machinery before constructing another space. Full projected native-output
 convergence, native Ito/Clark--Ocone closure and full intrinsic actual IBM
 calculus remain OPEN; this checkpoint is not a campaign stopping checkpoint.
+
+
+## Checkpoint1497 — uniform curvature control and actual infinite IBM observables
+
+IBM remains ACTIVE; queue8280325 and every campaign gate are unchanged. Previous
+goal turn1496 was PROGRESS, privately closing actual nonlinear multitime ridge
+tests at12cc426. This turn verified the saved state and advanced the pending
+uniform-bound/domain question. No parallel session, campaign transition or
+reflection admission occurred. The preserved stale October23 reflection
+accounting remains unresolved. Terminal times were checked from October24
+22:23:56 through targeted proofs, full build, audit and independent tests.
+
+Primary source remains ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All113 archived paths/hashes match inventory1292. ResearchSources stays
+read-only/uncommitted. No new manuscript was ingested or novelty asserted.
+The process is still the ACTUAL reflected-clock IBM Z_t=B(|W_t|).
+
+The reuse audit distinguished three existing results rather than conflating
+their domains. IBMNegativeSobolevBounded.l2DerivativeCLM is a deterministic
+spatial L2-to-Hminus1 map; it does not itself identify the native joint IBM
+output or supply a convergence hypothesis. IBMNativeContractionDomain requires
+the actual L2 total contraction with original full-domain gradients.
+IBMNativeBoundedGraphCore.bounded_graph approximates observables ALREADY in
+the full jointDerivative domain, while ClosedOperatorGraphDualDerivative's
+graph_limit requires an actual graph sequence with convergent inputs. The new
+nonlinear point-observable membership alone does not discharge those premises.
+No original graph/negative-Sobolev result was silently applied outside its domain.
+
+Foundation/IBMRidgeNativeBound.lean proves a uniform estimate that was only a
+candidate1496. For the actual finite grid, absolute mixed cap covariation is
+bounded by the actual raw clock quadratic-increment sum. The absolute mixed
+energy is consequently bounded by W_endpoint^2+clockSquares. Both actual means
+equal the elapsed horizon, by OLD clockSquares_mean/process_product_integral.
+For EVERY bounded measurable clock weight |w|<=C, the absolute mixed-energy
+weighted mean is at most2*C*H. Combining the OLD1496 exact ridge-pair formula
+with the finite coefficient matrix gives
+ |<original native jointDivergence grid_N,F>| <= H*S2(g)*(sum_j |c_j|)^2,
+ F=g(a+sum_j c_j Z_tau_j), S2(g)=seminorm(0,0,jet g 2).
+This holds for every grid size, shift, real coefficients and nonnegative
+observation times, independently of their number, order or location relative
+to H. The bound has no additional dimensional factor; its dependence on the
+coefficient l1 norm is explicit. The corresponding scalar ridge limit obeys
+the same bound for H>0. Original finite-grid bounds also permit H=0.
+
+Foundation/IBMRidgeSeries.lean uses this estimate to construct a genuine
+infinite ACTUAL observable testing domain, without inventing another abstract
+normed space. Allow d_k to vary with k, arbitrary real shifts a_k/weights w_k,
+Schwartz g_k, real vectors c_k and nonnegative observation lists tau_k. Set
+ V_k=|w_k|*seminorm(0,0,jet g_k 0),
+ C_k=|w_k|*seminorm(0,0,jet g_k 2)*(sum_j |c_(k,j)|)^2.
+Under SUMMABILITY of V_k, the original IntrinsicSpace series
+ F=sum'_k w_k*ridgeObservation(g_k,a_k,c_k,tau_k)
+is absolutely summable in original L2; its finite partial sums converge there.
+Its original joint AE representative is EXACTLY the actual function
+ sum'_k w_k*g_k(a_k+sum_j c_(k,j)*Z_(tau_(k,j))).
+This latter scalar series is absolutely convergent for EVERY joint sample p,
+not merely a default value of a nonconvergent tsum, and has actual MemLp2.
+The proof reuses the closed original observable space, its continuous subtype
+map, and Mathlib Lp.coeFn_tsum under the proved norm summability.
+
+Under the ADDITIONAL summability of C_k, the actual original native pairings
+against F converge to sum'_k w_k*ridgeLimit(g_k,a_k,c_k,tau_k,H). This scalar
+limit series is summable. The interchange of the grid limit and the countable
+sum uses Mathlib's proved Tannery theorem, dominated by H*C_k uniformly in the
+grid index. The finite original pairing commutes with the L2 sum by its actual
+continuous inner-product map. The complete series pairing is uniformly bounded
+by H*sum'_k C_k. Observation times may tend to infinity and finite arities may
+vary; no uniform horizon restriction on the observable is imposed.
+
+Presentation independence is proved at the actual-function level: two such
+admissible series whose actual joint functions agree AE have equal scalar
+limits, even with entirely different arities, coefficients and presentations.
+This follows through equality of their ORIGINAL IntrinsicSpace L2 classes and
+uniqueness of the native pairing limits. The displayed costs are sufficient,
+representation-dependent bounds; no injectivity of a presentation or equality
+with an intrinsic observable norm is asserted. This is an explicit summable-
+series domain, not a claim of the full original observable L2 completion or
+membership in the original jointDerivative domain. The roles of the value and
+curvature summability hypotheses remain distinct; neither is dropped.
+
+FOURTEEN independent Lean checks passed THIRD RUN29.501193s, plus three proved
+geometric-summability helpers: mixed-QV bound, negative clock weight, zero
+horizon native pairing, cancelling repeated-time coefficients, the resulting
+representation-dependent curvature cost, genuine L2 series summability,
+pointwise absolute convergence at all samples, actual MemLp2, exact joint AE
+series realization, native convergence for a concrete Gaussian Schwartz
+series with weights2^(-k) and observation times k+1 tending to infinity,
+summability of its scalar limit series, its grid-uniform bound, strong original
+partial sums, and equality of limits under sign-reversed Gaussian ridge
+presentations. Gaussian evenness proves equality of the actual infinite
+observables; no abstract presentation equality is assumed in that example.
+
+The first independent run33.940995s exposed partial-function simplification,
+numeral multiplication, zero-bound simplification and ambiguous Nat/NNReal
+test indices. The second27.144437s left only negative-product normalization
+and unannotated tsum indices. Both failed logs/timings are retained. Explicit
+Nat binders, displayed cost functions and the correct real negative-product
+identity repaired TEST files only. Final mathematical sources stayed unchanged
+after the full verification freeze. No increased heartbeat or suppressed errors.
+
+Development logs target1--7 retained. Target1 had absolute-value token spacing;
+target2 finite-sum normalization; target3 passed all uniform bounds. Target4
+exposed an actual observable representative conversion and the Summable.mul_left
+API; target5 passed the initial series. Target6 exposed protected tsum comparison
+and scalar tsum orientation; target7 passed all final sources. Existing Lake,
+toolchain, resource, trust and audit configurations were preserved.
+
+Full root6677 jobs PASSED in25.387127s; COMPLETE transitive audit48066 safe
+Foundation declarations PASSED in40.648136s, accepting ONLY propext,
+Classical.choice, Quot.sound. All26 new public types read UNABRIDGED; both full
+final mathematical sources/proofs read. Frozen2504 Foundation/root sources+
+3configs and all113 archive hashes rechecked. Only old root/AxiomAudit changed;
+all other old mathematical bytes are unchanged. Exact-commit receipt and
+verified PRIVATE main/research synchronization remain separate closure gates.
+
+NEXT: investigate full projected-output convergence or a decisive original-L2
+obstruction before expanding infrastructure. One concrete UNPROVED strategy is
+to test the compensated output against CENTERED actual raw-grid quadratic
+observables. Audit the existing source-chaos decomposition to establish the
+exact pairing/norm identities first. If A_N is the actual centered second-
+scenery-chaos source sum and B_N its clock compensation, a candidate reduction
+would pair the projected compensated output with the centered raw observable
+to recover E||A_N||^2, while the raw observable norm squared splits into
+E||A_N||^2+Var(B_N). Divergence of the former with sufficiently smaller clock
+variance could force the ORIGINAL projected native-output L2 norms to escape.
+Neither the needed energy growth nor clock variance estimate is claimed here;
+do not infer projected escape from raw-source escape. Review existing actual
+energy/clock-variation declarations before constructing new estimates.
+The summable-series theorem remains valid irrespective of this potential
+strong-L2 obstruction. Native Ito/Clark--Ocone closure and full intrinsic IBM
+calculus remain OPEN; no campaign transition is justified.

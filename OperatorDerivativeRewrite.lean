@@ -2400,3 +2400,5 @@ import Foundation.IBMMixedClockLimit
 import Foundation.IBMRidgeNativeSource
 import Foundation.IBMBoundedMixedClockTesting
 import Foundation.IBMRidgeNativeLimit
+import Foundation.IBMRidgeNativeBound
+import Foundation.IBMRidgeSeries
