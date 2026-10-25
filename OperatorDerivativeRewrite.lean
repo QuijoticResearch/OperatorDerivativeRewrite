@@ -1,3 +1,5 @@
+import Foundation.GaussianObservationCorrelation
+import Foundation.IBMClockNoiseSpectral
 import Foundation.IBMClockNoiseRegularity
 import Foundation.GaussianSmallTimeCutoff
 import Foundation.IBMInitialGermTriviality

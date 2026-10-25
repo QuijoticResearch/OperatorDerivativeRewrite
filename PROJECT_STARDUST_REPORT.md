@@ -47570,3 +47570,118 @@ and its manifest/log/review/test/diagnostic records. Explicit reviewed-path comm
 exact-commit audit receipt and BOTH verified PRIVATE backup refs are the remaining
 closure gate at this entry; only terminal verification and the canonical handoff
 may declare that gate closed. Retain IBM priority and every queued campaign gate.
+
+### Checkpoint1532 — full clock-sector identification of actual IBM noise energy
+
+October25,19:47 America/New_York. The previous goal turn made verified progress:
+1531 is PRIVATE-closed at `578724c9bbe4ac982228dfe264b880c24e3a0b1e`. IBM remains
+ACTIVE, with the indefinite goal and every queued campaign unchanged. This is
+a research checkpoint, NOT the IBM stopping checkpoint. No reflection/PDF task
+was repeated on the already-used October25 date. ResearchSources is unchanged.
+
+The missing1531 CORRELATION-TO-SECTOR bridge is now proved. New modules
+`GaussianObservationCorrelation` and `IBMClockNoiseSpectral` reuse the ORIGINAL
+Gaussian observation isometries, complete one-dimensional Gaussian Hermite basis,
+Wick mixed moments, original Bochner/product flip and the ACTUAL Gaussian number
+sectors defined through D and its divergence. No separate Mehler completion,
+new probability law, driver family or unbounded operator replacement was needed.
+
+For any two UNIT original Gaussian coefficient directions u,v, the genuine
+bounded comparison Q=J_u^*J_v acts on the nth normalized Hermite vector by
+(inner(u,v))^n. `correlation_hermite`, `correlation_coefficient` and
+`noise_energy_hasSum` identify its action and the convergent scalar noise energy
+for EVERY Gaussian L2 input, not only polynomials. Negative correlations are
+included; Cauchy–Schwarz supplies abs(rho)<=1 and the required nonnegative
+weights 2*(1-rho^n). Factorial and factor-two normalizations are explicit.
+
+`flip_fieldPullback` extends the actual Gaussian section pullback identity
+through tensor/simple-function L2 density on the ORIGINAL two probability
+factors. The scalar Parseval pairing and justified dominated series/integral
+exchange then give the full source-valued noise series. `projection_pullback`
+intertwines the genuine rank-one Hermite projections with the OLD infinite
+Gaussian number-sector projections on the complete scalar L2 domain.
+`clock_projection_energy` identifies the Bochner coefficient norms with the
+ORIGINAL source-valued clock-sector norms. Thus `clock_sector_noise_hasSum`
+proves, for EVERY source-valued one-Gaussian-coordinate L2 section F,
+
+    ||J_u F-J_v F||^2 = sum_n 2*(1-rho^n)*||Pi_n^clock J_u F||^2.
+
+The HasSum is unconditional convergence of this real energy series. All source
+randomness and every clock degree are retained. There is no finite-source-chaos,
+boundedness, cylindrical or assumed-tail hypothesis. The section domain is
+L2(standard Gaussian; original scenery Gaussian L2): this is NOT asserted to
+cover arbitrary functions of multiple clock observations without another proof.
+
+`IBMClockNoiseSpectral.actual_clock_noise_series` applies this to the already
+constructed ACTUAL endpoint and the same future-clock perturbation from1531.
+For every T>0 and h in[0,1], with C_n(T) the SQUARED norm of its ORIGINAL
+source-valued clock-number projection, it proves
+
+    HasSum (n -> 2*(1-(1-h)^n)*C_n(T))
+      (||timeDirection T||*m1*(sqrt(4-2h)+sqrt(2h)-2)).
+
+The original timeDirection norm is already sqrt(T). The old joint realization
+isometry and1531 literal scenery-path AE theorem retain the actual original
+process connection; no new construction is substituted. The auxiliary clock
+uses[T,T+1] and is a Gaussian regularity probe, not an adapted physical driver.
+In particular h=0 has zero noise, while at h=1 the n=0 weight is STILL ZERO:
+clock-vacuum scenery randomness is not replaced by the scalar joint mean.
+
+A decisive all-sign control is also verified. Full clock sign reversal fixes
+the folded source section. The full noise series at rho=-1 is therefore zero,
+with nonnegative terms, and each ODD clock projection vanishes.
+`actual_odd_clock_sector` proves this for the original one-time IBM endpoint,
+and `actual_odd_clock_block` proves its (m,n) block is ZERO for EVERY scenery
+source degree m and every odd clock degree n. This rigorously upgrades the
+previous reflected first-clock cancellation diagnostic for this actual endpoint.
+It does not identify every occupation-time kernel or justify copying a two-sided
+UNREFLECTED X(Y_t) manuscript kernel into X(abs(Y_t)). The actual endpoint is
+nonzero at positive time despite its zero first clock projection; this is tested.
+No novelty is asserted for the Gaussian/Hermite correlation pattern or symmetry.
+
+Exact remaining task: compare the resulting positive sector series with the
+POWER-WEIGHTED n^a sector norm. The1531 sharp correlation-integral threshold
+and this series identity do NOT yet prove a fractional Gaussian operator-domain
+criterion; justify Tonelli/comparisons, zero-mode handling and all completions
+before reporting that claim. A concrete route is to bound
+1-(1-h)^n by min(1,n*h), use a Bernoulli lower bound on h<=1/(2*n), and relate
+positive sector moments to the already proved correlation integral. Critical
+failure can alternatively use dominated convergence of the normalized noise
+series under a hypothetical summable sqrt(n) energy, contradicting1531's exact
+nonzero square-root rate. These are proposed proof routes, not proved results.
+Physical/canonical channel identification, full intrinsic physical Ito/Clark–Ocone,
+multitime extensions and the remaining actual convergence/closure obligations
+remain OPEN. Do not reopen the signed campaign or activate Bakry/Yang–Mills early.
+
+Verification: the complete6769-job root build PASSED in26.6600773 wall seconds;
+complete transitive Lean.collectAxioms audit PASSED ALL49762 safe Foundation
+declarations in45.1558608 seconds, accepting ONLY propext, Classical.choice and
+Quot.sound. ALL22 new public types were read UNABRIDGED. Both complete final
+sources, all private/public proofs and definitions, two public section-abbreviation
+bodies and root/audit import/print diffs were reviewed. EIGHT independent Lean
+checks passed in38.2448462 seconds: direct finite-mode norm/factorial energy,
+negative-correlation odd/even Hermite behavior, degree-zero invariance, the actual
+infinite series at3/7, all-source first/third clock blocks, retention of an
+arbitrary SOURCE-valued clock vacuum, a nonzero endpoint with zero first clock
+projection, and correct zero-correlation n=0 versus n>0 series weights.
+One test needed simplification of an if-True expression before ring normalization;
+its failure and timing remain preserved. The library stayed unchanged after its
+full gates. Development retained the AE/coercion, tensor-indicator, positive
+series-integrability, parity-namespace and density elaboration feedback. No
+resources, compiler/trust/linter settings, toolchain versions, old operator
+domains or mathematical hypotheses were weakened or silently changed.
+
+All2596 frozen Foundation/root sources, configurations3 and original113 archive
+paths/hashes match. Only two root/audit files and the two new modules changed
+mathematically. Evidence is `.lake/stardust-1532-verification.json` and its full
+manifest/build/audit/type-review/test/integrity records. Explicit-path commit,
+exact-commit receipt and BOTH verified PRIVATE backup refs remain the final
+closure gate at this ledger entry; the guarded terminal receipt and canonical
+handoff record actual closure only after it succeeds. Keep IBM active afterward.
+
+The final staged-file gate caught a trailing blank line before any commit.
+It was removed without changing mathematical tokens; a FRESH complete root
+build, complete audit and all eight independent checks then passed on the final
+bytes. The final complete public-type output is BYTE-IDENTICAL to the reviewed
+output. Earlier60.3288012/41.3751159/28.4673588 timing logs remain preserved;
+these are changed/cached-input closure timings, not an optimization comparison.
