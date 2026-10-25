@@ -2460,3 +2460,5 @@ import Foundation.IBMFiniteRidgeQuadraticTesting
 import Foundation.IBMFiniteRidgeNativeReconstruction
 import Foundation.IBMUniformRidgeNativeBounds
 import Foundation.IBMRidgeSeriesStrongReconstruction
+import Foundation.IBMFourierRidgeCoefficients
+import Foundation.IBMFourierCylinderSeries

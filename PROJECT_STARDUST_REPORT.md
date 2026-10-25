@@ -45425,3 +45425,127 @@ IBM F1--F3 intrinsic identity. Reuse existing declarations first; do not rebuild
 the actual series construction or mistake this checkpoint for campaign completion.
 Git and exact-commit PRIVATE main/research closure follow the unchanged receipt
 procedure; the terminal verifier records both exact tips before transition.
+
+
+## Checkpoint 1515 — actual Fourier-cylinder native calculus and odd-mode limitation
+
+October25,2026. IBM remains ACTIVE; queue8280325 and all prior completion gates
+are unchanged. This checkpoint continues actual reflected-clock IBM B(|W_t|).
+The previous goal turn made progress:1514 closed at1407a2f with exact private
+main/research verification. No manuscripts or existing mathematics were altered.
+
+### Construction and theorem-level reuse
+
+The reuse audit found genuine finite-dimensional derivative/IBP machinery in
+FiniteCovarianceHessian and GaussianAnalyticCoordinateIBP, but no immediately
+applicable arbitrary bounded multivariate second-projection identity. Rather
+than assume that missing bridge, this checkpoint constructs a concrete actual
+Fourier-cylinder domain using1513 finite-ridge projections and1514 uniform
+bounds/lowering. The existing Schwartz ridge-series domain remains unchanged.
+No claim of novelty is made; Gaussian characteristic functions and uniform
+Fourier-series convergence are established mathematics used here through their
+verified original declarations.
+
+For a finite index set I, arbitrary observation times r_i, real frequency rows
+a_ki, phases beta_k and weights w_k, define the literal coordinate function
+
+    F(x) = sum_k w_k cos(beta_k + sum_i a_ki x_i).
+
+Under sum_k |w_k| < infinity, its finite partial sums converge UNIFORMLY on the
+ENTIRE coordinate space; F is continuous. The intrinsic-space sum is proved to
+represent exactly F((B(|W_(r_i)|))_i) joint-almost-everywhere. It is therefore an
+actual IBM observable, not a spectral formalism detached from a process.
+The index may be empty; times may repeat or lie beyond the testing horizon.
+Frequencies are real; periodicity is not asserted for arbitrary real frequencies.
+
+The independent harmonic example takes a_ki=k*b_i and w_k=(1/2)^k. Both value
+summability and curvature summability are PROVED, using the actual geometric
+power-series theorem, with cost (1/2)^k*k^2*(sum_i |b_i|)^2. Thus the domain
+includes genuinely infinitely many increasing harmonics; it is not restricted
+to finite-support coefficient sequences. A separate real identity verifies that
+cos(x)cos(y) has both the sum and difference ridge frequencies.
+
+IBMFourierRidgeCoefficients reuses InfiniteGaussian.firstChaos_charFun for every
+actual isonormal direction u, including zero. It proves the exact phased mean
+cos(beta)*exp(-norm(u)^2/2), then the exact half-curvature coefficient
+
+    -(1/2) cos(beta) exp(-norm(u)^2/2).
+
+No independence or nondegeneracy of the finite Gaussian directions is assumed.
+
+### Full random native identity and explicit surviving kernel
+
+Set q_k=|w_k|*(sum_i |a_ki|)^2, exactly curvatureCost. When sum q_k is finite,
+the native series converges strongly in clock L2 for every positive horizon H.
+Its finite-grid L2 norm is bounded by3H sum q_k, uniformly in grid size and all
+observation times. With value summability as well, native_lower identifies its
+L1 lowering with the ORIGINAL nativeOperator acting on the actual observable
+at EVERY grid size. This is not merely an expectation identity.
+
+The limiting L2 random variable is proved almost-everywhere equal to
+
+    sum_k -(w_k/2) cos(beta_k) exp(-norm(u_k(Y))^2/2) K_k(H,Y),
+
+where u_k(Y)=sum_i a_ki clockDirection(r_i,Y), and K_k is the already verified
+finite-ridge double sum of endpoint overlap products minus actual clipped-clock
+occupation kernels. The class-to-literal-series identification uses proved norm
+summability and the original Lp.coeFn_tsum theorem. The Gaussian damping and ALL
+mixed-time terms survive; no cross-term factorization is inserted.
+
+If two admissible presentations give the same actual joint-AE observable, their
+limits coincide in clock L2. The proof uses original fixed-grid source testing,
+uniqueness of L1 limits and1514 clockL1_injective; it assumes no injectivity of
+frequency coefficients or ridge symbols. Uniform convergence of VALUES, clock-L2
+convergence of RANDOM native actions, and source-operator L1 convergence are
+separate verified statements, not interchangeable topologies.
+
+### Independent limitation tests and remaining obligations
+
+Twelve independent Lean checks pass. They test the zero-direction phased mean;
+nonzero half-curvature at zero direction; the two-coordinate cosine-product
+identity; actual unbounded-harmonic curvature summability and value summability;
+pointwise consequence of the global uniform limit; literal actual-observable
+joint-L2 membership; arbitrary cofinal grid extraction; zero-horizon random
+annihilation; source-limit uniqueness; vanishing odd-phase coefficient; and
+vanishing native random action of that odd phase at EVERY finite grid.
+
+In particular beta=pi/2 gives zero second-chaos coefficient for every u. This
+records a real limitation of the native second-chaos testing action; the new
+positive domain does not supply observable reconstruction or an injective
+stochastic integral. Existing positive-time sine domain exclusions and all
+native-Hilbert weak-limit obstructions remain unchanged. No full intrinsic IBM
+Ito/Tanaka or temporal Malliavin Clark--Ocone theorem is claimed.
+
+Open: arbitrary multivariate C2 cylinder representation; density or graph closure
+of the Fourier domain; termwise differentiated Fourier sums and a complete
+intrinsic operator-domain theorem; conversion of these native tests into a full
+physical-time IBM change-of-variables identity. Individual modes are bounded C2,
+but this checkpoint does not claim a proved C2 theorem for the completed F.
+A productive continuation is to connect the explicit Gaussian-damped native
+kernel to a precise intrinsic IBM chain/closure obligation, rather than merely
+accumulate further named function classes. Reuse completed F1--F3 reductions.
+
+### Verification and preservation
+
+Complete root build: PASS,6737jobs,43.552277seconds. Complete transitive safe
+Foundation axiom audit: PASS,49164declarations,40.510965seconds; only propext,
+Classical.choice and Quot.sound. All36 new public theorem/definition types were
+read UNABRIDGED, and both complete new modules plus root/AxiomAudit changes
+were reviewed. Independent12-check run: PASS,28.721700seconds. The preceding
+10-check run also passed27.476860seconds; the12-check repeat specifically added
+odd-mode limitation tests. The first scratch run failed28.524283seconds on a
+missing explicit real type for the natural-cast nonnegativity proof; retained.
+
+Development logs preserve failed derivative normalization, complex real/imaginary
+simplification, cast/map normalization, actual-class coercion and absolute-value
+parser attempts. The final characteristic proof directly reuses the original
+firstChaos_charFun, avoiding a redundant Gaussian law derivation. Target8 passed
+before the final native bound/presentation-independence additions; only the full
+build/audit certify the final sources. No failed or stale run is certification.
+
+The frozen manifest covers2564 Foundation/root files; only root/AxiomAudit change
+among old mathematical sources. Configuration3 and all113 archive paths/SHA256
+hashes match the preserved baseline/inventory1292. ResearchSources stays read-only
+and uncommitted; unrelated plans/drafts/tmp are preserved. No toolchain, resource,
+trust, cache, transparency or linter configuration changed. Exact-commit receipt
+and verified PRIVATE main/research backups follow the established closure gate.
