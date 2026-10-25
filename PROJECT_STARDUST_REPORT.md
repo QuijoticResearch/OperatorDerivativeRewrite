@@ -46570,3 +46570,101 @@ changed except root/AxiomAudit registration. ResearchSources, manuscripts,
 instructions and unrelated drafts remain untouched/uncommitted as appropriate.
 Explicit five-path audited Git commit, exact receipt and verified PRIVATE
 main/research backup close this checkpoint. IBM remains ACTIVE.
+
+## Checkpoint1526 — nonlinear shrinking-scenery prediction and its obstruction
+
+October25,2026. IBM remains ACTIVE; queue c34f3ed unchanged. At the completed1525
+checkpoint, returned to the unaveraged/observed frontier. Audited exact existing
+IBMTerminalSelfRepresentation, IBMObservedInitialGerm, clipped-scenery forecast,
+clock-germ localization, bounded whole-past factors and Gaussian conditional/Wick
+machinery. No reflection session, manuscript processing or queued campaign began.
+
+Reuse audit: target-indexed observed self-representation gives F-channel(F,0),
+not automatically a canonical physical integral. Coordinate initial channels
+vanish, but that theorem is not whole-germ triviality. A useful rigorous route
+is nonlinear prediction under shrinking scenery histories, followed by exact
+path-history identification and clock/joint localization. No general Blumenthal
+zero-one theorem for actual IBM was found in the inspected library, and no such
+result was assumed. Existing GaussianSingleObservationPrediction supplies the
+Wick-span density; GaussianWickConditionalProjection supplies exact prediction
+through the first-chaos source projection. Those results avoid new chaos or
+probability-space infrastructure.
+
+PROVED GaussianVanishingPrediction.single_tendsto: let h_n be arbitrary actual
+Gaussian observation families with a fixed, possibly uncountable index type,
+and let u be a source Hilbert direction. If sourceProjection(h_n)u tends STRONGLY
+to zero, then for EVERY F in singleGenerated(u), conditionalProjection(h_n)F
+tends STRONGLY in original GaussianL2 to E[F] gaussianOne. No smoothness,
+Lipschitz, boundedness or polynomial restriction on F is imposed. The equivalent
+first-chaos prediction premise is exported by single_from_linear_prediction;
+centered predictions tend to zero. Proof: exact Wick prediction plus continuity
+in the source direction gives all finite Wick degrees; uniformly 1-Lipschitz
+orthogonal projections make the convergence domain a closed linear subspace;
+the existing complete Wick-span closure then extends the result to its full
+one-observation measurable L2 domain. No restriction to test-probe convergence
+or an unproved dense extension is substituted.
+
+persistent_single_constant: if such an F also belongs to every generated(h_n),
+then F=E[F] gaussianOne. This is a precise intersection result WITH its stated
+one-observation domain and source-projection premise, not a universal claim
+about arbitrary nonlinear filtrations or the entire ambient Gaussian space.
+
+PROVED IBMSceneryGaussianGerm: use the verified positive Brownian scenery
+directions v_r, with inner(v_r,v_s)=min(r,s), and clipped family h_delta(r)=
+v_min(r,delta). history_actual identifies each Gaussian coordinate class with
+the ACTUAL sceneryPath evaluated at min(r,delta), AE at each fixed index.
+The exact first-chaos projection is
+
+    sourceProjection(h_delta) v_r = v_min(r,delta).
+
+Therefore, for ANY sequence delta_n>=0 tending to zero (monotonicity not needed),
+the projections of every finite signed ridge u=sum_j b_j v_(r_j) tend strongly
+to zero. nonlinear_finite_ridge_tendsto proves conditional predictions of EVERY
+F in singleGenerated(u) tend strongly to E[F] gaussianOne; a persistent such
+F is constant. Repeated times, zero coefficients and cancellation are allowed.
+Here finite RIDGE means an arbitrary measurable L2 function of ONE linear
+combination of finitely many scenery coordinates. It is not yet an arbitrary
+multivariate function of the whole finite coordinate vector.
+
+RIGOROUS OBSTRUCTION to a tempting shortcut: scaled_source_prediction proves
+sourceProjection(single observation c*u)u=u for EVERY c!=0. The independent
+checks set c_n=2^(-n): the observation directions tend to zero in norm, but
+conditional prediction of firstChaosEmbedding(u) is exactly itself for each n
+and cannot tend to zero if u!=0. Small observation amplitudes alone do not imply
+loss of information or a trivial germ. The true projection premise and actual
+clipped Brownian covariance are essential. No counterexample to actual IBM germ
+triviality is claimed by this different observation-family example.
+
+Exact remaining IBM bridge: identify completed Gaussian scenery history spaces
+with the path-based spatial histories used in IBMClippedForecastPairing, without
+silently replacing individual coordinate AE equalities by a simultaneous
+uncountable-index event. A countable dense path skeleton with continuity, or a
+completed L2-space argument, is a candidate construction, not a proved bridge.
+Extend the ridge result to the needed joint/multivariate observables via a
+justified totality theorem; handle measurable random clock directions and their
+source/clock joint limits; and control the clock germ using the existing
+Brownian PRP/cutoffs where hypotheses genuinely apply. Only afterward can these
+results discharge the actual observed initial-germ/reconstruction obligation.
+Neither actual whole IBM-germ triviality nor a full intrinsic IBM calculus was
+declared complete. This is a standard Gaussian/Wick-density mechanism, with
+verified application to the actual source classes; no external novelty claim.
+
+Verification: full ROOT build PASS6757jobs56.035811s (the earlier41.794694s build
+was followed by the new scaling obstruction and a fresh full build). Complete
+safe transitive Lean.collectAxioms audit PASS49531declarations39.535221s; only
+propext, Classical.choice and Quot.sound. All21 new public types read UNABRIDGED;
+all two new source definitions/proofs and root/audit additions fully reviewed.
+Eight independent Lean checks PASS31.658398s: shrinking raw amplitudes, preserved
+conditional coordinate prediction, failure of prediction decay for nonzero u,
+centered quadratic decay, noncentered quadratic-plus-constant mean limit, exact
+positive-time projection energy, signed ridge cancellation, and impossibility
+of a genuine unit-scenery centered quadratic persisting in every shrinking
+Gaussian history. Earlier targeted elaboration errors preserved in1526logs;
+repaired without resource/transparency/linter overrides or unapproved axioms.
+
+All2584 Foundation/root sources frozen, configuration3 and archive113paths/hashes
+unchanged against their authoritative baseline/inventory. No original math
+changed except root/AxiomAudit registration. ResearchSources, manuscripts,
+instructions and unrelated drafts preserved. Explicit five-path audited commit,
+exact receipt and verified PRIVATE main/research synchronization close this
+checkpoint. IBM remains ACTIVE; continue the history bridge, not a new campaign.
