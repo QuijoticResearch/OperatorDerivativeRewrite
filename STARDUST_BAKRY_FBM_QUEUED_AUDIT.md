@@ -79,7 +79,8 @@ infrastructure; a mathematical note with exact declarations; and a literature/
 novelty audit. Construct infrastructure where justified by reusable mathematics,
 not merely to accumulate isolated process examples. No proposed correspondence
 is accepted as true by this queue update. Objective 2's mathematically justified,
-fully audited/committed/PRIVATE stopping checkpoint gates Cauchy.
+fully audited/committed/PRIVATE stopping checkpoint gates the queued Yang–Mills
+audit; that audit's corresponding checkpoint gates Cauchy.
 
 ## Queue and standards
 
@@ -87,8 +88,11 @@ fully audited/committed/PRIVATE stopping checkpoint gates Cauchy.
 2. NEXT, after IBM completion and verified checkpoint: the two Bakry–Émery repairs,
    related fBM survey and selected focus (Objective 1), then Objective 2 above
    after its explicit prerequisite gate closes.
-3. NEXT after this Bakry–Émery/fBM campaign: the Cauchy manuscript audit and
-   Lean repair in `STARDUST_CAUCHY_QUEUED_AUDIT.md`, with the same full gates.
+3. NEXT after both Bakry objectives: the bounded Yang–Mills manuscript,
+   Bałaban-compression and checkerboard audit in
+   `STARDUST_YANG_MILLS_QUEUED_AUDIT.md`; after its fully audited/private
+   checkpoint, return to the Cauchy manuscript repair in
+   `STARDUST_CAUCHY_QUEUED_AUDIT.md`. No indefinite Yang–Mills extension is authorized.
 4. NEXT after Cauchy: iterated/time-changed pseudoprocess calculus, then the
    A(2)/RH revisit, each with its existing stopping and full PRIVATE gates.
 5. NEXT after A(2)/RH: fractional-diffusion manuscript audit and Lean repair;
@@ -97,8 +101,8 @@ fully audited/committed/PRIVATE stopping checkpoint gates Cauchy.
    `BLACKITO_MANUSCRIPT_AUDIT.md`; see `STARDUST_BLACK_NOISE_QUEUED_AUDIT.md`.
 7. NEXT after black noise: AI mathematics exploration, then cumulative autonomous
    Stardust research from the existing backlog. These later priorities merely
-   restate the authoritative queue; the October25 amendment changes only the
-   internal sequential objectives of the Bakry–Émery campaign.
+   restate the authoritative queue; the October25 Yang–Mills amendment inserts
+   only the bounded audit between Bakry Objective 2 and Cauchy.
 
 No expiration date is introduced. October 31 remains a review milestone only.
 Keep complete root builds, complete transitive axiom audits, unabridged public

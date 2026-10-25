@@ -1,12 +1,13 @@
-# Queued after Bakry–Émery/fBM: Cauchy manuscript audit and Lean repair
+# Queued after the Yang–Mills audit: Cauchy manuscript audit and Lean repair
 
 User directive, October 21, 2026. QUEUED; mathematical review not started.
 
 Sequential queue: complete actual intrinsic IBM calculus first; then the
-Bakry–Émery manuscript repairs and related fBM survey/selected research focus;
-then give the Cauchy paper the same rigorous treatment. Do not start this
-campaign before the preceding Bakry–Émery/fBM campaign reaches its
-mathematically justified, fully audited and privately backed-up checkpoint.
+Bakry–Émery manuscript repairs/fBM survey and Objective 2; then the bounded
+Yang–Mills audit in `STARDUST_YANG_MILLS_QUEUED_AUDIT.md`; then give the Cauchy
+paper the same rigorous treatment. Do not start Cauchy until that audit reaches
+its mathematically justified, fully audited, committed and privately backed-up
+checkpoint. Both earlier Bakry completion gates remain prerequisites.
 Keep precise stopping qualifications; do not label a conditional or partial
 result as completion. October23 amendment: immediately after Cauchy, the
 iterated/time-changed pseudoprocess campaign is next, as specified in

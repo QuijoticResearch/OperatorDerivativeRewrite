@@ -51,12 +51,31 @@ a diffusion spectral gap supplies no quantum Yang–Mills mass gap. Prefer exact
 theorem reuse, transferable results and explicit obstructions. Preserve the
 brief's six deliverables, literature/novelty audit and every existing verification
 gate. Objective 2 must reach its fully audited/private stopping checkpoint
-BEFORE Cauchy. IBM remains ACTIVE; no early research or other priority changes.
+BEFORE the queued Yang–Mills audit. IBM remains ACTIVE; no early activation.
 
-**AFTER the Bakry–Émery/fBM campaign:** audit and rigorously repair
+**QUEUED AFTER Bakry–Émery Objective 2, BEFORE Cauchy: Yang–Mills research
+audit.** Activate only after BOTH Bakry objectives are completed, consolidated,
+fully audited, committed and privately backed up. Follow the complete user
+brief in `STARDUST_YANG_MILLS_QUEUED_AUDIT.md`: reconstruct all distinct incoming
+Yang–Mills approaches and revisions; audit claimed Bałaban simplifications
+against original gauge-fixing, background-field, local/global, multiscale,
+large/small-field, covariance, ultraviolet and continuum estimates; recover the
+SU(2) checkerboard compatibility obstruction; reuse exact verified foundations;
+and formalize independently meaningful claims or counterexamples. Filenames
+are discovery hints, not an authoritative version list. Distinguish finite
+lattices, scale-uniform estimates and continuum quantum-field constructions.
+No finite-dimensional spectral gap or formal RG calculation establishes the
+Millennium mass gap. Preserve all seven deliverables, precise hypotheses,
+private manuscripts/findings and existing verification/source/backup gates.
+This is a bounded audit, NOT authorization for an indefinite Yang–Mills campaign.
+After its fully audited/committed/PRIVATE stopping checkpoint, return to Cauchy
+unless the user explicitly changes priorities. IBM remains ACTIVE. This
+October25 insertion changes no other campaign or mathematical result.
+
+**AFTER the Yang–Mills audit:** audit and rigorously repair
 `ResearchSources/cauchy/stochastic_cauchy_operator_v4.tex` with the same Lean,
 domain, independent-test, counterexample and manuscript-preservation standards.
-Begin only after Bakry–Émery/fBM reaches its fully audited/private checkpoint;
+Begin only after the Yang–Mills audit reaches its fully audited/private checkpoint;
 see `STARDUST_CAUCHY_QUEUED_AUDIT.md`. IBM remains ACTIVE and Bakry/fBM NEXT.
 
 **IMMEDIATELY AFTER Cauchy, BEFORE the A(2)/RH revisit:** investigate a rigorous calculus

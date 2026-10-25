@@ -46876,3 +46876,30 @@ remain untouched. October25 reflection already consumed; no housekeeping run.
 The exact-commit receipt, terminal verification record and both PRIVATE
 main/research ref comparisons close this checkpoint after its explicit commit;
 no next proof or transition is certified by this pre-commit report alone.
+
+## October25 instruction-only queue amendment — bounded Yang–Mills audit
+
+The complete user brief is preserved byte-for-byte in
+`STARDUST_YANG_MILLS_QUEUED_AUDIT.md`. Queue: IBM ACTIVE -> Bakry Objective 1
+(both manuscripts and fBM survey/focus) -> Bakry Objective 2 -> bounded
+Yang–Mills audit -> Cauchy -> iterated/time-changed pseudoprocesses -> A2/RH
+-> fractional diffusion -> black noise -> AI -> cumulative backlog. Each
+existing completion, full verification and exact PRIVATE checkpoint gate is
+preserved. No expiration date; October31 review only.
+
+The audit must reconstruct distinct manuscripts/versions, compare every claimed
+Bałaban compression with original hypotheses and scale-uniform obligations,
+recover the SU(2) checkerboard local/global obstruction, reuse verified exact
+operator/curvature/gauge machinery, formalize concrete valid claims or
+counterexamples, and map the remaining four-dimensional existence/mass-gap
+obligations. All seven deliverables and private-disclosure requirements remain
+in force. Finite lattice positivity, finite-dimensional spectral gaps and
+formal RG are not continuum existence or a physical mass gap. Return to
+Cauchy after the bounded audit; no indefinite Yang–Mills campaign is authorized.
+
+No manuscript inventory/audit was activated now. IBM proof drafts, active build,
+original manuscripts and configurations are preserved. This instruction-only
+commit excludes every unfinished 1529 mathematical source and the preceding
+in-progress ledger entry. Its committed Lean/configuration tree must equal the
+fully audited 1528 baseline exactly; verification evidence is reused only for
+that unchanged committed mathematics, never for the active uncommitted drafts.
