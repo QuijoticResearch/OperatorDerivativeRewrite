@@ -154,4 +154,8 @@ theorem error_actual (T : ℝ≥0) (N : ℕ) :
   simp only [Finset.sum_apply]
   exact Finset.sum_congr rfl fun i _ => hi i
 
+theorem finite_sum_energy {n : ℕ} (v : Fin n → GaussianL2) :
+    ‖∑ i, v i‖^2 = ∑ i, ‖v i‖^2+
+      2*∑ j, ∑ i, if i < j then inner ℝ (v i) (v j) else 0 := sum_energy v
+
 end OperatorDerivativeRewrite.Foundation.GaussianTerminalStrongBracket

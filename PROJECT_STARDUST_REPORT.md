@@ -42792,3 +42792,114 @@ imports/AxiomAudit extend their existing files. All113 archive hashes unchanged.
 
 Measured terminal wall seconds: full-build=24.899, audit=40.811, independent=25.799.
 Explicit reviewed-path Git checkpoint, exact audit receipt and verified PRIVATE main/research synchronization follow. Unrelated untracked files remain excluded.
+
+## Checkpoint1492 — actual future-terminal bracket with cell/refinement-dependent weights
+
+IBM remains ACTIVE; queue8280325 and all gates unchanged. Previous goal turn1491
+was PROGRESS, closed at fully audited/private
+1bfa4b0eee1518c407f170358040f318c639ae09. This checkpoint continues the SAME
+actual native IBM observable-limit investigation, without new campaign,
+reflection reservation or assumption of full calculus completion.
+
+Primary archive: ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All113 ResearchSources paths/hashes match inventory1292 and remain read-only,
+unmodified and excluded from Git. Actual IBM is the reflected-clock process
+Z_t=B(|W_t|); no unproved two-sided-outer-Brownian law identification.
+
+The initial theorem-level reuse audit examined IBMNativeClockRecovery,
+IBMClockObservationConverse and IBMObservableQuartic. Their recovery maps
+recover derivatives/fields via verified adjoints; they do NOT establish that
+the hidden absolute clock path is measurable from the observed IBM path.
+IBMContinuousWeightedQuartic.weighted_tendstoInMeasure has the deterministic
+quartic density3dt, not a recovered random |W_t| path. Thus neither these
+names nor that limit justifies removing the intrinsic observable projection.
+No new clock-recovery impossibility theorem is claimed: the proposed reuse
+implication lacks the required theorem. The projection remains present.
+
+A selective literature check distinguished topologies and processes. The
+author-hosted arXiv abstract of Burdzy--Swanson, A change of variable formula
+with Ito correction term, arXiv:0802.3356v4, Ann.Probab.38(2010),1817--1869,
+https://arxiv.org/abs/0802.3356, concerns a FIXED-SPACE stochastic-heat-equation
+solution and midpoint limits IN DISTRIBUTION, with an independent-Brownian
+correction. The abstract was read, not its full proof. It supplies no Lean
+lemma or identification of our intrinsic IBM grid limit. A search surfaced
+the Washington repository item Variation of iterated Brownian motion, but
+direct access returned403; no theorem from that inaccessible item is adopted.
+These records avoid conflating similar quartic-variation problems; no novelty
+claim or external theorem is used in the new proofs.
+
+The concrete next issue is an IBM terminal-square probe at R DIFFERENT from
+the grid horizon H. The clock bracket then has weights phi_i(W_left_i,W_R).
+For R>H, the existing GaussianTerminalBracketPrediction.generated_pairing_bound
+is valid at every grid cell and has denominator R-left_i>=R-H>0. This is a
+genuine positive-gap estimate, not an extrapolation of the R=H endpoint theorem.
+
+Foundation/GaussianFutureTerminalBracket.lean constructs the ORIGINAL clock-L2
+actual centered error on N+1 uniform cells:
+ E_N=sum_i [(Delta_i W)^2-Delta_i t]*phi_i(W_left_i,W_R).
+Every phi_i is Borel and bounded by one. The public varying_error_tendsto
+permits the ENTIRE family to depend on N AND i with a common bound; continuity,
+positivity or a convergence hypothesis on those weights is NOT required.
+error_actual proves exact AE agreement with the literal finite stochastic sum.
+The existing actual Wick increment and bounded product constructions are reused.
+
+The cross-cell row_j=sum_(i<j) xi_i*phi_i*phi_j is in the exact later domain
+generated(observation(left_j,R)), with norm<=2H. This membership is proved
+before the pairing estimate, using the existing pairCoefficient_generated.
+No predictability of the future-dependent weight is asserted. Its pairing
+with wick_j has absolute value <=4H^3/((N+1)^2*(R-H)). The finite energy
+decomposition then proves, for EVERY H>=0, R>H, N and such weight family,
+ norm(E_N)^2 <=4H^2/(N+1)+8H^3/((N+1)*(R-H)).
+Hence E_N->0 STRONGLY in the original clock GaussianL2, even with weights
+changing at every cell/refinement. All times, integrability, products and AE
+representatives are actual existing Gaussian objects; no process law is added.
+
+GaussianTerminalStrongBracket receives ONLY FOUR APPENDED LINES exposing its
+already proved private sum_energy as finite_sum_energy, so that the exact
+finite Hilbert decomposition is reused rather than reproved. The old source's
+entire normalized body is unchanged, checked against its frozen baseline SHA
+and full prefix. No previous declaration, hypothesis or proof is changed.
+
+The positive-gap constant degenerates as R decreases to H. This bound does
+NOT establish a uniform endpoint estimate or failure of endpoint convergence.
+The separately verified1491 R=H theorem remains available and is independently
+checked here. R<H is not covered: the observation becomes past partway through
+the grid, requiring an explicit split/straddling-cell argument. Arbitrary
+future-measurable weights remain outside the theorem, preserving1488's
+all-anticipative-weight obstruction.
+
+Precisely OPEN: separate-horizon random-terminal boundary occupation and capped
+QV strong limits, original intrinsic terminal-square pairing limits for R!=H,
+multiple-time observable products and a sufficiently rich actual IBM test
+domain, convergence of the ENTIRE projected native output, and full intrinsic
+Ito/Clark--Ocone closure/calculus. The current result is the stochastic bracket
+estimate needed to address those obligations, not their assumed completion.
+The explicit occupation mean value proposed1490 is also still unverified.
+
+TEN independent Lean tests pass SECOND RUN: later generated-row membership,
+uniform row norm, actual physical finite sum, explicit H=1/R=2 bound12/(N+1),
+zero-horizon equality, fully varying Borel weight limit, completely arbitrary
+cell/refinement-dependent outer-band widths, nonsmooth interior weight limit,
+the OLD critical R=H theorem, and exact finite energy identity. First-run
+zero-horizon simplification already proved error=0; the redundant norm tactic
+was removed and the equality used directly. Failed log/time preserved, with
+no mathematical source edit after full build/audit for the test repair.
+
+Development target1 failed on NNReal-versus-real subtraction inference,
+division normalization and an unnecessary simplifier after convert. Target2
+passes after explicit real coercion, field normalization with PROVED nonzero
+denominators, and direct convergence equality. No resource or trust setting
+changes; style/deprecation warnings are retained, never suppressed.
+
+Both COMPLETE final sources, including private proofs, were read in full.
+All11 new public declaration types were printed UNABRIDGED and reviewed.
+Complete6660-job root build and complete Lean.collectAxioms audit of ALL47795
+safe Foundation declarations pass, allowing ONLY propext, Classical.choice,
+Quot.sound. All2488 Foundation/root hashes, three unchanged configuration
+hashes and113 archive hashes are frozen/rechecked. The ONE explicitly reviewed
+old mathematical source addition is append-only verified; integrity checks
+are not weakened. Every other previous mathematical source is unchanged.
+
+Measured terminal wall seconds: full-build=42.171, audit=37.544, independent=26.371.
+Explicit-path Git checkpoint, exact audit receipt and verified PRIVATE main/research synchronization follow. Unrelated untracked sources and manuscripts remain excluded.

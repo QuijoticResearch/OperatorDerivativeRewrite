@@ -2385,3 +2385,4 @@ import Foundation.IBMClippedClockLimit
 import Foundation.GaussianTerminalBracketProducts
 import Foundation.GaussianTerminalStrongBracket
 import Foundation.IBMClippedClockStrongLimit
+import Foundation.GaussianFutureTerminalBracket
