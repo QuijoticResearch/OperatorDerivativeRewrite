@@ -2416,3 +2416,7 @@ import Foundation.IBMCenteredAbsoluteVariation
 import Foundation.IBMFoldedVariationBound
 import Foundation.IBMClockVarianceBound
 import Foundation.IBMNativeGridEscape
+import Foundation.IBMFoldedSmoothQuadraticError
+import Foundation.IBMFoldedWeightedLoss
+import Foundation.IBMAllSchwartzWickLimit
+import Foundation.IBMAllSchwartzSourceReconstruction

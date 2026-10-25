@@ -43889,3 +43889,112 @@ Evidence: .lake/stardust-1500-working-checkpoint.json,
 explicit reviewed-path Git commit and exact-commit receipt plus verified
 PRIVATE main/research synchronization close the checkpoint separately. Only
 reviewed mathematics, audit/root imports and this ledger are included.
+
+## Checkpoint1501 — all Schwartz physical source probes, without parity
+
+IBM remains ACTIVE; queue8280325 unchanged. The preceding goal turn made
+PROGRESS by closing1500's ORIGINAL projected-grid L2 norm-escape obstruction
+at53766b4 with exact PRIVATE main/research verification. This turn revalidated
+that checkpoint and pursued its actual weak-source-test alternative. The
+saved mixed actual IBM observation probes already have verified1495 limits;
+those theorems were reused as context rather than rebuilt. No queued campaign,
+reflection/housekeeping admission or parallel research session was opened.
+
+The primary IBM source is still ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All113 archive paths/hashes remain identical to inventory1292. No manuscript
+file is modified or staged. There is no external novelty assertion for this
+Taylor/quadratic-variation argument. The actual process remains B(|W_t|),
+with ORIGINAL physical scenery isometry and actual Gaussian clock.
+
+IBMAllSchwartzSourceReconstruction.original_action_tendsto now proves, for
+EVERY REAL Schwartz primitive g and EVERY T>0, convergence of the ORIGINAL
+IBMRawGridWickLimit.action g T N strongly in CLOCK L1 to
+ lower[(g(|W_T|)-g(0))^2] - lower[drift(g,T)].
+Here drift(g,T) is the actual GaussianL2-valued Bochner integral on [0,T] of
+GaussianLipschitzIntegrands.valueL2 for psi_g(x)=(g'(|x|))^2; lower is the OLD
+IBMClippedClockStrongLimit.clockL1 map with its actual AE representative theorem.
+The finite source action is still the scenery inner-product against
+wick(testDirection g,2), applied to the ORIGINAL compensated sourceGrid.
+Its exact sourceSum representative and primitive relation are reused.
+
+The old action_tendsto theorem required g even and gave strong clock L2.
+That stronger theorem is preserved unchanged. The NEW theorem removes parity
+with strong clock L1. No claim of full L2 convergence for arbitrary g is made.
+The limit is displayed using actual clock GaussianL2 terminal/drift classes,
+but the proved convergence topology of the source actions is L1. No candidate
+pointwise derivative of x->g(|x|) at zero is asserted or assumed.
+
+IBMFoldedSmoothQuadraticError uses the OLD C2 Taylor error of g evaluated at
+nonnegative radii |x|,|y|. If A,B bound its first/second derivatives, then
+ |(delta g)^2-(g'(|x|))^2(delta |x|)^2| <=AB|y-x|^3.
+The absolute-value contraction and actual old Gaussian cubic increments give
+actual MemLp2 error cells and a finite error sum E_N with
+ ||E_N||_2^2 <=15(AB)^2 T^3/(N+1), hence strong L2 convergence to0. Derivative
+bounds are supplied by the verified Schwartz seminorm firstBound/secondBound.
+No new moment or conditional-independence hypothesis is introduced.
+
+IBMFoldedWeightedLoss proves psi_g globally Lipschitz with constant2AB and
+0<=psi_g<=A^2. The literal weighted loss between ordinary and folded quadratic
+variation is nonnegative and at most A^2 times1499's ACTUAL folding loss.
+It is integrable, has an actual clock L1 class with norm bound
+ ||weightedLoss_N||_1 <=A^2 ||oldLoss_N||_1, and tends strongly to zero forT>0.
+Thus the folding singularity is controlled by verified origin-band/tail work,
+not by an unjustified C2 assumption on the folded primitive.
+
+IBMAllSchwartzWickLimit reuses OLD GaussianLipschitzQuadraticVariation.error
+and GaussianSmoothIto.driftSum for the actual weight psi_g. Their sum is
+EXACTLY sum_i psi_g(W_left)(delta W)^2 and converges strongly in clock L2 to
+the displayed Bochner drift. The constructed clock L1 quadratic class is
+lower[E_N+weighted_N]-weightedLoss_N. Its AE representative is the LITERAL
+sum_i (g(|W_right|)-g(|W_left|))^2, and it converges strongly L1 to lower(drift).
+All finite identities includeT=0; the singular-limit theorem statesT>0.
+
+IBMAllSchwartzSourceReconstruction gives the actual terminal square MemLp2,
+then proves the EXACT L1 identity, for everyg,T,N,
+ lower(originalAction_N)=lower(foldedTerminal)-foldedQuadratic_N.
+The proof uses old source_test_telescope and clock_primitive, matches the Fin
+uniform grid to the original Nat grid, and uses Gaussian initial zero only AE.
+It consequently obtains original_action_tendsto with no parity hypothesis.
+This is a genuine limiting identity of the preexisting stochastic source test,
+not an integral defined merely by assigning the desired output.
+
+Independent tests include the existing concrete non-even Schwartz
+oddPart(x)=x exp(-x^2): its non-evenness and derivative1 at zero are verified,
+and the new original_action_tendsto theorem applies without any parity premise.
+A scalar crossing example distinguishes delta g(|W|) from delta g(W); replacing
+the folded process by an unfurled process would give0 versus4 for squared
+linear increments at endpoints-1,+1. This guards the exact process convention.
+
+Scope still OPEN: a bounded completed SOURCE test-domain extension, bilinear/
+mixed primitive presentation consistency, clock-dependent test probes, and a
+transfer to an appropriate original observable weak/dual topology. No density,
+Sobolev H^{-1} realization, global weak convergence, or full intrinsic IBM
+calculus follows merely from fixed-probe convergence. In particular1500's
+whole ORIGINAL projected native-grid norm escape remains unchanged. The next
+productive target is quantitative test-domain control and mixed primitive
+polarization, using the now unrestricted actual Schwartz probe theorem. Do
+not confuse this with an ordinary probability martingale representation or
+reopen any frozen/queued campaign.
+
+Verification: finaltarget7 PASS; full root build6695 jobs PASS29.064774s;
+COMPLETE transitive Lean.collectAxioms audit48310 safe Foundation declarations
+PASS41.054715s, only propext/Classical.choice/Quot.sound. ALL31 new public types
+printed/read unabridged and ALL4 complete source files reviewed, including
+private time_grid and the actual finite representatives. Twelve independent
+Lean checks PASS28.729125s, including concrete odd/nonzero-origin-jet probes,
+zero horizon finite identity, literal quadratic-sum MemLp1, weighted loss
+convergence, positive horizon reconstruction, and folded/unfolded crossing
+countertests. No independent-check failure was hidden; all checks passed.
+Earlier failed targeted logs are retained; repairs concern differentiability-
+order coercions, explicit function unfolding and one scalar cancellation.
+Original2522 Foundation/root sources and3 configuration hashes frozen/rechecked;
+only root/AxiomAudit changed among OLD Lean sources. No resource, heartbeat,
+trust, linter, toolchain or theorem-semantic changes; style warnings retained.
+External Lean jobs serialized, existing live handles polled until terminal.
+
+Evidence: .lake/stardust-1501-working-checkpoint.json,
+.lake/stardust-1501-{full-build,audit,independent}.log and timing JSON,
+.lake/stardust-1501-verification.json. Explicit reviewed-path commit and exact
+receipt/PRIVATE main+research sync close this checkpoint separately. Unrelated
+untracked plans,tmp and ResearchSources remain untouched and uncommitted.
