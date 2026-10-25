@@ -2435,3 +2435,7 @@ import Foundation.IBMSpatialMixedWickTesting
 import Foundation.IBMSpatialPathOccupation
 import Foundation.IBMSpatialPathReconstruction
 import Foundation.IBMSpatialOccupationMeasure
+import Foundation.IBMWeakRandomEvaluation
+import Foundation.IBMSpatialRandomTestBounds
+import Foundation.IBMSpatialRandomTestConvergence
+import Foundation.IBMSpatialSignedRandomTests

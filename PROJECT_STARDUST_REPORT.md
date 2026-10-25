@@ -44445,3 +44445,127 @@ full-build/audit/independent logs and actual timing JSON, target1--5 logs,
 first-failed independent logs and .lake/stardust-1505-verification.json. Explicit
 reviewed-path Git commit/exact receipt/BOTH PRIVATE backups close separately.
 Unrelated untracked plans, tmp and source archive preserved.
+
+
+## Checkpoint1506 — full Bochner-L2 clock-dependent spatial testing
+
+October25,2026; terminal start02:24:15 America/New_York, final independent
+PASS02:55:51. IBM ACTIVE; queue8280325 unchanged. Previous1505 PROGRESS;
+this1506 PROGRESS. No reflection session or campaign transition.
+
+Four new modules: IBMWeakRandomEvaluation, IBMSpatialRandomTestBounds,
+IBMSpatialRandomTestConvergence, IBMSpatialSignedRandomTests. This completes
+the previously open RANDOM spatial-test extension on the precise domain
+  RandomTests = Lp(CompletedSpatialTests,2,gaussianProduct).
+CompletedSpatialTests retains1503's exact canonical uniform completion and
+inherited supremum norm, realized in the uniform closure of bounded Lipschitz
+tests. EVERY input in this Bochner-L2 domain is covered. It may depend on the
+SAME clock sample as the kernel; no independence, bounded range, finite rank,
+or predictable-test assumption is added. Arbitrary merely measurable or
+non-square-integrable inputs are outside this theorem.
+
+First, scalar evaluation measurability is constructed without assuming strong
+norm-dual measurability: for a weakly measurable path of bounded linear
+functionals and strongly measurable random input, SimpleFunc.measurable_bind
+and the actual simple approximation prove measurable evaluation. The AE version
+uses the genuine strongly measurable representative. Given a genuine random
+L2 majorant w with ||A(Y)x||<=|w(Y)| ||x|| simultaneously for all x almost
+surely, evaluation is integrable on EVERY Bochner-L2 input. The actual L1
+classes define a continuous linear map, with norm bound
+  ||evaluation(f)||_L1 <= ||w||_L2 ||f||_L2.
+Existing BochnerL2RepresentativeFubini.pairing_norm_integral_le supplies the
+Cauchy--Schwarz estimate; only a necessary pointwise norm-class helper is added.
+No whole-dual-valued Bochner random variable is introduced.
+
+Second, the ACTUAL positive spatial finite kernel is a pathwise functional
+finitePath(T,N,Y) on the completed spatial tests. Its simultaneous random
+bound is the actual Brownian squared-increment sum, using foldedSum<=rawSum.
+The original exact uniform_quadraticVariation_error proves
+  ||quadraticVariation(uniformTime(T,N))||_L2 <= 3T for EVERY N,T>=0.
+Thus finiteOperator and the actual path-occupation limit are bounded linear
+maps RandomTests->clockL1 with uniform action bounds 3T||u||_L2. These are
+actual evaluations of native finite kernels and occupation on u(Y), not an
+assumed extension of deterministic convergence. AE identities and integrability
+are proved before using any dense approximation.
+
+Third, simple_error_bound controls the random error for a FINITE-VALUED L2
+input by the sum of deterministic completed-test L1 errors over its finite
+range. Only a specified finite family of actual AE identities is intersected.
+The pointwise chosen test may be arbitrarily correlated with the kernel;
+no independence step occurs. simple_tendsto follows from the old deterministic
+theorems. The EXISTING Mathlib Lp.simpleFunc.denseRange in L2, uniform native
+and limit bounds, and an explicit epsilon/3 estimate prove random_tendsto:
+actual finite positive kernel actions converge STRONGLY in clockL1 for EVERY
+u:RandomTests to the actual continuous-clock diagonal occupation evaluated at
+realize(u(Y)). This discharges this exact random-test convergence obligation.
+
+Fourth, the endpoint functional has an ACTUAL L2 random bound clockPath(Y,T)^2:
+clock_square_memLp is proved from the original Brownian FOURTH moment/MemLp,
+then transported through the verified continuous modification. The endpoint
+therefore defines its own actual bounded RandomTests->clockL1 map. The signed
+finite and limit operators are endpoint minus the actual positive operators.
+signed_random_tendsto proves STRONG clockL1 convergence for EVERY RandomTests
+input. finite_actual and limit_actual identify the literal endpoint-minus-native
+sum and the actual1505 pathwise signed action on realize(u(Y)). No half factor,
+new conditional expectation, changed covariance, or formal process substitute.
+
+Scope: this is genuine signed RANDOM spatial testing of the original kernel,
+not full intrinsic stochastic calculus of IBM. Transport to arbitrary original
+joint-source Gaussian and intrinsic-observable tests remains OPEN. It is not
+asserted that every u has a bounded Gaussian second-chaos realization, or that
+one may remove the IBM observable projection on arbitrary probes. Earlier
+source transport1504 remains exact on its justified mixed Schwartz probes;
+connecting the new random domain to that ORIGINAL joint-source action requires
+an exact theorem. Whole norm-dual strong measurability, operator-norm convergence,
+and native strong L2 convergence are not claimed. Original projected native
+L2 escape1500 and planar occupation density obstruction1505 remain valid.
+
+Next substantive investigation: audit the existing F1--F3/source-resolved chaos
+and physical second-chaos transport to identify which clock-dependent kernel
+tests actually represent original source/observable pairings. Check support,
+spatial norm and chaos contraction constants rather than treating C_b-supremum
+control as a Gaussian-Hilbert norm bound on an infinite spatial domain. Use
+compact-support tests or a justified stronger test norm only if the original
+calculus requires it. Do not duplicate completed calculus or switch campaigns.
+
+Verification: final targeted10 PASS. Complete root build6714jobs
+PASS30.365312s; COMPLETE transitive Lean.collectAxioms audit48682 safe Foundation
+declarations PASS50.505182s, only propext/Classical.choice/Quot.sound. All39 new
+public types read UNABRIDGED; ALL4 sources, private norm-class proofs, actual
+integrability and dense-domain estimates, root/AxiomAudit additions reviewed.
+No mathematical changes after final full-build/audit gates.
+
+Independent12 mathematical checks PASS29.859286s, plus fresh imported
+NormedSpace/CompleteSpace synthesis. Tests construct UNBOUNDED SAME-CLOCK
+Gaussian random inputs via the EXISTING scalarLift.compLpL and verify the actual
+coordinate-times-kernel and coordinate-times-signed-path formulas. Both full
+random convergence theorems apply with S=T. Additional tests cover zero horizon,
+uniform Lipschitz difference bounds, signed add/negative-scalar laws, endpoint
+square L2 membership, actual native/signed L1 integrability and norm-error limit.
+
+Retained independent failures: first30.289570s exposed automatic concrete
+completion/CLM instance inference; diagnostics1--5 retained. Fully named standard
+instances and the already verified scalar-lift construction resolve actual
+random-input construction without global instances or transparency changes.
+A supplemental norm-NOTATION assertion for the concrete CLM hit default200000
+heartbeats even with explicit types (36.212552s and37.056377s failed runs retained).
+It is not reported as a successful operator-norm elaboration check. Its equivalent
+uniform Lipschitz difference estimate is independently verified, and ALL central
+source theorems already prove uniform action bounds. This is a documented
+elaboration limitation, not an absent mathematical bound. No heartbeat/resource
+limits were raised. The local canonical CLM Norm instance used for diagnosis is
+Mathlib hasOpNorm with explicit scalar/domain/codomain arguments, not an altered
+norm. No failed log or concern is hidden. Targeted failed attempts1--9 retained
+(import name, section-variable inclusion, scalar/record coercions, finite-range
+subtype rewrite and pointwise-product notation); all actual proof obligations
+passed before full verification.
+
+All2541 Foundation/root sources and3configuration hashes frozen/rechecked;
+all113 archive paths/hashes unchanged. ResearchSources never staged/committed.
+No toolchain/compiler/trust/resource/transparency/linter changes. External Lean
+jobs serialized and followed to authoritative terminal status. Evidence:
+.lake/stardust-1506-working-checkpoint.json, full-build/audit/independent logs
+and timing JSON, diagnostic1--5 and failed independent/target logs, and
+.lake/stardust-1506-verification.json. Explicit reviewed-path Git commit, exact
+receipt and BOTH PRIVATE main/research synchronization close separately.
+Unrelated untracked plans, tmp and source archive preserved.
