@@ -43165,3 +43165,109 @@ are not weakened. Unrelated untracked sources and all manuscripts stay excluded.
 
 Measured terminal wall seconds: full-build=25.638, audit=39.058, independent=27.741.
 Explicit-path Git checkpoint, exact audit receipt and verified PRIVATE main/research synchronization follow.
+
+
+## Checkpoint1495 — actual mixed IBM observables and smaller-radius occupation
+
+IBM remains ACTIVE; queue8280325 and all earlier campaign gates are unchanged.
+The immediately preceding goal turn confirmed the saved AI queue/backup rather
+than advancing mathematics. This turn revalidated the worktree and resumed the
+pending mixed-time IBM proof. No concurrent agent or research campaign was
+created. No reflection/housekeeping date was admitted: the previously noted
+stale October23 accounting remains preserved. Terminal clock observations ran
+from October24 21:43 through the proof/audit checkpoint; no token-based clock
+estimate was used.
+
+Primary IBM source: ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All113 archive paths/hashes match inventory1292; ResearchSources remains
+read-only and uncommitted. No new manuscript was ingested or novelty asserted.
+The process remains ACTUAL reflected-clock IBM Z_t=B(|W_t|).
+
+For H>0 and EVERY fixed R,S>=0 (either observation may be inside, outside or
+equal to the horizon), write a_R(t)=min(|W_t|,|W_R|). The literal original
+uniform-grid mixed covariation
+ M_N=sum_i (a_R(t_(i+1))-a_R(t_i))*(a_S(t_(i+1))-a_S(t_i))
+now converges STRONGLY in original clock L1 to the actual occupation functional
+ I_HRS=integral_(0,H] 1_{|clockPath_t|<min(|clockPath_R|,|clockPath_S|)} dt.
+Both the actual expectation of absolute error and the Lp1 class convergence
+are proved, with all measurability/integrability premises discharged.
+There is no assumption H<R, H<S, R!=S or positivity of the observations.
+The strong limit theorem requires H>0; finite identities allow H=0.
+
+Foundation/IBMClippedClockCovariation.lean proves the deterministic smaller-cap
+comparison. The product of two capped increments agrees with the square of the
+smaller-cap increment when the increment is small and the starting point is
+away from both cap boundaries. For arbitrary real radii and band width, the
+absolute error is bounded by twice the raw increment square times the sum of
+the two outer-boundary indicators and the large-increment indicator. No origin
+band is needed for this comparison: the single-cap limit already dealt with
+folding at the origin. A finite-grid exact smaller-cap identity is FALSE:
+r=1,s=2,x=0,y=2 gives product2, smaller-cap square1, mixedError1.
+
+Foundation/IBMMixedClockSelection.lean selects between the actual R and S capped
+sums using the Borel event |W_R|<=|W_S|. The selector is allowed to depend on
+BOTH observations. Its absolute convergence error is bounded by the sum of
+the two OLD1494 literal L1 errors. The mixed-versus-selected difference is
+bounded in expectation by twice the two OLD all-observation random-boundary
+energies plus the OLD fourth-moment large-increment tail. Their vanishing
+along the verified width sequence proves the mixed limit. Thus the proposed
+new finite-family Gaussian-conditioning foundation is unnecessary for THIS
+quadratic mixed-probe problem. We do NOT apply the one-observation projection
+theorem to arbitrary two-observation weights or assert that such an extension
+has been proved. This is direct reuse of established convergence, not a new
+conditional-probability assumption.
+
+Foundation/IBMRawGridMixedObservable.lean constructs an actual IntrinsicSpace
+element mixedObservation(R,S)=rawObservable(R,S)+squareObservation(R). Its
+joint AE representative is Z_R*Z_S and has actual MemLp2. Its ORIGINAL clock
+source section is rawProduct(clockDirectionR,clockDirectionS), using only the
+AE initial clock zero. The exact unrestricted bilinear finite telescope gives
+the literal sourceSum pairing as endpoint overlap product minus mixed cap
+increments. The observable projection is removed ONLY inside pairing against
+this verified observable; no identity of the projected output with the whole
+source output is claimed. Finite h,n include empty grids and zero step.
+
+Foundation/IBMMixedClockLimit.lean identifies the selected limit with the above
+literal continuous-clock occupation integral, preserving process/continuous
+modification agreement only AE. It matches the Fin uniform grid to the original
+Nat grid and proves, for EVERY H>0 and R,S>=0,
+ <original jointDivergence(gridInput(H/(N+1),N+1)),mixedObservation(R,S)>
+ -> E[a_R(H)*a_S(H)]-E[I_HRS].
+The finite identity and both terms' integrability are independently proved.
+This is a genuine limit of tests against actual IBM observables, extending the
+single square probes of1494. It is NOT a full projected-output limit, dense
+completed-observable extension, full native Ito formula or Clark--Ocone theorem.
+
+SIXTEEN independent Lean tests passed FIRST RUN: forward/reversed crossings,
+explicit nonzero correction, swapped/signed radii, large crossing, above-cap
+and zero-radius examples, general diagonal zero-error and radius symmetry,
+mixed-sum symmetry, exact diagonal recovery of the old capped quadratic sum,
+occupation symmetry and diagonal recovery, the actual strong L1 theorem and
+the original native mixed-observable pairing limit. No numerical simulation
+was used as evidence of a stochastic theorem.
+
+Development logs target1--10 retained. Target2 exposed explicit rawSource/toLp
+representative conversion; target3 repaired it. Targets4--6 exposed measurable
+absolute-value API, piecewise integrability and function-evaluation normalizing
+issues; target7 passed selection and convergence. Targets8--9 exposed AE bridge
+orientation, lambda beta reduction, norm equality orientation and grid-zero
+normalization; target10 passed the complete mixed limit. No raised heartbeat,
+trust/toolchain/resource change, suppressed error or weakened theorem.
+
+Full root6672 jobs PASSED in25.868035s. COMPLETE transitive audit47978 safe
+Foundation declarations PASSED in41.185090s, accepting ONLY propext,
+Classical.choice, Quot.sound. All52 new public types read UNABRIDGED; all four
+final mathematical files including private proofs were read. Sixteen independent
+Lean checks passed in30.782500s. Frozen2499 Foundation/root sources+3configs
+were rechecked; only root imports and AxiomAudit changed among old sources.
+All old mathematical modules remain byte-identical. Git/private closure follows
+the exact-commit receipt process, separately from these mathematical gates.
+
+NEXT: investigate extension from finite quadratic observable probes to a
+meaningful completed observable domain, and convergence/obstruction of the
+projected native output. The new mixed occupation Gram structure may control
+finite combinations; boundedness uniform in the observable norm must be PROVED,
+not inferred from convergence of individual pairings. Preserve the known raw
+source/anticipative counterexamples, full F1--F3 closure obligations and actual
+IBM domains. No campaign transition is justified by this checkpoint.
