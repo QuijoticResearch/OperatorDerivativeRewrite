@@ -46765,3 +46765,114 @@ mathematics changed except root/AxiomAudit registration. ResearchSources,
 manuscripts, instructions and unrelated drafts preserved. Explicit five-path
 audited Git commit, exact receipt and verified PRIVATE main/research backup close
 this checkpoint. IBM remains ACTIVE; no queued research starts early.
+## Checkpoint 1528 — actual joint scenery forecasts and nonlinear IBM germ reduction (2026-10-25)
+
+IBM remains ACTIVE. Queue c34f3ed, all manuscript bytes and research priorities
+are unchanged. This extends checkpoint 1527's actual spatial-history bridge to
+the original joint IBM probability space, rather than prescribing an abstract
+random-clock operator. Actual IBM remains B(|W_t|).
+
+### Construction and verified mathematics
+
+`Foundation/IBMJointSceneryForecast.lean` constructs the conditional operator
+P_delta by the original `IBMIntrinsicOperators.sourceUnitary`: apply the old
+Gaussian conditional projection for the clipped positive scenery history in
+each clock-indexed Bochner L2 section, then transport back. `field_sections`
+identifies every section with the ORIGINAL path-filtration `condExpL2` using
+checkpoint 1527. No alternative process, path measure, filtration, derivative,
+conditional expectation or stochastic integral is assumed.
+
+The lifted operator is a contraction and self-adjoint. Its fixed points are
+EXACTLY joint classes whose clock-indexed scenery sections are AE strongly
+measurable for the actual spatial history. `field_tendsto` proves strong Bochner
+L2 convergence from AE section convergence under the AUTOMATIC original L2
+majorant ||f(Y)||; the limiting mean bound follows from contraction and the
+section limit. No uniform pointwise-in-clock bound is assumed. Countable AE
+intersections are only over approximation indices, never over all path times.
+
+For every finite coefficient family a and observation-time family r, every
+continuous bounded real phi and every sequence delta_n -> 0 of nonnegative
+cutoffs, `ridge_forecast_tendsto` proves STRONG JOINT L2 convergence of
+P_delta_n phi(sum_i a_i B(|W_{r_i}|)) to its source mean. No monotonicity,
+nondegeneracy, positive observation time or distinct-time assumption is imposed.
+For each fixed clock sample this is an arbitrary bounded continuous function
+of ONE Gaussian linear observation, not an arbitrary multivariate function of
+the full observation vector. `sourceMean_eq_sourceVacuum` identifies the limit
+with the EXISTING native source-vacuum projection; the clock-dependent residual
+is retained, not replaced by unconditional expectation.
+
+`Foundation/IBMJointForecastGerm.lean` constructs actual bounded clipped-past
+classes with their original joint representatives. Their source sections are
+measurable in the actual spatial history, hence fixed by P_delta. Existing
+whole-past factorization and eventual agreement of clipped and actual IBM pasts
+give strong L2 approximation of EVERY bounded actual initial right-germ
+observable by such clipped classes, for EACH fixed delta>0. Continuity then
+proves `bounded_germ_fixed`: P_delta G=G. This requires no independence claim
+between the IBM germ and the scenery, nor any simultaneous uncountable AE
+coordinate agreement.
+
+Self-adjointness gives pairings against every bounded germ G for arbitrary
+joint L2 targets F, regardless of derivative-domain membership. Passing to the
+strong forecast limit yields <F,G>=<sourceVacuum F,G> for each admitted ridge.
+Indicators of actual germ events, ordinary conditional-expectation uniqueness
+and the original germ projection identify
+
+    channelClass(F - sourceVacuum F, 0) = 0,
+    channelClass(F, 0) = channelClass(sourceVacuum F, 0).
+
+The hypotheses of this ridge theorem are fully discharged for the actual
+bounded continuous finite-ridge observation above. The existing target-indexed
+predictable integral consequently reconstructs
+
+    integral_F(integral_F^* F) = F - channelClass(sourceVacuum F, 0).
+
+This is `ridge_target_indexed_reconstruction`. It is an actual observed
+projection/integral identity, with a precise residual, not an identification of
+a universal physical integrator or a restored original joint derivative domain.
+The source mean need not itself be an intrinsic observable.
+
+### Independent checks, limitations and next obligations
+
+Eight separate Lean checks in `.lake/stardust-1528-independent.lean` verify:
+actual-path idempotence of the joint projection; exact repeated-time signed
+ridge cancellation; cancellation survives the actual sine nonlinearity; a
+NONZERO constant fixed forecast (so shrinking conditioning cannot annihilate
+all targets); the actual cosine initial-channel reduction retaining its source
+vacuum; every bounded finite-ridge observable persistent in the actual initial
+germ equals its source mean; centered nonlinear-ridge orthogonality against
+bounded germ tests; and target pairing without derivative-domain hypotheses.
+The scratch file is hashed in the checkpoint verification receipt.
+
+OPEN: extend from one-ridge nonlinear targets to full multivariate/completed
+observable totality if productive; identify the remaining clock-dependent
+initial germ, including a rigorous clock germ/observed germ comparison; obtain
+the strongest actual nonlinear source-centered representation without confusing
+it with canonical physical Ito/Tanaka/Clark--Ocone. Full intrinsic IBM calculus
+is NOT complete. Existing unaveraged native full-Hilbert obstruction and
+positive-time sine joint-derivative obstruction remain intact. Earlier actual
+Simpson/probability and continuous Bernstein approximation theorems are reused,
+not restated as open foundations.
+
+No new foundational infrastructure, resource setting, transparency override,
+toolchain change or linter suppression was needed. Development logs preserve
+failed elaboration attempts (definition unfolding, singleton-generated rewriting,
+and the missing local Fact(2 != infinity) needed for Bochner L2 separability).
+These were Lean elaboration issues, not mathematical counterexamples. No
+manuscript or external novelty claim is made by this checkpoint.
+
+### Verification and preservation
+
+Full ROOT build: 6761 jobs, exit 0, 40.5135202 seconds. Complete all-safe
+Foundation transitive `Lean.collectAxioms` audit: 49598 declarations, exit 0,
+38.7922052 seconds; only propext, Classical.choice and Quot.sound. All 32 new
+public types were read unabridged; both complete new sources and all proofs
+were reviewed, including actual-history domains, positivity of the fixed
+cutoff, AE quantifier scope and the retained source-vacuum/germ residual.
+Eight independent Lean tests: exit 0, 29.8226274 seconds. No sorry or new axiom.
+Frozen source manifest: 2588 Foundation/root files; unchanged configuration3.
+All 113 archived paths/hashes exactly match inventory1292. ResearchSources,
+original manuscripts, instructions, reflection records and unrelated drafts
+remain untouched. October25 reflection already consumed; no housekeeping run.
+The exact-commit receipt, terminal verification record and both PRIVATE
+main/research ref comparisons close this checkpoint after its explicit commit;
+no next proof or transition is certified by this pre-commit report alone.

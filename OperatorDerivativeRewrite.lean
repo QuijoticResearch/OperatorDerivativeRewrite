@@ -2484,3 +2484,5 @@ import Foundation.GaussianVanishingPrediction
 import Foundation.IBMSceneryGaussianGerm
 import Foundation.GeneratedFamilyModification
 import Foundation.IBMSceneryHistoryBridge
+import Foundation.IBMJointSceneryForecast
+import Foundation.IBMJointForecastGerm
