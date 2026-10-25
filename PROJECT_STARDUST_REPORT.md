@@ -44343,3 +44343,105 @@ logs and actual timing JSON, retained target1--5 and first-failed independent
 logs, .lake/stardust-1504-verification.json. Explicit reviewed-path Git commit,
 exact receipt and BOTH verified PRIVATE main/research backups close separately.
 Unrelated untracked plans, tmp and archive preserved.
+
+
+## Checkpoint1505 — pathwise occupation and signed action; no planar density
+
+October25,2026; terminal-clock start02:06:04 America/New_York, final independent
+verification02:18:42; private closure follows. IBM ACTIVE; queue8280325 unchanged.
+Previous1504 goal turn PROGRESS; this1505 turn PROGRESS. No reflection session,
+new campaign or manuscript ingestion interrupts the actual IBM investigation.
+
+Three new modules: IBMSpatialPathOccupation, IBMSpatialPathReconstruction,
+IBMSpatialOccupationMeasure. Reuse IBMConstructedSources.clockPath and its
+proved measurability/coordinate modification, BrownianClockWeightedEnergy.sigma,
+BochnerL2MajorantRealization.integral_coeFn_ae, and DiagonalAmbientNullity.
+The old IBMClockOccupationPath was inspected for its measurable/Fubini strategy;
+its DIRECTIONAL sign-weighted occupation is different and is not identified with
+the current unweighted diagonal occupation.
+
+Actual construction: for EVERY bounded continuous real spatial test F, EVERY
+clock sample Y and nonnegative horizon T, define
+  A_T(Y,F)=integral_0^T F(|clockPath(Y,t)|,|clockPath(Y,t)|) dt.
+The integrand is jointly measurable in(t,Y), all time columns are integrable,
+A_T has measurable scalar evaluations and |A_T(Y,F)|<=T||F||_sup. For EVERY Y,
+F->A_T(Y,F) is a genuine bounded linear functional of norm<=T. Its actual clock
+L1 classes form a bounded linear operator on ALL bounded continuous tests.
+old_drift_actual proves the original L2 Bochner drift has this representative
+for bounded Lipschitz F, using a genuine constant L2 majorant and actual clock
+slice modification. old_occupation_eq identifies the old L1 occupation class.
+No pointwise interchange of uncountably many exceptional sets is assumed.
+
+completed_occupation_eq extends this equality to EVERY completed spatial test
+from1503, by continuity of the actual all-C_b operator and density of the
+inherited-supremum Lipschitz core in ITS OWN completion. This proves the old
+completion extension equals the actual path integral of realize(z). It does
+not assert density in all C_b or native convergence on all C_b.
+
+For EVERY clock sample, signedPath is the actual endpoint rectangle functional
+minus the actual path occupation, a bounded linear functional on ALL bounded
+continuous tests, with norm <=clockPath(Y,T)^2+T. Every scalar evaluation is
+measurable. completed_signed_actual identifies it almost surely with the old
+completed signed reconstruction for EACH fixed completed input. Thus the
+previous strong clockL1 convergence has an actual pathwise functional as its
+limit, not only an abstract extension. Existing mixed-source transport1504 can
+use this same representative. Exact unit-test signed action is clockPath(Y,T)^2-T,
+verified independently. No half-normalization or probability substitution.
+
+occupationMeasure is the literal pushforward of finite time Lebesgue measure
+under t->(|clockPath(Y,t)|,|clockPath(Y,t)|). It is finite and positive for each
+sample; mass=T, and its actual integral of every bounded continuous F equals
+A_T(Y,F). Its mass on the diagonal is T. Reusing the proved planar Lebesgue
+nullity of that diagonal, not_absolutelyContinuous and no_plane_density prove
+that for EVERY sample and T>0 this measure is NOT absolutely continuous with
+respect to planar Lebesgue measure and equals NO plane.withDensity(f), for ANY
+nonnegative extended-real f. This is an explicit obstruction to replacing the
+diagonal occupation by an ordinary plane density. It does not preclude a
+one-dimensional local time on the diagonal or a suitable distribution space.
+
+Scope and open work: actual pathwise bounded linear actions now exist with
+measurable scalar evaluations. Strong measurability into the ENTIRE norm-dual
+is NOT proved or inferred. Equality to existing Lp representatives is fixed-test
+AE; any specified countable family shares an AE event (independently tested),
+not an uncountable family of arbitrary chosen Lp representatives. Native strong
+convergence remains verified only on E. Arbitrary random spatial tests and
+Gaussian/intrinsic-observable dual transport remain OPEN; pointwise definitions
+alone do not discharge their measurability, integrability or convergence. The
+original projected native L2 escape1500 remains valid. Full intrinsic IBM calculus
+is still incomplete; no campaign transition.
+
+Next: exploit the ACTUAL random pathwise norm bounds to investigate legitimate
+clock-dependent test domains, beginning with finite-valued measurable tests and
+controlled approximations, then the original F1--F3 source/observable obligations.
+Do not infer strong norm-dual measurability or random-test convergence solely
+from convergence at every deterministic test. Check existing multiplier and
+operator-domain declarations before adding supporting mathematics.
+
+Verification: targeted5 PASS. Full root build6710jobs PASS25.720353s; COMPLETE
+transitive Lean.collectAxioms audit48590 safe Foundation declarations
+PASS42.482296s, only propext/Classical.choice/Quot.sound. All37 public defs/theorems
+printed and read UNABRIDGED in the combined audit, plus the public finite-measure
+INSTANCE type printed/read in the independent pass (38 total). That instance
+is also included in the complete transitive audit; it is not excluded from
+verification. ALL3 complete sources/proofs and root/AxiomAudit additions read.
+
+Independent14 mathematical Lean checks PASS29.074738s plus concrete finite-
+measure instance synthesis. Tests: exact unit occupation/signed values, positivity,
+monotonicity, zero-horizon measure, positive-time nonzero measure, diagonal mass,
+nonabsolute-continuity and no arbitrary density, pathwise addition/negative
+scalar laws, countable common-AE completed family, original mixed-test actual
+representative and actual measure-integral/operator equality. First failed run
+38.320497s retained (namespace/zero-measure notation and subtype-coercion proof
+scripts); corrected tests changed no mathematical source. Targeted failures
+retained (measure.real notation, scalar-slice elaboration, record coercion,
+ambiguous diagonal name). No proof admitted or axiom whitelist weakened.
+
+All2537 Foundation/root source hashes and3configuration hashes rechecked;
+all113 archive paths/hashes unchanged. ResearchSources unchanged/uncommitted.
+No resource/compiler/toolchain/trust/transparency/linter changes. Every external
+Lean job serialized and followed to its authoritative terminal status; no math
+edits after final full-build/audit. Evidence: .lake/stardust-1505-working-checkpoint.json,
+full-build/audit/independent logs and actual timing JSON, target1--5 logs,
+first-failed independent logs and .lake/stardust-1505-verification.json. Explicit
+reviewed-path Git commit/exact receipt/BOTH PRIVATE backups close separately.
+Unrelated untracked plans, tmp and source archive preserved.

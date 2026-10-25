@@ -2432,3 +2432,6 @@ import Foundation.IBMSpatialCompletedKernelIdentity
 import Foundation.IBMSpatialEndpointOperator
 import Foundation.IBMSpatialSignedReconstruction
 import Foundation.IBMSpatialMixedWickTesting
+import Foundation.IBMSpatialPathOccupation
+import Foundation.IBMSpatialPathReconstruction
+import Foundation.IBMSpatialOccupationMeasure
