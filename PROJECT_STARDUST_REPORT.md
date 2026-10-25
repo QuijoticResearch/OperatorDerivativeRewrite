@@ -44685,3 +44685,126 @@ and actual timing JSON, retained target1--5 and first-failed independent logs,
 .lake/stardust-1507-verification.json. Explicit reviewed-path Git commit, exact
 receipt and BOTH PRIVATE main/research synchronization close separately.
 Unrelated untracked plans,tmp and ResearchSources preserved.
+
+
+## Checkpoint1508 — faithful completed joint test space and scalar distribution
+
+October25,2026; terminal start03:26:51 America/New_York, final independent
+PASS03:44:35; private closure follows. IBM ACTIVE; queue8280325 unchanged.
+Previous1507 PROGRESS; current1508 PROGRESS. No reflection or campaign switch.
+
+Three modules: IBMJointCompletedTestGraph, IBMJointBanachTestSpace,
+IBMJointTestNormBounds. The completed test domain is constructed from the
+verified ORIGINAL joint observables and their actual spatial symbols, not
+postulated by assuming a desired limit or symbol injectivity.
+
+Construction: take the closure of the real linear span of pairs
+  (jointTest(g,h,a), symbol(g,h,a))
+in the product of ORIGINAL JointL2 and1506 RandomTests=L2(clock;CompletedSpatialTests).
+This closed submodule Graph is Banach in its inherited product norm. For EACH
+fixed native grid, the difference between the original joint Hilbert pairing
+and the INTEGRATED signed random-symbol action is a continuous linear map on
+the ambient product. Its closed kernel contains all verified generators and
+hence their entire closed span. finite_identity therefore extends the ORIGINAL
+finite native pairing identity to EVERY completed graph element.
+
+The original native scalar functionals on Graph converge to the continuous
+functional obtained by integrating the actual signed random limit of its symbol.
+For a graph element whose actual joint observable is ZERO, every original
+native scalar pairing is zero; uniqueness of limits proves the limiting scalar
+functional is zero. joint_kernel_le_limit_kernel and presentation_consistent
+prove consistency on the FULL completed graph. This is a proved annihilation
+of the joint-projection kernel, not an assumption that symbols are injective.
+
+The kernel of the joint projection is closed. Define Tests=Graph/ker(jointMap)
+with Mathlib's quotient norm and topology. The quotient is a genuine normed
+complete real vector space (fresh-import instances independently synthesized).
+realize:Tests->JointL2 is continuous linear and INJECTIVE, proved from the
+actual quotient kernel. Thus test elements correspond faithfully to original
+joint random observables. No symbol presentation is silently retained as an
+extra observable coordinate. realize_test identifies every original mixed
+Schwartz/clock probe exactly; no manuscript claim is used as an axiom.
+
+For EVERY positive horizon T, distribution(T) is a continuous real linear
+functional on this SAME horizon-independent Tests. native_tendsto proves for
+EVERY completed test that its ORIGINAL native joint pairing converges to this
+functional. distribution_unique proves uniqueness among ALL scalar functions
+with those native limits, without presupposing linearity. distribution_test
+recovers the previously verified original limitingPairing on generators.
+The legitimate intrinsic_native_tendsto corollary retains the exact equality
+of an actual intrinsic observable's JointL2 class with realize(x).
+
+Explicit bounds: the actual endpointWeight(T), representing clockPath(T)^2 in
+L2, equals the original ONE-CELL quadratic variation. The existing QV estimate
+therefore bounds its L2 norm by3T, without new moment foundations. Combining
+endpoint and positive native spatial bounds gives signed_random_bound6T||u||.
+Actual integrated native bounds on Graph follow, then quotient approximating
+representatives prove for EVERY test x and native grid N:
+  ||realize(x)||_JointL2 <= ||x||_Tests,
+  |nativeFunctional(T,N,x)| <= 6T||x||_Tests,
+  |distribution(T,x)| <= 6T||x||_Tests (T>0).
+The quotient norm thus controls the inherited Hilbert norm. No proof of strict
+non-equivalence of these norms on their range is claimed. No operator-NORM
+convergence of the sequence is asserted; convergence is at EVERY fixed test.
+
+Proper domain: exists_intrinsic_outside_range uses the ORIGINAL projected
+weak obstruction1507 and the legitimate projection-pairing identity to prove
+that for EVERY T>0 there is an actual intrinsic observable outside realize's
+range. This Banach domain cannot be confused with all intrinsic Hilbert L2.
+It is also not identified with H^{-1}, a natural filtration, or a test-domain
+containing every desired IBM path functional. Concrete membership remains a
+mathematical obligation, not a consequence of the abstract completion.
+
+IMPORTANT scope: the quotient descent established HERE is for the SCALAR
+functional of expected original native pairings. Presentation independence of
+the ENTIRE clock-L1 signed random action is NOT proved here. Existing1506
+strong clock-L1 convergence is valid for each spatial symbol, but equality of
+original joint observables has only been shown to annihilate the INTEGRATED
+limit in the present graph proof. This is a genuine source-distributional
+testing result, not an ordinary pathwise IBM Itô identity or completed intrinsic
+stochastic calculus. No broad completion claim follows from a scalar identity.
+
+Next direct improvement: upgrade finiteDefect from a scalar integrated pairing
+to the actual clock-L1 SOURCEWISE contraction of original sourceGrid with the
+clock sections of a JointL2 test. The existing source/clock unitary and the
+verified weak-random-evaluation/Cauchy--Schwarz machinery should supply this
+continuous contraction. Prove its generator identity, extend by the SAME graph
+closure and show that ZERO joint observable kills the FULL L1 finite actions
+and hence their strong limit. Only then descend a genuine clock-L1-valued
+operator to Tests and compare its expectation with this scalar distribution.
+Do not assume this stronger kernel annihilation. Also test concrete actual IBM
+Itô--Tanaka/path observable membership, especially rough spatial interval
+kernels: uniform continuity of completed spatial tests may impose a serious
+restriction. This is a question to investigate, not an established exclusion.
+Avoid more abstract infrastructure that does not resolve those obligations.
+
+Verification: final targeted5 PASS. Full root6719jobs PASS29.213652s; COMPLETE
+transitive Lean.collectAxioms audit48799 safe Foundation declarations
+PASS40.243349s, only propext/Classical.choice/Quot.sound. All39 NEW public types,
+including BOTH named public instances graph_complete and joint_kernel_closed,
+were printed/read UNABRIDGED in the combined audit. The prepare scanner now
+includes named instances explicitly. ALL3 full source/proofs, private finiteDefect,
+quotient approximations and root/AxiomAudit additions reviewed. No math changes
+after final full-build/audit gates.
+
+Independent14 mathematical checks PASS29.892654s plus FIVE fresh-import Banach
+instance syntheses: normed Graph, complete Graph, normed quotient Tests, real
+NormedSpace Tests and complete Tests. Checks include exact original generator
+realization, all-test convergence, native/limit6T bounds, contractive realization,
+equal-observable presentations mapping to the same quotient element/limit,
+same-clock Gaussian weight, EXCHANGED mixed Schwartz probes representing the
+same quotient test via actual Gaussian rawProduct commutativity, native add and
+negative scalar laws, proper intrinsic range, zero-horizon native action and
+uniqueness. No failed independent run. Development failures retained (target1:
+topologicalClosure_minimal explicit argument/coercion; target3: explicit kernel
+argument in quotient induction). Final proofs use ordinary defaults. No heartbeat,
+resource, transparency, linter, toolchain, compiler or trust changes.
+
+All2546 Foundation/root hashes and3configuration hashes frozen/rechecked;
+all113 archive paths/hashes unchanged. ResearchSources never staged/committed.
+External Lean jobs serialized and existing handles followed to authoritative
+termination. Evidence: .lake/stardust-1508-working-checkpoint.json, full-build/
+audit/independent logs and timing JSON, retained target1--5 logs and
+.lake/stardust-1508-verification.json. Explicit reviewed-path Git commit, exact
+receipt and BOTH PRIVATE main/research backup gates close separately. Unrelated
+untracked plans,tmp and archive preserved.

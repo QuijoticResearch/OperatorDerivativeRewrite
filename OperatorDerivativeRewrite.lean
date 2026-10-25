@@ -2441,3 +2441,6 @@ import Foundation.IBMSpatialRandomTestConvergence
 import Foundation.IBMSpatialSignedRandomTests
 import Foundation.IBMNativeWeakObstruction
 import Foundation.IBMJointMixedSpatialTransport
+import Foundation.IBMJointCompletedTestGraph
+import Foundation.IBMJointBanachTestSpace
+import Foundation.IBMJointTestNormBounds
