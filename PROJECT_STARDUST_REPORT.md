@@ -45799,3 +45799,119 @@ Mathlib import. No failed target is certified. No toolchain/compiler resources,
 transparency, linter, trust, cache or mathematical hypothesis was modified.
 Exact-commit audit receipt and verified PRIVATE main/research closure follow
 the established procedure; IBM remains active beyond this checkpoint.
+
+
+## Checkpoint 1518 — original closed-clock graph across a genuine source-mean cusp
+
+October25,2026. IBM ACTIVE; queue8280325 and all later campaign gates unchanged.
+Previous goal turn made progress:1517 closed at0586ff4 with exact PRIVATE
+main/research verification. This checkpoint addresses a precise weak clock-
+domain gap exposed by the actual averaged cosine cusp, not a new campaign.
+
+### Actual graph construction, not a C1 inference
+
+The reuse audit read the original GaussianClosedChainRule, the existing smooth
+radius/sign approximation, native unbounded/absolute chain proofs and the
+closed-operator graph tools. A general unbounded-chain infrastructure is not
+needed for this step: exponential damping of the smooth radius is already
+bounded with bounded continuous slope and fits the ORIGINAL Gaussian chain
+rule. No derivative operator or domain is redefined.
+
+GaussianReflectedDampingGraph.closed_graph proves the following for EVERY
+(f,g) in the original closedCylindricalDerivative graph and every c>=0:
+
+    F = exp(-c*|f|),
+    G = -c*exp(-c*|f|)*signum(f) * g,
+    (F,G) belongs to the SAME original closed graph,
+    norm(G)_2 <= c*norm(g)_2.
+
+The statements are actual L2-class/AE identities. Smooth approximants are
+exp(-c*sqrt(f^2+epsilon_n^2)), with derivative coefficient
+-c*exp(-c*radius)*slope. The existing scalar radius and sign theorems supply
+all pointwise limits, including f=0. Values converge strongly in actual L2 by
+domination by Gaussian one. Gradient multipliers converge strongly on the
+actual existing vector-L2 field g using the original bounded multiplier theorem.
+Closedness then places the limit in the ORIGINAL graph. c=0 is included.
+No assertion that the limiting scalar function is classically differentiable
+at zero is used;1517's nondifferentiability theorem remains valid.
+
+### Completed actual one-observation Fourier source mean
+
+IBMSingleFourierClockGraph takes the SAME1515/1516 Fourier domain, specialized
+to one actual observation time R. Frequencies a_k are arbitrary real, phases
+and signed weights unrestricted, with sum|w_k| and sum|w_k|*a_k^2 finite.
+The rate is c_k=a_k^2/2, with exact cost_identity to the old curvatureCost/2.
+The input is the ORIGINAL Gaussian clock wienerL2 R and its ORIGINAL derivative
+field clockGradient R, whose norm is proved exactly sqrt(R).
+
+For EACH reflected mode, the new graph theorem constructs the actual field.
+Both values and gradients of their weighted sums are norm-summable. Finite
+sums lie in the original linear graph, and complete graph closedness passes
+the actual infinite pair to the limit. The resulting value is identified with
+IBMFourierSourceMeanCalculus.clockMean, the original sourceUnitary/Gaussian-one
+average of the ACTUAL IBM observable, through1517's actual folded covariance
+formula. It is not a newly defined integral or an output chosen to force a
+reconstruction identity.
+
+The final source mean belongs to closedCylindricalDerivative.domain for every
+R>=0, and its derivative has the literal clock-AE vector-series formula
+
+    sum_k w_k*cos(beta_k)*[-c_k*exp(-c_k*|W_R|)*signum(W_R)]*clockGradient_R.
+
+Its L2 norm is at most (sum curvatureCost/2)*sqrt(R). The series identification
+uses the original Lp.coeFn_tsum theorem with proved norm summability for vector
+fields as well as scalar values. Zero time, zero frequency and nontrivial
+infinite Fourier sequences are included. Original graph functionality makes
+the derivative independent of choices in the smooth approximation.
+
+The original derivative/adjoint graph duality now gives actual Gaussian clock
+integration by parts against EVERY input in the original hilbertDivergence
+adjoint domain. This was independently checked; an adjoint domain is not
+silently enlarged to arbitrary integrands.
+
+### What this resolves and what it does not
+
+The folded-zero cusp is no longer an unresolved obstruction to original clock-
+Gaussian graph membership for the COMPLETED one-observation source mean.
+Classical nondifferentiability and weak closed-graph calculus coexist exactly
+as verified, with the reflected sign and its zero-level convention retained.
+
+Multiple distinct clock coordinates introduce additional collision cusps in
+min(|x_i|,|x_j|). Their full graph rule and completed multitime gradient remain
+OPEN. The source-averaged function of the clock is not automatically an IBM-
+observable function in the original intrinsic joint domain. No intrinsic
+measurability, physical-time Ito/Tanaka formula or full temporal Clark--Ocone
+reconstruction is inferred from this ambient clock-domain result. All earlier
+positive-time sine joint-domain and native weak-Hilbert obstructions remain.
+The next mathematically focused task is multitime covariance collision closure
+with actual gradients/bounds, reusing the original graph rather than rebuilding
+source means. Continue IBM; do not activate Bakry or reopen pseudoprocesses.
+
+### Verification and independent tests
+
+Full root build PASS,6743jobs,26.175456seconds. Complete safe transitive
+Lean.collectAxioms audit PASS,49300declarations,42.837866seconds; only propext,
+Classical.choice and Quot.sound. All21 new public types were read unabridged;
+both complete new modules, all local graph proofs and root/AxiomAudit changes
+were reviewed. Frozen manifest covers2570 Foundation/root sources, unchanged
+configuration3 and all113 archive paths/hashes identical to inventory1292.
+Only root/AxiomAudit changed among old mathematical sources.
+
+Ten independent Lean checks PASS,28.175836seconds: c=0 exact constant/zero graph;
+smooth zero-level coefficient; limiting zero-level coefficient; derivative sign
+under reflection; coexistence of the actual classical cusp and original clock
+graph; zero-time completed graph output; original derivative/adjoint IBP for all
+adjoint inputs; graph-output uniqueness; infinite geometric Fourier weights in
+the actual original domain; and exact Brownian gradient norm-square scaling.
+The first scratch run failed31.209164seconds on the dependent-function form of
+the geometric curvature cost; explicit function equality repaired the check.
+The failed log is retained, not certified.
+
+Development logs preserve the reserved lambda identifier, nonexistent real
+norm-one alias, the isometry norm rewrite form, multiplication orientation and
+explicit process-representative normalization. Target6 and the final full build
+pass with the actual proofs. No compiler resource, toolchain, transparency,
+linter, trust, cache or mathematical-hypothesis setting was changed.
+ResearchSources stays read-only/uncommitted; unrelated drafts/plans/tmp are
+preserved. Exact-commit receipt and verified PRIVATE main/research closure
+follow the unchanged gates. Full intrinsic IBM calculus remains active/open.

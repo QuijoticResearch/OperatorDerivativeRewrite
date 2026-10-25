@@ -2466,3 +2466,5 @@ import Foundation.IBMBoundedGaussianMeanDerivative
 import Foundation.IBMFourierSourceMeanCalculus
 import Foundation.IBMFoldedSourceCovariance
 import Foundation.IBMFourierClockMeanRegularity
+import Foundation.GaussianReflectedDampingGraph
+import Foundation.IBMSingleFourierClockGraph
