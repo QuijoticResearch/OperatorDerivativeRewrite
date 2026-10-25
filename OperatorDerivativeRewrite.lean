@@ -2402,3 +2402,6 @@ import Foundation.IBMBoundedMixedClockTesting
 import Foundation.IBMRidgeNativeLimit
 import Foundation.IBMRidgeNativeBound
 import Foundation.IBMRidgeSeries
+import Foundation.IBMCenteredRawGrid
+import Foundation.IBMCenteredClockVariance
+import Foundation.IBMProjectedGridEscapeCriterion

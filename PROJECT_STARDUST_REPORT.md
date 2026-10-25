@@ -43534,3 +43534,150 @@ energy/clock-variation declarations before constructing new estimates.
 The summable-series theorem remains valid irrespective of this potential
 strong-L2 obstruction. Native Ito/Clark--Ocone closure and full intrinsic IBM
 calculus remain OPEN; no campaign transition is justified.
+
+## Checkpoint1498 — centered actual IBM probes control the ORIGINAL projected output
+
+IBM remains ACTIVE; queue8280325 and all campaign gates are unchanged. Previous
+goal turn1497 was PROGRESS, privately closing uniform curvature bounds and
+actual infinite-observable series atce91587. This turn verified the saved tree
+and pursued the proposed projected-output obstruction. No parallel agent,
+campaign transition or reflection admission occurred. Stale October23
+reflection accounting remains preserved. Terminal times were checked from
+October24 22:52:43 through proofs, experiment, builds and audits.
+
+Primary IBM source remains ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All113 archived paths/hashes match inventory1292. ResearchSources stays
+read-only/uncommitted. No manuscript was ingested or novelty asserted. The
+process remains ACTUAL reflected-clock IBM Z_t=B(|W_t|).
+
+The source audit found that the needed clock-total-variation identity was
+ALREADY proved in IBMRawGridCompensation.clock_total_variation. Existing
+rawSource/crossSource, rawProduct_eq_cross, sourceGrid_ae/source_mean_zero,
+jointRealization isometry, and native_grid_value supply the original source
+and observable maps. These are reused directly; the observable projection is
+never discarded as an equality of full outputs.
+
+Foundation/IBMCenteredRawGrid.lean now proves the exact reduction that1497
+only proposed. For ANY nonnegative grid step h and ANY finite n, let A be the
+ORIGINAL Bochner-L2 sourceGrid, R the sum of original rawSource steps, B=R-A,
+and mu=expectation(rawSum). The original IntrinsicSpace observable
+ F=rawSum-mu*intrinsicOne
+has ambient realization jointRealization(A+(B-mu*unit)). The source A is
+orthogonal to BOTH the clock-only B and unit; its orthogonality survives
+centering. Thus, writing Q=||A||^2 and V=||B-mu*unit||^2,
+ ||F||^2=Q+V,
+ <ORIGINAL jointDivergence(gridInput),F>=Q,
+ Q^2<=||ORIGINAL jointDivergence(gridInput)||^2*(Q+V).
+All statements concern the actual original Hilbert classes and actual
+observable test, including n=0 and degenerate grids. The projection is removed
+ONLY inside pairing against F, which is independently an original observable.
+This is a genuine bridge to the projected output, not an inference from raw
+source escape or from individual fixed-probe convergence.
+
+Foundation/IBMCenteredClockVariance.lean identifies the remainder V with a
+genuine actual variance, rather than an undefined abstract compensation norm.
+actualClock(h,n,p) is the SAME sum of existing clockFunction steps. The joint
+realization of B equals that actual function AE, has MemLp2, and its actual
+expectation is mu. The joint realization of B-mu*unit is actualClock-EactualClock
+AE, so V is EXACTLY integral(actualClock-EactualClock)^2 under the ORIGINAL
+joint probability law. The actual centered raw observable representative is
+sum_i Z_left*(Z_right-Z_left)-EactualClock. The old folded-clock total-variation
+formula is retained in its centered form, with both endpoint terms displayed;
+no pointwise initial-zero representative is silently substituted.
+
+Foundation/IBMProjectedGridEscapeCriterion.lean proves a sufficient criterion
+for the ORIGINAL output, under EXPLICIT still-open asymptotic hypotheses. If
+Q>0, C>=0 and V<=C*Q, then Q/(1+C)<=||jointDivergence(gridInput)||^2. Along
+any grid sequence, Q->infinity and eventual V<=C*Q therefore imply norm escape
+of the actual projected native output and rule out every original L2 limit.
+An eventual uniform variance bound V<=C also suffices when Q->infinity.
+Neither Q divergence nor either clock-variance estimate has been proved here.
+This is NOT an unconditional no-limit theorem for actual uniform refinements.
+It does not contradict1495--1497's fixed/summable-test convergence.
+
+The minimal independent numerical experiment is reproducible from
+tools/ibm_centered_grid_probe.py; its complete private data are saved as
+STARDUST_IBM_CENTERED_GRID_PROBE_1498.json. It uses NumPy2.3.5, seed1498,
+512 shared unit-horizon Gaussian-clock paths, grids16,32,64,128,256,512.
+The actual finite source-energy endpoint formula is compared against the
+independent finite source-energy double-sum formula for four paths per grid.
+Eight deterministic closed-loop/one-step normalization checks include the
+factor2 loop energy. Radius inputs must be finite, nonnegative, start at zero,
+and contain at least two values, matching the endpoint formula's domain.
+The replay after explicit input validation reproduced ALL statistical rows.
+
+| Cells | Estimated E source energy | Sample SE of that mean | Sample centered clock variance |
+|---:|---:|---:|---:|
+| 16 | 1.054712 | 0.027183 | 0.111045 |
+| 32 | 1.519604 | 0.028954 | 0.131423 |
+| 64 | 2.206389 | 0.033336 | 0.143383 |
+| 128 | 3.206364 | 0.042556 | 0.144072 |
+| 256 | 4.612663 | 0.063083 | 0.143799 |
+| 512 | 6.685806 | 0.099044 | 0.159037 |
+
+These are EXPLORATORY MONTE CARLO values, not certified bounds, confidence
+intervals or asymptotic proofs. The displayed plug-in norm ratios in the data
+are explicitly labelled NOT_CERTIFIED. In particular, finite-grid samples do
+not establish Q->infinity, a uniform bound on V, or projected norm escape.
+They only support prioritizing rigorous estimates. First run1.744403s; validated
+replay1.626354s. No GPU, system setting, toolchain or resource change was needed.
+
+FOURTEEN independent Lean checks passed SECOND RUN30.049939s: empty centered
+raw grid; zero source for the actual first grid step using AE clock origin;
+nonnegative original output pairing; positive source energy forces nonzero
+original projected output; zero mean of the centered actual observable; exact
+Pythagorean remainder; centered-clock orthogonality; actual clock integrability;
+nonnegative literal clock variance; actual clock mean; zero-clock and equal-
+energy specializations of the output lower bound; and both uniform-grid
+conditional escape/no-L2-limit criteria with their hypotheses displayed.
+The first independent run30.751403s failed ONLY because the test required
+normalization of real 1+1 to2. Its log/timing are retained; the test was fixed
+without modifying the final mathematical sources or rerunning unchanged gates.
+
+Development logs target1--5 retained. Target1 exposed subtype-sum rewriting
+and square-of-product normalization; target2 left the latter issue. Explicit
+typed sum equality and an equality proved by pow_two fixed them; target3
+passed actual centered-clock identification. Target4 exposed the right-factor
+cancellation API, argument order for eventual atTop comparison and lambda
+composition normalization. Target5 passed all final mathematical sources.
+No heartbeat increase, error suppression, trust or mathematical hypothesis
+weakening occurred. The Python source and final data were read and reviewed;
+their hashes are retained alongside the verification manifest.
+
+Full root6680 jobs PASSED in31.667853s. COMPLETE transitive audit48125 safe
+Foundation declarations PASSED in42.107819s, accepting ONLY propext,
+Classical.choice, Quot.sound. All30 new public types read UNABRIDGED, all three
+complete final mathematical sources/proofs read. Frozen2507 Foundation/root
+sources+3configs and all113 archive hashes rechecked. Only old root/AxiomAudit
+changed among old mathematical inputs. The experiment and output data are
+explicit reviewed private checkpoint artifacts; no unrelated plans or drafts
+are staged. Exact-commit receipt and verified PRIVATE main/research backup are
+separate closure gates. IBM remains ACTIVE; this is not its stopping checkpoint.
+
+NEXT prove the two actual asymptotic obligations, or find a counterexample to
+the proposed bounds. A promising UNPROVED connection for the source energy is
+diagonal concentration of the finite spatial increment-square kernel:
+ K_N(x,y)=sum_i 1_(I_i)(x)*1_(I_i)(y),
+where I_i is the spatial interval between adjacent folded clock radii. The
+orientation signs cancel in each increment tensor square. Its squared spatial
+L2 norm should be the existing sum of squared increment Gram entries. If
+the mesh tends to zero, K_N is supported in a narrowing diagonal band inside
+a bounded random square; its spatial integral is sum_i Delta|W|^2. A proved
+nonvanishing folded-clock QV limit plus a rigorous support-area/Cauchy--Schwarz
+estimate could force energy divergence without a delicate four-time Gaussian
+lower bound. NONE of this kernel identification, limiting QV/support argument
+or resulting divergence has been formally established at this checkpoint.
+Audit existing physical-noise interval realizations and clock variation results
+before introducing new objects. The original source_energy_endpoint formula
+already isolates the increment-Gram term and bounded terminal corrections.
+
+For the variance obligation, use the exact centered folded-clock total-variation
+identity and audit existing Brownian absolute-variation, local-time, conditional
+increment and boundary-energy machinery. A martingale-plus-origin-boundary
+decomposition may yield a uniform L2 bound; this too is UNPROVED. An eventual
+V<=C*Q bound is already sufficient and may be easier than bounded V. Do not
+promote the numerical trend, the raw-source identities or the old uncentered
+compensation norm escape to a proof of the original projected-output escape.
+Preserve all weaker valid test-domain results whichever way the obstruction
+resolves. Native Ito/Clark--Ocone closure and full intrinsic IBM remain OPEN.
