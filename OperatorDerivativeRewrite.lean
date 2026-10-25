@@ -2482,3 +2482,5 @@ import Foundation.ReflectedDampingNativeIntegral
 import Foundation.IBMFourierClockItoCorrection
 import Foundation.GaussianVanishingPrediction
 import Foundation.IBMSceneryGaussianGerm
+import Foundation.GeneratedFamilyModification
+import Foundation.IBMSceneryHistoryBridge

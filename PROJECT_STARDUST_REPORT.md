@@ -46668,3 +46668,100 @@ changed except root/AxiomAudit registration. ResearchSources, manuscripts,
 instructions and unrelated drafts preserved. Explicit five-path audited commit,
 exact receipt and verified PRIVATE main/research synchronization close this
 checkpoint. IBM remains ACTIVE; continue the history bridge, not a new campaign.
+
+## Checkpoint1527 — actual spatial-history bridge, including uncountable modifications
+
+October25,2026. IBM remains ACTIVE; queue c34f3ed unchanged. Discharged the
+specific completed-scenery-history identification left open at1526. This is
+normal proof development, not reflection or a new research campaign. Reuse the
+existing Doob--Dynkin generated-L2 factorization, finite-cylinder sigma-algebra,
+actual scenery paths, natural spatial filtration and Gaussian conditional spaces.
+
+PROVED GeneratedFamilyModification for arbitrary measure mu and arbitrary,
+possibly uncountable index type I. If X_i=Y_i AE for EACH i, then for every
+PRODUCT-measurable event S in R^I, its X/Y preimages agree AE. Finite cylinders
+use only finitely many coordinate exceptions; a pi-lambda argument extends to
+all product-measurable events. Rational cuts then prove g(X)=g(Y) AE for EVERY
+product-measurable real-valued g. No simultaneous event on which all coordinates
+agree is inferred or needed. No Gaussian, independence, countability or finite-
+measure assumption is used in this general theorem.
+
+aestronglyMeasurable_transfer factors a real-valued measurable representative
+through X using the EXISTING Doob--Dynkin theorem, transfers the scalar functional
+to Y, and preserves its AE class. Applying it in both directions proves equality
+of the two original generated real L2 subspaces. This is an equality of completed
+L2 classes, not an assertion that the raw observation maps agree AE or that the
+literal raw sigma-algebras are equal. The product sigma-algebra hypothesis is
+explicit, especially for uncountable I; no larger function-space sigma-algebra
+was silently substituted. This removes the need for a new path skeleton or path
+modification construction in the present bridge.
+
+PROVED IBMSceneryHistoryBridge.generated_eq_path_history, for EVERY delta>=0:
+
+    generated(IBMSceneryGaussianGerm.history delta)
+      = lpMeas(real,L2, IBMSpatialSceneryForecast.history delta).
+
+The right side is the ACTUAL natural positive-scenery path history used by
+IBMClippedSceneryForecast/IBMClippedForecastPairing. The clipped full-index family
+r -> sceneryPath(min(r,delta)) and the restricted actual past r<=delta are exact
+measurable factors of one another. history_actual from1526 supplies only the
+individual coordinate AE equality with the Gaussian family; the new cylinder
+theorem rigorously supplies the completed-space transfer. No uncountable AE
+intersection is asserted. Zero horizon is included.
+
+projection_eq_condExpL2 proves, for ALL original GaussianL2 inputs F, that the
+existing Gaussian conditional projection equals the ORIGINAL path-filtration
+condExpL2. The proof uses uniqueness/orthogonality of the projection, with actual
+domain membership, rather than rewriting dependent projection instances under
+an unproved identification. projection_ae_path_condExp also identifies its
+representative with ordinary source-probability conditional expectation.
+mem_generated_iff_path gives the exact AE strong measurability equivalence.
+
+Consequently nonlinear_path_prediction_tendsto transfers1526's STRONG nonlinear
+finite-ridge prediction limit to the ACTUAL spatial path history. Arbitrary
+real L2 functions of one finite signed Gaussian ridge are allowed; no polynomial,
+smoothness or boundedness restriction is added. A ridge L2 class measurable in
+every shrinking actual spatial history is constant, by
+persistent_path_ridge_constant. This still refers to one ridge, not an arbitrary
+multivariate Gaussian functional, nor to the entire joint IBM initial germ.
+
+RIGOROUS independent scope test: on real Lebesgue space let X(omega,i)=1 if
+omega=i and0 otherwise, and Y=0, with I=R. Every coordinate X_i equals0 AE,
+but X(omega) is NEVER the zero family. Nevertheless every product-measurable
+real functional of X agrees AE with its value at0. The existential detector
+g(x)=1_{exists i,x_i!=0} is formally proved NOT product-measurable. Thus the new
+theorem handles a real uncountable-modification obstruction, while its
+measurability hypothesis cannot simply be removed. This example is unrelated
+to any assertion that actual IBM paths fail to agree with their modifications.
+
+Next actual IBM obligation: lift the verified spatial conditional operator to
+the existing sourceUnitary clock-indexed Bochner L2 sections, then apply the
+nonlinear path prediction limit to actual random-time source ridges with proved
+joint measurability and domination. Generalize the EXISTING localized bounded
+germ pairing (currently coordinate-targeted) using source conditional expectation
+and Fubini; for source-centered odd targets this could give a genuine nonlinear
+observed initial-channel result. This is a proposed next construction, not a
+theorem already established. Joint/multivariate totality, the Brownian clock
+germ, and the remaining observed/unaveraged intrinsic calculus still require
+proof. No whole IBM-germ triviality or campaign completion is claimed.
+The cylinder/Doob--Dynkin argument is standard measure-theoretic mathematics;
+no external novelty claim is made.
+
+Verification: full ROOT build PASS6759jobs44.890506s; complete safe transitive
+Lean.collectAxioms audit PASS49548declarations41.568317s, only propext,
+Classical.choice and Quot.sound. All14 new public types read UNABRIDGED; all
+two new sources/proofs and root/audit additions fully reviewed. Eight independent
+Lean checks PASS31.265018s: individual uncountable null modifications, failure
+of full-family AE equality, scalar-functional transfer, nonmeasurability of the
+existential detector, original path first-chaos prediction, actual path quadratic
+decay, past-coordinate measurability, and exclusion of a centered unit quadratic
+from every shrinking ACTUAL spatial path history. Earlier targeted elaboration
+errors and the scratch `diagonal`/Set.diagonal name collision are preserved in
+1527logs; repaired without new resource, trust, transparency or linter settings.
+
+All2586 Foundation/root sources frozen; all3 configuration files and113original
+archive paths/hashes unchanged from the authoritative baseline/inventory. No old
+mathematics changed except root/AxiomAudit registration. ResearchSources,
+manuscripts, instructions and unrelated drafts preserved. Explicit five-path
+audited Git commit, exact receipt and verified PRIVATE main/research backup close
+this checkpoint. IBM remains ACTIVE; no queued research starts early.
