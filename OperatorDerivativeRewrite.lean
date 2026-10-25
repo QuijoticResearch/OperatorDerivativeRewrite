@@ -2471,3 +2471,5 @@ import Foundation.IBMSingleFourierClockGraph
 import Foundation.GaussianAbsoluteMinimumGraph
 import Foundation.IBMMultitimeClockVarianceGraph
 import Foundation.IBMFourierClockGraph
+import Foundation.IBMFourierClockClarkOcone
+import Foundation.IBMFourierHybridReconstruction

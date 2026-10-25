@@ -46042,3 +46042,151 @@ output BYTE FOR BYTE. Prior audit/check logs and timings are retained with the
 before-eof suffix. The final source freeze and archive/configuration equality
 were rechecked before Git closure. No mathematical statement or proof changed
 in that whitespace correction.
+
+## Checkpoint1520 — actual Fourier hybrid reconstruction with a causal clock channel
+
+October25,2026,09:12 America/New_York, after completed1519. IBM stays ACTIVE;
+queue8280325 and all campaign gates unchanged. Previous goal turn made concrete
+progress:1519 was committed and exactly privately verified. This checkpoint
+advances its original clock graph into a genuine stochastic representation
+and identifies the exact original IBM divergence, without declaring the full
+intrinsic calculus complete. ResearchSources stays read-only/uncommitted.
+
+### Reuse audit and mathematical choice
+
+Directly audited IBMIntrinsicOperators, ObservableProjectedDivergence,
+IBMJointIntrinsicDerivative, IBMNativeSourceRecovery, IBMGlobalVacuum and
+IBMCenteredSourceRepresentation. Static bounded source-pair reconstruction
+already exists for EVERY centered intrinsic IBM L2 observable. Reproving that
+would not advance the present obligation. IBMFoldedJointReconstruction and
+IBMSceneryNativeAdjoint already connect a specific terminal linear observable
+and scenery-parameter integrals to the original native adjoints. The useful
+extension here is the canonical actual Brownian-clock channel for the entire
+completed multitime Fourier class, with its original derivative identification.
+
+Reused GaussianBrownianPRP (actual Brownian-generated L2, not arbitrary ambient
+Gaussian L2), GaussianPredictableAdjoint, GaussianConditionalClarkOcone and
+GaussianFiniteHorizonAdjoint. The independent predictable space and its actual
+Ito integral were constructed earlier. No new integral, probability law,
+filtration or divergence is defined to make this reconstruction true.
+
+### Actual clock reconstruction, domain and causality
+
+For every finite observation type, arbitrary nonnegative clock times r_i,
+frequencies a_ki and phases beta_k, let F be the PREEXISTING actual intrinsic
+observable sum_k w_k*cos(beta_k+sum_i a_ki*Z_ri), Z_t=B(|W_t|), and let
+M=IBMFourierSourceMeanCalculus.clockMean be its PREEXISTING source average.
+Assume only sum_k |w_k|<infinity for this paragraph. The deterministic actual
+mean function is continuous by the existing Gaussian covariance characteristic
+formula and uniform summable domination. M is measurable for the RAW generated
+Brownian clock sigma algebra. If every r_i<=T, it is measurable for the actual
+natural clock filtration at T. These measurability facts are proved, not
+inferred from ambient Gaussian L2 membership.
+
+IBMFourierClockClarkOcone defines U=J_W^* M using the original bounded Ito
+adjoint. The old genuine Brownian PRP now applies with its hypotheses discharged:
+
+    J_W U = M - E_W M.
+
+U belongs to the independent predictable L2 space, is UNIQUE there, and its
+actual cutoff after T equals itself whenever all r_i<=T. The actual finite-
+horizon Ito integral of finiteAdjoint(T,M) gives the same centered M. Thus this
+is a finite-horizon stochastic identity, not merely a Gaussian expectation or
+an abstract full-time field with unproved support. The predictable coefficient
+is contractively stable in the actual L2 mean: norm(U-U')<=norm(M-M').
+
+Under the ADDITIONAL old curvatureCost summability,1519 supplies an actual
+original graph pair (M,G), with the folded/collision vector-series formula.
+The current theorem proves U=predictableProjection G, using functionality of
+the ORIGINAL closed derivative and the old exact derivative/adjoint agreement.
+This is a genuine Brownian-clock Clark--Ocone formula for the completed actual
+source mean. The gradient is projected, not naively evaluated at a running
+clock coordinate. Curvature summability is NOT unnecessarily imposed on the
+PRP, uniqueness, finite-horizon or hybrid reconstruction results.
+
+### Original native/intrinsic identity for the whole actual IBM observable
+
+IBMFourierHybridReconstruction proves the exact source-vacuum identification
+sourceVacuum(F)=clockLift(M) through the ORIGINAL source/clock unitaries and
+factor-zero Gaussian projection. It also proves E_W M=E_joint F. Both are
+identities of actual classes, not an unverified exchange of random integrals.
+
+Let K_X F be the existing bounded sourceRecovery(F). The new clock field is
+BochnerClosedOperator.tensor(gaussianOne,predictableField U). Its membership in
+the ORIGINAL lifted derivative adjoint follows from the old actual predictable
+Ito/divergence graph and BochnerLiftAdjointInclusion. Native unitary transport
+gives its original clock divergence exactly clockLift(M-E_W M). The already
+verified source recovery has source divergence F-sourceVacuum(F). Therefore
+the two actual ambient divergences sum to F-E_joint F. Projecting onto the
+ORIGINAL actual IBM observable subspace leaves this centered F unchanged.
+
+The exported reconstruction theorem places that explicit pair in the ORIGINAL
+intrinsic jointDivergence domain and proves its value is the actual centered
+Fourier observable. Its duality theorem pairs against EVERY input in the
+original jointDerivative domain. It works for infinite Fourier series with
+sumabsw finite, including actual inputs outside the original joint derivative
+domain. It does not enlarge either original derivative domain or presume that
+an observable must have a strong joint derivative to admit a divergence
+representation. The source channel remains the existing STATIC source adjoint;
+only the clock component here has the proved hidden-clock predictability.
+
+### Concrete negative test and exact unresolved scope
+
+When every cos(beta_k)=0, the actual source mean and its entire predictable
+clock coefficient vanish. This is proved in coefficient_zero_of_cos_zero.
+Independent actual-class testing uses one frequency, beta=pi/2 and only the
+zeroth nonzero weight. The resulting Fourier observable is EXACTLY -sin(Z_R).
+For EVERY R>0 it is nonzero/nonconstant and remains outside the original joint
+Derivative domain, by direct reuse of IBMActualSineDomainObstruction. It is
+nevertheless admitted by the new original hybrid joint divergence theorem.
+Thus reconstruction of the source mean alone cannot be passed off as
+reconstruction of the actual IBM observable. The source residual is essential.
+
+Predictability above is with respect to the HIDDEN Brownian clock filtration,
+not the observed IBM filtration. Neither source recovery nor the clock mean is
+asserted to be an intrinsic IBM-measurable coefficient. The full pair is not
+claimed to be temporally adapted to IBM observations. Intrinsic observable
+projection is used only in the mathematically valid adjoint identity; it is
+not assumed to preserve derivative domains or causal support. No uniqueness
+of full joint integrands is claimed; uniqueness applies to U in the original
+Brownian predictable space. This is not a complete physical-time Ito/Tanaka
+formula or an observed-filtration Clark--Ocone theorem. Earlier original sine
+joint-domain and native weak-Hilbert obstructions stay intact.
+
+Next pursue the exact source-channel/observed-causal descent or boundary terms
+needed for physical-time intrinsic IBM calculus, reusing this actual hybrid
+identity and the existing occupation/native results. Do not treat another
+static source representation as closing those obligations. No queued campaign
+is activated and no novelty claim is asserted.
+
+### Full verification and independent checks
+
+Full root build PASS6748jobs,28.667286seconds. Complete safe transitive
+Lean.collectAxioms audit PASS49376declarations,52.057462seconds; only propext,
+Classical.choice,Quot.sound. All20 new public types read unabridged, both full
+new sources/private local proofs and root/AxiomAudit changes reviewed. Frozen
+manifest2575 Foundation/root sources, configuration3 unchanged. Only root and
+AxiomAudit changed among old mathematical sources. All113 ResearchSources
+paths and hashes match inventory1292 exactly.
+
+Nine independent Lean checks PASS35.893499seconds, with two supporting private
+lemmas: odd-phase coefficient zero; actual nonzero sine/Fourier identification;
+actual sine outside joint derivative domain; successful original divergence
+reconstruction for that same input; coefficient presentation equality; original
+graph gradient yields the actual Ito output; all-zero clocks force zero full
+predictable coefficient (actual zero-horizon cutoff proved from its indicator);
+infinite geometric mixed two-clock coefficients retain horizon support; and
+actual finite-horizon centered multitime source-mean reconstruction.
+
+Development failures retained in .lake: attempted Measurable.tsum needed the
+actual continuous real series argument; explicit measurable-space selection
+was needed for RAW Brownian/past sigma algebras; predictable-space completeness
+was derived from its existing closedness; partialDerivative needed its correct
+IBMFiniteAverageCore namespace. Scratch checks required explicit abs/indicator
+normalization for the singleton summable weight, actual tsum-negation in the
+sine identity, and proof of the zero cutoff instead of a nonexistent theorem.
+All were repaired without new assumptions, compiler/resource/transparency/
+trust/linter/cache changes. Final proofs contain no sorry or new axioms.
+All logs and independent source are preserved. Exact-commit receipt and PRIVATE
+main/research verification follow the unchanged gates; unrelated drafts/tmp
+and all original manuscripts are preserved uncommitted.
