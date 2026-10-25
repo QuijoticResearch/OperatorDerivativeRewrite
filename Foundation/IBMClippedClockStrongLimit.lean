@@ -112,4 +112,12 @@ theorem actual_absolute_error_tendsto (T : ℝ≥0) (hT : 0 < T) :
       cappedClass_actual T N,occupationClass_actual T] with Y hs hc ho
     simp only [hs,Pi.sub_apply,hc,ho,Real.norm_eq_abs]
 
+def clockL1 (u : GaussianL2) : Lp ℝ 1 gaussianProduct := lower u
+
+theorem clockL1_actual (u : GaussianL2) : clockL1 u =ᵐ[gaussianProduct] u := lower_actual u
+
+theorem clockL1_tendsto (f : ℕ → GaussianL2) (u : GaussianL2)
+    (h : Tendsto f atTop (𝓝 u)) : Tendsto (fun N => clockL1 (f N)) atTop (𝓝 (clockL1 u)) :=
+  lower_tendsto f u h
+
 end OperatorDerivativeRewrite.Foundation.IBMClippedClockStrongLimit

@@ -378,4 +378,20 @@ theorem interior_mean_tendsto (T : ℝ≥0) :
     (interior_actualSum_tendsto_ae T)
   exact h
 
+theorem step_value_on_cell (φ : ℝ × ℝ → ℝ) (T : ℝ≥0) (N : ℕ)
+    (i : Fin (N+1)) (t : ℝ) (Y : SampleSpace)
+    (ht : t ∈ Ioc (uniformTime T N i.castSucc:ℝ) (uniformTime T N i.succ:ℝ)) :
+    step φ T N (t,Y) = φ (clockPath Y (uniformTime T N i.castSucc),clockPath Y T) :=
+  step_on_cell φ T N i t Y ht
+
+theorem step_norm_on_window (φ : ℝ × ℝ → ℝ) (hb : ∀ x, ‖φ x‖ ≤ 1)
+    (T : ℝ≥0) (N : ℕ) (t : ℝ) (Y : SampleSpace) (ht : t ∈ Ioc 0 (T:ℝ)) :
+    ‖step φ T N (t,Y)‖ ≤ 1 := step_bound φ hb T N t Y ht
+
+theorem uniform_left_nodes_tendsto (T : ℝ≥0) (t : ℝ) (ht : t ∈ Ioc 0 (T:ℝ))
+    (i : (N : ℕ) → Fin (N+1))
+    (hi : ∀ N, t ∈ Ioc (uniformTime T N (i N).castSucc:ℝ) (uniformTime T N (i N).succ:ℝ)) :
+    Tendsto (fun N => uniformTime T N (i N).castSucc) atTop (𝓝 t.toNNReal) :=
+  left_nodes_tendsto T t ht i hi
+
 end OperatorDerivativeRewrite.Foundation.IBMTerminalRiemannOccupation

@@ -2386,3 +2386,6 @@ import Foundation.GaussianTerminalBracketProducts
 import Foundation.GaussianTerminalStrongBracket
 import Foundation.IBMClippedClockStrongLimit
 import Foundation.GaussianFutureTerminalBracket
+import Foundation.IBMObservedClockOccupation
+import Foundation.IBMObservedClockBracket
+import Foundation.IBMObservedClockCap

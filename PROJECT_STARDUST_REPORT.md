@@ -42903,3 +42903,130 @@ are not weakened. Every other previous mathematical source is unchanged.
 
 Measured terminal wall seconds: full-build=42.171, audit=37.544, independent=26.371.
 Explicit-path Git checkpoint, exact audit receipt and verified PRIVATE main/research synchronization follow. Unrelated untracked sources and manuscripts remain excluded.
+
+## Checkpoint1493 — actual future-time IBM observable pairing and strong capped-clock limit
+
+IBM remains ACTIVE; queue8280325 and every gate unchanged. Previous goal1492 was
+PROGRESS, closed at fully audited/private04d6a63e9cc3b782ece74f46e9f9d328a247342c.
+The current checkpoint discharges1492's separate-horizon occupation/capped-QV
+obligation and proves an ORIGINAL intrinsic observable limit at R DIFFERENT
+from grid horizon H. It does not transition campaigns or admit housekeeping.
+The preserved October23 reflection-accounting uncertainty still excludes a
+new October24 reflection session; no reservation or historical record changes.
+
+Primary archive remains ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All113 ResearchSources paths/hashes match inventory1292 exactly, read-only and
+uncommitted. Actual IBM remains Z_t=B(|W_t|), without an unproved identification
+with two-sided outer Brownian IBM. No mathematical novelty assertion or new
+external theorem is adopted at this checkpoint.
+
+Foundation/IBMObservedClockOccupation.lean separates grid horizon H and clock
+observation R. Literal sampledSum uses phi(W_left,W_R), and its actual continuous
+path representative sampledPathSum is equated AE at all grid coordinates.
+All measurability, boundH and MemLp2 obligations are proved. For H<=R, the
+EXISTING distance_positive_ae R is restricted from windowR to windowH by proved
+measure monotonicity, rather than assuming avoidance of the random terminal
+radius. Continuity of the actual clock and the old left-node lemma then give
+almost-sure vanishing sampled occupation near |W_R| for EVERY real delta_N->0.
+No monotonicity or nonnegativity of delta_N is assumed. These samples converge
+STRONGLY in original clock GaussianL2 to zero by the existing domination theorem.
+
+The literal measurable occupation functional is
+ I_(H,R)(Y)=integral_(0,H] 1_{|clockPath(Y,t)|<|clockPath(Y,R)|} dt.
+It has an actual GaussianL2 representative and norm boundH. The strict-interior
+nodal sums tend to I_(H,R) almost surely and strongly in original clockL2 for
+H<=R, including equality. Random equality levels are excluded ONLY using the
+proved noncollision/Fubini result; no heuristic path argument replaces it.
+
+Foundation/IBMObservedClockBracket.lean reuses1492's genuine strong future
+bracket theorem with bounded Borel phi_N(W_left,W_R). weightedClass is that
+actual centered increment error plus the actual nodal occupation class, and
+is identified AE with literal sum_i DeltaW_i^2*phi_N(W_left_i,W_R). Every
+weighted sum is proved MemLp2. For H<R, the outer shrinking-band weighted
+fields tend STRONGLY in clockGaussianL2 to zero, hence their actual mean tends
+to zero by pairing with the original gaussianOne. The surviving interior
+weighted bracket V_N tends STRONGLY in clockGaussianL2 to I_(H,R).
+The generic convergence statement keeps its nodal-limit premise explicit;
+BOTH outer and interior specializations discharge it fully here.
+
+Foundation/IBMObservedClockCap.lean constructs the actual finite sum
+ C_N(H,R)=sum_i [min(|W_right_i|,|W_R|)-min(|W_left_i|,|W_R|)]^2
+and identifies it EXACTLY with1486's ORIGINAL clippedSquares(H/(N+1),N+1,R).
+The deterministic crossing bound is reused with raw signed terminal W_R and
+absolute value INSIDE the cap. The origin term is definitionally the OLD
+origin energy at horizonH, independent of R. The outer boundary uses the new
+strong field/mean limit; the large-increment tail is1490's original fourth-
+moment control with the same positive delta_N=(sqrt(sqrt(N+1)))^-1.
+Thus C_N-V_N tends STRONGLY to zero in actual clockL1 for EVERY0<H<R.
+The existing probability-space L2-to-L1 map preserves the actual stochastic
+representatives. Consequently cappedClass_tendsto proves C_N->I_(H,R)
+STRONGLY in clockL1, and actual_absolute_error_tendsto states LITERALLY
+ E|C_N(H,R)-I_(H,R)|->0. C_N strongL2 is not claimed.
+
+The finite observable identity is retained in the ORIGINAL intrinsic calculus:
+ nativePairing(H,R,N)=
+ inner(jointDivergence(gridInput(H/(N+1),N+1)),squareObservation(R))
+ =E[min(|W_H|,|W_R|)^2]-E[C_N(H,R)].
+This uses IBMRawGridObservableTests.observable_pairing and its exact finite
+overlap kernel, including the original conditional OBSERVABLE projection.
+It does not commute projection with chaos or identify clock functions as
+observable. The endpoint overlap is proved integrable by the old integrable
+overlapEnergy plus the actual capped sum, with an explicitly normalized
+one-cell identity. L1 continuity of the actual Bochner integral therefore gives,
+for EVERY0<H<R,
+ nativePairing(H,R,N)->E[min(|W_H|,|W_R|)^2]-E[I_(H,R)].
+squareObservation_actual independently identifies the test with actual Z_R^2.
+This is a genuine additional-time OBSERVABLE scalar limit, not merely an
+unprojected source probe or an expectation-level heat formula.
+
+Precise remaining obligations: R<H needs a real past/future split and control
+of the straddling cell, rather than reuse of a false future-domain hypothesis.
+Products Z_R Z_S need multiple observed levels and mixed capped increments.
+Convergence for a rich completed actual IBM observable test domain, the ENTIRE
+projected native grid output, intrinsic Ito reconstruction and full intrinsic
+Clark--Ocone/closure calculus remain OPEN. Existing R=H results remain valid
+and are checked for exact consistency. No explicit occupation-mean value,
+hidden-clock recovery or full-calculus completion is asserted.
+
+Two old mathematical sources receive ONLY APPENDED REUSE WRAPPERS:16 lines
+in IBMTerminalRiemannOccupation expose its proved cell-value, step bound and
+left-node results;8 lines in IBMClippedClockStrongLimit expose its proved actual
+L2-to-L1 map/representative and convergence theorem. Both previous bodies are
+preserved, frozen-SHA checked and normalized-prefix checked. No old theorem,
+hypothesis or proof is changed; all other old mathematical sources are intact.
+
+EIGHTEEN independent Lean checks pass SECOND RUN: literal occupation integral,
+independent occupation positivity, equality with OLD own-terminal occupation,
+equality with OLD own-terminal nodal samples, shrinking boundary AE, weighted
+outer strongL2, surviving interior strongL2, actual weighted MemLp2, exact old
+clippedSquares identification, capped strongL1, literal original absolute-error
+limit, actual endpoint integrability, exact finite original pairing, original
+jointDivergence/gridInput/squareObservation written-out limit, own-terminal
+capped-sum consistency, OLD critical capped limit, actual Z_R^2 observation,
+and pathwise occupation boundH. First-run positivity TEST failed because
+function-level LE remained unreduced; an explicit scalar change discharged it.
+Failed log/time preserved. No mathematical source changed after full gates
+for this test-only fix.
+
+Development target1 passed the base sampling construction;target2 exposed an
+under-specified function inference heartbeat timeout at DEFAULT200000 and a
+related explicit step-bound mismatch. Target3 passes with explicit path-
+dependent multiplier arguments, without increasing resources. Target4 exposed
+one_mul vs mul_one;target5--6 exposed one-cell division/function normalization
+in endpoint integrability;target7 passes after explicit normalization. Logs
+are retained. A live dependency rebuild was polled by its SAME handle and
+process state, never restarted because it was quiet. No compiler, Mathlib,
+toolchain, trust, resource or linter setting changes.
+
+All FIVE complete final mathematical sources, including private proofs, were
+read in full. A truncated old-source review segment was reread in a smaller
+chunk. All54 new public types were printed UNABRIDGED and reviewed. Complete
+6663-job root build and complete Lean.collectAxioms audit of ALL47863 safe
+Foundation declarations pass, with ONLY propext, Classical.choice, Quot.sound.
+All2491 Foundation/root hashes, three unchanged configuration hashes and113
+archive hashes are frozen/rechecked. The two reviewed old-source extensions
+are separately append-only checked, without weakening the source-integrity gate.
+
+Measured terminal wall seconds: full-build=25.341, audit=41.146, independent=29.197.
+Explicit reviewed-path Git checkpoint, exact receipt and verified PRIVATE main/research backup follow. Unrelated untracked files/manuscripts remain excluded.
