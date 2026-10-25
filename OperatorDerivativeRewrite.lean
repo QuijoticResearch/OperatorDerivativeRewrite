@@ -2389,3 +2389,7 @@ import Foundation.GaussianFutureTerminalBracket
 import Foundation.IBMObservedClockOccupation
 import Foundation.IBMObservedClockBracket
 import Foundation.IBMObservedClockCap
+import Foundation.GaussianInteriorClockBracket
+import Foundation.GaussianAllObservationBracket
+import Foundation.IBMAllObservationBoundary
+import Foundation.IBMAllObservationLimits

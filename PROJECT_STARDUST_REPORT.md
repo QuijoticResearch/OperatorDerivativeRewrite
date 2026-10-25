@@ -43030,3 +43030,138 @@ are separately append-only checked, without weakening the source-integrity gate.
 
 Measured terminal wall seconds: full-build=25.341, audit=41.146, independent=29.197.
 Explicit reviewed-path Git checkpoint, exact receipt and verified PRIVATE main/research backup follow. Unrelated untracked files/manuscripts remain excluded.
+
+## Checkpoint1494 — all observation times, uniform clock bracket and actual IBM pairing limits
+
+IBM remains ACTIVE; queue8280325 and every completion/verification gate remain
+unchanged. Previous goal1493 was PROGRESS, closed at fully audited/private
+83f0a377062b31ad61547125bab21ae7c231fb65. This checkpoint DISCHARGES the
+inside-horizon observation and crossing-cell gap for the terminal-square
+observable, rather than continuing only with R>H or declaring the calculus done.
+No new campaign, reflection admission, goal or parallel session is created.
+
+Primary archive remains ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All113 ResearchSources paths/hashes match inventory1292; archive files remain
+read-only/uncommitted. Actual IBM remains B(|W_t|), without an unproved
+two-sided-outer-Brownian identification. No external theorem or novelty claim
+is adopted. The existing October23 reflection-accounting uncertainty remains
+preserved, and no October24 reflection reservation is made.
+
+Foundation/GaussianInteriorClockBracket.lean first proves an EXACT conditional
+square statement when the observation is already in the past: for R<=s<=t,
+ conditionalProjection(observation(s,R),wick(DeltaDirection(s,t),2))=0.
+All covariances with the observation family are zero by the existing actual
+pastDirection_inner_increment; conditional_wick_eq_of_covariances compares with
+zero, and the OLD positive-degree Wick-zero theorem closes the result. Pairing
+with EVERY element of that generated observation subspace is exactly zero.
+No enlarged-filtration martingale or conditional law is postulated.
+
+For H>0, n=N+1, the deterministic cut is m=min(n,floor(R*n/H)). Its position
+and bounds are PROVED with actual Nat.floor and real/NNReal coercions. Cells
+i<m finish by R and satisfy R-left_i >= (H/n)*(m-i). Cells i>m start after R,
+so their generated-row pairings vanish EXACTLY by the preceding theorem.
+Only the cell i=m, when present, needs a direct crossing estimate. Aligned
+observations and observations outside the horizon are included in these cases.
+
+Foundation/GaussianAllObservationBracket.lean reuses1492's ACTUAL error, row,
+pairCoefficient domains and finite energy identity for weights
+ a_Ni=phi_Ni(W_left_i,W_R), with Borel phi_Ni bounded by one. The early row
+pairings are bounded by (4H^2/n)/(m-i); the EXISTING reciprocal_sum_bound and
+an exact finite-prefix reduction control their sum. Every individual row
+pairing is bounded by4H^2/n, covering the crossing cell. All late pairings
+are zero. The diagonal has bound4H^2/n. Thus, for EVERY R>=0,
+ norm(sum_i [(Delta_i W)^2-Delta_i t]*a_Ni)^2
+       <=12H^2/(N+1)+16H^2/sqrt(N+1).
+This bound is UNIFORM in R and has no R-H singularity. It proves STRONG
+original-clock GaussianL2 convergence of the centered error even when the
+common observation time R_N changes ARBITRARILY with refinement, as do the
+bounded Borel cell weights. No convergence of R_N or of the weights is needed.
+ONE common observation is allowed PER GRID; each cell cannot choose its own
+future time. This distinction preserves1488's all-anticipative-weight
+counterexample. No general future-measurable coefficient theorem is asserted.
+
+Foundation/IBMAllObservationBoundary.lean proves actual random-level
+noncollision in time on EVERY horizonH for EVERY observationR, with no H<=R
+hypothesis. It excludes the single Lebesgue-null time t=R, applies the old
+folded noncollision theorem in either time order, and uses the proved joint
+measurability and Fubini conversion. R=0 is included through the existing AE
+clock modifications; no pointwise zero representative is assumed.
+
+To reuse the already verified occupation proofs without duplicating them,
+IBMObservedClockOccupation is refactored carefully. The two original Riemann
+proof bodies are preserved VERBATIM apart from replacing their first specific
+distance premise by a named noncollision premise in the new general lemmas.
+The original theorems retain their exact public types and call those lemmas
+with their old hypotheses. The old private domination argument is exposed by
+a thin wrapper. IBMObservedClockCap receives ONLY an appended wrapper for its
+already proved L1 decomposition. Both baseline source hashes are saved; the
+proof-body transformation is checked exactly, the complete diff is saved, and
+ALL39 previous public types from the two files match their prior UNABRIDGED
+printed forms after WHITESPACE-ONLY normalization. No old hypothesis or
+mathematical claim is changed, and all other old mathematical sources are intact.
+
+Foundation/IBMAllObservationLimits.lean assembles actual results for arbitrary
+FIXED R>=0. Outer shrinking-band nodal sums converge strongly in clockL2 to
+zero; interior nodal sums converge strongly in clockL2 to the SAME literal
+ I_(H,R)=integral_0^H 1_{|clockPath_t|<|clockPath_R|}dt.
+These nodal results allow H>=0. For H>0, the uniform actual bracket theorem
+gives strong clockL2 decay of the outer increment-weighted field and strong
+clockL2 convergence of the surviving interior field to I_(H,R). Existing
+origin, tail and crossing estimates then yield the SAME actual capped sum
+ C_N(H,R)=sum_i Delta(min(|W|,|W_R|))^2 -> I_(H,R)
+STRONGLY in clockL1, with literal E|C_N-I_(H,R)|->0. The original capped
+objects and AE realizations are reused, never replaced by a symbolic integral.
+
+Finally, for EVERY H>0 and EVERY fixed R>=0, the ORIGINAL intrinsic IBM
+pairing has the proved scalar limit
+ inner(jointDivergence(gridInput(H/(N+1),N+1)),squareObservation(R))
+   -> E[min(|W_H|,|W_R|)^2]-E[I_(H,R)].
+The observable is actual Z_R^2 by squareObservation_actual; the conditional
+observable projection is retained by the old exact finite pairing identity.
+No hidden-clock recovery, chaos/projection commutation or density assertion
+is introduced. This closes the R<H obligation left1493, and includes the
+previous R=H and R>H cases as one theorem.
+
+Important scope: moving R_N is permitted in the CENTERED BRACKET ERROR theorem.
+The occupation and capped-QV limit above is stated for FIXED R. An arbitrary
+nonconvergent sequence R_N has no asserted fixed occupation limit. Only one
+observation per grid is controlled; multiple times or products Z_R Z_S remain
+open. Strong clockL1 of the capped functional and these scalar observed tests
+do not prove convergence of the ENTIRE projected native intrinsic output.
+A rich completed observable test domain, native intrinsic Ito reconstruction,
+Clark--Ocone/closure and full intrinsic IBM calculus remain OPEN. No explicit
+occupation mean or proposed constant such as2H/3 is asserted here.
+
+TWENTY independent Lean checks pass SECOND RUN: exact past conditional-square
+zero and generated pairing zero; aligned cut(1,1/2,3)=2; unaligned
+cut(1,3/8,3)=1; zero observation cut0; beyond-horizon cut4; prefix reciprocal
+bound; actual early-cell endpoint test; late row zero; uniform quantitative
+bound; arbitrary moving observation time and weights; an observation sequence
+alternating between shrinking interior times and2 with arbitrary band widths;
+all-window random-level noncollision; all-R interior nodal strongL2; capped
+strongL1; original clippedSquares absolute-error limit; original written-out
+intrinsic divergence pairing limit; prior future-time API; exact own-terminal
+pairing definition; and nativePairing(H,0,N)=0. The last test independently
+proves the actual Z_0^2 observable is zero from the existing AE process law.
+Its first run failed on nested subtype-to-Lp zero coercion; an explicit JointL2
+target repaired the TEST, with failed log/time retained. No math source changed
+after the full build/audit for this test correction.
+
+Development target1 exposed cut unfolding and NNReal grid normalization;
+target2 passed the past/cut module. Target3 exposed real-subtraction inference,
+Nat.cast(N+1), and a proof-term parenthesis;target4 passes the uniform bound
+and all-window boundary. Target5 passes the complete all-observation limits.
+No resource, trust, Lean/Mathlib, compiler or linter setting changes. Old style
+warnings remain visible. Full final sources/private proofs of all SIX touched
+mathematical modules were read; all32 new public types were printed and read
+UNABRIDGED, and39 prior public types compared in full. Complete6668-job root
+build and complete Lean.collectAxioms audit of ALL47910 safe Foundation
+declarations pass, with ONLY propext, Classical.choice, Quot.sound allowed.
+All2495 Foundation/root hashes, three unchanged configuration hashes and113
+archive hashes are frozen/rechecked. The reviewed refactor and cap append are
+explicitly allowlisted, with proof/type preservation checks; integrity gates
+are not weakened. Unrelated untracked sources and all manuscripts stay excluded.
+
+Measured terminal wall seconds: full-build=25.638, audit=39.058, independent=27.741.
+Explicit-path Git checkpoint, exact audit receipt and verified PRIVATE main/research synchronization follow.

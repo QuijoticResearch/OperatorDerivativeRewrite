@@ -69,10 +69,11 @@ theorem distance_positive_on_window (H R : ℝ≥0) (hHR : H ≤ R) :
     (Ioc_subset_Ioc le_rfl (show (H:ℝ) ≤ R from hHR))
   exact (distance_positive_ae R).mono fun Y hY => hY.filter_mono (ae_mono hw)
 
-theorem outer_sampledPathSum_tendsto_ae (H R : ℝ≥0) (hHR : H ≤ R)
+theorem outer_sampledPathSum_tendsto_of_noncollision (H R : ℝ≥0)
+    (hboundary : ∀ᵐ Y ∂gaussianProduct, ∀ᵐ t ∂window H, 0 < distance R (t,Y))
     (δ : ℕ → ℝ) (hδ : Tendsto δ atTop (𝓝 0)) :
     ∀ᵐ Y ∂gaussianProduct, Tendsto (fun N => sampledPathSum (outerBand (δ N)) H R N Y) atTop (𝓝 0) := by
-  filter_upwards [distance_positive_on_window H R hHR] with Y hY
+  filter_upwards [hboundary] with Y hY
   have ht : ∀ᵐ t ∂window H, Tendsto (fun N => sampledStep (outerBand (δ N)) H R N (t,Y))
       atTop (𝓝 (0:ℝ)) := by
     filter_upwards [hY,ae_restrict_mem measurableSet_Ioc] with t hd ht
@@ -99,6 +100,11 @@ theorem outer_sampledPathSum_tendsto_ae (H R : ℝ≥0) (hHR : H ≤ R)
       change ‖step (fun x => outerBand (δ N) (x.1,clockPath Y R)) H N (t,Y)‖ ≤ 1
       exact step_norm_on_window _ (fun x => outerBand_bound (δ N) (x.1,clockPath Y R)) H N t Y ht) ht
   simpa only [Function.comp_def,id_eq,sampledStep,step_integral,integral_zero,sampledPathSum] using hi
+
+theorem outer_sampledPathSum_tendsto_ae (H R : ℝ≥0) (hHR : H ≤ R)
+    (δ : ℕ → ℝ) (hδ : Tendsto δ atTop (𝓝 0)) :
+    ∀ᵐ Y ∂gaussianProduct, Tendsto (fun N => sampledPathSum (outerBand (δ N)) H R N Y) atTop (𝓝 0) :=
+  outer_sampledPathSum_tendsto_of_noncollision H R (distance_positive_on_window H R hHR) δ hδ
 
 private theorem class_tendsto_of_path (φ : ℕ → ℝ × ℝ → ℝ) (hm : ∀ N, Measurable (φ N))
     (hb : ∀ N x, ‖φ N x‖ ≤ 1) (H R : ℝ≥0) (f : SampleSpace → ℝ) (g : GaussianL2)
@@ -151,10 +157,11 @@ def occupationL2 (H R : ℝ≥0) : GaussianL2 := (occupation_memLp H R).toLp _
 theorem occupationL2_actual (H R : ℝ≥0) : occupationL2 H R =ᵐ[gaussianProduct] occupation H R :=
   (occupation_memLp H R).coeFn_toLp
 
-theorem interior_sampledPathSum_tendsto_ae (H R : ℝ≥0) (hHR : H ≤ R) :
+theorem interior_sampledPathSum_tendsto_of_noncollision (H R : ℝ≥0)
+    (hboundary : ∀ᵐ Y ∂gaussianProduct, ∀ᵐ t ∂window H, 0 < distance R (t,Y)) :
     ∀ᵐ Y ∂gaussianProduct, Tendsto
       (fun N => sampledPathSum IBMTerminalBracketWeights.interior H R N Y) atTop (𝓝 (occupation H R Y)) := by
-  filter_upwards [distance_positive_on_window H R hHR] with Y hY
+  filter_upwards [hboundary] with Y hY
   have ht : ∀ᵐ t ∂window H, Tendsto
       (fun N => sampledStep IBMTerminalBracketWeights.interior H R N (t,Y))
       atTop (𝓝 (occupationValue R (t,Y))) := by
@@ -190,11 +197,23 @@ theorem interior_sampledPathSum_tendsto_ae (H R : ℝ≥0) (hHR : H ≤ R) :
   simpa only [Function.comp_def,id_eq,sampledStep,step_integral,occupation,occupationValue,
     sampledPathSum] using hi
 
+theorem interior_sampledPathSum_tendsto_ae (H R : ℝ≥0) (hHR : H ≤ R) :
+    ∀ᵐ Y ∂gaussianProduct, Tendsto
+      (fun N => sampledPathSum IBMTerminalBracketWeights.interior H R N Y) atTop (𝓝 (occupation H R Y)) :=
+  interior_sampledPathSum_tendsto_of_noncollision H R (distance_positive_on_window H R hHR)
+
 theorem interior_sampledClass_tendsto (H R : ℝ≥0) (hHR : H ≤ R) :
     Tendsto (sampledClass IBMTerminalBracketWeights.interior interior_measurable interior_bound H R)
       atTop (𝓝 (occupationL2 H R)) :=
   class_tendsto_of_path (fun _ => IBMTerminalBracketWeights.interior) (fun _ => interior_measurable)
     (fun _ => interior_bound) H R _ _ (occupationL2_actual H R) (occupation_norm_bound H R)
     (interior_sampledPathSum_tendsto_ae H R hHR)
+
+theorem sampledClass_tendsto_of_path (φ : ℕ → ℝ × ℝ → ℝ) (hm : ∀ N, Measurable (φ N))
+    (hb : ∀ N x, ‖φ N x‖ ≤ 1) (H R : ℝ≥0) (f : SampleSpace → ℝ) (g : GaussianL2)
+    (hg : g =ᵐ[gaussianProduct] f) (hf : ∀ Y, ‖f Y‖ ≤ H)
+    (hpath : ∀ᵐ Y ∂gaussianProduct, Tendsto (fun N => sampledPathSum (φ N) H R N Y) atTop (𝓝 (f Y))) :
+    Tendsto (fun N => sampledClass (φ N) (hm N) (hb N) H R N) atTop (𝓝 g) :=
+  class_tendsto_of_path φ hm hb H R f g hg hf hpath
 
 end OperatorDerivativeRewrite.Foundation.IBMObservedClockOccupation

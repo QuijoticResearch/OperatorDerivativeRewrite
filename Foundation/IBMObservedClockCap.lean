@@ -218,4 +218,9 @@ theorem nativePairing_tendsto (H R : ℝ≥0) (hH : 0 < H) (hHR : H < R) :
     (capped_mean_tendsto H R hH hHR)
   exact h.congr' (Eventually.of_forall fun N => (nativePairing_identity H R N).symm)
 
+theorem cappedClass_reconstruction (H R : ℝ≥0) (N : ℕ) :
+    cappedClass H R N = differenceClass H R N+
+      clockL1 (IBMObservedClockBracket.weightedClass IBMTerminalBracketWeights.interior
+        interior_measurable interior_bound H R N) := cappedClass_decomposition H R N
+
 end OperatorDerivativeRewrite.Foundation.IBMObservedClockCap
