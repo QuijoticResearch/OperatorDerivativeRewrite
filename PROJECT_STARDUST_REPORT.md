@@ -46383,3 +46383,96 @@ hash and terminal closed receipt revalidated. No verification gate is weakened.
 Explicit five-path Git commit, exact-commit receipt and verified PRIVATE
 main/research synchronization close this amendment. Resume IBM's physical-clock
 source-mean/Fourier completion frontier from95e3bac; no active proof was changed.
+
+## Checkpoint1524 — completed actual Fourier source-mean physical Ito
+
+October25,2026. IBM remains ACTIVE; the current queue is instruction commit
+c34f3ed, including queued Bakry Objective2. This is normal proof development,
+not another reflection session. Build directly on1522 and the existing actual
+Fourier observable/source-average construction. No manuscript claim is assumed.
+
+PROVED ReflectedDampingSeries: for arbitrary REAL signed weights b_k and rates
+c_k>=0, absolute summability of b_k and of |b_k|c_k^2 suffices for the genuine
+global C2 extension f(x)=sum_k b_k extension(c_k,x). The intermediate first-rate
+cost is derived using c<=1+c^2, rather than assumed independently. All first
+and second derivatives are identified termwise, with global bounds
+
+    |f'(x)| <= 2 sum_k |b_k|c_k,
+    |f''(x)| <= sum_k |b_k|c_k^2.
+
+The first and second derivative partial sums converge UNIFORMLY ON ALL REAL x
+to their respective derivatives. This is the topology of first_uniform and
+second_uniform; uniform convergence of the unbounded negative-tail VALUE
+extensions on all R is not claimed. On x>=0 the extension equals the completed
+damping series sum b_k exp(-c_k x); f(0)=sum b_k and f'(0)=-sum b_k c_k.
+Both gluing jets and derivative continuity are proved, not formal differentiation
+of a possibly divergent series. The proof uses Mathlib's existing smooth-series
+theorems and the verified1522 extensions, without new foundational infrastructure.
+
+PROVED ReflectedDampingSeriesIto.actual_ito: for EVERY such sequence and each
+fixed horizon T>=0, the ORIGINAL Brownian predictable integral satisfies
+
+    sum b_k exp(-c_k |W_T|) - sum b_k
+      = Ito(U_T) - (sum b_k c_k) M_T
+        + (1/2) integral_0^T [sum b_k c_k^2 exp(-c_k |W_s|)] ds
+
+AE on the original Gaussian space. M is the existing constructed Brownian
+mass path in its verified Tanaka normalization. running_actual identifies the
+actual timeProbability representative as horizon-indicator times
+sign(W_s) sum b_k[-c_k exp(-c_k |W_s|)]. The predictable domain and integral
+are the original fullPredictable and itoIntegral. Applying the original reflected
+C2 theorem to the completed function establishes the actual stochastic identity
+directly; no unjustified interchange of infinite sums and stochastic integrals
+is used. In particular, a theorem that the native partial stochastic integrals
+converge in L2 has not been inferred just from the scalar uniform limits.
+
+PROVED IBMFourierSourceMeanIto.actual_ito for the EXISTING actual completed
+one-time IBM Fourier source mean, with arbitrary real frequencies a_k, phases
+beta_k and signed weights w_k. Sufficient explicit domain:
+
+    sum |w_k| < infinity,   sum |w_k| a_k^4 < infinity.
+
+Set b_k=w_k cos(beta_k), c_k=a_k^2/2. mean is literally the prior clockMean of
+the completed actual IBM observable, not a replacement definition by a heat
+kernel. mean_actual identifies that class with the displayed damping series.
+Fourth_cost proves the required squared-rate bound, and the general stochastic
+formula applies. The mass coefficient is -sum w_k cos(beta_k)a_k^2/2; drift
+inside the half-integral has coefficient w_k cos(beta_k)a_k^4/4 (hence the
+physical one-mode coefficient a_k^4/8). The fourth-frequency hypothesis is
+SUFFICIENT, not asserted necessary or optimal; phase cancellation can admit
+larger domains in the general signed-rate theorem. No bounded-frequency,
+distinct-rate or positive-weight assumption was added.
+
+Exact limitations and next obligations: hidden Brownian-clock predictability,
+not the observed IBM filtration; SOURCE-AVERAGED identity, not a full unaveraged
+IBM Ito/Tanaka formula; AE for each fixed T, not a single simultaneous all-time
+event. Full intrinsic IBM remains OPEN. Next use the proved uniform jets plus
+actual finite-time L2 bounds to identify native partial running fields and
+integrals with the aggregate field; establish the finite-variation correction
+as an actual L2 element and compare its original predictable adjoint with1520's
+unique terminal Clark--Ocone coefficient. Do not equate that coefficient with
+the local running coefficient while discarding the drift/mass correction.
+Multitime folded-covariance collisions and observed-filtration closure remain
+separate substantive questions. These applications of standard reflected Ito,
+Gaussian averaging and smooth-series theory are not claimed externally novel.
+
+Verification: full ROOT build PASS6753jobs69.719698s; complete safe transitive
+Lean.collectAxioms audit PASS49453declarations40.843726s, only propext,
+Classical.choice and Quot.sound. All34 new public types read UNABRIDGED; all
+three new source files, proofs and root/audit changes completely reviewed.
+Seven independent Lean checks PASS27.839983s: cancellation of value/first/second
+channels with opposite signed weights at repeated rates; zero-rate constant
+observable; actual odd-phase completed mean zero; unbounded frequencies a_k=2^k
+with w_k=32^(-k) (fourth cost exactly 2^(-k)); and first-rate cost derivation.
+Targeted elaboration failures, including a default-heartbeat metavariable
+inference timeout, remain in separate1524logs; specifying the convergence base
+point and function type repaired it without raising resource limits. The first
+prepare script's missing instruction-only audit template was also repaired by
+reusing the existing canonical1522 audit prefix; no check was weakened.
+
+All2580 Foundation/root sources frozen, configuration3 and archive113paths/hashes
+rechecked against their authoritative baseline/inventory. No mathematical source
+changed except the three additions and root/AxiomAudit registration. Original
+ResearchSources, manuscripts, instructions and unrelated drafts preserved.
+Explicit six-path audited commit, exact receipt and verified PRIVATE main/research
+backup close this checkpoint. IBM remains ACTIVE; no later campaign begins.

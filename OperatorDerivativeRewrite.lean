@@ -2475,3 +2475,6 @@ import Foundation.IBMFourierClockClarkOcone
 import Foundation.IBMFourierHybridReconstruction
 import Foundation.GaussianDampedReflectedIto
 import Foundation.IBMOneTimeSourceMeanIto
+import Foundation.ReflectedDampingSeries
+import Foundation.ReflectedDampingSeriesIto
+import Foundation.IBMFourierSourceMeanIto
