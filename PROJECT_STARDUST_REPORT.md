@@ -45549,3 +45549,134 @@ hashes match the preserved baseline/inventory1292. ResearchSources stays read-on
 and uncommitted; unrelated plans/drafts/tmp are preserved. No toolchain, resource,
 trust, cache, transparency or linter configuration changed. Exact-commit receipt
 and verified PRIVATE main/research backups follow the established closure gate.
+
+
+## Checkpoint 1516 — actual source-mean differentiation and the native coefficient
+
+October25,2026. IBM remains ACTIVE; queue8280325 and all later gates remain
+unchanged. The previous goal turn made progress:1515 closed atb347944 with
+exact PRIVATE main/research verification. This checkpoint uses actual Gaussian
+source means of actual reflected-clock IBM observables, not a new formal process.
+
+### Mathematical reuse audit and regularity repair
+
+IBMGaussianMeanDerivative already proves a Schwartz source-mean derivative and
+quadratic Taylor remainder. Inspection showed that the underlying analytic
+argument needs bounded C2 data, but a direct application of the older mixed
+Stein API to phi' would incorrectly demand a C3 hypothesis. The missing C1
+first-moment API is therefore proved from the EXISTING integrable quarter-
+Gaussian stein_integrable theorem, the exact source transport, verified first-
+chaos conditional pairing and regression_energy. Scaling zero is included;
+there is no variance division or nondegeneracy assumption. No original theorem
+or hypothesis was weakened, and no extra smoothness premise was smuggled in.
+
+IBMBoundedGaussianMeanDerivative.first_mixed_C1 proves, for bounded C1 psi with
+bounded derivative and every actual isonormal pair u,v,
+
+    E[X(v) psi(X(u))] = inner(u,v) E[psi'(X(u))].
+
+For C2 phi with bounds A on phi, B on phi', and C on phi'', define the ACTUAL
+mean m(u)=E[phi(X(u))] and s(u)=E[phi''(X(u))]. The new result proves
+
+    |m(v)-m(u)-inner(u,v-u)s(u)| <= (C/2) norm(v-u)^2,
+    Dm(u)[h] = inner(u,h)s(u).
+
+The remainder uses the existing genuine scalar Taylor theorem and Gaussian L2
+norm-square identity. It proves Frechet differentiability on the ENTIRE source
+Hilbert space, including u=0. The derivative norm is at most B, uniformly in u;
+that bound uses the actual first-chaos/test-class inner product, not a divergent
+bound proportional to norm(u). The derivative-bound lemma itself needs C2 and
+bounds on phi'/phi'', while the stated mean differentiability/remainder theorem
+also retains bounded phi. Unbounded linearly growing tests are not silently
+added to its domain.
+
+The exact coefficient bridge is
+
+    Dm(u)[h] = 2 * nativeHalfCurvature(phi,u) * inner(u,h).
+
+This identifies the coefficient already used in1512--1515 native testing. It
+does NOT identify the whole native action with this first derivative: the
+native action contracts a quadratic kernel, while this derivative contracts a
+Hilbert direction. At u=0 the latter vanishes although the former coefficient
+can be -1/2 for cosine. This distinction is explicitly checked.
+
+### Completed Fourier source-mean calculus on the existing domain
+
+IBMFourierSourceMeanCalculus uses the SAME1515 finite-coordinate Fourier F,
+frequencies a_ki, phases beta_k, weights w_k, value sum and curvature sum.
+For a finite family U_i of actual source Hilbert directions, it proves that
+
+    M(U) = E[F((X(U_i))_i)]
+
+is the actual source integral, with every interchange of series and integration
+justified by the original dominated series theorem and sum|w_k|. It then proves
+M Frechet differentiable, with derivative the norm-convergent CLM series whose
+kth term on V is
+
+    -w_k cos(beta_k) exp(-norm(sum_i a_ki U_i)^2/2)
+      * inner(sum_i a_ki U_i, sum_i a_ki V_i).
+
+The derivative-term norm is bounded by |w_k| sum_i|a_ki|, UNIFORMLY in U.
+This first-frequency cost is proved summable from the PREVIOUS value and
+curvature costs by b<=1+b^2; it is not a new convergence assumption.
+Mathlib.hasFDerivAt_tsum is used only after all derivative bounds and value
+summability are verified. No arbitrary completeness/smoothness axiom is added.
+The global gradient bound by the sum of first-frequency costs is independently
+proved, and a genuine smooth-parameter chain rule is independently tested.
+
+Finally clockMean is formed using the ORIGINAL sourceUnitary and Gaussian-one
+compLpL averaging of the ACTUAL1515 intrinsic observable. clockMean_actual
+proves it agrees clock-almost-everywhere with M(U(Y)), where U_i(Y) are the
+original random IBM clock directions. The proof uses actual source sections,
+product-measure currying, the literal observable realization and source
+integration. This closes the actual-process/source-mean identification; it is
+not merely differentiation of an arbitrarily defined exponential series.
+
+### Scope and remaining intrinsic obstruction
+
+This is calculus of the ACTUAL SOURCE MEAN on deterministic source-Hilbert
+families. The IBM clock-direction map is not asserted differentiable in
+physical time or in the old joint Gaussian graph domain. Substituting that
+rough random map into a Hilbert-space chain rule without a verified domain
+or approximation theorem remains invalid. No physical-time Ito/Tanaka theorem,
+full temporal-gradient Clark--Ocone reconstruction, restored positive-time sine
+joint-domain membership or all-Hilbert native convergence is claimed. The old
+obstructions remain fully applicable.
+
+The next substantive target is a valid chain/closure theorem for an actual
+random clock map (or a precise obstruction), using the new bounded derivative
+and actual averaging identity together with existing clock graph machinery.
+First audit IBMNonlinearClockAverageGraph, IBMClockAverageStrongGraph and
+related exact domains; do not repeat the Schwartz or source-series construction.
+The completed F1--F3 reductions remain available and are not reopened as if
+unproved. No queued campaign is activated.
+
+### Verification, failed directions and preservation
+
+Complete root build: PASS,6739jobs,25.931285seconds. Complete safe transitive
+Lean.collectAxioms audit: PASS,49231declarations,39.950599seconds, only propext,
+Classical.choice and Quot.sound. All25 new public types were read unabridged;
+both complete new modules, private/local arguments and root/AxiomAudit edits
+were reviewed. Frozen manifest covers2566 Foundation/root sources and unchanged
+configuration3. All113 original archive paths/SHA256 hashes match inventory1292.
+Only root/AxiomAudit changed among old Lean sources.
+
+Ten independent Lean checks: PASS,27.331776seconds. They test C1 sine Stein;
+zero-source mean derivative; nonzero cosine native coefficient at zero; the
+actual quadratic cosine mean remainder; cancellation of correlated identical
+directions; vanishing entire Fourier derivative at the zero family; exact
+factor-two native coefficient identification; the smooth-parameter chain rule;
+a global whole-series gradient bound; and original actual IBM source averaging.
+The first scratch run failed27.971029seconds because the sine derivative bound
+needed explicit Real.norm_eq_abs. Failed log and corrected proof are retained.
+
+Development logs preserve missing body-only include parameters, the obsolete
+C2-only first-moment API obstruction, scalar composition normalization, explicit
+integral-map/function forms, row/series normalization, missing NNReal notation
+scope and the final actual-class/product-measure coercion repair. These are not
+failed mathematical theorems asserted as results. Target10 passes; only the final
+full build and complete audit certify this exact source freeze. No compiler,
+resource, transparency, linter, trust, cache or toolchain setting changed.
+ResearchSources remains untouched and uncommitted; unrelated drafts/plans/tmp
+are preserved. Exact-commit receipt and verified PRIVATE main/research closure
+are recorded by the unchanged synchronization and terminal-verifier procedure.

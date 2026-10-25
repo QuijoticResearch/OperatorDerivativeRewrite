@@ -2462,3 +2462,5 @@ import Foundation.IBMUniformRidgeNativeBounds
 import Foundation.IBMRidgeSeriesStrongReconstruction
 import Foundation.IBMFourierRidgeCoefficients
 import Foundation.IBMFourierCylinderSeries
+import Foundation.IBMBoundedGaussianMeanDerivative
+import Foundation.IBMFourierSourceMeanCalculus
