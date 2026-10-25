@@ -44112,3 +44112,142 @@ Evidence: .lake/stardust-1502-working-checkpoint.json,
 .lake/stardust-1502-verification.json. Explicit reviewed-path Git commit and
 exact-commit receipt plus BOTH verified PRIVATE backup refs close separately.
 Unrelated untracked plans,tmp and ResearchSources remain untouched/uncommitted.
+
+## Checkpoint1503 — completed supremum-test domain with actual kernel agreement
+
+IBM remains ACTIVE; authoritative queue8280325 unchanged. The preceding goal
+turn1502 made PROGRESS at910395e, fully audited and exactly PRIVATE verified.
+This turn revalidated that checkpoint and completed its bounded spatial test
+extension, using the ORIGINAL actual clock/kernel actions and existing Mathlib
+completion machinery. No queued campaign, new goal, reflection session or
+parallel mathematical agent was started. The terminal clock governed all
+checkpoints; there is no research expiration date.
+
+Primary IBM source remains ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All113 archive paths/hashes match inventory1292. No manuscript was changed or
+staged. The process remains ACTUAL B(|W_t|); no law substitution or external
+novelty claim is made for continuous linear completion or dense approximation.
+
+Let B=C_b(R^2,R) with supremum norm and L be its linear subspace of bounded
+Lipschitz functions, with the INHERITED supremum norm. Define E as the norm
+completion of L. IBMSpatialCompletedTestLimit.realize is an ACTUAL LINEAR
+ISOMETRY E->B. IBMSpatialCompletedKernelIdentity.realized_range proves exactly
+ range(realize)=closure_B(L).
+This is the exact completed domain, not an assumption that L is dense in ALL
+C_b or that E is a particular Sobolev space. No Lipschitz constant enters the
+completion norm; those constants may grow along a uniformly Cauchy sequence.
+
+For EVERY T>=0 and N, the finite spatial increment-square kernel K_N acts on
+ALL B through a constructed bounded linear operator A_(T,N):B->clock L1,
+with operator norm<=T. On E, its completion extension agrees EXACTLY with
+ A_(T,N)(realize(z)) for EVERY z.
+In particular its AE representative is the LITERAL Lebesgue integral
+ integral_(R^2) K_N(Y,x,y) realize(z)(x,y) dxdy,
+and this random variable has actual MemLp1 with
+ E|integral K_N realize(z)| <=T||z||.
+It was not defined by assigning a desired limiting output.
+
+For EVERY fixed T>0, the old1502 diagonal-occupation limit on L is a bounded
+linear map with norm<=T. IBMSpatialCompletedTestLimit.limitOperator extends
+that SAME map to E through Mathlib ContinuousLinearMap.fromCompletion.
+completed_tendsto proves, for EVERY z in ENTIRE E,
+ extendedFinite_(T,N)(z) -> completedOccupation_T(z)
+STRONGLY in ORIGINAL clock L1. The proof first uses actual convergence on L,
+then a dense core approximation and the uniform finite/limit norm bounds.
+Both approximation errors are controlled before the N-limit is taken.
+This is pointwise strong operator convergence, not operator-norm convergence
+or uniform convergence over the unit ball. No AS uniform test-family claim.
+
+IBMSpatialBoundedTestOperator constructs finiteValue by summing actual cell
+integrals for bounded continuous F. Joint parameter measurability and the
+old C times folded-QV bound prove actual integrability. Justified Lebesgue
+integral additivity/scaling prove actual finite linearity; the norm estimate
+then constructs the CLM. value_old_action proves exact agreement with1502
+whenever the bounded continuous test is Lipschitz. Thus no old action is
+replaced by a separately named but unconnected integral.
+
+IBMSpatialLipschitzTestLimit constructs the submodule L with its EXISTING
+supremum norm and selects a Lipschitz witness only for invoking1502. Actual
+finite linearity and uniqueness of its proved L1 limit establish limit
+linearity and witness-independent mathematics. Its bound<=T||F|| constructs
+the limit CLM before any completion extension. Constants of either sign are
+in the core. No density theorem is postulated.
+
+IBMSpatialCompletedTestLimit extends the inclusion isometrically into the
+complete bounded-continuous space. Dense induction proves extended finite
+operators agree with the all-B actual finite operator on realize(z); it also
+proves finite/limit bounds<=T||z||. An explicit epsilon/3 estimate proves
+completed convergence for EVERY completed test, including those not supplied
+with any finite Lipschitz constant. Initial/empty time is retained in finite
+operators; the convergence theorem is explicitlyT>0, matching1502.
+
+IBMSpatialCompletedKernelIdentity identifies the isometric realization range
+with the exact closed submodule, proves the literal whole-kernel integral
+identity first for all bounded continuous tests and then for every completed
+test, and proves actual MemLp1 and absolute-mean bounds. Private grid matching
+and all integral exchanges retain their explicit integrability proofs.
+
+Independent import checks discovered a REAL export issue before committing:
+the default subtype uniformity captured by Completion Core did not synthesize
+NormedAddCommGroup/NormedSpace downstream, although the internal modules
+compiled. Diagnostic4 confirmed that explicitly using the norm-induced
+uniformity fixes all these imported instances. The Completed alias now uses
+@UniformSpace.Completion Core (inferInstance:SeminormedAddCommGroup Core).toUniformSpace.
+All mathematical statements/norms remain unchanged; no resource, trust,
+transparency or linter option was used to hide this issue. The independent
+suite checks imported normed-group, real normed-space and complete-space
+instances explicitly. The full build and complete audit were repeated AFTER
+the repair, with previous build/audit/failed-test and diagnostic logs retained.
+
+Precise remaining scope: this is a bounded completed SPATIAL-TEST operator
+into random clock L1, not yet a strongly measurable random variable valued in
+the entire Banach dual, and not a proved full signed-source reconstruction.
+No common AE set for all uncountably many completed tests is assumed. It does
+not imply whole original Gaussian/observable L2 convergence or spatial H^{-1}
+membership;1500's ORIGINAL projected-grid L2 norm escape remains unchanged.
+The signed endpoint-minus-K_N functional and its exact ORIGINAL second-source
+Wick/mixed-test transport are NEXT. Clock-dependent probe domains and the
+full intrinsic IBM calculus remain OPEN. No campaign stopping gate is closed.
+
+Concrete next reuse: the endpoint cellPair(F,0,|W_T|) is bounded by
+||F||*|W_T|^2 and has a natural actual clockL1 operator. Combine it with the
+COMPLETED K_N action, retaining the exact normalization of old source_mixed_test.
+For product tests g'(x)h'(y), use actual product-integral factorization and FTC
+to identify endpoint and increment products; the old source telescope should
+then give the original mixed Wick action, rather than an analogy. Do not
+assume a tensor/Wick factor of two or a Gaussian-realization map for arbitrary
+completed spatial tests. The positivity and pathwise time-pushforward measure
+of clock diagonal occupation may aid later sample representatives, but neither
+is silently upgraded here to a dual-valued stochastic construction.
+
+Verification: final target8 PASS. POST-REPAIR complete root build6704 jobs
+PASS28.800846s; COMPLETE transitive Lean.collectAxioms audit48468 safe
+Foundation declarations PASS47.051127s, only propext/Classical.choice/Quot.sound.
+All51 public types were read UNABRIDGED; the final audit/type output is BYTE-
+IDENTICAL to the reviewed pre-canonical output, independently compared after
+the repair. The final explicit completion alias and complete proof source
+were reread. ALL4 complete new sources, private time_grid, root/AxiomAudit
+additions and their actual integrability/extension proofs reviewed in full.
+
+Final independent14 mathematical checks PASS28.175535s, plus fresh-import
+NormedAddCommGroup/NormedSpace/CompleteSpace synthesis checks. Tests include
+negative constant realization/norm, arbitrary completed-test norm preservation,
+zero horizon on ALL bounded continuous and completed tests, completed add/neg/
+negative-scalar laws, convergence for arbitrary completed input, actual kernel
+MemLp1 and absolute-mean bound, exact realized-range membership, operator norm,
+and identity of the actual unit-test operator with the OLD foldedClass.
+Earlier failed independent logs and diagnostic1--4 are retained; they exposed
+the canonical-uniformity export issue rather than being suppressed. The
+pre-canonical full build/audit/timing logs were retained separately and do not
+serve as the final gate. No existing mathematical source outside root/AxiomAudit
+was edited. All2531 Foundation/root hashes and3configuration hashes rechecked;
+all113 archive paths/hashes unchanged. No resource, transparency, linter,
+heartbeat, compiler, toolchain or trust changes. Every external Lean job was
+serialized and its existing handle followed to authoritative terminal status.
+
+Evidence: .lake/stardust-1503-working-checkpoint.json,
+.lake/stardust-1503-{full-build,audit,independent}.log and timing JSON,
+.lake/stardust-1503-verification.json. Explicit reviewed-path Git commit and
+exact receipt plus BOTH verified PRIVATE backups close separately. Unrelated
+untracked plans,tmp and ResearchSources remain untouched/uncommitted.

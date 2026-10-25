@@ -2425,3 +2425,7 @@ import Foundation.IBMClockWeightedFoldedVariation
 import Foundation.IBMSpatialClockKernelError
 import Foundation.IBMSpatialKernelOccupation
 import Foundation.IBMSpatialKernelUniformBound
+import Foundation.IBMSpatialBoundedTestOperator
+import Foundation.IBMSpatialLipschitzTestLimit
+import Foundation.IBMSpatialCompletedTestLimit
+import Foundation.IBMSpatialCompletedKernelIdentity
