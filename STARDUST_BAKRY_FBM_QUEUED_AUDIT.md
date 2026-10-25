@@ -8,7 +8,7 @@ partial, conditional, mollified or sourcewise calculus. Preserve its existing
 mathematically justified stopping and complete verification/backup gates.
 The pseudoprocess campaign remains frozen at its verified stopping contract.
 
-## Required manuscript repair
+## Objective 1 — required manuscript repair
 
 Audit both read-only primary sources, in this order, before selecting the
 follow-on research focus:
@@ -26,7 +26,7 @@ honestly. Do not merely translate a false statement or assume its hypotheses.
 Preserve the original manuscript bytes. Write corrections in research reports
 and verified Lean sources outside `ResearchSources`.
 
-## Related fBM survey and choice of focus
+## Objective 1 — related fBM survey and choice of focus
 
 Within this same post-IBM campaign, survey `ResearchSources/fbm` and the related
 `ResearchSources/bakry/hurst_curvature.tex`. Identify exact duplicates, distinct
@@ -48,18 +48,57 @@ with an actual fBM law. Prefer reusable substantial theorems and decisive
 obstructions over easy incremental lemmas. This is one sequential campaign,
 not authorization to launch unrelated campaigns in parallel.
 
+## Objective 2 — curvature–covariance correspondences (queued)
+
+October25,2026 user amendment. The full user brief is preserved byte-for-byte in
+`STARDUST_BAKRY_CURVATURE_COVARIANCE_QUEUED_RESEARCH.md`. Begin ONLY after
+Objective 1 above is completed and its full verification, explicit Git checkpoint,
+exact-commit receipt and PRIVATE main/research backup gates close. This objective
+is within the Bakry–Émery campaign, before Cauchy; IBM remains ACTIVE.
+
+Seek general reusable relationships between symmetric Lévy symbols, covariance
+kernels, generators and curvature. Investigate the proposed Fourier kernel with
+explicit sign conventions, positive-definiteness and frequency restrictions;
+stable/Cauchy/relativistic/tempered/subordinated cases, Bernstein functions and
+negative-definite Hilbert embeddings. Audit Lévy–Khintchine and Schoenberg theory
+before labeling a correspondence or curvature bound new.
+
+Compare OU, fBM/Volterra, IBM/time changes and other verified Gaussian foundations.
+Separate non-Markovian covariance forms from actual Markov generators; justify
+any Markovian lift. Reuse signed higher-order heat machinery for algebraic Gamma
+and iterated Gamma identities without assuming positivity or probabilistic CD
+inequalities. Investigate compact-group/SU(2), gauge, Dirichlet-form and spectral
+connections only with exact hypotheses; no finite-dimensional gap implies the
+four-dimensional quantum Yang–Mills mass gap. Document implications for later
+campaigns without activating them early.
+
+Retain all six deliverables from the brief: a general formally verified theorem
+or precise obstruction; cross-family verified examples/counterexamples; an
+assessment of genuinely new curvature/spectral information; reusable Lean
+infrastructure; a mathematical note with exact declarations; and a literature/
+novelty audit. Construct infrastructure where justified by reusable mathematics,
+not merely to accumulate isolated process examples. No proposed correspondence
+is accepted as true by this queue update. Objective 2's mathematically justified,
+fully audited/committed/PRIVATE stopping checkpoint gates Cauchy.
+
 ## Queue and standards
 
 1. ACTIVE: intrinsic stochastic calculus for actual IBM.
 2. NEXT, after IBM completion and verified checkpoint: the two Bakry–Émery repairs,
-   related fBM survey, then the independently selected productive focus above.
+   related fBM survey and selected focus (Objective 1), then Objective 2 above
+   after its explicit prerequisite gate closes.
 3. NEXT after this Bakry–Émery/fBM campaign: the Cauchy manuscript audit and
    Lean repair in `STARDUST_CAUCHY_QUEUED_AUDIT.md`, with the same full gates.
-4. NEXT after Cauchy: fractional-diffusion manuscript audit and Lean repair;
+4. NEXT after Cauchy: iterated/time-changed pseudoprocess calculus, then the
+   A(2)/RH revisit, each with its existing stopping and full PRIVATE gates.
+5. NEXT after A(2)/RH: fractional-diffusion manuscript audit and Lean repair;
    see `STARDUST_FRACTIONAL_DIFFUSION_QUEUED_AUDIT.md` for its full gate.
-5. NEXT after fractional diffusion: black-noise manuscript repair, reusing
+6. NEXT after fractional diffusion: black-noise manuscript repair, reusing
    `BLACKITO_MANUSCRIPT_AUDIT.md`; see `STARDUST_BLACK_NOISE_QUEUED_AUDIT.md`.
-6. AFTERWARD: cumulative autonomous Stardust research from the existing backlog.
+7. NEXT after black noise: AI mathematics exploration, then cumulative autonomous
+   Stardust research from the existing backlog. These later priorities merely
+   restate the authoritative queue; the October25 amendment changes only the
+   internal sequential objectives of the Bakry–Émery campaign.
 
 No expiration date is introduced. October 31 remains a review milestone only.
 Keep complete root builds, complete transitive axiom audits, unabridged public

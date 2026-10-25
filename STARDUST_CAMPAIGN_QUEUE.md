@@ -18,6 +18,23 @@ original manuscript bytes. The exact scope and gate are saved in
 `STARDUST_BAKRY_FBM_QUEUED_AUDIT.md`; filenames/hashes only were checked now.
 Do not begin this campaign early or divert the active IBM proof.
 
+**Bakry–Émery Objective 2, QUEUED within that same campaign:** ONLY AFTER
+Objective 1 (both required manuscript audits/repairs and related fBM survey)
+is completed, fully verified, committed and privately backed up, investigate
+general curvature–covariance correspondences. Follow the full user brief in
+`STARDUST_BAKRY_CURVATURE_COVARIANCE_QUEUED_RESEARCH.md`: symmetric Lévy symbols,
+fractional/Volterra Gaussian and non-Markovian covariance forms, higher-order
+algebraic Gamma calculus, and justified SU(2)/gauge connections. Audit Fourier
+sign conventions, positivity/frequency restrictions, generator domains and known
+Lévy–Khintchine/Schoenberg theory before claiming a general covariance theorem
+or new curvature/spectral estimate. Covariance alone supplies no Markov generator;
+signed pseudoprocess identities supply no probabilistic curvature inequality;
+a diffusion spectral gap supplies no quantum Yang–Mills mass gap. Prefer exact
+theorem reuse, transferable results and explicit obstructions. Preserve the
+brief's six deliverables, literature/novelty audit and every existing verification
+gate. Objective 2 must reach its fully audited/private stopping checkpoint
+BEFORE Cauchy. IBM remains ACTIVE; no early research or other priority changes.
+
 **AFTER the Bakry–Émery/fBM campaign:** audit and rigorously repair
 `ResearchSources/cauchy/stochastic_cauchy_operator_v4.tex` with the same Lean,
 domain, independent-test, counterexample and manuscript-preservation standards.

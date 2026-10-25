@@ -46343,3 +46343,43 @@ inventory (except the two explicitly added mathematical sources and root/audit
 registration). ResearchSources and unrelated plans/tmp preserved without staging.
 Explicit audited Git commit, exact receipt and verified PRIVATE main/research
 synchronization close this checkpoint; no transition out of IBM is authorized.
+
+## Checkpoint1523 — queued Bakry–Émery Objective 2 (instructions only)
+
+October25,2026 user attachment, preserved byte-for-byte as
+STARDUST_BAKRY_CURVATURE_COVARIANCE_QUEUED_RESEARCH.md, SHA256
+19809C6604F9F7DDF5C1FA698CD762252E07D9496D7ECA6A08B7A80C2D6724DE.
+Updated authoritative queue, AGENTS and the Bakry/fBM campaign specification:
+IBM stays ACTIVE. Within Bakry, Objective 1 (both primary manuscript repairs,
+related fBM survey and justified focus) must COMPLETE and pass its verification,
+Git and exact PRIVATE gates before Objective 2 begins. Objective 2 is the
+general curvature–covariance investigation, and must pass its fully audited/
+private stopping checkpoint before Cauchy. All subsequent priorities unchanged:
+Cauchy -> iterated pseudoprocess -> A2/RH -> fractional diffusion -> black noise
+-> AI mathematics -> cumulative backlog. The formerly stale short queue inside
+the Bakry specification now agrees with the authoritative existing order.
+
+Full brief retains the proposed symmetric Lévy-symbol kernel, sign/frequency/
+positive-definiteness tests, Bernstein/subordination/negative-definite embeddings,
+OU/fBM/Volterra/IBM distinctions, signed higher-order algebraic Gamma calculus,
+and justified compact-group/SU(2)/gauge connections. All six deliverables and the
+literature/novelty audit are saved. No correspondence, Markov lift, curvature
+bound, or quantum mass-gap implication is asserted by this amendment. No
+mathematical survey, early Bakry proof, additional research goal or parallel
+session was started. This user-requested instruction update is not reflection.
+
+Verification: exact whole-set equality of all2577 Foundation/root sources and
+all3 configuration files against closed mathematical checkpoint1522, plus all113
+archive paths/hashes, proved before audit-evidence reuse. Later authoritative
+queue text is byte-equivalent after newline normalization; the only inserted
+controlling block is identical in AGENTS and the queue. The saved full brief is
+byte-identical to the supplied attachment. No mathematical/manuscript source or
+theorem type changed. Under STARDUST_BUILD_OPTIMIZATION.md's instruction-only
+identity rule, retain1522's successful full ROOT build6750jobs60.183433s,
+complete49406safe transitive axiom audit42.237481s (standard3axioms), all21
+unabridged types/full proofs reviewed and nine independent Lean checks27.793070s;
+these were not rerun or represented as fresh checks. Independent check source
+hash and terminal closed receipt revalidated. No verification gate is weakened.
+Explicit five-path Git commit, exact-commit receipt and verified PRIVATE
+main/research synchronization close this amendment. Resume IBM's physical-clock
+source-mean/Fourier completion frontier from95e3bac; no active proof was changed.
