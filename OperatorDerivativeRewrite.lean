@@ -1,3 +1,6 @@
+import Foundation.GaussianSmallTimeCutoff
+import Foundation.IBMInitialGermTriviality
+import Foundation.IBMMeanReconstruction
 import Foundation.IBMVarianceCancellation
 import Foundation.IBMGraphSmoothing
 import Foundation.IBMUniformSmoothing

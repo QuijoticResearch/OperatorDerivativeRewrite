@@ -47381,3 +47381,73 @@ the prepared clock-germ proof be elaborated. IBM stays ACTIVE; every queued
 campaign and its completion gate remains unchanged. This entry supersedes
 the earlier1529 PENDING build/audit/test labels only; future proof drafts remain
 unverified and no complete IBM calculus is claimed.
+
+### Checkpoint1530 — actual IBM initial germ and mean-centered reconstruction
+
+October25,18:13 America/New_York. Checkpoint1529 is CLOSED at
+`b52913a3f797c68247b1da06732c9c3f72e9b1c1`, with exact-commit receipt and
+verified PRIVATE main/research synchronization. IBM remains ACTIVE. The queued
+Yang–Mills brief is already preserved by instruction commit `b91ce91281e90df5adf912779736781528880ccd`:
+BOTH Bakry objectives must close before that bounded audit, and Cauchy follows it.
+No campaign priority, original manuscript, or old mathematical theorem changed.
+
+Three new modules close the precise initial-germ obligation left by1529:
+- `GaussianSmallTimeCutoff.cut_small_tendsto` proves strong L2 vanishing of
+  EVERY time-probability L2 cutoff along ANY nonnegative horizon sequence tending
+  to zero. No monotonicity or predictability is assumed. The actual cutoff is
+  (0,T], so time zero is excluded directly; no fabricated null-event premise is
+  needed. `pastProjection_small_tendsto` reuses the original Brownian PRP, and
+  `constant_of_shrinking_pasts` identifies the intersection with constants.
+- `IBMInitialGermTriviality.clock_section` uses Fubini to recover measurability
+  of a clock-only representative in the ORIGINAL clock sigma algebra.
+  `actual_past_raw` uses coordinatewise AE modification for measurable
+  functionals, not a simultaneous uncountable-index null event.
+  `germ_clock_past` puts the SAME factorMean representative from1529 in EVERY
+  positive original Brownian clock past. Along the existing positive dyadic
+  approach, `germ_constant` therefore proves every original actual IBM initial
+  right-germ L2 class is AE constant, including unbounded input classes.
+- `initial_projection_expectation` gives P_0F=E[F]*jointOne for EVERY ambient
+  JointL2 target. Original target-indexed reconstruction now subtracts the
+  ordinary mean; its native-adjoint version keeps EXACTLY the original closed
+  joint derivative domain. `IBMMeanReconstruction` reuses the PREEXISTING fixed
+  completed stochastic family, native transfer and actual predictable coordinate
+  series to obtain corresponding all-observable mean-centered formulas.
+  Series convergence is Hilbert HasSum, not samplewise supremum convergence.
+
+This supplies a scalar residual theorem and stronger actual reconstruction;
+no new integral, probability measure, driver family or completion was invented.
+The fixed family's Hilbert-basis construction is NOT identified with physical
+IBM source/clock correction channels. Full intrinsic physical Ito/Clark–Ocone,
+pointwise causal gradient/physical driver identification, remaining native-domain
+obstructions and required physical convergence/closure remain OPEN. IBM is not
+complete and Bakry/Yang–Mills must not activate early. No novelty is asserted.
+
+Verification: complete6766-job root build PASSED in28.7084515 wall seconds;
+complete transitive Lean.collectAxioms audit PASSED ALL49650 safe Foundation
+declarations in37.8941867 seconds, accepting ONLY propext, Classical.choice and
+Quot.sound. ALL15 new public types were read unabridged, with all three complete
+sources/private/public arguments and root/audit diffs reviewed. SIX independent
+Lean consequence/obstruction tests passed in29.1987182 seconds: centered germ
+zero, an explicit nonconstant unit clock source fixed by source vacuum but
+EXCLUDED from the IBM germ, completed-integrand centered L2 energy, ambient
+mean-zero initial channel, correct scalar shift, and zero-horizon cutoff.
+Initial test failures were only omitted typeclass instances/AE Lp representative
+rewrites; they are retained. The first full-build attempt caught a line-break
+elaboration error after a successful scratch proof; that failure was retained
+and corrected before the fresh complete passing build. No resource limits,
+compiler/trust/linter settings, versions or theorem semantics were changed.
+
+All2593 frozen Foundation/root sources and pinned configuration3 match their
+verification manifest. All113 exact original archive paths/hashes match1292;
+ResearchSources remains read-only and uncommitted. Receipt and evidence are
+`.lake/stardust-1530-verification.json`, the frozen working manifest, complete
+build/audit logs, source review and six-test file. Explicit reviewed-path Git
+commit, exact-commit receipt and BOTH PRIVATE remote-branch verification are
+the remaining closure gate at this ledger entry; do not certify Git closure
+from this paragraph alone. The actual final closure is recorded by the receipt
+and canonical handoff AFTER those operations succeed. Next retain IBM priority
+and pursue its physical/native obligations using the existing completed calculus.
+
+A final root EOF whitespace cleanup was followed by a fresh complete root
+build and complete audit; the final public-type output is byte-identical to
+the already reviewed output. Earlier passing timings/logs are retained.
