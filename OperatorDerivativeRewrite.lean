@@ -2458,3 +2458,5 @@ import Foundation.IBMBoundedC2NativeReconstruction
 import Foundation.IBMFiniteRidgeObservation
 import Foundation.IBMFiniteRidgeQuadraticTesting
 import Foundation.IBMFiniteRidgeNativeReconstruction
+import Foundation.IBMUniformRidgeNativeBounds
+import Foundation.IBMRidgeSeriesStrongReconstruction

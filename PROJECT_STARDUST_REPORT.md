@@ -45332,3 +45332,96 @@ Explicit reviewed-path commit, exact-commit receipt and BOTH PRIVATE main/
 research verification close separately. Unrelated plans,tmp/archive preserved.
 No reflection admitted during proof/verification; old uncertain reservations
 preserved.
+
+
+## Checkpoint 1514 — actual ridge-series strong random reconstruction
+
+October 25, 2026; IBM remains ACTIVE. Queue8280325, the frozen pseudoprocess
+checkpoint, all later priorities and the no-expiration directive are unchanged.
+This checkpoint advances actual reflected-clock IBM B(|W_t|), not a two-sided
+outer process. No incoming manuscript or other ResearchSources byte was changed.
+
+### Reuse audit and exact new result
+
+The existing `IBMRidgeSeries` already constructs an actual infinite Schwartz
+ridge observable with summable value and curvature costs, proves its joint-L2
+realization and pointwise absolute convergence, and proves a SCALAR native
+pairing limit. That construction is reused unchanged. A duplicate spectral
+completion or new observable space was not introduced.
+
+For ridge k, write b_k = sum_j |c_kj| and let
+q_k = |w_k| seminorm(0,0)(jet(g_k,2)) b_k^2, exactly the old curvatureCost.
+Under summability of q_k, the full clock-random native actions converge strongly
+in clock L2 to the sum of the explicit finite-ridge occupation reconstructions.
+Both each native action and its limit have norm at most 3 H sum_k q_k.
+The bound is independent of native grid size and all observation times, and
+allows changing finite dimension, repeated times, cancellations and zero directions.
+Positive H is required for the convergence theorem; finite-grid bounds include H=0.
+
+`IBMUniformRidgeNativeBounds` proves mixed/endpoint L2 bounds 3H, the quadratic
+native bound 6H, the nonlinear multiplier bound C/2 and the finite-ridge bound
+3HC(sum |c_j|)^2. These follow from actual ordinary quadratic variation and
+endpoint-square majorants, rather than scalar expectation estimates.
+
+`IBMRidgeSeriesStrongReconstruction` identifies shifted Schwartz jets with the
+actual finite-ridge classes from1513. It applies Banach-valued dominated series
+convergence to the existing curvature cost. With the old value summability
+hypothesis as well, lowering the new L2 random action to clock L1 equals the
+ORIGINAL nativeOperator acting on the actual old series, at EVERY grid size.
+The proof uses finite partial sums, continuity of the fixed-grid source operator
+and verified L2-to-L1 lowering; scalar expectation equality is not substituted
+for this random identity.
+
+The limit is independent of the ridge-series presentation whenever the literal
+actual series agree joint-almost-everywhere and both presentations meet the two
+summability requirements. This uses actual observable equality, uniqueness of
+L1 limits and injectivity of L2-to-L1 lowering, not injectivity of ridge symbols.
+Finally its expectation equals exactly the earlier sum of scalar ridge limits,
+by the original projected intrinsic native pairing and uniqueness of limits.
+
+### Verification, failures and preservation
+
+Full root build: PASS, 6735 jobs, 41.602031 seconds. Complete safe transitive
+Lean.collectAxioms audit: PASS, 49110 declarations, 40.015538 seconds; only
+propext, Classical.choice and Quot.sound. All29 new public types were read
+unabridged in the combined audit log; both full new mathematical sources and
+root/audit changes were reviewed. No resource, trust, toolchain, cache, linter
+or mathematical-hypothesis setting was altered.
+
+Eight independent Lean checks: PASS, 26.773298 seconds. They verify zero-horizon
+annihilation of the random action; termwise and full infinite annihilation of
+zero spatial directions; zero-direction limit annihilation; arbitrary cofinal
+subsequence convergence; uniqueness from original source convergence; the
+literal old actual-series MemLp realization; and exact recovery of the older
+scalar limit. A first scratch run failed on a nonexistent tsum lemma and an
+eta-expansion needed for a dependent zero-cost function (28.508684 seconds).
+The repaired scratch checks, including their full proofs, were reviewed.
+
+Retained failed development logs include the actual-class coercion, pointwise
+smul and finite-sum beta reductions. Two complete build attempts failed on a
+parenthesization in the new expectation statement (25.472382 seconds) and a
+missing local completeness instance for the existing closed intrinsic space
+(25.946539 seconds). Both were repaired; no failed run is certification.
+All logs, exact commands and measured stage timings are under .lake/stardust-1514*.
+The frozen manifest covers2562 Foundation/root sources and three unchanged
+configuration files. All113 original archived paths and SHA256 hashes agree
+exactly with inventory1292. Only root and AxiomAudit changed among old Lean
+sources. Unrelated untracked plans, drafts and archive files are excluded.
+
+### Exact limitations and next mathematical question
+
+This is a strong random reconstruction of the native TEST ACTION on an actual
+summable observable domain. It is not reconstruction of the observable itself,
+an intrinsic IBM Ito formula or a Clark--Ocone theorem. No bounded extension in
+the intrinsic L2 norm, joint derivative-domain membership, arbitrary multivariate
+cylinder representation, density of the curvature-summable class, or convergence
+of the native divergence as an intrinsic Hilbert vector is claimed. The earlier
+weak-Hilbert obstruction remains valid.
+
+A productive next question is whether explicit genuine multivariate cylinders
+admit curvature-summable ridge representations, with actual operator-domain
+control, or whether the new random limits can discharge a concrete remaining
+IBM F1--F3 intrinsic identity. Reuse existing declarations first; do not rebuild
+the actual series construction or mistake this checkpoint for campaign completion.
+Git and exact-commit PRIVATE main/research closure follow the unchanged receipt
+procedure; the terminal verifier records both exact tips before transition.
