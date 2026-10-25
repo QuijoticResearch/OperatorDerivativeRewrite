@@ -2452,3 +2452,6 @@ import Foundation.IBMMixedClockStrongL2
 import Foundation.IBMActualQuadraticL2Reconstruction
 import Foundation.IBMActualQuarticSourceTesting
 import Foundation.IBMActualQuarticRandomReconstruction
+import Foundation.IBMBoundedC2SecondProjection
+import Foundation.IBMBoundedObservationSections
+import Foundation.IBMBoundedC2NativeReconstruction

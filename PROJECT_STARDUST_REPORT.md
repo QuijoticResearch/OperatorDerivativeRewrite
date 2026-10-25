@@ -45108,3 +45108,116 @@ logs and timings, target1--6 and1511-verification.json. Reviewed explicit-path
 commit, exact-commit receipt and BOTH PRIVATE main/research verification close
 separately. Unrelated plans,tmp/archive preserved. No reflection admitted during
 proof/verification; old uncertain reservations preserved.
+
+
+## Checkpoint 1512 — bounded C2 actual IBM terminal testing in clock L2
+
+October 25, 2026. IBM ACTIVE; queue8280325 unchanged. This extends actual
+source-native reconstruction beyond isolated polynomial observations to EVERY
+bounded C2 phi with bounded first and second derivatives. All three bounds are
+retained explicitly in the exact public theorem identifying actual native tests.
+H>0 is the native horizon; the observation time R>=0 is unrestricted relative
+to H. The actual process remains B(|W_t|).
+
+IBMBoundedC2SecondProjection proves the exact Gaussian projection identity
+
+    projection2(phi(firstChaos u)) = c_phi(u) * wick(u,2),
+    c_phi(u) = (1/2) * E_scenery[phi''(firstChaos u)].
+
+Existing IBMFirstChaosMixedStein.second_centered_mixed and
+IBMSecondChaosTesting.projection_eq_of_wick_tests establish this using ALL Wick
+quadratic probes; no new density assertion is added. The half factor follows
+from wick_inner's factorial2. Arbitrary pure second-chaos f then satisfies
+inner(f,phi(firstChaos u))=c_phi(u)*inner(f,rawProduct u u). The coefficient is
+bounded by C/2 if ||phi''||<=C. Zero directions are included: no division by
+random |W_R| is introduced. A zero direction does not force c_phi(0)=0; the
+independent cosine test gives c_cos(0)=-1/2 while wick(0,2)=0.
+
+IBMBoundedObservationSections constructs the genuine jointL2 class of
+phi(B(|W_R|)) for bounded continuous phi and proves actual intrinsic path
+observability. Exact sourceUnitary/curry/swap representatives identify its
+sections with the already verified Gaussian testClass(clockDirection RY).
+clockMean is the existing Gaussian mean functional composed via compLpL with
+that actual sourceUnitary class; its clockL2 representative and AE bound are
+proved. No new conditional-expectation axiom, parameter-integral continuity
+framework, surrogate process or ambient-dual measurability assumption is used.
+
+IBMBoundedC2NativeReconstruction applies this construction to phi'' and forms
+coefficientField=(1/2)*clockMean(phi''). Its actual value is c_phi(clockDirection
+R,Y), with simultaneous AE bound C/2. Actual coefficient multiplication on
+GaussianL2 is constructed using existing MemLp.of_le_mul and proves
+||weighted u|| <= (C/2)||u||, exact subtraction and norm continuity. Hence the1510
+quadratic native clockL2 actions and their explicit limits remain strongly
+clockL2 convergent after multiplication. Their actual random limit is
+
+    c_phi(clockDirection R,Y) * (min(|W_H|,|W_R|)^2
+      - integral_(0,H] 1_{|W_t|<|W_R|} dt).
+
+source_native_actual proves the finite action agrees with ORIGINAL joint-source
+native testing against the actual phi(B(|W_R|)) class. native_lower identifies
+the L2 construction, lowered to clockL1, with precisely that original operator.
+All bounds on phi,phi',phi'' enter this identification; internal weighted values
+alone require only C2 and a second-derivative bound. Strong L2 convergence of
+these representatives therefore gives an actual original-source testing limit,
+not merely convergence of an auxiliary expression. Exact expectation recovers
+the ORIGINAL projected intrinsic native divergence pairing with the same actual
+observable, and intrinsic_pairing_tendsto follows. No relative horizon ordering,
+clock independence or predictability hypothesis is assumed.
+
+A useful exact domain comparison is now canonical in the library:
+sine_observation_eq identifies the new sin(B(|W_R|)) observation with the OLD
+IBMActualSineDomainObstruction.sinePoint. sine_not_joint_domain retains its
+proved exclusion from the ORIGINAL jointDerivative domain at EVERY R>0.
+Thus this broad genuine native testing calculus does NOT restore the old joint
+Sobolev domain. New positive testing and the old sharp obstruction coexist.
+This comparison was first independently proved, then promoted and all complete
+gates rerun; it is not merely an uncommitted scratch observation.
+
+Scope: the theorem reconstructs source-native ACTIONS AGAINST bounded C2 terminal
+observables. It is not an Ito change-of-variables theorem reconstructing those
+observables themselves, full intrinsic Clark--Ocone, convergence of the original
+projected native stochastic process, all-Hilbert closure, multitime nonlinear
+calculus or proof of Banach test-domain membership. The old original weak
+obstruction remains; full intrinsic IBM calculus is OPEN. No novelty assertion
+is made. Next investigate concrete multitime C2 cylinder tests/Hessian-source
+pairings using existing multivariate Gaussian calculus and1510 all-pair mixed
+clockL2 limits. Avoid inventing another abstract test-space completion or using
+Hilbert density to infer native convergence across the known obstruction.
+
+Verification on FINAL bytes: full root6730jobs PASS53.319165s. COMPLETE
+transitive Lean.collectAxioms audit48989 safe Foundation declarations
+PASS39.745802s, only propext/Classical.choice/Quot.sound. ALL33 public types read
+UNABRIDGED; all3 complete sources/proofs, private weighted_memLp and intrinsic
+projection-pairing arguments reviewed, plus root/AxiomAudit additions. Initial
+31-type public output is BYTE IDENTICAL within the final output after removing
+only the2 new sine declaration blocks. No source edits after final gates.
+
+Independent11 Lean checks PASS29.688967s on final bytes; initial run also passed
+38.948220s before the canonical sine additions. Checks cover constant projection
+zero, cosine zero-direction coefficient EXACTLY -1/2, actual equality with the
+existing sine process, its old joint-domain exclusion, positive strongL2 testing
+for that SAME excluded observation, exact original-operator lowering, AE
+coefficient bound, unbounded same-clock Gaussian input in the multiplication
+bound, future observations R=2H, strict-mono cofinal grid extraction and original
+intrinsic scalar-pairing convergence. Both independent runs passed; no failed
+independent run. Original pre-sine complete build40.638757s/audit41.003252s and
+logs/timings retained under pre-sine-canonical. Full gates repeated because two
+verified useful domain-comparison theorems were added, not as a cache ritual.
+
+Development target1--7 logs retained. Initial failures were proof-only section
+variables omitted from theorem parameters (fixed by explicit include), a mean
+lemma namespace, and Pi-function multiplication simplification/explicit majorant
+constant. A scratch parenthesis was corrected before its first Lean run. One
+mistyped Python executable path launched NO build and was immediately corrected.
+Final proofs use ordinary defaults; no heartbeat/resource/transparency/linter/
+compiler/toolchain/trust changes. Serialize external Lean jobs and follow live
+handles to terminal state.
+
+All2557 Foundation/root hashes and3config hashes frozen/rechecked; all113
+ResearchSources paths/hashes unchanged and never modified/staged/committed.
+Evidence: .lake/stardust-1512-working-checkpoint.json, final and pre-sine full/
+audit/independent logs and timings, retained target1--7 and1512-verification.json.
+Explicit reviewed-path commit, exact-commit receipt and BOTH PRIVATE main/
+research synchronization close separately. Unrelated plans,tmp/archive preserved.
+No reflection admitted during active proof/verification; old uncertain
+reservations preserved.
