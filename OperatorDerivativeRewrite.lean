@@ -2382,3 +2382,6 @@ import Foundation.IBMOriginBoundaryEnergy
 import Foundation.IBMClippedClockCrossing
 import Foundation.IBMClippedClockTail
 import Foundation.IBMClippedClockLimit
+import Foundation.GaussianTerminalBracketProducts
+import Foundation.GaussianTerminalStrongBracket
+import Foundation.IBMClippedClockStrongLimit

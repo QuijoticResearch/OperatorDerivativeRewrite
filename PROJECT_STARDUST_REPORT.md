@@ -42677,3 +42677,118 @@ Existing style warnings are retained; no linter or verification is suppressed.
 
 Measured terminal wall seconds: full-build=26.701, audit=40.796, independent=27.498.
 Explicit-path Git checkpoint, exact audit receipt and verified PRIVATE main/research synchronization follow; unfinished unrelated files stay excluded.
+
+## Checkpoint1491 — strong actual anticipative bracket and capped-clock QV limits
+
+IBM remains ACTIVE; queue8280325 and all gates unchanged. Previous goal turn1490
+was PROGRESS: actual clipped-clock QV MEAN and original intrinsic terminal-square
+pairing scalar limit, fully audited/private790596aafbab83fe6755eb7ba58a38c8c2704149.
+This checkpoint directly discharges the surviving-bracket strong-convergence gap
+recorded there. It is neither a new campaign nor a reflection/housekeeping session.
+The unresolved October23 reflection accounting remains preserved; no Oct24 session
+is admitted. The mathematical queue, manuscript bytes and prior proofs are intact.
+
+Primary IBM manuscript remains ResearchSources/ibm/EJP2605-044RA0.pdf, SHA256
+5A91914A535AD19BDDF219D7A9AB9F8B5F20A52DD4EC6ED7333AA80B403182BE.
+All113 ResearchSources paths/hashes match inventory1292, read-only and uncommitted.
+The process remains actual reflected-clock IBM Z_t=B(|W_t|). No identification
+with a two-sided outer Brownian process and no mathematical novelty assertion.
+
+The key connection is stronger reuse of1488's GaussianTerminalBracketPrediction
+and GaussianTerminalWeightedBracket, rather than a new stochastic integration
+foundation. A centered square increment is xi_i=(Delta_i W)^2-Delta_i t.
+For a Borel phi:R^2->R with |phi|<=1, let a_i=phi(W_left_i,W_T) and e_i=xi_i*a_i.
+Earlier results controlled only E sum_i e_i. Cross-cell energy can ALSO be
+controlled: when i<j, xi_i*a_i*a_j is measurable in the ENTIRE past at left_j
+plus W_T and belongs to its verified generated GaussianL2 domain. The terminal
+observation is retained, and no ordinary predictability is falsely asserted.
+
+Foundation/GaussianTerminalBracketProducts.lean constructs actual GaussianL2
+products using MemLp domination by the original Wick-two increment and bounded
+Borel multipliers. term_actual identifies e_i with the literal stochastic
+function; term_norm_bound gives norm(e_i)<=2*Delta_i t. pairCoefficient is the
+actual xi_i*a_i*a_j product, has norm<=2*Delta_i t, and has PROVED membership
+in generated(observation(u,T)) whenever s<=t<=u. All three past coordinates
+and the terminal coordinate are explicitly measurable under that observation
+comap; the argument does not require T>=u for this membership lemma. Actual
+inner(e_i,e_j) is identified EXACTLY with inner(wick_j,pairCoefficient_ij).
+Integrability and AE representative identifications are proved, not presumed.
+
+Foundation/GaussianTerminalStrongBracket.lean forms the ORIGINAL-clock-L2 sum
+E_N=sum_i e_i on N+1 uniform intervals. Its row_j=sum_(i<j) xi_i*a_i*a_j belongs
+to the later generated domain and has norm<=2T, independently of N and j.
+The finite Hilbert energy identity is proved explicitly, including both
+off-diagonal triangles and their symmetry:
+ norm(E_N)^2=sum_i norm(e_i)^2+2*meanError(T,N,row).
+The old meanError_bound, now applied to the rows rather than the original
+weights, controls the WHOLE cross-cell contribution. The diagonal is bounded
+by4T^2/(N+1). For EVERY fixed Borel phi bounded by one, T>0, and EVERY N,
+ norm(E_N)^2 <=4T^2/(N+1)+16T^2/sqrt(N+1).
+Thus E_N->0 STRONGLY in the ORIGINAL clock GaussianL2. error_actual proves the
+literal finite stochastic sum with the physical increments and weights. The
+bound is uniform in the displayed Borel weight; this checkpoint's convergence
+API is stated for fixed phi. It does not certify arbitrary anticipative
+weights or discard1488's counterexample outside the generated domain.
+
+Foundation/IBMClippedClockStrongLimit.lean identifies a genuine GaussianL2
+representative of the literal weightedValue(phi,T,N) as E_N+the old actual
+nodal occupation sum. For the DISCONTINUOUS strict-interior indicator
+phi(x,r)=1_{|x|<|r|},1490's strong nodal-occupation theorem now proves
+ V_N=sum_i (Delta_i W)^2*1_{|W_left_i|<|W_T|} -> I_T
+STRONGLY in clock GaussianL2, with I_T the SAME literal Lebesgue occupation
+integral constructed1490. No smooth approximation or extra boundary hypothesis
+is assumed. The already verified nonlinear crossing comparison C_N-V_N->0 in
+clock L1 is combined with the standard probability-space L2-to-L1 inequality,
+proved privately from Mathlib's existing exponent comparison and exact AE
+representatives. It introduces no new process, measure or integration law.
+
+Consequently cappedClass_tendsto proves STRONG clock L1 convergence of the
+ACTUAL random-terminal capped-clock quadratic variation
+ C_N=sum_i [min(|W_right_i|,|W_T|)-min(|W_left_i|,|W_T|)]^2 -> I_T.
+Both finite sum and limit classes are explicitly identified with the actual
+functions. actual_absolute_error_tendsto states directly
+ E |C_N-I_T| ->0, for every T>0.
+The final independent test rewrites C_N using1490's exact identification to
+1486's ORIGINAL IBMRawGridObservableTests.clippedSquares, so this limit is not
+an unrelated replacement object. This upgrades1490's own-terminal mean limit;
+its original intrinsic terminal-square observable pairing limit remains valid.
+
+Precisely OPEN: convergence of the ENTIRE projected intrinsic grid-divergence
+output, mixed IBM observable tests and completed test domains, native intrinsic
+Ito reconstruction, and full intrinsic IBM Clark--Ocone/closure calculus. A
+strong clock functional theorem is not completion of those operator obligations.
+Strong clock L2 convergence of C_N itself is not claimed (V_N is strongL2,
+C_N-V_N strongL1, hence C_N strongL1). The explicit value of E I_T and the
+candidate Gaussian-angle route remain unverified; no constant is assumed.
+The all-anticipative-weight obstruction remains part of the permanent ledger.
+
+TWENTY-SEVEN public declarations and all three complete final sources/private
+proofs were read in full. Final types were printed UNABRIDGED and reviewed.
+FOURTEEN independent Lean checks pass SECOND RUN: constant-weight literal
+centered-square realization; interior pair domain and norm; exact cross pairing;
+row domain and uniform norm; quantitative generic strong bound; discontinuous
+interior limit; negative-width outer-band specialization; literal weighted sum;
+strong interior L2; strong capped L1; literal occupation integral; and the actual
+absolute-error limit expressed using ORIGINAL old clippedSquares. The first
+run's sole error was implicit NNReal inference for N in that final TEST lambda;
+an explicit Nat annotation repairs it, with failed log/time preserved. No
+mathematical source changed after the full build/audit for this test repair.
+
+Development target1--8 failures are preserved. They exposed coercion/Pi.mul
+normalization, missing namespace qualification, ambiguous order token spacing,
+explicit time arguments, triangle sum normalization, a recursively reapplied
+rewrite, and partial function unfolding. The recursive rewrite was replaced
+with a one-pass finite sum equality, not a larger recursion/heartbeat budget.
+Target9 passes. No resource, trust, toolchain, Mathlib or linter setting changed.
+One intermediate update stated the product lemmas passed before the remaining
+Pi.mul elaboration was observed; that was premature. Final target/build/audit
+evidence, not that update, supports every status recorded here.
+
+Complete6659-job root build passes. Complete Lean.collectAxioms audit passes
+ALL47749 safe Foundation declarations, permitting ONLY propext, Classical.choice
+and Quot.sound. All2487 Foundation/root hashes and all three configuration hashes
+are frozen and rechecked; every OLD mathematical source is unchanged. Only root
+imports/AxiomAudit extend their existing files. All113 archive hashes unchanged.
+
+Measured terminal wall seconds: full-build=24.899, audit=40.811, independent=25.799.
+Explicit reviewed-path Git checkpoint, exact audit receipt and verified PRIVATE main/research synchronization follow. Unrelated untracked files remain excluded.
