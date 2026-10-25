@@ -44904,3 +44904,108 @@ timings, retained failed development logs and1509-verification.json. Exact-path
 Git commit, exact-commit receipt and BOTH PRIVATE main/research verification
 close separately. Unrelated plans,tmp/archive preserved. No reflection session
 admitted during proof/verification; uncertain prior reservations preserved.
+
+
+## Checkpoint 1510 — actual quadratic IBM source reconstruction in clock L2
+
+October 25, 2026. IBM ACTIVE; queue8280325 unchanged. This directly tests
+ACTUAL intrinsic quadratic observations B(|W_R|) B(|W_S|), all nonnegative R,S,
+on every positive native horizon H. It does not presume that their rough
+indicator kernels belong to the smooth completed joint test space1508/1509.
+The old IBMMixedClockLimit already proved the difficult random-boundary mixed
+cap occupation limit in clockL1. That theorem is reused rather than rebuilt.
+
+IBMActualQuadraticRandomReconstruction identifies the1509 original sourcewise
+jointOperator on mixedObservation(R,S) with its actual mixedEnergy, BEFORE
+integrating over the clock. The exact class is endpoint(H,R,S)-mixedClass(H,R,S,N),
+where endpoint is min(|W_H|,|W_R|)*min(|W_H|,|W_S|). Its clockL1 limit is endpoint
+minus the actual occupation integral of 1_{|W_t|<min(|W_R|,|W_S|)} on (0,H].
+Every finite expectation is the ORIGINAL projected intrinsic native pairing,
+using projection only inside its legitimate intrinsic test pairing. Finite
+linear combinations of actual quadratic observations share this convergence.
+If such an observation independently has a1508 Banach test representative,
+its1509 distribution equals this explicit limit by uniqueness; membership is
+NOT postulated or inferred from agreement of limits.
+
+SUBSTANTIVE topology improvement: IBMMixedClockStrongL2 proves that the actual
+random-observation mixed clipped-clock bracket converges in clockL2, not only
+clockL1. First, each mixed sum is bounded in absolute value by the ACTUAL
+ordinary Brownian squared-increment sum Q_N. Its occupation limit is bounded
+by H, using the old smaller-radius selection identity. Thus all finite sums
+and the actual occupation admit GaussianL2 representatives. The elementary
+scalar_error_bound, for |x|<=q and |y|<=A, proves
+
+    (x-y)^2 <= 4*A*|x-y| + (q-A)^2.
+
+Combining this with the exact ordinary Brownian QV error gives the verified
+quantitative estimate
+
+    ||mixedL2_N-occupationL2||^2
+      <= 4*H*E|mixedSum_N-mixedOccupation| + 2*H^2/(N+1).
+
+Both terms tend to zero by OLD verified results. No fourth-moment estimate,
+new filtration, probability coupling, generic completion or extra convergence
+hypothesis was added. The first term is the actual original-clock L1 error;
+no numerical convergence rate for that error or uniform rate in R,S is claimed.
+
+IBMActualQuadraticL2Reconstruction proves the endpoint cap product itself has
+clockL2 realization, dominated by W_H^2 with existing Gaussian fourth moments.
+Subtracting mixedL2 gives actual native mixedEnergy representatives converging
+strongly in clockL2 to endpoint-minus-occupation. Lowering to clockL1 gives
+EXACTLY the original joint source contraction from the first module, not a
+new auxiliary random quantity. The limit lowers exactly to its clockL1
+reconstruction. Finally, for EVERY a:GaussianL2, including unbounded dependent
+clock weights, E|a*(nativeEnergy_N-limitEnergy)| tends to zero by the existing
+Bochner L2 pairing Cauchy--Schwarz bound. This extends old bounded-clock-weight
+results to arbitrary square-integrable weights at the level of these actual
+random energies. No independence or predictability of a is required.
+
+Precise scope: a weighted random energy is integrable here; this alone does
+NOT prove that a(Y)*B(|W_R|)B(|W_S|) is jointL2 or belongs to the intrinsic IBM
+observable sigma algebra. Sourcewise contractions are not the projected native
+intrinsic random process. The original projected native L2/weak escape1500/1507
+remains valid and was independently checked. No full intrinsic Ito formula,
+all-observable closure, intrinsic Clark--Ocone, universal Hilbert convergence,
+Banach test membership or rough-kernel exclusion is claimed. Full IBM calculus
+remains OPEN; these are concrete sourcewise stochastic-test improvements.
+
+Productive next reuse: actual quartic terminal tests may reduce to a random
+clock weight times the quadratic test using existing source-second-chaos
+projection. IBMQuarticSecondChaos.quartic_projection_two is exactly
+projection2(quartic u)=6||u||^2 * wick(u,2); sourceGrid sections are pure second
+chaos. The new arbitrary-L2 clock weighting can handle 6|W_R|. First audit the
+actual existing quartic joint realization, its L2/domain proof and the legitimate
+sectionwise projection-pairing identity. Do not assume projection commutation
+with intrinsic conditioning or call a sourcewise test identity a pathwise Ito
+formula. The precise Banach-domain membership/rough-kernel question also stays
+open; do not replace it with tautological abstract domain intersections.
+
+Verification: full root6725jobs PASS25.628812s. COMPLETE transitive
+Lean.collectAxioms audit48905 safe Foundation declarations PASS39.316068s,
+only propext/Classical.choice/Quot.sound. ALL33 new public types printed/read
+UNABRIDGED; all3 complete mathematical source/proofs, private norm-square
+integral helper, exact AE identifications, majorant inequality, root/AxiomAudit
+additions and independent checks reviewed. No source edits after final gates.
+
+Independent11 mathematical Lean checks PASS26.963623s on first run: actual
+intrinsic mixed diagonal equals squareObservation; H=R=S endpoint becomes
+literal W_H^2; L2 native lowers to ORIGINAL joint source operator; quantitative
+mixed error bound; observation times straddling the native horizon; genuinely
+unbounded same-clock Gaussian weight process(U); original mixed-observable
+symmetry and full random-native symmetry; symmetric limits by uniqueness;
+EVERY strict-mono cofinal extraction; scalar sign-opposed-extrema sanity test;
+and the retained original intrinsic weak-convergence obstruction. No failed
+independent run. Retained target1--6 logs: target1 required the standard local
+closed intrinsic CompleteSpace instance; target3 had norm-majorant MemLp and
+function-sum/coercion syntax errors; target5 needed explicit cap unfolding and
+Nat binder. All repaired at ordinary defaults before final full build/audit.
+No heartbeat/resource/transparency/linter/compiler/trust/toolchain changes.
+
+All2552 Foundation/root hashes and3config hashes frozen/rechecked; all113
+ResearchSources paths/hashes unchanged and never staged/committed. External
+Lean jobs serialized and followed to terminal handle state. Evidence:
+.lake/stardust-1510-working-checkpoint.json, final full-build/audit/independent
+logs and timings, target1--6 and1510-verification.json. Explicit reviewed-path
+commit, exact-commit receipt and BOTH PRIVATE main/research verification close
+separately. Unrelated plans,tmp/archive preserved. No reflection admitted during
+proof/verification; uncertain old reservations preserved.
