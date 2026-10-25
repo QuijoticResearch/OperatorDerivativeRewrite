@@ -46476,3 +46476,97 @@ changed except the three additions and root/AxiomAudit registration. Original
 ResearchSources, manuscripts, instructions and unrelated drafts preserved.
 Explicit six-path audited commit, exact receipt and verified PRIVATE main/research
 backup close this checkpoint. IBM remains ACTIVE; no later campaign begins.
+
+## Checkpoint1525 — native predictable sums and actual clock correction
+
+October25,2026. IBM remains ACTIVE; queue c34f3ed unchanged. Continue the1524
+completed actual source-mean calculus, without reopening frozen campaigns or
+starting queued research. This is proof development, not daily reflection.
+
+PROVED ReflectedDampingNativeIntegral.single_norm for every c>=0,T>=0:
+
+    ||original_running(c,T)||_(timeProbability L2) <= c sqrt(T).
+
+The dominating class is the independently constructed predictable sign(W) field,
+whose squared norm is exactly T. The pointwise bound uses exp(-c|W|)<=1 on its
+actual representative. No finite-measure assumption on the WHOLE time axis is
+introduced. For signed weights b and nonnegative rates c under1524's precise
+absolute/squared-rate hypotheses, ||b_k U_(c_k,T)|| <= |b_k|c_k sqrt(T).
+The already derived first-rate summability therefore gives absolute norm
+summability in the ORIGINAL closed fullPredictable space. tsum_field identifies
+its sum with the existing completed aggregate running field, via actual joint
+representatives and the exact sign/damping series. partial_tendsto proves STRONG
+timeProbability L2 convergence of the finite sums; integral_tendsto proves
+STRONG GaussianL2 convergence of their original Ito integrals to the aggregate
+integral using the existing isometry. Neither space nor integral is redefined.
+
+Here "native" means finite SPECTRAL MODE sums of the original constructed
+predictable damping fields/integrals. It does not mean the unaveraged IBM native
+clock-operator grid sums previously obstructed in the full Hilbert topology.
+No contradiction of that obstruction or new convergence for those sums is claimed.
+
+PROVED IBMFourierClockItoCorrection for actual completed IBM Fourier source
+means M_T with sum|w_k| and sum|w_k|a_k^4 finite. Retain b_k=w_k cos(beta_k),
+c_k=a_k^2/2 and the original running field U_T. drift is the existing reflected
+C2 Bochner GaussianL2 drift applied to the completed extension. correction is
+DIRECTLY constructed as
+
+    C_T = -(sum b_k c_k) coordinateClass(Mass_T) + (1/2) drift_T.
+
+It is not defined as an unexplained terminal-minus-integral residual. drift_actual
+and correction_actual identify these original L2 elements with the actual
+continuous mass path and integral_0^T sum b_k c_k^2 exp(-c_k|W_s|)ds, AE per
+fixed horizon. l2_ito then upgrades the actual physical formula to
+
+    M_T - (sum b_k) gaussianOne = Ito(U_T) + C_T
+
+in the ORIGINAL GaussianL2. correction_brownian proves membership in the actual
+RAW Brownian-generated subspace. The original PRP gives
+
+    Ito(predictableAdjoint C_T) = C_T - E[C_T] gaussianOne,
+    E[C_T] = E[M_T] - sum b_k.
+
+Most importantly, terminal_adjoint identifies the EXACT unique1520 source-mean
+Clark--Ocone coefficient with
+
+    coefficient_T = U_T + predictableAdjoint C_T.
+
+terminal_eq_running_iff proves equality with the local running field exactly
+when predictableAdjoint C_T=0. An independent Lean check further proves that
+this means C_T=E[C_T] gaussianOne, using its established Brownian membership and
+original PRP. Thus a zero adjoint is a CONSTANCY condition, not an inference that
+the physical correction itself vanishes. No assertion that the adjoint is always
+nonzero, or always zero, was substituted for this criterion. Native running and
+integral convergence are also exported for the ACTUAL completed Fourier mean.
+
+Scope remains SOURCE AVERAGED, hidden Brownian-clock predictable, and fixed-T
+AE/L2 identities. The ACTUAL IBM model is B(|W|). This does not finish intrinsic
+unaveraged IBM stochastic integration, observed-filtration Clark--Ocone, a
+single common all-time version, or multitime collision-channel analysis. The
+smooth/ordinary Brownian correction precedent GaussianC2OperatorCorrection was
+reviewed and its original adjoint/PRP machinery reused; this checkpoint adds the
+actual reflected LOCAL-TIME component and completed source-mean identification.
+No external novelty is asserted. With these supporting one-time obligations now
+discharged, next return to the unaveraged/observed intrinsic frontier: audit
+exact existing Simpson/time-space and observed-channel/initial-germ results
+before choosing the next substantial proof. Do not merely keep adding source-
+average examples or confuse coordinate initial-germ vanishing with full germ
+triviality. Preserve all actual-process/domain and convergence distinctions.
+
+Verification: full ROOT build PASS6755jobs39.103332s; complete safe transitive
+Lean.collectAxioms audit PASS49494declarations42.382406s, only propext,
+Classical.choice and Quot.sound. All21 new public types read UNABRIDGED and all
+two new sources/proofs plus root/audit additions completely reviewed. Eight
+independent Lean checks PASS28.780621s: zero-rate integral, zero-horizon field,
+single-mode Ito norm bound, signed repeated-rate field/integral cancellation,
+actual correction for zero frequencies and odd phases, and the exact constancy
+criterion above. Earlier targeted elaboration and independent signed-smul
+simplification failures are retained in1525logs; these were repaired without
+resource/transparency/linter overrides or mathematical hypothesis changes.
+
+All2582 Foundation/root sources frozen; all3 configuration files and113original
+archive paths/hashes unchanged against the baseline/inventory. No old math
+changed except root/AxiomAudit registration. ResearchSources, manuscripts,
+instructions and unrelated drafts remain untouched/uncommitted as appropriate.
+Explicit five-path audited Git commit, exact receipt and verified PRIVATE
+main/research backup close this checkpoint. IBM remains ACTIVE.

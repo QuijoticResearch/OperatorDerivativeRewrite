@@ -2478,3 +2478,5 @@ import Foundation.IBMOneTimeSourceMeanIto
 import Foundation.ReflectedDampingSeries
 import Foundation.ReflectedDampingSeriesIto
 import Foundation.IBMFourierSourceMeanIto
+import Foundation.ReflectedDampingNativeIntegral
+import Foundation.IBMFourierClockItoCorrection
