@@ -45221,3 +45221,114 @@ Explicit reviewed-path commit, exact-commit receipt and BOTH PRIVATE main/
 research synchronization close separately. Unrelated plans,tmp/archive preserved.
 No reflection admitted during active proof/verification; old uncertain
 reservations preserved.
+
+
+## Checkpoint 1513 — actual mixed-time finite-ridge IBM native testing
+
+October 25, 2026. IBM ACTIVE; queue8280325 unchanged. This genuinely extends
+terminal testing to nonlinear finite-observation ridges
+phi(sum_i a_i B(|W_(r_i)|)), with arbitrary finite index type, real coefficients
+and nonnegative observation times. Empty families, repeated times, zero or
+opposing coefficients, singular/cancelling directions and observations before
+or after the native horizon are included. No covariance Gram inverse appears.
+Bounded C2 phi with bounded first and second derivatives is the exact domain
+for the original-source identification.
+
+IBMFiniteRidgeObservation constructs the ACTUAL finite linear path value and
+the original scenery direction u(Y)=sum_i a_i clockDirection(r_i,Y). The existing
+first-chaos isometry and OLD actual unmollified IBM section theorem prove its
+exact firstChaos_sections with only finite AE intersections. The bounded
+nonlinearity has a genuine jointL2 class and proved intrinsic path observability.
+Original sourceUnitary/curry/swap representatives identify its sections with
+Gaussian testClass(u(Y)). clockMean uses the existing bounded Gaussian mean
+functional on those actual sections. This is not an auxiliary Gaussian process
+substituted for IBM and not a claim about arbitrary mixed nonlinear cylinders.
+
+IBMFiniteRidgeQuadraticTesting expands rawProduct(u,u) through OLD rawBilinear:
+ALL i,j terms a_i*a_j*rawProduct(clockDirection r_i,clockDirection r_j) survive.
+The corresponding GaussianL2 native is the double sum of1510 ACTUAL mixed
+quadratic native energies. source_pairing_actual identifies that exact sum with
+the sourceGrid section tested against rawProduct(u,u). Finite sums of the old
+all-pair strong clockL2 convergence give its limit. reconstruction_actual exposes
+the literal double sum
+
+    sum_i,j a_i*a_j * (min(|W_H|,|W_ri|)*min(|W_H|,|W_rj|)
+      - integral_(0,H] 1_{|W_t|<min(|W_ri|,|W_rj|)} dt).
+
+No cross-time term is discarded, no orthogonality or independence of these
+random directions is assumed, and no diagonal-only approximation replaces it.
+
+IBMFiniteRidgeNativeReconstruction applies the exact1512 source-sector2
+projection theorem to u(Y). Its coefficient is
+c_phi(u)=(1/2)*E_scenery[phi''(firstChaos u)], bounded by C/2. The coefficientField
+is constructed in clockL2 from the ACTUAL phi'' ridge sections, then realized in
+clockL-infinity using that proved AE bound. Mathlib's existing
+ContinuousLinearMap.holderL for multiplication L-infinity x L2 -> L2 supplies a
+bounded linear multiplier; no new generic multiplication or probability theory
+is built. The actual finite and limiting native actions are this coefficient
+times the above quadratic native/double occupation sum.
+
+source_native_actual proves equality with the ORIGINAL joint source-native
+operator on the actual nonlinear ridge joint class. native_lower identifies
+the GaussianL2 construction with that original action after lowering to clockL1.
+Strong clockL2 convergence follows from the verified all-pair quadratic limits
+and continuity of the existing Holder multiplier. reconstruction_actual gives
+the actual coefficient-weighted occupation representative. Exact expectation
+recovers the ORIGINAL projected intrinsic native divergence paired with the
+SAME actual intrinsic ridge observation; its scalar limit is verified.
+The full source-native statement retains bounds on phi,phi',phi'', and H>0 is
+the convergence hypothesis. No relative horizon ordering is imposed.
+
+Scope: these are nonlinear finite RIDGE cylinders, not arbitrary multivariate
+F(Z_r1,...,Z_rn). No ridge-approximation/density theorem, infinite sum,
+Fourier-integral interchange, completed all-observable extension, intrinsic
+Ito/Clark--Ocone formula or restored joint derivative domain follows. This is
+source-native ACTION TESTING, not reconstruction of the observed ridge random
+variable itself or convergence of the original projected native process.
+All original weak/domain obstructions remain. Full intrinsic IBM calculus is
+OPEN; no campaign transition or mathematical novelty claim is made.
+
+Possible next reuse: finite Fourier/trigonometric cylinders can be expressed
+through these genuine mixed-time ridges; an actual integral over frequencies
+would require proved measurability/Bochner domains, coefficient-weighted
+frequency norm bounds and dominated convergence. Audit existing Fourier and
+Gaussian characteristic-function declarations before attempting this. Alternatively
+seek a direct multivariate Hessian pairing with existing Gaussian IBP, treating
+all degeneracies. Neither route nor a universal approximation implication is
+established here. Avoid new abstract test-space infrastructure without a
+specific actual-process closure obligation.
+
+Verification: full root6733jobs PASS55.253949s. COMPLETE transitive
+Lean.collectAxioms audit49066 safe Foundation declarations PASS38.290135s,
+only propext/Classical.choice/Quot.sound. ALL37 new public types printed/read
+UNABRIDGED; ALL3 complete source/proofs, finite AE intersections, bilateral
+expansions, Holder exponent/actual representatives, and root/AxiomAudit additions
+reviewed. No mathematical edits after final full-build/audit gates.
+
+Independent11 Lean checks PASS26.637977s. Checks include singleton recovery of
+the actual terminal observation; BOTH mixed-time off-diagonal entries; exact
+repeated-time opposing-coefficient cancellation of actual path and Gaussian
+direction; cancellation of the nonlinear native action; empty observation
+families; reordering invariance of the actual nonlinear joint class; the exact
+C/2 Holder-multiplier action bound on arbitrary L2 inputs; genuine nonlinear
+mixed past/future cosine observations; exact lowering to the ORIGINAL joint
+source operator; and every strict-mono cofinal grid extraction. First independent
+run28.309918s failed only on a singleton subtype/joint-class rewrite; fixed with
+an explicit underlying JointL2 expression. Failed log/timing preserved. All
+other public source/audit inputs unchanged for the successful rerun.
+
+Target1--5 logs retained. Target2's broad bilateral simplification hit the
+DEFAULT200000 heartbeat limit. Repaired by TWO explicit left/right finite-sum
+identities through the EXISTING rawBilinear; no heartbeat, resource, transparency
+or linter change. Target4 required explicit Holder output exponent r=2. Final
+proofs compile at ordinary defaults. No compiler/toolchain/trust changes.
+External Lean jobs serialized and live handles followed to terminal state.
+
+All2560 Foundation/root hashes and3configuration hashes frozen/rechecked; all113
+ResearchSources paths/hashes unchanged, never modified/staged/committed.
+Evidence: .lake/stardust-1513-working-checkpoint.json, full-build/audit/independent
+logs and timings, retained failed independent run, target1--5 and1513-verification.
+Explicit reviewed-path commit, exact-commit receipt and BOTH PRIVATE main/
+research verification close separately. Unrelated plans,tmp/archive preserved.
+No reflection admitted during proof/verification; old uncertain reservations
+preserved.

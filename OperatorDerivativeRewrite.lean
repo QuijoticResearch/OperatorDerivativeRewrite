@@ -2455,3 +2455,6 @@ import Foundation.IBMActualQuarticRandomReconstruction
 import Foundation.IBMBoundedC2SecondProjection
 import Foundation.IBMBoundedObservationSections
 import Foundation.IBMBoundedC2NativeReconstruction
+import Foundation.IBMFiniteRidgeObservation
+import Foundation.IBMFiniteRidgeQuadraticTesting
+import Foundation.IBMFiniteRidgeNativeReconstruction
