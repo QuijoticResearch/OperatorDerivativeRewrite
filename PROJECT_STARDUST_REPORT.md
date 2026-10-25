@@ -44808,3 +44808,99 @@ audit/independent logs and timing JSON, retained target1--5 logs and
 .lake/stardust-1508-verification.json. Explicit reviewed-path Git commit, exact
 receipt and BOTH PRIVATE main/research backup gates close separately. Unrelated
 untracked plans,tmp and archive preserved.
+
+
+## Checkpoint 1509 — full clock-L1 native reconstruction on the faithful joint test space
+
+October 25, 2026. IBM remains ACTIVE; queue8280325 unchanged. This resolves the
+specific full-random-action descent obligation recorded at1508, without another
+test-space construction. Reflected-clock IBM is B(|W_t|). No probability or
+intrinsic-filtration meaning is imposed on a source-section contraction.
+
+IBMJointRandomContraction constructs, for EVERY original source u in
+Lp(GaussianL2,2,clock), the genuine clock-L1 class Y |-> inner(u(Y),v(Y)).
+It uses existing IBMWeakRandomEvaluation with the actual Gaussian L2 norm
+majorant, fixed-vector weak measurability and Cauchy--Schwarz. The norm bound
+is ||u|| ||v||; expectation is exactly the original Bochner Hilbert pairing.
+Composing with the EXISTING sourceUnitary gives a continuous original JointL2
+test -> clockL1 operator. IBMRawIntegralSourceCalculus.source_curry identifies
+it on actual jointRealization(v), preserving source/clock order. Its expectation
+is exactly inner(jointRealization(u),q), not an invented auxiliary pairing.
+No strong measurability in the entire norm-dual space is needed.
+
+IBMJointRandomGraphIdentity proves the generator identity BEFORE integrating
+over the clock: actual native sourceGrid contraction with jointTest(g,h,a)
+equals signedRandomFiniteTN(symbol(g,h,a)) in genuine clockL1, for ALL real
+Schwartz g,h and EVERY L2 clock weight a, including dependent/unbounded weights.
+The interval product identity and original source_spatial_ae fix normalization;
+there is NO additional half factor. The continuous L1-valued finite defect has
+a closed kernel containing the generators, their linear span and the SAME
+closed product graph from1508. Thus the identity holds for EVERY completed
+graph element. The old strong random-symbol convergence gives actual source
+native strong clock-L1 convergence. Zero joint observable makes EVERY finite
+random action zero, hence the ENTIRE limit zero by uniqueness. This is stronger
+than1508's integrated kernel annihilation; expectation-zero alone was not used.
+
+IBMJointRandomDistribution descends this full random limit through the EXISTING
+Tests=Graph/ker(jointMap), whose faithful JointL2 realization is unchanged.
+For EVERY positive T and EVERY x:Tests, actual source-native contractions
+converge strongly in clockL1 to a bounded linear distribution(T,x). Both every
+finite contraction and its limit satisfy ||action||L1 <= 6T ||x||Tests; quotient
+approximate representatives justify this for the quotient norm. Uniqueness is
+proved among all L1-valued functions having those native limits. Expectation
+recovers EXACTLY the old scalar distribution1508. Mixed-generator values have
+the actual signed endpoint-minus-diagonal-occupation path representative from
+1505/1506, applied to their clock-dependent spatial symbol.
+
+Scope: these are random SOURCE contractions, not a theorem that the ORIGINAL
+projected native intrinsic process converges in L1, probability, pathwise or
+weak Hilbert topology. Projected scalar pairings remain justified only under
+actual intrinsic membership, as before. No full operator-NORM convergence,
+whole intrinsic Hilbert domain, concrete Ito--Tanaka observable membership,
+stochastic derivative/adjoint closure, martingale or conditional-expectation
+claim follows. The1507 bad intrinsic observable and1508 proper-range theorem
+remain intact. A full intrinsic IBM calculus is still OPEN.
+
+Next substantive obligation: establish concrete actual IBM path-observable
+membership in this faithful test domain, or prove an exact rough-kernel
+obstruction. In particular, terminal-square kernels involve interval indicators
+whereas completed spatial symbols have continuous uniform-limit realizations.
+This possible incompatibility remains UNPROVED; do not label it an exclusion
+without a physical second-chaos recovery argument. Avoid tautological domain
+intersections or more generic completion infrastructure in place of that test.
+
+Verification: full root6722jobs PASS25.163039s. COMPLETE transitive
+Lean.collectAxioms audit48861 safe Foundation declarations PASS38.866759s,
+only propext/Classical.choice/Quot.sound. ALL30 new public types printed/read
+UNABRIDGED in the combined audit; all3 complete source/proofs, private finite
+L1 defect, quotient approximation and root/AxiomAudit additions reviewed.
+Final committed-source gates follow the EOF-only normalization described below.
+
+Independent12 Lean mathematical checks PASS28.668367s on final bytes;
+the initial run also passed28.830646s. Actual
+source-pairing symmetry, diagonal AE positivity, exact source energy as mean,
+actual random tensor-weight contraction, swapped Schwartz factors yielding the
+SAME quotient class, FULL-L1 consistency of equal-joint graph presentations,
+original native scalar pairing recovered as expectation, linear combinations,
+EVERY strict-mono cofinal grid extraction, scalar-limit compatibility, quotient
+6T bound and existing proper intrinsic range were checked. No failed independent
+run. Retained development logs target1--4; target1 used a reserved Lean command
+name, target2 needed explicit strong-measurability/norm arguments. A formatting
+edit before the first root build broke dot notation; failed full build24.439319s
+and log preserved as full-build-failed-1. Repaired with explicit continuous inner
+map; reran FULL build and COMPLETE audit on the final source. The staged Git whitespace check then caught one extra EOF blank line. Removed
+it; all definitions/proofs unchanged. Refroze hashes and reran the FULL build,
+COMPLETE audit and independent checks on those exact final source bytes.
+Earlier successful build75.590379s/audit49.511385s logs retained with the
+pre-whitespace prefix; final audit/public-type output is BYTE IDENTICAL.
+No mathematical or whitespace changes after the final gates. No heartbeat,
+resource, transparency, linter, compiler, toolchain or trust changes.
+
+All2549 Foundation/root sources and3configs frozen/rechecked; all113 archive
+paths/hashes unchanged. ResearchSources untouched/unstaged/uncommitted. External
+Lean jobs serialized; live handles followed to terminal state. Evidence:
+.lake/stardust-1509-working-checkpoint.json, full-build/audit/independent logs and
+timings, retained failed development logs and1509-verification.json. Exact-path
+Git commit, exact-commit receipt and BOTH PRIVATE main/research verification
+close separately. Unrelated plans,tmp/archive preserved. No reflection session
+admitted during proof/verification; uncertain prior reservations preserved.

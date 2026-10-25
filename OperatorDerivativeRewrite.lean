@@ -2444,3 +2444,6 @@ import Foundation.IBMJointMixedSpatialTransport
 import Foundation.IBMJointCompletedTestGraph
 import Foundation.IBMJointBanachTestSpace
 import Foundation.IBMJointTestNormBounds
+import Foundation.IBMJointRandomContraction
+import Foundation.IBMJointRandomGraphIdentity
+import Foundation.IBMJointRandomDistribution
