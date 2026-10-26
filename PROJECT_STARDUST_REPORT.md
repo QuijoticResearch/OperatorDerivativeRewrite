@@ -48204,3 +48204,86 @@ Explicit-path commit, exact-commit audit receipt and BOTH verified PRIVATE
 main/research refs remain the final closure gate at this entry; guarded terminal
 records close it only after synchronization succeeds and its process terminates.
 Continue actual IBM afterward and preserve every later campaign's gate.
+
+## Checkpoint1538 — actual IBM clock-vacuum projection fails right-past adaptation
+
+Terminal date October25,2026; mathematical parent5076666c18cd21278342ba0cbd838930216a40ae.
+IBM remains ACTIVE; authoritative queue b91ce91281e90df5adf912779736781528880ccd
+is unchanged. Yang–Mills stays a bounded audit AFTER both Bakry objectives,
+BEFORE Cauchy; no queued manuscript investigation was activated. October31 is
+review only. Reflection was already used today; this is active IBM mathematics,
+not another reflection or manuscript housekeeping session.
+
+**Question and exact actual process.** Does ambient Gaussian clock smoothing
+preserve the observable past of the constructed reflected-clock IBM Z_t=B(|W_t|)?
+The native clock derivative from1537 is an ambient source/clock operator;
+its domain alone does not supply adaptation. New
+`Foundation/IBMClockVacuumPast.lean` resolves this for the clock-vacuum projection
+P_0, not yet for every finite-strength Bessel regularization.
+
+**Actual-past localization, without bounded-observable assumptions.** For every
+L2 F in the natural IBM past at S and every finite scenery cutoff delta, almost
+every clock section of F on the event sup_{r<=S}|W_r|<=delta is measurable from
+scenery through delta. The proof factors the actual natural-past measurable
+representative, uses existing clipped-path equality and measurable scenery
+conditioning, and checks section/Fubini null sets. For EVERY delta>0 there is
+some S>0 with positive clock-confinement probability, using existing clock
+continuity at0; no unproved general small-ball theorem is assumed. Consequently,
+a source-only joint L2 variable belonging to such a past must belong to that
+finite scenery history. Future scenery B_r, r>delta, fails this condition by
+the old exact conditional prediction B_min(r,delta) and variance identity.
+
+**Clock-vacuum identification and strict covariance.** For every original
+source-valued clock field f, P_0 f is EXACTLY the clock-constant field with source
+value contract(gaussianOne,f). Let K_T be that source value for actual Z_T and
+G_delta=B_(delta+1)-B_delta. For every T>0 and every finite delta>=0,
+
+    <G_delta,K_T> = E[min(|W_T|,delta+1)-min(|W_T|,delta)] > 0.
+
+The integrand is measurable and between0 and1; it equals1 on a genuine positive
+Gaussian tail. Tail positivity is derived from the actual clock law and
+volume absolute continuity with respect to its nondegenerate Gaussian law.
+The scenery-history projection of G_delta is0. Hence K_T cannot be measurable
+from ANY finite scenery history, for EVERY T>0. The source value remains random:
+clock vacuum is not a total joint mean.
+
+**Actual right-germ counterexample.** Choose a confinement-positive horizon S
+and endpoint T=S/2. P_0 Z_T is absent even from raw past S; the right-germ past
+at T is contained in raw past S, so P_0 Z_T is absent from rightPast(T).
+Meanwhile actual Z_T belongs to raw past T and thus rightPast(T), and P_0 Z_T
+belongs to the ORIGINAL native joint Gaussian clock-derivative domain by the
+old projected-sector domain theorem and1537's exact bridge. Main declaration:
+`IBMClockVacuumPast.exists_actual_adapted_clock_projection_failure`.
+This proves a genuine failure of adapted-past preservation on an ACTUAL observed
+endpoint, including the right-germ completion used by the current calculus.
+The independent tests also prove that right-past orthogonal projection does
+not fix this clock-vacuum output. No unknown confinement hypothesis remains
+in the existential theorem.
+
+**Scope and next obligations.** This does NOT prove failure of full ALL-TIME
+IBM intrinsic-space membership, and P_0 is not any finite Bessel power.
+Finite-strength regularizedEndpoint preservation is still OPEN. A productive
+next test is strong large-integer smoothing convergence to P_0 followed by
+closed-right-past preservation: prove the precise L2 limit before claiming
+arbitrarily strong finite smoothing fails. No formal ambient Gaussian result
+has been relabeled a physical IBM driver, Ito/Tanaka or Clark–Ocone formula.
+Physical F1–F3, intrinsic/adapted closure and full calculus remain open; no
+campaign completion or transition is claimed. No novelty claim is made.
+
+**Complete verification.** Unchanged compiler/resources/trust and pinned
+Lean/Mathlib. Complete root6778-job build43.0466994seconds; complete safe
+transitive audit49935 Foundation declarations42.0115625seconds, permitting ONLY
+propext/Classical.choice/Quot.sound. ALL24 public declaration types read
+unabridged, all20 public and2 private proofs, all4 definition and2 local-instance
+bodies read, root/audit diffs reviewed. Ten independent Lean checks passed in
+29.7591846seconds: exact interior/zero/both-sign overlap constants, every-positive-
+time nonzero source vacuum, arbitrary-cutoff symmetric covariance, old spectral
+idempotence, actual right-past projection failure, simultaneous raw/right past
+failure, and actual hidden scenery. Development repairs were namespace/coercion,
+measurability and positivity elaboration fixes; no new axiom, resource increase,
+weakened domain or suppressed error. Style warnings retained rather than disabled.
+The frozen source universe is2605 Foundation/root files, unchanged3 configuration
+hashes and EXACT113 original manuscript paths/hashes. Evidence:
+`.lake/stardust-1538-verification.json`, source-review/integrity and stage logs.
+Explicit-path commit, exact receipt and verified PRIVATE main/research backup
+are the final closure gates; their terminal evidence is recorded separately.
