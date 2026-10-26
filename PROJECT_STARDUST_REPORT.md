@@ -47685,3 +47685,89 @@ build, complete audit and all eight independent checks then passed on the final
 bytes. The final complete public-type output is BYTE-IDENTICAL to the reviewed
 output. Earlier60.3288012/41.3751159/28.4673588 timing logs remain preserved;
 these are changed/cached-input closure timings, not an optimization comparison.
+
+## Checkpoint1533 — actual IBM critical clock-sector obstruction and unbounded even support
+
+October25,2026; IBM remains ACTIVE. This advances the central weighted-sector
+question from PRIVATE-closed1532 mathematical commit
+f12af758a608d6b4eff7a2327d1db26bda10a5ab. The complete supplied Yang--Mills brief
+was independently compared with its saved instruction file and matched exactly;
+queue commit b91ce91281e90df5adf912779736781528880ccd is an ancestor of that
+PRIVATE checkpoint. No campaign was activated or reordered. No reflection
+session is opened: October25 was already consumed by1521.
+
+NEW `Foundation/IBMClockNoiseThreshold.lean` proves a genuine obstruction for
+the ACTUAL reflected-clock process B(abs(W_T)), retaining ALL scenery randomness
+and using the ORIGINAL Gaussian clock-number projections. For T>0, put
+C_n=norm(clockLift(projection n)(randomSourceL2 T))^2. Then
+
+* `actual_not_summable_sqrt`: sum_n sqrt(n)*C_n is NOT summable.
+* `actual_not_summable_bessel`: for EVERY real a>=1/2,
+  sum_n (n+1)^a*C_n is NOT summable, INCLUDING the critical exponent.
+* `actual_unbounded_even_sectors`: beyond EVERY natural cutoff there is an
+  EVEN clock degree with a nonzero original projected endpoint. Together with
+ 1532's vanishing of EVERY odd degree, this identifies an infinite, unbounded
+  even clock spectrum; it does not merely restate failure of the first derivative.
+
+The proof reuses1532's exact actual sector series
+sum_n 2*(1-(1-h)^n)*C_n = K*rate(h), with
+K=norm(timeDirection T)*standardMoment1>0 and 0<=h<=1.
+`power_defect_bounds` proves 0<=1-(1-h)^n<=min(1,n*h), hence
+`power_defect_sqrt_bound` bounds its quotient by sqrt(h) by sqrt(n).
+`power_defect_normalized_tendsto` proves each fixed-mode quotient tends to zero.
+Under hypothetical sqrt(n)-summability, the general
+`summable_sqrt_noise_tendsto` applies actual dominated Tannery convergence to
+force normalized total noise to zero. Separately `rate_normalized` rationalizes
+the radical exactly, and `rate_normalized_tendsto` proves
+rate(h)/sqrt(h) -> sqrt(2) as h decreases to0. Positivity of K contradicts
+uniqueness of the limit. `not_summable_sqrt_of_noise_series` isolates this
+nonnegative-spectrum obstruction with EXPLICIT series/positivity hypotheses;
+actual instantiation discharges all of them. No operator domain is assumed.
+Monotonicity of real powers supplies every supercritical Bessel weight.
+
+For the still-open POSITIVE direction, `power_defect_lower` additionally proves
+n*h/2 <= 1-(1-h)^n whenever 0<=h<=1 and n*h<=1/2, by Bernoulli induction.
+This is a useful verified ingredient for integrating the positive series over
+0<h<1/(2*n). It is NOT already a subcritical summability theorem. The next
+central proof remains: justify the positive series/integral exchange and lower
+integral estimates to establish summability for a<1/2, including n=0 and
+negative weights, and only then state the exact weighted criterion. Equivalence
+to the graph domain of a genuine fractional closed Gaussian operator requires
+its own explicit construction/reuse and domain proof. No fractional membership,
+physical adapted driver, multitime correlation formula or completed intrinsic
+IBM calculus is claimed here. The future-clock noise probe remains noncausal.
+No novelty is asserted for Bernoulli/Tannery or Gaussian spectral principles.
+
+Verification on the final source bytes: complete6770-job root build PASSED in
+27.1273596 wall seconds. Complete transitive Lean.collectAxioms audit PASSED ALL
+49776 safe Foundation declarations in37.7569958 seconds, with ONLY propext,
+Classical.choice and Quot.sound. ALL11 public types were read UNABRIDGED; the
+entire new source and every proof, including the full auxiliary limit and
+series arguments, plus root/audit diffs were reviewed. No hidden private proof
+or new definition body was excluded. NINE independent Lean checks PASSED in
+29.2000404 seconds: direct second-mode polynomial normalization, explicit failure
+outside the prescribed correlation range, zero vacuum noise, an interior
+second-mode lower-bound check, incompatibility of ANY finitely supported
+nonnegative spectrum with the positive radical law, summability of EVERY Bessel
+weight at actual T=0 (the positive-time hypothesis is essential), the critical
+1/2 and nonintegral3/4 endpoint obstructions, and coexistence of all odd-sector
+vanishing with arbitrarily high nonzero even sectors. These test both positive
+domains and limiting/finite-mode counterexamples; no numerical experiment is
+being substituted for the infinite series proof. Development elaboration
+feedback concerned explicit natural-index types, filter inference, function
+extensionality and natural cutoff inequalities; those were repaired without
+changing mathematical assumptions or increasing resources. Existing style
+warnings remain visible; no compiler/trust/linter/resource setting was disabled.
+
+All2597 Foundation/root source hashes, unchanged configurations3, and ALL113
+original archive paths/hashes were checked against1533's frozen baseline and
+inventory1292. Only the root/audit imports and axiom listings changed among old
+mathematical sources; the new leaf adds the eleven proved declarations.
+ResearchSources and unrelated untracked planning documents remain untouched.
+Evidence: `.lake/stardust-1533-verification.json`, its full source manifest,
+root/audit/type/test logs, integrity and proof-review records. Explicit-path
+commit, exact-commit audit receipt and BOTH verified PRIVATE main/research refs
+are the remaining closure gate at this entry; guarded terminal artifacts record
+closure only after the sync process terminates successfully. Continue IBM's
+positive subcritical/domain and actual physical calculus obligations afterward;
+Bakry, Yang--Mills and later campaigns stay queued.
