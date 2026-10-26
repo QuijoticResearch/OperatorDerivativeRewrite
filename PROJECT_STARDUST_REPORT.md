@@ -49001,3 +49001,127 @@ source-review/integrity/development records. Four explicit files only. Exact
 commit receipt and eligible PRIVATE main/research synchronization complete
 the checkpoint. If the workday window restricts synchronization, record the
 remote backup as QUEUED and continue mathematical work without delay.
+
+## Checkpoint1545 — Actual coefficient-field sample domains and full vector integral identification
+
+Previous goal turn: PROGRESS. Checkpoint1544,
+`34fbe491434ad22ca72abfdafeff5bf4360ff477`, proved actual native temporal L2
+fields, original closed-graph derivative/integral commutation and precisely
+qualified test-dual average-gradient convergence. This checkpoint closes its
+explicit PHYSICAL-TIME/SAMPLE coefficient-field realization obligation. IBM
+remains ACTIVE, actual `B(|W_t|)` on the ORIGINAL constructed joint Gaussian
+space. Terminal clock at start08:23:48 America/New_York October26,2026. No new
+campaign, manuscript ingestion, reflection session, goal or parallel agent.
+
+`Foundation/IBMNativeFieldSamples.lean` directly reuses the existing native
+field bounds, actual1542 sample versions, original product/Bochner L2 isometry,
+continuous channel projections, countable Cameron–Martin coordinates and
+scalar representative Fubini. No generic vector-Fubini infrastructure, new
+Gaussian space or replacement process was constructed.
+
+### Original native channels as actual coefficient-valued time/sample fields
+
+`channelMap i` is the original continuous coordinate projection followed by the
+actual Gaussian uncurry isometry. `curve n i t = channelMap i (field n t)` is
+therefore the ORIGINAL native channel in joint sample L2 with values in the
+existing infinite-dimensional `CoefficientSpace = lp (fun _ : ℕ => ℝ) 2`.
+`curve_memLp` discharges its actual Bochner local-time L2 domain from1544,
+without a new estimate or a finite-dimensional assumption.
+
+`nativeSample n i (t,ω)` is EXACTLY the old all-horizon jointly measurable
+coefficient-field version evaluated at t.toNNReal. `curve_ae` identifies its
+ORIGINAL joint L2 class at EVERY fixed real t. A second use of the original
+product/Bochner L2 isometry gives `sampleClass`; `sampleClass_ae` PROVES its
+agreement with this actual joint sample function. Thus `nativeSample_memLp`
+establishes genuine coefficient-valued L2 on
+`(window H).prod IBMSourceLaws.jointMeasure`, every n,i,H.
+
+The PHYSICAL source sample explicitly swaps the original scenery/clock pair
+back from channel0's native outer-clock/inner-scenery chart. The clock sample
+retains channel1's outer-scenery/inner-clock chart. Identity(time) times swap
+preserves the original product measure, so BOTH physical fields have proved
+time/sample L2 domains. Neither field is a new independently chosen version.
+Independent exact identities confirm they are the1542 physical source/clock
+samples with only the existing real-time toNNReal convention applied.
+
+### Genuine vector time integrals, not only scalar test identities
+
+`nativeSample_columns_integrable`, `sourceSample_columns_integrable` and
+`clockSample_columns_integrable` prove that the coefficient-valued Bochner time
+integrals exist joint-almost-everywhere. They are not formulas relying on the
+totalized integral's value for nonintegrable columns.
+
+`integratedChannel n i H = channelMap i (integratedField n H)` is the ORIGINAL
+uncurried native channel integral class. Continuous-linear-map integration
+commutation identifies it with the Bochner integral of `curve n i`.
+`integratedChannel_ae` then proves FULL coefficient-space equality
+
+`integratedChannel n i H =ᵐ[jointMeasure] (fun ω => ∫ t, nativeSample n i (t,ω) ∂window H)`.
+
+The proof uses the actual bounded coordinate evaluations on the original
+countable lp2 coefficient space. Their Lp functors commute with the existing
+Bochner integrals. For each coordinate, OLD scalar representative Fubini gives
+the scalar sample identity. Crucially, `ae_all_iff` obtains ONE null set for all
+countably many coordinates, and `lp.ext` reconstructs the FULL vector identity.
+The final coordinate/integral passage uses proved Bochner column integrability.
+No full-vector representative theorem or vector integral identity is assumed.
+
+`nativeSample_integral_memLp`, `sourceSample_integral_memLp` and
+`clockSample_integral_memLp` discharge original sample L2 membership of these
+ACTUAL coefficient-valued time integrals. `integrated_native_sections` recovers
+the native nested Gaussian channel; `integrated_source_sections` and
+`integrated_clock_sections` retain the exact physical source/clock ordering.
+Combining them with1544's `integrated_derivative` gives the original native
+source and clock derivatives of ACTUAL sample time-integral approximants as
+these actual coefficient-valued sample time integrals. Independent tests check
+both combined identities explicitly.
+
+### Sharp scope and unresolved mathematical work
+
+The actual native coefficient-field time/sample product domains and full vector
+sample-integral identification of BOTH channels are now DISCHARGED. These are
+ordinary dt/Bochner time integrals and native Malliavin-type derivative
+identities. No stochastic-driver integral or Itô/Tanaka formula follows merely
+from them. All identities keep fixed-H almost-everywhere quantifiers; no
+uncountable all-H indistinguishability or path continuity is inferred.
+
+The independent permutation counterexample uses the ORIGINAL sample space and
+proves that swapping its two coordinates is not the identity map. Equality of
+Gaussian laws under swap does not justify omitting it from a coupling identity.
+This checks ordering, not a claim that the particular native fields are unequal
+at every point. Native norm/weak convergence of the TIME-INTEGRATED gradients
+beyond the1544 graph-test dual norm result remains OPEN; point-gradient escape
+does not settle time-average regularization. Actual physical stochastic-driver
+integration, Itô/Tanaka/Clark–Ocone and F1–F3 random-boundary/cross-sector closures
+remain OPEN. No IBM completion, queue transition or novelty claim is made.
+
+### Full verification and preserved failures
+
+Frozen2615 Foundation/root sources; complete6788-job root build39.4420686seconds;
+complete50267-declaration safe transitive axiom audit44.0239241seconds, whitelist
+ONLY propext/Classical.choice/Quot.sound. ALL27 explicit public types reviewed
+unabridged; ALL19 public proofs,8 public definitions,1 private coordinate
+definition,3 local instance bodies and scoped Borel body inspected. No private
+proof was omitted. Complete new source, root/audit diffs and ALL13 independent
+proof bodies reviewed. Independent checks25.0246128seconds, including original
+version identities, product/sample L2 domains, true column integrability, full
+coefficient equality and coordinate probes, physical integral L2 domains, BOTH
+combined original-derivative/sample identities and swap nonidentity.
+
+An initial conversion method selected an inappropriate finite-dimensional API;
+it was repaired by the ORIGINAL inverse isometry's explicit
+`toLinearIsometry.toContinuousLinearMap` conversion. No finite-dimensional
+premise was adopted. Explicit pointwise `filter_upwards` resolved an AE/equality
+method ambiguity. A line-wrap introduced invalid dotted projection syntax after
+the successful targeted proof; the failed full build and exact source were
+preserved, the syntax was repaired with a local original isometry, the frozen
+snapshot refreshed, and ALL complete gates rerun successfully. These are
+elaboration repairs, not mathematical obstructions. No resource, norm, linter,
+compiler, trust, dependency or toolchain change.
+
+Exact configuration3 and ORIGINAL113 manuscript paths/hashes unchanged.
+Evidence: `.lake/stardust-1545-verification.json`, complete build/audit/test logs,
+source-review/integrity/development records and retained failed build/source.
+Four explicit files only; exact commit receipt and eligible PRIVATE main/research
+synchronization close the checkpoint. Workday deferral is QUEUED and never
+blocks continued mathematical research or counts as verified remote backup.

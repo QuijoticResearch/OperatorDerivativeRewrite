@@ -2511,3 +2511,4 @@ import Foundation.IBMPastHorizonGraph
 import Foundation.IBMPastSampleRealization
 import Foundation.IBMPastTimeRealization
 import Foundation.IBMPastTimeGradient
+import Foundation.IBMNativeFieldSamples
