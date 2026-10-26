@@ -47869,3 +47869,113 @@ records. Exact explicit-path commit, audit receipt and BOTH verified PRIVATE
 main/research refs remain this entry's final closure gate; guarded terminal
 records close it only after successful sync-process termination. Continue the
 same actual IBM campaign after closure; every queued campaign stays gated.
+
+## Checkpoint1535 — genuine closed original-clock spectral powers and the actual IBM fractional domain
+
+October25,2026. IBM remains ACTIVE. Previous goal turn made mathematical
+progress: the exact all-real power/Bessel moment criterion was fully audited
+and PRIVATE-closed1534 at8646d3913cd5faa80ec9dbe91291da9b76fc4cba. This checkpoint
+discharges the next existence/domain/closure bridge, not merely a renaming of
+that summability condition. The queue is unchanged and no October25 reflection
+session is opened (already consumed by1521).
+
+NEW `Foundation/GaussianClockSpectralPowers.lean` constructs actual densely
+defined CLOSED LinearPMaps on the ORIGINAL source-valued clock L2 space Field.
+For every real multiplier sequence w, its graph consists EXACTLY of pairs(f,g)
+satisfying P_n g = w_n smul P_n f for EVERY original clock-number projection
+P_n=clockLift(GaussianNumberSectors.projection n). These are the original
+Gaussian D*D sectors, not a newly chosen Hilbert basis or formal coefficient
+array. Every scenery-source degree, including the source-valued clock vacuum,
+remains present. The generic construction imposes no boundedness or positivity
+on w; all domain and energy statements therefore retain squared real weights.
+
+The graph is a closed linear submodule: an intersection of equalizers of
+continuous maps. Functionality follows from OLD original-clock projection
+completeness. Submodule.toLinearPMap then gives an ACTUAL partial linear operator,
+and `operator_graph` proves that its graph is exactly this closed submodule.
+Thus the fallback-zero branch of that native construction is discharged, not
+assumed. `operator_isClosed` proves native LinearPMap.IsClosed.
+
+`project_hasSum_norm_sq` first establishes full Field Parseval by reusing OLD
+Gaussian sector Parseval, BochnerCoefficientParseval.lift_hasSum and the genuine
+product-flip isometry. `project_comp` proves the original mutually disjoint
+projection law using arbitrary continuous SOURCE tests and OLD scalar sector
+identities. `graph_exists_iff` then proves that an actual graph OUTPUT g exists
+IFF sum_n w_n^2*norm(P_n f)^2 is summable. Necessity uses full Field Parseval.
+Sufficiency constructs weighted finite original-clock sums; their projected
+squared differences are dominated by the SAME summable weighted energy, each
+fixed mode stabilizes, and dominated Tannery plus Parseval proves the FULL
+Field sequence Cauchy. Completeness produces g; continuity of every actual
+projection and uniqueness of limits prove ALL graph equations. No existence,
+strong convergence or completion premise is left conditional.
+
+`operator_domain` is the resulting EXACT maximal domain criterion, and
+`operator_energy` identifies the HasSum with the squared norm of the actual
+operator output. Every old finite clock truncation lies in this domain;
+`operator_dense_domain` proves density using the OLD strong clock truncation
+limit. `truncation_operator` identifies its actual operator image with the
+weighted finite sum. `partial_eq_output_truncation` identifies that sum with
+the original truncation of the limiting OUTPUT. Finally
+`graph_truncation_tendsto` proves convergence of the INPUT/ACTUAL-OUTPUT PAIR
+in Field x Field. This is genuine graph approximation, stronger than testing
+convergence of isolated coordinates. Every original single clock sector is in
+every multiplier domain and `operator_on_project` proves the exact eigenvalue
+w_m on it. No finite-dimensionality of an infinite number sector is asserted.
+
+NEW `Foundation/IBMClockFractionalDomain.lean` specializes the genuine closed
+spectral operator to `bessel s` with multiplier(n+1)^(s/2). The EXACT squared
+weight identity is proved by real-power multiplication. `bessel_domain` proves
+its maximal domain is sum_n (n+1)^s*norm(P_n f)^2<infinity for arbitrary Field f.
+`actual_bessel_domain` discharges the actual stochastic instantiation: for EVERY
+real s and EVERY T>0, the existing constructed reflected-clock IBM endpoint
+B(abs(W_T)) belongs to this closed domain IFF s<1/2. This uses1534's already
+verified actual infinite series/moment criterion; it does not re-assume it as
+a domain hypothesis. If an alternative multiplier(n+1)^s is used, the squared
+weight is2*s and the corresponding threshold is s<1/4; keep conventions explicit.
+
+Precise scope: this is ambient ORIGINAL SOURCE-CLOCK spectral regularity, with
+native closed graphs, domains, original-sector eigenvalues, density, energy and
+strong graph-core limits. It is NOT yet an intrinsic adapted physical IBM
+derivative, a causal gradient, a canonical physical driver, or a full physical
+Ito/Clark--Ocone representation. Preservation of the actual IBM-generated
+observable space is not asserted. Self-adjointness, native adjoint/IBP formulas,
+and identification with a separately lifted original number DIFFERENTIAL
+expression have not been proved here; investigate those through existing
+adjoint and Gaussian derivative machinery before making stronger claims.
+A useful next route is original-sector inner-product Parseval, symmetry/native
+adjoint characterization by finite-sector tests and the now-proved graph core,
+then any rigorously justified regularization bridge to the OLD actual clock
+closed derivative. Do not treat Gaussian spectral regularization as closure of
+physical boundary-layer kernels or the IBM F1--F3 obligations without an exact
+connecting theorem. Original point native-domain obstructions remain in force.
+No new mathematical novelty is asserted.
+
+Verification: complete6773-job root build PASSED in30.4835646 wall seconds;
+complete transitive Lean.collectAxioms audit PASSED ALL49839 safe Foundation
+declarations in37.0792014 seconds, accepting ONLY propext, Classical.choice and
+Quot.sound. ALL30 public types read UNABRIDGED. Both complete sources, all25
+public proofs, all5 definition bodies (including graph submodule field proofs
+and the partial-map construction) and root/audit diffs were reviewed. ELEVEN
+independent Lean checks PASSED in26.3337179 seconds: whole-space zero-multiplier
+domain and zero output, identity domain and output including source vacuum,
+negative-3 multiplier with exact9 norm-square factor, every original sector in
+every fractional domain, s=2 multiplier n+1 convention, actual positive1/4
+domain membership, exclusion of exact1/2, actualT0 in EVERY domain, and actual
+subcritical paired input/operator-output graph convergence. A test initially
+needed a definitional-unfolding/proof-coercion repair for the s=2 specialization;
+its failed log/time are preserved and ONLY the test proof changed. Library bytes
+were unchanged after the full gates. Development feedback included a missing
+LOCAL Fact(2!=infinity) needed for existing L2 separability/flip inference,
+explicit projection/function equalities, a reserved identifier, and an explicit
+natural binder. No increased heartbeat or resource override was used. Visible
+source-style/deprecation/test-unused-variable warnings remain unsuppressed.
+
+All2600 frozen Foundation/root hashes, configurations3 and original113 manuscript
+paths/hashes match. Only old root/audit import/listing files, the two new leaves,
+and this ledger change. Original manuscript bytes and unrelated untracked
+planning documents/tmp remain untouched. Evidence: `.lake/stardust-1535-verification.json`,
+full manifest/root/audit/type/test/proof-review/integrity records. Explicit-path
+Git commit, exact-commit audit receipt and BOTH verified PRIVATE main/research
+refs remain this entry's final closure gate; guarded terminal records close it
+only after successful sync-process termination. Continue actual IBM; do not
+activate Bakry, Yang--Mills or later campaigns.
