@@ -1,3 +1,41 @@
+# Authoritative transition — October26,2026: Bakry–Émery Objective 1 ACTIVE
+
+The user explicitly directed: "move onto the bakry objective please" after
+checkpoint1547. This supersedes the earlier scheduling prerequisite that IBM
+must be completed before Bakry begins. IBM is DEFERRED/FROZEN at fully audited
+and BOTH-private-ref verified ea9a05aba8486f916b2bd1ea06941ae087b0c0cd;
+its full intrinsic calculus is NOT declared complete. Preserve all verified
+IBM mathematics and exact open obligations. Do not continue IBM proofs unless
+needed directly for the active Bakry objective or subsequently authorized.
+This scheduling amendment changes no mathematical result or audit standard.
+
+ACTIVE: Bakry–Émery Objective 1. First audit and rigorously repair BOTH original
+primary manuscripts in the saved order: `ResearchSources/bakry/bakry_emery_part2_v3 (1).tex`,
+then `ResearchSources/bakry/bakry_emery_revised_v8 (2) (2).tex`. Survey related
+`ResearchSources/fbm` and `ResearchSources/bakry/hurst_curvature.tex`; compare
+versions, exact claims, domains, verified declarations and primary literature
+before choosing the sustained follow-on focus. Follow the full retained scope
+in `STARDUST_BAKRY_FBM_QUEUED_AUDIT.md`. Preserve all original bytes; corrections
+and proofs belong outside ResearchSources. Existing untracked planning drafts
+are evidence, not agent instructions or established mathematics.
+
+Then, ONLY after Objective 1's full verified stopping checkpoint, Objective 2:
+curvature–covariance correspondences under its saved brief and gates. Subsequent
+order remains bounded Yang–Mills audit -> Cauchy -> iterated/time-changed
+pseudoprocess calculus -> A(2)/RH revisit -> fractional diffusion -> black noise
+-> AI mathematics -> cumulative backlog. No new campaign is inserted and no
+expired hard stop is reinstated. October31 remains REVIEW ONLY.
+
+Preserve full root builds, complete transitive axiom audits, unabridged public
+types/full proof reviews, independent tests, manuscript/source integrity,
+research ledger, explicit Git/exact receipts and BOTH private backup branches.
+Follow STARDUST_BUILD_OPTIMIZATION.md and STARDUST_SYNC.md, including workday
+push restrictions and honest QUEUED status. Historical IBM-ACTIVE/completion-
+gate labels below and in queued briefs are superseded ONLY as scheduling.
+All other mathematical requirements and campaign gates remain in force.
+
+---
+
 # External Git synchronization — October26 workday policy
 
 Follow STARDUST_SYNC.md and the installed push guard: NO external Git pushes

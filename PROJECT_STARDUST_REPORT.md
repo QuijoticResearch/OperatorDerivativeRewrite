@@ -49324,3 +49324,40 @@ development records and retained failure artifacts. Five explicit files only;
 exact-commit receipt and guarded verified PRIVATE main/research synchronization
 close the checkpoint. Workday restriction remains installed; any restricted run
 would be QUEUED and could not block local research. No reflection session begun.
+
+
+## Discovery1548 — user-authorized transition to Bakry–Émery Objective 1
+
+October26 user instruction: "move onto the bakry objective please". This
+explicitly supersedes the old IBM-completion scheduling gate. The fully audited
+IBM checkpoint ea9a05aba8486f916b2bd1ea06941ae087b0c0cd is BOTH-private-ref
+verified. IBM is now DEFERRED/FROZEN, not certified complete; every verified
+result, precise norm/domain distinction and remaining obligation is retained.
+No IBM proof is in flight. The previous goal turn made mathematical progress:
+actual average time-graph convergence and native time-slope obstruction1547.
+
+Updated authoritative AGENTS/queue, Bakry brief activation, and IBM state
+consistently. Bakry Objective 1 is ACTIVE: both primary manuscript repairs in
+the saved order plus related fBM survey before independently selecting a focus.
+Objective 2 remains gated on Objective 1's full verified checkpoint; the bounded
+Yang–Mills/Cauchy/iterated-pseudo/A2/fractional/black-noise/AI order is unchanged.
+No arbitrary expiry, new parallel campaign, goal or automation is introduced.
+
+Initial read-only discovery checked all26 Bakry/fBM files against the saved
+inventory, yielding18 distinct hashes. Both primary titles, abstracts and major
+claim statements were extracted; the fBM survey is preliminary and no completed
+manuscript audit or selected research focus is claimed. Part II's subordination
+corollary claims curvature always decreases, while its subsequent flow claim
+describes improvement when crossing gamma=1. This is a concrete consistency
+question for independent testing, not yet a verified counterexample. Same-sign
+covariance identities, real/complex domains, finiteN versus full-domain bounds,
+drift identities and Gaussian derivative/chaos normalization require exact
+separate audits. Original manuscripts remain unchanged and uncommitted.
+
+This checkpoint changes FIVE documentation/instruction files ONLY. Reuse1547's
+full6792-job build, complete50365-declaration transitive axiom audit, ALL33 public
+type/full proof reviews and12 independent checks ONLY after verifying exact
+identity of ALL2619 Foundation/root sources, configuration3 and original113
+manuscript paths/hashes. Existing untracked planning drafts are preserved.
+Exact-commit audit receipt and guarded private main/research verification follow;
+workday synchronization policy and every mathematical gate remain unchanged.

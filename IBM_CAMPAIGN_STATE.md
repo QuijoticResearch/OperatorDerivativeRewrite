@@ -1,3 +1,29 @@
+# Current status — IBM DEFERRED at user-directed transition, October26,2026
+
+The user directed moving to Bakry–Émery after checkpoint1547. Bakry Objective 1
+is now ACTIVE under STARDUST_CAMPAIGN_QUEUE.md. IBM is frozen/deferred at
+`ea9a05aba8486f916b2bd1ea06941ae087b0c0cd`, with complete verification and
+BOTH private main/research refs verified. This is an authorized change of
+priority, NOT a claim that full intrinsic IBM stochastic calculus is complete.
+Older ACTIVE and transition-gate text below is preserved as historical status.
+
+Latest verified additions: original fixed-past native graph approximation;
+actual average's original time-L2 graph convergence and both native channels;
+every positive-time native average gradient is strongly time-nondifferentiable,
+with native slope norm escape along every positive vanishing sequence.
+Original focused F1–F3 targets were already resolved1107 in their precise
+common-dual/clock-L2/dense-core domains; broader intrinsic calculus remains open.
+
+Retained open obligations include stronger native convergence of INTEGRATED
+changing-past POINT regularizer fields (distinct from regularized AVERAGES),
+and full physical-time intrinsic calculus/driver formulas with exact domains.
+A prospective positive graph-test-dual ordinary-time derivative formula using
+averageGradient_embed and weakDerivative is UNPROVED here and deferred, not lost.
+See PROJECT_STARDUST_REPORT.md discoveries1546–1547 and the exact source/audit
+records. Preserve all actual reflected B(abs(W_t)) coupling and norm distinctions.
+
+---
+
 # Current IBM mathematics — checkpoint1374: uniform actual process reconstruction and native graph convergence
 
 IBM ACTIVE. For EVERY continuous curve u in actual IBM-observable L2 and EVERY
