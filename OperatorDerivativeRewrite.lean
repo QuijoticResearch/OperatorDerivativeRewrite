@@ -2500,3 +2500,5 @@ import Foundation.GaussianClockSpectralPowers
 import Foundation.IBMClockFractionalDomain
 import Foundation.GaussianClockSpectralAdjoint
 import Foundation.IBMClockFractionalCalculus
+import Foundation.GaussianClockNativeDomain
+import Foundation.IBMClockNativeSmoothing

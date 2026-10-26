@@ -48089,3 +48089,118 @@ Git commit, exact-commit audit receipt and BOTH verified PRIVATE main/research
 refs remain the final gate at this entry; guarded terminal artifacts close it
 only after the successful synchronization process terminates. Continue the
 actual IBM campaign after closure; preserve every queued campaign gate.
+
+## Checkpoint1537 — original native clock derivative of regularized ACTUAL IBM
+
+October25,2026. IBM remains ACTIVE. Previous goal turn made mathematical progress:
+self-adjoint fractional clock calculus, actual spectral IBP and sharp smoothing
+into the FIRST BESSEL domain were fully audited and PRIVATE-closed1536 at
+629b9eb4a40392f9be1ea27b6592a7c92d5159a4. This checkpoint closes the previously
+explicit missing identification with the OLD native Gaussian CLOCK derivative.
+No queued campaign is activated or reordered; reflection remains already used
+by1521 on October25. Original manuscripts remain untouched.
+
+NEW `Foundation/GaussianClockNativeDomain.lean`: for EVERY original source-valued
+clock field f, f belongs to D(B_1) IFF flip(f) belongs to the OLD
+BochnerClosedOperator.lift gaussianProduct closedCylindricalDerivative domain.
+Moreover norm(B_1 f)^2=norm(f)^2+norm(D_lift(flip f))^2. The factor flip is part
+of the theorem: new Field has outerCLOCK/valueSOURCE, whereas this OLD fiber
+lift differentiates the inner CLOCK with outerSOURCE. Identical Gaussian factor
+types are not used as a substitute for correct physical ordering.
+`flip_project` and the more general `flip_clockLift` prove the actual intertwining.
+
+The native derivative energy HasSum is proved by integrating OLD
+GaussianNumberSectors.derivative_energy_hasSum in the genuine Bochner graph.
+All AE graph, pointwise HasSum, measurable coefficient, nonnegative majorant,
+summability, integrable total norm and integral/coefficient identities are
+explicitly discharged. No measurable selection of pointwise derivatives is
+assumed. Necessity combines this native energy with OLD full Field Parseval.
+Sufficiency uses OLD finite truncation/projected-gradient graph pairs, proves
+their actual L2 energy identities and uniform native derivative bound from the
+Bessel norm, proves strong scalar convergence through the genuine flip, then
+reuses the ALREADY VERIFIED clock_domain_of_bounded_graph_limit. The OLD native
+operator/domain is retained. This does not rebuild or assume scalar Gaussian
+derivative-domain foundations.
+
+`native_graph_truncation_tendsto` separately proves STRONG convergence of BOTH
+actual Bochner input and vector-gradient coordinates for EVERY original native
+graph pair. The proof uses OLD scalar simultaneous_graph_tendsto, actual
+pointwise finite-gradient bounds, a common COUNTABLE AE representative event,
+and BochnerL2Dominated.tendsto_of_ae_norm_bound. It does not infer strong
+convergence solely from bounded derivatives or merely test isolated directions.
+
+NEW `Foundation/IBMClockNativeSmoothing.lean` proves the exact unitary transport:
+clockUnitary(jointRealization f)=flip f. Thus joint_clock_domain identifies D(B_1)
+with the ORIGINAL IBMIntrinsicOperators.clockDerivative domain on ACTUAL joint
+source/clock L2, and joint_clock_energy proves the exact native gradient norm
+identity there. This operator acts on all ambient JointL2; its name/module does
+NOT mean membership in the restricted IBM-generated intrinsic observable space.
+
+The concrete `regularizedEndpoint(beta)` is the existing actual reflected-clock
+endpoint B(abs(W_T)) acted on by B_(-2*beta), multiplier(n+1)^(-beta), for beta>=0
+and T>0. `actual_native_smoothing_threshold` proves that its ACTUAL joint
+realization lies in the ORIGINAL native clock derivative domain IFF beta>1/4.
+The exact criticalbeta1/4 FAILS. The unsmoothed positive-time actual point remains
+outside that OLD domain, consistently with existing counterexamples.
+For beta>1/4 the concrete `regularizedGradient` is the OLD native operator value,
+an actual square-integrable Gaussian-vector-valued field. Its old graph
+membership, exact norm energy, and native-adjoint IBP with EXPLICIT adjoint test
+domain are proved. `regularized_graph_approximation` identifies its limit as the
+STRONG input/vector-L2 product limit of the actual finite-chaos inputs and their
+OLD finite projected gradients. No new stochastic integral or replacement
+Gaussian derivative has been defined to manufacture these identities.
+
+Exact scope and next questions: these are actual ambient Gaussian-clock
+Malliavin derivatives and native adjoints of regularized actual stochastic
+variables. They are NOT yet intrinsic ADAPTED physical IBM derivatives. The
+regularization's preservation of the IBM-generated observable/past spaces is
+unproved, and it must be tested rather than assumed. Full intrinsic restriction,
+physical/canonical driver identification, physical-time Ito/Clark--Ocone and
+F1--F3 boundary/cross-sector kernel convergence remain separate obligations.
+Strong finite-CHAOS graph convergence here is not a shrinking physical mollifier
+or time-mesh/boundary-layer convergence theorem. Do not claim that a spatial
+H^-1 distribution has been identified with the Gaussian spectral negative
+spaces. Audit direct theorem reuse and counterexamples in the existing intrinsic
+and manuscript records before extending this regularization approach further.
+In particular IBM_CAMPAIGN_STATE.md's top1374 entry and manuscript audit are
+historical mathematical scope summaries, not current queue controllers or
+proof of which later obligations closed. The authoritative queue and present
+ledger/handoff remain unchanged. No novelty or full IBM completion is asserted.
+
+Verification: final complete6777-job root build PASSED in58.9338873 wall seconds;
+complete transitive Lean.collectAxioms audit PASSED ALL49898 safe Foundation
+declarations in37.063042 seconds, allowing ONLY propext, Classical.choice and
+Quot.sound. ALL21 public types read UNABRIDGED. Both full sources, ALL19 public
+proofs, both private helper proofs, both public definition bodies and local
+instance bodies, plus root/audit diffs were reviewed completely. ELEVEN
+independent Lean checks PASSED in37.0088369 seconds: exact arbitrary-field
+unitary/factor order, an independent OLD finite projected-gradient graph and
+energy construction giving factor n rather than n+1, source-valued clock-vacuum
+zero gradient, actual failure at criticalbeta1/4 and success atbeta1/3, an ACTUAL
+OLD native graph pair, exact joint norm identity, native adjoint test-domain IBP,
+FULL input/vector-L2 approximation topology, preservation of unsmoothed point
+obstruction and the essential actualT0 zero exception. Three private test helpers
+construct the finite-mode comparison directly from OLD scalar native graph/
+energy and product realization results.
+
+The first finite-mode test proof hit default200000 heartbeat elaboration; a
+second direct-graph version exposed an expensive factor-rewrite inference.
+Both failed logs/timings are preserved. The final test retains its ORIGINAL
+joint/native scope, splits old finite-gradient construction and energy into
+explicit typed helpers, and uses a definitional change for the already proved
+unitary factor map. It passes without a heartbeat increase or weakening.
+ONLY test proofs changed after full library gates; library bytes stayed frozen.
+Development also repaired natural-index inference, exact operator-alias types,
+explicit graph-value witnesses and function-composition simplification. No
+resource/compiler/trust/linter/toolchain setting or old mathematical domain was
+altered. Visible source-style/deprecation warnings remain unsuppressed.
+
+All2604 frozen Foundation/root hashes, unchanged configurations3 and original113
+archive paths/hashes match. Only the root/audit import/listing files, two new
+leaves and this ledger change. ResearchSources, unrelated untracked planning
+files and tmp are preserved. Evidence: `.lake/stardust-1537-verification.json`,
+full working manifest, root/audit/type/proof-review/test/integrity records.
+Explicit-path commit, exact-commit audit receipt and BOTH verified PRIVATE
+main/research refs remain the final closure gate at this entry; guarded terminal
+records close it only after synchronization succeeds and its process terminates.
+Continue actual IBM afterward and preserve every later campaign's gate.
