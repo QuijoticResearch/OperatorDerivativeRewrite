@@ -48878,3 +48878,126 @@ records and complete build/audit/independent logs. Four explicit files only.
 Exact commit receipt and eligible verified PRIVATE main/research synchronization
 close the checkpoint; workday deferral, if applicable, is recorded as QUEUED
 and never delays research or masquerades as successful remote backup.
+
+## Checkpoint1544 — Native IBM fields, closed-graph temporal integration and exact dual limits
+
+Previous goal turn: PROGRESS. Actual local time/sample L2 closure and ordinary
+temporal integral convergence closed ata4a30e45e981d9b5978615339ce87b2e479fe270.
+IBM remains ACTIVE, actual process `B(|W_t|)` on its ORIGINAL constructed Gaussian
+source/clock space. Terminal clock at start07:54:23 America/New_York October26.
+No queued campaign, manuscript ingestion or reflection session was started.
+
+`Foundation/IBMPastTimeGradient.lean` continues the same native regularizers.
+`input n t` is their actual intrinsic-space value, `field n t` is the ORIGINAL
+TWO-source native derivative, and no source/clock chart, probability law,
+operator domain or field norm was changed.
+
+### Genuine local-time native-field domains
+
+`input_stronglyMeasurable` directly reuses the first coordinate of the1541
+native graph-pair theorem; `field_stronglyMeasurable` uses the already verified
+two-source field theorem. The actual scaled-energy bound gives
+
+`‖field n t‖ ≤ ‖timeTarget t‖ / scale n`, with `scale n = (1/2)^n > 0`.
+
+Existing endpoint squared-norm integrability therefore discharges genuine
+Bochner `Lp JointFieldSpace 2 (window H)` membership for EVERY fixed n and real H.
+The bound depends on n; no uniform-in-n gradient bound is asserted. Intrinsic
+inputs also belong to their actual Bochner L2 space. `input_field_graph` proves
+pointwise membership in the ORIGINAL full `jointDerivative.graph`, by direct
+reuse of observable restriction and native resolvent-domain membership.
+`time_lift_graph` places these ACTUAL time-input/time-field classes in the
+already verified fixed `BochnerClosedOperator.lift` graph. No new variable-domain
+operator framework or unproved measurable derivative selection was introduced.
+
+### Exact native derivative through ordinary temporal integration
+
+`integratedInput n H = ∫ t, input n t ∂window H` and
+`integratedField n H = ∫ t, field n t ∂window H` are genuine Bochner integrals:
+both curves have proved L2 domains on the finite existing time window.
+`integrated_graph` proves that their pair lies in the ORIGINAL closed joint
+derivative graph. Its proof integrates a strongly measurable/integrable curve
+valued in that complete closed graph submodule, then uses its continuous
+inclusion and the two continuous coordinate projections to identify the
+integrated input and field. This proves the graph assertion before extracting
+domain membership; no graph membership was assumed after integration.
+
+Consequently `integratedInput_domain` and `integrated_derivative` establish
+
+`D(∫ input_n dt) = ∫ D(input_n) dt`
+
+for the full original native two-source D, at every n and H, with all domains
+and integrability discharged. `integratedInput_actual_class` identifies the
+underlying original joint L2 class EXACTLY with1543's genuine scalar sample
+time-integral class. This is a derivative/integral connection for actual
+regularized IBM time integrals, not a formal identity on an unrelated model,
+and not an integral against an IBM stochastic driver.
+
+### Actual average derivative and precise convergence topology
+
+The prior archive ALREADY proves that actual `intrinsicAverage T` belongs to
+the ORIGINAL joint native derivative domain (`IBMRampSimpsonNativeAverage.
+average_mem_joint_domain`) with strong native field `averageGradient T`.
+This was reused directly, rather than replacing it with a hypothetical weak
+target or rebuilding the average-domain argument.
+
+`integratedInput_tendsto` upgrades1543's actual sample time-integral convergence
+to the original intrinsic Hilbert space. `integratedField_graphDual_tendsto`
+then uses the full-adjoint graph-test dual calculus to prove, for T≥0,
+
+`embed(integratedField n T) → embed(averageGradient T)`
+
+in the ORIGINAL TEST-DUAL NORM. `integratedField_graphDual_error` bounds this
+error by `‖integratedInput n T-intrinsicAverage T‖`, which tends to zero.
+These are actual native derivatives of actual domain-valued integral
+approximants; the limit is the embedding of an already proved STRONG native
+derivative. Neither this embedding's injectivity nor test-dual norm convergence
+establishes convergence in native `JointFieldSpace` norm. That stronger
+integrated-field limit remains OPEN.
+
+### Independent strict-topology check and remaining obligations
+
+Twelve independent Lean checks passed, including a concrete check on the SAME
+actual time-one point regularizers: their full native field norms tend to
+infinity, while their embedded native derivatives converge to the verified
+nonrepresentable point derivative. This shows why the topology qualification
+cannot be discarded. It does NOT prove norm escape or impossibility of native
+norm convergence for the TIME-INTEGRATED fields. Time averaging already gives
+a genuine native-domain target; possible cancellation/regularization must be
+investigated separately. The other checks inspect actual temporal L2 domains,
+the fixed lift graph, integrated graph/domain/derivative identity, scalar sample
+integral class, intrinsic average convergence and quantitative dual error.
+
+Native field local-time Bochner L2 membership and original-operator temporal
+integration commutation are now DISCHARGED. Explicit physical-time/sample
+coefficient-field product identification, preserving the1542 source swap,
+is still a separate realization step. Native norm/weak convergence of the
+INTEGRATED fields, time-space graph exclusion/roughness where appropriate,
+actual physical-driver stochastic integration, Itô/Tanaka/Clark–Ocone and F1–F3
+random-boundary/cross-sector closure remain OPEN. No IBM completion, campaign
+transition or external novelty claim is made.
+
+### Complete verification and preserved evidence
+
+Frozen2614 Foundation/root sources. Full6787-job root build24.5932610seconds;
+complete50207-declaration safe transitive axiom audit37.2188511seconds, accepting
+ONLY propext/Classical.choice/Quot.sound. ALL18 explicit public types read
+unabridged; ALL14 public proofs,4 definitions,4 file-local instance bodies and
+the in-proof closed-graph completeness body inspected. No private proof was
+omitted. Both root/audit diffs and the complete new source were reviewed.
+Twelve independent checks27.9371548seconds; all test proofs, the actual point
+domain definition, two private proofs and canonical graph-norm instance bodies
+were read. The independent norm-bound statement required caching the SAME
+canonical `NormedAddCommGroup`/`NormedSpace` structures on the original adjoint
+graph Tests. `diagnostic3` confirms the standard continuous-linear-map operator
+norm. Completeness/Facts alone did not resolve the elaboration issue; a
+transparency-option diagnostic was unsuccessful and was NOT adopted. No norm,
+mathematical claim, resource limit, compiler setting or audit was weakened.
+Three failed test attempts and diagnostics are preserved privately in.lake.
+
+Configuration3 and EXACT113 original manuscript paths/hashes unchanged.
+Evidence: `.lake/stardust-1544-verification.json`, complete build/audit/test logs,
+source-review/integrity/development records. Four explicit files only. Exact
+commit receipt and eligible PRIVATE main/research synchronization complete
+the checkpoint. If the workday window restricts synchronization, record the
+remote backup as QUEUED and continue mathematical work without delay.
