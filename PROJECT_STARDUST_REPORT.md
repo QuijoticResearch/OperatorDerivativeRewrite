@@ -49623,3 +49623,80 @@ Next substantive obligations: match the explicit tails to the desired projection
 interpretation, audit actual Fourier Gamma recursion and operator domains, and
 continue both primary manuscript audits and the related fBM comparison. Preserve
 the original component counterexample and universal-subordination obstruction.
+
+## Development1552 — deterministic adjoint versus random Gaussian derivative
+
+Primary1 audit, definitions eq:adj / lem:D-of-BH and thm:realization, original
+linesapproximately425–540. Original source hash remains
+CA06321B1CB426DCAC9BCFE891AB89AF80EEE0BC8B108D1D9741C4059FACD3D7.
+Read those definitions and the tensor-realization continuation selectively.
+The source declares a deterministic integral H->L2, then writes an expectation
+around its adjoint pairing. Its stated first-chaos recovery is valid. This
+observation is NOT a counterexample to thm:realization on its first-chaos inputs.
+Complex Fourier coefficients additionally require an explicit complexification
+of the declared real energy space and operator.
+
+The existing library already supplies actual Gaussian first-chaos embeddings,
+Wick polynomials, closed cylindrical derivative graphs, and actual fBM derivative
+identification (FractionalGaussianProcess.value_derivative_graph). Reuse these;
+no new Gaussian process construction or foundational operator framework is needed.
+
+Standalone Lean development `.lake/stardust-1552-adjoint-domain.lean` passed
+terminal session83885, exit0, October26 approximately18:54 Eastern. It defines
+the actual bounded adjoint of firstChaosEmbedding.toContinuousLinearMap and
+proves that it recovers first-chaos directions and kills every Wick order n!=1.
+For the quadratic Wick observable, the existing polynomial derivative equals
+2 scalarTensor(h,firstChaosEmbedding h), with squared norm4||h||^4. For h!=0,
+its nonzero gradient is in the existing closed derivative graph, whereas the
+constant-field lift of the deterministic adjoint is NOT in that graph.
+
+`quadratic_duality_not_unique` proves the exact interpretive obstruction:
+zero and the nonzero quadratic gradient BOTH satisfy the same pairings against
+ALL deterministic constant fields, with the quadratic observable on the other
+side paired against first-chaos integrals. Thus deterministic testing does not
+uniquely specify a RANDOM gradient. Repair by distinguishing the bounded
+H-valued adjoint from the closed random-field derivative/full divergence domain;
+on first chaos both recover the appropriate direction (with constant-field
+identification). No failure of the already verified Malliavin calculus is claimed.
+
+This is DEVELOPMENT evidence, not a certified checkpoint. Draft proofs were read;
+failed elaborations concerned scalar typing, cast normalization, and tensor-zero
+simplification, with failed logs retained. No Foundation/root/configuration changes,
+commits or private-backup claims were made in this step. Next consolidate the
+sharp domain result, independently test an explicit nonzero direction, and run
+all full build/axiom/type/proof/source/commit/private gates. The finite Gamma
+recursion, complexification, remaining primary claims and related fBM survey
+remain part of active BakryObjective1. No campaign or priority changed.
+
+## Discovery1552 — verified deterministic Gaussian adjoint domain distinction
+
+Adopted `Foundation/GaussianDeterministicAdjointDomain.lean` from the preceding
+development. The actual bounded deterministic Gaussian adjoint recovers first
+chaos, annihilates other Wick orders, and differs from the closed random-field
+derivative on every nonzero quadratic direction. The derivative has exact
+squared norm4||h||^4; its nonzero value and zero both satisfy all deterministic
+constant-field tests. Thus those tests cannot uniquely define a random gradient.
+This preserves the manuscript's first-chaos realization while requiring precise
+operator domains and explicit complexification. See STARDUST_BAKRY_FBM_AUDIT.md
+checkpoint1552 for the source interpretation and exact remaining obligations.
+
+Full6796-job root build passed45.9364718s. COMPLETE transitive axiom audit of
+50473 safe Foundation declarations passed49.3468405s, whitelist ONLYpropext,
+Classical.choice,Quot.sound. ALL9 public types read unabridged; ALL8 public
+proofs and1definition reviewed, no private/local-instance bodies omitted.
+Nine independent Lean checks passed26.019619s, including a concrete unit Gaussian
+coordinate, exact quadratic gradient norm4/nonvanishing, constant/cubic chaos,
+first-chaos linearity, zero-direction boundary and actual adjoint pairing.
+Test elaboration failures (ambiguous coordinate name, scalar type and redundant
+norm reduction) were corrected without changing library proofs; logs retained.
+No resource/compiler/linter/trust/toolchain changes; style warnings unsuppressed.
+
+Frozen2623 Foundation/root sources, unchanged3 configuration files and EXACT113
+manuscript paths/hashes verified. Only root/axiom integration changed existing
+Lean files. The new module, root, axiom list, audit document and ledger are the
+five intended commit files. Evidence: .lake/stardust-1552-verification.json and
+its complete build/audit/test logs. Exact receipt and guarded PRIVATEboth-ref
+verification follow commit; this entry does not preclaim remote success.
+BakryObjective1 remains ACTIVE; both primary manuscript audits are incomplete.
+Next prioritize actual finite Fourier Gamma recursion and correct complex energy
+realization, reusing existing finite Fourier and actual Gaussian machinery.

@@ -176,3 +176,33 @@ this theorem. Identification with an intrinsic covariance-orthogonal projection,
 the actual generator's Gamma recursion, full operator domains and infinite-series
 closure remain distinct obligations. Both primary audits remain incomplete;
 Objective2 and all subsequent campaigns remain queued. No novelty is asserted.
+
+## Checkpoint1552 — deterministic adjoint domain repair
+
+Primary1 eq:adj defines the adjoint of the deterministic integral H->L2.
+`Foundation/GaussianDeterministicAdjointDomain.lean` uses the actual existing
+Gaussian first-chaos isometry and its bounded Hilbert adjoint. This H-valued
+operator recovers first chaos (`deterministic_first`) and kills Wick orders
+other than one (`deterministic_wick_other`). The first-chaos realization claim
+therefore survives; the manuscript must explicitly complexify its real energy
+space/operator before inserting complex Fourier coefficients.
+
+For quadratic Wick observables, the existing closed Gaussian derivative has
+squared norm4||h||^4 and is nonzero for h!=0. The deterministic adjoint vanishes.
+`deterministic_lift_not_closed_gradient` proves its constant-field lift is not
+in the closed derivative graph for that same observable. This is an operator-
+domain distinction, not a failure of the verified Gaussian calculus.
+
+`quadratic_duality_not_unique` proves that zero and the true nonzero quadratic
+gradient both satisfy the manuscript-style pairing against ALL deterministic
+directions. Thus its displayed expectation relation cannot uniquely define a
+RANDOM gradient. Correct scope: either retain the bounded H-valued adjoint or
+use the existing closed random-field derivative and full divergence domain.
+`FractionalGaussianProcess.value_derivative_graph` already supplies the actual
+fBM first-chaos derivative; no replacement process construction is needed.
+
+This resolves a precise domain ambiguity and blocks an unjustified extension.
+It does not refute thm:realization restricted to first-chaos inputs. Complex
+energy-space identification, finite Fourier Gamma recursion, completed generator
+domains and the other manuscript claim families remain open. Objective1 remains
+active; no subsequent campaign or mathematical priority changes.

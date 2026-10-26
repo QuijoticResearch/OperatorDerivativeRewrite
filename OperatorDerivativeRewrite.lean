@@ -2516,3 +2516,4 @@ import Foundation.IBMPastStrongGraphApproximation
 import Foundation.IBMAverageNativeTimeObstruction
 import Foundation.BrownianCurvatureModeDecayObstruction
 import Foundation.BrownianEnergyRepair
+import Foundation.GaussianDeterministicAdjointDomain
