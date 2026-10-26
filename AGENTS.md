@@ -1,3 +1,18 @@
+# External Git synchronization — October26 workday policy
+
+Follow STARDUST_SYNC.md and the installed push guard: NO external Git pushes
+Monday–Friday 09:00 inclusive to 17:00 exclusive America/New_York (DST-aware),
+unless the user explicitly authorizes an exception. This supersedes immediate
+PRIVATE-backup timing requirements below, without weakening any mathematical
+audit. Continue proofs, complete builds/audits/reviews and local commits normally;
+create exact-commit audit receipts and record REMOTE SYNC QUEUED, never backed up.
+During this window a fully audited local checkpoint may advance research and
+campaign gates while its remote backup remains pending. Never wait for 17:00
+to continue mathematics. The independent 30-minute task retries outside the
+window and verifies BOTH private main/research refs. An admitted push may finish;
+do not terminate it at 09:00. Never bypass hooks/time checks without explicit
+user authorization. Preserve histories, existing audits and campaign priorities.
+
 # Periodic mathematical reflection — supporting workflow
 
 At natural completed, audited checkpoints, consult STARDUST_REFLECTION_POLICY.md.

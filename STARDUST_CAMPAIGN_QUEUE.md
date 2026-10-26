@@ -1,3 +1,13 @@
+# Git backup timing amendment — October26,2026
+
+STARDUST_SYNC.md governs external synchronization. Weekdays 09:00–17:00
+America/New_York: complete all mathematical/local Git/receipt gates, record
+REMOTE SYNC QUEUED and continue research without delay. Deferred remote backup
+does not block a fully audited local stopping checkpoint or the next authorized
+campaign. This supersedes immediate private-backup TIMING below only; never
+report queued commits as backed up. Outside the window the existing task retries
+and verifies both PRIVATE branches. No queue or mathematical standard changes.
+
 # Current directive — IBM active; Bakry–Émery / fBM queued afterward
 
 October 21 user amendment: finish the current intrinsic calculus for ACTUAL IBM

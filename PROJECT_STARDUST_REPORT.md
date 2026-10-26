@@ -48609,3 +48609,52 @@ configuration3 and EXACT113 original manuscript paths/hashes verified by
 `.lake/stardust-1541-verification.json`. ResearchSources and unrelated work
 preserved. Five explicit files only; exact commit receipt and verified PRIVATE
 main/research synchronization are the final closure gates, recorded separately.
+
+## October26,2026 — Workday external Git synchronization policy
+
+User-directed workflow change at the fully closed1541 checkpoint
+`74407012cb437ad29387a70e7b36c6a10d0fa42c`; IBM remains ACTIVE and the complete
+research queue is unchanged. No mathematics, source manuscript or toolchain
+changed. Weekday external pushes are now blocked 09:00 inclusive to17:00
+exclusive America/New_York, using IANA DST rules. Weekends/overnight remain
+eligible. The original independent Windows task, account, launcher, lock and
+30-minute trigger are retained; no new task/session/goal was created.
+
+Versioned `tools/stardust_sync/` preserves the existing synchronization program
+with a small entry/push-admission guard and explicit queued status. Installed
+pre-push hooks protect both the live checkout and isolated backup object store
+for external destinations. A push already admitted is not killed at09:00.
+The installer uses atomic replacements, refuses conflicting existing hooks or
+hooksPath, and preserves the original local sync script. Reinstall/repair
+procedures and the local-hook trust boundary are documented in STARDUST_SYNC.md.
+No automatic policy bypass or clock-override option exists.
+
+During restricted hours, local audited commits and exact-commit receipts remain
+available; last-run says queued/backup_verified false, and last-success remains
+the previous actual verified backup. All local mathematical gates remain intact;
+deferred remote closure does not delay research or authorized campaign progress.
+Remote verification is still mandatory before saying a checkpoint is backed up.
+Eligible runs retain privacy/secret scanning, non-force atomic fast-forward
+pushes and exact-ref verification. Failures are recorded and retried by the
+existing scheduler. No commits/branches/tags were amended, removed or rewritten.
+
+Seven policy tests pass, covering exact09:00/17:00 boundaries, weekdays/weekends,
+EDT/EST including the November transition, external transports, no-network
+deferral, a pre-push recheck after preparatory scanning, clock-verification
+failure and an actual isolated local Git push/ref-update fixture. That fixture
+rejects a restricted-hour push with the destination ref absent, then permits
+the same commit at17:00 and verifies its exact ref. It uses an isolated test
+clock launcher, never a production clock override or an external test remote.
+An initial fixture mock lacked the production optional timestamp argument;
+the test harness was corrected without changing the policy. Both installed
+hooks also ran successfully against the current eligible live clock.
+
+`STARDUST_WORKDAY_SYNC_VERIFICATION.json` records the unchanged2610 Lean sources,
+configuration3 and original113 manuscript paths/hashes, all rechecked. The
+exact unchanged1541 full6783-job build, complete50082-declaration standard-axiom
+audit, all23 public types/complete source-proof review and11 independent Lean
+checks are retained; no redundant Lean rebuild is claimed. New workflow tests
+and scheduler/hook installation evidence are recorded separately. The explicit
+policy-only commit receives its own exact-commit audit receipt, then private
+synchronization if the live clock permits. Final remote status is recorded in
+`.lake/stardust-sync/last-run.json`, never inferred from local commit creation.
