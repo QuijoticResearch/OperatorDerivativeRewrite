@@ -49139,7 +49139,7 @@ No campaign transition or novelty claim is made.
 ### Exact operator identity and actual IBM application
 
 `Foundation/ScaledGraphResolventDomain.lean` uses the EXISTING graph resolvent
-R_n=(I+s_n^2 A* A)^(-1), s_n=2^(-2n), for a closed densely defined real Hilbert
+R_n=(I+s_n^2 A* A)^(-1), s_n=2^(-n), for a closed densely defined real Hilbert
 operator A. Weak resolvent uniqueness is proved by subtracting the original
 weak identities and testing their difference. The existing weighted adjoint
 residual supplies actual nativeGradient membership in D(A*); division by the
