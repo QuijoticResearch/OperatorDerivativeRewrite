@@ -2503,3 +2503,4 @@ import Foundation.IBMClockFractionalCalculus
 import Foundation.GaussianClockNativeDomain
 import Foundation.IBMClockNativeSmoothing
 import Foundation.IBMClockVacuumPast
+import Foundation.IBMClockSmoothingPast

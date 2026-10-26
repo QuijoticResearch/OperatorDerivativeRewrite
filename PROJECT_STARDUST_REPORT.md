@@ -48287,3 +48287,99 @@ hashes and EXACT113 original manuscript paths/hashes. Evidence:
 `.lake/stardust-1538-verification.json`, source-review/integrity and stage logs.
 Explicit-path commit, exact receipt and verified PRIVATE main/research backup
 are the final closure gates; their terminal evidence is recorded separately.
+
+## Checkpoint1539 — a uniform actual IBM adaptation obstruction for real Bessel smoothing
+
+October25,2026; parent91080c4f82cfd11147a4fb365beb2a1cbef3042c. IBM remains ACTIVE;
+queue b91ce91281e90df5adf912779736781528880ccd unchanged. No future manuscript or
+campaign was activated. No expiration; October31 REVIEW ONLY. Today's reflection
+budget was already used1521; this work is the active mathematical investigation.
+
+**The actual regularization and its limit.** New
+`Foundation/IBMClockSmoothingPast.lean` studies exactly the1537 original
+source-valued clock Bessel regularization of Z_T=B(|W_T|), with multiplier
+(n+1)^(-beta), for EVERY nonnegative REAL beta. `smooth` merely packages that
+existing operator with its proven actual-input domain, retaining both original
+source factors. For EVERY T>0,
+
+    smooth(beta,T) -> P_0(clock) Z_T  strongly in original Field L2,
+    jointRealization(smooth(beta,T)) -> jointRealization(P_0 Z_T)
+       strongly in original actual joint L2, as beta -> +infinity.
+
+The proof separates the unchanged n=0 sector from n>0, proves each nonzero-sector
+real-power decay, and dominates squared projected errors by the ACTUAL original
+endpoint's summable Parseval energy. Dominated Tannery + full Field Parseval
+proves norm convergence. This is not merely finite-probe, pointwise-coefficient,
+weak, numerical or signed-functional convergence. Integer orders were checked
+first, then extended to ALL nonnegative real orders before checkpoint adoption.
+
+**Unconditional actual adaptedness obstruction.** Combining1538's actual
+right-past counterexample with the strong limit and CLOSED right-germ past gives
+one fixed actual T>0 and a finite beta_0 such that EVERY real beta>=beta_0 has:
+
+- original actual Z_T belongs to rightPast(T);
+- the smoothed actual joint variable lies in the ORIGINAL native Gaussian
+  clock-derivative domain;
+- the smoothed actual joint variable does NOT belong to rightPast(T).
+
+`exists_actual_eventual_smoothing_failure` discharges the existential witness
+and every domain/past premise. Native membership retains the EXACT threshold
+beta>1/4 from1537; order0 is exactly Z_T and remains adapted at every T>0.
+Do not confuse increasing smoothing strength with decreasing physical time.
+
+**Uniform separation from ALL adapted corrections.** Let Q_T denote orthogonal
+projection onto actual rightPast(T). The causal projections Q_T smooth(beta,T)
+converge strongly to Q_T P_0 Z_T. At the counterexample time,
+P_0 Z_T-Q_T P_0 Z_T is nonzero. Norm continuity provides a fixed c>0 and a finite
+cutoff B such that for EVERY real beta>=B and EVERY G in rightPast(T),
+
+    c <= || jointRealization(smooth(beta,T)) - G ||_L2.
+
+Main declaration `exists_actual_uniform_smoothing_obstruction` includes the
+same fixed actual T, original adapted endpoint, uniform c>0, finite real-order
+cutoff, native clock domain membership and the bound against EVERY adapted L2
+variable. Orthogonal-complement projection contraction proves the best-error
+bound; no assumed covariance/derivative commutation is used. Thus the failure is
+not repaired by an asymptotically small adapted L2 correction along this
+large-order tail. Independent Lean tests exclude ANY sequence of adapted
+variables approaching corresponding smoothed endpoints while orders stay in
+that tail, and show the original adapted endpoint itself is uniformly separated.
+
+**What remains open / constructive reuse.** No claim is made that ALL beta>0
+fail, that EVERY T>0 is a counterexample, or that these variables fail full
+ALL-TIME intrinsicSpace membership. No positive numerical lower bound or
+explicit numerical horizon/cutoff has been computed. Causal projection restores
+adaptation, but native derivative membership/energy bounds for those projected
+inputs remain UNPROVED. This blocks using the present large-order Bessel family
+as an adapted intrinsic regularizer; it does not rule out intrinsic IBM calculus.
+Existing `IBMIntrinsicOperators` ALREADY proves dense/closed intrinsic clock
+and source restrictions; `IBMFiniteAverageCore.nativeAverage_mem` supplies
+actual common-domain observables, and `IBMPastCoreDensity.core_closure_eq_past`
+ALREADY proves dense actual finite-past derivative cores. Reuse these established
+positive constructions rather than rebuilding them or assuming arbitrary
+conditional projection preserves their gradients. Physical/canonical driver,
+F1–F3 cross-sector/boundary closure, physical Ito/Tanaka/Clark–Ocone and full
+intrinsic calculus remain open. IBM is NOT declared complete. No novelty claim.
+
+**Full gates and implementation record.** Complete root6779-job build
+45.2657252seconds; complete safe transitive Foundation audit49953 declarations
+39.0787727seconds, ONLY propext/Classical.choice/Quot.sound. ALL16 public types
+read unabridged; ALL15 public and2 private proofs,1 definition and1 local-instance
+body read in full, root/audit diffs reviewed. Ten independent Lean tests passed
+27.3884248seconds: order0 identity/adaptation; critical1/4 failure; fractional1/3
+native success; vacuum retention at arbitrary real order; independently computed
+sector3 beta1 multiplier1/4; causal projection adaptation; exclusion of arbitrary
+adapted approximating sequences; separation from actual original endpoint; and
+strong BOTH-source joint-L2 topology. The first independent test run used the
+wrong limit-inequality orientation; corrected le_of_tendsto to ge_of_tendsto,
+retaining the same claim and full library sources. Failed attempt source/log
+preserved privately. Two default200000-heartbeat ciInf elaboration timeouts in
+the distance proof were repaired by using existing orthogonal-complement
+projection contraction with explicit generic submodule types. No resource
+increase, axiom addition, domain weakening, error suppression or configuration
+change. Development trace `.lake/stardust-1539-development.json`.
+Frozen2606 Foundation/root sources, configuration3 and original113 archive
+path/hash pairs verified. Evidence `.lake/stardust-1539-verification.json` and
+complete source/type/proof/test logs. Explicit four-file commit, exact receipt
+and BOTH PRIVATE main/research verification remain the final closure gates,
+recorded by the guarded terminal manifest after successful synchronization.
