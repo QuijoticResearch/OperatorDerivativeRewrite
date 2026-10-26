@@ -1,17 +1,26 @@
 # Queued research: AI mathematics exploration
 
-User directive, October 24, 2026. QUEUED at the end of the named research queue;
-IBM remains ACTIVE. No AI campaign begins with this instruction update.
+User directive, October 24, 2026; scheduling updated October26. QUEUED after
+black noise. Bakry Objective 1 remains ACTIVE and IBM is deferred/incomplete.
+No AI campaign or newly appended campaign begins with this instruction update.
 
 ## Scheduling and activation gate
 
-IBM -> Bakry–Émery/fBM -> Cauchy -> iterated/time-changed pseudoprocess
-calculus -> A(2)/RH revisit -> fractional diffusion -> black noise ->
-AI mathematics exploration -> cumulative backlog.
+Bakry–Émery Objective 1 -> Bakry–Émery Objective 2 -> bounded Yang–Mills audit
+-> Cauchy -> iterated/time-changed pseudoprocess calculus -> A(2)/RH revisit
+-> fractional diffusion -> black noise -> AI mathematics exploration
+-> Generalized Cauchy and Stable-Process Calculus -> Hermite-Process Stochastic
+Calculus -> cumulative backlog. IBM remains deferred at its saved checkpoint.
 
 Begin only after the black-noise campaign reaches its mathematically justified,
 fully audited, committed and verified PRIVATE stopping checkpoint. Preserve
 every preceding completion gate. No expiration date; October 31 is review only.
+
+After AI's established stopping checkpoint, proceed to the queued Generalized
+Cauchy and Stable-Process Calculus campaign, then Hermite-Process Stochastic
+Calculus. Their full scopes are in `STARDUST_GENERALIZED_CAUCHY_STABLE_QUEUED_RESEARCH.md`
+and `STARDUST_HERMITE_PROCESS_QUEUED_RESEARCH.md`. The October26 extension changes
+only AI's successors; every earlier priority and gate is preserved.
 
 ## Objective and research method
 

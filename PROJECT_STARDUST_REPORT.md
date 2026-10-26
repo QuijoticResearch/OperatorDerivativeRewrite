@@ -49361,3 +49361,32 @@ identity of ALL2619 Foundation/root sources, configuration3 and original113
 manuscript paths/hashes. Existing untracked planning drafts are preserved.
 Exact-commit audit receipt and guarded private main/research verification follow;
 workday synchronization policy and every mathematical gate remain unchanged.
+
+
+## Discovery1549 — user-directed exploratory queue tail extension
+
+Append AFTER AI Mathematics Exploration, in order: (1) Generalized Cauchy and
+Stable-Process Calculus; (2) Hermite-Process Stochastic Calculus; then cumulative
+backlog selection. AGENTS.md, the authoritative queue, relevant Bakry/AI scheduling
+instructions and two dedicated queued briefs preserve this exact placement.
+Bakry Objective 1 remains ACTIVE; IBM remains deferred/incomplete. Every earlier
+priority is retained. Neither new campaign has begun and no mathematical claim
+or novelty is asserted by this documentation update.
+
+The first campaign covers nonlocal stochastic integration, fractional generators,
+Lévy processes, closed operator domains, sharp regularity thresholds and nonlocal
+SPDE connections, building on the earlier Cauchy work and verified operators.
+The second covers Rosenblatt/Hermite and higher Wiener-chaos processes,
+derivatives/adjoints/integration/natural filtrations, fBM covariance equivalence,
+higher-chaos corrections, transfer/failure of Gaussian methods and non-Gaussian
+SPDEs. Both prioritize generalizable theorems, counterexamples and reuse;
+preserve failed approaches/obstructions; and require literature/novelty audits
+before publication without authorizing publication or presuming novelty.
+
+This is SEVEN documentation files ONLY. Reuse1547 full6792-job build,
+complete50365-declaration transitive axiom audit,33 public/full proof reviews
+and12 independent checks ONLY under proved exact identity of ALL2619 original
+Foundation/root source hashes, configuration3 and original113 manuscript paths/
+hashes. Existing active research artifacts and unrelated untracked drafts are
+preserved. No source/toolchain/resource/audit/backup standard changes. Exact
+commit receipt and guarded private main/research verification follow.

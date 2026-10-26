@@ -23,8 +23,10 @@ Then, ONLY after Objective 1's full verified stopping checkpoint, Objective 2:
 curvature–covariance correspondences under its saved brief and gates. Subsequent
 order remains bounded Yang–Mills audit -> Cauchy -> iterated/time-changed
 pseudoprocess calculus -> A(2)/RH revisit -> fractional diffusion -> black noise
--> AI mathematics -> cumulative backlog. No new campaign is inserted and no
-expired hard stop is reinstated. October31 remains REVIEW ONLY.
+-> AI mathematics -> Generalized Cauchy and Stable-Process Calculus ->
+Hermite-Process Stochastic Calculus -> cumulative backlog. The two new campaigns
+are appended by the October26 queue extension below; all earlier priorities
+remain intact. October31 remains REVIEW ONLY.
 
 Preserve full root builds, complete transitive axiom audits, unabridged public
 types/full proof reviews, independent tests, manuscript/source integrity,
@@ -33,6 +35,35 @@ Follow STARDUST_BUILD_OPTIMIZATION.md and STARDUST_SYNC.md, including workday
 push restrictions and honest QUEUED status. Historical IBM-ACTIVE/completion-
 gate labels below and in queued briefs are superseded ONLY as scheduling.
 All other mathematical requirements and campaign gates remain in force.
+
+## October26 queue extension — two exploratory campaigns after AI
+
+Append, in this order, AFTER AI Mathematics Exploration and BEFORE cumulative
+backlog selection:
+
+1. **Generalized Cauchy and Stable-Process Calculus**, under
+   `STARDUST_GENERALIZED_CAUCHY_STABLE_QUEUED_RESEARCH.md`: build on the earlier
+   Cauchy manuscript work and verified stochastic operators; investigate
+   nonlocal stochastic integration, fractional generators, Lévy processes,
+   closed operator domains, sharp regularity thresholds and nonlocal SPDEs.
+2. **Hermite-Process Stochastic Calculus**, under
+   `STARDUST_HERMITE_PROCESS_QUEUED_RESEARCH.md`: Rosenblatt and higher Wiener-chaos
+   constructions; derivatives, adjoints, integration, natural filtrations,
+   covariance equivalence with fBM, higher-chaos corrections and non-Gaussian
+   SPDEs; determine precisely which Gaussian methods transfer and which fail.
+
+Both are QUEUED, exploratory, and may start ONLY after all preceding campaigns
+reach their established stopping gates or the user explicitly reprioritizes.
+Bakry Objective 1 remains ACTIVE; no investigation of either new campaign is
+started by this update. Preserve all earlier priorities, verified obstructions,
+failed approaches and reusable constructions. Prefer generalizable theorems,
+rigorous counterexamples and existing infrastructure. Require appropriate
+literature/novelty audits before any publication; no novelty or positive outcome
+is predetermined and no publication is authorized here. All complete Lean,
+axiom/type/proof/independent-check/source-integrity/ledger/Git/exact-receipt/
+private-backup requirements remain intact, including the workday push policy.
+Older descriptions of AI as the final named campaign are superseded only by
+this tail extension. IBM remains deferred/incomplete at its saved checkpoint.
 
 ---
 

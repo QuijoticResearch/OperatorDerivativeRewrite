@@ -23,8 +23,10 @@ Then, ONLY after Objective 1's full verified stopping checkpoint, Objective 2:
 curvature–covariance correspondences under its saved brief and gates. Subsequent
 order remains bounded Yang–Mills audit -> Cauchy -> iterated/time-changed
 pseudoprocess calculus -> A(2)/RH revisit -> fractional diffusion -> black noise
--> AI mathematics -> cumulative backlog. No new campaign is inserted and no
-expired hard stop is reinstated. October31 remains REVIEW ONLY.
+-> AI mathematics -> Generalized Cauchy and Stable-Process Calculus ->
+Hermite-Process Stochastic Calculus -> cumulative backlog. The two new campaigns
+are appended by the October26 queue extension below; all earlier priorities
+remain intact. October31 remains REVIEW ONLY.
 
 Preserve full root builds, complete transitive axiom audits, unabridged public
 types/full proof reviews, independent tests, manuscript/source integrity,
@@ -33,6 +35,10 @@ Follow STARDUST_BUILD_OPTIMIZATION.md and STARDUST_SYNC.md, including workday
 push restrictions and honest QUEUED status. Historical IBM-ACTIVE/completion-
 gate labels below and in queued briefs are superseded ONLY as scheduling.
 All other mathematical requirements and campaign gates remain in force.
+
+The October26 tail extension queues the two new exploratory campaigns after
+AI; see the authoritative queue and their dedicated briefs. Objective 1 remains
+ACTIVE and Objective 2 retains its prerequisite. No early activation.
 
 ---
 
