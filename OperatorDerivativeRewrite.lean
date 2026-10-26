@@ -2508,3 +2508,4 @@ import Foundation.ScaledGraphResolvent
 import Foundation.IBMPastGraphRegularization
 import Foundation.MonotoneHilbertProjection
 import Foundation.IBMPastHorizonGraph
+import Foundation.IBMPastSampleRealization

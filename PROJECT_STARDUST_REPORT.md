@@ -48658,3 +48658,110 @@ and scheduler/hook installation evidence are recorded separately. The explicit
 policy-only commit receives its own exact-commit audit receipt, then private
 synchronization if the live clock permits. Final remote status is recorded in
 `.lake/stardust-sync/last-run.json`, never inferred from local commit creation.
+
+## Checkpoint1542 — Actual all-horizon IBM sample realizations
+
+IBM remains ACTIVE, with actual process `B(|W_T|)` on the ORIGINAL constructed
+Gaussian scenery/clock probability space. The preceding goal turn made verified
+workflow progress: policy-only476534059f4f65a5f0766667777eb52e5652c9bb installed
+the DST-aware workday push restriction and closed both PRIVATE branches.
+This checkpoint resumes the explicit1541 mathematical realization obligation;
+no queued campaign or manuscript was activated. No reflection session was begun.
+
+### Original-space joint representative theorem
+
+`Foundation/JointLpRepresentative.lean`,
+`JointLpRepresentative.exists_joint_representative`: for an arbitrary measurable
+parameter space T, finite ORIGINAL sample measure μ, complete second-countable
+normed additive target E with its Borel measurable structure, and separable
+`Lp E 2 μ`, EVERY strongly measurable `F : T → Lp E 2 μ` admits a jointly
+strongly measurable `g : T × Ω → E` satisfying
+
+`∀ t, F t =ᵐ[μ] (fun ω => g (t,ω))`.
+
+This is an ALL-parameter theorem, not an almost-everywhere-in-time statement.
+No parameter measure, independent sample-space construction, new Gaussian law,
+chosen jointly measurable canonical Lp coercion, or pre-existing sample process
+is assumed. It is a standard measurable-version construction verified here;
+no mathematical novelty is asserted.
+
+The proof chooses a countable dense sequence of original L2 classes and fixed
+strongly measurable versions for that countable set. At each parameter and
+level n, `measurable_find` chooses the first class within
+`(1/4)*(1/2)^n` in original L2 distance. Countable-index evaluation gives joint
+measurability. The selected sample functions satisfy genuine L2 Cauchy bounds
+`eLpNorm(a_n(t)-a_m(t)) < (1/2)^N` whenever n,m≥N. The geometric bound is summable,
+so the actual sample sequence converges μ-almost everywhere at EACH fixed t.
+`StronglyMeasurable.limUnder` gives one joint limit; L2 convergence and uniqueness
+of limits in measure identify its sections with the ORIGINAL classes. The
+separate all-t versus AE-ω quantifiers are retained throughout.
+
+### Actual native IBM input and two derivative channels
+
+`Foundation/IBMPastSampleRealization.lean` uses the already verified1540
+regularizer and1541 horizon-measurability theorems directly. `sample n` is a
+jointly strongly measurable actual sample map in `(T,ω)` on the ORIGINAL joint
+space. For EVERY T and n, `sample_ae` identifies the genuine old
+`IBMPastGraphRegularization.approximation T n` class, `sample_memLp` proves L2
+membership and `sample_toLp` recovers EXACTLY the old class. `sample_past` proves
+AEStronglyMeasurable with respect to the actual raw IBM natural filtration at T;
+this is not a StronglyAdapted or predictable-version assertion.
+
+`sample_L2_tendsto` proves that these actual sample classes converge to the
+actual `intrinsicCurve T` endpoint in ORIGINAL joint L2 at every horizon.
+`sample_countable_ae` supplies a common equality set for ANY specified countable
+family of horizons and ALL n. Thus finite/countable observable couplings use the
+same actual space; no Gaussian re-embedding or replacement law is involved.
+
+The original TWO-source native gradient is uncurry-isometrically realized as
+`channelField n T i`; both channel curves inherit strong horizon measurability.
+`channelSample` is jointly strongly measurable, has genuine L2 sample sections,
+and recovers the original nested native fields at EVERY T through
+`channelSample_sections`. `sourceSample` explicitly swaps the native source
+chart back to physical `(scenery,clock)` order; `clockSample` retains that order.
+Both are jointly strongly measurable and L2 at every horizon. The exact
+`sourceSample_sections` and `clockSample_sections` retain the original outer
+clock/inner scenery and outer scenery/inner clock arrangements, respectively.
+No derivative/conditional-expectation commutation is presumed. All actual
+separability assumptions are discharged using the existing coefficient-space
+and Gaussian L2 machinery; there are no newly postulated realization hypotheses.
+
+### Independent boundary test and remaining obligations
+
+Thirteen independent Lean checks passed, including a jointly measurable
+diagonal-spike counterexample on Lebesgue measure restricted to[0,1]. Every
+fixed-time spike equals zero almost everywhere, but there is NO almost-everywhere
+set on which it equals zero at ALL real times: each ω has its spike at t=ω.
+This validates the distinction between all-section agreement and simultaneous
+indistinguishability; it does NOT assert pathological IBM approximant paths.
+The other checks inspect actual class identity, raw-past AE measurability,
+endpoint L2 convergence, countable-family agreement and BOTH physical channel
+orderings/L2 sample domains. Two failed independent-test attempts were preserved;
+noncomputability, an existing private-name collision and AE/set normalization
+were repaired with the same counterexample and no resource increase.
+
+The former all-horizon sample realization gap is DISCHARGED. Exact raw-filtration
+StronglyAdapted/predictable versions, temporal path regularity, and local
+time/sample product-L2 convergence remain separate questions. Existing
+completed-filtration/null-augmentation machinery and the actual scaled-energy
+bounds are concrete reuse candidates. Physical driver stochastic integration,
+Itô/Tanaka/Clark–Ocone and the F1–F3 random-boundary/cross-sector closures remain
+OPEN; this checkpoint does not complete intrinsic IBM calculus or authorize a
+campaign transition. Older native clock-gradient escape is unchanged.
+
+### Complete verification
+
+Frozen2612 Foundation/root sources; full6785-job root build31.6079846seconds;
+complete50121-declaration safe transitive axiom audit40.4123724seconds, whitelist
+ONLY propext/Classical.choice/Quot.sound. ALL24 explicit public types were read
+unabridged, including universes, and ALL19 public+3 private proofs,5 public+
+1 private definitions,4 local instance bodies, scoped Borel bodies and the
+coefficient-separability attribute were reviewed. Both complete new sources,
+root/audit diffs and all independent-test definitions/proofs were inspected.
+Independent checks26.4943644seconds. No resource/compiler/linter/trust/toolchain
+change. Exact configuration3 and original113 manuscript paths/hashes unchanged.
+Evidence: `.lake/stardust-1542-verification.json`, source-review/integrity files,
+full build/audit/independent logs and development record. Five explicit files
+only; exact commit receipt and eligible PRIVATE synchronization close the Git
+checkpoint. During restricted hours those remote steps are queued under the
+workday policy without delaying the next mathematical proof.
