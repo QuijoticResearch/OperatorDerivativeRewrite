@@ -2513,3 +2513,4 @@ import Foundation.IBMPastTimeRealization
 import Foundation.IBMPastTimeGradient
 import Foundation.IBMNativeFieldSamples
 import Foundation.IBMPastStrongGraphApproximation
+import Foundation.IBMAverageNativeTimeObstruction

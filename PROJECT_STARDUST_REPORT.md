@@ -49214,3 +49214,113 @@ External synchronization is RESTRICTED now: LOCAL AUDIT COMPLETE, REMOTE SYNC
 QUEUED. Queued status is not a verified remote backup; the guarded existing
 30-minute task retries outside09:00–17:00 Eastern weekdays. Continue mathematics
 without waiting. No history rewrite or queue change.
+
+
+## Discovery1547 — actual average time-graph convergence and native time-slope escape
+
+IBM remains ACTIVE on the ORIGINAL constructed reflected process B(abs(W_t)).
+Previous goal-turn progress1546 supplied original fixed-past strong native graph
+approximation, with the actual time average already in its native domain.
+The scheduled backup subsequently verified BOTH private main/research refs at
+8c25610 after17:00 Eastern; earlier queued status is retained as historical.
+No research queue, manuscript or mathematical hypothesis is changed here.
+
+### Positive result: a genuine original native-domain time curve
+
+Write A_t=intrinsicAverage(t), the actual IBM sample time integral in the
+ORIGINAL joint-source L2, and G_t=IBMRampSimpsonNativeAverage.averageGradient(t),
+its already verified native two-source derivative. In
+`Foundation/IBMAverageTimeGraph.lean`, the existing monotone horizon-graph
+projections now apply to ANY strongly measurable curve with values in its
+actual raw past. Applying this to the continuous A_t proves measurability of
+the SAME fixed-past resolvent inputs R_(n,t) A_t and their native gradients.
+Original strong pointwise convergence then proves strong measurability of G_t.
+These are Hilbert-valued measurable curves, not new pointwise sample versions.
+
+Original graph uniqueness and the verified chart transports identify BOTH
+native channels exactly: scenery=sourceGradient(sourceAverage t), and
+clock=IBMClockPhysicalOccupation.gradient(t). The latter retains the existing
+physical occupation-kernel construction. The actual full native energy obeys
+
+    ||G_t||^2 <= ||sourceGradient(sourceAverage t)||^2
+                 + 8 peak(1) t^2 sqrt(t),  t>=0.
+
+The right side is a proved continuous envelope. Thus G and every actual
+resolvent gradient belong to ORIGINAL Bochner L2 on every finite physical-time
+window. Original native contraction bounds and dominated convergence prove
+
+    (R_(n,t) A_t, D R_(n,t) A_t) -> (A_t,G_t)
+
+in BOTH ORIGINAL time-L2 coordinates. `time_native_graph`, `time_target_graph`
+and `time_graph_tendsto` place every approximant and the target in the SAME
+original Bochner lift of jointDerivative and prove strong graph convergence.
+Input raw-past membership remains the existing pointwise past theorem. No
+native-gradient temporal predictability, samplewise uniform convergence,
+path continuity or stochastic-driver integral is inferred.
+
+This remains regularization of AVERAGES R_(n,t) A_t, not integration of
+regularized POINTS integral R_(n,s) Z_s ds. The latter family's stronger native
+field limit from1544–1545 is STILL OPEN; neither the positive result nor the
+obstruction below decides it. No uniformn bound for that separate family has
+been proved, and missing estimates are not counterexamples.
+
+### Decisive obstruction: ordinary time differentiation loses the native domain
+
+`Foundation/IBMAverageNativeTimeObstruction.lean` proves the actual L2-valued
+A_t has ordinary-time derivative the actual IBM point Z_t at EVERY positive t.
+Yet t->G_t has NO strong ordinary-time derivative at ANY positive t. If it did,
+the pair difference quotients would converge strongly in the closed ORIGINAL
+native graph, forcing Z_t into D(jointDerivative), contrary to the existing
+verified actual positive-time point obstruction.
+
+More strongly, for EVERY positive sequence e_n->0, the verified closed-operator
+escape theorem gives
+
+    ||(G_(t+e_n)-G_t)/e_n|| -> infinity,  t>0.
+
+This concerns ORIGINAL native Hilbert norms. It is not a statement about
+samplewise derivative paths, supplies no blowup rate, and does not rule out
+weak or graph-test-dual differentiation or a stochastic calculus in an
+appropriate domain/topology. Time averaging creates native-domain observables,
+but ordinary time differentiation does not preserve that domain. No external
+novelty claim is made; the argument reuses standard closed-operator principles
+and the verified actual IBM obstruction.
+
+A concrete NEXT candidate is dual differentiation: combine OLD
+averageGradient_embed with the bounded IBMIntrinsicGraphDual.weakDerivative
+and actual_average_hasDerivAt. Its precise dual derivative and any native
+nonrepresentability still require a theorem; this is an investigation target,
+not an asserted completed result. Full physical-time intrinsic calculus remains
+OPEN. Original focused F1–F3 remain resolved1107 in their exact earlier domains
+and topologies, as corrected1546; no blanket reopening is intended.
+
+### Complete verification and preservation
+
+Full6792-job root build31.8646988seconds; complete50365-declaration safe
+transitive axiom audit57.6139929seconds, whitelist ONLY
+propext/Classical.choice/Quot.sound. ALL33 public types read unabridged; ALL28
+public proofs,5 definitions,8 local instance bodies, local separability,
+Borel and irreducibility bodies inspected. Complete root/audit diffs and ALL
+independent proof bodies read. Twelve independent Lean checks passed in
+34.0052625seconds, including true lifted-domain membership, original source and
+clock identities, actual sample integral target, raw past, energy, ordinary-time
+value derivative, actual time-one nondifferentiability and explicit harmonic
+step-sequence native norm escape.
+
+Initial elaboration needed explicit local separability/finite-exponent
+instances, projected-pair normalization and the correct pointwise convergence
+filter. Named AE class identities/local irreducibility and Tendsto.congr avoid
+expensive definitional unfolding; a200000-heartbeat defeq timeout was repaired
+without increasing resources. Independent tests additionally required explicit
+T/e parameters and Real.toNNReal_one normalization. A dotted line-wrap syntax
+error was repaired with a local continuous curve. These are elaboration issues,
+not mathematical obstructions; meaningful failed logs/test source are retained.
+No resource, norm, linter, compiler, trust, dependency or toolchain change.
+
+Frozen2619 Foundation/root hashes, configuration3 and EXACT original113 archive
+paths/hashes unchanged. ResearchSources remains read-only and unstaged. Evidence:
+`.lake/stardust-1547-verification.json`, complete logs, source-review, integrity,
+development records and retained failure artifacts. Five explicit files only;
+exact-commit receipt and guarded verified PRIVATE main/research synchronization
+close the checkpoint. Workday restriction remains installed; any restricted run
+would be QUEUED and could not block local research. No reflection session begun.
