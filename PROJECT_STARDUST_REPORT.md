@@ -48489,3 +48489,123 @@ manuscript paths/hashes unchanged. All proof/audit/test gates verified by
 `.lake/stardust-1540-verification.json`. Five explicit checkpoint files only;
 ResearchSources and unrelated planning/tmp preserved. Exact receipt and verified
 PRIVATE main/research backup are the final closure gates, recorded separately.
+
+## Checkpoint1541 — strong horizon measurability of the ACTUAL adapted IBM regularizers
+
+October26,2026, beginning during the active proof across local midnight.
+Parent68ff008477c1d86c2c4e7e546d13d0428e31518d. Previous goal turn was VERIFIED
+PROGRESS: canonical finite-past native regularization and exact adjoint correction.
+IBM remains ACTIVE; queueb91ce91281e90df5adf912779736781528880ccd unchanged; no queued
+manuscript or campaign activated. October31 remains REVIEW ONLY. No October26
+reflection session was started during this proof/verification cycle.
+
+**Missing process connection addressed.** Checkpoint1540 constructed canonical
+approximants F_{n,T}=R_{n,T}(Z_T), Z_T=B(|W_T|), in BOTH native derivative domains
+and the ACTUAL finite IBM past at each horizon. Their dependence on T was not
+then known measurable. This checkpoint proves strong measurability of the SAME
+original L2 input family AND its original unscaled two-source native gradient,
+for EVERY fixed n. No alternate Gaussian realization or independent source law
+is substituted for the existing actual joint probability space.
+
+**Necessary deterministic bridge, with exact hypotheses.** New
+`Foundation/MonotoneHilbertProjection.lean` proves: for a monotone family V_t of
+real inner-product submodules indexed by nonnegative real time, with an actual
+orthogonal projection at each t, the projected energy q_t(x)=||P_t x||^2 is
+monotone. Real polarization gives
+
+    <P_t x,y> = (q_t(x+y)-q_t(x-y))/4.
+
+The energies, scalar inner products and distances are measurable. If the target
+space is second-countable, t->P_t x is STRONGLY measurable for EVERY fixed x.
+This follows by an explicit metric-ball Borel basis and scalar distance formula;
+no projection-path continuity, common generator or differentiable filtration is
+assumed. Completeness is not an extra hypothesis of the generic theorem once
+orthogonal projections are supplied. Actual application supplies all projection
+and separability hypotheses below.
+
+**One actual ambient graph space and exact reconstruction of1540's objects.**
+New `Foundation/IBMPastHorizonGraph.lean` embeds each scaled actual-past derivative
+graph into the FIXED Hilbert space
+
+    H = WithLp2(IntrinsicSpace x JointFieldSpace),   a_n=2^(-n).
+
+G_{n,T} is the full closed graph of a_n*jointDerivative intersected with the
+condition that the input belongs to pastSpace(T). Closedness is proved from the
+old full native closed graph and actual past closedness. The actual filtration
+proves G_{n,S}<=G_{n,T} for S<=T. `scaled_past_graph` proves exact commutation of
+scaling and observable restriction. `graph_image` identifies G_{n,T} as the
+isometric image of the OLD scaled pastDerivative(T) graph; domain and source
+ordering are not reinterpreted. For EVERY original f in pastSpace(T),
+
+    P_G(n,T)(f,0) = (R_{n,T} f, a_n * pastDerivative(T)(R_{n,T} f)).
+
+`projection_nativePair` proves this full INPUT/VECTOR identity, not only an
+input equality or an assumed conditional-gradient commutation. Membership is
+actual original native membership. Orthogonality uses1540's EXACT past-adjoint
+correction and OLD actual-past integration by parts, with explicit component
+congruence. No theorem claiming natural conditional expectation preserves the
+Gaussian derivative was introduced.
+
+**Actual horizon-measurable native families.** The actual coefficient Hilbert
+space's verified first-chaos isometric embedding, finite-Lp separable-measure
+results and finite two-channel product discharge second countability of ALL
+actual graph target spaces. Monotone graph projections are strongly measurable
+in T on fixed inputs. The standard continuous-in-vector/measurable-in-parameter
+Caratheodory theorem and existing continuous ACTUAL endpoint curve T->Z_T give
+strong measurability of T->P_G(n,T)(Z_T,0). The exact pair identity yields:
+
+    T -> F_{n,T}  strongly measurable in original actual JointL2;
+    T -> pastDerivative(T)(R_{n,T} Z_T)  strongly measurable in the original
+        TWO-source native JointFieldSpace.
+
+The gradient conclusion removes the NONZERO FIXED a_n by inverse scalar
+multiplication; no time-dependent inverse or zero scale is used. These maps
+are exactly1540's `approximation T n` and `gradient T n (endpoint T)`.
+Raw-past adaptation, BOTH native domains, actual endpoint strong limit and
+positive-time clock-gradient escape remain the original verified results.
+
+**Independent obstruction to overstating regularity.** A monotone real
+projection family which is bottom for t<1 and top for t>=1 satisfies every
+hypothesis of the generic strong-measurability theorem. Independent Lean tests
+prove its projected value at0 is0, at1 is1, and it is NOT continuous at1.
+Thus monotonicity plus the theorem does not imply continuous projection paths.
+This is a general counterexample, NOT an assertion that the actual IBM
+regularizers themselves have a discontinuity at any specified time.
+
+**Exact remaining obligations.** Strong measurability as an L2-valued map is NOT
+a jointly measurable sample representative (T,omega)->F_{n,T}(omega) agreeing at
+EVERY horizon. The canonical Lp representative must not be assumed jointly
+measurable. Old Bochner representative Fubini supplies only AE-time section
+statements; it alone does not discharge the all-horizon claim. A promising
+construction is measurable countable dense-Lp approximation with uniformly rapid
+error at EACH parameter, followed by AE convergence of the representatives;
+that route is currently UNPROVED. Jointly measurable versions, path regularity,
+physical predictable drivers/stochastic integrals, F1–F3 physical cross-sector
+and boundary closure, actual Ito–Tanaka/Clark–Ocone and full intrinsic calculus
+remain open. No Gaussian Hilbert embedding on a NEW probability space can replace
+the actual source coupling. No campaign completion or novelty claim.
+
+**Verification and proof-engineering record.** Complete6783-job root build
+66.7471098seconds; complete safe transitive Foundation audit50082 declarations
+39.6632656seconds, ONLY propext/Classical.choice/Quot.sound. ALL23 explicit public
+types read UNABRIDGED, including Ambient abbreviation and generic universes;
+ALL18 public and5 private proofs,4 definition bodies,1 abbreviation,7 local
+instance bodies, scoped Borel bodies and local interface attributes read fully.
+Root/audit diffs reviewed. Eleven independent Lean checks passed26.6552449seconds:
+jump-family theorem instantiation, exact boundary values and discontinuity,
+exact OLD vector and actual endpoint projection components, both strong horizon
+measurability conclusions, every fixed native-field probe, raw adaptation, actual
+endpoint limit and positive-time gradient escape. The first test required an
+explicit top-subspace projection identity; failed source/log preserved, scope
+unchanged. Repeated default200000-heartbeat interface/rewrite timeouts were
+resolved through explicit spaces, actual-past adjoint reuse and congrArg on
+specific components rather than searching/unfolding unrelated noncomputable
+regularizers. An attempted multiline edit missed Windows CRLF and was corrected
+with an asserted normalized Python rewrite before adoption. Failed routes and
+diagnostics remain private scratch; `.lake/stardust-1541-development.json`.
+NO heartbeat/synthesis resource increase, linter suppression, global compiler,
+trust, dependency or toolchain change. Frozen2610 Foundation/root sources,
+configuration3 and EXACT113 original manuscript paths/hashes verified by
+`.lake/stardust-1541-verification.json`. ResearchSources and unrelated work
+preserved. Five explicit files only; exact commit receipt and verified PRIVATE
+main/research synchronization are the final closure gates, recorded separately.
