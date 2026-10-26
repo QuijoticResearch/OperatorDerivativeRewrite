@@ -239,3 +239,24 @@ is inferred. Tensor Hilbert-space realizations and Gaussian higher-chaos claims
 must still have their exact domains/normalizations checked. Both primary audits
 remain incomplete and Objective1 active; no queued campaign starts. No novelty
 claim is made. Source manuscripts and their original hashes are unchanged.
+
+## Checkpoint1554: finite sine-drift scalar identity established
+
+Primary2 eq:drift-scalar/thm:global-drift finite-core identity now has exact Lean
+support in Foundation/CauchySineDrift.lean. With A=-|n| and T=-sin(x0) d/dx0,
+for ALL real r, finite complex Fourier f,g and x:
+Gamma1_(A+rT)(f,g)=Gamma1_A(f,g),
+Gamma2_(A+rT)(f,g)(x)=Gamma2_A(f,g)(x)+(r*cos(x0)/2)Gamma1_A(f,g)(x).
+Use cauchy_scaled_drift_scalar_shift_synthesis; r=omega^2 is the manuscript
+parameter. Actual finite algebra/product/derivative/conjugation and synthesis
+are used. All signed and zero frequencies are handled, not just analytic modes.
+
+Full6798job build, complete50587-declaration axiom audit,34unabridged publictypes,
+28proofs/6definitions,6independent Lean checks,5208 exact finite computational
+checks,2625source/config3/archive113 integrity passed. Exact checkpoint receipt
+and guarded private backup follow. Detailed timing/evidence in report1554.
+No invariant measure, entropy inequality, completed generator domain, or global
+spectral theorem follows automatically. Both primary manuscript audits remain
+incomplete. The computational quadratic-symbol test yields cos rather than
+half-cos correction and blocks an unqualified transfer to other stable orders.
+Preserve original manuscript bytes and all earlier counterexamples/repairs.

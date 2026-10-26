@@ -2518,3 +2518,4 @@ import Foundation.BrownianCurvatureModeDecayObstruction
 import Foundation.BrownianEnergyRepair
 import Foundation.GaussianDeterministicAdjointDomain
 import Foundation.FiniteStableGamma
+import Foundation.CauchySineDrift

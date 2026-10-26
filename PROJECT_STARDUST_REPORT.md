@@ -49827,3 +49827,157 @@ matching complex Hilbert/tensor realizations and investigating the manuscript's
 curvature/spectral/drift claims with their precise closure and domain assumptions.
 Do not repeat the already verified finite Fourier recursion or replace it with
 an assumed covariance dictionary.
+
+## Development1554 — cosine-drift scalar-shift audit underway
+
+Primary2 thm:global-drift / eq:drift-scalar (approximately1145 onward) and its
+entrywise proof were read selectively. The correct transport is minus sine times
+the coordinate derivative for unit amplitude, matching b=-omega^2 sin x after
+scaling. No counterexample to the claimed finite scalar shift has been found;
+its algebra must be assembled before treating it as proved.
+
+`.lake/stardust-1554-cauchy-drift.lean` passes standalone elaboration, terminal
+14938exit0, October26 approximately19:35 Eastern. It proves BOTH exact frequency
+shift coefficient identities for ALL integer n,m using
+K2(n,m)=|n|+|m|-|m-n| (twice the Cauchy kernel):
+
+  (m-n)K2(n,m)+nK2(n+1,m)-mK2(n,m-1)=K2(n,m),
+  -(m-n)K2(n,m)-nK2(n-1,m)+mK2(n,m+1)=K2(n,m).
+
+These include zero, negative, opposite-sign and adjacent/boundary frequencies.
+The proof uses explicit integer absolute-value cases, not extrapolation from
+positive interior modes. Cauchy kernel normalization is matched to the existing
+FiniteStableGamma.Core kernel.
+
+The draft constructs transport in the EXISTING Fourier algebra as multiplication
+by (I/2)(e_1-e_-1), followed by dLinear0. It proves the product rule, the exact
+mode action n/2 times the difference of lower and upper shifted modes, and
+`transport_synthesis`, identifying its actual synthesis with
+-sin(x0) times the synthesis of dLinear0 f. This reuses the existing actual
+coordinate derivative machinery; it is not merely an assigned shift matrix.
+Concrete checks include constant annihilation and opposite/zero/adjacent kernel
+values. The coefficient tests support the finite scalar-shift claim.
+
+Remaining immediate obligation: assemble these identities into the full
+sesquilinear Gamma correction and prove that the transport leaves Gamma1
+unchanged. Then extend over finite sums with the zero/sign boundaries explicit,
+and only afterward address eigenvalue/global-bound consequences. Completed
+semigroup domains and the drift-invariant measure remain separate obligations;
+a finite algebraic scalar shift supplies neither automatically.
+
+All new draft proof bodies were read. Failed elaborations were absolute-value
+lemma naming and elementary normalization/reassociation, not mathematical
+counterexamples. Failed logs retained, one unused-simp warning visible. No
+resource/trust/configuration changes. No Foundation/root edits, commit, full
+build/axiom closure or new private-backup claim this turn. Original manuscripts
+remain untouched. Latest certified/private checkpoint remains6d5fa0c (1553).
+BakryObjective1 remains active; both manuscript audits are incomplete.
+
+### Development1554 continuation — actual Gamma1 cancellation and Gamma2 reduction
+
+October26 terminal clock19:43 Eastern. The extended draft
+.lake/stardust-1554-cauchy-drift.lean passed serialized standalone Lean,
+terminal23217 exit0; log .lake/stardust-1554-drift-gamma2.log.
+All new proof bodies and domains were read. No new compiler/resource options.
+
+For the actual finite transport T=-sin(x0) d/dx0, transport_reflection proves
+reflection(T f)=T(reflection f) for EVERY finite complex Fourier polynomial.
+Together with the product rule, transport_gamma_zero proves the exact
+sesquilinear derivation cancellation. The explicitly defined firstGamma obeys
+firstGamma(L+T)=firstGamma(L) for arbitrary operator L on this finite core.
+Specialization drift_firstGamma identifies this with the existing gammaIter a 1
+for every real symbol a, not just an assumed Cauchy covariance form.
+
+The explicitly recursively defined secondGamma now satisfies
+Gamma2_(A+T)(f,g)=Gamma2_A(f,g)+
+  (1/2)[T Gamma1_A(f,g)-Gamma1_A(Tf,g)-Gamma1_A(f,Tg)]
+for the actual Fourier multiplier A=generator a. This is
+`drift_secondGamma_correction`, proved using the existing verified additive
+Gamma identities. The scalar cosine identification of the bracket is still
+OPEN: next assemble the previously proved all-integer shift identities into
+this correction and extend over finite sums. General drift amplitude,
+spectral consequences, completed domains and invariant measure remain open.
+
+Initial reflection elaboration failed on conjugation of numeral2 and negative
+single coefficients, repaired with explicit map/cast/single-neg identities.
+One attempted PowerShell CRLF replacement made no change; apply_patch repaired
+it and the successful file was reread. Failed logs retained. The unused-simp
+warning remains visible, not suppressed. No mathematical counterexample arose.
+This is development evidence, NOT full checkpoint certification. No Foundation,
+root, toolchain or original manuscript changed. No unfinished mathematics was
+committed/approved/synced. Latest fully certified/private checkpoint stays1553
+6d5fa0c25ddd66cb8ba383d5244f31165b4547a4. Bakry Objective1 remains ACTIVE.
+
+### Development1554 — full finite cosine shift assembled, arbitrary real amplitude
+
+October26 approximately19:50 Eastern. Draft .lake/stardust-1554-cauchy-drift.lean
+now passes standalone Lean through `cauchy_scaled_drift_scalar_shift`, terminal
+66571 exit0, .lake/stardust-1554-scaled-drift2.log. New proof bodies were reread.
+
+The all-integer coefficient identities were transported into the ACTUAL complex
+Cauchy kernel (`kernel_lower`, `kernel_upper`). `drift_bracket_single` verifies
+the exact two shifted Fourier coefficients for arbitrary complex coefficients
+and ALL integer waves. Double finite-algebra induction gives `drift_bracket`
+for EVERY finite complex Fourier polynomial pair, with no positive-frequency
+restriction. Thus the zero, negative and opposite-sign boundaries are included.
+
+The ACTUAL recursively defined first/second Gamma forms now satisfy, for
+A=generator(stableSymbol1), T=-sin(x0) d/dx0, and EVERY real r:
+
+  Gamma1_(A+rT)(f,g)=Gamma1_A(f,g),
+  Gamma2_(A+rT)(f,g)=Gamma2_A(f,g)+(r/2) cos(x0) Gamma1_A(f,g).
+
+The second line is proved as an exact Fourier-algebra identity using the
+cosineMultiplier; `cosineMultiplier_synthesis` identifies that multiplier with
+actual Real.cos(x0), and `cauchy_drift_scalar_shift_synthesis` gives the explicit
+pointwise unit-amplitude identity. Arbitrary real scaling is proved in the
+algebra; r=omega^2 supplies the manuscript amplitude. This supports, rather than
+refutes, the primary2 eq:drift-scalar finite-core claim. It does NOT yet establish
+completed domains, the invariant measure, entropy consequences, or full spectral
+assertions. No general fractional-symbol cosine shift is claimed: the final
+scalar-shift theorem specifically uses the Cauchy symbol.
+
+The first real-scalar induction attempted simp with smul_comm and hit recursion
+depth. Removing that rewrite and using module normalization repaired the proof;
+no resource/trust/toolchain changes. Failed log retained. Three unused-simp
+warnings are visible, not suppressed. Next: meaningful independent boundary/
+coefficient tests, scaled pointwise identification, and preparation of the
+complete checkpoint gates; then continue the remaining manuscript obligations.
+All full build/transitive axiom/type/proof/independent/source/Git/private gates
+are still pending for this draft. No unfinished mathematics committed, no new
+backup claim; certified/private baseline remains1553 (6d5fa0c). ResearchSources
+unchanged. Bakry Objective1 remains ACTIVE and both primary audits incomplete.
+
+## Checkpoint1554 — actual finite Cauchy sine-drift Gamma identity
+
+Adopted Foundation/CauchySineDrift.lean (34 public declarations:28 proofs,6
+explicit definitions). For every real r and every finite complex Fourier f,g,
+A=-|frequency0| and actual transport T=-sin(x0) d/dx0 satisfy
+Gamma1_(A+rT)=Gamma1_A and
+Gamma2_(A+rT)=Gamma2_A+(r*cos(x0)/2)Gamma1_A, including actual pointwise
+synthesis. Exact theorem: CauchySineDrift.cauchy_scaled_drift_scalar_shift_synthesis.
+No frequency-sign restriction: zero/negative/opposite/adjacent modes are covered
+by integer absolute-value identities and induction over the actual finite
+Fourier algebra. Set r=omega^2 for primary2 eq:drift-scalar/thm:global-drift.
+This closes its finite-core scalar identity, not its completed or spectral claims.
+
+Full root6798jobs51.235s; complete50587safe transitive axiom audit52.085s;
+only propext/Classical.choice/Quot.sound; all34 public types read unabridged,
+all28proofs/6definitions read, no private proof/local instance added. Six
+independent Lean checks passed30.147s. Independently implemented Laurent
+arithmetic passed5208 exact small Gaussian-dyadic test cases (no tolerance).
+It also detects that the quadratic symbol has twice the Cauchy correction;
+this is a concrete tested obstruction to transferring the half-cosine formula,
+not yet a new formal general-order theorem. Test/script evidence under
+.lake/stardust-1554-independent*. No novelty claim.
+
+Frozen2625Foundation/root hashes, config3 and all113ResearchSources paths/hashes
+verified against baseline/inventory1292. No source manuscripts or toolchain/
+resource settings changed. Existing style warnings were not suppressed;
+three unused simp arguments were removed before the complete build.
+Local verifier .lake/stardust-1554-verification.json confirms all local gates.
+Five checkpoint paths: newmodule, rootimport, axiomlist, thisledger, Bakryaudit.
+Commit/exact receipt and guarded BOTH-private-ref verification follow; no remote
+backup is preclaimed. Both primary audits remain INCOMPLETE. Next investigate
+invariant measure, valid curvature/spectral consequences and completed domains,
+reusing the established scalar identity rather than assuming closure.
