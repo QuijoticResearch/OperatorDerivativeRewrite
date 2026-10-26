@@ -47771,3 +47771,101 @@ are the remaining closure gate at this entry; guarded terminal artifacts record
 closure only after the sync process terminates successfully. Continue IBM's
 positive subcritical/domain and actual physical calculus obligations afterward;
 Bakry, Yang--Mills and later campaigns stay queued.
+
+## Checkpoint1534 — sharp actual IBM weighted clock-sector summability criterion
+
+October25,2026. IBM remains ACTIVE, following PRIVATE-closed1533 commit
+95208e21519e9ba57a59d27353622516e55bf4d3. The previous goal turn made concrete
+mathematical progress: critical/supercritical divergence, exact normalized
+radical limit, Bernoulli comparisons and unbounded nonzero even clock support
+were proved, completely audited and privately backed up. This checkpoint
+completes the POSITIVE weighted-sector obligation rather than substituting a
+weaker pointwise coefficient bound. The authoritative queue is unchanged.
+October25 reflection remains already consumed by1521; no housekeeping is opened.
+
+NEW `Foundation/IBMClockSubcritical.lean`: for the ACTUAL reflected-clock IBM
+endpoint Z_T=B(abs(W_T)), T>0, with every original scenery-source degree retained,
+let C_n=norm(clockLift(original GaussianNumberSectors.projection n)
+(randomSourceL2 T))^2. Then for EVERY REAL exponent a:
+
+* `actual_bessel_summable_iff`: sum_n (n+1)^a*C_n is summable IFF a<1/2.
+* `actual_power_summable_iff`: sum_n n^a*C_n is summable IFF a<1/2, with the
+  original real-power convention at n=0 handled separately and explicitly.
+* `actual_energy_integrability_iff_bessel`: the already constructed actual
+  endpoint noise curve's a-weighted energy is integrable over0<h<1 IFF the
+  Bessel-weighted original-sector series is summable.
+
+Necessity reuses1533's independently proved critical radical/Tannery obstruction,
+not an assumed fractional-domain characterization. Sufficiency now discharges
+the full positive-series/integral bridge. `kernel a n h` is
+2*(1-(1-h)^n)/h^(1+a), and `modeIntegral a n` is its genuine Bochner integral on
+0<h<1. The measurable kernel is nonnegative there and integrable for EVERY
+individual n whenever a<1, by the verified Bernoulli upper bound and sharp
+integrability of h^(-a). Thus a single finite mode being integrable does NOT
+establish integrability of the entire actual spectrum at a>=1/2.
+
+`modeIntegral_lower` proves for EVERY n!=0 and a<1 the explicit estimate
+  modeIntegral(a,n) >= L(a)*n^a,
+  L(a)=(1/2)^(1-a)/(1-a)>0.
+It restricts to0<h<(1/2)/n, applies1533's actual lower defect bound, proves all
+interval inclusions and integrability premises, and computes the improper
+real-power integral exactly. No unproved tail asymptotics or numerical constants
+are used. `weighted_mode_integrals_summable` applies dominated convergence for
+SERIES of Bochner integrals: the nonnegative series itself is the norm majorant,
+its pointwise HasSum comes from the exact1532 noise series divided by h^(1+a),
+and its actual integrability comes from1531's proved radical criterion. Each AE
+measurability, nonnegative bound, pointwise summability, total-majorant
+integrability and limit hypothesis is explicitly discharged. The integral
+coefficient C_n is pulled out using the actual integral_mul_const identity.
+
+`power_weight_summable` divides by the EXPLICIT POSITIVE L(a), compares the full
+summable sequence of per-mode integrals, and handles degree0 through the precise
+natural-tail summability equivalence. `bessel_weight_summable` proves positive
+exponent comparison (n+1)^a<=2^a*n^a on n>=1, with the zero mode restored;
+for a<=0 it obtains unweighted summability at a=0 and uses (n+1)^a<=1.
+The generic positive results assume ONLY a nonnegative sequence and the stated
+exact radical HasSum identity; K need not be positive there. A zero-noise
+spectrum may have arbitrary finite C_0. For the ACTUAL endpoint, T>0 and all
+noise-series hypotheses are proved by direct reuse, with no hidden multitime,
+conditional-expectation, martingale or ordinary signed-process probability claim.
+
+NEXT: this is now a SHARP WEIGHTED NORM theorem, not yet membership in a named
+closed fractional Gaussian operator. Audit/reuse the actual original Gaussian
+number-sector Parseval, clockLift completeness/truncation and closed-operator
+machinery before constructing that domain. Match eigenvalue and squared-norm
+exponents exactly: an operator with multiplier (1+n)^s has squared weight
+(1+n)^(2*s); an operator with multiplier (1+n)^(s/2) has squared weight
+(1+n)^s. Do not conflate those conventions or infer a physical/canonical adapted
+driver from this noncausal future-clock perturbation. Existing fractional-fBM
+source-gradient restrictions are not automatically fractional NUMBER powers.
+Multitime extensions, actual intrinsic physical Ito/Clark--Ocone, channel and
+driver identification, and remaining physical convergence/closure obligations
+remain OPEN. No campaign transition or mathematical novelty is claimed.
+
+Verification: final complete6771-job root build PASSED in42.3379714 wall seconds;
+complete transitive Lean.collectAxioms audit PASSED ALL49791 safe Foundation
+declarations in39.0653411 seconds, whitelist ONLY propext, Classical.choice,
+Quot.sound. ALL13 new public types read UNABRIDGED, both definition bodies and
+all eleven complete theorem proofs reviewed, and root/audit import/listing diffs
+reviewed. TEN independent Lean checks PASSED in28.0298168 seconds: direct exact
+integration of the first mode to2/(1-a), vacuum mode integral zero, the distinct
+zero/shifted negative-power conventions, an arbitrary finite vacuum energy with
+no positive-mode noise, ALL weights at actual T=0, genuine actual positive1/4
+and negative-2 Bessel exponents, unweighted ALL-clock summability at0, exclusion
+of the exact critical1/2, and actual negative-1 unshifted power summability.
+The direct integral test initially needed field/ring normalization of division
+versus inverse multiplication; its failed log/time were preserved and ONLY the
+test proof was repaired. Library bytes stayed unchanged after the full gates.
+Visible source-style and test-deprecation warnings remain unsuppressed. No
+heartbeat/resource/trust/linter/toolchain setting, mathematical premise or
+operator domain was weakened or silently changed.
+
+All2598 frozen Foundation/root source hashes, configurations3 and original113
+archive paths/hashes were checked. Only old root/audit imports and axiom listings,
+the new leaf, and this ledger change. Preserve ResearchSources and unrelated
+untracked planning files/tmp. Evidence: `.lake/stardust-1534-verification.json`,
+full working manifest, root/audit/type/test logs, proof review and integrity
+records. Exact explicit-path commit, audit receipt and BOTH verified PRIVATE
+main/research refs remain this entry's final closure gate; guarded terminal
+records close it only after successful sync-process termination. Continue the
+same actual IBM campaign after closure; every queued campaign stays gated.
