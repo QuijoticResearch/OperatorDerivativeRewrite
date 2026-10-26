@@ -48383,3 +48383,109 @@ path/hash pairs verified. Evidence `.lake/stardust-1539-verification.json` and
 complete source/type/proof/test logs. Explicit four-file commit, exact receipt
 and BOTH PRIVATE main/research verification remain the final closure gates,
 recorded by the guarded terminal manifest after successful synchronization.
+
+## Checkpoint1540 — canonical actual-past IBM regularization with native adjoint control
+
+October25,2026; mathematical parentb72f222f044ac16c4a66d2b64106490f8f4a1a0e.
+Previous goal turn was VERIFIED PROGRESS: real-order ambient Bessel smoothing
+can remain uniformly separated from the actual adapted past. IBM remains ACTIVE;
+queueb91ce91281e90df5adf912779736781528880ccd unchanged. No new campaign or
+manuscript audit, no expiration, October31 REVIEW ONLY. Reflection already used
+October25; this is active mathematics, not another housekeeping session.
+
+**Reuse first.** `IBMPastIntrinsicOperators` already supplies the closed densely
+defined two-source derivative A_T on each ACTUAL finite IBM past V_T, and its
+maximal adjoint. `IBMPastCoreDensity` already supplies its domain density.
+`ClosedOperatorEnergyResolvent` already constructs a genuine Hilbert closed-graph
+resolvent, energy minimum, weak identity and contraction. Those results were
+reused, without rebuilding a derivative, positing a stochastic driver, or assuming
+ordinary conditional expectation preserves native gradients.
+
+**Canonical regularizers and strong identity approximation.** New
+`Foundation/ScaledGraphResolvent.lean` uses a_n=2^(-n)>0 and the EXISTING graph
+projection resolvent for a_n A. Nonzero scalar multiplication preserves the
+actual closed graph, with the same domain; a=0 is not silently included.
+R_n=(I+a_n^2 A* A)^(-1) is a descriptive resolvent notation, with its canonical
+construction and proofs taken from the old graph projection. The file proves:
+
+    R_n x in D(A),   ||R_n x|| <= ||x||,
+    ||x-R_n x||^2 <= ||x-u||^2+a_n^2 ||A u||^2   for EVERY u in D(A),
+    R_n x -> x STRONGLY for EVERY x, if D(A) is dense.
+
+The final limit is proved by the actual dense-domain approximation and energy
+bound, with the scale limit discharged. It is not an abstract conditional
+placeholder with convergence left as a premise. NativeGradient is the ORIGINAL
+A(R_n x), not a separately chosen or redefined gradient. Exact weak identity and
+original-adjoint domain/value are proved:
+
+    a_n^2 A(R_n x) in D(A*),
+    A*(a_n^2 A(R_n x)) = x-R_n x.
+
+The actual original field bound ||a_n^2 A(R_n x)|| <= a_n ||x|| proves its strong
+field convergence to0. No uniform bound for the UNSCALED derivative is asserted.
+
+**Instantiation for actual IBM, without ambient-past preservation assumptions.**
+New `Foundation/IBMPastGraphRegularization.lean` applies this construction DIRECTLY
+to existing A_T=pastDerivative(T), for EVERY finite T>=0. Its regularizer is a
+bounded linear map V_T->V_T with actual native derivative-domain membership and
+strong convergence to EVERY f in V_T. It stays in the actual past by construction,
+rather than applying ambient smoothing and hoping it is adapted. The original
+past adjoint satisfies the exact correction identity above. The pair
+
+    (a_n^2 A_T R_n f, pastDivergence_T(a_n^2 A_T R_n f)) -> (0,0)
+
+converges STRONGLY in native joint-field L2 times actual past-space L2, on the
+EXACT adjoint domain at every stage. This is a genuine native adjoint graph limit.
+Nested past-space topology is preserved: the final limit is transported through
+both subtype inclusions into original joint L2 and lifted back by their inducing
+topologies, without weakening its claimed topology.
+
+**Actual rough endpoints, positive construction and sharp obstruction.** Let
+F_{n,T}=R_{n,T}(Z_T) for the existing ACTUAL reflected-clock Z_T=B(|W_T|).
+For EVERY T>=0 and EVERY n, F_{n,T} belongs to the original IBM natural past and
+to intrinsicCore (BOTH existing Gaussian source and clock derivative domains).
+For EVERY T>=0, F_{n,T}->Z_T STRONGLY in the original actual BOTH-source joint L2.
+Thus actual adapted common-domain endpoint approximation is now canonical.
+For EVERY T>0, its ORIGINAL native clock-gradient norms tend to +infinity.
+This follows by direct reuse of the closed-operator graph escape theorem and
+1537's actual endpoint exclusion from the native clock domain; no finite
+clock derivative is assigned to the rough endpoint. The test at T=0 proves
+F_{n,0}=0 and clockGradient(n,0)=0 exactly. Strong input convergence has NOT been
+mistaken for strong convergence of the unweighted derivative graph.
+
+**Precise remaining process/calculus obligations.** These are fixed-horizon L2
+variables and operators. No theorem here proves joint measurability in (T,omega),
+continuous/cadlag paths, a single chosen simultaneous representative, or physical-
+time predictable integrands for the horizon-dependent family. No graph limit of
+UNWEIGHTED gradients for arbitrary regular-domain inputs is proved here.
+The corrected adjoint is the native two-source past adjoint, not yet an actual
+physical-time stochastic integral or Clark–Ocone reconstruction. Physical F1–F3,
+canonical driver, Itô–Tanaka kernels and required physical closures remain open.
+A promising next direct question is measurability of horizon-dependent graph
+projections: past graph spaces are plausibly monotone, but that and all strong
+operator/measurability implications require precise proofs and an existing-
+library reuse audit. Do not replace missing physical results by additional
+unrelated native infrastructure. No campaign completion or novelty claim.
+
+**Complete gates.** Complete6781-job root build56.0307391seconds; complete safe
+transitive Foundation audit50017 declarations46.1049456seconds, ONLY
+propext/Classical.choice/Quot.sound. ALL33 public types read unabridged, including
+universe-polymorphic generic interfaces; ALL24 public proofs,9 definition bodies,
+3 local-instance bodies and local interface attributes read fully. Root/audit
+diffs reviewed. Eleven independent Lean checks passed28.1056893seconds:
+explicit real identity-operator R_0(2)=1 and R_1(5)=4 (squared scale normalization),
+actual raw/right-past membership, BOTH original derivative domains, actual joint
+endpoint limit, arbitrarily large positive-time clock gradient, exact native
+past-adjoint residual, full weighted adjoint graph topology, and exact zero-horizon
+exception. Two failed test sources/logs retained: Real.inner_apply namespace and
+explicit LinearPMap.map_zero fixed, with no library changes or scope reduction.
+Development default200000-heartbeat nested-interface timeouts were resolved by
+explicit E/F and domain targets, existing finite-Lp instances, local opaque
+operator interfaces, and inducing subtype topology transport; no heartbeat,
+compiler, linter, trust or configuration override. Partial failed attempts were
+not certified. Trace `.lake/stardust-1540-development.json`.
+Frozen2608 Foundation/root sources; configuration3 and EXACT113 original archived
+manuscript paths/hashes unchanged. All proof/audit/test gates verified by
+`.lake/stardust-1540-verification.json`. Five explicit checkpoint files only;
+ResearchSources and unrelated planning/tmp preserved. Exact receipt and verified
+PRIVATE main/research backup are the final closure gates, recorded separately.
