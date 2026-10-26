@@ -47979,3 +47979,113 @@ Git commit, exact-commit audit receipt and BOTH verified PRIVATE main/research
 refs remain this entry's final closure gate; guarded terminal records close it
 only after successful sync-process termination. Continue actual IBM; do not
 activate Bakry, Yang--Mills or later campaigns.
+
+## Checkpoint1536 — native clock self-adjointness, fractional IBP, and sharp actual IBM smoothing
+
+October25,2026; IBM ACTIVE. Previous goal turn made concrete verified progress:
+canonical CLOSED original-clock spectral operators, exact maximal domains,
+strong paired graph approximations and actual IBM fractional-domain membership
+were fully audited and PRIVATE-closed1535 atbccde555196880dc76731dd6e4d9598be0d425a5.
+This checkpoint proves their NATIVE adjoints and useful actual-endpoint
+regularization identities. No campaign priorities or manuscript bytes change.
+October25 reflection remains used by1521; no duplicate housekeeping session.
+
+NEW `Foundation/GaussianClockSpectralAdjoint.lean`: for EVERY REAL multiplier
+sequence w, the genuine original clock spectral operator A_w equals its native
+LinearPMap.adjoint, on its SAME exact maximal domain. This includes unbounded,
+negative and sign-changing weights. Self-adjointness is proved, not assumed as
+part of a spectral label. The proof reuses full original-source/clock Parseval,
+polarizes it into an exact inner-product HasSum, and proves original clock
+projection self-adjointness. Exact spectral graph symmetry then follows by
+summing the paired coefficient identities. Conversely, testing an arbitrary
+native graph-adjoint pair against EVERY original single clock sector forces
+ALL the original graph equations. Thus `graph_adjoint` proves equality with the
+native submodule adjoint; OLD domain density and native
+LinearPMap.adjoint_graph_eq_graph_adjoint give `operator_adjoint` exactly.
+No arbitrary-basis replacement or additional adjoint-domain hypothesis appears.
+
+`operator_ibp` gives the genuine Hilbert integration-by-parts pairing on both
+original maximal domains. `operator_pairing_hasSum` identifies its full spectral
+pairing with an arbitrary original Field test, not only finite tests.
+`operator_nonneg` proves nonnegative quadratic energy when EVERY w_n>=0.
+This positivity qualification is essential: an independent negative-identity
+countertest proves strictly NEGATIVE energy on every nonzero projected input.
+No probabilistic Markov, curvature or physical mass-gap assertion follows.
+
+NEW `Foundation/IBMClockFractionalCalculus.lean` uses the already constructed
+B_s=bessel s, eigenmultiplier(n+1)^(s/2), and its precise closed domain.
+It proves B_s is its native adjoint and has nonnegative quadratic form for
+EVERY real s. The exact domain shift is
+  B_r f in D(B_s) IFF f in D(B_(r+s)), for f in D(B_r),
+and `bessel_composition` proves equality of the actual operator outputs
+B_s(B_r f)=B_(r+s)f with both domain witnesses explicit. All real-power products,
+positive bases, squared norm factors and order conventions are verified.
+`bessel_half_domain` proves D(B_s) is contained in D(B_(s/2)) and
+`bessel_form_identity` proves
+  inner(B_s f,f)=norm(B_(s/2) f)^2.
+The two sides are actual original L2 pairings/norms, not formal spectral arrays.
+
+For the ACTUAL reflected-clock endpoint Z_T=B(abs(W_T)), retaining BOTH original
+random sources and EVERY scenery degree, `actual_regularized_domain` proves:
+for T>0 and r<1/2, B_r Z_T belongs to D(B_s) IFF r+s<1/2.
+Consequently `actual_smoothing_threshold` proves, for EVERY beta>=0 and T>0,
+regularization with multiplier(n+1)^(-beta), namely B_(-2*beta) Z_T, belongs to
+D(B_1) IFF beta>1/4. The exact critical1/4 FAILS. There is no hidden finite-mode,
+bounded-degree, mollifier or conditional convergence premise in this result.
+`actual_endpoint_ibp` supplies an actual two-time source-L2 pairing identity
+inner(B_s Z_T,Z_U)=inner(Z_T,B_s Z_U) for T,U>0 and s<1/2.
+This is an ambient spectral IBP identity, not a physical-time stochastic formula.
+
+NEXT CENTRAL BRIDGE: identify the closed FIRST Bessel form domain with the OLD
+actual Gaussian/Bochner clock derivative graph and prove the corresponding
+operator-output/gradient energy relation. The sharp smoothing theorem currently
+reaches the genuine D(B_1), NOT YET the old native Gaussian clock derivative
+or an intrinsic physical IBM derivative. Do not silently identify those domains.
+Audit/reuse the actual number-sector gradient/truncation identities, old
+BochnerClosedOperator lift and original source/clock factor ordering first.
+The inspected `GaussianBochnerDerivative.fieldDerivative` is a TIME-volume L2
+lift, not automatically the source-gaussian-clock lift needed here.
+`GaussianHermiteDomains.closedDerivative_domain_iff` is a scalar one-dimensional
+Hermite theorem; transport/Bochner domain conclusions need their actual proof.
+Existing `GaussianProjectedDerivativeClosure` gives a bounded predictable
+closure on full Gaussian L2; that does not by itself identify a physical IBM
+canonical driver or discharge the physical boundary-layer/F1--F3 obligations.
+Do not duplicate those already verified projected/fixed-family constructions.
+
+The operators remain AMBIENT ORIGINAL SOURCE-CLOCK. Preservation of the IBM
+intrinsic observable space, adapted/causal driver identification, physical Ito
+and Clark--Ocone, multitime extensions and actual physical convergence/closure
+remain OPEN. Existing actual point native-domain counterexamples remain valid;
+smoothing does not remove their unsmoothed hypotheses. No manuscript novelty
+or full IBM calculus completion is claimed, and no queued stage is activated.
+
+Verification: final complete6775-job root build PASSED in55.5142322 wall seconds;
+complete transitive Lean.collectAxioms audit PASSED ALL49858 safe Foundation
+declarations in38.9516192 seconds, whitelist ONLY propext, Classical.choice,
+Quot.sound. ALL18 public theorem types were read UNABRIDGED, including the full
+embedded domain-witness proof in the smoothing type (the initially truncated
+output was reread in complete bounded chunks). Both full sources, every proof,
+the local instance body and root/audit diffs were reviewed. No new public
+definition was introduced. TWELVE independent Lean checks PASSED first run in
+27.0331144 seconds: real sign-changing native self-adjointness, original vacuum
+projection symmetry, strictly negative energy for negative identity, direct
+fractional eigenmode quadratic-factor normalization, positivity at negative
+Bessel order, half-order squared-norm form at negative order, actual failure at
+criticalbeta1/4, success atbeta1/3, failure without smoothing, an actual two-time
+pairing at order1/4, exact domain-shift boundary exclusion and actualT0 in EVERY
+native adjoint domain. Development repaired implicit hasSum comparison orientation,
+projection-rewrite ordering and explicit domain-side conditions; no library
+change was needed after its full gates. No increased heartbeat, trust/compiler/
+linter/resource change, altered old domain or weakened mathematical premise.
+Visible existing source-style warnings remain unsuppressed. Closure timings on
+changed/cached inputs are not a controlled build-optimization comparison.
+
+All2602 frozen Foundation/root hashes, unchanged configurations3 and original113
+archive paths/hashes match. Only the old root/audit import/listing files, two
+new leaves and this ledger change. ResearchSources and unrelated untracked
+planning documents/tmp stay untouched. Evidence: `.lake/stardust-1536-verification.json`,
+full manifest/build/audit/type/proof-review/test/integrity records. Explicit-path
+Git commit, exact-commit audit receipt and BOTH verified PRIVATE main/research
+refs remain the final gate at this entry; guarded terminal artifacts close it
+only after the successful synchronization process terminates. Continue the
+actual IBM campaign after closure; preserve every queued campaign gate.

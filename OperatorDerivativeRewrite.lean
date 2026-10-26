@@ -2498,3 +2498,5 @@ import Foundation.IBMClockNoiseThreshold
 import Foundation.IBMClockSubcritical
 import Foundation.GaussianClockSpectralPowers
 import Foundation.IBMClockFractionalDomain
+import Foundation.GaussianClockSpectralAdjoint
+import Foundation.IBMClockFractionalCalculus
