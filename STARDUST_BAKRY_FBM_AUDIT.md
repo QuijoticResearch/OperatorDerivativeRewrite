@@ -206,3 +206,36 @@ It does not refute thm:realization restricted to first-chaos inputs. Complex
 energy-space identification, finite Fourier Gamma recursion, completed generator
 domains and the other manuscript claim families remain open. Objective1 remains
 active; no subsequent campaign or mathematical priority changes.
+
+## Checkpoint1553 — actual finite stable Gamma and complex energies
+
+`Foundation/FiniteStableGamma.lean` now constructs the finite Fourier multiplier
+L(single(k,c))=single(k,-a(k)c), starting from a real symbol. Gamma_0 is the
+conjugate-product and Gamma_(n+1) is the actual half-generator commutator from
+primary1 eq:Gammak-def. `Core.gammaIter_single` and `gammaIter_finite` prove
+its all-order kernel-power formula, including conjugation and signed frequency
+differences, for arbitrary finite sums. `stable_gamma_synthesis` evaluates the
+identity as an actual trigonometric function in the existing synthesis algebra.
+
+For a(k)=|k_0|^gamma, `Bridge.stable_gamma_energy` identifies the recursive
+expression with the existing covariance-power energy at signed times k_0,
+using complex phase coefficients c_i character(k_i,x). `ComplexEnergy.energy_re`
+splits this into real and imaginary coefficient forms; symmetry gives reality.
+The old real Hadamard positivity theorem therefore yields
+`Bridge.stable_gamma_nonnegative`: every finite synthesized Gamma order is real
+and nonnegative at every point for0<gamma<2. Empty/repeated/signed-frequency
+families and arbitrary complex coefficients are included. Axis modes give the
+circle construction; the ambient multiplier acts only in coordinate0.
+
+This resolves the finite Fourier recursion and complex quadratic-form/phase
+identification in the earlier obligation table. The absolute-time covariance
+version still needs same-sign frequencies; opposite Cauchy frequencies have
+kernel0 whereas their absolute-time covariance is1. The algebraic formula alone
+has no unrestricted positivity implication: H2 coefficients(2,-1) give energy-12.
+
+No completed generator-domain theorem, constructed complex Hilbert adjoint,
+positive curvature constant, invariant drift measure or infinite-series closure
+is inferred. Tensor Hilbert-space realizations and Gaussian higher-chaos claims
+must still have their exact domains/normalizations checked. Both primary audits
+remain incomplete and Objective1 active; no queued campaign starts. No novelty
+claim is made. Source manuscripts and their original hashes are unchanged.

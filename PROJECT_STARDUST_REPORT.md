@@ -49700,3 +49700,130 @@ verification follow commit; this entry does not preclaim remote success.
 BakryObjective1 remains ACTIVE; both primary manuscript audits are incomplete.
 Next prioritize actual finite Fourier Gamma recursion and correct complex energy
 realization, reusing existing finite Fourier and actual Gaussian machinery.
+
+## Development1553 — actual finite Fourier Gamma recursion
+
+Continued primary1 eq:Gammak-def and thm:realization/tensor audit. Existing
+finite Fourier convolution algebra, reflection, synthesis, fractional covariance
+and Hadamard positivity machinery were inspected and reused. No manuscript or
+Foundation/root source changed during this development step.
+
+`.lake/stardust-1553-fourier-gamma.lean` passes standalone Lean elaboration
+(terminal1447exit0, October26 approximately19:08 Eastern). It constructs a
+linear Fourier multiplier L(single(k,c))=single(k,-a(k)c), for a REAL symbol a,
+and defines Gamma_0(f,g)=reflection(f)*g and the manuscript's actual recursive
+half-generator commutator. At EVERY order n it proves on characters:
+
+  Gamma_n(single(k,c),single(l,d))
+    = single(l-k, ((a(k)+a(l)-a(l-k))/2)^n conjugate(c) d).
+
+Both additive arguments and arbitrary finite-sum expansion are proved. The
+synthesized identity is consequently about actual finite trigonometric functions,
+not only an assigned matrix. For a(k)=|k_0|^gamma, the kernel is exactly the
+existing signed-time covariance R_(gamma/2)(k_0,l_0). Algebraic equality holds
+for arbitrary real gamma; positivity and stable-process interpretations still
+require their valid hypotheses (in particular0<gamma<2 for the reused fBM
+positivity). This construction is a finite Fourier core, not an assertion of a
+completed Markov generator or semigroup realization. Coordinate0 is the chosen
+torus direction; restricting to axis waves gives the manuscript's circle modes.
+
+Three concrete Lean checks verify: opposite Cauchy frequencies have zero kernel;
+replacing those signed times by their absolute values would instead give
+covariance1; and a mixed imaginary coefficient at second Gamma order has the
+correct negative-imaginary conjugation sign. This supports preserving the
+manuscript's same-sign qualification when it uses absolute frequency times.
+
+All draft definitions and proof bodies were read. Failed elaborations involved
+a redundant rewrite and finite-sum order, repaired without changing the claimed
+identity or settings. Failed logs retained. No full root/axiom/type/independent
+checkpoint gates or commit were performed yet; latest certified checkpoint is
+stilla352511 (1552), verified on both private refs.
+
+NEXT prove the complex Hermitian covariance-power positivity/realness from the
+existing real Hadamard theorem, identify the phase coefficients, and consolidate
+this core generator/covariance dictionary with complete milestone verification.
+Do not claim a closed generator-domain theorem, new stochastic realization or
+novelty. Both primary manuscript audits and BakryObjective1 remain incomplete.
+
+### Development1553 continuation — complex positivity and actual Gamma dictionary
+
+The authoritative development source is now `.lake/stardust-1553-combined.lean`.
+Final standalone elaboration passed terminal33107exit0, empty log, October26
+approximately19:14 Eastern. It includes the earlier all-order Fourier recursion,
+a complex-energy transfer, an actual synthesis bridge and five concrete checks.
+Do not regenerate it from the older fragments and lose the bridge/boundary tests.
+
+The new `energy_real` theorem proves imaginary-part cancellation for EVERY real
+symmetric finite matrix and complex vector. `energy_re` splits its real part
+exactly into the quadratic forms on the real and imaginary coefficients. Thus
+`covariance_energy_nonneg` reuses the existing real Hadamard-power theorem for
+0<H<1; it does not introduce an assumed complex positivity axiom.
+
+`Stardust1553Bridge.stable_gamma_energy` identifies the actual synthesized
+recursive Gamma expression with the complex covariance-power energy of the
+phase coefficients c_i character(k_i,x). `stable_gamma_nonnegative` then proves
+that the ACTUAL finite trigonometric Gamma expression has imaginary part0 and
+nonnegative real part, at EVERY natural order, EVERY spatial point and EVERY
+finite complex coefficient/frequency family, when0<gamma<2. Signed frequencies,
+repeated frequencies and empty families are admitted. The multiplier acts in
+coordinate0 of the existing torus algebra; axis modes recover the circle.
+
+This closes the draft finite-polynomial recursion/phase/complex-quadratic-form
+connection. It does NOT yet supply a completed generator domain, a constructed
+complex Hilbert adjoint, a positive curvature constant, an invariant drift law,
+or an infinite-series closure theorem. Keep these distinct from the finite-core
+identity. No novelty claim is made.
+
+Five checked examples cover the opposite-sign Cauchy kernel, its failure to
+agree with covariance at absolute times, conjugation of an imaginary coefficient
+at Gamma order2, actual complex Brownian energy3 for coefficients(1,I), and the
+negative H=2 covariance energy-12 for coefficients(2,-1). The last directly
+preserves the parameter obstruction from the earlier real covariance library;
+algebraic formulas alone do not provide unrestricted positivity.
+
+Proofs were read during construction. Failed elaborations concerned the actual
+Complex.re_sum lemma name and Matrix transparency; explicit Matrix domains fixed
+the latter without changing transparency/resource settings. Failed logs retained.
+No source/config/manuscript changes outside the ledger and ignored development
+files, no mathematical commit and no new private backup claim. Next consolidate
+these finite-core results into Foundation, separate independent tests, and close
+ALL complete build/axiom/public-type/proof/source-integrity/Git/private gates.
+Both manuscript audits and BakryObjective1 remain incomplete and active.
+
+## Discovery1553 — verified actual finite stable Gamma dictionary
+
+Adopted `Foundation/FiniteStableGamma.lean` with Core, ComplexEnergy and Bridge
+namespaces. The preceding development's actual multiplier/recursive Gamma,
+all-order finite Fourier formula, signed-time covariance identification, complex
+phase energy and pointwise reality/nonnegativity are now library results.
+`Bridge.stable_gamma_nonnegative` covers every natural order, finite complex
+coefficient/frequency family and point when0<gamma<2. Exact scope/limitations
+are in STARDUST_BAKRY_FBM_AUDIT.md checkpoint1553. No completed generator domain,
+complex Hilbert adjoint, positive curvature constant, drift measure or novelty
+claim is inferred. Both primary manuscript audits remain incomplete.
+
+Full6797-job root build passed38.9217766s. COMPLETE transitive audit of50508 safe
+Foundation declarations passed40.3316783s, whitelist ONLYpropext,Classical.choice,
+Quot.sound. ALL22 public types were read unabridged; ALL17 proof bodies and5
+definitions reviewed; no new private/local-instance bodies omitted. Ten independent
+Lean checks passed27.7245895s: signed-versus-absolute Cauchy frequencies,
+second-order imaginary-coefficient conjugation, H2negativeenergy-12, complex
+Brownianenergy3, actual generator coefficient sign, constant annihilation,
+repeated-frequency cancellation, order-zero squared modulus and all positive
+orders of the cross-sign Cauchy kernel. Test cast/normalization elaborations
+were repaired without changing library sources; failed logs/source retained.
+Style warnings remain visible; no linter/resource/trust settings changed.
+
+Frozen2624 Foundation/root files, unchanged3 configurations and EXACT113 archive
+paths/hashes verified. Existing Lean changes are only root and axiom integration;
+original manuscripts untouched. Five intended files: newmodule,root,axiomlist,
+Bakryaudit andledger. Evidence in .lake/stardust-1553-verification.json with complete
+build/audit/test logs. Explicit commit, exact receipt and guarded privateboth-ref
+verification follow; remote backup is not preclaimed. Active BakryObjective1 and
+all subsequent priorities are unchanged.
+
+Next substantive audit work: the finite positive core is now available for
+matching complex Hilbert/tensor realizations and investigating the manuscript's
+curvature/spectral/drift claims with their precise closure and domain assumptions.
+Do not repeat the already verified finite Fourier recursion or replace it with
+an assumed covariance dictionary.
