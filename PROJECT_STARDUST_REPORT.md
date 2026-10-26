@@ -48765,3 +48765,116 @@ full build/audit/independent logs and development record. Five explicit files
 only; exact commit receipt and eligible PRIVATE synchronization close the Git
 checkpoint. During restricted hours those remote steps are queued under the
 workday policy without delaying the next mathematical proof.
+
+## Checkpoint1543 — Actual local time/sample L2 closure and ambient-null adaptation
+
+Previous goal turn: PROGRESS. Checkpoint1542, `b7840eb245cdac32b3f17c68dd67d56f17bbcf51`,
+closed all-horizon joint sample realization on the ORIGINAL actual IBM Gaussian
+probability space and passed both PRIVATE gates. Terminal clock at this proof's
+start: October26,2026 07:30:05 America/New_York. IBM remains ACTIVE, actual process
+`B(|W_t|)`; campaign queue and original manuscripts unchanged. This is direct
+continuation of the realization/closure obligation, not a new campaign or a
+reflection session.
+
+`Foundation/IBMPastTimeRealization.lean` reuses the existing canonical finite-past
+native regularizers, actual sample versions, ambient-null augmentation,
+product/Bochner L2 isometry, representative Fubini and finite-measure scalar
+integration. No new operator, Gaussian model, time measure convention or
+foundational realization assumption was introduced.
+
+### Exact adaptation under the specified augmentation
+
+`augmentedFiltration` is EXACTLY `AmbientNullAugmentation.filtration` applied to
+the actual raw IBM natural filtration and original joint measure.
+`sample_stronglyAdapted` proves that the SAME jointly measurable1542 sample
+versions are strongly adapted to this filtration. The argument uses original
+ambient measurability plus the already proved raw-past AEStronglyMeasurable
+sections. This augmentation stays inside the ORIGINAL ambient sigma-algebra;
+it is NOT full completion, right continuity, the usual augmentation, raw exact
+adaptation or predictability. No altered sample version or altered process law
+is selected. The independent checks instantiate the old actual IBM
+`no_martingale_filtration` obstruction at this exact augmentation: neither
+adaptation nor null augmentation gives actual uncorrected IBM a martingale law.
+
+### Strong original product-L2 convergence
+
+Let `timeInput n t = approximation t.toNNReal n`, and let `timeTarget t` be the
+old actual intrinsic endpoint class. The ORIGINAL native resolvent contraction
+gives `‖timeInput n t‖ ≤ ‖timeTarget t‖`. Actual endpoint L2 continuity makes its
+squared norm integrable on every existing `window H = volume.restrict (Ioc 0 H)`.
+Consequently all input curves genuinely belong to Bochner
+`Lp JointL2 2 (window H)`. No pathwise dominating random variable is assumed.
+
+The integrated error is dominated by `4*‖timeTarget t‖^2`. Original fixed-time
+strong convergence and dominated convergence prove `error_energy_tendsto` and
+then `timeClass_tendsto` in this Bochner L2 norm. The actual verified
+`ProductL2Curry.curryEquiv` inverse transfers that convergence to the ORIGINAL
+time/sample product measure. Its section identities and the1542 ALL-horizon
+sample version theorem identify both resulting product classes with genuine
+joint sample functions, rather than assuming a jointly measurable canonical Lp
+coercion.
+
+In particular `timeSample n (t,ω)` is the1542 canonical sample at t.toNNReal,
+and `timeValue (t,ω)` is the literal existing
+`IBMConstructedSources.ibmValue t.toNNReal ω`. Both are genuinely in
+`Lp ℝ 2 ((window H).prod jointMeasure)` for EVERY real H.
+`sample_product_L2_tendsto` proves strong convergence of these ACTUAL sample
+classes to the ACTUAL IBM class; `sample_product_error_tendsto` states the same
+limit directly as the original product eLpNorm of the sample difference.
+This strengthens per-horizon convergence to local physical-time/sample L2
+convergence. It asserts no pointwise/uniform-in-time path limit, indistinguishability,
+global-time bound, gradient convergence or stochastic-driver integration.
+
+### Actual ordinary temporal integration and its limit
+
+`sample_columns_integrable` and `value_columns_integrable` prove that the sample
+time integrals exist for joint-almost-every original sample; these are not
+identities exploiting the totalized integral's default value on nonintegrable
+functions. The existing finite-measure L2 integration theorem gives L2
+membership of the actual input column integrals. Representative Fubini then
+identifies their L2 classes EXACTLY with the Bochner integrals of `timeInput`.
+
+`timeTarget_integral` reuses `nativeAverage_eq_intrinsicAverage` and the old
+intrinsic-curve Bochner integrability. `nativeAverage_ae_timeIntegral` identifies
+that old target class with the integral of the literal actual IBM sample
+function. `integratedSampleClass_tendsto` proves that the actual approximant
+time-integral classes converge strongly in ORIGINAL joint L2 to this SAME old
+nativeAverage. The proof uses ordinary Bochner dominated convergence and the
+exact sample/Fubini bridge; it is not an Itô formula or integration against IBM.
+
+### Remaining central obligations and exact limits
+
+Scalar local time/sample L2 closure and ordinary temporal integral convergence
+are now DISCHARGED without replacement laws. The native TWO-source field time
+domains, graph/adjoint closure under time integration, and possible integrated
+clock-gradient escape still need investigation. Existing
+`ScaledGraphResolvent.scaled_gradient_bound` and actual positive-time
+`IBMPastGraphRegularization.actual_clock_gradient_escape` are precise reuse
+candidates; scalar L2 convergence alone provides no gradient convergence.
+Actual physical stochastic driver/integrals, Itô/Tanaka/Clark–Ocone and F1–F3
+random-boundary/cross-sector closure remain OPEN. No IBM completion or campaign
+transition is claimed, and no external novelty claim is made.
+
+### Verification and preserved inputs
+
+Frozen2613 Foundation/root sources. Full6786-job root build26.3370958seconds;
+complete50175-declaration safe transitive axiom audit38.1604009seconds, whitelist
+ONLY propext/Classical.choice/Quot.sound. ALL36 public explicit types read
+unabridged; ALL26 public+2 private proofs,10 definitions,4 local instance bodies
+and the coefficient-separability attribute inspected, together with the complete
+new source and root/audit diffs. Seventeen independent Lean checks26.7510500seconds,
+including literal actual IBM target identification, positive-time product-L2
+convergence, genuine column integrability, ordinary integral/class convergence,
+raw-filtration inclusion, the retained actual nonmartingale obstruction, and the
+existing empty-window convention for H≤0. All independent proof bodies reviewed.
+
+Elaboration repairs concerned pointwise function powers at unapplied functions,
+explicit finite time-measure inference and the verified orientation of
+`integral_comp_comm`; they are not mathematical obstructions. No resource,
+linter, compiler, dependency, trust or toolchain change. Configuration3 and
+EXACT113 original manuscript paths/hashes unchanged. Evidence:
+`.lake/stardust-1543-verification.json`, integrity/source-review/development
+records and complete build/audit/independent logs. Four explicit files only.
+Exact commit receipt and eligible verified PRIVATE main/research synchronization
+close the checkpoint; workday deferral, if applicable, is recorded as QUEUED
+and never delays research or masquerades as successful remote backup.
