@@ -49390,3 +49390,111 @@ Foundation/root source hashes, configuration3 and original113 manuscript paths/
 hashes. Existing active research artifacts and unrelated untracked drafts are
 preserved. No source/toolchain/resource/audit/backup standard changes. Exact
 commit receipt and guarded private main/research verification follow.
+
+
+## Discovery1550 — Bakry manuscript audit: subordination and curvature-mode decay
+
+Bakry Objective 1 remains ACTIVE; IBM remains deferred/incomplete. Previous goal
+turn1549 completed the authorized queue tail extension and BOTH private backups,
+preserving all earlier priorities. This checkpoint begins substantive repair of
+the TWO required primary manuscripts, with no activation of Objective 2 or any
+newly queued campaign. Neither primary audit is complete and no sustained
+follow-on focus is selected before their required audits and fBM survey.
+
+### Preserved sources and selective audit
+
+Primary1 `ResearchSources/bakry/bakry_emery_part2_v3 (1).tex` retains SHA256
+CA06321B1CB426DCAC9BCFE891AB89AF80EEE0BC8B108D1D9741C4059FACD3D7;
+primary2 `ResearchSources/bakry/bakry_emery_revised_v8 (2) (2).tex` retains
+53B29C9365C037FEE4F9367C7EFDC4F1C2F30076F8085EFB4DAECFA694B9006D.
+All26 Bakry/fBM files match the saved inventory and form18 distinct contents.
+Both primary abstracts and ALL43 extracted major statements were read; proofs
+were examined selectively for specific mathematical questions. Distinct v3/v8
+versions were compared; abstract differences in related fBM versions surveyed.
+The numbered PartII v3 adds analytical consequences; numbered PartI v8 corrects
+a drift sign and clarifies CD dimension and Schur-positivity statements. No
+filename establishes precedence. Hurst/RH/IBM and Yang–Mills bridge speculation
+is recorded without activating those separate campaigns or accepting its claims.
+
+`STARDUST_BAKRY_FBM_AUDIT.md` records exact reuse, repairs, source references,
+version distinctions and the remaining domain/closure/entropy/chaos obligations.
+The original primary hashes and43-statement extraction are retained in audit
+artifacts; the26-file/18-distinct survey is provisional, not a full-proof ingest.
+
+### Exact original-covariance obstruction to universal subordination decrease
+
+Primary1 cor:sub line1279 asserts kappa(alpha gamma)<=kappa(gamma) universally.
+The new `FractionalCurvatureSubordinationObstruction` uses the EXISTING actual
+fBM covariance at H3/4 and times1,2, with proved positive semidefiniteness:
+R=[[1,sqrt2],[sqrt2,2sqrt2]], P=R Hadamard R=[[1,2],[2,8]], v=(1,-1/8).
+Its exact positive denominator is1-7sqrt2/32; numerator5/8 is strictly smaller.
+At the Cauchy point H1/2 the original two-point forms have sharp lower bound1.
+
+The verified universal_subordination_incompatible proves that ANY curvature
+function with kappa(1)=1 and even the necessary witness lower-bound inequality
+at gamma3/2 cannot satisfy universal subordination decrease: alpha2/3 takes
+3/2 to1. This rigorously refutes compatibility of the manuscript's proposed
+properties. It does NOT postulate or construct a full-domain curvature function,
+identify an infinite generator from a matrix alone, or settle monotonicity
+restricted to either side of1. The manuscript's fixed-point-at0 INSIDE(0,2)
+and discrete-orbit crossing assertions also require correction.
+
+### Curvature eigendirections do not supply independent semigroup decay rates
+
+Primary2 prop:refined line1413 assigns rates2(2k-1) to curvature components.
+`BrownianCurvatureModeDecayObstruction` identifies the ORIGINAL innovation
+w=(-1,1) with existing differenceVector, proves P w=3 R w, and gives its
+R-orthogonal decomposition with e=(1,0). Its energy component is exactly v1^2.
+The actual two-frequency Cauchy coefficient multipliers are exp(-t),exp(-2t),
+with their semigroup law verified. The third-curvature component decays
+EXACTLY exp(-4t), contradicting exp(-6t) at EVERY positive time for v=(0,1).
+Independent checks verify R M=P for M=[[1,-2],[0,3]] and that M does not commute
+with coefficient generator diag(-1,-2). No infinite-domain or new stochastic
+process realization is asserted by this finite-core coefficient obstruction.
+
+The proposition's SEPARATE summed integrated estimate is NOT refuted by this
+component counterexample. A thirteenth independent Lean check proves the
+positive polynomial repair a^2 q+2b^2 q^2 <= (a^2+b^2)q+b^2 q^3 for q>=0,
+whose excess is b^2 q(1-q)^2. Full phase-average/torus integral identification
+and a generalN theorem remain open. Preserve this promising positive repair;
+do not reject the whole proposition from a false individual-channel argument.
+
+### Literature scope and precise remaining work
+
+The preliminary primary-literature audit confirms that the cited negative
+fractional-Laplacian result concerns FINITE CD dimension on R^d, not by itself
+CD(kappa,infinity) on a torus. Fourier cutoff N is a different parameter.
+[Spener–Weber–Zacher, arXiv1903.00521v3](https://arxiv.org/abs/1903.00521v3).
+The author's public PartI version2 metadata/abstract was inspected without
+assuming source-byte identity with the archived February v8 file or treating
+publication as proof. [arXiv2602.19192v2](https://arxiv.org/abs/2602.19192v2).
+No novelty, priority, RH or continuum mass-gap claim is made.
+
+Central unresolved obligations include deterministic first-chaos adjoint versus
+random Malliavin domains/complexification; finite Fourier Gamma recursion and
+full-domain closure; high-chaos constants and N=1/k=1 boundaries; real/complex
+volume normalization; the explicitly conditional Z-matrix bound; the special
+Cauchy cosine-drift scalar shift; invariant measures and jump entropy consequences.
+Existing covariance PSD, Brownian factorization/eigenpair and Gaussian OU results
+were reused or audited with their exact distinct meanings. No new foundational
+process or unnecessary general infrastructure was introduced.
+
+### Complete verification and checkpoint closure
+
+Full6794-job root build32.4521018seconds; complete50410-declaration safe transitive
+axiom audit47.8627086seconds, whitelist ONLY propext/Classical.choice/Quot.sound.
+ALL32 public types read unabridged; ALL23 public proofs/9 definitions reviewed,
+no private proofs/definitions or new local-instance bodies omitted. Complete
+root/audit diffs and ALL13 independent proof bodies read; tests passed in
+26.6420414seconds. Exact2621 Foundation/root hashes, configuration3 and ORIGINAL
+113 manuscript paths/hashes verified. No resource, norm, linter, compiler, trust,
+dependency or toolchain change. Literal vector/matrix simplification issues and
+nonmatching rw patterns were elaboration repairs, not mathematical obstructions;
+failed source/logs are retained. All mathematical inputs remained frozen through
+complete gates; the extra positive test changed only the independent harness.
+
+Evidence `.lake/stardust-1550-verification.json`, complete logs, source-review,
+integrity, development/version survey and preserved failures. SIX explicit files
+only; exact-commit receipt and guarded BOTH PRIVATE main/research verification
+close this checkpoint. ResearchSources stays read-only/unstaged. Objective 1
+remains ACTIVE with its unresolved obligations; full queue and all gates intact.
