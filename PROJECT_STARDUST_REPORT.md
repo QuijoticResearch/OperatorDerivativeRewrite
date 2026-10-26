@@ -49498,3 +49498,128 @@ integrity, development/version survey and preserved failures. SIX explicit files
 only; exact-commit receipt and guarded BOTH PRIVATE main/research verification
 close this checkpoint. ResearchSources stays read-only/unstaged. Objective 1
 remains ACTIVE with its unresolved obligations; full queue and all gates intact.
+
+## Development1551 — October26,2026: general finite energy repair in progress
+
+Active campaign remains Bakry–Emery Objective1. Checkpoint1550 (821c1b7)
+remains the latest fully audited and privately synchronized checkpoint.
+This entry records DEVELOPMENT evidence, not a new certified milestone.
+
+Source: primary2 `ResearchSources/bakry/bakry_emery_revised_v8 (2) (2).tex`,
+prop:refined / eq:total-energy, beginning at original line1413; original hash
+53B29C9365C037FEE4F9367C7EFDC4F1C2F30076F8085EFB4DAECFA694B9006D.
+The verified failure of individual curvature-component decay does not settle
+its separate spatially integrated estimate.
+
+A new scratch Lean proof, `.lake/stardust-1551-energy-repair.lean`, passes
+standalone elaboration at unchanged default settings. It reuses the actual
+Brownian innovation sum from BrownianCovariancePowers. For every natural n
+and real t it proves
+n exp(-2 n t) <= sum_{j=0}^{n-1} exp(-2 ((j+1)^2-j^2) t).
+The proof sums tangent-line lower bounds for exp; the exponents have mean
+-2 n t. It includes n=0 without division. For any finite nonnegative weights
+w_n it proves the weighted Fourier-energy bound and rewrites the right side
+as curvature rates times tails sum_{n>=j} w_n. All six public draft proof
+bodies were read; no axiom/resource settings were added.
+
+A second scratch proof, `.lake/stardust-1551-average-repair.lean`, also passes
+standalone elaboration. It embeds integer frequencies in one torus coordinate
+and reuses FiniteFourierTorusAverage.boxAverage_synthesis to prove the ACTUAL
+normalized integral of c times the difference character is c when frequencies
+agree, zero otherwise. Both draft proof bodies and the frequency definition
+were read. This is an ingredient, not the completed energy identification.
+
+NEXT: identify the full finite Gram energy and phase-averaged innovation
+components with these coefficient weights/tails, explicitly specifying complex
+coefficients and the normalized spatial measure. Check how this interpretation
+matches the manuscript's ambiguous E_k. Only then adopt the positive repair into
+the Foundation library and run the complete root build, complete transitive
+axiom audit, full public-type/proof review, independent tests, source-integrity,
+commit/receipt and guarded private-backup gates. No full manuscript theorem,
+closed-domain extension, invariant drift measure or novelty claim is certified
+here. Both primary audits remain incomplete. No campaign priorities changed.
+
+Development errors were an incorrectly oriented finite-sum rewrite and a
+misapplied eq_comm syntax; corrected proofs passed. These are elaboration
+repairs, not mathematical counterexamples. Raw success logs are retained beside
+the scratch files. The research originals and all Foundation/root files remain
+unchanged during this development step. No unfinished mathematics was committed.
+
+### Development1551 continuation — actual finite Gram-energy estimate checked
+
+Standalone Lean elaboration of `.lake/stardust-1551-combined.lean` now passes
+(exit0, observed terminal session99212, October26 approximately18:38 Eastern).
+This combines the previous scalar estimate with actual normalized torus
+integration; it is still DEVELOPMENT evidence pending the full milestone gates.
+
+For every finite complex coefficient vector a and real matrix M, the actual
+normalized torus average of the Gram polynomial with coefficients
+M_ij conjugate(a_i) a_j and difference-frequency characters equals
+sum_i M_ii |a_i|^2. For the original Brownian covariance min(i+1,j+1), this
+is sum_i (i+1)|a_i|^2. The matrix is proved identical to the existing covariance
+N 1. Its exact tail-matrix decomposition is also checked: each tail matrix has
+entries 1 when both indices are at least r, otherwise0, and their finite sum is
+the original Brownian covariance.
+
+Each corresponding tail Gram function is proved to be conjugate(T_r) T_r,
+where T_r is the finite Fourier sum over indices at least r. Its actual average
+is sum_{i>=r}|a_i|^2. Difference characters are unaffected by shifting every
+frequency by one; the declared Cauchy coefficient flow uses positive frequencies
+i+1, with multiplier exp(-(i+1)t).
+
+The assembled `Stardust1551IntegratedDevelopment.actual_integrated_energy_repair`
+proves, for EVERY finite complex vector and EVERY real t, that the real part of
+the actual averaged Brownian Gram energy after this flow is bounded by the sum
+of exp(-2((r+1)^2-r^2)t) times the actual averaged initial tail Gram energies.
+This is a positive finite-polynomial repair with an explicit definition of the
+energies, not an assertion that the manuscript's undefined E_k must mean these
+quantities. It does not restore the refuted individual component rates. The
+full Fourier-generator Gamma identification, covariance-orthogonal projection
+interpretation, completed domains and any drift remain distinct obligations.
+
+All new draft definitions/proofs were read during construction. Elaboration
+repairs included unfolding a partially applied definition, removing redundant
+tactics and ordering finite-sum expansion correctly; failed logs/attempts are
+retained. No resource/trust/compiler changes, root imports, Foundation source
+changes, external uploads, commits or new private-backup claims were made.
+NEXT consolidate this repaired finite theorem into the library, independently
+test boundary/complex/mixed-frequency cases, and close all full-build, axiom,
+type/proof, source-integrity, ledger and exact-private-checkpoint gates.
+
+## Discovery1551 — verified finite integrated Brownian-energy repair
+
+The preceding development1551 mathematics is adopted in
+`Foundation/BrownianEnergyRepair.lean`, under namespaces Coefficients, Torus,
+and Integrated. The exact repaired theorem and limitations are recorded in
+STARDUST_BAKRY_FBM_AUDIT.md, checkpoint1551 section. Actual normalized torus
+integration, arbitrary finite complex coefficients, original Brownian covariance,
+tail square identities and Cauchy Fourier multipliers are included. This is a
+positive repair of the separate summed bound, not of the false individual
+curvature-mode decay rates. No completed generator domain or campaign completion
+is inferred. Primary2 source/hash remains as recorded above; no novelty claimed.
+
+Verification: full6795-job root build passed in49.8383889s; COMPLETE transitive
+audit of50451 safe Foundation declarations passed in57.2498764s, allowing ONLY
+propext, Classical.choice and Quot.sound. All27 public types were read unabridged,
+all20 proof bodies and7 definitions reviewed, with no new private proofs or
+local instances omitted. Eleven independent Lean checks passed in28.0382242s:
+empty/one-frequency cases, actual complex coefficients, beyond-support tails,
+zero-time and semigroup laws, the two-frequency correction polynomial, exact
+three-point Brownian matrix, reality of the integrated energy, and preservation
+of the prior individual-mode obstruction. One failed test elaboration was a
+complex-cast simplification issue, repaired without changing the library proof;
+failed attempt source/log retained. Existing style warnings are unsuppressed.
+
+Source-integrity verification freezes2622 Foundation/root files; only root/import
+and axiom-list integration changed existing mathematical files, plus the new
+module. All3 toolchain/config files and EXACT113 archived manuscript paths/hashes
+are unchanged. No resource, compiler, trust, linter or dependency settings changed.
+Full evidence and manifest: .lake/stardust-1551-verification.json and companion
+full-build/audit/independent logs. Explicit five-file local commit and exact
+receipt/private synchronization follow; no remote success is claimed before
+its terminal verification. BakryObjective1 remains ACTIVE and incomplete.
+
+Next substantive obligations: match the explicit tails to the desired projection
+interpretation, audit actual Fourier Gamma recursion and operator domains, and
+continue both primary manuscript audits and the related fBM comparison. Preserve
+the original component counterexample and universal-subordination obstruction.

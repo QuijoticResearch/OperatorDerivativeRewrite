@@ -144,3 +144,35 @@ This is a preliminary source/scope audit, not a completed novelty survey or
 claim of priority. No publication, upload or archive modification is authorized
 or performed. Objective 1, its full audits and selected later focus remain active;
 Objective 2 and every later campaign remain queued under the saved gates.
+
+## Checkpoint1551 — finite integrated-energy repair
+
+`Foundation/BrownianEnergyRepair.lean` supplies a positive repair of the separate
+summed estimate in primary2 prop:refined (original line1413), with explicit
+energies. For a finite complex vector a indexed by n=1,...,N, define the
+Brownian Gram energy using the original matrix R_nm=min(n,m) and difference
+characters on the normalized torus. Its actual integral is sum_n n|a_n|^2.
+Define the r-th tail energy as the squared modulus of the Fourier sum over
+n>=r; its actual integral is sum_{n>=r}|a_n|^2. The rank-one tail matrices sum
+exactly to the original Brownian covariance, with no alternative kernel used.
+
+`Integrated.actual_integrated_energy_repair` proves for every finite a and real t:
+
+    average BrownianEnergy(exp(-n t) a_n)
+      <= sum_{r=1}^N exp(-2(2r-1)t) average TailEnergy_r(a).
+
+The proof uses convexity of exp and the exact innovation sum, followed by finite
+sum rearrangement and actual torus integration. `Torus.tailEnergy_square`
+identifies the tail functions as nonnegative squared moduli; `gramEnergy_average`
+is a general complex-coefficient integral identity. `brownianMatrix_original`
+identifies the old verified covariance and `tailMatrix_sum` its decomposition.
+This discharges the previously open general-N coefficient and actual-integral
+repair obligations. The scalar proof even holds at negative times on finite
+polynomials; this is not a bounded backward semigroup on a completed domain.
+
+This does NOT restore the false individual component decay. The manuscript's
+undefined E_k must be corrected to explicit phase-dependent tail energies for
+this theorem. Identification with an intrinsic covariance-orthogonal projection,
+the actual generator's Gamma recursion, full operator domains and infinite-series
+closure remain distinct obligations. Both primary audits remain incomplete;
+Objective2 and all subsequent campaigns remain queued. No novelty is asserted.

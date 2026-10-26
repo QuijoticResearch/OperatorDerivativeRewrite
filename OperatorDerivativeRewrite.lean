@@ -2515,3 +2515,4 @@ import Foundation.IBMNativeFieldSamples
 import Foundation.IBMPastStrongGraphApproximation
 import Foundation.IBMAverageNativeTimeObstruction
 import Foundation.BrownianCurvatureModeDecayObstruction
+import Foundation.BrownianEnergyRepair
