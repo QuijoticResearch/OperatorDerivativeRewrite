@@ -2512,3 +2512,4 @@ import Foundation.IBMPastSampleRealization
 import Foundation.IBMPastTimeRealization
 import Foundation.IBMPastTimeGradient
 import Foundation.IBMNativeFieldSamples
+import Foundation.IBMPastStrongGraphApproximation

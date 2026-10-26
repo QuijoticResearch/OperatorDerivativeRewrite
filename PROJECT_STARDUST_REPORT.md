@@ -49125,3 +49125,92 @@ source-review/integrity/development records and retained failed build/source.
 Four explicit files only; exact commit receipt and eligible PRIVATE main/research
 synchronization close the checkpoint. Workday deferral is QUEUED and never
 blocks continued mathematical research or counts as verified remote backup.
+
+
+## Discovery1546 — original native graph approximation on the full fixed-past domain
+
+IBM remains ACTIVE on the original constructed reflected process B(abs(W_t)).
+This continues1545's actual native sample-field integral identification. The
+current result supplies a constructive strong graph approximation on EVERY
+admissible fixed-past observable, including the already verified actual time
+average. It does not close the separate changing-past integrated-field limit.
+No campaign transition or novelty claim is made.
+
+### Exact operator identity and actual IBM application
+
+`Foundation/ScaledGraphResolventDomain.lean` uses the EXISTING graph resolvent
+R_n=(I+s_n^2 A* A)^(-1), s_n=2^(-2n), for a closed densely defined real Hilbert
+operator A. Weak resolvent uniqueness is proved by subtracting the original
+weak identities and testing their difference. The existing weighted adjoint
+residual supplies actual nativeGradient membership in D(A*); division by the
+positive scale yields s_n^2 A* A R_n x=x-R_n x. For EVERY x in D(A), original
+formal-adjoint pairings identify
+
+    A R_n x = (I+s_n^2 A A*)^(-1) A x.
+
+The right-hand side is the SAME existing graph-resolvent construction applied
+to the ORIGINAL adjoint, whose domain density follows from closedness/density
+of A. Its contraction and strong approximation give ||A R_n x||<=||A x|| and
+strong convergence of BOTH original coordinates (R_n x,A R_n x)->(x,A x).
+No derivative domain is enlarged and no alternate norm is introduced.
+
+`Foundation/IBMPastStrongGraphApproximation.lean` instantiates this on the
+ORIGINAL actual IBM pastDerivative at every fixed nonnegative horizon. All
+native-domain past observables have strong native-gradient approximation with
+the original derivative norm bound; the existing regularizer preserves the
+raw past space. For the actual time average, reuse the OLD verified
+`IBMRampSimpsonNativeAverage.average_mem_joint_domain` and `averageGradient`.
+The new averageInput/averageField are the existing FIXED-HORIZON resolvent and
+its actual native derivative. Their original joint-L2 and native-field norm
+limits are the actual old average and its actual old strong derivative.
+
+This is R_(n,T)(average T), NOT integral_0^T R_(n,t)(point_t)dt from1544–1545.
+No equality or convergence equivalence of these families is asserted. The
+latter family's strong or weak native-gradient convergence remains OPEN:
+its known scale-dependent bound is not uniform in n. Failure to derive a
+uniform bound is NOT a counterexample. Point-gradient escape likewise does
+not settle time-average regularization. Physical stochastic-driver formulas
+and the broader intrinsic-calculus completion remain open.
+
+### Correction of recent F1–F3 shorthand
+
+Re-reading `IBM_F1_F3_VERIFIED_CHECKPOINT.md` and the exact original declarations
+shows that recent blanket 'F1–F3 remain OPEN' handoff/ledger shorthand was too
+broad. The ORIGINAL focused manuscript targets reached their verified stopping
+point at1107: F1 actual full continuum cross-sector closure in the common
+clock-number TEST-DUAL norm (`IBMDilatedPredictableLimit` and
+`IBMDilatedDualClosure`); F2 literal weighted boundary-functional convergence
+in ordinary clock L2 (`IBMCompactOriginalBoundary.originalPathIntegral_continuum_tendsto`);
+and F3 actual dense maximal intrinsic core, closed/dense joint derivative and
+its natural adjoint (`IBMIntrinsicCoreDensity`, `IBMJointIntrinsicDerivative`).
+F1 does not assert raw full native-L2 convergence or equivalence with physical
+H^-1. F2 retains its compact even nonnegative mass-one C2 profile assumptions.
+F3's ambient adjoint-domain inclusion is not full domain equality. The broader
+intrinsic-calculus and stronger physical-time/domain questions remain ACTIVE.
+Historical checkpoint records are preserved; no proved F1–F3 result is undone,
+reopened or silently strengthened by this correction.
+
+### Verification and preservation
+
+Full6790-job root build50.328731seconds; complete50299-declaration safe transitive
+axiom audit37.2024199seconds, ONLY propext/Classical.choice/Quot.sound. ALL22
+explicit public types read unabridged; ALL19 public proofs,3 public definitions,
+3 local instance bodies, local separability and adjoint-irreducibility attributes
+reviewed. Complete root/audit diffs and ALL independent private/proof bodies read.
+Twelve independent Lean checks passed in25.5850207seconds: exact actual domains,
+derivative identification, native limit/bound, raw past, original-L2 limit,
+actual rough time-one point outside the native domain, and an independent
+scalar A=2Id test giving R_0(1)=1/5 and A R_0(1)=2/5. The scalar harness's first
+attempt required explicit set-membership and partial-map normal forms; failed
+source/log preserved. Mathematical sources remained frozen through full gates.
+No resource, norm, linter, compiler, trust, dependency or toolchain change.
+
+All2617 Foundation/root source hashes checked; pinned configuration3 and EXACT
+original113 manuscript paths/hashes unchanged. ResearchSources untouched.
+Evidence: `.lake/stardust-1546-verification.json` and associated complete logs,
+source-review, integrity, development and retained independent-failure artifacts.
+Five explicit files form the local checkpoint; exact-commit receipt follows.
+External synchronization is RESTRICTED now: LOCAL AUDIT COMPLETE, REMOTE SYNC
+QUEUED. Queued status is not a verified remote backup; the guarded existing
+30-minute task retries outside09:00–17:00 Eastern weekdays. Continue mathematics
+without waiting. No history rewrite or queue change.
