@@ -52301,3 +52301,24 @@ decrease. Sources2667/config3/manuscripts113 intact. Detailed scope and remainin
 obligations in STARDUST_BAKRY_FBM_AUDIT.md; evidence `.lake/stardust-1596-*`.
 Local gates passed; exact commit receipt and guarded private closure follow.
 Campaign priorities unchanged; bounded IBM rematch remains frozen/incomplete.
+
+## Checkpoint1597 — explicit obstruction to general-potential scalar curvature
+
+Bakry1 ACTIVE. Primary2's general-trigonometric-potential question (lines1503–1509)
+now has a rigorous negative answer for the proposed universal scalar extension.
+`CauchyHigherDriftObstruction` realizes the actual drift -sin(2 theta)*d/dtheta
+on the existing Fourier algebra and verifies first-Gamma invariance and the
+full second-Gamma correction. For positive modes1 and2, corrections at theta0
+are1/2 and2 while first energies are1 and2. Thus no shared pointwise scalar
+factor exists, even allowing complex factors. The verified first-harmonic
+identity remains true; nonscalar curvature bounds and potential classification
+are not refuted or completed. Both primary manuscript repairs remain OPEN.
+
+Full6847jobs61.153s; complete51518-declaration axiom audit75.319s; all24 public
+types,20 proofs and4 definitions reviewed. Independent3 Lean checks firstpass
+34.694s;63 additional exact-rational Fourier-recursion cases passed separately.
+The latter support a general harmonic candidate but do not formally prove it.
+Sources2668/config3/archive113 intact; ResearchSources unchanged. Scratch
+elaboration repairs preserved; no resource/trust/hypothesis changes. Details in
+STARDUST_BAKRY_FBM_AUDIT.md; evidence `.lake/stardust-1597-*`. Local gates complete;
+exact commit receipt and guarded BOTH-private backup follow. Queue unchanged.

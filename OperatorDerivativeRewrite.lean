@@ -2571,3 +2571,5 @@ import Foundation.CauchyPoissonSpatialDensity
 import Foundation.CauchyPoissonSingularEntropy
 
 import Foundation.CauchyPoissonModifiedLSI
+
+import Foundation.CauchyHigherDriftObstruction

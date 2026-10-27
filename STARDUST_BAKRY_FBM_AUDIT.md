@@ -2440,3 +2440,60 @@ hypotheses; weaker-rate scratch and failed logs retained. Source2667/config3/
 archive113 exact integrity verified. ResearchSources unchanged. Evidence
 `.lake/stardust-1596-*`. Local gates passed; exact receipt and guarded BOTH-private
 closure follow. Queue unchanged, IBM bounded rematch remains frozen/incomplete.
+
+## Checkpoint1597 — general-potential scalar extension fails at harmonic two
+
+Primary2 `bakry_emery_revised_v8 (2) (2).tex`, lines1503–1509, asks whether
+the cosine-drift scalar identity extends to general trigonometric polynomial
+potentials, suggesting that the Hermitianization/min-kernel mechanism might
+be independent of the potential. `Foundation/CauchyHigherDriftObstruction.lean`
+answers that proposed universal extension NEGATIVELY with two positive modes.
+The original first-harmonic identity1554 remains valid. This is a correction
+of the proposed route, not a claimed refutation of all higher-drift curvature
+inequalities or a classification of every potential.
+
+Use the existing actual finite Fourier generator L e_n=-|n| e_n and real
+transport T=-sin(2 theta)*d/dtheta, corresponding to V=-cos(2 theta)/2 with
+drift -V'. `transportTwo_synthesis` verifies this realization, and the single
+action is T e_n=(n/2)(e_(n-2)-e_(n+2)). Product and reflection compatibility
+prove that Gamma1 is unchanged. `second_correction` uses the ORIGINAL recursive
+firstGamma/secondGamma definitions to identify the exact drift correction,
+rather than substituting a proposed covariance matrix for the generator.
+
+Writing Delta_n=Gamma2_(L+T)(e_n,e_n)-Gamma2_L(e_n,e_n), Lean proves
+Delta_1=(e_2+e_-2)/4 and Delta_2=e_2+e_-2, while Gamma1(e_1,e_1)=1 and
+Gamma1(e_2,e_2)=2. At theta0 this requires a scalar factor simultaneously
+equal to1/2 and1. `no_scalar_at_zero` proves impossibility even for a complex
+scalar; `no_pointwise_scalar` excludes an arbitrary complex-valued function
+of position shared by every test input. The explicit witnesses are BOTH in
+the positive-frequency finite core. No infinite-domain approximation is needed
+to refute this finite-core extension. No claim about a real-only restriction
+or completed semigroup for this new drift is inferred.
+
+Independent exact-rational arithmetic implements convolution, reflection,
+the generator and BOTH Gamma recursions separately. All63 cases r=1..7,
+n=1..9 match Delta_n=(n*min(n,r)/4)(e_r+e_-r). This general formula is TESTED,
+NOT a Lean theorem at this checkpoint. It indicates the low-frequency crossing
+of zero as a concrete mechanism to investigate, rather than extrapolating the
+first-harmonic scalar factor. The potential classification and valid nonscalar
+curvature bounds remain open; no literature novelty claim is made.
+
+Full6847-job root build61.153s; complete51518-declaration transitive axiom audit
+75.319s, whitelist unchanged. All24 public types,20 proofs and4 definitions
+reviewed unabridged; no new instances or option changes. Independent Lean checks
+and final source/commit/private closure are recorded below after completion.
+Failed scratch1–4 are elaboration/simplification/type-annotation repairs, not
+mathematical counterexamples or changed hypotheses. In particular the final
+coefficients explicitly use complex scalar multiplication. Original manuscript
+bytes are preserved. Both full manuscript repairs remain OPEN; Bakry1 stays
+ACTIVE and all later campaigns retain their gates. Evidence `.lake/stardust-1597-*`.
+
+Final local gates1597: three independent Lean checks passed first run34.694s:
+the first-harmonic pointwise scalar function still exists; the new transport
+preserves every Hermitian finite Fourier polynomial; its synthesized action at
+theta=pi/4 has the correct minus-derivative normalization. All three proofs read.
+Source2668/config3/archive113 exact hashes passed, including the only permitted
+source delta (new leaf plus root import and audit registrations). Full build,
+audit and independent checks ran serially. Style warnings remain visible; no
+compiler, resource, trust or toolchain changes. Local gates complete; exact Git
+receipt and guarded BOTH-private synchronization follow, without a queue change.
