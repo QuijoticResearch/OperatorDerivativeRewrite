@@ -1,5 +1,48 @@
 # Bakry Objective2 — curvature/covariance audit
 
+## Checkpoint1620: finite Fourier heat squares and the sharp obstruction
+
+`Foundation/FiniteHeatSquarePositivity.lean` defines the finite Fourier
+diagonal heat action with mode multiplier `exp(−tψ(k))`. The exact
+`heat_square_energy` identity identifies its physical synthesis on an
+algebraic square `reflection f * f` with the complex quadratic energy of
+the finite Schoenberg matrix. Thus, for every covariance symbol, every
+`t≥0`, every finite Fourier polynomial and every spatial point,
+`heat_square_nonnegative` proves that the heat image of the square is real
+and nonnegative. This is a genuine pointwise trigonometric-polynomial
+statement, strengthening checkpoint1619's matrix assertion on the finite
+core; it reuses the previously verified reflection, synthesis, complex
+energy and finite Schoenberg theorems.
+
+The converse failure is equally concrete. At the spatial origin, real
+coefficients identify the heat-square value with the exponential matrix
+energy. A positive conditional-negative-type violation on a three-frequency
+zero-sum vector therefore yields a **negative pointwise heat image** at
+some positive time. For the mixed stable symbol with `a_j≥0`, `γ_j>0`,
+every positive-weight coordinate above exponent two has the explicit
+three-frequency polynomial with coefficients `(1,−2,1)` whose square becomes
+negative under the finite heat action. Under the exact active-axis condition
+`a_j>0 → γ_j≤2`, all finite Fourier squares have nonnegative heat images.
+The zero-weight superquadratic exception remains valid. These are standard
+Fourier/Schoenberg consequences, not a novelty claim.
+
+The finite algebraic heat action is not yet identified with a positivity-
+preserving extension of the completed Haar-L² semigroup. The theorem does
+not supply a convolution probability measure, Lévy process, pointwise
+positivity for every nonnegative trigonometric polynomial via a verified
+sum-of-squares theorem, a Markov kernel, or a Bakry curvature/entropy bound.
+The physical torus/core bridge and exact completed generator domain are
+separate verified results; the positivity transfer beyond squares remains
+open. Original manuscripts remain byte-for-byte unchanged.
+
+Verification: complete6870-job incremental root build, full52028-declaration
+transitive axiom audit with only `propext`, `Classical.choice` and
+`Quot.sound`; all9 public types,8 complete proofs,1 definition and5
+independent Lean checks reviewed. Source2690/config3/archive113 hashes match
+the exact baseline and manuscript inventory. Final-source full build41.42s,
+audit59.35s, independent checks34.21s. Exact Git commit, receipt and guarded PRIVATE
+backup follow; this is not an Objective2 stopping checkpoint.
+
 ## Checkpoint1619: finite Schoenberg equivalence and exact heat threshold
 
 `Foundation/FiniteSchoenberg.lean` proves a complete finite-matrix bridge for

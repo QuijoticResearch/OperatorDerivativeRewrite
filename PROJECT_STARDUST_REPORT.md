@@ -53012,3 +53012,27 @@ Full6861-job build; complete51843-declaration standard-three-axiom audit;
 Source2682/config3/archive113 hashes exact, manuscripts unchanged. Exact
 commit/receipt and guarded PRIVATE backup follow. The detailed theorem and
 obstruction ledger is `STARDUST_BAKRY_CURVATURE_COVARIANCE_AUDIT.md`.
+
+## Checkpoint1620 — finite Fourier heat-square positivity and sharp failure
+
+Bakry Objective2 continues. `Foundation/FiniteHeatSquarePositivity.lean`
+now defines the diagonal heat action on finite Fourier polynomials and proves
+its synthesized value on `reflection f * f` equals the finite Schoenberg
+complex matrix energy. Covariance symbols therefore send every such
+square to a real nonnegative value at every spatial point and nonnegative
+time. A three-frequency positive symbol-energy violation instead gives a
+square whose heat image is negative at some positive time. In particular,
+every active mixed-stable axis with exponent greater than two has this
+pointwise witness; the active-axis bound at most two gives positivity on all
+finite squares. This links the checkpoint1619 matrix criterion to the
+physical finite Fourier synthesis, with a sharp explicit obstruction.
+
+This does not yet prove a Markov or convolution semigroup on completed Haar
+L², positivity on all nonnegative trigonometric polynomials, a stochastic
+process, or a Bakry curvature/entropy inequality. The reference point is
+the classical Schoenberg theorem already cited in the Bakry audit. All
+ResearchSources bytes remain unchanged. Full6870-job build, complete52028-
+declaration whitelist-only transitive axiom audit, all9 public types/8
+proofs/1 definition and5 independent checks passed; source2690/config3/
+archive113 hashes matched. Exact commit, receipt and guarded PRIVATE backup
+follow. Objective2 remains active.
