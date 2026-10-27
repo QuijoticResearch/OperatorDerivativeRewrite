@@ -1,7 +1,7 @@
 # Project Stardust — Bakry–Émery Objective 2
 ## Curvature–Covariance Correspondences Across Stochastic Processes
 
-**Status:** QUEUED — Do not activate until Bakry–Émery Objective 1 is completed and verified.
+**Status:** ACTIVE — User-authorized transition on October27,2026 at fully locally audited checkpoint1601. Objective1 is deferred/incomplete, with all open obligations preserved. See the authoritative transition in STARDUST_CAMPAIGN_QUEUE.md. The former Objective1-completion prerequisite is superseded as scheduling only; workday private-backup deferral remains in force.
 
 ### Research objective
 

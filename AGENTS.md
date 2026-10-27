@@ -1,3 +1,40 @@
+# Authoritative transition — October27,2026: Bakry Objective 2 ACTIVE
+
+The user directed: "move onto objective 2 when conveient". The natural transition
+point is fully locally audited checkpoint1601,
+1c24b02c1564db3398db36242ec6a60dd6b1d492. Its complete6851-job build,
+51672-declaration transitive axiom audit,29 public types/22 proofs/7 definitions
+and five independent checks passed; source/config/archive integrity and exact
+commit approval are recorded. Remote backup is QUEUED under the workday policy,
+not verified; that policy explicitly permits continued research and transitions.
+
+ACTIVE: Bakry–Émery Objective 2, curvature–covariance correspondences, under
+STARDUST_BAKRY_CURVATURE_COVARIANCE_QUEUED_RESEARCH.md. Begin with theorem-level
+reuse and sign/domain audits; preserve all six deliverables and literature,
+novelty, verification and obstruction requirements in that brief.
+
+Objective 1 is DEFERRED/INCOMPLETE at checkpoint1601, not declared completed.
+Retain BOTH original manuscript repairs and every unresolved obligation in
+STARDUST_BAKRY_FBM_AUDIT.md: pointwise versus integrated Gamma extensions,
+drifted maximal/full-L2 and unsmoothed-core domains, sharp entropy constants,
+remaining spectral/path-space claims and manuscript consolidation. Reuse or
+resolve these when directly needed by Objective2, without erasing their status.
+The drift-free Haar L2 fractional semigroup, exact generator domain and finite
+Fourier graph core ARE verified; they do not settle those different claims.
+
+This user-authorized scheduling change supersedes earlier Objective1-ACTIVE
+labels and the requirement to complete Objective1 before activating Objective2.
+It does not certify either manuscript or weaken any mathematical hypothesis.
+IBM1562 remains frozen/incomplete; pseudoprocess1293 remains frozen. After
+Objective2's verified stopping checkpoint, retain the existing Yang–Mills audit,
+Cauchy, iterated pseudoprocess, A(2)/RH, fractional diffusion, black noise, AI,
+generalized Cauchy/stable and Hermite-process queue. No expiration date.
+Preserve all full-build/axiom/type/proof/independent/source/ledger/Git/exact-receipt
+and guarded BOTH-private-backup requirements. ResearchSources stays read-only.
+Historical records below are preserved; this heading controls scheduling only.
+
+---
+
 # Bounded IBM rematch stopping checkpoint1562 — return to Bakry after closure
 
 The October26 Astra IBM reassessment has reached its bounded proof/audit result.

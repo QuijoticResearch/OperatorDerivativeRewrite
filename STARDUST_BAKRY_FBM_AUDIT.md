@@ -2724,3 +2724,17 @@ ResearchSources preserved read-only. Both manuscript repairs remain incomplete.
 Local exact commit/receipt follow; REMOTE SYNC QUEUED during weekday09–17
 America/New_York. No remote backup claimed for this checkpoint; existing guarded
 scheduler remains responsible for eligible synchronization to both private refs.
+
+
+## October27 user-directed transition to Bakry Objective2
+
+At the natural fully audited checkpoint1601 (1c24b02c1564db3398db36242ec6a60dd6b1d492),
+the user requested moving to Objective2 when convenient. Objective2 is now ACTIVE;
+Objective1 is DEFERRED/INCOMPLETE. Its remaining manuscript, pointwise/integrated
+Gamma, drifted domain/core, sharp entropy and spectral/path-space obligations
+are preserved, not silently discharged. The exact fractional Haar L2 generator
+and finite Fourier time-core results remain verified. All later queue priorities
+and mathematical verification requirements are unchanged. Instruction-only update:
+no Lean, configuration or manuscript bytes changed; the1601 source/config audit
+hashes remain exact. Both1600/1601 and this instruction update require guarded
+private synchronization; restricted-hour status is QUEUED, never backed up.
