@@ -50214,3 +50214,60 @@ Next: remaining primary tensor/curvature domain qualifications and spectral,
 determinant/volume, completed-semigroup and invariant-measure/entropy claims.
 Preserve all earlier counterexamples, source bytes and full queue. IBM remains
 deferred/incomplete1547; no campaign transition or reflection session admitted.
+
+
+## Checkpoint1558 — actual complex ellipsoid volume correction
+
+Bakry Objective1 ACTIVE; both primary audits remain INCOMPLETE. Primary2
+`bakry_emery_revised_v8 (2) (2).tex`, cor:volume/eq:volume-ratio, lines1441ff,
+claims sqrt(det M) for Gamma coefficient ellipsoids on T_N^+. Its proof is
+the real N-dimensional ellipsoid formula, whereas its Fourier coefficients are
+complex. A domain qualification is essential, independently of the previously
+refuted componentwise contraction claim. Preserve that earlier obstruction.
+
+`Foundation/ComplexGammaEllipsoidVolume.lean` now proves actual Lebesgue volume
+identities, not merely a determinant calculation. `matrix_preimage_volume`
+reuses Mathlib's invertible-matrix measure pushforward. `realDouble_det` and
+`realDouble_preimage_volume` prove that applying the same real matrix to real
+and imaginary coordinates squares its real determinant and volume Jacobian.
+All measurability and nonzero determinant assumptions are explicit.
+
+For two complex modes, the actual covariance Gram matrices are
+R=[[1,1],[1,2]], P=[[1,1],[1,4]], identified with existing H=1/2 covariance
+and its entrywise square by `gram_first_actual`/`gram_second_actual`.
+The real/imaginary Gram energy equals the squared norm after the triangular
+map [[1,1],[0,r]] on each component. At r=1 and sqrt(3), respectively, the
+resulting closed ellipsoids have volumes V and V/3. V is proved finite and
+strictly positive by enclosing the sum-of-squares region between actual balls.
+`cauchy_complex_volume_ratio` gives ratio3; `cauchy_complex_volume_not_real_formula`
+proves it is NOT sqrt(3). This is a rigorous two-mode counterexample to using
+the real exponent on the full complex coefficient space. The original real
+ellipsoid proof remains valid on an explicitly chosen real coefficient slice;
+our general measure theorem records the dimensional distinction without
+asserting a new all-N spectral/ellipsoid theorem.
+
+Interpretation is precise: fixed-point coefficient Gram ellipsoids (e.g. at
+phase0), as used by the manuscript's matrix argument. If Gamma<=1 means a
+simultaneous bound at EVERY torus point, the resulting intersection is a
+different set and the manuscript's ellipsoid argument does not establish its
+volume. Neither integrated-energy volume, semigroup contraction nor a dynamical
+rate is inferred. No complex tensor completion or new novelty claim is made.
+
+Verification: full6802-job root build43.721s; complete50718 safe transitive
+axiom audit41.570s, whitelist propext/Classical.choice/Quot.sound only; all26
+public types,20 proofs and6 definitions reviewed unabridged. Four independent
+Lean checks24.466s cover actual Gram determinants, another scale, negative
+orientation and tail cancellation.1875 exact rational four-coordinate tests
+check complex Gram/tail-square energies for squared scales1,3,4. No sorry,
+axiom, new resource/trust/toolchain/linter setting or local instance. One existing
+style gate reports a long source line; no mathematical error is suppressed.
+2629 Foundation/root hashes frozen, configuration3 and source archive113 intact.
+Evidence `.lake/stardust-1558-{working-checkpoint,verification}.json`, complete
+build/audit/independent logs and independent-exact.json. Local gates PASS;
+exact commit receipt and guarded BOTH-private-ref verification follow. This
+pre-commit record does not assert remote closure before terminal verification.
+
+Next: remaining spectral/determinant asymptotics and completed semigroup,
+invariant-measure/nonlocal entropy claims; do not repeat the resolved complex
+volume mismatch. Preserve both primary manuscripts, all prior repairs and
+counterexamples. No queue transition, new campaign, or reflection admitted.
