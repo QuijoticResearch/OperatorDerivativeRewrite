@@ -52361,3 +52361,66 @@ intact; ResearchSources unchanged. No resource/trust/hypothesis changes.
 Details in STARDUST_BAKRY_FBM_AUDIT.md; evidence `.lake/stardust-1599-*`.
 Local gates complete; exactcommit receipt and guarded private closure follow.
 Queue and campaign priorities remain unchanged.
+
+## Checkpoint1600 — actual Haar L2 Fourier graph core (October27)
+
+The renewed source audit separates three different assertions. Primary2 lines
+337–345 concern the DRIFT-FREE multiplier -|n|^gamma on normalized Haar L2;
+lines1264–1266 concern a union of positive-frequency FINITE polynomial spaces.
+Neither is the drifted Feller generator on C(Circle,C). The existing
+CauchyPoissonSmoothedCore.smoothedPairs_closure is a product-SUPREMUM-norm
+closure for time-averaged inputs to that different generator. It cannot certify
+these L2 assertions by relabeling the space, generator, or topology. Conversely,
+a drifted unsmoothed-core theorem is not a prerequisite for the drift-free
+multiplier's L2 graph-core assertion. This corrects the overly aggregated
+remaining-obligations labels in earlier entries without rewriting them.
+
+Foundation.FractionalFourierGraphCore reuses Mathlib's actual fourierBasis and
+fourierBasis_repr on AddCircle 1 with probability Haar measure. The angular
+normalization is theta=2*pi*x; the stated symbol is -|n|^gamma (not the
+unit-period spatial Laplacian symbol -(2*pi*|n|)^gamma). `actual_fourier_graph`
+identifies the graph equation with integral Fourier coefficients of actual L2
+functions. No abstract sequence-only replacement of the ambient space occurs.
+
+For ANY complex diagonal symbol a(n), `graph_closed` and `graph_unique` prove
+closedness and single-valuedness. `graph_domain_iff` gives the exact maximal
+coefficient-domain condition: (a(n)*fhat(n)) belongs to l2. `truncation_graph`
+shows simultaneous finite Fourier truncations remain in that exact graph;
+`truncation_tendsto` gives norm convergence of both components along the directed
+net of ALL finite subsets of Z. `finite_graph_closure` proves equality of the
+closure of the finite-input graph with the full coefficient graph.
+`fractional_graph_core` specializes this to -|n|^gamma. This is the unsmoothed
+actual L2 multiplier graph core; it is not merely density in the ambient norm.
+
+Limits: time-derivative identification with the exponentially damped semigroup
+is not yet proved here. No drifted maximal-domain/unsmoothed-core result, pointwise
+Gamma continuity, sharp entropy constant, path-space theorem or completion of
+either manuscript follows. In particular, L2 graph convergence alone does not
+justify passing to pointwise Gamma inequalities involving products. The
+positive-frequency span is not the whole L2 core; the independent constant-mode
+test checks even its algebraic exclusion. A closure/density obstruction would
+add continuity of that coefficient functional, not claim that algebraic
+exclusion alone establishes nondensity. No novelty claim.
+
+The most direct next obligation is the actual diagonal contraction semigroup
+and its exact norm-derivative domain, using this maximal graph and existing
+spectral infrastructure. Keep this distinct from the drifted Cauchy domain and
+from higher-order/pointwise curvature limits. Bakry1 ACTIVE; IBM1562 and
+pseudoprocess1293 frozen. Both primary repairs remain incomplete.
+
+Verification: full6850-job root build43.173s; complete51621-declaration safe
+transitive axiom audit45.460s (only propext, Classical.choice, Quot.sound).
+All18 unabridged public types,11 full proofs,7 definitions/abbreviations reviewed;
+no new local instances or settings. Four independent Lean checks passed24.460s:
+constant mode for gamma>0, negative-frequency quadratic-symbol sign/normalization,
+assembled simultaneous finite-graph convergence, and exclusion of the constant
+from the strictly positive-frequency algebraic span. First independent run
+failed only numeral normalization; repaired without modifying production proofs.
+Scratch1–4 namespace/coercion/evaluation elaboration errors were repaired by
+using the actual Hilbert-basis inner-product identities; scratch5 and6 passed.
+All failed logs retained, none asserted to be a mathematical obstruction.
+Source2671/config3/archive113 hashes match the approved delta and inventory;
+original manuscript bytes preserved. No compiler/resource/trust changes.
+Exact local commit and approval follow. REMOTE SYNC QUEUED during weekday09–17
+America/New_York; no claim of a private backup of this new checkpoint until
+both remote refs are actually verified. Existing guarded scheduler retained.
