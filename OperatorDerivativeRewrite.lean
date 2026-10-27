@@ -2632,3 +2632,4 @@ import Foundation.PhysicalHeatCompoundPoisson
 import Foundation.PhysicalHeatCompoundPoissonAtom
 import Foundation.PhysicalHeatCompoundPoissonChainGamma
 import Foundation.YMBlockHeatContractionObstruction
+import Foundation.YMContinuumCorrelationScaling

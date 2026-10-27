@@ -53393,3 +53393,23 @@ The follow-on root build passed 6889 jobs; the complete axiom audit passed
 rational kernel check passed. Full public-type/proof and source-integrity
 review passed. Checkpoint1640 records this narrower transfer-proof audit,
 not a continuum mass-gap conclusion.
+
+### Yang–Mills physical-distance scaling check
+
+The block-transfer manuscript measures decay in block-lattice distance but
+calls its continuum rate physical without an explicit lattice-spacing
+conversion. `Foundation/YMContinuumCorrelationScaling.lean` proves that a
+uniform `Cq^n` bound, `q<1`, forces the connected correlation of uniformly
+bounded raw observables to vanish as the number of blocks at fixed physical
+separation diverges. It also proves that unit-cross-covariance normalization
+cannot keep another variance bounded when the raw cross covariance decays
+that way and the raw variance stays bounded below. The longer manuscript's
+two-point normalization is algebraically valid, but its `Z(a)` growth and
+uniform moment/tightness claims need to be checked against these bounds.
+Scale-dependent amplitudes or renormalized observables are outside the
+theorems and may change the conclusion. This is a conditional consistency
+test, not a proof that any Yang–Mills continuum theory is trivial.
+The 6890-job full build and 52276-declaration complete transitive axiom
+audit passed; all three new theorem types/proofs, two independent Lean
+examples and source/config/archive integrity were reviewed. This is
+checkpoint1641's exact conditional continuum-scaling test.
