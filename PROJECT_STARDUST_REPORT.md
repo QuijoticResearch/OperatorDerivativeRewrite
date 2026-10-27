@@ -50158,3 +50158,59 @@ Fivefile checkpoint: newmodule,root,axiomlist,ledger,Bakryaudit. Commit/exact
 receipt/guarded BOTHprivate-ref verification follow; no backup is preclaimed.
 Next substantive audit: other remaining domain/spectral/semigroup claims,
 using this finite repair and preserving the distinct invariant-measure question.
+
+
+## Checkpoint1557 — actual Gaussian chaos realization of finite stable Gamma
+
+Bakry Objective 1 remains ACTIVE; both primary manuscript audits remain incomplete.
+Primary1 `bakry_emery_part2_v3 (1).tex`, definitions tensor/lift and
+lem:gram/thm:realization/thm:tensor (452–598), uses a real tensor domain with
+complex phase coefficients. The real Gram identity is valid; complex coefficients
+require a specified complexification or a real Hilbert realization of both parts.
+
+`Foundation/FractionalGammaChaosRealization.lean` provides the latter explicitly.
+For actual Gaussian directions h_i, define W_n(h)=wick(h,n)/sqrt(n!). Its inner
+product is <h_i,h_j>^n. Real finite sums lie in chaos sector n; distinct sectors
+are orthogonal. Complex coefficients are represented by their real and imaginary
+sums in PiLp 2, whose norm is the sum of squared component norms, not a sup norm.
+Using actual FractionalGaussianProcess directions, 0<H<1, and nonnegative times
+t_i matching the first integer frequency coordinate, `actual_gamma_realization`
+identifies the FULL complex synthesized Gamma_n for stable order 2H with the
+real squared norm of this representative. All n>=0 and finite complex coefficient
+families are covered, including dependent/zero directions. No injectivity assumed.
+
+`complexLift_one_derivative_energy` identifies order-one energy with the sum of
+the actual deterministic adjoint derivative energies of the two components.
+`higherLift_deterministic_derivative` proves this adjoint annihilates every other
+sector. It is not the full random-field Malliavin derivative. The unit-direction
+second-Wick norm is 2 before normalization and 1 after it. This factorial is
+needed for the NEW Wick realization; it is not a missing factor in the original
+tensor Gram identity, which does not use Wick polynomials.
+
+No completed complex tensor-product isometry, stable/Gaussian OU generator
+identification, arbitrary signed-time fBM realization, new covariance law,
+optimal curvature, invariant measure, semigroup or entropy theorem is claimed.
+This is direct reuse of existing Gaussian Wick, actual fBM, finite Gamma and
+adjoint machinery supporting the primary manuscript audit, not early activation
+of the queued Hermite-process campaign. No novelty claim is made.
+
+Verification: full root6801 jobs39.579s; complete50684 safe-declaration transitive
+axiom audit39.858s, only propext/Classical.choice/Quot.sound. All21 public types,
+17 proofs and4 definitions/abbreviations reviewed unabridged; no private proof,
+new option, local instance, sorry or axiom. Five independent Lean checks26.434s
+cover imaginary coefficients, zero directions/order zero, quadratic adjoint
+failure, duplicate-direction cancellation and cross-order orthogonality.
+539 independent exact rational bivariate Gaussian moment tests through order6
+include negative correlation, singular covariance and unequal variances.
+2628 Foundation/root sources frozen; configuration3 and archive113 verified.
+Primary hashes remain CA06321B1CB426DCAC9BCFE891AB89AF80EEE0BC8B108D1D9741C4059FACD3D7
+and53B29C9365C037FEE4F9367C7EFDC4F1C2F30076F8085EFB4DAECFA694B9006D.
+Evidence: `.lake/stardust-1557-{working-checkpoint,verification}.json`, complete
+full-build/audit/independent logs and independent-moments.json. Local gates PASS;
+exact commit receipt and guarded BOTH-private-ref synchronization follow this
+entry; never infer remote closure from this pre-commit record alone.
+
+Next: remaining primary tensor/curvature domain qualifications and spectral,
+determinant/volume, completed-semigroup and invariant-measure/entropy claims.
+Preserve all earlier counterexamples, source bytes and full queue. IBM remains
+deferred/incomplete1547; no campaign transition or reflection session admitted.
