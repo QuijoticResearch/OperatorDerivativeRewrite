@@ -51774,3 +51774,73 @@ strong convergence at a Dirac initial law. Strong forward density-domain and
 jump-Bregman production identifications, sharpLSI2/kappa, uniform small-time
 rate, fullL2 domain transfer, unsmoothed Fourier core, pathspace and BOTH
 manuscript repairs remain OPEN. All earlier verified positive results survive.
+
+## Checkpoint1584 — averaged-law adjoint pairing and strong orbit regularization
+
+Bakry Objective1 ACTIVE; all queue and frozen-campaign boundaries unchanged.
+This is a constructive continuation of1583's initial-point-mass obstruction.
+Reuse the actual closed generator, integralOperator, integrated graph and orbit
+regularization; do not build another abstract adjoint framework.
+
+`Foundation/CauchyPoissonDualAverage.lean` defines one bounded complex functional:
+
+    averageDual(T,phi) = (1/T) phi compose integralOperator(T).
+
+For T>0 this is the normalized orbit average. `average_actual_law` identifies
+its value for phi=lawFunctional(mu), EVERY probability mu and continuous complex
+observable f, with (1/T) integral_0^T integral f d(K_s mu) ds. These are actual
+law expectations with justified interval-integral interchange. A separate
+measure-valued average or Radon--Nikodym density is not constructed here.
+
+`average_adjoint_pairing` proves, for EVERY pair(f,g) in the FULL closed
+generator graph and T>=0:
+
+    averageDual(T,phi)(g) = ((dualOrbit(T,phi)-phi)/T)(f).
+
+The right-hand side is an explicit bounded complex functional, giving exactly
+the transposed-generator pairing on the original full domain, not merely on
+Fourier polynomials. The T=0 expression uses Lean's inverse-zero convention and
+is zero; normalization and continuity estimates below require T>0.
+`average_weak_limit` proves recovery of phi against each observable as T->0+.
+It does NOT assert convergence in the norm of the dual.
+
+`integral_commutes` and `integrated_shift_bound` reuse the actual semigroup and
+shifted orbit-integral identity. Removing the common interval leaves a tail
+minus a head, each controlled by t*norm(f). Thus `average_strong_bound` proves
+for every t>=0, T>0 and bounded phi:
+
+    norm(dualOrbit(t,averageDual(T,phi))-averageDual(T,phi))
+      <= (2t/T) norm(phi).
+
+`average_strong_right` gives strong right continuity of the averaged orbit.
+This works even when phi is an initial point-mass functional, whose unaveraged
+orbit fails norm continuity by1583. The bound degenerates as T->0+, preserving
+that obstruction. No strong time derivative of the averaged orbit is asserted:
+a bounded transpose value and strong orbit continuity alone are not identified
+with a strong derivative here. This is standard averaging regularization applied
+to the actual verified model, with no novelty assertion.
+
+Full6833-job build46.775s; complete51281-safe-declaration transitive audit50.739s,
+only propext/Classical.choice/Quot.sound. All9 public types,8 full proofs,1
+definition reviewed; zero local instances added. Four independent Lean checks
+passed30.109s: averaged strong continuity alongside raw Dirac failure; exact
+normalization on1; an actual-law bounded transpose witness for EVERY graph pair;
+and norm contraction of averageDual. First test run29.687s failed solely because
+an extra ring tactic followed an already-complete field_simp proof; production
+was unchanged. Scratch repairs used explicit real scalar restriction for a
+complex CLM, explicit interval measure and limit basepoint. All failures retained.
+The source keyword check initially matched English 'admit' in the sole module
+documentation block; it now excludes that explicitly counted single non-nested
+comment while scanning all code unchanged. The complete transitive Lean audit
+remains unchanged. No proof/error suppression, trust, toolchain or resource change.
+Sources2655/config3/archive113 integrity PASS. Original manuscripts and unrelated
+drafts untouched. Evidence `.lake/stardust-1584-*`; local gates PASS; exact commit
+receipt and guarded BOTH-private-ref closure follow.
+
+NEXT prioritize concrete measure/density realization and positive-time forward
+domain/entropy-production links. Do not mistake this functional regularization
+for that missing density identification or repeat generic averaging foundations.
+Strong forward-density domain, jump-Bregman production, sharpLSI2/kappa, uniform
+small-time rate, fullL2 domain transfer, unsmoothed Fourier core, pathspace and
+BOTH manuscript repairs remain OPEN. Earlier law regularization, entropy limits,
+weak Kolmogorov equations, backward production and Dirac counterexamples survive.
