@@ -50029,3 +50029,132 @@ repaired it. No resource/trust/toolchain/linter changes or error suppression.
 All local gates passed .lake/stardust-1555-verification.json; fivefile commit,
 exact receipt and guarded BOTH-private-ref verification follow. Remote backup
 is not preclaimed. No other campaign or manuscript modified.
+
+## Development1556 — exact drift IBP and signed-frequency free gap
+
+The positive repair of1555 is underway in .lake/stardust-1556-centered-energy.lean.
+Serialized standalone Lean terminal14255 exit0, log1556-free-gap2, October26
+approximately20:18 Eastern. All draftproofs read; no Foundation/root adoption
+or checkpoint certification yet. Original manuscripts untouched.
+
+Existing actual Fourier derivative/trace cancellation, CauchySineDrift,
+FiniteFourierTorusAverage and BrownianEnergyRepair.Torus.axisWave were reused.
+The drift multiplier b=-sin(x0) has derivative -cos(x0). The total derivative
+of b*f^2 yields exact trace IBP. More importantly, cut_derivative_zero and the
+EXISTING actual circle integral prove `circle_drift_energy` for every finite
+complex Fourier f and real r:
+
+ -average[f(Af+rTf)] = -average[f Af] - (r/2)average[cos(x0) f^2].
+
+Here A=-|D0|, T=-sin(x0)d/dx0; the identity is bilinear, and real f will be used
+for coercivity. No invariant measure or chain rule assumption is introduced.
+Actual fiberwise circleAverage is used, not a purely formal assigned trace.
+
+`axis_inner` and `axis_parseval` now prove actual circle orthogonality for EVERY
+finite injective family of SIGNED integer axis frequencies and complex
+coefficients, using existing gammaIter_finite at order0 rather than rebuilding
+Fourier integration. `axis_generator` identifies the actual Cauchy multiplier;
+`axis_free_energy` proves the weighted squared-coefficient formula.
+`axis_free_gap` bounds the actual L2 circle norm by actual free energy when
+EVERY frequency is NONZERO. It uses Int.one_le_abs, retains injectivity, and
+works for positive/negative/empty families. It is not an unrestricted3torus gap:
+transverse frequencies with k0=0 would violate that assertion.
+
+Still OPEN: bound the cosine-weighted real square term in the actual integral,
+combine with this gap for 0<=r<2, and explicitly construct/identify centering
+and variance. Do not claim the full centered Poincare repair already proved.
+No completed operator domain or invariant measure has been constructed.
+
+Initial draft elaborations required coefficient multiplication orientation,
+additive reassociation, and explicit Complex.ofReal around real absolute values.
+A missing space at absolute-value-close/multiply caused parser errors and
+Lean's derived recovery-sorry warning; the source contains no sorry and the
+final full draft passes with only two visible unused-style warnings. Failed
+logs retained, no resource/toolchain/trust settings changed or warnings disabled.
+No unfinished proof committed or backed up. Latest complete/private checkpoint
+remains1555 672d44c420162103685587bdd86e8148bccf3641. Bakry1 remains ACTIVE.
+
+### Development1556 continuation — centered finite-circle Poincare repair proved in draft
+
+Terminal78890 exit0, .lake/stardust-1556-centered-poincare2.log, October26
+approximately20:25 Eastern. Entire draft including all new proof bodies read.
+Actual-circle order comparison now follows from existing coordinate integrability,
+Complex.reCLM integration, positive normalization and intervalIntegral.integral_mono.
+The real cosine-square term is bounded by the actual square integral using
+cos<=1 and nonnegativity of a REAL square; realness is an explicit hypothesis.
+
+`real_axis_drift_coercive` combines that bound with the previously proved
+signed nonzero-frequency free gap, for EVERY nonnegative real amplitude r.
+`axis_circle_mean_zero` proves actual mean zero from the nonzero modes.
+`real_axis_poincare` gives the valid finite mean-zero inequality for0<=r<2.
+No claim that r<2 is sharp is made; the algebraic lower bound can be weaker
+than the optimal coercivity constant.
+
+Most importantly, `circleCenter` subtracts the ACTUAL normalized circle mean.
+`circle_shift_mean`, `circle_shift_square`, and `circleCenter_shift` identify
+centering and variance under arbitrary constants. `centered_axis_poincare`
+proves, for f=a+sum_i c_i exp(i n_i x), distinct NONZERO signed integer n_i,
+real a, real-valued synthesized nonconstant part, and0<=r<2:
+
+ Var_uniform(f) <= [-average((f-meanf)L_r(f-meanf))]/(1-r/2).
+
+All averages are actual circle integrals. The theorem quantifies over every
+finite injective nonzero frequency presentation and its stated realness/domain;
+it does not silently assert a general3torus or completed-domain gap. This is
+a genuine centered-energy REPAIR, not restoration of the refuted uncentered
+energy assertion. It neither constructs an invariant measure nor proves the
+semigroup gradient estimate or any log-Sobolev inequality. No novelty claim.
+
+Proof debugging: real-part CLM reduction required an explicit known rewrite;
+broad norm_num had rewritten cosine/synthesis inside one equality but not its
+comparison, repaired by targeted simp only. The shift-square proof needed
+algebraic synthesis conversion BEFORE distributing sums/scalars. No mathematical
+hypothesis was weakened; no resource/toolchain/trust/linter changes. Failed
+logs retained, final draft has only two visible unused-style warnings.
+
+Next: independent actual boundary/normalization/counterexample-compatibility
+checks, adopt the coherent repair module, then complete ALL root-build/transitive
+axiom/unabridgedtype/proof/source/Git/private gates. This draft is NOT yet a
+certified checkpoint. No Foundation/root edits or unfinished math commit.
+The certified/private baseline remains1555 672d44c. BakryObjective1 ACTIVE;
+both primary audits incomplete. ResearchSources remains untouched.
+
+## Checkpoint1556 — verified centered-energy Poincare repair
+
+Adopted Foundation/CauchyCenteredEnergy.lean:25public declarations,22proofs and
+3definitions. Exact circle drift IBP, actual signed-frequency Parseval/free
+energy, nonzero-mode gap and actual integral cosine-square bound now yield
+`centered_axis_poincare`. For an arbitrary finite injective NONZERO integer
+frequency family, a real-valued synthesized polynomial p, any real constant a,
+f=a+p and0<=r<2:
+ Var_uniform(f) <= E_r(f-mean_uniform f)/(1-r/2).
+All means and energies use the actual normalized circle integral; circleCenter
+subtracts that actual mean. The generator is the existing -|D0| plus real r
+times the actual sine transport. `real_axis_poincare` is its mean-zero form.
+The free gap is not asserted for arbitrary3torus inputs/transversezero modes.
+
+The original uncentered global energy assertion remains REFUTED by1555. The
+repair changes its domain/energy explicitly and does not construct an invariant
+measure, a completed generator domain, a semigroup gradient bound or entropy
+inequality. r<2 is a sufficient range, not a proved sharp threshold. No novelty
+claim or new campaign. Both required manuscript audits remain INCOMPLETE.
+
+Full6800job rootbuild40.856s; complete50649safe-declaration transitiveaxiom audit
+40.821s, whitelistonly propext/Classical.choice/Quot.sound. All25publictypes read
+unabridged, all22proofs/3defs reread; no added privateproof/localinstance. Six
+independentLean proofs passed27.436s: center the old2+cos witness to cos, kill
+constants by centering, cos meanzero/positive centeredenergy, emptyfamily and
+zero-mode gap obstruction. Exact Fraction Laurent arithmetic passed405 shifted
+multi-mode cases/amplitudes through199/100, retaining24 failures of uncentered
+bound. This finite numerical sample supplements, not replaces, the quantified
+Lean proofs. Test bodies/code read. No test failure in final adopted module.
+
+Frozen2627Foundation/root sources, config3 and all113archive paths/hashes
+verified. No original manuscript/toolchain/resource/trust change. Two unused
+scratch tactics were removed before the fullbuild; linter checks unchanged.
+Copied verifier count substitutions were inspected/corrected BEFORE successful
+verification; no gate weakened. Local evidence .lake/stardust-1556-verification.json.
+Fivefile checkpoint: newmodule,root,axiomlist,ledger,Bakryaudit. Commit/exact
+receipt/guarded BOTHprivate-ref verification follow; no backup is preclaimed.
+Next substantive audit: other remaining domain/spectral/semigroup claims,
+using this finite repair and preserving the distinct invariant-measure question.

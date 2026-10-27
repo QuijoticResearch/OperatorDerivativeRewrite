@@ -283,3 +283,20 @@ Full6799job build,50610safe transitiveaxiom audit,17publictypes/15proofs/2defs,
 5independentLean tests and24exact rational tests passed;2626sources/config3/
 archive113 intact. Detailed logs/timing/receipt gates in ledger1555. Bothprimary
 audits INCOMPLETE. Preserve originals, fullqueue and all previous results.
+
+## Checkpoint1556: rigorous centered-energy repair of the drift Poincare claim
+
+Foundation/CauchyCenteredEnergy.lean proves exact actual circle drift IBP and
+finite signed-frequency free energy, then `centered_axis_poincare`:
+Var_uniform(a+p) <= E_r(p)/(1-r/2),0<=r<2, where p is explicitly presented by
+arbitrary distinct NONZERO integer modes and its synthesis is real. circleCenter
+is actual mean subtraction; the theorem uses E_r(center(f)), not E_r(f).
+All actual integration/normalization/injectivity/realness hypotheses are explicit.
+This is a valid finite-core correction to primary2 lines1173/1392;1555's
+uncentered counterexample remains valid. No3torus transversegap, sharpness,
+completed domain, invariantmeasure, semigroup or entropy conclusion is inferred.
+
+Full6800job build,50649safe transitiveaxiom audit, all25types/22proofs/3defs,
+6independentLean checks,405exact rational checks passed;2627sources/config3/
+archive113 intact. Exact receipt and guardedprivatebackup follow. Detailed
+scope/evidence/timings in ledger1556. Bothprimaryaudits incomplete; Bakry1ACTIVE.
