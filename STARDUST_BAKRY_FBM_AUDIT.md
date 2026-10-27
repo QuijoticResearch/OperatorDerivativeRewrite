@@ -2657,3 +2657,70 @@ original manuscript bytes preserved. No compiler/resource/trust changes.
 Exact local commit and approval follow. REMOTE SYNC QUEUED during weekday09–17
 America/New_York; no claim of a private backup of this new checkpoint until
 both remote refs are actually verified. Existing guarded scheduler retained.
+
+## Checkpoint1601 — exact fractional semigroup generator on Haar L2 (October27)
+
+Foundation.FractionalFourierSemigroup closes checkpoint1600's explicit missing
+time-generator identification. It reuses the actual Fourier Hilbert basis and
+maximal graph from1600, Mathlib lp.mapCLM (also used in the signed Fourier-path
+library), Parseval and dominated convergence of square sums. It does not import
+or reinterpret signed path expectations as probability kernels.
+
+For arbitrary nonnegative integer-indexed rates a(n), `evolution` is a bounded
+complex-linear map on actual probability-Haar L2(AddCircle1), with coefficient
+exp(-a(n)t). `contraction`, `evolution_zero`, `evolution_add` and
+`strong_continuity` give the actual strongly continuous contraction semigroup.
+The continuity proof uses a square-summable coefficient envelope, not the
+stronger and unnecessary absolute summability of the original coefficients.
+
+`slope` is the real positive-time difference quotient, embedded with complex
+scalar multiplication; t.toNNReal merely provides a total definition and is
+exactly t throughout the positive approach. `generator_iff` proves BOTH
+necessity and sufficiency: its norm limit is g iff ghat(n)=-a(n)*fhat(n) for every
+integer n. Necessity tests continuous coefficient functionals. Sufficiency uses
+| (exp(-a*t)-1)/t | <= a for a>=0,t>0, hence the error coefficients are bounded
+by 2*|ghat(n)| and dominated square-sum convergence applies on the EXACT domain.
+No finite-energy premise has been silently strengthened.
+
+For rates |n|^gamma, `actual_fourier_evolution` identifies the actual integral
+Fourier coefficients, `fractional_generator_iff` gives the generator graph,
+`fractional_generator_domain` gives the exact weighted-l2 condition, and
+`fractional_time_core` gives closure of the unsmoothed finite-input TIME-DERIVATIVE
+graph equal to the full time-derivative graph. This discharges the drift-free
+L2 core/generator identification in primary2lines337–345, with angular
+normalization theta=2*pi*x. No factor of2*pi is silently inserted into the symbol.
+
+Scope: spectral operator semigroup and exact generator domain. No positivity or
+Markov-kernel realization is asserted for arbitrary nonnegative rates, or for
+arbitrary gamma. In particular gamma0 under Real.rpow has rate1 at frequency0;
+the independent test checks constant-mode decay there. The fractional stable
+manuscript regime is0<gamma<2; gamma>0 preserves the constant mode. There is no
+claim that L2 graph convergence allows pointwise Gamma inequalities to pass to
+all domain elements. Drifted Cauchy domains, sharp entropy, pointwise curvature
+and remaining spectral/pathspace obligations remain distinct and open. Both
+primary manuscript repairs remain incomplete. No novelty claim.
+
+NEXT audit the precise finite-to-infinite Gamma assertion and its topology:
+identify whether the intended extension is an integrated energy/form inequality,
+a pointwise statement on a stronger common domain, or only a finite-core upper
+bound. Use existing StableGammaEnergyDecay and Fourier-domain machinery; do not
+conflate these possibilities or infer a jump-process LSI from a diffusion rule.
+Bakry1 stays ACTIVE, IBM1562/pseudo1293 frozen; queue unchanged.
+
+Verification: full6851-job root build41.641s; complete51672-declaration safe
+transitive axiom audit44.455s (only propext, Classical.choice, Quot.sound).
+All29 unabridged public types,22 full proofs,7 definitions/abbreviations reviewed;
+no new local instances/options. Five independent Lean checks passed24.144s:
+zero-rate identity on all L2, constant preservation for gamma>0, exact exclusion
+of norm derivatives outside the weighted domain, negative-frequency quadratic
+derivative, and gamma0 constant decay. Three earlier independent runs failed
+only subtype/coercion elaboration; explicit unfolding/normalization/reflexivity
+repaired them with production mathematics unchanged. Scratch1–3 and5–7 had
+positivity-goal, continuity tactic, cast/notation elaboration failures;4 and8
+passed. No failed compilation is presented as a mathematical obstruction.
+All failed logs retained. No settings/resource/trust/toolchain changes.
+Source2672/config3/archive113 hashes match the approved delta and inventory;
+ResearchSources preserved read-only. Both manuscript repairs remain incomplete.
+Local exact commit/receipt follow; REMOTE SYNC QUEUED during weekday09–17
+America/New_York. No remote backup claimed for this checkpoint; existing guarded
+scheduler remains responsible for eligible synchronization to both private refs.

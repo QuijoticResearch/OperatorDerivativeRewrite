@@ -2579,3 +2579,5 @@ import Foundation.CauchyHarmonicDrift
 import Foundation.CauchyRealHarmonicObstruction
 
 import Foundation.FractionalFourierGraphCore
+
+import Foundation.FractionalFourierSemigroup
