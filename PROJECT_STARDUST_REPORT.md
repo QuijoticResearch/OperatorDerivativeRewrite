@@ -53269,3 +53269,15 @@ continuous-time paths, positive Bakry curvature, or a spectral gap. See
 The full6883-job root build, complete52201-declaration transitive axiom audit,
 all seven public types and proofs/definition, five independent checks and
 exact source/configuration/archive integrity checks passed.
+### Checkpoint1634 — nonmonotone finite-time covariance
+
+For the ordinary quadratic torus heat symbol, the finite-time anchored
+Gamma matrices are PSD separately but need not increase with time in Loewner
+order. `Foundation/PhysicalHeatCovarianceNonmonotonicity.lean` verifies an
+explicit two-frequency witness at `log 2` and `2 log 2`, with difference
+energy `-16897/131072` on weights `(1,-2)`. This blocks an invalid route
+from covariance positivity to a time-monotonicity or curvature claim while
+preserving the exact physical heat-chain pairing. The full6884-job build,
+complete52221-declaration transitive axiom audit, all12 public types and
+proofs/definitions, six independent checks and source integrity passed. See
+`STARDUST_BAKRY_CURVATURE_COVARIANCE_AUDIT.md`.

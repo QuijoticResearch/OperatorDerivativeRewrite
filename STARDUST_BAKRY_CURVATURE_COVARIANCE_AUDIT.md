@@ -1225,3 +1225,29 @@ The full6883-job root build and complete52201-declaration whitelist-only
 transitive axiom audit passed. All seven unabridged public types, six theorem
 proofs, one definition and five independent tests were reviewed. Source,
 configuration and all113 research-archive hashes match the prior baseline.
+
+## Checkpoint1634 — finite-time covariance is not Loewner monotone
+
+`Foundation/PhysicalHeatCovarianceNonmonotonicity.lean` gives a concrete
+quadratic Brownian heat symbol on one torus coordinate, with frequencies
+`1` and `-2`. At times `s = log 2` and `t = 2 log 2`, the anchored Gamma
+matrices of `1 - exp(-s r)` and `1 - exp(-t r)` are individually PSD by
+checkpoint1633, but their difference is **not** PSD. The witness weights
+`(1,-2)` have exactly verified quadratic energy `-16897/131072` in the
+difference. A public existential theorem packages the normalized admissible
+rate, positive ordered times, and non-PSD two-by-two matrix.
+
+This refutes a tempting strengthening of finite-time covariance positivity:
+there is no general Loewner monotonicity in time. It does not refute the
+earlier pointwise-in-time PSD theorem or assert negative Bakry curvature;
+the standard quadratic heat generator itself supplies the counterexample.
+The mechanism is that a heat transition can redistribute Fourier interference
+among observed character combinations even while every time-slice covariance
+remains positive. No novelty is claimed for this elementary spectral
+phenomenon; the Lean declaration makes its exact hypothesis boundary usable.
+
+The full6884-job root build and complete52221-declaration whitelist-only
+transitive axiom audit passed. All12 unabridged public types, six theorem
+proofs, six definitions, four private supporting proofs and six independent
+checks were reviewed. Source/configuration and all113 archive hashes match
+the previous checkpoint. Exact Git approval and private backup close it.

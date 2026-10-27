@@ -2626,3 +2626,4 @@ import Foundation.PhysicalHeatChain
 import Foundation.PhysicalHeatChainMarginals
 import Foundation.PhysicalHeatChainGamma
 import Foundation.PhysicalHeatFiniteTimeCovariance
+import Foundation.PhysicalHeatCovarianceNonmonotonicity
