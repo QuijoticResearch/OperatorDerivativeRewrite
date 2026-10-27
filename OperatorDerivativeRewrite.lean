@@ -2599,3 +2599,5 @@ import Foundation.FourierGammaComplexCriterion
 import Foundation.AnisotropicStableGamma
 
 import Foundation.WaveDiagonalSemigroup
+
+import Foundation.WavePhysicalFourierBridge

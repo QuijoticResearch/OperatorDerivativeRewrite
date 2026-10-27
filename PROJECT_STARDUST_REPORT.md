@@ -52876,3 +52876,25 @@ and all113 archived-source hashes remain unchanged. The existing privacy,
 new-history secret scan, fast-forward atomic no-force push and exact remote
 checks remain required. Superseding instructions are at the top of
 `AGENTS.md`, `STARDUST_CAMPAIGN_QUEUE.md` and `STARDUST_SYNC.md`.
+
+## Checkpoint1612 — exact physical finite-torus Γ₁/energy bridge
+
+Bakry Objective2 ACTIVE. `Foundation/WavePhysicalFourierBridge.lean` proves
+actual normalized three-coordinate box-integral Parseval for every finite
+Fourier polynomial. For every real symbol, negative physical generator
+pairing is the exact coefficient-weighted energy; nonnegative rates make it
+nonnegative. With `a(0)=0`, actual integrated Γ₁ equals that generator
+energy. The mixed anisotropic stable symbol from1609 satisfies these
+hypotheses, connecting its covariance/Γ core to the physical torus integral
+and checkpoint1610's identical diagonal rate. A constant nonnormalized
+symbol `a≡1` on the zero mode gives Γ₁ average1/2 but generator energy1,
+refuting the unqualified identity. Five independent Lean tests include an
+odd normalized symbol, showing evenness was not used in this integrated
+identity. No completed physical Haar-L² semigroup, Markov process, graph-
+domain Γ, curvature constant, entropy or LSI follows yet.
+
+Full6861-job build; complete51843-declaration standard-three-axiom audit;
+13 public types,12 proofs,1 definition and5 independent checks passed.
+Source2682/config3/archive113 hashes exact, manuscripts unchanged. Exact
+commit/receipt and guarded PRIVATE backup follow. The detailed theorem and
+obstruction ledger is `STARDUST_BAKRY_CURVATURE_COVARIANCE_AUDIT.md`.

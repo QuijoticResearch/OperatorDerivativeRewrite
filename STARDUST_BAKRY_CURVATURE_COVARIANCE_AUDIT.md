@@ -469,3 +469,59 @@ committed results; no claim of remote verification is made here.
 NEXT link the coefficient semigroup to physical torus Haar L² and test
 Markov positivity independently, or exhibit a precise failure. Objective2's
 remaining deliverables and later campaign order are unchanged.
+
+## Checkpoint1612 — physical finite-torus Parseval and integrated Γ₁ energy (October27,2026)
+
+Objective2 ACTIVE. `Foundation/WavePhysicalFourierBridge.lean` links the
+three-coordinate finite Fourier calculus to the ACTUAL normalized iterated
+box integral from `FiniteFourierTorusAverage`. For any finite distinct
+frequency family, `box_inner` proves exact physical orthogonality and
+`box_parseval` proves its norm identity. The canonical support presentation
+`polynomial_support` removes that distinct-list hypothesis for arbitrary
+finite Fourier polynomials: `box_parseval_all` identifies the physical
+integral of `conj(synthesis f)*synthesis f` with the finite sum of coefficient
+moduli squared. This is a genuine integral, not a formal constant trace.
+
+For EVERY real symbol `a` and finite polynomial, `box_generator_energy_all`
+computes negative physical generator pairing exactly as
+`∑_{k∈support f} a(k) conj(f_k) f_k`. Nonnegative rates yield physical
+finite-core dissipativity. Under `a(0)=0`, the actual integrated first Gamma
+equals that generator energy (`box_gamma1_energy`). The anisotropic symbol from1609
+discharges normalization and nonnegative rate, so the physical Γ₁/energy
+identity and nonnegative real energy hold for every finite polynomial.
+Combining the 1609 covariance theorem additionally gives pointwise finite
+Γ_n positivity when `a_j≥0` and `0<γ_j<2`; the physical identity itself
+does not require the upper exponent bound or covariance PSD.
+
+The zero-normalization is mathematically material: the independent test
+uses constant symbol `a≡1` and the constant Fourier mode. Its integrated
+Γ₁ value is EXACTLY1/2, whereas its negative generator energy is EXACTLY1.
+Thus the unnormalized equality is false. No claim that `a(0)=0` is logically
+necessary for every possible symbol is made; this explicit counterexample
+shows the hypothesis cannot simply be omitted. Distinctness is required in
+the indexed finite-family formula because repeated frequencies combine
+coefficients; the canonical support theorem handles repetitions correctly.
+
+This bridge does NOT construct the completed physical Haar-L² torus,
+identify checkpoint1610's ℓ² semigroup with a physical-space operator,
+prove positivity preservation or a Markov/Lévy process, extend Γ to the
+maximal graph, or establish CD, entropy or LSI. Parseval and integrated
+Dirichlet identities are standard Fourier mathematics; no novelty claim.
+The exact cross-library reuse is `FiniteFourierTorusAverage.boxAverage_synthesis`,
+`FiniteStableGamma.Core.gammaIter_finite`, `FiniteFourierReality.synthesis_reflection`,
+and the 1609/1610 anisotropic symbols/rates.
+
+Five independent Lean checks covered arbitrary-polynomial Parseval, the
+normalized integrated identity for an odd real symbol (no symmetry premise),
+mixed anisotropic physical dissipativity, and both sides of the constant-
+symbol counterexample. Full6861-job root build44.7466709s; complete51843-
+declaration transitive axiom audit47.2580528s with only propext,
+Classical.choice and Quot.sound; all13 unabridged public types,12 full
+proofs,1 definition and5 independent proofs reviewed. Source2682/config3/
+archive113 hashes exact, ResearchSources unchanged, no local instances,
+options, sorry, admit or axioms. Exact commit/receipt and immediate guarded
+PRIVATE backup follow under the lifted intraday restriction.
+
+NEXT establish a rigorous physical Haar-L² Fourier identification and
+intertwining for the closed ℓ²(Z³) semigroup, then test Markov positivity
+and graph-domain Γ under exact hypotheses. Objective2 remains incomplete.
