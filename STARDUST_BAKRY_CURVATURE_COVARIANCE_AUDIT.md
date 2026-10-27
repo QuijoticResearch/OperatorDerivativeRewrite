@@ -955,3 +955,31 @@ Classical.choice and Quot.sound. All18 unabridged public types,16 full proofs,
 2 definitions,3 local instances and5 independent tests were reviewed.
 Source2693/config3/archive113 hashes matched; ResearchSources is unchanged.
 Exact commit, receipt and PRIVATE dual-ref verification follow.
+
+## Checkpoint1624 — conditional compactness limit for a transition law (October27,2026)
+
+`Foundation/PhysicalHeatTransitionLimit.lean` proves an exact measure-level
+reduction. Given a sequence of unit-energy finite Fourier polynomials whose
+square autocorrelation coefficient tends to one at every fixed wave number,
+the genuine heat-square probability measures from1623 have a weakly
+convergent subsequence. Every character expectation of its limit equals
+`exp(-t r(k))`. The proof uses compactness of probability measures on the
+compact torus, weak continuity of bounded complex character integrals, and
+the exact density-level Fourier identity from1623. It does not insert the
+desired Fourier moments as an assumption on the limit measure.
+
+The key premise, existence of a common normalized approximate-square
+sequence for **all** wave numbers, remains unproved. A uniform finite-box
+sequence on `Z³` should have the required autocorrelation/overlap ratio, but
+its finite-support combinatorics and limit have not yet been formalized.
+There is consequently no unconditional heat transition law, convolution
+semigroup, Markov kernel or stochastic process from this theorem. Uniqueness
+of a measure from its characters also remains to be verified for subsequent
+composition laws. This reduction is an application of classical compactness
+and harmonic analysis, not a novelty claim. Full6874-job root build and
+complete52119-declaration transitive axiom audit passed with only propext,
+Classical.choice and Quot.sound. The unabridged public type, full proof,
+three independent specializations and three local instances were reviewed.
+Source/config/archive integrity is checked against the previous exact
+checkpoint; ResearchSources is unchanged. Exact Git receipt and private
+dual-ref verification follow.

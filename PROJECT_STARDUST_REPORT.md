@@ -53106,3 +53106,17 @@ job build,52117-declaration safe transitive axiom audit,18 public types,
 16 proofs,2 definitions,3 local instances and5 independent tests passed;
 source/config/manuscript hashes matched. Exact commit, receipt and private
 verification follow.
+
+## Checkpoint1624 — conditional torus heat transition limit
+
+`Foundation/PhysicalHeatTransitionLimit.lean` formalizes the weak-compactness
+step: a single normalized finite Fourier square sequence with every fixed
+autocorrelation coefficient tending to one yields a genuine probability
+measure whose Fourier characters have the exact heat multiplier moments.
+This is conditional on constructing that sequence; no transition law or
+stochastic process is yet asserted unconditionally. The pending concrete
+calculation is the overlap ratio for expanding finite boxes in `Z³`, followed
+by character uniqueness and convolution composition. See the Bakry Objective2
+audit for the exact Lean theorem and status. The full6874-job build,
+52119-declaration safe transitive axiom audit, public theorem/proof review and
+three independent specializations passed; ResearchSources remained unchanged.
