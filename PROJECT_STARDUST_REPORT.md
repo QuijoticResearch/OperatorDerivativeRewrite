@@ -1,5 +1,21 @@
 # PROJECT STARDUST — OVERNIGHT DISCOVERIES
 
+## October27 checkpoint1615 — bounded-rate covariance obstruction
+
+`Foundation/BoundedRateGammaObstruction.lean` formalizes an explicit even rate
+`r=1` at the two frequencies `±(2,2,2)` and zero elsewhere. It is bounded
+between zero and one and fixes the zero mode. The physical Haar-L² semigroup
+from1613 is a contraction and has the verified finite-core generator slope,
+but the two-mode polynomial with coefficients `1` at `(1,1,1)` and `−1/2` at
+`(2,2,2)` has `Re Γ₁(f,f)(0)=−1/4`. The verified Gamma/covariance equivalences
+therefore prove this rate is neither conditionally negative definite nor an
+anchored covariance symbol. This is a counterexample to inferring Markov-type
+Gamma positivity from Hilbert contraction and mass conservation alone; no
+claim of a separately formalized process impossibility is made. The example
+is elementary and not claimed novel. The earlier selective audit of
+`ResearchSources/bakry/bakry_emery_revised_v8 (2) (2).tex` preserves its
+genuine stable-symbol assumptions. ResearchSources bytes remain unchanged.
+
 ## October27 checkpoint1614 — finite Fourier core to actual Haar L²
 
 `Foundation/WaveTorusCoreBridge.lean` gives an injective finite-polynomial

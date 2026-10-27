@@ -1,5 +1,41 @@
 # Bakry Objective2 — curvature/covariance audit
 
+## Checkpoint1615: bounded multiplier rate with negative Γ₁
+
+`Foundation/BoundedRateGammaObstruction.lean` chooses the two frequencies
+`u=(1,1,1)` and `2u=(2,2,2)` and the rate
+`r(k)=1` exactly at `k=±2u`, zero elsewhere. Lean proves `0≤r≤1`,
+`r(-k)=r(k)` and `r(0)=0`. The explicit two-mode polynomial has coefficients
+`1` at `u` and `−1/2` at `2u`. The verified finite Gamma calculation gives
+`Re Γ₁(f,f)(0)=−1/4`. Consequently pointwise algebraic Gamma positivity,
+the general conditional-negative-type criterion, and the anchored covariance
+criterion all **fail** for this rate. The exact `not_negative_symbol` and
+`not_covariance_symbol` declarations derive those conclusions through the
+previously verified Fourier Gamma/covariance equivalences.
+
+At the same time, `nnRate` is a valid nonnegative input to the completed
+physical Haar-L² multiplier semigroup. `physical_contraction` proves the
+actual L² contraction on the lifted witness; `physical_stationary_zero`
+proves the constant Fourier mode stays fixed; `physical_witness_slope`
+identifies the actual positive-time L² norm generator on the witness.
+Thus L² contraction plus zero-mode conservation, even for a bounded even
+rate, cannot be substituted for a positive Γ/covariance theorem.
+
+This is an elementary finite counterexample, with no novelty claim. The
+connection to classical Schoenberg theory is discussed in the earlier
+literature audit; the Lean theorem here is non-CND, not a separately proved
+absence of every possible stochastic path model or a pointwise failure of
+positivity of the physical semigroup. Those stronger process/operator claims
+need their own hypotheses and proof. The original Bakry manuscript's stable
+symbol restrictions remain essential: this artificial bounded rate is not a
+stable or Lévy symbol.
+
+Verification1615: full root build, complete transitive standard-axiom audit,
+unabridged public theorem/type and definition review, six independent Lean
+tests, and exact source/config/archive hashes. Counts, timings, commit and
+both PRIVATE backup receipts are in `.lake/stardust-1615-verification.json`.
+Objective2 remains ACTIVE.
+
 ## Checkpoint1614: exact finite-core bridge between the two physical models
 
 `Foundation/WaveTorusCoreBridge.lean` constructs an explicit finite Fourier

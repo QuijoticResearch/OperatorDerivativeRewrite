@@ -2605,3 +2605,5 @@ import Foundation.WavePhysicalFourierBridge
 import Foundation.PhysicalTorusWaveSemigroup
 
 import Foundation.WaveTorusCoreBridge
+
+import Foundation.BoundedRateGammaObstruction
