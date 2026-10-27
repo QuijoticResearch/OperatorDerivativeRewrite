@@ -51096,3 +51096,44 @@ need proof. Ordinary density alone is not graph-core density. Path-space
 construction and complete entropy/manuscript repairs remain separate obligations.
 Preserve nonreversibility1563 and weighted dissipation1564. All later priorities
 and full source/audit/Git/guarded-private-backup requirements remain unchanged.
+
+
+## Checkpoint1572 — actual generator-domain density and unboundedness
+
+Bakry Objective1 remains ACTIVE; bounded IBM rematch1562 remains FROZEN.
+`Foundation/CauchyPoissonDomainDensity.lean` proves `domain_dense` for every
+real pole |q|<1: the actual closed generator domain in C(Circle,complex) is
+dense in the supremum norm. The proof transports Mathlib's period-one Fourier
+span along the actual homeomorphism to Circle, identifies positive and negative
+modes with coordinate powers and their conjugates, and uses the previously
+proved actual norm derivatives. It does not replace actual domains by formal
+polynomial candidates. Transport continuity, surjectivity and normalization are
+proved explicitly. Correction to checkpoint1571's reuse note: the exact theorem
+is ROOT `span_fourier_closure_eq_top`, not `AddCircle.span_fourier_closure_eq_top`;
+`AddCircle.homeomorphCircle` is correctly namespaced.
+
+At q=0, `zero_power_velocity` identifies the generator image of z^n with
+-n z^n. `coordinate_power_norm` is exactly one and `zero_power_velocity_norm`
+is exactly n. `zero_generator_unbounded` excludes every uniform graph bound
+||g|| <= C ||f||. This prevents treating this densely defined generator as a
+bounded operator on all continuous observables. No claim of novelty is made.
+
+Full6817-job root build39.118s; complete51122-safe-declaration transitive axiom
+audit41.543s with only propext/Classical.choice/Quot.sound. All15 public types,
+13 proofs and2 definitions were read unabridged; no new local instances.
+Five independent Lean checks passed in25.135s without repair: arbitrary
+observable approximation by actual norm-tangent domain elements; impossibility
+of a bounded linear operator agreeing with the full zero-pole graph; quarter-turn
+normalization; negative-frequency domain membership at q=-1/2; and the exact
+unit-input/frequency1000-output norm test. Scratch elaboration logs are retained.
+All2643 source hashes, configuration3 and archive113 hashes verified unchanged
+except the declared new module and root/audit registration. No settings changed,
+errors suppressed, manuscript bytes modified or unrelated drafts adopted.
+Evidence: `.lake/stardust-1572-*`. Local gates PASS; exact commit, receipt and
+guarded BOTH-private-ref verification follow and are not pre-claimed here.
+
+Ordinary domain density does NOT establish finite graph-core equality.
+Resolvent surjectivity, graph-core identification, actual path-space construction,
+nonlocal entropy consequences and completion of both manuscript repairs remain
+open. Continue these Bakry obligations with exact theorem reuse. Preserve all
+negative results, campaign priorities, verification and guarded backup gates.
