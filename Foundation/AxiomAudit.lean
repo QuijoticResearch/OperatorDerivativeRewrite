@@ -9435,3 +9435,9 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonRegularization.rnDeriv_bound
 #print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonRegularization.entropy_finite_of_domination
 #print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonRegularization.positive_time_entropy_finite
+
+-- Checkpoint1580: full entropy limit and positive-time fixed-law uniqueness.
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonEntropyLimit.burnin_geometric_bound
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonEntropyLimit.finite_geometric_tendsto
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonEntropyLimit.entropy_tendsto_zero
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonEntropyLimit.positive_time_fixed_law_unique

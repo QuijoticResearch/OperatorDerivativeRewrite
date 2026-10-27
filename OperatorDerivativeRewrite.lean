@@ -2544,3 +2544,4 @@ import Foundation.CauchyPoissonEntropy
 import Foundation.CauchyPoissonResidualKernel
 import Foundation.CauchyPoissonMixtureEntropy
 import Foundation.CauchyPoissonRegularization
+import Foundation.CauchyPoissonEntropyLimit

@@ -1518,3 +1518,60 @@ upper constant may diverge as t approaches0; no time0 regularization claimed.
 Do not conflate forward-law entropy with backward-observable entropy for q!=0.
 Actual closed generator/resolvent1575 and smoothed graph core1574 are reusable.
 All campaign, verification, source-integrity and guarded PRIVATE gates persist.
+
+
+## Checkpoint1580 — full real-time entropy limit and fixed-law uniqueness (October27,2026)
+
+Bakry Objective1 ACTIVE; IBM rematch1562 and pseudo1293 frozen. From verified
+baseline19b2732ef1e5ca886a761e084c7186327153825e,
+`Foundation/CauchyPoissonEntropyLimit.lean` proves `entropy_tendsto_zero`:
+for EVERY |q|<1 and EVERY probability initial law mu, the ACTUAL forward-law
+KL(K_t mu||nu_q) tends to0 as REAL t tends to+infinity. This is an ENNReal
+topological limit, not a toReal convention that discards infinite entropy.
+No initial absolute continuity or finite initial entropy is assumed. Actual
+positive-time regularization1579 makes the time1 law finite; the geometric
+bound1578 applies thereafter. `burnin_geometric_bound` uses actual kernel
+composition at s+n*t. `finite_geometric_tendsto` explicitly requires finite
+ENNReal D and transports c^n*D.toReal through continuous ofReal. Monotonicity
+controls EVERY real time beyond a chosen integer checkpoint; no unjustified
+subsequence-to-full-limit inference or time continuity assumption is used.
+
+`positive_time_fixed_law_unique` proves that ANY probability law fixed by ONE
+actual transition K_t, t>0, equals nu_q. Fixedness first gives finite entropy
+by regularization, then strict contraction forces that entropy to0; Mathlib's
+klDiv_eq_zero_iff identifies the law. No common stationarity assumption for all
+times, reversibility, generator domain, density hypothesis or PRP is imposed.
+These are standard ergodic consequences of the verified minorization/upper
+bounds, not a novelty claim or a sharp log-Sobolev theorem. Exact reused tools
+include ENNReal.tendsto_atTop_zero, tendsto_order,
+tendsto_pow_atTop_nhds_zero_of_lt_one, ENNReal.continuous_ofReal and
+InformationTheory.klDiv_eq_zero_iff, with the actual previous kernel theorems.
+
+Full6829-job root build40.899s; complete51235-safe-declaration transitive audit
+39.023s, only propext/Classical.choice/Quot.sound. All4 public types and4 proofs
+read unabridged; no definitions. One existing kernel-Markov and one invariant
+probability local instance reviewed. Five independent Lean checks passed first
+run24.895s: singular negative-pole Dirac entropy limit; real entropy limit by
+continuity at finite0; iff characterization of positive-time fixed laws; full
+stationarity implies the same invariant law; and explicit time0 failure of
+uniqueness using the distinct Dirac laws at1 and-1. The latter verifies the
+strict positive-time restriction rather than silently weakening it.
+Scratch1 failed only to rewrite a function composition inside Tendsto; explicit
+function extensionality repaired it. Scratch logs retained. Production unchanged
+after full build; no heartbeat/resource/compiler/trust changes or suppression.
+Sources2651/config3/archive113 integrity PASS; ResearchSources and unrelated
+drafts untouched. Evidence `.lake/stardust-1580-*`. Local gates PASS; exact
+commit/receipt and BOTH guarded private-ref verification follow, not preclaimed.
+
+The previously open full large-time entropy convergence obligation is now
+DISCHARGED for ALL probability inputs and real times. NEXT return to the precise
+remaining Bakry manuscript/domain and nonlocal entropy-production obligations,
+using the actual closed generator/resolvent1575, smoothed core1574 and the
+now-complete forward entropy regularization/contraction/limit chain. Audit the
+manuscript's exact entropy functional and adjoint conventions before asserting
+an infinitesimal production identity. Forward-law entropy and backward-observable
+entropy differ in this nonsymmetric model. Sharp LSI2/kappa, a uniform small-time
+rate, full L2-domain transfer, unsmoothed Fourier core, path-space construction
+and both complete manuscript repairs remain OPEN. Do not substitute generic
+finite-dimensional entropy identities for this actual process/operator claim.
+Campaign queue and every verification/source/Git/private requirement remain.
