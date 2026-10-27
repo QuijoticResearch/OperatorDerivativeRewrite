@@ -1062,3 +1062,27 @@ transitive axiom audit passed. All five unabridged public types, four proofs,
 one definition, two private supporting proofs and four independent tests were
 reviewed. Source/config/archive integrity is checked against1626 before the
 exact commit, receipt and dual PRIVATE backup.
+
+## Checkpoint1628 — weak continuity of the physical heat laws (October27,2026)
+
+`Foundation/PhysicalHeatWeakContinuity.lean` proves that each complex torus
+Fourier-character integral is continuous in Mathlib's weak topology on
+probability measures. `heatLaw_continuous` then proves continuity of the
+entire actual law family `t ↦ heatLaw r hr hr0 t` for every admissible symbol.
+The proof uses compactness of probability measures on the compact torus:
+every candidate cluster law inherits the continuously varying Fourier
+moments, so uniqueness from1626 identifies it with the law at the target
+time. This establishes weak convergence for all bounded continuous tests,
+not merely pointwise convergence of character moments.
+
+`heatLaw_tendsto_dirac_zero` specializes this to weak convergence to the
+Dirac mass at the origin as time decreases to zero. Combined with the
+convolution law from1627, this is a weakly continuous probability convolution
+semigroup. A transition kernel, consistent path-space laws, and any path
+regularity or generator-domain identification remain open. Weak convergence
+to a point mass is a distributional statement, not an actual process theorem.
+No Bakry curvature or stochastic-calculus conclusion is inferred.
+The full6878-job root build and complete52164-declaration whitelist-only
+transitive axiom audit passed. All three unabridged public types and proofs,
+four independent specializations, and source/config/archive integrity were
+reviewed before exact commit, receipt and dual PRIVATE backup.

@@ -53171,3 +53171,19 @@ The full6877-job root build, complete52160-declaration safe transitive axiom
 audit, five public types, four proofs, one definition and four independent
 checks passed. Source/config/archive integrity and exact private backup are
 the checkpoint closure gates.
+
+## Checkpoint1628 — weak continuity of physical heat probability laws
+
+`Foundation/PhysicalHeatWeakContinuity.lean` proves that the actual torus
+heat laws form a weakly continuous family. Character expectations are
+continuous in time and in the weak measure topology; compactness plus
+the Fourier-uniqueness theorem forces every cluster law to equal the
+target-time law. In particular, the laws converge weakly to `dirac 0`
+as time tends to zero. With checkpoint1627, this gives a weakly continuous
+probability convolution semigroup. Translation kernels, path-space laws,
+sample paths and exact generator domains remain open; no actual stochastic
+process is claimed yet. ResearchSources remains unchanged.
+The full6878-job root build, complete52164-declaration safe transitive axiom
+audit, all three public types and proofs, four independent tests and
+source/config/manuscript checks passed. Exact commit and dual private backup
+close the checkpoint.
