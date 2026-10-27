@@ -52342,3 +52342,22 @@ intact. No resource/trust/version/hypothesis changes or manuscript edits.
 Details in STARDUST_BAKRY_FBM_AUDIT.md; evidence `.lake/stardust-1598-*`.
 Both complete manuscript repairs remain OPEN. Local gates complete; exactcommit
 receipt and guarded private closure follow. Campaign queue unchanged.
+
+## Checkpoint1599 — genuine real-valued witnesses close the harmonic restriction
+
+Bakry1 ACTIVE. `CauchyRealHarmonicObstruction` proves that the1598 single-harmonic
+classification also holds on the REAL Hermitian finite Fourier core. For r>=2,
+the actual observables2*cos(theta) and2*cos(r theta) have Gamma1 values2 and2r
+at zero, but drift corrections0 andr^2. They cannot share a scalar factor.
+The full recursive Gamma computation includes the positive/negative-frequency
+cross terms. `real_scalar_iff` proves existence exactly at r=0 or r=1 for
+nonnegative integer harmonics. Mixed potentials, general curvature bounds and
+completed domains remain open; both complete manuscript repairs are unfinished.
+
+Full6849jobs43.316s; complete51589-declaration axiom audit45.511s; all10 public
+types,9 proofs and1 definition reviewed. Independent3 Lean checks firstpass29.019s
+and58 exact-rational real-cosine cases passed. Sources2670/config3/archive113
+intact; ResearchSources unchanged. No resource/trust/hypothesis changes.
+Details in STARDUST_BAKRY_FBM_AUDIT.md; evidence `.lake/stardust-1599-*`.
+Local gates complete; exactcommit receipt and guarded private closure follow.
+Queue and campaign priorities remain unchanged.

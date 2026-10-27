@@ -2551,3 +2551,46 @@ passed. Build/audit/independent stages serialized; visible style warnings retain
 and no options, resource limits, toolchain or mathematical hypotheses changed.
 Local gates complete; exact Git receipt and guarded BOTH-private closure follow.
 Bakry1 and all queue priorities remain unchanged.
+
+## Checkpoint1599 — the scalar obstruction also holds on real observables
+
+`Foundation/CauchyRealHarmonicObstruction.lean` closes the real-only restriction
+left explicitly open in1597–1598. It uses genuine Hermitian finite Fourier
+polynomials p_n=e_n+e_-n. `pair_hermitian` proves their coefficient symmetry;
+`pair_synthesis` identifies their actual values as2*cos(n theta). This avoids
+inferring a real-domain obstruction merely from complex positive-mode witnesses.
+
+For every n>=0, `gamma_pair_zero` proves Gamma1(p_n,p_n)(0)=2n. For EVERY
+integer r>=2, `pair_one_correction` gives Delta_r(p_1,p_1)(0)=0, whereas
+`pair_harmonic_correction` gives Delta_r(p_r,p_r)(0)=r^2. These are exact values
+of the original recursive Gamma2 for L+T_r minus that for L, with the actual
+T_r=-sin(r theta)*d/dtheta. Cross terms between positive and negative modes
+are included; their cancellation is essential and differs from1598's complex
+diagonal values. A shared scalar at theta0 would be zero from p_1 but nonzero
+from p_r. `no_real_scalar_at_zero` rules it out even allowing complex scalars.
+
+`real_scalar_iff` proves the exact classification on the Hermitian finite core:
+for nonnegative integer r, a position-dependent scalar multiplying Gamma1 gives
+the correction for EVERY real finite Fourier test iff r=0 or r=1. The existence
+direction directly restricts1598's all-complex theorem. This resolves the
+real-test loophole for normalized SINGLE sine harmonics, not mixed potentials,
+arbitrary amplitudes, general curvature lower bounds or completed domains.
+Both primary manuscript repairs remain OPEN. No novelty or campaign transition
+is claimed, and no original manuscript was changed.
+
+Separate exact-rational Fourier calculations check58 real-cosine witnesses
+(r=2..30, modes1 andr), including reflection symmetry and both full Gamma
+recursions. Scratch1–3 failures were absolute-value normalization and tactic
+orientation issues, retained without hypothesis/resource/trust changes.
+Full6849-job root build passed43.316s; final audit/check/closure results follow.
+
+Final local gates1599: complete51589-declaration safe transitive axiom audit
+45.511s, whitelist unchanged. All10 unabridged public types,9 full proofs and
+1 definition reviewed; no new instances. Independent3 Lean checks passed first
+run29.019s: actual real-valuedness of every cosine witness, nonzero witnesses,
+and existence of the first-harmonic scalar formula on the real core. The separate
+58 rational checks passed. Sources2670/config3/archive113 exact hashes passed;
+build, audit and independent stages serialized. All warnings remain visible;
+no toolchain, settings, resource, trust or hypothesis changes. Local gates
+complete; exact Git receipt and guarded BOTH-private synchronization follow.
+Bakry1 remains ACTIVE, with mixed potentials and earlier central obligations open.

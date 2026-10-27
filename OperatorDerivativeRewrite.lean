@@ -2575,3 +2575,5 @@ import Foundation.CauchyPoissonModifiedLSI
 import Foundation.CauchyHigherDriftObstruction
 
 import Foundation.CauchyHarmonicDrift
+
+import Foundation.CauchyRealHarmonicObstruction
