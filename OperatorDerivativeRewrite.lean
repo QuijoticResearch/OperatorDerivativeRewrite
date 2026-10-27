@@ -2585,3 +2585,5 @@ import Foundation.FractionalFourierSemigroup
 import Foundation.AnchoredCovariance
 
 import Foundation.FourierCovarianceCriterion
+
+import Foundation.FourierGammaCovariance

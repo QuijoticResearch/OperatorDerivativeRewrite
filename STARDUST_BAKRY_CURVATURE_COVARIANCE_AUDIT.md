@@ -144,3 +144,45 @@ complete audit rerun. No theorem or requirement weakened; logs retained.
 Source2674/config3/archive113 hashes exact. ResearchSources unchanged. Exact
 commit/receipt follow; REMOTE SYNC QUEUED under weekday09–17 Eastern policy.
 Objective2 ACTIVE/incomplete; Objective1 deferred/incomplete; laterqueue intact.
+
+## Checkpoint1604 — actual finite-core iterated Gamma positivity (October27,2026)
+
+Objective2 ACTIVE. Foundation/FourierGammaCovariance.lean connects the general
+covariance criterion to the existing ACTUAL generator recursion, rather than
+only asserting positivity of an auxiliary matrix. `gamma_energy` identifies
+the synthesized nth Gamma iteration with the complex energy of the entrywise
+nth power of Kpsi, with phases c_i character(k_i,x). `power_psd` uses the Schur
+product theorem (including n=0/all-ones); `energy_nonnegative` reuses the existing
+real/imaginary energy identities. `gamma_finite_nonnegative` handles arbitrary
+finite presentations, and `gamma_nonnegative` passes through the exact support
+representation to EVERY f in the existing finite Fourier algebra, all n:N and
+all spatial points. `negative_symbol_gamma` applies the1603 equivalence for
+even, zero-normalized conditionally negative symbols. No frequency-sign or
+distinctness restriction is introduced; conjugation remains in the first slot.
+
+Thus Gamma2>=0 is established pointwise on this finite core for such symbols.
+This is a known Schur/covariance consequence, not a novelty claim or a positive
+curvature constant. No completed pointwise domain, Markov semigroup, stochastic
+process, LSI or spectral gap is inferred. The symbol group remains Z^3, and the
+existing stable example remains coordinate0/rank-one. Objective1's different
+completed-domain, drift and entropy obligations remain deferred/incomplete.
+Literature context remains the exact classical covariance sources in1602;
+further family/subordination and novelty audits remain required.
+
+Four independent checks passed: quadratic Hilbert symbol for all n/f/x;
+Cauchy Gamma2 for arbitrary f/x; Gamma0 positivity for arbitrary symbol;
+quartic CovarianceSymbol failure via the explicit three-point zero-sum test.
+The last prevents applying the theorem indiscriminately to pseudoprocess rates.
+NEXT investigate the converse finite-core Gamma1 criterion and its explicit
+quartic pointwise witness, then productive general Levy/subordination examples.
+Retain all six Objective2 deliverables and the later queue.
+
+Verification: full6854-job build45.8204555s; complete51712-declaration safe
+transitive axiom audit46.0396493s, whitelist propext/Classical.choice/Quot.sound.
+All six unabridged public types and six full proofs reviewed; no new definitions,
+local instances or options. Four independent proofs passed first run27.2934204s.
+Initial scratch elaboration failures involved matrix coercion/Hadamard unfolding
+and a missing namespace; repaired without changing hypotheses or options, with
+all logs retained. Final scratch passed before adoption. Source2675/config3/
+archive113 hashes exact; ResearchSources unchanged. Exact Git commit/receipt
+follow. REMOTE SYNC QUEUED under the weekday09–17 Eastern policy, not backed up.

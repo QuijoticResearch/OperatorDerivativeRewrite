@@ -9767,3 +9767,10 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.FourierCovarianceCriterion.hilbert_negative
 
 #print axioms OperatorDerivativeRewrite.Foundation.FourierCovarianceCriterion.NegativeSymbol
+
+#print axioms OperatorDerivativeRewrite.Foundation.FourierGammaCovariance.power_psd
+#print axioms OperatorDerivativeRewrite.Foundation.FourierGammaCovariance.energy_nonnegative
+#print axioms OperatorDerivativeRewrite.Foundation.FourierGammaCovariance.gamma_energy
+#print axioms OperatorDerivativeRewrite.Foundation.FourierGammaCovariance.gamma_finite_nonnegative
+#print axioms OperatorDerivativeRewrite.Foundation.FourierGammaCovariance.gamma_nonnegative
+#print axioms OperatorDerivativeRewrite.Foundation.FourierGammaCovariance.negative_symbol_gamma
