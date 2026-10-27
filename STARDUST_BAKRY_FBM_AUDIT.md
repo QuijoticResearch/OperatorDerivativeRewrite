@@ -1705,3 +1705,66 @@ positive-time finite entropy, geometric contraction, full-time entropy limit,
 unique invariant law and full-domain backward-observable production results.
 Next pursue an exact adjoint-domain connection or consolidate the repaired
 manuscript claims if no stronger domain identification is justified.
+
+## Checkpoint1583 — point-mass obstruction to unrestricted strong forward calculus
+
+Bakry Objective1 ACTIVE; bounded IBM rematch1562 FROZEN. Read-only review of the
+second primary manuscript lines1081-1118 reconfirmed that its Cauchy/sine-drift
+operator and curvature assertions require care about backward observables versus
+forward laws. This checkpoint tests a proposed strengthening of our repair; it
+does NOT attribute an unrestricted all-measure strong-continuity claim to the
+manuscript. The existing real BanachUnboundedAdjoint machinery was inspected;
+its dense-domain uniqueness does not itself supply an adjoint value for a law.
+No duplicate adjoint infrastructure or new domain assumptions were introduced.
+
+`Foundation/CauchyPoissonDualObstruction.lean` proves an explicit obstruction
+using the existing actual Fourier moments and strict disk flow. For EVERY
+|q|<1, point x on the circle, and t>0, let phi_x be evaluation/integration
+against delta_x. Then:
+
+    1 <= norm(dualOrbit q t phi_x - phi_x).
+
+`dirac_dual_power_norm` identifies the action on the nth unit coordinate mode:
+its modulus is norm(evolution q t x)^n, which tends to0 as n tends to infinity
+because the positive-time pole is strictly inside the disk. Initial evaluation
+has modulus1 on those same norm-one observables. The reverse triangle and
+operator norm bound yield `dirac_dual_norm_gap`. No measure-representation or
+unproved total-variation identification is needed: this is the actual norm on
+the continuous complex dual. The lower bound1 is sufficient, not claimed sharp.
+`dirac_dual_not_strong_right` proves failure of right norm convergence at0 for
+EVERY admissible drift. It coexists with1582's weak observable continuity and
+all-law weak differential/integrated Kolmogorov equation.
+
+At q=0, `zero_dirac_no_adjoint_value` additionally proves there is NO bounded
+complex-linear functional psi satisfying psi(f)=phi_x(g) for EVERY pair(f,g)
+in the full actual generator graph. The existing coordinate powers belong to
+the graph, have norm1, and their generator evaluations have modulus n. Taking
+n>norm(psi) contradicts boundedness. This is the exact transposed-domain pairing
+criterion, not a redefinition of a point mass as inadmissible. No claim that
+all nonzero-drift Dirac adjoint domains have been characterized is made.
+
+Full6832-job build41.959s; complete51267-safe-declaration transitive audit39.975s,
+only propext/Classical.choice/Quot.sound. All5 public theorem types and complete
+proofs reviewed; zero new definitions/local instances. Four independent Lean
+checks passed FIRST RUN24.662s: weak continuity alongside strong failure;
+no positive-time sequence can recover the initial law in dual norm; the actual
+distance lies between1 and2 (no infinite-mass explanation); and unbounded
+transpose values already on unit coordinate modes. Scratch coercion failures
+were repaired by explicit sub_apply/Dirac evaluation and typed constant limits.
+Deprecated sub_apply usage was replaced before the full build. No errors or
+warnings suppressed, no trust/resource/version changes. All2654 sources, config3
+and archive113 hashes match. Original manuscripts/unrelated drafts preserved.
+Evidence `.lake/stardust-1583-*`; local gates PASS, then exact receipt and guarded
+BOTH PRIVATE branch verification. No novelty assertion for this semigroup
+obstruction, and no change to mathematical priorities.
+
+This rules out placing EVERY probability initial law in an unrestricted strong
+forward C0/adjoint calculus of this dual-norm type. It does not obstruct weak
+laws, positive-time regularization, or strong calculus on a justified restricted
+density/adjoint domain. NEXT investigate such concrete domains, actual
+positive-time density derivatives or averaged-law/resolvent regularization by
+reusing existing closed-generator and Laplace results. Do not retry universal
+strong convergence at a Dirac initial law. Strong forward density-domain and
+jump-Bregman production identifications, sharpLSI2/kappa, uniform small-time
+rate, fullL2 domain transfer, unsmoothed Fourier core, pathspace and BOTH
+manuscript repairs remain OPEN. All earlier verified positive results survive.
