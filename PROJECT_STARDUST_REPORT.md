@@ -51464,3 +51464,63 @@ claims without assuming reversibility or a diffusion CD-to-LSI implication.
 Reuse the actual closed generator/resolvent1575 and smoothed graph core1574.
 Both manuscript repairs, sharpLSI, path-space and unsmoothed Fourier core remain
 OPEN. Campaign queue and all verification/source/Git/private requirements intact.
+
+
+## Checkpoint1579 — positive-time entropy regularization for every initial law (October27,2026)
+
+Bakry Objective1 ACTIVE; IBM rematch1562 and pseudo1293 remain frozen. From
+verified baseline e5a586ef5e512efe2e326f55f09b01c0383a9028,
+`Foundation/CauchyPoissonRegularization.lean` establishes the previously missing
+UPPER domination. For EVERY |q|<1,t>0, `density_majorization` bounds the actual
+Poisson density ratio uniformly on Circle x[0,2pi]. Continuity, strict disk
+membership and positivity of the denominator are reused from the actual flow.
+Compactness supplies a finite upper bound; max(B,1) supplies a positive choice.
+`kernel_majorization` transports the density bound through actual withDensity
+and Circle.exp, proving K_t(z)<=C*nu_q for ALL z. `forward_majorization` gives
+the SAME C for EVERY probability initial law. This is the correct direction
+for evolved-law absolute continuity with respect to the invariant law; it is
+proved independently of the opposite minorization established in1576.
+
+The reusable `rnDeriv_bound` works on any measurable space with sigma-finite
+reference: mu<=C*nu implies dmu/dnu<=C almost everywhere (C may be ENNReal).
+It follows from setwise RN-integral bounds and ae comparison, not a hidden
+probability assumption. `entropy_finite_of_domination` requires probability
+measures and a finite nonnegative REAL coefficient. Domination gives actual
+absolute continuity; RN values lie a.e. in[0,C]; continuity of klFun on this
+compact interval bounds its lintegral. Thus `positive_time_entropy_finite`
+proves KL(K_t mu||nu_q)<infinity for EVERY probability input mu and EVERY t>0.
+No finite initial entropy or initial absolute continuity is assumed. The
+previous instantaneous-finiteness obligation is now DISCHARGED. Theorem reuse
+is standard compactness/Radon-Nikodym theory, not a novelty assertion. Exact
+Mathlib dependencies include IsCompact.bddAbove_image, withDensity_mono,
+Measure.setLIntegral_rnDeriv_le, ae_le_of_forall_setLIntegral_le_of_sigmaFinite,
+InformationTheory.continuous_klFun and klDiv_eq_lintegral_klFun_of_ac.
+
+Full6828-job root build44.727s; complete51230-safe-declaration transitive audit
+39.483s, only propext/Classical.choice/Quot.sound. All6 public types and6 proofs
+read unabridged; no definitions. One existing kernel-Markov and one invariant
+probability local instance reviewed. Five independent Lean checks passed in
+24.843s: BOTH null-set directions for every evolved probability; finite entropy
+from a negative-pole Dirac input; positive burn-in followed by geometric decay
+with a finite starting entropy for ANY law; a common upper coefficient for
+ALL initial laws; and the necessary C>=1 for probability domination. Initial
+independent27.481s failed only on the nonnegativity argument to the ofReal
+comparison API; test-only positivity proof repaired it, logs/source retained.
+Scratch1 hit default heartbeat limit on an underconstrained compact-bound
+elaboration and a withDensity rewrite; explicit real types, image witness and
+RHS fixed both at unchanged default resources. No theorem weakening, heartbeat
+increase, error suppression or compiler/trust change. Production unchanged after
+full build. Sources2650/config3/archive113 hash integrity PASS. Manuscript bytes
+and unrelated drafts untouched; all original hashes remain pinned to1292.
+Evidence `.lake/stardust-1579-*`. Local gates PASS; exact commit/receipt and
+BOTH guarded private-ref verification follow, not preclaimed in this record.
+
+NEXT: prove full large-time entropy convergence from the actual burn-in plus
+geometric estimate, including all real times, and investigate quantitative
+uniform bounds where useful. Then connect entropy with a genuine nonlocal
+production/domain identity. Sharp LSI2/kappa, a uniform small-time exponential
+rate, reversibility, path-space and both manuscript repairs remain OPEN. The
+upper constant may diverge as t approaches0; no time0 regularization claimed.
+Do not conflate forward-law entropy with backward-observable entropy for q!=0.
+Actual closed generator/resolvent1575 and smoothed graph core1574 are reusable.
+All campaign, verification, source-integrity and guarded PRIVATE gates persist.
