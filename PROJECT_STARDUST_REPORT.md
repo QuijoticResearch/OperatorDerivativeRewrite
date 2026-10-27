@@ -53107,22 +53107,6 @@ job build,52117-declaration safe transitive axiom audit,18 public types,
 source/config/manuscript hashes matched. Exact commit, receipt and private
 verification follow.
 
-## Checkpoint1626 — Fourier uniqueness for the physical heat law
-
-`Foundation/PhysicalHeatLawUnique.lean` proves that all complex Fourier
-moments uniquely determine a compact three-torus probability measure. The
-bounded integration functionals agree on the character span, hence on every
-continuous complex function by Stone--Weierstrass, and finite Borel-measure
-uniqueness finishes the argument. Combined with checkpoint1625, each
-zero-normalized covariance-symbol multiplier at each nonnegative time has
-exactly one actual probability law. The next tasks are convolution
-composition, translation kernels, finite-dimensional laws and path questions;
-none follows merely from uniqueness. ResearchSources remains unchanged.
-The full6876-job root build and complete52155-declaration whitelist-only
-transitive axiom audit passed, as did the three independent specializations;
-all exported types and proofs were inspected. Exact commit and private backup
-follow the source and archive integrity check.
-
 ## Checkpoint1624 — conditional torus heat transition limit
 
 `Foundation/PhysicalHeatTransitionLimit.lean` formalizes the weak-compactness
@@ -53154,3 +53138,36 @@ Full6875-job root build,52152-declaration whitelist-only transitive axiom
 audit,21 public types,17 proofs,4 definitions and5 independent checks passed;
 source/config/manuscript hashes matched. Exact commit and private dual-ref
 verification follow.
+
+## Checkpoint1626 — Fourier uniqueness for the physical heat law
+
+`Foundation/PhysicalHeatLawUnique.lean` proves that all complex Fourier
+moments uniquely determine a compact three-torus probability measure. The
+bounded integration functionals agree on the character span, hence on every
+continuous complex function by Stone--Weierstrass, and finite Borel-measure
+uniqueness finishes the argument. Combined with checkpoint1625, each
+zero-normalized covariance-symbol multiplier at each nonnegative time has
+exactly one actual probability law. The next tasks are convolution
+composition, translation kernels, finite-dimensional laws and path questions;
+none follows merely from uniqueness. ResearchSources remains unchanged.
+The full6876-job root build and complete52155-declaration whitelist-only
+transitive axiom audit passed, as did the three independent specializations;
+all exported types and proofs were inspected. Exact commit and private backup
+follow the source and archive integrity check.
+
+## Checkpoint1627 — convolution composition of actual heat laws
+
+`Foundation/PhysicalHeatConvolution.lean` now selects the unique torus
+probability law at each time and proves `heatLaw_conv`: convolution of laws
+at `s` and `t` equals the law at `s+t`. The proof computes actual character
+integrals under convolution, applies the exponential product law, and invokes
+the measure-uniqueness theorem from1626. `heatLaw_zero` gives the Dirac law
+at time zero. This upgrades the physical L² semigroup to a genuine probability
+convolution semigroup. Weak time continuity, transition kernels, consistent
+finite-dimensional laws and stochastic paths remain open. The construction
+uses classical harmonic analysis; no novelty claim or curvature bound is made.
+ResearchSources remains unchanged.
+The full6877-job root build, complete52160-declaration safe transitive axiom
+audit, five public types, four proofs, one definition and four independent
+checks passed. Source/config/archive integrity and exact private backup are
+the checkpoint closure gates.

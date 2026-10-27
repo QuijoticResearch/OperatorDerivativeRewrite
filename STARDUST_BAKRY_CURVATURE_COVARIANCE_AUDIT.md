@@ -1039,3 +1039,26 @@ The full6876-job root build, complete52155-declaration transitive axiom audit,
 three unabridged public types, three full proofs, one private definition and
 three independent specializations passed. Source/config/archive hashes are
 checked against the previous exact checkpoint before commit and backup.
+
+## Checkpoint1627 — physical torus convolution semigroup (October27,2026)
+
+`Foundation/PhysicalHeatConvolution.lean` defines the canonical probability
+law `heatLaw r hr hr0 t` by the unique existence theorem from1626. Fourier
+characters multiply under torus addition, and `character_convolution` proves
+the exact product rule for their actual integrals against two probability
+measures. Combining that rule with the exponential multiplier law and Fourier
+uniqueness proves `heatLaw_conv`: the measure convolution at times `s,t`
+equals the law at `s+t`. `heatLaw_zero` identifies the zero-time law with the
+Dirac mass at the torus origin. These are genuine measure identities, not
+only L² multiplier equations.
+
+The family is thus a probability convolution semigroup. Weak continuity in
+time, translation transition kernels, consistent finite-dimensional laws,
+and a process with any path regularity are still separate obligations. The
+result is a classical semigroup construction specialized to the verified
+physical symbol criterion; no novelty or Bakry curvature assertion follows.
+The full6877-job root build and complete52160-declaration whitelist-only
+transitive axiom audit passed. All five unabridged public types, four proofs,
+one definition, two private supporting proofs and four independent tests were
+reviewed. Source/config/archive integrity is checked against1626 before the
+exact commit, receipt and dual PRIVATE backup.
