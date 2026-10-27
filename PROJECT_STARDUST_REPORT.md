@@ -51954,3 +51954,46 @@ uniform small-time rates, maximal density-domain equality, full L2 transfer,
 unsmoothed Fourier core, pathspace and BOTH manuscript repairs remain OPEN.
 IBM full intrinsic physical-time Ito/Clark--Ocone remains incomplete/deferred;
 the bounded rematch is not reopened and the campaign queue is unchanged.
+
+## Checkpoint1587 — actual forward relative entropy derivative
+
+Bakry Objective1 remains ACTIVE. `CauchyPoissonForwardEntropy` proves, for EVERY
+|q|<1, probability initial law mu and t>0, actual forward KL differentiation:
+d/dt KL(K_t mu || nu) = integral log(rho_t) rho'_t dnu <= 0.
+Here rho_t is the actual continuous positive density from1585 and rho'_t is the
+supremum-norm derivative from1586. KL is finite at positive times by1579, so the
+real-valued theorem is not exploiting the toReal convention for infinity.
+`entropy_actual_kl` identifies the integral with actual measure-theoretic KL;
+`actual_kl_derivative` and `forward_production_nonpos` give the asserted result.
+
+The derivative curve is continuous on positive times. On the compact product
+[t/2,t+1] x Circle, evaluation continuity, strict positivity and derivative
+continuity bound the logarithmic derivative integrand uniformly. The parametric
+integral theorem therefore has all measurability, integrability, domination and
+pointwise derivative hypotheses discharged. Actual Markov entropy monotonicity
+and finite-KL conversion imply nonpositive production. No diffusion chain rule,
+symmetry or Fourier-core hypothesis was introduced. The result includes singular
+initial probability laws after positive burn-in and retains every t=0 obstruction.
+
+Independent Lean checks (two, FIRST PASS28.592s) prove exactly zero production
+for the invariant initial law, for all allowed drifts, and finite nonpositive
+right entropy slope for a Dirac initial law. Full6836-job root build46.758s;
+complete51359-declaration transitive safe-Foundation audit56.380s, only propext,
+Classical.choice and Quot.sound. All6 public types and entire proofs reviewed;
+zero new definitions,2 existing invariant-probability and1 Markov local instance.
+Sources2658/config3/archive113 hashes pass. No production edits after fullbuild.
+First scratch failed parametric-integral implicit inference; explicit integrand,
+derivative integrand and base point repaired it. Deprecated restrict was changed
+to domRestrict before adoption. Logs retained in `.lake/stardust-1587-*`.
+No trust/toolchain/heartbeat/resource changes or error suppression. No novelty
+claim; this is rigorous actual forward entropy calculus, distinct from backward
+observable entropy1581. Local gates PASS; exact Git receipt and guarded BOTH
+private backup verifications follow, not pre-claimed here.
+
+NEXT seek a quantitative entropy-production estimate or a genuine jump-Bregman
+identity using the actual kernel/generator and established domains. Existing
+positive-time reset mixtures may provide a rate only after their constants are
+controlled as time tends to zero; strict contraction at each fixed time alone
+does not establish a positive infinitesimal rate. Sharp LSI2/kappa, jump identity,
+maximal density-domain equality, fullL2 transfer, unsmoothed Fourier core,
+pathspace and BOTH original manuscript repairs remain OPEN. No campaign change.
