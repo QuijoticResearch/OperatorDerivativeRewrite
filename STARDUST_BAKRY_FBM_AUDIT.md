@@ -597,3 +597,61 @@ then the appropriate nonlocal entropy repair. Reuse1561's law and finite balance
 and the existing positive Gamma library; do not repeat mode algebra or infer
 semigroup invariance from infinitesimal finite-core balance. No queue transition,
 reflection, publication or extension of the frozen IBM excursion.
+
+## Checkpoint1564 — actual Poisson-weighted finite-core energy repair
+
+Bakry Objective1 remains ACTIVE; both manuscript repairs are incomplete.
+IBM rematch1562 remains frozen and incomplete outside its stopping contract.
+Building directly on1561's actual law and1563's nonsymmetry obstruction,
+`Foundation/CauchyPoissonDissipativity.lean` proves for EVERY finite Fourier
+polynomial f, |q|<1 and r=2q/(1-q^2):
+
+    Re integral conjugate(f) L_r(f) d pi_q = - integral Gamma(f,f) d pi_q <= 0.
+
+Here functions are synthesized on the actual circle-angle slice ![theta,0,0],
+pi_q is the existing normalized positive Poisson-kernel law, and Gamma is the
+verified stable-symbol first Gamma. `actual_core_balance` extends actual
+infinitesimal balance to the entire finite Fourier algebra on that slice;
+`weighted_gamma_pairing` gives the polarized identity;
+`weighted_energy_identity` and `weighted_dissipativity` give the stated result.
+All integrability is discharged using the existing actual-law library. Reuse
+of `stable_gamma_nonnegative` proves positivity for arbitrary complex finite
+coefficients. No injectivity of the three-dimensional algebra on the slice,
+full-torus invariant law, reversibility or self-adjointness is asserted.
+
+This is a positive repair compatible with1563's non-Hermitian obstruction.
+The earlier real uniform-law witness 2+cos(theta) has repaired energy -1/2;
+the unit mode has energy -1 and constants have zero energy. These identities
+hold for every admissible q in independent Lean checks. Finite-core
+dissipativity and infinitesimal balance alone do NOT construct a closed
+generator, establish a semigroup or prove nonlocal entropy inequalities.
+Both manuscripts' closed-domain/semigroup and entropy obligations remain open.
+
+Full6808-job build40.705s, complete50884-safe-declaration transitive axiom audit
+38.098s (only propext/Classical.choice/Quot.sound), all10 public types/9 proofs/
+1 definition reviewed unabridged. Four independent Lean checks24.929s passed.
+1539 exact rational finite-polynomial energy/positivity checks and19 exact
+real-witness checks passed. The rational tests use real coefficients; the
+general Lean theorem covers complex coefficients. First independent-check
+elaboration failures were repaired locally, retained in the evidence, and
+rerun; production mathematics did not change. No settings/checks were weakened.
+All2635 Foundation/root sources, configuration3 and archive113 hashes checked.
+Evidence: `.lake/stardust-1564-*`. Local gates PASS; exact commit/receipt and
+guarded BOTH-private-ref synchronization follow, not pre-claimed here.
+
+Promising next route, explicitly UNVERIFIED: on positive Fourier modes L_r
+corresponds to V(z)=-z+r(1-z^2)/2. Its candidate fractional-linear flow is
+
+    phi_lambda(z) = [q(1-lambda)+(q^2+lambda)z]
+                   /[1+q^2 lambda+q(1-lambda)z],
+    lambda=exp(-(1+q^2)t/(1-q^2)).
+
+144 rational matrix-composition tests support the algebraic composition law;
+they are not a Lean semigroup proof. Composing harmonic extensions with this
+flow may supply actual positive Poisson transition operators and avoid an
+invalid symmetric-generator repair. Denominator nonvanishing, disk mapping,
+harmonic composition/uniqueness, kernel composition, invariance, strong
+continuity and exact closed generator/core identification remain to be proved.
+Audit the Cauchy phase-flow and holomorphic composition literature before any
+novelty claim. No new process or semigroup is claimed at this checkpoint.
+Original manuscripts and all campaign priorities remain unchanged.

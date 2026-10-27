@@ -2528,3 +2528,4 @@ import Foundation.CauchyDiffusionChainObstruction
 import Foundation.CauchyPoissonCoreInvariant
 import Foundation.IBMPastAdjointTimeCalculus
 import Foundation.CauchyPoissonNonSymmetry
+import Foundation.CauchyPoissonDissipativity
