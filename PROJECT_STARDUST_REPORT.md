@@ -53257,3 +53257,15 @@ The full6882-job root build, complete52191-declaration safe transitive axiom
 audit, four public theorem types and proofs, the private symbol-evenness
 argument, four independent checks, and exact source/configuration/archive
 integrity passed before checkpoint closure.
+### Checkpoint1633 — finite-time heat-chain covariance
+
+The new `Foundation/PhysicalHeatFiniteTimeCovariance.lean` identifies the
+finite-time physical character-increment covariance with twice the Gamma
+kernel of `1 - exp(-t r)`. The latter is a covariance symbol by the verified
+finite Schoenberg and zero-sum energy criteria. This makes the process/operator
+correspondence valid at each fixed nonnegative time; it still does not give
+continuous-time paths, positive Bakry curvature, or a spectral gap. See
+`STARDUST_BAKRY_CURVATURE_COVARIANCE_AUDIT.md` for hypotheses and limitations.
+The full6883-job root build, complete52201-declaration transitive axiom audit,
+all seven public types and proofs/definition, five independent checks and
+exact source/configuration/archive integrity checks passed.

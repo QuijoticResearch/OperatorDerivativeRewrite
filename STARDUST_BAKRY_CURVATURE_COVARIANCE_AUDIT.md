@@ -1199,3 +1199,29 @@ The full6882-job root build and complete52191-declaration whitelist-only
 transitive axiom audit passed. All four unabridged public theorem types and
 proofs, the private evenness proof, four independent tests, and exact
 source/configuration/archive integrity were reviewed before checkpoint closure.
+
+## Checkpoint1633 — finite-time covariance symbol and process pairing
+
+`Foundation/PhysicalHeatFiniteTimeCovariance.lean` proves that for every
+normalized physical covariance symbol `r` and `t ≥ 0`, the transform
+`φ_t(k) = 1 - exp(-t r(k))` is again a covariance symbol. The proof uses the
+existing finite Schoenberg positive-definiteness theorem and the zero-sum
+negative-energy criterion: the constant part cancels exactly, leaving the
+negative of the positive heat-multiplier energy. This is a reusable
+finite-time statement, not merely a derivative at zero.
+
+The exact identity `2 kernel φ_t k l = exp(-t r(k-l)) - exp(-t r(k))
+- exp(-t r(l)) + 1` is proved and identified with the corresponding complex
+character-increment expectation under the **actual fixed-step heat-chain law**.
+Consequently all finite matrices of these real Gamma kernels are positive
+semidefinite; an independent Lean test checks this quantified matrix form.
+Other independent tests cover frequency zero, time zero, and diagonal
+variance. The transform and PSD mechanism are classical Schoenberg/compound-
+Poisson mathematics; no novelty is claimed. The result supplies neither a
+positive `Γ₂` curvature bound nor continuous-time paths, filtration, or a
+spectral gap.
+
+The full6883-job root build and complete52201-declaration whitelist-only
+transitive axiom audit passed. All seven unabridged public types, six theorem
+proofs, one definition and five independent tests were reviewed. Source,
+configuration and all113 research-archive hashes match the prior baseline.

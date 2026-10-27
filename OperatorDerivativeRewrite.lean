@@ -2625,3 +2625,4 @@ import Foundation.PhysicalHeatKernel
 import Foundation.PhysicalHeatChain
 import Foundation.PhysicalHeatChainMarginals
 import Foundation.PhysicalHeatChainGamma
+import Foundation.PhysicalHeatFiniteTimeCovariance
