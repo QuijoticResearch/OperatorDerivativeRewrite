@@ -1575,3 +1575,70 @@ rate, full L2-domain transfer, unsmoothed Fourier core, path-space construction
 and both complete manuscript repairs remain OPEN. Do not substitute generic
 finite-dimensional entropy identities for this actual process/operator claim.
 Campaign queue and every verification/source/Git/private requirement remain.
+
+
+## Checkpoint1581 — actual full-generator-domain observable entropy production (October27,2026)
+
+Bakry Objective1 ACTIVE; IBM rematch1562 and pseudo1293 remain frozen. From
+verified baseline d8766e32df2674658553333e8503b6f4c700e7bf, selective rereading
+of primary2 lines286-305 and1495-1501 confirms that entropy production is cited
+as an alternative to a diffusion chain rule, while the stated CD-to-LSI route
+still needs repair. Existing `CauchyDiffusionChainObstruction` gives the actual
+cosine cubic defect -3/2, unchanged by sine drift. This is not a refutation of
+all possible model-specific LSI inequalities. Existing weighted dissipativity
+was a finite-Fourier-core statement; it did not supply a full-domain logarithmic
+production identity. The new proof reuses the ACTUAL closed generator1571,
+resolved domain/core/resolvent1574-75, and invariant Markov semigroup1567-68.
+
+`Foundation/CauchyPoissonObservableEntropy.lean` now proves for EVERY graph
+pair(f,g) of that closed generator on C(Circle,complex), |q|<1, with
+Re f(z)>=delta>0, and EVERY t>0:
+ d/dt integral klFun(Re P_t f) dnu_q
+   = integral log(Re P_t f) Re(P_t g) dnu_q <=0.
+Here klFun(x)=x log x+1-x. This is the declared BACKWARD-OBSERVABLE functional;
+it is not identified with forward-law entropy for an arbitrary initial density.
+No unit-mass hypothesis is needed for this functional. Real observables are
+included; arbitrary imaginary parts are allowed only because real parts are
+explicitly used. The exact statements retain this convention.
+
+`graph_orbit_derivative` obtains the full norm HasDerivAt at t>0 from the actual
+integrated graph equation and FTC, then real point evaluation gives scalar
+derivatives. `orbit_real_lower` proves the same lower bound under actual kernel
+averaging. The logarithm is uniformly bounded on[delta,||f||]; contraction bounds
+P_t g. `observable_entropy_derivative` verifies all measurability, integrability
+and dominated-differentiation hypotheses. `kernel_entropy_jensen` and
+`observable_entropy_decreases` prove decrease for EVERY continuous nonnegative
+real part without a generator-domain hypothesis. Actual invariant-law integration
+is justified by Kernel.integral_comp through the constant invariant kernel.
+Finally `observable_entropy_production_nonpos` combines semigroup increments,
+Jensen and the actual derivative limit. It does not assume a diffusion chain
+rule, reversibility or a pre-existing abstract entropy-production hypothesis.
+This is standard Markov/convexity/domain calculus specialized rigorously to the
+actual model, not a novelty assertion. Main exact Mathlib dependencies:
+hasDerivAt_integral_of_dominated_loc_of_deriv_le, hasDerivAt_klFun,
+convexOn_klFun.map_integral_le, Kernel.integral_comp and integral FTC.
+
+Full6830-job root build41.109s; complete51242-safe-declaration transitive audit
+40.201s, only propext/Classical.choice/Quot.sound. All7 public types/7 proofs
+read unabridged; no definitions. Three existing Markov and two invariant-law
+probability local instances reviewed. Five independent Lean checks passed first
+run24.447s: genuine norm-tangent inputs; arbitrary full-domain production
+witness; nonnegative functional and contraction without graph membership;
+no finite right derivative of klFun at0; and zero production for constants.
+The last two guard against unrestricted logarithmic differentiation and an
+unjustified universal strict sign. Scratch failures were elaboration/API issues:
+RCLike.re versus Complex.re rewrites, composed derivative evaluation, explicit
+norm bounds and continuity of log. Explicit reCLM integral identity repaired
+the rewrite; no added assumptions, trust/resource changes or error suppression.
+Production unchanged after full build. Sources2652/config3/archive113 hashes
+PASS; manuscripts/unrelated drafts untouched. Evidence `.lake/stardust-1581-*`.
+Local gates PASS; exact commit/receipt and guarded BOTH-private-ref closure follow.
+
+NEXT: identify the precise remaining adjoint/forward-density and jump-Bregman
+production connections, with actual domains and signs, or consolidate repaired
+manuscript statements if no stronger identification is justified. No forward
+adjoint-domain identification, explicit jump-kernel Bregman representation,
+sharpLSI2/kappa, uniform small-time rate, completed L2 transfer, unsmoothed
+Fourier core or path-space theorem is claimed. Both manuscript repairs remain
+OPEN. Earlier all-law forward KL regularization/contraction/limit and uniqueness
+are PROVED and must not be rebuilt. Preserve all campaign and verification gates.
