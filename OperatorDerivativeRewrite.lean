@@ -2538,3 +2538,4 @@ import Foundation.CauchyPoissonCoreGenerator
 import Foundation.CauchyPoissonGeneratorDomain
 import Foundation.CauchyPoissonDomainDensity
 import Foundation.CauchyPoissonOrbitRegularization
+import Foundation.CauchyPoissonSmoothedCore

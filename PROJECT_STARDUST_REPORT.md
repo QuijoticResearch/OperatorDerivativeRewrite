@@ -51185,3 +51185,54 @@ Hilbert energy resolvents do not establish the Banach generator resolvent.
 Finite Fourier graph-core equality, resolvent surjectivity, path-space and
 nonlocal entropy/manuscript completion remain OPEN. Preserve Bakry priorities,
 IBM rematch1562 frozen/incomplete status and all verification/backup gates.
+
+
+## Checkpoint1574 — exact smoothed finite Fourier graph core
+
+Bakry Objective1 remains ACTIVE. `Foundation/CauchyPoissonSmoothedCore.lean`
+proves `smoothedPairs_closure`: for every real |q|<1 the full actual closed
+generator graph on C(Circle,complex) is EXACTLY the product-supremum-norm closure
+of pairs K_T u=(T^-1 integral_0^T P_s u ds,T^-1(P_T u-u)), where T>0 and u lies
+in the finite Fourier span transported from AddCircle(period1). `fourierCore`
+is that explicit mapped algebraic span; its density is proved from Mathlib
+`span_fourier_closure_eq_top` and the verified period-one homeomorphism transport.
+For fixed T the actual map K_T is continuous. Its values on arbitrary continuous
+inputs lie in the closure of K_T applied to the finite Fourier span. The
+previous full-domain graph convergence of normalized averages then reaches
+EVERY actual generator graph pair. Reverse inclusion uses actual graph
+closedness and previously proved orbit-integral graph membership.
+
+`smoothedCoreGraph_closure` additionally identifies the topological closure of
+the LINEAR SPAN of these pairs with the full graph. `graph_pair_approximation`
+gives a positive T and a finite Fourier input controlling the pair error by
+any requested epsilon>0. This is a genuine smoothed graph core; it neither
+asserts that the original finite Fourier polynomials form a graph core nor
+assumes they are invariant under the semigroup. This standard semigroup/density
+mechanism is not claimed as a new literature result. No rate, fixed averaging
+time, path-space realization or resolvent surjectivity is inferred.
+
+Full6819-job root build42.589s; complete51147-safe-declaration transitive audit
+40.664s, only propext/Classical.choice/Quot.sound. All11 public types,7 full
+proofs and4 definitions reviewed unabridged; no new local instances. Five
+independent Lean checks passed in36.637s on the first attempt: separate
+observable/generator error bounds, sequential approximation of every full graph
+pair, minimality among closed relations containing the core, negative mode7
+at q=-1/2 for every positive averaging time, and impossibility of a bounded
+operator agreeing even just on this core at q=0. The last check uses closedness
+to extend agreement and the previously verified actual unboundedness obstruction.
+Scratch elaboration failures retained; no mathematical source repair after the
+successful full build. Sources2645/config3/archive113 integrity verified;
+ResearchSources and unrelated drafts untouched. No compiler/trust/resource/toolchain
+changes or warning suppression. Evidence `.lake/stardust-1574-*`. Local gates
+PASS; exact commit/receipt and guarded BOTH-private-ref verification follow,
+not pre-claimed here.
+
+Next: actual positive real Laplace resolvent and range/surjectivity, then valid
+nonlocal entropy consequences and completion of both manuscript repairs.
+Reuse audit: Mathlib's Measure.ResolventTransform is a Stieltjes/Cauchy algebraic
+transform, not this semigroup resolvent; Hilbert graph-projection energy
+resolvents likewise do not discharge this Banach generator problem. Existing
+exponential-integrability and interval-integral tools offer a route via weighted
+finite-time integrals and controlled tails. Smoothed graph-core equality is now
+PROVED; unsmoothed polynomial graph-core equality remains OPEN. Preserve all
+campaign, source, verification, independent-test, Git and guarded backup gates.
