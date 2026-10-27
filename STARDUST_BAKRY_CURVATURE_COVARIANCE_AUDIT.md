@@ -1017,3 +1017,25 @@ public types,17 full proofs,4 definitions and5 independent checks were
 reviewed. Source2695/config3/archive113 hashes matched. Original
 ResearchSources bytes remain unchanged. Exact Git receipt and private
 dual-ref verification follow.
+
+## Checkpoint1626 — uniqueness of the physical torus heat law (October27,2026)
+
+`Foundation/PhysicalHeatLawUnique.lean` proves that a probability measure on
+the compact three-torus is determined by every complex Fourier-character
+moment. The proof makes integration against each measure a bounded complex
+linear functional on continuous functions (norm at most one), uses the verified
+Stone--Weierstrass density of Fourier characters, then extends equality to
+bounded real continuous functions and applies finite Borel-measure uniqueness.
+There is no finite-frequency truncation or formal Fourier inversion assumption.
+
+`physical_heat_law_unique` applies this result to two candidate laws at the
+same symbol and time. `exists_unique_physical_heat_law` combines it with the
+actual existence theorem from1625. Hence each admissible multiplier now has
+a **unique actual probability law**. This does not yet prove convolution
+composition, a Markov transition kernel, consistent finite-dimensional laws,
+or sample-path properties. Those are the next realization obligations. The
+argument is classical compact harmonic analysis; no novelty is claimed.
+The full6876-job root build, complete52155-declaration transitive axiom audit,
+three unabridged public types, three full proofs, one private definition and
+three independent specializations passed. Source/config/archive hashes are
+checked against the previous exact checkpoint before commit and backup.
