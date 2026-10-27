@@ -1342,3 +1342,59 @@ log-Sobolev constant2/kappa nor the manuscript's diffusion-style implication
 is repaired by monotonicity alone. Generator/resolvent1575 and smoothed core1574
 remain verified; path-space, unsmoothed Fourier core and full manuscript repairs
 remain open. All campaign/source/verification/Git/private requirements persist.
+
+
+## Checkpoint1577 — actual invariant residual Markov splitting (October27,2026)
+
+Bakry Objective1 remains ACTIVE; IBM rematch1562 CLOSED/FROZEN, full intrinsic
+IBM deferred; pseudo1293 frozen. No campaign transition or priority change.
+From mathematical baseline bb05f2a345dff789cb17140bbbe4627d644c518c,
+`Foundation/CauchyPoissonResidualKernel.lean` constructs the actual residual
+angle density (w(evolution(q,t,z),theta)-epsilon*w(q,theta))/(1-epsilon), its
+withDensity kernel, and its pushforward by Circle.exp. Joint measurability,
+nonnegativity on the angle domain, integrability and exact mass1 are proved
+under the explicit density minorization, |q|<1, t>0 and epsilon<1. These are
+actual measures/kernels, not a formal subtraction of probability laws.
+
+`residualKernel_split` proves K_t(z)=epsilon*nu_q+(1-epsilon)*R_t(z) for
+0<=epsilon<1 and the pointwise minorization. `forward_split` extends this exact
+identity to EVERY probability initial law, including singular laws.
+`residualKernel_invariant` proves R_t composed with nu_q equals nu_q; finite
+measure cancellation and the nonzero finite coefficient are discharged.
+`strict_density_minorization` and `invariant_markov_splitting` discharge the
+existence of some0<epsilon<1 for EVERY fixed |q|<1 and t>0. The residual is an
+explicit invariant Markov kernel. No semigroup law for R_t, uniform t->0
+coefficient, sharp coefficient, path-space process or entropy rate is asserted.
+This is standard minorization/splitting mathematics specialized to the actual
+verified nonsymmetric flow, not a novelty claim. No external literature claim
+was needed for this direct theorem-reuse checkpoint.
+
+Full6826-job root build29.070s; complete51216-safe-declaration transitive audit
+46.208s, only propext/Classical.choice/Quot.sound. All17 public types,14 proofs
+and3 definitions read unabridged. One existing angle-Markov, one invariant-law
+probability and one proved finite-measure local instance reviewed. Five
+independent Lean checks passed in30.196s: residual KL data processing against
+nu_q; actual negative-pole Dirac-law splitting; probability preservation for
+arbitrary initial laws; epsilon=1 produces the zero kernel and CANNOT be Markov;
+and invariant null sets remain null for almost every residual starting state.
+The initial independent28.941s failed on a missing local finite-measure instance
+and Measurable versus AEMeasurable API argument; test-only repairs, source,
+logs and timings retained. Scratch algebra/rewrite/typeclass repairs retained.
+A precommit whitespace check caught extra EOF blank lines. After removal,
+full build/audit/independent gates were repeated on the final bytes; prior
+successful41.538s/39.734s/33.978s evidence retained. Public-type output identical.
+Production unchanged after the final complete build; no trust/resource changes or
+suppression of errors/warnings. Source2648/config3/archive113 integrity PASS.
+Original manuscript hashes remain pinned to inventory1292; no ResearchSources
+or unrelated draft changes. Evidence `.lake/stardust-1577-*`. Local gates PASS;
+exact commit/receipt and guarded BOTH-private-ref closure follow, not preclaimed.
+
+NEXT: prove the appropriate mixture KL convexity/contraction using existing
+chain-rule/data-processing machinery where possible. Residual entropy
+monotonicity is verified independently, but a factor(1-epsilon) contraction for
+the full transition remains a separate obligation. Do not identify forward-law
+KL with backward-observable entropy in this nonsymmetric model. Sharp LSI2/kappa,
+instant finiteness from singular laws, unsmoothed Fourier core, path-space and
+both primary manuscript repairs remain OPEN. Actual closed generator/resolvent
+and smoothed graph core are already verified and should be reused. Preserve
+all audits, manuscript bytes, exact-commit receipts and guarded private backups.
