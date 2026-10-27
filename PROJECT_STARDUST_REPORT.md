@@ -51236,3 +51236,56 @@ exponential-integrability and interval-integral tools offer a route via weighted
 finite-time integrals and controlled tails. Smoothed graph-core equality is now
 PROVED; unsmoothed polynomial graph-core equality remains OPEN. Preserve all
 campaign, source, verification, independent-test, Git and guarded backup gates.
+
+
+## Checkpoint1575 — actual positive Laplace resolvent and full range
+
+Bakry Objective1 remains ACTIVE. `Foundation/CauchyPoissonLaplaceResolvent.lean`
+constructs R_r f=int_(0,infinity) exp(-r s) P_s f ds as a genuine Banach integral
+in C(Circle,complex), for every real |q|<1 and r>0. The actual contraction bound
+discharges integrability against exponential decay. Finite weighted orbit
+integrals satisfy A F_T=r F_T+exp(-rT)P_T f-f for EVERY continuous f and T>=0.
+This follows from an exact shifted integral identity and Banach FTC at both
+endpoints, not from assuming input generator-domain membership. Finite integrals
+converge in sup norm; their boundary terms converge to zero; the actual closed
+graph therefore gives (R_r f,r R_r f-f) in the full generator graph.
+
+`positive_resolvent_onto` establishes full range of r-A. `resolvent` is a bounded
+COMPLEX-linear operator, with `resolvent_norm` <=1/r. `graph_left_inverse` uses
+the previously verified full-graph coercivity to prove R_r(r f-g)=f for EVERY
+actual graph pair(f,g). `graph_iff_resolvent` gives the converse as well, exactly
+identifying the full original graph by this inverse equation. No arbitrary
+closed extension, formal Fourier-domain replacement or Hilbert energy-resolvent
+substitution is used. These are standard semigroup facts instantiated for the
+actual constructed kernel, not a literature-novelty claim. They concern the
+supremum-norm generator; no L2-domain transfer is silently inferred.
+
+Full6820-job root build40.753s; complete51179-safe-declaration transitive audit
+38.856s, only propext/Classical.choice/Quot.sound. All20 public types,16 full
+proofs and4 definitions read unabridged; no new local instances. Five independent
+Lean checks passed in25.128s: actual norm-tangent recovery; uniqueness for any
+full-domain solution; the signed two-parameter identity R_r-R_s=(s-r)R_r R_s;
+actual integral normalization R_r 1=r^-1 1 for ALL poles; and quantitative
+complex-observable stability at q=-1/2,r=2. Initial independent run25.109s failed
+only on restricted-scalar normal forms and inverse numeral normalization; fixed
+test scripts and original failed logs/timing are retained. Production mathematics
+was unchanged after the full build. Scratch elaboration failures also retained.
+Sources2646/config3/archive113 integrity verified, with only the new source and
+root/audit registration changed. Original manuscripts/unrelated drafts preserved.
+No compiler/trust/resource/toolchain changes or warning suppression. Evidence
+`.lake/stardust-1575-*`. Local gates PASS; exact commit/receipt and guarded BOTH
+private-ref closure follow, not pre-claimed in this entry.
+
+Resolvent surjectivity is now PROVED and should not remain on the open list.
+Smoothed graph-core equality1574 is preserved; unsmoothed finite Fourier
+polynomial graph-core equality remains open. Return next to the concrete
+nonlocal entropy/manuscript obligations rather than duplicating generator
+infrastructure. Primary2 lines1495-1501 asks for sharp log-Sobolev under drift
+and asserts that positive CD curvature supplies constant2/kappa; lines298-301
+cite a separate nonlocal entropy-production approach. These exact assertions
+need their own hypotheses/proofs; the present resolvent does NOT establish a
+jump-process diffusion chain rule, sharp entropy rate, LSI or path-space process.
+Reuse verified actual invariant law1567, finite weighted dissipation1564 and
+nonsymmetry1563, and audit existing entropy results before new constructions.
+Both primary manuscript repairs and full Bakry Objective1 remain incomplete.
+All campaign/verification/source/Git/guarded-private-backup requirements persist.
