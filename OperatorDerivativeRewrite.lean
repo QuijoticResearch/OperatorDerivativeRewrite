@@ -2631,3 +2631,4 @@ import Foundation.PhysicalHeatFlatCurvature
 import Foundation.PhysicalHeatCompoundPoisson
 import Foundation.PhysicalHeatCompoundPoissonAtom
 import Foundation.PhysicalHeatCompoundPoissonChainGamma
+import Foundation.YMBlockHeatContractionObstruction

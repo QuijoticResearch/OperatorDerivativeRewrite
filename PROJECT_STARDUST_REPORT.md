@@ -53350,3 +53350,26 @@ classical status and unresolved domain/curvature/entropy questions. The
 original Bakry manuscripts and Objective 1 obligations remain preserved.
 The focused Yang–Mills campaign is active with the existing later queue
 unchanged. This scheduling transition changes no mathematical result.
+
+### Checkpoint1639 — fixed-boundary heat transfer cannot contract uniformly
+
+The first focused Yang–Mills audit inventoried 21 selected incoming source
+files by SHA-256 (20 distinct; the two `entropy_ym (4)` files are exact
+duplicates), then inspected selected abstracts and proof passages rather than
+bulk-reading every paper. `STARDUST_YANG_MILLS_FOCUSED_AUDIT.md` compares the
+block-transfer/Schur, Bałaban-compression and entropy proposals with verified
+single-block and global-gauge-kernel Lean results and primary literature.
+The strongest candidate is a gauge-invariant correlation transfer based on
+local Schur residual curvature. Its current fixed-boundary heat surrogate
+has a decisive scaling obstruction: `Foundation/YMBlockHeatContractionObstruction.lean`
+proves the reference factor tends to one as the coupling parameter grows,
+and adding nonnegative comparison errors cannot yield a uniform factor below
+one. This rules out that particular additive estimate, not a different
+scale-dependent transfer or Yang–Mills mass generation. The actual gauge-
+covariant kernel, physical quotient, scale/volume-uniform bound, continuum
+limit and nontriviality remain open. Entropy/Gaussian-shadow calculations
+remain diagnostics, not an independently established mass-gap mechanism.
+The full6889-job build, complete52270-declaration transitive axiom audit,
+five unabridged public types/proofs/definition, four independent Lean checks
+and exact source/config/archive integrity passed. Bakry Objective 2 remains
+paused and the focused Yang–Mills campaign remains active.
