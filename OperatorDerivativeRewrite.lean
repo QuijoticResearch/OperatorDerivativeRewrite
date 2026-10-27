@@ -2555,3 +2555,5 @@ import Foundation.CauchyPoissonDensitySmooth
 import Foundation.CauchyPoissonForwardEntropy
 
 import Foundation.CauchyPoissonQuantitativeEntropy
+
+import Foundation.CauchyPoissonDriftRate

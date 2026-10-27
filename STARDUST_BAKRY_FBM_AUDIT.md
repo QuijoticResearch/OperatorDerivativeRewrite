@@ -2040,3 +2040,51 @@ estimate. Preserve all actual-domain qualifications. Sharp constants, genuine
 jump-production identity, maximal density domain/fullL2 transfer, unsmoothed
 Fourier core, pathspace and BOTH manuscript repairs remain OPEN. No novelty
 claim. Campaign queue and frozen IBM/pseudoprocess results remain unchanged.
+
+## Checkpoint1589 — explicit positive entropy-production rate for every allowed drift
+
+Bakry Objective1 ACTIVE. `CauchyPoissonDriftRate` extends quantitative forward
+entropy control to EVERY |q|<1, probability initial law mu and positive time.
+The exact flow defect gives the lower term2*l*(1-l)*(1+q^2)*(1-q^2). A verified
+uniform denominator norm bound3 yields a lower bound on1-|flow|^2. Combine the
+previous Poisson lower estimate with (1-|q|)^2*Poisson(q,w)<=1 for unit w.
+This constructs a genuine reset minorization relative to the invariant law:
+reset(q,t)=a(q)*decay(q,t)*(1-decay(q,t)),
+a(q)=(1+q^2)*(1-q^2)*(1-|q|)^2/18, 0<a(q)<=1/9.
+Every t>0 has reset strictly between0 and1; no existential constants remain.
+
+`entropy_contraction_explicit` reuses the actual residual Markov kernel and
+all-law mixture estimate, including infinite initial KL. `reset_derivative`
+proves its exact slope a(q)*rate(q), with rate(q)=(1+q^2)/(1-q^2).
+`production_bound` proves integral log(rho_t) rho'_t dnu <= -c(q) KL(K_t mu||nu)
+for EVERY initial probability law and t>0; `rate_positive` proves c(q)>0.
+All actual-semigroup, finite-positive-time-KL and difference-quotient conditions
+are discharged. This is the drifted actual forward law, not backward observable
+entropy and not an assumed symmetric diffusion calculus.
+
+Independent Lean checks (three, FIRST PASS25.974s) verify the exact simplification
+c(q)=(1+q^2)^2*(1-|q|)^2/18, verify c(0)=1/18<1/2 so the stronger zero-drift1588
+bound must be retained, and prove strictly negative entropy production whenever
+the actual evolved law differs from equilibrium. The displayed coefficient
+vanishes algebraically at |q|=1; this is a limitation of this bound, not proof
+that an optimal rate vanishes. No sharpness claim or boundary model is asserted.
+
+Full6838-job build42.993s; complete51383-safe-declaration transitive axiom audit
+39.757s, whitelist propext/Classical.choice/Quot.sound. All12 public types,
+10 full proofs,2 definitions and1 existing local Markov instance reviewed.
+Sources2660/config3/archive113 hashes pass; production unchanged after build.
+Scratch failures concerned directed division rewrites, explicit positivity and
+product inequalities, and converting a partially applied decay function to an
+explicit exponential lambda. Function extensionality resolved the last issue;
+no theorem hypothesis was strengthened. Logs retained `.lake/stardust-1589-*`.
+Style/redundant-tactic warnings remain visible. No compiler/trust/heartbeat/
+resource changes or suppressed errors. Local gates PASS; exact Git receipt and
+guarded BOTH-private-ref verification follow, not pre-claimed here.
+
+NEXT integrate this actual differential inequality for a real-time exponential
+bound, or derive a genuine jump-Bregman identity with justified domains. Do not
+rebuild the now-proved all-drift positive-rate kernel mechanism. The bound is
+coarse and does NOT repair the manuscript's sharp LSI2/kappa claim. Sharp
+constants, jump-production identification, maximal density/fullL2 domains,
+unsmoothed Fourier core, pathspace and BOTH complete manuscript repairs remain
+OPEN. Preserve every earlier obstruction. No novelty claim or campaign change.
