@@ -1136,3 +1136,32 @@ The full6880-job root build and complete52180-declaration whitelist-only
 transitive axiom audit passed. All seven unabridged public types, three theorem
 proofs, two definitions, two instance proofs, and four independent checks were
 reviewed. Source/configuration and all113 archive hashes matched the baseline.
+
+## Checkpoint1631 — exact marginals and operator characters on every grid point
+
+`Foundation/PhysicalHeatChainMarginals.lean` upgrades the fixed-step process
+from a transition-law existence result to a precise process/operator bridge.
+`chainLaw_next` extracts from the Ionescu--Tulcea joint law the actual marginal
+recurrence: the distribution of coordinate `n+1` is the heat kernel applied to
+the distribution of coordinate `n`. It uses the joint past/next-coordinate
+identity, projection of the kernel composition, and the fact that the kernel
+depends only on the latest past coordinate. `chainLaw_marginal` then uses
+Chapman--Kolmogorov to prove that the actual `n`th coordinate has law
+`heatKernel ((n:ℝ≥0)*δ) x₀` for every natural `n`. `chainLaw_character`
+integrates Fourier characters against this actual path law, obtaining the
+same `exp(-nδ r(k))` multiplier as the verified physical operator semigroup.
+The direct one-step marginal and character identities are also recorded.
+
+These are exact grid-time stochastic laws, not continuous-time realizations.
+The current Mathlib audit located `IsProjectiveMeasureFamily` and its additive
+cylinder content, and the countable-index Ionescu--Tulcea extension used here;
+it did not identify a ready-made general-index extension theorem or a path
+regularity theorem applicable to this compact-torus family. A continuous-time
+process would still require consistent finite-dimensional laws over arbitrary
+times and an extension/construction; cadlag or continuous paths additionally
+need quantitative increment bounds or a separate regularity argument. This
+does not supply curvature or a spectral gap. No novelty is claimed.
+The full6881-job root build and complete52186-declaration whitelist-only
+transitive axiom audit passed. All five unabridged public types and proofs,
+four independent tests, and exact source/configuration/archive integrity were
+reviewed before the commit and private backup.

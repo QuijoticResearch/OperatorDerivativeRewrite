@@ -2623,3 +2623,4 @@ import Foundation.PhysicalHeatConvolution
 import Foundation.PhysicalHeatWeakContinuity
 import Foundation.PhysicalHeatKernel
 import Foundation.PhysicalHeatChain
+import Foundation.PhysicalHeatChainMarginals

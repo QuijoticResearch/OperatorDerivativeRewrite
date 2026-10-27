@@ -53219,3 +53219,19 @@ is unchanged; no new manuscript claim is adopted.
 The full6880-job root build, complete52180-declaration safe transitive axiom
 audit, all seven public types and proofs, four independent checks, and exact
 source/configuration/archive integrity passed before checkpoint closure.
+
+## Checkpoint1631 — exact stochastic heat marginals on the grid
+
+`Foundation/PhysicalHeatChainMarginals.lean` proves an actual marginal
+recurrence for the physical heat chain, then identifies the law at every
+grid index `n` with the verified transition kernel at time `nδ`.
+Its Fourier-character expectation therefore equals the physical semigroup
+multiplier times the starting character. This connects a genuine probability
+process to the operator calculus at every fixed grid time. The proof does not
+extend the process to arbitrary real times or establish path regularity.
+Mathlib's current projective-family tools and the corresponding extension
+obligations were inspected; arbitrary-time consistency and a path-space
+construction remain open. ResearchSources is unchanged.
+The full6881-job root build, complete52186-declaration safe transitive axiom
+audit, all five public types and proofs, four independent checks, and exact
+source/configuration/archive integrity passed before checkpoint closure.

@@ -10079,3 +10079,9 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.PhysicalHeatChain.chainLaw
 #print axioms OperatorDerivativeRewrite.Foundation.PhysicalHeatChain.chainLaw_condDistrib
 #print axioms OperatorDerivativeRewrite.Foundation.PhysicalHeatChain.chainLaw_initial
+
+#print axioms OperatorDerivativeRewrite.Foundation.PhysicalHeatChain.chainLaw_one
+#print axioms OperatorDerivativeRewrite.Foundation.PhysicalHeatChain.chainLaw_one_character
+#print axioms OperatorDerivativeRewrite.Foundation.PhysicalHeatChain.chainLaw_next
+#print axioms OperatorDerivativeRewrite.Foundation.PhysicalHeatChain.chainLaw_marginal
+#print axioms OperatorDerivativeRewrite.Foundation.PhysicalHeatChain.chainLaw_character
