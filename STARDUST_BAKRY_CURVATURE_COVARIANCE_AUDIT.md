@@ -1,5 +1,62 @@
 # Bakry Objective2 — curvature/covariance audit
 
+## Checkpoint1621: completed physical torus square positivity and failure
+
+`Foundation/PhysicalHeatSquareBridge.lean` closes the finite-to-physical
+identification left open at1620. `lift_heatAction` proves exact intertwining:
+lifting the algebraic multiplier `exp(−t r(k))` on a finite Fourier
+polynomial gives the **already completed Haar-L² torus semigroup** applied
+to its lift. The proof compares every Mathlib torus Fourier coefficient.
+`torusSynthesis_toLp` identifies each finite polynomial lift with the L²
+class of its actual continuous trigonometric representative. This uses the
+correct unit-torus normalization; the earlier period-`2π` box model is not
+silently identified with it.
+
+The pointwise torus identity `torus_heat_square_energy` realizes the
+semigroup image of every finite Fourier square as the complex energy of
+the finite exponential matrix. Under `CovarianceSymbol`,
+`physical_evolution_square_ae` proves the genuine L² output is real and
+nonnegative almost everywhere. `physical_square_input_ae` independently
+proves the input itself is real and nonnegative almost everywhere.
+
+The converse is physical too. A positive three-frequency symbol energy
+gives a continuous heat image negative at the torus identity. Continuity
+and positivity of Haar measure on nonempty open sets show the image is
+negative on a set of **positive measure**, so the L² output fails
+almost-everywhere nonnegativity. For the mixed stable symbol
+`ψ(k)=∑_j a_j|k_j|^γ_j`, under `a_j≥0` and `γ_j>0`,
+`anisotropic_physical_square_positive_iff_active` proves that the completed
+semigroup preserves almost-everywhere nonnegativity of **every lifted
+finite Fourier square at every nonnegative time** if and only if every
+positive-weight axis has exponent at most two.
+
+For any active `γ_j>2`, frequencies `(0,1,2)` on axis `j` and weights
+`(1,−2,1)` give a nonnegative L² square whose semigroup image is negative
+on a positive-measure set at some positive time. Zero-weight
+superquadratic coordinates remain harmless. This is the classical
+Schoenberg/Bochner threshold transported through the actual physical
+semigroup; no novelty claim is made. The original Schoenberg source is
+cited in checkpoint1619 below. Mathlib's `UnitAddTorus.mFourierBasis`,
+`ContinuousMap.toLp`, and open-positive Haar measure supply the physical
+realization.
+
+The theorem covers the **square core**. Positivity preservation for every
+nonnegative element of the completed real L² cone requires a separate
+density/closure argument for positive squares, including L⁴ approximation
+and product convergence. No convolution probability kernel, Lévy process,
+Bakry CD/LSI inequality, or Yang–Mills implication follows. Objective2
+remains active; the manuscript archive is unchanged.
+
+Verification: complete6871-job incremental root build, full52057-declaration
+transitive axiom audit with only `propext`, `Classical.choice` and
+`Quot.sound`; all17 public types,16 complete proofs,1 definition,3 local
+instances and5 independent Lean checks reviewed. Source2691/config3/
+archive113 hashes match the exact checkpoint baseline and manuscript
+inventory. Final-source full build25.71s, audit44.10s,
+independent checks35.94s.
+The exact Git receipt and guarded PRIVATE backup follow; this does not
+close Objective2.
+
 ## Checkpoint1620: finite Fourier heat squares and the sharp obstruction
 
 `Foundation/FiniteHeatSquarePositivity.lean` defines the finite Fourier

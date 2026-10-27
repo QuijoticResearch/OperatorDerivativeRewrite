@@ -2613,3 +2613,4 @@ import Foundation.AnisotropicMixedThreshold
 import Foundation.FiniteBochnerObstruction
 import Foundation.FiniteSchoenberg
 import Foundation.FiniteHeatSquarePositivity
+import Foundation.PhysicalHeatSquareBridge

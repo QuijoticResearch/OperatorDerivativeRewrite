@@ -53036,3 +53036,34 @@ declaration whitelist-only transitive axiom audit, all9 public types/8
 proofs/1 definition and5 independent checks passed; source2690/config3/
 archive113 hashes matched. Exact commit, receipt and guarded PRIVATE backup
 follow. Objective2 remains active.
+
+## Checkpoint1621 — physical Haar-L² square positivity threshold
+
+Bakry Objective2 advances from finite matrices to the actual completed
+three-torus Haar-L² multiplier semigroup. In
+`Foundation/PhysicalHeatSquareBridge.lean`, `lift_heatAction` and
+`torusSynthesis_toLp` identify the finite Fourier heat action with the
+physical semigroup and its genuine continuous trigonometric representative.
+`physical_square_input_ae` verifies the square input is nonnegative almost
+everywhere. `physical_evolution_square_ae` proves that covariance symbols
+send every such square to an almost-everywhere nonnegative real output.
+
+The reverse obstruction is physical: a positive three-frequency symbol
+energy makes the heat image negative at the torus identity; continuity
+and full-support Haar measure make the negative set have positive measure.
+`anisotropic_physical_square_positive_iff_active` proves the exact mixed
+stable criterion for positivity on **all finite square inputs**: every
+positive-weight axis must have exponent at most two. An active exponent
+above two has the explicit `(0,1,2)` / `(1,−2,1)` square counterexample.
+This transfers known Schoenberg structure to the verified physical
+operator; it is not claimed as new classical mathematics.
+
+The open step is extension from finite square inputs to every nonnegative
+Haar-L² input, which requires a verified positive-square density and
+closure theorem. Probability kernels, Lévy paths, and Bakry curvature or
+entropy results remain unproved. Complete6871-job build and52057-
+declaration whitelist-only transitive axiom audit passed; all17 public
+types/16 proofs/1 definition/3 local instances and5 independent checks
+were reviewed. Source2691/config3/archive113 hashes matched; original
+manuscripts remain unchanged. Exact Git receipt and guarded PRIVATE backup
+follow. Objective2 remains active.
