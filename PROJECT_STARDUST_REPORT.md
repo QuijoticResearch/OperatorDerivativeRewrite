@@ -50919,3 +50919,61 @@ limit and closed-domain identification. The first Fourier moment/chordal
 second-moment route and compact uniform continuity remain candidates requiring
 proof. Reuse the accumulated machinery rather than assuming a time-continuity
 theorem from spatial Feller continuity. All queue and private-backup gates persist.
+
+
+## Checkpoint1569 — actual kernel concentration and strong continuity
+
+Bakry Objective1 remains ACTIVE; both primary manuscript repairs remain open.
+No campaign transition. IBM bounded rematch remains frozen1562/fullIBM deferred.
+
+`Foundation/CauchyPoissonConcentration.lean` proves strong continuity of the
+ACTUAL1567-1568 Circle transition operators on C(Circle, complex), for every
+fixed real |q|<1 and every continuous observable f, at EVERY nonnegative time.
+The topology is the supremum norm of continuous functions, not pointwise
+convergence or a finite-mode surrogate. Together with1568 this supplies an
+actual strongly continuous contraction semigroup preserving constants.
+
+The proof first identifies the actual kernel's complex first moment with
+phi_t(z). Its chordal second moment is exactly
+  integral |w-z|^2 K_t(z,dw) = 2 - 2 Re(conj(z)*phi_t(z)).
+This is bounded uniformly in z by twice the continuous-function norm of
+phi_t-id. Joint continuity on nonnegative time times compact Circle implies
+that displacement norm tends to zero. For EVERY continuous f and epsilon>0,
+compact uniform continuity gives C>=0 with
+  |f(w)-f(z)| <= epsilon + C*|w-z|^2.
+Actual Bochner integration, proved integrability and the concentration bound
+therefore give uniform convergence P_t f -> f. Contractivity and the semigroup
+law yield ||P_s f-P_t f|| <= ||P_|s-t| f-f||, establishing continuity at all
+nonnegative times. No differentiability/Lipschitz assumption on f is imposed.
+
+Full6814-job build44.944s; complete51020-safe-declaration transitive axiom audit
+44.593s with only propext/Classical.choice/Quot.sound. All15 unabridged public
+types,14 proofs,1 definition and2 local Markov instances reviewed. Five independent
+Lean checks30.275s passed: strict positive-time spread at q=0; arbitrary moving
+starting points under the uniform limit; positive-time continuity at q=-1/2;
+zero-time concentration; and vanishing increments over arbitrary nonnegative
+base-time sequences. The last tests uniformity over the whole base-time axis.
+The positive-spread test required explicit real-part simplification of complex
+exp; its failed log/time and scratch failures remain preserved. Production
+sources were unchanged during test repair. No new numerical/novelty claim.
+
+All2640 Foundation/root sources, configuration3 and archive113 hashes checked.
+Every verification stage serialized and terminal-confirmed. No resource,
+toolchain, compiler, trust or audit setting changed; warnings remain visible.
+ResearchSources and unrelated drafts untouched. Evidence `.lake/stardust-1569-*`.
+Local gates PASS; exact commit receipt and guarded BOTH-private-ref verification
+follow, not pre-claimed in this ledger entry.
+
+NEXT: identify the actual norm generator on the finite trigonometric core,
+then its closed operator/domain and appropriate nonlocal entropy statements.
+The pointwise Fourier derivatives1565 are NOT yet norm-generator membership.
+A reuse audit confirms HigherHeatClosedGenerator/HigherHeatGeneratorDomain
+are specific to L2 Fourier multipliers; their domain equivalences do not
+transfer without new hypotheses to this drifted C(Circle) operator.
+ContractionTangentDissipativity.norm_resolvent_bound is a reusable generic
+bound once the actual norm tangent is proved. StickyGeneratorClosure provides
+a graph/submodule proof pattern, not a ready-made Cauchy generator theorem.
+No path-space construction, closed-generator/core identification or entropy
+theorem is claimed here. Preserve nonsymmetry1563 and weighted dissipation1564;
+invariance/strong continuity do not restore reversibility. All later priorities,
+no-expiration policy and full verification/private-backup requirements persist.
