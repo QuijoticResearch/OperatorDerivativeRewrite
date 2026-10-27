@@ -2534,3 +2534,4 @@ import Foundation.CauchyPoissonKernelComposition
 import Foundation.CauchyPoissonMarkovKernel
 import Foundation.CauchyPoissonFeller
 import Foundation.CauchyPoissonConcentration
+import Foundation.CauchyPoissonCoreGenerator

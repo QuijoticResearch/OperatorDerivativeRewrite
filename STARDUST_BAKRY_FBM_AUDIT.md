@@ -971,3 +971,63 @@ No path-space construction, closed-generator/core identification or entropy
 theorem is claimed here. Preserve nonsymmetry1563 and weighted dissipation1564;
 invariance/strong continuity do not restore reversibility. All later priorities,
 no-expiration policy and full verification/private-backup requirements persist.
+
+
+## Checkpoint1570 — actual norm generator on finite trigonometric observables
+
+Bakry Objective1 remains ACTIVE. Both manuscript repairs remain incomplete;
+IBM bounded rematch frozen1562/fullIBM deferred and all later priorities unchanged.
+
+`Foundation/CauchyPoissonCoreGenerator.lean` identifies the right-time generator
+of the ACTUAL Circle transition semigroup on every finite complex trigonometric
+combination, in C(Circle, complex) SUPREMUM NORM. This strengthens1565's pointwise
+mode derivatives to actual norm-domain membership. The proof does not import
+an L2 multiplier-domain theorem into a different space.
+
+Let c(z)=z and V_q(z)=-z+q/(1-q^2)*(1-z^2). Exact Poisson integrals give
+P_t(c^n)=phi_t^n and P_t(star f)=star(P_t f). The Mobius increment is factored
+as (1-decay(q,t))*Q(q,t), where Q is continuous as a C(Circle) valued function.
+The scalar exponential slope and norm-continuity of Q prove the true uniform
+right derivative V_q. Normed-algebra differentiation and real-linear conjugation
+give A(c^n)=n*c^(n-1)*V_q and A(star(c^n))=star(A(c^n)), including n=0.
+Finite sums cover EVERY N and all complex coefficient arrays a,b:Fin N->complex.
+The theorem `core_tangent` proves the actual positive-time difference quotient
+limit in norm; `core_presentation_independent` proves equal observable functions
+have equal generator values, even across different finite presentations.
+
+The auxiliary real-time orbit uses max(t,0) solely to make a total function.
+ALL asserted time derivatives are right derivatives at0 along Ioi0; no false
+two-sided differentiability of this extension is claimed. `positive_mode_matches_drift`
+is an exact equality with the previously verified Cauchy/sine-drift synthesis,
+with r=2q/(1-q^2), every positive Fourier mode and every angle. Dynamics require
+|q|<1; the final purely algebraic equality alone does not construct outside-domain
+Markov laws. Actual contractivity and the existing generic contraction-tangent
+theorem yield r*||f|| <= ||r*f-Af|| for all r>0 on the finite domain.
+This is a coercive estimate, NOT resolvent surjectivity or a closed-domain theorem.
+
+Full6815-job root build43.993s; complete51061-safe-declaration
+transitive axiom audit41.630s, whitelist propext/Classical.choice/Quot.sound.
+All26 public types,18 proofs and8 definitions read unabridged; no new local
+instances. Five independent Lean checks25.035s passed: positive cubic
+and conjugate cubic both have multiplier -3 at q=0; at q=1/2 the generator
+of c at z=i is 4/3-i; redundant constant coefficients produce zero generator;
+and the resolvent bound excludes nonzero finite-domain eigenvectors at every
+positive real eigenvalue. Test elaboration/coercion and finite-sum/function
+presentation repairs are retained in failed logs. Production sources unchanged
+during independent test repairs. No new numerical experiment or novelty claim.
+
+All2641 Foundation/root sources, configuration3 and archive113 hashes checked.
+Verification stages serialized and terminal-confirmed. Compiler/resource/trust/
+toolchain/audit settings unchanged; warnings visible. ResearchSources and unrelated
+drafts untouched. Evidence `.lake/stardust-1570-*`. Local gates PASS; exact commit,
+receipt and guarded BOTH-private-ref verification follow, not pre-claimed here.
+
+NEXT: construct/identify the closed generator domain, with rigorous core-density
+and graph-closure/uniqueness arguments, then valid nonlocal entropy consequences.
+The name finite 'core' in this module does NOT prove graph-core density. Neither
+closedness, maximality, range surjectivity nor graph-core equality is asserted.
+A possible integrated-orbit characterization is P_t f-f=integral_0^t P_s g ds;
+its equivalence to the norm derivative and closedness would need actual proofs.
+Review cumulative closed-graph/partial-linear-map and Bochner machinery first.
+Path construction and full entropy/manuscript completion remain separate open
+obligations. Preserve nonreversibility1563 and weighted dissipation1564.
