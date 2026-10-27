@@ -1,8 +1,37 @@
 # Mathematical commentary and opportunities
 
 This is a synthesis of verified mathematics, not a chronology or novelty claim.
-Exact Lean types and audited sources govern every assertion. IBM remains active;
+Exact Lean types and audited sources govern every assertion. Bakry Objective 2 is active;
 the opportunities below do not change the [queue](STARDUST_CAMPAIGN_QUEUE.md).
+
+## The three Fourier spaces that must not be conflated
+
+The new Bakry bridge has three distinct levels. Finite covariance matrices
+and actual pointwise Γₙ on trigonometric polynomials are positive for the
+anisotropic fractional symbol when each weight is nonnegative and each
+exponent lies strictly between0 and2 (`AnisotropicStableGamma`). The
+diagonal multiplier also yields a closed, strongly continuous contraction
+semigroup on the abstract coefficient Hilbert space ℓ²(ℤ³), for ANY
+nonnegative rate (`WaveDiagonalSemigroup`). Neither statement by itself
+constructs a physical Markov process.
+
+The third level is the actual normalized three-coordinate torus integral.
+`WavePhysicalFourierBridge.box_parseval_all` computes it exactly on EVERY
+finite Fourier polynomial. `box_gamma1_energy` proves that the integrated
+first Γ equals negative generator energy when the symbol vanishes at zero.
+This specializes to the anisotropic rate and is a genuine physical finite-
+core identity. It generalizes the earlier single-axis finite Parseval
+calculation in `CauchyCenteredEnergy.axis_parseval`, but does not yet identify
+the abstract ℓ² completion with physical Haar-L² functions.
+
+There are two sharp cautions. A zero coordinate weight leaves a nonzero
+stationary frequency, so the covariance theorem does not yield a positive
+spectral gap. For the constant symbol ψ≡1, the zero mode has integrated
+Γ₁=1/2 but generator energy1: the zero-normalization hypothesis cannot be
+silently dropped. The viable next step is a proved isometric physical
+Haar-L² Fourier map that intertwines the closed semigroup, followed by a
+separate positivity-preservation test. This is standard Fourier/Dirichlet
+mathematics until a more specific new consequence is established.
 
 ## Why changing the energy measure solved an actual integration gap
 

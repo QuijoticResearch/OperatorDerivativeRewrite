@@ -23,6 +23,31 @@ Source: [Adjoint](Foundation/Adjoint.lean).
 tools. An abstract adjoint does not construct a stochastic process, analytic
 product rule or adapted integral. Such identifications need separate proofs.
 
+**Bakry curvature–covariance bridge on the three-coordinate Fourier core.**
+For a real symbol `ψ : (Fin 3 → ℤ) → ℝ`, `FourierGammaComplexCriterion.gamma_full_iff_covariance`
+identifies positivity of every finite covariance-kernel matrix with REAL,
+nonnegative actual Γ₁ synthesis on every complex finite Fourier input.
+The imaginary two-mode probe is essential when `ψ(0)` is not normalized.
+`AnisotropicStableGamma.anisotropic_covariance` applies the fractional
+covariance theorem coordinatewise to `∑ a_j|k_j|^γ_j`, with `a_j≥0` and
+`0<γ_j<2`; `anisotropic_gamma` gives real nonnegative Γₙ at every point.
+These are finite-core kernel statements, not process or CD claims.
+
+`WaveDiagonalSemigroup.strong_continuity`, `generator_iff` and
+`anisotropic_generator_domain` construct a genuine contraction semigroup
+on the coefficient Hilbert space ℓ²(ℤ³,ℂ) with exact maximal closed
+weighted domain. A zero-rate mode is stationary (`stationary_mode`), so
+nonnegative weights alone give no strict gap. Separately,
+`WavePhysicalFourierBridge.box_parseval_all` uses the ACTUAL normalized
+three-coordinate box integral, and `box_gamma1_energy` proves for every
+finite polynomial that integrated Γ₁ equals negative generator pairing
+when `ψ(0)=0`. `anisotropic_box_gamma1_energy` instantiates this and
+physical finite-core dissipativity. The counterexample `ψ≡1` on the
+constant mode has Γ₁ average1/2 and generator energy1. The remaining
+representation problem is an isometric physical Haar-L² completion and
+intertwining with the ℓ² semigroup; Markov positivity and graph-domain Γ
+must be proved separately. See the [exact Bakry audit](STARDUST_BAKRY_CURVATURE_COVARIANCE_AUDIT.md).
+
 ## Gaussian realizations
 
 [GaussianHermiteAdjoints](Foundation/GaussianHermiteAdjoints.lean) proves, in the

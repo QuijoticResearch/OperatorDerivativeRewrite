@@ -254,3 +254,44 @@ checks passed. No new mathematical theorem or hypothesis modified. Exact-commit
 receipt and terminal verified PRIVATE main/research gate follow. ResearchSources,
 unrelated plans/tmp and historical records preserved. Resume current IBM after
 closure; no second October25 reflection session.
+
+## October27,2026 — physical Fourier synthesis at verified Bakry checkpoint1612
+
+One America/New_York date was reserved BEFORE substantive reflection work in
+`STARDUST_REFLECTION_SESSIONS.json`. The prior October25 session was first
+reconciled against its existing exact terminal receipt:1565actual seconds,
+both private refs verified, conservative charge adjusted by6seconds. This
+October27 session starts at2026-10-27T15:24:54.983385Z and has one shared
+45-minute maximum including setup, documentation, checks, Git and backup.
+Final actual accounting will be recorded in the session ledger and terminal
+receipt before any further reflection admission; no second session today.
+
+**Mathematical synthesis.** The covariance-symbol PSD criterion, closed
+ℓ²(Z³) multiplier semigroup, and physical normalized box-integral energy
+are three DISTINCT verified interfaces. Checkpoints1608–1609 establish the
+finite complex Γ/covariance side and anisotropic examples. Checkpoint1610
+establishes the coefficient Hilbert semigroup and its maximal graph domain.
+Checkpoint1612 supplies actual three-coordinate physical Parseval and
+integrated Γ₁=negative-generator energy for every finite Fourier polynomial
+under `ψ(0)=0`. The normalization has an exact counterexample: ψ≡1 on the
+constant mode yields Γ₁ average1/2 versus generator energy1. This is a
+standard Fourier/Dirichlet bridge, not a claim of novelty or a completed
+physical stochastic realization.
+
+**Next exact premise.** Construct an isometric Fourier map from the actual
+normalized physical torus Haar-L² completion to ℓ²(Z³) and prove it
+intertwines the closed semigroup. A separate positivity-preservation theorem
+is needed for a Markov/Lévy interpretation; graph-domain Γ and curvature/
+entropy claims require further control. The zero-weight stationary mode
+blocks an unrestricted positive gap. These are repository obligations, not
+claims that the corresponding general mathematics is externally open.
+
+README active-campaign scope and one curated result, the blueprint and
+commentary were updated. No canonical LaTeX draft changed; all3 existing
+LaTeX/PDF pairs retained matching source/PDF hashes and prior complete
+visual-review receipts, so no PDF recompilation was due. Fifty local links
+resolve. All2682 audited Lean/root and3 config files, and113 original
+ResearchSources hashes match checkpoint1612; no mathematical source or
+manuscript content changed. Full build/complete axiom/public-type/independent
+evidence is reused only because those inputs are byte-identical. Git exact
+receipt and verified PRIVATE backup are closure work, not new mathematics.

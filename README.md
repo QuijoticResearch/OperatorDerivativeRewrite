@@ -37,6 +37,7 @@ types and detailed scopes before reuse.
 | Original native Hilbert obstruction and genuine tested limits | `IBMNativeWeakObstruction.no_original_weak_subsequence`; `IBMFourierCylinderSeries.native_tendsto`; `source_native_tendsto` | Specified positive-horizon native outputs have no weak intrinsic Hilbert subsequence. Curvature-summable Fourier source-lowered actions nevertheless converge in clock L2/L1. This is an action limit, not observable reconstruction. [Obstruction](Foundation/IBMNativeWeakObstruction.lean), [tested calculus](Foundation/IBMFourierCylinderSeries.lean). |
 | Actual multitime mean graph and hybrid reconstruction | `IBMFourierClockGraph.multitime_clock_graph`; `IBMFourierClockClarkOcone.projected_actual_derivative`; `IBMFourierHybridReconstruction.reconstruction` | Folded/collision gradients in the ORIGINAL clock graph; finite-horizon hidden-clock Clark–Ocone and original joint divergence reconstruction with a STATIC source channel. Observed-IBM-filtration causality remains open. [Focused private note](manuscripts/ibm-clock-hybrid/main.pdf). |
 | Actual quartic theta-flow eventual global real zeros | `RiemannQuarticUniformFarScale.eventually_all_zeros_real` | Every complex zero is real at every sufficiently late time of the genuine growing quartic integral. Local/far estimates share one scale. No RH implication is inferred. [Source](Foundation/RiemannQuarticUniformFarScale.lean), [full stopping scope](A4_CAMPAIGN_STOPPING_AUDIT.md). |
+| Finite physical-torus curvature and generator energy | `WavePhysicalFourierBridge.box_parseval_all`; `box_gamma1_energy`; `anisotropic_box_gamma1_energy`; `WaveDiagonalSemigroup.anisotropic_generator_domain` | Exact normalized box-integral Parseval and integrated Γ₁/energy identity on every finite Fourier polynomial; a separate strongly continuous coefficient semigroup has an exact weighted ℓ² graph domain. Physical Haar-L² intertwining, Markov realization and completed Γ remain open. [Focused audit](STARDUST_BAKRY_CURVATURE_COVARIANCE_AUDIT.md). |
 
 ## Verification and reproducibility
 
@@ -64,12 +65,13 @@ ResearchSources is read-only and excluded from research commits.
 
 ## Research and exposition
 
-**Active:** intrinsic stochastic calculus for actual IBM. Physical-time
-Ito–Tanaka, causal/adjoint identification of the physical-time integral and
-temporal-gradient representation remain open. Uniform-grid quartic variation
-and signed Simpson convergence are proved in probability; this supplies neither
-a semimartingale bracket nor an almost-sure arbitrary-partition theorem. Subsequent campaigns
-remain gated by the authoritative queue; documentation does not release them.
+**Active:** Bakry–Émery Objective 2, curvature–covariance correspondences.
+Objective 1 and intrinsic IBM remain incomplete at preserved checkpoints.
+Finite Fourier covariance, closed coefficient semigroups and physical core
+energy identities are verified; a physical Haar-L² semigroup, Markov process,
+completed Γ domain and curvature/entropy estimates still require proof.
+Subsequent campaigns remain gated by the authoritative queue; this overview
+does not change their order.
 
 [Periodic reflection](STARDUST_REFLECTION_POLICY.md) is supporting work at
 natural verified checkpoints, capped at45minutes per local day total. It
