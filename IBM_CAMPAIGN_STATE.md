@@ -1,3 +1,29 @@
+# Authoritative temporary excursion — October26,2026: Astra IBM reassessment ACTIVE
+
+User-authorized after Bakry checkpoint1561, db36655b6866ad078f0c0b2f559be000bfac6f19,
+passed full verification and BOTH private backup refs at2026-10-27T02:07:26Z.
+Temporarily suspend Bakry Objective1 at that exact checkpoint, preserving all
+proofs and unfinished invariant-semigroup/domain/entropy/manuscript obligations.
+Activate the bounded IBM reassessment described in STARDUST_IBM_ASTRA_REMATCH.md.
+The initial working bound is a theorem-level audit and one substantive fully
+verified proof or obstruction checkpoint, then return to Bakry. Do not silently
+extend the excursion. A concrete verified breakthrough may justify REQUESTING
+an extension; it does not authorize an automatic indefinite IBM campaign.
+
+Audit the strongest actual observed-filtration IBM results and negative results
+before choosing a mathematically distinct route. Predictable representation is
+not a prerequisite: investigate adjoints, orthogonal residuals and alternative
+closed domains where justified. Preserve every existing counterexample and do
+not repeat failed approaches without a new mechanism changing their hypotheses.
+Do not declare intrinsic physical-time Ito or Clark--Ocone complete without
+actual observed-filtration hypotheses and exact operator domains. Full builds,
+complete transitive axiom/type/proof/independent/source audits, exact commits and
+guarded PRIVATE backups remain mandatory. All later queue priorities and the
+no-expiration policy remain unchanged. Earlier Bakry-ACTIVE/IBM-DEFERRED labels
+below are historical ONLY for this temporary excursion; no mathematics changes.
+
+---
+
 # Current status — IBM DEFERRED at user-directed transition, October26,2026
 
 The user directed moving to Bakry–Émery after checkpoint1547. Bakry Objective 1

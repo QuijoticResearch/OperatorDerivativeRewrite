@@ -50461,3 +50461,17 @@ were checked; manuscript bytes preserved. No options, versions or resources chan
 Evidence: `.lake/stardust-1561-*`. Local gates complete; explicit commit,
 exact-commit receipt and guarded BOTH-private-ref verification follow. This
 pre-commit entry does not assert remote backup. No reflection or publication.
+
+
+## October26 user-authorized bounded IBM reassessment
+
+After Bakry1561's exact verified PRIVATE closure, Bakry Objective1 is temporarily
+suspended. The Astra IBM rematch is active under STARDUST_IBM_ASTRA_REMATCH.md;
+initial bound is a theorem-level audit and one substantive verified proof or
+obstruction checkpoint, followed by return to Bakry unless an extension is
+explicitly authorized after a concrete verified breakthrough. All later queue
+priorities and mathematical/audit standards remain. No prior result is changed.
+Initial review found full initial-germ triviality and static native minimum-norm
+adjoint recovery already established, plus actual uniform stochastic/native
+graph reconstruction. Their physical-time/observed-domain limits remain essential.
+No new mathematical theorem or runtime model switch is claimed by this update.
