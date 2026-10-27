@@ -99,11 +99,11 @@ Produce:
 
 ### Priority and activation rules
 
-**Activation prerequisite:** Complete Bakry–Émery Objective 1, including verification and repair of the original manuscript, before beginning this investigation.
+**Activation:** The October27 user-authorized transition at checkpoint1601 supersedes the former Objective1-completion prerequisite. Objective2 is ACTIVE; Objective1 remains deferred/incomplete with all unfinished obligations preserved. See STARDUST_BAKRY_CURVATURE_COVARIANCE_AUDIT.md for current verified scope.
 
 This objective remains within the Bakry–Émery campaign, before the separately queued Cauchy campaign.
 
-Do not interrupt the active IBM campaign or alter the remaining Stardust research queue.
+IBM1562 remains frozen/incomplete. Do not reopen IBM or alter the remaining Stardust research queue.
 
 If discoveries have implications for Cauchy, iterated pseudoprocesses, or Yang–Mills, document and queue those implications without prematurely redirecting the active research.
 

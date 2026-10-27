@@ -52505,3 +52505,23 @@ and mathematical verification requirements are unchanged. Instruction-only updat
 no Lean, configuration or manuscript bytes changed; the1601 source/config audit
 hashes remain exact. Both1600/1601 and this instruction update require guarded
 private synchronization; restricted-hour status is QUEUED, never backed up.
+
+
+## Checkpoint1602 — Objective2 finite covariance criterion
+
+AnchoredCovariance proves exact finite PSD iff zero-sum conditional negativity,
+and connects it to the EXISTING Hermitian Fourier Gamma kernel for even symbols
+vanishing at0, with a specified zero-frequency anchor. The centering energy
+identity supplies both directions. This is classical Schoenberg algebra, not a
+novel curvature theorem or a stochastic-process construction. The plus-sign
+quadratic covariance interpretation fails at(1,1); an independent quartic
+zero-sum test on{0,1,2} gives energy24>0, agreeing with preserved obstructions.
+Spectral L2 contractivity1601 alone is therefore insufficient for covariance.
+Exact theorem reuse, source links, conventions, limitations and next steps are
+recorded in STARDUST_BAKRY_CURVATURE_COVARIANCE_AUDIT.md. Literature audit used
+Bierme2016LectureIpp18–20 and Gangolli1967ChapterI, not a whole-paper review.
+Full6852jobs43.254s; complete51695-declaration audit44.079s; all14types10proofs4defs
+reviewed; four independentchecks29.349s. Source2673/config3/archive113 intact.
+Failed elaboration attempts retained and repaired without weakening claims or
+settings. Objective2 ACTIVE/incomplete; Objective1 deferred/incomplete; later
+queue unchanged. Exact local approval follows; workday PRIVATE sync QUEUED.
