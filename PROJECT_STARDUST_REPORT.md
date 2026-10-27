@@ -1,5 +1,20 @@
 # PROJECT STARDUST — OVERNIGHT DISCOVERIES
 
+## October27 checkpoint1618 — heat-multiplier positivity obstruction
+
+Lean verifies a finite small-time converse: positive conditional-negative
+energy for zero-sum weights makes the exponential multiplier quadratic form
+negative at some positive time. Thus each active superquadratic coordinate
+in the mixed stable symbol yields a sampled matrix
+`[exp(−t ψ(k_j−k_i))]` that is not PSD. The proof differentiates the finite
+exponential form at time zero. An explicit cubic witness uses
+`t=log(10/9)` and frequencies `(0,1,2)`; a quartic case is independently
+tested. See `Foundation/FiniteBochnerObstruction.lean`. This is a standard
+finite Bochner/Schoenberg obstruction, not a process construction or proof
+that the physical Haar-L² semigroup fails positivity preservation. The
+positive exponential-PSD direction and process/domain consequences remain
+open. Original ResearchSources were not modified.
+
 ## October27 checkpoint1617 — mixed-axis covariance converse
 
 Lean now proves the exact condition for the three-coordinate stable symbol

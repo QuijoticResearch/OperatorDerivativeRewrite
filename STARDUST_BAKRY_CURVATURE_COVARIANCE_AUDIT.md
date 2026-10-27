@@ -1,5 +1,35 @@
 # Bakry Objective2 — curvature/covariance audit
 
+## Checkpoint1618: superquadratic heat multipliers fail finite positivity
+
+`Foundation/FiniteBochnerObstruction.lean` connects the exact conditional-
+negative threshold to the exponential heat multiplier. For any finite
+three-point rate matrix `d` and zero-sum weights `w`, `expEnergy_deriv` proves
+that the exponential quadratic form at time zero has derivative
+`−energy(d,w)`. If that signed energy is positive, the form is negative at
+some positive time (`expEnergy_eventually_negative`), so the sampled matrix
+`[exp(−t d(i,j))]` is **not** positive semidefinite
+(`non_psd_at_some_time`). The proof uses actual real differentiation and a
+right-neighborhood limit, rather than asserting the full Schoenberg theorem.
+
+`mixed_active_not_psd` applies this to every positive-weight coordinate with
+exponent greater than two in the verified anisotropic stable symbol. The
+offending coordinate can be embedded among arbitrary other coordinate
+weights and exponents (the latter must be positive). Separately, the cubic
+example gives an explicit time `t=log(10/9)>0`; its `(0,1,2)` sampled
+multiplier has strictly negative quadratic form and fails PSD. Independent
+Lean tests include cubic and quartic active axes.
+
+This is a finite positive-definiteness obstruction to a characteristic or
+convolution multiplier interpretation. The source does **not** prove a
+physical-space positivity-preservation theorem for the completed Haar-L²
+semigroup, construct a Lévy process, or establish an entropy/curvature
+inequality. The positive direction (all exponentials PSD for a CND symbol)
+would require a separately verified finite Schoenberg argument or explicit
+process construction. The result is standard structure, with no novelty
+claim. Original Bakry manuscripts and all ResearchSources bytes remain
+unchanged. Objective2 continues.
+
 ## Checkpoint1617: exact active-axis criterion for mixed stable symbols
 
 `Foundation/AnisotropicMixedThreshold.lean` closes the mixed converse left
