@@ -1251,3 +1251,30 @@ transitive axiom audit passed. All12 unabridged public types, six theorem
 proofs, six definitions, four private supporting proofs and six independent
 checks were reviewed. Source/configuration and all113 archive hashes match
 the previous checkpoint. Exact Git approval and private backup close it.
+
+## Checkpoint1635 — sharp flat curvature on the quadratic Fourier core
+
+`Foundation/PhysicalHeatFlatCurvature.lean` uses the actual Fourier
+generator recursion `FiniteStableGamma.Core.gammaIter` and the already
+verified general covariance-power positivity theorem. For the same
+one-coordinate quadratic heat symbol as checkpoint1634, the second Gamma
+iteration is real and nonnegative at every synthesis point for every finite
+complex Fourier polynomial. The explicit Hermitian sine mode has
+`Γ₁(f,f)(0)=4` and `Γ₂(f,f)(0)=0`. Thus no constant `ρ>0` can satisfy the
+pointwise core inequality `Γ₂≥ρ Γ₁` for all real-valued Fourier inputs.
+
+This is an exact **zero-curvature sharpness** result on the finite Fourier
+core. It clarifies the preceding nonmonotonicity example: failure of
+finite-time Loewner monotonicity does not imply negative `Γ₂`; here `Γ₂` is
+nonnegative, while strictly positive curvature fails independently. A
+spectral gap, if established through separate compact-torus estimates,
+would also not imply a positive pointwise curvature constant. This is
+standard flat torus mathematics formalized by direct reuse of existing
+Stardust declarations; no novelty is claimed. No closed generator domain
+or continuous-time process curvature statement is inferred.
+
+The full6885-job root build and complete52229-declaration whitelist-only
+transitive axiom audit passed. All six unabridged public types, five theorem
+proofs, one definition, three private definitions and four independent
+checks were reviewed. Source/configuration and all113 archive hashes match
+the previous checkpoint. Exact Git approval and private backup close it.

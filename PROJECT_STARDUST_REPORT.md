@@ -53281,3 +53281,16 @@ preserving the exact physical heat-chain pairing. The full6884-job build,
 complete52221-declaration transitive axiom audit, all12 public types and
 proofs/definitions, six independent checks and source integrity passed. See
 `STARDUST_BAKRY_CURVATURE_COVARIANCE_AUDIT.md`.
+### Checkpoint1635 — zero curvature is sharp on the quadratic Fourier core
+
+`Foundation/PhysicalHeatFlatCurvature.lean` reuses the verified general
+Fourier Gamma-iteration positivity theorem to prove `Γ₂≥0` for the
+quadratic heat symbol on the finite Fourier algebra. A real Hermitian sine
+mode has `Γ₁=4` and `Γ₂=0` at the origin, refuting every strictly positive
+pointwise curvature constant on that core. This separates generator
+curvature from the finite-time covariance nonmonotonicity in checkpoint1634.
+The result is classical flat torus behavior, with no claim about a closed
+generator domain or continuous-time path law. The full6885-job root build,
+complete52229-declaration transitive axiom audit, six public types and
+proofs/definition, four independent checks and exact source integrity passed.
+See `STARDUST_BAKRY_CURVATURE_COVARIANCE_AUDIT.md`.
