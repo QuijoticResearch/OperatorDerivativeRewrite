@@ -1,3 +1,30 @@
+# Authoritative transition — October27,2026: focused Yang–Mills ACTIVE
+
+At fully audited and BOTH-PRIVATE-backed Bakry checkpoint1638,
+`3e395efc1de8ce61fff04bc598ed631710728f38`, the user explicitly
+directed a transition. **Bakry Objective 2 is PAUSED, NOT COMPLETED**;
+Objective 1 remains deferred/incomplete. Preserve every theorem,
+counterexample and open obligation in `STARDUST_BAKRY_OBJECTIVE2_PAUSE.md`
+and the detailed Bakry ledgers. Do not resume Bakry without a new user
+instruction. No active proof or verification cycle was interrupted.
+
+**ACTIVE: focused Yang–Mills campaign.** Reconstruct the historical
+manuscript approaches and Bałaban-related revisions, then select only one
+or two mathematically promising ideas relevant to a four-dimensional
+physical mass gap. Audit gauge invariance, circularity, finite-volume
+versus continuum/infinite-volume uniformity, and exact verified Lean reuse.
+Prefer gauge-invariant correlation/spectral estimates or decisive
+counterexamples. External existence claims remain provisional; do not
+introduce them as axioms. Produce a concise route and obstacle assessment.
+The older broad-audit scheduling gate in
+`STARDUST_YANG_MILLS_QUEUED_AUDIT.md` is superseded by this explicit
+transition and narrowed focus, not erased as historical research context.
+All later campaign priorities remain in their previous order. Preserve
+the no-expiration policy, full Lean/source audits, exact Git receipts and
+guarded BOTH-PRIVATE backup. `ResearchSources` remains read-only.
+
+---
+
 # Git synchronization timing amendment — October27,2026
 
 The user has lifted the weekday intraday external-push restriction. All

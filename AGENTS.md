@@ -1,3 +1,24 @@
+# Authoritative transition — October27,2026: focused Yang–Mills ACTIVE
+
+The user explicitly directed transition at safe, fully audited and
+BOTH-PRIVATE-backed Bakry checkpoint1638,
+`3e395efc1de8ce61fff04bc598ed631710728f38`.
+Bakry Objective 2 is PAUSED, NOT COMPLETED; Objective 1 remains
+deferred/incomplete. Preserve `STARDUST_BAKRY_OBJECTIVE2_PAUSE.md` and
+the detailed Bakry theorem ledger. Do not resume Bakry without a new
+instruction. No active proof was interrupted.
+
+ACTIVE: focused Yang–Mills campaign. Audit historical manuscripts and
+Bałaban-related revisions, choose one or two ideas genuinely relevant to
+a four-dimensional physical mass gap, and test gauge invariance,
+circularity and scale/volume-uniform requirements. Prefer precise
+gauge-invariant correlation/spectral results or counterexamples, not a
+broad gauge library. Treat external existence as provisional, never as
+an axiom. Report exact remaining obstacles. The older queued gate is
+superseded only as scheduling; later campaigns and all Lean, source,
+Git and BOTH-PRIVATE backup standards remain intact. ResearchSources
+is read-only. See `STARDUST_CAMPAIGN_QUEUE.md`.
+
 # Authoritative Git synchronization amendment — October27,2026
 
 The user explicitly lifted the weekday09:00–17:00 America/New_York external

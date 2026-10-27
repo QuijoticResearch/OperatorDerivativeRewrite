@@ -1,4 +1,10 @@
 # Project Stardust — Bakry–Émery Objective 2
+
+**Current status: PAUSED, NOT COMPLETED.** The user explicitly activated
+the focused Yang–Mills campaign after fully audited and BOTH-PRIVATE-backed
+checkpoint1638. Preserve all six deliverables and open obligations for a
+future user-authorized return; see `STARDUST_BAKRY_OBJECTIVE2_PAUSE.md`.
+Earlier ACTIVE wording below is historical.
 ## Curvature–Covariance Correspondences Across Stochastic Processes
 
 **Status:** ACTIVE — User-authorized transition on October27,2026 at fully locally audited checkpoint1601. Objective1 is deferred/incomplete, with all open obligations preserved. See the authoritative transition in STARDUST_CAMPAIGN_QUEUE.md. The former Objective1-completion prerequisite is superseded as scheduling only; workday private-backup deferral remains in force.

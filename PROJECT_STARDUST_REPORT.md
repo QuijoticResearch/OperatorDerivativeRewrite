@@ -53338,3 +53338,15 @@ claim. The full6888-job build, complete52258-declaration transitive axiom
 audit, seven public types/proofs/definition/instance, four independent
 checks and source/archive integrity passed. See
 `STARDUST_BAKRY_CURVATURE_COVARIANCE_AUDIT.md`.
+
+### October27 transition — Bakry Objective 2 paused; focused Yang–Mills active
+
+The user's explicit transition follows checkpoint1638, fully audited and
+verified on both PRIVATE backup branches at commit
+`3e395efc1de8ce61fff04bc598ed631710728f38`. Bakry Objective 2 is
+paused, not completed. `STARDUST_BAKRY_OBJECTIVE2_PAUSE.md` records its
+verified covariance/Gamma and physical-process results, counterexamples,
+classical status and unresolved domain/curvature/entropy questions. The
+original Bakry manuscripts and Objective 1 obligations remain preserved.
+The focused Yang–Mills campaign is active with the existing later queue
+unchanged. This scheduling transition changes no mathematical result.

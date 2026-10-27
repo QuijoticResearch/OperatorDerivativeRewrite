@@ -1,7 +1,16 @@
 # Project Stardust — Queued Yang–Mills Research Audit
 ## Manuscript Reconstruction, Bałaban Compression, and Gauge-Theoretic Foundations
 
-**Status: QUEUED — Activate after completion of Bakry–Émery Objectives 1 and 2.**
+**Status: ACTIVE — explicitly reprioritized after fully verified Bakry checkpoint 1638.**
+
+The user's focused-campaign instruction supersedes the former completion
+prerequisite below. Bakry Objective 2 is paused, not completed. Audit the
+historical approaches, then pursue only one or two ideas with a concrete
+mass-gap-related question. Do not repair every manuscript or build a broad
+gauge library. Any external existence construction remains provisional,
+never an axiom. The seven historical deliverables below are useful audit
+prompts; the current controlling scope is the focused user directive and
+the top of `STARDUST_CAMPAIGN_QUEUE.md`.
 
 ### Mission
 
