@@ -2603,3 +2603,5 @@ import Foundation.WaveDiagonalSemigroup
 import Foundation.WavePhysicalFourierBridge
 
 import Foundation.PhysicalTorusWaveSemigroup
+
+import Foundation.WaveTorusCoreBridge

@@ -1,5 +1,21 @@
 # PROJECT STARDUST — OVERNIGHT DISCOVERIES
 
+## October27 checkpoint1614 — finite Fourier core to actual Haar L²
+
+`Foundation/WaveTorusCoreBridge.lean` gives an injective finite-polynomial
+lift into the actual unit-torus Haar L² Hilbert basis with exact Fourier
+coefficients. It proves the anisotropic finite generator is the physical L²
+norm generator on this core, and that the Haar L² norm and integrated
+generator/Γ₁ energies agree exactly with the prior period-2π box formulas.
+The local normalized Haar measure instance is essential; it was explicitly
+checked in independent tests. The result does not prove pointwise rescaling
+between the two torus parametrizations, Markov positivity, a stochastic
+process, or maximal-domain curvature/entropy claims. These remain open.
+Sources: pinned Mathlib `Analysis/Fourier/AddCircleMulti.lean` (Fourier Hilbert
+basis, coefficients and Parseval), verified `FiniteStableGamma`,
+`WavePhysicalFourierBridge` and `PhysicalTorusWaveSemigroup`. All 113 original
+research source files remain unchanged.
+
 ## October27 checkpoint1613 — physical Haar-L² Fourier semigroup
 
 Mathlib's `UnitAddTorus.mFourierBasis` and `mFourierBasis_repr` give a genuine

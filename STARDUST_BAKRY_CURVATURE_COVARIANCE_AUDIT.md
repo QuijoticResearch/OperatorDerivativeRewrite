@@ -1,5 +1,41 @@
 # Bakry Objective2 — curvature/covariance audit
 
+## Checkpoint1614: exact finite-core bridge between the two physical models
+
+`Foundation/WaveTorusCoreBridge.lean` constructs an explicit finite Fourier
+polynomial lift into the normalized unit-torus Haar L² Hilbert basis.
+`repr_lift` and `lift_coeff` prove exact agreement of every Hilbert coordinate
+and actual Haar Fourier coefficient with the original Laurent coefficient;
+`lift_injective` proves no finite polynomial is lost. This uses Mathlib's
+`UnitAddTorus.mFourierBasis_repr`, not a postulated unitary.
+
+`generator_coeff` proves the finite algebra's coefficientwise generator
+formula. `lift_anisotropic_generator` then proves that the **actual physical
+L² positive-time norm slope** of each lifted polynomial converges to the
+lifted finite generator for every nonnegative anisotropic stable rate.
+`physical_inner_lift` evaluates the actual Haar integral of any two lifted
+polynomials by a finite coefficient sum. Combining that with the earlier
+verified period-2π box formulas yields exact `physical_box_generator_energy`,
+`physical_gamma1_energy` (when the real symbol vanishes at zero), and
+`physical_norm_box_parseval`. Thus the two different physical constructions
+have the **same finite-core norm and integrated generator/Γ₁ energies** under
+their respective normalizations.
+
+This is a coefficient and energy bridge, not a theorem that the pointwise
+functions are equal under a verified rescaling map. In particular it supplies
+no Markov positivity, sample paths, maximal-domain pointwise Γ or entropy.
+The L² model uses the local normalized Haar `MeasureSpace UnitAddCircle`
+instance from pinned Mathlib. An independent test initially exposed that
+Lean's unrelated default `AddCircle.measureSpace 1` produces a different
+integral expression; downstream uses must select the Haar instance explicitly.
+
+Verification1614: complete root build, complete transitive standard-axiom
+audit, 10 unabridged public types, nine proof bodies, the lift definition and
+three local measure instances, five independent Lean tests, and full
+source/config/archive integrity. Exact counts, timings, commit and both
+PRIVATE remote receipts are in `.lake/stardust-1614-verification.json`.
+Objective2 remains ACTIVE.
+
 ## Checkpoint1613: actual Haar-L² realization on the unit three-torus
 
 `Foundation/PhysicalTorusWaveSemigroup.lean` transports the verified
