@@ -2601,3 +2601,5 @@ import Foundation.AnisotropicStableGamma
 import Foundation.WaveDiagonalSemigroup
 
 import Foundation.WavePhysicalFourierBridge
+
+import Foundation.PhysicalTorusWaveSemigroup

@@ -1,5 +1,44 @@
 # Bakry Objective2 — curvature/covariance audit
 
+## Checkpoint1613: actual Haar-L² realization on the unit three-torus
+
+`Foundation/PhysicalTorusWaveSemigroup.lean` transports the verified
+`WaveDiagonalSemigroup` through Mathlib's **actual multivariate Fourier Hilbert
+basis** `UnitAddTorus.mFourierBasis`. The local primary source is
+`Mathlib/Analysis/Fourier/AddCircleMulti.lean`, especially
+`mFourierBasis` and `mFourierBasis_repr` (lines263–280 in the pinned Mathlib).
+The latter identifies Hilbert coordinates with physical Haar Fourier
+coefficients; no formal or assumed coefficient-to-function map is inserted.
+
+For every nonnegative frequency rate `r : (Fin 3 → ℤ) → ℝ≥0`, the transported
+operators on `Lp ℂ 2 (volume : Measure (UnitAddTorus (Fin 3)))` are contractions,
+obey the semigroup law, and are strongly continuous in nonnegative time.
+`evolution_coeff` gives the exact physical Fourier multiplier;
+`evolution_mode` and `stationary_mode` test its action on actual L² Fourier
+modes. `generator_iff` proves that the positive-time L² norm slope converges
+to `g` **iff** every actual Haar Fourier coefficient of `g` is
+`-r(k)` times that of `f`. `generator_domain` gives the exact weighted ℓ²
+maximal domain, and `graph_closed` proves the physical generator graph closed.
+`anisotropic_generator_iff` and `anisotropic_generator_domain` specialize this
+to the existing nonnegative anisotropic stable symbol. These are completed
+physical-space operator results, stronger than the earlier finite Fourier
+core and abstract coefficient-space statements.
+
+The unit torus here has period **one**; the preceding real-coordinate
+`boxAverage`/`synthesis` core uses period **2π**. Their normalization/scaling
+identification is not yet a verified theorem, so the two physical models are
+not silently equated. Positivity preservation, Markov kernels, a Lévy process,
+pointwise or maximal-domain Γ/CD identities, invariant entropy and LSI also
+remain open. A complex L² contraction alone establishes none of these.
+
+Verification1613: full root build 6863 jobs; complete standard-three-axiom
+transitive audit 51885 safe Foundation declarations; 19 unabridged public
+types, 14 public theorem proofs, five public definitions/abbreviations, one
+private coercion lemma and three local instances reviewed; five independent
+Lean examples; source/config/archive integrity checked. Exact Git and private
+backup evidence is recorded in `.lake/stardust-1613-verification.json` and the
+guarded synchronization receipts. Objective2 remains ACTIVE.
+
 ACTIVE since user-authorized transition6615f16; Objective1 remains deferred and
 incomplete. This audit is a partial deliverable, not completion of Objective2.
 

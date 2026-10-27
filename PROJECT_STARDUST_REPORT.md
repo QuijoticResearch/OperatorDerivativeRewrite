@@ -1,5 +1,23 @@
 # PROJECT STARDUST — OVERNIGHT DISCOVERIES
 
+## October27 checkpoint1613 — physical Haar-L² Fourier semigroup
+
+Mathlib's `UnitAddTorus.mFourierBasis` and `mFourierBasis_repr` give a genuine
+Haar-L² realization of the three-coordinate coefficient ℓ² calculus.
+`Foundation/PhysicalTorusWaveSemigroup.lean` proves physical contraction,
+semigroup law, strong continuity, Fourier-mode eigenfunctions, exact positive-
+time norm generator limit, weighted ℓ² maximal graph domain and graph
+closedness for every nonnegative multiplier rate, including the existing
+anisotropic stable symbol. The full6863-job root build, 51885-declaration
+standard-axiom audit, unabridged theorem/proof review and five independent
+tests passed. The unit-period torus has not yet been identified by a formal
+scaling theorem with the period-2π `boxAverage` model. Markov positivity,
+actual Lévy processes, maximal-domain Γ/CD and entropy remain open. This is
+an operator realization, not a stochastic-process or curvature theorem.
+Sources: pinned Mathlib `Analysis/Fourier/AddCircleMulti.lean` lines263–280;
+verified `Foundation/WaveDiagonalSemigroup.lean` and
+`Foundation/WavePhysicalFourierBridge.lean`. ResearchSources unchanged.
+
 > Resumed A(4) stopping review1225 COMPLETE, October20,2026: preserve mathematical97906a4 and all subsequent verified work. Transition back to integer A(2k), A(6) first, waits for this fresh report commit's exact receipt and PRIVATE main/research verification. The next queue section retains every requested future interpolation and zero-escape condition. The paused CubicDensity draft remains unimported/unstaged/uncertified. No new mathematical source, theorem or campaign was opened in this review.
 
 > Latest instruction-only checkpoint1224 (October20,2026): commit and privately back up the authoritative queue update, then resume A(4) REVIEW. Pause further integer/real-order work; preserve all verified results and the uncommitted CubicDensity draft without certification. The top section of STARDUST_CAMPAIGN_QUEUE.md supersedes older active-stage labels. The future order is A(4) stopping review; integer A(2k), A(6) first; conditional real k>1; justified k->1+ analysis and independent A(2); final multichannel, then stop by October31. The real-order objectives explicitly cover interpolation, correct normalization/time target, branches, analyticity, uniform estimates, actual nonreal-zero compact escape, justified Hurwitz hypotheses and failure obstructions. No new interpolation investigation or mathematical claim is introduced here.
