@@ -1,5 +1,26 @@
 # PROJECT STARDUST — OVERNIGHT DISCOVERIES
 
+## October27 checkpoint1622 — full physical L² positivity threshold
+
+Lean proves that the completed mixed-stable heat semigroup on Haar
+L² of the three-torus preserves **every** almost-everywhere real
+nonnegative input at every nonnegative time exactly when every active
+axis exponent is at most two (`a_j≥0`, `γ_j>0`). The construction uses
+the verified finite square theorem, a new exact torus synthesis
+square identity, density of finite Fourier squares in the positive
+L² cone, and closedness of that cone via a 1-Lipschitz clipping map.
+The active superquadratic counterexample has a genuinely nonnegative
+L² input and a negative output on positive Haar measure. The constant
+Fourier mode is stationary, so the positive regime is conservative at
+the operator level. Exact declarations and limits are recorded in
+`Foundation/PhysicalHeatPositiveCone.lean` and
+`STARDUST_BAKRY_CURVATURE_COVARIANCE_AUDIT.md`. The earlier finite
+Schoenberg equivalence is classical; this formalization does not
+establish a pathwise Lévy process, graph-domain curvature condition,
+entropy inequality, or LSI. ResearchSources remains byte-for-byte
+unchanged. Full milestone verification and private backup are required
+before treating this as a frozen checkpoint.
+
 ## October27 checkpoint1619 — finite Schoenberg bridge
 
 Lean now proves the full finite-sample equivalence for normalized even real

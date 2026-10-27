@@ -1,5 +1,56 @@
 # Bakry Objective2 — curvature/covariance audit
 
+## Checkpoint1622: sharp positivity on the entire physical Haar-L² cone
+
+`Foundation/PhysicalHeatPositiveCone.lean` extends 1621 from finite Fourier
+squares to **every** almost-everywhere real nonnegative element of the
+completed Haar-L² space on the three-torus. The exact
+`torusSynthesis_mul`/`torusSynthesis_reflection` identities identify the
+algebraic square `reflection f * f` with `|torusSynthesis f|²` pointwise.
+Mathlib's dense multivariate Fourier span in continuous functions, followed
+by a continuous square root, proves each continuous nonnegative function
+lies in the uniform closure of these finite squares. The continuous map
+from continuous functions to Haar L² transfers this closure. A 1-Lipschitz
+complex-to-nonnegative-real clipping map commutes with that L² embedding;
+density of continuous functions in L² then proves `positive_l2_square_closure`:
+the finite square cone is dense in the **entire** nonnegative real L² cone.
+
+The closedness argument uses the fixed-point set of the continuous L²
+clipping map, not an unproved pointwise-limit claim. Combining it with
+the existing exact semigroup/core intertwining and 1621 square positivity
+gives `physical_evolution_positive_all`: any nonnegative rate satisfying
+the verified finite covariance condition yields a positivity-preserving
+completed physical L² semigroup at every nonnegative time. For mixed stable
+rates, `anisotropic_physical_positive_iff_active` proves the exact criterion
+`∀j, a_j>0 → γ_j≤2` under `a_j≥0, γ_j>0`. The reverse direction is the
+explicit 1621 positive-measure negative-output square, so it tests the
+entire-L² claim with an actual L² input. Inactive coordinates may have
+arbitrary positive exponent. `anisotropic_stationary_constant` proves
+zero-mode conservation; with the previously verified contraction, semigroup
+law and strong continuity this gives a conservative positivity-preserving
+contraction semigroup on the physical L² space under the active-axis
+criterion. This is an operator theorem, not a constructed stochastic path
+process or a Bakry–Émery curvature/entropy inequality.
+
+Five new independent Lean tests exercise arbitrary positive L² data with
+an inactive superquadratic coordinate, both directions of the exact
+positive-cone closure equivalence, failure for an active superquadratic
+coordinate, and constant preservation. Together with the five retained
+1621 tests they check both new directions.
+The proof uses the classical Fourier density theorem already in Mathlib;
+no novelty claim is made. Next investigate whether this positive L²
+semigroup admits a positive convolution kernel/probability transition law
+and which additional regularity or tightness is required for a genuine
+Lévy process. Graph-domain Γ, CD, entropy and LSI remain open.
+
+Full root build: 6872 jobs, 27.138 seconds. Complete transitive
+safe-declaration axiom audit: 52090 declarations, 44.650 seconds, using
+only `propext`, `Classical.choice`, and `Quot.sound`. All 21 public types,
+18 proofs, 3 definitions, 3 local instances and 10 independent examples
+were reviewed; the independent Lean pass took 28.949 seconds. The final
+source/config/archive hash and exact-commit receipt are recorded in the
+checkpoint verification evidence. ResearchSources was not modified.
+
 ## Checkpoint1621: completed physical torus square positivity and failure
 
 `Foundation/PhysicalHeatSquareBridge.lean` closes the finite-to-physical
