@@ -2542,3 +2542,4 @@ import Foundation.CauchyPoissonSmoothedCore
 import Foundation.CauchyPoissonLaplaceResolvent
 import Foundation.CauchyPoissonEntropy
 import Foundation.CauchyPoissonResidualKernel
+import Foundation.CauchyPoissonMixtureEntropy

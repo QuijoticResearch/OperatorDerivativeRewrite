@@ -51404,3 +51404,63 @@ instant finiteness from singular laws, unsmoothed Fourier core, path-space and
 both primary manuscript repairs remain OPEN. Actual closed generator/resolvent
 and smoothed graph core are already verified and should be reused. Preserve
 all audits, manuscript bytes, exact-commit receipts and guarded private backups.
+
+
+## Checkpoint1578 — actual finite-time geometric entropy contraction (October27,2026)
+
+Bakry Objective1 ACTIVE; IBM rematch1562 and pseudo1293 remain frozen. From
+verified baseline0fe60129a03582e1c36d888ed9a04a95e191c145, the residual
+splitting now yields a genuine quantitative forward-law entropy estimate.
+`Foundation/CauchyPoissonMixtureEntropy.lean` proves a reusable KL mixture bound
+on ANY measurable space for probability measures mu,nu and nonnegative weights
+a+b=1: KL(a*nu+b*mu||nu)<=b*KL(mu||nu). `mixture_rnDeriv` uses actual measure
+Radon-Nikodym derivatives, including the absolutely continuous part when mu is
+singular. Convexity of Mathlib's klFun at1, with klFun(1)=0, gives the pointwise
+bound. The integral proof explicitly requires mu<<nu; `mixture_kl_bound_all`
+then handles b=0 separately and non-AC inputs with b>0 via infinite KL. No
+implicit integrability hypothesis or false 0*infinity manipulation is used.
+Exact dependencies: Measure.rnDeriv_add/rnDeriv_smul_left/rnDeriv_self/
+rnDeriv_lt_top, InformationTheory.convexOn_klFun/klFun_one/
+klDiv_eq_lintegral_klFun_of_ac/klDiv_of_not_ac and klDiv_comp_right_le, from
+pinned Mathlib. This is standard convexity/data-processing mathematics, not a
+novel general information-theory claim; no new external-source claim is made.
+
+`entropy_contraction` combines that bound with checkpoint1577's ACTUAL invariant
+residual probability kernel. `exists_entropy_contraction` proves for EVERY
+|q|<1 and fixed t>0 some0<c<1 works for EVERY probability initial law mu:
+KL(K_t mu||nu_q)<=c*KL(mu||nu_q). `entropy_geometric` reuses actual kernel
+composition to iterate at ALL n>=0; `exists_geometric_entropy_decay` discharges
+the coefficient existence and yields KL(K_(n*t) mu||nu_q)<=c^n*KL(mu||nu_q).
+The coefficient depends on q,t, not mu or n. Infinite initial entropy is allowed
+as an extended-valued bound, but supplies no finite numerical conclusion.
+This closes the previous fixed-positive-time strict contraction obligation.
+It does NOT establish a sharp coefficient, uniform small-time rate, entropy
+production identity, instantaneous finite entropy from singular inputs, or the
+primary manuscript2's sharp log-Sobolev constant2/kappa (lines1495-1501).
+Forward-law entropy is not identified with backward-observable entropy in this
+nonsymmetric model. No diffusion chain rule or positive CD hypothesis is used.
+
+Full6827-job root build42.377s; complete51224-safe-declaration transitive audit
+42.564s, only propext/Classical.choice/Quot.sound. All8 public types and8 proofs
+read unabridged; no new definitions. Two existing Markov and one invariant-law
+probability local instances reviewed. Five independent Lean checks passed on
+first run25.063s: exact reset endpoint without AC; finite real-valued geometric
+estimate with ENNReal finiteness discharged; strict decrease of finite positive
+entropy; negative-pole singular Dirac inputs; and the geometric bound at every
+later off-grid time by actual semigroup monotonicity. Scratch failures retained:
+smul normalization, add versus add_left AC API, explicit coercion equalities.
+No theorem weakening or trust/resource changes, no warnings/errors suppressed.
+Source2649/config3/archive113 hash integrity PASS; original manuscript hashes
+still pinned to inventory1292. No ResearchSources or unrelated draft edits.
+Evidence `.lake/stardust-1578-*`. Local gates PASS; exact commit/receipt and
+BOTH guarded private-ref verification follow, not preclaimed in this record.
+
+NEXT: discharge genuine entropy convergence for finite-entropy laws and examine
+whether positive-time upper density bounds rigorously regularize arbitrary
+initial laws. Such upper domination is a DIFFERENT direction from minorization;
+prove it before using RN bounds or asserting instantaneous finiteness. Then
+connect valid entropy estimates to the manuscript's nonlocal dissipation/domain
+claims without assuming reversibility or a diffusion CD-to-LSI implication.
+Reuse the actual closed generator/resolvent1575 and smoothed graph core1574.
+Both manuscript repairs, sharpLSI, path-space and unsmoothed Fourier core remain
+OPEN. Campaign queue and all verification/source/Git/private requirements intact.
