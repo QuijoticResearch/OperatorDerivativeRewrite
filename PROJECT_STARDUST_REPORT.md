@@ -53373,3 +53373,23 @@ The full6889-job build, complete52270-declaration transitive axiom audit,
 five unabridged public types/proofs/definition, four independent Lean checks
 and exact source/config/archive integrity passed. Bakry Objective 2 remains
 paused and the focused Yang–Mills campaign remains active.
+
+### Focused Yang–Mills follow-on: error budget and influence transfer
+
+The manuscript's additive heat-reference contraction has an inverse-coupling
+error budget: Lean now proves `1-q₀≤λ/(cβ)` and that `q₀+E<1` requires
+`E<λ/(cβ)`. This sharpens checkpoint1639's nonuniformity result and exposes
+an exact rate obligation for its perturbative `ε_T+η`. A separate exact
+positive Markov-kernel example on `[0,1]` has uniformly bounded log-density
+derivatives and strict `L²` gradient contraction but doubles the supremum
+Lipschitz seminorm. It refutes the general inference used between the
+manuscript's block `H¹` estimate and its claimed Dobrushin influence decay;
+it does not determine the actual SU(2) transfer. Source formulas, proof,
+scope and remaining gauge-compatible estimate are in
+`STARDUST_YANG_MILLS_FOCUSED_AUDIT.md`. Full verification of the new Lean
+theorems and the checkpoint's exact private status follow at closure.
+The follow-on root build passed 6889 jobs; the complete axiom audit passed
+52273 declarations, and three independent Lean examples plus an exact
+rational kernel check passed. Full public-type/proof and source-integrity
+review passed. Checkpoint1640 records this narrower transfer-proof audit,
+not a continuum mass-gap conclusion.

@@ -81,4 +81,28 @@ theorem no_uniform_contraction_with_nonnegative_errors
   have hq' := hb beta hbeta
   linarith
 
+/-! The heat reference leaves at most an inverse-coupling-sized budget for
+all additive comparison errors. This is a pointwise bound, stronger than the
+nonuniformity conclusion above. -/
+
+theorem reference_loss_le_inverse_beta (gap curvatureScale beta : ℝ) :
+    1 - referenceFactor gap curvatureScale beta ≤
+      gap / (curvatureScale * beta) := by
+  unfold referenceFactor
+  have h := Real.add_one_le_exp (-(gap / (curvatureScale * beta)))
+  linarith
+
+theorem necessary_error_budget (gap curvatureScale beta error : ℝ)
+    (h : referenceFactor gap curvatureScale beta + error < 1) :
+    error < gap / (curvatureScale * beta) := by
+  have hl := reference_loss_le_inverse_beta gap curvatureScale beta
+  linarith
+
+theorem no_contraction_if_error_at_least_inverse_beta
+    (gap curvatureScale beta error : ℝ)
+    (he : gap / (curvatureScale * beta) ≤ error) :
+    1 ≤ referenceFactor gap curvatureScale beta + error := by
+  have hl := reference_loss_le_inverse_beta gap curvatureScale beta
+  linarith
+
 end OperatorDerivativeRewrite.Foundation.YMBlockHeatContractionObstruction

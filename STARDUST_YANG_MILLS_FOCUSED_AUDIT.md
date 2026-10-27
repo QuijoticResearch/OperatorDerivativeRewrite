@@ -41,3 +41,37 @@ Open: actual SU(2) transfer construction; gauge-invariant descent and Osterwalde
 ## Verification, checkpoint 1639
 
 The full root build passed, 6889 jobs. The complete transitive axiom audit passed for 52270 declarations with only `propext`, `Classical.choice`, and `Quot.sound`; it printed all five new public types without abbreviation. All four theorem proofs and the definition were reviewed in full. Four independent Lean examples passed, including a concrete curvature scale and positive error allowance. Source integrity passed for all 2709 Foundation/root Lean files, all three configuration files, the 113-file archive baseline, and all 21 selected incoming Yang–Mills candidates. Exact commit and PRIVATE backup status belong in the ledger below; do not infer a mass gap from this checkpoint. Keep the focused campaign active after closure.
+
+## Follow-on audit: necessary error scale and the Lipschitz step
+
+The fixed-parameter bound is sharper than mere failure of uniformity. The additional Lean theorems in `YMBlockHeatContractionObstruction` prove
+
+\[
+1-e^{-\lambda/(c\beta)}\leq \frac{\lambda}{c\beta},\qquad
+e^{-\lambda/(c\beta)}+E(\beta)<1\Longrightarrow
+E(\beta)<\frac{\lambda}{c\beta}.
+\]
+
+Thus the **sum** of the manuscript's nonnegative `ε_T` and `η` must fit an inverse-β budget at each weak-coupling step. Merely showing that the errors vanish is insufficient. In `block_contraction_spectral_gaps.tex`, equations `q₀` and `contraction` and the discussion under “Verification of hypotheses” do not provide this rate. If its interior curvature `κ_int` is comparable to β and `η=C_DV/√κ_int`, then this mechanism requires `C_DV` on the order of at most β⁻¹ᐟ² (with a sufficiently small coefficient), unless `ε_T` consumes the budget first. This is a **necessary condition for that bound**, not a universal Yang–Mills obstruction.
+
+There is also a distinct gap from the manuscript's `H¹` contraction to its “One-step influence contraction” and positive `κ=-log(C₀q)`. A smooth strictly positive density with bounded log derivatives does not, by itself, turn an `L²` gradient estimate into a contracting supremum Lipschitz estimate. Here is an explicit independent mathematical counterexample to that inference. On `[0,1]`, with Lebesgue reference measure, let
+
+\[
+K(x,y)=1+\tfrac12 x^{24}(2y-1),\qquad
+(Tf)(x)=\int_0^1 K(x,y)f(y)\,dy.
+\]
+
+`K` is a Markov transition density, smooth and between `1/2` and `3/2`. Its `x` and `y` log derivatives are bounded by `24` and `2`, respectively. Integration by parts gives
+
+\[
+(Tf)'(x)=12x^{23}\int_0^1 f'(y)y(1-y)\,dy,
+\quad \int_0^1 y^2(1-y)^2dy=\tfrac1{30}.
+\]
+
+Consequently `||(Tf)'||₂² ≤ (24/235)||f'||₂²`, a strict `H¹` contraction for every smooth `f`. But for `f(y)=y`, `(Tf)'(x)=2x^{23}`, so `Lip(Tf)=2>1=Lip(f)`. Every constant `C₀` in `Lip(Tf)≤C₀q Lip(f)` for this operator therefore has `C₀q≥2`; the manuscript's claimed positive `-log(C₀q)` does not follow. The interval model refutes the **general implication used in the proof**; it does not assert that the particular SU(2) block kernel has this behavior. A direct gauge-compatible Lipschitz/influence estimate remains required. The rational identities and inequalities were independently checked in `.lake/stardust-ym-1640-kernel-check.py`.
+
+The manuscript's `H¹` perturbation assumption already bounds the complete derivative of `T-T₀`; its proof then says to add a covariance correction as a further term. That extra allowance is harmless but does not independently establish the assumed perturbation estimate. The definition of `T` still describes an “updated boundary variable” without a constructed transition law, so neither assumption is discharged by the Schur calculation alone.
+
+### Verification, checkpoint 1640
+
+The incremental target and full root build both passed (1946 and 6889 jobs). The complete transitive axiom audit passed for 52273 declarations with only the three standard allowed axioms. All eight public declarations in this module (one definition, seven theorems), including the three new unabridged types and full proofs, were reviewed. Three new independent Lean examples passed. The smooth-kernel counterexample's normalization, positivity, exact `H¹` constant, Lipschitz factor and log-derivative bounds were checked by rational arithmetic; it is documented as an external mathematical counterexample, not a Lean-formalized SU(2) theorem. All 2709 Foundation/root Lean sources, three configurations, 113 baseline manuscripts and 21 selected Yang–Mills sources passed integrity checks. No original source was changed. The exact Git approval and both PRIVATE remote-ref checks are required at closure.
