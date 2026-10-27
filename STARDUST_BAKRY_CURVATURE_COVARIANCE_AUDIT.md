@@ -919,3 +919,39 @@ PRIVATE backup follow under the lifted intraday restriction.
 NEXT establish a rigorous physical Haar-L² Fourier identification and
 intertwining for the closed ℓ²(Z³) semigroup, then test Markov positivity
 and graph-domain Γ under exact hypotheses. Objective2 remains incomplete.
+
+## Checkpoint1623 — real Markov order and actual probability approximants (October27,2026)
+
+`Foundation/PhysicalHeatMarkovOrder.lean` extends the physical Haar-L² cone
+theorem. For every covariance symbol and every real input, the multiplier
+evolution remains real; for ordered real inputs it remains ordered. If the
+constant frequency has rate zero, every almost-everywhere real interval
+`[m,M]` is preserved, including the essential absolute bound. The interval
+statement is a genuine completed-L² maximum principle; it does not require
+pointwise representatives or boundedness for the general monotonicity theorem.
+
+For each finite Fourier `f` with squared coefficient energy one, the evolved
+square has a continuous nonnegative density of Haar integral one. Thus
+`heatSquareProbability` is an actual probability measure on the compact
+three-torus. Its exact character expectation is
+`exp(-t r(k)) * (reflection f * f).coeff k`, proved with the real density
+integral rather than inferred from a formal trace. These probability measures
+depend on `f`: no exact transition kernel, compatible convolution laws,
+finite-dimensional process, or path-space law is asserted. The decisive next
+step is a normalized finite Fourier approximate identity whose squared
+Fourier coefficients converge to one at every fixed frequency, followed by
+a compact probability-measure limit and exact character/semigroup tests.
+Schoenberg/Herglotz measure existence is classical; its torus realization is
+not yet a theorem in this module. The Riesz–Markov–Kakutani positive-functional
+API in Mathlib offers another route, but positivity and uniform extension of
+the finite Fourier functional would need explicit proof.
+
+This is directly relevant to Objective2: verified covariance positivity now
+has a conservative order-preserving physical L² evolution and genuine
+probability approximants. No curvature bound, entropy inequality, stochastic
+process, or IBM/black-noise conclusion follows. Full6873-job root build and
+complete52117-declaration transitive axiom audit passed with only propext,
+Classical.choice and Quot.sound. All18 unabridged public types,16 full proofs,
+2 definitions,3 local instances and5 independent tests were reviewed.
+Source2693/config3/archive113 hashes matched; ResearchSources is unchanged.
+Exact commit, receipt and PRIVATE dual-ref verification follow.

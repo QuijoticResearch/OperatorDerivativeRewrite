@@ -53088,3 +53088,21 @@ types/16 proofs/1 definition/3 local instances and5 independent checks
 were reviewed. Source2691/config3/archive113 hashes matched; original
 manuscripts remain unchanged. Exact Git receipt and guarded PRIVATE backup
 follow. Objective2 remains active.
+
+## Checkpoint1623 — physical order and probability approximants
+
+`Foundation/PhysicalHeatMarkovOrder.lean` proves real-valuedness, order
+preservation, and the conservative interval maximum principle for the actual
+completed Haar-L² multiplier semigroup under a covariance symbol with zero
+constant-mode rate. It constructs genuine torus probability measures from
+normalized finite Fourier heat squares and computes every Fourier character
+expectation exactly. These measures are indexed by the input square. An exact
+transition law and stochastic path realization remain open; the next specific
+obligation is a verified Fourier approximate identity and compactness limit.
+This is classical Markov/Schoenberg structure brought into the current Lean
+operator framework, with no novelty claim. See the Bakry Objective2 audit for
+the exact domain and unresolved composition/curvature questions. The full6873-
+job build,52117-declaration safe transitive axiom audit,18 public types,
+16 proofs,2 definitions,3 local instances and5 independent tests passed;
+source/config/manuscript hashes matched. Exact commit, receipt and private
+verification follow.

@@ -2615,3 +2615,4 @@ import Foundation.FiniteSchoenberg
 import Foundation.FiniteHeatSquarePositivity
 import Foundation.PhysicalHeatSquareBridge
 import Foundation.PhysicalHeatPositiveCone
+import Foundation.PhysicalHeatMarkovOrder
