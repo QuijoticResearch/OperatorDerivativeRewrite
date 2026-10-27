@@ -2557,3 +2557,5 @@ import Foundation.CauchyPoissonForwardEntropy
 import Foundation.CauchyPoissonQuantitativeEntropy
 
 import Foundation.CauchyPoissonDriftRate
+
+import Foundation.CauchyPoissonExponentialEntropy

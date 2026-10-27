@@ -2088,3 +2088,54 @@ coarse and does NOT repair the manuscript's sharp LSI2/kappa claim. Sharp
 constants, jump-production identification, maximal density/fullL2 domains,
 unsmoothed Fourier core, pathspace and BOTH complete manuscript repairs remain
 OPEN. Preserve every earlier obstruction. No novelty claim or campaign change.
+
+## Checkpoint1590 — actual real-time exponential KL contraction
+
+Bakry Objective1 ACTIVE. `CauchyPoissonExponentialEntropy` applies Mathlib's
+existing Gronwall theorem to the ACTUAL forward KL curve; no new comparison
+infrastructure is introduced. Its `decay_of_production` checks continuity,
+right-slope hypotheses and the production bound on each positive compact time
+interval. `entropy_exponential` proves E(t)<=exp(-c(q)*(t-s))*E(s) for every
+probability initial law, |q|<1 and0<s<=t, where E is actual KL and c(q) is1589's
+strictly positive explicit coefficient. `zero_entropy_exponential` retains the
+stronger coefficient1/2 for q=0 instead of silently weakening it to1/18.
+
+`entropy_initial_real` proves E(t)<=exp(-c(q)*t)*E(0) for every t>=0 with finite
+initial KL. The argument bounds E(s) by E(0), then sends s->0+ only in the
+explicit exponential upper bound. It does NOT assume initial entropy continuity,
+a density, norm continuity of the initial law, or an initial derivative.
+`entropy_initial` is the extended-valued theorem for ALL probability laws;
+when initial KL is infinite its right side is infinite and the assertion is
+vacuous. The positive-burn-in theorem is quantitatively finite for every law
+by1579, including singular initial data. No toReal-of-infinity artifact is used.
+
+Independent Lean checks (two, FIRST PASS30.233s) prove strict entropy decrease
+between any positive s<t whenever the evolved law at s is nonstationary, and a
+finite strictly positive exponential envelope after arbitrary positive burn-in
+for Dirac initial data. Full6840-job root build42.648s; complete51388-declaration
+safe-Foundation transitive axiom audit46.153s, only propext/Classical.choice/
+Quot.sound. All5 public types and5 full proofs reviewed, zero definitions or
+local instances added. Sources2661/config3/archive113 hashes pass. Production
+unchanged after fullbuild. Scratch errors were base-point inference and order
+orientation in the limit inequality, repaired with explicit0 and ge_of_tendsto.
+The bookkeeping verifier initially expected6839 jobs; the actual complete build
+log records6840 after the Gronwall import. The expected count was corrected to
+that measured log; no mathematical check was removed. Style warnings retained.
+Evidence `.lake/stardust-1590-*`; no trust/toolchain/heartbeat/resource changes.
+Local gates PASS; exact Git receipt and guarded BOTH-private verification follow.
+
+Selective source comparison: reread original revised manuscript lines1081ff
+(Cauchy/sine-drift principal curvature claim) and1495ff (Log-Sobolev under drift).
+Original bytes remain untouched. Its proposed implication from CD(kappa,infinity)
+to sharp LSI constant2/kappa for this jump setting is NOT validated by these
+results. The proved positive-rate actual semigroup entropy contraction is a
+rigorous partial replacement using the kernel/reset mechanism and established
+operator domains. It requires neither that curvature claim nor a diffusion chain
+rule. No novelty claim; the standard Gronwall argument is explicitly reused.
+
+NEXT prioritize the genuine jump-Bregman entropy-production identity and its
+operator-domain requirements, or consolidate exact remaining manuscript claims.
+Do not rebuild the now-complete explicit all-drift exponential KL bound.
+Sharp constants/LSI2/kappa, jump identification, maximal density/fullL2 domains,
+unsmoothed Fourier core, pathspace and BOTH manuscript repairs remain OPEN.
+Preserve the earlier obstructions, current queue and frozen IBM/pseudoprocess work.
