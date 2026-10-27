@@ -52144,3 +52144,61 @@ Do not rebuild the now-complete explicit all-drift exponential KL bound.
 Sharp constants/LSI2/kappa, jump identification, maximal density/fullL2 domains,
 unsmoothed Fourier core, pathspace and BOTH manuscript repairs remain OPEN.
 Preserve the earlier obstructions, current queue and frozen IBM/pseudoprocess work.
+
+## Checkpoint1591 — actual transition Bregman dissipation and its small-step limit
+
+Bakry Objective1 ACTIVE. The existing discrete `PoissonJumpEntropy` and
+`PoissonExponentialTilt` results concern N-valued Poisson laws/exponential
+families; they do NOT directly identify the singular circle jump kernel.
+A different reusable mechanism is now verified in `CauchyPoissonBregmanStep`.
+For positive a,b define B(a,b)=a*log(a/b)-a+b>=0. The orientation is B(f(z),f(w))
+under the actual stationary FORWARD joint law nu(dz) K_h(z,dw). No reversibility
+or backwards conditional kernel is assumed.
+
+`step_identity` proves the exact normalized-density identity
+integral B(f(z),f(w)) d(nu tensor K_h)
+= integral log(f) dmu - integral log(f) d(K_h mu), for f continuous positive
+and nu.withDensity(f)=mu. Joint marginals, invariant-law cancellation, weighted
+joint change of density, and all integral additions/subtractions are justified.
+`actual_step_identity` discharges the density premise with the ACTUAL rho_t,
+for every probability initial law, |q|<1,t>0,h>=0, and actual semigroup composition.
+This is a FIXED-log-density expectation difference. It is not asserted equal to
+the finite-time KL drop, whose second logarithm uses rho_(t+h).
+
+`continuous_pairing_derivative` and its real version prove positive-time actual
+law differentiation for EVERY continuous observable using the supremum-norm
+density derivative. No membership of log(rho_t) in the backward generator domain
+is assumed. `dissipation_limit` then proves, in the ordinary real topology as
+h->0+, that h^-1 times the actual stationary-transition Bregman integral converges
+to -integral log(rho_t) rho'_t dnu, hence negative actual KL derivative by1587.
+The actual logarithm, measures, time shift, integrability and topology are explicit.
+This is a rigorous transition-energy dissipation formula, not yet a singular
+Levy-kernel integral formula. Neither that stronger formula nor maximal backward
+log-density domain membership is claimed.
+
+Three independent Lean checks PASS24.282s: stationary actual laws have exactly
+zero finite-step energy; the ACTUAL Bregman integrand is integrable under the
+joint probability law (excluding integral-undefined artifacts); and the actual
+limit is at least c(q)*currentKL using1589. The first test run failed only because
+continuous_fst/snd needed explicit Circle x Circle type annotations; failed log
+and28.929s accounting retained. Production proofs did not change.
+Full6841-job root build40.657s; complete51401-safe-declaration transitive axiom
+audit40.682s, whitelist propext/Classical.choice/Quot.sound. All13 public types,
+12 entire proofs,1 definition,6 existing local Markov and4 invariant-probability
+instances reviewed. Sources2662/config3/archive113 hashes pass. No production
+edits after fullbuild. Scratch failures: composition and Pi-subtraction rewrite
+elaboration and the t+0 derivative base point; repaired explicitly without
+strengthening hypotheses. Style warnings retained, no trust/toolchain/heartbeat/
+resource changes. Evidence `.lake/stardust-1591-*`. Local gates PASS; exact Git
+receipt and guarded BOTH-private verification follow. No novelty claim.
+
+NEXT identify the singular circle jump kernel in this limit with valid spatial
+regularity and domination near the diagonal, or audit the exact remaining domain
+obligations. A possible route is positive-time spatial Lipschitz control of rho,
+quadratic Bregman bounds from a positive lower density bound, and control of
+h^-1 Poisson kernels off/near the diagonal. This is only a proposal; do not infer
+limit/integral interchange from pointwise convergence. Preserve the genuinely
+proved transition-energy limit and avoid rebuilding it. Sharp LSI2/kappa,
+singular jump identity, maximal density/fullL2 domains, unsmoothed Fourier core,
+pathspace and BOTH manuscript repairs remain OPEN. Queue unchanged; no early
+transition or reopening of frozen IBM/pseudoprocess campaigns.
