@@ -1,5 +1,41 @@
 # Bakry Objective2 — curvature/covariance audit
 
+## Checkpoint1616: sharp pure-axis exponent threshold and mixed quadratic endpoint
+
+The existing `AnisotropicStableGamma` library established covariance and
+algebraic Γ positivity for `0<γ_j<2`. `Foundation/AnisotropicStableEndpoint.lean`
+extends the positive range to `0<γ_j≤2`, with nonnegative axis weights.
+At `γ=2`, `axis_kernel_two` proves the actual kernel is the real Gram product
+`k_j l_j`; `quadratic_kernel` gives the weighted dot product for an all-quadratic
+symbol. The general mixed theorem uses this Euclidean endpoint together with
+the verified fractional covariance result below two, finite PSD sums and the
+existing covariance/CND equivalence. `anisotropic_gamma_le_two` supplies all
+algebraic Γ iterations on every finite Fourier polynomial.
+
+The converse is exact for each **pure coordinate** with `γ>0`.
+`tripleWave=(0,1,2)` and zero-sum weights `(1,−2,1)` give conditional-negative
+energy `2(2^γ−4)>0` whenever `γ>2`. Consequently
+`axis_negative_iff_le_two`, `axis_covariance_iff_le_two` and
+`axis_gamma1_positive_iff_le_two` prove, respectively, that CND, anchored
+covariance positivity and all-polynomial Γ₁ positivity at the origin hold
+**iff** `γ≤2` for positive γ. The converse is not claimed for an arbitrary
+mixed symbol with a superquadratic coordinate and possibly zero weight; that
+requires an explicit restriction-to-axis theorem and careful weight hypotheses.
+
+These are classical Fourier/Schoenberg boundary facts formalized and connected
+to the verified Gamma machinery, not a novelty claim or an actual Gaussian,
+Lévy, or Brownian process construction. The primary Bakry manuscript at
+`ResearchSources/bakry/bakry_emery_revised_v8 (2) (2).tex`, abstract and
+Theorem A neighborhood (lines50–89, 205–251), states its stable results on
+`0<γ<2`; its original bytes were preserved. The quadratic endpoint is an
+explicit additional theorem, not silently inserted into the manuscript.
+
+Verification1616: complete root build, complete transitive standard-axiom
+audit, all 17 unabridged public types (15 proofs and two definitions), six
+independent Lean tests, and exact source/config/archive hashes. Exact counts,
+timings, commit and both PRIVATE remote receipts are in
+`.lake/stardust-1616-verification.json`. Objective2 remains ACTIVE.
+
 ## Checkpoint1615: bounded multiplier rate with negative Γ₁
 
 `Foundation/BoundedRateGammaObstruction.lean` chooses the two frequencies

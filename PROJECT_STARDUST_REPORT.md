@@ -1,5 +1,20 @@
 # PROJECT STARDUST — OVERNIGHT DISCOVERIES
 
+## October27 checkpoint1616 — the exact pure-axis covariance threshold
+
+`Foundation/AnisotropicStableEndpoint.lean` extends the verified anisotropic
+covariance, CND and finite Γ-positivity results to mixed exponents
+`0<γ_j≤2`; the quadratic endpoint has an exact Euclidean Gram kernel.
+For a pure coordinate, the converse is sharp: the zero-sum triple
+`(0,1,2)` with weights `(1,−2,1)` has conditional-negative energy
+`2(2^γ−4)>0` when `γ>2`. Lean therefore proves, for every positive γ,
+`CND ↔ covariance positivity ↔ all-polynomial Γ₁ positivity at the origin
+↔ γ≤2`, with the precise separate theorem statements in the source.
+The mixed-coordinate converse is not asserted; zero weights and restriction
+to an offending axis need explicit treatment. This formalizes classical
+Fourier/Schoenberg structure and is not claimed novel. The original Bakry
+manuscript's `(0,2)` range remains unchanged; no process realization follows.
+
 ## October27 checkpoint1615 — bounded-rate covariance obstruction
 
 `Foundation/BoundedRateGammaObstruction.lean` formalizes an explicit even rate
