@@ -2587,3 +2587,5 @@ import Foundation.AnchoredCovariance
 import Foundation.FourierCovarianceCriterion
 
 import Foundation.FourierGammaCovariance
+
+import Foundation.FourierGammaCriterion

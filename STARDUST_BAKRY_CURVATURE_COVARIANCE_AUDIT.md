@@ -186,3 +186,52 @@ and a missing namespace; repaired without changing hypotheses or options, with
 all logs retained. Final scratch passed before adoption. Source2675/config3/
 archive113 hashes exact; ResearchSources unchanged. Exact Git commit/receipt
 follow. REMOTE SYNC QUEUED under the weekday09–17 Eastern policy, not backed up.
+
+## Checkpoint1605 — exact finite-core Gamma1 criterion and explicit quartic failure (October27,2026)
+
+Objective2 ACTIVE. `Foundation/FourierGammaCriterion.lean` proves a converse to
+checkpoint1604. For an EVEN real symbol psi on the existing Wave=Z^3, positivity
+of the REAL part of actual synthesized Gamma1(f,f) at the single spatial origin
+for EVERY finite Fourier polynomial f is EQUIVALENT to global positive
+semidefiniteness of all finite matrices Kpsi(k_i,k_j). The converse uses real
+Fourier coefficients and the exact `real_gamma_energy` identity; evenness
+supplies the Hermitian matrix condition. With psi(0)=0, the1603 symbol theorem
+makes this equivalent to conditional negativity of psi on ALL finite samples.
+No pointwise positivity at all spatial points is assumed in the converse; the
+forward result1604 does give it. Finite presentations may repeat frequencies.
+
+`quarticWitness` has frequencies 0,1,2 in the existing coordinate0 symbol and
+coefficients -1,2,-1. The ACTUAL Gamma1 synthesis for stableSymbol 4 at the
+origin has real value EXACTLY -12. This sharpens the prior negative-energy
+matrix obstruction to a concrete failure inside the Fourier operator calculus.
+The independent scratch also calculates a cubic-rate example: frequencies1,2,
+coefficients4,-1 yield Gamma1 value -8. These higher-order rates cannot meet
+the covariance/pointwise Gamma positivity criterion. Signed pseudoprocess
+operator identities still exist; no Markov or process conclusion follows.
+
+The equivalence is the classical negative-type/positive-kernel principle made
+exact for the existing verified Fourier operator core. The sources in checkpoint
+1602 (Bierme2016 LectureI and Gangolli1967 ChapterI) remain the novelty baseline;
+no new stochastic curvature, positive kappa, CD bound, spectral gap, completed
+pointwise domain or sharp entropy estimate is claimed. Objective1's unfinished
+manuscript, drift, domain and entropy work remains deferred/incomplete.
+
+Five independent Lean checks passed: the iff at exact hypotheses, explicit
+quartic negativity, all-iteration quadratic Hilbert example, quartic failure
+of the negative-symbol property via the actual witness, and a separately
+calculated cubic witness. Original manuscript hashes preserved. NEXT examine
+whether the evenness assumption can itself be derived from Gamma1 positivity
+when psi(0)=0; then test actual Levy/subordination symbols and the limits of
+passing from finite-core Gamma inequalities to closed Markov domains. Preserve
+all six Objective2 deliverables and the authoritative later queue.
+
+Verification: final full6855-job root build42.1936043s; complete51726-declaration
+safe transitive axiom audit44.4928919s with only propext/Classical.choice/
+Quot.sound; all ten unabridged public types, seven full theorem proofs, three
+definitions, and five independent proofs reviewed. No new local instances,
+options, sorry/admit or axiom. Final source2676/config3/archive113 hashes exact.
+The first full build passed but two new-file style warnings were repaired;
+the full build was rerun on the final bytes. Scratch elaboration repairs used
+the explicit matrix type and separated real-energy rewrite; no hypotheses
+changed. Exact Git commit/receipt follow. REMOTE SYNC QUEUED under weekday
+09–17 Eastern policy, never reported as remotely backed up.
