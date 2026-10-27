@@ -50735,3 +50735,71 @@ the closed domain and invariant semigroup. Positivity and invariant moments
 alone do not supply these conclusions. Entropy and both primary manuscript
 repairs remain incomplete. Reuse the existing actual Poisson law, continuous
 torus Fourier approximation and closed-operator library; no new campaign.
+
+## Checkpoint1566 — actual transition densities and circle probability laws
+
+Bakry Objective1 remains ACTIVE; both manuscript repairs remain incomplete.
+`Foundation/CauchyPoissonKernelComposition.lean` upgrades1565's moment identities
+to POINTWISE density composition and invariant density. No new Fourier-density
+infrastructure was needed. For |q|<1, positive s,t, |z|<=1 and |xi|=1, set
+K_t(z,xi)=P(phi_t(z),xi), with P the actual Poisson kernel and phi the audited
+fractional-linear time flow. `transition_composition` proves
+
+    circleAverage_w K_s(z,w) K_t(w,xi) = K_(s+t)(z,xi).
+
+`transition_positive` and `transition_mass` prove strict positivity and mass1
+relative to normalized uniform circle integration. `density_invariance` proves
+circleAverage_w P(q,w) P(phi_lambda(w),xi)=P(q,xi) for0<=lambda<1. These are
+actual integral/density identities, stronger than equality of finitely many
+moments. The proof constructs H(w)=(xi+phi_lambda(w))/(xi-phi_lambda(w)), proves
+its holomorphy and continuity on the closed disk with nonvanishing denominator,
+then applies Mathlib's existing Poisson formula and takes real parts through
+an explicitly integrable circle average. All analytic hypotheses are discharged.
+
+`poleLaw` constructs the actual complex-pole angle probability law from its
+continuous positive density on (0,2pi]. Integrability and mass1 are proved;
+`poleLaw_real` identifies it definitionally with1561's real-pole law.
+`transitionLaw` gives positive-time angle laws and the exact time-zero Dirac
+law. `circleTransitionLaw` pushes the positive-time law through circleMap and
+uses Dirac(z) at time0. It is a probability for |z|<=1,t>=0; for |z|=1 it assigns
+mass1 to the actual unit circle. The support proof explicitly verifies circleMap
+measurability and uses the actual pushforward formula, not a nonmeasurable-map
+fallback. Two local probability instances in these proofs were reviewed.
+
+Scope limits: the family is not yet packaged as a measurable Markov kernel.
+State-parameter measurability, Tonelli/Fubini promotion of the density identity
+to composition of measures, and invariance of the resulting measure semigroup
+remain to be proved. No Feller/strong-continuity, closed-generator/core, path
+process or entropy theorem is claimed. The correct eventual state space is the
+unit circle (or periodic observables), not all real-valued angle observables:
+raw angle representatives have a seam, and interior disk starting points jump
+to the boundary at positive time. Do not infer strong continuity on the entire
+closed disk from these probability laws. This is a domain warning, not a new
+formal seam counterexample theorem. At t=0 use Dirac; never substitute the
+boundary-pole Poisson density into a mass1 formula whose pole must be interior.
+
+Full6810-job build42.648s; complete50954-safe-declaration transitive axiom audit
+40.829s (only propext/Classical.choice/Quot.sound). All25 public types/20 proofs/
+5 definitions and both local probability instances reviewed unabridged.
+Seven independent Lean checks24.447s passed, covering old-law compatibility,
+Dirac endpoint, positive/negative parameters, actual circle support, uniform
+pole, angle-parametrized composition, and integrable density normalization.
+Independent4096-node floating-point quadrature passed180 composition,30
+invariance and180 mass checks; maximum scaled error6.584e-15 against1e-8
+tolerance. These are numerical checks, not proofs or novelty evidence.
+
+All2637 Foundation/root sources, configuration3 and archive113 hashes checked.
+Build/audit/independent Lean runs were serialized and terminal-confirmed.
+Initial scratch elaboration failures were retained and repaired without
+changing hypotheses or resource/compiler/trust/version/audit settings.
+No manuscript or unrelated draft changed. Evidence `.lake/stardust-1566-*`.
+Local verification gates PASS; exact commit/receipt and guarded BOTH-private-ref
+synchronization follow, not pre-claimed here. No novelty claim;1565's literature
+comparison remains applicable to this known Poisson/phase-flow construction.
+
+NEXT: establish parameter measurability and actual measure/operator composition
+on the circle; then strong continuity, uniform generator convergence on the
+finite trigonometric core, a closed generator/domain and appropriate nonlocal
+entropy repair. Reuse these actual densities/probability laws and existing
+operator calculus. Preserve the nonsymmetry obstruction and weighted energy
+identity. IBM's bounded rematch remains frozen; no campaign or queue change.
