@@ -1306,3 +1306,28 @@ proofs, three definitions, one instance proof, one private exponential-series
 proof and five independent checks were reviewed. Source/configuration and
 all113 archive hashes match the previous checkpoint. Exact Git approval
 and private backup close it.
+
+## Checkpoint1637 — no-jump atom and smoothing obstruction
+
+`Foundation/PhysicalHeatCompoundPoissonAtom.lean` extracts the `n=0` term
+from the actual Poisson mixture: as measures,
+`exp(-λ) · δ₀ ≤ compoundHeatLaw(r,δ,λ)`. Hence the origin has mass at
+least `exp(-λ)>0` for every finite nonnegative Poisson rate. The new law
+cannot be absolutely continuous relative to **any** reference measure
+whose origin singleton is null. This is a precise obstruction to claiming
+that Poissonizing a smoothing heat jump immediately yields a diffuse
+transition law. It does not contradict Fourier multiplier positivity,
+the convolution law, or any regularity of the nonzero-jump component.
+
+The absolute-continuity theorem takes the reference null-singleton
+hypothesis explicitly. A Haar-specific theorem would additionally need a
+verified null-singleton instance for the chosen torus Haar measure; that
+is not silently assumed here. No continuous-time count path or filtration
+is constructed. The no-jump atom is classical compound-Poisson behavior;
+no novelty is claimed.
+
+The full6887-job root build and complete52251-declaration whitelist-only
+transitive axiom audit passed. All four unabridged public theorem types and
+proofs and four independent checks were reviewed. Source/configuration and
+all113 archive hashes match the previous checkpoint. Exact Git approval and
+private backup close it.

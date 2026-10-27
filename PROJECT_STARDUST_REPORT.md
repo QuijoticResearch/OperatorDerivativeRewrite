@@ -53307,3 +53307,17 @@ cadlag process or filtration is asserted. The full6886-job root build,
 complete52246-declaration transitive axiom audit, all14 public types and
 proofs/definitions/instance, five independent checks and exact source
 integrity passed. See `STARDUST_BAKRY_CURVATURE_COVARIANCE_AUDIT.md`.
+### Checkpoint1637 — the compound heat law retains a no-jump atom
+
+`Foundation/PhysicalHeatCompoundPoissonAtom.lean` proves the measure-order
+bound `exp(-λ)·δ₀ ≤ compoundHeatLaw(r,δ,λ)`, giving positive origin mass
+at every finite Poisson rate. Therefore the law is not absolutely
+continuous with respect to any reference measure with a null origin
+singleton. This is a rigorous smoothing obstruction for the actual
+Poissonized heat law, with its exact reference-measure hypothesis visible
+in the Lean theorem. The result is classical compound-Poisson behavior;
+the Haar singleton proof and pathwise process remain separate. The
+6887-job full build, 52251-declaration transitive axiom audit, all four
+public theorem types/proofs, four independent checks and source/archive
+integrity passed. See
+`STARDUST_BAKRY_CURVATURE_COVARIANCE_AUDIT.md`.
