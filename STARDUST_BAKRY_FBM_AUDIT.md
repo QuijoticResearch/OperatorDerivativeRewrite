@@ -2397,3 +2397,46 @@ no settings/version/trust/resource changes. Source2666/config3/archive113
 integrity passed after selective manuscript reads. ResearchSources untouched.
 Evidence `.lake/stardust-1595-*`. Local gates passed; exact Git receipt and
 guarded BOTH-private synchronization follow. Queue and campaign priorities intact.
+# Checkpoint1596 — nonsharp modified LSI and improved actual entropy decay
+
+Bakry Objective1 remains ACTIVE. `Foundation/CauchyPoissonModifiedLSI.lean`
+proves12 theorems, with no new definitions. For |q|<1, put
+c(q)=(1-|q|)/(2*(1+|q|)). For EVERY normalized continuous positive density f
+relative to nu_q, with a positive lower bound delta and finite chord-Lipschitz
+constant L, `modified_lsi` proves
+c(q)*integral f log(f) dnu_q <= integral J_q(z,w) B(f(z),f(w)) d(nu_q.prod nu_q).
+Here J_q=2/(||w-z||^2*poissonKernel(0,q,w)), with the established diagonal-zero
+Bregman convention. This is a nonlinear jump-energy modified LSI, not the
+manuscript's sharp quadratic-energy LSI or a diffusion CD implication.
+
+The proof uses the improved reference bound (1-|q|)*P_q(w)<=1+|q|,
+chord diameter2, and pointwise Bregman nonnegativity. Diagonal terms vanish
+explicitly. Product integration gives integral B=integral f log(f)-integral log(f);
+normalization and log(x)<=x-1 give the lower entropy bound. Existing1595 genuine
+singular integrability discharges the domain. No reversibility is assumed.
+`density_mass`, `density_entropy` and `actual_production_bound` connect this
+generic domain to the actual forward law for EVERY initial probability measure
+and positive time. `entropy_exponential` gives decay exp(-c(q)*(t-s)), 0<s<=t.
+`entropy_initial_real` extends to t>=0 with finite initial entropy; `entropy_initial`
+gives the extended-nonnegative statement for every initial probability law.
+For infinite initial entropy the time-zero estimate is vacuous; positive burn-in
+still has finite entropy. No initial density or initial derivative is assumed.
+
+Three independent Lean checks passed first run: strict improvement over the old
+amplitude(q)*rate(q) for every |q|<1; correct zero-drift generic modified LSI
+coefficient1/2; strict actual entropy decrease between positive times when the
+earlier entropy is positive. No optimality is claimed. The coefficient tends to
+zero at |q|=1; this alone says nothing about optimal rates or sharp curvature.
+BOTH primary manuscript repairs, sharp constants, maximal/full-L2 domains,
+unsmoothed Fourier core and remaining spectral/curvature/path-space obligations
+remain OPEN. No novelty assertion or campaign transition.
+
+Full6846-job build46.390s; complete51476-declaration transitive axiom audit45.189s,
+only propext/Classical.choice/Quot.sound. All12 unabridged public types and proofs
+reviewed, including1 local Markov and2 invariant-probability instances.
+Independent checks33.430s; visible unused-tactic warnings preserved. Scratch
+integral/coercion issues were repaired without changing limits, settings or
+hypotheses; weaker-rate scratch and failed logs retained. Source2667/config3/
+archive113 exact integrity verified. ResearchSources unchanged. Evidence
+`.lake/stardust-1596-*`. Local gates passed; exact receipt and guarded BOTH-private
+closure follow. Queue unchanged, IBM bounded rematch remains frozen/incomplete.

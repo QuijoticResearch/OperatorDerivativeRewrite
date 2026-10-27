@@ -52283,3 +52283,21 @@ Detailed theorem scope, reference normalization and remaining obligations are in
 STARDUST_BAKRY_FBM_AUDIT.md; evidence `.lake/stardust-1595-*`. Both manuscript
 repairs and remaining sharp/domain/curvature questions remain OPEN. Exactcommit/
 private closure pending after completed local gates. Queue unchanged.
+# Checkpoint1596 — stronger actual entropy decay from a generic jump inequality
+
+Bakry1 ACTIVE. `CauchyPoissonModifiedLSI` proves a nonsharp modified logarithmic-
+Sobolev inequality on ALL normalized positive chord-Lipschitz densities, using
+the genuine singular jump-Bregman energy. The coefficient
+c(q)=(1-|q|)/(2*(1+|q|)) strictly improves the previous general bound. Actual
+forward entropy decays by exp(-c(q)*(t-s)); the finite-initial-entropy bound
+includes time zero. Infinite initial entropy gives a vacuous initial bound,
+but every positive burn-in has finite entropy. The sharp manuscript LSI and
+both complete manuscript repairs remain open; no diffusion curvature inference.
+
+Full6846jobs46.390s; complete51476-declaration axiom audit45.189s; all12 full
+types/proofs and3 local instances reviewed. Independent3 passed first run33.430s:
+strict coefficient improvement, zero-drift normalization, strict positive-entropy
+decrease. Sources2667/config3/manuscripts113 intact. Detailed scope and remaining
+obligations in STARDUST_BAKRY_FBM_AUDIT.md; evidence `.lake/stardust-1596-*`.
+Local gates passed; exact commit receipt and guarded private closure follow.
+Campaign priorities unchanged; bounded IBM rematch remains frozen/incomplete.
