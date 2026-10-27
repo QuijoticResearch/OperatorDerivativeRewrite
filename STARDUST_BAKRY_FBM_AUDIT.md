@@ -797,3 +797,74 @@ finite trigonometric core, a closed generator/domain and appropriate nonlocal
 entropy repair. Reuse these actual densities/probability laws and existing
 operator calculus. Preserve the nonsymmetry obstruction and weighted energy
 identity. IBM's bounded rematch remains frozen; no campaign or queue change.
+
+## Checkpoint1567 — actual Circle Markov transition semigroup and invariant law
+
+Bakry Objective1 ACTIVE. `Foundation/CauchyPoissonMarkovKernel.lean` discharges
+the measurable-kernel and measure-composition obligations left by1566. For
+EVERY |q|<1 and nonnegative time t, `kernel q t : Kernel Circle Circle` is an
+actual measurable Markov kernel. At0 it is the identity/Dirac kernel. At t>0
+its law is the exact Circle.exp pushforward of the already constructed poleLaw
+at the audited Cauchy flow phi_t(z). `kernel_matches_actual` identifies its
+complex pushforward with1566's circleTransitionLaw, not a surrogate family.
+
+`weight_measurable` proves the joint state/angle density measurability required
+by Mathlib Kernel.withDensity; `angleKernel_apply` uses the actual measurable
+branch. Neither a zero fallback nor an axiomatized kernel substitutes for the
+density. The existing Mathlib measurable/Borel structure on Circle is reused.
+`kernel_markov` proves mass1 with all hypotheses discharged for t>=0.
+
+`kernel_composition` proves the actual Chapman--Kolmogorov equality
+
+    kernel(q,t) composed with kernel(q,s) = kernel(q,s+t),  s,t>=0,
+
+as an equality of measurable kernels, hence of their measures on EVERY Borel
+set at EVERY Circle starting point. `mixture_set` proves the actual setwise
+mixture using1566's density identity, withDensity integration, positivity,
+integrability and Tonelli. The necessary real-to-lintegral conversion is
+explicit. `next_density_integrable` uses the proved strictly positive Bochner
+integral value to establish integrability (nonintegrable Bochner integrals
+would be0); it does not assume a missing bound. All zero-time cases are proved
+separately. `invariantLaw` is the actual Circle.exp pushforward of pi_q;
+`invariantLaw_probability` and `kernel_invariant` prove its probability and
+exact invariance under binding with this kernel for EVERY t>=0.
+
+This is a genuine Markov transition SEMIGROUP, stronger than infinitesimal
+finite-core balance or density/moment agreement. It is not yet a Feller or
+strongly continuous operator semigroup with identified closed generator. No
+path-space process, path regularity, completed-domain generator, entropy or
+full manuscript repair is claimed. Pointwise Fourier derivatives1565 and
+weighted dissipativity1564 remain available but do not discharge those later
+operator-domain limits. Nonsymmetry1563 remains valid: the invariant kernel
+does not restore a symmetric/self-adjoint generator on the given core.
+
+Full6812-job root build38.891s; complete50980-safe-declaration transitive axiom
+audit40.242s, whitelist propext/Classical.choice/Quot.sound. All21 public types,
+18 proofs,3 definitions, two local probability instances and one local Markov
+instance reviewed unabridged. Seven independent Lean checks31.206s passed:
+actual Markov property/mass, negative-q composition, actual invariant measure,
+zero-time Dirac, exact old-law identification and an EXCLUDED-PARAMETER control.
+The latter proves angleKernel(1,1,z)=0 for every Circle z, illustrating why the
+strict |q|<1 domain cannot be omitted. It is an independent verified test, not
+a newly exported Foundation declaration. A test's numeric normalization was
+repaired and rerun; production mathematics was unchanged. Retain scratch/test
+failure evidence. Previous1566 density quadrature remains supporting evidence;
+no repeated numerical run or new numerical discovery is claimed.
+
+All2638 Foundation/root sources, configuration3 and archive113 hashes checked.
+Lean verification stages serialized and terminal-confirmed. No resource,
+compiler, toolchain, trust or audit setting changed; warnings remain visible.
+Original manuscripts and unrelated drafts untouched. Evidence `.lake/stardust-1567-*`.
+Local gates PASS; exact commit/receipt and guarded BOTH-private-ref backup
+follow, not pre-claimed here. No novelty claim;1565's literature audit still
+governs the known Cauchy/Poisson construction.
+
+NEXT: prove Feller continuity on Circle and strong continuity on C(Circle),
+then uniform generator convergence on the finite trigonometric core and a
+closed generator/domain. Reuse actual kernel moments, compactness/uniform
+continuity and the cumulative operator library. A possible route is to control
+the kernel's chordal second moment using its first Fourier moment, then use
+uniform continuity; this is a proposal, not a verified estimate. Preserve
+the angle-seam/interior-start domain warnings and the distinct path-construction
+and nonlocal entropy obligations. Both Bakry manuscript repairs remain open;
+IBM's bounded rematch stays frozen and all subsequent queue priorities persist.
