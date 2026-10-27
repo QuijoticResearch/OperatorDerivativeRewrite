@@ -2583,3 +2583,5 @@ import Foundation.FractionalFourierGraphCore
 import Foundation.FractionalFourierSemigroup
 
 import Foundation.AnchoredCovariance
+
+import Foundation.FourierCovarianceCriterion

@@ -89,3 +89,58 @@ Source2673/config3/archive113 integrity matches frozen manifests; original
 manuscripts are unchanged. Exact local commit/receipt follow. REMOTE SYNC QUEUED
 under the weekday09–17 Eastern policy; no backup claimed until verified.
 Objective2 remains ACTIVE and incomplete; Objective1 deferred/incomplete.
+
+## Checkpoint1603 — arbitrary samples and Hilbert increments (October27)
+
+FourierCovarianceCriterion removes1602's requirement that a sampled family
+already contain frequency0. `withZero` adjoins0 using Option; `negative_restrict`
+extends coefficients by0 and restricts conditional negativity. Principal
+submatrix positivity transfers the anchored covariance back to the original
+sample. Empty samples, repeated frequencies and signed frequencies are allowed.
+`symbol_iff` states the exact equivalence on ALL finite samples for even symbols
+vanishing at0, on the existing Wave=(Fin3->Z) frequency group. It is not yet a
+continuum R^d symbol theorem, an exponential-positive-definite theorem or a
+Levy-process construction. No sampled positivity is postulated in the forward
+conditional-negative direction.
+
+`hilbert_kernel` identifies the actual Fourier Gamma kernel with inner(vk,vl)
+when psi(k)=||vk||^2 and psi(l-k)=||vl-vk||^2. `hilbert_covariance` uses the
+actual Gram-matrix positivity theorem, and `hilbert_negative` derives psi0=0,
+evenness and conditional negativity from those exact representation hypotheses.
+This is a sufficient representation theorem; it does not construct v for an
+arbitrary symbol or infer a Markov generator from an arbitrary covariance.
+
+`stable_covariance` and `stable_negative` discharge the global criterion for
+0<gamma<2 by DIRECT reuse of FractionalCovarianceMatrices and the verified
+stable_kernel_covariance identity, without assuming a new process or frequency
+sign restriction. The current stableSymbol depends on coordinate0, so this is
+a potentially degenerate rank-one symbol on Wave, not an asserted isotropic
+three-dimensional symbol. Independent tests also realize the quadratic symbol
+through H=R and v(k)=k0, outside the open fractional parameter range. These are
+known covariance principles under the literature audit1602; no novelty claimed.
+
+Independent exact tests cover quadratic Hilbert realization, failure of
+NegativeSymbol for fourth-power rates using the three-point zero-sum vector,
+an empty covariance sample, and arbitrary two-frequency Cauchy samples.
+Thus the global quantifiers do not hide an anchor/nonempty/distinctness
+requirement, and the higher-order signed obstruction remains preserved.
+
+NEXT connect this general criterion to the ACTUAL iterated Fourier Gamma
+recursion using existing gammaIter_finite, complex phase-energy identities and
+Hadamard powers. Determine the exact finite-core positivity/curvature statement
+it yields, rather than inferring a positive curvature constant, spectral gap,
+completed domain or jump LSI from covariance alone. Preserve all six Objective2
+deliverables; Objective1 remains deferred/incomplete.
+
+Verification: final full6853-job build44.183s; complete51706-declaration safe
+transitive audit45.163s (only propext, Classical.choice, Quot.sound). All11
+unabridged public types,8 full proofs and3 definitions reviewed; no new local
+instances/options. Four independent checks passed first run27.060s. Initial
+scratch failed Option.elim argument order; second passed. Initial full build
+passed42.877s; source review caught a leading-space definition omitted by the
+public-name extraction helper. It was added to explicit type/axiom lists,
+formatting normalized and source manifest refreshed; final full build and
+complete audit rerun. No theorem or requirement weakened; logs retained.
+Source2674/config3/archive113 hashes exact. ResearchSources unchanged. Exact
+commit/receipt follow; REMOTE SYNC QUEUED under weekday09–17 Eastern policy.
+Objective2 ACTIVE/incomplete; Objective1 deferred/incomplete; laterqueue intact.
