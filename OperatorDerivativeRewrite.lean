@@ -2609,3 +2609,4 @@ import Foundation.WaveTorusCoreBridge
 import Foundation.BoundedRateGammaObstruction
 
 import Foundation.AnisotropicStableEndpoint
+import Foundation.AnisotropicMixedThreshold

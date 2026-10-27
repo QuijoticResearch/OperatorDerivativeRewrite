@@ -1,5 +1,21 @@
 # PROJECT STARDUST — OVERNIGHT DISCOVERIES
 
+## October27 checkpoint1617 — mixed-axis covariance converse
+
+Lean now proves the exact condition for the three-coordinate stable symbol
+`∑_j a_j |k_j|^γ_j` under `a_j≥0` and `γ_j>0`: conditional negativity,
+anchored covariance positivity, and universal finite-polynomial first-Γ
+positivity hold exactly when every **positive-weight** axis has exponent
+at most two. All finite Γ iterations are nonnegative under that condition.
+The converse is the explicit axis restriction and zero-sum triple, whose
+energy is `2a_j(2^γ_j−4)>0` for an offending axis. A zero-weight exponent
+above two is harmless; an active exponent above two is not. The source is
+`Foundation/AnisotropicMixedThreshold.lean`, extending the verified 1616
+endpoint library. Six independent Lean tests cover both cases. This is a
+classical negative-type fact, not a new process, entropy or RH result.
+The original Bakry manuscripts in `ResearchSources` were preserved. The
+physical-space Markov and domain questions remain open.
+
 ## October27 checkpoint1616 — the exact pure-axis covariance threshold
 
 `Foundation/AnisotropicStableEndpoint.lean` extends the verified anisotropic

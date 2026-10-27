@@ -1,5 +1,36 @@
 # Bakry Objective2 — curvature/covariance audit
 
+## Checkpoint1617: exact active-axis criterion for mixed stable symbols
+
+`Foundation/AnisotropicMixedThreshold.lean` closes the mixed converse left
+open at1616. For a three-coordinate symbol
+`ψ(k)=∑_j a_j |k_j|^γ_j`, assume every `a_j≥0` and `γ_j>0`. The verified
+`anisotropic_negative_iff_active`, `anisotropic_covariance_iff_active`, and
+`anisotropic_gamma1_iff_active` show that conditional negativity, anchored
+covariance positivity, and nonnegative first algebraic Γ at the origin for
+**every** finite Fourier polynomial are each equivalent to
+`∀j, a_j>0 → γ_j≤2`. Under this condition,
+`anisotropic_gamma_of_positive_axes` gives every finite Γ iteration,
+pointwise, with zero imaginary part and nonnegative real part.
+
+The converse restricts the symbol to frequency triples on any offending
+coordinate axis. `mixed_on_axis` proves the restriction is precisely
+`a_j|n|^γ_j`; the `(0,1,2)` triple with `(1,−2,1)` weights has exact signed
+energy `2a_j(2^γ_j−4)>0` when `a_j>0` and `γ_j>2`. A zero-weight coordinate
+does not contribute, even if its listed exponent is larger than two.
+Independent Lean tests instantiate both patterns: weights `(1,0,2)` and
+exponents `(2,4,1)` satisfy the criterion; weights `(1,1,0)` and exponents
+`(1,3,4)` fail it, with explicit positive three-point energy.
+
+These are finite Fourier, covariance and Γ statements; they do not establish
+physical-space positivity preservation, a Lévy process, a diffusion
+curvature bound, an entropy inequality, or a mass-gap conclusion. The proof
+formalizes standard negative-type structure and makes no novelty claim. It
+uses the retained original Bakry manuscript only as context; the manuscript
+bytes remain unchanged. Full build, complete transitive axiom audit, all
+public types/proofs, six independent tests and exact source/archive checks
+are the milestone gate. Objective2 remains active.
+
 ## Checkpoint1616: sharp pure-axis exponent threshold and mixed quadratic endpoint
 
 The existing `AnisotropicStableGamma` library established covariance and
