@@ -2519,3 +2519,4 @@ import Foundation.BrownianEnergyRepair
 import Foundation.GaussianDeterministicAdjointDomain
 import Foundation.FiniteStableGamma
 import Foundation.CauchySineDrift
+import Foundation.CauchyDriftUniformObstruction

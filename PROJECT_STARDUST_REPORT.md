@@ -49981,3 +49981,51 @@ Commit/exact receipt and guarded BOTH-private-ref verification follow; no remote
 backup is preclaimed. Both primary audits remain INCOMPLETE. Next investigate
 invariant measure, valid curvature/spectral consequences and completed domains,
 reusing the established scalar identity rather than assuming closure.
+
+## Checkpoint1555 — genuine uniform-measure Poincare counterexample under drift
+
+Primary2 source conventions rechecked: normalized Lebesgue mu at lines204-205
+and336; drift energy E_L(f,f)=-integral f Lf at477-480; thm:global-drift consequence
+at1173 and repeated global discussion at1392. No mean-zero/centered restriction
+is stated in these claims; searching the manuscript found no such convention.
+The extension is explicitly to real trigonometric polynomials. Original bytes
+preserved. This finding does NOT invalidate the1554 finite Gamma scalar identity.
+
+New Foundation/CauchyDriftUniformObstruction.lean constructs the actual finite
+real witness f(x)=2+cos(x0), with L=-|D0|-sin(x0)d/dx0 (omega^2=1).
+It proves using the actual normalized CIRCLE integral, not just a symbolic
+matrix functional: meanf=2, meanf^2=9/2, meanLf=1/2, and -mean(f Lf)=-1/2.
+Thus variancef=1/2. The manuscript's kappa=1/2 Poincare bound would require
+1/2 <= -1. `witness_poincare_failure` refutes that inequality.
+`no_uniform_poincare` is stronger: NO nonnegative coefficient C can bound
+uniform variance by C times this uncentered energy on all real finite Fourier
+polynomials. `uniform_not_invariant` records the exact infinitesimal failure
+forallf integralLf=0; no independently constructed semigroup is presumed.
+
+Independent checks distinguish cos from2+cos: meanLcos=1/2 but E_L(cos)=1/2,
+whereas E_L(2+cos)=-1/2. Constants are killed by L; shifting the input nonetheless
+changes energy because the measure is not infinitesimally invariant. Five Lean
+checks passed; separate exact Fraction Laurent arithmetic checked24(c,r) pairs
+and meanL(c+cos)=r/2, variance=1/2, E_L(c+cos)=(1-r*c)/2. The latter parameterized
+formula is tested evidence, not yet the scope of a parameterized Lean theorem.
+
+Repair obligations: the stated global inequality with this mu/energy is REFUTED.
+A mean-zero version or centered-input energy is a different claim requiring its
+own proof; a changed invariant measure requires actual construction and domain
+checks. Do not substitute Gibbs intuition for a nonlocal invariant measure.
+Pointwise curvature/spectral algebra and the semigroup gradient estimate remain
+separate claims, not refuted automatically by this counterexample. Potential
+next positive route: center f and combine the free Fourier gap with the bounded
+cosine drift energy term; first locate/reuse exact integration/Parseval machinery.
+Both primary audits remain incomplete; BakryObjective1 stays ACTIVE.
+
+Full6799job root build45.777s; complete50610safe transitive declarations48.555s,
+whitelistonly propext/Classical.choice/Quot.sound; all17publictypes read
+unabridged,15proofs/2definitions read, no private proof/local instance added.
+Five independent Lean checks28.046s;24exact rational cases. Frozen2626sources,
+config3, all113archive paths/hashes match baseline/inventory1292. Initial scratch
+failed only to identify a literal zero wave; an explicit extensional lemma
+repaired it. No resource/trust/toolchain/linter changes or error suppression.
+All local gates passed .lake/stardust-1555-verification.json; fivefile commit,
+exact receipt and guarded BOTH-private-ref verification follow. Remote backup
+is not preclaimed. No other campaign or manuscript modified.

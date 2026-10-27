@@ -260,3 +260,26 @@ spectral theorem follows automatically. Both primary manuscript audits remain
 incomplete. The computational quadratic-symbol test yields cos rather than
 half-cos correction and blocks an unqualified transfer to other stable orders.
 Preserve original manuscript bytes and all earlier counterexamples/repairs.
+
+## Checkpoint1555: drifted uniform-measure Poincare claim refuted
+
+Primary2 mu is normalized Lebesgue (204-205,336), E_L=-integralfLf (477-480),
+and the unrestricted real-trigonometric Poincare assertion occurs1173/1392.
+Foundation/CauchyDriftUniformObstruction.lean gives actual normalized circle
+integrals for f=2+cos, omega^2=1: variance1/2, energy-1/2, meanLf1/2.
+The claimed kappa1/2 estimate would say1/2<=-1. More strongly,
+`no_uniform_poincare` rules out EVERY nonnegative constant multiplying this
+uncentered energy on all real finite Fourier polynomials. Uniform generator
+invariance also fails (`uniform_not_invariant`). This is a rigorous finite-domain
+counterexample, not a numerical guess or an assumed covariance interpretation.
+
+Checkpoint1554's actual drifted Gamma scalar identity remains VALID. The flaw
+is treating uniform mu as though it supported the invariant-measure energy
+argument. Mean-zero/centered-energy repairs and a genuinely constructed invariant
+measure are distinct outstanding tasks; no Gibbs law or entropy result follows
+without proof. The pointwise gradient estimate is not refuted by this witness.
+
+Full6799job build,50610safe transitiveaxiom audit,17publictypes/15proofs/2defs,
+5independentLean tests and24exact rational tests passed;2626sources/config3/
+archive113 intact. Detailed logs/timing/receipt gates in ledger1555. Bothprimary
+audits INCOMPLETE. Preserve originals, fullqueue and all previous results.
