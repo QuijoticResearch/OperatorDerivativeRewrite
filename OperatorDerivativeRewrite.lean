@@ -2573,3 +2573,5 @@ import Foundation.CauchyPoissonSingularEntropy
 import Foundation.CauchyPoissonModifiedLSI
 
 import Foundation.CauchyHigherDriftObstruction
+
+import Foundation.CauchyHarmonicDrift

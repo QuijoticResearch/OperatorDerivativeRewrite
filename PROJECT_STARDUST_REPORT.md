@@ -52322,3 +52322,23 @@ Sources2668/config3/archive113 intact; ResearchSources unchanged. Scratch
 elaboration repairs preserved; no resource/trust/hypothesis changes. Details in
 STARDUST_BAKRY_FBM_AUDIT.md; evidence `.lake/stardust-1597-*`. Local gates complete;
 exact commit receipt and guarded BOTH-private backup follow. Queue unchanged.
+
+## Checkpoint1598 — exact classification for single-harmonic Cauchy drift
+
+Bakry1 ACTIVE. `CauchyHarmonicDrift` proves the actual finite-Fourier diagonal
+correction for ALL nonnegative integers n,r:
+Delta_r(e_n,e_n)=n*min(n,r)/4*(e_r+e_-r), with T_r=-sin(r theta)*d/dtheta.
+The kernel calculation proves the low-frequency crossing mechanism. The main
+`scalar_iff` theorem establishes that a shared pointwise scalar correction for
+all finite complex Fourier inputs exists exactly for r=0 or r=1 among r>=0.
+Every r>=2 fails already on positive modes1 andr at theta0. The verified
+first-harmonic theorem is reused directly. Mixed potentials, real-only domains,
+arbitrary amplitudes and nonscalar curvature bounds are not classified.
+
+Full6848jobs54.207s; complete51564-declaration axiom audit45.419s; all23 public
+types,21 proofs and2 definitions reviewed. Independent3 Lean checks firstpass
+28.677s and651 exact-rational Fourier cases passed. Sources2669/config3/archive113
+intact. No resource/trust/version/hypothesis changes or manuscript edits.
+Details in STARDUST_BAKRY_FBM_AUDIT.md; evidence `.lake/stardust-1598-*`.
+Both complete manuscript repairs remain OPEN. Local gates complete; exactcommit
+receipt and guarded private closure follow. Campaign queue unchanged.

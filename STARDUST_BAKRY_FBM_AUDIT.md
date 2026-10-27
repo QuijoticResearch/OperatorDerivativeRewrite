@@ -2497,3 +2497,57 @@ source delta (new leaf plus root import and audit registrations). Full build,
 audit and independent checks ran serially. Style warnings remain visible; no
 compiler, resource, trust or toolchain changes. Local gates complete; exact Git
 receipt and guarded BOTH-private synchronization follow, without a queue change.
+
+## Checkpoint1598 — exact single-harmonic classification and low-mode mechanism
+
+Continuing the primary2 general-potential question at lines1503–1509,
+`Foundation/CauchyHarmonicDrift.lean` now proves the general diagonal formula
+that1597 had only independently tested. All operators use the existing finite
+complex Fourier algebra, Cauchy symbol and recursive Gamma definitions. For
+integer r, `harmonic_synthesis` realizes T_r=-sin(r theta)*d/dtheta; product and
+reflection compatibility establish first-Gamma invariance. No new stochastic
+process or completed generator is presumed.
+
+For EVERY pair of nonnegative integers n,r, `diagonal_correction` proves
+
+    Gamma2_(L+T_r)(e_n,e_n)-Gamma2_L(e_n,e_n)
+      = [n*min(n,r)/4]*(e_r+e_-r),    Gamma1(e_n,e_n)=n.
+
+`kernel_difference` proves the exact absolute-value-kernel identity behind
+min(n,r), and `second_correction` ties the bracket to the actual second-Gamma
+recursion. Thus the frequency crossing at n-r=0 is a proved mechanism, not
+an inference from sampled covariance matrices. For n>=r the diagonal factor
+relative to Gamma1 is (r/2)*cos(r theta); for 0<n<=r it is (n/2)*cos(r theta).
+These are DIAGONAL mode statements and do not establish a scalar identity on
+arbitrary combinations restricted to a high-frequency band.
+
+`no_positive_mode_scalar` proves that EVERY integer r>1 fails even at theta0,
+using positive modes1 andr. `no_pointwise_scalar` excludes any complex-valued
+pointwise factor for all finite Fourier inputs. `scalar_iff` proves BOTH
+directions of the exact classification for r>=0: such a factor exists iff
+r=0 or r=1. The r=0 transport is zero; the r=1 case directly reuses the verified
+first-harmonic theorem1554. This is a classification of normalized SINGLE
+sine harmonics only. It does not classify mixed potentials, negative harmonics,
+arbitrary amplitudes or a real-only test space, nor rule out nonscalar curvature
+inequalities. No novelty assertion is made; both full manuscript repairs remain
+OPEN, with their earlier domain, sharp entropy and spectral obligations intact.
+
+Independent rational Fourier arithmetic separately checks651 cases r=0..20,
+n=0..30 using actual convolution, reflection and both Gamma recursions. The
+test implementation now sums coincident frequency contributions explicitly,
+so the r=0 case is meaningful; the earlier1597 test covered only r>=1. This
+testing is supplementary to the all-integer Lean proof. Failed scratch1–4
+were syntax, integer/real cast, absolute-value and rewrite issues, retained
+without weakening hypotheses or increasing resource limits. Full6848-job root
+build passed54.207s. Complete audit, independent Lean and closure results follow.
+
+Final local gates1598: complete51564-declaration safe transitive axiom audit
+45.419s, only propext/Classical.choice/Quot.sound. All23 unabridged public types,
+21 proofs and2 definitions reviewed; no new instances. Three independent Lean
+checks passed first run28.677s: the full n>=r diagonal regime, the full n<=r
+diagonal regime, and definitional agreement with1597 at harmonic2. Their proofs
+and the rational checker were read. Source2669/config3/archive113 exact hashes
+passed. Build/audit/independent stages serialized; visible style warnings retained
+and no options, resource limits, toolchain or mathematical hypotheses changed.
+Local gates complete; exact Git receipt and guarded BOTH-private closure follow.
+Bakry1 and all queue priorities remain unchanged.
