@@ -2589,3 +2589,5 @@ import Foundation.FourierCovarianceCriterion
 import Foundation.FourierGammaCovariance
 
 import Foundation.FourierGammaCriterion
+
+import Foundation.FourierGammaNormalization

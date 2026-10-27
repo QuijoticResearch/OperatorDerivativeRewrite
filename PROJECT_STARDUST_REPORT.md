@@ -52671,3 +52671,51 @@ the full build was rerun on the final bytes. Scratch elaboration repairs used
 the explicit matrix type and separated real-energy rewrite; no hypotheses
 changed. Exact Git commit/receipt follow. REMOTE SYNC QUEUED under weekday
 09–17 Eastern policy, never reported as remotely backed up.
+
+## Checkpoint1606 — normalization, symmetry and the weak negative-symbol obstruction (October27,2026)
+
+Objective2 ACTIVE. `Foundation/FourierGammaNormalization.lean` proves that the
+evenness hypothesis in1605 is AUTOMATIC from universal actual Gamma1 positivity
+at the spatial origin when psi(0)=0. The exact two-frequency formula for the
+polynomial supported on {0,k}, with real coefficients (t,1), is
+Gamma1=psi(k)+t(psi(k)-psi(-k))/2. If the odd part is nonzero, a concrete t
+makes this -1. Thus `normalized_gamma_iff_covariance` gives an exact equivalence
+between universal finite-core origin Gamma1 real positivity and ALL finite
+Kpsi matrices positive semidefinite, with no assumed symmetry. Together with
+1603, `normalized_gamma_iff_negative_even` gives the precise alternative:
+conditional negativity AND evenness. Theorem statements quantify all finite
+Fourier polynomials on the existing Wave=Z^3; there is no frequency-sign,
+distinctness, probability-process or completed-domain assumption.
+
+Crucial qualification: the repository predicate `NegativeSymbol` currently
+contains ONLY the zero-sum quadratic inequality. Its definition does not impose
+the symmetry/Hermitian clause of standard negative-type conventions. The new
+`antisymmetric_energy_zero` and `odd_symbol_negative` prove EVERY odd real
+symbol passes that inequality: antisymmetric distance matrices contribute
+zero to all real quadratic forms. The concrete `linearSymbol(k)=k0` satisfies
+`NegativeSymbol` but the actual Gamma1 of `pairPolynomial(1,-2)` at the origin
+has value -1. An independent cubic odd symbol gives the same discrepancy.
+Hence neither the weak predicate nor its odd examples certify a symmetric
+Levy exponent, positive covariance kernel, Markov generator or curvature.
+The evenness clause must be kept in `symbol_iff` and any stochastic reading.
+This is a precise correction of the hypothesis bookkeeping, not a claim of
+novelty in classical negative-type theory.
+
+Five independent checks passed: odd cubic weak conditional negativity; its
+directly calculated Gamma1 value -1; symmetry consequence under exact h0 and
+Gamma positivity; positive normalized Cauchy/stable example; and direct
+negative linear witness. No original manuscript was changed. NEXT investigate
+the necessity of normalization and test whether an unnormalized odd symbol can
+have nonnegative real Gamma1 through a positive constant component; then pursue
+actual Levy/subordination examples and domain/curvature limits. Objective1
+remains deferred/incomplete, and all six Objective2 deliverables stay open.
+
+Verification: final full6856-job build41.5229945s; complete51744-declaration
+transitive axiom audit44.2039499s, whitelist only propext/Classical.choice/
+Quot.sound; all13 unabridged public types,9 full proofs,4 definitions and5
+independent proofs reviewed. No local instances/options/sorry/admit/axioms.
+Final source2677/config3/archive113 hashes exact. The first full build passed;
+a duplicate new-file header was removed and the full build rerun on final bytes.
+Scratch simplification/algebra fixes and source log evidence retained.
+ResearchSources unchanged. Exact commit/receipt follow. REMOTE SYNC QUEUED
+under weekday09–17 Eastern policy, never claimed remotely backed up.
