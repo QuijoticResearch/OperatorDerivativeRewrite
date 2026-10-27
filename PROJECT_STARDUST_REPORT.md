@@ -51913,3 +51913,44 @@ unsmoothed Fourier core, pathspace and BOTH manuscript repairs remain OPEN.
 Backward observable entropy production is distinct at nonzero drift; preserve
 nonsymmetry, all-law entropy regularization/limits, weak forward calculus,
 point-mass counterexamples and averaged-functional regularization.
+## Checkpoint1586 — actual positive-time density smoothness and full transpose pairing
+
+Bakry Objective1 remains ACTIVE following the closed bounded IBM rematch1562.
+`CauchyPoissonDensitySmooth` proves that, for every |q|<1 and probability
+initial law mu, the actual forward density is C-infinity in time t>0 in the
+continuous-function supremum norm. This strengthens scalar weak evolution to
+an actual norm derivative. The explicit rational Poisson kernel is constructed
+in the continuous-function Banach algebra; nowhere-zero denominators justify
+inversion, real-linear conjugation preserves smoothness, and bounded integration
+against mu transfers it to the genuine density identified at1585.
+
+`density_adjoint_pairing` proves integral (rho'_t f) dnu = integral (rho_t g) dnu
+for EVERY pair (f,g) in the full actual closed backward generator graph.
+The derivative defines a bounded transpose functional on continuous observables.
+No symmetry, initial density, finite Fourier restriction, or hypothetical
+production operator is assumed. The global algebraic curve is defined using
+Ring.inverse; identification with the actual density is asserted ONLY at t>0.
+This does not assert a strong extension at zero or identify a maximal density
+generator domain. The existing initial Dirac obstructions remain valid.
+
+Independent Lean tests (four, FIRST PASS30.138s) verify the actual supremum-norm
+right difference quotient for singular Dirac initial data, zero total mass of
+the derivative, real-valuedness of the derivative, and a bounded full-graph
+transpose witness for the actual evolved law. Full6835-job build44.074s;
+complete51352-declaration safe transitive axiom audit45.682s, with only propext,
+Classical.choice and Quot.sound. All31 public types,19 complete proofs,12
+definitions and the one invariant-probability local instance were reviewed.
+Sources2657/config3/archive113 hashes pass; no production edits after the build.
+Scratch elaboration failures and logs are retained under `.lake/stardust-1586-*`.
+No heartbeat, trust, compiler, version or resource changes; no error suppression.
+An attempted version command used a nonexistent executable path, executed no
+Lean process, and was corrected to the pinned executable. No novelty claim.
+
+Local verification is complete; exact Git receipt and guarded BOTH-private-ref
+verification follow this entry. Do not infer remote backup from this paragraph.
+Next consider actual forward entropy production using this norm derivative and
+positive continuous density. Jump-Bregman identification, sharp LSI2/kappa,
+uniform small-time rates, maximal density-domain equality, full L2 transfer,
+unsmoothed Fourier core, pathspace and BOTH manuscript repairs remain OPEN.
+IBM full intrinsic physical-time Ito/Clark--Ocone remains incomplete/deferred;
+the bounded rematch is not reopened and the campaign queue is unchanged.

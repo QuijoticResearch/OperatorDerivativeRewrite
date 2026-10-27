@@ -2550,3 +2550,4 @@ import Foundation.CauchyPoissonForwardDual
 import Foundation.CauchyPoissonDualObstruction
 import Foundation.CauchyPoissonDualAverage
 import Foundation.CauchyPoissonForwardDensity
+import Foundation.CauchyPoissonDensitySmooth
