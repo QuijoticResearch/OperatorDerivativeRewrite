@@ -1,3 +1,4 @@
+import Foundation.CauchyPoissonFeller
 import Foundation.MonotoneHilbertProjection
 import Foundation.IBMPastHorizonGraph
 import Foundation.ScaledGraphResolvent
@@ -9233,3 +9234,19 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonMarkovKernel.invariantLaw_probability
 #print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonMarkovKernel.kernel_invariant_positive
 #print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonMarkovKernel.kernel_invariant
+
+-- Checkpoint1568: actual continuous-observable contraction semigroup.
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonFeller.evolution_circle_continuous
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonFeller.joint_weight_continuous
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonFeller.integral_poleLaw_complex
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonFeller.integral_kernel_formula
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonFeller.feller
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonFeller.observable_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonFeller.transition
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonFeller.transition_norm
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonFeller.operator
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonFeller.operator_apply
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonFeller.operator_contraction
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonFeller.operator_zero
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonFeller.operator_add
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonFeller.operator_one

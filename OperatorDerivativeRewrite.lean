@@ -2532,3 +2532,4 @@ import Foundation.CauchyPoissonDissipativity
 import Foundation.CauchyPoissonFlow
 import Foundation.CauchyPoissonKernelComposition
 import Foundation.CauchyPoissonMarkovKernel
+import Foundation.CauchyPoissonFeller

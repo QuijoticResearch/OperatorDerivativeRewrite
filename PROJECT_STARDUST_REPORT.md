@@ -50874,3 +50874,48 @@ uniform continuity; this is a proposal, not a verified estimate. Preserve
 the angle-seam/interior-start domain warnings and the distinct path-construction
 and nonlocal entropy obligations. Both Bakry manuscript repairs remain open;
 IBM's bounded rematch stays frozen and all subsequent queue priorities persist.
+
+
+## Checkpoint1568 — actual continuous-observable contraction semigroup
+
+Bakry Objective1 remains ACTIVE. The bounded IBM rematch is frozen at1562;
+full IBM calculus is incomplete/deferred. No campaign transition or new goal.
+
+`Foundation/CauchyPoissonFeller.lean` lifts the actual measurable Circle kernel
+of1567 to bounded complex-linear operators on C(Circle, complex), for every
+real pole |q|<1 and every t>=0. Positive-time density is jointly continuous
+in the initial circle point and angle; compact parameter integration proves
+spatial continuity of the actual integral. Zero time is the identity/Dirac
+case handled separately. Continuous observables are genuinely integrable
+against each transition probability. The resulting operators contract the
+supremum norm, preserve constants, and satisfy P_(s+t)=P_s composed P_t.
+Composition uses the actual kernel equality and Bochner integral composition,
+not an assumed abstract semigroup or merely a Fourier-moment surrogate.
+
+This is the spatial Feller property and a bounded-operator semigroup. It does
+NOT yet establish strong continuity in time. Uniform convergence as t tends
+to zero, norm-generator convergence, the closed generator/core/domain, path
+construction and valid nonlocal entropy statements remain OPEN. Neither
+Bakry manuscript repair is declared complete. Preserve the non-Hermitian
+core obstruction1563, weighted dissipativity1564 and all strict parameter
+domains. No novelty claim; the existing1565 literature audit remains relevant.
+
+Full6813-job root build39.831s; complete51001-safe-declaration transitive axiom
+audit43.656s, allowing only propext/Classical.choice/Quot.sound. All14 public
+types,12 proofs,2 definitions and3 local Markov instances reviewed unabridged.
+Five independent Lean checks26.456s passed: difference stability, three-step
+composition with negative pole and zero endpoint, arbitrary complex constants,
+exact native positive-time integral and nonconstant zero-time coordinate.
+Scratch coercion/elaboration failures were repaired and logs retained. No
+new numerical test or numerical discovery is claimed. All2639 Foundation/root
+sources, configuration3 and archive113 hashes checked. Verification serialized,
+terminal-confirmed; no toolchain, resource, trust or audit setting changed.
+Warnings remain visible. ResearchSources and unrelated drafts unchanged.
+Evidence: `.lake/stardust-1568-*`. Local gates PASS; exact-commit receipt and
+guarded BOTH-private-ref verification follow, not pre-claimed by this entry.
+
+NEXT: actual strong continuity on C(Circle), then the finite-core norm-generator
+limit and closed-domain identification. The first Fourier moment/chordal
+second-moment route and compact uniform continuity remain candidates requiring
+proof. Reuse the accumulated machinery rather than assuming a time-continuity
+theorem from spatial Feller continuity. All queue and private-backup gates persist.
