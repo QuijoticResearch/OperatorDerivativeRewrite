@@ -374,3 +374,47 @@ Source2679/config3/archive113 hashes exact; ResearchSources unchanged.
 Initial scratch polynomial identity needed a final ring step; final scratch
 passed before adoption. Exact Git commit/receipt follow. REMOTE SYNC QUEUED
 under weekday09–17 Eastern policy, not yet remotely verified.
+
+## Checkpoint1609 — anisotropic stable covariance and curvature-scale obstruction (October27,2026)
+
+Objective2 ACTIVE. `Foundation/AnisotropicStableGamma.lean` proves finite
+covariance-symbol matrices form a cone under zero, addition, nonnegative
+scaling and finite sums. For each coordinate of Wave=Z³, its symbol
+`|k_j|^γ` has the verified fractional covariance kernel when `0<γ<2`.
+Consequently `anisotropicSymbol a γ = ∑_j a_j |k_j|^(γ_j)` has finite
+covariance PSD and weak conditional negativity for every `a_j≥0` and
+`0<γ_j<2`. It has zero origin and even symmetry. The actual finite Fourier
+Γ_n synthesis is real and nonnegative for every order, finite polynomial
+and spatial point. This is a theorem about finite Fourier polynomials and
+matrices, not a Lévy-process construction or completed generator domain.
+
+The independent test uses weights `(1,2,0)` and exponents `(1,3/2,1/2)`:
+its nonzero third-axis frequency has symbol exactly zero. Thus the general
+nonnegative-weight theorem supplies no strictly positive lattice rate or
+spectral gap. Separately `halfCauchy=(1/2)*stableSymbol 1` still has covariance
+PSD, but the actual single-mode Γ_n value is `(1/2)^n`; in particular
+Γ₂=1/4<Γ₁=1/2. A scale-free Γ₂≥Γ₁ implication from covariance is false.
+This does not contradict the *unit-scale* Cauchy theorem proposed in
+`ResearchSources/bakry/hurst_curvature.tex`; it rules out extending its
+constant unchanged to arbitrary rate rescalings. That manuscript, title
+*Curvature on the Hurst Line: Graded Bakry–Émery Curvature, Wiener Chaos, and
+Iterated Brownian Motion*, SHA256
+`0762018E4F05FC1A91E9065983FB0C650E389E51CDFFD5818268E4F33B53D8FA`
+(71,893 bytes), was reviewed selectively at abstract lines58–118 and
+theorem lines170–210. Its all-order and A(4) claims remain unverified here;
+the manuscript is preserved byte-for-byte. The fractional covariance and
+negative-type facts are classical; no novelty is asserted.
+
+Five independent Lean examples checked a nontrivial mixed symbol's PSD,
+all-order Γ positivity, zero-frequency degeneracy, half-scale Γ₁/Γ₂ values
+and negative-type conclusion. Full6859-job root build42.3449486s;
+complete51788-declaration transitive axiom audit45.3896695s, whitelist
+only propext/Classical.choice/Quot.sound; all19 unabridged public types,
+14 full proofs,5 definitions and5 independent proofs reviewed. No local
+instances/options/sorry/admit/axioms. Source2680/config3/archive113 hashes
+exact; ResearchSources unchanged. Exact Git commit/receipt follow; remote
+sync QUEUED by weekday09–17 Eastern restriction, not remotely verified.
+NEXT test whether the anisotropic symbol supports a genuine L² contraction
+semigroup and exact graph domain using existing Fourier machinery; retain
+the distinction from positivity-preserving Markov semigroups and any
+physical stochastic realization. Objective2's six deliverables remain open.

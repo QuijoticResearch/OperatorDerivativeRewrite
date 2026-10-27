@@ -2595,3 +2595,5 @@ import Foundation.FourierGammaNormalization
 import Foundation.FourierGammaAsymmetry
 
 import Foundation.FourierGammaComplexCriterion
+
+import Foundation.AnisotropicStableGamma

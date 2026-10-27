@@ -52810,3 +52810,31 @@ Source2679/config3/archive113 hashes exact; ResearchSources unchanged.
 Initial scratch polynomial identity needed a final ring step; final scratch
 passed before adoption. Exact Git commit/receipt follow. REMOTE SYNC QUEUED
 under weekday09–17 Eastern policy, not yet remotely verified.
+
+## Checkpoint1609 — coordinatewise stable symbols and scale-sensitive Γ curvature
+
+Bakry Objective2 remains ACTIVE. `Foundation/AnisotropicStableGamma.lean`
+proves PSD covariance symbols form a finite cone and constructs
+`∑_j a_j |k_j|^(γ_j)` on Z³ with `a_j≥0`, `0<γ_j<2`. Its finite kernel
+matrices are PSD, it is even and normalized, it has weak conditional
+negativity, and actual Fourier Γ_n(f,f) is real and nonnegative at every
+point for every finite polynomial and n. An independent mixed example with
+one zero weight has a nonzero frequency of zero rate, so this theorem does
+not imply a positive gap. The half-scale Cauchy symbol has actual single-
+mode Γ_n=(1/2)^n, hence Γ₂<Γ₁. Covariance positivity does not imply a
+scale-independent Γ₂≥Γ₁ bound.
+
+Selective source comparison: `ResearchSources/bakry/hurst_curvature.tex`,
+SHA256 `0762018E4F05FC1A91E9065983FB0C650E389E51CDFFD5818268E4F33B53D8FA`,
+proposes a unit-scale all-order Cauchy curvature bound. The rescaling
+example limits extension of that bound, not its stated unit-scale case.
+The source's wider all-order/A(4) claims are unverified; no original bytes
+were altered. No process, positivity-preserving Markov semigroup, completed
+graph domain, global CD/LSI or new literature claim follows from this
+finite-core result. See `STARDUST_BAKRY_CURVATURE_COVARIANCE_AUDIT.md`.
+
+Full6859-job build, complete51788-declaration whitelist-only transitive
+axiom audit, all19 public types/14 proofs/5 definitions and5 independent
+examples passed. Source2680/config3/archive113 hashes exact. Exact commit
+and receipt follow; workday private remote sync is QUEUED. Continue toward
+an actual semigroup/domain transfer within Bakry Objective2.
