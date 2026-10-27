@@ -1,5 +1,40 @@
 # Bakry Objective2 — curvature/covariance audit
 
+## Checkpoint1619: finite Schoenberg equivalence and exact heat threshold
+
+`Foundation/FiniteSchoenberg.lean` proves a complete finite-matrix bridge for
+real Fourier symbols. `entrywise_exp_psd` takes an arbitrary finite real PSD
+matrix to its entrywise exponential: Schur powers and nonnegative factorial
+coefficients give PSD partial sums, and the closed PSD cone admits their
+entrywise exponential-series limit. `heat_multiplier_psd_of_covariance`
+factors `exp(−tψ(k_j−k_i))` into a rank-one positive matrix times the
+entrywise exponential of `2t` times the anchored covariance kernel. This
+proves PSD for every finite frequency sample and every `t≥0`.
+
+Conversely, `heat_positive_negative` differentiates each zero-sum quadratic
+form at `t=0` from the right. Positivity for every `t≥0` forces its derivative
+`−energy(ψ,w)` to be nonnegative. Under the exact normalization `ψ(0)=0`
+and evenness assumptions, `heat_positive_iff_negative` and
+`heat_positive_iff_covariance` equate the full finite heat-multiplier PSD
+property with conditional negativity and anchored covariance PSD.
+`anisotropic_heat_positive_iff_active` then gives the exact mixed stable
+criterion: if `a_j≥0` and `γ_j>0`, all finite matrices
+`[exp(−t∑ a_r |k_{j,r}−k_{i,r}|^γ_r)]` are PSD at every nonnegative time
+**iff** every positive-weight axis has exponent at most two. A zero-weight
+superquadratic coordinate is harmless. Independent Lean checks cover the
+quadratic endpoint, the zero-weight exception, and an active cubic failure.
+
+This is the classical finite Schoenberg correspondence, with no novelty
+claim. Literature anchor: I. J. Schoenberg, [*Metric Spaces and Positive
+Definite Functions*, Transactions of the AMS 44 (1938), 522–536]
+(https://www.ams.org/tran/1938-044-03/S0002-9947-1938-1501980-0/S0002-9947-1938-1501980-0.pdf).
+The Lean proof uses the exact verified Stardust covariance/CND criterion,
+Mathlib's Schur PSD theorem, the real exponential series and closed PSD
+cone. These finite-matrix results do not yet construct a positive
+convolution measure on the torus, identify a physical Markov semigroup,
+establish a Lévy process, or imply a Bakry curvature/entropy inequality.
+Original manuscripts remain byte-for-byte unchanged. Objective2 continues.
+
 ## Checkpoint1618: superquadratic heat multipliers fail finite positivity
 
 `Foundation/FiniteBochnerObstruction.lean` connects the exact conditional-

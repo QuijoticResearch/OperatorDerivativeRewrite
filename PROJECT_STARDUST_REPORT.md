@@ -1,5 +1,23 @@
 # PROJECT STARDUST — OVERNIGHT DISCOVERIES
 
+## October27 checkpoint1619 — finite Schoenberg bridge
+
+Lean now proves the full finite-sample equivalence for normalized even real
+Fourier symbols: conditional negativity, anchored covariance PSD, and PSD
+of `[exp(−tψ(k_j−k_i))]` for **every** finite sample and `t≥0` coincide.
+The positive direction uses Schur powers, the exponential series and a
+rank-one factor. The converse uses the right derivative at time zero on
+zero-sum weights. For the anisotropic mixed stable symbol with nonnegative
+weights and positive exponents, this yields the exact condition that every
+positive-weight exponent is at most two. See
+`Foundation/FiniteSchoenberg.lean`; the original source for the classical
+principle is [Schoenberg, *Metric Spaces and Positive Definite Functions*,
+Trans. AMS 44 (1938), 522–536]
+(https://www.ams.org/tran/1938-044-03/S0002-9947-1938-1501980-0/S0002-9947-1938-1501980-0.pdf).
+No novelty, positive spatial convolution measure, Markov process, or
+curvature inequality is claimed. Those realization and domain questions
+remain open. All ResearchSources bytes remain unchanged.
+
 ## October27 checkpoint1618 — heat-multiplier positivity obstruction
 
 Lean verifies a finite small-time converse: positive conditional-negative

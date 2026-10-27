@@ -2611,3 +2611,4 @@ import Foundation.BoundedRateGammaObstruction
 import Foundation.AnisotropicStableEndpoint
 import Foundation.AnisotropicMixedThreshold
 import Foundation.FiniteBochnerObstruction
+import Foundation.FiniteSchoenberg
