@@ -53294,3 +53294,16 @@ generator domain or continuous-time path law. The full6885-job root build,
 complete52229-declaration transitive axiom audit, six public types and
 proofs/definition, four independent checks and exact source integrity passed.
 See `STARDUST_BAKRY_CURVATURE_COVARIANCE_AUDIT.md`.
+### Checkpoint1636 — compound-Poisson realization of the heat transform
+
+`Foundation/PhysicalHeatCompoundPoisson.lean` constructs the genuine
+Poisson-count mixture of physical heat laws at times `nδ`, proves its
+character exponent `exp(-λ(1-exp(-δ r(k))))`, and identifies the resulting
+probability measure with the heat law for the covariance symbol
+`1-exp(-δ r)`. The mixture has exact convolution and zero-rate laws.
+This connects the verified heat, Poisson and covariance machinery at the
+level of actual measures. It remains a fixed-time law construction; no
+cadlag process or filtration is asserted. The full6886-job root build,
+complete52246-declaration transitive axiom audit, all14 public types and
+proofs/definitions/instance, five independent checks and exact source
+integrity passed. See `STARDUST_BAKRY_CURVATURE_COVARIANCE_AUDIT.md`.

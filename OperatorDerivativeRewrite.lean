@@ -2628,3 +2628,4 @@ import Foundation.PhysicalHeatChainGamma
 import Foundation.PhysicalHeatFiniteTimeCovariance
 import Foundation.PhysicalHeatCovarianceNonmonotonicity
 import Foundation.PhysicalHeatFlatCurvature
+import Foundation.PhysicalHeatCompoundPoisson

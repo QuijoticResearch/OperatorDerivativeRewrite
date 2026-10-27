@@ -1278,3 +1278,31 @@ transitive axiom audit passed. All six unabridged public types, five theorem
 proofs, one definition, three private definitions and four independent
 checks were reviewed. Source/configuration and all113 archive hashes match
 the previous checkpoint. Exact Git approval and private backup close it.
+
+## Checkpoint1636 — actual compound-Poisson heat-law composition
+
+`Foundation/PhysicalHeatCompoundPoisson.lean` builds an **actual probability
+measure** by mixing the verified torus heat laws at times `nδ` against
+Mathlib's genuine Poisson count law of rate `λ`. It proves the explicit
+count-weighted measure sum and Fourier character formula
+`E χ_{-k} = exp(-λ(1-exp(-δ r(k))))`. Integrability of the character
+integrals and the exponential-series identity are discharged in Lean.
+
+The transformed nonnegative rate `jumpRate r δ(k) = 1-exp(-δ r(k))` is
+proved normalized and a covariance symbol. Fourier-law uniqueness then
+identifies the Poisson mixture **as a measure** with the pre-existing
+physical heat law for this new symbol. This yields its convolution law in
+Poisson rate and the zero-rate Dirac law. It is a genuine stochastic
+composition of a Poisson count and heat increments, within fixed-time
+laws; no cadlag count process, joint time-indexed path measure, or filtration
+is claimed. The construction is classical compound-Poisson/subordination
+theory, not a novelty claim. Its value here is the exact verified bridge
+among physical heat measures, Poisson mixing, Schoenberg covariance symbols
+and the Fourier operator calculus.
+
+The full6886-job root build and complete52246-declaration whitelist-only
+transitive axiom audit passed. All14 unabridged public types, ten theorem
+proofs, three definitions, one instance proof, one private exponential-series
+proof and five independent checks were reviewed. Source/configuration and
+all113 archive hashes match the previous checkpoint. Exact Git approval
+and private backup close it.
