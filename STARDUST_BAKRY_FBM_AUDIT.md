@@ -655,3 +655,77 @@ continuity and exact closed generator/core identification remain to be proved.
 Audit the Cauchy phase-flow and holomorphic composition literature before any
 novelty claim. No new process or semigroup is claimed at this checkpoint.
 Original manuscripts and all campaign priorities remain unchanged.
+
+## Checkpoint1565 — explicit Cauchy disk flow and actual Poisson moment composition
+
+Bakry Objective1 ACTIVE; no campaign transition. This advances the genuine
+nonreversible semigroup route left open by1563/1564, without claiming its
+completed realization. `Foundation/CauchyPoissonFlow.lean` proves, for |q|<1,
+0<=lambda<=1 and |z|<=1, the explicit holomorphic map
+
+    phi_lambda(z)=[q(1-lambda)+(q^2+lambda)z]
+                  /[1+q^2 lambda+q(1-lambda)z].
+
+The denominator never vanishes on the closed disk. `disk_defect` decomposes
+|D|^2-|N|^2 into three nonnegative terms; the first is strictly positive when
+lambda<1. Thus `flow_strict_disk` proves actual strict interior mapping,
+not just a numerical boundary check. `flow_composition` proves exact
+phi_lambda(phi_mu(z))=phi_(lambda*mu)(z), and `flow_fixed` fixes q.
+The lambda=1 map is identity. With a=(1+q^2)/(1-q^2)>0 and lambda=exp(-a*t),
+`evolution_add` proves time-additive composition for nonnegative times and
+`evolution_strict_disk` sends the entire closed disk inside at every t>0.
+
+`flow_holomorphic` proves complex differentiability on the disk and continuity
+on its closure, discharging the actual Mathlib Poisson-formula hypotheses.
+`poisson_flow_moment` is an actual circle-average integral identity for every
+interior complex pole and every natural power. `poisson_composition_moment`
+identifies the composed kernel's positive moments with phi_(lambda*mu)(z)^n;
+mu<1 is explicit so its Poisson pole is strictly interior. `poisson_fixed_moment`
+proves the corresponding fixed-law moments q^n. No boundary-pole Poisson density
+is substituted for the time-zero Dirac kernel.
+
+`evolution_derivative_zero` proves the actual time derivative
+V(z)=-z+q(1-z^2)/(1-q^2). `actual_positive_mode_derivative` proves, at EVERY
+positive Fourier frequency and circle point, agreement with the existing
+audited Cauchy/sine-drift generator L_r, r=2q/(1-q^2). This is pointwise
+derivative identification, NOT an already-proved generator limit in a Banach
+space norm. All finite-core dissipativity/nonsymmetry results remain intact.
+
+Literature audit: Tönjes--Pikovsky, arXiv:2009.04725v1, read October27,
+https://arxiv.org/html/2009.04725v1, equations8--10 describe the Cauchy-noise
+Fourier hierarchy, quadratic OA dynamics and wrapped-Cauchy density. Our
+quadratic vector field is a fixed sinusoidal-forcing specialization of that
+known structure; the flow family is not asserted novel. Cestnik--Pikovsky,
+arXiv:2207.02302v3, https://arxiv.org/abs/2207.02302v3, abstract inspected,
+reports a broader reduction beyond the OA subspace; its full proof has NOT
+been audited here and no claim from it is used as a formal premise.
+
+Full6809-job build40.621s; complete50924-safe-declaration transitive axiom audit
+41.963s, whitelist propext/Classical.choice/Quot.sound. All26 public types,
+20 proofs and6 definitions reviewed unabridged. Seven independent Lean checks
+25.143s passed: q=0 reduction, lambda=0 endpoint, explicit complex value,
+actual derivative, positive-time interior, actual kernel mass and commuting
+time maps. Exact Gaussian-rational tests passed2835 disk/defect,8505 composition
+and567 derivative cases, including complex boundary/interior points and q
+near both endpoints. They caught an incorrect hand-calculated test value;
+the corrected value phi_(1/2)(i) at q=1/2 is6/17+10i/17. No production theorem
+changed. Scratch failures and initial test evidence are retained.
+
+The first independent run overlapped the audit's last two seconds because its
+handle was not yet terminal-confirmed. After terminal confirmation, the complete
+independent suite was rerun serially; final timing/verification checks enforce
+that order. No process was interrupted or restarted on silence. No compiler,
+resource, trust, version or verification setting changed; warnings remain visible.
+All2636 Foundation/root sources, configuration3 and archive113 hashes checked.
+Original manuscripts and unrelated drafts untouched. Evidence `.lake/stardust-1565-*`.
+Local gates PASS; exact commit, receipt and guarded BOTH-private-ref backup
+follow, not pre-claimed here.
+
+NEXT: construct the actual complex-pole probability kernels (including the
+time-zero Dirac case), promote moment identities to equality of measures or
+bounded operators using justified Fourier density/uniqueness, prove strong
+continuity and uniform generator convergence on a dense core, then identify
+the closed domain and invariant semigroup. Positivity and invariant moments
+alone do not supply these conclusions. Entropy and both primary manuscript
+repairs remain incomplete. Reuse the existing actual Poisson law, continuous
+torus Fourier approximation and closed-operator library; no new campaign.
