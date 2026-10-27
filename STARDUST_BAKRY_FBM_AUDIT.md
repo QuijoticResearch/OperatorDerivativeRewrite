@@ -1131,3 +1131,51 @@ Resolvent surjectivity, graph-core identification, actual path-space constructio
 nonlocal entropy consequences and completion of both manuscript repairs remain
 open. Continue these Bakry obligations with exact theorem reuse. Preserve all
 negative results, campaign priorities, verification and guarded backup gates.
+
+
+## Checkpoint1573 — actual orbit-integral graph regularization
+
+Bakry Objective1 remains ACTIVE. In `CauchyPoissonOrbitRegularization`,
+`shifted_integral` proves that P_t applied to the actual Banach orbit integral
+from0 toT equals the orbit integral fromt toT+t, for ALL continuous observables
+and t,T>=0. Bounded linear integration commutation and the actual semigroup
+law discharge the identity. No input generator-domain membership is assumed.
+`integrated_graph` then proves the actual closed-generator identity
+A(integral_0^T P_s f ds)=P_T f-f by the Banach fundamental theorem of calculus
+at both shifted endpoints. Only the right-time derivative is asserted.
+
+`average_graph` proves graph membership of normalized orbit averages for all
+T>=0 (the Lean inverse convention gives the zero pair at T=0).
+`average_tendsto` proves strong convergence to EVERY continuous f as T->0+.
+For EVERY pair (f,g) in the full actual generator graph,
+`graph_average_tendsto` proves joint norm-topology convergence of
+(T^-1 integral_0^T P_s f ds,T^-1(P_T f-f)) to(f,g). Thus these are actual graph
+regularizations, not merely approximations in the observable norm. The
+construction reuses existing orbit integrals and the full generator; no new
+operator/domain definitions or foundational infrastructure were introduced.
+This is a standard semigroup mechanism instantiated rigorously, not a novelty
+claim or an assertion of an actual path-space process.
+
+Full6818-job root build39.174s; complete51128-safe-declaration transitive audit
+37.643s, only propext/Classical.choice/Quot.sound. All5 public types and5 proofs
+read unabridged; no new definitions or local instances. Five independent Lean
+checks passed in30.551s without repair: arbitrary-input actual tangency,
+zero-time integral endpoint, graph convergence along arbitrary positive vanishing
+meshes, application of full-graph resolvent coercivity, and zero generator value
+iff the endpoint semigroup fixes the original input. Earlier scratch failures
+were elaboration issues and their logs remain; none is a counterexample.
+All2644 source hashes, configuration3/archive113 hashes verified; only the new
+module/root/audit registration changed mathematical sources. Compiler, trust,
+resource and toolchain settings unchanged; style warnings visible. Manuscripts
+and unrelated drafts preserved. Evidence `.lake/stardust-1573-*`. Local gates
+PASS; exact commit/receipt and guarded BOTH-private-ref closure follow and are
+not pre-claimed in this ledger entry.
+
+Next: use bounded fixed-T graph regularization of a dense Fourier span to
+investigate a genuine smoothed Fourier graph core, then an actual positive
+Laplace resolvent. Ordinary Fourier density does not imply graph-core equality;
+smoothed Fourier core would not imply the unsmoothed polynomials form a core.
+Hilbert energy resolvents do not establish the Banach generator resolvent.
+Finite Fourier graph-core equality, resolvent surjectivity, path-space and
+nonlocal entropy/manuscript completion remain OPEN. Preserve Bakry priorities,
+IBM rematch1562 frozen/incomplete status and all verification/backup gates.

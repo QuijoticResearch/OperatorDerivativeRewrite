@@ -1,3 +1,4 @@
+import Foundation.CauchyPoissonOrbitRegularization
 import Foundation.CauchyPoissonDomainDensity
 import Foundation.CauchyPoissonGeneratorDomain
 import Foundation.CauchyPoissonCoreGenerator
@@ -9341,3 +9342,10 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonDomainDensity.coordinate_power_norm
 #print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonDomainDensity.zero_power_velocity_norm
 #print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonDomainDensity.zero_generator_unbounded
+
+-- Checkpoint1573: actual orbit-integral graph regularization.
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonOrbitRegularization.shifted_integral
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonOrbitRegularization.integrated_graph
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonOrbitRegularization.average_graph
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonOrbitRegularization.average_tendsto
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonOrbitRegularization.graph_average_tendsto
