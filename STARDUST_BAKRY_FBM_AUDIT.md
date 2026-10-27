@@ -540,3 +540,60 @@ Full6805jobbuild42.958s; complete50792safe transitiveaudit52.392s;30types/27proo
 parameter produces independently verified residual -1/8.2632sources/config3/
 archive113 intact. Full local gates passed; exactcommit and guarded PRIVATE
 main/research verification pending closure. No campaign transition or publication.
+
+
+## Checkpoint1563 — actual Poisson-law Cauchy nonsymmetry obstruction
+
+Bakry Objective1 ACTIVE; both primary manuscript repairs remain INCOMPLETE.
+After verified/private IBM1562 closure, the next operator-realization audit
+checks whether1561's actual core-balance law permits direct use of the existing
+self-adjoint machinery. It does not for nonzero q. This is an obstruction to that
+proposed repair route, NOT an attribution of an explicit reversibility claim to
+the manuscripts. Primary2's nonlocal entropy discussion (lines298ff) and its
+log-Sobolev-under-drift discussion (1495ff) remain separate open obligations.
+The earlier classical diffusion-chain counterexample and finite curvature
+identities are preserved unchanged.
+
+New Foundation.CauchyPoissonNonSymmetry uses the ACTUAL original Fourier
+Cauchy generator plus r*(-sin(theta) d/dtheta), the actual normalized harmonic-
+Poisson angle law from1561, and r=2q/(1-q^2), |q|<1. Let e_n(theta)=exp(i*n*theta).
+`actual_forward_pairing` proves integral conjugate(e_1)*L_r(e_2) dlaw(q)=0.
+`actual_backward_pairing` proves integral conjugate(L_r(e_1))*e_2 dlaw(q)=-2q.
+`not_hermitian_core` therefore disproves Hermitian symmetry on the finite core
+for EVERY q!=0 in this parameter range. At q=1/2,r=4/3 the two values are0,-1;
+negative q reverses the defect. The q=0 witness vanishes, as it must. All pairings
+are genuinely integrable; the independent Lean suite proves this for arbitrary
+finite Fourier f,g, not only the two witnesses. Existing generator/core-balance
+identities still hold, independently checked on every natural mode.
+
+Consequently a symmetric/self-adjoint operator agreeing with this actual core
+and weighted inner product cannot be used as the generator repair. This is a
+necessary-core compatibility obstruction; no new closed generator, path process
+or semigroup has been constructed here. It does NOT refute a nonreversible
+invariant semigroup, an appropriate nonlocal entropy inequality, or the already
+verified algebraic Gamma identities. No novelty claim is made.
+
+Full6807-job build39.469s; complete50869safe transitiveaxiom audit38.171s,
+whitelist propext/Classical.choice/Quot.sound. All13publictypes/11proofs/2defs
+reviewed unabridged. Five independent Lean checks25.048s passed (both parameter
+signs, zero control, general pairing integrability and preserved core balance).
+285exact rational stationary-mode checks,19complex off-diagonal pairs and19real
+cosine pairs passed. The latter independently give defect q, but the production
+Lean counterexample uses complex modes; do not claim a separately formalized
+real-cosine theorem. Tests supplement the actual analytic Lean proof.
+
+All2634Foundation/root hashes,configuration3 and archive113 verified. Original
+manuscript bytes and unrelated drafts preserved. Initial scratch elaboration
+failures and the first adoption build failure are retained. A stylistic tactic
+cleanup caused that build failure; the passing proof was restored and the FULL
+build rerun. No error/check was suppressed and no resource, compiler, trust,
+version or audit setting changed. One tactic-style suggestion remains visible.
+Evidence `.lake/stardust-1563-*`. Local gates PASS; exact commit/receipt and
+guarded BOTH-private-ref verification follow, not pre-claimed here.
+
+NEXT: use the correct non-Hermitian setting to establish actual weighted energy
+and dissipativity, a dense closed generator/domain and valid semigroup invariance,
+then the appropriate nonlocal entropy repair. Reuse1561's law and finite balance
+and the existing positive Gamma library; do not repeat mode algebra or infer
+semigroup invariance from infinitesimal finite-core balance. No queue transition,
+reflection, publication or extension of the frozen IBM excursion.
