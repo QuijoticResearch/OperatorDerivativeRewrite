@@ -51037,3 +51037,62 @@ its equivalence to the norm derivative and closedness would need actual proofs.
 Review cumulative closed-graph/partial-linear-map and Bochner machinery first.
 Path construction and full entropy/manuscript completion remain separate open
 obligations. Preserve nonreversibility1563 and weighted dissipation1564.
+
+
+## Checkpoint1571 — actual closed generator and exact norm-derivative domain
+
+Bakry Objective1 remains ACTIVE; both manuscript repairs remain incomplete.
+IBM bounded rematch stays frozen1562/fullIBM deferred; no queue transition.
+
+`Foundation/CauchyPoissonGeneratorDomain.lean` constructs the ACTUAL closed
+complex-linear partial generator on C(Circle, complex), for every real |q|<1.
+Its graph is EXACTLY the pairs (f,g) for which (P_t f-f)/t tends in supremum
+norm to g as t tends to zero from the right. This is not merely a closed
+relation containing known finite-mode pairs, nor an assumed generator.
+
+The decisive equivalence is proved for ARBITRARY continuous f and g:
+  right norm tangent g <=> for every t>=0, P_t f-f=integral_0^t P_s g ds.
+Forwards: bounded linearity and the actual semigroup propagate the zero-time
+tangent to a right derivative at every nonnegative base time. The existing
+Banach-valued FTC for right derivatives supplies the integrated identity,
+using actual strong continuity and Bochner integrability. Conversely, FTC1
+and strong continuity recover the zero-time norm tangent. The total max(t,0)
+extension is continuous; no two-sided derivative of P_t f at0 is asserted.
+
+The integrated orbit map is a bounded complex-linear operator of norm at most
+|t|. Each integrated identity is a bounded linear kernel condition on pairs;
+their intersection is closed. Vanishing vertical pairs follow from uniqueness
+of the ACTUAL tangent, allowing construction via Submodule.toLinearPMap.
+`generator_closed`, `generator_graph_iff` and `domain_iff` give closedness and
+the exact norm-derivative domain. `finite_core_graph` embeds all verified1570
+finite trigonometric pairs. The contraction resolvent bound now holds for
+EVERY pair in this full graph, and graph values are unique.
+
+Full6816-job build39.502s; complete51104-safe-declaration transitive
+axiom audit41.707s, whitelist propext/Classical.choice/Quot.sound. All23
+public types,17 full proofs and6 definitions reviewed unabridged; no new local
+instances. Five independent Lean checks33.276s passed: limits of graph
+pairs are actual norm tangents; the constant at q=-1/2 is in the closed domain
+with zero value; every finite trigonometric input satisfies the integrated
+formula; no positive real eigenvectors exist in the full domain; and positive
+real resolvent injectivity holds for arbitrary full-graph pairs. No claim of
+surjectivity is made. Earlier scratch elaboration failures are retained; all
+final independent checks passed without test repair. No numeric/novelty claim.
+
+All2642 Foundation/root sources, configuration3 and archive113 hashes checked.
+Full verification serialized and terminal-confirmed. Toolchain/compiler/resource/
+trust/audit settings unchanged; warnings remain visible. ResearchSources and
+unrelated drafts unchanged. Evidence `.lake/stardust-1571-*`. Local gates PASS;
+exact commit, receipt and guarded BOTH-private-ref verification follow, not
+pre-claimed in this entry.
+
+NEXT: actual domain density, finite graph-core equality and resolvent range,
+then valid nonlocal entropy consequences. Closedness and the precise derivative
+domain are now established, but neither domain density, graph-core equality
+nor resolvent surjectivity has been proved in this construction. Reuse audit:
+Mathlib's AddCircle.span_fourier_closure_eq_top and AddCircle.homeomorphCircle
+provide a possible density transfer; normalization and mode transport still
+need proof. Ordinary density alone is not graph-core density. Path-space
+construction and complete entropy/manuscript repairs remain separate obligations.
+Preserve nonreversibility1563 and weighted dissipation1564. All later priorities
+and full source/audit/Git/guarded-private-backup requirements remain unchanged.
