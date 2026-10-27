@@ -1165,3 +1165,37 @@ The full6881-job root build and complete52186-declaration whitelist-only
 transitive axiom audit passed. All five unabridged public types and proofs,
 four independent tests, and exact source/configuration/archive integrity were
 reviewed before the commit and private backup.
+
+## Checkpoint1632 — actual heat-chain covariance has Fourier Gamma derivative
+
+`Foundation/PhysicalHeatChainGamma.lean` closes a process-level part of the
+curvature--covariance correspondence. For the actual heat chain started at
+the torus origin, the complex pairing of character increments
+`(χ_{-k}(X₁)-1)(χ_l(X₁)-1)` has the exact finite-time expectation
+`exp(-t r(k-l)) - exp(-t r(k)) - exp(-t r(l)) + 1`.
+The second factor is the conjugate of `χ_{-l}(X₁)-1`, so this is a genuine
+Hermitian increment-covariance pairing. The proof uses the actual one-step
+path marginal, Fourier character multiplication, the heat-kernel integral
+formula, and evenness derived from the verified covariance-symbol criterion.
+
+`chainLaw_incrementPair_hasDerivWithinAt_zero` proves directly in Lean that
+the **right derivative** at time zero of the real part of this actual
+process pairing equals `2 * kernel r k l`, where `kernel` is the previously
+verified Fourier Gamma covariance form `(r(k)+r(l)-r(l-k))/2`.
+The source also proves the finite-time kernel pairing and the derivative of
+its explicit real formula. The right-sided domain `Set.Ici 0` and the
+`Real.toNNReal` time conversion are visible in the theorem type; no
+negative-time process is postulated. Independent tests cover complex
+conjugacy, zero-time pairing, diagonal variance and the right derivative.
+
+This is a rigorous stochastic realization of the **algebraic Gamma kernel**
+for admissible physical heat symbols. It does not establish positive
+`Gamma₂ ≥ ρ Gamma`, a curvature-dimension estimate, a Poincare inequality,
+or a new spectral gap. The construction is consistent with classical
+Schoenberg/Levy-generator theory; no novelty claim is made. It also does
+not establish a single continuous-time process or path regularity: each
+nonnegative `t` here selects a fixed-step chain law.
+The full6882-job root build and complete52191-declaration whitelist-only
+transitive axiom audit passed. All four unabridged public theorem types and
+proofs, the private evenness proof, four independent tests, and exact
+source/configuration/archive integrity were reviewed before checkpoint closure.

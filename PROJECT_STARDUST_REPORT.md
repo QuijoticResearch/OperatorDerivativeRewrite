@@ -53235,3 +53235,25 @@ construction remain open. ResearchSources is unchanged.
 The full6881-job root build, complete52186-declaration safe transitive axiom
 audit, all five public types and proofs, four independent checks, and exact
 source/configuration/archive integrity passed before checkpoint closure.
+
+## Checkpoint1632 — Fourier Gamma from an actual stochastic increment
+
+`Foundation/PhysicalHeatChainGamma.lean` proves the exact finite-time
+conjugate character-increment pairing under the genuine torus heat-chain
+law. Its real right derivative at time zero equals twice Stardust's
+previously verified Fourier Gamma covariance kernel. This establishes a
+precise process/operator connection, including the frequency-difference
+sign and the nonnegative-time domain. The proof uses the verified physical
+heat kernel, actual trajectory marginal, character multiplication and
+symbol evenness. A diagonal independent check reduces the pairing to
+`2(1-exp(-t r(k)))`, and zero time gives zero.
+
+The result supplies no positive curvature constant, `Gamma₂` bound,
+spectral gap, continuous-time path law, or sample-path regularity. It is a
+classical generator covariance identity specialized to the verified torus
+construction, with no novelty claim. Original ResearchSources files remain
+unchanged.
+The full6882-job root build, complete52191-declaration safe transitive axiom
+audit, four public theorem types and proofs, the private symbol-evenness
+argument, four independent checks, and exact source/configuration/archive
+integrity passed before checkpoint closure.
