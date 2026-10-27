@@ -50379,3 +50379,85 @@ closed operator domains using the existing library. Do not re-prove the generic
 Poisson obstruction or falsely declare the specific Cauchy LSI refuted. Preserve
 manuscript bytes, source hashes, all priorities and previous verified results.
 No reflection session, queue change, campaign transition or publication.
+
+## Checkpoint1561 work in progress — actual Poisson-kernel probability law
+
+October26,2026: Bakry Objective1 remains active. This is a draft progress entry,
+NOT a certified checkpoint or a claim that either manuscript audit is complete.
+The scratch `.lake/stardust-1561-poisson.lean` passes native Lean elaboration
+with exit0 and an empty `.lake/stardust-1561-law-8.log`. No Foundation/root
+source has yet been adopted or changed for this draft; complete build, transitive
+axiom audit, public-type/proof review and independent checkpoint tests remain due.
+
+For real |q|<1, the draft constructs an actual measure on the angle interval
+(0,2*pi] by weighting Lebesgue measure with the normalized harmonic Poisson
+kernel at q. It proves strict positivity, continuity, integrability, total mass
+one and IsProbabilityMeasure. Reusing Mathlib's complex Poisson formula gives
+actual integrals of every nonnegative circle mode and its conjugate equal to
+q^n. A change-of-density identity and mode integrability connect these results
+to Bochner integration under the constructed law, not merely a formal moment
+functional. For r=2q/(1-q^2), every positive mode's explicit Cauchy/sine-drift
+expression has integral zero; the recurrence is proved algebraically and then
+transferred to the actual integrals.
+
+Remaining obligations: identify that explicit mode expression with the existing
+verified Fourier generator/transport declarations, include negative modes and
+the finite core, then justify the appropriate closed-domain/semigroup bridge.
+Infinitesimal core invariance alone would not prove semigroup invariance or
+construct a stationary path process. No invariant-measure entropy inequality,
+closed-generator theorem or repaired full manuscript is claimed here.
+The wrapped-Cauchy candidate is known in the sinusoidal Cauchy-noise literature
+(Tonjes--Pikovsky, arXiv:2009.04725v1, equations8--10); no novelty is claimed.
+This draft preserves the uniform-measure obstruction and all earlier results.
+ResearchSources remains untouched. Latest certified/private checkpoint remains
+1560, 03cd2c23c6ddbb91cfa3c95dd03f87a6c1a7f936; no unfinished work is approved
+or pushed. Continue the current proof before preparing the next full checkpoint.
+
+## Checkpoint1561 — genuine Poisson law and actual finite-core invariance
+
+October26,2026, Bakry Objective1 ACTIVE. This completed mathematical entry
+supersedes the earlier1561 work-in-progress status, retaining its honest draft
+history. Both primary manuscript audits remain INCOMPLETE; IBM remains deferred
+and incomplete at1547, pseudoprocess calculus frozen1293. No queue changes.
+
+`Foundation/CauchyPoissonCoreInvariant.lean` constructs the actual probability
+measure with density P_q(theta)/(2*pi) on (0,2*pi], |q|<1, using Mathlib's harmonic
+Poisson kernel. Strict positivity, continuity, integrability and total mass one
+are proved. `law_moment_nat` and `law_moment_conj_nat` identify genuine Bochner
+integrals with q^n. `generator_positive_mode` identifies the existing
+FiniteStableGamma Cauchy generator and CauchySineDrift transport with the explicit
+Fourier action; reflection covers negative modes. The main theorem
+`actual_finite_core_balance` proves integral L_r f d law(q)=0 for EVERY finite
+complex trigonometric polynomial, with r=2q/(1-q^2). The theorem permits arbitrary
+finite signed integer frequencies and coefficients, with no distinctness or
+centering assumption. Actual synthesis integrability justifies finite sums.
+The circle is represented by the existing first-axis Fourier embedding; this
+is not a claim about an independent three-dimensional stochastic model.
+
+This supplies a positive replacement for the refuted uniform-measure invariance
+claim. It is infinitesimal invariance of the ACTUAL finite core, not yet invariance
+of a closed-generator semigroup or construction of a stationary path process.
+No logarithmic Sobolev/entropy inequality is inferred. Next investigate the
+closed-domain/semigroup bridge and corresponding nonlocal energy/entropy forms,
+reusing the completed core rather than recreating its moment algebra.
+
+Known candidate and literature scope: Tonjes--Pikovsky, arXiv:2009.04725v1,
+https://arxiv.org/abs/2009.04725 and https://arxiv.org/html/2009.04725v1,
+equations8--10 describe the sinusoidal Cauchy-noise Fourier reduction and wrapped
+Cauchy family. The earlier inspection covered the relevant opening section,
+not all later proofs. No novelty is claimed for the family or stationary
+recurrence. The Lean construction independently establishes the scope above.
+
+Verification: full root build6805jobs42.958s; complete transitive audit50792safe
+Foundation declarations52.392s, whitelist propext/Classical.choice/Quot.sound.
+All30public types,27proofs and3definitions read unabridged. Five independentLean
+checks passed29.907s, including negative q, nonconstant moments, negative complex
+mode and wrong-drift residual -1/8; an initial test elaboration failure was
+repaired with explicit integrability types, without changing mathematical source.
+357exact rational signed recurrences and85quadrature cases at4096points passed,
+maximum observed error7.77e-15. Quadrature is independent numerical evidence,
+not a formal proof. All2632Foundation/root hashes,configuration3 and archive113
+were checked; manuscript bytes preserved. No options, versions or resources changed.
+Evidence: `.lake/stardust-1561-*`. Local gates complete; explicit commit,
+exact-commit receipt and guarded BOTH-private-ref verification follow. This
+pre-commit entry does not assert remote backup. No reflection or publication.

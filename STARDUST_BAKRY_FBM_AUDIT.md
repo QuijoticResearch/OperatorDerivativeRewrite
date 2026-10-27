@@ -521,3 +521,22 @@ closed operator domains using the existing library. Do not re-prove the generic
 Poisson obstruction or falsely declare the specific Cauchy LSI refuted. Preserve
 manuscript bytes, source hashes, all priorities and previous verified results.
 No reflection session, queue change, campaign transition or publication.
+
+## Checkpoint1561 — actual invariant-core probability law repair
+
+CauchyPoissonCoreInvariant constructs the positive normalized harmonic-Poisson
+angle law for |q|<1, proves true Fourier moments and identifies the existing
+Cauchy generator plus sine transport. `actual_finite_core_balance` proves
+integral L_r f d law(q)=0 for every finite signed-frequency complex trigonometric
+polynomial when r=2q/(1-q^2), with actual integrability discharged. This replaces
+uniform-measure invariance on the finite core; it does not prove closed-domain
+or semigroup invariance, stationary paths or an entropy inequality. Both primary
+audits remain incomplete. Next address those precise bridges, not duplicate
+moment infrastructure. The wrapped-Cauchy candidate is known; see full source
+and scope in PROJECT_STARDUST_REPORT checkpoint1561.
+
+Full6805jobbuild42.958s; complete50792safe transitiveaudit52.392s;30types/27proofs/
+3defs reviewed;5independentLean29.907s;357exact and85quadrature checks. Wrong
+parameter produces independently verified residual -1/8.2632sources/config3/
+archive113 intact. Full local gates passed; exactcommit and guarded PRIVATE
+main/research verification pending closure. No campaign transition or publication.
