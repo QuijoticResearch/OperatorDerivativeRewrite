@@ -1,3 +1,19 @@
+# Authoritative Git synchronization amendment — October27,2026
+
+The user explicitly lifted the weekday09:00–17:00 America/New_York external
+Git push restriction and requested a push now. It is permanently DISABLED.
+Run the existing exact-commit audited PRIVATE backup procedure immediately
+after eligible local checkpoints, including during workdays. The independent
+30-minute scheduled sync remains active. `tools/stardust_sync/install.py`
+installs the unrestricted sync script and removes only the known Stardust
+time-policy pre-push hooks from both Git stores. Privacy checks, secret scan,
+fast-forward/atomic no-force push, exact remote verification and both private
+backup branches remain mandatory. Historical QUEUED records remain true for
+their time; never infer remote success from them. This amendment supersedes
+every workday push/deferral instruction below and in older documents, without
+changing the mathematical campaign or verification gates. Follow the current
+top section of `STARDUST_SYNC.md`.
+
 # Authoritative transition — October27,2026: Bakry Objective 2 ACTIVE
 
 The user directed: "move onto objective 2 when conveient". The natural transition

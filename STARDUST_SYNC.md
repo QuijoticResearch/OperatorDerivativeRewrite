@@ -1,6 +1,34 @@
 # Independent private GitHub checkpoint synchronization
 
-## Workday push policy — effective October26,2026
+## Current policy — intraday restriction lifted October27,2026
+
+The user explicitly removed the Monday–Friday09:00–17:00 America/New_York
+external-push restriction and requested immediate Git synchronization.
+Audited local commits may now sync at any hour. The prior workday section
+below is retained as a historical implementation record and is superseded.
+Install the current versioned script with `tools/stardust_sync/install.py`;
+it removes only the matching Stardust time-policy pre-push hooks from the
+live checkout and isolated Git store. The old `push_policy.py` and `pre-push`
+files remain as inactive historical references, not installed guards.
+
+The existing 30-minute Windows task, exact-commit approval, private-repository
+identity/permissions checks, full new-history secret scan, fast-forward and
+atomic no-force push, and post-push remote-ref verification remain unchanged.
+Synchronization failure must remain a failure; never report a queued or failed
+commit as remotely backed up. ResearchSources and unaudited work stay out of
+the commit set. The installed scheduled script is updated in place without
+creating another task. Reinstall after restoring the repository or replacing
+either Git store, and confirm both live pre-push hooks are absent before an
+intraday push. If an unrelated hook exists, preserve it and investigate.
+
+The current policy was checked against a PRIVATE GitHub repository with push
+permission before installation. The exact remote `main` and research branch
+tips must be verified after synchronization. Run the current no-network guard
+checks with `python -X utf8 tools/stardust_sync/test_policy.py`. The former
+clock-boundary test suite is preserved as
+`tools/stardust_sync/historical_workday_policy_tests.py` for historical review.
+
+## Historical workday push policy — effective October26,2026; superseded October27
 
 External pushes are prohibited Monday–Friday from **09:00 inclusive until
 17:00 exclusive, America/New_York**, unless the user explicitly authorizes an

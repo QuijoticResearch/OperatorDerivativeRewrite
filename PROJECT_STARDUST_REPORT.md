@@ -52861,3 +52861,18 @@ two raw local files no longer match. The corrected1610 runner produced fresh
 distinct complete evidence before this checkpoint. No source or manuscript
 bytes changed in the incident. Exact1610 commit/receipt and workday remote
 queue follow. See `STARDUST_BAKRY_CURVATURE_COVARIANCE_AUDIT.md`.
+
+## Git synchronization policy update — October27,2026
+
+The user explicitly removed the weekday09:00–17:00 Eastern external-push
+restriction and requested synchronization. `tools/stardust_sync/sync.py`
+no longer defers by clock; `install.py` updated the scheduled script in
+place and removed only the two matching Stardust time-policy pre-push hooks.
+The first installer run completed those mutations but failed while writing
+its receipt because it attempted to hash the removed hooks; the receipt code
+was corrected and the idempotent rerun passed. The installed script matches
+the versioned script, both hooks are absent, and audited Lean/configuration
+and all113 archived-source hashes remain unchanged. The existing privacy,
+new-history secret scan, fast-forward atomic no-force push and exact remote
+checks remain required. Superseding instructions are at the top of
+`AGENTS.md`, `STARDUST_CAMPAIGN_QUEUE.md` and `STARDUST_SYNC.md`.

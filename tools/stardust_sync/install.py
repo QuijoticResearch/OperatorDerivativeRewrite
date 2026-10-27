@@ -1,4 +1,4 @@
-"""Install the audited sync copy and push hooks without replacing existing hooks."""
+"""Install the current sync copy and remove only Stardust's former time hooks."""
 import hashlib
 import json
 import os
@@ -12,13 +12,13 @@ STATE = ROOT / ".lake/stardust-sync"
 
 
 def atomic_write(path, content):
-    pending = path.with_name(path.name + '.workday-pending')
+    pending = path.with_name(path.name + '.sync-pending')
     pending.write_bytes(content)
     os.replace(pending, path)
 
 
 def install():
-    # Do all conflict checks before mutating anything. Never silently discard a hook.
+    # Do all conflict checks before mutating anything. Preserve unrelated hooks.
     targets = []
     hook = (HERE / "pre-push").read_bytes()
     for store in (ROOT / ".git", STATE / "objects.git"):
@@ -28,7 +28,7 @@ def install():
             raise RuntimeError("Inspect existing hooksPath before installing: " + str(store))
         target = store / "hooks/pre-push"
         if target.exists() and target.read_bytes().replace(b"\r\n", b"\n") != hook.replace(b"\r\n", b"\n"):
-            raise RuntimeError("Existing pre-push hook must be preserved: " + str(target))
+            raise RuntimeError("Unrecognized pre-push hook must be preserved: " + str(target))
         targets.append(target)
     installed = STATE / "sync.py"
     backup = STATE / "sync.before-workday-policy.py"
@@ -36,13 +36,13 @@ def install():
         shutil.copyfile(installed, backup)
     atomic_write(installed, (HERE / "sync.py").read_bytes())
     for target in targets:
-        target.parent.mkdir(exist_ok=True)
-        # Git for Windows requires the shell shebang with LF, never CRLF.
-        atomic_write(target, hook.replace(b"\r\n", b"\n"))
-    receipt = {"installed_sha256": {str(p): hashlib.sha256(p.read_bytes()).hexdigest()
-                                    for p in [installed, *targets]},
-               "original_sync_preserved": str(backup), "scheduler_unchanged": True}
-    (STATE / "workday-policy-installation.json").write_text(json.dumps(receipt, indent=2) + "\n")
+        if target.exists():
+            target.unlink()
+    receipt = {"installed_sha256": {str(installed): hashlib.sha256(installed.read_bytes()).hexdigest()},
+               "removed_stardust_hooks": [str(p) for p in targets],
+               "former_sync_preserved": str(backup), "scheduler_unchanged": True,
+               "workday_push_restriction": False}
+    (STATE / "workday-policy-removal.json").write_text(json.dumps(receipt, indent=2) + "\n")
     print(json.dumps(receipt, indent=2))
 
 

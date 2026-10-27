@@ -11,12 +11,6 @@ import sys
 import tempfile
 
 ROOT = Path('C:/OperatorDerivativeRewrite')
-sys.path.insert(0, str(ROOT / 'tools/stardust_sync'))
-import push_policy
-
-
-class PushDeferred(Exception):
-    """A time-policy deferral is not a backup success or a verification failure."""
 
 
 STATE = ROOT / '.lake/stardust-sync'
@@ -40,9 +34,6 @@ def run(args, data=None, timeout=240):
 
 
 def git(*args, repo=REPO):
-    if args and args[0] == 'push' and push_policy.restricted():
-        # Recheck at the push itself, including a run that crossed 09:00 during scanning.
-        raise PushDeferred()
     return run([GIT, '--git-dir=' + str(repo), '-c', 'credential.helper=', '-c',
                 'credential.helper=!gh auth git-credential', '-c', 'pack.threads=2', *args])
 
@@ -171,19 +162,7 @@ def scan(tips, remote):
     return len(commits)
 
 
-def queued_result():
-    refs = git('for-each-ref', '--format=%(refname) %(objectname)',
-               'refs/heads/', 'refs/tags/', repo=ROOT/'.git').decode().splitlines()
-    return {'status': 'queued', 'time_utc': now(), 'time_zone': push_policy.ZONE,
-            'reason': 'Weekday external-push restriction: 09:00 <= Eastern time < 17:00',
-            'local_refs_at_deferral': dict(line.split() for line in refs),
-            'backup_verified': False,
-            'retry': 'Existing 30-minute task retries; last-success.json is unchanged'}
-
-
 def sync():
-    if push_policy.restricted():
-        return queued_result()  # No external Git/GitHub operations during a deferred run.
     privacy()
     if not REPO.exists():
         run([GIT, '-c', 'credential.helper=', '-c', 'credential.helper=!gh auth git-credential',
@@ -252,13 +231,9 @@ def main():
             lock.seek(0); lock.write(b'0'); lock.flush(); lock.seek(0)
             try: msvcrt.locking(lock.fileno(), msvcrt.LK_NBLCK, 1)
             except OSError: return
-            try:
-                result = sync()
-            except PushDeferred:
-                result = queued_result()
+            result = sync()
             save(STATE/'last-run.json', result)
-            print('Private synchronization verified' if result['status'] == 'success'
-                  else 'External synchronization queued by Eastern workday policy')
+            print('Private synchronization verified')
     except Exception as e:
         result = {'status':'failure','time_utc':now(),'error':str(e)}
         save(STATE/'last-run.json', result)

@@ -1,3 +1,14 @@
+# Git synchronization timing amendment — October27,2026
+
+The user has lifted the weekday intraday external-push restriction. All
+audited local checkpoints are eligible for immediate guarded PRIVATE backup,
+including Monday–Friday09:00–17:00 Eastern. The existing 30-minute task
+continues independently. Historical QUEUED labels below are unchanged records;
+they do not describe current sync policy. Preserve privacy, secret scanning,
+fast-forward/atomic no-force pushes, exact remote verification and both
+authorized private branches. This changes no mathematical priority or gate.
+See the top of `STARDUST_SYNC.md`.
+
 # Authoritative transition — October27,2026: Bakry Objective 2 ACTIVE
 
 The user directed: "move onto objective 2 when conveient". The natural transition
