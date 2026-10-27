@@ -1,3 +1,34 @@
+# Bounded IBM rematch stopping checkpoint1562 — return to Bakry after closure
+
+The October26 Astra IBM reassessment has reached its bounded proof/audit result.
+Checkpoint1562 establishes actual IBM time-average differentiation in the full
+adjoint graph dual and in the maximal adjoint graph dual of each FIXED raw
+observed past, with left-increment norm convergence, actual joint-law pairings,
+positive-time native nonrepresentability and native left-slope norm escape.
+See STARDUST_IBM_ASTRA_REMATCH.md and Foundation/IBMPastAdjointTimeCalculus.lean.
+This does NOT complete physical-time intrinsic IBM Ito or Clark--Ocone calculus.
+No extension is requested or automatically authorized.
+
+CLOSURE GATE: finish the exact1562 Git commit, audit receipt and guarded BOTH
+PRIVATE main/research verification. Until then, perform closure only. After
+that gate, this excursion is FROZEN and Bakry Objective1 is ACTIVE again at its
+preserved1561 mathematical return point, with all unfinished manuscript,
+closed-domain/semigroup and entropy obligations intact. Workday sync deferral
+rules remain authoritative; do not block research for a restricted-hour push.
+The five independent checks, full6806-job build, complete50854-declaration
+transitive axiom audit, all23 public types/17 proofs/6 definitions or abbreviations
+and10 local instances were reviewed; source/config/archive checks passed.
+
+IBM remains INCOMPLETE/deferred outside this bounded result. Preserve initial-
+germ triviality, existing multichannel reconstruction, native obstructions and
+the separate open native convergence question for INTEGRATED changing-past POINT
+regularizer fields. This result concerns time increments of native AVERAGES.
+All subsequent queue priorities, no-expiration policy, manuscript integrity,
+full verification and guarded private backup requirements remain unchanged.
+Earlier temporary-IBM-ACTIVE labels below are historical after the closure gate.
+
+---
+
 # Authoritative temporary excursion — October26,2026: Astra IBM reassessment ACTIVE
 
 User-authorized after Bakry checkpoint1561, db36655b6866ad078f0c0b2f559be000bfac6f19,

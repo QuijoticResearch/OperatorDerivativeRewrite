@@ -50475,3 +50475,74 @@ Initial review found full initial-germ triviality and static native minimum-norm
 adjoint recovery already established, plus actual uniform stochastic/native
 graph reconstruction. Their physical-time/observed-domain limits remain essential.
 No new mathematical theorem or runtime model switch is claimed by this update.
+
+### Rematch development note — October26,22:30 Eastern
+
+The instruction-only excursion checkpoint bc48815e252d7ddb931018259a1b3c41a2369358
+is verified on BOTH PRIVATE refs. Mathematical baseline remains1561; all2632
+Foundation/root sources are unchanged. The reassessment is active, not complete.
+The later initial-germ triviality theorem, native minimum-norm Poisson recovery,
+full projected-adjoint closure, uniform actual stochastic/native-graph recovery
+and fixed-past closed derivatives were inspected. These are existing results,
+not new rematch discoveries. Temporal predictability is not inferred from
+source-valued adjoint domains. Strong positive-time native gradient obstructions
+remain in force.
+
+A mathematically justified candidate uses the existing full adjoint graph-test
+dual: compose the bounded weakDerivative with the actual time-average FTC and
+identify its pairings with actual IBM times the original adjoint value. The
+first two draft statements passed Lean in .lake/stardust-1562-rematch-9.log.
+The stronger difference-quotient topology comparison is under development in
+.lake/stardust-1562-ibm-rematch.lean. This is NOT a certified new checkpoint,
+physical-time Ito, predictable representation or Clark--Ocone theorem. No
+Foundation source is adopted yet. Local explicit existing Mathlib normed-space
+instances resolved elaboration failures; no resource/trust/toolchain options
+were changed. Preserve failed logs as elaboration history, not mathematical
+counterexamples. Continue the bounded audit and substantive route assessment
+before deciding its stopping outcome or requesting any extension.
+The complete current five-statement scratch now also passes Lean, exit0 with
+empty .lake/stardust-1562-rematch-11.log. Embedded native-average slopes converge
+in the original adjoint-test dual norm to pointDerivative; the original native
+slope norms diverge and the limit has no original native-field representative.
+The latter two statements currently directly reuse existing obstruction theorems;
+avoid adopting redundant aliases as new results. Full checkpoint gates remain
+pending. No intrinsic IBM completion or extension-worthy breakthrough is claimed.
+
+
+## Discovery1562 — actual fixed-past IBM adjoint-dual time calculus
+
+The bounded Astra rematch audited the strongest initial-germ, native Poisson,
+maximal adjoint, predictable/multichannel reconstruction and approximation
+results before selecting a distinct output-topology route. Exact reuse and
+remaining limitations are in STARDUST_IBM_ASTRA_REMATCH.md; older coordinate-only
+initial-germ gaps are not resurrected. No runtime model switch or novelty is
+claimed.
+
+New Foundation.IBMPastAdjointTimeCalculus: for every FIXED raw observed horizon
+H and 0<T<=H, the original native derivative of the actual IBM time average,
+embedded into graph(delta_H)'s dual, has ordinary-time derivative within t<=H
+equal to the weak derivative of actual Z_T. Every negative vanishing increment
+sequence converges in that dual's NORM, not merely against individual tests.
+Every maximal-past-adjoint test has the genuine joint-law Z_T*delta_H(v) pairing.
+The positive-time limit has no original native-field representative, and native
+left-increment slope norms tend to infinity. Full-adjoint two-sided time
+identity/right-slope dual convergence are also verified. The original strong
+point-domain obstruction survives. No full physical-time Ito/Clark--Ocone,
+predictable-driver identification or unrelated point-regularizer convergence
+claim is made.
+
+Full root6806jobs58.749s; complete50854safe transitiveaxioms53.181s, whitelist
+propext/Classical.choice/Quot.sound. All23publictypes/17proofs/5defs/1abbrev and
+10local existing instances reviewed. Five independentLean checks38.070s confirm
+nonzero limit, actual product integrability, assembled actual-law derivative,
+compatibility with all old full-adjoint tests and a concrete negative reciprocal
+mesh. All2633sources/config3/archive113 checked. Source-preserving exact ledger
+and failed development evidence retained. No resource/toolchain/trust changes;
+visible style warnings were not suppressed. No original manuscripts modified.
+
+Local gates complete. Exact commit/receipt and guarded BOTH-private verification
+follow; this entry does not assert a backup before it occurs. Once that gate
+closes, freeze the bounded rematch and resume Bakry Objective1 from1561, preserving
+its unfinished semigroup/domain/entropy and manuscript repairs. No extension is
+requested, no other queue priority changes, and IBM remains incomplete. No
+reflection or publication session was opened.

@@ -2526,3 +2526,4 @@ import Foundation.ComplexGammaEllipsoidVolume
 import Foundation.StableGammaEnergyDecay
 import Foundation.CauchyDiffusionChainObstruction
 import Foundation.CauchyPoissonCoreInvariant
+import Foundation.IBMPastAdjointTimeCalculus
