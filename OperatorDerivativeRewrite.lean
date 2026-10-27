@@ -2567,3 +2567,5 @@ import Foundation.CauchyPoissonJumpLimit
 import Foundation.CauchyPoissonJumpDomination
 
 import Foundation.CauchyPoissonSpatialDensity
+
+import Foundation.CauchyPoissonSingularEntropy

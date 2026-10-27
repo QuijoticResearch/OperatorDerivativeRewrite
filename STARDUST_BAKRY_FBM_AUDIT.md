@@ -2335,3 +2335,65 @@ warnings visible. Source2665/config3/archive113 integrity passed. Original
 ResearchSources and unrelated drafts untouched. Evidence `.lake/stardust-1594-*`.
 Local gates complete; exact Git receipt and guarded BOTH-private verification
 follow. Pending synchronization is not reported as completed backup.
+
+## Checkpoint1595 — actual singular jump-Bregman entropy identity (October27,2026)
+
+Bakry Objective1 ACTIVE. The singular-integral obligation accumulated in1591--1594
+is now DISCHARGED for actual positive-time forward laws. In the exact notation
+of `CauchyPoissonSingularEntropy`, let nu_q be the verified invariant circle law,
+P_q(w)=poissonKernel(0,q,w), rho_t=density(q,t,mu), and B(a,b)=a log(a/b)-a+b.
+For EVERY |q|<1, EVERY initial probability measuremu, and EVERYt>0, the function
+J_q(z,w) B(rho_t(z),rho_t(w)), J_q=(2/||w-z||^2)/P_q(w), is integrable for
+nu_q.prodnu_q. Its integral D_t satisfies
+D_t = - integral log(rho_t)*rho'_t dnu_q, and
+HasDerivAt [u -> KL(kernel(q,u) bindmu || nu_q).toReal] (-D_t) t.
+These are `actual_singular_integrable`, `actual_singular_identity`, and
+`actual_kl_singular_derivative`. Positive-time actual KL finiteness is already
+verified1579; the formula is not an ENNReal-infinity-toReal convention artifact.
+No initial density, finite entropy or smoothness hypothesis is imposed.
+
+`joint_pairing` converts the actual stationary transition joint integral into
+the FIXED nu_q.prodnu_q integral with actual ratio(q,h,z,w). `ratio_poisson`
+tracks the exact ratioPK(evolution)/P_q(w). `reference_reciprocal` bounds1/P_q
+by4/(1-q^2). `bregman_pointwise_limit` handles EVERYpair, including diagonal,
+where B(a,a)=0; no unproved non-atomicity or singularity cancellation is assumed.
+`ratio_bregman_domination` supplies absolute domination from1593;1594 discharges
+the actual-density hypotheses. `singular_limit` applies the countably-generated
+filter dominated-convergence theorem to the normalized genuine transition
+integrals. `singular_integrable` separately proves limiting integrability using
+measurability and the inherited norm bound. Comparing this limit with1591's
+verified actual derivative yields the identity. The generic limit/integrability
+also hold for each continuous positive chord-Lipschitz f with an explicit
+positive lower bound, without requiring f normalized. The actual entropy
+specialization uses genuine forward densities. The reference factorP_q(w) must
+remain with nu_q.prodnu_q; no reversibility or diffusion chain rule is assumed.
+
+Independent checks establish: D_t=0 for the actual stationary initial law;
+D_t >= amplitude(q)*rate(q)*KL_t.toReal by the existing nonsharp production bound;
+and finite nonnegative D_t for a Dirac initial law. The last two demonstrate a
+concrete connection between the actual jump energy and earlier exponential
+entropy decay. This is not yet an arbitrary-density sharp logarithmic-Sobolev
+inequality, a backward log-density generator-domain theorem, or a full-L2 result.
+
+Selective manuscript comparison: reread revised_v8 lines1081ff (cosine-drift
+principal CD claim) and1495ff (Log-Sobolev under drift). The latter invokes the
+diffusion Bakry--Emery CD=>LSI2/kappa implication for this jump setting. The new
+proof supplies the actual NONLOCAL Bregman entropy calculus directly, without
+that unverified implication. Its nonsharp bound is established on actual
+positive-time densities; no sharp2/kappa claim or proof of the manuscript's
+whole curvature-spectrum assertion is inferred. BOTH original manuscript
+repairs remain OPEN, together with maximal/full-L2 domains, unsmoothed Fourier
+core, path-space and remaining spectral/curvature obligations. No novelty claim.
+
+Full6845-job build50.697s; complete51464-declaration safe transitive axiom audit
+58.548s, only propext/Classical.choice/Quot.sound. All11 full public types and
+all11 proofs reviewed, no new definitions; one existing local Markov and three
+invariant-probability instances reviewed. Independent3 passed FIRST RUN28.405s.
+Scratch1--2 hit default200000-heartbeat elaboration limits; explicit function
+arguments and calculation steps repaired them WITHOUT increasing limits or
+changing mathematical hypotheses. Scratch4/6 were continuity/definitional
+conversion issues, retained with other logs. All style warnings visible;
+no settings/version/trust/resource changes. Source2666/config3/archive113
+integrity passed after selective manuscript reads. ResearchSources untouched.
+Evidence `.lake/stardust-1595-*`. Local gates passed; exact Git receipt and
+guarded BOTH-private synchronization follow. Queue and campaign priorities intact.

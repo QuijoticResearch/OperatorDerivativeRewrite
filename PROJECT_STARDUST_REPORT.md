@@ -52260,3 +52260,26 @@ conversion repairs. Source2665/config3/archive113 intact; no trust/settings chan
 See STARDUST_BAKRY_FBM_AUDIT.md for exact scope, quantifiers and diagnostic timings.
 Evidence `.lake/stardust-1594-*`; all local gates passed, exact commit/private
 closure pending. All original manuscripts and existing campaign priorities preserved.
+
+## Checkpoint1595 — singular entropy calculus for the actual circle flow
+
+Bakry1 ACTIVE. `CauchyPoissonSingularEntropy` proves the actual positive-time
+relative-entropy derivative equals minus the integrable singular jump-Bregman
+energy, for EVERYinitial probability law and |q|<1. The energy uses
+J_q(z,w)=2/(||w-z||^2*poissonKernel(0,q,w)) against nu_q.prodnu_q and the correct
+orientation B(rho_t(z),rho_t(w)). Fixed-measure conversion, exact normalization,
+absolute domination, diagonal limit and limiting integrability are all discharged.
+This closes the singular-identity obligation from1591--1594. No diffusion chain
+rule or reversibility is used. Independent checks give stationary energyzero,
+the existing quantitative entropy lower bound, and finite nonnegative energy
+for Dirac initial laws. Manuscript revised_v8 lines1081ff/1495ff were selectively
+reread: the sharp CD=>LSI2/kappa claim is not established by this result.
+
+Full6845jobs50.697s; complete51464-declaration axiom audit58.548s; all11 full
+types/proofs and4 existing local instances reviewed; independent3 firstpass28.405s.
+Default-heartbeat elaboration failures were repaired by explicit arguments,
+without resource or hypothesis changes. Source2666/config3/archive113 intact.
+Detailed theorem scope, reference normalization and remaining obligations are in
+STARDUST_BAKRY_FBM_AUDIT.md; evidence `.lake/stardust-1595-*`. Both manuscript
+repairs and remaining sharp/domain/curvature questions remain OPEN. Exactcommit/
+private closure pending after completed local gates. Queue unchanged.
