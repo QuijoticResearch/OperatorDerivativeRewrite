@@ -52762,3 +52762,51 @@ Initial scratch elaboration fixed finite-sum factoring, explicit subtype
 coefficients and the two-frequency complex energy; final scratch passed before
 adoption. Exact Git commit/receipt follow. REMOTE SYNC QUEUED under weekday
 09–17 Eastern policy; do not claim remotely backed up before verification.
+
+## Checkpoint1608 — complete complex Gamma1 covariance criterion without normalization (October27,2026)
+
+Objective2 ACTIVE. `Foundation/FourierGammaComplexCriterion.lean` proves an exact
+finite-core operator criterion for EVERY real symbol psi on the existing
+Wave=Z^3, WITHOUT psi(0)=0 or an assumed symmetry clause: ALL finite matrices
+Kpsi(k_i,k_j) are positive semidefinite if and only if actual synthesized
+Gamma1(f,f) at the spatial origin is REAL and has NONNEGATIVE real part for
+EVERY finite Fourier polynomial f. This is `gamma_full_iff_covariance`.
+
+The reality requirement can be reduced to the two-frequency probes
+`imaginaryPair(k,l)=single(k,1)+single(l,i)`. Their Gamma1 imaginary part is
+EXACTLY Kpsi(k,l)-Kpsi(l,k), so their reality forces all kernels symmetric
+and even forces psi(-k)=psi(k), with no zero-normalization needed. Positive
+real Γ1 on arbitrary finite inputs then yields the real matrix quadratic
+inequality. `gamma_complex_iff_covariance` states this smaller reality-test
+family explicitly. The converse reuses checkpoint1604's all-iteration
+Gamma positivity and reality from genuine finite covariance matrices.
+Repeated frequencies and all finite sample types are included. This is
+classical Hermitian polarization, not a novel stochastic curvature theorem.
+
+The offset example1607 proves the imaginary clause is essential: real Γ1 is
+nonnegative at every point, but a 1,i probe has imaginary value -1. The
+normalized result1606 proves a distinct route to symmetry when psi0=0 and
+real positivity is universal. Neither theorem constructs a Markov process,
+closed generator, positive curvature constant, spectral gap or LSI. Standard
+negative-type and Levy–Khintchine assumptions must still be checked before
+interpreting any symbol as a stochastic generator. The exact literature
+baseline remains Bierme2016 LectureI and Gangolli1967 ChapterI from1602;
+no novelty is claimed for polarization or Schoenberg theory.
+
+Four independent Lean checks passed: the linear odd symbol's explicit 1,i
+imaginary value -1; offsetSymbol fails the full criterion; the verified
+Cauchy/stable symbol passes it for arbitrary Fourier f; and two-point
+reality yields evenness for an arbitrary symbol. NEXT leave this finite
+matrix audit for a productive symmetric Levy/subordination example (possibly
+anisotropic coordinatewise stable symbols) and test which exact operator
+or semigroup hypotheses follow. All six Objective2 deliverables and later
+queue obligations remain; Objective1 deferred/incomplete.
+
+Verification: full6858-job root build44.5048240s; complete51765-declaration
+transitive axiom audit45.9444821s, whitelist only propext/Classical.choice/
+Quot.sound; all7 unabridged public types,6 full proofs,1 definition and4
+independent proofs reviewed. No local instances/options/sorry/admit/axioms.
+Source2679/config3/archive113 hashes exact; ResearchSources unchanged.
+Initial scratch polynomial identity needed a final ring step; final scratch
+passed before adoption. Exact Git commit/receipt follow. REMOTE SYNC QUEUED
+under weekday09–17 Eastern policy, not yet remotely verified.
