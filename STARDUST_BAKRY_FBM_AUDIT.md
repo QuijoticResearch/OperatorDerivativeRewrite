@@ -466,3 +466,58 @@ Both primary audits remain INCOMPLETE; BakryObjective1 ACTIVE. Next investigate
 substantive completed-domain, invariant-measure and nonlocal entropy obligations,
 reusing the now verified finite core. Preserve every earlier obstruction/repair.
 No reflection session, campaign transition or novelty claim is admitted.
+
+
+## Checkpoint1560 — actual Cauchy diffusion-chain obstruction and entropy audit
+
+BakryObjective1 remains ACTIVE; both primary audits INCOMPLETE. Primary2
+`bakry_emery_revised_v8 (2) (2).tex` lines109 and1498–1501 invokes the classical
+positive-curvature log-Sobolev implication. Its lines298ff acknowledge a separate
+nonlocal entropy-production approach. The precise diffusion hypothesis cannot
+be assumed for the manuscript's actual Cauchy generator, with or without sine drift.
+
+`Foundation/CauchyDiffusionChainObstruction.lean` proves for f=cos(x) at x=0:
+Lf=-1, L(f²)=-1, L(f³)=-3/2 and the ACTUAL Gamma(f,f)=1/2. Thus
+`cauchy_diffusion_chain_failure` refutes L(f³)=3f²Lf+6fGamma(f,f).
+The polynomial `cubicDefect` is L(f³)-3fL(f²)+3f²Lf. For every finite Fourier
+polynomial, adding r*(-sin x d/dx), ANY real r, preserves that defect because
+transport is a verified derivation. `drifted_cubic_defect`/`drifted_cubic_nonzero`
+give the same -3/2 witness for all r. This uses original generator, Fourier
+product, synthesis and Gamma definitions, not an unrelated finite jump model.
+
+Direct reuse, not duplication: existing
+`PoissonCoreCurvatureEntropy.positive_curvature_bounded_core_entropy_failure`
+gives for every positive Poisson rate and every C>=0 a finite-support witness
+with pointwise Gamma2>=Gamma/2 but Ent(f²)>C integralGamma. The independent Lean
+suite instantiates rate1. This disproves an unrestricted jump-process transfer
+of the classical quadratic entropy implication. It does NOT disprove a separate
+torus Cauchy LSI, modified LSI or appropriate invariant-measure entropy theorem.
+Those require their own assumptions and proofs. Earlier uniform-measure
+noninvariance/Poincare obstruction and centered-energy repair remain intact.
+
+Literature audit (read October26,2026): Weber–Zacher, arXiv:2007.01264v1,
+https://arxiv.org/html/2007.01264v1, section1.1 equation(2), explicitly states
+the diffusion chain-rule hypothesis and its nonlocal failure. The abstract and
+section headings distinguish CD_Upsilon and modified log-Sobolev methods.
+Only these inspected passages are relied on; no claim to have audited every
+theorem/proof. Publisher DOI landing page S0022123621001439 returned403; arXiv
+v1 supplied accessible primary text. Treat HTML render date separately from
+arXiv submission date July2,2020. No novelty is claimed for chain-rule failure.
+
+Full6804-job build42.431s; complete50752safe transitiveaxiom audit45.442s,
+whitelist propext/Classical.choice/Quot.sound; all11types/10proofs/1definition
+reviewed unabridged. Three independentLean checks33.120s include quadratic
+zero-defect, third-order opposite-sign defect and existing Poisson entropy
+counterexample.571 exact rational Fourier/transport checks passed. The fourth-order
+cosine defect happens to vanish at zero; this point cancellation proves no
+diffusion property and prevents extrapolating this witness to all orders.
+2631Foundation/root hashes,configuration3,archive113 intact. No new option,
+axiom,sorry,localinstance or resource/toolchain change. Full evidence under
+`.lake/stardust-1560-*`; exactcommitreceipt and guarded BOTH-private-ref closure
+follow. This pre-commit ledger entry does not assert completed remote backup.
+
+Next substantive repair: precise nonlocal entropy forms, invariant measures or
+closed operator domains using the existing library. Do not re-prove the generic
+Poisson obstruction or falsely declare the specific Cauchy LSI refuted. Preserve
+manuscript bytes, source hashes, all priorities and previous verified results.
+No reflection session, queue change, campaign transition or publication.
