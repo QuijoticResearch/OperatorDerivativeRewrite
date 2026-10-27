@@ -1331,3 +1331,40 @@ transitive axiom audit passed. All four unabridged public theorem types and
 proofs and four independent checks were reviewed. Source/configuration and
 all113 archive hashes match the previous checkpoint. Exact Git approval and
 private backup close it.
+
+## Checkpoint1638 — discrete compound-heat chain and actual jump Gamma
+
+`Foundation/PhysicalHeatCompoundPoissonChainGamma.lean` reuses the physical
+heat-chain Ionescu--Tulcea construction with the transformed symbol
+`1-exp(-δ r)`. The resulting countable-step path law is a probability
+measure with the verified past-to-next conditional transition kernel. Its
+first-coordinate law, when started at the torus origin, is **exactly** the
+Poisson mixture constructed at checkpoint1636, not merely a matching
+Fourier transform. Consequently its first coordinate retains the positive
+no-jump atom from checkpoint1637.
+
+For Fourier frequencies `k,l`, twice the algebraic Gamma kernel of the
+transformed symbol equals the real covariance of one actual heat jump of
+duration `δ`:
+
+`2 K_{1-exp(-δr)}(k,l) = Re E[(χ_{-l}(J)-1)(χ_k(J)-1)]`.
+
+The order `(-l,k)` is explicit because the verified kernel convention uses
+`l-k`. The same number is the right derivative at zero of the real
+first-step character-increment covariance for the compound chain as its
+Poisson **rate parameter** varies. Thus the infinitesimal carré-du-champ
+coefficient is identified with an actual jump covariance rather than only
+an abstract conditionally negative symbol. This is classical compound-
+Poisson generator mathematics verified on Fourier characters; no novelty
+claim is made.
+
+The chain is indexed by discrete steps. Varying its rate parameter does
+not construct a cadlag physical-time process, and the result does not
+establish a closed generator or Gamma domain, a positive curvature lower
+bound, or a jump logarithmic Sobolev inequality. Those require separate
+theorems. The full6888-job root build and complete52258-declaration
+whitelist-only transitive axiom audit passed. All seven unabridged public
+types, five theorem proofs, one definition, one instance proof, and four
+independent checks were reviewed. Source/configuration and all113 archive
+hashes match the previous checkpoint. Exact Git approval and private
+backup close it.

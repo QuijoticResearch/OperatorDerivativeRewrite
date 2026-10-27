@@ -53321,3 +53321,20 @@ the Haar singleton proof and pathwise process remain separate. The
 public theorem types/proofs, four independent checks and source/archive
 integrity passed. See
 `STARDUST_BAKRY_CURVATURE_COVARIANCE_AUDIT.md`.
+
+### Checkpoint1638 — discrete compound-heat chain and jump covariance
+
+`Foundation/PhysicalHeatCompoundPoissonChainGamma.lean` constructs a
+countable-step probability path law for the transformed compound-Poisson
+symbol. Its first-coordinate law is exactly the actual Poisson heat mixture,
+and its past-to-next conditional kernel comes from the verified heat-chain
+construction. Lean identifies twice its Fourier Gamma kernel with the real
+covariance of one original heat jump, and with the right derivative at zero
+of first-step compound-chain covariance as the rate parameter varies.
+The result is a discrete-chain and Fourier-character theorem; cadlag
+physical-time realization, closed Gamma domains and curvature inequalities
+remain open. It is classical jump-generator mathematics, not a novelty
+claim. The full6888-job build, complete52258-declaration transitive axiom
+audit, seven public types/proofs/definition/instance, four independent
+checks and source/archive integrity passed. See
+`STARDUST_BAKRY_CURVATURE_COVARIANCE_AUDIT.md`.
