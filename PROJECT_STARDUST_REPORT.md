@@ -52241,3 +52241,22 @@ retained, production unchanged. Source2664/config3/archive113 intact. Detailed
 scope/constants/failures in STARDUST_BAKRY_FBM_AUDIT.md; evidence
 `.lake/stardust-1593-*`. Exact commit/private closure pending following completed
 local gates. Every prior result, original manuscript and queue priority preserved.
+
+## Checkpoint1594 — spatial regularity of actual forward laws
+
+Bakry1 ACTIVE. `CauchyPoissonSpatialDensity` proves, for each fixed|q|<1,t>0,
+a common spatial Lipschitz constant for the actual invariant-relative densities
+of EVERY initial probability law. A positive spatial lower bound then instantiates
+the1593 Bregman domination for the actual density. Dirac initial laws are included;
+no initial density or entropy assumption is added. Independent verification gives
+absolute-norm domination of the actual normalized Bregman integrand.
+
+The next unresolved step is fixed-product-measure conversion and a justified
+dominated-limit identification, with correct reference-density normalization.
+The singular entropy identity, sharpLSI and both manuscript repairs remain OPEN.
+Full6844jobs42.168s; complete51445-declaration axiom audit42.013s; all8 full types/
+proofs reviewed; independent3passed24.448s after four test-only notation/metric
+conversion repairs. Source2665/config3/archive113 intact; no trust/settings changes.
+See STARDUST_BAKRY_FBM_AUDIT.md for exact scope, quantifiers and diagnostic timings.
+Evidence `.lake/stardust-1594-*`; all local gates passed, exact commit/private
+closure pending. All original manuscripts and existing campaign priorities preserved.

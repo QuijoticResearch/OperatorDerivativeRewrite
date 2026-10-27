@@ -2565,3 +2565,5 @@ import Foundation.CauchyPoissonBregmanStep
 import Foundation.CauchyPoissonJumpLimit
 
 import Foundation.CauchyPoissonJumpDomination
+
+import Foundation.CauchyPoissonSpatialDensity

@@ -2283,3 +2283,55 @@ changed. Sources2664/config3/archive113 match approved delta and read-only1292
 inventory. ResearchSources and unrelated drafts untouched. Evidence
 `.lake/stardust-1593-*`. All local gates passed; exact commit/receipt and guarded
 BOTH-private synchronization follow. Pending sync is not represented as backed up.
+
+## Checkpoint1594 — actual spatial density regularity and domination (October27,2026)
+
+Bakry Objective1 ACTIVE. `CauchyPoissonSpatialDensity` discharges the actual-density
+regularity hypothesis left at1593. `uniform_separation` proves a positive minimum
+of ||w-evolution(q,t,z)||^2 over both circle points at every FIXED t>0,|q|<1,
+using compactness and actual strict interior flow. `ratio_algebra` identifies
+the genuine invariant-relative density ratio as
+(1-||v||^2)/(1-q^2) * ||w-q||^2/||w-v||^2, v=evolution(q,t,z).
+The angular constants cancel exactly. Squared-distance differences and the
+explicit `quotient_bound` give `ratio_lipschitz` uniformly in sourcez. A valid
+constant is32/((1-q^2)*epsilon^2), where epsilon bounds the SQUARED denominator
+below. This is coarse and not claimed uniform as t->0 or |q|->1.
+
+`density_lipschitz` integrates the actual ratio against the initial law. Its
+quantifier order is important: for each fixedq,t, there exists ONE finite L>=0
+that works for EVERY initial probability measure, then every circle pair.
+No initial density, finite entropy, smoothness or absolute continuity is assumed.
+`density_lower` supplies a strictly positive spatial lower bound for each actual
+positive-time density, using existing continuity/positivity. It does not assert
+uniformity of that selected lower bound over initial laws or at timezero.
+`actual_bregman_domination` now instantiates1593 for every actual positive-time
+forward density and every initial probability law. Thus the normalized
+small-increment Poisson kernel times B(rho_t(z),rho_t(w)) has one common finite
+bound for allz,w and all sufficiently small positive increments. Independent
+checking also establishes the absolute-norm version using positivity.
+
+Remaining before the actual singular entropy identity: convert the actual
+stationary transition joint measure to a fixed product measure with exact
+reference-density factors; identify the pointwise Bregman-kernel limit including
+the diagonal convention; establish measurability/integrability and invoke a
+valid dominated-limit theorem. Only then compare with1591's actual entropy
+derivative. One convenient proposed product is nu_q x nu_q, whose limiting
+kernel includes the factor1/poissonKernel(0,q,w); it must not be dropped.
+No singular integral identity, backward-generator membership, sharp LSI2/kappa,
+full-L2/maximal-domain result or completion of either manuscript is claimed.
+All previous verified results and queue priorities remain unchanged.
+
+Full6844-job root build42.168s; complete51445-declaration safe transitive axiom
+audit42.013s, only propext/Classical.choice/Quot.sound. All8 full public types and
+all8 full proofs reviewed; no new definitions or instances. Independent3 passed
+24.448s: a single genuine LipschitzWith constant works for all initial laws;
+Dirac initial laws satisfy the positive lower/Lipschitz bounds; the actual
+normalized Bregman integrand is uniformly bounded in ABSOLUTE norm. Four earlier
+test runs25.927s,24.555s,25.055s,34.592s failed only NNReal scope and conversion
+of Circle/real distance to complex chord norm; logs/timings retained, production
+unchanged. Scratch failures1,2,4 concern elaboration/algebra normalization, not
+mathematical obstructions. No trust/version/resource/options changes; style
+warnings visible. Source2665/config3/archive113 integrity passed. Original
+ResearchSources and unrelated drafts untouched. Evidence `.lake/stardust-1594-*`.
+Local gates complete; exact Git receipt and guarded BOTH-private verification
+follow. Pending synchronization is not reported as completed backup.
