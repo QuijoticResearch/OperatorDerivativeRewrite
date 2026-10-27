@@ -52202,3 +52202,22 @@ proved transition-energy limit and avoid rebuilding it. Sharp LSI2/kappa,
 singular jump identity, maximal density/fullL2 domains, unsmoothed Fourier core,
 pathspace and BOTH manuscript repairs remain OPEN. Queue unchanged; no early
 transition or reopening of frozen IBM/pseudoprocess campaigns.
+
+## Checkpoint1592 — drift-independent off-diagonal jump limit
+
+Bakry1 ACTIVE. New Lean `CauchyPoissonJumpLimit` proves the actual boundary
+radial-defect derivative2 and, for every |q|<1 and distinct circle points z,w,
+h^(-1) poissonKernel(0,evolution(q,h,z),w) -> 2/||w-z||^2 as h->0+.
+Independent angular normalization gives1/(pi*||w-z||^2). This identifies the
+candidate singular kernel behind1591's actual transition Bregman dissipation.
+Near-diagonal domination and justified integral interchange remain OPEN;
+pointwise convergence does not establish the singular entropy identity.
+The invariant outer law still depends onq. No symmetry or sharp LSI is inferred.
+
+Full6842-job build44.964s; complete51403-declaration transitive axiom audit40.065s;
+both full types/proofs reviewed, three independent Lean checks passed24.767s.
+Source2663/config3/archive113 integrity passed; no manuscript/version/trust changes.
+Scratch normalization failures retained as development evidence, not obstructions.
+See STARDUST_BAKRY_FBM_AUDIT.md for exact scope, limits and diagnostics. Evidence
+`.lake/stardust-1592-*`; local verification complete, exact commit/private closure
+pending. All previous results and priorities preserved; BOTH Bakry repairs open.

@@ -2197,3 +2197,44 @@ proved transition-energy limit and avoid rebuilding it. Sharp LSI2/kappa,
 singular jump identity, maximal density/fullL2 domains, unsmoothed Fourier core,
 pathspace and BOTH manuscript repairs remain OPEN. Queue unchanged; no early
 transition or reopening of frozen IBM/pseudoprocess campaigns.
+
+## Checkpoint1592 — actual off-diagonal circle jump kernel (October27,2026)
+
+Bakry Objective1 remains ACTIVE. `CauchyPoissonJumpLimit.radial_defect_derivative`
+proves for every |q|<1 and z on Circle that d/dh[1-||evolution(q,h,z)||^2]
+at h=0 equals2. The drift is tangential at the boundary: the exact existing
+complex evolution derivative, real/imaginary differentiation and unit-circle
+identity discharge the cancellation; no symmetry assumption is used.
+`off_diagonal_limit` proves for every distinct z,w on Circle that
+h^(-1) poissonKernel(0,evolution(q,h,z),w) -> 2/||w-z||^2 as h->0+.
+The limit is independent of q, but neither the full semigroup nor its invariant
+measure is asserted independent of q. With angular Lebesgue normalization
+(2*pi)^(-1), the coefficient is 1/(pi*||w-z||^2); with uniform circle probability
+it is2/||w-z||^2. The invariant measure nu_q in the outer Bregman integral must
+still be retained. This is an actual transition-kernel limit, not a discrete
+Poisson-law analogy or a proof of interchange with a singular integral.
+
+This identifies the candidate kernel for checkpoint1591's normalized actual
+transition Bregman dissipation. Remaining: spatial regularity/positive lower
+bounds for the actual positive-time density, a quadratic Bregman estimate,
+and uniform near-diagonal domination (including tangential motion of the pole)
+before a dominated-limit argument. Pointwise off-diagonal convergence alone
+is insufficient. Sharp claimed LSI2/kappa, maximal density/full-L2 domains,
+unsmoothed Fourier core, path-space claims and BOTH manuscript repairs remain
+open. No novelty, sharp curvature consequence or campaign completion is claimed.
+
+Full root build6842 jobs44.964s; complete51403-declaration safe transitive axiom
+audit40.065s, only propext/Classical.choice/Quot.sound. Both public theorem types
+were read untruncated and both proofs reviewed; no new definitions/instances.
+Three independent Lean checks passed24.767s: antipodal coefficient1/2 for allq,
+angular normalization, and actual boundary evolution derivative -1 atz=1.
+Style/tactic information remains visible; no errors suppressed or settings changed.
+Scratch failures were elaboration/algebra-normalization issues, not mathematical
+counterexamples; retained failed2--failed8 logs. The first scratch diagnostic was
+observed in terminal output before log replacement. A mistyped nonexistent Lake
+path was rejected by PowerShell; all actual compilation used pinned4.34.1.
+Source2663/config3/archive113 integrity checks passed against the exact baseline
+and read-only1292 inventory. ResearchSources and unrelated drafts untouched.
+Evidence `.lake/stardust-1592-*`. Local gates complete; exact commit receipt and
+guarded BOTH-private backup verification follow. Do not describe pending sync as
+completed. Queue unchanged; IBM rematch frozen, no expiration, October31 review.

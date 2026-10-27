@@ -2561,3 +2561,5 @@ import Foundation.CauchyPoissonDriftRate
 import Foundation.CauchyPoissonExponentialEntropy
 
 import Foundation.CauchyPoissonBregmanStep
+
+import Foundation.CauchyPoissonJumpLimit
