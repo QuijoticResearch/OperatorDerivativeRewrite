@@ -1642,3 +1642,66 @@ sharpLSI2/kappa, uniform small-time rate, completed L2 transfer, unsmoothed
 Fourier core or path-space theorem is claimed. Both manuscript repairs remain
 OPEN. Earlier all-law forward KL regularization/contraction/limit and uniqueness
 are PROVED and must not be rebuilt. Preserve all campaign and verification gates.
+
+## Checkpoint1582 — actual forward law and full-domain weak Kolmogorov equation
+
+Bakry Objective1 remains ACTIVE; bounded IBM rematch1562 remains FROZEN and
+incomplete beyond its stopping contract. No campaign or manuscript bytes change.
+This continues1581's forward/backward distinction using the actual Cauchy circle
+kernel and full closed generator, rather than imposing reversibility refuted by
+CauchyPoissonNonSymmetry. The manuscript's density-adjoint and entropy claims
+cannot be inferred simply by renaming a backward observable as a forward density.
+
+`Foundation/CauchyPoissonForwardDual.lean` constructs `lawFunctional` on complex
+continuous circle observables for EVERY initial probability measure, with norm
+at most1. `dualOrbit` composes a continuous functional with the actual transition
+operator; it is contractive, has identity at0, satisfies the nonnegative-time
+semigroup law, and is continuous when evaluated on each continuous observable.
+Negative times are only the existing max(t,0) extension. No norm continuity of
+the entire dual semigroup is asserted.
+
+`actual_law_duality` identifies this action with the genuine evolved measure
+mu_t = (kernel q t) compose mu, for |q|<1 and t>=0. Kernel composition/Fubini and
+compact-continuous integrability discharge the actual measure pairing; this is
+not an abstract action lacking a stochastic-law identification. For EVERY pair
+(f,g) in the full actual closed generator graph, `weak_forward_derivative` proves
+at every t>0:
+
+    d/dt integral f dmu_t = integral g dmu_t.
+
+`weak_forward_integrated` also proves, for EVERY t>=0:
+
+    integral f dmu_t - integral f dmu = integral_0^t integral g dmu_u du.
+
+All integrals here are complex Bochner integrals. No initial density, initial
+finite entropy, Fourier-polynomial presentation, diffusion chain rule or
+symmetry is assumed. The integrated equation follows by applying the bounded
+law functional to the existing full-domain integrated orbit identity; continuous
+linear interval-integral interchange is justified. The positive-time derivative
+uses the actual full norm orbit derivative and local positive-time equality of
+the measure pairing. Standard semigroup duality is reused, with no novelty claim.
+
+Full root6831 jobs44.793s; complete51261-safe-declaration transitive audit41.395s,
+only propext/Classical.choice/Quot.sound. All11 public types,9 proofs,2 definitions
+and one existing local Markov instance reviewed unabridged. Five independent
+Lean tests passed25.224s: singular point-mass derivative with actual point kernel;
+arbitrary closed-domain derivative witness; invariant mean of every generator
+value is zero; actual law pairing obeys dual composition; and exact probability
+mass preservation including time0. The first test initially needed an explicit
+measurable-kernel dirac_bind rewrite (27.439s failed elaboration retained).
+Earlier scratch failures concerned unfolding max(t,0), kernel composition and
+functional coercions; all repaired without changing assumptions or resources.
+No errors/warnings suppressed, no production edits after the full build.
+Sources2653/config3/archive113 hashes PASS; original manuscripts and unrelated
+untracked drafts preserved. Evidence `.lake/stardust-1582-*`. Local gates PASS;
+exact commit receipt and guarded BOTH-private-ref verification follow.
+
+Remaining: identify a justified strong forward-adjoint/density domain and actual
+jump-Bregman entropy-production representation. Weak law differentiation does
+not establish either. SharpLSI2/kappa, uniform small-time decay rate, full L2
+domain transfer, unsmoothed Fourier core and path-space construction remain
+unproved here; BOTH manuscript repairs remain OPEN. Reuse the existing all-law
+positive-time finite entropy, geometric contraction, full-time entropy limit,
+unique invariant law and full-domain backward-observable production results.
+Next pursue an exact adjoint-domain connection or consolidate the repaired
+manuscript claims if no stronger domain identification is justified.

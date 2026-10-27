@@ -2546,3 +2546,4 @@ import Foundation.CauchyPoissonMixtureEntropy
 import Foundation.CauchyPoissonRegularization
 import Foundation.CauchyPoissonEntropyLimit
 import Foundation.CauchyPoissonObservableEntropy
+import Foundation.CauchyPoissonForwardDual
