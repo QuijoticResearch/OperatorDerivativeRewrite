@@ -418,3 +418,54 @@ NEXT test whether the anisotropic symbol supports a genuine L² contraction
 semigroup and exact graph domain using existing Fourier machinery; retain
 the distinction from positivity-preserving Markov semigroups and any
 physical stochastic realization. Objective2's six deliverables remain open.
+
+## Checkpoint1610 — closed anisotropic diagonal semigroup on ℓ²(Z³) (October27,2026)
+
+Objective2 ACTIVE. `Foundation/WaveDiagonalSemigroup.lean` constructs, for
+every nonnegative rate `r : Wave → ℝ≥0`, an actual bounded diagonal evolution
+on the Hilbert coefficient space `lp (fun _ : Wave => ℂ) 2`. It proves
+contraction, time-zero identity, semigroup composition and strong continuity.
+Its right difference quotient converges in the full Hilbert norm EXACTLY when
+`(f,g)` belongs to the multiplier graph `g(k)=-r(k)f(k)`. This graph is closed,
+and its domain is precisely weighted ℓ² membership. The anisotropic rate from
+1609 satisfies the required nonnegativity, and its generator and domain are
+identified without imposing artificial finite-support restrictions. A mode
+at any zero-rate frequency is nonzero and stationary. The independent mixed
+example has precisely such a third-axis frequency, confirming that general
+nonnegative weights do not imply strict contraction or a positive spectral
+gap. The proof reuses the 1D fractional semigroup's real quotient bound and
+limit; the three-coordinate Hilbert convergence is proved explicitly.
+
+This is a genuine strongly continuous *operator* semigroup on Fourier
+coefficients. Identification with normalized Haar L² on the physical 3-torus,
+positivity preservation, conservativity as a Markov semigroup, a Lévy-process
+realization, and extension of pointwise Γ_n to the graph domain remain OPEN.
+Covariance PSD from1609 alone does not discharge any of those obligations.
+The distinction is required before any CD, entropy or LSI application. The
+result is a direct diagonal-multiplier construction; no novelty is claimed
+against standard semigroup theory.
+
+Verification: full6860-job root build11.2976163s after the source was already
+compiled in an initial41.4602003s build; complete51827-declaration
+transitive axiom audit43.6098201s, allowing only propext/Classical.choice/
+Quot.sound; all29 unabridged public types,21 full proofs,8 definitions/
+abbreviations and5 independent Lean proofs reviewed. No local instances,
+options, sorry, admit or axioms. Source2681/config3/archive113 hashes exact;
+ResearchSources unchanged. Exact commit/receipt follow. Remote sync QUEUED
+under the weekday09–17 Eastern rule.
+
+Audit-evidence incident: the first cloned stage runner retained checkpoint1609
+output paths. It ran a successful6860-job build and the OLD1609 audit file,
+overwriting the local `.lake/stardust-1609-{full-build,audit}.log` and timing
+files. The original1609 exact receipt and terminal verification JSON retain
+their original SHA256 values and prior successful counts, but the two raw log
+files no longer match those hashes. The runner was corrected before any1610
+approval; fresh independent1610 full-build, complete audit and check files
+are kept under distinct1610 paths. No mathematical source or committed record
+was modified by this error. Do not represent the replaced1609 raw logs as
+recoverable original evidence. A later verified descendant can back up both
+committed results; no claim of remote verification is made here.
+
+NEXT link the coefficient semigroup to physical torus Haar L² and test
+Markov positivity independently, or exhibit a precise failure. Objective2's
+remaining deliverables and later campaign order are unchanged.

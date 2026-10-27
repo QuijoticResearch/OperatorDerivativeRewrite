@@ -52838,3 +52838,26 @@ axiom audit, all19 public types/14 proofs/5 definitions and5 independent
 examples passed. Source2680/config3/archive113 hashes exact. Exact commit
 and receipt follow; workday private remote sync is QUEUED. Continue toward
 an actual semigroup/domain transfer within Bakry Objective2.
+
+## Checkpoint1610 — exact 3D coefficient semigroup and generator domain
+
+Bakry Objective2 ACTIVE. `Foundation/WaveDiagonalSemigroup.lean` now gives
+every nonnegative `r : Z³→ℝ≥0` a strongly continuous contraction semigroup
+on `ℓ²(Z³,ℂ)`. Its full right Hilbert-norm derivative exists exactly on the
+closed graph `g(k)=-r(k)f(k)`, equivalently the exact weighted ℓ² domain.
+The anisotropic stable symbol from1609 instantiates this result. Any zero-
+rate frequency supports a nonzero stationary Fourier mode; the independent
+mixed-weight example exhibits one. This is an operator realization, not yet
+an identified physical Haar-L² torus, Markov/Lévy process, graph-domain Γ,
+CD, entropy or LSI theorem. Reuse of the earlier 1D real quotient estimates
+is explicit; no novelty is asserted against diagonal semigroup theory.
+
+Full6860-job build, complete51827-declaration whitelist-only axiom audit,
+all29 public types/21 proofs/8 definitions and5 independent examples passed.
+Source2681/config3/archive113 hashes exact. A cloned stage runner initially
+overwrote the earlier1609 raw build/audit logs with new build/old audit output;
+the original1609 receipt and terminal JSON preserve their hashes but those
+two raw local files no longer match. The corrected1610 runner produced fresh
+distinct complete evidence before this checkpoint. No source or manuscript
+bytes changed in the incident. Exact1610 commit/receipt and workday remote
+queue follow. See `STARDUST_BAKRY_CURVATURE_COVARIANCE_AUDIT.md`.
