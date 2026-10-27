@@ -1992,3 +1992,51 @@ controlled as time tends to zero; strict contraction at each fixed time alone
 does not establish a positive infinitesimal rate. Sharp LSI2/kappa, jump identity,
 maximal density-domain equality, fullL2 transfer, unsmoothed Fourier core,
 pathspace and BOTH original manuscript repairs remain OPEN. No campaign change.
+
+## Checkpoint1588 — explicit reset and quantitative zero-drift entropy production
+
+Bakry Objective1 ACTIVE. `CauchyPoissonQuantitativeEntropy` supplies a concrete
+small-time estimate instead of inferring an infinitesimal rate from existential
+fixed-time minorization. For any interior disk point v and |w|=1, the Poisson
+kernel is at least (1-|v|^2)/4, by |w-v|<=2 and positive numerator/denominator.
+For the actual q=0 flow, evolution(t,z)=exp(-t)z, with normalization verified
+from rate(0)=1. Thus reset(t)=(1-exp(-t)^2)/4 lies strictly between0 and1 for t>0
+and minorizes the transition kernel relative to invariantLaw0.
+
+The existing actual residual Markov kernel and all-law mixture KL theorem give
+KL(K_t mu||nu)<= (1-reset(t)) KL(mu||nu) for every probability initial law,
+including infinite initial entropy. `reset_derivative` proves reset'(0)=1/2.
+Apply that contraction to the ACTUAL positive-time evolved law, use semigroup
+composition, finite positive-time KL and the1587 derivative, and pass to the
+right difference-quotient limit. `zero_entropy_production_bound` proves
+integral log(rho_t) rho'_t dnu <= -(1/2) KL(K_t mu||nu), t>0, for EVERY initial
+probability law. All normalization, positivity, finite-ENNReal conversions and
+limit hypotheses are discharged. No initial density or symmetry-domain shortcut.
+
+This is a quantitative zero-drift partial repair, NOT the manuscript's sharp
+curvature-dependent LSI2/kappa. No optimality of1/2, nonzero-drift extension,
+time-zero derivative, integrated exponential estimate or jump-Bregman identity
+is claimed by these new declarations. It does not complete either manuscript.
+The general Poisson lower lemma can be reused for nonzero drift if disk-defect
+and reference-density constants are explicitly controlled.
+
+Two independent Lean tests passed FIRST RUN25.845s: the elementary pointwise
+lower estimate is strict at v=0, and EVERY actual nonstationary positive-time
+law has strictly NEGATIVE production (using KL zero iff equality and finiteness).
+The pointwise test does not by itself disprove optimality of the final rate.
+Full6837-job build45.298s; complete51369-safe-declaration transitive axiom audit
+53.033s, only propext/Classical.choice/Quot.sound. All8 public types,7 full proofs,
+1 definition and1 existing local Markov instance reviewed. Sources2659/config3/
+archive113 hashes pass; no source edits after fullbuild. Scratch failures were
+rewrite orientation, explicit nonlinear product inequality, function extensional
+unfolding and namespace resolution; repaired without changing theorem scope.
+An unnecessarySeqFocus style warning is retained, not suppressed. No toolchain,
+trust, heartbeat or resource changes. Evidence `.lake/stardust-1588-*`.
+Local gates PASS; exact Git receipt and guarded BOTH-private verification follow.
+
+NEXT investigate nonzero-drift quantitative minorization using the existing
+exact disk_defect and denominator bounds, or integrate the proved differential
+estimate. Preserve all actual-domain qualifications. Sharp constants, genuine
+jump-production identity, maximal density domain/fullL2 transfer, unsmoothed
+Fourier core, pathspace and BOTH manuscript repairs remain OPEN. No novelty
+claim. Campaign queue and frozen IBM/pseudoprocess results remain unchanged.
