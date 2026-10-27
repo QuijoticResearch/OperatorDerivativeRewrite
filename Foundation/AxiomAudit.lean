@@ -1,3 +1,4 @@
+import Foundation.CauchyPoissonEntropy
 import Foundation.CauchyPoissonLaplaceResolvent
 import Foundation.CauchyPoissonSmoothedCore
 import Foundation.CauchyPoissonOrbitRegularization
@@ -9386,3 +9387,14 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonLaplaceResolvent.resolvent_norm
 #print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonLaplaceResolvent.graph_left_inverse
 #print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonLaplaceResolvent.graph_iff_resolvent
+
+-- Checkpoint1576: actual entropy monotonicity and uniform invariant minorization.
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonEntropy.density_minorization
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonEntropy.poleLaw_minorization
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonEntropy.kernel_minorization
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonEntropy.invariant_comp
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonEntropy.relative_entropy_contracts
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonEntropy.entropy_time_monotone
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonEntropy.entropy_stays_finite
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonEntropy.strict_kernel_minorization
+#print axioms OperatorDerivativeRewrite.Foundation.CauchyPoissonEntropy.forward_minorization

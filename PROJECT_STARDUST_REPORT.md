@@ -51289,3 +51289,62 @@ Reuse verified actual invariant law1567, finite weighted dissipation1564 and
 nonsymmetry1563, and audit existing entropy results before new constructions.
 Both primary manuscript repairs and full Bakry Objective1 remain incomplete.
 All campaign/verification/source/Git/guarded-private-backup requirements persist.
+
+
+## Checkpoint1576 — actual forward entropy monotonicity and invariant minorization
+
+Bakry Objective1 remains ACTIVE. The focused reuse audit distinguishes the
+existing discrete Poisson jump-entropy/Bregman and finite-core quadratic entropy
+obstructions from the present Circle kernel. They are not interchangeable.
+Mathlib `InformationTheory.klDiv_comp_right_le`, however, applies directly to
+our verified Markov kernel and actual invariant probability law. New
+`Foundation/CauchyPoissonEntropy.lean` proves `relative_entropy_contracts` for
+EVERY initial probability law, |q|<1 and t>=0, with ENNReal KL divergence so
+infinite initial entropy is allowed. `entropy_time_monotone` compares every
+0<=s<=t using the actual kernel composition law. `entropy_stays_finite` proves
+preservation of finite initial entropy. No reversibility, positive curvature,
+diffusion chain rule or smooth density assumption is used. This is direct
+reuse of data processing, not a novelty claim or a sharp LSI theorem.
+
+`density_minorization` proves an actual uniform positive lower bound on the
+ratio poleWeight(evolution(q,t,z),theta)/poleWeight(q,theta), over ALL starting
+z in Circle and theta in[0,2pi], for each fixed |q|<1,t>0. The continuous ratio
+is strictly positive on that compact set. `poleLaw_minorization` transfers this
+to the genuine angle measures; `kernel_minorization` pushes it to Circle.
+`strict_kernel_minorization` supplies some0<epsilon<1 with epsilon*nu_q<=K_t(z)
+for EVERY z. `forward_minorization` integrates the same bound against ANY
+initial probability law. Epsilon depends on q and the chosen positive t; no
+formula, uniform t->0 bound, sharp coefficient or entropy decay rate is asserted.
+A residual Markov kernel/mixture entropy argument remains needed for a verified
+strict contraction rate. Minorization supplies nu_q absolutely continuous with
+respect to the evolved law, NOT the reverse direction and not instant entropy
+finiteness for a singular initial law.
+
+Full6825-job root build40.523s; complete51188-safe-declaration transitive audit
+37.656s, only propext/Classical.choice/Quot.sound. All9 public types/9 proofs
+read unabridged; no new definitions. Two existing Markov and one invariant-law
+probability local instances reviewed. Five independent Lean checks passed in
+24.070s: the correct null-set direction for ANY evolved probability law;
+real-valued entropy comparison only under finite initial entropy; exact zero
+entropy of the invariant law; monotonicity for a singular Dirac initial law at
+q=-1/2; and impossibility of any common positive invariant minorization at time0.
+The last uses the distinct identity transitions from1 and-1; the invariant law
+would give the singleton{1} both mass0 and mass1. Thus the strict positive-time
+hypothesis has a verified obstruction to removal. Initial independent26.326s
+failed only on an explicit lemma argument and simplified disjunction normal
+forms; test-only fixes and failed logs/timings retained. Production unchanged
+after full build; scratch failures retained, no error suppression.
+Sources2647/config3/archive113 integrity verified; manuscripts/unrelated drafts
+untouched. Compiler/trust/resource/toolchain settings unchanged, warnings visible.
+Evidence `.lake/stardust-1576-*`. Local gates PASS; exact commit/receipt and
+guarded BOTH-private-ref closure follow, not pre-claimed here.
+
+Next: use actual minorization to investigate a measurable residual Markov
+splitting and a legitimate nonlocal entropy contraction, with explicit domains
+and coefficient hypotheses. Audit existing mixture/chain-rule tools before new
+infrastructure. Keep the difference between forward-law KL and backward
+observable entropy explicit in this nonsymmetric model. Neither sharp
+log-Sobolev constant2/kappa nor the manuscript's diffusion-style implication
+is repaired by monotonicity alone. Generator/resolvent1575 and smoothed core1574
+remain verified; path-space, unsmoothed Fourier core and full manuscript repairs
+remain open. All campaign/source/verification/Git/private requirements persist.
