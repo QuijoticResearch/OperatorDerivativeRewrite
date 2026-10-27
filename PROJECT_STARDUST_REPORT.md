@@ -53187,3 +53187,19 @@ The full6878-job root build, complete52164-declaration safe transitive axiom
 audit, all three public types and proofs, four independent tests and
 source/config/manuscript checks passed. Exact commit and dual private backup
 close the checkpoint.
+
+## Checkpoint1629 — physical heat Markov transition kernel
+
+`Foundation/PhysicalHeatKernel.lean` constructs a measurable Markov kernel
+from every starting point by translating the actual heat probability law.
+The character integral is the starting-point character times the heat
+multiplier. Kernel composition satisfies Chapman--Kolmogorov for all
+nonnegative times and the zero-time kernel is the identity. The proof uses
+actual kernel integrals and measure uniqueness, not only formal operator
+multipliers. The next genuine realization step is a consistent path-space
+process; sample-path properties and generator domains also remain open.
+No Bakry curvature conclusion is inferred. ResearchSources is unchanged.
+The full6879-job root build, complete52171-declaration safe transitive axiom
+audit, six public types, all theorem and instance proofs, five independent
+checks and source/config/manuscript integrity passed. Exact commit and dual
+private backup close the checkpoint.

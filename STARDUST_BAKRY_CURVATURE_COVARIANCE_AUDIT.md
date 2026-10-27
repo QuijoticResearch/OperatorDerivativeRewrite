@@ -1086,3 +1086,27 @@ The full6878-job root build and complete52164-declaration whitelist-only
 transitive axiom audit passed. All three unabridged public types and proofs,
 four independent specializations, and source/config/archive integrity were
 reviewed before exact commit, receipt and dual PRIVATE backup.
+
+## Checkpoint1629 — actual physical heat Markov kernel (October27,2026)
+
+`Foundation/PhysicalHeatKernel.lean` constructs `heatKernel r hr hr0 t` by
+coupling the identity kernel with the constant verified heat law and mapping
+the pair through torus addition. This is a genuine measurable Markov kernel:
+`heatKernel_apply` identifies its value at `x` with the pushforward of the
+actual probability law under `y ↦ x+y`, and the `IsMarkovKernel` instance
+establishes normalization for every starting point.
+
+`heatKernel_character` proves the translated Fourier-moment formula by an
+actual integral against that kernel. `heatKernel_comp` then proves exact
+Chapman--Kolmogorov composition at all nonnegative times, using the kernel
+integral theorem, moment multiplication and the Fourier measure-uniqueness
+theorem from1626. `heatKernel_zero` is the identity kernel. The theorem is
+about actual transition measures, beyond the previous law-level convolution
+statement. It still does not construct a stochastic process on a path space,
+prove finite-dimensional consistency in Lean, identify a generator domain,
+or establish path regularity. No Bakry curvature assertion follows.
+The full6879-job root build and complete52171-declaration whitelist-only
+transitive axiom audit passed. All six unabridged public types, four theorem
+proofs, one definition, the Markov instance proof, private character proof
+and five independent specializations were reviewed. Source/config/archive
+integrity is checked before exact commit, receipt and dual PRIVATE backup.

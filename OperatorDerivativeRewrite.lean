@@ -2621,3 +2621,4 @@ import Foundation.PhysicalHeatFiniteBox
 import Foundation.PhysicalHeatLawUnique
 import Foundation.PhysicalHeatConvolution
 import Foundation.PhysicalHeatWeakContinuity
+import Foundation.PhysicalHeatKernel
