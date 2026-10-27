@@ -413,3 +413,56 @@ Next: remaining spectral/determinant asymptotics and completed semigroup,
 invariant-measure/nonlocal entropy claims; do not repeat the resolved complex
 volume mismatch. Preserve both primary manuscripts, all prior repairs and
 counterexamples. No queue transition, new campaign, or reflection admitted.
+
+
+## Checkpoint1559 — sharp finite Gamma decay at every energy level
+
+Primary1 `bakry_emery_part2_v3 (1).tex`, energy-k/lem:dissipation/thm:decay/
+cor:universality (1334–1490), now has a direct finite-core verification and
+stronger decay bound in `Foundation/StableGammaEnergyDecay.lean`.
+`circle_gamma_diagonal` derives the diagonal Fourier formula from the ACTUAL
+Gamma recursion and normalized circle integral, for distinct integer frequencies
+and every gamma>0. `energy` is defined by that integral, not postulated as a sum.
+`energy_diagonal`/`energy_at` identify its weights |n|^(gamma*q) and exponential
+factors exp(-2|n|^gamma*t). `generator_axis` identifies the original generator's
+coefficient action; `coefficientsAt_zero`/`coefficientsAt_add` verify the finite
+coefficient semigroup. Complex coefficients and negative modes are allowed.
+
+`energy_dissipation` proves the actual real HasDerivAt identity
+d E_q(P_t f)/dt = -2 E_(q+1)(P_t f), all q>=0 and all real t on the finite core.
+`energy_decay_all_orders` proves E_q(P_t f)<=exp(-2t)E_q(f), for EVERY q>=0,
+gamma>0, t>=0, with distinct NONZERO integer frequencies. `first_frequency_exact`
+attains equality for the unit first mode. No N-dependent or chaos-depth waiting
+threshold is required. This proves the manuscript's weaker high-order inequality
+on its finite positive-frequency domain but qualifies the proposed interpretation:
+the bound is already present at the lowest levels from the Fourier gap, and is
+not evidence of convergence to a Gaussian process or Gaussian operator dynamics.
+
+The zero-frequency order-zero example has energy1 for every t and demonstrates
+why the nonzero-frequency hypothesis matters. Negative mode -1 with imaginary
+coefficient has the same exact rate; mode2 at q3 has energy8exp(-4t), and q2
+dissipation is -16exp(-4t).810 independent exact rational Fourier Gamma-recursion
+checks verify diagonal and generator constant coefficients for integer orders1,2,3,
+levels0..4, signed frequencies and27 coefficient patterns. These tests supplement,
+not replace, the genuine analytic Lean derivative proof.
+
+Full6803-job root build43.639s; complete50739safe transitiveaxiom audit44.955s,
+whitelist only propext/Classical.choice/Quot.sound; all12publictypes/10proofs/2defs
+read unabridged. Four independentLean checks28.896s passed. Their convert/ring
+proof emits tactic suggestions but exits0 with no unsolved goal; no error or
+linter was suppressed.2630Foundation/root source hashes, configuration3 and
+archive113 verified. No original manuscript, compiler/trust/resource setting,
+queue or other mathematical source changed beyond the new module/root/audit.
+Evidence `.lake/stardust-1559-{working-checkpoint,verification}.json`, complete
+logs and independent-exact.json. Local gates PASS; exact commit receipt and
+guarded BOTH-private-ref verification follow, not assumed by this entry.
+
+Limits: finite Fourier core only; no completed Sobolev domain or generator closure
+is inferred. Algebraic positive orders beyond2 are not asserted to generate
+probability semigroups. The pointwise covariance/Gamma curvature hierarchy is
+distinct from its integrated diagonal gap. The manuscript's ratio sandwich also
+requires nonzero input; its unrestricted zero-input wording remains to qualify.
+Both primary audits remain INCOMPLETE; BakryObjective1 ACTIVE. Next investigate
+substantive completed-domain, invariant-measure and nonlocal entropy obligations,
+reusing the now verified finite core. Preserve every earlier obstruction/repair.
+No reflection session, campaign transition or novelty claim is admitted.

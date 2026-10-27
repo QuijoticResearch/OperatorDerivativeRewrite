@@ -2523,3 +2523,4 @@ import Foundation.CauchyDriftUniformObstruction
 import Foundation.CauchyCenteredEnergy
 import Foundation.FractionalGammaChaosRealization
 import Foundation.ComplexGammaEllipsoidVolume
+import Foundation.StableGammaEnergyDecay
