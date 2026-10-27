@@ -53120,3 +53120,21 @@ by character uniqueness and convolution composition. See the Bakry Objective2
 audit for the exact Lean theorem and status. The full6874-job build,
 52119-declaration safe transitive axiom audit, public theorem/proof review and
 three independent specializations passed; ResearchSources remained unchanged.
+
+## Checkpoint1625 — actual probability law for the physical heat multiplier
+
+`Foundation/PhysicalHeatFiniteBox.lean` discharges the approximate-square
+premise from1624. Expanding Fourier boxes have exact cardinality
+`(2n+1)^3`; their square autocorrelation is the translated-box overlap, and
+the normalized overlap tends to one for every fixed wave number. Therefore
+`exists_physical_heat_law` proves that every zero-normalized covariance
+rate yields an actual compact-torus probability measure with exact Fourier
+moments `exp(-t r(k))` at every nonnegative time. This is the classical
+Schoenberg/Bochner measure principle verified for the current Lean
+construction, with no novelty claim. Uniqueness, convolution semigroup,
+translation kernel and stochastic paths remain open; a law at each time
+alone does not constitute a stochastic process. ResearchSources is unchanged.
+Full6875-job root build,52152-declaration whitelist-only transitive axiom
+audit,21 public types,17 proofs,4 definitions and5 independent checks passed;
+source/config/manuscript hashes matched. Exact commit and private dual-ref
+verification follow.

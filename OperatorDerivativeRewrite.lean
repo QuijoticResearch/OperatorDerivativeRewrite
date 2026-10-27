@@ -2617,3 +2617,4 @@ import Foundation.PhysicalHeatSquareBridge
 import Foundation.PhysicalHeatPositiveCone
 import Foundation.PhysicalHeatMarkovOrder
 import Foundation.PhysicalHeatTransitionLimit
+import Foundation.PhysicalHeatFiniteBox

@@ -983,3 +983,37 @@ three independent specializations and three local instances were reviewed.
 Source/config/archive integrity is checked against the previous exact
 checkpoint; ResearchSources is unchanged. Exact Git receipt and private
 dual-ref verification follow.
+
+## Checkpoint1625 — unconditional physical torus heat probability law (October27,2026)
+
+The conditional harmonic premise from1624 is now discharged in
+`Foundation/PhysicalHeatFiniteBox.lean`. `cube` is the finite product of three
+integer intervals and `card_cube` gives exactly `(2n+1)^3` modes.
+`cubePolynomial_square_coeff` identifies the unnormalized square Fourier
+coefficient with the number of frequencies retained under translation by
+the test wave number. `normalizedCube_energy` proves exact unit energy, not
+an asymptotic normalization. For each fixed `k`, `cube_translate_inner`
+bounds the overlap below by a smaller cube of radius `n-radius(k)`; the
+normalized lower ratio tends to one. `normalizedCube_coeff_tendsto` therefore
+proves the full simultaneous Fourier approximate identity required by1624.
+
+`exists_physical_heat_law` consequently constructs, for EVERY nonnegative
+rate `r : Z³ → ℝ≥0` whose real cast is a covariance symbol and with `r(0)=0`,
+and EVERY nonnegative time, an ACTUAL probability measure on the compact
+three-torus whose character expectation at `k` is exactly `exp(-t r(k))`.
+This is an unconditional measure-existence theorem, not merely an L²
+operator identity or a sequence of auxiliary densities. The measure is
+obtained through compactness and is not yet selected canonically. Fourier
+uniqueness, convolution composition, translation kernels, consistent
+finite-dimensional distributions and stochastic path regularity remain open.
+No actual process, curvature inequality or entropy theorem is inferred.
+
+The mathematical measure-existence principle is classical (Schoenberg and
+Herglotz/Bochner); this checkpoint is a verified realization inside the
+Stardust physical semigroup framework, with no classical novelty claim.
+Full6875-job root build and complete52152-declaration transitive axiom audit
+passed with only propext, Classical.choice and Quot.sound. All21 unabridged
+public types,17 full proofs,4 definitions and5 independent checks were
+reviewed. Source2695/config3/archive113 hashes matched. Original
+ResearchSources bytes remain unchanged. Exact Git receipt and private
+dual-ref verification follow.
