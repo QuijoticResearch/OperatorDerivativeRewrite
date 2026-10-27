@@ -52221,3 +52221,23 @@ Scratch normalization failures retained as development evidence, not obstruction
 See STARDUST_BAKRY_FBM_AUDIT.md for exact scope, limits and diagnostics. Evidence
 `.lake/stardust-1592-*`; local verification complete, exact commit/private closure
 pending. All previous results and priorities preserved; BOTH Bakry repairs open.
+
+## Checkpoint1593 — the near-diagonal kernel bound is now verified
+
+Bakry1 ACTIVE. `CauchyPoissonJumpDomination` proves uniform small-time control
+of t^(-1)*Poisson(0,evolution(q,t,z),w)*||w-z||^2 for ALL circle pairs and every
+fixed|q|<1. The proof controls tangential displacement against inward distance;
+it never assumes radiality. A positive-Lipschitz quadratic Bregman estimate then
+bounds the actual normalized kernel times B(f(z),f(w)) uniformly. This removes
+the geometric near-diagonal obstacle left by1592. Actual evolved-density spatial
+Lipschitz regularity, fixed-product-measure conversion and dominated-limit
+identification remain necessary; the singular entropy identity is still OPEN.
+No sharp LSI, uniform-inq claim, or completion of either manuscript is asserted.
+
+Full6843jobs42.850s; complete51428-declaration axiom audit46.564s; all10 public
+types/proofs reviewed; independent3 passed28.593s (nonconstant2+Re(z), necessary
+bound>=2 via antipodal limit, diagonalzero). Two test-only elaboration repairs
+retained, production unchanged. Source2664/config3/archive113 intact. Detailed
+scope/constants/failures in STARDUST_BAKRY_FBM_AUDIT.md; evidence
+`.lake/stardust-1593-*`. Exact commit/private closure pending following completed
+local gates. Every prior result, original manuscript and queue priority preserved.

@@ -2238,3 +2238,48 @@ and read-only1292 inventory. ResearchSources and unrelated drafts untouched.
 Evidence `.lake/stardust-1592-*`. Local gates complete; exact commit receipt and
 guarded BOTH-private backup verification follow. Do not describe pending sync as
 completed. Queue unchanged; IBM rematch frozen, no expiration, October31 review.
+
+## Checkpoint1593 — uniform near-diagonal and Bregman domination (October27,2026)
+
+Bakry Objective1 ACTIVE. `CauchyPoissonJumpDomination` establishes the uniform
+estimate missing from1592's pointwise limit. `denominator_lower` holds for ALLq
+and0<=l<=1; its positive use requires |q|<1. `flow_displacement` bounds the full
+complex displacement by D(1-l), D=4/(1-|q|). `radial_lower` bounds inward distance
+below by c(1-l), c=(1+q^2)(1-q^2)/18>0, for1/2<=l<1. These are distinct quantities:
+tangential drift is retained. `weighted_kernel_bound` is a generic geometric
+estimate when ||v-z||<=C(1-||v||). Combining them, `flow_weighted_bound` supplies
+M=2D(1+D/c)^2 with Poisson(0,flow(q,l,z),w)*||w-z||^2<=M(1-l) for EVERYz,w.
+The elementary exponential tangent inequality gives1-decay(q,t)<=rate(q)*t.
+`evolution_weighted_bound` and `eventual_weighted_bound` therefore supply a
+single finite positive small-time bound on t^(-1)*Poisson*||w-z||^2, uniformly
+for ALL circle pairs, including the diagonal. This is not uniform inq as|q|->1;
+no optimal constant or actual optimal-rate degeneration is claimed.
+
+`bregman_quadratic` proves B(a,b)<= (a-b)^2/b for positivea,b using the logarithm
+inequality, without a diffusion chain rule. `bregman_chord_bound` yields
+B(f(z),f(w))<=L^2/δ*||w-z||^2 whenever f>=δ>0 and the stated chord-Lipschitz bound
+holds. `eventual_bregman_domination` proves a common finite bound for the actual
+normalized Poisson kernel times B(f(z),f(w)), uniformly in both points for all
+sufficiently small positive times. It applies to this precise positive Lipschitz
+domain; it does NOT silently assume that actual density1591 already meets it.
+Together with B>=0 it can support absolute domination. Spatial Lipschitz control
+of the actual positive-time density, conversion of the transition joint measure
+to the fixed product measure with correct normalization, and dominated-limit
+identification remain OPEN. No singular entropy identity or sharp LSI is yet
+claimed. BOTH original manuscript repairs, full-L2/maximal density domains,
+unsmoothed Fourier core and path-space claims remain open; queue unchanged.
+
+Full6843-job root build42.850s; complete51428-declaration transitive axiom audit
+46.564s, only propext/Classical.choice/Quot.sound. All10 public types read
+untruncated and all10 full proofs reviewed, no new definitions/instances.
+Three independent Lean checks passed28.593s: actual nonconstant positive test
+f(z)=2+Re(z) satisfies uniform Bregman domination; every obtained weighted bound
+can be chosen >=2, forced by the antipodal limit; diagonal B(a,a)=0. Test runs
+24.797s and27.050s failed only inequality-limit orientation and numeric norm
+simplification; failed logs/timings retained and production unchanged. Scratch
+failures1--6 retained; they concern parsing, elaboration or redundant tactics,
+not mathematical obstructions. Style warnings retained; no trust/version/options
+changed. Sources2664/config3/archive113 match approved delta and read-only1292
+inventory. ResearchSources and unrelated drafts untouched. Evidence
+`.lake/stardust-1593-*`. All local gates passed; exact commit/receipt and guarded
+BOTH-private synchronization follow. Pending sync is not represented as backed up.
