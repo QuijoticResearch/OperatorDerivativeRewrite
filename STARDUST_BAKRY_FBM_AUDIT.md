@@ -1838,3 +1838,72 @@ Strong forward-density domain, jump-Bregman production, sharpLSI2/kappa, uniform
 small-time rate, fullL2 domain transfer, unsmoothed Fourier core, pathspace and
 BOTH manuscript repairs remain OPEN. Earlier law regularization, entropy limits,
 weak Kolmogorov equations, backward production and Dirac counterexamples survive.
+
+## Checkpoint1585 — concrete continuous forward density, actual measure equality
+
+Bakry Objective1 ACTIVE. This closes the concrete positive-time density
+REALIZATION gap identified after1582-1584; it does not close the time-derivative
+or strong forward-generator domain obligations. Original manuscripts and queue
+remain unchanged. Reuse the actual Poisson disk flow, angular density, invariant
+circle probability law and measurable transition kernel already verified.
+
+`Foundation/CauchyPoissonForwardDensity.lean` defines circleWeight(v,w) as the
+normalized Poisson kernel directly on Circle. Its angular pullback is the
+existing poleWeight, with all normalization factors retained. For |q|<1,t>0:
+
+    ratio(q,t,z,w) = circleWeight(evolution(q,t,z),w)/circleWeight(q,w),
+    density(q,t,mu,w) = integral ratio(q,t,z,w) dmu(z).
+
+The denominator is strictly positive. `ratio_continuous` proves joint spatial
+continuity, and `ratio_positive` proves strict positivity. `kernel_density`
+identifies invariantLaw(q).withDensity(ofReal(ratio(q,t,z,...))) with the ACTUAL
+kernel(q,t,z). The proof is equality on every measurable set: pull back under
+Circle.exp, unfold the genuine angular withDensity measure, and cancel the
+positive invariant weight. It does not rely on equality of a selected set of
+Fourier moments or an assumed density representation.
+
+For EVERY initial probability measure mu, including singular starts,
+`ratio_integrable`, `density_continuous` and `density_positive` give a concrete
+continuous strictly positive real density. `forward_density` proves exactly:
+
+    invariantLaw(q).withDensity(ofReal(density(q,t,mu,...))) = kernel(q,t) bind mu.
+
+Tonelli swaps the actual initial-law integral with invariant-law integration;
+measurability and the finite real integral/ofReal conversion are discharged.
+`density_rnDeriv` identifies the chosen continuous representative with the
+Radon--Nikodym derivative almost everywhere. `density_integral_pairing` proves
+the complex Bochner change-of-density identity. Its arbitrary-function version
+uses Lean's usual integral conventions; it does not assert integrability of an
+arbitrary function. Continuous observables have the established compact-space
+integrability. No measure construction or density claim is left hypothetical.
+
+Four independent Lean checks passed FIRST RUN28.823s: normalization of the
+density against1; Dirac initial data yields exactly the explicit kernel ratio;
+compactness gives a positive lower and finite upper bound for each fixed
+q,t,mu; and density pairing equals the previous backward-operator/lawFunctional
+pairing. Bounds here are not asserted uniform as t->0. The Dirac definition
+identity is algebraic for all parameters; probability-density claims retain
+|q|<1 and t>0. Existing initial-time strong-dual obstructions remain intact.
+
+Full6834-job root build46.751s; complete51301-safe-declaration transitive audit
+46.558s, only propext/Classical.choice/Quot.sound. All17 public types,14 full
+proofs,3 definitions and2 existing invariant-probability local instances read
+unabridged. Sources2656/config3/archive113 hashes PASS; production unchanged
+after fullbuild. Failed scratch logs retained: explicit indicator/preimage,
+function-composition and withDensity rewrite elaboration; swapped parameter
+inference reached the default heartbeat limit once. Explicitly typed inner/
+outer maps, scalar functions and measure identities repaired the proof without
+raising heartbeats or altering hypotheses. No errors/warnings suppressed, no
+trust/toolchain/resource changes. Evidence `.lake/stardust-1585-*`. Local gates
+PASS; exact-commit receipt and guarded BOTH-private-branch closure follow.
+No novelty claim for the kernel/Fubini density construction.
+
+NEXT actual positive-time regularity of this concrete density in time, with
+bounds away from0, then the strong forward-adjoint domain and forward entropy
+production if justified. Density realization itself is now PROVED and must not
+be repeatedly rebuilt. Strong density-generator identification, jump-Bregman
+production, sharpLSI2/kappa, uniform small-time rate, fullL2 domain transfer,
+unsmoothed Fourier core, pathspace and BOTH manuscript repairs remain OPEN.
+Backward observable entropy production is distinct at nonzero drift; preserve
+nonsymmetry, all-law entropy regularization/limits, weak forward calculus,
+point-mass counterexamples and averaged-functional regularization.
