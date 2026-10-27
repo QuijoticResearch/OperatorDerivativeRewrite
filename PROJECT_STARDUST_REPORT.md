@@ -53203,3 +53203,19 @@ The full6879-job root build, complete52171-declaration safe transitive axiom
 audit, six public types, all theorem and instance proofs, five independent
 checks and source/config/manuscript integrity passed. Exact commit and dual
 private backup close the checkpoint.
+
+## Checkpoint1630 — a genuine fixed-step heat Markov chain
+
+`Foundation/PhysicalHeatChain.lean` realizes the verified physical torus
+heat kernel as an actual probability law on countable trajectories for each
+fixed step and starting point, via Mathlib's Ionescu--Tulcea theorem.
+The initial coordinate has Dirac law at the chosen point. The conditional
+law of every next coordinate given the whole finite past is the actual heat
+transition kernel at the last coordinate, almost everywhere. This is a
+genuine discrete-time stochastic process; the new proofs do not assert a
+single continuous-time realization or any path regularity. Grid consistency,
+path topology and generator-domain questions remain open. ResearchSources
+is unchanged; no new manuscript claim is adopted.
+The full6880-job root build, complete52180-declaration safe transitive axiom
+audit, all seven public types and proofs, four independent checks, and exact
+source/configuration/archive integrity passed before checkpoint closure.

@@ -1110,3 +1110,29 @@ transitive axiom audit passed. All six unabridged public types, four theorem
 proofs, one definition, the Markov instance proof, private character proof
 and five independent specializations were reviewed. Source/config/archive
 integrity is checked before exact commit, receipt and dual PRIVATE backup.
+
+## Checkpoint1630 — actual fixed-step physical heat chain (October27,2026)
+
+`Foundation/PhysicalHeatChain.lean` composes the actual Markov heat kernel
+with the Ionescu--Tulcea trajectory theorem. For every fixed nonnegative
+step `δ` and initial torus point `x₀`, `chainLaw` is a genuine probability
+measure on countable torus paths. `chainLaw_initial` identifies the exact
+time-zero marginal with `dirac x₀`. `chainLaw_condDistrib` identifies the
+regular conditional law of coordinate `n+1` given every coordinate through
+`n` with the physical heat transition kernel at step `δ`, almost everywhere
+under the actual finite-past law. The `stepKernel` construction explicitly
+selects the last observed coordinate; zero step is independently tested to
+give the identity transition.
+
+This is a real stochastic process on a **fixed discrete grid**. It is not a
+continuous-time path-space construction: consistency across distinct grids,
+stochastic continuity of a single realized process, cadlag/continuous paths,
+and generator-domain identification remain open. Weak continuity of the laws
+and Chapman--Kolmogorov are available but do not alone constitute those path
+theorems. There is no Bakry curvature or covariance conclusion from this
+construction by itself. The method is the classical Ionescu--Tulcea theorem
+applied to the verified physical heat kernel; no novelty is claimed.
+The full6880-job root build and complete52180-declaration whitelist-only
+transitive axiom audit passed. All seven unabridged public types, three theorem
+proofs, two definitions, two instance proofs, and four independent checks were
+reviewed. Source/configuration and all113 archive hashes matched the baseline.
