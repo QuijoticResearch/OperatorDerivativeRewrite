@@ -52719,3 +52719,46 @@ a duplicate new-file header was removed and the full build rerun on final bytes.
 Scratch simplification/algebra fixes and source log evidence retained.
 ResearchSources unchanged. Exact commit/receipt follow. REMOTE SYNC QUEUED
 under weekday09–17 Eastern policy, never claimed remotely backed up.
+
+## Checkpoint1607 — why origin normalization matters for real Gamma positivity (October27,2026)
+
+Objective2 ACTIVE. `Foundation/FourierGammaAsymmetry.lean` constructs the exact
+unnormalized symbol psi(k)=2+(k0)^2+k0 on Wave=Z^3. Its actual Fourier Gamma1
+kernel is Kpsi(k,l)=1+k0*l0+k0. For ANY finite real coefficient family c,
+the associated quadratic energy is S^2+T^2+S*T, where S=sum c_i and
+T=sum c_i*k_i0; completing the square proves it nonnegative. The existing
+complex energy decomposition extends this to arbitrary complex coefficients
+and Fourier phases. Consequently the REAL part of synthesized Gamma1(f,f)
+is nonnegative for EVERY finite Fourier polynomial f at EVERY spatial x.
+
+However psi(0)=2 and psi is not even. With `imaginaryWitness` (coefficients
+1 at zero and i at frequency1), actual synthesized Gamma1 at the origin has
+imaginary part EXACTLY -1. The verified `offset_not_covariance` concludes the
+finite Kpsi matrices cannot all be positive semidefinite; the summary theorem
+packages universal real Gamma1 positivity with this failure. Thus replacing
+the normalized criterion1606 by REAL-part positivity without psi(0)=0 is
+mathematically false. The independent check centers the same symbol by
+subtracting2 and computes real Gamma1=-1 using the two-frequency polynomial.
+The constant offset masks the odd part in the real energy, while the complex
+imaginary part still detects non-Hermitian behavior. This is a finite-core
+operator counterexample, NOT a stochastic process or a Levy exponent.
+
+Independent Lean checks cover psi0=2, explicit non-evenness, arbitrary-point
+real positivity, nonzero imaginary Gamma1, and the centered negative witness.
+No original manuscript changed. Classical finite-matrix algebra; no novelty
+claim against Schoenberg/Levy-Khintchine literature. NEXT investigate whether
+reality AND nonnegativity of Gamma1 for all COMPLEX finite Fourier polynomials
+give an exact unnormalized PSD criterion by polarization; test minimal probes.
+Then resume actual symmetric Levy/subordination examples and distinguish
+finite-core Gamma2 from completed Markov curvature/domains. All six Objective2
+deliverables and later campaigns remain; Objective1 deferred/incomplete.
+
+Verification: full6857-job root build43.0623554s; complete51758-declaration
+transitive axiom audit43.2776311s allowing only propext/Classical.choice/
+Quot.sound; all10 unabridged public types,8 full proofs,2 definitions and5
+independent proofs reviewed. No new instances/options/sorry/admit/axioms.
+Source2678/config3/archive113 hashes exact, ResearchSources unchanged.
+Initial scratch elaboration fixed finite-sum factoring, explicit subtype
+coefficients and the two-frequency complex energy; final scratch passed before
+adoption. Exact Git commit/receipt follow. REMOTE SYNC QUEUED under weekday
+09–17 Eastern policy; do not claim remotely backed up before verification.
