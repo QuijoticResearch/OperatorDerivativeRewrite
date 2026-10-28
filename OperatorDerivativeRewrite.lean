@@ -2719,3 +2719,5 @@ import Foundation.SU2SevenLinkVacuum
 import Foundation.SU2SevenLinkIteration
 
 import Foundation.SU2SevenLinkMixing
+
+import Foundation.SU2SevenLinkGaugeAverage
