@@ -2647,3 +2647,4 @@ import Foundation.SU2TwoLoopJointLaw
 import Foundation.SU2CoupledLoopResponse
 import Foundation.YMReflectionPositiveShift
 import Foundation.SU2PositiveChannelObstruction
+import Foundation.YMOSClusterObstruction
