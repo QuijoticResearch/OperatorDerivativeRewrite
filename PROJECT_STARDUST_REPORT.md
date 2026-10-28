@@ -55043,3 +55043,52 @@ Seven independent Lean examples check full-Haar Markov realization, identity-gau
 Integrity authenticates1692's manifest against exact approval6b6b4977908260dd2cb9ba872a8a7166246377c0 and covers2776 Foundation/root files. Exactly the new module, root import and AxiomAudit differ; all earlier mathematical sources are byte-identical. All3 pinned configurations,113 baseline manuscripts and21 Yang--Mills originals (20 distinct hashes) remain unchanged. Evidence: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1693-* (full build, complete transitive/unabridged type audit, independent Lean/exact checks, declaration list and authenticated manifest). ResearchSources and unrelated untracked drafts are preserved.
 
 Yang--Mills remains ACTIVE; Bakry PAUSED, all other priorities unchanged. Exact-commit approval and guarded PUBLIC two-branch synchronization remain separate closure gates; this pre-commit record does not claim remote success.
+
+
+## Checkpoint 1694 — genuine joint-link cubic obstruction and a valid Schur repair
+
+The focused block audit has found a concrete missing premise in the manuscript's evenness shortcut. `Foundation/SU2JointPlaquetteCubic.lean` constructs actual unit-quaternion exponential links, maps them through the existing faithful SU2 representation, and inserts them into the EXISTING seven-link plaquette state. All original manuscripts remain unchanged. This is an exact local Wilson-action calculation, not a finite-group surrogate or a claim about the continuum measure.
+
+### Actual noncommuting links and joint derivatives
+
+For the three imaginary quaternion axes I,J,K, `axisRaw_exp` proves that the link curves are NormedSpace.exp(t*axis), for EVERY real t, including negative and zero parameters. Unit norm and actual SU2 membership are proved. The tested first plaquette is exp(xI)*exp(yJ)*exp(zK), with the fourth oriented factor the identity. `configuration` is the original physical seven-link state with these three path factors; the second plaquette is unchanged. `action_gauge` proves the action value is invariant under EVERY existing six-vertex gauge transformation.
+
+Writing A=1-halfTrace(plaquette), `action_formula` proves
+
+    A(x,y,z)=1-cos(x)cos(y)cos(z)+sin(x)sin(y)sin(z).
+
+Consequently `mixed_hessian` gives D_y D_x A(0,0,z)=sin(z), and `mixed_third_at_identity` gives D_z D_y D_x A(0,0,0)=1. `odd_part` proves the exact identity A(t,t,t)-A(-t,-t,-t)=2*sin(t)^3; `not_even_in_any_neighborhood` supplies a nonzero witness inside EVERY positive angle neighborhood. Single-axis evenness A(x,0,0)=1-cos(x) remains true and is independently checked. Reversing all coordinate signs WITHOUT reversing word order is not inversion of the whole noncommuting plaquette; the cubic does not contradict trace invariance under full orientation reversal.
+
+The quadratic core Q=(x^2+y^2+z^2)/2 has zero x,y mixed entry. `mixed_remainder_hessian` proves D_y D_x(A-Q)(0,0,z)=sin(z) exactly. `mixed_hessian_linear_bound` supplies the valid global slice bound |sin(z)|<=|z|. `no_quadratic_mixed_hessian_bound` refutes a local O(z^2) bound using the existing verified `SU2OrderedLinkHessian.no_local_quadratic_bound`, rather than duplicating its small-angle argument. The nonzero cubic is a classical nonabelian/BCH mechanism; no publication-level novelty is claimed.
+
+### The additive O(1) allowance does not automatically repair the budget
+
+The selected source is `ResearchSources/Incoming/block_contraction_spectral_gaps.tex`, SHA256 0C40FA6B92B830C0E2309BD6471D55CB0EB9BFB94296B9267AD23A5280FA4C60. Its4D application says Wilson evenness/no cubic implies K_xx,K_xy=O(beta*delta^2)+O(1). The proved counterexample targets the inference from single-holonomy evenness to JOINT LINK-coordinate evenness. A=1-halfTrace is exactly the Wilson normalization multiplying beta in that source, so the scaled mixed remainder on this slice is beta*sin(z).
+
+`no_uniform_quadratic_plus_constant` proves that NO constants C,C0>=0 and fixed positive neighborhood can bound beta*|mixed remainder| by C*beta*z^2+C0 simultaneously for all beta>=1 and all positive sufficiently small z. This tests the FULL additive-constant claim, not merely an omitted-C0 version.
+
+More sharply, `budget_requires_inverse_coupling_window` proves: if0<beta,0<=z<=1,0<=C,4*C*z<=1 and that bound holds, then beta*z<=4*C0. Along this slice, retaining the proposed quadratic-plus-constant budget therefore forces an O(1/beta) window. `thermal_window_counterexample` gives violations at ARBITRARILY LARGE s (with an explicit requested cutoff), taking beta=s^2,z=1/s. Here beta*z^2=1 while the scaled mixed Hessian is s^2*|sin(1/s)|. For every fixed nonnegative C,C0 it exceeds C+C0 beyond some arbitrarily large witness. The name thermal_window denotes this inverse-square-root scale only; no stochastic typical-fluctuation law, corridor probability or lattice equilibrium asymptotic is assumed or proved.
+
+### Positive repair: linear mixed terms can still give quadratic Schur loss
+
+It would be an incorrect inference to discard the entire Schur route because K_xy is linear in angle. `diagonal_hessian` and `action_symmetric_xy` identify BOTH actual x,y diagonal entries at(0,0,z) as cos(z); the off-diagonal entry is sin(z). Eliminating y at positive cos(z) gives the actual scalar slice Schur complement
+
+    S(z)=cos(z)-sin(z)^2/cos(z).
+
+`schurSlice_lower` proves S(z)>=1-(5/2)*z^2 whenever cos(z)>=1/2. This is consistent with the existing `CoerciveSchurStability` machinery: a CORRECT O(beta*delta) mixed block contributes O(beta*delta^2) after squaring and dividing by O(beta) interior coercivity. The new exact slice calculation shows why a failed mixed-Hessian shortcut does not by itself refute a robust boundary-curvature theorem. It does not prove every boundary diagonal block has a quadratic remainder or that all link directions enjoy this slice bound.
+
+Scope is crucial. Evenness in the LOGARITHM OF ONE PLAQUETTE is true; that logarithm depends nonlinearly on the individual link logarithms. A carefully specified spanning-tree/background coordinate change may redistribute or remove some cubic terms, but then its derivative, metric, Haar/Jacobian and boundary effects must be audited. The present formal counterexample is in genuine product-link exponential coordinates. It does NOT automatically identify three permitted independent non-tree coordinates in the manuscript's full4D gauge-fixed block, nor prove that a spatial plaquette sum lacks cancellations. Those are exact remaining obligations, not implicitly discharged by sharing the word Wilson.
+
+The next productive test is whether the actual prescribed gauge-fixed/block geometry confines the cubic terms to mixed blocks with quadratic Schur losses, or leaves linear boundary-block errors that exceed the contraction budget. Need actual norm/cutoff/flux control and a physical scale/volume bridge. No mass gap, failure of all coordinate repairs, or impossibility of Yang--Mills construction is claimed.
+
+### Complete verification and independent checks
+
+The FINAL full root build passed6959 jobs in46.8657597 seconds. The FINAL complete transitive axiom audit passed54246 declarations in50.6311967 seconds, allowing only propext, Classical.choice and Quot.sound. Earlier passes before adding the substantive positive Schur repair are superseded. All27 unabridged public types and complete bodies were reviewed:19 theorem proofs and8 definitions. No old proof/source body changed; no sorry/admit/new axiom, trust/compiler/toolchain/heartbeat/resource change or suppressed verification was introduced. Existing imported resource settings remain unmodified.
+
+Twelve independent Lean examples cover genuine signed-time exponential identity, valid single-axis parity, exact joint odd difference1/4 at pi/6, mixed remainder1/2 at pi/6, joint third derivative1, witnesses inside angle1/1000, contradiction to a zero-additive-constant budget, thermal witnesses beyond s=100, full gauge invariance, actual Schur lower bound, Schur value1 at identity and identification of the other diagonal Hessian. The initial thermal test needed explicit normalization of1+2 to3; the harness repair changes no source theorem. The final independent Lean checks passed in28.215062 seconds.
+
+Exact Fraction tests check36 noncommuting rational unit-quaternion products and reversal of their cubic sign,25 rational sine-lower certificates for arbitrarily large thermal witnesses, and91 positive Schur-repair cases. The rational quaternion parameters are stereographic circle coordinates used only as an independent product check, not a replacement for the verified exponential identity. Diagnostic scaled mixed Hessians at s=2,10,100,1000 are approximately1.9177,9.98334,99.99833,999.99983. No diagnostic values are Lean inputs.
+
+Integrity authenticates1693's manifest against exact approval14eb3f1a44f4c81eb4d9931e9ee6fd1f78a47329 and covers2777 Foundation/root files. Exactly the new joint-plaquette module, root import and AxiomAudit differ. All earlier mathematical sources,3 pinned configurations,113 baseline manuscripts and21 Yang--Mills originals (20 distinct hashes) remain unchanged. Evidence: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1694-* (FINAL full build, complete transitive/unabridged type audit, independent Lean/exact diagnostics, declaration inventory and authenticated manifest). ResearchSources stays unmodified/uncommitted; unrelated untracked drafts are preserved.
+
+Yang--Mills remains ACTIVE; Bakry PAUSED and all other queue priorities unchanged. Exact-commit approval and guarded PUBLIC two-branch synchronization remain separate closure requirements; this pre-commit record does not claim remote success.
