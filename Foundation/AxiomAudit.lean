@@ -10197,3 +10197,9 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.SU2OpenLinkGaugeObstruction.closedPairTrace
 #print axioms OperatorDerivativeRewrite.Foundation.SU2OpenLinkGaugeObstruction.endpointInvariant_integral
 #print axioms OperatorDerivativeRewrite.Foundation.SU2OpenLinkGaugeObstruction.endpointInvariant_transfer_mean
+
+-- Checkpoint1647: exact gauge-invariant closed-cycle law under actual one-word transfer.
+#print axioms OperatorDerivativeRewrite.Foundation.SU2ClosedLoopTransfer.closedLoop_law
+#print axioms OperatorDerivativeRewrite.Foundation.SU2ClosedLoopTransfer.closedLoop_mean
+#print axioms OperatorDerivativeRewrite.Foundation.SU2ClosedLoopTransfer.closedLoop_mean_hasDerivAt_zero
+#print axioms OperatorDerivativeRewrite.Foundation.SU2ClosedLoopTransfer.closedLoop_mean_tendsto_one
