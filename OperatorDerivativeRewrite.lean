@@ -2707,3 +2707,5 @@ import Foundation.SU2SlowModeIteration
 import Foundation.SU2ZeroTraceBridge
 
 import Foundation.FiniteWilsonTorusProbe
+
+import Foundation.FiniteWilsonTorusGap
