@@ -53490,3 +53490,15 @@ finite-dimensional gauge-invariant class observable. The large-coupling
 oscillation-ratio argument is recorded as unformalized in the focused audit.
 No block/continuum contraction or Yang--Mills mass gap is inferred. Original
 ResearchSources manuscripts remain unchanged.
+
+Focused Yang--Mills large-coupling result: `Foundation/SU2OneWordLargeCoupling.lean`
+formally proves exponential concentration of the actual identity-input
+one-word SU(2) tilted law at half-trace `1` and, by exact Haar central
+symmetry, the minus-identity outgoing mean limit `-1`. The difference of
+the two outgoing half-trace means tends to `2`; for every `q<1` it exceeds
+`2q` at some nonnegative coupling. This rules out a coupling-uniform
+strict oscillation contraction for this specific one-word kernel and class
+observable. It does not address a gauge-compatible block transition or a
+continuum Yang--Mills physical mass gap. The exact manuscript comparison,
+source and unresolved block/continuum obligations are in
+`STARDUST_YANG_MILLS_FOCUSED_AUDIT.md`. ResearchSources bytes remain intact.
