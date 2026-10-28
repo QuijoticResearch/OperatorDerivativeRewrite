@@ -1,9 +1,18 @@
+# Current Git visibility amendment — October 27, 2026
+
+The authorized GitHub repository is PUBLIC by the user's explicit decision.
+Tracked manuscript/PDF artifacts are consequently public on that repository;
+ResearchSources originals remain untracked and local. The agent must never
+change repository visibility. Replace earlier PRIVATE-backup language below
+with the audited two-branch synchronization policy in STARDUST_SYNC.md.
+The 45-minute reflection cap and all mathematical verification gates remain.
+
 # Periodic mathematical reflection and documentation
 
 User directive received October22,2026. This is permanent supporting workflow,
 not a research campaign and not a change to STARDUST_CAMPAIGN_QUEUE.md.
 IBM remains active. All mathematical source, domain, audit, manuscript-integrity,
-Git and PRIVATE main/research backup gates continue unchanged.
+Git and verified main/research backup gates continue unchanged.
 
 ## Timing and admission
 
@@ -76,13 +85,13 @@ not theorem, commit or document counts.
   results with exact declarations, domains, verified status and detailed links.
   Explain purpose, transparent/reproducible sharing philosophy, verification and
   major directions. No unsupported novelty, publication or RH claims; no log
-  of each commit. Public-facing prose never changes repository privacy/license.
+  of each commit. Public-facing prose never changes repository visibility/license.
 - STARDUST_BLUEPRINT.md: navigable curated mathematical blueprint, definitions,
   theorem statements, actual reuse relationships and remaining obligations.
   Identify conceptual links separately from literal Lean import dependencies.
 - STARDUST_MATHEMATICAL_COMMENTARY.md: concise explanations of constructions,
   obstacles, successful repairs and precise new opportunities.
-- manuscripts/: canonical LaTeX drafts and corresponding private PDFs together,
+- manuscripts/: canonical LaTeX drafts and corresponding tracked PDFs together,
   indexed by manuscripts/INDEX.md. Follow the compilation policy below.
 - docs/papers/: supporting Markdown exposition, theorem statements aligned
   with Lean and explicit PROVED/OPEN/CONJECTURAL status. Do not rewrite original
@@ -120,9 +129,9 @@ retain source, current PDF, index and meaningful compilation logs. No unnecessar
 cleanup of unrelated caches. All draft claims must match exact verified Lean
 statements/domains; speculative material must be labeled explicitly.
 
-All artifacts remain private. The existing explicitly authorized PRIVATE Git
-checkpoint backup remains permitted; no public release, external publication,
-third-party upload or remote compilation is authorized by this workflow.
+Tracked repository artifacts may be public through the user-designated GitHub
+repository. ResearchSources originals remain local and uncommitted. No other
+publication, third-party upload or remote compilation is authorized by this workflow.
 See manuscripts/README.md for local commands and manuscript freshness checks.
 
 ## Verification and recurrence
@@ -130,7 +139,7 @@ See manuscripts/README.md for local commands and manuscript freshness checks.
 Follow STARDUST_BUILD_OPTIMIZATION.md and STARDUST_SYNC.md. Full root build,
 complete transitive safe-Foundation axiom audit, actual complete public-type/
 source review, meaningful independent checks, source/manuscript hash checks,
-explicit Git commit, exact receipt and verified PRIVATE main/research refs
+explicit Git commit, exact receipt and verified main/research refs
 remain the checkpoint gates. No sorry, new mathematical axioms, suppressed
 errors or weaker statement presented as a stronger result. Documentation-only
 reuse of previous audit evidence requires exact input identity as specified

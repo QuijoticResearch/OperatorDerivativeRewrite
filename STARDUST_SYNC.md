@@ -1,6 +1,46 @@
-# Independent private GitHub checkpoint synchronization
+# Audited GitHub checkpoint synchronization
 
-## Current policy — intraday restriction lifted October27,2026
+## Current policy — public repository and user-controlled visibility
+
+The user explicitly designated QuijoticResearch/OperatorDerivativeRewrite PUBLIC.
+The research agent, sync script and Windows scheduled task must NEVER change
+repository visibility. Earlier PRIVATE-visibility requirements in historical
+sections and checkpoint records are superseded. The sync script reads the
+GitHub repository identity and push permission before work, immediately before
+a push, and after remote verification. It records the observed visibility but
+does not require private visibility or mutate visibility. Normal audited
+commits and automatic pushes are allowed while the repository is PUBLIC.
+
+The existing Windows task retains its historical name, Project Stardust
+Private GitHub Sync, and its 30-minute trigger; no duplicate task is created.
+Both authorized main and research branches remain. Exact-commit approval,
+full-build/axiom/type/source gates, complete new-history secret scanning,
+suspicious-path refusal, atomic fast-forward no-force pushes and exact remote
+ref verification remain mandatory. ResearchSources stays uncommitted. No
+agent or script may use GitHub visibility-editing APIs or commands. The
+weekday intraday push restriction remains lifted.
+
+## Public-policy implementation check
+
+The installed script is byte-identical to tools/stardust_sync/sync.py. Its
+read-only repository-access function uses GitHub GET for exact repository
+identity and push permission; it neither gates on visibility nor issues any
+visibility-changing request. The current no-network policy tests cover PUBLIC
+and private metadata, identity/permission refusal, installed-script identity,
+and absent old time-policy hooks. A search of tracked executable scripts,
+GitHub workflows, both Stardust scheduled-task launchers and all scheduled
+task actions found no persisted operation that changes repository visibility;
+there was nothing to disable. The preserved historical sync copy is inactive.
+The 30-minute trigger and two backup branches were retained.
+
+The first end-to-end PUBLIC sync under this policy verified both main and
+codex/stardust-pseudoprocess-calculus at mathematical commit
+084d12e1f8a0a129585b0976f527527c167206de. The receipt recorded
+visibility=public and private=false, and an independent GitHub query still
+reported PUBLIC afterward. Any earlier agent attempts to restore PRIVATE
+visibility predate the user's explicit policy and must never recur.
+
+## Historical October27 intraday-policy amendment — superseded by public visibility
 
 The user explicitly removed the Monday–Friday09:00–17:00 America/New_York
 external-push restriction and requested immediate Git synchronization.
@@ -84,24 +124,26 @@ the sync task first, preserve pending receipts, repair/reinstall the guards,
 then re-enable it. Restoring the unguarded original is NOT an authorized policy
 rollback. Only the user may lift the workday policy.
 
+## Current operational procedure
+
 Windows Task Scheduler runs **Project Stardust Private GitHub Sync** every 30 minutes,
 independently of Codex. It uses the signed-in Windows account's existing `gh` keyring.
 Windows must be running and that account signed in; no Codex window or agent is needed.
 Missed runs are eligible to run when the scheduler becomes available. No password/token
 is saved in task files. The task runs at limited privilege and low priority.
 
-Repository: https://github.com/QuijoticResearch/OperatorDerivativeRewrite (private).
+Repository: https://github.com/QuijoticResearch/OperatorDerivativeRewrite (PUBLIC by user decision).
 The initial archive remains on `backup/stardust-2026-10-18`. `main` contains audited
 research only. Existing branch names and tags are preserved. The scheduler never makes
 commits, runs Lean builds, checks out files, changes the research index, force-pushes,
-rewrites history, or deletes remote refs. Divergence/tag replacement, failed privacy
-checks, failed secret scans, or failed remote verification produce a failing task result.
+rewrites history, or deletes remote refs. Divergence/tag replacement, failed identity/permission checks, failed secret scans,
+or failed remote verification produce a failing task result.
 
 Implementation and state: `C:\OperatorDerivativeRewrite\.lake\stardust-sync`.
 Keep this directory and the referenced portable Gitleaks executable when cleaning caches.
 `last-run.json` records the latest result; `last-success.json` records verified remote
-commit IDs; `last-task.log` records launcher output. The task verifies privacy immediately
-before pushing, pushes atomically without force, and rereads remote refs afterward.
+commit IDs; `last-task.log` records launcher output. The task rechecks repository identity and push permission immediately before
+pushing, pushes atomically without force, and rereads remote refs afterward.
 New committed blobs/messages are scanned for credentials; suspicious paths stop syncing.
 These checks supplement research review, rather than guaranteeing every secret format is detectable.
 

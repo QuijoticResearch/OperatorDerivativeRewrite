@@ -1,4 +1,4 @@
-"""Independent, non-destructive private checkpoint backup. No checkout or commits."""
+"""Independent, non-destructive checkpoint backup. Repository visibility is user-controlled."""
 import argparse
 import datetime as dt
 import hashlib
@@ -48,14 +48,14 @@ def save(path, value):
     os.replace(temp, path)
 
 
-def privacy():
+def repository_access():
+    # Read-only identity and permission check. Visibility is exclusively user-controlled.
     info = json.loads(run([GH, 'api', API]))
-    if info.get('private') is not True or info.get('visibility') != 'private':
-        raise RuntimeError('Refusing synchronization: GitHub repository is not private')
     if info.get('full_name', '').lower() != 'quijoticresearch/operatorderivativerewrite':
         raise RuntimeError('Repository identity mismatch')
     if not info.get('permissions', {}).get('push'):
         raise RuntimeError('GitHub push permission unavailable')
+    return info
 
 
 def remote_refs():
@@ -163,7 +163,7 @@ def scan(tips, remote):
 
 
 def sync():
-    privacy()
+    repository_access()
     if not REPO.exists():
         run([GIT, '-c', 'credential.helper=', '-c', 'credential.helper=!gh auth git-credential',
              'clone', '--mirror', URL, REPO])
@@ -200,14 +200,15 @@ def sync():
         if ref in remote and (ref.startswith('refs/tags/') or not ancestor(remote[ref], oid)):
             raise RuntimeError('Non-fast-forward or changed tag refused: '+ref)
     scanned = scan(changes.values(), remote) if changes else 0
-    privacy()  # fail closed immediately before every push
+    repository_access()  # recheck identity and permission immediately before push
     if changes:
         git('push', '--atomic', '--no-force', URL, *[oid+':'+ref for ref, oid in changes.items()])
     after = remote_refs()
     if any(after.get(ref) != oid for ref, oid in desired.items()):
         raise RuntimeError('Remote commit verification failed')
-    privacy()
-    result = {'status':'success', 'time_utc':now(), 'private':True, 'url':URL,
+    info = repository_access()
+    result = {'status':'success', 'time_utc':now(), 'private':info.get('private'),
+              'visibility':info.get('visibility'), 'url':URL,
               'pushed_refs':changes, 'verified_refs':desired, 'new_commits_secret_scanned':scanned,
               'main_policy':'exact-commit audit approval required; all pushes fast-forward; no commits or deletions'}
     save(STATE/'last-success.json', result)
@@ -233,7 +234,7 @@ def main():
             except OSError: return
             result = sync()
             save(STATE/'last-run.json', result)
-            print('Private synchronization verified')
+            print('Synchronization verified')
     except Exception as e:
         result = {'status':'failure','time_utc':now(),'error':str(e)}
         save(STATE/'last-run.json', result)

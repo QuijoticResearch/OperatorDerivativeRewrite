@@ -1,3 +1,5 @@
+**Git visibility amendment:** The designated GitHub repository is PUBLIC by user decision; follow AGENTS.md and STARDUST_SYNC.md, and never change visibility. Historical private-backup language below is superseded.
+
 # Project Stardust — Periodic Mathematical Reflection and Housekeeping
 
 Maintain a lightweight, recurring process of mathematical reflection, synthesis, discovery, and documentation alongside the autonomous research program.

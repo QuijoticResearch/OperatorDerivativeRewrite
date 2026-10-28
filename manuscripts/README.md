@@ -1,4 +1,4 @@
-# Private mathematical manuscripts
+# Maintained mathematical manuscripts
 
 [The manuscript index](INDEX.md) lists every maintained paper, its source/PDF,
 mathematical verification boundary, latest revision and build/review status.
@@ -44,10 +44,11 @@ the new source. If the shared housekeeping budget expires, mark PENDING in the
 index and leave the source intact. Do not silently substitute Markdown or a
 different PDF-generation engine for the maintained LaTeX manuscript.
 
-All work, including error repair, PDF review, verification and Git/private
+All work, including error repair, PDF review, verification and Git/remote
 closure, shares the existing45minute DAILY maximum. Read
 [the policy](../STARDUST_REFLECTION_POLICY.md) and
 [daily accounting](../STARDUST_REFLECTION_SESSIONS.json) first. Auxiliary build/
 and rendered/ files are ignored. Keep current .tex/.pdf and meaningful logs.
-No external upload/publication is authorized; existing explicitly authorized
-PRIVATE Git checkpoint backup remains the only configured remote destination.
+The user-designated GitHub repository is PUBLIC, so tracked source/PDF files
+are publicly visible there. ResearchSources originals remain uncommitted. No
+other external upload, publication or remote compilation is authorized.

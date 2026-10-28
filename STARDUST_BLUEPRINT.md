@@ -169,7 +169,7 @@ pairing limits of explicitly CLIPPED cosine sums. Their strong observable L2
 convergence gives original graph-dual norm convergence; `limit_obstruction`
 and `tracked_graph_escape` rule out a strong joint-field derivative of the sine
 limit and force gradient-norm divergence for any strong-domain tracking sequence.
-See the [private source/PDF draft](manuscripts/INDEX.md) for domains and prescriptions.
+See the [source/PDF draft](manuscripts/INDEX.md) for domains and prescriptions.
 
 **Later time–space and continuous-path results.**
 `IBMTimeSpaceSimpson.sums_tendstoInMeasure` now supplies the nonseparable
@@ -215,7 +215,7 @@ recovery with this predictable clock channel in the ORIGINAL intrinsic joint
 divergence and reconstructs F-EF. The clock is HIDDEN Brownian time; observed-IBM
 predictability of the pair is not proved. For F=-sin(Z_R), M=U=0 although F is
 nonconstant and has no strong joint derivative. The source channel preserves
-information lost by averaging. [Focused private note](manuscripts/ibm-clock-hybrid/main.pdf).
+information lost by averaging. [Focused note](manuscripts/ibm-clock-hybrid/main.pdf).
 
 **Open physical-time obligations.** The raw IBM path is not the fixed-terminal
 martingale P_rY. No semimartingale bracket, L2 samplewise-supremum upgrade, full

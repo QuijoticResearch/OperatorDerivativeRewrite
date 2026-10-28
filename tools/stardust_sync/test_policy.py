@@ -1,4 +1,4 @@
-"""Current private-sync guard tests; no network or Git mutation."""
+"""Current sync guard tests; no network or Git mutation."""
 import json
 from pathlib import Path
 import unittest
@@ -18,18 +18,20 @@ class CurrentSyncPolicyTests(unittest.TestCase):
             self.assertIn('--atomic', command)
             self.assertIn('--no-force', command)
 
-    def test_private_identity_and_permission_still_required(self):
-        valid = {'full_name': 'QuijoticResearch/OperatorDerivativeRewrite',
-                 'private': True, 'visibility': 'private',
-                 'permissions': {'push': True}}
-        with patch.object(sync, 'run', return_value=json.dumps(valid).encode()):
-            sync.privacy()
-        for change in ({'private': False}, {'visibility': 'public'},
-                       {'permissions': {'push': False}}, {'full_name': 'other/repo'}):
+    def test_public_visibility_allowed_identity_and_permission_required(self):
+        public = {'full_name': 'QuijoticResearch/OperatorDerivativeRewrite',
+                  'private': False, 'visibility': 'public',
+                  'permissions': {'push': True}}
+        for info in (public, public | {'private': True, 'visibility': 'private'}):
+            with self.subTest(visibility=info['visibility']):
+                with patch.object(sync, 'run', return_value=json.dumps(info).encode()) as run:
+                    self.assertEqual(sync.repository_access(), info)
+                    self.assertEqual(run.call_args.args[0], [sync.GH, 'api', sync.API])
+        for change in ({'permissions': {'push': False}}, {'full_name': 'other/repo'}):
             with self.subTest(change=change):
-                with patch.object(sync, 'run', return_value=json.dumps(valid | change).encode()):
+                with patch.object(sync, 'run', return_value=json.dumps(public | change).encode()):
                     with self.assertRaises(RuntimeError):
-                        sync.privacy()
+                        sync.repository_access()
 
     def test_installed_sync_and_removed_time_hooks(self):
         root = Path('C:/OperatorDerivativeRewrite')

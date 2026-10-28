@@ -1,4 +1,4 @@
-# Private manuscript index
+# Manuscript index
 
 | Title | Source and readable PDF | Verification status | Latest revision |
 |---|---|---|---|
@@ -9,7 +9,8 @@
 Build/review evidence: [compiler status](ibm-stochastic-associativity/build-status.json),
 [visual review](ibm-stochastic-associativity/visual-review.json),
 [retained logs](ibm-stochastic-associativity/logs/).
-All artifacts are PRIVATE. A future substantive edit must update the PDF and
+Tracked artifacts are public on the user-designated GitHub repository. A future
+substantive edit must update the PDF and
 revision/status; mark PENDING if compilation/review is unfinished or the daily
 budget is exhausted. Original ResearchSources files are not maintained drafts.
 See [local compilation and review](README.md).

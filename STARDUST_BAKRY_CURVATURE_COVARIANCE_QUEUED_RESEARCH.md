@@ -1,3 +1,8 @@
+**Git visibility amendment (October 27, 2026):** The designated repository is
+PUBLIC by the user's decision. Follow AGENTS.md and STARDUST_SYNC.md for exact
+audited two-branch backup; never change visibility. Earlier PRIVATE wording in
+this brief is historical and superseded. All mathematical gates remain.
+
 # Project Stardust — Bakry–Émery Objective 2
 
 **Current status: PAUSED, NOT COMPLETED.** The user explicitly activated

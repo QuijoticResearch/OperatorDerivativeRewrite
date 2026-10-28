@@ -1,3 +1,5 @@
+**Current Git visibility policy:** The designated repository is PUBLIC by the user's explicit decision. No agent/script may change visibility. Earlier private-backup wording in this historical ledger is superseded; exact audited two-branch backup remains mandatory under STARDUST_SYNC.md.
+
 # Current IBM mathematics — checkpoint1374: uniform actual process reconstruction and native graph convergence
 
 IBM ACTIVE. For EVERY continuous curve u in actual IBM-observable L2 and EVERY

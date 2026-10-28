@@ -7,9 +7,8 @@ Fourier/Xi flows. Manuscript assertions are research questions until proved.
 Counterexamples and precise unresolved obligations are research results too.
 
 The project favors transparent, reproducible and reusable mathematics, with
-proofs and domains available for inspection and future sharing. The working
-GitHub archive remains **private**. This public-facing overview neither
-publishes it nor changes licensing or permissions for preserved manuscripts.
+proofs and domains available for inspection and future sharing. The GitHub repository is **public by the owner's decision**. This overview does
+not change repository visibility, licensing, or permissions for preserved originals.
 Retain upstream license/attribution notices; license material is in LICENSES/.
 
 Start with the [mathematical blueprint](STARDUST_BLUEPRINT.md),
@@ -33,9 +32,9 @@ types and detailed scopes before reuse.
 | Actual stochastic change of integrator and full product associativity | `IBMStochasticIntegratorEnergy.energy_change`; `IBMStochasticProductAssociativity.actual_associativity`; `IBMCompletedBoundedAssociativity.actual_bounded_associativity` | Entire ORIGINAL output-energy L2 domain; literal HK product, correct null ideals, and bounded common predictable action on every completed family. [Audit](IBM_INTEGRATOR_ENERGY_PRODUCT_ASSOCIATIVITY_AUDIT.md). |
 | Uniform actual IBM reconstruction and original divergence graph convergence | `IBMUniformStochasticReconstruction.actual_IBM_uniform`; `uniform_actual`; `uniform_native_graph` | Compact-parameter uniform L2 and original graph norm, simultaneously over all causal horizons. This is not L2 of a samplewise supremum or temporal-gradient Clark–Ocone. [Audit](IBM_UNIFORM_STOCHASTIC_RECONSTRUCTION_AUDIT.md). |
 | Physical IBM variation and raw-channel obstruction | `IBMUniformQuarticVariation.quartic_tendstoInMeasure`; `IBMActualQuadraticDivergence.quadratic_lower_tail`; `first_no_finite_limit` | For actual Z=W(abs B), all uniform N-cell grids: quartic variation tends to 3T in probability, quadratic variation diverges, and raw first/second ranks cannot separately have finite probability limits. [Source](Foundation/IBMActualQuadraticDivergence.lean). |
-| Actual time–space Simpson and continuous-path calculus | `IBMTimeSpaceSimpson.sums_tendstoInMeasure`; `IBMUniformTimeSpace.maximum_tendstoInMeasure`; `IBMContinuousSimpsonRealization.approximation_tendstoInMeasure` | Deterministic C1-time/C4-space F with explicit joint continuity hypotheses; probability limits, grid-prefix maximum, and Bernstein continuous-path supremum-norm convergence. Bernstein smoothing is not asserted causal. Clipped graph-dual realization retains the sine strong-domain obstruction. [Revised private draft](manuscripts/ibm-signed-simpson/main.pdf). |
+| Actual time–space Simpson and continuous-path calculus | `IBMTimeSpaceSimpson.sums_tendstoInMeasure`; `IBMUniformTimeSpace.maximum_tendstoInMeasure`; `IBMContinuousSimpsonRealization.approximation_tendstoInMeasure` | Deterministic C1-time/C4-space F with explicit joint continuity hypotheses; probability limits, grid-prefix maximum, and Bernstein continuous-path supremum-norm convergence. Bernstein smoothing is not asserted causal. Clipped graph-dual realization retains the sine strong-domain obstruction. [Revised draft](manuscripts/ibm-signed-simpson/main.pdf). |
 | Original native Hilbert obstruction and genuine tested limits | `IBMNativeWeakObstruction.no_original_weak_subsequence`; `IBMFourierCylinderSeries.native_tendsto`; `source_native_tendsto` | Specified positive-horizon native outputs have no weak intrinsic Hilbert subsequence. Curvature-summable Fourier source-lowered actions nevertheless converge in clock L2/L1. This is an action limit, not observable reconstruction. [Obstruction](Foundation/IBMNativeWeakObstruction.lean), [tested calculus](Foundation/IBMFourierCylinderSeries.lean). |
-| Actual multitime mean graph and hybrid reconstruction | `IBMFourierClockGraph.multitime_clock_graph`; `IBMFourierClockClarkOcone.projected_actual_derivative`; `IBMFourierHybridReconstruction.reconstruction` | Folded/collision gradients in the ORIGINAL clock graph; finite-horizon hidden-clock Clark–Ocone and original joint divergence reconstruction with a STATIC source channel. Observed-IBM-filtration causality remains open. [Focused private note](manuscripts/ibm-clock-hybrid/main.pdf). |
+| Actual multitime mean graph and hybrid reconstruction | `IBMFourierClockGraph.multitime_clock_graph`; `IBMFourierClockClarkOcone.projected_actual_derivative`; `IBMFourierHybridReconstruction.reconstruction` | Folded/collision gradients in the ORIGINAL clock graph; finite-horizon hidden-clock Clark–Ocone and original joint divergence reconstruction with a STATIC source channel. Observed-IBM-filtration causality remains open. [Focused note](manuscripts/ibm-clock-hybrid/main.pdf). |
 | Actual quartic theta-flow eventual global real zeros | `RiemannQuarticUniformFarScale.eventually_all_zeros_real` | Every complex zero is real at every sufficiently late time of the genuine growing quartic integral. Local/far estimates share one scale. No RH implication is inferred. [Source](Foundation/RiemannQuarticUniformFarScale.lean), [full stopping scope](A4_CAMPAIGN_STOPPING_AUDIT.md). |
 | Finite physical-torus curvature and generator energy | `WavePhysicalFourierBridge.box_parseval_all`; `box_gamma1_energy`; `anisotropic_box_gamma1_energy`; `WaveDiagonalSemigroup.anisotropic_generator_domain` | Exact normalized box-integral Parseval and integrated Γ₁/energy identity on every finite Fourier polynomial; a separate strongly continuous coefficient semigroup has an exact weighted ℓ² graph domain. Physical Haar-L² intertwining, Markov realization and completed Γ remain open. [Focused audit](STARDUST_BAKRY_CURVATURE_COVARIANCE_AUDIT.md). |
 
@@ -54,7 +53,7 @@ commands, cache strategy and full verification gates. Milestones require a
 complete transitive `Lean.collectAxioms` audit of every safe Foundation
 declaration, accepting only `propext`, `Classical.choice` and `Quot.sound`, plus
 actual unabridged theorem-type/proof review, meaningful independent checks,
-source/manuscript hashes, Git checkpoint and verified private backup.
+source/manuscript hashes, Git checkpoint and verified two-branch backup.
 The early Foundation/AxiomAudit module is not a substitute for that complete
 root audit. No sorry, new mathematical axioms or suppressed errors are allowed.
 
@@ -65,17 +64,16 @@ ResearchSources is read-only and excluded from research commits.
 
 ## Research and exposition
 
-**Active:** Bakry–Émery Objective 2, curvature–covariance correspondences.
+**Active:** focused Yang–Mills audit. Bakry–Émery Objective 2 is paused,
 Objective 1 and intrinsic IBM remain incomplete at preserved checkpoints.
-Finite Fourier covariance, closed coefficient semigroups and physical core
-energy identities are verified; a physical Haar-L² semigroup, Markov process,
-completed Γ domain and curvature/entropy estimates still require proof.
+The finite SU(2) closed-cycle conditional law is verified; a gauge-covariant
+block transfer and continuum-uniform connected-correlation estimate remain open.
 Subsequent campaigns remain gated by the authoritative queue; this overview
 does not change their order.
 
 [Periodic reflection](STARDUST_REFLECTION_POLICY.md) is supporting work at
 natural verified checkpoints, capped at45minutes per local day total. It
 preserves mathematical experience, records precise cross-library opportunities,
-and maintains this overview, the blueprint and private [LaTeX/PDF manuscripts](manuscripts/INDEX.md).
+and maintains this overview, the blueprint and [LaTeX/PDF manuscripts](manuscripts/INDEX.md).
 No novelty, publication readiness, Millennium Prize solution or RH progress
 is claimed merely from the size of the library.

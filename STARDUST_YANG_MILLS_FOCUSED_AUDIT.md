@@ -185,3 +185,14 @@ This is a positive, exact finite-cycle link between the SU(2) conditional probab
 ### Verification, checkpoint 1647
 
 The targeted module passed. Three independent Lean tests passed: exact equality of the central-input pushforward law with the identity-input law, equality of closed-cycle means for arbitrary inputs, and zero derivative of the central closed-loop mean difference. The complete root build passed 6895 jobs. The complete transitive axiom audit covered 52325 Foundation declarations and found only propext, Classical.choice, and Quot.sound. All four new public theorem types and complete source proofs, including the two private singleton identifications, were reviewed. Source/config/archive integrity passed for 2715 Foundation/root Lean files, three unchanged configurations, all 113 baseline manuscripts, and 21 selected Yang–Mills candidates. Exact Git approval and BOTH PRIVATE ref verification remain the closure gate.
+
+Closure for checkpoint 1647: the exact mathematical commit
+084d12e1f8a0a129585b0976f527527c167206de received its full-build,
+axiom/type and source-integrity audit receipt. After the user designated the
+GitHub repository PUBLIC and the visibility-neutral sync script was installed,
+both main and codex/stardust-pseudoprocess-calculus remote refs were verified
+at that exact commit at 2026-10-28T02:19:44Z. The receipt honestly reports
+visibility=public. Earlier sync attempts under the superseded private-only
+guard failed without pushing. This closure update changes documentation only;
+all checkpoint 1647 Lean/configuration bytes and verification logs are unchanged.
+Focused Yang–Mills remains active and Bakry Objective 2 remains paused.

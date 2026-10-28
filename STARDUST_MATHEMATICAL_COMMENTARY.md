@@ -222,7 +222,7 @@ occupation and native/adjoint results before constructing another map.
 This is an exact Stardust obligation, not a claim about an established external
 open problem, a novelty assertion, or a change of campaign.
 
-References and precise domains: [focused private LaTeX/PDF note](manuscripts/ibm-clock-hybrid/main.pdf),
+References and precise domains: [focused LaTeX/PDF note](manuscripts/ibm-clock-hybrid/main.pdf),
 [updated signed Simpson draft](manuscripts/ibm-signed-simpson/main.pdf), and
 checkpoints1515–1520 in the research ledger.
 

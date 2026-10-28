@@ -1,3 +1,17 @@
+# Authoritative repository-visibility policy — October 27, 2026
+
+The user explicitly designated QuijoticResearch/OperatorDerivativeRewrite PUBLIC.
+Only the user controls GitHub visibility. Stardust agents, scripts, and scheduled
+tasks must NEVER change repository visibility. The old PRIVATE-visibility gate
+and all earlier private-backup wording below are superseded as policy; historical
+records of backups that were private at the time remain factual. Continue the
+existing 30-minute independent sync to both authorized main/research branches.
+Require exact audited commits, full Lean/source verification, secret scanning,
+repository identity and push permission, atomic fast-forward no-force pushes,
+and exact post-push remote-ref checks. ResearchSources stays unmodified and
+uncommitted. See the current top section of STARDUST_SYNC.md. This amendment
+does not change the focused Yang–Mills campaign or the research queue.
+
 # Authoritative transition — October27,2026: focused Yang–Mills ACTIVE
 
 The user explicitly directed transition at safe, fully audited and
