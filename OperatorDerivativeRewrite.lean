@@ -2649,3 +2649,4 @@ import Foundation.YMReflectionPositiveShift
 import Foundation.SU2PositiveChannelObstruction
 import Foundation.YMOSClusterObstruction
 import Foundation.YMSpectralLaplaceBridge
+import Foundation.SU2WeakCouplingNormalization
