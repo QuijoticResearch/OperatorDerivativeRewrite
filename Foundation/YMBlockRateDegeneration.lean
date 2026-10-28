@@ -60,4 +60,39 @@ theorem no_uniform_total_contraction (A ell : ℝ)
   have hh := hb β hβ
   linarith [h₁ β hβ, h₂ β hβ]
 
+theorem referenceFactor_nat_power (A ell : ℝ) (hA : A ≠ 0) (n : ℕ) (hn : 0 < n) :
+    referenceFactor A ell (n : ℝ) ^ n = Real.exp (-(ell / A)) := by
+  rw [referenceFactor, ← Real.exp_nat_mul]
+  congr 1
+  have hnR : (n : ℝ) ≠ 0 := by exact_mod_cast (Nat.ne_of_gt hn)
+  field_simp
+
+
+theorem referenceFactor_macro_steps (A ell : ℝ) (hA : A ≠ 0)
+    (n k : ℕ) (hn : 0 < n) :
+    referenceFactor A ell (n : ℝ) ^ (n * k) =
+      Real.exp ((-(ell / A)) * (k : ℝ)) := by
+  rw [pow_mul, referenceFactor_nat_power A ell hA n hn, ← Real.exp_nat_mul]
+  congr 1
+  ring
+
+theorem referenceFactor_varying_macro_decay (A ell : ℝ)
+    (hA : 0 < A) (hell : 0 < ell)
+    (n : ℕ → ℕ) (hn : ∀ k, 0 < n k) :
+    Tendsto (fun k : ℕ =>
+      referenceFactor A ell ((n k : ℕ) : ℝ) ^ (n k * k)) atTop (𝓝 0) := by
+  have hq0 : 0 ≤ Real.exp (-(ell / A)) := (Real.exp_pos _).le
+  have hq1 : Real.exp (-(ell / A)) < 1 := by
+    rw [← Real.exp_zero]
+    exact Real.exp_lt_exp.mpr (neg_lt_zero.mpr (div_pos hell hA))
+  have hp := tendsto_pow_atTop_nhds_zero_of_lt_one hq0 hq1
+  have he : (fun k : ℕ =>
+      referenceFactor A ell ((n k : ℕ) : ℝ) ^ (n k * k)) =
+      (fun k : ℕ => Real.exp (-(ell / A)) ^ k) := by
+    funext k
+    rw [referenceFactor_macro_steps A ell hA.ne' (n k) k (hn k),
+      mul_comm (-(ell / A)) (k : ℝ), Real.exp_nat_mul]
+  rw [he]
+  exact hp
+
 end OperatorDerivativeRewrite.Foundation.YMBlockRateDegeneration

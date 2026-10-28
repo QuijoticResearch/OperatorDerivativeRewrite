@@ -10334,3 +10334,8 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.YMBlockRateDegeneration.referenceFactor_tendsto_one
 #print axioms OperatorDerivativeRewrite.Foundation.YMBlockRateDegeneration.no_uniform_reference_contraction
 #print axioms OperatorDerivativeRewrite.Foundation.YMBlockRateDegeneration.no_uniform_total_contraction
+
+-- Checkpoint1663: exact macro-step scaling for the block heat-reference factor.
+#print axioms OperatorDerivativeRewrite.Foundation.YMBlockRateDegeneration.referenceFactor_nat_power
+#print axioms OperatorDerivativeRewrite.Foundation.YMBlockRateDegeneration.referenceFactor_macro_steps
+#print axioms OperatorDerivativeRewrite.Foundation.YMBlockRateDegeneration.referenceFactor_varying_macro_decay
