@@ -39,15 +39,15 @@ def faceClass (p : FaceData) : Fin 5 :=
 def values (x y z : ℝ) : Fin 5 → ℝ :=
   ![action x y z,1-Real.cos x,1-Real.cos y,1-Real.cos z,0]
 
-private theorem axis_trace (a : Fin 3) (t : ℝ) : halfTrace (axis a t)=Real.cos t := by
+theorem axis_trace (a : Fin 3) (t : ℝ) : halfTrace (axis a t)=Real.cos t := by
   change SU2TraceHessianModel.traceReal (repr (axisRaw a t))/2=_
   rw [repr_halfTrace]
   fin_cases a <;> norm_num [axisRaw]
 
-private theorem trace_one : halfTrace (1 : SU2)=1 := by
+theorem trace_one : halfTrace (1 : SU2)=1 := by
   norm_num [halfTrace,SU2TraceHessianModel.traceReal,Matrix.trace_fin_two]
 
-private theorem triple_action (x y z : ℝ) :
+theorem triple_action (x y z : ℝ) :
     1-halfTrace (axis 0 x*axis 1 y*axis 2 z)=action x y z := by
   simp [action,configuration,SU2SevenLinkTransfer.first,SU2SevenLinkTransfer.leftPath]
 
@@ -222,4 +222,3 @@ theorem innerAction_gauge (g : Vertex → SU2) (U : EdgeData → SU2) :
   simp_rw [faceAction_gauge]
 
 end OperatorDerivativeRewrite.Foundation.FourCubeWilsonCubic
-
