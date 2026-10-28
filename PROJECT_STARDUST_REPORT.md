@@ -53473,3 +53473,9 @@ identity-input concentration is exactly β. These are finite-dimensional
 probability statements. Gauge-compatible block influence, weak-coupling
 uniformity and continuum spectral consequences remain open; no mass gap is
 claimed. The focused audit records the exact scope.
+At identity input, the actual transfer law equals the verified Haar half-trace
+exponential tilt. Its outgoing half-trace mean has derivative `1/4` at zero
+coupling and is positive at arbitrarily small positive couplings. These exact
+Lean results calibrate the finite-dimensional transfer. Boundary-input
+influence, gauge-compatible block composition and continuum control remain
+unresolved, as detailed in `STARDUST_YANG_MILLS_FOCUSED_AUDIT.md`.

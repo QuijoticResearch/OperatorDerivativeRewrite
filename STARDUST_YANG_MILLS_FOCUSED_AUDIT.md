@@ -128,4 +128,14 @@ Four independent Lean examples passed. The full root build passed 6891 jobs, and
 
 Closure: commit `cf797b6b1175a1398004e847846e4aafae1f6af2` received the exact-commit audit approval. Both PRIVATE `main` and `codex/stardust-pseudoprocess-calculus` refs were independently verified at that same commit at `2026-10-28T00:25:17Z`. This receipt update changes documentation only; the audited Lean/configuration input hashes are unchanged. The focused Yang–Mills campaign remains active and Bakry Objective 2 remains paused.
 
+## Actual one-word response at weak coupling
+
+The same transfer has a sharper exact identification at identity input. `SU2OneWordTransfer.identity_exponent` reduces its one-word staple exponent to `β·halfTrace(B)`. `transition_identity_law` then identifies the **actual transition probability law** with the previously verified Haar half-trace exponential tilt. Combining the established Haar moments `SU2TiltEnergyResponse.moment_values` with the bounded tilt derivative theorem gives `identity_mean_hasDerivAt_zero`: the outgoing half-trace mean has coupling derivative exactly `1/4` at β=0. `positive_identity_mean_near_zero` yields an outgoing positive mean at some β in every interval `(0,ε)`. Three independent Lean examples recheck the law, derivative and positivity statement.
+
+This is a genuine finite-dimensional stochastic response and an exact reuse of the operator/tilt calculus. It does **not** control the derivative with respect to the input boundary, give a Lipschitz or entropy contraction, or survive the continuum limit by itself. The physical route in `block_contraction_spectral_gaps.tex` still needs a gauge-compatible block kernel and a scale-uniform influence estimate in the norm actually used for clustering. The response theorem is a calibration test for any proposed approximation of that kernel, not a mass-gap estimate.
+
+### Verification, checkpoint 1643
+
+The targeted module build and three independent Lean examples passed. The full root build passed 6891 jobs. The complete transitive axiom audit covered 52293 declarations with only the three standard allowed axioms. The four new theorem types and complete proofs were reviewed, together with the retained ten declarations in the changed module. Source/config/archive integrity passed for all 2711 Foundation/root Lean files, three configurations, 113 baseline manuscripts and 21 selected Yang–Mills candidates. Exact commit approval and both PRIVATE remote-ref checks are required for closure.
+
 These five old declaration types were re-elaborated in `.lake/stardust-ym-reuse-type-review.log` along with the earlier crosswalk. No new Lean module was needed. The primary avenue remains a boundary-changing, gauge-compatible block transition with a proved norm/influence estimate and scale-uniform large-field control. The entropy and staple examples narrow which shortcut constructions can serve it.
