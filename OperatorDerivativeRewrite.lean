@@ -2713,3 +2713,5 @@ import Foundation.FiniteWilsonTorusGap
 import Foundation.FiniteWilsonPlaquetteSlowing
 
 import Foundation.YMFiniteWilsonVacuum
+
+import Foundation.SU2SevenLinkVacuum

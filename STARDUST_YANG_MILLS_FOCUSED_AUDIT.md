@@ -1539,3 +1539,46 @@ Independent Fraction tests verified30 iterations for each of three kernels: a co
 Integrity authenticates1687's manifest against its exact approval receipt and checks2768 Foundation/root sources: exactly the two new modules, root import and AxiomAudit changed. All3 pinned configurations,113 baseline manuscripts and21 Yang--Mills originals (20 distinct hashes) are unchanged. Evidence is under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1688-* (full build, complete transitive/type audit, independent Lean/exact/numerical tests, declaration counts and authenticated source manifest). ResearchSources remains untouched and uncommitted.
 
 Yang--Mills remains ACTIVE; Bakry stays PAUSED and the queue is unchanged. Exact Git approval and guarded PUBLIC main/research verification are separate closure receipts, not claimed by this pre-commit ledger. This checkpoint completes the stated positive-kernel/raw-SU2 existence result, not the remaining normalized stationary bridge or the Yang--Mills campaign.
+
+
+## Checkpoint 1689 — exact normalized seven-link SU2 stationary realization
+
+The missing normalized `SU2SevenLinkGroundTransform.GroundData` existence obligation from1688 is DISCHARGED for the existing seven-link operator, for EVERY real beta and spatial tilt t. `Foundation/SU2SevenLinkVacuum.lean` constructs its inhabitant using1688's positive-kernel limit theorem. It then directly reuses the earlier covariance theorem with the constructed actual stationary law. No supplied eigenfunction, external existence construction, new axiom or numerical quadrature is an input.
+
+### Exact normalization rather than coordinate substitution
+
+The generic positive-kernel theorem applies directly on the EXISTING seven-link tuple state. Consequently no indexed/tuple coordinate conversion is needed to close THIS contract; the separate1688 indexed/raw theorem remains valid without being silently identified with this operator.
+
+`noise_withDensity` proves the original product of seven normalized Wilson increment measures is EXACTLY the existing tuple Haar law with density rho_beta. This density is the product of the seven scalar densities exp(beta*halfTrace(v_i))/Z(beta), so all SEVEN partition factors are retained. The proof reuses the scalar exponential-tilt measure, product-with-density theorem, existing noise inversion at beta0 and Haar translation invariance. `step_density` proves the actual normalized temporal transfer equals
+
+    step_beta f(s)=integral rho_beta(s^-1*r)*f(r) dHaar(r).
+
+`kernelDensity_apply` proves equality of the kernel integral with the original `spatialStep beta t`, including both spatial half-weights H_t(s)=exp(t*first(s)/2). This is an equality for the actual old operator, not a new row-normalized approximation. The positive bounds used are
+
+    m=exp(-|t|)*(exp(-|beta|)/Z(beta))^7,
+    M=exp( |t|)*(exp( |beta|)/Z(beta))^7.
+
+The source writes the spatial exponential as its squared half-weight; the displayed form is algebraically equivalent. Z(beta)>0 and every factor are proved positive. Joint measurability, actual measure equality and integral change of variables are verified. Applying `YMPositivePower.positive_eigenfunction_exists` now gives the exact `GroundData` fields: positive eigenvalue, measurable uniformly positive bounded function, and the EXISTING normalized eigen-equation. `groundData_nonempty` proves inhabitance and `data` chooses from that proof. Nothing is postulated as a typeclass inhabitant or existence axiom.
+
+### Realized covariance obstruction and exact remaining scope
+
+`realized_stationary_obstruction_interval` reuses `SU2SevenLinkGroundTransform.exists_stationary_obstruction_interval` with `data beta t`, then its verified evenization. For coefficient c(beta)!=0 there exists delta>0, delta<=1 such that EVERY0<t<delta yields the constructed actual stationary probability and Markov kernel, with a displayed bounded observable f satisfying
+
+    stationary_mean(f)=0,  stationary_variance(f)>0,
+    stationary_lag(f)/stationary_variance(f)>c(beta)^4.
+
+The function is exactly the previous unweighted odd-polynomial trial divided by the constructed even positive eigenfunction. Actual stationarity, reversibility, integrability and native variance are inherited by direct theorem reuse. This removes the previous missing-eigenfunction assumption from that comparison. The parameter hypothesis c(beta)!=0 and the SMALL INDEPENDENT SPATIAL TILT remain explicit. It does not imply that t=beta lies in the interval, nor that every local observable slows.
+
+The baseline c(beta)^4 is the earlier specific bare comparison/channel coefficient, NOT a newly proved complete bare spectral-gap value. This checkpoint proves neither a global-gap comparison nor gap closing. The model has seven actual continuous SU2 link variables and two adjacent plaquette geometry, with this operator tilting the FIRST plaquette; it is not a complete equal-coupling four-dimensional action. Gauge-sector/invariance identification of the chosen eigenfunction and observable remains a separate obligation, as do relevant top-spectrum statements, homogeneous full-action comparison, spatial3D/physical4D transfer construction, volume-uniform bounds, physically justified spacing and continuum/infinite-volume limits. No Millennium conclusion or novelty claim is asserted. The new result is a rigorous realization of the existing local operator/covariance analysis, not completion of the Yang--Mills campaign.
+
+### Full verification and independent attempts to falsify normalization
+
+The final full root build passed6949 jobs in43.0837355 seconds. Complete transitive axiom audit passed54055 declarations in40.7115968 seconds, allowing only propext, Classical.choice and Quot.sound. All11 unabridged public types (8 theorem proofs,3 definitions),9 private helper proofs,3 private definitions and4 private instances were reviewed in full. The scalar-density measurability proof was registered with fun_prop so product-density composition could reuse it; no mathematical hypothesis or trust setting was changed. Intermediate namespace, product measurability, positivity and record elaboration failures were repaired before the final full build. All proofs use the retained default resource limits; no sorry/admit/new axiom, native-decide trust input, compiler/toolchain/configuration/resource change or suppressed error was introduced.
+
+Thirteen independent Lean checks passed on the FIRST final harness run in25.6554402 seconds: inhabitance and positive eigenvalue at arbitrary parameters; actual constructed Markov kernel and stationary probability; positive normalizer and square integrability; unit mass of the seven-link normalized temporal kernel at zero spatial tilt; density integral1; the exact existing normalized eigen-equation; actual evenization; stationarity and reversible pairings for ALL bounded measurable probes; and a genuinely positive tilt chosen at delta/2 with zero mean and positive variance. These tests instantiate the previously conditional APIs with the newly constructed data.
+
+Independent diagnostics use seed1689 and256 sampled seven-link quaternion fields. They check pointwise Haar substitution algebra, all seven partition factors and kernel bounds for nine(beta,t) pairs including positive/negative/zero parameters. One-dimensional quadrature is only a normalization diagnostic, not the Haar proof. Omitting Z(beta)^7 changes the factor by approximately25.76305 at beta=-2 and4.17898 at beta=1.3, illustrating why raw/normalized identification matters. A separate beta0 spatial-row diagnostic gives row-mass ratio9 for opposite plaquette configurations at tilt2*log(3); multiplying by the spatial half-weight is not row normalization. None of these sampled computations is a Lean input or evidence of a4D theorem.
+
+Integrity authenticates1688's manifest against its exact approval receipt and checks2769 Foundation/root sources: exactly the new module, root import and AxiomAudit changed. All3 pinned configurations,113 baseline manuscripts and21 Yang--Mills originals (20 distinct hashes) remain unchanged. Evidence is under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1689-* (full build, complete transitive/type audit, independent Lean and quaternion/normalization diagnostics, declaration list and authenticated source manifest). ResearchSources remains unmodified and uncommitted.
+
+Yang--Mills remains ACTIVE; Bakry PAUSED and all other priorities unchanged. The next focused question is whether the realized local mechanism has a valid gauge-invariant/homogeneous/volume-uniform extension, rather than equating this finite local covariance comparison with a physical mass gap. Exact Git approval and guarded PUBLIC main/research synchronization are separate closure receipts; this pre-commit entry does not claim remote success.
