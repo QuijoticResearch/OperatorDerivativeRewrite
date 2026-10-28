@@ -54048,3 +54048,60 @@ Next focused work: identify the finite product-Haar operator and its normalizati
 Final full root build passed6926 jobs in47.1081462 seconds. Complete transitive axiom audit passed53165 declarations in41.5403936 seconds, allowing only propext, Classical.choice and Quot.sound. All48 unabridged public types,35 theorem proofs,13 definitions/abbreviations and six private integrability helpers were reviewed. Twelve independent Lean checks passed. No sorry, admit, new axiom, heartbeat/trust/toolchain change or weakened verification was introduced.
 
 Source integrity passed2746 Foundation/root Lean files with exactly three mathematical source changes/additions since approved1674; all three pinned configurations,113 baseline manuscripts and21 Yang-Mills originals are unchanged. Evidence: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1675-{audit.log,checks.lean,checks.log,full-build.log,independent.json,working-checkpoint.json}. Both ledgers append this result without rewriting history. Exact Git approval and guarded PUBLIC main/research synchronization are separate closure receipts; this pre-commit record does not assert remote success.
+
+## Checkpoint1676 — finite-error Wilson vacuum certificate and its nonuniform window (October28,2026)
+
+### Why this route was selected
+
+Checkpoint1675 closed the actual shared-edge kinetic channel premise, but the proposed stationary eigenbranch comparison still lacked operator realization and perturbation/isolation hypotheses. Rather than assume that branch or start a general spectral library, this checkpoint tests a concrete positive-supersolution route. It gives a true exponential-weight integral bound with an explicit cubic error, and proves an obstruction to extrapolating its sufficient smallness condition. The normalized stationary spectral comparison itself remains OPEN.
+
+### Actual measures, moment domains and nondegenerate coefficients
+
+`Foundation/SU2WilsonGroundCertificate.lean` defines `walkLaw beta n` as the actual distribution of a product of n independent Wilson increments, recursively using product measures and measurable group multiplication. `walkLaw_probability` proves probability, including n=0 as a Dirac law. Fubini is used only after a bounded measurable integrability proof. With h=halfTrace, c=integral h dnu_beta and d=(4m-1)/3, the verified formulas are
+
+    integral h(CV) d(walkLaw beta n)=c^n h(C),
+    integral h(CV)^2 d(walkLaw beta n)=1/4+d^n(h(C)^2-1/4).
+
+`haar_absolutelyContinuous_increment` proves reverse absolute continuity from the everywhere positive actual tilt density. The original Haar second moment1/4 then excludes m=1 at finite real beta. Actual variance expansion proves c^2<=m<1, hence |c|<1 and |d|<1. `kinetic_power_ne_one` discharges the relevant denominators for EVERY finite beta and n>0. Zero increments really are excluded from those denominator assertions. These are finite Wilson statements, with no unverified probability law or external existence axiom.
+
+### An explicit certificate for the literal exponential weight
+
+Put a=c^4, r=d^4 and
+
+    A=a/(1-a), B=r(1+a)/(2(1-a)(1-r)), mu=(1+a)/(8(1-a)),
+    w(t,x)=1+A t x+B t^2(x^2-1/4),
+    C=(2+exp(1))(1+|A|+|B|)+|mu|(|A|+|B|).
+
+Let K4 f(C)=integral f(CV)d(walkLaw beta 4)(V), S_t f=K4(exp(t h)f), H_t=exp(t h/2) and T_t f=H_t K4(H_t f). These are the definitions `weightedWalk` and `symmetricWalk`, not a surrogate matrix or a formal Taylor-only operator. `weightedWalk_trial_error` proves the UNIFORM POINTWISE residual
+
+    |S_t w(t,h(C))-(1+mu t^2)w(t,h(C))| <= C |t|^3
+
+for |t|<=1. Its expectation proof uses only the two exact moments above and an explicit bounded exponential remainder. No differentiable eigenbranch, isolation, positive vacuum existence or spectral series is assumed.
+
+Under the explicit sufficient condition |A||t|+|B||t|^2<=1/2, w>=1/2. Thus u=H_t w is strictly positive and `symmetricWalk_four_supersolution` proves
+
+    T_t u <= (1+mu t^2+2 C |t|^3)u.
+
+`weightedWalk_four_domination` also proves actual L1 integrability and the corresponding one-step envelope bound for EVERY measurable f satisfying |f|<=M w, M>=0. This is an honest weighted pointwise domination/domain certificate. No completed Hilbert-space norm theorem, normalized stationary PMF, full product-lattice operator or vacuum eigenpair is thereby declared constructed. The symmetric exponential half weights are literal; a polynomial spatial potential was not substituted for Wilson form.
+
+The probabilistic and Taylor ingredients are classical; no novelty is asserted. The useful research reduction is that this concrete upper-certificate route can proceed without analytic spectral isolation, using already verified quadratic channels and explicit finite errors. It can supply one side of a future variational comparison; it is not that entire comparison.
+
+### A proved limitation, not an extrapolated mass-gap conclusion
+
+`necessary_trial_window` proves that this sufficient condition forces |t|<=(1-a)/(2a) when0<a<1. Combining it with the existing actual c^4 ->1 theorem, `no_uniform_fixed_trial_window` proves that NO FIXED nonzero spatial amplitude t satisfies this sufficient condition for every sufficiently large beta. This is a theorem about this particular certificate's window. It does not say the true trial is negative outside that window, rule out a different supersolution, establish gap closing, or refute every mass-gap route. In particular neither this small-perturbation method nor checkpoint1674's conditional local derivative may be applied automatically to simultaneous homogeneous spatial weighting in four dimensions.
+
+### Independent challenges, sources and exact remaining obligations
+
+Fourteen independent Lean examples passed, covering genuine probability/product moments, strict finite-coupling coefficients, rational moment cancellation, nonempty positivity, the actual symmetric exponential transfer, beta-zero normalization, reverse absolute continuity, fixed-amplitude nonuniformity, the excluded n=0 case, actual L1 domination and a concrete necessary-window boundary. Initial test function-extensional simplifications were repaired in the temporary harness; final tests pass without changed theorem semantics or compiler limits.
+
+Independent Fraction arithmetic verified240 exact moment-cancellation cases. A separate DIAGNOSTIC used64 SU2 character modes and256/512-node Haar radial quadrature for beta=0,1/2,1,4,16,64, both signs and two magnitudes of t:24 cases at EACH resolution. All tested cubic bounds and supersolution signs held; cross-resolution maximum residual difference was2.11e-15. The finite character truncation and quadrature are numerical evidence only, not proof input, a certified spectral enclosure, or a full spatial transfer construction. Diagnostics also expose the sufficient-condition failure at t=beta for the larger tested beta values; the formal fixed-t theorem is the rigorous limitation.
+
+Original `ResearchSources/Incoming/block_contraction_spectral_gaps.tex`, SHA256 `0C40FA6B92B830C0E2309BD6471D55CB0EB9BFB94296B9267AD23A5280FA4C60`, was selectively reread at lines616-652. Its asserted q=q0+epsilon_T+eta<1 still needs actual quantified operator error margins; its conditional continuum passage is not discharged here. All manuscript bytes are preserved.
+
+NEXT CONCRETE BOTTLENECK: combine an odd-sector Rayleigh trial using1675's genuine shared-edge c^6 and c^6 d channels with a vacuum upper certificate on the SAME actual seven-link product operator. The generic moment certificate above can be applied directly once that product law's two word moments and reversible integral domains are identified; proving equality of every nonlinear reduced kernel need not be imposed if these exact required inputs suffice. Still verify gauge invariance, center parity, ground normalization and the relevant quadratic-form domains before calling any ratio stationary spectral deterioration. Homogeneous four-dimensional overlap, volume-uniform comparison, physically justified distance and continuum/infinite-volume limits remain separate unresolved obligations. No positive physical mass gap or physical spectral obstruction has been established. Yang-Mills remains ACTIVE, Bakry stays PAUSED, and no queue change occurs.
+
+### Final verification and source integrity
+
+Final complete root build passed6927 jobs in27.8879347 seconds; complete transitive axiom audit passed53217 declarations in40.3549043 seconds, allowing only propext, Classical.choice and Quot.sound. All39 unabridged public types,28 theorem proofs,11 definitions and nine private helper proofs were reviewed. Fourteen independent Lean checks and the rational/numerical challenges passed. A single trailing whitespace cleanup preceded the final complete build and audit. No sorry, admit, new axiom, heartbeat/trust/toolchain change or error suppression was introduced.
+
+Source integrity passed2747 Foundation/root Lean files, with exactly three intended mathematical source changes/additions since approved1675. All three pinned configurations,113 baseline manuscripts and21 Yang-Mills original files are unchanged. Evidence is retained under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1676-*, including the final working-checkpoint manifest, full-build/audit logs, independent Lean harness and numerical JSON. Exact Git approval and guarded PUBLIC main/research synchronization are separate closure receipts; this entry does not claim a remote backup before it is verified.

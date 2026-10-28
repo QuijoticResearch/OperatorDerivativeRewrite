@@ -2684,3 +2684,5 @@ import Foundation.SU2SharedPlaquetteProjection
 import Foundation.WilsonPlaquetteGapCounterexample
 
 import Foundation.SU2QuadraticWilsonChannel
+
+import Foundation.SU2WilsonGroundCertificate
