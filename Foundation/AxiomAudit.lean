@@ -10209,3 +10209,6 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.SU2GaugeCovariantTransfer.haar_conjugation_map
 #print axioms OperatorDerivativeRewrite.Foundation.SU2GaugeCovariantTransfer.tilt_conjugation_map
 #print axioms OperatorDerivativeRewrite.Foundation.SU2GaugeCovariantTransfer.transition_gauge_covariant
+
+-- Checkpoint1649: exact two-step closed-loop rectangle factorization.
+#print axioms OperatorDerivativeRewrite.Foundation.SU2TwoLoopChain.two_loop_rectangle

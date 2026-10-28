@@ -2642,3 +2642,4 @@ import Foundation.SU2OneWordLargeCoupling
 import Foundation.SU2OpenLinkGaugeObstruction
 import Foundation.SU2ClosedLoopTransfer
 import Foundation.SU2GaugeCovariantTransfer
+import Foundation.SU2TwoLoopChain
