@@ -1083,3 +1083,78 @@ Still OPEN independently: the completed stationary L2 spectral interpretation; g
 Final full root build passed6933 jobs in56.8296195 seconds. Complete transitive axiom audit passed53543 declarations in38.3440946 seconds, permitting only propext, Classical.choice and Quot.sound. All63 unabridged public-type entries were reviewed:53 explicitly declared items (43 theorems,9 definitions,1 structure), plus9 structure fields and its constructor. All43 theorem proofs,9 definitions, structure and all7 private helper proofs were reviewed. Fifteen independent Lean checks passed in34.2420608 seconds; exact/numerical diagnostics passed. No sorry/admit/new axiom, trust/toolchain/recursion/heartbeat change or error suppression was introduced.
 
 Source-integrity verification authenticated1679's manifest against its exact approval receipt, then checked2753 Foundation/root Lean files: exactly the two new modules, root imports and AxiomAudit changed. All3 pinned configurations,113 baseline manuscripts and21 Yang-Mills originals are unchanged. Evidence is under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1680-* (full build/audit/unabridged types, independent Lean and numerical/exact checks, declaration list and source-integrity manifest/script). Git exact approval and guarded PUBLIC main/research remote synchronization remain separate closure receipts; this pre-commit ledger does not report a queued sync as successful.
+
+
+## Checkpoint1681 — homogeneous spatial weighting breaks the transplanted trial's centering (October28,2026)
+
+### Why this extension test precedes more eigenfunction infrastructure
+
+Checkpoint1680 reduced the one-weight stationary comparison to an explicit uniformly positive bounded eigenfunction input. That nonzero-tilt existence construction remains OPEN; no off-the-shelf positive-kernel existence theorem was found in the inspected verified dependencies, and no external result was added as an axiom. Before building substantial general infrastructure, this checkpoint tests the user's required bridge toward actual lattice spatial weighting. The old centering depends on a private-link flip that preserves X only because Y is absent from the spatial weight. Including both neighboring spatial plaquettes gives a concrete obstruction to that automatic extension.
+
+`Foundation/SU2HomogeneousPlaquetteObstruction.lean` defines
+
+    V=(X+Y)/2, H_t=exp(t V), T_hom(beta,t)=H_t K_beta H_t.
+
+The actual Boltzmann density is exp(t(X+Y)); the normalized potential V is bounded by1 and its tilt parameter is2t. Both plaquettes are weighted equally in space. The temporal Wilson parameter beta is still independent: this is NOT asserted to be the isotropic four-dimensional theory or the physical beta=t diagonal.
+
+### Exact symmetry failure on actual states and operators
+
+`potential_flip` proves that the old right-path center flip changes V to (X-Y)/2. At the flat state1, V=1, while V(flip1)=0. `weight_not_flip_invariant` therefore proves failure of that symmetry for EVERY nonzero signed spatial tilt. This pointwise spatial-weight obstruction does not depend on a temporal parameter.
+
+At the actual Wilson reset beta=0, `noise_zero` and `kinetic_reset` prove that the SAME continuous SU2 seven-link noise is product Haar and K_0 is Haar averaging. These are actual measure identities, not finite-group diagnostics. `homogeneous_reset` identifies the new transfer exactly with the existing verified rank-one reset machinery. `homogeneous_not_flip_commuting` then gives an actual operator counterexample on the constant probe1: T_hom(0,t)1(flip1) != T_hom(0,t)1(1), for every t!=0. Thus one cannot merely reuse1680's commuting center projection for the new weight.
+
+### Fully realized homogeneous reset vacuum, probability and noncentering
+
+The existing verified reset ground transform supplies the actual ground H_t, normalizer Z=E_haar exp(t(X+Y))>0 and stationary probability
+
+    pi_t(ds)=exp(t(X+Y))/Z haar(ds).
+
+`ground_transform` and `ground_transform_kernel` identify the actual ground-normalized transfer with the genuine constant Markov kernel P_t(s,dr)=pi_t(dr). Probability and Markov status are proved; vacuum existence is NOT a hypothesis for this reset counterexample.
+
+`rightMean_derivative` proves that the actual stationary mean of Y has derivative1/4 at zero, with value0 there. Hence `positive_rightMean_near_zero` supplies arbitrarily small positive spatial tilts with nonzero mean. The factor2 in the normalized-potential parameter is explicitly checked.
+
+More decisively, take the ACTUAL old one-weight variational family
+
+    f_t=exp(-tX/2)[Y+t(A M+B Q)].
+
+`oldTrialOverlap_formula` proves its exact pairing with the NEW homogeneous vacuum as the sum of genuine Haar weighted integrals:
+
+    O_AB(t)=E_haar[f_t H_t]
+      = weighted(Y,Y,t/2)+t A weighted(Y,M,t/2)+t B weighted(Y,Q,t/2).
+
+Every integral has a verified bounded measurable L1 domain. Existing actual Haar moments give O_AB(0)=0 and, for EVERY FIXED real correction pair A,B,
+
+    O_AB'(0)=1/8.
+
+Thus `oldTrial_not_centered_near_zero` proves positive vacuum overlap at arbitrarily small positive t. `oldObservable=f_t/H_t` is measurably bounded by exp(3|t|/2) times the original finite coefficient bound, and `oldObservable_memLp` proves its ACTUAL L2(pi_t) domain. `oldObservable_mean` proves E_pi[oldObservable]=O_AB(t)/Z. `positive_oldObservable_mean_near_zero` is therefore a genuine stationary noncentering counterexample, not a default-zero integral or a failure only at symbolic coefficients. The two old correction channels with fixed real coefficients do not remove this first-order contamination. No statement about arbitrary singular t-dependent correction coefficients is claimed.
+
+### Apparent lag versus genuine centered correlation
+
+`reset_lag` proves E_pi[f P_t f]=(E_pi f)^2. For the transplanted old trial, this is positive at the just-proved small tilts. Nevertheless `centered_reset_lag_zero` proves ZERO one-step lag for EVERY correctly centered integrable observable in the SAME actual stationary model. The independent Lean harness supplies the old trial's L1 domain and explicitly derives both its positive uncentered lag and zero centered lag.
+
+This is a sharp false-positive test for transporting an uncentered Rayleigh signal into a spectral claim. It does not contradict1679/1680: their spatial weight includes X alone, and their strict comparison explicitly excludes c=0. It does not prove failure of all homogeneous-sector variational tests, failure at large temporal beta, a physical gap, or a no-gap theorem. The reset example is anisotropic when t!=0. The one-weight nonzero-temporal-coupling vacuum input and the full homogeneous/isotropic4D bridge remain separate OPEN obligations.
+
+### Independent challenges and possible replacement route
+
+Fourteen independent Lean checks passed: flat-state potential values, both tilt signs, actual continuous-Haar reset, actual transfer noncommutation, correctly normalized1/4 response, correction-independent1/8 overlap derivative, actual positive means in every positive tolerance, L2 and L1 domains, true probability rows, exact ground-kernel integration, zero centered old-trial lag and a positive uncentered old-trial lag.
+
+Independent actual-Haar angular diagnostics checked36 combinations of signed t and signed A,B at EACH of96 and192 radial nodes, with the relative imaginary-axis angle integrated separately. They agreed on noncentering, the exact overlap/mean relation, positive uncentered lag and vanishing centered reset lag. Eighty-digit181-term one-word Haar series checked three shrinking tilt scales, with old mean/t tending numerically to1/8 and right mean/t to1/4. None of these quadratures/series is a certified truncation interval or a Lean input.
+
+A candidate replacement is the plaquette-exchange antisymmetric observable Y-X, whose symmetry is compatible with equal spatial weights. An independent second-coefficient TEST for the trial Delta+t A(Y^2-X^2) gives the candidate optimized expression
+
+    G_exchange=a^2/[8(a-r)]-a/16-a(1+a)/[8(1-a)],
+    a=c^4, r=d^4, A=a/(a-r).
+
+Twelve exact Fraction tests under0<a<1 and0<=r<=a^2 gave NEGATIVE values. Actual Wilson coefficient diagnostics at beta=1,4,16 also gave negative candidate values, approximately-0.0002105,-0.02069,-0.3078. The r<=a^2 inequality, the proposed second-coefficient reduction and its actual stationary interpretation have NOT been verified in Lean; this is a challenged candidate, not a theorem or proof that all exchange-sector reconstructions fail. Preserve it as a warning against assuming the old inflation mechanism survives a natural symmetry repair. The Haar diagnostic also suggests a stronger all-A,B exact overlap reduction to a one-word moment; only the stated weighted formula and derivative are formally established here.
+
+### Manuscript connection, next bottleneck and campaign scope
+
+The original `ResearchSources/Incoming/block_contraction_spectral_gaps.tex`, SHA256 `0C40FA6B92B830C0E2309BD6471D55CB0EB9BFB94296B9267AD23A5280FA4C60`, was selectively reread at lines606-638. Its Wilson-action application, plaquette-incidence, corridor convexity and reflection-positivity claims are not discharged by this seven-link calculation. Equal spatial weighting reveals a missing centering/symmetry bridge; the actual isotropic4D operator, physical-sector projection, scale/volume-uniform estimates, physical-distance conversion and continuum/infinite-volume limits remain OPEN. Original manuscript bytes are unchanged. No novelty is claimed for classical reset/tilt ingredients or general symmetry facts.
+
+NEXT: retain the verified local one-weight comparison and its exact missing eigenfunction input, but test corrected centering and actual spatial interactions before interpreting its slowing as physical spectral evidence. A constructive eigenfunction route or compact positive-kernel route still requires actual realization and bounds; do not simply assume it. Investigate exchange/orthogonal-projection repairs against the above negative candidate tests rather than repeating the invalid center-flip transfer. Coupling-dependent iteration remains a separate question requiring a justified PHYSICAL length scale. Yang-Mills stays ACTIVE, Bakry PAUSED, and all later priorities are unchanged.
+
+### Verification and closure evidence
+
+Full root build passed6934 jobs in27.7348009 seconds. Complete transitive axiom audit passed53594 declarations in39.7700531 seconds, permitting only propext, Classical.choice and Quot.sound. All37 unabridged public types (29 theorem proofs and8 definitions), all8 private helper proofs and the private Haar-left-invariance instance with its local caches were reviewed. Fourteen independent Lean checks passed in26.2708593 seconds; exact/numerical diagnostics passed. No sorry/admit/new axiom, trust/toolchain/heartbeat/recursion change or error suppression was introduced.
+
+Source integrity authenticated1680's manifest against its exact receipt and checked2754 Foundation/root Lean files: exactly the new module, root import and AxiomAudit changed. All3 pinned configurations,113 baseline manuscripts and21 Yang-Mills originals are unchanged. Evidence is under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1681-* (full build/audit/unabridged types, independent Lean checks, arithmetic/Haar diagnostics, declaration list, integrity script/manifest). Exact Git approval and guarded PUBLIC main/research synchronization are separate closure receipts; this pre-commit ledger does not assert remote success before verification.
