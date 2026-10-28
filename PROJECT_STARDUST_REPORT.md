@@ -53413,6 +53413,36 @@ The 6890-job full build and 52276-declaration complete transitive axiom
 audit passed; all three new theorem types/proofs, two independent Lean
 examples and source/config/archive integrity were reviewed. This is
 checkpoint1641's exact conditional continuum-scaling test.
+
+### Focused Yang–Mills direct-reuse checkpoint: retained coordinates and moving cutoff
+
+The next selective source check located existing verified Lean results that
+directly settle two claims in the block-transfer manuscripts. In the literal
+`X'=x` strict-small-field interpretation of
+`ResearchSources/Incoming/YM_MASS_GAP_UNCONDITIONAL.tex`, a normalized
+conditional interior integral is the identity on boundary-only observables
+(`BoundarySmoothingObstruction.retainedKernel_eq`); the same module's
+`fixed_error_floor` and `no_strict_error_budget` prevent this identity from
+fitting a strict heat-reference error budget on a nonconstant derivative
+test. The manuscript's sharp moving-ball cutoff also invalidates its
+fixed-support covariance derivative formula: existing verified zero-potential
+and uniformly convex counterexamples (`MovingBoundaryCovarianceCounterexample`,
+`CoerciveMovingBoundary`) exhibit nonzero boundary flux. The verified
+`GaussianBoundaryFluxBound.strict_subcorridor_bound` repairs only a
+positive-margin subcorridor. All seven relevant public types were
+re-elaborated in a targeted read-only review. No new theorem was needed.
+The exact source passages, limits of these counterexamples, and required
+gauge-covariant transfer construction are recorded in
+`STARDUST_YANG_MILLS_FOCUSED_AUDIT.md`. The original manuscripts remain
+untouched and no Yang–Mills existence or mass gap is asserted.
+The library also already constructs an actual finite-word SU(2) conditional
+heat-bath law. `SU2ConditionalHeatBath.update_idempotent` and
+`boundary_preserved` show that this one-link update fixes the boundary,
+so it cannot itself supply the manuscript's missing boundary-mixing
+transfer. `SU2BoundedObservableGradient` gives a gauge-invariant bounded
+class-function witness with derivative magnitude above one; boundedness
+does not replace a Lipschitz influence proof. These are precise reusable
+results, not a new continuum gauge-theory construction.
 The exact checkpoint commits are `45604da352f9e4cff93e4a41d8b241cb95b8aa3a`
 (1639), `b64805c15e35de483aa83d90bd7110f254934701` (1640), and
 `9ea31633ff2662bac54a4425f0e9618bcb80bf5a` (1641). Each passed
