@@ -53502,3 +53502,9 @@ observable. It does not address a gauge-compatible block transition or a
 continuum Yang--Mills physical mass gap. The exact manuscript comparison,
 source and unresolved block/continuum obligations are in
 `STARDUST_YANG_MILLS_FOCUSED_AUDIT.md`. ResearchSources bytes remain intact.
+### Focused Yang–Mills checkpoint 1646: open-link gauge correction
+
+The recent one-word SU(2) transfer calculations were re-audited against the **full independent endpoint gauge action**. `Foundation/SU2OpenLinkGaugeObstruction.lean` proves that every real observable `f(A)` satisfying `f(gAh⁻¹)=f(A)` for all endpoint gauges is constant. It verifies `halfTrace(I)=1` and `halfTrace(-I)=-1`, so the half-trace used in the 1644–1645 response and large-coupling tests is conjugation-invariant but **not** gauge-invariant as an observable of one open link. Those earlier Lean theorems remain correct for their finite Markov kernel; the phrase “gauge-invariant class observable” in their report entries is superseded by this correction and cannot support a physical mass-gap inference.
+
+The same module proves a positive contrast: `halfTrace(AB)` for an oriented closed two-edge cycle is invariant under `(A,B) ↦ (gAh⁻¹,hBg⁻¹)` and is nonconstant. This exact algebraic model isolates the missing physical object: a gauge-covariant transfer on closed-loop/quotient data, with influence and correlation estimates uniform at physical scale. It neither constructs a four-dimensional lattice gauge theory nor verifies a continuum gap. Original manuscripts remain unchanged.
+The same verified correction includes a probability-law consequence: every fully endpoint-invariant one-link observable has the same expectation under every section of the actual one-word transition, at every coupling. This makes the closed-loop requirement exact rather than merely terminological.

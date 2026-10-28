@@ -2639,3 +2639,4 @@ import Foundation.SU2OneWordTransfer
 import Foundation.SU2OneWordBoundaryInfluence
 
 import Foundation.SU2OneWordLargeCoupling
+import Foundation.SU2OpenLinkGaugeObstruction
