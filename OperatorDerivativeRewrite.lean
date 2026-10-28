@@ -2670,3 +2670,5 @@ import Foundation.YMRowNormalizationObstruction
 import Foundation.SU2SignBottleneck
 
 import Foundation.SU2WilsonSignCrossing
+
+import Foundation.SU2WilsonConvolution
