@@ -10212,3 +10212,7 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 
 -- Checkpoint1649: exact two-step closed-loop rectangle factorization.
 #print axioms OperatorDerivativeRewrite.Foundation.SU2TwoLoopChain.two_loop_rectangle
+
+-- Checkpoint1650: actual two-step joint path law and closed-product independence.
+#print axioms OperatorDerivativeRewrite.Foundation.SU2TwoLoopJointLaw.two_step_probability
+#print axioms OperatorDerivativeRewrite.Foundation.SU2TwoLoopJointLaw.two_loop_joint_law

@@ -2643,3 +2643,4 @@ import Foundation.SU2OpenLinkGaugeObstruction
 import Foundation.SU2ClosedLoopTransfer
 import Foundation.SU2GaugeCovariantTransfer
 import Foundation.SU2TwoLoopChain
+import Foundation.SU2TwoLoopJointLaw
