@@ -2659,3 +2659,4 @@ import Foundation.YMBlockRateDegeneration
 import Foundation.YMBlockErrorBudget
 import Foundation.SU2EventMixing
 import Foundation.SU2LagEventCorrelation
+import Foundation.SU2StrongCouplingCovariance
