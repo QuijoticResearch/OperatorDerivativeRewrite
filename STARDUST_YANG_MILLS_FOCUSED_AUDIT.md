@@ -1451,3 +1451,48 @@ Sixteen final independent Lean examples passed with exit0 in26.0483775 seconds. 
 Independent exact Fraction tests checked100 centered rational functions (seed1686), synthesis, Parseval, the sharp winding witness, omitted-sector and uncentered counterexamples, and the39/64 stationary upper bound. These external computations are not Lean inputs. Source integrity authenticates1685's manifest against its exact approval receipt and checks2765 Foundation/root files: exactly these two new modules, root import and AxiomAudit changed. All3 pinned configurations,113 baseline manuscripts and21 Yang--Mills originals (20 distinct hashes) are unchanged. ResearchSources remains untouched and unstaged. Evidence is under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1686-*.
 
 Yang--Mills remains ACTIVE, Bakry PAUSED, and the research queue is unchanged. Exact Git approval and guarded two-branch PUBLIC synchronization are separate closure receipts; this pre-commit entry does not claim remote success. The next focused question is the precise plaquette-sector comparison and whether any usable mechanism survives continuous SU2 and scale/volume limits, without expanding a broad gauge library.
+
+
+## Checkpoint 1687 — actual centered elementary-plaquette sum slows
+
+The plaquette-sector lead explicitly left OPEN at1686 is now Lean verified in `Foundation/FiniteWilsonPlaquetteSlowing.lean`. The observable is prescribed microscopically: the sum of the four elementary plaquette signs on the same2x2 periodic spatial Z2 torus, not a selected eigenvector or winding variable. `score_microscopic` identifies it with the preserved original link-field plaquette expression for EVERY one of the256 fields; `score_gauge` proves vertex-gauge invariance. It is a sum over this entire small torus, not a single plaquette or a volume-uniform local-sector theorem.
+
+In the bare kinetic stationary law the sum S has mean0, second moment4, lag1/4 and exact kinetic eigenvalue1/16. In the ACTUAL spatially weighted stationary law constructed at1685, put G=S-mean(S). `centered_mean`, `centered_score_variance_pos` and `centered_score_slowing` prove
+
+    mean(G)=0,  variance(G)>0,  lag(G)>(1/16)*variance(G).
+
+`plaquette_covariance_increases` therefore proves that the normalized centered lag strictly increases from its bare1/16 value. This closes the proposed escape that1686's deterioration was demonstrated only with a winding observable. It does NOT establish deterioration for every local observable or establish that this sum controls the global spectral gap. In particular it is not a new bound exceeding the1/4 maximal nonconstant bare eigenvalue, and does not strengthen1686's global39/64 gap upper bound merely by being plaquette-derived.
+
+### Exact proof and domains
+
+The centering identities are proved for EVERY real function on the actual32-state stationary law, using exact transition row sums and stationarity:
+
+    secondMoment(centered f)=secondMoment(f)-mean(f)^2,
+    lagPairing(centered f)=lagPairing(f)-mean(f)^2.
+
+There is no row-normalized surrogate or assumed vacuum existence. Reuse the positive constructed eigenvalue lambda, four-orbit ground vector v and Z=sum_b multiplicity(b)*v(b)^2. Put C=(3177/2048)*v0^2-2*(225/2048)*v0*v3+(353/18432)*v3^2. Exact finite sums and the existing orbit-block theorem identify the actual mean as4*(v0^2-v3^2)/Z, second moment as16*(v0^2+v3^2)/Z, and lag as16*C/(lambda*Z). All denominators are proved strictly positive.
+
+The sign needed after centering is
+
+    E=256*Z*C-16*lambda*Z*(v0^2+v3^2)-240*lambda*(v0^2-v3^2)^2 > 0.
+
+An exact polynomial identity reduces E to P(lambda)*Q(lambda)+(73153125/65536)*R(lambda), where P is the already verified degree4 vacuum polynomial, Q is explicitly checked by ring, and
+
+    R(x)=-3243610334169528005827+1953654217580403423644027*x
+         -101506400370404313095928928*x^2+452893609599424244451318528*x^3.
+
+Lean proves R(x)>0 for ALL x>=2 from x^2>=4 and x^3>=2*x^2. Thus P(lambda)=0 and the existing lambda>=2 suffice. No numerical root selection, new axiom or parameter-family assumption enters. Strict variance follows from positive stationary weights and the two distinct score values4 and-4. The bare eigenrelation is independently certified by exact integer row sums under the unchanged default resource settings.
+
+### Attempts to overgeneralize and remaining mass-gap obstacles
+
+Independent microscopic and matrix tests reproduce mean(S) approximately2.7855373958, centered variance3.5339414460 and centered lag ratio.08900072079, versus bare.0625. The SAME diagnostic test for ONE elementary plaquette gives ratio.05492253728 BELOW bare.0625. Only the sum's strict increase is Lean proved here; the single-plaquette decrease is a numerical diagnostic. The sum's behavior involves cross-plaquette covariance and cannot be promoted to a claim that every individual plaquette slows. No general local-correlation monotonicity is inferred in either direction.
+
+This is fixed homogeneous Z2 coupling beta=log(3)/2, with two spatial dimensions plus transfer time. It proves neither strong-coupling asymptotics, continuous SU2 slowing, spatial3D/physical4D behavior, scale/volume-uniform bounds, positive or vanishing physical mass, nor a continuum existence result. These exact limitations remain material: the torus plaquette product constraint and sum over the whole small torus may matter. The focused next bottleneck is an ACTUAL continuous-SU2/4D stationary bridge or a precise obstruction to one, rather than additional finite-model declaration accumulation. Existing SU2 loop iteration and zero-trace obstructions remain intact. No novelty is asserted without an appropriate literature audit.
+
+### Complete verification
+
+Final full root build passed6946 jobs in44.0239846 seconds. Complete transitive axiom audit passed53983 declarations in39.2534241 seconds, allowing only propext, Classical.choice and Quot.sound. All14 unabridged public types (12 theorem proofs,2 definitions),13 private helper proofs and7 private definitions were reviewed in full. Fifteen independent Lean checks passed cleanly in28.1305337 seconds, covering bare eigen-moments, actual centering/positive variance/positive lag, failure of a15/16 inequality for this observable, strict normalized comparison, microscopic nonvacuity, vertex-gauge invariance and generic centering identities. Intermediate finite-sum elaboration failures were repaired without changing any mathematical hypothesis or raising resource limits.
+
+Independent exact tests checked all256 microscopic plaquette identifications, all32 kinetic eigenrows and33 rational evaluations of the polynomial-division certificate; numerical actual-PMF row/stationarity checks and the contrary single-plaquette diagnostic guard against overgeneralization. External computations are not Lean inputs. Integrity authenticates1686's manifest against its exact approval receipt and checks2766 Foundation/root files: exactly the new source, root import and AxiomAudit changed. All3 configurations,113 baseline originals and21 Yang--Mills originals (20 distinct hashes) are unchanged. A filename substitution mistake in the temporary integrity helper was repaired before its successful final run; no baseline was weakened. Evidence is under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1687-*.
+
+ResearchSources remains read-only and uncommitted. Yang--Mills stays ACTIVE and Bakry PAUSED; no campaign or queue change. Exact Git approval and guarded PUBLIC two-branch synchronization are separate closure receipts, not claimed by this pre-commit ledger.
