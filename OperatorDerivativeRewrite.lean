@@ -2635,3 +2635,5 @@ import Foundation.YMBlockHeatContractionObstruction
 import Foundation.YMContinuumCorrelationScaling
 
 import Foundation.SU2OneWordTransfer
+
+import Foundation.SU2OneWordBoundaryInfluence

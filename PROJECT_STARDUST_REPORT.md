@@ -53479,3 +53479,14 @@ coupling and is positive at arbitrarily small positive couplings. These exact
 Lean results calibrate the finite-dimensional transfer. Boundary-input
 influence, gauge-compatible block composition and continuum control remain
 unresolved, as detailed in `STARDUST_YANG_MILLS_FOCUSED_AUDIT.md`.
+
+Focused Yang--Mills transfer update: `Foundation/SU2OneWordBoundaryInfluence.lean`
+proves that the actual one-word SU(2) conditional law from the central input
+`-I` is the Haar half-trace tilt at parameter `-β`. Its outgoing half-trace
+mean has derivative `-1/4` at zero coupling, opposite the verified `+1/4`
+identity-input derivative. The two outgoing means differ at some β in every
+positive interval `(0,ε)`, establishing genuine input influence for this
+finite-dimensional gauge-invariant class observable. The large-coupling
+oscillation-ratio argument is recorded as unformalized in the focused audit.
+No block/continuum contraction or Yang--Mills mass gap is inferred. Original
+ResearchSources manuscripts remain unchanged.
