@@ -54793,3 +54793,46 @@ Final full root build passed6946 jobs in44.0239846 seconds. Complete transitive 
 Independent exact tests checked all256 microscopic plaquette identifications, all32 kinetic eigenrows and33 rational evaluations of the polynomial-division certificate; numerical actual-PMF row/stationarity checks and the contrary single-plaquette diagnostic guard against overgeneralization. External computations are not Lean inputs. Integrity authenticates1686's manifest against its exact approval receipt and checks2766 Foundation/root files: exactly the new source, root import and AxiomAudit changed. All3 configurations,113 baseline originals and21 Yang--Mills originals (20 distinct hashes) are unchanged. A filename substitution mistake in the temporary integrity helper was repaired before its successful final run; no baseline was weakened. Evidence is under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1687-*.
 
 ResearchSources remains read-only and uncommitted. Yang--Mills stays ACTIVE and Bakry PAUSED; no campaign or queue change. Exact Git approval and guarded PUBLIC two-branch synchronization are separate closure receipts, not claimed by this pre-commit ledger.
+
+
+## Checkpoint 1688 — construct positive finite-product SU2 Wilson eigenfunctions
+
+The focused route moved from finite Z2 tests to a specific continuous-SU2 bottleneck: the existing `SU2SevenLinkGroundTransform.GroundData` contract assumes a uniformly positive bounded measurable eigenfunction. No inhabitant was silently introduced. `Foundation/YMPositivePower.lean` now constructs such eigenfunctions for actual integral kernels, and `Foundation/YMFiniteWilsonVacuum.lean` instantiates the construction against actual finite-product SU2 Haar measure. This is a classical positive-operator construction formalized to serve the missing stationary bridge, not a claimed new existence or mass-gap theorem for four-dimensional quantum Yang--Mills.
+
+### Constructive theorem and convergence
+
+`YMPositivePower.positive_eigenfunction_exists` assumes a probability reference measure on a nonempty measurable space and a jointly measurable real kernel satisfying EVERYWHERE0<m<=k(x,y)<=M. It proves existence of measurable psi and lambda with
+
+    m<=lambda<=M,  m/M<=psi(x)<=M/m,  integral k(x,y)*psi(y) dmu(y)=lambda*psi(x).
+
+Neither an eigenfunction, compactness theorem, external continuum construction nor an eigenvalue equation is an input. Let f0=1, f(n+1)=T f(n) and q(n)=f(n+1)/f(n). Exact positivity, integrability and measurability are verified. `ratio_bridge` identifies q(n+1) as the normalized k-average of q(n) in the genuine probability law proportional to f(n)dmu. That reference law CHANGES with n; it is not asserted to be a stationary vacuum law.
+
+Reusing `YMPositiveKernel.residual_bounds` and `SignedDensityProbabilitySampling`, explicit nested intervals enclose every q(n,x) and have EXACT width `(M-m)*(1-m/M)^n`. Successive normalized powers g(n,x)=f(n,x)/f(n,x0) satisfy the uniform-in-x bound
+
+    |g(n+1,x)-g(n,x)| <= ((M/m)*(M-m)/m)*(1-m/M)^n.
+
+The scalar ratios and each normalized power sequence are Cauchy. The chosen POINTWISE normalized-power limit is measurable and stays between m/M and M/m. Dominated convergence under the bound M*(M/m) proves its actual integral eigen-equation. The source proves a uniform geometric increment estimate and pointwise limit construction; no separate function-space uniform-convergence theorem, uniqueness theorem or top-spectrum characterization is claimed. The degenerate m=M case is included and independently tested. Symmetry and full support of the reference law are unnecessary for THIS existence theorem; psi-squared stationarity for a ground transform requires its separate symmetry/reversibility hypotheses.
+
+### Actual continuous SU2 instantiation and remaining bridge
+
+`YMFiniteWilsonVacuum.haar n` is the actual product of the existing SU2 probability Haar law on n links. For bounded positive measurable spatial amplitude l<=h<=u with l>0, `ground_exists` proves a positive bounded measurable eigenfunction of the actual RAW sandwich
+
+    h(C)*integral exp(beta*sum_i halfTrace(C_i*D_i^-1))*h(D)*psi(D) dHaar(D).
+
+The kernel bounds used are m=l^2*exp(-n*|beta|), M=u^2*exp(n*|beta|), and the psi bounds are explicitly m/M and M/m. Joint measurability and all denominators are proved. `sevenAmplitude t C=exp((t/2)*halfTrace(C1*C2*C3*C0))` is the concrete first-plaquette half-weight in seven indexed physical-link coordinates; `seven_raw_ground_exists` constructs an eigenfunction for EVERY real beta and t, including nonzero tilt, with no supplied eigenfunction.
+
+Precisely OPEN: the measure-preserving indexed/tuple coordinate identification and Wilson partition normalization needed to transport this RAW product-Haar theorem into the existing normalized seven-link `GroundData`; gauge-sector/invariance identification for the constructed eigenfunction; any needed top-spectrum assertion; actual spatial3D/physical4D transfer realization, volume-uniform estimates, physically justified spacing and continuum/infinite-volume limits. The source's seven-link first-plaquette tilt is the local comparison model, not a complete homogeneous four-dimensional action. Existing conditional seven-link stationary obstruction theorems remain conditional UNTIL the exact bridge is supplied. Do not equate raw and row-normalized operators or declare those hypotheses discharged yet.
+
+The crude contraction fraction m/M=(l/u)^2*exp(-2*n*|beta|) deteriorates with link count/coupling, consistent with the already verified no-volume-uniform cross-ratio obstruction. This method constructs finite-volume objects but alone supplies no positive physical mass gap, gap closing, strong-coupling asymptotic conclusion or continuum existence. The next concrete task is that normalization/coordinate transport, then reuse of the actual stationary/parity/covariance declarations; no broad gauge library is started.
+
+### Independent tests and full verification
+
+Final full root build passed6948 jobs in27.33364 seconds. Complete transitive axiom audit passed54043 declarations in43.5193691 seconds, allowing only propext, Classical.choice and Quot.sound. All29 unabridged public types (20 theorem proofs,8 definitions and1 instance),17 private helper proofs and1 private topology instance were reviewed in full. No sorry/admit/new axiom, native-decide trust input, heartbeat/resource/recursion/compiler/toolchain/configuration change or suppressed error was introduced.
+
+Nine final independent Lean checks passed in38.0423843 seconds: constant-kernel powers/ratios/normalized powers, zero-width enclosure and constructive limit, actual Haar probability for zero/seven links, the zero-link amplitude2 RAW eigenvalue4 (rather than1), concrete nonzero seven-link parameters, and a nonsymmetric kernel with a reference law supported on one point. Initial harness failures were repaired by explicit measure unfolding, function-equality parentheses and numeric simplification; mathematical sources were unchanged after the final complete build/audit.
+
+Independent Fraction tests verified30 iterations for each of three kernels: a constant kernel, a nonsymmetric2x2 kernel and the earlier four-orbit Wilson block. They check exact nested enclosure widths, ratio bounds, positivity and normalized increment estimates, including m=M. A seeded48-point SU2 quadrature checks the raw exponential/half-weight formulas and a finite matrix ground transform only as diagnostics, not as a Haar-law proof. Its initial anchor normalization amplified an absolute eigen-residual to2.56e-10; inspecting relative residual8.61e-16 identified scaling. Keeping the eigensolver's unit-norm vector retained the original absolute threshold AND added a relative check; the final residuals were1.83e-13 absolute and8.82e-16 relative. No Lean theorem or exact test was weakened. A symmetric2x2 countercheck confirms naive row normalization and the actual positive-eigenfunction ground transform have different stationary laws.
+
+Integrity authenticates1687's manifest against its exact approval receipt and checks2768 Foundation/root sources: exactly the two new modules, root import and AxiomAudit changed. All3 pinned configurations,113 baseline manuscripts and21 Yang--Mills originals (20 distinct hashes) are unchanged. Evidence is under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1688-* (full build, complete transitive/type audit, independent Lean/exact/numerical tests, declaration counts and authenticated source manifest). ResearchSources remains untouched and uncommitted.
+
+Yang--Mills remains ACTIVE; Bakry stays PAUSED and the queue is unchanged. Exact Git approval and guarded PUBLIC main/research verification are separate closure receipts, not claimed by this pre-commit ledger. This checkpoint completes the stated positive-kernel/raw-SU2 existence result, not the remaining normalized stationary bridge or the Yang--Mills campaign.
