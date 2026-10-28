@@ -2723,3 +2723,5 @@ import Foundation.SU2SevenLinkMixing
 import Foundation.SU2SevenLinkGaugeAverage
 
 import Foundation.SU2JointPlaquetteCubic
+
+import Foundation.FourCubeWilsonCubic

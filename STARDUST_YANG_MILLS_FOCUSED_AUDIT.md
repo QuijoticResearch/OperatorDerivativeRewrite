@@ -1795,3 +1795,55 @@ Exact Fraction tests check36 noncommuting rational unit-quaternion products and 
 Integrity authenticates1693's manifest against exact approval14eb3f1a44f4c81eb4d9931e9ee6fd1f78a47329 and covers2777 Foundation/root files. Exactly the new joint-plaquette module, root import and AxiomAudit differ. All earlier mathematical sources,3 pinned configurations,113 baseline manuscripts and21 Yang--Mills originals (20 distinct hashes) remain unchanged. Evidence: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1694-* (FINAL full build, complete transitive/unabridged type audit, independent Lean/exact diagnostics, declaration inventory and authenticated manifest). ResearchSources stays unmodified/uncommitted; unrelated untracked drafts are preserved.
 
 Yang--Mills remains ACTIVE; Bakry PAUSED and all other queue priorities unchanged. Exact-commit approval and guarded PUBLIC two-branch synchronization remain separate closure requirements; this pre-commit record does not claim remote success.
+
+
+## Checkpoint 1695 — cubic survives actual four-dimensional tree fixing and the full retained action
+
+The principal geometric limitation of1694 is partially discharged by a concrete FOUR-DIMENSIONAL finite-cell calculation. The work reuses the exact `OneSidedBlockIncidence` and `OneSidedCapComplex` geometry already in the library, rather than introducing another cube or a broad gauge-theory infrastructure. The original manuscripts and all previous mathematical sources remain unchanged.
+
+### Actual incidence and a genuine spanning tree
+
+`Foundation/FourCubeChordIncidence.lean` uses the existing vertices Fin4->Fin2,32 retained oriented edges and24 internal square faces. It proves each face has four distinct valid edges and each retained edge belongs to three internal faces. `three_chords` gives the exact counting theorem: for ANY subset T of15 retained edges, some face contains at least3 complementary edges. Removing15 edges leaves17; their face incidences total51, exceeding24*2=48. The theorem assumes only T's inclusion/cardinality, not an unproved tree or a numerical rank certificate. It does not by itself construct a nonlinear witness for every possible tree.
+
+The explicit axialTree retains an edge in direction i when all later base coordinates vanish. Its15-edge count, unique incoming edge at each nonroot vertex, parent relation and four-step parent-to-origin certificate are kernel checked. `Foundation/FourCubeAxialTree.lean` constructs the actual SimpleGraph on these16 vertices, proves connectedness and15 graph edges, proves `graph.IsTree` by the established finite-tree criterion, and proves exact equivalence between graph adjacency and the retained axialTree edge list. Thus the tree-gauge statement is not inferred from cardinality alone.
+
+### Genuine non-tree SU2 field and all24 internal plaquettes
+
+`Foundation/FourCubeWilsonCubic.lean` assigns the actual1694 exponential axes to three non-tree links of the face at base(0,0,0,1), directions0,1. Specifically edgeA carries exp(xI), edgeB carries exp(yJ), and edgeC carries exp(zK)^(-1), compensating the face's inverse orientation. All other retained links are identity. `field_tree_certificate` combines the actual graph-theoretic tree proof with identity on EVERY tree edge for EVERY real x,y,z. No gauge zero-mode elimination or supplied vacuum is assumed.
+
+`faceAction` is the genuine oriented Wilson expression1-halfTrace(U0*U1*U2^(-1)*U3^(-1)). `innerAction` sums ALL24 existing internal faces. Exact face classification proves the multiplicities(1,2,2,2,17): one selected three-link face, two other faces for each selected edge, and17 identity faces. With A the1694 three-link action and c_x=1-cos(x), etc., `innerAction_formula` proves
+
+    S_inner(x,y,z)=A(x,y,z)+2*(c_x+c_y+c_z).
+
+The cubic is therefore not an artifact of discarding neighboring plaquettes. `inner_odd_part` gives S_inner(t,t,t)-S_inner(-t,-t,-t)=2*sin(t)^3. `inner_mixed_hessian` gives D_y D_x S_inner(0,0,z)=sin(z), `inner_mixed_third` gives third derivative1 at the identity, and `inner_thermal_counterexample` transfers1694's arbitrarily large beta=s^2,z=1/s violations of a fixed quadratic-plus-constant mixed-entry budget. The extra single-axis terms have zero x,y mixed derivative.
+
+`gaugeField` uses actual16-vertex SU2 transformations at each edge's source/target. `faceAction_gauge` and `innerAction_gauge` prove invariance under EVERY such transformation, by exact reuse of `SU2WilsonConvolution.loop4_gauge` and the existing cube corner identity. This is an actual nonabelian Wilson field, not Z2 center data or a gauge-variant trace proxy.
+
+### Boundary-frozen72-term model and precise variable roles
+
+The existing one-sided geometry also contains48 upper/ribbon faces. When all exterior ribbon links are fixed to identity, their Wilson products reduce to the single retained-link factors. `upperAction` formalizes that literal collapsed expression. Exact small fiber counts prove multiplicities(1,2,2,43), hence
+
+    S_upper=c_x+2*c_y+2*c_z,
+    S_boundary-fixed=A+3*c_x+4*c_y+4*c_z.
+
+`boundary_fixed_odd_part` proves the SAME2*sin(t)^3 odd part after adding ALL48 frozen-boundary ribbon contributions. The count is48, not a replacement or omission of the companion's boundary geometry. `boundaryFixedAction` is precisely the collapsed expression; this source does not introduce or claim verification of a complete112-link variable-boundary nonabelian calculus. The boundary-frozen expression is not asserted invariant under arbitrary transformations that would also change the frozen exterior links.
+
+The variable split must not be lost: x,y,z in this witness vary RETAINED INTERIOR links. The surviving mixed term therefore lies in an interior-interior Hessian block in the companion's notation. It does NOT automatically refute a claim restricted to boundary-boundary or boundary-interior entries K_xx,K_xy. A separate actual ribbon calculation varying the cap/crossing/boundary links is still needed to test those entries. Nor does this computation identify every alternative tree/background/holonomy-coordinate chart. The existence of one genuine tree-fixed counterexample disproves a blanket assertion that tree fixing makes all joint link dependence even; it is not a proof that no carefully specified coordinate repair exists.
+
+### Source comparison and next mathematical bottleneck
+
+Selective source checks: `ResearchSources/Incoming/block_contraction_spectral_gaps.tex`, SHA256 0C40FA6B92B830C0E2309BD6471D55CB0EB9BFB94296B9267AD23A5280FA4C60, at its Wilson application still invokes evenness/no cubic to infer K_xx,K_xy=O(beta*delta^2)+O(1). `ResearchSources/Incoming/su2_companion.tex`, SHA256 06D3B4183167B43129D715B76D6040E3EE5E4D2E8A58F580318B5311C3011839, explicitly defines16 vertices,32 interior links,80 boundary links and72 touching plaquettes. It also EXPLICITLY RETAINS a cubic vertex and claims its FIRST centered-Gaussian integral vanishes by parity. These are different mathematical assertions. The present pointwise cubic does NOT refute centered-Gaussian odd-polynomial cancellation, establish or refute the claimed O(g^4) cluster remainder, or justify removing cutoffs/conditioning/renormalization errors. No novelty is claimed for the underlying classical BCH mechanism or finite-tree counting.
+
+The1694 positive Schur repair remains valid and important: a linear mixed term can produce a quadratic Schur loss after elimination. The remaining bottleneck is to locate actual cubic terms in the prescribed boundary/interior blocks, prove the corrected norms and cutoff/flux estimates, and then test their inverse-coupling contraction budget and physical-scale/volume behavior. This finite4D cell establishes no continuum or infinite-volume measure, transfer-operator gap, physical mass gap or failure of Yang--Mills existence. Do not extrapolate the local cubic or finite positivity to any such conclusion.
+
+### Complete verification and independent checks
+
+The full root build passed6997 jobs in30.8204539 seconds. The complete transitive axiom audit passed54325 declarations in41.9643245 seconds, accepting only propext, Classical.choice and Quot.sound. All51 unabridged public types were reviewed:29 theorem proofs,21 definitions and1 decidable instance; all8 private helper proofs were reviewed. Exact finite certificates use ordinary kernel-checked decide, not native_decide or unverified external combinatorics. Several initial oversized finite evaluations reached default recursion limits; small case splits, fiber counts and the Nat-specific scalar-action identity repaired them without increasing recursion/heartbeat limits. No sorry/admit/new axiom, trust/compiler/toolchain/resource change or suppressed gate was introduced.
+
+Eleven independent Lean checks passed in27.3699722 seconds, covering graph-theoretic treehood, exact tree cardinality, the generic three-chord consequence, nonvacuous tree-fixed field, full24/72-term formulas, exact odd difference1/4 at pi/6 with frozen ribbons, full internal mixed third derivative1, thermal witnesses beyond s=100, arbitrary vertex-gauge invariance and exact graph/edge-list identification. No source repair was needed for this final independent harness.
+
+Exact Fraction/quaternion tests independently check27 signed parameter triples, all retained field values on the tree, all24 internal products, all48 ribbon contributions and648 noncommuting face-gauge identities. They independently certify connectivity of all16 vertices, incidence totals51 versus capacity48 and the actual multiplicities(2,2,2) and(1,2,2). These checks are diagnostics, not Lean inputs or a substitute for the full-cell proof.
+
+Integrity authenticates1694's manifest against exact approvalf432ae8fecec0dfca97fc4d191a6d6d91a9e98cb and covers2780 Foundation/root files. Exactly the three new focused modules, root import and AxiomAudit differ; all older mathematical sources,3 pinned configurations,113 baseline manuscripts and21 Yang--Mills originals (20 distinct hashes) are unchanged. Evidence: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1695-* (full build, complete transitive/unabridged type audit, independent Lean/exact checks, declaration inventory and authenticated source manifest). ResearchSources remains unmodified/uncommitted and unrelated untracked drafts are preserved.
+
+Yang--Mills remains ACTIVE; Bakry PAUSED and all other priorities unchanged. Exact-commit approval and guarded PUBLIC two-branch synchronization remain separate closure gates; this pre-commit entry does not claim remote success.
