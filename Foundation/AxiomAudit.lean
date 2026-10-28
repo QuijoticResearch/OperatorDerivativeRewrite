@@ -10203,3 +10203,9 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.SU2ClosedLoopTransfer.closedLoop_mean
 #print axioms OperatorDerivativeRewrite.Foundation.SU2ClosedLoopTransfer.closedLoop_mean_hasDerivAt_zero
 #print axioms OperatorDerivativeRewrite.Foundation.SU2ClosedLoopTransfer.closedLoop_mean_tendsto_one
+
+-- Checkpoint1648: actual one-word SU2 conditional kernel endpoint-gauge covariance.
+#print axioms OperatorDerivativeRewrite.Foundation.SU2GaugeCovariantTransfer.transition_eq_map_tilt
+#print axioms OperatorDerivativeRewrite.Foundation.SU2GaugeCovariantTransfer.haar_conjugation_map
+#print axioms OperatorDerivativeRewrite.Foundation.SU2GaugeCovariantTransfer.tilt_conjugation_map
+#print axioms OperatorDerivativeRewrite.Foundation.SU2GaugeCovariantTransfer.transition_gauge_covariant
