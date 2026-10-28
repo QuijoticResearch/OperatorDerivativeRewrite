@@ -1356,3 +1356,73 @@ Full root build passed6938 jobs in41.1388823 seconds. Complete transitive axiom 
 Integrity authenticated1683's source manifest against its exact approval receipt and checked2758 Foundation/root Lean files: exactly the new module, root import and AxiomAudit changed. All3 pinned configuration files,113 baseline manuscripts and21 Yang--Mills originals are unchanged. Evidence is under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1684-* (full build, complete audit/unabridged types, independent Lean and quadrature checks, declaration list and authenticated integrity script/manifest). The Doeblin/range ingredients are classical; no literature novelty claim is asserted for them or for this finite-model application.
 
 Yang--Mills remains ACTIVE and Bakry PAUSED; the queue is unchanged. The positive loop estimate and the Wilson mismatch narrow the useful next question to a genuine physical transfer/scale bridge or its obstruction. Merely shrinking a band or choosing a convenient spacing does not answer that question. Exact Git approval and guarded PUBLIC main/research synchronization remain separate closure receipts; this pre-commit record does not claim remote success.
+
+
+## Checkpoint1685 — constructed homogeneous periodic Wilson ground state and a centered gauge-invariant covariance counterexample (October28,2026)
+
+### Discovery question and change of mechanism
+
+The active bottleneck is spatial weighting AFTER actual gauge projection and ground normalization. The earlier finite counterexample1675 used an anisotropic open shared-plaquette graph; the homogeneous seven-link exchange test1682 did not produce its hoped-for upward ratio. The audit also confirmed that the volume-diverging cross-ratio witness in `YMPositiveKernel` is explicitly UNPROJECTED, while verified tree reduction can remove gauge modes entirely. None of those facts establishes the actual spatially weighted physical gap. Repeating the trace-product loop analysis would not answer this question.
+
+A new independent test used a nondegenerate spatial2-by-2 periodic Z2 lattice, with ALL temporal and spatial Wilson couplings equal. It found normalized centered spectral ratios about.04371,.44872,.94802 at link means.2,.5,.8, compared with the corresponding bare diagnostic ratios.04,.25,.64. These numerical results motivated an exact construction at beta=(log3)/2, NOT an assumed eigenfunction or a claimed SU2/4D result. Sympy was unavailable; the subsequent characteristic polynomial and adjugate were derived by exact Fraction arithmetic, then proved algebraically in Lean. Floating eigenvectors are never proof inputs.
+
+The resulting verified modules are `FiniteWilsonTorusGround`, `FiniteWilsonTorusKernel`, `FiniteWilsonTorusNoise`, `FiniteWilsonTorusStationary` and `FiniteWilsonTorusProbe`. They serve this one finite homogeneous comparison test. They do not construct a general gauge-theory library or import provisional Yang--Mills existence as an axiom.
+
+### Exact microscopic provenance and gauge sector
+
+Vertices are(x,y) in{0,1}^2; the eight oriented positive-direction edges are ordered(x,y,d), d=0,1, with periodic endpoints. The four elementary plaquette bit masks are39,141,114,216, and the two winding masks are17 and10. Three independent plaquettes plus the two windings give32 labels for256 link configurations. Four local vertex flip masks are27,78,177,228; the fourth is the xor of the first three, and the global common Z2 gauge element acts trivially. These incidence/cubical interpretations were independently checked on the explicit graph; Lean's exact objects are the displayed bit masks and finite functions, not a general cubical-complex formalization.
+
+Every temporal link has same/flip probabilities3/4,1/4. `microscopic_count_certificate`, `microscopic_total` and `index_bijective` verify every quotient count, normalization65536=4^8, and complete16-by-16 enumeration. All links use the SAME beta, with `temporal_odds` proving exp(2 beta)=3. `amplitude_wilson_form` proves the literal homogeneous spatial half weight
+
+    h(label(u)) = exp((beta/2) * sum_of_the_four_elementary_plaquette_signs(u)).
+
+Thus h is3,1 or1/3 depending on the plaquette orbit. There is no separately tuned spatial field or anisotropic link coupling. The fourth plaquette is retained in the score even though only three are independent labels.
+
+`label_gauge`, `canonical_label`, `canonical_gauge` and `invariant_factorization` prove invariance, actual representatives and factorization of EVERY invariant microscopic observable through the labels. `gauge_projected_kernel` verifies ALL1024 entries of the kinetic matrix against the sum of the eight effective target-gauge microscopic relative-link weights. This is an explicit gauge-projected periodic model, not an unexplained32-by-32 matrix or an open-link probe called physical. The kinetic matrix is strictly positive, symmetric and stochastic; its uniform stationary PMF and stationarity as a bind identity are proved.
+
+### A positive eigenstate is constructed, not postulated
+
+The actual transfer is T_ij=h_i K_ij h_j. Its exact aggregation on four plaquette orbit classes has multiplicities1,4,2,1 (each also has four winding labels). An integer polynomial is
+
+    P(x)=589824 x^4-1388800 x^3+284192 x^2-5425 x+9.
+
+Lean proves P(2)<0 and P(9/4)>0 and uses the intermediate value theorem to choose a root lambda in[2,9/4]. No root oracle or analytic spectral-branch assumption is used. A scaled adjugate column is proved strictly positive throughout x>=2; its four polynomial eigen-equations are verified before substituting the root. `orbit_sum` verifies the aggregation for EVERY function on the four orbits and EVERY32-state row, lifting that vector to a strictly positive eigenfunction of the full transfer.
+
+The32-state ground transform is exactly
+
+    P_ij = T_ij psi_j/(lambda psi_i),     pi_i=psi_i^2/sum_j psi_j^2.
+
+Its positive entries, row sums, detailed balance, normalized stationary PMF and stationarity as a PMF bind identity are proved. The four-orbit positive chain is also constructed with the correct multiplicity-weighted stationary law. Classical positive-matrix ideas underlie the construction; no novelty is claimed for Perron theory, finite gauge quotients or this method of proving a root exists. Unlike the still-conditional nonzero-coupling continuous SU2 ground contract, this FINITE positive eigenstate has no missing existence input.
+
+### Proved observable-wise deterioration; precise spectral limitation
+
+The probe is+1 at labels0,16, -1 at8,24 and0 elsewhere. It is a winding character restricted to the completely flat plaquette sector. `probe_gauge` proves invariance under every effective vertex gauge. It is NONLOCAL on the periodic spatial lattice; it must not be substituted for a local contractible observable in an infinite-volume mass-gap argument.
+
+Both means vanish EXACTLY, in the kinetic uniform law and the constructed spatially weighted stationary law. The second moment in the latter is strictly positive. Lean proves
+
+    R_bare = 25/256,
+    R_stationary = (225/256)/lambda > 1/4.
+
+The independent Lean harness strengthens the lower bound to R_stationary>=25/64 and checks R_stationary<1/2. `homogeneous_probe_increases` therefore refutes the proposed UNIVERSAL OBSERVABLE-WISE improvement under homogeneous Wilson spatial multiplication, with actual centering and vacuum normalization. No row-normalized spatial surrogate is used.
+
+This checkpoint DOES NOT YET declare a Lean-verified comparison of the COMPLETE centered spectra. An independent EXACT rational Walsh certificate verifies all32 kinetic eigen-relations, the complete orthogonal character basis, and maximal nonconstant kinetic eigenvalue1/4. That finite certificate supplies an independent mathematical route to a global kinetic gap comparison; the corresponding ALL-CENTERED-FUNCTION Lean inequality remains OPEN. The same computation gives centered fourth trace68551681/4294967296 < (3/8)^4, a possible alternative finite proof route. Neither independent certificate is represented as an already proved Lean declaration. Complete that obligation before declaring the homogeneous full spectral-gap counterexample formally closed.
+
+Likewise, the flat-sector probe is NOT an eigenvector. The independent Lean harness proves its average at label2 is positive although the probe itself vanishes there. Its ratio is a genuine variational witness, not a spectral eigenvalue. Floating diagnostics give lambda approximately2.1304660537, this probe's ratio.4125417762 and full centered ratio.4487202863; only the exact formulas and bounds above are Lean theorems.
+
+### Relation to the active Yang--Mills route and manuscript
+
+The source `ResearchSources/Incoming/block_contraction_spectral_gaps.tex`, SHA2560C40FA6B92B830C0E2309BD6471D55CB0EB9BFB94296B9267AD23A5280FA4C60, was selectively reread at the block-to-influence and reflection-positive spectral bridge. The older L2-to-Lipschitz and physical-distance issues are already recorded; no duplicate proof was started. The new finite test addresses a proposed spatial-comparison route, not every conditional assertion in that manuscript.
+
+The new positive construction and counterexample show that gauge projection and equal coefficients do not automatically make EVERY centered observable decay faster after spatial weighting. A valid route may still exploit continuous SU2 structure, local contractible sectors, explicit overlap geometry, or scale-uniform comparison with the ACTUAL changing vacuum. Those require proofs. This model is finite Z2 gauge theory with TWO spatial dimensions plus transfer time. It is not SU2 Haar theory, a spatial3D/physical4D lattice, an infinite-volume limit, a continuum construction, gap closing or a Millennium mass-gap result. No relationship to such results is assumed.
+
+### Independent checks and complete checkpoint verification
+
+Twenty independent Lean checks passed: nonvacuous positive32-state eigenpair; two exact root endpoint signs; constant invariant factorization; fourth-vertex mask; canonical labels; actual projected kernel; two microscopic counts; temporal odds; literal homogeneous spatial weight; both stationary PMF bind identities; exact means and positive variance; upper/lower ratio bounds; strict observable-wise increase; gauge invariance; positive off-support probe average; and the probe's zero at that same state. Initial harness failures were repaired by specifying a constant function and its positive-denominator expression; mathematical sources were unchanged.
+
+Independent exact Fraction checks verified32 character eigen-relations and all basis orthogonality entries; all256 link fields under all16 vertex gauges, including orbit completeness; all1024 projected kinetic entries; the four-orbit characteristic polynomial/adjugate; and the positive-eigenstate/stationary diagnostics. An initial scratch script had a syntax error and was corrected before the final checks. Numerical scans over several couplings remain diagnostics, not a formal theorem about a parameter family. No novelty claim is asserted without a separate literature audit.
+
+Full root build passed6943 jobs in69.9916288 seconds. Complete transitive axiom audit passed53927 declarations in41.8506919 seconds, permitting only propext, Classical.choice and Quot.sound. All112 unabridged public types (63 theorem proofs,46 definitions and3 abbreviations), all103 private helper proofs and the2 private definitions were reviewed. The many internal row/count certificates are exact finite kernel checks, split to preserve default resources after a combined check hit the existing200000-heartbeat limit; no limit was raised, no native-decide axiom was introduced, and no check was suppressed. Twenty final independent Lean checks passed cleanly in28.3851244 seconds. The final full build supersedes intermediate elaboration failures; no sorry/admit/new axiom, old-theorem/configuration/toolchain/trust/resource/heartbeat/recursion change was introduced.
+
+Integrity authenticated1684's source manifest against its exact approval receipt and checked2763 Foundation/root Lean files: exactly the five new modules, root import and AxiomAudit changed. All3 pinned configurations,113 baseline manuscripts and21 Yang--Mills originals are unchanged. Evidence is under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1685-* (complete build/axiom/unabridged type audit, independent Lean checks, exact/noise/gauge/spectral diagnostics, declaration list, authenticated source manifest). Original ResearchSources bytes remain unstaged and untouched.
+
+Yang--Mills remains ACTIVE; Bakry remains PAUSED and the queue is unchanged. The finite homogeneous full-spectrum closure and the continuous SU2/local/4D bridges are retained as separate open obligations. Exact Git approval and guarded PUBLIC main/research synchronization remain separate closure receipts; this pre-commit ledger does not claim remote success.

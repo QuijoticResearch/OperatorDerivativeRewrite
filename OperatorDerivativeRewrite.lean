@@ -2705,3 +2705,5 @@ import Foundation.SU2HomogeneousEigenvalueFloor
 import Foundation.SU2SlowModeIteration
 
 import Foundation.SU2ZeroTraceBridge
+
+import Foundation.FiniteWilsonTorusProbe
