@@ -178,7 +178,7 @@ private theorem average_affine (f : Ω → ℝ) (hf : Measurable f)
   ring
 
 include hk hm hb in
-private theorem average_reset_range (f : Ω → ℝ) (hf : Measurable f) (L U : ℝ)
+theorem average_reset_range (f : Ω → ℝ) (hf : Measurable f) (L U : ℝ)
     (hfb : ∀ y,L ≤ f y ∧ f y ≤ U) (x : Ω) :
     (1-m/M)*L ≤ YMPositiveKernel.average μ k f x-(m/M)*(∫ y,f y ∂μ) ∧
       YMPositiveKernel.average μ k f x-(m/M)*(∫ y,f y ∂μ) ≤ (1-m/M)*U := by

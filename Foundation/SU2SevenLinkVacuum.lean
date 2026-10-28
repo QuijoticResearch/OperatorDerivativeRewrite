@@ -1,4 +1,4 @@
-import Foundation.YMPositivePower
+import Foundation.YMBoundedHarmonic
 import Foundation.SU2SevenLinkGroundTransform
 import Foundation.SU2HomogeneousPlaquetteObstruction
 import Mathlib.MeasureTheory.Measure.WithDensity
@@ -226,5 +226,178 @@ theorem realized_stationary_obstruction_interval (β : ℝ) (hc : coefficient β
         (∫ s,f s*(∫ r,f r ∂v.kernel s) ∂v.stationary)/(∫ s,(f s)^2 ∂v.stationary) := by
   obtain ⟨δ,hδ,hδ1,hall⟩ := SU2SevenLinkGroundTransform.exists_stationary_obstruction_interval β hc
   exact ⟨δ,hδ,hδ1,fun t ht htδ => hall t ht htδ (data β t)⟩
+
+
+private def gaugeLeft (g : Fin 6 → SU2) : State := (g 3,g 0,g 1,g 2,g 3,g 4,g 5)
+private def gaugeRight (g : Fin 6 → SU2) : State := (g 0,g 1,g 2,g 3,g 4,g 5,g 0)
+
+private theorem gauge_factor (g : Fin 6 → SU2) (s : State) :
+    gaugeAction g s=gaugeLeft g*s*(gaugeRight g)⁻¹ := rfl
+
+theorem integral_gauge (g : Fin 6 → SU2) (f : State → ℝ) :
+    (∫ s,f (gaugeAction g s) ∂haar)=∫ s,f s ∂haar := by
+  simp_rw [gauge_factor]
+  have he := integral_mul_left_eq_self (μ := haar)
+    (fun r => f (r*(gaugeRight g)⁻¹)) (gaugeLeft g)
+  exact he.trans (integral_mul_right_eq_self f (gaugeRight g)⁻¹)
+
+theorem noiseDensity_conjugate (β : ℝ) (a v : State) :
+    noiseDensity β (a*v*a⁻¹)=noiseDensity β v := by
+  have hd (b w : SU2) : edgeDensity β (b*w*b⁻¹)=edgeDensity β w := by
+    unfold edgeDensity density
+    rw [halfTrace_conjugate]
+  change edgeDensity β (a.1*v.1*(a.1)⁻¹)*(edgeDensity β (a.2.1*v.2.1*(a.2.1)⁻¹)*(edgeDensity β (a.2.2.1*v.2.2.1*(a.2.2.1)⁻¹)*(edgeDensity β (a.2.2.2.1*v.2.2.2.1*(a.2.2.2.1)⁻¹)*(edgeDensity β (a.2.2.2.2.1*v.2.2.2.2.1*(a.2.2.2.2.1)⁻¹)*(edgeDensity β (a.2.2.2.2.2.1*v.2.2.2.2.2.1*(a.2.2.2.2.2.1)⁻¹)*(edgeDensity β (a.2.2.2.2.2.2*v.2.2.2.2.2.2*(a.2.2.2.2.2.2)⁻¹)))))))=edgeDensity β v.1*(edgeDensity β v.2.1*(edgeDensity β v.2.2.1*(edgeDensity β v.2.2.2.1*(edgeDensity β v.2.2.2.2.1*(edgeDensity β v.2.2.2.2.2.1*(edgeDensity β v.2.2.2.2.2.2))))))
+  simp only [hd]
+
+theorem kernelDensity_gauge (β t : ℝ) (g : Fin 6 → SU2) (s r : State) :
+    kernelDensity β t (gaugeAction g s) (gaugeAction g r)=kernelDensity β t s r := by
+  have he : (gaugeAction g s)⁻¹*gaugeAction g r=
+      gaugeRight g*(s⁻¹*r)*(gaugeRight g)⁻¹ := by
+    rw [gauge_factor,gauge_factor]
+    group
+  simp only [kernelDensity,halfWeight,first_gauge,he,noiseDensity_conjugate]
+
+theorem spatialStep_gauge (β t : ℝ) (g : Fin 6 → SU2) (f : State → ℝ) (s : State) :
+    spatialStep β t (fun r => f (gaugeAction g r)) s=spatialStep β t f (gaugeAction g s) := by
+  have he := integral_gauge g (fun r => kernelDensity β t (gaugeAction g s) r*f r)
+  simp_rw [kernelDensity_gauge] at he
+  rw [← kernelDensity_apply,← kernelDensity_apply]
+  exact he
+
+
+private theorem gauge_measurable (g : Fin 6 → SU2) : Measurable (gaugeAction g) := by
+  change Measurable (fun s => gaugeLeft g*s*(gaugeRight g)⁻¹)
+  exact ((continuous_const_mul (gaugeLeft g)).mul_const (gaugeRight g)⁻¹).measurable
+
+/-- EVERY uniformly positive bounded eigenfunction of the exact seven-link
+operator is invariant under the actual six-vertex gauge action. -/
+theorem function_gauge {β t : ℝ} (d : SU2SevenLinkGroundTransform.GroundData β t)
+    (g : Fin 6 → SU2) (s : State) : d.function (gaugeAction g s)=d.function s := by
+  let ψ := d.function
+  let χ : State → ℝ := fun y => ψ (gaugeAction g y)
+  let r : State → ℝ := fun y => χ y/ψ y
+  have hψ (y : State) : 0 < ψ y := d.function_pos y
+  have hi : Integrable ψ haar := Integrable.of_bound d.measurable.aestronglyMeasurable d.upper
+    (Filter.Eventually.of_forall fun y => by simpa only [Real.norm_eq_abs] using (d.bounds y).2)
+  have hI : 0 < ∫ y,ψ y ∂haar := by
+    have he := integral_mono (integrable_const d.lower) hi (fun y => (d.bounds y).1)
+    have hh : d.lower ≤ ∫ y,ψ y ∂haar := by simpa using he
+    exact d.lower_pos.trans_le hh
+  have hmass : 0 < SignedDensityProbabilitySampling.mass haar ψ := by
+    unfold SignedDensityProbabilitySampling.mass
+    simp_rw [abs_of_pos (hψ _)]
+    exact hI
+  let ν := SignedDensityProbabilitySampling.sampler haar ψ
+  letI : IsProbabilityMeasure ν := SignedDensityProbabilitySampling.sampler_probability haar ψ hi hmass
+  have hr : Measurable r := (d.measurable.comp (gauge_measurable g)).div d.measurable
+  have hU : 0 < d.upper := (d.function_pos 1).trans_le
+    ((le_abs_self (d.function 1)).trans (d.bounds 1).2)
+  have hB (y : State) : |r y| ≤ d.upper/d.lower := by
+    dsimp [r,χ,ψ]
+    rw [abs_div,abs_of_pos (d.function_pos y)]
+    exact div_le_div₀ hU.le (d.bounds (gaugeAction g y)).2 d.lower_pos (d.bounds y).1
+  have hχ (y : State) : spatialStep β t χ y=d.value*χ y := by
+    dsimp [χ,ψ]
+    rw [spatialStep_gauge,d.eigen]
+  have hground (y : State) : YMPositiveKernel.sandwich haar (fun _ => 1) (kernelDensity β t) ψ y=d.value*ψ y := by
+    simpa only [YMPositiveKernel.sandwich,one_mul,mul_one,YMPositivePower.applyKernel]
+      using (kernelDensity_apply β t ψ y).trans (d.eigen y)
+  have hprod : (fun y => ψ y*r y)=χ := by
+    funext y
+    dsimp [r]
+    field_simp [(hψ y).ne']
+  have hfix (y : State) : YMPositiveKernel.average ν (kernelDensity β t) r y=r y := by
+    have he := YMPositiveKernel.ground_bridge haar (fun _ => 1) ψ (kernelDensity β t) d.value
+      (by simpa only [one_mul] using d.measurable) (fun _ => by norm_num) hψ d.value_pos
+      (by simpa only [one_mul] using hmass) hground r y
+    simp only [one_mul] at he
+    rw [← he,hprod]
+    have hstep : YMPositiveKernel.sandwich haar (fun _ => 1) (kernelDensity β t) χ y=
+        d.value*χ y := by
+      simpa only [YMPositiveKernel.sandwich,one_mul,mul_one,YMPositivePower.applyKernel]
+        using (kernelDensity_apply β t χ y).trans (hχ y)
+    rw [hstep]
+    dsimp [r]
+    field_simp [d.value_pos.ne',(hψ y).ne']
+  let c := ∫ y,r y ∂ν
+  have hc (y : State) : r y=c := YMBoundedHarmonic.bounded_harmonic_constant ν
+    (kernelDensity β t) (lower β t) (upper β t) (kernelDensity_measurable β t)
+    (lower_pos β t) (kernelDensity_bounds β t) r hr (d.upper/d.lower) hB hfix y
+  have hrel (y : State) : χ y=c*ψ y := (div_eq_iff (hψ y).ne').mp (hc y)
+  have hnorm : (∫ y,ψ y ∂haar)=c*(∫ y,ψ y ∂haar) := by
+    calc
+      _ = ∫ y,ψ (gaugeAction g y) ∂haar := (integral_gauge g ψ).symm
+      _ = ∫ y,c*ψ y ∂haar := by
+        apply integral_congr_ae
+        exact Filter.Eventually.of_forall hrel
+      _ = _ := integral_const_mul c ψ
+  have hc1 : c=1 := by nlinarith [hnorm]
+  change χ s=ψ s
+  rw [hrel,hc1,one_mul]
+
+
+theorem observable_gauge {β t : ℝ} (d : SU2SevenLinkGroundTransform.GroundData β t)
+    (A B : ℝ) (g : Fin 6 → SU2) (s : State) :
+    d.observable A B (gaugeAction g s)=d.observable A B s := by
+  have ho : SU2SevenLinkOddTrial.oddPolynomial t A B (gaugeAction g s)=
+      SU2SevenLinkOddTrial.oddPolynomial t A B s := by
+    unfold SU2SevenLinkOddTrial.oddPolynomial SU2SevenLinkOddTrial.linear3 SU2SevenLinkOddTrial.basis
+    simp only [second_gauge,meanChannel_gauge,residual_gauge]
+  simp only [SU2SevenLinkGroundTransform.GroundData.observable,unweight,first_gauge,
+    function_gauge,ho]
+
+theorem stationary_integral_gauge {β t : ℝ} (d : SU2SevenLinkGroundTransform.GroundData β t)
+    (g : Fin 6 → SU2) (f : State → ℝ) :
+    (∫ s,f (gaugeAction g s) ∂d.stationary)=∫ s,f s ∂d.stationary := by
+  rw [d.stationary_integral,d.stationary_integral]
+  congr 1
+  simpa only [function_gauge] using integral_gauge g (fun s => d.function s^2*f s)
+
+theorem kernel_integral_gauge {β t : ℝ} (d : SU2SevenLinkGroundTransform.GroundData β t)
+    (g : Fin 6 → SU2) (f : State → ℝ) (hf : Measurable f) (s : State) :
+    (∫ r,f r ∂d.kernel (gaugeAction g s))=∫ r,f (gaugeAction g r) ∂d.kernel s := by
+  rw [d.kernel_integral f hf,d.kernel_integral (fun r => f (gaugeAction g r)) (hf.comp (gauge_measurable g)),function_gauge]
+  have he := spatialStep_gauge β t g (fun r => d.function r*f r) s
+  simp_rw [function_gauge] at he
+  rw [he]
+
+/-- The realized comparison observable is in the actual six-vertex invariant
+sector. The local/small-independent-tilt and coefficient hypotheses remain. -/
+theorem gauge_invariant_stationary_obstruction_interval (β : ℝ) (hc : coefficient β ≠ 0) :
+    ∃ δ : ℝ, 0 < δ ∧ δ ≤ 1 ∧ ∀ t : ℝ, 0 < t → t < δ →
+      let v := (data β t).evenized
+      let f := v.observable (SU2SevenLinkSpatialSeparation.oddA β) (SU2SevenLinkSpatialSeparation.oddB β)
+      (∀ (g : Fin 6 → SU2) (s : State),f (gaugeAction g s)=f s) ∧
+      (∫ s,f s ∂v.stationary)=0 ∧ 0 < (∫ s,(f s)^2 ∂v.stationary) ∧
+      coefficient β^4 <
+        (∫ s,f s*(∫ r,f r ∂v.kernel s) ∂v.stationary)/(∫ s,(f s)^2 ∂v.stationary) := by
+  obtain ⟨δ,hδ,hδ1,hall⟩ := realized_stationary_obstruction_interval β hc
+  exact ⟨δ,hδ,hδ1,fun t ht htδ =>
+    ⟨fun g s => observable_gauge (data β t).evenized _ _ g s,hall t ht htδ⟩⟩
+
+
+/-- No single subunit covariance-contraction factor is uniform over this
+REALIZED gauge-invariant local family. The spatial tilt may depend on beta;
+this is not an equal-coupling, volume-uniform or continuum assertion. -/
+theorem no_uniform_stationary_contraction (q R : ℝ) (hq : q < 1) :
+    ∃ β t : ℝ, R < β ∧ 0 < t ∧ t ≤ 1 ∧
+      let v := (data β t).evenized
+      let f := v.observable (SU2SevenLinkSpatialSeparation.oddA β) (SU2SevenLinkSpatialSeparation.oddB β)
+      (∀ (g : Fin 6 → SU2) (s : State),f (gaugeAction g s)=f s) ∧
+      (∫ s,f s ∂v.stationary)=0 ∧ 0 < (∫ s,(f s)^2 ∂v.stationary) ∧
+      q < (∫ s,f s*(∫ r,f r ∂v.kernel s) ∂v.stationary)/(∫ s,(f s)^2 ∂v.stationary) := by
+  have ht : max q 0 < (1:ℝ) := max_lt hq (by norm_num)
+  have hlarge : ∀ᶠ β : ℝ in Filter.atTop, R < β := Filter.eventually_gt_atTop R
+  have hcoeff : ∀ᶠ β : ℝ in Filter.atTop, max q 0 < coefficient β^4 :=
+    (tendsto_order.1 (fixed_word_factor_tendsto_one 4)).1 _ ht
+  obtain ⟨β,hR,hC⟩ := (hlarge.and hcoeff).exists
+  have hc : coefficient β ≠ 0 := by
+    intro hz
+    rw [hz] at hC
+    norm_num at hC
+  obtain ⟨δ,hδ,hδ1,hall⟩ := gauge_invariant_stationary_obstruction_interval β hc
+  have he := hall (δ/2) (by linarith) (by linarith)
+  refine ⟨β,δ/2,hR,by linarith,by linarith,?_⟩
+  exact ⟨he.1,he.2.1,he.2.2.1,(le_max_left q 0).trans_lt (hC.trans he.2.2.2)⟩
 
 end OperatorDerivativeRewrite.Foundation.SU2SevenLinkVacuum
