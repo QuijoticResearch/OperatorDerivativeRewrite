@@ -10227,3 +10227,8 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.corr_eq_covariance
 #print axioms OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.corr_hasDerivAt_zero
 #print axioms OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.positive_corr_near_zero
+
+-- Checkpoint1652: positive reflected kernel with strictly decaying translated norm.
+#print axioms OperatorDerivativeRewrite.Foundation.YMReflectionPositiveShift.reflected_factor
+#print axioms OperatorDerivativeRewrite.Foundation.YMReflectionPositiveShift.reflected_psd
+#print axioms OperatorDerivativeRewrite.Foundation.YMReflectionPositiveShift.reflected_norm_strict
