@@ -2674,3 +2674,5 @@ import Foundation.SU2WilsonSignCrossing
 import Foundation.SU2WilsonConvolution
 
 import Foundation.YMResetGroundState
+
+import Foundation.YMPositiveKernel
