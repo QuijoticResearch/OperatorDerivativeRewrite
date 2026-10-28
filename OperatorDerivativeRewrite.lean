@@ -2682,3 +2682,5 @@ import Foundation.SU2ForestCycleReduction
 import Foundation.SU2SharedPlaquetteProjection
 
 import Foundation.WilsonPlaquetteGapCounterexample
+
+import Foundation.SU2QuadraticWilsonChannel

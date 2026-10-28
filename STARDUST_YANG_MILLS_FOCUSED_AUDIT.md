@@ -708,3 +708,46 @@ The targeted build passed4227 jobs in28.713 seconds. Full root build passed6925 
 Independent Fraction tests verified all128 product-noise characters, the exact ground and stationary chain, the strict Rayleigh obstruction,121 noncommuting quaternion covariance cases and512 projection-moment terms. The finite enumeration was split8x16 with a bijection proof to stay within the existing recursion limit; no native_decide, heartbeat increase or verification weakening was used.
 
 Source integrity passed2745 Foundation/root Lean files, exactly four intended changes/additions since approved1673; all3 pinned configurations,113 baseline manuscripts and21 Yang–Mills originals remain unchanged. No sorry, admit, new axiom, trust/toolchain change or ResearchSources modification was introduced. Evidence is retained under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1674-*. Exact commit approval and guarded PUBLIC main/research synchronization are separate receipts; this pre-commit entry does not claim remote success before verification.
+
+## Checkpoint1675 — actual SU2 quadratic channel and shared-link kinetic action (October28,2026)
+
+### Concrete bottleneck resolved
+
+`Foundation/SU2QuadraticWilsonChannel.lean` proves the actual Wilson increment's quadratic convolution, rather than assuming the residual eigenvalue needed by checkpoint1674. Write h=halfTrace, nu_beta=SU2WilsonConvolution.increment beta, c=integral h dnu_beta, m=integral h^2 dnu_beta and d=(4m-1)/3. `bilinear_convolution` proves, for every real beta and C,D in SU2,
+
+    integral h(CV)h(DV)dnu_beta(V)
+      = d h(C)h(D)+(1-d)h(C D^{-1})/4.
+
+The proof uses the actual central Wilson probability, its verified conjugation invariance, and an exact twelve-conjugation quaternion averaging identity. The finite average is an algebraic isotropy device, not a replacement increment distribution. All integral and finite-sum operations have their measurability and integrability discharged. This is the classical quadratic/adjoint character mechanism, not a claim of novel representation theory.
+
+For the existing shared product P(L,R,U)=h(LU)h(U^{-1}R), mean M(L,R)=h(LR)/4 and residual Q=P-M, `sharedProduct_step` and `sharedResidual_step` prove
+
+    step_beta P = d P+(1-d)M,     step_beta Q = d Q.
+
+`actual_kernel_residual` and `actual_kernel_centeredSquare` explicitly identify these with integrals against the existing genuine transition kernel at C^{-1}, preserving that argument convention. The centered square h^2-1/4 is Haar-centered, conjugation invariant, belongs to Haar L2, has second moment1/16 and is a genuine pointwise kernel eigenfunction with coefficient d. These are not assertions about a spatially weighted stationary vacuum.
+
+### Seven actual link increments, with the shared edge identified
+
+`residualWords` and `sharedWordAverage` are recursively nested integrals against actual independent Wilson increments. Private exterior occurrences contribute c each; a SINGLE shared increment occurs in both plaquette factors and contributes d. `twoPlaquette_residual_average` proves the coefficient c^6 d on the two oriented three-edge exterior paths plus their shared edge. `outerRectangle_average` gives c^6 on the mean channel. The two coefficients are not c^8. `twoPlaquette_residual_gauge` verifies full six-vertex gauge invariance of the resulting observable. All three recursive layer-integrability statements are proved. Private occurrences are independent as defined; the theorem does not identify repeated private physical edges in an arbitrary lattice embedding.
+
+This DISCHARGES checkpoint1674's residual kinetic coefficient premise at the actual bounded, nested-integral level. Together with its exact Haar moment weights1/4 and3/4, the local channel calculation is now rigorous. It does NOT discharge the whole proposed normalized-eigenvalue second derivative. Its product-Haar L2 operator realization, sector isolation, domain and analytic perturbation hypotheses remain open, as does the actual moment-range application in that calculation. No conditional bridge has been promoted to an axiom.
+
+### Independent challenges and source comparison
+
+Twelve independent Lean examples passed: actual twirl and Wilson convolution specializations, both genuine-kernel identities, centered-square Haar moments/L2, beta-zero coefficient/reset, seven-link factor, outer rectangle, full vertex gauge cancellation, recursive integrability and the empty-private-word base case. Independent rational quaternion tests passed100 exact noncommuting twirl cases. Actual Wilson radial quadrature at64 and128 nodes tested beta=-4,-1/2,0,1,4,16,64 and three noncommuting backgrounds, checking the affine product and centered-square identities within2e-12. Quadrature is diagnostic, not proof input.
+
+A separate exact Fraction experiment enumerated512 terms for EACH of two seven-link tests, preserving one shared increment. Its deliberately compressed degree-two moment cubature has c=1/2,m=5/8,d=1/2 and yielded1213/640000 and39/25600, exactly c^6 d times1213/5000 and39/200. This cubature is NOT the actual Wilson law or a fully central SU2 law; it independently challenges the link bookkeeping only.
+
+Luscher DESY76/54, printed pp8-9 (https://bib-pubdb1.desy.de/record/396349/files/7611148.pdf?version=1), separates spatial multiplication from the temporal convolution and uses character coefficients. The new formal calculation supplies a concrete quadratic temporal channel; it supplies no spatial spectral comparison. Original `ResearchSources/Incoming/block_contraction_spectral_gaps.tex` hash remains `0C40FA6B92B830C0E2309BD6471D55CB0EB9BFB94296B9267AD23A5280FA4C60`. Its claimed contraction margin still requires actual norm bounds after spatial insertion. All original manuscripts are untouched.
+
+### Exact remaining mathematical bottleneck
+
+PROVED: actual SU2 quadratic convolution, shared residual kinetic action, c^6 versus c^6 d local channels, genuine-kernel interfaces, centered-square L2 membership and full local gauge invariance. CONDITIONAL: checkpoint1674's proposed normalized stationary eigenbranch derivative. FAILED approaches remain failed: neither temporal covariance nor positivity justifies an unchanged spatially weighted gap, as the prior exact finite Wilson quotient shows. OPEN: normalized SU2 stationary transfer comparison, homogeneous four-dimensional spatial interactions, volume/scale-uniform bounds and continuum/infinite-volume limits. None of this proves a physical mass gap or a physical spectral obstruction.
+
+Next focused work: identify the finite product-Haar operator and its normalization, then test the derivative bridge through rigorous isolation/domain estimates or a concrete variational certificate with a positive supersolution bound. Avoid a broad gauge library or assuming a general perturbation theorem without its hypotheses. Coupling-dependent iteration still needs a physically justified distance scale and bounds surviving spatial weighting. Yang-Mills remains ACTIVE; Bakry stays PAUSED and the queue is unchanged.
+
+### Complete verification
+
+Final full root build passed6926 jobs in47.1081462 seconds. Complete transitive axiom audit passed53165 declarations in41.5403936 seconds, allowing only propext, Classical.choice and Quot.sound. All48 unabridged public types,35 theorem proofs,13 definitions/abbreviations and six private integrability helpers were reviewed. Twelve independent Lean checks passed. No sorry, admit, new axiom, heartbeat/trust/toolchain change or weakened verification was introduced.
+
+Source integrity passed2746 Foundation/root Lean files with exactly three mathematical source changes/additions since approved1674; all three pinned configurations,113 baseline manuscripts and21 Yang-Mills originals are unchanged. Evidence: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1675-{audit.log,checks.lean,checks.log,full-build.log,independent.json,working-checkpoint.json}. Both ledgers append this result without rewriting history. Exact Git approval and guarded PUBLIC main/research synchronization are separate closure receipts; this pre-commit record does not assert remote success.
