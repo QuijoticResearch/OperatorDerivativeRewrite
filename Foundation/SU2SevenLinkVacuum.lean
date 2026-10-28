@@ -146,13 +146,13 @@ theorem kernelDensity_measurable (β t : ℝ) : Measurable (Function.uncurry (ke
     ((noiseDensity_measurable β).comp (by fun_prop))).mul
     ((halfWeight_measurable t).comp measurable_snd)
 
-private def lower (β t : ℝ) : ℝ :=
+def lower (β t : ℝ) : ℝ :=
   (Real.exp (-|t|/2))^2*(Real.exp (-|β|)/partition law halfTrace β)^7
 
-private def upper (β t : ℝ) : ℝ :=
+def upper (β t : ℝ) : ℝ :=
   (Real.exp (|t|/2))^2*(Real.exp |β|/partition law halfTrace β)^7
 
-private theorem lower_pos (β t : ℝ) : 0 < lower β t := by
+theorem lower_pos (β t : ℝ) : 0 < lower β t := by
   have hz := partition_pos law halfTrace halfTrace_measurable halfTrace_bound β
   unfold lower
   positivity
@@ -162,7 +162,7 @@ private theorem upper_pos (β t : ℝ) : 0 < upper β t := by
   unfold upper
   positivity
 
-private theorem kernelDensity_bounds (β t : ℝ) (s r : State) :
+theorem kernelDensity_bounds (β t : ℝ) (s r : State) :
     lower β t ≤ kernelDensity β t s r ∧ kernelDensity β t s r ≤ upper β t := by
   have hz := partition_pos law halfTrace halfTrace_measurable halfTrace_bound β
   have hd := noiseDensity_bounds β (s⁻¹*r)

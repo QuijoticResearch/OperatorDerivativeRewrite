@@ -1659,3 +1659,51 @@ Nine independent Lean examples test negative-spectrum odd/even sign, native cons
 Integrity authenticates1690's source manifest against the exact approval for3a3b80c91ad60b9f6fc15cddcda57d1b3987a388. It covers2773 Foundation/root files; exactly the three new modules, root import and AxiomAudit differ. All3 pinned configurations,113 baseline manuscripts and21 Yang--Mills originals (20 distinct hashes) remain unchanged. ResearchSources remains unmodified/uncommitted; unrelated untracked drafts are preserved. Evidence: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1691-* (full build, complete audit/types, independent Lean/exact tests, declaration inventory and authenticated source manifest).
 
 Yang--Mills remains ACTIVE; Bakry PAUSED and all queued priorities unchanged. The next substantive question is whether quantitative positive-kernel bounds yield a useful coupling-dependent upper contraction estimate on this actual gauge sector, and what additional homogeneous/volume/physical-scale hypotheses are indispensable. Exact-commit approval and guarded two-branch PUBLIC synchronization are closure receipts; this pre-commit entry does not claim remote success.
+
+
+## Checkpoint 1692 — actual coupling-dependent covariance decay and the volume bottleneck
+
+The sufficient-count question left open in1691 now has a rigorous finite-system answer. `Foundation/SU2SevenLinkMixing.lean` proves actual native mixing for EVERY bounded measurable centered observable of EVERY exact seven-link GroundData, for ALL real beta,t. These data are genuinely instantiated by1689's `data beta t` and its evenization, so the result is not merely an uninhabited operator contract. No small-t assumption is needed for this UPPER bound;1691's LOWER obstruction retains its own small-t restriction.
+
+### Exact mechanism and new native estimates
+
+The proof reuses `YMPositivePower.average_reset_range` and `YMPositiveKernel.ground_bridge`. The row-normalization reference nu is proportional to psi*dHaar; the ACTUAL invariant law pi is proportional to psi^2*dHaar. `bridgeReference`, its probability proof and `transfer_bridge` construct and identify the former without equating these laws. `nativeSteps_mean` proves centering under pi at EVERY actual iterate from the existing bounded-probe stationarity theorem.
+
+`Foundation/YMPositiveMixing.lean` proves a single reusable range-contraction lemma: for an actual average recursion with jointly measurable0<m<=k<=M, initial bound B, and zero mean at every iterate under a possibly DIFFERENT probability pi, the pointwise bound is2*B*(1-m/M)^n. Its proof transports enclosing intervals through the verified reset-range estimate, contracts their width, proves integrability and uses the pi mean to locate0 inside each interval. No invariant-reference assumption, extremum attainment, spectral positivity, residual-kernel library or extra stochastic construction is needed. This is classical positive-kernel mixing mathematics verified for the concrete research bottleneck; no novelty claim is made.
+
+Four existing vacuum helpers (`lower`, `upper`, `lower_pos`, `kernelDensity_bounds`) were exposed publicly for reuse. All four bodies/statements are unchanged apart from visibility. `reset_ratio` proves exact cancellation of ALL seven Wilson partition factors:
+
+    alpha(beta,t)=lower/upper=exp(-2*abs(t)-14*abs(beta)),  0<alpha<=1.
+
+For an actual bounded measurable f with |f|<=B and integral f dpi=0, `nativeSteps_centered_bound`, `native_covariance_bound` and `native_covariance_tendsto_zero` prove
+
+    |P^n f(s)| <=2*B*(1-alpha)^n   for EVERY starting state s,
+    |integral f(s)*P^n f(s) pi(ds)| <=2*B^2*(1-alpha)^n,
+    actual stationary covariance tends to0 as n tends to infinity.
+
+`native_covariance_macro_bound` and `sufficient_step_count` establish the explicit sufficient count
+
+    n >= r*exp(2*abs(t)+14*abs(beta))
+    implies |actual covariance at n| <=2*B^2*exp(-r).
+
+For positive variance V, divide by V; the normalized prefactor is2*B^2/V and is NOT silently bounded uniformly in coupling or volume. No uniform all-L2 operator-norm spectral-gap estimate is claimed from this bounded-probe estimate. The result is compatible with1691's no-uniform-FIXED-count theorem: the order of the coupling and step-count limits matters. Coupling-dependent iteration really does restore decay for the constructed local process, but a physically useful/sharp count is not supplied by this coarse upper bound.
+
+### Why this is not yet a physical-distance or four-dimensional result
+
+A direct reuse audit of `YMFiniteWilsonVacuum.ground_exists` gives lower and upper kernel constants m=l^2*exp(-N*abs(beta)) and M=u^2*exp(N*abs(beta)). Their ratio is algebraically (l/u)^2*exp(-2*N*abs(beta)). For fixed positive |beta| and fixed0<l<=u this tends to0 as the link count N grows; a spatial Wilson half-weight generally adds further volume dependence to l/u. This is a rigorous obstruction to obtaining a NONZERO volume-uniform reset certificate by this global min/max argument. It is NOT a proof that the actual gap vanishes. This audit is a mathematical consequence of the displayed verified constants, not a newly claimed Lean formalization of a physical4D limit.
+
+Likewise, choosing arbitrary lattice spacing a and physical rate m_phys with m_phys*a<=alpha would merely be a CONDITIONAL conversion of exp(-n*alpha) to exp(-m_phys*n*a). No physically justified relation a(beta), renormalization trajectory, homogeneous-action comparison, Gauss-law Hilbert-space identification or infinite-volume/continuum theorem has been established here. Setting t=beta is allowed in the local UPPER theorem, but that one-spatial-plaquette seven-link system is not the complete homogeneous spatial3D/physical4D transfer. The earlier lower theorem cannot be extended to t=beta by this observation.
+
+The concrete next mass-gap-related bottleneck is local/block or gauge-projected control that avoids the global factor exp(-2*N*abs(beta)), together with justified homogeneous-action and physical-scale hypotheses. Repeating finite-dimensional positivity/eigenfunction existence or optimizing the coarse sufficient count cannot discharge it. Preserve both the genuine local slowing obstruction and this genuine finite-coupling decay result; neither establishes/refutes the Millennium mass gap.
+
+### Verification, independent tests and source integrity
+
+The full root build passed6956 jobs in27.1583499 seconds. The complete transitive axiom audit passed54175 declarations in42.027468 seconds, accepting only propext, Classical.choice and Quot.sound. All18 unabridged public types and full proof/definition bodies were reviewed, including the four previously private helpers; the two new private integrability/positive-mass proofs were reviewed. The generic recursion's mean-zero hypotheses are discharged by actual native stationarity in the instantiated theorem. No sorry/admit/new axiom, trust/compiler/toolchain/resource/heartbeat change, error suppression or skipped gate was introduced.
+
+Nine independent Lean examples cover the exact reset ratio, reset1 at zero parameters, sign symmetry, zero-coupling one-step collapse of every bounded centered native probe, actual covariance convergence for arbitrary constructed evenized observables, sufficient-count native bounds, native mean preservation, the actual kernel/average bridge and the deliberately different reference/invariant laws. The zero-coupling test initially tried to prove an absolute-value inequality after norm_num had already reduced it to equality; the repair is test-only. The final independent Lean checks passed in24.747178 seconds.
+
+Exact Fraction checks verify51 iterates of a genuinely unequal-reference example: mu=(1/2,1/2), k=[[2,1],[1,1]], P=[[2/3,1/3],[1/2,1/2]], pi=(3/5,2/5), f=(2,-3). The pi mean is0 while the mu mean is-1/2; f is a1/6 eigenmode and satisfies the proved range/covariance bounds. The mu-centered vector(1,-1) instead converges to its NONZERO pi mean1/5, directly refuting replacement of invariant-law centering by reference-law centering. Dropping strict positivity allows the identity chain to retain a centered nonzero vector. Rate diagnostics at t=.2 give sufficient r=1 counts7,1794075 and approximately3.75e30 for beta=.1,1,5: evidence of poor quantitative utility, never Lean inputs or a physical prediction.
+
+Integrity authenticates1691's source manifest against exact approval e54d77525788f76ba2fc8609a66b8a9ee2539c37 and covers2775 Foundation/root files. Exactly two new modules, four helper visibilities in the vacuum source, root import and AxiomAudit differ; every previous proof body is identical. All3 pinned configurations,113 baseline manuscripts and21 Yang--Mills originals (20 distinct hashes) remain unchanged. Evidence: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1692-* (complete build, transitive/unabridged type audit, independent Lean/exact-law tests, declaration inventory and authenticated source manifest). ResearchSources remains read-only/uncommitted; unrelated drafts are preserved.
+
+Yang--Mills remains ACTIVE; Bakry PAUSED and the queue unchanged. Exact-commit approval and guarded PUBLIC two-branch synchronization are separate closure gates; this pre-commit report does not claim remote success.
