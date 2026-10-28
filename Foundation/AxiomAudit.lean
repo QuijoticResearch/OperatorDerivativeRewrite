@@ -10345,3 +10345,13 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.YMBlockErrorBudget.strict_factor_requires_inverse_coupling_error
 #print axioms OperatorDerivativeRewrite.Foundation.YMBlockErrorBudget.fixed_sqrt_error_eventually_blocks_strictness
 #print axioms OperatorDerivativeRewrite.Foundation.YMBlockErrorBudget.lower_sqrt_error_eventually_blocks_strictness
+
+-- Checkpoint1665: exact SU2 reset mixture and setwise event mixing.
+#print axioms OperatorDerivativeRewrite.Foundation.SU2EventMixing.residualIterate_probability
+#print axioms OperatorDerivativeRewrite.Foundation.SU2EventMixing.coefficient_sum_one
+#print axioms OperatorDerivativeRewrite.Foundation.SU2EventMixing.stationaryWeight_complement
+#print axioms OperatorDerivativeRewrite.Foundation.SU2EventMixing.exact_mixture
+#print axioms OperatorDerivativeRewrite.Foundation.SU2EventMixing.event_upper
+#print axioms OperatorDerivativeRewrite.Foundation.SU2EventMixing.event_lower
+#print axioms OperatorDerivativeRewrite.Foundation.SU2EventMixing.c_lt_one
+#print axioms OperatorDerivativeRewrite.Foundation.SU2EventMixing.event_tendsto_equilibrium
