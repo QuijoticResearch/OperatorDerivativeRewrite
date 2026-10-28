@@ -10216,3 +10216,14 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 -- Checkpoint1650: actual two-step joint path law and closed-product independence.
 #print axioms OperatorDerivativeRewrite.Foundation.SU2TwoLoopJointLaw.two_step_probability
 #print axioms OperatorDerivativeRewrite.Foundation.SU2TwoLoopJointLaw.two_loop_joint_law
+
+-- Checkpoint1651: gauge-invariant coupled-loop law and positive response.
+#print axioms OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.coupledLaw_zero
+#print axioms OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.coupledLaw_zero_actual_chain
+#print axioms OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.coupledLaw_probability
+#print axioms OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.X_biGauge
+#print axioms OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.μ_gauge_invariant
+#print axioms OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.coupledLaw_gauge_invariant
+#print axioms OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.corr_eq_covariance
+#print axioms OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.corr_hasDerivAt_zero
+#print axioms OperatorDerivativeRewrite.Foundation.SU2CoupledLoopResponse.positive_corr_near_zero
