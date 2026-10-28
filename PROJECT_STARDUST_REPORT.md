@@ -53413,3 +53413,10 @@ The 6890-job full build and 52276-declaration complete transitive axiom
 audit passed; all three new theorem types/proofs, two independent Lean
 examples and source/config/archive integrity were reviewed. This is
 checkpoint1641's exact conditional continuum-scaling test.
+The exact checkpoint commits are `45604da352f9e4cff93e4a41d8b241cb95b8aa3a`
+(1639), `b64805c15e35de483aa83d90bd7110f254934701` (1640), and
+`9ea31633ff2662bac54a4425f0e9618bcb80bf5a` (1641). Each passed
+the exact-commit receipt and was independently verified on both PRIVATE
+`main` and research backup refs. The current documentation receipt adds
+no mathematical result; Yang–Mills remains active and Bakry Objective 2
+remains paused.

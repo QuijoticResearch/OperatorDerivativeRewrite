@@ -84,6 +84,14 @@ The longer `YM_MASS_GAP_UNCONDITIONAL.tex` defines `Z(a)^{-2}` as a positive sep
 
 The targeted build passed 1682 jobs; the full root build passed 6890 jobs. The complete transitive axiom audit passed 52276 declarations with only the standard three allowed axioms. All three new public theorem types and complete proofs were reviewed. Two independent Lean examples passed, including the concrete `q=1/2` variance-escape case. Source integrity passed for all 2710 Foundation/root Lean files (exactly four expected differences from the 1638 baseline), three configurations, all 113 baseline manuscripts and 21 selected Yang–Mills candidates. No original manuscript was altered. Commit, exact approval and verified PRIVATE `main`/research backup are required for closure.
 
+### Exact checkpoint receipts and private backup
+
+- Checkpoint 1639: commit `45604da352f9e4cff93e4a41d8b241cb95b8aa3a`; exact audit receipt accepted; both PRIVATE `main` and `codex/stardust-pseudoprocess-calculus` verified at that commit at `2026-10-27T23:44:43Z`.
+- Checkpoint 1640: commit `b64805c15e35de483aa83d90bd7110f254934701`; exact audit receipt accepted; both PRIVATE refs verified at that commit at `2026-10-27T23:51:20Z`.
+- Checkpoint 1641: commit `9ea31633ff2662bac54a4425f0e9618bcb80bf5a`; exact audit receipt accepted; both PRIVATE refs verified at that commit at `2026-10-28T00:00:15Z`.
+
+The subsequent receipt-record edit changes documentation only. The focused Yang–Mills campaign remains active; Bakry Objective 2 remains paused.
+
 ### Verification, checkpoint 1640
 
 The incremental target and full root build both passed (1946 and 6889 jobs). The complete transitive axiom audit passed for 52273 declarations with only the three standard allowed axioms. All eight public declarations in this module (one definition, seven theorems), including the three new unabridged types and full proofs, were reviewed. Three new independent Lean examples passed. The smooth-kernel counterexample's normalization, positivity, exact `H¹` constant, Lipschitz factor and log-derivative bounds were checked by rational arithmetic; it is documented as an external mathematical counterexample, not a Lean-formalized SU(2) theorem. All 2709 Foundation/root Lean sources, three configurations, 113 baseline manuscripts and 21 selected Yang–Mills sources passed integrity checks. No original source was changed. The exact Git approval and both PRIVATE remote-ref checks are required at closure.
