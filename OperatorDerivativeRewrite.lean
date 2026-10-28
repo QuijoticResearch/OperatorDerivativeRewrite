@@ -2676,3 +2676,5 @@ import Foundation.SU2WilsonConvolution
 import Foundation.YMResetGroundState
 
 import Foundation.YMPositiveKernel
+
+import Foundation.SU2ForestCycleReduction

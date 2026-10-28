@@ -53870,3 +53870,63 @@ A specific next candidate is gauge-invariant tensorization: investigate whether 
 Targeted build passed4217 jobs in25.241 seconds; the final full root build passed6922 jobs in42.305 seconds. The complete transitive axiom audit passed52875 declarations in41.194 seconds, permitting only propext, Classical.choice and Quot.sound. All32 unabridged public types,24 theorem proofs and8 definitions were reviewed. Eight independent Lean checks passed for kinetic symmetry, exact four-link center ratio at beta=3, cancellation with a nonconstant exponential loop multiplier, positive-kinetic oscillation, explicit million-level volume obstruction, actual row probability, zero-coupling reset and detailed balance. The initial independent test had a namespace ambiguity in its simp list; qualifying YMPositiveKernel.average repaired the TEST without changing mathematical sources or compiler settings.
 
 Source integrity passed2742 Foundation/root Lean files, exactly three intended changes/additions since approved1671;3 pinned configurations,113 baseline manuscripts and21 Yang–Mills originals are unchanged. No sorry, admit, new axiom, compiler/trust change, original manuscript modification or campaign change was introduced. Source manifest, full-build/audit/public-type logs, independent Lean checks and exact/numerical evidence are retained under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1672-*. Exact commit approval and guarded PUBLIC main/research remote verification are recorded separately; this pre-commit entry does not claim remote success before synchronization.
+
+## Checkpoint 1673 — free-gauge forest cancellation, SU2 cycle domains, and two limits on kinetic-gap transfer
+
+Focused Yang–Mills remains ACTIVE. The preceding goal turn was progress: checkpoint1672 is audited and both PUBLIC backup branches were independently verified at e7bcbbf72c7db5e6f09792930d994c7c59a7a0d3. This checkpoint tests the proposed gauge-invariant tensorization mechanism before claiming a physical spectral estimate.
+
+### Verified forest and cycle results
+
+`Foundation/SU2ForestCycleReduction.lean` explicitly constructs a non-Abelian gauge transformation trivializing an ordered rooted tree, for ANY group G. A finite parent certificate p:Fin(n)->Fin(n+1) satisfies val(p(i))<=val(i), with child i+1. `recursiveGauge` solves g(child)=g(parent)U(edge) by well-founded recursion, and `treeGauge_trivializes` verifies every transformed edge equals1. `forestGauge_trivializes` handles any selected subset of these edges, including disconnected forests; `forest_invariant_constant` proves every pointwise function invariant under all displayed vertex gauges is constant. There is no small-field or commutativity assumption. This is an explicit ordered-forest certificate, not a new theorem constructing an ordering for every abstract acyclic graph or identifying an arbitrary lattice marginal with such a function.
+
+For a four-edge cycle, `cycle_reconstruct` proves for every pointwise gauge-invariant observable f (with arbitrary target type),
+
+    f(A,B,C,D)=f(1,1,1,ABCD).
+
+`canonical_conjugate` verifies that the resulting function of holonomy is a class function. These are actual gauge-action identities and extend checkpoint1670's trace example to all such observables. They do not turn a cycle into a tree or identify its nonconstant class functions with constants.
+
+With the actual SU2 Haar probability, `class_sandwich_integral` and `cycle_one_edge_integrals` identify all four one-edge averages with the canonical Haar mean. `centered_cycle_one_edge_zero` shows each vanishes when that mean is zero. `class_sandwich_integrable` and `cycle_one_edge_integrable` establish the bounded-measurable domains. These conclusions are not using a nonintegrable integral's default value for the probabilistic interpretation.
+
+The strongest analytic result is `cycle_missing_edge_pairing_zero`: for a bounded measurable centered class function F and ANY bounded measurable three-edge probe g,
+
+    integral F(ABCD) g(A,B,C) d(Haar^4)=0.
+
+The product law, full integrability and Fubini passage are verified. A direct matrix-coordinate proof supplies the required joint SU2 multiplication measurability; a local MeasurableMul2 instance is proved, not assumed. The final proof is within the original heartbeat limit; splitting measurable-map and integrability helpers repaired elaboration timeouts without changing compiler, trust or heartbeat settings. The theorem formally packages omission of the fourth edge; all four separate slice identities are also proved. General L2 closure and arbitrary graph conditional projections are not claimed from this bounded-cylinder result.
+
+### A boundary condition that defeats an automatic forest argument
+
+`boundary_fixed_path_obstruction` reuses the verified closed-pair trace to construct a NONCONSTANT two-edge path observable invariant under every INTERIOR vertex gauge:
+
+    f(A g^{-1}, g B)=f(A,B),  f(A,B)=halfTrace(AB).
+
+Its two endpoint gauges are fixed. Thus absence of cycles by itself does not imply cancellation for a boundary-conditioned block. The positive forest theorem assumes the full displayed vertex action; its constructed fixer happens to fix the auxiliary root, so anchoring one root is harmless. Fixing both endpoints of an open path is a different restriction and gives the explicit counterexample. Any use in the manuscript's boundary-transfer setting must specify the admissible gauges and prove that its retained/marginal observables satisfy the needed invariance.
+
+### Independent shared-edge spectral challenge
+
+An exact finite Z2 test used two adjacent square plaquettes sharing an edge (six vertices, seven edges). All128 characters were tested against all64 vertex gauges, and their kinetic eigenvalues were independently computed in exact Fraction arithmetic from the actual product transition with one-edge probabilities4/5 and1/5. The only gauge-invariant support masks are0,53,95,106, with sizes0,4,6,4. Nonconstant kinetic eigenvalues are a,a,b, where a=(3/5)^4=81/625 and b=(3/5)^6=729/15625. This supports the cycle-support mechanism on the tested graph, rather than a total-edge-count cost.
+
+It also disproves a stronger, tempting assertion: an arbitrary positive gauge-invariant spatial multiplier preserves that unweighted kinetic spectral ratio. On the four plaquette-holonomy states (++,+-,-+,--), let h=(2,1,1,2). This is gauge invariant and weights the OUTER RECTANGLE loop, not the ordinary sum of elementary Wilson plaquettes. With K(s,t)=[1+a s1t1+a s2t2+b s1s2t1t2]/4 and T=diag(h)Kdiag(h), v=(1,0,0,-1) is an exact eigenvector with eta=4a=324/625. All entries are positive and the maximum row sum is R=3+b=47604/15625<4. The even sector is the explicit symmetric2x2 matrix
+
+    [[2(1+b),1-b],[1-b,(1+b)/2]].
+
+Its larger eigenvalue is lam+=(5(1+b)+sqrt(9(1+b)^2+16(1-b)^2))/4. The other two odd eigenvalues are4a and a; the smaller even eigenvalue is4b/lam+<a. Thus lam+ is the top eigenvalue and4a is the second. Its positive even eigenvector supplies a genuine finite ground-state transform, with stationary law proportional to its square. Consequently the normalized second eigenvalue is eta/lam+>=eta/R=675/3967>a; numerically it is0.2038328623, versus0.1296 before weighting. The exact entries, eigenvector and strict ratio lower bound were checked with rational arithmetic; the even-block formula gives the independent elementary spectral justification. This finite spectral counterexample is NOT newly Lean-formalized here and is NOT an SU2 or four-dimensional Wilson counterexample. It refutes transfer based solely on positivity and gauge invariance; the specific bare Wilson plaquette potential and any effective-loop interactions require their own estimates.
+
+Independent noncommutative tests in the finite group S3 checked270 ordered-tree/selected-forest fields, all1296 four-cycle configurations,864 exact one-edge Haar sums, and an exact missing-edge pairing. They challenge the multiplication order and gauge conventions; they are not replacements for the SU2 Haar proofs.
+
+### Manuscript repair and literature comparison
+
+The selected original `ResearchSources/Incoming/dimock_nonabelian (1).tex`, SHA-256 `4D739A900C5B6E41DAC69071498E61847128B2F88781F709C0D576B9B43B889E`, was examined at lines385–418. Its axial-tree discussion places small-field/implicit-function and determinant concerns together. The verified correction is a separation of obligations: exact group-valued edge trivialization on a certified tree is global algebra and requires no small-field implicit-function theorem. This does NOT settle controlled Lie-algebra logarithms, preservation of coarse averages/boundary constraints, covariance estimates or Faddeev–Popov determinants. The manuscript's gauge potential formulation must not be silently identified with the simpler group-edge statement. Original bytes remain unchanged; this audit supplies no external Yang–Mills existence axiom.
+
+The graph gauge action, Haar product space and invariant Hilbert-space framework are classical; Baez, *Spin Network States in Gauge Theory*, section2, records that setting and the spin-network decomposition (https://arxiv.org/html/gr-qc/9411007). Its source/target convention is opposite the written orientation used here, with the same endpoint cancellation structure. No novelty is claimed for maximal-tree gauge fixing or cycle reduction, and no Peter–Weyl or spin-network theorem has been imported into Lean as an assumption. Existing generic `ProductL2Curry` is a potential tool for the remaining product-space norm step; the periodic64-field Walsh basis concerns a different additive lattice and cannot supply the required SU2 representation automatically.
+
+### Precise remaining bottleneck and research direction
+
+PROVED IN LEAN: ordered-tree and selected-forest gauge trivialization/constancy, general four-cycle holonomy reconstruction, actual Haar slice cancellation and bounded three-edge pairing orthogonality, and a fixed-boundary forest counterexample. INDEPENDENT RIGOROUS FINITE COUNTEREXAMPLE: arbitrary positive gauge-invariant spatial weighting need not preserve the kinetic cycle spectral ratio. OPEN: equivariance of general retained-edge Haar marginals, closure from pointwise bounded cylinders to the correct invariant L2 space, product kinetic norm estimates on cycle-supported components, and a local spatial comparison for the ACTUAL Wilson transfer and changing vacuum. Boundary gauges, shared edges and the stationary measure must be verified explicitly.
+
+The next focused test should exploit the literal Wilson plaquette potential and finite overlap structure, rather than assume an arbitrary gauge-invariant multiplier is benign. Challenge any proposed local comparison on shared-edge models before expanding classical gauge infrastructure. The tree/cycle results may support that test, but neither they nor the finite Z2 spectrum establishes a volume-uniform SU2 gap, a physical distance scale, continuum existence or a four-dimensional mass gap. Bakry remains paused and the campaign queue is unchanged.
+
+### Verification and closure
+
+Targeted build passed4218 jobs in21.601 seconds. Full root build passed6923 jobs in26.832 seconds. The complete transitive axiom audit passed52930 declarations in39.886 seconds, permitting only propext, Classical.choice and Quot.sound. All26 unabridged public types,15 theorem proofs,11 definitions/abbreviations and three private helper proofs were reviewed. Eight independent Lean checks passed: a branched non-Abelian tree, disconnected selected edges, actual loop reconstruction, centered quadratic class-function averaging, its integrability, its genuine product pairing against a nontrivial proper-edge probe, the fixed-boundary counterexample and canonical conjugation. The nonlinear test used F(W)=halfTrace(W)^2-1/4 and verified its exact Haar centering and bounds.
+
+Source integrity passed2743 Foundation/root Lean files, with exactly three intended changes/additions since approved1672; all3 pinned configurations,113 baseline manuscripts and21 Yang–Mills originals are unchanged. No sorry, admit, new axiom, heartbeat/trust/toolchain change or ResearchSources modification was introduced. Evidence is retained under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1673-*. Git approval and guarded PUBLIC main/research synchronization are recorded separately; this pre-commit ledger does not assert remote success before verification. Focused Yang–Mills remains active.
