@@ -2633,3 +2633,5 @@ import Foundation.PhysicalHeatCompoundPoissonAtom
 import Foundation.PhysicalHeatCompoundPoissonChainGamma
 import Foundation.YMBlockHeatContractionObstruction
 import Foundation.YMContinuumCorrelationScaling
+
+import Foundation.SU2OneWordTransfer

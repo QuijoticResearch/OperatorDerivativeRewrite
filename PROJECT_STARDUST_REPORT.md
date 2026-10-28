@@ -53463,3 +53463,13 @@ the exact-commit receipt and was independently verified on both PRIVATE
 `main` and research backup refs. The current documentation receipt adds
 no mathematical result; Yang–Mills remains active and Bakry Objective 2
 remains paused.
+
+The focused Yang–Mills campaign now has a minimal actual boundary-changing SU(2)
+transition in `Foundation/SU2OneWordTransfer.lean`, formed from the verified
+finite-staple conditional law. It is Markov on a common state space, is exactly
+a Haar refresh at zero coupling for every input law, and has an explicit
+positive-Haar-set witness that it changes the identity state. Its aligned
+identity-input concentration is exactly β. These are finite-dimensional
+probability statements. Gauge-compatible block influence, weak-coupling
+uniformity and continuum spectral consequences remain open; no mass gap is
+claimed. The focused audit records the exact scope.
