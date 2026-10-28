@@ -2698,3 +2698,6 @@ import Foundation.SU2SevenLinkParity
 import Foundation.SU2SevenLinkGroundTransform
 
 import Foundation.SU2HomogeneousPlaquetteObstruction
+
+import Foundation.SU2HomogeneousExchangeTrial
+import Foundation.SU2HomogeneousEigenvalueFloor

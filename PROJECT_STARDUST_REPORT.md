@@ -54455,3 +54455,79 @@ NEXT: retain the verified local one-weight comparison and its exact missing eige
 Full root build passed6934 jobs in27.7348009 seconds. Complete transitive axiom audit passed53594 declarations in39.7700531 seconds, permitting only propext, Classical.choice and Quot.sound. All37 unabridged public types (29 theorem proofs and8 definitions), all8 private helper proofs and the private Haar-left-invariance instance with its local caches were reviewed. Fourteen independent Lean checks passed in26.2708593 seconds; exact/numerical diagnostics passed. No sorry/admit/new axiom, trust/toolchain/heartbeat/recursion change or error suppression was introduced.
 
 Source integrity authenticated1680's manifest against its exact receipt and checked2754 Foundation/root Lean files: exactly the new module, root import and AxiomAudit changed. All3 pinned configurations,113 baseline manuscripts and21 Yang-Mills originals are unchanged. Evidence is under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1681-* (full build/audit/unabridged types, independent Lean checks, arithmetic/Haar diagnostics, declaration list, integrity script/manifest). Exact Git approval and guarded PUBLIC main/research synchronization are separate closure receipts; this pre-commit ledger does not assert remote success before verification.
+
+
+## Checkpoint1682 — all-tilt obstruction to the bare homogeneous exchange trial; Jensen normalization floor (October28,2026)
+
+### Strongest natural centering repair tested
+
+Checkpoint1681 showed that the old private-center projection does not survive equal weighting of both spatial plaquettes. This checkpoint tests the natural bare exchange-antisymmetric replacement Delta=Y-X against the ACTUAL homogeneous seven-link transfer. The result is a NONPERTURBATIVE limitation of that specific trial: its spatial Rayleigh quotient never exceeds c^4, and dividing by any uniformly positive bounded homogeneous eigenfunction's eigenvalue cannot restore an increase. This resolves the bare repair without assuming the earlier candidate second-coefficient formula or its unverified Wilson moment inequality. It does NOT rule out corrected exchange trials, all centered observables, a spectral obstruction or a physical mass gap.
+
+The temporal parameter beta and common spatial tilt t remain independent in the finite model. The all-real-parameter statements include the finite equal-parameter diagonal, but this is not an identification with the entire isotropic4D lattice theory.
+
+### Actual joint Haar law, gauge sector and homogeneous centering
+
+`Foundation/SU2HomogeneousExchangeTrial.lean` proves `joint_haar_integral`: for every measurable F bounded on[-1,1]^2, the actual seven-link Haar integral of F(X,Y) equals the product SU2-Haar half-trace integral. The proof uses the verified private-path reduction and actual Haar translations. It does NOT assume independence under the nonzero-temporal-coupling spatial vacuum. `joint_sign_integral` and `joint_swap_integral` prove simultaneous sign reversal and exchange for that actual Haar law, with every Fubini bound displayed.
+
+`delta_gauge` proves invariance of Delta under the full verified six-vertex local gauge action. The independent Lean harness also checks gauge invariance after the actual homogeneous inverse half weight. Actual measurability, |Delta|<=2, E_haar[Delta^2]=1/2 and
+
+    K_beta Delta=c^4 Delta
+
+are proved using existing common-operator channels and Haar moments, with no positive-beta restriction.
+
+`delta_reset_centered` proves E_pi_t[Delta]=0 in the fully realized homogeneous reset law from1681. `inverse_ground_reset_centered` checks the actual observable obtained by dividing the Rayleigh trial by the reset ground too. The independent harness proves its L2 domain under that ACTUAL stationary probability, so this is not a default-zero nonintegrable integral. This repairs centering at reset, unlike the transplanted old trial. General nonzero-temporal-coupling vacuum existence and its exchange/physical-sector identification are not asserted.
+
+### Exact numerator and ALL-TILT norm bound
+
+Retain V=(X+Y)/2, H_t=exp(t V), T_hom=H_t K_beta H_t. The tested trial is
+
+    f_t=H_t^(-1) Delta.
+
+The actual form is identified with E_haar[f T_hom g]. Exact inverse-half-weight cancellation gives
+
+    N=<f_t,T_hom f_t>=c^4/2,
+    D=||f_t||_haar^2=E_haar[exp(-t(X+Y)) Delta^2].
+
+`density_square_integrable` and `trial_memLp` prove the actual integral/L2 domains; no formal norm is substituted. `denominator_even` proves D(-t)=D(t) by the joint Haar sign identity. The pointwise elementary inequality exp(z)+exp(-z)>=2, multiplied by Delta^2 and integrated, then gives
+
+    D(t)>=1/2>0 for EVERY real t.
+
+`quotient_le_kinetic` therefore proves
+
+    Rayleigh(T_hom,f_t)=N/D <= c^4
+
+for EVERY real beta and t. There is no small-t window, Taylor truncation, analytic eigenbranch, moment-dominance assumption or assumed vacuum in this theorem. At t=0, the quotient is exactly c^4. The positive one-weight comparison at1679/1680 remains valid for its DIFFERENT weight/trial; no earlier result has been erased or strengthened by reinterpretation.
+
+### The needed homogeneous eigenvalue floor is proved, not assumed
+
+`Foundation/SU2HomogeneousEigenvalueFloor.lean` proves `eigenvalue_ge_one` for any explicitly supplied measurable psi with global0<l<=psi<=u, positive lam, and the ACTUAL equation T_hom psi=lam psi. It constructs no eigenfunction and introduces no existence axiom.
+
+The proof sets q=t V+log psi. Global bounds justify every logarithmic, exponential and kinetic integral. Mathlib's existing exponential Jensen integral theorem gives, pointwise,
+
+    K_beta q <= log(lam)+q-2t V.
+
+Actual Haar stationarity of K_beta and E_haar[V]=0 then imply log(lam)>=0, hence lam>=1. The normalization bound is derived from the displayed operator equation; no spectral-radius, compactness or uniqueness hypothesis is concealed. This reuses the same verified Jensen infrastructure already present in the entropy developments, but it is a PRESSURE/NORMALIZATION bound, not a quantum mass-gap estimate.
+
+`bare_normalized_no_inflation` combines this with the exact trial estimate:
+
+    Rayleigh(T_hom,f_t)/lam <= c^4.
+
+Thus even an existing positive bounded eigenfunction cannot turn the bare exchange trial into the old upward-ratio witness. Existence remains an open Lean input at nonzero temporal coupling. The independent harness supplies a NONVACUOUS application at beta=0 with arbitrary spatial t, using the already constructed reset ground H_t and its actual partition eigenvalue. It also derives that partition>=1 from the theorem.
+
+### Independent challenges and scope of the failed route
+
+Fifteen independent Lean checks passed: actual joint mixed fourth moment1/16; full finite gauge invariance; exact numerator; zero-tilt norm and quotient; all-tilt norm bound; actual Haar trial L2 domain; both homogeneous reset centering identities; exact tilt evenness; unrestricted-beta quotient bound; exclusion of lam<1 under the stated actual eigenfunction equation; full inverse-weight gauge invariance; a concrete reset ground as an eigenvalue-floor instance; and actual inverse-ground L2 membership under its stationary law.
+
+Independent continuous-Haar angular quadrature checked seven signed tilts at EACH of96/192 nodes: norm lower bound/evenness and exchange centering. Six80-digit181-term Haar-series diagnostics agreed with the norm identity2(Z Z''-(Z')^2), without claiming formally certified truncation intervals. Fifteen finite noncommutative Q8 homogeneous-kernel cases checked kinetic Delta evolution, exact numerator, positive norm, positive top eigenfunction, eigenvalue floor, raw and normalized trial bounds and actual normalized pairing identities. These finite eigenvectors are NOT continuous-SU2 vacuum constructions or Lean proof inputs.
+
+Two exact rational challenges show why the Jensen hypotheses matter in a broader inference. A biased two-state reset with weights19/20,1/20 and H=(1/2,2) has positive eigenvalue7/16<1, despite zero uniform-reference mean log H; that kernel is NOT stationary for the uniform reference. A stationary reset with constant H=1/2 has eigenvalue1/4<1, but its log-potential does NOT have mean zero. These do not refute the actual SU2 theorem, whose stationarity and mean-zero hypotheses are proved.
+
+This checkpoint closes the BARE exchange-inflation attempt. The degree-two corrected candidate and its unverified coefficient reduction/Wilson r<=a^2 inequality from1681 remain OPEN; failure of the bare witness does not establish their impossibility. Do not repeat the bare route without a genuinely different mechanism. Construction of actual nonzero-temporal-coupling positive eigenfunctions, a full completed stationary spectral interpretation, corrected/exchange-sector centering and physical-sector identification remain OPEN. Coupling-dependent iteration at a PHYSICAL distance, homogeneous4D interactions, scale/volume-uniform bounds and continuum/infinite-volume limits are not supplied by these finite inequalities. In particular, an upper bound on one trial quotient is not an upper bound on the entire centered spectrum or a uniform mass gap.
+
+### Source connection, campaign state and verification
+
+The original `ResearchSources/Incoming/block_contraction_spectral_gaps.tex`, SHA256 `0C40FA6B92B830C0E2309BD6471D55CB0EB9BFB94296B9267AD23A5280FA4C60`, was selectively reread at lines459-484. Its spectral-measure argument requires actual centered correlations in the reflection-positive physical Hilbert space. Correcting one finite trial's centering does not provide its claimed clustering or physical transfer hypotheses. Original bytes are unchanged. Classical Haar/Jensen ingredients and this finite test are not presented as a novelty claim. Yang-Mills remains ACTIVE, Bakry PAUSED, and all later queue priorities remain unchanged.
+
+Full root build passed6936 jobs in25.4857846 seconds. Complete transitive axiom audit passed53633 declarations in38.7034265 seconds, permitting only propext, Classical.choice and Quot.sound. All30 unabridged public types (25 theorem proofs and5 definitions) and all4 private helper proofs were reviewed. Fifteen final independent Lean checks passed in30.3433097 seconds; exact/numerical diagnostics passed. The extra final harness check resolved the actual inverse-ground L2-domain concern; mathematical sources were unchanged. No sorry/admit/new axiom, toolchain/trust/heartbeat/recursion change or error suppression was introduced.
+
+Source integrity authenticated1681's manifest against its exact receipt and checked2756 Foundation/root Lean files: exactly the two new modules, root imports and AxiomAudit changed. All3 pinned configurations,113 baseline manuscripts and21 Yang-Mills originals are unchanged. Evidence is under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1682-* (full build/audit/unabridged types, independent Lean and arithmetic/numerical checks, declaration list and integrity script/manifest). Exact Git approval and guarded PUBLIC main/research synchronization remain separate closure receipts; this pre-commit ledger does not claim a queued push succeeded.
