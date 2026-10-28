@@ -10355,3 +10355,13 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.SU2EventMixing.event_lower
 #print axioms OperatorDerivativeRewrite.Foundation.SU2EventMixing.c_lt_one
 #print axioms OperatorDerivativeRewrite.Foundation.SU2EventMixing.event_tendsto_equilibrium
+
+-- Checkpoint1666: stationary SU2 two-time event correlations and limiting independence.
+#print axioms OperatorDerivativeRewrite.Foundation.SU2LagEventCorrelation.lagKernel_markov
+#print axioms OperatorDerivativeRewrite.Foundation.SU2LagEventCorrelation.lagKernel_apply
+#print axioms OperatorDerivativeRewrite.Foundation.SU2LagEventCorrelation.lag_event_upper
+#print axioms OperatorDerivativeRewrite.Foundation.SU2LagEventCorrelation.lag_event_lower
+#print axioms OperatorDerivativeRewrite.Foundation.SU2LagEventCorrelation.lagKernel_stationary
+#print axioms OperatorDerivativeRewrite.Foundation.SU2LagEventCorrelation.stationaryLagLaw_fst
+#print axioms OperatorDerivativeRewrite.Foundation.SU2LagEventCorrelation.stationaryLagLaw_snd
+#print axioms OperatorDerivativeRewrite.Foundation.SU2LagEventCorrelation.lag_event_tendsto_product
