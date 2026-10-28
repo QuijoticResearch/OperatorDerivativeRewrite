@@ -2701,3 +2701,5 @@ import Foundation.SU2HomogeneousPlaquetteObstruction
 
 import Foundation.SU2HomogeneousExchangeTrial
 import Foundation.SU2HomogeneousEigenvalueFloor
+
+import Foundation.SU2SlowModeIteration

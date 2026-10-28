@@ -54531,3 +54531,57 @@ The original `ResearchSources/Incoming/block_contraction_spectral_gaps.tex`, SHA
 Full root build passed6936 jobs in25.4857846 seconds. Complete transitive axiom audit passed53633 declarations in38.7034265 seconds, permitting only propext, Classical.choice and Quot.sound. All30 unabridged public types (25 theorem proofs and5 definitions) and all4 private helper proofs were reviewed. Fifteen final independent Lean checks passed in30.3433097 seconds; exact/numerical diagnostics passed. The extra final harness check resolved the actual inverse-ground L2-domain concern; mathematical sources were unchanged. No sorry/admit/new axiom, toolchain/trust/heartbeat/recursion change or error suppression was introduced.
 
 Source integrity authenticated1681's manifest against its exact receipt and checked2756 Foundation/root Lean files: exactly the two new modules, root imports and AxiomAudit changed. All3 pinned configurations,113 baseline manuscripts and21 Yang-Mills originals are unchanged. Evidence is under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1682-* (full build/audit/unabridged types, independent Lean and arithmetic/numerical checks, declaration list and integrity script/manifest). Exact Git approval and guarded PUBLIC main/research synchronization remain separate closure receipts; this pre-commit ledger does not claim a queued push succeeded.
+
+
+## Checkpoint1683 — stationary slow-mode persistence and a necessary physical-distance iteration budget (October28,2026)
+
+### Research question and exact reuse
+
+The active question is whether coupling-dependent iteration actually overcomes the verified stationary spectral slowing, and whether a recovered contraction has a justified physical distance. The theorem-level audit found that `SU2SignBottleneck.exponential_variational_obstruction` ALREADY supplies an actual centered stationary L2 sign vector with positive variance and exponentially small one-step Dirichlet quotient. Re-proving the sign cut, trace-zero nullity, generic covariance saturation or auxiliary positivity infrastructure would not address the missing iteration question. This checkpoint reuses that vector, its exact stationary law, and `SU2VariationalGap.operator_contraction`/`operator_symmetric`/`operator_kernel_pairing` directly.
+
+New module: `Foundation/SU2SlowModeIteration.lean`. Its P_r is the EXISTING actual stationary loop operator on L2(equilibriumLaw r), constructed from the actual edge measure and identified with the row-normalized loop kernel in pairings. `steps r n f` is repeated application of that bounded operator. No new kernel, vacuum, signed functional, probability axiom or abstract spectral replacement is introduced. The resulting normalizedLag is the stationary TRANSFER-OPERATOR pairing divided by the actual sign variance; no new theorem identifying it with the separate `stationaryLagLaw r n` integral is claimed here.
+
+### Proved iteration obstruction
+
+For every real r, every f in the actual stationary L2 space and EVERY natural n, including odd n:
+
+    <P_r^n f,f> >= ||f||^2 - n <(I-P_r)f,f>.
+    <P_r^n f,f> <= ||f||^2.
+
+The proof uses reversibility and contraction, NOT a nonnegative-spectrum assumption or a spectral theorem. The one-step Dirichlet form decreases under P; even/odd iterations are controlled using symmetry and squared norms. These Hilbert-space ingredients are classical; their verified application to the existing loop bottleneck is the research content, not a novelty claim for a general operator inequality.
+
+Combining with the existing sign theorem, there is c>0 such that for all sufficiently large r, the actual sign vector v_r is centered, ||v_r||^2>0 and SIMULTANEOUSLY FOR EVERY n:
+
+    1 - c n exp(-r/2) <= normalizedLag(r,n) <= 1.
+
+Consequently, any sign-covariance contraction normalizedLag(r,n)<=q requires
+
+    (1-q) exp(r/2) <= c n.
+
+The stronger norm target ||P_r^n v_r||<=q||v_r|| pays the same necessary budget. Positivity of the variance and the actual one-step energy estimate are explicit hypotheses in these pointwise theorems and are supplied eventually by the reused sign theorem. Neither normalization nor actual process/operator identification is an implicit extra axiom.
+
+For ANY clock n(r) satisfying n(r)exp(-r/2)->0, `slow_clock_persistence` proves normalizedLag(r,n(r))->1. This is an obstruction to recovering fixed contraction by a sub-exponential-in-this-sense number of steps; merely saying that enough iterations mix at each fixed coupling does not provide a uniform distance estimate.
+
+### Conditional physical-scale test; what remains open
+
+For a PROPOSED spacing a(r)=exp(-kappa r), kappa<1/2, and ANY clock with eventually n(r)a(r)<=L, `bounded_physical_distance_persistence` proves normalizedLag(r,n(r))->1. `no_bounded_distance_contraction` excludes every eventual fixed q<1 along such a clock. For a physically shrinking spacing, the relevant subcase is 0<kappa<1/2. Lean also permits the mathematically valid kappa<=0 cases. The estimate uses a STRICT upper bound on kappa and gives no endpoint theorem, no sharp threshold, and no claim that this is the actual Yang--Mills coupling/spacing relation.
+
+Compare the retained POSITIVE result `SU2CouplingIteration.sufficient_step_count`: roughly 2 t exp(4|r|) steps suffice for the verified Doeblin event bound. The necessary exp(r/2) and sufficient exp(4r) estimates leave a large gap; no optimal mixing asymptotic is asserted, and event bounds and L2 norm bounds are not silently equated. Fixed-r eventual mixing and this changing-r obstruction are compatible. Coupling-dependent iteration can restore contraction in the loop model, but its physical usefulness still requires a justified scale relation and the appropriate correlation/operator topology.
+
+The actual4D extension remains OPEN. In particular one must construct/identify the genuine gauge-invariant stationary physical transfer and its vacuum normalization, a suitable centered observable, scale/volume-uniform estimates, and a justified coupling/lattice-spacing map. The r of this trace-product loop kernel has not been identified with the Wilson temporal coupling or a renormalized4D scale. `SU2WilsonSignCrossing.no_positive_crossing_barrier` and its open-link gauge counterexample already obstruct the naive transfer of this sign barrier to temporal Wilson links. They are preserved; no new positive barrier is assumed. Checkpoint1682's homogeneous bare-exchange limitation and nonzero-temporal-coupling ground-state existence/domain obligations also remain intact. No result here proves or disproves a4D physical mass gap.
+
+### Independent attempts to break the argument
+
+Twelve independent Lean checks passed: exact zero/two-step definitions; unit normalized zero-lag at positive variance; exact one-step equality; odd three-step lower bound; an upper-bound instance at negative coupling; actual sign centering; fixed iteration-count persistence; a nonzero kappa=1/4 bounded-distance instance; exclusion of q=1/2 along that clock; a norm-contraction cost; and the zero-step/positive-variance normalization obstruction.
+
+Independent continuous SU2 Haar angular quadrature constructed the actual normalized trace-product kernel at r=0,1,4,8,16,32, using BOTH96 and192 nodes with integration split at the sign boundary. It checked row normalization, stationary law, sign centering, the lower/upper bounds at129 iteration counts per case, and clocks floor(exp(r/4)). Representative near-unit-distance normalized lags were0.8173444152 at r=8,0.9966201125 at r=16 and0.9999998787 at r=32. These are diagnostics, not interval-certified asymptotics or Lean inputs. An initial unsplit quadrature failed the requested cross-resolution tolerance because the sign observable is discontinuous; the split angular quadrature resolved that diagnostic failure without changing mathematical sources or tolerances.
+
+An EXACT rational six-cycle counterexample tests removal of reversibility: for f=(2,1,-1,-2,-1,1), the stationary lag pairings are2,1,-1 at n=0,1,2, so the proposed n-step bound fails at n=2 despite norm contraction and stationarity. Seventeen exact checks on the reversible two-state flip (eigenvalue -1) confirm that a positive-spectrum assumption is unnecessary. Four two-state critical-clock diagnostics, with one-step deficit exp(-r/2) and n=ceil(exp(r/2)), approach lag exp(-1), not1. Thus the small-clock hypothesis cannot be discarded from a general bottleneck inference. This is not a counterexample to the unproved SU2 kappa=1/2 endpoint.
+
+### Complete verification and campaign state
+
+Full root build passed6937 jobs in40.6400273 seconds. Complete transitive axiom audit passed53662 declarations in39.0564997 seconds, permitting only propext, Classical.choice and Quot.sound. All17 unabridged public types (14 theorem proofs and3 definitions) and all4 private helper proofs were reviewed. Twelve final independent Lean checks passed cleanly in27.0081266 seconds; the earlier successful harness was cleaned of nonfatal tactic diagnostics, without changing mathematical sources. Exact/numerical diagnostics passed. No sorry/admit/new axiom, altered theorem hypothesis, toolchain/trust/resource/heartbeat change or suppressed check was introduced.
+
+Integrity authenticated1682's source manifest against its exact approval receipt and checked2757 Foundation/root Lean files: exactly the new module, root import and AxiomAudit changed. All3 pinned configuration files,113 baseline manuscripts and21 Yang--Mills originals are unchanged. No ResearchSources byte was modified or staged. Evidence is under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1683-* (full build, complete audit/unabridged types, final independent Lean harness, exact/numerical checks, declaration list and authenticated integrity script/manifest).
+
+Yang--Mills remains ACTIVE, Bakry PAUSED, and the campaign queue is unchanged. The next bottleneck is a genuine homogeneous physical-sector/scale bridge or a sharp obstruction to one, rather than routine replication of the one-step loop audit. Exact Git approval and guarded PUBLIC main/research synchronization are separate closure receipts; this pre-commit ledger does not claim remote backup success.
