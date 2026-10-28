@@ -1288,3 +1288,71 @@ Full root build passed6937 jobs in40.6400273 seconds. Complete transitive axiom 
 Integrity authenticated1682's source manifest against its exact approval receipt and checked2757 Foundation/root Lean files: exactly the new module, root import and AxiomAudit changed. All3 pinned configuration files,113 baseline manuscripts and21 Yang--Mills originals are unchanged. No ResearchSources byte was modified or staged. Evidence is under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1683-* (full build, complete audit/unabridged types, final independent Lean harness, exact/numerical checks, declaration list and authenticated integrity script/manifest).
 
 Yang--Mills remains ACTIVE, Bakry PAUSED, and the campaign queue is unchanged. The next bottleneck is a genuine homogeneous physical-sector/scale bridge or a sharp obstruction to one, rather than routine replication of the one-step loop audit. Exact Git approval and guarded PUBLIC main/research synchronization are separate closure receipts; this pre-commit ledger does not claim remote backup success.
+
+
+## Checkpoint1684 — central-band two-step reset improves the loop iteration scale; explicit Wilson mismatch (October28,2026)
+
+### Mathematical bottleneck and the tested mechanism
+
+Checkpoint1683 proved that the actual stationary loop slow mode cannot be contracted by a clock n(r) with n(r)exp(-r/2)->0. The retained sufficient reset estimate required roughly exp(4r) original transitions. This checkpoint investigates a specific way to narrow that gap, rather than adding classical spectral auxiliary results or assuming a physical vacuum: pass through a small central trace band, where the trace-product loop's outgoing interaction becomes nearly unbiased.
+
+New module: `Foundation/SU2ZeroTraceBridge.lean`. It reuses the actual normalized `SU2InteractingLoopKernel.loopKernel`, its partition bound and probability proof, the existing explicit quaternion/SU2 zero-trace state from `SU2WilsonSignCrossing`, actual kernel composition and bounded-integral machinery. No manuscript byte, mathematical axiom, pinned configuration or previous theorem is changed. Haar open-set positivity supplies the central band's strictly positive measure; no unproved trace-density formula is used by Lean.
+
+### Proved actual two-step measure bound
+
+Let h be the half trace, B_delta={C: |h(C)|<delta}, b_delta=Haar(B_delta). For EVERY delta>0, b_delta>0. At every nonnegative r:
+
+    k_r(C,Z) >= exp(-(1+delta)r)       for Z in B_delta,
+    k_r(Z,D) >= exp(-2 delta r)        for Z in B_delta.
+
+These are bounds on the EXISTING actual normalized transition density. Integrating the intermediate state over B_delta gives the genuine MEASURE inequality
+
+    (K_r composed K_r)(C, .) >= b_delta exp(-(1+3delta)r) Haar(.).
+
+It holds for every starting C and every measurable event; no matrix surrogate, hypothetical two-step density, stationarity of Haar, spectral completeness or vacuum existence premise is used. `reset_rate_near_one` packages the consequence: for EVERY fixed eta>0 there is b>0 such that the two-step Haar reset coefficient is at least b exp(-(1+eta)r). The prefactor depends on eta. No eta=0 theorem or eta-uniform prefactor is claimed.
+
+### Proved contraction for actual iterates and its proposed distance
+
+Set rho=b_delta exp(-(1+3delta)r)/2; Lean proves0<rho<1. Halving avoids a zero residual at an endpoint. `twoAverage` integrates against the actual composed probability kernel, and `twoAverage_eq_transfer_twice` identifies it with TWO applications of the previously verified pointwise transfer for every measurable f valued in[0,1]. The recursive `iterate r n f` therefore uses2n original transitions.
+
+The residual range estimate compares the actual composed measure with rho Haar and applies the same comparison to1-f. It never calls Haar the equilibrium law. For every such f, every C,D and every n:
+
+    |K_r^(2n)f(C)-K_r^(2n)f(D)| <= (1-rho)^n <= exp(-n rho).
+
+Measurability, probability normalization, all required bounded-integral domains and range bounds are proved. In particular all measurable-event indicators are admitted; smoothness or polynomiality is unnecessary. These are actual pointwise bounded-observable/oscillation estimates, not a new theorem about the complete centered L2 spectrum or the separate stationaryLagLaw representation.
+
+`iterate_exponential_bound` gives error<=exp(-t) whenever t<=n rho. `sufficient_pair_count` proves that
+
+    n >= (2t/b_delta) exp((1+3delta)r)
+
+is sufficient (n COUNTS PAIRS; original transitions are2n). Thus the proved sufficient coupling exponent improves from4 to any fixed number greater than1, with an explicit positive band-mass prefactor. The necessary exp(r/2) scale from1683 remains valid; the optimal exponent and polynomial prefactors remain OPEN.
+
+For the explicitly PROPOSED spacing a_delta(r)=exp(-(1+3delta)r), `proposed_distance_oscillation` proves
+
+    oscillation <= exp(-(b_delta/4) * (2n a_delta(r))).
+
+This is a precise positive scale-dependent estimate in the loop model. It does NOT justify that spacing physically. Contrast1683: its persistence theorem concerns a different proposed spacing exp(-kappa r), kappa<1/2. There is no contradiction, and neither estimate proves an actual4D coupling/spacing map or a physical mass gap.
+
+### Rigorous failure of the unchanged Wilson extension
+
+The central band's mechanism is tied to the trace-PRODUCT interaction r h(C)h(D). `zero_trace_row` proves that h(C)=0 makes its row EXACTLY Haar at every r. This fact is false for the actual one-word Wilson row already constructed in the library.
+
+`wilson_relative_mean` proves for EVERY current C that the actual Wilson row `SU2OneWordTransfer.transition law beta C^{-1}` has relative-holonomy mean
+
+    integral h(C^{-1}D) dW_beta(C,D) = c(beta),
+
+where c(beta) is the existing actual Wilson increment coefficient, with verified c(beta)->1. Haar has relative mean0 by exact left invariance and the verified Haar moment. Therefore `zero_trace_wilson_mismatch` constructs, for all sufficiently large beta, an actual zero-trace C whose loop row is Haar while its Wilson row is NOT Haar. The independent Lean harness also verifies that the relative holonomy test is invariant under a COMMON endpoint transformation (C,D)->(g C h^{-1},g D h^{-1}). This is not an assertion about every gauge constraint of the full4D theory.
+
+This counterexample blocks identifying the trace-product central-band reset with an unchanged Wilson mechanism. It does NOT exclude every Wilson minorization or alternative multiscale bridge. A gauge-compatible4D stationary transfer, actual ground-state/physical-sector identification, volume/scale-uniform controls and a justified physical spacing remain OPEN. Existing Wilson sign-crossing, seven-link homogeneous centering and bare-exchange obstructions remain preserved; no provisional Yang--Mills existence statement is introduced as an axiom.
+
+### Independent challenges, complete verification and campaign state
+
+Sixteen independent Lean checks passed: empty-band obstruction; positive concrete band mass; explicit trace-zero SU2 membership; actual zero-trace Haar row; actual two-step measure minorization; strict reset range; a concrete near-one exponent; zero-pair identity; one-pair identification with two actual transfers; constant preservation; discontinuous measurable-event oscillation; a sufficient pair count yielding exp(-1); the proposed distance formula with correct2n factor; common-endpoint gauge covariance of the relative test; the actual Wilson relative moment; and an eventual nonvacuous loop/Wilson row mismatch.
+
+Independent Haar quadrature tested18 (r,delta) cases at BOTH96/192 nodes: r=0,1,4,8,16,32 and delta=.05,.2,.5. It checked the actual density formulas, a split-band arrival integral, two-step minorization on finite quadrature grids and a common41-point source/target grid, and four unit probes through33 pair-iteration counts. An initial refinement comparison used minima over DIFFERENT node grids; replacing the comparison points with the same41 fixed points resolved that diagnostic failure without weakening its tolerance or changing mathematical sources. These finite quadrature matrices are diagnostics, not interval-certified continuous results or Lean proof inputs. Four independent Wilson relative moments were approximately.24019,.65805,.90781,.95350 at beta=1,4,16,32; zero-trace Haar transport would instead give0. A negative-coupling test refutes dropping the displayed r>=0 hypothesis from the directional density bounds; the delta=0 test confirms that an empty band provides no positive reset.
+
+Full root build passed6938 jobs in41.1388823 seconds. Complete transitive axiom audit passed53711 declarations in41.983071 seconds, permitting only propext, Classical.choice and Quot.sound. All28 unabridged public types (23 theorem proofs and5 definitions) and all7 private helper proofs were reviewed. Sixteen final independent Lean checks passed cleanly in26.414989 seconds. A formatting-induced parse failure in an intermediate full build was repaired; the complete final build/audit passed with unchanged verification settings. No sorry/admit/new axiom, altered old theorem, version/trust/resource/heartbeat/recursion change or suppressed check was introduced.
+
+Integrity authenticated1683's source manifest against its exact approval receipt and checked2758 Foundation/root Lean files: exactly the new module, root import and AxiomAudit changed. All3 pinned configuration files,113 baseline manuscripts and21 Yang--Mills originals are unchanged. Evidence is under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1684-* (full build, complete audit/unabridged types, independent Lean and quadrature checks, declaration list and authenticated integrity script/manifest). The Doeblin/range ingredients are classical; no literature novelty claim is asserted for them or for this finite-model application.
+
+Yang--Mills remains ACTIVE and Bakry PAUSED; the queue is unchanged. The positive loop estimate and the Wilson mismatch narrow the useful next question to a genuine physical transfer/scale bridge or its obstruction. Merely shrinking a band or choosing a convenient spacing does not answer that question. Exact Git approval and guarded PUBLIC main/research synchronization remain separate closure receipts; this pre-commit record does not claim remote success.
