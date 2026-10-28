@@ -2668,3 +2668,5 @@ import Foundation.SU2CouplingIteration
 import Foundation.YMRowNormalizationObstruction
 
 import Foundation.SU2SignBottleneck
+
+import Foundation.SU2WilsonSignCrossing
