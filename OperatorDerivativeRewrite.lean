@@ -2652,3 +2652,4 @@ import Foundation.YMSpectralLaplaceBridge
 import Foundation.SU2WeakCouplingNormalization
 import Foundation.SU2InteractingLoopKernel
 import Foundation.SU2LoopEquilibrium
+import Foundation.SU2StationaryMinorization
