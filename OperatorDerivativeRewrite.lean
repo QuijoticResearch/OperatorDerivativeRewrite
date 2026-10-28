@@ -2686,3 +2686,5 @@ import Foundation.WilsonPlaquetteGapCounterexample
 import Foundation.SU2QuadraticWilsonChannel
 
 import Foundation.SU2WilsonGroundCertificate
+
+import Foundation.SU2SevenLinkTransfer

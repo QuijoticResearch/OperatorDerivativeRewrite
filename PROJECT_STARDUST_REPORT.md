@@ -54105,3 +54105,64 @@ NEXT CONCRETE BOTTLENECK: combine an odd-sector Rayleigh trial using1675's genui
 Final complete root build passed6927 jobs in27.8879347 seconds; complete transitive axiom audit passed53217 declarations in40.3549043 seconds, allowing only propext, Classical.choice and Quot.sound. All39 unabridged public types,28 theorem proofs,11 definitions and nine private helper proofs were reviewed. Fourteen independent Lean checks and the rational/numerical challenges passed. A single trailing whitespace cleanup preceded the final complete build and audit. No sorry, admit, new axiom, heartbeat/trust/toolchain change or error suppression was introduced.
 
 Source integrity passed2747 Foundation/root Lean files, with exactly three intended mathematical source changes/additions since approved1675. All three pinned configurations,113 baseline manuscripts and21 Yang-Mills original files are unchanged. Evidence is retained under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1676-*, including the final working-checkpoint manifest, full-build/audit logs, independent Lean harness and numerical JSON. Exact Git approval and guarded PUBLIC main/research synchronization are separate closure receipts; this entry does not claim a remote backup before it is verified.
+
+## Checkpoint1677 — a common actual seven-link Markov transfer for the spectral test (October28,2026)
+
+### Concrete identification, rather than another conditional spectral formula
+
+`Foundation/SU2SevenLinkTransfer.lean` constructs one state space with coordinates (U,A,B,C,D,E,F), where U is the SINGLE shared edge, L=ABC and R=DEF are the two private paths. `edgeLaw` is a genuine sevenfold product measure. `noise beta` uses the actual Wilson increment on EVERY edge; `haar` uses the existing concrete SU2 Haar law. `step beta f(s)=integral f(s v)dnoise_beta(v)` updates each physical edge once. Bounded measurable Fubini, measurability, probability and the required integral domains are verified, not assumed.
+
+`transition` is an actual Mathlib Markov kernel, built by sampling the independent product noise and applying group multiplication. `transition_markov`, `transition_eq_map` and `transition_integral` identify it exactly with the displayed step. Product-Haar right invariance and Fubini prove `step_haar_stationary` and `transition_integral_stationary` for EVERY bounded measurable probe. This is a genuine finite SU2 kinetic transition with Haar stationarity; it is not an assertion that Haar is the stationary vacuum law AFTER spatial weighting.
+
+### Both channels and the vacuum estimate now refer to the SAME operator
+
+Write X(s)=h(LU), Y(s)=h(U^{-1}R), M(s)=h(LR)/4 and Q(s)=XY-M, where h=halfTrace. With the existing actual c=E_nu h and d=(4E_nu h^2-1)/3, the new exact full-product identities are
+
+    K X=c^4 X,  K Y=c^4 Y,
+    K M=c^6 M,  K Q=c^6 d Q,
+    K(X^2)=1/4+d^4(X^2-1/4).
+
+`step_residual` identifies checkpoint1675's nested expression with this actual product operator, preserving one shared increment rather than silently splitting it into independent copies. `step_meanChannel`, `step_first`, `step_second` and the quadratic identities are proved for the same law. The centered-quadratic word helper serves precisely the needed first-plaquette moment identification.
+
+`haar_path_integral` rigorously reduces the private Haar paths to independent L,R variables. It uses Haar translation and bounded Fubini, not a gauge-fixing assumption. This gives actual full-state moments
+
+    E_haar X=0, E_haar X^2=1/4,
+    E_haar (XY)^2=1/16, E_haar M^2=1/64, E_haar Q^2=3/64,
+    E_haar M Q=0.
+
+The mean and residual belong to actual Haar L2 and have strictly positive squared norms. The one-quarter/three-quarter decomposition is therefore realized on the common state space, rather than imported from a different surrogate's character normalization. `gaugeAction` explicitly uses all six vertices of the adjacent-square graph. X,Y,M,Q and the vacuum candidate are invariant under that full vertex action.
+
+Define T_t=H_t K H_t, H_t(s)=exp(t X(s)/2), with literal exponential plaquette half weights. Applying checkpoint1676's generic moment certificate DIRECTLY to this seven-link probability law proves `spatialStep_trialVacuum_supersolution` on the SAME K. With a=c^4,r=d^4 and the previously verified A,B,mu,C,
+
+    u(s)=exp(t X(s)/2)[1+A t X(s)+B t^2(X(s)^2-1/4)],
+    T_t u <= [1+mu t^2+2 C |t|^3]u.
+
+The exact domain is |t|<=1 and |A||t|+|B||t|^2<=1/2; strict positivity and actual inner-integral existence are proved separately. No equality of every nonlinear reduced kernel, analytic eigenbranch or vacuum existence theorem was assumed to make this identification. The necessary smallness and nonuniform-window obstruction from1676 remain in force.
+
+### A genuine stationary kinetic obstruction, with its physical boundary explicit
+
+`haar_first_lag` and `transition_first_lag` prove the actual stationary lag pairing E[X KX]=c^4/4. Together with E X=0 and E X^2=1/4, the lag/variance ratio is exactly c^4. The prior actual c^4 ->1 result therefore yields `no_uniform_centered_kinetic_bound`: for EVERY q<1 there is a finite beta>=0 at which this centered observable violates the proposed bound E[X KX]<=q E[X^2]. This is a precise coupling-nonuniform obstruction for the genuine finite seven-link K, not merely a row-normalization heuristic.
+
+It does NOT establish a vanishing gap at any fixed finite beta, identify the spatially weighted stationary law, or prove a quantum four-dimensional mass-gap obstruction. Large Wilson parameter is a weak-coupling limit in the usual lattice terminology. The formal result is stated in beta, without conflating that terminology with earlier module names. The model is the unprojected local temporal kinetic piece; neither its finite patch nor its gauge-invariant probes supplies the full homogeneous lattice, Gauss-law projection, infinite-volume or continuum construction.
+
+### Independent tests and manuscript comparison
+
+Sixteen independent Lean checks passed: actual Markov/probability/map realization, genuine-kernel eigenmode identity, both shared channels, the common-law second moment, all four Haar quadratic values and channel orthogonality, actual L2 domains, full vertex gauge identities, bounded-probe stationarity, centered nonzero lag obstruction, same-operator vacuum upper bound and its L1 domain, beta-zero reset and nonvacuity of the residual.
+
+Independent Fraction calculations tested two noncommuting seven-link backgrounds with the SAME Q8 moment-cubature law on every edge: probabilities9/16 at+1 and1/16 at each other signed quaternion basis element, hence c=1/2,m=5/8,d=1/2. Each private path has512 exact terms, and the shared edge has8; independence factorizes the exterior-path expectations while retaining the SAME shared increment in both plaquettes. All five channel/moment identities and the quadratic residual norm diagnostic passed exactly. This is a degree-two moment diagnostic, NOT the actual Wilson law, a fully central law or a general Haar cubature.
+
+A separate512-node actual Wilson radial-moment calculation propagated first and second quaternion tensors through the original noncommuting edge placements. Fourteen tests, beta=-4,0,1/2,1,4,16,64 on both backgrounds, matched the expected c^4,d^4,c^6,c^6 d formulas with maximum absolute discrepancy2.23e-16. These are independent numerical diagnostics only; no quadrature enters Lean or certifies a spatial spectrum.
+
+Original `ResearchSources/Incoming/block_contraction_spectral_gaps.tex`, SHA256 `0C40FA6B92B830C0E2309BD6471D55CB0EB9BFB94296B9267AD23A5280FA4C60`, was selectively reread at lines321-363. Its updated boundary X' and H1 comparison to the boundary heat semigroup remain separate unverified inputs. The concrete kernel constructed here has NOT been identified with that manuscript's unspecified boundary update; no operator-error margin or continuum passage is thereby certified. No manuscript byte was changed and no novelty is asserted for the classical product-measure, Haar or Markov ingredients.
+
+### Exact next bottleneck and unresolved physical bridge
+
+PROVED: a common actual seven-link Markov realization, Haar stationarity on bounded measurable probes, exact nonzero Haar L2 kinetic channels and orthogonality, full local gauge identities, an actual stationary kinetic lag obstruction, and a literal spatial exponential supersolution on that same operator. OPEN: reversible quadratic-form/closed-L2 realization needed for the variational comparison, center-parity control and odd trial reconstruction with finite exponential error, vacuum normalization/existence or a valid substitute, and the claimed increase of a normalized stationary eigenvalue ratio. Checkpoint1674's second-derivative formula remains CONDITIONAL.
+
+NEXT: use these exact common-operator inputs for the bounded odd-sector Rayleigh test and a rigorous positive comparison bound, rather than adding unrelated gauge infrastructure. Coupling-dependent iteration still requires quantitative bounds on the spatially weighted operator and a physically justified distance scale. Homogeneous four-dimensional interactions, volume/scale-uniform control and continuum/infinite-volume limits remain open. Yang-Mills stays ACTIVE; Bakry stays PAUSED; every later priority is unchanged.
+
+### Full verification and integrity
+
+Final complete root build passed6928 jobs in43.9784092 seconds. Complete transitive axiom audit passed53303 declarations in48.4839914 seconds, allowing only propext, Classical.choice and Quot.sound. All62 unabridged public types,44 theorem proofs,16 definitions/abbreviations and two public instances were reviewed, together with seven private helper theorems and four private topology/measure instances. All16 independent Lean checks passed. The append rewrite orientation was repaired and proved finite-product instances were cached; no recursion/heartbeat increase, new axiom, trust/toolchain change, sorry, admit or error suppression was used.
+
+Source integrity passed2748 Foundation/root Lean files with exactly three intended mathematical source changes/additions since approved1676. All three pinned configurations,113 baseline manuscripts and21 Yang-Mills originals are unchanged. Evidence remains under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1677-*, including full-build/audit logs, all public types, independent Lean checks, exact/numerical diagnostics and the working-checkpoint manifest. Exact Git approval and guarded PUBLIC main/research synchronization are separate closure receipts; this pre-commit entry does not claim remote synchronization before verification.
