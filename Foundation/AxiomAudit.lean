@@ -10246,3 +10246,8 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.YMObservableScaleObstruction.no_uniform_constant
 #print axioms OperatorDerivativeRewrite.Foundation.YMObservableScaleObstruction.arbitrarily_small_coupling_no_uniform_constant
 #print axioms OperatorDerivativeRewrite.Foundation.YMObservableScaleObstruction.reflected_vs_unreflected
+
+-- Checkpoint1655: exponential Laplace decay excludes subgap spectral mass.
+#print axioms OperatorDerivativeRewrite.Foundation.YMSpectralLaplaceBridge.interval_lower
+#print axioms OperatorDerivativeRewrite.Foundation.YMSpectralLaplaceBridge.no_mass_below
+#print axioms OperatorDerivativeRewrite.Foundation.YMSpectralLaplaceBridge.no_mass_below_gap
