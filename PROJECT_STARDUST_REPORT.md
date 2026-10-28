@@ -53930,3 +53930,78 @@ The next focused test should exploit the literal Wilson plaquette potential and 
 Targeted build passed4218 jobs in21.601 seconds. Full root build passed6923 jobs in26.832 seconds. The complete transitive axiom audit passed52930 declarations in39.886 seconds, permitting only propext, Classical.choice and Quot.sound. All26 unabridged public types,15 theorem proofs,11 definitions/abbreviations and three private helper proofs were reviewed. Eight independent Lean checks passed: a branched non-Abelian tree, disconnected selected edges, actual loop reconstruction, centered quadratic class-function averaging, its integrability, its genuine product pairing against a nontrivial proper-edge probe, the fixed-boundary counterexample and canonical conjugation. The nonlinear test used F(W)=halfTrace(W)^2-1/4 and verified its exact Haar centering and bounds.
 
 Source integrity passed2743 Foundation/root Lean files, with exactly three intended changes/additions since approved1672; all3 pinned configurations,113 baseline manuscripts and21 Yang–Mills originals are unchanged. No sorry, admit, new axiom, heartbeat/trust/toolchain change or ResearchSources modification was introduced. Evidence is retained under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1673-*. Git approval and guarded PUBLIC main/research synchronization are recorded separately; this pre-commit ledger does not assert remote success before verification. Focused Yang–Mills remains active.
+
+## Checkpoint 1674 — elementary-plaquette spectral deterioration and actual SU2 shared-edge projection
+
+Focused Yang–Mills remains ACTIVE. The preceding goal turn made verified progress at checkpoint1673, 992126f3c85818c27caef3545908b2864b17e300, with both authorized PUBLIC backup branches verified. This checkpoint tests the stronger local claim left open there: can the literal insertion of one elementary Wilson plaquette be assumed to preserve the unweighted kinetic gap?
+
+### A fully verified finite stationary counterexample with an elementary plaquette multiplier
+
+`Foundation/WilsonPlaquetteGapCounterexample.lean` constructs an actual four-state positive Markov operator and stationary PMFs, including its positive ground state rather than assuming one. The provenance is a two-square Z2 graph sharing an edge: edges(0,1),(1,2),(3,4),(4,5),(0,3),(1,4),(2,5). The independent link-noise means are(2/3,2/3,2/3,2/3,3/4,1/2,3/4). Each is a finite positive Wilson coupling: the relative-link same/flip odds are(5,5,5,5,7,3,7), or beta_e=(log odds_e)/2. The two plaquette means are a=1/6 and the outer-rectangle mean is b=1/9. This is an anisotropic finite Z2 example, not SU2 Haar or the homogeneous four-dimensional theory.
+
+The exact integer product-noise certificate enumerates all128 bit fields. The left and right plaquette parity masks are53 and106. The four quotient counts are119808,73728,73728,64512 with denominator331776, giving quotient probabilities(13/36,2/9,2/9,7/36). `noiseIndex_bijective` proves the8x16 enumeration covers every input exactly once, and `full_noise_quotient_certificate` identifies ALL transition entries using the relative plaquette labels. This avoids an unchecked discretization or unexplained4x4 matrix. The graph gauge-orbit interpretation and Fourier provenance were additionally challenged independently over all128 characters and64 vertex gauges.
+
+`kinetic_centered_bound` proves the unweighted kinetic Poincare gap is at least5/6 on all centered real functions, and `kinetic_bound_sharp` supplies the1/6 eigenmode attaining equality. Now multiply on both sides by h=(2,2,1,1), a function of the FIRST elementary plaquette alone. `amplitude_wilson_form` proves EXACTLY h(s)=sqrt(2)*exp((log2)s1/2). The harmless common scalar leaves normalized spectral ratios unchanged. This is a genuine one-plaquette half weight, unlike checkpoint1673's outer-rectangle multiplier; the other spatial plaquette coupling is zero.
+
+For T=diag(h)Kdiag(h), `ground_eigen` explicitly verifies the strictly positive ground vector psi=(5,5,2,2) with eigenvalue8/3. `step` is the actual ground transform T_ij psi_j/((8/3)psi_i). Positive entries, row sums, detailed balance, stationary weights pi=(25/58,25/58,2/29,2/29), and pi proportional to psi squared are all proved. `rowPMF` and `stationaryPMF` are actual probability mass functions; `stationary_bind` verifies stationarity as a PMF identity. No unproved Perron existence or vacuum normalization is used.
+
+For the centered probe f=(1,-1,0,0), the verified stationary second moment is25/29 and lag pairing is125/696. `probe_rayleigh` gives their ratio5/24>1/6. Consequently `unchanged_gap_fails` refutes the original5/6 Poincare lower bound for THIS stationary operator; its gap is at most19/24<5/6. The finite chain remains strictly positive and mixing. This is strict deterioration of a proposed comparison constant, not gap closing, infinite-volume degeneracy or a physical mass-gap obstruction.
+
+An earlier independent homogeneous-kinetic scan with r=3/5 also found deterioration with a single plaquette field and with small unequal positive fields on both plaquettes; equal fields decreased the tested ratios. Those scans are diagnostics only. The Lean theorem concerns the exact anisotropic construction just specified. Neither test licenses a claim about equal spatial couplings on the full lattice. What fails is the universal stepwise claim that inserting any positive elementary plaquette multiplier can only improve the kinetic gap.
+
+### Actual SU2 calculation: a shared link has a nontrivial surviving channel
+
+`Foundation/SU2SharedPlaquetteProjection.lean` returns to actual continuous SU2 Haar probability. It obtains the normalized fundamental Schur identity directly from already verified machinery: differentiate the exact Wilson convolution half-trace eigenidentity at zero tilt, use `BoundedExponentialTiltResponse.expectation_hasDerivAt_zero`, and equate the two verified derivatives. `translated_trace_covariance` proves
+
+    integral halfTrace(CU) halfTrace(U) dHaar(U)=halfTrace(C)/4.
+
+Haar translation then proves `sharedProduct_mean`:
+
+    P(L,R,U)=halfTrace(LU) halfTrace(U^{-1}R),
+    M(L,R)=integral P(L,R,U)dHaar(U)=halfTrace(LR)/4.
+
+The shared edge is identified, not replaced by two independent copies. L,R represent the two exterior paths; their concatenation is the outer loop. Measurability, boundedness, integrability and zero mean of the residual P-M are verified. `sharedMean_gauge` and `sharedProduct_gauge` prove the appropriate full two-endpoint gauge identities, so this is more than a bare-link sign analogy.
+
+For every FIXED shared U, `shared_projection_second_moments` computes the displayed iterated independent Haar exterior moments:
+
+    integral_L integral_R P^2=1/16,
+    integral_L integral_R M^2=1/64,
+    integral_L integral_R (P-M)^2=3/64.
+
+Every integral expansion used in the proof has its integrability discharged. Thus the mean and residual carry respectively one quarter and three quarters of the original squared moment under these Haar exterior variables. The theorem is an exact iterated-integral identity; it does not by itself construct the full physical L2 transfer or prove that the residual is a kinetic eigenchannel. This distinction prevents importing the Z2 coefficient into SU2, where the projection coefficient is1/4.
+
+### A rigorous algebraic sign reduction, with the spectral bridge still open
+
+The shared-edge decomposition suggests a precise candidate for a local SU2 perturbation audit. Let c be the fundamental Wilson increment coefficient, m its second half-trace moment, d=(4m-1)/3 and a=c^4. If the residual kinetic channel is proved to have coefficient c^6 d, the mean channel coefficient is c^6, the correct center-parity sector is isolated, and the relevant normalized eigenbranch is twice differentiable for T_t=exp(tV/2)Kexp(tV/2), with V the first plaquette half trace, the proposed second derivative of the neighboring eigenvalue ratio is
+
+    (a/4) B(c^2,m),
+    B(x,m)=(1+x)/(4(1-x))
+           +3(1+xd)/(4(1-xd))-(1+x^2)/(1-x^2).
+
+That operator perturbation formula is a CANDIDATE REDUCTION, not a proved derivative of a physical operator. The new Lean theorem `overlapBracket_positive` does rigorously settle its algebraic sign: B(x,m)>0 whenever0<x<=m<1. Indeed
+
+    B=x[1+3d-x(3+d)]/[2(1-x^2)(1-xd)],
+
+and the numerator bracket is bounded below by(4/3)m(1-m)>0 using x<=m. The usual variance inequality c^2<=m therefore supplies the sign condition rather than an unexplained numerical cancellation. Application to actual tilted Haar moments, the exact residual convolution action, sector isolation, operator domains and analytic perturbation hypotheses must each be proved. None has been introduced as an axiom here.
+
+A256-node semicircle diagnostic evaluated the conditional expression at beta=1/4,1/2,1,2,4,8,16,64 and found positive signs throughout. The saved evidence labels the missing residual/spectral hypotheses explicitly. These numbers cannot substitute for the unproved operator bridge. The algebraic sign theorem and the genuine SU2 Haar moment decomposition are the proved parts; a claim of SU2 spectral deterioration would be premature.
+
+### Manuscript and literature comparison
+
+`ResearchSources/Incoming/block_contraction_spectral_gaps.tex`, SHA-256 `0C40FA6B92B830C0E2309BD6471D55CB0EB9BFB94296B9267AD23A5280FA4C60`, was selectively checked at lines615–651. Its asserted q=q0+epsilon_T+eta<1 and continuum trajectory still require actual norm estimates and a quantified margin. The finite counterexample does not refute a conditional perturbation theorem whose hypotheses and error bounds are genuinely established; it prevents silently setting the spatial correction to zero from Wilson form, positivity or gauge invariance. Existing `YMBlockHeatContractionObstruction` remains relevant to the insufficient rate comparison with the shrinking heat-step deficit. No manuscript byte or historical result was changed.
+
+Luscher's DESY76/54 transfer construction separates temporal convolution and spatial multiplication (printed pp8–9, https://bib-pubdb1.desy.de/record/396349/files/7611148.pdf?version=1). The finite test respects that structure and uses explicit ground normalization. The SU2 integral is the classical normalized fundamental Schur identity, recovered through Stardust's verified derivative machinery. No novelty or external continuum existence claim is asserted; the conditional perturbative connection needs its own further mathematical and novelty audit.
+
+### Exact bottleneck and next focused work
+
+PROVED IN LEAN: a finite Wilson-noise quotient certificate, explicit ground-normalized stationary PMFs, failure of the unchanged kinetic gap after an elementary plaquette insertion, actual SU2 shared-edge Haar projection and residual moments, gauge invariance and a positive algebraic perturbation bracket. FAILED: universal monotonic improvement under a local elementary-plaquette insertion. OPEN: the genuine SU2 residual kinetic action and spectral-perturbation realization, homogeneous simultaneous spatial weighting, volume-uniform estimates, a physically justified distance scale, and continuum/infinite-volume limits.
+
+The next substantive test is the quadratic one-link Wilson action on the shared residual: prove or refute the proposed coefficient d=(4m-1)/3 using the existing central-law, quaternion and moment machinery, before developing more abstract gauge infrastructure. Then test the actual operator-domain/isolation hypotheses behind the two-plaquette perturbation formula. Even a successful local deterioration theorem would require quantitative control, not imply masslessness or invalidate every possible mass-gap argument. Yang–Mills remains active; Bakry stays paused and no later campaign starts.
+
+### Verification and closure
+
+The targeted build passed4227 jobs in28.713 seconds. Full root build passed6925 jobs in27.823 seconds. The complete transitive axiom audit passed53073 declarations in52.938 seconds, permitting only propext, Classical.choice and Quot.sound. All69 unabridged public types,44 theorem proofs,25 definitions/abbreviations and the private integrability helper were reviewed. Twelve independent Lean checks passed across actual Haar projection/integrability/residuals/gauge transformations, the three second moments, the variance-boundary bracket case, PMF stationarity, exact Rayleigh ratio, failed gap bound, full noise provenance, literal Wilson half weight and the all-function centered kinetic bound.
+
+Independent Fraction tests verified all128 product-noise characters, the exact ground and stationary chain, the strict Rayleigh obstruction,121 noncommuting quaternion covariance cases and512 projection-moment terms. The finite enumeration was split8x16 with a bijection proof to stay within the existing recursion limit; no native_decide, heartbeat increase or verification weakening was used.
+
+Source integrity passed2745 Foundation/root Lean files, exactly four intended changes/additions since approved1673; all3 pinned configurations,113 baseline manuscripts and21 Yang–Mills originals remain unchanged. No sorry, admit, new axiom, trust/toolchain change or ResearchSources modification was introduced. Evidence is retained under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1674-*. Exact commit approval and guarded PUBLIC main/research synchronization are separate receipts; this pre-commit entry does not claim remote success before verification.

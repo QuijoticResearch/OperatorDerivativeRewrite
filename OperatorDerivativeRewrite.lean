@@ -2678,3 +2678,7 @@ import Foundation.YMResetGroundState
 import Foundation.YMPositiveKernel
 
 import Foundation.SU2ForestCycleReduction
+
+import Foundation.SU2SharedPlaquetteProjection
+
+import Foundation.WilsonPlaquetteGapCounterexample
