@@ -869,3 +869,89 @@ NEXT: use these exact common-operator inputs for the bounded odd-sector Rayleigh
 Final complete root build passed6928 jobs in43.9784092 seconds. Complete transitive axiom audit passed53303 declarations in48.4839914 seconds, allowing only propext, Classical.choice and Quot.sound. All62 unabridged public types,44 theorem proofs,16 definitions/abbreviations and two public instances were reviewed, together with seven private helper theorems and four private topology/measure instances. All16 independent Lean checks passed. The append rewrite orientation was repaired and proved finite-product instances were cached; no recursion/heartbeat increase, new axiom, trust/toolchain change, sorry, admit or error suppression was used.
 
 Source integrity passed2748 Foundation/root Lean files with exactly three intended mathematical source changes/additions since approved1676. All three pinned configurations,113 baseline manuscripts and21 Yang-Mills originals are unchanged. Evidence remains under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1677-*, including full-build/audit logs, all public types, independent Lean checks, exact/numerical diagnostics and the working-checkpoint manifest. Exact Git approval and guarded PUBLIC main/research synchronization are separate closure receipts; this pre-commit entry does not claim remote synchronization before verification.
+
+## Checkpoint1678 — reversible forms and an exact scalar reduction of the spatial trial (October28,2026)
+
+### Concrete bottleneck attacked
+
+Checkpoint1677 put the kinetic channels and vacuum supersolution on one actual seven-link Markov operator, but the proposed local spectral comparison still lacked an integrated form bound and a controlled trial quotient. This checkpoint proves the bounded-core reversibility and positive form comparison, then makes an exact inverse-half-weight reduction. The resulting numerator is polynomial and its positive denominator is a SINGLE Haar radial integral. No analytic eigenbranch, stationary vacuum existence or normalized spectral gap is assumed.
+
+### An actual reversible quadratic-form upper certificate
+
+`Foundation/SU2SevenLinkVariational.lean` proves inversion invariance of the genuine sevenfold Wilson noise. `pairing_symmetric` proves reversibility on bounded measurable functions by actual product-measure Fubini, Haar translation and noise inversion; it is not a symmetry hypothesis. `pairing_integrable` explicitly proves the outer L1 domain. With pairing(f,g)=E_haar[f K g], integration of a nonnegative square gives
+
+    pairing(u*r,u*r) <= pairing(u*r^2,u)
+
+for bounded measurable u,r and u>=0, with r permitted to be signed. `supersolution_form_bound` then proves that T_t u<=q u for T_t=H_t K H_t implies
+
+    <u*r,T_t(u*r)> <= q ||u*r||_Haar^2.
+
+The domain is exactly the displayed bounded reweighted core. `trialVacuum_form_bound` applies this to the actual verified seven-link vacuum candidate and the SAME q=1+mu t^2+2 C |t|^3, retaining |t|<=1 and the previously proved coefficient-smallness condition. This closes the positive comparison on that core. It does not construct a full closed self-adjoint operator, silently enlarge the domain to every L2 function, or produce a vacuum eigenpair.
+
+### Inverse half weighting removes the nonlinear kinetic numerator
+
+Let X=first plaquette, Y=second plaquette, M=mean channel, Q=residual, H_t=exp(tX/2). `unweight` is exactly H_t^{-1}; `spatialPairing_unweight` proves
+
+    <H_t^{-1} f,T_t H_t^{-1} g>=<f,K g>.
+
+`Foundation/SU2SevenLinkOddTrial.lean` proves the missing actual mixed Haar moments E[YM]=E[YQ]=E[XY^2]=0, and the full three-channel Gram matrix for (Y,M,Q): diagonal(1/4,1/64,3/64). The rates are the actual c^4,c^6,c^6 d. Measurability, boundedness, integrability, Gram integration and evolution of every real linear combination are verified; no abstract vectors with assumed moments were substituted.
+
+For any real correction parameters alpha,gamma and t, put
+
+    g_t=Y+t(alpha M+gamma Q),  f_t=H_t^{-1}g_t.
+
+`unweighted_odd_numerator` proves the exact numerator
+
+    N_beta(t,alpha,gamma)=<f_t,T_t f_t>
+      =c^4/4+t^2(c^6 alpha^2+3 c^6 d gamma^2)/64.
+
+There is NO exponential remainder in this numerator. The definition names the intended odd-sector candidate; its center-parity relation to a future normalized vacuum still needs its own proof.
+
+### A genuine positive denominator, and an exact one-variable connection
+
+The actual norm is
+
+    D(t,alpha,gamma)=E_haar[exp(-tX) g_t^2].
+
+`denominator_integrable`, `unweighted_trial_norm`, `denominator_lower_bound` and `denominator_positive` prove existence and D>=exp(-|t|)/4>0 for EVERY real t,alpha,gamma. No vanishing-denominator convention is used. In particular the trial is not vacuous, and these are genuine integral/norm identities rather than a purely formal series.
+
+The conditional right-path calculation is especially useful. With x=h(LU), y=h(U^{-1}R), m=h(LR)/4, one has Q=xy-m and
+
+    g_t=(1+t gamma x)y+t(alpha-gamma)m.
+
+The existing normalized Haar trace covariance gives E_R[y^2]=1/4, E_R[ym]=x/16 and E_R[m^2]=1/64. `denominator_radial` rigorously integrates out the right path and then translates the remaining left path, obtaining
+
+    D=integral exp(-t h(V)) P(t,alpha,gamma,h(V)) dHaar(V),
+    P=1/4+t(alpha+3 gamma)x/8
+        +t^2[(alpha-gamma)^2+8 gamma(alpha+gamma)x^2]/64.
+
+The exact positive representation `radialPolynomial_squares` is
+
+    P=(1+t(alpha+3 gamma)x/4)^2/4
+        +t^2(alpha-gamma)^2(1-x^2)/64.
+
+`radialPolynomial_nonneg` uses the precise half-trace domain |x|<=1. This is a concrete connection from the seven-link spatial variational problem back to the verified one-word Haar tilt/moment machinery. It avoids a new multidimensional stochastic foundation or a Taylor expansion inside the transfer kernel. The classical ingredients and this finite trial reduction are not presented as a novelty claim.
+
+### Independent challenges and unresolved sign
+
+Eighteen independent Lean checks passed across full-noise inversion, bounded reversibility and square comparison, the actual supersolution form domain, exact conjugacy, all Gram entries, actual channel evolution/form, exact numerator, beta-zero normalization, global denominator positivity/nonvacuity, radial formula/squares, mixed moments and both numerator/denominator integral domains.
+
+Independent exact arithmetic checked64 finite Q8 detailed-balance entries,12 signed square/form comparisons,128 conditional right-path degree-two moment cases and12 algebraic candidate-sign cases. The Q8 tests are finite diagnostics, NOT a replacement for actual Wilson or Haar measures. Direct three-variable Haar angular quadrature and the reduced scalar formula agreed in20 cases at EACH of128 and256 radial nodes, including both signs and non-small t. These numerical checks do not enter any Lean proof.
+
+A further diagnostic used the 181-term Haar exponential series with70-digit built-in Decimal arithmetic at beta=1,4,16. With the proposed alpha=1/(1-c^2), gamma=1/(1-c^2 d) and small admitted t, the tested N-c^4 q D values were positive (approximately2.84e-26,1.06e-19,1.57e-18). These tiny signs have NO formal interval/tail certificate and are explicitly UNVERIFIED numerical evidence. Optional mpmath was unavailable; no dependency was installed and no precision change to Lean occurred.
+
+The suggested scalar second coefficient is D2=(alpha^2+3 gamma^2-2 alpha-6 gamma+2)/64. At the proposed corrections the tested coefficient difference N2-c^4 D2-c^4 mu/4 equals (c^4/32) times1674's overlapBracket(c^2,m). The bracket sign already has a rigorous algebraic theorem, but the needed denominator remainder and its connection to an actual local separation are NOT declared proved by these tests.
+
+### Manuscripts and exact next obligations
+
+`ResearchSources/Incoming/block_contraction_spectral_gaps.tex`, SHA256 `0C40FA6B92B830C0E2309BD6471D55CB0EB9BFB94296B9267AD23A5280FA4C60`, was selectively reread at lines338-367. Its H1 operator perturbation and interior Poincare assumptions are not established by this Haar L2 form calculation. Its boundary update, corridor support and physical continuum bridge remain distinct unresolved inputs. All original bytes are unchanged.
+
+PROVED: actual bounded-core reversibility and integrated positive comparison, exact common-operator trial numerator, actual positive norm denominator for all real parameters, exact scalar Haar reduction and its sum-of-squares factor. OPEN: a rigorous scalar error estimate establishing N>c^4 q D in a valid parameter regime; explicit admission of the chosen inverse-weighted trial to the reweighted comparison core; center parity and its relation to a vacuum; completed operator/ground normalization and stationary spectral interpretation; homogeneous four-dimensional, scale/volume-uniform, physical-distance and continuum/infinite-volume requirements. The old normalized eigenbranch derivative remains conditional. No physical mass gap or physical spectral obstruction is claimed.
+
+NEXT: exploit the exact radial polynomial with existing bounded exponential/Taylor and Haar-moment results to prove or refute the local variational separation, rather than build more gauge infrastructure. Keep the proven shrinking-window limitation from1676; a local small-spatial-tilt result cannot be extrapolated to homogeneous large-coupling spatial weighting. Yang-Mills stays ACTIVE, Bakry PAUSED, and the queue is unchanged.
+
+### Verification and integrity
+
+Final full root build passed6930 jobs in27.6517875 seconds. Complete transitive axiom audit passed53369 declarations in51.0134546 seconds, allowing only propext, Classical.choice and Quot.sound. All52 unabridged public types,41 theorem proofs,11 definitions and seven private helper proofs were reviewed. Eighteen independent Lean checks and the exact/numerical diagnostics passed. No sorry, admit, new axiom, recursion/heartbeat/trust/toolchain change or error suppression was introduced.
+
+Source integrity passed2750 Foundation/root Lean files with exactly four intended mathematical source changes/additions since approved1677. All three pinned configurations,113 baseline manuscripts and21 Yang-Mills originals are unchanged. Evidence is under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1678-*, including complete logs/types, the independent Lean harness, numerical/exact JSON and working-checkpoint manifest. Exact Git approval and guarded PUBLIC main/research synchronization are separate closure receipts; this pre-commit entry does not assert remote success before verification.

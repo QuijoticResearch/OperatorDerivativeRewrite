@@ -2688,3 +2688,6 @@ import Foundation.SU2QuadraticWilsonChannel
 import Foundation.SU2WilsonGroundCertificate
 
 import Foundation.SU2SevenLinkTransfer
+
+import Foundation.SU2SevenLinkVariational
+import Foundation.SU2SevenLinkOddTrial
