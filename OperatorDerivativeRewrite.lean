@@ -2655,3 +2655,4 @@ import Foundation.SU2LoopEquilibrium
 import Foundation.SU2StationaryMinorization
 import Foundation.SU2ResidualEntropy
 import Foundation.SU2PointEntropy
+import Foundation.YMBlockRateDegeneration

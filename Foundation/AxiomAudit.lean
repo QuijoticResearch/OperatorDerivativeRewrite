@@ -10327,3 +10327,10 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.SU2PointEntropy.point_start_entropy_finite
 #print axioms OperatorDerivativeRewrite.Foundation.SU2PointEntropy.entropy_tendsto_zero_after_first
 #print axioms OperatorDerivativeRewrite.Foundation.SU2PointEntropy.point_start_entropy_tendsto_zero
+
+-- Checkpoint1662: no coupling-uniform block contraction from the heat-reference factor.
+#print axioms OperatorDerivativeRewrite.Foundation.YMBlockRateDegeneration.referenceFactor_pos
+#print axioms OperatorDerivativeRewrite.Foundation.YMBlockRateDegeneration.referenceFactor_lt_one
+#print axioms OperatorDerivativeRewrite.Foundation.YMBlockRateDegeneration.referenceFactor_tendsto_one
+#print axioms OperatorDerivativeRewrite.Foundation.YMBlockRateDegeneration.no_uniform_reference_contraction
+#print axioms OperatorDerivativeRewrite.Foundation.YMBlockRateDegeneration.no_uniform_total_contraction
