@@ -2715,3 +2715,5 @@ import Foundation.FiniteWilsonPlaquetteSlowing
 import Foundation.YMFiniteWilsonVacuum
 
 import Foundation.SU2SevenLinkVacuum
+
+import Foundation.SU2SevenLinkIteration
