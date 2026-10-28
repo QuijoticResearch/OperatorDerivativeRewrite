@@ -54312,3 +54312,71 @@ The retained source is `ResearchSources/Incoming/block_contraction_spectral_gaps
 Full root build passed6931 jobs in41.0040393 seconds. Complete transitive axiom audit passed53402 declarations in39.2080083 seconds, permitting only propext, Classical.choice and Quot.sound. All20 unabridged public types (11 theorem proofs and9 definitions) and all5 private helper proofs were reviewed. Ten independent Lean checks passed in26.075041 seconds; independent arithmetic/numerical diagnostics passed. No sorry/admit/new axiom, error suppression, trust/toolchain or recursion/heartbeat changes were introduced.
 
 Source-integrity verification authenticated the preceding1678 manifest against its exact-commit receipt, then checked2751 Foundation/root Lean sources: exactly the new module plus root import and AxiomAudit changed. All3 pinned configurations,113 baseline manuscripts and21 Yang-Mills originals are unchanged. Evidence is under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1679-* (complete build/audit/types, independent Lean and arithmetic diagnostics, integrity script/manifest). Exact Git approval and guarded PUBLIC main/research synchronization remain separate closure receipts; this pre-commit ledger does not assert remote success before verification.
+
+
+## Checkpoint1680 — actual conditional stationary ground transform and center-averaged lag obstruction (October28,2026)
+
+### Concrete bottleneck and result
+
+Checkpoint1679 settled the actual seven-link spatial Rayleigh separation, but a quotient divided by a vacuum upper certificate is NOT automatically a stationary spectral statement. This checkpoint identifies and verifies the required bridge for the SAME transfer. It constructs the actual measurable Markov kernel and stationary probability from explicitly supplied, uniformly positive bounded measurable eigenfunction data. It then proves that center parity can be obtained by averaging, without uniqueness or an additional Perron assumption. The remaining local existence input is now precisely isolated rather than silently treated as proved.
+
+`Foundation/SU2SevenLinkGroundTransform.lean` defines `GroundData(beta,t)` with value lam>0, measurable psi, constants 0<lower<=psi(s), |psi(s)|<=upper for EVERY state, and the actual equation T_t psi=lam psi. No inhabitant at nonzero spatial tilt is postulated; this structure is a hypothesis contract, not an existence axiom. The uniform lower bound is essential to the displayed bounded inverse-transform domains. Continuity/compactness has NOT been slipped into the fields as an unverified theorem.
+
+Given such data, all the following constructions and identities are Lean-verified:
+
+    Z=E_haar[psi^2]>0,
+    pi(ds)=psi(s)^2/Z haar(ds),
+    rho(s,r)=H_t(s)H_t(r)psi(r)/(lam psi(s)),
+    P(s,dr)=rho(s,r) transition_beta(s,dr).
+
+Here transition_beta is the ACTUAL seven-link Wilson Markov kernel already constructed at1677, not a formal density with assumed moments. `density_measurable`, `density_integrable` and `density_integral` prove genuine measurable nonnegative unit-mass rows. `kernel_markov` proves the resulting Mathlib Kernel is Markov. `kernel_integral` identifies its integration with T_t(psi f)/(lam psi). The probability pi is constructed using the existing verified positive-density sampler; its positive finite normalizer and probability status are proved.
+
+`stationary_pairing` gives the exact formula
+
+    E_pi[f Pk]=<psi f,T_t(psi k)>_haar/(lam Z).
+
+`kernel_stationary` proves stationarity against EVERY bounded measurable probe and `stationary_reversible` proves the actual reversible pairings on that domain. No reflection-positive physical Hilbert space, full closed L2 spatial operator or eigenvalue-isolation claim follows merely from these identities. No path-space process or continuum quantum field is claimed to have been constructed here.
+
+### Center projection removes an extra hypothesis
+
+`Foundation/SU2SevenLinkParity.lean` uses the actual state transformation multiplying only the first private right-path link D by the nontrivial SU(2) center. It is measurable and involutive, preserves product Haar and the first plaquette X, and negates Y, M, Q and the inverse-half-weighted trial f_t. The actual spatial transfer commutes with this flip by right-convolution associativity and unchanged half weights. Thus the odd sector is preserved by the literal operator, not a postulated parity decomposition.
+
+`trial_orthogonal` proves the Haar pairing with every center-even weight is zero. Its general algebraic Bochner integral identity does not assert L1 membership; the ground-transform application separately proves actual boundedness and L2 membership.
+
+Crucially, `GroundData.evenized` constructs psi_even=(psi+psi o flip)/2. It has the SAME eigenvalue, lower bound and upper bound, remains measurable, satisfies the actual eigenfunction equation, and is center-even by the proved involution. No uniqueness or compact positive-operator theorem is needed for this step. Consequently parity is no longer a separate existence premise of the final local reduction. This center projection is not asserted to perform the full gauge/physical-sector projection.
+
+### Actual centered observable, variance and lag
+
+For phi=f_t/psi, `observable_bound` and `observable_memLp` verify boundedness and the L2 domain under the ACTUAL pi, for every real correction pair A,B. For an even eigenfunction, the actual stationary mean is zero and
+
+    E_pi[phi^2]=D/Z>0,
+    E_pi[phi Pphi]=N/(lam Z),
+    E_pi[phi Pphi]/E_pi[phi^2]=Rayleigh(T_t,f_t)/lam.
+
+These are genuine probability integrals with a strictly positive denominator, not signed-functional or expectation-only replacements. `value_le_certificate` derives lam<=q from the verified positive supersolution form bound by admitting psi/ trialVacuum to its bounded reweighted core. The eigenvalue upper bound is proved, not added as a GroundData field.
+
+`exists_stationary_obstruction_interval` takes1679's NONEMPTY interval depending only on the actual Wilson coefficients. For every 0<t<delta and EVERY supplied GroundData at that tilt, it constructs the evenized stationary law/kernel and a bounded L2 centered observable with positive variance and
+
+    E_pi[phi Pphi]/E_pi[phi^2] > c^4.
+
+This is a rigorous CONDITIONAL stationary lag obstruction to a proposed c^4 contraction on all centered observables. The Markov law, normalization inequality, parity, centering and domains are discharged. Existence of one uniformly positive bounded measurable eigenfunction at nonzero tilt remains an OPEN Lean obligation. The theorem does not prove a no-gap statement for the physical theory or exclude every contraction q<1.
+
+`GroundData.kinetic` gives an actual nonvacuous instance psi=1,lam=1 at t=0 for EVERY Wilson parameter. `kinetic_kernel` recovers the original actual Wilson transition. Independent checks verify its stationary law integrates as Haar and its trial lag ratio equals c^4 exactly. This does NOT manufacture the nonzero-tilt instance required by the strict comparison.
+
+### Independent challenges, manuscripts and remaining route
+
+Fifteen independent Lean checks passed: actual flip involution, arbitrary signed trial parity, orthogonality against the first plaquette, nonvacuous kinetic kernel/law, density normalization, genuine probability rows, constant-observable noncentering, exact inherited eigenvalue/evenness/equation, positive variance at nonoptimized coefficients, actual first-plaquette stationarity, L2 domain and exact kinetic lag ratio. In particular, an uncentered constant observable has mean1; its large lag cannot be used as a gap obstruction.
+
+Independent exact Fraction tests checked512 noncommuting quaternion center cases. Six numerical Q8 Wilson/path-product ground models checked the tensor-reduced eigenfunction against the full512-state matrix, center commutation/averaging, positive stochastic rows, stationary balance, reversibility, actual trial variance/lag/numerator and the quotient identity. Row normalization and ground normalization gave DIFFERENT stationary probabilities for every tested nonzero tilt, confirming why the former is an invalid substitute. These finite Q8 numerical eigenvectors are NOT continuous SU2 ground-state existence proofs, certified error intervals or Lean inputs. No novelty is claimed for classical ground transforms or center averaging.
+
+The original `ResearchSources/Incoming/block_contraction_spectral_gaps.tex`, SHA256 `0C40FA6B92B830C0E2309BD6471D55CB0EB9BFB94296B9267AD23A5280FA4C60`, was selectively reread at lines459-484. Its reflection-positivity/physical-transfer/vacuum input is an explicit ASSUMPTION; the spectral-measure argument there does not construct those inputs. Our finite Markov construction does not discharge that physical assumption, the earlier H1/interior-Poincare hypothesis, or the continuum bridge. Original bytes remain unchanged.
+
+NEXT LOCAL BOTTLENECK: construct GroundData(beta,t) for the continuous actual SU2 operator at nonzero spatial tilt. The candidate compact strictly-positive kernel route still needs its actual density identification, compact-operator construction and positive eigenfunction theorem with global bounds formally verified. Existing root results supply finite/reset and conditional positive-kernel machinery, not this existence theorem. Investigate this or a genuinely stronger constructive mechanism rather than adding unrelated gauge infrastructure. No existence claim is introduced as an axiom.
+
+Still OPEN independently: the completed stationary L2 spectral interpretation; gauge/physical-sector identification; contraction under coupling-dependent iteration at a PHYSICAL distance scale; homogeneous four-dimensional interactions; volume/scale-uniform estimates; reflection positivity, continuum/infinite-volume limits. The certified small-tilt interval remains nonuniform and1676's shrinking-window limitation remains intact. No fixed nonzero spatial amplitude at large beta, physical mass gap or physical gap obstruction is established. Yang-Mills remains ACTIVE; Bakry PAUSED; every later queue priority is unchanged.
+
+### Verification and closure evidence
+
+Final full root build passed6933 jobs in56.8296195 seconds. Complete transitive axiom audit passed53543 declarations in38.3440946 seconds, permitting only propext, Classical.choice and Quot.sound. All63 unabridged public-type entries were reviewed:53 explicitly declared items (43 theorems,9 definitions,1 structure), plus9 structure fields and its constructor. All43 theorem proofs,9 definitions, structure and all7 private helper proofs were reviewed. Fifteen independent Lean checks passed in34.2420608 seconds; exact/numerical diagnostics passed. No sorry/admit/new axiom, trust/toolchain/recursion/heartbeat change or error suppression was introduced.
+
+Source-integrity verification authenticated1679's manifest against its exact approval receipt, then checked2753 Foundation/root Lean files: exactly the two new modules, root imports and AxiomAudit changed. All3 pinned configurations,113 baseline manuscripts and21 Yang-Mills originals are unchanged. Evidence is under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1680-* (full build/audit/unabridged types, independent Lean and numerical/exact checks, declaration list and source-integrity manifest/script). Git exact approval and guarded PUBLIC main/research remote synchronization remain separate closure receipts; this pre-commit ledger does not report a queued sync as successful.

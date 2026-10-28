@@ -2693,3 +2693,6 @@ import Foundation.SU2SevenLinkVariational
 import Foundation.SU2SevenLinkOddTrial
 
 import Foundation.SU2SevenLinkSpatialSeparation
+
+import Foundation.SU2SevenLinkParity
+import Foundation.SU2SevenLinkGroundTransform
