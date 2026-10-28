@@ -351,4 +351,36 @@ theorem no_uniform_stationary_lag_one_cov_bound (q : ℝ) (hq : q < 1) :
   exact (hqev.and (eventually_ge_atTop (0 : ℝ))).exists.elim
     (fun r hr => ⟨r, hr.2, hr.1⟩)
 
+theorem nonpositive_interaction_bound :
+    ∃ c : ℝ, 0 < c ∧ ∀ r : ℝ, 0 ≤ r →
+      (coupledLaw r).real {p | X p ≤ 0} ≤ c * Real.exp (-r/2) := by
+  refine ⟨(μ.real (upperCap 1))⁻¹, inv_pos.mpr (upperCap_mass_pos 1 (by norm_num)), ?_⟩
+  intro r hr
+  simpa [lowerCap, div_eq_mul_inv, mul_comm, neg_div] using
+    tilted_lowerCap_bound 1 r (by norm_num) hr
+
+theorem center_odd_mean_zero (r : ℝ) (f : SU2 × SU2 → ℝ)
+    (hf : Measurable f) (hb : ∀ p, |f p| ≤ 1)
+    (hodd : ∀ p, f (SU2StapleExtremes.minusOne*p.1,
+      SU2StapleExtremes.minusOne*p.2) = -f p) :
+    (∫ p, f p ∂coupledLaw r) = 0 := by
+  have he := integral_mul_left_eq_self (μ := μ)
+    (fun p : SU2 × SU2 => f p * Real.exp (r*X p)) centerFlip
+  have heq : (fun p : SU2 × SU2 => f (centerFlip*p) * Real.exp (r*X (centerFlip*p))) =
+      (fun p => -(f p * Real.exp (r*X p))) := by
+    funext p
+    rw [X_centerFlip]
+    change f (SU2StapleExtremes.minusOne*p.1, SU2StapleExtremes.minusOne*p.2) * _ = _
+    rw [hodd]
+    ring
+  rw [heq, integral_neg] at he
+  have hz : BoundedExponentialTiltResponse.weighted μ X f r = 0 := by
+    unfold BoundedExponentialTiltResponse.weighted
+    linarith
+  rw [coupledLaw, BoundedExponentialTiltResponse.tilted_integral μ X f X_measurable X_bound]
+  simp [BoundedExponentialTiltResponse.expectation, hz]
+
+theorem halfTrace_center_neg (C : SU2) :
+    halfTrace (SU2StapleExtremes.minusOne*C) = -halfTrace C := halfTrace_minus C
+
 end OperatorDerivativeRewrite.Foundation.SU2StrongCouplingCovariance
