@@ -53443,6 +53443,19 @@ transfer. `SU2BoundedObservableGradient` gives a gauge-invariant bounded
 class-function witness with derivative magnitude above one; boundedness
 does not replace a Lipschitz influence proof. These are precise reusable
 results, not a new continuum gauge-theory construction.
+The actual finite-word SU(2) law has a stationary boundary-conditioned
+perturbation with positive finite KL divergence under its one-link heat
+bath (`SU2BoundaryConditionedEntropy.no_strict_contraction`), so that
+update has no strict global entropy contraction. This does not refute
+the distinct RG marginalization chain rule in `entropy_ym (4).tex`, but
+prevents substituting one-link heat-bath dissipation for its claimed
+all-scale fraction. `SU2StapleExtremes.cancelling_law` also shows a
+conditional link law equal to Haar for every β at a cancelling boundary,
+while aligned staples have concentration proportional to β. The
+cancelling configuration is outside the small identity corridor, making
+large-field control an exact additional gate rather than a contradiction
+of local corridor convexity. Exact theorem scopes and source distinctions
+are in the focused audit; the manuscripts remain untouched.
 The exact checkpoint commits are `45604da352f9e4cff93e4a41d8b241cb95b8aa3a`
 (1639), `b64805c15e35de483aa83d90bd7110f254934701` (1640), and
 `9ea31633ff2662bac54a4425f0e9618bcb80bf5a` (1641). Each passed
