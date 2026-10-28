@@ -955,3 +955,63 @@ NEXT: exploit the exact radial polynomial with existing bounded exponential/Tayl
 Final full root build passed6930 jobs in27.6517875 seconds. Complete transitive axiom audit passed53369 declarations in51.0134546 seconds, allowing only propext, Classical.choice and Quot.sound. All52 unabridged public types,41 theorem proofs,11 definitions and seven private helper proofs were reviewed. Eighteen independent Lean checks and the exact/numerical diagnostics passed. No sorry, admit, new axiom, recursion/heartbeat/trust/toolchain change or error suppression was introduced.
 
 Source integrity passed2750 Foundation/root Lean files with exactly four intended mathematical source changes/additions since approved1677. All three pinned configurations,113 baseline manuscripts and21 Yang-Mills originals are unchanged. Evidence is under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1678-*, including complete logs/types, the independent Lean harness, numerical/exact JSON and working-checkpoint manifest. Exact Git approval and guarded PUBLIC main/research synchronization are separate closure receipts; this pre-commit entry does not assert remote success before verification.
+
+
+## Checkpoint1679 — actual spatial variational separation with a nonempty certified interval (October28,2026)
+
+### Discovery and exact scope
+
+The small-spatial-tilt sign question left open at1678 is now resolved positively for the ACTUAL seven-link transfer. This is an integral/form result with a proved nonempty parameter interval, not the old conditional eigenbranch derivative. No ground state or normalized stationary spectrum is postulated. `Foundation/SU2SevenLinkSpatialSeparation.lean` reuses the actual Haar radial denominator, common-operator kinetic channels, bounded exponential remainder and positive vacuum supersolution.
+
+Write c=coefficient(beta), m=secondMoment(beta), d=(4m-1)/3, a=c^4, mu=(1+a)/(8(1-a)), and C=eigenErrorConstant(a,d^4). The actual spatial operator remains T_t=H_t K H_t on the seven-link state, H_t=exp(t X/2). The chosen trial is f_t=H_t^(-1)[Y+t(A M+B Q)], with
+
+    A=1/(1-c^2), B=1/(1-c^2 d).
+
+The numerator N=<f_t,T_t f_t> was proved exactly at1678. Its actual norm D=E_haar[f_t^2] is positive for all real parameters. New `denominator_remainder` proves, for BOTH signs |t|<=1,
+
+    |D-(1/4+t^2 D2)| <= |t|^3 E,
+    D2=(A^2+3B^2-2A-6B+2)/64,
+    R=(A-B)^2/64+B(A+B)/32,
+    E=errorConstant(-(A+3B)/2,B(A+B)/2)/4+2|R|.
+
+All integrability is proved for the actual Haar integrands. The mechanism is the exact radial-polynomial decomposition P=trial(-(A+3B)/2,B(A+B)/2,-t,x)/4+t^2 R. The existing weighted Taylor remainder and |exp(-tx)-1|<=2|t| then give the error before integration. No new Taylor foundation or assumed moment family is substituted.
+
+`leadingGap_positive` identifies the actual leading difference G=N2-a D2-a mu/4 with
+
+    G=(a/32) overlapBracket(c^2,m)>0 whenever c != 0.
+
+The strict sign uses the previously VERIFIED actual Wilson inequalities c^2<=m<1 and |d|<1. This is no longer a numerical sign or an assumed second derivative. The boundary/reset c=0 is excluded explicitly and independent Lean checks prove G(0)=0.
+
+### Nonempty finite-amplitude theorem and shared domain
+
+Let J=E+mu(|D2|+E)+2C(1/4+|D2|+E), K=a J, and S=|linearCoefficient(a)|+|quadraticTrialCoefficient(a,d^4)|. The proof constructs the positive interval
+
+    delta=min(1, min(G/(|K|+1), 1/(2(S+1)))).
+
+For EVERY 0<t<delta, `exists_separation_interval` proves both the existing vacuum-smallness condition and N>a q D, where q=1+mu t^2+2C t^3. `trialVacuum_lower` proves the actual certificate u_t>=exp(-|t|/2)/2. `trial_admissible` constructs r=f_t/u_t, proves measurable boundedness and f_t=u_t r. Thus the lower trial and upper form comparison genuinely share the verified reweighted domain. No unproved L2-domain enlargement is used.
+
+`trial_quotient_upper` applies the actual supersolution form theorem to that r. The resulting `exists_quotient_sandwich` gives a NONEMPTY interval on which
+
+    a q < Rayleigh(T_t,f_t) <= q.
+
+`normalized_trial_separation` proves the explicitly CONDITIONAL scalar bridge: for ANY positive ell<=q, Rayleigh(T_t,f_t)/ell>a under the explicit error smallness condition. It does not manufacture ell as an eigenvalue. These are literal same-operator form inequalities. They settle the finite small-tilt variational comparison; they do NOT yet prove a centered stationary spectral obstruction.
+
+### Independent challenges and failed extrapolations
+
+Ten independent Lean checks passed: negative D2 at A=B=1; its sharp universal lower bound -1/32; reset G=0 and failure of the nonzero-channel premise there; exact zero-tilt quotient c^4; negative-tilt remainder; actual half-trace domain; ratio-domain membership without an extra |t|<=1 premise; actual coefficient positivity; and explicit existence of positive t satisfying the two-sided quotient test.
+
+Independent Fraction arithmetic checked18 moment-admissible parameter pairs, including m=c^2 and near-one values: coefficient identity/sign, the explicit window, vacuum smallness and strict comparison against the upper Taylor norm. These are algebra diagnostics, NOT actual Wilson realizations. Removing m>=c^2 yields a negative bracket at x=1/2,m=0; such parameters are NOT the Wilson law. This rules out casually dropping the moment hypothesis. Independent256-node Haar diagnostics checked108 signed-tilt pointwise/integral remainder cases, including |t|=1 and signed correction coefficients. Ninety-digit181-term Haar exponential series also gave positive margins for actual Wilson parameters beta=1,4,16 at half the constructed delta. Numerical intervals were NOT formally certified; none of these calculations enters the Lean proof.
+
+### Precise research bottleneck, sources and next action
+
+PROVED: actual finite small-tilt form separation, its rigorous cubic remainder, nonempty coupling-dependent interval, same-domain upper bound and conditional normalization implication. OPEN: construct/verify the completed spatial operator and actual positive vacuum normalization; prove the required center parity and trial orthogonality in its stationary transform; identify the resulting stationary spectral/lag obstruction. A quotient by a supersolution certificate alone is NOT the stationary transfer operator. The prior conditional eigenbranch theorem has not been promoted to unconditional spectrum.
+
+This window is NOT uniform in beta;1676's shrinking sufficient-window obstruction remains intact. It does not admit a fixed nonzero spatial amplitude uniformly at large Wilson parameter, establish coupling-dependent contraction over a physical length, or control homogeneous four-dimensional plaquettes. The full spatial interaction, gauge/physical-sector realization, scale/volume-uniform estimates, physical-distance conversion and continuum/infinite-volume limits remain OPEN. The seven-link model must not be substituted for the actual4D lattice theory. No physical mass-gap theorem, no-gap theorem or novelty claim is made.
+
+The retained source is `ResearchSources/Incoming/block_contraction_spectral_gaps.tex`, SHA256 `0C40FA6B92B830C0E2309BD6471D55CB0EB9BFB94296B9267AD23A5280FA4C60`. Its H1 operator-error/interior-Poincare and boundary-update/continuum hypotheses remain unverified here. No manuscript byte changed. Next focus is the actual stationary normalization/parity bridge, using the now rigorous variational input; avoid unrelated gauge-library expansion. Yang-Mills remains ACTIVE, Bakry PAUSED, and all queue priorities are unchanged.
+
+### Verification and checkpoint closure
+
+Full root build passed6931 jobs in41.0040393 seconds. Complete transitive axiom audit passed53402 declarations in39.2080083 seconds, permitting only propext, Classical.choice and Quot.sound. All20 unabridged public types (11 theorem proofs and9 definitions) and all5 private helper proofs were reviewed. Ten independent Lean checks passed in26.075041 seconds; independent arithmetic/numerical diagnostics passed. No sorry/admit/new axiom, error suppression, trust/toolchain or recursion/heartbeat changes were introduced.
+
+Source-integrity verification authenticated the preceding1678 manifest against its exact-commit receipt, then checked2751 Foundation/root Lean sources: exactly the new module plus root import and AxiomAudit changed. All3 pinned configurations,113 baseline manuscripts and21 Yang-Mills originals are unchanged. Evidence is under C:/Users/ramir/AppData/Local/Temp/stardust-ym-1679-* (complete build/audit/types, independent Lean and arithmetic diagnostics, integrity script/manifest). Exact Git approval and guarded PUBLIC main/research synchronization remain separate closure receipts; this pre-commit ledger does not assert remote success before verification.
