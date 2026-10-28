@@ -2650,3 +2650,4 @@ import Foundation.SU2PositiveChannelObstruction
 import Foundation.YMOSClusterObstruction
 import Foundation.YMSpectralLaplaceBridge
 import Foundation.SU2WeakCouplingNormalization
+import Foundation.SU2InteractingLoopKernel
