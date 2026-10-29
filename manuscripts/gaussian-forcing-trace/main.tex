@@ -619,6 +619,129 @@ They give explicit, source-traceable tests against transferring a
 compactness, first-chaos trace or initial-scaling statement to a
 different stochastic object.
 
+
+\section{Covariance powers do not identify the process law}
+The preceding Wick martingales give an actual realization of integer
+entrywise covariance powers. If $X(h_t)$ is any Gaussian source
+family, define
+\[
+ V_q(t)=\frac{\mathcal W_q(h_t)}{\sqrt{q!}},\qquad q\geq1.
+\]
+The proved Wick pairing identity gives
+\[
+ \E[V_q(s)V_q(t)]=\langle h_s,h_t\rangle^q.
+\]
+For any finite times and real coefficients $c_i$ it follows that
+\[
+ \sum_{i,j}c_ic_j\langle h_{t_i},h_{t_j}\rangle^q
+ =\left\|\sum_i c_i V_q(t_i)\right\|_2^2\geq0.
+\]
+Thus the entrywise power is a genuine positive semidefinite Gram
+matrix. For fractional Brownian directions the exact same identity
+is the content of \code{FractionalWickCovariance}; it is a statement
+about actual finite covariances and original Gaussian derivatives,
+not a new fractional-time generator or a Hermite-process construction.
+
+For Brownian $h_t=\mathbf1_{(0,t]}$, take independent actual modal
+Brownian motions $B_0,B_1$ from the initial construction and set
+\[
+ V_q(t)=\frac{\mathcal W_q(\iota_0\mathbf1_{(0,t]})}{\sqrt{q!}},
+ \qquad G_q(t)=B_1(t^q),\qquad t\geq0.
+\]
+Their paths are continuous, both are centered martingales for their
+respective Brownian pasts, and both have covariance $\min(s,t)^q$.
+For $V_q$ the martingale proof is the full-past Wick identity above;
+for $G_q$ it is Brownian independence on the deterministic increasing
+clock $t^q$. No equality of their laws follows.
+
+Indeed, already at $q=2$,
+\[
+ V_2(t)=\frac{B_0(t)^2-t}{\sqrt2},\qquad
+ \E V_2(t)^2=t^2,\qquad \E V_2(t)^4=15t^4,
+\]
+whereas $\E G_2(t)^4=3t^4$. To verify the former fourth moment,
+expand $(B_0(t)^2-t)^4$ and use the Gaussian even moments
+$1,3,15,105$ in degrees $2,4,6,8$; the numerator is $60t^4$,
+and division by $(\sqrt2)^4=4$ gives $15t^4$.
+For $s>0$, $h>0$, let $\Delta=B_0(s+h)-B_0(s)$.
+The exact increment identity
+\[
+ V_2(s+h)-V_2(s)
+ =\sqrt2 B_0(s)\Delta+\frac{\Delta^2-h}{\sqrt2}
+\]
+and independent centered normal $\Delta$ give
+\[
+ \E[(V_2(s+h)-V_2(s))^2\mid\mathcal F_s^{B_0}]
+ =2h B_0(s)^2+h^2.
+\]
+The cross term vanishes by the third normal moment. Since
+$B_0(s)^2=\sqrt2 V_2(s)+s$ is observed in the $V_2$ past,
+the tower property gives this same nonconstant conditional second
+moment on that smaller past. Thus its increments are not independent.
+The corresponding Gaussian increment of $G_2$ is independent of its
+past and has deterministic variance $(s+h)^2-s^2=2sh+h^2$.
+Identical covariance and unconditional increment energies have
+therefore concealed different conditional laws. These explicit
+fourth-moment and conditional-variance comparisons are classical human
+deductions, not additional named formal theorems.
+
+\subsection{Exact finite innovations and generalized eigenvalues}
+At the integer times $1,\ldots,n$, the common covariance matrix is
+\[
+ C_k(i,j)=\min(i+1,j+1)^k,\qquad0\leq i,j<n,\quad k\geq1.
+\]
+Write $L_{ij}=\mathbf1_{\{j\leq i\}}$ and
+$d_k(j)=(j+1)^k-j^k>0$. Telescoping the powers gives the exact
+factorization
+\[
+ C_k=L\,\operatorname{diag}(d_k(j))L^\top.
+\]
+It is a covariance factorization: the Gaussian process $G_k$ has
+independent innovations with these variances. The non-Gaussian
+process with the same covariance need not have independent
+innovations, as the example just proved shows. In particular a
+finite covariance calculation is not a probabilistic independence
+argument.
+
+The triangular matrix $L$ is invertible, its inverse taking adjacent
+differences. Thus, for $k,l\geq1$, the exact generalized eigenvalues
+of $(C_k,C_l)$ are
+\[
+ \rho_j=\frac{d_k(j)}{d_l(j)}.
+\]
+More explicitly, let $v_0=e_0$ and $v_j=e_j-e_{j-1}$ for $j>0$.
+Then $L^\top v_j=e_j$, so
+$C_kv_j=d_k(j)Le_j=\rho_j C_lv_j$.
+These $n$ nonzero vectors form a basis. Congruence by $L^{-1}$
+also proves the sharp quadratic-form comparisons
+\[
+ \left(\min_j\rho_j\right)C_l\preceq C_k
+ \preceq\left(\max_j\rho_j\right)C_l.
+\]
+Here $A\preceq B$ means that $B-A$ has a nonnegative quadratic
+form. Indeed the diagonal congruence of $C_k-cC_l$ has entries
+$d_k(j)-c d_l(j)$; these are all nonnegative exactly when
+$c\leq\min_j\rho_j$. The upper comparison is identical with
+the roles reversed, and the vectors $v_j$ attain the endpoints.
+These sharp comparison statements are direct classical deductions
+from the verified factorization and generalized eigenpairs.
+
+For $k=3$, $l=2$, $j=1$, the comparison value is $7/3$, not the
+single innovation variance $7$. Nor is $C_k$ the ordinary matrix
+power of $C_1$. At $n=2$,
+\[
+ C_1=\begin{pmatrix}1&1\\1&2\end{pmatrix},\quad
+ C_2=\begin{pmatrix}1&1\\1&4\end{pmatrix},\quad
+ C_1^2=\begin{pmatrix}2&3\\3&5\end{pmatrix}.
+\]
+Entrywise covariance powers, ordinary matrix powers, independent
+Gaussian innovation variances and generalized comparison ratios
+are four different quantities. None of these finite identities
+identifies a physical-time generator, curvature operator or
+scale-independent estimate. The underlying Wick and Gaussian
+mechanisms are classical, with \cite{Baudoin} providing the
+previously credited chaos context.
+
 \section{Formal correspondence and prior theory}
 \begingroup\raggedright
 The source authority is frozen verified commit

@@ -797,6 +797,141 @@
       "source_sha256": "b495135329cd380bc3e34a3eb7e15a23fc4d98d9612004f429d9617b447ef364",
       "declaration_header": "theorem wick_distance_sq (h k : CoefficientSpace) (n : \u2115) :\n    \u2016(wick h n : GaussianL2)-(wick k n : GaussianL2)\u2016^2 =\n      (n.factorial : \u211d)*((\u2016h\u2016^2)^n+(\u2016k\u2016^2)^n-2*(inner \u211d h k)^n)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickContinuity.lean#L17"
+    },
+    {
+      "paper": "Section 9 actual Wick covariance powers and finite Brownian covariance innovation/generalized-eigenpair distinctions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalWickCovariance.direction_inner",
+      "file": "Foundation/FractionalWickCovariance.lean",
+      "line": 20,
+      "source_sha256": "0a65744ac1e83e0200bbb2f5fd478db15583ff218fdb7a4b0f70ea775aaa5eae",
+      "declaration_header": "theorem direction_inner (s t : \u211d\u22650) :\n    inner \u211d (direction H hH0 hH1 s) (direction H hH0 hH1 t) = covariance H s t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalWickCovariance.lean#L20"
+    },
+    {
+      "paper": "Section 9 actual Wick covariance powers and finite Brownian covariance innovation/generalized-eigenpair distinctions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalWickCovariance.cylinder_inner",
+      "file": "Foundation/FractionalWickCovariance.lean",
+      "line": 25,
+      "source_sha256": "0a65744ac1e83e0200bbb2f5fd478db15583ff218fdb7a4b0f70ea775aaa5eae",
+      "declaration_header": "theorem cylinder_inner (s t : \u211d\u22650) (n m : \u2115) :\n    inner \u211d (cylinder H hH0 hH1 s n : GaussianL2) (cylinder H hH0 hH1 t m : GaussianL2) =\n      if n = m then (n.factorial : \u211d) * (covariance H s t)^n else 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalWickCovariance.lean#L25"
+    },
+    {
+      "paper": "Section 9 actual Wick covariance powers and finite Brownian covariance innovation/generalized-eigenpair distinctions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalWickCovariance.cylinder_centered",
+      "file": "Foundation/FractionalWickCovariance.lean",
+      "line": 30,
+      "source_sha256": "0a65744ac1e83e0200bbb2f5fd478db15583ff218fdb7a4b0f70ea775aaa5eae",
+      "declaration_header": "theorem cylinder_centered (t : \u211d\u22650) (n : \u2115) :\n    inner \u211d gaussianOne (cylinder H hH0 hH1 t (n+1) : GaussianL2) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalWickCovariance.lean#L30"
+    },
+    {
+      "paper": "Section 9 actual Wick covariance powers and finite Brownian covariance innovation/generalized-eigenpair distinctions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalWickCovariance.cylinder_derivative_graph",
+      "file": "Foundation/FractionalWickCovariance.lean",
+      "line": 34,
+      "source_sha256": "0a65744ac1e83e0200bbb2f5fd478db15583ff218fdb7a4b0f70ea775aaa5eae",
+      "declaration_header": "theorem cylinder_derivative_graph (t : \u211d\u22650) (n : \u2115) :\n    ((cylinder H hH0 hH1 t (n+1) : GaussianL2),\n      (n+1 : \u211d) \u2022 scalarTensor (direction H hH0 hH1 t)\n        (cylinder H hH0 hH1 t n : GaussianL2)) \u2208 closedCylindricalDerivative.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalWickCovariance.lean#L34"
+    },
+    {
+      "paper": "Section 9 actual Wick covariance powers and finite Brownian covariance innovation/generalized-eigenpair distinctions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalWickCovariance.finite_sum_norm_sq",
+      "file": "Foundation/FractionalWickCovariance.lean",
+      "line": 43,
+      "source_sha256": "0a65744ac1e83e0200bbb2f5fd478db15583ff218fdb7a4b0f70ea775aaa5eae",
+      "declaration_header": "theorem finite_sum_norm_sq {\u03b9 : Type*} [Fintype \u03b9] (t : \u03b9 \u2192 \u211d\u22650) (c : \u03b9 \u2192 \u211d) (n : \u2115) :\n    \u2016\u2211 i, c i \u2022 (cylinder H hH0 hH1 (t i) n : GaussianL2)\u2016^2 =\n      (n.factorial : \u211d) * \u2211 i, \u2211 j, c i * c j * (covariance H (t i) (t j))^n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalWickCovariance.lean#L43"
+    },
+    {
+      "paper": "Section 9 actual Wick covariance powers and finite Brownian covariance innovation/generalized-eigenpair distinctions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalCovarianceMatrices.covariancePower_posSemidef",
+      "file": "Foundation/FractionalCovarianceMatrices.lean",
+      "line": 27,
+      "source_sha256": "e751e9375f4710c6f122836b22108a0a189a8b530e381609bd268ddf4b435407",
+      "declaration_header": "theorem covariancePower_posSemidef (H : \u211d) (hH0 : 0 < H) (hH1 : H < 1) (t : \u03b9 \u2192 \u211d) (k : \u2115) :\n    (covariancePower H t k).PosSemidef",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalCovarianceMatrices.lean#L27"
+    },
+    {
+      "paper": "Section 9 actual Wick covariance powers and finite Brownian covariance innovation/generalized-eigenpair distinctions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalCovarianceMatrices.covariancePower_energy_nonneg",
+      "file": "Foundation/FractionalCovarianceMatrices.lean",
+      "line": 42,
+      "source_sha256": "e751e9375f4710c6f122836b22108a0a189a8b530e381609bd268ddf4b435407",
+      "declaration_header": "theorem covariancePower_energy_nonneg (H : \u211d) (hH0 : 0 < H) (hH1 : H < 1)\n    (t : \u03b9 \u2192 \u211d) (k : \u2115) (c : \u03b9 \u2192 \u211d) :\n    0 \u2264 \u2211 i, \u2211 j, c i * c j * (covariance H (t i) (t j))^k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalCovarianceMatrices.lean#L42"
+    },
+    {
+      "paper": "Section 9 actual Wick covariance powers and finite Brownian covariance innovation/generalized-eigenpair distinctions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalCovarianceMatrices.brownian_covariance",
+      "file": "Foundation/FractionalCovarianceMatrices.lean",
+      "line": 49,
+      "source_sha256": "e751e9375f4710c6f122836b22108a0a189a8b530e381609bd268ddf4b435407",
+      "declaration_header": "theorem brownian_covariance (s t : \u211d) (hs : 0 \u2264 s) (ht : 0 \u2264 t) :\n    covariance (1/2:\u211d) s t = min s t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalCovarianceMatrices.lean#L49"
+    },
+    {
+      "paper": "Section 9 actual Wick covariance powers and finite Brownian covariance innovation/generalized-eigenpair distinctions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianCovariancePowers.innovation_pos",
+      "file": "Foundation/BrownianCovariancePowers.lean",
+      "line": 18,
+      "source_sha256": "a3874c9dd6df6e8b31f85b9bac0bbe774f18cd853d86f92a93af48d593295d61",
+      "declaration_header": "theorem innovation_pos (k : \u2115) (hk : 0 < k) (j : \u2115) : 0 < innovation k j",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianCovariancePowers.lean#L18"
+    },
+    {
+      "paper": "Section 9 actual Wick covariance powers and finite Brownian covariance innovation/generalized-eigenpair distinctions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianCovariancePowers.innovation_sum",
+      "file": "Foundation/BrownianCovariancePowers.lean",
+      "line": 23,
+      "source_sha256": "a3874c9dd6df6e8b31f85b9bac0bbe774f18cd853d86f92a93af48d593295d61",
+      "declaration_header": "theorem innovation_sum (k : \u2115) (hk : 0 < k) (m : \u2115) :\n    \u2211 j \u2208 range m, innovation k j = (m:\u211d)^k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianCovariancePowers.lean#L23"
+    },
+    {
+      "paper": "Section 9 actual Wick covariance powers and finite Brownian covariance innovation/generalized-eigenpair distinctions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianCovariancePowers.covariance_factorization",
+      "file": "Foundation/BrownianCovariancePowers.lean",
+      "line": 37,
+      "source_sha256": "a3874c9dd6df6e8b31f85b9bac0bbe774f18cd853d86f92a93af48d593295d61",
+      "declaration_header": "theorem covariance_factorization (n k : \u2115) (hk : 0 < k) :\n    covariance n k = summation n * Matrix.diagonal (fun j : Fin n => innovation k j.val) *\n      (summation n).transpose",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianCovariancePowers.lean#L37"
+    },
+    {
+      "paper": "Section 9 actual Wick covariance powers and finite Brownian covariance innovation/generalized-eigenpair distinctions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianCovariancePowers.covariance_power_brownian",
+      "file": "Foundation/BrownianCovariancePowers.lean",
+      "line": 53,
+      "source_sha256": "a3874c9dd6df6e8b31f85b9bac0bbe774f18cd853d86f92a93af48d593295d61",
+      "declaration_header": "theorem covariance_power_brownian (n k : \u2115) : covariance n k =\n    FractionalCovarianceMatrices.covariancePower (1/2:\u211d) (fun i : Fin n => ((i.val+1:\u2115):\u211d)) k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianCovariancePowers.lean#L53"
+    },
+    {
+      "paper": "Section 9 actual Wick covariance powers and finite Brownian covariance innovation/generalized-eigenpair distinctions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianCovariancePowers.adjacent_ratio_two",
+      "file": "Foundation/BrownianCovariancePowers.lean",
+      "line": 67,
+      "source_sha256": "a3874c9dd6df6e8b31f85b9bac0bbe774f18cd853d86f92a93af48d593295d61",
+      "declaration_header": "theorem adjacent_ratio_two : comparisonRatio 3 2 1 = (7/3:\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianCovariancePowers.lean#L67"
+    },
+    {
+      "paper": "Section 9 actual Wick covariance powers and finite Brownian covariance innovation/generalized-eigenpair distinctions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianCovariancePowers.covariance_difference_action",
+      "file": "Foundation/BrownianCovariancePowers.lean",
+      "line": 91,
+      "source_sha256": "a3874c9dd6df6e8b31f85b9bac0bbe774f18cd853d86f92a93af48d593295d61",
+      "declaration_header": "theorem covariance_difference_action {n : \u2115} (k : \u2115) (hk : 0 < k) (j : Fin n) :\n    covariance n k *\u1d65 differenceVector j =\n      innovation k j.val \u2022 (fun i : Fin n => summation n i j)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianCovariancePowers.lean#L91"
+    },
+    {
+      "paper": "Section 9 actual Wick covariance powers and finite Brownian covariance innovation/generalized-eigenpair distinctions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianCovariancePowers.generalized_eigenpair",
+      "file": "Foundation/BrownianCovariancePowers.lean",
+      "line": 110,
+      "source_sha256": "a3874c9dd6df6e8b31f85b9bac0bbe774f18cd853d86f92a93af48d593295d61",
+      "declaration_header": "theorem generalized_eigenpair {n : \u2115} (k l : \u2115) (hk : 0 < k) (hl : 0 < l) (j : Fin n) :\n    differenceVector j \u2260 0 \u2227\n      covariance n k *\u1d65 differenceVector j =\n        comparisonRatio k l j.val \u2022 (covariance n l *\u1d65 differenceVector j)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianCovariancePowers.lean#L110"
     }
   ],
   "paper_sections": {
@@ -813,7 +948,11 @@
     "The deterministic scalar synthesis T_t on ell2 is distinct from a unit-amplitude Hilbert-valued random forcing field. For linear rates it is compact by finite-rank norm approximation but not Hilbert-Schmidt at positive time. The displayed sharper tail bound [2(N+1)]^(-1/2) is an elementary human deduction; the source sufficient bound is (N+1)^(-1/2).",
     "The monic Wick convention includes u^d/d! in its generating function. Exact covariance d! inner(h,k)^d yields the orthogonal-series criterion. The paper reconstructs the original closed-gradient domain and adjoint recovery through finite product rules and simultaneous graph convergence, rather than positing a new derivative.",
     "The formal actual harmonic-weighted Brownian centered-square series converges while its raw-square means diverge. A separate unit-coefficient exponential Wick series at linear rates converges for each integer d>=2 by a direct stated instantiation of the general criterion, not a separately named formal positive-time theorem. It is a scalar observable and does not construct the missing first-chaos Hilbert field or an SPDE solution.",
-    "Full modal Brownian past, including every earlier time and every mode, gives exact conditional Wick prediction. The norm and increment identity are proved by Gaussian independent increments and L2 completion. Initial t^(d/2) norm scaling is separate from positive-time square-root increment scaling. The formal harmonic quadratic example refutes every squared-increment exponent alpha>1 near time one half; no almost-sure optimal regularity is claimed."
+    "Full modal Brownian past, including every earlier time and every mode, gives exact conditional Wick prediction. The norm and increment identity are proved by Gaussian independent increments and L2 completion. Initial t^(d/2) norm scaling is separate from positive-time square-root increment scaling. The formal harmonic quadratic example refutes every squared-increment exponent alpha>1 near time one half; no almost-sure optimal regularity is claimed.",
+    "Section 9 realizes integer entrywise covariance powers by normalized actual Wick polynomials. Positive semidefiniteness follows directly from a genuine finite L2 energy. Fractional Wick Gram identities are not interpreted as a fractional-time generator or as activation of the queued Hermite-process campaign.",
+    "Actual independent modal Brownian motions give a normalized degree-q Wick martingale and a Gaussian deterministic time-change with the same min(s,t)^q covariance. At q=2 their fourth moments are 15t^4 and 3t^4; the Wick increment has conditional second moment 2h B_s^2+h^2, also after conditioning on its own past, while the Gaussian time-change has independent increments. These complete classical law/conditional-variance computations are labelled human deductions, not new formal theorem names.",
+    "Finite Brownian entrywise covariance-power matrices factor as L diag((j+1)^k-j^k) L-transpose. Actual difference vectors give generalized eigenvalues d_k(j)/d_l(j), including 7/3 rather than 7. Congruence gives the printed sharp Loewner comparisons as explicit human classical deductions. Ordinary matrix powers remain different.",
+    "The existing primary Baudoin chaos context is retained. No new Gaussian covariance theorem, temporal generator, independence principle, curvature correspondence, SPDE existence or scale-uniform estimate is claimed."
   ],
   "literature": [
     {
