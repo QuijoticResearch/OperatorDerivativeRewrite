@@ -4,7 +4,7 @@ The independent publication branch contains reviewed editorial drafts built from
 
 ## Reviewed editorial papers
 
-Twenty-seven drafts, 313 pages, all based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. Each folder contains its source/PDF, exact theorem map, build and visual receipts, baseline evidence and candid editorial status. These are reviewed drafts, not submission-ready or novelty-certified manuscripts.
+Twenty-seven drafts, 314 pages, all based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. Each folder contains its source/PDF, exact theorem map, build and visual receipts, baseline evidence and candid editorial status. These are reviewed drafts, not submission-ready or novelty-certified manuscripts.
 
 ### Arithmetic entire functions
 
@@ -55,7 +55,7 @@ Twenty-seven drafts, 313 pages, all based on frozen verified commit `bab688bb614
 
 | Paper | Read and inspect | Scope and status |
 |---|---|---|
-| Brownian sticky clocks: construction, holding time and causal recovery in the observed filtration | [PDF](sticky-clock-recovery/main.pdf) · [LaTeX](sticky-clock-recovery/main.tex) · [theorem map](sticky-clock-recovery/theorem-map.json) · [editorial status](sticky-clock-recovery/editorial-status.md) | Eleven pages. Actual supported mass, inverse-clock transport, holding/variance balance, observed martingales and a two-source coupling with full Brownian increment laws and exact covariance. Classical formalization companion; generator and flow identification remain separate. |
+| Brownian sticky clocks: construction, holding time and causal recovery in the observed filtration | [PDF](sticky-clock-recovery/main.pdf) · [LaTeX](sticky-clock-recovery/main.tex) · [theorem map](sticky-clock-recovery/theorem-map.json) · [editorial status](sticky-clock-recovery/editorial-status.md) | Twelve pages. Actual supported mass, inverse-clock transport, holding/variance balance, observed martingales and a two-source coupling with full Brownian increment laws and exact covariance. Temporal/spatial mass and initial-kernel version distinctions. Classical formalization companion; generator and flow identification remain separate. |
 
 ### Finite gauge-invariant transfers
 

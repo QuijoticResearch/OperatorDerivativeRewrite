@@ -290,6 +290,31 @@ only the nondegenerate Brownian marginal, which makes $|B_T|>0$
 almost surely. We use no assertion that $L_T$ is positive on every
 sample.
 
+
+The spatial image of this temporal mass is quite different. On the
+same probability-one event as \eqref{eq:support}, define, for every
+$T\geq0$, the finite Borel measure
+\[
+ \rho_T=B_*\bigl(dL|_{[0,T]}\bigr).
+\]
+For each Borel set $E\subset\R$, concentration on the Brownian zero
+set gives
+\begin{equation}\label{eq:masscollapse}
+ \rho_T(E)=\int_{[0,T]}\ind_E(B_s)\,dL_s
+ =\ind_E(0)L_T,\qquad \rho_T=L_T\delta_0.
+\end{equation}
+This is a pathwise measure identity, simultaneously for all $T$;
+it needs no separate exceptional event for each $E$. Indeed the
+map $s\mapsto B_s$ equals the constant zero map $dL$-almost
+everywhere, so their image measures agree on every Borel set.
+An atomless measure in time can thus have a spatial atom: the
+observation is constant on the set carrying its mass. In particular
+$\rho_T((1,2])=0$, so $\rho_T$ is never spatial Lebesgue measure.
+For each fixed $T>0$, \eqref{eq:expectedmass} also gives
+$\Pp(L_T>0)>0$; on that event $\rho_T$ is not absolutely continuous
+with respect to spatial Lebesgue measure. No assertion that this
+atom is nonzero on every sample is needed.
+
 \section{Invertible clocks and exact measure transport}
 We record the deterministic clock mechanism in a form that can be
 checked before inserting any randomness.
@@ -738,6 +763,25 @@ alone do not establish Chapman--Kolmogorov consistency or an
 all-start transition family. No stochastic flow, generator-domain
 classification or uniqueness of the sticky martingale problem is
 asserted by Theorem~\ref{thm:main}.
+
+
+The initial pair law gives an elementary version warning. Since
+$X_0^\kappa=0$ almost surely, its marginal is $\mu_0=\delta_0$
+and the law of $(X_0^\kappa,X_0^\kappa)$ is $\delta_{(0,0)}$.
+Consider the Borel probability kernels
+\[
+ K_1(x,\cdot)=\delta_x,\qquad K_2(x,\cdot)=\delta_0.
+\]
+They agree $\mu_0$-almost everywhere and both disintegrate that
+same pair law: for Borel $A,E$, either iterated measure gives
+$\ind_A(0)\ind_E(0)$. Nevertheless
+$K_1(1,\{0\})=0$ and $K_2(1,\{0\})=1$. Measurability follows
+because $K_1(x,E)=\ind_E(x)$ and $K_2(x,E)=\ind_E(0)$.
+Thus this actual initial pair law determines its conditional kernel
+only on states seen by $\mu_0$. This example is not a pair of
+all-start transition semigroups: imposing $P_0(x,\cdot)=\delta_x$
+for every initial state already excludes $K_2$ away from zero.
+It proves no nonuniqueness for a sticky martingale problem.
 
 \section{Formal provenance and reproducibility}
 All mathematical sources used here are frozen at
