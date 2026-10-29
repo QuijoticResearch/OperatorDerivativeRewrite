@@ -934,6 +934,119 @@ priority, and no novelty is inferred from its finite verification.
 \code{FiniteWilsonTorusCharacters}, \code{FiniteWilsonTorusGap}.
 \par\endgroup
 
+
+\subsection*{An elementary plaquette observable also slows}
+The preceding probe contains a winding sign. Slowing also occurs for
+a microscopic observable specified entirely by elementary plaquettes:
+the score $S(i)=\sum_{r=0}^3(-1)^{p_r(i)}$ already used in the
+spatial weight. Its centering must be performed separately in each
+stationary law. Write
+\[
+ \widehat S=S-\mathbb E_\pi S,
+ \quad V=\mathbb E_\pi\widehat S^2,
+ \quad L=\langle\widehat S,Q\widehat S\rangle_\pi.
+\]
+We prove
+\begin{equation}\label{eq:plaquetteslowing}
+ \frac{\langle S,KS\rangle_{\rm unif}}{\|S\|_{\rm unif}^2}
+ =\frac1{16}<\frac{L}{V},\qquad V>0.
+\end{equation}
+This compares normalized one-step centered covariances for the same
+microscopic score in two genuine stationary laws. It does not claim
+that the score is an eigenfunction of the weighted operator, nor
+identify its quotient with the full stationary spectral gap.
+
+For the bare law, each elementary plaquette is parity on four distinct
+links. A noise increment has sign mean $1/2$, so independence gives
+$K(-1)^{p_r}=2^{-4}(-1)^{p_r}$. The four corresponding nonconstant
+Walsh characters are distinct and orthogonal in the uniform quotient
+law. Therefore $\mathbb E_{\rm unif}S=0$,
+$\mathbb E_{\rm unif}S^2=4$ and
+$\langle S,KS\rangle_{\rm unif}=1/4$, proving the first equality.
+
+Put $v_j=v_j(\lambda)$ for the positive polynomial vector above and
+set
+\begin{align*}
+ Z&=v_0^2+4v_1^2+2v_2^2+v_3^2,\\
+ C&=\frac{3177}{2048}v_0^2
+    -\frac{450}{2048}v_0v_3+\frac{353}{18432}v_3^2.
+\end{align*}
+The four orbit multiplicities in the 32-state space are $(4,16,8,4)$,
+so the full stationary normalizer is $4Z>0$. Since the score is
+$(4,0,0,-4)$ on these orbits, direct summation gives
+\begin{equation}\label{eq:plaquettemoments}
+ m:=\mathbb E_\pi S=\frac{4(v_0^2-v_3^2)}Z,\qquad
+ M:=\mathbb E_\pi S^2=\frac{16(v_0^2+v_3^2)}Z.
+\end{equation}
+For the uncentered lag, use the genuine ground transform:
+\[
+ \ell:=\langle S,QS\rangle_\pi
+ =\frac{\sum_{i,j}g_iS(i)T_{ij}g_jS(j)}{4\lambda Z}
+ =\frac{16C}{\lambda Z}.
+\]
+Only orbit types zero and three contribute. Their four-orbit entries
+$B_{00},B_{03}=B_{30},B_{33}$ produce exactly the displayed $C$.
+Stochasticity and stationarity then imply
+$V=M-m^2$ and $L=\ell-m^2$: expand the centered products and use
+$Q1=1$ and $\mathbb E_\pi QS=\mathbb E_\pi S$.
+Every $\pi_i$ is positive and the score takes both $4$ and $-4$,
+so $V$ is strictly positive.
+
+Here is a rational certificate for the strict inequality, avoiding
+numerical ground-state approximations. Define the polynomials $Z(x)$
+and $C(x)$ by replacing each $v_j$ in their formulas by $v_j(x)$, and
+put
+\begin{align*}
+ D(x)={}&256Z(x)C(x)
+ -16xZ(x)\bigl(v_0(x)^2+v_3(x)^2\bigr)\\
+ &-240x\bigl(v_0(x)^2-v_3(x)^2\bigr)^2.
+\end{align*}
+Modulo the displayed polynomial $P(x)$, exact rational reduction gives
+\begin{equation}\label{eq:plaquetteremainder}
+ D(x)\equiv\frac{73153125}{65536}\,R(x-2)\pmod{P(x)},
+\end{equation}
+where $R(y)=a_0+a_1y+a_2y^2+a_3y^3$ has coefficients
+\[
+\begin{array}{c|r}
+0&3221027340138603340546114739\\
+1&5030651367929054084455750651\\
+2&2615855257226141153611982240\\
+3&452893609599424244451318528
+\end{array}
+\]
+For reproducibility, the reduction uses only repeated substitution of
+\[
+ x^4=\frac{1388800x^3-284192x^2+5425x-9}{589824}
+ \quad\pmod{P(x)}
+\]
+after expanding the explicit polynomials $v_j,Z,C,D$, followed by the
+binomial substitution $x=2+y$. Thus \eqref{eq:plaquetteremainder}
+is a finite rational polynomial identity, not an approximate sign test.
+Its coefficient arrays are independently checked with exact division
+in the accompanying script. Every $a_j$ is positive, and
+$\lambda\geq2$ and $P(\lambda)=0$, so $D(\lambda)>0$.
+
+Finally, the exact moment formulas give
+\[
+ (16\ell-M-15m^2)\lambda Z^2=D(\lambda)>0.
+\]
+Since $\lambda Z^2>0$, this says
+$\ell-m^2>(M-m^2)/16$, and division by $V>0$ proves
+\eqref{eq:plaquetteslowing}. This proof exposes the actual centering
+and algebraic remainder in the formal module and declarations
+listed below. The positive shifted remainder
+is a human reorganization of the same formal rational certificate.
+It is a fixed finite-model calculation with unresolved priority;
+no volume-uniform local correlation bound or continuum conclusion is
+inferred from it.
+\par\smallskip\begingroup\small\raggedright
+\textit{Source correspondence:} \code{FiniteWilsonPlaquetteSlowing};
+\code{centered_score_slowing},
+\code{centered_score_variance_pos},
+\code{plaquette_covariance_increases}.
+\par\endgroup
+
+
 \section{Provenance, classical context and remaining boundaries}
 Every formal source used here is frozen at the verified commit
 \begin{center}\code{bab688bb6140cd6316c80680095a914ea0d346db}.\end{center}

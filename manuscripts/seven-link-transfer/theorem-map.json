@@ -1926,6 +1926,114 @@
       "source_sha256": "31b565a47808b7b1d51fa139846b23a7bf9676f15f89d1bc626d16caa80902b3",
       "declaration_header": "theorem comparison_error_necessary (\u03b5 : \u211d)\n    (h : \u2200 f : State \u2192 \u211d, mean f=0 \u2192\n      ((3/4:\u211d)-\u03b5)*secondMoment f \u2264 secondMoment f-lagPairing f) : (9/64:\u211d) \u2264 \u03b5",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteWilsonTorusGap.lean#L148"
+    },
+    {
+      "paper": "Section 11 elementary plaquette-sum centered covariance slowing in the actual homogeneous finite quotient",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteWilsonPlaquetteSlowing.score_microscopic",
+      "file": "Foundation/FiniteWilsonPlaquetteSlowing.lean",
+      "line": 15,
+      "source_sha256": "37ba8a91c486bd2d6f195c82ee1a19b34980d4c4dca82e57b15150b585121113",
+      "declaration_header": "theorem score_microscopic (u : Fin 256) :\n    score (FiniteWilsonTorusNoise.labelState u)=(FiniteWilsonTorusNoise.plaquetteScore u:\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteWilsonPlaquetteSlowing.lean#L15"
+    },
+    {
+      "paper": "Section 11 elementary plaquette-sum centered covariance slowing in the actual homogeneous finite quotient",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteWilsonPlaquetteSlowing.score_gauge",
+      "file": "Foundation/FiniteWilsonPlaquetteSlowing.lean",
+      "line": 22,
+      "source_sha256": "37ba8a91c486bd2d6f195c82ee1a19b34980d4c4dca82e57b15150b585121113",
+      "declaration_header": "theorem score_gauge (g : Fin 8) (u : Fin 256) :\n    score (FiniteWilsonTorusNoise.labelState (FiniteWilsonTorusNoise.gaugeAction g u))=\n      score (FiniteWilsonTorusNoise.labelState u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteWilsonPlaquetteSlowing.lean#L22"
+    },
+    {
+      "paper": "Section 11 elementary plaquette-sum centered covariance slowing in the actual homogeneous finite quotient",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteWilsonPlaquetteSlowing.centered_mean",
+      "file": "Foundation/FiniteWilsonPlaquetteSlowing.lean",
+      "line": 40,
+      "source_sha256": "37ba8a91c486bd2d6f195c82ee1a19b34980d4c4dca82e57b15150b585121113",
+      "declaration_header": "theorem centered_mean (f : State \u2192 \u211d) : mean (centered f)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteWilsonPlaquetteSlowing.lean#L40"
+    },
+    {
+      "paper": "Section 11 elementary plaquette-sum centered covariance slowing in the actual homogeneous finite quotient",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteWilsonPlaquetteSlowing.centered_second",
+      "file": "Foundation/FiniteWilsonPlaquetteSlowing.lean",
+      "line": 44,
+      "source_sha256": "37ba8a91c486bd2d6f195c82ee1a19b34980d4c4dca82e57b15150b585121113",
+      "declaration_header": "theorem centered_second (f : State \u2192 \u211d) :\n    secondMoment (centered f)=secondMoment f-(mean f)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteWilsonPlaquetteSlowing.lean#L44"
+    },
+    {
+      "paper": "Section 11 elementary plaquette-sum centered covariance slowing in the actual homogeneous finite quotient",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteWilsonPlaquetteSlowing.centered_lag",
+      "file": "Foundation/FiniteWilsonPlaquetteSlowing.lean",
+      "line": 59,
+      "source_sha256": "37ba8a91c486bd2d6f195c82ee1a19b34980d4c4dca82e57b15150b585121113",
+      "declaration_header": "theorem centered_lag (f : State \u2192 \u211d) :\n    lagPairing (centered f)=lagPairing f-(mean f)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteWilsonPlaquetteSlowing.lean#L59"
+    },
+    {
+      "paper": "Section 11 elementary plaquette-sum centered covariance slowing in the actual homogeneous finite quotient",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteWilsonPlaquetteSlowing.centered_score_slowing",
+      "file": "Foundation/FiniteWilsonPlaquetteSlowing.lean",
+      "line": 186,
+      "source_sha256": "37ba8a91c486bd2d6f195c82ee1a19b34980d4c4dca82e57b15150b585121113",
+      "declaration_header": "theorem centered_score_slowing :\n    (1/16:\u211d)*secondMoment (centered score) < lagPairing (centered score)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteWilsonPlaquetteSlowing.lean#L186"
+    },
+    {
+      "paper": "Section 11 elementary plaquette-sum centered covariance slowing in the actual homogeneous finite quotient",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteWilsonPlaquetteSlowing.centered_score_variance_pos",
+      "file": "Foundation/FiniteWilsonPlaquetteSlowing.lean",
+      "line": 204,
+      "source_sha256": "37ba8a91c486bd2d6f195c82ee1a19b34980d4c4dca82e57b15150b585121113",
+      "declaration_header": "theorem centered_score_variance_pos : 0 < secondMoment (centered score)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteWilsonPlaquetteSlowing.lean#L204"
+    },
+    {
+      "paper": "Section 11 elementary plaquette-sum centered covariance slowing in the actual homogeneous finite quotient",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteWilsonPlaquetteSlowing.bare_score_average",
+      "file": "Foundation/FiniteWilsonPlaquetteSlowing.lean",
+      "line": 227,
+      "source_sha256": "37ba8a91c486bd2d6f195c82ee1a19b34980d4c4dca82e57b15150b585121113",
+      "declaration_header": "theorem bare_score_average (i : State) :\n    (\u2211 j,kinetic i j*score j)=(1/16:\u211d)*score i",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteWilsonPlaquetteSlowing.lean#L227"
+    },
+    {
+      "paper": "Section 11 elementary plaquette-sum centered covariance slowing in the actual homogeneous finite quotient",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteWilsonPlaquetteSlowing.bare_score_mean",
+      "file": "Foundation/FiniteWilsonPlaquetteSlowing.lean",
+      "line": 237,
+      "source_sha256": "37ba8a91c486bd2d6f195c82ee1a19b34980d4c4dca82e57b15150b585121113",
+      "declaration_header": "theorem bare_score_mean : bareMean score=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteWilsonPlaquetteSlowing.lean#L237"
+    },
+    {
+      "paper": "Section 11 elementary plaquette-sum centered covariance slowing in the actual homogeneous finite quotient",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteWilsonPlaquetteSlowing.bare_score_second",
+      "file": "Foundation/FiniteWilsonPlaquetteSlowing.lean",
+      "line": 240,
+      "source_sha256": "37ba8a91c486bd2d6f195c82ee1a19b34980d4c4dca82e57b15150b585121113",
+      "declaration_header": "theorem bare_score_second : bareSecondMoment score=4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteWilsonPlaquetteSlowing.lean#L240"
+    },
+    {
+      "paper": "Section 11 elementary plaquette-sum centered covariance slowing in the actual homogeneous finite quotient",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteWilsonPlaquetteSlowing.bare_score_lag",
+      "file": "Foundation/FiniteWilsonPlaquetteSlowing.lean",
+      "line": 243,
+      "source_sha256": "37ba8a91c486bd2d6f195c82ee1a19b34980d4c4dca82e57b15150b585121113",
+      "declaration_header": "theorem bare_score_lag : bareLagPairing score=1/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteWilsonPlaquetteSlowing.lean#L243"
+    },
+    {
+      "paper": "Section 11 elementary plaquette-sum centered covariance slowing in the actual homogeneous finite quotient",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteWilsonPlaquetteSlowing.plaquette_covariance_increases",
+      "file": "Foundation/FiniteWilsonPlaquetteSlowing.lean",
+      "line": 259,
+      "source_sha256": "37ba8a91c486bd2d6f195c82ee1a19b34980d4c4dca82e57b15150b585121113",
+      "declaration_header": "theorem plaquette_covariance_increases :\n    bareLagPairing score/bareSecondMoment score <\n      lagPairing (centered score)/secondMoment (centered score)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteWilsonPlaquetteSlowing.lean#L259"
     }
   ],
   "human_reorganization": [
@@ -1936,7 +2044,9 @@
     "Section 11 is a separate microscopic periodic two-by-two Z2 model, not the seven-link SU2 model. The five label rows have rank five and their kernel is exactly the eight-element effective gauge space. Every temporal increment and spatial plaquette uses the same beta=log(3)/2. The actual quotient kernel and four-orbit aggregation are independently reconstructed from all 256 configurations.",
     "The polynomial/vector identity constructs a strictly positive eigenfunction at a real root in [2,9/4], giving the actual stochastic stationary ground transform. No initial candidate matrix or GroundData assumption is treated as existence or microscopic identification. Downstream microscopic and stationary certificates close those earlier source-header obligations.",
     "The sharp bare gap proof uses the complete Walsh basis and a labelled human support/parity reconstruction of all formal character data. Each nonconstant pulled-back link parity has at least two links because every vertex incidence is even; a winding has exactly two. The actual stationary centered supported winding probe has lag ratio 225/(256*lambda)>=25/64, gap upper bound 39/64 and necessary comparison loss 9/64. Its bare probe quotient 25/256 is distinct from the sharp kinetic quotient 1/4.",
-    "Finite positive-minorization mixing is a classical human specialization of the earlier positive-kernel argument. No equally weighted seven-link SU2 theorem, volume-uniform regime, continuum physical spectrum or novel transfer principle follows. Exact finite-comparison priority remains unresolved."
+    "Finite positive-minorization mixing is a classical human specialization of the earlier positive-kernel argument. No equally weighted seven-link SU2 theorem, volume-uniform regime, continuum physical spectrum or novel transfer principle follows. Exact finite-comparison priority remains unresolved.",
+    "The elementary microscopic plaquette sum, unlike the earlier winding-supported probe, is centered separately in the actual uniform and ground-stationary laws. Its bare lag quotient is exactly 1/16; the weighted centered quotient is strictly larger, without claiming the score is a weighted eigenfunction or that its quotient equals the full gap.",
+    "The formal cubic remainder certificate is reorganized by x=2+y into four strictly positive integer coefficients. The printed exact reduction rule and independent Euclidean polynomial division expose a complete rational sign certificate at the constructed positive root. All 1024 actual transfer contributions independently reconstruct the lag numerator. This concerns a fixed finite-model elementary-plaquette sum, not volume-uniform local correlation or continuum physics."
   ],
   "literature": [
     {
