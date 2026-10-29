@@ -2836,3 +2836,6 @@ import Foundation.FourCubeFullHaarAsymptotic
 import Foundation.FourCubeCompletedSquare
 import Foundation.FourCubeFullQuadraticCenter
 import Foundation.FourCubeFullColorSymmetry
+
+import Foundation.FourCubeFullOddEnvelope
+import Foundation.FourCubeFullOddIntegral
