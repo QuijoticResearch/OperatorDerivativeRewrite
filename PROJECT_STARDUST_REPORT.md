@@ -56033,3 +56033,44 @@ The prospective outside-probability bridge recorded at1710 is NOW CLOSED: actual
 Next pursue the joint boundary/interior action expansion with the ACTUAL SU(2) curves, reusing the verified matrix jets, full face incidence and Schur machinery. Any claimed third-order response must additionally prove the appropriate weighted derivative domains, integrable bounds and convergence; bounded-test cutoff removal does not settle a test with a t-dependent growing norm. The full harmonic-cubic coefficient remains an external rational diagnostic until verified in Lean and connected to actual Gibbs boundary derivatives. Stationary physical transfer estimates, scale/volume-uniform control, infinite-volume/continuum construction and a positive Yang-Mills mass gap remain OPEN. The reference-dependent boundary cost is not an intrinsic gauge-invariant spectral estimate. No novelty is claimed for classical finite-dimensional Gibbs comparison/concentration tools.
 
 Exact-commit approval, new-history secret scan, guarded PUBLIC main/research synchronization and independent post-push remote-ref/visibility checks remain checkpoint closure gates. This pre-commit ledger does not assert remote backup already succeeded. Visibility is exclusively user-controlled. The indefinite research goal remains active.
+
+
+## Checkpoint1712 - actual joint moving-boundary action and full Haar partition limit
+
+October29,2026. Focused Yang-Mills remains ACTIVE. Previous checkpoint1711,4f25f6218509a13cb181901ae3426f044c34334a, was independently verified on BOTH authorized backup refs with repository PUBLIC. This checkpoint closes its explicitly missing pointwise perturbed Taylor limit and full-partition integration bridge. It does not exchange derivatives with a limit. The primary researcher performs no publication duties: no manuscript/PDF, manuscripts/, docs/papers/ or editorial README work. Original manuscript checks here are hashes only.
+
+Five focused sources: SU2FourCurveJetTransfer, SU2AxisMatrixJets, FourCubeMovingBoundaryQuadratic, FourCubeMovingActionLimit and FourCubeMovingLaplaceLimit under Foundation/. They concern the actual existing finite112-edge72-face cap complex with normalized31-link pinned Haar coordinates, not a volume-uniform lattice or continuum construction.
+
+For fixed real amplitudes a=(x,y,z), b_t=boundaryData(tx,ty,tz), and actual93-dimensional pinned Haar chart Y, movingRay is the ACTUAL full action S_(b_t)(chartField(tY)). The new four-word transfer theorem compares C2 matrix curves having matching value, first and second derivatives with the exponential model. The actual axis matrix formula proves axis0,axis1,axis2 correspond to normalized Pauli vectors (0,0,2r),(2r,0,0),(0,2r,0). Boundary inverses and signed word slots are proved explicitly. No matching THIRD jet is assumed.
+
+For each ribbon p let v0 be the verified normalized interior chart velocity, v1 the high-cap velocity, v2 the chord velocity and v3 the low-cap velocity. Its explicit second variation is q_p=|v0+v1-v2-v3|^2/4. The actual chosen chord and low-cap velocities already carry their boundaryData inverse signs. Omitting mixed terms or changing inverse-slot signs is invalid. Define
+
+    Q_a(Y)=Q_0(Y)+sum_(48 ribbons p)(q_p(Y,a)-q_p(Y,0)).
+
+This is an explicit finite quadratic polynomial, not a derivative postulated to exist. Exact full-action decomposition, actual matrix jets and Taylor's theorem prove movingRay is C2, its value and first derivative vanish at0, second derivative equals Q_a, and its remainder after (Q_a/2)t^2 is o(t^2). Thus S_(b_t)(chartField(tY))/t^2 tends to Q_a(Y)/2 through the PUNCTURED real neighborhood, for both signs of t. Nonnegativity Q_a>=0 follows independently from actual full-action nonnegativity and the proved quotient limit. At a=0 the old Q_0 is recovered exactly. Lean's total quotient at t=0 cannot replace this punctured topology.
+
+Set g_a(Y)=R_Haar(0)*exp(-Q_a(Y)/2), where R_Haar is the actual previously verified product chart density. The actual scaled cutoff density D_t tends pointwise to g_a. Its prior integrable envelope bounds g_a by R_Haar(0)*exp(216*(x^2+y^2+z^2))*exp(-mass(Y)/1116). Measurability, genuine integrability and C_a=integral g_a>0 are now proved. Filter dominated convergence gives integral D_t -> C_a. g_a is an UNNORMALIZED quadratic-exponential density; no new IsGaussian law, explicit inverse covariance, determinant or completed-square identity is asserted.
+
+Actual normalized cutoff probability equals movingLocalPartition/Z_(b_t)(1/t^2) and tends to1 by1711's genuine perturbed Gibbs concentration. The exact Haar chart transport and this probability yield
+
+    Z_(b_t)(1/t^2)/|t|^93 -> C_a > 0,
+    Z_(b_t)(1/t^2)/Z_0(1/t^2) -> C_a/C_0,
+    -log(Z_(b_t)(1/t^2)/Z_0(1/t^2)) -> -log(C_a/C_0).
+
+These are ACTUAL full-Haar partition/free-energy limits at fixed amplitudes. The independent Lean harness transfers the partition asymptotic to the original unpinned32-link normalizer and existing partition3 using prior exact identities. No conditioning on a measure-zero pin is introduced. Strict positivity justifies logarithm continuity; it does not justify boundary differentiation. Uniform-in-amplitude convergence and a normalized bounded-observable moving-law theorem are not exported here.
+
+Verification and independent checks:
+- build: PASS, 55.889655999984825 seconds.
+- audit: PASS, 39.88132129999576 seconds.
+- checks: PASS, 30.462504299997818 seconds.
+- axiom-ledger: PASS, 50.739238500013016 seconds.
+
+The full root build passed7033 jobs; canonical COMPLETE transitive safe-Foundation axiom audit passed55469 declarations allowing only propext, Classical.choice and Quot.sound. ALL71 public types were printed unabridged and reviewed:56 theorem proofs,14 definitions and1 abbreviation, no instances. All five complete source bodies and both private helpers (boundary_alternative and axis_zero) were read. The persisted complete Foundation/AxiomAudit.lean run passed. No sorry/admit/new mathematical axiom/native_decide, resource increase, toolchain/configuration/compiler/trust change or audit weakening was introduced.
+
+ALL29 independent Lean examples passed. They test axis normalization/inverses/two-jets, explicit mixed-word and inverse-slot Hessians, actual chart/ribbon identification, C2/value/first/second jets, Q_a nonnegativity and zero-amplitude reuse, invalid unpunctured quotient, integrability/positive limit, original unpinned and partition3 limits, normalized partition/free energy and the zero-amplitude partition identity. Independent NumPy full72-face quaternion calculations and separately enumerated signed incidence tested11 fixed cases at h=.02,.01,.005. A selected mixed case gives actual joint quadratic10 versus incorrectly separated8. Boundary-only symmetric finite differences tend to the explicit quadratic; its odd cubic diagnostic tends to1. These are floating diagnostics, NOT certified error bounds, a formal third-response theorem, determinant identity or mass-gap proof. Evidence prefix: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1712-*.
+
+The source-integrity manifest authenticates1711 against exact approved4f25f6218509a13cb181901ae3426f044c34334a. Among2815 recursive Foundation/root Lean files, only the five new modules, root imports and AxiomAudit differ. All older mathematics,3 pinned configurations,113 baseline originals and21 Yang-Mills originals(20 distinct hashes) remain unchanged. ResearchSources stays unmodified/uncommitted. All drafts/histories, publication separation and campaign priorities are preserved.
+
+Exact remaining bottleneck: the actual fixed-amplitude joint Taylor and full-partition limits are NOW VERIFIED and must no longer be listed as missing hypotheses. Explicit completion of the square/Schur normalizer and identification with existing harmonic data remain open. Parameter derivatives through third order, weighted integrability and convergence for actual boundary response remain separate obligations; neither fixed-amplitude convergence nor bounded-test cutoff removal proves them. The external full harmonic-cubic rational diagnostic is still not a Lean theorem about actual Gibbs third derivatives. Stationary physical transfer contraction, a physically justified iteration distance, scale/volume-uniform estimates, infinite-volume/continuum construction and positive Yang-Mills mass gap remain OPEN. No novelty is claimed for classical finite-dimensional Taylor/Laplace tools. Continue the focused mathematical bottleneck rather than broad auxiliary-library expansion.
+
+Exact-commit approval, new-history secret scanning, guarded PUBLIC main/research synchronization and independent post-push ref/visibility checks are closure gates. This pre-commit entry does not assert backup already succeeded. Visibility is exclusively user-controlled. The indefinite research goal remains active.

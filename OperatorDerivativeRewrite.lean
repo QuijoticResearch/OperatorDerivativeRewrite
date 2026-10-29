@@ -2764,3 +2764,9 @@ import Foundation.FourCubeScaledBoundaryControl
 
 import Foundation.FourCubeBoundaryGibbsComparison
 import Foundation.FourCubeMovingBoundaryConcentration
+
+import Foundation.SU2FourCurveJetTransfer
+import Foundation.SU2AxisMatrixJets
+import Foundation.FourCubeMovingBoundaryQuadratic
+import Foundation.FourCubeMovingActionLimit
+import Foundation.FourCubeMovingLaplaceLimit
