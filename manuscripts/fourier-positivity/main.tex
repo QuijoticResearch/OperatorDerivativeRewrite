@@ -1,0 +1,791 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,longtable,array}
+\usepackage[margin=1.05in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}\newcommand{\T}{\mathbb T}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
+\DeclareMathOperator{\Dom}{Dom}
+\title{Fourier covariance and positivity on the three-torus}
+\author{Project Stardust}
+\date{Reviewed editorial draft, October 29, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For normalized even Fourier symbols on the three-torus, we give
+complete proofs connecting anchored covariance, conditional
+negativity, pointwise iterated Gamma forms, finite heat-multiplier
+matrices and positivity on the full nonnegative Haar-$L^2$ cone.
+The passage from finite Fourier squares to arbitrary nonnegative
+$L^2$ functions is proved explicitly. Coordinatewise power symbols
+have the sharp positivity condition that every positive-weight
+exponent is at most two; inactive coordinates impose no restriction.
+We also identify the exact closed generator domain and explain why
+semigroup existence alone supplies no positivity. A finite-time
+increment kernel remains positive at every time, yet an exact
+two-frequency quadratic-heat example shows that it need not increase
+in Loewner order. The main equivalence is classical Schoenberg
+theory, organized here around a frozen Lean development. No new
+priority claim, completed pointwise Gamma domain or continuous-time
+path construction is asserted.
+\end{abstract}
+
+\section{The question and the domains}
+Let $\T^3=(\R/\Z)^3$, with normalized Haar measure $m$, and put
+$\Lambda=\Z^3$. For $k\in\Lambda$ write
+\[
+ e_k(x)=\exp(2\pi i k\cdot x).
+\]
+The finite Fourier algebra $\mathcal P$ consists of the finite sums
+$f=\sum_k\widehat f(k)e_k$. Its product is pointwise multiplication,
+$e_ke_l=e_{k+l}$, and complex conjugation sends $e_k$ to $e_{-k}$.
+The exponentials form an orthonormal basis of $L^2(\T^3,m;\C)$.
+We use the unit-period normalization throughout. In particular the
+rates below are specified on integer frequencies; a factor $2\pi$
+is not silently inserted into their definition.
+
+For a real symbol $\psi:\Lambda\to\R$, the algebraic operator
+$L_\psi$ is defined on $\mathcal P$ by
+\begin{equation}\label{eq:L}
+ L_\psi e_k=-\psi(k)e_k.
+\end{equation}
+Until a closed domain is specified, this is only a finite Fourier
+operator. The sesquilinear iterates used in the formal library are
+\begin{align}\label{eq:gamma}
+ \Gamma_0(f,g)&=\overline f g,\notag\\
+ \Gamma_{n+1}(f,g)&=\tfrac12\bigl(
+ L_\psi\Gamma_n(f,g)-\Gamma_n(L_\psi f,g)
+                         -\Gamma_n(f,L_\psi g)\bigr).
+\end{align}
+They are conjugate linear in $f$ and linear in $g$. For an even
+real symbol, $L_\psi\overline f=\overline{L_\psi f}$, and
+$\Gamma_1$ is the usual complex carré du champ. We keep the
+recursion itself as the definition when discussing a noneven
+symbol in Section~\ref{sec:normalization}.
+
+Define the anchored kernel
+\begin{equation}\label{eq:K}
+ K_\psi(k,l)=\frac{\psi(k)+\psi(l)-\psi(l-k)}2.
+\end{equation}
+Saying that $K_\psi$ is positive semidefinite means that every
+finite matrix $(K_\psi(k_i,k_j))_{i,j=1}^n$ is real symmetric and
+has nonnegative quadratic form. Repetitions of the sampled
+frequencies are allowed. Conditional negativity means that
+\begin{equation}\label{eq:CND}
+ \sum_{i,j=1}^n c_i c_j\psi(k_j-k_i)\leq0
+ \quad\hbox{whenever }c_i\in\R,\quad\sum_i c_i=0.
+\end{equation}
+Symmetry is stated separately; condition~\eqref{eq:CND} by itself
+does not test the odd part of a real symbol.
+
+The physical nonnegative cone in complex $L^2$ is
+\[
+ \mathcal C=\{u\in L^2(\T^3,m;\C):
+          \operatorname{Im}u=0,\ \operatorname{Re}u\geq0
+          \text{ almost everywhere}\}.
+\]
+Thus an inequality about Fourier coefficients is not the
+definition of positivity used here.
+
+\begin{theorem}\label{thm:main}
+Suppose $\psi:\Lambda\to[0,\infty)$ is even and $\psi(0)=0$.
+Let $S_t$ on $L^2$ be the Fourier multiplier
+$\widehat{S_tu}(k)=e^{-t\psi(k)}\widehat u(k)$, for $t\geq0$.
+The following conditions are equivalent:
+\begin{enumerate}
+\item $K_\psi$ is positive semidefinite on every finite sample;
+\item $\psi$ satisfies~\eqref{eq:CND};
+\item $\Gamma_1(f,f)(0)\geq0$ for every $f\in\mathcal P$;
+\item $(e^{-t\psi(k_j-k_i)})_{i,j}$ is positive semidefinite
+      for every finite sample and every $t\geq0$;
+\item $S_t\mathcal C\subseteq\mathcal C$ for every $t\geq0$.
+\end{enumerate}
+Under these conditions, $\Gamma_n(f,f)(x)$ is real and
+nonnegative for every integer $n\geq0$, $f\in\mathcal P$ and
+$x\in\T^3$. The semigroup is strongly continuous, self-adjoint,
+contractive and constant preserving. Its exact generator domain is
+\begin{equation}\label{eq:domain}
+ \Dom(A)=\left\{u\in L^2:
+                  \sum_k\psi(k)^2|\widehat u(k)|^2<\infty\right\},
+ \qquad\widehat{Au}(k)=-\psi(k)\widehat u(k).
+\end{equation}
+Finite Fourier polynomials form a core for this closed generator.
+\end{theorem}
+
+The finite equivalence in this statement is Schoenberg's
+classical mechanism~\cite{schoenberg}. Its value here is the
+complete connection to the specified physical $L^2$ realization,
+including the square-cone closure and the exact operator domain.
+All proofs are given below. Positivity of each finite matrix is
+not used as a substitute for proving positivity on $\mathcal C$.
+
+\section{Anchoring a conditionally negative kernel}
+The zero frequency is needed as an extra sample even when it
+does not occur in the polynomial of interest.
+
+\begin{lemma}\label{lem:anchor}
+Let $\psi$ be real, even and normalized by $\psi(0)=0$.
+Then $K_\psi$ is positive semidefinite on finite samples if and
+only if~\eqref{eq:CND} holds.
+\end{lemma}
+\begin{proof}
+Evenness makes $K_\psi$ symmetric. For any coefficients $b_i$,
+write $b=\sum_i b_i$. Expanding~\eqref{eq:K} gives
+\begin{equation}\label{eq:anchoridentity}
+ \sum_{i,j}b_i b_j K_\psi(k_i,k_j)
+ =b\sum_i b_i\psi(k_i)
+       -\frac12\sum_{i,j}b_i b_j\psi(k_j-k_i).
+\end{equation}
+For $b=0$, positivity of the left side yields conditional
+negativity.
+
+Conversely, augment the sample by $k_0=0$ and give it coefficient
+$b_0=-\sum_{i=1}^n b_i$. The augmented coefficients sum to zero.
+The diagonal term at the anchor vanishes, and its two cross terms
+are $-2b\sum_i b_i\psi(k_i)$, by evenness. Therefore the
+conditionally negative quadratic form of the augmented sample
+is exactly $-2$ times the left side of~\eqref{eq:anchoridentity}.
+Its nonpositivity proves the desired matrix positivity for
+arbitrary $b_i$.
+\end{proof}
+
+A real positive semidefinite matrix $M$ also has nonnegative
+complex energy: if $z=a+ib$, symmetry gives
+\[
+ \sum_{i,j}\overline z_i z_j M_{ij}
+       =a^{\mathsf T}Ma+b^{\mathsf T}Mb\geq0.
+\]
+This observation permits complex Fourier polynomials in all
+subsequent pointwise tests without changing the real definition
+of conditional negativity.
+
+\section{The entire hierarchy on the finite algebra}
+For a single pair of modes, recursion~\eqref{eq:gamma} gives
+\begin{equation}\label{eq:modegamma}
+ \Gamma_n(e_k,e_l)=K_\psi(k,l)^n e_{l-k}.
+\end{equation}
+Indeed the formula is true for $n=0$; the next recursion multiplies
+its coefficient by
+$(-\psi(l-k)+\psi(k)+\psi(l))/2$. The symbol is real, so
+conjugating the coefficient $-\psi(k)$ in the first argument
+does not change it. Finite sesquilinearity now yields
+\begin{equation}\label{eq:gammaenergy}
+ \Gamma_n(f,f)(x)=\sum_{i,j}
+  \overline{c_i e_{k_i}(x)}c_j e_{k_j}(x)
+                      K_\psi(k_i,k_j)^n,
+ \quad f=\sum_i c_i e_{k_i}.
+\end{equation}
+Here $M^{\circ n}$ denotes the entrywise power, not the matrix
+power $M^n$.
+
+\begin{lemma}\label{lem:schur}
+If $M$ and $N$ are real positive semidefinite finite matrices,
+then their entrywise product $M\circ N$ is positive semidefinite.
+Consequently $M^{\circ n}$ is positive semidefinite for every
+integer $n\geq0$.
+\end{lemma}
+\begin{proof}
+Choose finite-dimensional Gram representations
+$M_{ij}=\langle u_i,u_j\rangle$ and
+$N_{ij}=\langle v_i,v_j\rangle$, for example by orthogonal
+diagonalization and square roots of their nonnegative eigenvalues.
+Then $(M\circ N)_{ij}$ is the Gram matrix of $u_i\otimes v_i$
+in the finite tensor-product Euclidean space. Iteration proves
+the power assertion, starting from the all-ones Gram matrix
+$M^{\circ0}$.
+\end{proof}
+
+\begin{proposition}\label{prop:gammapositive}
+For a real even normalized symbol, the following are equivalent:
+$K_\psi$ is positive semidefinite; $\Gamma_1(f,f)(0)\geq0$
+for every finite Fourier polynomial; and all the values
+$\Gamma_n(f,f)(x)$ are real and nonnegative.
+\end{proposition}
+\begin{proof}
+If the kernel is positive semidefinite, apply
+Lemma~\ref{lem:schur} to~\eqref{eq:gammaenergy}, using the complex
+energy observation after Lemma~\ref{lem:anchor}. This proves the
+full hierarchy. The hierarchy implies its first origin test.
+For the reverse implication, test
+$f=\sum_i c_i e_{k_i}$ at $x=0$ with arbitrary real $c_i$.
+Since $e_{k_i}(0)=1$, equation~\eqref{eq:gammaenergy} at $n=1$
+is exactly the quadratic form of $K_\psi$ on that sample.
+Repeated modes cause no difficulty: the formula is valid for
+every finite presentation of $f$.
+\end{proof}
+
+This result is positivity on $\mathcal P$, not an assertion that
+the products in~\eqref{eq:gamma} extend to all of $\Dom(A)$.
+The exact generator domain alone does not control the products
+or pointwise representatives required there.
+
+\section{Normalization and real-symbol pitfalls}\label{sec:normalization}
+The evenness assumption is structural. It must not be dropped
+merely because a scalar quadratic form is called negative.
+
+\begin{proposition}\label{prop:forces-even}
+Let $\psi:\Lambda\to\R$ satisfy $\psi(0)=0$, without initially
+assuming evenness. If
+$\operatorname{Re}\Gamma_1(f,f)(0)\geq0$ for every
+$f\in\mathcal P$, then $\psi$ is even. It follows that the
+normalized first-origin-test criterion is equivalent to
+conditional negativity together with evenness.
+\end{proposition}
+\begin{proof}
+Fix $k$ and test $f=s+e_k$ with $s\in\R$. Formula
+\eqref{eq:gammaenergy}, which follows from the recursion even
+without evenness, gives
+\[
+ \operatorname{Re}\Gamma_1(s+e_k,s+e_k)(0)
+ =\psi(k)+\frac{s}{2}\bigl(\psi(k)-\psi(-k)\bigr).
+\]
+An affine real function nonnegative for every $s\in\R$ has zero
+slope. Hence $\psi(k)=\psi(-k)$. Apply
+Proposition~\ref{prop:gammapositive} and Lemma~\ref{lem:anchor}
+to finish both directions of the criterion.
+\end{proof}
+
+For an explicit failure, take $\psi(k)=k_1$. For every real
+finite vector $c$, the matrix $\psi(k_j-k_i)$ is antisymmetric,
+so its quadratic form is zero. In particular it satisfies the
+bare inequality~\eqref{eq:CND}. Yet for $k=(1,0,0)$ and $s=-2$
+the displayed first-Gamma value equals $1-2=-1$. This symbol
+is not nonnegative and does not fall under
+Theorem~\ref{thm:main}; it isolates the missing symmetry
+assumption rather than contradicting that theorem.
+
+Without normalization, positivity of only the real part can
+also miss an imaginary antisymmetric contribution to
+\eqref{eq:gammaenergy}. Testing $f=e_k+ie_l$ gives
+\[
+ \operatorname{Im}\Gamma_1(f,f)(0)
+                   =K_\psi(k,l)-K_\psi(l,k).
+\]
+Thus the library's unnormalized complex criterion keeps reality
+as well as nonnegativity. The main theorem avoids this ambiguity
+by stating normalization and evenness at the outset.
+
+\section{Finite Schoenberg positivity}
+We next pass from the infinitesimal symbol to finite-time
+multiplier matrices. This step is still a finite matrix argument.
+
+\begin{proposition}\label{prop:schoenberg}
+For real even $\psi$ with $\psi(0)=0$, conditional negativity
+is equivalent to positivity of all finite matrices
+\begin{equation}\label{eq:heatmatrix}
+ H_t(i,j)=\exp\bigl(-t\psi(k_j-k_i)\bigr),\qquad t\geq0.
+\end{equation}
+\end{proposition}
+\begin{proof}
+By Lemma~\ref{lem:anchor}, assume the anchored matrix
+$K=(K_\psi(k_i,k_j))$ is positive semidefinite. Its entrywise
+exponential
+\[
+ \exp^{\circ}(2tK)=\sum_{n=0}^\infty
+                         \frac{(2t)^n}{n!}K^{\circ n}
+\]
+is positive semidefinite. Each partial sum has that property by
+Lemma~\ref{lem:schur}, and the entrywise convergent finite-matrix
+limit preserves every quadratic-form inequality and symmetry.
+Set $d_i=e^{-t\psi(k_i)}$. The identity
+\[
+ H_t(i,j)=d_i d_j\exp(2tK_{ij})
+\]
+shows that $H_t$ is the congruence of this positive matrix by the
+real diagonal matrix with diagonal $d_i$. Hence it is positive
+semidefinite.
+
+Conversely, take arbitrary real $c_i$ with $\sum_i c_i=0$.
+The finite sum
+\[
+ E(t)=\sum_{i,j}c_i c_j e^{-t\psi(k_j-k_i)}
+\]
+is nonnegative for $t\geq0$ and satisfies $E(0)=0$. Its right
+derivative at zero is nonnegative. Differentiating its finite
+number of terms gives
+\[
+ 0\leq E'(0)=-\sum_{i,j}c_i c_j\psi(k_j-k_i),
+\]
+which is conditional negativity.
+\end{proof}
+
+No growth condition on $\psi$ is required for this finite
+argument. For the physical $L^2$ evolution, nonnegativity of the
+rates ensures bounded multipliers. Under the main normalized
+even conditions it also follows from conditional negativity:
+apply~\eqref{eq:CND} to frequencies $0,k$ and coefficients
+$1,-1$ to obtain $-2\psi(k)\leq0$.
+
+\section{The completed multiplier and its exact generator}
+The analytic construction in this section requires only
+$\psi(k)\geq0$. Conditional negativity is not needed.
+Parseval's identity identifies $L^2(\T^3,m;\C)$ with
+$\ell^2(\Lambda;\C)$. Since $0<e^{-t\psi(k)}\leq1$, its
+diagonal multiplier defines a contraction $S_t$.
+The identities $S_0=I$ and $S_sS_t=S_{s+t}$ hold coefficientwise.
+For any fixed $u$ and $t_n\to t$ in $[0,\infty)$,
+\[
+ \norm{S_{t_n}u-S_tu}_2^2
+ =\sum_k |e^{-t_n\psi(k)}-e^{-t\psi(k)}|^2|\widehat u(k)|^2
+ \longrightarrow0.
+\]
+The summands are bounded by $4|\widehat u(k)|^2$; a finite-head,
+small-tail argument proves the convergence, or equivalently
+dominated convergence on counting measure. The multiplier is real,
+so $S_t$ is self-adjoint. If $\psi(0)=0$, then $S_t1=1$.
+
+\begin{proposition}\label{prop:generator}
+For every nonnegative symbol, the strong right derivative
+$Au=\lim_{t\downarrow0}(S_tu-u)/t$ exists exactly on
+\eqref{eq:domain}. This operator is closed and has
+$\mathcal P$ as a graph core.
+\end{proposition}
+\begin{proof}
+If the strong derivative exists with value $v$, each continuous
+Fourier coordinate functional gives
+\[
+ \widehat v(k)=\lim_{t\downarrow0}
+       \frac{e^{-t\psi(k)}-1}{t}\widehat u(k)
+             =-\psi(k)\widehat u(k).
+\]
+Parseval then forces $\sum_k\psi(k)^2|\widehat u(k)|^2<\infty$.
+Conversely, if this sum is finite, let $v$ have those coefficients.
+The scalar estimate $0\leq1-e^{-a}\leq a$ for $a\geq0$ gives
+\[
+ \left|\frac{e^{-t\psi(k)}-1}{t}+\psi(k)\right|
+                                      \leq\psi(k),\qquad t>0.
+\]
+The scalar expression tends to zero for every $k$, so domination
+by the summable squared sequence
+$\psi(k)^2|\widehat u(k)|^2$ proves convergence to $v$ in $L^2$.
+
+To prove closedness, suppose $u_n\to u$ and $Au_n\to v$ in
+$L^2$. Coordinatewise limits give
+$\widehat v(k)=-\psi(k)\widehat u(k)$, and since $v\in L^2$
+the same characterization puts $u\in\Dom(A)$ with $Au=v$.
+Finally truncate the Fourier series of $u\in\Dom(A)$ to
+$\{k:|k_j|\leq N,\ j=1,2,3\}$. Both the $L^2$ tail and its
+$A$-image tail tend to zero by their respective square sums.
+These truncations are finite Fourier polynomials, proving the
+core assertion in the norm $\norm u_2+\norm{Au}_2$.
+\end{proof}
+
+The semigroup can therefore exist with a completely controlled
+closed generator even when it fails positivity. Section
+\ref{sec:threshold} gives an explicit failure within this same
+construction. It cannot be repaired by calling the coefficient
+evolution a Markov operator before checking the physical cone.
+
+\section{From finite squares to the full Haar cone}
+First calculate on a finite polynomial $f=\sum_i c_i e_{k_i}$:
+\begin{equation}\label{eq:squareheat}
+ (S_t|f|^2)(x)=\sum_{i,j}
+      \overline{c_i e_{k_i}(x)}c_j e_{k_j}(x)
+                         e^{-t\psi(k_j-k_i)}.
+\end{equation}
+This is equality of continuous finite Fourier representatives.
+If the matrices~\eqref{eq:heatmatrix} are positive semidefinite,
+the right side is real and nonnegative at every $x$.
+
+\begin{lemma}\label{lem:cone}
+The $L^2$ closure of $\{|f|^2:f\in\mathcal P\}$ is exactly
+$\mathcal C$.
+\end{lemma}
+\begin{proof}
+For $z\in\C$ set $\pi(z)=\max(\operatorname{Re}z,0)$, regarded
+as a complex number with zero imaginary part. The map $\pi$ is
+one-Lipschitz, vanishes at zero and induces a one-Lipschitz map
+on $L^2$. Its fixed-point set is $\mathcal C$, hence this cone
+is closed. Every polynomial square lies in it.
+
+For the reverse inclusion, take $u\in\mathcal C$ and choose
+continuous complex $v_n$ converging to $u$ in $L^2$. Such
+approximation follows from continuous-function density for Haar
+measure on the compact torus. The clipped continuous functions
+$g_n=\pi(v_n)$ are nonnegative and converge to $u$, because
+$\pi(u)=u$ almost everywhere and $\pi$ is one-Lipschitz.
+
+For fixed $n$, the function $\sqrt{g_n}$ is continuous. Finite
+Fourier polynomials are uniformly dense in continuous complex
+functions on the torus, by the Stone--Weierstrass theorem applied
+to the self-conjugate character algebra. Choose $p_j$ converging
+uniformly to $\sqrt{g_n}$. Then
+\[
+ \norm{|p_j|^2-g_n}_\infty
+ \leq\norm{p_j-\sqrt{g_n}}_\infty
+              \bigl(\norm{p_j}_\infty+\norm{\sqrt{g_n}}_\infty\bigr)
+ \longrightarrow0.
+\]
+Since $m$ is a probability measure, this implies $L^2$
+convergence. Choose one such square within $1/n$ of $g_n$ in
+$L^2$. The chosen squares converge to $u$.
+\end{proof}
+
+\begin{proposition}\label{prop:physical}
+Under the hypotheses of Theorem~\ref{thm:main}, positivity of all
+finite heat matrices is equivalent to $S_t\mathcal C\subseteq
+\mathcal C$ for every $t\geq0$.
+\end{proposition}
+\begin{proof}
+In the forward direction use~\eqref{eq:squareheat}, then approximate
+$u\in\mathcal C$ by squares using Lemma~\ref{lem:cone}.
+Boundedness of $S_t$ gives convergence of their images, and
+closedness of $\mathcal C$ gives $S_tu\in\mathcal C$.
+
+Conversely, apply physical positivity to every $|f|^2$.
+Its image is a continuous finite polynomial, so almost-everywhere
+nonnegativity implies pointwise nonnegativity. Indeed, a negative
+value of its real part would give a nonempty open set of negative
+values; Haar measure on the torus assigns positive measure to
+every nonempty open set. Its imaginary part similarly vanishes
+everywhere if it vanishes almost everywhere. Evaluating
+\eqref{eq:squareheat} at $x=0$ and allowing arbitrary real $c_i$
+proves nonnegativity of every heat-matrix quadratic form.
+Evenness already supplies symmetry.
+\end{proof}
+
+\begin{proof}[Completion of the proof of Theorem~\ref{thm:main}]
+Lemma~\ref{lem:anchor}, Proposition~\ref{prop:gammapositive},
+Proposition~\ref{prop:schoenberg} and
+Proposition~\ref{prop:physical} give all five equivalences and
+the finite Gamma hierarchy. The semigroup properties and
+Proposition~\ref{prop:generator} give the analytic assertions.
+\end{proof}
+
+For real bounded $u$ with $0\leq u\leq1$, positivity and
+$S_t1=1$ also give $0\leq S_tu\leq1$ almost everywhere. Thus the
+word Markov, when used for these operators, refers to this order
+and constant-preservation property on the physical function space.
+No sample-path regularity or filtration is built by the proof.
+
+\section{The sharp active-coordinate threshold}\label{sec:threshold}
+Let $a_j\geq0$ and $\alpha_j>0$ for $j=1,2,3$, and set
+\begin{equation}\label{eq:mixed}
+ \psi(k)=\sum_{j=1}^3 a_j|k_j|^{\alpha_j},\qquad 0^\alpha=0
+       \quad(\alpha>0).
+\end{equation}
+A coordinate is active when $a_j>0$. The generator is defined
+by these rates, with no alternative Euclidean radial power
+substituted for their coordinatewise sum.
+
+\begin{theorem}\label{thm:threshold}
+For the symbol~\eqref{eq:mixed}, every condition in
+Theorem~\ref{thm:main} holds if and only if
+\begin{equation}\label{eq:active}
+ a_j>0\ \Longrightarrow\ \alpha_j\leq2
+               \quad(j=1,2,3).
+\end{equation}
+If an active exponent exceeds two, a nonnegative finite Fourier
+square has a negative evolved value on a set of positive Haar
+measure at some positive time.
+\end{theorem}
+\begin{proof}
+We first prove the positive cases, including the endpoint.
+For $0<\alpha<2$ put
+\[
+ I_\alpha=\int_0^\infty(1-\cos s)s^{-1-\alpha}\,ds.
+\]
+This is finite and strictly positive. Near zero use
+$0\leq1-\cos s\leq s^2/2$; near infinity use $1-\cos s\leq2$;
+positivity follows on an interval where the cosine is not one.
+Changing variables gives, also at $x=0$,
+\begin{equation}\label{eq:stableintegral}
+ |x|^\alpha=I_\alpha^{-1}\int_0^\infty
+                  (1-\cos(sx))s^{-1-\alpha}\,ds.
+\end{equation}
+For a real sample $x_i$ and coefficients summing to zero,
+\[
+ \sum_{i,l}c_i c_l(1-\cos(s(x_l-x_i)))
+              =-\left|\sum_i c_i e^{isx_i}\right|^2\leq0.
+\]
+Every individual integrand in~\eqref{eq:stableintegral} is
+integrable, so finite summation and integration commute. This
+proves conditional negativity of $|x-y|^\alpha$.
+At $\alpha=2$, expansion gives directly
+\[
+ \sum_{i,l}c_i c_l(x_l-x_i)^2
+                   =-2\left(\sum_i c_i x_i\right)^2\leq0.
+\]
+Restrict to each integer coordinate, multiply by $a_j\geq0$
+and add. If $a_j=0$ its summand is identically zero regardless
+of the positive exponent. Thus~\eqref{eq:active} implies
+conditional negativity of~\eqref{eq:mixed}, and the main
+theorem supplies every asserted positivity.
+
+For necessity, fix an active coordinate $j$ and sample
+$0,e_j,2e_j$ with coefficients $(1,-2,1)$. Their sum is zero.
+Directly summing the six off-diagonal terms gives
+\begin{equation}\label{eq:triple}
+ \sum_{i,l=0}^2 c_i c_l\psi((l-i)e_j)
+                         =2a_j(2^{\alpha_j}-4).
+\end{equation}
+If $\alpha_j>2$, this is strictly positive, contradicting
+conditional negativity.
+
+The same witness gives a physical counterexample without any
+appeal to an abstract converse. Let
+\[
+ p(x)=1-2e_{e_j}(x)+e_{2e_j}(x).
+\]
+Then $|p|^2=6-8\cos(2\pi x_j)+2\cos(4\pi x_j)\geq0$, and
+\begin{equation}\label{eq:squarewitness}
+ (S_t|p|^2)(0)=6-8e^{-a_jt}+2e^{-a_j2^{\alpha_j}t}.
+\end{equation}
+This vanishes at $t=0$ and has derivative
+$-2a_j(2^{\alpha_j}-4)<0$ there. It is therefore negative for
+all sufficiently small $t>0$. Each evolved polynomial is
+continuous, so its negative set contains an open neighborhood
+of zero and has positive Haar measure.
+\end{proof}
+
+This proof also shows exactly why a zero-weight exponent must
+not be tested. For example $(a_1,a_2,a_3)=(1,0,0)$ and
+$(\alpha_1,\alpha_2,\alpha_3)=(2,4,10)$ give the ordinary
+one-coordinate quadratic heat evolution, with stationary modes
+in the other two directions. Its positivity is unaffected by
+the nominal inactive exponents. The all-zero symbol gives the
+identity semigroup and is included as well.
+
+The integral representation~\eqref{eq:stableintegral} is a
+classical stable-symbol argument. In the formal development,
+fractional covariance matrices provide the positive interior
+case; the human proof supplies an equivalent direct integral
+argument. No new formal declaration for that reorganization
+is claimed.
+
+\section{Finite-time increment kernels}
+Assume from now on that $\psi$ satisfies Theorem~\ref{thm:main}.
+For each $t\geq0$ define
+\begin{equation}\label{eq:q}
+ q_t(k)=1-e^{-t\psi(k)}.
+\end{equation}
+This symbol is normalized, even and nonnegative. It should be
+distinguished from the original generator symbol $\psi$.
+
+\begin{proposition}\label{prop:qt}
+The anchored kernel $C_t=K_{q_t}$ is positive semidefinite at
+every $t\geq0$, and
+\begin{equation}\label{eq:incrementkernel}
+ 2C_t(k,l)=e^{-t\psi(l-k)}-e^{-t\psi(k)}-e^{-t\psi(l)}+1.
+\end{equation}
+If a torus-valued random variable $X_t$ has Fourier law
+$\mathbb E e_k(X_t)=e^{-t\psi(k)}$, then
+\begin{equation}\label{eq:randomincrement}
+ 2C_t(k,l)=\mathbb E\bigl[
+       \overline{(e_k(X_t)-1)}(e_l(X_t)-1)\bigr].
+\end{equation}
+\end{proposition}
+\begin{proof}
+For any zero-sum real $c_i$, the constant part of $q_t$ cancels,
+so
+\[
+ \sum_{i,j}c_i c_jq_t(k_j-k_i)
+              =-\sum_{i,j}c_i c_je^{-t\psi(k_j-k_i)}\leq0
+\]
+by the finite heat-matrix positivity. Lemma~\ref{lem:anchor}
+gives positivity of $C_t$. Expanding its definition proves
+\eqref{eq:incrementkernel}. Expanding the product of character
+increments gives~\eqref{eq:randomincrement} under the stated
+Fourier law, using $e_{-k}e_l=e_{l-k}$ and evenness.
+\end{proof}
+
+The expectation in~\eqref{eq:randomincrement} is an uncentered
+second-moment Gram kernel of the increments $e_k(X_t)-1$.
+Those increments need not have mean zero. The word covariance
+in ``anchored covariance kernel'' denotes the positive-kernel
+structure; it must not silently turn this identity into the
+centered covariance of those random variables. The frozen library
+constructs actual transition laws and fixed-step chains with
+this Fourier law. The proposition's matrix proof does not depend
+on a continuous-time path construction, and none is used here.
+
+As $t\downarrow0$, $q_t(k)/t\to\psi(k)$ for each frequency.
+Hence $C_t(k,l)/t\to K_\psi(k,l)$ on each finite sample.
+This is finite-dimensional entrywise convergence, not an
+operator-norm assertion over all frequencies.
+
+\section{Positivity does not imply increase in time}
+The scalar values $q_t(k)$ increase in $t$ for every fixed
+$k$. Their anchored matrices need not increase in Loewner
+order. Recall that $C_t\succeq C_s$ means the difference is
+positive semidefinite on the chosen common finite sample.
+
+\begin{proposition}\label{prop:nonmonotone}
+Take $\psi(k)=k_1^2$, frequencies $k=e_1$ and $l=-2e_1$,
+and the real vector $b=(1,-2)$. For $s=\log2$ and $t=2\log2$,
+\begin{equation}\label{eq:negative}
+ b^{\mathsf T}(C_t-C_s)b=-\frac{16897}{131072}<0.
+\end{equation}
+Both $C_s$ and $C_t$ are positive semidefinite.
+\end{proposition}
+\begin{proof}
+The rates of $k,l,l-k$ are $1,4,9$. Writing $r=e^{-u}$ gives
+\[
+ C_u(k,k)=1-r,\qquad C_u(l,l)=1-r^4,
+ \qquad C_u(k,l)=\frac{1-r-r^4+r^9}{2}.
+\]
+Consequently
+\[
+ b^{\mathsf T}C_ub=3+r-2r^4-2r^9.
+\]
+At $u=s$ one has $r=1/2$; at $u=t$ one has $r=1/4$.
+Subtracting gives
+\[
+ \left(\frac14-\frac12\right)
+ -2\left(\frac1{256}-\frac1{16}\right)
+ -2\left(\frac1{262144}-\frac1{512}\right)
+                         =-\frac{16897}{131072}.
+\]
+The quadratic symbol meets~\eqref{eq:active}, so each individual
+matrix is positive by Proposition~\ref{prop:qt}.
+\end{proof}
+
+The example distinguishes two assertions: positivity at each
+time and positivity of time differences. It does not contradict
+a curvature theorem whose hypotheses and conclusion are
+different from Loewner monotonicity of $C_t$.
+
+There is a similar distinction within the iterated Gamma
+hierarchy. For $\psi(k)=\tfrac12|k_1|$ and $f=e_{e_1}$,
+\eqref{eq:modegamma} gives
+\[
+ \Gamma_n(f,f)(x)=2^{-n}.
+\]
+Thus $\Gamma_2(f,f)=1/4<1/2=\Gamma_1(f,f)$ despite positivity
+of every iterate. No inequality $\Gamma_2\geq\Gamma_1$ follows
+from the hierarchy alone. The classical Bakry--\'Emery
+calculus~\cite{bakryemery} asks for specified quantitative
+comparisons, with their normalization and domain hypotheses;
+the jump-type power symbols here also need not satisfy the
+diffusion chain rule. The finite algebraic result must retain
+those distinctions.
+
+\section{Quadratic flatness on the finite core}
+For the same one-coordinate quadratic symbol, the precise
+pointwise curvature statement has sharp constant zero. This
+conclusion has its own proof; it is not inferred from
+Proposition~\ref{prop:nonmonotone}.
+
+\begin{proposition}\label{prop:flat}
+For $\psi(k)=k_1^2$, one has $\Gamma_2(f,f)(x)\geq0$ for every
+$f\in\mathcal P$ and every $x$. There is no $\rho>0$ such that
+\begin{equation}\label{eq:curvature}
+ \Gamma_2(f,f)(x)\geq\rho\Gamma_1(f,f)(x)
+\end{equation}
+for all real-valued $f\in\mathcal P$ and all $x\in\T^3$.
+\end{proposition}
+\begin{proof}
+The first assertion follows from the main theorem, or directly
+from $K_\psi(k,l)=k_1l_1$ in~\eqref{eq:gammaenergy}. To test
+\eqref{eq:curvature}, let
+\[
+ f=ie_{e_1}-ie_{-e_1}=-2\sin(2\pi x_1).
+\]
+This polynomial is real-valued. In its two-mode presentation
+the frequencies are $e_1,-e_1$, the coefficients are $i,-i$,
+and at the origin the first kernel matrix is
+$\left(\begin{smallmatrix}1&-1\\-1&1\end{smallmatrix}\right)$.
+Its energy is $|i-(-i)|^2=4$. The entrywise square matrix is
+the all-ones matrix, whose energy is $|i+(-i)|^2=0$.
+Thus $\Gamma_1(f,f)(0)=4$ and $\Gamma_2(f,f)(0)=0$.
+No positive $\rho$ can satisfy~\eqref{eq:curvature}.
+\end{proof}
+
+For a check on normalization, set $D=(2\pi)^{-1}\partial_{x_1}$
+on $\mathcal P$. Then $L_\psi=D^2$,
+$\Gamma_1(f,f)=|Df|^2$ and $\Gamma_2(f,f)=|D^2f|^2$.
+These identities follow either by differentiation or from the
+same mode formula. They reproduce the sine values above.
+Positivity on the physical cone therefore coexists with sharp
+zero pointwise curvature in this example. The finite core is
+the domain of this statement; no extension to arbitrary
+members of $\Dom(A)$ is hidden in its notation.
+
+\section{Formal source correspondence and editorial scope}
+The mathematical source is frozen at
+\begin{center}\small\ttfamily
+bab688bb6140cd6316c80680095a914ea0d346db.
+\end{center}
+The namespace prefix is
+\begin{center}\code{OperatorDerivativeRewrite.Foundation}\end{center}
+The accompanying \code{theorem-map.json} records full
+declaration names, exact lines, source hashes and baseline links.
+The main correspondences are as follows.
+
+\begin{longtable}{@{}p{0.27\textwidth}p{0.67\textwidth}@{}}
+\textit{Paper statement}&\textit{Lean namespace and declaration}\\\hline
+Anchoring&\code{FourierCovarianceCriterion.symbol_iff}\\[3pt]
+Finite Gamma hierarchy&\code{FourierGammaCovariance.gamma_nonnegative}\\[3pt]
+Normalized first test&\code{FourierGammaNormalization.normalized_gamma_iff_negative_even}\\[3pt]
+Complex reality&\code{FourierGammaComplexCriterion.gamma_full_iff_covariance}\\[3pt]
+Finite heat criterion&\code{FiniteSchoenberg.heat_positive_iff_covariance}\\[3pt]
+Exact physical generator&\code{PhysicalTorusWaveSemigroup.generator_domain}\\[3pt]
+Closed graph&\code{PhysicalTorusWaveSemigroup.graph_closed}\\[3pt]
+Full cone closure&\code{PhysicalHeatPositiveCone.positive_l2_iff_square_closure}\\[3pt]
+Full cone preservation&\code{PhysicalHeatPositiveCone.physical_evolution_positive_all}\\[3pt]
+Mixed-symbol criterion&\code{AnisotropicMixedThreshold.anisotropic_negative_iff_active}\\[3pt]
+Physical sharp threshold&\code{PhysicalHeatPositiveCone.anisotropic_physical_positive_iff_active}\\[3pt]
+Finite-time kernel&\code{PhysicalHeatChain.heatIncrementSymbol_covariance}\\[3pt]
+Actual increment pairing&\code{PhysicalHeatChain.chainLaw_increment_pair_gamma}\\[3pt]
+Exact negative difference&\code{PhysicalHeatCovarianceNonmonotonicity.covariance_increment_energy_eq}\\
+Sharp zero core curvature&\code{PhysicalHeatFlatCurvature.no_positive_quad_curvature}\\
+\end{longtable}
+
+The finite-polynomial graph-core assertion is a classical
+consequence of the exact domain, proved by truncation in
+Proposition~\ref{prop:generator}; no separate three-dimensional
+physical graph-core declaration is claimed in the source map.
+The explicit square calculation also shows failure throughout
+a sufficiently small right neighborhood of zero, whereas the
+mapped physical counterexample declaration asks only for one
+positive time. These elementary deductions are proved here,
+not attributed to additional named Lean theorems.
+The source uses nonnegative real
+rates and the unit-period three-torus, as does this paper.
+Synthesis on period-$2\pi$ coordinate boxes requires its
+separate scaling identification; it is not used as a substitute
+for the physical Haar space. The supplied baseline receipt
+reports a complete successful build with 54,943 declarations
+audited using only the standard three axioms. Source and
+evidence hashes were checked; this editorial work does not
+claim a new full Lean build or modify any mathematical source.
+
+This paper is a coherent exposition of classical positivity
+structure and its verified physical realization, with explicit
+scope and counterexamples. Schoenberg's primary paper
+\cite{schoenberg} is an antecedent for the exponential
+positive-definiteness equivalence, not merely a related
+formalization. The power threshold and integral argument are
+classical. We do not claim novelty for those statements or for
+Schur products. Priority for the exact finite witnesses and
+this combined formalization package remains unresolved.
+
+The proof provides a complete $L^2$ generator domain but keeps
+pointwise Gamma operations on the finite Fourier algebra. It
+does not identify an unsmoothed closed pointwise Gamma domain,
+construct a continuous-time process, prove a positive curvature
+constant or establish a physical gauge-field mass gap. Both
+paused Bakry objectives retain their separate unfinished
+obligations. The paper uses existing verified results without
+changing the research program.
+
+\begin{thebibliography}{9}
+\bibitem{schoenberg} I. J. Schoenberg,
+Metric spaces and positive definite functions,
+\emph{Trans. Amer. Math. Soc.} \textbf{44} (1938), 522--536.
+\href{https://doi.org/10.1090/S0002-9947-1938-1501980-0}
+{doi:10.1090/S0002-9947-1938-1501980-0}.
+\bibitem{bakryemery} D. Bakry and M. \'Emery,
+Diffusions hypercontractives,
+\emph{S\'eminaire de Probabilit\'es XIX},
+Lecture Notes in Math. \textbf{1123}, Springer, 1985, 177--206.
+\url{https://www.numdam.org/item/SPS_1985__19__177_0/}.
+\end{thebibliography}
+\end{document}
