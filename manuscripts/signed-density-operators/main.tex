@@ -32,7 +32,8 @@ this failure while retaining all closed operators. An integrating
 factor also excludes polynomial first-order Stein weights for
 sign-changing kernels. The mechanisms are classical weighted
 operator and indefinite-inner-product theory; no new general
-closability or spectral principle is claimed.
+closability or spectral principle is claimed. A separate Gaussian/Dirac
+mixture shows that full support does not replace the density hypothesis.
 \end{abstract}
 
 \section{The original spaces and conclusions}
@@ -462,6 +463,80 @@ representation, and its positive energy is not a signed-square
 isometry. The separate completed multichannel test-dual calculus
 has different domains and must retain them.
 
+
+\section{Full support does not replace the density hypothesis}
+The preceding theorem uses an absolutely continuous reference
+$|K|\,dx$. A different, positive probability measure can have full
+support and a well-defined smooth derivative but no closable
+extension of that derivative. Let $\gamma$ be the standard real
+Gaussian law and put
+\[
+ \widetilde\mu=\tfrac12\gamma+\tfrac12\delta_0.
+\]
+It is a finite Radon probability with full support, since every
+nonempty open interval has positive Gaussian mass. Its atom at
+zero has mass $1/2$. Consider the ordinary real derivative on
+$C_c^\infty(\R)$ in the real space $L^2(\widetilde\mu)$.
+It is well-defined: if two continuous representatives agree
+$\widetilde\mu$-almost everywhere, they agree everywhere. Otherwise
+continuity gives a nonempty open interval where their difference
+stays nonzero, contradicting full support. Their ordinary
+derivatives therefore agree. The domain is dense by finite Radon
+regularity and mollification, just as in Section 3.
+
+Choose a smooth compact cutoff $\chi$ equal to one for $|x|\leq1$
+and zero for $|x|\geq2$. Such a cutoff is explicit: take
+$\eta(s)=e^{-1/s}$ for $s>0$, zero for $s\leq0$, and set
+\[
+ \chi(x)=\frac{\eta(4-x^2)}{\eta(4-x^2)+\eta(x^2-1)}.
+\]
+The denominator is everywhere positive. Smoothness at the seams
+follows because every derivative of $e^{-1/s}$ is a finite sum
+of polynomial powers of $1/s$ times $e^{-1/s}$ and tends to
+zero as $s\downarrow0$. Thus $\chi\in C_c^\infty$ with the
+specified values. Write $\psi(x)=x\chi(x)$ and
+\[
+ f_n(x)=\frac{\psi((n+1)x)}{n+1},\qquad
+ f_n'(x)=\psi'((n+1)x).
+\]
+Then $f_n(0)=0$, $f'_n(0)=1$ and
+$\sup|f_n|\leq\sup|\psi|/(n+1)\to0$. For each $x\ne0$,
+compact support makes $f'_n(x)=0$ eventually, whereas at zero
+it remains one. The derivatives are uniformly bounded by
+$\sup|\psi'|$. Dominated convergence for the finite measure
+therefore gives
+\begin{equation}\label{eq:atomicjetlimit}
+ f_n\longrightarrow0,\qquad
+ f_n'\longrightarrow 1_{\{0\}}
+ \quad\hbox{in }L^2(\widetilde\mu),\qquad
+ \|1_{\{0\}}\|_2^2=\tfrac12.
+\end{equation}
+The graph has a nonzero vertical limit. Hence no closable linear
+operator agreeing with all these smooth derivative data can exist:
+its graph closure would contain both $(0,0)$ and
+$(0,1_{\{0\}})$ and would not be single-valued.
+
+The positive derivative form also fails closability. For $\kappa>0$,
+\eqref{eq:atomicjetlimit} implies
+\[
+ \kappa\|f_n'\|_2^2\longrightarrow\kappa/2>0,
+ \qquad \kappa\|f_n'-f_m'\|_2^2\longrightarrow0
+ \quad(n,m\to\infty),
+\]
+although $f_n\to0$ in the underlying space. This violates the
+defining sequential form-closability test. At $\kappa=0$ the
+zero form is trivially closable. Full support and uniqueness of
+continuous representatives do not repair this graph obstruction.
+
+For the pure Dirac law the defect occurs earlier: $\psi$ and
+the zero function have the same $L^2(\delta_0)$ class since
+$\psi(0)=0$, but their derivatives have different classes since
+$\psi'(0)=1$. Thus ordinary smooth differentiation does not even
+descend to those equivalence classes. The Gaussian mixture restores
+representative independence while preserving nonclosability.
+These are separate positive-measure examples, not failures of
+Theorem~\ref{thm:main} for a Schwartz absolute density.
+
 \section{Classical antecedents and exact source boundary}
 Weighted derivative closability is classical. De Cicco--Serra
 Cassano~\cite{DCSC}, Section 2.2/condition (12), recall Hamza's
@@ -475,6 +550,9 @@ classical Hilbert theory; no priority is claimed.
 
 The exact theorem map records frozen declarations at
 \begin{center}\texttt{\small bab688bb6140cd6316c80680095a914ea0d346db}.\end{center}
+The map also records the actual smooth shrinking jets and mixed
+Gaussian/Dirac nonclosability; the explicit cutoff above realizes
+the same unit derivative and radius-one/two support properties.
 Riesz-probe coordinates and regrouped human proofs are labelled
 reconstructions. The original full-build/axiom evidence is
 hash-checked; no research source or original domain is changed.
