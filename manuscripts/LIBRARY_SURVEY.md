@@ -6,7 +6,7 @@ Frozen baseline: `bab688bb6140cd6316c80680095a914ea0d346db`. This is an independ
 
 The [machine inventory](LIBRARY_SURVEY.json) covers every one of the 2,795 Foundation Lean modules (359,781 source lines) in this frozen checkout. For each module it records its byte hash, imports, available module description, named declaration headers and an editorial subject tag. Tags based on prefixes are navigation aids, not significance scores. This is a complete module-level inventory; it is not a claim that every proof has received a new human review. The existing full verification receipt remains the authority for the baseline build and complete transitive axiom audit. The root/import files and Basic.lean add navigation or scaffolding, while the two Legacy Lean files are historical material outside this Foundation publication universe.
 
-Detailed definition, hypothesis, proof and literature review is performed for selected paper candidates. Fifteen papers now have complete human proof expositions, exact source maps and matching reviewed PDFs. A large source family or declaration count is not evidence of novelty or a reason to produce a standalone paper.
+Detailed definition, hypothesis, proof and literature review is performed for selected paper candidates. Sixteen papers now have complete human proof expositions, exact source maps and matching reviewed PDFs. A large source family or declaration count is not evidence of novelty or a reason to produce a standalone paper.
 
 ## Source families
 
@@ -80,3 +80,7 @@ The [focused literature comparison](LITERATURE_COMPARISON.md) now records direct
 ## Forcing and recovery geometry consolidated
 
 The six-page fifteenth paper joins the exact reciprocal-rate trace threshold and mean-square continuity to the original Gaussian divergence on completed linear fields, its sharp quadratic energy/projection identity, and noncompactness on the full infinite observed Brownian family. These are classical mechanisms with exact frozen applications, not a new SPDE existence or sample-path theorem. No separate paper is proposed for each supporting forcing module.
+
+## Observable-martingale note expanded and reviewed
+
+The original five-page associativity working note is now a ten-page reviewed companion at the same canonical path, with 66 exact frozen correspondences. It gives complete energy/product/null-ideal proofs, signed joint completion and common bounded action identification, fixed-family uniform reconstruction over compact parameter sets and every causal horizon, and original native divergence graph convergence. Raw predictability and right-germ martingales remain distinct. Classical primary antecedents are credited, and auxiliary human reorganizations are labelled. No temporal IBM Ito/Clark--Ocone or single-driver predictable representation claim follows. Earlier revision and build history are preserved in Git. Sixteen reviewed drafts now total 139 pages; two earlier separate IBM working notes remain.

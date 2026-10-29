@@ -4,7 +4,7 @@ The independent publication branch contains reviewed editorial drafts built from
 
 ## Reviewed editorial papers
 
-Fifteen drafts, 129 pages, all based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. Each folder contains its source/PDF, exact theorem map, build and visual receipts, baseline evidence and candid editorial status. These are reviewed drafts, not submission-ready or novelty-certified manuscripts.
+Sixteen drafts, 139 pages, all based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. Each folder contains its source/PDF, exact theorem map, build and visual receipts, baseline evidence and candid editorial status. These are reviewed drafts, not submission-ready or novelty-certified manuscripts.
 
 ### Arithmetic entire functions
 
@@ -25,6 +25,7 @@ Fifteen drafts, 129 pages, all based on frozen verified commit `bab688bb6140cd63
 
 | Paper | Read and inspect | Scope and status |
 |---|---|---|
+| Observable martingales on Brownian-time paths: predictable energy, associativity and uniform reconstruction | [PDF](ibm-stochastic-associativity/main.pdf) · [LaTeX](ibm-stochastic-associativity/main.tex) · [theorem map](ibm-stochastic-associativity/theorem-map.json) · [editorial status](ibm-stochastic-associativity/editorial-status.md) | Ten-page expanded revision of the preserved working note. Full energy change and product domains, signed joint-energy completion and common bounded actions, uniform compact-parameter/all-horizon reconstruction and original native divergence graph limits. Classical formalization companion; no completed physical-time calculus or single-driver PRP claim. |
 | Spatial Simpson integration for reflected-clock iterated Brownian motion | [PDF](ibm-spatial-calculus/main.pdf) · [LaTeX](ibm-spatial-calculus/main.tex) · [theorem map](ibm-spatial-calculus/theorem-map.json) · [editorial status](ibm-spatial-calculus/editorial-status.md) | Eight-page companion exposition with full proofs: global C3 one-forms, C1-time/C4-space chains, common-grid prefix convergence, measurable bounded random horizons and Bernstein continuous-path realization. Actual positive law; no general physical-time divergence claim. Reviewed draft; novelty unresolved. |
 | Gaussian clock-domain obstructions for reflected-clock Brownian motion | [PDF](ibm-clock-domain/main.pdf) · [LaTeX](ibm-clock-domain/main.tex) · [theorem map](ibm-clock-domain/theorem-map.json) · [editorial status](ibm-clock-domain/editorial-status.md) | Eight pages. Complete actual point and bounded-sine clock-domain exclusions, valid scenery gradients, common-field recovery, and ambient graph-dual representability/error/norm-escape proofs. Native joint exclusion is separate; no observed-filtration Ito claim. Reviewed draft; novelty unresolved. |
 | Time integration and adjoint-graph differentiation for reflected-clock Brownian observables | [PDF](ibm-average-time/main.pdf) · [LaTeX](ibm-average-time/main.tex) · [theorem map](ibm-average-time/theorem-map.json) · [editorial status](ibm-average-time/editorial-status.md) | Eight pages. Actual native average-domain membership, folded-energy bound, raw-past density, maximal-adjoint dual time differentiation, nonrepresentability and full native slope-norm escape. Fixed pasts; no physical-time Ito/Clark–Ocone claim. Reviewed draft; novelty unresolved. |
@@ -57,7 +58,7 @@ The [quartic source dossier](quartic-threshold/source-assessment.json) preserves
 
 ## Preserved earlier working notes
 
-The following existing drafts and historical verification descriptions are retained. Their original scopes, dates and limitations are preserved; they have not been silently promoted to reviewed research papers.
+The following earlier drafts and historical verification descriptions are retained. The former associativity working note has been deliberately expanded and reviewed above; its earlier revision remains in Git history. The two remaining notes have not been silently promoted.
 
 ### Original draft catalog
 
@@ -65,11 +66,8 @@ The following existing drafts and historical verification descriptions are retai
 |---|---|---|---|
 | Clock Regularity and Hybrid Reconstruction for Actual Iterated Brownian Motion | [LaTeX](ibm-clock-hybrid/main.tex) · [PDF](ibm-clock-hybrid/main.pdf) | Actual completed Fourier source means, folded/collision gradients in the ORIGINAL clock graph, unique finite-horizon hidden-Brownian-clock reconstruction and original intrinsic joint divergence with a STATIC source channel. Exact sine counterexample distinguishes mean from full observable. Observed-filtration causality/full physical-time calculus remain OPEN. Two-pass local compilation SUCCEEDED; all5 rendered pages inspected; notation, references and source/PDF hashes verified. | Revision1, October25,2026; mathematical baselinec3381683f4d7abad527dee9575f4cf57deea0431, through checkpoint1520. |
 | Signed Simpson Calculus for Reflected-Clock Iterated Brownian Motion | [LaTeX](ibm-signed-simpson/main.tex) · [PDF](ibm-signed-simpson/main.pdf) | Original verified1383–1394 scope retained. Revision2 corrects stale open labels: deterministic nonseparable C1-time/C4-space chain rule with explicit joint continuity, common-grid prefix maximum and Bernstein continuous-path supremum-norm convergence in probability are now verified. Bernstein smoothing is not asserted causal. Full adapted/nonsmooth IBM calculus remains OPEN. Two-pass local compilation SUCCEEDED; all6 current rendered pages inspected, notation legible, references resolved and hashes verified. | Revision2, October25,2026; original baseline072793e54f7a08ba39afc4919ea987d11e5c69e2; later status audited against checkpoint1520/c3381683f4d7abad527dee9575f4cf57deea0431. |
-| Actual Predictable Change of Integrator for IBM-Observable Martingales | [LaTeX](ibm-stochastic-associativity/main.tex) · [PDF](ibm-stochastic-associativity/main.pdf) | Named claims aligned with verified Lean checkpoints1373–1374; original domains and OPEN physical-time obligations retained. Local two-pass compilation SUCCEEDED; all5 rendered pages inspected, notation legible, internal references resolved. Exact source/PDF freshness receipts accompany the files. Working exposition, not a novelty/submission/completed-IBM claim. | Revision1, October22,2026; mathematical baseline536c86647bd483eb547a264464dca7a2c0460026. |
 
-Build/review evidence: [compiler status](ibm-stochastic-associativity/build-status.json),
-[visual review](ibm-stochastic-associativity/visual-review.json),
-[retained logs](ibm-stochastic-associativity/logs/).
+The expanded associativity revision above retains its current [compiler status](ibm-stochastic-associativity/build-status.json), [visual review](ibm-stochastic-associativity/visual-review.json) and [earlier logs](ibm-stochastic-associativity/logs/).
 Tracked artifacts are public on the user-designated GitHub repository. A future
 substantive edit must update the PDF and
 revision/status; mark PENDING if compilation/review is unfinished or the daily

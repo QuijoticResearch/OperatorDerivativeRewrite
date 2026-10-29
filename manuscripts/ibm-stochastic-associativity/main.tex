@@ -1,249 +1,730 @@
 \documentclass[11pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amssymb,amsthm}
 \usepackage[hidelinks]{hyperref}
-\usepackage{enumitem}
 \usepackage{microtype}
 \newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
-\theoremstyle{remark}
-\newtheorem{remark}[theorem]{Remark}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Ltwo}{L^2}
-\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
-\newcommand{\lean}[2]{\par\smallskip\noindent\textit{Lean reference:}\;
-  \texttt{\detokenize{#1}}\par\noindent
-  \hspace*{1em}\texttt{\detokenize{#2}}\par\smallskip}
-\newcommand{\status}[1]{\par\noindent\textbf{Status: #1.}\par}
-\title{Actual Predictable Change of Integrator\protect\\
-  for IBM-Observable Martingales}
-\author{Project Stardust\protect\\\small Private working draft}
-\date{Revision 1 --- October 22, 2026}
-\begin{document}
-\maketitle
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Pp}{\mathbb P}
+\newcommand{\one}{\mathbf1}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\inner}[2]{\left\langle#1,#2\right\rangle}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\OO}{\mathcal O}
+\newcommand{\PP}{\mathcal P}
+\newcommand{\Dom}{\operatorname{Dom}}
+\newcommand{\code}[1]{\texttt{\detokenize{#1}}}
+\title{Observable martingales on Brownian-time paths:\\
+predictable energy, associativity and uniform reconstruction}
+\author{Project Stardust}
+\date{Reviewed editorial draft, revision 2, October 29, 2026}
+\begin{document}\maketitle
 \begin{abstract}
-We organize verified change-of-integrator and stochastic-associativity results
-for terminal-observable martingales on a constructed iterated Brownian motion
-(IBM) probability space. The original predictable energy measure transforms
-by the square of the integrand. This yields a literal product isometry on the
-entire original output-energy domain and an actual stochastic associativity
-identity. A common bounded predictable multiplier is identified with the
-original stochastic integral on every completed multichannel input. We also
-record locally uniform process reconstruction and convergence in the original
-intrinsic divergence graph norm. These results do not establish a full
-physical-time It\^o--Tanaka calculus for the uncorrected IBM path.
+On a constructed Brownian-time Brownian probability space, predictable
+integrals against terminal-observable martingales admit an exact change of
+energy measure. This gives a literal product isometry on the entire
+output-energy $L^2$ space and associativity without boundedness of the
+second integrand. We then retain all signed cross-channel covariances,
+pass through their null quotient and completion, and identify every common
+bounded predictable action with the original output-channel integral.
+A fixed countable family of actual integrals reconstructs continuous
+curves of observables uniformly on compact parameter sets, simultaneously
+over all causal horizons. A bounded two-source Gaussian recovery transfers
+this convergence to the original intrinsic divergence graph. The proofs
+separate raw predictability, right-germ martingales and source-operator
+domains. These are classical integration and Hilbert-space mechanisms
+assembled as a formalization companion; they do not provide a temporal
+It\^o or Clark--Ocone calculus for the uncorrected Brownian-time path.
 \end{abstract}
 
-\noindent\textbf{Verification boundary.}
-Theorems below summarize Lean-verified declarations at mathematical
-checkpoints 1373 and 1374. The latest mathematical baseline is
-\begin{quote}\small
-\texttt{536c86647bd483eb547a264464dca7a2c0460026}.
-\end{quote}
-This draft makes no novelty, publication-readiness, or complete IBM-calculus
-claim. All Lean names have prefix
-\texttt{OperatorDerivativeRewrite.Foundation.}
-Original manuscripts in \texttt{ResearchSources} are preserved unchanged.
-
-\section{Original stochastic objects and domains}\label{sec:setting}
-Let $(\Omega,\mathcal A,\mathbf P)$ be the existing product probability space
-of the independently constructed continuous scenery and clock. The actual
-IBM observations generate the original raw natural filtration. Write
-$\mathcal P$ for its original predictable sigma algebra on time--sample space.
-For $F$ in the original joint-source $\Ltwo$ space, write
+\section{Probability space and the two filtrations}
+Let $B$ and $W$ be independent standard Brownian motions constructed on
+two independent countable Gaussian source spaces. The process considered
+here is
 \[
-  P_tF=\mathbf E[F\mid\mathcal G_t]
+ Z_t=B_{|W_t|},\qquad t\geq0.
 \]
-for the existing terminal-observable martingale in the right-germ filtration
-$\mathcal G$. The raw IBM path and this fixed-terminal martingale are different
-objects. No martingale property of raw IBM is assumed.
-
-The established finite predictable energy measure is denoted by $\mu_F$.
-On a rectangle $(s,t]\times A$, where $A$ belongs to the original raw past at
-$s\leq t$, its value is the actual increment energy
+The outer Brownian motion is one-sided and the clock is reflected.
+Thus this paper concerns this particular Brownian-time Brownian motion;
+terminology for two-sided versions of iterated Brownian motion does not
+change the process used below. Write $(\Omega,\mathcal A,\Pp)$ for the
+joint source space, $\HH=L^2(\Omega,\mathcal A,\Pp;\R)$, and
 \[
-  \mu_F((s,t]\times A)
-    =\mathbf E\!\left[\mathbf 1_A(P_tF-P_sF)^2\right].
+ \mathcal F_t^Z=\sigma(Z_s:0\leq s\leq t),\qquad
+ \mathcal F_\infty^Z=\sigma(Z_s:s\geq0),\qquad
+ \OO=L^2(\mathcal F_\infty^Z)\subset\HH.
 \]
-The pre-existing stochastic integral is an actual linear isometry
-\[
-  I_F:\Ltwo(\mathcal P,\mu_F)\longrightarrow \Ltwo(\mathbf P).
-\]
-Its domain is the entire original random predictable $\Ltwo$ space, with the
-original energy null ideal. The arguments below do not redefine the integral
-by declaring a desired output or by replacing its domain.
+All $L^2$ spaces consist of equivalence classes. Statements about
+measurability of such a class mean that it has a representative with the
+stated measurability.
 
-\section{Energy transformation and literal associativity}\label{sec:product}
-\begin{theorem}[Change of predictable energy]\label{thm:energy}
-For every original $F$ and every $H\in\Ltwo(\mathcal P,\mu_F)$, put
-$Y=I_F(H)$. Then, on the entire original predictable sigma algebra,
-\begin{equation}\label{eq:energy}
-  \mu_Y=H^2\mu_F.
+The raw filtration $\mathcal F^Z$ is used for integrands. Let
+$\PP$ be its predictable sigma algebra on
+$S=[0,\infty)\times\Omega$. It is generated by
+\begin{equation}\label{eq:rect}
+ (s,t]\times A,\quad 0\leq s\leq t<\infty,
+ \quad A\in\mathcal F_s^Z,
+ \qquad \{0\}\times A,\quad A\in\mathcal F_0^Z.
 \end{equation}
-Here $H$ is an actual strongly measurable representative of its original
-$\Ltwo$ class; the right side is the finite measure with density $H^2$.
-\end{theorem}
-\lean{IBMStochasticIntegratorEnergy}{energy_change}
-
-\begin{proof}[Verified proof mechanism]
-For a raw-past event $A$ at $s\leq t$, actual rectangle pull-out gives
+For martingales use the right-continuous ambient-null augmentation
 \[
- I_F\!\left(\mathbf 1_{(s,t]\times A}H\right)
-     =\mathbf 1_A(P_t-P_s)Y.
+ \mathcal G_t=\bigcap_{u>t}(\mathcal F_u^Z\vee\mathcal N),
+ \qquad P_t f=\E[f\mid\mathcal G_t],
 \]
-Taking genuine $\Ltwo$ energy identifies both sides of
-\eqref{eq:energy} on every adapted rectangle. Both measures are finite and
-vanish at the origin. The existing finite-ring partition and signed-measure
-uniqueness results therefore give equality on all of $\mathcal P$.
-The formal proof separately verifies finiteness, origin nullity and rectangle
-agreement before applying uniqueness.
+where $\mathcal N$ denotes ambient measurable null sets and their ambient
+measurable subsets. Passing to the completion of the probability space
+when applying a classical regularization theorem leaves the $L^2$
+objects unchanged. The frozen construction realizes $P_t$ as orthogonal
+projection onto
+\[
+ \bigcap_{u>t}L^2(\mathcal F_u^Z).
+\]
+It proves the identification with $L^2(\mathcal G_t)$, rather than
+assuming that an intersection of raw sigma algebras has the desired
+representatives. In particular
+\begin{equation}\label{eq:projections}
+ P_sP_t=P_{\min(s,t)},\quad \norm{P_tf}\leq\norm f,
+ \quad P_tf\in\OO,\quad
+ P_nf\longrightarrow f\quad(f\in\OO).
+\end{equation}
+The last assertion follows also from increasing closed-subspace
+projection convergence: every raw finite past is contained in its right
+germ, and their union generates $\mathcal F_\infty^Z$ modulo null sets.
+
+For a fixed $F\in\HH$, $M_t^F=P_tF$ is a square-integrable
+$\mathcal G$-martingale. It has right-continuous $L^2$ dependence on
+time. This fixed-terminal martingale differs from $Z$; no martingale
+assumption on $Z$ enters any construction. Write
+\[
+ G_0=P_0,\qquad \OO_0=\OO\cap\ker G_0.
+\]
+We retain the whole initial germ in the statements, even where particular
+observables have zero initial projection.
+
+\section{The original predictable integral}
+We first specify the energy measure and integral to which later
+associativity statements refer. They are established objects, not
+definitions imposed by the desired change-of-integrator identity.
+
+\begin{proposition}[Finite predictable energy]\label{prop:measure}
+For every $F\in\HH$ there is a unique finite measure $\mu_F$ on
+$(S,\PP)$ satisfying
+\begin{align}
+ \mu_F((s,t]\times A)
+   &=\E\one_A(M_t^F-M_s^F)^2,\quad A\in\mathcal F_s^Z,
+       \label{eq:energyrect}\\
+ \mu_F(\{0\}\times A)&=0,\qquad
+ \mu_F(S)\leq\norm F^2.\label{eq:mass}
+\end{align}
+Finite linear combinations of rectangle indicators are dense in
+$L^2(\PP,\mu_F)$, with origin indicators representing zero.
+\end{proposition}
+\begin{proof}
+The existence assertion is the finite Dol\'eans-measure construction for
+a square-integrable martingale, restricted to the raw predictable sigma
+algebra. For precision, on the usual completion of $\mathcal G$ take a
+c\`adl\`ag modification of $M^F$ and the predictable compensator $A^F$ of
+$(M^F)^2$, normalized by $A_0^F=0$. The classical martingale
+regularization and compensator theorems apply: $M^F$ is closed by $F$,
+and its stopped squares are uniformly integrable, since they are
+bounded by conditional expectations of the integrable variable $F^2$.
+On each finite horizon $(M^F)^2-A^F$ is a martingale and
+\[
+ \E A_T^F=\norm{P_TF}^2-\norm{P_0F}^2\leq\norm F^2.
+\]
+The positive measure
+$\E\int_{(0,\infty)}\one_E(r,\omega)\,dA_r^F(\omega)$,
+restricted to $\PP$, is therefore finite. For
+$A\in\mathcal F_s^Z\subset\mathcal G_s$, conditional martingale
+identities give
+\[
+ \E\one_A(A_t^F-A_s^F)
+ =\E\one_A((M_t^F)^2-(M_s^F)^2)
+ =\E\one_A(M_t^F-M_s^F)^2.
+\]
+This verifies the required rectangle values. The compensator here
+belongs only to the auxiliary martingale $M^F$.
+
+The frozen proof instead constructs the raw rectangle content directly,
+proves continuity at the empty set by compact-fiber approximation, and
+extends that content. The classical construction just given has the same
+values, so uniqueness identifies the measures. Indeed, rectangles and
+origin sets form a generating semiring, and a countable increasing family
+$(0,n]\times\Omega$, together with the origin, covers $S$.
+Finite-measure uniqueness applies. The span of its indicators is
+$L^2$ dense by the monotone class theorem and truncation; the origin has
+zero mass. This also proves the asserted density for the directly
+constructed formal measure. Classical measure and regularization
+background can be found in~\cite{MP}.
 \end{proof}
 
-\begin{theorem}[Full-domain product isometry and associativity]\label{thm:assoc}
-Under the hypotheses of Theorem~\ref{thm:energy}, every
-$K\in\Ltwo(\mathcal P,\mu_Y)$ has a literal product
-$HK\in\Ltwo(\mathcal P,\mu_F)$. The map $K\mapsto HK$ is a linear isometry,
-and the original actual stochastic integrals satisfy
+\begin{proposition}[Isometric extension]\label{prop:integral}
+There is a unique linear isometry
+\[
+ I_F:L^2(\PP,\mu_F)\longrightarrow\HH
+\]
+which on a raw predictable rectangle has value
+\begin{equation}\label{eq:cellintegral}
+ I_F(\one_{(s,t]\times A})=\one_A(P_t-P_s)F.
+\end{equation}
+Its range is contained in $\OO_0$. For $H\in L^2(\mu_F)$,
+\begin{equation}\label{eq:cutoff}
+ I_F(\one_{(0,r]}H)=P_r I_F(H),\qquad r\geq0.
+\end{equation}
+Time indicators in this paper include the entire sample space.
+\end{proposition}
+\begin{proof}
+Refine a finite collection of rectangles by all of their time endpoints.
+The resulting process has the form
+$H=\sum_j h_j\one_{(t_{j-1},t_j]}$, where each $h_j$ is a finite
+linear combination of $\mathcal F_{t_{j-1}}^Z$ event indicators.
+Assign the sum $\sum_j h_j(M_{t_j}^F-M_{t_{j-1}}^F)$.
+Distinct time-cell outputs are orthogonal: the earlier one is
+$\mathcal G_{t_{j-1}}$ measurable and the later increment has zero
+conditional expectation there. Within one cell, partition the event
+indicators into disjoint atoms. Formula~\eqref{eq:energyrect} then gives
+\[
+ \norm{\sum_j h_j(M_{t_j}^F-M_{t_{j-1}}^F)}^2
+   =\int_S H^2\,d\mu_F.
+\]
+In particular null representatives have zero output. Refinement changes
+neither process nor output, so this defines an isometry on the rectangle
+span, and density gives its unique extension.
+
+Each finite output is observable at some finite raw horizon strictly
+larger than all the endpoints: $P_tF$ is measurable modulo null sets
+at every raw time $u>t$. Its conditional expectation at $\mathcal G_0$
+is zero by the martingale identity and raw adaptedness of $h_j$.
+Closedness of $\OO$ and of $\ker G_0$ passes both properties to the
+limit. Finally, conditional expectation of a single cell output at
+$\mathcal G_r$ is zero for $r\leq s$, is
+$\one_A(P_r-P_s)F$ for $s<r<t$, and is the whole output for
+$r\geq t$. These are exactly the integrals of its time cutoff.
+Linearity and the contractivity of cutoff and $P_r$ prove
+\eqref{eq:cutoff} for every $H$.
+\end{proof}
+
+\begin{lemma}[Raw rectangle pull-out]\label{lem:pullout}
+If $Y=I_F(H)$ and $A\in\mathcal F_s^Z$, then
+\begin{equation}\label{eq:pullout}
+ I_F(\one_{(s,t]\times A}H)=\one_A(P_t-P_s)Y.
+\end{equation}
+\end{lemma}
+\begin{proof}
+First consider the future mask $(s,\infty)\times A$ and one input
+cell $(a,b]\times C$. If $b\leq s$, its product is zero, as is
+$\one_A(I-P_s)$ of the cell output. Otherwise replace its left endpoint
+by $\ell=\max(a,s)$, and replace its event by $A\cap C$.
+The event belongs to $\mathcal F_\ell^Z$, and the integral of the
+masked cell is
+\[
+ \one_{A\cap C}(P_b-P_\ell)F
+ =\one_A(I-P_s)\bigl(\one_C(P_b-P_a)F\bigr).
+\]
+The equality follows by splitting $s\leq a$ and $a<s<b$ and applying
+conditional expectation. It extends from the cell span to all $H$:
+both mask multiplication in $L^2(\mu_F)$ and the output operators
+$\one_A(I-P_s)$ are bounded. Subtract the analogous future identity
+at $t$, using $A\in\mathcal F_t^Z$. The result is
+\eqref{eq:pullout}.
+\end{proof}
+
+\section{Exact change of energy and literal products}
+The pull-out lemma compares the original integral with the original
+energy measure of its actual output. It supplies the domain information
+needed for an unbounded second integrand.
+
+\begin{theorem}[Energy transformation]\label{thm:change}
+For $F\in\HH$, $H\in L^2(\PP,\mu_F)$ and $Y=I_F(H)$,
+\begin{equation}\label{eq:change}
+ \mu_Y=H^2\mu_F
+\end{equation}
+as finite measures on the whole raw predictable sigma algebra.
+Here and below products are formed from predictable measurable
+representatives.
+\end{theorem}
+\begin{proof}
+The right side is a finite measure of mass $\norm H_{L^2(\mu_F)}^2$.
+For a raw rectangle $R=(s,t]\times A$, the isometry and
+Lemma~\ref{lem:pullout} give
+\[
+ \int_R H^2\,d\mu_F
+ =\norm{I_F(\one_RH)}^2
+ =\E\one_A((P_t-P_s)Y)^2
+ =\mu_Y(R).
+\]
+Both measures vanish on origin sets. The generating-semiring uniqueness
+argument from Proposition~\ref{prop:measure} proves equality on $\PP$.
+\end{proof}
+
+\begin{theorem}[Full-domain associativity]\label{thm:associativity}
+With $F,H,Y$ as above, multiplication defines a linear isometry
+\[
+ T_H:L^2(\PP,\mu_Y)\longrightarrow L^2(\PP,\mu_F),
+ \qquad T_HK=HK.
+\]
+For every $K$ in this entire output-energy space,
 \begin{equation}\label{eq:assoc}
-  I_Y(K)=I_F(HK),\qquad
-  \norm{HK}_{\Ltwo(\mu_F)}=\norm{K}_{\Ltwo(\mu_Y)}.
+ \norm{T_HK}_{L^2(\mu_F)}=\norm K_{L^2(\mu_Y)},
+ \qquad I_Y(K)=I_F(T_HK).
 \end{equation}
-No boundedness of $K$, finite-grid restriction, or finite-chaos hypothesis
-is imposed.
+There is no boundedness requirement on $H$ or $K$ beyond their stated
+energy domains.
 \end{theorem}
-\lean{IBMStochasticProductAssociativity}{product_memLp, product_ae, productIsometry, actual_associativity}
+\begin{proof}
+The density identity gives
+\[
+ \int H^2K^2\,d\mu_F=\int K^2\,d\mu_Y<\infty.
+\]
+It also handles the null ideals. If $K=L$ outside a $\mu_Y$-null
+set $N$, then $\int_N H^2\,d\mu_F=0$, so $H=0$ for
+$\mu_F$ almost every point of $N$. Hence $HK=HL$ in $L^2(\mu_F)$.
+Changing the representative of $H$ changes neither the density measure
+nor the product class. Additivity and homogeneity hold for measurable
+representatives and descend to classes. The displayed equality proves
+the norm identity.
 
-\begin{proof}[Verified proof mechanism]
-The density identity~\eqref{eq:energy} proves the precise product domain and
-norm equality. The actual product representative is then identified almost
-everywhere. Associativity is first calibrated on the original predictable
-cells using actual stochastic rectangle identities. Original dictionary
-density extends the equality to every $K$ in the stated output-energy domain.
+For $K=\one_{(s,t]\times A}$, the cell formula for $I_Y$ and the
+pull-out lemma show
+\[
+ I_Y(K)=\one_A(P_t-P_s)Y=I_F(\one_{(s,t]\times A}H).
+\]
+Origin indicators have zero class. Both $I_Y$ and $I_FT_H$ are continuous
+isometries on the same $L^2(\mu_Y)$ space, and they agree on its dense
+rectangle span. This proves~\eqref{eq:assoc}.
 \end{proof}
 
-\begin{remark}[Different null ideals]
-If two representatives of $K$ agree only $\mu_Y$-almost everywhere, their
-$H$-weighted products agree $\mu_F$-almost everywhere. On the set $H=0$ both
-products vanish. Reverse absolute continuity of $\mu_F$ with respect to
-$\mu_Y$ is neither needed nor asserted. Products of arbitrary unrelated
-$\Ltwo$ functions are not claimed to belong to $\Ltwo$.
-\end{remark}
-\lean{IBMStochasticProductAssociativity}{weighted_ae}
+The product theorem concerns two different energy measures. For example,
+if $H$ vanishes on a set of positive $\mu_F$ mass, $\mu_Y$ forgets
+that set, and multiplication by $H$ removes the ambiguity there. No
+reverse absolute continuity is asserted. This is not an assertion that
+products of arbitrary $L^2(\mu_F)$ functions remain in $L^2(\mu_F)$.
+The associativity and domain-equivalence mechanism is classical; for a
+continuous-martingale comparison see~\cite[Proposition 5.4]{Liao}.
+Continuity of the auxiliary IBM-observable martingales is not assumed
+here.
 
-\section{Completed multichannel inputs}\label{sec:multi}
-Let $(F_i)_{i\in\mathcal I}$ be any original family. Let $\mathcal H_F$ be
-its existing completion after quotienting by the null relation of the
-\emph{full signed joint covariance energy}. Let
-$J_F:\mathcal H_F\to\Ltwo(\mathbf P)$ be its existing actual isometry.
-For a globally pointwise bounded original raw-predictable real function $g$,
-let $M_g$ be the previously verified bounded common-multiplier action.
-The same $g$ acts on every channel.
-
-\begin{theorem}[Actual bounded-action identification]\label{thm:multi}
-For every $z\in\mathcal H_F$ and every such $g$, set $Y=J_Fz$. Then
-\begin{equation}\label{eq:multi}
-  J_F(M_gz)=I_Y\!\left([g]_{\mu_Y}\right).
+\section{Signed joint energy and common multipliers}
+A family of channels must retain their cross covariances. Let
+$\mathbf F=(F_i)_{i\in\mathcal I}$ be any family in $\HH$. Its raw
+input space is the algebraic direct sum
+\[
+ \mathcal R_{\mathbf F}=\bigoplus_{i\in\mathcal I}L^2(\PP,\mu_{F_i}),
+ \qquad J_{\rm raw}h=\sum_i I_{F_i}(h_i).
+\]
+Only finitely many components of a raw input are nonzero. Define
+\begin{equation}\label{eq:jointenergy}
+ \inner h k_{\rm en}=\inner{J_{\rm raw}h}{J_{\rm raw}k}_{\HH},
+ \qquad \mathcal N_{\mathbf F}=\ker J_{\rm raw}.
 \end{equation}
-In the completed input space itself, $M_gz$ equals the existing nested
-stochastic lift of $[g]_{\mu_Y}$.
-\end{theorem}
-\lean{IBMCompletedBoundedAssociativity}{actual_bounded_associativity, nested_identification}
+Quotient by $\mathcal N_{\mathbf F}$ and complete in this inner
+product. Denote the resulting Hilbert space by $\mathcal C_{\mathbf F}$.
+The actual output extends uniquely to an isometry
+$J_{\mathbf F}:\mathcal C_{\mathbf F}\to\HH$ with closed range in
+$\OO_0$. This is not the direct sum norm obtained by discarding cross
+terms.
 
-\begin{proof}[Verified proof mechanism]
-Append one original channel $G$ to the family. The verified full signed joint
-multiplier bound gives a comparison estimate against any single original
-integral $I_G(K)$. Existing terminal self-representation supplies an original
-single-integral representation of $Y$; this existence premise is discharged,
-not assumed conditionally. Equal actual outputs then force equal common-
-$g$-modified outputs. Theorem~\ref{thm:assoc} identifies the single-channel
-output with the original $I_Y([g]_{\mu_Y})$.
+For completeness those cross terms are genuine signed measures. Set
+\[
+ \nu_{FG}=\tfrac14(\mu_{F+G}-\mu_{F-G}).
+\]
+The linearity of $P_t$ and~\eqref{eq:energyrect} give
+\[
+ \nu_{FG}((s,t]\times A)
+  =\E\one_A((P_t-P_s)F)((P_t-P_s)G).
+\]
+The same refinement argument as for the isometry proves the pairing
+formula on rectangle-step inputs. Its extension is justified by the
+following measure estimate.
+
+\begin{lemma}[Cross-energy integrability]\label{lem:cross}
+For $H\in L^2(\mu_F)$ and $K\in L^2(\mu_G)$,
+\begin{equation}\label{eq:cross}
+ \int |HK|\,d|\nu_{FG}|\leq\norm H_{L^2(\mu_F)}
+      \norm K_{L^2(\mu_G)},\qquad
+ \inner{I_FH}{I_GK}=\int HK\,d\nu_{FG}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Rectangle values and finite signed-measure uniqueness first give
+\[
+ \mu_{aF+bG}=a^2\mu_F+2ab\nu_{FG}+b^2\mu_G
+ \quad(a,b\in\R).
+\]
+In particular $\mu_F+\mu_G\pm2\nu_{FG}$ are positive. Consequently
+$\nu_{FG}$, and hence its variation, is absolutely continuous with
+respect to $\lambda=\mu_F+\mu_G$: on a $\lambda$-null set the two
+positive-measure inequalities force its signed value on every subset
+to vanish. Write $a=d\mu_F/d\lambda$, $b=d\mu_G/d\lambda$ and
+$c=d\nu_{FG}/d\lambda$. Positivity of $\mu_{F+qG}$ says
+$a+2qc+q^2b\geq0$ almost everywhere for each rational $q$.
+A common exceptional set suffices for all rationals, and continuity
+gives the inequality for all real $q$. Its discriminant yields
+$c^2\leq ab$ almost everywhere. The variation density is $v=|c|$.
+Thus
+\[
+ \int |HK|v\,d\lambda
+ \leq\int |H|\sqrt a\,|K|\sqrt b\,d\lambda
+ \leq\Big(\int H^2\,d\mu_F\Big)^{1/2}
+       \Big(\int K^2\,d\mu_G\Big)^{1/2}.
+\]
+Approximate $H,K$ separately by rectangle-step functions in their own
+energy norms. The bound just proved controls both product-error terms
+in $L^1(|\nu_{FG}|)$. Their actual integral outputs converge by
+isometry. Passing to the limit in the finite pairing identity proves
+the second formula.
 \end{proof}
-\lean{IBMCompletedBoundedAssociativity}{comparison_bound}
 
-\section{Locally uniform process reconstruction}\label{sec:uniform}
-Let $(e_i)$ be the existing fixed countable family of actual stochastic
-integrals, and let $G_0$ denote projection onto the full initial right germ.
-For an IBM-observable $\Ltwo$ class $f$, write $L(f)$ for the canonical
-completed lift of $f-G_0f$, and $Q_S(f)$ for its finite-channel input over a
-finite set $S$. The exact error is
-\begin{equation}\label{eq:gap}
- \norm{Q_S(f)-L(f)}^2
-   =\norm{f-G_0f}^2-\sum_{i\in S}c_i(f)^2.
+\begin{theorem}[Bounded common action]\label{thm:multiplier}
+Let $g:S\to\R$ be raw predictable and pointwise bounded by $C\geq0$.
+Multiplication of every component by this same $g$ descends to a
+bounded linear operator $M_g$ on $\mathcal C_{\mathbf F}$ with
+$\norm{M_g}\leq C$. For all $z$ in that completion, setting
+$Y=J_{\mathbf F}z$ gives
+\begin{equation}\label{eq:boundedassoc}
+ J_{\mathbf F}(M_gz)=I_Y([g]_{\mu_Y}).
 \end{equation}
-\lean{IBMUniformStochasticReconstruction}{error_sq}
-
-\begin{theorem}[Uniform actual reconstruction and native graph limit]\label{thm:uniform}
-For every continuous curve $u$ into actual IBM-observable $\Ltwo$ and every
-compact parameter set $K$, the canonical finite inputs converge to $L(u(t))$
-uniformly for $t\in K$. After applying the existing causal stopping operator
-$S_r$, the convergence is simultaneous and uniform over \emph{all} $r\geq0$.
-The corresponding literal finite sums of original predictable stochastic
-integrals converge in actual joint-source $\Ltwo$ to
-\[
-  P_r u(t)-G_0u(t).
-\]
-Their existing native transfers converge in the original intrinsic divergence
-graph norm, uniformly for $t\in K$ and all $r\geq0$.
 \end{theorem}
-\lean{IBMUniformStochasticReconstruction}{uniform_actual, uniform_native_graph}
-
-The error in~\eqref{eq:gap} is continuous, nonnegative, antitone in $S$ and
-converges pointwise to zero by Parseval. These hypotheses are proved before
-using Dini's theorem. Causal stopping is contractive. For original divergence-
-domain elements $V,W$, the graph metric is explicitly
+\begin{proof}
+Put $g^\perp=(C^2-g^2)^{1/2}$, a bounded predictable function.
+For raw $h$, Lemma~\ref{lem:cross} and
+$g^2+(g^\perp)^2=C^2$ imply the exact partition identity
 \[
-  \norm{V-W}_{\mathrm{field}}+\norm{\delta V-\delta W}_{\Ltwo}.
+ \norm{J_{\rm raw}(gh)}^2+
+ \norm{J_{\rm raw}(g^\perp h)}^2
+ =C^2\norm{J_{\rm raw}h}^2.
 \]
-For the existing native transfers of inputs $z,w$, this distance is at most
-$3\norm{z-w}$. Thus the fields \emph{and their original divergences} converge;
-this is not only convergence on graph-dual test probes.
+Both squared norms on the left are nonnegative, including every signed
+cross term. Hence $\norm{J_{\rm raw}(gh)}\leq
+C\norm{J_{\rm raw}h}$. This proves preservation of the null relation
+and extension to the completion.
 
-The actual IBM curve is strongly $\Ltwo$ continuous and satisfies $G_0Z_t=0$.
-Consequently the causal diagonal reconstructions converge uniformly on every
-finite interval $0\leq t\leq T$ in $\Ltwo$. The established bounded $C^1$ test
-class with bounded continuous slope also gives reconstruction of actual
-$\varphi(Z_t)$, retaining $G_0\varphi(Z_t)$.
-\lean{IBMUniformStochasticReconstruction}{actual_IBM_uniform, nonlinear_uniform}
+We next give the single-channel representation needed to identify the
+extension. For any $f\in\OO$, the rectangle formula yields
+\[
+ I_f(\one_{(0,n]})=P_nf-P_0f\longrightarrow f-P_0f.
+\]
+The isometric range of $I_f$ is closed, so some $H_f\in L^2(\mu_f)$
+has output $f-P_0f$. Since $Y\in\OO_0$, this gives
+$K\in L^2(\mu_Y)$ with $I_YK=Y$. This is a representation by a
+channel indexed by the target itself; it asserts no predictable
+representation property for a single fixed driving martingale.
 
-\section{Limitations and remaining obligations}\label{sec:open}
-\status{The preceding named results are verified; the following obligations remain open}
-\begin{enumerate}[leftmargin=*,itemsep=0.3em]
-\item Uniformity above means $\sup_t\norm{\mathrm{error}(t)}_{\Ltwo}\to0$.
-It is not $\Ltwo$ convergence of a samplewise time supremum and does not
-assert almost-sure uniform convergence or a c\`adl\`ag modification.
-\item No pathwise bracket, full physical-time It\^o--Tanaka formula or temporal
-conditional-gradient Clark--Ocone identity is inferred. The fixed-terminal
-martingale $P_rY$ remains distinct from the raw IBM path.
-\item Moving-terminal coefficients depend on $t$; the diagonal approximants
-are not automatically martingales. A martingale maximal inequality cannot
-be invoked without its hypotheses.
-\item Arbitrary channel-dependent multipliers $g_i$ are not asserted to preserve
-the full signed-energy null relation. Arbitrary unbounded multipliers are not
-asserted to define bounded operators on the entire completion.
-\item Actual rough point and sine observations remain outside the original
-joint derivative domain despite their stochastic reconstruction. Native
-divergence representation does not imply ordinary Malliavin differentiability.
-\end{enumerate}
+Append the channel $Y$ to the family. The same common-multiplier bound
+applied to a raw family input $h$ minus the appended input $K$ gives
+\[
+ \norm{J_{\rm raw}(gh)-I_Y(gK)}
+ \leq C\norm{J_{\rm raw}h-Y}.
+\]
+Approximate $z$ by raw inputs and pass to the limit. It follows that
+$J_{\mathbf F}(M_gz)=I_Y(gK)$.
+Theorem~\ref{thm:associativity}, applied to $I_YK=Y$, now gives
+$I_Y(gK)=I_Y([g]_{\mu_Y})$. Here the right-hand integral uses the
+original energy measure of the output $Y$; $[g]$ is admissible because
+that measure is finite. This proves~\eqref{eq:boundedassoc}.
+\end{proof}
 
-\section{Formal sources and revision contract}\label{sec:sources}
-The source modules are:
-\begin{itemize}[leftmargin=*,itemsep=0.2em]\small
-\item \texttt{Foundation/IBMStochasticIntegratorEnergy.lean}
-\item \texttt{Foundation/IBMStochasticProductAssociativity.lean}
-\item \texttt{Foundation/IBMCompletedBoundedAssociativity.lean}
-\item \texttt{Foundation/IBMUniformStochasticReconstruction.lean}
-\end{itemize}
-The detailed domain and verification contracts are the repository audits:
-\begin{itemize}[leftmargin=*,itemsep=0.2em]\small
-\item \texttt{IBM\_INTEGRATOR\_ENERGY\_PRODUCT\_ASSOCIATIVITY\_AUDIT.md}
-\item \texttt{IBM\_UNIFORM\_STOCHASTIC\_RECONSTRUCTION\_AUDIT.md}
-\end{itemize}
+The hypothesis that $g$ is common to all channels is essential. If two
+channels are identical, the raw pair $(H,-H)$ has zero joint energy.
+Multiplying only its first component by one and its second by zero
+usually gives a nonzero output. Thus unrelated channelwise multipliers
+need not even descend to the quotient. This elementary example explains
+why diagonal energy bounds alone would not prove the theorem.
 
-The maintained source is this \LaTeX{} file. Its PDF must be rebuilt after
-substantive changes, with successful compilation, resolved internal references,
-and rendered-page inspection. Error logs are retained. The manuscript index
-records the latest revision and verification status. All artifacts remain
-private; nothing in this draft authorizes external publication or upload.
+\section{A fixed countable stochastic family}
+The preceding target-indexed representation yields a fixed countable
+family on the separable observable space. The joint Gaussian product
+has separable $L^2$, and $\OO_0$ is a closed subspace. Choose a
+countable Hilbert basis $(e_i)_{i\in I}$ of $\OO_0$, permitting a
+finite or empty index set when appropriate. Regard each $e_i$ as a
+terminal channel and choose $h_i\in L^2(\mu_{e_i})$ with
+\begin{equation}\label{eq:basis}
+ I_{e_i}(h_i)=e_i,\qquad \norm{h_i}=1.
+\end{equation}
+Existence follows from the self-representation argument because
+$P_0e_i=0$. These are actual raw predictable integrands. Their
+construction uses a Hilbert basis and closed ranges; no explicit causal
+gradient formula is asserted.
+
+For the family $\mathbf e=(e_i)$, $J=J_{\mathbf e}$ maps the completed
+space $\mathcal C_{\mathbf e}$ isometrically onto $\OO_0$: its closed
+range contains every $e_i$. For $f\in\OO$ set
+\[
+ r(f)=f-P_0f,\quad c_i(f)=\inner{e_i}{f},\quad
+ L(f)=J^{-1}r(f),\quad
+ Q_A(f)=\sum_{i\in A}[\iota_i(c_i(f)h_i)],
+\]
+where $A\subset I$ is finite and $\iota_i$ inserts a single raw
+channel. The bracket means its image in the null quotient and
+completion. Parseval gives both
+\begin{equation}\label{eq:parseval}
+ JQ_A(f)=\sum_{i\in A}c_i(f)e_i,\qquad
+ \norm{Q_A(f)-L(f)}^2
+ =\norm{r(f)}^2-\sum_{i\in A}|c_i(f)|^2.
+\end{equation}
+The maps $r$, $L$ and $c_i$ are continuous and linear.
+
+Stopping is the contraction
+\[
+ S_r=J^{-1}P_rJ\quad\hbox{on }\mathcal C_{\mathbf e}.
+\]
+It is well-defined since $P_r$ preserves $\OO_0$. On a single input it
+equals literal time cutoff, by~\eqref{eq:cutoff} and injectivity of
+$J$. Define the finite actual output
+\begin{equation}\label{eq:actualfinite}
+ U_{A,r}(f)=\sum_{i\in A}I_{e_i}
+     (\one_{(0,r]}c_i(f)h_i)=JS_rQ_A(f).
+\end{equation}
+Also $JS_rL(f)=P_rf-P_0f$. Since the entire initial germ is subtracted,
+this identity holds without replacing $P_0f$ by a scalar mean.
+
+\begin{theorem}[Uniform reconstruction]\label{thm:uniform}
+Let $u:X\to\OO$ be norm continuous on a topological space $X$,
+and let $K\subset X$ be compact. As $A$ runs through the directed
+set of finite subsets of $I$ ordered by inclusion,
+\begin{align}
+ \sup_{x\in K}\norm{Q_A(u(x))-L(u(x))}&\longrightarrow0,
+       \label{eq:uniforminput}\\
+ \sup_{x\in K}\sup_{r\geq0}
+ \norm{U_{A,r}(u(x))-(P_ru(x)-P_0u(x))}_{\HH}
+       &\longrightarrow0.\label{eq:uniformoutput}
+\end{align}
+These are suprema of Hilbert norms, not samplewise suprema.
+\end{theorem}
+\begin{proof}
+For fixed $A$ the squared error in~\eqref{eq:parseval} is a
+continuous nonnegative function of $x$. It decreases when $A$ grows
+and converges pointwise to zero by Parseval. For a direct compactness
+proof, fix $\varepsilon>0$. For each $x\in K$ choose $A_x$ making
+the squared error smaller than $\varepsilon^2$ at $x$.
+Continuity gives a neighborhood with the same strict bound.
+A finite subcover of $K$ and the union of its $A_x$ yield one finite
+$A_0$ which works throughout $K$. Antitonicity gives the bound for
+every $A\supset A_0$. This proves~\eqref{eq:uniforminput}; it is the
+finite-subset form of Dini's argument used in the formal proof.
+
+For every $r$ the contraction estimate is
+\[
+ \norm{S_rQ_A(f)-S_rL(f)}\leq\norm{Q_A(f)-L(f)}.
+\]
+The same bound is independent of $r$. Apply the isometry $J$ and
+the exact identities~\eqref{eq:actualfinite} to obtain
+\eqref{eq:uniformoutput}.
+\end{proof}
+
+\begin{proposition}[The actual Brownian-time curve]\label{prop:actual}
+For every finite $T$,
+\[
+ \sup_{0\leq t\leq T}\norm{U_{A,t}(Z_t)-Z_t}_{\HH}
+ \longrightarrow0.
+\]
+If $\varphi$ is a bounded $C^1$ function with bounded continuous
+derivative, the analogous diagonal convergence holds for
+$\varphi(Z_t)-P_0\varphi(Z_t)$.
+\end{proposition}
+\begin{proof}
+Condition on the clock and use the Brownian increment isometry:
+\[
+ \norm{Z_t-Z_s}_{\HH}^2
+  =\E\bigl||W_t|-|W_s|\bigr|
+  \leq\E|W_t-W_s|\leq|t-s|^{1/2}.
+\]
+Thus $t\mapsto Z_t$ is norm continuous. Raw measurability gives
+$P_tZ_t=Z_t$. The frozen construction also proves $P_0Z_t=0$.
+One direct proof of that particular initial-germ assertion is as
+follows. Let $\mathcal K_\epsilon$ be generated by the whole clock
+path and by the scenery up to the clock range
+$R_\epsilon=\sup_{r\leq\epsilon}|W_r|$. Then
+$\mathcal F_\epsilon^Z\subset\mathcal K_\epsilon$ and, by independence
+and the deterministic Brownian prediction formula conditional on the
+clock,
+\[
+ \E[Z_t\mid\mathcal K_\epsilon]
+   =B_{\min(|W_t|,R_\epsilon)},\qquad
+ \norm{\E[Z_t\mid\mathcal K_\epsilon]}^2
+   =\E\min(|W_t|,R_\epsilon)\leq\E R_\epsilon.
+\]
+Brownian maximal bounds and scaling give
+$\E R_\epsilon\to0$. The initial right-germ subspace lies inside
+every $L^2(\mathcal F_\epsilon^Z)$, so its projection of $Z_t$ has
+norm at most $(\E R_\epsilon)^{1/2}$ for every $\epsilon>0$ and
+is zero. This does not claim that all initial-germ observables are
+constant. Theorem~\ref{thm:uniform} with $r=t$ now proves the first
+assertion. Finally,
+$\norm{\varphi(Z_t)-\varphi(Z_s)}\leq
+\norm{\varphi'}_\infty\norm{Z_t-Z_s}$, and the transformed
+observable belongs to the raw past at $t$. Apply the same theorem;
+its initial projection remains in the formula.
+\end{proof}
+
+\section{Recovery in the original intrinsic divergence graph}
+The reconstruction so far occurs in predictable-energy and observable
+$L^2$ spaces. To state the native graph limit we must specify a
+different, closed source operator.
+
+Let $H$ be the coefficient Hilbert space of either independent Gaussian
+source. On the joint product, let $D_B$ and $D_W$ be the closed
+Gaussian derivatives in the scenery and clock factors, with their
+maximal closed graph domains in $\HH$. Let
+\[
+ \mathcal V=L^2(\Omega;H)\oplus L^2(\Omega;H),\qquad
+ D_{\OO}f=(D_Bf,D_Wf),\quad
+ \Dom D_{\OO}=\OO\cap\Dom D_B\cap\Dom D_W.
+\]
+The field norm is the square sum of the two source norms. The frozen
+finite-average core establishes density of this domain in $\OO$;
+closedness follows from closedness of the two ambient source graphs.
+Define the original intrinsic divergence by the maximal adjoint
+$\delta_{\OO}=D_{\OO}^*$: a field $V\in\mathcal V$ belongs to its
+domain exactly when there is $g\in\OO$ such that
+\begin{equation}\label{eq:adjoint}
+ \inner V{D_{\OO}f}_{\mathcal V}=\inner g f_{\HH}
+ \quad(f\in\Dom D_{\OO});
+ \qquad \delta_{\OO}V=g.
+\end{equation}
+Density makes $g$ unique. This is a static two-source adjoint domain;
+it is not a postulated derivative in physical time.
+
+We recall the Gaussian recovery construction in enough detail to check
+its domain. On one Gaussian factor, the Hermite chaos decomposition
+$f=\sum_{q\geq0}f_q$ defines
+$Rf=D\sum_{q\geq1}f_q/q$. Finite Hermite polynomials give
+\[
+ \norm{Rf}^2=\sum_{q\geq1}\norm{f_q}^2/q\leq\norm f^2,
+ \qquad \delta Rf=f-\E f.
+\]
+The orthogonality of differentiated chaoses proves convergence of the
+fields; convergence of their divergences and closedness of $D^*$
+prove membership in the original maximal adjoint. Tensor simple
+functions and closure give the same identities fiberwise on the joint
+product.
+
+Write $C_Wf=\E[f\mid B]$ for averaging out the clock factor and
+$C_Bf=\E[f\mid W]$ for averaging out the scenery factor, and use
+$R_B,R_W$ for the two fiberwise recovery maps. Independence implies
+$C_BC_Wf=\E f$. Define
+\begin{equation}\label{eq:recovery}
+ \mathfrak R f=(R_B(C_Wf),R_Wf).
+\end{equation}
+The ordering is important: its two ambient divergences sum to
+\[
+ (C_Wf-C_BC_Wf)+(f-C_Wf)=f-\E f.
+\]
+Consequently, for centered $f\in\OO$, adjointness against
+$\Dom D_{\OO}$ proves
+\begin{equation}\label{eq:native}
+ \mathfrak R f\in\Dom\delta_{\OO},\quad
+ \delta_{\OO}\mathfrak R f=f,\quad
+ \norm{\mathfrak R f}_{\mathcal V}^2\leq2\norm f^2.
+\end{equation}
+The bound follows separately from the contraction of each fiber
+recovery and of $C_W$. No equality between the full intrinsic adjoint
+domain and the separate ambient adjoint domains is assumed.
+
+\begin{theorem}[Uniform native graph reconstruction]\label{thm:native}
+Set $Tz=\mathfrak R(Jz)$ on $\mathcal C_{\mathbf e}$. Then
+$Tz\in\Dom\delta_{\OO}$ and $\delta_{\OO}Tz=Jz$.
+For the graph metric
+\[
+ d_{\rm gr}(V,W)=\norm{V-W}_{\mathcal V}+
+                     \norm{\delta_{\OO}V-\delta_{\OO}W}_{\HH},
+\]
+one has
+\begin{equation}\label{eq:graphbound}
+ d_{\rm gr}(Tz,Tw)\leq3\norm{z-w}.
+\end{equation}
+Under the hypotheses of Theorem~\ref{thm:uniform},
+\[
+ \sup_{x\in K}\sup_{r\geq0}
+ d_{\rm gr}\bigl(TS_rQ_A(u(x)),TS_rL(u(x))\bigr)
+ \longrightarrow0.
+\]
+\end{theorem}
+\begin{proof}
+The output $Jz$ belongs to $\OO_0$ and is therefore centered, since
+constant functions belong to the initial germ. Apply
+\eqref{eq:native}. Linearity, the bound there and the isometry of
+$J$ give
+\[
+ \norm{Tz-Tw}\leq\sqrt2\norm{z-w},\qquad
+ \norm{\delta_{\OO}Tz-\delta_{\OO}Tw}=\norm{z-w}.
+\]
+Since $1+\sqrt2\leq3$, this proves~\eqref{eq:graphbound} with the
+constant retained in the formal source. Combine it with the uniform
+input error and contractivity of every $S_r$. Both field values and
+their original divergences converge in the stated norms.
+\end{proof}
+
+\section{Scope, antecedents and formal correspondence}
+The change-of-energy and associativity mechanisms belong to classical
+martingale integration. M\'etivier--Pellaumail~\cite{MP} supplies the
+general Dol\'eans-measure setting; Liao~\cite{Liao} gives a directly
+comparable continuous-martingale product-domain theorem. The present
+proof does not assume that the observed filtration is Brownian or that
+its terminal martingales are continuous. Its purpose is to make the
+verified raw predictable domains, signed-energy quotient, original
+adjoint and actual Brownian-time application readable together.
+No new associativity principle or priority claim is made.
+
+The uniformity proved above is
+$\sup_x\sup_r\norm{\mathrm{error}(x,r)}_{L^2}\to0$.
+It does not place a random supremum inside expectation and does not
+assert almost-sure uniform convergence or a c\`adl\`ag version of the
+moving-terminal approximants. Their coefficients depend on the terminal
+parameter, so the diagonal approximants are not automatically
+martingales. The countable representation is built from many
+target-indexed observable martingales. Neither a predictable
+representation theorem for a prescribed driver nor a temporal
+conditional-gradient Clark--Ocone formula follows. A native divergence
+representation also does not put its output in $\Dom D_{\OO}$;
+rough point observations can lie outside that derivative domain.
+
+\begingroup\raggedright
+All formal correspondences use frozen verified commit
+\code{bab688bb6140cd6316c80680095a914ea0d346db}.
+\code{IBMRightGermFiltration} identifies the genuine right-germ
+filtration; \code{IBMJointPredictableEnergyMeasure} and
+\code{IBMFullPredictableIntegral} construct the original measure and
+integral. \code{IBMPredictableRectanglePullout},
+\code{IBMStochasticIntegratorEnergy} and
+\code{IBMStochasticProductAssociativity} supply the exact measure
+change and full-domain product theorem.
+\code{IBMCompletedSignedCovarianceIntegral},
+\code{IBMMultichannelCompletion},
+\code{IBMJointPredictableMultiplier} and
+\code{IBMCompletedBoundedAssociativity} retain all cross terms and
+identify the common bounded action. The countable family and uniform
+errors are \code{IBMFixedStochasticFamily} and
+\code{IBMUniformStochasticReconstruction}.
+\code{IBMNativeGaussianRecovery},
+\code{IBMStochasticNativeDivergence} and
+\code{IBMCompletedNativeCalculus} retain the original native adjoint.
+
+The theorem map records exact declarations and distinguishes the
+classical auxiliary-compensator measure proof, compactness version of
+Dini's argument, and elementary identical-channel example from the
+formal proof's organization. It also records the original
+finite-average density foundation for the intrinsic operator. The old
+five-page working note is superseded by this expanded revision, with
+its historical source retained in Git. No research source or active
+proof was modified, and no new Lean build is substituted for the
+frozen baseline audit.
+\par\endgroup
+
+\begin{thebibliography}{9}
+\bibitem{MP} M. M\'etivier and J. Pellaumail,
+\emph{A basic course on general stochastic integration},
+Publications des s\'eminaires de math\'ematiques et informatique de Rennes,
+no. 1 (1977), 1--56, especially Sections E and F.
+\href{https://www.numdam.org/item/PSMIR_1977___1_1_0/}{Primary text}.
+\bibitem{Liao} J. Liao, \emph{Lecture notes for stochastic analysis},
+Section 5.1, Proposition 5.4, p. 145.
+\href{https://jurrivhleon.github.io/notes/stochastic_analysis.pdf}{Author's notes},
+accessed October 29, 2026.
+\end{thebibliography}
 \end{document}

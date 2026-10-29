@@ -1,0 +1,561 @@
+{
+  "baseline": "bab688bb6140cd6316c80680095a914ea0d346db",
+  "entries": [
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMRightGermFiltration.germFiltration",
+      "file": "Foundation/IBMRightGermFiltration.lean",
+      "line": 15,
+      "source_sha256": "e458ac47c5c3c9e7a67bc761f13c34fa3696371537bc18ffa106107331916fbe",
+      "declaration_header": "def germFiltration",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMRightGermFiltration.lean#L15"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMRightGermFiltration.germPast_eq",
+      "file": "Foundation/IBMRightGermFiltration.lean",
+      "line": 58,
+      "source_sha256": "e458ac47c5c3c9e7a67bc761f13c34fa3696371537bc18ffa106107331916fbe",
+      "declaration_header": "theorem germPast_eq (t : \u211d\u22650) : germPast t = rightPast t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMRightGermFiltration.lean#L58"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMRightGermFiltration.projection_ae",
+      "file": "Foundation/IBMRightGermFiltration.lean",
+      "line": 79,
+      "source_sha256": "e458ac47c5c3c9e7a67bc761f13c34fa3696371537bc18ffa106107331916fbe",
+      "declaration_header": "theorem projection_ae (t : \u211d\u22650) (f : JointL2) :\n    (rightPast t).starProjection f =\u1d50[IBMSourceLaws.jointMeasure]\n      IBMSourceLaws.jointMeasure[f | germFiltration t]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMRightGermFiltration.lean#L79"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMObservedTerminalMartingale.channelClass",
+      "file": "Foundation/IBMObservedTerminalMartingale.lean",
+      "line": 13,
+      "source_sha256": "0aae464bcaf4c246c9b84989573aa8e3d9e65497f6aa2cfe40ec46499ccd4ce3",
+      "declaration_header": "def channelClass (F : JointL2) (t : \u211d\u22650) : JointL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMObservedTerminalMartingale.lean#L13"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMObservedTerminalMartingale.channel_martingale",
+      "file": "Foundation/IBMObservedTerminalMartingale.lean",
+      "line": 28,
+      "source_sha256": "0aae464bcaf4c246c9b84989573aa8e3d9e65497f6aa2cfe40ec46499ccd4ce3",
+      "declaration_header": "theorem channel_martingale (F : JointL2) :\n    Martingale (channel F) germFiltration IBMSourceLaws.jointMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMObservedTerminalMartingale.lean#L28"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMObservedTerminalMartingale.channel_right_continuous",
+      "file": "Foundation/IBMObservedTerminalMartingale.lean",
+      "line": 36,
+      "source_sha256": "0aae464bcaf4c246c9b84989573aa8e3d9e65497f6aa2cfe40ec46499ccd4ce3",
+      "declaration_header": "theorem channel_right_continuous (F : JointL2) (t : \u211d\u22650) :\n    ContinuousWithinAt (channelClass F) (Ici t) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMObservedTerminalMartingale.lean#L36"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPredictableRectangles.predictable_generation",
+      "file": "Foundation/IBMPredictableRectangles.lean",
+      "line": 140,
+      "source_sha256": "7ae2f5f605061658e02ef7fc17be9d2aaa9afdc757dbfe2c5c24ddd9ad0e8d4f",
+      "declaration_header": "theorem predictable_generation :\n    MeasurableSpace.generateFrom generators = naturalFiltration.predictable",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPredictableRectangles.lean#L140"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPredictableContentContinuity.energy_continuity",
+      "file": "Foundation/IBMPredictableContentContinuity.lean",
+      "line": 31,
+      "source_sha256": "c4996e213eed0c25fe1e53b194ffb2cbc63ee99f00681c1cea25199c104a2526",
+      "declaration_header": "theorem energy_continuity (F : JointL2) (E : \u2115 \u2192 Set Space)\n    (hE : \u2200 n, E n \u2208 elementaryRing) (hm : Antitone E) (he : (\u22c2 n, E n) = \u2205) :\n    Tendsto (fun n => \u2016ringIntegral F (E n)\u2016 ^ 2) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPredictableContentContinuity.lean#L31"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPredictableContentContinuity.content_countable_additivity",
+      "file": "Foundation/IBMPredictableContentContinuity.lean",
+      "line": 111,
+      "source_sha256": "c4996e213eed0c25fe1e53b194ffb2cbc63ee99f00681c1cea25199c104a2526",
+      "declaration_header": "theorem content_countable_additivity (F : JointL2) (E : \u2115 \u2192 Set Space)\n    (hE : \u2200 n, E n \u2208 elementaryRing) (hU : (\u22c3 n, E n) \u2208 elementaryRing)\n    (hd : Pairwise (fun i j => Disjoint (E i) (E j))) :\n    content F (\u22c3 n, E n) = \u2211' n, content F (E n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPredictableContentContinuity.lean#L111"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointPredictableEnergyMeasure.predictableMeasure_rectangle",
+      "file": "Foundation/IBMJointPredictableEnergyMeasure.lean",
+      "line": 168,
+      "source_sha256": "d3200959906bf4c8afa0d29b3a063e1b40ea260155b8ca0d54e0aeb476578175",
+      "declaration_header": "theorem predictableMeasure_rectangle (F : JointL2) (s t : \u211d\u22650)\n    (A : Set IBMSourceLaws.JointSample) (hst : s \u2264 t)\n    (hA : MeasurableSet[naturalFiltration s] A) :\n    predictableMeasure F (rect s t A) = incrementMeasure F s t A",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointPredictableEnergyMeasure.lean#L168"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointPredictableEnergyMeasure.predictableMeasure_origin",
+      "file": "Foundation/IBMJointPredictableEnergyMeasure.lean",
+      "line": 175,
+      "source_sha256": "d3200959906bf4c8afa0d29b3a063e1b40ea260155b8ca0d54e0aeb476578175",
+      "declaration_header": "theorem predictableMeasure_origin (F : JointL2) (A : Set IBMSourceLaws.JointSample)\n    (hA : MeasurableSet[naturalFiltration 0] A) : predictableMeasure F (origin A) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointPredictableEnergyMeasure.lean#L175"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointPredictableEnergyMeasure.total_bound",
+      "file": "Foundation/IBMJointPredictableEnergyMeasure.lean",
+      "line": 181,
+      "source_sha256": "d3200959906bf4c8afa0d29b3a063e1b40ea260155b8ca0d54e0aeb476578175",
+      "declaration_header": "theorem total_bound (F : JointL2) : predictableMeasure F univ \u2264 ENNReal.ofReal (\u2016F\u2016 ^ 2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointPredictableEnergyMeasure.lean#L181"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointPredictableEnergyMeasure.finite_measure",
+      "file": "Foundation/IBMJointPredictableEnergyMeasure.lean",
+      "line": 212,
+      "source_sha256": "d3200959906bf4c8afa0d29b3a063e1b40ea260155b8ca0d54e0aeb476578175",
+      "declaration_header": "theorem finite_measure (F : JointL2) :\n    @IsFiniteMeasure Space naturalFiltration.predictable (predictableMeasure F)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointPredictableEnergyMeasure.lean#L212"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFullPredictableIntegral.integral",
+      "file": "Foundation/IBMFullPredictableIntegral.lean",
+      "line": 15,
+      "source_sha256": "d6b0857695558a0c1797da7f99215f6e3803c89b0c29b74c4b0792090088969a",
+      "declaration_header": "def integral (F : JointL2) : PredictableL2 F \u2192\u2097\u1d62[\u211d] JointL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFullPredictableIntegral.lean#L15"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFullPredictableIntegral.integral_dictionary_ae",
+      "file": "Foundation/IBMFullPredictableIntegral.lean",
+      "line": 22,
+      "source_sha256": "d6b0857695558a0c1797da7f99215f6e3803c89b0c29b74c4b0792090088969a",
+      "declaration_header": "theorem integral_dictionary_ae (F : JointL2) (l : Index \u2192\u2080 \u211d) :\n    integral F (dictionary F l) =\u1d50[IBMSourceLaws.jointMeasure] fun \u03c9 =>\n      \u2211 d \u2208 l.support, (l d * (IBMWeightedTerminalEnergy.eventCoefficient\n        (left d) (event d) (event_measurable d)).function \u03c9) *\n        (IBMObservedTerminalMartingale.channel F (right d) \u03c9 -\n          IBMObservedTerminalMartingale.channel F (left d) \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFullPredictableIntegral.lean#L22"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFullPredictableIntegral.integral_norm",
+      "file": "Foundation/IBMFullPredictableIntegral.lean",
+      "line": 48,
+      "source_sha256": "d6b0857695558a0c1797da7f99215f6e3803c89b0c29b74c4b0792090088969a",
+      "declaration_header": "theorem integral_norm (F : JointL2) (H : PredictableL2 F) : \u2016integral F H\u2016 = \u2016H\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFullPredictableIntegral.lean#L48"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFullPredictableIntegral.actual_integral_energy",
+      "file": "Foundation/IBMFullPredictableIntegral.lean",
+      "line": 55,
+      "source_sha256": "d6b0857695558a0c1797da7f99215f6e3803c89b0c29b74c4b0792090088969a",
+      "declaration_header": "theorem actual_integral_energy (F : JointL2) (H : PredictableL2 F) :\n    (\u222b \u03c9, (integral F H \u03c9) ^ 2 \u2202IBMSourceLaws.jointMeasure) =\n      \u222b p, H p ^ 2 \u2202predictableMeasure F",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFullPredictableIntegral.lean#L55"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFullPredictableIntegral.integral_unique",
+      "file": "Foundation/IBMFullPredictableIntegral.lean",
+      "line": 69,
+      "source_sha256": "d6b0857695558a0c1797da7f99215f6e3803c89b0c29b74c4b0792090088969a",
+      "declaration_header": "theorem integral_unique (F : JointL2) (J : PredictableL2 F \u2192\u2097\u1d62[\u211d] JointL2)\n    (hJ : \u2200 a, J (dictionary F a) = integralLinear F a) : J = integral F",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFullPredictableIntegral.lean#L69"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPredictableTimeCutoff.integral_cutoff",
+      "file": "Foundation/IBMPredictableTimeCutoff.lean",
+      "line": 148,
+      "source_sha256": "e715edd9d14acba88248fdfb9fe5427304e21a323c6eaead3c65afdf0d9caddf",
+      "declaration_header": "theorem integral_cutoff (F : JointL2) (t : \u211d\u22650) (H : PredictableL2 F) :\n    IBMFullPredictableIntegral.integral F (cutoff F t H) =\n      (rightPast t).starProjection (IBMFullPredictableIntegral.integral F H)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPredictableTimeCutoff.lean#L148"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPredictableRectanglePullout.future_integral",
+      "file": "Foundation/IBMPredictableRectanglePullout.lean",
+      "line": 166,
+      "source_sha256": "7c4a252151618bf2663e207ab874b2201f19cd30569a58c5e536ae240c469e1a",
+      "declaration_header": "theorem future_integral (F : JointL2) (s : \u211d\u22650) (A : Set IBMSourceLaws.JointSample)\n    (hA : MeasurableSet[IBMNaturalFiltrationObstruction.naturalFiltration s] A) (H : PredictableL2 F) :\n    IBMFullPredictableIntegral.integral F (multiplier (futureMultiplier s A hA) F H) =\n      sampleMask A (IBMNaturalFiltrationObstruction.naturalFiltration.le s _ hA)\n        (IBMFullPredictableIntegral.integral F H-channelClass (IBMFullPredictableIntegral.integral F H) s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPredictableRectanglePullout.lean#L166"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMPredictableRectanglePullout.rectangle_integral",
+      "file": "Foundation/IBMPredictableRectanglePullout.lean",
+      "line": 257,
+      "source_sha256": "7c4a252151618bf2663e207ab874b2201f19cd30569a58c5e536ae240c469e1a",
+      "declaration_header": "theorem rectangle_integral (F : JointL2) {s t : \u211d\u22650} (hst : s \u2264 t)\n    (A : Set IBMSourceLaws.JointSample)\n    (hA : MeasurableSet[IBMNaturalFiltrationObstruction.naturalFiltration s] A) (H : PredictableL2 F) :\n    IBMFullPredictableIntegral.integral F (multiplier (rectangleMultiplier s t A hA) F H) =\n      stepOutput s t A hA (IBMFullPredictableIntegral.integral F H)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMPredictableRectanglePullout.lean#L257"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMStochasticIntegratorEnergy.weighted_finite",
+      "file": "Foundation/IBMStochasticIntegratorEnergy.lean",
+      "line": 20,
+      "source_sha256": "95ad23eb29a4df177c57209e60293c3314043c4653fbfabce53b0872f6070ba9",
+      "declaration_header": "theorem weighted_finite (F : JointL2) (H : PredictableL2 F) : IsFiniteMeasure (weightedMeasure F H)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMStochasticIntegratorEnergy.lean#L20"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMStochasticIntegratorEnergy.weighted_rectangle",
+      "file": "Foundation/IBMStochasticIntegratorEnergy.lean",
+      "line": 59,
+      "source_sha256": "95ad23eb29a4df177c57209e60293c3314043c4653fbfabce53b0872f6070ba9",
+      "declaration_header": "theorem weighted_rectangle (F : JointL2) (H : PredictableL2 F) {s t : \u211d\u22650} (hst : s \u2264 t)\n    (A : Set IBMSourceLaws.JointSample)\n    (hA : MeasurableSet[IBMNaturalFiltrationObstruction.naturalFiltration s] A) :\n    predictableMeasure (IBMFullPredictableIntegral.integral F H) (rect s t A)=\n      weightedMeasure F H (rect s t A)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMStochasticIntegratorEnergy.lean#L59"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMStochasticIntegratorEnergy.energy_change",
+      "file": "Foundation/IBMStochasticIntegratorEnergy.lean",
+      "line": 90,
+      "source_sha256": "95ad23eb29a4df177c57209e60293c3314043c4653fbfabce53b0872f6070ba9",
+      "declaration_header": "theorem energy_change (F : JointL2) (H : PredictableL2 F) :\n    predictableMeasure (IBMFullPredictableIntegral.integral F H) = weightedMeasure F H",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMStochasticIntegratorEnergy.lean#L90"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMStochasticProductAssociativity.product_memLp",
+      "file": "Foundation/IBMStochasticProductAssociativity.lean",
+      "line": 29,
+      "source_sha256": "be34ce229118350781eeb752365f3443be585243a23121f1421391c2070e0c98",
+      "declaration_header": "theorem product_memLp (K : PredictableL2 (IBMFullPredictableIntegral.integral F H)) :\n    MemLp (fun p => H p*K p) 2 (predictableMeasure F)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMStochasticProductAssociativity.lean#L29"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMStochasticProductAssociativity.weighted_ae",
+      "file": "Foundation/IBMStochasticProductAssociativity.lean",
+      "line": 49,
+      "source_sha256": "be34ce229118350781eeb752365f3443be585243a23121f1421391c2070e0c98",
+      "declaration_header": "theorem weighted_ae {k l : Space \u2192 \u211d}\n    (he : k =\u1d50[predictableMeasure (IBMFullPredictableIntegral.integral F H)] l) :\n    (fun p => H p*k p) =\u1d50[predictableMeasure F] (fun p => H p*l p)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMStochasticProductAssociativity.lean#L49"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMStochasticProductAssociativity.productIsometry",
+      "file": "Foundation/IBMStochasticProductAssociativity.lean",
+      "line": 95,
+      "source_sha256": "be34ce229118350781eeb752365f3443be585243a23121f1421391c2070e0c98",
+      "declaration_header": "def productIsometry : PredictableL2 (IBMFullPredictableIntegral.integral F H) \u2192\u2097\u1d62[\u211d] PredictableL2 F where\n  toLinearMap",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMStochasticProductAssociativity.lean#L95"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMStochasticProductAssociativity.actual_associativity",
+      "file": "Foundation/IBMStochasticProductAssociativity.lean",
+      "line": 115,
+      "source_sha256": "be34ce229118350781eeb752365f3443be585243a23121f1421391c2070e0c98",
+      "declaration_header": "theorem actual_associativity (K : PredictableL2 (IBMFullPredictableIntegral.integral F H)) :\n    IBMFullPredictableIntegral.integral F (productIsometry F H K) =\n      IBMFullPredictableIntegral.integral (IBMFullPredictableIntegral.integral F H) K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMStochasticProductAssociativity.lean#L115"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompletedSignedCovarianceIntegral.density_psd",
+      "file": "Foundation/IBMCompletedSignedCovarianceIntegral.lean",
+      "line": 63,
+      "source_sha256": "f9d20aa6bafef4a4460dc2f6ef5e11b6799a0b8a505966843a3ff2e68f312ee1",
+      "declaration_header": "theorem density_psd (F G : JointL2) :\n    \u2200\u1d50 p \u2202control F G, (density F G (covariance F G).variation p)^2 \u2264\n      density F G (predictableMeasure F) p * density F G (predictableMeasure G) p",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompletedSignedCovarianceIntegral.lean#L63"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompletedSignedCovarianceIntegral.product_integrable",
+      "file": "Foundation/IBMCompletedSignedCovarianceIntegral.lean",
+      "line": 115,
+      "source_sha256": "f9d20aa6bafef4a4460dc2f6ef5e11b6799a0b8a505966843a3ff2e68f312ee1",
+      "declaration_header": "theorem product_integrable (F G : JointL2) {H K : Space \u2192 \u211d}\n    (hH : MemLp H 2 (predictableMeasure F)) (hK : MemLp K 2 (predictableMeasure G)) :\n    Integrable (fun p => H p*K p) (covariance F G).variation",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompletedSignedCovarianceIntegral.lean#L115"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompletedSignedCovarianceIntegral.integral_norm_bound",
+      "file": "Foundation/IBMCompletedSignedCovarianceIntegral.lean",
+      "line": 169,
+      "source_sha256": "f9d20aa6bafef4a4460dc2f6ef5e11b6799a0b8a505966843a3ff2e68f312ee1",
+      "declaration_header": "theorem integral_norm_bound (F G : JointL2)\n    (H : IBMPredictableLpDictionary.PredictableL2 F) (K : IBMPredictableLpDictionary.PredictableL2 G) :\n    (\u222b p, |H p*K p| \u2202(covariance F G).variation) \u2264 \u2016H\u2016 * \u2016K\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompletedSignedCovarianceIntegral.lean#L169"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompletedSignedCovarianceIntegral.product_L1_limit",
+      "file": "Foundation/IBMCompletedSignedCovarianceIntegral.lean",
+      "line": 209,
+      "source_sha256": "f9d20aa6bafef4a4460dc2f6ef5e11b6799a0b8a505966843a3ff2e68f312ee1",
+      "declaration_header": "theorem product_L1_limit (F G : JointL2)\n    {H : \u2115 \u2192 IBMPredictableLpDictionary.PredictableL2 F}\n    {K : \u2115 \u2192 IBMPredictableLpDictionary.PredictableL2 G}\n    {h : IBMPredictableLpDictionary.PredictableL2 F}\n    {k : IBMPredictableLpDictionary.PredictableL2 G}\n    (hH : Tendsto H atTop (\ud835\udcdd h)) (hK : Tendsto K atTop (\ud835\udcdd k)) :\n    Tendsto (fun n => \u222b p, |H n p*K n p-h p*k p| \u2202(covariance F G).variation)\n      atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompletedSignedCovarianceIntegral.lean#L209"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompletedSignedCovarianceIntegral.actual_completed_signed_identity",
+      "file": "Foundation/IBMCompletedSignedCovarianceIntegral.lean",
+      "line": 248,
+      "source_sha256": "f9d20aa6bafef4a4460dc2f6ef5e11b6799a0b8a505966843a3ff2e68f312ee1",
+      "declaration_header": "theorem actual_completed_signed_identity (F G : JointL2)\n    (H : IBMPredictableLpDictionary.PredictableL2 F) (K : IBMPredictableLpDictionary.PredictableL2 G) :\n    (\u222b\u1d5b p, H p*K p \u2202<\u2022covariance F G) =\n      inner \u211d (IBMFullPredictableIntegral.integral F H) (IBMFullPredictableIntegral.integral G K)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompletedSignedCovarianceIntegral.lean#L248"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMMultichannelCompletion.gram_actual",
+      "file": "Foundation/IBMMultichannelCompletion.lean",
+      "line": 42,
+      "source_sha256": "770022e2f7a19faae023974309b4a1a6a207586cf215c260996ccfe4e9886996",
+      "declaration_header": "theorem gram_actual (u v : Raw F) : gram F u v = inner \u211d (rawIntegral F u) (rawIntegral F v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMMultichannelCompletion.lean#L42"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMMultichannelCompletion.null_iff_zero_energy",
+      "file": "Foundation/IBMMultichannelCompletion.lean",
+      "line": 74,
+      "source_sha256": "770022e2f7a19faae023974309b4a1a6a207586cf215c260996ccfe4e9886996",
+      "declaration_header": "theorem null_iff_zero_energy (u : Raw F) : u \u2208 Null F \u2194 gram F u u = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMMultichannelCompletion.lean#L74"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMMultichannelCompletion.completedIntegral",
+      "file": "Foundation/IBMMultichannelCompletion.lean",
+      "line": 86,
+      "source_sha256": "770022e2f7a19faae023974309b4a1a6a207586cf215c260996ccfe4e9886996",
+      "declaration_header": "def completedIntegral : Completed F \u2192\u2097\u1d62[\u211d] JointL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMMultichannelCompletion.lean#L86"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMMultichannelCompletion.completed_mem_remainder",
+      "file": "Foundation/IBMMultichannelCompletion.lean",
+      "line": 144,
+      "source_sha256": "770022e2f7a19faae023974309b4a1a6a207586cf215c260996ccfe4e9886996",
+      "declaration_header": "theorem completed_mem_remainder (z : Completed F) :\n    completedIntegral F z \u2208 IBMFixedStochasticFamily.remainderSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMMultichannelCompletion.lean#L144"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMMultichannelCompletion.fixedHilbertEquiv",
+      "file": "Foundation/IBMMultichannelCompletion.lean",
+      "line": 190,
+      "source_sha256": "770022e2f7a19faae023974309b4a1a6a207586cf215c260996ccfe4e9886996",
+      "declaration_header": "def fixedHilbertEquiv : Completed fixedFamily \u2243\u2097\u1d62[\u211d] IBMFixedStochasticFamily.remainderSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMMultichannelCompletion.lean#L190"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointPredictableMultiplier.pairing_partition",
+      "file": "Foundation/IBMJointPredictableMultiplier.lean",
+      "line": 86,
+      "source_sha256": "3094e4dfbedd0ec66de388a660cb9732b666675bd8992721c8804f9157e98da3",
+      "declaration_header": "theorem pairing_partition (g : BoundedPredictable) (F G : JointL2)\n    (H : PredictableL2 F) (K : PredictableL2 G) :\n    inner \u211d (IBMFullPredictableIntegral.integral F (multiplier g F H))\n      (IBMFullPredictableIntegral.integral G (multiplier g G K)) +\n    inner \u211d (IBMFullPredictableIntegral.integral F (multiplier (complement g) F H))\n      (IBMFullPredictableIntegral.integral G (multiplier (complement g) G K)) =\n    g.bound^2 * inner \u211d (IBMFullPredictableIntegral.integral F H) (IBMFullPredictableIntegral.integral G K)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointPredictableMultiplier.lean#L86"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointPredictableMultiplier.finite_energy_partition",
+      "file": "Foundation/IBMJointPredictableMultiplier.lean",
+      "line": 116,
+      "source_sha256": "3094e4dfbedd0ec66de388a660cb9732b666675bd8992721c8804f9157e98da3",
+      "declaration_header": "theorem finite_energy_partition {\u03b9 : Type*} (g : BoundedPredictable) (F : \u03b9 \u2192 JointL2)\n    (s : Finset \u03b9) (H : \u2200 i, PredictableL2 (F i)) :\n    IBMMultichannelCompletion.finiteEnergy F s (fun i => multiplier g (F i) (H i)) +\n      IBMMultichannelCompletion.finiteEnergy F s (fun i => multiplier (complement g) (F i) (H i)) =\n      g.bound^2 * IBMMultichannelCompletion.finiteEnergy F s H",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointPredictableMultiplier.lean#L116"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointPredictableMultiplier.finite_stochastic_bound",
+      "file": "Foundation/IBMJointPredictableMultiplier.lean",
+      "line": 139,
+      "source_sha256": "3094e4dfbedd0ec66de388a660cb9732b666675bd8992721c8804f9157e98da3",
+      "declaration_header": "theorem finite_stochastic_bound {\u03b9 : Type*} (g : BoundedPredictable) (F : \u03b9 \u2192 JointL2)\n    (s : Finset \u03b9) (H : \u2200 i, PredictableL2 (F i)) :\n    \u2016\u2211 i \u2208 s, IBMFullPredictableIntegral.integral (F i) (multiplier g (F i) (H i))\u2016 \u2264\n      g.bound*\u2016\u2211 i \u2208 s, IBMFullPredictableIntegral.integral (F i) (H i)\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointPredictableMultiplier.lean#L139"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompletedPredictableMultiplier.preserves_null",
+      "file": "Foundation/IBMCompletedPredictableMultiplier.lean",
+      "line": 56,
+      "source_sha256": "32eac3eee9cb7534cbbde35f606c14c733a79a4cc83e3bfc2cd15b34ed6017fb",
+      "declaration_header": "theorem preserves_null (g : BoundedPredictable) :\n    Null F \u2264 (Null F).comap (rawMap F g)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompletedPredictableMultiplier.lean#L56"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompletedPredictableMultiplier.operator_bound",
+      "file": "Foundation/IBMCompletedPredictableMultiplier.lean",
+      "line": 96,
+      "source_sha256": "32eac3eee9cb7534cbbde35f606c14c733a79a4cc83e3bfc2cd15b34ed6017fb",
+      "declaration_header": "theorem operator_bound (g : BoundedPredictable) (z : Completed F) :\n    \u2016operator F g z\u2016 \u2264 g.bound*\u2016z\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompletedPredictableMultiplier.lean#L96"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompletedBoundedAssociativity.comparison_bound",
+      "file": "Foundation/IBMCompletedBoundedAssociativity.lean",
+      "line": 83,
+      "source_sha256": "a0c8708f677971778b3b0c8446f44fb91f82617aadc1a9f48097ea651bd8911f",
+      "declaration_header": "theorem comparison_bound (G : JointL2) (K : PredictableL2 G) (g : BoundedPredictable) (z : Completed F) :\n    \u2016completedIntegral F (operator F g z)-IBMFullPredictableIntegral.integral G (multiplier g G K)\u2016 \u2264\n      g.bound*\u2016completedIntegral F z-IBMFullPredictableIntegral.integral G K\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompletedBoundedAssociativity.lean#L83"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompletedBoundedAssociativity.actual_bounded_associativity",
+      "file": "Foundation/IBMCompletedBoundedAssociativity.lean",
+      "line": 93,
+      "source_sha256": "a0c8708f677971778b3b0c8446f44fb91f82617aadc1a9f48097ea651bd8911f",
+      "declaration_header": "theorem actual_bounded_associativity (g : BoundedPredictable) (z : Completed F) :\n    completedIntegral F (operator F g z)=\n      IBMFullPredictableIntegral.integral (completedIntegral F z) (boundedClass g (completedIntegral F z))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompletedBoundedAssociativity.lean#L93"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMTerminalSelfRepresentation.self_representation",
+      "file": "Foundation/IBMTerminalSelfRepresentation.lean",
+      "line": 40,
+      "source_sha256": "c4c8a026aff0fd796c7eac003fa4f4f83c38d0eb7e95bd735db2fb3762b6b002",
+      "declaration_header": "theorem self_representation (f : IntrinsicSpace) :\n    \u2203 H : PredictableL2 (f : JointL2),\n      integral (f : JointL2) H = (f : JointL2)-channelClass (f : JointL2) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTerminalSelfRepresentation.lean#L40"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMTerminalSelfRepresentation.all_channels_range_iff",
+      "file": "Foundation/IBMTerminalSelfRepresentation.lean",
+      "line": 57,
+      "source_sha256": "c4c8a026aff0fd796c7eac003fa4f4f83c38d0eb7e95bd735db2fb3762b6b002",
+      "declaration_header": "theorem all_channels_range_iff (x : JointL2) :\n    (\u2203 F : JointL2, \u2203 H : PredictableL2 F, integral F H = x) \u2194\n      x \u2208 IntrinsicSpace \u2227 x \u2208 (rightPast 0)\u15ee",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMTerminalSelfRepresentation.lean#L57"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFixedStochasticFamily.basis_countable",
+      "file": "Foundation/IBMFixedStochasticFamily.lean",
+      "line": 40,
+      "source_sha256": "3a658e6fec1856a27dc5f97d3f2ab25a10a3b72c37c4270ab16de53bcc847bd6",
+      "declaration_header": "theorem basis_countable : Countable basisSet",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFixedStochasticFamily.lean#L40"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFixedStochasticFamily.integral_integrand",
+      "file": "Foundation/IBMFixedStochasticFamily.lean",
+      "line": 52,
+      "source_sha256": "3a658e6fec1856a27dc5f97d3f2ab25a10a3b72c37c4270ab16de53bcc847bd6",
+      "declaration_header": "theorem integral_integrand (i : basisSet) :\n    integral (terminal i : JointL2) (integrand i) = (terminal i : JointL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFixedStochasticFamily.lean#L52"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMFixedStochasticFamily.coefficient_energy",
+      "file": "Foundation/IBMFixedStochasticFamily.lean",
+      "line": 83,
+      "source_sha256": "3a658e6fec1856a27dc5f97d3f2ab25a10a3b72c37c4270ab16de53bcc847bd6",
+      "declaration_header": "theorem coefficient_energy (f : IntrinsicSpace) :\n    HasSum (fun i : basisSet => (coefficient f i)^2) (\u2016remainder f\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMFixedStochasticFamily.lean#L83"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformStochasticReconstruction.error_sq",
+      "file": "Foundation/IBMUniformStochasticReconstruction.lean",
+      "line": 45,
+      "source_sha256": "f5d426a0e17b329633b03f65664e3004d05e8a205cba745ad7eeff5da633148f",
+      "declaration_header": "theorem error_sq (s : Finset basisSet) (f : IntrinsicSpace) :\n    \u2016partialInput s f-lift f\u2016^2=gap s f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformStochasticReconstruction.lean#L45"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformStochasticReconstruction.gap_uniform",
+      "file": "Foundation/IBMUniformStochasticReconstruction.lean",
+      "line": 89,
+      "source_sha256": "f5d426a0e17b329633b03f65664e3004d05e8a205cba745ad7eeff5da633148f",
+      "declaration_header": "theorem gap_uniform {\u03b1 : Type*} [TopologicalSpace \u03b1] (u : \u03b1 \u2192 IntrinsicSpace)\n    (hu : Continuous u) {K : Set \u03b1} (hK : IsCompact K) :\n    TendstoUniformlyOn (fun s t => gap s (u t)) (fun _ => 0) atTop K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformStochasticReconstruction.lean#L89"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformStochasticReconstruction.uniform_actual",
+      "file": "Foundation/IBMUniformStochasticReconstruction.lean",
+      "line": 156,
+      "source_sha256": "f5d426a0e17b329633b03f65664e3004d05e8a205cba745ad7eeff5da633148f",
+      "declaration_header": "theorem uniform_actual {\u03b1 : Type*} [TopologicalSpace \u03b1] (u : \u03b1 \u2192 IntrinsicSpace)\n    (hu : Continuous u) {K : Set \u03b1} (hK : IsCompact K) :\n    \u2200 \u03b5 > (0 : \u211d), \u2200\u1da0 s : Finset basisSet in atTop,\n      \u2200 t \u2208 K, \u2200 r : \u211d\u22650, \u2016stoppedActual s r (u t)-\n        (channelClass (u t : JointL2) r-channelClass (u t : JointL2) 0)\u2016<\u03b5",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformStochasticReconstruction.lean#L156"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformStochasticReconstruction.actual_IBM_uniform",
+      "file": "Foundation/IBMUniformStochasticReconstruction.lean",
+      "line": 167,
+      "source_sha256": "f5d426a0e17b329633b03f65664e3004d05e8a205cba745ad7eeff5da633148f",
+      "declaration_header": "theorem actual_IBM_uniform (T : \u211d\u22650) :\n    \u2200 \u03b5 > (0 : \u211d), \u2200\u1da0 s : Finset basisSet in atTop,\n      \u2200 t \u2208 Icc 0 T, \u2016stoppedActual s t (intrinsicCurve t)-(intrinsicCurve t : JointL2)\u2016<\u03b5",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformStochasticReconstruction.lean#L167"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformStochasticReconstruction.nonlinear_uniform",
+      "file": "Foundation/IBMUniformStochasticReconstruction.lean",
+      "line": 202,
+      "source_sha256": "f5d426a0e17b329633b03f65664e3004d05e8a205cba745ad7eeff5da633148f",
+      "declaration_header": "theorem nonlinear_uniform (\u03c6 : IBMClockWeakChain.TestFunction) (T : \u211d\u22650) :\n    \u2200 \u03b5 > (0 : \u211d), \u2200\u1da0 s : Finset basisSet in atTop,\n      \u2200 t \u2208 Icc 0 T, \u2016stoppedActual s t (nonlinear \u03c6 t)-\n        ((nonlinear \u03c6 t : JointL2)-channelClass (nonlinear \u03c6 t : JointL2) 0)\u2016<\u03b5",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformStochasticReconstruction.lean#L202"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformStochasticReconstruction.native_graph_distance",
+      "file": "Foundation/IBMUniformStochasticReconstruction.lean",
+      "line": 227,
+      "source_sha256": "f5d426a0e17b329633b03f65664e3004d05e8a205cba745ad7eeff5da633148f",
+      "declaration_header": "theorem native_graph_distance (z w : Completed fixedFamily) :\n    nativeGraphDistance (IBMCompletedNativeCalculus.nativeTest fixedFamily z)\n      (IBMCompletedNativeCalculus.nativeTest fixedFamily w) \u2264 3*\u2016z-w\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformStochasticReconstruction.lean#L227"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMUniformStochasticReconstruction.uniform_native_graph",
+      "file": "Foundation/IBMUniformStochasticReconstruction.lean",
+      "line": 252,
+      "source_sha256": "f5d426a0e17b329633b03f65664e3004d05e8a205cba745ad7eeff5da633148f",
+      "declaration_header": "theorem uniform_native_graph {\u03b1 : Type*} [TopologicalSpace \u03b1] (u : \u03b1 \u2192 IntrinsicSpace)\n    (hu : Continuous u) {K : Set \u03b1} (hK : IsCompact K) :\n    \u2200 \u03b5 > (0 : \u211d), \u2200\u1da0 s : Finset basisSet in atTop, \u2200 t \u2208 K, \u2200 r : \u211d\u22650,\n      nativeGraphDistance\n        (IBMCompletedNativeCalculus.nativeTest fixedFamily (stop r (partialInput s (u t))))\n        (IBMCompletedNativeCalculus.nativeTest fixedFamily (stop r (lift (u t))))<\u03b5",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMUniformStochasticReconstruction.lean#L252"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMObservedInitialGerm.initial_channel_zero",
+      "file": "Foundation/IBMObservedInitialGerm.lean",
+      "line": 53,
+      "source_sha256": "2b538983fd8f622ae085ab2b669c6c238c794f9dbb2df2d951dbb7663e8eea70",
+      "declaration_header": "theorem initial_channel_zero (t : \u211d\u22650) : channelClass (observed t) 0 = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMObservedInitialGerm.lean#L53"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointIntrinsicDerivative.jointDerivative_closed",
+      "file": "Foundation/IBMJointIntrinsicDerivative.lean",
+      "line": 73,
+      "source_sha256": "9a5f1e991d39ce22ac92d85597effdf2cd4deff81b4dbb7b6349c4b648f9ebfa",
+      "declaration_header": "theorem jointDerivative_closed : jointDerivative.IsClosed",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointIntrinsicDerivative.lean#L73"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointIntrinsicDerivative.jointDerivative_dense",
+      "file": "Foundation/IBMJointIntrinsicDerivative.lean",
+      "line": 90,
+      "source_sha256": "9a5f1e991d39ce22ac92d85597effdf2cd4deff81b4dbb7b6349c4b648f9ebfa",
+      "declaration_header": "theorem jointDerivative_dense : Dense (jointDerivative.domain : Set IntrinsicSpace)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointIntrinsicDerivative.lean#L90"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMJointIntrinsicDerivative.ambient_pair_divergence",
+      "file": "Foundation/IBMJointIntrinsicDerivative.lean",
+      "line": 123,
+      "source_sha256": "9a5f1e991d39ce22ac92d85597effdf2cd4deff81b4dbb7b6349c4b648f9ebfa",
+      "declaration_header": "theorem ambient_pair_divergence (a : sourceDerivative.adjoint.domain) (b : clockDerivative.adjoint.domain) :\n    \u2203 hp : pairField a b \u2208 jointDivergence.domain,\n      jointDivergence \u27e8pairField a b, hp\u27e9 =\n        IntrinsicSpace.orthogonalProjectionOnto (sourceDerivative.adjoint a + clockDerivative.adjoint b)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMJointIntrinsicDerivative.lean#L123"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMNativeGaussianRecovery.recovery_pair_graph",
+      "file": "Foundation/IBMNativeGaussianRecovery.lean",
+      "line": 75,
+      "source_sha256": "9f87340528b0061913cd007152d7df9a13699ff3bf6001035879646f85f24dd0",
+      "declaration_header": "theorem recovery_pair_graph (f : JointL2) :\n    \u2203 h : recoveryPair f \u2208 jointDivergence.domain,\n      jointDivergence \u27e8recoveryPair f, h\u27e9 =\n        IntrinsicSpace.orthogonalProjectionOnto (f-sourceVacuum (clockVacuum f))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMNativeGaussianRecovery.lean#L75"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMStochasticNativeDivergence.centered_observable_recovery",
+      "file": "Foundation/IBMStochasticNativeDivergence.lean",
+      "line": 20,
+      "source_sha256": "1d85c517e650510976a513a1235467c3934ac7f07278df43c7da82909800142c",
+      "declaration_header": "theorem centered_observable_recovery (f : IntrinsicSpace) (hf : inner \u211d jointOne (f : JointL2) = 0) :\n    \u2203 h : recoveryPair (f : JointL2) \u2208 jointDivergence.domain,\n      jointDivergence \u27e8recoveryPair (f : JointL2), h\u27e9 = f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMStochasticNativeDivergence.lean#L20"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMStochasticNativeDivergence.recovery_bound",
+      "file": "Foundation/IBMStochasticNativeDivergence.lean",
+      "line": 44,
+      "source_sha256": "1d85c517e650510976a513a1235467c3934ac7f07278df43c7da82909800142c",
+      "declaration_header": "theorem recovery_bound (f : JointL2) : \u2016recoveryPair f\u2016 ^ 2 \u2264 2 * \u2016f\u2016 ^ 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMStochasticNativeDivergence.lean#L44"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompletedNativeCalculus.transfer_divergence",
+      "file": "Foundation/IBMCompletedNativeCalculus.lean",
+      "line": 37,
+      "source_sha256": "b675a05e23f6e65a788cf94db98a4314d2a4395ce058870d884a6aaf07836b79",
+      "declaration_header": "theorem transfer_divergence (z : Completed F) :\n    jointDivergence \u27e8transfer F z, transfer_mem F z\u27e9 = observable F z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompletedNativeCalculus.lean#L37"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.IBMCompletedNativeCalculus.transfer_bound",
+      "file": "Foundation/IBMCompletedNativeCalculus.lean",
+      "line": 41,
+      "source_sha256": "b675a05e23f6e65a788cf94db98a4314d2a4395ce058870d884a6aaf07836b79",
+      "declaration_header": "theorem transfer_bound (z : Completed F) : \u2016transfer F z\u2016^2 \u2264 2*\u2016z\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/IBMCompletedNativeCalculus.lean#L41"
+    }
+  ],
+  "paper_sections": {
+    "1-2": "Actual reflected-clock process, raw predictable sigma algebra, right-germ martingales and original finite energy integral",
+    "3": "Exact output measure change and full output-energy product isometry/associativity",
+    "4": "Separate-energy cross-product integrability, signed joint null quotient, common multiplier bound and actual output identification",
+    "5": "Target-indexed self-representation, fixed countable family, compact-parameter uniform reconstruction over all causal horizons",
+    "6": "Original two-source derivative/adjoint, Gaussian fiber recovery and uniform original divergence graph limit"
+  },
+  "human_reorganization": [
+    "Proposition 2.1 uses the classical auxiliary martingale regularization/compensator construction and finite-measure uniqueness to identify the same raw measure. The formal source instead proves raw content continuity by compact-fiber approximation; no compensator or pathwise bracket theorem for raw IBM is claimed formalized.",
+    "The signed covariance density proof uses polarization and positivity for rational linear combinations, followed by Radon--Nikodym densities. The formal source derives an equivalent variation-density bound from its signed variation Young inequalities.",
+    "Uniform convergence is proved directly by a finite compact subcover, equivalent to the formal antitone Dini argument for the net of finite subsets.",
+    "The identical-channel example showing failure of unrelated component multipliers is an elementary external deduction, not a separate named formal declaration.",
+    "The zero initial projection of each actual process coordinate is reconstructed through clock-conditioned stopped-scenery prediction; the formal proof uses bounded clipped-past factorization and shrinking forecasts.",
+    "The joint intrinsic derivative density is an established frozen finite-average-core foundation, mapped via jointDerivative_dense. The paper does not rebuild that core construction or infer differentiability of point observations.",
+    "Gaussian source recovery is reconstructed by finite Hermite chaos and closed adjoint graphs, then lifted fiberwise on the two original independent source factors. The retained graph constant three follows from the verified squared-field bound two.",
+    "The countable family is chosen by Hilbert-basis existence and target-indexed closed-range representation. It is not an explicit causal-gradient coefficient formula or a predictable representation theorem for a prescribed single martingale."
+  ],
+  "literature": [
+    {
+      "url": "https://www.numdam.org/item/PSMIR_1977___1_1_0/",
+      "review": "Primary full Metivier--Pellaumail 1977 text inspected, especially Sections E/F: general Doleans measures and martingale integration. Classical existence/regularization background credited."
+    },
+    {
+      "url": "https://jurrivhleon.github.io/notes/stochastic_analysis.pdf",
+      "review": "Author full notes inspected, Proposition 5.4, printed p.145: classical continuous-martingale full product-domain associativity. Continuity of the IBM-observable martingales is not assumed from this comparison."
+    }
+  ],
+  "novelty": "Classical formalization companion; no new associativity, single-driver predictable representation, temporal Ito/Clark--Ocone, or priority claim."
+}
