@@ -56241,3 +56241,65 @@ Exact remaining bottleneck. The missing scale-uniform odd envelope, genuine sign
 The first odd partition correction along beta=1/t^2 with angles=t*a is NOT a theorem interchanging a fixed-beta third boundary derivative and the large-beta limit. A corresponding free-energy odd theorem, parameter-uniform derivative/closure estimates, fixed-beta actual third-response asymptotics and resulting thermal-bound implications remain OPEN unless separately proved. Stationary physical transfer contraction, a physically justified iteration distance, scale/volume-uniform bounds, infinite-volume/continuum existence and a positive Yang-Mills mass gap remain OPEN. This finite-cell integration checkpoint makes no completion claim and asserts no novelty for classical dominated-convergence/Laplace tools.
 
 Exact-commit approval, new-history secret scanning, guarded PUBLIC main/research synchronization and independent post-push ref/visibility verification remain checkpoint closure gates. This pre-commit entry does not assert backup already succeeded. Visibility is controlled exclusively by the user. The indefinite research goal remains active.
+
+
+## Checkpoint1716 — exact harmonic evaluation of the actual signed cubic correction and odd free energy
+
+October29,2026. Focused Yang-Mills remains ACTIVE; no transition, completion, publication, novelty or physical mass-gap claim. This extends exact checkpoint1715 a7250190a1e8332e051a3d38e0f4b248d7592762. The primary researcher retains no manuscript/PDF or editorial duties. Original manuscripts were hash-checked only; publication directories, README and drafts were not touched.
+
+Five focused Lean modules: FourCubeCubicCoordinates, FourCubeColorReflection, FourCubeCubicSignAverage, FourCubeCubicIntegral and FourCubeCubicFreeEnergy. The bottleneck is evaluating1715's GENUINELY integrable signed correction I(a), without assuming an unproved Gaussian covariance or treating a Taylor coefficient as an actual Haar result.
+
+Actual coordinate normalization. The recovered imaginary quaternion of algebraElement(v) is exactly (v2/2,v0/2,v1/2); that of the existing hemisphere generator(u) is u. Inverse face slots carry minus signs from skew-Hermitian velocities. Thus1714's actual full72-face cubic C(Y,a) is exactly the determinant sum of the explicit oriented raw vectors, including the root pin and every interior/boundary slot. No coordinate factors were fitted numerically.
+
+Exact color reflections. For s in Bool^3, reflect(s,Y) changes each quaternion color sign separately at EVERY free link. affine(s,h,Y)=h+reflect(s,Y-h) is an involutive homeomorphism preserving the actual93-dimensional product Lebesgue volume. This follows coordinatewise from measure-preserving negation and translations, not a postulated Gaussian measure. The existing centered quadratic form is a SUM of three identical-color Gram energies, so EACH separate color reflection preserves it and its density. After1713's proved harmonic translation h_a, each affine reflection about h_a preserves the actual limiting density g_a(Y). A general wrong center is not assumed to preserve this density.
+
+Finite algebra. Every determinant monomial uses each of the three colors once. For arbitrary mean vectors and fluctuations, summing over the eight independent color signs cancels every nonconstant sign term. The exact identity
+
+    sum_s C(affine(s,h,Y),a) = 8 C(h,a)
+
+holds for ANY center h and every Y. This is finite polynomial algebra; it assumes neither a probability law nor stochastic independence. Let
+
+    H3(a)=harmonicCubic(a)=C(h_a,a),
+    E(a)=effectiveEnergy(a),  C0=integral g_0>0.
+
+For the actual density f_a(Y)=-C(Y,a)g_a(Y), separate-color invariance yields sum_s f_a(affine(s,h_a,Y))=-8 H3(a)g_a(Y). Each transformed f_a is genuinely integrable by the measure-preserving map and1715's proved integrability. The eight-term sum/integral interchange and exact integral invariance therefore give
+
+    I(a)=integral f_a = -H3(a) integral g_a
+        = [-H3(a) exp(-E(a)/2)] C0.
+
+This discharges the signed cubic-average evaluation left open at1715. No formal nonintegrable Bochner default value is used. The proof needs separate color reflections, not merely simultaneous centered sign symmetry: the independent Lean harness gives a two-atom fluctuation example with vectors (+/-e0,+/-e1,e2), simultaneous signs correlated, whose mean determinant is1 while the determinant of the means is0. The independent eight-sign sum is0 as required. Thus generic centered-law substitution is false.
+
+ACTUAL full-Haar consequences. With b_t=movingBoundary(t,a), beta=1/t^2, original finite-cell partition Z and normalized N_b=Z_b/Z_0, through both sides of the punctured REAL neighborhood0:
+
+    [Z_(b_t)(1/t^2)-Z_(b_-t)(1/t^2)]/(2t |t|^93)
+        -> [-H3(a) exp(-E(a)/2)] C0,
+    [N_(b_t)(1/t^2)-N_(b_-t)(1/t^2)]/(2t)
+        -> -H3(a) exp(-E(a)/2).
+
+The independent Lean harness transports the first formula from the pinned31-link partition to the ORIGINAL32-link Haar partition using the existing exact equality. It is not measure-zero conditioning. The outside-cutoff estimate and full-Haar identification are reused directly from1715, not replaced with a numerical truncation.
+
+Actual free energy. normalizedPartition_positive proves positivity for ALL real t. A complete private logarithmic-slope lemma proves that if f,g>0, f->R>0 and (f-g)/(2t)->L, then (log f-log g)/(2t)->L/R. It reconstructs g->R, uses D=(f-g)/g->0 and the continuous divided slope of log(1+u) at0, handling D=0 without division assumptions. Applying it to the actual normalized partitions gives
+
+    [-log N_(b_t)(1/t^2)+log N_(b_-t)(1/t^2)]/(2t) -> H3(a).
+
+This is a proved logarithmic limit of the ACTUAL partition functions, not differentiation of an assumed asymptotic series. Both signs and fixed arbitrary amplitudes are retained. No fixed-beta third boundary derivative or parameter-derivative/large-beta interchange is asserted.
+
+Verification:
+- build: PASS, 28.263452299986966 seconds.
+- audit: PASS, 41.39796489998116 seconds.
+- checks: PASS, 31.215293000015663 seconds.
+- axiom-ledger: PASS, 48.60287969998899 seconds.
+
+Complete root build:7044 jobs. Canonical COMPLETE safe-Foundation transitive Lean.collectAxioms audit:55716 declarations, allowing only propext, Classical.choice and Quot.sound. ALL39 public types were printed unabridged and reviewed:29 theorem proofs,9 definitions and1 abbreviation. The complete five source bodies and the private log_odd_limit proof were read. The COMPLETE persisted Foundation/AxiomAudit.lean run passed. No sorry/admit/new mathematical axiom/native_decide, trust/config/compiler/version change, resource increase, hidden stochastic hypothesis or weakened verification gate was introduced. Local elaboration repairs reconciled equivalent Pi/module instances and the actual log composition point1+0 using existing default resources.
+
+ALL22 independent Lean examples passed: raw Pauli/quaternion factors, orientation signs, actual volume preservation and affine involution, separate quadratic/density invariance, universal sign cancellation, the simultaneous-sign counterexample, transformed integrability, actual signed integrals, normalized and ORIGINAL unpinned full-Haar odd limits, positivity and actual free-energy limit. A conditional nonzero-H3 test excludes extension of that punctured odd quotient to the whole neighborhood, where its total Lean quotient has value0 at0. It does NOT prove H3 nonzero. One test-only limit-at-point proof was repaired to eq_of_tendsto_nhds before execution; no mathematical source/resource change was needed.
+
+Independent exact rational diagnostic reconstructed32 links/72 faces and checked eight different rational amplitude triples, arbitrary fluctuations and BOTH harmonic and arbitrary centers: sum_s C(affine(s,h,Y))=8C(h), plus exact separate-color quadratic invariance about the harmonic center. Reflection about zero is explicitly WRONG for the nonzero-boundary density: at amplitudes(1,1,1), the rational raw face energy changes from2171839/579084 to1636045/193028. The candidate harmonic cubic remains31877443263/69438734552 times xyz in this independent diagnostic. That rational value and its nonvanishing are NOT yet Lean certificates.
+
+An independent fixed-seed actual quaternion112-link72-face importance diagnostic used4096 samples in512 color-sign octets at amplitudes(.4,-.3,.5). Odd cutoff free-energy estimates at t=.04,.02,.01 were -0.027504077162262414, -0.027534177478237554, -0.027541818198842383, versus diagnostic harmonic value -0.027544375745322553. Octet delta-method sample standard errors were3.0389476703840264e-5,7.5938478089498575e-6,1.8984685486241038e-6. These are floating importance diagnostics, not rigorous quadrature error bounds, true outside-mass bounds, Lean rational evaluations or continuum estimates. Evidence prefix C:/Users/ramir/AppData/Local/Temp/stardust-ym-1716-*.
+
+Authenticated source integrity compared1715's manifest to exact approval a7250190a1e8332e051a3d38e0f4b248d7592762. Among2826 recursive Foundation/root Lean sources, only these five new modules, root imports and persisted AxiomAudit differ. All older mathematics,3 pinned configs,113 baseline originals and21 Yang-Mills originals(20 distinct hashes) remain unchanged. ResearchSources is read-only and uncommitted; existing drafts/history and publication-role separation are preserved.
+
+Exact remaining bottleneck. The harmonic evaluation of I(a), actual normalized odd correction and actual odd FREE-ENERGY limit are NOW VERIFIED, no longer missing. H3 is an exact explicit finite expression using the certified harmonic response; evaluating its actual rational coefficient and proving nonzero in Lean remain open. Prefer a direct checked finite harmonic-response certificate, reusing existing response data where its hypotheses really apply; do not silently project away boundary gradients in a nonlinear cubic. Nonlinear boundary gauge transformations can have second-order jets, so raw linear-cycle projection is not automatically a cubic gauge theorem. Fixed-beta third-response asymptotics, derivative-limit interchange, thermal-bound consequences, stationary physical transfer contraction, physically justified iteration distance, scale/volume-uniform bounds, infinite-volume/continuum existence and a positive four-dimensional Yang-Mills mass gap remain OPEN. No novelty is claimed for classical finite sign averaging or logarithmic calculus.
+
+Exact-commit approval, complete new-history secret scan, guarded PUBLIC two-branch main/research synchronization and independent post-push refs/visibility checks remain closure gates. This pre-commit entry does not assert remote backup already succeeded. Only the user controls visibility. The indefinite focused research goal remains active; Bakry stays paused and the queue unchanged.

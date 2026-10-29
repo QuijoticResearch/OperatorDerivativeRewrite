@@ -2779,3 +2779,13 @@ import Foundation.FourCubeMovingOddAction
 import Foundation.FourCubeOddEnvelope
 import Foundation.FourCubeOddIntegral
 import Foundation.FourCubeOddFullPartition
+
+import Foundation.FourCubeCubicCoordinates
+
+import Foundation.FourCubeColorReflection
+
+import Foundation.FourCubeCubicSignAverage
+
+import Foundation.FourCubeCubicIntegral
+
+import Foundation.FourCubeCubicFreeEnergy
