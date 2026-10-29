@@ -18,6 +18,12 @@ The [research ledger](PROJECT_STARDUST_REPORT.md) records exact findings and
 audit evidence. The [early README](docs/FOUNDATION_OVERVIEW_LEGACY.md) is preserved
 as a historical foundation overview; its old open-problem labels are not current.
 
+## Readable papers
+
+Start with the [manuscript catalog](manuscripts/INDEX.md). The publication branch adds a complete [quartic normal-equation paper](manuscripts/quartic-normal/main.pdf), with proofs of complete-space existence, sharp inverse exponent 1/3, and atomic counterexamples to stronger local regularity. Its [theorem map](manuscripts/quartic-normal/theorem-map.json) links every principal statement to the frozen Lean baseline.
+
+These are reviewed drafts, with compiled and visually inspected PDFs. Novelty remains unresolved; classical antecedents and exact limitations are recorded. The [editorial inventory](manuscripts/EDITORIAL_INVENTORY.md) groups the strongest remaining stories: arithmetic theta-flow zeros, completed signed multichannel calculus, and actual IBM variation and operator domains. Earlier IBM notes are preserved in the catalog.
+
 ## Selected verified mathematics
 
 Names below have prefix `OperatorDerivativeRewrite.Foundation.`. These are
@@ -71,9 +77,6 @@ block transfer and continuum-uniform connected-correlation estimate remain open.
 Subsequent campaigns remain gated by the authoritative queue; this overview
 does not change their order.
 
-[Periodic reflection](STARDUST_REFLECTION_POLICY.md) is supporting work at
-natural verified checkpoints, capped at45minutes per local day total. It
-preserves mathematical experience, records precise cross-library opportunities,
-and maintains this overview, the blueprint and [LaTeX/PDF manuscripts](manuscripts/INDEX.md).
+[Periodic reflection](STARDUST_REFLECTION_POLICY.md) remains the researcher's supporting workflow. Independent publication work is maintained on its own publication branch under the owner's editorial instructions, using frozen verified commits and preserving the research checkout and internal policies.
 No novelty, publication readiness, Millennium Prize solution or RH progress
 is claimed merely from the size of the library.

@@ -1,0 +1,611 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1.05in]{geometry}
+\usepackage{longtable,array}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\pair}[2]{\langle #1,#2\rangle}
+\newcommand{\A}{\mathcal A}
+\newcommand{\B}{\mathcal B}
+\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
+\title{Quartic normal equations: complete-space solvability,\protect\\
+sharp inverse stability, and atomic obstructions}
+\author{Project Stardust}
+\date{Reviewed editorial draft, October 29, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Let $H$ be a real Banach space and let $\delta:H\to L^4(\mu)$ be bounded
+linear with $c\norm{u}\leq\norm{\delta u}_4$ for some $c>0$.
+The quartic normal map $\A(u)(v)=\int(\delta u)^3\delta v\,d\mu$
+is a bijection from $H$ onto its continuous dual. We give a direct proof
+using norm-Cauchy minimizing sequences and obtain a global inverse estimate
+with exponent $1/3$. A weighted lower bound at a source gives a stronger
+linear stability estimate relative to that source. On infinite Poisson
+$L^4$, however, the exponent $1/3$ is locally optimal at every dual datum,
+including data whose inverse is nonzero almost everywhere. Every fixed
+finite-dimensional set of source directions can still admit linear
+stability at such a source. The results are reconstructed from a frozen
+Lean development; the existence and uniform-convexity mechanisms are
+classical. The purpose is a complete account of the estimates, their
+hypotheses, and the distinction between finite-direction and ambient
+regularity. Priority for the combined presentation remains unresolved.
+\end{abstract}
+
+\section{The equation and its regularity questions}
+Fix a measure space $(\Omega,\Sigma,\mu)$. No finiteness or
+$\sigma$-finiteness assumption is imposed unless explicitly stated.
+All $L^p$ spaces in this paper consist of equivalence classes of real
+measurable functions modulo equality almost everywhere. Let $H$ be a
+real Banach space with norm $\norm{\cdot}$ and continuous dual $H^*$,
+equipped with its operator norm. Suppose that $\delta:H\to L^4(\mu)$
+is bounded and linear and that
+\begin{equation}\label{eq:lower}
+ c\norm{u}\leq\norm{\delta u}_4\qquad(u\in H),\qquad c>0.
+\end{equation}
+Write $J(F)=F^3\in L^{4/3}(\mu)$ and define
+\begin{equation}\label{eq:normal}
+ \A(u)(v)=\int_\Omega (\delta u)^3\delta v\,d\mu,
+ \qquad u,v\in H.
+\end{equation}
+The notation $\delta^*J(\delta u)$ is permissible if $\delta^*$ means
+the transpose of $\delta$ applied to the integral functional represented
+by $J(\delta u)$. We do not identify all of $(L^4)^*$ with $L^{4/3}$
+as a preliminary assumption. This matters on general measure spaces.
+
+The lower bound in \eqref{eq:lower} is quantitative. Injectivity alone
+does not replace it in infinite dimension. It makes
+$u\mapsto\norm{\delta u}_4$ an equivalent norm and makes the image of
+$\delta$ closed. Indeed, if $\delta u_n$ converges in $L^4$, the lower
+bound makes $u_n$ Cauchy, and completeness and continuity identify the
+limit. This elementary observation explains why the source norm is
+controlled throughout the paper.
+
+\begin{theorem}\label{thm:overview}
+Under \eqref{eq:lower}, the map $\A:H\to H^*$ is a smooth bijection.
+Its inverse $T$ satisfies, for all $f,g\in H^*$,
+\begin{equation}\label{eq:holder}
+ \norm{Tf-Tg}^3\leq\frac4{c^4}\norm{f-g}.
+\end{equation}
+If $H$ contains a nonzero vector, no exponent $q>1/3$ gives a local
+H\"older estimate for $T$ at zero. If $H=L^4(\mu_\lambda)$,
+$\delta$ is the identity, and $\mu_\lambda$ is the Poisson law of a
+parameter $\lambda>0$, no such exponent gives a local estimate at
+\emph{any} datum of $H^*$.
+\end{theorem}
+
+The final assertion is stronger than failure of a uniform global
+Lipschitz constant. It excludes even an estimate comparing one fixed
+datum to nearby data. Conversely, we will prove such a fixed-datum
+linear estimate under an additional weighted lower bound. Its constant
+need not work between two arbitrary nearby data.
+
+The existence argument belongs to the classical geometry of uniformly
+convex spaces, initiated by Clarkson~\cite{clarkson}. Monotone-operator
+solvability provides another classical context~\cite{minty,browder}.
+We do not claim a new general surjectivity principle or a new
+uniform-convexity inequality. The direct proof is useful here because
+it exposes the precise quantitative input and avoids a separate
+reflexivity construction. In classical analysis the closed embedding
+in $L^4$ already implies reflexivity; avoiding that theorem in the proof
+does not produce nonreflexive examples satisfying \eqref{eq:lower}.
+
+\section{The actual duality map and its energy}
+H\"older's inequality gives
+\begin{equation}\label{eq:Jn}
+ \norm{J(F)}_{4/3}=\norm{F}_4^3,
+ \qquad \int J(F)F\,d\mu=\norm{F}_4^4.
+\end{equation}
+For example, $\int|F^3|^{4/3}=\int|F|^4<\infty$, which proves
+membership and the norm identity directly. Almost-everywhere equality
+of two representatives implies the same equality for their cubes,
+so $J$ is well defined on the quotient space. The product
+$J(F)G$ is integrable for every $G\in L^4$.
+Consequently \eqref{eq:normal} defines a continuous functional, with
+\begin{equation}\label{eq:Anorm}
+ \norm{\A(u)}\leq\norm{\delta}\norm{\delta u}_4^3,
+ \qquad \pair{\A(u)}u=\norm{\delta u}_4^4.
+\end{equation}
+
+Multiplication is a bounded bilinear map $L^4\times L^4\to L^2$
+and also $L^2\times L^4\to L^{4/3}$, both of norm at most one.
+The cube map is the composition of these maps along the diagonal.
+It is therefore a continuous cubic polynomial, in particular smooth.
+Composition with $\delta$ and the bounded transpose pairing proves
+smoothness of $\A$. This argument concerns Fr\'echet differentiability
+in the specified Banach norms; pointwise differentiation alone would
+not establish it.
+
+For $f\in H^*$ put
+\begin{equation}\label{eq:energy}
+ E_f(u)=\frac14\norm{\delta u}_4^4-f(u).
+\end{equation}
+\begin{lemma}\label{lem:derivative}
+The energy is continuously Fr\'echet differentiable, and
+$DE_f(u)=\A(u)-f$.
+\end{lemma}
+\begin{proof}
+Write $F=\delta u$ and $G=\delta h$. Expansion of the quartic yields
+\[
+ \frac14\int(F+G)^4-\frac14\int F^4-\int F^3G
+ =\frac32\int F^2G^2+\int FG^3+\frac14\int G^4.
+\]
+Every integral is absolutely convergent by H\"older's inequality.
+The absolute value of the right side is at most
+\[
+ \frac32\norm F_4^2\norm G_4^2
+ +\norm F_4\norm G_4^3+\frac14\norm G_4^4.
+\]
+Since $\norm G_4\leq\norm\delta\norm h$, this is $o(\norm h)$.
+The linear term is exactly $\A(u)(h)$. Smoothness of $\A$, established
+above, gives continuity of the derivative.
+\end{proof}
+
+\begin{lemma}\label{lem:below}
+The range of $E_f$ is bounded below. More precisely, with
+$R=\max\{1,4\norm f/c^4\}$, one has $E_f(u)\geq-\norm f R$.
+\end{lemma}
+\begin{proof}
+If $E_f(u)\leq0$ and $s=\norm u$, then
+$c^4s^4\leq4\norm f s$. For $s>1$ this implies
+$c^4s\leq4\norm f$, hence $s\leq R$; for $s\leq1$ the bound
+is immediate. Thus $E_f(u)\geq-f(u)\geq-\norm f R$ on the zero
+sublevel. Outside that sublevel the same lower bound holds because
+the energy is positive and $\norm f R\geq0$.
+\end{proof}
+
+\section{Minimization without weak compactness}
+The following elementary lemma isolates the whole existence mechanism.
+It will be applied after the required deficit has been proved for the
+actual quartic integral.
+
+\begin{lemma}[Quartic midpoint minimization]\label{lem:min}
+Let $X$ be a real Banach space and let $E:X\to\R$ be continuous and
+bounded below. If $k>0$ and
+\begin{equation}\label{eq:midabstract}
+ E\left(\frac{x+y}2\right)+k\norm{x-y}^4
+ \leq\frac{E(x)+E(y)}2\qquad(x,y\in X),
+\end{equation}
+then $E$ attains its infimum.
+\end{lemma}
+\begin{proof}
+Let $\alpha=\inf E(X)$, a finite real number. Choose $x_n$ with
+$E(x_n)\to\alpha$. Since $\alpha\leq E((x_n+x_m)/2)$,
+\eqref{eq:midabstract} implies
+\[
+ k\norm{x_n-x_m}^4\leq
+ \frac{E(x_n)-\alpha+E(x_m)-\alpha}{2}.
+\]
+Given $\varepsilon>0$, eventually both energy differences are less
+than $k\varepsilon^4$. The displayed inequality then gives
+$\norm{x_n-x_m}<\varepsilon$. Completeness supplies a norm limit
+$x$, and continuity gives $E(x)=\alpha$.
+\end{proof}
+
+\begin{lemma}\label{lem:mid}
+The energy \eqref{eq:energy} satisfies
+\begin{equation}\label{eq:mid}
+ E_f\left(\frac{u+v}2\right)+\frac{c^4}{64}\norm{u-v}^4
+ \leq\frac{E_f(u)+E_f(v)}2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For real $a,b$, direct expansion gives
+\[
+ \frac{a^4+b^4}{2}-\left(\frac{a+b}2\right)^4
+ -\frac{(a-b)^4}{16}=\frac38(a^2-b^2)^2\geq0.
+\]
+Substitute representatives of $\delta u$ and $\delta v$ and
+integrate. All fourth powers are integrable, so the resulting
+inequality is valid for the quotient classes. Multiplication by $1/4$
+gives the deficit $\norm{\delta(u-v)}_4^4/64$ for the potential.
+The forcing term cancels exactly at the midpoint by linearity of $f$.
+Finally apply \eqref{eq:lower} to $u-v$.
+\end{proof}
+
+\begin{proposition}\label{prop:onto}
+For each $f\in H^*$ there exists $u\in H$ with $\A(u)=f$.
+\end{proposition}
+\begin{proof}
+Lemmas~\ref{lem:below}, \ref{lem:mid}, and \ref{lem:min} produce a
+global minimum $u$ of $E_f$. For any $h\in H$, the real function
+$s\mapsto E_f(u+sh)$ has a minimum at zero, so its derivative there
+vanishes. Lemma~\ref{lem:derivative} identifies that derivative with
+$(\A(u)-f)(h)$. Since this holds for every $h$, $\A(u)=f$.
+\end{proof}
+
+The proof uses neither compactness of a norm ball nor an unproved
+weakly convergent subsequence. The distinction is useful in a formal
+development: the only limiting step is completeness applied to a
+sequence already proved Cauchy. The argument also covers the zero
+space, where the equation has its unique trivial solution.
+
+\section{Uniform monotonicity and global inverse stability}
+Existence did not need a uniqueness assumption. The same scalar
+quartic geometry supplies uniqueness and the precise modulus of the
+inverse.
+
+\begin{lemma}\label{lem:mono}
+For $u,v\in H$,
+\begin{equation}\label{eq:mono}
+ \pair{\A(u)-\A(v)}{u-v}
+ \geq\frac14\norm{\delta(u-v)}_4^4
+ \geq\frac{c^4}{4}\norm{u-v}^4.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The scalar identity
+\[
+ (a^3-b^3)(a-b)-\frac14(a-b)^4
+ =\frac34(a-b)^2(a+b)^2
+\]
+has a nonnegative right side. Its terms are integrable after substituting
+$a=\delta u$, $b=\delta v$, by the $L^{4/3}$--$L^4$ pairing and
+quartic integrability. Integration gives the first inequality, and
+\eqref{eq:lower} gives the second.
+\end{proof}
+
+\begin{proof}[Proof of bijectivity and \eqref{eq:holder}]
+If $\A(u)=\A(v)$, \eqref{eq:mono} forces $u=v$.
+Together with Proposition~\ref{prop:onto}, this defines the inverse
+$T:H^*\to H$. For $u=Tf$, $v=Tg$, dual norm control gives
+\[
+ \frac{c^4}{4}\norm{u-v}^4
+ \leq(f-g)(u-v)\leq\norm{f-g}\norm{u-v}.
+\]
+When $u\neq v$, divide by $\norm{u-v}$; otherwise the desired estimate
+is immediate. Taking cube roots gives the global H\"older bound
+\[
+ \norm{Tf-Tg}\leq(4/c^4)^{1/3}\norm{f-g}^{1/3}.
+\]
+\end{proof}
+
+\begin{proposition}\label{prop:origin}
+Suppose $u\neq0$. For every $q>1/3$, $K\geq0$, and $r>0$, there
+exists $f\in H^*$ with $\norm f<r$ and
+\[
+ \norm{Tf-T0}>K\norm f^q.
+\]
+\end{proposition}
+\begin{proof}
+The defining integral gives $\A(au)=a^3\A(u)$ for real $a$ and
+$\A(0)=0$. Put $f_a=\A(au)$ for $a>0$. Then
+$Tf_a=au$, $T0=0$, and $\norm{f_a}=a^3\norm{\A(u)}\to0$.
+The proposed estimate would require
+\[
+ \norm u\leq K\norm{\A(u)}^q a^{3q-1}.
+\]
+The right side tends to zero, whereas $\norm u>0$. Choosing $a$
+small enough gives the strict reverse inequality and $\norm{f_a}<r$.
+\end{proof}
+
+The exponent is optimal in this precise local sense; no claim that
+the global constant is optimal for every $\delta$ is needed. The
+singularity at zero follows from cubic homogeneity. To understand
+nonzero data we need information about multiplication by the source.
+
+\section{Weighted source control and finite-dimensional directions}
+For $u\in H$, define the bounded linear map
+\begin{equation}\label{eq:weighted}
+ \B_u:H\to L^2(\mu),\qquad \B_uw=(\delta u)(\delta w).
+\end{equation}
+H\"older's inequality gives
+$\norm{\B_uw}_2\leq\norm{\delta u}_4\norm\delta\norm w$.
+This is an actual $L^2$ product, with equality of representatives
+understood almost everywhere.
+
+\begin{lemma}\label{lem:weighted}
+For all $u,v\in H$,
+\begin{equation}\label{eq:wmono}
+ \pair{\A(u)-\A(v)}{u-v}\geq\frac34\norm{\B_u(u-v)}_2^2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For real $a,b$,
+\[
+ (a^3-b^3)(a-b)-\frac34a^2(a-b)^2
+ =(a-b)^2(b+a/2)^2\geq0.
+\]
+Integration gives the assertion. The square of the product is
+integrable because $(\delta u)(\delta(u-v))\in L^2$.
+\end{proof}
+
+\begin{theorem}[Stability relative to one datum]\label{thm:weighted}
+If $\beta>0$ and $\norm{\B_uw}_2\geq\beta\norm w$ for every $w\in H$,
+then, for every $v\in H$,
+\begin{equation}\label{eq:linear}
+ \norm{u-v}\leq\frac4{3\beta^2}\norm{\A(u)-\A(v)}.
+\end{equation}
+Under \eqref{eq:lower}, setting $f_0=\A(u)$ yields the corresponding
+bound $\norm{Tf_0-Tf}\leq4\norm{f_0-f}/(3\beta^2)$ for all $f\in H^*$.
+\end{theorem}
+\begin{proof}
+By Lemma~\ref{lem:weighted} and the dual norm inequality,
+\[
+ \frac34\beta^2\norm{u-v}^2
+ \leq\norm{\A(u)-\A(v)}\norm{u-v}.
+\]
+Divide by the distance when it is positive. The zero case is immediate.
+\end{proof}
+
+\begin{proposition}\label{prop:finite}
+Suppose $\delta$ is injective and $\delta u$ is nonzero almost everywhere.
+For each linear subspace $E\subset H$ of finite dimension, there is
+$K_E>0$ such that
+\begin{equation}\label{eq:finite}
+ \norm{u-v}\leq K_E\norm{\A(u)-\A(v)}
+ \qquad\text{whenever }u-v\in E.
+\end{equation}
+In particular, if $H$ is finite dimensional the estimate holds for
+every $v\in H$.
+\end{proposition}
+\begin{proof}
+If $\B_uw=0$, then $(\delta u)(\delta w)=0$ almost everywhere.
+Nonvanishing of $\delta u$ gives $\delta w=0$, and injectivity gives
+$w=0$. Thus $\B_u$ is injective. Restricted to $E$, it has a positive
+lower norm bound: for $E\neq\{0\}$, minimize the continuous positive
+function $w\mapsto\norm{\B_uw}_2$ on the compact unit sphere of $E$.
+Its minimum $\beta_E$ is positive; scaling gives the bound on $E$.
+For $E=\{0\}$ any positive lower-bound constant works. Apply the proof
+of Theorem~\ref{thm:weighted} to $w=u-v\in E$.
+\end{proof}
+
+The finite-dimensional constant depends on the subspace. The
+proposition provides no uniform lower bound as $E$ varies. This
+dependence is decisive on an infinite atomic space.
+
+As a regular example, let $\mu$ be a probability measure, $H=\R$,
+and $\delta u$ the constant function $u$. Then
+$\norm{\delta u}_4=|u|$ and $\norm{\B_uw}_2=|u||w|$.
+At $u\neq0$, \eqref{eq:linear} gives a linear stability constant
+$4/(3|u|^2)$. Under the usual identification of $\R^*$ with $\R$,
+the normal equation is $u^3=f$. The behavior at zero and at nonzero
+data is thus already different in one dimension.
+
+\section{Infinite Poisson space and failure of weighted coercivity}
+Fix $\lambda>0$. Give $\N=\{0,1,\ldots\}$ its full power-set
+$\sigma$-algebra and Poisson probability measure
+\[
+ p_n=\mu_\lambda(\{n\})=e^{-\lambda}\frac{\lambda^n}{n!}>0.
+\]
+In this section $H=L^4(\mu_\lambda)$ and $\delta$ is the identity.
+The lower bound \eqref{eq:lower} holds with $c=1$. Every coordinate
+has positive mass, so an equivalence class has well-defined values
+$F(n)$. Its norm is
+\[
+ \norm F_4^4=\sum_{n=0}^\infty p_n|F(n)|^4.
+\]
+Let $e_n=p_n^{-1/4}1_{\{n\}}$. These are normalized in $L^4$.
+For a fixed $F\in H$ put $x_n=F(n)p_n^{1/4}$. Summability gives
+\begin{equation}\label{eq:x}
+ \sum_n|x_n|^4<\infty,\qquad x_n\longrightarrow0.
+\end{equation}
+
+\begin{proposition}\label{prop:noweight}
+No $F\in L^4(\mu_\lambda)$ satisfies a positive lower bound
+$\norm{Fw}_2\geq\beta\norm w_4$ for all $w\in L^4(\mu_\lambda)$.
+\end{proposition}
+\begin{proof}
+Taking $w=e_n$ gives
+\[
+ \norm{Fe_n}_2=|F(n)|p_n^{1/4}=|x_n|\longrightarrow0,
+ \qquad\norm{e_n}_4=1.
+\]
+A positive lower bound contradicts this limit.
+\end{proof}
+
+Even the constant source $F=1$ has this obstruction. It is nonzero
+everywhere, and multiplication by $F$ is injective, but the inclusion
+of this probability-space $L^4$ into $L^2$ has no positive lower bound.
+This does not yet prove failure of inverse Lipschitz stability:
+Theorem~\ref{thm:weighted} is a sufficient criterion, not an equivalence.
+We next prove the stronger failure directly by perturbing the normal
+map itself.
+
+\section{The inverse exponent is optimal at every atomic datum}
+The integral pairing represented by $e_n^3$ has dual norm at most one
+by H\"older's inequality. For $a\geq0$, the functions $F+ae_n$ and
+$F$ differ at only one coordinate. Cubing gives the exact identity
+\begin{equation}\label{eq:atom}
+ \A(F+ae_n)-\A(F)
+ =\big((x_n+a)^3-x_n^3\big)\A(e_n).
+\end{equation}
+In particular,
+\begin{equation}\label{eq:shift}
+ \norm{\A(F+ae_n)-\A(F)}
+ \leq a\big(3|x_n|^2+3a|x_n|+a^2\big).
+\end{equation}
+To check \eqref{eq:atom} without confusing values and normalized
+coordinates, observe that on the $n$th atom
+$F(n)=p_n^{-1/4}x_n$ and $e_n(n)=p_n^{-1/4}$.
+The cube difference is therefore $p_n^{-3/4}((x_n+a)^3-x_n^3)$,
+exactly the multiplier of $e_n^3$. Off that atom both sides vanish.
+
+\begin{theorem}\label{thm:everywhere}
+For every $f_0\in H^*$, $q>1/3$, $K\geq0$, and $r>0$, there exists
+$f\in H^*$ such that
+\begin{equation}\label{eq:everywhere}
+ \norm{f-f_0}<r,\qquad
+ \norm{Tf-Tf_0}>K\norm{f-f_0}^q.
+\end{equation}
+\end{theorem}
+\begin{proof}
+By surjectivity write $F=Tf_0$. Let
+\[
+ a_n=|x_n|+\frac1{n+1},\qquad U_n=F+a_ne_n,\qquad f_n=\A(U_n).
+\]
+Then $a_n>0$ and $a_n\to0$ by \eqref{eq:x}. Since $|x_n|\leq a_n$,
+\eqref{eq:shift} gives
+\[
+ \norm{f_n-f_0}\leq7a_n^3\longrightarrow0.
+\]
+Injectivity of $\A$ and $\norm{e_n}_4=1$ give
+$\norm{Tf_n-Tf_0}=\norm{U_n-F}_4=a_n$.
+Because $3q-1>0$, eventually
+$K7^q a_n^{3q-1}<1$. Hence
+\[
+ K\norm{f_n-f_0}^q\leq K7^q a_n^{3q}<a_n.
+\]
+Choose $n$ large enough for this inequality and the radius condition.
+\end{proof}
+
+This completes the optimality assertion in Theorem~\ref{thm:overview}.
+The proof uses small normalized coordinates of an arbitrary $L^4$
+source, rather than a zero coordinate. Thus it applies to strictly
+positive sources as well as sources supported on finitely many atoms.
+The Poisson distribution is a concrete verified model; the argument
+itself only uses the displayed positive atomic weights and quartic
+summability. We do not claim a separate Lean theorem for every atomic
+measure under that generalization.
+
+\begin{corollary}\label{cor:directions}
+At the constant source $F=1$, every fixed finite-dimensional source
+subspace $E\subset L^4(\mu_\lambda)$ admits \eqref{eq:finite}. There
+is no common constant valid for all one-dimensional source subspaces.
+\end{corollary}
+\begin{proof}
+Apply Proposition~\ref{prop:finite} to $\delta=\mathrm{id}$ and $F=1$.
+If a constant $K$ worked for all one-dimensional subspaces, then for
+each $V$ take $E=\operatorname{span}\{1-V\}$. The estimate would hold
+for every $V$. Taking $V=Tf$ contradicts Theorem~\ref{thm:everywhere}
+with $f_0=\A(1)$ and $q=1$.
+\end{proof}
+
+The order of quantifiers is the issue: for each fixed $E$ there is a
+constant, but no single constant works for all $E$. A finite-dimensional
+calculation at a nonvanishing source can therefore be accurate while
+providing no uniform ambient regularity theorem.
+
+\section{Disjoint sources and the role of support}
+A simpler obstruction at selected nonzero data helps separate two
+mechanisms. Assume \eqref{eq:lower}. Suppose $u,v\in H$, $v\neq0$,
+and $(\delta u)(\delta v)=0$ almost everywhere. Then mixed terms in
+the cubic vanish, so
+\begin{equation}\label{eq:disjoint}
+ \A(u+av)=\A(u)+a^3\A(v)\qquad(a\in\R).
+\end{equation}
+\begin{proposition}\label{prop:disjoint}
+For every $K\geq0$ and $r>0$ there exists $f$ with
+$\norm{f-\A(u)}<r$ and
+$\norm{Tf-u}>K\norm{f-\A(u)}$.
+\end{proposition}
+\begin{proof}
+Use $f_a=\A(u+av)$ for $a>0$. The source difference has norm
+$a\norm v$, and \eqref{eq:disjoint} gives dual difference
+$a^3\norm{\A(v)}$. Small $a$ meets both required inequalities.
+\end{proof}
+
+For the Poisson identity source one may take indicators of two
+distinct atoms. This produces a nonzero datum with no linear inverse
+estimate using disjoint support alone. Theorem~\ref{thm:everywhere}
+goes further: it works when the source never vanishes and no nonzero
+disjoint source exists. Small normalized tail coordinates, rather
+than exact support separation, then replace cubic decoupling.
+
+\section{Formal scope and reproducibility}\label{sec:formal}
+The mathematical baseline is the frozen Git commit
+\begin{center}\small\ttfamily
+bab688bb6140cd6316c80680095a914ea0d346db.
+\end{center}
+All declarations below have prefix
+\code{OperatorDerivativeRewrite.Foundation}. The accompanying
+\code{theorem-map.json} records exact files, declarations, and hashes.
+The principal correspondence is as follows.
+
+\begin{longtable}{@{}p{0.27\textwidth}p{0.67\textwidth}@{}}
+\textit{Paper result}&\textit{Lean namespace and declaration}\\\hline
+\eqref{eq:Jn}, \eqref{eq:normal}&
+\code{BanachLpDualityFour.dualityFour_norm},
+\code{dualityFour_pairing_eq_norm}, \code{normalFour}\\[3pt]
+Lemma~\ref{lem:derivative}&
+\code{BanachLpDualityFourExistence.hasFDerivAt_quarticPotential}\\[3pt]
+Lemmas~\ref{lem:below}--\ref{lem:mid}&
+\code{BanachLpDualityFourCoercivity.quarticPotential_lower_bound},
+\code{quarticEnergy_midpoint_lower};
+\code{QuarticUniformMinimization.exists_minimizer_of_quartic_midpoint}\\[3pt]
+Bijectivity, \eqref{eq:holder}&
+\code{BanachLpDualityFourInfinite.normalFour_existsUnique},
+\code{normalFour_inverse_holder}\\[3pt]
+Proposition~\ref{prop:origin}&
+\code{BanachQuarticHolderSharpness.no_local_holder_bound}\\[3pt]
+Theorem~\ref{thm:weighted}&
+\code{BanachQuarticWeightedStability.inverse_lipschitz_at_weighted_datum}\\[3pt]
+Proposition~\ref{prop:finite}&
+\code{BanachFiniteDirectionStability.finite_direction_stability}\\[3pt]
+Proposition~\ref{prop:noweight}&
+\code{PoissonQuarticWeightedObstruction.no_positive_weighted_lower}\\[3pt]
+\eqref{eq:atom}, \eqref{eq:shift}&
+\code{PoissonQuarticAtomPerturbation.normal_atom_shift},
+\code{normal_shift_norm_bound}\\[3pt]
+Theorem~\ref{thm:everywhere}&
+\code{PoissonQuarticHolderEverywhere.no_local_holder_at_datum}\\[3pt]
+Corollary~\ref{cor:directions}&
+\code{BanachFiniteDirectionStability.poisson_constant_finite_directions},
+\code{no_uniform_one_direction_bound}\\[3pt]
+Proposition~\ref{prop:disjoint}&
+\code{BanachQuarticDisjointObstruction.no_local_linear_bound_at_disjoint_image}\\
+\end{longtable}
+
+The complete-space namespace is essential in the existence row:
+an earlier namespace contains only a finite-dimensional existence
+theorem, although its energy derivative is dimension independent.
+The map called \code{normalFourEquiv} is a nonlinear bijection,
+not a linear equivalence or an identification supplied by a Hilbert
+inner product. The paper's $H^*$ is the continuous real dual.
+
+The baseline audit receipt records a successful complete root build,
+54,943 audited declarations, and acceptance only of
+\code{propext}, \code{Classical.choice}, and \code{Quot.sound}.
+The editorial work changes no Lean source or dependency configuration.
+It reuses that existing verification rather than claiming a new full
+build. The source hashes and receipt provenance are included with the
+manuscript. Lean is pinned to version 4.34.1 and Mathlib to revision
+\code{d13f23b723b8a846827a245b89c10fc7d3f11612}.
+
+\section{What the estimates do and do not decide}
+The lower bound on $\delta$ gives existence on the whole continuous
+dual, uniqueness, and a global modulus. A weighted lower bound gives
+stronger control relative to one source. Nonvanishing almost everywhere
+implies injectivity of the weighted map; finite dimension converts
+that injectivity into a lower bound. Infinite Poisson space shows
+exactly where that last implication fails, and direct perturbations
+show that the failure corresponds to an actual inverse singularity.
+
+No stochastic integral is constructed by these arguments. In
+particular, a Banach-space lower bound for a proposed stochastic
+divergence cannot be presumed from the existence theorem: it is an
+input that must be established for the actual operator. The results
+also do not settle general exponents, unbounded transpose domains,
+or closability characterizations. These are separate questions.
+
+The solvability and uniform monotonicity belong to established
+nonlinear analysis. The bounded preliminary literature check places
+them in that context and does not certify priority for the particular
+combination of atomic optimality and finite-direction regularity.
+This manuscript is a reviewed exposition of verified mathematics,
+with mathematical novelty explicitly unresolved. An external
+submission would require a more targeted comparison with the
+literature on inverse duality mappings and their local moduli.
+
+\begin{thebibliography}{9}
+\bibitem{clarkson} J. A. Clarkson,
+Uniformly convex spaces, \emph{Trans. Amer. Math. Soc.} \textbf{40}
+(1936), 396--414. \href{https://doi.org/10.1090/S0002-9947-1936-1501880-4}{doi:10.1090/S0002-9947-1936-1501880-4}.
+\bibitem{minty} G. J. Minty,
+Monotone (nonlinear) operators in Hilbert space,
+\emph{Duke Math. J.} \textbf{29} (1962), 341--346.
+\href{https://doi.org/10.1215/S0012-7094-62-02933-2}{doi:10.1215/S0012-7094-62-02933-2}.
+\bibitem{browder} F. E. Browder,
+Nonlinear elliptic boundary value problems,
+\emph{Bull. Amer. Math. Soc.} \textbf{69} (1963), 862--874.
+\href{https://doi.org/10.1090/S0002-9904-1963-11068-X}{doi:10.1090/S0002-9904-1963-11068-X}.
+\end{thebibliography}
+\end{document}
