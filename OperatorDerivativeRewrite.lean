@@ -2735,3 +2735,5 @@ import Foundation.FourCubeIntegratedResponse
 import Foundation.FourCubeConditionalResponse
 
 import Foundation.FourCubeConditionalObstruction
+
+import Foundation.FourCubePinnedHaar
