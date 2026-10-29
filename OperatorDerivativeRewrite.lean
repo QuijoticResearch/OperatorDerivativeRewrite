@@ -2830,3 +2830,6 @@ import Foundation.FourCubeCompletedCubic
 import Foundation.FourCubeFullChartDomination
 import Foundation.FourCubeFullHaarCoordinates
 import Foundation.FourCubeFullHaarCutoff
+import Foundation.FourCubeFullChartQuadratic
+import Foundation.FourCubeFullHaarGaussianLimit
+import Foundation.FourCubeFullHaarAsymptotic
