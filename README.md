@@ -24,6 +24,8 @@ Start with the [manuscript catalog](manuscripts/INDEX.md). The publication branc
 
 The companion [fractional theta-deformation paper](manuscripts/fractional-theta-zeros/main.pdf) explains the endpoint asymptotic that forces infinitely many nonreal zeros for 1<a<2 at nonzero time, despite compact complex convergence and uniform real-axis convergence in order. It proves the real/simple-limit conditions needed for every selected nonreal zero to escape. Its [theorem map](manuscripts/fractional-theta-zeros/theorem-map.json) fixes the exact verified statements.
 
+The [signed multichannel paper](manuscripts/signed-multichannel/main.pdf) gives the complete finite-to-completed proof on its factorial analytic cylinder domain: actual native coefficient limits in Bochner L1, centered p−1-channel reconstruction in the test dual, and a simultaneous signed diagonal. Its [source map](manuscripts/signed-multichannel/theorem-map.json) and proof explain the indefinite pairing and exact uniqueness limitations.
+
 These are reviewed drafts, with compiled and visually inspected PDFs. Novelty remains unresolved; classical antecedents and exact limitations are recorded. The [editorial inventory](manuscripts/EDITORIAL_INVENTORY.md) groups the strongest remaining stories: arithmetic theta-flow zeros, completed signed multichannel calculus, and actual IBM variation and operator domains. Earlier IBM notes are preserved in the catalog.
 
 ## Selected verified mathematics

@@ -1,0 +1,707 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,longtable,array}
+\usepackage[margin=1.05in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}\newcommand{\N}{\mathbb N}
+\newcommand{\D}{\mathcal D}\newcommand{\E}{\mathcal E}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
+\title{Signed multichannel reconstruction\protect\\
+on a factorial analytic cylinder domain}
+\author{Project Stardust}
+\date{Reviewed editorial draft, October 29, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For the signed heat kernel of even order $p=2m$, we construct a
+multichannel reconstruction formula on a specified Banach completion
+of dyadic polynomial cylinders. The coefficient fields are genuine
+Bochner $L^1$ limits of native predictable Taylor coefficients and
+have degree-independent bounds on the original observable norm.
+The centered observable pairing is the sum of $p-1$ bounded signed
+channels in the continuous test dual. The proof begins with an exact
+finite signed telescope, proves quantitative increment and
+adjacent-refinement estimates, and only then passes to the observable
+completion. A joint diagonal realizes every completed observable
+through actual signed polynomial sums. The pairing is indefinite;
+no positive path-space measure or stochastic isometry is asserted.
+We distinguish canonical coefficient uniqueness from uniqueness of
+channel synthesis. All principal results are supported by a frozen
+Lean development. Novelty relative to earlier higher-order signed
+calculus remains unresolved.
+\end{abstract}
+
+\section{Scope and normalization}
+Fix $m\in\N$, $m>0$, a physical horizon $T>0$, and put
+\[
+ p=2m,\qquad c=(-1)^{m+1}.
+\]
+The fundamental signed kernel $k_\tau$, $\tau>0$, has Fourier
+transform $e^{-\tau\xi^p}$ and generator $c\partial_x^p$.
+We normalize the Fourier transform by
+\[
+ k_\tau(x)=\frac1{2\pi}\int_\R e^{-\tau\xi^p}e^{-i\xi x}\,d\xi.
+\]
+Changing the Fourier sign gives the same even real kernel.
+For each finite partition, independent increments mean the product
+of these signed densities; they do not mean independent random
+variables under an assumed positive path law.
+
+The analytic domain $\D$ will be defined explicitly in Section~\ref{sec:domain}.
+It has a dense injective polynomial core, a bounded signed mean
+$\E_T:\D\to\R$, and a bounded symmetric pairing
+\[
+ J_T:\D\longrightarrow\D^*,\qquad
+ J_T(P)(G)=\E_T(PG)
+\]
+on polynomial cylinders. Products in this last identity are finite
+polynomial products; bounded multiplication on the whole completion
+is not being assumed. Let $\lambda$ denote Lebesgue measure on
+$[0,1]$, so time in the coefficient fields is normalized time and
+the physical horizon occurs in all kernel parameters and channel
+constants. Write $\mathcal F=L^1(\lambda;\D^*)$ for Bochner $L^1$.
+
+\begin{theorem}\label{thm:main}
+There are canonical bounded linear maps $C_q:\D\to\mathcal F$,
+$q\geq0$, satisfying
+\begin{equation}\label{eq:Cbound}
+ \norm{C_q u}_{\mathcal F}\leq
+ \frac{\norm{J_T}e^T}{q!}\norm u_{\D}.
+\end{equation}
+For $1\leq q\leq p-1$, define
+\begin{equation}\label{eq:channel}
+ (I_q A)(v)=cpT(p-1)_{q-1}
+ \int_0^1 A(s)(D_s^{p-q}v)\,ds,
+\end{equation}
+where $(r)_k=r(r-1)\cdots(r-k+1)$ and $D_s$ is the bounded cutoff
+derivative defined below. Then every $u\in\D$ satisfies
+\begin{equation}\label{eq:main}
+ J_T\big(u-\E_T(u)1\big)
+ =\sum_{q=1}^{p-1} I_q(C_q u)\qquad\text{in }\D^*.
+\end{equation}
+On every fixed polynomial cylinder, $C_q$ is the norm limit in
+$\mathcal F$ of its native predictable Taylor coefficient fields.
+Its values lie in the closed span of actual adapted polynomial
+step fields. Every completed observable admits a simultaneous
+polynomial/mesh approximation of all surviving fields and the
+right side of \eqref{eq:main}.
+\end{theorem}
+
+The equality is in the test dual, not an assertion of equality in
+$\D$ obtained by inverting $J_T$. Injectivity of $J_T$ on the entire
+completion is not supplied. The theorem is therefore a signed
+Clark--Ocone-type reconstruction with its topology specified.
+
+Higher-order signed heat calculus has substantial antecedents,
+including Hochberg's work~\cite{hochberg}. Complex random-walk
+constructions give another generalized calculus~\cite{bcm}, while
+time-changed pseudoprocesses are studied in~\cite{co}. The present
+paper does not claim the first higher-order It\^o calculus. Its
+precise subject is the simultaneous native coefficient limit and
+bounded observable completion for these actual signed cylinder
+laws. Priority for this package remains unresolved.
+
+\section{Actual finite signed laws and polynomial conditioning}
+The function $e^{-\tau\xi^p}$ is Schwartz. Fourier inversion shows
+that $k_\tau$ is real, even and Schwartz, has integral one, and
+satisfies $k_\tau*k_\sigma=k_{\tau+\sigma}$. Thus polynomial
+functions are integrable against its total variation. Its moments
+are
+\begin{equation}\label{eq:moments}
+ \mu_r(\tau)=\int x^r k_\tau(x)\,dx
+ =\begin{cases}(pk)!(c\tau)^k/k!,&r=pk,\\0,&p\nmid r.
+ \end{cases}
+\end{equation}
+For $r=0$ this gives one. To obtain the formula, differentiate the
+Fourier transform at zero; Schwartz decay justifies differentiation
+under the integral. The derivative of $e^{-\tau\xi^p}$ vanishes
+unless the order is a multiple of $p$, and the resulting powers
+of $i$ give $c^k$. Equivalently, for every polynomial $f$,
+\begin{equation}\label{eq:heat}
+ \int f(x)k_\tau(x)\,dx
+ =\big(e^{c\tau\partial^p}f\big)(0).
+\end{equation}
+The exponential series terminates on each polynomial.
+
+An integration-by-parts identity that will control all power
+channels is
+\begin{equation}\label{eq:stein}
+ \int xf(x)k_\tau(x)\,dx
+ =cp\tau\int f^{(p-1)}(x)k_\tau(x)\,dx.
+\end{equation}
+It follows either from the moments \eqref{eq:moments}, by testing
+monomials, or from differentiation of the Fourier transform.
+All boundary terms vanish by Schwartz decay.
+
+On the dyadic grid with $N=2^n$ cells set $h=1/N$, $\tau=Th$,
+and use increment variables $x_0,\ldots,x_{N-1}$. The signed
+expectation $\E_{T,n}$ integrates against
+$\prod_j k_\tau(x_j)\,dx_j$. The position variables are
+$y_i=x_0+\cdots+x_i$. Refinement replaces each coarse increment
+by the sum of two fine increments. Convolution implies consistency
+of these actual signed expectations.
+
+For $0\leq j\leq N$, let $\Pi_jP$ integrate increments with
+indices $i\geq j$, leaving $x_0,\ldots,x_{j-1}$ untouched.
+It is a polynomial in the retained increments. In particular
+$\Pi_0P=\E_{T,n}P$, $\Pi_NP=P$, and $\Pi_j\Pi_k=\Pi_{\min(j,k)}$.
+These formulas follow from finite signed Fubini, with absolute
+integrability of polynomials against the product variation.
+The notation is polynomial conditioning; no general conditional
+expectation theorem for an indefinite path law is invoked.
+
+\section{The common factorial domain}\label{sec:domain}
+Let $S$ be the union of the positive dyadic grid times in $(0,1]$.
+A cylinder is a polynomial in finitely many formal position
+coordinates $Y_s$, $s\in S$. The direct-limit construction using
+increment refinement gives exactly this polynomial algebra: old
+positions are retained at their original times, and the cumulative
+coordinate change is invertible on each finite grid.
+
+For a finite multiindex $\alpha:S\to\N$, let
+$|\alpha|=\sum_s\alpha_s$. For a polynomial
+$P=\sum_\alpha a_\alpha Y^\alpha$, define
+\begin{equation}\label{eq:norm}
+ \norm P_{\D}=\sum_\alpha |\alpha|!\,|a_\alpha|.
+\end{equation}
+This is the factorial of total degree, not the product of coordinate
+factorials. The coefficients here are in \emph{position} coordinates,
+after converting a given increment polynomial by the inverse
+cumulative substitution. Refinement is an isometry because it only
+retains the same position labels. It also does not increase total
+degree. The norm is nondegenerate because polynomial coefficients
+are unique.
+
+Define $\D$ as the completion of this normed polynomial space.
+More concretely, it is the closed span of the vectors
+$(|\alpha|!a_\alpha)_\alpha$ in $\ell^1$ indexed by finitely
+supported time multiindices. The Lean construction uses all times
+in $(0,1]$ as an ambient index and takes the closed span of the
+dyadic core. This yields the same space just described. It is a
+specified analytic coefficient completion, not a space of all
+bounded smooth path observables.
+
+\begin{lemma}\label{lem:operators}
+For any direction $v:S\to\R$ with $|v_s|\leq1$, the polynomial
+directional derivative $\partial_v=\sum_s v_s\partial_{Y_s}$
+extends to $\D$ with norm at most one. Position substitutions that
+send each variable to another variable or zero, without scaling
+by a coefficient of modulus greater than one, are contractions.
+The finite signed projection $\Pi_j$ has norm at most $e^T$ on
+each cylinder norm.
+\end{lemma}
+\begin{proof}
+For a monomial of degree $d>0$, the ratio of the weighted norm of
+its directional derivative to $d!$ is at most
+$\sum_s\alpha_s/d=1$. The degree-zero derivative vanishes.
+Summation proves the derivative bound. Substitutions preserve
+total degree or lower it; merging equal monomials can only reduce
+the sum of absolute coefficients.
+
+In position coordinates, differentiation in the increment $x_j$
+is the direction which is one on positions after that increment
+and zero before it. Its norm is therefore at most one.
+Integrating one increment is heat evolution
+$e^{c\tau\partial_{x_j}^p}$ followed by setting that increment
+to zero. Setting it to zero merges later positions with their
+predecessors, so is contractive. The heat operator has norm at
+most $e^\tau$ by its exponential series. Composing future heat
+operators has norm at most $e^{\sum\tau}\leq e^T$, and the
+remaining clamping substitution is contractive.
+\end{proof}
+
+Taking the empty-past projection gives a bounded signed mean
+$\E_T$ on $\D$, with $\norm{\E_T}\leq e^T$ and $\E_T1=1$.
+The cutoff derivative in \eqref{eq:channel} is
+\begin{equation}\label{eq:Ds}
+ D_s=\partial_{v(s)},\qquad v(s)_t=1_{\{s\leq t\}}.
+\end{equation}
+It is contractive, as are all its powers. Applied to a fixed
+polynomial, it is a finite step function of $s$. Approximation
+by core polynomials shows $s\mapsto D_s^r u$ is strongly measurable
+for every $u\in\D$: the applied fields converge pointwise, even
+uniformly in the norm bound. This gives a bounded map into
+$L^\infty(\lambda;\D)$.
+
+\section{The product pairing and its signed character}
+Ordinary multiplication does not have norm at most the product
+of the norms in \eqref{eq:norm}. Instead define on polynomials
+\[
+ B(P,Q)(Y)=P(Y/2)Q(Y/2).
+\]
+For monomials of degrees $d,e$, its weighted norm ratio is
+$2^{-d-e}(d+e)!/(d!e!)\leq1$. Summing absolute coefficients
+gives $\norm{B(P,Q)}\leq\norm P\norm Q$, so $B$ extends
+as a bounded symmetric bilinear map $\D\times\D\to\D$.
+Set
+\begin{equation}\label{eq:pairing}
+ J_T(u)(v)=\E_{2^pT}\big(B(u,v)\big).
+\end{equation}
+Then $\norm{J_T}\leq e^{2^pT}$. Homogeneity of the moments shows
+that half-dilation at horizon $2^pT$ restores horizon $T$:
+$\mu_r(2^p\tau)2^{-r}=\mu_r(\tau)$.
+Applying this to each increment monomial proves
+\begin{equation}\label{eq:actualpair}
+ J_T(P)(G)=\E_T(PG)
+\end{equation}
+for every pair of cylinders, and $J_T(u)(1)=\E_Tu$ by continuity.
+This construction supplies the bounded product \emph{pairing}
+without assuming bounded ordinary multiplication.
+
+For $p=4$ one has $c=-1$, so \eqref{eq:moments} gives
+\[
+ J_T(Y_1^2)(Y_1^2)=\E_T(Y_1^4)=-24T<0.
+\]
+Thus the pairing is indefinite. In particular the notation
+$\E_T$ cannot be used to justify positive Cauchy--Schwarz,
+martingale isometries, or Hilbert orthogonal projections.
+
+For later estimates it is useful to name
+\[
+ W_j(H)(s)=1_{(jh,(j+1)h]}(s)J_T(H).
+\]
+This is an actual element of $\mathcal F$, with
+$\norm{W_j(H)}_{\mathcal F}=h\norm{J_T(H)}$.
+An adapted step field has this form summed over $j$, with $H_j$
+a polynomial depending only on increments before cell $j$.
+Let $\mathcal A_T$ be the closed linear span of all such fields
+in $\mathcal F$. This definition is the exact adaptedness space
+used below; it does not presuppose a probability filtration.
+
+\section{The bounded channel operators}
+For $A\in\mathcal F$ and $v\in\D$, the integrand
+$A(s)(D_s^r v)$ is integrable because its absolute value is at
+most $\norm{A(s)}\norm v$. Strong measurability follows from
+the bounded bilinear evaluation map and the applied-field
+measurability proved above. Define
+\[
+ Q_r(A)(v)=\int_0^1 A(s)(D_s^r v)\,ds.
+\]
+Then $Q_r:\mathcal F\to\D^*$ is bounded with norm at most one.
+In addition to the surviving channels in \eqref{eq:channel}, use
+the same formula for $q=p$. In that case
+\begin{equation}\label{eq:driftchannel}
+ I_p=cp!T Q_0.
+\end{equation}
+It is a drift channel, which will cancel exactly after centering.
+For $1\leq q\leq p$,
+\begin{equation}\label{eq:Ibound}
+ \norm{I_q A}\leq pT(p-1)_{q-1}\norm A_{\mathcal F}.
+\end{equation}
+
+For recursive calculations put
+$K_k=cpT\binom{p-1}{k}Q_{p-1-k}$, $0\leq k<p$.
+Thus $I_q=(q-1)!K_{q-1}$.
+The factorial distinction is needed: the native Taylor coefficient
+contains $1/q!$, whereas conversion of a power channel contributes
+$(q-1)!$. Losing either factor changes the reconstruction formula.
+
+\section{Exact finite predictable innovations}
+Fix a grid and a polynomial $P$ of total degree at most $d$.
+For cell $j$, put $Q_j=\Pi_{j+1}P$, and let $R_j$ set $x_i=0$
+for $i\geq j$. Define the native coefficients
+\begin{equation}\label{eq:nativejet}
+ a_{j,q}(P)=\frac1{q!}R_j\partial_{x_j}^q Q_j.
+\end{equation}
+They depend only on strict-past increments, vanish for $q>d$,
+and Lemma~\ref{lem:operators} gives
+\begin{equation}\label{eq:jetbound}
+ \norm{a_{j,q}(P)}_{\D}\leq\frac{e^T}{q!}\norm P_{\D}.
+\end{equation}
+Only the current and past increments survive in $Q_j$.
+Its exact Taylor expansion in the current increment therefore is
+$Q_j=\sum_{q=0}^d a_{j,q}(P)x_j^q$.
+Integrate that increment to obtain
+$\Pi_jP=\sum_{q=0}^d a_{j,q}(P)\mu_q(Th)$.
+Subtracting proves the cell identity
+\begin{equation}\label{eq:cell}
+ \Pi_{j+1}P-\Pi_jP
+ =\sum_{q=1}^d a_{j,q}(P)\big(x_j^q-\mu_q(Th)\big).
+\end{equation}
+The zeroth term vanishes because $\mu_0=1$.
+Summing over cells telescopes exactly:
+\begin{equation}\label{eq:telescope}
+ P-\E_TP=\sum_{q=1}^d\sum_{j=0}^{N-1}
+ a_{j,q}(P)\big(x_j^q-\mu_q(Th)\big).
+\end{equation}
+No term has been discarded on a scaling heuristic. Every integral
+in this derivation is an actual finite signed polynomial integral.
+
+Refine a fixed base polynomial $P$ to successive grids and denote
+its refinement by $P_n$. Its position-coordinate norm is unchanged
+and its total degree stays at most $d$. Define the native field
+\begin{equation}\label{eq:nativefield}
+ A_{n,q}(P)=\sum_j W_j\big(a_{j,q}(P_n)\big).
+\end{equation}
+Since cell lengths sum to one, \eqref{eq:jetbound} gives
+\begin{equation}\label{eq:fieldbound}
+ \norm{A_{n,q}(P)}_{\mathcal F}
+ \leq\frac{\norm{J_T}e^T}{q!}\norm P_{\D}.
+\end{equation}
+This estimate is independent of degree and mesh, but does not by
+itself prove that the sequence converges. That requires the next
+two quantitative arguments.
+
+\section{Signed power estimates in the test dual}\label{sec:powers}
+For strict-past $H$ and integer $r\geq0$, signed integration by
+parts gives the exact dual identity
+\begin{equation}\label{eq:power}
+ J_T(Hx_j^{r+1})
+ =\sum_{k=0}^{p-1}(r)_k K_k\big(W_j(Hx_j^{r-k})\big).
+\end{equation}
+Terms with $k>r$ vanish and can be omitted. To check the identity,
+test first against a polynomial $G$ on a common finer grid.
+The coarse increment is the sum of fine increments in its cell.
+Apply \eqref{eq:stein} to each fine increment and use Leibniz's
+rule on $x_j^rG$. Derivatives of $H$ vanish because it is strict
+past. The $k$ derivatives on $x_j^r$ give $(r)_k x_j^{r-k}$,
+the other derivatives give $D_s^{p-1-k}G$, and summing the fine
+durations gives exactly the cell integral in $K_k$.
+This proves \eqref{eq:power} on every polynomial test. Density and
+continuity give the identity in $\D^*$.
+
+Define nonnegative constants recursively by
+\begin{equation}\label{eq:powerconstants}
+ B_0=1,\qquad B_{r+1}=pT\sum_{k=0}^{\min(r,p-1)}
+ \binom{p-1}{k}(r)_k B_{r-k}.
+\end{equation}
+They depend on $p,T,r$, not on the mesh or $H$.
+
+\begin{lemma}\label{lem:powerbounds}
+For a strict-past polynomial $H$ and a cell of normalized length
+$h\leq1$,
+\begin{align}
+ \norm{J_T(Hx_j^r)}&\leq B_r\norm{J_T(H)},\label{eq:uniformpower}\\
+ \norm{J_T(Hx_j^q)}&\leq B_qh\norm{J_T(H)}\quad(q\geq1),\label{eq:positivepower}\\
+ \norm{J_T(Hx_j^q)}&\leq B_qh^2\norm{J_T(H)}\quad(q>p).\label{eq:highpower}
+\end{align}
+For $1\leq q\leq p$,
+\begin{equation}\label{eq:powererror}
+ \norm{J_T(Hx_j^q)-I_q(W_jH)}
+ \leq B_qh^2\norm{J_T(H)}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The channel bound for a step is
+$\norm{K_k(W_jV)}\leq pT\binom{p-1}{k}h\norm{J_T(V)}$.
+Apply it in \eqref{eq:power} and induct on $r+1$, using
+\eqref{eq:powerconstants}. This first proves
+\eqref{eq:positivepower}; since $h\leq1$, it also proves
+\eqref{eq:uniformpower} and closes the induction.
+For $q>p$, every surviving index $k\leq p-1$ has $q-1-k\geq1$.
+Use \eqref{eq:positivepower} on that residual power in each term
+of \eqref{eq:power}. The additional step length supplies $h^2$,
+proving \eqref{eq:highpower}.
+For $q\leq p$, the last term $k=q-1$ is exactly
+$(q-1)!K_{q-1}(W_jH)=I_q(W_jH)$.
+Every other term has a positive residual power, so the same
+argument bounds their sum by $B_qh^2\norm{J_T(H)}$.
+\end{proof}
+
+By \eqref{eq:moments}, $\mu_q(Th)=0$ for $1\leq q<p$ and
+$\mu_p(Th)=cp!Th$. For $q>p$, $|\mu_q(Th)|\leq M_qh^2$
+with a mesh-independent $M_q$: if $q=pk$, take
+$M_q=q!T^k/k!$ and note $k\geq2$; otherwise take zero.
+Thus summing over $N=1/h$ cells, under any uniform bound
+$\norm{J_T(H_j)}\leq M$, gives the following three limits:
+\begin{align}
+ J_T\left(\sum_jH_j(x_j^q-\mu_q(Th))\right)
+ &\longrightarrow I_q(A),&&1\leq q<p,\label{eq:lowl}\\
+ J_T\left(\sum_jH_j(x_j^p-\mu_p(Th))\right)
+ &\longrightarrow0,\label{eq:criticall}\\
+ J_T\left(\sum_jH_j(x_j^q-\mu_q(Th))\right)
+ &\longrightarrow0,&&q>p,\label{eq:highl}
+\end{align}
+where the first line also assumes $\sum_jW_jH_j\to A$ in
+$\mathcal F$. The errors are $O(h)M$ in dual norm.
+For the critical line, \eqref{eq:driftchannel} gives
+$I_p(W_jH_j)=cp!ThJ_T(H_j)$, which cancels the centering exactly.
+This is why the final centered reconstruction has $p-1$ channels.
+
+\section{Causal coefficients and convergence under refinement}
+It remains to prove the field convergence needed in
+\eqref{eq:lowl}. Introduce the causal comparison coefficient
+\begin{equation}\label{eq:causaljet}
+ b_{j,q}(P)=\frac1{q!}\Pi_j(\partial_{x_j}^qP),
+\end{equation}
+and its step field $\widetilde A_{n,q}=\sum_j W_j(b_{j,q}(P_n))$.
+The derivative here is taken before the strict-past projection.
+It does not in general commute through that projection.
+
+\begin{lemma}\label{lem:heatshift}
+For every grid polynomial,
+\begin{equation}\label{eq:heatshift}
+ b_{j,q}(P)=\frac1{q!}R_j
+ e^{cTh\partial_{x_j}^p}\partial_{x_j}^q\Pi_{j+1}P.
+\end{equation}
+Consequently, for a fixed cylinder under refinement,
+\begin{equation}\label{eq:heaterror}
+ \norm{\widetilde A_{n,q}-A_{n,q}}_{\mathcal F}
+ \leq\frac{\norm{J_T}e^T}{q!}(e^{Th}-1)\norm P_{\D}
+ \longrightarrow0.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The current coordinate is retained by $\Pi_{j+1}$, so its derivative
+commutes with the future integrations. Integrating that one current
+coordinate after future conditioning is exactly heat evolution
+followed by clamping, by \eqref{eq:heat}. This proves
+\eqref{eq:heatshift}. The norm of
+$e^{cTh\partial_{x_j}^p}-\mathrm{id}$ is at most $e^{Th}-1$.
+Use contractivity of derivatives and clamping, the $e^T$ projection
+bound, and the sum of normalized cell lengths equal to one.
+\end{proof}
+
+The heat correction proves equality of the eventual native and
+causal limits, but does not itself prove that either sequence has
+a limit. For that we need control of a moving conditioning cut.
+
+\begin{lemma}\label{lem:cut}
+For each degree bound $d$, there is $L_d\geq0$, depending only
+on $p,T,d$, such that on every grid and every degree-at-most-$d$
+polynomial $P$,
+\begin{equation}\label{eq:cut}
+ \norm{J_T(\Pi_bP-\Pi_aP)}
+ \leq L_d(b-a)h\norm P_{\D},\qquad0\leq a\leq b\leq N.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For each $q\geq1$ there is $V_q\geq0$ with
+$|\mu_q(Th)|\leq V_qh$: use zero if $p\nmid q$, and
+$V_q=q!T^k/k!$ if $q=pk$, since $h^k\leq h$.
+The cell identity \eqref{eq:cell}, the positive power estimate,
+and \eqref{eq:jetbound} imply
+\[
+ \norm{J_T(\Pi_{j+1}P-\Pi_jP)}
+ \leq h\norm P_{\D}\norm{J_T}e^T
+       \sum_{q=1}^d\frac{B_q+V_q}{q!}.
+\]
+Take the finite nonnegative sum as $L_d$, and sum the cell
+differences from $a$ to $b-1$ by the triangle inequality.
+The argument proves dual-norm continuity of conditional increments;
+it does not assert continuity of moving-time positions in the
+strong factorial source norm.
+\end{proof}
+
+\begin{proposition}\label{prop:fieldlimit}
+For each fixed cylinder $P$ and every $q\geq0$, the native fields
+$A_{n,q}(P)$ converge in $\mathcal F$ to a field $C_qP$.
+The causal fields converge to the same limit, and the bound
+\eqref{eq:Cbound} holds on the core.
+\end{proposition}
+\begin{proof}
+Compare adjacent grids. Each coarse increment splits into two
+fine increments. Differentiating the pulled-back polynomial in
+either fine coordinate is the pullback of differentiating in the
+coarse coordinate. Its degree stays at most $d=\deg P$, and its
+factorial norm after any number of such derivatives is at most
+$\norm P_{\D}$.
+
+At the first half of a coarse cell, the strict-past projections
+agree by signed convolution consistency. At the second half,
+the fine conditioning cut has advanced by just one fine cell.
+Apply \eqref{eq:cut} to the derivative polynomial. Dividing by
+$q!$ and integrating over the unit normalized horizon gives
+\begin{equation}\label{eq:adjacent}
+ \norm{\widetilde A_{n+1,q}-\widetilde A_{n,q}}_{\mathcal F}
+ \leq\frac{L_d}{q!}2^{-(n+1)}\norm P_{\D}.
+\end{equation}
+This bound is summable in $n$. Thus the causal fields are Cauchy
+in the complete space $\mathcal F$ and converge. Equation
+\eqref{eq:heaterror} gives the same limit for the native fields.
+The norm bound follows by passing to the limit in
+\eqref{eq:fieldbound}. Each native field is an adapted polynomial
+step field; closedness gives $C_qP\in\mathcal A_T$.
+\end{proof}
+
+For $q>d$ all native fields are zero, hence $C_qP=0$.
+If two base-grid presentations define the same cylinder, their
+refinements agree on a common tail. Uniqueness of norm limits
+therefore makes the limit independent of the presentation.
+Finite-grid linearity and continuity of addition and scalar
+multiplication make $P\mapsto C_qP$ linear. These observations
+are necessary before extending the maps to completed observables.
+
+\section{The multichannel formula and observable completion}
+\begin{proposition}\label{prop:polyformula}
+Every polynomial cylinder satisfies
+\[
+ J_T(P-\E_TP)=\sum_{q=1}^{p-1}I_q(C_qP).
+\]
+\end{proposition}
+\begin{proof}
+Refine the fixed polynomial to all sufficiently fine grids.
+Choose $d'\geq\max(\deg P,p-1)$ once and pad the exact telescope
+\eqref{eq:telescope} to degree $d'$ with zero coefficients.
+Refinement preserves the degree bound, so this is the same finite
+number of terms on every grid. The left side, after applying
+$J_T$, is the same dual element on each grid.
+
+For each $q$, \eqref{eq:jetbound} gives a uniform bound on the
+paired native coefficients. Proposition~\ref{prop:fieldlimit}
+provides the $L^1$ convergence for the low powers.
+Apply \eqref{eq:lowl} to $q<p$, the exact critical cancellation
+\eqref{eq:criticall} to $q=p$, and \eqref{eq:highl} to $q>p$.
+Pass through the one fixed finite sum. The surviving terms are
+exactly those in the displayed identity.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The degree-independent bound \eqref{eq:Cbound} on the dense core
+extends each linear coefficient map uniquely to a bounded linear
+map $C_q:\D\to\mathcal F$ with the same bound. For a completed
+observable choose polynomials $P_k\to u$ in $\D$.
+Then $C_qP_k\to C_qu$. Closedness of $\mathcal A_T$ preserves
+adapted membership. The centered map
+$u\mapsto J_T(u-\E_T(u)1)$ is bounded linear, as is each $I_qC_q$.
+Thus Proposition~\ref{prop:polyformula} passes to the limit and
+proves \eqref{eq:main} for every $u\in\D$.
+
+For the simultaneous actual signed approximation, assemble the
+$p-1$ native fields and the native surviving power sum into one
+finite product Banach space. For each fixed $P_k$, the preceding
+arguments show convergence of that package as the mesh tends
+to zero. Its limiting package is the collection
+$(C_1P_k,\ldots,C_{p-1}P_k,J_T(P_k-\E_TP_k))$,
+which tends to the analogous package for $u$ by continuity.
+Choose a mesh index $n_k$ at least $k$ and at least the base-grid
+index of $P_k$, large enough that the package error is less than
+$1/(k+1)$. The triangle inequality gives simultaneous convergence
+to the package for $u$. Every approximating sum comes from the
+actual finite signed polynomial laws by \eqref{eq:actualpair}.
+\end{proof}
+
+The diagonal is a proved selection; it is not every arbitrary
+joint degree/mesh limit. The convergence constants for one fixed
+polynomial may depend on its degree, as $L_d$ shows. The extension
+to $\D$ instead uses the degree-independent coefficient bound.
+Those two kinds of bounds have distinct roles in the proof.
+
+\section{Uniqueness and the biharmonic case}
+The lower derivative orders cannot all be replaced by a coefficient
+depending only on the $p$th derivative. The terminal cylinder
+$P=Y_1$ has $D_s^pP=0$ for every $s$, and $\E_TP=0$.
+Nevertheless
+\[
+ J_T(P)(Y_1^{p-1})=\E_T(Y_1^p)=cp!T\neq0.
+\]
+Thus any proposed reconstruction which vanishes whenever the
+$p$th derivative vanishes fails on this actual signed polynomial
+pairing. This elementary obstruction explains the role of lower
+channels without invoking a positive pseudo-$L^2$ interpretation.
+
+If another bounded linear coefficient map agrees with $C_q$ on
+all canonical polynomial limits, it equals $C_q$ by density.
+This proves uniqueness of the coefficient extension.
+It does not assert that an arbitrary channel representation has
+unique integrands. Let
+\[
+ S:(\mathcal F)^{p-1}\to\D^*,\qquad
+ S(A_1,\ldots,A_{p-1})=\sum_{q=1}^{p-1}I_qA_q.
+\]
+Then $S(A)=S(B)$ if and only if $A-B\in\ker S$.
+No theorem here sets that kernel equal to zero.
+
+For $p=4$ the three surviving channels are
+\begin{align*}
+ (I_1A)(v)&=-4T\int_0^1 A(s)(D_s^3v)\,ds,\\
+ (I_2A)(v)&=-12T\int_0^1 A(s)(D_s^2v)\,ds,\\
+ (I_3A)(v)&=-24T\int_0^1 A(s)(D_sv)\,ds.
+\end{align*}
+The native coefficient fields retain factors $1$, $1/2!$, and
+$1/3!$ respectively. The fourth channel is the drift
+$I_4=-24TQ_0$ and cancels against the fourth moment centering.
+This example keeps the signs, factorials, and complementary
+test derivative orders visible.
+
+For $p=2$ the same construction has one surviving channel
+$I_1=2TQ_1$, with the kernel normalization of generator
+$\partial_x^2$. It is compatible with that Brownian variance
+convention, but the theorem's proof has not relied on positivity
+or on importing a probability-space martingale representation.
+
+\section{Verified source and literature boundary}
+The mathematical source is the frozen Git commit
+\begin{center}\small\ttfamily
+bab688bb6140cd6316c80680095a914ea0d346db.
+\end{center}
+The namespaces in the source map share the following prefix:
+\begin{center}\code{OperatorDerivativeRewrite.Foundation}\end{center}
+
+The file \code{theorem-map.json} records exact files, declarations,
+line numbers, source hashes and baseline GitHub links.
+
+\begin{longtable}{@{}p{0.24\textwidth}p{0.70\textwidth}@{}}
+\textit{Content}&\textit{Lean namespace and principal declaration}\\\hline
+Domain and core&\code{HigherHeatAnalyticCylinderDomain.core_injective},
+\code{core_dense}; \code{MultivariateFactorialDomain.derivative_norm}\\[3pt]
+Signed product pairing&\code{HigherHeatCompletedPairing.pairing_core_complex},
+\code{pairing_not_positive}\\[3pt]
+Exact finite telescope&\code{HigherHeatMultitimeJetTelescope.telescope},
+\code{native_dual_identity}\\[3pt]
+Power bounds&\code{HigherHeatAllPowerBounds.positive_increment_bound},
+\code{higher_increment_bound};
+\code{HigherHeatAllChannelRemainder.cell_remainder_bound}\\[3pt]
+Centered channel limits&\code{HigherHeatCenteredPowerLimits.low_centered_converge},
+\code{critical_centered_vanish}, \code{higher_centered_vanish}\\[3pt]
+Native/causal correction&\code{HigherHeatCausalJetIdentification.physical_shifted_jet_eq},
+\code{causal_field_approximation}\\[3pt]
+Cut and refinement bounds&\code{HigherHeatConditionalCutBound.conditional_cut_bound};
+\code{HigherHeatCausalFieldCauchy.causal_fields_step_bound}\\[3pt]
+Field limits&\code{HigherHeatMultitimePredictableFields.field_tendsto},
+\code{field_bound}\\[3pt]
+Polynomial reconstruction&\code{HigherHeatMultitimeReconstruction.polynomial_reconstruction}\\[3pt]
+Observable extension&\code{HigherHeatMultitimeFieldMaps.completed_bound},
+\code{completed_mem}; \code{HigherHeatCompletedClarkOcone.clark_ocone}\\[3pt]
+Uniqueness&\code{HigherHeatCompletedClarkOcone.coefficient_unique},
+\code{synthesis_uniqueness}\\[3pt]
+Actual joint diagonal&\code{HigherHeatSignedDiagonalRealization.completed_signed_realization}\\
+\end{longtable}
+
+The baseline receipt records a complete successful root build and
+a complete 54,943-declaration standard-axiom audit. Publication work
+changes no Lean source and reuses that verified baseline. The
+human proofs above reorganize the actual theorem mechanism; the
+notation $B_r,L_d$ corresponds to recursive power bounds and finite
+degree-dependent constants in the formal sources. It does not
+claim a fresh Lean theorem merely because a constant has a shorter
+name in this exposition.
+
+The primary comparison in~\cite{bcm}, especially its discussion
+leading to Theorem 18, already retains lower power increments
+in a generalized It\^o calculus for complex random-walk
+approximations. Its expected chain-rule formula is distinct from
+the present completed real signed-cylinder test-dual identity.
+That distinction is a comparison of the stated constructions,
+not a proof of priority for the present one.
+The preliminary literature check identifies earlier signed heat
+calculus and alternative complex-walk approaches. It has not
+established priority for this particular analytic completion or
+the multitime reconstruction theorem. Hochberg's paper was
+identified bibliographically; its complete text was not retrieved
+in this pass, so no uninspected theorem-number comparison is made.
+The cited time-change paper is a primary contemporary reference
+for pseudoprocesses, not a premise extending the present result
+to signed random clocks. A publication decision requires a
+targeted comparison of domains and reconstruction topologies.
+
+\begin{thebibliography}{9}
+\bibitem{hochberg} K. J. Hochberg,
+A signed measure on path space related to Wiener measure,
+\emph{Ann. Probab.} \textbf{6} (1978), 433--458.
+\bibitem{bcm} S. Bonaccorsi, C. Calcaterra and S. Mazzucchi,
+An It\^o calculus for a class of limit processes arising from random
+walks on the complex plane, arXiv:1603.05437 (2016).
+\url{https://arxiv.org/abs/1603.05437}.
+\bibitem{co} F. Cinque and E. Orsingher,
+Higher-order fractional equations and related time-changed
+pseudo-processes, arXiv:2402.13691v2 (2024).
+\url{https://arxiv.org/abs/2402.13691}.
+\end{thebibliography}
+\end{document}

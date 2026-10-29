@@ -1,0 +1,24 @@
+# Signed multichannel reconstruction: editorial status
+
+Reviewed draft, October 29, 2026. Eleven pages. Frozen mathematical baseline: `bab688bb6140cd6316c80680095a914ea0d346db`. No new Lean build or research change.
+
+The paper reconstructs the complete scoped theorem, rather than assuming the difficult coefficient limits. It defines the actual signed increment laws, total-degree factorial norm in position coordinates, damped product and compensating horizon, Bochner L1 coefficient fields, test-dual channels and adapted closure. The proofs include the exact finite Taylor telescope; recursive signed power bounds; O(h²) cell remainders; exact cancellation of the critical drift; native/causal heat correction; a degree-dependent moving-cut estimate; summable adjacent refinement; cofinal/linear coefficient maps; degree-independent observable extension; and the simultaneous signed diagonal.
+
+Fidelity checks:
+
+- The factorial is total-degree factorial, and the norm uses position coefficients after inverse cumulative substitution. It is not the increment coefficient norm.
+- The ambient all-time l1 construction is restricted to the closed span of dyadic cylinders. The paper's dyadic-time completion is this same domain.
+- The bounded pairing uses half-dilated multiplication at horizon `2^p T`; it agrees with actual finite signed product expectation at T. The negative biharmonic fourth moment is retained.
+- The finite telescope retains all centered powers before passing to the mesh limit. The q=p term vanishes only after its drift cancels exactly. Higher powers have O(h²) cell bounds.
+- The qth native coefficient contains `1/q!`; the qth signed channel contains `p c T (p−1).descFactorial(q−1)`. Complementary test derivative order is p−q.
+- Derivatives commute through future conditioning while the current coordinate is retained. The paper does not commute them through strict-past conditioning. The latter is obtained by an actual one-cell heat correction.
+- The adjacent-refinement constant depends on the fixed source degree. The coefficient map's source-norm bound is degree independent. The completion argument uses the latter, not an unproved degree-uniform mesh rate.
+- Canonical bounded coefficient extension is unique; arbitrary channel synthesis is unique only modulo its kernel. No injectivity of the completed pairing, positive isometry, probability path law, or arbitrary degree/mesh convergence is asserted.
+
+The constants B_r and L_d are a human reorganization of the exact nonnegative recursive power constants and finite degree-dependent sums in the verified sources. The source map names the actual declarations; the exposition does not claim new Lean declarations in its shorter notation. Every native signed sum is a polynomial integrable against finite-dimensional signed-law variation before it is paired with a test.
+
+All pages were rendered and inspected, with selected mathematical pages enlarged. Two-pass compilation rejects unresolved references and overfull boxes; failed layout attempts remain in logs. Current hashes are recorded in `build-status.json` and `visual-review.json`.
+
+Novelty check: the full primary preprint Bonaccorsi–Calcaterra–Mazzucchi, arXiv:1603.05437, was inspected in its introductory comparison and Theorems 17–18. Their generalized Taylor/Itô calculus already retains power increments for complex random-walk approximations; Theorem 18 gives an expected chain-rule identity for an analytic exponential-type function. The present statement concerns actual real signed cylinders and a specific completed test-dual reconstruction. This identifies a meaningful comparison, not a priority result. Cinque–Orsingher arXiv:2402.13691v2 was read for primary pseudoprocess context; its time-change results are not transferred here. Hochberg 1978 was identified accurately but not retrieved in full, so its precise domain comparison remains pending.
+
+Status: reviewed editorial draft, novelty unresolved, final author list pending owner decision. No external publication or submission is authorized or made.

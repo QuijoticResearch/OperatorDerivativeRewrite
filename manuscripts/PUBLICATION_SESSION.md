@@ -16,9 +16,9 @@ The source baseline is checkpoint 1705, not a moving research head. Its exact ap
 
 No redundant Lean rebuild was run. No mathematical declaration, proof, dependency, internal blueprint/commentary, research ledger, ResearchSources original, campaign queue, AGENTS policy, or research sync procedure was edited. Git operations use the isolated worktree and publication branch. The research agent was not contacted or interrupted. Publication-only path checks precede commits, and the full new publication history is secret-scanned before the authorized atomic non-force branch push. The exact remote publication ref is checked after the push. A terminal receipt is retained in this chat's artifact directory; no success is inferred merely from a queued command.
 
-## Next worthwhile manuscript: signed multichannel completion
+## Signed multichannel completion: source audit and closure
 
-This is a much larger substantive paper and remains **not drafted**, rather than being represented by an incomplete theorem list. The following source-first audit should be reused by the next editorial session at the same frozen baseline:
+This source audit has now been carried through to an eleven-page reviewed paper, signed-multichannel/main.tex and main.pdf, with the complete human proof. The following source-first audit should be reused by the next editorial session at the same frozen baseline:
 
 - `HigherHeatPolynomialCylinders.Cylinder` is the direct limit of dyadic increment polynomial algebras, with refinement by pair-block summation. `HigherHeatPolynomialCoordinates.encode` first applies the inverse cumulative-coordinate algebra equivalence. Therefore the common norm must be explained in **position coordinates**, not confused with the original increment coefficient norm.
 - `MultivariateFactorialDomain.polynomial` weights each coefficient by the factorial of the **total degree**, not the product of coordinate factorials. The ambient space is scalar l1 over finitely supported time multiindices. `HigherHeatAnalyticCylinderDomain.Domain` is the closed span of the embedded dyadic cylinders in that ambient space; the core embedding is injective and dense. It is not an unspecified pseudo-L2 completion or all path functionals.
@@ -28,10 +28,14 @@ This is a much larger substantive paper and remains **not drafted**, rather than
 - `HigherHeatCompletedClarkOcone.clark_ocone` reconstructs the centered observable **pairing** as a sum of p−1 signed channels in the test dual. Its exact duality coefficient is `p (-1)^(m+1) T (p−1).descFactorial(q−1)` with complementary test derivative order p−q. Physical time is carried by T while the time integration measure is normalized Lebesgue on [0,1].
 - The coefficient extension is unique from its core values. Synthesis uniqueness is only modulo the kernel of the channel-synthesis map. Injectivity of the completed product pairing and arbitrary integrand uniqueness are not supplied. `HigherHeatSignedDiagonalRealization` gives a justified joint degree/mesh diagonal; it does not authorize every degree/mesh sequence.
 
-The substantive remaining editorial work is the exact finite signed telescope, degree-preserving refinement estimates, and native-to-causal coefficient convergence with the full quantitative norms. Those arguments should be reconstructed before calling the signed paper complete. The library's stopping contract already proves the final scoped result; these are human exposition obligations, not requests for new research.
+The exact finite signed telescope, degree-preserving refinement estimates, native-to-causal heat correction, moving-cut bound, summable field convergence, recursive power bounds, completion and joint signed diagonal are now reconstructed in full in the paper. The library's stopping contract already proves the final scoped result; these are human exposition obligations, not requests for new research.
 
 ## Other publication priorities
 
 The global A(4)/A(6) saddle theorem deserves a sustained separate paper with its local/far-frequency matching and arithmetic certificates. The fractional paper deliberately does not present that global proof as if it were contained in its ten pages. The actual IBM notes should be consolidated with variation, graph-domain and observed-filtration boundaries; the incomplete intrinsic physical-time calculus remains explicit. Yang–Mills continuum/mass-gap objectives are excluded from publication claims.
 
 Account usage readings rose from 21% to 24% during the observed portion of the session. They are coarse **shared account** readings, so this difference cannot be attributed solely to this editorial work and is not an exact enforcement of the provisional allowance. No recurring task or background continuation was created.
+
+## Unattended continuation
+
+The signed multichannel manuscript is completed as a reviewed editorial draft with exact source maps and baseline evidence. Its novelty remains unresolved after a primary comparison with Bonaccorsi–Calcaterra–Mazzucchi, Theorems 17–18. All eleven pages were rendered and inspected. The next editorial subject selected for a source-first assessment is actual IBM variation and its signed Simpson calculus, using the preserved drafts and exact physical-time limitations. No new research is requested.
