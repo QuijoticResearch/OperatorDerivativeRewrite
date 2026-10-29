@@ -2772,3 +2772,6 @@ import Foundation.FourCubeMovingActionLimit
 import Foundation.FourCubeMovingLaplaceLimit
 
 import Foundation.FourCubeMovingSchurLimit
+
+import Foundation.SU2QuaternionOddWord
+import Foundation.FourCubeMovingOddAction
