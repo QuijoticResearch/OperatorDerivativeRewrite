@@ -2789,3 +2789,11 @@ import Foundation.FourCubeCubicSignAverage
 import Foundation.FourCubeCubicIntegral
 
 import Foundation.FourCubeCubicFreeEnergy
+
+import Foundation.FourCubeHarmonicIntegerData
+
+import Foundation.FourCubeHarmonicResponse
+
+import Foundation.FourCubeHarmonicWordData
+
+import Foundation.FourCubeHarmonicCubicValue

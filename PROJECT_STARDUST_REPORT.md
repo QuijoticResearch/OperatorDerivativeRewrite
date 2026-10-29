@@ -56303,3 +56303,63 @@ Authenticated source integrity compared1715's manifest to exact approval a725019
 Exact remaining bottleneck. The harmonic evaluation of I(a), actual normalized odd correction and actual odd FREE-ENERGY limit are NOW VERIFIED, no longer missing. H3 is an exact explicit finite expression using the certified harmonic response; evaluating its actual rational coefficient and proving nonzero in Lean remain open. Prefer a direct checked finite harmonic-response certificate, reusing existing response data where its hypotheses really apply; do not silently project away boundary gradients in a nonlinear cubic. Nonlinear boundary gauge transformations can have second-order jets, so raw linear-cycle projection is not automatically a cubic gauge theorem. Fixed-beta third-response asymptotics, derivative-limit interchange, thermal-bound consequences, stationary physical transfer contraction, physically justified iteration distance, scale/volume-uniform bounds, infinite-volume/continuum existence and a positive four-dimensional Yang-Mills mass gap remain OPEN. No novelty is claimed for classical finite sign averaging or logarithmic calculus.
 
 Exact-commit approval, complete new-history secret scan, guarded PUBLIC two-branch main/research synchronization and independent post-push refs/visibility checks remain closure gates. This pre-commit entry does not assert remote backup already succeeded. Only the user controls visibility. The indefinite focused research goal remains active; Bakry stays paused and the queue unchanged.
+
+
+## Checkpoint1717 — kernel-certified nonzero actual harmonic cubic and full-Haar odd free energy
+
+October29,2026. Focused Yang-Mills remains ACTIVE, Bakry PAUSED and the queue unchanged. Extends fully audited/two-ref verified checkpoint1716,80961831d2a6de6042287691e42396e5b1c31504. The previous goal turn made substantive mathematical progress and completed its guarded backup; this turn resolved its next actual finite-cell certificate bottleneck. No publication/manuscript/PDF/editorial work was performed; originals were hash-checked only.
+
+Four focused modules: FourCubeHarmonicIntegerData, FourCubeHarmonicResponse, FourCubeHarmonicWordData and FourCubeHarmonicCubicValue. The purpose is to prove, rather than infer from the earlier rational diagnostic, that1716's actual full-Haar odd free-energy correction is NONZERO for the specified three actual boundary rays. This is a32-interior-link,112-total-link,72-face finite-cell statement. It is not a stationary physical transfer estimate or a continuum mass gap.
+
+Direct source certificate. Existing OneSidedIntegerResponseData concerns physical CYCLE inputs. Rather than silently projecting nonlinear cubic boundary data to that domain, a direct32x3 integer witness Xnum was constructed for the THREE ACTUAL raw-quaternion boundary sources. Its denominator is579084 and its origin-direction0 pinned row is0. The80x3 boundary table has just three nonzero entries: low cap index5/color2=-1, chosen upper chord index12/color1=-1, high cap index44/color0=1. boundary_sources kernel-checks their exact equality to the existing native chosen/capHigh/capLow geometry. The table is not a new assumption about a boundary law.
+
+The verified sparse four-link incidence action is reused to prove the actual integer equations
+
+    A Xnum +579084 B Bnum = Rnum,   A^T Rnum=0.
+
+The finite equalities are checked by decide +kernel, not native_decide, compiled floating computation or an external certificate oracle. The rational external solver supplies only candidate integer witnesses; all required identities are rechecked in Lean. No new resource option is present. Initially the larger quantified proposition exceeded default instance synthesis, so the boundary/source row checks were split into their finite rows and the existing sparse incidence theorem reused. Limits/trust/configuration were not raised.
+
+Transport to the ACTUAL harmonic shift. Existing proven interior/face/boundary equivalences, real casts and orientation signs transport the integer residual and normal equations to fullMatrix and the actual boundaryMatrix. The pinned lift preserves the candidate field because its pole is0. Multiplying the full normal equation by the pinned lift transpose, using fullMatrix_lift and the VERIFIED localGram injectivity/inverse, identifies the candidate with response(eta). No gauge projection onto physical cycles is invoked. The boundaryComponent/rawSource comparison retains the exact Pauli permutation and factor2:
+
+    boundaryComponent(1,1,1,a)=2 eta_[1,2,0](a).
+
+Scalar2 is explicitly REAL scalar multiplication, not an unintended natural repeated-addition instance. Dividing the response by2 in the existing harmonicShift convention cancels this factor, giving
+
+    harmonicShift(1,1,1)=chart(Xnum/579084).
+
+This is the pre-existing actual harmonicShift, not a newly defined minimizer chosen to fit the diagnostic.
+
+Ordered word certificate. Equality of signed quadratic incidence matrices is INSUFFICIENT to justify a cubic coefficient. The native wide source-edge embedding and its verified injectivity/row geometry are reused to prove the ordered link correspondence for all72 faces and four slots, including index reversal on flipped faces. The integer word includes the actual +,+,-,- inverse-slot signs and denominator factors for boundary sources. All individual vector components are tied to FourCubeCubicCoordinates.vectors. An exact integer determinant sum is then kernel checked:
+
+    sum_p cubicInt(word_p)=89146927712029176.
+
+Real casting and the cubic denominator identity, together with the actual harmonicShift identification, prove
+
+    harmonicCubic(1,1,1)=31877443263/69438734552 >0.
+
+The public declarations are harmonic_cubic_value and harmonic_cubic_positive. Thus the old external candidate fraction is NOW a Lean theorem for the actual finite-cell cubic. The generic arbitrary-amplitude formula c*xyz remains diagnostic unless separately proved; this checkpoint certifies the concrete amplitudes(1,1,1), which already suffices for nonvanishing.
+
+ACTUAL full-Haar consequence. Reusing1716's proved logarithmic theorem, with N_b(beta)=Z_b(beta)/Z_0(beta) for the actual original finite-cell Haar partition and b_t=movingBoundary(t,1,1,1), actual_free_energy_nonzero_limit establishes through the two-sided punctured REAL neighborhood0:
+
+    [-log N_(b_t)(1/t^2)+log N_(b_-t)(1/t^2)]/(2t)
+        ->31877443263/69438734552.
+
+No asymptotic series is differentiated. The positivity and exact normalization, full-Haar cutoff removal and integrable odd limit are inherited from verified1713-1716. This is not merely a Gaussian surrogate or the boundary-only cubic1. It establishes nontrivial odd response of the actual partition along this joint scaling. No fixed-beta third boundary derivative or interchange with the large-beta limit is asserted.
+
+Verification:
+- build: PASS, 28.080049199983478 seconds.
+- audit: PASS, 47.22004549999838 seconds.
+- checks: PASS, 27.536070400004974 seconds.
+- axiom-ledger: PASS, 53.809784699988086 seconds.
+
+Full root build:7048 jobs. Canonical COMPLETE safe-Foundation Lean.collectAxioms audit:56016 declarations, permitting only propext, Classical.choice and Quot.sound. ALL44 public types were printed unabridged and reviewed:28 theorem proofs,15 definitions and1 abbreviation; no private helpers or new instances. The complete four source bodies, including all integer witnesses and proof bodies, were read. COMPLETE persisted Foundation/AxiomAudit.lean passed. No sorry/admit/new mathematical axiom/native_decide, older-source/config/toolchain/compiler/trust change, heartbeat/recursion/instance-size increase or weakened audit occurred. One operational deviation was caught: the independent-check runner was started before the canonical audit process had exited, briefly overlapping two read-only Lean invocations. Both terminal handles were retained, both completed successfully on immutable mathematical inputs, and subsequent verification was serialized. These are checkpoint closure timings, NOT isolated benchmark evidence or a build-configuration change.
+
+ALL20 independent Lean examples passed, with no test repair after execution: exact denominator, pinned pole, a nonzero response coordinate=1/3, all three boundary signs and a zero cross-color source, actual response/harmonic identification, actual ordered row transport and inverse signs, a quadratic-norm-versus-determinant counterexample, positivity and sharp rational bounds. In particular the harness proves0.45<H3(1,1,1)<0.46, the genuinely integrable signed correction integral I(1,1,1)<0, eventual positivity of the ACTUAL odd free-energy quotient on the punctured neighborhood, nonexistence of its unpunctured extension to the same positive limit (the total quotient at0 is0), and the corresponding actual normalized partition odd limit. Eventual assertions follow from the proved positive limit; no numerical sign inference is used.
+
+An additional independent exact-rational script reconstructs the ORIGINAL32-link/72-face geometric normal equations without using Lean's Adata normal-equation theorem, parses all96 entries of the new witness, and checks them against the independent canonical pinned solve. Rank31, all96 normal equations, zero pin, cubic31877443263/69438734552 and numerator89146927712029176 agree exactly. Boundary-only cubic is1; changing the high-cap sign WITHOUT recomputing the harmonic response gives -82317237165/69438734552, confirming this diagnostic is sensitive to the chosen signs. That deliberately stale-response test is not a theorem about the correctly re-solved negative-amplitude process. Independent evidence prefix C:/Users/ramir/AppData/Local/Temp/stardust-ym-1717-*; the actual conclusions rest on kernel proofs, not this diagnostic.
+
+Integrity authenticates1716's exact manifest against approval80961831d2a6de6042287691e42396e5b1c31504. Among2830 recursive Foundation/root Lean sources, only these four modules, root imports and persisted AxiomAudit differ. All older mathematics,3 pinned configurations,113 baseline originals and21 Yang-Mills originals(20 distinct hashes) are unchanged. ResearchSources remains unmodified/uncommitted. Existing drafts/history, publication-role separation, master ref and the separate publication branch are preserved.
+
+Exact remaining bottleneck. The actual rational coefficient and its positivity at(1,1,1) are NOW VERIFIED, no longer missing. The joint beta=1/t^2, boundary=t scaling still does not identify a fixed-beta third derivative. A productive next route is to test whether parameter-uniform differentiated density envelopes and quantitative outside derivative bounds can establish that interchange, or yield a sharp obstruction. Before proving this, audit the exact fixed-beta response declarations and their hypotheses. Do not infer a generic c*xyz law, a nonlinear boundary-gauge cubic theorem, a thermal norm contradiction, stationary physical transfer contraction, physically justified iteration distance, scale/volume-uniform control, continuum/infinite-volume existence or a positive Yang-Mills mass gap from this one finite-cell value. All of those claims remain open except where separately certified. Classical exact finite linear algebra and determinant evaluation are not claimed novel.
+
+Exact-commit approval, complete new-history secret scanning, guarded PUBLIC main/research synchronization and independent remote refs/visibility checks remain closure gates; this pre-commit ledger does not assert remote backup succeeded. Only the user controls repository visibility. The indefinite focused research goal remains active.
