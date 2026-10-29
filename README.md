@@ -44,6 +44,8 @@ The [complex fourth-root companion](manuscripts/complex-root-limits/main.pdf) se
 
 The [Brownian-time average paper](manuscripts/ibm-average-time/main.pdf) proves that actual time integration restores the original two-source derivative domain, then differentiates its native gradient in the maximal-adjoint graph dual on each fixed raw observed past. Native time-slope norms diverge, precisely separating the valid dual calculus from a strong physical-time gradient.
 
+The [strain–pressure diagnostic note](manuscripts/strain-pressure-tests/main.pdf) combines exact nonnormal restricted-Euler profiles, pressure trace consistency and a smooth periodic viscous ABC counterexample to a displayed plus-pressure identity. It preserves the distinction between matrix models, infinite-energy affine fields and periodic PDE solutions.
+
 These are reviewed drafts, with compiled and visually inspected PDFs. Novelty remains unresolved; classical antecedents and exact limitations are recorded. The [editorial inventory](manuscripts/EDITORIAL_INVENTORY.md) groups the strongest remaining stories: arithmetic theta-flow zeros, completed signed multichannel calculus, and actual IBM variation and operator domains. Earlier IBM notes are preserved in the catalog.
 
 ## Selected verified mathematics

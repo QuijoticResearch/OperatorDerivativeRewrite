@@ -1,0 +1,394 @@
+{
+  "baseline": "bab688bb6140cd6316c80680095a914ea0d346db",
+  "entries": [
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RestrictedEulerAlignedGrowth.matrix_strain",
+      "file": "Foundation/RestrictedEulerAlignedGrowth.lean",
+      "line": 17,
+      "source_sha256": "bdae2077676a19919ca89136fdfd734fb861a1b63b8548090a87e6bdf00a8ff0",
+      "declaration_header": "theorem matrix_strain (p a : \u211d) :\n    strain (matrix p a)=Matrix.diagonal ![-p,1,p-1]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RestrictedEulerAlignedGrowth.lean#L17"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RestrictedEulerAlignedGrowth.self_similar_profile",
+      "file": "Foundation/RestrictedEulerAlignedGrowth.lean",
+      "line": 34,
+      "source_sha256": "bdae2077676a19919ca89136fdfd734fb861a1b63b8548090a87e6bdf00a8ff0",
+      "declaration_header": "theorem self_similar_profile (p a : \u211d) (ha : a^2=(p-2)*(p+1)) :\n    flow (matrix p a)=matrix p a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RestrictedEulerAlignedGrowth.lean#L34"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RestrictedEulerAlignedGrowth.trace_square",
+      "file": "Foundation/RestrictedEulerAlignedGrowth.lean",
+      "line": 41,
+      "source_sha256": "bdae2077676a19919ca89136fdfd734fb861a1b63b8548090a87e6bdf00a8ff0",
+      "declaration_header": "theorem trace_square (p a : \u211d) (ha : a^2=(p-2)*(p+1)) :\n    Matrix.trace (matrix p a*matrix p a)=6",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RestrictedEulerAlignedGrowth.lean#L41"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RestrictedEulerAlignedGrowth.scaled_vorticity",
+      "file": "Foundation/RestrictedEulerAlignedGrowth.lean",
+      "line": 46,
+      "source_sha256": "bdae2077676a19919ca89136fdfd734fb861a1b63b8548090a87e6bdf00a8ff0",
+      "declaration_header": "theorem scaled_vorticity (p a c : \u211d) :\n    vorticity (c \u2022 matrix p a)=![0,2*c*a,0]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RestrictedEulerAlignedGrowth.lean#L46"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RestrictedEulerAlignedGrowth.scaled_alignment",
+      "file": "Foundation/RestrictedEulerAlignedGrowth.lean",
+      "line": 51,
+      "source_sha256": "bdae2077676a19919ca89136fdfd734fb861a1b63b8548090a87e6bdf00a8ff0",
+      "declaration_header": "theorem scaled_alignment (p a c : \u211d) :\n    (strain (c \u2022 matrix p a)).mulVec (vorticity (c \u2022 matrix p a))=\n      c \u2022 vorticity (c \u2022 matrix p a)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RestrictedEulerAlignedGrowth.lean#L51"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RestrictedEulerAlignedGrowth.family_component_ode",
+      "file": "Foundation/RestrictedEulerAlignedGrowth.lean",
+      "line": 74,
+      "source_sha256": "bdae2077676a19919ca89136fdfd734fb861a1b63b8548090a87e6bdf00a8ff0",
+      "declaration_header": "theorem family_component_ode (p a t : \u211d) (ha : a^2=(p-2)*(p+1))\n    (ht : t \u2260 1) (i j : Fin 3) :\n    HasDerivAt (fun s => family p a s i j) (flow (family p a t) i j) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RestrictedEulerAlignedGrowth.lean#L74"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RestrictedEulerAlignedGrowth.family_stretching_unbounded",
+      "file": "Foundation/RestrictedEulerAlignedGrowth.lean",
+      "line": 89,
+      "source_sha256": "bdae2077676a19919ca89136fdfd734fb861a1b63b8548090a87e6bdf00a8ff0",
+      "declaration_header": "theorem family_stretching_unbounded (p a : \u211d) (ha : a \u2260 0) (M : \u211d) (hM : 0 \u2264 M) :\n    \u2203 t : \u211d, 0 \u2264 t \u2227 t < 1 \u2227 M < stretching (family p a t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RestrictedEulerAlignedGrowth.lean#L89"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RestrictedEulerAlignedGrowth.strainSquared_scaled",
+      "file": "Foundation/RestrictedEulerAlignedGrowth.lean",
+      "line": 141,
+      "source_sha256": "bdae2077676a19919ca89136fdfd734fb861a1b63b8548090a87e6bdf00a8ff0",
+      "declaration_header": "theorem strainSquared_scaled (p a c : \u211d) :\n    strainSquared (c \u2022 matrix p a)=c^2*(p^2+1+(p-1)^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RestrictedEulerAlignedGrowth.lean#L141"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RestrictedEulerSpectralDistinction.shifted_determinant",
+      "file": "Foundation/RestrictedEulerSpectralDistinction.lean",
+      "line": 12,
+      "source_sha256": "aeaa52d8816367316f5137ea81e6d238cdb9a775144ffe001b53b61bfc1b2518",
+      "declaration_header": "theorem shifted_determinant (p a r : \u211d) (ha : a^2=(p-2)*(p+1)) :\n    (r \u2022 (1 : Matrix (Fin 3) (Fin 3) \u211d)-matrix p a).det=(r-1)^2*(r+2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RestrictedEulerSpectralDistinction.lean#L12"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RestrictedEulerSpectralDistinction.profile_polynomial",
+      "file": "Foundation/RestrictedEulerSpectralDistinction.lean",
+      "line": 37,
+      "source_sha256": "aeaa52d8816367316f5137ea81e6d238cdb9a775144ffe001b53b61bfc1b2518",
+      "declaration_header": "theorem profile_polynomial (p a : \u211d) (ha : a^2=(p-2)*(p+1)) :\n    matrix p a*matrix p a+matrix p a=(2 : \u211d) \u2022 (1 : Matrix (Fin 3) (Fin 3) \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RestrictedEulerSpectralDistinction.lean#L37"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RestrictedEulerSpectralDistinction.nonnormal",
+      "file": "Foundation/RestrictedEulerSpectralDistinction.lean",
+      "line": 49,
+      "source_sha256": "aeaa52d8816367316f5137ea81e6d238cdb9a775144ffe001b53b61bfc1b2518",
+      "declaration_header": "theorem nonnormal (p a : \u211d) (hp : 2 < p) (ha : a \u2260 0) :\n    (matrix p a).transpose*matrix p a \u2260 matrix p a*(matrix p a).transpose",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RestrictedEulerSpectralDistinction.lean#L49"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RestrictedEulerArbitraryDepletion.normalized_scaled",
+      "file": "Foundation/RestrictedEulerArbitraryDepletion.lean",
+      "line": 18,
+      "source_sha256": "5a4423f970feab2c4edeacc098547356727d506c5843727cfb8e56aa9c71426c",
+      "declaration_header": "theorem normalized_scaled (p a c : \u211d) (ha : a \u2260 0) (hc : 0 < c) :\n    normalizedStretching (c \u2022 matrix p a)=1/Real.sqrt (strainFactor p)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RestrictedEulerArbitraryDepletion.lean#L18"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RestrictedEulerArbitraryDepletion.exists_profile",
+      "file": "Foundation/RestrictedEulerArbitraryDepletion.lean",
+      "line": 32,
+      "source_sha256": "5a4423f970feab2c4edeacc098547356727d506c5843727cfb8e56aa9c71426c",
+      "declaration_header": "theorem exists_profile (\u03b5 : \u211d) (h\u03b5 : 0 < \u03b5) :\n    \u2203 p a : \u211d, 2 < p \u2227 0 < a \u2227 a^2=(p-2)*(p+1) \u2227\n      (\u2200 c : \u211d, 0 < c \u2192 0 < normalizedStretching (c \u2022 matrix p a) \u2227\n        normalizedStretching (c \u2022 matrix p a) < \u03b5) \u2227\n      (\u2200 t : \u211d, t \u2260 1 \u2192 \u2200 i j : Fin 3,\n        HasDerivAt (fun s => family p a s i j) (flow (family p a t) i j) t) \u2227\n      (\u2200 M : \u211d, 0 \u2264 M \u2192 \u2203 t : \u211d, 0 \u2264 t \u2227 t < 1 \u2227 M < stretching (family p a t)) \u2227\n      (\u2200 r : \u211d, (r \u2022 (1 : Matrix (Fin 3) (Fin 3) \u211d)-matrix p a).det=(r-1)^2*(r+2))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RestrictedEulerArbitraryDepletion.lean#L32"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RestrictedEulerArbitraryDepletion.no_positive_normalized_threshold",
+      "file": "Foundation/RestrictedEulerArbitraryDepletion.lean",
+      "line": 62,
+      "source_sha256": "5a4423f970feab2c4edeacc098547356727d506c5843727cfb8e56aa9c71426c",
+      "declaration_header": "theorem no_positive_normalized_threshold :\n    \u00ac \u2203 \u03b5 : \u211d, 0 < \u03b5 \u2227 \u2200 p a : \u211d,\n      2 < p \u2192 0 < a \u2192 a^2=(p-2)*(p+1) \u2192 \u03b5 \u2264 normalizedStretching (matrix p a)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RestrictedEulerArbitraryDepletion.lean#L62"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.AffineNavierStokesProfiles.velocity_fderiv",
+      "file": "Foundation/AffineNavierStokesProfiles.lean",
+      "line": 37,
+      "source_sha256": "3c6b5b395011fb9de056a8285319dffcd1ea3b4faba6518d3ef97954a7eb541a",
+      "declaration_header": "theorem velocity_fderiv (p a t : \u211d) (x : Space) :\n    fderiv \u211d (velocity p a t) x=scale t \u2022 spatialMap p a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AffineNavierStokesProfiles.lean#L37"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.AffineNavierStokesProfiles.velocity_laplacian",
+      "file": "Foundation/AffineNavierStokesProfiles.lean",
+      "line": 48,
+      "source_sha256": "3c6b5b395011fb9de056a8285319dffcd1ea3b4faba6518d3ef97954a7eb541a",
+      "declaration_header": "theorem velocity_laplacian (p a t : \u211d) (x : Space) : laplacian (velocity p a t) x=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AffineNavierStokesProfiles.lean#L48"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.AffineNavierStokesProfiles.velocity_divergence",
+      "file": "Foundation/AffineNavierStokesProfiles.lean",
+      "line": 51,
+      "source_sha256": "3c6b5b395011fb9de056a8285319dffcd1ea3b4faba6518d3ef97954a7eb541a",
+      "declaration_header": "theorem velocity_divergence (p a t : \u211d) (x : Space) : divergence (velocity p a t) x=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AffineNavierStokesProfiles.lean#L51"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.AffineNavierStokesProfiles.pressure_hessian",
+      "file": "Foundation/AffineNavierStokesProfiles.lean",
+      "line": 98,
+      "source_sha256": "3c6b5b395011fb9de056a8285319dffcd1ea3b4faba6518d3ef97954a7eb541a",
+      "declaration_header": "theorem pressure_hessian (t : \u211d) (x : Space) :\n    pressureHessian t x=(-2*(scale t)^2) \u2022 (1 : Matrix (Fin 3) (Fin 3) \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AffineNavierStokesProfiles.lean#L98"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.AffineNavierStokesProfiles.momentum",
+      "file": "Foundation/AffineNavierStokesProfiles.lean",
+      "line": 110,
+      "source_sha256": "3c6b5b395011fb9de056a8285319dffcd1ea3b4faba6518d3ef97954a7eb541a",
+      "declaration_header": "theorem momentum (p a t \u03bd : \u211d) (ha : a^2=(p-2)*(p+1)) (ht : t \u2260 1) (x : Space) :\n    deriv (fun s => velocity p a s x) t+advection (velocity p a t) x+pressureGradient t x=\n      \u03bd \u2022 laplacian (velocity p a t) x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AffineNavierStokesProfiles.lean#L110"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.AffineNavierStokesProfiles.pressure_poisson",
+      "file": "Foundation/AffineNavierStokesProfiles.lean",
+      "line": 118,
+      "source_sha256": "3c6b5b395011fb9de056a8285319dffcd1ea3b4faba6518d3ef97954a7eb541a",
+      "declaration_header": "theorem pressure_poisson (p a t : \u211d) (ha : a^2=(p-2)*(p+1)) (x : Space) :\n    -Matrix.trace (pressureHessian t x)=Matrix.trace (family p a t*family p a t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AffineNavierStokesProfiles.lean#L118"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.AffineNavierStokesProfiles.velocity_not_periodic",
+      "file": "Foundation/AffineNavierStokesProfiles.lean",
+      "line": 130,
+      "source_sha256": "3c6b5b395011fb9de056a8285319dffcd1ea3b4faba6518d3ef97954a7eb541a",
+      "declaration_header": "theorem velocity_not_periodic (p a t : \u211d) (ht : t \u2260 1) :\n    \u00ac \u2200 x : Space, velocity p a t (x+Pi.single 1 1)=velocity p a t x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AffineNavierStokesProfiles.lean#L130"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.AffineNavierStokesProfiles.velocity_spatially_unbounded",
+      "file": "Foundation/AffineNavierStokesProfiles.lean",
+      "line": 138,
+      "source_sha256": "3c6b5b395011fb9de056a8285319dffcd1ea3b4faba6518d3ef97954a7eb541a",
+      "declaration_header": "theorem velocity_spatially_unbounded (p a t B : \u211d) (ht : t < 1) :\n    \u2203 x : Space, B < velocity p a t x 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AffineNavierStokesProfiles.lean#L138"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.AffineStretchingPressureBalance.density_formula",
+      "file": "Foundation/AffineStretchingPressureBalance.lean",
+      "line": 46,
+      "source_sha256": "46d55fc2dbbe5cac9f6b7b351a20434e1ae44385fd8825935a14f7bda4ea85a9",
+      "declaration_header": "theorem density_formula (p a t : \u211d) (x : Space) : density p a t x=4*a^2*(scale t)^3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AffineStretchingPressureBalance.lean#L46"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.AffineStretchingPressureBalance.amplification_formula",
+      "file": "Foundation/AffineStretchingPressureBalance.lean",
+      "line": 50,
+      "source_sha256": "46d55fc2dbbe5cac9f6b7b351a20434e1ae44385fd8825935a14f7bda4ea85a9",
+      "declaration_header": "theorem amplification_formula (p a t : \u211d) (x : Space) :\n    amplification p a t x=4*a^2*(scale t)^4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AffineStretchingPressureBalance.lean#L50"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.AffineStretchingPressureBalance.pressure_formula",
+      "file": "Foundation/AffineStretchingPressureBalance.lean",
+      "line": 55,
+      "source_sha256": "46d55fc2dbbe5cac9f6b7b351a20434e1ae44385fd8825935a14f7bda4ea85a9",
+      "declaration_header": "theorem pressure_formula (p a t : \u211d) (x : Space) :\n    pressureContraction p a t x=-8*a^2*(scale t)^4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AffineStretchingPressureBalance.lean#L55"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.AffineStretchingPressureBalance.minus_pressure_balance",
+      "file": "Foundation/AffineStretchingPressureBalance.lean",
+      "line": 73,
+      "source_sha256": "46d55fc2dbbe5cac9f6b7b351a20434e1ae44385fd8825935a14f7bda4ea85a9",
+      "declaration_header": "theorem minus_pressure_balance (p a t : \u211d) (x : Space) (ht : t \u2260 1) :\n    deriv (fun s => density p a s x) t+fderiv \u211d (density p a t) x (velocity p a t x)=\n      amplification p a t x-pressureContraction p a t x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AffineStretchingPressureBalance.lean#L73"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.AffineStretchingPressureBalance.plus_pressure_fails",
+      "file": "Foundation/AffineStretchingPressureBalance.lean",
+      "line": 79,
+      "source_sha256": "46d55fc2dbbe5cac9f6b7b351a20434e1ae44385fd8825935a14f7bda4ea85a9",
+      "declaration_header": "theorem plus_pressure_fails (p a t : \u211d) (x : Space) (ha : a \u2260 0) (ht : t < 1) :\n    deriv (fun s => density p a s x) t+fderiv \u211d (density p a t) x (velocity p a t x) \u2260\n      amplification p a t x+pressureContraction p a t x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/AffineStretchingPressureBalance.lean#L79"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.PressureStrainTraceObstruction.vorticity_trace_identity",
+      "file": "Foundation/PressureStrainTraceObstruction.lean",
+      "line": 14,
+      "source_sha256": "5bcf9ae0b2c5df772cfaa4d43092f2e937c46d8fdf78d3373e5d53c91de71f39",
+      "declaration_header": "theorem vorticity_trace_identity (A : Matrix (Fin 3) (Fin 3) \u211d) :\n    dotProduct (vorticity A) (vorticity A)+Matrix.trace (A*A)=frobeniusSquared A",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PressureStrainTraceObstruction.lean#L14"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.PressureStrainTraceObstruction.source_trace_under_poisson",
+      "file": "Foundation/PressureStrainTraceObstruction.lean",
+      "line": 44,
+      "source_sha256": "5bcf9ae0b2c5df772cfaa4d43092f2e937c46d8fdf78d3373e5d53c91de71f39",
+      "declaration_header": "theorem source_trace_under_poisson (A P : Matrix (Fin 3) (Fin 3) \u211d)\n    (hP : -Matrix.trace P=Matrix.trace (A*A)) :\n    Matrix.trace (sourceStrainRHS A P)=frobeniusSquared A",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PressureStrainTraceObstruction.lean#L44"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.PressureStrainTraceObstruction.no_traceless_repair",
+      "file": "Foundation/PressureStrainTraceObstruction.lean",
+      "line": 66,
+      "source_sha256": "5bcf9ae0b2c5df772cfaa4d43092f2e937c46d8fdf78d3373e5d53c91de71f39",
+      "declaration_header": "theorem no_traceless_repair (A P D : Matrix (Fin 3) (Fin 3) \u211d) (hA : A \u2260 0)\n    (hP : -Matrix.trace P=Matrix.trace (A*A)) (hD : Matrix.trace D=0) :\n    Matrix.trace (sourceStrainRHS A P+D) \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PressureStrainTraceObstruction.lean#L66"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.PressureStrainTraceObstruction.full_trace_zero_iff_poisson",
+      "file": "Foundation/PressureStrainTraceObstruction.lean",
+      "line": 92,
+      "source_sha256": "5bcf9ae0b2c5df772cfaa4d43092f2e937c46d8fdf78d3373e5d53c91de71f39",
+      "declaration_header": "theorem full_trace_zero_iff_poisson (A P : Matrix (Fin 3) (Fin 3) \u211d) :\n    Matrix.trace (fullStrainRHS A P)=0 \u2194 -Matrix.trace P=Matrix.trace (A*A)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PressureStrainTraceObstruction.lean#L92"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.PressureStrainTraceObstruction.traceFree_trace_zero_iff",
+      "file": "Foundation/PressureStrainTraceObstruction.lean",
+      "line": 107,
+      "source_sha256": "5bcf9ae0b2c5df772cfaa4d43092f2e937c46d8fdf78d3373e5d53c91de71f39",
+      "declaration_header": "theorem traceFree_trace_zero_iff (A P : Matrix (Fin 3) (Fin 3) \u211d) :\n    Matrix.trace (traceFreeStrainRHS A P)=0 \u2194 Matrix.trace P=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PressureStrainTraceObstruction.lean#L107"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ABCNavierStokesFlow.momentum",
+      "file": "Foundation/ABCNavierStokesFlow.lean",
+      "line": 68,
+      "source_sha256": "34e49263bbdfd56f990d0c008281a4cc1e8422d11137bcc4956542a0f4985a07",
+      "declaration_header": "theorem momentum (nu t : \u211d) (x : Space) (i : Fin 3) :\n    deriv (fun s => velocity nu s x i) t+realAdvection (velocity nu t) x i+\n      realPartial i (pressure nu t) x=\n      nu*realLaplacian (fun y => velocity nu t y i) x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ABCNavierStokesFlow.lean#L68"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ABCNavierStokesFlow.incompressible",
+      "file": "Foundation/ABCNavierStokesFlow.lean",
+      "line": 77,
+      "source_sha256": "34e49263bbdfd56f990d0c008281a4cc1e8422d11137bcc4956542a0f4985a07",
+      "declaration_header": "theorem incompressible (nu t : \u211d) (x : Space) : realDivergence (velocity nu t) x=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ABCNavierStokesFlow.lean#L77"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ABCNavierStokesFlow.periodic",
+      "file": "Foundation/ABCNavierStokesFlow.lean",
+      "line": 80,
+      "source_sha256": "34e49263bbdfd56f990d0c008281a4cc1e8422d11137bcc4956542a0f4985a07",
+      "declaration_header": "theorem periodic (nu t : \u211d) (x : Space) (i j : Fin 3) :\n    Function.Periodic (fun r => velocity nu t (Function.update x j r) i) (2*Real.pi)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ABCNavierStokesFlow.lean#L80"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealBeltramiMeans.abc_amplification_mean",
+      "file": "Foundation/RealBeltramiMeans.lean",
+      "line": 98,
+      "source_sha256": "2d71eee8d023d571e6063ae22988b41fa2b7c4ba156bdfd2b31370f16417791f",
+      "declaration_header": "theorem abc_amplification_mean : realBoxAverage (realAmplification (realizeReal abc))=3/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealBeltramiMeans.lean#L98"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealBeltramiMeans.abc_pressure_mean",
+      "file": "Foundation/RealBeltramiMeans.lean",
+      "line": 107,
+      "source_sha256": "2d71eee8d023d571e6063ae22988b41fa2b7c4ba156bdfd2b31370f16417791f",
+      "declaration_header": "theorem abc_pressure_mean : realBoxAverage (realPressureContraction (realizeReal abc)\n    (realSynthesis (-kinetic (\ud835\udd5c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealBeltramiMeans.lean#L107"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealBeltramiMeans.flow_stretching_mean_derivative",
+      "file": "Foundation/RealBeltramiMeans.lean",
+      "line": 122,
+      "source_sha256": "2d71eee8d023d571e6063ae22988b41fa2b7c4ba156bdfd2b31370f16417791f",
+      "declaration_header": "theorem flow_stretching_mean_derivative (nu t : \u211d) :\n    deriv (fun s => realBoxAverage (realStretching (velocity nu s))) t=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealBeltramiMeans.lean#L122"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.BeltramiViscousTrace.abc_viscous_mean",
+      "file": "Foundation/BeltramiViscousTrace.lean",
+      "line": 74,
+      "source_sha256": "6b1388b5fe6ef21f4b33395765b848bbc41f5c4bb69507eb13cc2bcfcf8f5f2e",
+      "declaration_header": "theorem abc_viscous_mean : realBoxAverage (realViscous (realizeReal abc))=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BeltramiViscousTrace.lean#L74"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicPressureSignCounterexample.profile_smooth",
+      "file": "Foundation/PeriodicPressureSignCounterexample.lean",
+      "line": 16,
+      "source_sha256": "0854c5c800e246312e86a2dd2c5010ec3ff7b444e7885a08237d1adb657fb567",
+      "declaration_header": "theorem profile_smooth (i : Fin 3) : ContDiff \u211d \u22a4 (fun x : Space => realizeReal abc x i)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicPressureSignCounterexample.lean#L16"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicPressureSignCounterexample.pressure_formula",
+      "file": "Foundation/PeriodicPressureSignCounterexample.lean",
+      "line": 37,
+      "source_sha256": "0854c5c800e246312e86a2dd2c5010ec3ff7b444e7885a08237d1adb657fb567",
+      "declaration_header": "theorem pressure_formula (nu t : \u211d) (x : Space) :\n    pressure nu t x= -(1/2 : \u211d)*\u2211 i, (velocity nu t x i)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicPressureSignCounterexample.lean#L37"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicPressureSignCounterexample.pressure_periodic",
+      "file": "Foundation/PeriodicPressureSignCounterexample.lean",
+      "line": 56,
+      "source_sha256": "0854c5c800e246312e86a2dd2c5010ec3ff7b444e7885a08237d1adb657fb567",
+      "declaration_header": "theorem pressure_periodic (nu t : \u211d) (x : Space) (j : Fin 3) :\n    Function.Periodic (fun r => pressure nu t (Function.update x j r)) (2*Real.pi)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicPressureSignCounterexample.lean#L56"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicPressureSignCounterexample.plusPressureRHS_initial",
+      "file": "Foundation/PeriodicPressureSignCounterexample.lean",
+      "line": 79,
+      "source_sha256": "0854c5c800e246312e86a2dd2c5010ec3ff7b444e7885a08237d1adb657fb567",
+      "declaration_header": "theorem plusPressureRHS_initial (nu : \u211d) : plusPressureRHS nu 0=3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicPressureSignCounterexample.lean#L79"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicPressureSignCounterexample.plus_pressure_balance_fails",
+      "file": "Foundation/PeriodicPressureSignCounterexample.lean",
+      "line": 84,
+      "source_sha256": "0854c5c800e246312e86a2dd2c5010ec3ff7b444e7885a08237d1adb657fb567",
+      "declaration_header": "theorem plus_pressure_balance_fails (nu : \u211d) :\n    deriv (fun s => realBoxAverage (realStretching (velocity nu s))) 0\u2260plusPressureRHS nu 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicPressureSignCounterexample.lean#L84"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicPressureSignCounterexample.minus_pressure_initial",
+      "file": "Foundation/PeriodicPressureSignCounterexample.lean",
+      "line": 89,
+      "source_sha256": "0854c5c800e246312e86a2dd2c5010ec3ff7b444e7885a08237d1adb657fb567",
+      "declaration_header": "theorem minus_pressure_initial (nu : \u211d) :\n    realBoxAverage (realAmplification (velocity nu 0))-\n      realBoxAverage (realPressureContraction (velocity nu 0) (pressure nu 0))-\n        2*nu*realBoxAverage (realViscous (velocity nu 0))=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicPressureSignCounterexample.lean#L89"
+    }
+  ],
+  "paper_sections": {
+    "2": "RE exact family, full versus symmetric spectra, normalized depletion",
+    "3": "actual affine derivatives and local PDE/sign calibration",
+    "4": "full/deviatoric pressure trace consistency",
+    "5": "actual smooth periodic viscous ABC calibration"
+  },
+  "human_reorganization": [
+    "The same exact profile polynomial supplies the restricted-Euler ODE and actual affine momentum calculation. These are different mathematical assertions with different spatial hypotheses.",
+    "Infinite affine whole-space energy is proved directly from u_2=c*x_2 and expanding boxes; mapped formal sources explicitly prove nonperiodicity and spatial unboundedness, not a named infinite-integral theorem.",
+    "The scaled characteristic polynomial is an elementary consequence of the mapped unscaled determinant and positive scaling, not a new named formal theorem.",
+    "Equality between the full and deviatoric strain expressions is a direct classical substitution of the mapped pressure Poisson constraint; the formal trace criteria remain distinct.",
+    "The periodic viscous mean is reconstructed by three explicit trigonometric products, replacing the mapped invariant-trace transport/cancellation proof.",
+    "No proposed general minus-pressure balance is inferred from the two calibration examples. The only refuted formula is written explicitly."
+  ],
+  "literature": [
+    {
+      "url": "https://doi.org/10.1063/1.858295",
+      "review": "Primary Cantwell 1992 author-hosted PDF inspected: model formulation, source/closure distinction and initial versus asymptotic strain/rotation geometry. Family is classical context, no new RE solution theory claimed."
+    },
+    {
+      "url": "https://doi.org/10.1017/jfm.2024.143",
+      "review": "Primary PDF inspected, equations 1.1/1.2 and deviatoric pressure definition; the diagnostic is not alleged to refute these correct published conventions."
+    },
+    {
+      "url": "https://arxiv.org/abs/1601.02724",
+      "review": "Primary abstract/model inspected for exact ABC profile attribution; orbit theorems not used."
+    }
+  ],
+  "novelty": "UNRESOLVED; exact diagnostic/formalization companion in classical model families"
+}
