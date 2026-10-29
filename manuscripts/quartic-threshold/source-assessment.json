@@ -1,5 +1,5 @@
 {
-  "status": "EDITORIAL_SOURCE_ASSESSMENT_NOT_A_COMPLETE_PAPER",
+  "status": "SOURCE_DOSSIER_FOR_REVIEWED_EDITORIAL_DRAFT",
   "baseline": "bab688bb6140cd6316c80680095a914ea0d346db",
   "created_utc": "2026-10-29T11:49:03.501552+00:00",
   "mathematical_sources_modified": false,
@@ -138,58 +138,6 @@
       "The strictly negative actual H_8 expression excludes LP(8). Continuity in t of the three actual derivatives at this fixed x preserves strict negativity on an open neighborhood of 8. The all-real/split-polynomial equivalence then supplies a nonreal actual zero at every time in that neighborhood. Because the neighborhood includes some times greater than 8, every eventual start lies above a fixed 8+delta; consequently A>8 once nonemptiness has been proved by the separate global saddle theorem."
     ]
   },
-  "remaining_human_proof_obligations": [
-    {
-      "block": "Actual saddle analysis",
-      "sources": [
-        "RiemannQuarticTransitionSaddle",
-        "RiemannQuarticTransitionCorrection",
-        "RiemannQuarticTransitionAnalyticBranch",
-        "RiemannQuarticComplexCorrection"
-      ],
-      "requirement": "Reconstruct all model-to-actual corrections, branch geometry and uniform quantifiers. The model phase t*z^4+9*z-pi*exp(4*z) is not the full log kernel."
-    },
-    {
-      "block": "Actual integrated Gaussian/pair estimates",
-      "sources": [
-        "RiemannQuarticTransitionComplexPairing",
-        "RiemannQuarticFarComplexPairing",
-        "RiemannQuarticTransitionCosinePhase",
-        "RiemannQuarticFarCosinePhase",
-        "RiemannQuarticReflectedDominance"
-      ],
-      "requirement": "Give complete contour deformation, local Gaussian error, actual horizontal tails and vertical endpoint budgets. The complex model Gaussian tail and scalar radius budgets are reconstructed below; horizontal absolute bounds alone cannot replace the oscillatory far Gaussian and actual tail estimates."
-    },
-    {
-      "block": "Buffered local reality and simplicity",
-      "sources": [
-        "RiemannQuarticTransitionSimpleZeros",
-        "RiemannQuarticLocalCosineZeros",
-        "RiemannQuarticFarSimpleZeros"
-      ],
-      "requirement": "The generic buffered cosine lemma and phase straightening are now fully reconstructed in completed_human_proof_blocks. Still supply the complete actual analytic envelope/phase estimates in each transition and far regime that meet those hypotheses."
-    },
-    {
-      "block": "Exact arithmetic obstruction",
-      "sources": [
-        "RiemannQuarticCertifiedGrid",
-        "RiemannQuarticCellWitnesses",
-        "RiemannQuarticGridChecks",
-        "RiemannQuarticLaguerreWitness"
-      ],
-      "requirement": "Human analytic tail/cutoff proofs, Taylor cell remainder, normalized-jet recurrence, interval method, complete endpoint table, independent exact numerator re-sum and final rational margin are now supplied below. The 160 whole-cell and 480 value inclusions remain explicitly computer-assisted using the existing fully audited exact Lean certificate; no replacement float or new interval-engine verification is claimed. Integrate this documented certificate into the eventual paper."
-    },
-    {
-      "block": "Entire real-zero / split-polynomial equivalence",
-      "sources": [
-        "RiemannQuarticEntireGrowth",
-        "RiemannQuarticActualPolynomialLimit",
-        "RiemannQuarticCanonicalProductLimit",
-        "RiemannQuarticDenominatorLimit"
-      ],
-      "requirement": "COMPLETED in the human blocks: actual positivity/decay/entire and compact-time properties, the C_t exp(|z|^(3/2)) bound, finite-disk Blaschke normalization and even double-zero Schwarz estimate, zero count and denominator convergence, and reverse vertical-modulus argument. No additional Hadamard-classification hypothesis is needed. Still integrate these full arguments into the eventual paper."
-    }
-  ],
   "primary_literature": [
     {
       "author": "N. G. de Bruijn",
@@ -1855,7 +1803,7 @@
       ]
     }
   ],
-  "updated_utc": "2026-10-29T11:59:23.177270+00:00",
+  "updated_utc": "2026-10-29T12:40:56.951495+00:00",
   "certificate_transcription": {
     "source_file": "Foundation/RiemannQuarticCellWitnesses.lean",
     "source_sha256": "43e4ba738216bbd4fdc75c88d2857afc441646b15c3d218b11d6eb3db2fd30eb",
@@ -4121,6 +4069,70 @@
     "upper_bound_less_than_negative_2_over_10_pow_20": true,
     "exact_rational_checks_passed": true,
     "full_interval_engine_rerun": false,
-    "baseline_certificate": "Existing fully audited Lean proofs; this is an independent transcription/aggregation check only."
+    "baseline_certificate": "Existing fully audited Lean proofs; this is an independent transcription/aggregation check only.",
+    "source_text_sha256": "2c2224d419399562bb640bbfad6d2e67c75fe77f4f46751605b88643d236fb3f"
+  },
+  "historical_pre_draft_obligations": [
+    {
+      "block": "Actual saddle analysis",
+      "sources": [
+        "RiemannQuarticTransitionSaddle",
+        "RiemannQuarticTransitionCorrection",
+        "RiemannQuarticTransitionAnalyticBranch",
+        "RiemannQuarticComplexCorrection"
+      ],
+      "requirement": "Reconstruct all model-to-actual corrections, branch geometry and uniform quantifiers. The model phase t*z^4+9*z-pi*exp(4*z) is not the full log kernel."
+    },
+    {
+      "block": "Actual integrated Gaussian/pair estimates",
+      "sources": [
+        "RiemannQuarticTransitionComplexPairing",
+        "RiemannQuarticFarComplexPairing",
+        "RiemannQuarticTransitionCosinePhase",
+        "RiemannQuarticFarCosinePhase",
+        "RiemannQuarticReflectedDominance"
+      ],
+      "requirement": "Give complete contour deformation, local Gaussian error, actual horizontal tails and vertical endpoint budgets. The complex model Gaussian tail and scalar radius budgets are reconstructed below; horizontal absolute bounds alone cannot replace the oscillatory far Gaussian and actual tail estimates."
+    },
+    {
+      "block": "Buffered local reality and simplicity",
+      "sources": [
+        "RiemannQuarticTransitionSimpleZeros",
+        "RiemannQuarticLocalCosineZeros",
+        "RiemannQuarticFarSimpleZeros"
+      ],
+      "requirement": "The generic buffered cosine lemma and phase straightening are now fully reconstructed in completed_human_proof_blocks. Still supply the complete actual analytic envelope/phase estimates in each transition and far regime that meet those hypotheses."
+    },
+    {
+      "block": "Exact arithmetic obstruction",
+      "sources": [
+        "RiemannQuarticCertifiedGrid",
+        "RiemannQuarticCellWitnesses",
+        "RiemannQuarticGridChecks",
+        "RiemannQuarticLaguerreWitness"
+      ],
+      "requirement": "Human analytic tail/cutoff proofs, Taylor cell remainder, normalized-jet recurrence, interval method, complete endpoint table, independent exact numerator re-sum and final rational margin are now supplied below. The 160 whole-cell and 480 value inclusions remain explicitly computer-assisted using the existing fully audited exact Lean certificate; no replacement float or new interval-engine verification is claimed. Integrate this documented certificate into the eventual paper."
+    },
+    {
+      "block": "Entire real-zero / split-polynomial equivalence",
+      "sources": [
+        "RiemannQuarticEntireGrowth",
+        "RiemannQuarticActualPolynomialLimit",
+        "RiemannQuarticCanonicalProductLimit",
+        "RiemannQuarticDenominatorLimit"
+      ],
+      "requirement": "COMPLETED in the human blocks: actual positivity/decay/entire and compact-time properties, the C_t exp(|z|^(3/2)) bound, finite-disk Blaschke normalization and even double-zero Schwarz estimate, zero count and denominator convergence, and reverse vertical-modulus argument. No additional Hadamard-classification hypothesis is needed. Still integrate these full arguments into the eventual paper."
+    }
+  ],
+  "remaining_human_proof_obligations": [],
+  "proof_closure": {
+    "entire_function_and_polynomial_reconstruction": "Sections 2\u20133",
+    "actual_arithmetic_obstruction": "Section 4; exact finite inclusions remain computer-assisted",
+    "full_kernel_and_uniform_actual_saddle_estimate": "Sections 5\u20136",
+    "contours_reflection_analytic_pair_and_buffered_zeros": "Section 7",
+    "transition_far_saddles_and_common_center_coverage": "Sections 8\u20139",
+    "attainment_confinement_and_multiple_endpoint_zero": "Sections 9\u201310",
+    "method": "Human regrouping with unspecified uniform constants, not a claim of new named Lean lemmas for every intermediate estimate.",
+    "remaining_editorial_limits": "Independent referee review, attribution and novelty determination remain outstanding; reviewed draft is not submission-ready."
   }
 }

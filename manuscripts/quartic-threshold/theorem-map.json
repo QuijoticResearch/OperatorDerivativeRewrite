@@ -1,0 +1,394 @@
+{
+  "baseline": "bab688bb6140cd6316c80680095a914ea0d346db",
+  "entries": [
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticFlow.flow",
+      "file": "Foundation/RiemannQuarticFlow.lean",
+      "line": 50,
+      "type_or_definition_header": "def flow (t : \u211d) (z : \u2102) : \u2102",
+      "source_sha256": "0dd9294506279409455676d85105731c34d1fafdf754c047df0defe52a17728e",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticFlow.lean#L50",
+      "paper": "1\u20132 and 5: actual transform and kernel"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticFlow.flow_differentiable",
+      "file": "Foundation/RiemannQuarticFlow.lean",
+      "line": 82,
+      "type_or_definition_header": "theorem flow_differentiable (t : \u211d) : Differentiable \u2102 (flow t)",
+      "source_sha256": "0dd9294506279409455676d85105731c34d1fafdf754c047df0defe52a17728e",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticFlow.lean#L82",
+      "paper": "1\u20132 and 5: actual transform and kernel"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticEntireGrowth.exists_three_halves_growth",
+      "file": "Foundation/RiemannQuarticEntireGrowth.lean",
+      "line": 76,
+      "type_or_definition_header": "theorem exists_three_halves_growth (t : \u211d) :\n    \u2203 C : \u211d, 0 < C \u2227 \u2200 z : \u2102, \u2016flow t z\u2016 \u2264 C*Real.exp (\u2016z\u2016^(3/2 : \u211d))",
+      "source_sha256": "d17033feb857ac1fb733af51f86411beb356b91abc5981cb7d3143b3137a9929",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticEntireGrowth.lean#L76",
+      "paper": "2\u20133: entire functions and polynomial approximation"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticTransitionSimpleZeros.local_real_simple_zero_of_differentiable",
+      "file": "Foundation/RiemannQuarticTransitionSimpleZeros.lean",
+      "line": 65,
+      "type_or_definition_header": "theorem local_real_simple_zero_of_differentiable (g : \u2102 \u2192 \u2102)\n    (hg : Differentiable \u2102 g) (hgconj : \u2200 z : \u2102, g (conj z)=conj (g z))\n    (x r s D : \u211d) (E \u03a6 : \u2102 \u2192 \u2102)\n    (hs : 0 < s) (hr : 0 < r) (hD : 0 \u2264 D)\n    (hscaled : D/s \u2264 1/1000000) (hbuffer : 1/s \u2264 r/2)\n    (hglobal : \u2200 z : \u2102, E z \u2260 0 \u2227 E (conj z)=conj (E z) \u2227 \u03a6 (conj z)=conj (\u03a6 z))\n    (hlocal : \u2200 z : \u2102, \u2016z-(x : \u2102)\u2016 < r \u2192 AnalyticAt \u2102 E z \u2227 AnalyticAt \u2102 \u03a6 z \u2227\n      \u2016deriv \u03a6 z-(s : \u2102)\u2016 \u2264 D \u2227\n      \u2016g z/E z-Complex.cos (\u03a6 z)\u2016 \u2264 (1/1000000)*Real.cosh (\u03a6 z).im)\n    (z : \u2102) (hz : \u2016z-(x : \u2102)\u2016 < r/2) (hzero : g z=0) :\n    z.im=0 \u2227 deriv (g) z \u2260 0",
+      "source_sha256": "78a61f594393089f95f2016b0068127957878c4a5e953de23cbc06c647403cfb",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticTransitionSimpleZeros.lean#L65",
+      "paper": "5\u20139: actual uniform saddle analysis and global assembly"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticTransitionSimpleZeros.bounded_ratio_real_simple_zeros",
+      "file": "Foundation/RiemannQuarticTransitionSimpleZeros.lean",
+      "line": 229,
+      "type_or_definition_header": "theorem bounded_ratio_real_simple_zeros (M : \u211d) (hM : 0 \u2264 M) :\n    \u2200 R : \u211d, 0 \u2264 R \u2192 \u2200\u1da0 t : \u211d in atTop, \u2203 u : \u211d,\n      R \u2264 u \u2227 65536*(M+7) \u2264 u \u2227 RiemannQuarticSaddleTimes.phaseSlope t u=0 \u2227\n      \u2200 z : \u2102, \u2016z\u2016 \u2264 M*RiemannQuarticTransitionSaddle.realScale u \u2192\n        RiemannQuarticFlow.flow t z=0 \u2192 z.im=0 \u2227 deriv (RiemannQuarticFlow.flow t) z \u2260 0",
+      "source_sha256": "78a61f594393089f95f2016b0068127957878c4a5e953de23cbc06c647403cfb",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticTransitionSimpleZeros.lean#L229",
+      "paper": "5\u20139: actual uniform saddle analysis and global assembly"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticTransitionCosinePhase.eventually_actual_cosine_disks",
+      "file": "Foundation/RiemannQuarticTransitionCosinePhase.lean",
+      "line": 151,
+      "type_or_definition_header": "theorem eventually_actual_cosine_disks (M \u03b5 : \u211d) (hM : 0 \u2264 M) (h\u03b5 : 0 < \u03b5) :\n    \u2200\u1da0 t : \u211d in atTop, \u2200 u : \u211d, 65536*(M+7) \u2264 u \u2192\n      RiemannQuarticSaddleTimes.phaseSlope t u=0 \u2192 \u2200 x : \u211d,\n      |x| \u2264 M*RiemannQuarticTransitionSaddle.realScale u \u2192\n      \u2203 E \u03a6 : \u2102 \u2192 \u2102,\n        (\u2200 z : \u2102, E z \u2260 0 \u2227 E (conj z)=conj (E z) \u2227 \u03a6 (conj z)=conj (\u03a6 z)) \u2227\n        \u2200 z : \u2102, \u2016z-(x : \u2102)\u2016 < 1/(128*(M+8)) \u2192\n          AnalyticAt \u2102 E z \u2227 AnalyticAt \u2102 \u03a6 z \u2227\n          \u2016deriv \u03a6 z-(u : \u2102)\u2016 \u2264 M+8 \u2227\n          \u2016RiemannQuarticFlow.flow t z/E z-Complex.cos (\u03a6 z)\u2016 \u2264 \u03b5*Real.cosh (\u03a6 z).im",
+      "source_sha256": "90bdd7920db2781eb1ef33187b93d15d53ecf0115965fe7c45691dbfb3f74c52",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticTransitionCosinePhase.lean#L151",
+      "paper": "5\u20139: actual uniform saddle analysis and global assembly"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticUniformFarScale.uniform_actual_far_saddles",
+      "file": "Foundation/RiemannQuarticUniformFarScale.lean",
+      "line": 87,
+      "type_or_definition_header": "theorem uniform_actual_far_saddles (t u : \u211d) (ht : 1 \u2264 t) (hu : 120021 \u2264 u)\n    (hs : phaseSlope t u=0) (z : \u2102) (hz : z.im \u2264 0)\n    (hcut : Real.exp 64*realScale u \u2264 \u2016z\u2016) :\n    \u2203 w v : \u2102, 120020 \u2264 w.re \u2227 |w.im| \u2264 1/2 \u2227\n      100*(t*(\u2016w\u2016+1)^3+1) \u2264 \u2016z\u2016 \u2227 modelDerivative t w= -(Complex.I*z) \u2227\n      \u2016v-w\u2016 \u2264 1/\u2016z\u2016 \u2227 RiemannQuarticSaddleBranch.complexSlope t v= -(Complex.I*z)",
+      "source_sha256": "8f290571541ce5fb696535ce53a4c9208987b2b10a67eb9544c55aa8f3055a17",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticUniformFarScale.lean#L87",
+      "paper": "5\u20139: actual uniform saddle analysis and global assembly"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticUniformFarScale.uniform_far_zeros_real",
+      "file": "Foundation/RiemannQuarticUniformFarScale.lean",
+      "line": 132,
+      "type_or_definition_header": "theorem uniform_far_zeros_real :\n    \u2203 N : \u211d, \u2200 (t u : \u211d), 1 \u2264 t \u2192 120021 \u2264 u \u2192 phaseSlope t u=0 \u2192 N \u2264 u \u2192\n      \u2200 z : \u2102, 2*Real.exp 64*realScale u \u2264 \u2016z\u2016 \u2192 RiemannQuarticFlow.flow t z=0 \u2192 z.im=0",
+      "source_sha256": "8f290571541ce5fb696535ce53a4c9208987b2b10a67eb9544c55aa8f3055a17",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticUniformFarScale.lean#L132",
+      "paper": "5\u20139: actual uniform saddle analysis and global assembly"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticUniformFarScale.eventually_all_zeros_real",
+      "file": "Foundation/RiemannQuarticUniformFarScale.lean",
+      "line": 205,
+      "type_or_definition_header": "theorem eventually_all_zeros_real :\n    \u2200\u1da0 t : \u211d in atTop, \u2200 z : \u2102, RiemannQuarticFlow.flow t z=0 \u2192 z.im=0",
+      "source_sha256": "8f290571541ce5fb696535ce53a4c9208987b2b10a67eb9544c55aa8f3055a17",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticUniformFarScale.lean#L205",
+      "paper": "5\u20139: actual uniform saddle analysis and global assembly"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticGlobalSimpleZeros.eventually_all_zeros_real_simple",
+      "file": "Foundation/RiemannQuarticGlobalSimpleZeros.lean",
+      "line": 46,
+      "type_or_definition_header": "theorem eventually_all_zeros_real_simple :\n    \u2200\u1da0 t : \u211d in atTop, \u2200 z : \u2102, flow t z = 0 \u2192\n      z.im = 0 \u2227 deriv (flow t) z \u2260 0",
+      "source_sha256": "41ea793b6a3fa6c9ca7439d5ffd26af4237a1eb2bbcb290eec5de28d8155b2c4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticGlobalSimpleZeros.lean#L46",
+      "paper": "5\u20139: actual uniform saddle analysis and global assembly"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticActualPolynomialLimit.actual_polynomial_limit_of_real_zeros",
+      "file": "Foundation/RiemannQuarticActualPolynomialLimit.lean",
+      "line": 14,
+      "type_or_definition_header": "theorem actual_polynomial_limit_of_real_zeros (t : \u211d)\n    (hreal : \u2200 z : \u2102, flow t z = 0 \u2192 z.im = 0) :\n    \u2203 P : \u2115 \u2192 \u211d[X], (\u2200 n, (P n).Splits) \u2227\n      TendstoLocallyUniformlyOn\n        (fun n z => ((P n).map (algebraMap \u211d \u2102)).eval z) (flow t) atTop univ",
+      "source_sha256": "47f1968598d809247b9621c8621e17b3c51bcbe10125c1c58c1f55eee74530db",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticActualPolynomialLimit.lean#L14",
+      "paper": "2\u20133: entire functions and polynomial approximation"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticActualPolynomialLimit.actual_start_set_nonempty",
+      "file": "Foundation/RiemannQuarticActualPolynomialLimit.lean",
+      "line": 80,
+      "type_or_definition_header": "theorem actual_start_set_nonempty : polynomialLimitStarts.Nonempty",
+      "source_sha256": "47f1968598d809247b9621c8621e17b3c51bcbe10125c1c58c1f55eee74530db",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticActualPolynomialLimit.lean#L80",
+      "paper": "2\u20133: entire functions and polynomial approximation"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticActualPolynomialLimit.actual_start_infimum_strictly_above_eight",
+      "file": "Foundation/RiemannQuarticActualPolynomialLimit.lean",
+      "line": 84,
+      "type_or_definition_header": "theorem actual_start_infimum_strictly_above_eight : 8 < sInf polynomialLimitStarts",
+      "source_sha256": "47f1968598d809247b9621c8621e17b3c51bcbe10125c1c58c1f55eee74530db",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticActualPolynomialLimit.lean#L84",
+      "paper": "2\u20133: entire functions and polynomial approximation"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticActualPolynomialLimit.actual_open_time_nonreal_zeros",
+      "file": "Foundation/RiemannQuarticActualPolynomialLimit.lean",
+      "line": 97,
+      "type_or_definition_header": "theorem actual_open_time_nonreal_zeros :\n    \u2203 \u03b4 : \u211d, 0 < \u03b4 \u2227 \u2200 t : \u211d, |t-8| < \u03b4 \u2192 \u2203 z : \u2102, flow t z = 0 \u2227 z.im \u2260 0",
+      "source_sha256": "47f1968598d809247b9621c8621e17b3c51bcbe10125c1c58c1f55eee74530db",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticActualPolynomialLimit.lean#L97",
+      "paper": "2\u20133: entire functions and polynomial approximation"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticLaguerreWitness.actual_real_derivative_negative",
+      "file": "Foundation/RiemannQuarticLaguerreWitness.lean",
+      "line": 41,
+      "type_or_definition_header": "theorem actual_real_derivative_negative :\n    (deriv (RiemannQuarticReality.realFlow 8) (632083/10000))^2-\n      RiemannQuarticReality.realFlow 8 (632083/10000)*\n        iteratedDeriv 2 (RiemannQuarticReality.realFlow 8) (632083/10000) < -(2/10^20 : \u211d)",
+      "source_sha256": "c636909a5c77e5d6de5be22c31dcccd03721b97185b5cab1d51ceff2ff7590a3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticLaguerreWitness.lean#L41",
+      "paper": "4: exact arithmetic certificate"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticOpenObstruction.polynomialLimitStarts",
+      "file": "Foundation/RiemannQuarticOpenObstruction.lean",
+      "line": 72,
+      "type_or_definition_header": "def polynomialLimitStarts : Set \u211d",
+      "source_sha256": "264c5df338b0d0a1bfbaf99c0329b41ba3120c122b03b8d46fb56f90fe2e466b",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticOpenObstruction.lean#L72",
+      "paper": "5\u20139: actual uniform saddle analysis and global assembly"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticThresholdEndpoint.polynomial_limit_of_time_sequence",
+      "file": "Foundation/RiemannQuarticThresholdEndpoint.lean",
+      "line": 12,
+      "type_or_definition_header": "theorem polynomial_limit_of_time_sequence (s : \u2115 \u2192 \u211d) (t : \u211d)\n    (hs : Tendsto s atTop (\ud835\udcdd t))\n    (hP : \u2200 n, \u2203 P : \u2115 \u2192 \u211d[X], (\u2200 j, (P j).Splits) \u2227\n      TendstoLocallyUniformlyOn\n        (fun j z => ((P j).map (algebraMap \u211d \u2102)).eval z) (flow (s n)) atTop univ) :\n    \u2203 Q : \u2115 \u2192 \u211d[X], (\u2200 n, (Q n).Splits) \u2227\n      TendstoLocallyUniformlyOn\n        (fun n z => ((Q n).map (algebraMap \u211d \u2102)).eval z) (flow t) atTop univ",
+      "source_sha256": "51990e97f87363e64216460561079b1f67e9d1ca1990919a9620c47101ae91c3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticThresholdEndpoint.lean#L12",
+      "paper": "9\u201310: confinement, endpoint and collision"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticThresholdEndpoint.actual_starts_eq_Ici_infimum",
+      "file": "Foundation/RiemannQuarticThresholdEndpoint.lean",
+      "line": 83,
+      "type_or_definition_header": "theorem actual_starts_eq_Ici_infimum :\n    polynomialLimitStarts = Ici (sInf polynomialLimitStarts)",
+      "source_sha256": "51990e97f87363e64216460561079b1f67e9d1ca1990919a9620c47101ae91c3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticThresholdEndpoint.lean#L83",
+      "paper": "9\u201310: confinement, endpoint and collision"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticThresholdZeros.actual_polynomial_limit_iff_real_zeros",
+      "file": "Foundation/RiemannQuarticThresholdZeros.lean",
+      "line": 15,
+      "type_or_definition_header": "theorem actual_polynomial_limit_iff_real_zeros (t : \u211d) :\n    (\u2203 P : \u2115 \u2192 \u211d[X], (\u2200 n, (P n).Splits) \u2227\n      TendstoLocallyUniformlyOn\n        (fun n z => ((P n).map (algebraMap \u211d \u2102)).eval z) (flow t) atTop univ) \u2194\n    \u2200 z : \u2102, flow t z = 0 \u2192 z.im = 0",
+      "source_sha256": "5dc88c537f0f890836f1d79529c33a46708a507647bb05a1d351bf6327ce9d54",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticThresholdZeros.lean#L15",
+      "paper": "9\u201310: confinement, endpoint and collision"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticThresholdZeros.nonreal_zeros_arbitrarily_before_threshold",
+      "file": "Foundation/RiemannQuarticThresholdZeros.lean",
+      "line": 36,
+      "type_or_definition_header": "theorem nonreal_zeros_arbitrarily_before_threshold (\u03b5 : \u211d) (h\u03b5 : 0 < \u03b5) :\n    \u2203 t : \u211d, sInf polynomialLimitStarts-\u03b5 < t \u2227 t < sInf polynomialLimitStarts \u2227\n      \u2203 z : \u2102, flow t z = 0 \u2227 z.im \u2260 0",
+      "source_sha256": "5dc88c537f0f890836f1d79529c33a46708a507647bb05a1d351bf6327ce9d54",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticThresholdZeros.lean#L36",
+      "paper": "9\u201310: confinement, endpoint and collision"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticCompactTimeFarZeros.uniform_far_zeros_real",
+      "file": "Foundation/RiemannQuarticCompactTimeFarZeros.lean",
+      "line": 94,
+      "type_or_definition_header": "theorem uniform_far_zeros_real (T : \u211d) :\n    \u2203 B : \u211d, 0 < B \u2227 \u2200 t : \u211d, 1 \u2264 t \u2192 t \u2264 T \u2192\n      \u2200 z : \u2102, B \u2264 \u2016z\u2016 \u2192 RiemannQuarticFlow.flow t z = 0 \u2192 z.im = 0",
+      "source_sha256": "117340d91b80af70ebe590b885dfeed9a94f655a432007dd1844dc4a7da3a39e",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticCompactTimeFarZeros.lean#L94",
+      "paper": "5\u20139: actual uniform saddle analysis and global assembly"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticThresholdCompactness.bounded_nonreal_zeros_all_times_ge_one",
+      "file": "Foundation/RiemannQuarticThresholdCompactness.lean",
+      "line": 13,
+      "type_or_definition_header": "theorem bounded_nonreal_zeros_all_times_ge_one :\n    \u2203 B : \u211d, 0 < B \u2227 \u2200 t : \u211d, 1 \u2264 t \u2192\n      \u2200 z : \u2102, flow t z = 0 \u2192 z.im \u2260 0 \u2192 \u2016z\u2016 < B",
+      "source_sha256": "9d70f7a9785496a68e7d28be7a64471ad0c6bad4459fe257715b6bc4cc584e0a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticThresholdCompactness.lean#L13",
+      "paper": "9\u201310: confinement, endpoint and collision"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticThresholdCompactness.exists_convergent_nonreal_zeros_before_threshold",
+      "file": "Foundation/RiemannQuarticThresholdCompactness.lean",
+      "line": 35,
+      "type_or_definition_header": "theorem exists_convergent_nonreal_zeros_before_threshold :\n    \u2203 (s : \u2115 \u2192 \u211d) (z : \u2115 \u2192 \u2102) (w : \u2102),\n      Tendsto s atTop (\ud835\udcdd (sInf polynomialLimitStarts)) \u2227\n      Tendsto z atTop (\ud835\udcdd w) \u2227\n      (\u2200 n, s n < sInf polynomialLimitStarts \u2227 flow (s n) (z n) = 0 \u2227 (z n).im \u2260 0) \u2227\n      flow (sInf polynomialLimitStarts) w = 0 \u2227 w.im = 0",
+      "source_sha256": "9d70f7a9785496a68e7d28be7a64471ad0c6bad4459fe257715b6bc4cc584e0a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticThresholdCompactness.lean#L35",
+      "paper": "9\u201310: confinement, endpoint and collision"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticThresholdCollision.derivative_zero_of_nonreal_zero_limit",
+      "file": "Foundation/RiemannQuarticThresholdCollision.lean",
+      "line": 26,
+      "type_or_definition_header": "theorem derivative_zero_of_nonreal_zero_limit (s : \u2115 \u2192 \u211d) (z : \u2115 \u2192 \u2102)\n    (\u03c4 : \u211d) (w : \u2102) (hs : Tendsto s atTop (\ud835\udcdd \u03c4)) (hz : Tendsto z atTop (\ud835\udcdd w))\n    (hw : w.im = 0) (hzero : \u2200 n, flow (s n) (z n) = 0)\n    (hnon : \u2200 n, (z n).im \u2260 0) : deriv (flow \u03c4) w = 0",
+      "source_sha256": "cb4528677ba791580cd0a8d873a7d639a083d3355c074f839d1ce5546a60c5cc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticThresholdCollision.lean#L26",
+      "paper": "9\u201310: confinement, endpoint and collision"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticThresholdCollision.exists_positive_finite_multiple_zero_at_threshold",
+      "file": "Foundation/RiemannQuarticThresholdCollision.lean",
+      "line": 83,
+      "type_or_definition_header": "theorem exists_positive_finite_multiple_zero_at_threshold :\n    \u2203 x : \u211d, 0 < x \u2227 flow (sInf polynomialLimitStarts) (x : \u2102) = 0 \u2227\n      deriv (flow (sInf polynomialLimitStarts)) (x : \u2102) = 0 \u2227\n      2 \u2264 analyticOrderAt (flow (sInf polynomialLimitStarts)) (x : \u2102) \u2227\n      analyticOrderAt (flow (sInf polynomialLimitStarts)) (x : \u2102) \u2260 \u22a4",
+      "source_sha256": "cb4528677ba791580cd0a8d873a7d639a083d3355c074f839d1ce5546a60c5cc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticThresholdCollision.lean#L83",
+      "paper": "9\u201310: confinement, endpoint and collision"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticLocalCosineZeros.perturbation_deriv_bound",
+      "file": "Foundation/RiemannQuarticLocalCosineZeros.lean",
+      "line": 10,
+      "source_sha256": "f23609cf7f96d8e303c48aba4b948afc7094714fa4cceb8a026c2f86274403e7",
+      "type_or_definition_header": "theorem perturbation_deriv_bound (f : \u2102 \u2192 \u2102) (a : \u211d)\n    (hf : \u2200 w \u2208 closedBall (a : \u2102) 1, DifferentiableAt \u2102 f w)\n    (hclose : \u2200 v \u2208 closedBall (a : \u2102) 1, \u2016f v-Complex.cos v\u2016 \u2264 1/1000)\n    (w : \u2102) (hw : w \u2208 closedBall (a : \u2102) (1/1000)) :\n    \u2016deriv f w-deriv Complex.cos w\u2016 \u2264 1/500",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticLocalCosineZeros.lean#L10",
+      "paper": "5\u20139: actual uniform saddle analysis and global assembly"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticLocalCosineZeros.real_simple_zero",
+      "file": "Foundation/RiemannQuarticLocalCosineZeros.lean",
+      "line": 32,
+      "source_sha256": "f23609cf7f96d8e303c48aba4b948afc7094714fa4cceb8a026c2f86274403e7",
+      "type_or_definition_header": "theorem real_simple_zero (f : \u2102 \u2192 \u2102) (a : \u211d)\n    (hf : \u2200 w \u2208 closedBall (a : \u2102) 1, DifferentiableAt \u2102 f w)\n    (hconj : \u2200 w, f (conj w)=conj (f w))\n    (hclose : \u2200 w \u2208 closedBall (a : \u2102) 1, \u2016f w-Complex.cos w\u2016 \u2264 1/1000)\n    (z : \u2102) (hz : z \u2208 closedBall (a : \u2102) (1/1000)) (hzero : f z=0) :\n    z.im=0 \u2227 deriv f z \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticLocalCosineZeros.lean#L32",
+      "paper": "5\u20139: actual uniform saddle analysis and global assembly"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticFarComplexPairing.flow_unequal_heights",
+      "file": "Foundation/RiemannQuarticFarComplexPairing.lean",
+      "line": 34,
+      "source_sha256": "512101d6e045af0a62fdd5a1699b8736a4f6e7ed766d92e01314e1dd2749b186",
+      "type_or_definition_header": "theorem flow_unequal_heights (t : \u211d) (z : \u2102) (h k : \u211d)\n    (hh : |h| < Real.pi/8) (hk : |k| < Real.pi/8) :\n    RiemannQuarticFlow.flow t z=(horizontalIntegral t z h+conj (horizontalIntegral t (conj z) k)+\n      Complex.I*(\u222b y : \u211d in k..h, saddleWeight t z ((y : \u2102)*Complex.I)))/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticFarComplexPairing.lean#L34",
+      "paper": "5\u20139: actual uniform saddle analysis and global assembly"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticFarGaussianLimit.gaussian_normalization_lower",
+      "file": "Foundation/RiemannQuarticFarGaussianLimit.lean",
+      "line": 75,
+      "source_sha256": "23d183953029c98351b4aa9420228cb9dd0447479d90ae1f9e8bcb89743c6d34",
+      "type_or_definition_header": "theorem gaussian_normalization_lower (t x : \u211d) (ht : 1 \u2264 t) (hx : 10000 \u2264 x) (w v : \u2102)\n    (hr : 64 \u2264 w.re) (hi : |w.im| \u2264 1/2)\n    (hp : 100*(t*(\u2016w\u2016+1)^3+1) \u2264 x)\n    (hs : modelDerivative t w= -(Complex.I*(x : \u2102))) (hv : \u2016v-w\u2016 \u2264 1/x) :\n    1 \u2264 2*Real.sqrt x*\u2016\u222b s : \u211d, Complex.exp (deriv (modelDerivative t) v*(s : \u2102)^2/2)\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticFarGaussianLimit.lean#L75",
+      "paper": "5\u20139: actual uniform saddle analysis and global assembly"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticFarGaussianLimit.relative_local_error_bound",
+      "file": "Foundation/RiemannQuarticFarGaussianLimit.lean",
+      "line": 112,
+      "source_sha256": "23d183953029c98351b4aa9420228cb9dd0447479d90ae1f9e8bcb89743c6d34",
+      "type_or_definition_header": "theorem relative_local_error_bound (t x : \u211d) (ht : 1 \u2264 t) (hx : 10000 \u2264 x) (w v : \u2102)\n    (hr : 64 \u2264 w.re) (hi : |w.im| \u2264 1/2)\n    (hp : 100*(t*(\u2016w\u2016+1)^3+1) \u2264 x)\n    (hs : modelDerivative t w= -(Complex.I*(x : \u2102))) (hv : \u2016v-w\u2016 \u2264 1/x)\n    (z : \u2102) (hstat : complexSlope t v= -(Complex.I*z)) (r : \u211d) (hr0 : 0 < r) (hrr : r < 1/16)\n    (hsmall : (30005*Real.exp (-4*w.re+4))*r+2048*x*r^3 \u2264 1) :\n    \u2016(\u222b s : \u211d in -r..r, saddleWeight t z (v+(s : \u2102)))/\n      (saddleWeight t z v*(\u222b s : \u211d, Complex.exp (deriv (modelDerivative t) v*(s : \u2102)^2/2)))-1\u2016 \u2264\n      2*Real.sqrt x*(16*(30005*Real.exp (-4*w.re+4))*r^2+8192*x*r^4+2/(x*r))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticFarGaussianLimit.lean#L112",
+      "paper": "5\u20139: actual uniform saddle analysis and global assembly"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticKernel.kernel_decay",
+      "file": "Foundation/RiemannQuarticKernel.lean",
+      "line": 113,
+      "source_sha256": "dfc4e0ae77c591d26cb39e105209f1eaee6ec273f94162f1f3538d06a41b38c4",
+      "type_or_definition_header": "theorem kernel_decay (u : \u211d) (hu : 0 \u2264 u) :\n    |kernel u| \u2264 envelopeConstant*exp (9*u-Real.pi*exp (4*u)/2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticKernel.lean#L113",
+      "paper": "1\u20132 and 5: actual transform and kernel"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticKernel.kernel_pos",
+      "file": "Foundation/RiemannQuarticKernel.lean",
+      "line": 153,
+      "source_sha256": "dfc4e0ae77c591d26cb39e105209f1eaee6ec273f94162f1f3538d06a41b38c4",
+      "type_or_definition_header": "theorem kernel_pos (u : \u211d) (hu : 0 \u2264 u) : 0 < kernel u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticKernel.lean#L153",
+      "paper": "1\u20132 and 5: actual transform and kernel"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticDomain.weighted_integrable",
+      "file": "Foundation/RiemannQuarticDomain.lean",
+      "line": 57,
+      "source_sha256": "73f10e60446d28affcd2b1e93797881e4c29c7896fcdfc782658cf5093ac6f56",
+      "type_or_definition_header": "theorem weighted_integrable (k : \u2115) (T B : \u211d) :\n    IntegrableOn (weighted k T B) (Ici 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticDomain.lean#L57",
+      "paper": "5\u20139: actual uniform saddle analysis and global assembly"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticTimeCompact.flow_time_tendsto_uniformly_on",
+      "file": "Foundation/RiemannQuarticTimeCompact.lean",
+      "line": 47,
+      "source_sha256": "4c8847073176370aeb98895a951000b8b1234417cf7d1c938bbfea7286613785",
+      "type_or_definition_header": "theorem flow_time_tendsto_uniformly_on (t : \u211d) (K : Set \u2102) (hK : IsCompact K) :\n    TendstoUniformlyOn (fun s z => flow s z) (flow t) (\ud835\udcdd t) K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticTimeCompact.lean#L47",
+      "paper": "5\u20139: actual uniform saddle analysis and global assembly"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticCanonicalProductLimit.exists_actual_product_approximation",
+      "file": "Foundation/RiemannQuarticCanonicalProductLimit.lean",
+      "line": 14,
+      "source_sha256": "68254e032c532f9ff0610fc90b7ef6dd586691f13c9d04398eaf51eaa56551f3",
+      "type_or_definition_header": "theorem exists_actual_product_approximation (t : \u211d) :\n    \u2203 r : \u211d \u2192 \u211d, \u2203 h : \u211d \u2192 \u2102 \u2192 \u2102,\n      (\u2200 R : \u211d, 1 \u2264 R \u2192 2*R < r R \u2227 r R < 2*R+1 \u2227\n        ECanonicalDecomp (flow t) (h R) (r R) \u2227\n        divisor (flow t) (sphere 0 (r R)) = 0 \u2227\n        inverseZeroProduct t (r R) 0 \u2260 0 \u2227\n        \u2200 z \u2208 closedBall (0 : \u2102) (r R),\n          flow t z = inverseZeroProduct t (r R) z * h R z) \u2227\n      TendstoLocallyUniformly\n        (fun R z => inverseZeroProduct t (r R) z / inverseZeroProduct t (r R) 0)\n        (fun z => flow t z / flow t 0) atTop \u2227\n      TendstoLocallyUniformly\n        (fun R z => flow t 0 * (inverseZeroProduct t (r R) z / inverseZeroProduct t (r R) 0))\n        (flow t) atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticCanonicalProductLimit.lean#L14",
+      "paper": "2\u20133: entire functions and polynomial approximation"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealRootedVerticalLimit.real_zeros_of_locally_uniform_split_polynomials",
+      "file": "Foundation/RealRootedVerticalLimit.lean",
+      "line": 89,
+      "source_sha256": "debac024442129a040c33c22d51d130957e38d243c70d90d8af757574d269bfe",
+      "type_or_definition_header": "theorem real_zeros_of_locally_uniform_split_polynomials (P : \u2115 \u2192 \u211d[X])\n    (f : \u2102 \u2192 \u2102) (hf : Differentiable \u2102 f) (hne : \u2203 w, f w \u2260 0)\n    (hP : \u2200 n, (P n).Splits)\n    (hlim : TendstoLocallyUniformlyOn\n      (fun n z => ((P n).map (algebraMap \u211d \u2102)).eval z) f atTop univ) :\n    \u2200 z : \u2102, f z = 0 \u2192 z.im = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealRootedVerticalLimit.lean#L89",
+      "paper": "5\u20139: actual uniform saddle analysis and global assembly"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticCertifiedGrid.actual_derivative_error",
+      "file": "Foundation/RiemannQuarticCertifiedGrid.lean",
+      "line": 23,
+      "source_sha256": "3d9762b1512e1a7f1a9a8419e1b46a432ea512e29dd7caa98c037c96a4d7b452",
+      "type_or_definition_header": "theorem actual_derivative_error (k : \u2115) (hk : k \u2264 2) :\n    \u2016iteratedDeriv k (RiemannQuarticFlow.flow 8) ((632083/10000 : \u211d) : \u2102)-\n      (totalPolynomial k : \u2102)\u2016 \u2264 (161/10^16 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticCertifiedGrid.lean#L23",
+      "paper": "4: exact arithmetic certificate"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticLaguerreWitness.all_value_checks",
+      "file": "Foundation/RiemannQuarticLaguerreWitness.lean",
+      "line": 18,
+      "source_sha256": "c636909a5c77e5d6de5be22c31dcccd03721b97185b5cab1d51ceff2ff7590a3",
+      "type_or_definition_header": "theorem all_value_checks (j : \u2115) (hj : j < 160) (k : \u2115) (hk : k \u2264 2) : check j k=true",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticLaguerreWitness.lean#L18",
+      "paper": "4: exact arithmetic certificate"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticCellWitnesses.polynomial_bounds",
+      "file": "Foundation/RiemannQuarticCellWitnesses.lean",
+      "line": 201,
+      "source_sha256": "43e4ba738216bbd4fdc75c88d2857afc441646b15c3d218b11d6eb3db2fd30eb",
+      "type_or_definition_header": "theorem polynomial_bounds (hc : \u2200 j < 160, \u2200 k \u2264 2, check j k=true) :\n    totalPolynomial 0 \u2264 -(164/10^12 : \u211d) \u2227\n      |totalPolynomial 1| \u2264 (38/10^14 : \u211d) \u2227\n        totalPolynomial 2 \u2264 -(1455/10^13 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticCellWitnesses.lean#L201",
+      "paper": "4: exact arithmetic certificate"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticNodeQuadrature.cell_sixteenth",
+      "file": "Foundation/RiemannQuarticNodeQuadrature.lean",
+      "line": 77,
+      "source_sha256": "271839d9d3459c050a3a6478a79e9c81c91b266d0bdd362588d679b481c83665",
+      "type_or_definition_header": "theorem cell_sixteenth (j : \u2115) (hj : j < 160) (hcheck : cellCheck j=true)\n    (u : \u211d) (hu : u \u2208 Icc (center j-(1/200 : \u211d)) (center j+(1/200 : \u211d)))\n    (k : \u2115) (hk : k \u2264 2) :\n    |coefficient (realIntegrand 4 k (632083/10000)) 16 u| \u2264 (10^22 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticNodeQuadrature.lean#L77",
+      "paper": "5\u20139: actual uniform saddle analysis and global assembly"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticNodeQuadrature.cell_taylor_error",
+      "file": "Foundation/RiemannQuarticNodeQuadrature.lean",
+      "line": 94,
+      "source_sha256": "271839d9d3459c050a3a6478a79e9c81c91b266d0bdd362588d679b481c83665",
+      "type_or_definition_header": "theorem cell_taylor_error (j k : \u2115) (hj : j < 160) (hk : k \u2264 2)\n    (hcheck : cellCheck j=true) :\n    |(\u222b u in (center j : \u211d)-(1/200 : \u211d)..(center j : \u211d)+(1/200 : \u211d),\n        realIntegrand 4 k (632083/10000) u)-\n      (\u222b u in (center j : \u211d)-(1/200 : \u211d)..(center j : \u211d)+(1/200 : \u211d),\n        localPolynomial (realIntegrand 4 k (632083/10000)) 15 (center j) u)| \u2264\n      (1/10^16 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticNodeQuadrature.lean#L94",
+      "paper": "5\u20139: actual uniform saddle analysis and global assembly"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticGridAssembly.quadrature_polynomial_error",
+      "file": "Foundation/RiemannQuarticGridAssembly.lean",
+      "line": 46,
+      "source_sha256": "57e6983b01a1aeab1fef4eaa71446830b1a5279b50dc602d6e676fdde4457eb8",
+      "type_or_definition_header": "theorem quadrature_polynomial_error (k : \u2115) (hk : k \u2264 2)\n    (hchecks : \u2200 j < 160, cellCheck j=true) :\n    |realQuadrature 4 k (632083/10000)-totalPolynomial k| \u2264 (16/10^15 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticGridAssembly.lean#L46",
+      "paper": "4: exact arithmetic certificate"
+    }
+  ],
+  "human_proof_reorganization": {
+    "entire_function_and_polynomial_reconstruction": "Sections 2\u20133",
+    "actual_arithmetic_obstruction": "Section 4; exact finite inclusions remain computer-assisted",
+    "full_kernel_and_uniform_actual_saddle_estimate": "Sections 5\u20136",
+    "contours_reflection_analytic_pair_and_buffered_zeros": "Section 7",
+    "transition_far_saddles_and_common_center_coverage": "Sections 8\u20139",
+    "attainment_confinement_and_multiple_endpoint_zero": "Sections 9\u201310",
+    "method": "Human regrouping with unspecified uniform constants, not a claim of new named Lean lemmas for every intermediate estimate.",
+    "remaining_editorial_limits": "Independent referee review, attribution and novelty determination remain outstanding; reviewed draft is not submission-ready."
+  },
+  "certificate_scope": "The verifier re-sums all 160x3 endpoint pairs and checks exact rational budgets and the Laguerre margin. It does not rerun the Lean interval engine. The baseline evidence covers the exact finite inclusions."
+}

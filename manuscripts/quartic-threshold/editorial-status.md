@@ -1,0 +1,13 @@
+# Quartic eventual threshold — reviewed editorial draft
+
+Sixteen-page complete proof exposition, October 29, 2026. The frozen mathematical baseline is `bab688bb6140cd6316c80680095a914ea0d346db`; exact declarations, types, lines and hashes are in theorem-map.json and source-assessment.json. Existing baseline build and transitive axiom evidence were hash-verified; no redundant Lean build was run.
+
+The paper proves an attained finite eventual-start threshold strictly above eight for the actual growing quartic arithmetic transform. Its full argument includes real-zero polynomial reconstruction, the exact obstruction at time eight, actual kernel/logarithmic-derivative bounds, uniform horizontal Gaussian estimates, signed contours and vertical endpoints, reflected dominance, analytic envelope/phase estimates, buffered exact reality and simplicity, transition/far saddle existence and common-center coverage. Confinement and a positive real multiple endpoint zero follow. The proof is a human reorganization of audited mathematics with uniform constants; intermediate regrouped lemmas are not represented as newly formalized declarations.
+
+The arithmetic part is explicitly computer-assisted: 160 whole-cell bounds and 480 center-value inclusions retain their existing exact audited Lean proofs. The complete endpoint table is transcribed in the dossier. verify_certificate.py independently checks its frozen text hash, all rational endpoint sums, analytic budget arithmetic and the strict Laguerre margin. It does not rerun the interval engine or replace it with floating point. certificate-verification.json records the successful check.
+
+Two-pass compilation succeeded, with no unresolved references or overfull boxes. All sixteen rendered pages were inspected, including the Gaussian estimate page at enlarged scale. Fresh source/PDF build and visual-review receipts accompany this draft.
+
+Primary Newman text was inspected for the classical quadratic multiplier; the de Bruijn bibliographic/search record was consulted but full fetch timed out. The DLMF modular theta formula was checked. These comparisons establish context, not novelty. Priority and author attribution remain unresolved; independent mathematical referee review remains appropriate before submission. No external release is authorized or performed.
+
+The threshold concerns eventual starting times. The paper does not prove failure at every earlier time, simplicity at every time above the threshold, exact double multiplicity, a tracked collision trajectory, a numerical upper threshold, monotone quartic propagation from each reality time, or an RH implication. Sixth-order eventual reality remains a separate source-audited candidate, outside this paper.

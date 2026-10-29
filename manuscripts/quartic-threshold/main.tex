@@ -1,0 +1,1283 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,longtable,array}
+\usepackage[margin=1.05in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
+\DeclareMathOperator{\Rea}{Re}\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\Log}{Log}
+\title{An attained eventual reality threshold\protect\\
+for a growing quartic arithmetic transform}
+\author{Project Stardust}
+\date{Reviewed editorial draft, October 29, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For the growing quartic cosine transform of the arithmetic
+theta kernel, we prove that the set of eventual split-real
+polynomial starting times is a closed upper ray with finite
+endpoint strictly greater than eight. The proof includes
+uniform actual saddle estimates in both the moving transition
+region and its far complement, a finite exact Laguerre
+certificate, and a constructive polynomial approximation
+argument. A single radius confines all nonreal zeros at times
+at least one. Nonreal zeros approaching the endpoint have a
+subsequence colliding at a positive real zero of finite
+multiplicity at least two. All zeros are eventually real and
+simple. The meaning of eventual start is kept separate from
+pointwise-in-time reality, and no quadratic threshold or
+Riemann-hypothesis implication is asserted. The final statements
+are mapped to a frozen Lean development; their novelty remains
+unresolved.
+\end{abstract}
+
+\section{The actual transform and its eventual starting times}
+For $u\geq0$ define the arithmetic kernel
+\begin{equation}\label{eq:K}
+ K(u)=\sum_{n=1}^{\infty}
+ (2\pi^2n^4e^{9u}-3\pi n^2e^{5u})e^{-\pi n^2e^{4u}},
+\end{equation}
+and, for real $t$ and complex $z$, put
+\begin{equation}\label{eq:H}
+ H_t(z)=\int_0^\infty e^{tu^4}K(u)\cos(zu)\,du.
+\end{equation}
+The sign of the quartic tilt is positive. It is neither the
+decaying quartic heat kernel nor the classical quadratic
+deformation. Let $\mathsf{LP}(t)$ mean that real polynomials
+splitting into real linear factors converge to $H_t$ locally
+uniformly on the entire complex plane. Define
+\begin{equation}\label{eq:starts}
+ \mathcal S=\{T\in\R:\mathsf{LP}(t)\text{ for every }t\geq T\},
+ \qquad A=\inf\mathcal S.
+\end{equation}
+The infimum becomes an ordinary finite real number once
+nonemptiness and a lower bound are proved.
+
+\begin{theorem}\label{thm:main}
+The set $\mathcal S$ is nonempty and equals $[A,\infty)$ for a
+finite $A>8$. For every $t\geq A$, all complex zeros of $H_t$
+are real. For every $\varepsilon>0$ there is a time
+$s\in(A-\varepsilon,A)$ at which $H_s$ has a nonreal zero.
+There is one finite radius containing every nonreal zero at
+every time $t\geq1$. Some sequence of nonreal zeros at times
+below $A$ converges to a positive real zero of $H_A$ of finite
+multiplicity at least two. For every sufficiently large time,
+all zeros are real and simple.
+\end{theorem}
+
+The last statement is eventual simplicity, not simplicity at
+every $t>A$. The eventual-start set in~\eqref{eq:starts} must
+also be distinguished from $\{t:\mathsf{LP}(t)\}$. Equality
+of the former with $[A,\infty)$ does not exclude earlier
+individual reality times. No exact double multiplicity or
+continuously tracked zero path is asserted.
+
+The classical quadratic theory uses a real-zero propagation
+property of a quadratic multiplier. De Bruijn's and Newman's
+primary work supplies the relevant comparison, but it does not
+permit that property to be silently applied to $e^{tu^4}$.
+The whole-plane statement here requires actual quartic
+estimates, including the region beyond every fixed frequency
+window. It has no proved implication for the Riemann hypothesis.
+
+\section{Arithmetic decay, entireness and time continuity}
+All operations in~\eqref{eq:H} concern an actual Lebesgue
+integral. We first verify its domains.
+
+\begin{lemma}\label{lem:kernel}
+The kernel is continuous and strictly positive on $[0,\infty)$.
+There is $C>0$ such that
+\begin{equation}\label{eq:decay}
+ K(u)\leq C\exp\bigl(9u-\tfrac\pi2e^{4u}\bigr),\qquad u\geq0.
+\end{equation}
+For every integer $k\geq0$ and real $T,B$,
+$u^ke^{Tu^4+Bu}K(u)$ is integrable on that half-line.
+\end{lemma}
+\begin{proof}
+Each summand in~\eqref{eq:K} factors as
+\[
+ \pi n^2e^{5u}(2\pi n^2e^{4u}-3)e^{-\pi n^2e^{4u}}>0.
+\]
+For $v\geq1$ and $n\geq1$, $n^2v\geq(n^2+v)/2$. Hence
+\[
+ n^me^{-\pi n^2v}\leq n^me^{-\pi n^2/2}e^{-\pi v/2}.
+\]
+The first factors have a finite sum for $m=2,4$. Uniform
+convergence on compact $u$-intervals proves continuity, and
+the two bounds, with $e^{5u}\leq e^{9u}$, prove~\eqref{eq:decay}.
+The positive first summand proves strict positivity.
+
+Eventually $u^k\leq e^u$ and
+$Tu^4+(B+11)u\leq(\pi/2)e^{4u}$. Substitution into
+\eqref{eq:decay} bounds the tilted moment by $Ce^{-u}$.
+Continuity handles its initial compact interval.
+\end{proof}
+
+\begin{proposition}\label{prop:entire}
+The function $H_t$ is entire, even and conjugation compatible,
+and $H_t(0)>0$. Its spatial derivatives are jointly continuous
+in $(t,z)$. Time convergence is uniform on every compact
+complex set. For each fixed real $t$ there is $C_t>0$ with
+\begin{equation}\label{eq:growth}
+ |H_t(z)|\leq C_t e^{|z|^{3/2}}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+On a compact time--space set, the $k$th derivative of the
+exponential integrand is dominated by
+$u^ke^{Tu^4+Bu}K(u)$ for fixed finite $T,B$. Lemma
+\ref{lem:kernel} permits differentiation and continuity under
+the integral. The two exponentials defining cosine give the
+entire derivatives. Its elementary symmetries give evenness
+and conjugation, while positivity gives $H_t(0)>0$.
+Joint continuity on a compact time interval times a compact
+complex set is uniform continuity, proving the compact-time claim.
+
+For $R,u\geq0$, $Ru\leq u^3+R\sqrt R$: split at
+$u=\sqrt R$. Also $u^3\leq u^4+1$. Using
+$|\cos(zu)|\leq e^{|z|u}$ with $R=|z|$ gives
+\[
+ |H_t(z)|\leq e^{1+R^{3/2}}
+                    \int_0^\infty e^{(t+1)u^4}K(u)\,du.
+\]
+The last integral is finite and positive. This proves the
+specific subquadratic bound~\eqref{eq:growth}.
+\end{proof}
+
+\section{Real zeros and actual split-polynomial limits}
+For this even growth class, all-real zeros give actual
+polynomial approximation with its normalization restored.
+We give a finite-disk proof rather than assume a converse
+to a theorem about limits of zeros.
+
+\begin{lemma}\label{lem:polynomial}
+Let $f$ be entire and even, with $f(0)\in\R\setminus\{0\}$,
+and suppose $|f(z)|\leq Ce^{|z|^{3/2}}$. If every zero of $f$
+is real, then $f$ is a locally uniform limit on $\C$ of real
+polynomials splitting over $\R$.
+\end{lemma}
+\begin{proof}
+Choose radii $R\to\infty$ with no zero on their boundary;
+isolated zeros exclude only countably many radii. List the
+finitely many zeros $a$ in $|z|<R$, with multiplicity, and set
+\[
+ B_R(z)=\prod_{|a|<R}\frac{R(z-a)}{R^2-\overline a z}.
+\]
+No $a$ is zero. The denominators are nonzero on the closed
+disk, and each factor has modulus one on its boundary.
+The quotient $h_R=f/B_R$ extends across all zeros to a
+zero-free holomorphic function on the disk, continuous and
+holomorphic near its boundary. The maximum modulus principle gives
+\[
+ |h_R(z)|\leq M_f(R)\leq Ce^{R^{3/2}},\qquad
+ |h_R(0)|\geq|f(0)|,
+\]
+the last inequality using $|B_R(0)|=\prod|a|/R\leq1$.
+
+The zero multiset occurs in pairs $a,-a$ with equal
+multiplicities. Each paired factor is even, so $B_R$ and $h_R$
+are even. Choose the analytic logarithm $g_R$ on the disk
+satisfying $e^{g_R}=h_R/h_R(0)$ and $g_R(0)=0$.
+Uniqueness of that normalized logarithm makes it even.
+For some positive $A_R=O(1+R^{3/2})$ we have
+$\Rea g_R\leq A_R$.
+
+Here is the needed logarithm estimate explicitly. The function
+\[
+ v_R=\frac{g_R}{2A_R-g_R}
+\]
+is holomorphic and bounded in modulus by one, because
+\[
+ |2A_R-g_R|^2-|g_R|^2
+                         =4A_R(A_R-\Rea g_R)\geq0.
+\]
+It is even and vanishes at zero. The Schwarz lemma applied
+with this double zero gives $|v_R(z)|\leq(|z|/R)^2$.
+Solving for $g_R$ yields
+\[
+ |g_R(z)|\leq\frac{2A_R(|z|/R)^2}{1-(|z|/R)^2}.
+\]
+On each fixed compact disk this tends to zero as $R\to\infty$.
+Consequently $h_R/h_R(0)\to1$ locally uniformly.
+
+We also need a zero count to control the denominator product.
+Choose a zero-free boundary radius $\rho\in(2R,3R)$. Harmonicity
+of $\log|h_\rho|$ and its boundary values give
+\[
+ \sum_{|a|<\rho}\log\frac{\rho}{|a|}
+ \leq\log M_f(\rho)-\log|f(0)|.
+\]
+Indeed this follows by taking the boundary mean of
+$\log|h_\rho|=\log|f|$ and using
+$f(0)=B_\rho(0)h_\rho(0)$. Every zero in $|a|<R$ contributes
+at least $\log2$, so its counting function satisfies
+$n_f(R)=O(1+R^{3/2})$.
+
+Now normalize the finite product:
+\[
+ \frac{B_R(z)}{B_R(0)}=\frac{N_R(z)}{D_R(z)},\qquad
+ N_R(z)=\prod_{|a|<R}(1-z/a),\quad
+ D_R(z)=\prod_{|a|<R}(1-\overline a z/R^2).
+\]
+Pairing $a,-a$ turns $D_R$ into a product of
+$1-\overline a^{,2}z^2/R^4$. On $|z|\leq r$, the sum of the
+absolute pair corrections is at most
+$n_f(R)r^2/(2R^2)=O_r(R^{-1/2})$.
+The finite-product inequality
+$|\prod_j(1-w_j)-1|\leq\exp(\sum_j|w_j|)-1$ therefore gives
+$D_R\to1$ locally uniformly. The exact identity
+\[
+ \frac f{f(0)}=\frac{B_R}{B_R(0)}\frac{h_R}{h_R(0)}
+\]
+implies $N_R\to f/f(0)$ locally uniformly. Since all $a$ are
+real, $f(0)N_R$ are the required split-real polynomials.
+\end{proof}
+
+\begin{lemma}\label{lem:reverse}
+A nonzero entire locally uniform limit of split-real
+polynomials has only real zeros.
+\end{lemma}
+\begin{proof}
+For every real root $r$, $|x+iy-r|$ is nondecreasing in $|y|$.
+Multiplying its linear factors gives
+$|P(x+ia)|\leq|P(x+ib)|$ whenever $a^2\leq b^2$.
+The inequality survives the pointwise limits. A nonreal zero
+$x+iy$ of the limit would force zeros at all
+$x+iy/(n+1)$, accumulating at $x$. The identity theorem would
+make the limit zero everywhere, a contradiction.
+\end{proof}
+
+\begin{corollary}\label{cor:LP}
+For every real $t$, $\mathsf{LP}(t)$ holds if and only if every
+zero of the actual $H_t$ is real.
+\end{corollary}
+\begin{proof}
+Use Proposition~\ref{prop:entire} and the preceding two lemmas.
+\end{proof}
+
+\section{An actual arithmetic obstruction at time eight}
+This section records a computer-assisted finite certificate,
+with analytic errors kept separate from the finite checks.
+Let $x_0=632083/10000$ and $a=8/5$. Let $K_4$ be the first
+four terms of~\eqref{eq:K}, and put
+\[
+ c_0(u)=\cos(x_0u),\quad c_1(u)=-u\sin(x_0u),\quad
+ c_2(u)=-u^2\cos(x_0u),\quad F_k(u)=e^{8u^4}K_4(u)c_k(u).
+\]
+
+\begin{lemma}\label{lem:cutoff}
+For $k=0,1,2$,
+\[
+ \left|H_8^{(k)}(x_0)-\int_0^a F_k(u)\,du\right|\leq10^{-16}.
+\]
+\end{lemma}
+\begin{proof}
+On $[0,a]$ we have $u^k\leq3$. The positive exponential series
+gives $e^{4u}\geq1+4u+(4u)^4/24$, hence
+$3n^2(e^{4u}-1)\geq9u+8u^4$ for $n\geq1$.
+Using $3<\pi<4$, the omitted positive kernel terms satisfy
+\begin{align*}
+ u^ke^{8u^4}(K-K_4)(u)
+ &\leq96\sum_{n\geq5}n^4e^{-3n^2}
+ \leq192\sum_{n\geq5}e^{-2n^2}\\
+ &<384e^{-50}<384(2/5)^{50}<10^{-17}.
+\end{align*}
+Here $n^4\leq2e^{n^2}$ follows from the exponential series,
+and $2(5+j)^2\geq50+20j$ gives the geometric sum bound.
+Also $e>5/2$.
+
+The constant in~\eqref{eq:decay} may be taken at most $176$:
+for $m=2,4$,
+\[
+ \sum_{n\geq1}n^me^{-\pi n^2/2}
+ \leq2\sum_{n\geq1}e^{-n^2/2}
+ \leq\frac2{e^{1/2}-1}\leq4,
+\]
+and $2\pi^2\cdot4+3\pi\cdot4\leq176$.
+For $u\geq a$, the functions $u^4e^{-4u}$ and $ue^{-4u}$
+decrease. The rational inequality
+\[
+ 8a^4+111a<\tfrac32(5/2)^6<\tfrac32e^{4a}
+\]
+therefore gives $8u^4+111u\leq(3/2)e^{4u}$ for all $u\geq a$.
+Since $u^k\leq e^{2u}$, the full tail integrand is bounded by
+$176e^{-100u}$. Its integral is at most
+$(176/100)e^{-160}<(176/100)2^{-160}$.
+Adding the two errors gives
+$a10^{-17}+(176/100)2^{-160}<10^{-16}$.
+\end{proof}
+
+Divide $[0,a]$ into 160 cells, with centers $c_j=(2j+1)/200$
+and half-width $h=1/200$. Let $T_{j,k}$ be the degree-15
+Taylor polynomial of $F_k$ about $c_j$ and define
+\[
+ P_k=\sum_{j=0}^{159}\int_{c_j-h}^{c_j+h}T_{j,k}(u)\,du.
+\]
+Only its eight even coefficients contribute. The normalized
+sixteenth derivative bound on each cell is
+$|F_k^{(16)}(u)/16!|\leq10^{22}$. Consequently
+\[
+ \left|\int_0^aF_k-P_k\right|
+ \leq160\frac{2\cdot10^{22}h^{17}}{17}
+ \leq\frac{16}{10^{15}},\qquad
+ |H_8^{(k)}(x_0)-P_k|\leq\frac{161}{10^{16}}.
+\]
+The frozen exact certificate checks the derivative bound on
+all 160 whole cells and all 480 centered integral enclosures.
+At common denominator $10^{22}$, its summed endpoint
+numerators are
+\[
+\begin{array}{c|rr}
+k&\text{lower}&\text{upper}\\\hline
+0&-1641482419995&-1641482419749\\
+1&3656317813&3656318043\\
+2&-1460002952576&-1460002952347.
+\end{array}
+\]
+The full cell table and an independent exact rational re-sum
+are saved with the source dossier. The interval calculations
+use outward dyadic rounding at scale $2^{192}$, 48-term
+range-reduced exponential and trigonometric series, and the
+normalized coefficient recursion
+\[
+ B_0=e^{\phi},\qquad
+ B_n=\frac1n\sum_{j=1}^n jA_jB_{n-j},\quad
+ A_j=\phi^{(j)}/j!,\quad B_j=(e^\phi)^{(j)}/j!.
+\]
+The phases $8u^4+bu-\pi n^2e^{4u}$ retain $b=9,5$ and
+$n=1,\ldots,4$ separately. Every finite inclusion is proved
+by kernel reduction in the audited Lean source; this is an
+explicit computer-assisted step, not a floating-point probe.
+
+\begin{proposition}\label{prop:obstruction}
+At $x_0$ the actual transform satisfies
+\begin{equation}\label{eq:negative}
+ H_8'(x_0)^2-H_8(x_0)H_8''(x_0)<-2\cdot10^{-20}.
+\end{equation}
+There is an open neighborhood of $8$ in which every time has
+a nonreal actual zero. Every eventual start is bounded below
+by some fixed number strictly greater than $8$.
+\end{proposition}
+\begin{proof}
+Enlarge the three table intervals by $161/10^{16}$. Their
+channel-zero and channel-two upper bounds are negative.
+Let their negatives be $b_0,b_2>0$ and let $b_1$ be the enlarged
+absolute channel-one bound. Exact rational arithmetic gives
+$b_1^2-b_0b_2<-2\cdot10^{-20}$, proving~\eqref{eq:negative}.
+
+Every real split polynomial satisfies $P'^2-PP''\geq0$ on
+the real axis. Away from its roots this follows by dividing
+by $P^2$ and summing the positive terms
+$m_r/(x-r)^2$; continuity covers its roots. Locally uniform
+entire convergence also gives convergence of the first two
+derivatives by the Cauchy formula. Thus~\eqref{eq:negative}
+excludes $\mathsf{LP}(8)$. Joint derivative continuity
+preserves the strict negative sign in an open time interval
+about $8$, and Corollary~\ref{cor:LP} supplies its nonreal zeros.
+A fixed bad time in that interval strictly above $8$ excludes
+every eventual start below or equal to it.
+\end{proof}
+
+\section{The theta strip and its actual logarithmic derivative}
+The large-frequency analysis takes place in
+$\mathcal U=\{w:|\Ima w|<\pi/8\}$. The same series as in
+\eqref{eq:K} defines a holomorphic kernel there. All constants
+denoted $C,c>0$ in the next two sections are absolute unless
+an explicit subscript records a fixed dependence. Their
+values may change between inequalities. A uniform assertion
+as $a\to\infty$ means that one cutoff in $a$ works for every
+other parameter satisfying the displayed hypotheses.
+
+\begin{lemma}\label{lem:strip}
+The complex kernel is even and conjugation compatible on
+$\mathcal U$. If $w=a+ib\in\mathcal U$, $a\geq0$, $L=e^{4a}$
+and $V=\Rea e^{4w}$, then
+\begin{equation}\label{eq:rho}
+ K(w)=2\pi^2e^{9w-\pi e^{4w}}(1+\rho(w)),\qquad
+ |\rho^{(j)}(w)|\leq C_j\bigl(e^{-4a}+(1+L)^je^{-3\pi V}\bigr)
+\end{equation}
+for $0\leq j\leq4$ when $V\geq1$.
+For $s\geq0$ and $c_b=\cos(4b)>0$,
+\begin{equation}\label{eq:compactkernel}
+ |K(s+ib)|\leq Cc_b^{-3}e^{-s}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Normal convergence of the theta series and all its derivatives
+holds on compact subsets where $\Rea e^{4w}>0$.
+Conjugation follows termwise. To check evenness, write
+$\vartheta(v)=\sum_{n\in\mathbb Z}e^{-\pi n^2v}$ and
+$F(w)=e^w(\vartheta(e^{4w})-1)/2$. The Gaussian theta
+identity $\vartheta(v)=v^{-1/2}\vartheta(1/v)$, with the
+analytic right-half-plane square root, gives
+$F(-w)=F(w)+\sinh w$ on $\mathcal U$.
+This identity is the Gaussian Poisson summation formula;
+equivalently it is the zero-argument modular theta identity
+in~\cite{dlmf}. Direct differentiation gives
+$(d^2/dw^2-1)F=8K$. Applying this operator to the reflection
+identity proves $K(-w)=K(w)$.
+
+Factor out the $n=1$ leading exponential. The remaining
+factor is
+\[
+ 1-\frac3{2\pi}e^{-4w}
+ +\sum_{n\geq2}\left(n^4-\frac3{2\pi}n^2e^{-4w}\right)
+                    e^{-\pi(n^2-1)e^{4w}}.
+\]
+Each of its first four derivatives is a finite linear
+combination of terms bounded by a constant times
+$e^{-4a}$ or
+$(1+L)^j n^{4+2j}e^{-\pi(n^2-1)V}$.
+For $V\geq1$, dividing the last sum by $e^{-3\pi V}$ leaves
+a sum bounded by
+$\sum_{n\geq2}n^{4+2j}e^{-\pi(n^2-4)}<\infty$.
+This proves~\eqref{eq:rho}, including its derivative bounds.
+
+For every $V>0$ and $m=2,4$,
+$\sum_{n\geq1}n^me^{-\pi n^2V}\leq C_mV^{-(m+1)/2}$.
+Indeed $n^me^{-\pi n^2V/2}\leq C_mV^{-m/2}$, and the
+remaining decreasing Gaussian sum is bounded by its integral
+from zero. Substitute $V=e^{4s}c_b$ in the two kernel terms.
+They are bounded by
+$Ce^{-s}(c_b^{-5/2}+c_b^{-3/2})$, which implies
+\eqref{eq:compactkernel} since $0<c_b\leq1$.
+\end{proof}
+
+Write
+\[
+ \sigma_t(w)=4tw^3+\frac{K'(w)}{K(w)},\qquad
+ W_{t,z}(w)=e^{tw^4+izw}K(w)
+\]
+where the denominator is nonzero. Under $V\geq c_0ta^3$,
+$t\geq1$ and large $a$, formula~\eqref{eq:rho} gives
+\begin{equation}\label{eq:slope}
+ \sigma_t(w)=4tw^3+9-4\pi e^{4w}+\epsilon(w),\qquad
+ |\epsilon^{(j)}(w)|\leq Ce^{-4a}\quad(0\leq j\leq3),
+\end{equation}
+for any fixed $c_0>0$. To see the uniformity, the other error
+terms are at most $C\exp(16a-ca^3)$, which is eventually
+bounded by $e^{-4a}$. The same bound holds along horizontal
+shifts $w+s$, $s\geq-1$, after replacing the right side by
+$Ce^{-4a}$: the potentially growing terms have the form
+$\exp(16a+16s-c ta^3e^{4s})$, whose maximum for $s\geq-1$
+occurs at the left endpoint once $a$ is large. In particular
+the kernel is nonzero on those horizontal segments.
+
+The distinction between the full slope $\sigma_t$ and its
+leading model $4tw^3+9-4\pi e^{4w}$ remains essential.
+Stationarity below always refers to the full slope.
+
+\section{A uniform horizontal saddle estimate}
+Fix $c_0=1/1000$. Call $(t,z,v)$ admissible when
+\begin{equation}\label{eq:admissible}
+ \begin{gathered}
+ t\geq1,\quad v=a+ib\in\mathcal U,\quad a\text{ sufficiently large},
+ \quad y=\Ima z\leq1,\\
+ \sigma_t(v)+iz=0,\qquad
+ \Rea e^{4v}\geq c_0ta^3.
+ \end{gathered}
+\end{equation}
+The last condition is verified in the saddle constructions;
+it prevents circular use of a theta asymptotic at an unknown
+point. Set $Y=\max(0,-y)$, $Q=ta^3+Y$ and $L=e^{4a}$.
+
+\begin{lemma}\label{lem:geometry}
+Uniformly for admissible saddles,
+\begin{equation}\label{eq:curvature}
+ cQ\leq\Rea e^{4v}\leq CQ,\quad
+ cL\leq|\beta|\leq CL,\quad
+ cQ\leq\Rea\beta\leq CQ,\qquad
+ \beta=-\sigma_t'(v)/2.
+\end{equation}
+For real $s\geq-1$,
+\begin{equation}\label{eq:horizontalcurvature}
+ \Rea\sigma_t'(v+s)\leq-cQ.
+\end{equation}
+On each sufficiently small fixed horizontal interval about
+zero, $|\sigma_t''(v+s)|\leq CL$.
+\end{lemma}
+\begin{proof}
+Take the real part of full stationarity in~\eqref{eq:slope}:
+\begin{equation}\label{eq:stationaryreal}
+ 4\pi\Rea e^{4v}
+       =4t(a^3-3ab^2)+9-y+\Rea\epsilon(v).
+\end{equation}
+Since $|b|<\pi/8<1/2$, $a$ is large and $y\leq1$, this is
+comparable above and below to $ta^3+Y$. It also gives
+$ta^3\leq CL$. In
+\[
+ \sigma_t'(v)=12tv^2-16\pi e^{4v}+\epsilon'(v),
+\]
+the first term has norm at most $CL/a$, whereas the
+exponential term has norm $16\pi L$. This proves the norm
+bounds for $\beta$. Taking real parts and using
+\eqref{eq:stationaryreal} gives its real-part bounds, since
+$ta^2=o(ta^3)$ uniformly.
+
+For $s\geq-1$, $(a+s)^2\leq Ca^2e^{2s}$ and
+$\Rea e^{4(v+s)}=e^{4s}\Rea e^{4v}$.
+The positive polynomial part of
+$\Rea\sigma_t'(v+s)$ is therefore at most
+$(C/a)Qe^{2s}$. The negative exponential part is at most
+$-cQe^{4s}$. Since $e^{2s}\leq e^2e^{4s}$ on this interval,
+the negative term dominates for large $a$.
+The uniform error~\eqref{eq:slope} is negligible as well,
+proving~\eqref{eq:horizontalcurvature}.
+Finally $\sigma_t''(w)=24tw-64\pi e^{4w}+\epsilon''(w)$;
+the asserted small-window bound follows from $ta^3\leq CL$.
+\end{proof}
+
+For fixed admissible parameters, the shifted horizontal
+integral is absolutely convergent: its strip margin is positive
+and the double exponential dominates the quartic term at
+infinity. Put
+\[
+ I_{t,z}(b)=\int_0^\infty W_{t,z}(s+ib)\,ds,\qquad
+ G(\beta)=\int_\R e^{-\beta s^2}\,ds.
+\]
+
+\begin{proposition}\label{prop:horizontal}
+There is a function $\eta(a)\to0$ such that, uniformly for
+all admissible saddles,
+\begin{equation}\label{eq:horizontal}
+ \left|\frac{I_{t,z}(b)}{W_{t,z}(v)G(\beta)}-1\right|
+                          \leq\eta(a).
+\end{equation}
+Also
+\begin{equation}\label{eq:absolutemass}
+ \int_0^\infty|W_{t,z}(s+ib)|\,ds
+                     \leq C|W_{t,z}(v)|/\sqrt Q.
+\end{equation}
+\end{proposition}
+\begin{proof}
+On the horizontal interval $s\geq-1$, define
+\[
+ P(s)=\int_0^s(\sigma_t(v+r)+iz)\,dr.
+\]
+The elementary scalar ODE for the weight gives
+$W_{t,z}(v+s)=W_{t,z}(v)e^{P(s)}$. This follows by
+differentiating $W_{t,z}(v+s)e^{-P(s)}$, whose derivative
+is zero; no complex neighborhood as wide as the horizontal
+interval is assumed. Full stationarity gives $P'(0)=0$.
+Lemma~\ref{lem:geometry} yields
+\begin{equation}\label{eq:Pbounds}
+ \Rea P(s)\leq-cQs^2\quad(s\geq-1),\qquad
+ P(s)=-\beta s^2+O(L|s|^3)\qquad(|s|\leq\rho),
+\end{equation}
+where $\rho>0$ is a sufficiently small absolute constant.
+The second estimate is real-parameter Taylor's theorem with
+the uniform horizontal third-derivative bound.
+
+For $\Rea\beta>0$, the complex Gaussian formula gives
+$G(\beta)=\sqrt\pi/\sqrt\beta$, with its right-half-plane
+branch. One direct verification differentiates under the
+absolutely dominated integral and integrates the derivative
+of $s e^{-\beta s^2}$: it obtains $G'=-G/(2\beta)$.
+Thus $\sqrt\beta\,G$ is constant on the right half-plane,
+and its value on the positive real axis is $\sqrt\pi$.
+Hence $|G(\beta)|\asymp L^{-1/2}$ by
+\eqref{eq:curvature}. Its two tails beyond $r>0$ satisfy
+\begin{equation}\label{eq:oscgaussian}
+ \left|\int_r^\infty e^{-\beta s^2}\,ds\right|
+ +\left|\int_{-\infty}^{-r} e^{-\beta s^2}\,ds\right|
+                           \leq\frac2{|\beta|r}.
+\end{equation}
+Integration by parts gives, for the positive tail,
+$e^{-\beta r^2}/(2\beta r)
+ -(2\beta)^{-1}\int_r^\infty e^{-\beta s^2}s^{-2}\,ds$;
+taking absolute values proves the bound, and the negative tail
+is identical. This estimate uses $|\beta|$, not a false
+comparison of its real part with its modulus.
+
+Take $r=L^{-7/16}$. On $[-r,r]$ the remainder in
+\eqref{eq:Pbounds} is eventually at most one. The inequality
+$|e^w-1|\leq e^{|w|}|w|$ bounds the integral difference
+from $e^{-\beta s^2}$ by $CLr^4$. Relative to $G$, this is
+$O(L^{3/2}r^4)=O(L^{-1/4})$. The Gaussian tails
+\eqref{eq:oscgaussian}, after normalization, are
+$O(L^{-1/2}r^{-1})=O(L^{-1/16})$.
+
+It remains to estimate the actual annuli. For
+$r\leq|s|\leq\rho$, reduce $\rho$ if necessary so that
+\[
+ |P'(s)|\geq cL|s|,\qquad |P''(s)|\leq CL.
+\]
+Indeed $P'(s)=-2\beta s+O(Ls^2)$ and
+$|\beta|\geq cL$. On either annulus integrate
+$(e^P)'/P'$ by parts. The boundary terms are bounded by
+$C/(Lr)$. The integral of $|e^P P''/(P')^2|$ is at most
+\[
+ C\int_r^\rho\frac{ds}{Ls^2}\leq\frac{C}{Lr}.
+\]
+We used $|e^P|\leq1$ from~\eqref{eq:Pbounds}.
+The relative annular error is again $O(L^{-1/16})$.
+
+The remaining interval $[-1,-\rho]$ and right tail
+$[\rho,\infty)$ are bounded absolutely by
+$Ce^{-cQ\rho^2}$ and $Ce^{-cQ\rho^2}/(Q\rho)$ respectively.
+After multiplication by $\sqrt L=e^{2a}$, both tend to zero
+uniformly since $Q\geq a^3$.
+
+Finally consider the physical prefix $0\leq s\leq a-1$.
+Write $z=X+iy$. Equation~\eqref{eq:stationaryreal} gives
+$c_b=\Rea e^{4v}/L\geq cQ/L$. Thus
+\eqref{eq:compactkernel} and $-y s\leq Ys$ give
+\[
+ |W_{t,z}(s+ib)|
+ \leq C e^{12a}Q^{-3}
+          e^{t(a-1)^4+Ct+Y(a-1)-Xb}.
+\]
+The real quartic term on the line also contains
+$-6ts^2b^2+tb^4\leq Ct$, which can be included in the exponent.
+At the center,~\eqref{eq:rho} and
+\eqref{eq:stationaryreal} give
+\[
+ |W_{t,z}(v)|\geq c
+ e^{ta^4-ta^3-Cta^2+9a+Y(a-1/4)-Xb-Ca}.
+\]
+For $0<y\leq1$ the replacement of $-ya$ by this lower bound
+costs only $Ca$. Subtract the two exponents. The polynomial
+$t((a-1)^4-a^4+a^3+Ca^2+C)$ is at most $-ct a^3$
+for large $a$, and the $Y$ term is $-3Y/4$. Therefore
+\begin{equation}\label{eq:prefixbound}
+ \frac{\int_0^{a-1}|W_{t,z}(s+ib)|\,ds}{|W_{t,z}(v)|}
+                       \leq Ca\,e^{-cQ+Ca}.
+\end{equation}
+It too vanishes after Gaussian normalization.
+The central, annular and three complementary bounds prove
+\eqref{eq:horizontal}. One may take a constant multiple of
+$L^{-1/4}+L^{-1/16}+(a+1)e^{-ca^3+Ca}$ for $\eta$,
+after enlarging the constants. Absolute integration of
+$e^{-cQs^2}$ on $[-1,\infty)$, together with
+\eqref{eq:prefixbound}, proves~\eqref{eq:absolutemass}.
+\end{proof}
+
+This proof retains the actual horizontal slope and curvature.
+The formal source often compares them to their leading model,
+carrying its small linear mismatch explicitly. The present
+grouping uses the same arithmetic estimates at the actual
+saddle and proves the resulting bound directly. It does not
+attribute this regrouping to an additional named Lean theorem.
+
+\section{Signed contours, analytic pairing and exact local zeros}
+The horizontal estimate concerns one half-line contribution.
+We now relate it to the actual cosine integral, retaining
+the endpoint terms when the two heights differ.
+
+\begin{lemma}\label{lem:contour}
+For real $h,k$ with $|h|,|k|<\pi/8$,
+\begin{align}\label{eq:unequal}
+ H_t(z)=\tfrac12\bigg(&I_{t,z}(h)
+       +\overline{I_{t,\overline z}(k)}\notag\\
+       &+i\int_k^hW_{t,z}(iy)\,dy\bigg).
+\end{align}
+In particular, choosing mirrored heights for the original
+$z,-z$ contributions gives the exact identity
+\begin{equation}\label{eq:mirror}
+ H_t(z)=\tfrac12\bigl(I_{t,z}(h)+I_{t,-z}(-h)\bigr).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Integrate $W_{t,z}$ around the rectangle with vertices
+$0,R,R+ih,ih$. It is holomorphic on a neighborhood of this
+rectangle in the theta strip. Its right vertical edge tends
+to zero as $R\to\infty$: throughout that edge
+$\Rea e^{4(R+iy)}\geq e^{4R}\min_{|v|\leq|h|}\cos(4v)>0$,
+and the theta decay dominates every quartic and linear factor.
+The two horizontal integrals are absolutely convergent for
+the same reason. Their orientations therefore give
+\[
+ J_t(z):=\int_0^\infty W_{t,z}(u)\,du
+       =I_{t,z}(h)+i\int_0^hW_{t,z}(iy)\,dy.
+\]
+Apply this also to $J_t(-z)$ at height $-k$.
+Kernel evenness gives $W_{t,-z}(-iy)=W_{t,z}(iy)$, so its
+vertical term is the negative integral from $0$ to $k$.
+Conjugation gives
+$I_{t,-z}(-k)=\overline{I_{t,\overline z}(k)}$.
+Adding and dividing by two proves~\eqref{eq:unequal}.
+For $k=h$ the vertical integral is zero, giving
+\eqref{eq:mirror} in the original opposite-frequency notation.
+\end{proof}
+
+\begin{lemma}\label{lem:reflection}
+For an admissible saddle with $y=\Ima z\leq0$,
+\begin{equation}\label{eq:reflection}
+ \frac{|I_{t,-z}(-b)|}{|W_{t,z}(v)G(\beta)|}
+ \leq C\sqrt{L/Q}\,e^{2y(a-1)}+o(1),
+\end{equation}
+uniformly as $a\to\infty$. Consequently no zero can occur
+at such an admissible frequency with $y\leq-1$, for large $a$.
+\end{lemma}
+\begin{proof}
+At the same physical horizontal coordinate $s\geq0$,
+conjugation of the kernel gives the exact modulus ratio
+\[
+ |W_{t,-z}(s-ib)|=|W_{t,z}(s+ib)|e^{2ys}.
+\]
+On $s\geq a-1$, use $e^{2ys}\leq e^{2y(a-1)}$ and
+\eqref{eq:absolutemass}. On $0\leq s\leq a-1$, use
+$e^{2ys}\leq1$ and~\eqref{eq:prefixbound}. Division by
+$|G|\asymp L^{-1/2}$ proves~\eqref{eq:reflection}.
+If $y\leq-1$, then
+$\sqrt L\,e^{2y(a-1)}\leq e^{2a}e^{-2(a-1)}=e^2$.
+Since $Q\geq a^3$, the right side tends to zero. The direct
+contribution in~\eqref{eq:mirror}, normalized by the same
+nonzero amplitude, tends to one by
+Proposition~\ref{prop:horizontal}. Their sum cannot vanish.
+\end{proof}
+
+The remaining strip needs exact zero control. A real
+conjugation-compatible function close to cosine can be shown
+injective on the small disk containing a proposed conjugate
+zero pair. The buffer in the next lemma is what permits the
+derivative estimate.
+
+\begin{lemma}\label{lem:smallcosine}
+Let $a\in\R$ and let $f$ be holomorphic near the closed disk
+$|q-a|\leq1$, with $f(\overline q)=\overline{f(q)}$ there.
+If $|f(q)-\cos q|\leq\delta=1/1000$ on that disk, every zero
+in $|q-a|\leq\delta$ is real and simple.
+\end{lemma}
+\begin{proof}
+At a proposed zero $q_0$, $|\cos q_0|\leq\delta$.
+Since $|\sin q|\leq e^{|\Ima q|}<3$ on the unit disk,
+integration along the segment gives
+$|\cos a|\leq\delta+3\delta=1/250$. Thus $|\sin a|\geq1/2$.
+Set $d=-\sin a$. For $|q-a|\leq\delta$, the circle of
+radius $1/2$ about $q$ stays inside the unit disk.
+Cauchy's derivative estimate applied to $f-\cos$ gives
+$|f'(q)+\sin q|\leq2\delta$.
+Also $|\sin q-\sin a|\leq3\delta$, so
+$|f'(q)-d|\leq5\delta\leq|d|/2$ on the small disk.
+
+Integrate $f'-d$ on the segment between any two points of
+that convex disk. The reverse triangle inequality gives
+\[
+ |f(q)-f(p)|\geq\tfrac12|d|\,|q-p|.
+\]
+The conjugate of $q_0$ is another zero in the disk, so the
+inequality forces $q_0=\overline q_0$. The derivative bound
+also gives $|f'(q_0)|\geq|d|/2>0$.
+\end{proof}
+
+\begin{lemma}\label{lem:straighten}
+Let $g,E,\Phi$ be holomorphic on $|z-x|<r$, where $x\in\R$,
+with $E$ nonzero and all three functions conjugation compatible.
+Suppose $s>0$, $D\geq0$,
+\[
+ D/s\leq10^{-6},\quad 1/s\leq r/2,\quad
+ |\Phi'(z)-s|\leq D,
+\]
+and
+\begin{equation}\label{eq:weightedcosine}
+ |g(z)/E(z)-\cos\Phi(z)|\leq10^{-6}\cosh(\Ima\Phi(z)).
+\end{equation}
+Every zero $z$ with $|z-x|<r/2$ is real and simple.
+\end{lemma}
+\begin{proof}
+Put $p=\Rea z$, $a=\Phi(p)\in\R$,
+$\ell(q)=p+(q-a)/s$ and $f(q)=g(\ell(q))/E(\ell(q))$.
+The closed unit disk about $a$ maps strictly inside the
+original disk, by the buffer and $|p-x|<r/2$.
+Integration of $\Phi'-s$ gives
+$|\Phi(\ell(q))-q|\leq D/s\leq\varepsilon=10^{-6}$.
+Both arguments are in the disk of radius two about $a$;
+there $|\sin|<9$ and $\cosh(\Ima\Phi)\leq9$.
+Thus~\eqref{eq:weightedcosine} implies
+$|f(q)-\cos q|\leq18\varepsilon<1/1000$.
+
+At the zero, writing $\Phi(z)=u+iv$ gives
+$|\cos(u+iv)|^2=\cos^2u+\sinh^2v$.
+Equation~\eqref{eq:weightedcosine} therefore implies
+$|\tanh v|\leq\varepsilon$, hence
+$|v|\leq\operatorname{arctanh}\varepsilon\leq2\varepsilon$.
+On the vertical segment from $p$ to $z$,
+$\Rea\Phi'\geq s-D\geq s/2$. Since $\Phi(p)$ is real,
+integration gives $|\Ima\Phi(z)|\geq s|\Ima z|/2$.
+Consequently $q_0=a+s(z-p)$ is a zero of $f$ with
+$|q_0-a|=s|\Ima z|\leq4\varepsilon<1/1000$.
+Lemma~\ref{lem:smallcosine} makes $q_0$ real and simple.
+Thus $z$ is real, and
+$f'(q_0)=g'(z)/(sE(z))\ne0$ proves its simplicity.
+\end{proof}
+
+\begin{proposition}\label{prop:localactual}
+Suppose a real frequency $x$ has an admissible actual saddle
+$v_0=a+ib$, with large $a$. Then every zero $z=x+iy$ of
+$H_t$ with $|y|<1$ is real and simple.
+\end{proposition}
+\begin{proof}
+We first construct the local analytic quantities rather than
+differentiate a varying principal argument. Lemma
+\ref{lem:geometry} gives $|\sigma_t'(v_0)|\asymp L$.
+The distance of $v_0$ from the theta-strip boundary is at
+least $cQ/L$: indeed $\cos(4b)\geq cQ/L$ and the distance
+is comparable to this cosine near either boundary.
+Since $Q\geq a^3$, a disk of radius $C/L$ lies inside the
+strip for any fixed $C$ and large $a$.
+On this disk $|\sigma_t''|\leq CL$, by the differentiated
+series estimate~\eqref{eq:rho}; the real-part margin changes
+by only a bounded amount.
+
+For $|z-x|<2$, solve
+$\sigma_t(v)+iz=0$ by the contraction
+\[
+ v\longmapsto v-
+       \frac{\sigma_t(v)+iz}{\sigma_t'(v_0)}
+\]
+on a disk $|v-v_0|\leq C/L$ with a sufficiently large fixed
+$C$. Its center displacement is $O(1/L)$, and its derivative
+is $O(1/L)$ there. It therefore maps the disk into itself and
+is contractive for large $a$. The fixed point $v(z)$ depends
+holomorphically on $z$, either by uniform iteration on smaller
+frequency disks or the analytic inverse theorem, and
+\begin{equation}\label{eq:branchderiv}
+ v(z)=v_0+O(1/L),\qquad v'(z)=-i/\sigma_t'(v(z))=O(1/L).
+\end{equation}
+For $|z-x|\leq1$ its imaginary frequency is at most one.
+The initial theta margin changes by only $O(1)$ and so first
+remains at least $(c_0/2)ta^3$, enough to use the series
+estimate~\eqref{eq:slope}. Taking real parts of its exact
+stationarity then gives~\eqref{eq:stationaryreal} and restores
+the larger lower bound $\Rea e^{4v(z)}\geq c_0t(\Rea v(z))^3$
+for large $a$. Thus these saddles are admissible with the
+original fixed constant.
+
+The actual amplitude
+\[
+ \mathcal A(z)=W_{t,z}(v(z))\sqrt{\pi/\beta(z)},\qquad
+ \beta(z)=-\sigma_t'(v(z))/2,
+\]
+is nonzero and holomorphic. The square root is fixed by
+$\Rea\beta>0$. Stationarity cancels the derivative of the
+center in the exponential weight, giving
+\begin{equation}\label{eq:amplitudederiv}
+ \frac{\mathcal A'}{\mathcal A}
+     =iv(z)-\frac{\beta'(z)}{2\beta(z)}
+     =iv(z)+O(1/L).
+\end{equation}
+Here $\beta'=O(1)$ follows from
+$|\sigma_t''|\leq CL$ and~\eqref{eq:branchderiv}.
+
+Choose an analytic $P$ with $P(x)=0$ and
+$\mathcal A(z)=\mathcal A(x)e^{P(z)}$. Put
+$P^*(z)=\overline{P(\overline z)}$, $a_0=\mathcal A(x)$ and
+\[
+ E(z)=|a_0|e^{(P(z)+P^*(z))/2},\qquad
+ \Phi(z)=\arg a_0+\frac{P(z)-P^*(z)}{2i}.
+\]
+These are holomorphic and conjugation compatible; $E$ is
+nonzero. The argument of $a_0$ is a fixed real number.
+Direct expansion gives the exact identities
+\begin{align}\label{eq:pairamplitudes}
+ \tfrac12(\mathcal A(z)+\overline{\mathcal A(\overline z)})
+          &=E(z)\cos\Phi(z),\notag\\
+ |\mathcal A(z)|+|\mathcal A(\overline z)|
+          &=2|E(z)|\cosh(\Ima\Phi(z)).
+\end{align}
+Equations~\eqref{eq:branchderiv}--\eqref{eq:amplitudederiv}
+also give $|\Phi'(z)-a|\leq C/L$ on the unit frequency disk.
+
+Apply~\eqref{eq:unequal} with heights
+$h=\Ima v(z)$ and $k=\Ima v(\overline z)$.
+The two horizontal errors are at most
+$o(1)(|\mathcal A(z)|+|\mathcal A(\overline z)|)$, uniformly.
+We must still bound the vertical residual. Its height gap is
+$O(|y|/L)$ by~\eqref{eq:branchderiv}.
+Throughout the interval between the heights, the cosine margin
+is at least $cQ/L$: cosine is concave on $(-\pi/2,\pi/2)$,
+so its minimum on that interval is at an endpoint.
+Equation~\eqref{eq:compactkernel} at real coordinate zero
+bounds the kernel there by $CL^3/Q^3$. Also
+$|\Rea z|\leq CL$, as follows by taking norms in full
+stationarity at the center. Thus the vertical residual is at most
+\[
+ \exp(Ca+t-Xh+C),\qquad X=\Rea z,
+\]
+after absorbing its polynomial factors and using
+$|X||h-k|=O(1)$.
+On the other hand~\eqref{eq:stationaryreal} at $v(z)$, with
+$|y|\leq1$, gives
+\[
+ |\mathcal A(z)|\geq
+ \exp\bigl(ta^4-Cta^3-Ca-Xh\bigr).
+\]
+Changing its real center by $O(1/L)$ changes only the stated
+constants. The ratio of the residual to this amplitude is
+at most $\exp(-ct a^4+Ca)$ for large $a$, hence tends to zero
+uniformly. It cannot be discarded as an exact cancellation,
+but it is negligible in this relative estimate.
+
+By~\eqref{eq:pairamplitudes}, we have now proved
+\[
+ |H_t(z)/E(z)-\cos\Phi(z)|
+       \leq o(1)\cosh(\Ima\Phi(z)),\qquad |z-x|\leq1.
+\]
+For large $a$ replace $o(1)$ by $10^{-6}$.
+If a proposed zero has $|y|<1$, this inequality first gives
+$|\Ima\Phi(z)|\leq2\cdot10^{-6}$ as in the preceding lemma.
+Vertical integration of $\Phi'$ gives
+$|\Ima\Phi(z)|\geq(a-C/L)|y|$, so actually $|y|<1/2$.
+Apply Lemma~\ref{lem:straighten} on the unit disk, with
+$s=a$, $D=C/L$ and $r=1$. Its buffer and scaled derivative
+conditions hold for large $a$. The zero is real and simple.
+\end{proof}
+
+\section{Actual saddles in the transition and far regions}
+The preceding estimates do not assume that a saddle exists.
+We now supply that input in two overlapping frequency regimes.
+The distinction is quantitative: a fixed multiple of the
+moving real scale, and the region beyond that multiple.
+
+\begin{lemma}\label{lem:realcenter}
+For every sufficiently large $t$ there is a positive real
+stationary center $u=u_t$ with $u_t\to\infty$ as $t\to\infty$.
+Writing $B=4\pi e^{4u}$, it satisfies
+\begin{equation}\label{eq:realscale}
+ \sigma_t(u)=0,\qquad B=4tu^3+9+O(e^{-4u})\asymp tu^3.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The positive continuous function $e^{tu^4}K(u)$ tends to zero
+at infinity and has a global maximum on $[0,\infty)$.
+For each fixed $R\geq0$, its maximum on $[0,R]$ is at most
+$e^{tR^4}\max_{[0,R]}K$ for $t\geq0$. Its value at $R+1$
+is $e^{t(R+1)^4}K(R+1)$, which eventually exceeds that bound.
+Thus every maximizing center escapes to infinity.
+At a positive center its ordinary derivative vanishes, so
+$4tu^3+K'(u)/K(u)=0$. The real-axis instance of
+\eqref{eq:rho} gives
+$K'(u)/K(u)=9-4\pi e^{4u}+O(e^{-4u})$.
+This uses only the real kernel asymptotic, independent of $t$,
+and proves~\eqref{eq:realscale} without assuming it in advance.
+\end{proof}
+
+\begin{proposition}\label{prop:transition}
+Fix $M\geq0$. For all sufficiently large $t$, every zero in
+$|z|\leq MB$ is real and simple, with the same $u,B$ as in
+Lemma~\ref{lem:realcenter}.
+\end{proposition}
+\begin{proof}
+We construct saddles for all $|z|\leq MB$, $\Ima z\leq0$.
+The anchor
+\[
+ q_z=u+\tfrac14\Log(1+iz/B)
+\]
+has $|q_z-u|\leq C_M$ and a fixed positive distance, depending
+only on $M$, from the boundary of $\mathcal U$. Indeed
+$\Rea(1+iz/B)\geq1$ and $|1+iz/B|\leq1+M$.
+On the disk $|w-q_z|\leq C_M/u$, all kernel errors and their
+derivatives in~\eqref{eq:slope} are $O_M(e^{-4u})$.
+Equation~\eqref{eq:realscale} makes actual stationarity
+equivalent to the fixed-point equation
+\begin{equation}\label{eq:transitionfixed}
+ w=u+\tfrac14\Log\left(1+\frac{iz}{B}
+       +\frac{4t(w^3-u^3)+\epsilon(w)-\epsilon(u)}B\right).
+\end{equation}
+The expression inside the logarithm remains in a right
+half-plane. Its perturbation from $1+iz/B$ is $O_M(1/u)$,
+since $t/B=O(u^{-3})$. At the center the right side differs
+from $q_z$ by $O_M(1/u)$, and its derivative in $w$ is
+$O_M(tu^2/B)=O_M(1/u)$.
+Choose the fixed constant in the disk radius large enough
+for the center bound and then take $u$ large. The map is a
+contraction of that disk into itself, giving an actual root
+$v(z)$ with
+\[
+ \Rea v=u+O_M(1),\qquad
+ \Rea e^{4v}\asymp_M B,\qquad
+ e^{4\Rea v}\asymp_M B.
+\]
+In particular the theta margin is positive. Taking real parts
+of stationarity, as in~\eqref{eq:stationaryreal}, improves
+this to $\Rea e^{4v}\geq c_0t(\Rea v)^3$ for large $u$.
+These saddles are admissible, and their ratio $L/Q$ is bounded
+by a constant depending only on $M$.
+
+Use Lemma~\ref{lem:reflection} on any lower-half-plane
+frequency with $y\leq-A_M/u$. Since
+$\Rea v-1\geq u/2$ for large $u$, its reflected relative
+amplitude is at most $C_Me^{-A_M}+o(1)$.
+Choose the fixed $A_M$ so this is below $1/4$; the direct
+relative amplitude is within $1/4$ of one for large $u$.
+Equation~\eqref{eq:mirror} excludes such zeros.
+Conjugation excludes the corresponding upper region.
+Thus every zero in the transition disk has
+$|\Ima z|<A_M/u<1$.
+
+At its real projection $x=\Rea z$ we have $|x|\leq MB$;
+the same construction supplies a real-frequency admissible
+saddle. Proposition~\ref{prop:localactual} now proves exact
+reality and simplicity of the zero.
+All cutoffs in this argument depend only on the fixed $M$,
+not on the sampled frequency.
+\end{proof}
+
+\begin{lemma}\label{lem:farsaddle}
+There is a sufficiently large absolute $C_0$ with the following
+property. Let $t\geq1$, $\Ima z\leq0$, $X=|z|$ and
+\[
+ \alpha=\tfrac14\log(X/(4\pi)).
+\]
+If $\alpha$ is sufficiently large and
+$X\geq C_0t(\alpha+1)^3$, there is an admissible actual saddle
+$v$ with $\Rea v=\alpha+O(1)$, uniformly in these parameters.
+\end{lemma}
+\begin{proof}
+First solve the leading model, which is entire and has no
+theta-strip domain restriction. The anchor
+$q=\tfrac14\Log(iz/(4\pi))$ has real part $\alpha$ and
+imaginary part in $[-\pi/8,\pi/8]$, since $\Rea(iz)\geq0$.
+Consider
+\[
+ w\longmapsto\tfrac14\Log\left(\frac{iz+4tw^3+9}{4\pi}\right)
+\]
+on a disk about $q$ of radius $Ct(\alpha+1)^3/X$.
+Choose $C_0$ sufficiently large that this radius is below
+$1/100$. On this disk $\Rea(w^3)\geq\alpha^3/2$ for large
+$\alpha$, so the logarithm argument has positive real part.
+Its modulus is comparable to $X$, since the cubic perturbation
+has norm at most $CX/C_0$.
+The center displacement is at most $Ct(\alpha+1)^3/X$ by
+$|\Log(1+\zeta)|\leq2|\zeta|$ for $|\zeta|\leq1/2$;
+its derivative is at most $Ct(\alpha+1)^2/X<1/2$.
+Enlarging the fixed radius constant and then $C_0$ gives a
+contraction. Its fixed point $w$ satisfies
+\[
+ 4tw^3+9-4\pi e^{4w}=-iz,\quad
+ |w-q|\leq Ct(\alpha+1)^3/X.
+\]
+Writing $w=a+ib$ and $Y=-\Ima z\geq0$, real parts give
+\[
+ 4\pi\Rea e^{4w}=4t(a^3-3ab^2)+9+Y\geq cta^3+Y.
+\]
+We have $|b|<1/2$, and positivity of this real part therefore
+places $w$ strictly inside $|b|<\pi/8$.
+Also $e^{4a}\asymp X$.
+
+On the disk $|v-w|\leq1/X$, the real theta margin changes
+by only $O(1)$, so remains at least $cta^3+ cY$.
+The error and its first derivative in~\eqref{eq:slope} are
+$O(e^{-4a})$ there. The model derivative equals
+\[
+ 12tw^2-16\pi e^{4w}
+        =-4iz+t(12w^2-16w^3)-36;
+\]
+its norm is between $cX$ and $CX$, because
+$ta^3\leq CX/C_0$. Its variation across this disk is $O(1)$.
+The Newton map using this fixed model derivative consequently
+has derivative $O(1/X)$ on the disk and center displacement
+$O(e^{-4a}/X)$. For large $\alpha$ it maps the disk into itself
+and is contractive. Its fixed point solves full stationarity.
+The retained positive real theta margin and $|\Ima v|<1/2$
+keep it in the strip, and its margin exceeds
+$c_0t(\Rea v)^3$. It is the asserted admissible actual saddle.
+\end{proof}
+
+\begin{proposition}\label{prop:farzeros}
+For a sufficiently large fixed constant $C_1$, if $t\geq1$,
+$\alpha=\tfrac14\log(|z|/(4\pi))$ is sufficiently large and
+\begin{equation}\label{eq:farcondition}
+ |z|\geq C_1t(\alpha+1)^3,
+\end{equation}
+then every zero $H_t(z)=0$ is real and simple.
+For each finite $T$, one radius works for every $1\leq t\leq T$.
+\end{proposition}
+\begin{proof}
+Choose $C_1$ at least twice the $C_0$ in the preceding lemma.
+If $\Ima z\leq-1$, its actual saddle and
+Lemma~\ref{lem:reflection} exclude a zero.
+Conjugation excludes $\Ima z\geq1$. In the remaining strip,
+put $x=\Rea z$. For large $|z|$ we have
+$|x|\geq|z|/2$, and
+$\alpha_x=\tfrac14\log(|x|/(4\pi))\leq\alpha$.
+Thus $|x|\geq C_0t(\alpha_x+1)^3$, with $\alpha_x$ large.
+At this real frequency the far-saddle construction applies.
+Proposition~\ref{prop:localactual} proves that the proposed
+zero in $|\Ima z|<1$ is real and simple.
+
+For $1\leq t\leq T$, condition~\eqref{eq:farcondition}
+and the lower bound on $\alpha$ hold for every sufficiently
+large $|z|$, uniformly in $t$, since
+$X/(1+\log X)^3\to\infty$. If $T<1$ the assertion is vacuous.
+\end{proof}
+
+\section{Whole-plane assembly with one moving center}
+The bounded-ratio and far estimates cover all frequencies
+only after their scales are compared at the same real center.
+\begin{proposition}\label{prop:eventual}
+For every sufficiently large $t$, every complex zero of $H_t$
+is real and simple.
+\end{proposition}
+\begin{proof}
+Use the actual maximizing center $u$ and
+$B=4\pi e^{4u}$ from Lemma~\ref{lem:realcenter}.
+For $X=|z|\geq MB$, put
+$\alpha=\tfrac14\log(X/(4\pi))=u+d$.
+Then $d\geq\tfrac14\log M$ and
+\[
+ \frac{t(\alpha+1)^3}{X}
+ \leq C e^{-4d}\left(1+\frac{d+1}{u}\right)^3
+ \leq C(1+d)^3e^{-4d},\qquad u\geq1.
+\]
+Choose one fixed $M>1$ so large that the last quantity is
+at most $1/C_1$ for every $d\geq\tfrac14\log M$.
+This is possible by exponential domination.
+For late $t$, the far condition and lower bound on $\alpha$
+then hold throughout $X\geq MB$.
+Proposition~\ref{prop:farzeros} treats that region.
+For this same fixed $M$ and the same center $u$,
+Proposition~\ref{prop:transition} treats $X\leq MB$.
+The two regions cover $\C$. This proves the assertion without
+exchanging a fixed-time far limit with a late-time limit.
+\end{proof}
+
+\begin{corollary}\label{cor:confine}
+There is $R<\infty$ such that every nonreal zero at every
+time $t\geq1$ lies in $|z|<R$.
+\end{corollary}
+\begin{proof}
+Choose $T\geq1$ after which Proposition~\ref{prop:eventual}
+holds. On $[1,T]$ use the uniform radius from
+Proposition~\ref{prop:farzeros}. Beyond $T$ there are no
+nonreal zeros. Enlarge the radius to make it positive.
+\end{proof}
+
+\section{Attainment and the multiple real zero}
+It remains to pass from eventual analytic control to the
+literal threshold in~\eqref{eq:starts}. No propagation
+property of the quartic flow is used in this passage.
+
+\begin{lemma}\label{lem:closedLP}
+If $s_n\to t$ and $\mathsf{LP}(s_n)$ for every $n$, then
+$\mathsf{LP}(t)$.
+\end{lemma}
+\begin{proof}
+For each $n$ select one split-real polynomial $Q_n$ within
+$1/(n+1)$ of $H_{s_n}$ on $|z|\leq n$. On a fixed compact
+set, the error to $H_t$ is eventually bounded by this
+quantity plus $\sup|H_{s_n}-H_t|$, which tends to zero by
+Proposition~\ref{prop:entire}. Thus $Q_n\to H_t$ locally
+uniformly on the whole plane.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Proposition~\ref{prop:eventual} and Corollary~\ref{cor:LP}
+make $\mathcal S$ nonempty. Proposition~\ref{prop:obstruction}
+bounds every start below by a fixed number greater than eight.
+Thus $A$ is finite and $A>8$.
+For each $t>A$, the definition of an infimum gives some
+$T\in\mathcal S$ with $T<t$, whence $\mathsf{LP}(t)$.
+Apply Lemma~\ref{lem:closedLP} to $t_n=A+1/(n+1)$ to obtain
+$\mathsf{LP}(A)$ as well. Thus $A\in\mathcal S$ and
+$\mathcal S=[A,\infty)$. Corollary~\ref{cor:LP} gives
+reality of every zero at and after $A$.
+
+Given $\varepsilon>0$, put $T=A-\varepsilon/2$.
+Since $T\notin\mathcal S$, some $s\geq T$ fails
+$\mathsf{LP}(s)$. Necessarily $s<A$, since all times at or
+after $A$ satisfy it. Corollary~\ref{cor:LP} supplies a
+nonreal zero at this $s\in(A-\varepsilon,A)$.
+
+Choose $s_n\in(A-1/(n+1),A)$ with nonreal zero $z_n$.
+All these times exceed one because $A>8$.
+Corollary~\ref{cor:confine} puts all $z_n$ in one compact
+disk. After passing to a subsequence, $z_n\to w$ and
+$s_n\to A$. Joint continuity gives $H_A(w)=0$, and
+threshold reality gives $w\in\R$.
+
+Suppose $c=H_A'(w)\ne0$. Joint derivative continuity provides
+a time neighborhood of $A$ and a disk about the real $w$ in
+which $|H_s'(q)-c|\leq|c|/2$.
+Integration along any segment in that convex disk yields
+\[
+ |H_s(q)-H_s(p)|\geq\tfrac12|c|\,|q-p|.
+\]
+For large $n$, both $z_n$ and $\overline z_n$ lie there and
+are distinct zeros of the same $H_{s_n}$. This contradicts
+the lower bound. Hence $H_A'(w)=0$.
+Since $H_A(0)>0$, $w\ne0$. If $w<0$, replace every $z_n$
+by $-z_n$ and $w$ by $-w$; evenness preserves all the zero
+identities, and its derivative is odd. Thus the limit is a
+positive real multiple zero. Its order is at least two and finite, because
+$H_A$ is a nonzero entire function. Global eventual
+simplicity was already proved in
+Proposition~\ref{prop:eventual}.
+\end{proof}
+
+\section{Formal correspondence and limits of the conclusion}
+The mathematical baseline is the frozen verified commit
+\begin{center}\small\ttfamily
+bab688bb6140cd6316c80680095a914ea0d346db.
+\end{center}
+The accompanying source dossier records exact declaration
+types, lines, hashes and links, the finite certificate table,
+and its independent rational aggregation check. The main
+formal namespaces, with prefix
+\code{OperatorDerivativeRewrite.Foundation}, are:
+\begin{center}
+\begin{tabular}{@{}l@{}}
+\code{RiemannQuarticUniformFarScale}\\
+\code{RiemannQuarticGlobalSimpleZeros}\\
+\code{RiemannQuarticActualPolynomialLimit}\\
+\code{RiemannQuarticThresholdEndpoint}\\
+\code{RiemannQuarticThresholdZeros}\\
+\code{RiemannQuarticThresholdCompactness}\\
+\code{RiemannQuarticThresholdCollision}.
+\end{tabular}
+\end{center}
+The actual certificate is \code{actual_real_derivative_negative}
+in \code{RiemannQuarticLaguerreWitness}.
+
+The human proof groups the actual logarithmic-derivative
+estimates into one admissible-saddle calculation and uses
+unspecified uniform constants. The formal source retains
+explicit constants, model corrections and separate transition
+and far budgets. The regrouping is an exposition of the same
+final result, not an assertion that every intermediate lemma
+above has a new named Lean declaration. The exact final
+quantifiers are those of the mapped declarations. The
+arithmetic finite inclusions retain their explicit
+computer-assisted proofs, while the analytic regrouping and
+polynomial reconstruction are supplied as human proofs here.
+
+The threshold is an attained eventual-start threshold.
+Neither monotone propagation from each individual reality
+time nor failure at every earlier time has been proved here.
+The collision argument proves finite multiplicity at least
+two, not exactly two or a specified zero trajectory.
+The upper threshold is existential, without a numerical
+upper value or an optimal quantitative estimate.
+No comparison with the classical quadratic threshold or
+implication for the Riemann hypothesis is supplied.
+
+De Bruijn~\cite{debruijn} and Newman~\cite{newman} are primary
+antecedents for real-zero Fourier transforms and quadratic
+propagation. Their exact deformation, sign and quantifiers
+must be retained in any priority comparison. Preliminary
+comparison does not establish novelty for the combined
+quartic package; novelty remains unresolved.
+
+\begin{thebibliography}{9}
+\bibitem{debruijn} N. G. de Bruijn,
+The roots of trigonometric integrals,
+\emph{Duke Math. J.} \textbf{17} (1950), 197--226.
+\href{https://doi.org/10.1215/S0012-7094-50-01720-0}
+{doi:10.1215/S0012-7094-50-01720-0}.
+\bibitem{newman} C. M. Newman,
+Fourier transforms with only real zeros,
+\emph{Proc. Amer. Math. Soc.} \textbf{61} (1976), 245--251.
+\url{https://sites.math.northwestern.edu/~auffing/papers/Newman.pdf}.
+\bibitem{dlmf} NIST Digital Library of Mathematical Functions,
+\S20.7(viii), equation 20.7.32, modular theta identity.
+\url{https://dlmf.nist.gov/20.7.E32}.
+\end{thebibliography}
+\end{document}
