@@ -199,3 +199,7 @@ Eight-page companion, 72 exact declaration correspondences, six exact finite-sym
 ## Quartic multi-target prediction diagnostic
 
 The Gaussian prediction companion is expanded from six to eight pages with complete raw-quartic second/fourth-chaos prediction and actual negative residual cross-covariance proofs. 68 total exact source correspondences; thirteen exact two-Gaussian polynomial checks pass. Every revised page inspected, references resolved, original fractional/domain boundaries preserved. Twenty-three reviewed drafts total 215 pages.
+
+## Actual one-sided boundary Schur certificate
+
+Ten-page computer-assisted finite quadratic companion, 107 exact source correspondences, complete geometry/gauge/pin/norm/residual proofs and nine independent exact checks including every integer certificate entry. Physical lower 0.69639 and exact Rayleigh witness below rounded 0.6964; periodic gauge and perturbation limits preserved. Every final page inspected. Twenty-four reviewed drafts total 225 pages.

@@ -21,7 +21,7 @@ Frozen mathematical baseline: `bab688bb6140cd6316c80680095a914ea0d346db` (checkp
 
 ## Current consolidation and significance
 
-Twenty-three reviewed drafts total 215 pages; the [catalog](INDEX.md) gives each current PDF, source, map and status. The most substantial explicit arithmetic package is the sixteen-page quartic actual-saddle proof, exact rational time-eight obstruction, attained eventual threshold and endpoint collision. The fractional and sixth-order papers retain different order/zero quantifiers. No RH or quadratic-threshold implication is inferred.
+Twenty-four reviewed drafts total 225 pages; the [catalog](INDEX.md) gives each current PDF, source, map and status. The most substantial explicit arithmetic package is the sixteen-page quartic actual-saddle proof, exact rational time-eight obstruction, attained eventual threshold and endpoint collision. The fractional and sixth-order papers retain different order/zero quantifiers. No RH or quadratic-threshold implication is inferred.
 
 The signed multichannel paper consolidates the actual finite signed telescope, factorial analytic domain, native limits and completed observable reconstruction. The IBM papers separate physical variation/quadrature, original clock-domain and critical-noise exclusions, actual native averages/fixed-past time calculus, and entire-energy associativity/completed reconstruction. Their different domains and topologies are not interchangeable. In particular, critical clock noise does not supply a positive subcritical Hermite-sector domain theorem; future-increment noise probes are noncausal.
 
@@ -32,6 +32,8 @@ The expanded eight-page Gaussian prediction companion also reconstructs raw-quar
 The seven-page quadratic-product companion reconstructs full second-chaos multiplication, sharp fourth moments and exact contraction/equality tests, retaining original source-field normalization. Classical finite matrix criteria are credited.
 
 Classical formalization companions consolidate Fourier/Haar positivity and generator domains; full Cauchy circle kernel/generator/core/forward entropy; Gaussian terminal prediction, actual fractional full past and inverse-number obstruction; forcing trace, original divergence completion and observed-mode noncompactness; and Poisson–Gaussian maximal graphs, actual displacement, sharp jump curvature and nonlinear transfer failure. A CD(1/2,infinity) jump bound is not the diffusion chain rule or a quadratic logarithmic Sobolev theorem.
+
+The ten-page one-sided Schur companion supplies complete gauge/rank/pin and original physical-norm proofs, a full integer certificate for 0.69639 and an exact sub-0.6964 witness. Its periodic gauge and perturbation tests delimit transfer to different operators. Numerical positivity is explicitly computer assisted.
 
 The ten-page conditional-resampling companion reconstructs the actual continuous-boundary finite-positive-entropy obstruction and contrasts it with a distinct loop replacement kernel having fixed-coupling entropy decay after one smoothing step. Boundary retention, globally reweighted references and chain-state replacement are kept separate.
 

@@ -69,3 +69,7 @@ The primary [Ocone 1984 institutional record and abstract](https://www.researchw
 ## Fourier-cone pairing diagnostics
 
 [Tao, primary Fourier lecture notes, Schwartz inversion and Theorem 43](https://terrytao.wordpress.com/2009/04/06/the-fourier-transform/) supplies classical Fourier/Plancherel context. The compact-bump solenoidal witness uses these elementary mechanisms; a bounded targeted search did not resolve priority of that exact construction. No new Fourier cancellation principle or Navier–Stokes result is claimed. In particular, nonzero Hermitian interaction at each aperture is not a normalized uniform lower bound or a refutation of genuine small-angle estimates.
+
+## One-sided boundary Schur certificate
+
+[Gallier, primary author notes, Proposition 2.1 and Theorem 4.3](https://www.cis.upenn.edu/~jean/schur-comp.pdf) covers positive and singular Schur blocks. [Jiang–Lim–Yao–Ye, primary preprint, Theorems 4.7–4.8](https://arxiv.org/pdf/0811.1067) covers classical Hodge/Helmholtz decomposition of edge flows. Neither is imported as a geometry-specific numerical gap. Priority for this actual one-sided cell and narrow rational bracket remains unresolved; the finite table stage is explicitly computer assisted and fully supplied. No global gauge or continuum implication is claimed.

@@ -1,0 +1,571 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,microtype,booktabs}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\R}{\mathbb R}\newcommand{\Z}{\mathbb Z}
+\newcommand{\ran}{\operatorname{ran}}\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\lean}[2]{\par\smallskip\begingroup\small\noindent\textit{Source correspondence:}
+\texttt{\detokenize{#1}}\par\noindent\texttt{\detokenize{#2}}\par\endgroup\smallskip}
+\title{Gauge pinning and a rational boundary Schur gap\\on a one-sided four-dimensional cell}
+\author{Project Stardust}\date{October 29, 2026}
+\begin{document}\maketitle
+\begin{abstract}
+We reconstruct a finite plaquette-incidence problem with 48 vertices,
+112 edges and 72 faces. The 32 interior edges have a one-dimensional gauge
+kernel; pinning one edge gives an invertible 31-coordinate interior Gram
+matrix without changing its curvature range. Eliminating those interior
+variables produces a boundary Schur form whose kernel is exactly the
+46-dimensional boundary-gradient space. On its 34-dimensional orthogonal
+complement we prove a computer-assisted rational lower bound $0.69639$ and
+give an exact nonzero Rayleigh witness strictly below $0.6964$. Complete
+geometric and linear-algebra arguments identify the physical norm, cycle
+compression and residual certificate. The finite arithmetic is supplied as
+explicit integer tables with an independent standard-library checker.
+A periodic gauge counterexample and a perturbation cross-term test delimit
+which invertibility and stability conclusions transfer. This is a finite
+quadratic construction, not a nonlinear gauge, multiscale or continuum
+mass-gap theorem; the general Schur and discrete exactness mechanisms are
+classical.
+\end{abstract}
+
+\section{The actual finite problem}
+Let $e_0,e_1,e_2,e_3$ be the coordinate unit vectors in $\R^4$. Coordinates
+and directions in this paper are zero based, matching the formal source.
+The base vertices are $V_0=\{0,1\}^4$. The interior oriented edges are
+\[
+ E_I=\{(v,i):v\in V_0,\ v_i=0\},
+\]
+with source $v$ and target $v+e_i$. There are $4\cdot2^3=32$ such edges.
+For each $v\in V_0$ with $v_j=1$, add a cap vertex $v+e_j$ and an outward
+edge from $v$ to $v+e_j$. These cap vertices are distinct because they have
+exactly one coordinate equal to two. There are 32 caps and outward edges.
+
+For every interior edge $(v,i)$ and every $j\ne i$ with $v_j=1$, add a
+tangential cap edge from $v+e_j$ to $v+e_i+e_j$. These give 48 tangential
+edges: choose the ordered distinct directions $(i,j)$ in 12 ways and the
+remaining two binary coordinates in four ways. Let $E_B$ consist of the
+32 outward and 48 tangential edges. There are 80 boundary edges, 48 total
+vertices $V$, and 112 total edges $E=E_I\sqcup E_B$.
+
+There are two sorts of faces. The 24 inner squares have base $v\in V_0$,
+directions $i<j$ and $v_i=v_j=0$. The 48 ribbons correspond to the triples
+$(v,i,j)$ used for tangential edges. A ribbon traverses the interior edge
+$(v,i)$, the outward edge at $v+e_i$ in direction $j$, the negative
+tangential cap edge and the negative outward edge at $v$ in direction $j$.
+Thus each is a genuine oriented square. Put $F=F_I\sqcup F_R$, of size 72.
+
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+Object & Construction & Count\\\midrule
+Base/cap vertices & $16+32$ &48\\
+Interior edges & $4\cdot8$ &32\\
+Outward/tangential boundary edges & $32+48$ &80\\
+Inner squares/ribbons & $24+48$ &72\\\bottomrule
+\end{tabular}
+\end{center}
+\lean{OneSidedBlockIncidence}{edges_card; innerFaces_card; upperFaces_card}
+\lean{OneSidedCapComplex}{boundary_card; fullVertex_card; fullEdge_card; fullFace_card}
+
+All edge and face spaces have their ordinary Euclidean norm, with every
+edge and face counted once. For a potential $\phi\in\R^V$, define
+$d_0\phi(e)=\phi(\operatorname{target}e)-\phi(\operatorname{source}e)$.
+For $f\in\R^E$, let $d_1f\in\R^F$ be the signed sum around each oriented
+face. Telescoping around a square gives $d_1d_0=0$.
+The energy is exactly $\|d_1f\|^2$, with no weighting or gauge penalty
+implicitly added.
+
+The source also identifies this cap description with the following direct
+plaquette rule in $\{0,1,2\}^4$: retain all unit squares incident to at least
+one edge in $E_I$, and retain their edges. It obtains the same 72 faces and
+112 edges, up to row orientation. Reversing a row changes its sign and not
+the energy. The accompanying checker independently reconstructs this rule
+and verifies every incidence entry in the certificate.
+\lean{OneSidedCapComplex}{embedFace_bijective; d1_d0}
+\lean{OneSidedSourceRows}{row_transport; energy_transport}
+
+\section{Exactness by paths, not an assumed gauge quotient}
+\begin{lemma}[Every closed field is a gradient]\label{lem:exact}
+For this cell, $d_1f=0$ if and only if $f=d_0\phi$ for some potential
+$\phi$. The kernel of $d_0$ consists exactly of constant potentials.
+Consequently $\rank d_0=47$ and $\rank d_1=65$.
+\end{lemma}
+\begin{proof}
+For a closed field, first restrict it to the base cube. Define $\phi(v)$
+by summing its edge values from the origin to $v$, flipping the nonzero
+coordinates in increasing order. Any two orders of these coordinate flips
+can be related by adjacent interchanges. Interchanging flips in distinct
+directions changes the path sum by the signed curl around their inner
+square, which is zero. Thus the sum is independent of their order.
+
+For any base edge $(v,i)$ with $v_i=0$, a path to $v+e_i$ may therefore be
+chosen as a path to $v$ followed by that edge. It follows that
+$\phi(v+e_i)-\phi(v)=f(v,i)$. This proves the gradient identity on every
+interior edge. For a cap vertex $v+e_j$, define
+$\phi(v+e_j)=\phi(v)+f(v,j)$, where this last edge is the outward one.
+This makes the gradient agree with $f$ on all outward edges.
+The zero-curl equation on each ribbon then forces agreement on its
+tangential edge as well. These are all edges, so $f=d_0\phi$.
+The converse is the already established square telescoping identity.
+
+The base cube is connected by coordinate paths, and each cap vertex is
+joined to its base vertex by an outward edge. Hence the full graph is
+connected. If $d_0\phi=0$, potential differences vanish along every edge,
+so all potential values are the same. Constants conversely have zero
+gradient. Rank--nullity gives $\rank d_0=48-1=47$.
+Exactness makes $\dim\ker d_1=47$, so $\rank d_1=112-47=65$.
+\end{proof}
+\lean{CubePathPoincare}{path_stokes; cube_poincare}
+\lean{OneSidedCapPoincare}{d0_recover; closed_iff_gradient}
+\lean{OneSidedGradientRanks}{gradient_kernel_constant; gradient_rank; curl_rank}
+The formal proof implements an ordered-path potential and its exact Stokes
+error formula. The adjacent-swap proof above reconstructs that same finite
+path mechanism. No cohomological exactness is assumed merely from the shape
+of a diagram.
+
+\section{The interior gauge and a legitimate pin}
+Write $A:\R^{E_I}\to\R^F$ for the restriction of $d_1$ to fields that
+vanish on the boundary, and $B:\R^{E_B}\to\R^F$ for its boundary restriction.
+Thus the full curvature is $Af+B\eta$. The interior energy is
+\begin{equation}\label{eq:intenergy}
+ \|Af\|^2=\sum_{\text{inner squares}}(\operatorname{curl}f)^2
+                  +\sum_{(v,i,j)\text{ ribbons}}f(v,i)^2.
+\end{equation}
+The second sum occurs because only the interior edge of a ribbon can
+contribute when the boundary field is zero.
+
+Let $g\in\R^{E_I}$ equal one on the four edges leaving the origin and
+zero on the other interior edges. Its squared norm is four. It is a full
+gradient: take the potential $\psi$ equal to $-1$ at the base origin and
+zero at every other vertex. None of the boundary edges is incident to
+the origin, so $d_0\psi$ equals $g$ on the interior and zero on the boundary.
+In particular $Ag=0$.
+
+\begin{lemma}[Exact interior kernel]\label{lem:intkernel}
+The kernel of $A$ is precisely $\R g$; hence $\rank A=31$.
+\end{lemma}
+\begin{proof}
+If $Af=0$, every square and ribbon summand in \eqref{eq:intenergy} is zero.
+An interior edge $(v,i)$ away from the origin has $v_i=0$ and some other
+coordinate $v_j=1$. It belongs to a ribbon, which forces $f(v,i)=0$.
+Only the four origin edges can remain. The inner square at the origin
+in directions $i,j$ now has curl $f(0,i)-f(0,j)$ because its other two
+edges are away from the origin. Thus all four remaining values agree,
+so $f=cg$. Conversely $Ag=0$, proving the kernel statement.
+Rank--nullity gives $32-1=31$.
+\end{proof}
+\lean{OneSidedBlockKernel}{kernel_classification; energy_zero_iff}
+\lean{OneSidedBlockRank}{kernel_span; incidence_rank; gauge_is_gradient}
+
+Choose the pole edge $e_*=(0,0)$. Pin its value to zero and let
+$L:\R^{31}\to\R^{72}$ be the resulting interior incidence matrix.
+For any unpinned $f$, subtract $f(e_*)g$. This does not change $Af$ and
+makes the pole value zero. Thus
+\begin{equation}\label{eq:range}
+ \ran L=\ran A.
+\end{equation}
+If a pinned field has zero curvature, Lemma~\ref{lem:intkernel} says it is
+$cg$, and its zero pole value forces $c=0$. Therefore $L$ is injective and
+$C=L^TL$ is positive definite. It has an actual inverse: in finite dimension
+a positive-definite symmetric matrix is injective and hence bijective.
+\lean{OneSidedPinnedInterior}{lift_pin; pinned_range; pinned_injective; localGram_isUnit}
+The unpinned matrix $A^TA$ is singular. Only the proved pin or a separately
+specified generalized inverse can justify elimination. Equation~\eqref{eq:range}
+will allow us to check normal equations in the unpinned coordinates without
+ever inverting that singular matrix.
+
+\section{The boundary gradient and its physical complement}
+Let $G:\R^{48}\to\R^{80}$ be the restriction of $d_0$ to boundary edges.
+Its range is the boundary-gradient space, and define the physical boundary
+space by
+\[
+ \mathcal P=(\ran G)^\perp=\ker G^T.
+\]
+This is a finite real linear definition. It is not an identification with
+a nonlinear gauge-invariant quantum state space.
+
+\begin{lemma}[The complete boundary gauge]\label{lem:bgauge}
+The kernel of $G$ is the two-dimensional space of potentials
+$\phi=a\mathbf1+c\psi$, where $\psi$ is the origin potential defined
+above. Hence $\rank G=46$ and $\dim\mathcal P=34$.
+\end{lemma}
+\begin{proof}
+Both constants and $\psi$ have zero boundary gradient. They are linearly
+independent, since $\psi$ is zero at cap vertices and nonzero at the origin.
+Conversely suppose $G\phi=0$. Then $d_0\phi$ has only interior components,
+and its full curl vanishes. Its interior restriction $f$ satisfies $Af=0$,
+so $f=cg$ by Lemma~\ref{lem:intkernel}. As full edge fields,
+$d_0\phi=c\,d_0\psi$. Thus $d_0(\phi-c\psi)=0$.
+Lemma~\ref{lem:exact} makes $\phi-c\psi$ constant, proving the complete
+kernel classification. Rank--nullity gives $48-2=46$ for $G$, and ordinary
+Euclidean orthogonal decomposition gives $\dim\mathcal P=80-46=34$.
+\end{proof}
+\lean{OneSidedBoundaryGauge}{boundary_kernel; boundary_gradient_rank; boundary_quotient_finrank}
+\lean{OneSidedBoundaryCycles}{physical_finrank; divergence_zero_iff}
+Boundary gauge removal therefore costs 46 dimensions, not the single
+interior gauge dimension. Subtracting one dimension from both spaces would
+describe a different boundary problem.
+
+\section{Schur elimination and its exact kernel}
+For a boundary field $\eta$, define the pinned response, residual and Schur
+matrix by
+\begin{align*}
+ y_\eta&=-(L^TL)^{-1}L^TB\eta,\\
+ r_\eta&=Ly_\eta+B\eta,\\
+ S&=B^TB-B^TL(L^TL)^{-1}L^TB.
+\end{align*}
+The normal equation is $L^Tr_\eta=0$. In particular $r_\eta$ is orthogonal
+to every pinned interior curvature.
+
+\begin{theorem}[Completed square and physical kernel]\label{thm:schur}
+For all $y\in\R^{31}$ and $\eta\in\R^{80}$,
+\begin{equation}\label{eq:square}
+ \|Ly+B\eta\|^2=\eta^TS\eta+\|L(y-y_\eta)\|^2,
+ \qquad \eta^TS\eta=\|r_\eta\|^2.
+\end{equation}
+The minimizing pinned $y$ is uniquely $y_\eta$, $S$ is symmetric positive
+semidefinite, and $\ker S=\ran G$. Thus $\rank S=34$, and its quadratic
+form is strictly positive on $\mathcal P\setminus\{0\}$.
+\end{theorem}
+\begin{proof}
+Write $Ly+B\eta=r_\eta+L(y-y_\eta)$. The cross term is zero by the normal
+equation. Also $B^Tr_\eta=S\eta$, and
+\[
+ \eta^TS\eta=\langle B\eta,r_\eta\rangle
+ =\langle r_\eta-Ly_\eta,r_\eta\rangle=\|r_\eta\|^2.
+\]
+This proves \eqref{eq:square}. Injectivity of $L$ gives uniqueness of its
+minimizer. The formula for $S$ is symmetric because $L^TL$ and its inverse
+are symmetric, and the squared-residual identity proves nonnegativity.
+
+If $\eta\in\ran G$, choose $\phi$ with $G\phi=\eta$. The full gradient
+$d_0\phi$ has zero curvature, so some interior completion has
+$Af+B\eta=0$. Replace $f$ by its pinned representative using
+\eqref{eq:range}. The minimum energy is zero, hence $r_\eta=0$ and
+$S\eta=B^Tr_\eta=0$.
+Conversely, if $S\eta=0$, then \eqref{eq:square} gives $r_\eta=0$.
+The full field comprising $y_\eta$ and $\eta$ is curl free and therefore a
+gradient by Lemma~\ref{lem:exact}. Its boundary restriction is $\eta$, so
+$\eta\in\ran G$. This proves the kernel equality and the rank.
+If a physical $\eta$ has zero energy, its residual is zero and it lies
+in $\ran G$ as well as its orthogonal complement; testing it against
+itself gives $\eta=0$. This proves strict physical positivity.
+\end{proof}
+\lean{OneSidedSchurForm}{completed_square; unique_minimizer; schur_posSemidef}
+\lean{OneSidedSchurForm}{kernel_schur; schur_rank; physical_positive}
+These steps are classical Schur-complement reasoning, applied after a
+specific gauge pin has been proved legitimate. Gallier's primary exposition
+\cite{gallier}, Proposition~2.1 and Theorem~4.3, supplies the general
+positive-definite and singular-block context. Here the kernel and range
+conditions have been established for the actual incidence problem.
+
+\section{Physical cycles and the norm that compression retains}
+The certificate supplies an integer matrix $C_b\in\Z^{80\times34}$.
+Its columns are actual boundary cycles. Two finite identities are crucial:
+\begin{equation}\label{eq:cycles}
+ G^TC_b=0,\qquad (C_b)_{c_i,j}=\mathbf1_{i=j}
+ \quad(0\leq i,j<34),
+\end{equation}
+where $c_0,\ldots,c_{33}$ are distinct chord-row indices, also supplied.
+The first identity puts every column in $\mathcal P$. The identity minor
+makes the columns linearly independent: if $C_bz=0$, reading its chord
+rows gives $z=0$. Since $\dim\mathcal P=34$, these columns span all of
+$\mathcal P$. Every physical field is uniquely $\eta=C_bz$.
+\lean{OneSidedBoundaryCycleData}{cycle_balance; chord_identity}
+\lean{OneSidedBoundaryCycles}{cycle_injective; cycle_range; physical_representation}
+
+Put
+\[
+ H=C_b^TC_b,\qquad K=C_b^TSC_b.
+\]
+Then
+\begin{equation}\label{eq:metric}
+ \|\eta\|^2=z^THz,\qquad \eta^TS\eta=z^TKz.
+\end{equation}
+In particular $H$ is positive definite. The cycle coordinates are not
+orthonormal; replacing $H$ by the identity would change the Rayleigh
+quotient and the claimed physical gap. We keep the generalized quotient
+$z^TKz/(z^THz)$ throughout.
+\lean{OneSidedSchurCompression}{metric_quadratic; compressed_quadratic; gap_transfer}
+The orthogonal split into gradient and divergence-free edge fields is
+classical graph Hodge theory. Jiang--Lim--Yao--Ye \cite{hodge} describe this
+mechanism in their primary treatment of edge flows, Theorems 4.7--4.8. Their application is
+different; no statistical ranking conclusion or universal graph gap is
+imported into the present plaquette certificate.
+
+\section{A normal-equation certificate without a singular inverse}
+The companion data file contains integer matrices
+\[
+ X\in\Z^{32\times34},\quad R\in\Z^{72\times34},\quad
+ Q\in\Z^{34\times34},\quad H\in\Z^{34\times34},\quad D=193028.
+\]
+Here $A,B,C_b$ use the explicit source plaquette ordering in that file.
+The checked identities are
+\begin{align}
+ AX+D BC_b&=R,& A^TR&=0,\label{eq:normalcert}\\
+ C_b^TC_b&=H,& R^TR&=DQ.\label{eq:gramcert}
+\end{align}
+All are integer equalities. Their exact arithmetic verification is described
+in Section~\ref{sec:checks}. We first prove their mathematical implication.
+
+\begin{lemma}[Identifying the certificate with the original Schur form]
+Identities \eqref{eq:normalcert}--\eqref{eq:gramcert} imply $K=Q/D$.
+\end{lemma}
+\begin{proof}
+For any $z\in\R^{34}$, let $\eta=C_bz$ and $f=Xz/D$.
+The first equation says $Af+B\eta=Rz/D$. The second says this residual is
+orthogonal to $\ran A=\ran L$. The original minimizing residual $r_\eta$
+also lies in $B\eta+\ran A$ and is orthogonal to that range.
+The difference of these two residuals lies both in $\ran A$ and its
+orthogonal complement, so is zero. Therefore $r_\eta=Rz/D$.
+Taking its squared norm and using \eqref{eq:gramcert} gives
+\[
+ z^TKz=\|r_\eta\|^2
+ =\frac{z^TR^TRz}{D^2}=\frac{z^TQz}{D}.
+\]
+Both matrices are symmetric; equality of their quadratic forms for all $z$
+implies equality of matrices, by testing coordinate vectors and their
+pairwise sums. Hence $K=Q/D$.
+\end{proof}
+\lean{OneSidedIntegerResponseData}{response_equation; normal_equation}
+\lean{OneSidedCertifiedResidual}{normal; compressed_eq_residual_gram; compressed_entry}
+\lean{OneSidedBoundaryGap}{compressed_as_data; metric_as_data}
+Notice that $X$ uses all 32 unpinned coordinates. Its normal equations are
+valid without an inverse of $A^TA$. Uniqueness of the \emph{residual}, not
+uniqueness of the unpinned response, is what identifies the certificate.
+Row orientation signs in the native cap model cancel in the residual Gram
+and normal equations; the checker independently verifies the canonical
+lattice row geometry.
+
+\section{The rational lower certificate and a sub-rounded witness}
+Define the integer matrix
+\begin{equation}\label{eq:Tdata}
+ T=25000Q-69639\cdot48257H.
+\end{equation}
+The certificate supplies a positive integer $s$, positive integers
+$w_0,\ldots,w_{33}$ and an integer matrix $V\in\Z^{34\times34}$ such that
+\begin{equation}\label{eq:positive}
+ sT=V\operatorname{diag}(w_0,\ldots,w_{33})V^T.
+\end{equation}
+The exact value of $s$ has 2,386 decimal digits. All of it, every weight and
+every matrix entry are provided in the accompanying data; no floating-point
+factorization or approximate positivity check is used.
+
+\begin{theorem}[Certified physical boundary gap]\label{thm:gap}
+For every $\eta\in\mathcal P$,
+\[
+ \frac{69639}{100000}\|\eta\|^2\leq\eta^TS\eta.
+\]
+If $\lambda_*$ is the minimum physical Rayleigh quotient, then
+\begin{equation}\label{eq:bracket}
+ \frac{69639}{100000}\leq\lambda_*
+ \leq\frac{729067245}{1046910149}<\frac{1741}{2500}=0.6964.
+\end{equation}
+\end{theorem}
+\begin{proof}
+For any $z$, \eqref{eq:positive} gives
+$sz^TTz=\sum_k w_k((V^Tz)_k)^2\geq0$. Division by $s>0$ gives
+$z^TTz\geq0$. Since $D=4\cdot48257$, direct substitution into
+\eqref{eq:Tdata} yields
+\[
+ K-\frac{69639}{100000}H=\frac{T}{25000D}
+                            =\frac{T}{4825700000}.
+\]
+The denominator is positive. Equations~\eqref{eq:metric} therefore prove
+the gap for every physical field.
+
+For the upper comparison, the certificate's explicit vector is
+\begin{align*}
+ z_*={}&(2000,0,2000,760,2000,2000,-704,-704,9,-1935,\\
+ &-704,-704,-1935,9,-1935,9,-130,-130,-1935,-704,\\
+ &-704,-1935,-1935,0,0,-56,-56,-56,-56,-130,\\
+ &-56,-56,-130,-130)^T.
+\end{align*}
+The exact integer dot products are
+\[
+ z_*^THz_*=117410484,\qquad z_*^TQz_*=15782847719760.
+\]
+Thus $\eta_*=C_bz_*$ is physical and nonzero, and its quotient is
+\[
+ \frac{\eta_*^TS\eta_*}{\|\eta_*\|^2}
+ =\frac{15782847719760}{193028\cdot117410484}
+ =\frac{729067245}{1046910149}<\frac{1741}{2500}.
+\]
+The final comparison is exact cross multiplication of positive integers.
+The minimum exists: the unit sphere of the finite-dimensional physical
+space is compact and the quadratic form is continuous. Its lower and upper
+bounds follow from the proved inequality and this test field.
+\end{proof}
+\lean{OneSidedBoundaryPositiveData}{scale_positive; weights_positive; weighted_gram_identity}
+\lean{OneSidedBoundaryGap}{corrected_eq; compressed_bound; boundary_gap}
+\lean{OneSidedBoundaryGapWitness}{integer_norm; integer_gram; rayleigh_value; below_rounded}
+The witness quotient is approximately $0.69639906127$; this decimal is only
+an orientation aid. In particular the rounded decimal $0.6964$ is
+\emph{not} a valid lower bound, even though the certified interval is less
+than $10^{-5}$ wide. The rational lower and upper tests have different roles.
+No assertion that the witness is an exact eigenvector or minimizer is made.
+The compactness statement introducing $\lambda_*$ is a classical human
+rephrasing of the mapped quadratic-form bounds, not a new formal declaration.
+
+\section{What the finite arithmetic checks}\label{sec:checks}
+This theorem is computer assisted at its finite integer-certificate stage.
+The geometric exactness, gauge pin, completed square, norm identification
+and deduction from a positive Gram certificate were proved above. The
+remaining finite input is fully specified by
+\texttt{certificate-data.json} and checked by \texttt{verify\_certificate.py}.
+The JSON contains ordinary integer arrays and their original source hashes.
+Its SHA-256 digest, using UTF-8 text with LF newlines, is
+\begin{quote}\small\texttt{b1a7d776078753d95a18c451f4536b6cc4aeea2b12142fedaf8e66b972d01078}.\end{quote}
+It includes the interior and boundary edge coordinates, source face
+coordinates, boundary endpoint indices, chord indices, $A,B,C_b,X,R,H,Q,T$,
+$s,w,V$ and $z_*$. Directions and array indices are zero based.
+
+The checker uses only Python's standard library and unbounded integer
+arithmetic, together with exact rational arithmetic for the last quotient.
+Its logical operations are the following finite computations.
+\begin{enumerate}
+\item Generate all unit squares in $\{0,1,2\}^4$ incident to one of the
+32 interior edges; verify the 72-face, 112-edge, 48-vertex geometry and the
+32/80 split against the listed coordinate arrays.
+\item For every face, assign the four coefficients $+1,+1,-1,-1$ along
+its canonical boundary. Verify every entry of $A,B$ against those rows.
+\item Construct the boundary gradient matrix from its actual source and
+target vertices. Verify both equations in \eqref{eq:cycles}, including all
+34 chord rows.
+\item Multiply the integer arrays to verify every entry of
+\eqref{eq:normalcert} and \eqref{eq:gramcert}.
+\item Verify \eqref{eq:Tdata}, check $s>0$ and every $w_k>0$, and verify
+all 1,156 entries of \eqref{eq:positive} by ordinary integer multiplication
+and addition.
+\item Verify the two witness dot products and the rational comparisons
+in \eqref{eq:bracket} by exact integer or fraction arithmetic.
+\end{enumerate}
+Each matrix product uses the defining formula
+$(MN)_{ij}=\sum_kM_{ik}N_{kj}$. Thus no eigenvalue solver, numerical tolerance,
+symbolic positivity oracle or unproved matrix inversion is hidden in the
+finite certificate. These checks pass independently of the source's
+kernel-checked integer identities. The companion receipt records the data
+hash and the actual successful check; it is not a substitute for the
+analytic and geometric implications of those identities.
+
+\section{A local pin is not global unpinned invertibility}
+There is a concrete periodic counterexample to transferring a local pinned
+statement to simultaneous elimination of all unpinned block interiors.
+Let the periodic vertices be $(\Z/4\Z)^4$, with positive coordinate edges.
+Partition them into side-two blocks by the coordinate labels
+$\lfloor v_i/2\rfloor$. Call an edge interior if its two endpoints have
+the same four block labels.
+Define a periodic potential
+\[
+ \Phi(v)=\begin{cases}1,&v_0\in\{1,2\},\\0,&v_0\in\{0,3\}.
+ \end{cases}
+\]
+Let $f_i(v)=\Phi(v+e_i)-\Phi(v)$. It vanishes in directions $i\ne0$.
+In direction zero, the values for $v_0=0,1,2,3$ are respectively
+$1,0,-1,0$. The nonzero edges run from zero to one and from two to three,
+so they are interior edges. The crossing edges from one to two and from
+three to zero have zero value. Hence $f$ is nonzero and entirely supported
+on the simultaneously retained interiors.
+
+Every plaquette curl of $f$ is zero, because it is a gradient and the
+coordinate shifts commute. If $A_{\rm per}$ denotes the full periodic
+plaquette incidence restricted to all these interior edges, its nonzero
+interior field $f_I$ satisfies $A_{\rm per}f_I=0$. Consequently
+$A_{\rm per}^TA_{\rm per}f_I=0$. It has no left inverse and no strictly
+positive unpinned coercivity constant: either assertion applied to $f_I$
+would force it to vanish or give positive norm bounded by zero.
+\lean{PeriodicInteriorGaugeKernel}{gauge_boundary_zero; witness_nonzero; incidence_witness_zero}
+\lean{PeriodicInteriorGaugeKernel}{hessian_witness_zero; hessian_no_left_inverse}
+This is compatible with the local result. The one-sided pinned problem
+and the unrestricted periodic all-block interior matrix are different
+operators. The counterexample does not exclude a carefully defined global
+gauge quotient or a different pinned global estimate; those would require
+their own domain, kernel and coercivity proofs.
+
+\section{A separate perturbation boundary: missing linear loss}
+Even finite positive blocks do not allow a general perturbation estimate
+that drops coupling cross terms. For a scalar block
+\[
+ H=\begin{pmatrix}a&b\\b&c\end{pmatrix},\qquad c>0,
+ \qquad \mathcal S(a,b,c)=a-b^2/c,
+\]
+changing $b$ to $b+d$ at $c=1$ gives the exact identity
+\begin{equation}\label{eq:cross}
+ \mathcal S(a,b+d,1)=\mathcal S(a,b,1)-2bd-d^2.
+\end{equation}
+At $a=2,b=1,d=1/10$, both blocks are positive definite:
+their Schur values are $1$ and $79/100$. But
+\[
+ \frac{79}{100}<1-4(1/10)^2=\frac{96}{100}.
+\]
+Thus a proposed loss of only $4d^2$ relative to an arbitrary nonzero
+reference coupling is already false in dimension two. More generally
+$2d+d^2>4d^2$ for $0<d<2/3$, so arbitrarily small positive perturbations
+have the same defect. For $|d|\leq\varepsilon$, \eqref{eq:cross} instead
+gives the valid bound
+\[
+ \mathcal S(a,b+d,1)\geq\mathcal S(a,b,1)
+                              -2|b|\varepsilon-\varepsilon^2.
+\]
+\lean{ManuscriptSchurDiagnostics}{fixed_interior_increment; general_stability_counterexample}
+\lean{ManuscriptSchurDiagnostics}{small_coupling_counterexample; fixed_interior_lower_bound}
+
+For comparison, quadratic loss is justified at a zero reference coupling.
+If a real Hilbert-space block energy is
+\[
+ \mathcal E(x,y)=ax^2+2x\langle b,y\rangle+\langle Cy,y\rangle,
+\]
+with $a\geq a_0-\delta$, $\|b\|\leq\varepsilon$ and $C\geq mI$, $m>0$,
+then completing the scalar square yields
+\begin{align*}
+ \mathcal E(x,y)&\geq(a_0-\delta)x^2
+                    -2|x|\varepsilon\|y\|+m\|y\|^2\\
+ &\geq\left(a_0-\delta-\frac{\varepsilon^2}{m}\right)x^2.
+\end{align*}
+If instead $C_0\geq m_0I$ and $\|C-C_0\|\leq\eta\leq m_0/2$,
+Cauchy--Schwarz gives
+$\langle Cy,y\rangle\geq(m_0-\eta)\|y\|^2\geq(m_0/2)\|y\|^2$.
+The same proof gives loss $\delta+2\varepsilon^2/m_0$.
+These are conditional perturbation statements, with a zero-coupling
+reference and proved interior coercivity. They do not automatically
+transport the numerical cell gap to nonlinear fields or other geometries.
+\lean{CoerciveSchurStability}{operator_quadratic_perturbation; operator_robust_lower}
+
+\section{Provenance, significance and remaining uniformity questions}
+The mathematics is reconstructed from frozen verified commit
+\begin{quote}\small\texttt{bab688bb6140cd6316c80680095a914ea0d346db}.\end{quote}
+The exact declaration map and original source hashes accompany the paper.
+The independent checker verifies a literal extraction of the frozen integer
+tables against geometry; no mathematical research source, configuration or
+original manuscript was altered. The source's complete build and axiom audit
+receipt was checked by its evidence hashes; no new research build is claimed.
+
+Finite exactness, gauge gradients, Schur complements and positive weighted
+Gram certificates use classical mechanisms. The primary comparisons above
+establish that context, not novelty of general methods. Priority for the
+specific one-sided geometry and exact narrow bracket remains unresolved.
+The result is a reproducible geometry-specific finite quadratic estimate,
+including an explicit correction to rounding and a sharp distinction between
+local pinning and a global unpinned matrix.
+
+There is no varying block size, lattice spacing, volume or continuum limit
+in the theorem. It neither constructs a four-dimensional quantum field nor
+identifies a physical correlation or Hamiltonian spectrum. The linear
+boundary complement is not silently substituted for a nonlinear gauge
+quotient. Extending the estimate would require exact compatible global gauge
+conditions, control of interactions and approximation errors, and estimates
+uniform in the particular scale and volume parameters. The proved finite
+gap discharges none of these separate analytic obligations.
+
+\begin{thebibliography}{9}
+\bibitem{gallier} J. Gallier, \emph{The Schur complement and symmetric positive
+semidefinite (and definite) matrices}, author notes, August 24, 2019.
+\href{https://www.cis.upenn.edu/~jean/schur-comp.pdf}{Primary author PDF}.
+\bibitem{hodge} X. Jiang, L.-H. Lim, Y. Yao and Y. Ye,
+\emph{Statistical ranking and combinatorial Hodge theory}, primary preprint,
+\href{https://arxiv.org/abs/0811.1067}{arXiv:0811.1067}.
+\end{thebibliography}
+\end{document}
