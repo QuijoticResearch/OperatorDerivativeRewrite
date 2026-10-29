@@ -2314,6 +2314,123 @@
       "source_sha256": "1715d57c7f9c745a407bfd454d8ecf8600f7991f49023bc1dae486d0e1937e6a",
       "declaration_header": "theorem actual_hessian_minimum (\u03b8 x : \u211d) :\n    contraction (partialHessian \u03b8) ![x,-mixed \u03b8/diagonal \u03b8*x]\n      ![x,-mixed \u03b8/diagonal \u03b8*x]=schur \u03b8*x^2",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SparseBlockSchurCurvature.lean#L116"
+    },
+    {
+      "paper": "Section 11 positive varying-interior Schur comparison with nonzero reference coupling",
+      "declaration": "OperatorDerivativeRewrite.Foundation.VaryingSchurStability.completed_square",
+      "file": "Foundation/VaryingSchurStability.lean",
+      "line": 14,
+      "source_sha256": "26669286db128400ff62c8f4337e5147f45b21f88b74a2029b5a9fac7bc15cdd",
+      "declaration_header": "theorem completed_square (C : E \u2192L[\u211d] E) (a x : \u211d) (b u y : E)\n    (hSym : C.toLinearMap.IsSymmetric) (hu : C u=b) :\n    blockEnergy a b (fun z => inner \u211d (C z) z) x y=\n      solvedSchur a b u*x^2+inner \u211d (C (y+x \u2022 u)) (y+x \u2022 u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/VaryingSchurStability.lean#L14"
+    },
+    {
+      "paper": "Section 11 positive varying-interior Schur comparison with nonzero reference coupling",
+      "declaration": "OperatorDerivativeRewrite.Foundation.VaryingSchurStability.attained_reduction",
+      "file": "Foundation/VaryingSchurStability.lean",
+      "line": 29,
+      "source_sha256": "26669286db128400ff62c8f4337e5147f45b21f88b74a2029b5a9fac7bc15cdd",
+      "declaration_header": "theorem attained_reduction (C : E \u2192L[\u211d] E) (a x c : \u211d) (b u : E)\n    (hc : 0 < c) (hSym : C.toLinearMap.IsSymmetric) (hu : C u=b)\n    (hC : \u2200 y, c*\u2016y\u2016^2 \u2264 inner \u211d (C y) y) :\n    (\u2200 y, solvedSchur a b u*x^2 \u2264 blockEnergy a b (fun z => inner \u211d (C z) z) x y) \u2227\n      blockEnergy a b (fun z => inner \u211d (C z) z) x ((-x) \u2022 u)=solvedSchur a b u*x^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/VaryingSchurStability.lean#L29"
+    },
+    {
+      "paper": "Section 11 positive varying-interior Schur comparison with nonzero reference coupling",
+      "declaration": "OperatorDerivativeRewrite.Foundation.VaryingSchurStability.coercive_norm_bound",
+      "file": "Foundation/VaryingSchurStability.lean",
+      "line": 42,
+      "source_sha256": "26669286db128400ff62c8f4337e5147f45b21f88b74a2029b5a9fac7bc15cdd",
+      "declaration_header": "theorem coercive_norm_bound (C : E \u2192L[\u211d] E) (c : \u211d) (hc : 0 < c)\n    (hC : \u2200 y, c*\u2016y\u2016^2 \u2264 inner \u211d (C y) y) (u : E) : \u2016u\u2016 \u2264 \u2016C u\u2016/c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/VaryingSchurStability.lean#L42"
+    },
+    {
+      "paper": "Section 11 positive varying-interior Schur comparison with nonzero reference coupling",
+      "declaration": "OperatorDerivativeRewrite.Foundation.VaryingSchurStability.half_coercivity",
+      "file": "Foundation/VaryingSchurStability.lean",
+      "line": 52,
+      "source_sha256": "26669286db128400ff62c8f4337e5147f45b21f88b74a2029b5a9fac7bc15cdd",
+      "declaration_header": "theorem half_coercivity (C C0 : E \u2192L[\u211d] E) (m \u03b7 : \u211d)\n    (h\u03b7 : \u03b7 \u2264 m/2) (hC0 : \u2200 y, m*\u2016y\u2016^2 \u2264 inner \u211d (C0 y) y)\n    (hpert : \u2016C-C0\u2016 \u2264 \u03b7) (y : E) :\n    (m/2)*\u2016y\u2016^2 \u2264 inner \u211d (C y) y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/VaryingSchurStability.lean#L52"
+    },
+    {
+      "paper": "Section 11 positive varying-interior Schur comparison with nonzero reference coupling",
+      "declaration": "OperatorDerivativeRewrite.Foundation.VaryingSchurStability.solved_increment",
+      "file": "Foundation/VaryingSchurStability.lean",
+      "line": 61,
+      "source_sha256": "26669286db128400ff62c8f4337e5147f45b21f88b74a2029b5a9fac7bc15cdd",
+      "declaration_header": "theorem solved_increment (C : E \u2192L[\u211d] E) (b b0 u u0 v : E)\n    (hSym : C.toLinearMap.IsSymmetric) (hu : C u=b) (hv : C v=b0) :\n    inner \u211d b u-inner \u211d b0 u0=\n      inner \u211d (b-b0) (u-v)+2*inner \u211d (b-b0) v+inner \u211d b0 (v-u0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/VaryingSchurStability.lean#L61"
+    },
+    {
+      "paper": "Section 11 positive varying-interior Schur comparison with nonzero reference coupling",
+      "declaration": "OperatorDerivativeRewrite.Foundation.VaryingSchurStability.interior_solution_difference",
+      "file": "Foundation/VaryingSchurStability.lean",
+      "line": 74,
+      "source_sha256": "26669286db128400ff62c8f4337e5147f45b21f88b74a2029b5a9fac7bc15cdd",
+      "declaration_header": "theorem interior_solution_difference (C C0 : E \u2192L[\u211d] E) (b0 v u0 : E)\n    (c c0 \u03b7 : \u211d) (hc : 0 < c) (hc0 : 0 < c0)\n    (hC : \u2200 y, c*\u2016y\u2016^2 \u2264 inner \u211d (C y) y)\n    (hC0 : \u2200 y, c0*\u2016y\u2016^2 \u2264 inner \u211d (C0 y) y)\n    (hpert : \u2016C-C0\u2016 \u2264 \u03b7) (hv : C v=b0) (hu0 : C0 u0=b0) :\n    \u2016v-u0\u2016 \u2264 \u03b7*\u2016b0\u2016/(c*c0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/VaryingSchurStability.lean#L74"
+    },
+    {
+      "paper": "Section 11 positive varying-interior Schur comparison with nonzero reference coupling",
+      "declaration": "OperatorDerivativeRewrite.Foundation.VaryingSchurStability.solved_lower",
+      "file": "Foundation/VaryingSchurStability.lean",
+      "line": 98,
+      "source_sha256": "26669286db128400ff62c8f4337e5147f45b21f88b74a2029b5a9fac7bc15cdd",
+      "declaration_header": "theorem solved_lower (C C0 : E \u2192L[\u211d] E) (a a0 \u03b4 \u03b5 \u03b7 c c0 : \u211d)\n    (b b0 u u0 v : E) (hc : 0 < c) (hc0 : 0 < c0)\n    (hSym : C.toLinearMap.IsSymmetric)\n    (hC : \u2200 y, c*\u2016y\u2016^2 \u2264 inner \u211d (C y) y)\n    (hC0 : \u2200 y, c0*\u2016y\u2016^2 \u2264 inner \u211d (C0 y) y)\n    (ha : |a-a0| \u2264 \u03b4) (hb : \u2016b-b0\u2016 \u2264 \u03b5) (hpert : \u2016C-C0\u2016 \u2264 \u03b7)\n    (hu : C u=b) (hu0 : C0 u0=b0) (hv : C v=b0) :\n    solvedSchur a0 b0 u0-\u03b4-(\u03b5^2+2*\u03b5*\u2016b0\u2016)/c-\u03b7*\u2016b0\u2016^2/(c*c0) \u2264\n      solvedSchur a b u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/VaryingSchurStability.lean#L98"
+    },
+    {
+      "paper": "Section 11 positive varying-interior Schur comparison with nonzero reference coupling",
+      "declaration": "OperatorDerivativeRewrite.Foundation.VaryingSchurStability.finite_solved_lower",
+      "file": "Foundation/VaryingSchurStability.lean",
+      "line": 133,
+      "source_sha256": "26669286db128400ff62c8f4337e5147f45b21f88b74a2029b5a9fac7bc15cdd",
+      "declaration_header": "theorem finite_solved_lower [FiniteDimensional \u211d E]\n    (C C0 : E \u2192L[\u211d] E) (a a0 \u03b4 \u03b5 \u03b7 c c0 : \u211d) (b b0 u u0 : E)\n    (hc : 0 < c) (hc0 : 0 < c0) (hSym : C.toLinearMap.IsSymmetric)\n    (hC : \u2200 y, c*\u2016y\u2016^2 \u2264 inner \u211d (C y) y)\n    (hC0 : \u2200 y, c0*\u2016y\u2016^2 \u2264 inner \u211d (C0 y) y)\n    (ha : |a-a0| \u2264 \u03b4) (hb : \u2016b-b0\u2016 \u2264 \u03b5) (hpert : \u2016C-C0\u2016 \u2264 \u03b7)\n    (hu : C u=b) (hu0 : C0 u0=b0) :\n    solvedSchur a0 b0 u0-\u03b4-(\u03b5^2+2*\u03b5*\u2016b0\u2016)/c-\u03b7*\u2016b0\u2016^2/(c*c0) \u2264\n      solvedSchur a b u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/VaryingSchurStability.lean#L133"
+    },
+    {
+      "paper": "Section 11 positive varying-interior Schur comparison with nonzero reference coupling",
+      "declaration": "OperatorDerivativeRewrite.Foundation.VaryingSchurStability.corridor_lower",
+      "file": "Foundation/VaryingSchurStability.lean",
+      "line": 146,
+      "source_sha256": "26669286db128400ff62c8f4337e5147f45b21f88b74a2029b5a9fac7bc15cdd",
+      "declaration_header": "theorem corridor_lower [FiniteDimensional \u211d E]\n    (C C0 : E \u2192L[\u211d] E) (a a0 \u03b4 \u03b5 \u03b7 m : \u211d) (b b0 u u0 : E)\n    (hm : 0 < m) (h\u03b7 : \u03b7 \u2264 m/2) (hSym : C.toLinearMap.IsSymmetric)\n    (hC0 : \u2200 y, m*\u2016y\u2016^2 \u2264 inner \u211d (C0 y) y)\n    (ha : |a-a0| \u2264 \u03b4) (hb : \u2016b-b0\u2016 \u2264 \u03b5) (hpert : \u2016C-C0\u2016 \u2264 \u03b7)\n    (hu : C u=b) (hu0 : C0 u0=b0) :\n    solvedSchur a0 b0 u0-\u03b4-(2*\u03b5^2+4*\u03b5*\u2016b0\u2016)/m-2*\u03b7*\u2016b0\u2016^2/m^2 \u2264\n      solvedSchur a b u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/VaryingSchurStability.lean#L146"
+    },
+    {
+      "paper": "Section 11 positive varying-interior Schur comparison with nonzero reference coupling",
+      "declaration": "OperatorDerivativeRewrite.Foundation.VaryingSchurStability.corridor_solutions",
+      "file": "Foundation/VaryingSchurStability.lean",
+      "line": 159,
+      "source_sha256": "26669286db128400ff62c8f4337e5147f45b21f88b74a2029b5a9fac7bc15cdd",
+      "declaration_header": "theorem corridor_solutions [FiniteDimensional \u211d E]\n    (C C0 : E \u2192L[\u211d] E) (a a0 \u03b4 \u03b5 \u03b7 m : \u211d) (b b0 : E)\n    (hm : 0 < m) (h\u03b7 : \u03b7 \u2264 m/2) (hSym : C.toLinearMap.IsSymmetric)\n    (hC0 : \u2200 y, m*\u2016y\u2016^2 \u2264 inner \u211d (C0 y) y)\n    (ha : |a-a0| \u2264 \u03b4) (hb : \u2016b-b0\u2016 \u2264 \u03b5) (hpert : \u2016C-C0\u2016 \u2264 \u03b7) :\n    \u2203 u u0, C u=b \u2227 C0 u0=b0 \u2227\n      solvedSchur a0 b0 u0-\u03b4-(2*\u03b5^2+4*\u03b5*\u2016b0\u2016)/m-2*\u03b7*\u2016b0\u2016^2/m^2 \u2264\n        solvedSchur a b u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/VaryingSchurStability.lean#L159"
+    },
+    {
+      "paper": "Section 11 positive varying-interior Schur comparison with nonzero reference coupling",
+      "declaration": "OperatorDerivativeRewrite.Foundation.VaryingSchurStability.corridor_energy_lower",
+      "file": "Foundation/VaryingSchurStability.lean",
+      "line": 173,
+      "source_sha256": "26669286db128400ff62c8f4337e5147f45b21f88b74a2029b5a9fac7bc15cdd",
+      "declaration_header": "theorem corridor_energy_lower [FiniteDimensional \u211d E]\n    (C C0 : E \u2192L[\u211d] E) (a a0 \u03b4 \u03b5 \u03b7 m : \u211d) (b b0 u0 : E)\n    (hm : 0 < m) (h\u03b7 : \u03b7 \u2264 m/2) (hSym : C.toLinearMap.IsSymmetric)\n    (hC0 : \u2200 y, m*\u2016y\u2016^2 \u2264 inner \u211d (C0 y) y)\n    (ha : |a-a0| \u2264 \u03b4) (hb : \u2016b-b0\u2016 \u2264 \u03b5) (hpert : \u2016C-C0\u2016 \u2264 \u03b7)\n    (hu0 : C0 u0=b0) (x : \u211d) (y : E) :\n    (solvedSchur a0 b0 u0-\u03b4-(2*\u03b5^2+4*\u03b5*\u2016b0\u2016)/m-2*\u03b7*\u2016b0\u2016^2/m^2)*x^2 \u2264\n      blockEnergy a b (fun z => inner \u211d (C z) z) x y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/VaryingSchurStability.lean#L173"
+    },
+    {
+      "paper": "Section 11 positive varying-interior Schur comparison with nonzero reference coupling",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CoerciveSchurStability.coercive_injective",
+      "file": "Foundation/CoerciveSchurStability.lean",
+      "line": 113,
+      "source_sha256": "62a2cd7a9e662a1c5a9d12ba403200779f3788ee0ad8d9da00aec228ec9739a8",
+      "declaration_header": "theorem coercive_injective (C : E \u2192L[\u211d] E) (c : \u211d) (hc : 0 < c)\n    (hC : \u2200 y, c*\u2016y\u2016^2 \u2264 inner \u211d (C y) y) : Function.Injective C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CoerciveSchurStability.lean#L113"
+    },
+    {
+      "paper": "Section 11 positive varying-interior Schur comparison with nonzero reference coupling",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CoerciveSchurStability.finite_coercive_solution",
+      "file": "Foundation/CoerciveSchurStability.lean",
+      "line": 123,
+      "source_sha256": "62a2cd7a9e662a1c5a9d12ba403200779f3788ee0ad8d9da00aec228ec9739a8",
+      "declaration_header": "theorem finite_coercive_solution [FiniteDimensional \u211d E] (C : E \u2192L[\u211d] E) (c : \u211d)\n    (hc : 0 < c) (hC : \u2200 y, c*\u2016y\u2016^2 \u2264 inner \u211d (C y) y) (b : E) :\n    \u2203 u, C u=b",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CoerciveSchurStability.lean#L123"
     }
   ],
   "human_reorganization": [
@@ -2330,7 +2447,8 @@
     "A valid global linear bound 4/3*abs(beta)*abs(z) remains. Failure of the stronger conditional quadratic budget does not by itself disprove a Schur estimate with allowed linear loss or the earlier rational finite quadratic gap. No scale, volume, continuum or physical spectral statement is inferred.",
     "Section 12 multiplies explicit normalized SU(2) matrices to obtain the full scalar trigonometric action on a genuine two-coordinate 72-face slice. The printed exact face-word inventory is independently enumerated, with source correspondences for the same reduced action and actual partial Hessian.",
     "The arbitrary-constant relative-lower-bound violation is reconstructed with an explicit elementary angle choice and strict base holonomy diagonal-principal-log caps. It tests only the displayed proposed estimate, not a general published small-field theorem. The full Hessian stays uniformly positive despite its linear error.",
-    "The actual two-coordinate scalar Schur complement has exact global bounds 3/4 and 5/4 and quadratic loss at most 7 theta squared/40. This is classical zero-reference-coupling completion of the square, distinct from the 31-coordinate incidence elimination or any full nonlinear marginal Hessian."
+    "The actual two-coordinate scalar Schur complement has exact global bounds 3/4 and 5/4 and quadratic loss at most 7 theta squared/40. This is classical zero-reference-coupling completion of the square, distinct from the 31-coordinate incidence elimination or any full nonlinear marginal Hessian.",
+    "Section 11 reconstructs the complete varying-interior solved Schur comparison, retaining the linear nonzero-coupling term and the operator-perturbation term. Coercivity directly controls actual interior solutions; finite dimension supplies their existence. The printed infinite-dimensional statement retains supplied solutions. Uniqueness from the attained coercive square and the scalar interior-only linear-loss specialization are labelled elementary human deductions. No unproved Wilson operator-norm or volume-uniform estimate is imported."
   ],
   "novelty": "General mechanisms classical; priority of this actual one-sided geometry and narrow rational bracket unresolved. No nonlinear gauge or physical mass-gap claim."
 }

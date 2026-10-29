@@ -536,6 +536,108 @@ transport the numerical cell gap to nonlinear fields or other geometries.
 \lean{CoerciveSchurStability}{operator_quadratic_perturbation; operator_robust_lower}
 
 
+\subsection*{A valid comparison when the interior operator also varies}
+The nonzero-reference obstruction has a positive replacement. Let $E$
+be a real Hilbert space, and let $C,C_0:E\to E$ be bounded linear
+operators. Assume $C$ is symmetric and
+\[
+ \langle Cy,y\rangle\geq c\|y\|^2,\qquad
+ \langle C_0y,y\rangle\geq c_0\|y\|^2,\qquad c,c_0>0.
+\]
+Let $a,a_0\in\mathbb R$ and $b,b_0\in E$ satisfy
+\[
+ |a-a_0|\leq\delta,\quad \|b-b_0\|\leq\varepsilon,\quad
+ \|C-C_0\|\leq\eta.
+\]
+These hypotheses force $\delta,\varepsilon,\eta\geq0$. For the moment
+assume the actual solved equations
+\[
+ Cu=b,\qquad C_0u_0=b_0,\qquad Cv=b_0.
+\]
+We do not hide existence of these solutions in inverse notation. Put
+$S=a-\langle b,u\rangle$ and $S_0=a_0-\langle b_0,u_0\rangle$.
+Then
+\begin{equation}\label{eq:varyingschur}
+ S\geq S_0-\delta
+ -\frac{\varepsilon^2+2\varepsilon\|b_0\|}{c}
+ -\frac{\eta\|b_0\|^2}{cc_0}.
+\end{equation}
+The proof uses coercivity directly. Cauchy--Schwarz gives
+$c\|w\|^2\leq\langle Cw,w\rangle\leq\|Cw\|\|w\|$,
+and therefore $\|w\|\leq\|Cw\|/c$, including $w=0$. Consequently
+\[
+ \|u-v\|\leq\varepsilon/c,\qquad \|v\|\leq\|b_0\|/c,
+ \qquad \|u_0\|\leq\|b_0\|/c_0.
+\]
+Since $C(v-u_0)=-(C-C_0)u_0$, the same argument proves
+\[
+ \|v-u_0\|\leq\frac{\eta\|b_0\|}{cc_0}.
+\]
+Writing $d=b-b_0$, symmetry of $C$ and $C(u-v)=d$, $Cv=b_0$
+give the exact identity
+\begin{align*}
+ \langle b,u\rangle-\langle b_0,u_0\rangle
+ &=\langle d,u-v\rangle+2\langle d,v\rangle
+                       +\langle b_0,v-u_0\rangle.
+\end{align*}
+Indeed the cross terms agree because
+$\langle d,v\rangle=\langle C(u-v),v\rangle
+=\langle u-v,Cv\rangle=\langle b_0,u-v\rangle$.
+Bounding the three terms by the preceding norms and using
+$a-a_0\geq-\delta$ proves \eqref{eq:varyingschur}.
+
+This comparison also has its actual variational meaning. For every
+$x\in\mathbb R$ and $y\in E$, symmetry and $Cu=b$ give
+\begin{equation}\label{eq:varyingsquare}
+ ax^2+2x\langle b,y\rangle+\langle Cy,y\rangle
+ =Sx^2+\langle C(y+xu),y+xu\rangle.
+\end{equation}
+Thus the minimum over $y$ is attained at $y=-xu$ and equals $Sx^2$.
+Coercivity also proves uniqueness: equality forces $y+xu=0$.
+No spectral-radius assertion is involved.
+
+In finite dimension the three required equations have unique solutions:
+coercivity makes $C$ and $C_0$ injective, and equal finite source and
+target dimension makes them surjective. This supplies existence rather
+than assuming an inverse-norm estimate. In a general Hilbert space the
+displayed comparison retains the supplied solutions; no finite-dimensional
+surjectivity argument is transferred there.
+
+For the frequently used half-coercivity hypotheses
+$C_0\geq mI$, $m>0$, and $\|C-C_0\|\leq\eta\leq m/2$, one has
+$C\geq(m/2)I$. Taking $c=m/2,c_0=m$ in
+\eqref{eq:varyingschur} gives
+\begin{equation}\label{eq:varyingcorridor}
+ S\geq S_0-\delta
+ -\frac{2\varepsilon^2+4\varepsilon\|b_0\|}{m}
+ -\frac{2\eta\|b_0\|^2}{m^2}.
+\end{equation}
+In finite dimension, combining this with \eqref{eq:varyingsquare}
+bounds the full block energy below by the right side of
+\eqref{eq:varyingcorridor} times $x^2$, for every interior vector $y$.
+The direct argument above reconstructs the actual solved-equation
+theorem. The uniqueness statement is an elementary consequence of its
+printed coercive square, labelled here as a human deduction.
+\lean{VaryingSchurStability}{solved_increment; interior_solution_difference; solved_lower}
+\lean{VaryingSchurStability}{completed_square; attained_reduction; finite_solved_lower}
+\lean{VaryingSchurStability}{corridor_solutions; corridor_energy_lower}
+
+The two linear losses have distinct sources. With $b_0=0$ both disappear,
+leaving the quadratic coupling loss, as in the sparse example below.
+With fixed nonzero $b_0$, even changing only the interior can have linear
+effect. The elementary scalar choice $a=a_0=2$, $b=b_0=1$,
+$C_0=1$, $C=1-\eta$, $0<\eta<1/2$, gives
+\[
+ S_0=1,\qquad S=1-\frac{\eta}{1-\eta}>0.
+\]
+The exact loss $\eta/(1-\eta)$ is linear at zero; it cannot be bounded
+by a fixed multiple of $\eta^2$ on all sufficiently small positive
+$\eta$. This scalar specialization is a human deduction, not an
+additional named source theorem. These classical Schur estimates
+\cite{gallier} still require actual bounds for $\delta,\varepsilon,
+\eta,m$ in any nonlinear application. They do not supply such bounds
+for the full Wilson integral, another gauge geometry or varying volume.
+
 \section{An actual sparse Hessian: linear error and quadratic elimination}
 The preceding perturbation discussion has a direct nonlinear calibration
 on the same cell. Use the following normalized skew-Hermitian matrices:
