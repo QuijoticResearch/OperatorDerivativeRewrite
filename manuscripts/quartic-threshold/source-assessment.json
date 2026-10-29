@@ -92,6 +92,32 @@
       "Under the exact far-saddle hypotheses, the source bounds x<=|b|<=4*x and Re(b)>0, so |G|>=1/(2*sqrt(x)). Its local comparison yields normalized error at most 2*sqrt(x)*[16*eta*r^2+8192*x*r^4+2/(x*r)], where eta=30005*exp(-4*Re(w)+4)<=10^8/x. The model-to-actual and cubic Taylor bounds entering that comparison are still to be reconstructed; this block does not assume they have been proved in the human exposition.",
       "Set r=x^(-7/16). The three normalized terms are bounded respectively by 32*10^8*x^(-11/8), 16384*x^(-1/4), and 4*x^(-1/16), all tending to zero. The local smallness condition eta*r+2048*x*r^3<=1 eventually follows from eta*r<=10^8*x^(-23/16) and x*r^3=x^(-5/16). Also r<1/16 eventually.",
       "This explains the chosen exponent 7/16 and why an oscillatory Gaussian tail bound in terms of |b| matters. It controls the full model Gaussian tails, not yet the complementary actual horizontal contour pieces."
+    ],
+    "Actual arithmetic kernel, entire flow and compact-time continuity": [
+      "For u>=0 every kernel summand factors as pi*n^2*exp(5*u)*(2*pi*n^2*exp(4*u)-3)*exp(-pi*n^2*exp(4*u)), n>=1. It is strictly positive since pi>3, n>=1 and exp(4*u)>=1. The Gaussian sums converge locally uniformly, so K is continuous and strictly positive on the half-line.",
+      "For v>=1 and n>=1, n^2*v>=(n^2+v)/2. Thus n^m exp(-pi*n^2*v) <= n^m exp(-pi*n^2/2)*exp(-pi*v/2). The sum of the first factor is finite. Applying this to the two theta moments gives K(u)<=C exp(9*u-pi*exp(4*u)/2) for u>=0 with one positive constant C.",
+      "For fixed k>=0 and real T,B, exponential growth dominates the quartic and linear polynomials: eventually T*u^4+(B+11)*u <= pi*exp(4*u)/2 and u^k<=exp(u). Consequently u^k exp(T*u^4+B*u)*K(u)<=C exp(-u) eventually. Continuity supplies integrability on compact initial intervals. Hence every polynomial moment with every real quartic/linear tilt is integrable.",
+      "On a compact set of (t,z), the absolute value of the kth spatial derivative of the exponential integrand is bounded by u^k exp(T*u^4+B*u)*K(u). Differentiation under the integral is therefore valid at every order. H_t is entire, even in z and conjugation compatible. H_t(0)>0 is an integral of a strictly positive function. The same dominated argument gives joint continuity of H_t and its spatial derivative in (t,z).",
+      "Joint continuity on [t0-1,t0+1] times a compact complex set is uniform continuity. It gives sup_{z in K}|H_t(z)-H_t0(z)| tending to zero as t tends to t0. This is the compact-time input in the endpoint diagonal argument."
+    ],
+    "Subquadratic actual growth": [
+      "Set R=|z|. For u>=0, R*u<=u^3+R*sqrt(R): if u<=sqrt(R), use R*u<=R*sqrt(R); otherwise R<=u^2 and R*u<=u^3. Also u^3<=u^4+1, by splitting at u=1.",
+      "Therefore exp(t*u^4+R*u)*K(u)<=exp(1+R^(3/2))*exp((t+1)*u^4)*K(u). Since |cos(u*z)|<=exp(R*u), integration yields |H_t(z)|<=C_t exp(|z|^(3/2)), where C_t=exp(1)*integral_0^infinity exp((t+1)*u^4)*K(u)du is finite and positive. This checks the actual exponent strictly below two, not an assumed order estimate."
+    ],
+    "Even finite-disk factorization and real polynomial approximation": [
+      "Statement used: let f be entire and even, with f(0) real and nonzero, and |f(z)|<=C exp(|z|^(3/2)). If all its zeros are real, then f is a locally uniform limit on C of real split polynomials. Apply this statement to the actual H_t using the preceding block. The argument below is a classical finite-disk reconstruction; no unverified classification premise is introduced.",
+      "Choose R tending to infinity through radii having no zeros on the circle. There are only countably many forbidden radii because the nonzero entire function has isolated zeros. List all zeros a inside |z|<R with multiplicity, and set B_R(z)=product_a [R*(z-a)/(R^2-conj(a)*z)]. Each denominator is nonzero on the closed disk. Each factor has modulus one on its boundary, and modulus |a|/R at zero. No zero a equals zero.",
+      "The quotient h_R=f/B_R extends across all the finitely many zeros to a holomorphic zero-free function on the disk and a neighborhood of its boundary. The maximum modulus principle and the unit boundary modulus give |h_R(z)|<=M_f(R)<=C exp(R^(3/2)) inside. Since |B_R(0)|<=1, one has |h_R(0)|>=|f(0)|.",
+      "The zero multiset is invariant under a mapping to -a, with equal multiplicities. The pair of Blaschke factors for a and -a is even, so B_R and h_R are even. On the simply connected disk choose the analytic logarithm g_R with exp(g_R)=h_R/h_R(0) and g_R(0)=0. Uniqueness of the normalized logarithm implies g_R is even. Its real part is at most log(C/|f(0)|)+R^(3/2), hence at most a positive A_R=O(1+R^(3/2)).",
+      "For completeness the logarithm estimate needs no unstated factorization theorem: define v_R=g_R/(2*A_R-g_R). The denominator has strictly positive real part, and |2*A_R-g_R|^2-|g_R|^2=4*A_R*(A_R-Re(g_R))>=0. Thus |v_R|<=1 on the disk. It is even and vanishes at zero, so the Schwarz lemma with its double zero gives |v_R(z)|<=(|z|/R)^2. Solving g_R=2*A_R*v_R/(1+v_R) yields |g_R(z)|<=2*A_R*(|z|/R)^2/(1-(|z|/R)^2). This tends to zero uniformly on each fixed compact set as R tends to infinity. Hence h_R/h_R(0) tends locally uniformly to one.",
+      "To control the denominator product, first bound zero counts. Choose a zero-free boundary radius rho in (2R,3R). The zero-free h_rho has harmonic log modulus, so its value at zero is the boundary mean of log|h_rho|, which is the boundary mean of log|f| and is at most log M_f(rho). Since f(0)=B_rho(0)*h_rho(0), this gives sum_{|a|<rho} log(rho/|a|)<=log M_f(rho)-log|f(0)|. Every zero inside radius R contributes at least log(2). Thus n_f(R)<=O(1+R^(3/2)). This is the finite-disk Jensen estimate with its derivation stated explicitly.",
+      "Normalize the finite product: B_R(z)/B_R(0)=N_R(z)/D_R(z), where N_R=product_a(1-z/a), D_R=product_a(1-conj(a)*z/R^2). Pairing the zeros a,-a gives D_R=product_pairs(1-conj(a)^2*z^2/R^4). On |z|<=r, the sum of the absolute pair corrections is at most n_f(R)*r^2/(2*R^2)=O_r(R^(-1/2)). The elementary finite-product bound |product(1-w_j)-1|<=exp(sum|w_j|)-1 shows D_R tends locally uniformly to one.",
+      "The exact identity f/f(0)=[B_R/B_R(0)]*[h_R/h_R(0)] and convergence of the last factor to one now give B_R/B_R(0) tending locally uniformly to f/f(0). Multiply by D_R to obtain N_R tending to f/f(0). Every zero a is real by hypothesis, so f(0)*N_R is a real polynomial splitting over R, with the exact normalization restored. This proves the required approximation."
+    ],
+    "Reverse implication by vertical modulus, without assuming a converse to Hurwitz": [
+      "For a real root r, the modulus |x+i*y-r|=sqrt((x-r)^2+y^2) is nondecreasing in |y|. Taking finite products gives |P(x+i*a)|<=|P(x+i*b)| whenever a^2<=b^2 for every real split polynomial P (the zero polynomial is harmless).",
+      "The inequality survives pointwise limits of a locally uniformly convergent polynomial sequence. If a nonzero entire limit f vanished at x+i*y with y nonzero, it would vanish at every x+i*v with |v|<=|y|. In particular it would have zeros x+i*y/(n+1) accumulating at x. The identity theorem would force f identically zero, a contradiction.",
+      "Thus every zero of a nonzero entire split-polynomial limit is real. Together with the finite-disk argument this gives exactly LP(t) iff all actual H_t zeros are real, using the actual growth, evenness and nonzero origin rather than a blanket converse to a zero-limit principle."
     ]
   },
   "remaining_human_proof_obligations": [
@@ -143,7 +169,7 @@
         "RiemannQuarticCanonicalProductLimit",
         "RiemannQuarticDenominatorLimit"
       ],
-      "requirement": "Explain the actual growth bound C_t exp(|z|^(3/2)), paired canonical product and normalization, or cite a precise classical theorem with every hypothesis checked. Do not assume a converse to Hurwitz without the growth input."
+      "requirement": "COMPLETED in the human blocks: actual positivity/decay/entire and compact-time properties, the C_t exp(|z|^(3/2)) bound, finite-disk Blaschke normalization and even double-zero Schwarz estimate, zero count and denominator convergence, and reverse vertical-modulus argument. No additional Hadamard-classification hypothesis is needed. Still integrate these full arguments into the eventual paper."
     }
   ],
   "primary_literature": [
@@ -404,6 +430,54 @@
       "source_sha256": "23d183953029c98351b4aa9420228cb9dd0447479d90ae1f9e8bcb89743c6d34",
       "type_or_definition_header": "theorem relative_local_error_bound (t x : \u211d) (ht : 1 \u2264 t) (hx : 10000 \u2264 x) (w v : \u2102)\n    (hr : 64 \u2264 w.re) (hi : |w.im| \u2264 1/2)\n    (hp : 100*(t*(\u2016w\u2016+1)^3+1) \u2264 x)\n    (hs : modelDerivative t w= -(Complex.I*(x : \u2102))) (hv : \u2016v-w\u2016 \u2264 1/x)\n    (z : \u2102) (hstat : complexSlope t v= -(Complex.I*z)) (r : \u211d) (hr0 : 0 < r) (hrr : r < 1/16)\n    (hsmall : (30005*Real.exp (-4*w.re+4))*r+2048*x*r^3 \u2264 1) :\n    \u2016(\u222b s : \u211d in -r..r, saddleWeight t z (v+(s : \u2102)))/\n      (saddleWeight t z v*(\u222b s : \u211d, Complex.exp (deriv (modelDerivative t) v*(s : \u2102)^2/2)))-1\u2016 \u2264\n      2*Real.sqrt x*(16*(30005*Real.exp (-4*w.re+4))*r^2+8192*x*r^4+2/(x*r))",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticFarGaussianLimit.lean#L112"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticKernel.kernel_decay",
+      "file": "Foundation/RiemannQuarticKernel.lean",
+      "line": 113,
+      "source_sha256": "dfc4e0ae77c591d26cb39e105209f1eaee6ec273f94162f1f3538d06a41b38c4",
+      "type_or_definition_header": "theorem kernel_decay (u : \u211d) (hu : 0 \u2264 u) :\n    |kernel u| \u2264 envelopeConstant*exp (9*u-Real.pi*exp (4*u)/2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticKernel.lean#L113"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticKernel.kernel_pos",
+      "file": "Foundation/RiemannQuarticKernel.lean",
+      "line": 153,
+      "source_sha256": "dfc4e0ae77c591d26cb39e105209f1eaee6ec273f94162f1f3538d06a41b38c4",
+      "type_or_definition_header": "theorem kernel_pos (u : \u211d) (hu : 0 \u2264 u) : 0 < kernel u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticKernel.lean#L153"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticDomain.weighted_integrable",
+      "file": "Foundation/RiemannQuarticDomain.lean",
+      "line": 57,
+      "source_sha256": "73f10e60446d28affcd2b1e93797881e4c29c7896fcdfc782658cf5093ac6f56",
+      "type_or_definition_header": "theorem weighted_integrable (k : \u2115) (T B : \u211d) :\n    IntegrableOn (weighted k T B) (Ici 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticDomain.lean#L57"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticTimeCompact.flow_time_tendsto_uniformly_on",
+      "file": "Foundation/RiemannQuarticTimeCompact.lean",
+      "line": 47,
+      "source_sha256": "4c8847073176370aeb98895a951000b8b1234417cf7d1c938bbfea7286613785",
+      "type_or_definition_header": "theorem flow_time_tendsto_uniformly_on (t : \u211d) (K : Set \u2102) (hK : IsCompact K) :\n    TendstoUniformlyOn (fun s z => flow s z) (flow t) (\ud835\udcdd t) K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticTimeCompact.lean#L47"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticCanonicalProductLimit.exists_actual_product_approximation",
+      "file": "Foundation/RiemannQuarticCanonicalProductLimit.lean",
+      "line": 14,
+      "source_sha256": "68254e032c532f9ff0610fc90b7ef6dd586691f13c9d04398eaf51eaa56551f3",
+      "type_or_definition_header": "theorem exists_actual_product_approximation (t : \u211d) :\n    \u2203 r : \u211d \u2192 \u211d, \u2203 h : \u211d \u2192 \u2102 \u2192 \u2102,\n      (\u2200 R : \u211d, 1 \u2264 R \u2192 2*R < r R \u2227 r R < 2*R+1 \u2227\n        ECanonicalDecomp (flow t) (h R) (r R) \u2227\n        divisor (flow t) (sphere 0 (r R)) = 0 \u2227\n        inverseZeroProduct t (r R) 0 \u2260 0 \u2227\n        \u2200 z \u2208 closedBall (0 : \u2102) (r R),\n          flow t z = inverseZeroProduct t (r R) z * h R z) \u2227\n      TendstoLocallyUniformly\n        (fun R z => inverseZeroProduct t (r R) z / inverseZeroProduct t (r R) 0)\n        (fun z => flow t z / flow t 0) atTop \u2227\n      TendstoLocallyUniformly\n        (fun R z => flow t 0 * (inverseZeroProduct t (r R) z / inverseZeroProduct t (r R) 0))\n        (flow t) atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticCanonicalProductLimit.lean#L14"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RealRootedVerticalLimit.real_zeros_of_locally_uniform_split_polynomials",
+      "file": "Foundation/RealRootedVerticalLimit.lean",
+      "line": 89,
+      "source_sha256": "debac024442129a040c33c22d51d130957e38d243c70d90d8af757574d269bfe",
+      "type_or_definition_header": "theorem real_zeros_of_locally_uniform_split_polynomials (P : \u2115 \u2192 \u211d[X])\n    (f : \u2102 \u2192 \u2102) (hf : Differentiable \u2102 f) (hne : \u2203 w, f w \u2260 0)\n    (hP : \u2200 n, (P n).Splits)\n    (hlim : TendstoLocallyUniformlyOn\n      (fun n z => ((P n).map (algebraMap \u211d \u2102)).eval z) f atTop univ) :\n    \u2200 z : \u2102, f z = 0 \u2192 z.im = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RealRootedVerticalLimit.lean#L89"
     }
   ],
   "quartic_source_manifest": [
@@ -1715,5 +1789,5 @@
       ]
     }
   ],
-  "updated_utc": "2026-10-29T11:52:20.447481+00:00"
+  "updated_utc": "2026-10-29T11:55:54.028520+00:00"
 }
