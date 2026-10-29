@@ -1,0 +1,809 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1.05in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\R}{\mathbb R}\newcommand{\E}{\mathbb E}
+\newcommand{\Hh}{\mathcal H}\newcommand{\SU}{\mathrm{SU}(2)}
+\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
+\title{Gauge-invariant slow modes in a seven-link $\mathrm{SU}(2)$ transfer:\\
+finite-coupling mixing and the failure of uniform fixed-step contraction}
+\author{Project Stardust}
+\date{Reviewed finite-model draft, October 29, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study an explicitly normalized transfer on two adjacent plaquettes
+with seven $\mathrm{SU}(2)$ links. Independent central Wilson increments
+update each link once, and a spatial half weight is applied on each
+side of the kinetic operator. Positive kernel powers construct a
+uniformly positive bounded ground function at every fixed coupling,
+giving a genuine reversible stationary Markov kernel. For a sufficiently
+small positive spatial tilt, depending on the temporal coupling, a
+three-channel gauge-invariant trial has normalized stationary lag
+strictly larger than the bare one-plaquette character factor. The
+proof includes exact Haar projections, a positive supersolution,
+explicit cubic errors and a positive optimized second-order margin.
+Every fixed number of Markov steps fails to give a parameter-uniform
+subunit covariance factor, even after arbitrary random gauge actions.
+At each fixed coupling, a separate positive minorization gives geometric
+mixing. We also exhibit the loss of the trial's centering symmetry when
+both spatial plaquettes are weighted. All statements concern this
+finite model; no homogeneous four-dimensional transfer or physical
+mass-gap conclusion is inferred. Classical positive-kernel and character
+methods are credited; priority for the exact comparison is unresolved.
+\end{abstract}
+
+\section{The model and the quantified conclusions}
+Identify $G=\SU$ with unit quaternions, and write
+$\tau(g)=\frac12\operatorname{Re}\operatorname{tr}(g)$ for its scalar
+quaternion coordinate. Let $dg$ be normalized Haar measure. For
+$\beta\in\R$ define the actual probability law
+\begin{equation}\label{eq:increment}
+ Z_\beta=\int_G e^{\beta\tau(v)}\,dv,\qquad
+ d\mu_\beta(v)=Z_\beta^{-1}e^{\beta\tau(v)}\,dv,\qquad
+ c=c_\beta=\int_G\tau(v)\,d\mu_\beta(v).
+\end{equation}
+The second scalar channel is
+\begin{equation}\label{eq:r}
+ m_\beta=\int_G\tau(v)^2\,d\mu_\beta(v),\qquad
+ r=r_\beta=\frac{4m_\beta-1}{3}.
+\end{equation}
+All these quantities are finite, and $Z_\beta>0$, since $|\tau|\leq1$.
+
+Our state space is $\mathcal S=G^7$, with coordinates
+$s=(U,A,B,C,D,E,F)$ and product Haar probability $dH(s)$. The six
+vertices are numbered $0,\ldots,5$. Orient the shared link $U$ from
+$3$ to $0$, the path $(A,B,C)$ from $0$ through $1,2$ to $3$, and
+the path $(D,E,F)$ from $3$ through $4,5$ to $0$. Put
+\begin{equation}\label{eq:words}
+ \begin{gathered}
+ L=ABC,\quad R=DEF,\quad x(s)=\tau(LU),\quad y(s)=\tau(U^{-1}R),\\
+ z(s)=\frac{\tau(LR)}4,\qquad w(s)=x(s)y(s)-z(s).
+ \end{gathered}
+\end{equation}
+Thus $x,y$ are the two adjacent plaquette traces; $z$ is the shared-link
+Haar projection of their product. Every physical link occurs once in
+the noise law $\mu_\beta^{\otimes7}$.
+
+On bounded measurable real functions define
+\begin{equation}\label{eq:K}
+ K_\beta f(s)=\int_{G^7}f(sv)\,d\mu_\beta^{\otimes7}(v),\qquad
+ h_t(s)=e^{t x(s)/2},\qquad S_{\beta,t}=M_{h_t}K_\beta M_{h_t}.
+\end{equation}
+Products $sv$ are coordinatewise. The spatial parameter $t$ and temporal
+parameter $\beta$ are independent. Only the first plaquette is weighted
+in \eqref{eq:K}. Section~\ref{sec:homogeneous} explains why that
+qualification cannot be removed from the slow-mode proof.
+
+\begin{theorem}\label{thm:main}
+For each $\beta,t\in\R$, there are $\Lambda>0$ and a bounded measurable
+$\psi:\mathcal S\to(0,\infty)$, bounded away from zero, such that
+$S_{\beta,t}\psi=\Lambda\psi$. They define a reversible Markov kernel
+\begin{equation}\label{eq:P}
+ P_{\beta,t}f(s)=\frac{S_{\beta,t}(\psi f)(s)}{\Lambda\psi(s)},
+ \qquad d\pi_{\beta,t}=\frac{\psi^2\,dH}{\int\psi^2\,dH}.
+\end{equation}
+The ground function can be chosen even under the private-link center
+flip $D\mapsto-D$ and invariant under the six-vertex gauge group.
+
+If $c_\beta\ne0$, there is $\delta_\beta\in(0,1]$ such that for every
+$0<t<\delta_\beta$ a bounded gauge-invariant $f$ satisfies
+\begin{equation}\label{eq:mainlag}
+ \int f\,d\pi_{\beta,t}=0,\qquad \int f^2\,d\pi_{\beta,t}>0,
+ \qquad c_\beta^4<
+ \frac{\int fP_{\beta,t}f\,d\pi_{\beta,t}}{\int f^2\,d\pi_{\beta,t}}.
+\end{equation}
+For the same $f$, every integer $n\geq0$ obeys
+\begin{equation}\label{eq:lagiter}
+ 1-n(1-c_\beta^4)\leq
+ \frac{\int fP_{\beta,t}^{\,n}f\,d\pi_{\beta,t}}{\int f^2\,d\pi_{\beta,t}}
+ \leq1.
+\end{equation}
+For each fixed $n$, $q<1$ and $B\in\R$, one can choose
+$\beta>B$ and $0<t\leq1$ with a centered gauge-invariant $f$ whose
+normalized $n$-step lag exceeds $q$. These conclusions persist if an
+arbitrary probability-distributed gauge action is applied before every
+Markov step.
+\end{theorem}
+
+This is a statement about actual finite-dimensional probability laws
+and centered covariances. Its positive and negative conclusions concern
+different quantifiers: fixed-parameter mixing versus uniform contraction
+over parameters. The proof will retain $\delta_\beta$ throughout.
+Positive integral operators have a classical Perron--Jentzsch theory,
+including Birkhoff's projective treatment \cite{Birkhoff}. Our elementary
+power construction makes the required input explicit. L\"uscher's
+physical transfer construction \cite{Luscher} additionally identifies a
+gauge-invariant quantum state space and a lattice Hamiltonian; those
+identifications are not asserted for this seven-link Markov model.
+
+\section{Haar coordinates and the three exact channels}
+If $V=(a,b)\in\R\times\R^3$ is a unit quaternion, then $\tau(V)=a$.
+Uniform measure on the unit sphere in $\R^4$ is Haar measure on $G$.
+Its coordinate symmetries give
+\begin{equation}\label{eq:Haarmoments}
+ \int a\,dV=0,\quad \int a^2\,dV=\frac14,\quad
+ \int a^4\,dV=\frac18,\qquad
+ \int a_i a_j\,dV=\frac{\delta_{ij}}4.
+\end{equation}
+For the fourth moment, rotational symmetry gives
+$\E a_i^4=3\E a_i^2a_j^2$ for $i\ne j$, by rotating
+$(a_i+a_j)/\sqrt2$. Expanding $(\sum_{i=0}^3a_i^2)^2=1$
+then gives $4\E a_0^4+12\E a_0^2a_1^2=1$ and the stated value.
+
+The tilt \eqref{eq:increment} depends only on $a$, so
+\begin{equation}\label{eq:tiltmoments}
+ \E_{\mu_\beta}b_i=\E_{\mu_\beta}ab_i=0,\qquad
+ \E_{\mu_\beta}b_i b_j=\frac{1-m_\beta}{3}\delta_{ij}.
+\end{equation}
+Consequently, for each fixed $Q\in G$,
+\begin{align}
+ \int\tau(QV)\,d\mu_\beta(V)&=c\tau(Q),\label{eq:linear}\\
+ \int[\tau(QV)^2-1/4]\,d\mu_\beta(V)
+ &=r[\tau(Q)^2-1/4].\label{eq:quadratic}
+\end{align}
+Indeed $\tau(QV)=a_Qa-b_Q\cdot b$, and
+\eqref{eq:tiltmoments} evaluates both expressions. More generally,
+right multiplication by the tilted quaternion contracts every linear
+form in the four quaternion coordinates by $c$, and every traceless
+quadratic form by $r$. For the latter assertion, let $O_V$ be the
+orthogonal matrix of right multiplication. Averaging
+$O_V^TTO_V$ for a symmetric matrix $T$ gives
+$rT+(1-r)\operatorname{tr}(T)I/4$.
+This follows by writing $O_V=aI+\sum b_iJ_i$, using the vanishing
+mixed moments and
+$\sum_{i=1}^3J_i^TTJ_i=\operatorname{tr}(T)I-T$ for symmetric $T$;
+the identity is checked on diagonal and symmetric off-diagonal matrix
+units using the quaternion multiplication table.
+
+\begin{lemma}\label{lem:channelbounds}
+For every finite $\beta$,
+$|c|<1$, $|r|<1$, and $c^2\leq m_\beta<1$.
+Also $c_\beta\to1$ as $\beta\to+\infty$.
+\end{lemma}
+\begin{proof}
+Cauchy--Schwarz gives $c^2\leq m_\beta$. The tilted measure has a
+strictly positive density relative to Haar measure, and $a^2<1$ on a
+nonempty open set, so $m_\beta<1$. Hence $|c|<1$ and
+$-1/3\leq r<1$, implying $|r|<1$.
+For $\varepsilon>0$, the upper cap $\{a>1-\varepsilon/2\}$ has
+Haar mass $b_\varepsilon>0$, and comparison of numerator and partition
+function gives, for $\beta\geq0$,
+\[
+ \mu_\beta\{a\leq1-\varepsilon\}
+ \leq b_\varepsilon^{-1}e^{-\beta\varepsilon/2}.
+\]
+Thus $0\leq1-c_\beta\leq\varepsilon+
+2b_\varepsilon^{-1}e^{-\beta\varepsilon/2}$.
+First let $\beta\to\infty$ and then $\varepsilon\downarrow0$.
+\end{proof}
+
+Under product Haar measure, the three variables $L,R,U$ are independent
+Haar variables. Each path is a product of independent Haar links, and
+the two paths and shared link use disjoint coordinates. Quaternion
+coordinate integration gives
+\begin{equation}\label{eq:pairtrace}
+ \int_G\tau(PV)\tau(QV)\,dV=\frac{\tau(PQ^{-1})}{4}.
+\end{equation}
+Changing variables $V=LU$ in this formula proves
+$\int_G x(s)y(s)\,dU=z(s)$ for fixed $L,R$.
+
+\begin{proposition}\label{prop:channels}
+The functions $y,z,w$ are orthogonal in $L^2(H)$. Their squared
+norms are $1/4$, $1/64$ and $3/64$, respectively. Their exact kinetic
+evolutions are
+\begin{equation}\label{eq:threeeigen}
+ K_\beta y=c^4y,\qquad K_\beta z=c^6z,\qquad
+ K_\beta w=c^6r\,w.
+\end{equation}
+\end{proposition}
+\begin{proof}
+For fixed $L,U$, write $x=\tau(LU)$. Integration in the independent
+right-path Haar variable $R$ gives
+\[
+ \E_R y^2=\tfrac14,\qquad \E_R z^2=\tfrac1{64},\qquad
+ \E_R yz=\tfrac{x}{16}.
+\]
+Since $w=xy-z$, this also gives
+$\E_R yw=3x/16$, $\E_R zw=x^2/16-1/64$ and
+$\E_R w^2=x^2/8+1/64$. Averaging over $L,U$ and using
+$\E x=0$, $\E x^2=1/4$ proves all norms and cross products.
+
+Each of the four independent link increments in the right plaquette
+contributes the factor $c$ in \eqref{eq:linear}; inverses have the same
+law, so this proves the first evolution. The six outer increments in
+$\tau(LR)$ similarly give $c^6$. For the last evolution, first
+integrate the six outer increments. The product $xy$ acquires $c^6$
+and so does $z$. As a function of the remaining shared increment,
+$xy-z$ is a quadratic form in its quaternion coordinates with zero
+Haar mean. It is therefore a traceless quadratic form, contracted by
+$r$ according to the calculation following \eqref{eq:quadratic}.
+This shared link is integrated once, giving $c^6r$ rather than a
+factor obtained by pretending the two plaquettes have independent
+shared links.
+\end{proof}
+
+The law $\mu_\beta$ is invariant under inversion and conjugation.
+Thus $K_\beta$ preserves Haar measure and is selfadjoint on $L^2(H)$,
+by the change of variables $(s,v)\mapsto(sv,v^{-1})$ in the bounded
+pairing. Jensen's inequality gives its $L^2$ contraction; bounded
+functions are dense, so these statements extend to the whole space.
+The operator $S_{\beta,t}$ is bounded and selfadjoint. Positive
+integral kernels below mean pointwise positive densities, not an
+unproved assertion that every $L^2$ eigenvalue is nonnegative.
+
+\section{A ground function constructed from positive kernel powers}
+We give the construction because a conditional ground-state formula
+cannot alone establish the stationary assertions in Theorem~\ref{thm:main}.
+
+\begin{lemma}\label{lem:positivepowers}
+Let $(X,\nu)$ be a nonempty probability space and let $k:X\times X\to\R$
+be jointly measurable with $0<m\leq k(x,y)\leq M<\infty$ everywhere.
+Then $Tf(x)=\int k(x,y)f(y)\,d\nu(y)$ has a measurable eigenfunction
+$\psi$ and eigenvalue $\Lambda$ satisfying
+\[
+ m\leq\Lambda\leq M,\qquad m/M\leq\psi(x)\leq M/m,
+ \qquad T\psi=\Lambda\psi.
+\]
+The construction requires no supplied eigenfunction or spectral radius.
+\end{lemma}
+\begin{proof}
+Set $p_0=1$, $p_{n+1}=Tp_n$ and $r_n=p_{n+1}/p_n$.
+Then $m^n\leq p_n\leq M^n$, and positivity gives
+$m\leq r_n\leq M$ by induction: $mp_n\leq p_{n+1}\leq Mp_n$
+holds at $n=0$ and is preserved by $T$.
+Let $\nu_n=p_n\nu/\int p_n\,d\nu$. The exact ratio relation is
+\[
+ r_{n+1}(x)=\frac{\int k(x,y)r_n(y)\,d\nu_n(y)}
+                         {\int k(x,y)\,d\nu_n(y)}.
+\]
+The averaging density in this expression is at least
+$\varepsilon=m/M$. Subtracting $\varepsilon\nu_n$ leaves a positive
+measure of mass $1-\varepsilon$. If $r_n\in[a_n,b_n]$, it follows that
+\[
+ r_{n+1}\in[a_{n+1},b_{n+1}],\qquad
+ (a_{n+1},b_{n+1})=
+ \varepsilon\!\int r_n\,d\nu_n+(1-\varepsilon)(a_n,b_n).
+\]
+Starting with $[a_0,b_0]=[m,M]$, these intervals are nested and
+$b_n-a_n=(M-m)(1-\varepsilon)^n$. They shrink to one common
+$\Lambda\in[m,M]$, so $r_n\to\Lambda$ uniformly.
+
+Fix $x_0\in X$ and set $q_n(x)=p_n(x)/p_n(x_0)$.
+The comparison $m\int p_{n-1}\leq p_n(x)\leq M\int p_{n-1}$ gives
+$m/M\leq q_n\leq M/m$ for $n\geq1$, and also for $n=0$.
+Since $q_{n+1}(x)=q_n(x)r_n(x)/r_n(x_0)$, we have
+\[
+ |q_{n+1}(x)-q_n(x)|
+ \leq\frac{M(M-m)}{m^2}(1-\varepsilon)^n.
+\]
+The geometric series proves uniform convergence to a measurable
+$\psi$ with the stated bounds. The identity
+$Tq_n=r_n(x_0)q_{n+1}$ passes to the limit by dominated convergence,
+giving $T\psi=\Lambda\psi$ pointwise. The case $m=M$ is included:
+the kernel is constant and all subsequent ratios and normalized powers
+are constant.
+\end{proof}
+
+For \eqref{eq:K}, the actual symmetric density relative to $H$ is
+\begin{equation}\label{eq:density}
+ k_{\beta,t}(s,r)=h_t(s)h_t(r)
+ Z_\beta^{-7}\exp\!\left\{\beta\sum_{e=1}^7\tau(s_e^{-1}r_e)\right\}.
+\end{equation}
+It satisfies the everywhere bounds
+\begin{equation}\label{eq:kernelbounds}
+ m_{\beta,t}=\frac{e^{-|t|-7|\beta|}}{Z_\beta^7}
+ \leq k_{\beta,t}\leq
+ \frac{e^{|t|+7|\beta|}}{Z_\beta^7}=M_{\beta,t}.
+\end{equation}
+Lemma~\ref{lem:positivepowers} therefore proves actual ground-function
+existence for every real $\beta,t$. Formula \eqref{eq:P} is a genuine
+probability kernel, since its density integrates to one by the
+eigenfunction equation. Detailed balance follows because
+\[
+ \pi(ds)P(s,dr)=
+ \frac{\psi(s)k_{\beta,t}(s,r)\psi(r)}
+      {\Lambda\int\psi^2\,dH}\,dH(s)dH(r)
+\]
+is symmetric. In particular $\pi$ is stationary, and $P$ is a
+selfadjoint contraction on the full $L^2(\pi)$ space.
+
+\section{Symmetries, centering and the actual observable}
+For $g=(g_0,\ldots,g_5)\in G^6$, the gauge action on an oriented edge
+$i\to j$ is $s_e\mapsto g_i s_e g_j^{-1}$. The words $LU$, $U^{-1}R$
+and $LR$ are closed words based at vertex $0$, so their half traces,
+and hence $x,y,z,w$, are gauge invariant. Product Haar measure is
+invariant under this action. Simultaneous transformation of $s,r$ in
+\eqref{eq:density} conjugates each $s_e^{-1}r_e$ by the gauge element
+at its terminal vertex; $\tau$ is conjugation invariant. Thus
+\begin{equation}\label{eq:gaugecovariance}
+ k_{\beta,t}(gs,gr)=k_{\beta,t}(s,r),\qquad
+ S(f\circ g)=(Sf)\circ g.
+\end{equation}
+
+Let $J$ be the center flip $D\mapsto-D$ on the first private link of
+the right path. Then $J^2=I$, $H$ is $J$-invariant, and
+\[
+ x\circ J=x,\qquad (y,z,w)\circ J=-(y,z,w).
+\]
+The operator $K_\beta$ commutes with this left multiplication, since
+$J(s)v=J(sv)$; its two spatial weights are also unchanged.
+Replacing a positive ground function by $(\psi+\psi\circ J)/2$
+therefore preserves its eigenvalue, lower and upper bounds, and makes
+it $J$-even. This replacement is made from now on.
+
+\begin{lemma}\label{lem:gaugeground}
+Every uniformly positive bounded measurable eigenfunction of $S$
+is gauge invariant. In particular the chosen even $\psi$, the stationary
+measure $\pi$ and its kernel $P$ have the stated gauge covariance.
+\end{lemma}
+\begin{proof}
+Fix a gauge transformation $g$. The function $\chi=\psi\circ g$
+has the same eigenvalue by \eqref{eq:gaugecovariance}.
+The ratio $F=\chi/\psi$ is bounded and satisfies $PF=F$.
+The ground transform can be written as normalized averaging of the
+same kernel $k$ against the probability
+\begin{equation}\label{eq:bridgereference}
+ d\nu_\psi=\frac{\psi\,dH}{\int\psi\,dH}:
+ \quad Pf(s)=\frac{\int k(s,r)f(r)\,d\nu_\psi(r)}
+                       {\int k(s,r)\,d\nu_\psi(r)}.
+\end{equation}
+The averaging density is at least $m_{\beta,t}/M_{\beta,t}=\varepsilon>0$.
+If $F$ lies in $[a,b]$, subtracting the common
+$\varepsilon\nu_\psi$ part shows that the range of $PF$ has width
+at most $(1-\varepsilon)(b-a)$. Since $PF=F$, the oscillation of $F$
+is zero, and $\chi=C\psi$ pointwise. Gauge invariance of $H$ gives
+$\int\chi\,dH=\int\psi\,dH>0$, forcing $C=1$.
+The density formula for $\pi$ and \eqref{eq:gaugecovariance} now prove
+invariance of the measure and covariance of the kernel. Notice that
+$\nu_\psi$ in \eqref{eq:bridgereference} is generally different from
+the stationary measure with density proportional to $\psi^2$.
+\end{proof}
+
+For real $A,B$ define the concrete odd trial
+\begin{equation}\label{eq:oddtrial}
+ p_t=y+tAz+tBw,\qquad F_t=h_t^{-1}p_t,
+ \qquad f_t=F_t/\psi.
+\end{equation}
+The trial and observable are bounded and measurable. The lower bound
+on $\psi$ is needed for boundedness of $f_t$. They are gauge invariant,
+$F_t$ is $J$-odd, and $\psi$ is $J$-even. Therefore
+\begin{equation}\label{eq:center}
+ \int f_t\,d\pi=\frac{\int F_t\psi\,dH}{\int\psi^2\,dH}=0.
+\end{equation}
+The exact norm and lag relation is
+\begin{equation}\label{eq:rayleigh}
+ \frac{\int f_tPf_t\,d\pi}{\int f_t^2\,d\pi}
+ =\frac{\langle F_t,SF_t\rangle_H}{\Lambda\|F_t\|_H^2}.
+\end{equation}
+Both numerator and denominator follow by cancelling the positive
+$\psi$ factors in \eqref{eq:P}. This equality uses the actual ground
+normalization; a pointwise row normalization of $S$ would define a
+different operator and would not give this formula.
+
+\section{A positive supersolution with a cubic error}
+We first bound $\Lambda$ above on a nonempty interval of spatial
+parameters. This will supply the normalization in the lower trial test.
+Set
+\begin{equation}\label{eq:vacuumconstants}
+ a=c^4,\quad b=r^4,\qquad
+ u=\frac{a}{1-a},\quad
+ v=\frac{b(1+a)}{2(1-a)(1-b)},\quad
+ \mu=\frac{1+a}{8(1-a)}.
+\end{equation}
+The denominators are nonzero by Lemma~\ref{lem:channelbounds}.
+For $|q|\leq1$ let
+\begin{align}
+ P_t(q)&=1+utq+vt^2(q^2-1/4),\label{eq:polynomial}\\
+ C_0(A,B)&=(2+e)(1+|A|+|B|),\nonumber\\
+ C&=C_0(u,v)+|\mu|(|u|+|v|),\qquad
+ Q_t=1+\mu t^2+2C|t|^3.\label{eq:certificate}
+\end{align}
+
+\begin{lemma}\label{lem:taylor}
+For $|t|\leq1$ and $|q|\leq1$,
+\begin{equation}\label{eq:taylor}
+ \left|e^{tq}(1+Atq+Bt^2(q^2-1/4))
+ -\left[1+(1+A)tq+
+ t^2\{(B+A+1/2)q^2-B/4\}\right]\right|
+ \leq C_0(A,B)|t|^3.
+\end{equation}
+If a probability-distributed $Y$ takes values in $[-1,1]$ and has
+$\E Y=aq$, $\E Y^2=1/4+b(q^2-1/4)$, then
+\begin{equation}\label{eq:supersolutionerror}
+ |\E[e^{tY}P_t(Y)]-(1+\mu t^2)P_t(q)|\leq C|t|^3.
+\end{equation}
+If $|u||t|+|v||t|^2\leq1/2$, then $P_t(q)\geq1/2$ and
+$\E[e^{tY}P_t(Y)]\leq Q_tP_t(q)$.
+\end{lemma}
+\begin{proof}
+Taylor's series gives
+$|e^{tq}-1-tq-(tq)^2/2|\leq e|t|^3$ on the stated rectangle.
+Multiplication by $1+Atq+Bt^2(q^2-1/4)$ has absolute value at most
+$1+|A|+|B|$, since $|q^2-1/4|\leq1$. The remaining terms of total
+degree three and four are
+\[
+ t^3[Bq(q^2-1/4)+Aq^3/2]+t^4Bq^2(q^2-1/4)/2,
+\]
+bounded by $|t|^3(3|B|/2+|A|/2)$. This proves
+\eqref{eq:taylor} with the displayed larger constant.
+
+Substitute $A=u,B=v$ and the two moments of $Y$. The definitions
+$a(1+u)=u$ and $b(v+u+1/2)=v$ give exactly
+\[
+ \E\left[1+(1+u)tY+t^2\{(v+u+1/2)Y^2-v/4\}\right]
+ =P_t(q)+\mu t^2.
+\]
+Also $|P_t(q)-1|\leq|t|(|u|+|v|)$ for $|t|\leq1$.
+The difference between $P_t+\mu t^2$ and $(1+\mu t^2)P_t$
+is therefore bounded by $|\mu|(|u|+|v|)|t|^3$, proving
+\eqref{eq:supersolutionerror}. The smallness condition gives
+$P_t\geq1/2$, which absorbs the additive $C|t|^3$ into
+$2C|t|^3P_t$ and proves the last assertion.
+\end{proof}
+
+\begin{proposition}\label{prop:lambda}
+If $|t|\leq1$ and $|u||t|+|v||t|^2\leq1/2$, then
+$\Lambda\leq Q_t$.
+\end{proposition}
+\begin{proof}
+For $q=x(s)$ the random variable $Y=x(sV)$ under the seven-link
+increment law has the moments in Lemma~\ref{lem:taylor}: the four
+increments in the first plaquette give $a=c^4$ and $b=r^4$ by
+\eqref{eq:linear}--\eqref{eq:quadratic}. Inverses and conjugations
+preserve the central increment law, so these moment computations are
+valid for every fixed starting configuration. Thus
+$U_t(s)=h_t(s)P_t(x(s))$ satisfies $SU_t\leq Q_tU_t$.
+It is bounded and at least $e^{-|t|/2}/2$.
+
+For any bounded measurable $R$, symmetry and positivity of $k$ give
+\begin{align*}
+ \langle U_tR,SU_tR\rangle_H
+ &\leq\frac12\iint k(s,r)U_t(s)U_t(r)[R(s)^2+R(r)^2],dH(s)dH(r)\\
+ &=\int U_t(s)(SU_t)(s)R(s)^2\,dH(s)
+ \leq Q_t\|U_tR\|_H^2.
+\end{align*}
+The first inequality is $2R(s)R(r)\leq R(s)^2+R(r)^2$.
+Take $R=\psi/U_t$, which is bounded by the positive lower bound
+on $U_t$. The eigenfunction equation and $\|\psi\|_H>0$ give
+$\Lambda\leq Q_t$. Neither a formal eigenbranch nor a spectral
+identification of the approximate polynomial is used.
+\end{proof}
+
+\section{The exact odd numerator and denominator}
+The inverse half weight in \eqref{eq:oddtrial} cancels the two spatial
+weights in the kinetic numerator. Proposition~\ref{prop:channels} gives
+\begin{equation}\label{eq:numerator}
+ N_t:=\langle F_t,SF_t\rangle_H
+ =\frac{c^4}4+\frac{t^2}{64}(c^6A^2+3c^6rB^2).
+\end{equation}
+There is no remainder in this identity. All exponential error lies in
+the denominator $D_t=\|F_t\|_H^2=\int e^{-tx}p_t^2\,dH$.
+
+\begin{lemma}\label{lem:denominator}
+For all real $t,A,B$, one has $D_t\geq e^{-|t|}/4>0$ and
+\begin{equation}\label{eq:radial}
+ D_t=\int_G e^{-t\tau(V)}\mathcal R_t(\tau(V))\,dV,
+ \quad \mathcal R_t(q)=\frac14+\frac{t(A+3B)q}{8}
+ +\frac{t^2}{64}[(A-B)^2+8B(A+B)q^2].
+\end{equation}
+Put
+\begin{align}
+ d&=\frac{A^2+3B^2-2A-6B+2}{64},\nonumber\\
+ R_0&=\frac{(A-B)^2}{64}+\frac{B(A+B)}{32},\nonumber\\
+ E&=\frac14C_0(-(A+3B)/2,B(A+B)/2)+2|R_0|.\label{eq:Derror}
+\end{align}
+Then, for $|t|\leq1$,
+\begin{equation}\label{eq:Dexpansion}
+ |D_t-(1/4+dt^2)|\leq E|t|^3.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For fixed $L,U$, $x=\tau(LU)$ and
+$p_t=(1+tBx)y+t(A-B)z$. The three conditional moments in the proof
+of Proposition~\ref{prop:channels} therefore give
+$\E_Rp_t^2=\mathcal R_t(x)$. Haar invariance in $L$ makes $LU$
+a Haar variable, proving \eqref{eq:radial}.
+The exact global Gram identity also gives
+$\int p_t^2\,dH=1/4+t^2(A^2+3B^2)/64\geq1/4$;
+since $e^{-tx}\geq e^{-|t|}$, the positive lower bound follows.
+
+Set $A_0=-(A+3B)/2$, $B_0=B(A+B)/2$. Direct expansion shows
+\[
+ \mathcal R_t(q)=\tfrac14[1+A_0(-t)q+B_0(-t)^2(q^2-1/4)]
+                  +t^2R_0.
+\]
+Apply \eqref{eq:taylor} with parameter $-t$ to the bracket.
+In the last term use $|e^{-tq}-1|\leq2|t|$ for $|t|,|q|\leq1$.
+The total error is at most $E|t|^3$. The integrated linear part
+vanishes by $\int\tau=0$; the quadratic part is $dt^2$ by
+$\int\tau^2=1/4$. This proves \eqref{eq:Dexpansion} with the stated
+constant and both signs of $t$.
+\end{proof}
+
+\section{An optimized positive margin and a genuine spatial interval}
+Assume $c\ne0$ and put $\alpha=c^2$. Fix the actual trial parameters
+\begin{equation}\label{eq:AB}
+ A=\frac1{1-\alpha},\qquad B=\frac1{1-\alpha r}.
+\end{equation}
+Their denominators are strictly positive by Lemma~\ref{lem:channelbounds}.
+Let $d,E$ be \eqref{eq:Derror} for this pair, and define
+\begin{equation}\label{eq:margin}
+ \Delta=\frac{c^6A^2+3c^6rB^2}{64}-c^4d-\frac{c^4\mu}{4}.
+\end{equation}
+
+\begin{lemma}\label{lem:margin}
+The margin is strictly positive. More explicitly,
+\begin{equation}\label{eq:marginfactor}
+ \Delta=\frac{\alpha^3[1+3r-\alpha(3+r)]}
+ {64(1-\alpha^2)(1-\alpha r)}>0.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Insert \eqref{eq:AB} and $\mu=(1+c^4)/(8(1-c^4))$ into
+\eqref{eq:margin}. Completing the two scalar squares in $A,B$ gives
+\[
+ \Delta=\frac{\alpha^2}{64}
+ \left[\frac1{1-\alpha}+\frac3{1-\alpha r}
+                    -\frac4{1-\alpha^2}\right].
+\]
+Putting the bracket over its common denominator yields
+\eqref{eq:marginfactor}. Now $0<\alpha\leq m_\beta<1$ and
+$1+3r=4m_\beta\geq4\alpha$, while $r<1$. Thus
+$1+3r-\alpha(3+r)\geq\alpha(1-r)>0$.
+Both denominator factors are positive, proving the assertion.
+\end{proof}
+
+This margin compares the exact odd trial with an upper bound on the
+actual ground normalization. A calculation of the kinetic numerator
+alone would not establish \eqref{eq:mainlag}.
+Define the nonnegative comparison constant
+\begin{equation}\label{eq:comparisonconstant}
+ J=E+\mu(|d|+E)+2C(1/4+|d|+E),
+\end{equation}
+and choose the explicit positive window
+\begin{equation}\label{eq:delta}
+ \delta_\beta=\min\left\{1,\frac{\Delta}{|c^4J|+1},
+                     \frac1{2(|u|+|v|+1)}\right\}.
+\end{equation}
+For $0<t<\delta_\beta$, both supersolution smallness and
+$c^4Jt<\Delta$ hold. From \eqref{eq:Dexpansion}, for $0\leq t\leq1$,
+\[
+ D_t\leq\tfrac14+|d|+E,\qquad
+ D_t-\tfrac14\leq t(|d|+E).
+\]
+Expanding $Q_tD_t=D_t+\mu t^2D_t+2Ct^3D_t$ and using these two
+bounds gives
+\begin{equation}\label{eq:QD}
+ Q_tD_t\leq\tfrac14+(d+\mu/4)t^2+Jt^3.
+\end{equation}
+Together with \eqref{eq:numerator} and \eqref{eq:margin}, this yields
+\[
+ N_t-c^4Q_tD_t\geq t^2(\Delta-c^4Jt)>0.
+\]
+Proposition~\ref{prop:lambda} gives $\Lambda\leq Q_t$, while
+$D_t,\Lambda>0$. Equation \eqref{eq:rayleigh} therefore proves
+\eqref{eq:mainlag}. Centering was already proved in \eqref{eq:center},
+and positive variance follows from $D_t>0$. This proves the one-step
+part of Theorem~\ref{thm:main} on an actual nonempty interval, with no
+unquantified perturbative error. The window may shrink as $\beta$ grows.
+
+\section{Finite-step persistence and gauge randomization}
+We need an iteration argument for the actual stationary operator,
+including a possible negative part of its spectrum.
+
+\begin{lemma}\label{lem:iteration}
+Let $T$ be a selfadjoint contraction on a real Hilbert space, and set
+$\mathcal D(F)=\|F\|^2-\langle TF,F\rangle$. Then, for all $n\geq0$,
+\begin{equation}\label{eq:Hilbertiteration}
+ \|F\|^2-n\mathcal D(F)\leq\langle T^nF,F\rangle\leq\|F\|^2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Cauchy--Schwarz and contraction give $\mathcal D\geq0$ and
+$\langle TZ,Z\rangle\geq-\|Z\|^2$.
+For $Z=F-TF$, expansion using selfadjointness gives
+\[
+ \mathcal D(F)-\mathcal D(TF)
+ =\langle (I+T)Z,Z\rangle\geq0.
+\]
+Also $\|F\|^2-\|TF\|^2\leq2\mathcal D(F)$, because the right
+side minus the left side is $\|F-TF\|^2$.
+Iterating yields $\|T^kF\|^2\geq\|F\|^2-2k\mathcal D(F)$.
+For $n=2k$, selfadjointness gives
+$\langle T^{2k}F,F\rangle=\|T^kF\|^2$.
+For $n=2k+1$ it gives
+\[
+ \langle T^{2k+1}F,F\rangle
+ =\|T^kF\|^2-\mathcal D(T^kF)
+ \geq\|F\|^2-(2k+1)\mathcal D(F).
+\]
+These are the lower bounds. The upper bound follows from
+$\|T^nF\|\leq\|F\|$ and Cauchy--Schwarz. No nonnegative-spectrum
+premise has entered the proof.
+\end{proof}
+
+Apply the lemma with $T=P_{\beta,t}$ on $L^2(\pi_{\beta,t})$ and
+the observable in \eqref{eq:oddtrial}. Equation \eqref{eq:mainlag}
+gives $\mathcal D(f)<(1-c_\beta^4)\|f\|^2$, proving
+\eqref{eq:lagiter}. Fix an integer $n\geq0$, $q<1$ and a cutoff $B$.
+For $n\geq1$, Lemma~\ref{lem:channelbounds} allows $\beta>B$
+so large that $1-n(1-c_\beta^4)>q$ and $c_\beta\ne0$.
+Choose $t=\delta_\beta/2$. The $n$-step ratio exceeds $q$.
+For $n=0$ it is one, and the same construction supplies a nonzero
+centered invariant observable. This proves nonuniformity without
+passing to any continuum or volume limit.
+
+Let $\nu$ be any probability measure on $G^6$ and define the actual
+randomized Markov operator
+\begin{equation}\label{eq:gaugeaverage}
+ \overline P_\nu f(s)=\int_{G^6}(Pf)(gs)\,d\nu(g).
+\end{equation}
+This randomizes the starting state by a gauge action before one $P$
+step. Gauge invariance of $\pi$ and stationarity for $P$ give
+$\pi\overline P_\nu=\pi$. If $f$ is invariant, covariance
+\eqref{eq:gaugecovariance} makes $Pf$ invariant too; hence
+$\overline P_\nu f=Pf$. Induction gives
+\begin{equation}\label{eq:gaugeiterate}
+ \overline P_\nu^{\,n}f=P^nf\qquad(n\geq0)
+\end{equation}
+for every bounded invariant $f$. All the covariance ratios are
+unchanged, including for product Haar randomization at all six
+vertices. The randomized operator need not itself be selfadjoint:
+its action on the invariant observables has already been identified
+with the selfadjoint $P$ iterates. This completes
+Theorem~\ref{thm:main}.
+
+A single open link would give a misleading alternative test. If
+$F:G\to\R$ satisfies $F(gAh^{-1})=F(A)$ for all independent endpoint
+gauges, setting $A=1,h=1$ gives $F(g)=F(1)$, so $F$ is constant.
+The half trace of an open link is not invariant: its values at $1$
+and $-1$ are $1$ and $-1$. The observables above use actual closed
+words and do not rely on an open-link mode being physical.
+
+\section{Mixing at each fixed coupling}
+The absence of a parameter-uniform fixed-step factor does not prevent
+mixing at a fixed pair of parameters.
+
+\begin{proposition}\label{prop:mixing}
+For every fixed $\beta,t$ and bounded measurable $f$ with
+$\int f\,d\pi_{\beta,t}=0$ and $|f|\leq B$,
+\begin{equation}\label{eq:mixing}
+ |P_{\beta,t}^{\,n}f(s)|\leq2B(1-\varepsilon_{\beta,t})^n,
+ \qquad\varepsilon_{\beta,t}=e^{-2|t|-14|\beta|}>0.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Use the probability $\nu_\psi$ in \eqref{eq:bridgereference}.
+The normalized row density of $k_{\beta,t}$ is at least
+$m_{\beta,t}/M_{\beta,t}=\varepsilon_{\beta,t}$ by
+\eqref{eq:kernelbounds}; all seven Wilson partitions cancel.
+Thus $P$ is the sum of a common reset
+$\varepsilon_{\beta,t}\nu_\psi$ and a positive residual kernel of
+mass $1-\varepsilon_{\beta,t}$. It follows that
+\[
+ \operatorname{osc}(Pf)\leq
+ (1-\varepsilon_{\beta,t})\operatorname{osc}(f),
+ \quad \operatorname{osc}(f)=\sup f-\inf f.
+\]
+Iteration bounds the oscillation by $2B(1-\varepsilon_{\beta,t})^n$.
+Stationarity gives $\int P^nf\,d\pi=0$, so zero lies between its
+infimum and supremum. Its absolute value is bounded by its oscillation,
+proving \eqref{eq:mixing}. If $\varepsilon=1$, the kernel is a reset;
+the estimate for $n\geq1$ is direct and the $n=0$ bound is immediate.
+\end{proof}
+
+This is a bounded-observable mixing result for the actual stationary
+finite model. Its reset constant degenerates as $\beta$ grows. The
+slow-mode theorem proves failure of a uniform fixed-step factor,
+rather than merely pointing to this weak upper estimate.
+
+\section{Why the second spatial plaquette changes the argument}
+\label{sec:homogeneous}
+To weight both plaquettes equally, replace $h_t$ by
+\[
+ \widetilde h_t(s)=e^{t(x(s)+y(s))/2},\qquad
+ \widetilde S_{\beta,t}=M_{\widetilde h_t}K_\beta M_{\widetilde h_t}.
+\]
+The old center flip sends $x+y$ to $x-y$, so it no longer preserves
+the weight at $t\ne0$. At the flat configuration all links are $1$;
+the two values of $\widetilde h_t$ before and after the flip are
+$e^t$ and $1$. This is a pointwise failure of a required symmetry,
+which persists for every nonzero $t$.
+
+The effect on centering is realized at the genuine reset coupling
+$\beta=0$. Here $\mu_0$ is Haar and $K_0f=\int f\,dH$, so
+\[
+ \widetilde S_{0,t}f=\widetilde h_t\int\widetilde h_tf\,dH,
+ \quad\widetilde\psi_t=\widetilde h_t,
+ \quad\widetilde\Lambda_t=\int e^{t(x+y)}\,dH,
+ \quad d\widetilde\pi_t=
+ \frac{e^{t(x+y)}\,dH}{\int e^{t(x+y)}\,dH}.
+\]
+The actual ground-normalized Markov kernel is the constant reset
+$\widetilde P_t f=\int f\,d\widetilde\pi_t$.
+Bounded differentiation under the integral gives
+\begin{equation}\label{eq:rightmean}
+ \left.\frac{d}{dt}\int y\,d\widetilde\pi_t\right|_{t=0}
+ =\int y(x+y)\,dH-\int y\,dH\int(x+y)\,dH=\frac14.
+\end{equation}
+All first moments vanish, $\int xy\,dH=0$ by integrating the
+independent left Haar path, and $\int y^2\,dH=1/4$.
+The mean at zero is zero; \eqref{eq:rightmean} proves positive mean
+for arbitrarily small positive $t$. Under these actual stationary laws,
+\[
+ \int y\widetilde P_ty\,d\widetilde\pi_t
+ =\left(\int y\,d\widetilde\pi_t\right)^2>0,
+\]
+whereas every correctly centered integrable observable has exactly
+zero one-step lag under the reset kernel. An uncentered positive lag
+therefore does not obstruct mixing.
+
+This example does not rule out a corrected two-weight trial. It shows
+why the one-weight orthogonality and its covariance conclusion cannot
+simply be transplanted. In particular, the small independent $t$
+interval in Theorem~\ref{thm:main} gives no statement along a
+homogeneous relation between spatial and temporal couplings.
+
+\section{Provenance, classical context and remaining boundaries}
+Every formal source used here is frozen at the verified commit
+\begin{center}\code{bab688bb6140cd6316c80680095a914ea0d346db}.\end{center}
+The accompanying theorem map records exact declarations, unabridged
+headers, file hashes and baseline links. The original full-build and
+transitive-axiom receipt, with its evidence hashes, accompanies the
+draft. The publication editor has not changed a mathematical source
+or run a redundant research build.
+
+The principal sources are the shared-plaquette Haar projection and
+channel modules; seven-link transfer, variational, odd-trial and spatial
+separation; positive kernel powers; realized vacuum and original ground
+transform; full stationary $L^2$ transfer; iteration, mixing and gauge
+averaging; and the homogeneous-plaquette obstruction.
+In particular, the earlier conditional ground-data contract is
+discharged by the proved positive-power construction. It is not used
+as an existence axiom. Quaternion coordinate calculations, the factored
+optimized margin, explicit smallness window and even/odd iteration
+reorganize the verified arguments into human proofs; they are not
+represented as new Lean declarations. The same exact one-weight model,
+parameter dependence, centering and boundedness hypotheses are retained.
+
+Positive-kernel existence, minorization, ground transforms and character
+methods are classical. Birkhoff's primary introduction and
+uniform-positivity framework \cite{Birkhoff} provide relevant antecedents;
+full theorem-by-theorem historical comparison remains incomplete.
+L\"uscher's primary construction \cite{Luscher} includes the physical
+gauge-invariant Hilbert space and transfer matrix of lattice gauge
+theory. Here the finite Markov covariance is not identified with a
+physical Schwinger function or energy spectrum. Priority for the exact
+optimized seven-link comparison remains unresolved after a bounded
+primary-literature review.
+
+There is no volume or lattice-spacing parameter in the theorem.
+No uniform homogeneous coupling regime, reflection-positive continuum
+construction, spectral-to-physical distance identification or
+four-dimensional mass gap is supplied. Failure of a parameter-uniform
+number of these finite Markov steps does not refute a physical mass gap.
+The draft exposes finite-transfer mechanisms and exact hypotheses for
+their reuse. The active research campaign and its unresolved continuum
+objectives remain separate.
+
+\begin{thebibliography}{9}
+\bibitem{Birkhoff} G. Birkhoff,
+\emph{Extensions of Jentzsch's theorem}, Transactions of the American
+Mathematical Society \textbf{85} (1957), 219--227.
+\href{https://doi.org/10.1090/S0002-9947-1957-0087058-6}
+{doi:10.1090/S0002-9947-1957-0087058-6}.
+\bibitem{Luscher} M. L\"uscher,
+\emph{Construction of a selfadjoint, strictly positive transfer matrix
+for Euclidean lattice gauge theories}, Communications in Mathematical
+Physics \textbf{54} (1977), 283--292.
+\href{https://doi.org/10.1007/BF01614090}{doi:10.1007/BF01614090}.
+\href{https://bib-pubdb1.desy.de/record/396349/files/7611148.pdf}
+{Primary DESY preprint}.
+\end{thebibliography}
+\end{document}

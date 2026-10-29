@@ -53,6 +53,8 @@ types and detailed scopes before reuse.
 | Actual quartic theta-flow eventual global real zeros | `RiemannQuarticUniformFarScale.eventually_all_zeros_real` | Every complex zero is real at every sufficiently late time of the genuine growing quartic integral. Local/far estimates share one scale. No RH implication is inferred. [Source](Foundation/RiemannQuarticUniformFarScale.lean), [full stopping scope](A4_CAMPAIGN_STOPPING_AUDIT.md). |
 | Physical Haar-L2 positivity has a sharp active-axis threshold | `PhysicalHeatPositiveCone.anisotropic_physical_positive_iff_active` | For nonnegative axis weights and positive exponents, the completed physical Haar-L2 evolution preserves the real nonnegative cone for every nonnegative time exactly when every positively weighted exponent is at most two. Finite-core Gamma, transition laws and countable-step chains are also verified; closed pointwise Gamma domains and continuous-time paths remain open. [Source](Foundation/PhysicalHeatPositiveCone.lean), [paused-objective scope](STARDUST_BAKRY_OBJECTIVE2_PAUSE.md). |
 
+The publication catalog also includes [gauge-invariant seven-link slow modes](manuscripts/seven-link-transfer/main.pdf): a twelve-page finite-transfer proof with an actual stationary law, explicit optimized trial and a precise two-weight centering boundary. This is not a physical mass-gap result.
+
 ## Verification and reproducibility
 
 The pinned environment is Lean `leanprover/lean4:v4.34.1` with exact Mathlib

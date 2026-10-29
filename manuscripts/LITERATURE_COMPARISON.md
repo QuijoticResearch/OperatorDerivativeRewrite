@@ -37,3 +37,9 @@ Keep all seventeen manuscripts labelled reviewed drafts. Treat the Gaussian pred
 ## Jump curvature and count-energy norms
 
 [Weber--Zacher, primary full preprint](https://arxiv.org/abs/2007.01264), Example 5.13, pp32–35, explicitly includes the Poisson CD(1/2,infinity) example and its difference from entropy-adapted curvature. The transport manuscript now credits that antecedent and reconstructs the sharp calculation and finite-core entropy comparison. [Dirksen, primary 2014 article](https://arxiv.org/abs/1208.3885), Theorem 1.1 and its six input-space cases, supplies the appropriate context for the separately inspected plain-Lp count-recovery obstruction. The latter elementary source family is retained as supporting diagnostics rather than a new paper.
+
+## Finite seven-link transfer
+
+[Birkhoff (1957)](https://doi.org/10.1090/S0002-9947-1957-0087058-6) supplies the classical uniform-positive-operator context; only its primary indexed introduction/framework was available for comparison. The complete primary [Luscher DESY preprint](https://bib-pubdb1.desy.de/record/396349/files/7611148.pdf) was inspected for the physical gauge-invariant Hilbert and transfer construction. The present finite Markov model is not identified with that physical construction. Priority for the exact optimized finite covariance comparison remains unresolved.
+
+A further institutional scan of de Bruijn (1950) was located at the TU Eindhoven repository, but the available tool access did not expose readable theorem pages. It does not close the previously recorded detailed hypothesis comparison. No unread theorem is used as a mathematical premise.

@@ -1,0 +1,1543 @@
+{
+  "baseline": "bab688bb6140cd6316c80680095a914ea0d346db",
+  "entries": [
+    {
+      "paper": "1\u20132: central increments",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2WilsonConvolution.increment",
+      "file": "Foundation/SU2WilsonConvolution.lean",
+      "line": 26,
+      "source_sha256": "104f2eb5634e8792a0a94c6832e3f476ccd625b9c91fa1fa4bee280f0c2bf41f",
+      "declaration_header": "def increment (\u03b2 : \u211d) : Measure SU2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2WilsonConvolution.lean#L26"
+    },
+    {
+      "paper": "1\u20132: central increments",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2WilsonConvolution.coefficient",
+      "file": "Foundation/SU2WilsonConvolution.lean",
+      "line": 57,
+      "source_sha256": "104f2eb5634e8792a0a94c6832e3f476ccd625b9c91fa1fa4bee280f0c2bf41f",
+      "declaration_header": "def coefficient (\u03b2 : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2WilsonConvolution.lean#L57"
+    },
+    {
+      "paper": "1\u20132: central increments",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2WilsonConvolution.halfTrace_eigen",
+      "file": "Foundation/SU2WilsonConvolution.lean",
+      "line": 70,
+      "source_sha256": "104f2eb5634e8792a0a94c6832e3f476ccd625b9c91fa1fa4bee280f0c2bf41f",
+      "declaration_header": "theorem halfTrace_eigen (\u03b2 : \u211d) (C : SU2) :\n    step \u03b2 halfTrace C = coefficient \u03b2 * halfTrace C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2WilsonConvolution.lean#L70"
+    },
+    {
+      "paper": "1\u20132: central increments",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2WilsonConvolution.coefficient_tendsto_one",
+      "file": "Foundation/SU2WilsonConvolution.lean",
+      "line": 147,
+      "source_sha256": "104f2eb5634e8792a0a94c6832e3f476ccd625b9c91fa1fa4bee280f0c2bf41f",
+      "declaration_header": "theorem coefficient_tendsto_one : Tendsto coefficient atTop (\ud835\udcdd 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2WilsonConvolution.lean#L147"
+    },
+    {
+      "paper": "2: quadratic channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2QuadraticWilsonChannel.twirl_trace",
+      "file": "Foundation/SU2QuadraticWilsonChannel.lean",
+      "line": 78,
+      "source_sha256": "cd4ceb306695287bff7f52f07eb1235e7c98d63cc89d7c27f1efa734d99e2c7d",
+      "declaration_header": "theorem twirl_trace (C D V : SU2) :\n    (\u2211 k : Fin 3, \u2211 j : Fin 4,\n      halfTrace (C*(hom (conjugator k j)*V*(hom (conjugator k j))\u207b\u00b9))*\n      halfTrace (D*(hom (conjugator k j)*V*(hom (conjugator k j))\u207b\u00b9)))/12 =\n    pointCoefficient V*(halfTrace C*halfTrace D)+\n      (1-pointCoefficient V)*(halfTrace (C*D\u207b\u00b9)/4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2QuadraticWilsonChannel.lean#L78"
+    },
+    {
+      "paper": "2: quadratic channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2QuadraticWilsonChannel.secondMoment",
+      "file": "Foundation/SU2QuadraticWilsonChannel.lean",
+      "line": 112,
+      "source_sha256": "cd4ceb306695287bff7f52f07eb1235e7c98d63cc89d7c27f1efa734d99e2c7d",
+      "declaration_header": "def secondMoment (\u03b2 : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2QuadraticWilsonChannel.lean#L112"
+    },
+    {
+      "paper": "2: quadratic channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2QuadraticWilsonChannel.quadraticCoefficient",
+      "file": "Foundation/SU2QuadraticWilsonChannel.lean",
+      "line": 113,
+      "source_sha256": "cd4ceb306695287bff7f52f07eb1235e7c98d63cc89d7c27f1efa734d99e2c7d",
+      "declaration_header": "def quadraticCoefficient (\u03b2 : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2QuadraticWilsonChannel.lean#L113"
+    },
+    {
+      "paper": "2: quadratic channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2QuadraticWilsonChannel.bilinear_convolution",
+      "file": "Foundation/SU2QuadraticWilsonChannel.lean",
+      "line": 161,
+      "source_sha256": "cd4ceb306695287bff7f52f07eb1235e7c98d63cc89d7c27f1efa734d99e2c7d",
+      "declaration_header": "theorem bilinear_convolution (\u03b2 : \u211d) (C D : SU2) :\n    (\u222b V, tracePair C D V \u2202increment \u03b2)=\n      quadraticCoefficient \u03b2*(halfTrace C*halfTrace D)+\n      (1-quadraticCoefficient \u03b2)*(halfTrace (C*D\u207b\u00b9)/4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2QuadraticWilsonChannel.lean#L161"
+    },
+    {
+      "paper": "2: quadratic channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2QuadraticWilsonChannel.sharedResidual_step",
+      "file": "Foundation/SU2QuadraticWilsonChannel.lean",
+      "line": 224,
+      "source_sha256": "cd4ceb306695287bff7f52f07eb1235e7c98d63cc89d7c27f1efa734d99e2c7d",
+      "declaration_header": "theorem sharedResidual_step (\u03b2 : \u211d) (L R C : SU2) :\n    step \u03b2 (sharedResidual L R) C=quadraticCoefficient \u03b2*sharedResidual L R C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2QuadraticWilsonChannel.lean#L224"
+    },
+    {
+      "paper": "2: quadratic channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2QuadraticWilsonChannel.centeredSquare_step",
+      "file": "Foundation/SU2QuadraticWilsonChannel.lean",
+      "line": 237,
+      "source_sha256": "cd4ceb306695287bff7f52f07eb1235e7c98d63cc89d7c27f1efa734d99e2c7d",
+      "declaration_header": "theorem centeredSquare_step (\u03b2 : \u211d) (C : SU2) :\n    step \u03b2 centeredSquare C=quadraticCoefficient \u03b2*centeredSquare C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2QuadraticWilsonChannel.lean#L237"
+    },
+    {
+      "paper": "2: quadratic channel",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2QuadraticWilsonChannel.twoPlaquette_residual_average",
+      "file": "Foundation/SU2QuadraticWilsonChannel.lean",
+      "line": 380,
+      "source_sha256": "cd4ceb306695287bff7f52f07eb1235e7c98d63cc89d7c27f1efa734d99e2c7d",
+      "declaration_header": "theorem twoPlaquette_residual_average (\u03b2 : \u211d) (A B C D E F U : SU2) :\n    sharedWordAverage \u03b2 [A,B,C] [D,E,F] U=\n      coefficient \u03b2^6*quadraticCoefficient \u03b2*sharedResidual (A*B*C) (D*E*F) U",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2QuadraticWilsonChannel.lean#L380"
+    },
+    {
+      "paper": "2: exact Haar projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SharedPlaquetteProjection.translated_trace_covariance",
+      "file": "Foundation/SU2SharedPlaquetteProjection.lean",
+      "line": 12,
+      "source_sha256": "73d790ff4b935d76e1a9c70fa15607fa42ae6a88c5ad59f873637e92ce37dde8",
+      "declaration_header": "theorem translated_trace_covariance (C : SU2) :\n    (\u222b U, halfTrace (C*U)*halfTrace U \u2202law)=halfTrace C/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SharedPlaquetteProjection.lean#L12"
+    },
+    {
+      "paper": "2: exact Haar projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SharedPlaquetteProjection.sharedProduct_mean",
+      "file": "Foundation/SU2SharedPlaquetteProjection.lean",
+      "line": 54,
+      "source_sha256": "73d790ff4b935d76e1a9c70fa15607fa42ae6a88c5ad59f873637e92ce37dde8",
+      "declaration_header": "theorem sharedProduct_mean (L R : SU2) : (\u222b U, sharedProduct L R U \u2202law)=sharedMean L R",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SharedPlaquetteProjection.lean#L54"
+    },
+    {
+      "paper": "2: exact Haar projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SharedPlaquetteProjection.translated_pair_covariance",
+      "file": "Foundation/SU2SharedPlaquetteProjection.lean",
+      "line": 113,
+      "source_sha256": "73d790ff4b935d76e1a9c70fa15607fa42ae6a88c5ad59f873637e92ce37dde8",
+      "declaration_header": "theorem translated_pair_covariance (C D : SU2) :\n    (\u222b U, halfTrace (C*U)*halfTrace (D*U) \u2202law)=halfTrace (C*D\u207b\u00b9)/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SharedPlaquetteProjection.lean#L113"
+    },
+    {
+      "paper": "2: exact Haar projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SharedPlaquetteProjection.shared_projection_second_moments",
+      "file": "Foundation/SU2SharedPlaquetteProjection.lean",
+      "line": 130,
+      "source_sha256": "73d790ff4b935d76e1a9c70fa15607fa42ae6a88c5ad59f873637e92ce37dde8",
+      "declaration_header": "theorem shared_projection_second_moments (U : SU2) :\n    (\u222b L, \u222b R, sharedProduct L R U^2 \u2202law \u2202law)=(1/16:\u211d) \u2227\n    (\u222b L, \u222b R, sharedMean L R^2 \u2202law \u2202law)=(1/64:\u211d) \u2227\n    (\u222b L, \u222b R, sharedResidual L R U^2 \u2202law \u2202law)=(3/64:\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SharedPlaquetteProjection.lean#L130"
+    },
+    {
+      "paper": "2: exact Haar projection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SharedPlaquetteProjection.overlapBracket_positive",
+      "file": "Foundation/SU2SharedPlaquetteProjection.lean",
+      "line": 189,
+      "source_sha256": "73d790ff4b935d76e1a9c70fa15607fa42ae6a88c5ad59f873637e92ce37dde8",
+      "declaration_header": "theorem overlapBracket_positive (x m : \u211d) (hx : 0 < x) (hxm : x \u2264 m) (hm : m < 1) :\n    0 < overlapBracket x m",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SharedPlaquetteProjection.lean#L189"
+    },
+    {
+      "paper": "1\u20132: actual seven-link model",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkTransfer.noise",
+      "file": "Foundation/SU2SevenLinkTransfer.lean",
+      "line": 29,
+      "source_sha256": "bf66350c7e19770512b43dab7b5fba65ca69cf399cd53a231135c58438df9f41",
+      "declaration_header": "def noise (\u03b2 : \u211d) : Measure State",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkTransfer.lean#L29"
+    },
+    {
+      "paper": "1\u20132: actual seven-link model",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkTransfer.haar",
+      "file": "Foundation/SU2SevenLinkTransfer.lean",
+      "line": 30,
+      "source_sha256": "bf66350c7e19770512b43dab7b5fba65ca69cf399cd53a231135c58438df9f41",
+      "declaration_header": "def haar : Measure State",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkTransfer.lean#L30"
+    },
+    {
+      "paper": "1\u20132: actual seven-link model",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkTransfer.first",
+      "file": "Foundation/SU2SevenLinkTransfer.lean",
+      "line": 41,
+      "source_sha256": "bf66350c7e19770512b43dab7b5fba65ca69cf399cd53a231135c58438df9f41",
+      "declaration_header": "def first (s : State) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkTransfer.lean#L41"
+    },
+    {
+      "paper": "1\u20132: actual seven-link model",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkTransfer.second",
+      "file": "Foundation/SU2SevenLinkTransfer.lean",
+      "line": 42,
+      "source_sha256": "bf66350c7e19770512b43dab7b5fba65ca69cf399cd53a231135c58438df9f41",
+      "declaration_header": "def second (s : State) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkTransfer.lean#L42"
+    },
+    {
+      "paper": "1\u20132: actual seven-link model",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkTransfer.meanChannel",
+      "file": "Foundation/SU2SevenLinkTransfer.lean",
+      "line": 43,
+      "source_sha256": "bf66350c7e19770512b43dab7b5fba65ca69cf399cd53a231135c58438df9f41",
+      "declaration_header": "def meanChannel (s : State) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkTransfer.lean#L43"
+    },
+    {
+      "paper": "1\u20132: actual seven-link model",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkTransfer.residual",
+      "file": "Foundation/SU2SevenLinkTransfer.lean",
+      "line": 44,
+      "source_sha256": "bf66350c7e19770512b43dab7b5fba65ca69cf399cd53a231135c58438df9f41",
+      "declaration_header": "def residual (s : State) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkTransfer.lean#L44"
+    },
+    {
+      "paper": "1\u20132: actual seven-link model",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkTransfer.step_residual",
+      "file": "Foundation/SU2SevenLinkTransfer.lean",
+      "line": 113,
+      "source_sha256": "bf66350c7e19770512b43dab7b5fba65ca69cf399cd53a231135c58438df9f41",
+      "declaration_header": "theorem step_residual (\u03b2 : \u211d) (s : State) :\n    step \u03b2 residual s=coefficient \u03b2^6*quadraticCoefficient \u03b2*residual s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkTransfer.lean#L113"
+    },
+    {
+      "paper": "1\u20132: actual seven-link model",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkTransfer.step_meanChannel",
+      "file": "Foundation/SU2SevenLinkTransfer.lean",
+      "line": 140,
+      "source_sha256": "bf66350c7e19770512b43dab7b5fba65ca69cf399cd53a231135c58438df9f41",
+      "declaration_header": "theorem step_meanChannel (\u03b2 : \u211d) (s : State) :\n    step \u03b2 meanChannel s=coefficient \u03b2^6*meanChannel s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkTransfer.lean#L140"
+    },
+    {
+      "paper": "1\u20132: actual seven-link model",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkTransfer.step_first",
+      "file": "Foundation/SU2SevenLinkTransfer.lean",
+      "line": 185,
+      "source_sha256": "bf66350c7e19770512b43dab7b5fba65ca69cf399cd53a231135c58438df9f41",
+      "declaration_header": "theorem step_first (\u03b2 : \u211d) (s : State) : step \u03b2 first s=coefficient \u03b2^4*first s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkTransfer.lean#L185"
+    },
+    {
+      "paper": "1\u20132: actual seven-link model",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkTransfer.step_first_centered_square",
+      "file": "Foundation/SU2SevenLinkTransfer.lean",
+      "line": 204,
+      "source_sha256": "bf66350c7e19770512b43dab7b5fba65ca69cf399cd53a231135c58438df9f41",
+      "declaration_header": "theorem step_first_centered_square (\u03b2 : \u211d) (s : State) :\n    step \u03b2 (fun r => first r^2-1/4) s=quadraticCoefficient \u03b2^4*(first s^2-1/4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkTransfer.lean#L204"
+    },
+    {
+      "paper": "1\u20132: actual seven-link model",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkTransfer.step_second",
+      "file": "Foundation/SU2SevenLinkTransfer.lean",
+      "line": 408,
+      "source_sha256": "bf66350c7e19770512b43dab7b5fba65ca69cf399cd53a231135c58438df9f41",
+      "declaration_header": "theorem step_second (\u03b2 : \u211d) (s : State) : step \u03b2 second s=coefficient \u03b2^4*second s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkTransfer.lean#L408"
+    },
+    {
+      "paper": "1\u20132: actual seven-link model",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkTransfer.spatialStep",
+      "file": "Foundation/SU2SevenLinkTransfer.lean",
+      "line": 247,
+      "source_sha256": "bf66350c7e19770512b43dab7b5fba65ca69cf399cd53a231135c58438df9f41",
+      "declaration_header": "def spatialStep (\u03b2 t : \u211d) (f : State \u2192 \u211d) (s : State) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkTransfer.lean#L247"
+    },
+    {
+      "paper": "1\u20132: actual seven-link model",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkTransfer.haar_path_integral",
+      "file": "Foundation/SU2SevenLinkTransfer.lean",
+      "line": 339,
+      "source_sha256": "bf66350c7e19770512b43dab7b5fba65ca69cf399cd53a231135c58438df9f41",
+      "declaration_header": "theorem haar_path_integral (F : SU2 \u2192 SU2 \u2192 SU2 \u2192 \u211d)\n    (hF : Measurable (fun s : State => F (leftPath s) (rightPath s) s.1))\n    (B : \u211d) (hb : \u2200 L R U, |F L R U| \u2264 B) :\n    (\u222b s, F (leftPath s) (rightPath s) s.1 \u2202haar)=\n      \u222b U, \u222b L, \u222b R, F L R U \u2202law \u2202law \u2202law",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkTransfer.lean#L339"
+    },
+    {
+      "paper": "1\u20132: actual seven-link model",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkTransfer.haar_residual_second_moment",
+      "file": "Foundation/SU2SevenLinkTransfer.lean",
+      "line": 356,
+      "source_sha256": "bf66350c7e19770512b43dab7b5fba65ca69cf399cd53a231135c58438df9f41",
+      "declaration_header": "theorem haar_residual_second_moment : (\u222b s, residual s^2 \u2202haar)=(3/64:\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkTransfer.lean#L356"
+    },
+    {
+      "paper": "1\u20132: actual seven-link model",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkTransfer.haar_mean_second_moment",
+      "file": "Foundation/SU2SevenLinkTransfer.lean",
+      "line": 371,
+      "source_sha256": "bf66350c7e19770512b43dab7b5fba65ca69cf399cd53a231135c58438df9f41",
+      "declaration_header": "theorem haar_mean_second_moment : (\u222b s, meanChannel s^2 \u2202haar)=(1/64:\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkTransfer.lean#L371"
+    },
+    {
+      "paper": "1\u20132: actual seven-link model",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkTransfer.haar_first_second_moment",
+      "file": "Foundation/SU2SevenLinkTransfer.lean",
+      "line": 381,
+      "source_sha256": "bf66350c7e19770512b43dab7b5fba65ca69cf399cd53a231135c58438df9f41",
+      "declaration_header": "theorem haar_first_second_moment : (\u222b s, first s^2 \u2202haar)=(1/4:\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkTransfer.lean#L381"
+    },
+    {
+      "paper": "1\u20132: actual seven-link model",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkTransfer.first_gauge",
+      "file": "Foundation/SU2SevenLinkTransfer.lean",
+      "line": 443,
+      "source_sha256": "bf66350c7e19770512b43dab7b5fba65ca69cf399cd53a231135c58438df9f41",
+      "declaration_header": "theorem first_gauge (g : Fin 6 \u2192 SU2) (s : State) : first (gaugeAction g s)=first s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkTransfer.lean#L443"
+    },
+    {
+      "paper": "1\u20132: actual seven-link model",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkTransfer.second_gauge",
+      "file": "Foundation/SU2SevenLinkTransfer.lean",
+      "line": 446,
+      "source_sha256": "bf66350c7e19770512b43dab7b5fba65ca69cf399cd53a231135c58438df9f41",
+      "declaration_header": "theorem second_gauge (g : Fin 6 \u2192 SU2) (s : State) : second (gaugeAction g s)=second s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkTransfer.lean#L446"
+    },
+    {
+      "paper": "1\u20132: actual seven-link model",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkTransfer.residual_gauge",
+      "file": "Foundation/SU2SevenLinkTransfer.lean",
+      "line": 455,
+      "source_sha256": "bf66350c7e19770512b43dab7b5fba65ca69cf399cd53a231135c58438df9f41",
+      "declaration_header": "theorem residual_gauge (g : Fin 6 \u2192 SU2) (s : State) : residual (gaugeAction g s)=residual s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkTransfer.lean#L455"
+    },
+    {
+      "paper": "1\u20132: actual seven-link model",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkTransfer.meanChannel_gauge",
+      "file": "Foundation/SU2SevenLinkTransfer.lean",
+      "line": 459,
+      "source_sha256": "bf66350c7e19770512b43dab7b5fba65ca69cf399cd53a231135c58438df9f41",
+      "declaration_header": "theorem meanChannel_gauge (g : Fin 6 \u2192 SU2) (s : State) : meanChannel (gaugeAction g s)=meanChannel s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkTransfer.lean#L459"
+    },
+    {
+      "paper": "3,5\u20136: selfadjoint form and certificate",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkVariational.noise_inverse",
+      "file": "Foundation/SU2SevenLinkVariational.lean",
+      "line": 23,
+      "source_sha256": "20c8086ddc4102f4c973c9a33e0361b6ed3815542f0203dd33d81fc258f5ce67",
+      "declaration_header": "theorem noise_inverse (\u03b2 : \u211d) : (noise \u03b2).map Inv.inv=noise \u03b2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkVariational.lean#L23"
+    },
+    {
+      "paper": "3,5\u20136: selfadjoint form and certificate",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkVariational.pairing_symmetric",
+      "file": "Foundation/SU2SevenLinkVariational.lean",
+      "line": 63,
+      "source_sha256": "20c8086ddc4102f4c973c9a33e0361b6ed3815542f0203dd33d81fc258f5ce67",
+      "declaration_header": "theorem pairing_symmetric (\u03b2 : \u211d) (f g : State \u2192 \u211d) (hf : Measurable f) (hg : Measurable g)\n    (B C : \u211d) (hb : \u2200 s, |f s| \u2264 B) (hc : \u2200 s, |g s| \u2264 C) :\n    pairing \u03b2 f g=pairing \u03b2 g f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkVariational.lean#L63"
+    },
+    {
+      "paper": "3,5\u20136: selfadjoint form and certificate",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkVariational.pairing_square_comparison",
+      "file": "Foundation/SU2SevenLinkVariational.lean",
+      "line": 98,
+      "source_sha256": "20c8086ddc4102f4c973c9a33e0361b6ed3815542f0203dd33d81fc258f5ce67",
+      "declaration_header": "theorem pairing_square_comparison (\u03b2 : \u211d) (u r : State \u2192 \u211d)\n    (hu : Measurable u) (hr : Measurable r) (hpos : \u2200 s, 0 \u2264 u s)\n    (U R : \u211d) (hU : \u2200 s, |u s| \u2264 U) (hR : \u2200 s, |r s| \u2264 R) :\n    pairing \u03b2 (fun s => u s*r s) (fun s => u s*r s) \u2264\n      pairing \u03b2 (fun s => u s*r s^2) u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkVariational.lean#L98"
+    },
+    {
+      "paper": "3,5\u20136: selfadjoint form and certificate",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkVariational.halfWeight",
+      "file": "Foundation/SU2SevenLinkVariational.lean",
+      "line": 141,
+      "source_sha256": "20c8086ddc4102f4c973c9a33e0361b6ed3815542f0203dd33d81fc258f5ce67",
+      "declaration_header": "def halfWeight (t : \u211d) (s : State) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkVariational.lean#L141"
+    },
+    {
+      "paper": "3,5\u20136: selfadjoint form and certificate",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkVariational.spatialPairing",
+      "file": "Foundation/SU2SevenLinkVariational.lean",
+      "line": 156,
+      "source_sha256": "20c8086ddc4102f4c973c9a33e0361b6ed3815542f0203dd33d81fc258f5ce67",
+      "declaration_header": "def spatialPairing (\u03b2 t : \u211d) (f g : State \u2192 \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkVariational.lean#L156"
+    },
+    {
+      "paper": "3,5\u20136: selfadjoint form and certificate",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkVariational.supersolution_form_bound",
+      "file": "Foundation/SU2SevenLinkVariational.lean",
+      "line": 170,
+      "source_sha256": "20c8086ddc4102f4c973c9a33e0361b6ed3815542f0203dd33d81fc258f5ce67",
+      "declaration_header": "theorem supersolution_form_bound (\u03b2 t q : \u211d) (u r : State \u2192 \u211d)\n    (hu : Measurable u) (hr : Measurable r) (hpos : \u2200 s, 0 \u2264 u s)\n    (U R : \u211d) (hU : \u2200 s, |u s| \u2264 U) (hR : \u2200 s, |r s| \u2264 R)\n    (hsuper : \u2200 s, spatialStep \u03b2 t u s \u2264 q*u s) :\n    spatialPairing \u03b2 t (fun s => u s*r s) (fun s => u s*r s) \u2264\n      q*(\u222b s, (u s*r s)^2 \u2202haar)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkVariational.lean#L170"
+    },
+    {
+      "paper": "3,5\u20136: selfadjoint form and certificate",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkVariational.unweight",
+      "file": "Foundation/SU2SevenLinkVariational.lean",
+      "line": 249,
+      "source_sha256": "20c8086ddc4102f4c973c9a33e0361b6ed3815542f0203dd33d81fc258f5ce67",
+      "declaration_header": "def unweight (t : \u211d) (f : State \u2192 \u211d) (s : State) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkVariational.lean#L249"
+    },
+    {
+      "paper": "3,5\u20136: selfadjoint form and certificate",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkVariational.spatialPairing_unweight",
+      "file": "Foundation/SU2SevenLinkVariational.lean",
+      "line": 260,
+      "source_sha256": "20c8086ddc4102f4c973c9a33e0361b6ed3815542f0203dd33d81fc258f5ce67",
+      "declaration_header": "theorem spatialPairing_unweight (\u03b2 t : \u211d) (f g : State \u2192 \u211d) :\n    spatialPairing \u03b2 t (unweight t f) (unweight t g)=pairing \u03b2 f g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkVariational.lean#L260"
+    },
+    {
+      "paper": "2,6: original odd trial",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkOddTrial.basis_gram",
+      "file": "Foundation/SU2SevenLinkOddTrial.lean",
+      "line": 95,
+      "source_sha256": "9974a0eabb28814e10c8b2222138730b45945695e854ceb71981a5c24ee56a39",
+      "declaration_header": "theorem basis_gram (i j : Fin 3) : (\u222b s, basis i s*basis j s \u2202haar)=if i=j then mass i else 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkOddTrial.lean#L95"
+    },
+    {
+      "paper": "2,6: original odd trial",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkOddTrial.linear3_gram",
+      "file": "Foundation/SU2SevenLinkOddTrial.lean",
+      "line": 127,
+      "source_sha256": "9974a0eabb28814e10c8b2222138730b45945695e854ceb71981a5c24ee56a39",
+      "declaration_header": "theorem linear3_gram (v w : Fin 3 \u2192 \u211d) :\n    (\u222b s, linear3 v s*linear3 w s \u2202haar)=\u2211 i, v i*w i*mass i",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkOddTrial.lean#L127"
+    },
+    {
+      "paper": "2,6: original odd trial",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkOddTrial.basis_eigen",
+      "file": "Foundation/SU2SevenLinkOddTrial.lean",
+      "line": 151,
+      "source_sha256": "9974a0eabb28814e10c8b2222138730b45945695e854ceb71981a5c24ee56a39",
+      "declaration_header": "theorem basis_eigen (\u03b2 : \u211d) (i : Fin 3) (s : State) :\n    SU2SevenLinkTransfer.step \u03b2 (basis i) s=rate \u03b2 i*basis i s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkOddTrial.lean#L151"
+    },
+    {
+      "paper": "2,6: original odd trial",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkOddTrial.unweighted_odd_numerator",
+      "file": "Foundation/SU2SevenLinkOddTrial.lean",
+      "line": 185,
+      "source_sha256": "9974a0eabb28814e10c8b2222138730b45945695e854ceb71981a5c24ee56a39",
+      "declaration_header": "theorem unweighted_odd_numerator (\u03b2 t A B : \u211d) :\n    spatialPairing \u03b2 t (unweight t (oddPolynomial t A B)) (unweight t (oddPolynomial t A B))=\n      coefficient \u03b2^4/4+t^2*(coefficient \u03b2^6*A^2+3*coefficient \u03b2^6*quadraticCoefficient \u03b2*B^2)/64",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkOddTrial.lean#L185"
+    },
+    {
+      "paper": "2,6: original odd trial",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkOddTrial.oddPolynomial",
+      "file": "Foundation/SU2SevenLinkOddTrial.lean",
+      "line": 181,
+      "source_sha256": "9974a0eabb28814e10c8b2222138730b45945695e854ceb71981a5c24ee56a39",
+      "declaration_header": "def oddPolynomial (t A B : \u211d) : State \u2192 \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkOddTrial.lean#L181"
+    },
+    {
+      "paper": "2,6: original odd trial",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkOddTrial.denominator_lower_bound",
+      "file": "Foundation/SU2SevenLinkOddTrial.lean",
+      "line": 230,
+      "source_sha256": "9974a0eabb28814e10c8b2222138730b45945695e854ceb71981a5c24ee56a39",
+      "declaration_header": "theorem denominator_lower_bound (t A B : \u211d) : Real.exp (-|t|)/4 \u2264 denominator t A B",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkOddTrial.lean#L230"
+    },
+    {
+      "paper": "2,6: original odd trial",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkOddTrial.denominator_positive",
+      "file": "Foundation/SU2SevenLinkOddTrial.lean",
+      "line": 245,
+      "source_sha256": "9974a0eabb28814e10c8b2222138730b45945695e854ceb71981a5c24ee56a39",
+      "declaration_header": "theorem denominator_positive (t A B : \u211d) : 0 < denominator t A B",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkOddTrial.lean#L245"
+    },
+    {
+      "paper": "2,6: original odd trial",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkOddTrial.denominator_radial",
+      "file": "Foundation/SU2SevenLinkOddTrial.lean",
+      "line": 312,
+      "source_sha256": "9974a0eabb28814e10c8b2222138730b45945695e854ceb71981a5c24ee56a39",
+      "declaration_header": "theorem denominator_radial (t A B : \u211d) :\n    denominator t A B=\u222b V, Real.exp (-t*halfTrace V)*radialPolynomial t A B (halfTrace V) \u2202law",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkOddTrial.lean#L312"
+    },
+    {
+      "paper": "2,6: original odd trial",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkOddTrial.radialPolynomial_squares",
+      "file": "Foundation/SU2SevenLinkOddTrial.lean",
+      "line": 357,
+      "source_sha256": "9974a0eabb28814e10c8b2222138730b45945695e854ceb71981a5c24ee56a39",
+      "declaration_header": "theorem radialPolynomial_squares (t A B x : \u211d) :\n    radialPolynomial t A B x=(1+t*(A+3*B)*x/4)^2/4+t^2*(A-B)^2*(1-x^2)/64",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkOddTrial.lean#L357"
+    },
+    {
+      "paper": "6\u20137: strict optimized comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkSpatialSeparation.normSecond",
+      "file": "Foundation/SU2SevenLinkSpatialSeparation.lean",
+      "line": 12,
+      "source_sha256": "e7b3a12049f0ac4c7d1e282bdf5ffed314735f29c9e6d231234cb1e8f7df140b",
+      "declaration_header": "def normSecond (A B : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkSpatialSeparation.lean#L12"
+    },
+    {
+      "paper": "6\u20137: strict optimized comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkSpatialSeparation.normError",
+      "file": "Foundation/SU2SevenLinkSpatialSeparation.lean",
+      "line": 16,
+      "source_sha256": "e7b3a12049f0ac4c7d1e282bdf5ffed314735f29c9e6d231234cb1e8f7df140b",
+      "declaration_header": "def normError (A B : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkSpatialSeparation.lean#L16"
+    },
+    {
+      "paper": "6\u20137: strict optimized comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkSpatialSeparation.radial_remainder",
+      "file": "Foundation/SU2SevenLinkSpatialSeparation.lean",
+      "line": 30,
+      "source_sha256": "e7b3a12049f0ac4c7d1e282bdf5ffed314735f29c9e6d231234cb1e8f7df140b",
+      "declaration_header": "theorem radial_remainder (t A B x : \u211d) (ht : |t| \u2264 1) (hx : |x| \u2264 1) :\n    |Real.exp (-t*x)*radialPolynomial t A B x-\n      (lowPart (-(A+3*B)/2) (B*(A+B)/2) (-t) x/4+t^2*radialRemainder A B)| \u2264\n      |t|^3*normError A B",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkSpatialSeparation.lean#L30"
+    },
+    {
+      "paper": "6\u20137: strict optimized comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkSpatialSeparation.denominator_remainder",
+      "file": "Foundation/SU2SevenLinkSpatialSeparation.lean",
+      "line": 92,
+      "source_sha256": "e7b3a12049f0ac4c7d1e282bdf5ffed314735f29c9e6d231234cb1e8f7df140b",
+      "declaration_header": "theorem denominator_remainder (t A B : \u211d) (ht : |t| \u2264 1) :\n    |denominator t A B-(1/4+t^2*normSecond A B)| \u2264 |t|^3*normError A B",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkSpatialSeparation.lean#L92"
+    },
+    {
+      "paper": "6\u20137: strict optimized comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkSpatialSeparation.oddA",
+      "file": "Foundation/SU2SevenLinkSpatialSeparation.lean",
+      "line": 123,
+      "source_sha256": "e7b3a12049f0ac4c7d1e282bdf5ffed314735f29c9e6d231234cb1e8f7df140b",
+      "declaration_header": "def oddA (\u03b2 : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkSpatialSeparation.lean#L123"
+    },
+    {
+      "paper": "6\u20137: strict optimized comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkSpatialSeparation.oddB",
+      "file": "Foundation/SU2SevenLinkSpatialSeparation.lean",
+      "line": 124,
+      "source_sha256": "e7b3a12049f0ac4c7d1e282bdf5ffed314735f29c9e6d231234cb1e8f7df140b",
+      "declaration_header": "def oddB (\u03b2 : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkSpatialSeparation.lean#L124"
+    },
+    {
+      "paper": "6\u20137: strict optimized comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkSpatialSeparation.leadingGap",
+      "file": "Foundation/SU2SevenLinkSpatialSeparation.lean",
+      "line": 129,
+      "source_sha256": "e7b3a12049f0ac4c7d1e282bdf5ffed314735f29c9e6d231234cb1e8f7df140b",
+      "declaration_header": "def leadingGap (\u03b2 : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkSpatialSeparation.lean#L129"
+    },
+    {
+      "paper": "6\u20137: strict optimized comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkSpatialSeparation.leadingGap_positive",
+      "file": "Foundation/SU2SevenLinkSpatialSeparation.lean",
+      "line": 144,
+      "source_sha256": "e7b3a12049f0ac4c7d1e282bdf5ffed314735f29c9e6d231234cb1e8f7df140b",
+      "declaration_header": "theorem leadingGap_positive (\u03b2 : \u211d) (hc : coefficient \u03b2 \u2260 0) : 0 < leadingGap \u03b2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkSpatialSeparation.lean#L144"
+    },
+    {
+      "paper": "6\u20137: strict optimized comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkSpatialSeparation.comparisonError",
+      "file": "Foundation/SU2SevenLinkSpatialSeparation.lean",
+      "line": 167,
+      "source_sha256": "e7b3a12049f0ac4c7d1e282bdf5ffed314735f29c9e6d231234cb1e8f7df140b",
+      "declaration_header": "def comparisonError (d E \u03bc C : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkSpatialSeparation.lean#L167"
+    },
+    {
+      "paper": "6\u20137: strict optimized comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkSpatialSeparation.spatial_separation",
+      "file": "Foundation/SU2SevenLinkSpatialSeparation.lean",
+      "line": 197,
+      "source_sha256": "e7b3a12049f0ac4c7d1e282bdf5ffed314735f29c9e6d231234cb1e8f7df140b",
+      "declaration_header": "theorem spatial_separation (\u03b2 t : \u211d)\n    (ht : 0 < t) (ht1 : t \u2264 1)\n    (herror : coefficient \u03b2^4*\n      comparisonError (normSecond (oddA \u03b2) (oddB \u03b2)) (normError (oddA \u03b2) (oddB \u03b2))\n        (vacuumSecond (coefficient \u03b2^4))\n        (eigenErrorConstant (coefficient \u03b2^4) (quadraticCoefficient \u03b2^4))*t < leadingGap \u03b2) :\n    coefficient \u03b2^4*(1+vacuumSecond (coefficient \u03b2^4)*t^2+\n      2*eigenErrorConstant (coefficient \u03b2^4) (quadraticCoefficient \u03b2^4)*t^3)*\n      (\u222b s, (unweight t (oddPolynomial t (oddA \u03b2) (oddB \u03b2)) s)^2 \u2202SU2SevenLinkTransfer.haar) <\n    spatialPairing \u03b2 t (unweight t (oddPolynomial t (oddA \u03b2) (oddB \u03b2)))\n      (unweight t (oddPolynomial t (oddA \u03b2) (oddB \u03b2)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkSpatialSeparation.lean#L197"
+    },
+    {
+      "paper": "6\u20137: strict optimized comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkSpatialSeparation.exists_separation_interval",
+      "file": "Foundation/SU2SevenLinkSpatialSeparation.lean",
+      "line": 233,
+      "source_sha256": "e7b3a12049f0ac4c7d1e282bdf5ffed314735f29c9e6d231234cb1e8f7df140b",
+      "declaration_header": "theorem exists_separation_interval (\u03b2 : \u211d) (hc : coefficient \u03b2 \u2260 0) :\n    \u2203 \u03b4 : \u211d, 0 < \u03b4 \u2227 \u03b4 \u2264 1 \u2227 \u2200 t : \u211d, 0 < t \u2192 t < \u03b4 \u2192\n      (|linearCoefficient (coefficient \u03b2^4)| * |t|+\n        |quadraticTrialCoefficient (coefficient \u03b2^4) (quadraticCoefficient \u03b2^4)| * |t|^2 \u2264 1/2) \u2227\n      coefficient \u03b2^4*(1+vacuumSecond (coefficient \u03b2^4)*t^2+\n        2*eigenErrorConstant (coefficient \u03b2^4) (quadraticCoefficient \u03b2^4)*t^3)*\n        (\u222b s, (unweight t (oddPolynomial t (oddA \u03b2) (oddB \u03b2)) s)^2 \u2202SU2SevenLinkTransfer.haar) <\n      spatialPairing \u03b2 t (unweight t (oddPolynomial t (oddA \u03b2) (oddB \u03b2)))\n        (unweight t (oddPolynomial t (oddA \u03b2) (oddB \u03b2)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkSpatialSeparation.lean#L233"
+    },
+    {
+      "paper": "6\u20137: strict optimized comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkSpatialSeparation.trial_admissible",
+      "file": "Foundation/SU2SevenLinkSpatialSeparation.lean",
+      "line": 299,
+      "source_sha256": "e7b3a12049f0ac4c7d1e282bdf5ffed314735f29c9e6d231234cb1e8f7df140b",
+      "declaration_header": "theorem trial_admissible (\u03b2 t A B : \u211d)\n    (hsmall : |linearCoefficient (coefficient \u03b2^4)| * |t|+\n      |quadraticTrialCoefficient (coefficient \u03b2^4) (quadraticCoefficient \u03b2^4)| * |t|^2 \u2264 1/2) :\n    \u2203 r : State \u2192 \u211d, Measurable r \u2227 (\u2203 R : \u211d, \u2200 s, |r s| \u2264 R) \u2227\n      unweight t (oddPolynomial t A B) = fun s => trialVacuum \u03b2 t s*r s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkSpatialSeparation.lean#L299"
+    },
+    {
+      "paper": "6\u20137: strict optimized comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkSpatialSeparation.trial_quotient_upper",
+      "file": "Foundation/SU2SevenLinkSpatialSeparation.lean",
+      "line": 361,
+      "source_sha256": "e7b3a12049f0ac4c7d1e282bdf5ffed314735f29c9e6d231234cb1e8f7df140b",
+      "declaration_header": "theorem trial_quotient_upper (\u03b2 t A B : \u211d) (ht : |t| \u2264 1)\n    (hsmall : |linearCoefficient (coefficient \u03b2^4)| * |t|+\n      |quadraticTrialCoefficient (coefficient \u03b2^4) (quadraticCoefficient \u03b2^4)| * |t|^2 \u2264 1/2) :\n    trialQuotient \u03b2 t A B \u2264 1+vacuumSecond (coefficient \u03b2^4)*t^2+\n      2*eigenErrorConstant (coefficient \u03b2^4) (quadraticCoefficient \u03b2^4)*|t|^3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkSpatialSeparation.lean#L361"
+    },
+    {
+      "paper": "6\u20137: strict optimized comparison",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkSpatialSeparation.exists_quotient_sandwich",
+      "file": "Foundation/SU2SevenLinkSpatialSeparation.lean",
+      "line": 376,
+      "source_sha256": "e7b3a12049f0ac4c7d1e282bdf5ffed314735f29c9e6d231234cb1e8f7df140b",
+      "declaration_header": "theorem exists_quotient_sandwich (\u03b2 : \u211d) (hc : coefficient \u03b2 \u2260 0) :\n    \u2203 \u03b4 : \u211d, 0 < \u03b4 \u2227 \u03b4 \u2264 1 \u2227 \u2200 t : \u211d, 0 < t \u2192 t < \u03b4 \u2192\n      let q",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkSpatialSeparation.lean#L376"
+    },
+    {
+      "paper": "2,5: strict moments and positive supersolution",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2WilsonGroundCertificate.exponential_remainder",
+      "file": "Foundation/SU2WilsonGroundCertificate.lean",
+      "line": 54,
+      "source_sha256": "2e101b045339ecbd595a13e6895caa94c63a58540984600e59b5cd1ab55db7ec",
+      "declaration_header": "theorem exponential_remainder (t x : \u211d) (ht : |t| \u2264 1) (hx : |x| \u2264 1) :\n    |Real.exp (t*x)-(1+t*x+(t*x)^2/2)| \u2264 |t|^3*Real.exp 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2WilsonGroundCertificate.lean#L54"
+    },
+    {
+      "paper": "2,5: strict moments and positive supersolution",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2WilsonGroundCertificate.weighted_remainder",
+      "file": "Foundation/SU2WilsonGroundCertificate.lean",
+      "line": 72,
+      "source_sha256": "2e101b045339ecbd595a13e6895caa94c63a58540984600e59b5cd1ab55db7ec",
+      "declaration_header": "theorem weighted_remainder (A B t x : \u211d) (ht : |t| \u2264 1) (hx : |x| \u2264 1) :\n    |Real.exp (t*x)*trial A B t x-lowPart A B t x| \u2264\n      |t|^3*errorConstant A B",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2WilsonGroundCertificate.lean#L72"
+    },
+    {
+      "paper": "2,5: strict moments and positive supersolution",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2WilsonGroundCertificate.lowPart_moment_identity",
+      "file": "Foundation/SU2WilsonGroundCertificate.lean",
+      "line": 124,
+      "source_sha256": "2e101b045339ecbd595a13e6895caa94c63a58540984600e59b5cd1ab55db7ec",
+      "declaration_header": "theorem lowPart_moment_identity (a r t x : \u211d) (ha : a \u2260 1) (hr : r \u2260 1) :\n    1+(1+linearCoefficient a)*t*(a*x)+\n      t^2*((quadraticTrialCoefficient a r+linearCoefficient a+1/2)*\n        (1/4+r*(x^2-1/4))-quadraticTrialCoefficient a r/4) =\n      trial (linearCoefficient a) (quadraticTrialCoefficient a r) t x+vacuumSecond a*t^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2WilsonGroundCertificate.lean#L124"
+    },
+    {
+      "paper": "2,5: strict moments and positive supersolution",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2WilsonGroundCertificate.exponential_trial_eigen_error",
+      "file": "Foundation/SU2WilsonGroundCertificate.lean",
+      "line": 240,
+      "source_sha256": "2e101b045339ecbd595a13e6895caa94c63a58540984600e59b5cd1ab55db7ec",
+      "declaration_header": "theorem exponential_trial_eigen_error (a r t x : \u211d) (ha : a \u2260 1) (hr : r \u2260 1)\n    (ht : |t| \u2264 1) (hx : |x| \u2264 1) (Y : \u03a9 \u2192 \u211d)\n    (hY : Measurable Y) (hb : \u2200 \u03c9, |Y \u03c9| \u2264 1)\n    (hfirst : (\u222b \u03c9, Y \u03c9 \u2202\u03bc)=a*x)\n    (hsecond : (\u222b \u03c9, Y \u03c9^2 \u2202\u03bc)=1/4+r*(x^2-1/4)) :\n    |(\u222b \u03c9, Real.exp (t*Y \u03c9)*trial (linearCoefficient a)\n        (quadraticTrialCoefficient a r) t (Y \u03c9) \u2202\u03bc)-\n      (1+vacuumSecond a*t^2)*trial (linearCoefficient a) (quadraticTrialCoefficient a r) t x| \u2264\n      |t|^3*eigenErrorConstant a r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2WilsonGroundCertificate.lean#L240"
+    },
+    {
+      "paper": "2,5: strict moments and positive supersolution",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2WilsonGroundCertificate.exponential_trial_supersolution",
+      "file": "Foundation/SU2WilsonGroundCertificate.lean",
+      "line": 272,
+      "source_sha256": "2e101b045339ecbd595a13e6895caa94c63a58540984600e59b5cd1ab55db7ec",
+      "declaration_header": "theorem exponential_trial_supersolution (a r t x : \u211d) (ha : a \u2260 1) (hr : r \u2260 1)\n    (ht : |t| \u2264 1) (hx : |x| \u2264 1)\n    (hsmall : |linearCoefficient a| * |t|+|quadraticTrialCoefficient a r| * |t|^2 \u2264 1/2)\n    (Y : \u03a9 \u2192 \u211d) (hY : Measurable Y) (hb : \u2200 \u03c9, |Y \u03c9| \u2264 1)\n    (hfirst : (\u222b \u03c9, Y \u03c9 \u2202\u03bc)=a*x)\n    (hsecond : (\u222b \u03c9, Y \u03c9^2 \u2202\u03bc)=1/4+r*(x^2-1/4)) :\n    (\u222b \u03c9, Real.exp (t*Y \u03c9)*trial (linearCoefficient a)\n        (quadraticTrialCoefficient a r) t (Y \u03c9) \u2202\u03bc) \u2264\n      (1+vacuumSecond a*t^2+2*eigenErrorConstant a r*|t|^3)*\n        trial (linearCoefficient a) (quadraticTrialCoefficient a r) t x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2WilsonGroundCertificate.lean#L272"
+    },
+    {
+      "paper": "2,5: strict moments and positive supersolution",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2WilsonGroundCertificate.walk_first_moment",
+      "file": "Foundation/SU2WilsonGroundCertificate.lean",
+      "line": 327,
+      "source_sha256": "2e101b045339ecbd595a13e6895caa94c63a58540984600e59b5cd1ab55db7ec",
+      "declaration_header": "theorem walk_first_moment (\u03b2 : \u211d) (n : \u2115) (C : SU2) :\n    (\u222b V, halfTrace (C*V) \u2202walkLaw \u03b2 n)=coefficient \u03b2^n*halfTrace C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2WilsonGroundCertificate.lean#L327"
+    },
+    {
+      "paper": "2,5: strict moments and positive supersolution",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2WilsonGroundCertificate.walk_centered_second",
+      "file": "Foundation/SU2WilsonGroundCertificate.lean",
+      "line": 353,
+      "source_sha256": "2e101b045339ecbd595a13e6895caa94c63a58540984600e59b5cd1ab55db7ec",
+      "declaration_header": "theorem walk_centered_second (\u03b2 : \u211d) (n : \u2115) (C : SU2) :\n    (\u222b V, centeredSquare (C*V) \u2202walkLaw \u03b2 n)=quadraticCoefficient \u03b2^n*centeredSquare C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2WilsonGroundCertificate.lean#L353"
+    },
+    {
+      "paper": "2,5: strict moments and positive supersolution",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2WilsonGroundCertificate.walk_second_moment",
+      "file": "Foundation/SU2WilsonGroundCertificate.lean",
+      "line": 365,
+      "source_sha256": "2e101b045339ecbd595a13e6895caa94c63a58540984600e59b5cd1ab55db7ec",
+      "declaration_header": "theorem walk_second_moment (\u03b2 : \u211d) (n : \u2115) (C : SU2) :\n    (\u222b V, halfTrace (C*V)^2 \u2202walkLaw \u03b2 n)=\n      1/4+quadraticCoefficient \u03b2^n*(halfTrace C^2-1/4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2WilsonGroundCertificate.lean#L365"
+    },
+    {
+      "paper": "2,5: strict moments and positive supersolution",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2WilsonGroundCertificate.secondMoment_lt_one",
+      "file": "Foundation/SU2WilsonGroundCertificate.lean",
+      "line": 449,
+      "source_sha256": "2e101b045339ecbd595a13e6895caa94c63a58540984600e59b5cd1ab55db7ec",
+      "declaration_header": "theorem secondMoment_lt_one (\u03b2 : \u211d) : secondMoment \u03b2 < 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2WilsonGroundCertificate.lean#L449"
+    },
+    {
+      "paper": "2,5: strict moments and positive supersolution",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2WilsonGroundCertificate.coefficient_square_le_secondMoment",
+      "file": "Foundation/SU2WilsonGroundCertificate.lean",
+      "line": 472,
+      "source_sha256": "2e101b045339ecbd595a13e6895caa94c63a58540984600e59b5cd1ab55db7ec",
+      "declaration_header": "theorem coefficient_square_le_secondMoment (\u03b2 : \u211d) : coefficient \u03b2^2 \u2264 secondMoment \u03b2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2WilsonGroundCertificate.lean#L472"
+    },
+    {
+      "paper": "2,5: strict moments and positive supersolution",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2WilsonGroundCertificate.coefficient_abs_lt_one",
+      "file": "Foundation/SU2WilsonGroundCertificate.lean",
+      "line": 490,
+      "source_sha256": "2e101b045339ecbd595a13e6895caa94c63a58540984600e59b5cd1ab55db7ec",
+      "declaration_header": "theorem coefficient_abs_lt_one (\u03b2 : \u211d) : |coefficient \u03b2| < 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2WilsonGroundCertificate.lean#L490"
+    },
+    {
+      "paper": "2,5: strict moments and positive supersolution",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2WilsonGroundCertificate.quadraticCoefficient_abs_lt_one",
+      "file": "Foundation/SU2WilsonGroundCertificate.lean",
+      "line": 496,
+      "source_sha256": "2e101b045339ecbd595a13e6895caa94c63a58540984600e59b5cd1ab55db7ec",
+      "declaration_header": "theorem quadraticCoefficient_abs_lt_one (\u03b2 : \u211d) : |quadraticCoefficient \u03b2| < 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2WilsonGroundCertificate.lean#L496"
+    },
+    {
+      "paper": "2,5: strict moments and positive supersolution",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2WilsonGroundCertificate.vacuumCandidate_positive",
+      "file": "Foundation/SU2WilsonGroundCertificate.lean",
+      "line": 524,
+      "source_sha256": "2e101b045339ecbd595a13e6895caa94c63a58540984600e59b5cd1ab55db7ec",
+      "declaration_header": "theorem vacuumCandidate_positive (a r t : \u211d)\n    (hsmall : |linearCoefficient a| * |t|+|quadraticTrialCoefficient a r| * |t|^2 \u2264 1/2)\n    (C : SU2) : 0 < vacuumCandidate a r t C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2WilsonGroundCertificate.lean#L524"
+    },
+    {
+      "paper": "2,5: strict moments and positive supersolution",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2WilsonGroundCertificate.symmetricWalk_four_supersolution",
+      "file": "Foundation/SU2WilsonGroundCertificate.lean",
+      "line": 533,
+      "source_sha256": "2e101b045339ecbd595a13e6895caa94c63a58540984600e59b5cd1ab55db7ec",
+      "declaration_header": "theorem symmetricWalk_four_supersolution (\u03b2 t : \u211d) (ht : |t| \u2264 1)\n    (hsmall : |linearCoefficient (coefficient \u03b2^4)| * |t|+\n      |quadraticTrialCoefficient (coefficient \u03b2^4) (quadraticCoefficient \u03b2^4)| * |t|^2 \u2264 1/2)\n    (C : SU2) :\n    symmetricWalk \u03b2 4 t (vacuumCandidate (coefficient \u03b2^4) (quadraticCoefficient \u03b2^4) t) C \u2264\n      (1+vacuumSecond (coefficient \u03b2^4)*t^2+\n        2*eigenErrorConstant (coefficient \u03b2^4) (quadraticCoefficient \u03b2^4)*|t|^3)*\n      vacuumCandidate (coefficient \u03b2^4) (quadraticCoefficient \u03b2^4) t C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2WilsonGroundCertificate.lean#L533"
+    },
+    {
+      "paper": "3: proved positive ground existence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.YMPositivePower.ratio_bounds",
+      "file": "Foundation/YMPositivePower.lean",
+      "line": 102,
+      "source_sha256": "c59a49c3ae03c6e97df1fcf24848a57a305cf5793c10a701a9ad5515a30a2f6c",
+      "declaration_header": "theorem ratio_bounds (n : \u2115) (x : \u03a9) : m \u2264 ratio \u03bc k n x \u2227 ratio \u03bc k n x \u2264 M",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/YMPositivePower.lean#L102"
+    },
+    {
+      "paper": "3: proved positive ground existence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.YMPositivePower.ratio_bridge",
+      "file": "Foundation/YMPositivePower.lean",
+      "line": 133,
+      "source_sha256": "c59a49c3ae03c6e97df1fcf24848a57a305cf5793c10a701a9ad5515a30a2f6c",
+      "declaration_header": "theorem ratio_bridge (n : \u2115) (x : \u03a9) :\n    ratio \u03bc k (n+1) x = YMPositiveKernel.average\n      (SignedDensityProbabilitySampling.sampler \u03bc (power \u03bc k n)) k (ratio \u03bc k n) x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/YMPositivePower.lean#L133"
+    },
+    {
+      "paper": "3: proved positive ground existence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.YMPositivePower.average_reset_range",
+      "file": "Foundation/YMPositivePower.lean",
+      "line": 181,
+      "source_sha256": "c59a49c3ae03c6e97df1fcf24848a57a305cf5793c10a701a9ad5515a30a2f6c",
+      "declaration_header": "theorem average_reset_range (f : \u03a9 \u2192 \u211d) (hf : Measurable f) (L U : \u211d)\n    (hfb : \u2200 y,L \u2264 f y \u2227 f y \u2264 U) (x : \u03a9) :\n    (1-m/M)*L \u2264 YMPositiveKernel.average \u03bc k f x-(m/M)*(\u222b y,f y \u2202\u03bc) \u2227\n      YMPositiveKernel.average \u03bc k f x-(m/M)*(\u222b y,f y \u2202\u03bc) \u2264 (1-m/M)*U",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/YMPositivePower.lean#L181"
+    },
+    {
+      "paper": "3: proved positive ground existence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.YMPositivePower.ratio_next_range",
+      "file": "Foundation/YMPositivePower.lean",
+      "line": 229,
+      "source_sha256": "c59a49c3ae03c6e97df1fcf24848a57a305cf5793c10a701a9ad5515a30a2f6c",
+      "declaration_header": "theorem ratio_next_range (n : \u2115) (L U : \u211d)\n    (hfb : \u2200 y,L \u2264 ratio \u03bc k n y \u2227 ratio \u03bc k n y \u2264 U) (x : \u03a9) :\n    (m/M)*(\u222b y,ratio \u03bc k n y \u2202SignedDensityProbabilitySampling.sampler \u03bc (power \u03bc k n))+\n        (1-m/M)*L \u2264 ratio \u03bc k (n+1) x \u2227\n      ratio \u03bc k (n+1) x \u2264\n        (m/M)*(\u222b y,ratio \u03bc k n y \u2202SignedDensityProbabilitySampling.sampler \u03bc (power \u03bc k n))+\n          (1-m/M)*U",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/YMPositivePower.lean#L229"
+    },
+    {
+      "paper": "3: proved positive ground existence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.YMPositivePower.enclosure_contains",
+      "file": "Foundation/YMPositivePower.lean",
+      "line": 255,
+      "source_sha256": "c59a49c3ae03c6e97df1fcf24848a57a305cf5793c10a701a9ad5515a30a2f6c",
+      "declaration_header": "theorem enclosure_contains (n : \u2115) (x : \u03a9) :\n    (enclosure \u03bc k m M n).1 \u2264 ratio \u03bc k n x \u2227\n      ratio \u03bc k n x \u2264 (enclosure \u03bc k m M n).2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/YMPositivePower.lean#L255"
+    },
+    {
+      "paper": "3: proved positive ground existence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.YMPositivePower.enclosure_width",
+      "file": "Foundation/YMPositivePower.lean",
+      "line": 262,
+      "source_sha256": "c59a49c3ae03c6e97df1fcf24848a57a305cf5793c10a701a9ad5515a30a2f6c",
+      "declaration_header": "theorem enclosure_width (n : \u2115) :\n    (enclosure \u03bc k m M n).2-(enclosure \u03bc k m M n).1=(M-m)*(1-m/M)^n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/YMPositivePower.lean#L262"
+    },
+    {
+      "paper": "3: proved positive ground existence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.YMPositivePower.enclosure_nested",
+      "file": "Foundation/YMPositivePower.lean",
+      "line": 292,
+      "source_sha256": "c59a49c3ae03c6e97df1fcf24848a57a305cf5793c10a701a9ad5515a30a2f6c",
+      "declaration_header": "theorem enclosure_nested (n : \u2115) :\n    (enclosure \u03bc k m M n).1 \u2264 (enclosure \u03bc k m M (n+1)).1 \u2227\n      (enclosure \u03bc k m M (n+1)).2 \u2264 (enclosure \u03bc k m M n).2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/YMPositivePower.lean#L292"
+    },
+    {
+      "paper": "3: proved positive ground existence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.YMPositivePower.normalized_bounds",
+      "file": "Foundation/YMPositivePower.lean",
+      "line": 351,
+      "source_sha256": "c59a49c3ae03c6e97df1fcf24848a57a305cf5793c10a701a9ad5515a30a2f6c",
+      "declaration_header": "theorem normalized_bounds (x0 : \u03a9) (n : \u2115) (x : \u03a9) :\n    m/M \u2264 normalized \u03bc k x0 n x \u2227 normalized \u03bc k x0 n x \u2264 M/m",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/YMPositivePower.lean#L351"
+    },
+    {
+      "paper": "3: proved positive ground existence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.YMPositivePower.normalized_increment",
+      "file": "Foundation/YMPositivePower.lean",
+      "line": 374,
+      "source_sha256": "c59a49c3ae03c6e97df1fcf24848a57a305cf5793c10a701a9ad5515a30a2f6c",
+      "declaration_header": "theorem normalized_increment (x0 : \u03a9) (n : \u2115) (x : \u03a9) :\n    |normalized \u03bc k x0 (n+1) x-normalized \u03bc k x0 n x| \u2264\n      ((M/m)*(M-m)/m)*(1-m/M)^n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/YMPositivePower.lean#L374"
+    },
+    {
+      "paper": "3: proved positive ground existence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.YMPositivePower.positive_eigenfunction_exists",
+      "file": "Foundation/YMPositivePower.lean",
+      "line": 426,
+      "source_sha256": "c59a49c3ae03c6e97df1fcf24848a57a305cf5793c10a701a9ad5515a30a2f6c",
+      "declaration_header": "theorem positive_eigenfunction_exists (x0 : \u03a9) :\n    \u2203 lam : \u211d, \u2203 \u03c8 : \u03a9 \u2192 \u211d, m \u2264 lam \u2227 lam \u2264 M \u2227 Measurable \u03c8 \u2227\n      (\u2200 x,m/M \u2264 \u03c8 x \u2227 \u03c8 x \u2264 M/m) \u2227 (\u2200 x,applyKernel \u03bc k \u03c8 x=lam*\u03c8 x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/YMPositivePower.lean#L426"
+    },
+    {
+      "paper": "4: gauge invariance of every ground",
+      "declaration": "OperatorDerivativeRewrite.Foundation.YMBoundedHarmonic.bounded_harmonic_constant",
+      "file": "Foundation/YMBoundedHarmonic.lean",
+      "line": 45,
+      "source_sha256": "15f87eb33fe39e2cedd895c6499bbe8baf915a36637a4033fa811a08c3751814",
+      "declaration_header": "theorem bounded_harmonic_constant (f : \u03a9 \u2192 \u211d) (hf : Measurable f) (B : \u211d)\n    (hB : \u2200 x,|f x| \u2264 B) (hfix : \u2200 x,YMPositiveKernel.average \u03bc k f x=f x) (x : \u03a9) :\n    f x=\u222b y,f y \u2202\u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/YMBoundedHarmonic.lean#L45"
+    },
+    {
+      "paper": "4\u20137: genuine ground transform",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkGroundTransform.GroundData",
+      "file": "Foundation/SU2SevenLinkGroundTransform.lean",
+      "line": 16,
+      "source_sha256": "f71d90e78c74ee3f66d42157f8e5cab13d888f6d358115303b014767900602f9",
+      "declaration_header": "structure GroundData (\u03b2 t : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkGroundTransform.lean#L16"
+    },
+    {
+      "paper": "4\u20137: genuine ground transform",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkGroundTransform.GroundData.stationary_integral",
+      "file": "Foundation/SU2SevenLinkGroundTransform.lean",
+      "line": 58,
+      "source_sha256": "f71d90e78c74ee3f66d42157f8e5cab13d888f6d358115303b014767900602f9",
+      "declaration_header": "theorem stationary_integral (f : State \u2192 \u211d) :\n    (\u222b s, f s \u2202g.stationary)=(\u222b s, g.function s^2*f s \u2202haar)/g.normalizer",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkGroundTransform.lean#L58"
+    },
+    {
+      "paper": "4\u20137: genuine ground transform",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkGroundTransform.GroundData.kernel_markov",
+      "file": "Foundation/SU2SevenLinkGroundTransform.lean",
+      "line": 115,
+      "source_sha256": "f71d90e78c74ee3f66d42157f8e5cab13d888f6d358115303b014767900602f9",
+      "declaration_header": "theorem kernel_markov : IsMarkovKernel g.kernel",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkGroundTransform.lean#L115"
+    },
+    {
+      "paper": "4\u20137: genuine ground transform",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkGroundTransform.GroundData.kernel_integral",
+      "file": "Foundation/SU2SevenLinkGroundTransform.lean",
+      "line": 124,
+      "source_sha256": "f71d90e78c74ee3f66d42157f8e5cab13d888f6d358115303b014767900602f9",
+      "declaration_header": "theorem kernel_integral (f : State \u2192 \u211d) (hf : Measurable f) (s : State) :\n    (\u222b r, f r \u2202g.kernel s)=spatialStep \u03b2 t (fun r => g.function r*f r) s/(g.value*g.function s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkGroundTransform.lean#L124"
+    },
+    {
+      "paper": "4\u20137: genuine ground transform",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkGroundTransform.GroundData.stationary_pairing",
+      "file": "Foundation/SU2SevenLinkGroundTransform.lean",
+      "line": 138,
+      "source_sha256": "f71d90e78c74ee3f66d42157f8e5cab13d888f6d358115303b014767900602f9",
+      "declaration_header": "theorem stationary_pairing (f k : State \u2192 \u211d) (hk : Measurable k) :\n    (\u222b s, f s*(\u222b r, k r \u2202g.kernel s) \u2202g.stationary)=\n      spatialPairing \u03b2 t (fun s => g.function s*f s) (fun s => g.function s*k s)/(g.value*g.normalizer)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkGroundTransform.lean#L138"
+    },
+    {
+      "paper": "4\u20137: genuine ground transform",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkGroundTransform.GroundData.kernel_stationary",
+      "file": "Foundation/SU2SevenLinkGroundTransform.lean",
+      "line": 167,
+      "source_sha256": "f71d90e78c74ee3f66d42157f8e5cab13d888f6d358115303b014767900602f9",
+      "declaration_header": "theorem kernel_stationary (f : State \u2192 \u211d) (hf : Measurable f)\n    (B : \u211d) (hb : \u2200 s, |f s| \u2264 B) :\n    (\u222b s, \u222b r, f r \u2202g.kernel s \u2202g.stationary)=\u222b s, f s \u2202g.stationary",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkGroundTransform.lean#L167"
+    },
+    {
+      "paper": "4\u20137: genuine ground transform",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkGroundTransform.GroundData.stationary_reversible",
+      "file": "Foundation/SU2SevenLinkGroundTransform.lean",
+      "line": 185,
+      "source_sha256": "f71d90e78c74ee3f66d42157f8e5cab13d888f6d358115303b014767900602f9",
+      "declaration_header": "theorem stationary_reversible (f k : State \u2192 \u211d) (hf : Measurable f) (hk : Measurable k)\n    (B C : \u211d) (hb : \u2200 s, |f s| \u2264 B) (hc : \u2200 s, |k s| \u2264 C) :\n    (\u222b s, f s*(\u222b r, k r \u2202g.kernel s) \u2202g.stationary)=\n      \u222b s, k s*(\u222b r, f r \u2202g.kernel s) \u2202g.stationary",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkGroundTransform.lean#L185"
+    },
+    {
+      "paper": "4\u20137: genuine ground transform",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkGroundTransform.GroundData.observable_centered",
+      "file": "Foundation/SU2SevenLinkGroundTransform.lean",
+      "line": 208,
+      "source_sha256": "f71d90e78c74ee3f66d42157f8e5cab13d888f6d358115303b014767900602f9",
+      "declaration_header": "theorem observable_centered (A B : \u211d) (heven : \u2200 s, g.function (flip s)=g.function s) :\n    (\u222b s, g.observable A B s \u2202g.stationary)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkGroundTransform.lean#L208"
+    },
+    {
+      "paper": "4\u20137: genuine ground transform",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkGroundTransform.GroundData.observable_square_pos",
+      "file": "Foundation/SU2SevenLinkGroundTransform.lean",
+      "line": 227,
+      "source_sha256": "f71d90e78c74ee3f66d42157f8e5cab13d888f6d358115303b014767900602f9",
+      "declaration_header": "theorem observable_square_pos (A B : \u211d) : 0 < \u222b s, (g.observable A B s)^2 \u2202g.stationary",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkGroundTransform.lean#L227"
+    },
+    {
+      "paper": "4\u20137: genuine ground transform",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkGroundTransform.GroundData.observable_lag",
+      "file": "Foundation/SU2SevenLinkGroundTransform.lean",
+      "line": 231,
+      "source_sha256": "f71d90e78c74ee3f66d42157f8e5cab13d888f6d358115303b014767900602f9",
+      "declaration_header": "theorem observable_lag (A B : \u211d) :\n    (\u222b s, g.observable A B s*(\u222b r, g.observable A B r \u2202g.kernel s) \u2202g.stationary)=\n      spatialPairing \u03b2 t (unweight t (oddPolynomial t A B)) (unweight t (oddPolynomial t A B))/(g.value*g.normalizer)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkGroundTransform.lean#L231"
+    },
+    {
+      "paper": "4\u20137: genuine ground transform",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkGroundTransform.GroundData.observable_bound",
+      "file": "Foundation/SU2SevenLinkGroundTransform.lean",
+      "line": 240,
+      "source_sha256": "f71d90e78c74ee3f66d42157f8e5cab13d888f6d358115303b014767900602f9",
+      "declaration_header": "theorem observable_bound (A B : \u211d) (s : State) :\n    |g.observable A B s| \u2264 Real.exp (|t|/2)*(2*\u2211 i : Fin 3, |(![1,t*A,t*B] : Fin 3 \u2192 \u211d) i|)/g.lower",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkGroundTransform.lean#L240"
+    },
+    {
+      "paper": "4\u20137: genuine ground transform",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkGroundTransform.GroundData.value_le_certificate",
+      "file": "Foundation/SU2SevenLinkGroundTransform.lean",
+      "line": 261,
+      "source_sha256": "f71d90e78c74ee3f66d42157f8e5cab13d888f6d358115303b014767900602f9",
+      "declaration_header": "theorem value_le_certificate (ht : |t| \u2264 1)\n    (hsmall : |SU2WilsonGroundCertificate.linearCoefficient (SU2WilsonConvolution.coefficient \u03b2^4)| * |t|+\n      |SU2WilsonGroundCertificate.quadraticTrialCoefficient (SU2WilsonConvolution.coefficient \u03b2^4)\n        (SU2QuadraticWilsonChannel.quadraticCoefficient \u03b2^4)| * |t|^2 \u2264 1/2) :\n    g.value \u2264 1+SU2WilsonGroundCertificate.vacuumSecond (SU2WilsonConvolution.coefficient \u03b2^4)*t^2+\n      2*SU2WilsonGroundCertificate.eigenErrorConstant (SU2WilsonConvolution.coefficient \u03b2^4)\n        (SU2QuadraticWilsonChannel.quadraticCoefficient \u03b2^4)*|t|^3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkGroundTransform.lean#L261"
+    },
+    {
+      "paper": "4\u20137: genuine ground transform",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkGroundTransform.GroundData.observable_lag_ratio",
+      "file": "Foundation/SU2SevenLinkGroundTransform.lean",
+      "line": 293,
+      "source_sha256": "f71d90e78c74ee3f66d42157f8e5cab13d888f6d358115303b014767900602f9",
+      "declaration_header": "theorem observable_lag_ratio (A B : \u211d) :\n    (\u222b s, g.observable A B s*(\u222b r, g.observable A B r \u2202g.kernel s) \u2202g.stationary)/\n      (\u222b s, (g.observable A B s)^2 \u2202g.stationary)=trialQuotient \u03b2 t A B/g.value",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkGroundTransform.lean#L293"
+    },
+    {
+      "paper": "4\u20137: genuine ground transform",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkGroundTransform.GroundData.stationary_lag_obstruction",
+      "file": "Foundation/SU2SevenLinkGroundTransform.lean",
+      "line": 303,
+      "source_sha256": "f71d90e78c74ee3f66d42157f8e5cab13d888f6d358115303b014767900602f9",
+      "declaration_header": "theorem stationary_lag_obstruction\n    (heven : \u2200 s, g.function (flip s)=g.function s)\n    (ht : 0 < t) (ht1 : t \u2264 1)\n    (hsmall : |SU2WilsonGroundCertificate.linearCoefficient (SU2WilsonConvolution.coefficient \u03b2^4)| * |t|+\n      |SU2WilsonGroundCertificate.quadraticTrialCoefficient (SU2WilsonConvolution.coefficient \u03b2^4)\n        (SU2QuadraticWilsonChannel.quadraticCoefficient \u03b2^4)| * |t|^2 \u2264 1/2)\n    (herror : SU2WilsonConvolution.coefficient \u03b2^4*\n      comparisonError (normSecond (oddA \u03b2) (oddB \u03b2)) (normError (oddA \u03b2) (oddB \u03b2))\n        (SU2WilsonGroundCertificate.vacuumSecond (SU2WilsonConvolution.coefficient \u03b2^4))\n        (SU2WilsonGroundCertificate.eigenErrorConstant (SU2WilsonConvolution.coefficient \u03b2^4)\n          (SU2QuadraticWilsonChannel.quadraticCoefficient \u03b2^4))*t < leadingGap \u03b2) :\n    (\u222b s, g.observable (oddA \u03b2) (oddB \u03b2) s \u2202g.stationary)=0 \u2227\n    0 < (\u222b s, (g.observable (oddA \u03b2) (oddB \u03b2) s)^2 \u2202g.stationary) \u2227\n    SU2WilsonConvolution.coefficient \u03b2^4 <\n      (\u222b s, g.observable (oddA \u03b2) (oddB \u03b2) s*(\u222b r, g.observable (oddA \u03b2) (oddB \u03b2) r \u2202g.kernel s) \u2202g.stationary)/\n        (\u222b s, (g.observable (oddA \u03b2) (oddB \u03b2) s)^2 \u2202g.stationary)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkGroundTransform.lean#L303"
+    },
+    {
+      "paper": "4\u20137: genuine ground transform",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkGroundTransform.GroundData.evenized_even",
+      "file": "Foundation/SU2SevenLinkGroundTransform.lean",
+      "line": 374,
+      "source_sha256": "f71d90e78c74ee3f66d42157f8e5cab13d888f6d358115303b014767900602f9",
+      "declaration_header": "theorem evenized_even (s : State) : g.evenized.function (flip s)=g.evenized.function s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkGroundTransform.lean#L374"
+    },
+    {
+      "paper": "3\u20134: realized density, ground and gauge law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkVacuum.noiseDensity",
+      "file": "Foundation/SU2SevenLinkVacuum.lean",
+      "line": 30,
+      "source_sha256": "e9e0a5f70a42773ee090b51b3a2dd8c8dbb88509a0ee18376777a649336e2903",
+      "declaration_header": "def noiseDensity (\u03b2 : \u211d) (v : State) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkVacuum.lean#L30"
+    },
+    {
+      "paper": "3\u20134: realized density, ground and gauge law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkVacuum.kernelDensity",
+      "file": "Foundation/SU2SevenLinkVacuum.lean",
+      "line": 141,
+      "source_sha256": "e9e0a5f70a42773ee090b51b3a2dd8c8dbb88509a0ee18376777a649336e2903",
+      "declaration_header": "def kernelDensity (\u03b2 t : \u211d) (s r : State) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkVacuum.lean#L141"
+    },
+    {
+      "paper": "3\u20134: realized density, ground and gauge law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkVacuum.lower",
+      "file": "Foundation/SU2SevenLinkVacuum.lean",
+      "line": 149,
+      "source_sha256": "e9e0a5f70a42773ee090b51b3a2dd8c8dbb88509a0ee18376777a649336e2903",
+      "declaration_header": "def lower (\u03b2 t : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkVacuum.lean#L149"
+    },
+    {
+      "paper": "3\u20134: realized density, ground and gauge law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkVacuum.upper",
+      "file": "Foundation/SU2SevenLinkVacuum.lean",
+      "line": 152,
+      "source_sha256": "e9e0a5f70a42773ee090b51b3a2dd8c8dbb88509a0ee18376777a649336e2903",
+      "declaration_header": "def upper (\u03b2 t : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkVacuum.lean#L152"
+    },
+    {
+      "paper": "3\u20134: realized density, ground and gauge law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkVacuum.kernelDensity_bounds",
+      "file": "Foundation/SU2SevenLinkVacuum.lean",
+      "line": 165,
+      "source_sha256": "e9e0a5f70a42773ee090b51b3a2dd8c8dbb88509a0ee18376777a649336e2903",
+      "declaration_header": "theorem kernelDensity_bounds (\u03b2 t : \u211d) (s r : State) :\n    lower \u03b2 t \u2264 kernelDensity \u03b2 t s r \u2227 kernelDensity \u03b2 t s r \u2264 upper \u03b2 t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkVacuum.lean#L165"
+    },
+    {
+      "paper": "3\u20134: realized density, ground and gauge law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkVacuum.kernelDensity_apply",
+      "file": "Foundation/SU2SevenLinkVacuum.lean",
+      "line": 185,
+      "source_sha256": "e9e0a5f70a42773ee090b51b3a2dd8c8dbb88509a0ee18376777a649336e2903",
+      "declaration_header": "theorem kernelDensity_apply (\u03b2 t : \u211d) (f : State \u2192 \u211d) (s : State) :\n    YMPositivePower.applyKernel haar (kernelDensity \u03b2 t) f s=spatialStep \u03b2 t f s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkVacuum.lean#L185"
+    },
+    {
+      "paper": "3\u20134: realized density, ground and gauge law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkVacuum.groundData_nonempty",
+      "file": "Foundation/SU2SevenLinkVacuum.lean",
+      "line": 197,
+      "source_sha256": "e9e0a5f70a42773ee090b51b3a2dd8c8dbb88509a0ee18376777a649336e2903",
+      "declaration_header": "theorem groundData_nonempty (\u03b2 t : \u211d) : Nonempty (SU2SevenLinkGroundTransform.GroundData \u03b2 t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkVacuum.lean#L197"
+    },
+    {
+      "paper": "3\u20134: realized density, ground and gauge law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkVacuum.integral_gauge",
+      "file": "Foundation/SU2SevenLinkVacuum.lean",
+      "line": 237,
+      "source_sha256": "e9e0a5f70a42773ee090b51b3a2dd8c8dbb88509a0ee18376777a649336e2903",
+      "declaration_header": "theorem integral_gauge (g : Fin 6 \u2192 SU2) (f : State \u2192 \u211d) :\n    (\u222b s,f (gaugeAction g s) \u2202haar)=\u222b s,f s \u2202haar",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkVacuum.lean#L237"
+    },
+    {
+      "paper": "3\u20134: realized density, ground and gauge law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkVacuum.kernelDensity_gauge",
+      "file": "Foundation/SU2SevenLinkVacuum.lean",
+      "line": 252,
+      "source_sha256": "e9e0a5f70a42773ee090b51b3a2dd8c8dbb88509a0ee18376777a649336e2903",
+      "declaration_header": "theorem kernelDensity_gauge (\u03b2 t : \u211d) (g : Fin 6 \u2192 SU2) (s r : State) :\n    kernelDensity \u03b2 t (gaugeAction g s) (gaugeAction g r)=kernelDensity \u03b2 t s r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkVacuum.lean#L252"
+    },
+    {
+      "paper": "3\u20134: realized density, ground and gauge law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkVacuum.function_gauge",
+      "file": "Foundation/SU2SevenLinkVacuum.lean",
+      "line": 274,
+      "source_sha256": "e9e0a5f70a42773ee090b51b3a2dd8c8dbb88509a0ee18376777a649336e2903",
+      "declaration_header": "theorem function_gauge {\u03b2 t : \u211d} (d : SU2SevenLinkGroundTransform.GroundData \u03b2 t)\n    (g : Fin 6 \u2192 SU2) (s : State) : d.function (gaugeAction g s)=d.function s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkVacuum.lean#L274"
+    },
+    {
+      "paper": "3\u20134: realized density, ground and gauge law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkVacuum.observable_gauge",
+      "file": "Foundation/SU2SevenLinkVacuum.lean",
+      "line": 339,
+      "source_sha256": "e9e0a5f70a42773ee090b51b3a2dd8c8dbb88509a0ee18376777a649336e2903",
+      "declaration_header": "theorem observable_gauge {\u03b2 t : \u211d} (d : SU2SevenLinkGroundTransform.GroundData \u03b2 t)\n    (A B : \u211d) (g : Fin 6 \u2192 SU2) (s : State) :\n    d.observable A B (gaugeAction g s)=d.observable A B s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkVacuum.lean#L339"
+    },
+    {
+      "paper": "3\u20134: realized density, ground and gauge law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkVacuum.stationary_integral_gauge",
+      "file": "Foundation/SU2SevenLinkVacuum.lean",
+      "line": 349,
+      "source_sha256": "e9e0a5f70a42773ee090b51b3a2dd8c8dbb88509a0ee18376777a649336e2903",
+      "declaration_header": "theorem stationary_integral_gauge {\u03b2 t : \u211d} (d : SU2SevenLinkGroundTransform.GroundData \u03b2 t)\n    (g : Fin 6 \u2192 SU2) (f : State \u2192 \u211d) :\n    (\u222b s,f (gaugeAction g s) \u2202d.stationary)=\u222b s,f s \u2202d.stationary",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkVacuum.lean#L349"
+    },
+    {
+      "paper": "3\u20134: realized density, ground and gauge law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkVacuum.kernel_integral_gauge",
+      "file": "Foundation/SU2SevenLinkVacuum.lean",
+      "line": 356,
+      "source_sha256": "e9e0a5f70a42773ee090b51b3a2dd8c8dbb88509a0ee18376777a649336e2903",
+      "declaration_header": "theorem kernel_integral_gauge {\u03b2 t : \u211d} (d : SU2SevenLinkGroundTransform.GroundData \u03b2 t)\n    (g : Fin 6 \u2192 SU2) (f : State \u2192 \u211d) (hf : Measurable f) (s : State) :\n    (\u222b r,f r \u2202d.kernel (gaugeAction g s))=\u222b r,f (gaugeAction g r) \u2202d.kernel s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkVacuum.lean#L356"
+    },
+    {
+      "paper": "3\u20134: realized density, ground and gauge law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkVacuum.gauge_invariant_stationary_obstruction_interval",
+      "file": "Foundation/SU2SevenLinkVacuum.lean",
+      "line": 366,
+      "source_sha256": "e9e0a5f70a42773ee090b51b3a2dd8c8dbb88509a0ee18376777a649336e2903",
+      "declaration_header": "theorem gauge_invariant_stationary_obstruction_interval (\u03b2 : \u211d) (hc : coefficient \u03b2 \u2260 0) :\n    \u2203 \u03b4 : \u211d, 0 < \u03b4 \u2227 \u03b4 \u2264 1 \u2227 \u2200 t : \u211d, 0 < t \u2192 t < \u03b4 \u2192\n      let v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkVacuum.lean#L366"
+    },
+    {
+      "paper": "3\u20134: realized density, ground and gauge law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkVacuum.no_uniform_stationary_contraction",
+      "file": "Foundation/SU2SevenLinkVacuum.lean",
+      "line": 382,
+      "source_sha256": "e9e0a5f70a42773ee090b51b3a2dd8c8dbb88509a0ee18376777a649336e2903",
+      "declaration_header": "theorem no_uniform_stationary_contraction (q R : \u211d) (hq : q < 1) :\n    \u2203 \u03b2 t : \u211d, R < \u03b2 \u2227 0 < t \u2227 t \u2264 1 \u2227\n      let v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkVacuum.lean#L382"
+    },
+    {
+      "paper": "4,8: full stationary L2 realization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkL2Transfer.edge_swap",
+      "file": "Foundation/SU2SevenLinkL2Transfer.lean",
+      "line": 48,
+      "source_sha256": "80a71b5400717126c32688194aa0f9704d58f2edf4e584b13a0505642b9da26e",
+      "declaration_header": "theorem edge_swap : (edgeLaw d).map Prod.swap=edgeLaw d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkL2Transfer.lean#L48"
+    },
+    {
+      "paper": "4,8: full stationary L2 realization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkL2Transfer.left_preserving",
+      "file": "Foundation/SU2SevenLinkL2Transfer.lean",
+      "line": 69,
+      "source_sha256": "80a71b5400717126c32688194aa0f9704d58f2edf4e584b13a0505642b9da26e",
+      "declaration_header": "theorem left_preserving : MeasurePreserving Prod.fst (edgeLaw d) d.stationary",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkL2Transfer.lean#L69"
+    },
+    {
+      "paper": "4,8: full stationary L2 realization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkL2Transfer.right_preserving",
+      "file": "Foundation/SU2SevenLinkL2Transfer.lean",
+      "line": 72,
+      "source_sha256": "80a71b5400717126c32688194aa0f9704d58f2edf4e584b13a0505642b9da26e",
+      "declaration_header": "theorem right_preserving : MeasurePreserving Prod.snd (edgeLaw d) d.stationary",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkL2Transfer.lean#L72"
+    },
+    {
+      "paper": "4,8: full stationary L2 realization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkL2Transfer.operator",
+      "file": "Foundation/SU2SevenLinkL2Transfer.lean",
+      "line": 84,
+      "source_sha256": "80a71b5400717126c32688194aa0f9704d58f2edf4e584b13a0505642b9da26e",
+      "declaration_header": "def operator : StateL2 d \u2192L[\u211d] StateL2 d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkL2Transfer.lean#L84"
+    },
+    {
+      "paper": "4,8: full stationary L2 realization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkL2Transfer.operator_contraction",
+      "file": "Foundation/SU2SevenLinkL2Transfer.lean",
+      "line": 101,
+      "source_sha256": "80a71b5400717126c32688194aa0f9704d58f2edf4e584b13a0505642b9da26e",
+      "declaration_header": "theorem operator_contraction (f : StateL2 d) : \u2016operator d f\u2016 \u2264 \u2016f\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkL2Transfer.lean#L101"
+    },
+    {
+      "paper": "4,8: full stationary L2 realization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkL2Transfer.operator_symmetric",
+      "file": "Foundation/SU2SevenLinkL2Transfer.lean",
+      "line": 109,
+      "source_sha256": "80a71b5400717126c32688194aa0f9704d58f2edf4e584b13a0505642b9da26e",
+      "declaration_header": "theorem operator_symmetric (f g : StateL2 d) : inner \u211d (operator d f) g=inner \u211d f (operator d g)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkL2Transfer.lean#L109"
+    },
+    {
+      "paper": "4,8: full stationary L2 realization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkL2Transfer.operator_selfadjoint",
+      "file": "Foundation/SU2SevenLinkL2Transfer.lean",
+      "line": 119,
+      "source_sha256": "80a71b5400717126c32688194aa0f9704d58f2edf4e584b13a0505642b9da26e",
+      "declaration_header": "theorem operator_selfadjoint : (operator d).adjoint=operator d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkL2Transfer.lean#L119"
+    },
+    {
+      "paper": "4,8: full stationary L2 realization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkL2Transfer.operator_toLp",
+      "file": "Foundation/SU2SevenLinkL2Transfer.lean",
+      "line": 193,
+      "source_sha256": "80a71b5400717126c32688194aa0f9704d58f2edf4e584b13a0505642b9da26e",
+      "declaration_header": "theorem operator_toLp (f : State \u2192 \u211d) (hmem : MemLp f 2 d.stationary) (hf : Measurable f)\n    (B : \u211d) (hb : \u2200 s,|f s| \u2264 B) :\n    operator d (hmem.toLp f)=(transfer_memLp d f hf B hb).toLp (transfer d f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkL2Transfer.lean#L193"
+    },
+    {
+      "paper": "4,8: full stationary L2 realization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkL2Transfer.steps_toLp",
+      "file": "Foundation/SU2SevenLinkL2Transfer.lean",
+      "line": 253,
+      "source_sha256": "80a71b5400717126c32688194aa0f9704d58f2edf4e584b13a0505642b9da26e",
+      "declaration_header": "theorem steps_toLp (n : \u2115) (f : State \u2192 \u211d) (hmem : MemLp f 2 d.stationary)\n    (hf : Measurable f) (B : \u211d) (hb : \u2200 s,|f s| \u2264 B) :\n    SelfAdjointContractionIteration.steps (operator d) n (hmem.toLp f)=\n      (nativeSteps_memLp d n f hf B hb).toLp (nativeSteps d n f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkL2Transfer.lean#L253"
+    },
+    {
+      "paper": "4,8: full stationary L2 realization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkL2Transfer.steps_pairing",
+      "file": "Foundation/SU2SevenLinkL2Transfer.lean",
+      "line": 266,
+      "source_sha256": "80a71b5400717126c32688194aa0f9704d58f2edf4e584b13a0505642b9da26e",
+      "declaration_header": "theorem steps_pairing (n : \u2115) (f : State \u2192 \u211d) (hmem : MemLp f 2 d.stationary)\n    (hf : Measurable f) (B : \u211d) (hb : \u2200 s,|f s| \u2264 B) :\n    inner \u211d (SelfAdjointContractionIteration.steps (operator d) n (hmem.toLp f)) (hmem.toLp f)=\n      \u222b s,f s*nativeSteps d n f s \u2202d.stationary",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkL2Transfer.lean#L266"
+    },
+    {
+      "paper": "4,8: full stationary L2 realization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkL2Transfer.nativeSteps_gauge",
+      "file": "Foundation/SU2SevenLinkL2Transfer.lean",
+      "line": 277,
+      "source_sha256": "80a71b5400717126c32688194aa0f9704d58f2edf4e584b13a0505642b9da26e",
+      "declaration_header": "theorem nativeSteps_gauge (n : \u2115) (f : State \u2192 \u211d) (hf : Measurable f)\n    (hfg : \u2200 (g : Fin 6 \u2192 QuaternionSU2Representation.SU2) s,f (gaugeAction g s)=f s)\n    (g : Fin 6 \u2192 QuaternionSU2Representation.SU2) (s : State) :\n    nativeSteps d n f (gaugeAction g s)=nativeSteps d n f s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkL2Transfer.lean#L277"
+    },
+    {
+      "paper": "8: iteration without positive-spectrum hypothesis",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SelfAdjointContractionIteration.dissipation_nonneg",
+      "file": "Foundation/SelfAdjointContractionIteration.lean",
+      "line": 27,
+      "source_sha256": "d93395540efc99f63f0fdd5bf5c3fbb62a85071105a652b6c1968dfc43fc4c46",
+      "declaration_header": "theorem dissipation_nonneg (f : E) : 0 \u2264 dissipation T f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SelfAdjointContractionIteration.lean#L27"
+    },
+    {
+      "paper": "8: iteration without positive-spectrum hypothesis",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SelfAdjointContractionIteration.dissipation_contracts",
+      "file": "Foundation/SelfAdjointContractionIteration.lean",
+      "line": 34,
+      "source_sha256": "d93395540efc99f63f0fdd5bf5c3fbb62a85071105a652b6c1968dfc43fc4c46",
+      "declaration_header": "theorem dissipation_contracts (f : E) :\n    dissipation T (T f) \u2264 dissipation T f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SelfAdjointContractionIteration.lean#L34"
+    },
+    {
+      "paper": "8: iteration without positive-spectrum hypothesis",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SelfAdjointContractionIteration.steps_dissipation",
+      "file": "Foundation/SelfAdjointContractionIteration.lean",
+      "line": 44,
+      "source_sha256": "d93395540efc99f63f0fdd5bf5c3fbb62a85071105a652b6c1968dfc43fc4c46",
+      "declaration_header": "theorem steps_dissipation (n : \u2115) (f : E) :\n    dissipation T (steps T n f) \u2264 dissipation T f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SelfAdjointContractionIteration.lean#L44"
+    },
+    {
+      "paper": "8: iteration without positive-spectrum hypothesis",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SelfAdjointContractionIteration.steps_square_lower",
+      "file": "Foundation/SelfAdjointContractionIteration.lean",
+      "line": 58,
+      "source_sha256": "d93395540efc99f63f0fdd5bf5c3fbb62a85071105a652b6c1968dfc43fc4c46",
+      "declaration_header": "theorem steps_square_lower (n : \u2115) (f : E) :\n    inner \u211d f f - 2 * (n : \u211d) * dissipation T f \u2264\n      inner \u211d (steps T n f) (steps T n f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SelfAdjointContractionIteration.lean#L58"
+    },
+    {
+      "paper": "8: iteration without positive-spectrum hypothesis",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SelfAdjointContractionIteration.lag_lower",
+      "file": "Foundation/SelfAdjointContractionIteration.lean",
+      "line": 91,
+      "source_sha256": "d93395540efc99f63f0fdd5bf5c3fbb62a85071105a652b6c1968dfc43fc4c46",
+      "declaration_header": "theorem lag_lower (n : \u2115) (f : E) :\n    inner \u211d f f - (n : \u211d) * dissipation T f \u2264 inner \u211d (steps T n f) f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SelfAdjointContractionIteration.lean#L91"
+    },
+    {
+      "paper": "8: iteration without positive-spectrum hypothesis",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SelfAdjointContractionIteration.lag_upper",
+      "file": "Foundation/SelfAdjointContractionIteration.lean",
+      "line": 118,
+      "source_sha256": "d93395540efc99f63f0fdd5bf5c3fbb62a85071105a652b6c1968dfc43fc4c46",
+      "declaration_header": "theorem lag_upper (n : \u2115) (f : E) : inner \u211d (steps T n f) f \u2264 inner \u211d f f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SelfAdjointContractionIteration.lean#L118"
+    },
+    {
+      "paper": "8: actual iterated slow mode",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkIteration.iteration_from_one_step",
+      "file": "Foundation/SU2SevenLinkIteration.lean",
+      "line": 14,
+      "source_sha256": "2dad3180176fa21b6530de0333beeb342f11f221e1ec65538efac8f447021e62",
+      "declaration_header": "theorem iteration_from_one_step (f : StateL2 d) (q : \u211d)\n    (hq : q*inner \u211d f f \u2264 inner \u211d (operator d f) f) (n : \u2115) :\n    (1-(n:\u211d)*(1-q))*inner \u211d f f \u2264 inner \u211d (steps d n f) f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkIteration.lean#L14"
+    },
+    {
+      "paper": "8: actual iterated slow mode",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkIteration.realized_iteration_interval",
+      "file": "Foundation/SU2SevenLinkIteration.lean",
+      "line": 25,
+      "source_sha256": "2dad3180176fa21b6530de0333beeb342f11f221e1ec65538efac8f447021e62",
+      "declaration_header": "theorem realized_iteration_interval (\u03b2 : \u211d) (hc : coefficient \u03b2 \u2260 0) :\n    \u2203 \u03b4 : \u211d, 0 < \u03b4 \u2227 \u03b4 \u2264 1 \u2227 \u2200 t : \u211d, 0 < t \u2192 t < \u03b4 \u2192\n      let v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkIteration.lean#L25"
+    },
+    {
+      "paper": "8: actual iterated slow mode",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkIteration.no_uniform_fixed_steps",
+      "file": "Foundation/SU2SevenLinkIteration.lean",
+      "line": 59,
+      "source_sha256": "2dad3180176fa21b6530de0333beeb342f11f221e1ec65538efac8f447021e62",
+      "declaration_header": "theorem no_uniform_fixed_steps (n : \u2115) (q R : \u211d) (hq : q < 1) :\n    \u2203 \u03b2 t : \u211d, R < \u03b2 \u2227 0 < t \u2227 t \u2264 1 \u2227\n      let v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkIteration.lean#L59"
+    },
+    {
+      "paper": "8: actual iterated slow mode",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkIteration.native_iteration_interval",
+      "file": "Foundation/SU2SevenLinkIteration.lean",
+      "line": 96,
+      "source_sha256": "2dad3180176fa21b6530de0333beeb342f11f221e1ec65538efac8f447021e62",
+      "declaration_header": "theorem native_iteration_interval (\u03b2 : \u211d) (hc : coefficient \u03b2 \u2260 0) :\n    \u2203 \u03b4 : \u211d, 0 < \u03b4 \u2227 \u03b4 \u2264 1 \u2227 \u2200 t : \u211d, 0 < t \u2192 t < \u03b4 \u2192\n      let v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkIteration.lean#L96"
+    },
+    {
+      "paper": "9: finite-parameter mixing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkMixing.bridgeReference",
+      "file": "Foundation/SU2SevenLinkMixing.lean",
+      "line": 28,
+      "source_sha256": "84565346be57d500b90b112ca66a54a0b2ca74a3924eb01fe19e9a8e254f5258",
+      "declaration_header": "def bridgeReference : Measure State",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkMixing.lean#L28"
+    },
+    {
+      "paper": "9: finite-parameter mixing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkMixing.transfer_bridge",
+      "file": "Foundation/SU2SevenLinkMixing.lean",
+      "line": 34,
+      "source_sha256": "84565346be57d500b90b112ca66a54a0b2ca74a3924eb01fe19e9a8e254f5258",
+      "declaration_header": "theorem transfer_bridge (f : State \u2192 \u211d) (hf : Measurable f) (s : State) :\n    transfer d f s=YMPositiveKernel.average (bridgeReference d) (kernelDensity \u03b2 t) f s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkMixing.lean#L34"
+    },
+    {
+      "paper": "9: finite-parameter mixing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkMixing.nativeSteps_centered_bound",
+      "file": "Foundation/SU2SevenLinkMixing.lean",
+      "line": 63,
+      "source_sha256": "84565346be57d500b90b112ca66a54a0b2ca74a3924eb01fe19e9a8e254f5258",
+      "declaration_header": "theorem nativeSteps_centered_bound (f : State \u2192 \u211d) (hf : Measurable f)\n    (B : \u211d) (hb : \u2200 s,|f s| \u2264 B) (hzero : (\u222b s,f s \u2202d.stationary)=0)\n    (n : \u2115) (s : State) :\n    |nativeSteps d n f s| \u2264 2*B*(1-lower \u03b2 t/upper \u03b2 t)^n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkMixing.lean#L63"
+    },
+    {
+      "paper": "9: finite-parameter mixing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkMixing.reset_ratio",
+      "file": "Foundation/SU2SevenLinkMixing.lean",
+      "line": 77,
+      "source_sha256": "84565346be57d500b90b112ca66a54a0b2ca74a3924eb01fe19e9a8e254f5258",
+      "declaration_header": "theorem reset_ratio (\u03b2 t : \u211d) : lower \u03b2 t/upper \u03b2 t=Real.exp (-2*|t|-14*|\u03b2|)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkMixing.lean#L77"
+    },
+    {
+      "paper": "9: finite-parameter mixing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkMixing.reset_bounds",
+      "file": "Foundation/SU2SevenLinkMixing.lean",
+      "line": 98,
+      "source_sha256": "84565346be57d500b90b112ca66a54a0b2ca74a3924eb01fe19e9a8e254f5258",
+      "declaration_header": "theorem reset_bounds (\u03b2 t : \u211d) : 0 < reset \u03b2 t \u2227 reset \u03b2 t \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkMixing.lean#L98"
+    },
+    {
+      "paper": "9: finite-parameter mixing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkMixing.native_covariance_bound",
+      "file": "Foundation/SU2SevenLinkMixing.lean",
+      "line": 102,
+      "source_sha256": "84565346be57d500b90b112ca66a54a0b2ca74a3924eb01fe19e9a8e254f5258",
+      "declaration_header": "theorem native_covariance_bound (f : State \u2192 \u211d) (hf : Measurable f)\n    (B : \u211d) (hb : \u2200 s,|f s| \u2264 B) (hzero : (\u222b s,f s \u2202d.stationary)=0) (n : \u2115) :\n    |\u222b s,f s*nativeSteps d n f s \u2202d.stationary| \u2264 2*B^2*(1-reset \u03b2 t)^n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkMixing.lean#L102"
+    },
+    {
+      "paper": "9: finite-parameter mixing",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkMixing.native_covariance_tendsto_zero",
+      "file": "Foundation/SU2SevenLinkMixing.lean",
+      "line": 120,
+      "source_sha256": "84565346be57d500b90b112ca66a54a0b2ca74a3924eb01fe19e9a8e254f5258",
+      "declaration_header": "theorem native_covariance_tendsto_zero (f : State \u2192 \u211d) (hf : Measurable f)\n    (B : \u211d) (hb : \u2200 s,|f s| \u2264 B) (hzero : (\u222b s,f s \u2202d.stationary)=0) :\n    Tendsto (fun n : \u2115 => \u222b s,f s*nativeSteps d n f s \u2202d.stationary) atTop (nhds 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkMixing.lean#L120"
+    },
+    {
+      "paper": "8: arbitrary gauge randomization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkGaugeAverage.averagedKernel",
+      "file": "Foundation/SU2SevenLinkGaugeAverage.lean",
+      "line": 56,
+      "source_sha256": "2dd3d5af609a04e7829d800570b499cd263e4233307b133714ac1717fc5462d5",
+      "declaration_header": "def averagedKernel : Kernel State State",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkGaugeAverage.lean#L56"
+    },
+    {
+      "paper": "8: arbitrary gauge randomization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkGaugeAverage.averaged_integral",
+      "file": "Foundation/SU2SevenLinkGaugeAverage.lean",
+      "line": 64,
+      "source_sha256": "2dd3d5af609a04e7829d800570b499cd263e4233307b133714ac1717fc5462d5",
+      "declaration_header": "theorem averaged_integral (f : State \u2192 \u211d) (hf : Measurable f)\n    (B : \u211d) (hb : \u2200 s,|f s| \u2264 B) (s : State) :\n    (\u222b r,f r \u2202averagedKernel \u03bd d s)=\u222b g,transfer d f (gaugeAction g s) \u2202\u03bd",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkGaugeAverage.lean#L64"
+    },
+    {
+      "paper": "8: arbitrary gauge randomization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkGaugeAverage.averaged_stationary",
+      "file": "Foundation/SU2SevenLinkGaugeAverage.lean",
+      "line": 72,
+      "source_sha256": "2dd3d5af609a04e7829d800570b499cd263e4233307b133714ac1717fc5462d5",
+      "declaration_header": "theorem averaged_stationary (f : State \u2192 \u211d) (hf : Measurable f)\n    (B : \u211d) (hb : \u2200 s,|f s| \u2264 B) :\n    (\u222b s,\u222b r,f r \u2202averagedKernel \u03bd d s \u2202d.stationary)=\u222b s,f s \u2202d.stationary",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkGaugeAverage.lean#L72"
+    },
+    {
+      "paper": "8: arbitrary gauge randomization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkGaugeAverage.invariant_integral",
+      "file": "Foundation/SU2SevenLinkGaugeAverage.lean",
+      "line": 86,
+      "source_sha256": "2dd3d5af609a04e7829d800570b499cd263e4233307b133714ac1717fc5462d5",
+      "declaration_header": "theorem invariant_integral (f : State \u2192 \u211d) (hf : Measurable f)\n    (B : \u211d) (hb : \u2200 s,|f s| \u2264 B)\n    (hg : \u2200 (g : Gauge) s,f (gaugeAction g s)=f s) (s : State) :\n    (\u222b r,f r \u2202averagedKernel \u03bd d s)=transfer d f s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkGaugeAverage.lean#L86"
+    },
+    {
+      "paper": "8: arbitrary gauge randomization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkGaugeAverage.invariant_steps",
+      "file": "Foundation/SU2SevenLinkGaugeAverage.lean",
+      "line": 105,
+      "source_sha256": "2dd3d5af609a04e7829d800570b499cd263e4233307b133714ac1717fc5462d5",
+      "declaration_header": "theorem invariant_steps (f : State \u2192 \u211d) (hf : Measurable f)\n    (B : \u211d) (hb : \u2200 s,|f s| \u2264 B)\n    (hg : \u2200 (g : Gauge) s,f (gaugeAction g s)=f s) (n : \u2115) :\n    averagedSteps \u03bd d n f=nativeSteps d n f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkGaugeAverage.lean#L105"
+    },
+    {
+      "paper": "8: arbitrary gauge randomization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2SevenLinkGaugeAverage.no_uniform_averaged_steps",
+      "file": "Foundation/SU2SevenLinkGaugeAverage.lean",
+      "line": 119,
+      "source_sha256": "2dd3d5af609a04e7829d800570b499cd263e4233307b133714ac1717fc5462d5",
+      "declaration_header": "theorem no_uniform_averaged_steps (n : \u2115) (q R : \u211d) (hq : q < 1) :\n    \u2203 \u03b2 t : \u211d, R < \u03b2 \u2227 0 < t \u2227 t \u2264 1 \u2227\n      let v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2SevenLinkGaugeAverage.lean#L119"
+    },
+    {
+      "paper": "10: actual two-weight boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2HomogeneousPlaquetteObstruction.potential",
+      "file": "Foundation/SU2HomogeneousPlaquetteObstruction.lean",
+      "line": 14,
+      "source_sha256": "5d8112f69dcae9a1f7e6041440fd4d78754f5661180a8cb253b391fa95bece82",
+      "declaration_header": "def potential (s : State) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2HomogeneousPlaquetteObstruction.lean#L14"
+    },
+    {
+      "paper": "10: actual two-weight boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2HomogeneousPlaquetteObstruction.weight",
+      "file": "Foundation/SU2HomogeneousPlaquetteObstruction.lean",
+      "line": 24,
+      "source_sha256": "5d8112f69dcae9a1f7e6041440fd4d78754f5661180a8cb253b391fa95bece82",
+      "declaration_header": "def weight (t : \u211d) (s : State) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2HomogeneousPlaquetteObstruction.lean#L24"
+    },
+    {
+      "paper": "10: actual two-weight boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2HomogeneousPlaquetteObstruction.weight_not_flip_invariant",
+      "file": "Foundation/SU2HomogeneousPlaquetteObstruction.lean",
+      "line": 42,
+      "source_sha256": "5d8112f69dcae9a1f7e6041440fd4d78754f5661180a8cb253b391fa95bece82",
+      "declaration_header": "theorem weight_not_flip_invariant (t : \u211d) (ht : t \u2260 0) :\n    weight t (SU2SevenLinkParity.flip (1 : State)) \u2260 weight t (1 : State)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2HomogeneousPlaquetteObstruction.lean#L42"
+    },
+    {
+      "paper": "10: actual two-weight boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2HomogeneousPlaquetteObstruction.homogeneous_reset",
+      "file": "Foundation/SU2HomogeneousPlaquetteObstruction.lean",
+      "line": 89,
+      "source_sha256": "5d8112f69dcae9a1f7e6041440fd4d78754f5661180a8cb253b391fa95bece82",
+      "declaration_header": "theorem homogeneous_reset (t : \u211d) (f : State \u2192 \u211d) (s : State) :\n    homogeneousStep 0 t f s=YMResetGroundState.transfer haar potential (2*t) f s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2HomogeneousPlaquetteObstruction.lean#L89"
+    },
+    {
+      "paper": "10: actual two-weight boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2HomogeneousPlaquetteObstruction.stationary",
+      "file": "Foundation/SU2HomogeneousPlaquetteObstruction.lean",
+      "line": 96,
+      "source_sha256": "5d8112f69dcae9a1f7e6041440fd4d78754f5661180a8cb253b391fa95bece82",
+      "declaration_header": "def stationary (t : \u211d) : Measure State",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2HomogeneousPlaquetteObstruction.lean#L96"
+    },
+    {
+      "paper": "10: actual two-weight boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2HomogeneousPlaquetteObstruction.ground_transform",
+      "file": "Foundation/SU2HomogeneousPlaquetteObstruction.lean",
+      "line": 102,
+      "source_sha256": "5d8112f69dcae9a1f7e6041440fd4d78754f5661180a8cb253b391fa95bece82",
+      "declaration_header": "theorem ground_transform (t : \u211d) (f : State \u2192 \u211d) (s : State) :\n    homogeneousStep 0 t (fun r => weight t r*f r) s/\n      (partition haar potential (2*t)*weight t s)=\u222b r, f r \u2202stationary t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2HomogeneousPlaquetteObstruction.lean#L102"
+    },
+    {
+      "paper": "10: actual two-weight boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2HomogeneousPlaquetteObstruction.rightMean_derivative",
+      "file": "Foundation/SU2HomogeneousPlaquetteObstruction.lean",
+      "line": 146,
+      "source_sha256": "5d8112f69dcae9a1f7e6041440fd4d78754f5661180a8cb253b391fa95bece82",
+      "declaration_header": "theorem rightMean_derivative : HasDerivAt rightMean (1/4:\u211d) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2HomogeneousPlaquetteObstruction.lean#L146"
+    },
+    {
+      "paper": "10: actual two-weight boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2HomogeneousPlaquetteObstruction.positive_rightMean_near_zero",
+      "file": "Foundation/SU2HomogeneousPlaquetteObstruction.lean",
+      "line": 160,
+      "source_sha256": "5d8112f69dcae9a1f7e6041440fd4d78754f5661180a8cb253b391fa95bece82",
+      "declaration_header": "theorem positive_rightMean_near_zero (\u03b5 : \u211d) (h\u03b5 : 0 < \u03b5) :\n    \u2203 t : \u211d, 0 < t \u2227 t < \u03b5 \u2227 0 < rightMean t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2HomogeneousPlaquetteObstruction.lean#L160"
+    },
+    {
+      "paper": "10: actual two-weight boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2HomogeneousPlaquetteObstruction.ground_transform_kernel",
+      "file": "Foundation/SU2HomogeneousPlaquetteObstruction.lean",
+      "line": 313,
+      "source_sha256": "5d8112f69dcae9a1f7e6041440fd4d78754f5661180a8cb253b391fa95bece82",
+      "declaration_header": "theorem ground_transform_kernel (t : \u211d) (f : State \u2192 \u211d) (s : State) :\n    homogeneousStep 0 t (fun r => weight t r*f r) s/\n      (partition haar potential (2*t)*weight t s)=\u222b r, f r \u2202resetKernel t s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2HomogeneousPlaquetteObstruction.lean#L313"
+    },
+    {
+      "paper": "10: actual two-weight boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2HomogeneousPlaquetteObstruction.reset_lag",
+      "file": "Foundation/SU2HomogeneousPlaquetteObstruction.lean",
+      "line": 320,
+      "source_sha256": "5d8112f69dcae9a1f7e6041440fd4d78754f5661180a8cb253b391fa95bece82",
+      "declaration_header": "theorem reset_lag (t : \u211d) (f : State \u2192 \u211d) :\n    (\u222b s, f s*(\u222b r, f r \u2202resetKernel t s) \u2202stationary t)=(\u222b s, f s \u2202stationary t)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2HomogeneousPlaquetteObstruction.lean#L320"
+    },
+    {
+      "paper": "10: actual two-weight boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2HomogeneousPlaquetteObstruction.centered_reset_lag_zero",
+      "file": "Foundation/SU2HomogeneousPlaquetteObstruction.lean",
+      "line": 328,
+      "source_sha256": "5d8112f69dcae9a1f7e6041440fd4d78754f5661180a8cb253b391fa95bece82",
+      "declaration_header": "theorem centered_reset_lag_zero (t : \u211d) (f : State \u2192 \u211d) (hf : Integrable f (stationary t)) :\n    (\u222b s, (f s-(\u222b r, f r \u2202stationary t))*\n      (\u222b r, f r-(\u222b z, f z \u2202stationary t) \u2202resetKernel t s) \u2202stationary t)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2HomogeneousPlaquetteObstruction.lean#L328"
+    },
+    {
+      "paper": "1: physical observable selection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2OpenLinkGaugeObstruction.endpointInvariant_const",
+      "file": "Foundation/SU2OpenLinkGaugeObstruction.lean",
+      "line": 10,
+      "source_sha256": "495e05d8d1d01fe65a09ccf70d6554a4b174723fc64f19f43cd2b385d628ce6e",
+      "declaration_header": "theorem endpointInvariant_const {f : SU2 \u2192 \u211d} (hf : EndpointInvariant f) (A : SU2) :\n    f A = f (1 : SU2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2OpenLinkGaugeObstruction.lean#L10"
+    },
+    {
+      "paper": "1: physical observable selection",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2OpenLinkGaugeObstruction.halfTrace_not_endpointInvariant",
+      "file": "Foundation/SU2OpenLinkGaugeObstruction.lean",
+      "line": 23,
+      "source_sha256": "495e05d8d1d01fe65a09ccf70d6554a4b174723fc64f19f43cd2b385d628ce6e",
+      "declaration_header": "theorem halfTrace_not_endpointInvariant : \u00ac EndpointInvariant halfTrace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2OpenLinkGaugeObstruction.lean#L23"
+    }
+  ],
+  "human_reorganization": [
+    "The printed proof is self-contained. Quaternion matrix coordinates, explicit power-ratio convergence, the factored optimized margin, explicit smallness window and even/odd iteration reorganize the mapped proofs; no new Lean declarations or enlarged hypotheses are claimed.",
+    "Positive ground existence is discharged by YMPositivePower and SU2SevenLinkVacuum.groundData_nonempty, rather than assumed from the earlier GroundData contract. The bridge reference has density proportional to psi, while the actual stationary law has density proportional to psi squared.",
+    "Only the first spatial plaquette is weighted in the slow-mode theorem. The two-weight reset example is a separate actual stationary comparison and does not extend the optimized theorem to homogeneous couplings.",
+    "The full L2 realization and actual bounded native iterates are mapped separately. Iteration assumes selfadjoint contraction, not nonnegative spectrum. Arbitrary gauge averaging preserves invariant-observable iterates without assuming averaged selfadjointness."
+  ],
+  "literature": [
+    {
+      "url": "https://doi.org/10.1090/S0002-9947-1957-0087058-6",
+      "review": "Birkhoff 1957: primary indexed introduction and uniform positivity framework checked; full theorem comparison incomplete."
+    },
+    {
+      "url": "https://bib-pubdb1.desy.de/record/396349/files/7611148.pdf",
+      "review": "Luscher primary DESY preprint checked for physical gauge-invariant Hilbert and transfer-matrix construction. No identification of the present finite Markov correlations with physical Schwinger functions is inferred."
+    }
+  ],
+  "novelty": "Classical positive-kernel and character mechanisms; priority for the exact optimized finite comparison unresolved. No physical mass-gap claim."
+}
