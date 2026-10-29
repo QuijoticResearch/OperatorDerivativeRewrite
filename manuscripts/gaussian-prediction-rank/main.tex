@@ -27,7 +27,10 @@ $m$, and exclude higher-power increment bounds at zero information.
 The inverse-number potential divides positive-rank coefficients by their
 rank, so it preserves this obstruction despite being compact on a single
 Gaussian observation space. A concrete quarter-Hurst covariance witness
-also separates full-past prediction from current-value prediction.
+also separates full-past prediction from current-value prediction. An
+exact multi-target quartic calculation gives independent targets whose
+shared-observation residuals have negative cross-covariance, so block error
+cannot be assembled from diagonal residual energies alone.
 The projection and Hermite mechanisms are classical, and the two
 fractional covariance regimes are already known in primary literature.
 This paper supplies complete proofs and exact frozen formal
@@ -338,6 +341,155 @@ This witness does not assert that fractional Brownian motion is a new
 non-Markovian example. It records exactly why replacing a full-past
 projection with the current-coordinate projection changes the theorem.
 
+\section{Raw quartic targets and cross-covariance of residuals}
+The rank-energy identity concerns one transformed coordinate. With several
+targets, their prediction errors need not be mutually orthogonal. We now
+give exact formulas and an actual Gaussian example showing why diagonal
+error estimates cannot be added without retaining the cross terms.
+
+For an arbitrary direction $a\in\Hh$, not necessarily unit, write
+$s_a=\|a\|^2$ and $p_a=P_Ma$. Define the centered raw fourth power
+\[
+ F_a=X(a)^4-3s_a^2=W_4(a)+6s_aW_2(a),
+ \quad P_a=\E[F_a\mid\mathcal A],\quad R_a=F_a-P_a.
+\]
+The Wick expansion follows by the explicit identities
+$W_2(a)=X(a)^2-s_a$ and
+$W_4(a)=X(a)^4-6s_aX(a)^2+3s_a^2$.
+In particular a raw fourth power has both second and fourth chaos.
+It is not a pure rank-four target.
+
+\begin{proposition}[Quartic prediction and error]\label{prop:quartic}
+The actual conditional prediction is
+\begin{align*}
+ P_a&=W_4(p_a)+6s_aW_2(p_a)\\
+ &=X(p_a)^4+6(s_a-\|p_a\|^2)X(p_a)^2
+                   +3\|p_a\|^4-6s_a\|p_a\|^2.
+\end{align*}
+Its full and retained energies are
+\[
+ \|F_a\|_2^2=96s_a^4,\qquad
+ \|P_a\|_2^2=24\|p_a\|^8+72s_a^2\|p_a\|^4.
+\]
+If $s_a>0$ and $q=\|p_a\|^2/s_a$, then
+\begin{equation}\label{eq:quarticfraction}
+ \frac{\|R_a\|_2^2}{\|F_a\|_2^2}
+ =1-\frac34q^2-\frac14q^4.
+\end{equation}
+Equivalently, for the missing linear fraction $r=1-q$, this is
+$(240r-216r^2+96r^3-24r^4)/96$.
+\end{proposition}
+\begin{proof}
+The conditional Wick identity from Lemma~\ref{lem:conditional} is valid for
+any direction by the same orthogonal split, or by scaling. It gives the
+first prediction formula, and expansion of $W_4,W_2$ gives the second.
+Lemma~\ref{lem:hermite} makes second and fourth chaoses orthogonal and gives
+$\|W_n(a)\|_2^2=n!s_a^n$. Thus
+\[
+ \|F_a\|_2^2=24s_a^4+36s_a^2(2s_a^2)=96s_a^4.
+\]
+The same computation at $p_a$, retaining the coefficient $6s_a$, proves
+the prediction energy. Since conditional expectation is orthogonal
+projection, $R_a\perp P_a$ and
+$\|R_a\|_2^2=\|F_a\|_2^2-\|P_a\|_2^2$. Dividing gives
+\eqref{eq:quarticfraction}; substituting $q=1-r$ and expanding proves
+the final polynomial. The second-chaos contribution is exactly the term
+that a pure fourth-chaos factor would miss.
+\end{proof}
+Source module: \code{GaussianQuarticConditionalVariance}.
+\par\noindent Declarations: \code{prediction_wick},
+\code{prediction_coeFn}, \code{prediction_norm_sq},
+\code{variance_fraction} and \code{residual_energy}.
+
+\begin{proposition}[Residual covariance]\label{prop:rescov}
+For any $a,b\in\Hh$, put $c=\langle a,b\rangle$ and
+$d=\langle p_a,p_b\rangle$. Then
+\begin{align*}
+ \langle F_a,F_b\rangle&=72s_as_bc^2+24c^4,\\
+ \langle P_a,P_b\rangle&=72s_as_bd^2+24d^4,\\
+ \langle R_a,R_b\rangle
+ &=72s_as_b(c^2-d^2)+24(c^4-d^4).
+\end{align*}
+The last expression need not be nonnegative, even when $c=0$.
+\end{proposition}
+\begin{proof}
+Expand the second/fourth Wick expressions and apply
+Lemma~\ref{lem:hermite}. Cross-chaos terms vanish; the remaining terms
+have coefficients $36s_as_b\,2!$ and $4!$. This proves the first two
+identities. Each residual is orthogonal to every $\mathcal A$-measurable
+$L^2$ variable, including both predictions. Consequently
+$\langle F_a,F_b\rangle=\langle P_a,P_b\rangle+\langle R_a,R_b\rangle$,
+which proves the third identity without an assumption about the signs of
+cross-covariances.
+\end{proof}
+Source module: \code{GaussianQuarticResidualCovariance}.
+\par\noindent Declarations: \code{quartic_covariance},
+\code{prediction_covariance}, \code{residual_prediction_orthogonal}
+and \code{residual_covariance}.
+
+\begin{theorem}[Independent targets with negative residual covariance]
+Let $G_0,G_1$ be independent standard Gaussian random variables, observe
+only $G_0$, and put
+\[
+ F_+=(G_0+G_1)^4-12,\qquad F_-=(G_0-G_1)^4-12.
+\]
+The targets $F_+,F_-$ are centered and independent. Their predictions are
+the same variable
+\[
+ P=\E[F_+\mid G_0]=\E[F_-\mid G_0]=G_0^4+6G_0^2-9.
+\]
+For $R_\pm=F_\pm-P$, one has
+\[
+ \langle R_+,R_-\rangle=-312,\quad
+ \|R_+\|_2^2=\|R_-\|_2^2=1224,\quad
+ \|R_++R_-\|_2^2=1824.
+\]
+The unexplained fraction for the sum of the targets is $19/32$, strictly
+below the individual fraction $51/64$.
+\end{theorem}
+\begin{proof}
+Use orthonormal directions $e_0,e_1$ with $X(e_i)=G_i$, take
+$a=e_0+e_1$, $b=e_0-e_1$, and $M=\operatorname{span}\{e_0\}$.
+Then $s_a=s_b=2$, $c=0$, and $p_a=p_b=e_0$, so $d=1$.
+The two linear coordinates are jointly Gaussian with covariance zero:
+their joint characteristic function is
+$\exp(-(2t^2+2s^2)/2)$, a product. Thus they are independent, as are their
+fourth-power functions. Each fourth moment is $3\cdot2^2=12$,
+so centering is correct.
+
+Proposition~\ref{prop:quartic} gives the printed common predictor and
+\[
+ \|F_\pm\|_2^2=96\cdot2^4=1536,\qquad
+ \|P\|_2^2=24+72\cdot2^2=312.
+\]
+Hence each residual has energy $1536-312=1224$.
+Proposition~\ref{prop:rescov} gives
+$\langle R_+,R_-\rangle=0-312=-312$. Expanding the squared norm of the
+residual sum yields $1224+1224-624=1824$.
+The full sum has variance $1536+1536=3072$ by independence, while its
+predictor $2P$ has variance $4\cdot312=1248$.
+Its unexplained fraction is therefore
+$1-1248/3072=19/32$, compared with $1-312/1536=51/64$ for each target.
+Since $19/32=38/64<51/64$, the inequality is strict.
+\end{proof}
+The mapped source additionally identifies the actual residual representatives
+\[
+ R_\pm=(G_0\pm G_1)^4-G_0^4-6G_0^2-3
+\]
+and their integral product $-312$. This agrees with the projection argument
+above; it is not a covariance assigned to formal abstract energy variables.
+See \code{GaussianQuarticResidualCovariance.residual_plus_coeFn},
+\code{residual_minus_coeFn}, \code{example_residual_integral},
+\code{example_sum_fraction} and \code{sum_fraction_below_individual}.
+
+The inference to avoid is an additive lower bound on a block's unexplained
+energy from its diagonal unexplained energies alone. The residuals are
+orthogonal to the observation space, but they are not thereby orthogonal
+to each other. Nor is their conditional covariance asserted negative at
+every observation value: the theorem concerns their actual integrated
+$L^2$ covariance. This is a concrete classical projection diagnostic, with
+no new law of Gaussian prediction or multi-target error bound claimed.
+
 \section{Formal scope and primary comparisons}
 \begingroup\raggedright
 The verified baseline is
@@ -349,7 +501,9 @@ identification is in \code{ContinuousFractionalPrediction}; the
 two-regime obstruction is \code{FractionalDualRegimePrediction}.
 The inverse-number application is \code{GaussianPotentialPredictionRank},
 with the actual operator in \code{GaussianInverseNumberPotential}.
-The quarter-Hurst witness is
+Raw quartic conditional energies and cross-target residuals are in
+\code{GaussianQuarticConditionalVariance} and
+\code{GaussianQuarticResidualCovariance}. The quarter-Hurst witness is
 \code{FractionalCurrentObservationObstruction}.
 Exact declarations, original hypotheses, source hashes and human proof
 reorganizations accompany the manuscript. The elementary noncompactness

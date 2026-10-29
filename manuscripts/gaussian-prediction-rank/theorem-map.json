@@ -304,20 +304,263 @@
       "source_sha256": "41da4a7cf16f957e2d8defe4c944ca2e94dfab416fb1b2ad50352b20f5c0f785",
       "declaration_header": "theorem strict_prediction_energy_gain : \u2016currentForecast\u2016^2<\u2016fullForecast\u2016^2",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalCurrentObservationObstruction.lean#L79"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticConditionalVariance.centeredQuartic_coeFn",
+      "file": "Foundation/GaussianQuarticConditionalVariance.lean",
+      "line": 18,
+      "source_sha256": "3e51ac588728f5b97a7c47328acb240074bd8cad7287b61cec1f77769742acc8",
+      "declaration_header": "theorem centeredQuartic_coeFn (u : CoefficientSpace) :\n    centeredQuartic u =\u1d50[gaussianProduct]\n      fun \u03c9 => (firstChaosEmbedding u \u03c9)^4-3*(\u2016u\u2016^2)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticConditionalVariance.lean#L18"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticConditionalVariance.centeredQuartic_norm_sq",
+      "file": "Foundation/GaussianQuarticConditionalVariance.lean",
+      "line": 42,
+      "source_sha256": "3e51ac588728f5b97a7c47328acb240074bd8cad7287b61cec1f77769742acc8",
+      "declaration_header": "theorem centeredQuartic_norm_sq (u : CoefficientSpace) :\n    \u2016centeredQuartic u\u2016^2=96*(\u2016u\u2016^2)^4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticConditionalVariance.lean#L42"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticConditionalVariance.prediction_wick",
+      "file": "Foundation/GaussianQuarticConditionalVariance.lean",
+      "line": 53,
+      "source_sha256": "3e51ac588728f5b97a7c47328acb240074bd8cad7287b61cec1f77769742acc8",
+      "declaration_header": "theorem prediction_wick {I : Type*} (h : I \u2192 CoefficientSpace) (u : CoefficientSpace) :\n    prediction h u=(wick (sourceProjection h u) 4 : GaussianL2)+\n      (6*\u2016u\u2016^2 : \u211d) \u2022 (wick (sourceProjection h u) 2 : GaussianL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticConditionalVariance.lean#L53"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticConditionalVariance.prediction_coeFn",
+      "file": "Foundation/GaussianQuarticConditionalVariance.lean",
+      "line": 63,
+      "source_sha256": "3e51ac588728f5b97a7c47328acb240074bd8cad7287b61cec1f77769742acc8",
+      "declaration_header": "theorem prediction_coeFn {I : Type*} (h : I \u2192 CoefficientSpace) (u : CoefficientSpace) :\n    prediction h u =\u1d50[gaussianProduct] fun \u03c9 =>\n      (firstChaosEmbedding (sourceProjection h u) \u03c9)^4+\n        6*(\u2016u\u2016^2-\u2016sourceProjection h u\u2016^2)*(firstChaosEmbedding (sourceProjection h u) \u03c9)^2+\n        3*(\u2016sourceProjection h u\u2016^2)^2-6*\u2016u\u2016^2*\u2016sourceProjection h u\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticConditionalVariance.lean#L63"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticConditionalVariance.prediction_norm_sq",
+      "file": "Foundation/GaussianQuarticConditionalVariance.lean",
+      "line": 93,
+      "source_sha256": "3e51ac588728f5b97a7c47328acb240074bd8cad7287b61cec1f77769742acc8",
+      "declaration_header": "theorem prediction_norm_sq {I : Type*} (h : I \u2192 CoefficientSpace) (u : CoefficientSpace) :\n    \u2016prediction h u\u2016^2=24*(\u2016sourceProjection h u\u2016^2)^4+\n      72*(\u2016u\u2016^2)^2*(\u2016sourceProjection h u\u2016^2)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticConditionalVariance.lean#L93"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticConditionalVariance.variance_fraction",
+      "file": "Foundation/GaussianQuarticConditionalVariance.lean",
+      "line": 105,
+      "source_sha256": "3e51ac588728f5b97a7c47328acb240074bd8cad7287b61cec1f77769742acc8",
+      "declaration_header": "theorem variance_fraction {I : Type*} (h : I \u2192 CoefficientSpace) (u : CoefficientSpace)\n    (hu : u \u2260 0) :\n    1-\u2016prediction h u\u2016^2/\u2016centeredQuartic u\u2016^2=\n      correctedFraction (1-\u2016sourceProjection h u\u2016^2/\u2016u\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticConditionalVariance.lean#L105"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticConditionalVariance.residual_energy",
+      "file": "Foundation/GaussianQuarticConditionalVariance.lean",
+      "line": 127,
+      "source_sha256": "3e51ac588728f5b97a7c47328acb240074bd8cad7287b61cec1f77769742acc8",
+      "declaration_header": "theorem residual_energy {I : Type*} (h : I \u2192 CoefficientSpace) (u : CoefficientSpace) :\n    \u2016centeredQuartic u-prediction h u\u2016^2=\n      96*(\u2016u\u2016^2)^4-24*(\u2016sourceProjection h u\u2016^2)^4-\n        72*(\u2016u\u2016^2)^2*(\u2016sourceProjection h u\u2016^2)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticConditionalVariance.lean#L127"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticConditionalVariance.example_full_variance",
+      "file": "Foundation/GaussianQuarticConditionalVariance.lean",
+      "line": 169,
+      "source_sha256": "3e51ac588728f5b97a7c47328acb240074bd8cad7287b61cec1f77769742acc8",
+      "declaration_header": "theorem example_full_variance : \u2016centeredQuartic total\u2016^2=1536",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticConditionalVariance.lean#L169"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticConditionalVariance.example_retained_variance",
+      "file": "Foundation/GaussianQuarticConditionalVariance.lean",
+      "line": 173,
+      "source_sha256": "3e51ac588728f5b97a7c47328acb240074bd8cad7287b61cec1f77769742acc8",
+      "declaration_header": "theorem example_retained_variance : \u2016prediction observed total\u2016^2=312",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticConditionalVariance.lean#L173"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticConditionalVariance.example_fraction",
+      "file": "Foundation/GaussianQuarticConditionalVariance.lean",
+      "line": 177,
+      "source_sha256": "3e51ac588728f5b97a7c47328acb240074bd8cad7287b61cec1f77769742acc8",
+      "declaration_header": "theorem example_fraction : 1-\u2016prediction observed total\u2016^2/\u2016centeredQuartic total\u2016^2=(51/64 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticConditionalVariance.lean#L177"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticConditionalVariance.example_conditional_expectation",
+      "file": "Foundation/GaussianQuarticConditionalVariance.lean",
+      "line": 220,
+      "source_sha256": "3e51ac588728f5b97a7c47328acb240074bd8cad7287b61cec1f77769742acc8",
+      "declaration_header": "theorem example_conditional_expectation :\n    gaussianProduct[(fun \u03c9 : SampleSpace => (\u03c9 0+\u03c9 1)^4-12) |\n      MeasurableSpace.comap (firstChaosFamily observed) inferInstance] =\u1d50[gaussianProduct]\n        fun \u03c9 : SampleSpace => (\u03c9 0)^4+6*(\u03c9 0)^2-9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticConditionalVariance.lean#L220"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticResidualCovariance.quartic_covariance",
+      "file": "Foundation/GaussianQuarticResidualCovariance.lean",
+      "line": 13,
+      "source_sha256": "45b8ea4bdd37bb77da8f4d8aaa9a2aab819c7d481e2dcaa9d5bbeeaff15a108d",
+      "declaration_header": "theorem quartic_covariance (u v : CoefficientSpace) :\n    inner \u211d (centeredQuartic u) (centeredQuartic v)=\n      72*\u2016u\u2016^2*\u2016v\u2016^2*(inner \u211d u v)^2+24*(inner \u211d u v)^4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticResidualCovariance.lean#L13"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticResidualCovariance.prediction_covariance",
+      "file": "Foundation/GaussianQuarticResidualCovariance.lean",
+      "line": 21,
+      "source_sha256": "45b8ea4bdd37bb77da8f4d8aaa9a2aab819c7d481e2dcaa9d5bbeeaff15a108d",
+      "declaration_header": "theorem prediction_covariance {I : Type*} (h : I \u2192 CoefficientSpace) (u v : CoefficientSpace) :\n    inner \u211d (prediction h u) (prediction h v)=\n      72*\u2016u\u2016^2*\u2016v\u2016^2*(inner \u211d (sourceProjection h u) (sourceProjection h v))^2+\n        24*(inner \u211d (sourceProjection h u) (sourceProjection h v))^4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticResidualCovariance.lean#L21"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticResidualCovariance.residual_prediction_orthogonal",
+      "file": "Foundation/GaussianQuarticResidualCovariance.lean",
+      "line": 39,
+      "source_sha256": "45b8ea4bdd37bb77da8f4d8aaa9a2aab819c7d481e2dcaa9d5bbeeaff15a108d",
+      "declaration_header": "theorem residual_prediction_orthogonal {I : Type*} (h : I \u2192 CoefficientSpace)\n    (u v : CoefficientSpace) : inner \u211d (residual h u) (prediction h v)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticResidualCovariance.lean#L39"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticResidualCovariance.residual_covariance",
+      "file": "Foundation/GaussianQuarticResidualCovariance.lean",
+      "line": 44,
+      "source_sha256": "45b8ea4bdd37bb77da8f4d8aaa9a2aab819c7d481e2dcaa9d5bbeeaff15a108d",
+      "declaration_header": "theorem residual_covariance {I : Type*} (h : I \u2192 CoefficientSpace) (u v : CoefficientSpace) :\n    inner \u211d (residual h u) (residual h v)=\n      inner \u211d (centeredQuartic u) (centeredQuartic v)-inner \u211d (prediction h u) (prediction h v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticResidualCovariance.lean#L44"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticResidualCovariance.total_reflected_inner",
+      "file": "Foundation/GaussianQuarticResidualCovariance.lean",
+      "line": 70,
+      "source_sha256": "45b8ea4bdd37bb77da8f4d8aaa9a2aab819c7d481e2dcaa9d5bbeeaff15a108d",
+      "declaration_header": "theorem total_reflected_inner : inner \u211d total reflected=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticResidualCovariance.lean#L70"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticResidualCovariance.reflected_projection",
+      "file": "Foundation/GaussianQuarticResidualCovariance.lean",
+      "line": 73,
+      "source_sha256": "45b8ea4bdd37bb77da8f4d8aaa9a2aab819c7d481e2dcaa9d5bbeeaff15a108d",
+      "declaration_header": "theorem reflected_projection : sourceProjection observed reflected=direction 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticResidualCovariance.lean#L73"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticResidualCovariance.example_full_covariance",
+      "file": "Foundation/GaussianQuarticResidualCovariance.lean",
+      "line": 84,
+      "source_sha256": "45b8ea4bdd37bb77da8f4d8aaa9a2aab819c7d481e2dcaa9d5bbeeaff15a108d",
+      "declaration_header": "theorem example_full_covariance : inner \u211d (centeredQuartic total) (centeredQuartic reflected)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticResidualCovariance.lean#L84"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticResidualCovariance.example_prediction_covariance",
+      "file": "Foundation/GaussianQuarticResidualCovariance.lean",
+      "line": 88,
+      "source_sha256": "45b8ea4bdd37bb77da8f4d8aaa9a2aab819c7d481e2dcaa9d5bbeeaff15a108d",
+      "declaration_header": "theorem example_prediction_covariance : inner \u211d (prediction observed total) (prediction observed reflected)=312",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticResidualCovariance.lean#L88"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticResidualCovariance.example_residual_covariance",
+      "file": "Foundation/GaussianQuarticResidualCovariance.lean",
+      "line": 92,
+      "source_sha256": "45b8ea4bdd37bb77da8f4d8aaa9a2aab819c7d481e2dcaa9d5bbeeaff15a108d",
+      "declaration_header": "theorem example_residual_covariance : inner \u211d (residual observed total) (residual observed reflected)= -312",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticResidualCovariance.lean#L92"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticResidualCovariance.example_residual_variances",
+      "file": "Foundation/GaussianQuarticResidualCovariance.lean",
+      "line": 104,
+      "source_sha256": "45b8ea4bdd37bb77da8f4d8aaa9a2aab819c7d481e2dcaa9d5bbeeaff15a108d",
+      "declaration_header": "theorem example_residual_variances :\n    \u2016residual observed total\u2016^2=1224 \u2227 \u2016residual observed reflected\u2016^2=1224",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticResidualCovariance.lean#L104"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticResidualCovariance.example_sum_full_variance",
+      "file": "Foundation/GaussianQuarticResidualCovariance.lean",
+      "line": 112,
+      "source_sha256": "45b8ea4bdd37bb77da8f4d8aaa9a2aab819c7d481e2dcaa9d5bbeeaff15a108d",
+      "declaration_header": "theorem example_sum_full_variance : \u2016centeredQuartic total+centeredQuartic reflected\u2016^2=3072",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticResidualCovariance.lean#L112"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticResidualCovariance.example_sum_prediction_variance",
+      "file": "Foundation/GaussianQuarticResidualCovariance.lean",
+      "line": 116,
+      "source_sha256": "45b8ea4bdd37bb77da8f4d8aaa9a2aab819c7d481e2dcaa9d5bbeeaff15a108d",
+      "declaration_header": "theorem example_sum_prediction_variance : \u2016prediction observed total+prediction observed reflected\u2016^2=1248",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticResidualCovariance.lean#L116"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticResidualCovariance.example_sum_residual_variance",
+      "file": "Foundation/GaussianQuarticResidualCovariance.lean",
+      "line": 121,
+      "source_sha256": "45b8ea4bdd37bb77da8f4d8aaa9a2aab819c7d481e2dcaa9d5bbeeaff15a108d",
+      "declaration_header": "theorem example_sum_residual_variance : \u2016residual observed total+residual observed reflected\u2016^2=1824",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticResidualCovariance.lean#L121"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticResidualCovariance.example_sum_fraction",
+      "file": "Foundation/GaussianQuarticResidualCovariance.lean",
+      "line": 136,
+      "source_sha256": "45b8ea4bdd37bb77da8f4d8aaa9a2aab819c7d481e2dcaa9d5bbeeaff15a108d",
+      "declaration_header": "theorem example_sum_fraction :\n    1-\u2016conditionalProjection observed (centeredQuartic total+centeredQuartic reflected)\u2016^2/\n      \u2016centeredQuartic total+centeredQuartic reflected\u2016^2=(19/32 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticResidualCovariance.lean#L136"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticResidualCovariance.sum_fraction_below_individual",
+      "file": "Foundation/GaussianQuarticResidualCovariance.lean",
+      "line": 142,
+      "source_sha256": "45b8ea4bdd37bb77da8f4d8aaa9a2aab819c7d481e2dcaa9d5bbeeaff15a108d",
+      "declaration_header": "theorem sum_fraction_below_individual :\n    1-\u2016conditionalProjection observed (centeredQuartic total+centeredQuartic reflected)\u2016^2/\n      \u2016centeredQuartic total+centeredQuartic reflected\u2016^2 <\n    1-\u2016prediction observed total\u2016^2/\u2016centeredQuartic total\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticResidualCovariance.lean#L142"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticResidualCovariance.reflected_prediction_eq",
+      "file": "Foundation/GaussianQuarticResidualCovariance.lean",
+      "line": 161,
+      "source_sha256": "45b8ea4bdd37bb77da8f4d8aaa9a2aab819c7d481e2dcaa9d5bbeeaff15a108d",
+      "declaration_header": "theorem reflected_prediction_eq : prediction observed reflected=prediction observed total",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticResidualCovariance.lean#L161"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticResidualCovariance.residual_plus_coeFn",
+      "file": "Foundation/GaussianQuarticResidualCovariance.lean",
+      "line": 164,
+      "source_sha256": "45b8ea4bdd37bb77da8f4d8aaa9a2aab819c7d481e2dcaa9d5bbeeaff15a108d",
+      "declaration_header": "theorem residual_plus_coeFn : residual observed total =\u1d50[gaussianProduct]\n    fun \u03c9 : SampleSpace => (\u03c9 0+\u03c9 1)^4-(\u03c9 0)^4-6*(\u03c9 0)^2-3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticResidualCovariance.lean#L164"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticResidualCovariance.residual_minus_coeFn",
+      "file": "Foundation/GaussianQuarticResidualCovariance.lean",
+      "line": 174,
+      "source_sha256": "45b8ea4bdd37bb77da8f4d8aaa9a2aab819c7d481e2dcaa9d5bbeeaff15a108d",
+      "declaration_header": "theorem residual_minus_coeFn : residual observed reflected =\u1d50[gaussianProduct]\n    fun \u03c9 : SampleSpace => (\u03c9 0-\u03c9 1)^4-(\u03c9 0)^4-6*(\u03c9 0)^2-3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticResidualCovariance.lean#L174"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuarticResidualCovariance.example_residual_integral",
+      "file": "Foundation/GaussianQuarticResidualCovariance.lean",
+      "line": 184,
+      "source_sha256": "45b8ea4bdd37bb77da8f4d8aaa9a2aab819c7d481e2dcaa9d5bbeeaff15a108d",
+      "declaration_header": "theorem example_residual_integral :\n    (\u222b \u03c9 : SampleSpace,\n      ((\u03c9 0+\u03c9 1)^4-(\u03c9 0)^4-6*(\u03c9 0)^2-3)*\n      ((\u03c9 0-\u03c9 1)^4-(\u03c9 0)^4-6*(\u03c9 0)^2-3) \u2202gaussianProduct)= -312",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuarticResidualCovariance.lean#L184"
     }
   ],
   "paper_sections": {
     "1-2": "full L2 terminal Hermite expansion and conditional Wick projection; rank energy and remainder",
     "3": "actual continuous fractional past and dual-regime lower obstruction",
     "4": "actual inverse-number potential, single-observation compactness, coefficient preservation",
-    "5": "quarter-Hurst full-past/current-value witness"
+    "5": "quarter-Hurst full-past/current-value witness",
+    "6": "raw quartic conditional energy, general residual covariance, actual independent target example with negative cross covariance",
+    "7": "formal scope and primary comparisons"
   },
   "human_reorganization": [
     "Hermite completeness is proved through an entire Gaussian Laplace transform and finite-measure Fourier uniqueness; the formal proof uses its already established Gaussian generated polynomial density and chaos decomposition.",
     "The conditional Wick formula is proved through Gaussian residual independence and the exponential generating function; the formal proof uses coefficient pairing recursions and generated-space density.",
     "Actual continuous-past identification is only at the L2/mod-null level. Raw sigma-algebras are not equated and no common exceptional set for uncountably many coordinates is assumed.",
     "Single-observation compactness is reconstructed by diagonal Hermite truncation. Full-source potential noncompactness is a classical consequence of exact identity on infinite first chaos, not an additional named formal theorem.",
-    "The fractional exponent is only used in an explicit lower bound and no-higher-power obstruction. Primary literature already supplies sharper covariance asymptotics; no new exponent or optimal lower constant is asserted."
+    "The fractional exponent is only used in an explicit lower bound and no-higher-power obstruction. Primary literature already supplies sharper covariance asymptotics; no new exponent or optimal lower constant is asserted.",
+    "The raw quartic second/fourth-chaos decomposition, full cross-covariance and actual two-coordinate example are reconstructed in complete human proofs. Independence of the two original linear Gaussian coordinates follows by factorizing their joint characteristic function; no independence of residuals is inferred. Integrated covariance is distinguished from pointwise conditional covariance."
   ],
   "literature": [
     {

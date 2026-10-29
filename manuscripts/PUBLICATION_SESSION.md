@@ -195,3 +195,7 @@ Ten-page classical companion, 86 exact declarations, six exact rational/log-prim
 ## Fourier-cone reality and Hermitian interaction
 
 Eight-page companion, 72 exact declaration correspondences, six exact finite-symbol checks. Complete real half-energy, actual Fourier integral and compact solenoidal bump/central-positivity/negative-square proofs. Every page inspected. Twenty-three reviewed drafts total 213 pages; no quantitative angle or unrestricted PDE claim.
+
+## Quartic multi-target prediction diagnostic
+
+The Gaussian prediction companion is expanded from six to eight pages with complete raw-quartic second/fourth-chaos prediction and actual negative residual cross-covariance proofs. 68 total exact source correspondences; thirteen exact two-Gaussian polynomial checks pass. Every revised page inspected, references resolved, original fractional/domain boundaries preserved. Twenty-three reviewed drafts total 215 pages.
