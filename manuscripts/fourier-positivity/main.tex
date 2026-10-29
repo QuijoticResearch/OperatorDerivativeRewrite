@@ -28,7 +28,10 @@ $L^2$ functions is proved explicitly. Coordinatewise power symbols
 have the sharp positivity condition that every positive-weight
 exponent is at most two; inactive coordinates impose no restriction.
 We also construct the unique actual torus probability laws, their convolution kernels and countable-step chains. A genuine Poisson mixture has the exact transformed symbol, a persistent no-jump atom and a short-parameter jump-covariance identity. We identify the exact closed generator domain and explain why
-semigroup existence alone supplies no positivity. A finite-time
+semigroup existence alone supplies no positivity. A bounded rank-two
+multiplier has an explicit nonnegative test sent outside the Haar cone
+at every positive time. Exact integrated Gamma dissipation and sharp
+all-level decay are also proved, including non-Markov power orders. A finite-time
 increment kernel remains positive at every time, yet an exact
 two-frequency quadratic-heat example shows that it need not increase
 in Loewner order. The main equivalence is classical Schoenberg
@@ -382,6 +385,130 @@ closed generator even when it fails positivity. Section
 \ref{sec:threshold} gives an explicit failure within this same
 construction. It cannot be repaired by calling the coefficient
 evolution a Markov operator before checking the physical cone.
+
+
+\section{A bounded contraction that fails positivity at every positive time}\label{sec:bounded-rate}
+A nonnegative, even, bounded rate can satisfy all elementary Hilbert
+contraction requirements and still fail the positivity criterion.
+Set $w=(1,1,1)\in\Z^3$ and define
+\[
+ \psi(k)=\begin{cases}1,&k=2w\text{ or }k=-2w,\\0,&\text{otherwise}.
+ \end{cases}
+\]
+Thus $0\leq\psi\leq1$, $\psi(-k)=\psi(k)$ and $\psi(0)=0$.
+Let $P$ be the Haar-$L^2$ orthogonal projection onto
+$\operatorname{span}\{e_{2w},e_{-2w}\}$. The actual multiplier is
+\begin{equation}\label{eq:boundedsemigroup}
+ S_t=I+(e^{-t}-1)P,\qquad A=-P,\qquad\Dom(A)=L^2.
+\end{equation}
+On $\operatorname{ran}P$ its multiplier is $e^{-t}$, and on
+$\ker P$ it is one. This proves the semigroup law, self-adjointness,
+contraction and preservation of constants. It also proves operator-norm
+continuity: $\|S_t-I\|=1-e^{-t}$ for $t\geq0$, and
+$(S_t-I)/t\to-P$ in operator norm. Hence the entire space is the
+closed generator domain; no unbounded-domain defect is responsible
+for the failure below. The nonnegative Hilbert energy is
+\[
+ -\langle Au,u\rangle=\|Pu\|_2^2\geq0.
+\]
+
+The two-frequency covariance test is explicit:
+\[
+ \bigl(K_\psi(k,l)\bigr)_{k,l\in\{w,2w\}}
+ =\begin{pmatrix}0&1/2\\1/2&1\end{pmatrix}.
+\]
+Indeed $\psi(w)=0$, $\psi(2w)=1$ and $\psi(2w-w)=0$.
+For $f=e_w-\tfrac12e_{2w}$, equation~\eqref{eq:gammaenergy} gives
+\begin{equation}\label{eq:boundedgamma}
+ \Gamma_1(f,f)(0)=-\tfrac14.
+\end{equation}
+So the rate is neither conditionally negative nor an anchored
+covariance symbol, despite boundedness, symmetry and nonnegativity.
+
+There is a direct physical cone witness at \emph{every} $t>0$.
+Write $\theta=2\pi w\cdot x$ and take
+\[
+ h(x)=(1-\cos\theta)^2
+ =\tfrac32-2\cos\theta+\tfrac12\cos(2\theta)\geq0.
+\]
+Only its final harmonic is damped by \eqref{eq:boundedsemigroup};
+therefore
+\[
+ (S_th)(0)=\tfrac12(e^{-t}-1)<0\qquad(t>0).
+\]
+This is a finite Fourier polynomial, so its image is continuous and
+strict negativity at the origin persists on an open neighborhood.
+Every such neighborhood has positive Haar measure: it contains a
+small coordinate box in a torus chart, whose product Lebesgue measure
+is positive. Thus the witness violates the actual almost-everywhere
+Haar-$L^2$ cone, not just a choice of pointwise representative.
+
+The bounded rate and the value \eqref{eq:boundedgamma} are mapped
+in \code{BoundedRateGammaObstruction}. The whole-space projection
+formula and the all-positive-time nonnegative test $h$ are explicit
+human deductions from that rate and the already established physical
+multiplier. No separate named formal theorem for $h$ is claimed.
+This is a concrete instance of the classical positivity equivalence,
+not a new general obstruction principle.
+
+\section{Integrated Gamma energy can decay without pointwise positivity}
+The distinction also survives exact integrated energy identities.
+Fix $\gamma>0$, distinct integers $n_1,\ldots,n_N$ and complex
+coefficients $c_j$. On the first coordinate circle use
+\[
+ \psi_\gamma(k)=|k_1|^\gamma,\qquad
+ f(x)=\sum_{j=1}^N c_j e_{n_j e_1}(x),\qquad
+ E_q(f)=\int_{\T}\Gamma_q(f,f)(x_1,0,0)\,dx_1.
+\]
+Here $q$ is a nonnegative integer. The zeroth iterate is $|f|^2$.
+The integral is real, and orthogonality of distinct circle characters
+in \eqref{eq:gammaenergy} gives the exact formula
+\begin{equation}\label{eq:integratedgamma}
+ E_q(f)=\sum_j |n_j|^{\gamma q}|c_j|^2\geq0,
+\end{equation}
+where the weight is interpreted as one when $q=0$, including
+$n_j=0$. For $q\geq1$, the zero frequency has zero weight.
+Indeed the integral eliminates every off-diagonal term and
+$K_{\psi_\gamma}(n e_1,n e_1)=|n|^\gamma$.
+This computation needs neither conditional negativity nor positivity
+of the pointwise Gamma kernel.
+
+Let $f_t=\sum_j e^{-t|n_j|^\gamma}c_j e_{n_j e_1}$. Then
+\begin{align}\label{eq:energydecay}
+ E_q(f_t)&=\sum_j |n_j|^{\gamma q}
+                 e^{-2t|n_j|^\gamma}|c_j|^2,\\
+ \frac{d}{dt}E_q(f_t)&=-2E_{q+1}(f_t).\nonumber
+\end{align}
+The derivative follows by differentiating a finite sum, so no closure
+or infinite-series interchange has been used. If all frequencies
+are nonzero, then $|n_j|^\gamma\geq1$ and
+\begin{equation}\label{eq:integratedsharpdecay}
+ E_q(f_t)\leq e^{-2t}E_q(f)\qquad(q\geq0,\ t\geq0).
+\end{equation}
+The single unit frequency attains equality for every $q$ and $t$,
+so the coefficient two in the exponent is sharp at every energy
+level. For $q\geq1$ a zero mode is harmless; for $q=0$ it must be
+removed to obtain this decay for nonzero constants. Equivalently,
+one can apply the zeroth-level estimate to the mean-zero part.
+
+These identities hold for every positive $\gamma$, even
+$\gamma>2$, when the pointwise positivity criterion fails by
+Section~\ref{sec:threshold}. Thus nonnegative circle-integrated
+energies, exact dissipation and sharp spectral decay do not prove
+pointwise Gamma positivity, Markov positivity or a probability law.
+For $0<\gamma\leq2$, the positive-law results below apply in
+addition; for larger orders only the stated multiplier and finite
+energy assertions are made. No completed pointwise Gamma domain is
+inferred in either case.
+
+The formal module \code{StableGammaEnergyDecay} records the actual
+circle average, diagonal energy, finite semigroup, derivative and
+sharp unit-frequency witness. Its nonzero-frequency decay statement
+retains the nonzero-frequency hypothesis even at positive levels;
+the harmless-zero-mode variant just proved is a labelled elementary
+human extension of the same finite sum. These are classical Fourier
+orthogonality and multiplier calculations. They supplement the
+positivity equivalence rather than supply a new curvature theorem.
 
 \section{From finite squares to the full Haar cone}
 First calculate on a finite polynomial $f=\sum_i c_i e_{k_i}$:
@@ -975,6 +1102,7 @@ unsmoothed pointwise Gamma domain. Gamma remains on the finite Fourier
 algebra. No continuous-time path regularity, positive curvature
 constant or physical gauge-field mass gap is established.
 
+\clearpage
 \begin{thebibliography}{9}
 \bibitem{varadhan} S. R. S. Varadhan,
 \emph{Poisson Processes}, Spring 2006 lecture notes, Sections 1.2 and 2.2.

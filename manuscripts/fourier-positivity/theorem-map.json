@@ -738,6 +738,213 @@
       "source_sha256": "57cc7ae5646b491098884fd369c9c1e182a51caaffc2ffac414745975346b560",
       "declaration_header": "theorem compoundChainLaw_incrementPair_hasDerivWithinAt_zero\n    (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d))) (hr0 : r 0 = 0)\n    (\u03b4 : \u211d\u22650) (k l : Wave) :\n    HasDerivWithinAt (fun t : \u211d =>\n      (\u222b path, (UnitAddTorus.mFourier (-k) (path 1) - 1) *\n        (UnitAddTorus.mFourier l (path 1) - 1)\n        \u2202compoundChainLaw r hr hr0 \u03b4 (Real.toNNReal t) 0).re)\n      (\u222b z, (UnitAddTorus.mFourier (-l) z - 1) *\n        (UnitAddTorus.mFourier k z - 1)\n        \u2202heatKernel r hr hr0 \u03b4 (0 : UnitAddTorus (Fin 3))).re\n      (Set.Ici 0) 0",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatCompoundPoissonChainGamma.lean#L82"
+    },
+    {
+      "paper": "Sections 7\u20138 bounded Hilbert contraction versus physical positivity, and integrated finite Gamma dissipation at every positive power order",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundedRateGammaObstruction.rate_nonnegative",
+      "file": "Foundation/BoundedRateGammaObstruction.lean",
+      "line": 24,
+      "source_sha256": "8aacbade880e5478ab2144e577d03e43aa345d175aaab845cafdae44b2aeb02c",
+      "declaration_header": "theorem rate_nonnegative (k : Wave) : 0 \u2264 rate k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundedRateGammaObstruction.lean#L24"
+    },
+    {
+      "paper": "Sections 7\u20138 bounded Hilbert contraction versus physical positivity, and integrated finite Gamma dissipation at every positive power order",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundedRateGammaObstruction.rate_le_one",
+      "file": "Foundation/BoundedRateGammaObstruction.lean",
+      "line": 28,
+      "source_sha256": "8aacbade880e5478ab2144e577d03e43aa345d175aaab845cafdae44b2aeb02c",
+      "declaration_header": "theorem rate_le_one (k : Wave) : rate k \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundedRateGammaObstruction.lean#L28"
+    },
+    {
+      "paper": "Sections 7\u20138 bounded Hilbert contraction versus physical positivity, and integrated finite Gamma dissipation at every positive power order",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundedRateGammaObstruction.rate_even",
+      "file": "Foundation/BoundedRateGammaObstruction.lean",
+      "line": 32,
+      "source_sha256": "8aacbade880e5478ab2144e577d03e43aa345d175aaab845cafdae44b2aeb02c",
+      "declaration_header": "theorem rate_even (k : Wave) : rate (-k) = rate k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundedRateGammaObstruction.lean#L32"
+    },
+    {
+      "paper": "Sections 7\u20138 bounded Hilbert contraction versus physical positivity, and integrated finite Gamma dissipation at every positive power order",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundedRateGammaObstruction.rate_one",
+      "file": "Foundation/BoundedRateGammaObstruction.lean",
+      "line": 60,
+      "source_sha256": "8aacbade880e5478ab2144e577d03e43aa345d175aaab845cafdae44b2aeb02c",
+      "declaration_header": "theorem rate_one : rate waveOne = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundedRateGammaObstruction.lean#L60"
+    },
+    {
+      "paper": "Sections 7\u20138 bounded Hilbert contraction versus physical positivity, and integrated finite Gamma dissipation at every positive power order",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundedRateGammaObstruction.rate_two",
+      "file": "Foundation/BoundedRateGammaObstruction.lean",
+      "line": 63,
+      "source_sha256": "8aacbade880e5478ab2144e577d03e43aa345d175aaab845cafdae44b2aeb02c",
+      "declaration_header": "theorem rate_two : rate waveTwo = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundedRateGammaObstruction.lean#L63"
+    },
+    {
+      "paper": "Sections 7\u20138 bounded Hilbert contraction versus physical positivity, and integrated finite Gamma dissipation at every positive power order",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundedRateGammaObstruction.rate_zero",
+      "file": "Foundation/BoundedRateGammaObstruction.lean",
+      "line": 65,
+      "source_sha256": "8aacbade880e5478ab2144e577d03e43aa345d175aaab845cafdae44b2aeb02c",
+      "declaration_header": "theorem rate_zero : rate 0 = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundedRateGammaObstruction.lean#L65"
+    },
+    {
+      "paper": "Sections 7\u20138 bounded Hilbert contraction versus physical positivity, and integrated finite Gamma dissipation at every positive power order",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundedRateGammaObstruction.gamma_negative",
+      "file": "Foundation/BoundedRateGammaObstruction.lean",
+      "line": 87,
+      "source_sha256": "8aacbade880e5478ab2144e577d03e43aa345d175aaab845cafdae44b2aeb02c",
+      "declaration_header": "theorem gamma_negative :\n    (synthesis (0 : Space) (gammaIter rate 1 witness witness)).re = -1/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundedRateGammaObstruction.lean#L87"
+    },
+    {
+      "paper": "Sections 7\u20138 bounded Hilbert contraction versus physical positivity, and integrated finite Gamma dissipation at every positive power order",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundedRateGammaObstruction.not_gamma_positive",
+      "file": "Foundation/BoundedRateGammaObstruction.lean",
+      "line": 94,
+      "source_sha256": "8aacbade880e5478ab2144e577d03e43aa345d175aaab845cafdae44b2aeb02c",
+      "declaration_header": "theorem not_gamma_positive :\n    \u00ac \u2200 f : Fourier, 0 \u2264 (synthesis (0 : Space) (gammaIter rate 1 f f)).re",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundedRateGammaObstruction.lean#L94"
+    },
+    {
+      "paper": "Sections 7\u20138 bounded Hilbert contraction versus physical positivity, and integrated finite Gamma dissipation at every positive power order",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundedRateGammaObstruction.not_negative_symbol",
+      "file": "Foundation/BoundedRateGammaObstruction.lean",
+      "line": 101,
+      "source_sha256": "8aacbade880e5478ab2144e577d03e43aa345d175aaab845cafdae44b2aeb02c",
+      "declaration_header": "theorem not_negative_symbol :\n    \u00ac FourierCovarianceCriterion.NegativeSymbol rate",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundedRateGammaObstruction.lean#L101"
+    },
+    {
+      "paper": "Sections 7\u20138 bounded Hilbert contraction versus physical positivity, and integrated finite Gamma dissipation at every positive power order",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundedRateGammaObstruction.not_covariance_symbol",
+      "file": "Foundation/BoundedRateGammaObstruction.lean",
+      "line": 107,
+      "source_sha256": "8aacbade880e5478ab2144e577d03e43aa345d175aaab845cafdae44b2aeb02c",
+      "declaration_header": "theorem not_covariance_symbol :\n    \u00ac FourierCovarianceCriterion.CovarianceSymbol rate",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundedRateGammaObstruction.lean#L107"
+    },
+    {
+      "paper": "Sections 7\u20138 bounded Hilbert contraction versus physical positivity, and integrated finite Gamma dissipation at every positive power order",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundedRateGammaObstruction.physical_witness_slope",
+      "file": "Foundation/BoundedRateGammaObstruction.lean",
+      "line": 113,
+      "source_sha256": "8aacbade880e5478ab2144e577d03e43aa345d175aaab845cafdae44b2aeb02c",
+      "declaration_header": "theorem physical_witness_slope :\n    Tendsto (PhysicalTorusWaveSemigroup.slope nnRate\n      (WaveTorusCoreBridge.lift witness)) (\ud835\udcdd[>] 0)\n      (\ud835\udcdd (WaveTorusCoreBridge.lift (generator rate witness)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundedRateGammaObstruction.lean#L113"
+    },
+    {
+      "paper": "Sections 7\u20138 bounded Hilbert contraction versus physical positivity, and integrated finite Gamma dissipation at every positive power order",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundedRateGammaObstruction.physical_contraction",
+      "file": "Foundation/BoundedRateGammaObstruction.lean",
+      "line": 123,
+      "source_sha256": "8aacbade880e5478ab2144e577d03e43aa345d175aaab845cafdae44b2aeb02c",
+      "declaration_header": "theorem physical_contraction (t : \u211d\u22650) :\n    \u2016PhysicalTorusWaveSemigroup.evolution nnRate t\n      (WaveTorusCoreBridge.lift witness)\u2016 \u2264\n      \u2016WaveTorusCoreBridge.lift witness\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundedRateGammaObstruction.lean#L123"
+    },
+    {
+      "paper": "Sections 7\u20138 bounded Hilbert contraction versus physical positivity, and integrated finite Gamma dissipation at every positive power order",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BoundedRateGammaObstruction.physical_stationary_zero",
+      "file": "Foundation/BoundedRateGammaObstruction.lean",
+      "line": 129,
+      "source_sha256": "8aacbade880e5478ab2144e577d03e43aa345d175aaab845cafdae44b2aeb02c",
+      "declaration_header": "theorem physical_stationary_zero (t : \u211d\u22650) :\n    PhysicalTorusWaveSemigroup.evolution nnRate t\n      (PhysicalTorusWaveSemigroup.basis 0) =\n        PhysicalTorusWaveSemigroup.basis 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BoundedRateGammaObstruction.lean#L129"
+    },
+    {
+      "paper": "Sections 7\u20138 bounded Hilbert contraction versus physical positivity, and integrated finite Gamma dissipation at every positive power order",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableGammaEnergyDecay.circle_gamma_diagonal",
+      "file": "Foundation/StableGammaEnergyDecay.lean",
+      "line": 15,
+      "source_sha256": "523d21f99776665816788e4573148473d224fe84854ec01e006c771048eaff9c",
+      "declaration_header": "theorem circle_gamma_diagonal {N : \u2115} (\u03b3 : \u211d) (h\u03b3 : 0 < \u03b3)\n    (n : Fin N \u2192 \u2124) (hn : Function.Injective n) (c : Fin N \u2192 \u2102) (q : \u2115) (x : Space) :\n    circleAverage 0 (fun y => synthesis y\n      (gammaIter (stableSymbol \u03b3) q (axisPolynomial n c) (axisPolynomial n c))) x =\n      \u2211 i, ((|(n i : \u211d)|^\u03b3 : \u211d) : \u2102)^q * conj (c i) * c i",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableGammaEnergyDecay.lean#L15"
+    },
+    {
+      "paper": "Sections 7\u20138 bounded Hilbert contraction versus physical positivity, and integrated finite Gamma dissipation at every positive power order",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableGammaEnergyDecay.energy_diagonal",
+      "file": "Foundation/StableGammaEnergyDecay.lean",
+      "line": 30,
+      "source_sha256": "523d21f99776665816788e4573148473d224fe84854ec01e006c771048eaff9c",
+      "declaration_header": "theorem energy_diagonal {N : \u2115} (\u03b3 : \u211d) (h\u03b3 : 0 < \u03b3)\n    (n : Fin N \u2192 \u2124) (hn : Function.Injective n) (q : \u2115) (c : Fin N \u2192 \u2102) :\n    energy \u03b3 n q c = \u2211 i, (|(n i : \u211d)|^\u03b3)^q * \u2016c i\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableGammaEnergyDecay.lean#L30"
+    },
+    {
+      "paper": "Sections 7\u20138 bounded Hilbert contraction versus physical positivity, and integrated finite Gamma dissipation at every positive power order",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableGammaEnergyDecay.energy_at",
+      "file": "Foundation/StableGammaEnergyDecay.lean",
+      "line": 43,
+      "source_sha256": "523d21f99776665816788e4573148473d224fe84854ec01e006c771048eaff9c",
+      "declaration_header": "theorem energy_at {N : \u2115} (\u03b3 : \u211d) (h\u03b3 : 0 < \u03b3)\n    (n : Fin N \u2192 \u2124) (hn : Function.Injective n) (q : \u2115) (t : \u211d) (c : Fin N \u2192 \u2102) :\n    energy \u03b3 n q (coefficientsAt \u03b3 n t c) =\n      \u2211 i, (|(n i : \u211d)|^\u03b3)^q * Real.exp (-2*|(n i : \u211d)|^\u03b3*t) * \u2016c i\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableGammaEnergyDecay.lean#L43"
+    },
+    {
+      "paper": "Sections 7\u20138 bounded Hilbert contraction versus physical positivity, and integrated finite Gamma dissipation at every positive power order",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableGammaEnergyDecay.coefficientsAt_add",
+      "file": "Foundation/StableGammaEnergyDecay.lean",
+      "line": 55,
+      "source_sha256": "523d21f99776665816788e4573148473d224fe84854ec01e006c771048eaff9c",
+      "declaration_header": "theorem coefficientsAt_add {N : \u2115} (\u03b3 : \u211d) (n : Fin N \u2192 \u2124)\n    (s t : \u211d) (c : Fin N \u2192 \u2102) :\n    coefficientsAt \u03b3 n (s+t) c = coefficientsAt \u03b3 n s (coefficientsAt \u03b3 n t c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableGammaEnergyDecay.lean#L55"
+    },
+    {
+      "paper": "Sections 7\u20138 bounded Hilbert contraction versus physical positivity, and integrated finite Gamma dissipation at every positive power order",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableGammaEnergyDecay.coefficientsAt_zero",
+      "file": "Foundation/StableGammaEnergyDecay.lean",
+      "line": 62,
+      "source_sha256": "523d21f99776665816788e4573148473d224fe84854ec01e006c771048eaff9c",
+      "declaration_header": "theorem coefficientsAt_zero {N : \u2115} (\u03b3 : \u211d) (n : Fin N \u2192 \u2124) (c : Fin N \u2192 \u2102) :\n    coefficientsAt \u03b3 n 0 c = c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableGammaEnergyDecay.lean#L62"
+    },
+    {
+      "paper": "Sections 7\u20138 bounded Hilbert contraction versus physical positivity, and integrated finite Gamma dissipation at every positive power order",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableGammaEnergyDecay.nonzero_frequency_gap",
+      "file": "Foundation/StableGammaEnergyDecay.lean",
+      "line": 67,
+      "source_sha256": "523d21f99776665816788e4573148473d224fe84854ec01e006c771048eaff9c",
+      "declaration_header": "theorem nonzero_frequency_gap (\u03b3 : \u211d) (h\u03b3 : 0 \u2264 \u03b3) (m : \u2124) (hm : m \u2260 0) :\n    1 \u2264 |(m : \u211d)|^\u03b3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableGammaEnergyDecay.lean#L67"
+    },
+    {
+      "paper": "Sections 7\u20138 bounded Hilbert contraction versus physical positivity, and integrated finite Gamma dissipation at every positive power order",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableGammaEnergyDecay.energy_decay_all_orders",
+      "file": "Foundation/StableGammaEnergyDecay.lean",
+      "line": 76,
+      "source_sha256": "523d21f99776665816788e4573148473d224fe84854ec01e006c771048eaff9c",
+      "declaration_header": "theorem energy_decay_all_orders {N : \u2115} (\u03b3 : \u211d) (h\u03b3 : 0 < \u03b3)\n    (n : Fin N \u2192 \u2124) (hn : Function.Injective n) (hz : \u2200 i, n i \u2260 0)\n    (q : \u2115) (t : \u211d) (ht : 0 \u2264 t) (c : Fin N \u2192 \u2102) :\n    energy \u03b3 n q (coefficientsAt \u03b3 n t c) \u2264 Real.exp (-2*t) * energy \u03b3 n q c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableGammaEnergyDecay.lean#L76"
+    },
+    {
+      "paper": "Sections 7\u20138 bounded Hilbert contraction versus physical positivity, and integrated finite Gamma dissipation at every positive power order",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableGammaEnergyDecay.energy_dissipation",
+      "file": "Foundation/StableGammaEnergyDecay.lean",
+      "line": 90,
+      "source_sha256": "523d21f99776665816788e4573148473d224fe84854ec01e006c771048eaff9c",
+      "declaration_header": "theorem energy_dissipation {N : \u2115} (\u03b3 : \u211d) (h\u03b3 : 0 < \u03b3)\n    (n : Fin N \u2192 \u2124) (hn : Function.Injective n) (q : \u2115) (c : Fin N \u2192 \u2102) (t : \u211d) :\n    HasDerivAt (fun s => energy \u03b3 n q (coefficientsAt \u03b3 n s c))\n      (-2 * energy \u03b3 n (q+1) (coefficientsAt \u03b3 n t c)) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableGammaEnergyDecay.lean#L90"
+    },
+    {
+      "paper": "Sections 7\u20138 bounded Hilbert contraction versus physical positivity, and integrated finite Gamma dissipation at every positive power order",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableGammaEnergyDecay.first_frequency_exact",
+      "file": "Foundation/StableGammaEnergyDecay.lean",
+      "line": 110,
+      "source_sha256": "523d21f99776665816788e4573148473d224fe84854ec01e006c771048eaff9c",
+      "declaration_header": "theorem first_frequency_exact (\u03b3 : \u211d) (h\u03b3 : 0 < \u03b3) (q : \u2115) (t : \u211d) :\n    energy \u03b3 (fun _ : Fin 1 => (1 : \u2124)) q\n      (coefficientsAt \u03b3 (fun _ => 1) t (fun _ => 1)) = Real.exp (-2*t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableGammaEnergyDecay.lean#L110"
+    },
+    {
+      "paper": "Sections 7\u20138 bounded Hilbert contraction versus physical positivity, and integrated finite Gamma dissipation at every positive power order",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StableGammaEnergyDecay.generator_axis",
+      "file": "Foundation/StableGammaEnergyDecay.lean",
+      "line": 116,
+      "source_sha256": "523d21f99776665816788e4573148473d224fe84854ec01e006c771048eaff9c",
+      "declaration_header": "theorem generator_axis {N : \u2115} (\u03b3 : \u211d) (n : Fin N \u2192 \u2124) (c : Fin N \u2192 \u2102) :\n    generator (stableSymbol \u03b3) (axisPolynomial n c) =\n      axisPolynomial n (fun i => -((|(n i : \u211d)|^\u03b3 : \u211d) : \u2102)*c i)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StableGammaEnergyDecay.lean#L116"
     }
   ],
   "classical_deductions_proved_in_paper": [
@@ -751,5 +958,9 @@
     "Haar nullity of a singleton is proved by translation invariance and arbitrarily many disjoint translated points, explicitly discharging the conditional source atom theorem.",
     "The bounded Poisson-parameter generator P_delta-I on C or L2 is proved by an operator-norm exponential series. It is a classical deduction rather than a new named Lean generator declaration.",
     "The Poisson one-step increment derivative is an uncentered Gram second moment of one original heat jump; finite-parameter centered covariance differs by the mean product."
+  ],
+  "human_reorganization": [
+    "Section 7 reconstructs the normalized bounded even rate supported only at plus/minus 2w and its formal Gamma witness -1/4. The whole-domain finite-rank generator, operator-norm continuity, positive Hilbert energy and nonnegative polynomial (1-cos(theta))^2 sent to (exp(-t)-1)/2 at the origin for every positive time are explicit human consequences of the mapped rate and existing physical multiplier. Open negative neighborhoods have positive Haar measure, so failure concerns the actual L2 cone.",
+    "Section 8 proves exact finite-circle integrated Gamma energies and their dissipation at every positive power order, including non-Markov orders above two. Distinct nonzero frequencies give sharp exp(-2t) decay at every energy level. The positive-level harmless-zero-mode refinement is a labelled human finite-sum consequence, not a stronger named formal theorem. No closed pointwise Gamma domain, probability process or curvature assertion follows from integrated positivity."
   ]
 }
