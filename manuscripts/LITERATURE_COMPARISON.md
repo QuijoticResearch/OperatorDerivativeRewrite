@@ -61,3 +61,7 @@ The primary [Lancaster 1954 publisher record](https://doi.org/10.1111/j.2517-616
 ## Hidden-clock hybrid reconstruction
 
 The primary [Ocone 1984 institutional record and abstract](https://www.researchwithrutgers.org/en/publications/malliavins-calculus-and-stochastic-integral-representations-of-fu/) describe the extension of Clark representation to weakly H-differentiable functionals. Full-text hypothesis comparison remains incomplete. The ten-page IBM hybrid companion claims no new Clark–Ocone mechanism or inverse-number recovery. It isolates the exact original cusp/mean domains and hidden-clock/static-source versus observed-filtration distinction; no IBM priority is certified.
+
+## Conditional boundary entropy and loop replacement
+
+[Raginsky, primary author PDF, Definition 1](https://maxim.ece.illinois.edu/pubs/raginsky_ISIT13.pdf) formulates strict data processing through a subunit relative-entropy ratio. [Caputo–Menz–Tetali, primary journal PDF, Section 1.1 and Proposition 1.1](https://www.numdam.org/item/AFST_2015_6_24_4_691_0.pdf) describe all-coordinate heat-bath updates and the role of approximate tensorization. The new companion credits these classical mechanisms, proves the specific continuous-boundary reference-law counterexample, and keeps it distinct from its positive fixed-coupling state-replacement comparison. No priority or all-coordinate mixing obstruction is claimed.

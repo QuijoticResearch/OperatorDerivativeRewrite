@@ -1,0 +1,701 @@
+{
+  "baseline": "bab688bb6140cd6316c80680095a914ea0d346db",
+  "entries": [
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ConditionalResamplingKernel.update_markov",
+      "file": "Foundation/ConditionalResamplingKernel.lean",
+      "line": 16,
+      "source_sha256": "3f85968cdc875f4512d2548aa38f0bf7205b248ffabd092d3fc28bffbd8bf58e",
+      "declaration_header": "theorem update_markov : IsMarkovKernel (update K)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ConditionalResamplingKernel.lean#L16"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ConditionalResamplingKernel.update_law",
+      "file": "Foundation/ConditionalResamplingKernel.lean",
+      "line": 30,
+      "source_sha256": "3f85968cdc875f4512d2548aa38f0bf7205b248ffabd092d3fc28bffbd8bf58e",
+      "declaration_header": "theorem update_law (J : Measure (P \u00d7 E)) [SFinite J] :\n    update K \u2218\u2098 J = J.fst \u2297\u2098 K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ConditionalResamplingKernel.lean#L30"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ConditionalResamplingKernel.boundary_preserved",
+      "file": "Foundation/ConditionalResamplingKernel.lean",
+      "line": 40,
+      "source_sha256": "3f85968cdc875f4512d2548aa38f0bf7205b248ffabd092d3fc28bffbd8bf58e",
+      "declaration_header": "theorem boundary_preserved (J : Measure (P \u00d7 E)) [SFinite J] :\n    (update K \u2218\u2098 J).fst = J.fst",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ConditionalResamplingKernel.lean#L40"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ConditionalResamplingKernel.update_idempotent",
+      "file": "Foundation/ConditionalResamplingKernel.lean",
+      "line": 24,
+      "source_sha256": "3f85968cdc875f4512d2548aa38f0bf7205b248ffabd092d3fc28bffbd8bf58e",
+      "declaration_header": "theorem update_idempotent : update K \u2218\u2096 update K = update K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ConditionalResamplingKernel.lean#L24"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ConditionalResamplingKernel.every_boundary_stationary",
+      "file": "Foundation/ConditionalResamplingKernel.lean",
+      "line": 49,
+      "source_sha256": "3f85968cdc875f4512d2548aa38f0bf7205b248ffabd092d3fc28bffbd8bf58e",
+      "declaration_header": "theorem every_boundary_stationary (\u03c0 : Measure P) [SFinite \u03c0] :\n    update K \u2218\u2098 (\u03c0 \u2297\u2098 K) = \u03c0 \u2297\u2098 K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ConditionalResamplingKernel.lean#L49"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ConditionalResamplingKernel.invariant_iff_conditional",
+      "file": "Foundation/ConditionalResamplingKernel.lean",
+      "line": 44,
+      "source_sha256": "3f85968cdc875f4512d2548aa38f0bf7205b248ffabd092d3fc28bffbd8bf58e",
+      "declaration_header": "theorem invariant_iff_conditional (J : Measure (P \u00d7 E)) [SFinite J] :\n    update K \u2218\u2098 J = J \u2194 J.IsCondKernel K",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ConditionalResamplingKernel.lean#L44"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ConditionalResamplingKernel.boundary_identifies_joint",
+      "file": "Foundation/ConditionalResamplingKernel.lean",
+      "line": 53,
+      "source_sha256": "3f85968cdc875f4512d2548aa38f0bf7205b248ffabd092d3fc28bffbd8bf58e",
+      "declaration_header": "theorem boundary_identifies_joint (\u03c0 \u03c4 : Measure P) [SFinite \u03c0] [SFinite \u03c4]\n    (h : \u03c0 \u2297\u2098 K = \u03c4 \u2297\u2098 K) : \u03c0 = \u03c4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ConditionalResamplingKernel.lean#L53"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ConditionalResamplingEntropy.entropy_after_update",
+      "file": "Foundation/ConditionalResamplingEntropy.lean",
+      "line": 17,
+      "source_sha256": "102b2785a04b343dee4ab8ef8fe4d0c7a9500c95a7b315750c9f35d7ec646c8c",
+      "declaration_header": "theorem entropy_after_update (J : Measure (P \u00d7 E)) [IsFiniteMeasure J]\n    (\u03c4 : Measure P) [IsFiniteMeasure \u03c4] :\n    klDiv (update K \u2218\u2098 J) (\u03c4 \u2297\u2098 K) = klDiv J.fst \u03c4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ConditionalResamplingEntropy.lean#L17"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ConditionalResamplingEntropy.entropy_decomposition",
+      "file": "Foundation/ConditionalResamplingEntropy.lean",
+      "line": 22,
+      "source_sha256": "102b2785a04b343dee4ab8ef8fe4d0c7a9500c95a7b315750c9f35d7ec646c8c",
+      "declaration_header": "theorem entropy_decomposition (\u03c0 \u03c4 : Measure P) [IsFiniteMeasure \u03c0] [IsFiniteMeasure \u03c4]\n    (L : Kernel P E) [IsMarkovKernel L] :\n    klDiv (\u03c0 \u2297\u2098 L) (\u03c4 \u2297\u2098 K) =\n      klDiv (update K \u2218\u2098 (\u03c0 \u2297\u2098 L)) (\u03c4 \u2297\u2098 K) +\n      klDiv (\u03c0 \u2297\u2098 L) (\u03c0 \u2297\u2098 K)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ConditionalResamplingEntropy.lean#L22"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ConditionalResamplingEntropy.entropy_decomposition_of_conditional",
+      "file": "Foundation/ConditionalResamplingEntropy.lean",
+      "line": 30,
+      "source_sha256": "102b2785a04b343dee4ab8ef8fe4d0c7a9500c95a7b315750c9f35d7ec646c8c",
+      "declaration_header": "theorem entropy_decomposition_of_conditional (J : Measure (P \u00d7 E)) [IsFiniteMeasure J]\n    (\u03c4 : Measure P) [IsFiniteMeasure \u03c4]\n    (L : Kernel P E) [IsMarkovKernel L] [J.IsCondKernel L] :\n    klDiv J (\u03c4 \u2297\u2098 K) = klDiv (update K \u2218\u2098 J) (\u03c4 \u2297\u2098 K) +\n      klDiv J (J.fst \u2297\u2098 K)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ConditionalResamplingEntropy.lean#L30"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ConditionalResamplingEntropy.stationary_entropy",
+      "file": "Foundation/ConditionalResamplingEntropy.lean",
+      "line": 38,
+      "source_sha256": "102b2785a04b343dee4ab8ef8fe4d0c7a9500c95a7b315750c9f35d7ec646c8c",
+      "declaration_header": "theorem stationary_entropy (\u03c0 \u03c4 : Measure P) [IsFiniteMeasure \u03c0] [IsFiniteMeasure \u03c4] :\n    klDiv (update K \u2218\u2098 (\u03c0 \u2297\u2098 K)) (\u03c4 \u2297\u2098 K) = klDiv (\u03c0 \u2297\u2098 K) (\u03c4 \u2297\u2098 K)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ConditionalResamplingEntropy.lean#L38"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ConditionalResamplingEntropy.no_positive_dissipation_fraction",
+      "file": "Foundation/ConditionalResamplingEntropy.lean",
+      "line": 51,
+      "source_sha256": "102b2785a04b343dee4ab8ef8fe4d0c7a9500c95a7b315750c9f35d7ec646c8c",
+      "declaration_header": "theorem no_positive_dissipation_fraction (\u03c0 \u03c4 : Measure P)\n    [IsFiniteMeasure \u03c0] [IsFiniteMeasure \u03c4] (h : \u03c0 \u2260 \u03c4)\n    (f : \u211d\u22650\u221e) (hf : 0 < f) :\n    \u00ac f * klDiv (\u03c0 \u2297\u2098 K) (\u03c4 \u2297\u2098 K) \u2264 klDiv (\u03c0 \u2297\u2098 K) (\u03c0 \u2297\u2098 K)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ConditionalResamplingEntropy.lean#L51"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ConditionalResamplingEntropy.binary_entropy_finite",
+      "file": "Foundation/ConditionalResamplingEntropy.lean",
+      "line": 82,
+      "source_sha256": "102b2785a04b343dee4ab8ef8fe4d0c7a9500c95a7b315750c9f35d7ec646c8c",
+      "declaration_header": "theorem binary_entropy_finite [MeasurableSingletonClass P] (a b : P) :\n    klDiv (Measure.dirac a \u2297\u2098 K) (binaryReference a b \u2297\u2098 K) \u2260 \u22a4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ConditionalResamplingEntropy.lean#L82"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ConditionalResamplingEntropy.binary_entropy_positive",
+      "file": "Foundation/ConditionalResamplingEntropy.lean",
+      "line": 87,
+      "source_sha256": "102b2785a04b343dee4ab8ef8fe4d0c7a9500c95a7b315750c9f35d7ec646c8c",
+      "declaration_header": "theorem binary_entropy_positive [MeasurableSingletonClass P] (a b : P) (hab : a \u2260 b) :\n    0 < (klDiv (Measure.dirac a \u2297\u2098 K) (binaryReference a b \u2297\u2098 K)).toReal",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ConditionalResamplingEntropy.lean#L87"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ConditionalResamplingEntropy.binary_no_strict_contraction",
+      "file": "Foundation/ConditionalResamplingEntropy.lean",
+      "line": 95,
+      "source_sha256": "102b2785a04b343dee4ab8ef8fe4d0c7a9500c95a7b315750c9f35d7ec646c8c",
+      "declaration_header": "theorem binary_no_strict_contraction [MeasurableSingletonClass P]\n    (a b : P) (hab : a \u2260 b) (q : \u211d) (hq : q < 1) :\n    \u00ac (klDiv (update K \u2218\u2098 (Measure.dirac a \u2297\u2098 K)) (binaryReference a b \u2297\u2098 K)).toReal \u2264\n      q * (klDiv (Measure.dirac a \u2297\u2098 K) (binaryReference a b \u2297\u2098 K)).toReal",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ConditionalResamplingEntropy.lean#L95"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ConditioningRelativeEntropy.llr_cond_constant",
+      "file": "Foundation/ConditioningRelativeEntropy.lean",
+      "line": 18,
+      "source_sha256": "b39b570c404d3eeb75d51fc29a9e644f0f103720e8fe30bd73d8568f5bb4054b",
+      "declaration_header": "theorem llr_cond_constant (hs : MeasurableSet s) (hp : \u03bc s \u2260 0) :\n    llr (cond \u03bc s) \u03bc =\u1d50[cond \u03bc s] fun _ => Real.log ((\u03bc s)\u207b\u00b9).toReal",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ConditioningRelativeEntropy.lean#L18"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ConditioningRelativeEntropy.llr_cond_integrable",
+      "file": "Foundation/ConditioningRelativeEntropy.lean",
+      "line": 27,
+      "source_sha256": "b39b570c404d3eeb75d51fc29a9e644f0f103720e8fe30bd73d8568f5bb4054b",
+      "declaration_header": "theorem llr_cond_integrable (hs : MeasurableSet s) (hp : \u03bc s \u2260 0) :\n    Integrable (llr (cond \u03bc s) \u03bc) (cond \u03bc s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ConditioningRelativeEntropy.lean#L27"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ConditioningRelativeEntropy.entropy_cond_finite",
+      "file": "Foundation/ConditioningRelativeEntropy.lean",
+      "line": 32,
+      "source_sha256": "b39b570c404d3eeb75d51fc29a9e644f0f103720e8fe30bd73d8568f5bb4054b",
+      "declaration_header": "theorem entropy_cond_finite (hs : MeasurableSet s) (hp : \u03bc s \u2260 0) :\n    klDiv (cond \u03bc s) \u03bc \u2260 \u22a4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ConditioningRelativeEntropy.lean#L32"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ConditioningRelativeEntropy.entropy_cond_exact",
+      "file": "Foundation/ConditioningRelativeEntropy.lean",
+      "line": 36,
+      "source_sha256": "b39b570c404d3eeb75d51fc29a9e644f0f103720e8fe30bd73d8568f5bb4054b",
+      "declaration_header": "theorem entropy_cond_exact (hs : MeasurableSet s) (hp : \u03bc s \u2260 0) :\n    (klDiv (cond \u03bc s) \u03bc).toReal = Real.log ((\u03bc s)\u207b\u00b9).toReal",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ConditioningRelativeEntropy.lean#L36"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ConditioningRelativeEntropy.entropy_cond_positive",
+      "file": "Foundation/ConditioningRelativeEntropy.lean",
+      "line": 49,
+      "source_sha256": "b39b570c404d3eeb75d51fc29a9e644f0f103720e8fe30bd73d8568f5bb4054b",
+      "declaration_header": "theorem entropy_cond_positive (hs : MeasurableSet s) (hp : \u03bc s \u2260 0)\n    (hlt : \u03bc s < 1) : 0 < (klDiv (cond \u03bc s) \u03bc).toReal",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ConditioningRelativeEntropy.lean#L49"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.MeasurableExponentialKernel.partition_measurable",
+      "file": "Foundation/MeasurableExponentialKernel.lean",
+      "line": 16,
+      "source_sha256": "7805805260465014b38ebbde17c1138ccc4e574d59892aafed83e04c9e9715b0",
+      "declaration_header": "theorem partition_measurable (hX : Measurable (Function.uncurry X)) :\n    Measurable (partition \u03bc X)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MeasurableExponentialKernel.lean#L16"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.MeasurableExponentialKernel.density_measurable",
+      "file": "Foundation/MeasurableExponentialKernel.lean",
+      "line": 20,
+      "source_sha256": "7805805260465014b38ebbde17c1138ccc4e574d59892aafed83e04c9e9715b0",
+      "declaration_header": "theorem density_measurable (hX : Measurable (Function.uncurry X)) :\n    Measurable (Function.uncurry (density \u03bc X))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MeasurableExponentialKernel.lean#L20"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.MeasurableExponentialKernel.partition_positive",
+      "file": "Foundation/MeasurableExponentialKernel.lean",
+      "line": 25,
+      "source_sha256": "7805805260465014b38ebbde17c1138ccc4e574d59892aafed83e04c9e9715b0",
+      "declaration_header": "theorem partition_positive (p : P) (hI : Integrable (fun x => Real.exp (X p x)) \u03bc) :\n    0 < partition \u03bc X p",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MeasurableExponentialKernel.lean#L25"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.MeasurableExponentialKernel.density_integral",
+      "file": "Foundation/MeasurableExponentialKernel.lean",
+      "line": 35,
+      "source_sha256": "7805805260465014b38ebbde17c1138ccc4e574d59892aafed83e04c9e9715b0",
+      "declaration_header": "theorem density_integral (p : P) (hI : Integrable (fun x => Real.exp (X p x)) \u03bc) :\n    (\u222b x, density \u03bc X p x \u2202\u03bc) = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MeasurableExponentialKernel.lean#L35"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.MeasurableExponentialKernel.kernel_markov",
+      "file": "Foundation/MeasurableExponentialKernel.lean",
+      "line": 61,
+      "source_sha256": "7805805260465014b38ebbde17c1138ccc4e574d59892aafed83e04c9e9715b0",
+      "declaration_header": "theorem kernel_markov (hX : Measurable (Function.uncurry X))\n    (hI : \u2200 p, Integrable (fun x => Real.exp (X p x)) \u03bc) : IsMarkovKernel (kernel \u03bc X)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MeasurableExponentialKernel.lean#L61"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ExponentialJointDisintegration.boundary_probability",
+      "file": "Foundation/ExponentialJointDisintegration.lean",
+      "line": 34,
+      "source_sha256": "ef3bd07817e9ffacd2a2aa118c7061f06c7d5961ff174eb07eff71222e682722",
+      "declaration_header": "theorem boundary_probability (_hX : Measurable (Function.uncurry X))\n    (hI : \u2200 p, Integrable (fun x => Real.exp (X p x)) \u03bc)\n    (hJ : Integrable (fun z : P \u00d7 E => Real.exp (X z.1 z.2)) (\u03c1.prod \u03bc)) :\n    IsProbabilityMeasure (boundary \u03c1 \u03bc X)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ExponentialJointDisintegration.lean#L34"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ExponentialJointDisintegration.factorization",
+      "file": "Foundation/ExponentialJointDisintegration.lean",
+      "line": 53,
+      "source_sha256": "ef3bd07817e9ffacd2a2aa118c7061f06c7d5961ff174eb07eff71222e682722",
+      "declaration_header": "theorem factorization (hX : Measurable (Function.uncurry X))\n    (hI : \u2200 p, Integrable (fun x => Real.exp (X p x)) \u03bc) :\n    joint \u03c1 \u03bc X = (boundary \u03c1 \u03bc X) \u2297\u2098 (kernel \u03bc X)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ExponentialJointDisintegration.lean#L53"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ExponentialJointDisintegration.joint_probability",
+      "file": "Foundation/ExponentialJointDisintegration.lean",
+      "line": 74,
+      "source_sha256": "ef3bd07817e9ffacd2a2aa118c7061f06c7d5961ff174eb07eff71222e682722",
+      "declaration_header": "theorem joint_probability (hX : Measurable (Function.uncurry X))\n    (hI : \u2200 p, Integrable (fun x => Real.exp (X p x)) \u03bc)\n    (hJ : Integrable (fun z : P \u00d7 E => Real.exp (X z.1 z.2)) (\u03c1.prod \u03bc)) :\n    IsProbabilityMeasure (joint \u03c1 \u03bc X)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ExponentialJointDisintegration.lean#L74"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ExponentialJointDisintegration.boundary_marginal",
+      "file": "Foundation/ExponentialJointDisintegration.lean",
+      "line": 83,
+      "source_sha256": "ef3bd07817e9ffacd2a2aa118c7061f06c7d5961ff174eb07eff71222e682722",
+      "declaration_header": "theorem boundary_marginal (hX : Measurable (Function.uncurry X))\n    (hI : \u2200 p, Integrable (fun x => Real.exp (X p x)) \u03bc)\n    (hJ : Integrable (fun z : P \u00d7 E => Real.exp (X z.1 z.2)) (\u03c1.prod \u03bc)) :\n    (joint \u03c1 \u03bc X).fst = boundary \u03c1 \u03bc X",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ExponentialJointDisintegration.lean#L83"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ExponentialJointDisintegration.conditional_rectangles",
+      "file": "Foundation/ExponentialJointDisintegration.lean",
+      "line": 91,
+      "source_sha256": "ef3bd07817e9ffacd2a2aa118c7061f06c7d5961ff174eb07eff71222e682722",
+      "declaration_header": "theorem conditional_rectangles (hX : Measurable (Function.uncurry X))\n    (hI : \u2200 p, Integrable (fun x => Real.exp (X p x)) \u03bc)\n    (hJ : Integrable (fun z : P \u00d7 E => Real.exp (X z.1 z.2)) (\u03c1.prod \u03bc))\n    (s : Set P) (t : Set E) (hs : MeasurableSet s) (ht : MeasurableSet t) :\n    joint \u03c1 \u03bc X (s \u00d7\u02e2 t) = \u222b\u207b p in s, kernel \u03bc X p t \u2202boundary \u03c1 \u03bc X",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ExponentialJointDisintegration.lean#L91"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ExponentialJointDisintegration.conditional_kernel",
+      "file": "Foundation/ExponentialJointDisintegration.lean",
+      "line": 100,
+      "source_sha256": "ef3bd07817e9ffacd2a2aa118c7061f06c7d5961ff174eb07eff71222e682722",
+      "declaration_header": "theorem conditional_kernel (hX : Measurable (Function.uncurry X))\n    (hI : \u2200 p, Integrable (fun x => Real.exp (X p x)) \u03bc)\n    (hJ : Integrable (fun z : P \u00d7 E => Real.exp (X z.1 z.2)) (\u03c1.prod \u03bc)) :\n    (joint \u03c1 \u03bc X).IsCondKernel (kernel \u03bc X)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ExponentialJointDisintegration.lean#L100"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ExponentialBoundaryEquivalence.reverse_ac",
+      "file": "Foundation/ExponentialBoundaryEquivalence.lean",
+      "line": 12,
+      "source_sha256": "0f6e3e293c9786790e236a0716bf194b1321d79fc348ff44e967319813ff3e80",
+      "declaration_header": "theorem reverse_ac (hX : Measurable (Function.uncurry X))\n    (hI : \u2200 p, Integrable (fun x => Real.exp (X p x)) \u03bc)\n    (hJ : Integrable (fun z : P \u00d7 E => Real.exp (X z.1 z.2)) (\u03c1.prod \u03bc)) :\n    \u03c1 \u226a boundary \u03c1 \u03bc X",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ExponentialBoundaryEquivalence.lean#L12"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ExponentialBoundaryEquivalence.null_iff",
+      "file": "Foundation/ExponentialBoundaryEquivalence.lean",
+      "line": 23,
+      "source_sha256": "0f6e3e293c9786790e236a0716bf194b1321d79fc348ff44e967319813ff3e80",
+      "declaration_header": "theorem null_iff (hX : Measurable (Function.uncurry X))\n    (hI : \u2200 p, Integrable (fun x => Real.exp (X p x)) \u03bc)\n    (hJ : Integrable (fun z : P \u00d7 E => Real.exp (X z.1 z.2)) (\u03c1.prod \u03bc)) (s : Set P) :\n    boundary \u03c1 \u03bc X s = 0 \u2194 \u03c1 s = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ExponentialBoundaryEquivalence.lean#L23"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2BoundaryWordKernel.word_measurable",
+      "file": "Foundation/SU2BoundaryWordKernel.lean",
+      "line": 57,
+      "source_sha256": "d182d22982e6db3e62f6bf3c3e5efe628e2e5a8919b0c30e4c841cb9770d8818",
+      "declaration_header": "theorem word_measurable (w : List (\u03b9 \u00d7 Bool)) : Measurable (word w)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2BoundaryWordKernel.lean#L57"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2BoundaryWordKernel.family_measurable",
+      "file": "Foundation/SU2BoundaryWordKernel.lean",
+      "line": 72,
+      "source_sha256": "d182d22982e6db3e62f6bf3c3e5efe628e2e5a8919b0c30e4c841cb9770d8818",
+      "declaration_header": "theorem family_measurable {\u03ba : Type*} (w : \u03ba \u2192 List (\u03b9 \u00d7 Bool)) : Measurable (family w)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2BoundaryWordKernel.lean#L72"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2BoundaryWordKernel.kernel_markov",
+      "file": "Foundation/SU2BoundaryWordKernel.lean",
+      "line": 80,
+      "source_sha256": "d182d22982e6db3e62f6bf3c3e5efe628e2e5a8919b0c30e4c841cb9770d8818",
+      "declaration_header": "theorem kernel_markov {\u03ba : Type*} (s : Finset \u03ba) (w : \u03ba \u2192 List (\u03b9 \u00d7 Bool)) (\u03b2 : \u211d) :\n    IsMarkovKernel (kernel \u03bd s w \u03b2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2BoundaryWordKernel.lean#L80"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2StapleKernel.exponent_bound",
+      "file": "Foundation/SU2StapleKernel.lean",
+      "line": 36,
+      "source_sha256": "508bf3c5426793afda54e48ee2da367651c5741c7fce6add77a0a50ce908b729",
+      "declaration_header": "theorem exponent_bound (s : Finset \u03b9) (\u03b2 : \u211d) (U : \u03b9 \u2192 SU2) (A : SU2) :\n    |exponent s \u03b2 U A| \u2264 |\u03b2| * (s.card : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2StapleKernel.lean#L36"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2StapleKernel.exponential_integrable",
+      "file": "Foundation/SU2StapleKernel.lean",
+      "line": 49,
+      "source_sha256": "508bf3c5426793afda54e48ee2da367651c5741c7fce6add77a0a50ce908b729",
+      "declaration_header": "theorem exponential_integrable (s : Finset \u03b9) (\u03b2 : \u211d) (U : \u03b9 \u2192 SU2) :\n    Integrable (fun A => Real.exp (exponent s \u03b2 U A)) \u03bd",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2StapleKernel.lean#L49"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2BoundaryJointLaw.interaction_integrable",
+      "file": "Foundation/SU2BoundaryJointLaw.lean",
+      "line": 26,
+      "source_sha256": "775f7fb36370a265a4f3c93e0c02b503c1b52950b4477b04b42e9355fa15dc1e",
+      "declaration_header": "theorem interaction_integrable (s : Finset \u03ba) (w : \u03ba \u2192 List (\u03b9 \u00d7 Bool)) (\u03b2 : \u211d) :\n    Integrable (fun p : (\u03b9 \u2192 SU2) \u00d7 SU2 => Real.exp (interaction s w \u03b2 p.1 p.2)) (\u03c1.prod \u03bd)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2BoundaryJointLaw.lean#L26"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2BoundaryJointLaw.factorization",
+      "file": "Foundation/SU2BoundaryJointLaw.lean",
+      "line": 64,
+      "source_sha256": "775f7fb36370a265a4f3c93e0c02b503c1b52950b4477b04b42e9355fa15dc1e",
+      "declaration_header": "theorem factorization (s : Finset \u03ba) (w : \u03ba \u2192 List (\u03b9 \u00d7 Bool)) (\u03b2 : \u211d) :\n    joint \u03c1 \u03bd s w \u03b2 = (boundary \u03c1 \u03bd s w \u03b2) \u2297\u2098 SU2BoundaryWordKernel.kernel \u03bd s w \u03b2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2BoundaryJointLaw.lean#L64"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2BoundaryJointLaw.boundary_marginal",
+      "file": "Foundation/SU2BoundaryJointLaw.lean",
+      "line": 71,
+      "source_sha256": "775f7fb36370a265a4f3c93e0c02b503c1b52950b4477b04b42e9355fa15dc1e",
+      "declaration_header": "theorem boundary_marginal (s : Finset \u03ba) (w : \u03ba \u2192 List (\u03b9 \u00d7 Bool)) (\u03b2 : \u211d) :\n    (joint \u03c1 \u03bd s w \u03b2).fst = boundary \u03c1 \u03bd s w \u03b2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2BoundaryJointLaw.lean#L71"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2BoundaryJointLaw.conditional_rectangles",
+      "file": "Foundation/SU2BoundaryJointLaw.lean",
+      "line": 77,
+      "source_sha256": "775f7fb36370a265a4f3c93e0c02b503c1b52950b4477b04b42e9355fa15dc1e",
+      "declaration_header": "theorem conditional_rectangles (s : Finset \u03ba) (w : \u03ba \u2192 List (\u03b9 \u00d7 Bool)) (\u03b2 : \u211d)\n    (a : Set (\u03b9 \u2192 SU2)) (b : Set SU2) (ha : MeasurableSet a) (hb : MeasurableSet b) :\n    joint \u03c1 \u03bd s w \u03b2 (a \u00d7\u02e2 b) =\n      \u222b\u207b U in a, SU2BoundaryWordKernel.kernel \u03bd s w \u03b2 U b \u2202boundary \u03c1 \u03bd s w \u03b2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2BoundaryJointLaw.lean#L77"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2BoundaryJointLaw.conditional_kernel",
+      "file": "Foundation/SU2BoundaryJointLaw.lean",
+      "line": 88,
+      "source_sha256": "775f7fb36370a265a4f3c93e0c02b503c1b52950b4477b04b42e9355fa15dc1e",
+      "declaration_header": "theorem conditional_kernel (s : Finset \u03ba) (w : \u03ba \u2192 List (\u03b9 \u00d7 Bool)) (\u03b2 : \u211d) :\n    (joint \u03c1 \u03bd s w \u03b2).IsCondKernel (SU2BoundaryWordKernel.kernel \u03bd s w \u03b2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2BoundaryJointLaw.lean#L88"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2BoundaryJointLaw.concrete_joint_probability",
+      "file": "Foundation/SU2BoundaryJointLaw.lean",
+      "line": 101,
+      "source_sha256": "775f7fb36370a265a4f3c93e0c02b503c1b52950b4477b04b42e9355fa15dc1e",
+      "declaration_header": "theorem concrete_joint_probability [Fintype \u03b9] (s : Finset \u03ba)\n    (w : \u03ba \u2192 List (\u03b9 \u00d7 Bool)) (\u03b2 : \u211d) :\n    IsProbabilityMeasure (joint finiteBoundaryHaar law s w \u03b2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2BoundaryJointLaw.lean#L101"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ConditionalHeatBath.update_markov",
+      "file": "Foundation/SU2ConditionalHeatBath.lean",
+      "line": 17,
+      "source_sha256": "07fab82b2c1acbb8d6b68a8cec007a319e97cdbb8dc27ed5910df37b4f753040",
+      "declaration_header": "theorem update_markov (s : Finset \u03ba) (w : \u03ba \u2192 List (\u03b9 \u00d7 Bool)) (\u03b2 : \u211d) :\n    IsMarkovKernel (update \u03bd s w \u03b2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ConditionalHeatBath.lean#L17"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ConditionalHeatBath.update_idempotent",
+      "file": "Foundation/SU2ConditionalHeatBath.lean",
+      "line": 22,
+      "source_sha256": "07fab82b2c1acbb8d6b68a8cec007a319e97cdbb8dc27ed5910df37b4f753040",
+      "declaration_header": "theorem update_idempotent (s : Finset \u03ba) (w : \u03ba \u2192 List (\u03b9 \u00d7 Bool)) (\u03b2 : \u211d) :\n    update \u03bd s w \u03b2 \u2218\u2096 update \u03bd s w \u03b2 = update \u03bd s w \u03b2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ConditionalHeatBath.lean#L22"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ConditionalHeatBath.boundary_preserved",
+      "file": "Foundation/SU2ConditionalHeatBath.lean",
+      "line": 27,
+      "source_sha256": "07fab82b2c1acbb8d6b68a8cec007a319e97cdbb8dc27ed5910df37b4f753040",
+      "declaration_header": "theorem boundary_preserved (s : Finset \u03ba) (w : \u03ba \u2192 List (\u03b9 \u00d7 Bool)) (\u03b2 : \u211d)\n    (J : Measure ((\u03b9 \u2192 SU2) \u00d7 SU2)) [SFinite J] :\n    (update \u03bd s w \u03b2 \u2218\u2098 J).fst = J.fst",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ConditionalHeatBath.lean#L27"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ConditionalHeatBath.joint_invariant",
+      "file": "Foundation/SU2ConditionalHeatBath.lean",
+      "line": 35,
+      "source_sha256": "07fab82b2c1acbb8d6b68a8cec007a319e97cdbb8dc27ed5910df37b4f753040",
+      "declaration_header": "theorem joint_invariant (s : Finset \u03ba) (w : \u03ba \u2192 List (\u03b9 \u00d7 Bool)) (\u03b2 : \u211d) :\n    update \u03bd s w \u03b2 \u2218\u2098 joint \u03c1 \u03bd s w \u03b2 = joint \u03c1 \u03bd s w \u03b2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ConditionalHeatBath.lean#L35"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2HeatBathEntropy.actual_joint_entropy_after_update",
+      "file": "Foundation/SU2HeatBathEntropy.lean",
+      "line": 17,
+      "source_sha256": "d4355977278a90d98c25be9c87f8038a19e47f3d54bc23ce183633775782ae47",
+      "declaration_header": "theorem actual_joint_entropy_after_update (s : Finset \u03ba) (w : \u03ba \u2192 List (\u03b9 \u00d7 Bool))\n    (\u03b2 : \u211d) (J : Measure ((\u03b9 \u2192 SU2) \u00d7 SU2)) [IsFiniteMeasure J] :\n    klDiv (SU2ConditionalHeatBath.update \u03bd s w \u03b2 \u2218\u2098 J) (joint \u03c1 \u03bd s w \u03b2) =\n      klDiv J.fst (boundary \u03c1 \u03bd s w \u03b2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2HeatBathEntropy.lean#L17"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2HeatBathEntropy.actual_joint_entropy_decomposition",
+      "file": "Foundation/SU2HeatBathEntropy.lean",
+      "line": 26,
+      "source_sha256": "d4355977278a90d98c25be9c87f8038a19e47f3d54bc23ce183633775782ae47",
+      "declaration_header": "theorem actual_joint_entropy_decomposition (s : Finset \u03ba) (w : \u03ba \u2192 List (\u03b9 \u00d7 Bool))\n    (\u03b2 : \u211d) (\u03c0 : Measure (\u03b9 \u2192 SU2)) [IsFiniteMeasure \u03c0]\n    (L : Kernel (\u03b9 \u2192 SU2) SU2) [IsMarkovKernel L] :\n    klDiv (\u03c0 \u2297\u2098 L) (joint \u03c1 \u03bd s w \u03b2) =\n      klDiv (SU2ConditionalHeatBath.update \u03bd s w \u03b2 \u2218\u2098 (\u03c0 \u2297\u2098 L)) (joint \u03c1 \u03bd s w \u03b2) +\n      klDiv (\u03c0 \u2297\u2098 L) (\u03c0 \u2297\u2098 SU2BoundaryWordKernel.kernel \u03bd s w \u03b2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2HeatBathEntropy.lean#L26"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2HeatBathEntropy.binary_boundary_obstruction",
+      "file": "Foundation/SU2HeatBathEntropy.lean",
+      "line": 37,
+      "source_sha256": "d4355977278a90d98c25be9c87f8038a19e47f3d54bc23ce183633775782ae47",
+      "declaration_header": "theorem binary_boundary_obstruction [Finite \u03b9]\n    (s : Finset \u03ba) (w : \u03ba \u2192 List (\u03b9 \u00d7 Bool)) (\u03b2 : \u211d)\n    (a b : \u03b9 \u2192 SU2) (hab : a \u2260 b) (q : \u211d) (hq : q < 1) :\n    \u00ac (klDiv (SU2ConditionalHeatBath.update \u03bd s w \u03b2 \u2218\u2098\n      (Measure.dirac a \u2297\u2098 SU2BoundaryWordKernel.kernel \u03bd s w \u03b2))\n      (binaryReference a b \u2297\u2098 SU2BoundaryWordKernel.kernel \u03bd s w \u03b2)).toReal \u2264\n      q * (klDiv (Measure.dirac a \u2297\u2098 SU2BoundaryWordKernel.kernel \u03bd s w \u03b2)\n        (binaryReference a b \u2297\u2098 SU2BoundaryWordKernel.kernel \u03bd s w \u03b2)).toReal",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2HeatBathEntropy.lean#L37"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2HeatBathEntropy.concrete_haar_obstruction",
+      "file": "Foundation/SU2HeatBathEntropy.lean",
+      "line": 58,
+      "source_sha256": "d4355977278a90d98c25be9c87f8038a19e47f3d54bc23ce183633775782ae47",
+      "declaration_header": "theorem concrete_haar_obstruction (s : Finset \u03ba) (w : \u03ba \u2192 List (Unit \u00d7 Bool))\n    (\u03b2 q : \u211d) (hq : q < 1) :\n    \u00ac (klDiv (SU2ConditionalHeatBath.update law s w \u03b2 \u2218\u2098\n      (Measure.dirac (fun _ : Unit => (1 : SU2)) \u2297\u2098 SU2BoundaryWordKernel.kernel law s w \u03b2))\n      (binaryReference (fun _ : Unit => (1 : SU2)) (fun _ : Unit => opposite) \u2297\u2098\n        SU2BoundaryWordKernel.kernel law s w \u03b2)).toReal \u2264\n      q * (klDiv\n        (Measure.dirac (fun _ : Unit => (1 : SU2)) \u2297\u2098 SU2BoundaryWordKernel.kernel law s w \u03b2)\n        (binaryReference (fun _ : Unit => (1 : SU2)) (fun _ : Unit => opposite) \u2297\u2098\n          SU2BoundaryWordKernel.kernel law s w \u03b2)).toReal",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2HeatBathEntropy.lean#L58"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2BoundaryConditionedEntropy.haar_hemisphere_positive",
+      "file": "Foundation/SU2BoundaryConditionedEntropy.lean",
+      "line": 28,
+      "source_sha256": "ba98cb6841e089a3a359ef0bf86b90b56ecbd8e3c6fea165171f8d9b5e1161ce",
+      "declaration_header": "theorem haar_hemisphere_positive : 0 < finiteBoundaryHaar hemisphere",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2BoundaryConditionedEntropy.lean#L28"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2BoundaryConditionedEntropy.haar_complement_positive",
+      "file": "Foundation/SU2BoundaryConditionedEntropy.lean",
+      "line": 32,
+      "source_sha256": "ba98cb6841e089a3a359ef0bf86b90b56ecbd8e3c6fea165171f8d9b5e1161ce",
+      "declaration_header": "theorem haar_complement_positive : 0 < finiteBoundaryHaar hemisphere\u1d9c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2BoundaryConditionedEntropy.lean#L32"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2BoundaryConditionedEntropy.boundary_null_iff",
+      "file": "Foundation/SU2BoundaryConditionedEntropy.lean",
+      "line": 47,
+      "source_sha256": "ba98cb6841e089a3a359ef0bf86b90b56ecbd8e3c6fea165171f8d9b5e1161ce",
+      "declaration_header": "theorem boundary_null_iff (a : Set (Unit \u2192 SU2)) :\n    boundary finiteBoundaryHaar law s w \u03b2 a = 0 \u2194 finiteBoundaryHaar a = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2BoundaryConditionedEntropy.lean#L47"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2BoundaryConditionedEntropy.boundary_event_nontrivial",
+      "file": "Foundation/SU2BoundaryConditionedEntropy.lean",
+      "line": 53,
+      "source_sha256": "ba98cb6841e089a3a359ef0bf86b90b56ecbd8e3c6fea165171f8d9b5e1161ce",
+      "declaration_header": "theorem boundary_event_nontrivial :\n    0 < boundary finiteBoundaryHaar law s w \u03b2 hemisphere \u2227\n      boundary finiteBoundaryHaar law s w \u03b2 hemisphere < 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2BoundaryConditionedEntropy.lean#L53"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2BoundaryConditionedEntropy.perturbed_stationary",
+      "file": "Foundation/SU2BoundaryConditionedEntropy.lean",
+      "line": 88,
+      "source_sha256": "ba98cb6841e089a3a359ef0bf86b90b56ecbd8e3c6fea165171f8d9b5e1161ce",
+      "declaration_header": "theorem perturbed_stationary :\n    SU2ConditionalHeatBath.update law s w \u03b2 \u2218\u2098 perturbedJoint s w \u03b2 = perturbedJoint s w \u03b2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2BoundaryConditionedEntropy.lean#L88"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2BoundaryConditionedEntropy.entropy_finite",
+      "file": "Foundation/SU2BoundaryConditionedEntropy.lean",
+      "line": 93,
+      "source_sha256": "ba98cb6841e089a3a359ef0bf86b90b56ecbd8e3c6fea165171f8d9b5e1161ce",
+      "declaration_header": "theorem entropy_finite : klDiv (perturbedJoint s w \u03b2) (joint finiteBoundaryHaar law s w \u03b2) \u2260 \u22a4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2BoundaryConditionedEntropy.lean#L93"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2BoundaryConditionedEntropy.entropy_exact",
+      "file": "Foundation/SU2BoundaryConditionedEntropy.lean",
+      "line": 99,
+      "source_sha256": "ba98cb6841e089a3a359ef0bf86b90b56ecbd8e3c6fea165171f8d9b5e1161ce",
+      "declaration_header": "theorem entropy_exact :\n    (klDiv (perturbedJoint s w \u03b2) (joint finiteBoundaryHaar law s w \u03b2)).toReal =\n      Real.log ((boundary finiteBoundaryHaar law s w \u03b2 hemisphere)\u207b\u00b9).toReal",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2BoundaryConditionedEntropy.lean#L99"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2BoundaryConditionedEntropy.entropy_positive",
+      "file": "Foundation/SU2BoundaryConditionedEntropy.lean",
+      "line": 107,
+      "source_sha256": "ba98cb6841e089a3a359ef0bf86b90b56ecbd8e3c6fea165171f8d9b5e1161ce",
+      "declaration_header": "theorem entropy_positive :\n    0 < (klDiv (perturbedJoint s w \u03b2) (joint finiteBoundaryHaar law s w \u03b2)).toReal",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2BoundaryConditionedEntropy.lean#L107"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2BoundaryConditionedEntropy.no_strict_contraction",
+      "file": "Foundation/SU2BoundaryConditionedEntropy.lean",
+      "line": 115,
+      "source_sha256": "ba98cb6841e089a3a359ef0bf86b90b56ecbd8e3c6fea165171f8d9b5e1161ce",
+      "declaration_header": "theorem no_strict_contraction (q : \u211d) (hq : q < 1) :\n    \u00ac (klDiv (SU2ConditionalHeatBath.update law s w \u03b2 \u2218\u2098 perturbedJoint s w \u03b2)\n      (joint finiteBoundaryHaar law s w \u03b2)).toReal \u2264\n      q * (klDiv (perturbedJoint s w \u03b2) (joint finiteBoundaryHaar law s w \u03b2)).toReal",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2BoundaryConditionedEntropy.lean#L115"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2InteractingLoopKernel.interaction_bound",
+      "file": "Foundation/SU2InteractingLoopKernel.lean",
+      "line": 20,
+      "source_sha256": "26c234b05a79505a6b7dbf20891ec80d70897e928cc2ece0a629392ef1f5fe45",
+      "declaration_header": "theorem interaction_bound (r : \u211d) (C D : SU2) : |interaction r C D| \u2264 |r|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2InteractingLoopKernel.lean#L20"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2InteractingLoopKernel.loopKernel_markov",
+      "file": "Foundation/SU2InteractingLoopKernel.lean",
+      "line": 41,
+      "source_sha256": "26c234b05a79505a6b7dbf20891ec80d70897e928cc2ece0a629392ef1f5fe45",
+      "declaration_header": "theorem loopKernel_markov (r : \u211d) : IsMarkovKernel (loopKernel r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2InteractingLoopKernel.lean#L41"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2InteractingLoopKernel.density_lower",
+      "file": "Foundation/SU2InteractingLoopKernel.lean",
+      "line": 53,
+      "source_sha256": "26c234b05a79505a6b7dbf20891ec80d70897e928cc2ece0a629392ef1f5fe45",
+      "declaration_header": "theorem density_lower (r : \u211d) (C D : SU2) :\n    Real.exp (-(2 * |r|)) \u2264 MeasurableExponentialKernel.density law (interaction r) C D",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2InteractingLoopKernel.lean#L53"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2LoopEquilibrium.detailed_balance_density",
+      "file": "Foundation/SU2LoopEquilibrium.lean",
+      "line": 41,
+      "source_sha256": "f7ae882b625097da3c39fcca9afdb9145dba994c4f359bdb9dd1cdbc7c6e1d42",
+      "declaration_header": "theorem detailed_balance_density (r : \u211d) (C D : SU2) :\n    equilibriumDensity r C *\n      MeasurableExponentialKernel.density law (interaction r) C D =\n    equilibriumDensity r D *\n      MeasurableExponentialKernel.density law (interaction r) D C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2LoopEquilibrium.lean#L41"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2LoopEquilibrium.equilibrium_edge",
+      "file": "Foundation/SU2LoopEquilibrium.lean",
+      "line": 55,
+      "source_sha256": "f7ae882b625097da3c39fcca9afdb9145dba994c4f359bdb9dd1cdbc7c6e1d42",
+      "declaration_header": "theorem equilibrium_edge (r : \u211d) :\n    equilibriumLaw r \u2297\u2098 loopKernel r = coupledLaw r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2LoopEquilibrium.lean#L55"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2LoopEquilibrium.equilibriumLaw_probability",
+      "file": "Foundation/SU2LoopEquilibrium.lean",
+      "line": 96,
+      "source_sha256": "f7ae882b625097da3c39fcca9afdb9145dba994c4f359bdb9dd1cdbc7c6e1d42",
+      "declaration_header": "theorem equilibriumLaw_probability (r : \u211d) :\n    IsProbabilityMeasure (equilibriumLaw r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2LoopEquilibrium.lean#L96"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2LoopEquilibrium.equilibriumLaw_stationary",
+      "file": "Foundation/SU2LoopEquilibrium.lean",
+      "line": 128,
+      "source_sha256": "f7ae882b625097da3c39fcca9afdb9145dba994c4f359bdb9dd1cdbc7c6e1d42",
+      "declaration_header": "theorem equilibriumLaw_stationary (r : \u211d) :\n    loopKernel r \u2218\u2098 equilibriumLaw r = equilibriumLaw r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2LoopEquilibrium.lean#L128"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2StationaryMinorization.equilibriumDensity_upper",
+      "file": "Foundation/SU2StationaryMinorization.lean",
+      "line": 42,
+      "source_sha256": "82834c7dedf7105de1dd064108c925069ad70817a2d5015e9c65f99f84660e07",
+      "declaration_header": "theorem equilibriumDensity_upper (r : \u211d) (C : SU2) :\n    equilibriumDensity r C \u2264 Real.exp (2*|r|)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2StationaryMinorization.lean#L42"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2StationaryMinorization.stationary_density_minorization",
+      "file": "Foundation/SU2StationaryMinorization.lean",
+      "line": 55,
+      "source_sha256": "82834c7dedf7105de1dd064108c925069ad70817a2d5015e9c65f99f84660e07",
+      "declaration_header": "theorem stationary_density_minorization (r : \u211d) (C D : SU2) :\n    Real.exp (-(4*|r|)) * equilibriumDensity r D \u2264\n      MeasurableExponentialKernel.density law (interaction r) C D",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2StationaryMinorization.lean#L55"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2StationaryMinorization.loopKernel_minorizes_equilibrium",
+      "file": "Foundation/SU2StationaryMinorization.lean",
+      "line": 65,
+      "source_sha256": "82834c7dedf7105de1dd064108c925069ad70817a2d5015e9c65f99f84660e07",
+      "declaration_header": "theorem loopKernel_minorizes_equilibrium (r : \u211d) (C : SU2) :\n    ENNReal.ofReal (Real.exp (-(4*|r|))) \u2022 equilibriumLaw r \u2264 loopKernel r C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2StationaryMinorization.lean#L65"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ResidualEntropy.reset_pos",
+      "file": "Foundation/SU2ResidualEntropy.lean",
+      "line": 17,
+      "source_sha256": "d0630436ca4ee1f4f11415c58683692c4de2b19099676345e24f8d72e8a94a14",
+      "declaration_header": "theorem reset_pos (r : \u211d) : 0 < reset r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ResidualEntropy.lean#L17"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ResidualEntropy.reset_lt_one",
+      "file": "Foundation/SU2ResidualEntropy.lean",
+      "line": 21,
+      "source_sha256": "d0630436ca4ee1f4f11415c58683692c4de2b19099676345e24f8d72e8a94a14",
+      "declaration_header": "theorem reset_lt_one (r : \u211d) : reset r < 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ResidualEntropy.lean#L21"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ResidualEntropy.residualKernel_markov",
+      "file": "Foundation/SU2ResidualEntropy.lean",
+      "line": 110,
+      "source_sha256": "d0630436ca4ee1f4f11415c58683692c4de2b19099676345e24f8d72e8a94a14",
+      "declaration_header": "theorem residualKernel_markov (r : \u211d) : IsMarkovKernel (residualKernel r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ResidualEntropy.lean#L110"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ResidualEntropy.residualKernel_split",
+      "file": "Foundation/SU2ResidualEntropy.lean",
+      "line": 135,
+      "source_sha256": "d0630436ca4ee1f4f11415c58683692c4de2b19099676345e24f8d72e8a94a14",
+      "declaration_header": "theorem residualKernel_split (r : \u211d) (C : SU2) :\n    ENNReal.ofReal (reset r) \u2022 equilibriumLaw r +\n      ENNReal.ofReal (1 - reset r) \u2022 residualKernel r C = loopKernel r C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ResidualEntropy.lean#L135"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ResidualEntropy.residualKernel_invariant",
+      "file": "Foundation/SU2ResidualEntropy.lean",
+      "line": 164,
+      "source_sha256": "d0630436ca4ee1f4f11415c58683692c4de2b19099676345e24f8d72e8a94a14",
+      "declaration_header": "theorem residualKernel_invariant (r : \u211d) :\n    residualKernel r \u2218\u2098 equilibriumLaw r = equilibriumLaw r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ResidualEntropy.lean#L164"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ResidualEntropy.entropy_contraction",
+      "file": "Foundation/SU2ResidualEntropy.lean",
+      "line": 186,
+      "source_sha256": "d0630436ca4ee1f4f11415c58683692c4de2b19099676345e24f8d72e8a94a14",
+      "declaration_header": "theorem entropy_contraction (r : \u211d) (\u03c1 : Measure SU2) [IsProbabilityMeasure \u03c1] :\n    klDiv (loopKernel r \u2218\u2098 \u03c1) (equilibriumLaw r) \u2264\n      ENNReal.ofReal (1 - reset r) * klDiv \u03c1 (equilibriumLaw r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ResidualEntropy.lean#L186"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ResidualEntropy.entropy_geometric",
+      "file": "Foundation/SU2ResidualEntropy.lean",
+      "line": 222,
+      "source_sha256": "d0630436ca4ee1f4f11415c58683692c4de2b19099676345e24f8d72e8a94a14",
+      "declaration_header": "theorem entropy_geometric (r : \u211d) (\u03c1 : Measure SU2) [IsProbabilityMeasure \u03c1]\n    (n : \u2115) :\n    klDiv (iterateLaw r \u03c1 n) (equilibriumLaw r) \u2264\n      (ENNReal.ofReal (1 - reset r)) ^ n * klDiv \u03c1 (equilibriumLaw r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ResidualEntropy.lean#L222"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2PointEntropy.equilibriumDensity_lower",
+      "file": "Foundation/SU2PointEntropy.lean",
+      "line": 52,
+      "source_sha256": "b599356517fb202efcb4666afa2db6b9528c0810cb1ff3ce581b7a323d3c83d2",
+      "declaration_header": "theorem equilibriumDensity_lower (r : \u211d) (D : SU2) :\n    Real.exp (-(2 * |r|)) \u2264 equilibriumDensity r D",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2PointEntropy.lean#L52"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2PointEntropy.transitionDensity_upper",
+      "file": "Foundation/SU2PointEntropy.lean",
+      "line": 64,
+      "source_sha256": "b599356517fb202efcb4666afa2db6b9528c0810cb1ff3ce581b7a323d3c83d2",
+      "declaration_header": "theorem transitionDensity_upper (r : \u211d) (C D : SU2) :\n    MeasurableExponentialKernel.density law (interaction r) C D \u2264\n      Real.exp (2 * |r|)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2PointEntropy.lean#L64"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2PointEntropy.reverse_density_bound",
+      "file": "Foundation/SU2PointEntropy.lean",
+      "line": 79,
+      "source_sha256": "b599356517fb202efcb4666afa2db6b9528c0810cb1ff3ce581b7a323d3c83d2",
+      "declaration_header": "theorem reverse_density_bound (r : \u211d) (C D : SU2) :\n    MeasurableExponentialKernel.density law (interaction r) C D \u2264\n      Real.exp (4 * |r|) * equilibriumDensity r D",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2PointEntropy.lean#L79"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2PointEntropy.loopKernel_dominated_by_equilibrium",
+      "file": "Foundation/SU2PointEntropy.lean",
+      "line": 89,
+      "source_sha256": "b599356517fb202efcb4666afa2db6b9528c0810cb1ff3ce581b7a323d3c83d2",
+      "declaration_header": "theorem loopKernel_dominated_by_equilibrium (r : \u211d) (C : SU2) :\n    loopKernel r C \u2264 ENNReal.ofReal (Real.exp (4 * |r|)) \u2022 equilibriumLaw r",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2PointEntropy.lean#L89"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2PointEntropy.forward_entropy_finite",
+      "file": "Foundation/SU2PointEntropy.lean",
+      "line": 123,
+      "source_sha256": "b599356517fb202efcb4666afa2db6b9528c0810cb1ff3ce581b7a323d3c83d2",
+      "declaration_header": "theorem forward_entropy_finite (r : \u211d) (\u03c1 : Measure SU2)\n    [IsProbabilityMeasure \u03c1] :\n    klDiv (loopKernel r \u2218\u2098 \u03c1) (equilibriumLaw r) \u2260 \u22a4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2PointEntropy.lean#L123"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2PointEntropy.entropy_geometric_after_first",
+      "file": "Foundation/SU2PointEntropy.lean",
+      "line": 141,
+      "source_sha256": "b599356517fb202efcb4666afa2db6b9528c0810cb1ff3ce581b7a323d3c83d2",
+      "declaration_header": "theorem entropy_geometric_after_first (r : \u211d) (\u03c1 : Measure SU2)\n    [IsProbabilityMeasure \u03c1] (n : \u2115) :\n    klDiv (iterateLaw r \u03c1 (n + 1)) (equilibriumLaw r) \u2264\n      (ENNReal.ofReal (1 - reset r)) ^ n *\n        klDiv (loopKernel r \u2218\u2098 \u03c1) (equilibriumLaw r)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2PointEntropy.lean#L141"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2PointEntropy.point_start_entropy_finite",
+      "file": "Foundation/SU2PointEntropy.lean",
+      "line": 162,
+      "source_sha256": "b599356517fb202efcb4666afa2db6b9528c0810cb1ff3ce581b7a323d3c83d2",
+      "declaration_header": "theorem point_start_entropy_finite (r : \u211d) (C : SU2) (n : \u2115) :\n    klDiv (iterateLaw r (Measure.dirac C) (n + 1)) (equilibriumLaw r) \u2260 \u22a4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2PointEntropy.lean#L162"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2PointEntropy.entropy_tendsto_zero_after_first",
+      "file": "Foundation/SU2PointEntropy.lean",
+      "line": 166,
+      "source_sha256": "b599356517fb202efcb4666afa2db6b9528c0810cb1ff3ce581b7a323d3c83d2",
+      "declaration_header": "theorem entropy_tendsto_zero_after_first (r : \u211d) (\u03c1 : Measure SU2)\n    [IsProbabilityMeasure \u03c1] :\n    Tendsto (fun n : \u2115 => klDiv (iterateLaw r \u03c1 (n + 1)) (equilibriumLaw r))\n      atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2PointEntropy.lean#L166"
+    }
+  ],
+  "human_reorganization": [
+    "Generic formal kernels and extended KL statements are restricted to probabilities on standard Borel spaces. The printed density proof of the chain rule assumes finite input entropy and never subtracts infinities.",
+    "Finite-word potential boundedness is reproved by elementary unitary matrix entry bounds rather than the mapped quaternion staple radius.",
+    "The explicit bounded boundary-density ratio and first-step entropy upper bound 4|r| are printed human deductions of mapped partition and domination estimates, not additional formal declarations.",
+    "The residual contraction proof uses standard Borel reverse disintegration and conditional Jensen to reconstruct the classical data-processing argument; the formal source invokes the measure-theoretic KL library.",
+    "Boundary-preserving updates act on boundary/interior pairs; the positive loop comparison replaces the single chain state. Their state spaces and references are kept separate. The hemisphere event is not claimed gauge invariant."
+  ],
+  "novelty": "Classical formalization companion; no new heat-bath obstruction, strict data-processing phenomenon or mass-gap claim."
+}

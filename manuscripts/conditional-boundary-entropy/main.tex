@@ -1,0 +1,588 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,microtype}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\R}{\mathbb R}\newcommand{\E}{\mathbf E}
+\newcommand{\SU}{\operatorname{SU}(2)}
+\newcommand{\KL}{\operatorname{D}}
+\newcommand{\lean}[2]{\par\smallskip\noindent\textit{Source correspondence:}
+\texttt{\detokenize{#1}}\par\noindent\texttt{\detokenize{#2}}\par\smallskip}
+\title{Conditional resampling and retained boundary entropy\\in finite SU(2) models}
+\author{Project Stardust}\date{October 29, 2026}
+\begin{document}\maketitle
+\begin{abstract}
+A conditional update that retains its boundary can remove all error in the
+conditional law without removing any error in the boundary marginal. We give
+complete probability-level proofs of the update law, idempotence, stationary
+family and exact finite relative-entropy decomposition. For bounded finite-word
+SU(2) interactions we construct the globally normalized joint law and its
+actual conditional kernel, including the interaction-induced boundary marginal.
+Conditioning that continuous boundary on a nontrivial open hemisphere gives a
+stationary perturbation with finite strictly positive entropy against the
+original joint law. Every strict global entropy contraction factor therefore
+fails for this update, at every fixed finite coupling. The obstruction uses
+the original continuous-boundary reference, in addition to an elementary
+two-atom example. A separate state-replacement loop kernel has genuine fixed-coupling entropy
+decay, with finite entropy after one step even from a point mass. Classical
+conditional-expectation and heat-bath mechanisms
+are credited; no obstruction to dynamics updating all coordinates or to a
+physical Yang--Mills mass gap is asserted.
+\end{abstract}
+
+\section{The distinction to be proved}
+Fix a boundary variable $p$ and an interior variable $x$. A heat-bath step
+retains $p$ and replaces $x$ by a draw from a specified conditional law
+$K_p$. Thus it enforces the desired conditional distribution in one step.
+It does not force the boundary marginal to equal any chosen reference
+marginal. This elementary fact becomes useful when an entropy chain rule is
+mistaken for a strictly positive global dissipation estimate.
+
+The frozen verified source for this exposition is commit
+\begin{quote}\small\texttt{bab688bb6140cd6316c80680095a914ea0d346db}.\end{quote}
+The accompanying map supplies exact declaration headers, hashes and links.
+The main construction is already in that library; no new research proof,
+mathematical source change or external submission is made here.
+We work with probability measures on standard Borel spaces, sufficient for
+all continuous compact-group examples. The formal generic kernel results
+also cover more general measurable spaces and, in their stated forms,
+finite or sigma-finite measures. We do not identify those broader hypotheses
+with the narrower probability-level exposition.
+
+For probability measures $P,Q$, relative entropy means
+\[
+ \KL(P\Vert Q)=\int f\log f\,dQ\quad\text{if }P=fQ,
+ \qquad \KL(P\Vert Q)=+\infty\quad\text{if }P\not\ll Q.
+\]
+Use $0\log0=0$. This is an extended nonnegative quantity. The integral is
+well defined because the negative part of $f\log f$ is bounded by $1/e$.
+For the exact decomposition below we assume finite input entropy, so all
+terms can be handled without subtracting infinities. The actual SU(2)
+counterexample will have entropy equal to a specified finite positive number.
+
+\section{An actual boundary-preserving kernel}
+Let $\mathsf P,\mathsf E$ be standard Borel spaces, and let
+$K:\mathsf P\to\mathcal P(\mathsf E)$ be a Markov kernel. Write
+$\pi\otimes K$ for the joint measure
+\[
+ (\pi\otimes K)(B)=\int\!\int1_B(p,x)\,K_p(dx)\,\pi(dp).
+\]
+Define a kernel $T$ on $\mathsf P\times\mathsf E$ by
+\begin{equation}\label{eq:T}
+ T((p,x),B)=\int1_B(p,y)\,K_p(dy).
+\end{equation}
+For a law $J$, denote its boundary marginal by $J_{\mathsf P}$ and its
+updated law by $JT$. This notation corresponds to kernel composition in the
+formal sources, whose composition symbol is written in the opposite order.
+
+\begin{theorem}[Update law and stationary family]\label{thm:update}
+The kernel $T$ is Markov, and for every probability law $J$,
+\begin{equation}\label{eq:update}
+ JT=J_{\mathsf P}\otimes K.
+\end{equation}
+It preserves the boundary marginal and satisfies $T^2=T$. Every law
+$\pi\otimes K$ is stationary. Conversely, $JT=J$ exactly when
+$J=J_{\mathsf P}\otimes K$, equivalently when $K$ is a conditional kernel
+for $J$.
+\end{theorem}
+\begin{proof}
+For each input $(p,x)$, \eqref{eq:T} is the pushforward of the probability
+$K_p$ under $y\mapsto(p,y)$. For each measurable output set $B$, the kernel
+integration theorem makes its value measurable in $p$, and hence in $(p,x)$.
+This proves that it is Markov. On rectangles $A\times C$, Tonelli gives
+\[
+ (JT)(A\times C)=\int1_A(p)K_p(C)\,J(d p,d x)
+ =\int_A K_p(C)\,J_{\mathsf P}(dp).
+\]
+Rectangles determine probability measures on the product sigma algebra,
+so \eqref{eq:update} follows. Taking $C=\mathsf E$ proves marginal
+preservation. Applying the same formula twice gives
+$(JT)T=(J_{\mathsf P}\otimes K)T=J_{\mathsf P}\otimes K$.
+The same rectangle calculation for a point input proves the kernel identity
+$T^2=T$. The stationary statements follow directly from \eqref{eq:update}
+and the definition of a conditional kernel.
+\end{proof}
+\lean{ConditionalResamplingKernel}{update_markov; update_law; boundary_preserved; update_idempotent}
+\lean{ConditionalResamplingKernel}{every_boundary_stationary; invariant_iff_conditional}
+Different boundary marginals yield different stationary laws: the first
+marginal of $\pi\otimes K$ is $\pi$. Thus stationary nonuniqueness here is
+not ambiguity about versions of a conditional distribution. It is a
+consequence of a coordinate that the update retains exactly.
+
+\section{Exact finite-entropy accounting}
+Fix a reference boundary probability $\tau$ and set $Q=\tau\otimes K$.
+By the preceding theorem, $Q$ is stationary. The following proof explicitly
+identifies the density after one update.
+
+\begin{theorem}[Marginal and conditional entropy]\label{thm:entropy}
+Suppose $\KL(J\Vert Q)<\infty$. Then
+\begin{align}
+ \KL(JT\Vert Q)&=\KL(J_{\mathsf P}\Vert\tau),\label{eq:after}\\
+ \KL(J\Vert Q)&=\KL(JT\Vert Q)+\KL(J\Vert JT).\label{eq:chain}
+\end{align}
+All three quantities in \eqref{eq:chain} are finite and nonnegative.
+\end{theorem}
+\begin{proof}
+Finite input entropy implies $J=fQ$ for a nonnegative density $f$ with
+$\int f\,dQ=1$. Define
+\[
+ m(p)=\int f(p,x)\,K_p(dx).
+\]
+Tonelli gives $J_{\mathsf P}=m\tau$ and hence, by \eqref{eq:update},
+$JT=mQ$. Conditional Jensen for the convex function $u\log u$ gives
+\[
+ \int m\log m\,d\tau\leq\int f\log f\,dQ<\infty.
+\]
+Both negative parts are integrable, so the two finite integrals are
+unambiguous. Moreover
+\[
+ \int |\log m|\,dJ=\int m|\log m|\,d\tau<\infty,
+\]
+where expressions on $m=0$ can be assigned any value because $J$ gives that
+set zero mass. The density of $JT$ relative to $Q$ is $m(p)$, so its entropy
+is precisely $\int m\log m\,d\tau$, proving \eqref{eq:after}.
+
+On $m(p)>0$, put $r(p,x)=f(p,x)/m(p)$. On $m=0$, nonnegativity and the
+definition of $m$ imply $f=0$ for $K_p$-almost every $x$, for $\tau$-almost
+every such $p$. Thus $J\ll JT$ and $r$ is a density of $J$ relative to
+$JT$. Since $\log f$ is integrable under $J$ by finite entropy, and
+$\log m$ is integrable under $J$ by the preceding calculation, their
+difference $\log r$ is integrable under $J$. Therefore
+\[
+ \KL(J\Vert Q)=\int\log f\,dJ
+ =\int\log m\,dJ+\int\log r\,dJ
+ =\KL(JT\Vert Q)+\KL(J\Vert JT).
+\]
+Nonnegativity follows from Jensen, or from $u\log u\geq u-1$ integrated
+against a probability reference. The established integrability gives
+finiteness of the final term as well.
+\end{proof}
+\lean{ConditionalResamplingEntropy}{entropy_after_update; entropy_decomposition_of_conditional}
+The mapped source proves an extended-divergence chain rule using the original
+measure-theoretic KL library. The displayed human proof deliberately proves
+its finite-entropy probability restriction, which covers the counterexamples
+and avoids any assertion that $+\infty-(+\infty)$ is defined.
+
+There is a useful direct interpretation of the second term. For $m(p)>0$,
+the input conditional law has density $f(p,x)/m(p)$ relative to $K_p$.
+Consequently
+\[
+ \KL(J\Vert JT)=\int\KL(J(dx\mid p)\Vert K_p)\,J_{\mathsf P}(dp).
+\]
+This is the conditional error that the step removes. The remaining entropy
+depends only on the retained boundary. On the restricted class
+$J_{\mathsf P}=\tau$, one step does send every input to $Q$. That restricted
+statement does not imply strict global contraction for arbitrary inputs.
+
+\section{Stationary perturbations with positive finite entropy}
+The elementary mechanism can be realized without any singular or infinite
+entropy comparison.
+
+\begin{lemma}[Conditioning a boundary event]\label{lem:event}
+Let $A\subseteq\mathsf P$ be measurable with $a=\tau(A)\in(0,1)$. Define
+\[
+ \pi=\tau(\,\cdot\mid A)=a^{-1}1_A\tau,\qquad J_A=\pi\otimes K.
+\]
+Then $J_AT=J_A$ and
+\begin{equation}\label{eq:evententropy}
+ \KL(J_A\Vert Q)=\log(1/a)\in(0,\infty).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Stationarity follows from Theorem~\ref{thm:update}. The density of $J_A$
+relative to $Q$ is $a^{-1}1_A(p)$, because integrating on rectangles gives
+the same joint measure. Its logarithm equals $\log(1/a)$ on the support of
+$J_A$, and $J_A$ has mass one. This proves \eqref{eq:evententropy} directly.
+The assumptions $0<a<1$ give both finiteness and strict positivity.
+\end{proof}
+\lean{ConditioningRelativeEntropy}{entropy_cond_finite; entropy_cond_exact; entropy_cond_positive}
+
+\begin{theorem}[No strict global fraction]\label{thm:nocontraction}
+Under the assumptions of Lemma~\ref{lem:event}, no $q<1$ can satisfy
+\[
+ \KL(JT\Vert Q)\leq q\KL(J\Vert Q)
+\]
+for all finite-entropy probability inputs $J$. Likewise there is no $c>0$
+such that $c\KL(J\Vert Q)\leq\KL(J\Vert JT)$ for all such inputs.
+\end{theorem}
+\begin{proof}
+Substitute $J_A$. The first inequality would say $d\leq qd$ for the finite
+number $d=\log(1/a)>0$, contradicting $q<1$. The second would say
+$cd\leq0$, since $J_AT=J_A$, contradicting $c,d>0$.
+\end{proof}
+\lean{ConditionalResamplingEntropy}{no_positive_dissipation_fraction; binary_no_strict_contraction}
+For a concrete finite example let $\mathsf P=\{0,1\}$,
+$\tau=\frac12(\delta_0+\delta_1)$ and $\pi=\delta_0$.
+For \emph{any} Markov kernel $K$, including a strictly positive one on a
+finite interior space, $\pi\otimes K$ is stationary and its entropy relative
+to $\tau\otimes K$ is exactly $\log2$. This example uses a specifically
+chosen two-atom boundary reference. It does not by itself prove the same
+statement against a prescribed continuous interaction law; that is the task
+of the next sections.
+
+\section{Globally normalized bounded interaction laws}
+Let $\rho$ and $\nu$ be probability measures on $\mathsf P$ and $\mathsf E$,
+and let $V:\mathsf P\times\mathsf E\to\R$ be measurable with
+$|V(p,x)|\leq B<\infty$. Define the section and total partitions
+\[
+ z(p)=\int e^{V(p,x)}\,\nu(dx),\qquad
+ \mathcal Z=\int z(p)\,\rho(dp).
+\]
+Both satisfy $e^{-B}\leq z(p),\mathcal Z\leq e^B$ and are strictly positive.
+The section partition is measurable by kernel integration. Set
+\begin{align}
+ K_p(dx)&=z(p)^{-1}e^{V(p,x)}\nu(dx),\label{eq:K}\\
+ \tau(dp)&=\mathcal Z^{-1}z(p)\rho(dp),\label{eq:tau}\\
+ Q(dp,dx)&=\mathcal Z^{-1}e^{V(p,x)}\rho(dp)\nu(dx).\label{eq:Q}
+\end{align}
+
+\begin{proposition}[Factorization and boundary equivalence]\label{prop:factor}
+The formulas define a Markov kernel $K$ and probabilities $\tau,Q$.
+Moreover $Q=\tau\otimes K$, $Q_{\mathsf P}=\tau$, and $\tau$ and $\rho$
+have exactly the same null sets. In fact
+\[
+ e^{-2B}\leq\frac{d\tau}{d\rho}(p)\leq e^{2B}.
+\]
+\end{proposition}
+\begin{proof}
+The section density in \eqref{eq:K} is jointly measurable, nonnegative and
+has integral one. It defines a Markov kernel by the kernel integration
+theorem. Fubini gives the masses of \eqref{eq:tau} and \eqref{eq:Q} as one.
+Multiplication of the boundary density and conditional density cancels
+$z(p)$, giving the joint density \eqref{eq:Q}; alternatively integrate on
+rectangles. The first marginal follows by integrating $K_p(\mathsf E)=1$.
+The density bound follows from the two partition bounds. A density bounded
+strictly above zero and finite has precisely the same null sets as its
+reference measure.
+\end{proof}
+\lean{ExponentialJointDisintegration}{boundary_probability; factorization; joint_probability; conditional_kernel}
+\lean{ExponentialBoundaryEquivalence}{reverse_ac; null_iff}
+The original generic equivalence theorem only requires positive integrable
+exponential sections and integrability of the joint exponential; the bounded
+case here supplies these hypotheses directly. The explicit uniform density
+bound is a human consequence of boundedness, not an asserted additional
+formal declaration.
+
+The reference boundary is $\tau$, rather than $\rho$, in the actual
+globally normalized model. Unless the section partition $z(p)$ is constant,
+$\rho\otimes K$ differs from $Q$. Omitting this reweighting would replace
+the intended reference law and invalidate an entropy comparison claimed to
+use the globally normalized interaction.
+
+\section{Finite SU(2) words and their actual link conditional}
+Let $G=\SU$, with normalized Haar probability $m$. Its matrices are unitary
+of determinant one. For a finite boundary index set $I$, put
+$\mathsf P=G^I$, $\mathsf E=G$, $\rho=m^{\otimes I}$ and $\nu=m$.
+Choose a finite collection of words $W_j(U)$ in boundary letters $U_i$ and
+their inverses. Empty words equal the identity. Matrix multiplication and
+inversion are continuous on $G$, so each word is continuous, and in
+particular measurable. Let the collection have $N$ words and define
+\begin{equation}\label{eq:potential}
+ V_\beta(U,A)=\frac\beta2\operatorname{Re}\operatorname{tr}
+                   \left(A\sum_{j=1}^N W_j(U)\right).
+\end{equation}
+All coupling constants $\beta\in\R$ are allowed.
+
+\begin{lemma}[Uniform finite-word bound]\label{lem:bound}
+For every boundary $U$ and link $A$,
+$|V_\beta(U,A)|\leq |\beta|N$.
+\end{lemma}
+\begin{proof}
+Each product $AW_j(U)$ is unitary. Every diagonal entry of a unitary matrix
+has modulus at most one, since each column has Euclidean norm one.
+Therefore $|\operatorname{Re}\operatorname{tr}(AW_j(U))|\leq2$.
+Linearity of the trace and the triangle inequality give a total bound
+$\frac{|\beta|}{2}\sum_j2=|\beta|N$.
+\end{proof}
+\lean{SU2BoundaryWordKernel}{word_measurable; family_measurable; kernel_markov}
+\lean{SU2StapleKernel}{exponent_bound; exponential_integrable}
+The source proves the same bound through its quaternion staple radius;
+the two-line matrix argument is a human reorganization of that estimate.
+
+Apply Section~5 with $B=|\beta|N$. Denote the resulting actual joint law,
+boundary marginal and conditional kernel by $Q_\beta,\tau_\beta,K_\beta$.
+Their explicit densities are
+\[
+ Q_\beta(dU,dA)=\frac{e^{V_\beta(U,A)}}{\mathcal Z_\beta}\rho(dU)m(dA),
+ \qquad
+ (K_\beta)_U(dA)=\frac{e^{V_\beta(U,A)}}{z_\beta(U)}m(dA).
+\]
+In particular,
+\begin{equation}\label{eq:actualfactor}
+ Q_\beta=\tau_\beta\otimes K_\beta,
+ \qquad \tau_\beta(dU)=\frac{z_\beta(U)}{\mathcal Z_\beta}\rho(dU).
+\end{equation}
+No formal ``conditional density'' is being used without a joint law:
+these formulas construct both the joint probability and its disintegration.
+The rectangle identity
+\[
+ Q_\beta(B\times C)=\int_B (K_\beta)_U(C)\,\tau_\beta(dU)
+\]
+checks the actual conditional relationship. The heat-bath update
+$T_\beta((U,A),\cdot)=\delta_U\otimes(K_\beta)_U$ is Markov, idempotent,
+boundary preserving, and leaves $Q_\beta$ invariant, by Theorem~\ref{thm:update}.
+\lean{SU2BoundaryJointLaw}{factorization; boundary_marginal; conditional_rectangles; conditional_kernel}
+\lean{SU2ConditionalHeatBath}{update_markov; update_idempotent; boundary_preserved; joint_invariant}
+
+For every finite-entropy probability input $J$ against this actual joint
+reference, Theorem~\ref{thm:entropy} now gives
+\begin{align*}
+ \KL(JT_\beta\Vert Q_\beta)&=\KL(J_{\mathsf P}\Vert\tau_\beta),\\
+ \KL(J\Vert Q_\beta)&=\KL(JT_\beta\Vert Q_\beta)
+                         +\KL(J\Vert JT_\beta).
+\end{align*}
+The formal source retains the extended-divergence versions as well.
+\lean{SU2HeatBathEntropy}{actual_joint_entropy_after_update; actual_joint_entropy_decomposition}
+
+\section{A stationary perturbation of the continuous-boundary reference}
+We now use one genuine continuous boundary coordinate, so $I$ has one
+element and $\mathsf P=G$. Every finite word collection and finite real
+coupling in \eqref{eq:potential} is still permitted. Define the open event
+\[
+ H=\{U\in G:\operatorname{Re}U_{11}>0\}.
+\]
+Its complement has a nonempty open subset
+$H_- =\{U:\operatorname{Re}U_{11}<0\}$.
+
+\begin{lemma}[A nontrivial event for the actual boundary]\label{lem:hemisphere}
+For every finite word interaction and $\beta\in\R$,
+\[
+ 0<a_\beta:=\tau_\beta(H)<1.
+\]
+\end{lemma}
+\begin{proof}
+The matrix entry is continuous. The identity belongs to $H$, and $-1$
+belongs to $H_-$, so both are nonempty open sets. Every nonempty open set
+in a compact group has positive Haar measure: if $O$ is nonempty, its left
+translates cover the group, and compactness extracts a finite subcover.
+If $m(O)=0$, translation invariance would make the whole group have measure
+zero, contradicting $m(G)=1$.
+Thus $m(H)>0$ and $m(H^c)\geq m(H_-)>0$.
+Proposition~\ref{prop:factor} says that $\tau_\beta$ has exactly the Haar
+null sets, so the same strict inequalities hold for $\tau_\beta$.
+Since it is a probability and $H$ is measurable, they imply
+$0<\tau_\beta(H)<1$.
+\end{proof}
+\lean{SU2BoundaryConditionedEntropy}{haar_hemisphere_positive; haar_complement_positive}
+\lean{SU2BoundaryConditionedEntropy}{boundary_null_iff; boundary_event_nontrivial}
+No symmetry of the interaction has been assumed, and $a_\beta=1/2$ is
+not claimed. The argument proves the strict range actually
+required for finite positive entropy.
+
+\begin{theorem}[Continuous-boundary entropy obstruction]\label{thm:su2}
+Define
+\[
+ \widehat\tau_\beta=\tau_\beta(\,\cdot\mid H),\qquad
+ \widehat Q_\beta=\widehat\tau_\beta\otimes K_\beta.
+\]
+These are probability measures, $\widehat Q_\beta$ is stationary for
+$T_\beta$, and
+\begin{equation}\label{eq:exact}
+ 0<\KL(\widehat Q_\beta\Vert Q_\beta)
+   =\log(1/a_\beta)<\infty.
+\end{equation}
+For every $q<1$ the strict global contraction inequality
+\[
+ \KL(JT_\beta\Vert Q_\beta)\leq q\KL(J\Vert Q_\beta)
+\]
+fails for the actual finite-entropy input $J=\widehat Q_\beta$.
+\end{theorem}
+\begin{proof}
+Lemma~\ref{lem:hemisphere} makes conditioning well defined.
+Lemma~\ref{lem:event}, applied to $\tau_\beta,K_\beta,H$, gives stationarity
+and \eqref{eq:exact}. Substitution into the proposed inequality gives
+$\log(1/a_\beta)\leq q\log(1/a_\beta)$, impossible for $q<1$.
+\end{proof}
+\lean{SU2BoundaryConditionedEntropy}{perturbed_stationary; entropy_finite; entropy_exact}
+\lean{SU2BoundaryConditionedEntropy}{entropy_positive; no_strict_contraction}
+This test changes the boundary distribution absolutely continuously and
+retains the correct link conditional at every retained boundary.
+It is therefore stronger for this particular reference-law question than
+changing the reference to a two-atom boundary law. The two examples share the
+same classical mechanism, but they address different reference measures.
+
+\section{A replacement kernel with genuine entropy decay}
+For comparison we now change the state space and the update. The state is
+one loop matrix $C\in G$. Put $h(C)=\frac12\operatorname{Re}\operatorname{tr}C$,
+so $|h(C)|\leq1$. For $r\in\R$, define
+\[
+ z_r(C)=\int_G e^{r h(C)h(D)}m(dD),\qquad
+ Z_r=\int_Gz_r(C)m(dC),
+\]
+\[
+ k_r(C,D)=\frac{e^{r h(C)h(D)}}{z_r(C)},\quad
+ P_r(C,dD)=k_r(C,D)m(dD),
+\]
+\[
+ \pi_r(dC)=p_r(C)m(dC),\quad p_r(C)=\frac{z_r(C)}{Z_r}.
+\]
+This transition outputs $D$ as the next state; it does not output the pair
+$(C,D)$ while retaining $C$. It is therefore different from the update $T$
+on a boundary--interior pair. All section and total partitions are between
+$e^{-|r|}$ and $e^{|r|}$, so the formulas give actual probabilities and a
+Markov kernel by the same measurable-density argument as before.
+
+\begin{proposition}[Stationary comparison bounds]\label{prop:loop}
+The law $\pi_r$ is stationary for $P_r$, and
+\[
+ e^{-2|r|}\leq k_r(C,D),p_r(D)\leq e^{2|r|}.
+\]
+In particular, with $\varepsilon_r=\frac12e^{-4|r|}\in(0,1)$,
+\begin{equation}\label{eq:sandwich}
+ \varepsilon_r\pi_r\leq P_r(C,\cdot)\leq e^{4|r|}\pi_r
+ \qquad\text{for every }C.
+\end{equation}
+\end{proposition}
+\begin{proof}
+The joint density $p_r(C)k_r(C,D)$ equals
+$Z_r^{-1}e^{rh(C)h(D)}$. It is symmetric in $C,D$. Its first marginal is
+$\pi_r$, so symmetry makes its second marginal $\pi_r$ as well. This is
+stationarity. The two density bounds follow by dividing numerator and
+partition bounds. Consequently
+$k_r(C,D)\geq e^{-2|r|}\geq e^{-4|r|}p_r(D)$ and
+$k_r(C,D)\leq e^{2|r|}\leq e^{4|r|}p_r(D)$.
+Integrate these inequalities against $m$ and weaken the first coefficient
+by a factor two to obtain \eqref{eq:sandwich}. The factor two ensures
+$\varepsilon_r<1$ even at $r=0$ and matches the source's residual kernel.
+\end{proof}
+\lean{SU2LoopEquilibrium}{detailed_balance_density; equilibriumLaw_stationary}
+\lean{SU2StationaryMinorization}{stationary_density_minorization; loopKernel_minorizes_equilibrium}
+\lean{SU2PointEntropy}{reverse_density_bound; loopKernel_dominated_by_equilibrium}
+
+We give the entropy implication with enough detail to specify the actual
+residual kernel and the role of finite entropy. The following argument is
+classical. Suppose $P$ is a Markov kernel on a standard Borel space, $\pi$
+is stationary and $P(x,\cdot)\geq\varepsilon\pi$ for every $x$, with
+$0<\varepsilon<1$. Define
+\[
+ R(x,\cdot)=\frac{P(x,\cdot)-\varepsilon\pi}{1-\varepsilon}.
+\]
+This is a Markov kernel: subtraction leaves a nonnegative measure by
+minorization, its mass is $1-\varepsilon$, and measurable evaluations follow
+from those of $P$. Integrating the identity
+$P=\varepsilon\pi+(1-\varepsilon)R$ against $\pi$ and using stationarity
+gives $\pi R=\pi$.
+
+\begin{lemma}[Residual entropy contraction]\label{lem:residual}
+For every probability $\mu$ with finite $\KL(\mu\Vert\pi)$,
+\[
+ \KL(\mu P\Vert\pi)\leq(1-\varepsilon)\KL(\mu\Vert\pi).
+\]
+\end{lemma}
+\begin{proof}
+We first verify data processing for $R$ in this finite-entropy setting.
+Write $\mu=f\pi$. The stationary joint law $\pi(dx)R(x,dy)$ has second
+marginal $\pi(dy)$. Its disintegration given $y$ supplies a reverse kernel
+$\widetilde R(y,dx)$. The density of $\mu R$ relative to $\pi$ is
+$g(y)=\int f(x)\widetilde R(y,dx)$, as checked by integrating against
+bounded measurable functions of $y$. Jensen for $u\log u$ gives
+\[
+ \int g\log g\,d\pi\leq\int\!\int f(x)\log f(x)
+           \widetilde R(y,dx)\pi(dy)=\int f\log f\,d\pi.
+\]
+Integrable negative parts justify these extended integrals; the upper bound
+is finite, so $\KL(\mu R\Vert\pi)$ is finite too.
+
+The density of $\mu P$ is $\varepsilon+(1-\varepsilon)g$.
+Convexity of $u\log u$ at the mixture of $1$ and $g$ gives pointwise
+\[
+ (\varepsilon+(1-\varepsilon)g)
+ \log(\varepsilon+(1-\varepsilon)g)
+ \leq(1-\varepsilon)g\log g.
+\]
+Integration and the data-processing bound prove the claim.
+\end{proof}
+\lean{SU2ResidualEntropy}{residualKernel_markov; residualKernel_split; residualKernel_invariant}
+\lean{SU2ResidualEntropy}{entropy_contraction; entropy_geometric}
+The mapped formal theorem also allows infinite input entropy using extended
+KL inequalities. The finite-input proof above suffices after the following
+actual smoothing step and does not rely on multiplying an infinite entropy
+by a geometric factor and then calling it a convergence estimate.
+
+\begin{theorem}[Finite entropy after one step and subsequent decay]\label{thm:decay}
+For every $r\in\R$ and \emph{every} probability input $\mu$ on $G$,
+including a point mass,
+\[
+ \KL(\mu P_r\Vert\pi_r)\leq4|r|<\infty,
+\]
+and for all integers $n\geq0$,
+\begin{equation}\label{eq:decay}
+ \KL(\mu P_r^{n+1}\Vert\pi_r)
+ \leq(1-\varepsilon_r)^n\KL(\mu P_r\Vert\pi_r)
+ \leq4|r|(1-\varepsilon_r)^n\longrightarrow0.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Integrating the upper bound in \eqref{eq:sandwich} against $\mu$ gives
+$\mu P_r\leq M\pi_r$, $M=e^{4|r|}\geq1$. Its density $f$ is at most $M$.
+Since $f\log f\leq f\log M$, its entropy is at most $\log M=4|r|$;
+the negative part is bounded, so this also proves finiteness. Now apply
+Lemma~\ref{lem:residual} successively to the finite-entropy input $\mu P_r$.
+Every iterate has finite entropy by induction, giving the first inequality
+in \eqref{eq:decay}. The geometric factor tends to zero because
+$0<\varepsilon_r<1$. This proves the last assertion, including $r=0$,
+where the first-step entropy is zero.
+\end{proof}
+\lean{SU2PointEntropy}{forward_entropy_finite; entropy_geometric_after_first}
+\lean{SU2PointEntropy}{point_start_entropy_finite; entropy_tendsto_zero_after_first}
+The explicit upper bound $4|r|$ is a printed human consequence of the mapped
+domination estimate; the source states finiteness and the exact geometric
+estimate with the actual first-step entropy. No sharpness of the numerical
+constant is claimed. The rate here is fixed-coupling: the displayed
+$\varepsilon_r$ tends to zero as $|r|\to\infty$, and this proof supplies
+no coupling-uniform entropy rate. Neither it nor the boundary obstruction
+addresses volume or continuum uniformity.
+
+\section{Interpretation and comparison with heat-bath mixing}
+Conditional expectation and the entropy chain rule are classical. This
+paper makes no novelty claim for the obstruction that an exactly retained
+variable can preserve information. Raginsky's primary treatment of strong
+data processing \cite{raginsky}, Definition~1, formulates strict entropy
+contraction as a ratio bounded below one. The stationary tests above
+exhibit ratio one in the specified channel. His finite-alphabet results
+are background for the terminology; we do not substitute them for the
+continuous-boundary proof.
+
+Caputo--Menz--Tetali \cite{cmt}, Section~1.1 and Proposition~1.1, treat
+heat-bath dynamics that update all coordinate positions, with approximate
+entropy tensorization supplying global control. That is a different update
+from repeating one boundary-preserving conditional step. Their weak
+dependence hypotheses are not established here, and no such mixing estimate
+is imported. Our stationary family does not contradict entropy decay for
+a dynamics whose allowed updates also change the boundary.
+
+There is also no conflict with strict mixing of a finite transfer kernel
+on a different state space. The finite seven-link transfer construction in
+the companion paper updates its own chain state; it is not identified here
+with $T_\beta$. A kernel preserving $U$ exactly is structurally incapable
+of forgetting an arbitrary initial distribution of $U$, regardless of how
+positive its conditional link density is. Boundary reweighting in
+\eqref{eq:actualfactor} specifies which global reference is at issue.
+
+For the restricted class $J_{\mathsf P}=\tau_\beta$, formula
+\eqref{eq:update} sends $J$ to $Q_\beta$ in one step. For arbitrary boundary
+inputs the global fraction fails at every fixed finite coupling, rather than
+only in a large-coupling asymptotic. These two exact statements delimit the
+scope without claiming an entropy inequality that the update cannot satisfy.
+
+Finally the hemisphere event uses a particular matrix coordinate and is
+not asserted gauge invariant. The theorem concerns the stated actual
+probability space and conditional update; it does not classify a gauge
+quotient, all lattice block dynamics, infinite-volume measures or continuum
+Schwinger functions. No lattice-spacing or volume limit is constructed, and
+no physical mass-gap implication, positive or negative, follows.
+
+\begin{thebibliography}{9}
+\bibitem{raginsky} M. Raginsky, \emph{Logarithmic Sobolev inequalities and
+strong data processing theorems for discrete channels}, IEEE International
+Symposium on Information Theory (2013).
+\href{https://maxim.ece.illinois.edu/pubs/raginsky_ISIT13.pdf}{Primary author PDF}.
+\bibitem{cmt} P. Caputo, G. Menz and P. Tetali,
+\emph{Approximate tensorization of entropy at high temperature},
+Ann. Fac. Sci. Toulouse Math. (6) \textbf{24} (2015), 691--716.
+\href{https://www.numdam.org/item/AFST_2015_6_24_4_691_0.pdf}{Primary journal PDF}.
+\end{thebibliography}
+\end{document}

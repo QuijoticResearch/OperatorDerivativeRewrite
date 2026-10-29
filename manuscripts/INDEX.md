@@ -4,7 +4,7 @@ The independent publication branch contains reviewed editorial drafts built from
 
 ## Reviewed editorial papers
 
-Twenty-one drafts, 195 pages, all based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. Each folder contains its source/PDF, exact theorem map, build and visual receipts, baseline evidence and candid editorial status. These are reviewed drafts, not submission-ready or novelty-certified manuscripts.
+Twenty-two drafts, 205 pages, all based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. Each folder contains its source/PDF, exact theorem map, build and visual receipts, baseline evidence and candid editorial status. These are reviewed drafts, not submission-ready or novelty-certified manuscripts.
 
 ### Arithmetic entire functions
 
@@ -59,6 +59,7 @@ Twenty-one drafts, 195 pages, all based on frozen verified commit `bab688bb6140c
 
 | Paper | Read and inspect | Scope and status |
 |---|---|---|
+| Conditional resampling and retained boundary entropy in finite SU(2) models | [PDF](conditional-boundary-entropy/main.pdf) · [LaTeX](conditional-boundary-entropy/main.tex) · [theorem map](conditional-boundary-entropy/theorem-map.json) · [editorial status](conditional-boundary-entropy/editorial-status.md) | Ten pages. Exact conditional/marginal entropy, actual continuous-boundary stationary perturbation, and a separate replacement kernel with finite first-step entropy and fixed-coupling decay. Classical formalization companion; no global boundary contraction or mass-gap claim. |
 | Gauge-invariant slow modes in a seven-link SU(2) transfer | [PDF](seven-link-transfer/main.pdf) · [LaTeX](seven-link-transfer/main.tex) · [theorem map](seven-link-transfer/theorem-map.json) · [editorial status](seven-link-transfer/editorial-status.md) | Twelve pages. Proved positive ground, actual stationary centered covariance, optimized strict trial, arbitrary fixed-step slow modes, gauge averaging and finite-parameter mixing. Exact two-weight centering boundary; no physical mass-gap claim. Reviewed draft; novelty unresolved. |
 
 ### Fluid calibration diagnostics

@@ -187,3 +187,7 @@ Seven-page classical companion; 105 exact source correspondences; six exact symb
 ## Original clock-hybrid proof expansion
 
 The preserved five-page note is expanded into a ten-page reviewed classical formalization companion with 57 exact source correspondences. Complete original-domain arguments, value/curvature hypothesis separation and the sine mean-versus-observable test are printed. All pages inspected and baseline/source evidence checked. Twenty-one reviewed drafts total 195 pages; observed-filtration causality remains open.
+
+## Boundary entropy and positive replacement comparison
+
+Ten-page classical companion, 86 exact declarations, six exact rational/log-prime finite checks. Complete continuous-boundary conditioning and finite-positive-entropy obstruction are paired with original loop-replacement minorization, first-step smoothing and fixed-coupling entropy decay. Every final page inspected; failed layout logs retained. Twenty-two reviewed drafts total 205 pages.
