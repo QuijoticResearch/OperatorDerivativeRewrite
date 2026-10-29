@@ -2853,3 +2853,4 @@ import Foundation.CubeTemporalSlab
 import Foundation.CubeWilsonSlab
 import Foundation.CubeSlabGauge
 import Foundation.CubeSlabGround
+import Foundation.CubeSlabL2

@@ -13053,3 +13053,36 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.stationary_pairing
 #print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.transition_stationary
 #print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.stationary_reversible
+
+-- Actual homogeneous Wilson slab L2 transfer and gauge cancellation;1738.
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.edgeLaw
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.edge_pairing
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.edge_swap
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.left_preserving
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.right_preserving
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.StateL2
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.EdgeL2
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.leftEmbedding
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.rightEmbedding
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.operator
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.operator_pairing
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.operator_contraction
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.operator_symmetric
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.operator_selfadjoint
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.transfer
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.operator_kernel_pairing
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.transfer_measurable
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.transfer_bound
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.transfer_memLp
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.operator_toLp
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.transition_source_gauge
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.transfer_source_gauge
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.native_eigen_invariant
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.linkTrace_not_native_eigen
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.boundaryGaugeEquiv
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.boundaryGaugeEquiv_apply
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.boundary_gauge_preserving
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.transfer_gauge_odd_zero
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.transfer_linkTrace_zero
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.linkTrace_memLp
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabL2.operator_linkTrace_zero
