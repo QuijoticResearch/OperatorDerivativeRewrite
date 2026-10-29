@@ -25,7 +25,7 @@ geometric and linear-algebra arguments identify the physical norm, cycle
 compression and residual certificate. The finite arithmetic is supplied as
 explicit integer tables with an independent standard-library checker.
 A periodic gauge counterexample and a perturbation cross-term test delimit
-which invertibility and stability conclusions transfer. We then reconstruct exact nonlinear tests: a two-axis Haar parity, a
+which invertibility and stability conclusions transfer. An actual sparse Wilson Hessian has a linear error despite quadratic loss in its scalar Schur complement. We then reconstruct exact nonlinear tests: a two-axis Haar parity, a
 three-axis full 32-link variance difference, and a separate conditional
 large-coupling obstruction to a quadratic boundary budget. A valid linear
 budget remains. These finite results establish no multiscale or continuum
@@ -535,6 +535,155 @@ reference and proved interior coercivity. They do not automatically
 transport the numerical cell gap to nonlinear fields or other geometries.
 \lean{CoerciveSchurStability}{operator_quadratic_perturbation; operator_robust_lower}
 
+
+\section{An actual sparse Hessian: linear error and quadratic elimination}
+The preceding perturbation discussion has a direct nonlinear calibration
+on the same cell. Use the following normalized skew-Hermitian matrices:
+\[
+ J_0=\begin{pmatrix}0&1\\-1&0\end{pmatrix},\quad
+ J_1=\begin{pmatrix}0&i\\i&0\end{pmatrix},\quad
+ J_2=\begin{pmatrix}i&0\\0&-i\end{pmatrix},\qquad T_j=J_j/2.
+\]
+Thus $J_0J_1=J_2$, $J_1J_0=-J_2$, $J_j^2=-I$ and
+$-2\operatorname{Re}\operatorname{Tr}(T_jT_k)=\delta_{jk}$.
+Put $R_\theta=\exp(2\theta T_2)$ and $W(U)=1-\tfrac12
+\operatorname{Re}\operatorname{Tr}U$. All exponentials below lie in
+$SU(2)$, since their exponents are traceless and skew-Hermitian.
+
+Let $v=(1,0,0,0)$ and mark three distinct interior edges
+\[
+ e_R=(v,1),\qquad e_Y=(v+e_1,2),\qquad e_X=(v+e_2,1).
+\]
+Set their links to $R_\theta,\exp(sT_1),\exp(-tT_0)$,
+respectively, and all other interior and boundary links to $I$.
+Inner face orientations are $i<j$ as above. A ribbon may be oriented
+either way, because $W(U^{-1})=W(U)$ for $U\in SU(2)$.
+Deleting identity letters, the complete 72-face word inventory is
+\[
+\begin{array}{c|rrrrrrrr}
+\text{word}&\varnothing&R&R^{-1}&X&X^{-1}&Y&Y^{-1}&RYX^{-1}\\\hline
+\text{count}&60&2&1&3&1&2&2&1
+\end{array}
+\]
+Here $X=\exp(-tT_0)$ and $Y=\exp(sT_1)$. This table can be
+obtained directly by traversing the 24 inner squares and 48 ribbons;
+the accompanying exact checker enumerates those traversals. It retains
+every face, including the 60 zero-action words. Consequently the actual
+full block action on this two-coordinate slice is
+\begin{align}
+ A_\theta(s,t)&=W(R_\theta e^{sT_1}e^{tT_0})
+       +4(1-\cos(s/2))+4(1-\cos(t/2))+3(1-\cos\theta)\notag\\
+ &=12-3c-c\cos(s/2)\cos(t/2)-d\sin(s/2)\sin(t/2)
+       -4\cos(s/2)-4\cos(t/2),\label{eq:sparseaction}
+\end{align}
+where $c=\cos\theta$ and $d=\sin\theta$.
+The last equality follows by multiplying the displayed matrices and
+using $e^{uT_j}=I\cos(u/2)+J_j\sin(u/2)$.
+\lean{SparseBlockWilsonAction}{canonical_faceWord; wordClass_card; blockAction_eq; linkMatrix_mem}
+\lean{SparseBlockPartialHessian}{blockTwo_eq; blockTwo_diag}
+
+In particular, ordinary partial differentiation gives the symmetric
+Hessian at $(s,t)=(0,0)$:
+\begin{equation}\label{eq:sparsehessian}
+ H_\theta=\begin{pmatrix}a&b\\b&a\end{pmatrix},\qquad
+ a=\frac{4+\cos\theta}{4},\quad b=-\frac{\sin\theta}{4},\quad
+ H_0=\frac54 I.
+\end{equation}
+The two coordinate directions have disjoint unit edge support. Each
+has incidence energy five: count its incident squares/ribbons in the
+same face list. They are orthogonal to the origin gauge star because
+neither edge leaves the origin. Thus their physical squared norm is
+$s^2+t^2$, and the incidence reference energy divided by four is
+$\tfrac54(s^2+t^2)$; no coordinate normalization is hidden here.
+The error $H_\theta-H_0$ has eigenvectors $(1,1),(1,-1)$ and eigenvalues
+\[
+ \frac{\cos\theta-1-\sin\theta}{4},\qquad
+ \frac{\cos\theta-1+\sin\theta}{4}.
+\]
+Their derivatives at zero are $-1/4$ and $1/4$. In particular the
+full error is not of quadratic order. Mixed partial symmetry has not
+removed the ordered-product contribution. Both orders differentiate
+the same fixed word $R_\theta e^{sT_1}e^{tT_0}$; exchanging the order
+of differentiation does not exchange its two matrix factors.
+Nevertheless $H_\theta\geq\tfrac12 I$ for every real $\theta$:
+$a-|b|\geq(4-1-1)/4$. Linear perturbation is not loss of positivity.
+\lean{SparseBlockPartialHessian}{partialHessian_eq; error_eigen_same; error_eigen_opposite}
+\lean{SparseBlockPartialHessian}{coordinate_norm_form; coordinate_reference_form; restricted_coercive}
+
+There is also an arbitrarily-small-field obstruction to a particular
+relative lower bound. Along $(s,t)=(u,u)$, write
+\[
+ h(\theta)=\left.\frac{d^2}{du^2}A_\theta(u,u)\right|_{u=0}
+       =2+\frac{\cos\theta-\sin\theta}{2}.
+\]
+For any fixed $C\geq0$, $a_0>0$ and $\varepsilon>0$, there is
+$0<\theta<\varepsilon$ such that
+\begin{equation}\label{eq:sparserelative}
+ h(\theta)<\frac52\frac{\sin(a_0\theta)}{a_0\theta}
+                       -2C(a_0\theta)^2.
+\end{equation}
+Here is an explicit proof, with no asymptotic remainder assumed.
+Let $K=5a_0^2/12+2Ca_0^2$ and choose a positive
+\[
+ \theta\leq\min\left\{\frac\varepsilon2,\frac12,
+                  \frac\pi{12},\frac1{4(K+1)}\right\}.
+\]
+For $x\geq0$, $\sin x\geq x-x^3/6$. This follows from
+$1-\cos x\leq x^2/2$, obtained by integrating $\sin u\leq u$,
+and then integrating once more. Thus the right side of
+\eqref{eq:sparserelative} is at least $5/2-K\theta^2$, while
+$h(\theta)\leq5/2-\theta/2+\theta^3/12$. Their difference is at
+least $\theta(1/2-K\theta-\theta^2/12)>0$.
+At the base point $s=t=0$, every face holonomy is $I,R_\theta$
+or $R_\theta^{-1}$. For $|\theta|<\pi$ their principal logarithms
+are $0,2\theta T_2,-2\theta T_2$, respectively. In the metric
+$\|L\|^2=-2\operatorname{Re}\operatorname{Tr}(L^2)$, their lengths
+are at most $2\theta<3\theta<\pi/2$. Hence taking $a_0=3$ in
+\eqref{eq:sparserelative} gives violations inside arbitrarily small
+strict diagonal-principal-log caps, not merely at a distant field.
+This tests the displayed proposed estimate; it is not a contradiction
+to an independently established general small-field theorem.
+\lean{SparseBlockRelativeObstruction}{arbitrary_constant_violation; no_local_relative_bound}
+\lean{SU2ExplicitRotationLog}{exp_explicitLog; explicitLog_metric_sq; diagonalLog_rotation}
+\lean{SparseBlockGoodRegionObstruction}{arbitrarily_small_strict_region}
+
+\subsection*{The scalar Schur complement still has quadratic loss}
+Eliminate the second of these two coordinates only. Since $a\geq3/4$,
+the scalar Schur complement is
+\begin{equation}\label{eq:sparsescalar}
+ S_\theta=a-\frac{b^2}{a}
+ =\frac{15+8c+2c^2}{4(4+c)}.
+\end{equation}
+Direct factorization gives
+\[
+ S_\theta-\frac34=\frac{(c+1)(2c+3)}{4(4+c)}\geq0,\qquad
+ \frac54-S_\theta=(1-c)\frac{2c+5}{4(4+c)}.
+\]
+For $-1\leq c\leq1$, the last ratio is nonnegative and at most
+$7/20$, by multiplication by the positive denominator. Using
+$1-\cos\theta\leq\theta^2/2$ proves
+\begin{equation}\label{eq:sparsescalarbounds}
+ \frac34\leq S_\theta\leq\frac54,\qquad
+ \frac54-S_\theta\leq\frac7{40}\theta^2.
+\end{equation}
+The endpoint bounds are attained at $\theta=\pi$ and $\theta=0$.
+For all real $x,y$, completing the square gives the exact identity
+\[
+ (x,y)H_\theta(x,y)^T
+ =S_\theta x^2+a\left(y+\frac ba x\right)^2.
+\]
+Its minimum over $y$ is $S_\theta x^2$, attained at $y=-bx/a$.
+This is the classical Schur mechanism \cite{gallier}, applied to an
+actual nonlinear slice. At the reference $b=0$, its coupling enters
+as $b^2/a$, while the full Hessian retains the linear mixed term.
+Thus \eqref{eq:sparserelative} and \eqref{eq:sparsescalarbounds}
+are compatible. This two-coordinate elimination is distinct from the
+31-coordinate incidence elimination and 34-dimensional boundary gap
+above. It supplies no estimate for all nonlinear link directions or
+for integrating out the remaining links.
+\lean{SparseBlockSchurCurvature}{schur_cos_form; schur_lower; schur_upper; schur_quadratic_loss}
+\lean{SparseBlockSchurCurvature}{actual_hessian_completed_square; actual_hessian_minimum}
+
 \section{Nonlinear Haar integration: which parity actually survives?}
 The quadratic result above concerns real incidence matrices. We next test
 two proposed nonlinear extensions on the \emph{same} cell, using genuine
@@ -891,7 +1040,7 @@ nine retained certificate checks, \texttt{verify\_haar.py} passes 21 exact
 finite checks: ribbon incidence and trace classes, rational unit-quaternion
 72-face actions, residual replacement, vertex-center cancellation,
 second-moment contractions and the five-staple squared radius. It uses
-unbounded integers and rational arithmetic. Real-angle differentiation,
+unbounded integers and rational arithmetic. The additional checker \texttt{verify\_sparse.py} passes 20 exact checks of all sparse face words, direction energies, rational-unit quaternion second jets and Schur identities. Real-angle differentiation,
 Haar cap concentration and asymptotic conclusions rest on the full
 printed proofs, not on sampled numerical integration.
 
