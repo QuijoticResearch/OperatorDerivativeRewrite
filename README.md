@@ -40,6 +40,8 @@ The [Cauchy circle-semigroup paper](manuscripts/cauchy-circle-entropy/main.pdf) 
 
 The [Gaussian clock-domain paper](manuscripts/ibm-clock-domain/main.pdf) proves that actual reflected-clock Brownian points and even their bounded sine observables have scenery gradients but no original finite-energy clock gradient at positive times. It reconstructs the common-field obstruction and distinguishes ambient graph-dual limits from observed-filtration stochastic calculus.
 
+The [complex fourth-root companion](manuscripts/complex-root-limits/main.pdf) separates convergent analytic transforms from escaping positive laws, with exact finite moments and a fixed bounded continuous test detecting divergent complex variation. It credits the established complex-walk literature and states the topology and test domain explicitly.
+
 These are reviewed drafts, with compiled and visually inspected PDFs. Novelty remains unresolved; classical antecedents and exact limitations are recorded. The [editorial inventory](manuscripts/EDITORIAL_INVENTORY.md) groups the strongest remaining stories: arithmetic theta-flow zeros, completed signed multichannel calculus, and actual IBM variation and operator domains. Earlier IBM notes are preserved in the catalog.
 
 ## Selected verified mathematics

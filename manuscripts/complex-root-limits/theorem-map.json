@@ -1,0 +1,366 @@
+{
+  "baseline": "bab688bb6140cd6316c80680095a914ea0d346db",
+  "entries": [
+    {
+      "paper": "2: one-step transform",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootOneStepCalculus.stepTransform_formula",
+      "file": "Foundation/ComplexRootOneStepCalculus.lean",
+      "line": 39,
+      "source_sha256": "1e536da649d20d3532dd65551cc9d99e55f71bc4d3e2c1b20213c3729c756cb5",
+      "declaration_header": "theorem stepTransform_formula (a \u03be : \u211d) :\n    stepTransform a \u03be = Complex.cos (((a*\u03be : \u211d) : \u2102)) * Complex.cosh (((a*\u03be : \u211d) : \u2102))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootOneStepCalculus.lean#L39"
+    },
+    {
+      "paper": "2: finite walk transform",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexFourthRootWalk.terminal_transform",
+      "file": "Foundation/ComplexFourthRootWalk.lean",
+      "line": 69,
+      "source_sha256": "8fea4963a1a75d3c1795c7d6bc8f1bbdddbadc2445e6724fad1966f852c793b2",
+      "declaration_header": "theorem terminal_transform (n : \u2115) (a \u03be : \u211d) :\n    (\u222b \u03c9, Complex.exp (Complex.I * (\u03be : \u2102) * terminal n a \u03c9) \u2202probability n) =\n      (stepTransform a \u03be)^n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexFourthRootWalk.lean#L69"
+    },
+    {
+      "paper": "2: Taylor cancellation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootTransformConsistency.taylor_four",
+      "file": "Foundation/ComplexRootTransformConsistency.lean",
+      "line": 49,
+      "source_sha256": "9a8c1893252d7d79a37723d32c128c7de70739905690908a784496f3785319cc",
+      "declaration_header": "theorem taylor_four (x : \u211d) : taylorWithinEval factor 4 univ 0 x = 1-x^4/6",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootTransformConsistency.lean#L49"
+    },
+    {
+      "paper": "2: Taylor remainder",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootTransformConsistency.fourth_order_remainder",
+      "file": "Foundation/ComplexRootTransformConsistency.lean",
+      "line": 59,
+      "source_sha256": "9a8c1893252d7d79a37723d32c128c7de70739905690908a784496f3785319cc",
+      "declaration_header": "theorem fourth_order_remainder :\n    (fun x : \u211d => factor x - (1-x^4/6)) =o[\ud835\udcdd 0] (fun x => x^4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootTransformConsistency.lean#L59"
+    },
+    {
+      "paper": "2: walk heat limit",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootHeatTransformLimit.transform_limit",
+      "file": "Foundation/ComplexRootHeatTransformLimit.lean",
+      "line": 73,
+      "source_sha256": "01ecf8bf2ca0e778be5c07582010d7fc8f539947ff13fd8ca5b3110974c7bca9",
+      "declaration_header": "theorem transform_limit (T : \u211d\u22650) (\u03be : \u211d) :\n    Tendsto (fun n => \u222b \u03c9, Complex.exp (Complex.I * (\u03be : \u2102) * terminal n (amplitude T n) \u03c9)\n      \u2202probability n) atTop (\ud835\udcdd ((Real.exp (-(T : \u211d)*\u03be^4) : \u211d) : \u2102))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootHeatTransformLimit.lean#L73"
+    },
+    {
+      "paper": "2: actual compound integrability",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonTransform.exponential_integrable",
+      "file": "Foundation/ComplexRootPoissonTransform.lean",
+      "line": 39,
+      "source_sha256": "8a1cd3f908e009237a1706aacd1aa8128b71866a449c4445517afc5054c65752",
+      "declaration_header": "theorem exponential_integrable (r : \u211d\u22650) (a \u03be : \u211d) :\n    Integrable (fun z => Complex.exp (Complex.I * (\u03be : \u2102) * z))\n      (ComplexRootPoissonLaw.law r a)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonTransform.lean#L39"
+    },
+    {
+      "paper": "2: compound transform",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonTransform.transform_formula",
+      "file": "Foundation/ComplexRootPoissonTransform.lean",
+      "line": 53,
+      "source_sha256": "8a1cd3f908e009237a1706aacd1aa8128b71866a449c4445517afc5054c65752",
+      "declaration_header": "theorem transform_formula (r : \u211d\u22650) (a \u03be : \u211d) :\n    (\u222b z, Complex.exp (Complex.I * (\u03be : \u2102) * z) \u2202ComplexRootPoissonLaw.law r a) =\n      Complex.exp ((r : \u2102)*(((Real.cos (a*\u03be)*Real.cosh (a*\u03be) : \u211d) : \u2102)-1))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonTransform.lean#L53"
+    },
+    {
+      "paper": "2: compound heat limit",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonHeatLimit.transform_limit",
+      "file": "Foundation/ComplexRootPoissonHeatLimit.lean",
+      "line": 11,
+      "source_sha256": "96f116919501d843d49d64d2a13581727e867cf186ece2006c9b2fa5379b04eb",
+      "declaration_header": "theorem transform_limit (T : \u211d\u22650) (\u03be : \u211d) :\n    Tendsto (fun n : \u2115 => \u222b z, Complex.exp (Complex.I * (\u03be : \u2102) * z)\n      \u2202ComplexRootPoissonLaw.law (n : \u211d\u22650) (amplitude T n)) atTop\n      (\ud835\udcdd ((Real.exp (-(T : \u211d)*\u03be^4) : \u211d) : \u2102))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonHeatLimit.lean#L11"
+    },
+    {
+      "paper": "2: rate-scaled heat limit",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonHeatLimit.rate_scaled_transform_limit",
+      "file": "Foundation/ComplexRootPoissonHeatLimit.lean",
+      "line": 33,
+      "source_sha256": "96f116919501d843d49d64d2a13581727e867cf186ece2006c9b2fa5379b04eb",
+      "declaration_header": "theorem rate_scaled_transform_limit (T : \u211d\u22650) (\u03be : \u211d) :\n    Tendsto (fun n : \u2115 => \u222b z, Complex.exp (Complex.I * (\u03be : \u2102) * z)\n      \u2202ComplexRootPoissonLaw.law ((n : \u211d\u22650)*T) (amplitude 1 n)) atTop\n      (\ud835\udcdd ((Real.exp (-(T : \u211d)*\u03be^4) : \u211d) : \u2102))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonHeatLimit.lean#L33"
+    },
+    {
+      "paper": "3: positive second moment",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootWalkSecondMoment.terminal_absolute_second",
+      "file": "Foundation/ComplexRootWalkSecondMoment.lean",
+      "line": 39,
+      "source_sha256": "5ef532b643cd02301193c4b9aa28e306a52bab66feb25bcf459791cfde704bad",
+      "declaration_header": "theorem terminal_absolute_second (n : \u2115) (a : \u211d) :\n    (\u222b \u03c9, \u2016terminal n a \u03c9\u2016^2 \u2202probability n) = 2*(n : \u211d)*a^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootWalkSecondMoment.lean#L39"
+    },
+    {
+      "paper": "3: positive fourth moment",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootWalkFourthMoment.terminal_absolute_fourth",
+      "file": "Foundation/ComplexRootWalkFourthMoment.lean",
+      "line": 36,
+      "source_sha256": "806d55f2fb87c8f68df241499d9a5461e5284f6ce590ad9dac7df3bbf98d6ccb",
+      "declaration_header": "theorem terminal_absolute_fourth (n : \u2115) (a : \u211d) :\n    (\u222b \u03c9, \u2016terminal n a \u03c9\u2016^4 \u2202ComplexFourthRootWalk.probability n) =\n      (8*(n : \u211d)^2 - 4*(n : \u211d))*a^4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootWalkFourthMoment.lean#L36"
+    },
+    {
+      "paper": "3: walk tail bound",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootScaledTail.tail_mass_lower",
+      "file": "Foundation/ComplexRootScaledTail.lean",
+      "line": 31,
+      "source_sha256": "ff4d2fa5fd97efd4dfb8291d22c8e9b0b073cf4d264a89477b2d9246a939fe28",
+      "declaration_header": "theorem tail_mass_lower (T : \u211d\u22650) (hT : 0 < T) (n : \u2115) (hn : n \u2260 0)\n    (b : \u211d) (hb : 0 \u2264 b)\n    (hbm : 2*b \u2264 \u222b \u03c9, \u2016terminal n (amplitude T n) \u03c9\u2016^2 \u2202probability n) :\n    1/8 \u2264 (probability n).real {\u03c9 | b < \u2016terminal n (amplitude T n) \u03c9\u2016^2}",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootScaledTail.lean#L31"
+    },
+    {
+      "paper": "3: walk compact escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootNonTightness.compact_escape",
+      "file": "Foundation/ComplexRootNonTightness.lean",
+      "line": 23,
+      "source_sha256": "57596ef033af36216eff763e9c2ea04ce8c528a0b936694fcb6dd4b963f75c16",
+      "declaration_header": "theorem compact_escape (T : \u211d\u22650) (hT : 0 < T) (K : Set \u2102) (hK : IsCompact K) :\n    \u2200\u1da0 n : \u2115 in atTop, 1/8 \u2264 (ComplexFourthRootWalk.law n (amplitude T n)).real K\u1d9c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootNonTightness.lean#L23"
+    },
+    {
+      "paper": "3: cofinal no weak limit",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootNoWeakLimit.not_tendsto_reindexed",
+      "file": "Foundation/ComplexRootNoWeakLimit.lean",
+      "line": 28,
+      "source_sha256": "a72c8c642df7b14ca72cde0ab4696fadc312894f9f27561e2f05b26ec171d94b",
+      "declaration_header": "theorem not_tendsto_reindexed (T : \u211d\u22650) (hT : 0 < T) (\u03c6 : \u2115 \u2192 \u2115)\n    (h\u03c6 : Tendsto \u03c6 atTop atTop) (\u03bc : ProbabilityMeasure \u2102) :\n    \u00ac Tendsto (fun n => probabilityLaw T (\u03c6 n)) atTop (\ud835\udcdd \u03bc)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootNoWeakLimit.lean#L28"
+    },
+    {
+      "paper": "3: Poisson second moment",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonPositiveMoments.absolute_second",
+      "file": "Foundation/ComplexRootPoissonPositiveMoments.lean",
+      "line": 14,
+      "source_sha256": "93ee747ab37daf4d0535d51615c3f6868b1f37c1ab3be9502cc6ede62e725ffa",
+      "declaration_header": "theorem absolute_second (r : \u211d\u22650) (a : \u211d) :\n    (\u222b z : \u2102, \u2016z\u2016^2 \u2202ComplexRootPoissonLaw.law r a) = 2*(r : \u211d)*a^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonPositiveMoments.lean#L14"
+    },
+    {
+      "paper": "3: Poisson fourth moment",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonPositiveMoments.absolute_fourth",
+      "file": "Foundation/ComplexRootPoissonPositiveMoments.lean",
+      "line": 20,
+      "source_sha256": "93ee747ab37daf4d0535d51615c3f6868b1f37c1ab3be9502cc6ede62e725ffa",
+      "declaration_header": "theorem absolute_fourth (r : \u211d\u22650) (a : \u211d) :\n    (\u222b z : \u2102, \u2016z\u2016^4 \u2202ComplexRootPoissonLaw.law r a) =\n      (8*(r : \u211d)^2+4*(r : \u211d))*a^4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonPositiveMoments.lean#L20"
+    },
+    {
+      "paper": "3: Poisson fourth bound",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonPositiveMoments.scaled_fourth_bound",
+      "file": "Foundation/ComplexRootPoissonPositiveMoments.lean",
+      "line": 53,
+      "source_sha256": "93ee747ab37daf4d0535d51615c3f6868b1f37c1ab3be9502cc6ede62e725ffa",
+      "declaration_header": "theorem scaled_fourth_bound (T : \u211d\u22650) (n : \u2115) (hn : n \u2260 0) :\n    (\u222b z : \u2102, \u2016z\u2016^4 \u2202ComplexRootPoissonLaw.law (n : \u211d\u22650) (amplitude T n)) \u2264\n      3*(\u222b z : \u2102, \u2016z\u2016^2 \u2202ComplexRootPoissonLaw.law (n : \u211d\u22650) (amplitude T n))^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonPositiveMoments.lean#L53"
+    },
+    {
+      "paper": "3: Poisson tail bound",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonTail.tail_mass_lower",
+      "file": "Foundation/ComplexRootPoissonTail.lean",
+      "line": 20,
+      "source_sha256": "e95a3c5d6ce93d6f114686df6a328bd45fb3209b26d1b1fed5a8e3d0fa71591d",
+      "declaration_header": "theorem tail_mass_lower (T : \u211d\u22650) (hT : 0 < T) (n : \u2115) (hn : n \u2260 0)\n    (b : \u211d) (hb : 0 \u2264 b)\n    (hbm : 2*b \u2264 \u222b z : \u2102, \u2016z\u2016^2 \u2202ComplexRootPoissonLaw.law (n : \u211d\u22650) (amplitude T n)) :\n    1/12 \u2264 (ComplexRootPoissonLaw.law (n : \u211d\u22650) (amplitude T n)).real {z | b < \u2016z\u2016^2}",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonTail.lean#L20"
+    },
+    {
+      "paper": "3: Poisson compact escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonNoWeakLimit.compact_escape",
+      "file": "Foundation/ComplexRootPoissonNoWeakLimit.lean",
+      "line": 16,
+      "source_sha256": "682740b7f55cb5f4cb205511caf03b0723fa67855b55cea0015bfb431ecef278",
+      "declaration_header": "theorem compact_escape (T : \u211d\u22650) (hT : 0 < T) (K : Set \u2102) (hK : IsCompact K) :\n    \u2200\u1da0 n : \u2115 in atTop,\n      1/12 \u2264 (ComplexRootPoissonLaw.law (n : \u211d\u22650) (amplitude T n)).real K\u1d9c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonNoWeakLimit.lean#L16"
+    },
+    {
+      "paper": "3: Poisson cofinal no weak limit",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonNoWeakLimit.not_tendsto_reindexed",
+      "file": "Foundation/ComplexRootPoissonNoWeakLimit.lean",
+      "line": 50,
+      "source_sha256": "682740b7f55cb5f4cb205511caf03b0723fa67855b55cea0015bfb431ecef278",
+      "declaration_header": "theorem not_tendsto_reindexed (T : \u211d\u22650) (hT : 0 < T) (\u03c6 : \u2115 \u2192 \u2115)\n    (h\u03c6 : Tendsto \u03c6 atTop atTop) (\u03bc : ProbabilityMeasure \u2102) :\n    \u00ac Tendsto (fun n => probabilityLaw T (\u03c6 n)) atTop (\ud835\udcdd \u03bc)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonNoWeakLimit.lean#L50"
+    },
+    {
+      "paper": "4: polygonal endpoint",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootContinuousPaths.terminal_law",
+      "file": "Foundation/ComplexRootContinuousPaths.lean",
+      "line": 74,
+      "source_sha256": "26e0078c769129c052a2dd0703d4c5875af7e7188db204203db27c23f1f98ca4",
+      "declaration_header": "theorem terminal_law (n : \u2115) (a : \u211d) :\n    (law n a).map (fun \u03c9 => \u03c9.val 1) = ComplexFourthRootWalk.law n a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootContinuousPaths.lean#L74"
+    },
+    {
+      "paper": "4: formal compact-open paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootNonTightness.not_path_tight",
+      "file": "Foundation/ComplexRootNonTightness.lean",
+      "line": 49,
+      "source_sha256": "57596ef033af36216eff763e9c2ea04ce8c528a0b936694fcb6dd4b963f75c16",
+      "declaration_header": "theorem not_path_tight (T : \u211d\u22650) (hT : 0 < T) :\n    \u00ac IsTightMeasureSet (Set.range\n      (fun n : \u2115 => ComplexRootContinuousPaths.law n (amplitude T n)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootNonTightness.lean#L49"
+    },
+    {
+      "paper": "4: formal product trajectories",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootPoissonNoWeakLimit.not_trajectory_tight",
+      "file": "Foundation/ComplexRootPoissonNoWeakLimit.lean",
+      "line": 77,
+      "source_sha256": "682740b7f55cb5f4cb205511caf03b0723fa67855b55cea0015bfb431ecef278",
+      "declaration_header": "theorem not_trajectory_tight (T : \u211d\u22650) (hT : 0 < T) :\n    \u00ac IsTightMeasureSet (Set.range (fun n : \u2115 =>\n      ComplexRootPoissonTrajectory.law (amplitude T n) (n : \u211d\u22650)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootPoissonNoWeakLimit.lean#L77"
+    },
+    {
+      "paper": "5: actual density",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootTiltedLaw.density",
+      "file": "Foundation/ComplexRootTiltedLaw.lean",
+      "line": 12,
+      "source_sha256": "a055ef65fc9453564beaf868c3f34a4e4561c039dea9f6f314457749b60ae345",
+      "declaration_header": "def density (a \u03be : \u211d) (t : \u211d\u22650) (z : \u2102) : \u2102",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootTiltedLaw.lean#L12"
+    },
+    {
+      "paper": "5: density integrability",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootTiltedLaw.density_integrable",
+      "file": "Foundation/ComplexRootTiltedLaw.lean",
+      "line": 22,
+      "source_sha256": "a055ef65fc9453564beaf868c3f34a4e4561c039dea9f6f314457749b60ae345",
+      "declaration_header": "theorem density_integrable (a \u03be : \u211d) (t : \u211d\u22650) :\n    Integrable (density a \u03be t) (ComplexRootPoissonLaw.law t a)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootTiltedLaw.lean#L22"
+    },
+    {
+      "paper": "5: mass one",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootTiltedLaw.law_mass",
+      "file": "Foundation/ComplexRootTiltedLaw.lean",
+      "line": 26,
+      "source_sha256": "a055ef65fc9453564beaf868c3f34a4e4561c039dea9f6f314457749b60ae345",
+      "declaration_header": "theorem law_mass (a \u03be : \u211d) (t : \u211d\u22650) : law a \u03be t univ = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootTiltedLaw.lean#L26"
+    },
+    {
+      "paper": "5: finite variation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootTiltedLaw.law_finite_variation",
+      "file": "Foundation/ComplexRootTiltedLaw.lean",
+      "line": 34,
+      "source_sha256": "a055ef65fc9453564beaf868c3f34a4e4561c039dea9f6f314457749b60ae345",
+      "declaration_header": "theorem law_finite_variation (a \u03be : \u211d) (t : \u211d\u22650) :\n    IsFiniteMeasure (law a \u03be t).variation",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootTiltedLaw.lean#L34"
+    },
+    {
+      "paper": "5: compound norm transform",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootNormTransform.compound_norm_mean",
+      "file": "Foundation/ComplexRootNormTransform.lean",
+      "line": 30,
+      "source_sha256": "fc7ee2eedaa7a88a91a47cd01e07a2a508d08681424b806d9f1dd060a3392bac",
+      "declaration_header": "theorem compound_norm_mean (a \u03be : \u211d) (r : \u211d\u22650) :\n    (\u222b z, \u2016Complex.exp (Complex.I*(\u03be : \u2102)*z)\u2016 \u2202ComplexRootPoissonLaw.law r a) =\n      Real.exp ((r : \u211d)*(Real.cosh (a*\u03be)-1))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootNormTransform.lean#L30"
+    },
+    {
+      "paper": "5: exact variation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexRootNormTransform.tilted_variation_mass",
+      "file": "Foundation/ComplexRootNormTransform.lean",
+      "line": 65,
+      "source_sha256": "fc7ee2eedaa7a88a91a47cd01e07a2a508d08681424b806d9f1dd060a3392bac",
+      "declaration_header": "theorem tilted_variation_mass (a \u03be : \u211d) (r : \u211d\u22650) :\n    (ComplexRootTiltedLaw.law a \u03be r).variation Set.univ = ENNReal.ofReal\n      (Real.exp ((r : \u211d)*Real.cosh (a*\u03be)*(1-Real.cos (a*\u03be))))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexRootNormTransform.lean#L65"
+    },
+    {
+      "paper": "5: fixed test continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexTiltVariationTest.cancelPhase_continuous",
+      "file": "Foundation/ComplexTiltVariationTest.lean",
+      "line": 13,
+      "source_sha256": "4d093aec6991ccec8f0617439c292464a888cace9cffdc1fbba8116eb3d1c46a",
+      "declaration_header": "theorem cancelPhase_continuous (\u03be : \u211d) : Continuous (cancelPhase \u03be)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexTiltVariationTest.lean#L13"
+    },
+    {
+      "paper": "5: fixed test norm",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexTiltVariationTest.cancelPhase_norm",
+      "file": "Foundation/ComplexTiltVariationTest.lean",
+      "line": 17,
+      "source_sha256": "4d093aec6991ccec8f0617439c292464a888cace9cffdc1fbba8116eb3d1c46a",
+      "declaration_header": "theorem cancelPhase_norm (\u03be : \u211d) (z : \u2102) : \u2016cancelPhase \u03be z\u2016 = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexTiltVariationTest.lean#L17"
+    },
+    {
+      "paper": "5: phase cancellation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexTiltVariationTest.cancelPhase_density",
+      "file": "Foundation/ComplexTiltVariationTest.lean",
+      "line": 31,
+      "source_sha256": "4d093aec6991ccec8f0617439c292464a888cace9cffdc1fbba8116eb3d1c46a",
+      "declaration_header": "theorem cancelPhase_density (a \u03be : \u211d) (r : \u211d\u22650) (z : \u2102) :\n    cancelPhase \u03be z * ComplexRootTiltedLaw.density a \u03be r z =\n      (\u2016ComplexRootTiltedLaw.density a \u03be r z\u2016 : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexTiltVariationTest.lean#L31"
+    },
+    {
+      "paper": "5: exact fixed test integral",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexTiltVariationTest.test_integral",
+      "file": "Foundation/ComplexTiltVariationTest.lean",
+      "line": 50,
+      "source_sha256": "4d093aec6991ccec8f0617439c292464a888cace9cffdc1fbba8116eb3d1c46a",
+      "declaration_header": "theorem test_integral (a \u03be : \u211d) (r : \u211d\u22650) :\n    (\u222b\u1d5b z, test \u03be z \u2202[ContinuousLinearMap.mul \u211d \u2102; ComplexRootTiltedLaw.law a \u03be r]) =\n      (Real.exp ((r : \u211d)*Real.cosh (a*\u03be)*(1-Real.cos (a*\u03be))) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexTiltVariationTest.lean#L50"
+    },
+    {
+      "paper": "5: tilted analytic limit",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexTiltVariationDivergence.law_holomorphic_limit",
+      "file": "Foundation/ComplexTiltVariationDivergence.lean",
+      "line": 27,
+      "source_sha256": "2358b95ea19d773e90a0bf6166b9af4a2744ca6b0e7acc0a2e4e87c941da71c4",
+      "declaration_header": "theorem law_holomorphic_limit (T : \u211d\u22650) (\u03be \u03b7 : \u211d) :\n    Tendsto (fun n : \u2115 => \u222b\u1d5b z, Complex.exp (Complex.I*(\u03b7 : \u2102)*z)\n      \u2202[ContinuousLinearMap.mul \u211d \u2102;\n        ComplexRootTiltedLaw.law (amplitude 1 n) \u03be ((n : \u211d\u22650)*T)]) atTop\n      (\ud835\udcdd ((Real.exp (-(T : \u211d)*((\u03b7+\u03be)^4-\u03be^4)) : \u211d) : \u2102))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexTiltVariationDivergence.lean#L27"
+    },
+    {
+      "paper": "5: exponent divergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexTiltVariationDivergence.exponent_atTop",
+      "file": "Foundation/ComplexTiltVariationDivergence.lean",
+      "line": 38,
+      "source_sha256": "2358b95ea19d773e90a0bf6166b9af4a2744ca6b0e7acc0a2e4e87c941da71c4",
+      "declaration_header": "theorem exponent_atTop (T : \u211d\u22650) (hT : 0 < T) (\u03be : \u211d) (h\u03be : \u03be \u2260 0) :\n    Tendsto (growthExponent T \u03be) atTop atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexTiltVariationDivergence.lean#L38"
+    },
+    {
+      "paper": "5: variation divergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexTiltVariationDivergence.variation_real_atTop",
+      "file": "Foundation/ComplexTiltVariationDivergence.lean",
+      "line": 76,
+      "source_sha256": "2358b95ea19d773e90a0bf6166b9af4a2744ca6b0e7acc0a2e4e87c941da71c4",
+      "declaration_header": "theorem variation_real_atTop (T : \u211d\u22650) (hT : 0 < T) (\u03be : \u211d) (h\u03be : \u03be \u2260 0) :\n    Tendsto (fun n : \u2115 => (ComplexRootTiltedLaw.law (amplitude 1 n) \u03be\n      ((n : \u211d\u22650)*T)).variation.real Set.univ) atTop atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexTiltVariationDivergence.lean#L76"
+    },
+    {
+      "paper": "5: fixed test no limit",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexTiltVariationDivergence.no_fixed_test_limit",
+      "file": "Foundation/ComplexTiltVariationDivergence.lean",
+      "line": 84,
+      "source_sha256": "2358b95ea19d773e90a0bf6166b9af4a2744ca6b0e7acc0a2e4e87c941da71c4",
+      "declaration_header": "theorem no_fixed_test_limit (T : \u211d\u22650) (hT : 0 < T) (\u03be : \u211d) (h\u03be : \u03be \u2260 0) (c : \u2102) :\n    \u00ac Tendsto (fun n : \u2115 => \u222b\u1d5b z, ComplexTiltVariationTest.test \u03be z\n      \u2202[ContinuousLinearMap.mul \u211d \u2102;\n        ComplexRootTiltedLaw.law (amplitude 1 n) \u03be ((n : \u211d\u22650)*T)]) atTop (\ud835\udcdd c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexTiltVariationDivergence.lean#L84"
+    },
+    {
+      "paper": "5: no bounded test limit",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ComplexTiltVariationDivergence.no_all_bounded_test_limit",
+      "file": "Foundation/ComplexTiltVariationDivergence.lean",
+      "line": 97,
+      "source_sha256": "2358b95ea19d773e90a0bf6166b9af4a2744ca6b0e7acc0a2e4e87c941da71c4",
+      "declaration_header": "theorem no_all_bounded_test_limit (T : \u211d\u22650) (hT : 0 < T) (\u03be : \u211d) (h\u03be : \u03be \u2260 0)\n    (\u03bd : VectorMeasure \u2102 \u2102) :\n    \u00ac \u2200 f : \u2102 \u2192\u1d47 \u2102, Tendsto (fun n : \u2115 => \u222b\u1d5b z, f z\n      \u2202[ContinuousLinearMap.mul \u211d \u2102;\n        ComplexRootTiltedLaw.law (amplitude 1 n) \u03be ((n : \u211d\u22650)*T)]) atTop\n      (\ud835\udcdd (\u222b\u1d5b z, f z \u2202[ContinuousLinearMap.mul \u211d \u2102; \u03bd]))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ComplexTiltVariationDivergence.lean#L97"
+    }
+  ],
+  "human_reorganization": [
+    "The finite fourth moment is reconstructed with independent sign coordinates rather than the formal successor recurrence.",
+    "The weak-limit exclusion uses a compactly supported continuous cutoff rather than formal Prokhorov compact-range tightness.",
+    "Formal polygonal paths are continuous on R with compact-open topology. The paper explicitly proves the restricted C([0,1];C) uniform-topology result from the endpoint law. The general continuous-coordinate implication is a classical deduction.",
+    "The fixed-test result after every divergent reindexing is a direct classical deduction from the verified eventual exponent lower bound, not a new named Lean theorem.",
+    "The elementary sine lower bound is the human proof of the formal trigonometric bound; no optimal escape constant is asserted.",
+    "Taylor O(x^8) is an elementary series strengthening used in the exposition; the formal limit only needs its mapped o(x^4) remainder."
+  ],
+  "literature": [
+    {
+      "url": "https://arxiv.org/abs/1402.6140",
+      "review": "Primary PDF inspected: Theorem 2, Remark 1, discussion before Theorem 7, and Hypothesis 10. Basic analytic limit and bounded-region escape already anticipated; no refutation of the restricted analytic framework or novelty claimed."
+    },
+    {
+      "url": "https://arxiv.org/abs/1603.05437",
+      "review": "Primary abstract/bibliography verified in this audit; analytic calculus framework additionally compared in earlier signed-multichannel audit. No complete new theorem comparison claimed."
+    }
+  ],
+  "novelty": "UNRESOLVED; formalization companion, no priority claim"
+}

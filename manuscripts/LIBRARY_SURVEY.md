@@ -6,7 +6,7 @@ Frozen baseline: `bab688bb6140cd6316c80680095a914ea0d346db`. This is an independ
 
 The [machine inventory](LIBRARY_SURVEY.json) covers every one of the 2,795 Foundation Lean modules (359,781 source lines) in this frozen checkout. For each module it records its byte hash, imports, available module description, named declaration headers and an editorial subject tag. Tags based on prefixes are navigation aids, not significance scores. This is a complete module-level inventory; it is not a claim that every proof has received a new human review. The existing full verification receipt remains the authority for the baseline build and complete transitive axiom audit. The root/import files and Basic.lean add navigation or scaffolding, while the two Legacy Lean files are historical material outside this Foundation publication universe.
 
-Detailed definition, hypothesis, proof and literature review is performed for selected paper candidates. Ten papers now have complete human proof expositions, exact source maps and matching reviewed PDFs. A large source family or declaration count is not evidence of novelty or a reason to produce a standalone paper.
+Detailed definition, hypothesis, proof and literature review is performed for selected paper candidates. Eleven papers now have complete human proof expositions, exact source maps and matching reviewed PDFs. A large source family or declaration count is not evidence of novelty or a reason to produce a standalone paper.
 
 ## Source families
 
@@ -56,3 +56,7 @@ Bonaccorsi and Mazzucchi, *High Order Heat-type Equations and Random Walks on th
 ## Next editorial work
 
 The Cauchy circle-semigroup/entropy paper is complete. Continue source-first assessment of the IBM graph-dual/clock-domain story and other independent candidates. Prefer a complete substantive construction, sharp statement or counterexample, with primary-literature context. None of the uncompleted rows is presented as a finished paper, novelty certification or change to the researcher's campaign.
+
+## Complex-root companion completed
+
+The six-page eleventh paper reconstructs the complex-walk analytic/probability distinction, exact moment bounds and Poissonization, and the actual tilted law with a single fixed test equal to divergent total variation. The basic distinction already appears in Bonaccorsi–Mazzucchi; no new probability process or priority claim is inferred. This closes that exposition candidate without reopening the signed higher-heat campaign.

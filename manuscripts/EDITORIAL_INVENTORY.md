@@ -67,3 +67,7 @@ The eight-page paper consolidates the explicit harmonic kernel, full closed cont
 ## Tenth paper: actual Gaussian clock-domain obstructions
 
 The eight-page paper supplies complete common-field and finite-energy primitive proofs for actual reflected-clock Brownian points and bounded sine observables, along with their valid scenery gradients. Its ambient graph-dual construction has a precise original-domain representability criterion and full norm escape under strong approximation. All eight pages were inspected; 32 exact correspondences retain the original Gaussian factor order and separate ambient tests from native observed-filtration calculus. Allouba–Zheng model distinctions and current primary literature were checked; novelty remains unresolved. This supersedes the pending clock-obstruction portion of the earlier IBM shortlist, while the actual native average/fixed-past calculus still needs its own complete exposition.
+
+## Eleventh paper: complex-root formalization companion
+
+Six pages, 38 exact source correspondences. A coherent finite-probability/complex-measure comparison with complete moment, tail, cutoff and phase-cancellation proofs. Basic analytic-versus-weak-limit distinction is classical and credited. Fixed-test novelty is unresolved; useful as a formalization companion rather than a manufactured new stochastic calculus. Every page inspected after clean compilation.

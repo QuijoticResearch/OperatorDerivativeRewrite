@@ -1,0 +1,428 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1.05in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\C}{\mathbb C}\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}\newcommand{\Pp}{\mathbb P}
+\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
+\title{Complex fourth-root approximations:\\analytic limits, compact escape and a fixed variation test}
+\author{Project Stardust}
+\date{Reviewed editorial draft, October 29, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Uniform complex fourth-root steps yield genuine positive probability laws
+whose holomorphic exponential transforms approach the biharmonic heat
+symbol. Their absolute second moments diverge, and exact fourth moments
+give a uniform positive mass outside each compact set, eventually along
+every refinement. Thus the transform limit is compatible with the absence
+of any weak probability-law limit. Poissonization preserves both features.
+Normalized complex exponential tilts have mass one and convergent
+holomorphic transforms, but their total variations diverge. We exhibit a
+single bounded continuous test, independent of the approximation index,
+whose integral equals the total variation exactly. The paper reconstructs
+verified fourth-order results with elementary proofs and explicit
+constants. The analytic-versus-probabilistic distinction is established
+in prior work; this is a formalization companion, and no priority claim
+is made.
+\end{abstract}
+
+\section{Scope and main conclusions}
+Let $\varepsilon_j,\delta_j$ be mutually independent symmetric signs and set
+\[
+ \zeta_j=\varepsilon_j+i\delta_j,\qquad
+ S_{n,a}=a\sum_{j=1}^n\zeta_j,\qquad
+ a_n(T)=(6T/n)^{1/4}\quad(n\geq1).
+\]
+The four values of $\zeta_j$ are the fourth roots of $-4$.
+Write $\mu_n^T$ for the law of $S_{n,a_n(T)}$ on $\C$ with its usual
+Euclidean topology. For $r\geq0$, let $N_r$ be Poisson with mean $r$,
+independent of the signs, and let $\mu_{r,a}$ be the law of
+\[
+ C_{r,a}=a\sum_{j=1}^{N_r}\zeta_j.
+\]
+All these laws are ordinary positive probability measures.
+
+\begin{theorem}\label{thm:positive}
+For $T>0$ and each real $\eta$,
+\[
+ \int e^{i\eta z}\,d\mu_n^T(z)\longrightarrow e^{-T\eta^4},\qquad
+ \int e^{i\eta z}\,d\mu_{n,a_n(T)}(z)\longrightarrow e^{-T\eta^4}.
+\]
+Nevertheless, for every compact $K\subset\C$, eventually in $n$,
+\[
+ \mu_n^T(K^c)\geq\tfrac18,\qquad
+ \mu_{n,a_n(T)}(K^c)\geq\tfrac1{12}.
+\]
+Neither family is tight. Neither has a weak probability-law limit along
+any reindexing $n=\varphi(k)$ with $\varphi(k)\to\infty$.
+\end{theorem}
+
+The transforms in this statement test $e^{i\eta z}$, which is unbounded on
+$\C$ when $\eta\ne0$. They are not the characteristic functions
+$e^{i(u\operatorname{Re}z+v\operatorname{Im}z)}$ used in weak convergence
+on $\R^2$. This domain distinction is essential.
+
+For the tilted result use the second, rate-scaled normalization
+$b_n=a_n(1)$, $r_n=nT$. Define real functions
+\[
+ F(x)=\cos x\cosh x,\qquad \psi_a(\xi)=F(a\xi)-1,
+\]
+and the finite complex measure
+\begin{equation}\label{eq:tilt}
+ d\nu_n(z)=e^{-r_n\psi_{b_n}(\xi)}e^{i\xi z}\,d\mu_{r_n,b_n}(z).
+\end{equation}
+Here and below total variation means the mass $|\nu|(\C)$, with no factor
+$1/2$.
+
+\begin{theorem}\label{thm:tilt}
+Fix $T>0$ and $\xi\in\R\setminus\{0\}$. Each $\nu_n$ has mass one, and
+for every real $\eta$,
+\begin{equation}\label{eq:tiltlimit}
+ \int e^{i\eta z}\,d\nu_n(z)
+ \longrightarrow e^{-T((\eta+\xi)^4-\xi^4)}.
+\end{equation}
+The fixed function $f_\xi(z)=e^{-i\xi\operatorname{Re}z}$ is continuous
+and has modulus one, and satisfies
+\begin{equation}\label{eq:fixed}
+ \int f_\xi\,d\nu_n=|\nu_n|(\C)
+ =\exp\!\left(r_n\cosh(b_n\xi)(1-\cos(b_n\xi))\right)
+ \longrightarrow+\infty.
+\end{equation}
+Consequently these complex measures do not converge against all bounded
+continuous tests to any finite complex measure, even along a divergent
+reindexing.
+\end{theorem}
+
+\paragraph{Relationship with prior work.}
+Bonaccorsi and Mazzucchi~\cite{BM} construct higher-order analytic limits
+from complex root walks. Their Theorem 2 treats exponential transforms;
+their Remark 1 discusses escape from bounded regions, and their discussion
+before Theorem 7 distinguishes the analytic limit from an ordinary limit
+process. Our rotated fourth roots and normalization are a fourth-order
+instance of that construction. We do not assert that their analytic
+framework supplies an ordinary weak limit. The contribution of this
+companion is a complete reconstruction of the frozen formal results:
+finite moment identities, explicit escape bounds, Poissonized statements,
+and a fixed bounded test for actual complex coordinate measures. These
+are meaningful precise distinctions, but their independent novelty has
+not been established. The later analytic It\^o framework~\cite{BCM} is
+also separate from weak convergence of the present probability laws.
+
+\section{Transforms and integrability}
+\begin{lemma}\label{lem:step}
+For real $a,\eta$,
+\begin{align}
+ \E e^{i\eta a\zeta_1}&=F(a\eta),\label{eq:step}\\
+ \E\left|e^{i\eta a\zeta_1}\right|&=\cosh(a\eta).
+ \label{eq:stepnorm}
+\end{align}
+Consequently
+\begin{align}
+ \E e^{i\eta S_{n,a}}&=F(a\eta)^n,\label{eq:walktransform}\\
+ \E e^{i\eta C_{r,a}}&=\exp(r(F(a\eta)-1)),\label{eq:compound}\\
+ \E\left|e^{i\eta C_{r,a}}\right|&=\exp(r(\cosh(a\eta)-1)).
+ \label{eq:compoundnorm}
+\end{align}
+All integrals in these formulas are absolutely integrable.
+\end{lemma}
+\begin{proof}
+Independence of the two signs gives
+$\E e^{ix(\varepsilon+i\delta)}=(\E e^{ix\varepsilon})
+(\E e^{-x\delta})=\cos x\cosh x$. The modulus is $e^{-x\delta}$,
+which gives \eqref{eq:stepnorm}. Independence over $j$ gives products
+for the walk, including $\E|e^{i\eta S_{n,a}}|=\cosh(a\eta)^n$.
+Conditioning on $N_r=m$ and summing the Poisson series gives
+\[
+ e^{-r}\sum_{m=0}^\infty\frac{r^m}{m!}F(a\eta)^m
+ =e^{r(F(a\eta)-1)}.
+\]
+Absolute convergence follows either from the same series with
+$|F(a\eta)|$ or from the nonnegative modulus series
+$e^{-r}\sum_m r^m\cosh(a\eta)^m/m!$.
+This also proves \eqref{eq:compoundnorm} and justifies conditioning for
+the complex integrals.
+\end{proof}
+
+\begin{proposition}\label{prop:limit}
+For $T\geq0$ and real $\eta$,
+\begin{align*}
+ F(a_n(T)\eta)^n&\longrightarrow e^{-T\eta^4},\\
+ e^{n(F(a_n(T)\eta)-1)}&\longrightarrow e^{-T\eta^4},\\
+ e^{nT(F(b_n\eta)-1)}&\longrightarrow e^{-T\eta^4}.
+\end{align*}
+\end{proposition}
+\begin{proof}
+Multiplication of the convergent cosine and hyperbolic cosine series
+gives $F(x)=1-x^4/6+O(x^8)$ as $x\to0$; the degree-two and degree-six
+terms cancel. Thus
+\[
+ n(F(a_n(T)\eta)-1)=-T\eta^4+O(n^{-1}).
+\]
+For the walk, $F(a_n(T)\eta)>0$ eventually, and
+$\log(1+y)=y+O(y^2)$ shows that
+$n\log F(a_n(T)\eta)\to-T\eta^4$. Exponentiation proves the first
+two limits. Replacing $a_n(T)$ by $b_n$ gives
+$n(F(b_n\eta)-1)\to-\eta^4$; multiplication by $T$ proves the third.
+For $T=0$, the first two sequences are identically one, as is the third.
+\end{proof}
+
+These statements establish only the stated exponential-test limits.
+Passing a general entire function through the limit needs a separate
+integrability and domination argument. No such unrestricted extension
+is used in this paper.
+
+\section{Exact positive moments and compact escape}
+\begin{lemma}\label{lem:moments}
+For $n\geq0$, real $a$, and $r\geq0$,
+\begin{align}
+ \E|S_{n,a}|^2&=2na^2,&
+ \E|S_{n,a}|^4&=(8n^2-4n)a^4,\label{eq:walkmoments}\\
+ \E|C_{r,a}|^2&=2ra^2,&
+ \E|C_{r,a}|^4&=(8r^2+4r)a^4.\label{eq:poissonmoments}
+\end{align}
+\end{lemma}
+\begin{proof}
+Let $R_n=\sum_{j=1}^n\varepsilon_j$ and
+$I_n=\sum_{j=1}^n\delta_j$. These variables are independent, with
+$\E R_n^2=\E I_n^2=n$. In the fourth power of $R_n$, only four equal
+indices and two equal pairs survive sign averaging. Therefore
+\[
+ \E R_n^4=n+6\binom n2=3n^2-2n.
+\]
+Since $|S_{n,a}|^2=a^2(R_n^2+I_n^2)$, expansion gives
+\[
+ \E|S_{n,a}|^4=a^4\bigl(2(3n^2-2n)+2n^2\bigr),
+\]
+proving \eqref{eq:walkmoments}. The defining Poisson series gives
+$\E N_r=r$ and $\E[N_r(N_r-1)]=r^2$ by shifting the summation index.
+Hence $\E N_r^2=r^2+r$. Conditioning \eqref{eq:walkmoments} on
+$N_r$ proves \eqref{eq:poissonmoments}. All these nonnegative
+moments are finite by the same Poisson moment sums.
+\end{proof}
+
+The positive second moment in this lemma must be distinguished from
+$\E S_{n,a}^2=0$. The latter is a holomorphic cancellation and is not
+a variance in the complex Hilbert-space sense.
+
+\begin{lemma}\label{lem:tail}
+If $X\geq0$, $0<m=\E X<\infty$, and $\E X^2\leq A m^2$, then
+for $0\leq b\leq m/2$,
+\[
+ \Pp(X>b)\geq\frac1{4A}.
+\]
+\end{lemma}
+\begin{proof}
+Split the expectation at $b$ and apply Cauchy--Schwarz:
+\[
+ m\leq b+\E[X\mathbf1_{\{X>b\}}]
+ \leq b+(\E X^2)^{1/2}\Pp(X>b)^{1/2}.
+\]
+Thus $m/2\leq \sqrt A m\Pp(X>b)^{1/2}$. Divide by $m$ and square.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:positive}]
+The transforms follow from Lemma~\ref{lem:step} and
+Proposition~\ref{prop:limit}. At $a=a_n(T)$, the common second moment
+of the walk and the rate-$n$ compound law is
+\[
+ m_n=2\sqrt{6Tn}\longrightarrow\infty.
+\]
+For the walk the fourth moment is $(48n-24)T\leq2m_n^2$;
+for the compound law it is $(48n+24)T\leq3m_n^2$, since $n\geq1$.
+Given compact $K$, choose $R>0$ with $K\subset\{|z|\leq R\}$.
+Eventually $m_n\geq2R^2$. Apply Lemma~\ref{lem:tail} to $X=|S|^2$
+or $|C|^2$, with $b=R^2$ and $A=2$ or $3$ respectively.
+The event $\{X>R^2\}$ lies in $K^c$, giving the two constants.
+
+This contradicts tightness with any error smaller than $1/12$.
+The same eventual inequalities hold after any $\varphi(k)\to\infty$.
+To rule out a weak limit directly, let $\rho$ be a proposed probability
+limit. The disks $\{|z|\leq R\}$ increase to $\C$, so choose $R$
+with $\rho(\{|z|\leq R\})>1-1/48$. Let $\chi$ be a continuous
+function equal to one on that disk, zero outside the disk of radius
+$R+1$, and between zero and one. Then
+$\int\chi\,d\rho>1-1/48$, while every sufficiently large approximating
+law has $\int\chi\leq1-1/12$. This contradicts convergence against
+the fixed bounded continuous $\chi$, and proves the assertion for both
+families and every divergent reindexing.
+\end{proof}
+
+The constants are elementary uniform lower bounds, not claimed optimal.
+In particular this proof does not claim that the escaping mass tends to
+one; the verified conclusion is already enough to exclude weak limits.
+
+\section{Path-space consequences with an explicit topology}
+For $n\geq1$, join the successive partial sums
+$a\sum_{j=1}^k\zeta_j$ linearly at times $k/n$ to obtain a continuous
+path $\Gamma_{n,a}:[0,1]\to\C$. Give $C([0,1];\C)$ the uniform norm.
+Its endpoint is $S_{n,a}$.
+
+\begin{corollary}\label{cor:path}
+For $T>0$, the laws of $\Gamma_{n,a_n(T)}$ are not tight in the uniform
+path topology. More generally, any family of probability measures on a
+topological path space admitting a continuous coordinate map with
+coordinate laws $\mu_n^T$ or $\mu_{n,a_n(T)}$ is not tight.
+\end{corollary}
+\begin{proof}
+A continuous image of a compact set is compact. If a family of path laws
+were tight, for every $\epsilon>0$ one could choose a compact path set
+carrying mass at least $1-\epsilon$ under every member. Its coordinate
+image would be a compact subset of $\C$ carrying at least that mass under
+every coordinate law. This contradicts Theorem~\ref{thm:positive}.
+Endpoint evaluation is continuous in the uniform norm, which proves the
+first assertion.
+\end{proof}
+
+This implication specifies its topology. The formal Poisson trajectory
+corollary uses a continuous coordinate on a countable product space.
+It is not silently a statement about every Skorokhod topology: evaluation
+at a jump time requires its own continuity hypotheses there. No path-law
+limit is constructed from the holomorphic transform alone.
+
+\section{Actual complex tilts and the fixed test}
+We prove Theorem~\ref{thm:tilt} through formulas valid at every finite
+parameter. Fix $a,\xi\in\R$, $r\geq0$, and put
+\[
+ h_{r,a,\xi}(z)=e^{-r\psi_a(\xi)}e^{i\xi z},\qquad
+ d\nu_{r,a,\xi}=h_{r,a,\xi}\,d\mu_{r,a}.
+\]
+The normalizing factor is a positive real number because $\psi_a(\xi)$
+is real, although $\psi_a(\xi)$ need not be nonnegative.
+
+\begin{proposition}\label{prop:finite}
+The density is absolutely integrable, $\nu_{r,a,\xi}(\C)=1$, and
+\begin{align}
+ \int e^{i\eta z}\,d\nu_{r,a,\xi}(z)
+ &=\exp\bigl(r(\psi_a(\eta+\xi)-\psi_a(\xi))\bigr),\label{eq:shift}\\
+ |\nu_{r,a,\xi}|(\C)
+ &=\exp\bigl(r\cosh(a\xi)(1-\cos(a\xi))\bigr).
+ \label{eq:variation}
+\end{align}
+The exponential test in \eqref{eq:shift} is integrable for the total
+variation measure. Furthermore
+\begin{equation}\label{eq:phasecancel}
+ f_\xi(z)h_{r,a,\xi}(z)=|h_{r,a,\xi}(z)|\qquad(z\in\C),
+\end{equation}
+so $\int f_\xi\,d\nu_{r,a,\xi}=|\nu_{r,a,\xi}|(\C)$.
+\end{proposition}
+\begin{proof}
+Formula \eqref{eq:compoundnorm} gives density integrability. Multiplying
+the density by $e^{i\eta z}$ leaves the same positive normalizer times
+$e^{i(\eta+\xi)z}$, whose modulus is integrable by that formula again.
+The compound transform \eqref{eq:compound} now proves
+\eqref{eq:shift}; taking $\eta=0$ proves mass one.
+
+For completeness, the variation of a finite complex density $h$ relative
+to a positive measure $\mu$ is $|h|\mu$. The upper bound follows from
+$|\int_A h\,d\mu|\leq\int_A|h|\,d\mu$ on every measurable partition.
+For the reverse bound, approximate the measurable phase $h/|h|$ on
+$\{h\ne0\}$ uniformly by finitely many phases on a partition of the
+unit circle into arcs of arbitrarily small diameter. On each resulting
+measurable piece the integral differs from its constant-phase integral
+by at most that diameter times $\int|h|$. Summing and letting the diameter
+vanish proves equality for every measurable set. In particular,
+\begin{align*}
+ |\nu_{r,a,\xi}|(\C)
+ &=e^{-r(F(a\xi)-1)}\E|e^{i\xi C_{r,a}}|\\
+ &=e^{-r(F(a\xi)-1)+r(\cosh(a\xi)-1)}\\
+ &=e^{r\cosh(a\xi)(1-\cos(a\xi))}.
+\end{align*}
+Finally, writing $z=x+iy$, one has
+$e^{-i\xi x}e^{i\xi z}=e^{-\xi y}=|e^{i\xi z}|$.
+The normalizer is positive real, so the same identity holds for the
+density. This is \eqref{eq:phasecancel}. Integrating it proves the last
+claim. The test depends on $\xi$ alone, not on $a$ or $r$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:tilt}]
+Apply Proposition~\ref{prop:finite} with $a=b_n$, $r=nT$.
+Proposition~\ref{prop:limit} gives
+$nT\psi_{b_n}(u)\to-Tu^4$ for every real $u$. Subtraction at
+$u=\eta+\xi$ and $u=\xi$ followed by exponentiation proves
+\eqref{eq:tiltlimit}.
+
+To prove divergence using a quantitative lower bound, observe that
+$|b_n\xi|\to0$. For $|x|\leq\pi$, concavity of sine on $[0,\pi/2]$
+gives $\sin(|x|/2)\geq |x|/\pi$. Consequently
+\[
+ 1-\cos x=2\sin^2(x/2)\geq2x^2/\pi^2.
+\]
+Since $\cosh x\geq1$, eventually
+\begin{equation}\label{eq:growth}
+ nT\cosh(b_n\xi)(1-\cos(b_n\xi))
+ \geq\frac{2T\xi^2}{\pi^2}\,n b_n^2
+ =\frac{2T\xi^2\sqrt6}{\pi^2}\sqrt n\longrightarrow\infty.
+\end{equation}
+The coefficient is positive by $T>0$ and $\xi\ne0$.
+Equation \eqref{eq:variation} and the phase cancellation give
+\eqref{eq:fixed}. A finite complex measure has a finite integral against
+the modulus-one function $f_\xi$. Divergence of this one integral excludes
+convergence against all bounded continuous tests. The same lower bound
+holds after every divergent reindexing.
+\end{proof}
+
+The exclusions $T>0$, $\xi\ne0$ are indispensable. If $T=0$ the law is
+$\delta_0$. If $\xi=0$ the density is one and the variation is one,
+although positive-law compact escape can still occur at positive $T$.
+Nor is the fixed-test conclusion merely a restatement that some sequence
+of test functions detects growing variation: a single explicitly given
+test works for the entire sequence.
+
+\section{Formal correspondence and limits of the conclusions}
+\begingroup\raggedright
+All formal statements used here are frozen at verified commit
+\code{bab688bb6140cd6316c80680095a914ea0d346db}.
+The accompanying machine-readable theorem map records exact declaration
+names, locations and source hashes. Human proofs reorganize the finite
+sign computations and the weak-limit contradiction; they introduce no
+new Lean theorem or hidden probabilistic axiom.
+
+The formal continuous walk paths are defined on all of $\R$, are constant
+outside $[0,1]$, and carry the compact-open topology. Restriction to
+$[0,1]$ gives exactly the polygonal path above. Corollary~\ref{cor:path}
+proves its uniform-topology version directly from the verified endpoint
+law; the general continuous-coordinate implication is a classical
+deduction, not an additional named formal theorem.
+
+The central modules are \code{ComplexRootHeatTransformLimit},
+\code{ComplexRootPoissonNoWeakLimit}, \code{ComplexRootTiltedLaw}
+and \code{ComplexTiltVariationDivergence}. The theorem map also identifies
+the exact finite transform, moment, path, phase-cancellation and variation
+declarations underlying each proof.
+
+The Poisson compact-escape result uses rate $n$ and amplitude $a_n(T)$;
+the tilted limit uses rate $nT$ and amplitude $b_n$. These normalizations
+give the same analytic heat symbol, but are not the same finite law.
+They have been kept separate throughout the statements and proofs.
+
+The baseline's complete build and transitive axiom evidence are recorded
+and hash-checked in the accompanying verification receipt. This editorial
+work does not rerun that full build. The present paper does not prove a
+continuum probability process with biharmonic transition laws, an
+unrestricted analytic functional calculus, or a stochastic calculus for
+an ordinary weak limit. Analytic functional limits remain meaningful
+precisely on their proved test domains. Attribution, independent referee
+review and a comprehensive novelty assessment remain open.
+\par\endgroup
+
+\begin{thebibliography}{9}
+\bibitem{BM}
+S. Bonaccorsi and S. Mazzucchi,
+\emph{High order heat-type equations and random walks on the complex plane},
+arXiv:1402.6140 (2014),
+\href{https://arxiv.org/abs/1402.6140}{arxiv.org/abs/1402.6140}.
+Primary comparison: Theorem 2, Remark 1, the discussion before Theorem 7,
+and Hypothesis 10.
+\bibitem{BCM}
+S. Bonaccorsi, C. Calcaterra and S. Mazzucchi,
+\emph{An It\^o calculus for a class of limit processes arising from random
+walks on the complex plane}, arXiv:1603.05437 (2016),
+\href{https://arxiv.org/abs/1603.05437}{arxiv.org/abs/1603.05437}.
+\end{thebibliography}
+\end{document}
