@@ -1,0 +1,1490 @@
+{
+  "baseline": "bab688bb6140cd6316c80680095a914ea0d346db",
+  "entries": [
+    {
+      "paper": "2: actual derivatives and bounds",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SmoothAbsoluteApproximation.radius",
+      "file": "Foundation/SmoothAbsoluteApproximation.lean",
+      "line": 12,
+      "source_sha256": "16f20ca1034a8c4d9348d7eddcc1293590137cd0b2ae286ac56927c33ce44506",
+      "declaration_header": "def radius (e x : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SmoothAbsoluteApproximation.lean#L12"
+    },
+    {
+      "paper": "2: actual derivatives and bounds",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SmoothAbsoluteApproximation.slope",
+      "file": "Foundation/SmoothAbsoluteApproximation.lean",
+      "line": 13,
+      "source_sha256": "16f20ca1034a8c4d9348d7eddcc1293590137cd0b2ae286ac56927c33ce44506",
+      "declaration_header": "def slope (e x : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SmoothAbsoluteApproximation.lean#L13"
+    },
+    {
+      "paper": "2: actual derivatives and bounds",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SmoothAbsoluteApproximation.curvature",
+      "file": "Foundation/SmoothAbsoluteApproximation.lean",
+      "line": 14,
+      "source_sha256": "16f20ca1034a8c4d9348d7eddcc1293590137cd0b2ae286ac56927c33ce44506",
+      "declaration_header": "def curvature (e x : \u211d) : \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SmoothAbsoluteApproximation.lean#L14"
+    },
+    {
+      "paper": "2: actual derivatives and bounds",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SmoothAbsoluteApproximation.radius_hasDerivAt",
+      "file": "Foundation/SmoothAbsoluteApproximation.lean",
+      "line": 32,
+      "source_sha256": "16f20ca1034a8c4d9348d7eddcc1293590137cd0b2ae286ac56927c33ce44506",
+      "declaration_header": "theorem radius_hasDerivAt {e : \u211d} (he : 0 < e) (x : \u211d) :\n    HasDerivAt (radius e) (slope e x) x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SmoothAbsoluteApproximation.lean#L32"
+    },
+    {
+      "paper": "2: actual derivatives and bounds",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SmoothAbsoluteApproximation.slope_hasDerivAt",
+      "file": "Foundation/SmoothAbsoluteApproximation.lean",
+      "line": 43,
+      "source_sha256": "16f20ca1034a8c4d9348d7eddcc1293590137cd0b2ae286ac56927c33ce44506",
+      "declaration_header": "theorem slope_hasDerivAt {e : \u211d} (he : 0 < e) (x : \u211d) :\n    HasDerivAt (slope e) (curvature e x) x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SmoothAbsoluteApproximation.lean#L43"
+    },
+    {
+      "paper": "2: actual derivatives and bounds",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SmoothAbsoluteApproximation.uniform_error",
+      "file": "Foundation/SmoothAbsoluteApproximation.lean",
+      "line": 75,
+      "source_sha256": "16f20ca1034a8c4d9348d7eddcc1293590137cd0b2ae286ac56927c33ce44506",
+      "declaration_header": "theorem uniform_error {e : \u211d} (he : 0 < e) (x : \u211d) : \u2016radius e x - |x|\u2016 \u2264 e",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SmoothAbsoluteApproximation.lean#L75"
+    },
+    {
+      "paper": "2: actual derivatives and bounds",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SmoothAbsoluteApproximation.slope_bound",
+      "file": "Foundation/SmoothAbsoluteApproximation.lean",
+      "line": 79,
+      "source_sha256": "16f20ca1034a8c4d9348d7eddcc1293590137cd0b2ae286ac56927c33ce44506",
+      "declaration_header": "theorem slope_bound {e : \u211d} (he : 0 < e) (x : \u211d) : \u2016slope e x\u2016 \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SmoothAbsoluteApproximation.lean#L79"
+    },
+    {
+      "paper": "2: actual derivatives and bounds",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SmoothAbsoluteApproximation.curvature_bound",
+      "file": "Foundation/SmoothAbsoluteApproximation.lean",
+      "line": 88,
+      "source_sha256": "16f20ca1034a8c4d9348d7eddcc1293590137cd0b2ae286ac56927c33ce44506",
+      "declaration_header": "theorem curvature_bound {e : \u211d} (he : 0 < e) (x : \u211d) : \u2016curvature e x\u2016 \u2264 e\u207b\u00b9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SmoothAbsoluteApproximation.lean#L88"
+    },
+    {
+      "paper": "2: predictable sign field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianSignIntegral.field_coeFn",
+      "file": "Foundation/BrownianSignIntegral.lean",
+      "line": 66,
+      "source_sha256": "3ecacdf2193394ac7e6acebda48d5a8a2a05cb15e14eeb4239f4de2e4dc74fbf",
+      "declaration_header": "theorem field_coeFn (T : \u211d\u22650) : field T =\u1d50[timeProbability]\n    (PredictableRealL2.horizon T).indicator (fun z => signum (sigma z))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianSignIntegral.lean#L66"
+    },
+    {
+      "paper": "2: predictable sign field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianSignIntegral.field_predictable",
+      "file": "Foundation/BrownianSignIntegral.lean",
+      "line": 73,
+      "source_sha256": "3ecacdf2193394ac7e6acebda48d5a8a2a05cb15e14eeb4239f4de2e4dc74fbf",
+      "declaration_header": "theorem field_predictable (T : \u211d\u22650) : field T \u2208 fullPredictable",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianSignIntegral.lean#L73"
+    },
+    {
+      "paper": "2: predictable sign field",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianSignIntegral.terminal_centered",
+      "file": "Foundation/BrownianSignIntegral.lean",
+      "line": 91,
+      "source_sha256": "3ecacdf2193394ac7e6acebda48d5a8a2a05cb15e14eeb4239f4de2e4dc74fbf",
+      "declaration_header": "theorem terminal_centered (T : \u211d\u22650) : \u222b \u03c9, terminal T \u03c9 \u2202gaussianProduct = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianSignIntegral.lean#L91"
+    },
+    {
+      "paper": "2\u20133: raw-past sign integral",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianSignConditional.terminal_past",
+      "file": "Foundation/BrownianSignConditional.lean",
+      "line": 35,
+      "source_sha256": "f3901179a56556b23571b18d96dcda9ae8222fb1c94f7666835c2af140fcb66e",
+      "declaration_header": "theorem terminal_past (T : \u211d\u22650) : terminal T \u2208 pastL2 T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianSignConditional.lean#L35"
+    },
+    {
+      "paper": "2\u20133: raw-past sign integral",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianSignConditional.conditional_expectation",
+      "file": "Foundation/BrownianSignConditional.lean",
+      "line": 40,
+      "source_sha256": "f3901179a56556b23571b18d96dcda9ae8222fb1c94f7666835c2af140fcb66e",
+      "declaration_header": "theorem conditional_expectation (S T : \u211d\u22650) (hST : S \u2264 T) :\n    gaussianProduct[terminal T | GaussianTimeProcess.naturalFiltration S]\n      =\u1d50[gaussianProduct] terminal S",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianSignConditional.lean#L40"
+    },
+    {
+      "paper": "2: fixed-time convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTanakaApproximation.slope_tendsto_sign",
+      "file": "Foundation/BrownianTanakaApproximation.lean",
+      "line": 16,
+      "source_sha256": "b92441c5becbfdbd43673e53c90cb92f27b5301da3ff927b9ff7d18b3faa3107",
+      "declaration_header": "theorem slope_tendsto_sign (x : \u211d) :\n    Tendsto (fun n => slope (width n) x) atTop (\ud835\udcdd (BrownianSignIntegral.signum x))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTanakaApproximation.lean#L16"
+    },
+    {
+      "paper": "2: fixed-time convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTanakaApproximation.field_tendsto",
+      "file": "Foundation/BrownianTanakaApproximation.lean",
+      "line": 71,
+      "source_sha256": "b92441c5becbfdbd43673e53c90cb92f27b5301da3ff927b9ff7d18b3faa3107",
+      "declaration_header": "theorem field_tendsto (T : \u211d\u22650) :\n    Tendsto (fun n => approximateField n T) atTop\n      (\ud835\udcdd (BrownianSignIntegral.predictableField T))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTanakaApproximation.lean#L71"
+    },
+    {
+      "paper": "2: fixed-time convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTanakaApproximation.integral_tendsto",
+      "file": "Foundation/BrownianTanakaApproximation.lean",
+      "line": 94,
+      "source_sha256": "b92441c5becbfdbd43673e53c90cb92f27b5301da3ff927b9ff7d18b3faa3107",
+      "declaration_header": "theorem integral_tendsto (T : \u211d\u22650) :\n    Tendsto (fun n => itoIntegral (approximateField n T)) atTop\n      (\ud835\udcdd (BrownianSignIntegral.terminal T))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTanakaApproximation.lean#L94"
+    },
+    {
+      "paper": "2: fixed-time convergence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTanakaApproximation.terminal_tendsto",
+      "file": "Foundation/BrownianTanakaApproximation.lean",
+      "line": 111,
+      "source_sha256": "b92441c5becbfdbd43673e53c90cb92f27b5301da3ff927b9ff7d18b3faa3107",
+      "declaration_header": "theorem terminal_tendsto (T : \u211d\u22650) :\n    Tendsto (fun n => valueL2 (functionLip (width_pos n)) T) atTop (\ud835\udcdd (absoluteValue T))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTanakaApproximation.lean#L111"
+    },
+    {
+      "paper": "2: original L2 mass class",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTanakaResidual.approximateMass_identity",
+      "file": "Foundation/BrownianTanakaResidual.lean",
+      "line": 55,
+      "source_sha256": "3079c5d1ca560ba4ae98fe6baef96889a130f8d970de8240f1a28ded58a61421",
+      "declaration_header": "theorem approximateMass_identity (n : \u2115) (T : \u211d\u22650) :\n    approximateMass n T = valueL2 (functionLip (width_pos n)) T -\n      width n \u2022 gaussianOne - itoIntegral (approximateField n T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTanakaResidual.lean#L55"
+    },
+    {
+      "paper": "2: original L2 mass class",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTanakaResidual.approximateMass_tendsto",
+      "file": "Foundation/BrownianTanakaResidual.lean",
+      "line": 82,
+      "source_sha256": "3079c5d1ca560ba4ae98fe6baef96889a130f8d970de8240f1a28ded58a61421",
+      "declaration_header": "theorem approximateMass_tendsto (T : \u211d\u22650) :\n    Tendsto (fun n => approximateMass n T) atTop (\ud835\udcdd (mass T))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTanakaResidual.lean#L82"
+    },
+    {
+      "paper": "2: original L2 mass class",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTanakaResidual.mass_nonneg",
+      "file": "Foundation/BrownianTanakaResidual.lean",
+      "line": 89,
+      "source_sha256": "3079c5d1ca560ba4ae98fe6baef96889a130f8d970de8240f1a28ded58a61421",
+      "declaration_header": "theorem mass_nonneg (T : \u211d\u22650) : 0 \u2264 mass T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTanakaResidual.lean#L89"
+    },
+    {
+      "paper": "2: original L2 mass class",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTanakaResidual.mass_monotone",
+      "file": "Foundation/BrownianTanakaResidual.lean",
+      "line": 111,
+      "source_sha256": "3079c5d1ca560ba4ae98fe6baef96889a130f8d970de8240f1a28ded58a61421",
+      "declaration_header": "theorem mass_monotone : Monotone mass",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTanakaResidual.lean#L111"
+    },
+    {
+      "paper": "2: original L2 mass class",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTanakaResidual.mass_continuous",
+      "file": "Foundation/BrownianTanakaResidual.lean",
+      "line": 136,
+      "source_sha256": "3079c5d1ca560ba4ae98fe6baef96889a130f8d970de8240f1a28ded58a61421",
+      "declaration_header": "theorem mass_continuous : Continuous mass",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTanakaResidual.lean#L136"
+    },
+    {
+      "paper": "2: original L2 mass class",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTanakaResidual.tanaka_identity",
+      "file": "Foundation/BrownianTanakaResidual.lean",
+      "line": 139,
+      "source_sha256": "3079c5d1ca560ba4ae98fe6baef96889a130f8d970de8240f1a28ded58a61421",
+      "declaration_header": "theorem tanaka_identity (T : \u211d\u22650) :\n    absoluteValue T = BrownianSignIntegral.terminal T + mass T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTanakaResidual.lean#L139"
+    },
+    {
+      "paper": "2\u20133: continuous smooth mass paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianSmoothMassPath.primitive_hasDerivAt",
+      "file": "Foundation/BrownianSmoothMassPath.lean",
+      "line": 29,
+      "source_sha256": "0389f9ffa3981da3a26c351a53cd5bdb97d90602d477b0801ee37c8860ea144b",
+      "declaration_header": "theorem primitive_hasDerivAt (n : \u2115) (\u03c9 : SampleSpace) (t : \u211d) :\n    HasDerivAt (primitive n \u03c9) ((1 / 2 : \u211d) * rate (width n) \u03c9 t) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianSmoothMassPath.lean#L29"
+    },
+    {
+      "paper": "2\u20133: continuous smooth mass paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianSmoothMassPath.path_monotone",
+      "file": "Foundation/BrownianSmoothMassPath.lean",
+      "line": 56,
+      "source_sha256": "0389f9ffa3981da3a26c351a53cd5bdb97d90602d477b0801ee37c8860ea144b",
+      "declaration_header": "theorem path_monotone (n : \u2115) (\u03c9 : SampleSpace) : Monotone (path n \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianSmoothMassPath.lean#L56"
+    },
+    {
+      "paper": "2\u20133: continuous smooth mass paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianSmoothMassPath.path_nonneg",
+      "file": "Foundation/BrownianSmoothMassPath.lean",
+      "line": 59,
+      "source_sha256": "0389f9ffa3981da3a26c351a53cd5bdb97d90602d477b0801ee37c8860ea144b",
+      "declaration_header": "theorem path_nonneg (n : \u2115) (\u03c9 : SampleSpace) (t : \u211d\u22650) : 0 \u2264 path n \u03c9 t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianSmoothMassPath.lean#L59"
+    },
+    {
+      "paper": "2\u20133: continuous smooth mass paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianSmoothMassPath.path_coordinate_measurable",
+      "file": "Foundation/BrownianSmoothMassPath.lean",
+      "line": 63,
+      "source_sha256": "0389f9ffa3981da3a26c351a53cd5bdb97d90602d477b0801ee37c8860ea144b",
+      "declaration_header": "theorem path_coordinate_measurable (n : \u2115) (T : \u211d\u22650) :\n    Measurable (fun \u03c9 => path n \u03c9 T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianSmoothMassPath.lean#L63"
+    },
+    {
+      "paper": "2\u20133: continuous smooth mass paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianSmoothMassPath.path_measurable",
+      "file": "Foundation/BrownianSmoothMassPath.lean",
+      "line": 72,
+      "source_sha256": "0389f9ffa3981da3a26c351a53cd5bdb97d90602d477b0801ee37c8860ea144b",
+      "declaration_header": "theorem path_measurable (n : \u2115) : Measurable (path n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianSmoothMassPath.lean#L72"
+    },
+    {
+      "paper": "2\u20133: path and Bochner representatives",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianSmoothMassRealization.approximateMass_coeFn",
+      "file": "Foundation/BrownianSmoothMassRealization.lean",
+      "line": 22,
+      "source_sha256": "d16222a582194843fb2aabd12e6c5354c3f3c24b55d54ce2ed673cfa840503dd",
+      "declaration_header": "theorem approximateMass_coeFn (n : \u2115) (T : \u211d\u22650) :\n    approximateMass n T =\u1d50[gaussianProduct] fun \u03c9 => path n \u03c9 T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianSmoothMassRealization.lean#L22"
+    },
+    {
+      "paper": "2\u20133: path and Bochner representatives",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianSmoothMassRealization.pathClass_tendsto",
+      "file": "Foundation/BrownianSmoothMassRealization.lean",
+      "line": 53,
+      "source_sha256": "d16222a582194843fb2aabd12e6c5354c3f3c24b55d54ce2ed673cfa840503dd",
+      "declaration_header": "theorem pathClass_tendsto (T : \u211d\u22650) :\n    Tendsto (fun n => pathClass n T) atTop (\ud835\udcdd (mass T))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianSmoothMassRealization.lean#L53"
+    },
+    {
+      "paper": "2\u20133: path and Bochner representatives",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianSmoothMassRealization.compensatedPath_coeFn",
+      "file": "Foundation/BrownianSmoothMassRealization.lean",
+      "line": 62,
+      "source_sha256": "d16222a582194843fb2aabd12e6c5354c3f3c24b55d54ce2ed673cfa840503dd",
+      "declaration_header": "theorem compensatedPath_coeFn (n : \u2115) (T : \u211d\u22650) :\n    itoIntegral (approximateField n T) =\u1d50[gaussianProduct] fun \u03c9 => compensatedPath n \u03c9 T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianSmoothMassRealization.lean#L62"
+    },
+    {
+      "paper": "2\u20133: path and Bochner representatives",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianSmoothMassRealization.compensated_conditional",
+      "file": "Foundation/BrownianSmoothMassRealization.lean",
+      "line": 89,
+      "source_sha256": "d16222a582194843fb2aabd12e6c5354c3f3c24b55d54ce2ed673cfa840503dd",
+      "declaration_header": "theorem compensated_conditional (n : \u2115) (S T : \u211d\u22650) (hST : S \u2264 T) :\n    gaussianProduct[(fun \u03c9 => compensatedPath n \u03c9 T) | naturalFiltration S]\n      =\u1d50[gaussianProduct] fun \u03c9 => compensatedPath n \u03c9 S",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianSmoothMassRealization.lean#L89"
+    },
+    {
+      "paper": "3: measurable compact maximal bound",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianSmoothCompactMaximal.crossing_countable",
+      "file": "Foundation/BrownianSmoothCompactMaximal.lean",
+      "line": 14,
+      "source_sha256": "e13b65a2c6bce6fc1648bc66ba2713c13ed563097db3f9cd2b9d941284ba7d5b",
+      "declaration_header": "theorem crossing_countable (n m : \u2115) (T \u03b5 : \u211d\u22650) :\n    \u2203 u : \u2115 \u2192 \u211d\u22650, (\u2200 i, u i \u2264 T) \u2227\n      {\u03c9 | \u2203 t : \u211d\u22650, t \u2264 T \u2227\n        (\u03b5 : \u211d) < \u2016compensatedPath n \u03c9 t - compensatedPath m \u03c9 t\u2016} =\n      {\u03c9 | \u2203 i, (\u03b5 : \u211d) < \u2016compensatedPath n \u03c9 (u i) - compensatedPath m \u03c9 (u i)\u2016}",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianSmoothCompactMaximal.lean#L14"
+    },
+    {
+      "paper": "3: measurable compact maximal bound",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianSmoothCompactMaximal.crossing_measurable",
+      "file": "Foundation/BrownianSmoothCompactMaximal.lean",
+      "line": 35,
+      "source_sha256": "e13b65a2c6bce6fc1648bc66ba2713c13ed563097db3f9cd2b9d941284ba7d5b",
+      "declaration_header": "theorem crossing_measurable (n m : \u2115) (T \u03b5 : \u211d\u22650) :\n    MeasurableSet {\u03c9 | \u2203 t : \u211d\u22650, t \u2264 T \u2227\n      (\u03b5 : \u211d) < \u2016compensatedPath n \u03c9 t - compensatedPath m \u03c9 t\u2016}",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianSmoothCompactMaximal.lean#L35"
+    },
+    {
+      "paper": "3: measurable compact maximal bound",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianSmoothCompactMaximal.compact_maximal",
+      "file": "Foundation/BrownianSmoothCompactMaximal.lean",
+      "line": 47,
+      "source_sha256": "e13b65a2c6bce6fc1648bc66ba2713c13ed563097db3f9cd2b9d941284ba7d5b",
+      "declaration_header": "theorem compact_maximal (n m : \u2115) (T \u03b5 : \u211d\u22650) :\n    (\u03b5 : \u211d\u22650\u221e) * gaussianProduct {\u03c9 | \u2203 t : \u211d\u22650, t \u2264 T \u2227\n      (\u03b5 : \u211d) < \u2016compensatedPath n \u03c9 t - compensatedPath m \u03c9 t\u2016} \u2264\n      ENNReal.ofReal \u2016approximateField n T - approximateField m T\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianSmoothCompactMaximal.lean#L47"
+    },
+    {
+      "paper": "3: uniform Cauchy estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianSmoothUniformCauchy.normalized_error",
+      "file": "Foundation/BrownianSmoothUniformCauchy.lean",
+      "line": 13,
+      "source_sha256": "a122cf39efc8564637ab85531d566daf51350dda760b2f864a653d9cac1e7e2f",
+      "declaration_header": "theorem normalized_error (n : \u2115) (x : \u211d) :\n    \u2016radius (width n) x - width n - |x|\u2016 \u2264 width n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianSmoothUniformCauchy.lean#L13"
+    },
+    {
+      "paper": "3: uniform Cauchy estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianSmoothUniformCauchy.mass_difference_bound",
+      "file": "Foundation/BrownianSmoothUniformCauchy.lean",
+      "line": 18,
+      "source_sha256": "a122cf39efc8564637ab85531d566daf51350dda760b2f864a653d9cac1e7e2f",
+      "declaration_header": "theorem mass_difference_bound (n m : \u2115) (\u03c9 : SampleSpace) (t : \u211d\u22650) :\n    \u2016BrownianSmoothMassPath.path n \u03c9 t - BrownianSmoothMassPath.path m \u03c9 t\u2016 \u2264\n      width n + width m + \u2016compensatedPath n \u03c9 t - compensatedPath m \u03c9 t\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianSmoothUniformCauchy.lean#L18"
+    },
+    {
+      "paper": "3: uniform Cauchy estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianSmoothUniformCauchy.mass_compact_maximal",
+      "file": "Foundation/BrownianSmoothUniformCauchy.lean",
+      "line": 34,
+      "source_sha256": "a122cf39efc8564637ab85531d566daf51350dda760b2f864a653d9cac1e7e2f",
+      "declaration_header": "theorem mass_compact_maximal (n m : \u2115) (T \u03b5 : \u211d\u22650) :\n    (\u03b5 : \u211d\u22650\u221e) * gaussianProduct {\u03c9 | \u2203 t : \u211d\u22650, t \u2264 T \u2227\n      (\u03b5 : \u211d) + width n + width m <\n        \u2016BrownianSmoothMassPath.path n \u03c9 t - BrownianSmoothMassPath.path m \u03c9 t\u2016} \u2264\n      ENNReal.ofReal \u2016approximateField n T - approximateField m T\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianSmoothUniformCauchy.lean#L34"
+    },
+    {
+      "paper": "3: uniform Cauchy estimates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianSmoothUniformCauchy.mass_uniform_cauchy",
+      "file": "Foundation/BrownianSmoothUniformCauchy.lean",
+      "line": 69,
+      "source_sha256": "a122cf39efc8564637ab85531d566daf51350dda760b2f864a653d9cac1e7e2f",
+      "declaration_header": "theorem mass_uniform_cauchy (T \u03b5 \u03b4 : \u211d\u22650) (h\u03b5 : 0 < \u03b5) (h\u03b4 : 0 < \u03b4) :\n    \u2203 N : \u2115, \u2200 n \u2265 N, \u2200 m \u2265 N,\n      gaussianProduct {\u03c9 | \u2203 t : \u211d\u22650, t \u2264 T \u2227 (\u03b5 : \u211d) <\n        \u2016BrownianSmoothMassPath.path n \u03c9 t - BrownianSmoothMassPath.path m \u03c9 t\u2016} <\n          (\u03b4 : \u211d\u22650\u221e)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianSmoothUniformCauchy.lean#L69"
+    },
+    {
+      "paper": "3: one summable subsequence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassFastSubsequence.cutoff_spec",
+      "file": "Foundation/BrownianMassFastSubsequence.lean",
+      "line": 21,
+      "source_sha256": "8017ddb47b5a89c5f00e06cc38cc4e59921b4a5c9efbcc3ca55196cff4cbd961",
+      "declaration_header": "theorem cutoff_spec (j : \u2115) : \u2200 n \u2265 cutoff j, \u2200 m \u2265 cutoff j,\n    gaussianProduct {\u03c9 | \u2203 t : \u211d\u22650, t \u2264 (j + 1 : \u211d\u22650) \u2227\n      (tolerance j : \u211d) < \u2016path n \u03c9 t - path m \u03c9 t\u2016} < (tolerance j : \u211d\u22650\u221e)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassFastSubsequence.lean#L21"
+    },
+    {
+      "paper": "3: one summable subsequence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassFastSubsequence.subsequence_strictMono",
+      "file": "Foundation/BrownianMassFastSubsequence.lean",
+      "line": 36,
+      "source_sha256": "8017ddb47b5a89c5f00e06cc38cc4e59921b4a5c9efbcc3ca55196cff4cbd961",
+      "declaration_header": "theorem subsequence_strictMono : StrictMono subsequence",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassFastSubsequence.lean#L36"
+    },
+    {
+      "paper": "3: one summable subsequence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassFastSubsequence.bad_probability",
+      "file": "Foundation/BrownianMassFastSubsequence.lean",
+      "line": 44,
+      "source_sha256": "8017ddb47b5a89c5f00e06cc38cc4e59921b4a5c9efbcc3ca55196cff4cbd961",
+      "declaration_header": "theorem bad_probability (j : \u2115) : gaussianProduct (bad j) < (tolerance j : \u211d\u22650\u221e)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassFastSubsequence.lean#L44"
+    },
+    {
+      "paper": "3: one summable subsequence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassFastSubsequence.bad_summable",
+      "file": "Foundation/BrownianMassFastSubsequence.lean",
+      "line": 48,
+      "source_sha256": "8017ddb47b5a89c5f00e06cc38cc4e59921b4a5c9efbcc3ca55196cff4cbd961",
+      "declaration_header": "theorem bad_summable : (\u2211' j, gaussianProduct (bad j)) \u2260 \u22a4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassFastSubsequence.lean#L48"
+    },
+    {
+      "paper": "3: one summable subsequence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassFastSubsequence.ae_eventual_increment",
+      "file": "Foundation/BrownianMassFastSubsequence.lean",
+      "line": 58,
+      "source_sha256": "8017ddb47b5a89c5f00e06cc38cc4e59921b4a5c9efbcc3ca55196cff4cbd961",
+      "declaration_header": "theorem ae_eventual_increment : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2200\u1da0 j : \u2115 in atTop,\n    \u2200 t : \u211d\u22650, t \u2264 (j + 1 : \u211d\u22650) \u2192\n      \u2016path (subsequence j) \u03c9 t - path (subsequence (j + 1)) \u03c9 t\u2016 \u2264 (tolerance j : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassFastSubsequence.lean#L58"
+    },
+    {
+      "paper": "3: actual measurable continuous limit",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassContinuousLimit.restriction_cauchy",
+      "file": "Foundation/BrownianMassContinuousLimit.lean",
+      "line": 25,
+      "source_sha256": "a2e0af016dd4237e03a5e4b741cc5d904548db20e330db3712ff87d2cd9c93e1",
+      "declaration_header": "theorem restriction_cauchy {\u03c9 : SampleSpace} (hg : Good \u03c9) (T : \u211d\u22650) :\n    CauchySeq (restriction T \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassContinuousLimit.lean#L25"
+    },
+    {
+      "paper": "3: actual measurable continuous limit",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassContinuousLimit.selected_cauchy",
+      "file": "Foundation/BrownianMassContinuousLimit.lean",
+      "line": 47,
+      "source_sha256": "a2e0af016dd4237e03a5e4b741cc5d904548db20e330db3712ff87d2cd9c93e1",
+      "declaration_header": "theorem selected_cauchy {\u03c9 : SampleSpace} (hg : Good \u03c9) :\n    CauchySeq (fun j => path (subsequence j) \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassContinuousLimit.lean#L47"
+    },
+    {
+      "paper": "3: actual measurable continuous limit",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassContinuousLimit.rawLimit_aemeasurable",
+      "file": "Foundation/BrownianMassContinuousLimit.lean",
+      "line": 68,
+      "source_sha256": "a2e0af016dd4237e03a5e4b741cc5d904548db20e330db3712ff87d2cd9c93e1",
+      "declaration_header": "theorem rawLimit_aemeasurable : AEMeasurable rawLimit gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassContinuousLimit.lean#L68"
+    },
+    {
+      "paper": "3: actual measurable continuous limit",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassContinuousLimit.limitPath_measurable",
+      "file": "Foundation/BrownianMassContinuousLimit.lean",
+      "line": 75,
+      "source_sha256": "a2e0af016dd4237e03a5e4b741cc5d904548db20e330db3712ff87d2cd9c93e1",
+      "declaration_header": "theorem limitPath_measurable : Measurable limitPath",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassContinuousLimit.lean#L75"
+    },
+    {
+      "paper": "3: actual measurable continuous limit",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassContinuousLimit.limitPath_tendsto",
+      "file": "Foundation/BrownianMassContinuousLimit.lean",
+      "line": 77,
+      "source_sha256": "a2e0af016dd4237e03a5e4b741cc5d904548db20e330db3712ff87d2cd9c93e1",
+      "declaration_header": "theorem limitPath_tendsto : \u2200\u1d50 \u03c9 \u2202gaussianProduct,\n    Tendsto (fun j => path (subsequence j) \u03c9) atTop (\ud835\udcdd (limitPath \u03c9))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassContinuousLimit.lean#L77"
+    },
+    {
+      "paper": "3: actual measurable continuous limit",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassContinuousLimit.limitPath_uniform",
+      "file": "Foundation/BrownianMassContinuousLimit.lean",
+      "line": 84,
+      "source_sha256": "a2e0af016dd4237e03a5e4b741cc5d904548db20e330db3712ff87d2cd9c93e1",
+      "declaration_header": "theorem limitPath_uniform : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2200 T : \u211d\u22650,\n    TendstoUniformlyOn (fun j t => path (subsequence j) \u03c9 t) (limitPath \u03c9)\n      atTop (Icc 0 T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassContinuousLimit.lean#L84"
+    },
+    {
+      "paper": "3: actual measurable continuous limit",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassContinuousLimit.limitPath_properties",
+      "file": "Foundation/BrownianMassContinuousLimit.lean",
+      "line": 90,
+      "source_sha256": "a2e0af016dd4237e03a5e4b741cc5d904548db20e330db3712ff87d2cd9c93e1",
+      "declaration_header": "theorem limitPath_properties : \u2200\u1d50 \u03c9 \u2202gaussianProduct,\n    limitPath \u03c9 0 = 0 \u2227 Monotone (limitPath \u03c9) \u2227 \u2200 t, 0 \u2264 limitPath \u03c9 t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassContinuousLimit.lean#L90"
+    },
+    {
+      "paper": "3,7: original L2 and past identification",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassLimitIdentification.coordinate_ae",
+      "file": "Foundation/BrownianMassLimitIdentification.lean",
+      "line": 14,
+      "source_sha256": "fa31492543d2c42451949d598243af1f4cfc7a87b788fb14fe16727e6e435848",
+      "declaration_header": "theorem coordinate_ae (T : \u211d\u22650) :\n    (fun \u03c9 => limitPath \u03c9 T) =\u1d50[gaussianProduct] mass T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassLimitIdentification.lean#L14"
+    },
+    {
+      "paper": "3,7: original L2 and past identification",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassLimitIdentification.coordinate_memLp",
+      "file": "Foundation/BrownianMassLimitIdentification.lean",
+      "line": 28,
+      "source_sha256": "fa31492543d2c42451949d598243af1f4cfc7a87b788fb14fe16727e6e435848",
+      "declaration_header": "theorem coordinate_memLp (T : \u211d\u22650) : MemLp (fun \u03c9 => limitPath \u03c9 T) 2 gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassLimitIdentification.lean#L28"
+    },
+    {
+      "paper": "3,7: original L2 and past identification",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassLimitIdentification.coordinateClass_eq",
+      "file": "Foundation/BrownianMassLimitIdentification.lean",
+      "line": 33,
+      "source_sha256": "fa31492543d2c42451949d598243af1f4cfc7a87b788fb14fe16727e6e435848",
+      "declaration_header": "theorem coordinateClass_eq (T : \u211d\u22650) : coordinateClass T = mass T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassLimitIdentification.lean#L33"
+    },
+    {
+      "paper": "3,7: original L2 and past identification",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassLimitIdentification.jointly_measurable",
+      "file": "Foundation/BrownianMassLimitIdentification.lean",
+      "line": 37,
+      "source_sha256": "fa31492543d2c42451949d598243af1f4cfc7a87b788fb14fe16727e6e435848",
+      "declaration_header": "theorem jointly_measurable : Measurable (fun z : \u211d\u22650 \u00d7 SampleSpace => limitPath z.2 z.1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassLimitIdentification.lean#L37"
+    },
+    {
+      "paper": "3,7: original L2 and past identification",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassLimitIdentification.coordinate_raw_past",
+      "file": "Foundation/BrownianMassLimitIdentification.lean",
+      "line": 41,
+      "source_sha256": "fa31492543d2c42451949d598243af1f4cfc7a87b788fb14fe16727e6e435848",
+      "declaration_header": "theorem coordinate_raw_past (T : \u211d\u22650) :\n    AEStronglyMeasurable[naturalFiltration T] (fun \u03c9 => limitPath \u03c9 T) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassLimitIdentification.lean#L41"
+    },
+    {
+      "paper": "3,7: original L2 and past identification",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassLimitIdentification.tanaka_ae",
+      "file": "Foundation/BrownianMassLimitIdentification.lean",
+      "line": 49,
+      "source_sha256": "fa31492543d2c42451949d598243af1f4cfc7a87b788fb14fe16727e6e435848",
+      "declaration_header": "theorem tanaka_ae (T : \u211d\u22650) : \u2200\u1d50 \u03c9 \u2202gaussianProduct,\n    |IBMConstructedSources.clockPath \u03c9 T| = BrownianSignIntegral.terminal T \u03c9 + limitPath \u03c9 T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassLimitIdentification.lean#L49"
+    },
+    {
+      "paper": "4: concentration away from zeros",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianCurvatureConcentration.curvature_away_zero",
+      "file": "Foundation/BrownianCurvatureConcentration.lean",
+      "line": 13,
+      "source_sha256": "2c36c10d23ab6b7f5e19e7f4e95bb198291b91b0117200e160d1de6720a43f90",
+      "declaration_header": "theorem curvature_away_zero {e \u03b4 : \u211d} (he : 0 < e) (h\u03b4 : 0 < \u03b4) {x : \u211d}\n    (hx : \u03b4 \u2264 |x|) : curvature e x \u2264 e ^ 2 / \u03b4 ^ 3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianCurvatureConcentration.lean#L13"
+    },
+    {
+      "paper": "4: concentration away from zeros",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianCurvatureConcentration.path_increment_bound",
+      "file": "Foundation/BrownianCurvatureConcentration.lean",
+      "line": 28,
+      "source_sha256": "2c36c10d23ab6b7f5e19e7f4e95bb198291b91b0117200e160d1de6720a43f90",
+      "declaration_header": "theorem path_increment_bound (n : \u2115) (\u03c9 : SampleSpace) (s t : \u211d\u22650) (hst : s \u2264 t)\n    {\u03b4 : \u211d} (h\u03b4 : 0 < \u03b4)\n    (hb : \u2200 u : \u211d\u22650, u \u2208 Icc s t \u2192 \u03b4 \u2264 |clockPath \u03c9 u|) :\n    0 \u2264 path n \u03c9 t - path n \u03c9 s \u2227\n      path n \u03c9 t - path n \u03c9 s \u2264\n        (1 / 2 : \u211d) * ((t : \u211d) - s) * (width n ^ 2 / \u03b4 ^ 3)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianCurvatureConcentration.lean#L28"
+    },
+    {
+      "paper": "4: zero-free intervals",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassZeroFreeIntervals.constant_of_away_zero",
+      "file": "Foundation/BrownianMassZeroFreeIntervals.lean",
+      "line": 15,
+      "source_sha256": "fc67ab6b8901c3edd3bf90def56fcd9a611c42c28dc0600046d7012365481d7c",
+      "declaration_header": "theorem constant_of_away_zero {\u03c9 : SampleSpace}\n    (h\u03c9 : Tendsto (fun j => path (subsequence j) \u03c9) atTop (\ud835\udcdd (limitPath \u03c9)))\n    (s t : \u211d\u22650) (hst : s \u2264 t) {\u03b4 : \u211d} (h\u03b4 : 0 < \u03b4)\n    (hb : \u2200 u : \u211d\u22650, u \u2208 Icc s t \u2192 \u03b4 \u2264 |clockPath \u03c9 u|) :\n    limitPath \u03c9 s = limitPath \u03c9 t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassZeroFreeIntervals.lean#L15"
+    },
+    {
+      "paper": "4: zero-free intervals",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassZeroFreeIntervals.zero_free_constant",
+      "file": "Foundation/BrownianMassZeroFreeIntervals.lean",
+      "line": 35,
+      "source_sha256": "fc67ab6b8901c3edd3bf90def56fcd9a611c42c28dc0600046d7012365481d7c",
+      "declaration_header": "theorem zero_free_constant : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2200 s t : \u211d\u22650, s \u2264 t \u2192\n    (\u2200 u : \u211d\u22650, u \u2208 Icc s t \u2192 clockPath \u03c9 u \u2260 0) \u2192\n      limitPath \u03c9 s = limitPath \u03c9 t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassZeroFreeIntervals.lean#L35"
+    },
+    {
+      "paper": "4: actual Stieltjes support",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassStieltjesSupport.massMeasure_Icc",
+      "file": "Foundation/BrownianMassStieltjesSupport.lean",
+      "line": 33,
+      "source_sha256": "2871ce53b40d3bd27a3b5a0c52d40b072f3319f2330fbecbf7b4df620347110a",
+      "declaration_header": "theorem massMeasure_Icc (\u03c9 : SampleSpace) (s t : \u211d\u22650) :\n    massMeasure \u03c9 (Icc s t) = ENNReal.ofReal (cumulative \u03c9 t - cumulative \u03c9 s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassStieltjesSupport.lean#L33"
+    },
+    {
+      "paper": "4: actual Stieltjes support",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassStieltjesSupport.massMeasure_singleton",
+      "file": "Foundation/BrownianMassStieltjesSupport.lean",
+      "line": 38,
+      "source_sha256": "2871ce53b40d3bd27a3b5a0c52d40b072f3319f2330fbecbf7b4df620347110a",
+      "declaration_header": "theorem massMeasure_singleton (\u03c9 : SampleSpace) (t : \u211d\u22650) : massMeasure \u03c9 {t} = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassStieltjesSupport.lean#L38"
+    },
+    {
+      "paper": "4: actual Stieltjes support",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassStieltjesSupport.massMeasure_Ioc",
+      "file": "Foundation/BrownianMassStieltjesSupport.lean",
+      "line": 43,
+      "source_sha256": "2871ce53b40d3bd27a3b5a0c52d40b072f3319f2330fbecbf7b4df620347110a",
+      "declaration_header": "theorem massMeasure_Ioc : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2200 s t : \u211d\u22650,\n    massMeasure \u03c9 (Ioc s t) = ENNReal.ofReal (limitPath \u03c9 t - limitPath \u03c9 s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassStieltjesSupport.lean#L43"
+    },
+    {
+      "paper": "4: actual Stieltjes support",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassStieltjesSupport.support_subset_zeros",
+      "file": "Foundation/BrownianMassStieltjesSupport.lean",
+      "line": 55,
+      "source_sha256": "2871ce53b40d3bd27a3b5a0c52d40b072f3319f2330fbecbf7b4df620347110a",
+      "declaration_header": "theorem support_subset_zeros : \u2200\u1d50 \u03c9 \u2202gaussianProduct,\n    (massMeasure \u03c9).support \u2286 {t : \u211d\u22650 | clockPath \u03c9 t = 0}",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassStieltjesSupport.lean#L55"
+    },
+    {
+      "paper": "4: actual Stieltjes support",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassStieltjesSupport.concentrated_on_zeros",
+      "file": "Foundation/BrownianMassStieltjesSupport.lean",
+      "line": 67,
+      "source_sha256": "2871ce53b40d3bd27a3b5a0c52d40b072f3319f2330fbecbf7b4df620347110a",
+      "declaration_header": "theorem concentrated_on_zeros : \u2200\u1d50 \u03c9 \u2202gaussianProduct,\n    massMeasure \u03c9 {t : \u211d\u22650 | clockPath \u03c9 t \u2260 0} = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassStieltjesSupport.lean#L67"
+    },
+    {
+      "paper": "4: Brownian ordinary zero occupation",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianZeroOccupation.zero_set_measure",
+      "file": "Foundation/BrownianZeroOccupation.lean",
+      "line": 31,
+      "source_sha256": "50536a11f3b047d7fea4690da9bfd3631165e39af32dfb2fe4937c85d9b42677",
+      "declaration_header": "theorem zero_set_measure : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2200 T : \u211d\u22650,\n    ((volume : Measure \u211d).restrict (Ioc 0 (T : \u211d)))\n      {t | clockPath \u03c9 t.toNNReal = 0} = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianZeroOccupation.lean#L31"
+    },
+    {
+      "paper": "4: positive expected mass",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassNontriviality.expected_mass_eq",
+      "file": "Foundation/BrownianMassNontriviality.lean",
+      "line": 23,
+      "source_sha256": "5a88ea8b9bfdb3615d176e05c8981324d183314ddff73f68dba83655a0255298",
+      "declaration_header": "theorem expected_mass_eq (T : \u211d\u22650) :\n    (\u222b \u03c9, limitPath \u03c9 T \u2202gaussianProduct) = \u222b \u03c9, absoluteValue T \u03c9 \u2202gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassNontriviality.lean#L23"
+    },
+    {
+      "paper": "4: positive expected mass",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassNontriviality.expected_mass_pos",
+      "file": "Foundation/BrownianMassNontriviality.lean",
+      "line": 33,
+      "source_sha256": "5a88ea8b9bfdb3615d176e05c8981324d183314ddff73f68dba83655a0255298",
+      "declaration_header": "theorem expected_mass_pos (T : \u211d\u22650) (hT : 0 < T) :\n    0 < \u222b \u03c9, limitPath \u03c9 T \u2202gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassNontriviality.lean#L33"
+    },
+    {
+      "paper": "3,5: exceptional-sample normalization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassMeasurableKernel.cumulative_coordinate_measurable",
+      "file": "Foundation/BrownianMassMeasurableKernel.lean",
+      "line": 20,
+      "source_sha256": "a082c593c34d601a453373ada13cdfd8a64702b5acd3f30a0e1e0f4b7011c171",
+      "declaration_header": "theorem cumulative_coordinate_measurable (t : \u211d\u22650) : Measurable (fun \u03c9 => cumulative \u03c9 t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassMeasurableKernel.lean#L20"
+    },
+    {
+      "paper": "3,5: exceptional-sample normalization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassMeasurableKernel.massMeasure_measurable",
+      "file": "Foundation/BrownianMassMeasurableKernel.lean",
+      "line": 67,
+      "source_sha256": "a082c593c34d601a453373ada13cdfd8a64702b5acd3f30a0e1e0f4b7011c171",
+      "declaration_header": "theorem massMeasure_measurable : Measurable massMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassMeasurableKernel.lean#L67"
+    },
+    {
+      "paper": "5: deterministic inverse",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyTimeChangeClock.clock_strictMono",
+      "file": "Foundation/StickyTimeChangeClock.lean",
+      "line": 18,
+      "source_sha256": "0cb820349279a46b46ca1bf8e2e7bcb7a448b1a2985e154fe6cd3edca3c02211",
+      "declaration_header": "theorem clock_strictMono (\u03ba : \u211d\u22650) (L : \u211d\u22650 \u2192 \u211d\u22650) (hL : Monotone L) :\n    StrictMono (clock \u03ba L)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyTimeChangeClock.lean#L18"
+    },
+    {
+      "paper": "5: deterministic inverse",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyTimeChangeClock.clock_surjective",
+      "file": "Foundation/StickyTimeChangeClock.lean",
+      "line": 26,
+      "source_sha256": "0cb820349279a46b46ca1bf8e2e7bcb7a448b1a2985e154fe6cd3edca3c02211",
+      "declaration_header": "theorem clock_surjective (\u03ba : \u211d\u22650) (L : \u211d\u22650 \u2192 \u211d\u22650)\n    (hL : Continuous L) (h0 : L 0 = 0) : Function.Surjective (clock \u03ba L)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyTimeChangeClock.lean#L26"
+    },
+    {
+      "paper": "5: deterministic inverse",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyTimeChangeClock.clock_inverse",
+      "file": "Foundation/StickyTimeChangeClock.lean",
+      "line": 45,
+      "source_sha256": "0cb820349279a46b46ca1bf8e2e7bcb7a448b1a2985e154fe6cd3edca3c02211",
+      "declaration_header": "theorem clock_inverse (\u03ba : \u211d\u22650) (L : \u211d\u22650 \u2192 \u211d\u22650)\n    (hc : Continuous L) (hm : Monotone L) (h0 : L 0 = 0) (t : \u211d\u22650) :\n    clock \u03ba L (inverseClock \u03ba L hc hm h0 t) = t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyTimeChangeClock.lean#L45"
+    },
+    {
+      "paper": "5: deterministic inverse",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyTimeChangeClock.inverse_clock",
+      "file": "Foundation/StickyTimeChangeClock.lean",
+      "line": 50,
+      "source_sha256": "0cb820349279a46b46ca1bf8e2e7bcb7a448b1a2985e154fe6cd3edca3c02211",
+      "declaration_header": "theorem inverse_clock (\u03ba : \u211d\u22650) (L : \u211d\u22650 \u2192 \u211d\u22650)\n    (hc : Continuous L) (hm : Monotone L) (h0 : L 0 = 0) (t : \u211d\u22650) :\n    inverseClock \u03ba L hc hm h0 (clock \u03ba L t) = t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyTimeChangeClock.lean#L50"
+    },
+    {
+      "paper": "5: deterministic inverse",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyTimeChangeClock.inverse_le",
+      "file": "Foundation/StickyTimeChangeClock.lean",
+      "line": 55,
+      "source_sha256": "0cb820349279a46b46ca1bf8e2e7bcb7a448b1a2985e154fe6cd3edca3c02211",
+      "declaration_header": "theorem inverse_le (\u03ba : \u211d\u22650) (L : \u211d\u22650 \u2192 \u211d\u22650)\n    (hc : Continuous L) (hm : Monotone L) (h0 : L 0 = 0) (t : \u211d\u22650) :\n    inverseClock \u03ba L hc hm h0 t \u2264 t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyTimeChangeClock.lean#L55"
+    },
+    {
+      "paper": "5: deterministic inverse",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyTimeChangeClock.inverse_monotone",
+      "file": "Foundation/StickyTimeChangeClock.lean",
+      "line": 61,
+      "source_sha256": "0cb820349279a46b46ca1bf8e2e7bcb7a448b1a2985e154fe6cd3edca3c02211",
+      "declaration_header": "theorem inverse_monotone (\u03ba : \u211d\u22650) (L : \u211d\u22650 \u2192 \u211d\u22650)\n    (hc : Continuous L) (hm : Monotone L) (h0 : L 0 = 0) :\n    Monotone (inverseClock \u03ba L hc hm h0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyTimeChangeClock.lean#L61"
+    },
+    {
+      "paper": "5: deterministic inverse",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyTimeChangeClock.inverse_continuous",
+      "file": "Foundation/StickyTimeChangeClock.lean",
+      "line": 66,
+      "source_sha256": "0cb820349279a46b46ca1bf8e2e7bcb7a448b1a2985e154fe6cd3edca3c02211",
+      "declaration_header": "theorem inverse_continuous (\u03ba : \u211d\u22650) (L : \u211d\u22650 \u2192 \u211d\u22650)\n    (hc : Continuous L) (hm : Monotone L) (h0 : L 0 = 0) :\n    Continuous (inverseClock \u03ba L hc hm h0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyTimeChangeClock.lean#L66"
+    },
+    {
+      "paper": "5: deterministic inverse",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyTimeChangeClock.inverse_increment",
+      "file": "Foundation/StickyTimeChangeClock.lean",
+      "line": 71,
+      "source_sha256": "0cb820349279a46b46ca1bf8e2e7bcb7a448b1a2985e154fe6cd3edca3c02211",
+      "declaration_header": "theorem inverse_increment (\u03ba : \u211d\u22650) (L : \u211d\u22650 \u2192 \u211d\u22650)\n    (hc : Continuous L) (hm : Monotone L) (h0 : L 0 = 0)\n    (s t : \u211d\u22650) (hst : s \u2264 t) :\n    (inverseClock \u03ba L hc hm h0 t : \u211d) - inverseClock \u03ba L hc hm h0 s \u2264 (t : \u211d) - s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyTimeChangeClock.lean#L71"
+    },
+    {
+      "paper": "5: actual random forward clock",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianRandomMassClock.mass_zero",
+      "file": "Foundation/BrownianRandomMassClock.lean",
+      "line": 20,
+      "source_sha256": "0d5ce66bb54a602f8dbb7526235aa2a3629e19b781992f1c7d5b1ef7bf86766e",
+      "declaration_header": "theorem mass_zero (\u03c9 : SampleSpace) : mass \u03c9 0 = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianRandomMassClock.lean#L20"
+    },
+    {
+      "paper": "5: actual random forward clock",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianRandomMassClock.mass_monotone",
+      "file": "Foundation/BrownianRandomMassClock.lean",
+      "line": 22,
+      "source_sha256": "0d5ce66bb54a602f8dbb7526235aa2a3629e19b781992f1c7d5b1ef7bf86766e",
+      "declaration_header": "theorem mass_monotone (\u03c9 : SampleSpace) : Monotone (mass \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianRandomMassClock.lean#L22"
+    },
+    {
+      "paper": "5: actual random forward clock",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianRandomMassClock.mass_continuous",
+      "file": "Foundation/BrownianRandomMassClock.lean",
+      "line": 26,
+      "source_sha256": "0d5ce66bb54a602f8dbb7526235aa2a3629e19b781992f1c7d5b1ef7bf86766e",
+      "declaration_header": "theorem mass_continuous (\u03c9 : SampleSpace) : Continuous (mass \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianRandomMassClock.lean#L26"
+    },
+    {
+      "paper": "5: actual random forward clock",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianRandomMassClock.mass_coordinate_measurable",
+      "file": "Foundation/BrownianRandomMassClock.lean",
+      "line": 29,
+      "source_sha256": "0d5ce66bb54a602f8dbb7526235aa2a3629e19b781992f1c7d5b1ef7bf86766e",
+      "declaration_header": "theorem mass_coordinate_measurable (t : \u211d\u22650) : Measurable (fun \u03c9 => mass \u03c9 t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianRandomMassClock.lean#L29"
+    },
+    {
+      "paper": "5: actual random forward clock",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianRandomMassClock.mass_agrees",
+      "file": "Foundation/BrownianRandomMassClock.lean",
+      "line": 35,
+      "source_sha256": "0d5ce66bb54a602f8dbb7526235aa2a3629e19b781992f1c7d5b1ef7bf86766e",
+      "declaration_header": "theorem mass_agrees : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2200 t : \u211d\u22650, (mass \u03c9 t : \u211d) = limitPath \u03c9 t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianRandomMassClock.lean#L35"
+    },
+    {
+      "paper": "5: actual random forward clock",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianRandomMassClock.forward_joint",
+      "file": "Foundation/BrownianRandomMassClock.lean",
+      "line": 57,
+      "source_sha256": "0d5ce66bb54a602f8dbb7526235aa2a3629e19b781992f1c7d5b1ef7bf86766e",
+      "declaration_header": "theorem forward_joint (\u03ba : \u211d\u22650) :\n    Measurable (fun z : \u211d\u22650 \u00d7 SampleSpace => forward \u03ba z.2 z.1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianRandomMassClock.lean#L57"
+    },
+    {
+      "paper": "5\u20136: actual inverse and changed paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassRandomTimeChange.forward_inverse",
+      "file": "Foundation/BrownianMassRandomTimeChange.lean",
+      "line": 15,
+      "source_sha256": "501211e9d77ba0f218e3a8e916addcfef5d9a98ae6c446256692ad8746c29b9a",
+      "declaration_header": "theorem forward_inverse (\u03ba : \u211d\u22650) (\u03c9 : SampleSpace) (t : \u211d\u22650) :\n    forward \u03ba \u03c9 (inverse \u03ba \u03c9 t) = t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassRandomTimeChange.lean#L15"
+    },
+    {
+      "paper": "5\u20136: actual inverse and changed paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassRandomTimeChange.inverse_forward",
+      "file": "Foundation/BrownianMassRandomTimeChange.lean",
+      "line": 19,
+      "source_sha256": "501211e9d77ba0f218e3a8e916addcfef5d9a98ae6c446256692ad8746c29b9a",
+      "declaration_header": "theorem inverse_forward (\u03ba : \u211d\u22650) (\u03c9 : SampleSpace) (s : \u211d\u22650) :\n    inverse \u03ba \u03c9 (forward \u03ba \u03c9 s) = s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassRandomTimeChange.lean#L19"
+    },
+    {
+      "paper": "5\u20136: actual inverse and changed paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassRandomTimeChange.inverse_increment",
+      "file": "Foundation/BrownianMassRandomTimeChange.lean",
+      "line": 32,
+      "source_sha256": "501211e9d77ba0f218e3a8e916addcfef5d9a98ae6c446256692ad8746c29b9a",
+      "declaration_header": "theorem inverse_increment (\u03ba : \u211d\u22650) (\u03c9 : SampleSpace) (s t : \u211d\u22650) (hst : s \u2264 t) :\n    (inverse \u03ba \u03c9 t : \u211d) - inverse \u03ba \u03c9 s \u2264 (t : \u211d) - s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassRandomTimeChange.lean#L32"
+    },
+    {
+      "paper": "5\u20136: actual inverse and changed paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassRandomTimeChange.inverse_lt_iff",
+      "file": "Foundation/BrownianMassRandomTimeChange.lean",
+      "line": 40,
+      "source_sha256": "501211e9d77ba0f218e3a8e916addcfef5d9a98ae6c446256692ad8746c29b9a",
+      "declaration_header": "theorem inverse_lt_iff (\u03ba : \u211d\u22650) (\u03c9 : SampleSpace) (t b : \u211d\u22650) :\n    inverse \u03ba \u03c9 t < b \u2194 t < forward \u03ba \u03c9 b",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassRandomTimeChange.lean#L40"
+    },
+    {
+      "paper": "5\u20136: actual inverse and changed paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassRandomTimeChange.inverse_coordinate_measurable",
+      "file": "Foundation/BrownianMassRandomTimeChange.lean",
+      "line": 45,
+      "source_sha256": "501211e9d77ba0f218e3a8e916addcfef5d9a98ae6c446256692ad8746c29b9a",
+      "declaration_header": "theorem inverse_coordinate_measurable (\u03ba t : \u211d\u22650) : Measurable (fun \u03c9 => inverse \u03ba \u03c9 t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassRandomTimeChange.lean#L45"
+    },
+    {
+      "paper": "5\u20136: actual inverse and changed paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassRandomTimeChange.inversePath_measurable",
+      "file": "Foundation/BrownianMassRandomTimeChange.lean",
+      "line": 63,
+      "source_sha256": "501211e9d77ba0f218e3a8e916addcfef5d9a98ae6c446256692ad8746c29b9a",
+      "declaration_header": "theorem inversePath_measurable (\u03ba : \u211d\u22650) : Measurable (inversePath \u03ba)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassRandomTimeChange.lean#L63"
+    },
+    {
+      "paper": "5\u20136: actual inverse and changed paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassRandomTimeChange.changedPath_measurable",
+      "file": "Foundation/BrownianMassRandomTimeChange.lean",
+      "line": 73,
+      "source_sha256": "501211e9d77ba0f218e3a8e916addcfef5d9a98ae6c446256692ad8746c29b9a",
+      "declaration_header": "theorem changedPath_measurable (\u03ba : \u211d\u22650) : Measurable (changedPath \u03ba)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassRandomTimeChange.lean#L73"
+    },
+    {
+      "paper": "5\u20136: actual inverse and changed paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassRandomTimeChange.changedPath_joint",
+      "file": "Foundation/BrownianMassRandomTimeChange.lean",
+      "line": 76,
+      "source_sha256": "501211e9d77ba0f218e3a8e916addcfef5d9a98ae6c446256692ad8746c29b9a",
+      "declaration_header": "theorem changedPath_joint (\u03ba : \u211d\u22650) :\n    Measurable (fun z : \u211d\u22650 \u00d7 SampleSpace => changedPath \u03ba z.2 z.1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassRandomTimeChange.lean#L76"
+    },
+    {
+      "paper": "5\u20136: actual inverse and changed paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassRandomTimeChange.inverse_balance",
+      "file": "Foundation/BrownianMassRandomTimeChange.lean",
+      "line": 81,
+      "source_sha256": "501211e9d77ba0f218e3a8e916addcfef5d9a98ae6c446256692ad8746c29b9a",
+      "declaration_header": "theorem inverse_balance (\u03ba : \u211d\u22650) (\u03c9 : SampleSpace) (t : \u211d\u22650) :\n    (inverse \u03ba \u03c9 t : \u211d) + (\u03ba : \u211d) * mass \u03c9 (inverse \u03ba \u03c9 t) = (t : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassRandomTimeChange.lean#L81"
+    },
+    {
+      "paper": "5\u20136: actual inverse and changed paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassRandomTimeChange.recover_original",
+      "file": "Foundation/BrownianMassRandomTimeChange.lean",
+      "line": 92,
+      "source_sha256": "501211e9d77ba0f218e3a8e916addcfef5d9a98ae6c446256692ad8746c29b9a",
+      "declaration_header": "theorem recover_original (\u03ba : \u211d\u22650) (\u03c9 : SampleSpace) (s : \u211d\u22650) :\n    changedPath \u03ba \u03c9 (forward \u03ba \u03c9 s) = clockPath \u03c9 s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassRandomTimeChange.lean#L92"
+    },
+    {
+      "paper": "5\u20136: actual inverse and changed paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassRandomTimeChange.changedPath_parameter_zero",
+      "file": "Foundation/BrownianMassRandomTimeChange.lean",
+      "line": 101,
+      "source_sha256": "501211e9d77ba0f218e3a8e916addcfef5d9a98ae6c446256692ad8746c29b9a",
+      "declaration_header": "theorem changedPath_parameter_zero (\u03c9 : SampleSpace) : changedPath 0 \u03c9 = clockPath \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassRandomTimeChange.lean#L101"
+    },
+    {
+      "paper": "5\u20136: exact measure transport",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianClockMeasureTransport.measure_ext_initial",
+      "file": "Foundation/BrownianClockMeasureTransport.lean",
+      "line": 32,
+      "source_sha256": "6dcaa2c547f7d25fd6cada527431f8b50b56f5a1d5273f358e64d34bf4565ddb",
+      "declaration_header": "theorem measure_ext_initial {\u03bc \u03bd : Measure \u211d\u22650}\n    (hfinite : \u2200 t : \u211d\u22650, \u03bc (Iic t) \u2260 \u221e)\n    (heq : \u2200 t : \u211d\u22650, \u03bc (Iic t) = \u03bd (Iic t)) : \u03bc = \u03bd",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianClockMeasureTransport.lean#L32"
+    },
+    {
+      "paper": "5\u20136: exact measure transport",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianClockMeasureTransport.massMeasure_Iic",
+      "file": "Foundation/BrownianClockMeasureTransport.lean",
+      "line": 49,
+      "source_sha256": "6dcaa2c547f7d25fd6cada527431f8b50b56f5a1d5273f358e64d34bf4565ddb",
+      "declaration_header": "theorem massMeasure_Iic (\u03c9 : SampleSpace) (t : \u211d\u22650) :\n    massMeasure \u03c9 (Iic t) = (mass \u03c9 t : \u211d\u22650\u221e)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianClockMeasureTransport.lean#L49"
+    },
+    {
+      "paper": "5\u20136: exact measure transport",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianClockMeasureTransport.clockMeasure_Iic",
+      "file": "Foundation/BrownianClockMeasureTransport.lean",
+      "line": 57,
+      "source_sha256": "6dcaa2c547f7d25fd6cada527431f8b50b56f5a1d5273f358e64d34bf4565ddb",
+      "declaration_header": "theorem clockMeasure_Iic (\u03ba : \u211d\u22650) (\u03c9 : SampleSpace) (t : \u211d\u22650) :\n    clockMeasure \u03ba \u03c9 (Iic t) = (forward \u03ba \u03c9 t : \u211d\u22650\u221e)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianClockMeasureTransport.lean#L57"
+    },
+    {
+      "paper": "5\u20136: exact measure transport",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianClockMeasureTransport.forward_preimage_Iic",
+      "file": "Foundation/BrownianClockMeasureTransport.lean",
+      "line": 63,
+      "source_sha256": "6dcaa2c547f7d25fd6cada527431f8b50b56f5a1d5273f358e64d34bf4565ddb",
+      "declaration_header": "theorem forward_preimage_Iic (\u03ba : \u211d\u22650) (\u03c9 : SampleSpace) (t : \u211d\u22650) :\n    forward \u03ba \u03c9 \u207b\u00b9' Iic t = Iic (inverse \u03ba \u03c9 t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianClockMeasureTransport.lean#L63"
+    },
+    {
+      "paper": "5\u20136: exact measure transport",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianClockMeasureTransport.forward_map_clockMeasure",
+      "file": "Foundation/BrownianClockMeasureTransport.lean",
+      "line": 75,
+      "source_sha256": "6dcaa2c547f7d25fd6cada527431f8b50b56f5a1d5273f358e64d34bf4565ddb",
+      "declaration_header": "theorem forward_map_clockMeasure (\u03ba : \u211d\u22650) (\u03c9 : SampleSpace) :\n    Measure.map (forward \u03ba \u03c9) (clockMeasure \u03ba \u03c9) = ordinaryTime",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianClockMeasureTransport.lean#L75"
+    },
+    {
+      "paper": "6: holding identity on one event",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyOccupation.brownian_zero_ordinary",
+      "file": "Foundation/BrownianStickyOccupation.lean",
+      "line": 25,
+      "source_sha256": "297e70492d193446f60058afe212afd0a2c2fecb93bc758f660bade8c129afa0",
+      "declaration_header": "theorem brownian_zero_ordinary : \u2200\u1d50 \u03c9 \u2202gaussianProduct,\n    ordinaryTime {s : \u211d\u22650 | clockPath \u03c9 s = 0} = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyOccupation.lean#L25"
+    },
+    {
+      "paper": "6: holding identity on one event",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyOccupation.zero_occupation",
+      "file": "Foundation/BrownianStickyOccupation.lean",
+      "line": 40,
+      "source_sha256": "297e70492d193446f60058afe212afd0a2c2fecb93bc758f660bade8c129afa0",
+      "declaration_header": "theorem zero_occupation : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2200 \u03ba T : \u211d\u22650,\n    ordinaryTime ({t : \u211d\u22650 | changedPath \u03ba \u03c9 t = 0} \u2229 Iic T) =\n      (\u03ba : \u211d\u22650\u221e) * (mass \u03c9 (inverse \u03ba \u03c9 T) : \u211d\u22650\u221e)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyOccupation.lean#L40"
+    },
+    {
+      "paper": "6: holding identity on one event",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyOccupation.zero_occupation_gap",
+      "file": "Foundation/BrownianStickyOccupation.lean",
+      "line": 68,
+      "source_sha256": "297e70492d193446f60058afe212afd0a2c2fecb93bc758f660bade8c129afa0",
+      "declaration_header": "theorem zero_occupation_gap : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2200 \u03ba T : \u211d\u22650,\n    ordinaryTime ({t : \u211d\u22650 | changedPath \u03ba \u03c9 t = 0} \u2229 Iic T) =\n      ENNReal.ofReal ((T : \u211d) - inverse \u03ba \u03c9 T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyOccupation.lean#L68"
+    },
+    {
+      "paper": "6: holding identity on one event",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyOccupation.zero_occupation_real",
+      "file": "Foundation/BrownianStickyOccupation.lean",
+      "line": 78,
+      "source_sha256": "297e70492d193446f60058afe212afd0a2c2fecb93bc758f660bade8c129afa0",
+      "declaration_header": "theorem zero_occupation_real : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2200 \u03ba T : \u211d\u22650,\n    ((volume : Measure \u211d).restrict (Ioc 0 (T : \u211d)))\n      {t : \u211d | changedPath \u03ba \u03c9 t.toNNReal = 0} =\n      ENNReal.ofReal ((T : \u211d) - inverse \u03ba \u03c9 T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyOccupation.lean#L78"
+    },
+    {
+      "paper": "6: nontrivial holding",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyNontriviality.occupation_integrable",
+      "file": "Foundation/BrownianStickyNontriviality.lean",
+      "line": 27,
+      "source_sha256": "02d9c44ba9b1fec2dfb5daa364e607608c1d6da99ff348374c8ebc4009d9fea4",
+      "declaration_header": "theorem occupation_integrable (\u03ba T : \u211d\u22650) :\n    Integrable (fun \u03c9 => occupation \u03ba \u03c9 T) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyNontriviality.lean#L27"
+    },
+    {
+      "paper": "6: nontrivial holding",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyNontriviality.occupation_pos_iff",
+      "file": "Foundation/BrownianStickyNontriviality.lean",
+      "line": 41,
+      "source_sha256": "02d9c44ba9b1fec2dfb5daa364e607608c1d6da99ff348374c8ebc4009d9fea4",
+      "declaration_header": "theorem occupation_pos_iff : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2200 \u03ba T : \u211d\u22650, 0 < \u03ba \u2192\n    (0 < occupation \u03ba \u03c9 T \u2194 0 < mass \u03c9 T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyNontriviality.lean#L41"
+    },
+    {
+      "paper": "6: nontrivial holding",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyNontriviality.expected_occupation_pos",
+      "file": "Foundation/BrownianStickyNontriviality.lean",
+      "line": 49,
+      "source_sha256": "02d9c44ba9b1fec2dfb5daa364e607608c1d6da99ff348374c8ebc4009d9fea4",
+      "declaration_header": "theorem expected_occupation_pos (\u03ba T : \u211d\u22650) (h\u03ba : 0 < \u03ba) (hT : 0 < T) :\n    0 < \u222b \u03c9, occupation \u03ba \u03c9 T \u2202gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyNontriviality.lean#L49"
+    },
+    {
+      "paper": "6: nontrivial holding",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyNontriviality.positive_occupation_probability",
+      "file": "Foundation/BrownianStickyNontriviality.lean",
+      "line": 72,
+      "source_sha256": "02d9c44ba9b1fec2dfb5daa364e607608c1d6da99ff348374c8ebc4009d9fea4",
+      "declaration_header": "theorem positive_occupation_probability (\u03ba T : \u211d\u22650) (h\u03ba : 0 < \u03ba) (hT : 0 < T) :\n    0 < gaussianProduct {\u03c9 | 0 < occupation \u03ba \u03c9 T}",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyNontriviality.lean#L72"
+    },
+    {
+      "paper": "7: raw-past versions and threshold events",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassClockPastEvents.mass_raw_past",
+      "file": "Foundation/BrownianMassClockPastEvents.lean",
+      "line": 14,
+      "source_sha256": "824548890bbd380ac6fced4d42067554a47cb16c7ce8e53a5eb5d9d058b54426",
+      "declaration_header": "theorem mass_raw_past (s : \u211d\u22650) :\n    AEStronglyMeasurable[naturalFiltration s] (fun \u03c9 => mass \u03c9 s) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassClockPastEvents.lean#L14"
+    },
+    {
+      "paper": "7: raw-past versions and threshold events",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassClockPastEvents.forward_raw_past",
+      "file": "Foundation/BrownianMassClockPastEvents.lean",
+      "line": 22,
+      "source_sha256": "824548890bbd380ac6fced4d42067554a47cb16c7ce8e53a5eb5d9d058b54426",
+      "declaration_header": "theorem forward_raw_past (\u03ba s : \u211d\u22650) :\n    AEStronglyMeasurable[naturalFiltration s] (fun \u03c9 => forward \u03ba \u03c9 s) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassClockPastEvents.lean#L22"
+    },
+    {
+      "paper": "7: raw-past versions and threshold events",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassClockPastEvents.inverse_le_iff",
+      "file": "Foundation/BrownianMassClockPastEvents.lean",
+      "line": 26,
+      "source_sha256": "824548890bbd380ac6fced4d42067554a47cb16c7ce8e53a5eb5d9d058b54426",
+      "declaration_header": "theorem inverse_le_iff (\u03ba : \u211d\u22650) (\u03c9 : SampleSpace) (t s : \u211d\u22650) :\n    inverse \u03ba \u03c9 t \u2264 s \u2194 t \u2264 forward \u03ba \u03c9 s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassClockPastEvents.lean#L26"
+    },
+    {
+      "paper": "7: raw-past versions and threshold events",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassClockPastEvents.inverse_event_raw_version",
+      "file": "Foundation/BrownianMassClockPastEvents.lean",
+      "line": 31,
+      "source_sha256": "824548890bbd380ac6fced4d42067554a47cb16c7ce8e53a5eb5d9d058b54426",
+      "declaration_header": "theorem inverse_event_raw_version (\u03ba t s : \u211d\u22650) :\n    \u2203 A : Set SampleSpace, MeasurableSet[naturalFiltration s] A \u2227\n      \u2200\u1d50 \u03c9 \u2202gaussianProduct, inverse \u03ba \u03c9 t \u2264 s \u2194 \u03c9 \u2208 A",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassClockPastEvents.lean#L31"
+    },
+    {
+      "paper": "7: actual augmented stopping clock",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassClockStoppingTime.mass_measurable_past",
+      "file": "Foundation/BrownianMassClockStoppingTime.lean",
+      "line": 21,
+      "source_sha256": "ef92f23fe19d6af05e865b7f939614bb97327b6c5391fefb034718371d3b9626",
+      "declaration_header": "theorem mass_measurable_past (s : \u211d\u22650) :\n    Measurable[augmentedPast s] (fun \u03c9 => mass \u03c9 s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassClockStoppingTime.lean#L21"
+    },
+    {
+      "paper": "7: actual augmented stopping clock",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassClockStoppingTime.forward_measurable_past",
+      "file": "Foundation/BrownianMassClockStoppingTime.lean",
+      "line": 27,
+      "source_sha256": "ef92f23fe19d6af05e865b7f939614bb97327b6c5391fefb034718371d3b9626",
+      "declaration_header": "theorem forward_measurable_past (\u03ba s : \u211d\u22650) :\n    Measurable[augmentedPast s] (fun \u03c9 => forward \u03ba \u03c9 s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassClockStoppingTime.lean#L27"
+    },
+    {
+      "paper": "7: actual augmented stopping clock",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassClockStoppingTime.inverse_isStoppingTime",
+      "file": "Foundation/BrownianMassClockStoppingTime.lean",
+      "line": 40,
+      "source_sha256": "ef92f23fe19d6af05e865b7f939614bb97327b6c5391fefb034718371d3b9626",
+      "declaration_header": "theorem inverse_isStoppingTime (\u03ba t : \u211d\u22650) :\n    IsStoppingTime augmentedPast (fun \u03c9 => (inverse \u03ba \u03c9 t : WithTop \u211d\u22650))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassClockStoppingTime.lean#L40"
+    },
+    {
+      "paper": "7: actual augmented stopping clock",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassClockStoppingTime.inverse_stopping_bounded",
+      "file": "Foundation/BrownianMassClockStoppingTime.lean",
+      "line": 49,
+      "source_sha256": "ef92f23fe19d6af05e865b7f939614bb97327b6c5391fefb034718371d3b9626",
+      "declaration_header": "theorem inverse_stopping_bounded (\u03ba t : \u211d\u22650) (\u03c9 : SampleSpace) :\n    (inverse \u03ba \u03c9 t : WithTop \u211d\u22650) \u2264 (t : WithTop \u211d\u22650)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassClockStoppingTime.lean#L49"
+    },
+    {
+      "paper": "7: actual augmented stopping clock",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianMassClockStoppingTime.condExp_unchanged",
+      "file": "Foundation/BrownianMassClockStoppingTime.lean",
+      "line": 53,
+      "source_sha256": "ef92f23fe19d6af05e865b7f939614bb97327b6c5391fefb034718371d3b9626",
+      "declaration_header": "theorem condExp_unchanged (s : \u211d\u22650) (F : SampleSpace \u2192 \u211d) (hF : Integrable F gaussianProduct) :\n    gaussianProduct[F | naturalFiltration s] =\u1d50[gaussianProduct]\n      gaussianProduct[F | augmentedPast s]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianMassClockStoppingTime.lean#L53"
+    },
+    {
+      "paper": "3,7: continuous martingale versions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianAugmentedMartingales.brownian_martingale",
+      "file": "Foundation/BrownianAugmentedMartingales.lean",
+      "line": 32,
+      "source_sha256": "d03a705134565b47309e842dce9bc569f631771c1f76c93546200698cb922725",
+      "declaration_header": "theorem brownian_martingale :\n    Martingale (fun t \u03c9 => clockPath \u03c9 t) augmentedPast gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianAugmentedMartingales.lean#L32"
+    },
+    {
+      "paper": "3,7: continuous martingale versions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianAugmentedMartingales.signIntegral_coordinate_ae",
+      "file": "Foundation/BrownianAugmentedMartingales.lean",
+      "line": 46,
+      "source_sha256": "d03a705134565b47309e842dce9bc569f631771c1f76c93546200698cb922725",
+      "declaration_header": "theorem signIntegral_coordinate_ae (t : \u211d\u22650) :\n    (fun \u03c9 => signIntegralPath \u03c9 t) =\u1d50[gaussianProduct] BrownianSignIntegral.terminal t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianAugmentedMartingales.lean#L46"
+    },
+    {
+      "paper": "3,7: continuous martingale versions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianAugmentedMartingales.signIntegral_martingale",
+      "file": "Foundation/BrownianAugmentedMartingales.lean",
+      "line": 72,
+      "source_sha256": "d03a705134565b47309e842dce9bc569f631771c1f76c93546200698cb922725",
+      "declaration_header": "theorem signIntegral_martingale :\n    Martingale (fun t \u03c9 => signIntegralPath \u03c9 t) augmentedPast gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianAugmentedMartingales.lean#L72"
+    },
+    {
+      "paper": "3,7: continuous martingale versions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianAugmentedMartingales.tanaka_all",
+      "file": "Foundation/BrownianAugmentedMartingales.lean",
+      "line": 81,
+      "source_sha256": "d03a705134565b47309e842dce9bc569f631771c1f76c93546200698cb922725",
+      "declaration_header": "theorem tanaka_all (\u03c9 : SampleSpace) (t : \u211d\u22650) :\n    |clockPath \u03c9 t| = signIntegralPath \u03c9 t + limitPath \u03c9 t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianAugmentedMartingales.lean#L81"
+    },
+    {
+      "paper": "7: Brownian square martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianAugmentedSquare.value_martingale",
+      "file": "Foundation/BrownianAugmentedSquare.lean",
+      "line": 30,
+      "source_sha256": "3e09550034a9f1e8acb276c021a8ccca62ff185239b2d0e72ddda699968d3c60",
+      "declaration_header": "theorem value_martingale : Martingale value augmentedPast gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianAugmentedSquare.lean#L30"
+    },
+    {
+      "paper": "7: Brownian square martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianAugmentedSquare.value_centered",
+      "file": "Foundation/BrownianAugmentedSquare.lean",
+      "line": 37,
+      "source_sha256": "3e09550034a9f1e8acb276c021a8ccca62ff185239b2d0e72ddda699968d3c60",
+      "declaration_header": "theorem value_centered (t : \u211d\u22650) : (\u222b \u03c9, value t \u03c9 \u2202gaussianProduct) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianAugmentedSquare.lean#L37"
+    },
+    {
+      "paper": "7: bounded sampling",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousBoundedSampling.sampled_uniformIntegrable",
+      "file": "Foundation/ContinuousBoundedSampling.lean",
+      "line": 40,
+      "source_sha256": "6465af254fa23a66b709a403d523e37a87f5e764eb0bd1466f535c233d82ec00",
+      "declaration_header": "theorem sampled_uniformIntegrable : UniformIntegrable (sampled M \u03c4) 1 \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousBoundedSampling.lean#L40"
+    },
+    {
+      "paper": "7: bounded sampling",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousBoundedSampling.sampled_L1_tendsto",
+      "file": "Foundation/ContinuousBoundedSampling.lean",
+      "line": 56,
+      "source_sha256": "6465af254fa23a66b709a403d523e37a87f5e764eb0bd1466f535c233d82ec00",
+      "declaration_header": "theorem sampled_L1_tendsto :\n    Tendsto (fun n => eLpNorm (sampled M \u03c4 n-(fun \u03c9 => M (\u03c4 \u03c9) \u03c9)) 1 \u03bc) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousBoundedSampling.lean#L56"
+    },
+    {
+      "paper": "7: bounded sampling",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousBoundedSampling.stopped_ae_condExp",
+      "file": "Foundation/ContinuousBoundedSampling.lean",
+      "line": 64,
+      "source_sha256": "6465af254fa23a66b709a403d523e37a87f5e764eb0bd1466f535c233d82ec00",
+      "declaration_header": "theorem stopped_ae_condExp :\n    (fun \u03c9 => M (\u03c4 \u03c9) \u03c9) =\u1d50[\u03bc] \u03bc[M (N : \u211d\u22650) | h\u03c4.measurableSpace]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousBoundedSampling.lean#L64"
+    },
+    {
+      "paper": "7: bounded sampling",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousBoundedSampling.stopped_expectation",
+      "file": "Foundation/ContinuousBoundedSampling.lean",
+      "line": 91,
+      "source_sha256": "6465af254fa23a66b709a403d523e37a87f5e764eb0bd1466f535c233d82ec00",
+      "declaration_header": "theorem stopped_expectation :\n    (\u222b \u03c9, M (\u03c4 \u03c9) \u03c9 \u2202\u03bc) = \u222b \u03c9, M (N : \u211d\u22650) \u03c9 \u2202\u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousBoundedSampling.lean#L91"
+    },
+    {
+      "paper": "7: shared-noise time change",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousTimeChangeMartingale.sample_two",
+      "file": "Foundation/ContinuousTimeChangeMartingale.lean",
+      "line": 13,
+      "source_sha256": "60dfdbcb3c12ec88a4abaadb3963fc151731993b5bace17b5a8e50eae7c19cda",
+      "declaration_header": "theorem sample_two (hM : Martingale M \u2131 \u03bc) (hc : \u2200 \u03c9, Continuous (fun t => M t \u03c9))\n    (\u03c3 \u03c4 : \u03a9 \u2192 \u211d\u22650) (h\u03c3 : IsStoppingTime \u2131 (fun \u03c9 => (\u03c3 \u03c9 : WithTop \u211d\u22650)))\n    (h\u03c4 : IsStoppingTime \u2131 (fun \u03c9 => (\u03c4 \u03c9 : WithTop \u211d\u22650)))\n    (h\u03c3\u03c4 : \u2200 \u03c9, \u03c3 \u03c9 \u2264 \u03c4 \u03c9) (N : \u2115) (hN : \u2200 \u03c9, \u03c4 \u03c9 \u2264 N) :\n    (fun \u03c9 => M (\u03c3 \u03c9) \u03c9) =\u1d50[\u03bc] \u03bc[(fun \u03c9 => M (\u03c4 \u03c9) \u03c9) | h\u03c3.measurableSpace]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousTimeChangeMartingale.lean#L13"
+    },
+    {
+      "paper": "7: shared-noise time change",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousTimeChangeMartingale.changed_stronglyAdapted",
+      "file": "Foundation/ContinuousTimeChangeMartingale.lean",
+      "line": 38,
+      "source_sha256": "60dfdbcb3c12ec88a4abaadb3963fc151731993b5bace17b5a8e50eae7c19cda",
+      "declaration_header": "theorem changed_stronglyAdapted (hM : StronglyAdapted \u2131 M)\n    (hc : \u2200 \u03c9, Continuous (fun t => M t \u03c9)) :\n    StronglyAdapted (changedFiltration \u2131 A hA hmono) (fun t \u03c9 => M (A t \u03c9) \u03c9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousTimeChangeMartingale.lean#L38"
+    },
+    {
+      "paper": "7: shared-noise time change",
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousTimeChangeMartingale.changed_martingale",
+      "file": "Foundation/ContinuousTimeChangeMartingale.lean",
+      "line": 45,
+      "source_sha256": "60dfdbcb3c12ec88a4abaadb3963fc151731993b5bace17b5a8e50eae7c19cda",
+      "declaration_header": "theorem changed_martingale (hM : Martingale M \u2131 \u03bc)\n    (hc : \u2200 \u03c9, Continuous (fun t => M t \u03c9)) (hb : \u2200 t \u03c9, A t \u03c9 \u2264 t) :\n    Martingale (fun t \u03c9 => M (A t \u03c9) \u03c9) (changedFiltration \u2131 A hA hmono) \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousTimeChangeMartingale.lean#L45"
+    },
+    {
+      "paper": "7: physical filtration and Tanaka",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedMartingales.physicalPast",
+      "file": "Foundation/BrownianTimeChangedMartingales.lean",
+      "line": 16,
+      "source_sha256": "2846d6c8ae4021775733950eb843df567bcce71321e7ba675472369f9c50df92",
+      "declaration_header": "def physicalPast (\u03ba : \u211d\u22650) : Filtration \u211d\u22650 (inferInstance : MeasurableSpace SampleSpace)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedMartingales.lean#L16"
+    },
+    {
+      "paper": "7: physical filtration and Tanaka",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedMartingales.changed_brownian_martingale",
+      "file": "Foundation/BrownianTimeChangedMartingales.lean",
+      "line": 20,
+      "source_sha256": "2846d6c8ae4021775733950eb843df567bcce71321e7ba675472369f9c50df92",
+      "declaration_header": "theorem changed_brownian_martingale (\u03ba : \u211d\u22650) :\n    Martingale (fun t \u03c9 => changedPath \u03ba \u03c9 t) (physicalPast \u03ba) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedMartingales.lean#L20"
+    },
+    {
+      "paper": "7: physical filtration and Tanaka",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedMartingales.changed_sign_martingale",
+      "file": "Foundation/BrownianTimeChangedMartingales.lean",
+      "line": 29,
+      "source_sha256": "2846d6c8ae4021775733950eb843df567bcce71321e7ba675472369f9c50df92",
+      "declaration_header": "theorem changed_sign_martingale (\u03ba : \u211d\u22650) :\n    Martingale (fun t \u03c9 => changedSignPath \u03ba \u03c9 t) (physicalPast \u03ba) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedMartingales.lean#L29"
+    },
+    {
+      "paper": "7: physical filtration and Tanaka",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedMartingales.tanaka_physical",
+      "file": "Foundation/BrownianTimeChangedMartingales.lean",
+      "line": 60,
+      "source_sha256": "2846d6c8ae4021775733950eb843df567bcce71321e7ba675472369f9c50df92",
+      "declaration_header": "theorem tanaka_physical (\u03ba : \u211d\u22650) : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2200 t : \u211d\u22650,\n    |changedPath \u03ba \u03c9 t| = changedSignPath \u03ba \u03c9 t+compensator \u03ba t \u03c9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedMartingales.lean#L60"
+    },
+    {
+      "paper": "7: physical filtration and Tanaka",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedMartingales.compensator_balance",
+      "file": "Foundation/BrownianTimeChangedMartingales.lean",
+      "line": 67,
+      "source_sha256": "2846d6c8ae4021775733950eb843df567bcce71321e7ba675472369f9c50df92",
+      "declaration_header": "theorem compensator_balance (\u03ba t : \u211d\u22650) (\u03c9 : SampleSpace) :\n    (\u03ba : \u211d)*compensator \u03ba t \u03c9 = (t : \u211d)-inverse \u03ba \u03c9 t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedMartingales.lean#L67"
+    },
+    {
+      "paper": "6\u20137: exact variance budget",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedVariance.inverse_integrable",
+      "file": "Foundation/BrownianTimeChangedVariance.lean",
+      "line": 16,
+      "source_sha256": "188e47d12cb63f77bc308186aaf0ea39b0c63a252a53f424677b6befb934155d",
+      "declaration_header": "theorem inverse_integrable (\u03ba t : \u211d\u22650) :\n    Integrable (fun \u03c9 => (inverse \u03ba \u03c9 t : \u211d)) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedVariance.lean#L16"
+    },
+    {
+      "paper": "6\u20137: exact variance budget",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedVariance.changed_square_martingale",
+      "file": "Foundation/BrownianTimeChangedVariance.lean",
+      "line": 25,
+      "source_sha256": "188e47d12cb63f77bc308186aaf0ea39b0c63a252a53f424677b6befb934155d",
+      "declaration_header": "theorem changed_square_martingale (\u03ba : \u211d\u22650) :\n    Martingale (fun t \u03c9 => (changedPath \u03ba \u03c9 t)^2-(inverse \u03ba \u03c9 t : \u211d))\n      (physicalPast \u03ba) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedVariance.lean#L25"
+    },
+    {
+      "paper": "6\u20137: exact variance budget",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedVariance.changed_square_integrable",
+      "file": "Foundation/BrownianTimeChangedVariance.lean",
+      "line": 33,
+      "source_sha256": "188e47d12cb63f77bc308186aaf0ea39b0c63a252a53f424677b6befb934155d",
+      "declaration_header": "theorem changed_square_integrable (\u03ba t : \u211d\u22650) :\n    Integrable (fun \u03c9 => (changedPath \u03ba \u03c9 t)^2) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedVariance.lean#L33"
+    },
+    {
+      "paper": "6\u20137: exact variance budget",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedVariance.changed_second_moment",
+      "file": "Foundation/BrownianTimeChangedVariance.lean",
+      "line": 52,
+      "source_sha256": "188e47d12cb63f77bc308186aaf0ea39b0c63a252a53f424677b6befb934155d",
+      "declaration_header": "theorem changed_second_moment (\u03ba t : \u211d\u22650) :\n    (\u222b \u03c9, (changedPath \u03ba \u03c9 t)^2 \u2202gaussianProduct) =\n      \u222b \u03c9, (inverse \u03ba \u03c9 t : \u211d) \u2202gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedVariance.lean#L52"
+    },
+    {
+      "paper": "6\u20137: exact variance budget",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedVariance.holding_variance_balance",
+      "file": "Foundation/BrownianTimeChangedVariance.lean",
+      "line": 59,
+      "source_sha256": "188e47d12cb63f77bc308186aaf0ea39b0c63a252a53f424677b6befb934155d",
+      "declaration_header": "theorem holding_variance_balance (\u03ba t : \u211d\u22650) :\n    (\u222b \u03c9, (changedPath \u03ba \u03c9 t)^2 \u2202gaussianProduct)+\n      (\u222b \u03c9, BrownianStickyNontriviality.occupation \u03ba \u03c9 t \u2202gaussianProduct) = (t : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedVariance.lean#L59"
+    },
+    {
+      "paper": "6\u20137: exact variance budget",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianTimeChangedVariance.changed_second_moment_lt_time",
+      "file": "Foundation/BrownianTimeChangedVariance.lean",
+      "line": 69,
+      "source_sha256": "188e47d12cb63f77bc308186aaf0ea39b0c63a252a53f424677b6befb934155d",
+      "declaration_header": "theorem changed_second_moment_lt_time (\u03ba t : \u211d\u22650) (h\u03ba : 0 < \u03ba) (ht : 0 < t) :\n    (\u222b \u03c9, (changedPath \u03ba \u03c9 t)^2 \u2202gaussianProduct) < (t : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianTimeChangedVariance.lean#L69"
+    },
+    {
+      "paper": "8: measurable causal clock functional",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyObservedClock.holding_joint",
+      "file": "Foundation/StickyObservedClock.lean",
+      "line": 18,
+      "source_sha256": "73a975a9e5c8177f7444ed93b44b891fe3ab170ddfef5726383e0bc09be1ee4c",
+      "declaration_header": "theorem holding_joint : Measurable (fun z : C(\u211d\u22650, \u211d) \u00d7 \u211d\u22650 => holding z.1 z.2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyObservedClock.lean#L18"
+    },
+    {
+      "paper": "8: measurable causal clock functional",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyObservedClock.holding_congr_upto",
+      "file": "Foundation/StickyObservedClock.lean",
+      "line": 33,
+      "source_sha256": "73a975a9e5c8177f7444ed93b44b891fe3ab170ddfef5726383e0bc09be1ee4c",
+      "declaration_header": "theorem holding_congr_upto (p q : C(\u211d\u22650, \u211d)) (T : \u211d\u22650)\n    (he : \u2200 s \u2264 T, p s = q s) : holding p T = holding q T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyObservedClock.lean#L33"
+    },
+    {
+      "paper": "8: measurable causal clock functional",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyObservedClock.holding_le_time",
+      "file": "Foundation/StickyObservedClock.lean",
+      "line": 43,
+      "source_sha256": "73a975a9e5c8177f7444ed93b44b891fe3ab170ddfef5726383e0bc09be1ee4c",
+      "declaration_header": "theorem holding_le_time (p : C(\u211d\u22650, \u211d)) (T : \u211d\u22650) : holding p T \u2264 T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyObservedClock.lean#L43"
+    },
+    {
+      "paper": "8: measurable causal clock functional",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyObservedClock.inverseFromPath_joint",
+      "file": "Foundation/StickyObservedClock.lean",
+      "line": 55,
+      "source_sha256": "73a975a9e5c8177f7444ed93b44b891fe3ab170ddfef5726383e0bc09be1ee4c",
+      "declaration_header": "theorem inverseFromPath_joint :\n    Measurable (fun z : C(\u211d\u22650, \u211d) \u00d7 \u211d\u22650 => inverseFromPath z.1 z.2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyObservedClock.lean#L55"
+    },
+    {
+      "paper": "8: measurable causal clock functional",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyObservedClock.inverseFromPath_congr_upto",
+      "file": "Foundation/StickyObservedClock.lean",
+      "line": 64,
+      "source_sha256": "73a975a9e5c8177f7444ed93b44b891fe3ab170ddfef5726383e0bc09be1ee4c",
+      "declaration_header": "theorem inverseFromPath_congr_upto (p q : C(\u211d\u22650, \u211d)) (T : \u211d\u22650)\n    (he : \u2200 s \u2264 T, p s = q s) : inverseFromPath p T = inverseFromPath q T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyObservedClock.lean#L64"
+    },
+    {
+      "paper": "8: measurable causal clock functional",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyObservedClock.holding_actual",
+      "file": "Foundation/StickyObservedClock.lean",
+      "line": 69,
+      "source_sha256": "73a975a9e5c8177f7444ed93b44b891fe3ab170ddfef5726383e0bc09be1ee4c",
+      "declaration_header": "theorem holding_actual : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2200 \u03ba T : \u211d\u22650,\n    holding (changedPath \u03ba \u03c9) T = (T : \u211d)-inverse \u03ba \u03c9 T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyObservedClock.lean#L69"
+    },
+    {
+      "paper": "8: measurable causal clock functional",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyObservedClock.inverse_recovery",
+      "file": "Foundation/StickyObservedClock.lean",
+      "line": 84,
+      "source_sha256": "73a975a9e5c8177f7444ed93b44b891fe3ab170ddfef5726383e0bc09be1ee4c",
+      "declaration_header": "theorem inverse_recovery : \u2200\u1d50 \u03c9 \u2202gaussianProduct, \u2200 \u03ba T : \u211d\u22650,\n    inverseFromPath (changedPath \u03ba \u03c9) T = inverse \u03ba \u03c9 T",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyObservedClock.lean#L84"
+    },
+    {
+      "paper": "8: raw prefix and augmented actual clock",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyNaturalClock.naturalPast",
+      "file": "Foundation/StickyNaturalClock.lean",
+      "line": 16,
+      "source_sha256": "e4297b2c83e8a4a0243fa048db50400caf5022274c3f3433878add243653f64d",
+      "declaration_header": "def naturalPast (\u03ba : \u211d\u22650) : Filtration \u211d\u22650 (inferInstance : MeasurableSpace SampleSpace)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyNaturalClock.lean#L16"
+    },
+    {
+      "paper": "8: raw prefix and augmented actual clock",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyNaturalClock.augmentedNaturalPast",
+      "file": "Foundation/StickyNaturalClock.lean",
+      "line": 24,
+      "source_sha256": "e4297b2c83e8a4a0243fa048db50400caf5022274c3f3433878add243653f64d",
+      "declaration_header": "def augmentedNaturalPast (\u03ba : \u211d\u22650) : Filtration \u211d\u22650 (inferInstance : MeasurableSpace SampleSpace)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyNaturalClock.lean#L24"
+    },
+    {
+      "paper": "8: raw prefix and augmented actual clock",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyNaturalClock.prefix_measurable",
+      "file": "Foundation/StickyNaturalClock.lean",
+      "line": 30,
+      "source_sha256": "e4297b2c83e8a4a0243fa048db50400caf5022274c3f3433878add243653f64d",
+      "declaration_header": "theorem prefix_measurable (\u03ba T : \u211d\u22650) : Measurable[naturalPast \u03ba T] (prefixPath \u03ba T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyNaturalClock.lean#L30"
+    },
+    {
+      "paper": "8: raw prefix and augmented actual clock",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyNaturalClock.extend_measurable",
+      "file": "Foundation/StickyNaturalClock.lean",
+      "line": 41,
+      "source_sha256": "e4297b2c83e8a4a0243fa048db50400caf5022274c3f3433878add243653f64d",
+      "declaration_header": "theorem extend_measurable (T : \u211d\u22650) : Measurable (extend T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyNaturalClock.lean#L41"
+    },
+    {
+      "paper": "8: raw prefix and augmented actual clock",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyNaturalClock.extend_prefix_upto",
+      "file": "Foundation/StickyNaturalClock.lean",
+      "line": 46,
+      "source_sha256": "e4297b2c83e8a4a0243fa048db50400caf5022274c3f3433878add243653f64d",
+      "declaration_header": "theorem extend_prefix_upto (\u03ba T : \u211d\u22650) (\u03c9 : SampleSpace) (s : \u211d\u22650) (hs : s \u2264 T) :\n    extend T (prefixPath \u03ba T \u03c9) s = changedPath \u03ba \u03c9 s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyNaturalClock.lean#L46"
+    },
+    {
+      "paper": "8: raw prefix and augmented actual clock",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyNaturalClock.inverse_observed_past",
+      "file": "Foundation/StickyNaturalClock.lean",
+      "line": 51,
+      "source_sha256": "e4297b2c83e8a4a0243fa048db50400caf5022274c3f3433878add243653f64d",
+      "declaration_header": "theorem inverse_observed_past (\u03ba T : \u211d\u22650) :\n    Measurable[augmentedNaturalPast \u03ba T] (fun \u03c9 => inverse \u03ba \u03c9 T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyNaturalClock.lean#L51"
+    },
+    {
+      "paper": "8: raw prefix and augmented actual clock",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyNaturalClock.inverse_stronglyAdapted",
+      "file": "Foundation/StickyNaturalClock.lean",
+      "line": 66,
+      "source_sha256": "e4297b2c83e8a4a0243fa048db50400caf5022274c3f3433878add243653f64d",
+      "declaration_header": "theorem inverse_stronglyAdapted (\u03ba : \u211d\u22650) :\n    StronglyAdapted (augmentedNaturalPast \u03ba) (fun t \u03c9 => inverse \u03ba \u03c9 t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyNaturalClock.lean#L66"
+    },
+    {
+      "paper": "8: observed martingales",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyNaturalMartingales.shrink",
+      "file": "Foundation/StickyNaturalMartingales.lean",
+      "line": 17,
+      "source_sha256": "5ec52f69dc40a39abf1eaa6ab76d5b76faa736d8e85a299b00ee5084b6dedcc5",
+      "declaration_header": "theorem shrink {\u03a9 \u03b9 : Type*} [m : MeasurableSpace \u03a9] [Preorder \u03b9]\n    (\u03bc : Measure \u03a9) [IsFiniteMeasure \u03bc] (\u2131 \ud835\udcd6 : Filtration \u03b9 m)\n    (hle : \u2200 t, \u2131 t \u2264 \ud835\udcd6 t) (M : \u03b9 \u2192 \u03a9 \u2192 \u211d)\n    (hM : Martingale M \ud835\udcd6 \u03bc) (ha : StronglyAdapted \u2131 M) : Martingale M \u2131 \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyNaturalMartingales.lean#L17"
+    },
+    {
+      "paper": "8: observed martingales",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyNaturalMartingales.natural_le_physical",
+      "file": "Foundation/StickyNaturalMartingales.lean",
+      "line": 30,
+      "source_sha256": "5ec52f69dc40a39abf1eaa6ab76d5b76faa736d8e85a299b00ee5084b6dedcc5",
+      "declaration_header": "theorem natural_le_physical (\u03ba t : \u211d\u22650) : naturalPast \u03ba t \u2264 physicalPast \u03ba t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyNaturalMartingales.lean#L30"
+    },
+    {
+      "paper": "8: observed martingales",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyNaturalMartingales.natural_martingale",
+      "file": "Foundation/StickyNaturalMartingales.lean",
+      "line": 45,
+      "source_sha256": "5ec52f69dc40a39abf1eaa6ab76d5b76faa736d8e85a299b00ee5084b6dedcc5",
+      "declaration_header": "theorem natural_martingale (\u03ba : \u211d\u22650) :\n    Martingale (fun t \u03c9 => changedPath \u03ba \u03c9 t) (naturalPast \u03ba) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyNaturalMartingales.lean#L45"
+    },
+    {
+      "paper": "8: observed martingales",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyNaturalMartingales.augmented_natural_martingale",
+      "file": "Foundation/StickyNaturalMartingales.lean",
+      "line": 50,
+      "source_sha256": "5ec52f69dc40a39abf1eaa6ab76d5b76faa736d8e85a299b00ee5084b6dedcc5",
+      "declaration_header": "theorem augmented_natural_martingale (\u03ba : \u211d\u22650) :\n    Martingale (fun t \u03c9 => changedPath \u03ba \u03c9 t) (augmentedNaturalPast \u03ba) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyNaturalMartingales.lean#L50"
+    },
+    {
+      "paper": "8: observed martingales",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyNaturalMartingales.square_natural_martingale",
+      "file": "Foundation/StickyNaturalMartingales.lean",
+      "line": 55,
+      "source_sha256": "5ec52f69dc40a39abf1eaa6ab76d5b76faa736d8e85a299b00ee5084b6dedcc5",
+      "declaration_header": "theorem square_natural_martingale (\u03ba : \u211d\u22650) :\n    Martingale (fun t \u03c9 => (changedPath \u03ba \u03c9 t)^2-(inverse \u03ba \u03c9 t : \u211d))\n      (augmentedNaturalPast \u03ba) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyNaturalMartingales.lean#L55"
+    },
+    {
+      "paper": "9: separate formal boundary, not a premise",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorClosure.closable",
+      "file": "Foundation/StickyGeneratorClosure.lean",
+      "line": 75,
+      "source_sha256": "c76879ce8a6ecdf15234dc3716c3bed3763699dba220dbede34e22696fa054d6",
+      "declaration_header": "theorem closable {\u03ba : \u211d\u22650} (h\u03ba : 0 < \u03ba) : (operator \u03ba).IsClosable",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorClosure.lean#L75"
+    },
+    {
+      "paper": "9: separate formal boundary, not a premise",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorClosure.domain_dense",
+      "file": "Foundation/StickyGeneratorClosure.lean",
+      "line": 85,
+      "source_sha256": "c76879ce8a6ecdf15234dc3716c3bed3763699dba220dbede34e22696fa054d6",
+      "declaration_header": "theorem domain_dense (\u03ba : \u211d\u22650) : Dense ((operator \u03ba).domain : Set C\u2080(\u211d, \u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorClosure.lean#L85"
+    }
+  ],
+  "human_reorganization": [
+    "The paper reconstructs the smooth Tanaka approximation, original L2 identification, compact maximal estimate, summable path subsequence, supported Stieltjes mass, inverse-clock measure transport and observed martingale proofs. The Brownian predictable isometry and smooth Ito formula are stated foundational inputs, also present in the frozen library.",
+    "The paper normalizes the continuous mass to zero on a measurable exceptional event, whereas the source centers its Stieltjes cumulative there. These agree on a common probability-one event, so the same original coordinate classes and actual-process conclusions are retained. No new Lean declarations are added.",
+    "The printed bounded-sampling proof uses integrable compact maxima of the particular Brownian, sign-integral and compensated-square martingales. The formal generic sampling theorem instead uses uniform integrability and requires no such additional maximum hypothesis. The paper does not claim to prove that more general theorem.",
+    "Causal raw-past clock versions are distinguished from actual coordinates measurable in ambient null augmentation. No right-continuity, driver-independence, Markov all-start family, generator identification or stochastic flow is assumed.",
+    "Holding identity has one common path event for every parameter and horizon. Nontrivial holding is asserted in positive expectation/probability, not samplewise positivity or a computed terminal atom."
+  ],
+  "literature": [
+    {
+      "url": "https://doi.org/10.1007/s10955-021-02775-5",
+      "review": "Primary full appendix, equations 112\u2013114: explicitly classical Brownian local-time inverse-clock construction; no novelty for this mechanism."
+    },
+    {
+      "url": "https://doi.org/10.1214/EJP.v19-2350",
+      "review": "Primary full Bass 2014 article: Section 2 equations 2.3\u20132.4 give speed-measure additive-clock representation. Introduction explicitly separates the sticky SDE weak/strong question. No solution of that prescribed-driver SDE is claimed here."
+    }
+  ],
+  "novelty": "Classical formalization companion; no new sticky process or local-time mechanism claimed."
+}

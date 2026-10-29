@@ -4,7 +4,7 @@ The independent publication branch contains reviewed editorial drafts built from
 
 ## Reviewed editorial papers
 
-Eighteen drafts, 163 pages, all based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. Each folder contains its source/PDF, exact theorem map, build and visual receipts, baseline evidence and candid editorial status. These are reviewed drafts, not submission-ready or novelty-certified manuscripts.
+Nineteen drafts, 171 pages, all based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. Each folder contains its source/PDF, exact theorem map, build and visual receipts, baseline evidence and candid editorial status. These are reviewed drafts, not submission-ready or novelty-certified manuscripts.
 
 ### Arithmetic entire functions
 
@@ -46,6 +46,12 @@ Eighteen drafts, 163 pages, all based on frozen verified commit `bab688bb6140cd6
 | Hermite-rank prediction and fractional-time obstructions under inverse-number smoothing | [PDF](gaussian-prediction-rank/main.pdf) · [LaTeX](gaussian-prediction-rank/main.tex) · [theorem map](gaussian-prediction-rank/theorem-map.json) · [editorial status](gaussian-prediction-rank/editorial-status.md) | Six pages. Complete L2 Hermite predictor/energy and rank remainder, actual fractional full past, dual-regime lower obstruction preserved by inverse-number potential, and exact current-versus-past witness. Consolidated classical formalization companion; no new exponent or priority claim. |
 | Fourier covariance and positivity on the three-torus | [PDF](fourier-positivity/main.pdf) · [LaTeX](fourier-positivity/main.tex) · [theorem map](fourier-positivity/theorem-map.json) · [editorial status](fourier-positivity/editorial-status.md) | Eleven-page companion/formalization exposition with complete proofs of finite Schoenberg/Gamma equivalences, exact closed generator domain, full Haar-L2 positive cone and sharp active-coordinate threshold. Exact finite-time nonmonotonicity and flat-curvature witnesses. Central structure is classical; no priority claim. |
 | An explicit nonreversible Cauchy semigroup on the circle: kernel, generator and entropy | [PDF](cauchy-circle-entropy/main.pdf) · [LaTeX](cauchy-circle-entropy/main.tex) · [theorem map](cauchy-circle-entropy/theorem-map.json) · [editorial status](cauchy-circle-entropy/editorial-status.md) | Eight pages. Complete actual-kernel, full continuous-function generator/resolvent, smoothed graph-core and forward jump-Bregman entropy proofs, with a finite nonsymmetry witness and nonsharp exponential decay for all initial laws. Classical pole dynamics credited; novelty unresolved. |
+
+### Brownian time changes
+
+| Paper | Read and inspect | Scope and status |
+|---|---|---|
+| Brownian sticky clocks: construction, holding time and causal recovery in the observed filtration | [PDF](sticky-clock-recovery/main.pdf) · [LaTeX](sticky-clock-recovery/main.tex) · [theorem map](sticky-clock-recovery/theorem-map.json) · [editorial status](sticky-clock-recovery/editorial-status.md) | Eight pages. Actual continuous supported mass, inverse-clock measure transport, holding/variance balance and causal observed-filtration martingales. Classical formalization companion; generator and flow identification remain separate. |
 
 ### Finite gauge-invariant transfers
 

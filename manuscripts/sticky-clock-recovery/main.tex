@@ -1,0 +1,578 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Pp}{\mathbb P}
+\newcommand{\R}{\mathbb R}
+\newcommand{\ind}{\mathbf1}
+\newcommand{\F}{\mathcal F}
+\newcommand{\G}{\mathcal G}
+\newcommand{\N}{\mathcal N}
+\newcommand{\code}[1]{\texttt{\small #1}}
+\title{Brownian sticky clocks: construction, holding time\protect\\
+and causal recovery in the observed filtration}
+\author{Project Stardust\\\small A companion to a frozen verified library}
+\date{October 29, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We reconstruct the complete construction of a Brownian sticky time
+change from smooth convex approximations to absolute value. A compact
+probability estimate and a summable subsequence give a measurable
+continuous increasing mass, whose Stieltjes measure is supported on
+Brownian zeros. Its inverse clock has an exact physical holding-time
+identity. The clock is recoverable from the observed path up to the
+current time, so both the process and its compensated square are
+martingales in explicitly specified observed filtrations. At every
+positive parameter and deterministic horizon, expected holding is
+positive and the second moment is strictly smaller than elapsed time.
+These classical mechanisms are presented with full proofs and exact
+formal-source correspondences. The construction does not use the
+separately unfinished closed-generator or stochastic-flow identification.
+\end{abstract}
+
+\section{The construction and its precise conclusions}
+Let $B=(B_s)_{s\geq0}$ be standard real Brownian motion, $B_0=0$,
+with a measurable realization in $C([0,\infty),\R)$. We use its raw
+natural filtration, augmented by ambient measurable null events:
+\[
+ \F_s=\sigma(B_u:0\leq u\leq s)\vee\N.
+\]
+Here $\N$ consists of the null events in the ambient probability space;
+this convention suffices for all modifications below. No right-continuous
+enlargement of the filtration is implicit. The Brownian stochastic
+integral is its ordinary predictable $L^2(ds\,d\Pp)$ isometry, with
+conditional expectations at deterministic horizons. These standard
+Brownian foundations are also constructed in the frozen source library.
+
+\begin{theorem}\label{thm:main}
+There is a measurable continuous nonnegative increasing process $L$,
+starting from zero, with the following properties. For each fixed $s$,
+\begin{equation}\label{eq:tanakaL2}
+ L_s=|B_s|-\int_0^s\operatorname{sgn}(B_u)\,dB_u\quad\hbox{in }L^2.
+\end{equation}
+Its Stieltjes measure $dL$ is concentrated on $\{s:B_s=0\}$.
+For every $\kappa\geq0$, set
+\begin{equation}\label{eq:clocks}
+ A_\kappa(s)=s+\kappa L_s,\qquad
+ C_\kappa=A_\kappa^{-1},\qquad X_t^\kappa=B_{C_\kappa(t)}.
+\end{equation}
+The clock and process have measurable continuous path realizations.
+For almost every sample, simultaneously for all $\kappa,t\geq0$,
+\begin{equation}\label{eq:holding}
+ H_\kappa(t):=\int_0^t\ind_{\{X_r^\kappa=0\}}\,dr
+ =\kappa L_{C_\kappa(t)}=t-C_\kappa(t).
+\end{equation}
+For each fixed $\kappa$, write
+\[
+ \G_t^0=\sigma(X_r^\kappa:0\leq r\leq t),\qquad
+ \G_t=\G_t^0\vee\N.
+\]
+The operational clock $C_\kappa(t)$ is $\G_t$-measurable. The process
+$X^\kappa$ is a martingale in both $\G^0$ and $\G$, and
+$(X_t^\kappa)^2-C_\kappa(t)$ is a martingale in $\G$.
+For $\kappa,t>0$,
+\begin{equation}\label{eq:variance}
+ \E H_\kappa(t)>0,\qquad
+ \E (X_t^\kappa)^2+\E H_\kappa(t)=t,\qquad
+ \E (X_t^\kappa)^2<t.
+\end{equation}
+In particular, $\Pp(H_\kappa(t)>0)>0$.
+\end{theorem}
+
+The last assertion is positive probability, rather than an assertion
+that holding is positive on every sample or that a terminal atom has
+been computed at each time. At $\kappa=0$, $C_0(t)=t$ and $X^0=B$.
+All clocks in the theorem use the same Brownian sample. Independence
+of the clock and the Brownian motion is neither true nor needed.
+
+The time-change construction is classical. The appendix of
+Ayala--Carinci--Redig \cite{ACR}, equations (112)--(114), explicitly
+uses Brownian time plus a local-time term and its inverse to construct
+two-sided sticky Brownian motion. Bass \cite{Bass}, Section 2,
+equations (2.3)--(2.4), places inverse additive clocks in the classical
+speed-measure construction. Our contribution is an exposition of the
+verified construction, its versions and observed-filtration statements;
+we make no independent priority claim for these mechanisms.
+
+\section{Smooth curvature masses and their fixed-time limit}
+For $e>0$ let
+\[
+ r_e(x)=\sqrt{x^2+e^2},\qquad
+ a_e(x)=\frac{x}{\sqrt{x^2+e^2}},\qquad
+ b_e(x)=\frac{e^2}{(x^2+e^2)^{3/2}}.
+\]
+Direct differentiation gives $r_e'=a_e$, $r_e''=b_e$. Moreover,
+\begin{equation}\label{eq:smoothbounds}
+ 0\leq r_e(x)-|x|\leq e,\quad |a_e(x)|\leq1,
+ \quad 0\leq b_e(x)\leq e^{-1}.
+\end{equation}
+Indeed, $|x|\leq r_e(x)\leq|x|+e$ follows by squaring
+nonnegative quantities. The slope bound follows from $|x|\leq r_e$;
+the curvature bound follows from $r_e\geq e$.
+Fix the positive sequence $e_n\downarrow0$ used in the source, and put
+\begin{equation}\label{eq:approximants}
+ L_t^n=\frac12\int_0^t b_{e_n}(B_u)\,du,
+ \qquad M_t^n=r_{e_n}(B_t)-e_n-L_t^n.
+\end{equation}
+The first process is continuous, increasing and nonnegative on every
+continuous Brownian path. The second is continuous and, by the smooth
+It\^o formula,
+\begin{equation}\label{eq:smoothito}
+ M_t^n=\int_0^t a_{e_n}(B_u)\,dB_u
+ \quad\hbox{at each fixed time, almost surely}.
+\end{equation}
+The coefficients in this formula are bounded and predictable. The
+curvature term is integrable on every bounded horizon by
+\eqref{eq:smoothbounds}; thus the formula involves no limiting local
+time as an input.
+
+Define $\operatorname{sgn}(0)=0$ and let
+$M_t=\int_0^t\operatorname{sgn}(B_u)\,dB_u$, initially as an $L^2$
+class for each $t$. The coefficient is an actual predictable field:
+it is the bounded pointwise limit of the predictable continuous
+functions $a_{e_n}(B_u)$. At every $x$,
+$a_{e_n}(x)\to\operatorname{sgn}(x)$, and $|a_{e_n}|\leq1$.
+Dominated convergence on $[0,T]\times\Omega$ and the stochastic
+isometry give
+\begin{equation}\label{eq:fieldlimit}
+ \int_0^T\E|a_{e_n}(B_u)-\operatorname{sgn}(B_u)|^2du\to0,
+ \qquad M_T^n\longrightarrow M_T\quad\hbox{in }L^2.
+\end{equation}
+Since $|r_{e_n}(B_T)-e_n-|B_T||\leq e_n$,
+\begin{equation}\label{eq:fixedlimit}
+ L_T^n\longrightarrow \ell_T:=|B_T|-M_T\quad\hbox{in }L^2.
+\end{equation}
+The closed positive cone in $L^2$ shows $\ell_T\geq0$ almost surely.
+Similarly, $\ell_s\leq\ell_t$ as $L^2$ classes whenever $s\leq t$.
+These fixed-time statements do not yet construct a continuous
+increasing random path. That distinction motivates the next step.
+
+\section{A continuous increasing mass from a summable subsequence}
+We first give the maximal estimate needed to keep the limiting mass
+on the original sample space.
+
+\begin{lemma}\label{lem:maximal}
+For $n,m$, $T\geq0$ and $\varepsilon>0$,
+\begin{equation}\label{eq:maximal}
+ \varepsilon\Pp\left(\sup_{u\leq T}|M_u^n-M_u^m|>
+ \varepsilon\right)
+ \leq \left(\int_0^T\E|a_{e_n}(B_u)-a_{e_m}(B_u)|^2du\right)^{1/2}.
+\end{equation}
+Consequently, $L^n$ is Cauchy in probability uniformly on each compact
+time interval.
+\end{lemma}
+\begin{proof}
+For a finite ordered set of times including $T$, $D=M^n-M^m$ is a
+martingale. Partition the first-crossing event $\max|D|>
+\varepsilon$ according to its first crossing time $u$. Each piece
+belongs to $\F_u$, and
+$|D_u|\leq\E(|D_T|\mid\F_u)$. Summing the integrals over the disjoint
+pieces gives
+$\varepsilon\Pp(\max|D|>\varepsilon)\leq\E|D_T|$.
+An increasing collection of finite sets dense in $[0,T]$ gives the
+continuous-time estimate by continuity and monotone convergence of
+events. The stochastic isometry and Cauchy--Schwarz give
+\eqref{eq:maximal}. This argument also proves measurability of the
+crossing event, using only countably many evaluations.
+
+From \eqref{eq:approximants} and the normalized absolute-value bound,
+\begin{equation}\label{eq:massdifference}
+ \sup_{u\leq T}|L_u^n-L_u^m|
+ \leq e_n+e_m+\sup_{u\leq T}|M_u^n-M_u^m|.
+\end{equation}
+The right side tends to zero in probability by
+\eqref{eq:fieldlimit} and \eqref{eq:maximal}. This proves the claim.
+\end{proof}
+
+For each $j\geq0$, choose $N_j$ such that for $n,m\geq N_j$,
+\[
+ \Pp\left(\sup_{u\leq j+1}|L_u^n-L_u^m|>2^{-j}\right)<2^{-j}.
+\]
+Set $n_0=N_0$ and $n_{j+1}=\max\{n_j+1,N_{j+1}\}$.
+The consecutive bad events have summable probabilities, so
+Borel--Cantelli implies that, almost surely, for all sufficiently
+large $j$,
+\begin{equation}\label{eq:fast}
+ \sup_{u\leq j+1}|L_u^{n_{j+1}}-L_u^{n_j}|\leq2^{-j}.
+\end{equation}
+Fix any compact horizon $T$. For $k>j$ sufficiently large that
+$j+1\geq T$, telescoping bounds the uniform difference by
+$\sum_{i=j}^{k-1}2^{-i}$. Completeness of $C([0,T])$ gives a uniform
+limit. These limits agree on overlapping compact intervals, giving
+one continuous path $L$ on $[0,\infty)$. It is increasing,
+nonnegative and zero at the origin, because every approximant has
+these properties. The same probability-one event works for all
+compact horizons, by taking integer horizons first.
+
+The event in \eqref{eq:fast} is measurable, since uniform crossings
+of continuous paths are countable evaluation events. Each map
+$\omega\mapsto L^{n_j}(\omega)$ is measurable into the continuous
+path space with its compact-convergence topology: evaluations are
+measurable, and on this separable path space they generate its Borel
+sigma field. Set the limiting path equal to zero on the exceptional
+event. The resulting random continuous path is measurable, since it
+is the path-space limit on a measurable event of convergence. This
+normalization gives a continuous increasing mass starting at zero on
+every sample. The source instead centers its Stieltjes cumulative
+function on exceptional samples; both conventions agree almost surely.
+
+At each fixed $T$, almost-sure subsequence convergence to $L_T$
+and \eqref{eq:fixedlimit} identify
+\begin{equation}\label{eq:coordinate}
+ L_T=\ell_T\quad\hbox{almost surely},\qquad L_T\in L^2.
+\end{equation}
+For example, take a further subsequence along which the $L^2$
+convergence is almost sure, and use uniqueness of real limits.
+Thus \eqref{eq:tanakaL2} holds. Define the continuous process
+$\widehat M_t=|B_t|-L_t$. At each fixed time it is a version of
+$M_t$; conditional-expectation identities transfer to this version.
+It is adapted to $\F$ and a martingale there. The identity
+\begin{equation}\label{eq:alltanaka}
+ |B_t|=\widehat M_t+L_t
+\end{equation}
+is now a simultaneous pathwise identity, rather than a substitution
+of a random time into unrelated fixed-time null-set statements.
+
+\section{Support of the Stieltjes mass}
+For a compact interval $[s,t]$ on which $|B_u|\geq\delta>0$,
+\[
+ 0\leq L_t^n-L_s^n
+ =\frac12\int_s^t\frac{e_n^2}{(B_u^2+e_n^2)^{3/2}}du
+ \leq\frac{(t-s)e_n^2}{2\delta^3}.
+\]
+Uniform subsequence convergence therefore gives $L_t=L_s$.
+Every compact interval free of Brownian zeros has a positive such
+$\delta$, by continuity and compactness. Consequently the Stieltjes
+measure $dL$ vanishes locally on the open set $\{B\ne0\}$.
+Second countability supplies a countable cover by such neighborhoods,
+so
+\begin{equation}\label{eq:support}
+ dL(\{s:B_s\ne0\})=0.
+\end{equation}
+Continuity of $L$ implies that $dL$ has no atoms, including at zero;
+its interval masses are
+$dL((s,t])=L_t-L_s$, and $dL([0,t])=L_t$.
+
+Ordinary Brownian time gives no mass to the same zero set. Indeed,
+$\Pp(B_s=0)=0$ for every $s>0$, since $B_s$ has a nondegenerate
+Gaussian law. Tonelli yields
+\[
+ \E\int_0^N\ind_{\{B_s=0\}}ds
+ =\int_0^N\Pp(B_s=0)ds=0.
+\]
+The integrand is nonnegative. Taking all integer $N$ gives,
+on one probability-one event,
+\begin{equation}\label{eq:brownianzero}
+ ds(\{s:B_s=0\})=0.
+\end{equation}
+The two different measures in \eqref{eq:support} and
+\eqref{eq:brownianzero} are exactly what creates physical holding.
+
+Nontriviality follows without a distributional formula for local
+time. The stochastic integral is centered, so
+\begin{equation}\label{eq:expectedmass}
+ \E L_T=\E|B_T|>0\qquad(T>0).
+\end{equation}
+Both terms are integrable by \eqref{eq:coordinate}. Positivity uses
+only the nondegenerate Brownian marginal, which makes $|B_T|>0$
+almost surely. We use no assertion that $L_T$ is positive on every
+sample.
+
+\section{Invertible clocks and exact measure transport}
+We record the deterministic clock mechanism in a form that can be
+checked before inserting any randomness.
+
+\begin{lemma}\label{lem:inverse}
+If $l:[0,\infty)\to[0,\infty)$ is continuous, increasing and
+$l(0)=0$, then $A(s)=s+\kappa l(s)$ is a continuous strictly
+increasing bijection of $[0,\infty)$ onto itself. Its inverse $C$
+is continuous, increasing, and satisfies
+\begin{equation}\label{eq:inverseproperties}
+ C(t)\leq t,\qquad
+ 0\leq C(t)-C(r)\leq t-r\quad(r\leq t),\qquad
+ C(t)+\kappa l(C(t))=t.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For $v>u$, $A(v)-A(u)\geq v-u>0$. Also $A(0)=0$ and
+$A(s)\geq s\to\infty$; the intermediate value theorem gives
+surjectivity. The inverse of a continuous increasing bijection of an
+interval is continuous and increasing. Substitute $C(t)$ into $A$
+to get the balance identity and $C(t)\leq t$. Subtract the balance
+identities at $r,t$; the nonnegative mass increment gives the upper
+increment bound. The lower bound follows from monotonicity.
+\end{proof}
+
+Apply this to each mass sample. For fixed $\kappa,t$, measurability
+of the inverse follows from
+\begin{equation}\label{eq:inverseevent}
+ \{C_\kappa(t)<b\}=\{t<A_\kappa(b)\},\qquad b\geq0.
+\end{equation}
+Each right side is measurable. Continuous time paths and measurable
+coordinates give jointly measurable clocks and measurable continuous
+path maps. Evaluation $(p,s)\mapsto p(s)$ is continuous for compact
+convergence on bounded time neighborhoods. Hence
+$X_t^\kappa=B_{C_\kappa(t)}$ has measurable coordinates, jointly
+measurable time/sample evaluation, and a measurable continuous path
+realization. No random time is selected using an independent copy of $B$.
+
+On $[0,\infty)$ let $ds$ denote Lebesgue measure with no atom at
+zero. For any continuous mass path from the construction, define
+$\eta_\kappa=ds+\kappa\,dL$. Then
+\begin{equation}\label{eq:pushforward}
+ (A_\kappa)_\#\eta_\kappa=dt.
+\end{equation}
+To prove this, test $[0,t]$. Strict invertibility gives
+$A_\kappa^{-1}([0,t])=[0,C_\kappa(t)]$, whose $\eta_\kappa$-mass
+is $C_\kappa(t)+\kappa L_{C_\kappa(t)}=t$. These intervals form a
+generating pi system and exhaust the half-line by finite-mass
+integer intervals. Uniqueness of locally finite measures proves
+\eqref{eq:pushforward} on every Borel set. This is a measure identity,
+so it also applies to each sample's own Borel zero set.
+
+\section{Holding time and a strict second-moment budget}
+Fix a sample on which \eqref{eq:support} and
+\eqref{eq:brownianzero} hold. For any $\kappa,t\geq0$, let
+$Z=\{s:B_s=0\}$ and
+$E_t=\{r\leq t:X_r^\kappa=0\}$. These sets are Borel, and
+\[
+ A_\kappa^{-1}(E_t)=Z\cap[0,C_\kappa(t)].
+\]
+By \eqref{eq:pushforward},
+\begin{align*}
+ \int_0^t\ind_{\{X_r^\kappa=0\}}dr
+ &=\eta_\kappa(Z\cap[0,C_\kappa(t)])\\
+ &=\kappa\,dL([0,C_\kappa(t)])
+ =\kappa L_{C_\kappa(t)}=t-C_\kappa(t).
+\end{align*}
+The ordinary-time contribution is zero by
+\eqref{eq:brownianzero}; concentration of $dL$ on $Z$ gives the
+second line. The proof uses just two fixed probability-one path
+properties. Thus it holds simultaneously for all uncountably many
+$\kappa,t$ without an uncountable intersection of null sets.
+
+For $\kappa>0$ and each sample, strict inversion also gives
+\begin{equation}\label{eq:holdingpositive}
+ t-C_\kappa(t)>0
+ \ \Longleftrightarrow\ C_\kappa(t)<t
+ \ \Longleftrightarrow\ t<A_\kappa(t)
+ \ \Longleftrightarrow\ L_t>0.
+\end{equation}
+For $t>0$, \eqref{eq:expectedmass} implies
+$\Pp(L_t>0)>0$. Since $0\leq H_\kappa(t)\leq t$, it is integrable;
+\eqref{eq:holdingpositive} implies $\E H_\kappa(t)>0$.
+The second-moment part of \eqref{eq:variance} will follow from
+bounded sampling below. This separates its probabilistic input from
+the pathwise measure calculation.
+
+\section{Bounded sampling with the clock's own Brownian noise}
+The continuous mass $L_s$ agrees at each fixed time with the raw
+Brownian-past $L^2$ class in \eqref{eq:tanakaL2}. Hence $L_s$ is
+$\F_s$-measurable under our ambient null augmentation. The same is
+true of $A_\kappa(s)$. The inverse is a bounded stopping time because
+\begin{equation}\label{eq:stopping}
+ \{C_\kappa(t)\leq s\}=\{t\leq A_\kappa(s)\}\in\F_s,
+ \qquad C_\kappa(t)\leq t.
+\end{equation}
+The weak inequality here, as opposed to the strict inequality in
+\eqref{eq:inverseevent}, is required for the stopping-time sigma field.
+
+We give the bounded sampling argument used in the construction.
+If $Y$ is a continuous martingale and $\sigma\leq\tau\leq T$
+are stopping times, with integrable compact-time maximum, then
+\begin{equation}\label{eq:optionalsampling}
+ \E(Y_\tau\mid\F_\sigma)=Y_\sigma.
+\end{equation}
+Round both times up to a dyadic grid, obtaining finite-valued
+stopping times $\sigma_n\leq\tau_n\leq T+1$. For a finite grid,
+\eqref{eq:optionalsampling} follows by writing the sampled difference
+as a sum of martingale increments multiplied by past-measurable
+indicators. For any $E\in\F_\sigma$ we also have
+$E\in\F_{\sigma_n}$, so
+$\E\ind_EY_{\tau_n}=\E\ind_EY_{\sigma_n}$.
+Path continuity gives almost-sure convergence of both values.
+Their absolute values are bounded by
+$\sup_{u\leq T+1}|Y_u|$, so dominated convergence passes this equality
+to the limit. Stopped values are $\F_\sigma$-measurable: a continuous
+adapted process is progressively measurable, and its evaluation at
+a stopping time is measurable in the stopping-time sigma field.
+This last assertion follows by approximating the continuous path on
+each deterministic interval by time-step functions, then restricting
+to $\{\sigma\leq s\}$. Integrability and the integral identity for
+every $E$ prove \eqref{eq:optionalsampling}.
+
+The maximum condition holds for the processes used here. The $L^2$
+martingales $B$ and $\widehat M$ have integrable compact maxima by
+the finite-grid $L^2$ maximal inequality and path continuity.
+For completeness, that inequality follows by the same first-crossing
+partition with levels $a>0$:
+$a\Pp(Y^*>a)\leq\E(|Y_T|\ind_{Y^*>a})$.
+Integrate twice the resulting inequality in $a$, then use
+Cauchy--Schwarz to get
+$\E(Y^*)^2\leq2\E(|Y_T|Y^*)\leq
+2\|Y_T\|_2\|Y^*\|_2$, first with truncated maxima and then by
+monotone convergence. Thus $\|Y^*\|_2\leq2\|Y_T\|_2$.
+Finally,
+\[
+ \sup_{u\leq T}|B_u^2-u|\leq\sup_{u\leq T}B_u^2+T
+\]
+is integrable. So sampling applies also to the martingale $B_s^2-s$.
+
+Let $\F_{C_\kappa(t)}$ be the stopping-time sigma field and denote
+this increasing physical filtration by $\mathcal H_t$. Applying
+\eqref{eq:optionalsampling} at $C_\kappa(r)\leq C_\kappa(t)$ gives
+martingales
+\begin{equation}\label{eq:physicalmart}
+ X_t^\kappa,\qquad
+ (X_t^\kappa)^2-C_\kappa(t),\qquad
+ \widehat M_{C_\kappa(t)}
+ \quad\hbox{in }\mathcal H.
+\end{equation}
+Their sampled values are adapted by stopped-value measurability.
+Sampling the centered square martingale gives
+$\E(X_t^\kappa)^2=\E C_\kappa(t)$; its integrability follows from
+the preceding compact-maximum bound. Combine this equality with
+\eqref{eq:holding} to obtain \eqref{eq:variance}, including its strict
+inequality. The process is centered by the same argument applied to
+$B$, so its second moment is indeed its variance.
+
+The pathwise Tanaka identity also becomes
+\[
+ |X_t^\kappa|=\widehat M_{C_\kappa(t)}+L_{C_\kappa(t)},
+ \qquad \kappa L_{C_\kappa(t)}=t-C_\kappa(t).
+\]
+This uses \eqref{eq:alltanaka} on the common path event. Substitution
+of the random time would not be justified from fixed-time
+$L^2$ identities alone.
+
+\section{Causal clock recovery and the observed martingales}
+For a continuous real path $p$ define
+\begin{equation}\label{eq:pathfunctional}
+ h(p,t)=\int_0^t\ind_{\{p(r)=0\}}dr,\qquad
+ c(p,t)=t-h(p,t).
+\end{equation}
+Then $0\leq h(p,t)\leq t$ and $0\leq c(p,t)\leq t$ for every
+path. Both functionals are jointly Borel measurable in $(p,t)$.
+Indeed,
+\[
+ (p,t,r)\longmapsto
+ \ind_{\{0<r\leq t\}}\ind_{\{p(r)=0\}}
+\]
+is Borel measurable, since evaluation is continuous and the indicated
+sets are Borel. Integrating this nonnegative function in $r$ proves
+measurability by the measurable-integral theorem. The integral is
+finite, so subtraction in \eqref{eq:pathfunctional} is legitimate.
+Both functionals depend only on $p|_{[0,t]}$.
+
+To make the raw-past measurability explicit, the map
+$\omega\mapsto X^\kappa(\omega)|_{[0,t]}$ into $C([0,t])$ is
+$\G_t^0$-measurable: its evaluations are precisely the coordinates
+generating $\G_t^0$, and they generate the Borel sigma field of
+$C([0,t])$. Extend a prefix constantly after $t$; this is a measurable
+map back into the full continuous path space. Applying
+\eqref{eq:pathfunctional} to the extension therefore gives a
+$\G_t^0$-measurable version of the recovered time. By
+\eqref{eq:holding},
+\begin{equation}\label{eq:recovery}
+ c(X^\kappa,t)=C_\kappa(t)\quad\hbox{almost surely}.
+\end{equation}
+The actual clock coordinate is ambient measurable. A measurable
+variable equal almost surely to a raw-past measurable one is
+measurable in $\G_t^0\vee\N$. Thus the actual clock is adapted to
+$\G$, with a causal raw-past version. We do not silently identify
+these two assertions on unaugmented sigma fields.
+
+For $u\leq t$, the coordinate $X_u^\kappa$ belongs to
+$\mathcal H_u\subseteq\mathcal H_t$, so
+$\G_t^0\subseteq\mathcal H_t$. The elementary shrinking-filtration
+argument now transfers the first martingale in
+\eqref{eq:physicalmart}: for $r\leq t$,
+\[
+ \E(X_t^\kappa\mid\G_r^0)
+ =\E\bigl(\E(X_t^\kappa\mid\mathcal H_r)\mid\G_r^0\bigr)
+ =\E(X_r^\kappa\mid\G_r^0)=X_r^\kappa.
+\]
+It remains a martingale after ambient null augmentation, because
+adjoining ambient null events changes neither integrals nor
+conditional expectations up to almost-sure equality.
+
+For the compensated square, use the augmented physical filtration
+$\mathcal H_t\vee\N$. Then $\G_t\subseteq\mathcal H_t\vee\N$,
+and $(X_t^\kappa)^2-C_\kappa(t)$ is $\G_t$-measurable by
+\eqref{eq:recovery}. The same tower argument transfers the second
+martingale in \eqref{eq:physicalmart} to $\G$. This completes every
+assertion of Theorem~\ref{thm:main}.
+
+\section{What is established and what remains separate}
+The reconstructed clock is a functional of the observed prefix,
+despite being defined initially from Brownian local mass. Its
+recovery uses the entire zero-occupation integral, rather than the
+single terminal coordinate. A smaller filtration generated by
+$X_t^\kappa$ alone has not been identified with $\G_t$.
+
+Nor is a strong solution to a specified stochastic differential
+equation with a prescribed physical-time Brownian driver constructed
+here. The operational Brownian motion in \eqref{eq:clocks} is part
+of a time-change representation. Bass \cite{Bass} studies a
+different, explicitly stated sticky SDE and proves weak existence
+and uniqueness together with failure of strong existence. The
+observed-clock recovery here does not contradict that distinction.
+We do not transfer a driver filtration through the clock by name.
+
+The source library separately proves a densely defined closable
+continuous-function generator relation and a maximum-principle
+bound. Its range condition and closed-semigroup identification are
+not supplied by those results. No such missing step is assumed in
+this paper. In particular, positive two-time conditional operators
+alone do not establish Chapman--Kolmogorov consistency or an
+all-start transition family. No stochastic flow, generator-domain
+classification or uniqueness of the sticky martingale problem is
+asserted by Theorem~\ref{thm:main}.
+
+\section{Formal provenance and reproducibility}
+All mathematical sources used here are frozen at
+\begin{center}\code{bab688bb6140cd6316c80680095a914ea0d346db}.\end{center}
+The accompanying theorem map gives exact declarations, complete
+headers, file hashes and baseline links. The original full-build and
+complete transitive-axiom receipt and its referenced evidence hashes
+were checked. The publication editor did not change a mathematical
+source or run a competing full research build.
+
+The construction follows smooth absolute approximation; predictable
+sign integrals and the fixed-time Tanaka residual; compact maximal
+bounds and a fast subsequence; continuous limit and zero-supported
+Stieltjes mass; measurable inverse clocks and exact measure
+transport; holding nontriviality; bounded sampling and physical
+martingales; and observed-prefix recovery and filtration shrinking.
+Elementary measure-uniqueness and maximal-inequality arguments above
+make the exposition readable without Lean. They reorganize verified
+proofs and are not represented as new formal declarations.
+
+Ayala--Carinci--Redig's appendix and Bass's time-change discussion
+provide direct classical antecedents. No new sticky process,
+local-time mechanism or priority is claimed. The useful content of
+this companion is its complete hypothesis and version accounting,
+especially the distinction between a fixed-time $L^2$ residual,
+a common continuous mass path, a raw-past version and an actual
+clock coordinate in the augmented observed filtration.
+
+\begin{thebibliography}{9}
+\bibitem{ACR} M. Ayala, G. Carinci and F. Redig,
+\emph{Condensation of SIP particles and sticky Brownian motion},
+Journal of Statistical Physics \textbf{183} (2021), article 40.
+\href{https://doi.org/10.1007/s10955-021-02775-5}
+{doi:10.1007/s10955-021-02775-5}.
+\bibitem{Bass} R. F. Bass,
+\emph{A stochastic differential equation with a sticky point},
+Electronic Journal of Probability \textbf{19} (2014), paper 32, 1--22.
+\href{https://doi.org/10.1214/EJP.v19-2350}{doi:10.1214/EJP.v19-2350}.
+\end{thebibliography}
+\end{document}

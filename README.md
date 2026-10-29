@@ -55,6 +55,8 @@ types and detailed scopes before reuse.
 
 The publication catalog also includes [gauge-invariant seven-link slow modes](manuscripts/seven-link-transfer/main.pdf): a twelve-page finite-transfer proof with an actual stationary law, explicit optimized trial and a precise two-weight centering boundary. This is not a physical mass-gap result.
 
+The [Brownian sticky-clock companion](manuscripts/sticky-clock-recovery/main.pdf) reconstructs the continuous mass, exact holding-time transport and causal clock recovery, including observed-filtration martingales. Its eight-page proof keeps the unfinished generator and flow identification separate.
+
 ## Verification and reproducibility
 
 The pinned environment is Lean `leanprover/lean4:v4.34.1` with exact Mathlib

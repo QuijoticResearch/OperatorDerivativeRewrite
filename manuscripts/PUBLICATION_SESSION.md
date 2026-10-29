@@ -167,3 +167,7 @@ The count-norm family was also inspected in full: PoissonLpLowerObstruction, Poi
 ## Seven-link finite transfer completed
 
 Twelve-page reviewed draft; 169 exact source correspondences; fourteen exact algebra checks pass. Actual positive ground, stationary L2 kernel, gauge-invariant centered optimized trial, fixed-step obstruction, gauge averaging, fixed-parameter mixing and two-weight reset boundary all receive complete printed proofs. Eighteen reviewed drafts total 163 pages. Only publication artifacts and README changed; no research build or campaign transition.
+
+## Sticky-clock companion completed
+
+Eight-page reviewed classical companion; 163 exact source correspondences. The proof constructs the supported mass from actual smooth residuals and a summable subsequence, then proves holding, strict variance deficit and causal observed-filtration martingales. All pages inspected; references resolved; no overfull boxes. Nineteen reviewed drafts total 171 pages. No research-source or campaign changes.

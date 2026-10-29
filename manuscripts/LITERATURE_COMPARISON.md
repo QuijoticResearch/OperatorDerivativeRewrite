@@ -43,3 +43,7 @@ Keep all seventeen manuscripts labelled reviewed drafts. Treat the Gaussian pred
 [Birkhoff (1957)](https://doi.org/10.1090/S0002-9947-1957-0087058-6) supplies the classical uniform-positive-operator context; only its primary indexed introduction/framework was available for comparison. The complete primary [Luscher DESY preprint](https://bib-pubdb1.desy.de/record/396349/files/7611148.pdf) was inspected for the physical gauge-invariant Hilbert and transfer construction. The present finite Markov model is not identified with that physical construction. Priority for the exact optimized finite covariance comparison remains unresolved.
 
 A further institutional scan of de Bruijn (1950) was located at the TU Eindhoven repository, but the available tool access did not expose readable theorem pages. It does not close the previously recorded detailed hypothesis comparison. No unread theorem is used as a mathematical premise.
+
+## Sticky-clock construction and driver scope
+
+The full primary [Ayala–Carinci–Redig article](https://doi.org/10.1007/s10955-021-02775-5), Appendix equations (112)–(114), explicitly gives the Brownian local-time inverse clock construction. [Bass (2014)](https://doi.org/10.1214/EJP.v19-2350), Section 2 equations (2.3)–(2.4), supplies the classical speed-measure clock context; its introduction separately formulates the prescribed-driver sticky SDE and weak/strong distinction. The eight-page companion credits these antecedents. Causal operational-clock recovery is not represented as a strong solution to that different SDE.
