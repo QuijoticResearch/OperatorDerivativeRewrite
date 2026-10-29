@@ -1,0 +1,477 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,array,longtable}
+\usepackage[margin=1.05in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\R}{\mathbb R}\newcommand{\Z}{\mathbb Z}
+\newcommand{\E}{\mathbb E}\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
+\title{Signed transfer invisible to spectral energy statistics:\\exact Gaussian triad diagnostics}
+\author{Project Stardust}
+\date{Reviewed diagnostic draft, October 29, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We reconstruct a finite real solenoidal Fourier family and its exact
+weighted sector-transfer ratio. Randomizing one signed amplitude by a
+standard Gaussian gives a nonzero odd transfer observable. Every even
+observation has zero conditional mean transfer, although weighted energy
+determines its square and hence its strictly positive conditional variance.
+Positive bounded changes of probability density preserve the entire joint
+law of energy and concentration while reversing mean signed transfer.
+Complete proofs distinguish equality of observed laws from equality of
+latent laws. We also derive, explicitly as classical consequences, the
+biased conditional means and a two-law prediction-risk identity. The value
+is an exact diagnostic and formalization companion: phase dependence and
+symmetry-based information loss are classical, and priority for this
+particular package remains unresolved. No turbulent evolution, invariant
+Navier--Stokes measure or failure of a dynamically constrained closure is
+asserted.
+\end{abstract}
+
+\section{What is observed and what is tested}
+Spectral energy is quadratic in Fourier coefficients, whereas a nonlinear
+transfer is cubic. Sign information can therefore disappear from energy
+statistics. We make this statement exact on an explicitly specified family,
+partition and probability law, including all normalizing denominators.
+The signed parameter below changes relative signs of imaginary Fourier
+coefficients; it is not an angle uniformly distributed on a circle.
+
+The source calls $\mathcal E$ an energy. It is the weighted quantity
+$\sum_k|k|^2|\widehat u(k)|^2$, proportional to enstrophy on this
+solenoidal family. It is not the unweighted kinetic energy. Our central
+observation is $S=(\mathcal E,\mathcal C)$, with the concentration
+$\mathcal C$ defined below. Its entire probability law will be preserved,
+not just one or two moments.
+
+All finite formulas are evaluated on static fields. We define a transfer
+diagnostic by its displayed convolution formula. We do not assume that
+the six retained modes remain closed under Euler or Navier--Stokes
+evolution. Moffatt's primary analysis~\cite{moffatt}, introduction and
+Section 2, makes precisely this distinction between triad truncation and
+exact fluid evolution. None of his evolution results is needed for the
+finite identities here.
+
+\section{A real periodic triad and its complete finite transfer}
+Let $e_1=(1,0,0)$, $e_2=(0,1,0)$ and
+$K=\{\pm e_1,\pm e_2,\pm(e_1+e_2)\}\subset\Z^3$.
+For real $a,b,c$ define a real vector polarization $V$ by
+\[
+ V(e_1)=(0,a,0),\quad V(e_2)=(-b,0,0),\quad
+ V(e_1+e_2)=(-c,c,0),\quad V(-k)=-V(k),
+\]
+Set $V=0$ off $K$. Use complex Fourier coefficients $iV(k)$ on
+the period-$2\pi$ three-torus, so that
+\[u(x)=\sum_{k\in K}iV(k)e^{ik\cdot x}.\] Pairing opposite modes gives the actual field
+\begin{equation}\label{eq:velocity}
+ u_{a,b,c}(x)=\bigl(2b\sin x_2+2c\sin(x_1+x_2),
+           -2a\sin x_1-2c\sin(x_1+x_2),0\bigr).
+\end{equation}
+Thus $u$ is real, smooth and periodic. Each $k\cdot V(k)=0$;
+equivalently its two displayed divergence terms are
+$2c\cos(x_1+x_2)$ and $-2c\cos(x_1+x_2)$. This proves
+incompressibility without a pressure assumption. The field vanishes
+identically only if $a=b=c=0$: evaluate its components at
+$(\pi/2,0,0)$ and $(0,\pi/2,0)$ to obtain first $c=0$ and then
+$a=b=0$.
+
+For $k\in K$ define
+\begin{equation}\label{eq:weights-transfer}
+ W_k=|k|^2|V(k)|^2,\qquad
+ T_k=2|k|^2\sum_{\substack{p,q\in K\\p+q=k}}
+       (q\cdot V(p))(V(k)\cdot V(q)).
+\end{equation}
+Because $V$ is zero off $K$, the sum agrees with the unrestricted
+convolution at each retained output frequency: an outside input has a
+zero vector factor. This statement does not assert vanishing at other
+output frequencies or invariance of the finite support under evolution.
+
+\begin{lemma}\label{lem:table}
+In the order $e_1,e_2,e_1+e_2,-e_1,-e_2,-e_1-e_2$, the weights
+and transfers are
+\[
+ (W_k)=(a^2,b^2,4c^2,a^2,b^2,4c^2),
+\quad
+ (T_k)=(2abc,-2abc,0,2abc,-2abc,0).
+\]
+In particular $\sum T_k=0$ and
+$\mathcal E:=\sum W_k=2a^2+2b^2+8c^2$.
+\end{lemma}
+\begin{proof}
+The weight formula follows from $|e_1|^2=|e_2|^2=1$ and
+$|e_1+e_2|^2=2$. For output $e_1$, the only ordered pairs are
+$(e_1+e_2,-e_2)$ and $(-e_2,e_1+e_2)$.
+The first summand vanishes because
+$V(e_1)\cdot V(-e_2)=0$; the second is $b(ac)=abc$.
+The prefactor is two, giving $2abc$. For output $e_2$, the pairs
+are $(e_1+e_2,-e_1)$ and $(-e_1,e_1+e_2)$.
+The first has a zero vector inner product and the second is
+$(-a)(bc)=-abc$, giving $-2abc$. For output $e_1+e_2$, the
+pairs $(e_1,e_2)$ and $(e_2,e_1)$ contribute $abc$ and $-abc$.
+Their sum is zero. Replacing $(k,p,q)$ by $(-k,-p,-q)$ leaves
+each summand unchanged: both dot products contain two sign reversals.
+This proves the three opposite-output values and completes every
+possible pair. Summing the two rows gives the last assertions.
+\end{proof}
+
+\section{An actual directional partition and the ratio}
+We specify the source's 32 labels rather than infer a tessellation from
+the six sample directions. For a direction $(x,y,z)$, assign a quadrant
+$Q\in\{0,1,2,3\}$ by
+\[
+ Q=\begin{cases}0&y\geq0,\ x\geq0,\\1&y\geq0,\ x<0,\\
+ 2&y<0,\ x<0,\\3&y<0,\ x\geq0.\end{cases}
+\]
+Assign a bin $B\in\{0,\ldots,7\}$ by the first satisfied test in
+the following ordered list, and assign $B=7$ if none is satisfied:
+\[\begin{gathered}
+ 4|y|<|x|,\quad2|y|<|x|,\quad4|y|<3|x|,\quad|y|<|x|,\\
+ 3|y|<4|x|,\quad|y|<2|x|,\quad|y|<4|x|.
+\end{gathered}\]
+The sector is $s=8Q+B$. This rule assigns each point of the unit
+sphere exactly one label and is invariant under positive scaling.
+Every label is attained: in quadrant zero take $(1,r,0)$ with
+\[
+ r=1/8,\ 3/8,\ 5/8,\ 7/8,\ 7/6,\ 3/2,\ 3,\ 5
+\]
+for the eight bins, change the signs to enter the other quadrants,
+and normalize to unit length. Normalization preserves every strict
+comparison and quadrant. Thus these are disjoint nonempty cells
+covering the sphere; no smooth-boundary or equal-area claim is needed.
+On the six frequencies above their labels are
+\[
+ (s(k))=(0,7,4,8,31,20).
+\]
+They are distinct, even though the general rule has 32 cells.
+
+Put $E_j=\sum_{s(k)=j}W_k$, $F_j=\sum_{s(k)=j}T_k$ and, for
+$\mathcal E>0$, define
+\begin{align}\label{eq:diagnostic}
+ p_j&=E_j/\mathcal E, &\mathcal C&=\sum_{j=0}^{31}p_j^2,\notag\\
+ \Sigma&=\frac2{\mathcal E}\sum_{j=0}^{31}
+             p_j\left(F_j-p_j\sum_kT_k\right),
+ &R&=-\frac{\Sigma}{\mathcal C-1/32}.
+\end{align}
+This precise formula defines the diagnostic being tested. Its
+denominator and its sign will be verified on actual amplitudes.
+
+\begin{proposition}\label{prop:ratio}
+For $(a,b,c)\ne0$ let $E=2a^2+2b^2+8c^2$ and
+$A=a^4+b^4+16c^4$. Then
+\begin{equation}\label{eq:ratio}
+ \mathcal C=\frac{2A}{E^2}\geq\frac16>\frac1{32},\qquad
+ \Sigma=\frac{8abc(a^2-b^2)}{E^2},\qquad
+ R=\frac{-8abc(a^2-b^2)}{2A-E^2/32}.
+\end{equation}
+The denominator is strictly positive. Swapping $a,b$ preserves
+$E,\mathcal C$ and reverses $R$. At $(2,1,1)$ and $(1,2,1)$ the
+ratios are $-128/149$ and $128/149$. At $(2,2,1)$ the ratio is
+zero although $T_{e_1}=8$.
+\end{proposition}
+\begin{proof}
+The six displayed sector weights are the six entries of Lemma~\ref{lem:table}.
+Their squared sum is $2A$, proving the concentration formula.
+Cauchy--Schwarz for these six weights gives
+$E^2\leq6(2A)$, hence the displayed lower bound. Because $E>0$,
+$2A-E^2/32=E^2(\mathcal C-1/32)>0$.
+The total transfer vanishes, while
+\[
+ \sum_jE_jF_j=2a^2(2abc)+2b^2(-2abc)=4abc(a^2-b^2).
+\]
+Substitution in~\eqref{eq:diagnostic} gives $\Sigma$ and then $R$.
+The numerator is antisymmetric in $a,b$ and its denominator symmetric.
+At $(2,1,1)$, $E=18$, $A=33$ and
+$2A-E^2/32=447/8$, giving $-48/(447/8)=-128/149$.
+At $(2,2,1)$, $E=24$, $\mathcal C=1/6$, and the imbalance
+$abc(a^2-b^2)$ vanishes, while the table gives $T_{e_1}=8$.
+Thus zero normalized rate does not mean that every individual transfer
+vanishes. All assertions follow from the actual finite table.
+\end{proof}
+
+\section{Gaussian signed amplitudes and exact invisible fluctuations}
+Now fix $a=2,b=1$ and let $C$ have standard Gaussian law $\gamma$.
+To avoid confusion between a random variable and concentration, write
+$r(c)=R(2,1,c)$ and $d(c)=30c^4-5c^2+247/8$. Proposition~\ref{prop:ratio}
+gives
+\begin{equation}\label{eq:r}
+ r(c)=-\frac{48c}{d(c)},\qquad
+ d(c)=30(c^2-1/12)^2+92/3\geq92/3.
+\end{equation}
+Consequently $r$ is continuous and odd, vanishes only at zero and has
+the sign opposite to $c$. In particular
+\[
+ |r(c)|\leq\frac{36}{23}|c|.
+\]
+This proves $r\in L^2(\gamma)$ and integrability of its square and
+all products with $L^2$ predictors by Cauchy--Schwarz. Gaussian
+symmetry gives $\E_\gamma r=0$. Since a nondegenerate Gaussian has
+no atom at zero, $r(C)^2>0$ almost surely, so
+\begin{equation}\label{eq:v}
+ 0<v:=\E_\gamma r(C)^2<\infty.
+\end{equation}
+The exact integral need not be evaluated to prove this strict
+inequality. Likewise $r(c)c=-48c^2/d(c)<0$ off zero, and its
+integral is finite and strictly negative.
+
+\begin{theorem}\label{thm:conditional}
+If $F:\R\to\mathsf Y$ is any measurable even observation and
+$\mathcal A=\sigma(F(C))$, then
+\[
+ \E_\gamma[r(C)\mid\mathcal A]=0\quad\text{almost surely}.
+\]
+For every $\mathcal A$-measurable $g\in L^2(\gamma)$,
+\begin{equation}\label{eq:error}
+ \E_\gamma(r-g)^2=v+\E_\gamma g^2.
+\end{equation}
+In particular zero is the unique optimal $L^2$ predictor, and its
+error is the strictly positive number $v$.
+\end{theorem}
+\begin{proof}
+Every event $A\in\sigma(F)$ is invariant under $c\mapsto-c$:
+this holds for preimages of measurable sets and the collection of
+symmetric sets is a sigma algebra. Hence $1_A(c)r(c)$ is odd and
+integrable, and Gaussian symmetry gives $\int_A r\,d\gamma=0$.
+The zero function is $\mathcal A$-measurable and satisfies these
+integral identities, so it is a conditional expectation of $r$.
+For a bounded $\mathcal A$-measurable $g$, the identities first give
+$\E rg=0$ for simple functions and then by bounded approximation.
+For general $L^2$ $g$, truncate it and use Cauchy--Schwarz to pass
+to the limit. Expanding the square proves~\eqref{eq:error}.
+Its extra term is nonnegative, with equality exactly when $g=0$
+in $L^2$.
+\end{proof}
+
+Our actual observations are
+\begin{equation}\label{eq:S}
+ E(c)=10+8c^2,\qquad
+ H(c)=\frac{2(17+16c^4)}{(10+8c^2)^2},\qquad S(c)=(E(c),H(c)).
+\end{equation}
+They are continuous and even. Moreover $E$ recovers $|c|$ by
+$|c|=\sqrt{(E-10)/8}$ on its range $E\geq10$. Thus
+$\sigma(S)=\sigma(E)=\sigma(|C|)$ on this experiment.
+This identifies exactly which information is retained, rather than
+merely showing that some statistic is even.
+
+\begin{corollary}\label{cor:variance}
+Define, for $e\geq10$,
+\[
+ J(e)=\frac{2304((e-10)/8)}
+       {\left(30((e-10)/8)^2-5((e-10)/8)+247/8\right)^2}.
+\]
+Then $r(c)^2=J(E(c))$ and
+\[
+ \Var_\gamma(r(C)\mid S)=J(E(C))>0
+ \quad\text{almost surely}.
+\]
+\end{corollary}
+\begin{proof}
+Substitute $(E(c)-10)/8=c^2$ in~\eqref{eq:r} squared. The square
+is integrable and already measurable in $E$, so its conditional
+expectation is itself. The conditional mean is zero by
+Theorem~\ref{thm:conditional}. Conditional variance is their difference,
+and positivity follows from $C\ne0$ almost surely.
+\end{proof}
+
+The same parity calculation determines the first nonzero Hermite
+index. Let $H_n$ be the probabilists' polynomials with
+$H_0=1$, $H_1=c$ and $H_{n+1}=cH_n-nH_{n-1}$. Induction gives
+$H_n(-c)=(-1)^nH_n(c)$. Polynomial Gaussian moments and
+\eqref{eq:r} imply integrability of $H_nr$. Therefore
+\[
+ \E_\gamma[H_{2n}(C)r(C)]=0,\qquad
+ \E_\gamma[H_1(C)r(C)]=\E_\gamma[Cr(C)]<0.
+\]
+The mean coefficient is zero and the degree-one coefficient is nonzero:
+the Hermite rank is exactly one. This does not contradict invisible
+prediction from $S$, which observes only the even coordinate $|C|$.
+It is a parity statement about a different observation space.
+
+\section{Identical observed laws with opposite mean transfer}
+Put
+\[
+ b(c)=\frac{c}{1+|c|},\qquad
+ d\gamma_\varepsilon(c)=(1+\varepsilon b(c))\,d\gamma(c),
+ \qquad |\varepsilon|\leq1.
+\]
+The use of $b$ here is local to this probability section; the fixed
+second triad amplitude remains one. Since $b$ is continuous, odd and
+$|b(c)|<1$, the density is strictly positive at every finite $c$,
+bounded above by two, and integrates to one. Thus these are genuine
+probability laws, equivalent to $\gamma$, including the endpoints
+$\varepsilon=\pm1$. All $\gamma$-integrable functions remain
+integrable under them.
+
+\begin{theorem}\label{thm:tilts}
+For every measurable even map $F$, the full pushforward laws satisfy
+$F_\#\gamma_\varepsilon=F_\#\gamma$. In particular
+\[
+ S_\#\gamma_1=S_\#\gamma_{-1}=S_\#\gamma.
+\]
+Nevertheless, for the finite positive constant
+\[
+ m=-\E_\gamma[b(C)r(C)]>0,
+\]
+one has $\E_{\gamma_\varepsilon}r=-\varepsilon m$.
+Thus $\gamma_1$ and $\gamma_{-1}$ are distinct and give opposite
+strict mean transfer while their joint observed laws agree exactly.
+\end{theorem}
+\begin{proof}
+For a measurable observation event $D$, its preimage $A=F^{-1}(D)$
+is symmetric. The integrable function $1_A b$ is odd, so
+\[
+ \gamma_\varepsilon(A)=\int_A(1+\varepsilon b)\,d\gamma
+                         =\gamma(A).
+\]
+This is equality on every measurable set of the observation space,
+which proves equality of the pushforwards, not just moment matching.
+The product $br$ is integrable because $b$ is bounded and $r$ is
+integrable. Formula~\eqref{eq:r} gives
+\[
+ b(c)r(c)=-\frac{48c^2}{(1+|c|)d(c)}<0\qquad(c\ne0).
+\]
+Its negative is positive almost surely and integrable, so $0<m<\infty$.
+Finally integrate $r(1+\varepsilon b)$ and use $\E_\gamma r=0$.
+Different means of one integrable observable prove that the two
+endpoint laws are distinct.
+\end{proof}
+
+The deterministic case already has the same sign reversal at $c=1$
+and $c=-1$, with unchanged observed values. The probability statement
+is stronger: it preserves the distribution of every even measurable
+statistic under strictly positive changes of density, rather than
+pairing only two deterministic samples. It excludes determining this
+mean transfer from the law of $S$ alone over the displayed family of
+experiments. It does not exclude a closure which additionally specifies
+a conditional phase law or dynamical assumptions.
+
+\section{Conditional effects of the bias and a common-risk identity}
+The following consequences are proved here from the mapped formulas;
+they are not attributed to additional named Lean declarations.
+They clarify how conditional mean and uncertainty change even when
+the observation law is completely unchanged.
+
+For $r_0=|c|$, the products $b(c)r(c)$ and $r(c)^2$ are even and
+are measurable in $E(c)$. The tilted conditional expectations are
+\begin{equation}\label{eq:biasedconditional}
+ \E_{\gamma_\varepsilon}[r\mid S]=\varepsilon br,
+ \qquad
+ \E_{\gamma_\varepsilon}[r^2\mid S]=r^2.
+\end{equation}
+To prove the first identity, test against any bounded
+$\sigma(S)$-measurable $g$. Such a function is even, and
+\[
+ \E_{\gamma_\varepsilon}[rg]
+   =\E_\gamma[rg]+\varepsilon\E_\gamma[brg]
+   =\varepsilon\E_\gamma[brg].
+\]
+Since $brg$ is even, its integral under $\gamma_\varepsilon$ equals
+the one under $\gamma$ by Theorem~\ref{thm:tilts}. The right side
+is therefore $\E_{\gamma_\varepsilon}[(\varepsilon br)g]$.
+All terms are integrable, giving the defining conditional identities.
+For the second formula, $r^2$ is already integrable and observed.
+It follows that
+\begin{equation}\label{eq:biasedvariance}
+ \Var_{\gamma_\varepsilon}(r\mid S)
+       =r^2(1-\varepsilon^2b^2)>0\quad\text{almost surely}.
+\end{equation}
+Here strict positivity also holds at $|\varepsilon|=1$, because
+$|b(c)|<1$ for every finite $c$ and $r(c)\ne0$ off zero.
+Equivalence of the tilted Gaussian laws preserves that null exception.
+
+There is also a prediction obstruction if one must use the same
+observation rule without being told which endpoint law applies.
+Let $g=\varphi(S)$ with $\E_\gamma g^2<\infty$, and write
+$\mathcal R_\pm(g)=\E_{\gamma_{\pm1}}(r-g)^2$.
+Bounded densities ensure these errors are finite. Averaging the two
+densities cancels the odd bias exactly, so
+\begin{equation}\label{eq:minimax}
+ \frac{\mathcal R_+(g)+\mathcal R_-(g)}2
+       =\E_\gamma(r-g)^2=v+\E_\gamma g^2\geq v.
+\end{equation}
+Thus at least one of the two errors is at least $v$. The common rule
+$g=0$ has error exactly $v$ under both laws, because $r^2$ is even.
+Consequently the minimum over common rules of
+$\max\{\mathcal R_+(g),\mathcal R_-(g)\}$ is exactly $v$.
+This is an elementary two-experiment consequence, with a complete
+proof in~\eqref{eq:minimax}; no new minimax principle is claimed.
+The best rule when $\varepsilon$ is known is instead
+$\varepsilon br$, as~\eqref{eq:biasedconditional} states. The
+common-rule obstruction must not be read as its failure.
+
+\section{Primary comparison and formal correspondence}
+Fourier triad transfer and phase dependence are established topics.
+Moffatt~\cite{moffatt} was inspected in the primary PDF through the
+introduction and the two-dimensional representation in Section 2;
+its distinction between instantaneous triad data and exact evolution
+is retained here. Murray--Bustamante~\cite{murray} was checked at
+primary abstract level for phase dynamics with amplitudes held fixed
+in a Burgers model. Benavides--Bustamante~\cite{benavides}, submitted
+May 2026, was checked at primary abstract level for a stochastic phase
+closure in two-dimensional turbulence. Its statistical and dynamical
+assumptions are not hypotheses of our static experiment. Our
+nonidentifiability example is not presented as a counterexample to
+either paper or to a fully specified turbulent closure.
+
+Parity orthogonality, conditional expectation as $L^2$ projection and
+bounded changes of density are classical. The contribution is a
+fully reproducible exact family combining the actual partition,
+solenoidal representative, signed transfer denominator and full-law
+information loss. Priority of the particular formulas and combined
+formalization remains unresolved after this bounded comparison.
+
+All formal sources are frozen at commit
+\begin{center}\small\ttfamily
+bab688bb6140cd6316c80680095a914ea0d346db.
+\end{center}
+The accompanying theorem map records exact declaration names,
+headers, lines, file hashes and permanent links. The main modules are:
+\begin{longtable}{@{}p{0.28\textwidth}p{0.66\textwidth}@{}}
+Actual finite family&\code{ParameterizedSectorTriad}\\[3pt]
+Directional cells&\code{AngularTriadPartition}\\[3pt]
+Real representative&\code{ParameterizedTriadRepresentative}\\[3pt]
+Gaussian rate and signs&\code{GaussianTriadPhase}\\[3pt]
+Hermite parity/rank&\code{GaussianTriadHermite}\\[3pt]
+Positive biased laws&\code{GaussianTriadBias}\\[3pt]
+Conditional mean/variance&\code{GaussianTriadConditional}\\
+\end{longtable}
+The finite table is proved by enumerating every interacting pair.
+The concentration bound is reproved by six-term Cauchy--Schwarz.
+Equality of the sigma fields $\sigma(S)=\sigma(|C|)$, strict
+equivalence at the endpoint tilted laws, the biased conditional
+formulas and the common-risk identity are explicit classical
+deductions proved here. The source conditional variance theorem
+concerns the original symmetric Gaussian; the tilted formula is
+not misattributed to it.
+
+Original build/axiom evidence and source hashes were checked at the
+frozen baseline; no new Lean build or mathematical source change
+is claimed. Exact finite algebra checks independently reconstruct
+the triad table, labels, denominator and scalar identities. They do
+not replace the printed measure-theoretic proofs with Gaussian
+sampling or numerical quadrature.
+
+The scope is static finite Fourier geometry and an actual scalar
+Gaussian experiment. No invariant fluid probability measure,
+stochastic turbulence model, continuum closure theorem, global
+regularity conclusion or singularity mechanism is established.
+
+\begin{thebibliography}{9}
+\bibitem{moffatt} H. K. Moffatt, Note on the triad interactions of
+homogeneous turbulence, \emph{J. Fluid Mech.} \textbf{741} (2014), R3.
+\href{https://doi.org/10.1017/jfm.2013.637}{doi:10.1017/jfm.2013.637}.
+Primary PDF: \url{https://www.damtp.cam.ac.uk/user/hkm2/PDFs/Moffatt2014a.pdf}.
+\bibitem{murray} B. P. Murray and M. D. Bustamante, Energy flux
+enhancement, intermittency and turbulence via Fourier triad phase
+dynamics in 1D Burgers equation, primary preprint arXiv:1705.08960v2
+(2018). \url{https://arxiv.org/abs/1705.08960}.
+Abstract-level comparison only.
+\bibitem{benavides} S. J. Benavides and M. D. Bustamante,
+Triad phase dynamics determine cascade direction in two-dimensional
+turbulence, primary preprint arXiv:2605.03049v1 (2026).
+\url{https://arxiv.org/abs/2605.03049}. Abstract-level comparison only.
+\end{thebibliography}
+\end{document}

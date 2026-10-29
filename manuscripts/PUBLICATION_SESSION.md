@@ -211,3 +211,7 @@ The fluid suite expands from six to nine pages with full analytic proofs for a c
 ## Actual torus laws and Poisson-mixture boundary
 
 The Fourier companion expands from eleven to fourteen pages with complete compact-limit law, convolution/kernel and countable-chain proofs, and actual Poisson-mixture symbol, atom and jump Gram derivative. A bounded parameter generator and Haar null-singleton implication are labelled classical deductions. 86 total exact source correspondences; six finite exact checks pass. All final pages inspected, new proof/reference pages enlarged, final two-pass compilation clean and original domains retained. Twenty-four reviewed drafts total 231 pages.
+
+## Gaussian triad information and full observed-law equality
+
+Eight-page companion gives complete actual finite-table/partition/solenoidal proofs, Gaussian conditional information and positive biased laws with equal joint observed distributions and opposite signed means. 126 exact frozen correspondences and ten independent exact algebra checks; labelled elementary tilted-conditional/common-risk deductions. Every page inspected, final two-pass build clean. Classical phase/statistical mechanisms credited with bounded primary access scopes. Twenty-five reviewed drafts total 239 pages.
