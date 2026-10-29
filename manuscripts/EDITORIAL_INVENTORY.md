@@ -37,3 +37,7 @@ All three existing IBM source/PDF drafts and their receipts remain intact. No or
 The fractional-order zero obstruction is now the second completed reviewed draft (ten pages), with full endpoint, finite-zero rigidity, convergence and compact-escape proofs. Both suggested page ranges are treated as preferences; the arguments are kept focused without padding. The signed multichannel completion is now the third reviewed draft, with full native coefficient, power-limit and completion proofs. The saved source audit and its closure appear in PUBLICATION_SESSION.md. The much longer quartic global theorem and signed multichannel completion remain worth sustained work, but should not be rushed into a collection of unsupported theorem statements.
 
 For completed artifacts, exact commits, remaining editorial obligations, and the signed-domain follow-on audit, see [the publication session record](PUBLICATION_SESSION.md).
+
+## Fourth completed companion: actual IBM spatial quadrature
+
+The eight-page ibm-spatial-calculus paper gives complete proofs of spatial and nonseparable time–space Simpson convergence, common-grid prefixes, measurable bounded random horizons and Bernstein continuous-path realization. Its direct Gaussian moment/tightness proof avoids importing the stronger quartic-variation theorem. This is deliberately a companion exposition, not another declaration of completed intrinsic IBM calculus. Earlier raw-channel and graph-dual working notes remain preserved. Primary Khoshnevisan–Lewis and Harnett–Nualart comparisons leave novelty unresolved.

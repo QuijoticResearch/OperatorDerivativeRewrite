@@ -26,6 +26,8 @@ The companion [fractional theta-deformation paper](manuscripts/fractional-theta-
 
 The [signed multichannel paper](manuscripts/signed-multichannel/main.pdf) gives the complete finite-to-completed proof on its factorial analytic cylinder domain: actual native coefficient limits in Bochner L1, centered p−1-channel reconstruction in the test dual, and a simultaneous signed diagonal. Its [source map](manuscripts/signed-multichannel/theorem-map.json) and proof explain the indefinite pairing and exact uniqueness limitations.
 
+The [reflected-clock IBM Simpson companion](manuscripts/ibm-spatial-calculus/main.pdf) supplies full spatial and deterministic time–space proofs under the actual positive process law, including common-grid prefixes, measurable random horizons and a Bernstein continuous-path realization. A direct Gaussian fourth-moment bound suffices for the proof. Its [source map](manuscripts/ibm-spatial-calculus/theorem-map.json) retains the exact regularity and convergence scope.
+
 These are reviewed drafts, with compiled and visually inspected PDFs. Novelty remains unresolved; classical antecedents and exact limitations are recorded. The [editorial inventory](manuscripts/EDITORIAL_INVENTORY.md) groups the strongest remaining stories: arithmetic theta-flow zeros, completed signed multichannel calculus, and actual IBM variation and operator domains. Earlier IBM notes are preserved in the catalog.
 
 ## Selected verified mathematics

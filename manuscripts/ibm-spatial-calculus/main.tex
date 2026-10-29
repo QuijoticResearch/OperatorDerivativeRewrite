@@ -1,0 +1,535 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,longtable,array}
+\usepackage[margin=1.05in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}\newcommand{\Pconv}{\xrightarrow{\mathrm P}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
+\title{Spatial Simpson integration for reflected-clock\protect\\
+iterated Brownian motion}
+\author{Project Stardust}
+\date{Reviewed editorial draft, October 29, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Let $Z_t=W(|B_t|)$, where $W$ and $B$ are independent standard
+Brownian motions. We prove convergence in probability of oriented
+spatial Simpson sums for every global $C^3$ one-form. The limit
+is its ordinary spatial primitive evaluated along $Z$. The proof
+uses a compact fourth-order Peano remainder and a direct quartic
+tightness estimate, without the sharper quartic-variation limit.
+We then prove a deterministic nonseparable $C^1$-time/$C^4$-space
+chain formula, uniform control over prefixes of one common grid,
+bounded random-horizon convergence for spatial one-forms, and an
+explicit Bernstein realization converging in continuous-path
+supremum norm. The time and space hypotheses, measurability, and
+limiting topologies are stated separately. These prescribed
+symmetric quadratures are not identified with a causal physical-time
+divergence. The principal results have exact declarations in a
+frozen Lean development; the exposition supplies full human proofs.
+Novelty of this package is unresolved.
+\end{abstract}
+
+\section{The process and the quadrature prescription}
+Work on a probability space carrying independent real standard
+Brownian motions $B=(B_t)_{t\geq0}$ and $W=(W_s)_{s\geq0}$,
+starting at zero, with continuous versions. Define
+\begin{equation}\label{eq:ibm}
+ Z_t=W(|B_t|),\qquad t\geq0.
+\end{equation}
+Thus the clock is reflected and the scenery is indexed by
+nonnegative spatial time. This convention is fixed throughout.
+The product Wiener realization is equivalent for these statements
+to the constructed independent Gaussian scenery--clock realization
+used in the formal sources. The process is jointly measurable and
+has continuous paths on a common full-measure set. All samplewise
+arguments below are on that set.
+
+For a real function $g$, define the oriented spatial Simpson
+increment
+\begin{equation}\label{eq:simpson}
+ S_g(x,y)=\frac{y-x}{6}
+ \left(g(x)+4g\left(\frac{x+y}{2}\right)+g(y)\right).
+\end{equation}
+The sign of $y-x$ is retained. The midpoint is the spatial
+midpoint of the two endpoints; it is not evaluation of $Z$ at
+the midpoint of a physical time interval.
+
+Fix $T>0$, use all uniform grids $t_i=iT/N$, $0\leq i\leq N$,
+and abbreviate $Z_i=Z_{t_i}$. Define
+\[
+ P_{g,N}(k)=\sum_{i=0}^{k-1}S_g(Z_i,Z_{i+1}),\qquad0\leq k\leq N.
+\]
+The finite sums are defined directly from the integrand and the
+process values. The limiting primitive will be proved to agree
+with them, rather than being substituted as their definition.
+
+\begin{theorem}\label{thm:spatial}
+Let $g\in C^3(\R)$ and set
+\[
+ J_g(t)=\int_{Z_0}^{Z_t}g(x)\,dx,
+\]
+where the integral is oriented. Then $J_g$ has continuous paths,
+is jointly measurable, and
+\begin{equation}\label{eq:prefix}
+ \max_{0\leq k\leq N}|P_{g,N}(k)-J_g(t_k)|\Pconv0.
+\end{equation}
+No global growth bound on $g$ or its derivatives is assumed.
+\end{theorem}
+
+The uniformity in \eqref{eq:prefix} is over prefixes of one
+common grid. It is not an assertion that arbitrary partitions
+or arbitrary adapted time-dependent integrands are covered.
+The deterministic time--space formula and the continuous-path
+realization will have their own definitions below.
+
+Stochastic integration for iterated Brownian motion has classical
+antecedents. Khoshnevisan and Lewis~\cite{kl} use a two-sided
+scenery and a random partition induced by a spatial clock grid.
+Our reflected-clock convention and deterministic physical-time
+grids are different. Simpson-type stochastic sums have also been
+studied for fractional Brownian motion~\cite{hn}; covariance or
+scaling similarity does not identify those processes with
+\eqref{eq:ibm}. The paper gives a verified, domain-explicit
+exposition, not a claim of first construction of symmetric
+integration for iterated Brownian motion.
+
+\section{A direct quartic tightness estimate}
+For an interval $[a,b]$ let $\Delta Z=Z_b-Z_a$. Conditional on
+the complete clock path, the two scenery times are fixed and
+$\Delta Z$ is a centered Gaussian variable of variance
+\[
+ L=\big||B_b|-|B_a|\big|.
+\]
+Independence of $W$ and $B$ is essential here. Reversal of the
+order of the scenery times only changes the sign of a Brownian
+increment and not its Gaussian fourth moment. Therefore
+\begin{equation}\label{eq:fourthmoment}
+ \mathbb E[(\Delta Z)^4\mid B]=3L^2,
+ \qquad\mathbb E[(\Delta Z)^4]\leq3(b-a),
+\end{equation}
+using $L\leq|B_b-B_a|$ and the Brownian increment variance.
+These expectations can equally be computed by Fubini on the
+independent scenery--clock product space, so no unspecified
+conditional version is required.
+
+Put
+\[
+ Q_{4,N}=\sum_{i=0}^{N-1}|Z_{i+1}-Z_i|^4,\qquad
+ M_N=\max_{i<N}|Z_{i+1}-Z_i|.
+\]
+Equation~\eqref{eq:fourthmoment} yields
+\begin{equation}\label{eq:tight}
+ \mathbb E Q_{4,N}\leq3T,\qquad
+ \sup_N\mathbb P\{Q_{4,N}>A\}\leq\frac{3T}{A}
+ \quad(A>0).
+\end{equation}
+Thus the quartic sums are tight. No independence between different
+$\Delta_iZ$ is needed when summing their expectations. Continuity
+of each path on $[0,T]$ gives $M_N\to0$ almost surely.
+
+The sharper assertion $Q_{4,N}\Pconv3T$ is separately verified
+in the library, but is not needed for any main proof in this paper.
+In particular it would be incorrect to infer that assertion from
+\eqref{eq:tight} or the corresponding expectation calculation.
+The present argument uses only the bound it has actually proved.
+
+\begin{lemma}\label{lem:product}
+If $U_N\to0$ in probability and $V_N\geq0$ is tight, then
+$U_NV_N\to0$ in probability.
+\end{lemma}
+\begin{proof}
+For $A>0$ and $\varepsilon>0$,
+\[
+ \mathbb P\{|U_NV_N|>\varepsilon\}
+ \leq\mathbb P\{V_N>A\}
+       +\mathbb P\{|U_N|>\varepsilon/A\}.
+\]
+First choose $A$ to make the first term uniformly small, then
+let $N\to\infty$ in the second.
+\end{proof}
+
+This elementary transfer principle is why a local remainder
+modulus is sufficient; neither an almost-sure variation bound
+nor global bounds on the integrand are needed.
+
+\section{Compact Simpson remainders}
+We now establish the deterministic estimate which controls
+every stochastic prefix simultaneously.
+
+\begin{lemma}\label{lem:peano}
+Let $g\in C^3(\R)$ and $R>0$. There is a nonnegative modulus
+$\omega_R(\delta)\to0$ as $\delta\downarrow0$ such that, for
+$|x|,|y|\leq R$,
+\begin{equation}\label{eq:peano}
+ \left|S_g(x,y)-\int_x^y g(z)\,dz\right|
+ \leq\frac13\omega_R(|y-x|)|y-x|^4.
+\end{equation}
+One may take $\omega_R$ to be the modulus of continuity of
+$g'''$ on $[-R,R]$.
+\end{lemma}
+\begin{proof}
+Let $d=y-x$. The case $d=0$ is immediate. On the segment between
+$x$ and $y$, Taylor's theorem in integral form gives
+\[
+ g(x+\theta d)=g(x)+g'(x)\theta d
+ +\frac{g''(x)}2\theta^2d^2+\frac{g'''(x)}6\theta^3d^3+r(\theta)
+\]
+for $0\leq\theta\leq1$, with
+$|r(\theta)|\leq\omega_R(|d|)|d|^3/6$.
+Indeed, subtract the constant $g'''(x)$ inside the third-order
+integral remainder and use its uniform continuity. This proof
+works for either sign of $d$.
+
+The Simpson functional on $[0,1]$, with weights $1/6,4/6,1/6$,
+integrates polynomials of degree at most three exactly. Directly,
+its values on $1,\theta,\theta^2,\theta^3$ are
+$1,1/2,1/3,1/4$. Thus all displayed polynomial terms cancel
+against the actual integral. The Simpson average of the remainder
+and its integral each have absolute value at most
+$\omega_R(|d|)|d|^3/6$. Multiplying their difference by $|d|$
+proves \eqref{eq:peano}.
+\end{proof}
+
+The estimate is fourth order with a vanishing compact coefficient.
+It requires $g'''$ continuous, not a fourth derivative of $g$.
+Equivalently, when $g=f'$, it requires a $C^4$ primitive, not a
+fifth derivative. This is the regularity boundary used in the
+formal compact Peano result.
+
+For a continuous path $z:[0,T]\to\R$ with range in $[-R,R]$,
+sum \eqref{eq:peano} over any grid prefix. Since the exact
+oriented integrals telescope through the ordinary primitive,
+\begin{equation}\label{eq:pathbound}
+ \max_{k\leq N}\left|
+ \sum_{i<k}S_g(z_i,z_{i+1})-\int_{z_0}^{z_k}g\right|
+ \leq\frac13\omega_R(M_N(z))Q_{4,N}(z).
+\end{equation}
+There is one modulus and one full nonnegative quartic sum for
+every prefix. No union bound with a factor growing in $N$ is
+being applied.
+
+\section{The spatial formula and measurable random horizons}
+\begin{proof}[Proof of Theorem~\ref{thm:spatial}]
+The function $G(x)=\int_0^xg(z)\,dz$ is $C^4$ by the fundamental
+theorem of calculus, so $J_g(t)=G(Z_t)-G(Z_0)$ is continuous in
+$t$ and jointly measurable. Each finite Simpson sum is measurable
+because it is a finite sum of continuous functions of measurable
+coordinates.
+
+The range of a continuous sample path is bounded, so for any
+$\eta>0$ choose deterministic $R$ with
+$\mathbb P\{\sup_{t\leq T}|Z_t|>R\}<\eta$.
+On its complementary event \eqref{eq:pathbound} applies.
+There $\omega_R(M_N)\to0$ almost surely. Quartic tightness
+\eqref{eq:tight} and Lemma~\ref{lem:product} show that the
+right side tends to zero in probability. The probability of the
+excluded event is less than $\eta$, which is arbitrary. This
+proves the uniform-prefix assertion.
+\end{proof}
+
+\begin{corollary}\label{cor:random}
+Let $\tau$ be any measurable random time with $0\leq\tau\leq T$.
+Define
+\[
+ k_N=\left\lfloor\frac{N\tau}{T}\right\rfloor,\qquad
+ \tau_N=\frac{T}{N}k_N.
+\]
+Then $P_{g,N}(k_N)\Pconv J_g(\tau)$ for $g\in C^3(\R)$.
+\end{corollary}
+\begin{proof}
+The integer index is measurable, takes values in $\{0,\ldots,N\}$,
+and obeys $0\leq\tau-\tau_N<T/N$. Evaluating the finite collection
+of measurable prefix sums at that index is measurable. The error
+to $J_g(\tau_N)$ is bounded by the prefix maximum in
+\eqref{eq:prefix}. Pathwise continuity gives
+$J_g(\tau_N)\to J_g(\tau)$ almost surely, proving the result.
+\end{proof}
+
+No stopping-time hypothesis is used. For example $\tau$ can equal
+$T$ or $T/2$ according to the sign of $Z_T$. This conclusion
+uses uniform approximation and continuity, not optional sampling
+of a martingale.
+
+\section{Deterministic time--space integrands}
+Let $F:\R^2\to\R$ satisfy the following hypotheses: for every
+fixed $t$, $F(t,\cdot)\in C^4(\R)$; for every fixed $x$,
+$F(\cdot,x)\in C^1(\R)$; and the functions $\partial_tF$ and
+$\partial_x^4F$ are jointly continuous. No mixed derivative or
+global derivative bound is assumed. For the continuous-path
+realization in Section~\ref{sec:bernstein}, we additionally state
+joint continuity of $F$ explicitly, as in its formal declaration.
+
+Define the time-frozen spatial sums
+\begin{equation}\label{eq:timesums}
+ P_{F,N}(k)=\sum_{i<k}
+ S_{\partial_xF(t_i,\cdot)}(Z_i,Z_{i+1}),
+\end{equation}
+and the continuous target
+\begin{equation}\label{eq:target}
+ J_F(t)=F(t,Z_t)-F(0,Z_0)
+       -\int_0^t\partial_tF(s,Z_s)\,ds.
+\end{equation}
+The target is continuous. In fact the stated hypotheses already
+give joint continuity of $F$: near a fixed time $t_0$, write
+$F(t,x)=F(t_0,x)+\int_{t_0}^t\partial_tF(s,x)\,ds$ and use
+continuity and local boundedness of the joint time partial.
+We keep the explicit hypothesis for the later source correspondence.
+
+\begin{theorem}\label{thm:time}
+Under these time--space hypotheses,
+\begin{equation}\label{eq:timeprefix}
+ \max_{k\leq N}|P_{F,N}(k)-J_F(t_k)|\Pconv0.
+\end{equation}
+In particular the full sums converge in probability to
+\eqref{eq:target} at $t=T$.
+\end{theorem}
+\begin{proof}
+On a compact rectangle $[0,T]\times[-R,R]$, joint continuity
+of $\partial_x^4F$ gives one horizontal modulus uniform in $t$.
+Apply Lemma~\ref{lem:peano} with $g=\partial_xF(t,\cdot)$.
+The proof uses only differences of $\partial_x^4F$ at nearby
+spatial points, so its modulus works for every frozen time.
+Thus the maximum error in replacing \eqref{eq:timesums} by
+\[
+ V_{F,N}(k)=\sum_{i<k}
+     \big(F(t_i,Z_{i+1})-F(t_i,Z_i)\big)
+\]
+tends to zero in probability, by exactly the same localization
+and quartic-tightness argument as before.
+
+It remains to identify $V_{F,N}$. The exact finite chain identity is
+\begin{align}\label{eq:finitechain}
+ F(t_k,Z_k)-F(0,Z_0)
+ &=V_{F,N}(k)\notag\\
+ &\quad+\sum_{i<k}
+       \big(F(t_{i+1},Z_{i+1})-F(t_i,Z_{i+1})\big).
+\end{align}
+The time fundamental theorem of calculus identifies the second
+sum as
+\[
+ \sum_{i<k}\int_{t_i}^{t_{i+1}}\partial_tF(s,Z_{i+1})\,ds.
+\]
+For each fixed continuous sample path, uniform continuity of
+$\partial_tF$ on its compact time--space range shows that its
+difference from $\int_0^{t_k}\partial_tF(s,Z_s)\,ds$ is bounded,
+uniformly over $k$, by
+\[
+ T\,\nu_R\!\left(\sup_{|t-s|\leq T/N}|Z_t-Z_s|\right)
+ \longrightarrow0.
+\]
+Here $\nu_R$ is a horizontal modulus of the time partial on
+the compact rectangle. This is a pathwise limit. Combining it
+with the spatial error and \eqref{eq:finitechain} proves
+\eqref{eq:timeprefix}.
+\end{proof}
+
+The time correction is an ordinary finite Lebesgue integral on
+each sample path. It is not an assumed stochastic correction
+term. Joint measurability of $\partial_tF(s,Z_s)$ and integration
+over a bounded interval make it a measurable random variable.
+The same argument gives measurability of the finite sums, since
+each frozen spatial slice has a continuous derivative.
+
+\section{Weights and elementary checks on the prescription}
+Taking $F(t,x)=h(t)G(x)$, where $h\in C^1(\R)$ and
+$G'=g\in C^3(\R)$, gives
+\begin{equation}\label{eq:weighted}
+ \sum_{i<N}h(t_i)S_g(Z_i,Z_{i+1})\Pconv
+ h(T)J_g(T)-\int_0^T h'(s)J_g(s)\,ds.
+\end{equation}
+The equality of this target with the one in
+Theorem~\ref{thm:time} follows from cancellation of the constant
+$G(Z_0)$ and $\int_0^T h'=h(T)-h(0)$.
+Thus the separable time-weighted rule is contained in the full
+nonseparable theorem. Random time coefficients are not included
+by replacing $h$ with a random function without further work.
+
+The spatial rule is exact for cubic one-forms. For example
+\[
+ S_{4z^3}(x,y)=y^4-x^4.
+\]
+It is not always an exact increment of a primitive: direct
+polynomial expansion gives
+\begin{equation}\label{eq:quintic}
+ S_{5z^4}(x,y)-(y^5-x^5)=\frac{(y-x)^5}{24}.
+\end{equation}
+For a continuous path the sum of absolute fifth powers is at
+most $M_NQ_{4,N}$, which tends to zero in probability here.
+This example illustrates the finite prescription and its limiting
+primitive without conflating them.
+
+The sign in \eqref{eq:simpson} also matters. Replacing $y-x$
+by $|y-x|$ would already destroy the oriented integral for a
+constant one-form. Similarly, replacing the spatial midpoint
+by $Z_{(t_i+t_{i+1})/2}$ changes the approximation scheme;
+the deterministic Simpson polynomial cancellations no longer
+apply to that expression.
+
+\section{An explicit continuous-path realization}\label{sec:bernstein}
+Under the time--space hypotheses, including explicit joint
+continuity of $F$, define on $0\leq u\leq1$
+\begin{equation}\label{eq:bernstein}
+ A_{F,N}(u)=\sum_{k=0}^N
+ \binom Nk u^k(1-u)^{N-k}P_{F,N}(k).
+\end{equation}
+This is an actual random polynomial assembled from the prefixes
+of the one common grid. Let $j_F(u)=J_F(Tu)$.
+
+\begin{theorem}\label{thm:path}
+As random elements of $C([0,1],\R)$ with supremum norm,
+\begin{equation}\label{eq:pathlimit}
+ \norm{A_{F,N}-j_F}_\infty\Pconv0.
+\end{equation}
+The approximants and target are Borel measurable in this
+continuous-path space.
+\end{theorem}
+\begin{proof}
+The Bernstein basis is nonnegative and sums to one, so
+\begin{equation}\label{eq:bernsteinbound}
+ \norm{A_{F,N}-B_Nj_F}_\infty
+ \leq\max_{k\leq N}|P_{F,N}(k)-j_F(k/N)|,
+\end{equation}
+where $B_N$ is the ordinary Bernstein approximation operator.
+The right side tends to zero in probability by
+Theorem~\ref{thm:time}.
+
+For a fixed continuous $f$, Bernstein approximation gives
+$\norm{B_Nf-f}_\infty\to0$. A direct
+proof writes $(B_Nf)(u)=\mathbb E[f(K/N)]$ for a binomial
+$K$ of parameters $N,u$. Split at $|K/N-u|\leq\delta$ and use
+$\mathbb E(K/N-u)^2=u(1-u)/N\leq1/(4N)$ to obtain
+\[
+ \norm{B_Nf-f}_\infty
+ \leq\omega_f(\delta)+\frac{2\norm f_\infty}{4N\delta^2}.
+\]
+First take $N\to\infty$ and then $\delta\downarrow0$.
+Apply this pathwise to the continuous target $j_F$.
+The resulting almost-sure Bernstein error tends to zero in
+probability. Combine it with \eqref{eq:bernsteinbound}.
+
+Each coefficient in \eqref{eq:bernstein} is measurable, hence
+the finite polynomial is a measurable $C([0,1])$-valued map.
+For the target, rational evaluation maps are measurable by
+the measurability arguments following Theorem~\ref{thm:time}.
+The Borel sigma algebra of the separable space $C([0,1])$ is
+generated by these evaluations: suprema of continuous-path
+distances equal suprema over a countable dense subset. Thus the
+target path map is measurable as well.
+\end{proof}
+
+The approximation has $A_{F,N}(0)=0$ and
+$A_{F,N}(1)=P_{F,N}(N)$, since the Bernstein basis selects the
+first and last coefficients at the endpoints. At intermediate
+times, all grid prefixes can enter \eqref{eq:bernstein}.
+Consequently it is a polynomial smoothing, not a claimed causal
+interpolation. No adaptedness or $L^p$ convergence follows merely
+from \eqref{eq:pathlimit}.
+
+\section{What this integration result means}
+The targets are genuine pathwise finite spatial or time integrals,
+and the approximations converge under the actual positive
+scenery--clock law. Here ``oriented'' refers to the signed spatial
+increment $y-x$, not to a signed probability measure for $Z$.
+This distinguishes the present setting from the higher-order
+signed heat pseudoprocess calculus.
+
+The proof is local in the spatial range. It admits unbounded
+global $C^3$ one-forms and $C^4$ spatial slices because every
+continuous sample path has a compact range. It provides
+convergence in probability, not integrability of arbitrary
+unbounded targets. Neither expectation convergence nor strong
+$L^2$ convergence has been asserted without moment hypotheses.
+
+It also does not construct a general physical-time adapted
+stochastic integral. Its spatial one-form depends only on the
+current spatial argument, and its time--space integrand comes
+from a deterministic primitive $F$. The rule has not been
+identified with the original intrinsic divergence or with an
+operator acting on arbitrary predictable integrands. Bounded
+random horizons are handled by approximation, not a martingale
+stopping theorem. Nonsmooth It\^o--Tanaka formulas and arbitrary
+partitions have their own proof obligations.
+
+Earlier library notes also discuss raw Taylor-channel divergence
+and intrinsic graph-dual obstructions. Those results are
+preserved, but they are not needed as premises of the proofs
+here. Keeping them separate avoids using a stochastic-domain
+assertion to justify a deterministic quadrature estimate.
+
+\section{Formal correspondence and preliminary comparisons}
+The frozen mathematical baseline is
+\begin{center}\small\ttfamily
+bab688bb6140cd6316c80680095a914ea0d346db.
+\end{center}
+The namespace prefix is
+\begin{center}\code{OperatorDerivativeRewrite.Foundation}\end{center}
+The companion \code{theorem-map.json} contains exact declaration
+links, source line numbers and hashes.
+
+\begin{longtable}{@{}p{0.25\textwidth}p{0.69\textwidth}@{}}
+\textit{Paper result}&\textit{Lean namespace and declaration}\\\hline
+Compact spatial estimate&\code{IBMSimpsonPeano.compact_error_bound}\\[3pt]
+Spatial convergence&\code{IBMActualSimpson.sums_tendstoInMeasure}\\[3pt]
+Uniform spatial prefixes&\code{IBMUniformSimpsonProcess.maximum_tendstoInMeasure}\\[3pt]
+Random horizons&\code{IBMSimpsonRandomHorizon.stopped_sums_tendstoInMeasure}\\[3pt]
+Time--space compact estimate&\code{IBMTimeSpacePeano.compact_error_bound}\\[3pt]
+Time quadrature&\code{IBMTimeSpaceQuadrature.increments_tendsto}\\[3pt]
+Time--space chain&\code{IBMTimeSpaceSimpson.sums_tendstoInMeasure}\\[3pt]
+Uniform time--space prefixes&\code{IBMUniformTimeSpace.maximum_tendstoInMeasure}\\[3pt]
+Time weights&\code{IBMTimeWeightedSimpson.weighted_tendstoInMeasure}\\
+\end{longtable}
+
+The continuous-path statements are
+\code{IBMContinuousSimpsonRealization.approximation_error_bound}
+and \code{approximation_tendstoInMeasure} in the same namespace.
+
+The formal proof uses its verified quartic-variation machinery to
+control compact Peano errors. The human proof above reorganizes
+the same application using the weaker direct Gaussian moment
+bound \eqref{eq:tight}. That bound is proved explicitly here;
+no separate named Lean declaration for this shortened argument
+is claimed. The endpoints, smoothness assumptions and probability
+topologies of the principal convergence statements are those
+in the formal declarations. The nonseparable chain theorem in
+the source does not require joint continuity of $F$ as a separate
+input; the continuous-path declaration retains it explicitly.
+
+The baseline receipt records a complete successful Lean build
+and 54,943 declarations audited with only the standard three
+axioms. This editorial work changes no mathematical source and
+does not claim a new full build. Source hashes, baseline evidence,
+compiler diagnostics and visual-review receipts accompany the
+paper. The earlier signed-Simpson working note remains intact;
+this paper replaces its mechanism summaries with proofs for the
+focused quadrature and continuous-path scope.
+
+The primary comparison~\cite{kl} constructs symmetric integrals
+for a two-sided-scenery IBM using an induced random partition.
+It is not an identification with the reflected-clock convention
+or deterministic grids used here. Harnett and Nualart~\cite{hn}
+study the critical fractional Brownian Simpson problem and
+distributional limits. These are close antecedents for numerical
+prescriptions, but their process and limiting regime differ.
+The compact-remainder method itself is elementary; this paper
+does not turn its formal verification into a novelty claim.
+Priority for the combined domain, prefix and path-space package
+requires further targeted comparison.
+
+\begin{thebibliography}{9}
+\bibitem{kl} D. Khoshnevisan and T. M. Lewis,
+Stochastic calculus for Brownian motion on a Brownian fracture,
+\emph{Ann. Appl. Probab.} \textbf{9} (1999), 629--667.
+\url{https://www.math.utah.edu/~davar/ps-pdf-files/ibm.pdf}.
+\bibitem{hn} D. Harnett and D. Nualart,
+On Simpson's rule and fractional Brownian motion with $H=1/10$,
+\emph{J. Theor. Probab.} \textbf{28} (2015), 1651--1688.
+\href{https://doi.org/10.1007/s10959-014-0552-1}{doi:10.1007/s10959-014-0552-1}.
+\end{thebibliography}
+\end{document}
