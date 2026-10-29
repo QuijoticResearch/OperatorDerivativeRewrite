@@ -1,0 +1,496 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
+\newcommand{\dom}{\operatorname{dom}}\newcommand{\ran}{\operatorname{ran}}
+\newcommand{\Sc}{\mathcal S}\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\title{Closed differentiation and signed adjoints\\for Schwartz densities with zeros}
+\author{Project Stardust\\\small A classical formalization companion}
+\date{October 29, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For every real Schwartz density $K$, differentiation on Schwartz
+functions is densely closable in $L^2(|K|\,dx)$, without a
+square-integrable logarithmic derivative. We give a direct
+distributional construction using bounded coefficients and a
+weight-squared embedding, keeping the original graph closure
+distinct from its closed weak extension. Explicit total adjoint
+probes and multiplication by the sign of $K$ identify the exact
+domain of the signed adjoint. Orthogonal graph projection constructs
+the positive Hilbert energy resolvent, its exact minimization gap
+and the full nonnegative self-adjoint energy operator. The
+logarithmic derivative is always absolutely integrable against
+$|K|\,dx$ but fails to be square-integrable at a simple zero.
+A normalized sign-changing polynomial-Gaussian example exhibits
+this failure while retaining all closed operators. An integrating
+factor also excludes polynomial first-order Stein weights for
+sign-changing kernels. The mechanisms are classical weighted
+operator and indefinite-inner-product theory; no new general
+closability or spectral principle is claimed.
+\end{abstract}
+
+\section{The original spaces and conclusions}
+Fix a real Schwartz function $K\in\Sc(\R;\R)$ and write
+$w=|K|$, $\mu(dx)=w(x)\,dx$. No positivity, nonvanishing,
+normalization or finite-zero hypothesis on $K$ is imposed.
+The measure $\mu$ is finite. Throughout,
+\[
+ H=L^2(\mu;\C),\qquad
+ \ip uv=\operatorname{Re}\int\overline{u}v\,d\mu
+\]
+is regarded as a \emph{real} Hilbert space. All adjoints and
+self-adjointness assertions below refer to this real structure,
+matching the formal sources. Distribution tests are complex Schwartz
+functions with complex bilinear distribution evaluation.
+The zero-density case gives the zero Hilbert space and is included.
+
+Let $D_0$ take the $H$ class of a Schwartz function $f$ to the
+class of $f'$. Its representative independence will be proved,
+rather than presumed. The principal result is the following.
+\begin{theorem}\label{thm:main}
+The operator $D_0$ is densely defined and closable. Its graph
+closure $D$ is densely defined and closed. Set $J u=\sigma u$,
+where $\sigma=1$ on $\{K\geq0\}$ and $\sigma=-1$ on $\{K<0\}$.
+The signed adjoint is the densely defined closed operator
+\[
+ D^+=JD^*J,\qquad
+ \dom D^+=\{v\in H:Jv\in\dom D^*\}.
+\]
+For the nondegenerate signed real form
+$[u,v]=\operatorname{Re}\int\overline u vK\,dx$, it satisfies
+\[
+ [Du,v]=[u,D^+v]\quad(u\in\dom D, v\in\dom D^+),
+\]
+and this pairing condition characterizes its whole domain and value.
+The Hilbert energy operator
+\[
+ A=D^*D,\qquad \dom A=\{u\in\dom D:Du\in\dom D^*\}
+\]
+is densely defined, closed, nonnegative and self-adjoint. Its
+resolvent $R=(I+A)^{-1}$ is a bounded symmetric positive contraction,
+injective with dense range. For every $x\in H$ and $u\in\dom D$,
+\begin{align}\label{eq:gap}
+ \|x-u\|^2+\|Du\|^2
+ ={}&\|x-Rx\|^2+\|DRx\|^2\notag\\
+ &+\|u-Rx\|^2+\|Du-DRx\|^2.
+\end{align}
+Thus $Rx$ is the unique minimizer of the displayed energy.
+\end{theorem}
+The positive operator $A$ uses the \emph{Hilbert} adjoint $D^*$,
+not the signed adjoint $D^+$. Positivity means its Hilbert quadratic
+form is nonnegative; it is not an assertion of order preservation
+or a probabilistic transition kernel. Neither operator is identified
+with a time generator of a signed pseudoprocess.
+
+\section{A bounded-coefficient distributional rigging}
+For $u\in H$ and $\varphi\in\Sc(\R;\C)$ define
+\[
+ Iu(\varphi)=\int\varphi u\,d\mu,\qquad
+ Eu=I(wu),\qquad Fu=I(bu),
+\]
+where
+\begin{equation}\label{eq:boundeddrift}
+ b(x)=2\sigma(x)K'(x),\qquad w(x)b(x)=2K(x)K'(x).
+\end{equation}
+Both $w$ and $b$ are bounded measurable functions, since $K,K'$
+are Schwartz. In particular these formulas define continuous
+real-linear maps from $H$ into the complex tempered distributions.
+For example Cauchy--Schwarz gives
+\[
+ |Eu(\varphi)|\leq\|u\|_H\|w\varphi\|_H,
+ \qquad |Fu(\varphi)|\leq\|u\|_H\|b\varphi\|_H,
+\]
+and each second factor is at most a fixed constant times
+$\sup|\varphi|$. Thus every evaluation is continuous in $u$;
+the bounds also give the usual distribution topology continuity.
+No quotient by $K$ appears.
+
+It is important to retain the extra factor in $E$:
+\begin{equation}\label{eq:weightsquared}
+ Eu(\varphi)=\int\varphi u\,w^2\,dx
+             =\int\varphi u\,K^2\,dx.
+\end{equation}
+This is not the distribution represented by $u$ against Lebesgue
+measure, which need not exist locally across zeros. Its density
+is integrable, because
+$\int|u|w^2\leq\|u\|_H(\int w^3)^{1/2}<\infty$.
+The map $E$ is injective. Indeed $Eu=0$ implies $u w^2=0$
+Lebesgue almost everywhere by separation of locally integrable
+densities by smooth compactly supported tests. One elementary
+justification of that separation is to convolve locally with a
+compactly supported smooth approximate identity: all convolutions
+are zero on smaller intervals, and converge to the density in
+local $L^1$. Hence the density is zero there, and a countable
+interval covering gives the assertion on $\R$. Since $w>0$
+$\mu$-almost everywhere, it follows that $u=0$ in $H$.
+
+For a Schwartz input $f$, integration by parts gives the exact
+identity
+\begin{equation}\label{eq:coreweak}
+ E(f')=(Ef)'-Ff.
+\end{equation}
+To check all signs, evaluate the right side on $\varphi$. It is
+$-\int\varphi'fK^2-\int2\varphi fKK'$, which equals
+$\int\varphi f'K^2$. Every term is absolutely integrable, and
+the boundary terms vanish because the factors are Schwartz.
+This uses the smooth weight $K^2$, even though $|K|$ need not
+be differentiable at a transverse zero.
+
+\section{The weak graph and the original derivative closure}
+Define
+\begin{equation}\label{eq:weakgraph}
+ \mathcal G=\{(u,v)\in H\times H:Ev=(Eu)'-Fu\}.
+\end{equation}
+It is a closed real linear subspace: for a convergent sequence
+$(u_n,v_n)$ in it, continuity of each test evaluation passes the
+identity to the limit. If $(0,v)\in\mathcal G$, injectivity of
+$E$ gives $v=0$. Thus $\mathcal G$ is the graph of a closed
+partially defined operator $D_{\mathrm w}$.
+
+Equation \eqref{eq:coreweak} shows that every pair $(f,f')$ of
+Schwartz classes lies in this graph. In particular if a Schwartz
+$f$ is zero as an $H$ class, then its derivative class is zero:
+$D_0$ is well-defined on the range of Schwartz functions in $H$.
+This range is dense. For clarity, finite Radon measure regularity
+first approximates indicators of measurable sets in $L^2$ by
+continuous compactly supported functions: choose compact and open
+inner/outer approximations with small measure difference and a
+continuous cutoff between them. Truncation and simple-function
+approximation reduce a general $L^2$ function to these indicators.
+Finally mollification approximates a continuous compactly supported
+function uniformly by smooth compactly supported functions, hence
+in $L^2(\mu)$ since $\mu$ is finite. Such functions are Schwartz.
+The same argument applies to real and imaginary parts.
+
+Since $D_0\subset D_{\mathrm w}$ and the latter has closed
+single-valued graph, $D_0$ is closable. Explicitly if $f_n\to0$
+and $f_n'\to v$ in $H$, their graph pairs tend to $(0,v)$ in
+$\mathcal G$, so $v=0$. The closure of the core graph therefore
+defines a densely defined closed operator $D$ with
+\begin{equation}\label{eq:minimalweak}
+ D_0\subset D\subset D_{\mathrm w}.
+\end{equation}
+This is an inclusion, not a proved identification of the minimal
+graph closure with every distributional solution of
+\eqref{eq:weakgraph}. The Schwartz graph is a core for $D$ by
+its definition. No different maximal weighted Sobolev domain or
+condition at individual zeros is substituted for it.
+
+The nonnegative core form $\kappa\|D_0f\|^2$ is closable for
+every $\kappa\geq0$. For $\kappa>0$, a sequence tending to zero
+whose derivative energies are Cauchy has derivatives Cauchy in
+$H$, hence convergent by completeness, and the preceding graph
+test makes their limit zero. For $\kappa=0$ the assertion is
+immediate. This is positive \emph{absolute-density} energy, not
+an energy obtained by integrating a square against the signed law.
+
+\section{Explicit adjoint probes and their totality}
+The real Hilbert adjoint of $D$ is defined by
+\[
+ v\in\dom D^*\ \Longleftrightarrow\
+ \exists z\in H\ \forall u\in\dom D:\ \ip v{Du}=\ip z u,
+ \qquad D^*v=z.
+\]
+Density of $\dom D$ makes $z$ unique. Its graph is closed by
+passing these inner-product identities to limits. For every
+complex Schwartz test $\varphi$ define explicit $H$ vectors
+\begin{equation}\label{eq:probes}
+ p_\varphi=w\overline\varphi,\qquad
+ q_\varphi=-w\overline{\varphi'}-b\overline\varphi.
+\end{equation}
+Boundedness of the coefficients and finiteness of $\mu$ put
+both in $H$. Their normalization is
+\[
+ \ip{p_\varphi}u=\operatorname{Re}Eu(\varphi),\quad
+ \ip{q_\varphi}u=-\operatorname{Re}Eu(\varphi')
+                       -\operatorname{Re}Fu(\varphi).
+\]
+For $(u,v)\in\mathcal G$, \eqref{eq:weakgraph} therefore gives
+$\ip{p_\varphi}v=\ip{q_\varphi}u$. Applied to $v=Du$, this proves
+\begin{equation}\label{eq:adjointprobe}
+ p_\varphi\in\dom D^*,\qquad D^*p_\varphi=q_\varphi.
+\end{equation}
+The formal development defines these vectors by real Riesz
+representation; \eqref{eq:probes} is the direct coordinate
+realization verified by the two displayed pairings. No division
+by a vanishing density is needed.
+
+Their real linear span is dense. If $u$ is orthogonal to every
+$p_\varphi$, then $\operatorname{Re}Eu(\varphi)=0$ for every
+$\varphi$. Testing $i\varphi$ gives the imaginary part as well,
+so $Eu=0$ and injectivity gives $u=0$. The closed span has zero
+orthogonal complement and is therefore $H$. In particular
+$\dom D^*$ is dense. These probes are total in $H$; they have
+not been asserted to be a graph core for $D^*$.
+
+For completeness the bidual is the original $D$. A pair $(u,v)$
+is in its closed graph precisely when it is orthogonal to every
+vector of its graph's orthogonal complement. The latter consists
+of $(-D^*z,z)$ for $z\in\dom D^*$: orthogonality to $(f,Df)$
+is exactly the adjoint definition. Orthogonality of $(u,v)$ to
+all these vectors is $\ip vz=\ip u{D^*z}$, the definition of
+$(u,v)$ in the graph of $D^{**}$. Thus $D^{**}=D$, without
+replacing the original domain by $\dom D_{\mathrm w}$.
+
+\section{The signed form and its full adjoint domain}
+Multiplication by $\sigma$ gives a bounded real-linear involution
+$J$: $J^2=I$, $\|Ju\|=\|u\|$, and
+$\ip{Ju}v=\ip u{Jv}$. These follow pointwise from
+$\sigma^2=1$ and the fact that $\sigma$ is real. The signed form
+\[
+ [u,v]=\ip{Ju}v=\operatorname{Re}\int\overline u vK\,dx
+\]
+is continuous and symmetric, and $[u,Ju]=\|u\|^2$. It is
+nondegenerate even if $[u,u]=0$ for nonzero $u$; isotropy is
+different from degeneracy. The Hilbert space decomposes into
+the closed functions supported on $\{K>0\}$ and $\{K<0\}$,
+where this form is respectively positive and negative. The zero
+set has zero $\mu$ measure. This is the familiar real indefinite
+Hilbert-space construction by a fundamental symmetry.
+
+Suppose $v,z\in H$. The identity $[Du,v]=[u,z]$ for every
+$u\in\dom D$ is equivalent, using symmetry of $J$, to
+\[
+ \ip{Du}{Jv}=\ip u{Jz}\quad\hbox{for every }u\in\dom D.
+\]
+By the Hilbert adjoint definition this holds if and only if
+$Jv\in\dom D^*$ and $D^*Jv=Jz$. Multiplying by $J$ proves
+the exact domain and formula $D^+v=JD^*Jv$ in
+Theorem~\ref{thm:main}. Its graph is the inverse image of the
+closed graph of $D^*$ under the continuous invertible map
+$(v,z)\mapsto(Jv,Jz)$, so it is closed. Its domain is
+$J(\dom D^*)$, dense because $J$ is a Hilbert isometry onto
+$H$ and the adjoint domain is dense.
+
+In particular $Jp_\varphi$ is in the signed-adjoint domain with
+$D^+(Jp_\varphi)=Jq_\varphi$; these are actual dense test-generated
+vectors. The signed adjoint is not obtained by presuming a formal
+logarithmic derivative acts on every Schwartz input. Behavior at
+zeros must satisfy its actual transported Hilbert-adjoint domain.
+
+\section{Graph projection and the exact energy minimizer}
+The graph of $D$ is a closed subspace of the product Hilbert
+space $H\oplus H$ with norm squared $\|u\|^2+\|v\|^2$.
+Project $(x,0)$ orthogonally onto it and write the projection
+as $(Rx,Gx)$. Thus $Rx\in\dom D$ and $Gx=DRx$.
+Orthogonal projection and the two coordinate maps are bounded
+linear, so $R,G$ are bounded real-linear maps. Orthogonality
+of the residual gives, for every $u\in\dom D$,
+\begin{equation}\label{eq:variational}
+ \ip{Rx}u+\ip{Gx}{Du}=\ip x u.
+\end{equation}
+The adjoint definition now yields
+\[
+ Gx\in\dom D^*,\qquad D^*Gx=x-Rx.
+\]
+Hence $Rx\in\dom D^*D$ and $(I+D^*D)Rx=x$.
+Taking $u=Rx$ in \eqref{eq:variational} gives
+\begin{equation}\label{eq:energyidentity}
+ \|Rx\|^2+\|Gx\|^2=\ip x{Rx}\geq0.
+\end{equation}
+Projection is contractive, so $\|Rx\|\leq\|x\|$.
+Self-adjointness of the bounded graph projection also gives
+$\ip{Rx}y=\ip x{Ry}$ by testing the two product inputs $(x,0)$
+and $(y,0)$. Thus $R$ is symmetric and positive in the Hilbert
+quadratic-form sense.
+
+If $Rx=0$, single-valuedness of the graph gives $Gx=0$.
+Equation \eqref{eq:variational} then says $x$ is orthogonal to
+the dense domain of $D$, so $x=0$. Thus $R$ is injective.
+If $y$ is orthogonal to its range, symmetry implies
+$\ip x{Ry}=0$ for every $x$, hence $Ry=0$ and $y=0$.
+The range of $R$ is consequently dense.
+
+The orthogonal residual $(x-Rx,-Gx)$ is perpendicular to
+$(u-Rx,Du-Gx)$. Pythagoras applied to their difference gives
+the exact gap \eqref{eq:gap}. The last two terms there are
+nonnegative, so $Rx$ minimizes $\|x-u\|^2+\|Du\|^2$.
+If equality holds for another input, $\|u-Rx\|^2=0$ gives
+uniqueness. Both its domain membership and its derivative value
+have been established before writing this minimization statement.
+
+\section{The full Hilbert energy operator}
+We finish the operator part without invoking an unspecified
+maximal differential expression. If $u\in\dom D$ and
+$v=Du\in\dom D^*$, set $z=D^*v$ and $x=u+z$.
+For every $a\in\dom D$, the adjoint identity gives
+$\ip x a=\ip u a+\ip v{Da}$. Comparing with
+\eqref{eq:variational} and testing the difference against
+$a=u-Rx$ yields
+\[
+ \|u-Rx\|^2+\|v-Gx\|^2=0.
+\]
+Thus $u=Rx$ and $z=x-Rx$. Conversely every $Rx$ has exactly
+this factorization by the previous section. Therefore
+\begin{equation}\label{eq:factorization}
+ \dom A=\ran R,\qquad A(Rx)=x-Rx,\qquad A=D^*D
+\end{equation}
+with the precise product domain in Theorem~\ref{thm:main}.
+Injectivity of $R$ makes this single-valued and density of its
+range makes $A$ densely defined. Its quadratic form is
+$\ip{Au}u=\|Du\|^2\geq0$.
+
+Symmetry follows either from $D^*D$ or directly from symmetry
+of $R$: $\ip{x-Rx}{Ry}=\ip{Rx}{y-Ry}$.
+To prove full self-adjointness, let $z\in\dom A^*$ with
+$A^*z=y$. Testing against $Rx$ for arbitrary $x\in H$ gives
+\[
+ \ip{x-Rx}z=\ip{Rx}y.
+\]
+Symmetry of $R$ makes this $\ip x{z-Rz-Ry}=0$ for all $x$.
+Hence $z=R(z+y)$, so $z\in\ran R=\dom A$ and
+$Az=z+y-R(z+y)=y$. Thus $A^*\subseteq A$; symmetry gives
+the reverse inclusion. An adjoint is closed by its defining
+pairings, so $A=A^*$ is also closed. Equation
+\eqref{eq:factorization} proves that $I+A$ is onto and its
+inverse is exactly the constructed $R$. This completes every
+operator assertion of Theorem~\ref{thm:main}.
+
+The weak distributional factorization retained by these actual
+solutions is
+\[
+ E(DRx)=(E(Rx))'-F(Rx),\qquad D^*(DRx)=x-Rx.
+\]
+It does not identify $A$ with an unqualified pointwise
+Sturm--Liouville expression or identify an energy-semigroup
+law with the signed density $K\,dx$.
+
+\section{An integrable score, simple zeros and a normalized example}
+Define $s_K=-K'/K$ where $K\ne0$ and set it to zero where
+$K=0$, the division convention of the source. The cancellation
+$Ks_K=-K'$ holds Lebesgue almost everywhere, including the
+zero set up to a null subset. To see the last qualification,
+every zero where $K'\ne0$ is isolated among zeros, by the
+definition of a nonzero derivative. A discrete subset of $\R$
+is countable: choose for each isolated point a rational interval
+containing no other point, and use the countable rational basis.
+Thus $K'=0$ at almost every zero of $K$.
+Consequently
+\begin{equation}\label{eq:scoreL1}
+ \int |s_K|\,d\mu=\int|K'|\,dx<\infty.
+\end{equation}
+For every Schwartz test $f$, ordinary integration by parts gives
+the actual signed Stein identity
+\[
+ \int f'K\,dx=\int f s_K K\,dx.
+\]
+The right side is absolutely integrable since $f$ is bounded and
+\eqref{eq:scoreL1} holds. Existence of this signed integral does
+not imply the score belongs to $H$.
+
+Suppose $K(0)=0$ and $K'(0)\ne0$. Continuity of $K'$ and
+the derivative definition give $c,C,\delta>0$ such that, for
+$0<x<\delta$,
+\[
+ |K'(x)|\geq c,\qquad 0<|K(x)|\leq Cx.
+\]
+Indeed the first inequality follows by staying within half of
+$|K'(0)|$; the quotient $K(x)/x\to K'(0)$ gives both
+nonvanishing and the upper bound for sufficiently small $x$.
+Then
+\[
+ \int|s_K|^2\,d\mu
+ \geq\int_0^\delta\frac{|K'(x)|^2}{|K(x)|}\,dx
+ \geq\frac{c^2}{C}\int_0^\delta\frac{dx}{x}=\infty.
+\]
+Thus a transverse zero obstructs $L^2$ score integrability,
+while all of Theorem~\ref{thm:main} still holds.
+
+For a concrete normalized signed density set
+\[
+ K_0(x)=\frac{(x+x^2)e^{-x^2}}{M},\qquad
+ M=\int_\R(x+x^2)e^{-x^2}\,dx>0.
+\]
+The odd term integrates to zero by $x\mapsto-x$. The remaining
+$x^2e^{-x^2}$ is nonnegative and strictly positive on $(1,2)$,
+so its integral is positive and finite. Hence $K_0$ is Schwartz,
+has integral one and is strictly negative at $x=-1/2$.
+Also $K_0(0)=0$ and $K'_0(0)=1/M\ne0$. It follows that
+$s_{K_0}\in L^1(|K_0|\,dx)\setminus L^2(|K_0|\,dx)$.
+Its original derivative closure, dense signed adjoint and positive
+Hilbert energy resolvent/operator nevertheless exist. This
+counterexample does not say the score of every sign-changing
+higher-heat kernel has a simple zero; that extra zero hypothesis
+has not been proved or assumed here.
+
+\section{Polynomial Stein weights and higher even heat marginals}
+There is a different first-order obstruction that needs no
+simple-zero hypothesis. Suppose a real polynomial $P$ satisfies
+\[
+ \int f'K\,dx=\int f P K\,dx
+ \quad\hbox{for every real Schwartz }f.
+\]
+Integration by parts says $\int f(K'+PK)=0$ for all such $f$.
+The residual $K'+PK$ is itself Schwartz; choosing $f$ to be
+that residual gives its squared integral zero. Continuity then
+gives $K'+PK=0$ at every point. If
+$Q(x)=\int_0^xP(y)\,dy$, differentiation yields
+\[
+ (e^{Q(x)}K(x))'=e^{Q(x)}(K'(x)+P(x)K(x))=0.
+\]
+The expression is constant on $\R$ by the mean value theorem.
+Since the exponential is strictly positive, a nonzero such $K$
+has one fixed sign. Thus a sign-changing real Schwartz density
+cannot have any polynomial first-order Stein weight of this form.
+This does not preclude the measurable $L^1$ score above, higher
+derivative identities or a calculus on a specified test dual.
+
+For example let $p=2m>2$ and $t>0$, and let $k_t$ be the real
+even Schwartz kernel with angular Fourier transform
+$\widehat{k_t}(\xi)=e^{-t\xi^p}$. Its mass is one and its
+second moment is zero, by differentiating that transform twice
+at zero. If $k_t\geq0$ almost everywhere, the nonnegative
+function $x^2k_t(x)$ would have zero integral, forcing $k_t=0$
+away from zero almost everywhere, contradicting its unit
+Lebesgue mass. Thus it has a negative value; positive mass also
+gives a positive value. It is sign-changing, so the polynomial
+first-order weight is impossible. On the other hand its
+absolute-density space has every closed operator constructed
+above. The formal library uses Fourier phases $e^{2\pi i\xi x}$;
+rescaling angular frequency changes neither zero second moment
+nor sign and operator conclusions.
+
+This is a statement about each fixed signed marginal. It gives
+neither a finite-variation signed path law nor predictable
+representation, and its positive energy is not a signed-square
+isometry. The separate completed multichannel test-dual calculus
+has different domains and must retain them.
+
+\section{Classical antecedents and exact source boundary}
+Weighted derivative closability is classical. De Cicco--Serra
+Cassano~\cite{DCSC}, Section 2.2/condition (12), recall Hamza's
+one-dimensional criterion. Continuous $w$ is locally bounded below
+where positive, so $1/w$ is locally integrable there. Their
+bounded-interval relaxation results do not identify our global
+minimal and weak graphs. Derkach--Trunk~\cite{DT}, Section 2.1,
+give the classical $T^+=JT^*J$ mechanism. Their coupling and
+spectral theorems are not used. Graph projection and $D^*D$ are
+classical Hilbert theory; no priority is claimed.
+
+The exact theorem map records frozen declarations at
+\begin{center}\texttt{\small bab688bb6140cd6316c80680095a914ea0d346db}.\end{center}
+Riesz-probe coordinates and regrouped human proofs are labelled
+reconstructions. The original full-build/axiom evidence is
+hash-checked; no research source or original domain is changed.
+This formalization companion awaits independent referee review.
+
+\begin{thebibliography}{9}
+\bibitem{DCSC} V. De Cicco and F. Serra Cassano,
+\emph{Relaxation and optimal finiteness domain for degenerate
+quadratic functionals---one dimensional case}, primary author
+preprint, author-hosted 2024 version.
+\url{https://cvgmt.sns.it/media/doc/paper/6038/DCSC-Relaxation_22_1_2024.pdf}.
+Section 2.2/condition (12) comparison only.
+\bibitem{DT} V. Derkach and C. Trunk,
+\emph{Coupling of definitizable operators in Kre\u\i n spaces},
+TU Ilmenau preprint M 17/03 (2017).
+\url{https://d-nb.info/1125462493/34}.
+Section 2.1 comparison only.
+\end{thebibliography}
+\end{document}

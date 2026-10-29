@@ -239,3 +239,7 @@ Expanded the quadratic companion from seven to eight pages with complete centere
 ## Sharp threshold occupation and finite-sector regularity
 
 Diagnostic companion expands from nine to eleven pages: exact relevant-boundary iff criterion, downward-shift mass limit, endpoint occupation necessity, quantitative strips, maximum kinks/positive denominators and strictly dominant smooth sector full-error test. 154 exact frozen correspondences; fourteen exact finite checks in two groups pass. All pages inspected, new pages enlarged, compilation clean and receipts fresh. Twenty-five reviewed drafts total 253 pages.
+
+## Signed-density derivative, signed adjoint and positive Hilbert energy
+
+Completed a new seven-page classical formalization companion with bounded K-squared rigging, original dense derivative closure, total adjoint probes, full signed-adjoint domain, exact energy minimizer/nonnegative self-adjoint Hilbert operator and normalized L1/non-L2-score counterexample. 142 exact frozen source correspondences; seven exact matrix/Gaussian-polynomial checks pass. Every final page inspected, key proofs enlarged; shortened scope keeps references on the last argument page, final compilation clean. Minimal/weak and signed/Hilbert distinctions retained; primary Hamza/Krein context credited. Twenty-six drafts total 260 pages.

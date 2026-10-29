@@ -21,7 +21,7 @@ Frozen mathematical baseline: `bab688bb6140cd6316c80680095a914ea0d346db` (checkp
 
 ## Current consolidation and significance
 
-Twenty-five reviewed drafts total 253 pages; the [catalog](INDEX.md) gives each current PDF, source, map and status. The most substantial explicit arithmetic package is the sixteen-page quartic actual-saddle proof, exact rational time-eight obstruction, attained eventual threshold and endpoint collision. The fractional and sixth-order papers retain different order/zero quantifiers. No RH or quadratic-threshold implication is inferred.
+Twenty-six reviewed drafts total 260 pages; the [catalog](INDEX.md) gives each current PDF, source, map and status. The most substantial explicit arithmetic package is the sixteen-page quartic actual-saddle proof, exact rational time-eight obstruction, attained eventual threshold and endpoint collision. The fractional and sixth-order papers retain different order/zero quantifiers. No RH or quadratic-threshold implication is inferred.
 
 The signed multichannel paper consolidates the actual finite signed telescope, factorial analytic domain, native limits and completed observable reconstruction. The IBM papers separate physical variation/quadrature, original clock-domain and critical-noise exclusions, actual native averages/fixed-past time calculus, and entire-energy associativity/completed reconstruction. Their different domains and topologies are not interchangeable. In particular, critical clock noise does not supply a positive subcritical Hermite-sector domain theorem; future-increment noise probes are noncausal.
 
@@ -56,3 +56,5 @@ The nine-page fluid calibration suite now includes a smooth periodic Gaussian sh
 The eight-page completed quadratic companion now explicitly separates homogeneous square-covariance positivity from a centered mixed first/second-chaos counterexample with covariance -1/2. General amplitude formulas are direct deductions, and the primary homogeneous-chaos product theorem is credited.
 
 The eleven-page diagnostic companion also consolidates the exact relevant-boundary equivalence for uniform label/occupation stability, a detecting downward-shift endpoint test, finite-maximum kinks and a strictly dominant positive-sector occupation counterexample. Classical measure-continuity mechanisms are credited and no physical score realization is assumed.
+
+The new seven-page signed-density operator companion reconstructs original derivative closability despite failure of L2 score, exact signed-adjoint domain and positive Hilbert energy. Total probes, minimal/weak distinction and an actual normalized simple-zero counterexample are proved. Weighted and Krein mechanisms are explicitly classical; no path law or pseudoprocess generator identification is inferred.
