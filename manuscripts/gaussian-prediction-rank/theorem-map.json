@@ -1,0 +1,333 @@
+{
+  "baseline": "bab688bb6140cd6316c80680095a914ea0d346db",
+  "entries": [
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianSingleObservationPrediction.wickSpan_closure",
+      "file": "Foundation/GaussianSingleObservationPrediction.lean",
+      "line": 72,
+      "source_sha256": "13d255106ada688ae91f99058afbade2f4d8a0f82716b7605c81a4edb029bf83",
+      "declaration_header": "theorem wickSpan_closure (u : CoefficientSpace) :\n    (wickSpan u).topologicalClosure=singleGenerated u",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianSingleObservationPrediction.lean#L72"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickConditionalProjection.conditional_wick_projection",
+      "file": "Foundation/GaussianWickConditionalProjection.lean",
+      "line": 121,
+      "source_sha256": "560f67f90c48ddbc657b5eb34d97d57eba7136d96d39c0879587b0797d04078d",
+      "declaration_header": "theorem conditional_wick_projection {I : Type*} (h : I \u2192 CoefficientSpace) (u : CoefficientSpace) (n : \u2115) :\n    conditionalProjection h (wick u n)=(wick (sourceProjection h u) n : GaussianL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickConditionalProjection.lean#L121"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickConditionalProjection.conditional_firstChaos_projection",
+      "file": "Foundation/GaussianWickConditionalProjection.lean",
+      "line": 128,
+      "source_sha256": "560f67f90c48ddbc657b5eb34d97d57eba7136d96d39c0879587b0797d04078d",
+      "declaration_header": "theorem conditional_firstChaos_projection {I : Type*} (h : I \u2192 CoefficientSpace) (u : CoefficientSpace) :\n    conditionalProjection h (firstChaosEmbedding u)=firstChaosEmbedding (sourceProjection h u)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickConditionalProjection.lean#L128"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianWickConditionalProjection.conditional_wick_energy",
+      "file": "Foundation/GaussianWickConditionalProjection.lean",
+      "line": 132,
+      "source_sha256": "560f67f90c48ddbc657b5eb34d97d57eba7136d96d39c0879587b0797d04078d",
+      "declaration_header": "theorem conditional_wick_energy {I : Type*} (h : I \u2192 CoefficientSpace) (u : CoefficientSpace) (n : \u2115) :\n    \u2016conditionalProjection h (wick u n)\u2016^2=(n.factorial : \u211d)*(\u2016sourceProjection h u\u2016^2)^n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianWickConditionalProjection.lean#L132"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalPredictionSpectrum.terminal_expansion_hasSum",
+      "file": "Foundation/GaussianTerminalPredictionSpectrum.lean",
+      "line": 58,
+      "source_sha256": "4d4086726d4d3a091e1d912033a883e0209dbe57479e6687de7f7774a26232bb",
+      "declaration_header": "theorem terminal_expansion_hasSum (u : CoefficientSpace) (hu : \u2016u\u2016^2=1)\n    (f : GaussianL2) (hf : f\u2208singleGenerated u) :\n    HasSum (fun n => coefficient u f n \u2022 (wick u n : GaussianL2)) f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalPredictionSpectrum.lean#L58"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalPredictionSpectrum.terminal_prediction_expansion",
+      "file": "Foundation/GaussianTerminalPredictionSpectrum.lean",
+      "line": 63,
+      "source_sha256": "4d4086726d4d3a091e1d912033a883e0209dbe57479e6687de7f7774a26232bb",
+      "declaration_header": "theorem terminal_prediction_expansion {I : Type*} (h : I \u2192 CoefficientSpace)\n    (u : CoefficientSpace) (hu : \u2016u\u2016^2=1) (f : GaussianL2) (hf : f\u2208singleGenerated u) :\n    HasSum (fun n => coefficient u f n \u2022 (wick (sourceProjection h u) n : GaussianL2))\n      (conditionalProjection h f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalPredictionSpectrum.lean#L63"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalPredictionSpectrum.terminal_prediction_energy_hasSum",
+      "file": "Foundation/GaussianTerminalPredictionSpectrum.lean",
+      "line": 70,
+      "source_sha256": "4d4086726d4d3a091e1d912033a883e0209dbe57479e6687de7f7774a26232bb",
+      "declaration_header": "theorem terminal_prediction_energy_hasSum {I : Type*} (h : I \u2192 CoefficientSpace)\n    (u : CoefficientSpace) (hu : \u2016u\u2016^2=1) (f : GaussianL2) (hf : f\u2208singleGenerated u) :\n    HasSum (fun n => (coefficient u f n)^2*(n.factorial : \u211d)*(\u2016sourceProjection h u\u2016^2)^n)\n      (\u2016conditionalProjection h f\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalPredictionSpectrum.lean#L70"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalPredictionSpectrum.terminal_energy_hasSum",
+      "file": "Foundation/GaussianTerminalPredictionSpectrum.lean",
+      "line": 83,
+      "source_sha256": "4d4086726d4d3a091e1d912033a883e0209dbe57479e6687de7f7774a26232bb",
+      "declaration_header": "theorem terminal_energy_hasSum (u : CoefficientSpace) (hu : \u2016u\u2016^2=1)\n    (f : GaussianL2) (hf : f\u2208singleGenerated u) :\n    HasSum (fun n => (coefficient u f n)^2*(n.factorial : \u211d)) (\u2016f\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalPredictionSpectrum.lean#L83"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalPredictionSpectrum.terminal_prediction_rank_upper",
+      "file": "Foundation/GaussianTerminalPredictionSpectrum.lean",
+      "line": 91,
+      "source_sha256": "4d4086726d4d3a091e1d912033a883e0209dbe57479e6687de7f7774a26232bb",
+      "declaration_header": "theorem terminal_prediction_rank_upper {I : Type*} (h : I \u2192 CoefficientSpace)\n    (u : CoefficientSpace) (hu : \u2016u\u2016^2=1) (f : GaussianL2) (hf : f\u2208singleGenerated u)\n    (m : \u2115) (hrank : \u2200 n, n<m \u2192 coefficient u f n=0) :\n    \u2016conditionalProjection h f\u2016^2 \u2264 (\u2016sourceProjection h u\u2016^2)^m*\u2016f\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalPredictionSpectrum.lean#L91"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianTerminalPredictionSpectrum.terminal_prediction_rank_lower",
+      "file": "Foundation/GaussianTerminalPredictionSpectrum.lean",
+      "line": 108,
+      "source_sha256": "4d4086726d4d3a091e1d912033a883e0209dbe57479e6687de7f7774a26232bb",
+      "declaration_header": "theorem terminal_prediction_rank_lower {I : Type*} (h : I \u2192 CoefficientSpace)\n    (u : CoefficientSpace) (hu : \u2016u\u2016^2=1) (f : GaussianL2) (hf : f\u2208singleGenerated u) (m : \u2115) :\n    (coefficient u f m)^2*(m.factorial : \u211d)*(\u2016sourceProjection h u\u2016^2)^m \u2264\n      \u2016conditionalProjection h f\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianTerminalPredictionSpectrum.lean#L108"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictionRankAsymptotic.leading_rank_remainder",
+      "file": "Foundation/GaussianPredictionRankAsymptotic.lean",
+      "line": 12,
+      "source_sha256": "7f729b734391f715aa4851164ab8d2b055603d319d73e7ee0e21bd65ce360bc8",
+      "declaration_header": "theorem leading_rank_remainder {I : Type*} (h : I \u2192 CoefficientSpace)\n    (u : CoefficientSpace) (hu : \u2016u\u2016^2=1) (f : GaussianL2) (hf : f\u2208singleGenerated u)\n    (m : \u2115) (hrank : \u2200 n, n<m \u2192 coefficient u f n=0) :\n    0\u2264\u2016conditionalProjection h f\u2016^2-(coefficient u f m)^2*(m.factorial : \u211d)*(\u2016sourceProjection h u\u2016^2)^m \u2227\n    \u2016conditionalProjection h f\u2016^2-(coefficient u f m)^2*(m.factorial : \u211d)*(\u2016sourceProjection h u\u2016^2)^m\n      \u2264(\u2016sourceProjection h u\u2016^2)^(m+1)*\u2016f\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictionRankAsymptotic.lean#L12"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictionRankAsymptotic.normalized_rank_remainder",
+      "file": "Foundation/GaussianPredictionRankAsymptotic.lean",
+      "line": 52,
+      "source_sha256": "7f729b734391f715aa4851164ab8d2b055603d319d73e7ee0e21bd65ce360bc8",
+      "declaration_header": "theorem normalized_rank_remainder {I : Type*} (h : I \u2192 CoefficientSpace)\n    (u : CoefficientSpace) (hu : \u2016u\u2016^2=1) (f : GaussianL2) (hf : f\u2208singleGenerated u)\n    (m : \u2115) (hrank : \u2200 n, n<m \u2192 coefficient u f n=0)\n    (hv : 0<\u2016sourceProjection h u\u2016^2) :\n    0\u2264\u2016conditionalProjection h f\u2016^2/(\u2016sourceProjection h u\u2016^2)^m-\n      (coefficient u f m)^2*(m.factorial : \u211d) \u2227\n    \u2016conditionalProjection h f\u2016^2/(\u2016sourceProjection h u\u2016^2)^m-\n      (coefficient u f m)^2*(m.factorial : \u211d)\u2264\u2016sourceProjection h u\u2016^2*\u2016f\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictionRankAsymptotic.lean#L52"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPredictionRankAsymptotic.leading_rank_limit",
+      "file": "Foundation/GaussianPredictionRankAsymptotic.lean",
+      "line": 75,
+      "source_sha256": "7f729b734391f715aa4851164ab8d2b055603d319d73e7ee0e21bd65ce360bc8",
+      "declaration_header": "theorem leading_rank_limit {X I : Type*} (l : Filter X) (h : X \u2192 I \u2192 CoefficientSpace)\n    (u : CoefficientSpace) (hu : \u2016u\u2016^2=1) (f : GaussianL2) (hf : f\u2208singleGenerated u)\n    (m : \u2115) (hrank : \u2200 n, n<m \u2192 coefficient u f n=0)\n    (hv0 : Tendsto (fun x => \u2016sourceProjection (h x) u\u2016^2) l (\ud835\udcdd 0))\n    (hvpos : \u2200\u1da0 x in l, 0<\u2016sourceProjection (h x) u\u2016^2) :\n    Tendsto (fun x => \u2016conditionalProjection (h x) f\u2016^2/(\u2016sourceProjection (h x) u\u2016^2)^m)\n      l (\ud835\udcdd ((coefficient u f m)^2*(m.factorial : \u211d)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPredictionRankAsymptotic.lean#L75"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousFractionalPrediction.augmented_past_eq",
+      "file": "Foundation/ContinuousFractionalPrediction.lean",
+      "line": 24,
+      "source_sha256": "cf97a9c6e7788ac820bde1130090a22095c918e544644d60dd35e743292401b8",
+      "declaration_header": "theorem augmented_past_eq (t : \u211d\u22650) :\n    augment (naturalPast H hH0 hH1 t) gaussianProduct =\n      augment (MeasurableSpace.comap (firstChaosFamily\n        (FractionalPredictionObstruction.pastDirections H hH0 hH1 t)) inferInstance)\n        gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousFractionalPrediction.lean#L24"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousFractionalPrediction.conditionalProjection_actual_past",
+      "file": "Foundation/ContinuousFractionalPrediction.lean",
+      "line": 37,
+      "source_sha256": "cf97a9c6e7788ac820bde1130090a22095c918e544644d60dd35e743292401b8",
+      "declaration_header": "theorem conditionalProjection_actual_past (t : \u211d\u22650) (F : GaussianL2) :\n    conditionalProjection (FractionalPredictionObstruction.pastDirections H hH0 hH1 t) F\n      =\u1d50[gaussianProduct] gaussianProduct[F | naturalPast H hH0 hH1 t]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousFractionalPrediction.lean#L37"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.ContinuousFractionalPrediction.terminal_forecast_actual_past",
+      "file": "Foundation/ContinuousFractionalPrediction.lean",
+      "line": 50,
+      "source_sha256": "cf97a9c6e7788ac820bde1130090a22095c918e544644d60dd35e743292401b8",
+      "declaration_header": "theorem terminal_forecast_actual_past (t : \u211d\u22650) :\n    FractionalPredictionObstruction.forecast H hH0 hH1 t =\u1d50[gaussianProduct]\n      gaussianProduct[process H hH0 hH1 1 | naturalPast H hH0 hH1 t]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/ContinuousFractionalPrediction.lean#L50"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalDualRegimePrediction.terminal_covariance_linear_lower",
+      "file": "Foundation/FractionalDualRegimePrediction.lean",
+      "line": 16,
+      "source_sha256": "7149fb6854164365b6b16d121bccdd112d9f990f0a4d785e73c3602125dc4e19",
+      "declaration_header": "theorem terminal_covariance_linear_lower (H : \u211d) (hH0 : 0<H) (t : \u211d\u22650) (ht : t\u22641) :\n    (t : \u211d)/2 \u2264 FractionalSpectralGeometry.covariance H 1 t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalDualRegimePrediction.lean#L16"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalDualRegimePrediction.linear_forecast_dual_lower",
+      "file": "Foundation/FractionalDualRegimePrediction.lean",
+      "line": 53,
+      "source_sha256": "7149fb6854164365b6b16d121bccdd112d9f990f0a4d785e73c3602125dc4e19",
+      "declaration_header": "theorem linear_forecast_dual_lower (H : \u211d) (hH0 : 0<H) (hH1 : H<1)\n    (t : \u211d\u22650) (ht0 : 0<t) (ht1 : t\u22641) :\n    (t : \u211d)^(predictionPower H)/4 \u2264 \u2016FractionalPredictionObstruction.forecast H hH0 hH1 t\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalDualRegimePrediction.lean#L53"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalDualRegimePrediction.terminal_forecast_dual_lower",
+      "file": "Foundation/FractionalDualRegimePrediction.lean",
+      "line": 73,
+      "source_sha256": "7149fb6854164365b6b16d121bccdd112d9f990f0a4d785e73c3602125dc4e19",
+      "declaration_header": "theorem terminal_forecast_dual_lower (H : \u211d) (hH0 : 0<H) (hH1 : H<1)\n    (f : GaussianL2) (hf : f\u2208singleGenerated (terminalDirection H hH0 hH1))\n    (t : \u211d\u22650) (ht0 : 0<t) (ht1 : t\u22641) (m : \u2115) :\n    ((coefficient (terminalDirection H hH0 hH1) f m)^2*(m.factorial : \u211d)/(4 : \u211d)^m)*\n      (t : \u211d)^(predictionPower H*(m : \u211d)) \u2264 \u2016forecast H hH0 hH1 f t\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalDualRegimePrediction.lean#L73"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalDualRegimePrediction.no_higher_dual_prediction_increment_bound",
+      "file": "Foundation/FractionalDualRegimePrediction.lean",
+      "line": 91,
+      "source_sha256": "7149fb6854164365b6b16d121bccdd112d9f990f0a4d785e73c3602125dc4e19",
+      "declaration_header": "theorem no_higher_dual_prediction_increment_bound (H : \u211d) (hH0 : 0<H) (hH1 : H<1)\n    (f : GaussianL2) (hf : f\u2208singleGenerated (terminalDirection H hH0 hH1))\n    (hc : coefficient (terminalDirection H hH0 hH1) f 0=0)\n    (m : \u2115) (hcm : coefficient (terminalDirection H hH0 hH1) f m\u22600)\n    (\u03b1 : \u211d) (h\u03b1 : predictionPower H*(m : \u211d)<\u03b1) (C \u03b4 : \u211d) (h\u03b4 : 0<\u03b4) :\n    \u2203 t : \u211d\u22650, 0<t \u2227 (t : \u211d)<\u03b4 \u2227 t\u22641 \u2227\n      C*(t : \u211d)^\u03b1 < \u2016forecast H hH0 hH1 f t-forecast H hH0 hH1 f 0\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalDualRegimePrediction.lean#L91"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalDualRegimePrediction.exists_positive_terminal_rank",
+      "file": "Foundation/FractionalDualRegimePrediction.lean",
+      "line": 123,
+      "source_sha256": "7149fb6854164365b6b16d121bccdd112d9f990f0a4d785e73c3602125dc4e19",
+      "declaration_header": "theorem exists_positive_terminal_rank (H : \u211d) (hH0 : 0<H) (hH1 : H<1)\n    (f : GaussianL2) (hf : f\u2208singleGenerated (terminalDirection H hH0 hH1))\n    (hc : coefficient (terminalDirection H hH0 hH1) f 0=0) (hf0 : f\u22600) :\n    \u2203 m : \u2115, 0<m \u2227 coefficient (terminalDirection H hH0 hH1) f m\u22600 \u2227\n      \u2200 n<m, coefficient (terminalDirection H hH0 hH1) f n=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalDualRegimePrediction.lean#L123"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInverseNumberPotential.potentialOperator",
+      "file": "Foundation/GaussianInverseNumberPotential.lean",
+      "line": 14,
+      "source_sha256": "7aaadb6b484f5003e2d5ec7b6315533377bcb15beba6ecb57af9845e383b25b2",
+      "declaration_header": "def potentialOperator : GaussianL2 \u2192L[\u211d] GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInverseNumberPotential.lean#L14"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInverseNumberPotential.potential_hasSum",
+      "file": "Foundation/GaussianInverseNumberPotential.lean",
+      "line": 33,
+      "source_sha256": "7aaadb6b484f5003e2d5ec7b6315533377bcb15beba6ecb57af9845e383b25b2",
+      "declaration_header": "theorem potential_hasSum (f : GaussianL2) :\n    HasSum (fun n : \u2115 => (n : \u211d)\u207b\u00b9 \u2022 projection n f) (potentialOperator f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInverseNumberPotential.lean#L33"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInverseNumberPotential.potential_positive",
+      "file": "Foundation/GaussianInverseNumberPotential.lean",
+      "line": 73,
+      "source_sha256": "7aaadb6b484f5003e2d5ec7b6315533377bcb15beba6ecb57af9845e383b25b2",
+      "declaration_header": "theorem potential_positive (f : GaussianL2) :\n    inner \u211d (potentialOperator f) f=\u2016recovery f\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInverseNumberPotential.lean#L73"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInverseNumberPotential.potential_preserves_generated",
+      "file": "Foundation/GaussianInverseNumberPotential.lean",
+      "line": 67,
+      "source_sha256": "7aaadb6b484f5003e2d5ec7b6315533377bcb15beba6ecb57af9845e383b25b2",
+      "declaration_header": "theorem potential_preserves_generated {I : Type*} (h : I \u2192 CoefficientSpace)\n    {f : GaussianL2} (hf : f\u2208generated h) : potentialOperator f\u2208generated h",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInverseNumberPotential.lean#L67"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianInverseNumberPotential.single_observation_potential_compact",
+      "file": "Foundation/GaussianInverseNumberPotential.lean",
+      "line": 80,
+      "source_sha256": "7aaadb6b484f5003e2d5ec7b6315533377bcb15beba6ecb57af9845e383b25b2",
+      "declaration_header": "theorem single_observation_potential_compact (u : CoefficientSpace) (hu : \u2016u\u2016^2=1) :\n    IsCompactOperator (potentialOperator.comp (conditionalProjection (fun _ : Unit => u)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianInverseNumberPotential.lean#L80"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPotentialPredictionRank.potential_inner",
+      "file": "Foundation/GaussianPotentialPredictionRank.lean",
+      "line": 14,
+      "source_sha256": "e0ceeafb9ca06f911d0235b30929de2f798ccf587ec332ecc381cdad0053b879",
+      "declaration_header": "theorem potential_inner (f g : GaussianL2) :\n    inner \u211d (potentialOperator f) g=inner \u211d f (potentialOperator g)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPotentialPredictionRank.lean#L14"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPotentialPredictionRank.potential_sector",
+      "file": "Foundation/GaussianPotentialPredictionRank.lean",
+      "line": 23,
+      "source_sha256": "e0ceeafb9ca06f911d0235b30929de2f798ccf587ec332ecc381cdad0053b879",
+      "declaration_header": "theorem potential_sector (n : \u2115) (f : sector n) :\n    potentialOperator f=(n : \u211d)\u207b\u00b9 \u2022 (f : GaussianL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPotentialPredictionRank.lean#L23"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPotentialPredictionRank.potential_coefficient",
+      "file": "Foundation/GaussianPotentialPredictionRank.lean",
+      "line": 37,
+      "source_sha256": "e0ceeafb9ca06f911d0235b30929de2f798ccf587ec332ecc381cdad0053b879",
+      "declaration_header": "theorem potential_coefficient (u : CoefficientSpace) (f : GaussianL2) (n : \u2115) :\n    coefficient u (potentialOperator f) n=(n : \u211d)\u207b\u00b9*coefficient u f n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPotentialPredictionRank.lean#L37"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPotentialPredictionRank.positive_coefficient_iff",
+      "file": "Foundation/GaussianPotentialPredictionRank.lean",
+      "line": 45,
+      "source_sha256": "e0ceeafb9ca06f911d0235b30929de2f798ccf587ec332ecc381cdad0053b879",
+      "declaration_header": "theorem positive_coefficient_iff (u : CoefficientSpace) (f : GaussianL2) (n : \u2115) (hn : 0<n) :\n    coefficient u (potentialOperator f) n\u22600 \u2194 coefficient u f n\u22600",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPotentialPredictionRank.lean#L45"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPotentialPredictionRank.potential_prediction_energy",
+      "file": "Foundation/GaussianPotentialPredictionRank.lean",
+      "line": 54,
+      "source_sha256": "e0ceeafb9ca06f911d0235b30929de2f798ccf587ec332ecc381cdad0053b879",
+      "declaration_header": "theorem potential_prediction_energy {I : Type*} (h : I \u2192 CoefficientSpace)\n    (u : CoefficientSpace) (hu : \u2016u\u2016^2=1) (f : GaussianL2) (hf : f\u2208singleGenerated u) :\n    HasSum (fun n : \u2115 => ((n : \u211d)\u207b\u00b9*coefficient u f n)^2*(n.factorial : \u211d)*\n      (\u2016GaussianWickConditionalProjection.sourceProjection h u\u2016^2)^n)\n      (\u2016conditionalProjection h (potentialOperator f)\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPotentialPredictionRank.lean#L54"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPotentialPredictionRank.fractional_potential_lower",
+      "file": "Foundation/GaussianPotentialPredictionRank.lean",
+      "line": 62,
+      "source_sha256": "e0ceeafb9ca06f911d0235b30929de2f798ccf587ec332ecc381cdad0053b879",
+      "declaration_header": "theorem fractional_potential_lower (H : \u211d) (hH0 : 0<H) (hH1 : H<1)\n    (f : GaussianL2) (hf : f\u2208singleGenerated (terminalDirection H hH0 hH1))\n    (t : \u211d\u22650) (ht0 : 0<t) (ht1 : t\u22641) (m : \u2115) :\n    (((m : \u211d)\u207b\u00b9*coefficient (terminalDirection H hH0 hH1) f m)^2*\n      (m.factorial : \u211d)/(4 : \u211d)^m)*(t : \u211d)^(predictionPower H*(m : \u211d)) \u2264\n      \u2016forecast H hH0 hH1 (potentialOperator f) t\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPotentialPredictionRank.lean#L62"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPotentialPredictionRank.fractional_potential_no_higher_bound",
+      "file": "Foundation/GaussianPotentialPredictionRank.lean",
+      "line": 72,
+      "source_sha256": "e0ceeafb9ca06f911d0235b30929de2f798ccf587ec332ecc381cdad0053b879",
+      "declaration_header": "theorem fractional_potential_no_higher_bound (H : \u211d) (hH0 : 0<H) (hH1 : H<1)\n    (f : GaussianL2) (hf : f\u2208singleGenerated (terminalDirection H hH0 hH1))\n    (m : \u2115) (hm : 0<m) (hcm : coefficient (terminalDirection H hH0 hH1) f m\u22600)\n    (\u03b1 : \u211d) (h\u03b1 : predictionPower H*(m : \u211d)<\u03b1) (C \u03b4 : \u211d) (h\u03b4 : 0<\u03b4) :\n    \u2203 t : \u211d\u22650, 0<t \u2227 (t : \u211d)<\u03b4 \u2227 t\u22641 \u2227\n      C*(t : \u211d)^\u03b1 < \u2016forecast H hH0 hH1 (potentialOperator f) t-\n        forecast H hH0 hH1 (potentialOperator f) 0\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPotentialPredictionRank.lean#L72"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalCurrentObservationObstruction.source_covariances",
+      "file": "Foundation/FractionalCurrentObservationObstruction.lean",
+      "line": 38,
+      "source_sha256": "41da4a7cf16f957e2d8defe4c944ca2e94dfab416fb1b2ad50352b20f5c0f785",
+      "declaration_header": "theorem source_covariances :\n    inner \u211d (direction 4) (direction 2)=1 \u2227\n    inner \u211d (direction 4) (direction 1)=(3-Real.sqrt 3)/2 \u2227\n    inner \u211d (direction 2) (direction 1)=Real.sqrt 2/2 \u2227\n    \u2016direction 2\u2016^2=Real.sqrt 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalCurrentObservationObstruction.lean#L38"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalCurrentObservationObstruction.current_forecast_earlier_pairing",
+      "file": "Foundation/FractionalCurrentObservationObstruction.lean",
+      "line": 51,
+      "source_sha256": "41da4a7cf16f957e2d8defe4c944ca2e94dfab416fb1b2ad50352b20f5c0f785",
+      "declaration_header": "theorem current_forecast_earlier_pairing :\n    inner \u211d currentForecast (firstChaosEmbedding (direction 1))=1/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalCurrentObservationObstruction.lean#L51"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalCurrentObservationObstruction.full_forecast_earlier_pairing",
+      "file": "Foundation/FractionalCurrentObservationObstruction.lean",
+      "line": 61,
+      "source_sha256": "41da4a7cf16f957e2d8defe4c944ca2e94dfab416fb1b2ad50352b20f5c0f785",
+      "declaration_header": "theorem full_forecast_earlier_pairing :\n    inner \u211d fullForecast (firstChaosEmbedding (direction 1))=(3-Real.sqrt 3)/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalCurrentObservationObstruction.lean#L61"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalCurrentObservationObstruction.full_past_not_current",
+      "file": "Foundation/FractionalCurrentObservationObstruction.lean",
+      "line": 72,
+      "source_sha256": "41da4a7cf16f957e2d8defe4c944ca2e94dfab416fb1b2ad50352b20f5c0f785",
+      "declaration_header": "theorem full_past_not_current : fullForecast\u2260currentForecast",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalCurrentObservationObstruction.lean#L72"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.FractionalCurrentObservationObstruction.strict_prediction_energy_gain",
+      "file": "Foundation/FractionalCurrentObservationObstruction.lean",
+      "line": 79,
+      "source_sha256": "41da4a7cf16f957e2d8defe4c944ca2e94dfab416fb1b2ad50352b20f5c0f785",
+      "declaration_header": "theorem strict_prediction_energy_gain : \u2016currentForecast\u2016^2<\u2016fullForecast\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FractionalCurrentObservationObstruction.lean#L79"
+    }
+  ],
+  "paper_sections": {
+    "1-2": "full L2 terminal Hermite expansion and conditional Wick projection; rank energy and remainder",
+    "3": "actual continuous fractional past and dual-regime lower obstruction",
+    "4": "actual inverse-number potential, single-observation compactness, coefficient preservation",
+    "5": "quarter-Hurst full-past/current-value witness"
+  },
+  "human_reorganization": [
+    "Hermite completeness is proved through an entire Gaussian Laplace transform and finite-measure Fourier uniqueness; the formal proof uses its already established Gaussian generated polynomial density and chaos decomposition.",
+    "The conditional Wick formula is proved through Gaussian residual independence and the exponential generating function; the formal proof uses coefficient pairing recursions and generated-space density.",
+    "Actual continuous-past identification is only at the L2/mod-null level. Raw sigma-algebras are not equated and no common exceptional set for uncountably many coordinates is assumed.",
+    "Single-observation compactness is reconstructed by diagonal Hermite truncation. Full-source potential noncompactness is a classical consequence of exact identity on infinite first chaos, not an additional named formal theorem.",
+    "The fractional exponent is only used in an explicit lower bound and no-higher-power obstruction. Primary literature already supplies sharper covariance asymptotics; no new exponent or optimal lower constant is asserted."
+  ],
+  "literature": [
+    {
+      "url": "https://doi.org/10.1080/24754269.2020.1856589",
+      "review": "Primary indexed introduction/abstract inspected: Hermite prediction and MSE formulas for finite Gaussian data. Direct full article returned 403 and host PDF timeout; no detailed main theorem-number or priority comparison claimed."
+    },
+    {
+      "url": "https://arxiv.org/abs/1610.02900",
+      "review": "Primary full PDF inspected, Theorem 3.1 and Proposition 3.2: actual conditional law and known dual-regime small-past covariance asymptotics. Exact exponents not claimed new."
+    }
+  ],
+  "novelty": "UNRESOLVED; consolidated classical/formalization exposition with exact obstruction application"
+}

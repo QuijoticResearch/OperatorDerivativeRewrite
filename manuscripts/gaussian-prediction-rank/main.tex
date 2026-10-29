@@ -1,0 +1,384 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1.05in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\R}{\mathbb R}\newcommand{\E}{\mathbb E}
+\newcommand{\Hh}{\mathcal H}\newcommand{\U}{\mathcal U}
+\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
+\title{Hermite-rank prediction and fractional-time obstructions\\under inverse-number smoothing}
+\author{Project Stardust}
+\date{Reviewed formalization companion, October 29, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For a square-integrable function of one standard Gaussian coordinate,
+conditioning on any Gaussian observation family transports its Hermite
+expansion to the orthogonal projection of that coordinate. We reconstruct
+the full $L^2$ prediction formula, exact prediction-energy series and a
+quantitative leading-rank remainder. Applied to the actual full past of
+fractional Brownian motion, these identities give explicit lower bounds
+with exponent $2m\min(H,1-H)$ for any nonzero Hermite coefficient of rank
+$m$, and exclude higher-power increment bounds at zero information.
+The inverse-number potential divides positive-rank coefficients by their
+rank, so it preserves this obstruction despite being compact on a single
+Gaussian observation space. A concrete quarter-Hurst covariance witness
+also separates full-past prediction from current-value prediction.
+The projection and Hermite mechanisms are classical, and the two
+fractional covariance regimes are already known in primary literature.
+This paper supplies complete proofs and exact frozen formal
+correspondences; no priority claim is made.
+\end{abstract}
+
+\section{Setting and main prediction formula}
+Let $X:\Hh\to L^2(\Omega,P)$ be an isonormal real Gaussian family on a
+real separable Hilbert space: $X$ is linear, centered, jointly Gaussian,
+and $\E[X(h)X(k)]=\langle h,k\rangle$. Fix $u\in\Hh$ with $\|u\|=1$.
+Let $(h_i)_{i\in I}$ be any observation family, and put
+\[
+ M=\overline{\operatorname{span}}\{h_i:i\in I\},\quad
+ p=P_Mu,\quad v=\|p\|^2\in[0,1],\quad
+ \mathcal A=\sigma(X(h_i):i\in I).
+\]
+We use $L^2$ equivalence classes; observation sigma-algebras are not
+identified literally when they differ on null sets.
+
+Define Wick polynomials $W_n(h)$ by the generating identity
+\begin{equation}\label{eq:gen}
+ \exp(tX(h)-t^2\|h\|^2/2)
+ =\sum_{n=0}^\infty\frac{t^n}{n!}W_n(h).
+\end{equation}
+Thus $W_0(h)=1$, $W_1(h)=X(h)$ and $W_2(h)=X(h)^2-\|h\|^2$.
+At unit $u$, these are the probabilists' Hermite polynomials
+$\operatorname{He}_n(X(u))$.
+
+\begin{theorem}\label{thm:energy}
+Every $f\in L^2(\sigma(X(u)),P)$ has a unique expansion
+\begin{equation}\label{eq:terminal}
+ f=\sum_{n\geq0}a_n W_n(u),\qquad
+ a_n=\frac{\E[fW_n(u)]}{n!},\qquad
+ \|f\|_2^2=\sum_{n\geq0}a_n^2n!.
+\end{equation}
+Conditioning gives the norm-convergent series and exact energy
+\begin{equation}\label{eq:prediction}
+ \E[f\mid\mathcal A]=\sum_{n\geq0}a_n W_n(p),\qquad
+ \|\E[f\mid\mathcal A]\|_2^2=\sum_{n\geq0}a_n^2n!v^n.
+\end{equation}
+If $a_n=0$ for $n<m$, and $A_m=a_m^2m!$, then
+\begin{align}
+ A_m v^m&\leq\|\E[f\mid\mathcal A]\|_2^2
+                    \leq v^m\|f\|_2^2,\label{eq:rankbounds}\\
+ 0&\leq\|\E[f\mid\mathcal A]\|_2^2-A_mv^m
+                    \leq v^{m+1}\|f\|_2^2.\label{eq:remainder}
+\end{align}
+For any varying observation families with $v>0$ and $v\to0$,
+\begin{equation}\label{eq:ranklimit}
+ \frac{\|\E[f\mid\mathcal A]\|_2^2}{v^m}\longrightarrow A_m,
+ \qquad
+ 0\leq\frac{\|\E[f\mid\mathcal A]\|_2^2}{v^m}-A_m
+       \leq v\|f\|_2^2.
+\end{equation}
+\end{theorem}
+
+The exact nonlinear prediction mechanism is established Gaussian
+theory. McElroy and Das~\cite{MD} give Hermite-based nonlinear prediction
+formulas for Gaussian transformations with finite data. Here the
+Hilbert projection describes arbitrary observation families and makes
+the $L^2$ completion and rank remainder explicit. This is a
+formalization exposition, not a claim to have discovered nonlinear
+Gaussian prediction.
+
+\section{Completeness and the conditional Wick identity}
+\begin{lemma}\label{lem:hermite}
+For all $h,k\in\Hh$ and nonnegative integers $n,m$,
+\[
+ \E[W_n(h)W_m(k)]=\mathbf1_{n=m}\,n!\langle h,k\rangle^n.
+\]
+The polynomials $W_n(u)$ have dense linear span in
+$L^2(\sigma(X(u)),P)$.
+\end{lemma}
+\begin{proof}
+The Gaussian exponential formula gives
+\[
+ \E\left[e^{sX(h)-s^2\|h\|^2/2}
+         e^{tX(k)-t^2\|k\|^2/2}\right]=e^{st\langle h,k\rangle}.
+\]
+Taking coefficients yields orthogonality and its exact constant.
+Coefficient extraction under expectation is valid: on any compact set
+of real or complex parameters, a Gaussian exponential with a fixed
+larger real linear coefficient dominates each differentiated expression
+in $L^1$, by the Gaussian exponential moment formula.
+
+To prove completeness rather than assume it, identify the terminal
+space with $L^2(\gamma)$, $\gamma$ standard Gaussian measure. If $g$ is
+orthogonal to all polynomials, consider
+$F(z)=\int g(x)e^{zx}\,d\gamma(x)$. Cauchy--Schwarz and Gaussian
+exponential moments make this function entire, with derivatives obtained
+under the integral uniformly on compact parameter sets. All its Taylor
+coefficients vanish, so $F$ is identically zero. In particular the finite
+signed measure $g\gamma$ has zero Fourier transform.
+For completeness, Fourier uniqueness here follows by Gaussian
+convolution: Fourier inversion for a Gaussian and Fubini show each
+Gaussian convolution of this measure is zero; taking an approximate
+identity gives zero integrals against every compactly supported
+continuous function, and hence the measure is zero. Thus $g=0$.
+The Wick polynomials span all polynomials, because their leading
+coefficients are one. The orthogonal complement is therefore zero,
+proving density and, by Hilbert-space orthogonal expansion,
+\eqref{eq:terminal}.
+\end{proof}
+
+\begin{lemma}\label{lem:conditional}
+$\E[W_n(u)\mid\mathcal A]=W_n(p)$ for every $n$.
+\end{lemma}
+\begin{proof}
+Since $u=p+(u-p)$ and $u-p\perp M$, $X(u-p)$ is independent of every
+finite vector of observations: their joint Gaussian characteristic
+function factors because all cross-covariances are zero. A pi-lambda
+argument extends independence to $\mathcal A$. Also $X(p)$ is
+$\mathcal A$-measurable modulo null sets. Indeed $p$ is a norm limit of
+finite linear combinations of observation directions, so $X(p)$ is an
+$L^2$ limit of measurable variables and has a measurable representative.
+Consequently
+\[
+ \E[e^{tX(u)-t^2/2}\mid\mathcal A]
+ =e^{tX(p)-t^2\|p\|^2/2}.
+\]
+The residual exponential has expectation one, giving the equality.
+The exponential series is analytic in $L^2$ on compact parameter sets:
+the same Gaussian domination as in Lemma~\ref{lem:hermite}, now using
+squared norms, justifies differentiating. Conditional expectation is a
+bounded linear map on $L^2$, so differentiation commutes with it.
+Taking the $n$th derivative at zero proves the claim.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:energy}]
+Lemma~\ref{lem:hermite} gives the terminal expansion and Parseval.
+Conditional expectation is an $L^2$ contraction, so it commutes with
+its partial-sum limit. Lemma~\ref{lem:conditional} yields the first
+formula in \eqref{eq:prediction}. The terms are mutually orthogonal
+and have squared norms $a_n^2n!v^n$; taking norms of finite sums and
+passing to the limit gives the energy formula.
+If the coefficients below $m$ vanish, all terms start at $m$. Since
+$0\leq v\leq1$, their sum is at most $v^m\sum_n a_n^2n!$, and at
+least its $m$th term. After subtracting that term, every remaining
+power is at most $v^{m+1}$, proving \eqref{eq:remainder}. For $v>0$
+division by $v^m$ proves the last bound in \eqref{eq:ranklimit}; the
+squeeze theorem proves its limit.
+\end{proof}
+
+If $v=0$, the predictor is $a_0=\E f$, with $0^0=1$ in the series.
+No normalized-rank quotient is then used. If $f$ is centered and
+nonzero, Parseval ensures a least positive $m$ with $a_m\ne0$; this
+is its Hermite rank. The upper bound in \eqref{eq:rankbounds} is
+attained for a pure rank-$m$ polynomial. No assumption that $f$ itself
+is polynomial is needed anywhere.
+
+\section{Actual fractional pasts and the two covariance regimes}
+Let $B^H$ be a continuous fractional Brownian motion with $0<H<1$,
+normalized by
+\[
+ R_H(s,t)=\E[B_s^HB_t^H]
+ =\tfrac12(s^{2H}+t^{2H}-|t-s|^{2H}),\qquad s,t\geq0.
+\]
+It has the Gaussian Hilbert realization $B_t^H=X(u_t)$,
+$\langle u_s,u_t\rangle=R_H(s,t)$. In particular $\|u_1\|=1$.
+For $0\leq t\leq1$ put
+\[
+ \mathcal F_t^H=\sigma(B_s^H:0\leq s\leq t),\quad
+ P_t=\E[\,\cdot\mid\mathcal F_t^H],\quad
+ v_H(t)=\|P_tB_1^H\|_2^2,\quad \kappa_H=2\min(H,1-H).
+\]
+These are conditional expectations onto the entire actual observed
+past. In the frozen construction a continuous modification realizes
+the Hilbert coordinates. Coordinatewise almost-sure equality suffices
+to identify their $L^2$ observation spaces: the sets agreeing modulo
+null sets form a sigma-algebra containing each coordinate preimage.
+Closure under countable unions only uses countable unions of null
+sets. Thus the augmented observation sigma-algebras agree, and the
+conditional expectations agree as $L^2$ classes. No common exceptional
+set for an uncountable family or literal equality of raw sigma-algebras
+is assumed.
+
+\begin{proposition}\label{prop:variance}
+For $0<t\leq1$,
+\begin{equation}\label{eq:variance}
+ v_H(t)\geq\tfrac14t^{\kappa_H}.
+\end{equation}
+Consequently, for $f\in L^2(\sigma(B_1^H),P)$ with terminal Hermite
+coefficients $a_n$ and every nonnegative integer $m$,
+\begin{equation}\label{eq:fractional}
+ \|P_tf\|_2^2\geq\frac{a_m^2m!}{4^m}t^{\kappa_Hm}.
+\end{equation}
+If $f$ is centered, $a_m\ne0$, and $\alpha>\kappa_Hm$, then for every
+real $C$ and every $\delta>0$ some $0<t<\min(\delta,1)$ satisfies
+\begin{equation}\label{eq:nohigher}
+ C t^\alpha<\|P_tf-P_0f\|_2^2.
+\end{equation}
+\end{proposition}
+\begin{proof}
+The current observation is one member of the past. Orthogonality of
+conditional projection therefore gives
+\[
+ \langle P_tB_1^H,B_t^H\rangle=R_H(1,t),\qquad
+ v_H(t)\geq R_H(1,t)^2/t^{2H}.
+\]
+Write $r=R_H(1,t)=(1+t^{2H}-(1-t)^{2H})/2$.
+Since $(1-t)^{2H}\leq1$, $r\geq t^{2H}/2$.
+Also $r\geq t/2$: if $2H\leq1$ use $t^{2H}\geq t$ in the preceding
+bound, while if $2H\geq1$ use $(1-t)^{2H}\leq1-t$ in the exact formula.
+The two bounds give
+\[
+ v_H(t)\geq\tfrac14\max(t^{2H},t^{2-2H})
+          =\tfrac14t^{2\min(H,1-H)}.
+\]
+Theorem~\ref{thm:energy} and the single nonnegative rank-$m$ energy term
+now prove \eqref{eq:fractional}.
+
+The zero-time past is generated by $B_0^H=0$, so for centered $f$,
+$P_0f=0$. Put $K=a_m^2m!/4^m>0$ and $\beta=\kappa_Hm$.
+Since $\alpha>\beta$, $Ct^{\alpha-\beta}\to0$ as $t\downarrow0$.
+Choose $t$ smaller than $\delta$ and one, with this expression less
+than $K$. Multiplying by $t^\beta$ and using
+\eqref{eq:fractional} gives \eqref{eq:nohigher}.
+\end{proof}
+
+The lower constant $1/4$ is not claimed optimal, and this proof does not
+give an asymptotic equivalence for $v_H$. Sottinen and Viitasaari's
+primary prediction-law paper~\cite{SV} gives explicit full-past
+conditional laws and no-information covariance asymptotics in the
+two regimes. Our elementary lower bound uses only the covariance and
+one current observation to obstruct any faster full-past decay. It
+does not claim discovery of those exponents or replace the explicit
+prediction kernel.
+
+\section{Inverse-number smoothing preserves the obstruction}
+Define on the one-coordinate terminal space the inverse-number potential
+\begin{equation}\label{eq:potential}
+ \U f=\sum_{n\geq1}\frac{a_n}{n}W_n(u),\qquad
+ f=\sum_{n\geq0}a_nW_n(u).
+\end{equation}
+It removes the mean. In the full Gaussian library this is the bounded
+inverse-number operator constructed as the divergence recovery map
+followed by its Hilbert adjoint; its action on each positive chaos is
+$1/n$. The diagonal formula \eqref{eq:potential} is its exact
+restriction, not a different regularizer.
+
+\begin{proposition}\label{prop:potential}
+$\U$ is bounded, self-adjoint, nonnegative and compact on
+$L^2(\sigma(X(u)),P)$. Each positive coefficient is nonzero after
+smoothing exactly when it was nonzero before smoothing; in particular
+the least positive Hermite rank is preserved. Moreover
+\begin{equation}\label{eq:potentialenergy}
+ \|\E[\U f\mid\mathcal A]\|_2^2
+ =\sum_{n\geq1}\frac{a_n^2}{n^2}n!v^n.
+\end{equation}
+For fractional terminal $f$ and any $m\geq1$ with $a_m\ne0$,
+\begin{equation}\label{eq:potentiallower}
+ \|P_t\U f\|_2^2\geq\frac{a_m^2m!}{m^24^m}t^{\kappa_Hm}.
+\end{equation}
+Every higher-power increment bound as in \eqref{eq:nohigher} therefore
+fails for $\U f$ as well. Centering of the original $f$ is unnecessary.
+\end{proposition}
+\begin{proof}
+In the orthonormal basis $W_n(u)/\sqrt{n!}$, $\U$ is diagonal with
+eigenvalues $0,1,1/2,1/3,\ldots$. These real nonnegative multipliers
+prove boundedness, self-adjointness and nonnegativity. Truncating after
+rank $N$ gives a finite-rank operator with norm error $1/(N+1)$;
+hence $\U$ is compact. Its positive coefficients are $a_n/n$, so
+positive ranks are preserved. Apply Theorem~\ref{thm:energy} to this
+new terminal function to obtain \eqref{eq:potentialenergy}, and
+Proposition~\ref{prop:variance} to get \eqref{eq:potentiallower}.
+The latter has positive constant and $P_0\U f=0$; the same elementary
+power comparison proves the increment obstruction.
+\end{proof}
+
+This compactness is on a \emph{single} Gaussian observation space. It
+does not imply compactness of the full Gaussian potential on an
+infinite-dimensional source: on first chaos the potential acts as the
+identity, and an infinite orthonormal family has no norm-convergent
+subsequence. Nor does compact smoothing in Hermite rank imply better
+physical-time regularity of conditional forecasts. The obstruction
+retains its positive-rank power because the corresponding coefficient
+is divided by a fixed nonzero integer.
+
+\section{A concrete full-past versus current-value witness}
+The Hilbert projection in the prediction formula must use the correct
+observation family. An explicit example already distinguishes the full
+past from the present coordinate.
+
+\begin{proposition}\label{prop:memory}
+Let $H=1/4$ and define
+\[
+ F=\E[B_4^H\mid\mathcal F_2^H],\qquad
+ C=\E[B_4^H\mid\sigma(B_2^H)].
+\]
+Then $F\ne C$ in $L^2$, and $\|F\|_2^2>\|C\|_2^2$.
+\end{proposition}
+\begin{proof}
+The exact covariance formula gives
+\[
+ R_H(4,2)=1,\quad R_H(4,1)=\tfrac12(3-\sqrt3),\quad
+ R_H(2,1)=\tfrac12\sqrt2,\quad R_H(2,2)=\sqrt2.
+\]
+The one-observation projection is $C=B_2^H/\sqrt2$, so
+$\langle C,B_1^H\rangle=1/2$. Since $B_1^H$ is in the full past,
+$\langle F,B_1^H\rangle=R_H(4,1)=(3-\sqrt3)/2$, a different number.
+Thus $F\ne C$. The one-observation subspace is contained in the
+full-past $L^2$ subspace. Both are orthogonal projections of $B_4^H$;
+their projection identities give $F-C\perp C$. Pythagoras yields
+$\|F\|_2^2=\|C\|_2^2+\|F-C\|_2^2>\|C\|_2^2$.
+\end{proof}
+
+This witness does not assert that fractional Brownian motion is a new
+non-Markovian example. It records exactly why replacing a full-past
+projection with the current-coordinate projection changes the theorem.
+
+\section{Formal scope and primary comparisons}
+\begingroup\raggedright
+The verified baseline is
+\code{bab688bb6140cd6316c80680095a914ea0d346db}.
+The core correspondence is \code{GaussianWickConditionalProjection},
+\code{GaussianTerminalPredictionSpectrum} and
+\code{GaussianPredictionRankAsymptotic}. Actual continuous-past
+identification is in \code{ContinuousFractionalPrediction}; the
+two-regime obstruction is \code{FractionalDualRegimePrediction}.
+The inverse-number application is \code{GaussianPotentialPredictionRank},
+with the actual operator in \code{GaussianInverseNumberPotential}.
+The quarter-Hurst witness is
+\code{FractionalCurrentObservationObstruction}.
+Exact declarations, original hypotheses, source hashes and human proof
+reorganizations accompany the manuscript. The elementary noncompactness
+of the full potential is a classical deduction from its exact first-chaos
+identity, not a newly named formal theorem.
+
+McElroy--Das's primary introduction describes the Hermite predictor and
+mean-square-error mechanism for finite data; access to its complete
+main-theorem text was incomplete, so no detailed theorem-number priority
+comparison is claimed. Sottinen--Viitasaari's accessible primary paper,
+Theorem 3.1 and Proposition 3.2, gives the conditional law and the two
+small-past covariance asymptotics. Our proof retains a weaker explicit
+uniform lower constant and does not assert a new fractional exponent.
+The methods and central structure are classical. This is a consolidated
+formalization companion with explicit domain and regularity diagnostics;
+novelty remains unresolved. It neither completes the paused Bakry/fBM
+campaign nor proves new curvature, temporal stochastic integration or
+neural-network performance claims. Full baseline verification evidence
+was hash-checked without repeating a research build.
+\par\endgroup
+
+\begin{thebibliography}{9}
+\bibitem{MD} T. McElroy and S. Das,
+\emph{Nonlinear prediction via Hermite transformation},
+Statistical Theory and Related Fields 5 (2021), 49--54.
+\href{https://doi.org/10.1080/24754269.2020.1856589}{doi:10.1080/24754269.2020.1856589}.
+\bibitem{SV} T. Sottinen and L. Viitasaari,
+\emph{Prediction law of fractional Brownian motion},
+Statist. Probab. Lett. 129 (2017), 155--166.
+\href{https://arxiv.org/abs/1610.02900}{arXiv:1610.02900}.
+\end{thebibliography}
+\end{document}

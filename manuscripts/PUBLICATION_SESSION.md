@@ -127,3 +127,9 @@ Further source assessment rejected standalone papers from sticky kernel version 
 ## Fluid diagnostic note closure
 
 Thirteen reviewed papers now total 117 pages. The newest six-page note has 45 exact source correspondences and complete human proofs spanning the actual RE family, local affine derivatives, pressure trace conventions and periodic viscous means. All six final pages were inspected; primary literature comparisons and limitations are recorded. Frozen build evidence and all source/PDF receipts were verified, with publication-only scans/commit/push. The remaining broad triad/corridor infrastructure is not automatically another paper and supplies no unrestricted PDE estimates by itself. Continue evidence-based editorial selection without changing the researcher campaign or its resource priority.
+
+## Gaussian prediction closure and navigation consolidation
+
+Fourteen reviewed manuscripts now total 123 pages. The newest six-page companion has 38 exact correspondences; its full L2 and actual continuous-past hypotheses, classical antecedents and non-sharp constant are explicit. Every page was inspected and all frozen source/PDF receipts were rechecked. README and the manuscript index have been regrouped by mathematical contribution to avoid a chronological accumulation of paragraphs. No Foundation, ResearchSources, internal research documentation, campaign priority, research ref or sync procedure changed.
+
+Account-wide usage was reported as 29% at the most recent completed checkpoint, with ordinary usage allowed; this is a coarse shared-account observation, not per-chat metering or an enforced 8% budget. No resource/permission failure is being invented. Remaining independent editorial work should focus on distinctive applications and primary comparisons rather than generating papers for infrastructure counts.
