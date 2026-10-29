@@ -2751,3 +2751,8 @@ import Foundation.FourCubeHemisphereCoercivity
 
 import Foundation.FourCubeAmbientAction
 import Foundation.FourCubeHaarQuadraticLimit
+
+import Foundation.FourCubeHaarProductCoordinates
+import Foundation.FourCubeHaarLaplaceDensity
+import Foundation.FourCubeHaarPartitionAsymptotic
+import Foundation.FourCubeHaarGibbsLimit

@@ -2434,3 +2434,80 @@ Source integrity authenticates1706's manifest against its exact approval at b670
 The next bottleneck is now INTEGRATION rather than the pointwise Hessian bridge: prove31-fold restricted Haar transport, the93-real-dimensional scaling Jacobian, cutoff density convergence, normalization positivity/asymptotics and a justified dominated-convergence theorem for actual normalized Gibbs observables. Reuse1706's actual local Gaussian envelope and cutoff probability tending to1. Do not substitute convergence of an unnormalized pointwise integrand for convergence of actual Gibbs expectations, and do not demand unrestricted chart-coordinate moments already suspected to be nonintegrable. The scalar chart density contributes its own product/Jacobian factors and cannot be silently discarded. Uniform perturbed-boundary saddle control, third-order parameter/Laplace estimates and the exact full harmonic-cubic Lean coefficient remain OPEN, as do stationary physical transfer estimates and all scale/volume/continuum mass-gap bridges. The present theorem concerns ONE fixed actual four-dimensional cell at identity boundary; no positive physical mass gap or novelty of classical Taylor/Laplace methods is claimed.
 
 Exact-commit approval, new-history secret scan, guarded PUBLIC main/research synchronization and independent exact remote-ref verification remain closure requirements. This pre-commit ledger entry does not assert that backup has already happened. Visibility is exclusively user-controlled. The indefinite research goal remains active.
+
+
+## Checkpoint1708 - actual normalized finite-cell Gibbs limit, not only pointwise weights
+
+October29,2026. Focused Yang-Mills remains ACTIVE. This checkpoint discharges the product-Haar/scaling/integration/normalization bottleneck left by1707 at identity boundary. It constructs an actual limiting probability measure and proves convergence of the actual pinned Gibbs expectations for EVERY globally bounded measurable real test of rescaled coordinates. The proof concerns the existing full72-face four-dimensional cell, not the earlier seven-link surrogate. It does not establish a physical mass gap or a scale/volume-uniform theorem.
+
+New sources are Foundation/FourCubeHaarProductCoordinates.lean, Foundation/FourCubeHaarLaplaceDensity.lean, Foundation/FourCubeHaarPartitionAsymptotic.lean and Foundation/FourCubeHaarGibbsLimit.lean. Each serves the actual finite-cell limit. Existing1701 pinning,1703/1706 actual Gibbs concentration,1705 actual single-link Haar density,1706 local domination and1707 full-action quadratic limit are reused without alteration. No manuscript, PDF, publication directory or editorial README was created, revised, compiled or reviewed.
+
+### Exact joint Haar transport and scaling
+
+`coordinateLaw_eq_map` and `chart_map_coordinateLaw` identify BOTH directions between the actual restricted single-link Haar law and rho(y)dy, where
+
+    rho(y)=1/(2*pi^2*(1+|y|^2)^2).
+
+The finite measure is the ONE-HEMISPHERE restriction; no probability renormalization is inserted. `joint_restriction`, `coordinateField_map` and `chartField_map` transport the actual31-link product restriction. `productCoordinateLaw_density` identifies its full93-real-dimensional Lebesgue density
+
+    R(Y)=product_(31 retained links e) rho(Y_e).
+
+The proof establishes single-link integrability from the actual finite Haar pushforward, product integrability, equality on measurable rectangles and then equality of measures. It does not assume Gibbs links are independent: the product law is the UNTILTED Haar base measure. `lintegral_joint_density` and the ordinary `integral_joint_density` give the actual nonnegative and real integral identities, with measurable-test hypotheses explicit. `cutoff_preimage` and `integral_actual_cutoff` identify the existing actual SU(2) cutoff exactly.
+
+`field_finrank` proves the dimension is93=31*3. `integral_rescale` proves the exact absolute Jacobian |t|^93 for every NONZERO real t. The absolute value covers negative scales; t=0 is excluded. The independent check refutes dropping that exclusion using a strictly positive Gaussian integral. Root gauge removal still has normalized Haar factor1 under1701; no conditioning on a measure-zero event or extra Gaussian gauge-volume factor is used.
+
+### Dominated convergence, including its actual domain
+
+Let G(Y)=sum_a (Y^a)^T L Y^a, where L is the verified pinned localGram.1707 proves the ACTUAL action S(chart(tY))/t^2 tends to G(Y)/2 for every fixed Y through nonzero t. Define the rescaled density
+
+    D_t(Y)=1_(all e:1+|tY_e|^2<=2) R(tY) exp(-S(chart(tY))/t^2).
+
+`eventually_scaledCutoff` proves the indicator tends pointwise to1. Continuity and positivity of rho, the exact product bound R(Y)<=R(0), and1706's actual action bound prove, for EVERY t!=0 and Y,
+
+    0 <= D_t(Y) <= R(0)*exp(-|Y|^2/372).
+
+The right-hand side is the existing integrable93-dimensional Gaussian envelope. `scaledDensity_tendsto`, `gaussianDensity_integrable` and `gaussianDensity_integral_positive` establish
+
+    D_t(Y) -> g(Y)=R(0)*exp(-G(Y)/2),
+    0 < C=integral g(Y)dY < infinity.
+
+`scaledDensity_integral_tendsto` applies the actual filter dominated-convergence theorem. `bounded_test_integral_tendsto` applies it to EVERY globally bounded measurable f, not just continuous functions. `normalized_bounded_test_tendsto` gives the corresponding normalized cutoff-density ratio. All limits use the punctured real neighborhood of0; `scaledDensity 0` is not silently assigned the limiting density, and no unpunctured convergence is asserted. No monotone error rate or unproved uniform Taylor remainder is used.
+
+### Actual full partition and normalized Gibbs observables
+
+`localPartition_rescale` proves the exact identity between the ORIGINAL Haar cutoff partition and |t|^93*integral D_t. `actual_cutoff_probability` proves its ratio to the ORIGINAL normalizer is precisely the actual normalized Gibbs cutoff probability.1706 independently proves that probability tends to1; `inverse_square_tendsto` gives beta=1/t^2 ->+infinity. Therefore `actual_normalizer_asymptotic` proves
+
+    Z(1/t^2)/|t|^93 -> C >0,
+
+for the actual fixed-cell normalizer. The independent Lean harness also transfers this to the original UNPINNED32-link Haar partition using1701's exact `partition_eq_pinned`, without a new hypothesis.
+
+Write X_t(U)=t^(-1)*coordinateField(U). The coordinate map is globally measurable by the repository's total-division convention; its inverse is asserted only on the verified hemisphere domain. For every measurable f:Field->R with |f(Y)|<=M and M>=0, `cutoff_numerator_rescale` identifies the actual Haar numerator and `actual_cutoff_test_tendsto` identifies its actual Gibbs-normalized limit. Outside the cutoff, `outside_test_bound` gives the uniform bound
+
+    abs(integral_(outside cutoff) f(X_t(U)) dGibbs_(1/t^2))
+      <= M*Gibbs_(1/t^2)(outside cutoff) ->0.
+
+Thus `actual_gibbs_bounded_test_limit` applies to the FULL actual Gibbs expectation, not a conditional or hypothetical Gaussian expectation. It uses genuine integrability of the bounded tests under the actual probability measure when splitting inside/outside integrals.
+
+`limitingDensity(Y)=g(Y)/C` is integrable, nonnegative and has integral1. `limitingLaw` is the ACTUAL withDensity measure on Field, and `limitingLaw_probability` proves it is a probability measure. The main theorem `actual_gibbs_limit_law` proves
+
+    integral f(X_t(U)) dGibbs_(1/t^2)(U) -> integral f(Y) dlimitingLaw(Y)
+
+for EVERY globally bounded measurable real f. Its conclusion uses an actual constructed law, not just a formal quotient functional. The independent Lean harness derives setwise convergence for EVERY measurable coordinate set, with no continuity/null-boundary assumption, and checks a cosine observable. No uniform supremum over all tests, total-variation metric theorem, new `IsGaussian` instance, closed determinant normalizer or explicit covariance= L^(-1) theorem is exported here. The target's positive quadratic-exponential density and probability normalization are the exact verified characterization.
+
+### Independent checks, full verification and source preservation
+
+All22 independent Lean semantic checks passed in28.2073581 seconds. They cover the exact93-dimensional exponent, product density at0, retained hemisphere-mass product formula, both actual product pushforwards, the cutoff preimage, reflection/negative-scale Jacobian, a concrete zero-scale Jacobian counterexample, cutoff partition scaling, the exceptional t=0 density, finite integrability at nonzero scales, positive limiting normalizer, actual probability mass1, normalized constants, original unpinned partition reuse, a bounded cosine, discontinuous setwise convergence and the positive-beta square-root clock identity. A harness-only function-application elaboration was repaired; mathematical sources/build inputs were unchanged.
+
+A NumPy-only independent diagnostic used8192 Gaussian importance samples with precision from the independently enumerated actual face-incidence matrix. It evaluated the actual72-face quaternion action at beta256,1024,4096, retaining all product-density and cutoff factors. At4096 the local scaled-partition/Gaussian-constant estimate was1.0016030274 (empirical Monte Carlo standard error0.0009979918), and the weighted cosine estimate0.5186075959 compared with the classical Gaussian reference0.5186416711. A separate conditional-Haar product test gave0.7918628208 versus0.7918555746. These are floating diagnostics, not certified Monte Carlo confidence bounds, a proof of global outside contributions, or a Lean determinant/covariance identity. The numerical determinant-expression log normalizer is explicitly external to the proved abstract C. Evidence: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1708-independent.py/.json/.log.
+
+The complete root build passed7023 jobs in76.0354983 seconds. The canonical COMPLETE transitive audit passed55210 safe Foundation declarations in42.6824818 seconds, accepting only propext, Classical.choice and Quot.sound. ALL81 public types were printed unabridged and reviewed:64 complete theorem proofs,14 definitions and3 measure instances. The one private rectangle-integral helper and all complete source bodies were read. The complete persisted Foundation/AxiomAudit.lean run passed in47.8688419 seconds. No sorry/admit/new mathematical axiom/native_decide, resource increase, compiler/trust change or toolchain/configuration change was introduced.
+
+Source integrity authenticates1707's manifest against exact approval d135fa708bb4f2ab5e198478275992d11bbd8cfd. The recursive Foundation/root count matches the complete2805-file manifest. ONLY the four focused new modules, root imports and axiom ledger differ. ALL older mathematics,3 pinned configurations,113 baseline originals and21 Yang-Mills originals(20 distinct hashes) remain unchanged. ResearchSources stays unmodified/uncommitted; all unrelated drafts/history are preserved. Evidence uses C:/Users/ramir/AppData/Local/Temp/stardust-ym-1708-*.
+
+### What remains open and the next focused bottleneck
+
+The actual identity-boundary finite-cell normalization and bounded-observable fluctuation limit are NOW CLOSED; do not continue reporting them as merely conditional or pointwise gaps. This does NOT close uniform perturbed-boundary saddle/control, third-order parameter response, differentiation of the asymptotic expansion, the full harmonic-cubic Lean coefficient, stationary transfer contraction/lower bounds at physical distance scales, or scale/volume/continuum existence and mass-gap requirements. An ordinary asymptotic formula cannot be differentiated without those additional estimates.
+
+Bounded-test convergence does NOT imply convergence of unrestricted chart-coordinate moments. The earlier finite-beta Cauchy-type chart-moment obstruction still awaits its own Lean divergence/actual-Gibbs proof; it is not discharged by this theorem. A productive next route is to test parameter-uniform response and rescaled BOUNDED physical observables using the established actual Gaussian limit and outside-cutoff estimate, with every polynomial-growth/domain requirement separately justified. Prefer a concrete actual transfer/correlation estimate or counterexample over broad auxiliary expansion. No novelty is claimed for classical finite-dimensional Laplace methods. This is one fixed pinned cell at identity boundary, not a four-dimensional continuum quantum field construction. Yang-Mills remains ACTIVE and all other campaign priorities remain unchanged.
+
+Exact-commit approval, complete new-history secret scanning, guarded PUBLIC main/research synchronization and independent exact remote-ref verification remain closure gates. This pre-commit entry does not claim remote backup is already verified. Visibility is exclusively user-controlled; the indefinite research goal remains active.
