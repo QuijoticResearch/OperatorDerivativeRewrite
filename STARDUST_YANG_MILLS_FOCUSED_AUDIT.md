@@ -2112,3 +2112,51 @@ Sixteen independent Lean checks passed in25.7079223 seconds, covering the existi
 Integrity authenticates1700's source manifest against exact approved commitb1ff51401c00728e8a0362fcb01274914e322966. It covers2790 Foundation/root files: only ONE new focused full-Haar pin module, its root import and the axiom ledger differ. ALL old mathematical sources,3 pinned configurations,113 baseline original manuscripts and21 Yang–Mills originals (20 distinct hashes) are unchanged. ResearchSources remains unmodified/uncommitted; unrelated drafts are preserved. Evidence: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1701-* (full build/audits, complete types, independent Lean and exact nonabelian tests, harmonic and multivariate/nonlinear diagnostic scripts/results, declaration inventory and authenticated manifest).
 
 Exact-commit approval and guarded PUBLIC main/research synchronization follow this checkpoint; this pre-commit record does not assert remote success. Repository visibility remains exclusively user-controlled. Yang–Mills stays ACTIVE, Bakry PAUSED, all other campaign priorities and verification requirements unchanged.
+
+
+## Checkpoint1702 — global nonlinear pinned vacuum control and actual Haar tails
+
+Focused Yang–Mills remains ACTIVE; Bakry Objective2 remains PAUSED. This checkpoint addresses a central obligation left by1701: GLOBAL minimum control for the actual pinned action at IDENTITY boundary data. Here global means all configurations of this fixed72-face one-sided cell, NOT infinite volume or a continuum statement. No small-field cutoff, Taylor truncation or assumed inverse of an unpinned Hessian is used.
+
+### Proved nonlinear bound and unique minimum
+
+`FourCubePinnedCoercivity.defect U=1-halfTrace(U)` is the genuine SU(2) Wilson trace defect. A quaternion norm identity proves its rigidity: defect(U)=0 iff U=1. The proved three-factor bound defect(A*B*C)<=3*(defect(A)+defect(B)+defect(C)) follows from unit-quaternion distance, the triangle inequality and the scalar three-term square inequality. This elementary metric argument is a necessary ingredient, not a claim of novelty.
+
+Let S(s) be the existing FULL72-face action with ALL80 boundary links equal1. `vacuum_decomposition` identifies S as the24 internal Wilson costs plus48 ribbon costs. Each retained link whose source is not the origin occurs in a ribbon; its defect is therefore at most S. For an origin link other than the pinned pole, the selected origin plaquette expresses that link as a product of its plaquette holonomy inverse and two non-origin links. Those two links have DISTINCT ribbon witnesses, so their two costs and the one plaquette cost together are at most S. Applying the three-factor metric bound gives `pinned_link_bound`:
+
+    s(pole)=1 -> defect(s(e)) <= 3*S(s), for EVERY retained edge e.
+
+For the actual31-link pin, `pinned_coordinate_bound` proves defect(y(e))<=3*pinnedAction(y), globally in y. `pinnedAction_zero_iff` and `pinnedAction_positive_iff` prove that the identity configuration is the UNIQUE zero-action/global-minimum state of the pinned action. Existence is explicit: its action is0, while all action values are nonnegative. The result does not classify or exclude positive-action metastable local minima. Without the pin, origin-supported nonidentity gauge transformations still have zero action; their existence is preserved rather than hidden in a coercivity hypothesis.
+
+`global_energy_barrier` is quantitative: if ANY pinned coordinate has defect at least epsilon, then pinnedAction>=epsilon/3. Thus configurations separated from the identity in a specified coordinate have an explicit positive energy barrier. Constant3 is a proved convenient bound, NOT an asserted sharp constant. This is a nonlinear statement on the actual compact group configurations, not merely positivity of the scalar quadratic Gram.
+
+### Genuine integrated consequence, with normalization kept explicit
+
+`pinnedAction_measurable` and `boltzmann_integrable` establish the actual function/domain and Haar integrability for EVERY real beta. `tail_event_measurable` verifies the event. For beta>=0, `boltzmann_barrier` and `boltzmann_tail_bound` prove the ACTUAL unnormalized Haar integral estimate
+
+    integral over {y : defect(y(e))>=epsilon} exp(-beta*pinnedAction(y)) d(pinnedHaar)
+      <= exp(-beta*epsilon/3).
+
+The measure is the genuine31-factor normalized Haar law from1701. Its exact full32-link partition identification is already proved. The tail theorem does NOT silently divide by a constant partition: the normalized bound retains the actual denominator Z(beta). The independent Lean harness explicitly checks that division step. Positivity of Z alone is not a useful uniform lower bound or a concentration rate.
+
+### Exact remaining analytic and physical bridges
+
+This closes1701's global pinned MINIMUM/energy-barrier obligation at identity boundary data. It does not yet prove uniform saddle isolation for perturbed boundary parameters, an analytic minimizing branch, the actual Hessian/canonical Gram identification in exponential coordinates, the diagnostic harmonic cubic coefficient, or derivative-controlled large-beta Laplace asymptotics. In particular, a positive global barrier at one boundary value is not permission to differentiate a partition limit.
+
+A concrete next route to normalized concentration is now visible: continuity of the actual pinned action plus positive Haar mass of an open low-energy neighborhood could give Z(beta)>=c_epsilon*exp(-beta*epsilon/6), then an exponentially decaying normalized coordinate tail. Mathlib ALREADY provides the finite-product IsOpenPosMeasure instance; no new probability foundation is required. These continuity/lower-bound/normalization steps remain OPEN, not inferred merely from the new unnormalized tail theorem. Uniform boundary perturbation control and all required parameter derivatives remain additional obligations afterward.
+
+Retain1701's exact rational full harmonic cubic31877443263/69438734552 as a separately labelled external computational lead; it is NOT promoted to a Lean theorem or an integrated asymptotic by this checkpoint. Retain1700's failed quadratic mixed-Hessian budget and surviving linear/Schur repair, and all earlier stationary-transfer results/limitations. A one-cell pinned vacuum estimate is not an actual four-dimensional stationary-transfer gap, a scale/volume-uniform contraction, quantum-field existence or a physical mass gap. No novelty claim, campaign transition or queue change is made.
+
+### Complete verification and preserved sources
+
+The full root build passed7008 jobs in27.0613974 seconds. Canonical complete transitive axiom audit passed54754 safe Foundation declarations in39.6684342 seconds, only propext, Classical.choice and Quot.sound. ALL25 public types (20 theorem proofs,5 definitions) were printed UNABRIDGED and reviewed, as were every complete proof/definition body and all9 private helper proofs. The complete persisted axiom ledger elaborated in46.260737 seconds. No sorry/admit/new mathematical axiom/native_decide, resource/compiler/trust option or weaker verification gate was introduced. Existing finite geometry and gauge-pin declarations were directly reused; the metric helpers serve the concrete global-action estimate.
+
+Sixteen independent Lean checks passed in26.5887418 seconds: defect positivity/rigidity/inversion, the three-factor inequality, actual action decomposition/positivity, the global pinned link and31-coordinate bounds, uniqueness/strict positivity of the vacuum, actual measurability/all-real Boltzmann integrability, the explicit epsilon=.1 energy barrier1/30, the true tail integral, the normalized ratio with its REQUIRED partition denominator, and preserved zero-action root-gauge transformations before pinning.
+
+Independent exact rational quaternion tests checked21 pinned112-link fields against ALL72 action terms and32 retained coordinates. They include noncommuting Cayley fields, near-vacuum low-energy mode directions, identity and large Cayley scales; all per-link defect<=3*action and zero-rigidity sample checks passed. The maximum sampled defect/action ratio was approximately.852094; no sharpness or optimum is inferred. Three separate nonidentity origin-gauge fields had exact zero unpinned action, checking the necessity of the pin. These sampled diagnostics do not replace the universal Lean theorems.
+
+Integrity authenticates1701's source manifest against exact approved commit192293aeab54518cb7594ec4f67f15dfc0efc9c3. It covers2791 Foundation/root files: only ONE new focused global pinned-coercivity module, its root import and the axiom ledger differ. ALL older mathematical source files,3 pinned configurations,113 baseline original manuscripts and21 Yang–Mills originals (20 distinct hashes) remain unchanged. ResearchSources remains unmodified/uncommitted and unrelated drafts are preserved. Evidence: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1702-* (full build/audits, complete types, independent Lean and exact quaternion tests, declaration inventory and authenticated manifest).
+
+Exact-commit approval and guarded PUBLIC main/research synchronization are the remaining closure gates; this pre-commit record does not assert remote success. Repository visibility remains exclusively user-controlled. Yang–Mills remains ACTIVE, Bakry PAUSED, all other priorities and verification requirements unchanged.
+
+Final-byte closure: the staged gate caught a trailing space in the new metric proof. It was removed, with no statement/proof change, and the full root build, complete canonical audit/all25 types, all16 independent Lean checks and full persisted axiom ledger were rerun successfully on the final source bytes. The timings above are those final runs.
