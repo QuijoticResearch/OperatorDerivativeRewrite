@@ -1,0 +1,11 @@
+# Gaussian–cubic moment boundaries — reviewed editorial paper
+
+Eight pages, October 29, 2026, frozen baseline `bab688bb6140cd6316c80680095a914ea0d346db`. Complete proofs determine quadratic/cubic/quartic square positivity and positive-measure realization through degree eight and nine, including the singular boundary. An explicit finite spectral construction preserves eight moments and steers any ninth moment in the strict region. Null-polynomial cross moments rule out the prescribed next moment at the six/seven and eight/nine boundaries. An attained sixth-moment inequality explains the exact negative cubic witness at v=k=1.
+
+theorem-map.json records 27 exact correspondences, and distinguishes the general classical spectral lemma, Schur-complement regrouping and direct specializations from named formal declarations. The formal generating series is not assumed to be a positive-law moment-generating function. No all-degree positivity classification is claimed.
+
+The primary Curto–Fialkow paper was inspected at its introduction and Theorems 3.1/3.9: positivity, odd-case range compatibility and singular even data are classical context. This is an explicit two-parameter evaluation and formalization exposition; the preliminary targeted formula search did not establish novelty. Attribution and independent referee review remain outstanding. No external release or submission was performed.
+
+All 31 independent exact polynomial transcription checks passed, using a Python-standard-library sparse polynomial implementation over fractions.Fraction. These checks cover both Gram matrices and determinants, null norms and cross moments, orthogonality, the last specified Jacobi diagonal, and the sharp sixth-moment identity. They check manuscript algebra, not measure theory or Lean proofs. The existing complete baseline build/axiom evidence was hash-verified; no redundant Lean build was run.
+
+The final PDF passed two-pass compilation with no overfull boxes or unresolved references. Every page was rendered and inspected, with the finite spectral construction and null-boundary identity enlarged. Fresh source/PDF hashes, algebra output, baseline evidence and visual review accompany the paper.

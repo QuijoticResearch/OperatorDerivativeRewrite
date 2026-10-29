@@ -53,3 +53,9 @@ The sixteen-page exposition supplies the entire actual-saddle mechanism and endp
 ## Seventh completed companion: sixth-order global zeros
 
 The eight-page companion gives the complete changed power-five saddle geometry, sixth-order physical-prefix exponent and common-center whole-plane proof. Its 25 exact source correspondences distinguish the final formal theorem from human regroupings and a bounded-time confinement corollary. All eight pages were inspected after clean two-pass compilation. The late time is existential; no quartic threshold certificate or endpoint collision is copied to order six. Novelty remains unresolved.
+
+## Whole-library survey and eighth paper
+
+The renewed unattended session completed a module-level inventory of all 2,795 Foundation modules, including hashes, imports, module descriptions and declaration headers. [The broader assessment](LIBRARY_SURVEY.md) distinguishes this coverage from detailed proof review and identifies previously missed moment, Cauchy, Gaussian-prediction, forcing, clock, operator-obstruction and finite-geometry families. Counts are navigation, not significance.
+
+The eight-page cubic-moment-boundaries paper is now reviewed, with complete Gram/Schur, finite spectral, null-cross-moment and sharp-bound proofs, 27 exact source correspondences and 31 passing exact algebra checks. Its methods are classical truncated Hamburger theory; novelty for the explicit two-parameter formulas remains unresolved. The next sustained source comparisons are Cauchy circle flow/entropy and IBM graph-dual time calculus.

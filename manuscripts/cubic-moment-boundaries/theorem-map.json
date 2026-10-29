@@ -1,0 +1,255 @@
+{
+  "baseline": "bab688bb6140cd6316c80680095a914ea0d346db",
+  "entries": [
+    {
+      "paper": "1: definition",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MixedCubicMomentPositivity.moment",
+      "file": "Foundation/MixedCubicMomentPositivity.lean",
+      "line": 11,
+      "source_sha256": "4d8d7f139c8684ff3919c3492ec9ac26fb2df9b68e49826665f369ce087e14ca",
+      "declaration_header": "def moment (v k : \u211d) : \u2115 \u2192 \u211d\n  | 0 => 1\n  | n+1 => v*(n : \u211d)*moment v k (n-1) +\n      (k/2)*(n.descFactorial 2 : \u211d)*moment v k (n-2)\ntermination_by n => n\n\ndef expectation (v k : \u211d) : Polynomial \u211d \u2192\u2097[\u211d] \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicMomentPositivity.lean#L11"
+    },
+    {
+      "paper": "2: quadratic criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MixedCubicMomentPositivity.quadratic_positivity_iff",
+      "file": "Foundation/MixedCubicMomentPositivity.lean",
+      "line": 96,
+      "source_sha256": "4d8d7f139c8684ff3919c3492ec9ac26fb2df9b68e49826665f369ce087e14ca",
+      "declaration_header": "theorem quadratic_positivity_iff (v k : \u211d) :\n    (\u2200 g : Polynomial \u211d, g.natDegree \u2264 2 \u2192 0 \u2264 expectation v k (g^2)) \u2194\n      0 \u2264 v \u2227 k^2 \u2264 2*v^3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicMomentPositivity.lean#L96"
+    },
+    {
+      "paper": "2: cubic criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MixedCubicThirdDegree.cubic_positivity_iff",
+      "file": "Foundation/MixedCubicThirdDegree.lean",
+      "line": 139,
+      "source_sha256": "89a2611b274d00073029cda480633086d5fd135bcc266e84a731c76a036a00aa",
+      "declaration_header": "theorem cubic_positivity_iff (v k : \u211d) (hv : 0 < v) :\n    (\u2200 g : Polynomial \u211d, g.natDegree \u2264 3 \u2192 0 \u2264 expectation v k (g^2)) \u2194\n      0 \u2264 determinant v k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicThirdDegree.lean#L139"
+    },
+    {
+      "paper": "2: cubic Gram",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MixedCubicThirdDegree.centeredGram_det",
+      "file": "Foundation/MixedCubicThirdDegree.lean",
+      "line": 94,
+      "source_sha256": "89a2611b274d00073029cda480633086d5fd135bcc266e84a731c76a036a00aa",
+      "declaration_header": "theorem centeredGram_det (v k : \u211d) : (centeredGram v k).det = determinant v k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicThirdDegree.lean#L94"
+    },
+    {
+      "paper": "2: quartic Gram",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MixedCubicFourthDegree.centeredGram4_det",
+      "file": "Foundation/MixedCubicFourthDegree.lean",
+      "line": 90,
+      "source_sha256": "b6a11723bb92cc6a5f10406eb0924937b58d5d9b90c8ff550b95dde584ee3cad",
+      "declaration_header": "theorem centeredGram4_det (v k : \u211d) : (centeredGram4 v k).det = fourthDeterminant v k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicFourthDegree.lean#L90"
+    },
+    {
+      "paper": "2: quartic criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MixedCubicFourthDegree.quartic_positivity_all_parameters_iff",
+      "file": "Foundation/MixedCubicFourthDegree.lean",
+      "line": 164,
+      "source_sha256": "b6a11723bb92cc6a5f10406eb0924937b58d5d9b90c8ff550b95dde584ee3cad",
+      "declaration_header": "theorem quartic_positivity_all_parameters_iff (v k : \u211d) :\n    (\u2200 g : Polynomial \u211d, g.natDegree \u2264 4 \u2192 0 \u2264 expectation v k (g^2)) \u2194\n      (v=0 \u2227 k=0) \u2228 (0<v \u2227 0\u2264fourthDeterminant v k)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicFourthDegree.lean#L164"
+    },
+    {
+      "paper": "2 and 8: normalization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MixedCubicFourthDegree.normalized_quartic_positivity_iff",
+      "file": "Foundation/MixedCubicFourthDegree.lean",
+      "line": 189,
+      "source_sha256": "b6a11723bb92cc6a5f10406eb0924937b58d5d9b90c8ff550b95dde584ee3cad",
+      "declaration_header": "theorem normalized_quartic_positivity_iff (v k : \u211d) (hv : 0 < v) :\n    (\u2200 g : Polynomial \u211d, g.natDegree \u2264 4 \u2192 0 \u2264 expectation v k (g^2)) \u2194\n      0 \u2264 8-40*(k^2/v^3)-45*(k^2/v^3)^3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicFourthDegree.lean#L189"
+    },
+    {
+      "paper": "2: null quartic",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MixedCubicFourthDegree.determinantQuartic_value",
+      "file": "Foundation/MixedCubicFourthDegree.lean",
+      "line": 114,
+      "source_sha256": "b6a11723bb92cc6a5f10406eb0924937b58d5d9b90c8ff550b95dde584ee3cad",
+      "declaration_header": "theorem determinantQuartic_value (v k : \u211d) :\n    expectation v k ((determinantQuartic v k)^2) = determinant v k*fourthDeterminant v k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicFourthDegree.lean#L114"
+    },
+    {
+      "paper": "3: finite spectral construction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FiniteMatrixSpectralMeasure.law_moment",
+      "file": "Foundation/FiniteMatrixSpectralMeasure.lean",
+      "line": 56,
+      "source_sha256": "c64452547a760c106eaf3faf8982ef3e58e44b7a667c852fce4ed0359c992447",
+      "declaration_header": "theorem law_moment (i : I) (n : \u2115) :\n    (\u222b x : \u211d, x^n \u2202law hA i) = (A^n) i i",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FiniteMatrixSpectralMeasure.lean#L56"
+    },
+    {
+      "paper": "3: zero-coupling transport",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TridiagonalMomentIntertwining.coordinate_moment",
+      "file": "Foundation/TridiagonalMomentIntertwining.lean",
+      "line": 33,
+      "source_sha256": "1bb6f940ff98c01a66b966f2ac085d46cae7d39b8ed79d04fa4b89ef838bfff3",
+      "declaration_header": "theorem coordinate_moment (a b c f r s e h : \u211d) (n : \u2115) :\n    ((symmetric a b c f r s e h)^n) 0 0 =\n      ((monic a b c f (r^2) (s^2) (e^2) (h^2))^n) 0 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TridiagonalMomentIntertwining.lean#L33"
+    },
+    {
+      "paper": "4: explicit Jacobi matrix",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MixedCubicEighthRealization.jacobi",
+      "file": "Foundation/MixedCubicEighthRealization.lean",
+      "line": 16,
+      "source_sha256": "a7b84713f7b3aa8a556cfa4fafcd9ec958add14271dda8164d9b93fe672e91ed",
+      "declaration_header": "def jacobi (v k : \u211d) : Matrix (Fin 5) (Fin 5) \u211d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicEighthRealization.lean#L16"
+    },
+    {
+      "paper": "4: actual eight moments",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MixedCubicEighthRealization.law_represents_eight",
+      "file": "Foundation/MixedCubicEighthRealization.lean",
+      "line": 77,
+      "source_sha256": "a7b84713f7b3aa8a556cfa4fafcd9ec958add14271dda8164d9b93fe672e91ed",
+      "declaration_header": "theorem law_represents_eight (v k : \u211d) (hv : 0 < v) (h4 : 0 \u2264 fourthDeterminant v k) :\n    MixedCubicBoundaryQuartic.RepresentsEight (law v k) v k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicEighthRealization.lean#L77"
+    },
+    {
+      "paper": "Theorem 1.1: eight-moment criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MixedCubicEighthRealization.mixed_eight_realizable_iff",
+      "file": "Foundation/MixedCubicEighthRealization.lean",
+      "line": 105,
+      "source_sha256": "a7b84713f7b3aa8a556cfa4fafcd9ec958add14271dda8164d9b93fe672e91ed",
+      "declaration_header": "theorem mixed_eight_realizable_iff (v k : \u211d) :\n    (\u2203 \u03bc, MixedCubicBoundaryQuartic.RepresentsEight \u03bc v k) \u2194\n      (v=0 \u2227 k=0) \u2228 (0<v \u2227 0\u2264fourthDeterminant v k)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicEighthRealization.lean#L105"
+    },
+    {
+      "paper": "4: ninth steering",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TridiagonalNinthSteering.symmetric_ninth",
+      "file": "Foundation/TridiagonalNinthSteering.lean",
+      "line": 26,
+      "source_sha256": "b5a0098f68d6f1c5d20b0d217b1cfe23aafb442aac5cefbe021079af94d25185",
+      "declaration_header": "theorem symmetric_ninth (a b c f r s e h : \u211d) :\n    ((symmetric a b c f r s e h)^9) 0 0 =\n      ((symmetric a b c 0 r s e h)^9) 0 0+r^2*s^2*e^2*h^2*f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TridiagonalNinthSteering.lean#L26"
+    },
+    {
+      "paper": "4: arbitrary ninth moment",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MixedCubicNinthRealization.arbitrary_ninth_realization",
+      "file": "Foundation/MixedCubicNinthRealization.lean",
+      "line": 87,
+      "source_sha256": "95483c7f5bd6a0114cecb48a6a27d077a6b2aaad3e15f329b9bd8b7e2621d5a1",
+      "declaration_header": "theorem arbitrary_ninth_realization (v k target : \u211d) (hv : 0 < v)\n    (h4 : 0 < fourthDeterminant v k) :\n    \u2203 \u03bc : Measure \u211d, IsProbabilityMeasure \u03bc \u2227\n      (\u2200 n : \u2115, Integrable (fun x : \u211d => x^n) \u03bc) \u2227\n      (\u2200 n \u2264 8, (\u222b x : \u211d, x^n \u2202\u03bc) = moment v k n) \u2227\n      (\u222b x : \u211d, x^9 \u2202\u03bc) = target",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicNinthRealization.lean#L87"
+    },
+    {
+      "paper": "5: quartic cross moment",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MixedCubicQuarticBoundary.null_cross_identity",
+      "file": "Foundation/MixedCubicQuarticBoundary.lean",
+      "line": 37,
+      "source_sha256": "62f1dcec790999576038e179e763e271e69d04a308aa0625a62fc12771027d1e",
+      "declaration_header": "theorem null_cross_identity (v k : \u211d) :\n    v*expectation v k ((X : Polynomial \u211d)*(determinantQuartic v k)^2) =\n      (-9*k^5+48*v^3*k^3-108*v^6*k)*fourthDeterminant v k+\n      864*v^10*k*(52*v^6-272*v^3*k^2+213*k^4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicQuarticBoundary.lean#L37"
+    },
+    {
+      "paper": "5: no ninth moment at null boundary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MixedCubicQuarticBoundary.no_boundary_nine_moments",
+      "file": "Foundation/MixedCubicQuarticBoundary.lean",
+      "line": 98,
+      "source_sha256": "62f1dcec790999576038e179e763e271e69d04a308aa0625a62fc12771027d1e",
+      "declaration_header": "theorem no_boundary_nine_moments (\u03bc : Measure \u211d) (v k : \u211d) (hv : 0 < v)\n    (h4 : fourthDeterminant v k = 0) (hi : \u2200 n \u2264 9, Integrable (fun x : \u211d => x^n) \u03bc) :\n    \u00ac \u2200 n \u2264 9, (\u222b x : \u211d, x^n \u2202\u03bc) = moment v k n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicQuarticBoundary.lean#L98"
+    },
+    {
+      "paper": "5: eight versus nine gap",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MixedCubicQuarticBoundary.boundary_eight_but_not_nine",
+      "file": "Foundation/MixedCubicQuarticBoundary.lean",
+      "line": 129,
+      "source_sha256": "62f1dcec790999576038e179e763e271e69d04a308aa0625a62fc12771027d1e",
+      "declaration_header": "theorem boundary_eight_but_not_nine (v k : \u211d) (hv : 0 < v) (h4 : fourthDeterminant v k = 0) :\n    (\u2203 \u03bc, MixedCubicBoundaryQuartic.RepresentsEight \u03bc v k) \u2227\n      \u00ac \u2203 \u03bc, MixedCubicNinthRealization.RepresentsNine \u03bc v k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicQuarticBoundary.lean#L129"
+    },
+    {
+      "paper": "Theorem 1.1: nine-moment criterion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MixedCubicQuarticBoundary.mixed_nine_realizable_iff",
+      "file": "Foundation/MixedCubicQuarticBoundary.lean",
+      "line": 137,
+      "source_sha256": "62f1dcec790999576038e179e763e271e69d04a308aa0625a62fc12771027d1e",
+      "declaration_header": "theorem mixed_nine_realizable_iff (v k : \u211d) :\n    (\u2203 \u03bc, MixedCubicNinthRealization.RepresentsNine \u03bc v k) \u2194\n      (v=0 \u2227 k=0) \u2228 (0<v \u2227 0<fourthDeterminant v k)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicQuarticBoundary.lean#L137"
+    },
+    {
+      "paper": "6: six-moment realization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RegularMixedMomentExtension.mixed_six_realizable_iff",
+      "file": "Foundation/RegularMixedMomentExtension.lean",
+      "line": 128,
+      "source_sha256": "45f8b3949e37b0d32894f0a006b3c4237bd181bb3ee4210aa24ec8aa51b64de7",
+      "declaration_header": "theorem mixed_six_realizable_iff (v k : \u211d) :\n    (\u2203 \u03bc : Measure \u211d, RepresentsSix \u03bc v k) \u2194\n      0 \u2264 v \u2227 0 \u2264 MixedCubicThirdDegree.determinant v k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RegularMixedMomentExtension.lean#L128"
+    },
+    {
+      "paper": "6: cubic cross moment",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MixedCubicBoundaryQuartic.null_cross_determinant_identity",
+      "file": "Foundation/MixedCubicBoundaryQuartic.lean",
+      "line": 168,
+      "source_sha256": "7ae6b981f2d6df428d1b079afc66561120dfc81c47508998ddfccab80206a171",
+      "declaration_header": "theorem null_cross_determinant_identity (v k : \u211d) :\n    expectation v k ((X : Polynomial \u211d)*(nullCubic v k)^2) =\n      -14*v^2*k*determinant v k+24*v^5*k*(10*v^3-17*k^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicBoundaryQuartic.lean#L168"
+    },
+    {
+      "paper": "6: six versus seven gap",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MixedCubicBoundaryQuartic.boundary_seven_gap",
+      "file": "Foundation/MixedCubicBoundaryQuartic.lean",
+      "line": 226,
+      "source_sha256": "7ae6b981f2d6df428d1b079afc66561120dfc81c47508998ddfccab80206a171",
+      "declaration_header": "theorem boundary_seven_gap (v k : \u211d) (hv : 0 < v) (hD : determinant v k = 0) :\n    (\u2203 \u03bc, RegularMixedMomentExtension.RepresentsSix \u03bc v k) \u2227\n      \u00ac \u2203 \u03bc, RepresentsSeven \u03bc v k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicBoundaryQuartic.lean#L226"
+    },
+    {
+      "paper": "6: strict open gap",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MixedCubicInteriorQuartic.failureRegion_isOpen",
+      "file": "Foundation/MixedCubicInteriorQuartic.lean",
+      "line": 75,
+      "source_sha256": "79730cb2e255fe3578b8e7fc90dfd27cc3ea9df4af84a6fc38ea84d156619333",
+      "declaration_header": "theorem failureRegion_isOpen : IsOpen failureRegion",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicInteriorQuartic.lean#L75"
+    },
+    {
+      "paper": "7: sharp sixth-moment bound",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MixedCubicSharpSixthMoment.sixth_moment_lower_bound",
+      "file": "Foundation/MixedCubicSharpSixthMoment.lean",
+      "line": 30,
+      "source_sha256": "a5a4b512f766da7d36294003e95db3354d690683cc90df38fc22e01bbbd78ed3",
+      "declaration_header": "theorem sixth_moment_lower_bound (E : Polynomial \u211d \u2192\u2097[\u211d] \u211d) (t : \u211d)\n    (hpos : \u2200 g : Polynomial \u211d, 0 \u2264 E (g^2))\n    (h0 : E (X^0) = 1) (h1 : E (X^1) = 0) (h2 : E (X^2) = 1)\n    (h3 : E (X^3) = 1) (h4 : E (X^4) = 3) (h5 : E (X^5) = t) :\n    t^2-8*t+26 \u2264 E (X^6)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicSharpSixthMoment.lean#L30"
+    },
+    {
+      "paper": "7: attained bound",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MixedCubicSharpSixthMoment.sharp_attained_bound",
+      "file": "Foundation/MixedCubicSharpSixthMoment.lean",
+      "line": 89,
+      "source_sha256": "a5a4b512f766da7d36294003e95db3354d690683cc90df38fc22e01bbbd78ed3",
+      "declaration_header": "theorem sharp_attained_bound (t : \u211d) :\n    \u2203 E : Polynomial \u211d \u2192\u2097[\u211d] \u211d,\n      (\u2200 g : Polynomial \u211d, 0 \u2264 E (g^2)) \u2227\n      E (X^0) = 1 \u2227 E (X^1) = 0 \u2227 E (X^2) = 1 \u2227 E (X^3) = 1 \u2227\n        E (X^4) = 3 \u2227 E (X^5) = t \u2227 E (X^6) = t^2-8*t+26",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicSharpSixthMoment.lean#L89"
+    },
+    {
+      "paper": "7: actual extremal probability law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MixedCubicSharpSixthMoment.extremalLaw_first_six",
+      "file": "Foundation/MixedCubicSharpSixthMoment.lean",
+      "line": 60,
+      "source_sha256": "a5a4b512f766da7d36294003e95db3354d690683cc90df38fc22e01bbbd78ed3",
+      "declaration_header": "theorem extremalLaw_first_six (t : \u211d) :\n    (\u222b x : \u211d, x^0 \u2202extremalLaw t) = 1 \u2227\n    (\u222b x : \u211d, x^1 \u2202extremalLaw t) = 0 \u2227\n    (\u222b x : \u211d, x^2 \u2202extremalLaw t) = 1 \u2227\n    (\u222b x : \u211d, x^3 \u2202extremalLaw t) = 1 \u2227\n    (\u222b x : \u211d, x^4 \u2202extremalLaw t) = 3 \u2227\n    (\u222b x : \u211d, x^5 \u2202extremalLaw t) = t \u2227\n    (\u222b x : \u211d, x^6 \u2202extremalLaw t) = t^2-8*t+26",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicSharpSixthMoment.lean#L60"
+    },
+    {
+      "paper": "7: exact negative witness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.MixedCubicMomentPositivity.cubic_witness_value",
+      "file": "Foundation/MixedCubicMomentPositivity.lean",
+      "line": 150,
+      "source_sha256": "4d8d7f139c8684ff3919c3492ec9ac26fb2df9b68e49826665f369ce087e14ca",
+      "declaration_header": "theorem cubic_witness_value : expectation 1 1 (cubicWitness^2) = -21",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicMomentPositivity.lean#L150"
+    }
+  ],
+  "human_reorganization": [
+    "Lemma 3.1 gives a general finite spectral/coordinate proof of the specific verified Jacobi realizations, including a zero last pivot. It is a classical human reconstruction, not a newly named Lean theorem.",
+    "The Gram/Schur-complement proof reorganizes the formal completed-square and witness proofs without changing their parameter criteria.",
+    "The rational example v=1,k=1/2 and the scale normalization are direct human corollaries of the exact criteria; the formal open-gap module uses a different rational example.",
+    "The proof of boundary cross-moment nonvanishing uses monotonicity of a quadratic on [0,1/5] to simplify the formal inequalities."
+  ],
+  "literature": "Classical truncated Hamburger theory; exact two-parameter priority unresolved. Curto\u2013Fialkow Theorems 3.1 and 3.9 consulted in the primary paper."
+}

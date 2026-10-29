@@ -1,0 +1,563 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,booktabs}
+\usepackage[margin=1.05in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Lk}{\mathcal L_{v,k}}
+\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
+\title{Exact truncated moment boundaries\protect\\
+for a Gaussian--cubic polynomial functional}
+\author{Project Stardust}
+\date{Reviewed editorial draft, October 29, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We determine positivity of polynomial squares through degree four and
+realization by positive measures through degree nine for the
+formal moment sequence with exponential generating series
+$\exp(vz^2/2+kz^3/6)$. For $v>0$, put $r=k^2/v^3$.
+Quadratic, cubic and quartic square tests give successively
+\[
+ r\leq2,\qquad 12-24r-9r^2\geq0,\qquad
+ 8-40r-45r^3\geq0.
+\]
+The last inequality is exactly the
+criterion for matching moments through degree eight by a
+positive probability measure. Matching the prescribed ninth
+moment requires the strict inequality. At the quartic null
+boundary a positive measure matches all eight moments, but
+the null polynomial forces a different ninth moment. A
+parallel obstruction occurs between degrees six and seven.
+Finite Jacobi matrices construct the representing measures
+and steer an arbitrary ninth moment in the strict region.
+An attained sixth-moment bound gives a concrete low-degree
+diagnostic. The methods are classical truncated moment
+theory; the explicit parameter formulas are matched to a
+frozen Lean development, with no priority claim.
+\end{abstract}
+
+\section{The polynomial functional and the main boundaries}
+Let $v,k\in\R$. Define $m_0=1$ and, for $n\geq0$,
+\begin{equation}\label{eq:recursion}
+ m_{n+1}=vn\,m_{n-1}+\frac{k}{2}n(n-1)m_{n-2},
+\end{equation}
+where terms with negative indices are zero. Define the
+linear functional $\Lk$ on $\R[x]$ by $\Lk(x^n)=m_n$.
+The generating series identity
+\begin{equation}\label{eq:formal}
+ \sum_{n\geq0}m_n\frac{z^n}{n!}
+       =\exp(vz^2/2+kz^3/6)
+\end{equation}
+is an identity of formal power series: differentiation
+gives \eqref{eq:recursion} and the constant coefficient
+is one. It is not the assumption that a positive law has
+this moment-generating function.
+
+Say that $\Lk$ passes the degree-$d$ square test when
+$\Lk(p^2)\geq0$ for every real polynomial of degree at
+most $d$. A Borel probability measure represents the
+sequence through degree $N$ when $\int |x|^j\,d\mu<\infty$
+and $\int x^j\,d\mu=m_j$ for $0\leq j\leq N$.
+Introduce
+\begin{equation}\label{eq:determinants}
+ \begin{split}
+ \delta&=2v^3-k^2,\\
+ D&=12v^6-24v^3k^2-9k^4,\\
+ Q&=288v^{10}-1440v^7k^2-1620vk^6.
+ \end{split}
+\end{equation}
+
+\begin{theorem}\label{thm:classification}
+For $v>0$ the degree-two, degree-three and degree-four
+square tests hold exactly when $\delta\geq0$, $D\geq0$
+and $Q\geq0$, respectively. A positive probability measure
+represents the moments through degree eight exactly when
+$Q\geq0$, and through degree nine exactly when $Q>0$.
+All positive constructions may be chosen with finite support.
+If $Q>0$, any real ninth moment can be prescribed while
+keeping the first eight moments fixed.
+\end{theorem}
+
+The case $v=0$ is degenerate: a positive measure with the
+first three prescribed moments must be $\delta_0$ and
+$k=0$. If $v<0$, its second moment already excludes a
+positive measure. Thus the full degree-eight criterion is
+$(v,k)=(0,0)$ or $v>0,Q\geq0$; at degree nine replace
+$Q\geq0$ by $Q>0$.
+
+The issue at $Q=0$ is not failure of the preceding square
+test. It is compatibility of the next moment with the
+null polynomial. We give the positive constructions and
+the incompatibility proof explicitly.
+
+The general tools are classical. Curto and Fialkow's
+odd truncated Hamburger criterion tests both positivity
+and a range condition; their even criterion likewise
+distinguishes singular data~\cite{curtofialkow}.
+Here the contribution under examination is an explicit
+evaluation for a two-parameter sequence and a verified
+exposition of its boundaries. We do not claim a new
+general moment theorem or established novelty for these formulas.
+
+\section{Moment matrices and exact square tests}
+The recursion gives
+\begin{equation}\label{eq:table}
+\begin{array}{c|l@{\qquad}c|l}
+ j&m_j&j&m_j\\\hline
+0&1&5&10vk\\
+1&0&6&15v^3+10k^2\\
+2&v&7&105v^2k\\
+3&k&8&105v^4+280vk^2\\
+4&3v^2&9&1260v^3k+280k^3
+\end{array}
+\end{equation}
+Let $H_d=(m_{i+j})_{0\leq i,j\leq d}$. The square test
+is exactly $H_d\succeq0$, since the coefficient vector
+of $p$ has quadratic form $\Lk(p^2)$.
+
+Use the monic centered basis
+\begin{align*}
+ U_0&=1,& U_1&=x,& U_2&=x^2-v,\\
+ U_3&=x^3-3vx-k,&
+ U_4&=x^4-6vx^2-4kx+3v^2.
+\end{align*}
+Each $U_j$, $j\geq1$, has zero functional mean. This
+change of basis is triangular with diagonal one. On
+$(U_1,U_2,U_3)$ the Gram matrix is
+\begin{equation}\label{eq:G3}
+ G_3=\begin{pmatrix}
+ v&k&0\\ k&2v^2&6vk\\0&6vk&6v^3+9k^2
+ \end{pmatrix},\qquad \det G_3=D.
+\end{equation}
+Adjoining $U_4$ gives
+\begin{equation}\label{eq:G4}
+ G_4=\begin{pmatrix}
+ v&k&0&0\\
+ k&2v^2&6vk&6k^2\\
+ 0&6vk&6v^3+9k^2&36v^2k\\
+ 0&6k^2&36v^2k&24v^4+144vk^2
+ \end{pmatrix},\qquad \det G_4=Q.
+\end{equation}
+These identities follow by multiplying the displayed
+polynomials and using \eqref{eq:table}. In particular the
+leading determinants of $H_2,H_3,H_4$ are $\delta,D,Q$.
+
+\begin{proposition}\label{prop:positivity}
+For $v>0$ the three square-test criteria in
+Theorem~\ref{thm:classification} hold.
+\end{proposition}
+\begin{proof}
+For $p=c+bx+ax^2$, direct completion of squares yields
+\[
+ v\Lk(p^2)=v(c+va)^2+(vb+ka)^2+\delta a^2.
+\]
+This proves sufficiency of $\delta\geq0$.
+If $\delta<0$, take $(c,b,a)=(-v^2,-k,v)$; its square
+has value $v\delta<0$.
+
+Necessity of $D\geq0$ and $Q\geq0$ follows because a
+positive semidefinite matrix has nonnegative determinant.
+For sufficiency put $r=k^2/v^3\geq0$. If $D\geq0$,
+then $12-24r-9r^2\geq0$, which forces $r<1/2$ and
+therefore $\delta>0$. The leading $2\times2$ block of
+$G_3$ is positive definite. Its scalar Schur complement
+is $D/\delta\geq0$, so $G_3\succeq0$.
+If $Q\geq0$, its factorization
+\begin{equation}\label{eq:normalize}
+ Q=36v^{10}(8-40r-45r^3)
+\end{equation}
+implies $r\leq1/5$. Hence
+$D/v^6\geq12-24/5-9/25=171/25>0$.
+Thus $G_3$ is positive definite and the last Schur
+complement in $G_4$ is $Q/D\geq0$. This proves
+$G_4\succeq0$. The constant basis vector is orthogonal
+to these centered blocks and has norm one, completing
+the argument for $H_d$.
+\end{proof}
+
+This proof also identifies all positive pivots needed in
+the representing matrices below. To display exact null
+directions, define
+\begin{align}
+ R_3={}&6vk^2U_1-6v^2kU_2+\delta U_3,\label{eq:R3}\\
+ R_4={}&-18k^3(10v^3-3k^2)U_1
+       +18vk^2(10v^3-3k^2)U_2\notag\\
+       &-72v^2k(v^3-k^2)U_3+D U_4.\label{eq:R4}
+\end{align}
+Multiplication by the Gram matrices shows that $R_3$
+is orthogonal to every polynomial of degree at most two,
+and $R_4$ to every polynomial of degree at most three.
+Their square values are
+\begin{equation}\label{eq:nullnorms}
+ \Lk(R_3^2)=\delta D,\qquad \Lk(R_4^2)=DQ.
+\end{equation}
+When the preceding pivots are positive, the monic
+orthogonal polynomials have squared norms
+\begin{equation}\label{eq:norms}
+ h_0=1,\qquad h_1=v,\qquad h_2=\delta/v,
+ \qquad h_3=D/\delta,\qquad h_4=Q/D.
+\end{equation}
+For example, $P_2=U_2-(k/v)U_1$, $P_3=R_3/\delta$
+and $P_4=R_4/D$. These computations can be checked from
+the small Gram matrices without expanding large determinants.
+
+\section{A finite spectral construction, including a null last pivot}
+We spell out the finite construction to handle the
+semidefinite boundary rather than invoke positivity alone.
+The lemma is standard Jacobi-matrix moment theory.
+
+\begin{lemma}\label{lem:jacobi}
+Let $L$ be a real linear functional on polynomials of
+degree at most $2d$, with $L(1)=1$. Suppose $H_{d-1}$
+is positive definite and $H_d$ is positive semidefinite.
+There is a real symmetric $(d+1)\times(d+1)$ matrix $J_f$,
+depending on one real parameter $f$, for which
+\[
+ \langle e_0,J_f^n e_0\rangle=L(x^n),\qquad0\leq n\leq2d.
+\]
+Its spectral probability measure at $e_0$ represents
+these moments. If $h_d$ is the last monic orthogonal
+squared norm, then
+\begin{equation}\label{eq:steergeneral}
+ \langle e_0,J_f^{2d+1}e_0\rangle
+ =\langle e_0,J_0^{2d+1}e_0\rangle+h_df.
+\end{equation}
+The construction remains valid when $h_d=0$.
+\end{lemma}
+\begin{proof}
+Give $V_{d-1}=\R[x]_{\leq d-1}$ the positive definite
+inner product $L(pq)$. Let $q_0=1,q_1,\ldots,q_{d-1}$
+be its orthonormal polynomials with positive leading
+coefficients. Orthogonal projection of $x^d$ onto
+$V_{d-1}$ defines the monic residual $P_d$ and
+$h_d=L(P_d^2)\geq0$.
+For $p=p_{<d}+c x^d$ in $V_d$, define a coordinate map
+into $\R^{d+1}$ by taking the coordinates of
+$p-cP_d\in V_{d-1}$ and giving it last coordinate
+$c\sqrt{h_d}$. Orthogonality proves
+\begin{equation}\label{eq:isometry}
+ \langle C(p),C(q)\rangle=L(pq),\qquad p,q\in V_d.
+\end{equation}
+When $h_d=0$ this is a map of the semidefinite quotient;
+no division by $h_d$ is used.
+
+Specify the first $d$ columns of $J_f$ by
+$J_f C(p)=C(xp)$ for $p\in V_{d-1}$.
+These columns are symmetric on their first $d$ entries,
+because $L(xpq)=L(pxq)$. Fill the remaining off-diagonal
+entries by symmetry, and set the last diagonal to $f$.
+This defines a real symmetric matrix, including at $h_d=0$.
+By induction $J_f^j e_0=C(x^j)$ for $0\leq j\leq d$:
+only the first $d$ columns are used until the last step.
+For $n\leq2d$ choose $i,j\leq d$ with $i+j=n$. Then
+\[
+ \langle e_0,J_f^n e_0\rangle
+ =\langle J_f^i e_0,J_f^j e_0\rangle
+ =L(x^{i+j})
+\]
+by \eqref{eq:isometry}.
+
+Let $J_f=\sum_\lambda\lambda\Pi_\lambda$ be its finite
+orthogonal spectral decomposition. The measure
+\begin{equation}\label{eq:spectralmeasure}
+ \mu_f=\sum_\lambda\|\Pi_\lambda e_0\|^2\delta_\lambda
+\end{equation}
+has nonnegative weights summing to one. Its $n$th moment
+is exactly $\langle e_0,J_f^n e_0\rangle$, and finite
+support supplies all absolute moments.
+
+Finally $J_f-J_0=f e_d e_d^\mathsf T$, while
+$J_f^d e_0=C(x^d)$ is independent of $f$ and has last
+coordinate $\sqrt{h_d}$. Thus
+\[
+ \langle e_0,J_f^{2d+1}e_0\rangle
+ =\langle C(x^d),J_f C(x^d)\rangle
+ =\langle C(x^d),J_0 C(x^d)\rangle+h_df.
+\]
+This proves \eqref{eq:steergeneral}.
+\end{proof}
+
+The symmetric matrices in the lemma are tridiagonal.
+Indeed if $i<j-1$, orthogonality gives
+$L(xq_iq_j)=0$, because $xq_i$ has degree below $j$.
+If $P_j$ is monic with norm $h_j>0$, the neighboring
+entry is $\sqrt{h_j/h_{j-1}}$ by its leading coefficient.
+At $h_d=0$, the last row and column decouple. The
+spectral measure at $e_0$ then lives on the preceding
+block; an arbitrary last diagonal introduces no mass.
+
+\section{Eight moments and a freely chosen ninth moment}
+Assume $v>0$ and $Q\geq0$. By
+Proposition~\ref{prop:positivity}, $H_3$ is positive
+definite and $H_4$ positive semidefinite.
+Lemma~\ref{lem:jacobi} with $d=4$ gives a positive
+probability measure representing all moments through eight.
+Conversely such a measure makes every degree-four square
+nonnegative, so $Q\geq0$. This proves the degree-eight
+classification, including its boundary.
+
+For direct reproduction, the matrix is
+\begin{equation}\label{eq:explicitJ}
+ J_f=\begin{pmatrix}
+ 0&b_1&0&0&0\\
+ b_1&a_1&b_2&0&0\\
+ 0&b_2&a_2&b_3&0\\
+ 0&0&b_3&a_3&b_4\\
+ 0&0&0&b_4&f
+ \end{pmatrix},
+\end{equation}
+where
+\begin{align}
+ b_1&=\sqrt v,& b_2&=\sqrt\delta/v,&
+ b_3&=\sqrt{vD}/\delta,& b_4&=\sqrt{\delta Q}/D,\label{eq:offdiag}\\
+ a_1&=k/v,&
+ a_2&=\frac{k(4v^3+k^2)}{v\delta},&
+ a_3&=\frac{72v^2k(v^3-k^2)}D-\frac{6v^2k}\delta.\label{eq:diag}
+\end{align}
+All denominators are strictly positive. The off-diagonal
+entries follow from \eqref{eq:norms}; the diagonal entries
+are $\Lk(xP_j^2)/h_j$ for $j=1,2,3$.
+For example $\Lk(xP_1^2)=k$, and inserting
+$P_2=x^2-(k/v)x-v$ gives
+$\Lk(xP_2^2)=4vk+k^3/v^2$, which yields $a_2$.
+The same substitution of $R_3/\delta$ gives $a_3$.
+Thus \eqref{eq:explicitJ} is the concrete form of the
+construction, not a matrix whose moment matching is assumed.
+
+Write $s_9(f)=\int x^9\,d\mu_f$. The steering formula is
+\begin{equation}\label{eq:ninthsteer}
+ s_9(f)=s_9(0)+(Q/D)f.
+\end{equation}
+If $Q>0$, any target $s\in\R$ is obtained by
+$f=(s-s_9(0))D/Q$. In particular one can choose
+$s=m_9=1260v^3k+280k^3$. This proves the positive
+degree-nine construction and the arbitrary-target assertion.
+At $Q=0$, however, \eqref{eq:ninthsteer} has zero slope.
+The next section shows that the prescribed $m_9$ is
+incompatible with every positive representation, not
+merely with this chosen family of matrices.
+
+\section{The null boundary excludes the prescribed ninth moment}
+We first record the general compatibility argument.
+
+\begin{lemma}\label{lem:null}
+Suppose a positive measure represents $L$ through degree
+$2d+1$, and $p$ has degree at most $d$ with $L(p^2)=0$.
+Then $L(xp^2)=0$.
+\end{lemma}
+\begin{proof}
+Polynomial integrability follows from the assumed
+absolute moments. Since $p^2\geq0$ and its integral is
+zero, $p=0$ almost everywhere. Therefore $xp^2=0$
+almost everywhere, and its integral is zero.
+\end{proof}
+
+For the particular polynomial $R_4$ of \eqref{eq:R4},
+direct multiplication with the moments through degree
+nine gives the exact identity
+\begin{equation}\label{eq:cross4}
+\begin{split}
+ v\Lk(xR_4^2)={}&(-9k^5+48v^3k^3-108v^6k)Q\\
+ &+864v^{10}k(52v^6-272v^3k^2+213k^4).
+\end{split}
+\end{equation}
+This is a polynomial identity in $v,k$, verifiable from
+the finite table; the accompanying symbolic checker
+independently verifies its transcription.
+
+Now assume $v>0,Q=0$. Its normalized equation is
+$8-40r-45r^3=0$, where $r=k^2/v^3\geq0$.
+It implies $r\leq1/5$, and $k\ne0$ since the constant
+term is eight. On $0\leq r\leq1/5$ the polynomial
+$52-272r+213r^2$ is decreasing, as its derivative
+$-272+426r$ is negative. Its minimum on this interval is
+$153/25>0$. Hence the second line of \eqref{eq:cross4}
+is nonzero, and $\Lk(xR_4^2)\ne0$.
+But \eqref{eq:nullnorms} gives $\Lk(R_4^2)=0$.
+Lemma~\ref{lem:null} rules out a positive degree-nine
+representation. Together with the preceding section,
+this completes Theorem~\ref{thm:classification} for $v>0$.
+
+The degenerate cases stated after the theorem also follow
+without a moment-extension theorem. If $v=0$, a positive
+representing measure has $x=0$ almost everywhere, so
+$k=0$ and it must be $\delta_0$. Conversely
+\eqref{eq:recursion} gives $m_j=0$ for every $j>0$
+when $(v,k)=(0,0)$. Negative $v$ is impossible because
+$\int x^2\,d\mu\geq0$.
+
+The boundary is nonempty. The polynomial
+$g(r)=8-40r-45r^3$ is strictly decreasing for $r\geq0$,
+with $g(0)>0$ and $g(1/5)<0$. It has a unique positive
+root $r_4$, and $g(1/6)=9/8>0$ shows
+\begin{equation}\label{eq:r4}
+ 1/6<r_4<1/5.
+\end{equation}
+For $v=1$, $k=\sqrt{r_4}$ supplies an explicit algebraic
+parameter at which all eight moments are realizable but
+the prescribed ninth is not.
+
+\section{The preceding six-to-seven obstruction}
+The smaller null boundary illustrates the same mechanism
+at a different truncation and is part of the same story.
+
+\begin{proposition}\label{prop:sixseven}
+If $v>0$ and $D=0$, a positive probability measure
+represents the moments through degree six, but none
+represents them through degree seven.
+\end{proposition}
+\begin{proof}
+The equation $D=0$ gives $12-24r-9r^2=0$, with
+\begin{equation}\label{eq:r3}
+ r=r_3=(2\sqrt7-4)/3<1/2.
+\end{equation}
+Thus $\delta>0$, $H_2$ is positive definite and $H_3$
+is positive semidefinite. Lemma~\ref{lem:jacobi} with
+$d=3$ constructs the degree-six representation.
+The last pivot $h_3=D/\delta$ is zero, so it suffices
+to retain the preceding three-dimensional block.
+
+The null cubic $R_3$ satisfies $\Lk(R_3^2)=\delta D=0$.
+Its next cross moment is
+\begin{equation}\label{eq:cross3}
+ \Lk(xR_3^2)=-14v^2kD+24v^5k(10v^3-17k^2).
+\end{equation}
+Again this follows by polynomial multiplication and
+\eqref{eq:table}. At $D=0$ one has $k\ne0$ and
+$10v^3-17k^2=v^3(10-17r_3)>3v^3/2>0$.
+So \eqref{eq:cross3} is nonzero, contradicting
+Lemma~\ref{lem:null} for any degree-seven representation.
+\end{proof}
+
+There is also an open gap between the cubic and quartic
+square tests. At $v=1,k=1/2$, one has $r=1/4$ and
+\[
+ D=87/16>0,\qquad
+ Q/36=8-40/4-45/64=-173/64<0.
+\]
+Continuity preserves both strict signs on a neighborhood.
+Thus even strict cubic square positivity does not
+guarantee quartic square positivity or eight-moment
+realizability. This example is a direct specialization
+of the exact criteria, not an appeal to numerical eigenvalues.
+
+\section{An attained sixth-moment bound}
+The formal sequence can fail much earlier at particular
+parameters. A sharp bound explains the obstruction at
+$v=k=1$ and supplies an independent finite construction.
+
+\begin{proposition}\label{prop:sharp}
+If a probability measure has moments
+\[
+ m_0=1,\quad m_1=0,\quad m_2=1,\quad m_3=1,
+ \quad m_4=3,\quad m_5=t,
+\]
+and finite sixth absolute moment, then
+\begin{equation}\label{eq:sharp}
+ m_6\geq t^2-8t+26.
+\end{equation}
+For every real $t$ equality is attained by a finitely
+supported probability measure.
+\end{proposition}
+\begin{proof}
+Put $p_t(x)=x^3+(4-t)x^2+(t-7)x+(t-5)$.
+Expanding its square with the prescribed first five
+moments gives
+\[
+ \int p_t(x)^2\,d\mu=m_6-(t^2-8t+26),
+\]
+which proves the lower bound.
+For attainment, take the spectral measure at $e_0$ of
+\[
+ A_t=\begin{pmatrix}0&1&0\\1&1&1\\0&1&t-5\end{pmatrix}.
+\]
+Its first four coordinate-power vectors are
+\[
+ e_0,\quad A_t e_0=(0,1,0),\quad
+ A_t^2e_0=(1,1,1),\quad A_t^3e_0=(1,3,t-4).
+\]
+Their inner products give moments $m_0,\ldots,m_4$
+as stated, and
+\[
+ \langle A_t^2e_0,A_t^3e_0\rangle=t,\qquad
+ \|A_t^3e_0\|^2=1+9+(t-4)^2=t^2-8t+26.
+\]
+The spectral measure is a probability measure with at
+most three support points and all absolute moments.
+Its square integral of $p_t$ is zero, so its support
+is contained in the real zero set of $p_t$.
+\end{proof}
+
+For the prescribed sequence at $v=k=1$, $m_5=10$ and
+$m_6=25$, whereas \eqref{eq:sharp} requires $m_6\geq46$.
+Indeed $p_{10}=x^3-6x^2+3x+5$ satisfies
+$\mathcal L_{1,1}(p_{10}^2)=-21$.
+The degree-two square test still passes, since
+$k^2=1\leq2v^3$. This contrasts a finite positive
+truncation with the next genuinely incompatible data.
+
+\section{Normalization, interpretation and exact formal scope}
+The scale $r=k^2/v^3$ is intrinsic for $v>0$.
+Replacing $x$ by $\sqrt v\,y$ transforms the formal
+series to $\exp(z^2/2+\kappa z^3/6)$ with
+$\kappa=k/v^{3/2}$. Changing $k$ to $-k$ is reflection
+of the real variable. Thus the displayed boundaries depend
+only on $r=\kappa^2$. The hierarchy is
+\[
+ 0<r_4<1/5<r_3<1/2<2,
+\]
+where $r_4$ is the unique positive root of
+$8-40r-45r^3$ and $r_3=(2\sqrt7-4)/3$.
+The strict gaps show why matching a few moments cannot
+justify interpreting the whole functional as expectation
+under a positive law. Our assertions stop at the stated
+finite truncations; no all-degree positivity classification
+is needed or supplied by this paper.
+
+The proof uses elementary Gram matrices, Schur complements,
+finite spectral measures and null-polynomial compatibility.
+These are standard truncated Hamburger tools, including
+the distinction between positivity and extendibility at
+singular data in Curto--Fialkow~\cite{curtofialkow}.
+Their odd-case range condition is reflected concretely
+in \eqref{eq:cross3} and \eqref{eq:cross4}; the strict
+case admits the free last diagonal in
+\eqref{eq:ninthsteer}. A targeted preliminary search did
+not settle priority for the explicit two-parameter
+boundaries. Novelty remains unresolved.
+
+The frozen verified baseline is
+\begin{center}\small\ttfamily
+bab688bb6140cd6316c80680095a914ea0d346db.
+\end{center}
+The exact final declarations are in the namespaces
+\begin{center}\small
+\code{MixedCubicFourthDegree},\quad
+\code{MixedCubicEighthRealization},\\
+\code{MixedCubicNinthRealization},\quad
+\code{MixedCubicQuarticBoundary},\\
+\code{MixedCubicBoundaryQuartic},\quad
+\code{MixedCubicSharpSixthMoment},
+\end{center}
+with prefix \code{OperatorDerivativeRewrite.Foundation}.
+The theorem map records declaration lines and frozen source
+hashes. The general finite spectral lemma is a human
+reorganization of the explicitly verified Jacobi matrices
+and steering identities; it is not represented as a newly
+named formal theorem. The rational example and the
+normalization discussion are direct deductions, identified
+separately from the mapped source statements.
+
+\begin{thebibliography}{9}
+\bibitem{curtofialkow} R. E. Curto and L. A. Fialkow,
+Recursiveness, positivity, and truncated moment problems,
+\emph{Houston J. Math.} \textbf{17} (1991), no.~4,
+603--635. In particular Theorems 3.1 and 3.9.
+\url{https://www.math.uh.edu/~hjm/v017n4/0603CURTO.pdf}.
+\end{thebibliography}
+\end{document}
