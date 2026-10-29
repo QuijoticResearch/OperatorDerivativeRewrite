@@ -2817,3 +2817,5 @@ import Foundation.FourCubeDirichletBox
 import Foundation.FourCubeDirichletHaar
 import Foundation.FourCubeNegativeCompletion
 import Foundation.FourCubeNativeTransport
+import Foundation.FourCubeCoreIncident
+import Foundation.FourCubeExteriorSources
