@@ -30,6 +30,9 @@ common locally finite-energy weak derivative. A
 conditional contraction of the full clock gradient
 would recover precisely such a derivative, so separate
 scalar identities cannot evade the obstruction.
+An exact correlated-clock noise formula further gives a sharp
+weighted integral-energy cutoff and divergence of the original
+square-root-weighted clock-chaos energy.
 For a closed densely defined Hilbert operator, strong
 value approximation of a point outside its domain forces
 all derivative norms to escape to infinity, while the
@@ -474,6 +477,178 @@ Theorem~\ref{thm:bounded}.
 This is not an attempted clock chain rule applied to
 an input outside the clock domain.
 
+\section{Exact clock-noise energy and a critical sector obstruction}
+\label{sec:noise}
+The clock section also gives quantitative information below ordinary
+first-order differentiability. We keep the statements in terms of an
+explicit coupling and the original orthogonal clock-chaos projections.
+This avoids assuming an identification with a fractional operator domain.
+
+Fix $T>0$, put $c=\sqrt T$ and $\kappa=\sqrt{2/\pi}$, and let
+\[
+ G=W_T/\sqrt T,\qquad G'=W_{T+1}-W_T.
+\]
+The variables $G,G'$ are independent standard normals, independent of
+the scenery. For $0\leq h\leq1$, define
+\[
+ G_h=(1-h)G+\sqrt{h(2-h)}G',\qquad Z_T^{(h)}=B_{c|G_h|}.
+\]
+Then $G_h$ is standard normal and $\E GG_h=1-h$. The construction
+uses the future clock increment $G'$; it is a Gaussian noise probe and
+is not an adapted physical-time driver. The same full random scenery
+is retained in both $Z_T$ and $Z_T^{(h)}$.
+
+\begin{theorem}[Exact noise formula]\label{thm:noise}
+For $0\leq h\leq1$,
+\begin{equation}\label{eq:noiseexact}
+ \|Z_T-Z_T^{(h)}\|_E^2
+  =c\kappa r(h),\qquad
+ r(h)=\sqrt{4-2h}+\sqrt{2h}-2.
+\end{equation}
+One has
+\begin{equation}\label{eq:noisebounds}
+ \frac{\sqrt{2h}}4\leq r(h)\leq\sqrt{2h},\qquad
+ \lim_{h\downarrow0}\frac{r(h)}{\sqrt h}=\sqrt2.
+\end{equation}
+In particular, for any real $a$,
+\begin{equation}\label{eq:noiseintegral}
+ \int_0^1\frac{\|Z_T-Z_T^{(h)}\|_E^2}{h^{1+a}}\,dh<\infty
+ \quad\Longleftrightarrow\quad a<\tfrac12.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Conditioning on the clock and using the exact scenery increment metric
+gives the squared norm $c\E\bigl||G|-|G_h|\bigr|$.
+For arbitrary real $x,y$, checking their signs and which has larger
+absolute value gives
+\[
+ \bigl||x|-|y|\bigr|=|x+y|+|x-y|-|x|-|y|.
+\]
+The centered Gaussian variables $G+G_h$ and $G-G_h$ have variances
+$4-2h$ and $2h$, respectively. Since a centered normal with variance
+$v$ has first absolute moment $\kappa\sqrt v$, this proves
+\eqref{eq:noiseexact}.
+
+For $h>0$, rationalization gives
+\[
+ r(h)=\sqrt{2h}-\frac{2h}{2+\sqrt{4-2h}},\qquad
+ \frac{r(h)}{\sqrt h}
+   =\sqrt2-\frac{2\sqrt h}{2+\sqrt{4-2h}}.
+\]
+The limit and upper bound follow. Moreover
+\[
+ \frac{r(h)}{\sqrt{2h}}
+  =1-\frac{\sqrt{2h}}{2+\sqrt{4-2h}}
+  \geq1-\frac{\sqrt2}{2}\geq\frac14
+ \quad(0<h\leq1).
+\]
+The case $h=0$ is immediate. As $c\kappa>0$, the integrand
+in~\eqref{eq:noiseintegral} is bounded above and below by positive
+constant multiples of $h^{-a-1/2}$. Its integral at zero is finite
+exactly when $-a-1/2>-1$. There is no other endpoint singularity.
+\end{proof}
+
+Let $\Pi_n^W$ be the original orthogonal projection onto the $n$th
+homogeneous chaos of the clock Gaussian source, acting as the identity
+on all scenery randomness. Put
+\[
+ E_n(T)=\|\Pi_n^W Z_T\|_E^2,\qquad n\geq0.
+\]
+These are energies of the actual endpoint, not of its scenery average.
+They are nonnegative and sum to $\|Z_T\|_E^2=c\kappa$.
+
+\begin{lemma}[Clock-sector noise identity]\label{lem:noiseseries}
+For $0\leq h\leq1$,
+\begin{equation}\label{eq:noiseseries}
+ 2\sum_{n\geq0}(1-(1-h)^n)E_n(T)=c\kappa r(h).
+\end{equation}
+Every odd clock projection of $Z_T$ vanishes.
+\end{lemma}
+\begin{proof}
+The section $\Phi(x)=B_{c|x|}$ belongs to
+$L^2(\gamma;L^2(\mathbb P_B))$, where $\gamma$ is standard Gaussian
+measure. Its Hilbert-valued Hermite expansion is
+\[
+ \Phi(x)=\sum_{n\geq0}b_n\frac{\operatorname{He}_n(x)}{\sqrt{n!}},
+ \qquad \sum_n\|b_n\|_{L^2(\mathbb P_B)}^2=c\kappa.
+\]
+Completeness follows by applying scalar Hermite completeness to the
+coordinates of a countable Hilbert basis of $L^2(\mathbb P_B)$;
+Parseval and nonnegative summation give the asserted expansion and
+energy equality. A scalar function of the single normalized clock
+direction $G$ has its $n$th Hermite component in the original full
+clock chaos of order $n$. Finite Hermite expansions and continuity
+of the orthogonal projections therefore identify
+$E_n(T)=\|b_n\|^2$.
+
+For standard normals $X,Y$ of correlation $\rho$, their exponential
+generating functions give
+\[
+ \E[e^{sX-s^2/2}e^{tY-t^2/2}]=e^{\rho st},\qquad
+ \E[\operatorname{He}_n(X)\operatorname{He}_m(Y)]
+   =\mathbf1_{n=m}n!\rho^n.
+\]
+Differentiation at $s=t=0$ is justified by Gaussian exponential
+integrability. For finite Hilbert-valued Hermite sums it follows that
+the squared difference at $G,G_h$ is
+$2\sum_n(1-(1-h)^n)\|b_n\|^2$.
+Both pullbacks from $L^2(\gamma;L^2(\mathbb P_B))$ into the joint
+space are isometries, so the finite sums converge in both pullback
+norms. The series has nonnegative terms bounded by $2E_n(T)$.
+Passing to the limit and using~\eqref{eq:noiseexact} proves
+\eqref{eq:noiseseries}. Finally $\Phi(-x)=\Phi(x)$ whereas odd
+Hermite polynomials change sign. Thus $b_n=0$ for odd $n$, and
+the corresponding original clock projections vanish.
+\end{proof}
+
+\begin{theorem}[Critical weighted energy fails]\label{thm:critical}
+For each $T>0$,
+\begin{equation}\label{eq:criticalsqrt}
+ \sum_{n\geq1}\sqrt n\,E_n(T)=\infty.
+\end{equation}
+Consequently, for every $a\geq\tfrac12$,
+\[
+ \sum_{n\geq0}(1+n)^aE_n(T)=\infty.
+\]
+Beyond every finite cutoff there is a nonzero even clock sector of
+$Z_T$.
+\end{theorem}
+\begin{proof}
+For $n\geq0$ and $0<h\leq1$, Bernoulli's inequality gives
+\[
+ 0\leq1-(1-h)^n\leq\min(1,nh)\leq\sqrt{nh}.
+\]
+For each fixed $n$ the same bound by $nh$ gives
+$(1-(1-h)^n)/\sqrt h\leq n\sqrt h\to0$.
+If the sum in~\eqref{eq:criticalsqrt} were finite, dominated
+convergence for counting measure, with dominating sequence
+$2\sqrt n E_n(T)$, would imply
+\[
+ \lim_{h\downarrow0}
+ 2\sum_{n\geq0}\frac{1-(1-h)^n}{\sqrt h}E_n(T)=0.
+\]
+But~\eqref{eq:noiseseries} and~\eqref{eq:noisebounds} give the
+strictly positive limit $c\kappa\sqrt2$, a contradiction.
+For $a\geq1/2$, $(1+n)^a\geq\sqrt n$, proving the second
+assertion. If all even projections beyond some cutoff vanished,
+odd-sector vanishing would make the critical sum finite. This proves
+the final assertion.
+\end{proof}
+
+The integral criterion~\eqref{eq:noiseintegral} is an exact positive
+and negative statement for this specified correlated-clock coupling.
+Theorem~\ref{thm:critical} is a negative statement for the original
+clock-sector energies. We do not infer a positive subcritical
+weighted-sector theorem, an equivalence with a completed fractional
+clock-operator domain, or a physical correction topology. The parameter
+$h$ changes Gaussian correlation, not physical observation time.
+The Hermite correlation mechanism is classical Mehler theory;
+Gaussian interpolation and fractional smoothness have extensive prior
+theory, for example~\cite{geiss}. That literature is context rather
+than a substitute for the particular source-valued coupling and domain
+identifications proved here. A bounded preliminary search did not
+settle priority for the exact reflected-clock energy application.
+
 \section{Graph-dual derivatives and escape of the original field norm}
 We give the closed-operator argument separately to
 make its topology and representability exact.
@@ -562,59 +737,43 @@ clock energy, although its embedded derivatives converge
 in a weaker, precisely defined norm.
 
 \section{Scope, antecedents and formal correspondence}
-The Brownian-time model is classical. Allouba and Zheng
-define the simple reflected-clock process and distinguish
-it from excursion-based versions~\cite{alloubazheng}.
-The Gaussian derivatives here act on its independent
-Gaussian sources; $Z$ itself is not asserted to be a
-Gaussian process. Standard Gaussian derivative/divergence
-conventions are discussed in~\cite{sottinen}.
-The recent Brownian-time change-of-measure work
-\cite{change} concerns a different question; no
-conclusion about all possible Brownian-time calculi or
-changes of law follows from the clock-domain obstruction.
-These comparisons do not settle novelty of the present
-domain-and-graph-dual formulation.
+The Brownian-time model is classical~\cite{alloubazheng}.
+Gaussian derivatives act on its independent sources;
+$Z$ itself is not Gaussian. Standard derivative/adjoint
+conventions appear in~\cite{sottinen}. The Brownian-time
+change-of-measure work~\cite{change} addresses a different
+question; none of the exclusions here rules out every
+possible Brownian-time calculus. Novelty remains unresolved.
 
-The frozen verified baseline is
+All formal correspondences use frozen verified commit
 \begin{center}\small\ttfamily
 bab688bb6140cd6316c80680095a914ea0d346db.
 \end{center}
-The theorem map links the exact folded-section metric,
-first-chaos projection and bounded sine exclusion,
-finite-energy primitive obstruction, weak-vector
-primitive, actual Bochner clock contraction and
-observation converse, unmollified scenery derivative,
-actual point-domain exclusion, and generic graph-dual
-representability/error/escape theorems. The ambient
-clock application combines these exact ingredients;
-it is distinguished from the library's separate native
+The accompanying theorem map records exact sources for
+the folded-section metric, primitive and contraction
+arguments, point and sine exclusions, clock-noise and
+critical-sector energies, and generic graph-dual
+representation/error/escape theorems. The ambient clock
+application remains distinct from the separate native
 adjoint-graph-dual time-average results.
 
-The formal Gaussian realization can contain additional
-independent scenery coordinates, including a negative-time
-branch that the reflected clock never visits. The
-half-line presentation above retains the same actual
-process and partial domains on its observables. Positive
-graph pairs tensor with constants in unused coordinates;
-conversely conditional integration over those coordinates
-recovers the same clock test identities by contraction.
-Thus no unused source is substituted for a clock derivative.
+The formal realization may contain unused independent
+scenery coordinates, including a negative-time branch.
+The half-line model retains the same process and partial
+domains on its observables: graph pairs tensor with
+constants in unused coordinates; conversely averaging
+those coordinates contracts the graph test identities.
+They do not provide a substitute clock gradient.
 
-No positive-time original clock gradient of the point
-is obtained by regularizing its values alone. In
-particular strong convergence of a chosen regularized
-clock-gradient sequence would contradict closedness;
-the full norm-escape conclusion applies when the
-approximations are actual original graph pairs.
-Separate scalar tests without one common finite-energy
-field do not meet the recovered-field hypothesis.
-Neither source-variable divergence nor an adjoint-graph
-test functional is identified here as an observed-past
-physical-time stochastic integrand. The paper proves
-no physical-time It\^o or Clark--Ocone completion,
-and it does not address changing-past integrated
-point-regularizer convergence.
+Value regularization alone cannot produce a convergent
+original clock-gradient sequence at the point or sine;
+closedness and the norm-escape theorem exclude it.
+Scalar tests without one common finite-energy field do
+not meet the recovered-field hypothesis. Neither a
+source-variable divergence nor an adjoint-graph test
+functional is identified as an observed-past physical-time
+integrand. No physical-time It\^o/Clark--Ocone completion
+or changing-past integrated point-regularizer limit is proved.
 
 \begin{thebibliography}{9}
 \bibitem{alloubazheng} H. Allouba and W. Zheng,
@@ -628,6 +787,11 @@ representation, \emph{Int. J. Stoch. Anal.}
 \textbf{2016}, article 8694365.
 \href{https://doi.org/10.1155/2016/8694365}
 {doi:10.1155/2016/8694365}.
+\bibitem{geiss} S. Geiss and A. Toivola,
+On fractional smoothness and $L_p$-approximation on the Gaussian space,
+\emph{Ann. Probab.} \textbf{43} (2015), 605--638.
+\href{https://doi.org/10.1214/13-AOP884}{doi:10.1214/13-AOP884}.
+\url{https://arxiv.org/abs/1206.5415}.
 \bibitem{change} B. Abdurakhmanov and H. Allouba,
 Brownian-time change of measure, preprint,
 arXiv:2605.07044 (2026).

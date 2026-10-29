@@ -88,3 +88,7 @@ The original five-page associativity working note is now a ten-page reviewed com
 ## Arithmetic attribution corrected
 
 Direct primary comparison located an explicit classical antecedent for the smooth cubic endpoint. The existing ten-page fractional-deformation paper now credits it and has fresh compiled/visual receipts. Nonintegral priority remains unresolved. The focused literature comparison records the accessible Pólya location and the still incomplete de Bruijn full-file access; no mathematical claim was strengthened.
+
+## Clock-domain paper strengthened in place
+
+The clock-domain manuscript is now ten pages and incorporates the exact actual endpoint clock-noise formula, integral cutoff, original Hermite-sector identity, odd-sector vanishing and critical weighted-energy divergence. This is an expansion of the existing domain paper, not another thin paper. Its future-increment correlation probe is noncausal and retains all scenery randomness; no positive subcritical sector theorem or fractional-domain identification is inferred. The complete source map now has 50 correspondences. Sixteen reviewed manuscripts total 141 pages, with all current PDF/source receipts rechecked.
