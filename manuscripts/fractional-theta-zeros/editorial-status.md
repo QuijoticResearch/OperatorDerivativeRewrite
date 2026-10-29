@@ -12,4 +12,6 @@ Literature: an accessible primary author-hosted search result for David A. Cardo
 
 The ten-page length is deliberate: the self-contained obstruction and escape proofs fit without the much larger quartic saddle analysis. The suggested 12–30 pages is treated as a preference, not a reason to add unrelated results. All pages are rendered and inspected; current build and review receipts govern PDF freshness. This is a reviewed draft, not publication-ready or externally submitted.
 
-Follow-up October 29: the author-hosted Cardon primary manuscript became accessible and Proposition 1/Theorem 1 were inspected directly. The supplementary LITERATURE_COMPARISON.md records their precise universal-factor/order and distribution hypotheses. This improves the earlier abstract-only record; it neither establishes priority for the endpoint theorem nor changes this PDF or its mathematical scope. Direct original Pólya comparison remains pending.
+## Direct historical attribution
+
+The cubic real-zero conclusion now credits the original 1927 primary theorem identified in the updated PDF and source map. Nonintegral priority remains unresolved. All ten pages were re-rendered and inspected after the bibliography/attribution edit; theorem statements and proofs are unchanged.

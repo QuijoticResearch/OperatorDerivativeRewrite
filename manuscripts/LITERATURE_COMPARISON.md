@@ -12,6 +12,10 @@ Charles M. Newman, *Fourier transforms with only real zeros*, Proc. AMS 61 (1976
 
 The original de Bruijn paper was located in the TU Delft repository, but the primary file fetch timed out. Its detailed theorem comparison therefore remains incomplete. No positive novelty finding or exhaustive negative literature claim follows from these comparisons.
 
+The original [Pólya 1927 Jensen memoir](https://gymarkiv.sdu.dk/MFM/kdvs/mfm%201-9/mfm-7-17.pdf), Chapter I, no. 6, assertion II, printed pp. 14–15, was inspected directly. Its endpoint theorem supplies a classical antecedent for the cubic conclusion. The arithmetic PDF now credits it. Nonintegral densities require a separate comparison because its smoothness premise fails.
+
+The [indexed primary de Bruijn file](https://repository.tudelft.nl/file/File_524a4d3c-0858-4c55-b425-8c8ce1fb89da) exposed Theorems 12–14 on strip control and universal factors. The full file still timed out, so exact normalization and complete-hypothesis comparison remain unfinished. The indexed quadratic/genus-zero-or-one statements do not by themselves certify growing quartic or sixth-order arithmetic multipliers. No priority conclusion follows.
+
 ## Nonlinear Gaussian and fractional prediction
 
 McElroy and Das, *Nonlinear prediction via Hermite transformation*, Statistical Theory and Related Fields 5 (2021), 49–54: [primary article](https://doi.org/10.1080/24754269.2020.1856589). Its indexed primary introduction explicitly places Hermite predictor and mean-square-error formulas in existing Gaussian transformation prediction. Direct full-text access returned 403 and the alternate journal PDF timed out. The manuscript credits this mechanism without claiming a detailed theorem-number comparison.
@@ -24,4 +28,4 @@ Cantwell's [primary restricted-Euler article](https://doi.org/10.1063/1.858295) 
 
 ## Editorial consequence
 
-Keep all fourteen manuscripts labelled reviewed drafts. Treat the Gaussian prediction, Fourier positivity, complex-root and fluid notes as classical/formalization or diagnostic companions unless a precise independently checked new result is isolated. The arithmetic threshold, explicit moment boundaries, completed signed reconstruction and original Brownian-time domain/average results deserve focused further theorem-by-theorem priority comparison. Their current unresolved novelty labels are accurate. No external release or submission is authorized or performed.
+Keep all sixteen manuscripts labelled reviewed drafts. Treat the Gaussian prediction, Fourier positivity, complex-root and fluid notes as classical/formalization or diagnostic companions unless a precise independently checked new result is isolated. The arithmetic threshold, explicit moment boundaries, completed signed reconstruction and original Brownian-time domain/average results deserve focused further theorem-by-theorem priority comparison. Their current unresolved novelty labels are accurate. No external release or submission is authorized or performed.

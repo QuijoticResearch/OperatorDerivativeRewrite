@@ -145,3 +145,7 @@ Fifteen reviewed drafts now total 129 pages. The six-page forcing companion cont
 ## Observable-martingale note expanded and reviewed
 
 The original five-page associativity working note is now a ten-page reviewed companion at the same canonical path, with 66 exact frozen correspondences. It gives complete energy/product/null-ideal proofs, signed joint completion and common bounded action identification, fixed-family uniform reconstruction over compact parameter sets and every causal horizon, and original native divergence graph convergence. Raw predictability and right-germ martingales remain distinct. Classical primary antecedents are credited, and auxiliary human reorganizations are labelled. No temporal IBM Ito/Clark--Ocone or single-driver predictable representation claim follows. Earlier revision and build history are preserved in Git. Sixteen reviewed drafts now total 139 pages; two earlier separate IBM working notes remain.
+
+## Arithmetic attribution corrected
+
+Direct primary comparison located an explicit classical antecedent for the smooth cubic endpoint. The existing ten-page fractional-deformation paper now credits it and has fresh compiled/visual receipts. Nonintegral priority remains unresolved. The focused literature comparison records the accessible Pólya location and the still incomplete de Bruijn full-file access; no mathematical claim was strengthened.
