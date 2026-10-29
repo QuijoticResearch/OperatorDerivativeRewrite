@@ -2801,3 +2801,11 @@ import Foundation.FourCubeHarmonicCubicValue
 import Foundation.FourCubeHarmonicAmplitude
 
 import Foundation.FourCubeThermalMixedDifference
+
+import Foundation.FourCubeHaarContinuousIntegral
+
+import Foundation.FourCubeBoundarySmoothAction
+
+import Foundation.FourCubeBoundarySmoothPartition
+
+import Foundation.FourCubeMixedMeanValue

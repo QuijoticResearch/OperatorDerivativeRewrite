@@ -3129,3 +3129,72 @@ Exact remaining bottleneck. The generic harmonic cubic law and ACTUAL full-Haar 
 No fixed-beta third derivative-at-zero asymptotic, thermal-bound contradiction beyond the explicit finite-difference bound, stationary physical transfer estimate, physically justified iteration distance, scale/volume-uniform continuum bridge, Yang-Mills existence or mass gap is claimed. Classical linear scaling, determinant algebra and finite-difference/limit reasoning are not claimed novel. Keep the indefinite focused research goal active.
 
 Exact-commit approval, full new-history secret scanning, guarded PUBLIC main/research synchronization and independent remote-ref/visibility checks remain closure gates. This pre-commit ledger does not assert backup already succeeded. Only the user controls visibility.
+
+
+## Checkpoint1719 — actual fixed-coupling smoothness and large genuine mixed boundary derivatives
+
+October29,2026. Focused Yang-Mills remains ACTIVE; Bakry PAUSED and research queue unchanged. Extends audited/two-ref verified checkpoint1718,5883809af41f138215580482bfa6ae64ef31dfe6. The last mathematical goal turn made substantive progress; the intervening heartbeat only checked reflection eligibility and changed no research state. The stale reflection reservation and active investigation prevented a new reflection session. No publication/manuscript/PDF/editorial work was undertaken; original manuscripts were hash-checked only.
+
+Four focused modules: FourCubeHaarContinuousIntegral, FourCubeBoundarySmoothAction, FourCubeBoundarySmoothPartition and FourCubeMixedMeanValue. The specific bottleneck is1718's missing ACTUAL fixed-beta regularity/domain hypothesis for converting an actual mixed finite difference into a genuine mixed derivative at an intermediate boundary point. The proof does not assume a derivative-limit interchange or a continuum measure.
+
+Actual continuous-function calculus. The existing32-interior-link Haar state space Omega=InteriorState is already compact. Observables=C(Omega,real), with its supremum norm, is a complete normed algebra. Every such observable is genuinely integrable against the EXISTING normalized interiorHaar. haarIntegral is a continuous REAL linear map on this actual space, constructed from integral additivity/scalar multiplication and the bound
+
+    |integral f dmu| <= ||f||_infinity.
+
+No probability measure was substituted, and no Lp representative or default-zero integral outside its domain is used. Evaluation as an algebra homomorphism proves that the Banach-algebra exponential evaluates to the pointwise REAL exponential. Analyticity of the Banach-algebra exponential supplies C-infinity smoothness, and continuous-linear Haar integration composes with it. This is a justified bounded-operator differentiation mechanism, rather than repeated unsupported formal differentiation under the integral.
+
+Actual action-valued smoothness. traceContinuous is the REAL continuous-linear half-trace on the existing2x2 complex matrices. For every actual interior edge e, probe(e,M)(s)=traceReal(M*(s_e))/2 is a continuous-observable-valued REAL linear map in M; finite dimensionality supplies its continuity. The explicit axisMatrix is identified with the ACTUAL SU2 boundary curve using its existing exact cosine/sine formula. Boundary inverses retain the correct negative angles. Every matrix word is proved equal to the native word for the chosen boundaryData, including both inverse factors.
+
+The fixed interior action is continuous on the actual compact Haar state space. The existing EXACT full-cell identity then constructs the observable-valued action as
+
+    A(a)=internalAction+48-sum_(48 ribbons p) probe(ribbonInterior p,wordMatrix(a,p)).
+
+Pointwise action_apply proves A(a)(s)=cellAction(a0,a1,a2,s), with ALL24 internal and48 ribbon faces retained. Smoothness of the finite-dimensional boundary words and continuous-linear probes proves A:real^3->C(Omega,real) is globally C-infinity IN THE SUPREMUM NORM. This is not merely pointwise smoothness of each s-section.
+
+Actual partition/free energy domains. For EACH FIXED real beta, define the Banach-valued exponential integral of -beta*A(a). partition_integral identifies it with the genuine full32-link Haar integral. partition_eq_actual identifies it with the pre-existing partition3, and the verified exact partition3_eq_pinned transports it to the31-link pinned partition. Thus the theorem concerns the ORIGINAL actual finite-cell partition, not a newly defined surrogate. Continuous-linear integration and Banach-algebra smoothness prove the partition is globally C-infinity in all three real boundary angles. The fixed normalizer is positive; the actual normalized partition is positive for EVERY beta and a. Taking its real logarithm proves
+
+    F_beta(a)=-log N_(boundaryData(a))(beta)
+
+is globally C-infinity on real^3 for EVERY FIXED real beta, including0 and negative beta. The public results include actual_partition_contDiff, actual_normalized_contDiff, actual_normalized_positive and actual_freeEnergy_contDiff. No beta-uniform derivative bound or joint large-beta differentiated limit is asserted.
+
+Repeated mean value and ACTUAL mixed derivatives. Define spatialPartial(j,F)(a)=fderiv(real,F,a)(e_j), using the actual coordinate basis. partial_contDiff proves these derivatives retain C-infinity when F is C-infinity. slice_x/y/z identify them with actual scalar derivatives along the coordinate lines. A private one-dimensional mean-value helper has its continuity and open-interval derivative assumptions DISCHARGED from HasDerivAt. The public cube_mean applies the helper THREE times, first in x, then y to the x-partial, then z to that mixed partial. It proves for any globally C-infinity F and h>0 that some point a with |a_i|<h satisfies
+
+    partial_z partial_y partial_x F(a)=C_h(F)/(8h^3),
+
+where C_h is1718's exact eight-corner signed sum. The generic theorem is stated for C-infinity, not advertised as a minimal C3 theorem. The ACTUAL free energy satisfies that hypothesis by the preceding proofs, so actual_cube_mean contains NO remaining hypothetical smoothness or stochastic-domain premise.
+
+Combining it with1718's ACTUAL thermal finite-difference lower bound proves actual_large_derivatives:
+
+    eventually as t->0 from the POSITIVE side,
+    exists a in real^3 with every |a_i|<t such that
+    partial_z partial_y partial_x F_(1/t^2)(a) > c/(2t^2),
+    c=31877443263/69438734552>0.
+
+The coupling is held FIXED when taking each derivative. The resulting intermediate point may depend on t; it is not asserted to be the origin or a canonical/measurable selection. These genuine derivatives are now forced to grow at least linearly in beta SOMEWHERE INSIDE SHRINKING THERMAL BOUNDARY CUBES. This closes a real derivative-location bridge beyond the earlier finite-difference statement, without interchanging differentiation and a large-beta limit. It rules out a beta-uniform bound on this specified mixed derivative throughout those cubes. It does not supply a positive physical mass gap or a stationary transfer spectrum.
+
+Verification:
+- build: PASS, 28.95627909997711 seconds.
+- audit: PASS, 45.104313799995 seconds.
+- checks: PASS, 31.389471699978458 seconds.
+- axiom-ledger: PASS, 47.02396670001326 seconds.
+
+Complete root build:7054 jobs. Canonical COMPLETE safe-Foundation Lean.collectAxioms audit:56173 declarations, allowing only propext, Classical.choice and Quot.sound. ALL53 public types were printed unabridged and reviewed:35 complete theorem proofs,16 definitions and2 abbreviations. All four complete source bodies and the private mean helper proof were read. COMPLETE persisted Foundation/AxiomAudit.lean passed. Every Lean target/build/audit/test runner was serialized and its terminal handle checked before the next. No sorry/admit/new mathematical axiom/native_decide, resource increase, older-source/config/compiler/trust/toolchain change or weakened verification was introduced. A default heartbeat limit in nested implicit matrix smoothness composition was resolved by explicit typed factors. C-infinity notation needed the existing ContDiff scope/import. The initially chosen identifier partial is a Lean reserved keyword; it was replaced by spatialPartial before any successful target or audit. Equivalent real-module instances in identity slice derivatives were reconciled with convert!, preserving their ordinary derivative meaning.
+
+ALL20 independent Lean examples passed. They cover actual integrability, integral1=1, continuous-linear scalar/additive integration, pointwise Banach exponential, the actual Haar link-probe mean0, exact actual action and pinned/original partition identities, positive normalization for arbitrary beta/a, C-infinity at beta0, beta=-1 and general beta, smooth first partial and scalar derivative identity, cube-mean normalization on xyz, necessity of a positive nonempty interval, actual intermediate-point identity and thermal derivative lower bound. A final independent Lean example proves there can be no one finite K bounding |mixedDerivative(beta,a)| for all beta and a, by applying the actual cube-mean theorem to the diverging thermal finite differences. The first test run needed explicit simplification of vector entries in the polynomial normalization test before ring arithmetic; its failed log was preserved and only the TEMPORARY TEST repaired. Mathematical sources/resources were unchanged for that repair.
+
+Independent origin-inference audit. To test a tempting INVALID conclusion, consider the explicit generic family, t!=0,
+
+    G_t(x,y,z)=c*sin(x)*sin(y)*sin(z)*r/[t^2*(t^4+r)],
+    r=sin(x)^2+sin(y)^2+sin(z)^2.
+
+For each fixed nonzero t it is smooth, real analytic, periodic and bounded by c/t^2, since the denominator is at least t^4 and0<=r/(t^4+r)<=1. Its numerator vanishes to total order5 at the origin, so its third mixed derivative at the origin is IDENTICALLY0. Nevertheless for every fixed amplitude a, G_t(t*a)/t->c*a0*a1*a2: for nonzero a, r(t*a)/t^2->sum a_i^2>0, the rational factor tends to1, and sin(t*a_i)/t->a_i; a zero coordinate makes the expression0 directly. Consequently its normalized eight-corner thermal response also tends to c. Thus even smoothness/real analyticity, periodicity, fixed-t boundedness and the pointwise cubic amplitude law ALONE do not justify the origin conclusion. This is an explicit GENERIC counterexample, NOT an actual Haar partition and NOT a counterexample to actual Yang-Mills origin asymptotics.
+
+The counterexample's degree5 Taylor arithmetic was independently checked with exact rational truncated polynomials at t=1,1/2,1/10,-1/3: the xyz coefficient is0 and the x^3*y*z coefficient is c/t^6. Floating thermal limits were checked at four amplitude triples and t=.04,.02,.01,.005. This counterexample has an elementary analytic justification recorded above and independent exact arithmetic, but NO standalone Lean formalization is claimed here. A preliminary SymPy script could not run because SymPy is absent; it was replaced by the self-contained exact arithmetic check without package installation or environment change. Evidence prefix C:/Users/ramir/AppData/Local/Temp/stardust-ym-1719-*.
+
+Authenticated integrity compares1718's manifest against exact approval5883809af41f138215580482bfa6ae64ef31dfe6. Among2836 recursive Foundation/root Lean sources, only these four modules, root imports and persisted AxiomAudit differ. All older mathematics,3 pinned configs,113 baseline originals and21 Yang-Mills originals(20 distinct hashes) remain unchanged. ResearchSources stays read-only/uncommitted, and all existing drafts/history, publication-role separation, master ref and separate publication branch are preserved.
+
+Exact remaining obligations. Actual fixed-beta global boundary C-infinity regularity, precise ordinary mixed-partial domains and existence of large actual derivatives inside shrinking thermal cubes are NOW VERIFIED; do not list them as conditional gaps. A derivative-at-the-ORIGIN asymptotic still requires actual additional uniform derivative/complex-analytic control or a structural identity that excludes the demonstrated generic boundary-layer mechanism. Do not repeat a pointwise smoothness argument as if it were such a mechanism. Before claiming that an original thermal-norm estimate is refuted, audit its EXACT normalization, derivative directions, gauge quotient and parameter/volume dependencies against this genuine but specified finite-cell derivative. Global color-conjugation identities may be reused where already proved; no pointwise sign diagnostic is a new gauge theorem.
+
+Stationary physical transfer estimates, a physically justified iteration scale, scale/volume-uniform continuum bridges, external Yang-Mills existence and a positive four-dimensional mass gap remain OPEN. Fixed finite-cell C-infinity does not establish any of them. Classical Banach-algebra smoothness, bounded-linear integration and repeated mean value are not claimed novel. The indefinite focused mathematical goal stays active; no campaign transition or publication is authorized by this checkpoint.
+
+Exact-commit approval, complete new-history secret scanning, guarded PUBLIC main/research synchronization and independent post-push remote refs/visibility remain closure gates. This pre-commit ledger does not assert backup already succeeded. Only the user controls repository visibility.
