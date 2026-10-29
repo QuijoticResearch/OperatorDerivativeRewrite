@@ -55676,3 +55676,58 @@ The user's publication-role separation has also been saved as a controlling prea
 Next transfer the single-link two-jet identity through the full finite Wilson action, proving its ratio-coordinate scalar quadratic limit with the exact generator normalization. Then establish the31-fold product Haar transport and rescaling Jacobian, pointwise local density limit, normalized partition-function asymptotics and a justified dominated-convergence theorem using the verified local envelope. These are still OPEN; a Hessian, a chart density and a dominating function are not by themselves a completed convergence proof. Uniform perturbed-boundary saddle isolation, third-order parameter derivatives/Laplace estimates, the full harmonic-cubic Lean coefficient, stationary transfer lower obstructions at physical coupling-distance scales and scale/volume/continuum bridges remain OPEN. The constant372 explicitly depends on this31-link cell; no uniform physical four-dimensional theorem or mass gap is claimed. The route remains a precise test of the manuscript-motivated full-block asymptotic mechanism rather than broad auxiliary gauge-library expansion. No novelty claim is made for the classical chart identities or the local Laplace strategy.
 
 Exact-commit approval, secret scan and guarded PUBLIC main/research synchronization remain closure gates. This pre-commit ledger entry does not assert remote success. Repository visibility is exclusively user-controlled; master and every other research priority remain unchanged.
+
+
+## Checkpoint1707 - actual full-cell Haar-coordinate quadratic and Boltzmann limits
+
+October29,2026. Focused Yang-Mills remains ACTIVE. The missing full-action second-jet bridge from1706 is now proved. New sources are Foundation/FourCubeAmbientAction.lean and Foundation/FourCubeHaarQuadraticLimit.lean. These are directed at the fixed-cell Laplace/response bottleneck, not an expansion of general gauge-theory infrastructure. No manuscript or publication artifact was created, revised, compiled or reviewed. The source archive is preserved by hash checks only.
+
+### Actual action identification, not a hypothetical smooth surrogate
+
+FourCubeAmbientAction realizes the existing24 internal-face plus48 ribbon-face action as a finite real polynomial in32 interior2x2 complex matrices and their conjugate transposes. `core_actual`, `face_actual` and `action_actual` prove exact equality to the repository's actual SU(2) core fields, Wilson faces and identity-boundary vacuum action for EVERY actual interior state. Nothing is integrated over unrestricted nonunitary matrices. The ambient function only supplies a valid finite-dimensional derivative computation.
+
+`adjointLinear` and `adjointCLM` explicitly make conjugate transpose a REAL continuous linear map in this finite matrix space. No false operator-norm isometry or NormedStarGroup assumption is introduced. `action_contDiff` proves C2 regularity using finite products, sums and the existing real trace CLM. For every retained31-link coordinate field Y, `ratioPath_actual` identifies the resulting path with the ACTUAL pinned action at chartField(t*Y); `expPath_actual` identifies its exponential comparison with the already verified pinnedRay. The pinned root is exactly the identity in both paths.
+
+The ratio path and comparison path are C2 for all real t; positive1+t^2*|y|^2 justifies all square-root and reciprocal derivatives. Their values and first two matrix-field derivatives agree at0. `action_first_transfer` and `action_second_transfer` transport this agreement through the actual full action, using Mathlib's verified chain rule and `iteratedDeriv_vcomp_two`. This closes the previous distinction between1704's exponential Hessian and1705's actual Haar chart at SECOND order. No third-order transition or boundary derivative is asserted.
+
+### Exact coefficient and the strongest pointwise conclusion
+
+Let L be OneSidedPinnedInterior.localGram and define
+
+    G(Y) = sum_(a=0,1,2) (Y^a)^T L Y^a,
+    R_Y(t) = S(chartField(t*Y)).
+
+The repository's generator frame is frame(y)=(2*y1,2*y2,2*y0). `frame_lift` proves compatibility with the pinned extension. `frame_quadraticForm` proves the frame contributes EXACTLY a factor4 in the Gram form, cancelling1704's factor1/4. Thus `ray_zero`, `ray_first_zero` and `ray_second_gram` prove
+
+    R_Y(0)=0,   R_Y'(0)=0,   R_Y''(0)=G(Y).
+
+`ray_second_positive` proves G(Y)>0 for every nonzero retained field. `ray_taylor_polynomial` identifies the actual second Taylor polynomial for every evaluation t. `ray_quadratic_remainder` proves
+
+    R_Y(t) - (G(Y)/2)*t^2 = o(t^2) as t ->0.
+
+For EVERY fixed Y, `ray_quadratic_limit` and `boltzmann_quadratic_limit` prove
+
+    R_Y(t)/t^2 -> G(Y)/2,
+    exp(-R_Y(t)/t^2) -> exp(-G(Y)/2),
+
+as real t tends to0 THROUGH NONZERO VALUES. This is the actual Boltzmann weight at beta=1/t^2 and the correct covariance quadratic form, with no unproved Gaussian approximation inserted into the premises. It is pointwise in Y, not a uniform remainder or a theorem about normalized Gibbs measures.
+
+`no_unpunctured_quadratic_limit` proves that for nonzero Y the corresponding UNPUNCTURED Lean quotient limit is FALSE: total division assigns R_Y(0)/0^2=0, whereas G(Y)/2>0. This is a topology/domain issue for the written quotient, not an obstruction to the usual mathematical punctured limit or a continuous extension assigning the limiting value at0. Future dominated-convergence arguments must retain nonzero scales or define that extension explicitly.
+
+### Independent testing and a rejected numerical assumption
+
+Seventeen independent Lean checks passed in25.7740946 seconds. They verify actual ambient/state action identification, the actual two coordinate paths, C2 regularity, no linear term, the full Gram coefficient, positive second variation for a concrete nonzero constant field, the exact second Taylor polynomial, the punctured limit, failure of the unpunctured limit and the real exponential limit. They independently refute retaining an erroneous extra factor1/4 in the actual coordinate Hessian.
+
+A NumPy-only diagnostic independently evaluates the full72 faces both by quaternion multiplication and by complex matrix multiplication with conjugate-transposed inverse links. All64 one-sided quotient/matrix-action comparisons across eight rational pinned fields, both signs and four decreasing scales passed, as did12 basis-coordinate normalization tests across four links and three quaternion axes. They agree with half the independently enumerated incidence Gram energy. These are numerical diagnostics, not certified remainder rates or proofs of integration limits.
+
+An initial diagnostic additionally demanded geometric MONOTONE error reduction at every sampled scale. Six comparisons rejected that stronger, unjustified assumption: cubic/quartic cancellations can make an intermediate coarse-scale error anomalously small. The script now preserves those comparisons as rejected-assumption evidence rather than treating Taylor convergence as monotone convergence of errors. A separate exact Lean rational-polynomial counterexample in the independent harness verifies the logical distinction. The mathematical theorem and its little-o topology were not weakened to accommodate this diagnostic; the formal proof uses the verified C2 Taylor theorem. Diagnostic evidence is C:/Users/ramir/AppData/Local/Temp/stardust-ym-1707-independent.py/.json/.log.
+
+### Verification, integrity and exact remaining obligations
+
+The complete root build passed7019 jobs in27.2267185 seconds. The canonical COMPLETE transitive safe-Foundation axiom audit passed55093 declarations in42.5203262 seconds, allowing only propext, Classical.choice and Quot.sound. ALL40 new public types were printed unabridged and reviewed:29 complete theorem proofs,10 definitions and one abbreviation. Both private C2 helpers and every complete proof/definition body were read. The complete persisted Foundation/AxiomAudit.lean run passed in46.1580249 seconds. No sorry/admit/new mathematical axiom/native_decide, increased resources, changed compiler/trust setting or toolchain/configuration change was introduced. All evidence uses C:/Users/ramir/AppData/Local/Temp/stardust-ym-1707-*.
+
+Source integrity authenticates1706's manifest against its exact approval at b670ac199289994fb843ea72189ffb03b408ac16. Among2801 Foundation/root files, ONLY the two new focused modules, root imports and axiom ledger differ. ALL older mathematical sources,3 pinned configurations,113 baseline original manuscripts and21 Yang-Mills originals(20 distinct hashes) remain unchanged. ResearchSources is unmodified/uncommitted, unrelated drafts/history are preserved, and publication-role and research-priority instructions are unchanged.
+
+The next bottleneck is now INTEGRATION rather than the pointwise Hessian bridge: prove31-fold restricted Haar transport, the93-real-dimensional scaling Jacobian, cutoff density convergence, normalization positivity/asymptotics and a justified dominated-convergence theorem for actual normalized Gibbs observables. Reuse1706's actual local Gaussian envelope and cutoff probability tending to1. Do not substitute convergence of an unnormalized pointwise integrand for convergence of actual Gibbs expectations, and do not demand unrestricted chart-coordinate moments already suspected to be nonintegrable. The scalar chart density contributes its own product/Jacobian factors and cannot be silently discarded. Uniform perturbed-boundary saddle control, third-order parameter/Laplace estimates and the exact full harmonic-cubic Lean coefficient remain OPEN, as do stationary physical transfer estimates and all scale/volume/continuum mass-gap bridges. The present theorem concerns ONE fixed actual four-dimensional cell at identity boundary; no positive physical mass gap or novelty of classical Taylor/Laplace methods is claimed.
+
+Exact-commit approval, new-history secret scan, guarded PUBLIC main/research synchronization and independent exact remote-ref verification remain closure requirements. This pre-commit ledger entry does not assert that backup has already happened. Visibility is exclusively user-controlled. The indefinite research goal remains active.

@@ -2748,3 +2748,6 @@ import Foundation.SU2GaussianConeCoordinates
 
 import Foundation.SU2HemisphereJets
 import Foundation.FourCubeHemisphereCoercivity
+
+import Foundation.FourCubeAmbientAction
+import Foundation.FourCubeHaarQuadraticLimit
