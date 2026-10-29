@@ -2160,3 +2160,59 @@ Integrity authenticates1701's source manifest against exact approved commit19229
 Exact-commit approval and guarded PUBLIC main/research synchronization are the remaining closure gates; this pre-commit record does not assert remote success. Repository visibility remains exclusively user-controlled. Yang–Mills remains ACTIVE, Bakry PAUSED, all other priorities and verification requirements unchanged.
 
 Final-byte closure: the staged gate caught a trailing space in the new metric proof. It was removed, with no statement/proof change, and the full root build, complete canonical audit/all25 types, all16 independent Lean checks and full persisted axiom ledger were rerun successfully on the final source bytes. The timings above are those final runs.
+
+
+## Checkpoint1703 — actual normalized pinned Gibbs concentration
+
+Focused Yang–Mills remains ACTIVE; Bakry Objective2 remains PAUSED. The missing normalization step from1702 is now proved for the actual31-link pinned72-face cell at IDENTITY boundary. This is a genuine family of probability measures constructed from product Haar, not a formal expectation functional or an assumed concentrating law.
+
+### Actual law, continuity and positive denominator control
+
+`FourCubePinnedConcentration` uses the existing bounded exponential-tilt construction with source X(y)=-pinnedAction(y)/144 and tilt parameter144*beta. The actual action lies in[0,144], so |X|<=1 is proved. `gibbs_probability` verifies a probability measure for EVERY real beta. `tilted_partition_eq`, `normalizer_integral` and `gibbs_integral` identify its exact Boltzmann normalization and actual integrals:
+
+    Z(beta)=integral exp(-beta*S(y)) d(pinnedHaar),
+    integral f d(gibbs(beta))=integral f(y)*exp(-beta*S(y)) d(pinnedHaar)/Z(beta).
+
+Z(beta) is exactly the pinned partition already identified with the original32-link full Haar partition in1701. No gauge-volume factor or unidentified normalizer is inserted.
+
+`pinnedAction_continuous` is proved from the actual finite plaquette/ribbon group products and trace, reusing the original fill and action decomposition. Define lowEnergy(delta)={y:S(y)<delta} and c_delta=lowMass(delta)=pinnedHaar.real(lowEnergy(delta)). The set is open. For delta>0 it contains the verified identity vacuum; existing product-Haar positive-open-set support then proves c_delta>0. This argument uses an OPEN neighborhood, not positive measure of the single identity point.
+
+`normalizer_lower` supplies the missing quantitative denominator estimate, for beta>=0:
+
+    c_delta*exp(-beta*delta) <= Z(beta).
+
+The c_delta are actual Haar probabilities, independent of beta for fixed delta, but no uniform volume dependence or explicit small-delta asymptotic is claimed.
+
+### Proved coordinate and simultaneous configuration probabilities
+
+For epsilon>0 and beta>=0, `gibbs_coordinate_tail_mass` identifies the actual normalized event probability, and `gibbs_coordinate_tail_bound` combines1702's global energy barrier and unnormalized Haar-tail estimate with the NEW denominator lower bound at delta=epsilon/6:
+
+    gibbs(beta)[defect(y(e))>=epsilon]
+      <= exp(-beta*epsilon/6)/c_(epsilon/6).
+
+`gibbs_coordinate_tail_tendsto_zero` proves this probability tends to0 as beta tends to positive infinity. The input is the actual fixed-cell law; no heuristic exchange of limits or derivatives is used.
+
+The result is simultaneous, not merely one coordinate at a time. `configurationTail(epsilon)` is the UNION of the31 coordinate events. Its measurability, finite-union estimate and the EXACT existing31-edge count give
+
+    gibbs(beta)[exists e:defect(y(e))>=epsilon]
+      <=31*exp(-beta*epsilon/6)/c_(epsilon/6).
+
+`gibbs_configuration_tail_tendsto_zero` proves convergence to0; `gibbs_configuration_good_tendsto_one` proves the complementary probability tends to1. The independent harness verifies that this complement is exactly the event EVERY pinned link has defect<epsilon. The factor31 counts SU(2) links; the pinned manifold still has93 real dimensions. A separate general weak-convergence or stochastic-dynamics theorem is not asserted without its hypotheses.
+
+### What this resolves and what remains open
+
+The base-point global-minimum and NORMALIZED-tail obligations are now closed for the actual pinned finite cell. The proof does not automatically apply to boundary perturbations, an unpinned raw-link delta limit, an infinite lattice or continuum Yang–Mills. In particular, the original unpinned root gauge coordinate remains free; removing it was a gauge change, not conditioning on a measure-zero raw-link event. General gauge-invariant observable transport still needs its exact statement; partition equality alone is not silently promoted to equality of every raw-link marginal.
+
+This is a law indexed by beta, not a constructed physical-time flow, filtration or stationary transfer operator. It does not establish a physical spectral gap or a volume-uniform contraction. Constants c_delta are fixed-cell constants and may degenerate with volume or delta. No such dependence is erased.
+
+The next substantive bottleneck is the LOCAL fluctuation/rescaled Gaussian and boundary-parameter analysis needed to test1701's nonzero full harmonic cubic and actual full-Gibbs Hessian/covariance. Concentration at the vacuum does not justify multiplying a small covariance by beta or differentiating a partition asymptotic. The exact actual Hessian-to-canonical pinned Gram identification, uniform perturbed-boundary saddle isolation and moment/derivative-controlled Laplace limits remain OPEN. Prefer those obligations over routine additional consequences of fixed-cell concentration. Preserve the conditional obstructions and surviving linear/Schur route, all manuscript status distinctions and the unresolved actual four-dimensional stationary/physical-distance/volume/continuum bridges. No novelty claim or campaign transition is made.
+
+### Complete verification, independent actual-law checks and source integrity
+
+The complete root build passed7009 jobs in27.0296576 seconds. The canonical complete transitive axiom audit passed54782 safe Foundation declarations in42.0844799 seconds, only propext, Classical.choice and Quot.sound. ALL26 public types were printed UNABRIDGED and reviewed:18 theorem proofs,7 definitions and1 actual probability instance. Every complete proof/definition body and all5 private continuity/exponential-limit helpers were reviewed. The complete persisted axiom ledger elaborated in56.9810142 seconds. No sorry/admit/new mathematical axiom/native_decide, resource/compiler/trust change or weaker verification gate was introduced.
+
+Nineteen independent Lean checks plus a zero-tilt helper passed in33.0334319 seconds. They cover actual action continuity/source bound/probability for all real beta, the exact integral-normalizer relation, lowMass(.01)>0 and the true partition lower bound, normalized coordinate-event identification and exponential bound, coordinate and simultaneous configuration limits, event measurability, exact factor31, normalizer(0)=1, gibbs(0)=the ORIGINAL product Haar measure, exact beta-zero marginal mean defect1 obtained independently from Haar evaluation/trace moments, all-beta total normalization, and the equality between the good-event complement and EVERY link having defect<epsilon. A type-inference repair in the external marginal harness supplied its explicit Free index; no mathematical source repair or repeated full build was required for that harness change. These exact independent checks do not rely on a Monte Carlo approximation or manufacture a numerical estimate of the potentially tiny positive Haar constants.
+
+Integrity authenticates1702's source manifest against exact approved commitfbac6017e75addbd320145adcdce59e57476410e. It covers2792 Foundation/root files: only ONE new focused actual normalized-Gibbs module, its root import and the axiom ledger differ. ALL older mathematical source files,3 pinned configurations,113 baseline original manuscripts and21 Yang–Mills originals (20 distinct hashes) remain unchanged. ResearchSources remains unmodified/uncommitted; unrelated drafts are preserved. Evidence: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1703-* (full build/audits, complete types, independent actual-law Lean checks, declaration inventory and authenticated source manifest).
+
+Exact-commit approval and guarded PUBLIC main/research synchronization are the closure gates; this pre-commit record does not assert remote success. Repository visibility remains exclusively user-controlled. Yang–Mills stays ACTIVE, Bakry PAUSED, all other priorities and verification requirements unchanged.

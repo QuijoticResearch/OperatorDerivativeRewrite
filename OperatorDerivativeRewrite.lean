@@ -2739,3 +2739,5 @@ import Foundation.FourCubeConditionalObstruction
 import Foundation.FourCubePinnedHaar
 
 import Foundation.FourCubePinnedCoercivity
+
+import Foundation.FourCubePinnedConcentration
