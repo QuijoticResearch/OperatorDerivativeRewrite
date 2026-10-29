@@ -133,3 +133,7 @@ Thirteen reviewed papers now total 117 pages. The newest six-page note has 45 ex
 Fourteen reviewed manuscripts now total 123 pages. The newest six-page companion has 38 exact correspondences; its full L2 and actual continuous-past hypotheses, classical antecedents and non-sharp constant are explicit. Every page was inspected and all frozen source/PDF receipts were rechecked. README and the manuscript index have been regrouped by mathematical contribution to avoid a chronological accumulation of paragraphs. No Foundation, ResearchSources, internal research documentation, campaign priority, research ref or sync procedure changed.
 
 Account-wide usage was reported as 29% at the most recent completed checkpoint, with ordinary usage allowed; this is a coarse shared-account observation, not per-chat metering or an enforced 8% budget. No resource/permission failure is being invented. Remaining independent editorial work should focus on distinctive applications and primary comparisons rather than generating papers for infrastructure counts.
+
+## Primary-literature follow-up
+
+Direct Cardon and Newman theorem checks now supplement the earlier arithmetic literature limitations. Exact multiplier order and quadratic-tilt quantifiers prevent unsupported reuse as growing quartic/sixth-order propagation theorems; no novelty certification follows. The separate comparison record preserves previous literature-access history and leaves every PDF/hash unchanged. Original Pólya/de Bruijn detailed comparison and independent priority review remain open.

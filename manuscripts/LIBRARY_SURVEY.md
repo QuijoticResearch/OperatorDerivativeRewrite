@@ -72,3 +72,7 @@ Countable stochastic-convolution modes give exact orthogonal trace criteria; dam
 ## Gaussian prediction comparison completed
 
 The six-page fourteenth paper gives full human completeness, conditional projection, energy/rank and inverse-number proofs, with exact current-versus-full-past covariance witness. Primary Sottinen–Viitasaari Theorem 3.1/Proposition 3.2 already supplies the fractional prediction law and both small-past covariance powers; the manuscript uses a weaker explicit lower constant without claiming a new exponent. Primary McElroy–Das indexed introduction states the Hermite nonlinear predictor/MSE mechanism; full main-theorem access was incomplete. These antecedents justify a consolidated formalization companion, not separate novelty claims for each supporting module.
+
+## Follow-up primary comparison
+
+The [focused literature comparison](LITERATURE_COMPARISON.md) now records direct inspection of Cardon Proposition 1/Theorem 1 and Newman Theorems 1/2. It explains why their stated multiplier and quadratic-tilt hypotheses cannot simply be substituted for the growing quartic/sixth-order arithmetic deformation. This is a precise nonapplication check, not proof of novelty. Original Pólya and de Bruijn detailed comparisons remain incomplete.
