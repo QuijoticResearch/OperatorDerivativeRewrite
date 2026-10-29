@@ -2267,3 +2267,55 @@ The complete root build passed7012 jobs in57.8064471 seconds. The canonical COMP
 Source integrity authenticates1703's manifest against approved commit2b4e33291e3a3fc2b05c2843663e01121cc9f07f and covers2795 Foundation/root files. Only the THREE new focused variation/Hessian modules, root import and axiom ledger differ. ALL older mathematical sources,3 pinned configurations,113 baseline original manuscripts and21 Yang–Mills originals (20 distinct hashes) remain unchanged. ResearchSources remains read-only/uncommitted; unrelated drafts are preserved. Evidence: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1704-* (complete build/audits/types, fourteen Lean checks, independent quaternion script/results, declaration inventory, timings and authenticated source manifest).
 
 Exact-commit approval and guarded PUBLIC main/research synchronization remain the closure gates. This pre-commit ledger records local verification and does not claim remote success. Repository visibility remains exclusively user-controlled. The mathematical campaign and every queue and verification requirement remain unchanged.
+
+
+## Checkpoint1705 — exact SU(2) Haar hemisphere density from the existing Gaussian realization
+
+October28 local / October29 UTC. Focused Yang–Mills stays ACTIVE; Bakry stays PAUSED. This checkpoint resolves an actual local-measure ingredient needed after1704's pinned Hessian calculation. It does not establish the full rescaled Gibbs limit, a differentiated Laplace theorem or a physical mass gap. No campaign or original manuscript is changed.
+
+### Actual measure construction and exact domains
+
+`Foundation/SU2GaussianConeCoordinates.lean` reuses `GaussianAngularSphere`, `QuaternionAngularHaar` and the faithful quaternion/SU(2) equivalence. `gaussianDirection` maps FOUR independent standard real Gaussians through Euclidean normalization and the existing quaternion representation. `gaussianDirection_law` proves its pushforward is the actual normalized SU(2) Haar probability. `lintegral_haar_gaussian` is therefore an actual law identity for every measurable nonnegative extended-real observable, not a matching-moments argument or a new Haar assumption.
+
+The map `cone(r,y)=(r,r*y0,r*y1,r*y2)` has an explicitly verified Frechet derivative and determinant r^3. Its inverse divides the last coordinates by r. Both inverse identities require r!=0; injectivity and the self-image theorem are restricted to the POSITIVE cone r>0. `lintegral_positive_cone` applies Mathlib's verified higher-dimensional change-of-variables theorem on exactly that measurable set. The independent harness supplies a concrete collision at r=0, proving unrestricted injectivity false.
+
+`rawGaussian_density` derives the four-dimensional product Gaussian density directly from the existing scalar Gaussian probability laws, using measurable rectangles, restricted product measures and finite-product integration. No multivariate-density assertion is assumed. `gaussianDirection_halfTrace` and `gaussianDirection_positive_iff` identify the positive-trace hemisphere when the Gaussian input is nonzero. The chosen normalization convention maps input0 to the group identity; the independent check confirms its half-trace is1. Thus the pointwise hemisphere equivalence FAILS at that input. `rawGaussian_ae_ne_zero` proves the exceptional singleton has zero actual Gaussian probability, and `lintegral_haar_hemisphere_cone` transfers the RESTRICTED actual Haar law using this precise almost-everywhere fact.
+
+### Completed radial reduction and Haar integral identity
+
+For a=1+|y|^2, `gaussianDensity_cone` proves the exact separated Gaussian weight. `radial_gaussian_integral`, `radial_gaussian_integrable` and `radial_gaussian_lintegral` prove, for every a>0,
+
+    integral_(r>0) r^3 exp(-a*r^2/2) dr = 2/a^2.
+
+The ordinary integral, integrability and nonnegative integral are all verified. The proof uses the existing Gamma integral and the r->r^2 substitution; no improper integral is assigned a formal value without its domain.
+
+`hemisphereChart(y)` is the existing quaternion/SU(2) image of the normalized vector(1,y0,y1,y2). `chartDensity(y)=1/(2*pi^2*(1+|y|^2)^2)`. The square-root Gaussian prefactor and radial marginal constant are proved exactly in `cone_density_normalization` and `cone_radial_density`.
+
+The main theorem `lintegral_haar_hemisphere_chart` proves, for EVERY measurable f:SU(2)->[0,infinity],
+
+    integral_(halfTrace(U)>0) f(U) dHaar(U)
+      = integral_(R^3) chartDensity(y)*f(hemisphereChart(y)) dy.
+
+The coordinate split is a verified measure-preserving finite-product equivalence. Tonelli is applied with explicit product measures and positive-ray/whole-space restrictions. No finite-integrability requirement is silently imposed; infinite nonnegative integrals are included. The factor1/2 is retained: this is the restriction of Haar probability to ONE hemisphere, not an already conditioned probability law. The exact three-dimensional density identity, not just its four-dimensional cone reduction, is now closed in Lean.
+
+### Literature comparison and a relevant chart-moment obstruction
+
+This Gaussian-ratio distribution is classical. Sergio Verdu, *The Cauchy Distribution in Information Theory*, Entropy25(2023),346, Section2, item6, equation(6), records the spherical multivariate Cauchy density and its Gaussian-ratio representation; item2 records divergence of absolute moments of order>=1. Source: https://doi.org/10.3390/e25020346 ; directly inspected PDF: https://mdpi-res.com/d_attachment/entropy/entropy-25-00346/article_deploy/entropy-25-00346.pdf . No novelty is claimed for that distribution or this classical change of variables. The contribution here is independent formal identification with the actual Haar law already used by the finite-cell audit.
+
+EXTERNAL MATHEMATICAL ARGUMENT, NOT YET A LEAN THEOREM: in these ratio coordinates, integrating out two variables gives the hemisphere marginal1/(2*pi*(1+z^2)). Its truncated absolute first moment is log(1+R^2)/(2*pi), which diverges. The ratio coordinates share a Gaussian denominator and are dependent. Compactness of SU(2) does not bound this chart, which becomes singular near halfTrace=0. On the fixed finite cell, a finite-beta Gibbs density bounded above and below by positive constants relative to product Haar cannot remove an existing nonintegrability. This warns against demanding unrestricted ratio-coordinate moment convergence at finite beta. The exact coordinate-recovery identity and transfer of this divergence to the actual full Gibbs law remain Lean obligations; the numerical checks do not substitute for them. A LOCAL cutoff or a different bounded coordinate representation can remain productive. This obstruction concerns this chart; it does not refute local Gaussian fluctuations or the earlier positive Hessian.
+
+### Independent checks and precise next bottleneck
+
+Thirteen independent Lean checks passed in26.5705914 seconds. They include an explicit global cone-injectivity counterexample, the negative-cone exclusion, determinant0 on the singular plane and determinant8 at a concrete positive input, the Gaussian-origin half-trace exception, chart-density normalization at0, two exact radial integrals, actual probability of the Gaussian pushforward, the actual Haar hemisphere-mass integral identity and the zero-triple radial marginal. Two numerical simplifications in the external harness required explicit rational reduction; mathematical sources and full-build inputs were unchanged.
+
+A separate NumPy-only160-node Gauss-Legendre implementation passed21 diagnostics: five radial Gaussian reductions, hemisphere mass1/2, three positive real-coordinate caps checked against the independent semicircle antiderivative, four truncated first-moment values and eight finite-difference Jacobian determinants. The diagnostic uses interval splits and an explicit infinite-ray transform; it is not a certified quadrature/error bound or a proof of infinite moments. SciPy and mpmath were unavailable, so no packages were installed and the existing NumPy runtime was used. Evidence is C:/Users/ramir/AppData/Local/Temp/stardust-ym-1705-independent.py/.json/.log.
+
+The new chart is a GAUSSIAN-RATIO chart.1704's Frechet Hessian was proved in EXPONENTIAL coordinates. Their transition and exact tangent normalization must be proved before combining these results. Product-chart transport for all31 retained links, cutoff domains and the local rescaled moment/dominated-convergence argument are still OPEN.1703's epsilon=1 simultaneous concentration theorem is a precise reuse candidate for proving the all-positive-trace chart domain has Gibbs probability tending to1; its exact event identification has not yet been added as a Lean theorem here. Uniform perturbed-boundary saddle isolation and derivatives through third-order Laplace asymptotics remain open, as do1701's full harmonic-cubic Lean coefficient identification and the actual scale/volume/continuum physical bridges. Concentration plus a Hessian plus a chart density is not automatically the required limit theorem.
+
+### Complete verification and preserved sources
+
+The full root build passed7013 jobs in44.6450857 seconds. The canonical COMPLETE transitive audit passed54943 safe Foundation declarations in43.705644 seconds, permitting only propext, Classical.choice and Quot.sound. ALL48 public types were printed unabridged and reviewed:33 complete theorem proofs,13 definitions and2 abbreviations. The two private measurability helpers and every complete proof body were reviewed. The complete persisted axiom ledger passed in47.4789936 seconds. No sorry/admit/new mathematical axiom/native_decide, resource increase, toolchain/configuration change or weaker check was introduced.
+
+Authenticated integrity compares against1704's manifest approved at c6130c55f387bc46e77f3b09f51454c3ea41f14f. Among2796 Foundation/root files, only ONE new focused Gaussian-cone/Haar-density module, the root import and axiom ledger differ. ALL older mathematical sources,3 pinned configurations,113 baseline original manuscripts and21 Yang–Mills originals(20 distinct hashes) are unchanged. ResearchSources is unmodified/uncommitted; unrelated drafts remain intact. Full evidence: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1705-*.
+
+Exact-commit approval and guarded PUBLIC main/research synchronization are still required for closure. This pre-commit record makes no remote-success claim. Repository visibility is exclusively user-controlled; all existing research priorities and verification gates remain unchanged.
