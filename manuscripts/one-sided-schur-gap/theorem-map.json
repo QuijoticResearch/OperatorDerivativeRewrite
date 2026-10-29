@@ -2431,6 +2431,528 @@
       "source_sha256": "62a2cd7a9e662a1c5a9d12ba403200779f3788ee0ad8d9da00aec228ec9739a8",
       "declaration_header": "theorem finite_coercive_solution [FiniteDimensional \u211d E] (C : E \u2192L[\u211d] E) (c : \u211d)\n    (hc : 0 < c) (hC : \u2200 y, c*\u2016y\u2016^2 \u2264 inner \u211d (C y) y) (b : E) :\n    \u2203 u, C u=b",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CoerciveSchurStability.lean#L123"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicCoarseAveraging.average_apply",
+      "file": "Foundation/PeriodicCoarseAveraging.lean",
+      "line": 56,
+      "source_sha256": "2444d6f509ea76850f52f35dd3b105ed051f1de36922bcd17ea5ac84da4f148c",
+      "declaration_header": "theorem average_apply (f : Edge \u2192 \u211d) (q : CoarseEdge) :\n    average f q = (1/8 : \u211d)*\u2211 b : Bits,\n      if b q.2=1 then f (fineVertex q.1 b,q.2) else 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicCoarseAveraging.lean#L56"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicCoarseAveraging.normalizedLift_apply",
+      "file": "Foundation/PeriodicCoarseAveraging.lean",
+      "line": 68,
+      "source_sha256": "2444d6f509ea76850f52f35dd3b105ed051f1de36922bcd17ea5ac84da4f148c",
+      "declaration_header": "theorem normalizedLift_apply (c : CoarseEdge \u2192 \u211d) (e : Edge) :\n    normalizedLift c e = (1/8 : \u211d)*(if oddEdge e then c (coarseBlock e.1,e.2) else 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicCoarseAveraging.lean#L68"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicCoarseAveraging.average_normalizedLift",
+      "file": "Foundation/PeriodicCoarseAveraging.lean",
+      "line": 85,
+      "source_sha256": "2444d6f509ea76850f52f35dd3b105ed051f1de36922bcd17ea5ac84da4f148c",
+      "declaration_header": "theorem average_normalizedLift (c : CoarseEdge \u2192 \u211d) :\n    average (normalizedLift c) = (1/8 : \u211d) \u2022 c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicCoarseAveraging.lean#L85"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicCoarseAveraging.lift_is_adjoint",
+      "file": "Foundation/PeriodicCoarseAveraging.lean",
+      "line": 89,
+      "source_sha256": "2444d6f509ea76850f52f35dd3b105ed051f1de36922bcd17ea5ac84da4f148c",
+      "declaration_header": "theorem lift_is_adjoint (f : Edge \u2192 \u211d) (c : CoarseEdge \u2192 \u211d) :\n    dotProduct f (normalizedLift c) = dotProduct (average f) c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicCoarseAveraging.lean#L89"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicCoarseGaugeDiagnostics.badGradient_cast",
+      "file": "Foundation/PeriodicCoarseGaugeDiagnostics.lean",
+      "line": 57,
+      "source_sha256": "d4a9c280d9712dc90fef4e65ba5352a96a0d46099614defa511ac73a7d857a00",
+      "declaration_header": "theorem badGradient_cast (e : Edge) : badGradient e=(gradient badPotentialZ e : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicCoarseGaugeDiagnostics.lean#L57"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicCoarseGaugeDiagnostics.badGradient_fine_closed",
+      "file": "Foundation/PeriodicCoarseGaugeDiagnostics.lean",
+      "line": 60,
+      "source_sha256": "d4a9c280d9712dc90fef4e65ba5352a96a0d46099614defa511ac73a7d857a00",
+      "declaration_header": "theorem badGradient_fine_closed : incidence badGradient=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicCoarseGaugeDiagnostics.lean#L60"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicCoarseGaugeDiagnostics.averaged_bad_curl",
+      "file": "Foundation/PeriodicCoarseGaugeDiagnostics.lean",
+      "line": 65,
+      "source_sha256": "d4a9c280d9712dc90fef4e65ba5352a96a0d46099614defa511ac73a7d857a00",
+      "declaration_header": "theorem averaged_bad_curl : coarseCurl (average badGradient) coarseOrigin 0 1=4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicCoarseGaugeDiagnostics.lean#L65"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicCoarseGaugeDiagnostics.averaged_bad_not_gradient",
+      "file": "Foundation/PeriodicCoarseGaugeDiagnostics.lean",
+      "line": 70,
+      "source_sha256": "d4a9c280d9712dc90fef4e65ba5352a96a0d46099614defa511ac73a7d857a00",
+      "declaration_header": "theorem averaged_bad_not_gradient : average badGradient \u2209 LinearMap.range coarseGradient",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicCoarseGaugeDiagnostics.lean#L70"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicCoarseGaugeDiagnostics.no_raw_quotient_map",
+      "file": "Foundation/PeriodicCoarseGaugeDiagnostics.lean",
+      "line": 84,
+      "source_sha256": "d4a9c280d9712dc90fef4e65ba5352a96a0d46099614defa511ac73a7d857a00",
+      "declaration_header": "theorem no_raw_quotient_map : \u00ac \u2203 F : FineGaugeQuotient \u2192 CoarseGaugeQuotient,\n    \u2200 f : Edge \u2192 \u211d, F (Submodule.Quotient.mk f)=Submodule.Quotient.mk (average f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicCoarseGaugeDiagnostics.lean#L84"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicFineEnergyWitnessCertificates.planar_gram",
+      "file": "Foundation/PeriodicFineEnergyWitnessCertificates.lean",
+      "line": 80,
+      "source_sha256": "cd9689942e99d6b5363c87168f68f536bed53ff049505e7e8990d77e468e7713",
+      "declaration_header": "theorem planar_gram (f : Edge \u2192 \u2124)\n    (hf : \u2200 v : Vertex, \u2200 ij : Pair, ij.val \u2260 (0,1) \u2192\n      intCurl f v ij.val.1 ij.val.2 = 0) (e : Edge) :\n    intGram f e =\n      (if e.2 = 0 then intCurl f e.1 0 1 - intCurl f (backShift e.1 1) 0 1 else 0) +\n      (if e.2 = 1 then intCurl f (backShift e.1 0) 0 1 - intCurl f e.1 0 1 else 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicFineEnergyWitnessCertificates.lean#L80"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicFineEnergyWitnessCertificates.gram_a_int",
+      "file": "Foundation/PeriodicFineEnergyWitnessCertificates.lean",
+      "line": 118,
+      "source_sha256": "cd9689942e99d6b5363c87168f68f536bed53ff049505e7e8990d77e468e7713",
+      "declaration_header": "theorem gram_a_int : \u2200 e : Edge, intGram aZ e = 2 * aZ e",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicFineEnergyWitnessCertificates.lean#L118"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicFineEnergyWitnessCertificates.gram_p_int",
+      "file": "Foundation/PeriodicFineEnergyWitnessCertificates.lean",
+      "line": 126,
+      "source_sha256": "cd9689942e99d6b5363c87168f68f536bed53ff049505e7e8990d77e468e7713",
+      "declaration_header": "theorem gram_p_int : \u2200 e : Edge, intGram pZ e = 6 * pZ e - 12 * aZ e",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicFineEnergyWitnessCertificates.lean#L126"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicFineEnergyWitness.p_formula",
+      "file": "Foundation/PeriodicFineEnergyWitness.lean",
+      "line": 41,
+      "source_sha256": "e27ba7ffd9ede163faac5c4ba1447cf65a34bd25226d4c8feb1eff76cb900086",
+      "declaration_header": "theorem p_formula : p = normalizedLift c - (1/24 : \u211d) \u2022 badGradient",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicFineEnergyWitness.lean#L41"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicFineEnergyWitness.gram_a",
+      "file": "Foundation/PeriodicFineEnergyWitness.lean",
+      "line": 48,
+      "source_sha256": "e27ba7ffd9ede163faac5c4ba1447cf65a34bd25226d4c8feb1eff76cb900086",
+      "declaration_header": "theorem gram_a : G a = (2 : \u211d) \u2022 a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicFineEnergyWitness.lean#L48"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicFineEnergyWitness.gram_p",
+      "file": "Foundation/PeriodicFineEnergyWitness.lean",
+      "line": 54,
+      "source_sha256": "e27ba7ffd9ede163faac5c4ba1447cf65a34bd25226d4c8feb1eff76cb900086",
+      "declaration_header": "theorem gram_p : G p = (6 : \u211d) \u2022 p - (4 : \u211d) \u2022 a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicFineEnergyWitness.lean#L54"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicFineEnergyWitness.gram_z",
+      "file": "Foundation/PeriodicFineEnergyWitness.lean",
+      "line": 61,
+      "source_sha256": "e27ba7ffd9ede163faac5c4ba1447cf65a34bd25226d4c8feb1eff76cb900086",
+      "declaration_header": "theorem gram_z : G z = p",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicFineEnergyWitness.lean#L61"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicFineEnergyWitness.p_physical",
+      "file": "Foundation/PeriodicFineEnergyWitness.lean",
+      "line": 73,
+      "source_sha256": "e27ba7ffd9ede163faac5c4ba1447cf65a34bd25226d4c8feb1eff76cb900086",
+      "declaration_header": "theorem p_physical : p \u2208 fineSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicFineEnergyWitness.lean#L73"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicFineEnergyWitness.z_physical",
+      "file": "Foundation/PeriodicFineEnergyWitness.lean",
+      "line": 77,
+      "source_sha256": "e27ba7ffd9ede163faac5c4ba1447cf65a34bd25226d4c8feb1eff76cb900086",
+      "declaration_header": "theorem z_physical : z \u2208 fineSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicFineEnergyWitness.lean#L77"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicFineEnergyWitness.projectedLift_formula",
+      "file": "Foundation/PeriodicFineEnergyWitness.lean",
+      "line": 81,
+      "source_sha256": "e27ba7ffd9ede163faac5c4ba1447cf65a34bd25226d4c8feb1eff76cb900086",
+      "declaration_header": "theorem projectedLift_formula : projectedLift c = p",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicFineEnergyWitness.lean#L81"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicFineEnergyWitness.average_p",
+      "file": "Foundation/PeriodicFineEnergyWitness.lean",
+      "line": 90,
+      "source_sha256": "e27ba7ffd9ede163faac5c4ba1447cf65a34bd25226d4c8feb1eff76cb900086",
+      "declaration_header": "theorem average_p : average p = (1/12 : \u211d) \u2022 c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicFineEnergyWitness.lean#L90"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicFineEnergyWitness.average_a",
+      "file": "Foundation/PeriodicFineEnergyWitness.lean",
+      "line": 97,
+      "source_sha256": "e27ba7ffd9ede163faac5c4ba1447cf65a34bd25226d4c8feb1eff76cb900086",
+      "declaration_header": "theorem average_a : average a = (1/16 : \u211d) \u2022 c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicFineEnergyWitness.lean#L97"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicFineEnergyWitness.average_z",
+      "file": "Foundation/PeriodicFineEnergyWitness.lean",
+      "line": 105,
+      "source_sha256": "e27ba7ffd9ede163faac5c4ba1447cf65a34bd25226d4c8feb1eff76cb900086",
+      "declaration_header": "theorem average_z : average z = (5/144 : \u211d) \u2022 c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicFineEnergyWitness.lean#L105"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicFinePhysicalGreen.gram_pairing",
+      "file": "Foundation/PeriodicFinePhysicalGreen.lean",
+      "line": 25,
+      "source_sha256": "8f32a30db329b274bf2b9be7b2adb68df0d533a968ddab302b85fe1f68267fa0",
+      "declaration_header": "theorem gram_pairing (f g : Edge \u2192 \u211d) :\n    dotProduct f (G g) = dotProduct (incidence f) (incidence g)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicFinePhysicalGreen.lean#L25"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicFinePhysicalGreen.gram_energy",
+      "file": "Foundation/PeriodicFinePhysicalGreen.lean",
+      "line": 35,
+      "source_sha256": "8f32a30db329b274bf2b9be7b2adb68df0d533a968ddab302b85fe1f68267fa0",
+      "declaration_header": "theorem gram_energy (f : Edge \u2192 \u211d) : dotProduct f (G f) = fineEnergy f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicFinePhysicalGreen.lean#L35"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicFinePhysicalGreen.gram_mem_physical",
+      "file": "Foundation/PeriodicFinePhysicalGreen.lean",
+      "line": 39,
+      "source_sha256": "8f32a30db329b274bf2b9be7b2adb68df0d533a968ddab302b85fe1f68267fa0",
+      "declaration_header": "theorem gram_mem_physical (f : Edge \u2192 \u211d) : G f \u2208 fineSpace",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicFinePhysicalGreen.lean#L39"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicFinePhysicalGreen.physical_energy_zero_iff",
+      "file": "Foundation/PeriodicFinePhysicalGreen.lean",
+      "line": 43,
+      "source_sha256": "8f32a30db329b274bf2b9be7b2adb68df0d533a968ddab302b85fe1f68267fa0",
+      "declaration_header": "theorem physical_energy_zero_iff (f : fineSpace) : fineEnergy f.val = 0 \u2194 f = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicFinePhysicalGreen.lean#L43"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicPhysicalLiftMinimum.physical_completed_square",
+      "file": "Foundation/PeriodicPhysicalLiftMinimum.lean",
+      "line": 32,
+      "source_sha256": "eecb0239ac0a9ef98cf53ee5240870a1a23ae3afe84a164454b758ba30acdbc1",
+      "declaration_header": "theorem physical_completed_square (c : physicalSpace) (f : Edge \u2192 \u211d)\n    (hf : \u2200 g : Edge \u2192 \u211d, incidence g = 0 \u2192 dotProduct f g = 0)\n    (ha : average f = c.val) :\n    fineSize f = fineSize (correctedLift c) + fineSize (f - correctedLift c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicPhysicalLiftMinimum.lean#L32"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicPhysicalLiftMinimum.physical_minimum_unique",
+      "file": "Foundation/PeriodicPhysicalLiftMinimum.lean",
+      "line": 49,
+      "source_sha256": "eecb0239ac0a9ef98cf53ee5240870a1a23ae3afe84a164454b758ba30acdbc1",
+      "declaration_header": "theorem physical_minimum_unique (c : physicalSpace) (f : Edge \u2192 \u211d)\n    (hf : \u2200 g : Edge \u2192 \u211d, incidence g = 0 \u2192 dotProduct f g = 0)\n    (ha : average f = c.val) :\n    fineSize f = fineSize (correctedLift c) \u2194 f = correctedLift c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicPhysicalLiftMinimum.lean#L49"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicPhysicalLiftMinimum.unrestricted_completed_square",
+      "file": "Foundation/PeriodicPhysicalLiftMinimum.lean",
+      "line": 67,
+      "source_sha256": "eecb0239ac0a9ef98cf53ee5240870a1a23ae3afe84a164454b758ba30acdbc1",
+      "declaration_header": "theorem unrestricted_completed_square (c : PeriodicCoarseWalshBasis.Field) (f : Edge \u2192 \u211d)\n    (ha : average f = c) :\n    fineSize f = 8 * size c + fineSize (f - (8 : \u211d) \u2022 normalizedLift c)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicPhysicalLiftMinimum.lean#L67"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicPhysicalLiftMinimum.unrestricted_minimum_equality",
+      "file": "Foundation/PeriodicPhysicalLiftMinimum.lean",
+      "line": 80,
+      "source_sha256": "eecb0239ac0a9ef98cf53ee5240870a1a23ae3afe84a164454b758ba30acdbc1",
+      "declaration_header": "theorem unrestricted_minimum_equality (c : PeriodicCoarseWalshBasis.Field) (f : Edge \u2192 \u211d)\n    (ha : average f = c) :\n    fineSize f = 8 * size c \u2194 f = (8 : \u211d) \u2022 normalizedLift c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicPhysicalLiftMinimum.lean#L80"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicPhysicalEnergyMinimum.energy_completed_square",
+      "file": "Foundation/PeriodicPhysicalEnergyMinimum.lean",
+      "line": 31,
+      "source_sha256": "f09bb16f3daaeaafa8684e27833f9e714930721c95c154bbe2bd1723914391df",
+      "declaration_header": "theorem energy_completed_square (c : physicalSpace) (f : fineSpace) (ha : A f = c) :\n    fineEnergy f.val = fineEnergy (energyLift c).val + fineEnergy (f - energyLift c).val",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicPhysicalEnergyMinimum.lean#L31"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicPhysicalEnergyMinimum.energy_minimum_unique",
+      "file": "Foundation/PeriodicPhysicalEnergyMinimum.lean",
+      "line": 45,
+      "source_sha256": "f09bb16f3daaeaafa8684e27833f9e714930721c95c154bbe2bd1723914391df",
+      "declaration_header": "theorem energy_minimum_unique (c : physicalSpace) (f : fineSpace) (ha : A f = c) :\n    fineEnergy f.val = fineEnergy (energyLift c).val \u2194 f = energyLift c",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicPhysicalEnergyMinimum.lean#L45"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicStrictEnergyWitness.norm_lift_source",
+      "file": "Foundation/PeriodicStrictEnergyWitness.lean",
+      "line": 53,
+      "source_sha256": "33b9caf3d50535de9ba232727cdc06017139fded6f01ac9d6bd9774080c0beb0",
+      "declaration_header": "theorem norm_lift_source : PeriodicCorrectedPhysicalLift.correctedLift badSource = (12 : \u211d) \u2022 p",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicStrictEnergyWitness.lean#L53"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicStrictEnergyWitness.energy_lift_source",
+      "file": "Foundation/PeriodicStrictEnergyWitness.lean",
+      "line": 58,
+      "source_sha256": "33b9caf3d50535de9ba232727cdc06017139fded6f01ac9d6bd9774080c0beb0",
+      "declaration_header": "theorem energy_lift_source : (energyLift badSource).val = (144/5 : \u211d) \u2022 z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicStrictEnergyWitness.lean#L58"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicStrictEnergyWitness.p_energy",
+      "file": "Foundation/PeriodicStrictEnergyWitness.lean",
+      "line": 63,
+      "source_sha256": "33b9caf3d50535de9ba232727cdc06017139fded6f01ac9d6bd9774080c0beb0",
+      "declaration_header": "theorem p_energy : fineEnergy p = 16",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicStrictEnergyWitness.lean#L63"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicStrictEnergyWitness.p_size",
+      "file": "Foundation/PeriodicStrictEnergyWitness.lean",
+      "line": 67,
+      "source_sha256": "33b9caf3d50535de9ba232727cdc06017139fded6f01ac9d6bd9774080c0beb0",
+      "declaration_header": "theorem p_size : fineSize p = (16/3 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicStrictEnergyWitness.lean#L67"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicStrictEnergyWitness.z_pairing",
+      "file": "Foundation/PeriodicStrictEnergyWitness.lean",
+      "line": 74,
+      "source_sha256": "33b9caf3d50535de9ba232727cdc06017139fded6f01ac9d6bd9774080c0beb0",
+      "declaration_header": "theorem z_pairing : dotProduct z p = (20/9 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicStrictEnergyWitness.lean#L74"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicStrictEnergyWitness.z_energy",
+      "file": "Foundation/PeriodicStrictEnergyWitness.lean",
+      "line": 81,
+      "source_sha256": "33b9caf3d50535de9ba232727cdc06017139fded6f01ac9d6bd9774080c0beb0",
+      "declaration_header": "theorem z_energy : fineEnergy z = (20/9 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicStrictEnergyWitness.lean#L81"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicStrictEnergyWitness.norm_lift_energy",
+      "file": "Foundation/PeriodicStrictEnergyWitness.lean",
+      "line": 90,
+      "source_sha256": "33b9caf3d50535de9ba232727cdc06017139fded6f01ac9d6bd9774080c0beb0",
+      "declaration_header": "theorem norm_lift_energy :\n    fineEnergy (PeriodicCorrectedPhysicalLift.correctedLift badSource) = 2304",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicStrictEnergyWitness.lean#L90"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicStrictEnergyWitness.energy_lift_energy",
+      "file": "Foundation/PeriodicStrictEnergyWitness.lean",
+      "line": 95,
+      "source_sha256": "33b9caf3d50535de9ba232727cdc06017139fded6f01ac9d6bd9774080c0beb0",
+      "declaration_header": "theorem energy_lift_energy : fineEnergy (energyLift badSource).val = (9216/5 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicStrictEnergyWitness.lean#L95"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicStrictEnergyWitness.distinct_minimizers",
+      "file": "Foundation/PeriodicStrictEnergyWitness.lean",
+      "line": 104,
+      "source_sha256": "33b9caf3d50535de9ba232727cdc06017139fded6f01ac9d6bd9774080c0beb0",
+      "declaration_header": "theorem distinct_minimizers : normLift badSource \u2260 energyLift badSource",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicStrictEnergyWitness.lean#L104"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicStrictEnergyWitness.norm_lift_size",
+      "file": "Foundation/PeriodicStrictEnergyWitness.lean",
+      "line": 112,
+      "source_sha256": "33b9caf3d50535de9ba232727cdc06017139fded6f01ac9d6bd9774080c0beb0",
+      "declaration_header": "theorem norm_lift_size :\n    fineSize (PeriodicCorrectedPhysicalLift.correctedLift badSource) = 768",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicStrictEnergyWitness.lean#L112"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicEnergyNormTradeoff.a_size",
+      "file": "Foundation/PeriodicEnergyNormTradeoff.lean",
+      "line": 16,
+      "source_sha256": "56c185f25b08773afe5289637dc870ea9b7fe2e7e5f1871701ee41fa81447e8d",
+      "declaration_header": "theorem a_size : fineSize a = 4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicEnergyNormTradeoff.lean#L16"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicEnergyNormTradeoff.a_p_pairing",
+      "file": "Foundation/PeriodicEnergyNormTradeoff.lean",
+      "line": 35,
+      "source_sha256": "56c185f25b08773afe5289637dc870ea9b7fe2e7e5f1871701ee41fa81447e8d",
+      "declaration_header": "theorem a_p_pairing : dotProduct a p = 4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicEnergyNormTradeoff.lean#L35"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicEnergyNormTradeoff.z_size",
+      "file": "Foundation/PeriodicEnergyNormTradeoff.lean",
+      "line": 42,
+      "source_sha256": "56c185f25b08773afe5289637dc870ea9b7fe2e7e5f1871701ee41fa81447e8d",
+      "declaration_header": "theorem z_size : fineSize z = (28/27 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicEnergyNormTradeoff.lean#L42"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicEnergyNormTradeoff.energy_lift_size",
+      "file": "Foundation/PeriodicEnergyNormTradeoff.lean",
+      "line": 58,
+      "source_sha256": "56c185f25b08773afe5289637dc870ea9b7fe2e7e5f1871701ee41fa81447e8d",
+      "declaration_header": "theorem energy_lift_size : fineSize (energyLift badSource).val = (21504/25 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicEnergyNormTradeoff.lean#L58"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicEnergyNormTradeoff.energy_decrease",
+      "file": "Foundation/PeriodicEnergyNormTradeoff.lean",
+      "line": 68,
+      "source_sha256": "56c185f25b08773afe5289637dc870ea9b7fe2e7e5f1871701ee41fa81447e8d",
+      "declaration_header": "theorem energy_decrease :\n    fineEnergy (PeriodicCorrectedPhysicalLift.correctedLift badSource) -\n      fineEnergy (energyLift badSource).val = (2304/5 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicEnergyNormTradeoff.lean#L68"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicEnergyNormTradeoff.squared_norm_increase",
+      "file": "Foundation/PeriodicEnergyNormTradeoff.lean",
+      "line": 74,
+      "source_sha256": "56c185f25b08773afe5289637dc870ea9b7fe2e7e5f1871701ee41fa81447e8d",
+      "declaration_header": "theorem squared_norm_increase :\n    fineSize (energyLift badSource).val -\n      fineSize (PeriodicCorrectedPhysicalLift.correctedLift badSource) = (2304/25 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicEnergyNormTradeoff.lean#L74"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicConstrainedEnergyDescent.residual_average",
+      "file": "Foundation/PeriodicConstrainedEnergyDescent.lean",
+      "line": 42,
+      "source_sha256": "05288f889e8fffbade9bf406c59721c25ea8db31f81c490e73116d950ddfd140",
+      "declaration_header": "theorem residual_average (f : fineSpace) : A (residual f) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicConstrainedEnergyDescent.lean#L42"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicConstrainedEnergyDescent.residual_pairing",
+      "file": "Foundation/PeriodicConstrainedEnergyDescent.lean",
+      "line": 49,
+      "source_sha256": "05288f889e8fffbade9bf406c59721c25ea8db31f81c490e73116d950ddfd140",
+      "declaration_header": "theorem residual_pairing (f : fineSpace) :\n    dotProduct (residual f).val (G f.val) =\n      PeriodicPhysicalLiftMinimum.fineSize (residual f).val",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicConstrainedEnergyDescent.lean#L49"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicConstrainedEnergyDescent.feasible_step",
+      "file": "Foundation/PeriodicConstrainedEnergyDescent.lean",
+      "line": 59,
+      "source_sha256": "05288f889e8fffbade9bf406c59721c25ea8db31f81c490e73116d950ddfd140",
+      "declaration_header": "theorem feasible_step (f : fineSpace) (t : \u211d) :\n    A (f - t \u2022 residual f) = A f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicConstrainedEnergyDescent.lean#L59"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicConstrainedEnergyDescent.energy_step",
+      "file": "Foundation/PeriodicConstrainedEnergyDescent.lean",
+      "line": 63,
+      "source_sha256": "05288f889e8fffbade9bf406c59721c25ea8db31f81c490e73116d950ddfd140",
+      "declaration_header": "theorem energy_step (f : fineSpace) (t : \u211d) :\n    fineEnergy (f - t \u2022 residual f).val = fineEnergy f.val +\n      t^2 * fineEnergy (residual f).val -\n      2*t*PeriodicPhysicalLiftMinimum.fineSize (residual f).val",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicConstrainedEnergyDescent.lean#L63"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicConstrainedEnergyDescent.exact_descent",
+      "file": "Foundation/PeriodicConstrainedEnergyDescent.lean",
+      "line": 75,
+      "source_sha256": "05288f889e8fffbade9bf406c59721c25ea8db31f81c490e73116d950ddfd140",
+      "declaration_header": "theorem exact_descent (f : fineSpace) (hv : residual f \u2260 0) :\n    let t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicConstrainedEnergyDescent.lean#L75"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicExactDescentWitness.residual_j",
+      "file": "Foundation/PeriodicExactDescentWitness.lean",
+      "line": 38,
+      "source_sha256": "efa6894824d83f8b4800f5362aab489cd626cdc658101af592cf95d50fde2300",
+      "declaration_header": "theorem residual_j : (residual j).val = (36 : \u211d) \u2022 p - (48 : \u211d) \u2022 a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicExactDescentWitness.lean#L38"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicExactDescentWitness.one_step_exact",
+      "file": "Foundation/PeriodicExactDescentWitness.lean",
+      "line": 45,
+      "source_sha256": "efa6894824d83f8b4800f5362aab489cd626cdc658101af592cf95d50fde2300",
+      "declaration_header": "theorem one_step_exact : j - (1/5 : \u211d) \u2022 residual j = energyLift badSource",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicExactDescentWitness.lean#L45"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicExactDescentWitness.residual_j_size",
+      "file": "Foundation/PeriodicExactDescentWitness.lean",
+      "line": 53,
+      "source_sha256": "efa6894824d83f8b4800f5362aab489cd626cdc658101af592cf95d50fde2300",
+      "declaration_header": "theorem residual_j_size : fineSize (residual j).val = 2304",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicExactDescentWitness.lean#L53"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicExactDescentWitness.residual_j_energy",
+      "file": "Foundation/PeriodicExactDescentWitness.lean",
+      "line": 78,
+      "source_sha256": "efa6894824d83f8b4800f5362aab489cd626cdc658101af592cf95d50fde2300",
+      "declaration_header": "theorem residual_j_energy : fineEnergy (residual j).val = 11520",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicExactDescentWitness.lean#L78"
+    },
+    {
+      "paper": "Section 10 actual periodic coarsening, physical norm/energy lift separation and exact feasible descent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PeriodicExactDescentWitness.optimal_step",
+      "file": "Foundation/PeriodicExactDescentWitness.lean",
+      "line": 85,
+      "source_sha256": "efa6894824d83f8b4800f5362aab489cd626cdc658101af592cf95d50fde2300",
+      "declaration_header": "theorem optimal_step : fineSize (residual j).val / fineEnergy (residual j).val =\n    (1/5 : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PeriodicExactDescentWitness.lean#L85"
     }
   ],
   "human_reorganization": [
@@ -2448,7 +2970,10 @@
     "Section 12 multiplies explicit normalized SU(2) matrices to obtain the full scalar trigonometric action on a genuine two-coordinate 72-face slice. The printed exact face-word inventory is independently enumerated, with source correspondences for the same reduced action and actual partial Hessian.",
     "The arbitrary-constant relative-lower-bound violation is reconstructed with an explicit elementary angle choice and strict base holonomy diagonal-principal-log caps. It tests only the displayed proposed estimate, not a general published small-field theorem. The full Hessian stays uniformly positive despite its linear error.",
     "The actual two-coordinate scalar Schur complement has exact global bounds 3/4 and 5/4 and quadratic loss at most 7 theta squared/40. This is classical zero-reference-coupling completion of the square, distinct from the 31-coordinate incidence elimination or any full nonlinear marginal Hessian.",
-    "Section 11 reconstructs the complete varying-interior solved Schur comparison, retaining the linear nonzero-coupling term and the operator-perturbation term. Coercivity directly controls actual interior solutions; finite dimension supplies their existence. The printed infinite-dimensional statement retains supplied solutions. Uniqueness from the attained coercive square and the scalar interior-only linear-loss specialization are labelled elementary human deductions. No unproved Wilson operator-norm or volume-uniform estimate is imported."
+    "Section 11 reconstructs the complete varying-interior solved Schur comparison, retaining the linear nonzero-coupling term and the operator-perturbation term. Coercivity directly controls actual interior solutions; finite dimension supplies their existence. The printed infinite-dimensional statement retains supplied solutions. Uniqueness from the attained coercive square and the scalar interior-only linear-loss specialization are labelled elementary human deductions. No unproved Wilson operator-norm or volume-uniform estimate is imported.",
+    "Section 10 reconstructs the actual periodic side-four-to-side-two boundary average and its normalized adjoint. An explicit fine gradient has coarse curl four, so the raw formula descends to no set map on gradient quotients. The physical fine space removes the entire closed-field kernel, including harmonic fields.",
+    "The planar a,p formulas and full curl/Gram identities are human reconstructions of the frozen integer field certificates. Their independence of the other two coordinates gives exact multiplicity sixteen. Physical membership is proved directly from Gram images, not from a false periodic closed-equals-gradient assertion.",
+    "For the single specified actual coarse field, two orthogonal residual identities prove attained unique norm and curl-energy minima without importing general coarse inverse existence. Exact fine norm/energy costs and the unrestricted norm cost remain distinct. The constrained gradient is for E/2; its optimal one-fifth feasible line step reaches this witness energy minimizer exactly. No general one-step method or scale/volume-uniform theorem follows."
   ],
   "novelty": "General mechanisms classical; priority of this actual one-sided geometry and narrow rational bracket unresolved. No nonlinear gauge or physical mass-gap claim."
 }

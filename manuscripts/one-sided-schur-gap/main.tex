@@ -24,7 +24,7 @@ give an exact nonzero Rayleigh witness strictly below $0.6964$. Complete
 geometric and linear-algebra arguments identify the physical norm, cycle
 compression and residual certificate. The finite arithmetic is supplied as
 explicit integer tables with an independent standard-library checker.
-A periodic gauge counterexample and a perturbation cross-term test delimit
+A separate periodic coarsening has incompatible raw gauge averaging and distinct physical norm/energy minimizers, with exact costs and a feasible step reaching the energy minimum. A periodic gauge counterexample and a perturbation cross-term test delimit
 which invertibility and stability conclusions transfer. An actual sparse Wilson Hessian has a linear error despite quadratic loss in its scalar Schur complement. We then reconstruct exact nonlinear tests: a two-axis Haar parity, a
 three-axis full 32-link variance difference, and a separate conditional
 large-coupling obstruction to a quadratic boundary budget. A valid linear
@@ -485,6 +485,178 @@ and the unrestricted periodic all-block interior matrix are different
 operators. The counterexample does not exclude a carefully defined global
 gauge quotient or a different pinned global estimate; those would require
 their own domain, kernel and coercivity proofs.
+
+\subsection*{Periodic coarsening separates gauge, norm and curl energy}
+There is a further explicit calibration on this same periodic side-four
+torus, separate from the one-sided cell. Give all 1,024 fine directed
+edges and all 1,536 positively oriented plaquettes their unweighted
+Euclidean norms. Let $D_4$ be fine curl, $G_4=D_4^TD_4$, and
+\[
+ \mathcal F=(\ker D_4)^\perp,\qquad
+ E(f)=\|D_4f\|^2,\qquad N(f)=\|f\|^2.
+\]
+Removing the entire closed-field kernel includes harmonic fields, as well
+as gradients. On $\mathcal F$, $E$ is positive definite. Write a fine
+vertex uniquely as $v=2q+b$, where $q,b\in\{0,1\}^4$. The actual
+boundary average to the side-two coarse torus is
+\[
+ (\mathsf A f)(q,i)=\frac18\sum_{b:\,b_i=1}f(2q+b,i).
+\]
+There are eight terms. With the stated unweighted norms its adjoint is
+\[
+ (\mathsf A^*c)(v,i)=\frac18\mathbf1_{\{b_i=1\}}c(q,i).
+\]
+The identity follows by expanding both dot products and grouping edges
+by $(q,i,b)$. In particular $\mathsf A\mathsf A^*=I/8$; the adjoint
+itself is not a right inverse.
+
+Here is an entirely explicit witness. Put $x=v_0$, $y=v_1$,
+$e_x=(-1)^x$ and $s_y=(-1)^{\lfloor y/2\rfloor}$, with fine coordinates
+taken modulo four. Define the fine scalar potential and its gradient by
+\[
+ \phi(v)=e_xs_y,\qquad d=\nabla_4\phi.
+\]
+Then $D_4d=0$, since forward coordinate shifts commute, but $c=\mathsf A d$
+has components
+\begin{equation}\label{eq:periodicc}
+ c(q,0)=2(-1)^{q_1},\qquad c(q,i)=0\ (i\ne0).
+\end{equation}
+For direction zero, averaging fixes $x$ odd and gives $d(v,0)=2s_y$.
+For direction one the two values of $b_0$ cancel, while the other
+components vanish. Thus the coarse curl at $q=0$ in the $(0,1)$ plane
+is $4$. Raw averaging therefore does not descend even as a set map
+from the fine gradient quotient to the coarse gradient quotient:
+$[d]=[0]$ on the fine side, whereas $[\mathsf A d]\ne[0]$ on the
+coarse side. This does not exclude corrected maps with different formulas.
+
+Define fine fields $a,p$ by
+\begin{align}
+ a(v,0)&=s_y/8,& a(v,i)&=0\quad(i\ne0),\label{eq:periodica}\\
+ p(v,0)&=s_y(3-e_x)/24,&
+ p(v,1)&=-e_x(s_{y+1}-s_y)/24,\label{eq:periodicp}\\
+ p(v,i)&=0\quad(i=2,3).&&\nonumber
+\end{align}
+They satisfy the key identity
+\begin{equation}\label{eq:periodicadjoint}
+ p=\mathsf A^*c-d/24.
+\end{equation}
+This follows component by component from \eqref{eq:periodicc}. In direction
+zero, $\mathsf A^*c=\mathbf1_{\{x\text{ odd}\}}s_y/4$ and
+$d(v,0)=-2e_xs_y$; in direction one the adjoint vanishes and the
+displayed component of $p$ is $-d(v,1)/24$.
+
+We next verify the full Gram and averaging identities, rather than
+assuming that either field is physical. The only nonzero curl plane is
+$(0,1)$, with
+\[
+ (D_4a)_{01}(v)=\mathbf1_{\{y\text{ odd}\}}s_y/4,\qquad
+ (D_4p)_{01}(v)=\mathbf1_{\{x,y\text{ odd}\}}s_y/2.
+\]
+For a field having only this curl plane, the two Gram components are
+\[
+ (G_4f)(v,0)=(D_4f)_{01}(v)-(D_4f)_{01}(v-e_1),\qquad
+ (G_4f)(v,1)=(D_4f)_{01}(v-e_0)-(D_4f)_{01}(v).
+\]
+All other components are zero. Substituting the two curl formulas,
+including the modulo-four wrap, proves
+\begin{equation}\label{eq:periodicgrams}
+ G_4a=2a,\qquad G_4p=6p-4a,\qquad
+ \mathsf A a=c/16,\qquad\mathsf A p=c/12.
+\end{equation}
+The averaging equations follow respectively by fixing odd $x$ and by
+cancelling $e_x$ in the direction-one component. Since the range of
+$D_4^TD_4$ is orthogonal to $\ker D_4$, the first Gram equation puts
+$a$ in $\mathcal F$; the second then puts $p=(G_4p+4a)/6$ there.
+This removes the whole kernel, without asserting that every closed
+periodic field is a gradient.
+
+Every fine field in these formulas is constant in $v_2,v_3$, so the
+remaining two-dimensional sums have multiplicity $16$. Explicitly,
+\begin{equation}\label{eq:periodicdotdata}
+ \|c\|^2=64,\qquad \|a\|^2=4,\qquad
+ \|p\|^2=16/3,\qquad\langle p,a\rangle=4,\qquad E(p)=16.
+\end{equation}
+For clarity, $p_0$ has magnitude $1/12$ at even $x$ and $1/6$ at
+odd $x$, while $p_1$ has magnitude $1/12$ exactly when $y$ is odd.
+Thus its two component squared sums are $16(5/18)$ and $16(1/18)$,
+respectively. The curl formula gives $E(p)=16\cdot4\cdot(1/2)^2=16$.
+The other dot products follow from the same four-by-four table, and
+\eqref{eq:periodicc} gives the coarse norm directly. The companion
+checker independently enumerates all fine edges and faces with exact
+rational arithmetic.
+
+Let $z=p/6+a/3$. Equations~\eqref{eq:periodicgrams} give
+$G_4z=p$ and $\mathsf A z=5c/144$. Consider the two actual physical lifts
+\[
+ j=12p,\qquad h=\frac{144}{5}z.
+\]
+Both belong to $\mathcal F$ and average to $c$. They are the unique
+minimizers of different objectives over the same affine set
+$\{f\in\mathcal F:\mathsf A f=c\}$. To prove this, write a feasible
+field as $j+r$, so $r\in\mathcal F$ and $\mathsf A r=0$.
+The gradient $d$ is closed and hence orthogonal to $r$; consequently
+\eqref{eq:periodicadjoint} gives
+$\langle p,r\rangle=\langle c,\mathsf A r\rangle=0$.
+It follows that
+\[
+ N(j+r)=N(j)+N(r).
+\]
+Likewise $G_4h=(144/5)p$, and any feasible $f=h+r$ has
+$\langle G_4h,r\rangle=0$. Thus
+\[
+ E(h+r)=E(h)+E(r).
+\]
+The first residual norm vanishes only at zero; so does the second on
+$\mathcal F$. These are complete proofs of both attained, unique
+minima for this particular coarse field, without requiring a general
+coarse inverse or an unproved projection formula.
+
+Using \eqref{eq:periodicdotdata}, one obtains
+$\langle z,p\rangle=20/9$, $N(z)=28/27$ and $E(z)=20/9$. Hence
+\[
+\begin{array}{c|cc}
+ &N&E\\\hline
+ \text{minimum-norm physical lift }j&768&2304\\
+ \text{minimum-energy physical lift }h&21504/25&9216/5
+\end{array}
+\]
+Energy decreases by $2304/5$, but squared norm increases by $2304/25$.
+The unrestricted minimum norm at coarse value $c$ is $8\|c\|^2=512$,
+attained by $8\mathsf A^*c$. Indeed for $\mathsf A f=c$,
+$\langle f,\mathsf A^*c\rangle=\|c\|^2$ and
+$\|\mathsf A^*c\|^2=\|c\|^2/8$, so expansion gives
+$N(f)=512+N(f-8\mathsf A^*c)$.
+The physical correction therefore has a real norm cost; the unrestricted,
+physical norm and physical curl-energy minimizations are three different
+problems.
+
+There is also an exact feasible descent calculation. Put
+\[
+ r_0=36p-48a.
+\]
+Then $\mathsf A r_0=0$ and $G_4j=72p-48a=r_0+36p$.
+For every $r\in\mathcal F\cap\ker\mathsf A$ one has
+$\langle36p,r\rangle=0$, so $r_0$ is the orthogonal projection of
+$G_4j$ onto the feasible direction space. It is therefore the
+constrained gradient of $E/2$, with this normalization. The same exact
+dot products give $N(r_0)=2304$, $E(r_0)=11520$, and
+\[
+ E(j-\alpha r_0)=2304-4608\alpha+11520\alpha^2.
+\]
+The optimal line step is $\alpha=1/5$, and it reaches the full affine
+energy minimizer exactly: $j-r_0/5=h$. This one-step statement is for
+the specified witness, not a general iteration rate or scale-uniform
+algorithm.
+\lean{PeriodicCoarseGaugeDiagnostics}{averaged_bad_curl; no_raw_quotient_map}
+\lean{PeriodicFineEnergyWitness}{gram_a; gram_p; projectedLift_formula; average_z}
+\lean{PeriodicStrictEnergyWitness}{norm_lift_source; energy_lift_source; distinct_minimizers}
+\lean{PeriodicEnergyNormTradeoff}{energy_decrease; squared_norm_increase}
+\lean{PeriodicExactDescentWitness}{one_step_exact; optimal_step}
+The printed planar formulas are a human reconstruction of the frozen
+integer certificates on the actual lattice. Orthogonal minimization and
+Hodge/Schur mechanisms are classical \cite{gallier,hodge}; priority for
+the particular witness is not certified. None of these finite linear
+identities concerns a nonlinear continuum gauge measure or mass gap.
 
 \section{A separate perturbation boundary: missing linear loss}
 Even finite positive blocks do not allow a general perturbation estimate
@@ -1142,7 +1314,7 @@ nine retained certificate checks, \texttt{verify\_haar.py} passes 21 exact
 finite checks: ribbon incidence and trace classes, rational unit-quaternion
 72-face actions, residual replacement, vertex-center cancellation,
 second-moment contractions and the five-staple squared radius. It uses
-unbounded integers and rational arithmetic. The additional checker \texttt{verify\_sparse.py} passes 20 exact checks of all sparse face words, direction energies, rational-unit quaternion second jets and Schur identities. Real-angle differentiation,
+unbounded integers and rational arithmetic. The additional checker \texttt{verify\_sparse.py} passes 20 exact checks of all sparse face words, direction energies, rational-unit quaternion second jets and Schur identities. The checker \texttt{verify\_periodic\_lifts.py} adds 16 exact checks over every periodic edge and plaquette, including both attained lift costs and the exact feasible step. Real-angle differentiation,
 Haar cap concentration and asymptotic conclusions rest on the full
 printed proofs, not on sampled numerical integration.
 
