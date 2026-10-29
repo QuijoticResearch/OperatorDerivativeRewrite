@@ -38,6 +38,8 @@ The [Gaussian–cubic moment paper](manuscripts/cubic-moment-boundaries/main.pdf
 
 The [Cauchy circle-semigroup paper](manuscripts/cauchy-circle-entropy/main.pdf) connects an explicit nonreversible transition kernel to its full continuous-function generator, smoothed graph core and exact forward jump-entropy production. It proves a nonsharp decay bound for arbitrary initial laws while retaining the density and operator domains. Known wrapped-Cauchy pole dynamics are credited.
 
+The [Gaussian clock-domain paper](manuscripts/ibm-clock-domain/main.pdf) proves that actual reflected-clock Brownian points and even their bounded sine observables have scenery gradients but no original finite-energy clock gradient at positive times. It reconstructs the common-field obstruction and distinguishes ambient graph-dual limits from observed-filtration stochastic calculus.
+
 These are reviewed drafts, with compiled and visually inspected PDFs. Novelty remains unresolved; classical antecedents and exact limitations are recorded. The [editorial inventory](manuscripts/EDITORIAL_INVENTORY.md) groups the strongest remaining stories: arithmetic theta-flow zeros, completed signed multichannel calculus, and actual IBM variation and operator domains. Earlier IBM notes are preserved in the catalog.
 
 ## Selected verified mathematics

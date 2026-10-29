@@ -1,0 +1,636 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1.05in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\R}{\mathbb R}\newcommand{\E}{\mathbb E}
+\newcommand{\Hh}{\mathcal H}\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
+\title{Gaussian clock-domain obstructions\protect\\
+for reflected-clock Brownian motion}
+\author{Project Stardust}
+\date{Reviewed editorial draft, October 29, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Let $B,W$ be independent Brownian motions and
+$Z_t=B(|W_t|)$. At each positive time the actual point
+observable belongs to the scenery Gaussian Sobolev
+domain, with an explicit finite-energy gradient, but
+does not belong to the original clock Gaussian Sobolev
+domain. The bounded smooth observable $\sin Z_t$ has the
+same domain separation, so unbounded point growth is not
+the cause. The obstruction is proved in the scenery-valued
+Hilbert space: its clock section has squared increment
+norm proportional to distance, incompatible with a
+common locally finite-energy weak derivative. A
+conditional contraction of the full clock gradient
+would recover precisely such a derivative, so separate
+scalar identities cannot evade the obstruction.
+For a closed densely defined Hilbert operator, strong
+value approximation of a point outside its domain forces
+all derivative norms to escape to infinity, while the
+embedded derivatives converge in the dual of its
+adjoint graph with an explicit error bound. Applied to
+the ambient clock operator, this gives a nonrepresentable
+graph-dual derivative of $Z_t$. The conclusions concern
+the stated original domains and do not supply an
+observed-filtration stochastic integral or a physical-time
+It\^o formula. The proofs reconstruct frozen Lean results
+using classical Gaussian and closed-operator methods;
+novelty remains unresolved.
+\end{abstract}
+
+\section{The actual process and the two Gaussian domains}
+On a product of independent Wiener probability spaces
+$(\Omega_B,\mathbb P_B)$ and $(\Omega_W,\mathbb P_W)$,
+let $B_s,W_t$, $s,t\geq0$, be standard Brownian motions
+starting at zero. We study
+\begin{equation}\label{eq:process}
+ Z_t(\omega_B,\omega_W)=B_{|W_t(\omega_W)|}(\omega_B).
+\end{equation}
+This is the simple Brownian-time Brownian motion of
+Allouba--Zheng~\cite{alloubazheng}. The name
+``reflected-clock'' specifies that the same scenery
+$B$ is used at every visit to a given nonnegative
+clock level. It does not mean an excursion-by-excursion
+replacement of scenery or a two-sided scenery evaluated
+at the signed clock.
+
+Set
+\[
+ E=L^2(\mathbb P_B\otimes\mathbb P_W),\qquad
+ H_B=H_W=L^2(\R_+;ds).
+\]
+The isonormal coordinates of $B$ and $W$ identify their
+Cameron--Martin derivative directions with $H_B$ and
+$H_W$. Write
+\[
+ D_B:D(D_B)\subset E\longrightarrow L^2(\Omega_B\times\Omega_W;H_B),
+ \qquad
+ D_W:D(D_W)\subset E\longrightarrow L^2(\Omega_B\times\Omega_W;H_W)
+\]
+for the original closed partial Gaussian derivatives.
+The other source is held as an $L^2$ parameter in each
+case; these are not derivatives in physical time $t$.
+Section~\ref{sec:gaussian} specifies their closure and
+fiberwise domains precisely.
+
+\begin{theorem}\label{thm:point}
+For every $T>0$, $Z_T\in D(D_B)$ and
+\begin{equation}\label{eq:sourcegradient}
+ D_B Z_T=\mathbf1_{[0,|W_T|]}\quad\hbox{in }H_B,
+ \qquad
+ \|D_B Z_T\|_2^2=\|Z_T\|_2^2=\sqrt{2T/\pi}.
+\end{equation}
+In contrast, $Z_T\notin D(D_W)$. Consequently the
+point is outside any joint derivative whose domain is
+contained in $D(D_B)\cap D(D_W)$, including the
+original joint derivative restricted to IBM-observable
+$L^2$ classes in the mapped development. At $T=0$ both
+derivatives of $Z_0=0$ exist and are zero.
+\end{theorem}
+
+\begin{theorem}\label{thm:bounded}
+For every $T>0$, $S_T=\sin Z_T$ is a bounded actual
+observable in $D(D_B)$, with
+\[
+ D_BS_T=\cos Z_T\,\mathbf1_{[0,|W_T|]},\qquad
+ \|D_BS_T\|_2^2\leq\sqrt{2T/\pi}.
+\]
+Nevertheless $S_T\notin D(D_W)$ and it is outside the
+original joint intrinsic domain. Thus that domain does
+not contain all bounded smooth functions of actual point
+observations.
+\end{theorem}
+
+We will also prove the following quantitative form of
+the distinction between the original graph and a weak
+test-dual extension.
+
+\begin{theorem}\label{thm:dualpoint}
+Let $\mathcal T=D(D_W^*)$ with norm
+$\|v\|_{\mathcal T}^2=\|v\|_2^2+\|D_W^*v\|_2^2$.
+For either $f=Z_T$ or $f=S_T$ there is a bounded clock graph-dual derivative
+\[
+ d_W f(v)=\E[f D_W^*v],\qquad
+ \|d_W f\|_{\mathcal T^*}\leq\|f\|_2.
+\]
+For $T>0$ no $V\in L^2(\Omega_B\times\Omega_W;H_W)$
+represents it as $\E\langle V,v\rangle_{H_W}$ for all
+$v\in\mathcal T$. Whenever $u_n\in D(D_W)$ and
+$u_n\to f$ in $E$,
+\begin{align}
+ \|D_Wu_n\|_2&\longrightarrow\infty,\label{eq:escape}\\
+ \|jD_Wu_n-d_W f\|_{\mathcal T^*}
+      &\leq\|u_n-f\|_2\longrightarrow0,\label{eq:dualerror}
+\end{align}
+where $jV(v)=\E\langle V,v\rangle_{H_W}$.
+\end{theorem}
+
+This theorem concerns the ambient original clock
+operator. Its tests can depend on both sources and are
+not identified with temporal predictable integrands or
+with the natural filtration of $Z$. The native
+point-domain obstruction in Theorem~\ref{thm:point}
+is a separate consequence of domain inclusion.
+
+\section{Closed Gaussian derivatives and their fiberwise lift}
+\label{sec:gaussian}
+Here are the Gaussian foundations used in the proof.
+For a real separable Hilbert space $H$, let $X(h)$ be an
+isonormal Gaussian family, with
+$\E X(h)X(k)=\langle h,k\rangle_H$.
+On finite polynomial cylinders define
+\begin{equation}\label{eq:cylinder}
+ D\,p(X(h_1),\ldots,X(h_n))
+   =\sum_{i=1}^n(\partial_i p)(X(h_1),\ldots,X(h_n))h_i.
+\end{equation}
+One may use orthonormal $h_i$ after a finite linear
+change of coordinates. Polynomial cylinders are dense
+in Gaussian $L^2$. For completeness, in finite dimension
+if $f$ is orthogonal to every polynomial, the entire
+transform $\int f(x)e^{z\cdot x}\,d\gamma_n(x)$ has
+all Taylor coefficients zero. Cauchy--Schwarz and
+Gaussian exponential moments justify its entireness and
+termwise differentiation. Its restriction to imaginary
+$z$ is the Fourier transform of $f\gamma_n$, so Fourier
+uniqueness gives $f=0$. In countably many coordinates,
+conditional expectations onto the first $n$ coordinates
+converge in $L^2$, reducing density to the finite case.
+
+Gaussian integration by parts gives, for polynomial
+cylinders $p,a$ and a finite coordinate vector $h$,
+\begin{equation}\label{eq:stein}
+ \E[\langle Dp,h\rangle a]
+ =\E[p\{X(h)a-D_h a\}].
+\end{equation}
+This proves closability of \eqref{eq:cylinder}.
+Indeed if $p_n\to0$ and $Dp_n\to V$ in their $L^2$
+spaces, the right side tends to zero for each fixed
+$a,h$. Such scalar-polynomial vector tests are dense
+in $L^2(\Omega;H)$, so $V=0$.
+The original Gaussian derivative is the closure of this
+graph. Its domain is dense by the preceding density
+argument. Smooth compactly supported coordinate tests
+also satisfy \eqref{eq:stein}, by ordinary finite-dimensional
+integration by parts and passage through the closed graph.
+These standard source-space constructions are the setting
+of Gaussian Malliavin calculus; see~\cite{sottinen} for
+the corresponding Gaussian-process conventions.
+
+For an independent parameter probability space
+$(S,\rho)$, the partial derivative on
+$L^2(S;L^2(\Omega))$ has the exact domain
+\begin{equation}\label{eq:fiber}
+\begin{split}
+ D(\widetilde D)=\{f: &\text{there exists }V\in L^2(S;L^2(\Omega;H))\text{ with}\\
+ &(f(s),V(s))\in\operatorname{graph}D
+           \text{ for }\rho\text{-almost every }s\}.
+\end{split}
+\end{equation}
+The output $V$ is unique, since the graph has a unique
+value in each fiber. This is the actual Bochner graph
+lift, not a definition using independently chosen
+scalar derivatives.
+
+The lift is closed: from a convergent sequence of both
+graph coordinates, take a common subsequence converging
+almost everywhere in both fiber norms, and use closedness
+of the original graph in each fiber. It is densely
+defined because simple $S$-functions with values in
+$D(D)$ are dense in the Bochner $L^2$ space.
+It is also the closure of tensor cylinders. To see the
+nontrivial inclusion, a graph pair in \eqref{eq:fiber}
+is a strongly measurable, square-integrable function
+into the closed Hilbert graph of $D$. Approximate it
+by simple graph-valued functions, and approximate each
+of their finitely many values by a polynomial graph
+pair of $D$. This yields tensor-cylinder approximation
+in both graph coordinates. No measurable selection of
+derivative values is required: the given pair already
+supplies the measurable output.
+
+Taking $S=\Omega_W$ or $\Omega_B$ defines $D_B$ and
+$D_W$ as used above. Identifying product scalar $L^2$
+with either Bochner order is an isometric Fubini
+identification; changing the order does not change the
+product law or the graph condition.
+
+\section{Finite scenery energy at a random clock level}
+Let $I_B:H_B\to L^2(\mathbb P_B)$ be the Wiener integral,
+so $B_s=I_B(\mathbf1_{[0,s]})$.
+Fix $s\geq0$ and an orthonormal basis $(e_j)$ of $H_B$.
+The partial sums
+\[
+ B_s^{(N)}=\sum_{j=1}^N
+     \langle\mathbf1_{[0,s]},e_j\rangle I_B(e_j)
+\]
+are polynomial cylinders, with gradients equal to the
+orthogonal projections of $\mathbf1_{[0,s]}$.
+Wiener isometry and Parseval show convergence of both
+values and gradients. Thus $B_s$ is in the original
+scenery domain, with derivative $\mathbf1_{[0,s]}$.
+
+Now put $s=|W_T|$. The functions of the clock multiplying
+$I_B(e_j)$ are square integrable, because
+\[
+ |\langle\mathbf1_{[0,|W_T|]},e_j\rangle|^2\leq|W_T|.
+\]
+They are allowed $L^2$ parameters in the scenery lift.
+The random projected gradients converge to
+$\mathbf1_{[0,|W_T|]}$ in the full product $L^2$ field
+norm, by pointwise Parseval and domination by $|W_T|$.
+The same is true of the random partial-sum values by
+conditioning on $W$. Closedness proves the scenery
+part of Theorem~\ref{thm:point}. Conditioning also gives
+\[
+ \E Z_T^2=\E|W_T|=\sqrt{2T/\pi};
+\]
+the last equality is the elementary absolute first
+moment of a centered Gaussian of variance $T$.
+This establishes every identity in
+\eqref{eq:sourcegradient}.
+
+\section{A Hilbert-valued section with Brownian metric}
+Set $\Hh=L^2(\mathbb P_B)$ and, for $c>0$, define
+\begin{equation}\label{eq:section}
+ F_c(x)=B_{c|x|}\in\Hh,\qquad x\in\R.
+\end{equation}
+It is a continuous Hilbert-valued curve. For nonnegative
+$x,y$, Wiener isometry gives the exact metric
+\begin{equation}\label{eq:metric}
+ \|F_c(x)-F_c(y)\|_{\Hh}^2=c|x-y|.
+\end{equation}
+In particular $F_c\in L^2(\gamma;\Hh)$ for standard
+one-dimensional Gaussian measure $\gamma$, since
+$\|F_c(x)\|_{\Hh}^2=c|x|$.
+
+\begin{lemma}\label{lem:energy}
+If a continuous Banach-valued curve $F$ on $[a,b]$,
+$a<b$, satisfies
+$\|F(x)-F(a)\|^2\geq c(x-a)$ for $c>0$,
+then it has no representation
+\[
+ F(x)=v+\int_a^xg(s)\,ds
+\]
+almost everywhere on $[a,b]$ with $g\in L^2([a,b])$
+and a constant vector $v$.
+\end{lemma}
+\begin{proof}
+The primitive is continuous, so almost-everywhere
+equality with the continuous $F$ implies equality
+everywhere. At $a$ this gives $v=F(a)$.
+Cauchy--Schwarz for the Bochner integral gives, for $x>a$,
+\[
+ c(x-a)\leq\|F(x)-F(a)\|^2
+ \leq(x-a)\int_a^x\|g(s)\|^2\,ds.
+\]
+After division by $x-a$, the right side tends to zero
+as $x\downarrow a$, a contradiction.
+\end{proof}
+
+Gaussian weighting does not remove this local
+obstruction: on a compact interval its density is
+bounded above and bounded away from zero, so Gaussian
+$L^2$ derivative energy implies Lebesgue $L^2$ energy
+there.
+
+\begin{lemma}\label{lem:weakvector}
+Let $\Hh$ be a real separable Hilbert space and
+$F,g\in L^2(\gamma;\Hh)$. Suppose every scalar pair
+$\langle e,F\rangle,\langle e,g\rangle$, $e\in\Hh$,
+satisfies the closed one-dimensional Gaussian derivative
+identity. Then on every finite interval $[a,b]$,
+\[
+ F(x)=v+\int_a^xg(s)\,ds
+\]
+almost everywhere, for some $v\in\Hh$.
+\end{lemma}
+\begin{proof}
+The scalar graph identity implies
+\[
+ \int\langle e,F(x)\rangle\{xp(x)-p'(x)\}\,d\gamma(x)
+       =\int\langle e,g(x)\rangle p(x)\,d\gamma(x)
+\]
+for compactly supported smooth $p$. If $\varphi$ is a
+compactly supported test function in $(a,b)$, take
+$p=\varphi/\rho$, where $\rho$ is the Gaussian density.
+Since $\rho'=-x\rho$, $xp-p'=-\varphi'/\rho$.
+Thus $\langle e,g\rangle$ is the ordinary weak derivative
+of $\langle e,F\rangle$ on $(a,b)$.
+Both are locally $L^2$, so the one-dimensional weak
+fundamental theorem gives
+$\langle e,F(x)\rangle=c_e+
+\langle e,\int_a^xg(s)\,ds\rangle$ almost everywhere.
+This elementary theorem follows, for example, by
+subtracting the displayed primitive and observing that
+a locally integrable distribution with zero derivative
+is constant; convolution with compact smooth kernels
+proves that assertion directly.
+
+Choose a countable dense sequence $(e_j)$ in $\Hh$.
+Intersect their full-measure equality sets and choose
+one point $x_0$ in the intersection. The vector
+$v=F(x_0)-\int_a^{x_0}g(s)\,ds$ realizes every constant
+$c_{e_j}$. At any other point in the intersection,
+the inner products with all $e_j$ of
+$F(x)-v-\int_a^xg$ vanish. Density makes the vector
+itself zero, proving the statement.
+\end{proof}
+
+Combining \eqref{eq:metric} on $[0,1]$ with the two
+lemmas shows that $F_c$ has no single
+$g\in L^2(\gamma;\Hh)$ realizing all scalar closed
+Gaussian derivative pairs. This is a common-field
+obstruction. It does not assert that every individual
+scalar weak derivative fails to exist.
+
+\section{Recovering a common field from the full clock graph}
+We now connect the section obstruction to the actual
+infinite-dimensional clock operator. Let
+\[
+ h_T=T^{-1/2}\mathbf1_{[0,T]}\in H_W,\qquad
+ G=W(h_T)=W_T/\sqrt T.
+\]
+Then $\|h_T\|=1$ and $G$ is standard Gaussian.
+Complete $h_T$ to an orthonormal basis of $H_W$.
+The clock Gaussian space decomposes into the coordinate
+$G$ and an independent residual Gaussian family.
+Under this decomposition,
+\begin{equation}\label{eq:pullback}
+ Z_T=F_{\sqrt T}(G)
+\end{equation}
+as an actual product $L^2$ class, with $F$ valued in
+the scenery Hilbert space.
+
+Suppose, for contradiction, that $Z_T\in D(D_W)$,
+with full clock gradient $V$. Contract $V$ with $h_T$
+and average only over the residual clock coordinates:
+\begin{equation}\label{eq:recover}
+ g(x)(\omega_B)=
+ \E_{\rm residual}\langle V(\omega_B,x,\cdot),h_T\rangle_{H_W}.
+\end{equation}
+Hilbert-valued conditional integration and Jensen give
+\[
+ g\in L^2(\gamma;\Hh),\qquad
+ \|g\|_{L^2(\gamma;\Hh)}\leq\|V\|_2.
+\]
+This is one common scenery-valued field, rather than
+separately chosen scalar derivatives.
+
+For $e\in\Hh$ and $p\in C_c^\infty(\R)$, the
+clock test field $e(\omega_B)p(G)h_T$ has divergence
+\[
+ e(\omega_B)\{G p(G)-p'(G)\}.
+\]
+The formula follows on tensor polynomial cylinders
+from Gaussian integration by parts. Its test field
+and displayed divergence are in the relevant $L^2$
+spaces; passage through the closed clock graph extends
+the identity to $Z_T,V$. Using \eqref{eq:pullback}
+and conditional integration in \eqref{eq:recover}, it
+becomes
+\[
+ \int\langle e,F_{\sqrt T}(x)\rangle
+          \{xp(x)-p'(x)\}\,d\gamma(x)
+ =\int\langle e,g(x)\rangle p(x)\,d\gamma(x).
+\]
+The proof of Lemma~\ref{lem:weakvector} therefore
+supplies a common vector primitive for $F_{\sqrt T}$
+on $[0,1]$. Lemma~\ref{lem:energy} excludes it by
+\eqref{eq:metric}. This proves $Z_T\notin D(D_W)$.
+
+The original joint intrinsic derivative in the mapped
+library is defined on the intersection of the scenery
+and clock domains, restricted to the closed subspace
+of actual IBM-observable $L^2$ classes. The point
+$Z_T$ is observable by definition but fails the clock
+domain test. Thus the joint-domain conclusion requires
+no assertion about a new derivative domain or a new
+filtration. This completes Theorem~\ref{thm:point}.
+
+\section{A bounded smooth observable with the same obstruction}
+The preceding argument is not restricted to unbounded
+point values. We prove Theorem~\ref{thm:bounded} using
+an exact first-chaos projection.
+Let $\Pi$ be the orthogonal projection in
+$\Hh=L^2(\mathbb P_B)$ onto the closed first Gaussian
+chaos $I_B(H_B)$. For $s\geq0$,
+\begin{equation}\label{eq:sineprojection}
+ \Pi\sin B_s=e^{-s/2}B_s.
+\end{equation}
+Indeed, for $h\in H_B$, joint Gaussian regression and
+one-dimensional integration by parts give
+\[
+ \E[I_B(h)\sin B_s]
+ =\langle h,\mathbf1_{[0,s]}\rangle\E\cos B_s
+ =e^{-s/2}\langle h,\mathbf1_{[0,s]}\rangle.
+\]
+For $s>0$, regression here follows simply by splitting
+$h$ into its projection onto $\mathbf1_{[0,s]}$ and
+its orthogonal complement; the latter Gaussian is
+independent and centered. At $s=0$ the identity is zero.
+The last expression is the inner product with
+$e^{-s/2}B_s$, proving \eqref{eq:sineprojection}.
+
+For $c>0$ set $S_c(x)=\sin B_{c|x|}$ as a
+scenery-valued Hilbert class. It is continuous and has
+norm at most one. Its projected curve is
+\[
+ \Pi S_c(x)=e^{-c|x|/2}B_{c|x|},\qquad \Pi S_c(0)=0.
+\]
+On $0\leq x\leq1$, the exact source variance implies
+\begin{equation}\label{eq:sinelower}
+ \|\Pi S_c(x)-\Pi S_c(0)\|_{\Hh}^2
+       =e^{-cx}cx\geq ce^{-c}x.
+\end{equation}
+If $S_c$ had a common finite-energy vector primitive,
+applying the bounded operator $\Pi$ to its Bochner
+integral would produce a primitive of $\Pi S_c$ with
+no larger derivative energy. Lemma~\ref{lem:energy}
+excludes this by \eqref{eq:sinelower}.
+The recovery argument of the preceding section, with
+$F_c$ replaced by $S_c$, would recover just such a
+primitive from a full clock gradient of $\sin Z_T$.
+Thus $\sin Z_T\notin D(D_W)$ at every positive time,
+and domain inclusion gives the joint intrinsic exclusion.
+
+For the positive scenery statement, at each deterministic
+$s$ the Taylor polynomials of $\sin B_s$ and their
+derivatives converge in Gaussian $L^2$, dominated by
+a constant times $e^{|B_s|}$. Their gradients converge
+to $\cos B_s\,\mathbf1_{[0,s]}$. Closedness gives that
+actual scenery graph pair. At the random level
+$s=|W_T|$ its field norm squared is bounded by $s$,
+and its value is bounded by one. Measurability follows
+from continuity of $B$ and the interval indicator map.
+The exact fiber domain \eqref{eq:fiber} therefore gives
+the scenery graph of $S_T$ and its norm bound in
+Theorem~\ref{thm:bounded}.
+This is not an attempted clock chain rule applied to
+an input outside the clock domain.
+
+\section{Graph-dual derivatives and escape of the original field norm}
+We give the closed-operator argument separately to
+make its topology and representability exact.
+Let $T:D(T)\subset E_0\to F_0$ be a closed densely
+defined operator between real Hilbert spaces. Put
+\[
+ \mathcal G=D(T^*),\qquad
+ \|v\|_{\mathcal G}^2=\|v\|_{F_0}^2+\|T^*v\|_{E_0}^2.
+\]
+The adjoint is closed, so this is a Hilbert space.
+Define bounded maps
+\begin{equation}\label{eq:dualdefinition}
+ df(v)=\langle f,T^*v\rangle_{E_0},\qquad
+ jV(v)=\langle V,v\rangle_{F_0}.
+\end{equation}
+Cauchy--Schwarz gives $\|df\|\leq\|f\|$ and
+$\|jV\|\leq\|V\|$. For $u\in D(T)$,
+\begin{equation}\label{eq:agreement}
+ jTu=du.
+\end{equation}
+
+\begin{proposition}\label{prop:represent}
+The map $j$ is injective, and $df=jV$ for some
+$V\in F_0$ if and only if $f\in D(T)$, in which
+case $V=Tf$. If $f\notin D(T)$, then $df\ne0$.
+\end{proposition}
+\begin{proof}
+Write $\Gamma=\operatorname{graph}T$ in $E_0\oplus F_0$.
+By the definition of the adjoint and density of $D(T)$,
+\[
+ \Gamma^\perp=\{(-T^*v,v):v\in D(T^*)\}.
+\]
+The identity $df=jV$ says exactly that $(f,V)$ is
+orthogonal to this orthogonal complement. Since
+$\Gamma$ is closed, $\Gamma^{\perp\perp}=\Gamma$;
+thus $(f,V)$ belongs to the original graph. The
+converse is \eqref{eq:agreement}.
+If $jV=0$, the same orthogonality argument puts
+$(0,V)$ in $\Gamma$, so $V=T0=0$. This also proves
+that $D(T^*)$ is dense in $F_0$. Finally $df=0=j0$
+would put $f$ in $D(T)$, proving the last assertion.
+\end{proof}
+
+For any $u\in D(T)$ and $f\in E_0$, the graph-dual
+error bound is immediate:
+\begin{equation}\label{eq:error}
+ \|jTu-df\|_{\mathcal G^*}
+ =\|d(u-f)\|_{\mathcal G^*}\leq\|u-f\|_{E_0}.
+\end{equation}
+Density of $D(T)$ supplies such approximating values
+for every $f$. This convergence is in the operator norm
+of the graph-test dual, not in the original field space.
+
+\begin{proposition}\label{prop:escape}
+If $u_n\in D(T)$, $u_n\to f$ in $E_0$, and
+$f\notin D(T)$, then $\|Tu_n\|_{F_0}\to\infty$.
+\end{proposition}
+\begin{proof}
+If the norms did not tend to infinity, some subsequence
+would have $\|Tu_{n_j}\|\leq C$ for a finite $C$.
+For $v\in D(T^*)$ take the limit in
+$\langle u_{n_j},T^*v\rangle=\langle Tu_{n_j},v\rangle$:
+\[
+ |\langle f,T^*v\rangle|\leq C\|v\|_{F_0}.
+\]
+Since $D(T^*)$ is dense in $F_0$, this functional
+extends continuously to all of $F_0$. Riesz
+representation provides $V\in F_0$ with
+$\langle f,T^*v\rangle=\langle V,v\rangle$ for
+every adjoint-domain test. Proposition~\ref{prop:represent}
+would put $f$ in $D(T)$, a contradiction.
+\end{proof}
+
+Apply these results to $T=D_W$, the closed densely
+defined ambient clock lift of Section~\ref{sec:gaussian},
+and $f=Z_T$ or $S_T$ (with the subscript $T>0$ now denoting time).
+Theorems~\ref{thm:point} and~\ref{thm:bounded} give nonmembership, and
+\eqref{eq:dualdefinition}, \eqref{eq:error} and
+Proposition~\ref{prop:escape} prove
+Theorem~\ref{thm:dualpoint}. The bound on the weak
+derivative is explicitly
+$\|d_WZ_T\|\leq(2T/\pi)^{1/4}$, while
+$\|d_WS_T\|\leq1$.
+Every original-domain value approximation has divergent
+clock energy, although its embedded derivatives converge
+in a weaker, precisely defined norm.
+
+\section{Scope, antecedents and formal correspondence}
+The Brownian-time model is classical. Allouba and Zheng
+define the simple reflected-clock process and distinguish
+it from excursion-based versions~\cite{alloubazheng}.
+The Gaussian derivatives here act on its independent
+Gaussian sources; $Z$ itself is not asserted to be a
+Gaussian process. Standard Gaussian derivative/divergence
+conventions are discussed in~\cite{sottinen}.
+The recent Brownian-time change-of-measure work
+\cite{change} concerns a different question; no
+conclusion about all possible Brownian-time calculi or
+changes of law follows from the clock-domain obstruction.
+These comparisons do not settle novelty of the present
+domain-and-graph-dual formulation.
+
+The frozen verified baseline is
+\begin{center}\small\ttfamily
+bab688bb6140cd6316c80680095a914ea0d346db.
+\end{center}
+The theorem map links the exact folded-section metric,
+first-chaos projection and bounded sine exclusion,
+finite-energy primitive obstruction, weak-vector
+primitive, actual Bochner clock contraction and
+observation converse, unmollified scenery derivative,
+actual point-domain exclusion, and generic graph-dual
+representability/error/escape theorems. The ambient
+clock application combines these exact ingredients;
+it is distinguished from the library's separate native
+adjoint-graph-dual time-average results.
+
+The formal Gaussian realization can contain additional
+independent scenery coordinates, including a negative-time
+branch that the reflected clock never visits. The
+half-line presentation above retains the same actual
+process and partial domains on its observables. Positive
+graph pairs tensor with constants in unused coordinates;
+conversely conditional integration over those coordinates
+recovers the same clock test identities by contraction.
+Thus no unused source is substituted for a clock derivative.
+
+No positive-time original clock gradient of the point
+is obtained by regularizing its values alone. In
+particular strong convergence of a chosen regularized
+clock-gradient sequence would contradict closedness;
+the full norm-escape conclusion applies when the
+approximations are actual original graph pairs.
+Separate scalar tests without one common finite-energy
+field do not meet the recovered-field hypothesis.
+Neither source-variable divergence nor an adjoint-graph
+test functional is identified here as an observed-past
+physical-time stochastic integrand. The paper proves
+no physical-time It\^o or Clark--Ocone completion,
+and it does not address changing-past integrated
+point-regularizer convergence.
+
+\begin{thebibliography}{9}
+\bibitem{alloubazheng} H. Allouba and W. Zheng,
+Brownian-time processes: the PDE connection and the
+half-derivative generator, \emph{Ann. Probab.}
+\textbf{29} (2001), 1780--1795.
+\url{https://arxiv.org/abs/1005.3801}.
+\bibitem{sottinen} T. Sottinen and L. Viitasaari,
+Stochastic analysis of Gaussian processes via Fredholm
+representation, \emph{Int. J. Stoch. Anal.}
+\textbf{2016}, article 8694365.
+\href{https://doi.org/10.1155/2016/8694365}
+{doi:10.1155/2016/8694365}.
+\bibitem{change} B. Abdurakhmanov and H. Allouba,
+Brownian-time change of measure, preprint,
+arXiv:2605.07044 (2026).
+\url{https://arxiv.org/abs/2605.07044}.
+\end{thebibliography}
+\end{document}
