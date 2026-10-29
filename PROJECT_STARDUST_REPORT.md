@@ -56363,3 +56363,66 @@ Integrity authenticates1716's exact manifest against approval80961831d2a6de60422
 Exact remaining bottleneck. The actual rational coefficient and its positivity at(1,1,1) are NOW VERIFIED, no longer missing. The joint beta=1/t^2, boundary=t scaling still does not identify a fixed-beta third derivative. A productive next route is to test whether parameter-uniform differentiated density envelopes and quantitative outside derivative bounds can establish that interchange, or yield a sharp obstruction. Before proving this, audit the exact fixed-beta response declarations and their hypotheses. Do not infer a generic c*xyz law, a nonlinear boundary-gauge cubic theorem, a thermal norm contradiction, stationary physical transfer contraction, physically justified iteration distance, scale/volume-uniform control, continuum/infinite-volume existence or a positive Yang-Mills mass gap from this one finite-cell value. All of those claims remain open except where separately certified. Classical exact finite linear algebra and determinant evaluation are not claimed novel.
 
 Exact-commit approval, complete new-history secret scanning, guarded PUBLIC main/research synchronization and independent remote refs/visibility checks remain closure gates; this pre-commit ledger does not assert remote backup succeeded. Only the user controls repository visibility. The indefinite focused research goal remains active.
+
+
+## Checkpoint1718 — actual thermal-window mixed response and divergent third finite difference
+
+October29,2026. Focused Yang-Mills remains ACTIVE; Bakry PAUSED and queue unchanged. Extends exact audited/two-ref verified checkpoint1717 e26383a9112365b9c511abc157028669781eb7f4. The previous goal turn made substantive progress, closing the actual nonzero rational harmonic certificate. This turn pursues the large-coupling response bottleneck through ACTUAL finite differences, avoiding an unproved parameter-derivative interchange. Publication-role separation is retained; no manuscripts/PDFs/publication directories/editorial README work, and no original-source reading beyond hashes.
+
+Two focused modules: FourCubeHarmonicAmplitude and FourCubeThermalMixedDifference. There is no new gauge-theory infrastructure. They reuse the actual signed cubic, pinned linear response, full-Haar odd limit and exact rational value from1713-1717.
+
+Full amplitude law. Let a=(x,y,z), and scale_a(Y) multiply raw quaternion color0 by x, color1 by y and color2 by z. Direct native boundary formulas prove rawBoundary(a)=scale_a(rawBoundary(1,1,1)), retaining the Pauli permutation boundaryComponent(a,j)=[y,z,x]_j*boundaryComponent(1,1,1,j). Existing response is exactly real-linear under scalar multiplication. Consequently
+
+    harmonicShift(a)=scale_a(harmonicShift(1,1,1)).
+
+The actual full-edge velocities, including the root pin and boundary values, scale in precisely those raw colors. The four ordered face vectors retain their inverse-slot minus signs. Each determinant uses all three colors exactly once, hence
+
+    C(scale_a Y,a)=xyz C(Y,(1,1,1)),
+    harmonicCubic(x,y,z)=c xyz,
+    c=31877443263/69438734552>0.
+
+These are now actual Lean identities for ALL real amplitudes, including zero and negative amplitudes, not extrapolations from the external rational solver. No division by x,y,z or nonzero-amplitude hypothesis occurs. No nonlinear boundary-gauge projection is assumed. This closes the arbitrary-amplitude cubic law still recorded as diagnostic at1717.
+
+ACTUAL mixed response. Write F_beta(x,y,z)=-log N_(boundaryData(x,y,z))(beta), where N is the pre-existing normalized ORIGINAL finite-cell Haar partition. For a three-variable F, define the explicit eight-corner signed sum
+
+    C_h(F)=sum_(eps in {+1,-1}^3) eps0 eps1 eps2 F(h eps0,h eps1,h eps2),
+    D_beta(h)=C_h(F_beta)/(8h^3).
+
+cornerSum is the explicit eight terms with exactly these signs; independent polynomial checks verify the normalization and lower-degree cancellation. No derivative is used in this definition. Define the rescaled response
+
+    T(t)=C_t(F_(1/t^2))/(8t)=t^2 D_(1/t^2)(t).
+
+ray_neg exactly identifies reversal of t with reversal of all three boundary amplitudes; the coupling1/t^2 is even. The full corner sum pairs into FOUR actual odd differences at amplitudes(1,1,1),(1,-1,1),(1,1,-1),(1,-1,-1), weighted+,-,-,+. Each odd limit was already proved for the full Haar integral. Applying the now verified c xyz law gives, through the two-sided punctured REAL neighborhood0,
+
+    T(t) -> c,
+    t^2 D_(1/t^2)(t) -> c.
+
+The exact algebraic scaling identity holds for ALL real t, including Lean's total quotient convention at0; the nonzero limit is correctly punctured. The independent tests explicitly refute an unpunctured extension to that same c, since T(0)=0.
+
+Rigorous obstruction. actual_third_difference_lower proves eventually, for every sufficiently small nonzero t,
+
+    D_(1/t^2)(t) > c/(2t^2).
+
+actual_third_difference_diverges proves D_(1/t^2)(t)->+infinity, and no_uniform_thermal_bound proves that for EVERY finite real K it is false that |D_(1/t^2)(t)|<=K eventually. Thus the ACTUAL full-Haar centered mixed THIRD FINITE DIFFERENCE grows linearly with beta on the boundary window h=beta^(-1/2): D_beta(h)/beta->c along the proved inverse-square parameterization. The bounded rescaled T(t) must NOT be confused with the divergent unscaled D. This excludes a fixed uniform bound on this specified finite-cell response; it does not exclude mass-gap estimates or physically different normalizations.
+
+This bypasses derivative-limit interchange for a concrete actual-response statement. It does NOT prove convergence or divergence of the mixed third DERIVATIVE at the origin. A future repeated mean-value/integral bridge would need the actual C3/domain hypotheses. Even with those hypotheses it would initially identify large derivatives at beta-dependent intermediate boundary points, not automatically the origin. No false derivative conclusion is inferred from these finite differences.
+
+Verification:
+- build: PASS, 27.692971400014358 seconds.
+- audit: PASS, 40.00124529999448 seconds.
+- checks: PASS, 27.05064480000874 seconds.
+- axiom-ledger: PASS, 49.86123270000098 seconds.
+
+Complete root build:7050 jobs. Canonical COMPLETE safe-Foundation Lean.collectAxioms audit:56066 declarations, allowing only propext, Classical.choice and Quot.sound. ALL30 public types were printed unabridged and reviewed:21 complete theorem proofs and9 definitions, no new private helpers/abbreviations/instances. Both complete source bodies were read. The COMPLETE persisted Foundation/AxiomAudit.lean passed. Targeted builds, full build/canonical audit and final independent checks/persisted ledger were serialized, and every terminal handle checked before the next Lean run. No sorry/admit/new mathematical axiom/native_decide, resource increase, toolchain/config/compiler/trust change or weakened audit was introduced. A recursive simp attempt rewrote the unit-amplitude base into itself; it was replaced by explicit channel-wise linear-response algebra, retaining the default recursion/heartbeat limits. A monotonicity lemma for the wrong multiplicative class was replaced by the real ordered-field cancellation theorem with t^2>=0 explicit.
+
+ALL22 independent Lean examples passed. They verify cornerSum(xyz)=8h^3, cornerSum(x^2+yz+7)=0 and the cubic coefficient with lower-degree contamination; arbitrary-amplitude law, zero/negative/even-color signs, a nontrivial rational amplitude test, actual harmonic/velocity scaling, exact four-pair/eight-corner identity, total zero convention, actual rescaled limit, positive lower bound, divergence, no uniform absolute bound, failure of an unpunctured limit and equivalence to division by beta for t!=0. The first harness execution reported two No goals to be solved errors after already successful tactics; only the redundant trailing TEST tactics were removed, then all checks rerun. Mathematical sources and resources were unchanged for the harness repair.
+
+An independent fixed-seed actual112-link72-face quaternion diagnostic evaluates ALL EIGHT boundary corners, with2048 shifted-Gaussian importance samples/corner grouped in256 color-sign octets. At t=.04,.02,.01 (beta625,2500,10000), T estimates were0.4596319251232911,0.4592077720520449,0.45910632259044126 versus certified c approximately0.4590729290887092. The corresponding unscaled third finite differences were287.2699532020569,1148.0194301301121,4591.063225904412. Octet delta-method sample standard errors for T were0.0006148360015830153,0.0001564518636474127,0.00003929438571345194. Coupled sign-corner data showed zero floating spread among proper-color flips. That numerical symmetry is NOT an exported actual gauge/conjugation theorem. These are cutoff importance diagnostics, not certified quadrature/tail bounds, derivative-limit interchanges or continuum estimates. Actual conclusions rest on kernel proofs and the prior full-Haar cutoff removal. Evidence prefix C:/Users/ramir/AppData/Local/Temp/stardust-ym-1718-*.
+
+Authenticated integrity compares1717's manifest to approval e26383a9112365b9c511abc157028669781eb7f4. Among2832 recursive Foundation/root Lean files, only these two new modules, root imports and persisted AxiomAudit differ. All older mathematics,3 pinned configurations,113 baseline originals and21 Yang-Mills originals(20 distinct hashes) are unchanged. ResearchSources stays read-only/uncommitted, and existing drafts/history, master ref and publication branch remain preserved.
+
+Exact remaining bottleneck. The generic harmonic cubic law and ACTUAL full-Haar mixed thermal finite-difference asymptotic/divergence are NOW VERIFIED and must no longer be listed as merely diagnostic or derivative-conditional. Fixed-beta boundary smoothness and domains, large-beta third DERIVATIVE asymptotics, parameter-uniform differentiated density/tail bounds and a nonlinear gauge-covariant response/transfer interpretation remain open. The saved integrated_mixed_cubic theorem differentiates the SECOND COUPLING RESPONSE at beta=0; it does not supply the required large-beta boundary-derivative interchange. A promising mathematically distinct next route is to establish actual fixed-beta C3 regularity using compact/bounded finite-Haar derivatives and then use a repeated mean-value/integral theorem on this ALREADY proved mixed finite difference. This could force large intermediate-point derivatives without presupposing derivative convergence. State those exact domains and locations, and audit/reuse existing integral-differentiation tools before adding infrastructure. Proper color-flip symmetry may give another useful exact conjugation identity, but its full actual-Haar hypotheses must be proved, not inferred from the diagnostic.
+
+No fixed-beta third derivative-at-zero asymptotic, thermal-bound contradiction beyond the explicit finite-difference bound, stationary physical transfer estimate, physically justified iteration distance, scale/volume-uniform continuum bridge, Yang-Mills existence or mass gap is claimed. Classical linear scaling, determinant algebra and finite-difference/limit reasoning are not claimed novel. Keep the indefinite focused research goal active.
+
+Exact-commit approval, full new-history secret scanning, guarded PUBLIC main/research synchronization and independent remote-ref/visibility checks remain closure gates. This pre-commit ledger does not assert backup already succeeded. Only the user controls visibility.

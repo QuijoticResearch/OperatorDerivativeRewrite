@@ -2797,3 +2797,7 @@ import Foundation.FourCubeHarmonicResponse
 import Foundation.FourCubeHarmonicWordData
 
 import Foundation.FourCubeHarmonicCubicValue
+
+import Foundation.FourCubeHarmonicAmplitude
+
+import Foundation.FourCubeThermalMixedDifference
