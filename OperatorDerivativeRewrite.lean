@@ -2861,3 +2861,11 @@ import Foundation.CubeAxialGauge
 import Foundation.CubeLowActionBlock
 import Foundation.CubeGroundMass
 import Foundation.CubeGroundOrbit
+
+import Foundation.CubeNativeL2Domain
+
+import Foundation.CubeOperatorTail
+
+import Foundation.CubeOperatorLocalization
+
+import Foundation.CubeNativeCompression
