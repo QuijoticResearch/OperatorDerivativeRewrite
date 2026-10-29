@@ -11,7 +11,7 @@
 \newcommand{\E}{\mathbb E}
 \newcommand{\R}{\mathbb R}\newcommand{\tr}{\operatorname{tr}}
 \newcommand{\code}[1]{{\small\nolinkurl{#1}}}
-\title{Exact calibration tests for strain, pressure\\and angular spectral ratios}
+\title{Exact calibration tests for strain, pressure\\and Fourier estimates}
 \author{Project Stardust}
 \date{Reviewed diagnostic draft, October 29, 2026}
 \begin{document}
@@ -38,7 +38,9 @@ positive-sector counterexamples. Complete elementary proofs reconstruct frozen
 formal results. These are calibration examples in classical model
 families, not new fluid existence or singularity results; priority for
 the diagnostic formulations remains unresolved.
-An actual stationary Burgers vortex additionally separates an axial pressure flux from a scalar Gaussian observation, and a repaired helical field gives exact finite-slab trace and full-Hessian pairings with their nonzero axial boundary discrepancy. \end{abstract}
+Low-direction nonlinear responses retain an explicit high-background dependence,
+even for Gaussian amplitudes of size $1/N$, and a scalar norm reduction
+requires an upper frequency ratio. An actual stationary Burgers vortex additionally separates an axial pressure flux from a scalar Gaussian observation, and a repaired helical field gives exact finite-slab trace and full-Hessian pairings with their nonzero axial boundary discrepancy. \end{abstract}
 
 \section{Conventions and purpose}
 For a real $3\times3$ matrix $A$, use
@@ -66,6 +68,168 @@ third tests a specified spatially averaged identity on an actual smooth
 periodic Navier--Stokes flow. Each test has its own hypotheses; neither
 an ODE trajectory nor an infinite-energy affine field is promoted to a
 finite-energy singularity theorem.
+
+
+\section{A low-direction derivative can depend on an unseen high mode}
+We next test a possible retained-field derivative estimate using actual
+smooth periodic velocities, keeping input and output projections distinct.
+Use coordinates $(x,y,z)$ on $\mathbb T^3$. Write
+$\operatorname{av} F=(2\pi)^{-3}\int_{[0,2\pi]^3}F$ for normalized
+spatial average, and fix an integer $N\geq4$. For real $a,c$ put
+\[
+ u_{a,c}(x,y,z)=(0,-2a\sin x,-2c\sin Ny).
+\]
+These fields are smooth, periodic, mean zero and divergence free: each
+nonzero component is independent of its own coordinate. Their only
+Fourier modes are $\pm(1,0,0)$ and $\pm(0,N,0)$. With the convention
+$u=\sum_k\widehat u(k)e^{ik\cdot x}$, their positive-mode coefficients
+are respectively $ia e_2$ and $ic e_3$, with the negative conjugates.
+Here $e_2,e_3$ denote the second and third Cartesian directions.
+
+Let $\mathbb P$ be the usual periodic Leray projection and
+$\mathcal B(u)=\mathbb P[(u\cdot\nabla)u]$. Direct differentiation gives
+\begin{equation}\label{eq:highlowadvection}
+ (u_{a,c}\cdot\nabla)u_{a,c}
+ =(0,0,4acN\sin x\cos Ny).
+\end{equation}
+Indeed $u_1=0$, all $z$ derivatives vanish, and the only remaining
+term is $(-2a\sin x)\partial_y(-2c\sin Ny)$ in the third component.
+This output is itself divergence free and mean zero. Its Fourier
+waves are $(\pm1,\pm N,0)$ and their vectors point along $e_3$,
+perpendicular to every wave. Thus Leray projection leaves it unchanged.
+
+At the high background $u_{0,c}$, the low-direction variation
+$\partial_a u_{a,c}|_{a=0}=(0,-2\sin x,0)$ has fixed frequency one.
+The actual response is
+\begin{equation}\label{eq:highlowderivative}
+ \left.\partial_a\mathcal B(u_{a,c})\right|_{a=0}
+ =(0,0,4cN\sin x\cos Ny),\qquad
+ \operatorname{av}\left|\left.\partial_a\mathcal B(u_{a,c})\right|_{a=0}\right|^2
+ =4c^2N^2.
+\end{equation}
+The last equality uses the normalized means of $\sin^2x$ and
+$\cos^2Ny$, both $1/2$, and Fubini on the compact torus.
+All expressions are smooth, so these are classical derivatives and
+ordinary integrals, with no weak-realization assumption.
+
+Let $\Pi_K$ retain the velocity modes $|k|\leq K$, and set $K=N/2$.
+The low input mode is retained, while both the background and all
+response modes lie strictly above $K$. In particular
+\[
+ \Pi_{N/2}u_{0,c}=0,\qquad
+ \|\Pi_{N/2}u_{0,c}\|_{H^1}=0.
+\]
+Consequently, for $c\ne0$, no finite constant $C$ can give
+\[
+ \left\|\left.\partial_a\mathcal B(u_{a,c})\right|_{a=0}\right\|_{L^2}
+ \leq C\|\Pi_{N/2}u_{0,c}\|_{H^1}.
+\]
+The left side is $2|cN|>0$ and the right side is zero.
+The source also checks the retained Fourier synthesis and its
+coefficient-defined $H^1$ energy directly; their vanishing agrees
+with the actual field projection used here.
+\par\noindent\code{DictionaryLowDerivative}:
+\code{synthesis_eq_velocity}, \code{velocity_divergence_zero},
+\code{advection_formula}, \code{projectedAdvection_eq},
+\code{derivativeEnergy_formula}, \code{no_physical_low_only_bound}.
+
+\subsection*{Small random amplitudes do not remove the response}
+Let $G$ be a standard real Gaussian variable and choose
+$c=\sigma G/N$. Every realization is still one of the smooth periodic
+fields above. Since $\E G=0$ and $\E G^2=1$, elementary integration gives
+\begin{align}\label{eq:highlowgaussian}
+ \E c&=0,& \E c^2&=\frac{\sigma^2}{N^2},\\
+ \E\operatorname{av} |u_{0,c}|^2&=\frac{2\sigma^2}{N^2},&
+ \E\operatorname{av}\left|\left.\partial_a\mathcal B(u_{a,c})\right|_{a=0}\right|^2
+ &=4\sigma^2.\nonumber
+\end{align}
+At the fixed point $(\pi/2,0,0)$, the third response component is
+$4\sigma G$. Its mean is zero but its second moment is $16\sigma^2$.
+Thus a centered high amplitude of size $1/N$ does not make this
+low-direction response small in mean square. For $\sigma\ne0$, even
+an expected response-energy bound proportional only to the expected
+retained $H^1$ energy fails, since that retained energy is zero.
+\par\noindent\code{DictionaryGaussianSensitivity}:\par\noindent
+\code{background_second}, \code{probe_formula}, \code{probe_second},\par\noindent
+\code{expected_physical_energy}, \code{no_expected_low_only_bound}.
+
+Three scope restrictions matter. First, the derivative \emph{output}
+has not been low-pass filtered. In this exact example,
+\[
+ \Pi_{N/2}\left.\partial_a\mathcal B(u_{a,c})\right|_{a=0}=0.
+\]
+It therefore supplies no nonzero witness against an estimate for that
+different low-output map. Second, small amplitude is not small full
+$H^1$ energy: with the convention
+$\|u\|_{H^1}^2=\operatorname{av}(|u|^2+|\nabla u|^2)$,
+\[
+ \E\|u_{0,\sigma G/N}\|_{H^1}^2
+ =2\sigma^2(1+N^2)/N^2.
+\]
+It stays bounded away from zero when $\sigma\ne0$; no usual estimate
+that retains high derivatives is contradicted. This last displayed
+norm and the low-output cancellation are human Fourier consequences.
+Third, this is a static nonlinearity calculation on admissible smooth
+fields, not a prescribed evolving Navier--Stokes solution or an invariant
+Gaussian velocity law.
+
+Germano~\cite{Germano}, Section 5, equations (64)--(75), retains
+resolved, unresolved and cross contributions in filtered stresses.
+That classical context does not supply the derivative estimate tested
+here. Foias--Jolly--Kravchenko--Titi~\cite{FJKT}, Section 1 and
+Definition 3.3, distinguish determination by complete low-mode
+trajectories on the two-dimensional attractor. Our instantaneous
+three-dimensional field test establishes none of those dynamical
+hypotheses and does not contradict determining-mode results.
+No new general high/low interaction principle is claimed.
+
+\section{A scalar norm reduction needs an upper frequency ratio}
+A separate algebraic check prevents reversing a spectral inequality.
+For positive real $A,B$ and $C\geq0$,
+\begin{equation}\label{eq:normreduction}
+ A^{3/2}B^{3/2}\leq CA^2B
+ \quad\Longleftrightarrow\quad B\leq C^2A.
+\end{equation}
+Divide by the positive $A^{3/2}B$ to obtain
+$\sqrt B\leq C\sqrt A$, and square the two nonnegative sides.
+These steps are reversible. In particular, $A\leq B$ gives the
+opposite ordering from the one needed at $C=1$, except at equality.
+For $A=1,B=4$, the proposed intermediate and target values are
+$8$ and $4$, respectively.
+
+The failure persists in explicit finite spectral data with bounded
+lowest moment. For a finite index set and positive weights $w_i$, define
+\[
+ E_j=\sum_i w_i^j a_i^2,\qquad A=\sqrt{E_1},\quad B=\sqrt{E_3},
+\]
+assuming $E_1,E_3>0$. In a one-coordinate family choose
+$w=L^2$, $a=1/L$, $L\geq1$. Then
+\[
+ E_0=L^{-2}\leq1,\quad E_1=1,\quad E_3=L^4,\quad
+ A=1,\quad B=L^2.
+\]
+The ratio of the intermediate expression to $A^2B$ is $L$, so
+no universal $C$ bounds it even with $w\geq1$, $E_0\leq1$ and $A\leq B$.
+For any proposed $C\geq0$, $L=C+1$ is already a counterexample.
+\par\noindent\code{TrilinearNormComparison}:\par\noindent
+\code{reduction_iff}, \code{exact_spectral_counterexample},\par\noindent
+\code{family_moments}, \code{no_uniform_factor}, \code{no_universal_constant}.
+
+There is an exact conditional repair. Equation~\eqref{eq:normreduction}
+is equivalent to
+\[
+ \sqrt{E_3/E_1}\leq C^2.
+\]
+If this effective ratio has a proved upper bound $L\geq0$, then
+$C=\sqrt L$ is valid. For example, $w_i\leq W$ on the nonzero
+coefficients implies $E_3\leq W^2E_1$ by termwise comparison,
+so $C=\sqrt W$ suffices. This final support-cap example is a human
+consequence; its dependence on $W$ cannot be dropped.
+\par\noindent\code{TrilinearNormComparison}:\par\noindent
+\code{spectral_factor_iff_frequency}, \code{frequency_capped_reduction}.
+This check concerns the stated norm implication. It neither proves nor
+refutes a nonlinear trilinear estimate by itself: a valid proof of such
+an estimate could use cancellation or information beyond these two norms.
 
 \section{Fixed full spectrum and arbitrarily small normalized stretching}
 For $p>2$ set $a=\sqrt{(p-2)(p+1)}>0$ and define
@@ -826,7 +990,7 @@ strain rate is $4\nu$, the core length is one and the total
 transverse circulation is $\pi\beta$. No new stationary solution or
 stability theorem is asserted.
 
-\section{A scalar Gaussian observation is not the full Hessian contraction}
+\section{A scalar Gaussian observation is not the full Hessian contraction}\label{sec:scalargaussian}
 Let $\mu$ be the product Gaussian law with coordinate variance $1/4$.
 It has density $(2/\pi)e^{-2s}dxdy$. Define
 \[
@@ -1048,7 +1212,7 @@ their absolute values have a common polynomial Gaussian dominator
 after multiplication by $f^2=e^{-2s}$. Thus the plane and product
 integrals below are genuine absolutely convergent integrals.
 
-Use the probability law $d\mu=(2/\pi)f^2dxdy$ from Section 10.
+Use the probability law $d\mu=(2/\pi)f^2dxdy$ from Section~\ref{sec:scalargaussian}.
 Reflection of one coordinate makes $\mathbb E_\mu[xygg']=0$.
 Coordinate interchange gives $\mathbb E_\mu D_{xx}
 =\mathbb E_\mu D_{yy}$, while \eqref{eq:radialresponse} and
@@ -1196,5 +1360,12 @@ Ann. Statist. \textbf{35} (2007), 608--633.
 Primary reprint \url{https://arxiv.org/abs/0708.2321}.
 Margin-assumption comparison only; no risk theorem imported.
 \bibitem{GM} T. Gallay and Y. Maekawa, \emph{Three-dimensional stability of Burgers vortices}, primary preprint, \href{https://arxiv.org/abs/1002.2489}{arXiv:1002.2489} (2010), equations (1.3), (1.8)--(1.9). Profile/background comparison only; no stability theorem imported.
+\bibitem{Germano} M. Germano, \emph{Turbulence: the filtering approach},
+J. Fluid Mech. \textbf{238} (1992), 325--336, Section 5.
+\url{https://www.ams.jhu.edu/~eyink/Turbulence/classics/Germano92.pdf}.
+\bibitem{FJKT} C. Foias, M. S. Jolly, R. Kravchenko and E. S. Titi,
+\emph{A determining form for the 2D Navier--Stokes equations---the Fourier modes case},
+primary preprint arXiv:1208.5134 (2012), Section 1 and Definition 3.3.
+\url{https://arxiv.org/abs/1208.5134}.
 \end{thebibliography}
 \end{document}
