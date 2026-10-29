@@ -2828,3 +2828,5 @@ import Foundation.FourCubeCompletedResponse
 import Foundation.FourCubeFullChartOdd
 import Foundation.FourCubeCompletedCubic
 import Foundation.FourCubeFullChartDomination
+import Foundation.FourCubeFullHaarCoordinates
+import Foundation.FourCubeFullHaarCutoff
