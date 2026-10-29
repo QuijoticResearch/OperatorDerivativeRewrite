@@ -1,22 +1,61 @@
 {
   "status": "PASS",
-  "count": 9,
-  "checks": [
-    "source geometry rebuilt from all incident plaquettes: 48 vertices, 32 interior/80 boundary edges, 72 faces",
-    "all integer incidence rows match geometric oriented plaquette curls",
-    "actual boundary-gradient balance and identity chord minor for 34 independent cycles",
-    "full unpinned response and original normal equations over integers",
-    "metric and residual Gram identities, retaining physical boundary norm",
-    "all 1156 positive weighted-Gram identities for corrected rational gap, exact huge integers",
-    "nonzero physical witness brackets rational gap below rounded 0.6964",
-    "actual periodic all-block interior gauge has norm squared 128 and every plaquette curl zero",
-    "positive 2x2 blocks defeat the proposed purely quadratic arbitrary-coupling perturbation loss"
+  "count": 30,
+  "groups": [
+    {
+      "status": "PASS",
+      "count": 9,
+      "checks": [
+        "source geometry rebuilt from all incident plaquettes: 48 vertices, 32 interior/80 boundary edges, 72 faces",
+        "all integer incidence rows match geometric oriented plaquette curls",
+        "actual boundary-gradient balance and identity chord minor for 34 independent cycles",
+        "full unpinned response and original normal equations over integers",
+        "metric and residual Gram identities, retaining physical boundary norm",
+        "all 1156 positive weighted-Gram identities for corrected rational gap, exact huge integers",
+        "nonzero physical witness brackets rational gap below rounded 0.6964",
+        "actual periodic all-block interior gauge has norm squared 128 and every plaquette curl zero",
+        "positive 2x2 blocks defeat the proposed purely quadratic arbitrary-coupling perturbation loss"
+      ],
+      "rayleigh": "729067245/1046910149",
+      "certificate_sha256": "558100557eed029f7a6097e1b905f3de046d8e69c8aa1d5d2b566f8beb7cff9d",
+      "wall_seconds": 0.07800000000861473,
+      "arithmetic": "Unbounded Python integers and Fraction only",
+      "scope": "Exact finite geometry and arithmetic certificate; no nonlinear gauge or continuum identification.",
+      "checked_utc": "2026-10-29T16:48:27.875248+00:00",
+      "script_sha256": "01863853c20e552c173e590499f04bd27ae55a97f7a52ab9ed79fe703370fb09"
+    },
+    {
+      "status": "PASS",
+      "check_count": 21,
+      "checks": [
+        "exact 32 retained links, 24 inner faces, 48 ribbons and chosen two-ribbon fiber",
+        "ordered triple scalar and sign under middle reflection",
+        "boundary word on chosen and partner ribbons",
+        "only chosen ribbon depends on middle boundary angle",
+        "all 48 conditional ribbon trace classes 1,2,2,43",
+        "full 72-face conditional action at exact unit quaternion 0",
+        "full 72-face conditional action at exact unit quaternion 1",
+        "full 72-face conditional action at exact unit quaternion 2",
+        "full 72-face conditional action at exact unit quaternion 3",
+        "full 72-face conditional action at exact unit quaternion 4",
+        "full 72-face conditional action at exact unit quaternion 5",
+        "actual full-link action residual replacement",
+        "vertex-center change preserves every inner closed-action sum and flips chosen open probe",
+        "Haar second-coordinate contraction at quaternion 0",
+        "Haar second-coordinate contraction at quaternion 1",
+        "Haar second-coordinate contraction at quaternion 2",
+        "Haar second-coordinate contraction at quaternion 3",
+        "Haar second-coordinate contraction at quaternion 4",
+        "Haar second-coordinate contraction at quaternion 5",
+        "five-staple squared radius and exact positive lower/upper bounds",
+        "full Haar variance odd coefficient from exact same-link covariance"
+      ],
+      "arithmetic": "Python unbounded integers and Fraction",
+      "scope": "Finite actual face geometry, rational unit quaternion actions and Haar second-moment coefficient algebra. Differentiation, cap concentration, real angle and asymptotic statements require the printed analytic proofs.",
+      "script": "verify_haar.py",
+      "script_sha256": "b9dc9d06636e1496adaa7cd9dcdf1085b5f9a5c57ed63d8a2a2fffa5514f7454"
+    }
   ],
-  "rayleigh": "729067245/1046910149",
-  "certificate_sha256": "558100557eed029f7a6097e1b905f3de046d8e69c8aa1d5d2b566f8beb7cff9d",
-  "wall_seconds": 0.07800000000861473,
-  "arithmetic": "Unbounded Python integers and Fraction only",
-  "scope": "Exact finite geometry and arithmetic certificate; no nonlinear gauge or continuum identification.",
-  "checked_utc": "2026-10-29T16:48:27.875248+00:00",
-  "script_sha256": "01863853c20e552c173e590499f04bd27ae55a97f7a52ab9ed79fe703370fb09"
+  "checked_utc": "2026-10-29T18:56:39.017568+00:00",
+  "scope": "Nine retained integer certificate and transfer checks plus 21 exact quaternion/incidence/Haar-coefficient checks. Analytic integral and asymptotic proofs are printed, not tested numerically."
 }

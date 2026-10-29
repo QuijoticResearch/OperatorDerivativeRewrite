@@ -856,6 +856,1248 @@
       "source_sha256": "62a2cd7a9e662a1c5a9d12ba403200779f3788ee0ad8d9da00aec228ec9739a8",
       "declaration_header": "theorem operator_robust_lower (a a0 \u03b4 m \u03b7 \u03b5 : \u211d) (b : E) (C C0 : E \u2192L[\u211d] E)\n    (hm : 0 < m) (h\u03b7 : \u03b7 \u2264 m/2) (ha : |a-a0| \u2264 \u03b4) (hb : \u2016b\u2016 \u2264 \u03b5)\n    (hC0 : \u2200 y, m*\u2016y\u2016^2 \u2264 inner \u211d (C0 y) y) (hC : \u2016C-C0\u2016 \u2264 \u03b7)\n    (x : \u211d) (y : E) :\n    (a0-\u03b4-2*\u03b5^2/m)*x^2 \u2264 blockEnergy a b (fun z => inner \u211d (C z) z) x y",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CoerciveSchurStability.lean#L79"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.turn_axis",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 18,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem turn_axis (a b : Fin 3) (t : \u211d) :\n    turn a*axis b t*(turn a)\u207b\u00b9=axis b (if a=b then t else -t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L18"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.retained_conjugate",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 33,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem retained_conjugate (g : SU2) (U : FullEdge \u2192 SU2) :\n    retained (conjugate g U)=gaugeField (fun _ => g) (retained U)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L33"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.ribbon_conjugate",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 38,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem ribbon_conjugate (g : SU2) (U : FullEdge \u2192 SU2) (p : Upper) :\n    ribbonWord (conjugate g U) p=g*ribbonWord U p*g\u207b\u00b9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L38"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.fullAction_conjugate",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 43,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem fullAction_conjugate (g : SU2) (U : FullEdge \u2192 SU2) :\n    fullAction (conjugate g U)=fullAction U",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L43"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.interiorConjugate_preserving",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 59,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem interiorConjugate_preserving (g : SU2) :\n    MeasurePreserving (interiorConjugate g) interiorHaar interiorHaar",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L59"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.witness_inclusion",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 74,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem witness_inclusion (x y z : \u211d) :\n    boundaryField x y (fun e => if e.val=edgeA then axis 2 z else 1)=links x y z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L74"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.boundaryField_conjugate",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 81,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem boundaryField_conjugate (g : SU2) (x y x' y' : \u211d) (s : InteriorState)\n    (hx : g*axis 0 x*g\u207b\u00b9=axis 0 x') (hy : g*axis 1 y*g\u207b\u00b9=axis 1 y') :\n    conjugate g (boundaryField x y s)=boundaryField x' y' (interiorConjugate g s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L81"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.boundaryField_flip_y",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 95,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem boundaryField_flip_y (x y : \u211d) (s : InteriorState) :\n    conjugate (turn 0) (boundaryField x y s)=\n      boundaryField x (-y) (interiorConjugate (turn 0) s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L95"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.boundaryField_flip_x",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 102,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem boundaryField_flip_x (x y : \u211d) (s : InteriorState) :\n    conjugate (turn 1) (boundaryField x y s)=\n      boundaryField (-x) y (interiorConjugate (turn 1) s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L102"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.boundaryField_measurable",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 109,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem boundaryField_measurable (x y : \u211d) : Measurable (boundaryField x y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L109"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.fullAction_measurable",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 140,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem fullAction_measurable : Measurable fullAction",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L140"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.boltzmann_measurable",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 149,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem boltzmann_measurable (\u03b2 x y : \u211d) : Measurable (boltzmann \u03b2 x y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L149"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.fullAction_bounds",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 152,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem fullAction_bounds (U : FullEdge \u2192 SU2) : 0 \u2264 fullAction U \u2227 fullAction U \u2264 144",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L152"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.boltzmann_bounds",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 169,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem boltzmann_bounds (\u03b2 x y : \u211d) (s : InteriorState) :\n    Real.exp (-(|\u03b2| *144)) \u2264 boltzmann \u03b2 x y s \u2227\n      boltzmann \u03b2 x y s \u2264 Real.exp (|\u03b2| *144)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L169"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.boltzmann_integrable",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 178,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem boltzmann_integrable (\u03b2 x y : \u211d) : Integrable (boltzmann \u03b2 x y) interiorHaar",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L178"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.partition_bounds",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 183,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem partition_bounds (\u03b2 x y : \u211d) : Real.exp (-(|\u03b2| *144)) \u2264 partition \u03b2 x y \u2227\n    partition \u03b2 x y \u2264 Real.exp (|\u03b2| *144)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L183"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.partition_pos",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 193,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem partition_pos (\u03b2 x y : \u211d) : 0 < partition \u03b2 x y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L193"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.boltzmann_flip_y",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 202,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem boltzmann_flip_y (\u03b2 x y : \u211d) (s : InteriorState) :\n    boltzmann \u03b2 x (-y) (interiorConjugate (turn 0) s)=boltzmann \u03b2 x y s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L202"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.boltzmann_flip_x",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 207,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem boltzmann_flip_x (\u03b2 x y : \u211d) (s : InteriorState) :\n    boltzmann \u03b2 (-x) y (interiorConjugate (turn 1) s)=boltzmann \u03b2 x y s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L207"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.partition_even_y",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 213,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem partition_even_y (\u03b2 x y : \u211d) : partition \u03b2 x (-y)=partition \u03b2 x y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L213"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.partition_even_x",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 218,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem partition_even_x (\u03b2 x y : \u211d) : partition \u03b2 (-x) y=partition \u03b2 x y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L218"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.freeEnergy_even_y",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 227,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem freeEnergy_even_y (\u03b2 x y : \u211d) : freeEnergy \u03b2 x (-y)=freeEnergy \u03b2 x y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L227"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.freeEnergy_even_x",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 230,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem freeEnergy_even_x (\u03b2 x y : \u211d) : freeEnergy \u03b2 (-x) y=freeEnergy \u03b2 x y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L230"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.freeEnergy_centered_mixed_difference",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 233,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem freeEnergy_centered_mixed_difference (\u03b2 h k : \u211d) :\n    freeEnergy \u03b2 h k-freeEnergy \u03b2 (-h) k-freeEnergy \u03b2 h (-k)+freeEnergy \u03b2 (-h) (-k)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L233"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.partition_zero_coupling",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 238,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem partition_zero_coupling (x y : \u211d) : partition 0 x y=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L238"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.normalizedAction_measurable",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 245,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem normalizedAction_measurable (x y : \u211d) : Measurable (normalizedAction x y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L245"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.normalizedAction_bound",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 248,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem normalizedAction_bound (x y : \u211d) (s : InteriorState) : |normalizedAction x y s| \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L248"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.scaled_exponent",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 254,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem scaled_exponent (\u03b2 x y : \u211d) (s : InteriorState) :\n    (144*\u03b2)*normalizedAction x y s=-\u03b2*fullAction (boundaryField x y s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L254"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.partition_tilt",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 259,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem partition_tilt (\u03b2 x y : \u211d) :\n    BoundedExponentialTiltResponse.partition interiorHaar (normalizedAction x y) (144*\u03b2)=partition \u03b2 x y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L259"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.cellLaw_density",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 272,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem cellLaw_density (\u03b2 x y : \u211d) : cellLaw \u03b2 x y=\n    interiorHaar.withDensity (fun s => ENNReal.ofReal (boltzmann \u03b2 x y s/partition \u03b2 x y))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L272"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarParity.cellLaw_integral",
+      "file": "Foundation/FourCubeHaarParity.lean",
+      "line": 280,
+      "source_sha256": "5f89e16751d3f4be2db9fa0e7fd2f7a08759fcc868263fd019a07e4f2255d2dc",
+      "declaration_header": "theorem cellLaw_integral (\u03b2 x y : \u211d) (f : InteriorState \u2192 \u211d) :\n    (\u222b s, f s \u2202cellLaw \u03b2 x y)=\n      (\u222b s, f s*boltzmann \u03b2 x y s \u2202interiorHaar)/partition \u03b2 x y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarParity.lean#L280"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarChannels.linkProbe_measurable",
+      "file": "Foundation/FourCubeHaarChannels.lean",
+      "line": 16,
+      "source_sha256": "a5a5a2df53693b41b6ac0ce45bcc70de0bbe345990b900facc555cc2cc857cb3",
+      "declaration_header": "theorem linkProbe_measurable (e : Interior) (A : SU2) : Measurable (linkProbe e A)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarChannels.lean#L16"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarChannels.linkProbe_bound",
+      "file": "Foundation/FourCubeHaarChannels.lean",
+      "line": 19,
+      "source_sha256": "a5a5a2df53693b41b6ac0ce45bcc70de0bbe345990b900facc555cc2cc857cb3",
+      "declaration_header": "theorem linkProbe_bound (e : Interior) (A : SU2) (s : InteriorState) : |linkProbe e A s| \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarChannels.lean#L19"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarChannels.linkProbe_integrable",
+      "file": "Foundation/FourCubeHaarChannels.lean",
+      "line": 22,
+      "source_sha256": "a5a5a2df53693b41b6ac0ce45bcc70de0bbe345990b900facc555cc2cc857cb3",
+      "declaration_header": "theorem linkProbe_integrable (e : Interior) (A : SU2) : Integrable (linkProbe e A) interiorHaar",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarChannels.lean#L22"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarChannels.linkProbe_mean",
+      "file": "Foundation/FourCubeHaarChannels.lean",
+      "line": 34,
+      "source_sha256": "a5a5a2df53693b41b6ac0ce45bcc70de0bbe345990b900facc555cc2cc857cb3",
+      "declaration_header": "theorem linkProbe_mean (e : Interior) (A : SU2) : (\u222b s, linkProbe e A s \u2202interiorHaar)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarChannels.lean#L34"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarChannels.linkProbe_pair",
+      "file": "Foundation/FourCubeHaarChannels.lean",
+      "line": 40,
+      "source_sha256": "a5a5a2df53693b41b6ac0ce45bcc70de0bbe345990b900facc555cc2cc857cb3",
+      "declaration_header": "theorem linkProbe_pair (e f : Interior) (A B : SU2) :\n    (\u222b s, linkProbe e A s*linkProbe f B s \u2202interiorHaar)=\n      if e=f then halfTrace (A*B\u207b\u00b9)/4 else 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarChannels.lean#L40"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarChannels.interiorGauge_preserving",
+      "file": "Foundation/FourCubeHaarChannels.lean",
+      "line": 73,
+      "source_sha256": "a5a5a2df53693b41b6ac0ce45bcc70de0bbe345990b900facc555cc2cc857cb3",
+      "declaration_header": "theorem interiorGauge_preserving (g : Vertex \u2192 SU2) :\n    MeasurePreserving (interiorGauge g) interiorHaar interiorHaar",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarChannels.lean#L73"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarChannels.internalAction_measurable",
+      "file": "Foundation/FourCubeHaarChannels.lean",
+      "line": 99,
+      "source_sha256": "a5a5a2df53693b41b6ac0ce45bcc70de0bbe345990b900facc555cc2cc857cb3",
+      "declaration_header": "theorem internalAction_measurable : Measurable internalAction",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarChannels.lean#L99"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarChannels.internalAction_gauge",
+      "file": "Foundation/FourCubeHaarChannels.lean",
+      "line": 124,
+      "source_sha256": "a5a5a2df53693b41b6ac0ce45bcc70de0bbe345990b900facc555cc2cc857cb3",
+      "declaration_header": "theorem internalAction_gauge (g : Vertex \u2192 SU2) (s : InteriorState) :\n    internalAction (interiorGauge g s)=internalAction s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarChannels.lean#L124"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarChannels.linkProbe_center",
+      "file": "Foundation/FourCubeHaarChannels.lean",
+      "line": 145,
+      "source_sha256": "a5a5a2df53693b41b6ac0ce45bcc70de0bbe345990b900facc555cc2cc857cb3",
+      "declaration_header": "theorem linkProbe_center (e : Interior) (A : SU2) (s : InteriorState) :\n    linkProbe e A (interiorGauge (vertexCenter e.val.1) s)= -linkProbe e A s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarChannels.lean#L145"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarChannels.internal_link_orthogonal",
+      "file": "Foundation/FourCubeHaarChannels.lean",
+      "line": 155,
+      "source_sha256": "a5a5a2df53693b41b6ac0ce45bcc70de0bbe345990b900facc555cc2cc857cb3",
+      "declaration_header": "theorem internal_link_orthogonal (e : Interior) (A : SU2) :\n    (\u222b s, internalAction s*linkProbe e A s \u2202interiorHaar)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarChannels.lean#L155"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarChannels.linkProbe_memLp",
+      "file": "Foundation/FourCubeHaarChannels.lean",
+      "line": 162,
+      "source_sha256": "a5a5a2df53693b41b6ac0ce45bcc70de0bbe345990b900facc555cc2cc857cb3",
+      "declaration_header": "theorem linkProbe_memLp (e : Interior) (A : SU2) : MemLp (linkProbe e A) 2 interiorHaar",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarChannels.lean#L162"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarChannels.linkProbe_covariance",
+      "file": "Foundation/FourCubeHaarChannels.lean",
+      "line": 166,
+      "source_sha256": "a5a5a2df53693b41b6ac0ce45bcc70de0bbe345990b900facc555cc2cc857cb3",
+      "declaration_header": "theorem linkProbe_covariance (e f : Interior) (A B : SU2) :\n    covariance (linkProbe e A) (linkProbe f B) interiorHaar=\n      if e=f then halfTrace (A*B\u207b\u00b9)/4 else 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarChannels.lean#L166"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarChannels.linkProbe_variance",
+      "file": "Foundation/FourCubeHaarChannels.lean",
+      "line": 174,
+      "source_sha256": "a5a5a2df53693b41b6ac0ce45bcc70de0bbe345990b900facc555cc2cc857cb3",
+      "declaration_header": "theorem linkProbe_variance (e : Interior) (A : SU2) : variance (linkProbe e A) interiorHaar=1/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarChannels.lean#L174"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarChannels.internalAction_bound",
+      "file": "Foundation/FourCubeHaarChannels.lean",
+      "line": 178,
+      "source_sha256": "a5a5a2df53693b41b6ac0ce45bcc70de0bbe345990b900facc555cc2cc857cb3",
+      "declaration_header": "theorem internalAction_bound (s : InteriorState) : |internalAction s| \u2264 48",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarChannels.lean#L178"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarChannels.internalAction_memLp",
+      "file": "Foundation/FourCubeHaarChannels.lean",
+      "line": 195,
+      "source_sha256": "a5a5a2df53693b41b6ac0ce45bcc70de0bbe345990b900facc555cc2cc857cb3",
+      "declaration_header": "theorem internalAction_memLp : MemLp internalAction 2 interiorHaar",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarChannels.lean#L195"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeHaarChannels.internal_link_covariance",
+      "file": "Foundation/FourCubeHaarChannels.lean",
+      "line": 199,
+      "source_sha256": "a5a5a2df53693b41b6ac0ce45bcc70de0bbe345990b900facc555cc2cc857cb3",
+      "declaration_header": "theorem internal_link_covariance (e : Interior) (A : SU2) :\n    covariance internalAction (linkProbe e A) interiorHaar=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeHaarChannels.lean#L199"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.fill_measurable",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 38,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem fill_measurable (b : Boundary \u2192 SU2) : Measurable (fill b)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L38"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.cellAction_measurable",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 45,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem cellAction_measurable (x y z : \u211d) : Measurable (cellAction x y z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L45"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.cellAction_bounds",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 48,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem cellAction_bounds (x y z : \u211d) (s : InteriorState) :\n    0 \u2264 cellAction x y z s \u2227 cellAction x y z s \u2264 144",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L48"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.retained_fill",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 52,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem retained_fill (b : Boundary \u2192 SU2) (s : InteriorState) :\n    FourCubeBoundaryCubic.retained (fill b s)=coreField s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L52"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.ribbon_fill",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 57,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem ribbon_fill (b : Boundary \u2192 SU2) (p : Upper) (s : InteriorState) :\n    FourCubeBoundaryCubic.ribbonWord (fill b s) p=s (ribbonInterior p)*word b p",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L57"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.action_decomposition",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 61,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem action_decomposition (b : Boundary \u2192 SU2) (s : InteriorState) :\n    FourCubeBoundaryCubic.fullAction (fill b s)=internalAction s+48-ribbonSum b s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L61"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.word_chosen",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 71,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem word_chosen (x y z : \u211d) : word (boundaryData x y z) chosen=axis 0 x*axis 1 y*axis 2 z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L71"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.word_partner",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 75,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem word_partner (x y z : \u211d) : word (boundaryData x y z) partner=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L75"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.word_other_y",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 79,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem word_other_y (x y y' z : \u211d) (p : Upper) (hp : p \u2260 chosen) :\n    word (boundaryData x y z) p=word (boundaryData x y' z) p",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L79"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.edge_fiber",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 84,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem edge_fiber (p : Upper) : ribbonInterior p=chosenEdge \u2194 p=chosen \u2228 p=partner",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L84"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.chosen_edge",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 100,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem chosen_edge : ribbonInterior chosen=chosenEdge",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L100"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.partner_edge",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 101,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem partner_edge : ribbonInterior partner=chosenEdge",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L101"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.word_boundaryGauge",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 106,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem word_boundaryGauge (g : FullVertex \u2192 SU2) (b : Boundary \u2192 SU2) (p : Upper) :\n    word (boundaryGauge g b) p=\n      g (.inl (shifted p.val.1.1 p.val.1.2))*word b p*(g (.inl p.val.1.1))\u207b\u00b9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L106"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.pair_trace_gauge",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 117,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem pair_trace_gauge (g : FullVertex \u2192 SU2) (b : Boundary \u2192 SU2) :\n    halfTrace (word (boundaryGauge g b) chosen*(word (boundaryGauge g b) partner)\u207b\u00b9)=\n      halfTrace (word b chosen*(word b partner)\u207b\u00b9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L117"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.pair_trace_odd_y",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 133,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem pair_trace_odd_y (x y z : \u211d) :\n    halfTrace (word (boundaryData x y z) chosen*(word (boundaryData x y z) partner)\u207b\u00b9)-\n      halfTrace (word (boundaryData x (-y) z) chosen*(word (boundaryData x (-y) z) partner)\u207b\u00b9)=\n      -2*(Real.sin x*Real.sin y*Real.sin z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L133"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.chosen_ne_partner",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 145,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem chosen_ne_partner : chosen \u2260 partner",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L145"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.ribbonSum_memLp",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 150,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem ribbonSum_memLp (b : Boundary \u2192 SU2) : MemLp (ribbonSum b) 2 interiorHaar",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L150"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.ribbonSum_covariance",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 153,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem ribbonSum_covariance (b : Boundary \u2192 SU2) (A : SU2) :\n    covariance (ribbonSum b) (linkProbe chosenEdge A) interiorHaar=\n      halfTrace (word b chosen*A\u207b\u00b9)/4+halfTrace (word b partner*A\u207b\u00b9)/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L153"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.ribbonSum_replace",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 177,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem ribbonSum_replace (x y y' z : \u211d) (s : InteriorState) :\n    ribbonSum (boundaryData x y z) s-ribbonSum (boundaryData x y' z) s=\n      linkProbe chosenEdge (axis 0 x*axis 1 y*axis 2 z) s-\n      linkProbe chosenEdge (axis 0 x*axis 1 y'*axis 2 z) s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L177"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.cellAction_residual",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 194,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem cellAction_residual (x y z : \u211d) : cellAction x y z=\n    fun s => residualAction x z s-linkProbe chosenEdge (axis 0 x*axis 1 y*axis 2 z) s",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L194"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.cellAction_memLp",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 202,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem cellAction_memLp (x y z : \u211d) : MemLp (cellAction x y z) 2 interiorHaar",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L202"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.residualAction_memLp",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 207,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem residualAction_memLp (x z : \u211d) : MemLp (residualAction x z) 2 interiorHaar",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L207"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.residualAction_probe_covariance",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 224,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem residualAction_probe_covariance (x z : \u211d) (A : SU2) :\n    covariance (residualAction x z) (linkProbe chosenEdge A) interiorHaar= -halfTrace A/4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L224"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.variance_formula",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 236,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem variance_formula (x y z : \u211d) : variance (cellAction x y z) interiorHaar=\n    variance (residualAction x z) interiorHaar+1/4+\n      halfTrace (axis 0 x*axis 1 y*axis 2 z)/2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L236"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.variance_odd_y",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 243,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem variance_odd_y (x y z : \u211d) : variance (cellAction x y z) interiorHaar-\n    variance (cellAction x (-y) z) interiorHaar= -(Real.sin x*Real.sin y*Real.sin z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L243"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedCubic.variance_explicit_odd_witness",
+      "file": "Foundation/FourCubeIntegratedCubic.lean",
+      "line": 252,
+      "source_sha256": "d9990e150383617d1115081727ec0797d04a88a84da9d27046473e3bee86693b",
+      "declaration_header": "theorem variance_explicit_odd_witness :\n    variance (cellAction (Real.pi/6) (Real.pi/6) (Real.pi/6)) interiorHaar-\n      variance (cellAction (Real.pi/6) (-(Real.pi/6)) (Real.pi/6)) interiorHaar= -(1/8:\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedCubic.lean#L252"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedResponse.source_measurable",
+      "file": "Foundation/FourCubeIntegratedResponse.lean",
+      "line": 17,
+      "source_sha256": "2024b028ac057fad7bd01464e497a1c987b13b65c4094a5044ad3f7bb46f0dc9",
+      "declaration_header": "theorem source_measurable (x y z : \u211d) : Measurable (source x y z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedResponse.lean#L17"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedResponse.source_memLp",
+      "file": "Foundation/FourCubeIntegratedResponse.lean",
+      "line": 20,
+      "source_sha256": "2024b028ac057fad7bd01464e497a1c987b13b65c4094a5044ad3f7bb46f0dc9",
+      "declaration_header": "theorem source_memLp (x y z : \u211d) : MemLp (source x y z) 2 interiorHaar",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedResponse.lean#L20"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedResponse.exponential_integrable",
+      "file": "Foundation/FourCubeIntegratedResponse.lean",
+      "line": 23,
+      "source_sha256": "2024b028ac057fad7bd01464e497a1c987b13b65c4094a5044ad3f7bb46f0dc9",
+      "declaration_header": "theorem exponential_integrable (x y z \u03b2 : \u211d) :\n    Integrable (fun s => Real.exp (\u03b2*source x y z s)) interiorHaar",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedResponse.lean#L23"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedResponse.exponential_domain",
+      "file": "Foundation/FourCubeIntegratedResponse.lean",
+      "line": 38,
+      "source_sha256": "2024b028ac057fad7bd01464e497a1c987b13b65c4094a5044ad3f7bb46f0dc9",
+      "declaration_header": "theorem exponential_domain (x y z : \u211d) : integrableExpSet (source x y z) interiorHaar=Set.univ",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedResponse.lean#L38"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedResponse.exponential_interior",
+      "file": "Foundation/FourCubeIntegratedResponse.lean",
+      "line": 43,
+      "source_sha256": "2024b028ac057fad7bd01464e497a1c987b13b65c4094a5044ad3f7bb46f0dc9",
+      "declaration_header": "theorem exponential_interior (x y z \u03b2 : \u211d) :\n    \u03b2\u2208interior (integrableExpSet (source x y z) interiorHaar)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedResponse.lean#L43"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedResponse.partition3_integral",
+      "file": "Foundation/FourCubeIntegratedResponse.lean",
+      "line": 48,
+      "source_sha256": "2024b028ac057fad7bd01464e497a1c987b13b65c4094a5044ad3f7bb46f0dc9",
+      "declaration_header": "theorem partition3_integral (x y z \u03b2 : \u211d) :\n    partition3 x y z \u03b2=\u222b s, Real.exp (-\u03b2*cellAction x y z s) \u2202interiorHaar",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedResponse.lean#L48"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedResponse.partition3_pos",
+      "file": "Foundation/FourCubeIntegratedResponse.lean",
+      "line": 52,
+      "source_sha256": "2024b028ac057fad7bd01464e497a1c987b13b65c4094a5044ad3f7bb46f0dc9",
+      "declaration_header": "theorem partition3_pos (x y z \u03b2 : \u211d) : 0 < partition3 x y z \u03b2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedResponse.lean#L52"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedResponse.partition3_analytic",
+      "file": "Foundation/FourCubeIntegratedResponse.lean",
+      "line": 55,
+      "source_sha256": "2024b028ac057fad7bd01464e497a1c987b13b65c4094a5044ad3f7bb46f0dc9",
+      "declaration_header": "theorem partition3_analytic (x y z \u03b2 : \u211d) : AnalyticAt \u211d (partition3 x y z) \u03b2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedResponse.lean#L55"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedResponse.freeEnergy3_analytic",
+      "file": "Foundation/FourCubeIntegratedResponse.lean",
+      "line": 58,
+      "source_sha256": "2024b028ac057fad7bd01464e497a1c987b13b65c4094a5044ad3f7bb46f0dc9",
+      "declaration_header": "theorem freeEnergy3_analytic (x y z \u03b2 : \u211d) : AnalyticAt \u211d (freeEnergy3 x y z) \u03b2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedResponse.lean#L58"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedResponse.freeEnergy3_second_zero",
+      "file": "Foundation/FourCubeIntegratedResponse.lean",
+      "line": 61,
+      "source_sha256": "2024b028ac057fad7bd01464e497a1c987b13b65c4094a5044ad3f7bb46f0dc9",
+      "declaration_header": "theorem freeEnergy3_second_zero (x y z : \u211d) :\n    iteratedDeriv 2 (freeEnergy3 x y z) 0= -variance (cellAction x y z) interiorHaar",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedResponse.lean#L61"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedResponse.freeEnergy3_second_odd_y",
+      "file": "Foundation/FourCubeIntegratedResponse.lean",
+      "line": 75,
+      "source_sha256": "2024b028ac057fad7bd01464e497a1c987b13b65c4094a5044ad3f7bb46f0dc9",
+      "declaration_header": "theorem freeEnergy3_second_odd_y (x y z : \u211d) :\n    iteratedDeriv 2 (freeEnergy3 x y z) 0-\n      iteratedDeriv 2 (freeEnergy3 x (-y) z) 0=Real.sin x*Real.sin y*Real.sin z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedResponse.lean#L75"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedResponse.freeEnergy3_explicit_second_difference",
+      "file": "Foundation/FourCubeIntegratedResponse.lean",
+      "line": 81,
+      "source_sha256": "2024b028ac057fad7bd01464e497a1c987b13b65c4094a5044ad3f7bb46f0dc9",
+      "declaration_header": "theorem freeEnergy3_explicit_second_difference :\n    iteratedDeriv 2 (freeEnergy3 (Real.pi/6) (Real.pi/6) (Real.pi/6)) 0-\n      iteratedDeriv 2 (freeEnergy3 (Real.pi/6) (-(Real.pi/6)) (Real.pi/6)) 0=(1/8:\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedResponse.lean#L81"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedResponse.second_response_boundary_y",
+      "file": "Foundation/FourCubeIntegratedResponse.lean",
+      "line": 89,
+      "source_sha256": "2024b028ac057fad7bd01464e497a1c987b13b65c4094a5044ad3f7bb46f0dc9",
+      "declaration_header": "theorem second_response_boundary_y (x z : \u211d) :\n    HasDerivAt (fun y => iteratedDeriv 2 (freeEnergy3 x y z) 0) (Real.sin x*Real.sin z/2) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedResponse.lean#L89"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedResponse.integrated_mixed_cubic",
+      "file": "Foundation/FourCubeIntegratedResponse.lean",
+      "line": 107,
+      "source_sha256": "2024b028ac057fad7bd01464e497a1c987b13b65c4094a5044ad3f7bb46f0dc9",
+      "declaration_header": "theorem integrated_mixed_cubic :\n    deriv (fun z => deriv (fun x => deriv (fun y =>\n      iteratedDeriv 2 (freeEnergy3 x y z) 0) 0) 0) 0=(1/2:\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedResponse.lean#L107"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedResponse.exists_positive_coupling_nonparity_of_sine",
+      "file": "Foundation/FourCubeIntegratedResponse.lean",
+      "line": 120,
+      "source_sha256": "2024b028ac057fad7bd01464e497a1c987b13b65c4094a5044ad3f7bb46f0dc9",
+      "declaration_header": "theorem exists_positive_coupling_nonparity_of_sine (x y z \u03b5 : \u211d) (h\u03b5 : 0<\u03b5)\n    (hnonzero : Real.sin x*Real.sin y*Real.sin z \u2260 0) :\n    \u2203 \u03b2 : \u211d, 0<\u03b2 \u2227 \u03b2<\u03b5 \u2227 partition3 x y z \u03b2 \u2260 partition3 x (-y) z \u03b2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedResponse.lean#L120"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedResponse.exists_positive_coupling_nonparity",
+      "file": "Foundation/FourCubeIntegratedResponse.lean",
+      "line": 143,
+      "source_sha256": "2024b028ac057fad7bd01464e497a1c987b13b65c4094a5044ad3f7bb46f0dc9",
+      "declaration_header": "theorem exists_positive_coupling_nonparity (\u03b5 : \u211d) (h\u03b5 : 0<\u03b5) :\n    \u2203 \u03b2 : \u211d, 0<\u03b2 \u2227 \u03b2<\u03b5 \u2227\n      partition3 (Real.pi/6) (Real.pi/6) (Real.pi/6) \u03b2 \u2260\n        partition3 (Real.pi/6) (-(Real.pi/6)) (Real.pi/6) \u03b2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedResponse.lean#L143"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeIntegratedResponse.exists_small_boundary_nonparity",
+      "file": "Foundation/FourCubeIntegratedResponse.lean",
+      "line": 152,
+      "source_sha256": "2024b028ac057fad7bd01464e497a1c987b13b65c4094a5044ad3f7bb46f0dc9",
+      "declaration_header": "theorem exists_small_boundary_nonparity (\u03b5 \u03b4 : \u211d) (h\u03b5 : 0<\u03b5) (h\u03b4 : 0<\u03b4) :\n    \u2203 t : \u211d, 0<t \u2227 t<\u03b4 \u2227 \u2203 \u03b2 : \u211d, 0<\u03b2 \u2227 \u03b2<\u03b5 \u2227\n      partition3 t t t \u03b2 \u2260 partition3 t (-t) t \u03b2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeIntegratedResponse.lean#L152"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalAction.core_single",
+      "file": "Foundation/FourCubeConditionalAction.lean",
+      "line": 14,
+      "source_sha256": "356ff63e252ac1775a6087eb2c86d28828bc8b76dd04b1970743a46fffb4b372",
+      "declaration_header": "theorem core_single (U : SU2) (e : EdgeData) :\n    coreField (singleState U) e=if e=chosenEdge.val then U else 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalAction.lean#L14"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalAction.internal_single",
+      "file": "Foundation/FourCubeConditionalAction.lean",
+      "line": 32,
+      "source_sha256": "356ff63e252ac1775a6087eb2c86d28828bc8b76dd04b1970743a46fffb4b372",
+      "declaration_header": "theorem internal_single (U : SU2) : internalAction (singleState U)=3*(1-halfTrace U)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalAction.lean#L32"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalAction.capClass_count",
+      "file": "Foundation/FourCubeConditionalAction.lean",
+      "line": 76,
+      "source_sha256": "356ff63e252ac1775a6087eb2c86d28828bc8b76dd04b1970743a46fffb4b372",
+      "declaration_header": "theorem capClass_count : \u2200 i : Fin 4,\n    (upperFaces.filter (fun p => capClass p=i)).card=(![1,2,2,43] : Fin 4 \u2192 \u2115) i",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalAction.lean#L76"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalAction.ribbonSum_one",
+      "file": "Foundation/FourCubeConditionalAction.lean",
+      "line": 130,
+      "source_sha256": "356ff63e252ac1775a6087eb2c86d28828bc8b76dd04b1970743a46fffb4b372",
+      "declaration_header": "theorem ribbonSum_one (x y z : \u211d) : ribbonSum (boundaryData x y z) (singleState 1)=\n    halfTrace (axis 0 x*axis 1 y*axis 2 z)+2*Real.cos x+2*Real.cos z+43",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalAction.lean#L130"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalAction.ribbonSum_change",
+      "file": "Foundation/FourCubeConditionalAction.lean",
+      "line": 140,
+      "source_sha256": "356ff63e252ac1775a6087eb2c86d28828bc8b76dd04b1970743a46fffb4b372",
+      "declaration_header": "theorem ribbonSum_change (x y z : \u211d) (U : SU2) :\n    ribbonSum (boundaryData x y z) (singleState U)-ribbonSum (boundaryData x y z) (singleState 1)=\n      halfTrace (U*(axis 0 x*axis 1 y*axis 2 z))-halfTrace (axis 0 x*axis 1 y*axis 2 z)+halfTrace U-1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalAction.lean#L140"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalAction.conditional_action",
+      "file": "Foundation/FourCubeConditionalAction.lean",
+      "line": 166,
+      "source_sha256": "356ff63e252ac1775a6087eb2c86d28828bc8b76dd04b1970743a46fffb4b372",
+      "declaration_header": "theorem conditional_action (x y z : \u211d) (U : SU2) : cellAction x y z (singleState U)=\n    5-4*halfTrace U-halfTrace (U*(axis 0 x*axis 1 y*axis 2 z))+\n      2*(1-Real.cos x)+2*(1-Real.cos z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalAction.lean#L166"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalRadial.fiveRaw_eq",
+      "file": "Foundation/FourCubeConditionalRadial.lean",
+      "line": 16,
+      "source_sha256": "57a5cc5f30d4d230d6f2975fa5d1a9f0419fdb4d3c1c34a38442a13783a9116c",
+      "declaration_header": "theorem fiveRaw_eq (A : SU2) : fiveRaw A=(\u27e84,0,0,0\u27e9 : \u210d)+recover (A : M2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalRadial.lean#L16"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalRadial.stapleRadius_sq",
+      "file": "Foundation/FourCubeConditionalRadial.lean",
+      "line": 28,
+      "source_sha256": "57a5cc5f30d4d230d6f2975fa5d1a9f0419fdb4d3c1c34a38442a13783a9116c",
+      "declaration_header": "theorem stapleRadius_sq (A : SU2) : stapleRadius A^2=17+8*halfTrace A",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalRadial.lean#L28"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalRadial.stapleRadius_bounds",
+      "file": "Foundation/FourCubeConditionalRadial.lean",
+      "line": 36,
+      "source_sha256": "57a5cc5f30d4d230d6f2975fa5d1a9f0419fdb4d3c1c34a38442a13783a9116c",
+      "declaration_header": "theorem stapleRadius_bounds (A : SU2) : 3 \u2264 stapleRadius A \u2227 stapleRadius A \u2264 5",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalRadial.lean#L36"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalRadial.stapleRadius_sqrt",
+      "file": "Foundation/FourCubeConditionalRadial.lean",
+      "line": 42,
+      "source_sha256": "57a5cc5f30d4d230d6f2975fa5d1a9f0419fdb4d3c1c34a38442a13783a9116c",
+      "declaration_header": "theorem stapleRadius_sqrt (A : SU2) : stapleRadius A=Real.sqrt (17+8*halfTrace A)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalRadial.lean#L42"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalRadial.five_trace",
+      "file": "Foundation/FourCubeConditionalRadial.lean",
+      "line": 47,
+      "source_sha256": "57a5cc5f30d4d230d6f2975fa5d1a9f0419fdb4d3c1c34a38442a13783a9116c",
+      "declaration_header": "theorem five_trace (A U : SU2) :\n    4*halfTrace U+halfTrace (U*A)=stapleRadius A*halfTrace (stapleOrientation A*U)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalRadial.lean#L47"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalRadial.radial_integral",
+      "file": "Foundation/FourCubeConditionalRadial.lean",
+      "line": 58,
+      "source_sha256": "57a5cc5f30d4d230d6f2975fa5d1a9f0419fdb4d3c1c34a38442a13783a9116c",
+      "declaration_header": "theorem radial_integral (\u03b2 : \u211d) (A : SU2) :\n    (\u222b U, Real.exp (\u03b2*(4*halfTrace U+halfTrace (U*A))) \u2202law)=mgf halfTrace law (\u03b2*stapleRadius A)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalRadial.lean#L58"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.conditionalPartition_formula",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 22,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem conditionalPartition_formula (\u03b2 x y z : \u211d) : conditionalPartition \u03b2 x y z=\n    Real.exp (-\u03b2*constantPart x z)*mgf halfTrace law (\u03b2*radius x y z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L22"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.scalar_domain",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 34,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem scalar_domain : integrableExpSet halfTrace law=Set.univ",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L34"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.scalar_interior",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 39,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem scalar_interior (t : \u211d) : t\u2208interior (integrableExpSet halfTrace law)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L39"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.scalar_partition_pos",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 43,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem scalar_partition_pos (t : \u211d) : 0<mgf halfTrace law t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L43"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.conditionalPartition_pos",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 46,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem conditionalPartition_pos (\u03b2 x y z : \u211d) : 0<conditionalPartition \u03b2 x y z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L46"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.conditionalFreeEnergy_formula",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 50,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem conditionalFreeEnergy_formula (\u03b2 x y z : \u211d) : conditionalFreeEnergy \u03b2 x y z=\n    \u03b2*constantPart x z-cgf halfTrace law (\u03b2*radius x y z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L50"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.cgf_hasDerivAt",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 60,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem cgf_hasDerivAt (t : \u211d) : HasDerivAt (cgf halfTrace law) (mean t) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L60"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.mean_differentiable",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 70,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem mean_differentiable : Differentiable \u211d mean",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L70"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.mean_tendsto_one",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 77,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem mean_tendsto_one : Tendsto mean atTop (\ud835\udcdd 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L77"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.radius_bounds",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 80,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem radius_bounds (x y z : \u211d) : 3\u2264radius x y z \u2227 radius x y z\u22645",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L80"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.trace_triple_formula",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 82,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem trace_triple_formula (x y z : \u211d) : halfTrace (triple x y z)=\n    Real.cos x*Real.cos y*Real.cos z-Real.sin x*Real.sin y*Real.sin z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L82"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.radius_sqrt",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 89,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem radius_sqrt (x y z : \u211d) : radius x y z=Real.sqrt\n    (17+8*(Real.cos x*Real.cos y*Real.cos z-Real.sin x*Real.sin y*Real.sin z))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L89"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.radius_zero",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 93,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem radius_zero : radius 0 0 0=5",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L93"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.radicand_pos",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 97,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem radicand_pos (x y z : \u211d) :\n    0<17+8*(Real.cos x*Real.cos y*Real.cos z-Real.sin x*Real.sin y*Real.sin z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L97"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.radius_ne_zero",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 104,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem radius_ne_zero (x y z : \u211d) : radius x y z \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L104"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.radius_y_hasDerivAt",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 108,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem radius_y_hasDerivAt (x z : \u211d) :\n    HasDerivAt (fun y => radius x y z)\n      (-4*(Real.sin x*Real.sin z)/radius x 0 z) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L108"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.radius_x_differentiable",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 126,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem radius_x_differentiable (y z : \u211d) : Differentiable \u211d (fun x => radius x y z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L126"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.radius_z_differentiable",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 133,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem radius_z_differentiable (x y : \u211d) : Differentiable \u211d (fun z => radius x y z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L133"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.conditional_y_hasDerivAt",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 143,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem conditional_y_hasDerivAt (\u03b2 x z : \u211d) :\n    HasDerivAt (fun y => conditionalFreeEnergy \u03b2 x y z)\n      (responseCoeff \u03b2 x z*Real.sin x*Real.sin z) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L143"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.responseCoeff_x_differentiable",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 154,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem responseCoeff_x_differentiable (\u03b2 z : \u211d) :\n    Differentiable \u211d (fun x => responseCoeff \u03b2 x z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L154"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.responseCoeff_z_differentiable",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 160,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem responseCoeff_z_differentiable (\u03b2 x : \u211d) :\n    Differentiable \u211d (fun z => responseCoeff \u03b2 x z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L160"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.conditional_mixed_hessian",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 166,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem conditional_mixed_hessian (\u03b2 z : \u211d) :\n    deriv (fun x => deriv (fun y => conditionalFreeEnergy \u03b2 x y z) 0) 0 =\n      responseCoeff \u03b2 0 z*Real.sin z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L166"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.conditional_mixed_cubic",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 174,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem conditional_mixed_cubic (\u03b2 : \u211d) :\n    deriv (fun z => deriv (fun x => deriv (fun y => conditionalFreeEnergy \u03b2 x y z) 0) 0) 0 =\n      4*\u03b2/5*mean (5*\u03b2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L174"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalResponse.conditional_mixed_cubic_normalized_limit",
+      "file": "Foundation/FourCubeConditionalResponse.lean",
+      "line": 188,
+      "source_sha256": "36c821d0c7c6d4a810f76d2ffb80b632652e2a69f2160adcfb22e06fc14f2343",
+      "declaration_header": "theorem conditional_mixed_cubic_normalized_limit :\n    Tendsto (fun \u03b2 =>\n      deriv (fun z => deriv (fun x => deriv (fun y => conditionalFreeEnergy \u03b2 x y z) 0) 0) 0 / \u03b2)\n      atTop (\ud835\udcdd (4/5 : \u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalResponse.lean#L188"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalObstruction.mixedHessian_formula",
+      "file": "Foundation/FourCubeConditionalObstruction.lean",
+      "line": 17,
+      "source_sha256": "42cee48d2e167633d0016a75729a1b66086b7f031a80048cff06656d736e07fd",
+      "declaration_header": "theorem mixedHessian_formula (\u03b2 z : \u211d) :\n    mixedHessian \u03b2 z=4*\u03b2*mean (\u03b2*radius 0 0 z)/radius 0 0 z*Real.sin z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalObstruction.lean#L17"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalObstruction.mixedHessian_normalized_limit",
+      "file": "Foundation/FourCubeConditionalObstruction.lean",
+      "line": 21,
+      "source_sha256": "42cee48d2e167633d0016a75729a1b66086b7f031a80048cff06656d736e07fd",
+      "declaration_header": "theorem mixedHessian_normalized_limit (z : \u211d) :\n    Tendsto (fun \u03b2 => mixedHessian \u03b2 z/\u03b2) atTop (\ud835\udcdd (limitingSlope z))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalObstruction.lean#L21"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalObstruction.exists_slope_exceeds_quadratic",
+      "file": "Foundation/FourCubeConditionalObstruction.lean",
+      "line": 35,
+      "source_sha256": "42cee48d2e167633d0016a75729a1b66086b7f031a80048cff06656d736e07fd",
+      "declaration_header": "theorem exists_slope_exceeds_quadratic (C \u03b5 : \u211d) (hC : 0\u2264C) (h\u03b5 : 0<\u03b5) :\n    \u2203 z : \u211d, 0<z \u2227 z<\u03b5 \u2227 C*z^2<limitingSlope z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalObstruction.lean#L35"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalObstruction.eventually_exceeds_budget",
+      "file": "Foundation/FourCubeConditionalObstruction.lean",
+      "line": 51,
+      "source_sha256": "42cee48d2e167633d0016a75729a1b66086b7f031a80048cff06656d736e07fd",
+      "declaration_header": "theorem eventually_exceeds_budget (C C\u2080 z : \u211d) (hz : C*z^2<limitingSlope z) :\n    \u2200\u1da0 \u03b2 : \u211d in atTop, C*\u03b2*z^2+C\u2080<mixedHessian \u03b2 z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalObstruction.lean#L51"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalObstruction.exists_arbitrarily_large_budget_violation",
+      "file": "Foundation/FourCubeConditionalObstruction.lean",
+      "line": 66,
+      "source_sha256": "42cee48d2e167633d0016a75729a1b66086b7f031a80048cff06656d736e07fd",
+      "declaration_header": "theorem exists_arbitrarily_large_budget_violation (C C\u2080 \u03b5 \u03b2\u2080 : \u211d)\n    (hC : 0\u2264C) (h\u03b5 : 0<\u03b5) :\n    \u2203 z \u03b2 : \u211d, 0<z \u2227 z<\u03b5 \u2227 \u03b2\u2080<\u03b2 \u2227 0<\u03b2 \u2227 C*\u03b2*z^2+C\u2080 < |mixedHessian \u03b2 z|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalObstruction.lean#L66"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalObstruction.no_uniform_quadratic_budget",
+      "file": "Foundation/FourCubeConditionalObstruction.lean",
+      "line": 74,
+      "source_sha256": "42cee48d2e167633d0016a75729a1b66086b7f031a80048cff06656d736e07fd",
+      "declaration_header": "theorem no_uniform_quadratic_budget :\n    \u00ac \u2203 C C\u2080 \u03b5 \u03b2\u2080 : \u211d, 0\u2264C \u2227 0<\u03b5 \u2227\n      \u2200 z \u03b2 : \u211d, 0<z \u2192 z<\u03b5 \u2192 \u03b2\u2080<\u03b2 \u2192 0<\u03b2 \u2192\n        |mixedHessian \u03b2 z|\u2264C*\u03b2*z^2+C\u2080",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalObstruction.lean#L74"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalObstruction.eventually_shrinking_lower",
+      "file": "Foundation/FourCubeConditionalObstruction.lean",
+      "line": 85,
+      "source_sha256": "42cee48d2e167633d0016a75729a1b66086b7f031a80048cff06656d736e07fd",
+      "declaration_header": "theorem eventually_shrinking_lower :\n    \u2200\u1da0 s : \u211d in atTop, s/5\u2264mixedHessian (s^2) (1/s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalObstruction.lean#L85"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalObstruction.exists_shrinking_budget_violation",
+      "file": "Foundation/FourCubeConditionalObstruction.lean",
+      "line": 117,
+      "source_sha256": "42cee48d2e167633d0016a75729a1b66086b7f031a80048cff06656d736e07fd",
+      "declaration_header": "theorem exists_shrinking_budget_violation (C C\u2080 \u03b5 \u03b2\u2080 : \u211d) (h\u03b5 : 0<\u03b5) :\n    \u2203 s : \u211d, 0<s \u2227 1/s<\u03b5 \u2227 \u03b2\u2080<s^2 \u2227\n      C*s^2*(1/s)^2+C\u2080 < |mixedHessian (s^2) (1/s)|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalObstruction.lean#L117"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalObstruction.mean_abs_le",
+      "file": "Foundation/FourCubeConditionalObstruction.lean",
+      "line": 135,
+      "source_sha256": "42cee48d2e167633d0016a75729a1b66086b7f031a80048cff06656d736e07fd",
+      "declaration_header": "theorem mean_abs_le (t : \u211d) : |mean t|\u22641",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalObstruction.lean#L135"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalObstruction.mixedHessian_linear_bound",
+      "file": "Foundation/FourCubeConditionalObstruction.lean",
+      "line": 149,
+      "source_sha256": "42cee48d2e167633d0016a75729a1b66086b7f031a80048cff06656d736e07fd",
+      "declaration_header": "theorem mixedHessian_linear_bound (\u03b2 z : \u211d) :\n    |mixedHessian \u03b2 z|\u2264(4/3 : \u211d)*|\u03b2| * |z|",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalObstruction.lean#L149"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.FourCubeConditionalObstruction.mixedHessian_zero",
+      "file": "Foundation/FourCubeConditionalObstruction.lean",
+      "line": 171,
+      "source_sha256": "42cee48d2e167633d0016a75729a1b66086b7f031a80048cff06656d736e07fd",
+      "declaration_header": "theorem mixedHessian_zero (\u03b2 : \u211d) : mixedHessian \u03b2 0=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/FourCubeConditionalObstruction.lean#L171"
+    },
+    {
+      "paper": "Sections 12\u201315 exact two-axis Haar parity, full 32-link boundary cubic and separate one-link conditional budget obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2OneWordLargeCoupling.positive_mean_tendsto_one",
+      "file": "Foundation/SU2OneWordLargeCoupling.lean",
+      "line": 212,
+      "source_sha256": "b9042f48533df319fa4a0d6f86ca3b0711be025b05f0a95687353281054db69d",
+      "declaration_header": "theorem positive_mean_tendsto_one : Tendsto\n    (fun \u03b2 : \u211d => \u222b A, halfTrace A \u2202BoundedExponentialTiltResponse.tiltedMeasure law\n      halfTrace \u03b2) atTop (\ud835\udcdd 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2OneWordLargeCoupling.lean#L212"
     }
   ],
   "human_reorganization": [
@@ -864,7 +2106,12 @@
     "The unpinned response certificate is identified by uniqueness of the normal residual and proved pinned/unpinned curvature-range equality, never by inverting singular A-transpose-A.",
     "The minimum physical Rayleigh quotient is a classical compactness rephrasing of original exact form bounds. The test vector is not claimed to be an eigenvector or exact minimizer.",
     "Numerical positivity is explicitly computer assisted: all integer data, positive weighted-Gram identities and dot products are supplied and independently checked without floating arithmetic. Complete geometric and linear-algebra implications are printed.",
-    "The separate periodic gauge and arbitrary-nonzero-coupling perturbation tests retain their own operators and hypotheses. Neither disproves a properly gauged global bound or supplies nonlinear scale/volume-uniform control."
+    "The separate periodic gauge and arbitrary-nonzero-coupling perturbation tests retain their own operators and hypotheses. Neither disproves a properly gauged global bound or supplies nonlinear scale/volume-uniform control.",
+    "The full nonlinear cell uses all 72 Wilson faces and all 32 retained links under actual product Haar measure. Its exact two-axis conjugation parity is retained; a pointwise interior cubic cannot refute that integrated symmetry.",
+    "A distinct boundary family fixes three axes at one ribbon high cap, low cap and outer link. Same-edge Haar covariance and vertex-center cancellation give the exact variance difference -sin(x)sin(y)sin(z), second free-energy response difference of opposite sign and ordered boundary derivative 1/2. The proof preserves the residual internal variance and makes no derivative interchange assumption.",
+    "The chosen/partner boundary-word pair trace is invariant under all 48 vertex gauges; open probes separately are not gauge invariant. The full integrated nonparity occurs at positive couplings arbitrarily close to zero and does not establish a large-coupling estimate.",
+    "The large-coupling calculation is a different one-link conditional kernel with the other 31 links fixed to one, not the full marginal. The five-staple radius is sqrt(17+8r(W)), between 3 and 5. Haar cap concentration proves m(t)->1, giving the exact mixed Hessian, shrinking-corridor lower bound s/5 and failure of a uniform beta*z^2 plus constant budget.",
+    "A valid global linear bound 4/3*abs(beta)*abs(z) remains. Failure of the stronger conditional quadratic budget does not by itself disprove a Schur estimate with allowed linear loss or the earlier rational finite quadratic gap. No scale, volume, continuum or physical spectral statement is inferred."
   ],
   "novelty": "General mechanisms classical; priority of this actual one-sided geometry and narrow rational bracket unresolved. No nonlinear gauge or physical mass-gap claim."
 }

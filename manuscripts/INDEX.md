@@ -4,7 +4,7 @@ The independent publication branch contains reviewed editorial drafts built from
 
 ## Reviewed editorial papers
 
-Twenty-seven drafts, 285 pages, all based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. Each folder contains its source/PDF, exact theorem map, build and visual receipts, baseline evidence and candid editorial status. These are reviewed drafts, not submission-ready or novelty-certified manuscripts.
+Twenty-seven drafts, 290 pages, all based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. Each folder contains its source/PDF, exact theorem map, build and visual receipts, baseline evidence and candid editorial status. These are reviewed drafts, not submission-ready or novelty-certified manuscripts.
 
 ### Arithmetic entire functions
 
@@ -61,7 +61,7 @@ Twenty-seven drafts, 285 pages, all based on frozen verified commit `bab688bb614
 
 | Paper | Read and inspect | Scope and status |
 |---|---|---|
-| Gauge pinning and a rational boundary Schur gap on a one-sided four-dimensional cell | [PDF](one-sided-schur-gap/main.pdf) · [LaTeX](one-sided-schur-gap/main.tex) · [theorem map](one-sided-schur-gap/theorem-map.json) · [exact data](one-sided-schur-gap/certificate-data.json) · [checker](one-sided-schur-gap/verify_certificate.py) | Ten pages. Actual geometry/gauge pin, physical 34-dimensional boundary Schur form, certified 0.69639 lower bound and exact witness below 0.6964; periodic and perturbation transfer limits. Computer-assisted finite quadratic companion; priority unresolved. |
+| Gauge pinning, a rational boundary Schur gap and nonlinear Haar response on a finite cell | [PDF](one-sided-schur-gap/main.pdf) · [LaTeX](one-sided-schur-gap/main.tex) · [theorem map](one-sided-schur-gap/theorem-map.json) · [exact data](one-sided-schur-gap/certificate-data.json) · [checker](one-sided-schur-gap/verify_certificate.py) | Fifteen pages. Actual geometry/gauge pin, physical 34-dimensional boundary Schur form, certified 0.69639 lower bound and exact witness below 0.6964; periodic and perturbation transfer limits. Exact full-integral Haar parity/cubic variance and distinct conditional large-coupling quadratic-budget obstruction; valid linear bound retained. Thirty exact checks. Finite companion; priority unresolved. |
 | Conditional resampling and retained boundary entropy in finite SU(2) models | [PDF](conditional-boundary-entropy/main.pdf) · [LaTeX](conditional-boundary-entropy/main.tex) · [theorem map](conditional-boundary-entropy/theorem-map.json) · [editorial status](conditional-boundary-entropy/editorial-status.md) | Ten pages. Exact conditional/marginal entropy, actual continuous-boundary stationary perturbation, and a separate replacement kernel with finite first-step entropy and fixed-coupling decay. Classical formalization companion; no global boundary contraction or mass-gap claim. |
 | Gauge-invariant slow modes in a seven-link SU(2) transfer | [PDF](seven-link-transfer/main.pdf) · [LaTeX](seven-link-transfer/main.tex) · [theorem map](seven-link-transfer/theorem-map.json) · [editorial status](seven-link-transfer/editorial-status.md) | Twelve pages. Proved positive ground, actual stationary centered covariance, optimized strict trial, arbitrary fixed-step slow modes, gauge averaging and finite-parameter mixing. Exact two-weight centering boundary; no physical mass-gap claim. Reviewed draft; novelty unresolved. |
 

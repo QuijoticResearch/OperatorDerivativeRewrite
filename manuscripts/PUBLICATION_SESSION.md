@@ -271,3 +271,7 @@ Expanded the complex-root companion from six to twelve pages, preserving analyti
 ## Actual Burgers pressure, axial flux and Gaussian response
 
 Expanded the fluid companion from eleven to fifteen pages with a complete actual stationary viscous vortex/pressure proof, exact noncancelling axial flux, scalar Gaussian-response/Hessian distinction, log(9/8) evaluation and same-order solenoidal repair with actual finite-slab base-pressure pairing. 393 exact frozen correspondences, 25 finite exact checks, all fifteen final pages inspected and new pages enlarged. Missing-macro/overflow attempts retained; final clean two-pass build and fresh hashes. Primary classical vortex formulas credited; no induced perturbation pressure, finite-energy or stability claim. Twenty-seven drafts total 285 pages.
+
+## Finite gauge Haar response consolidation
+
+Expanded the Schur companion from ten to fifteen pages with full two-axis Haar parity, exact three-axis all-32-link variance and free-energy response, gauge-invariant paired trace, one-link conditional polar reduction/cap concentration and the large-coupling quadratic-budget obstruction with a valid linear bound. 245 exact frozen correspondences, 30 exact finite checks, all fifteen final pages inspected and pages 10–15 enlarged. Final clean two-pass build and fresh hashes; overflow/sparse-bibliography attempts retained. Primary Creutz scans inspected and classical methods credited. No ensemble substitution or physical mass-gap inference. Twenty-seven reviewed drafts total 290 pages.

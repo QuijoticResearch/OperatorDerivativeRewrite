@@ -9,7 +9,7 @@
 \newcommand{\ran}{\operatorname{ran}}\newcommand{\rank}{\operatorname{rank}}
 \newcommand{\lean}[2]{\par\smallskip\begingroup\small\noindent\textit{Source correspondence:}
 \texttt{\detokenize{#1}}\par\noindent\texttt{\detokenize{#2}}\par\endgroup\smallskip}
-\title{Gauge pinning and a rational boundary Schur gap\\on a one-sided four-dimensional cell}
+\title{Gauge pinning, a rational boundary Schur gap\\and nonlinear Haar response on a finite cell}
 \author{Project Stardust}\date{October 29, 2026}
 \begin{document}\maketitle
 \begin{abstract}
@@ -25,10 +25,11 @@ geometric and linear-algebra arguments identify the physical norm, cycle
 compression and residual certificate. The finite arithmetic is supplied as
 explicit integer tables with an independent standard-library checker.
 A periodic gauge counterexample and a perturbation cross-term test delimit
-which invertibility and stability conclusions transfer. This is a finite
-quadratic construction, not a nonlinear gauge, multiscale or continuum
-mass-gap theorem; the general Schur and discrete exactness mechanisms are
-classical.
+which invertibility and stability conclusions transfer. We then reconstruct exact nonlinear tests: a two-axis Haar parity, a
+three-axis full 32-link variance difference, and a separate conditional
+large-coupling obstruction to a quadratic boundary budget. A valid linear
+budget remains. These finite results establish no multiscale or continuum
+mass gap; Schur elimination and the Haar integration mechanisms are classical.
 \end{abstract}
 
 \section{The actual finite problem}
@@ -534,33 +535,384 @@ reference and proved interior coercivity. They do not automatically
 transport the numerical cell gap to nonlinear fields or other geometries.
 \lean{CoerciveSchurStability}{operator_quadratic_perturbation; operator_robust_lower}
 
+\section{Nonlinear Haar integration: which parity actually survives?}
+The quadratic result above concerns real incidence matrices. We next test
+two proposed nonlinear extensions on the \emph{same} cell, using genuine
+$SU(2)$ link variables. Write $r(U)=\tfrac12\operatorname{Tr}U$, which is real,
+and identify $SU(2)$ with the unit quaternions. Thus $r$ is the real
+quaternion coordinate, $|r|\leq1$, and normalized Haar measure $dU$ is
+uniform measure on $S^3$. Put
+\[
+ a_j(t)=\cos t+\mathbf e_j\sin t\quad(j=0,1,2),\qquad
+ \mathbf e_0\mathbf e_1=\mathbf e_2,
+\]
+with the usual quaternion multiplication and $\mathbf e_j^2=-1$.
+Direct multiplication gives
+\begin{equation}\label{eq:tripletrace}
+ r(a_0(x)a_1(y)a_2(z))
+ =\cos x\cos y\cos z-\sin x\sin y\sin z.
+\end{equation}
+The ordering of the three axes fixes the sign.
+
+For each inner square use its ordered Wilson word, and for a ribbon $p$
+with interior edge $e$ use
+\[
+ U_e b_{\mathrm{high}(p)}b_{\mathrm{outer}(p)}^{-1}
+                       b_{\mathrm{low}(p)}^{-1}.
+\]
+Here the high and low variables are the outward cap links, and the outer
+variable is the tangential link. The action $\mathcal A_b(U)$ is the sum
+of $1-r(\text{word})$ over all 72 faces. Let $\mu=\bigotimes_{e\in E_I}dU_e$,
+the actual product Haar law of all 32 retained links. Then
+\begin{equation}\label{eq:gibbsfinite}
+ 0\leq\mathcal A_b\leq144,\qquad
+ Z_b(\beta)=\int e^{-\beta\mathcal A_b}\,d\mu>0,
+ \qquad \mathcal F_b(\beta)=-\log Z_b(\beta).
+\end{equation}
+All real coupling derivatives can be taken under this integral: on a
+compact coupling interval, the $k$th differentiated integrand is bounded
+by $144^k e^{144|\beta|}$. Its power series has infinite radius for $Z_b$;
+positivity makes $\mathcal F_b$ real analytic at every real $\beta$.
+No limiting lattice or field measure enters this argument.
+\lean{FourCubeHaarParity}{fullAction_bounds; interiorHaar_probability; partition_pos}
+
+A warning is necessary before exhibiting a cubic. If only one high cap
+is $a_0(x)$ and its ribbon outer link is $a_1(y)^{-1}$, all other boundary
+links being one, the integrated partition is separately even in $x,y$.
+Indeed conjugation by the unit quaternion $\mathbf e_0$ fixes $a_0(x)$
+and takes $a_1(y)$ to $a_1(-y)$. Conjugate every retained link as well.
+Every full face word is conjugated, its trace is unchanged, and product
+Haar measure is preserved. Changing variables proves $Z(x,y)=Z(x,-y)$.
+Conjugation by $\mathbf e_1$ proves $Z(-x,y)=Z(x,y)$. The same identities
+hold for $-\log Z$, including its identically zero centered mixed
+difference. A pointwise cubic in a retained, \emph{unintegrated} link
+cannot disprove these identities.
+\lean{FourCubeHaarParity}{turn_axis; partition_even_x; partition_even_y;
+freeEnergy_centered_mixed_difference}
+
+\section{A three-axis boundary response in the full 32-link integral}
+Use the base vertex $v=(0,0,1,1)$ and its interior edge $e=(v,0)$.
+Exactly two ribbons have this interior edge: $p=(v,0,2)$ and
+$p'=(v,0,3)$. On the boundary set the high cap of $p$ to $a_0(x)$,
+the low cap of $p$ to $a_2(z)^{-1}$, and the outer link of $p$ to
+$a_1(y)^{-1}$; all other boundary links equal one. These three links
+are distinct. Write $\mathcal A_{x,y,z}$ for the resulting action and
+\[
+ W=a_0(x)a_1(y)a_2(z).
+\]
+If $w_q=b_{\mathrm{high}(q)}b_{\mathrm{outer}(q)}^{-1}
+b_{\mathrm{low}(q)}^{-1}$ denotes a boundary word, this assignment gives
+$w_p=W$, $w_{p'}=1$, and every other $w_q$ is independent of $y$.
+These incidence facts can also be checked directly from $v_2=v_3=1$:
+the allowed ribbon normal directions of $e$ are exactly 2 and 3.
+\lean{FourCubeIntegratedCubic}{word_chosen; word_partner; word_other_y; edge_fiber}
+
+For later use define a real open-link probe
+$L_{e,A}(U)=r(AU_e)$. The exact Haar identities are
+\begin{equation}\label{eq:haarchannels}
+ \mathbb E_\mu L_{e,A}=0,\qquad
+ \operatorname{Cov}_\mu(L_{e,A},L_{f,B})
+   =\begin{cases}\tfrac14r(AB^{-1}),&e=f,\\0,&e\ne f.\end{cases}
+\end{equation}
+To prove them, let $q\in S^3$ be the quaternion of a Haar link.
+Coordinate reflections give $\mathbb E q_i=0$ and
+$\mathbb E q_iq_j=0$ for $i\ne j$. Symmetry and $\sum_iq_i^2=1$ give
+$\mathbb E q_i^2=1/4$. The real coordinate of $Aq$ is the dot product
+of $q$ with $(a_0,-a_1,-a_2,-a_3)$, giving the first and same-link
+second identities. For distinct links independence gives zero.
+In particular $\operatorname{Var}L_{e,A}=1/4$.
+
+Let $I(U)$ be the 24-face inner action. Then
+\begin{equation}\label{eq:actiondecomp}
+ \mathcal A_b(U)=I(U)+48-\sum_q L_{e(q),w_q}(U),
+ \qquad \operatorname{Cov}_\mu(I,L_{e,A})=0.
+\end{equation}
+For the covariance claim, apply the vertex gauge transformation equal
+to $-1$ at the source of $e$ and one at every other base vertex.
+The map multiplies incident link variables by central signs and preserves
+product Haar measure. Every closed inner face trace is unchanged by
+endpoint cancellation, whereas $L_{e,A}$ changes sign. Hence
+$\mathbb E[I L_{e,A}]=0$; its covariance is zero because the probe is
+centered. All functions are bounded, so each change of variables and
+covariance expansion is legitimate.
+\lean{FourCubeHaarChannels}{linkProbe_pair; linkProbe_covariance;
+internal_link_orthogonal; internal_link_covariance}
+
+\begin{theorem}[Integrated cubic response]\label{thm:integrated}
+For the actual product Haar law of all 32 links,
+\begin{align}
+ \operatorname{Var}_\mu(\mathcal A_{x,y,z})
+  -\operatorname{Var}_\mu(\mathcal A_{x,-y,z})
+       &=-\sin x\sin y\sin z,\label{eq:varodd}\\
+ \mathcal F_{x,y,z}''(0)-\mathcal F_{x,-y,z}''(0)
+       &=\sin x\sin y\sin z.\label{eq:freeodd}
+\end{align}
+Whenever the sine product is nonzero and $\varepsilon>0$, there is
+$0<\beta<\varepsilon$ for which $Z_{x,y,z}(\beta)\ne Z_{x,-y,z}(\beta)$.
+Moreover the ordered boundary derivative, taking $y$ first, is
+\[
+ \left.\partial_z\partial_x\partial_y
+              \mathcal F_{x,y,z}''(0)\right|_{x=y=z=0}=\tfrac12.
+\]
+\end{theorem}
+\begin{proof}
+Remove just the chosen probe by defining
+\[
+ R_{x,z}=\mathcal A_{x,0,z}+L_{e,a_0(x)a_2(z)}.
+\]
+Equation \eqref{eq:actiondecomp} shows that this residual is independent
+of $y$ and that $\mathcal A_{x,y,z}=R_{x,z}-L_{e,W}$.
+For any unit quaternion $A$, expand its covariance with the residual.
+The inner-action term vanishes by \eqref{eq:actiondecomp}; constants
+vanish; all ribbon probes on other edges vanish by \eqref{eq:haarchannels}.
+Among the probes on $e$, the chosen one has been removed and only its
+partner of word one remains, with a minus sign. Consequently
+\[
+ \operatorname{Cov}_\mu(R_{x,z},L_{e,A})=-\tfrac14r(A),
+ \qquad
+ \operatorname{Var}_\mu\mathcal A_{x,y,z}
+      =\operatorname{Var}_\mu R_{x,z}+\tfrac14+\tfrac12r(W).
+\]
+Subtracting the expression with $y$ negated and using
+\eqref{eq:tripletrace} proves \eqref{eq:varodd}. The constant internal
+variance was never discarded or approximated; it cancels exactly.
+
+Differentiating \eqref{eq:gibbsfinite} gives $Z(0)=1$,
+$Z'(0)=-\mathbb E\mathcal A$ and $Z''(0)=\mathbb E\mathcal A^2$.
+Thus $(-\log Z)''(0)=-\operatorname{Var}\mathcal A$, proving
+\eqref{eq:freeodd}. The variance formula also gives
+\[
+ \left.\partial_y\mathcal F_{x,y,z}''(0)\right|_{y=0}
+            =\tfrac12\sin x\sin z.
+\]
+Differentiating this displayed identity in $x$ and then $z$ at zero
+gives $1/2$. This order of derivatives is explicit; no interchange
+of boundary derivatives is required.
+
+Finally suppose the two partitions agreed for every $0<\beta<\varepsilon$.
+Their logarithms would agree there and at zero. Their twice differentiable
+extensions to an open neighborhood of zero would then have equal second
+derivatives at zero, contrary to \eqref{eq:freeodd}. This proves the
+claimed arbitrarily small positive witnesses.
+\end{proof}
+\lean{FourCubeIntegratedCubic}{variance_formula; variance_odd_y;
+variance_explicit_odd_witness}
+\lean{FourCubeIntegratedResponse}{freeEnergy3_second_zero; integrated_mixed_cubic}
+\lean{FourCubeIntegratedResponse}{exists_positive_coupling_nonparity_of_sine}
+For $x=y=z=\pi/6$ the variance difference is $-1/8$ and the second
+free-energy response difference is $1/8$. Both boundary angles and
+positive coupling can be made arbitrarily small: choose
+$0<t<\min(\delta,\pi)$ and use $x=y=z=t$, whose sine product is positive.
+This is a small-coupling result; it supplies no large-coupling estimate.
+
+The underlying trace is gauge invariant in a precise sense. Under any
+of the 48 vertex gauges $g$, a boundary word along a path from the target
+of $e$ to its source transforms as
+\[
+ w_q\longmapsto g(\operatorname{target}e)w_q
+                         g(\operatorname{source}e)^{-1}.
+\]
+For $p,p'$ with the same interior edge, $w_pw_{p'}^{-1}$ is therefore
+conjugated at the target. Its half trace, equal here to $r(W)$, is
+unchanged. In particular its difference $-2\sin x\sin y\sin z$
+under the tested reflection cannot be dismissed as an open-link trace
+which should vanish by a vertex gauge change. An open probe alone is
+not gauge invariant; its same-edge covariance produces this closed path.
+\lean{FourCubeIntegratedCubic}{word_boundaryGauge; pair_trace_gauge; pair_trace_odd_y}
+
+\section{An exact conditional calculation at large coupling}
+Now keep the same three-axis boundary, but fix the other 31 retained
+links to one and integrate only $U_e=U$. Denote the resulting partition
+and free energy by $\widehat Z$ and $\widehat{\mathcal F}$.
+They are conditional kernels evaluated at this configuration, defined
+pointwise by a finite integral. Conditioning at this particular
+Haar-null configuration does not identify them with the full marginal
+of Theorem~\ref{thm:integrated}.
+
+The chosen edge is incident to three inner squares, each contributing
+$1-r(U)$. Exactly two ribbons use that edge; their words are $W$ and
+one. Among the remaining ribbons, two have half trace $\cos x$, two
+have half trace $\cos z$, and the remaining 42 have trace one.
+It follows, retaining all 72 faces, that
+\begin{equation}\label{eq:conditionalaction}
+ \mathcal A_{x,y,z}(U,1,\ldots,1)
+ =c(x,z)-4r(U)-r(UW),\quad
+ c(x,z)=5+2(1-\cos x)+2(1-\cos z).
+\end{equation}
+For clarity, at $U=1$ the 48 ribbon traces are classified as
+$r(W)$ once, $\cos x$ twice, $\cos z$ twice and one 43 times.
+The partner ribbon lies in the last class; releasing $U$ changes it
+from trace one to $r(U)$ and changes the chosen trace to $r(UW)$.
+This also verifies \eqref{eq:conditionalaction} without subtracting
+any boundary-dependent constant.
+\lean{FourCubeConditionalAction}{internal_single; capClass_count;
+ribbonSum_one; ribbonSum_change; conditional_action}
+
+Define the one-link moment generating function and tilted mean
+\[
+ M(t)=\int e^{t r(V)}\,dV,\qquad m(t)=\frac{M'(t)}{M(t)},\qquad
+ \rho(x,y,z)=\sqrt{17+8r(W)}.
+\]
+The quaternion $4+W$ has squared norm $17+8r(W)$, so $3\leq\rho\leq5$.
+Its unit orientation $n=(4+W)/\rho$ gives
+$4r(U)+r(UW)=\rho r(Un)$. Haar translation in
+\eqref{eq:conditionalaction} proves the exact polar reduction
+\begin{equation}\label{eq:polarfree}
+ \widehat Z=e^{-\beta c(x,z)}M(\beta\rho),\qquad
+ \widehat{\mathcal F}=\beta c(x,z)-\log M(\beta\rho).
+\end{equation}
+$M>0$ and all its real derivatives exist, since $|r(V)|\leq1$.
+Also $m(t)$ is the expectation of $r$ under the probability density
+$e^{tr}/M(t)$, hence $|m(t)|\leq1$.
+\lean{FourCubeConditionalRadial}{stapleRadius_sq; stapleRadius_bounds;
+five_trace; radial_integral}
+\lean{FourCubeConditionalResponse}{conditionalPartition_formula;
+conditionalFreeEnergy_formula}
+
+\begin{lemma}[Concentration of the one-link mean]
+$m(t)\longrightarrow1$ as $t\longrightarrow+\infty$.
+\end{lemma}
+\begin{proof}
+For $0<\delta<1$, the cap $C_\delta=\{r>1-\delta/2\}$ is a nonempty
+open neighborhood of the identity. Haar measure has full support:
+if a nonempty open set had measure zero, finitely many of its left
+translates would cover the compact group, contradicting total mass one.
+Thus $c_\delta=\mu_H(C_\delta)>0$. For $t\geq0$,
+\[
+ M(t)\geq c_\delta e^{t(1-\delta/2)},\qquad
+ \int_{\{r\leq1-\delta\}}e^{tr}\,d\mu_H\leq e^{t(1-\delta)}.
+\]
+The tilted mass of $\{r\leq1-\delta\}$ is at most
+$c_\delta^{-1}e^{-t\delta/2}$. On its complement $1-r<\delta$,
+and everywhere $0\leq1-r\leq2$. Therefore
+$0\leq1-m(t)\leq\delta+2c_\delta^{-1}e^{-t\delta/2}$.
+First take $t\to\infty$, then $\delta\downarrow0$.
+\end{proof}
+\lean{SU2OneWordLargeCoupling}{positive_mean_tendsto_one}
+
+Let the ordered mixed conditional Hessian be
+\[
+ H_\beta(z)=\left.\partial_x\partial_y
+                      \widehat{\mathcal F}(\beta,x,y,z)\right|_{x=y=0},
+ \qquad \rho_z=\sqrt{17+8\cos z}.
+\]
+Differentiating the positive square root in \eqref{eq:tripletrace} gives
+$\partial_y\rho(x,0,z)=-4\sin x\sin z/\rho(x,0,z)$.
+The constant $c$ has no $y$ dependence. By \eqref{eq:polarfree},
+\[
+ \left.\partial_y\widehat{\mathcal F}\right|_{y=0}
+  =\frac{4\beta m(\beta\rho(x,0,z))}{\rho(x,0,z)}\sin x\sin z.
+\]
+The coefficient is differentiable in $x$ because $\rho\geq3$ and $m$
+is differentiable. At $x=0$ its derivative is multiplied by $\sin0$,
+so the exact result is
+\begin{equation}\label{eq:Hconditional}
+ H_\beta(z)=\frac{4\beta m(\beta\rho_z)}{\rho_z}\sin z,
+ \quad H_\beta(0)=0,\quad
+ \frac{H_\beta(z)}\beta\longrightarrow\frac{4\sin z}{\rho_z}.
+\end{equation}
+Similarly the ordered third boundary derivative at zero is
+$H_\beta'(0)=\tfrac45\beta m(5\beta)$, whose ratio to $\beta$ tends
+to $4/5$. These statements concern the conditional integral only.
+\lean{FourCubeConditionalResponse}{conditional_mixed_hessian; conditional_mixed_cubic}
+\lean{FourCubeConditionalResponse}{conditional_mixed_cubic_normalized_limit}
+
+\section{A failed quadratic budget and the valid linear one}
+\begin{theorem}[Conditional boundary budget obstruction]
+There do not exist $C\geq0$, $C_0\in\R$, $\varepsilon>0$ and
+$\beta_0\in\R$ such that
+\[
+ |H_\beta(z)|\leq C\beta z^2+C_0
+ \quad\hbox{for all }0<z<\varepsilon,\quad
+                   \beta>\max(0,\beta_0).
+\]
+The obstruction persists on $\beta=s^2$, $z=1/s$: for all sufficiently
+large $s$, $H_{s^2}(1/s)\geq s/5$. Nevertheless the global bound
+\[
+ |H_\beta(z)|\leq\tfrac43|\beta|\,|z|
+ \qquad(\beta,z\in\R)
+\]
+holds.
+\end{theorem}
+\begin{proof}
+Choose a positive $z<\min(\varepsilon,1)$ so small that
+$Cz^2<2z/5$. Such a choice exists for every $C\geq0$.
+The elementary inequality $\sin z\geq z-z^3/6\geq z/2$ and
+$\rho_z\leq5$ give $4\sin z/\rho_z\geq2z/5>Cz^2$.
+The limit in \eqref{eq:Hconditional} then implies
+$H_\beta(z)>C\beta z^2+C_0$ for all sufficiently large positive
+$\beta$: after dividing by $\beta$, the constant $C_0/\beta$ vanishes.
+This contradicts the proposed absolute-value bound.
+
+For the shrinking corridor, $s^2\rho_{1/s}\geq3s^2\to\infty$,
+so eventually $m(s^2\rho_{1/s})\geq1/2$. For $s\geq2$,
+$\sin(1/s)\geq1/(2s)$. Inserting these bounds and $\rho_{1/s}\leq5$
+in \eqref{eq:Hconditional} gives
+\[
+ H_{s^2}(1/s)\geq\frac{4s^2}{5}\,\frac12\,\frac1{2s}=\frac s5.
+\]
+On this corridor $C\beta z^2+C_0=C+C_0$, which any sufficiently
+large $s/5$ exceeds, even for arbitrary real $C,C_0$.
+Finally $|m|\leq1$, $\rho_z\geq3$ and $|\sin z|\leq|z|$
+in \eqref{eq:Hconditional} prove the stated linear bound.
+\end{proof}
+\lean{FourCubeConditionalObstruction}{no_uniform_quadratic_budget; eventually_shrinking_lower}
+\lean{FourCubeConditionalObstruction}{exists_shrinking_budget_violation; mixedHessian_linear_bound}
+
+These results separate exact two-axis parity, a full-integral cubic
+response near zero coupling, and a conditional large-coupling budget
+obstruction with the other 31 links fixed. Their ensembles remain distinct.
+The failure of a $\beta z^2$ budget does not disprove a Schur-complement
+estimate with an allowed linear remainder, and does not invalidate the
+rational finite quadratic gap proved earlier.
+
+The methods themselves have classical antecedents. Creutz's primary
+paper \cite{creutz80}, Section II, equations (2.2)--(2.7), specifies the
+product group integral, Wilson plaquette action and one-link conditional
+update. Equations (2.12)--(2.18) explicitly reduce a sum of $SU(2)$ staples
+to a radial amplitude and a unit orientation. Our $4+W$ is a five-staple
+instance of that mechanism; the finite cap cell has a different incidence
+from the periodic six-staple bulk example. Creutz \cite{creutz78}, page
+2043, equations (1)--(4), also gives the classical invariant-integration
+and generating-function framework. We use elementary $S^3$ moments and
+bounded differentiation here, not a new integration algorithm. The exact
+boundary witnesses and their proposed-estimate diagnostics are traced to
+the frozen source; their formulation priority remains unresolved. None
+of these finite results supplies scale or volume uniformity, a continuum
+construction, or a physical spectral mass gap.
+
 \section{Provenance, significance and remaining uniformity questions}
-The mathematics is reconstructed from frozen verified commit
+The frozen source is commit
 \begin{quote}\small\texttt{bab688bb6140cd6316c80680095a914ea0d346db}.\end{quote}
-The exact declaration map and original source hashes accompany the paper.
-The independent checker verifies a literal extraction of the frozen integer
-tables against geometry; no mathematical research source, configuration or
-original manuscript was altered. The source's complete build and axiom audit
-receipt was checked by its evidence hashes; no new research build is claimed.
+Exact declarations and original source hashes accompany the paper. The
+baseline build and axiom-audit evidence hashes were checked; no new Lean
+build or modification of research sources is claimed. In addition to the
+nine retained certificate checks, \texttt{verify\_haar.py} passes 21 exact
+finite checks: ribbon incidence and trace classes, rational unit-quaternion
+72-face actions, residual replacement, vertex-center cancellation,
+second-moment contractions and the five-staple squared radius. It uses
+unbounded integers and rational arithmetic. Real-angle differentiation,
+Haar cap concentration and asymptotic conclusions rest on the full
+printed proofs, not on sampled numerical integration.
 
-Finite exactness, gauge gradients, Schur complements and positive weighted
-Gram certificates use classical mechanisms. The primary comparisons above
-establish that context, not novelty of general methods. Priority for the
-specific one-sided geometry and exact narrow bracket remains unresolved.
-The result is a reproducible geometry-specific finite quadratic estimate,
-including an explicit correction to rounding and a sharp distinction between
-local pinning and a global unpinned matrix.
+The contributions are reproducible finite estimates and diagnostic
+counterexamples, with classical mechanisms credited above. Priority for
+the geometry, narrow rational bracket and exact boundary witnesses remains
+unresolved. Neither the linear boundary complement nor a conditional
+one-link kernel is substituted for the full nonlinear gauge problem.
+There is no varying lattice spacing, block size or volume here. A physical
+mass-gap theorem still requires a continuum quantum-field construction,
+identified physical correlations or spectrum, compatible gauge conditions
+and scale- and volume-uniform estimates. None of those requirements is
+discharged by the finite gap or by the response obstructions.
 
-There is no varying block size, lattice spacing, volume or continuum limit
-in the theorem. It neither constructs a four-dimensional quantum field nor
-identifies a physical correlation or Hamiltonian spectrum. The linear
-boundary complement is not silently substituted for a nonlinear gauge
-quotient. Extending the estimate would require exact compatible global gauge
-conditions, control of interactions and approximation errors, and estimates
-uniform in the particular scale and volume parameters. The proved finite
-gap discharges none of these separate analytic obligations.
-
-\begin{thebibliography}{9}
+\begin{thebibliography}{9}\small
+\bibitem{creutz80} M. Creutz, \emph{Monte Carlo study of quantized
+$SU(2)$ gauge theory}, Physical Review D \textbf{21} (1980), 2308--2315.
+\href{https://www.latticeguy.net/mypubs/pub037.pdf}{Primary author scan}.
+\bibitem{creutz78} M. Creutz, \emph{On invariant integration over $SU(N)$},
+Journal of Mathematical Physics \textbf{19} (1978), 2043--2046.
+\href{https://www.latticeguy.net/mypubs/pub028.pdf}{Primary author scan}.
 \bibitem{gallier} J. Gallier, \emph{The Schur complement and symmetric positive
 semidefinite (and definite) matrices}, author notes, August 24, 2019.
 \href{https://www.cis.upenn.edu/~jean/schur-comp.pdf}{Primary author PDF}.
