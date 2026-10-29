@@ -2741,3 +2741,5 @@ import Foundation.FourCubePinnedHaar
 import Foundation.FourCubePinnedCoercivity
 
 import Foundation.FourCubePinnedConcentration
+
+import Foundation.FourCubePinnedHessian

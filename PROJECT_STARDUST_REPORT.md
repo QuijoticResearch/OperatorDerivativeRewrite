@@ -55513,3 +55513,54 @@ Nineteen independent Lean checks plus a zero-tilt helper passed in33.0334319 sec
 Integrity authenticates1702's source manifest against exact approved commitfbac6017e75addbd320145adcdce59e57476410e. It covers2792 Foundation/root files: only ONE new focused actual normalized-Gibbs module, its root import and the axiom ledger differ. ALL older mathematical source files,3 pinned configurations,113 baseline original manuscripts and21 Yang–Mills originals (20 distinct hashes) remain unchanged. ResearchSources remains unmodified/uncommitted; unrelated drafts are preserved. Evidence: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1703-* (full build/audits, complete types, independent actual-law Lean checks, declaration inventory and authenticated source manifest).
 
 Exact-commit approval and guarded PUBLIC main/research synchronization are the closure gates; this pre-commit record does not assert remote success. Repository visibility remains exclusively user-controlled. Yang–Mills stays ACTIVE, Bakry PAUSED, all other priorities and verification requirements unchanged.
+
+
+## Checkpoint1704 — actual pinned Wilson Frechet Hessian identified with the canonical Gram form
+
+October28 local / October29 UTC. Focused Yang–Mills remains ACTIVE; Bakry remains PAUSED. This closes the previously open base-point Hessian-identification obligation from1703, not the rescaled Gibbs or boundary-derivative Laplace obligations. No campaign transition, new existence assumption or physical mass-gap claim is made.
+
+### Actual action, exact domains and normalization
+
+`Foundation/SU2FourWordVariation.lean` extends the existing verified three-factor matrix exponential jets to FOUR ordered factors. `path_hasDerivAt` and `pathSlope_hasDerivAt` hold for arbitrary four complex2x2 matrices and every real curve parameter. Trace cyclicity cancels the ordered commutator contributions at the identity: `trace_second_zero` identifies the traced second jet with the trace of the SQUARE of the total generator. `action_second_zero` is the actual second derivative of the Wilson action, not a stipulated quadratic energy.
+
+For the existing normalized su(2) generator `algebraElement`, `signed_second_zero` and `signed_slope_second_zero` give the exact face coefficient
+
+    d²/dt² Wilson(exp(t A(u)) exp(t A(v)) exp(-t A(w)) exp(-t A(z))) at0
+      = lengthSq(u+v-w-z)/4.
+
+`signed_first_zero` verifies the actual first derivative vanishes. No commutativity of the four matrices is assumed. This identity at the identity background does not remove nonabelian cubic terms or contradict the earlier away-background mixed-response counterexamples.
+
+`Foundation/FourCubePinnedSecondVariation.lean` constructs actual SU(2)-valued logarithmic rays using the retained exponential-membership theorem. `core_log_coe`, `core_log_inv_coe`, `face_model` and `ribbon_model` identify the true group products and inverses. `ray_model` is the full actual cell decomposition:24 internal four-link faces plus48 ribbon faces. The derivative helpers hold at every real ray parameter; the resulting second-variation formula is evaluated at0.
+
+`incidence_identity` reuses the existing scalar curl/ribbon incidence energy, independently for each of the three colors. `pinnedChart_fill` identifies the actual31-link pinned ray with the32-link ray whose canonical pole velocity is zero. It preserves the exact pinning convention of1701; it is not conditioning Haar measure on a measure-zero event.
+
+For EVERY pinned velocity V in Free -> Fin3 -> Real, `pinned_first_zero` proves zero actual first variation, and `pinned_second_gram` proves
+
+    d²/dt² S_pinned(pinnedChart(V,t)) at0
+      = (1/4) sum_a dot(V_a, localGram * V_a).
+
+`pinned_second_positive` proves this is strictly positive whenever V is nonzero, reusing the previously verified pinned Gram positivity. The quarter factor is essential: the matrix tangent frame is (imagJ,imagK,imagI)/2. The unpinned incidence form still has its root gauge kernel. Nothing here asserts positivity in all unpinned directions or across all backgrounds.
+
+### Genuine Frechet-Hessian bridge
+
+`Foundation/FourCubePinnedHessian.lean` defines `coordinateAction V` to be the actual pinned action of the exponential coordinates, evaluated at ray parameter1. `coordinateAction_contDiff` proves ContDiff Real2 on the entire finite-dimensional coefficient space. It uses analytic matrix exponentiation, continuous linear evaluations and actual finite face products; it does not assume a chart inverse or a Haar coordinate density.
+
+`coordinateAction_line` proves exact agreement with the actual pinned rays. `hessian_diagonal_ray` uses the iterated Frechet chain rule along a continuous linear map to identify the second Frechet derivative at coefficient0, evaluated on(V,V), with the actual one-variable second derivative. Thus `hessian_diagonal_gram` and `hessian_positive` establish the actual Frechet-Hessian quadratic form and its strict positive definiteness in every nonzero pinned direction. This is stronger than merely declaring an abstract positive Gram matrix or computing unrelated directional proxies. A separate explicit off-diagonal polarization theorem or a numerical eigenvalue lower bound is not asserted.
+
+### Independent checks and retained obstructions
+
+Fourteen independent Lean applications check cancellation of a repeated positive/negative face generator, actual ray derivative applications, zero first variation, C2 and differentiability, the Frechet/ray bridge, exact Gram normalization, strict positivity, zero-kernel implication, zero-direction second variation and canonical pole pinning. These passed in28.9232922 seconds.
+
+A separate quaternion implementation tests the ACTUAL72-face group action, using the correct normalized quaternion frame (v2,v0,v1)/2. Six seeded rational pinned fields, a single link with five incident faces, a free origin link with three internal faces and the unpinned common-root gauge direction were tested: nine cases at each of three symmetric finite-difference scales. The single-link predictions are exactly5/4 and3/4; the gauge-direction prediction is0. All tested second differences agree with the quarter-incidence/Gram prediction within the stated O(h²) numerical envelope, with decreasing errors on halving h. This is a numerical diagnostic, not a proof of the limiting Gibbs law. An initially unjustified overly tight diagnostic tolerance was corrected to an explicit O(h²) envelope plus error-ratio check; no mathematical claim was weakened to make that diagnostic pass.
+
+The concrete next bottleneck is now the actual LOCAL MEASURE and moment-controlled Laplace limit, rather than the identity-background Hessian. Still OPEN: an appropriate inverse logarithmic chart and product-Haar Jacobian/density control; rescaled Gibbs moment convergence and uniform integrability; uniform isolation of the perturbed-boundary saddle; parameter-dependent Laplace estimates strong enough for differentiated third-order responses.1703's normalized fixed-cell concentration and this positive local Hessian do not on their own justify multiplying a covariance by beta or differentiating an asymptotic partition formula. The exact external full harmonic cubic31877443263/69438734552 remains computational evidence only; its Lean coordinate conversion and actual full-Gibbs response identification are not discharged here.
+
+The one-sided72-face cell remains distinct from a scale/volume-uniform four-dimensional lattice construction. Physical-distance transfer dynamics, continuum/infinite-volume estimates and a positive physical mass gap remain unresolved. Earlier conditional cubic obstructions and the surviving linear mixed-Hessian/coercive Schur route are preserved. This is a verified local classical calculation needed by a specific mass-gap-related manuscript audit, not a claim of new continuum Yang–Mills mathematics or a campaign devoted to auxiliary declaration counts.
+
+### Complete verification and integrity
+
+The complete root build passed7012 jobs in57.8064471 seconds. The canonical COMPLETE transitive axiom audit passed54868 safe Foundation declarations in39.9211541 seconds, allowing only propext, Classical.choice and Quot.sound. ALL64 public types were printed unabridged and reviewed:41 theorem proofs,21 definitions and2 abbreviations, together with all6 private proof helpers and all complete source bodies. No sorry/admit/new mathematical axiom/native_decide, toolchain change, resource increase or trust weakening was introduced. The complete persisted axiom-ledger elaboration passed in46.6482589 seconds.
+
+Source integrity authenticates1703's manifest against approved commit2b4e33291e3a3fc2b05c2843663e01121cc9f07f and covers2795 Foundation/root files. Only the THREE new focused variation/Hessian modules, root import and axiom ledger differ. ALL older mathematical sources,3 pinned configurations,113 baseline original manuscripts and21 Yang–Mills originals (20 distinct hashes) remain unchanged. ResearchSources remains read-only/uncommitted; unrelated drafts are preserved. Evidence: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1704-* (complete build/audits/types, fourteen Lean checks, independent quaternion script/results, declaration inventory, timings and authenticated source manifest).
+
+Exact-commit approval and guarded PUBLIC main/research synchronization remain the closure gates. This pre-commit ledger records local verification and does not claim remote success. Repository visibility remains exclusively user-controlled. The mathematical campaign and every queue and verification requirement remain unchanged.
