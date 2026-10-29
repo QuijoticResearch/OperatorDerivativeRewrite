@@ -1962,6 +1962,96 @@
       "source_sha256": "5821386efd2e8b7078e6acb4044720c3ecd6f5d2ea51c1f508aa967f92374651",
       "declaration_header": "theorem radial_square_identity : \u2200\u1d50 \u03c9 \u2202gaussianProduct,\n    (f.val \u03c9)^2 + (g.val \u03c9)^2 =\n      ((firstChaosEmbedding (directions 0) \u03c9)^2 + (firstChaosEmbedding (directions 1) \u03c9)^2)^2",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticAnticommutingExample.lean#L121"
+    },
+    {
+      "paper": "Section 4 completed second-chaos two-coordinate matrix compression and exact prediction energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticMatrixPrediction.joint_rank",
+      "file": "Foundation/GaussianQuadraticMatrixPrediction.lean",
+      "line": 14,
+      "source_sha256": "2439b4dd5d85ade6a8f3e48d679d43bc177dcc837293ef94cf108e7dafee5c67",
+      "declaration_header": "theorem joint_rank {I : Type*} (h : I \u2192 CoefficientSpace) (a b : CoefficientSpace) :\n    jointConditional h (scalarTensor a (firstChaosEmbedding b))=\n      scalarTensor (sourceProjection h a) (firstChaosEmbedding (sourceProjection h b))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticMatrixPrediction.lean#L14"
+    },
+    {
+      "paper": "Section 4 completed second-chaos two-coordinate matrix compression and exact prediction energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticMatrixPrediction.joint_linear_mem",
+      "file": "Foundation/GaussianQuadraticMatrixPrediction.lean",
+      "line": 20,
+      "source_sha256": "2439b4dd5d85ade6a8f3e48d679d43bc177dcc837293ef94cf108e7dafee5c67",
+      "declaration_header": "theorem joint_linear_mem {I : Type*} (h : I \u2192 CoefficientSpace)\n    {v : GaussianVectorL2} (hv : v\u2208linearGaussianFields) : jointConditional h v\u2208linearGaussianFields",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticMatrixPrediction.lean#L20"
+    },
+    {
+      "paper": "Section 4 completed second-chaos two-coordinate matrix compression and exact prediction energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticMatrixPrediction.joint_transpose_commute",
+      "file": "Foundation/GaussianQuadraticMatrixPrediction.lean",
+      "line": 31,
+      "source_sha256": "2439b4dd5d85ade6a8f3e48d679d43bc177dcc837293ef94cf108e7dafee5c67",
+      "declaration_header": "theorem joint_transpose_commute {I : Type*} (h : I \u2192 CoefficientSpace) (v : GaussianVectorL2) :\n    transpose (jointConditional h v)=jointConditional h (transpose v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticMatrixPrediction.lean#L31"
+    },
+    {
+      "paper": "Section 4 completed second-chaos two-coordinate matrix compression and exact prediction energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticMatrixPrediction.matrix_compression_pairing",
+      "file": "Foundation/GaussianQuadraticMatrixPrediction.lean",
+      "line": 35,
+      "source_sha256": "2439b4dd5d85ade6a8f3e48d679d43bc177dcc837293ef94cf108e7dafee5c67",
+      "declaration_header": "theorem matrix_compression_pairing {I : Type*} (h : I \u2192 CoefficientSpace)\n    (a b : CoefficientSpace) (v : GaussianVectorL2) :\n    inner \u211d (scalarTensor a (firstChaosEmbedding b)) (jointConditional h v)=\n      inner \u211d (scalarTensor (sourceProjection h a) (firstChaosEmbedding (sourceProjection h b))) v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticMatrixPrediction.lean#L35"
+    },
+    {
+      "paper": "Section 4 completed second-chaos two-coordinate matrix compression and exact prediction energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticMatrixPrediction.coordinates_compression",
+      "file": "Foundation/GaussianQuadraticMatrixPrediction.lean",
+      "line": 41,
+      "source_sha256": "2439b4dd5d85ade6a8f3e48d679d43bc177dcc837293ef94cf108e7dafee5c67",
+      "declaration_header": "theorem coordinates_compression {I : Type*} (h : I \u2192 CoefficientSpace)\n    (v : linearGaussianFields) (i j : \u2115) :\n    coordinates \u27e8jointConditional h v,joint_linear_mem h v.property\u27e9 (i,j)=\n      inner \u211d (scalarTensor (sourceProjection h (unit i)) (firstChaosEmbedding (sourceProjection h (unit j)))) (v : GaussianVectorL2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticMatrixPrediction.lean#L41"
+    },
+    {
+      "paper": "Section 4 completed second-chaos two-coordinate matrix compression and exact prediction energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticMatrixPrediction.conditional_completed_divergence",
+      "file": "Foundation/GaussianQuadraticMatrixPrediction.lean",
+      "line": 48,
+      "source_sha256": "2439b4dd5d85ade6a8f3e48d679d43bc177dcc837293ef94cf108e7dafee5c67",
+      "declaration_header": "theorem conditional_completed_divergence {I : Type*} (h : I \u2192 CoefficientSpace)\n    {v : GaussianVectorL2} (hv : v\u2208linearGaussianFields) :\n    completedDivergence (jointConditional h v)=conditionalProjection h (completedDivergence v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticMatrixPrediction.lean#L48"
+    },
+    {
+      "paper": "Section 4 completed second-chaos two-coordinate matrix compression and exact prediction energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticMatrixPrediction.second_chaos_prediction",
+      "file": "Foundation/GaussianQuadraticMatrixPrediction.lean",
+      "line": 54,
+      "source_sha256": "2439b4dd5d85ade6a8f3e48d679d43bc177dcc837293ef94cf108e7dafee5c67",
+      "declaration_header": "theorem second_chaos_prediction {I : Type*} (h : I \u2192 CoefficientSpace)\n    {f : GaussianL2} (hf : f\u2208sector 2) :\n    conditionalProjection h f=completedDivergence (jointConditional h (recovery f))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticMatrixPrediction.lean#L54"
+    },
+    {
+      "paper": "Section 4 completed second-chaos two-coordinate matrix compression and exact prediction energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticMatrixPrediction.second_chaos_prediction_energy",
+      "file": "Foundation/GaussianQuadraticMatrixPrediction.lean",
+      "line": 59,
+      "source_sha256": "2439b4dd5d85ade6a8f3e48d679d43bc177dcc837293ef94cf108e7dafee5c67",
+      "declaration_header": "theorem second_chaos_prediction_energy {I : Type*} (h : I \u2192 CoefficientSpace)\n    {f : GaussianL2} (hf : f\u2208sector 2) :\n    \u2016conditionalProjection h f\u2016^2=2*\u2016jointConditional h (recovery f)\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticMatrixPrediction.lean#L59"
+    },
+    {
+      "paper": "Section 4 completed second-chaos two-coordinate matrix compression and exact prediction energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianQuadraticMatrixPrediction.prediction_matrix_energy",
+      "file": "Foundation/GaussianQuadraticMatrixPrediction.lean",
+      "line": 68,
+      "source_sha256": "2439b4dd5d85ade6a8f3e48d679d43bc177dcc837293ef94cf108e7dafee5c67",
+      "declaration_header": "theorem prediction_matrix_energy {I : Type*} (h : I \u2192 CoefficientSpace)\n    {f : GaussianL2} (hf : f\u2208sector 2) :\n    HasSum (fun p : \u2115 \u00d7 \u2115 => 2*(inner \u211d\n      (scalarTensor (sourceProjection h (unit p.1)) (firstChaosEmbedding (sourceProjection h (unit p.2)))) (recovery f))^2)\n      (\u2016conditionalProjection h f\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianQuadraticMatrixPrediction.lean#L68"
+    },
+    {
+      "paper": "Section 4 completed second-chaos two-coordinate matrix compression and exact prediction energy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianLinearFieldMatrixCoordinates.coordinates_energy",
+      "file": "Foundation/GaussianLinearFieldMatrixCoordinates.lean",
+      "line": 101,
+      "source_sha256": "6548c7f596c818a68e30f55b4d5087bd10aabe5ef674e8948f5017a8655b4544",
+      "declaration_header": "theorem coordinates_energy (v : linearGaussianFields) :\n    HasSum (fun p => (coordinates v p)^2) (\u2016(v : GaussianVectorL2)\u2016^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianLinearFieldMatrixCoordinates.lean#L101"
     }
   ],
   "human_reorganization": [
@@ -1975,7 +2065,10 @@
     "The exact actual determinant law is proved through conditional characteristic functions, the nonnegative Gaussian square Laplace transform and uniqueness. The density is one quarter exp(-absolute(x)/2), or one half exp(-absolute(x)) for the unscaled determinant. No general-dimension determinant law is asserted.",
     "The paper only uses the nonnegative square-Laplace parameter, where its finite integral derivation applies. Null-set equality, law transport and singleton nullity are taken from the actual verified declarations. The dimension-two determinant density is classical, explicitly present in Nyquist-Rice-Riordan (1954), not a new distribution.",
     "Section 9 reconstructs actual centered two-source products from the bivariate Gaussian moment generating function, including arbitrary completed source vectors and singular covariances. Sharp constants nine and fifteen hold on this product class; nine is not a lower constant for all completed second chaos. The lower equality characterization and scalar kurtosis monotonicity are explicitly human consequences.",
-    "Section 10 consolidates the earlier brief matrix example into the exact source-mapped anticommuting pair. Orthogonality and vanishing mixed degree-two contraction coexist with positive square-contraction pairing 64 and square covariance 32. Direct Gaussian moments independently prove dependence. No new independence classification is claimed."
+    "Section 10 consolidates the earlier brief matrix example into the exact source-mapped anticommuting pair. Orthogonality and vanishing mixed degree-two contraction coexist with positive square-contraction pairing 64 and square covariance 32. Direct Gaussian moments independently prove dependence. No new independence classification is claimed.",
+    "Section 4 reconstructs completed Gaussian conditioning as PAP compression on symmetric Hilbert-Schmidt coordinates, with actual original divergence and squared norm 2||PAP||_HS^2. Rank tensors and bounded completion supply the printed proof of formal matrix-coordinate prediction.",
+    "The exact nonlinear least-prediction error, block split 4||RAP||_HS^2+2||RAR||_HS^2, and zero-error iff A=PAP are human Hilbert-space consequences.",
+    "The conditional residual variance 4||U_RAP||^2+2||RAR||_HS^2 is a labelled human deduction: finite adapted Gaussian bases, vanishing third moments and strong L2/L1 completion. It is not a named formal conditional-variance theorem. The actual cross product 2G0G1 has zero conditional mean given G0 but conditional variance 4G0^2, hence is not independent of the observations."
   ],
   "literature": [
     {

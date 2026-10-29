@@ -37,6 +37,8 @@ Combined tensor symmetrization retains a double-skew determinant
 whose actual transported law is explicitly Laplace. A two-source product
 has a sharper lower fourth-moment coefficient of nine, and an explicit
 anticommuting pair delimits incomplete independence tests.
+Full second-chaos prediction compresses both completed matrix coordinates;
+its exact error retains the mixed observed/unobserved block.
 Classical quadratic-form theory is credited throughout;
 no new independence criterion or fourth-moment phenomenon is claimed.
 \end{abstract}
@@ -210,6 +212,140 @@ and symmetric-field unitary extend this identity to the full second
 chaos. In this paper it suffices to retain the explicit coefficient
 isometry and finite-box approximations. The matrix notation is a
 human coordinate realization of those source constructions.
+
+
+\section{Full quadratic prediction is a two-coordinate compression}
+Let $M\subseteq H$ be any closed subspace, $P$ its orthogonal projection
+and $R=I-P$. Put $W(h)=\sum_i h_iG_i$, with convergence in $L^2$,
+and let $\mathcal F_M=\sigma(W(h):h\in M)$, completed under the
+original probability law. No finite-rank hypothesis on $P$ is imposed.
+A symmetric square-summable matrix defines a self-adjoint
+Hilbert--Schmidt operator $A$ on $H$; its centered observable is the
+actual $Q_A$ already constructed above.
+
+\begin{theorem}\label{thm:matrixprediction}
+For every such $A$,
+\begin{align}\label{eq:matrixprediction}
+ \E[Q_A\mid\mathcal F_M]&=Q_{PAP},&
+ \|\E[Q_A\mid\mathcal F_M]\|_2^2&=2\|PAP\|_{\HS}^2,\\
+ \|Q_A-\E[Q_A\mid\mathcal F_M]\|_2^2
+ &=4\|RAP\|_{\HS}^2+2\|RAR\|_{\HS}^2.\nonumber
+\end{align}
+For every $Y\in L^2(\mathcal F_M)$, the exact error decomposition is
+\[
+ \|Q_A-Y\|_2^2=\|Q_A-Q_{PAP}\|_2^2+\|Q_{PAP}-Y\|_2^2.
+\]
+Thus $Q_{PAP}$ is the unique best predictor even among nonlinear
+square-integrable functions of all observations. Zero prediction error
+holds exactly when $A=PAP$.
+\end{theorem}
+\begin{proof}
+For finite lists $h_1,\ldots,h_k$, the joint Gaussian characteristic
+function is $\exp(-\|\sum_jt_jh_j\|^2/2)$. Orthogonality of $M$ and
+$M^\perp$ therefore factors every mixed characteristic function.
+The two generated sigma algebras are independent: finite cylinder events
+are independent, and two applications of the monotone-class theorem
+extend this to the generated sigma algebras. Null completions preserve
+independence.
+
+Split $h=Ph+Rh$. Independence, zero means and covariance isometry give
+\[
+ \E[W(a)W(b)-\langle a,b\rangle\mid\mathcal F_M]
+ =W(Pa)W(Pb)-\langle Pa,Pb\rangle.
+\]
+For example the unobserved product contributes the deterministic
+$\langle Ra,Rb\rangle$, which cancels that part of the centering;
+each mixed product has conditional mean zero. Symmetric finite-rank
+tensors span a dense subspace of the symmetric Hilbert--Schmidt
+operators. Summing this identity proves the prediction formula there.
+For an arbitrary $A$, choose symmetric finite-rank $A_n\to A$ in
+Hilbert--Schmidt norm. Conditional expectation is an $L^2$ contraction,
+$\|P(A_n-A)P\|_{\HS}\leq\|A_n-A\|_{\HS}$, and
+\eqref{eq:fullisometry} passes the identity to the actual limits.
+
+The four blocks of an operator relative to $H=M\oplus M^\perp$ are
+orthogonal in Hilbert--Schmidt inner product. Symmetry gives
+$\|PAR\|_{\HS}=\|RAP\|_{\HS}$, so
+\[
+ \|A\|_{\HS}^2=\|PAP\|_{\HS}^2
+       +2\|RAP\|_{\HS}^2+\|RAR\|_{\HS}^2.
+\]
+This follows directly by summing squared matrix entries in orthonormal
+bases of the two closed subspaces, including empty or finite bases.
+The isometry gives both norm formulas. Conditional-expectation duality
+makes $Q_A-Q_{PAP}$ orthogonal to $L^2(\mathcal F_M)$, proving the
+error decomposition and uniqueness. Finally its error vanishes exactly
+when the two remaining blocks vanish, equivalently $A=PAP$.
+\end{proof}
+
+The source represents the recovery field of $Q_A$ by its square-summable
+matrix coordinates. Applying the source projection in the direction
+coordinate and conditional expectation in the random coordinate sends
+$V_A$ to $V_{PAP}$. This can be verified on $aW(b)$, where it gives
+$(Pa)W(Pb)$, and then by bounded completion. Compression commutes with
+transposition because $P=P^*$. It consequently preserves symmetric
+fields. The completed divergence identity
+\[
+ \delta V_{PAP}=Q_{PAP}=\E[\delta V_A\mid\mathcal F_M]
+\]
+retains the original closed divergence, not a new formal matrix operator.
+In coordinates its exact prediction energy is
+\[
+ 2\sum_{i,j\geq0}
+ \big\langle (Pe_i)W(Pe_j),V_A\big\rangle_{L^2(\Omega;H)}^2
+ =\|\E[Q_A\mid\mathcal F_M]\|_2^2.
+\]
+Indeed the inner product is $\langle Pe_i,A Pe_j\rangle$, the
+$(i,j)$ coefficient of $PAP$; Parseval gives the sum. The source
+proves this for every completed second-chaos target, not only finite
+quadratic polynomials. The least-error and block-error formulations
+above are explicit human Hilbert-space consequences.
+
+\subsection*{Conditional mean zero does not make the residual independent}
+One can say more about the error without discarding its dependence.
+Let $C=RAP$ and $D=RAR$. The observed $H$-valued Gaussian field
+\[
+ U_C=\sum_j C m_j W(m_j)\quad\hbox{in }L^2(\Omega;H)
+\]
+uses an orthonormal basis $(m_j)$ of $M$. It is well defined since
+$\sum_j\|Cm_j\|^2=\|C\|_{\HS}^2$ and is $\mathcal F_M$-measurable.
+The following additional identity is a human conditional-moment
+deduction, not a new mapped formal conditional-variance declaration:
+\begin{equation}\label{eq:matrixconditionalvariance}
+ \E[(Q_A-Q_{PAP})^2\mid\mathcal F_M]
+ =4\|U_C\|_H^2+2\|D\|_{\HS}^2\quad\hbox{in }L^1.
+\end{equation}
+To prove it, first use finite adapted bases of $M$ and $M^\perp$.
+Writing their independent standard coordinates as $Y$ and $Z$, the
+residual is $2Z^TCY+Q_D(Z)$. Conditional on $Y$, its two terms are
+uncorrelated: the mixed third centered Gaussian moments vanish.
+Their variances are $4\|CY\|^2$ and $2\|D\|_{\HS}^2$.
+This proves the finite formula. Truncate all three operator blocks in
+these adapted bases. Hilbert--Schmidt convergence gives residual
+convergence in $L^2$, hence squared-residual convergence in $L^1$ by
+Cauchy--Schwarz. Also $U_{C_n}\to U_C$ in $L^2(\Omega;H)$, so its
+squared norm converges in $L^1$ by the same inequality. Conditional
+expectation is an $L^1$ contraction. These facts pass the finite
+identity to \eqref{eq:matrixconditionalvariance}, without a pointwise
+infinite quadratic expression or an $H$-valued standard Gaussian.
+
+For a concrete warning take $M=\operatorname{span}\{e_0\}$ and
+$A_{01}=A_{10}=1$, all other entries zero. Then $Q_A=2G_0G_1$,
+$PAP=RAR=0$ and $\E[Q_A\mid G_0]=0$, but
+\[
+ \E[Q_A^2\mid G_0]=4G_0^2
+\]
+is nonconstant. The residual is therefore not independent of the
+observations. This also shows why the mixed block contributes twice
+in the Hilbert--Schmidt error and cannot be omitted.
+
+Gaussian conditioning as second quantization is classical.
+Alpay--Kipnis~\cite{AlpayKipnis}, Section 2, printed page 5,
+identifies conditional expectation with the projected chaos operator
+before equation (2.8). Our proof uses this mechanism directly on
+quadratic tensors and proves its completion. Only the conditioning
+identity is used from that comparison; no implication from conditional
+mean zero to independence of a mixed chaos is assumed.
 
 \section{Strong fourth-moment completion and bounded multiplication}
 The finite upper bound applies to the symmetric difference of two
@@ -823,5 +959,9 @@ Primary scan, pages 97--98; two-dimensional density already classical.
 correlated normal random variables}, primary preprint arXiv:2106.02897v2
 (2022), Section 2.7.
 \url{https://arxiv.org/abs/2106.02897}.
+\bibitem{AlpayKipnis} D. Alpay and A. Kipnis,
+\emph{Wiener-chaos approach to optimal prediction}, primary preprint
+arXiv:1411.3032v3 (2018), Section 2, printed page 5.
+\url{https://arxiv.org/abs/1411.3032}.
 \end{thebibliography}
 \end{document}
