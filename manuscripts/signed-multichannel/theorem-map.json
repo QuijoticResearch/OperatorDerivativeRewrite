@@ -304,6 +304,444 @@
       "line": 105,
       "source_sha256": "8e970433b702dc8365447349cdad0450889fccd219233f4398c347960c958624",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatPolynomialRealization.lean#L105"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatKernelMoments.real_second_moment_integrable",
+      "file": "Foundation/HigherHeatKernelMoments.lean",
+      "line": 68,
+      "source_sha256": "9fb6728cb3375bc1b68187287215b4485eb53e1387fe9b41a32965db02df7ea4",
+      "declaration_header": "theorem real_second_moment_integrable (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) :\n    Integrable (fun x : \u211d => x^2 * realKernel m hm t ht x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatKernelMoments.lean#L68"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatKernelMoments.real_second_moment",
+      "file": "Foundation/HigherHeatKernelMoments.lean",
+      "line": 76,
+      "source_sha256": "9fb6728cb3375bc1b68187287215b4485eb53e1387fe9b41a32965db02df7ea4",
+      "declaration_header": "theorem real_second_moment (m : \u2115) (hm : 2 \u2264 m) (t : \u211d\u22650) (ht : 0 < t) :\n    \u222b x : \u211d, x^2 * realKernel m (by omega) t ht x = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatKernelMoments.lean#L76"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatKernelMoments.not_nonnegative_ae",
+      "file": "Foundation/HigherHeatKernelMoments.lean",
+      "line": 87,
+      "source_sha256": "9fb6728cb3375bc1b68187287215b4485eb53e1387fe9b41a32965db02df7ea4",
+      "declaration_header": "theorem not_nonnegative_ae (m : \u2115) (hm : 2 \u2264 m) (t : \u211d\u22650) (ht : 0 < t) :\n    \u00ac \u2200\u1d50 x : \u211d \u2202volume, 0 \u2264 realKernel m (by omega) t ht x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatKernelMoments.lean#L87"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatKernelMoments.exists_negative",
+      "file": "Foundation/HigherHeatKernelMoments.lean",
+      "line": 108,
+      "source_sha256": "9fb6728cb3375bc1b68187287215b4485eb53e1387fe9b41a32965db02df7ea4",
+      "declaration_header": "theorem exists_negative (m : \u2115) (hm : 2 \u2264 m) (t : \u211d\u22650) (ht : 0 < t) :\n    \u2203 x : \u211d, realKernel m (by omega) t ht x < 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatKernelMoments.lean#L108"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatKernelMoments.norm_integral_gt_one",
+      "file": "Foundation/HigherHeatKernelMoments.lean",
+      "line": 114,
+      "source_sha256": "9fb6728cb3375bc1b68187287215b4485eb53e1387fe9b41a32965db02df7ea4",
+      "declaration_header": "theorem norm_integral_gt_one (m : \u2115) (hm : 2 \u2264 m) (t : \u211d\u22650) (ht : 0 < t) :\n    1 < \u222b x : \u211d, \u2016realKernel m (by omega) t ht x\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatKernelMoments.lean#L114"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatKernelScaling.symbol_scaling",
+      "file": "Foundation/HigherHeatKernelScaling.lean",
+      "line": 10,
+      "source_sha256": "2397f1eb4d11d3995d229646956470eed368543b5f075591a9856f20b93dad7b",
+      "declaration_header": "theorem symbol_scaling (m : \u2115) (t c : \u211d\u22650) (x : \u211d) :\n    HigherHeatL2.symbol m (t*c^(2*m)) x = HigherHeatL2.symbol m t ((c : \u211d)*x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatKernelScaling.lean#L10"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatKernelScaling.kernel_scaling",
+      "file": "Foundation/HigherHeatKernelScaling.lean",
+      "line": 16,
+      "source_sha256": "2397f1eb4d11d3995d229646956470eed368543b5f075591a9856f20b93dad7b",
+      "declaration_header": "theorem kernel_scaling (m : \u2115) (hm : 0 < m) (t c : \u211d\u22650)\n    (ht : 0 < t) (hc : 0 < c) (x : \u211d) :\n    evenKernel m hm (t*c^(2*m)) (mul_pos ht (pow_pos hc _)) x =\n      (c : \u211d)\u207b\u00b9 \u2022 evenKernel m hm t ht (x/(c : \u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatKernelScaling.lean#L16"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatKernelScaling.realKernel_scaling",
+      "file": "Foundation/HigherHeatKernelScaling.lean",
+      "line": 40,
+      "source_sha256": "2397f1eb4d11d3995d229646956470eed368543b5f075591a9856f20b93dad7b",
+      "declaration_header": "theorem realKernel_scaling (m : \u2115) (hm : 0 < m) (t c : \u211d\u22650)\n    (ht : 0 < t) (hc : 0 < c) (x : \u211d) :\n    realKernel m hm (t*c^(2*m)) (mul_pos ht (pow_pos hc _)) x =\n      (c : \u211d)\u207b\u00b9 * realKernel m hm t ht (x/(c : \u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatKernelScaling.lean#L40"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatKernelScaling.norm_integral_scaling",
+      "file": "Foundation/HigherHeatKernelScaling.lean",
+      "line": 48,
+      "source_sha256": "2397f1eb4d11d3995d229646956470eed368543b5f075591a9856f20b93dad7b",
+      "declaration_header": "theorem norm_integral_scaling (m : \u2115) (hm : 0 < m) (t c : \u211d\u22650)\n    (ht : 0 < t) (hc : 0 < c) :\n    (\u222b x : \u211d, \u2016realKernel m hm (t*c^(2*m)) (mul_pos ht (pow_pos hc _)) x\u2016) =\n      \u222b x : \u211d, \u2016realKernel m hm t ht x\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatKernelScaling.lean#L48"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSignedLaws.realKernel_coe",
+      "file": "Foundation/HigherHeatSignedLaws.lean",
+      "line": 15,
+      "source_sha256": "353442a7742258c64d6c1655cadd5d286a48ed25b501d74e70f486613d43bc2b",
+      "declaration_header": "theorem realKernel_coe (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) (x : \u211d) :\n    (realKernel m hm t ht x : \u2102) = evenKernel m hm t ht x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSignedLaws.lean#L15"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSignedLaws.realKernel_integral",
+      "file": "Foundation/HigherHeatSignedLaws.lean",
+      "line": 24,
+      "source_sha256": "353442a7742258c64d6c1655cadd5d286a48ed25b501d74e70f486613d43bc2b",
+      "declaration_header": "theorem realKernel_integral (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) :\n    \u222b x, realKernel m hm t ht x = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSignedLaws.lean#L24"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSignedLaws.incrementLaw_mass",
+      "file": "Foundation/HigherHeatSignedLaws.lean",
+      "line": 57,
+      "source_sha256": "353442a7742258c64d6c1655cadd5d286a48ed25b501d74e70f486613d43bc2b",
+      "declaration_header": "theorem incrementLaw_mass (m : \u2115) (hm : 0 < m)\n    (t : \u03b9 \u2192 \u211d\u22650) (ht : \u2200 i, 0 < t i) :\n    incrementLaw m hm t ht Set.univ = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSignedLaws.lean#L57"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSignedLaws.incrementLaw_variation",
+      "file": "Foundation/HigherHeatSignedLaws.lean",
+      "line": 64,
+      "source_sha256": "353442a7742258c64d6c1655cadd5d286a48ed25b501d74e70f486613d43bc2b",
+      "declaration_header": "theorem incrementLaw_variation (m : \u2115) (hm : 0 < m)\n    (t : \u03b9 \u2192 \u211d\u22650) (ht : \u2200 i, 0 < t i) :\n    (incrementLaw m hm t ht).variation =\n      (Measure.pi (fun _ : \u03b9 => volume)).withDensity\n        (fun x => \u2016incrementDensity m hm t ht x\u2016\u2091)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSignedLaws.lean#L64"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatSignedLaws.incrementLaw_variation_mass",
+      "file": "Foundation/HigherHeatSignedLaws.lean",
+      "line": 71,
+      "source_sha256": "353442a7742258c64d6c1655cadd5d286a48ed25b501d74e70f486613d43bc2b",
+      "declaration_header": "theorem incrementLaw_variation_mass (m : \u2115) (hm : 0 < m)\n    (t : \u03b9 \u2192 \u211d\u22650) (ht : \u2200 i, 0 < t i) :\n    ((incrementLaw m hm t ht).variation Set.univ).toReal =\n      \u220f i, \u222b x, \u2016realKernel m hm (t i) (ht i) x\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatSignedLaws.lean#L71"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatPathObstruction.variation_mass_map_le",
+      "file": "Foundation/HigherHeatPathObstruction.lean",
+      "line": 13,
+      "source_sha256": "2dbfb6194a581622990bf0a3fc70b890054ee6c73d617bec5801b4ddb59a21b2",
+      "declaration_header": "theorem variation_mass_map_le {\u03a9 X : Type*} [MeasurableSpace \u03a9] [MeasurableSpace X]\n    (\u03bc : SignedMeasure \u03a9) (f : \u03a9 \u2192 X) (hf : Measurable f) :\n    ((\u03bc.map f).variation Set.univ).toReal \u2264 (\u03bc.variation Set.univ).toReal",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatPathObstruction.lean#L13"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatPathObstruction.no_signed_increment_realization",
+      "file": "Foundation/HigherHeatPathObstruction.lean",
+      "line": 24,
+      "source_sha256": "2dbfb6194a581622990bf0a3fc70b890054ee6c73d617bec5801b4ddb59a21b2",
+      "declaration_header": "theorem no_signed_increment_realization {\u03a9 : Type*} [MeasurableSpace \u03a9]\n    (m : \u2115) (hm : 2 \u2264 m) (t : \u211d\u22650) (ht : 0 < t)\n    (\u03bc : SignedMeasure \u03a9) (observation : (n : \u2115) \u2192 \u03a9 \u2192 (Fin n \u2192 \u211d))\n    (hobs : \u2200 n, Measurable (observation n))\n    (hlaw : \u2200 n, \u03bc.map (observation n) =\n      incrementLaw m (by omega) (fun _ : Fin n => t) (fun _ => ht)) : False",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatPathObstruction.lean#L24"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatPathObstruction.gridIncrement_measurable",
+      "file": "Foundation/HigherHeatPathObstruction.lean",
+      "line": 41,
+      "source_sha256": "2dbfb6194a581622990bf0a3fc70b890054ee6c73d617bec5801b4ddb59a21b2",
+      "declaration_header": "theorem gridIncrement_measurable (t : \u211d\u22650) (n : \u2115) : Measurable (gridIncrement t n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatPathObstruction.lean#L41"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatPathObstruction.no_signed_path_law",
+      "file": "Foundation/HigherHeatPathObstruction.lean",
+      "line": 46,
+      "source_sha256": "2dbfb6194a581622990bf0a3fc70b890054ee6c73d617bec5801b4ddb59a21b2",
+      "declaration_header": "theorem no_signed_path_law (m : \u2115) (hm : 2 \u2264 m) (t : \u211d\u22650) (ht : 0 < t)\n    (\u03bc : SignedMeasure (\u211d\u22650 \u2192 \u211d))\n    (hlaw : \u2200 n, \u03bc.map (gridIncrement t n) =\n      incrementLaw m (by omega) (fun _ : Fin n => t) (fun _ => ht)) : False",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatPathObstruction.lean#L46"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatQuarticVariation.square_sum_integrable",
+      "file": "Foundation/HigherHeatQuarticVariation.lean",
+      "line": 13,
+      "source_sha256": "e33393889a511ce2a1772c6d315fdad3d4a7f7d249e73011dd7d9735cae52db0",
+      "declaration_header": "theorem square_sum_integrable (p : \u2115) :\n    (incrementLaw 2 (by norm_num) t ht).Integrable (fun x => (powerSum p x)^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatQuarticVariation.lean#L13"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatQuarticVariation.quartic_sum_second_moment",
+      "file": "Foundation/HigherHeatQuarticVariation.lean",
+      "line": 24,
+      "source_sha256": "e33393889a511ce2a1772c6d315fdad3d4a7f7d249e73011dd7d9735cae52db0",
+      "declaration_header": "theorem quartic_sum_second_moment :\n    (\u222b\u1d5b x, (powerSum 4 x)^2 \u2202<\u2022incrementLaw 2 (by norm_num) t ht) =\n      576*(\u2211 i, ((t i : \u211d) : \u2102))^2 + 19584*\u2211 i, ((t i : \u211d) : \u2102)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatQuarticVariation.lean#L24"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatQuarticVariation.centered_quartic_second_moment",
+      "file": "Foundation/HigherHeatQuarticVariation.lean",
+      "line": 50,
+      "source_sha256": "e33393889a511ce2a1772c6d315fdad3d4a7f7d249e73011dd7d9735cae52db0",
+      "declaration_header": "theorem centered_quartic_second_moment :\n    (\u222b\u1d5b x, (powerSum 4 x + 24*(\u2211 i, ((t i : \u211d) : \u2102)))^2\n      \u2202<\u2022incrementLaw 2 (by norm_num) t ht) = 19584*\u2211 i, ((t i : \u211d) : \u2102)^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatQuarticVariation.lean#L50"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatUniformQuarticVariation.duration_pos",
+      "file": "Foundation/HigherHeatUniformQuarticVariation.lean",
+      "line": 12,
+      "source_sha256": "f029a979a4493db51f6fceefdeeec001b46589d33ba36c18ea5e55d190ab0000",
+      "declaration_header": "theorem duration_pos (T : \u211d\u22650) (hT : 0 < T) (n : \u2115) : 0 < duration T n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatUniformQuarticVariation.lean#L12"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatUniformQuarticVariation.duration_coe",
+      "file": "Foundation/HigherHeatUniformQuarticVariation.lean",
+      "line": 16,
+      "source_sha256": "f029a979a4493db51f6fceefdeeec001b46589d33ba36c18ea5e55d190ab0000",
+      "declaration_header": "theorem duration_coe (T : \u211d\u22650) (n : \u2115) :\n    (duration T n : \u211d) = (T : \u211d)/(n+1 : \u2115)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatUniformQuarticVariation.lean#L16"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatUniformQuarticVariation.durations_sum",
+      "file": "Foundation/HigherHeatUniformQuarticVariation.lean",
+      "line": 22,
+      "source_sha256": "f029a979a4493db51f6fceefdeeec001b46589d33ba36c18ea5e55d190ab0000",
+      "declaration_header": "theorem durations_sum (T : \u211d\u22650) (n : \u2115) :\n    (\u2211 _ : Fin (n+1), ((duration T n : \u211d) : \u2102)) = ((T : \u211d) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatUniformQuarticVariation.lean#L22"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatUniformQuarticVariation.durations_square_sum",
+      "file": "Foundation/HigherHeatUniformQuarticVariation.lean",
+      "line": 28,
+      "source_sha256": "f029a979a4493db51f6fceefdeeec001b46589d33ba36c18ea5e55d190ab0000",
+      "declaration_header": "theorem durations_square_sum (T : \u211d\u22650) (n : \u2115) :\n    (\u2211 _ : Fin (n+1), ((duration T n : \u211d) : \u2102)^2) =\n      ((T : \u211d) : \u2102)^2 / (n+1 : \u2115)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatUniformQuarticVariation.lean#L28"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatUniformQuarticVariation.quadratic_second_moment",
+      "file": "Foundation/HigherHeatUniformQuarticVariation.lean",
+      "line": 35,
+      "source_sha256": "f029a979a4493db51f6fceefdeeec001b46589d33ba36c18ea5e55d190ab0000",
+      "declaration_header": "theorem quadratic_second_moment (T : \u211d\u22650) (hT : 0 < T) (n : \u2115) :\n    (\u222b\u1d5b x, (powerSum 2 x)^2 \u2202<\u2022law T hT n) = -24*((T : \u211d) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatUniformQuarticVariation.lean#L35"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatUniformQuarticVariation.quartic_mean",
+      "file": "Foundation/HigherHeatUniformQuarticVariation.lean",
+      "line": 42,
+      "source_sha256": "f029a979a4493db51f6fceefdeeec001b46589d33ba36c18ea5e55d190ab0000",
+      "declaration_header": "theorem quartic_mean (T : \u211d\u22650) (hT : 0 < T) (n : \u2115) :\n    (\u222b\u1d5b x, powerSum 4 x \u2202<\u2022law T hT n) = -24*((T : \u211d) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatUniformQuarticVariation.lean#L42"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatUniformQuarticVariation.centered_quartic_second_moment",
+      "file": "Foundation/HigherHeatUniformQuarticVariation.lean",
+      "line": 49,
+      "source_sha256": "f029a979a4493db51f6fceefdeeec001b46589d33ba36c18ea5e55d190ab0000",
+      "declaration_header": "theorem centered_quartic_second_moment (T : \u211d\u22650) (hT : 0 < T) (n : \u2115) :\n    (\u222b\u1d5b x, (powerSum 4 x + 24*((T : \u211d) : \u2102))^2 \u2202<\u2022law T hT n) =\n      19584*((T : \u211d) : \u2102)^2 / (n+1 : \u2115)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatUniformQuarticVariation.lean#L49"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatUniformQuarticVariation.centered_quartic_second_moment_tendsto",
+      "file": "Foundation/HigherHeatUniformQuarticVariation.lean",
+      "line": 57,
+      "source_sha256": "f029a979a4493db51f6fceefdeeec001b46589d33ba36c18ea5e55d190ab0000",
+      "declaration_header": "theorem centered_quartic_second_moment_tendsto (T : \u211d\u22650) (hT : 0 < T) :\n    Tendsto (fun n => \u222b\u1d5b x, (powerSum 4 x + 24*((T : \u211d) : \u2102))^2 \u2202<\u2022law T hT n)\n      atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatUniformQuarticVariation.lean#L57"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatAbsoluteVariationObstruction.error_integrable",
+      "file": "Foundation/HigherHeatAbsoluteVariationObstruction.lean",
+      "line": 15,
+      "source_sha256": "dc42154f1e538c86c8d7261ae00cc3df80834528660bebc6af87cadafb4c967d",
+      "declaration_header": "theorem error_integrable (T : \u211d\u22650) (hT : 0 < T) (n : \u2115) :\n    Integrable (fun x => \u2016powerSum 4 x + 24*((T : \u211d) : \u2102)\u2016^2) (law T hT n).variation",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatAbsoluteVariationObstruction.lean#L15"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatAbsoluteVariationObstruction.centered_norm_lower",
+      "file": "Foundation/HigherHeatAbsoluteVariationObstruction.lean",
+      "line": 47,
+      "source_sha256": "dc42154f1e538c86c8d7261ae00cc3df80834528660bebc6af87cadafb4c967d",
+      "declaration_header": "theorem centered_norm_lower (T : \u211d\u22650) {\u03b9 : Type*} [Fintype \u03b9] (x : \u03b9 \u2192 \u211d) :\n    24*(T : \u211d) \u2264 \u2016powerSum 4 x + 24*((T : \u211d) : \u2102)\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatAbsoluteVariationObstruction.lean#L47"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatAbsoluteVariationObstruction.variation_mass",
+      "file": "Foundation/HigherHeatAbsoluteVariationObstruction.lean",
+      "line": 57,
+      "source_sha256": "dc42154f1e538c86c8d7261ae00cc3df80834528660bebc6af87cadafb4c967d",
+      "declaration_header": "theorem variation_mass (T : \u211d\u22650) (hT : 0 < T) (n : \u2115) :\n    ((law T hT n).variation Set.univ).toReal =\n      (\u222b x : \u211d, \u2016realKernel 2 (by norm_num) T hT x\u2016)^(n+1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatAbsoluteVariationObstruction.lean#L57"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatAbsoluteVariationObstruction.absoluteError_lower",
+      "file": "Foundation/HigherHeatAbsoluteVariationObstruction.lean",
+      "line": 66,
+      "source_sha256": "dc42154f1e538c86c8d7261ae00cc3df80834528660bebc6af87cadafb4c967d",
+      "declaration_header": "theorem absoluteError_lower (T : \u211d\u22650) (hT : 0 < T) (n : \u2115) :\n    576*(T : \u211d)^2 * (\u222b x : \u211d, \u2016realKernel 2 (by norm_num) T hT x\u2016)^(n+1) \u2264\n      absoluteError T hT n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatAbsoluteVariationObstruction.lean#L66"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatAbsoluteVariationObstruction.absoluteError_tendsto",
+      "file": "Foundation/HigherHeatAbsoluteVariationObstruction.lean",
+      "line": 84,
+      "source_sha256": "dc42154f1e538c86c8d7261ae00cc3df80834528660bebc6af87cadafb4c967d",
+      "declaration_header": "theorem absoluteError_tendsto (T : \u211d\u22650) (hT : 0 < T) :\n    Tendsto (absoluteError T hT) atTop atTop",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatAbsoluteVariationObstruction.lean#L84"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatL2InputObstruction.spike_clock",
+      "file": "Foundation/HigherHeatL2InputObstruction.lean",
+      "line": 24,
+      "source_sha256": "18dae7439a8b65b59967ebf03f27b6facbdce96eb78fc55668c912c44ef13285",
+      "declaration_header": "theorem spike_clock (m : \u2115) [Fact (0 < m)] (n : \u2115) :\n    (clock m (spike m n) : \u211d) = (((n : \u211d)+1)^4)\u207b\u00b9 * ((n : \u211d)+1)^(2*m)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatL2InputObstruction.lean#L24"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatL2InputObstruction.spike_fourth_clock",
+      "file": "Foundation/HigherHeatL2InputObstruction.lean",
+      "line": 34,
+      "source_sha256": "18dae7439a8b65b59967ebf03f27b6facbdce96eb78fc55668c912c44ef13285",
+      "declaration_header": "theorem spike_fourth_clock (n : \u2115) : clock 2 (spike 2 n) = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatL2InputObstruction.lean#L34"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatL2InputObstruction.spike_l2_norm",
+      "file": "Foundation/HigherHeatL2InputObstruction.lean",
+      "line": 40,
+      "source_sha256": "18dae7439a8b65b59967ebf03f27b6facbdce96eb78fc55668c912c44ef13285",
+      "declaration_header": "theorem spike_l2_norm (n : \u2115) : \u2016spike 1 n\u2016 = 1 / ((n : \u211d)+1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatL2InputObstruction.lean#L40"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatL2InputObstruction.spike_l2_tendsto",
+      "file": "Foundation/HigherHeatL2InputObstruction.lean",
+      "line": 52,
+      "source_sha256": "18dae7439a8b65b59967ebf03f27b6facbdce96eb78fc55668c912c44ef13285",
+      "declaration_header": "theorem spike_l2_tendsto : Tendsto (spike 1) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatL2InputObstruction.lean#L52"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatL2InputObstruction.spike_fourier",
+      "file": "Foundation/HigherHeatL2InputObstruction.lean",
+      "line": 57,
+      "source_sha256": "18dae7439a8b65b59967ebf03f27b6facbdce96eb78fc55668c912c44ef13285",
+      "declaration_header": "theorem spike_fourier (n : \u2115) (\u03be : \u211d) :\n    (\u222b\u1d5b y, HigherHeatCylinderFourier.phase \u03be y \u2202<\u2022marginal 2 (spike 2 n)) =\n      HigherHeatL2.symbol 2 1 \u03be",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatL2InputObstruction.lean#L57"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatL2InputObstruction.no_l2_continuous_extension",
+      "file": "Foundation/HigherHeatL2InputObstruction.lean",
+      "line": 62,
+      "source_sha256": "18dae7439a8b65b59967ebf03f27b6facbdce96eb78fc55668c912c44ef13285",
+      "declaration_header": "theorem no_l2_continuous_extension (F : Control 1 \u2192 \u2102)\n    (h0 : F 0 = 1)\n    (hs : \u2200 n, F (spike 1 n) =\n      \u222b\u1d5b y, HigherHeatCylinderFourier.phase 1 y \u2202<\u2022marginal 2 (spike 2 n)) :\n    \u00ac ContinuousAt F 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatL2InputObstruction.lean#L62"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatFirstChannelRange.atTime_C",
+      "file": "Foundation/HigherHeatFirstChannelRange.lean",
+      "line": 20,
+      "source_sha256": "cd7d3abab96e7115348efcdcd9d86a81ce80bd3f2cd9d286ed80942063f51b48",
+      "declaration_header": "theorem atTime_C (t c : \u211d) (n : \u2115) :\n    atTime t (core (cylinderOf n (MvPolynomial.C c))) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatFirstChannelRange.lean#L20"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatFirstChannelRange.atTime_coordinate",
+      "file": "Foundation/HigherHeatFirstChannelRange.lean",
+      "line": 24,
+      "source_sha256": "cd7d3abab96e7115348efcdcd9d86a81ce80bd3f2cd9d286ed80942063f51b48",
+      "declaration_header": "theorem atTime_coordinate (t : \u211d) (n : \u2115) (j : Fin (size n)) :\n    atTime t (core (cylinderOf n (coordinates n (MvPolynomial.X j)))) =\n      core (cylinderOf n (MvPolynomial.C (direction t (timeEmbedding n j))))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatFirstChannelRange.lean#L24"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatFirstChannelRange.atTime_pow_coordinate_zero",
+      "file": "Foundation/HigherHeatFirstChannelRange.lean",
+      "line": 34,
+      "source_sha256": "cd7d3abab96e7115348efcdcd9d86a81ce80bd3f2cd9d286ed80942063f51b48",
+      "declaration_header": "theorem atTime_pow_coordinate_zero (t : \u211d) (n : \u2115) (j : Fin (size n))\n    (r : \u2115) (hr : 2 \u2264 r) :\n    ((atTime t)^r) (core (cylinderOf n (coordinates n (MvPolynomial.X j)))) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatFirstChannelRange.lean#L34"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatFirstChannelRange.terminal_coordinate",
+      "file": "Foundation/HigherHeatFirstChannelRange.lean",
+      "line": 52,
+      "source_sha256": "cd7d3abab96e7115348efcdcd9d86a81ce80bd3f2cd9d286ed80942063f51b48",
+      "declaration_header": "theorem terminal_coordinate :\n    cylinderOf 0 (coordinates 0 (MvPolynomial.X (lastIndex 0))) = terminalCylinder",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatFirstChannelRange.lean#L52"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatFirstChannelRange.firstChannel_terminal_zero",
+      "file": "Foundation/HigherHeatFirstChannelRange.lean",
+      "line": 57,
+      "source_sha256": "cd7d3abab96e7115348efcdcd9d86a81ce80bd3f2cd9d286ed80942063f51b48",
+      "declaration_header": "theorem firstChannel_terminal_zero (m : \u2115) (hm : 1 < m) (T : \u211d\u22650)\n    (A : Field timeMeasure) : firstChannel m T A (core terminalCylinder) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatFirstChannelRange.lean#L57"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatFirstChannelRange.witness_centered",
+      "file": "Foundation/HigherHeatFirstChannelRange.lean",
+      "line": 65,
+      "source_sha256": "cd7d3abab96e7115348efcdcd9d86a81ce80bd3f2cd9d286ed80942063f51b48",
+      "declaration_header": "theorem witness_centered (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) :\n    mean m hm T hT (core (terminalCylinder^(2*m-1))) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatFirstChannelRange.lean#L65"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatFirstChannelRange.witness_pairing",
+      "file": "Foundation/HigherHeatFirstChannelRange.lean",
+      "line": 75,
+      "source_sha256": "cd7d3abab96e7115348efcdcd9d86a81ce80bd3f2cd9d286ed80942063f51b48",
+      "declaration_header": "theorem witness_pairing (m : \u2115) (hm : 0 < m) (T : \u211d\u22650) (hT : 0 < T) :\n    pairing m hm T hT (core (terminalCylinder^(2*m-1))) (core terminalCylinder) =\n      ((2*m).factorial:\u211d)*((-1:\u211d)^(m+1)*(T:\u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatFirstChannelRange.lean#L75"
+    },
+    {
+      "paper": "Section 11 obstructions",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatFirstChannelRange.no_firstChannel_representation",
+      "file": "Foundation/HigherHeatFirstChannelRange.lean",
+      "line": 82,
+      "source_sha256": "cd7d3abab96e7115348efcdcd9d86a81ce80bd3f2cd9d286ed80942063f51b48",
+      "declaration_header": "theorem no_firstChannel_representation (m : \u2115) (hm : 1 < m) (T : \u211d\u22650) (hT : 0 < T)\n    (A : Field timeMeasure) :\n    firstChannel m T A \u2260\n      pairing m (by omega) T hT (core (terminalCylinder^(2*m-1)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatFirstChannelRange.lean#L82"
     }
+  ],
+  "human_reorganization": [
+    "The fixed-horizon finite-variation path-law obstruction is proved directly from exact kernel scaling and variation contraction. The named formal path-law result uses arbitrarily many fixed-step increments and increasing horizons; these are not conflated.",
+    "The signed quartic square cancellation is not an L2 norm limit: its actual absolute-variation error diverges. Normalized variation probabilities still have pointwise distance at least 24T from the proposed negative limit.",
+    "The explicit L2-small deterministic spike has constant fourth-power clock. Angular-frequency value exp(-1) corresponds to the formal 2pi-frequency convention after rescaling; no continuity claim on the stronger factorial domain is refuted.",
+    "The final complementary-derivative channel is necessary for the displayed terminal test by a direct derivative calculation. The named source proves first-channel range failure; no general channel minimality or synthesis injectivity is inferred."
   ]
 }

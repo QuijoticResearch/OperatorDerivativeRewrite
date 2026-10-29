@@ -31,8 +31,7 @@ adjacent-refinement estimates, and only then passes to the observable
 completion. A joint diagonal realizes every completed observable
 through actual signed polynomial sums. The pairing is indefinite;
 no positive path-space measure or stochastic isometry is asserted.
-We distinguish canonical coefficient uniqueness from uniqueness of
-channel synthesis. All principal results are supported by a frozen
+We distinguish canonical coefficient uniqueness from uniqueness of channel synthesis. Exact variation/path-law, quartic-error, deterministic $L^2$-input and terminal-channel obstructions delimit stronger interpretations. All principal results are supported by a frozen
 Lean development. Novelty relative to earlier higher-order signed
 calculus remains unresolved.
 \end{abstract}
@@ -626,6 +625,166 @@ $\partial_x^2$. It is compatible with that Brownian variance
 convention, but the theorem's proof has not relied on positivity
 or on importing a probability-space martingale representation.
 
+
+\section{Why the reconstruction stays in the test dual}\label{sec:signed-obstructions}
+The topology and channel orders in Theorem~\ref{thm:main} are essential
+parts of its meaning. We give actual signed-law tests of stronger
+interpretations. Except for the final terminal pairing, these statements
+concern the native finite signed increment measures rather than the
+factorial analytic completion. No positive sampling law is inserted.
+
+\subsection{A finite-variation path-law obstruction}
+Assume $p=2m>2$. The moment formula~\eqref{eq:moments} gives
+$\int x^2k_\tau(x)dx=0$, while $\int k_\tau=1$.
+If $k_\tau\geq0$ almost everywhere, the nonnegative integrable
+function $x^2k_\tau(x)$ would vanish almost everywhere. Since
+Lebesgue measure has no atom at zero, this would force $k_\tau=0$
+almost everywhere, contradicting its unit mass. Thus the kernel is
+not nonnegative. Writing $k_\tau=k_\tau^+-k_\tau^-$ shows
+\[
+ \int|k_\tau|=1+2\int k_\tau^->1.
+\]
+Every integral is finite because the kernel is Schwartz.
+
+The inverse Fourier integral gives the exact scaling
+\begin{equation}\label{eq:signed-scaling}
+ k_\tau(x)=\tau^{-1/p}k_1(x\tau^{-1/p}),\qquad
+ A_p:=\int_\R|k_\tau(x)|dx=\int_\R|k_1(x)|dx>1.
+\end{equation}
+Indeed substitute $\xi=\tau^{-1/p}\eta$ in its absolutely convergent
+inverse transform and then change variables in the absolute integral.
+Thus the absolute mass does not become small with the time step.
+For $N$ increments on a fixed horizon $T$, the actual signed product
+law $\mu_N(dx)=\prod_{j=1}^Nk_{T/N}(x_j)dx_j$ satisfies, by Tonelli,
+\begin{equation}\label{eq:TVproduct}
+ |\mu_N|(\R^N)=\prod_{j=1}^N\int|k_{T/N}|=A_p^N.
+\end{equation}
+
+Suppose a countably additive signed measure $\nu$ of finite total
+variation on any measurable space had measurable $N$-increment
+observations with these pushforward laws for every $N$. For every
+measurable map $F$, $|F_\#\nu|(\text{whole space})\leq
+|\nu|(\text{whole space})$. To prove this inequality, pull back any
+finite measurable partition used in the variation supremum; the sum
+of the absolute signed masses is bounded by the total variation of
+$\nu$. Applying it to these observations would give
+$A_p^N\leq|\nu|(\text{whole space})$ for all $N$, impossible.
+In particular there is no such finite signed path law on $[0,T]$
+realizing all the indicated uniform-grid increment distributions.
+No path continuity or consistency of different observation maps was
+needed for this contradiction.
+
+The formal path-obstruction declaration uses arbitrarily many
+successive increments at a fixed positive step, hence increasing
+horizons. The fixed-horizon refinement conclusion just proved is
+an explicit classical deduction combining the same variation
+contraction with exact kernel scaling. It is not misattributed to
+a different formal path declaration. For $p=2$, $A_2=1$ and this
+obstruction does not apply. It concerns finite total variation;
+it does not preclude generalized integration or the bounded
+test-dual construction proved above. The classical obstruction is
+also discussed in the primary introduction of~\cite{bcm}.
+
+\subsection{Signed quartic cancellation versus absolute error}
+Take the biharmonic order $p=4$, so $c=-1$, and put $h=T/N$.
+For the actual law $\mu_N$ above define
+$Q_N(x)=\sum_{j=1}^N x_j^4$. Its pointwise value is nonnegative,
+but its signed mean is
+\begin{equation}\label{eq:negativequartic}
+ \int Q_N\,d\mu_N=N(-24h)=-24T.
+\end{equation}
+The one-increment moments are
+$\int x^4k_h=-24h$ and $\int x^8k_h=8!h^2/2=20160h^2$.
+Product integration, justified by absolute polynomial integrability,
+therefore gives
+\begin{align*}
+ \int Q_N^2\,d\mu_N
+ &=20160Nh^2+576N(N-1)h^2\\
+ &=576T^2+19584T^2/N.
+\end{align*}
+Expanding the centered square and using~\eqref{eq:negativequartic}
+yields the exact cancellation
+\begin{equation}\label{eq:signedquarticerror}
+ \int(Q_N+24T)^2\,d\mu_N=19584T^2/N\longrightarrow0.
+\end{equation}
+This is a signed integral of a square, not a norm-convergence statement.
+In fact $Q_N+24T\geq24T$ everywhere. Consequently the actual absolute
+error has the opposite behavior:
+\begin{equation}\label{eq:absolutequarticerror}
+ \int|Q_N+24T|^2\,d|\mu_N|
+ \geq576T^2 A_4^N\longrightarrow\infty.
+\end{equation}
+Each integral is finite, since the product variation has every
+polynomial moment. The absolute error even has the lower bound
+$576T^2$ under the normalized variation probability
+$|\mu_N|/A_4^N$. Thus neither ordinary probability convergence to
+$-24T$ under those probability laws nor an $L^2$ isometry can be
+read from~\eqref{eq:signedquarticerror}. The signed identity and the
+divergent variation error concern precisely the same native sums.
+
+\subsection{An $L^2$-small deterministic control with a fixed law}
+The proper control scale can be tested before any completed observable
+calculus. If $a$ is constant on finitely many disjoint time intervals
+of lengths $h_j>0$, define its biharmonic signed integral law by the
+pushforward of the product increment law under $\sum_j a_jx_j$.
+Multiplying the native Fourier transforms proves
+\[
+ \int e^{i\xi y}\,d\mathcal L_a(y)
+   =\exp\left(-\xi^4\sum_jh_ja_j^4\right).
+\]
+The sum is the fourth-power control clock, not its second-power norm.
+On $[0,1]$ take the actual step functions
+\[
+ a_n(s)=(n+1)1_{(0,(n+1)^{-4}]}(s),\qquad n\geq0.
+\]
+They belong to both $L^2$ and $L^4$, and exactly
+\[
+ \|a_n\|_2=(n+1)^{-1}\longrightarrow0,\qquad
+ \int_0^1 a_n^4=1.
+\]
+Thus $\widehat{\mathcal L_{a_n}}(1)=e^{-1}$ for every $n$, whereas
+the zero control gives the Dirac law with Fourier value one.
+Any scalar functional on $L^2$ agreeing with these native Fourier
+values and equal to one at zero is discontinuous at zero, by this
+explicit convergent sequence. A weakly continuous law extension
+agreeing with the native laws is likewise impossible, since the
+real and imaginary parts of $e^{iy}$ are bounded continuous tests.
+This concerns a plain $L^2$ input norm for the fourth-order integral;
+it does not contradict the factorial observable-domain theorem or
+an extension on a stronger fourth-power control norm.
+
+The formal source uses Fourier phases $e^{2\pi i\xi y}$, so its
+unit-frequency witness is $e^{-(2\pi)^4}$ rather than $e^{-1}$.
+We use the angular-frequency convention fixed at the start of this
+paper. These are the same physical signed laws at correspondingly
+rescaled frequencies, with the same strict failure of continuity.
+
+\subsection{The last complementary derivative channel is essential}
+Return to the analytic completion and assume $p>2$. Let $X$ be the
+terminal coordinate polynomial at horizon $T$. On the polynomial
+core its signed mean and pairing satisfy
+\[
+ \E_T(X^{p-1})=0,\qquad J_T(X^{p-1})(X)=p!cT\ne0.
+\]
+Both follow directly from~\eqref{eq:moments}.
+For $1\leq q\leq p-2$ one has $p-q\geq2$. Since $X$ is linear,
+$D_s^{p-q}X=0$ for every $s$, and the channel definition
+\eqref{eq:channel} gives
+\[
+ (I_q A)(X)=0\qquad\text{for every admissible field }A.
+\]
+Every sum of those channels annihilates $X$, whereas the centered
+pairing of $X^{p-1}$ does not. Hence those channels alone cannot
+reconstruct that observable. In particular the first channel alone
+fails. In the full $p-1$ formula, only its last channel can contribute
+to this particular terminal test. This proves necessity of the last
+complementary-derivative channel for the displayed reconstruction;
+it does not prove an arbitrary general minimality theorem or
+injectivity of channel synthesis. The original first-channel
+obstruction is formalized; the statement about all earlier channels
+is the same explicitly proved derivative calculation applied to
+\eqref{eq:channel}.
+
 \section{Verified source and literature boundary}
 The mathematical source is the frozen Git commit
 \begin{center}\small\ttfamily
@@ -676,7 +835,7 @@ name in this exposition.
 The primary comparison in~\cite{bcm}, especially its discussion
 leading to Theorem 18, already retains lower power increments
 in a generalized It\^o calculus for complex random-walk
-approximations. Its expected chain-rule formula is distinct from
+approximations. Its primary introduction also explicitly discusses failure of ordinary signed path-measure realization; our finite-variation obstruction is classical context, with all actual kernel/scaling details proved here. Its expected chain-rule formula is distinct from
 the present completed real signed-cylinder test-dual identity.
 That distinction is a comparison of the stated constructions,
 not a proof of priority for the present one.

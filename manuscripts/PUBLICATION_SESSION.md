@@ -223,3 +223,7 @@ The sixth-order companion expands from eight to twelve pages with a full actual-
 ## Retained Gaussian dynamics, closed-gradient distance and dephasing
 
 The triad companion expands from eight to ten pages with full raw-phase/Leray/ODE/global-invariance proofs, actual original nonzero second-chaos divergence-free field and exact gradient-distance identity, coordinate Gaussian dephasing and conserved correlations/unitary action. 187 total exact frozen correspondences; seventeen exact algebra checks pass. Every revised page inspected; new proof/reference pages enlarged, final two-pass build clean. Classical Koopman antecedent credited. Twenty-five reviewed drafts total 245 pages.
+
+## Actual signed reconstruction obstructions
+
+Expanded signed multichannel from eleven to thirteen pages: complete kernel scaling/variation, signed quartic cancellation versus absolute error, L2-small fixed-clock controls and necessary final complementary channel. Exact frozen maps distinguish formal fixed-step and first-channel declarations from printed stronger deductions. 86 total correspondences; seven finite checks pass. All pages inspected, final four enlarged, clean compilation and fresh receipts. Twenty-five drafts total 247 pages.
