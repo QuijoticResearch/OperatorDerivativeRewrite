@@ -1,0 +1,564 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1.05in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
+\newcommand{\T}{\mathbb T}\newcommand{\D}{\mathbb D}
+\newcommand{\Ent}{\operatorname{Ent}}
+\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
+\title{An explicit nonreversible Cauchy semigroup\protect\\
+on the circle: kernel, generator and entropy}
+\author{Project Stardust}
+\date{Reviewed editorial draft, October 29, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+A fractional circle generator with sine drift admits an
+explicit transition kernel obtained by harmonic extension
+along a rational disk flow. We construct its conservative
+Feller semigroup and invariant wrapped Cauchy law, identify
+the full generator graph on continuous functions and its
+Laplace resolvent, and prove graph density of time-smoothed
+trigonometric data. For every initial probability law the
+positive-time forward density has finite relative entropy.
+Its exact entropy production is a singular jump-Bregman
+integral, even though the generator is nonsymmetric under
+its invariant law. An elementary nonsharp modified
+logarithmic-Sobolev bound yields exponential decay from
+initial time, with infinite initial entropy allowed.
+The proof avoids assigning an unproved backward-generator
+domain to a logarithmic density. The construction belongs
+to classical harmonic and semigroup theory and is related
+to known Cauchy-driven phase dynamics. Exact statements
+are mapped to a frozen Lean development; novelty is unresolved.
+\end{abstract}
+
+\section{The circle flow and the conclusions}
+Let $\T=\{z\in\C:|z|=1\}$ and let $m$ be normalized
+Haar measure, so in angle coordinates $dm=d\theta/(2\pi)$.
+For $a\in\D$, the Poisson kernel is
+\[
+ p_a(w)=\frac{1-|a|^2}{|w-a|^2},\qquad w\in\T.
+\]
+It is a positive probability density with respect to $m$.
+Fix a real parameter $|q|<1$, and put
+\begin{equation}\label{eq:parameters}
+ r=\frac{2q}{1-q^2},\qquad
+ \alpha=\frac{1+q^2}{1-q^2},\qquad
+ c_q=\frac{1-|q|}{2(1+|q|)}.
+\end{equation}
+For $0\leq\lambda\leq1$ define
+\begin{equation}\label{eq:flow}
+ F_\lambda(z)=
+ \frac{q(1-\lambda)+(q^2+\lambda)z}
+      {1+q^2\lambda+q(1-\lambda)z},\qquad
+ \phi_t=F_{e^{-\alpha t}}\quad(t\geq0).
+\end{equation}
+For $t>0$ define the transition probability
+\begin{equation}\label{eq:kernel}
+ K_t(z,dw)=p_{\phi_t(z)}(w)\,m(dw),\qquad
+ K_0(z,\cdot)=\delta_z,
+\end{equation}
+and $P_tf(z)=\int f(w)K_t(z,dw)$. Our invariant reference
+law is $\nu_q(dw)=p_q(w)m(dw)$.
+
+\begin{theorem}\label{thm:main}
+The kernels \eqref{eq:kernel} form a conservative Markov
+semigroup. On $C(\T;\C)$, $P_t$ is a strongly continuous
+positive contraction semigroup with invariant probability
+$\nu_q$. Its closed generator $A$ acts on trigonometric
+polynomials as
+\begin{equation}\label{eq:generator}
+ A=-|D_\theta|-r\sin\theta\,\partial_\theta,
+ \qquad |D_\theta|e^{in\theta}=|n|e^{in\theta}.
+\end{equation}
+Its full graph is characterized by
+\begin{equation}\label{eq:graph}
+ (f,g)\in\operatorname{graph}A
+ \quad\Longleftrightarrow\quad
+ P_tf-f=\int_0^tP_sg\,ds\quad\hbox{for every }t\geq0.
+\end{equation}
+Time averages of trigonometric polynomials are graph
+dense. For $\beta>0$ the positive Laplace resolvent
+$R_\beta f=\int_0^\infty e^{-\beta t}P_tf\,dt$
+is the inverse of $\beta-A$, with norm at most $1/\beta$.
+
+For every Borel probability measure $\mu$, write
+$\mu_t=\mu K_t$. At every $t>0$ it has a positive
+continuous density $f_t=d\mu_t/d\nu_q$, and
+\begin{equation}\label{eq:entropyderivative}
+ \frac{d}{dt}D(\mu_t\Vert\nu_q)
+ =-\int_{\T^2}\frac{2\,B(f_t(z),f_t(w))}
+ {|w-z|^2p_q(w)}\,\nu_q(dz)\nu_q(dw),
+\end{equation}
+where $B(a,b)=a\log(a/b)-a+b$ and the diagonal integrand
+is defined to be zero. The integral is finite, and
+\begin{equation}\label{eq:entropybound}
+ D(\mu_t\Vert\nu_q)\leq e^{-c_qt}D(\mu\Vert\nu_q),
+ \qquad t\geq0,
+\end{equation}
+in the extended nonnegative reals. The invariant law is
+unique. For $q\ne0$ the generator is not Hermitian even
+on its finite Fourier domain in $L^2(\nu_q)$.
+\end{theorem}
+
+Here $D(\mu\Vert\nu)=\int f\log f\,d\nu$ when
+$\mu=f\nu$ and this integral is finite, with the usual
+extended-value definition otherwise. The constant $c_q$
+is a convenient lower bound, not a sharp entropy constant.
+The generator graph is on continuous functions with the
+supremum norm. We will not identify it with an unproved
+Sobolev domain or replace the smoothed graph core by an
+unsmoothed-core assertion.
+
+\section{Disk geometry and harmonic transition kernels}
+The denominator in \eqref{eq:flow} has modulus at least
+$1+q^2\lambda-|q|(1-\lambda)>0$ on the closed disk.
+Writing its numerator and denominator as $N$ and $H$,
+direct multiplication gives
+\begin{align}\label{eq:defect}
+ |H|^2-|N|^2={}&(1-\lambda)^2(1-q^2)|1+qz|^2\notag\\
+ &+\lambda^2(1+q^2)^2(1-|z|^2)\notag\\
+ &+2\lambda(1-\lambda)(1+q^2)(1-q^2|z|^2).
+\end{align}
+All terms are nonnegative on $\overline\D$, and the first
+is strictly positive for $\lambda<1$. Thus $F_\lambda$
+maps the closed disk strictly into $\D$ when $\lambda<1$,
+and $F_1(z)=z$. Each map is holomorphic on a neighborhood
+of the closed disk.
+
+The matrix defining this fractional-linear map is
+\[
+ M_\lambda=\begin{pmatrix}q^2+\lambda&q(1-\lambda)\\
+ q(1-\lambda)&1+q^2\lambda\end{pmatrix}.
+\]
+Its eigenvectors $(q,1)$ and $(1,-q)$ have eigenvalues
+$1+q^2$ and $\lambda(1+q^2)$, respectively. Hence
+$M_\lambda M_\eta=(1+q^2)M_{\lambda\eta}$, proving
+\begin{equation}\label{eq:composition}
+ \phi_{s+t}=\phi_s\circ\phi_t,\qquad
+ \phi_0(z)=z,\qquad \phi_t(q)=q.
+\end{equation}
+Differentiating \eqref{eq:flow} at time zero gives
+\begin{equation}\label{eq:velocity}
+ \left.\partial_t\phi_t(z)\right|_{t=0}
+   =V(z):=-z+\frac{q}{1-q^2}(1-z^2).
+\end{equation}
+The denominator lower bound makes this differentiation
+uniform on the closed disk. It also gives joint continuity
+in $t,z$ and uniform convergence $\phi_t(z)\to z$ as
+$t\downarrow0$.
+
+For $f\in C(\T;\C)$, let $u_f$ be its harmonic Poisson
+extension to the disk, continuous up to the boundary.
+Then
+\[
+ P_tf(z)=u_f(\phi_t(z)).
+\]
+The function $u_f\circ\phi_s$ is harmonic in $\D$ and
+continuous on its closure. Its boundary values are
+$P_sf$. The uniqueness of the Dirichlet problem therefore
+gives $u_{P_sf}=u_f\circ\phi_s$, whence
+\[
+ P_tP_sf=u_f\circ\phi_s\circ\phi_t=P_{s+t}f.
+\]
+Equality on continuous functions determines finite Borel
+measures on the compact circle. This proves the exact
+Chapman--Kolmogorov identity for \eqref{eq:kernel}, not
+just agreement of a formal generator.
+
+The Poisson kernel is nonnegative with integral one,
+so $P_t$ is positive, preserves constants, and is a
+supremum-norm contraction. Continuity of $u_f\circ\phi_t$
+proves the Feller property. For strong continuity at zero,
+use uniform continuity of $u_f$ on $\overline\D$ and
+uniform convergence of $\phi_t$ to the identity.
+One can also verify boundary continuity of the Poisson
+extension directly: split its integral into a small arc
+where $f$ oscillates little and its complement, where
+$p_a(w)\leq(1-|a|^2)/(\varepsilon-|a-z|)^2$ tends
+uniformly to zero as $a\to z\in\T$.
+
+Finally $\int_\T f\,d\nu_q=u_f(q)$, so
+\[
+ \int_\T P_tf\,d\nu_q=u_{P_tf}(q)
+ =u_f(\phi_t(q))=u_f(q).
+\]
+This proves invariance. The kernels are Borel measurable
+in their initial point because their positive-time
+densities are jointly continuous, and at zero they are
+the measurable identity kernel.
+
+\section{The closed generator and the precise graph core}
+For $n\geq0$, the Poisson moment identity gives
+\begin{equation}\label{eq:modes}
+ P_t(z^n)=\phi_t(z)^n,\qquad
+ P_t(\bar z^n)=\overline{\phi_t(z)}^{\,n}.
+\end{equation}
+Uniform differentiation using \eqref{eq:velocity} shows
+that these modes belong to the continuous-function
+generator domain. For $n\geq1$,
+\[
+ Az^n=-nz^n+\frac{nr}{2}(z^{n-1}-z^{n+1}),
+\]
+with the conjugate formula for negative frequencies and
+$A1=0$. Since $\partial_\theta z^n=in z^n$,
+these are exactly \eqref{eq:generator}. This statement
+concerns actual supremum-norm difference quotients.
+
+Define $f\in D(A)$ when
+$h^{-1}(P_hf-f)$ has a supremum-norm limit $g$ as
+$h\downarrow0$, and set $Af=g$. The limit is unique.
+
+\begin{proposition}\label{prop:graph}
+The equivalence \eqref{eq:graph} holds, and its right-hand
+side defines a closed linear graph.
+\end{proposition}
+\begin{proof}
+If $Af=g$, the semigroup identity gives the right derivative
+$\partial_t^+P_tf=P_tg$. For $t>0$ the left difference
+quotient is
+$P_{t-h}(P_hf-f)/h$, also tending to $P_tg$ by
+contraction and strong continuity. Thus the orbit is
+differentiable for $t>0$ with continuous derivative
+$P_tg$, and the vector-valued fundamental theorem of
+calculus gives \eqref{eq:graph}.
+
+Conversely, divide that identity by $t$ and let
+$t\downarrow0$. Strong continuity gives
+$t^{-1}\int_0^tP_sg\,ds\to g$, so $f\in D(A)$ and
+$Af=g$.
+For a convergent sequence of graph pairs $(f_n,g_n)$,
+contraction bounds the difference of the integrals by
+$t\|g_n-g\|_\infty$. Pass to the limit in
+\eqref{eq:graph}; the limiting pair is again in the graph.
+Linearity follows from the same identity.
+\end{proof}
+
+For $h>0$ define the time average
+\begin{equation}\label{eq:average}
+ J_h f=\frac1h\int_0^hP_sf\,ds.
+\end{equation}
+A shift of the integration interval gives
+\begin{equation}\label{eq:averagegraph}
+ J_hf\in D(A),\qquad AJ_hf=(P_hf-f)/h.
+\end{equation}
+Indeed $(P_tJ_hf-J_hf)/t$ is $1/h$ times the
+difference of the averages of $P_sf$ on $[h,h+t]$
+and $[0,t]$. Letting $t\downarrow0$ proves the formula.
+Since $J_hf\to f$, the generator domain is dense.
+If $f\in D(A)$, \eqref{eq:graph} also gives
+$AJ_hf=J_hAf\to Af$, so these averages approximate in
+the full graph norm.
+
+Let $\mathcal P$ be the real-and-complex trigonometric
+polynomials. They are uniformly dense in $C(\T;\C)$.
+For fixed $h>0$, the map
+\[
+ f\longmapsto \bigl(J_hf,(P_hf-f)/h\bigr)
+\]
+is continuous into the product of supremum-norm spaces:
+its two component norms are bounded by $1$ and $2/h$.
+For a graph pair $(f,Af)$, first choose $h$ small enough
+that its averaged pair is close; then choose
+$p\in\mathcal P$ close enough to $f$ that the corresponding
+averaged pair is close. Consequently
+\begin{equation}\label{eq:core}
+ \overline{\{(J_hp,AJ_hp):h>0,\ p\in\mathcal P\}}
+       =\operatorname{graph}A.
+\end{equation}
+This is the precise smoothed core assertion. It does
+not identify the closure of the unsmoothed polynomial graph.
+
+\section{Laplace resolvent on the full domain}
+For $\beta>0$, contraction makes the Bochner integral
+\[
+ R_\beta f=\int_0^\infty e^{-\beta t}P_tf\,dt
+\]
+absolutely convergent, with norm at most
+$\|f\|_\infty/\beta$. It is positive on real nonnegative
+inputs. For a finite integral $u_T=\int_0^T
+e^{-\beta t}P_tf\,dt$, the shifted-orbit identity is
+\[
+ P_hu_T=e^{\beta h}\int_h^{T+h}e^{-\beta s}P_sf\,ds.
+\]
+Differentiate at $h=0$ from the right to obtain
+\begin{equation}\label{eq:finitelaplace}
+ u_T\in D(A),\qquad
+ Au_T=\beta u_T+e^{-\beta T}P_Tf-f.
+\end{equation}
+The tails of both sides converge in supremum norm.
+Closedness of the graph gives
+\begin{equation}\label{eq:rightinverse}
+ R_\beta f\in D(A),\qquad (\beta-A)R_\beta f=f.
+\end{equation}
+For $u\in D(A)$, the orbit derivative from
+Proposition~\ref{prop:graph} yields
+\[
+ \frac{d}{dt}(e^{-\beta t}P_tu)
+ =-e^{-\beta t}P_t(\beta u-Au).
+\]
+Integrate from zero to infinity; the endpoint at infinity
+vanishes by contraction. Hence
+$R_\beta(\beta u-Au)=u$ as well.
+This proves the full-domain inverse formula and the bound
+\[
+ \beta\|u\|_\infty\leq\|\beta u-Au\|_\infty.
+\]
+No self-adjointness was used. The next calculation shows
+why it would be inappropriate to insert it.
+
+\section{An exact nonsymmetry witness}
+Under $\nu_q$, the Poisson moments satisfy
+$\int z^n\,d\nu_q=q^n$ for $n\geq0$.
+Use $f(z)=z$ and $g(z)=z^2$, both in the finite
+Fourier generator domain. Since $q$ and $r$ are real,
+\begin{align*}
+ \langle f,Ag\rangle_{L^2(\nu_q)}
+ &=-2q+r(1-q^2)=0,\\
+ \langle Af,g\rangle_{L^2(\nu_q)}
+ &=-q+\tfrac r2(q^2-1)=-2q.
+\end{align*}
+Here the inner product is conjugate linear in its first
+argument. If $q\ne0$ the pairings differ. Thus no
+Hermitian realization agreeing with this core can be
+inferred from the invariant Poisson law.
+Invariance, positivity and entropy decay remain valid;
+they do not require reversibility.
+
+\section{Forward densities and a stationary Bregman identity}
+For an arbitrary probability measure $\mu$, Fubini gives
+the positive-time density relative to $\nu_q$:
+\begin{equation}\label{eq:density}
+ f_t(w)=\int_\T
+       \frac{p_{\phi_t(z)}(w)}{p_q(w)}\,\mu(dz).
+\end{equation}
+The ratio is jointly continuous and strictly positive
+on the compact product circle for fixed $t>0$. It has
+a positive minimum and finite maximum, independent of
+$\mu$. On every compact time interval inside $(0,\infty)$,
+the denominators stay uniformly away from zero. Ordinary
+differentiation of the rational kernel, uniformly in
+$z,w$, proves that $t\mapsto f_t$ is continuously
+differentiable in supremum norm. The same denominator
+bound gives a bounded angular derivative in $w$, hence
+a Lipschitz bound in chord distance on $\T$.
+
+In particular $\int f_t\,d\nu_q=1$ and
+$E(t)=\int f_t\log f_t\,d\nu_q$ is finite and differentiable
+for $t>0$. Positivity and the uniform bounds on compact
+time intervals justify the usual scalar derivative,
+\begin{equation}\label{eq:ordinaryentropy}
+ E'(t)=\int_\T \dot f_t\log f_t\,d\nu_q,
+\end{equation}
+since $\int\dot f_t\,d\nu_q=0$.
+This is a statement about actual forward laws and their
+Radon--Nikodym density, not an assumed backward-generator
+domain for $\log f_t$.
+
+For positive $a,b$, set $B(a,b)=a\log(a/b)-a+b$.
+It is nonnegative by convexity of $s\log s-s$.
+If $f\nu_q$ is a probability law with positive continuous
+$f$, invariance and the two marginals of
+$\nu_q(dz)K_h(z,dw)$ give the exact identity
+\begin{equation}\label{eq:bregmanstep}
+\begin{split}
+ &\int_{\T^2}B(f(z),f(w))\,\nu_q(dz)K_h(z,dw)\\
+ &\qquad=\int_\T f\log f\,d\nu_q
+        -\int_\T\log f\,d((f\nu_q)K_h).
+\end{split}
+\end{equation}
+Indeed expansion of $B$ gives four terms. The first
+integrates to $\int f\log f\,d\nu_q$; the mixed term
+is the last term in \eqref{eq:bregmanstep}; and the two
+linear terms cancel because both stationary marginals
+are $\nu_q$. All integrands are bounded, so Fubini is
+immediate.
+For $f=f_t$, Chapman--Kolmogorov identifies the last
+law as $\mu_{t+h}$. Divide by $h$ and use the
+supremum-norm derivative of $f_t$ to conclude
+\begin{equation}\label{eq:steplimit}
+ \lim_{h\downarrow0}\frac1h
+ \int B(f_t(z),f_t(w))\,\nu_q(dz)K_h(z,dw)=-E'(t).
+\end{equation}
+
+\section{The singular jump limit and its domination}
+Let $v_h(z)=\phi_h(z)$, $z\in\T$.
+Equation \eqref{eq:velocity} gives
+\begin{equation}\label{eq:radial}
+ \left.\frac{d}{dh}(1-|v_h(z)|^2)\right|_{h=0}=2.
+\end{equation}
+To check the independence of $q$, compute
+$-2\operatorname{Re}(\bar z V(z))$.
+The $-z$ term contributes two, while
+$\bar z(1-z^2)=\bar z-z$ is purely imaginary.
+The derivatives are uniform on the compact circle.
+For $z\ne w$ it follows that
+\begin{equation}\label{eq:jump}
+ \frac{p_{v_h(z)}(w)}h\longrightarrow\frac2{|w-z|^2}.
+\end{equation}
+A pointwise limit alone does not justify the singular
+integral in \eqref{eq:entropyderivative}; we give a
+bound that also handles points arbitrarily close to the diagonal.
+
+Uniform differentiability and \eqref{eq:radial} imply
+that, for all sufficiently small $h>0$,
+\[
+ |v_h(z)-z|\leq C h,\qquad
+ h\leq1-|v_h(z)|^2\leq3h,
+\]
+uniformly in $z$. Since $|w-v_h(z)|\geq1-|v_h(z)|\geq h/2$,
+the triangle inequality gives
+\[
+ |w-z|\leq|w-v_h(z)|+Ch
+       \leq(1+2C)|w-v_h(z)|.
+\]
+Consequently
+\begin{equation}\label{eq:domination}
+ h^{-1}p_{v_h(z)}(w)|w-z|^2\leq3(1+2C)^2.
+\end{equation}
+Suppose $f\geq\delta>0$ and
+$|f(z)-f(w)|\leq L|w-z|$. Taylor's integral remainder
+for $s\log s-s$ yields
+\[
+ 0\leq B(f(z),f(w))\leq\frac{L^2}{2\delta}|w-z|^2.
+\]
+Combine this bound with \eqref{eq:domination} and the
+positive lower bound of $p_q$ on the circle.
+The functions
+\[
+ \frac{p_{v_h(z)}(w)}{h\,p_q(w)}B(f(z),f(w))
+\]
+are uniformly bounded on $\T^2$, with value zero when
+$z=w$. Their pointwise limit is the singular integrand
+in \eqref{eq:entropyderivative}, with the stated zero
+diagonal convention. Dominated convergence proves its
+integrability and the equality of its integral with the
+limit in \eqref{eq:steplimit}. Apply this to $f_t$ using
+the positivity and Lipschitz bounds from the preceding
+section. This proves the exact production formula.
+
+The drift contributes no separate square-gradient term
+to this formula. Its effect is retained in $f_t$ and
+the invariant law; \eqref{eq:radial} shows that the
+off-diagonal jump rate is the Cauchy rate. No diffusion
+chain rule or symmetry assumption enters this argument.
+
+\section{A nonsharp entropy inequality and decay from initial time}
+For $w\in\T$,
+\[
+ p_q(w)\leq\frac{1+|q|}{1-|q|},\qquad |w-z|\leq2.
+\]
+Thus away from the diagonal
+$2/(|w-z|^2p_q(w))\geq c_q$.
+Since $B(f(z),f(z))=0$, the product with $B$ satisfies
+the same inequality everywhere under the zero convention.
+For a normalized positive Lipschitz $f$ bounded away
+from zero, Fubini gives
+\begin{align*}
+ \int_{\T^2}B(f(z),f(w))\,d\nu_q(z)d\nu_q(w)
+ &=\int_\T f\log f\,d\nu_q-\int_\T\log f\,d\nu_q\\
+ &\geq\Ent_{\nu_q}(f).
+\end{align*}
+The last step is Jensen's inequality for the logarithm
+and $\int f\,d\nu_q=1$. We have proved the modified
+logarithmic-Sobolev inequality in the exact form
+\begin{equation}\label{eq:mlsi}
+ c_q\Ent_{\nu_q}(f)
+ \leq\int_{\T^2}\frac{2B(f(z),f(w))}{|w-z|^2p_q(w)}
+            \,\nu_q(dz)\nu_q(dw).
+\end{equation}
+This is a jump-Bregman inequality on the displayed
+positive Lipschitz class, rather than a sharp quadratic
+Dirichlet-form logarithmic-Sobolev assertion.
+
+For the actual $f_t$, the production formula implies
+$E'(t)\leq-c_qE(t)$ for $t>0$. Multiplying by
+$e^{c_qt}$ and integrating yields
+\begin{equation}\label{eq:burnin}
+ E(t)\leq e^{-c_q(t-s)}E(s),\qquad0<s\leq t.
+\end{equation}
+To reach initial time, we also need entropy contraction
+without any initial smoothness.
+
+If $D(\mu\Vert\nu_q)<\infty$, write $\mu=f\nu_q$.
+For $h>0$ put $R_h(z,w)=p_{\phi_h(z)}(w)/p_q(w)$.
+Invariance says $\int R_h(z,w)\nu_q(dz)=1$ for
+$\nu_q$-almost every $w$; the row integral is also one.
+The output density is
+$f_h(w)=\int R_h(z,w)f(z)\nu_q(dz)$.
+Apply Jensen's inequality pointwise for the nonnegative
+convex function $\Psi(a)=a\log a-a+1$, then integrate:
+\[
+ \int\Psi(f_h)\,d\nu_q
+ \leq\int\!\int R_h(z,w)\Psi(f(z))\,d\nu_q(z)d\nu_q(w)
+ =\int\Psi(f)\,d\nu_q.
+\]
+Tonelli justifies the extended nonnegative integrals.
+This is $E(h)\leq D(\mu\Vert\nu_q)$. Insert it in
+\eqref{eq:burnin} and let $s\downarrow0$ to obtain
+\eqref{eq:entropybound} when the initial entropy is finite.
+If it is infinite the same extended-value inequality
+is immediate; at $t=0$ it is equality.
+Positive-time finiteness has already been proved directly
+from \eqref{eq:density}, even for singular initial laws.
+
+For any fixed $s>0$, \eqref{eq:burnin} also proves
+$E(t)\to0$ for every initial probability law as
+$t\to\infty$. If a probability measure satisfies
+$\mu K_h=\mu$ for one $h>0$, it has finite entropy by
+positive-time smoothing. Equation \eqref{eq:entropybound}
+then forces $E\leq e^{-c_qh}E$, so $E=0$.
+Strict convexity of $\Psi$ gives $\mu=\nu_q$.
+This proves the uniqueness assertion without a path-space
+construction or a reversibility premise.
+
+\section{Classical context and exact verification scope}
+The Poisson kernel and harmonic-composition construction
+are classical. The pole equation
+$\dot a=-a+(r/2)(1-a^2)$ is also the constant-forcing,
+zero-frequency, unit-noise specialization of the
+Cauchy-driven phase equation in Tanaka~\cite{tanaka},
+equations (9) and (17). Its relation to a known invariant
+family must therefore be acknowledged; we do not present
+the rational pole flow as a new general mechanism.
+The generator/resolvent arguments are standard contraction
+semigroup theory. The complete kernel-to-forward-entropy
+exposition and its precise formal domains are the focus here.
+Priority for this explicit combined formulation has not
+been established.
+
+All mapped statements use the frozen verified baseline
+\begin{center}\small\ttfamily
+bab688bb6140cd6316c80680095a914ea0d346db.
+\end{center}
+The accompanying theorem map covers the actual Markov
+kernels, Feller semigroup, closed generator, smoothed
+core, Laplace resolvent, forward density, stationary
+Bregman identity, singular limit, modified entropy bound
+and finite nonsymmetry witness. The human proof groups
+the same ingredients into harmonic and Banach-space
+arguments; intermediate regroupings are not claimed as
+new named Lean theorems.
+
+The results concern the displayed circle kernels and
+the continuous-function generator. A trajectory law,
+maximal forward-density generator domain, unsmoothed
+Fourier graph-core theorem, sharp entropy constant or
+diffusion curvature estimate is not asserted here.
+In particular an invariant wrapped Cauchy law cannot
+justify replacing the actual nonsymmetric operator by
+a symmetric diffusion.
+
+\begin{thebibliography}{9}
+\bibitem{tanaka} T. Tanaka,
+Low-dimensional dynamics of phase oscillators driven by
+Cauchy noise, primary preprint, arXiv:2009.04273.
+\url{https://arxiv.org/abs/2009.04273}.
+\end{thebibliography}
+\end{document}

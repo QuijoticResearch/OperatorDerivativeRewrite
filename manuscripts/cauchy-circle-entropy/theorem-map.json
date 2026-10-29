@@ -1,0 +1,341 @@
+{
+  "baseline": "bab688bb6140cd6316c80680095a914ea0d346db",
+  "entries": [
+    {
+      "paper": "2: disk defect",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonFlow.disk_defect",
+      "file": "Foundation/CauchyPoissonFlow.lean",
+      "line": 13,
+      "source_sha256": "af6dd5c25ce2e7a692277c0611965b7086ebf9f58bc869e183dcec77b9c956f1",
+      "declaration_header": "theorem disk_defect (q l : \u211d) (z : \u2102) :\n    normSq (denominator q l z)-normSq (numerator q l z) =\n      (1-l)^2*(1-q^2)*normSq (1+(q:\u2102)*z) +\n      l^2*(1+q^2)^2*(1-normSq z) +\n      2*l*(1-l)*(1+q^2)*(1-q^2*normSq z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonFlow.lean#L13"
+    },
+    {
+      "paper": "2: strict disk",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonFlow.flow_strict_disk",
+      "file": "Foundation/CauchyPoissonFlow.lean",
+      "line": 66,
+      "source_sha256": "af6dd5c25ce2e7a692277c0611965b7086ebf9f58bc869e183dcec77b9c956f1",
+      "declaration_header": "theorem flow_strict_disk (q l : \u211d) (hq : |q| < 1) (hl : 0 \u2264 l)\n    (hlt : l < 1) (z : \u2102) (hz : \u2016z\u2016 \u2264 1) : \u2016flow q l z\u2016 < 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonFlow.lean#L66"
+    },
+    {
+      "paper": "2: composition",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonFlow.flow_composition",
+      "file": "Foundation/CauchyPoissonFlow.lean",
+      "line": 81,
+      "source_sha256": "af6dd5c25ce2e7a692277c0611965b7086ebf9f58bc869e183dcec77b9c956f1",
+      "declaration_header": "theorem flow_composition (q l m : \u211d) (hq : |q| < 1)\n    (hl : 0 \u2264 l) (hl1 : l \u2264 1) (hm : 0 \u2264 m) (hm1 : m \u2264 1)\n    (z : \u2102) (hz : \u2016z\u2016 \u2264 1) : flow q l (flow q m z) = flow q (l*m) z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonFlow.lean#L81"
+    },
+    {
+      "paper": "2: actual velocity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonFlow.evolution_derivative_zero",
+      "file": "Foundation/CauchyPoissonFlow.lean",
+      "line": 161,
+      "source_sha256": "af6dd5c25ce2e7a692277c0611965b7086ebf9f58bc869e183dcec77b9c956f1",
+      "declaration_header": "theorem evolution_derivative_zero (q : \u211d) (hq : |q| < 1) (z : \u2102) :\n    HasDerivAt (fun t : \u211d => evolution q t z)\n      (-z+(q:\u2102)/(1-(q:\u2102)^2)*(1-z^2)) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonFlow.lean#L161"
+    },
+    {
+      "paper": "2: actual Markov kernels",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonMarkovKernel.kernel_markov",
+      "file": "Foundation/CauchyPoissonMarkovKernel.lean",
+      "line": 48,
+      "source_sha256": "8a57b3a9ed15cb80c4736215b4527612cdbfb57919e736419f77144c3cf2c4f2",
+      "declaration_header": "theorem kernel_markov (q t : \u211d) (hq : |q| < 1) (ht : 0 \u2264 t) : IsMarkovKernel (kernel q t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonMarkovKernel.lean#L48"
+    },
+    {
+      "paper": "2: Chapman\u2013Kolmogorov",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonMarkovKernel.kernel_composition",
+      "file": "Foundation/CauchyPoissonMarkovKernel.lean",
+      "line": 139,
+      "source_sha256": "8a57b3a9ed15cb80c4736215b4527612cdbfb57919e736419f77144c3cf2c4f2",
+      "declaration_header": "theorem kernel_composition (q s t : \u211d) (hq : |q| < 1) (hs : 0 \u2264 s) (ht : 0 \u2264 t) :\n    (kernel q t) \u2218\u2096 (kernel q s) = kernel q (s+t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonMarkovKernel.lean#L139"
+    },
+    {
+      "paper": "2: invariant probability",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonMarkovKernel.kernel_invariant",
+      "file": "Foundation/CauchyPoissonMarkovKernel.lean",
+      "line": 166,
+      "source_sha256": "8a57b3a9ed15cb80c4736215b4527612cdbfb57919e736419f77144c3cf2c4f2",
+      "declaration_header": "theorem kernel_invariant (q t : \u211d) (hq : |q| < 1) (ht : 0 \u2264 t) :\n    (invariantLaw q).bind (kernel q t) = invariantLaw q",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonMarkovKernel.lean#L166"
+    },
+    {
+      "paper": "2: Feller property",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonFeller.feller",
+      "file": "Foundation/CauchyPoissonFeller.lean",
+      "line": 52,
+      "source_sha256": "c9800358e3b779a3392a68e9baab6244794f1f824a07f7d2cd3fa0e66d85442c",
+      "declaration_header": "theorem feller (q t : \u211d) (hq : |q| < 1) (ht : 0 \u2264 t) (f : C(Circle,\u2102)) :\n    Continuous (fun z : Circle => \u222b w, f w \u2202kernel q t z)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonFeller.lean#L52"
+    },
+    {
+      "paper": "2: contraction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonFeller.operator_contraction",
+      "file": "Foundation/CauchyPoissonFeller.lean",
+      "line": 94,
+      "source_sha256": "c9800358e3b779a3392a68e9baab6244794f1f824a07f7d2cd3fa0e66d85442c",
+      "declaration_header": "theorem operator_contraction (q t : \u211d) (hq : |q| < 1) (ht : 0 \u2264 t) : \u2016operator q t hq ht\u2016 \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonFeller.lean#L94"
+    },
+    {
+      "paper": "2: strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonConcentration.operator_strong_continuity",
+      "file": "Foundation/CauchyPoissonConcentration.lean",
+      "line": 183,
+      "source_sha256": "db8b60cc081ddffdef3bee4ae0e6c9b8ec33b0cdc3634846e1c37daa996949e7",
+      "declaration_header": "theorem operator_strong_continuity (q : \u211d) (hq : |q| < 1) (f : C(Circle,\u2102)) :\n    Continuous (fun t : {t : \u211d // 0 \u2264 t} => operator q t hq t.property f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonConcentration.lean#L183"
+    },
+    {
+      "paper": "3: actual finite-mode tangent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonCoreGenerator.core_tangent",
+      "file": "Foundation/CauchyPoissonCoreGenerator.lean",
+      "line": 154,
+      "source_sha256": "ed31231b5a5d31af779fb7af3fd67c53e9085244b6193aa9467399d5b11dc27c",
+      "declaration_header": "theorem core_tangent (q : \u211d) (hq : |q| < 1) (N : \u2115) (a b : Fin N \u2192 \u2102) :\n    Tendsto (fun t : \u211d => t\u207b\u00b9 \u2022 (orbit q hq (coreValue N a b) t-coreValue N a b))\n      (\ud835\udcdd[Set.Ioi 0] 0) (\ud835\udcdd (coreGenerator q N a b))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonCoreGenerator.lean#L154"
+    },
+    {
+      "paper": "3: integrated graph",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonGeneratorDomain.tangent_iff_integrated",
+      "file": "Foundation/CauchyPoissonGeneratorDomain.lean",
+      "line": 84,
+      "source_sha256": "e450524c979142cd145d7bba012253efcff8fdf0781e60343476cff8d57b1ef4",
+      "declaration_header": "theorem tangent_iff_integrated (q : \u211d) (hq : |q| < 1) (f g : C(Circle,\u2102)) :\n    Tangent q hq f g \u2194 Integrated q hq f g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonGeneratorDomain.lean#L84"
+    },
+    {
+      "paper": "3: graph closedness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonGeneratorDomain.generator_closed",
+      "file": "Foundation/CauchyPoissonGeneratorDomain.lean",
+      "line": 148,
+      "source_sha256": "e450524c979142cd145d7bba012253efcff8fdf0781e60343476cff8d57b1ef4",
+      "declaration_header": "theorem generator_closed (q : \u211d) (hq : |q| < 1) : (generator q hq).IsClosed",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonGeneratorDomain.lean#L148"
+    },
+    {
+      "paper": "3: full domain",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonGeneratorDomain.domain_iff",
+      "file": "Foundation/CauchyPoissonGeneratorDomain.lean",
+      "line": 153,
+      "source_sha256": "e450524c979142cd145d7bba012253efcff8fdf0781e60343476cff8d57b1ef4",
+      "declaration_header": "theorem domain_iff (q : \u211d) (hq : |q| < 1) (f : C(Circle,\u2102)) :\n    f \u2208 (generator q hq).domain \u2194 \u2203 g, Tangent q hq f g",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonGeneratorDomain.lean#L153"
+    },
+    {
+      "paper": "3: smoothed graph core",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonSmoothedCore.smoothedPairs_closure",
+      "file": "Foundation/CauchyPoissonSmoothedCore.lean",
+      "line": 52,
+      "source_sha256": "b747cebc91727eb7be2fe9ddaa274b44ea19997b0e36677cc0c16b4c01520126",
+      "declaration_header": "theorem smoothedPairs_closure (q : \u211d) (hq : |q| < 1) :\n    closure (smoothedPairs q hq) = ((generator q hq).graph : Set (C(Circle,\u2102) \u00d7 C(Circle,\u2102)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonSmoothedCore.lean#L52"
+    },
+    {
+      "paper": "4: finite Laplace graph",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonLaplaceResolvent.finiteLaplace_graph",
+      "file": "Foundation/CauchyPoissonLaplaceResolvent.lean",
+      "line": 47,
+      "source_sha256": "3249fcdba9e53608435815a3e47ccf11190ce676c40c8c58e4967b9058a9bf48",
+      "declaration_header": "theorem finiteLaplace_graph (q : \u211d) (hq : |q| < 1) (r : \u211d) (f : C(Circle,\u2102))\n    (T : \u211d) (hT : 0 \u2264 T) :\n    (finiteLaplace q hq r f T,r \u2022 finiteLaplace q hq r f T+weightedOrbit q hq r f T-f) \u2208\n      (generator q hq).graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonLaplaceResolvent.lean#L47"
+    },
+    {
+      "paper": "4: full resolvent",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonLaplaceResolvent.graph_iff_resolvent",
+      "file": "Foundation/CauchyPoissonLaplaceResolvent.lean",
+      "line": 175,
+      "source_sha256": "3249fcdba9e53608435815a3e47ccf11190ce676c40c8c58e4967b9058a9bf48",
+      "declaration_header": "theorem graph_iff_resolvent (q : \u211d) (hq : |q| < 1) (r : \u211d) (hr : 0 < r) (f g : C(Circle,\u2102)) :\n    (f,g) \u2208 (generator q hq).graph \u2194 resolvent q hq r hr (r \u2022 f-g)=f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonLaplaceResolvent.lean#L175"
+    },
+    {
+      "paper": "4: resolvent norm",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonLaplaceResolvent.resolvent_norm",
+      "file": "Foundation/CauchyPoissonLaplaceResolvent.lean",
+      "line": 158,
+      "source_sha256": "3249fcdba9e53608435815a3e47ccf11190ce676c40c8c58e4967b9058a9bf48",
+      "declaration_header": "theorem resolvent_norm (q : \u211d) (hq : |q| < 1) (r : \u211d) (hr : 0 < r) :\n    \u2016resolvent q hq r hr\u2016 \u2264 r\u207b\u00b9",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonLaplaceResolvent.lean#L158"
+    },
+    {
+      "paper": "5: forward witness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonNonSymmetry.actual_forward_pairing",
+      "file": "Foundation/CauchyPoissonNonSymmetry.lean",
+      "line": 115,
+      "source_sha256": "cfb21d045ccae0713496e5f78046c51026157fca54626477a3f0d01961e8ea0c",
+      "declaration_header": "theorem actual_forward_pairing (q : \u211d) (hq : |q| < 1) :\n    (\u222b \u03b8, starRingEnd \u2102 (synthesis ![\u03b8,0,0] (mode 1)) *\n      synthesis ![\u03b8,0,0] (drift (2*q/(1-q^2)) (mode 2)) \u2202law q) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonNonSymmetry.lean#L115"
+    },
+    {
+      "paper": "5: backward witness",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonNonSymmetry.actual_backward_pairing",
+      "file": "Foundation/CauchyPoissonNonSymmetry.lean",
+      "line": 121,
+      "source_sha256": "cfb21d045ccae0713496e5f78046c51026157fca54626477a3f0d01961e8ea0c",
+      "declaration_header": "theorem actual_backward_pairing (q : \u211d) (hq : |q| < 1) :\n    (\u222b \u03b8, starRingEnd \u2102 (synthesis ![\u03b8,0,0] (drift (2*q/(1-q^2)) (mode 1))) *\n      synthesis ![\u03b8,0,0] (mode 2) \u2202law q) = -2*(q:\u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonNonSymmetry.lean#L121"
+    },
+    {
+      "paper": "5: nonsymmetry",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonNonSymmetry.not_hermitian_core",
+      "file": "Foundation/CauchyPoissonNonSymmetry.lean",
+      "line": 127,
+      "source_sha256": "cfb21d045ccae0713496e5f78046c51026157fca54626477a3f0d01961e8ea0c",
+      "declaration_header": "theorem not_hermitian_core (q : \u211d) (hq : |q| < 1) (hne : q \u2260 0) :\n    \u00ac (\u2200 f g : Fourier,\n      (\u222b \u03b8, starRingEnd \u2102 (synthesis ![\u03b8,0,0] f) *\n        synthesis ![\u03b8,0,0] (drift (2*q/(1-q^2)) g) \u2202law q) =\n      (\u222b \u03b8, starRingEnd \u2102 (synthesis ![\u03b8,0,0] (drift (2*q/(1-q^2)) f)) *\n        synthesis ![\u03b8,0,0] g \u2202law q))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonNonSymmetry.lean#L127"
+    },
+    {
+      "paper": "6: actual forward measure",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonForwardDensity.forward_density",
+      "file": "Foundation/CauchyPoissonForwardDensity.lean",
+      "line": 128,
+      "source_sha256": "206e6b6d8ba2e46000f4018d91700383aa6dc13ab0f539878e0086185b89c150",
+      "declaration_header": "theorem forward_density (q t : \u211d) (hq : |q| < 1) (ht : 0 < t)\n    (\u03bc : Measure Circle) [IsProbabilityMeasure \u03bc] :\n    (invariantLaw q).withDensity (fun w => ENNReal.ofReal (density q t \u03bc w)) =\n      (kernel q t) \u2218\u2098 \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonForwardDensity.lean#L128"
+    },
+    {
+      "paper": "6: actual Radon\u2013Nikodym representative",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonForwardDensity.density_rnDeriv",
+      "file": "Foundation/CauchyPoissonForwardDensity.lean",
+      "line": 151,
+      "source_sha256": "206e6b6d8ba2e46000f4018d91700383aa6dc13ab0f539878e0086185b89c150",
+      "declaration_header": "theorem density_rnDeriv (q t : \u211d) (hq : |q| < 1) (ht : 0 < t)\n    (\u03bc : Measure Circle) [IsProbabilityMeasure \u03bc] :\n    ((kernel q t) \u2218\u2098 \u03bc).rnDeriv (invariantLaw q) =\u1d50[invariantLaw q]\n      fun w => ENNReal.ofReal (density q t \u03bc w)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonForwardDensity.lean#L151"
+    },
+    {
+      "paper": "6: density derivative",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonDensitySmooth.densityCurve_hasDerivAt",
+      "file": "Foundation/CauchyPoissonDensitySmooth.lean",
+      "line": 206,
+      "source_sha256": "da317a486b8a6db194094da72f1d5c16349d3fb18b5ef8c6d632675706a85585",
+      "declaration_header": "theorem densityCurve_hasDerivAt (q t : \u211d) (hq : |q| < 1) (ht : 0 < t)\n    (\u03bc : Measure Circle) [IsProbabilityMeasure \u03bc] :\n    HasDerivAt (densityCurve q hq \u03bc) (deriv (densityCurve q hq \u03bc) t) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonDensitySmooth.lean#L206"
+    },
+    {
+      "paper": "6: density spatial Lipschitz bound",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonSpatialDensity.density_lipschitz",
+      "file": "Foundation/CauchyPoissonSpatialDensity.lean",
+      "line": 102,
+      "source_sha256": "467086a74cd90bf0bdb917fd2592894d0a11eefe1fc06a5e770a91e9fac8338e",
+      "declaration_header": "theorem density_lipschitz (q t : \u211d) (hq : |q| < 1) (ht : 0 < t) :\n    \u2203 L : \u211d, 0 \u2264 L \u2227 \u2200 (\u03bc : Measure Circle) [IsProbabilityMeasure \u03bc], \u2200 w u : Circle,\n      |density q t \u03bc w-density q t \u03bc u| \u2264 L*\u2016(w:\u2102)-(u:\u2102)\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonSpatialDensity.lean#L102"
+    },
+    {
+      "paper": "6: positive lower density",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonSpatialDensity.density_lower",
+      "file": "Foundation/CauchyPoissonSpatialDensity.lean",
+      "line": 114,
+      "source_sha256": "467086a74cd90bf0bdb917fd2592894d0a11eefe1fc06a5e770a91e9fac8338e",
+      "declaration_header": "theorem density_lower (q t : \u211d) (hq : |q| < 1) (ht : 0 < t)\n    (\u03bc : Measure Circle) [IsProbabilityMeasure \u03bc] :\n    \u2203 \u03b4 : \u211d, 0 < \u03b4 \u2227 \u2200 w : Circle, \u03b4 \u2264 density q t \u03bc w",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonSpatialDensity.lean#L114"
+    },
+    {
+      "paper": "6: stationary Bregman step",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonBregmanStep.actual_step_identity",
+      "file": "Foundation/CauchyPoissonBregmanStep.lean",
+      "line": 114,
+      "source_sha256": "6d7c685844359daa6fb30172bb089aa3065ba3e9e2e538df619ce4aaaa0e372d",
+      "declaration_header": "theorem actual_step_identity (q t h : \u211d) (hq : |q| < 1) (ht : 0 < t) (hh : 0 \u2264 h)\n    (\u03bc : Measure Circle) [IsProbabilityMeasure \u03bc] :\n    (\u222b p, bregman (density q t \u03bc p.1) (density q t \u03bc p.2) \u2202(invariantLaw q) \u2297\u2098 kernel q h) =\n      (\u222b z, Real.log (density q t \u03bc z) \u2202(kernel q t) \u2218\u2098 \u03bc) -\n        \u222b z, Real.log (density q t \u03bc z) \u2202(kernel q (t+h)) \u2218\u2098 \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonBregmanStep.lean#L114"
+    },
+    {
+      "paper": "7: radial defect",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonJumpLimit.radial_defect_derivative",
+      "file": "Foundation/CauchyPoissonJumpLimit.lean",
+      "line": 9,
+      "source_sha256": "33fec3feb1754b75e585693d825942cd8034fdf46f802729eae04de92bb24d38",
+      "declaration_header": "theorem radial_defect_derivative (q : \u211d) (hq : |q| < 1) (z : Circle) :\n    HasDerivAt (fun t : \u211d => 1 - \u2016evolution q t z\u2016^2) 2 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonJumpLimit.lean#L9"
+    },
+    {
+      "paper": "7: off-diagonal jump rate",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonJumpLimit.off_diagonal_limit",
+      "file": "Foundation/CauchyPoissonJumpLimit.lean",
+      "line": 25,
+      "source_sha256": "33fec3feb1754b75e585693d825942cd8034fdf46f802729eae04de92bb24d38",
+      "declaration_header": "theorem off_diagonal_limit (q : \u211d) (hq : |q| < 1) (z w : Circle) (hwz : w \u2260 z) :\n    Tendsto (fun h : \u211d => h\u207b\u00b9 * poissonKernel 0 (evolution q h z) w)\n      (\ud835\udcdd[>] 0) (\ud835\udcdd (2 / \u2016(w:\u2102)-(z:\u2102)\u2016^2))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonJumpLimit.lean#L25"
+    },
+    {
+      "paper": "7: domination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonSingularEntropy.ratio_bregman_domination",
+      "file": "Foundation/CauchyPoissonSingularEntropy.lean",
+      "line": 79,
+      "source_sha256": "7b1d82e3e5d31196bdaf4df64fb5a86eae8393cfdd097320187a90e07f14427b",
+      "declaration_header": "theorem ratio_bregman_domination (q : \u211d) (hq : |q| < 1) (f : Circle \u2192 \u211d)\n    (\u03b4 L : \u211d) (h\u03b4 : 0 < \u03b4) (hL : 0 \u2264 L) (hf : \u2200 z, \u03b4 \u2264 f z)\n    (hlip : \u2200 z w : Circle, |f z-f w| \u2264 L*\u2016(w:\u2102)-(z:\u2102)\u2016) :\n    \u2203 C : \u211d, 0 \u2264 C \u2227 \u2200\u1da0 h in \ud835\udcdd[>] (0:\u211d), \u2200 z w : Circle,\n      \u2016h\u207b\u00b9 * ratio q h z w * bregman (f z) (f w)\u2016 \u2264 C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonSingularEntropy.lean#L79"
+    },
+    {
+      "paper": "7: singular entropy production",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonSingularEntropy.actual_kl_singular_derivative",
+      "file": "Foundation/CauchyPoissonSingularEntropy.lean",
+      "line": 174,
+      "source_sha256": "7b1d82e3e5d31196bdaf4df64fb5a86eae8393cfdd097320187a90e07f14427b",
+      "declaration_header": "theorem actual_kl_singular_derivative (q t : \u211d) (hq : |q| < 1) (ht : 0 < t)\n    (\u03bc : Measure Circle) [IsProbabilityMeasure \u03bc] :\n    HasDerivAt (fun u => (InformationTheory.klDiv ((kernel q u) \u2218\u2098 \u03bc) (invariantLaw q)).toReal)\n      (-(\u222b p : Circle \u00d7 Circle, (2/\u2016(p.2:\u2102)-(p.1:\u2102)\u2016^2)/poissonKernel 0 q p.2 *\n        bregman (density q t \u03bc p.1) (density q t \u03bc p.2) \u2202(invariantLaw q).prod (invariantLaw q))) t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonSingularEntropy.lean#L174"
+    },
+    {
+      "paper": "8: modified entropy inequality",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonModifiedLSI.modified_lsi",
+      "file": "Foundation/CauchyPoissonModifiedLSI.lean",
+      "line": 87,
+      "source_sha256": "5354724d52d4439103ae1410d130c90f4011b8e1e4a38624eefc4c44ef1b6c2a",
+      "declaration_header": "theorem modified_lsi (q : \u211d) (hq : |q| < 1) (f : C(Circle,\u211d))\n    (\u03b4 L : \u211d) (h\u03b4 : 0 < \u03b4) (hL : 0 \u2264 L) (hf : \u2200 z, \u03b4 \u2264 f z)\n    (hlip : \u2200 z w : Circle, |f z-f w| \u2264 L*\u2016(w:\u2102)-(z:\u2102)\u2016)\n    (hm : \u222b z, f z \u2202invariantLaw q = 1) :\n    ((1-|q|)/(2*(1+|q|)))*(\u222b z, f z*Real.log (f z) \u2202invariantLaw q) \u2264\n      \u222b p : Circle \u00d7 Circle, (2/\u2016(p.2:\u2102)-(p.1:\u2102)\u2016^2)/poissonKernel 0 q p.2 *\n        bregman (f p.1) (f p.2) \u2202(invariantLaw q).prod (invariantLaw q)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonModifiedLSI.lean#L87"
+    },
+    {
+      "paper": "8: decay from positive times",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonModifiedLSI.entropy_exponential",
+      "file": "Foundation/CauchyPoissonModifiedLSI.lean",
+      "line": 157,
+      "source_sha256": "5354724d52d4439103ae1410d130c90f4011b8e1e4a38624eefc4c44ef1b6c2a",
+      "declaration_header": "theorem entropy_exponential (q s t : \u211d) (hq : |q| < 1) (hs : 0 < s) (hst : s \u2264 t)\n    (\u03bc : Measure Circle) [IsProbabilityMeasure \u03bc] :\n    (klDiv ((kernel q t) \u2218\u2098 \u03bc) (invariantLaw q)).toReal \u2264\n      Real.exp (-((1-|q|)/(2*(1+|q|)))*(t-s))*(klDiv ((kernel q s) \u2218\u2098 \u03bc) (invariantLaw q)).toReal",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonModifiedLSI.lean#L157"
+    },
+    {
+      "paper": "8: full initial-law decay",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonModifiedLSI.entropy_initial",
+      "file": "Foundation/CauchyPoissonModifiedLSI.lean",
+      "line": 184,
+      "source_sha256": "5354724d52d4439103ae1410d130c90f4011b8e1e4a38624eefc4c44ef1b6c2a",
+      "declaration_header": "theorem entropy_initial (q t : \u211d) (hq : |q| < 1) (ht : 0 \u2264 t)\n    (\u03bc : Measure Circle) [IsProbabilityMeasure \u03bc] :\n    klDiv ((kernel q t) \u2218\u2098 \u03bc) (invariantLaw q) \u2264\n      ENNReal.ofReal (Real.exp (-(((1-|q|)/(2*(1+|q|))))*t)) * klDiv \u03bc (invariantLaw q)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonModifiedLSI.lean#L184"
+    },
+    {
+      "paper": "8: unique fixed probability",
+      "declaration": "OperatorDerivativeRewrite.Foundation.CauchyPoissonEntropyLimit.positive_time_fixed_law_unique",
+      "file": "Foundation/CauchyPoissonEntropyLimit.lean",
+      "line": 47,
+      "source_sha256": "beda2b92e57f78eb5bac5a35f031c5bd899b68e402734ca1bfe23bfb99d1fe7e",
+      "declaration_header": "theorem positive_time_fixed_law_unique (q t : \u211d) (hq : |q| < 1) (ht : 0 < t)\n    (\u03bc : Measure Circle) [IsProbabilityMeasure \u03bc] (hfix : (kernel q t) \u2218\u2098 \u03bc = \u03bc) :\n    \u03bc = invariantLaw q",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/CauchyPoissonEntropyLimit.lean#L47"
+    }
+  ],
+  "human_reorganization": [
+    "Harmonic extension and the two explicit matrix eigenvectors reconstruct the actual transition-kernel composition and invariance proofs.",
+    "The full graph and Laplace resolvent proofs use standard Banach-semigroup FTC/closed-graph arguments. The exact core remains the time-averaged trigonometric graph, not an unproved unsmoothed-core identification.",
+    "The singular Bregman domination is reproved using uniform first-order radial defect and displacement, rather than copying the formal explicit scalar budgets.",
+    "The entropy proof uses actual forward densities and a stationary finite-step identity; it assumes no backward log-density generator domain."
+  ],
+  "literature": [
+    {
+      "author": "Takuma Tanaka",
+      "title": "Low-dimensional dynamics of phase oscillators driven by Cauchy noise",
+      "url": "https://arxiv.org/abs/2009.04273",
+      "inspected": "Primary full text: Poisson/wrapped-Cauchy density (9), additive Cauchy damping (16), and forced pole equation (17). The constant-forcing specialization matches the pole ODE here. No priority for that mechanism is claimed."
+    },
+    {
+      "author": "Earl Berkson and Horacio Porta",
+      "title": "Semigroups of analytic functions and composition operators",
+      "doi": "10.1307/mmj/1029002009",
+      "inspected": "Bibliographic context located; direct DOI retrieval failed. Not used as an uninspected theorem premise or included as a detailed comparison."
+    }
+  ],
+  "novelty": "Unresolved for the combined explicit kernel/domain/forward-entropy package; methods and pole dynamics have classical antecedents."
+}
