@@ -2761,3 +2761,6 @@ import Foundation.FourCubePhysicalEnergy
 
 import Foundation.FourCubeBoundaryCoercivity
 import Foundation.FourCubeScaledBoundaryControl
+
+import Foundation.FourCubeBoundaryGibbsComparison
+import Foundation.FourCubeMovingBoundaryConcentration

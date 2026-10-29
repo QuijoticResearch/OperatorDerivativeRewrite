@@ -55957,3 +55957,79 @@ Quadratic-stable comparison, full-partition nondegeneration and integrable cutof
 The next immediate integration bridge is uniform control of the ACTUAL perturbed Gibbs mass outside the existing chart cutoff. A prospective reduction to verify in Lean is a bound by exp(4A)*[Z_0(beta/3)/Z_0(3 beta)] times the existing identity-boundary outside probability at beta/3 when beta*B(b)<=A. This is a NEXT proof target, not an exported theorem here; it requires the actual normalized perturbed law and exact integral identification. Combined with a proved perturbed Taylor limit, the present envelope could then support a full normalized shifted-Gaussian theorem. Boundary derivatives would still need their own valid integrable bounds and convergence. None of the current fixed-cell results establishes stationary physical transfer contraction, a scale/volume-uniform gap, infinite-volume/continuum existence or a Yang-Mills mass gap. No novelty is claimed for the elementary compact-group/Laplace comparison method.
 
 Exact-commit approval, new-history secret scanning, guarded PUBLIC main/research synchronization and independent post-push ref/visibility checks remain closure requirements. This pre-commit entry does not claim remote backup has already succeeded. Repository visibility belongs exclusively to the user. The indefinite research goal remains active.
+
+## Checkpoint1711 - actual perturbed Gibbs laws, uniform concentration and bounded cutoff removal
+
+October29,2026. Focused Yang-Mills remains ACTIVE. Checkpoint1710,4df869190e1162a7a2d5f12bb4f11644d0c67554, was independently verified on BOTH authorized main/research backup refs with repository PUBLIC. The present checkpoint discharges its explicitly recorded missing ACTUAL perturbed-law/cutoff-probability bridge. It reuses the existing positive exponential-tilt probability library, full72-face action,31-link pin, quadratic boundary comparison and reference partition/concentration theorems. No manuscript, PDF, publication directory or editorial README was created, revised, compiled or reviewed.
+
+New focused sources: Foundation/FourCubeBoundaryGibbsComparison.lean and Foundation/FourCubeMovingBoundaryConcentration.lean. All results concern the existing finite112-edge72-face cap complex and its normalized31-link pinned Haar state. They do not construct an infinite four-dimensional lattice measure, continuum field, time evolution or stationary transfer operator.
+
+### Actual probability laws and normalization, for arbitrary boundary data
+
+For every real beta and actual SU(2) boundary data b, source(b,U)=-S_b(U)/144 is measurable and bounded in absolute value by1, from the proved actual action range[0,144]. law(beta,b) is an ACTUAL probability measure, instantiated from BoundedExponentialTiltResponse.tiltedMeasure; law_probability proves the probability instance without an extra assumption. tilted_partition_eq, density_formula and law_withDensity identify its density against the ORIGINAL pinned product Haar measure exactly as
+
+    d mu_(beta,b)/dHaar(U)=exp(-beta*S_b(U))/Z_b(beta).
+
+law_identity identifies the identity-boundary law with the previously verified pinned Gibbs measure. law_integral gives the exact actual integral formula. bounded_test_integrable proves genuine integrability of every measurable uniformly bounded observable, and bounded_setIntegral_bound proves its valid set-integral norm estimate. The unrestricted law_integral identity uses Lean's total Bochner convention; it is NOT an integrability assertion for arbitrary unbounded or nonmeasurable functions. All applications to varying observables below use explicit measurability and a finite uniform bound.
+
+The law and density identities exist for ALL real beta. The order comparisons below require beta>=0. This checkpoint concerns the actual normalized law on the existing31-link pin. The earlier exact32-link partition equality is preserved; no new pushforward theorem for arbitrary unpinned observables or gauge-dependent cutoff events is asserted.
+
+### Full-measure domination, retaining the partition factor
+
+Set
+
+    C(beta,b)=exp(4 beta B(b))*Z_0(beta/3)/Z_0(3 beta),
+    B(b)=sum_(48 ribbons p) defect(word(b,p)).
+
+The preceding ACTUAL pointwise action and full-Haar partition bounds prove density_comparison and law_le_reference, for beta>=0,
+
+    mu_(beta,b) <= C(beta,b)*mu_(beta/3,identity).
+
+This is a comparison of actual measures on the WHOLE pinned state space, with no chart cutoff and no observable restriction. law_real_le_reference gives the corresponding real-valued bound for EVERY set A. The conversion from ENNReal explicitly checks finiteness, so no infinity-to-real artifact is used. The normalizer ratio cannot be discarded merely because an unnormalized Boltzmann weight has a pointwise bound.
+
+comparisonCoefficient_ge_one proves rigorously C(beta,b)>=1: evaluate the actual probability-measure comparison on the full state space. The independent Lean harness also proves that NO actual law(beta,b) can be dominated by(1/2) times the reference probability measure. This is a limitation of full positive-measure domination as a contraction argument, not an obstruction to centered correlation decay or a spectral gap by other methods. In particular these constants must not be presented as stationary transfer contraction factors.
+
+### Uniform concentration on bounded moving-boundary amplitude balls
+
+Write beta=1/t^2, b_t=boundaryData(t*x,t*y,t*z), and x^2+y^2+z^2<=R. The verified quadratic budget beta*B(b_t)<=216R implies the ACTUAL all-set estimate
+
+    mu_(1/t^2,b_t)(A) <= exp(864R)*Q(t)*mu_((1/t^2)/3,identity)(A),
+    Q(t)=Z_0((1/t^2)/3)/Z_0(3*(1/t^2)).
+
+moving_law_real_bound proves it for every nonzero real t, both signs, and every set A. referenceRatio_tendsto proves Q(t) tends to the finite positive constant
+
+    ((sqrt(1/3))^(-93))/((sqrt(3))^(-93)).
+
+The proof uses the two already verified exact full-partition scaling limits, their strictly positive denominators and an explicit cancellation. third_clock_tendsto verifies the reference coupling(1/t^2)/3->+infinity through the punctured real neighborhood. Hence the old actual identity-boundary outside probability tends to0 at that clock.
+
+leakageEnvelope(R,t)=exp(864R)*Q(t)*mu_((1/t^2)/3,identity)(outside cutoff) tends to0. moving_outside_bound dominates the ACTUAL perturbed outside probability by this SINGLE envelope. uniform_outside_concentration proves: for every R and epsilon>0, ONE punctured neighborhood of0 works SIMULTANEOUSLY FOR ALL x,y,z in the amplitude ball and there
+
+    mu_(1/t^2,b_t)(outside cutoff)<epsilon.
+
+uniform_inside_concentration proves the corresponding absolute difference from probability1 inside the cutoff. These are normalized probability statements, not unnormalized density estimates or assumed Gaussian probabilities. The existing actual cutoff is all31 links in the positive-trace hemisphere with chartRate<=2. No global affine chart coercivity is asserted, consistent with the preserved explicit obstruction.
+
+### Cutoff removal for varying actual observables
+
+moving_outside_tendsto_zero permits arbitrary real amplitude profiles x(t),y(t),z(t) satisfying the displayed uniform squared-amplitude budget. Neither continuity nor convergence of these parameter profiles is assumed or needed. This does not construct a stochastic process in t or assert joint path measurability; it is a uniform scalar-parameter probability theorem.
+
+moving_outside_integral_tendsto_zero proves the actual outside integral tends to0 even when the observable f_t varies with t, provided EACH f_t is measurable on the pinned state space and |f_t(U)|<=M for ONE finite constant M, uniformly in t,U. bounded_test_integrable discharges actual integrability, and the set-integral bound is applied before squeezing to zero. The independent Lean harness tests x(t)=sin(1/t),y(t)=cos(1/t),z(t)=0 and the varying physical observable sin(1/t)*cos(S_0(U)). No nonexistent limit of the amplitudes or observable is smuggled into the argument.
+
+Small outside mass alone gives NO bound on unrestricted ratio-coordinate moments, unbounded boundary-derivative fields or observable norms growing as t->0. Those require their own weighted estimates or uniform-integrability arguments. The theorem does not silently cover them.
+
+### Verification, independent diagnostics and integrity
+
+ALL20 independent Lean checks passed in28.10483419999946 seconds. They cover the actual probability instance for every real beta, identity and zero-coupling law identification, mass1, nonnegative density, full measure/all-set domination, C>=1 and C(0,b)=1, impossibility of strict half-measure domination, the exceptional Q(0)=1 convention, leakage-envelope convergence, exact uniform inside/outside quantifiers, oscillating amplitude profiles, actual integrability of the bounded physical action, measurable bounded set-integral domains, a varying physical observable and the full all-set moving-window bound. A TEST-only constant-function notation in withDensity_one was made explicit; no mathematical source change or resource increase was needed for that repair.
+
+An independent NumPy diagnostic used4096 normalized-quaternion Haar samples for the actual pinned72-face action, with fixed arbitrary boundary data. Finite empirical Haar quadrature verified the normalized density and event comparison factors at beta0,0.02,0.1,0.4. At identity boundary the sampled density ratio at the identity point was2.595092368 at beta0.02, showing why testing an unnormalized weight bound alone does not test the normalized-density statement. A negative-coupling diagnostic produced a comparison coefficient below1, OUTSIDE the proved beta>=0 order-comparison domain. These are diagnostics in a finite empirical quadrature model, NOT certified continuous-Haar partition values, a new formal negative-beta counterexample or a simulation proof of uniform cutoff concentration. Evidence: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1711-independent.py/.json/.log.
+
+The complete root build passed7028 jobs in64.23121510000783 seconds. The canonical COMPLETE transitive safe-Foundation axiom audit passed55358 declarations in43.82404510001652 seconds, allowing only propext, Classical.choice and Quot.sound. ALL34 public types were printed unabridged and reviewed:26 complete theorem proofs,7 definitions and1 actual probability instance. Both complete source files and every proof/definition/instance body were read; no private helper was added. The COMPLETE persisted Foundation/AxiomAudit.lean run passed in49.51023949999944 seconds. No sorry/admit/new mathematical axiom/native_decide, increased resource setting or toolchain/configuration/compiler/trust change was introduced. Explicit unfolding/cancellation repaired proof elaboration while preserving every mathematical hypothesis. Evidence prefix: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1711-*.
+
+The source manifest authenticates1710 against exact approved4df869190e1162a7a2d5f12bb4f11644d0c67554. Among2810 recursive Foundation/root sources, ONLY these two focused new modules, root imports and axiom ledger differ. All older mathematics,3 pinned configurations,113 baseline original manuscripts and21 Yang-Mills originals(20 distinct hashes) remain byte/hash unchanged. ResearchSources remains unmodified/uncommitted. Existing drafts, histories, publication-role separation, reflection policy and campaign priorities are preserved.
+
+### Exact next mathematical bottleneck
+
+The prospective outside-probability bridge recorded at1710 is NOW CLOSED: actual perturbed probability laws, correct normalized comparison, uniform moving-window cutoff concentration and bounded-observable cutoff removal are VERIFIED. Together with1710's actual Haar cutoff transport and uniform integrable Gaussian envelope, this supplies the integration control needed for a future perturbed action limit. It does NOT supply that pointwise Taylor limit, an explicit shifted Gaussian/Schur normalizer, parameter-uniform third derivatives or the actual large-beta mixed cubic response.
+
+Next pursue the joint boundary/interior action expansion with the ACTUAL SU(2) curves, reusing the verified matrix jets, full face incidence and Schur machinery. Any claimed third-order response must additionally prove the appropriate weighted derivative domains, integrable bounds and convergence; bounded-test cutoff removal does not settle a test with a t-dependent growing norm. The full harmonic-cubic coefficient remains an external rational diagnostic until verified in Lean and connected to actual Gibbs boundary derivatives. Stationary physical transfer estimates, scale/volume-uniform control, infinite-volume/continuum construction and a positive Yang-Mills mass gap remain OPEN. The reference-dependent boundary cost is not an intrinsic gauge-invariant spectral estimate. No novelty is claimed for classical finite-dimensional Gibbs comparison/concentration tools.
+
+Exact-commit approval, new-history secret scan, guarded PUBLIC main/research synchronization and independent post-push remote-ref/visibility checks remain checkpoint closure gates. This pre-commit ledger does not assert remote backup already succeeded. Visibility is exclusively user-controlled. The indefinite research goal remains active.
