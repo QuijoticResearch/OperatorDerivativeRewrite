@@ -2022,3 +2022,46 @@ Source integrity authenticates1698's manifest against exact audited commit98517f
 Exact-commit approval and guarded PUBLIC main/research synchronization follow this checkpoint; this pre-commit entry does not claim remote success. Repository visibility remains exclusively user-controlled. Campaign priorities remain unchanged.
 
 Final source-byte closure: the staged whitespace gate caught one blank EOF line in the new action module. It was removed, and the complete root build, canonical audit/all55 public types, all16 independent Lean checks and complete persisted axiom ledger were rerun successfully on the final bytes; the timings above are those final runs. No theorem statement or proof was changed by that cleanup.
+
+
+## Checkpoint1700 — a shrinking-corridor obstruction and the surviving linear estimate
+
+Focused Yang–Mills remains ACTIVE; Bakry Objective2 stays PAUSED. This checkpoint resolves1699's explicit local inequality question, using the SAME actual one-link conditional integral of the existing72-face one-sided cell. The other31 retained links remain fixed1. No new stochastic/gauge foundation or unrelated campaign is introduced.
+
+### Exact positive and negative theorems
+
+In `FourCubeConditionalObstruction`, H(beta,z) is the ACTUAL ordered mixed boundary derivative D_x D_y Fcond(beta;0,0,z), not an action derivative or an expectation-level surrogate. All derivative existence/domain obligations were proved in1699. Its exact formula is H=4*beta*m(beta*R)/R*sin z, R=radius(0,0,z) in[3,5].
+
+`mixedHessian_normalized_limit` proves H(beta,z)/beta -> L(z)=4*sin(z)/R for every FIXED real z as beta tends to positive infinity. `exists_slope_exceeds_quadratic` directly reuses the earlier verified SU(2) sine-versus-quadratic obstruction: in every positive boundary neighborhood, L(z)>C*z^2 somewhere for any nonnegative C. `eventually_exceeds_budget` then proves H(beta,z)>C*beta*z^2+C0 eventually at such an angle, for ANY real C0. `exists_arbitrarily_large_budget_violation` and `no_uniform_quadratic_budget` give the exact quantified failure of a coupling-uniform C*beta*z^2+C0 bound on any fixed positive neighborhood and any coupling tail.
+
+The stronger result avoids conflating a fixed-angle limit with a shrinking corridor. `eventually_shrinking_lower` proves
+
+    H(s^2,1/s) >= s/5 eventually as s -> positive infinity.
+
+This uses the actual tilted-Haar mean convergence, radius>=3 (so its argument tends to infinity EVEN WITH the changing angle), radius<=5, and the established elementary sine lower bound. No uniform derivative-limit exchange is assumed. `exists_shrinking_budget_violation` shows that for ANY real C,C0, any epsilon>0 and any beta0, there exists s>0 with 1/s<epsilon and s^2>beta0 for which
+
+    |H(s^2,1/s)| > C*s^2*(1/s)^2+C0.
+
+Along this shrinking corridor beta*z^2=1, so the proposed quadratic budget stays constant while the actual mixed Hessian diverges. This supplies the missing explicit inequality obstruction; a large third derivative alone was not used to assert it.
+
+Positive repair: `mean_abs_le` proves |m(t)|<=1 under the ACTUAL normalized tilted Haar probability measure, and `mixedHessian_linear_bound` proves the all-real bound |H(beta,z)|<=(4/3)*|beta|*|z|. `mixedHessian_zero` proves H(beta,0)=0, so the estimate concerns a genuine departure from the zero-boundary mixed Hessian. The order beta*|z| is therefore a valid replacement here. The lower bound along beta=s^2,z=1/s shows that its scale cannot be replaced by beta*z^2+constant uniformly.
+
+### Manuscript comparison and limits of the obstruction
+
+Selectively reread `ResearchSources/Incoming/block_contraction_spectral_gaps.tex`, lines605–620, SHA2560C40FA6B92B830C0E2309BD6471D55CB0EB9BFB94296B9267AD23A5280FA4C60. It infers Kxx,Kxy=O(beta*delta^2)+O(1) from evenness of the single-holonomy Wilson expansion. Earlier1696 already distinguished single-word evenness from joint link-coordinate cubic terms. The present result shows that an UNQUALIFIED extension of the quadratic mixed-Hessian budget through an actual conditional Haar integral fails, even on an inverse-square-root shrinking boundary corridor.
+
+Scope is essential: the manuscript's exact variables include spanning-tree gauge fixing, an exponential-coordinate corridor and interior/boundary splitting. This checkpoint integrates one link over ALL SU(2), fixes31 physical coordinates, and differentiates two retained boundary directions. It is NOT the manuscript's full gauge-fixed block marginal, cutoff conditional law, or literal interior/boundary Delta_xy block. Those identifications remain separate obligations. No claimed implication between these different Hessians is silently assumed. The conditional free energy with fixed coordinates is not asserted invariant under arbitrary gauge changes of boundary data alone. The one-sided geometry still has five incident faces, not the standard six-plaquette lattice conditional.
+
+Nor does failure of the quadratic MIXED-HESSIAN budget refute a Schur-complement mechanism. A linear bound Kxy=O(beta*delta) still gives Kxy^2/beta=O(beta*delta^2) if the required interior coercivity and other block estimates hold. Existing verified Schur machinery preserves that possibility; its actual-block hypotheses must be established rather than replaced by the false stronger estimate. The elementary weaker bound remains o(beta) when delta->0. No stationary-transfer spectral obstruction, scale/volume-uniform contraction, continuum Yang–Mills existence or physical mass gap follows from this conditional result.
+
+The local conditional budget question is now resolved. Prefer the substantive remaining bridge next: actual full-block Hessian/covariance or Schur estimates and their relation to the actual stationary operator/physical scale, rather than further variations of this one-link counterexample. Preserve1691–1693's finite stationary results and their homogeneous-coupling/volume limitations,1694's Schur repair,1697's two-axis parity and1698's full32-link SMALL-beta nonparity. No novelty claim or campaign transition is made.
+
+### Full verification and integrity
+
+The complete root build passed7006 jobs in25.5751662 seconds. Canonical complete transitive axiom audit passed54684 safe Foundation declarations in40.8374911 seconds, with only propext, Classical.choice and Quot.sound. All13 public declaration types (11 theorem proofs,2 definitions) were printed UNABRIDGED and reviewed, and all complete proof/definition bodies were reviewed; there are no private helpers or new local instances in this module. The entire persisted axiom ledger elaborated successfully in49.7458906 seconds. No sorry/admit/new axiom/native_decide, source-level resource/compiler/trust change or weakened gate is introduced.
+
+Twelve independent Lean checks passed in25.0015146 seconds: actual mixed derivative formula, fixed-angle normalized limit, arbitrary small-angle slope witness, eventual real additive budgets, arbitrarily large coupling violations, absence of a uniform bound, changing-angle lower bound, a shrinking witness below10^-3 and above beta=10^6, actual tilted-mean bound, all-real linear estimate, zero-boundary value and the literal free-energy derivative interpretation. Independent4096-subinterval SU(2) Haar-angle quadrature with four-corner boundary finite differences h=.0002 agrees with the derivative formula for s=2,4,8,16,32,64,128. At s=32, beta=1024 and z=1/32, it gives25.5903311 versus a quadratic budget15 for C=10,C0=5; beta*z^2=1. Numerical checks are diagnostics, not proof and not an explicit proved start time for the eventual inequality.
+
+Integrity authenticates1699's source manifest against exact approved commit2298389b91b6ee9c39db9a8697da5ac66319c7fd. It covers2789 Foundation/root files: only ONE new focused module, its root import and the axiom ledger differ. ALL older mathematical sources,3 pinned configuration files,113 baseline manuscript originals and21 Yang–Mills originals (20 distinct hashes) remain unchanged. ResearchSources remains unmodified/uncommitted and unrelated drafts are preserved. Evidence: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1700-* (full build/audits, complete types, independent Lean/quadrature tests, exact declaration inventory, authenticated manifest).
+
+Exact-commit approval and guarded PUBLIC main/research backup remain the closure gates; this pre-commit entry does not assert remote success. Repository visibility remains exclusively user-controlled. Yang–Mills remains ACTIVE, Bakry PAUSED, with all other queue priorities preserved.
