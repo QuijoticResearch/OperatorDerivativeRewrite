@@ -2869,3 +2869,9 @@ import Foundation.CubeOperatorTail
 import Foundation.CubeOperatorLocalization
 
 import Foundation.CubeNativeCompression
+
+import Foundation.CubeHaarSplit
+
+import Foundation.CubeReducedHaar
+
+import Foundation.CubeChordTransfer
