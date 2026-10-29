@@ -53,3 +53,7 @@ The primary [Howitt–Warren preprint](https://arxiv.org/abs/math/0702542), p2 e
 ## IBM variation consolidated with Simpson integration
 
 The primary [Burdzy institutional record](https://hdl.handle.net/1773/2252) and author publication list establish the 1994 classical deterministic quartic-variation antecedent; detailed original theorem hypotheses were not fully accessible. The primary [Khoshnevisan–Lewis paper](https://www.math.utah.edu/~davar/ps-pdf-files/ibm.pdf), Theorem 4.3, gives a stronger weighted quartic limit on its induced random partition and two-sided scenery. The expanded twelve-page companion preserves the reflected-clock convention and all uniform physical grids, and claims convergence in probability only. No priority is claimed for quartic variation or the elementary consequence that quadratic sums diverge.
+
+## Gaussian quadratic products
+
+The primary [Lancaster 1954 publisher record](https://doi.org/10.1111/j.2517-6161.1954.tb00167.x) and indexed Theorem 1 identify cumulants with matrix traces; complete full-text comparison remains incomplete. The primary [Ogawa 1950 article](https://doi.org/10.18910/8824), introductory centered criterion and finite orthogonal-range discussion, explicitly supplies the classical matrix-annihilation independence context. The seven-page completed-product companion claims no new criterion, cumulant phenomenon or Gaussian approximation theorem.

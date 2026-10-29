@@ -179,3 +179,7 @@ The same paper is now eleven pages, with 217 exact source correspondences. Full 
 ## Actual IBM variation proof consolidated
 
 The Simpson companion is now twelve pages with 58 source correspondences. Complete overlap/crossing/localization proof establishes actual uniform-grid quartic limit 3T and raw-channel divergence; all final pages inspected. Exact 105-pairing enumeration and five rational rate checks pass. Nineteen reviewed drafts total 178 pages.
+
+## Completed quadratic-product companion
+
+Seven-page classical companion; 105 exact source correspondences; six exact symbolic checks for arbitrary symmetric 2x2 matrices pass. Original source completion, sharp bounded product, strict/nonattained fourth-moment bounds, exact contraction and finite annihilation receive complete printed proofs. All pages inspected and references resolved. Twenty reviewed drafts total 185 pages.

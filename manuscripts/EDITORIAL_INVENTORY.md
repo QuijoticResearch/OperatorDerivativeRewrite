@@ -21,11 +21,13 @@ Frozen mathematical baseline: `bab688bb6140cd6316c80680095a914ea0d346db` (checkp
 
 ## Current consolidation and significance
 
-Nineteen reviewed drafts total 178 pages; the [catalog](INDEX.md) gives each current PDF, source, map and status. The most substantial explicit arithmetic package is the sixteen-page quartic actual-saddle proof, exact rational time-eight obstruction, attained eventual threshold and endpoint collision. The fractional and sixth-order papers retain different order/zero quantifiers. No RH or quadratic-threshold implication is inferred.
+Twenty reviewed drafts total 185 pages; the [catalog](INDEX.md) gives each current PDF, source, map and status. The most substantial explicit arithmetic package is the sixteen-page quartic actual-saddle proof, exact rational time-eight obstruction, attained eventual threshold and endpoint collision. The fractional and sixth-order papers retain different order/zero quantifiers. No RH or quadratic-threshold implication is inferred.
 
 The signed multichannel paper consolidates the actual finite signed telescope, factorial analytic domain, native limits and completed observable reconstruction. The IBM papers separate physical variation/quadrature, original clock-domain and critical-noise exclusions, actual native averages/fixed-past time calculus, and entire-energy associativity/completed reconstruction. Their different domains and topologies are not interchangeable. In particular, critical clock noise does not supply a positive subcritical Hermite-sector domain theorem; future-increment noise probes are noncausal.
 
 The quartic normal-map paper includes exponent optimality at every infinite Poisson datum. The moment paper retains exact eight/nine and six/seven null-boundary distinctions. The complex-root companion distinguishes analytic-transform limits from weak probability limits and uses a single fixed test for tilt variation escape. The fluid companion preserves nonnormal RE, infinite-energy affine and actual viscous periodic ABC classes separately.
+
+The seven-page quadratic-product companion reconstructs full second-chaos multiplication, sharp fourth moments and exact contraction/equality tests, retaining original source-field normalization. Classical finite matrix criteria are credited.
 
 Classical formalization companions consolidate Fourier/Haar positivity and generator domains; full Cauchy circle kernel/generator/core/forward entropy; Gaussian terminal prediction, actual fractional full past and inverse-number obstruction; forcing trace, original divergence completion and observed-mode noncompactness; and Poisson–Gaussian maximal graphs, actual displacement, sharp jump curvature and nonlinear transfer failure. A CD(1/2,infinity) jump bound is not the diffusion chain rule or a quadratic logarithmic Sobolev theorem.
 
