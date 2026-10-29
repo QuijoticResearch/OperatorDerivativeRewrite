@@ -27,7 +27,7 @@ The passage from finite Fourier squares to arbitrary nonnegative
 $L^2$ functions is proved explicitly. Coordinatewise power symbols
 have the sharp positivity condition that every positive-weight
 exponent is at most two; inactive coordinates impose no restriction.
-We also identify the exact closed generator domain and explain why
+We also construct the unique actual torus probability laws, their convolution kernels and countable-step chains. A genuine Poisson mixture has the exact transformed symbol, a persistent no-jump atom and a short-parameter jump-covariance identity. We identify the exact closed generator domain and explain why
 semigroup existence alone supplies no positivity. A finite-time
 increment kernel remains positive at every time, yet an exact
 two-frequency quadratic-heat example shows that it need not increase
@@ -708,6 +708,212 @@ zero pointwise curvature in this example. The finite core is
 the domain of this statement; no extension to arbitrary
 members of $\Dom(A)$ is hidden in its notation.
 
+
+\section{Actual probability laws and fixed-step chains}\label{sec:physical-laws}
+The positive multipliers have an actual measure realization, not just
+an abstract coefficient interpretation. We retain the hypotheses of the
+main equivalence: $r:\Lambda\to[0,\infty)$ is even, $r(0)=0$, and its
+anchored kernel is positive semidefinite. Write $P_t e_k=e^{-tr(k)}e_k$.
+
+\begin{theorem}\label{thm:laws}
+For each $t\geq0$ there is a unique probability measure $\mu_t$ on
+$\T^3$ with
+\[
+ \int e_{-k}(z)\,d\mu_t(z)=e^{-tr(k)}\qquad(k\in\Lambda).
+\]
+These measures satisfy $\mu_0=\delta_0$ and
+$\mu_s*\mu_t=\mu_{s+t}$, and depend weakly continuously on $t$.
+The translated laws $Q_t(x,A)=\mu_t(A-x)$ are Markov kernels satisfying
+Chapman--Kolmogorov. On continuous functions and on Haar-$L^2$ their
+integral operators agree with the original Fourier multipliers.
+\end{theorem}
+\begin{proof}
+Let $B_N=\{-N,\ldots,N\}^3$ and
+\[
+ q_N=|B_N|^{-1/2}\sum_{j\in B_N}e_j,\qquad h_N=|q_N|^2.
+\]
+Orthogonality gives $\int h_N\,dm=1$. By finite-square positivity,
+$g_{N,t}=P_t h_N$ is a continuous nonnegative polynomial of integral
+one. Thus $g_{N,t}m$ is a probability measure. Its $k$th Fourier moment is
+\[
+ e^{-tr(k)}a_N(k),\qquad
+ a_N(k)=\frac{|\{j\in B_N:j+k\in B_N\}|}{|B_N|}.
+\]
+For $M=\max_i|k_i|$ and $N\geq M$, the numerator lies between
+$|B_{N-M}|$ and $|B_N|$. Therefore $a_N(k)\to1$ for every fixed $k$.
+Probability measures on the compact metric torus have a weakly convergent
+subsequence. Integrating each bounded continuous character along that
+subsequence gives all the required moments of its limit.
+
+If two probability measures have these moments, their integrals agree
+on trigonometric polynomials. These form a uniformly dense subalgebra
+of $C(\T^3;\C)$: they contain constants, are closed under conjugation
+and separate points. Uniform approximation and the bound
+$|\int f\,d\mu|\leq\|f\|_\infty$ extend equality to every continuous
+function. Continuous functions determine finite measures, proving
+uniqueness. At time zero $\delta_0$ has the prescribed moments.
+Fubini and $e_k(x+y)=e_k(x)e_k(y)$ show that the moments of
+$\mu_s*\mu_t$ multiply to those of $\mu_{s+t}$, so uniqueness proves
+the convolution identity.
+
+If $t_j\to t$, every weakly convergent subsequence of $\mu_{t_j}$
+has the moments of $\mu_t$, by continuity of $e^{-tr(k)}$.
+Compactness and uniqueness force the full sequence to converge to
+$\mu_t$. This proves weak continuity. For any Borel set $A$,
+$Q_t(x,A)=\int1_A(x+z)\,d\mu_t(z)$ is Borel in $x$ by measurability
+of addition and integration of a bounded Borel function. It has total
+mass one. Fubini and convolution give
+\[
+ \int Q_t(y,A)Q_s(x,dy)=Q_{s+t}(x,A).
+\]
+Its action on $e_k$ is $e^{-tr(k)}e_k(x)$, since evenness gives the
+same real moment at $k$ and $-k$. The action on continuous functions is
+a contraction in the uniform norm. Moreover Jensen and Haar invariance
+give $\int|Q_tf|^2dm\leq\int|f|^2dm$. Density of polynomials in each
+space identifies these integral operators with the respective
+multiplier extensions. This proves the last assertion on the original
+physical Haar space, not just on a coefficient space.
+\end{proof}
+
+Fix a step $h\geq0$. On the countable product probability space with
+independent coordinates $Z_j$ of law $\mu_h$, set
+$X_0=x$ and $X_n=x+Z_1+\cdots+Z_n$. This is a human reorganization of
+the source's Ionescu--Tulcea construction. Independence gives, first
+for bounded Borel $f$ and then as a regular conditional law,
+\[
+ \mathbb E[f(X_{n+1})\mid X_0,\ldots,X_n]=Q_hf(X_n).
+\]
+Indeed the finite past is measurable in $Z_1,\ldots,Z_n$ and $Z_{n+1}$
+is independent of that larger sigma field; conditioning the resulting
+identity again gives the displayed formula. Convolution shows
+$\mathcal L(X_n)=Q_{nh}(x,\cdot)$, including $h=0$ and $n=0$.
+The finite-dimensional probabilities are the iterated kernels
+$\delta_x(dx_0)\prod_{j=1}^nQ_h(x_{j-1},dx_j)$, which also identify
+the resulting countable-path law with the source trajectory law.
+No sample paths at non-grid times have been constructed here.
+
+For $x=0$, the actual first-step character increment pairing is
+\begin{equation}\label{eq:actual-pair}
+ \mathbb E[(e_{-k}(X_1)-1)(e_l(X_1)-1)]
+ =e^{-hr(k-l)}-e^{-hr(k)}-e^{-hr(l)}+1.
+\end{equation}
+Expand the product and use its three character moments to prove this
+identity. Every integrand is bounded, so no interchange requires an
+extra domain. Its right derivative at $h=0$ is
+$r(k)+r(l)-r(k-l)=2K_r(k,l)$. Varying $h$ varies the law of the
+first-step chain; this derivative is not a claim of differentiable
+sample paths or of an unsmoothed pointwise Gamma domain.
+
+\section{Poisson mixtures, an atom and a jump covariance}\label{sec:poisson-law}
+Fix an original heat step $\delta\geq0$ and a finite Poisson parameter
+$\lambda\geq0$. Define an actual probability measure by
+\begin{equation}\label{eq:compound}
+ \nu_\lambda=e^{-\lambda}\sum_{n=0}^\infty
+        \frac{\lambda^n}{n!}\mu_{n\delta}.
+\end{equation}
+At $\lambda=0$ use $0^0=1$ in the $n=0$ term. The weights are
+nonnegative and sum to one, so the sum defines a probability measure.
+This elementary Poisson subordination is classical; see Varadhan's
+primary notes, Sections 1.2 and 2.2~\cite{varadhan}.
+
+\begin{theorem}\label{thm:compound}
+Put $q_\delta(k)=1-e^{-\delta r(k)}$. Then
+\[
+ \widehat\nu_\lambda(k)=e^{-\lambda q_\delta(k)},\qquad
+ \nu_\lambda*\nu_\eta=\nu_{\lambda+\eta},\qquad
+ \nu_0=\delta_0.
+\]
+The transformed symbol $q_\delta$ is normalized, even, nonnegative
+and has positive semidefinite anchored kernel. Its unique physical
+heat law at parameter $\lambda$ is exactly $\nu_\lambda$.
+Nevertheless
+\begin{equation}\label{eq:atom}
+ \nu_\lambda\geq e^{-\lambda}\delta_0,
+ \qquad \nu_\lambda\not\ll m
+ \quad\text{for every finite }\lambda\geq0.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Characters have modulus one, so the sum of their absolute integrals
+weighted by the Poisson probabilities is at most one. Thus integration
+commutes with the sum in~\eqref{eq:compound}, and
+\[
+ \widehat\nu_\lambda(k)
+ =e^{-\lambda}\sum_{n\geq0}\frac{(\lambda e^{-\delta r(k)})^n}{n!}
+ =\exp[-\lambda(1-e^{-\delta r(k)})].
+\]
+Multiplication of these moments and Fourier uniqueness prove the
+convolution assertion and the zero-parameter assertion.
+Normalization, evenness and nonnegativity of $q_\delta$ follow from
+those of $r$. Formula~\eqref{eq:actual-pair} for one original heat
+jump $Z$ of law $\mu_\delta$ gives
+\begin{equation}\label{eq:jump-gram}
+ \mathbb E[(e_{-k}(Z)-1)(e_l(Z)-1)]
+ =q_\delta(k)+q_\delta(l)-q_\delta(k-l)
+ =2K_{q_\delta}(k,l).
+\end{equation}
+For finitely many coefficients $c_j$, multiplying by
+$\overline{c_i}c_j$ and summing gives the nonnegative integral
+$\mathbb E|\sum_jc_j(e_{k_j}(Z)-1)|^2$. Thus the anchored kernel
+is positive semidefinite. Theorem~\ref{thm:laws} applies to
+$q_\delta$; its moments and uniqueness identify its law with
+\eqref{eq:compound}.
+
+The $n=0$ term in that sum is $e^{-\lambda}\mu_0
+=e^{-\lambda}\delta_0$; every remaining term is a nonnegative
+measure. This proves the measure inequality, not merely positivity
+of one coefficient. Haar measure has null singletons: if a singleton
+had mass $a>0$, translation invariance would give the same mass to
+each of $N$ distinct points, forcing $Na\leq1$ for every $N$.
+Hence $m\{0\}=0$ while $\nu_\lambda\{0\}\geq e^{-\lambda}>0$.
+This proves failure of absolute continuity. The mass at zero may be
+larger than $e^{-\lambda}$; no equality is asserted. In particular
+$\delta=0$ yields $\nu_\lambda=\delta_0$ at all parameters.
+\end{proof}
+
+The source atom theorem assumes that the reference measure has a null
+origin singleton. The preceding Haar argument explicitly discharges
+that hypothesis here; it is a classical deduction, not an additional
+named Lean declaration. Thus actual positivity, conservativity and
+weak continuity coexist with failure of absolute-continuity smoothing.
+
+There is also a bounded operator explanation. Let $U=P_\delta$ on
+$C(\T^3)$ or Haar-$L^2$. Since $\|U\|\leq1$, the series
+\[
+ V_\lambda=e^{-\lambda}\sum_{n\geq0}\frac{\lambda^n}{n!}U^n
+             =\exp[\lambda(U-I)]
+\]
+converges in operator norm. The norm tail is bounded by the scalar
+exponential tail. The convolution identity gives $U^n=P_{n\delta}$,
+so $V_\lambda$ is exactly integration against translated
+$\nu_\lambda$, initially on bounded continuous functions and then on
+$L^2$ by contraction and density. If $A=U-I$, then $\|A\|\leq2$ and
+\[
+ \left\|\frac{e^{\lambda A}-I}{\lambda}-A\right\|
+ \leq\sum_{j\geq2}\frac{\lambda^{j-1}\|A\|^j}{j!}\longrightarrow0.
+\]
+Consequently the generator in the parameter $\lambda$ is the bounded
+operator $P_\delta-I$ on the whole space. This is an explicitly proved
+classical consequence, separate from the original unbounded generator
+domain for $r$. Bounded jump generation does not imply smoothing.
+
+For each fixed $\lambda$, independent increments of law $\nu_\lambda$
+give a countable-step chain exactly as above. Its first step from zero
+has the atom~\eqref{eq:atom}, and its character increment pairing is
+\[
+ e^{-\lambda q_\delta(k-l)}-e^{-\lambda q_\delta(k)}
+       -e^{-\lambda q_\delta(l)}+1.
+\]
+The right derivative at parameter zero is
+$2K_{q_\delta}(k,l)$, which by~\eqref{eq:jump-gram} is the second
+moment of the increments of \emph{one original heat jump}. It is
+an uncentered Gram pairing. A centered covariance would additionally
+subtract the product of the increment means. This changes the
+finite-parameter value, although that product has derivative zero at
+zero. The derivative varies the one-step Poisson parameter across a
+family of discrete chains; it does not construct a continuous-time
+compound-Poisson process with cadlag paths.
+
 \section{Formal source correspondence and editorial scope}
 The mathematical source is frozen at
 \begin{center}\small\ttfamily
@@ -735,6 +941,8 @@ Physical sharp threshold&\code{PhysicalHeatPositiveCone.anisotropic_physical_pos
 Finite-time kernel&\code{PhysicalHeatChain.heatIncrementSymbol_covariance}\\[3pt]
 Actual increment pairing&\code{PhysicalHeatChain.chainLaw_increment_pair_gamma}\\[3pt]
 Exact negative difference&\code{PhysicalHeatCovarianceNonmonotonicity.covariance_increment_energy_eq}\\
+Actual physical laws&\code{PhysicalHeatFiniteBox.exists_physical_heat_law}\\[3pt]
+Poisson mixture and atom&\code{PhysicalHeatCompoundPoisson.compoundHeatLaw_character} and \code{PhysicalHeatCompoundPoissonAtom.noJump_dirac_le}\\[3pt]
 Sharp zero core curvature&\code{PhysicalHeatFlatCurvature.no_positive_quad_curvature}\\
 \end{longtable}
 
@@ -747,15 +955,10 @@ a sufficiently small right neighborhood of zero, whereas the
 mapped physical counterexample declaration asks only for one
 positive time. These elementary deductions are proved here,
 not attributed to additional named Lean theorems.
-The source uses nonnegative real
-rates and the unit-period three-torus, as does this paper.
-Synthesis on period-$2\pi$ coordinate boxes requires its
-separate scaling identification; it is not used as a substitute
-for the physical Haar space. The supplied baseline receipt
-reports a complete successful build with 54,943 declarations
-audited using only the standard three axioms. Source and
-evidence hashes were checked; this editorial work does not
-claim a new full Lean build or modify any mathematical source.
+All physical statements use the unit-period Haar torus. The baseline
+receipt records a full build and 54,943 declarations audited with the
+standard three axioms; its evidence hashes were checked. No new Lean
+build or mathematical source change is claimed.
 
 This paper is a coherent exposition of classical positivity
 structure and its verified physical realization, with explicit
@@ -765,18 +968,18 @@ positive-definiteness equivalence, not merely a related
 formalization. The power threshold and integral argument are
 classical. We do not claim novelty for those statements or for
 Schur products. Priority for the exact finite witnesses and
-this combined formalization package remains unresolved.
+this combined formalization package remains unresolved. The Poisson mixture, bounded jump generator and no-jump mechanism are classical; Varadhan's primary notes were checked at the characteristic-function and operator-series formulas. No priority is claimed for them. The countable independent-increment realization reorganizes the source's kernel trajectory proof without asserting continuous-time path regularity.
 
-The proof provides a complete $L^2$ generator domain but keeps
-pointwise Gamma operations on the finite Fourier algebra. It
-does not identify an unsmoothed closed pointwise Gamma domain,
-construct a continuous-time process, prove a positive curvature
-constant or establish a physical gauge-field mass gap. Both
-paused Bakry objectives retain their separate unfinished
-obligations. The paper uses existing verified results without
-changing the research program.
+The complete $L^2$ generator domain does not identify a closed
+unsmoothed pointwise Gamma domain. Gamma remains on the finite Fourier
+algebra. No continuous-time path regularity, positive curvature
+constant or physical gauge-field mass gap is established.
 
 \begin{thebibliography}{9}
+\bibitem{varadhan} S. R. S. Varadhan,
+\emph{Poisson Processes}, Spring 2006 lecture notes, Sections 1.2 and 2.2.
+\url{https://math.nyu.edu/faculty/varadhan/spring06/spring06.1.pdf}.
+
 \bibitem{schoenberg} I. J. Schoenberg,
 Metric spaces and positive definite functions,
 \emph{Trans. Amer. Math. Soc.} \textbf{44} (1938), 522--536.

@@ -207,3 +207,7 @@ Ten-page computer-assisted finite quadratic companion, 107 exact source correspo
 ## Complete-spectrum shear calibration
 
 The fluid suite expands from six to nine pages with full analytic proofs for a classical Gaussian shear, every normalized Fourier coefficient, complete sector moments, exact angular-label transfer and strict above-one ratio at every finite nonnegative time/viscosity. 98 total exact source correspondences; eight exact finite algebra/support checks pass separately from the analytic infinite-series proof. Every revised page inspected and compilation clean. Twenty-four reviewed drafts total 228 pages.
+
+## Actual torus laws and Poisson-mixture boundary
+
+The Fourier companion expands from eleven to fourteen pages with complete compact-limit law, convolution/kernel and countable-chain proofs, and actual Poisson-mixture symbol, atom and jump Gram derivative. A bounded parameter generator and Haar null-singleton implication are labelled classical deductions. 86 total exact source correspondences; six finite exact checks pass. All final pages inspected, new proof/reference pages enlarged, final two-pass compilation clean and original domains retained. Twenty-four reviewed drafts total 231 pages.

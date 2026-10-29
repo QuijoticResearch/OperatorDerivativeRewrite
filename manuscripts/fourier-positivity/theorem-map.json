@@ -288,6 +288,456 @@
       "line": 55,
       "source_sha256": "f5d1e753d65a5c90e46ec6467cf3c0c12cf0820fdecc99cd8b44b6ef4ab35016",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatFlatCurvature.lean#L55"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatFiniteBox.card_cube",
+      "file": "Foundation/PhysicalHeatFiniteBox.lean",
+      "line": 43,
+      "source_sha256": "b60108f262751e6e6eed77f60b6456c27dd3ce8544ade2dbcd87c878a44083e6",
+      "declaration_header": "theorem card_cube (n : \u2115) : (cube n).card = (2*n+1)^3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatFiniteBox.lean#L43"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatFiniteBox.cubePolynomial_square_coeff",
+      "file": "Foundation/PhysicalHeatFiniteBox.lean",
+      "line": 70,
+      "source_sha256": "b60108f262751e6e6eed77f60b6456c27dd3ce8544ade2dbcd87c878a44083e6",
+      "declaration_header": "theorem cubePolynomial_square_coeff (n : \u2115) (k : Wave) :\n    (FiniteFourierReality.reflection (cubePolynomial n) *\n      cubePolynomial n).coeff k =\n      ((cube n).filter (fun j => j + k \u2208 cube n)).card",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatFiniteBox.lean#L70"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatFiniteBox.normalizedCube_energy",
+      "file": "Foundation/PhysicalHeatFiniteBox.lean",
+      "line": 118,
+      "source_sha256": "b60108f262751e6e6eed77f60b6456c27dd3ce8544ade2dbcd87c878a44083e6",
+      "declaration_header": "theorem normalizedCube_energy (n : \u2115) :\n    (\u2211 k \u2208 (normalizedCube n).coeff.support,\n      conj ((normalizedCube n).coeff k) * (normalizedCube n).coeff k) = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatFiniteBox.lean#L118"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatFiniteBox.overlap_ratio_tendsto",
+      "file": "Foundation/PhysicalHeatFiniteBox.lean",
+      "line": 201,
+      "source_sha256": "b60108f262751e6e6eed77f60b6456c27dd3ce8544ade2dbcd87c878a44083e6",
+      "declaration_header": "theorem overlap_ratio_tendsto (k : Wave) :\n    Tendsto (fun n : \u2115 =>\n      (((cube n).filter (fun j => j + k \u2208 cube n)).card : \u211d) /\n        ((cube n).card : \u211d)) atTop (\ud835\udcdd 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatFiniteBox.lean#L201"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatFiniteBox.normalizedCube_coeff_ratio",
+      "file": "Foundation/PhysicalHeatFiniteBox.lean",
+      "line": 230,
+      "source_sha256": "b60108f262751e6e6eed77f60b6456c27dd3ce8544ade2dbcd87c878a44083e6",
+      "declaration_header": "theorem normalizedCube_coeff_ratio (n : \u2115) (k : Wave) :\n    (FiniteFourierReality.reflection (normalizedCube n) *\n      normalizedCube n).coeff k =\n      (((((cube n).filter (fun j => j + k \u2208 cube n)).card : \u211d) /\n        ((cube n).card : \u211d) : \u211d) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatFiniteBox.lean#L230"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatFiniteBox.normalizedCube_coeff_tendsto",
+      "file": "Foundation/PhysicalHeatFiniteBox.lean",
+      "line": 243,
+      "source_sha256": "b60108f262751e6e6eed77f60b6456c27dd3ce8544ade2dbcd87c878a44083e6",
+      "declaration_header": "theorem normalizedCube_coeff_tendsto (k : Wave) :\n    Tendsto (fun n : \u2115 =>\n      (FiniteFourierReality.reflection (normalizedCube n) *\n        normalizedCube n).coeff k) atTop (\ud835\udcdd 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatFiniteBox.lean#L243"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatFiniteBox.exists_physical_heat_law",
+      "file": "Foundation/PhysicalHeatFiniteBox.lean",
+      "line": 250,
+      "source_sha256": "b60108f262751e6e6eed77f60b6456c27dd3ce8544ade2dbcd87c878a44083e6",
+      "declaration_header": "theorem exists_physical_heat_law (r : Wave \u2192 \u211d\u22650)\n    (hr : FourierCovarianceCriterion.CovarianceSymbol (fun k => (r k : \u211d)))\n    (hr0 : r 0 = 0) (t : \u211d\u22650) :\n    \u2203 \u03bc : MeasureTheory.ProbabilityMeasure (UnitAddTorus (Fin 3)),\n      \u2200 k : Wave,\n        (\u222b x : UnitAddTorus (Fin 3), UnitAddTorus.mFourier (-k) x\n          \u2202(\u03bc : MeasureTheory.Measure (UnitAddTorus (Fin 3)))) =\n            (Real.exp (-((t : \u211d) * (r k : \u211d))) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatFiniteBox.lean#L250"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatTransitionLimit.exists_transition_of_approximate_squares",
+      "file": "Foundation/PhysicalHeatTransitionLimit.lean",
+      "line": 32,
+      "source_sha256": "76c70201e6a672f2f470ef91ec121970784f09dd81af3ccb24e76f3ecaa7c7b7",
+      "declaration_header": "theorem exists_transition_of_approximate_squares\n    (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d)))\n    (hr0 : r 0 = 0) (t : \u211d\u22650)\n    (f : \u2115 \u2192 Fourier)\n    (hf : \u2200 n, (\u2211 k \u2208 (f n).coeff.support,\n      conj ((f n).coeff k) * (f n).coeff k) = 1)\n    (hcoeff : \u2200 k : Wave,\n      Tendsto (fun n => (FiniteFourierReality.reflection (f n) * f n).coeff k)\n        atTop (\ud835\udcdd 1)) :\n    \u2203 \u03bc : ProbabilityMeasure (UnitAddTorus (Fin 3)),\n      \u2200 k : Wave,\n        (\u222b x : UnitAddTorus (Fin 3), UnitAddTorus.mFourier (-k) x\n          \u2202(\u03bc : Measure (UnitAddTorus (Fin 3)))) =\n            (Real.exp (-((t : \u211d) * (r k : \u211d))) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatTransitionLimit.lean#L32"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatLawUnique.measure_eq_of_fourier_moments",
+      "file": "Foundation/PhysicalHeatLawUnique.lean",
+      "line": 48,
+      "source_sha256": "baa6e6b937846c05701a274b8917cf9bef477721928811bb0c5ba00409876f38",
+      "declaration_header": "theorem measure_eq_of_fourier_moments\n    (\u03bc \u03bd : ProbabilityMeasure (UnitAddTorus (Fin 3)))\n    (h : \u2200 k : Fin 3 \u2192 \u2124,\n      (\u222b x, UnitAddTorus.mFourier k x \u2202(\u03bc : Measure (UnitAddTorus (Fin 3)))) =\n      (\u222b x, UnitAddTorus.mFourier k x \u2202(\u03bd : Measure (UnitAddTorus (Fin 3))))) :\n    \u03bc = \u03bd",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatLawUnique.lean#L48"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatLawUnique.physical_heat_law_unique",
+      "file": "Foundation/PhysicalHeatLawUnique.lean",
+      "line": 93,
+      "source_sha256": "baa6e6b937846c05701a274b8917cf9bef477721928811bb0c5ba00409876f38",
+      "declaration_header": "theorem physical_heat_law_unique (r : Wave \u2192 \u211d\u22650)\n    (t : \u211d\u22650)\n    (\u03bc \u03bd : ProbabilityMeasure (UnitAddTorus (Fin 3)))\n    (h\u03bc : \u2200 k : Wave,\n      (\u222b x, UnitAddTorus.mFourier (-k) x \u2202(\u03bc : Measure (UnitAddTorus (Fin 3)))) =\n        (Real.exp (-((t : \u211d) * (r k : \u211d))) : \u2102))\n    (h\u03bd : \u2200 k : Wave,\n      (\u222b x, UnitAddTorus.mFourier (-k) x \u2202(\u03bd : Measure (UnitAddTorus (Fin 3)))) =\n        (Real.exp (-((t : \u211d) * (r k : \u211d))) : \u2102)) :\n    \u03bc = \u03bd",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatLawUnique.lean#L93"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatLawUnique.exists_unique_physical_heat_law",
+      "file": "Foundation/PhysicalHeatLawUnique.lean",
+      "line": 107,
+      "source_sha256": "baa6e6b937846c05701a274b8917cf9bef477721928811bb0c5ba00409876f38",
+      "declaration_header": "theorem exists_unique_physical_heat_law (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d)))\n    (hr0 : r 0 = 0) (t : \u211d\u22650) :\n    \u2203! \u03bc : ProbabilityMeasure (UnitAddTorus (Fin 3)),\n      \u2200 k : Wave,\n        (\u222b x, UnitAddTorus.mFourier (-k) x \u2202(\u03bc : Measure (UnitAddTorus (Fin 3)))) =\n          (Real.exp (-((t : \u211d) * (r k : \u211d))) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatLawUnique.lean#L107"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatConvolution.character_convolution",
+      "file": "Foundation/PhysicalHeatConvolution.lean",
+      "line": 38,
+      "source_sha256": "9bb9629d6edc8bb6de2f6f6f2806426fbce128ffe08c09c62ce44817380e8b86",
+      "declaration_header": "theorem character_convolution (k : Wave)\n    (\u03bc \u03bd : ProbabilityMeasure (UnitAddTorus (Fin 3))) :\n    (\u222b z, UnitAddTorus.mFourier k z\n      \u2202((\u03bc : Measure (UnitAddTorus (Fin 3))) \u2217 (\u03bd : Measure (UnitAddTorus (Fin 3))))) =\n    (\u222b x, UnitAddTorus.mFourier k x \u2202(\u03bc : Measure (UnitAddTorus (Fin 3)))) *\n    (\u222b y, UnitAddTorus.mFourier k y \u2202(\u03bd : Measure (UnitAddTorus (Fin 3))))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatConvolution.lean#L38"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatConvolution.heatLaw_character",
+      "file": "Foundation/PhysicalHeatConvolution.lean",
+      "line": 54,
+      "source_sha256": "9bb9629d6edc8bb6de2f6f6f2806426fbce128ffe08c09c62ce44817380e8b86",
+      "declaration_header": "theorem heatLaw_character (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d)))\n    (hr0 : r 0 = 0) (t : \u211d\u22650) (k : Wave) :\n    (\u222b x, UnitAddTorus.mFourier (-k) x\n      \u2202(heatLaw r hr hr0 t : Measure (UnitAddTorus (Fin 3)))) =\n        (Real.exp (-((t : \u211d) * (r k : \u211d))) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatConvolution.lean#L54"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatConvolution.heatLaw_conv",
+      "file": "Foundation/PhysicalHeatConvolution.lean",
+      "line": 62,
+      "source_sha256": "9bb9629d6edc8bb6de2f6f6f2806426fbce128ffe08c09c62ce44817380e8b86",
+      "declaration_header": "theorem heatLaw_conv (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d)))\n    (hr0 : r 0 = 0) (s t : \u211d\u22650) :\n    ((heatLaw r hr hr0 s : Measure (UnitAddTorus (Fin 3))) \u2217\n      (heatLaw r hr hr0 t : Measure (UnitAddTorus (Fin 3)))) =\n    (heatLaw r hr hr0 (s+t) : Measure (UnitAddTorus (Fin 3)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatConvolution.lean#L62"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatConvolution.heatLaw_zero",
+      "file": "Foundation/PhysicalHeatConvolution.lean",
+      "line": 88,
+      "source_sha256": "9bb9629d6edc8bb6de2f6f6f2806426fbce128ffe08c09c62ce44817380e8b86",
+      "declaration_header": "theorem heatLaw_zero (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d)))\n    (hr0 : r 0 = 0) :\n    (heatLaw r hr hr0 0 : Measure (UnitAddTorus (Fin 3))) = Measure.dirac 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatConvolution.lean#L88"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatWeakContinuity.character_integral_continuous",
+      "file": "Foundation/PhysicalHeatWeakContinuity.lean",
+      "line": 24,
+      "source_sha256": "e7011ff210ce76198ec7a2e3ce47bffe478c03860ea58713c3be294f258aa533",
+      "declaration_header": "theorem character_integral_continuous (k : Wave) :\n    Continuous (fun \u03bc : ProbabilityMeasure (UnitAddTorus (Fin 3)) =>\n      \u222b x, UnitAddTorus.mFourier k x \u2202(\u03bc : Measure (UnitAddTorus (Fin 3))))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatWeakContinuity.lean#L24"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatWeakContinuity.heatLaw_continuous",
+      "file": "Foundation/PhysicalHeatWeakContinuity.lean",
+      "line": 39,
+      "source_sha256": "e7011ff210ce76198ec7a2e3ce47bffe478c03860ea58713c3be294f258aa533",
+      "declaration_header": "theorem heatLaw_continuous (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d)))\n    (hr0 : r 0 = 0) : Continuous (heatLaw r hr hr0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatWeakContinuity.lean#L39"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatWeakContinuity.heatLaw_tendsto_dirac_zero",
+      "file": "Foundation/PhysicalHeatWeakContinuity.lean",
+      "line": 72,
+      "source_sha256": "e7011ff210ce76198ec7a2e3ce47bffe478c03860ea58713c3be294f258aa533",
+      "declaration_header": "theorem heatLaw_tendsto_dirac_zero (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d)))\n    (hr0 : r 0 = 0) :\n    Tendsto (heatLaw r hr hr0) (\ud835\udcdd (0 : \u211d\u22650))\n      (\ud835\udcdd ((Measure.dirac (0 : UnitAddTorus (Fin 3))).toProbabilityMeasure))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatWeakContinuity.lean#L72"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatKernel.heatKernel_apply",
+      "file": "Foundation/PhysicalHeatKernel.lean",
+      "line": 42,
+      "source_sha256": "9702f58dc1a35dc45d20465c2af771834a80d8366e64752becb6e874290ed709",
+      "declaration_header": "theorem heatKernel_apply (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d)))\n    (hr0 : r 0 = 0) (t : \u211d\u22650) (x : UnitAddTorus (Fin 3)) :\n    heatKernel r hr hr0 t x =\n      (heatLaw r hr hr0 t : Measure (UnitAddTorus (Fin 3))).map (fun y => x + y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatKernel.lean#L42"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatKernel.heatKernel_character",
+      "file": "Foundation/PhysicalHeatKernel.lean",
+      "line": 60,
+      "source_sha256": "9702f58dc1a35dc45d20465c2af771834a80d8366e64752becb6e874290ed709",
+      "declaration_header": "theorem heatKernel_character (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d)))\n    (hr0 : r 0 = 0) (t : \u211d\u22650) (x : UnitAddTorus (Fin 3)) (k : Wave) :\n    (\u222b z, UnitAddTorus.mFourier (-k) z \u2202heatKernel r hr hr0 t x) =\n      UnitAddTorus.mFourier (-k) x *\n        (Real.exp (-((t : \u211d) * (r k : \u211d))) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatKernel.lean#L60"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatKernel.heatKernel_comp",
+      "file": "Foundation/PhysicalHeatKernel.lean",
+      "line": 72,
+      "source_sha256": "9702f58dc1a35dc45d20465c2af771834a80d8366e64752becb6e874290ed709",
+      "declaration_header": "theorem heatKernel_comp (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d)))\n    (hr0 : r 0 = 0) (s t : \u211d\u22650) :\n    (heatKernel r hr hr0 t \u2218\u2096 heatKernel r hr hr0 s) =\n      heatKernel r hr hr0 (s+t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatKernel.lean#L72"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatKernel.heatKernel_zero",
+      "file": "Foundation/PhysicalHeatKernel.lean",
+      "line": 120,
+      "source_sha256": "9702f58dc1a35dc45d20465c2af771834a80d8366e64752becb6e874290ed709",
+      "declaration_header": "theorem heatKernel_zero (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d)))\n    (hr0 : r 0 = 0) :\n    heatKernel r hr hr0 0 = Kernel.id",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatKernel.lean#L120"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatChain.stepKernel_apply",
+      "file": "Foundation/PhysicalHeatChain.lean",
+      "line": 38,
+      "source_sha256": "4a7b305153249742c90f337dd0f89ec2c4fee8889f1bba2404c88abd7b849ccc",
+      "declaration_header": "theorem stepKernel_apply (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d)))\n    (hr0 : r 0 = 0) (\u03b4 : \u211d\u22650) (n : \u2115)\n    (past : \u03a0 _i : Finset.Iic n, UnitAddTorus (Fin 3)) :\n    stepKernel r hr hr0 \u03b4 n past =\n      heatKernel r hr hr0 \u03b4 (past \u27e8n, Finset.mem_Iic.mpr le_rfl\u27e9)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatChain.lean#L38"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatChain.chainLaw_condDistrib",
+      "file": "Foundation/PhysicalHeatChain.lean",
+      "line": 58,
+      "source_sha256": "4a7b305153249742c90f337dd0f89ec2c4fee8889f1bba2404c88abd7b849ccc",
+      "declaration_header": "theorem chainLaw_condDistrib (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d)))\n    (hr0 : r 0 = 0) (\u03b4 : \u211d\u22650) (x\u2080 : UnitAddTorus (Fin 3)) (n : \u2115) :\n    condDistrib (fun path : \u2115 \u2192 UnitAddTorus (Fin 3) => path (n+1))\n      (frestrictLe n) (chainLaw r hr hr0 \u03b4 x\u2080) =\u1d50[\n        (chainLaw r hr hr0 \u03b4 x\u2080).map (frestrictLe n)]\n      stepKernel r hr hr0 \u03b4 n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatChain.lean#L58"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatChain.chainLaw_initial",
+      "file": "Foundation/PhysicalHeatChain.lean",
+      "line": 67,
+      "source_sha256": "4a7b305153249742c90f337dd0f89ec2c4fee8889f1bba2404c88abd7b849ccc",
+      "declaration_header": "theorem chainLaw_initial (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d)))\n    (hr0 : r 0 = 0) (\u03b4 : \u211d\u22650) (x\u2080 : UnitAddTorus (Fin 3)) :\n    (chainLaw r hr hr0 \u03b4 x\u2080).map (fun path => path 0) = Measure.dirac x\u2080",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatChain.lean#L67"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatChain.chainLaw_one",
+      "file": "Foundation/PhysicalHeatChainMarginals.lean",
+      "line": 24,
+      "source_sha256": "98718e4fc2f42e9f6e09c7ac3e78a4ba2b7fea7dbd062b012f5ec30307b4715b",
+      "declaration_header": "theorem chainLaw_one (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d)))\n    (hr0 : r 0 = 0) (\u03b4 : \u211d\u22650) (x\u2080 : UnitAddTorus (Fin 3)) :\n    (chainLaw r hr hr0 \u03b4 x\u2080).map (fun path => path 1) =\n      heatKernel r hr hr0 \u03b4 x\u2080",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatChainMarginals.lean#L24"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatChain.chainLaw_next",
+      "file": "Foundation/PhysicalHeatChainMarginals.lean",
+      "line": 46,
+      "source_sha256": "98718e4fc2f42e9f6e09c7ac3e78a4ba2b7fea7dbd062b012f5ec30307b4715b",
+      "declaration_header": "theorem chainLaw_next (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d)))\n    (hr0 : r 0 = 0) (\u03b4 : \u211d\u22650) (x\u2080 : UnitAddTorus (Fin 3)) (n : \u2115) :\n    (chainLaw r hr hr0 \u03b4 x\u2080).map (fun path => path (n+1)) =\n      heatKernel r hr hr0 \u03b4 \u2218\u2098\n        (chainLaw r hr hr0 \u03b4 x\u2080).map (fun path => path n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatChainMarginals.lean#L46"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatChain.chainLaw_marginal",
+      "file": "Foundation/PhysicalHeatChainMarginals.lean",
+      "line": 80,
+      "source_sha256": "98718e4fc2f42e9f6e09c7ac3e78a4ba2b7fea7dbd062b012f5ec30307b4715b",
+      "declaration_header": "theorem chainLaw_marginal (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d)))\n    (hr0 : r 0 = 0) (\u03b4 : \u211d\u22650) (x\u2080 : UnitAddTorus (Fin 3)) (n : \u2115) :\n    (chainLaw r hr hr0 \u03b4 x\u2080).map (fun path => path n) =\n      heatKernel r hr hr0 ((n : \u211d\u22650) * \u03b4) x\u2080",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatChainMarginals.lean#L80"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatChain.chainLaw_character",
+      "file": "Foundation/PhysicalHeatChainMarginals.lean",
+      "line": 97,
+      "source_sha256": "98718e4fc2f42e9f6e09c7ac3e78a4ba2b7fea7dbd062b012f5ec30307b4715b",
+      "declaration_header": "theorem chainLaw_character (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d)))\n    (hr0 : r 0 = 0) (\u03b4 : \u211d\u22650) (x\u2080 : UnitAddTorus (Fin 3))\n    (n : \u2115) (k : Wave) :\n    (\u222b path, UnitAddTorus.mFourier (-k) (path n) \u2202chainLaw r hr hr0 \u03b4 x\u2080) =\n      UnitAddTorus.mFourier (-k) x\u2080 *\n        (Real.exp (-((((n : \u211d\u22650) * \u03b4) : \u211d) * (r k : \u211d))) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatChainMarginals.lean#L97"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatChain.heatKernel_increment_pair",
+      "file": "Foundation/PhysicalHeatChainGamma.lean",
+      "line": 35,
+      "source_sha256": "d44d5eaeefd5b6f3804948089f5f20839ddc42cbe58e98351d5e1a37bcd9b9de",
+      "declaration_header": "theorem heatKernel_increment_pair (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d))) (hr0 : r 0 = 0)\n    (t : \u211d\u22650) (k l : Wave) :\n    (\u222b z, (UnitAddTorus.mFourier (-k) z - 1) *\n      (UnitAddTorus.mFourier l z - 1) \u2202heatKernel r hr hr0 t (0 : UnitAddTorus (Fin 3))) =\n      (Real.exp (-((t : \u211d) * (r (k-l) : \u211d))) : \u2102) -\n      (Real.exp (-((t : \u211d) * (r k : \u211d))) : \u2102) -\n      (Real.exp (-((t : \u211d) * (r l : \u211d))) : \u2102) + 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatChainGamma.lean#L35"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatChain.chainLaw_increment_pair",
+      "file": "Foundation/PhysicalHeatChainGamma.lean",
+      "line": 87,
+      "source_sha256": "d44d5eaeefd5b6f3804948089f5f20839ddc42cbe58e98351d5e1a37bcd9b9de",
+      "declaration_header": "theorem chainLaw_increment_pair (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d))) (hr0 : r 0 = 0)\n    (t : \u211d\u22650) (k l : Wave) :\n    (\u222b path, (UnitAddTorus.mFourier (-k) (path 1) - 1) *\n      (UnitAddTorus.mFourier l (path 1) - 1)\n      \u2202chainLaw r hr hr0 t (0 : UnitAddTorus (Fin 3))) =\n      (Real.exp (-((t : \u211d) * (r (k-l) : \u211d))) : \u2102) -\n      (Real.exp (-((t : \u211d) * (r k : \u211d))) : \u2102) -\n      (Real.exp (-((t : \u211d) * (r l : \u211d))) : \u2102) + 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatChainGamma.lean#L87"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatChain.incrementPairValue_hasDerivAt_zero",
+      "file": "Foundation/PhysicalHeatChainGamma.lean",
+      "line": 107,
+      "source_sha256": "d44d5eaeefd5b6f3804948089f5f20839ddc42cbe58e98351d5e1a37bcd9b9de",
+      "declaration_header": "theorem incrementPairValue_hasDerivAt_zero (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d))) (hr0 : r 0 = 0)\n    (k l : Wave) :\n    HasDerivAt (fun t : \u211d =>\n      Real.exp (-(t * (r (k-l) : \u211d))) -\n      Real.exp (-(t * (r k : \u211d))) -\n      Real.exp (-(t * (r l : \u211d))) + 1)\n      (2 * kernel (fun q => (r q : \u211d)) k l) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatChainGamma.lean#L107"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatChain.chainLaw_incrementPair_hasDerivWithinAt_zero",
+      "file": "Foundation/PhysicalHeatChainGamma.lean",
+      "line": 136,
+      "source_sha256": "d44d5eaeefd5b6f3804948089f5f20839ddc42cbe58e98351d5e1a37bcd9b9de",
+      "declaration_header": "theorem chainLaw_incrementPair_hasDerivWithinAt_zero (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d))) (hr0 : r 0 = 0)\n    (k l : Wave) :\n    HasDerivWithinAt (fun t : \u211d =>\n      (\u222b path, (UnitAddTorus.mFourier (-k) (path 1) - 1) *\n        (UnitAddTorus.mFourier l (path 1) - 1)\n        \u2202chainLaw r hr hr0 (Real.toNNReal t) (0 : UnitAddTorus (Fin 3))).re)\n      (2 * kernel (fun q => (r q : \u211d)) k l) (Set.Ici 0) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatChainGamma.lean#L136"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatCompoundPoisson.compoundHeatLaw_sum",
+      "file": "Foundation/PhysicalHeatCompoundPoisson.lean",
+      "line": 51,
+      "source_sha256": "171a0b43c0c6c01d7729eae91ffb3f250822c1752fba1a2461a98c0edd1cd4d3",
+      "declaration_header": "theorem compoundHeatLaw_sum (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d))) (hr0 : r 0 = 0)\n    (\u03b4 rate : \u211d\u22650) :\n    compoundHeatLaw r hr hr0 \u03b4 rate =\n      Measure.sum (fun n => ENNReal.ofReal (poissonWeight rate n) \u2022\n        (heatLaw r hr hr0 ((n : \u211d\u22650) * \u03b4) : Measure (UnitAddTorus (Fin 3))))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatCompoundPoisson.lean#L51"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatCompoundPoisson.compoundHeatLaw_character_tsum",
+      "file": "Foundation/PhysicalHeatCompoundPoisson.lean",
+      "line": 65,
+      "source_sha256": "171a0b43c0c6c01d7729eae91ffb3f250822c1752fba1a2461a98c0edd1cd4d3",
+      "declaration_header": "theorem compoundHeatLaw_character_tsum (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d))) (hr0 : r 0 = 0)\n    (\u03b4 rate : \u211d\u22650) (k : Wave) :\n    (\u222b x, UnitAddTorus.mFourier (-k) x \u2202compoundHeatLaw r hr hr0 \u03b4 rate) =\n      \u2211' n : \u2115, (poissonWeight rate n : \u2102) *\n        (Real.exp (-(((n : \u211d\u22650) * \u03b4 : \u211d) * (r k : \u211d))) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatCompoundPoisson.lean#L65"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatCompoundPoisson.compoundHeatLaw_character",
+      "file": "Foundation/PhysicalHeatCompoundPoisson.lean",
+      "line": 118,
+      "source_sha256": "171a0b43c0c6c01d7729eae91ffb3f250822c1752fba1a2461a98c0edd1cd4d3",
+      "declaration_header": "theorem compoundHeatLaw_character (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d))) (hr0 : r 0 = 0)\n    (\u03b4 rate : \u211d\u22650) (k : Wave) :\n    (\u222b x, UnitAddTorus.mFourier (-k) x \u2202compoundHeatLaw r hr hr0 \u03b4 rate) =\n      (Real.exp (-((rate : \u211d) * heatIncrementSymbol r \u03b4 k)) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatCompoundPoisson.lean#L118"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatCompoundPoisson.jumpRate_zero",
+      "file": "Foundation/PhysicalHeatCompoundPoisson.lean",
+      "line": 144,
+      "source_sha256": "171a0b43c0c6c01d7729eae91ffb3f250822c1752fba1a2461a98c0edd1cd4d3",
+      "declaration_header": "theorem jumpRate_zero (r : Wave \u2192 \u211d\u22650) (hr0 : r 0 = 0) (\u03b4 : \u211d\u22650) :\n    jumpRate r \u03b4 0 = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatCompoundPoisson.lean#L144"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatCompoundPoisson.jumpRate_covariance",
+      "file": "Foundation/PhysicalHeatCompoundPoisson.lean",
+      "line": 150,
+      "source_sha256": "171a0b43c0c6c01d7729eae91ffb3f250822c1752fba1a2461a98c0edd1cd4d3",
+      "declaration_header": "theorem jumpRate_covariance (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d))) (hr0 : r 0 = 0)\n    (\u03b4 : \u211d\u22650) : CovarianceSymbol (fun k => (jumpRate r \u03b4 k : \u211d))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatCompoundPoisson.lean#L150"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatCompoundPoisson.compoundHeatLaw_eq_heatLaw",
+      "file": "Foundation/PhysicalHeatCompoundPoisson.lean",
+      "line": 155,
+      "source_sha256": "171a0b43c0c6c01d7729eae91ffb3f250822c1752fba1a2461a98c0edd1cd4d3",
+      "declaration_header": "theorem compoundHeatLaw_eq_heatLaw (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d))) (hr0 : r 0 = 0)\n    (\u03b4 rate : \u211d\u22650) :\n    compoundHeatLaw r hr hr0 \u03b4 rate =\n      (heatLaw (jumpRate r \u03b4) (jumpRate_covariance r hr hr0 \u03b4)\n        (jumpRate_zero r hr0 \u03b4) rate : Measure (UnitAddTorus (Fin 3)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatCompoundPoisson.lean#L155"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatCompoundPoisson.compoundHeatLaw_conv",
+      "file": "Foundation/PhysicalHeatCompoundPoisson.lean",
+      "line": 179,
+      "source_sha256": "171a0b43c0c6c01d7729eae91ffb3f250822c1752fba1a2461a98c0edd1cd4d3",
+      "declaration_header": "theorem compoundHeatLaw_conv (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d))) (hr0 : r 0 = 0)\n    (\u03b4 s t : \u211d\u22650) :\n    compoundHeatLaw r hr hr0 \u03b4 s \u2217 compoundHeatLaw r hr hr0 \u03b4 t =\n      compoundHeatLaw r hr hr0 \u03b4 (s+t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatCompoundPoisson.lean#L179"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatCompoundPoisson.compoundHeatLaw_zero",
+      "file": "Foundation/PhysicalHeatCompoundPoisson.lean",
+      "line": 194,
+      "source_sha256": "171a0b43c0c6c01d7729eae91ffb3f250822c1752fba1a2461a98c0edd1cd4d3",
+      "declaration_header": "theorem compoundHeatLaw_zero (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d))) (hr0 : r 0 = 0)\n    (\u03b4 : \u211d\u22650) :\n    compoundHeatLaw r hr hr0 \u03b4 0 = Measure.dirac 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatCompoundPoisson.lean#L194"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatCompoundPoissonAtom.noJump_dirac_le",
+      "file": "Foundation/PhysicalHeatCompoundPoissonAtom.lean",
+      "line": 24,
+      "source_sha256": "2cda3d2d0da28790e6e24952bbc7f34ef1c22575cca4bb2a8e6a4c1386147788",
+      "declaration_header": "theorem noJump_dirac_le (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d))) (hr0 : r 0 = 0)\n    (\u03b4 rate : \u211d\u22650) :\n    ENNReal.ofReal (Real.exp (-(rate : \u211d))) \u2022\n      Measure.dirac (0 : UnitAddTorus (Fin 3)) \u2264\n      compoundHeatLaw r hr hr0 \u03b4 rate",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatCompoundPoissonAtom.lean#L24"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatCompoundPoissonAtom.compoundHeatLaw_origin_atom",
+      "file": "Foundation/PhysicalHeatCompoundPoissonAtom.lean",
+      "line": 36,
+      "source_sha256": "2cda3d2d0da28790e6e24952bbc7f34ef1c22575cca4bb2a8e6a4c1386147788",
+      "declaration_header": "theorem compoundHeatLaw_origin_atom (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d))) (hr0 : r 0 = 0)\n    (\u03b4 rate : \u211d\u22650) :\n    ENNReal.ofReal (Real.exp (-(rate : \u211d))) \u2264\n      compoundHeatLaw r hr hr0 \u03b4 rate (Set.singleton (0 : UnitAddTorus (Fin 3)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatCompoundPoissonAtom.lean#L36"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatCompoundPoissonAtom.compoundHeatLaw_origin_atom_pos",
+      "file": "Foundation/PhysicalHeatCompoundPoissonAtom.lean",
+      "line": 53,
+      "source_sha256": "2cda3d2d0da28790e6e24952bbc7f34ef1c22575cca4bb2a8e6a4c1386147788",
+      "declaration_header": "theorem compoundHeatLaw_origin_atom_pos (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d))) (hr0 : r 0 = 0)\n    (\u03b4 rate : \u211d\u22650) :\n    0 < compoundHeatLaw r hr hr0 \u03b4 rate (Set.singleton (0 : UnitAddTorus (Fin 3)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatCompoundPoissonAtom.lean#L53"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatCompoundPoissonAtom.compoundHeatLaw_not_ac_of_null_origin",
+      "file": "Foundation/PhysicalHeatCompoundPoissonAtom.lean",
+      "line": 60,
+      "source_sha256": "2cda3d2d0da28790e6e24952bbc7f34ef1c22575cca4bb2a8e6a4c1386147788",
+      "declaration_header": "theorem compoundHeatLaw_not_ac_of_null_origin (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d))) (hr0 : r 0 = 0)\n    (\u03b4 rate : \u211d\u22650) (\u03bd : Measure (UnitAddTorus (Fin 3)))\n    (h\u03bd : \u03bd (Set.singleton (0 : UnitAddTorus (Fin 3))) = 0) :\n    \u00ac compoundHeatLaw r hr hr0 \u03b4 rate \u226a \u03bd",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatCompoundPoissonAtom.lean#L60"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatCompoundPoissonChainGamma.compoundChainLaw_condDistrib",
+      "file": "Foundation/PhysicalHeatCompoundPoissonChainGamma.lean",
+      "line": 41,
+      "source_sha256": "57cc7ae5646b491098884fd369c9c1e182a51caaffc2ffac414745975346b560",
+      "declaration_header": "theorem compoundChainLaw_condDistrib (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d))) (hr0 : r 0 = 0)\n    (\u03b4 rate : \u211d\u22650) (x\u2080 : UnitAddTorus (Fin 3)) (n : \u2115) :\n    condDistrib (fun path : \u2115 \u2192 UnitAddTorus (Fin 3) => path (n+1))\n      (frestrictLe n) (compoundChainLaw r hr hr0 \u03b4 rate x\u2080) =\u1d50[\n        (compoundChainLaw r hr hr0 \u03b4 rate x\u2080).map (frestrictLe n)]\n      stepKernel (jumpRate r \u03b4) (jumpRate_covariance r hr hr0 \u03b4)\n        (jumpRate_zero r hr0 \u03b4) rate n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatCompoundPoissonChainGamma.lean#L41"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatCompoundPoissonChainGamma.compoundChainLaw_one_origin",
+      "file": "Foundation/PhysicalHeatCompoundPoissonChainGamma.lean",
+      "line": 52,
+      "source_sha256": "57cc7ae5646b491098884fd369c9c1e182a51caaffc2ffac414745975346b560",
+      "declaration_header": "theorem compoundChainLaw_one_origin (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d))) (hr0 : r 0 = 0)\n    (\u03b4 rate : \u211d\u22650) :\n    (compoundChainLaw r hr hr0 \u03b4 rate 0).map (fun path => path 1) =\n      compoundHeatLaw r hr hr0 \u03b4 rate",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatCompoundPoissonChainGamma.lean#L52"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatCompoundPoissonChainGamma.compoundChainLaw_one_origin_atom",
+      "file": "Foundation/PhysicalHeatCompoundPoissonChainGamma.lean",
+      "line": 62,
+      "source_sha256": "57cc7ae5646b491098884fd369c9c1e182a51caaffc2ffac414745975346b560",
+      "declaration_header": "theorem compoundChainLaw_one_origin_atom (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d))) (hr0 : r 0 = 0)\n    (\u03b4 rate : \u211d\u22650) :\n    0 < ((compoundChainLaw r hr hr0 \u03b4 rate 0).map (fun path => path 1))\n      (Set.singleton (0 : UnitAddTorus (Fin 3)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatCompoundPoissonChainGamma.lean#L62"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatCompoundPoissonChainGamma.jumpRate_gamma_is_heatJump_covariance",
+      "file": "Foundation/PhysicalHeatCompoundPoissonChainGamma.lean",
+      "line": 70,
+      "source_sha256": "57cc7ae5646b491098884fd369c9c1e182a51caaffc2ffac414745975346b560",
+      "declaration_header": "theorem jumpRate_gamma_is_heatJump_covariance (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d))) (hr0 : r 0 = 0)\n    (\u03b4 : \u211d\u22650) (k l : Wave) :\n    2 * kernel (fun q => (jumpRate r \u03b4 q : \u211d)) k l =\n      (\u222b z, (UnitAddTorus.mFourier (-l) z - 1) *\n        (UnitAddTorus.mFourier k z - 1)\n        \u2202heatKernel r hr hr0 \u03b4 (0 : UnitAddTorus (Fin 3))).re",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatCompoundPoissonChainGamma.lean#L70"
+    },
+    {
+      "paper": "12\u201313: actual laws and Poisson subordination",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PhysicalHeatCompoundPoissonChainGamma.compoundChainLaw_incrementPair_hasDerivWithinAt_zero",
+      "file": "Foundation/PhysicalHeatCompoundPoissonChainGamma.lean",
+      "line": 82,
+      "source_sha256": "57cc7ae5646b491098884fd369c9c1e182a51caaffc2ffac414745975346b560",
+      "declaration_header": "theorem compoundChainLaw_incrementPair_hasDerivWithinAt_zero\n    (r : Wave \u2192 \u211d\u22650)\n    (hr : CovarianceSymbol (fun k => (r k : \u211d))) (hr0 : r 0 = 0)\n    (\u03b4 : \u211d\u22650) (k l : Wave) :\n    HasDerivWithinAt (fun t : \u211d =>\n      (\u222b path, (UnitAddTorus.mFourier (-k) (path 1) - 1) *\n        (UnitAddTorus.mFourier l (path 1) - 1)\n        \u2202compoundChainLaw r hr hr0 \u03b4 (Real.toNNReal t) 0).re)\n      (\u222b z, (UnitAddTorus.mFourier (-l) z - 1) *\n        (UnitAddTorus.mFourier k z - 1)\n        \u2202heatKernel r hr hr0 \u03b4 (0 : UnitAddTorus (Fin 3))).re\n      (Set.Ici 0) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PhysicalHeatCompoundPoissonChainGamma.lean#L82"
     }
   ],
   "classical_deductions_proved_in_paper": [
@@ -295,6 +745,11 @@
     "Fractional-power conditional negativity is proved by a direct cosine integral rather than importing the formal fractional-covariance proof.",
     "The explicit superquadratic square has a negative evolved value throughout a sufficiently small positive-time interval; the physical source declaration only requires one time.",
     "Self-adjointness and constant preservation follow directly from the real multiplier and the normalized zero mode.",
-    "The equivalence proof on the physical Haar cone combines exact finite-square and cone-closure statements."
+    "The equivalence proof on the physical Haar cone combines exact finite-square and cone-closure statements.",
+    "The actual laws are reconstructed by compact probability limits of evolved normalized box squares, and Fourier density proves uniqueness. This retains original physical Haar normalization.",
+    "Countable chains are realized by independent torus increments. Their iterated transition laws identify them with the formal Ionescu\u2013Tulcea law; no continuous-time paths are asserted.",
+    "Haar nullity of a singleton is proved by translation invariance and arbitrarily many disjoint translated points, explicitly discharging the conditional source atom theorem.",
+    "The bounded Poisson-parameter generator P_delta-I on C or L2 is proved by an operator-norm exponential series. It is a classical deduction rather than a new named Lean generator declaration.",
+    "The Poisson one-step increment derivative is an uncentered Gram second moment of one original heat jump; finite-parameter centered covariance differs by the mean product."
   ]
 }
