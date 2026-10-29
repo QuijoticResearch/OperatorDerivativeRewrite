@@ -1,0 +1,718 @@
+{
+  "baseline": "bab688bb6140cd6316c80680095a914ea0d346db",
+  "entries": [
+    {
+      "paper": "2: complete coordinates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCharlierCompleteness.algebraicSpan_eq_top",
+      "file": "Foundation/PoissonCharlierCompleteness.lean",
+      "line": 56,
+      "source_sha256": "b6fc6740dea569903ed0e23f76f2b1f393923bc70494c74ce9255e2bc26f0de6",
+      "declaration_header": "theorem algebraicSpan_eq_top (rate : \u211d\u22650) : algebraicSpan rate=\u22a4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCharlierCompleteness.lean#L56"
+    },
+    {
+      "paper": "2: complete coordinates",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCharlierCompleteness.scalarSpan_closure",
+      "file": "Foundation/PoissonCharlierCompleteness.lean",
+      "line": 100,
+      "source_sha256": "b6fc6740dea569903ed0e23f76f2b1f393923bc70494c74ce9255e2bc26f0de6",
+      "declaration_header": "theorem scalarSpan_closure (rate : \u211d\u22650) (hr : 0 < rate) :\n    (scalarSpan rate hr).topologicalClosure=\u22a4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCharlierCompleteness.lean#L100"
+    },
+    {
+      "paper": "2: complete unitary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCharlierHilbertBasis.normalized_orthonormal",
+      "file": "Foundation/PoissonCharlierHilbertBasis.lean",
+      "line": 25,
+      "source_sha256": "d2cb4378ae7061e3c2ae75a250e370195e682110b37e0259edbc5fe5bebc0d7e",
+      "declaration_header": "theorem normalized_orthonormal (rate : \u211d\u22650) (hr : 0 < rate) :\n    Orthonormal \u211d (normalized rate hr)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCharlierHilbertBasis.lean#L25"
+    },
+    {
+      "paper": "2: complete unitary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCharlierHilbertBasis.normalized_span",
+      "file": "Foundation/PoissonCharlierHilbertBasis.lean",
+      "line": 40,
+      "source_sha256": "d2cb4378ae7061e3c2ae75a250e370195e682110b37e0259edbc5fe5bebc0d7e",
+      "declaration_header": "theorem normalized_span (rate : \u211d\u22650) (hr : 0 < rate) :\n    Submodule.span \u211d (Set.range (normalized rate hr))=scalarSpan rate hr",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCharlierHilbertBasis.lean#L40"
+    },
+    {
+      "paper": "2: complete unitary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCharlierHilbertBasis.expansion_hasSum",
+      "file": "Foundation/PoissonCharlierHilbertBasis.lean",
+      "line": 65,
+      "source_sha256": "d2cb4378ae7061e3c2ae75a250e370195e682110b37e0259edbc5fe5bebc0d7e",
+      "declaration_header": "theorem expansion_hasSum (rate : \u211d\u22650) (hr : 0 < rate) (f : ScalarL2 rate) :\n    HasSum (fun n => (inner \u211d (normalized rate hr n) f) \u2022 normalized rate hr n) f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCharlierHilbertBasis.lean#L65"
+    },
+    {
+      "paper": "2: complete unitary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCharlierHilbertBasis.gaussianTransfer",
+      "file": "Foundation/PoissonCharlierHilbertBasis.lean",
+      "line": 69,
+      "source_sha256": "d2cb4378ae7061e3c2ae75a250e370195e682110b37e0259edbc5fe5bebc0d7e",
+      "declaration_header": "def gaussianTransfer (rate : \u211d\u22650) (hr : 0 < rate) :\n    ScalarL2 rate \u2243\u2097\u1d62[\u211d] GaussianCore.GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCharlierHilbertBasis.lean#L69"
+    },
+    {
+      "paper": "2: complete unitary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCharlierHilbertBasis.transfer_normalized",
+      "file": "Foundation/PoissonCharlierHilbertBasis.lean",
+      "line": 73,
+      "source_sha256": "d2cb4378ae7061e3c2ae75a250e370195e682110b37e0259edbc5fe5bebc0d7e",
+      "declaration_header": "theorem transfer_normalized (rate : \u211d\u22650) (hr : 0 < rate) (n : \u2115) :\n    gaussianTransfer rate hr (normalized rate hr n)=GaussianCore.normalizedHermite n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCharlierHilbertBasis.lean#L73"
+    },
+    {
+      "paper": "2: complete unitary",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCharlierHilbertBasis.transfer_coefficient",
+      "file": "Foundation/PoissonCharlierHilbertBasis.lean",
+      "line": 79,
+      "source_sha256": "d2cb4378ae7061e3c2ae75a250e370195e682110b37e0259edbc5fe5bebc0d7e",
+      "declaration_header": "theorem transfer_coefficient (rate : \u211d\u22650) (hr : 0 < rate) (f : ScalarL2 rate) (n : \u2115) :\n    inner \u211d (GaussianCore.normalizedHermite n) (gaussianTransfer rate hr f)=\n      inner \u211d (normalized rate hr n) f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCharlierHilbertBasis.lean#L79"
+    },
+    {
+      "paper": "2: product obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPoissonChaosTransfer.poisson_square_decomposition",
+      "file": "Foundation/GaussianPoissonChaosTransfer.lean",
+      "line": 74,
+      "source_sha256": "aa8689ceb2511326680a26c54a7fcb3106d8bef301a4a9b516635672e2ba427b",
+      "declaration_header": "theorem poisson_square_decomposition (rate : \u211d\u22650) (hr : 0 < rate) :\n    centeredCountSqL2 rate hr = PoissonCharlierLadder.scalar rate hr 2 +\n      PoissonCharlierLadder.scalar rate hr 1 +\n      (rate : \u211d) \u2022 PoissonCharlierLadder.scalar rate hr 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPoissonChaosTransfer.lean#L74"
+    },
+    {
+      "paper": "2: product obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPoissonChaosTransfer.poisson_square_first_inner",
+      "file": "Foundation/GaussianPoissonChaosTransfer.lean",
+      "line": 89,
+      "source_sha256": "aa8689ceb2511326680a26c54a7fcb3106d8bef301a4a9b516635672e2ba427b",
+      "declaration_header": "theorem poisson_square_first_inner (rate : \u211d\u22650) (hr : 0 < rate) :\n    inner \u211d (centeredCountSqL2 rate hr) (PoissonCharlierLadder.scalar rate hr 1) = rate",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPoissonChaosTransfer.lean#L89"
+    },
+    {
+      "paper": "2: product obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPoissonChaosTransfer.gaussian_square_first_inner",
+      "file": "Foundation/GaussianPoissonChaosTransfer.lean",
+      "line": 95,
+      "source_sha256": "aa8689ceb2511326680a26c54a7fcb3106d8bef301a4a9b516635672e2ba427b",
+      "declaration_header": "theorem gaussian_square_first_inner (h : CoefficientSpace) :\n    inner \u211d ((wick h 2 : GaussianL2) + (\u2016h\u2016^2) \u2022 (wick h 0 : GaussianL2))\n      (wick h 1 : GaussianL2) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPoissonChaosTransfer.lean#L95"
+    },
+    {
+      "paper": "3: original maximal graphs",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMaximalOperators.maximalDifference_graph",
+      "file": "Foundation/PoissonMaximalOperators.lean",
+      "line": 183,
+      "source_sha256": "f5b0adbb4e7233014516b1d96c04088b96d39a07f72224cfc59675599bd7ff95",
+      "declaration_header": "theorem maximalDifference_graph : (maximalDifference rate hr).graph =\n    maximalDifferenceGraph rate hr",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMaximalOperators.lean#L183"
+    },
+    {
+      "paper": "3: original maximal graphs",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMaximalOperators.maximalDivergence_graph",
+      "file": "Foundation/PoissonMaximalOperators.lean",
+      "line": 188,
+      "source_sha256": "f5b0adbb4e7233014516b1d96c04088b96d39a07f72224cfc59675599bd7ff95",
+      "declaration_header": "theorem maximalDivergence_graph : (maximalDivergence rate hr).graph =\n    maximalDivergenceGraph rate hr",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMaximalOperators.lean#L188"
+    },
+    {
+      "paper": "3: original maximal graphs",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMaximalOperators.maximalDifference_isClosed",
+      "file": "Foundation/PoissonMaximalOperators.lean",
+      "line": 194,
+      "source_sha256": "f5b0adbb4e7233014516b1d96c04088b96d39a07f72224cfc59675599bd7ff95",
+      "declaration_header": "theorem maximalDifference_isClosed : (maximalDifference rate hr).IsClosed",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMaximalOperators.lean#L194"
+    },
+    {
+      "paper": "3: original maximal graphs",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonMaximalOperators.maximalDivergence_isClosed",
+      "file": "Foundation/PoissonMaximalOperators.lean",
+      "line": 199,
+      "source_sha256": "f5b0adbb4e7233014516b1d96c04088b96d39a07f72224cfc59675599bd7ff95",
+      "declaration_header": "theorem maximalDivergence_isClosed : (maximalDivergence rate hr).IsClosed",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonMaximalOperators.lean#L199"
+    },
+    {
+      "paper": "3: ladders and Green identities",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCharlierLadder.lowering_graph",
+      "file": "Foundation/PoissonCharlierLadder.lean",
+      "line": 70,
+      "source_sha256": "e961b8f11f6ebf6bd82f9baa78b79a7ce89f93366d95c2e0573d39b73314017b",
+      "declaration_header": "theorem lowering_graph (rate : \u211d\u22650) (hr : 0 < rate) (n : \u2115) :\n    (scalar rate hr (n+1), (n+1 : \u211d) \u2022 field rate hr n) \u2208\n      (maximalDifference rate hr).graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCharlierLadder.lean#L70"
+    },
+    {
+      "paper": "3: ladders and Green identities",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCharlierLadder.raising_graph",
+      "file": "Foundation/PoissonCharlierLadder.lean",
+      "line": 78,
+      "source_sha256": "e961b8f11f6ebf6bd82f9baa78b79a7ce89f93366d95c2e0573d39b73314017b",
+      "declaration_header": "theorem raising_graph (rate : \u211d\u22650) (hr : 0 < rate) (n : \u2115) :\n    (field rate hr n, scalar rate hr (n+1)) \u2208 (maximalDivergence rate hr).graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCharlierLadder.lean#L78"
+    },
+    {
+      "paper": "3: ladders and Green identities",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCharlierLadder.graph_duality",
+      "file": "Foundation/PoissonCharlierLadder.lean",
+      "line": 96,
+      "source_sha256": "e961b8f11f6ebf6bd82f9baa78b79a7ce89f93366d95c2e0573d39b73314017b",
+      "declaration_header": "theorem graph_duality (rate : \u211d\u22650) (hr : 0 < rate)\n    {f v : ScalarL2 rate} {g u : FieldL2 rate}\n    (hf : (f,g) \u2208 (maximalDifference rate hr).graph)\n    (hu : (u,v) \u2208 (maximalDivergence rate hr).graph) :\n    inner \u211d g u = inner \u211d f v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCharlierLadder.lean#L96"
+    },
+    {
+      "paper": "3: complete spectral graphs",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonSpectralGraphs.difference_graph_iff",
+      "file": "Foundation/PoissonSpectralGraphs.lean",
+      "line": 103,
+      "source_sha256": "405e9c519a97f38b60eda8dd0ab13dd5ac72fa2937e4443a25391198df9cb60f",
+      "declaration_header": "theorem difference_graph_iff (rate : \u211d\u22650) (hr : 0 < rate) (f : ScalarL2 rate) (g : FieldL2 rate) :\n    (f,g) \u2208 (maximalDifference rate hr).graph \u2194\n      \u2200 n, fieldCoefficient rate hr g n=Real.sqrt (n+1 : \u211d)*coefficient rate hr f (n+1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonSpectralGraphs.lean#L103"
+    },
+    {
+      "paper": "3: complete spectral graphs",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonSpectralGraphs.divergence_graph_iff",
+      "file": "Foundation/PoissonSpectralGraphs.lean",
+      "line": 114,
+      "source_sha256": "405e9c519a97f38b60eda8dd0ab13dd5ac72fa2937e4443a25391198df9cb60f",
+      "declaration_header": "theorem divergence_graph_iff (rate : \u211d\u22650) (hr : 0 < rate) (u : FieldL2 rate) (f : ScalarL2 rate) :\n    (u,f) \u2208 (maximalDivergence rate hr).graph \u2194 coefficient rate hr f 0=0 \u2227\n      \u2200 n, coefficient rate hr f (n+1)=Real.sqrt (n+1 : \u211d)*fieldCoefficient rate hr u n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonSpectralGraphs.lean#L114"
+    },
+    {
+      "paper": "3: complete spectral graphs",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonSpectralGraphs.difference_transfer_iff",
+      "file": "Foundation/PoissonSpectralGraphs.lean",
+      "line": 142,
+      "source_sha256": "405e9c519a97f38b60eda8dd0ab13dd5ac72fa2937e4443a25391198df9cb60f",
+      "declaration_header": "theorem difference_transfer_iff (rate : \u211d\u22650) (hr : 0 < rate) (f : ScalarL2 rate) (g : FieldL2 rate) :\n    (f,g) \u2208 (maximalDifference rate hr).graph \u2194\n      (gaussianTransfer rate hr f,fieldGaussianTransfer rate hr g) \u2208 GaussianCore.closedDerivative.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonSpectralGraphs.lean#L142"
+    },
+    {
+      "paper": "3: complete spectral graphs",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonSpectralGraphs.divergence_transfer_iff",
+      "file": "Foundation/PoissonSpectralGraphs.lean",
+      "line": 148,
+      "source_sha256": "405e9c519a97f38b60eda8dd0ab13dd5ac72fa2937e4443a25391198df9cb60f",
+      "declaration_header": "theorem divergence_transfer_iff (rate : \u211d\u22650) (hr : 0 < rate) (u : FieldL2 rate) (f : ScalarL2 rate) :\n    (u,f) \u2208 (maximalDivergence rate hr).graph \u2194\n      (fieldGaussianTransfer rate hr u,gaussianTransfer rate hr f) \u2208 GaussianCore.closedDivergence.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonSpectralGraphs.lean#L148"
+    },
+    {
+      "paper": "3: field normalization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonWeightedScalarGeometry.toScalar_apply",
+      "file": "Foundation/PoissonWeightedScalarGeometry.lean",
+      "line": 29,
+      "source_sha256": "57570f6402dd56ab18edd67df96feb3b9c73b1216a8cf5c294bc6f9f0779fb78",
+      "declaration_header": "theorem toScalar_apply (rate : \u211d\u22650) (hr : 0 < rate) (u : FieldL2 rate) (k : \u2115) :\n    toScalar rate hr u k=Real.sqrt (rate : \u211d)*u k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonWeightedScalarGeometry.lean#L29"
+    },
+    {
+      "paper": "3: field normalization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonWeightedScalarGeometry.toField_apply",
+      "file": "Foundation/PoissonWeightedScalarGeometry.lean",
+      "line": 35,
+      "source_sha256": "57570f6402dd56ab18edd67df96feb3b9c73b1216a8cf5c294bc6f9f0779fb78",
+      "declaration_header": "theorem toField_apply (rate : \u211d\u22650) (hr : 0 < rate) (f : ScalarL2 rate) (k : \u2115) :\n    toField rate f k=(Real.sqrt (rate : \u211d))\u207b\u00b9*f k",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonWeightedScalarGeometry.lean#L35"
+    },
+    {
+      "paper": "3: field normalization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonWeightedScalarGeometry.weightedScalarEquiv",
+      "file": "Foundation/PoissonWeightedScalarGeometry.lean",
+      "line": 91,
+      "source_sha256": "57570f6402dd56ab18edd67df96feb3b9c73b1216a8cf5c294bc6f9f0779fb78",
+      "declaration_header": "def weightedScalarEquiv (rate : \u211d\u22650) (hr : 0 < rate) : FieldL2 rate \u2243\u2097\u1d62[\u211d] ScalarL2 rate where\n  __",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonWeightedScalarGeometry.lean#L91"
+    },
+    {
+      "paper": "3.2: finite-support graph cores",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonTruncationConvergence.difference_output_tendsto",
+      "file": "Foundation/PoissonGraphApprox.lean",
+      "line": 122,
+      "source_sha256": "07f078e596c509475fb92d6d6f95fccd07043a17cdc9996ac3ac8d2d24040836",
+      "declaration_header": "theorem difference_output_tendsto (rate : \u211d\u22650) (hr : 0 < rate)\n    (f : ScalarL2 rate) (hf : f \u2208 (maximalDifference rate hr).domain) :\n    Tendsto (fun N => fieldFinsupp rate\n      (finsuppDifference (truncate (fun n => f n) (N + 1)))) atTop\n      (\ud835\udcdd ((maximalDifference rate hr) \u27e8f, hf\u27e9))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonGraphApprox.lean#L122"
+    },
+    {
+      "paper": "3.2: finite-support graph cores",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonTruncationConvergence.divergence_output_tendsto",
+      "file": "Foundation/PoissonGraphApprox.lean",
+      "line": 133,
+      "source_sha256": "07f078e596c509475fb92d6d6f95fccd07043a17cdc9996ac3ac8d2d24040836",
+      "declaration_header": "theorem divergence_output_tendsto (rate : \u211d\u22650) (hr : 0 < rate)\n    (u : FieldL2 rate) (hu : u \u2208 (maximalDivergence rate hr).domain) :\n    Tendsto (fun N => scalarFinsupp rate\n      (finsuppDivergence rate (truncate (fun n => u n) (N + 1)))) atTop\n      (\ud835\udcdd ((maximalDivergence rate hr) \u27e8u, hu\u27e9))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonGraphApprox.lean#L133"
+    },
+    {
+      "paper": "3.2: finite-support graph cores",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonTruncationConvergence.closure_coreDifference_eq_maximal",
+      "file": "Foundation/PoissonGraphApprox.lean",
+      "line": 175,
+      "source_sha256": "07f078e596c509475fb92d6d6f95fccd07043a17cdc9996ac3ac8d2d24040836",
+      "declaration_header": "theorem closure_coreDifference_eq_maximal (rate : \u211d\u22650) (hr : 0 < rate) :\n    (coreDifference rate hr).closure = maximalDifference rate hr",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonGraphApprox.lean#L175"
+    },
+    {
+      "paper": "3.2: finite-support graph cores",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonTruncationConvergence.closure_coreDivergence_eq_maximal",
+      "file": "Foundation/PoissonGraphApprox.lean",
+      "line": 193,
+      "source_sha256": "07f078e596c509475fb92d6d6f95fccd07043a17cdc9996ac3ac8d2d24040836",
+      "declaration_header": "theorem closure_coreDivergence_eq_maximal (rate : \u211d\u22650) (hr : 0 < rate) :\n    (coreDivergence rate hr).closure = maximalDivergence rate hr",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonGraphApprox.lean#L193"
+    },
+    {
+      "paper": "3.3: original Gaussian graphs",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianCore.closedDerivative_eq_closedDivergence_adjoint",
+      "file": "Foundation/GaussianHermiteAdjoints.lean",
+      "line": 136,
+      "source_sha256": "ecd78a084e3802f9e782674fec667e1ce85e612b7168df0176a3fe629059cf92",
+      "declaration_header": "theorem closedDerivative_eq_closedDivergence_adjoint :\n    closedDerivative = closedDivergence.adjoint",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianHermiteAdjoints.lean#L136"
+    },
+    {
+      "paper": "3.3: original Gaussian graphs",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianCore.closedDivergence_eq_closedDerivative_adjoint",
+      "file": "Foundation/GaussianHermiteAdjoints.lean",
+      "line": 140,
+      "source_sha256": "ecd78a084e3802f9e782674fec667e1ce85e612b7168df0176a3fe629059cf92",
+      "declaration_header": "theorem closedDivergence_eq_closedDerivative_adjoint :\n    closedDivergence = closedDerivative.adjoint",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianHermiteAdjoints.lean#L140"
+    },
+    {
+      "paper": "3.3: original Gaussian graphs",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianCore.closedDerivative_graph_iff",
+      "file": "Foundation/GaussianHermiteAdjoints.lean",
+      "line": 145,
+      "source_sha256": "ecd78a084e3802f9e782674fec667e1ce85e612b7168df0176a3fe629059cf92",
+      "declaration_header": "theorem closedDerivative_graph_iff (f g : GaussianL2) :\n    (f, g) \u2208 closedDerivative.graph \u2194 \u2200 n, hermiteCoefficient g n =\n      Real.sqrt (n + 1 : \u211d) * hermiteCoefficient f (n + 1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianHermiteAdjoints.lean#L145"
+    },
+    {
+      "paper": "3.3: original Gaussian graphs",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianCore.closedDivergence_graph_iff",
+      "file": "Foundation/GaussianHermiteAdjoints.lean",
+      "line": 154,
+      "source_sha256": "ecd78a084e3802f9e782674fec667e1ce85e612b7168df0176a3fe629059cf92",
+      "declaration_header": "theorem closedDivergence_graph_iff (f g : GaussianL2) :\n    (f, g) \u2208 closedDivergence.graph \u2194 hermiteCoefficient g 0 = 0 \u2227\n      \u2200 n, hermiteCoefficient g (n + 1) =\n        Real.sqrt (n + 1 : \u211d) * hermiteCoefficient f n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianHermiteAdjoints.lean#L154"
+    },
+    {
+      "paper": "4: root geometry",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonTiltHellingerGeometry.rootClass_norm_sq",
+      "file": "Foundation/PoissonTiltHellingerGeometry.lean",
+      "line": 37,
+      "source_sha256": "e6e9c945b49ba6ac74449d96949fa252a44ff56847e9c036e7f57e6e3e11188b",
+      "declaration_header": "theorem rootClass_norm_sq (rate : \u211d\u22650) (\u03b8 : \u211d) : \u2016rootClass rate \u03b8\u2016^2=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonTiltHellingerGeometry.lean#L37"
+    },
+    {
+      "paper": "4: root geometry",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonTiltHellingerGeometry.rootClass_inner",
+      "file": "Foundation/PoissonTiltHellingerGeometry.lean",
+      "line": 46,
+      "source_sha256": "e6e9c945b49ba6ac74449d96949fa252a44ff56847e9c036e7f57e6e3e11188b",
+      "declaration_header": "theorem rootClass_inner (rate : \u211d\u22650) (\u03b8 \u03b7 : \u211d) :\n    inner \u211d (rootClass rate \u03b8) (rootClass rate \u03b7)=\n      Real.exp (-(rate : \u211d)/2*(Real.exp (\u03b8/2)-Real.exp (\u03b7/2))^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonTiltHellingerGeometry.lean#L46"
+    },
+    {
+      "paper": "4: root geometry",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonTiltHellingerGeometry.hellinger_distance_sq",
+      "file": "Foundation/PoissonTiltHellingerGeometry.lean",
+      "line": 68,
+      "source_sha256": "e6e9c945b49ba6ac74449d96949fa252a44ff56847e9c036e7f57e6e3e11188b",
+      "declaration_header": "theorem hellinger_distance_sq (rate : \u211d\u22650) (\u03b8 \u03b7 : \u211d) :\n    \u2016rootClass rate \u03b8-rootClass rate \u03b7\u2016^2=\n      2*(1-Real.exp (-(rate : \u211d)/2*(Real.exp (\u03b8/2)-Real.exp (\u03b7/2))^2))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonTiltHellingerGeometry.lean#L68"
+    },
+    {
+      "paper": "4: root geometry",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonTiltHellingerGeometry.gaussianRoot_inner",
+      "file": "Foundation/PoissonTiltHellingerGeometry.lean",
+      "line": 105,
+      "source_sha256": "e6e9c945b49ba6ac74449d96949fa252a44ff56847e9c036e7f57e6e3e11188b",
+      "declaration_header": "theorem gaussianRoot_inner (a b : \u211d) :\n    inner \u211d (gaussianRoot a) (gaussianRoot b)=Real.exp (-((a-b)^2)/2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonTiltHellingerGeometry.lean#L105"
+    },
+    {
+      "paper": "4: root geometry",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonTiltHellingerGeometry.poisson_gaussian_affinity_transfer",
+      "file": "Foundation/PoissonTiltHellingerGeometry.lean",
+      "line": 128,
+      "source_sha256": "e6e9c945b49ba6ac74449d96949fa252a44ff56847e9c036e7f57e6e3e11188b",
+      "declaration_header": "theorem poisson_gaussian_affinity_transfer (rate : \u211d\u22650) (\u03b8 \u03b7 : \u211d) :\n    inner \u211d (rootClass rate \u03b8) (rootClass rate \u03b7)=\n      inner \u211d (gaussianRoot (sqrtRate rate \u03b8)) (gaussianRoot (sqrtRate rate \u03b7))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonTiltHellingerGeometry.lean#L128"
+    },
+    {
+      "paper": "4 and 6: actual tilt and entropy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonExponentialTilt.tiltedMeasure_eq_poisson",
+      "file": "Foundation/PoissonExponentialTilt.lean",
+      "line": 34,
+      "source_sha256": "2212ce3b4925351e0fd2750d5accc18358276ad7325b4a4bcc146b37c403e787",
+      "declaration_header": "theorem tiltedMeasure_eq_poisson (rate : \u211d\u22650) (\u03b8 : \u211d) :\n    tiltedMeasure rate \u03b8=poissonLaw (tiltedRate rate \u03b8)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonExponentialTilt.lean#L34"
+    },
+    {
+      "paper": "4 and 6: actual tilt and entropy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonExponentialTilt.relative_entropy",
+      "file": "Foundation/PoissonExponentialTilt.lean",
+      "line": 77,
+      "source_sha256": "2212ce3b4925351e0fd2750d5accc18358276ad7325b4a4bcc146b37c403e787",
+      "declaration_header": "theorem relative_entropy (rate : \u211d\u22650) (\u03b8 : \u211d) :\n    (\u222b n, density rate \u03b8 n*Real.log (density rate \u03b8 n) \u2202poissonLaw rate)=\n      (rate : \u211d)*(\u03b8*Real.exp \u03b8-Real.exp \u03b8+1)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonExponentialTilt.lean#L77"
+    },
+    {
+      "paper": "4 and 6: actual tilt and entropy",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonExponentialTilt.relative_entropy_eq_jump_energy",
+      "file": "Foundation/PoissonExponentialTilt.lean",
+      "line": 126,
+      "source_sha256": "2212ce3b4925351e0fd2750d5accc18358276ad7325b4a4bcc146b37c403e787",
+      "declaration_header": "theorem relative_entropy_eq_jump_energy (rate : \u211d\u22650) (\u03b8 : \u211d) :\n    (\u222b n, density rate \u03b8 n*Real.log (density rate \u03b8 n) \u2202poissonLaw rate)=\n      PoissonJumpEntropy.jumpEntropyEnergy rate (density rate \u03b8)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonExponentialTilt.lean#L126"
+    },
+    {
+      "paper": "4.2: exact source gauges",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonTiltSourceGauge.gauge",
+      "file": "Foundation/PoissonTiltSourceGauge.lean",
+      "line": 106,
+      "source_sha256": "deb3c252d3ec3dc37c3d899d173d48fea8550370362152633ef055f04f4dd19c",
+      "declaration_header": "def gauge (rate : \u211d\u22650) (\u03b8 : \u211d) : ScalarL2 (tiltedRate rate \u03b8) \u2243\u2097\u1d62[\u211d] ScalarL2 rate",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonTiltSourceGauge.lean#L106"
+    },
+    {
+      "paper": "4.2: exact source gauges",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonTiltSourceGauge.gauge_apply",
+      "file": "Foundation/PoissonTiltSourceGauge.lean",
+      "line": 113,
+      "source_sha256": "deb3c252d3ec3dc37c3d899d173d48fea8550370362152633ef055f04f4dd19c",
+      "declaration_header": "theorem gauge_apply (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d) (f : ScalarL2 (tiltedRate rate \u03b8)) (n : \u2115) :\n    gauge rate \u03b8 f n=rootDensity rate \u03b8 n*f n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonTiltSourceGauge.lean#L113"
+    },
+    {
+      "paper": "4.2: exact source gauges",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonTiltSourceGauge.annihilation_gauge_iff",
+      "file": "Foundation/PoissonTiltSourceGauge.lean",
+      "line": 142,
+      "source_sha256": "deb3c252d3ec3dc37c3d899d173d48fea8550370362152633ef055f04f4dd19c",
+      "declaration_header": "theorem annihilation_gauge_iff (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d)\n    (f g : ScalarL2 (tiltedRate rate \u03b8)) :\n    annihilationGraph (tiltedRate rate \u03b8) (tiltedRate_pos rate hr \u03b8) f g \u2194\n      annihilationGraph rate hr (gauge rate \u03b8 f)\n        (gauge rate \u03b8 g+displacement rate \u03b8 \u2022 gauge rate \u03b8 f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonTiltSourceGauge.lean#L142"
+    },
+    {
+      "paper": "4.2: exact source gauges",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonTiltSourceGauge.creation_gauge_iff",
+      "file": "Foundation/PoissonTiltSourceGauge.lean",
+      "line": 207,
+      "source_sha256": "deb3c252d3ec3dc37c3d899d173d48fea8550370362152633ef055f04f4dd19c",
+      "declaration_header": "theorem creation_gauge_iff (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d)\n    (g f : ScalarL2 (tiltedRate rate \u03b8)) :\n    creationGraph (tiltedRate rate \u03b8) (tiltedRate_pos rate hr \u03b8) g f \u2194\n      creationGraph rate hr (gauge rate \u03b8 g)\n        (gauge rate \u03b8 f+displacement rate \u03b8 \u2022 gauge rate \u03b8 g)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonTiltSourceGauge.lean#L207"
+    },
+    {
+      "paper": "3.3 and 5: graph transport",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDisplacementFromPoisson.annihilation_scalar_transfer",
+      "file": "Foundation/GaussianDisplacementFromPoisson.lean",
+      "line": 14,
+      "source_sha256": "fcf48739f6c952296a511f3c8afbc767cd22634aab77a1b65e51d5ce18daa3b1",
+      "declaration_header": "theorem annihilation_scalar_transfer (rate : \u211d\u22650) (hr : 0<rate) (f g : ScalarL2 rate) :\n    annihilationGraph rate hr f g \u2194\n      (gaussianTransfer rate hr f,gaussianTransfer rate hr g)\u2208GaussianCore.closedDerivative.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDisplacementFromPoisson.lean#L14"
+    },
+    {
+      "paper": "3.3 and 5: graph transport",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDisplacementFromPoisson.creation_scalar_transfer",
+      "file": "Foundation/GaussianDisplacementFromPoisson.lean",
+      "line": 21,
+      "source_sha256": "fcf48739f6c952296a511f3c8afbc767cd22634aab77a1b65e51d5ce18daa3b1",
+      "declaration_header": "theorem creation_scalar_transfer (rate : \u211d\u22650) (hr : 0<rate) (f g : ScalarL2 rate) :\n    creationGraph rate hr f g \u2194\n      (gaussianTransfer rate hr f,gaussianTransfer rate hr g)\u2208GaussianCore.closedDivergence.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDisplacementFromPoisson.lean#L21"
+    },
+    {
+      "paper": "3.3 and 5: graph transport",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDisplacementFromPoisson.gaussianDisplacement",
+      "file": "Foundation/GaussianDisplacementFromPoisson.lean",
+      "line": 28,
+      "source_sha256": "fcf48739f6c952296a511f3c8afbc767cd22634aab77a1b65e51d5ce18daa3b1",
+      "declaration_header": "def gaussianDisplacement (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d) :\n    GaussianCore.GaussianL2 \u2243\u2097\u1d62[\u211d] GaussianCore.GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDisplacementFromPoisson.lean#L28"
+    },
+    {
+      "paper": "3.3 and 5: graph transport",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDisplacementFromPoisson.displacement_derivative_graph",
+      "file": "Foundation/GaussianDisplacementFromPoisson.lean",
+      "line": 33,
+      "source_sha256": "fcf48739f6c952296a511f3c8afbc767cd22634aab77a1b65e51d5ce18daa3b1",
+      "declaration_header": "theorem displacement_derivative_graph (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d)\n    (f g : GaussianCore.GaussianL2) :\n    (f,g)\u2208GaussianCore.closedDerivative.graph \u2194\n      (gaussianDisplacement rate hr \u03b8 f,\n        gaussianDisplacement rate hr \u03b8 g+displacement rate \u03b8 \u2022 gaussianDisplacement rate hr \u03b8 f)\n        \u2208GaussianCore.closedDerivative.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDisplacementFromPoisson.lean#L33"
+    },
+    {
+      "paper": "3.3 and 5: graph transport",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDisplacementFromPoisson.displacement_divergence_graph",
+      "file": "Foundation/GaussianDisplacementFromPoisson.lean",
+      "line": 45,
+      "source_sha256": "fcf48739f6c952296a511f3c8afbc767cd22634aab77a1b65e51d5ce18daa3b1",
+      "declaration_header": "theorem displacement_divergence_graph (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d)\n    (f g : GaussianCore.GaussianL2) :\n    (f,g)\u2208GaussianCore.closedDivergence.graph \u2194\n      (gaussianDisplacement rate hr \u03b8 f,\n        gaussianDisplacement rate hr \u03b8 g+displacement rate \u03b8 \u2022 gaussianDisplacement rate hr \u03b8 f)\n        \u2208GaussianCore.closedDivergence.graph",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDisplacementFromPoisson.lean#L45"
+    },
+    {
+      "paper": "3.3 and 5: graph transport",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDisplacementFromPoisson.exists_positive_reference_displacement",
+      "file": "Foundation/GaussianDisplacementFromPoisson.lean",
+      "line": 57,
+      "source_sha256": "fcf48739f6c952296a511f3c8afbc767cd22634aab77a1b65e51d5ce18daa3b1",
+      "declaration_header": "theorem exists_positive_reference_displacement (d : \u211d) :\n    \u2203 rate : \u211d\u22650, \u2203 hr : 0<rate, \u2203 \u03b8 : \u211d, displacement rate \u03b8=d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDisplacementFromPoisson.lean#L57"
+    },
+    {
+      "paper": "4.1: root identification",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianCoherentIdentification.transferred_root_identification",
+      "file": "Foundation/GaussianCoherentIdentification.lean",
+      "line": 71,
+      "source_sha256": "53cd10cfdd67aca5cfe333cf5c658bd070af24c05a2a96334d8667d0099deb5a",
+      "declaration_header": "theorem transferred_root_identification (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d) :\n    gaussianTransfer rate hr (rootClass rate \u03b8)=gaussianRoot (displacement rate \u03b8)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianCoherentIdentification.lean#L71"
+    },
+    {
+      "paper": "4.1: root identification",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianCoherentIdentification.displacement_vacuum_physical",
+      "file": "Foundation/GaussianCoherentIdentification.lean",
+      "line": 86,
+      "source_sha256": "53cd10cfdd67aca5cfe333cf5c658bd070af24c05a2a96334d8667d0099deb5a",
+      "declaration_header": "theorem displacement_vacuum_physical (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d) :\n    gaussianDisplacement rate hr \u03b8 (GaussianCore.normalizedHermite 0)=gaussianRoot (displacement rate \u03b8)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianCoherentIdentification.lean#L86"
+    },
+    {
+      "paper": "5: reference independence and group",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDisplacementGroup.reference_independent",
+      "file": "Foundation/GaussianDisplacementGroup.lean",
+      "line": 44,
+      "source_sha256": "06e3f76e641157687a4d5897c0410b4bd86dcd0747bb9b82b293f3955036f90c",
+      "declaration_header": "theorem reference_independent (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d)\n    (rate' : \u211d\u22650) (hr' : 0<rate') (\u03b8' : \u211d) (hd : displacement rate \u03b8=displacement rate' \u03b8') :\n    gaussianDisplacement rate hr \u03b8=gaussianDisplacement rate' hr' \u03b8'",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDisplacementGroup.lean#L44"
+    },
+    {
+      "paper": "5: reference independence and group",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDisplacementGroup.displacement_group_law",
+      "file": "Foundation/GaussianDisplacementGroup.lean",
+      "line": 105,
+      "source_sha256": "06e3f76e641157687a4d5897c0410b4bd86dcd0747bb9b82b293f3955036f90c",
+      "declaration_header": "theorem displacement_group_law (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d)\n    (rate' : \u211d\u22650) (hr' : 0<rate') (\u03b8' : \u211d)\n    (rate'' : \u211d\u22650) (hr'' : 0<rate'') (\u03b8'' : \u211d)\n    (hd : displacement rate'' \u03b8''=displacement rate \u03b8+displacement rate' \u03b8') :\n    (gaussianDisplacement rate' hr' \u03b8').trans (gaussianDisplacement rate hr \u03b8)=\n      gaussianDisplacement rate'' hr'' \u03b8''",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDisplacementGroup.lean#L105"
+    },
+    {
+      "paper": "5: reference independence and group",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDisplacementGroup.zero_displacement_identity",
+      "file": "Foundation/GaussianDisplacementGroup.lean",
+      "line": 130,
+      "source_sha256": "06e3f76e641157687a4d5897c0410b4bd86dcd0747bb9b82b293f3955036f90c",
+      "declaration_header": "theorem zero_displacement_identity (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d) (hd : displacement rate \u03b8=0) :\n    gaussianDisplacement rate hr \u03b8=LinearIsometryEquiv.refl \u211d GaussianL2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDisplacementGroup.lean#L130"
+    },
+    {
+      "paper": "5: strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDisplacementContinuity.coherentSpan_closure",
+      "file": "Foundation/GaussianDisplacementContinuity.lean",
+      "line": 27,
+      "source_sha256": "b51060999671b7ca63f84046863bcf5575240b85cb1133c69ad05cf0ceadb13d",
+      "declaration_header": "theorem coherentSpan_closure : coherentSpan.topologicalClosure=\u22a4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDisplacementContinuity.lean#L27"
+    },
+    {
+      "paper": "5: strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDisplacementContinuity.displacement_coherent",
+      "file": "Foundation/GaussianDisplacementContinuity.lean",
+      "line": 47,
+      "source_sha256": "b51060999671b7ca63f84046863bcf5575240b85cb1133c69ad05cf0ceadb13d",
+      "declaration_header": "theorem displacement_coherent (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 e : \u211d) :\n    gaussianDisplacement rate hr \u03b8 (gaussianRoot e)=gaussianRoot (displacement rate \u03b8+e)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDisplacementContinuity.lean#L47"
+    },
+    {
+      "paper": "5: strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDisplacementContinuity.strong_tendsto_zero",
+      "file": "Foundation/GaussianDisplacementContinuity.lean",
+      "line": 67,
+      "source_sha256": "b51060999671b7ca63f84046863bcf5575240b85cb1133c69ad05cf0ceadb13d",
+      "declaration_header": "theorem strong_tendsto_zero {I : Type*} (l : Filter I) (rate : I \u2192 \u211d\u22650) (hr : \u2200 i,0<rate i)\n    (\u03b8 : I \u2192 \u211d) (hd : Tendsto (fun i => displacement (rate i) (\u03b8 i)) l (\ud835\udcdd 0)) (f : GaussianL2) :\n    Tendsto (fun i => gaussianDisplacement (rate i) (hr i) (\u03b8 i) f) l (\ud835\udcdd f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDisplacementContinuity.lean#L67"
+    },
+    {
+      "paper": "5: strong continuity",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDisplacementContinuity.strong_tendsto",
+      "file": "Foundation/GaussianDisplacementContinuity.lean",
+      "line": 106,
+      "source_sha256": "b51060999671b7ca63f84046863bcf5575240b85cb1133c69ad05cf0ceadb13d",
+      "declaration_header": "theorem strong_tendsto {I : Type*} (l : Filter I) (rate : I \u2192 \u211d\u22650) (hr : \u2200 i,0<rate i)\n    (\u03b8 : I \u2192 \u211d) (rate' : \u211d\u22650) (hr' : 0<rate') (\u03b8' : \u211d)\n    (hd : Tendsto (fun i => displacement (rate i) (\u03b8 i)) l (\ud835\udcdd (displacement rate' \u03b8'))) (f : GaussianL2) :\n    Tendsto (fun i => gaussianDisplacement (rate i) (hr i) (\u03b8 i) f) l\n      (\ud835\udcdd (gaussianDisplacement rate' hr' \u03b8' f))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDisplacementContinuity.lean#L106"
+    },
+    {
+      "paper": "5: whole-space physical formula",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPhysicalDisplacement.shifted_gaussian_absolutelyContinuous",
+      "file": "Foundation/GaussianPhysicalDisplacement.lean",
+      "line": 16,
+      "source_sha256": "1fca24f1b172f2bc0e784a7ec31307bae277ba6db3cfeee0ec38f83584a716d4",
+      "declaration_header": "theorem shifted_gaussian_absolutelyContinuous (d : \u211d) : \u03b3.map (fun x : \u211d => x-2*d)\u226a\u03b3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPhysicalDisplacement.lean#L16"
+    },
+    {
+      "paper": "5: whole-space physical formula",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPhysicalDisplacement.displacement_physical_formula",
+      "file": "Foundation/GaussianPhysicalDisplacement.lean",
+      "line": 78,
+      "source_sha256": "1fca24f1b172f2bc0e784a7ec31307bae277ba6db3cfeee0ec38f83584a716d4",
+      "declaration_header": "theorem displacement_physical_formula (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d) (f : GaussianL2) :\n    gaussianDisplacement rate hr \u03b8 f =\u1d50[\u03b3]\n      fun x => Real.exp (displacement rate \u03b8*x-(displacement rate \u03b8)^2)*f (x-2*displacement rate \u03b8)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPhysicalDisplacement.lean#L78"
+    },
+    {
+      "paper": "5: whole-space physical formula",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPhysicalDisplacement.physicalAction_memLp",
+      "file": "Foundation/GaussianPhysicalDisplacement.lean",
+      "line": 91,
+      "source_sha256": "1fca24f1b172f2bc0e784a7ec31307bae277ba6db3cfeee0ec38f83584a716d4",
+      "declaration_header": "theorem physicalAction_memLp (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d) (f : GaussianL2) :\n    MemLp (physicalAction (displacement rate \u03b8) f) 2 \u03b3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPhysicalDisplacement.lean#L91"
+    },
+    {
+      "paper": "5: whole-space physical formula",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianPhysicalDisplacement.physicalAction_class",
+      "file": "Foundation/GaussianPhysicalDisplacement.lean",
+      "line": 95,
+      "source_sha256": "1fca24f1b172f2bc0e784a7ec31307bae277ba6db3cfeee0ec38f83584a716d4",
+      "declaration_header": "theorem physicalAction_class (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d) (f : GaussianL2) :\n    (physicalAction_memLp rate hr \u03b8 f).toLp (physicalAction (displacement rate \u03b8) f)=\n      gaussianDisplacement rate hr \u03b8 f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianPhysicalDisplacement.lean#L95"
+    },
+    {
+      "paper": "5: operator norm obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDisplacementNormDiscontinuity.translated_probe_orthogonal",
+      "file": "Foundation/GaussianDisplacementNormDiscontinuity.lean",
+      "line": 30,
+      "source_sha256": "e03e512ed3ef3d3d3437fb82c8c5bc8e8cabe3fe8dd621d68b3b7cbc0b9bc121",
+      "declaration_header": "theorem translated_probe_orthogonal (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d)\n    (hd : 0<displacement rate \u03b8) :\n    inner \u211d (gaussianDisplacement rate hr \u03b8 (intervalProbe (displacement rate \u03b8)))\n      (intervalProbe (displacement rate \u03b8))=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDisplacementNormDiscontinuity.lean#L30"
+    },
+    {
+      "paper": "5: operator norm obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDisplacementNormDiscontinuity.positive_displacement_opNorm_lower",
+      "file": "Foundation/GaussianDisplacementNormDiscontinuity.lean",
+      "line": 49,
+      "source_sha256": "e03e512ed3ef3d3d3437fb82c8c5bc8e8cabe3fe8dd621d68b3b7cbc0b9bc121",
+      "declaration_header": "theorem positive_displacement_opNorm_lower (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d)\n    (hd : 0<displacement rate \u03b8) :\n    Real.sqrt 2\u2264\u2016(gaussianDisplacement rate hr \u03b8).toLinearIsometry.toContinuousLinearMap-\n      ContinuousLinearMap.id \u211d GaussianL2\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDisplacementNormDiscontinuity.lean#L49"
+    },
+    {
+      "paper": "5: operator norm obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDisplacementNormDiscontinuity.displacement_not_opNorm_continuousAt_zero",
+      "file": "Foundation/GaussianDisplacementNormDiscontinuity.lean",
+      "line": 76,
+      "source_sha256": "e03e512ed3ef3d3d3437fb82c8c5bc8e8cabe3fe8dd621d68b3b7cbc0b9bc121",
+      "declaration_header": "theorem displacement_not_opNorm_continuousAt_zero (rate : \u211d\u22650) (hr : 0<rate) :\n    \u00ac ContinuousAt (fun \u03b8 : \u211d => (gaussianDisplacement rate hr \u03b8).toLinearIsometry.toContinuousLinearMap) 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDisplacementNormDiscontinuity.lean#L76"
+    },
+    {
+      "paper": "6.1: quartic obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDisplacementQuarticObstruction.coherentFour_norm",
+      "file": "Foundation/GaussianDisplacementQuarticObstruction.lean",
+      "line": 31,
+      "source_sha256": "be1a5a08d075f12904f74e93ab54e7a44ccfcd38c80ab1f9279d87467c45f929",
+      "declaration_header": "theorem coherentFour_norm (a : \u211d) : \u2016coherentFour a\u2016=Real.exp (a^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDisplacementQuarticObstruction.lean#L31"
+    },
+    {
+      "paper": "6.1: quartic obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDisplacementQuarticObstruction.no_uniform_quartic_displacement_bound",
+      "file": "Foundation/GaussianDisplacementQuarticObstruction.lean",
+      "line": 42,
+      "source_sha256": "be1a5a08d075f12904f74e93ab54e7a44ccfcd38c80ab1f9279d87467c45f929",
+      "declaration_header": "theorem no_uniform_quartic_displacement_bound (d : \u211d) (hd : d\u22600) (K : \u211d) :\n    \u2203 a : \u211d, K*\u2016coherentFour a\u2016<\u2016coherentFour (d+a)\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDisplacementQuarticObstruction.lean#L42"
+    },
+    {
+      "paper": "6.1: quartic obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianDisplacementQuarticObstruction.no_bounded_quartic_realization",
+      "file": "Foundation/GaussianDisplacementQuarticObstruction.lean",
+      "line": 57,
+      "source_sha256": "be1a5a08d075f12904f74e93ab54e7a44ccfcd38c80ab1f9279d87467c45f929",
+      "declaration_header": "theorem no_bounded_quartic_realization (rate : \u211d\u22650) (hr : 0<rate) (\u03b8 : \u211d)\n    (hd : displacement rate \u03b8\u22600) (T : Lp \u211d 4 \u03b3 \u2192L[\u211d] Lp \u211d 4 \u03b3) :\n    \u00ac (\u2200 a : \u211d, T (coherentFour a)=coherentFour (displacement rate \u03b8+a))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianDisplacementQuarticObstruction.lean#L57"
+    },
+    {
+      "paper": "6.2: entropy distortion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianCoherentEntropyDistortion.coherentLaw_eq_gaussian",
+      "file": "Foundation/GaussianCoherentEntropyDistortion.lean",
+      "line": 25,
+      "source_sha256": "2ad568cdeca42f4790701cdf9b643ca6613d26cd614f23caf73523e1dd206280",
+      "declaration_header": "theorem coherentLaw_eq_gaussian (d : \u211d) : coherentLaw d=gaussianReal (2*d) 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianCoherentEntropyDistortion.lean#L25"
+    },
+    {
+      "paper": "6.2: entropy distortion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianCoherentEntropyDistortion.coherentEntropy_eq",
+      "file": "Foundation/GaussianCoherentEntropyDistortion.lean",
+      "line": 61,
+      "source_sha256": "2ad568cdeca42f4790701cdf9b643ca6613d26cd614f23caf73523e1dd206280",
+      "declaration_header": "theorem coherentEntropy_eq (d : \u211d) : coherentEntropy d=2*d^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianCoherentEntropyDistortion.lean#L61"
+    },
+    {
+      "paper": "6.2: entropy distortion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianCoherentEntropyDistortion.coherentEntropy_eq_twice_derivative_energy",
+      "file": "Foundation/GaussianCoherentEntropyDistortion.lean",
+      "line": 72,
+      "source_sha256": "2ad568cdeca42f4790701cdf9b643ca6613d26cd614f23caf73523e1dd206280",
+      "declaration_header": "theorem coherentEntropy_eq_twice_derivative_energy (d : \u211d) : coherentEntropy d=2*\u2016d \u2022 gaussianRoot d\u2016^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianCoherentEntropyDistortion.lean#L72"
+    },
+    {
+      "paper": "6.2: entropy distortion",
+      "declaration": "OperatorDerivativeRewrite.Foundation.GaussianCoherentEntropyDistortion.unbounded_physical_entropy_distortion",
+      "file": "Foundation/GaussianCoherentEntropyDistortion.lean",
+      "line": 84,
+      "source_sha256": "2ad568cdeca42f4790701cdf9b643ca6613d26cd614f23caf73523e1dd206280",
+      "declaration_header": "theorem unbounded_physical_entropy_distortion (rate : \u211d\u22650) (hr : 0<rate) (K : \u211d) (hK : 0\u2264K) :\n    \u2203 \u03b8 : \u211d, K*coherentEntropy (displacement rate \u03b8)<\n      \u222b n, PoissonExponentialTilt.density rate \u03b8 n*Real.log (PoissonExponentialTilt.density rate \u03b8 n)\n        \u2202PoissonDifferenceCore.poissonLaw rate",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/GaussianCoherentEntropyDistortion.lean#L84"
+    },
+    {
+      "paper": "6.3: finite-core entropy failure",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoreEntropyObstruction.entropy_cut_tendsto",
+      "file": "Foundation/PoissonCoreEntropyObstruction.lean",
+      "line": 27,
+      "source_sha256": "dc8743faa17f3acab4217957b4335f35a8b9876ae0467de466eb58c6eb7c944d",
+      "declaration_header": "theorem entropy_cut_tendsto (rate : \u211d\u22650) (f : \u2115 \u2192 \u211d)\n    (h2 : Integrable (fun n => (f n)^2) (poissonLaw rate))\n    (he : Integrable (fun n => (f n)^2*Real.log ((f n)^2)) (poissonLaw rate))\n    (hm : 0<\u222b n, (f n)^2 \u2202poissonLaw rate) :\n    Tendsto (fun N => entropySq (poissonLaw rate) (cut f N)) atTop\n      (\ud835\udcdd (entropySq (poissonLaw rate) f))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoreEntropyObstruction.lean#L27"
+    },
+    {
+      "paper": "6.3: finite-core entropy failure",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoreEntropyObstruction.finite_core_entropy_counterexample",
+      "file": "Foundation/PoissonCoreEntropyObstruction.lean",
+      "line": 60,
+      "source_sha256": "dc8743faa17f3acab4217957b4335f35a8b9876ae0467de466eb58c6eb7c944d",
+      "declaration_header": "theorem finite_core_entropy_counterexample (rate : \u211d\u22650) (hr : 0<rate) (C : \u211d) (hC : 0\u2264C) :\n    \u2203 f : \u2115 \u2192\u2080 \u211d,\n      C*\u2016fieldFinsupp rate (finsuppDifference f)\u2016^2<entropySq (poissonLaw rate) f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoreEntropyObstruction.lean#L60"
+    },
+    {
+      "paper": "6.3: finite-core entropy failure",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PoissonCoreEntropyObstruction.finite_core_actual_graph_counterexample",
+      "file": "Foundation/PoissonCoreEntropyObstruction.lean",
+      "line": 84,
+      "source_sha256": "dc8743faa17f3acab4217957b4335f35a8b9876ae0467de466eb58c6eb7c944d",
+      "declaration_header": "theorem finite_core_actual_graph_counterexample (rate : \u211d\u22650) (hr : 0<rate) (C : \u211d) (hC : 0\u2264C) :\n    \u2203 f : \u2115 \u2192\u2080 \u211d,\n      (scalarFinsupp rate f,fieldFinsupp rate (finsuppDifference f))\u2208(coreDifference rate hr).graph \u2227\n      (fieldFinsupp rate (finsuppDifference f),scalarFinsupp rate (finsuppDivergence rate (finsuppDifference f)))\n        \u2208(coreDivergence rate hr).graph \u2227\n      C*\u2016fieldFinsupp rate (finsuppDifference f)\u2016^2<entropySq (poissonLaw rate) f",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PoissonCoreEntropyObstruction.lean#L84"
+    }
+  ],
+  "human_reorganization": [
+    "Complete bases are proved by exponential generating functions and entire-transform uniqueness; the formal Charlier proof uses algebraic ladder spanning and the verified Poisson polynomial-density infrastructure.",
+    "The paper uses scalar annihilation sqrt(lambda)*Delta. Original formal fields have measure lambda*Poisson; weightedScalarEquiv identifies their norms and the creation graph.",
+    "Full weighted sequence domains and weak-distributional Gaussian characterizations are reconstructed analytically from the mapped spectral graphs; they are not new Lean declarations.",
+    "The nonpositive image of the count function is an elementary deduction, not a separately mapped verified theorem. The product counterexample uses the exact mapped square decomposition.",
+    "The half-density cocycle, Gaussian unitary change of variables and dense open-interval coherent span identify the physical action. The formal proof instead uses closed physical-formula domains, coherent density and source-independent graph uniqueness.",
+    "Finite-support graph cores are proved with the exact difference-of-output boundary formulas; the formal proof uses a different cutoff decomposition. The entropy proof specializes to explicit roots and verifies the remaining boundary factorial tail.",
+    "Strong continuity is Hilbert norm continuity for each fixed vector; the operator norm lower bound is only sqrt(2) at positive displacement. No optimal norm value is claimed.",
+    "All correspondence, displacement and quadratic logarithmic Sobolev mechanisms are treated as classical; no new Fock correspondence or Poisson logarithmic Sobolev counterexample is claimed."
+  ],
+  "literature": [
+    {
+      "url": "https://arxiv.org/abs/math/0304282",
+      "review": "Vershik--Tsilevich 2003 primary full PDF: Sections 1.3 and 3.1 explicitly cover the canonical correspondence, nonpositivity/nonmultiplicativity and one-point Hermite--Charlier specialization."
+    },
+    {
+      "url": "https://arxiv.org/abs/2410.06117v2",
+      "review": "Aryan--Lopez-Rivera--Shenfeld 2025 v2 primary full PDF: introduction credits classical quadratic failure; Theorem 1.1 and Section 4 give the modified Wu inequality and exponential equality cases. Exact displacement/graph exposition has no independent priority certification."
+    }
+  ]
+}

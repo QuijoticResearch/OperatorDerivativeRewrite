@@ -153,3 +153,7 @@ Direct primary comparison located an explicit classical antecedent for the smoot
 ## Clock-domain paper strengthened in place
 
 The clock-domain manuscript is now ten pages and incorporates the exact actual endpoint clock-noise formula, integral cutoff, original Hermite-sector identity, odd-sector vanishing and critical weighted-energy divergence. This is an expansion of the existing domain paper, not another thin paper. Its future-increment correlation probe is noncausal and retains all scenery randomness; no positive subcritical sector theorem or fractional-domain identification is inferred. The complete source map now has 50 correspondences. Sixteen reviewed manuscripts total 141 pages, with all current PDF/source receipts rechecked.
+
+## Poisson--Gaussian consolidation
+
+The Poisson/Charlier, original graph and Gaussian displacement families now form one eight-page companion: complete bases and maximal domains, polynomial and finite-support cores, actual half-density gauges, exact Hellinger geometry, physical displacement and its strong/operator-norm distinction, quartic failure and finite-core quadratic entropy obstruction. Primary literature identifies the central mechanisms as classical. The paper is useful as a rigorous domain and nonlinear-transfer account, not a new Fock correspondence. Seventeen reviewed drafts total 149 pages. The complete 2,795-module survey remains module-level inventory rather than a claim of exhaustive human proof review. The independent publication survey does not activate or reprioritize research campaigns.

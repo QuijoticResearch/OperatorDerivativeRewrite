@@ -1,0 +1,589 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1.05in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\R}{\mathbb R}\newcommand{\N}{\mathbb N}
+\newcommand{\E}{\mathbb E}\newcommand{\Ent}{\operatorname{Ent}}
+\newcommand{\Dom}{\operatorname{Dom}}
+\newcommand{\code}[1]{{\small\nolinkurl{#1}}}
+\title{Poisson--Gaussian transport:\\closed graphs, displacement and nonlinear limits}
+\author{Project Stardust}
+\date{Reviewed formalization companion, October 29, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+The Charlier--Hermite correspondence identifies Poisson and Gaussian
+Hilbert spaces and their complete annihilation and creation graphs.
+We reconstruct the basis, maximal domains and graph-core arguments,
+then transport actual Poisson changes of intensity into a strongly
+continuous Gaussian displacement group with an explicit weighted-shift
+formula on the whole $L^2$ space. The correspondence preserves distances
+between square-root likelihoods and their derivative energies, but it
+does not preserve positivity, ordinary multiplication, or entropy.
+Coherent vectors give quantitative entropy distortion and exclude a
+bounded realization of any nonzero displacement on $L^4$.
+The failure of a quadratic Poisson logarithmic Sobolev inequality already
+occurs on finite-support functions; we prove this by controlling the
+cutoff boundary in the original difference graph. These are classical
+mechanisms, consolidated as a companion to frozen verified constructions.
+No new Fock-space correspondence or logarithmic Sobolev failure is claimed.
+\end{abstract}
+
+\section{What is transported}
+Fix $\lambda>0$. Write
+\[
+ p_\lambda(k)=e^{-\lambda}\frac{\lambda^k}{k!},\quad k\in\N,
+ \qquad d\gamma(x)=\frac{e^{-x^2/2}}{\sqrt{2\pi}}\,dx,
+\]
+and use real Hilbert spaces $H_\lambda=L^2(p_\lambda)$ and
+$H_G=L^2(\gamma)$. Since every Poisson atom has positive mass, an element
+of $H_\lambda$ has a uniquely determined value at every integer.
+Gaussian functions are equivalence classes modulo $\gamma$-null sets.
+The scalar normalization of the Poisson annihilation operator is
+\begin{equation}\label{eq:A}
+ A_\lambda f(k)=\sqrt\lambda\,[f(k+1)-f(k)].
+\end{equation}
+Its domain consists of precisely those $f\in H_\lambda$ for which
+the displayed sequence belongs to $H_\lambda$. We will construct a
+unitary $U_\lambda:H_\lambda\to H_G$ and prove, on full domains,
+\[
+ U_\lambda A_\lambda=D U_\lambda,\qquad
+ U_\lambda A_\lambda^*=\delta U_\lambda,
+ \quad D=\partial_x,\quad\delta=x-\partial_x.
+\]
+This is an identification of Hilbert spaces with closed operators.
+It supplies no identification of their ordinary products or laws.
+
+The correspondence is classical. Vershik and Tsilevich
+\cite[Sections 1.3 and 3.1]{VT} give the Poisson--Gaussian isometry,
+including its Hermite--Charlier specialization, and explicitly discuss
+its failure to be positive or multiplicative. The quadratic Poisson
+entropy obstruction is also classical; the introduction and Theorem 1.1
+of Aryan--L\'opez-Rivera--Shenfeld \cite{ALRS} place it beside Wu's
+modified inequality. Our contribution is a complete exposition tied to
+the original verified graphs, gauges and counterexamples, with these
+antecedents distinguished from claims of priority.
+
+\section{Complete bases and the unitary correspondence}
+Define the Charlier and probabilists' Hermite polynomials by
+\begin{align}
+ e^{-\lambda t}(1+t)^k&=\sum_{n\geq0} C_n^\lambda(k)\frac{t^n}{n!},
+ & e^{tx-t^2/2}&=\sum_{n\geq0}\operatorname{He}_n(x)\frac{t^n}{n!}.
+ \label{eq:generating}
+\end{align}
+Thus $C_0=1$, $C_1=k-\lambda$, and
+$C_2=(k-\lambda)^2-(k-\lambda)-\lambda$. Put
+\[
+ q_n^\lambda=\frac{C_n^\lambda}{\sqrt{n!\lambda^n}},\qquad
+ h_n=\frac{\operatorname{He}_n}{\sqrt{n!}}.
+\]
+
+\begin{lemma}\label{lem:basis}
+The sequences $(q_n^\lambda)$ and $(h_n)$ are complete orthonormal
+bases of $H_\lambda$ and $H_G$, respectively. There is exactly one
+unitary $U_\lambda$ sending every $q_n^\lambda$ to $h_n$.
+\end{lemma}
+\begin{proof}
+For $N$ of law $p_\lambda$, the expectation of the product of the first
+generating functions at $s,t$ is
+\[
+ e^{-\lambda(s+t)}\E[(1+s)^N(1+t)^N]=e^{\lambda st}.
+\]
+The analogous Gaussian expectation is $e^{st}$. Differentiating at zero
+gives orthogonality with squared norms $n!\lambda^n$ and $n!$.
+All differentiations are justified locally by exponential integrability.
+Both polynomial sequences are monic and have degree $n$, so their
+algebraic spans are the polynomial spaces.
+
+To prove Poisson completeness, suppose $f\in H_\lambda$ is orthogonal
+to all polynomials. The series
+\[
+ F(z)=\sum_{k\geq0} f(k)p_\lambda(k)z^k
+\]
+is entire: on $|z|\leq R$ its absolute sum is bounded by
+$\|f\|_2\exp\{\lambda(R^2-1)/2\}$, and its tails tend to zero
+uniformly by Cauchy--Schwarz. Every derivative at $z=1$ vanishes,
+because falling factorials are polynomials. Thus $F=0$, and every
+coefficient $f(k)p_\lambda(k)$ is zero.
+
+For Gaussian completeness, if $f$ is orthogonal to every polynomial,
+the entire function $L(z)=\int f(x)e^{zx}\,d\gamma(x)$ has all
+derivatives at zero equal to zero. Entirety and differentiation follow
+by Cauchy--Schwarz and Gaussian exponential moments, uniformly on
+compact sets. Hence $L=0$. The finite signed measure $f\,d\gamma$
+has zero Fourier transform and is zero, so $f=0$. For completeness,
+Fourier uniqueness here follows by convolution with a Gaussian
+approximate identity: Fourier inversion gives a zero convolution at
+every positive variance, and the approximate identity converges weakly
+to the original finite measure. Finally extend the isometry between
+the two orthonormal bases by Hilbert completion; density gives both
+surjectivity and uniqueness.
+\end{proof}
+
+For $f_n=\langle q_n^\lambda,f\rangle$, the construction gives
+\begin{equation}\label{eq:U}
+ U_\lambda f=\sum_{n\geq0}f_n h_n,\qquad
+ \|f\|_2^2=\sum_{n\geq0}|f_n|^2.
+\end{equation}
+Every series in this paper that represents an arbitrary $L^2$ function
+is understood in its Hilbert norm, rather than pointwise.
+
+\begin{proposition}\label{prop:product}
+The unitary $U_\lambda$ is neither positivity preserving nor
+multiplicative for ordinary products, even on polynomials.
+\end{proposition}
+\begin{proof}
+It sends the nonnegative function $k$ to $\lambda+\sqrt\lambda x$,
+which is negative on a set of positive Gaussian measure. For
+$r(k)=(k-\lambda)/\sqrt\lambda$, we have $U_\lambda r=x$ whereas
+the identity for $C_2$ gives
+\[
+ U_\lambda(r^2)=x^2+\frac{x}{\sqrt\lambda}\ne (U_\lambda r)^2.
+\]
+All functions and products used here belong to $L^2$.
+\end{proof}
+
+\section{The maximal graphs, including their endpoints}
+Define the maximal creation expression by
+\begin{equation}\label{eq:creation}
+ A_\lambda^*g(k)=\frac{k}{\sqrt\lambda}g(k-1)-\sqrt\lambda g(k),
+\end{equation}
+where the first term is zero at $k=0$. Its domain is the set of
+$g\in H_\lambda$ for which this entire expression belongs to
+$H_\lambda$; separate square integrability of its two terms is not
+required. Both maximal graphs are closed. Indeed, convergence in
+$H_\lambda$ implies convergence at every fixed atom, since
+$|f(k)|\leq p_\lambda(k)^{-1/2}\|f\|_2$. One may therefore pass to
+the pointwise expressions in any convergent graph sequence.
+
+\begin{theorem}\label{thm:graphs}
+For $f,g\in H_\lambda$ with coefficients $(f_n),(g_n)$,
+\begin{align}
+ A_\lambda f=g
+ &\ \Longleftrightarrow\quad
+ g_n=\sqrt{n+1}\,f_{n+1}\quad(n\geq0),\label{eq:lower}\\
+ A_\lambda^*g=f
+ &\ \Longleftrightarrow\quad
+ f_0=0,\quad f_{n+1}=\sqrt{n+1}\,g_n\quad(n\geq0).
+ \label{eq:raise}
+\end{align}
+Consequently
+\begin{align}
+ \Dom A_\lambda&=\left\{f:\sum_{n\geq0}n|f_n|^2<\infty\right\},
+ &\|A_\lambda f\|_2^2&=\sum_{n\geq0}n|f_n|^2,\label{eq:Adomain}\\
+ \Dom A_\lambda^*&=\left\{g:\sum_{n\geq0}(n+1)|g_n|^2<\infty\right\},
+ &\|A_\lambda^*g\|_2^2&=\sum_{n\geq0}(n+1)|g_n|^2.
+ \label{eq:Astar}
+\end{align}
+These operators are Hilbert adjoints of one another, and finite
+Charlier expansions are graph cores for both.
+\end{theorem}
+\begin{proof}
+The generating function gives
+$\Delta C_{n+1}^\lambda=(n+1)C_n^\lambda$ and hence
+$A_\lambda q_{n+1}^\lambda=\sqrt{n+1}q_n^\lambda$.
+Summation by parts uses exactly
+$(k+1)p_\lambda(k+1)=\lambda p_\lambda(k)$, including the
+zero endpoint in \eqref{eq:creation}. Against a polynomial test it yields
+\[
+ \langle A_\lambda f,v\rangle=\langle f,A_\lambda^*v\rangle,
+ \qquad
+ \langle A_\lambda^*g,v\rangle=\langle g,A_\lambda v\rangle
+\]
+for the respective maximal-domain inputs. The reindexed sums are
+absolutely convergent: each reduces to a product of an $L^2$ input
+and a polynomial in $L^2(p_\lambda)$. Thus no boundary term at infinity
+is discarded. Applying the first identity to $q_n^\lambda$ and the
+second to $q_{n+1}^\lambda$ gives the coefficient rules. The test $1$
+also gives $f_0=0$ in the creation rule.
+
+Conversely, assume the coefficient rule \eqref{eq:lower}. Truncate
+$f$ at indices $0,\ldots,M$ and $g$ at $0,\ldots,M-1$.
+The finite ladder identities give the annihilation graph at every
+truncation; both components converge by completeness. Closedness proves
+the full graph relation. For \eqref{eq:raise}, truncate $g$ at
+$0,\ldots,M-1$ and $f$ at $0,\ldots,M$, and use the same argument.
+This also proves the stated domain formulas and graph-core property.
+
+In coefficient coordinates the annihilation operator is the weighted
+backward shift $(f_n)\mapsto(\sqrt{n+1}f_{n+1})$.
+Its Hilbert adjoint is precisely the weighted forward shift in
+\eqref{eq:raise}: finite sequences determine the adjoint coordinates,
+and their square summability is necessary and sufficient for a bounded
+functional on $\ell^2$. This proves actual adjointness on the full
+domains, rather than just the polynomial integration-by-parts identity.
+\end{proof}
+
+\begin{lemma}\label{lem:finitecore}
+Finite-support sequences are also a common graph core for
+$A_\lambda$ and $A_\lambda^*$.
+\end{lemma}
+\begin{proof}
+Write $f^{[M]}(k)=f(k)\mathbf1_{\{k<M\}}$. For
+$f\in\Dom A_\lambda$, the shifted sequence
+$f(k+1)=f(k)+A_\lambda f(k)/\sqrt\lambda$ is square integrable.
+Reindexing shows $\sum_k k p_\lambda(k)f(k)^2<\infty$. Thus
+\[
+ \|A_\lambda f^{[M]}-A_\lambda f\|_2^2
+ =M p_\lambda(M)f(M)^2+
+ \sum_{k\geq M}p_\lambda(k)|A_\lambda f(k)|^2\longrightarrow0.
+\]
+For $g\in\Dom A_\lambda^*$, direct evaluation at the single boundary
+atom gives instead
+\[
+ \|A_\lambda^*g^{[M]}-A_\lambda^*g\|_2^2
+ =\lambda p_\lambda(M)g(M)^2+
+ \sum_{k>M}p_\lambda(k)|A_\lambda^*g(k)|^2\longrightarrow0.
+\]
+Both scalar cutoffs converge in $H_\lambda$, and their operator
+expressions have finite support. These identities prove graph density
+in both domains, including the boundary contributions.
+\end{proof}
+
+\begin{theorem}\label{thm:transport}
+Let $D$ be the maximal weak derivative in $L^2(\gamma)$ and let
+$\delta g=xg-g'$ in the distributional sense, with maximal $L^2$
+domain. Then
+\[
+ (f,g)\in\operatorname{graph} A_\lambda
+ \iff (U_\lambda f,U_\lambda g)\in\operatorname{graph} D,
+\]
+and the same equivalence holds with $A_\lambda^*$ and $\delta$.
+\end{theorem}
+\begin{proof}
+The Gaussian generating function gives $Dh_{n+1}=\sqrt{n+1}h_n$
+and $\delta h_n=\sqrt{n+1}h_{n+1}$. The weak graphs are closed:
+Gaussian $L^2$ convergence implies local Lebesgue $L^1$ convergence,
+so the distributional equations pass to limits. For a maximal weak
+graph, Gaussian integration by parts against $h_n\chi_R$, where
+$\chi_R$ is a smooth cutoff equal to one on $[-R,R]$, gives the same
+coefficient rules as \eqref{eq:lower}--\eqref{eq:raise} as $R\to\infty$.
+The polynomial terms converge in $L^2(\gamma)$; the cutoff-derivative
+term tends to zero by Cauchy--Schwarz and Gaussian polynomial tails.
+This argument applies to $xg-g'$ as one distribution, without requiring
+$xg$ and $g'$ separately to belong to $L^2$. Conversely, finite Hermite
+truncations and closedness give both maximal weak graphs from their
+coefficient rules. Their domains therefore coincide exactly with the
+two weighted sequence domains in Theorem~\ref{thm:graphs}. Equation
+\eqref{eq:U} now proves both equivalences.
+\end{proof}
+
+In the frozen formalization the original difference is $\Delta$, with
+field space $L^2(\lambda p_\lambda)$. Multiplication of a field by
+$\sqrt\lambda$ identifies that space with $H_\lambda$ and produces
+\eqref{eq:A}. This normalization is essential for the graph transport.
+
+\section{Likelihood roots and the physical change of intensity}
+For $\theta\in\R$ put $\lambda_\theta=\lambda e^\theta$ and
+\begin{equation}\label{eq:roots}
+ r_{\lambda,\theta}(k)=
+ \exp\!\left\{\frac{\theta k}{2}-\frac{\lambda(e^\theta-1)}2\right\},
+ \quad a=\sqrt\lambda(e^{\theta/2}-1),\quad
+ g_a(x)=e^{ax-a^2}.
+\end{equation}
+The square of $r_{\lambda,\theta}$ is the actual likelihood ratio
+$p_{\lambda_\theta}/p_\lambda$; the square of $g_a$ is the
+likelihood ratio of $N(2a,1)$ to $N(0,1)$. Both roots have norm one.
+
+\begin{proposition}\label{prop:root}
+One has $U_\lambda r_{\lambda,\theta}=g_a$. For any two tilt parameters,
+\begin{align}
+ \langle r_{\lambda,\theta},r_{\lambda,\eta}\rangle
+ &=\exp\!\left\{-\tfrac\lambda2(e^{\theta/2}-e^{\eta/2})^2\right\},
+ \label{eq:hellinger}\\
+ \|r_{\lambda,\theta}-r_{\lambda,\eta}\|_2^2
+ &=2\left[1-\exp\!\left\{-\tfrac\lambda2
+ (e^{\theta/2}-e^{\eta/2})^2\right\}\right].\nonumber
+\end{align}
+Thus the correspondence preserves the exact Hellinger distances within
+this family, under the square-root-intensity coordinate.
+\end{proposition}
+\begin{proof}
+Write $s=e^{\theta/2}$, so $a=\sqrt\lambda(s-1)$.
+Poisson summation of the first generating function gives
+\[
+ \E\big[r_{\lambda,\theta}(N)e^{-\lambda t}(1+t)^N\big]
+ =e^{-a^2/2}e^{\sqrt\lambda a t}.
+\]
+Therefore the $n$th normalized Charlier coefficient of the root is
+$e^{-a^2/2}a^n/\sqrt{n!}$. These are precisely the normalized Hermite
+coefficients of $g_a$, by the second generating function. Coefficient
+equality in the complete bases proves the identity. Directly summing
+the product of the two Poisson roots gives \eqref{eq:hellinger}.
+The norm formula follows because both roots have norm one. Alternatively,
+the Gaussian identity $\langle g_a,g_b\rangle=e^{-(a-b)^2/2}$ gives
+the same calculation after transport.
+\end{proof}
+
+The half-density change of measure is the actual unitary
+\begin{equation}\label{eq:gauge}
+ V_{\lambda,\theta}:H_{\lambda_\theta}\longrightarrow H_\lambda,
+ \qquad V_{\lambda,\theta}f=r_{\lambda,\theta}f.
+\end{equation}
+Indeed, $\|Vf\|_{H_\lambda}^2=\|f\|_{H_{\lambda_\theta}}^2$,
+and division by the strictly positive root is the inverse.
+
+\begin{proposition}\label{prop:gauge}
+On the complete maximal graphs,
+\begin{align}
+ A_\lambda Vf&=V A_{\lambda_\theta}f+aVf,
+ &\Dom A_\lambda&=V\Dom A_{\lambda_\theta},\label{eq:gaugeA}\\
+ A_\lambda^*Vf&=V A_{\lambda_\theta}^*f+aVf,
+ &\Dom A_\lambda^*&=V\Dom A_{\lambda_\theta}^*.
+ \label{eq:gaugecreation}
+\end{align}
+\end{proposition}
+\begin{proof}
+Use $r(k+1)=e^{\theta/2}r(k)$ in \eqref{eq:A} and
+$r(k-1)=e^{-\theta/2}r(k)$ in \eqref{eq:creation}.
+The two pointwise identities follow by expansion, including $k=0$.
+Since $V$ is unitary, the extra term $aVf$ is always in $H_\lambda$.
+Consequently either side has an $L^2$ operator output exactly when the
+other does. This proves both domain equalities and both graph identities.
+\end{proof}
+
+\section{A group on the entire Gaussian space}
+Define
+\begin{equation}\label{eq:W}
+ W_a=U_\lambda V_{\lambda,\theta}U_{\lambda_\theta}^{-1},
+ \qquad a=\sqrt\lambda(e^{\theta/2}-1).
+\end{equation}
+Every $a\in\R$ is attainable: choose $b>|a|$, take $\lambda=b^2$
+and $\theta=2\log((b+a)/b)$. The following result proves that
+\eqref{eq:W} is independent of this choice.
+
+\begin{theorem}\label{thm:physical}
+For every $f\in H_G$, the whole-space formula is
+\begin{equation}\label{eq:physical}
+ (W_af)(x)=e^{ax-a^2}f(x-2a)\qquad\text{for almost every }x.
+\end{equation}
+These operators form a strongly continuous unitary group:
+$W_aW_b=W_{a+b}$, $W_0=I$. They satisfy, on exact domains,
+\begin{equation}\label{eq:commute}
+ DW_af=W_aDf+aW_af,\qquad
+ \delta W_af=W_a\delta f+aW_af.
+\end{equation}
+\end{theorem}
+\begin{proof}
+First the right side of \eqref{eq:physical} defines a unitary $T_a$.
+The change of variables $y=x-2a$ gives
+\[
+ e^{2ax-2a^2}e^{-x^2/2}=e^{-(x-2a)^2/2},\qquad
+ \|T_af\|_2^2=\|f\|_2^2.
+\]
+All Gaussian null sets are Lebesgue null sets, and translations preserve
+them; hence the formula is well defined on equivalence classes.
+The same formula gives $T_a^{-1}=T_{-a}$.
+
+We identify $T_a$ with the unitary in \eqref{eq:W} without assuming a
+polynomial rule extends to a nonlinear expression. For $s=\sqrt{
+\lambda_\theta}$ and any $b>-s$, choose $\eta$ so that
+$b=s(e^{\eta/2}-1)$. Proposition~\ref{prop:root} and the exact cocycle
+\[
+ r_{\lambda,\theta}\,r_{\lambda_\theta,\eta}
+ =r_{\lambda,\theta+\eta}
+\]
+give $W_ag_b=g_{a+b}$. Direct substitution gives the same identity
+for $T_a$. The vectors $g_b$ with $b$ in any nonempty open interval
+have dense linear span in $H_G$: orthogonality to them makes the
+entire function $\int f(x)e^{zx}\,d\gamma(x)$ vanish on that interval;
+the identity theorem and Fourier uniqueness then give $f=0$.
+Thus the bounded operators $W_a,T_a$ agree on a dense set and everywhere.
+
+Multiplying the two explicit weights in $T_aT_b$ gives
+$e^{(a+b)x-(a+b)^2}$ and translation by $2(a+b)$, proving the group
+law and $W_0=I$. Also
+\[
+ \|W_ag_b-g_b\|_2^2=2(1-e^{-a^2/2})\longrightarrow0.
+\]
+Finite coherent linear combinations are dense, and the $W_a$ are
+isometries, so this proves strong continuity at zero for every $f$.
+The group law proves it at every parameter.
+Finally \eqref{eq:commute} follows from
+Theorem~\ref{thm:transport} and Proposition~\ref{prop:gauge}, including
+domain equivalence. It can also be checked by distributional
+differentiation of \eqref{eq:physical}; the inverse shift then gives
+the converse domain inclusion.
+\end{proof}
+
+Strong continuity does not mean continuity in operator norm.
+For $a>0$, let $f_a$ be the indicator of $(0,a)$ divided by its
+Gaussian $L^2$ norm. Its displaced image is supported on $(2a,3a)$.
+The supports are disjoint, while both vectors have norm one. Consequently
+\begin{equation}\label{eq:normdiscontinuity}
+ \|W_a-I\|_{H_G\to H_G}\geq\|(W_a-I)f_a\|_2=\sqrt2
+ \qquad(a>0).
+\end{equation}
+This lower bound suffices to exclude operator-norm continuity at zero;
+no optimal operator-norm value is needed.
+
+\section{Quartic and entropy obstructions}
+\begin{theorem}\label{thm:L4}
+For every fixed $a\ne0$, no bounded operator on $L^4(\gamma)$ can
+agree with $W_a$ on all coherent vectors $g_b$, $b\in\R$.
+In particular, the $L^2$ unitary does not admit a bounded $L^4$
+realization with its coherent action.
+\end{theorem}
+\begin{proof}
+Gaussian exponential moments give $\|g_b\|_4=e^{b^2}$, while
+Theorem~\ref{thm:physical} gives $W_ag_b=g_{a+b}$. Thus
+\[
+ \frac{\|W_ag_b\|_4}{\|g_b\|_4}
+ =e^{2ab+a^2}.
+\]
+This diverges as $b\to+\infty$ if $a>0$, or $b\to-\infty$ if $a<0$.
+It contradicts any fixed bounded-operator norm. The argument uses only
+coherent functions, which belong to both $L^2$ and $L^4$.
+\end{proof}
+
+For a probability measure $\mu$ write
+\[
+ \Ent_\mu(F)=\int F\log F\,d\mu
+ -\left(\int F\,d\mu\right)\log\left(\int F\,d\mu\right),
+ \qquad 0\log0=0,
+\]
+whenever the terms are finite. The roots in \eqref{eq:roots} have
+normalized squares, so their square entropies are relative entropies.
+
+\begin{theorem}\label{thm:entropy}
+For $a=\sqrt\lambda(e^{\theta/2}-1)$ one has
+\begin{align}
+ \Ent_{p_\lambda}(r_{\lambda,\theta}^2)
+ &=\lambda(\theta e^\theta-e^\theta+1),\label{eq:Poissonentropy}\\
+ \Ent_\gamma(g_a^2)&=2a^2,
+ &\|A_\lambda r_{\lambda,\theta}\|_2^2
+ &=\|Dg_a\|_2^2=a^2.\label{eq:Gaussianentropy}
+\end{align}
+For every $K\geq0$ there is a positive $\theta$ such that
+\begin{equation}\label{eq:distortion}
+ K\Ent_\gamma(g_a^2)<\Ent_{p_\lambda}(r_{\lambda,\theta}^2).
+\end{equation}
+Hence exact root distances and derivative energies do not give a
+uniform upper comparison of these ordinary entropies.
+\end{theorem}
+\begin{proof}
+The log of the Poisson likelihood is
+$\theta k-\lambda(e^\theta-1)$. Its expectation under the tilted
+Poisson law uses $\E_{p_{\lambda e^\theta}}k=\lambda e^\theta$,
+giving \eqref{eq:Poissonentropy}. All absolute logarithmic moments
+are finite by Poisson exponential integrability. For the Gaussian root,
+$g_a^2\gamma=N(2a,1)$ and $\log g_a^2=2ax-2a^2$, giving entropy
+$2a^2$. The identities $A_\lambda r=ar$ and $Dg_a=ag_a$
+give the energies because both roots have norm one.
+
+Choose $\theta=2K+2$. Since $\theta>0$,
+\[
+ \Ent_\gamma(g_a^2)=2\lambda(e^{\theta/2}-1)^2
+ \leq2\lambda e^\theta,
+\]
+whereas
+$\Ent_{p_\lambda}(r^2)=\lambda[(\theta-1)e^\theta+1]
+>2K\lambda e^\theta$. This proves \eqref{eq:distortion}.
+\end{proof}
+
+\begin{corollary}\label{cor:core}
+For every $C\geq0$ there is a real finite-support function $f$ on
+$\N$ such that
+\begin{equation}\label{eq:corefailure}
+ C\lambda\sum_{k\geq0}p_\lambda(k)[f(k+1)-f(k)]^2
+ <\Ent_{p_\lambda}(f^2).
+\end{equation}
+Such an $f$ belongs to the original difference domain and to the
+original creation domain. Thus failure of a quadratic Poisson
+logarithmic Sobolev estimate already occurs on this common core.
+\end{corollary}
+\begin{proof}
+By Theorem~\ref{thm:entropy}, choose $\theta>0$ with
+$\Ent_{p_\lambda}(r^2)>C a^2$, where $r=r_{\lambda,\theta}$.
+Set $f_M(k)=r(k)\mathbf1_{\{k<M\}}$ for $M\geq1$.
+The $L^2$ tail tends to zero. The difference between
+$\Delta f_M$ and $\Delta r$ is zero below $M-1$, equals $-r(M)$
+at $M-1$, and equals $-\Delta r(k)$ for $k\geq M$.
+Consequently
+\begin{equation}\label{eq:boundary}
+ \|A_\lambda f_M-A_\lambda r\|_2^2
+ =\lambda p_\lambda(M-1)r(M)^2
+  +\lambda\sum_{k\geq M}p_\lambda(k)[\Delta r(k)]^2
+ \longrightarrow0.
+\end{equation}
+The second term is a tail of a convergent series. The first is a
+constant times $\lambda^M e^{\theta M}/(M-1)!$, which tends to zero
+by the ratio test. This checks the otherwise significant cutoff
+boundary in the actual maximal graph.
+
+Since $r(k)^2|\log r(k)^2|$ is bounded by a constant times
+$e^{\theta k}(1+k)$, it is Poisson integrable. Therefore
+\[
+ \sum p_\lambda f_M^2\log f_M^2\longrightarrow
+ \sum p_\lambda r^2\log r^2,
+ \qquad \sum p_\lambda f_M^2\longrightarrow1.
+\]
+Continuity of $x\log x$ at $1$ proves
+$\Ent(f_M^2)\to\Ent(r^2)$. Equation \eqref{eq:boundary} gives
+$\|A_\lambda f_M\|_2^2\to a^2$. The strict entropy-energy margin
+thus persists for all sufficiently large $M$, giving
+\eqref{eq:corefailure}. Finally both difference and creation expressions
+of a finite-support sequence have finite support, so both original
+domain assertions hold directly.
+\end{proof}
+
+This obstruction concerns quadratic difference energy. It does not
+contradict the modified Poisson inequality with jump Bregman terms.
+For clarity, let $F=r_{\lambda,\theta}^2$. Its jump is
+$F(k+1)=e^\theta F(k)$, and hence
+\[
+ \lambda\sum_k p_\lambda(k)
+ \left[F(k+1)\log\frac{F(k+1)}{F(k)}-F(k+1)+F(k)\right]
+ =\lambda(\theta e^\theta-e^\theta+1)=\Ent_{p_\lambda}(F).
+\]
+The same exponentials therefore attain equality in the classical
+modified estimate \cite{ALRS}, while excluding every fixed quadratic
+constant. Ordinary product structure determines which energy is relevant.
+
+\section{Exact provenance and mathematical scope}
+All formal source references below use the frozen verified commit
+\begin{center}\code{bab688bb6140cd6316c80680095a914ea0d346db}\end{center}
+Its original audit receipt and unchanged source hashes accompany the
+paper in the baseline-verification JSON file. The publication editor
+has not rerun a research build or altered the verified library.
+The accompanying \code{theorem-map.json} records exact declarations,
+line numbers and public baseline links. The source groups cover three connected layers:
+\begin{itemize}
+\item Complete Charlier coordinates, weighted scalar geometry and exact
+Poisson spectral graphs; the Gaussian Hermite adjoint graphs.
+\item Half-density source gauges, Gaussian displacement from Poisson,
+coherent identification, group law, continuity and physical action.
+\item Tilt Hellinger geometry, operator-norm discontinuity, quartic
+unboundedness, coherent entropy distortion and finite-core failure.
+\end{itemize}
+The finite-core entropy proof specializes the verified cutoff argument to
+an explicit coherent root. Generating functions, weak-distributional
+domains and the dense coherent-span identification reorganize the exact
+formal graph results into human proofs; every displayed line is not a
+separate formal declaration. The positivity witness is an elementary
+analytic deduction, distinguished in the theorem map.
+
+The setting is one Poisson count and one Gaussian coordinate. The results
+do not transfer ordinary nonlinear equations, a Markov order or general
+entropy comparisons. This is a classical formalization companion;
+novelty certification and external submission remain separate questions.
+
+\begin{thebibliography}{9}
+\bibitem{VT} A. M. Vershik and N. V. Tsilevich,
+\emph{Fock factorizations, and decompositions of the $L^2$ spaces over
+general L\'evy processes}, Russian Mathematical Surveys \textbf{58}
+(2003), 427--472.
+\href{https://arxiv.org/abs/math/0304282}{arXiv:math/0304282};
+\href{https://doi.org/10.1070/RM2003v058n03ABEH000627}{doi:10.1070/RM2003v058n03ABEH000627}.
+\bibitem{ALRS} S. Aryan, P. L\'opez-Rivera and Y. Shenfeld,
+\emph{Improvement of Wu's logarithmic Sobolev inequality via the
+Poisson--F\"ollmer process}, arXiv:2410.06117v2 (2025).
+\href{https://arxiv.org/abs/2410.06117v2}{Primary manuscript},
+especially the introduction, Theorem 1.1 and Section 4.
+\end{thebibliography}
+\end{document}
