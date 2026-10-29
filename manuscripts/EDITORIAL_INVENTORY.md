@@ -21,7 +21,7 @@ Frozen mathematical baseline: `bab688bb6140cd6316c80680095a914ea0d346db` (checkp
 
 ## Current consolidation and significance
 
-Twenty-six reviewed drafts total 264 pages; the [catalog](INDEX.md) gives each current PDF, source, map and status. The most substantial explicit arithmetic package is the sixteen-page quartic actual-saddle proof, exact rational time-eight obstruction, attained eventual threshold and endpoint collision. The fractional and sixth-order papers retain different order/zero quantifiers. No RH or quadratic-threshold implication is inferred.
+Twenty-seven reviewed drafts total 273 pages; the [catalog](INDEX.md) gives each current PDF, source, map and status. The most substantial explicit arithmetic package is the sixteen-page quartic actual-saddle proof, exact rational time-eight obstruction, attained eventual threshold and endpoint collision. The fractional and sixth-order papers retain different order/zero quantifiers. No RH or quadratic-threshold implication is inferred.
 
 The signed multichannel paper consolidates the actual finite signed telescope, factorial analytic domain, native limits and completed observable reconstruction. The IBM papers separate physical variation/quadrature, original clock-domain and critical-noise exclusions, actual native averages/fixed-past time calculus, and entire-energy associativity/completed reconstruction. Their different domains and topologies are not interchangeable. In particular, critical clock noise does not supply a positive subcritical Hermite-sector domain theorem; future-increment noise probes are noncausal.
 
@@ -29,7 +29,7 @@ The quartic normal-map paper includes exponent optimality at every infinite Pois
 
 The expanded eight-page Gaussian prediction companion also reconstructs raw-quartic retained energy and the actual negative residual cross-covariance example. Block errors retain cross terms even when original targets are independent.
 
-The seven-page quadratic-product companion reconstructs full second-chaos multiplication, sharp fourth moments and exact contraction/equality tests, retaining original source-field normalization. Classical finite matrix criteria are credited.
+The ten-page quadratic-product companion reconstructs full second-chaos multiplication, sharp fourth moments and exact contraction/equality tests, retaining original source-field normalization. Classical finite matrix criteria are credited.
 
 Classical formalization companions consolidate Fourier/Haar positivity and generator domains, now with actual compact-limit probability laws, countable chains and a Poisson-mixture atom/jump-covariance proof; full Cauchy circle kernel/generator/core/forward entropy with real single-harmonic classification and Haar/diffusion obstructions; Gaussian terminal prediction, actual fractional full past and inverse-number obstruction; forcing trace, original divergence completion and observed-mode noncompactness; and Poisson–Gaussian maximal graphs, actual displacement, sharp jump curvature and nonlinear transfer failure. A CD(1/2,infinity) jump bound is not the diffusion chain rule or a quadratic logarithmic Sobolev theorem.
 
@@ -47,7 +47,7 @@ All are reviewed editorial drafts. Several mechanisms are explicitly classical; 
 
 ## Supporting assessments and preserved scope
 
-Sticky generator range/semigroup identification, raw observation counterexamples, atomic derivative nonclosability, count-energy recovery diagnostics, broad triad/corridor infrastructure and general growing zero windows remain supporting assessments in the [whole-library survey](LIBRARY_SURVEY.md). A source family is not an additional paper by default.
+Sticky generator range/semigroup identification, raw observation counterexamples, count-energy recovery diagnostics, broad triad/corridor infrastructure and general growing zero windows remain supporting assessments in the [whole-library survey](LIBRARY_SURVEY.md). A source family is not an additional paper by default.
 
 The original signed-Simpson note remains separately scoped. The former associativity and hidden-clock notes were deliberately expanded at their canonical paths; earlier bytes and build receipts remain in Git history. No original ResearchSources file is edited or committed. No Foundation source, researcher blueprint/commentary, research ledger, queue, verification setting, main/research branch or synchronization procedure is changed. This independent publication work does not use or alter the researcher's reflection accounting or campaign priorities. Exact chronological checkpoints remain in [PUBLICATION_SESSION.md](PUBLICATION_SESSION.md).
 
@@ -64,3 +64,5 @@ The signed-density companion also includes the fully reconstructed Gaussian/Dira
 The nine-page moment companion also reconstructs a distinct singular cubic-square-positive nonrepresentable vector, an actual finite-support probability sequence approaching it, and its one-unit sixth-moment defect despite total-variation law convergence and uniformly bounded sixth moments. The moment image is not closed; classical null compatibility and uniform-integrability mechanisms are credited.
 
 The Gaussian quadratic companion now has ten pages, adding two-skew-factor tensor recovery, actual orthonormal-frame determinant law transport, exact moments and a fully derived classical Laplace density. Finite matrix tensor tests supplement the completed-source proof; they do not replace it.
+
+The nine-page Gaussian likelihood companion reconstructs the actual normalized delayed tilt, full-past law, precise L2 domains, quotient unitary, conditional projections and exact predictable energy. Complete classical deductions yield projection norm one despite arbitrarily small likelihood-root changes, with explicit running coefficient and exact energy split. This is a coherent domain/observation comparison, not a new Girsanov theorem.

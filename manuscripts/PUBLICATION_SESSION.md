@@ -255,3 +255,7 @@ Expanded the moment paper from eight to nine pages with complete cubic Gram/null
 ## Two skew factors and an actual determinant law
 
 Expanded Gaussian quadratic products from eight to ten pages with full tensor symmetrization, nonzero double-skew recovery, exact second/fourth moments, ambient orthonormal-frame Gaussian law transport, conditional characteristic functions and explicit classical Laplace density. 194 frozen correspondences and 28 exact polynomial checks. All ten pages inspected, new pages enlarged; final clean build and fresh review hashes. Nyquist–Rice–Riordan primary pages 97–98 establish the classical density antecedent. Twenty-six drafts total 264 pages.
+
+## Actual Gaussian likelihood domains and conditional transport
+
+Completed a nine-page classical formalization companion on normalized delayed Gaussian likelihood, failed Novikov moment, actual full-past preservation and covariance, precise L2 domains, half-density unitary, conditional projection, exact innovation energy and agreement after observability. Complete separately labelled deductions give exact norm one and parameter instability plus the original explicit two-stage predictable coefficient. 212 frozen source correspondences, 23 exact rational transcription checks, all nine pages inspected and central pages enlarged. Primary conditional-Bayes/Novikov antecedents recorded; no priority claim. Twenty-seven reviewed drafts total 273 pages.
