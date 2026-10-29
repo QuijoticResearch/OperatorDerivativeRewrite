@@ -191,3 +191,7 @@ The preserved five-page note is expanded into a ten-page reviewed classical form
 ## Boundary entropy and positive replacement comparison
 
 Ten-page classical companion, 86 exact declarations, six exact rational/log-prime finite checks. Complete continuous-boundary conditioning and finite-positive-entropy obstruction are paired with original loop-replacement minorization, first-step smoothing and fixed-coupling entropy decay. Every final page inspected; failed layout logs retained. Twenty-two reviewed drafts total 205 pages.
+
+## Fourier-cone reality and Hermitian interaction
+
+Eight-page companion, 72 exact declaration correspondences, six exact finite-symbol checks. Complete real half-energy, actual Fourier integral and compact solenoidal bump/central-positivity/negative-square proofs. Every page inspected. Twenty-three reviewed drafts total 213 pages; no quantitative angle or unrestricted PDE claim.

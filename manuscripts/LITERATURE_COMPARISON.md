@@ -65,3 +65,7 @@ The primary [Ocone 1984 institutional record and abstract](https://www.researchw
 ## Conditional boundary entropy and loop replacement
 
 [Raginsky, primary author PDF, Definition 1](https://maxim.ece.illinois.edu/pubs/raginsky_ISIT13.pdf) formulates strict data processing through a subunit relative-entropy ratio. [Caputo–Menz–Tetali, primary journal PDF, Section 1.1 and Proposition 1.1](https://www.numdam.org/item/AFST_2015_6_24_4_691_0.pdf) describe all-coordinate heat-bath updates and the role of approximate tensorization. The new companion credits these classical mechanisms, proves the specific continuous-boundary reference-law counterexample, and keeps it distinct from its positive fixed-coupling state-replacement comparison. No priority or all-coordinate mixing obstruction is claimed.
+
+## Fourier-cone pairing diagnostics
+
+[Tao, primary Fourier lecture notes, Schwartz inversion and Theorem 43](https://terrytao.wordpress.com/2009/04/06/the-fourier-transform/) supplies classical Fourier/Plancherel context. The compact-bump solenoidal witness uses these elementary mechanisms; a bounded targeted search did not resolve priority of that exact construction. No new Fourier cancellation principle or Navier–Stokes result is claimed. In particular, nonzero Hermitian interaction at each aperture is not a normalized uniform lower bound or a refutation of genuine small-angle estimates.

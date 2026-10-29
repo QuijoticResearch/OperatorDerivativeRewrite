@@ -1,0 +1,428 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,microtype}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
+\newcommand{\Sspace}{\mathcal S}\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\lean}[2]{\par\smallskip\noindent\textit{Source correspondence:}
+\texttt{\detokenize{#1}}\par\noindent\texttt{\detokenize{#2}}\par\smallskip}
+\title{One-sided Fourier cones:\\reality, half-energy and Hermitian interactions}
+\author{Project Stardust}\date{October 29, 2026}
+\begin{document}\maketitle
+\begin{abstract}
+One-sided Fourier support has different consequences for real fields,
+complex bilinear tests and Hermitian energy tests. We prove that a real
+Schwartz field supported in a narrow single cone is zero, and that at most
+half of each nonnegative radial spectral moment of a real field can lie in
+such a cone. Complex cone fields can be nonzero and divergence free, although
+their unconjugated bilinear and advection trilinear integrals vanish. For
+every cone aperture $0<\delta\leq1$, we reconstruct explicit smooth compact
+spectral bumps giving three nonzero divergence-free complex Schwartz fields
+in that same cone whose Hermitian advection pairing is strictly negative.
+The proof includes the actual double Fourier integral, cone support under
+convolution, a positive central-frequency coefficient and a curl response
+whose pairing is exactly a negative square. These are verified diagnostic
+constructions and classical Fourier mechanisms, not a new fluid regularity
+or singularity theorem. Nonvanishing does not disprove an aperture-dependent
+estimate with a positive constant.
+\end{abstract}
+
+\section{Conventions and the diagnostic question}
+For scalar or vector Schwartz functions on $\R^3$, use
+\[
+ \widehat f(\xi)=\int_{\R^3}e^{-2\pi i x\cdot\xi}f(x)\,dx,
+ \qquad \kappa=2\pi i,
+ \qquad\widehat{\partial_jf}(\xi)=\kappa\xi_j\widehat f(\xi).
+\]
+Here coordinates are numbered $1,2,3$; the formal source numbers them
+$0,1,2$. The norm on $\C^3$ is its Hermitian Euclidean norm. For a unit
+vector $n$ and $0<\delta\leq1$, define the open angular cone
+\begin{equation}\label{eq:cone}
+ C(n,\delta)=\{\xi\ne0:|\xi/|\xi|-n|<\delta\}.
+\end{equation}
+The closed support of a continuous Fourier transform means the closure of
+its nonzero set. Statements using closed support are made explicitly below.
+
+The issue is which pairing a cancellation actually controls. For scalar
+fields set
+\[
+ B(f,g)=\int fg,\qquad H(f,g)=\int f\overline g.
+\]
+For vector fields put $N(u,v)=(u\cdot\nabla)v$ and
+\begin{align*}
+ T_0(u,v,w)&=\int\sum_jN(u,v)_j w_j,\\
+ T_H(u,v,w)&=\int\sum_jN(u,v)_j\overline{w_j}.
+\end{align*}
+These are actual absolutely convergent integrals for Schwartz inputs. In
+particular, $H(f,f)=\|f\|_2^2$, whereas $B(f,f)$ need not be an energy.
+The main construction proves $T_0=0$ and $T_H<0$ for the same three fields.
+It does not make $u,v,w$ identical or construct a time-dependent PDE solution.
+
+The frozen verified baseline is
+\begin{quote}\small\texttt{bab688bb6140cd6316c80680095a914ea0d346db}.\end{quote}
+Exact source declarations, original hypotheses and hashes accompany the
+paper. All Fourier inversion, Plancherel and Schwartz-space facts used here
+are classical foundational inputs; the argument reconstructs how the mapped
+verified sources combine them. No mathematical source was changed.
+
+\section{Real fields cannot occupy only one cone}
+\begin{lemma}[Antipodes and a positive halfspace]\label{lem:geometry}
+The cone $C(n,\delta)$ contains no pair $\xi,-\xi$. It is contained in
+$\{\xi:\xi\cdot n>0\}$. Moreover, for $\xi\ne0$,
+\begin{equation}\label{eq:linearcone}
+ \xi\in C(n,\delta)
+ \quad\Longleftrightarrow\quad
+ (2-\delta^2)|\xi|<2\xi\cdot n.
+\end{equation}
+The sum of any two elements of the cone belongs to the cone.
+\end{lemma}
+\begin{proof}
+For a unit $a$, if $|a-n|<\delta$ and $|-a-n|<\delta$, the triangle
+inequality gives $2=|2a|<2\delta\leq2$, a contradiction.
+Also $|a-n|^2=2-2a\cdot n$. Substitution of $a=\xi/|\xi|$ gives
+\eqref{eq:linearcone}, and $2-\delta^2\geq1$ gives $\xi\cdot n>0$.
+If $p,q$ are in the cone, then $(p+q)\cdot n>0$, so $p+q\ne0$.
+Using the triangle inequality and $2-\delta^2>0$,
+\[
+ (2-\delta^2)|p+q|
+ \leq(2-\delta^2)(|p|+|q|)<2(p+q)\cdot n.
+\]
+Equation~\eqref{eq:linearcone} completes the proof.
+\end{proof}
+\lean{SingleConeReality}{cone_no_antipodes; zero_not_mem_cone}
+\lean{ConeSupportAlgebra}{cone_linear_iff; cone_add_mem}
+
+\begin{theorem}[Reality and support]\label{thm:reality}
+If a scalar real-valued Schwartz function has Fourier nonzero set contained
+in $C(n,\delta)$, it is zero. The same is true componentwise for a real
+vector field.
+\end{theorem}
+\begin{proof}
+Conjugating the defining Fourier integral gives
+$\widehat f(-\xi)=\overline{\widehat f(\xi)}$ for real $f$.
+Thus if $\widehat f(\xi)\ne0$, then $\widehat f(-\xi)\ne0$ as well.
+The support hypothesis would put both antipodes in the cone, contrary to
+Lemma~\ref{lem:geometry}. Hence $\widehat f=0$, and Fourier inversion gives
+$f=0$. Apply this argument to each component for vector fields.
+\end{proof}
+\lean{SingleConeReality}{fourier_reality; real_schwartz_single_cone_zero}
+\lean{SingleConeReality}{real_vector_schwartz_single_cone_zero}
+Thus a nonzero single-cone example in the rest of the paper is necessarily
+complex. Taking its real part adds reflected Fourier support and changes
+the single-cone hypothesis.
+
+\section{A half-energy bound for real fields}
+For $c\geq0$, integer $k\geq0$ and a vector Schwartz field $F$, let
+\[
+ E_k(F)=\int(c|\xi|)^k|\widehat F(\xi)|^2\,d\xi,
+ \qquad E_{k,C}(F)=\int_C(c|\xi|)^k|\widehat F(\xi)|^2\,d\xi.
+\]
+The density is integrable by Schwartz decay and nonnegative. When $k=0$,
+the radial weight is one, including the case $c=0$.
+
+\begin{theorem}[At most half in one cap]\label{thm:half}
+For every real-valued vector Schwartz field $F$,
+\[
+ 2E_{k,C}(F)\leq E_k(F).
+\]
+If $E_k(F)>0$ and $(1-\varepsilon)E_k(F)\leq E_{k,C}(F)$, then
+$\varepsilon\geq1/2$. In particular, concentration of more than half of
+such a radial energy in a single cap is impossible.
+\end{theorem}
+\begin{proof}
+Reality gives $|\widehat F(-\xi)|^2=|\widehat F(\xi)|^2$. The radial
+weight is even, so the energy density is even. Reflection preserves
+Lebesgue measure; hence the integrals over $C$ and $-C$ are equal.
+These two measurable sets are disjoint by Lemma~\ref{lem:geometry}.
+Their union therefore has energy $2E_{k,C}(F)$, at most the total energy
+by nonnegativity. Combining this with the assumed lower bound gives
+$2(1-\varepsilon)E_k(F)\leq E_k(F)$; division by the positive total gives
+$\varepsilon\geq1/2$.
+\end{proof}
+\lean{SingleConeEnergyLimit}{cone_twice_le_total; dominance_forces_half_error}
+The measurable Fourier projection gives the same physical-space conclusion.
+Indeed let
+\[
+ G_C=\mathcal F^{-1}\!\left(1_C(c|\xi|)^{k/2}\widehat F(\xi)\right)
+ \quad\text{in }L^2.
+\]
+The multiplier is square integrable by the stated moment bound. Unitarity
+gives $\|G_C\|_2^2=E_{k,C}(F)$, so
+$2\|G_C\|_2^2\leq E_k(F)$. The projected field is an actual $L^2$ class;
+the sharp indicator of the cone is not assumed to preserve Schwartz space.
+\lean{SingleConeEnergyLimit}{projectedPhysicalField_norm_sq; real_cap_projection_half}
+
+For completeness, the factor $1/2$ can be attained. This elementary
+sharpness observation is a human deduction, not a named new formal theorem.
+Choose a nonzero smooth compactly supported Fourier bump $b$ in $C$, and
+let $f=\mathcal F^{-1}b$. The real function $g=\operatorname{Re}f$ has
+\[
+ \widehat g(\xi)=\tfrac12\bigl(b(\xi)+\overline{b(-\xi)}\bigr).
+\]
+The two summands have disjoint supports in $C$ and $-C$. For every
+nonnegative even radial weight with a positive finite integral against
+$|b|^2$, each reflected cap contributes exactly one half of the total
+weighted energy. In particular this applies to the displayed moments for
+$c>0$, and also to the unweighted moment. It does not produce a real field
+supported only in $C$.
+
+\section{What the unconjugated cancellations say}
+For scalar Schwartz functions, Fourier inversion and Plancherel give
+\begin{equation}\label{eq:bilinear}
+ B(f,g)=\int\widehat f(\xi)\widehat g(-\xi)\,d\xi,
+ \qquad
+ H(f,g)=\int\widehat f(\xi)\overline{\widehat g(\xi)}\,d\xi.
+\end{equation}
+The first follows, for example, by applying the second to $f,\overline g$
+and using $\widehat{\overline g}(\xi)=\overline{\widehat g(-\xi)}$.
+Products on both sides are integrable by Cauchy--Schwarz.
+If $f,g$ have Fourier nonzero sets in $C$, the first integrand is identically
+zero because the cone contains no antipodes. Thus $B(f,g)=0$.
+For a nonzero $f$, however, $H(f,f)=\|f\|_2^2>0$.
+\lean{SingleConePairings}{bilinear_fourier_reflection; scalar_hermitian_fourier}
+\lean{SingleConePairings}{same_cone_bilinear_zero; hermitian_self_positive}
+
+The convolution identity
+\[
+ \widehat{fg}(\xi)=\int\widehat f(p)\widehat g(\xi-p)\,dp
+\]
+shows that the Fourier nonzero set of $fg$ lies in the sum of the two
+Fourier nonzero sets. If all frequencies of $f,g$ lie in the positive
+halfspace $\xi\cdot n>0$, so do the frequencies of $fg$.
+Applying \eqref{eq:bilinear} to $fg$ and a third function $h$ in that
+halfspace gives $\int fgh=0$.
+Differentiation only multiplies Fourier coefficients by $\kappa\xi_j$,
+and hence cannot enlarge the Fourier nonzero set. Coordinatewise application
+therefore proves
+\begin{equation}\label{eq:Tzero}
+ T_0(u,v,w)=0
+\end{equation}
+whenever all three vector Schwartz fields have Fourier nonzero sets in $C$.
+Solenoidality is not required for this cancellation.
+\lean{SingleConeTrilinear}{fourier_product_support; positive_triple_zero; cone_trilinear_zero}
+In frequency terms the unconjugated triple asks for $p+q+r=0$, impossible
+when all three have positive $n$ component. The Hermitian triple asks for
+$p+q=r$, which can occur inside the same cone. The next section justifies
+this latter integral as an actual product-space integral before using it.
+
+\section{The actual Hermitian Fourier formula}
+For scalar Schwartz $f,g,h$,
+\begin{equation}\label{eq:scalartriad}
+ \int fg\overline h
+ =\iint\widehat f(p)\widehat g(q)\overline{\widehat h(p+q)}\,dp\,dq.
+\end{equation}
+Here the product-space integrand is absolutely integrable, since
+\[
+ \iint|\widehat f(p)\widehat g(q)\widehat h(p+q)|\,dp\,dq
+ \leq\|\widehat h\|_\infty\|\widehat f\|_1\|\widehat g\|_1<\infty.
+\]
+Plancherel applied to $fg,h$ gives
+$\int\widehat{fg}(\xi)\overline{\widehat h(\xi)}\,d\xi$.
+Insert the convolution formula. The change of variables
+$(\xi,p)\mapsto(p,q=\xi-p)$ has absolute determinant one.
+The displayed absolute-integrability bound, transported through that
+invertible linear map, justifies Fubini and the change of variables,
+proving \eqref{eq:scalartriad}. No unspecified iterated distributional
+integral is used.
+\lean{HermitianTriadFourier}{triadKernel_integrable; frequencyShear_preserving}
+\lean{HermitianTriadFourier}{scalar_fourier_representation_prod}
+
+Apply \eqref{eq:scalartriad} to each
+$u_i,\partial_i v_j,w_j$ and sum the nine terms. This gives the exact vector
+formula
+\begin{equation}\label{eq:vectortriad}
+ T_H(u,v,w)=\iint\kappa
+ \left(\sum_i\widehat u_i(p)q_i\right)
+ \left(\sum_j\widehat v_j(q)\overline{\widehat w_j(p+q)}\right)dp\,dq.
+\end{equation}
+Each summand is absolutely integrable by the previous bound with
+$\widehat{\partial_i v_j}(q)=\kappa q_i\widehat v_j(q)$, still Schwartz.
+Finite summation thus commutes with integration. This identifies precisely
+where the conjugate and the sum frequency belong.
+\lean{HermitianTriadFourier}{vectorKernel_integrable; vector_fourier_representation_prod}
+
+\section{A compact spectral bump and two solenoidal inputs}
+We now construct a nonzero Hermitian interaction for each fixed aperture.
+Take $n=e_1$ and $0<\delta\leq1$. Since $C(e_1,\delta)$ is an open
+neighborhood of $e_1$, choose a real smooth compactly supported bump $b$
+such that
+\begin{equation}\label{eq:bump}
+ 0\leq b\leq1,\quad b(e_1)=1,\quad A:=\supp b\Subset C(e_1,\delta).
+\end{equation}
+Here $\supp b$ is closed support and the notation means compact containment.
+A usual smooth bump on a sufficiently small ball about $e_1$ supplies it.
+Let $f=\mathcal F^{-1}b$, a scalar Schwartz function.
+Define the two curl-plane operators
+\[
+ \mathcal C_{12}f=(\partial_2 f,-\partial_1 f,0),\qquad
+ \mathcal C_{13}f=(\partial_3 f,0,-\partial_1 f),
+\]
+and set
+\begin{equation}\label{eq:inputs}
+ u=\mathcal C_{12}f,
+ \qquad v=\mathcal C_{13}(\partial_2 f).
+\end{equation}
+Mixed derivatives commute, so both inputs are divergence free. They are
+Schwartz because differentiation preserves Schwartz space. Their Fourier
+transforms are
+\begin{align}
+ \widehat u(p)&=\kappa b(p)(p_2,-p_1,0),\label{eq:uhat}\\
+ \widehat v(q)&=\kappa^2 b(q)q_2(q_3,0,-q_1).\label{eq:vhat}
+\end{align}
+In particular, both closed Fourier supports lie in $A$.
+\lean{ConeInteractionCore}{spectralBump_nonempty; inputU_tsupport; inputV_tsupport}
+\lean{DivergenceFreeConeWitness}{curl_divergence_zero; fourier_curl}
+\lean{ConeInteractionCore}{curl02_divergence_zero; fourier_curl02}
+
+Let $N=N(u,v)$. All its components are products of Schwartz functions and
+derivatives, so $N$ is Schwartz. The convolution formula gives
+\begin{equation}\label{eq:Nhat}
+ \widehat N_j(\xi)=\int\kappa
+          \left(\sum_i\widehat u_i(p)(\xi-p)_i\right)
+          \widehat v_j(\xi-p)\,dp.
+\end{equation}
+Every convolution term is supported in $A+A$. Since $A$ is compact, $A+A$
+is compact and closed. Vanishing outside $A+A$ therefore also puts the
+\emph{closed} Fourier support of $N$ in $A+A$. Lemma~\ref{lem:geometry}
+places that set inside the same cone. Compactness is useful here: merely
+putting a nonzero set in an open cone would not automatically put its
+closure there.
+\lean{ConeSupportAlgebra}{advect_tsupport_subset_sum; advection_tsupport_cone}
+
+\section{A strictly positive central coefficient}
+The inputs were chosen so that one component of \eqref{eq:Nhat} has a
+nonnegative integrand at $\xi_*=2e_1$. For $q=\xi_*-p$,
+\[
+ p_2q_1-p_1q_2=2p_2,\qquad q_1=2-p_1,\qquad q_2=-p_2.
+\]
+Substitute \eqref{eq:uhat}--\eqref{eq:vhat} into the $j=3$ integrand of
+\eqref{eq:Nhat}. Direct multiplication gives
+\begin{equation}\label{eq:central}
+ \widehat N_3(2e_1)=2\kappa^4\int
+ p_2^2(2-p_1)b(p)b(2e_1-p)\,dp.
+\end{equation}
+There are four derivative factors; in particular
+$\kappa^4=(2\pi)^4>0$ is real. Losing a factor $i$ here would change the
+sign test.
+\lean{ConeInteractionCore}{central_kernel_identity; central_fourier_real_identity}
+
+\begin{lemma}[Strict positivity]\label{lem:central}
+The integral in \eqref{eq:central} is finite and strictly positive.
+Consequently $\widehat N_3(2e_1)>0$ is real and $N\ne0$.
+\end{lemma}
+\begin{proof}
+The integrand is smooth with compact support, so it is integrable. It is
+nonnegative everywhere. Indeed if $b(2e_1-p)=0$ the assertion is immediate;
+otherwise $2e_1-p$ is in the cone and hence has positive first coordinate,
+so $2-p_1>0$. All other factors are nonnegative.
+
+To obtain strict positivity, let
+$G(p)=(2-p_1)b(p)b(2e_1-p)$. It is continuous and $G(e_1)=1$.
+For a sufficiently small nonzero $t$, continuity gives
+$G(e_1+t e_2)>0$, while $p_2^2=t^2>0$ at that point. Thus the complete
+integrand is positive at a point, and by continuity on a nonempty open
+ball of positive Lebesgue measure. Nonnegativity everywhere and positivity
+on that ball give a strictly positive integral. Equation~\eqref{eq:central}
+and $\kappa^4>0$ give the conclusion.
+\end{proof}
+\lean{ConeInteractionCore}{centralDensity_nonneg; centralDensity_integral_pos}
+\lean{ConeInteractionCore}{central_fourier_positive; advection_nonzero}
+This proves nonzero advection without assuming that an arbitrary pair of
+nonzero cone fields interacts. The particular transverse derivatives in
+\eqref{eq:inputs} and the positive bump are responsible for the sign.
+
+\section{A solenoidal response and an exact negative square}
+Define the scalar rotor and its response by
+\[
+ r=\partial_3N_1-\partial_1N_3,
+ \qquad w=\mathcal C_{13}r=(\partial_3r,0,-\partial_1r).
+\]
+They are Schwartz, and $w$ is divergence free by commuting mixed
+derivatives. Differentiation does not enlarge closed Fourier support, so
+the closed Fourier supports of $r,w$ lie in $A+A\subset C(e_1,\delta)$.
+At the central frequency,
+\[
+ \widehat r(2e_1)
+ =\kappa(2e_1)_3\widehat N_1(2e_1)
+       -\kappa(2e_1)_1\widehat N_3(2e_1)
+ =-2\kappa\widehat N_3(2e_1)\ne0.
+\]
+Thus $r\ne0$ by Fourier injectivity.
+\lean{ConeInteractionWitness}{rotor_nonzero; response_physical_divergence; response_tsupport}
+
+\begin{theorem}[Two different trilinear conclusions]\label{thm:main}
+For every $0<\delta\leq1$ there exist three nonzero divergence-free complex
+Schwartz vector fields $u,v,w$ on $\R^3$, all with closed Fourier support
+in $C(e_1,\delta)$, such that
+\[
+ T_0(u,v,w)=0,\qquad
+ T_H(u,v,w)=-\|\partial_3N(u,v)_1-\partial_1N(u,v)_3\|_2^2<0.
+\]
+\end{theorem}
+\begin{proof}
+Use the constructed $u,v,w$. All support and solenoidality statements were
+proved above. Integration by parts, justified by Schwartz decay, gives
+\begin{align*}
+ T_H(u,v,w)
+ &=\int\bigl(N_1\overline{\partial_3r}
+                       -N_3\overline{\partial_1r}\bigr)\\
+ &=-\int(\partial_3N_1-\partial_1N_3)\overline r
+ =-\int|r|^2.
+\end{align*}
+The norm is strictly positive: a nonzero continuous Schwartz function is
+nonzero on an open set of positive measure. Thus $T_H<0$.
+If any of $u,v,w$ were zero, its trilinearity would force $T_H=0$;
+all three are therefore nonzero. The unconjugated value is zero by
+\eqref{eq:Tzero}, since all three Fourier supports lie in the same cone.
+\end{proof}
+\lean{ConeInteractionWitness}{rotor_energy_identity; interaction_real_negative}
+\lean{ConeInteractionWitness}{exists_full_cone_interaction; pairings_unequal}
+In the source Hilbert convention the Hermitian inner product is conjugate
+linear in its first slot. Its equality is written as pairing $w$ with $N$;
+the scalar formula is exactly the $T_H$ displayed here. No switch of inner
+product convention or silent conjugation is needed.
+
+\section{What the example rules out, and what it leaves open}
+The construction rules out the assertion that positive-frequency cone
+support alone makes \emph{every} Hermitian advection interaction vanish.
+It also gives an exact counterexample to identifying the unconjugated
+physical triple with the conjugated double Fourier integral
+\eqref{eq:vectortriad}. Those two expressions give zero and a negative
+number, respectively, on the same inputs.
+
+It does not disprove an inequality with a factor depending on $\delta$.
+The fields and their norms depend on the chosen bump and aperture; the
+argument supplies no normalized lower bound uniform as $\delta\downarrow0$.
+In particular a genuine small-angle estimate requires its own symbol and
+norm analysis. An unconjugated zero is a trivial bound for that particular
+form, and is not by itself an estimate for Hermitian energy.
+
+Nor does this contradict the real divergence-free transport cancellation
+$\int(u\cdot\nabla)v\cdot v=0$ under suitable decay. Our inputs are
+complex and are three independently chosen fields, while nonzero real
+fields cannot satisfy the single-cone hypothesis of Theorem~\ref{thm:reality}.
+Real-part symmetrization introduces the antipodal cap and changes the
+frequency interactions. The half-energy theorem quantifies that reality
+constraint for every displayed radial moment.
+
+The basic conjugation, reflection, Plancherel and convolution mechanisms
+are classical. Tao's primary Fourier notes \cite{tao}, including the
+Schwartz inversion discussion and Theorem~43, provide an accessible
+foundational comparison. A bounded search for the specific solenoidal
+compact-bump construction did not establish its priority. No novelty
+certification follows from that incomplete search; the value of this
+formalization companion is the complete checked construction and the exact
+pairing and reality hypotheses. It proves no global regularity, finite-time
+blowup, nonlinear evolution of cone support or angular partition theorem
+for the unrestricted Navier--Stokes equations.
+
+\begin{thebibliography}{9}
+\bibitem{tao} T. Tao, \emph{245C, Notes 2: The Fourier transform},
+April 6, 2009. Primary author exposition, especially Schwartz inversion
+and Theorem~43 (Plancherel).
+\href{https://terrytao.wordpress.com/2009/04/06/the-fourier-transform/}{Author's lecture notes}.
+\end{thebibliography}
+\end{document}
