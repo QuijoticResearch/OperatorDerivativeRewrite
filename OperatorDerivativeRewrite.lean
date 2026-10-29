@@ -2770,3 +2770,5 @@ import Foundation.SU2AxisMatrixJets
 import Foundation.FourCubeMovingBoundaryQuadratic
 import Foundation.FourCubeMovingActionLimit
 import Foundation.FourCubeMovingLaplaceLimit
+
+import Foundation.FourCubeMovingSchurLimit

@@ -2777,3 +2777,53 @@ The source-integrity manifest authenticates1711 against exact approved4f25f62185
 Exact remaining bottleneck: the actual fixed-amplitude joint Taylor and full-partition limits are NOW VERIFIED and must no longer be listed as missing hypotheses. Explicit completion of the square/Schur normalizer and identification with existing harmonic data remain open. Parameter derivatives through third order, weighted integrability and convergence for actual boundary response remain separate obligations; neither fixed-amplitude convergence nor bounded-test cutoff removal proves them. The external full harmonic-cubic rational diagnostic is still not a Lean theorem about actual Gibbs third derivatives. Stationary physical transfer contraction, a physically justified iteration distance, scale/volume-uniform estimates, infinite-volume/continuum construction and positive Yang-Mills mass gap remain OPEN. No novelty is claimed for classical finite-dimensional Taylor/Laplace tools. Continue the focused mathematical bottleneck rather than broad auxiliary-library expansion.
 
 Exact-commit approval, new-history secret scanning, guarded PUBLIC main/research synchronization and independent post-push ref/visibility checks are closure gates. This pre-commit entry does not assert backup already succeeded. Visibility is exclusively user-controlled. The indefinite research goal remains active.
+
+
+## Checkpoint1713 - actual full-Haar moving-boundary limit equals the pinned Schur form
+
+October29,2026. Focused Yang-Mills remains ACTIVE; Bakry remains paused. Previous1712,1ad7d3335b4e94fe2ad9f1248b1e5d00f1325390, is exact-commit approved and independently verified on BOTH authorized backup refs with repository PUBLIC. This checkpoint identifies its actual quadratic-exponential partition limit using the EXISTING OneSidedSchurForm completed square. It builds one focused bridge, Foundation/FourCubeMovingSchurLimit.lean, rather than new Gaussian infrastructure. No publication duties were performed: no manuscripts/PDFs, manuscripts/, docs/papers/ or editorial README were created, revised, compiled or reviewed. Original-source checks are hashes only.
+
+Exact actual-to-linear identification. Let Y be the actual93-dimensional retained Haar chart and a=(x,y,z) fixed real boundary amplitudes. For each normalized Pauli channel j, eta_j(c)=boundaryVector(x,y,z,c)(j). Its values retain the actual cap/chord inverse signs proved at1712. The chart frame is T(Y)=(2Y_1,2Y_2,2Y_0). scalar_joint_difference identifies the old pinned incidence energy with its actual ribbon correction; jointQuadratic_schur_input proves
+
+    Q_a(Y)=(1/4) sum_(j=0,1,2) jointEnergy(T(Y)_j,eta_j).
+
+The original full action divided by t^2 therefore tends to (1/8)sum jointEnergy, not (1/4)sum. This normalization is independently tested in Lean. All local matrices are the previously verified ACTUAL31-coordinate pinned incidence matrices. The proof explicitly checks zero inner boundary curl and the signed high-cap/chord/low-cap ribbon rows. No matrix is silently replaced by a surrogate.
+
+Define the harmonic chart shift h_a by T(h_a)_j=response(eta_j), using the existing inverse pinned Gram response. In quaternion chart order h_a=(response(eta_2)/2,response(eta_0)/2,response(eta_1)/2). Define
+
+    E(a)=(1/4)sum_j reducedEnergy(eta_j)
+        =(1/4)sum_j eta_j dot (schur*eta_j).
+
+actual_completed_square proves Q_a(Y)=E(a)+Q_0(Y-h_a), with E(a)>=0. actual_minimum_bound and actual_unique_minimizer prove h_a is the UNIQUE global minimizer of THIS quadratic limiting action, with value E(a). This is not a theorem about the exact finite-t nonlinear action's minimizer or an assumed implicit nonlinear saddle. Positivity uses the established pinned Gram theorem, retaining the original gauge pin and its exact Haar normalization.
+
+effectiveEnergy_zero_iff_gauge proves E(a)=0 exactly when EACH eta_j lies in the existing scalar boundary-gradient range. This is the precise infinitesimal, channelwise gauge degeneracy of the limiting Schur energy. It is not a claim of full nonabelian gauge invariance for arbitrary parameterized reference-boundary costs, nor a physical spectral-gap estimate.
+
+Full-Haar normalizer identification. The actual limiting density from1712 now satisfies
+
+    g_a(Y)=exp(-E(a)/2)*g_0(Y-h_a),
+    C_a=integral g_a=exp(-E(a)/2)*C_0.
+
+The integral equality uses actual Lebesgue/Haar translation invariance on the full93-coordinate space and the already proved finite, strictly positive C_0. No determinant formula, numerical inverse, IsGaussian axiom, conditioning on a measure-zero pin or differentiation under an integral is assumed. Combining with1712's actual full-Haar partition theorem gives
+
+    Z_(b_t)(1/t^2)/Z_0(1/t^2) -> exp(-E(a)/2),
+    -log(Z_(b_t)(1/t^2)/Z_0(1/t^2)) -> E(a)/2,
+
+through the PUNCTURED real neighborhood of0, both signs, for b_t=boundaryData(tx,ty,tz). The limiting ratio is positive and <=1. Its being <=1 is NOT a transfer-operator contraction statement. The independent harness also identifies the normalized limiting density as g_0(Y-h_a)/C_0, so the scalar factor cancels only after the correct C_a is retained. No new normalized actual moving-law convergence theorem is exported here.
+
+Verification and independent testing:
+- build: PASS, 25.719220900005894 seconds.
+- audit: PASS, 40.47027029999299 seconds.
+- checks: PASS, 27.51154740000493 seconds.
+- axiom-ledger: PASS, 48.81928829997196 seconds.
+
+The full root build passed7034 jobs. The canonical COMPLETE transitive safe-Foundation axiom audit passed55500 declarations, permitting only propext, Classical.choice and Quot.sound. ALL20 public types were printed unabridged and reviewed:16 theorem proofs,3 definitions and1 abbreviation, no instances. The entire source and all four private helpers (boundary_zero,local_upper,boundary_inner,boundary_upper) were read. The COMPLETE persisted Foundation/AxiomAudit.lean run passed. No sorry/admit/new mathematical axiom/native_decide, resource increase, toolchain/configuration/compiler/trust change or verification weakening was introduced. Local irreducibility of the existing finite geometry sets avoids unnecessary unfolding at congruence; no recursion/heartbeat limit was increased.
+
+ALL18 independent Lean examples passed. They test the actual normal equations after frame transport; the physical factor1/8; completed square/minimum/strict uniqueness; pointwise translated and normalized densities; correct positive normalizer and upper bound; exact gauge criterion and nongauge positive E; gauge-zero limit1; free-energy limit; positive-E ratio<1 and failure of an unpunctured limit; zero-amplitude E=0/shift=0; and the absolute full partition asymptotic. The positive-E test proves the old zero-coupling value at t=0 is1 and cannot equal exp(-E/2). A TEST-only higher-order zero-function simplification was repaired by unfolding the finite dot product; mathematical sources and resources did not change for that repair.
+
+An independent exact-rational calculation reconstructed all72 face rows and solved the actual32-link scalar normal equations, then converted to the SAME pole0 pin. All32 equations in all3 source columns were checked exactly. Nine deterministic rational amplitude/interior cases satisfy joint energy=effective minimum+centered energy exactly. A separate65536-sample Gaussian importance diagnostic gave normalizer ratio estimate0.9305933382083179 versus predicted0.9308463707661071, standard error0.0012238147019999447, effective energy0.14332206122082464. Rational calculations are independent finite-cell algebra diagnostics; floating integration is NOT a certified integral/error bound, proof of the Haar asymptotic, third derivative, mass gap or novelty. Evidence prefix: C:/Users/ramir/AppData/Local/Temp/stardust-ym-1713-*.
+
+Source integrity authenticates1712's manifest against exact approval1ad7d3335b4e94fe2ad9f1248b1e5d00f1325390. Among2816 recursive Foundation/root Lean files, only the new focused module, root import and AxiomAudit differ. All older mathematics,3 pinned configurations,113 baseline originals and21 Yang-Mills originals(20 distinct hashes) remain unchanged. ResearchSources remains unmodified/uncommitted. Existing drafts/history, publication separation, daily reflection policy and queue are preserved.
+
+Exact next bottleneck. The explicit leading Schur normalizer and its connection to the actual fixed-cell Haar boundary free energy are NOW VERIFIED, not missing hypotheses. No large-beta third boundary derivative follows from this leading fixed-amplitude limit. Its first correction requires actual higher action jets, the correct Gaussian averages/connected terms, and weighted remainder/tail estimates; dividing an unspecified o(1) by t is invalid. The external harmonic-cubic rational diagnostic remains unconnected to an actual Haar third-response Lean theorem. Matrix two-jet matching alone must NOT be promoted to three-jet matching. Next audit/reuse the existing actual SU(2) cubic and smooth bounded-tilt results for this specific correction, with exact domains and independent coefficient tests, rather than expanding a broad gauge library. Parameter-uniform derivative convergence, stationary physical transfer estimates, physically justified iteration scales, volume/continuum-uniform control and positive Yang-Mills mass gap remain OPEN. These leading finite-dimensional Laplace/Schur tools are classical; no novelty is asserted.
+
+Exact-commit approval, new-history secret scanning, guarded PUBLIC main/research synchronization and independent remote-ref/visibility verification remain closure gates. This pre-commit entry does not claim a remote backup already exists. Visibility belongs exclusively to the user. The indefinite goal remains active.
