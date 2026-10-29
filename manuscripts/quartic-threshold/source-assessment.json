@@ -1,0 +1,1649 @@
+{
+  "status": "EDITORIAL_SOURCE_ASSESSMENT_NOT_A_COMPLETE_PAPER",
+  "baseline": "bab688bb6140cd6316c80680095a914ea0d346db",
+  "created_utc": "2026-10-29T11:49:03.501552+00:00",
+  "mathematical_sources_modified": false,
+  "selected_title": "An attained eventual reality threshold for a growing quartic arithmetic transform",
+  "editorial_decision": "One sustained global paper should combine saddle estimates, exact arithmetic obstruction, polynomial approximation, attainment, confinement and collision. Do not split the easy endpoint topology into a purported complete proof of the global theorem.",
+  "source_counts": {
+    "quartic_modules": 145,
+    "quartic_lines": 28034
+  },
+  "definitions": {
+    "kernel": "K(u)=sum_{n>=1}(2*pi^2*n^4*exp(9*u)-3*pi*n^2*exp(5*u))*exp(-pi*n^2*exp(4*u)), u>=0.",
+    "transform": "H_t(z)=integral_0^infinity exp(t*u^4)*K(u)*cos(u*z) du; t is real, z is complex. Growing positive quartic tilt, not exp(-t*u^4).",
+    "approximation": "LP(t) means a sequence of real polynomials splitting over R converges to H_t locally uniformly on the whole complex plane.",
+    "starts": "S={T in R: for every t>=T, LP(t)}; A=inf S. S is a set of eventual starting times, not by definition the set {t:LP(t)}."
+  },
+  "exact_verified_scope": [
+    "S is nonempty, A is finite and A>8; S=[A,infinity).",
+    "For every t>=A, all complex zeros of the actual H_t are real and LP(t) holds.",
+    "There is a nonreal zero for every t in some open neighborhood of 8.",
+    "For every epsilon>0 there is some s in (A-epsilon,A) and a nonreal zero of H_s.",
+    "A single finite B confines every nonreal zero for every t>=1.",
+    "There are s_n<A tending to A and nonreal zeros z_n tending to a real threshold zero.",
+    "At A there is a positive real zero of finite analytic multiplicity at least two.",
+    "For every sufficiently large t, every zero is real and simple. This is not endpoint simplicity."
+  ],
+  "prohibited_strengthenings": [
+    "Do not assert {t: all zeros of H_t are real}=[A,infinity); earlier isolated reality times or intervals have not been excluded by the eventual-start statement.",
+    "Do not assert that every t<A has a nonreal zero, that all t>A have only simple zeros, or that the endpoint multiplicity is exactly two.",
+    "Do not assert a continuously tracked zero trajectory, first-exit/reentry history, numerical upper threshold or RH implication.",
+    "Do not replace a common stationary center in bounded and far regions by unrelated fixed-time limits.",
+    "Do not treat fixed-frequency cosine approximation, model-saddle existence or a certificate for a truncated kernel as the actual whole-plane theorem."
+  ],
+  "completed_human_proof_blocks": {
+    "Attainment from compact-time continuity": [
+      "For s_n tending to t with LP(s_n), choose for each n one real split polynomial Q_n approximating H_{s_n} within 1/(n+1) on |z|<=n. This is possible by local uniform polynomial convergence at that fixed time.",
+      "On every fixed compact K, eventually K is inside |z|<=n. Compact-uniform continuity in time gives sup_K|H_{s_n}-H_t| tending to zero. The triangle inequality proves Q_n tends locally uniformly to H_t; hence LP(t).",
+      "For each t>A, infimum approximation gives T in S with T<t, so LP(t). Apply the preceding diagonal argument to t_n=A+1/(n+1) to get LP(A). Thus A is in S, and the infimum and upward-closed definition give S=[A,infinity)."
+    ],
+    "Nonreal zeros immediately below the endpoint": [
+      "Fix epsilon>0 and T=A-epsilon/2. Since T is not in S, some t>=T fails LP(t). Since every t>=A satisfies LP(t), this chosen t is less than A.",
+      "The exact equivalence LP(t) iff all zeros of H_t are real then supplies a nonreal zero. This proves existence at some time in (A-epsilon,A), not at every earlier time."
+    ],
+    "Confinement and compactness": [
+      "Choose a late time T0 after which all zeros are real. The bounded-time far-zero theorem provides a single radius B valid for 1<=t<=T0. Any nonreal zero at time t>=1 is either in that bounded-time disk or contradicts late-time reality. Thus one B works for all t>=1.",
+      "Choose s_n in (A-1/(n+1),A) with nonreal zero z_n. Since A>8, all these times are >=1. The common B puts z_n in a compact disk; select a convergent subsequence.",
+      "Joint continuity gives H_A(w)=0 at its limit, and threshold reality gives Im(w)=0. No escape to infinity or unproved path tracking is used."
+    ],
+    "The collision derivative": [
+      "Suppose c=H_A prime(w) is nonzero. Joint continuity of the derivative gives a convex disk around the real w and a time neighborhood on which |H_s prime(q)-c|<=|c|/2.",
+      "For z,zbar in that disk, integrate the derivative along their segment. The triangle inequality applied after subtracting c(z-zbar) gives |H_s(z)-H_s(zbar)| >= |c|*|z-zbar|/2.",
+      "For the convergent nonreal zeros, conjugation symmetry makes both z_n and zbar_n zeros. They are distinct, contradicting this lower bound. Hence H_A prime(w)=0.",
+      "H_A(0)>0 excludes w=0. Evenness reflects a negative real w to a positive zero, with the derivative reflected oddly. The entire H_A is nonzero, so the order at that zero is finite and at least two. Exact double multiplicity does not follow."
+    ],
+    "Common-center whole-plane assembly": [
+      "Let B(u)=4*pi*exp(4u). Choose M=2*exp(64) and R=max(N,120021), where N is the uniform far theorem cutoff in the stationary-center parameter.",
+      "For all sufficiently late t the bounded-ratio theorem supplies one actual real stationary center u>=R such that every zero in |z|<=M*B(u) is real and simple.",
+      "For the complementary region |z|>=2*exp(64)*B(u), the uniform far theorem applies to this same u and t. The regions cover the whole plane. Far real-zero simplicity is then added with the same cutoff and even reflection for negative real frequencies.",
+      "This is a valid assembly only after both actual uniform analytic theorems have full proofs; it is not a replacement for those analytic proofs."
+    ],
+    "Balanced amplitude identity": [
+      "Given a nonzero complex center amplitude a and an analytic primitive P with fixed center value zero, let Pstar(z)=conj(P(conj(z))). Define E(z)=|a| exp((P(z)+Pstar(z))/2) and Phi(z)=arg(a)+(P(z)-Pstar(z))/(2i).",
+      "Then (a exp(P(z))+conj(a) exp(Pstar(z)))/2=E(z) cos(Phi(z)), and the sum of the two amplitude norms is 2|E(z)| cosh(Im(Phi(z))).",
+      "These exact identities convert relative pair-integral error into the weighted cosine error used in the local zero lemma. The argument of a is fixed; no varying principal argument is differentiated."
+    ]
+  },
+  "remaining_human_proof_obligations": [
+    {
+      "block": "Actual saddle analysis",
+      "sources": [
+        "RiemannQuarticTransitionSaddle",
+        "RiemannQuarticTransitionCorrection",
+        "RiemannQuarticTransitionAnalyticBranch",
+        "RiemannQuarticComplexCorrection"
+      ],
+      "requirement": "Reconstruct all model-to-actual corrections, branch geometry and uniform quantifiers. The model phase t*z^4+9*z-pi*exp(4*z) is not the full log kernel."
+    },
+    {
+      "block": "Actual integrated Gaussian/pair estimates",
+      "sources": [
+        "RiemannQuarticTransitionComplexPairing",
+        "RiemannQuarticFarComplexPairing",
+        "RiemannQuarticTransitionCosinePhase",
+        "RiemannQuarticFarCosinePhase",
+        "RiemannQuarticReflectedDominance"
+      ],
+      "requirement": "Give complete contour deformation, local Gaussian error, tails and vertical endpoint budgets. Horizontal absolute bounds alone cannot replace the rotating far Gaussian estimate."
+    },
+    {
+      "block": "Buffered local reality and simplicity",
+      "sources": [
+        "RiemannQuarticTransitionSimpleZeros",
+        "RiemannQuarticLocalCosineZeros",
+        "RiemannQuarticFarSimpleZeros"
+      ],
+      "requirement": "Reconstruct phase straightening and buffered derivative estimates turning weighted cosine error into exact real/simple zeros, not merely nearby zeros."
+    },
+    {
+      "block": "Exact arithmetic obstruction",
+      "sources": [
+        "RiemannQuarticCertifiedGrid",
+        "RiemannQuarticCellWitnesses",
+        "RiemannQuarticGridChecks",
+        "RiemannQuarticLaguerreWitness"
+      ],
+      "requirement": "Explain 160 cells, 4 theta terms, degree-15 quadrature and all actual-integral error budgets. At x=632083/10000, time 8, the actual real Laguerre expression is less than -2/10^20. A float experiment is not this certificate."
+    },
+    {
+      "block": "Entire real-zero / split-polynomial equivalence",
+      "sources": [
+        "RiemannQuarticEntireGrowth",
+        "RiemannQuarticActualPolynomialLimit",
+        "RiemannQuarticCanonicalProductLimit",
+        "RiemannQuarticDenominatorLimit"
+      ],
+      "requirement": "Explain the actual growth bound C_t exp(|z|^(3/2)), paired canonical product and normalization, or cite a precise classical theorem with every hypothesis checked. Do not assume a converse to Hurwitz without the growth input."
+    }
+  ],
+  "primary_literature": [
+    {
+      "author": "N. G. de Bruijn",
+      "title": "The roots of trigonometric integrals",
+      "journal": "Duke Mathematical Journal 17 (1950), 197-226",
+      "doi": "10.1215/S0012-7094-50-01720-0",
+      "url": "https://repository.tudelft.nl/file/File_524a4d3c-0858-4c55-b425-8c8ce1fb89da",
+      "review": "Primary repository search text and bibliographic record consulted; full fetch timed out. No detailed theorem comparison based on unread pages is claimed."
+    },
+    {
+      "author": "Charles M. Newman",
+      "title": "Fourier Transforms with Only Real Zeros",
+      "journal": "Proceedings AMS 61 (1976), 245-251",
+      "url": "https://sites.math.northwestern.edu/~auffing/papers/Newman.pdf",
+      "review": "Primary article text inspected, especially Theorem 1 and its explicitly quadratic multiplier exp(delta*u^2). It does not justify quartic monotone propagation. No general priority conclusion for the actual quartic package follows."
+    }
+  ],
+  "novelty": "UNRESOLVED. The eventual-start distinction must be kept when comparing with quadratic de Bruijn-Newman constants. No independent new-research claim is made.",
+  "selected_declarations": [
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticFlow.flow",
+      "file": "Foundation/RiemannQuarticFlow.lean",
+      "line": 50,
+      "type_or_definition_header": "def flow (t : \u211d) (z : \u2102) : \u2102",
+      "source_sha256": "0dd9294506279409455676d85105731c34d1fafdf754c047df0defe52a17728e",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticFlow.lean#L50"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticFlow.flow_differentiable",
+      "file": "Foundation/RiemannQuarticFlow.lean",
+      "line": 82,
+      "type_or_definition_header": "theorem flow_differentiable (t : \u211d) : Differentiable \u2102 (flow t)",
+      "source_sha256": "0dd9294506279409455676d85105731c34d1fafdf754c047df0defe52a17728e",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticFlow.lean#L82"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticEntireGrowth.exists_three_halves_growth",
+      "file": "Foundation/RiemannQuarticEntireGrowth.lean",
+      "line": 76,
+      "type_or_definition_header": "theorem exists_three_halves_growth (t : \u211d) :\n    \u2203 C : \u211d, 0 < C \u2227 \u2200 z : \u2102, \u2016flow t z\u2016 \u2264 C*Real.exp (\u2016z\u2016^(3/2 : \u211d))",
+      "source_sha256": "d17033feb857ac1fb733af51f86411beb356b91abc5981cb7d3143b3137a9929",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticEntireGrowth.lean#L76"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticTransitionSimpleZeros.local_real_simple_zero_of_differentiable",
+      "file": "Foundation/RiemannQuarticTransitionSimpleZeros.lean",
+      "line": 65,
+      "type_or_definition_header": "theorem local_real_simple_zero_of_differentiable (g : \u2102 \u2192 \u2102)\n    (hg : Differentiable \u2102 g) (hgconj : \u2200 z : \u2102, g (conj z)=conj (g z))\n    (x r s D : \u211d) (E \u03a6 : \u2102 \u2192 \u2102)\n    (hs : 0 < s) (hr : 0 < r) (hD : 0 \u2264 D)\n    (hscaled : D/s \u2264 1/1000000) (hbuffer : 1/s \u2264 r/2)\n    (hglobal : \u2200 z : \u2102, E z \u2260 0 \u2227 E (conj z)=conj (E z) \u2227 \u03a6 (conj z)=conj (\u03a6 z))\n    (hlocal : \u2200 z : \u2102, \u2016z-(x : \u2102)\u2016 < r \u2192 AnalyticAt \u2102 E z \u2227 AnalyticAt \u2102 \u03a6 z \u2227\n      \u2016deriv \u03a6 z-(s : \u2102)\u2016 \u2264 D \u2227\n      \u2016g z/E z-Complex.cos (\u03a6 z)\u2016 \u2264 (1/1000000)*Real.cosh (\u03a6 z).im)\n    (z : \u2102) (hz : \u2016z-(x : \u2102)\u2016 < r/2) (hzero : g z=0) :\n    z.im=0 \u2227 deriv (g) z \u2260 0",
+      "source_sha256": "78a61f594393089f95f2016b0068127957878c4a5e953de23cbc06c647403cfb",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticTransitionSimpleZeros.lean#L65"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticTransitionSimpleZeros.bounded_ratio_real_simple_zeros",
+      "file": "Foundation/RiemannQuarticTransitionSimpleZeros.lean",
+      "line": 229,
+      "type_or_definition_header": "theorem bounded_ratio_real_simple_zeros (M : \u211d) (hM : 0 \u2264 M) :\n    \u2200 R : \u211d, 0 \u2264 R \u2192 \u2200\u1da0 t : \u211d in atTop, \u2203 u : \u211d,\n      R \u2264 u \u2227 65536*(M+7) \u2264 u \u2227 RiemannQuarticSaddleTimes.phaseSlope t u=0 \u2227\n      \u2200 z : \u2102, \u2016z\u2016 \u2264 M*RiemannQuarticTransitionSaddle.realScale u \u2192\n        RiemannQuarticFlow.flow t z=0 \u2192 z.im=0 \u2227 deriv (RiemannQuarticFlow.flow t) z \u2260 0",
+      "source_sha256": "78a61f594393089f95f2016b0068127957878c4a5e953de23cbc06c647403cfb",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticTransitionSimpleZeros.lean#L229"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticTransitionCosinePhase.eventually_actual_cosine_disks",
+      "file": "Foundation/RiemannQuarticTransitionCosinePhase.lean",
+      "line": 151,
+      "type_or_definition_header": "theorem eventually_actual_cosine_disks (M \u03b5 : \u211d) (hM : 0 \u2264 M) (h\u03b5 : 0 < \u03b5) :\n    \u2200\u1da0 t : \u211d in atTop, \u2200 u : \u211d, 65536*(M+7) \u2264 u \u2192\n      RiemannQuarticSaddleTimes.phaseSlope t u=0 \u2192 \u2200 x : \u211d,\n      |x| \u2264 M*RiemannQuarticTransitionSaddle.realScale u \u2192\n      \u2203 E \u03a6 : \u2102 \u2192 \u2102,\n        (\u2200 z : \u2102, E z \u2260 0 \u2227 E (conj z)=conj (E z) \u2227 \u03a6 (conj z)=conj (\u03a6 z)) \u2227\n        \u2200 z : \u2102, \u2016z-(x : \u2102)\u2016 < 1/(128*(M+8)) \u2192\n          AnalyticAt \u2102 E z \u2227 AnalyticAt \u2102 \u03a6 z \u2227\n          \u2016deriv \u03a6 z-(u : \u2102)\u2016 \u2264 M+8 \u2227\n          \u2016RiemannQuarticFlow.flow t z/E z-Complex.cos (\u03a6 z)\u2016 \u2264 \u03b5*Real.cosh (\u03a6 z).im",
+      "source_sha256": "90bdd7920db2781eb1ef33187b93d15d53ecf0115965fe7c45691dbfb3f74c52",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticTransitionCosinePhase.lean#L151"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticUniformFarScale.uniform_actual_far_saddles",
+      "file": "Foundation/RiemannQuarticUniformFarScale.lean",
+      "line": 87,
+      "type_or_definition_header": "theorem uniform_actual_far_saddles (t u : \u211d) (ht : 1 \u2264 t) (hu : 120021 \u2264 u)\n    (hs : phaseSlope t u=0) (z : \u2102) (hz : z.im \u2264 0)\n    (hcut : Real.exp 64*realScale u \u2264 \u2016z\u2016) :\n    \u2203 w v : \u2102, 120020 \u2264 w.re \u2227 |w.im| \u2264 1/2 \u2227\n      100*(t*(\u2016w\u2016+1)^3+1) \u2264 \u2016z\u2016 \u2227 modelDerivative t w= -(Complex.I*z) \u2227\n      \u2016v-w\u2016 \u2264 1/\u2016z\u2016 \u2227 RiemannQuarticSaddleBranch.complexSlope t v= -(Complex.I*z)",
+      "source_sha256": "8f290571541ce5fb696535ce53a4c9208987b2b10a67eb9544c55aa8f3055a17",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticUniformFarScale.lean#L87"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticUniformFarScale.uniform_far_zeros_real",
+      "file": "Foundation/RiemannQuarticUniformFarScale.lean",
+      "line": 132,
+      "type_or_definition_header": "theorem uniform_far_zeros_real :\n    \u2203 N : \u211d, \u2200 (t u : \u211d), 1 \u2264 t \u2192 120021 \u2264 u \u2192 phaseSlope t u=0 \u2192 N \u2264 u \u2192\n      \u2200 z : \u2102, 2*Real.exp 64*realScale u \u2264 \u2016z\u2016 \u2192 RiemannQuarticFlow.flow t z=0 \u2192 z.im=0",
+      "source_sha256": "8f290571541ce5fb696535ce53a4c9208987b2b10a67eb9544c55aa8f3055a17",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticUniformFarScale.lean#L132"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticUniformFarScale.eventually_all_zeros_real",
+      "file": "Foundation/RiemannQuarticUniformFarScale.lean",
+      "line": 205,
+      "type_or_definition_header": "theorem eventually_all_zeros_real :\n    \u2200\u1da0 t : \u211d in atTop, \u2200 z : \u2102, RiemannQuarticFlow.flow t z=0 \u2192 z.im=0",
+      "source_sha256": "8f290571541ce5fb696535ce53a4c9208987b2b10a67eb9544c55aa8f3055a17",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticUniformFarScale.lean#L205"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticGlobalSimpleZeros.eventually_all_zeros_real_simple",
+      "file": "Foundation/RiemannQuarticGlobalSimpleZeros.lean",
+      "line": 46,
+      "type_or_definition_header": "theorem eventually_all_zeros_real_simple :\n    \u2200\u1da0 t : \u211d in atTop, \u2200 z : \u2102, flow t z = 0 \u2192\n      z.im = 0 \u2227 deriv (flow t) z \u2260 0",
+      "source_sha256": "41ea793b6a3fa6c9ca7439d5ffd26af4237a1eb2bbcb290eec5de28d8155b2c4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticGlobalSimpleZeros.lean#L46"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticActualPolynomialLimit.actual_polynomial_limit_of_real_zeros",
+      "file": "Foundation/RiemannQuarticActualPolynomialLimit.lean",
+      "line": 14,
+      "type_or_definition_header": "theorem actual_polynomial_limit_of_real_zeros (t : \u211d)\n    (hreal : \u2200 z : \u2102, flow t z = 0 \u2192 z.im = 0) :\n    \u2203 P : \u2115 \u2192 \u211d[X], (\u2200 n, (P n).Splits) \u2227\n      TendstoLocallyUniformlyOn\n        (fun n z => ((P n).map (algebraMap \u211d \u2102)).eval z) (flow t) atTop univ",
+      "source_sha256": "47f1968598d809247b9621c8621e17b3c51bcbe10125c1c58c1f55eee74530db",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticActualPolynomialLimit.lean#L14"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticActualPolynomialLimit.actual_start_set_nonempty",
+      "file": "Foundation/RiemannQuarticActualPolynomialLimit.lean",
+      "line": 80,
+      "type_or_definition_header": "theorem actual_start_set_nonempty : polynomialLimitStarts.Nonempty",
+      "source_sha256": "47f1968598d809247b9621c8621e17b3c51bcbe10125c1c58c1f55eee74530db",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticActualPolynomialLimit.lean#L80"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticActualPolynomialLimit.actual_start_infimum_strictly_above_eight",
+      "file": "Foundation/RiemannQuarticActualPolynomialLimit.lean",
+      "line": 84,
+      "type_or_definition_header": "theorem actual_start_infimum_strictly_above_eight : 8 < sInf polynomialLimitStarts",
+      "source_sha256": "47f1968598d809247b9621c8621e17b3c51bcbe10125c1c58c1f55eee74530db",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticActualPolynomialLimit.lean#L84"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticActualPolynomialLimit.actual_open_time_nonreal_zeros",
+      "file": "Foundation/RiemannQuarticActualPolynomialLimit.lean",
+      "line": 97,
+      "type_or_definition_header": "theorem actual_open_time_nonreal_zeros :\n    \u2203 \u03b4 : \u211d, 0 < \u03b4 \u2227 \u2200 t : \u211d, |t-8| < \u03b4 \u2192 \u2203 z : \u2102, flow t z = 0 \u2227 z.im \u2260 0",
+      "source_sha256": "47f1968598d809247b9621c8621e17b3c51bcbe10125c1c58c1f55eee74530db",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticActualPolynomialLimit.lean#L97"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticLaguerreWitness.actual_real_derivative_negative",
+      "file": "Foundation/RiemannQuarticLaguerreWitness.lean",
+      "line": 41,
+      "type_or_definition_header": "theorem actual_real_derivative_negative :\n    (deriv (RiemannQuarticReality.realFlow 8) (632083/10000))^2-\n      RiemannQuarticReality.realFlow 8 (632083/10000)*\n        iteratedDeriv 2 (RiemannQuarticReality.realFlow 8) (632083/10000) < -(2/10^20 : \u211d)",
+      "source_sha256": "c636909a5c77e5d6de5be22c31dcccd03721b97185b5cab1d51ceff2ff7590a3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticLaguerreWitness.lean#L41"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticOpenObstruction.polynomialLimitStarts",
+      "file": "Foundation/RiemannQuarticOpenObstruction.lean",
+      "line": 72,
+      "type_or_definition_header": "def polynomialLimitStarts : Set \u211d",
+      "source_sha256": "264c5df338b0d0a1bfbaf99c0329b41ba3120c122b03b8d46fb56f90fe2e466b",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticOpenObstruction.lean#L72"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticThresholdEndpoint.polynomial_limit_of_time_sequence",
+      "file": "Foundation/RiemannQuarticThresholdEndpoint.lean",
+      "line": 12,
+      "type_or_definition_header": "theorem polynomial_limit_of_time_sequence (s : \u2115 \u2192 \u211d) (t : \u211d)\n    (hs : Tendsto s atTop (\ud835\udcdd t))\n    (hP : \u2200 n, \u2203 P : \u2115 \u2192 \u211d[X], (\u2200 j, (P j).Splits) \u2227\n      TendstoLocallyUniformlyOn\n        (fun j z => ((P j).map (algebraMap \u211d \u2102)).eval z) (flow (s n)) atTop univ) :\n    \u2203 Q : \u2115 \u2192 \u211d[X], (\u2200 n, (Q n).Splits) \u2227\n      TendstoLocallyUniformlyOn\n        (fun n z => ((Q n).map (algebraMap \u211d \u2102)).eval z) (flow t) atTop univ",
+      "source_sha256": "51990e97f87363e64216460561079b1f67e9d1ca1990919a9620c47101ae91c3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticThresholdEndpoint.lean#L12"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticThresholdEndpoint.actual_starts_eq_Ici_infimum",
+      "file": "Foundation/RiemannQuarticThresholdEndpoint.lean",
+      "line": 83,
+      "type_or_definition_header": "theorem actual_starts_eq_Ici_infimum :\n    polynomialLimitStarts = Ici (sInf polynomialLimitStarts)",
+      "source_sha256": "51990e97f87363e64216460561079b1f67e9d1ca1990919a9620c47101ae91c3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticThresholdEndpoint.lean#L83"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticThresholdZeros.actual_polynomial_limit_iff_real_zeros",
+      "file": "Foundation/RiemannQuarticThresholdZeros.lean",
+      "line": 15,
+      "type_or_definition_header": "theorem actual_polynomial_limit_iff_real_zeros (t : \u211d) :\n    (\u2203 P : \u2115 \u2192 \u211d[X], (\u2200 n, (P n).Splits) \u2227\n      TendstoLocallyUniformlyOn\n        (fun n z => ((P n).map (algebraMap \u211d \u2102)).eval z) (flow t) atTop univ) \u2194\n    \u2200 z : \u2102, flow t z = 0 \u2192 z.im = 0",
+      "source_sha256": "5dc88c537f0f890836f1d79529c33a46708a507647bb05a1d351bf6327ce9d54",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticThresholdZeros.lean#L15"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticThresholdZeros.nonreal_zeros_arbitrarily_before_threshold",
+      "file": "Foundation/RiemannQuarticThresholdZeros.lean",
+      "line": 36,
+      "type_or_definition_header": "theorem nonreal_zeros_arbitrarily_before_threshold (\u03b5 : \u211d) (h\u03b5 : 0 < \u03b5) :\n    \u2203 t : \u211d, sInf polynomialLimitStarts-\u03b5 < t \u2227 t < sInf polynomialLimitStarts \u2227\n      \u2203 z : \u2102, flow t z = 0 \u2227 z.im \u2260 0",
+      "source_sha256": "5dc88c537f0f890836f1d79529c33a46708a507647bb05a1d351bf6327ce9d54",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticThresholdZeros.lean#L36"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticCompactTimeFarZeros.uniform_far_zeros_real",
+      "file": "Foundation/RiemannQuarticCompactTimeFarZeros.lean",
+      "line": 94,
+      "type_or_definition_header": "theorem uniform_far_zeros_real (T : \u211d) :\n    \u2203 B : \u211d, 0 < B \u2227 \u2200 t : \u211d, 1 \u2264 t \u2192 t \u2264 T \u2192\n      \u2200 z : \u2102, B \u2264 \u2016z\u2016 \u2192 RiemannQuarticFlow.flow t z = 0 \u2192 z.im = 0",
+      "source_sha256": "117340d91b80af70ebe590b885dfeed9a94f655a432007dd1844dc4a7da3a39e",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticCompactTimeFarZeros.lean#L94"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticThresholdCompactness.bounded_nonreal_zeros_all_times_ge_one",
+      "file": "Foundation/RiemannQuarticThresholdCompactness.lean",
+      "line": 13,
+      "type_or_definition_header": "theorem bounded_nonreal_zeros_all_times_ge_one :\n    \u2203 B : \u211d, 0 < B \u2227 \u2200 t : \u211d, 1 \u2264 t \u2192\n      \u2200 z : \u2102, flow t z = 0 \u2192 z.im \u2260 0 \u2192 \u2016z\u2016 < B",
+      "source_sha256": "9d70f7a9785496a68e7d28be7a64471ad0c6bad4459fe257715b6bc4cc584e0a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticThresholdCompactness.lean#L13"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticThresholdCompactness.exists_convergent_nonreal_zeros_before_threshold",
+      "file": "Foundation/RiemannQuarticThresholdCompactness.lean",
+      "line": 35,
+      "type_or_definition_header": "theorem exists_convergent_nonreal_zeros_before_threshold :\n    \u2203 (s : \u2115 \u2192 \u211d) (z : \u2115 \u2192 \u2102) (w : \u2102),\n      Tendsto s atTop (\ud835\udcdd (sInf polynomialLimitStarts)) \u2227\n      Tendsto z atTop (\ud835\udcdd w) \u2227\n      (\u2200 n, s n < sInf polynomialLimitStarts \u2227 flow (s n) (z n) = 0 \u2227 (z n).im \u2260 0) \u2227\n      flow (sInf polynomialLimitStarts) w = 0 \u2227 w.im = 0",
+      "source_sha256": "9d70f7a9785496a68e7d28be7a64471ad0c6bad4459fe257715b6bc4cc584e0a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticThresholdCompactness.lean#L35"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticThresholdCollision.derivative_zero_of_nonreal_zero_limit",
+      "file": "Foundation/RiemannQuarticThresholdCollision.lean",
+      "line": 26,
+      "type_or_definition_header": "theorem derivative_zero_of_nonreal_zero_limit (s : \u2115 \u2192 \u211d) (z : \u2115 \u2192 \u2102)\n    (\u03c4 : \u211d) (w : \u2102) (hs : Tendsto s atTop (\ud835\udcdd \u03c4)) (hz : Tendsto z atTop (\ud835\udcdd w))\n    (hw : w.im = 0) (hzero : \u2200 n, flow (s n) (z n) = 0)\n    (hnon : \u2200 n, (z n).im \u2260 0) : deriv (flow \u03c4) w = 0",
+      "source_sha256": "cb4528677ba791580cd0a8d873a7d639a083d3355c074f839d1ce5546a60c5cc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticThresholdCollision.lean#L26"
+    },
+    {
+      "declaration": "OperatorDerivativeRewrite.Foundation.RiemannQuarticThresholdCollision.exists_positive_finite_multiple_zero_at_threshold",
+      "file": "Foundation/RiemannQuarticThresholdCollision.lean",
+      "line": 83,
+      "type_or_definition_header": "theorem exists_positive_finite_multiple_zero_at_threshold :\n    \u2203 x : \u211d, 0 < x \u2227 flow (sInf polynomialLimitStarts) (x : \u2102) = 0 \u2227\n      deriv (flow (sInf polynomialLimitStarts)) (x : \u2102) = 0 \u2227\n      2 \u2264 analyticOrderAt (flow (sInf polynomialLimitStarts)) (x : \u2102) \u2227\n      analyticOrderAt (flow (sInf polynomialLimitStarts)) (x : \u2102) \u2260 \u22a4",
+      "source_sha256": "cb4528677ba791580cd0a8d873a7d639a083d3355c074f839d1ce5546a60c5cc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannQuarticThresholdCollision.lean#L83"
+    }
+  ],
+  "quartic_source_manifest": [
+    {
+      "file": "Foundation/RiemannQuarticActualPolynomialLimit.lean",
+      "source_sha256": "47f1968598d809247b9621c8621e17b3c51bcbe10125c1c58c1f55eee74530db",
+      "lines": 109,
+      "imports": [
+        "Foundation.RiemannQuarticDenominatorLimit",
+        "Foundation.RiemannQuarticOpenObstruction"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticArithmeticJets.lean",
+      "source_sha256": "1aaca88aee0a212d73bb969e23c3cdd76a9f90e776f49fbe9157c470b7fe31b0",
+      "lines": 92,
+      "imports": [
+        "Foundation.RiemannQuarticPhaseJets"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticBatchJets.lean",
+      "source_sha256": "ef1460746cfd5018101ebe6aa08016a7c01d2ca4148b61dd30f6244ae5590e4c",
+      "lines": 37,
+      "imports": [
+        "Foundation.RiemannQuarticStoredJets"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticCanonicalBounds.lean",
+      "source_sha256": "42b34f293bfa163d4311375808510286af6222f5e537c07794dda941753db00b",
+      "lines": 71,
+      "imports": [
+        "Foundation.EvenEntireCanonicalApproximation",
+        "Foundation.RiemannQuarticCanonicalDerivative",
+        "Mathlib.Analysis.Complex.AbsMax"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticCanonicalDerivative.lean",
+      "source_sha256": "896c7860a05f62289b641452adc1d952673ebb4bb28f647cc5a503a7d5ce7f74",
+      "lines": 68,
+      "imports": [
+        "Foundation.EvenEntireCanonicalDerivative",
+        "Foundation.RiemannQuarticDiskDecomposition",
+        "Foundation.RiemannQuarticGlobalSimpleZeros",
+        "Mathlib.Analysis.Calculus.LogDeriv"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticCanonicalLimit.lean",
+      "source_sha256": "29650ddcebc11cca31a19b0b50b04fb4c8c5891a9733838953f6c0fd9a493160",
+      "lines": 31,
+      "imports": [
+        "Foundation.EvenEntireCanonicalApproximation",
+        "Foundation.RiemannQuarticCanonicalBounds"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticCanonicalPairs.lean",
+      "source_sha256": "2b274c56f6ace9732e8367a674871dfb154cc8477bcf6e6060f1a6e5ed7bc397",
+      "lines": 75,
+      "imports": [
+        "Foundation.RiemannQuarticCanonicalProductLimit"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticCanonicalProductLimit.lean",
+      "source_sha256": "68254e032c532f9ff0610fc90b7ef6dd586691f13c9d04398eaf51eaa56551f3",
+      "lines": 34,
+      "imports": [
+        "Foundation.EvenEntireCanonicalApproximation",
+        "Foundation.RiemannQuarticCanonicalReconstruction",
+        "Mathlib.Analysis.Normed.Field.Lemmas"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticCanonicalReconstruction.lean",
+      "source_sha256": "406a3e87b9369846f244e88a4258dce3aa6259aef0eba7c85810133750ed5f13",
+      "lines": 66,
+      "imports": [
+        "Foundation.EvenEntireCanonicalApproximation",
+        "Foundation.RiemannQuarticCanonicalLimit",
+        "Mathlib.Analysis.Analytic.Uniqueness"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticCellDomain.lean",
+      "source_sha256": "554639e4bb73d135a1a20a9deaecee8fafcd1d40c688d01248077276dbf4f8fb",
+      "lines": 57,
+      "imports": [
+        "Foundation.RiemannQuarticPhaseJets",
+        "Foundation.RiemannQuarticIntervalChecks"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticCellPhase.lean",
+      "source_sha256": "ef29b59f0a9919dd81371ce5cc9b45927480364710fa74ba073a43bcbf786099",
+      "lines": 87,
+      "imports": [
+        "Foundation.RiemannQuarticPhaseJets",
+        "Foundation.RiemannQuarticIntervalChecks"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticCellWitnesses.lean",
+      "source_sha256": "43e4ba738216bbd4fdc75c88d2857afc441646b15c3d218b11d6eb3db2fd30eb",
+      "lines": 244,
+      "imports": [
+        "Foundation.RiemannQuarticEvenQuadrature"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticCertifiedGrid.lean",
+      "source_sha256": "3d9762b1512e1a7f1a9a8419e1b46a432ea512e29dd7caa98c037c96a4d7b452",
+      "lines": 63,
+      "imports": [
+        "Foundation.RiemannQuarticGridChecks",
+        "Foundation.RiemannQuarticEvenQuadrature",
+        "Foundation.RiemannQuarticCellWitnesses",
+        "Foundation.RiemannQuarticRealDerivatives"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticChannelJets.lean",
+      "source_sha256": "a1abd52bfbe0850a426d057485b27d7d9194a53fab02b6066ea97d827fe1d507",
+      "lines": 70,
+      "imports": [
+        "Foundation.RiemannQuarticArithmeticJets"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticCommonProfile.lean",
+      "source_sha256": "8bd009c646697582ee643110e274d240c55f1b5ffebe62784121d950de06c6f5",
+      "lines": 60,
+      "imports": [
+        "Foundation.RiemannQuarticGaussianPrefactor",
+        "Foundation.RiemannQuarticPairedSaddle",
+        "Foundation.RiemannQuarticPhaseRemainder"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticCommonProfileLimit.lean",
+      "source_sha256": "fe75904771c3b44fcb0e8f9de1889c1e1f073cf796068c05e2a059e88cc5c202",
+      "lines": 128,
+      "imports": [
+        "Foundation.RiemannQuarticCommonProfile",
+        "Foundation.RiemannQuarticFrequencyRegion"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticCompactSegment.lean",
+      "source_sha256": "078ca3f15df4f113f6c7edfca344a164a02902bfeaee90e5bbf23e9ecf1348fe",
+      "lines": 102,
+      "imports": [
+        "Foundation.RiemannQuarticDistantTail",
+        "Foundation.RiemannQuarticEndpointSaddle"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticCompactTimeFarZeros.lean",
+      "source_sha256": "117340d91b80af70ebe590b885dfeed9a94f655a432007dd1844dc4a7da3a39e",
+      "lines": 164,
+      "imports": [
+        "Foundation.RiemannQuarticUniformFarScale",
+        "Foundation.RiemannQuarticThresholdZeros"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticComplexAnnulus.lean",
+      "source_sha256": "90e0aa10ab8b05f6ffdea052b75d7f2ba4baba05fd8602ae96a0bc4b6e9fb688",
+      "lines": 558,
+      "imports": [
+        "Foundation.RiemannQuarticComplexGaussian",
+        "Foundation.RiemannQuarticFarGaussianFixed"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticComplexCompactTail.lean",
+      "source_sha256": "d6dfeed1fed4bfdcf4240a13c01692b4e1e1d12bc7d70faa4e7a886301e0320e",
+      "lines": 381,
+      "imports": [
+        "Foundation.RiemannQuarticComplexAnnulus",
+        "Foundation.RiemannQuarticFarLeftCompact"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticComplexContour.lean",
+      "source_sha256": "0193975a2f487f563615c83fb3c774317f4cb3bcf932ef0061c4ccd567958733",
+      "lines": 840,
+      "imports": [
+        "Foundation.RiemannQuarticComplexCompactTail",
+        "Foundation.RiemannQuarticFarHalfline",
+        "Foundation.RiemannQuarticFarPairing"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticComplexCorrection.lean",
+      "source_sha256": "1147fdac80f567878b05ebbf90ae58348bcd1fe63a96f470e5c22aeb9e92a391",
+      "lines": 416,
+      "imports": [
+        "Foundation.RiemannQuarticComplexModelSaddle",
+        "Foundation.RiemannQuarticFarCorrection"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticComplexGaussian.lean",
+      "source_sha256": "cea960d2c6b92b235977e89cccd6e691591db8105544f31d835ee27eddf3b45a",
+      "lines": 941,
+      "imports": [
+        "Foundation.RiemannQuarticComplexCorrection",
+        "Foundation.RiemannQuarticFarGaussianLimit"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticComplexModelSaddle.lean",
+      "source_sha256": "10b5e5fc41db9913be1b312ab282d875798ae0e0ed97874d67b1e7f07234a228",
+      "lines": 290,
+      "imports": [
+        "Foundation.RiemannQuarticWeightedSlope",
+        "Foundation.RiemannQuarticFarModelSaddle"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticContour.lean",
+      "source_sha256": "9113e09c2900d8c5b57116217df85afc900ceb80724db5df6d3d67eee387e886",
+      "lines": 277,
+      "imports": [
+        "Foundation.RiemannQuarticFrequencyBranch",
+        "Mathlib.MeasureTheory.Integral.IntegralEqImproper"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticCosineLocalZeros.lean",
+      "source_sha256": "54b4ffef81a7f3c72abfc6970cabaf2a3d460d0955810e41885610d30ba2744a",
+      "lines": 131,
+      "imports": [
+        "Foundation.RiemannQuarticNormalizedAnalytic",
+        "Mathlib.Analysis.Complex.ExponentialBounds",
+        "Mathlib.Analysis.Complex.Liouville"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticCosineNormalization.lean",
+      "source_sha256": "0dbe3fb1171d17a847af4084db5221cae95ac8f30250d144e36a7548c529c673",
+      "lines": 59,
+      "imports": [
+        "Foundation.RiemannQuarticCommonProfileLimit"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticCurvature.lean",
+      "source_sha256": "55198c2fa7ff0a2e69ea39c283fc82bb42a4cdc8f1d6b344e06485118cb2918e",
+      "lines": 880,
+      "imports": [
+        "Foundation.RiemannThetaDerivativeBounds",
+        "Foundation.RiemannQuarticSaddleTimes",
+        "Foundation.RiemannQuarticSaddleBranch"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticCutoff.lean",
+      "source_sha256": "7c9affc8cc9528d0fddc1c1252f8b09bbb8adcbc37e6a1488dd88a5c069ae4c9",
+      "lines": 89,
+      "imports": [
+        "Foundation.RiemannThetaEffective",
+        "Foundation.RiemannQuarticDomain",
+        "Mathlib.Analysis.SpecialFunctions.ImproperIntegrals"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticDenominatorLimit.lean",
+      "source_sha256": "56b4fb913cc6f3faa19b3ff6f8976d53b12971a3acc640abfb2d6a776006e106",
+      "lines": 135,
+      "imports": [
+        "Foundation.RiemannQuarticPolynomialFactors",
+        "Mathlib.Analysis.SpecialFunctions.Log.Summable"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticDiskDecomposition.lean",
+      "source_sha256": "a8688df04cae986a31045fd44ba6b50999a43e7e1a11de46d335d1e8ad493161",
+      "lines": 38,
+      "imports": [
+        "Foundation.RiemannQuarticZeroCounting",
+        "Foundation.EntireDiskDecomposition",
+        "Mathlib.Analysis.Complex.CanonicalDecomposition",
+        "Mathlib.Order.Interval.Set.Infinite"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticDistantTail.lean",
+      "source_sha256": "77afd6a14931a98ccb2339bb33ad5872c942b460db7e2d0e6b8690c328b34022",
+      "lines": 134,
+      "imports": [
+        "Foundation.RiemannQuarticLocalTail",
+        "Foundation.RiemannQuarticShiftedAmplitude"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticDomain.lean",
+      "source_sha256": "73f10e60446d28affcd2b1e93797881e4c29c7896fcdfc782658cf5093ac6f56",
+      "lines": 64,
+      "imports": [
+        "Foundation.RiemannQuarticKernel"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticDyadic.lean",
+      "source_sha256": "3ac4a2e259ab30bcb9bae9589d3278be64f39ab7e886f36d1682cc4cffb7f4d9",
+      "lines": 131,
+      "imports": [
+        "Foundation.RiemannQuarticTaylorJets",
+        "Mathlib.Tactic.Inclusion.Extension.IntervalDyadicReal.Rational"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticEndpointSaddle.lean",
+      "source_sha256": "469e9354dbfc18e89d4700c57f5edeabe1820a8676f8e65c42b99aeb54761490",
+      "lines": 99,
+      "imports": [
+        "Foundation.RiemannQuarticContour",
+        "Foundation.RiemannQuarticPhaseRemainder"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticEntireGrowth.lean",
+      "source_sha256": "d17033feb857ac1fb733af51f86411beb356b91abc5981cb7d3143b3137a9929",
+      "lines": 103,
+      "imports": [
+        "Foundation.RiemannQuarticUniformFarScale"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticErrorLimits.lean",
+      "source_sha256": "95f266fef8cc0e64ed29b6b0ad2d9a70ddd3814e875ad7ad64ac4b6fd365c186",
+      "lines": 165,
+      "imports": [
+        "Foundation.RiemannQuarticHalflineApproximation",
+        "Foundation.RiemannQuarticSaddleGrowth",
+        "Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticEvenQuadrature.lean",
+      "source_sha256": "fc3e39b10701a39a5a0661ce681976fbed2735c3fba4cee0a9616f5f93b77f2f",
+      "lines": 90,
+      "imports": [
+        "Foundation.RiemannQuarticGridAssembly"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticEvolution.lean",
+      "source_sha256": "bd1b28bf7aeda9923e3c83bc8a5ee7df5cdf9f01921330b2bf6b694b7f1f75ac",
+      "lines": 116,
+      "imports": [
+        "Foundation.RiemannQuarticFlow"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFarAnalyticBranch.lean",
+      "source_sha256": "a358b7d7be56eb078c441ef2a2af51df9a00ffad697a82f4de7407990534bd74",
+      "lines": 285,
+      "imports": [
+        "Foundation.RiemannQuarticFarPairing"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFarAnnulus.lean",
+      "source_sha256": "8a695354c14356c57082cb6d1209999260d6307cdeae0adafd873a4123fc67ff",
+      "lines": 459,
+      "imports": [
+        "Foundation.RiemannQuarticFarGaussianLimit"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFarComplexPairing.lean",
+      "source_sha256": "512101d6e045af0a62fdd5a1699b8736a4f6e7ed766d92e01314e1dd2749b186",
+      "lines": 448,
+      "imports": [
+        "Foundation.RiemannQuarticFarRealZeros",
+        "Mathlib.Analysis.Convex.Jensen"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFarCorrection.lean",
+      "source_sha256": "61664a84f61341f91338e1a6e2dff6d255e9aed85a09ffe459083ab42742663d",
+      "lines": 445,
+      "imports": [
+        "Foundation.RiemannQuarticFarModelSaddle"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFarCosinePhase.lean",
+      "source_sha256": "fcb6ba2f1170ebd301b0db1290a3c6c492c993d08242edc267c11746aaa3a75f",
+      "lines": 281,
+      "imports": [
+        "Foundation.RiemannQuarticFarComplexPairing",
+        "Foundation.RiemannQuarticZeroStrip",
+        "Foundation.RiemannQuarticNormalizedAnalytic",
+        "Mathlib.Analysis.Calculus.Deriv.Star"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFarGaussianFixed.lean",
+      "source_sha256": "8dfdc4af889762130a990018e38259b4fbf8b10c9a77228a7790ea88b227955f",
+      "lines": 128,
+      "imports": [
+        "Foundation.RiemannQuarticFarAnnulus"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFarGaussianLimit.lean",
+      "source_sha256": "23d183953029c98351b4aa9420228cb9dd0447479d90ae1f9e8bcb89743c6d34",
+      "lines": 321,
+      "imports": [
+        "Foundation.RiemannQuarticFarGaussianLocal",
+        "Foundation.RiemannQuarticErrorLimits"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFarGaussianLocal.lean",
+      "source_sha256": "bca6677b52f5404dc01961989b910c1a662d0e0751bd218e6e18ff4e140d58fa",
+      "lines": 274,
+      "imports": [
+        "Foundation.RiemannQuarticFarSignedIntegral"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFarGaussianPhase.lean",
+      "source_sha256": "6a13b9271ad186500f6887d1d1c1161ee9436db63ed64b98a876e5ed5fe496a3",
+      "lines": 293,
+      "imports": [
+        "Foundation.RiemannQuarticFarAnalyticBranch",
+        "Mathlib.Analysis.SpecialFunctions.Pow.Deriv"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFarHalfline.lean",
+      "source_sha256": "e61805cad22ac8808b0524d16969b5cfa961b583d8c67bff27b2d88a6901d27b",
+      "lines": 151,
+      "imports": [
+        "Foundation.RiemannQuarticFarLeftAnnulus"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFarLeftAnnulus.lean",
+      "source_sha256": "91d5177788b3090f0f68dba15c56c060c891fcb9d9682847bcbfea86c411f0a5",
+      "lines": 302,
+      "imports": [
+        "Foundation.RiemannQuarticFarLeftCompact"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFarLeftCompact.lean",
+      "source_sha256": "4933e1d360c3058a58aa2ab7da030676a99cb365215c29b7fe9bd39ef0f27d0a",
+      "lines": 329,
+      "imports": [
+        "Foundation.RiemannThetaSmallParameter",
+        "Foundation.RiemannQuarticFarRightTail"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFarModelSaddle.lean",
+      "source_sha256": "5da116cedd78bda4783a349f286a5eb084fa176aadcca4b26e4fd67adac62a6e",
+      "lines": 288,
+      "imports": [
+        "Foundation.RiemannQuarticNaturalContour"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFarPairing.lean",
+      "source_sha256": "3ad1c8716fdf379bf51da2c5bad301cf35f88e0935eb05e5a1588e27b709e33a",
+      "lines": 164,
+      "imports": [
+        "Foundation.RiemannQuarticFarHalfline",
+        "Mathlib.Analysis.SpecialFunctions.Complex.Arg"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFarRealZeros.lean",
+      "source_sha256": "8d36650884078dec7e6304ace552efac31ceabb157b9fc5de278a43542d10438",
+      "lines": 159,
+      "imports": [
+        "Foundation.RiemannQuarticFarGaussianPhase",
+        "Foundation.RiemannQuarticReality"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFarRemainder.lean",
+      "source_sha256": "e968c0438632d09720b0d69ffbec2e5246c02d7b53c5e5720e2e933d1282472c",
+      "lines": 151,
+      "imports": [
+        "Foundation.RiemannQuarticFarCorrection"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFarRightTail.lean",
+      "source_sha256": "41e45cdaff7f54ab6b1b8181eaee966b367f0043e6a4f76fcefbc1c98339d8c0",
+      "lines": 404,
+      "imports": [
+        "Foundation.RiemannQuarticFarGaussianFixed",
+        "Foundation.RiemannQuarticNaturalContour"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFarSignedIntegral.lean",
+      "source_sha256": "7f7f335845e7c48c52d2f6d6e9df57dfec1ac2ff05ae2dde2ad837d8a6a2316a",
+      "lines": 339,
+      "imports": [
+        "Foundation.RiemannQuarticFarRemainder",
+        "Foundation.GaussianOscillatoryTail",
+        "Mathlib.Analysis.Convex.Deriv",
+        "Mathlib.Analysis.Complex.ExponentialBounds"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFarSimpleZeros.lean",
+      "source_sha256": "ab83c337d47c50b0b9e98f5cc46f93ad14b3cec91fda387a3cb6aa6fbf74b56d",
+      "lines": 226,
+      "imports": [
+        "Foundation.RiemannQuarticLocalCosineZeros",
+        "Foundation.RiemannQuarticFarCosinePhase"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFiniteApproximation.lean",
+      "source_sha256": "78dccd76a38c53af427f0ba615acfaeafccfa62cab91da280d3c51cbbf2e8fc1",
+      "lines": 98,
+      "imports": [
+        "Foundation.RiemannThetaTruncation",
+        "Foundation.RiemannQuarticJetCutoff"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFlow.lean",
+      "source_sha256": "0dd9294506279409455676d85105731c34d1fafdf754c047df0defe52a17728e",
+      "lines": 85,
+      "imports": [
+        "Foundation.RiemannQuarticDomain",
+        "Foundation.BandLimitedEntireCalculus"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFrequencyBranch.lean",
+      "source_sha256": "9bb03c97a8bbec94f84755124661ed32cda5eea8bc13659ea09697dc07d833a7",
+      "lines": 383,
+      "imports": [
+        "Foundation.RiemannQuarticQuantitativeSaddle",
+        "Mathlib.Analysis.Complex.HasPrimitives"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFrequencyRegion.lean",
+      "source_sha256": "db6311ca25971443d353d510f2c7337f3d46fe539cc48363af4ea94167ff3225",
+      "lines": 147,
+      "imports": [
+        "Foundation.RiemannQuarticPairedSaddle"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFullCell.lean",
+      "source_sha256": "c3ed33ffc044e5d43c84e8279c4daab790a2692c00c4eb40abe427b75aa152c5",
+      "lines": 76,
+      "imports": [
+        "Foundation.RiemannQuarticCellPhase",
+        "Foundation.RiemannQuarticCellDomain",
+        "Foundation.RiemannQuarticChannelJets",
+        "Foundation.RiemannQuarticStoredJets"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticFullCellChecks.lean",
+      "source_sha256": "fd5ea6d55a8d108e655db1bed66b5c1cb022eb33162fcffe085f66ed6dbb1bd9",
+      "lines": 47,
+      "imports": [
+        "Foundation.RiemannQuarticFullCell"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticGaussianNormalization.lean",
+      "source_sha256": "959d711b815796d12590f94d1f99d912ac5b5bed6f46a2373faece2af33c75e8",
+      "lines": 60,
+      "imports": [
+        "Foundation.RiemannQuarticDistantTail"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticGaussianPrefactor.lean",
+      "source_sha256": "9fce689e8003ed4918a84b1176d19b4d25a13b8b2c816501654eac9c9ee56a52",
+      "lines": 106,
+      "imports": [
+        "Foundation.RiemannQuarticGaussianNormalization",
+        "Mathlib.Analysis.RCLike.Sqrt"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticGaussianTail.lean",
+      "source_sha256": "7bb0c60d629660fbe5579b07bf5f055ea182a687da772e0fd704dcc136211a40",
+      "lines": 148,
+      "imports": [
+        "Foundation.RiemannQuarticSpatialPhase"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticGlobalSimpleZeros.lean",
+      "source_sha256": "41ea793b6a3fa6c9ca7439d5ffd26af4237a1eb2bbcb290eec5de28d8155b2c4",
+      "lines": 82,
+      "imports": [
+        "Foundation.RiemannQuarticEntireGrowth"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticGridAssembly.lean",
+      "source_sha256": "57e6983b01a1aeab1fef4eaa71446830b1a5279b50dc602d6e676fdde4457eb8",
+      "lines": 77,
+      "imports": [
+        "Foundation.RiemannQuarticNodeQuadrature"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticGridChecks.lean",
+      "source_sha256": "366fbdc9084aca7eb83afcb82d23b698fb2506f406ec010c30ed3668835f9a7d",
+      "lines": 651,
+      "imports": [
+        "Foundation.RiemannQuarticNodeQuadrature"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticHalflineApproximation.lean",
+      "source_sha256": "a44e64486e58b654eb30a59daa270dff32d750febafd49ac6cd46358ab3d7ca9",
+      "lines": 235,
+      "imports": [
+        "Foundation.RiemannQuarticCompactSegment",
+        "Foundation.RiemannQuarticGaussianNormalization"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticInitialValues.lean",
+      "source_sha256": "454a5cbebec778ade390adeefab824bb7ee1e74c5d022d07c6d1d263f7653f29",
+      "lines": 72,
+      "imports": [
+        "Foundation.RiemannQuarticCellWitnesses"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticIntervalChecks.lean",
+      "source_sha256": "6bc4859afa89f759867d1b7faa2e9da698f328e6b518480d775ffb66a148510a",
+      "lines": 53,
+      "imports": [
+        "Foundation.RiemannQuarticIntervalExp"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticIntervalExp.lean",
+      "source_sha256": "0f3840cdf57bdfeed9acf5219e23e7f2c908a627bf6d1ae8adf899759a27bb43",
+      "lines": 133,
+      "imports": [
+        "Foundation.RiemannQuarticDyadic"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticIntervalJets.lean",
+      "source_sha256": "832c62fa4b719be838e7202c2ff3e7e810098aacdca3945bcaebf2306d6515d0",
+      "lines": 72,
+      "imports": [
+        "Foundation.RiemannQuarticIntervalTrig"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticIntervalTrig.lean",
+      "source_sha256": "fc1abcc9ff94576fc5f59ecd642b14446c3671e197205112812e9c03fafb3f04",
+      "lines": 145,
+      "imports": [
+        "Foundation.RiemannQuarticIntervalExp"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticJetCutoff.lean",
+      "source_sha256": "e5f2d7ed1b4fd35118893b1dafe353901ac42e7fed4450ba32754068e1569d5b",
+      "lines": 82,
+      "imports": [
+        "Foundation.RiemannQuarticCutoff",
+        "Foundation.RiemannQuarticEvolution",
+        "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticKernel.lean",
+      "source_sha256": "dfc4e0ae77c591d26cb39e105209f1eaee6ec273f94162f1f3538d06a41b38c4",
+      "lines": 158,
+      "imports": [
+        "Mathlib.NumberTheory.ModularForms.JacobiTheta.Bounds",
+        "Mathlib.Analysis.Normed.Group.FunctionSeries",
+        "Mathlib.MeasureTheory.Integral.Asymptotics",
+        "Mathlib.Analysis.SpecialFunctions.ImproperIntegrals",
+        "Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics",
+        "Mathlib.MeasureTheory.Integral.ExpDecay",
+        "Mathlib.Analysis.Real.Pi.Bounds"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticKernelReflection.lean",
+      "source_sha256": "1456c391d6fe44c0ad17ef527bd27795a903a5433da047df1066c0ac36a2dfee",
+      "lines": 127,
+      "imports": [
+        "Foundation.RiemannQuarticPairedSaddle",
+        "Foundation.RiemannThetaModularity",
+        "Foundation.RiemannQuarticSaddleNeighborhood",
+        "Mathlib.Analysis.Analytic.IsolatedZeros"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticLaguerreWitness.lean",
+      "source_sha256": "c636909a5c77e5d6de5be22c31dcccd03721b97185b5cab1d51ceff2ff7590a3",
+      "lines": 56,
+      "imports": [
+        "Foundation.RiemannQuarticCertifiedGrid",
+        "Foundation.RiemannQuarticInitialValues",
+        "Foundation.RiemannQuarticValueCells005To024",
+        "Foundation.RiemannQuarticValueCells025To044",
+        "Foundation.RiemannQuarticValueCells045To064",
+        "Foundation.RiemannQuarticValueCells065To084",
+        "Foundation.RiemannQuarticValueCells085To104",
+        "Foundation.RiemannQuarticValueCells105To124",
+        "Foundation.RiemannQuarticValueCells125To144",
+        "Foundation.RiemannQuarticValueCells145To159"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticLocalCosineZeros.lean",
+      "source_sha256": "f23609cf7f96d8e303c48aba4b948afc7094714fa4cceb8a026c2f86274403e7",
+      "lines": 86,
+      "imports": [
+        "Foundation.RiemannQuarticCosineLocalZeros"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticLocalTail.lean",
+      "source_sha256": "b1a85a67b5ad0043fa42d6d7007e2406dad67ef0ac18325efecb075647fa78c7",
+      "lines": 140,
+      "imports": [
+        "Foundation.RiemannQuarticGaussianTail"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticNaturalContour.lean",
+      "source_sha256": "c6a5bdd21b4912c14ed63a070b24fe1cff51fb1354b18208064cff1a8a034991",
+      "lines": 220,
+      "imports": [
+        "Foundation.RiemannQuarticKernelReflection"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticNodeJets.lean",
+      "source_sha256": "a732d601ba0d5d6ee8d75bd1042a10a42f970f146a74b88899b8b3f406f684a6",
+      "lines": 107,
+      "imports": [
+        "Foundation.RiemannQuarticBatchJets",
+        "Foundation.RiemannQuarticCellDomain",
+        "Foundation.RiemannQuarticChannelJets"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticNodeQuadrature.lean",
+      "source_sha256": "271839d9d3459c050a3a6478a79e9c81c91b266d0bdd362588d679b481c83665",
+      "lines": 108,
+      "imports": [
+        "Foundation.RiemannQuarticNodeJets"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticNormalizedAnalytic.lean",
+      "source_sha256": "96f7df737e46391463d0d5baa8f6d3be3dbb096ed87e23a4a3e2008d5e819da4",
+      "lines": 60,
+      "imports": [
+        "Foundation.RiemannQuarticCosineNormalization",
+        "Foundation.RiemannQuarticReality",
+        "Mathlib.Analysis.RCLike.Sqrt"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticOpenObstruction.lean",
+      "source_sha256": "264c5df338b0d0a1bfbaf99c0329b41ba3120c122b03b8d46fb56f90fe2e466b",
+      "lines": 84,
+      "imports": [
+        "Foundation.RiemannQuarticPolynomialLimitObstruction"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticPairedSaddle.lean",
+      "source_sha256": "6b3c8805a921c60941b423d8ae0b97a4d73c0ce14830dc214c7a1a894d4a7780",
+      "lines": 177,
+      "imports": [
+        "Foundation.RiemannQuarticEvolution",
+        "Foundation.RiemannQuarticSuppressedSaddle",
+        "Foundation.RiemannQuarticErrorLimits"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticPhaseChecks.lean",
+      "source_sha256": "c6bc8340a0abe7879fbf425207c215f6327edb730e532645a462e508ab3d0bdc",
+      "lines": 45,
+      "imports": [
+        "Foundation.RiemannQuarticArithmeticJets",
+        "Foundation.RiemannQuarticIntervalChecks"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticPhaseJets.lean",
+      "source_sha256": "afefa6bb5a4fc6386a1c7271b458eec74fa10134179b77128373f728d9752b4e",
+      "lines": 69,
+      "imports": [
+        "Foundation.RiemannQuarticTrigJets"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticPhaseRemainder.lean",
+      "source_sha256": "a75932f260f2aa868b6b09117c5e8ac2105c7d9ee87cd491828bcb7b7cf968df",
+      "lines": 128,
+      "imports": [
+        "Foundation.RiemannQuarticFrequencyBranch"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticPolynomialFactors.lean",
+      "source_sha256": "07ce72dc9110618d60cfb5f7cf4bd310f65a9a74a0725192446fa92a9fbd9140",
+      "lines": 189,
+      "imports": [
+        "Foundation.RiemannQuarticCanonicalPairs",
+        "Mathlib.Algebra.Polynomial.Splits"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticPolynomialLimitObstruction.lean",
+      "source_sha256": "42e48c703f67bdba20e46bee95f904c27c37856eb8e243c9ae2b9395404742ad",
+      "lines": 51,
+      "imports": [
+        "Foundation.RealRootedLaguerreLimit",
+        "Foundation.RiemannQuarticLaguerreWitness",
+        "Foundation.RiemannQuarticRealDerivatives"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticQuantitativeSaddle.lean",
+      "source_sha256": "90f3280088f694ac153ce8f94cd91a62cb606104bd71d71843170b8f6422a0dd",
+      "lines": 284,
+      "imports": [
+        "Foundation.RiemannQuarticSaddleNeighborhood",
+        "Mathlib.Analysis.Calculus.MeanValue",
+        "Mathlib.Analysis.Calculus.InverseFunctionTheorem.ApproximatesLinearOn"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticRealCertificate.lean",
+      "source_sha256": "1ed92199c34eb4f674e3008216145f54744e506513b501372ff85fdb9e566add",
+      "lines": 183,
+      "imports": [
+        "Foundation.RiemannQuarticFiniteApproximation"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticRealDerivatives.lean",
+      "source_sha256": "8ab6f652bc778e97dc68228d326b9246258b44660169bb9f1408269ee86d3100",
+      "lines": 44,
+      "imports": [
+        "Foundation.RiemannQuarticRealCertificate",
+        "Foundation.RiemannQuarticReality",
+        "Mathlib.Analysis.Complex.RealDeriv"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticReality.lean",
+      "source_sha256": "95719f0ef3bcfbdadd0abcf6f67a5eb06b583911f44fcd55c61b60e616b94666",
+      "lines": 70,
+      "imports": [
+        "Foundation.RiemannQuarticEvolution"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticRealSaddle.lean",
+      "source_sha256": "51ce55e802bb4114e1ed0edd7b5599e4aa45892c60c8e571e9f1263342783fc9",
+      "lines": 170,
+      "imports": [
+        "Foundation.RiemannThetaHolomorphic",
+        "Foundation.RiemannQuarticDomain",
+        "Mathlib.Analysis.Calculus.LocalExtr.Basic",
+        "Mathlib.Analysis.Complex.RealDeriv"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticReflectedDominance.lean",
+      "source_sha256": "a0a0623f8c91241483254a7f50e1447d7857206ab9bb4901fffb1910b081a9c1",
+      "lines": 643,
+      "imports": [
+        "Foundation.RiemannQuarticComplexContour",
+        "Foundation.RiemannQuarticFarSimpleZeros",
+        "Foundation.RiemannQuarticNormalizedAnalytic"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticSaddleBranch.lean",
+      "source_sha256": "8321fbc01cc24f24bca6e58f18c3c52663f2a847791ebf2965585d9bd6a8aaf1",
+      "lines": 133,
+      "imports": [
+        "Foundation.RiemannQuarticSaddleTimes",
+        "Mathlib.Analysis.Calculus.InverseFunctionTheorem.Analytic"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticSaddleGeometry.lean",
+      "source_sha256": "4a08d1ccf089affb01b919718c351b3cbe8126d09aa3885395b9bb8b123d3da7",
+      "lines": 168,
+      "imports": [
+        "Foundation.RiemannQuarticContour",
+        "Mathlib.Analysis.SpecialFunctions.Gaussian.GaussianIntegral"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticSaddleGrowth.lean",
+      "source_sha256": "6be4fff578b2cf00dd444fcb732cfae2e52560942aac69cc70690ada70fd5d4f",
+      "lines": 58,
+      "imports": [
+        "Foundation.RiemannQuarticCurvature"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticSaddleNeighborhood.lean",
+      "source_sha256": "278339b97737aa2060d1c74f3ea8a5039a791e78cf7399c474263d0e28d195ba",
+      "lines": 260,
+      "imports": [
+        "Foundation.RiemannQuarticCurvature",
+        "Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds",
+        "Mathlib.Analysis.Complex.Liouville"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticSaddleTheta.lean",
+      "source_sha256": "0cb06c431b827477ddb0886559e32cd0732120df64a8e83dc00c0aba9469bbce",
+      "lines": 128,
+      "imports": [
+        "Foundation.RiemannThetaEffective",
+        "Mathlib.Analysis.Complex.RealDeriv"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticSaddleTimes.lean",
+      "source_sha256": "0f1d338a16cf34794b8614062e4029af5d7ee59ba4c96781b3f2483f12fe93dc",
+      "lines": 125,
+      "imports": [
+        "Foundation.RiemannQuarticRealSaddle",
+        "Mathlib.Analysis.Analytic.IsolatedZeros",
+        "Mathlib.Analysis.Calculus.FDeriv.Analytic",
+        "Mathlib.Analysis.Calculus.MeanValue",
+        "Mathlib.Topology.Compactness.Lindelof"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticShiftedAmplitude.lean",
+      "source_sha256": "6a227999cd1b3165639997acaf33b48a593ea7b32b49693c3359d0d9893e80aa",
+      "lines": 189,
+      "imports": [
+        "Foundation.RiemannQuarticWeightedSlope",
+        "Mathlib.Analysis.InnerProductSpace.Calculus"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticSignedContour.lean",
+      "source_sha256": "13362c2209e115eab9f4464c560c39e54969b87f5371337294d82f9bcc2473d4",
+      "lines": 203,
+      "imports": [
+        "Foundation.RiemannQuarticSaddleGeometry"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticSpatialPhase.lean",
+      "source_sha256": "5b5ba39034cfbc5b53a7e39a2560e48c4514ad27a708eb11b9160b2f4aab60bf",
+      "lines": 240,
+      "imports": [
+        "Foundation.RiemannQuarticSaddleGeometry",
+        "Foundation.RiemannQuarticPhaseRemainder"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticStoredJets.lean",
+      "source_sha256": "6fa5c9812b7143cfdd76301ef50be1f44c08203f8d5d1a627630c41359d8212d",
+      "lines": 83,
+      "imports": [
+        "Foundation.RiemannQuarticIntervalJets"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticStripBoundary.lean",
+      "source_sha256": "b376cd13175490b88e64bbfe1864d26d865cdc62a4f2959626a5f7724be97007",
+      "lines": 38,
+      "imports": [
+        "Foundation.RiemannQuarticNaturalContour"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticSuppressedSaddle.lean",
+      "source_sha256": "ea08bf0661d0324d49c93361c6873f26e51a8fd9201f523e09f61ad2511d8031",
+      "lines": 226,
+      "imports": [
+        "Foundation.RiemannQuarticSignedContour",
+        "Foundation.RiemannQuarticHalflineApproximation",
+        "Foundation.RiemannQuarticEndpointSaddle",
+        "Foundation.RiemannQuarticCompactSegment",
+        "Foundation.RiemannQuarticDistantTail"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticTaylorJets.lean",
+      "source_sha256": "b47c965c291d3ee7b58291f151cacceb3f00f7cf300e7ec07c0b4d9c0c09a7ba",
+      "lines": 170,
+      "imports": [
+        "Foundation.RiemannQuarticRealCertificate",
+        "Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas",
+        "Mathlib.Analysis.Calculus.Taylor",
+        "Mathlib.Analysis.Calculus.ContDiff.Deriv",
+        "Mathlib.Analysis.SpecialFunctions.Integrals.Basic"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticThresholdCollision.lean",
+      "source_sha256": "cb4528677ba791580cd0a8d873a7d639a083d3355c074f839d1ce5546a60c5cc",
+      "lines": 121,
+      "imports": [
+        "Foundation.RiemannQuarticThresholdCompactness",
+        "Foundation.RiemannQuarticGlobalSimpleZeros",
+        "Foundation.RiemannQuarticZeroCounting"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticThresholdCompactness.lean",
+      "source_sha256": "9d70f7a9785496a68e7d28be7a64471ad0c6bad4459fe257715b6bc4cc584e0a",
+      "lines": 70,
+      "imports": [
+        "Foundation.RiemannQuarticCompactTimeFarZeros",
+        "Mathlib.Topology.Sequences"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticThresholdEndpoint.lean",
+      "source_sha256": "51990e97f87363e64216460561079b1f67e9d1ca1990919a9620c47101ae91c3",
+      "lines": 95,
+      "imports": [
+        "Foundation.RiemannQuarticTimeCompact",
+        "Foundation.RiemannQuarticActualPolynomialLimit"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticThresholdZeros.lean",
+      "source_sha256": "5dc88c537f0f890836f1d79529c33a46708a507647bb05a1d351bf6327ce9d54",
+      "lines": 78,
+      "imports": [
+        "Foundation.RealRootedVerticalLimit",
+        "Foundation.RiemannQuarticThresholdEndpoint",
+        "Foundation.RiemannQuarticReality"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticTimeCompact.lean",
+      "source_sha256": "4c8847073176370aeb98895a951000b8b1234417cf7d1c938bbfea7286613785",
+      "lines": 63,
+      "imports": [
+        "Foundation.RiemannQuarticEvolution",
+        "Mathlib.Topology.UniformSpace.HeineCantor"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticTransitionAnalyticBranch.lean",
+      "source_sha256": "a046c6c931a3c4e10c2075f9d99f0e877942dca5316899abf7932aa4573ffb52",
+      "lines": 300,
+      "imports": [
+        "Foundation.RiemannQuarticTransitionReflection",
+        "Foundation.RiemannQuarticFarAnalyticBranch"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticTransitionCompact.lean",
+      "source_sha256": "b9d22afd840b59d10b47780c15c295a0ae1b1c6fb0908be752a4641ab8191db9",
+      "lines": 243,
+      "imports": [
+        "Foundation.RiemannQuarticTransitionContour"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticTransitionComplexPairing.lean",
+      "source_sha256": "6f5c1afa469dacf69fc4aa7c52f21c10a80a5262388fa3904cf5da30b1b058f2",
+      "lines": 264,
+      "imports": [
+        "Foundation.RiemannQuarticTransitionGaussianPhase",
+        "Foundation.RiemannQuarticFarComplexPairing"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticTransitionContour.lean",
+      "source_sha256": "ec7fcfea7c3f38e203122fc2f0c8d9be5a9173bbc5a78662ecb8675d06fd5af9",
+      "lines": 526,
+      "imports": [
+        "Foundation.RiemannQuarticTransitionGaussian",
+        "Foundation.RiemannQuarticReflectedDominance"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticTransitionCorrection.lean",
+      "source_sha256": "926b4b21f6ea94dc37fc628129d566d1c17bb332ab3ccdb47427e5a3546f0a7d",
+      "lines": 433,
+      "imports": [
+        "Foundation.RiemannQuarticTransitionSaddle",
+        "Foundation.RiemannQuarticComplexCorrection"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticTransitionCosinePhase.lean",
+      "source_sha256": "90bdd7920db2781eb1ef33187b93d15d53ecf0115965fe7c45691dbfb3f74c52",
+      "lines": 234,
+      "imports": [
+        "Foundation.RiemannQuarticTransitionComplexPairing",
+        "Foundation.RiemannQuarticFarCosinePhase"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticTransitionGaussian.lean",
+      "source_sha256": "0393a55ac05106c07245e83c7b5faa80f013c095a7cabfa100f28d2e65a2ba64",
+      "lines": 586,
+      "imports": [
+        "Foundation.RiemannQuarticTransitionCorrection",
+        "Foundation.RiemannQuarticComplexGaussian"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticTransitionGaussianPhase.lean",
+      "source_sha256": "53b692e801deadd8a66abdd915f88653de6270bf754e243106c70cace044ce6c",
+      "lines": 222,
+      "imports": [
+        "Foundation.RiemannQuarticTransitionAnalyticBranch",
+        "Foundation.RiemannQuarticFarGaussianPhase"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticTransitionReflection.lean",
+      "source_sha256": "43f73314622d737ecf7e272ff20b0e4b15d9d501c606d58254b560cc8624e3d3",
+      "lines": 361,
+      "imports": [
+        "Foundation.RiemannQuarticTransitionCompact"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticTransitionSaddle.lean",
+      "source_sha256": "8f02c94c267ea7834244f3ee9996e84de49ae6602d10b75da17366a2fe33a763",
+      "lines": 317,
+      "imports": [
+        "Foundation.RiemannQuarticComplexModelSaddle",
+        "Mathlib.Analysis.Real.Pi.Bounds"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticTransitionSimpleZeros.lean",
+      "source_sha256": "78a61f594393089f95f2016b0068127957878c4a5e953de23cbc06c647403cfb",
+      "lines": 289,
+      "imports": [
+        "Foundation.RiemannQuarticTransitionCosinePhase",
+        "Foundation.RiemannQuarticLocalCosineZeros"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticTrigChecks.lean",
+      "source_sha256": "9709b19b5d27b85bf82b51d852341791a96f461ff1e55c97941c990a1b4dfad6",
+      "lines": 29,
+      "imports": [
+        "Foundation.RiemannQuarticIntervalTrig",
+        "Foundation.RiemannQuarticIntervalChecks"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticTrigJets.lean",
+      "source_sha256": "46c75ebc053a83aed234d3daacb28bb82142d7951df5d30297625e4c9d617085",
+      "lines": 89,
+      "imports": [
+        "Foundation.RiemannQuarticIntervalJets",
+        "Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticUniformFarScale.lean",
+      "source_sha256": "8f290571541ce5fb696535ce53a4c9208987b2b10a67eb9544c55aa8f3055a17",
+      "lines": 222,
+      "imports": [
+        "Foundation.RiemannQuarticTransitionSimpleZeros",
+        "Foundation.RiemannQuarticReflectedDominance"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticUniformSaddle.lean",
+      "source_sha256": "255ef089a37f7ab3621268786183050c0b3930114f43b2b6a0b06a3ebb2a7b75",
+      "lines": 90,
+      "imports": [
+        "Foundation.RiemannQuarticErrorLimits"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticValueCells005To024.lean",
+      "source_sha256": "46304d20436593071d06cb11d646331dfdc13f98500509c8a8a07c5a2d96b39d",
+      "lines": 251,
+      "imports": [
+        "Foundation.RiemannQuarticCellWitnesses"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticValueCells025To044.lean",
+      "source_sha256": "cda518546a8f5959489b4ca9774dcf9f842ce66bbd96c524dfbe57539d11ee4f",
+      "lines": 251,
+      "imports": [
+        "Foundation.RiemannQuarticCellWitnesses"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticValueCells045To064.lean",
+      "source_sha256": "cadc105b832f7f2f662ca9543d767aa3cad8b89bdc9dba07f9a5eb4e2f33f855",
+      "lines": 251,
+      "imports": [
+        "Foundation.RiemannQuarticCellWitnesses"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticValueCells065To084.lean",
+      "source_sha256": "1dd26f25b3e4fca0a80f1932e0cf2676dd07d4f4ec5e9a45d087e70e57b0c2f6",
+      "lines": 251,
+      "imports": [
+        "Foundation.RiemannQuarticCellWitnesses"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticValueCells085To104.lean",
+      "source_sha256": "b1984788b239e436a03c6343580a96c69ecfff5e2b5f15846b6676727e0e1a39",
+      "lines": 251,
+      "imports": [
+        "Foundation.RiemannQuarticCellWitnesses"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticValueCells105To124.lean",
+      "source_sha256": "dd34d4dc65ee2cda1574d31feeb651351eddcaf8667ae9bf1777ea06c3034521",
+      "lines": 251,
+      "imports": [
+        "Foundation.RiemannQuarticCellWitnesses"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticValueCells125To144.lean",
+      "source_sha256": "144d1f01e57ff62ea88b3d5ebc6abcd0ff9d941b15673abf7045a2ced7c2280d",
+      "lines": 251,
+      "imports": [
+        "Foundation.RiemannQuarticCellWitnesses"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticValueCells145To159.lean",
+      "source_sha256": "4b72f244bd1d6dad4ecee77c3d2318e96e6a1a6ebfc77403b0519ea750510740",
+      "lines": 191,
+      "imports": [
+        "Foundation.RiemannQuarticCellWitnesses"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticWeightedSlope.lean",
+      "source_sha256": "50a4990c18f5a7ba7bcea9b45bcf9dc00f8b82cdf61e6fa22d528c2ff5e94477",
+      "lines": 221,
+      "imports": [
+        "Foundation.RiemannQuarticGaussianTail"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticWindowZeros.lean",
+      "source_sha256": "c562c4b6e868de4c6afda96b26ed185267cc077e3dbb71e59bb40db5af1f6593",
+      "lines": 141,
+      "imports": [
+        "Foundation.RiemannQuarticCosineLocalZeros",
+        "Foundation.RiemannQuarticZeroStrip"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticZeroCounting.lean",
+      "source_sha256": "bfc4355bee3fc7e536f49c23cb076e01aa63888aa4da13d8a6b4f22ff3f6d9ca",
+      "lines": 66,
+      "imports": [
+        "Foundation.RiemannQuarticZeroFreeRigidity",
+        "Foundation.EntireSubquadraticZeroCounting"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticZeroFreeRigidity.lean",
+      "source_sha256": "7cccc7ebdd592567b69e2d5a885e3ab968d7b291efe5f32a62c7c8579aed8298",
+      "lines": 63,
+      "imports": [
+        "Foundation.EvenEntireZeroFreeRigidity",
+        "Foundation.RiemannQuarticEntireGrowth"
+      ]
+    },
+    {
+      "file": "Foundation/RiemannQuarticZeroStrip.lean",
+      "source_sha256": "03f51ee26955bbfb999c556891a8e73978f686795a550ad59be31bd37afe07a4",
+      "lines": 49,
+      "imports": [
+        "Foundation.RiemannQuarticCosineNormalization",
+        "Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp"
+      ]
+    }
+  ]
+}

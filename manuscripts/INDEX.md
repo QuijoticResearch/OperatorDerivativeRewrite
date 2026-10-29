@@ -14,6 +14,10 @@ The independent publication branch contains reviewed editorial drafts built from
 
 See the [editorial inventory](EDITORIAL_INVENTORY.md) for ranked mathematical contributions, consolidation decisions, literature limitations and deferred papers. Current PDFs have hash-linked build and visual receipts in their respective directories.
 
+## Sustained proof assessment
+
+The [quartic threshold source dossier](quartic-threshold/source-assessment.json) records exact verified statements, proof dependencies, completed endpoint arguments and the remaining full saddle/certificate exposition. It is an editorial source assessment, not a completed paper or a new theorem claim.
+
 ## Preserved earlier working notes
 
 The following existing drafts and historical verification descriptions are retained. Their original scopes, dates and limitations are preserved; they have not been silently promoted to reviewed research papers.
