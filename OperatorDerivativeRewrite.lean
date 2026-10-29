@@ -2819,3 +2819,5 @@ import Foundation.FourCubeNegativeCompletion
 import Foundation.FourCubeNativeTransport
 import Foundation.FourCubeCoreIncident
 import Foundation.FourCubeExteriorSources
+import Foundation.FourCubeCompletedHaar
+import Foundation.FourCubeCompletedGram
