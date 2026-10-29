@@ -13124,3 +13124,17 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.CubeAxialGauge.energy_invariant
 #print axioms OperatorDerivativeRewrite.Foundation.CubeAxialGauge.coercive_mod_gauge
 #print axioms OperatorDerivativeRewrite.Foundation.CubeAxialGauge.flat_iff_gauge
+
+-- Actual native stationary ground-law concentration near the cube flat orbit;1741.
+#print axioms OperatorDerivativeRewrite.Foundation.CubeLowActionBlock.action_continuous
+#print axioms OperatorDerivativeRewrite.Foundation.CubeLowActionBlock.kernel_spatial_upper
+#print axioms OperatorDerivativeRewrite.Foundation.CubeLowActionBlock.positive_block
+#print axioms OperatorDerivativeRewrite.Foundation.CubeGroundMass.eigenvalue_block_lower
+#print axioms OperatorDerivativeRewrite.Foundation.CubeGroundMass.eigenvalue_small_rate
+#print axioms OperatorDerivativeRewrite.Foundation.CubeGroundMass.function_spatial_decay
+#print axioms OperatorDerivativeRewrite.Foundation.CubeGroundMass.action_tail_eigenfactor
+#print axioms OperatorDerivativeRewrite.Foundation.CubeGroundMass.action_tail_exponential
+#print axioms OperatorDerivativeRewrite.Foundation.CubeGroundMass.action_tail_tendsto_zero
+#print axioms OperatorDerivativeRewrite.Foundation.CubeGroundOrbit.energy_measurable
+#print axioms OperatorDerivativeRewrite.Foundation.CubeGroundOrbit.reduced_tail_exponential
+#print axioms OperatorDerivativeRewrite.Foundation.CubeGroundOrbit.reduced_tail_tendsto_zero
