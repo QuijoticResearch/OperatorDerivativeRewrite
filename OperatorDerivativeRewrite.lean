@@ -2815,3 +2815,4 @@ import Foundation.FourCubeHessianMeanValue
 import Foundation.FourCubeThermalHessianBudget
 import Foundation.FourCubeDirichletBox
 import Foundation.FourCubeDirichletHaar
+import Foundation.FourCubeNegativeCompletion
