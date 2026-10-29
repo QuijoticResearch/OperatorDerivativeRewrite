@@ -1,7 +1,7 @@
 \documentclass[11pt]{article}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,booktabs}
-\usepackage[margin=1.05in]{geometry}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,booktabs}
+\usepackage[margin=1in]{geometry}
 \usepackage[hidelinks]{hyperref}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -36,7 +36,10 @@ parallel obstruction occurs between degrees six and seven.
 Finite Jacobi matrices construct the representing measures
 and steer an arbitrary ninth moment in the strict region.
 An attained sixth-moment bound gives a concrete low-degree
-diagnostic. The methods are classical truncated moment
+diagnostic. A separate singular positive cubic-square functional
+has no measure representation but is a limit of genuine moment
+vectors, with an explicit escaping sixth-moment defect.
+The methods are classical truncated moment
 theory; the explicit parameter formulas are matched to a
 frozen Lean development, with no priority claim.
 \end{abstract}
@@ -501,57 +504,172 @@ The degree-two square test still passes, since
 $k^2=1\leq2v^3$. This contrasts a finite positive
 truncation with the next genuinely incompatible data.
 
-\section{Normalization, interpretation and exact formal scope}
-The scale $r=k^2/v^3$ is intrinsic for $v>0$.
-Replacing $x$ by $\sqrt v\,y$ transforms the formal
-series to $\exp(z^2/2+\kappa z^3/6)$ with
-$\kappa=k/v^{3/2}$. Changing $k$ to $-k$ is reflection
-of the real variable. Thus the displayed boundaries depend
-only on $r=\kappa^2$. The hierarchy is
+
+\section{A distinct singular even truncation and escaping sixth moment}
+The preceding Gaussian--cubic boundaries have positive preceding
+Gram blocks, allowing the specified finite Jacobi construction.
+Singular even data without that hypothesis can be positive on every
+available square and still have no representing measure. We give
+an actual convergent probability sequence illustrating precisely
+that obstruction. This is a separate moment vector, not another
+parameter value in $\exp(vz^2/2+kz^3/6)$.
+
+\subsection{Positive cubic squares with an incompatible null relation}
+Let $\Lambda(x^j)=s_j$ for $0\leq j\leq6$, where
 \[
- 0<r_4<1/5<r_3<1/2<2,
+ (s_0,s_1,s_2,s_3,s_4,s_5,s_6)=(1,0,2,4,12,32,89),
+ \qquad R(x)=x^2-2x-2.
 \]
-where $r_4$ is the unique positive root of
-$8-40r-45r^3$ and $r_3=(2\sqrt7-4)/3$.
-The strict gaps show why matching a few moments cannot
-justify interpreting the whole functional as expectation
-under a positive law. Our assertions stop at the stated
-finite truncations; no all-degree positivity classification
-is needed or supplied by this paper.
+Every polynomial $g$ of degree at most three has a unique expansion
+$g=c+bx+aR+dxR$, since these four polynomials have successive
+degrees zero, one, two and three and leading coefficients one.
+The exact Gram matrix of this basis for $\Lambda(fg)$ is
+\begin{equation}\label{eq:singulargram}
+ \operatorname{diag}(1,2,0,1).
+\end{equation}
+Here is a direct verification of all off-diagonal cancellations:
+\[
+ \Lambda(x)=\Lambda(R)=\Lambda(xR)
+ =\Lambda(x^2R)=\Lambda(xR^2)=0.
+\]
+For example $\Lambda(x^2R)=12-2\cdot4-2\cdot2=0$,
+and $\Lambda(xR^2)=32-4\cdot12+8\cdot2+4\cdot0=0$.
+Also
+\[
+ R^2=x^4-4x^3+8x+4,\qquad
+ (xR)^2=x^6-4x^5+8x^3+4x^2,
+\]
+so $\Lambda(R^2)=12-16+4=0$ and
+$\Lambda((xR)^2)=89-128+32+8=1$.
+Together with $\Lambda(1)=1,\Lambda(x^2)=2$, these are
+every entry of \eqref{eq:singulargram}. Consequently
+\[
+ \Lambda(g^2)=c^2+2b^2+d^2\geq0
+ \quad(\deg g\leq3).
+\]
+Nevertheless no positive probability measure has these seven
+moments. Such a measure would give $\int R^2=0$, forcing $R=0$
+almost everywhere by nonnegativity. Hence $xR=0$ almost everywhere,
+contradicting $\int(xR)^2=1$. All these polynomials are integrable
+because the requested sixth absolute moment is finite.
+Thus positivity of a singular cubic-square test is not alone
+the even truncated realization theorem.
 
-The proof uses elementary Gram matrices, Schur complements,
-finite spectral measures and null-polynomial compatibility.
-These are standard truncated Hamburger tools, including
-the distinction between positivity and extendibility at
-singular data in Curto--Fialkow~\cite{curtofialkow}.
-Their odd-case range condition is reflected concretely
-in \eqref{eq:cross3} and \eqref{eq:cross4}; the strict
-case admits the free last diagonal in
-\eqref{eq:ninthsteer}. A targeted preliminary search did
-not settle priority for the explicit two-parameter
-boundaries. Novelty remains unresolved.
+There is also no normed coordinate-multiplication model preserving
+these data on the stated degrees. If a linear map $U$ from
+polynomials into a normed space satisfied
+$\|Ug\|^2=\Lambda(g^2)$ for $\deg g\leq3$, then $UR=0$.
+If a linear operator $T$ also satisfied $U(xg)=T(Ug)$ for
+$\deg g\leq2$, it would force $U(xR)=0$, whereas its squared
+norm is one. The moment Gram quotient exists as a finite
+semidefinite quotient; it is the proposed coordinate action on
+that quotient that fails to be well-defined.
 
-The frozen verified baseline is
+\subsection{An explicit two-atom law and a vanishing remote atom}
+Set $\lambda_\pm=1\pm\sqrt3$ and define
+\[
+ \nu=\frac{\sqrt3-1}{2\sqrt3}\delta_{\lambda_+}
+     +\frac{\sqrt3+1}{2\sqrt3}\delta_{\lambda_-}.
+\]
+Its weights are positive, sum to one and give mean zero.
+Both support points solve $x^2=2x+2$, so its moments $b_j$
+satisfy $b_0=1,b_1=0$ and $b_j=2b_{j-1}+2b_{j-2}$.
+Thus
+\[
+ (b_0,b_1,b_2,b_3,b_4,b_5,b_6)=(1,0,2,4,12,32,88).
+\]
+This is also the coordinate-zero spectral measure of
+$\bigl(\begin{smallmatrix}0&\sqrt2\\\sqrt2&2\end{smallmatrix}\bigr)$:
+its two distinct eigenvalues are $\lambda_\pm$, and its unit
+spectral weights have mean the zero upper-left entry, determining
+the same displayed weights. This identifies the human two-atom
+formula with the formal source's actual spectral law.
+
+For integers $N\geq1$ put
+\[
+ \nu_N=(1-N^{-6})\nu+N^{-6}\delta_N.
+\]
+Every $\nu_N$ is a positive probability with finite support and
+all absolute moments. For $0\leq j\leq6$ the exact formula is
+\begin{equation}\label{eq:escapedmoments}
+ \int x^j\,d\nu_N=(1-N^{-6})b_j+N^{j-6}.
+\end{equation}
+For $j<6$ it tends to $b_j=s_j$, whereas for $j=6$ it tends
+to $88+1=89=s_6$. Thus genuine probability moment vectors
+converge in $\R^7$ to the nonrepresentable vector just proved
+positive on cubic squares. The set of realizable probability
+moment vectors through degree six is therefore not closed.
+This is nonclosedness of the actual unbounded-support moment
+image, not a failure of closedness of the positive-semidefinite
+matrix cone containing it.
+
+For every bounded Borel $f$ the actual law difference obeys
+\[
+ \left|\int f\,d\nu_N-\int f\,d\nu\right|
+ =N^{-6}\left|f(N)-\int f\,d\nu\right|
+ \leq2N^{-6}\|f\|_\infty.
+\]
+In particular $\nu_N\to\nu$ weakly, indeed in the total-variation
+norm bounded by $2N^{-6}$. This quantitative total-variation
+bound is a printed elementary deduction; the mapped source
+directly gives convergence on every bounded observable.
+The weak limit's sixth moment is $88$, not the limiting moment
+coordinate $89$. No alternative weak limit represents the
+displayed limiting vector.
+
+\subsection{Tightness and a bounded sixth moment are insufficient}
+These laws even have the uniform bound
+\[
+ \int|x|^6\,d\nu_N=89-88N^{-6}\leq89.
+\]
+Markov's elementary bound gives
+$\nu_N\{|x|>R\}\leq89/R^6$ for $R>0$, hence uniform
+tightness. But for every $R>0$, choose $N>R$. The remote
+atom alone then contributes
+\[
+ \int_{|x|>R}|x|^6\,d\nu_N\geq N^{-6}N^6=1.
+\]
+Thus the sixth powers are not uniformly integrable under these
+laws. The atom's probability mass vanishes while its sixth-moment
+contribution stays exactly one. This is the missing hypothesis
+in any inference from the weak law to the highest moment.
+For comparison, if $0\leq q<6$, then on $|x|>R$,
+$|x|^q\leq R^{q-6}|x|^6$, so the corresponding tails are
+uniformly bounded by $89R^{q-6}\to0$. This lower-power
+estimate is an explicit classical deduction, consistent with
+the convergent lower coordinates in \eqref{eq:escapedmoments}.
+The construction illustrates standard noncompact moment geometry
+and uniform-integrability limits; no new general nonclosedness
+or weak-convergence principle is claimed.
+
+\section{Normalization, interpretation and exact formal scope}
+For $v>0$, $x=\sqrt v\,y$ gives the normalized generating series
+$\exp(z^2/2+\kappa z^3/6)$, $\kappa=k/v^{3/2}$. Reflection changes
+the sign of $k$; thus $r=\kappa^2$ governs the boundaries:
+\[
+ 0<r_4<1/5<r_3<1/2<2.
+\]
+Here $r_4$ solves $8-40r-45r^3=0$ and
+$r_3=(2\sqrt7-4)/3$. Finite matching does not certify a positive
+all-degree functional; no all-degree classification is asserted.
+
+Gram matrices, Schur complements, finite spectral measures and
+null-polynomial compatibility are classical truncated Hamburger
+tools. Curto--Fialkow~\cite{curtofialkow}, Theorems 3.1/3.9,
+distinguish positivity from singular extendibility. The odd-case
+range condition appears concretely in \eqref{eq:cross3} and
+\eqref{eq:cross4}; \eqref{eq:ninthsteer} gives the strict-case freedom.
+The bounded primary comparison has not established priority for
+our explicit parameter formulas or escape example.
+
+Exact declaration headers and hashes are mapped to frozen commit
 \begin{center}\small\ttfamily
 bab688bb6140cd6316c80680095a914ea0d346db.
 \end{center}
-The exact final declarations are in the namespaces
-\begin{center}\small
-\code{MixedCubicFourthDegree},\quad
-\code{MixedCubicEighthRealization},\\
-\code{MixedCubicNinthRealization},\quad
-\code{MixedCubicQuarticBoundary},\\
-\code{MixedCubicBoundaryQuartic},\quad
-\code{MixedCubicSharpSixthMoment},
-\end{center}
-with prefix \code{OperatorDerivativeRewrite.Foundation}.
-The theorem map records declaration lines and frozen source
-hashes. The general finite spectral lemma is a human
-reorganization of the explicitly verified Jacobi matrices
-and steering identities; it is not represented as a newly
-named formal theorem. The rational example and the
-normalization discussion are direct deductions, identified
-separately from the mapped source statements.
+The general Jacobi argument, two-atom coordinates and quantitative
+total-variation/lower-tail bounds are labelled human proofs or
+deductions, distinct from the mapped named formal declarations.
+No new general moment theorem is claimed.
 
 \begin{thebibliography}{9}
 \bibitem{curtofialkow} R. E. Curto and L. A. Fialkow,

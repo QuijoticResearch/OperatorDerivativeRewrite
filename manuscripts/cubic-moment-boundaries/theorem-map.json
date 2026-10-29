@@ -243,13 +243,351 @@
       "source_sha256": "4d8d7f139c8684ff3919c3492ec9ac26fb2df9b68e49826665f369ce087e14ca",
       "declaration_header": "theorem cubic_witness_value : expectation 1 1 (cubicWitness^2) = -21",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/MixedCubicMomentPositivity.lean#L150"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SingularTruncatedMomentObstruction.basis_as_cubic",
+      "file": "Foundation/SingularTruncatedMomentObstruction.lean",
+      "line": 28,
+      "source_sha256": "28840e8b33df3af5973802e834bfbd1b79604deb426d1f6993024e2de70ab0cb",
+      "declaration_header": "theorem basis_as_cubic (c b a d : \u211d) :\n    basis c b a d = cubic (c-2*a) (b-2*a-2*d) (a-2*d) d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SingularTruncatedMomentObstruction.lean#L28"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SingularTruncatedMomentObstruction.cubic_as_basis",
+      "file": "Foundation/SingularTruncatedMomentObstruction.lean",
+      "line": 38,
+      "source_sha256": "28840e8b33df3af5973802e834bfbd1b79604deb426d1f6993024e2de70ab0cb",
+      "declaration_header": "theorem cubic_as_basis (c b a d : \u211d) :\n    cubic c b a d = basis (c+2*a+4*d) (b+2*a+6*d) (a+2*d) d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SingularTruncatedMomentObstruction.lean#L38"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SingularTruncatedMomentObstruction.raw_cubic_square",
+      "file": "Foundation/SingularTruncatedMomentObstruction.lean",
+      "line": 44,
+      "source_sha256": "28840e8b33df3af5973802e834bfbd1b79604deb426d1f6993024e2de70ab0cb",
+      "declaration_header": "theorem raw_cubic_square (c b a d : \u211d) :\n    expectation ((cubic c b a d)^2) = c^2+2*(b^2+2*c*a)+\n      4*(2*c*d+2*b*a)+12*(a^2+2*b*d)+64*a*d+89*d^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SingularTruncatedMomentObstruction.lean#L44"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SingularTruncatedMomentObstruction.basis_square",
+      "file": "Foundation/SingularTruncatedMomentObstruction.lean",
+      "line": 58,
+      "source_sha256": "28840e8b33df3af5973802e834bfbd1b79604deb426d1f6993024e2de70ab0cb",
+      "declaration_header": "theorem basis_square (c b a d : \u211d) :\n    expectation ((basis c b a d)^2) = c^2+2*b^2+d^2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SingularTruncatedMomentObstruction.lean#L58"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SingularTruncatedMomentObstruction.all_cubic_squares_nonneg",
+      "file": "Foundation/SingularTruncatedMomentObstruction.lean",
+      "line": 63,
+      "source_sha256": "28840e8b33df3af5973802e834bfbd1b79604deb426d1f6993024e2de70ab0cb",
+      "declaration_header": "theorem all_cubic_squares_nonneg (g : Polynomial \u211d) (hg : g.natDegree \u2264 3) :\n    0 \u2264 expectation (g^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SingularTruncatedMomentObstruction.lean#L63"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SingularTruncatedMomentObstruction.null_square",
+      "file": "Foundation/SingularTruncatedMomentObstruction.lean",
+      "line": 71,
+      "source_sha256": "28840e8b33df3af5973802e834bfbd1b79604deb426d1f6993024e2de70ab0cb",
+      "declaration_header": "theorem null_square : expectation (nullPolynomial^2) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SingularTruncatedMomentObstruction.lean#L71"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SingularTruncatedMomentObstruction.shifted_null_square",
+      "file": "Foundation/SingularTruncatedMomentObstruction.lean",
+      "line": 75,
+      "source_sha256": "28840e8b33df3af5973802e834bfbd1b79604deb426d1f6993024e2de70ab0cb",
+      "declaration_header": "theorem shifted_null_square : expectation ((X*nullPolynomial)^2) = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SingularTruncatedMomentObstruction.lean#L75"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SingularTruncatedMomentObstruction.multiplication_not_null_compatible",
+      "file": "Foundation/SingularTruncatedMomentObstruction.lean",
+      "line": 87,
+      "source_sha256": "28840e8b33df3af5973802e834bfbd1b79604deb426d1f6993024e2de70ab0cb",
+      "declaration_header": "theorem multiplication_not_null_compatible :\n    \u2203 R : Polynomial \u211d, R.natDegree \u2264 2 \u2227 expectation (R^2) = 0 \u2227\n      0 < expectation ((X*R)^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SingularTruncatedMomentObstruction.lean#L87"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SingularTruncatedMomentObstruction.no_normed_coordinate_operator",
+      "file": "Foundation/SingularTruncatedMomentObstruction.lean",
+      "line": 92,
+      "source_sha256": "28840e8b33df3af5973802e834bfbd1b79604deb426d1f6993024e2de70ab0cb",
+      "declaration_header": "theorem no_normed_coordinate_operator {H : Type*} [NormedAddCommGroup H] [NormedSpace \u211d H]\n    (L : Polynomial \u211d \u2192\u2097[\u211d] H) (T : H \u2192\u2097[\u211d] H)\n    (henergy : \u2200 g : Polynomial \u211d, g.natDegree \u2264 3 \u2192 \u2016L g\u2016^2 = expectation (g^2))\n    (hmul : \u2200 g : Polynomial \u211d, g.natDegree \u2264 2 \u2192 L (X*g) = T (L g)) : False",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SingularTruncatedMomentObstruction.lean#L92"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SingularTruncatedMomentObstruction.positive_null_annihilates",
+      "file": "Foundation/SingularTruncatedMomentObstruction.lean",
+      "line": 122,
+      "source_sha256": "28840e8b33df3af5973802e834bfbd1b79604deb426d1f6993024e2de70ab0cb",
+      "declaration_header": "theorem positive_null_annihilates (E : Polynomial \u211d \u2192\u2097[\u211d] \u211d)\n    (hpos : \u2200 g : Polynomial \u211d, 0 \u2264 E (g^2)) (R : Polynomial \u211d)\n    (hR : E (R^2) = 0) (Q : Polynomial \u211d) : E (R*Q) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SingularTruncatedMomentObstruction.lean#L122"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SingularTruncatedMomentObstruction.positive_null_shift",
+      "file": "Foundation/SingularTruncatedMomentObstruction.lean",
+      "line": 145,
+      "source_sha256": "28840e8b33df3af5973802e834bfbd1b79604deb426d1f6993024e2de70ab0cb",
+      "declaration_header": "theorem positive_null_shift (E : Polynomial \u211d \u2192\u2097[\u211d] \u211d)\n    (hpos : \u2200 g : Polynomial \u211d, 0 \u2264 E (g^2)) (R : Polynomial \u211d)\n    (hR : E (R^2) = 0) : E ((X*R)^2) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SingularTruncatedMomentObstruction.lean#L145"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SingularTruncatedMomentObstruction.no_positive_polynomial_extension",
+      "file": "Foundation/SingularTruncatedMomentObstruction.lean",
+      "line": 152,
+      "source_sha256": "28840e8b33df3af5973802e834bfbd1b79604deb426d1f6993024e2de70ab0cb",
+      "declaration_header": "theorem no_positive_polynomial_extension (E : Polynomial \u211d \u2192\u2097[\u211d] \u211d)\n    (hm : \u2200 n \u2264 6, E (X^n) = moment n) :\n    \u00ac \u2200 g : Polynomial \u211d, 0 \u2264 E (g^2)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SingularTruncatedMomentObstruction.lean#L152"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SingularTruncatedMomentObstruction.no_measure_truncated_realization",
+      "file": "Foundation/SingularTruncatedMomentObstruction.lean",
+      "line": 178,
+      "source_sha256": "28840e8b33df3af5973802e834bfbd1b79604deb426d1f6993024e2de70ab0cb",
+      "declaration_header": "theorem no_measure_truncated_realization (\u03bc : Measure \u211d)\n    (hi : \u2200 n \u2264 6, Integrable (fun x : \u211d => x^n) \u03bc) :\n    \u00ac \u2200 n \u2264 6, (\u222b x : \u211d, x^n \u2202\u03bc) = moment n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SingularTruncatedMomentObstruction.lean#L178"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.baseMatrix_hermitian",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 14,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem baseMatrix_hermitian : baseMatrix.IsHermitian",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L14"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.baseLaw_integrable",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 23,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem baseLaw_integrable (f : \u211d \u2192 \u211d) : Integrable f baseLaw",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L23"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.baseLaw_moment",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 28,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem baseLaw_moment (p : \u2115) (hp : p \u2264 6) :\n    (\u222b x : \u211d, x^p \u2202baseLaw) = baseMoment p",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L28"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.location_ge_one",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 47,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem location_ge_one (n : \u2115) : 1 \u2264 location n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L47"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.location_pos",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 51,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem location_pos (n : \u2115) : 0 < location n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L51"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.epsilon_nonneg",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 52,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem epsilon_nonneg (n : \u2115) : 0 \u2264 epsilon n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L52"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.epsilon_le_one",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 53,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem epsilon_le_one (n : \u2115) : epsilon n \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L53"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.law_integrable",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 65,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem law_integrable (n : \u2115) (f : \u211d \u2192 \u211d) : Integrable f (law n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L65"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.law_integral",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 69,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem law_integral (n : \u2115) (f : \u211d \u2192 \u211d) :\n    (\u222b x, f x \u2202law n) = (1-epsilon n)*(\u222b x, f x \u2202baseLaw)+epsilon n*f (location n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L69"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.escape_cancellation",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 79,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem escape_cancellation (n p : \u2115) (hp : p \u2264 6) :\n    epsilon n*(location n)^p = ((location n)\u207b\u00b9)^(6-p)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L79"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.law_moment",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 85,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem law_moment (n p : \u2115) (hp : p \u2264 6) :\n    (\u222b x : \u211d, x^p \u2202law n) =\n      (1-epsilon n)*baseMoment p+((location n)\u207b\u00b9)^(6-p)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L85"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.inverse_location_tendsto",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 90,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem inverse_location_tendsto :\n    Tendsto (fun n => (location n)\u207b\u00b9) atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L90"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.epsilon_tendsto",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 96,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem epsilon_tendsto : Tendsto epsilon atTop (\ud835\udcdd 0)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L96"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.bounded_observables_tendsto",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 100,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem bounded_observables_tendsto (f : \u211d \u2192 \u211d) (C : \u211d) (hf : \u2200 x, |f x| \u2264 C) :\n    Tendsto (fun n => \u222b x, f x \u2202law n) atTop (\ud835\udcdd (\u222b x, f x \u2202baseLaw))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L100"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.moment_tendsto",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 115,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem moment_tendsto (p : \u2115) (hp : p \u2264 6) :\n    Tendsto (fun n => \u222b x : \u211d, x^p \u2202law n) atTop\n      (\ud835\udcdd (SingularTruncatedMomentObstruction.moment p))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L115"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.sixth_moment_defect",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 136,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem sixth_moment_defect :\n    Tendsto (fun n => \u222b x : \u211d, x^6 \u2202law n) atTop (\ud835\udcdd 89) \u2227\n      (\u222b x : \u211d, x^6 \u2202baseLaw) = 88",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L136"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.sixth_moment_bound",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 143,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem sixth_moment_bound (n : \u2115) : (\u222b x : \u211d, x^6 \u2202law n) \u2264 89",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L143"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.sixth_tail_lower",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 154,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem sixth_tail_lower (n : \u2115) (R : \u211d) (hR : R < location n) :\n    1 \u2264 \u222b x, sixthTail R x \u2202law n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L154"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.sixth_tail_nonvanishing",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 167,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem sixth_tail_nonvanishing (R : \u211d) :\n    \u2203 n : \u2115, 1 \u2264 \u222b x, sixthTail R x \u2202law n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L167"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.no_uniform_sixth_tail_control",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 174,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem no_uniform_sixth_tail_control :\n    \u00ac \u2200 \u03b5 : \u211d, 0 < \u03b5 \u2192 \u2203 R : \u211d, \u2200 n : \u2115, (\u222b x, sixthTail R x \u2202law n) < \u03b5",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L174"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.momentVector_mem",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 190,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem momentVector_mem (n : \u2115) : momentVector n \u2208 realizable",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L190"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.momentVector_tendsto",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 193,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem momentVector_tendsto : Tendsto momentVector atTop (\ud835\udcdd target)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L193"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.target_not_mem",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 198,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem target_not_mem : target \u2209 realizable",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L198"
+    },
+    {
+      "paper": "Section 8 distinct singular even data and actual sixth-moment escape",
+      "declaration": "OperatorDerivativeRewrite.Foundation.TruncatedMomentEscape.realizable_not_isClosed",
+      "file": "Foundation/TruncatedMomentEscape.lean",
+      "line": 207,
+      "source_sha256": "53734468d81e30d7775a58fc5903da41e3ed3096a58c6f89da58a9936c78222f",
+      "declaration_header": "theorem realizable_not_isClosed : \u00ac IsClosed realizable",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/TruncatedMomentEscape.lean#L207"
     }
   ],
   "human_reorganization": [
     "Lemma 3.1 gives a general finite spectral/coordinate proof of the specific verified Jacobi realizations, including a zero last pivot. It is a classical human reconstruction, not a newly named Lean theorem.",
     "The Gram/Schur-complement proof reorganizes the formal completed-square and witness proofs without changing their parameter criteria.",
     "The rational example v=1,k=1/2 and the scale normalization are direct human corollaries of the exact criteria; the formal open-gap module uses a different rational example.",
-    "The proof of boundary cross-moment nonvanishing uses monotonicity of a quadratic on [0,1/5] to simplify the formal inequalities."
+    "The proof of boundary cross-moment nonvanishing uses monotonicity of a quadratic on [0,1/5] to simplify the formal inequalities.",
+    "The separate target (1,0,2,4,12,32,89) is not identified with a Gaussian-cubic parameter. Its cubic Gram form is positive semidefinite but the preceding quadratic block is singular, outside the earlier Jacobi lemma hypothesis.",
+    "The explicit two-atom positions 1 plus/minus sqrt(3) and weights are a printed human coordinate realization of the actual formal two-dimensional coordinate-zero spectral law; its mean and null recurrence identify the same law.",
+    "The native index n+1 is renamed N>=1. The remote atom has weight N^-6 and exact sixth-moment contribution one. Actual probability vectors approach nonrepresentable data although their laws converge on all bounded observables.",
+    "The quantitative total-variation bound 2N^-6, uniform tightness via the sixth-moment bound and lower-power uniform tail estimate are explicitly proved classical deductions. The formal source directly supplies bounded-observable convergence, exact moment limits, uniform sixth-moment bound and failure of uniform sixth-tail control.",
+    "Nonclosedness concerns the actual moment image on unbounded support, not the positive-semidefinite matrix cone or loss of probability mass. Coordinate multiplication fails on the null quotient even though the semidefinite quotient norm itself exists."
   ],
   "literature": "Classical truncated Hamburger theory; exact two-parameter priority unresolved. Curto\u2013Fialkow Theorems 3.1 and 3.9 consulted in the primary paper."
 }

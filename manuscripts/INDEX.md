@@ -4,7 +4,7 @@ The independent publication branch contains reviewed editorial drafts built from
 
 ## Reviewed editorial papers
 
-Twenty-six drafts, 261 pages, all based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. Each folder contains its source/PDF, exact theorem map, build and visual receipts, baseline evidence and candid editorial status. These are reviewed drafts, not submission-ready or novelty-certified manuscripts.
+Twenty-six drafts, 262 pages, all based on frozen verified commit `bab688bb6140cd6316c80680095a914ea0d346db`. Each folder contains its source/PDF, exact theorem map, build and visual receipts, baseline evidence and candid editorial status. These are reviewed drafts, not submission-ready or novelty-certified manuscripts.
 
 ### Arithmetic entire functions
 
@@ -37,7 +37,7 @@ Twenty-six drafts, 261 pages, all based on frozen verified commit `bab688bb6140c
 | Paper | Read and inspect | Scope and status |
 |---|---|---|
 | Quartic normal equations: complete-space solvability, sharp inverse stability, and atomic obstructions | [PDF](quartic-normal/main.pdf) · [LaTeX](quartic-normal/main.tex) · [theorem map](quartic-normal/theorem-map.json) · [editorial status](quartic-normal/editorial-status.md) | Nine pages. Arbitrary-measure L4 embedding with a positive lower bound; complete-space solvability, exponent 1/3, weighted regularity, and optimal exponent at every infinite Poisson datum. Full proofs. Reviewed draft; novelty unresolved. |
-| Exact truncated moment boundaries for a Gaussian–cubic polynomial functional | [PDF](cubic-moment-boundaries/main.pdf) · [LaTeX](cubic-moment-boundaries/main.tex) · [theorem map](cubic-moment-boundaries/theorem-map.json) · [editorial status](cubic-moment-boundaries/editorial-status.md) | Eight pages. Exact square-test criteria, positive spectral realizations, eight/nine and six/seven null-boundary gaps, arbitrary ninth-moment steering and attained sixth-moment bound. All 31 exact algebra transcription checks pass. Classical moment methods; explicit-formula novelty unresolved. |
+| Exact truncated moment boundaries for a Gaussian–cubic polynomial functional | [PDF](cubic-moment-boundaries/main.pdf) · [LaTeX](cubic-moment-boundaries/main.tex) · [theorem map](cubic-moment-boundaries/theorem-map.json) · [editorial status](cubic-moment-boundaries/editorial-status.md) | Nine pages. Exact square-test criteria, positive spectral realizations, eight/nine and six/seven null-boundary gaps, arbitrary ninth-moment steering and attained sixth-moment bound. All 31 exact algebra transcription checks pass. Classical moment methods; explicit-formula novelty unresolved. |
 
 ### Gaussian prediction, forcing and nonlocal semigroups
 

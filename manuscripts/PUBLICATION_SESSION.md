@@ -247,3 +247,7 @@ Completed a new seven-page classical formalization companion with bounded K-squa
 ## Full-support atomic boundary of derivative closability
 
 Expanded the signed-density companion from seven to eight pages with actual smooth cutoff/jets, a well-defined dense Gaussian/Dirac derivative having no closable extension, positive derivative-form failure and distinct pure-Dirac representative failure. 185 exact frozen correspondences; every page inspected and new pages enlarged, clean compilation/fresh receipts. Seven existing finite algebra tests pass; added limits proved analytically. Twenty-six drafts total 261 pages.
+
+## Singular even moment data and actual sixth-moment escape
+
+Expanded the moment paper from eight to nine pages with complete cubic Gram/null obstruction and actual two-atom/remote-atom probability sequence, moment-image nonclosedness, quantitative law convergence, bounded-sixth/tail failure and lower-power distinction. 64 exact frozen correspondences; 52 exact polynomial checks pass. Every final page inspected, new proofs enlarged, failed layout logs retained and final references together after standard article layout cleanup. Twenty-six drafts total 262 pages.

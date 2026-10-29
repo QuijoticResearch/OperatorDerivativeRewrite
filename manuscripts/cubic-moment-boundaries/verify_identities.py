@@ -84,6 +84,14 @@ check('third Jacobi diagonal, denominators cleared',L(x*R3**2)
       -72*v**2*k*(v**3-k**2)*delta+6*v**2*k*D)
 pt=x**3+(4-t)*x**2+(t-7)*x+t-5
 check('sharp sixth-moment identity',L(pt**2,[1,0,1,1,3,t,m6])-m6+t**2-8*t+26)
+singular=[1,0,2,4,12,32,89]
+R=x**2-2*x-2
+newbasis=[P(1),x,R,x*R]
+for i in range(4):
+    for j in range(4):
+        check(f'singular cubic Gram {i},{j}',L(newbasis[i]*newbasis[j],singular)-(1 if i==j==0 or i==j==3 else 2 if i==j==1 else 0))
+base=[1,0,2,4,12,32,88]
+for j in range(2,7):check(f'actual two-atom base recurrence {j}',base[j]-2*base[j-1]-2*base[j-2])
 print(json.dumps(dict(status='PASSED',check_count=len(checks),checks=checks,
     arithmetic='exact multivariate polynomials over fractions.Fraction; no external packages',
     lean_or_measure_theory_reverification=False),indent=2))
