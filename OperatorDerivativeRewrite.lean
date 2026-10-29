@@ -2823,3 +2823,5 @@ import Foundation.FourCubeCompletedHaar
 import Foundation.FourCubeCompletedGram
 import Foundation.FourCubeTransverseMass
 import Foundation.LargerDirichletGaugeObstruction
+import Foundation.FourCubeCompletedIntegerData
+import Foundation.FourCubeCompletedResponse
