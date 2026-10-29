@@ -1858,6 +1858,240 @@
       "source_sha256": "bc1d5b895642b606e3acc730febb68d2d399fe105865eddd2c7228290b6e40b1",
       "declaration_header": "theorem positive_history_recovery_noncompact (t : \u211d\u22650) (ht : 0<t) :\n    \u00ac IsCompactOperator (recoveryOperator.comp (conditionalProjection (pastDirections t)))",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianHistoryRecoveryCompactness.lean#L95"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SymmetricFactorEnergy.projection_commutes",
+      "file": "Foundation/SymmetricFactorEnergy.lean",
+      "line": 28,
+      "source_sha256": "048901f91114f1733fbd22d899eb8d5e20ed6633187be64784396fc0599dcbd4",
+      "declaration_header": "theorem projection_commutes (J : X \u2192\u2097\u1d62[\u211d] Y) (A : Y \u2192L[\u211d] Y) (B : X \u2192L[\u211d] X)\n    (hA : A.toLinearMap.IsSymmetric) (hB : B.toLinearMap.IsSymmetric)\n    (hJ : \u2200 x, A (J x) = J (B x)) (y : Y) :\n    representationProjection J (A y) = A (representationProjection J y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SymmetricFactorEnergy.lean#L28"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SymmetricFactorEnergy.quadratic_energy_split",
+      "file": "Foundation/SymmetricFactorEnergy.lean",
+      "line": 40,
+      "source_sha256": "048901f91114f1733fbd22d899eb8d5e20ed6633187be64784396fc0599dcbd4",
+      "declaration_header": "theorem quadratic_energy_split (J : X \u2192\u2097\u1d62[\u211d] Y)\n    (A : Y \u2192L[\u211d] Y) (B : X \u2192L[\u211d] X) (hA : A.toLinearMap.IsSymmetric)\n    (hJ : \u2200 x, A (J x) = J (B x)) (y : Y) :\n    inner \u211d (A y) y =\n      inner \u211d (B (predictableAdjoint J y)) (predictableAdjoint J y) +\n      inner \u211d (A (y - representationProjection J y))\n        (y - representationProjection J y)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SymmetricFactorEnergy.lean#L40"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SymmetricFactorEnergy.quadratic_energy_contraction",
+      "file": "Foundation/SymmetricFactorEnergy.lean",
+      "line": 68,
+      "source_sha256": "048901f91114f1733fbd22d899eb8d5e20ed6633187be64784396fc0599dcbd4",
+      "declaration_header": "theorem quadratic_energy_contraction (J : X \u2192\u2097\u1d62[\u211d] Y)\n    (A : Y \u2192L[\u211d] Y) (B : X \u2192L[\u211d] X) (hA : A.toLinearMap.IsSymmetric)\n    (hJ : \u2200 x, A (J x) = J (B x)) (hpos : \u2200 y, 0 \u2264 inner \u211d (A y) y) (y : Y) :\n    inner \u211d (B (predictableAdjoint J y)) (predictableAdjoint J y) \u2264 inner \u211d (A y) y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SymmetricFactorEnergy.lean#L68"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SymmetricDefectEnergy.defect_energy_contraction",
+      "file": "Foundation/SymmetricDefectEnergy.lean",
+      "line": 46,
+      "source_sha256": "d47821aa89a18f52f6138351e311a1ef608e352513a539f31399f708122e105e",
+      "declaration_header": "theorem defect_energy_contraction (J : X \u2192\u2097\u1d62[\u211d] Y)\n    (T : Y \u2192L[\u211d] Y) (S : X \u2192L[\u211d] X)\n    (hTsym : T.toLinearMap.IsSymmetric) (hT : \u2200 y, \u2016T y\u2016 \u2264 \u2016y\u2016)\n    (hJ : \u2200 x, T (J x) = J (S x)) (t : \u211d) (ht : 0 < t) (y : Y) :\n    inner \u211d (defect t S (predictableAdjoint J y)) (predictableAdjoint J y) \u2264\n      inner \u211d (defect t T y) y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SymmetricDefectEnergy.lean#L46"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SymmetricDefectEnergy.bounded_domain_transfer",
+      "file": "Foundation/SymmetricDefectEnergy.lean",
+      "line": 59,
+      "source_sha256": "d47821aa89a18f52f6138351e311a1ef608e352513a539f31399f708122e105e",
+      "declaration_header": "theorem bounded_domain_transfer (J : X \u2192\u2097\u1d62[\u211d] Y)\n    (A : \u2115 \u2192 Y \u2192L[\u211d] Y) (B : \u2115 \u2192 X \u2192L[\u211d] X)\n    (hA : \u2200 n, (A n).toLinearMap.IsSymmetric)\n    (hJ : \u2200 n x, A n (J x) = J (B n x))\n    (hpos : \u2200 n y, 0 \u2264 inner \u211d (A n y) y) {y : Y}\n    (hy : y \u2208 boundedEnergyDomain A) :\n    predictableAdjoint J y \u2208 boundedEnergyDomain B",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SymmetricDefectEnergy.lean#L59"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SymmetricDefectEnergy.limiting_energy_contraction",
+      "file": "Foundation/SymmetricDefectEnergy.lean",
+      "line": 70,
+      "source_sha256": "d47821aa89a18f52f6138351e311a1ef608e352513a539f31399f708122e105e",
+      "declaration_header": "theorem limiting_energy_contraction {\u03b9 : Type*} {l : Filter \u03b9} [NeBot l]\n    (J : X \u2192\u2097\u1d62[\u211d] Y) (A : \u03b9 \u2192 Y \u2192L[\u211d] Y) (B : \u03b9 \u2192 X \u2192L[\u211d] X)\n    (hA : \u2200 i, (A i).toLinearMap.IsSymmetric)\n    (hJ : \u2200 i x, A i (J x) = J (B i x))\n    (hpos : \u2200 i y, 0 \u2264 inner \u211d (A i y) y) (y : Y) {EX EY : \u211d}\n    (hX : Tendsto (fun i => inner \u211d (B i (predictableAdjoint J y))\n      (predictableAdjoint J y)) l (\ud835\udcdd EX))\n    (hY : Tendsto (fun i => inner \u211d (A i y) y) l (\ud835\udcdd EY)) : EX \u2264 EY",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SymmetricDefectEnergy.lean#L70"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NonreversibleFactorCounterexample.kernel_rows",
+      "file": "Foundation/NonreversibleFactorCounterexample.lean",
+      "line": 19,
+      "source_sha256": "84b46d26ebaf6217f724656066be4a9a1fd1262eb9c30210c1acd6a18cbcbb4d",
+      "declaration_header": "theorem kernel_rows (i : Fin 3) : \u2211 j, kernel i j = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NonreversibleFactorCounterexample.lean#L19"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NonreversibleFactorCounterexample.kernel_columns",
+      "file": "Foundation/NonreversibleFactorCounterexample.lean",
+      "line": 22,
+      "source_sha256": "84b46d26ebaf6217f724656066be4a9a1fd1262eb9c30210c1acd6a18cbcbb4d",
+      "declaration_header": "theorem kernel_columns (j : Fin 3) : \u2211 i, kernel i j = 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NonreversibleFactorCounterexample.lean#L22"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NonreversibleFactorCounterexample.transition_norm_le",
+      "file": "Foundation/NonreversibleFactorCounterexample.lean",
+      "line": 76,
+      "source_sha256": "84b46d26ebaf6217f724656066be4a9a1fd1262eb9c30210c1acd6a18cbcbb4d",
+      "declaration_header": "theorem transition_norm_le (v : Space) : \u2016transitionLinear v\u2016 \u2264 \u2016v\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NonreversibleFactorCounterexample.lean#L76"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NonreversibleFactorCounterexample.projection_idempotent",
+      "file": "Foundation/NonreversibleFactorCounterexample.lean",
+      "line": 90,
+      "source_sha256": "84b46d26ebaf6217f724656066be4a9a1fd1262eb9c30210c1acd6a18cbcbb4d",
+      "declaration_header": "theorem projection_idempotent (v : Space) : projection (projection v) = projection v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NonreversibleFactorCounterexample.lean#L90"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NonreversibleFactorCounterexample.projection_symmetric",
+      "file": "Foundation/NonreversibleFactorCounterexample.lean",
+      "line": 95,
+      "source_sha256": "84b46d26ebaf6217f724656066be4a9a1fd1262eb9c30210c1acd6a18cbcbb4d",
+      "declaration_header": "theorem projection_symmetric : projection.toLinearMap.IsSymmetric",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NonreversibleFactorCounterexample.lean#L95"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NonreversibleFactorCounterexample.projection_fixed_iff",
+      "file": "Foundation/NonreversibleFactorCounterexample.lean",
+      "line": 102,
+      "source_sha256": "84b46d26ebaf6217f724656066be4a9a1fd1262eb9c30210c1acd6a18cbcbb4d",
+      "declaration_header": "theorem projection_fixed_iff (v : Space) : projection v = v \u2194 v 1 = v 2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NonreversibleFactorCounterexample.lean#L102"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NonreversibleFactorCounterexample.retained_subspace_invariant",
+      "file": "Foundation/NonreversibleFactorCounterexample.lean",
+      "line": 115,
+      "source_sha256": "84b46d26ebaf6217f724656066be4a9a1fd1262eb9c30210c1acd6a18cbcbb4d",
+      "declaration_header": "theorem retained_subspace_invariant (v : Space) :\n    projection (transition (projection v)) = transition (projection v)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NonreversibleFactorCounterexample.lean#L115"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NonreversibleFactorCounterexample.transition_pullback",
+      "file": "Foundation/NonreversibleFactorCounterexample.lean",
+      "line": 137,
+      "source_sha256": "84b46d26ebaf6217f724656066be4a9a1fd1262eb9c30210c1acd6a18cbcbb4d",
+      "declaration_header": "theorem transition_pullback (f : Fin 2 \u2192 \u211d) :\n    transition (pullback f) = pullback (coarseTransition f)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NonreversibleFactorCounterexample.lean#L137"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NonreversibleFactorCounterexample.uniform_stationary",
+      "file": "Foundation/NonreversibleFactorCounterexample.lean",
+      "line": 150,
+      "source_sha256": "84b46d26ebaf6217f724656066be4a9a1fd1262eb9c30210c1acd6a18cbcbb4d",
+      "declaration_header": "theorem uniform_stationary (v : Space) :\n    (\u222b i, transition v i \u2202\u03bc) = \u222b i, v i \u2202\u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NonreversibleFactorCounterexample.lean#L150"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NonreversibleFactorCounterexample.energy_nonnegative",
+      "file": "Foundation/NonreversibleFactorCounterexample.lean",
+      "line": 158,
+      "source_sha256": "84b46d26ebaf6217f724656066be4a9a1fd1262eb9c30210c1acd6a18cbcbb4d",
+      "declaration_header": "theorem energy_nonnegative (v : Space) : 0 \u2264 energy v",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NonreversibleFactorCounterexample.lean#L158"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NonreversibleFactorCounterexample.energy_integral",
+      "file": "Foundation/NonreversibleFactorCounterexample.lean",
+      "line": 165,
+      "source_sha256": "84b46d26ebaf6217f724656066be4a9a1fd1262eb9c30210c1acd6a18cbcbb4d",
+      "declaration_header": "theorem energy_integral (v : Space) :\n    energy v = \u222b i, (v i - transition v i)*v i \u2202\u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NonreversibleFactorCounterexample.lean#L165"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NonreversibleFactorCounterexample.projection_transition_ne",
+      "file": "Foundation/NonreversibleFactorCounterexample.lean",
+      "line": 176,
+      "source_sha256": "84b46d26ebaf6217f724656066be4a9a1fd1262eb9c30210c1acd6a18cbcbb4d",
+      "declaration_header": "theorem projection_transition_ne :\n    projection (transition witness) \u2260 transition (projection witness)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NonreversibleFactorCounterexample.lean#L176"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NonreversibleFactorCounterexample.energy_witness",
+      "file": "Foundation/NonreversibleFactorCounterexample.lean",
+      "line": 182,
+      "source_sha256": "84b46d26ebaf6217f724656066be4a9a1fd1262eb9c30210c1acd6a18cbcbb4d",
+      "declaration_header": "theorem energy_witness : energy witness = 21/8",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NonreversibleFactorCounterexample.lean#L182"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NonreversibleFactorCounterexample.energy_projected_witness",
+      "file": "Foundation/NonreversibleFactorCounterexample.lean",
+      "line": 185,
+      "source_sha256": "84b46d26ebaf6217f724656066be4a9a1fd1262eb9c30210c1acd6a18cbcbb4d",
+      "declaration_header": "theorem energy_projected_witness : energy (projection witness) = 3",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NonreversibleFactorCounterexample.lean#L185"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NonreversibleFactorCounterexample.projection_increases_energy",
+      "file": "Foundation/NonreversibleFactorCounterexample.lean",
+      "line": 189,
+      "source_sha256": "84b46d26ebaf6217f724656066be4a9a1fd1262eb9c30210c1acd6a18cbcbb4d",
+      "declaration_header": "theorem projection_increases_energy : energy witness < energy (projection witness)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NonreversibleFactorCounterexample.lean#L189"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.NonreversibleFactorCounterexample.transition_not_symmetric",
+      "file": "Foundation/NonreversibleFactorCounterexample.lean",
+      "line": 193,
+      "source_sha256": "84b46d26ebaf6217f724656066be4a9a1fd1262eb9c30210c1acd6a18cbcbb4d",
+      "declaration_header": "theorem transition_not_symmetric : \u00ac transition.toLinearMap.IsSymmetric",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/NonreversibleFactorCounterexample.lean#L193"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RawMartingaleEnergyMeasureObstruction.shrinkingInterval_antitone",
+      "file": "Foundation/RawMartingaleEnergyMeasureObstruction.lean",
+      "line": 15,
+      "source_sha256": "9041b0fd8ddddd8251339394359fd1a1acda32e6f319caace3e3b8a44708b034",
+      "declaration_header": "theorem shrinkingInterval_antitone : Antitone shrinkingInterval",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RawMartingaleEnergyMeasureObstruction.lean#L15"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RawMartingaleEnergyMeasureObstruction.shrinkingInterval_inter",
+      "file": "Foundation/RawMartingaleEnergyMeasureObstruction.lean",
+      "line": 22,
+      "source_sha256": "9041b0fd8ddddd8251339394359fd1a1acda32e6f319caace3e3b8a44708b034",
+      "declaration_header": "theorem shrinkingInterval_inter : (\u22c2 n, shrinkingInterval n) = \u2205",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RawMartingaleEnergyMeasureObstruction.lean#L22"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RawMartingaleEnergyMeasureObstruction.no_constant_origin_interval_measure",
+      "file": "Foundation/RawMartingaleEnergyMeasureObstruction.lean",
+      "line": 33,
+      "source_sha256": "9041b0fd8ddddd8251339394359fd1a1acda32e6f319caace3e3b8a44708b034",
+      "declaration_header": "theorem no_constant_origin_interval_measure (\u03c1 : Measure \u211d)\n    (h\u03c1 : \u2200 t : \u211d, 0 < t \u2192 \u03c1 (Ioc 0 t) = 1) : False",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RawMartingaleEnergyMeasureObstruction.lean#L33"
+    },
+    {
+      "paper": "Section 10 stationary-factor defect energy, or Section 14 raw martingale interval-energy obstruction",
+      "declaration": "OperatorDerivativeRewrite.Foundation.RawMartingaleEnergyMeasureObstruction.no_actual_increment_energy_measure",
+      "file": "Foundation/RawMartingaleEnergyMeasureObstruction.lean",
+      "line": 50,
+      "source_sha256": "9041b0fd8ddddd8251339394359fd1a1acda32e6f319caace3e3b8a44708b034",
+      "declaration_header": "theorem no_actual_increment_energy_measure :\n    \u00ac \u2203 \u03c1 : Measure \u211d, \u2200 t : \u211d, 0 < t \u2192\n      \u03c1 (Ioc 0 t) = ENNReal.ofReal (\u222b \u03c9, (value t \u03c9 - value 0 \u03c9) ^ 2 \u2202gaussianProduct)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RawMartingaleEnergyMeasureObstruction.lean#L50"
     }
   ],
   "paper_sections": {
@@ -1892,7 +2126,10 @@
     "Backward differentiation places Brownian state in the closed integrated-history source span. Exact source projection and Hermite completeness give the same conditional expectation for every square-integrable function of the specified terminal integrated value using the full history or the two-coordinate current state. Scalar current value fails at actual times 1,2,3 via pairings 4/3 and 35/24.",
     "The full/scalar prediction error variances h^3/3 and s*h^2/4+h^3/3 and the current-state Gram determinant s^4/12 are labelled complete human covariance calculations.",
     "Recovered disjoint Brownian increment directions give infinite integrated-history source dimension. Noncompact integrated-history recovery and compact two-state recovery are explicit human applications of the earlier formal source-dimension criterion, not a claim that target-specific sufficiency equates the full operators.",
-    "Lachal\u2019s primary author publication record/abstract is used for classical integrated-process prediction context only. The publisher full text was unavailable; no detailed bridge theorem or new state-augmentation principle is imported."
+    "Lachal\u2019s primary author publication record/abstract is used for classical integrated-process prediction context only. The publisher full text was unavailable; no detailed bridge theorem or new state-augmentation principle is imported.",
+    "Section 10 reconstructs symmetric invariant-factor defect splitting and its bounded-energy/finite-limit transfer. The actual nonreversible three-state uniform chain preserves the partition subspace but does not commute with its conditional projection; the centered witness increases defect energy from 21/8 to 3. Symmetry is not dropped from the positive theorem.",
+    "Section 14 continues the same actual raw-observation martingale: all origin-increment energies equal one, contradicting continuity from above for intervals (0,1/(n+1)]. No globally finite measure assumption is required, and an atom at zero cannot repair those half-open interval values. This is not a claim against energy-measure constructions under additional regularity.",
+    "The classical reversible Dirichlet-form context was checked in an indexed primary author-PDF excerpt, Section 13.2 and Lemma 13.6 of Levin\u2013Peres. Direct full-PDF retrieval timed out; no detailed unseen factor theorem or novelty comparison is imported. The printed arguments are complete."
   ],
   "literature": [
     {

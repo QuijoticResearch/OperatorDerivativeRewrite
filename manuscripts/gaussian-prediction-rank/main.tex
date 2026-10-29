@@ -777,6 +777,72 @@ These are source/sample constraints at a fixed observation family.
 They do not by themselves identify an adapted physical-time stochastic
 integrand or a Clark--Ocone representation for a different observed process.
 
+\section{A stationary factor need not decrease defect energy}
+The preceding source/sample identities use specific compatible Gaussian
+operators. General stationary observation factors require their own
+energy argument. Here is the classical positive mechanism. On a real
+Hilbert space let $T$ be a bounded symmetric contraction and let $Q$ be
+the orthogonal projection onto a closed $T$-invariant subspace $V$.
+Symmetry makes $V^\perp$ invariant as well: if $r\perp V$ and $v\in V$,
+$\langle Tr,v\rangle=\langle r,Tv\rangle=0$. Thus $TQ=QT$.
+Writing $f=Qf+r$ gives the exact splitting
+\begin{equation}\label{eq:defectsplit}
+ \langle(I-T)f,f\rangle
+ =\langle(I-T)Qf,Qf\rangle+\langle(I-T)r,r\rangle.
+\end{equation}
+Since $\langle Tr,r\rangle\leq\|Tr\|\|r\|\leq\|r\|^2$,
+the residual term is nonnegative. Hence $Q$ decreases defect energy.
+The isometric-factor version in the frozen library uses $Q=JJ^*$,
+$TJ=JS$ and the same orthogonal decomposition; it is not a separate
+probabilistic assumption. In particular, for each $t>0$ the conclusion
+applies to $t^{-1}(I-T_t)$ when $T_t$ is a symmetric contraction
+preserving the factor. Uniform upper bounds on these defect energies
+then transfer to the factor, as do existing finite limiting energies.
+No unbounded-generator domain is inferred just from one bounded defect.
+
+Stationarity and factor invariance alone do not suffice. Take the
+uniform probability law on $\{0,1,2\}$ and the Markov matrix
+\[
+ T=\begin{pmatrix}0&1&0\\1/2&0&1/2\\1/2&0&1/2\end{pmatrix},
+ \qquad Qf=\left(f_0,\frac{f_1+f_2}{2},\frac{f_1+f_2}{2}\right).
+\]
+Every row and column of $T$ sums to one, all entries are nonnegative,
+and $Q$ is exactly conditional expectation on the partition
+$\{\{0\},\{1,2\}\}$. Jensen's inequality and column sums prove
+$\|Tf\|_{L^2}^2\leq\|f\|_{L^2}^2$. The range of $Q$ is $T$-invariant,
+since
+\[
+ T(a,b,b)=(b,(a+b)/2,(a+b)/2).
+\]
+Its genuine coarse Markov matrix is therefore
+$\left(\begin{smallmatrix}0&1\\1/2&1/2\end{smallmatrix}\right)$,
+with stationary masses $1/3,2/3$.
+Nevertheless the original $T$ is not symmetric:
+$T_{01}=1\ne1/2=T_{10}$. For
+\[
+ f=(2,-1/4,-7/4),\qquad Qf=(2,-1,-1),
+ \qquad \mathcal E(f)=\frac13\sum_{j=0}^2(f_j-(Tf)_j)f_j,
+\]
+direct evaluation gives
+\[
+ Tf=(-1/4,1/8,1/8),\quad TQf=(-1,1/2,1/2),\quad
+ \mathcal E(f)=21/8<3=\mathcal E(Qf).
+\]
+Also $QTf=Tf\ne TQf$. Thus the symmetric splitting cannot be
+imported merely because the retained subspace is invariant. Both
+vectors are centered in the actual stationary law. Defect energy is
+nonnegative here, by the same contraction bound, even though projection
+can increase it. The conventional reversible Dirichlet-form setting
+is recalled in Levin--Peres~\cite{LP}, Section 13.2. The example
+tests the stated generalization; no new Markov-energy principle or
+novelty for its finite mechanism is asserted.
+\par\smallskip\begingroup\small\raggedright
+\textit{Source correspondence:} \code{SymmetricFactorEnergy.quadratic_energy_split},
+\code{SymmetricDefectEnergy.defect_energy_contraction};
+\code{NonreversibleFactorCounterexample.retained_subspace_invariant},
+\code{energy_witness}, \code{energy_projected_witness}.
+\par\endgroup
+
 \section{Finite observed dimension and compact recovery}
 \begin{theorem}[Two different compactness classifications]\label{thm:compactobs}
 For an arbitrary observation index set $I$,
@@ -1028,7 +1094,7 @@ is not compact. In contrast the Gram determinant of $k_s,b_s$ is
  \|k_s\|^2\|b_s\|^2-\langle k_s,b_s\rangle^2
             =\frac{s^4}{12}>0.
 \]
-The current-state source span has dimension two; Section 10 therefore
+The current-state source span has dimension two; Theorem~\ref{thm:compactobs} therefore
 makes $RQ_s^{(2)}$ compact. These recovery conclusions are explicit
 human applications of the already proved source-dimension criterion.
 They are compatible with \eqref{eq:integratedstate}, which agrees
@@ -1139,6 +1205,30 @@ Gaussianity supplies our particular $L^2$ normalization, not a new
 filtration principle. Neither a continuous sample path nor a vanishing
 observation amplitude proves continuous arrival of information.
 
+\subsection*{The increment energy need not be a time measure}
+For this same actual raw martingale, the origin increment energy is
+$\E|M_t-M_0|^2=1$ for every $t>0$. There is no countably additive
+measure $\rho$ on $\R$ such that
+\[
+ \rho((0,t])=\E|M_t-M_0|^2\quad(t>0).
+\]
+Indeed $E_n=(0,1/(n+1)]$ decreases to the empty set, while
+$\rho(E_n)=1$. The first interval has finite mass, so continuity
+from above gives $\rho(E_n)\to\rho(\varnothing)=0$, a contradiction.
+No finiteness of the whole measure is required. Placing an atom at
+zero does not repair these values: zero belongs to none of $E_n$.
+This conclusion concerns the specified usual half-open interval
+convention and the original time-zero value.
+
+Consequently an energy measure used to complete physical-time step
+integrands is a genuine additional obligation in a raw filtration.
+Square integrability and the martingale property alone do not supply
+it in this generality. This does not contradict constructions under
+right-continuity or other hypotheses proving the required measure.
+The continuity-from-above proof is elementary; the actual source
+correspondences are
+\begin{center}\code{RawMartingaleEnergyMeasureObstruction}.\end{center}
+
 \section{Formal scope and primary comparisons}
 \begingroup\raggedright
 The verified baseline is
@@ -1155,7 +1245,7 @@ Raw quartic conditional energies and cross-target residuals are in
 \code{GaussianQuarticResidualCovariance}. The quarter-Hurst witness is
 \code{FractionalCurrentObservationObstruction}.
 The terminal bracket application is mapped to \code{GaussianTerminalBracketPrediction}, \code{GaussianTerminalWeightedBracket}, \code{GaussianTerminalBracketObstruction}, \code{GaussianTerminalBracketProducts} and \code{GaussianTerminalStrongBracket}. Its harmonic refinements are separately labelled human deductions. Exact declarations, original hypotheses, source hashes and human proof
-reorganizations accompany the manuscript. Sections 9--11 add the
+reorganizations accompany the manuscript. Sections 9--12 add the
 original joint source/sample recovery identity, the exact finite-source
 compactness classification and the positive-chaos block criterion. The
 combined finite-rank estimate and observed distance-one conclusion are
@@ -1182,6 +1272,7 @@ neural-network performance claims. Full baseline verification evidence
 was hash-checked without repeating a research build.
 \par\endgroup
 
+\clearpage
 \begin{thebibliography}{9}
 \bibitem{BaudoinRecovery} F. Baudoin, \emph{Lecture 34: The Wiener chaos expansion},
 primary author lecture, November 4, 2012.
@@ -1206,5 +1297,6 @@ Journal of Stochastic Analysis (2011), article 762486.
 \href{https://math.univ-lyon1.fr/~alachal/english_publications.html}
 {Primary author publication record and abstract}; detailed bridge
 theorems not imported.
+\bibitem{LP} D. A. Levin and Y. Peres, \emph{Markov Chains and Mixing Times}, second edition, with contributions by E. L. Wilmer, Section 13.2, Lemma 13.6. Author-hosted PDF, \href{https://pages.uoregon.edu/dlevin/MARKOV/markovmixing.pdf}{pages.uoregon.edu/dlevin/MARKOV/markovmixing.pdf}.
 \end{thebibliography}
 \end{document}
