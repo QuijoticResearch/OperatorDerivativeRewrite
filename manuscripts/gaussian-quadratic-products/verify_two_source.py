@@ -1,4 +1,6 @@
 """Independent Gaussian-moment transcription checks for a full two-source parameterization."""
+import sys
+sys.dont_write_bytecode=True
 from verify_quadratic_identities import P,poly,var,mean
 import json
 x,y,alpha,beta,gamma=[var(i) for i in range(5)]
