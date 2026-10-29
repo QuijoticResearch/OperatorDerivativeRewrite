@@ -13024,3 +13024,32 @@ end OperatorDerivativeRewrite.Foundation.InfiniteGaussian
 #print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGauge.weight_swap
 #print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGauge.gauge_inv_preserving
 #print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGauge.kernel_symmetric
+
+-- Actual homogeneous unit-slab ground normalization; checkpoint1737.
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.ground_nonempty
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.ground
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.pairing
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.pairing_symmetric
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.function_pos
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.square_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.normalizer
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.normalizer_pos
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.stationary
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.stationary_probability
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.stationary_integral
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.density
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.density_pos
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.density_measurable
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.density_integrable
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.density_integral
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.transition
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.transition_apply
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.transition_markov
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.transition_integral
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.balance_density
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.density_gauge_left
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.density_gauge_right
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.stationary_pairing
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.transition_stationary
+#print axioms OperatorDerivativeRewrite.Foundation.CubeSlabGround.GroundData.stationary_reversible
