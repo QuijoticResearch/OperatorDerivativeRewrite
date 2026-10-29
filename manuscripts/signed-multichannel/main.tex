@@ -31,6 +31,9 @@ adjacent-refinement estimates, and only then passes to the observable
 completion. A joint diagonal realizes every completed observable
 through actual signed polynomial sums. The pairing is indefinite;
 no positive path-space measure or stochastic isometry is asserted.
+Static Appell reconstruction, unique higher-order polynomial Stein weight,
+missing first polynomial coordinate dual and actual Schwartz-density duals
+are proved separately from the chronological formula.
 We distinguish canonical coefficient uniqueness from uniqueness of channel synthesis. Exact variation/path-law, quartic-error, deterministic $L^2$-input and terminal-channel obstructions delimit stronger interpretations. All principal results are supported by a frozen
 Lean development. Novelty relative to earlier higher-order signed
 calculus remains unresolved.
@@ -154,6 +157,146 @@ These formulas follow from finite signed Fubini, with absolute
 integrability of polynomials against the product variation.
 The notation is polynomial conditioning; no general conditional
 expectation theorem for an indefinite path law is invoked.
+
+
+\section{Static Appell reconstruction and its actual density duals}
+Fix one kernel time $\tau>0$ and abbreviate $a=c\tau\ne0$.
+Let $L_a(P)=\int P(x)k_\tau(x)\,dx$ on real polynomials.
+Equation~\eqref{eq:moments} says, as a \emph{formal power series},
+\[
+ L_a(e^{xz})=e^{az^p}.
+\]
+This notation means applying $L_a$ separately to each polynomial
+coefficient. No exchange of an infinite exponential series with an
+integral is required. Define monic polynomials $H_n$ by
+\begin{equation}\label{eq:appellgenerating}
+ e^{xz-az^p}=\sum_{n\geq0}H_n(x)\frac{z^n}{n!},\qquad
+ H_n(x)=n!\sum_{j=0}^{\lfloor n/p\rfloor}
+       \frac{(-a)^j x^{n-pj}}{j!(n-pj)!}.
+\end{equation}
+Each sum is finite. Formal differentiation and the preceding moment
+identity give
+\[
+ H_0=1,\qquad H_n'=nH_{n-1}\ (n\geq1),\qquad
+ L_a(H_n)=\mathbf1_{n=0}.
+\]
+Differentiating with respect to $z$ also yields the raising identity
+$H_{n+1}=xH_n-paH_n^{(p-1)}$, so these are exactly the source's
+pure-order Appell polynomials, not merely another monic family.
+The exponential-polynomial mechanism is classical. Hile and
+Stanoyevitch~\cite{hile}, Sections 3--4, construct broader heat
+polynomials by generating functions; their first-time-order case
+has exponential symbol $e^{tQ(z)}$, including the displayed family
+with $Q(z)=-az^p$ at time one. No new Appell construction is claimed.
+
+Since $H_n$ is monic of degree $n$, triangular elimination gives a
+unique finite expansion of every polynomial:
+\begin{equation}\label{eq:appellcoordinates}
+ P=\sum_{n=0}^{\deg P}c_n(P)H_n,\qquad
+ c_n(P)=\frac{L_a(P^{(n)})}{n!}.
+\end{equation}
+Indeed $H_k^{(n)}=(k)_nH_{k-n}$ for $n\leq k$, and is zero otherwise.
+Applying $L_a$ leaves only $k=n$, with value $n!$, proving the
+coordinate formula and uniqueness without an orthogonality assumption.
+
+\subsection*{Nondegenerate pairing does not supply polynomial coordinate duals}
+The signed polynomial pairing $[P,Q]=L_a(PQ)$ is nondegenerate.
+Here is an explicit witness for every nonzero $Q$ of degree $d$:
+\begin{equation}\label{eq:appelltop}
+ [H_{(p-1)d},Q]
+ =\operatorname{lc}(Q)\,((p-1)d)!\,(pa)^d\ne0.
+\end{equation}
+To prove it, first use formal coefficients in
+\[
+ L_a(e^{xz-az^p}e^{xw})
+ =\exp\!\left(a\big((z+w)^p-z^p\big)\right).
+\]
+The coefficient of $w^d$, multiplied by $d!$, is a polynomial in
+$z$ of degree at most $(p-1)d$. A product of factors with respective
+$w$-degrees $j_1,\ldots,j_r\geq1$, summing to $d$, has $z$-degree
+$pr-d\leq(p-1)d$. Equality forces $r=d$ and every $j_i=1$.
+Thus its leading coefficient is $(pa)^d$. Comparing the coefficient
+of $z^n/n!$ proves
+\[
+ [H_n,x^d]=0\quad(n>(p-1)d),\qquad
+ [H_{(p-1)d},x^d]=((p-1)d)!(pa)^d.
+\]
+The lower monomials of $Q$ vanish at the last index, proving
+\eqref{eq:appelltop}, including $d=0$.
+
+This gives the unique polynomial higher-order Stein weight:
+\[
+ L_a\!\left(P\frac{x}{pa}\right)=L_a(P^{(p-1)}).
+\]
+Existence is \eqref{eq:stein}. If another polynomial $W$ has this
+identity for all $P$, then $[P,W-x/(pa)]=0$ for all $P$, and
+\eqref{eq:appelltop} forces $W=x/(pa)$.
+
+In contrast, for $p>2$ there is no polynomial $Q$ with
+$[H_n,Q]=\mathbf1_{n=1}$ for all $n$. If such $Q$ were zero the
+$n=1$ test would fail. Otherwise put $d=\deg Q$ and test at
+$n=(p-1)d$. This index cannot equal one, since $p-1\geq2$;
+the requested pairing is zero, contradicting \eqref{eq:appelltop}.
+In particular there is no polynomial first-order weight $W$ with
+\begin{equation}\label{eq:nofirststein}
+ L_a(PW)=L_a(P')\qquad\hbox{for every polynomial }P.
+\end{equation}
+Such a weight would represent $c_1$, since
+$L_a(H_n')=\mathbf1_{n=1}$. The Gaussian case $p=2$ is excluded
+from this obstruction: its familiar weight $x/(2a)$ does satisfy the
+first-order identity. Nondegeneracy tests whether a polynomial is
+annihilated by \emph{all} pairing probes; it does not assert that every
+linear coordinate functional is represented by a polynomial weight.
+
+\subsection*{Actual Schwartz-density coordinate duals}
+There is nevertheless a concrete dual for every coordinate. Set
+\begin{equation}\label{eq:appellactualdensity}
+ \rho_n(x)=\frac{(-1)^n}{n!}k_\tau^{(n)}(x).
+\end{equation}
+These are real Schwartz functions, so $P\rho_n$ is absolutely
+Lebesgue integrable for every polynomial $P$. Repeated ordinary
+integration by parts, with vanishing boundary terms, gives
+\begin{equation}\label{eq:appellbiorthogonal}
+ \int P(x)\rho_n(x)\,dx=c_n(P),\qquad
+ \int H_j(x)\rho_n(x)\,dx=\mathbf1_{j=n}.
+\end{equation}
+The $(-1)^n$ from integration by parts cancels that in
+\eqref{eq:appellactualdensity}. Thus the polynomial basis has actual
+Schwartz-density biorthogonal coordinates, even though its first
+coordinate has no polynomial dual in the original signed pairing
+when $p>2$. In particular $\rho_1$ cannot equal $Wk_\tau$ almost
+everywhere for any polynomial $W$: such equality would imply
+\eqref{eq:nofirststein} after integrating every polynomial test.
+This statement excludes polynomial weights only. It supplies no
+$L^2(|k_\tau|\,dx)$ score bound, bounded completion of all coordinate
+maps, positive covariance or probability interpretation.
+
+Finally define the centered polynomial primitive by
+\[
+ \mathcal I P=\sum_n\frac{c_n(P)}{n+1}H_{n+1}.
+\]
+It satisfies $(\mathcal I P)'=P$ and $L_a(\mathcal I P)=0$.
+Any other such primitive differs by a constant with mean zero, hence
+by zero. Testing on the basis gives, for every integer $r\geq0$,
+\[
+ \mathcal I^r P^{(r)}=P-\sum_{n<r}c_n(P)H_n.
+\]
+For $n\geq r$ the falling derivative factors cancel the successive
+primitive denominators; for $n<r$ the derivative is zero. The omitted
+part is all low Appell coordinates, rather than just the constant.
+For example $c_1(x^{p+1})=(p+1)p!a\ne0$, so reconstruction from the
+$p$th derivative by this primitive does not equal mere centering.
+These are finite polynomial identities. The primitive is not declared
+to be a chronological stochastic integral; the multitime analytic
+completion and native coefficient limits still require the separate
+proofs below.
+
+\par\smallskip\begingroup\small\raggedright
+\textit{Source correspondence:} \code{PureOrderAppellCalculus},
+\code{PureOrderAppellExpansion}, \code{PureOrderAppellPairing},
+\code{PureOrderSteinUniqueness}, \code{PureOrderAppellPrimitive},
+\code{PureOrderAppellTail}, \code{HigherHeatAppellDuals}.
+\par\endgroup
 
 \section{The common factorial domain}\label{sec:domain}
 Let $S$ be the union of the positive dyadic grid times in $(0,1]$.
@@ -933,5 +1076,9 @@ walks on the complex plane, arXiv:1603.05437 (2016).
 Higher-order fractional equations and related time-changed
 pseudo-processes, arXiv:2402.13691v2 (2024).
 \url{https://arxiv.org/abs/2402.13691}.
+\bibitem{hile} G. N. Hile and A. Stanoyevitch,
+\emph{Heat Polynomial Generalizations}, author-hosted primary manuscript,
+Sections 3--4, exponential generating functions.
+\url{https://stanoyevitch.net/papers/no14_w_Hile_AMRT_02.pdf}.
 \end{thebibliography}
 \end{document}

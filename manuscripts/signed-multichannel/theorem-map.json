@@ -880,6 +880,294 @@
       "source_sha256": "76b3c4721053e5eacba3ed55319fd93eba24abfbbedb70080f88c101dec73501",
       "declaration_header": "theorem no_factorial_realization (m : \u2115) (t : \u211d) :\n    \u00ac \u2203 u : FactorialAnalyticDomain.H, \u2200 x : \u211d,\n      FactorialAnalyticFunctions.realize u x = (flow m t (x : \u2102)).re",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/RiemannFactorialObstruction.lean#L129"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderAppellCalculus.raise_mean_zero",
+      "file": "Foundation/PureOrderAppellCalculus.lean",
+      "line": 13,
+      "source_sha256": "14b4655a6aec752b436c9756b9084937e4aa5216c8b591489d421a5d8fc665a9",
+      "declaration_header": "theorem raise_mean_zero (p : \u2115) (a : \u211d) (P : Polynomial \u211d) :\n    expectation p a (raise p a P) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderAppellCalculus.lean#L13"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderAppellCalculus.derivative_raise",
+      "file": "Foundation/PureOrderAppellCalculus.lean",
+      "line": 19,
+      "source_sha256": "14b4655a6aec752b436c9756b9084937e4aa5216c8b591489d421a5d8fc665a9",
+      "declaration_header": "theorem derivative_raise (p : \u2115) (a : \u211d) (P : Polynomial \u211d) :\n    derivative (raise p a P) = P + raise p a (derivative P)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderAppellCalculus.lean#L19"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderAppellCalculus.appell_mean_zero",
+      "file": "Foundation/PureOrderAppellCalculus.lean",
+      "line": 35,
+      "source_sha256": "14b4655a6aec752b436c9756b9084937e4aa5216c8b591489d421a5d8fc665a9",
+      "declaration_header": "theorem appell_mean_zero (p : \u2115) (a : \u211d) (n : \u2115) :\n    expectation p a (appell p a (n+1)) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderAppellCalculus.lean#L35"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderAppellCalculus.appell_derivative",
+      "file": "Foundation/PureOrderAppellCalculus.lean",
+      "line": 38,
+      "source_sha256": "14b4655a6aec752b436c9756b9084937e4aa5216c8b591489d421a5d8fc665a9",
+      "declaration_header": "theorem appell_derivative (p : \u2115) (a : \u211d) (n : \u2115) :\n    derivative (appell p a (n+1)) = (n+1 : \u211d) \u2022 appell p a n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderAppellCalculus.lean#L38"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderAppellExpansion.appell_monic_degree",
+      "file": "Foundation/PureOrderAppellExpansion.lean",
+      "line": 12,
+      "source_sha256": "17651adb00fcce6ad6fbe46296156f8c91e6e1c67503927ac14099dfa023c096",
+      "declaration_header": "theorem appell_monic_degree (p : \u2115) (a : \u211d) (n : \u2115) : IsMonicOfDegree (appell p a n) n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderAppellExpansion.lean#L12"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderAppellExpansion.coordinate_apply",
+      "file": "Foundation/PureOrderAppellExpansion.lean",
+      "line": 62,
+      "source_sha256": "17651adb00fcce6ad6fbe46296156f8c91e6e1c67503927ac14099dfa023c096",
+      "declaration_header": "theorem coordinate_apply (p : \u2115) (a : \u211d) (n : \u2115) (P : Polynomial \u211d) :\n    coordinate p a n P = expectation p a (derivative^[n] P) / (n.factorial : \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderAppellExpansion.lean#L62"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderAppellExpansion.coordinate_appell",
+      "file": "Foundation/PureOrderAppellExpansion.lean",
+      "line": 66,
+      "source_sha256": "17651adb00fcce6ad6fbe46296156f8c91e6e1c67503927ac14099dfa023c096",
+      "declaration_header": "theorem coordinate_appell (p : \u2115) (a : \u211d) (n k : \u2115) :\n    coordinate p a n (appell p a k) = if k=n then 1 else 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderAppellExpansion.lean#L66"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderAppellExpansion.expansion",
+      "file": "Foundation/PureOrderAppellExpansion.lean",
+      "line": 86,
+      "source_sha256": "17651adb00fcce6ad6fbe46296156f8c91e6e1c67503927ac14099dfa023c096",
+      "declaration_header": "theorem expansion (p : \u2115) (a : \u211d) (P : Polynomial \u211d) :\n    \u2211 n \u2208 ((basis p a).repr P).support,\n      (expectation p a (derivative^[n] P) / (n.factorial : \u211d)) \u2022 appell p a n = P",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderAppellExpansion.lean#L86"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderAppellPairing.above_degree_zero",
+      "file": "Foundation/PureOrderAppellPairing.lean",
+      "line": 34,
+      "source_sha256": "bf82978a8f6fd77e339c474c3ce5e76d8105374574713c128a0b20c309206210",
+      "declaration_header": "theorem above_degree_zero (p : \u2115) (a : \u211d) (d n : \u2115) (hn : (p - 1) * d < n) :\n    pairing p a (appell p a n) (X^d) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderAppellPairing.lean#L34"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderAppellPairing.top_pairing",
+      "file": "Foundation/PureOrderAppellPairing.lean",
+      "line": 45,
+      "source_sha256": "bf82978a8f6fd77e339c474c3ce5e76d8105374574713c128a0b20c309206210",
+      "declaration_header": "theorem top_pairing (p : \u2115) (a : \u211d) (d : \u2115) :\n    pairing p a (appell p a ((p - 1) * d)) (X^d) =\n      (((p - 1) * d).factorial : \u211d) * ((p:\u211d) * a)^d",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderAppellPairing.lean#L45"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderAppellPairing.polynomial_top_pairing",
+      "file": "Foundation/PureOrderAppellPairing.lean",
+      "line": 85,
+      "source_sha256": "bf82978a8f6fd77e339c474c3ce5e76d8105374574713c128a0b20c309206210",
+      "declaration_header": "theorem polynomial_top_pairing (p : \u2115) (hp : 1 < p) (a : \u211d) (P : Polynomial \u211d) :\n    pairing p a (appell p a ((p - 1) * P.natDegree)) P =\n      P.leadingCoeff * (((p - 1) * P.natDegree).factorial : \u211d) * ((p:\u211d) * a)^P.natDegree",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderAppellPairing.lean#L85"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderAppellPairing.polynomial_top_ne_zero",
+      "file": "Foundation/PureOrderAppellPairing.lean",
+      "line": 98,
+      "source_sha256": "bf82978a8f6fd77e339c474c3ce5e76d8105374574713c128a0b20c309206210",
+      "declaration_header": "theorem polynomial_top_ne_zero (p : \u2115) (hp : 1 < p) (a : \u211d) (ha : a \u2260 0)\n    (P : Polynomial \u211d) (hP : P \u2260 0) :\n    pairing p a (appell p a ((p - 1) * P.natDegree)) P \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderAppellPairing.lean#L98"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderAppellPairing.full_pairing_nondegenerate",
+      "file": "Foundation/PureOrderAppellPairing.lean",
+      "line": 106,
+      "source_sha256": "bf82978a8f6fd77e339c474c3ce5e76d8105374574713c128a0b20c309206210",
+      "declaration_header": "theorem full_pairing_nondegenerate (p : \u2115) (hp : 1 < p) (a : \u211d) (ha : a \u2260 0) (P : Polynomial \u211d)\n    (h : \u2200 Q : Polynomial \u211d, pairing p a Q P = 0) : P = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderAppellPairing.lean#L106"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderSteinUniqueness.canonical_weight",
+      "file": "Foundation/PureOrderSteinUniqueness.lean",
+      "line": 10,
+      "source_sha256": "7d69b74a3462505ff0184df3929198e18a845ada749e74f0faecfc8a973ca2cc",
+      "declaration_header": "theorem canonical_weight (p : \u2115) (hp : 0 < p) (a : \u211d) (ha : a \u2260 0) (P : Polynomial \u211d) :\n    expectation p a (P * (((p:\u211d)*a)\u207b\u00b9 \u2022 (X:Polynomial \u211d))) =\n      expectation p a (derivative^[p-1] P)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderSteinUniqueness.lean#L10"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderSteinUniqueness.polynomial_weight_unique",
+      "file": "Foundation/PureOrderSteinUniqueness.lean",
+      "line": 17,
+      "source_sha256": "7d69b74a3462505ff0184df3929198e18a845ada749e74f0faecfc8a973ca2cc",
+      "declaration_header": "theorem polynomial_weight_unique (p : \u2115) (hp : 1 < p) (a : \u211d) (ha : a \u2260 0)\n    (W : Polynomial \u211d) (h : \u2200 P : Polynomial \u211d, expectation p a (P*W) =\n      expectation p a (derivative^[p-1] P)) : W = ((p:\u211d)*a)\u207b\u00b9 \u2022 (X:Polynomial \u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderSteinUniqueness.lean#L17"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderSteinUniqueness.no_polynomial_dual_one",
+      "file": "Foundation/PureOrderSteinUniqueness.lean",
+      "line": 25,
+      "source_sha256": "7d69b74a3462505ff0184df3929198e18a845ada749e74f0faecfc8a973ca2cc",
+      "declaration_header": "theorem no_polynomial_dual_one (p : \u2115) (hp : 2 < p) (a : \u211d) (ha : a \u2260 0) :\n    \u00ac \u2203 Q : Polynomial \u211d, \u2200 n : \u2115,\n      pairing p a (appell p a n) Q = if n=1 then 1 else 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderSteinUniqueness.lean#L25"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderSteinUniqueness.coordinate_one_not_polynomial_pairing",
+      "file": "Foundation/PureOrderSteinUniqueness.lean",
+      "line": 43,
+      "source_sha256": "7d69b74a3462505ff0184df3929198e18a845ada749e74f0faecfc8a973ca2cc",
+      "declaration_header": "theorem coordinate_one_not_polynomial_pairing (p : \u2115) (hp : 2 < p) (a : \u211d) (ha : a \u2260 0) :\n    \u00ac \u2203 Q : Polynomial \u211d, \u2200 P : Polynomial \u211d,\n      pairing p a P Q = coordinate p a 1 P",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderSteinUniqueness.lean#L43"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderSteinUniqueness.no_first_order_polynomial_weight",
+      "file": "Foundation/PureOrderSteinUniqueness.lean",
+      "line": 51,
+      "source_sha256": "7d69b74a3462505ff0184df3929198e18a845ada749e74f0faecfc8a973ca2cc",
+      "declaration_header": "theorem no_first_order_polynomial_weight (p : \u2115) (hp : 2 < p) (a : \u211d) (ha : a \u2260 0) :\n    \u00ac \u2203 W : Polynomial \u211d, \u2200 P : Polynomial \u211d,\n      expectation p a (P*W) = expectation p a P.derivative",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderSteinUniqueness.lean#L51"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderAppellPrimitive.derivative_primitive",
+      "file": "Foundation/PureOrderAppellPrimitive.lean",
+      "line": 17,
+      "source_sha256": "c703cd72cb979425c2e119c099a13820c80f203ada75f77776692817caad03ef",
+      "declaration_header": "theorem derivative_primitive (p : \u2115) (a : \u211d) (P : Polynomial \u211d) :\n    derivative (primitive p a P) = P",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderAppellPrimitive.lean#L17"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderAppellPrimitive.primitive_mean_zero",
+      "file": "Foundation/PureOrderAppellPrimitive.lean",
+      "line": 27,
+      "source_sha256": "c703cd72cb979425c2e119c099a13820c80f203ada75f77776692817caad03ef",
+      "declaration_header": "theorem primitive_mean_zero (p : \u2115) (a : \u211d) (P : Polynomial \u211d) :\n    expectation p a (primitive p a P) = 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderAppellPrimitive.lean#L27"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderAppellPrimitive.primitive_unique",
+      "file": "Foundation/PureOrderAppellPrimitive.lean",
+      "line": 43,
+      "source_sha256": "c703cd72cb979425c2e119c099a13820c80f203ada75f77776692817caad03ef",
+      "declaration_header": "theorem primitive_unique (p : \u2115) (a : \u211d) (P Q : Polynomial \u211d)\n    (hd : derivative Q = P) (he : expectation p a Q = 0) : Q = primitive p a P",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderAppellPrimitive.lean#L43"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderAppellPrimitive.primitive_derivative",
+      "file": "Foundation/PureOrderAppellPrimitive.lean",
+      "line": 50,
+      "source_sha256": "c703cd72cb979425c2e119c099a13820c80f203ada75f77776692817caad03ef",
+      "declaration_header": "theorem primitive_derivative (p : \u2115) (a : \u211d) (P : Polynomial \u211d) :\n    primitive p a (derivative P) = P-C (expectation p a P)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderAppellPrimitive.lean#L50"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderAppellPrimitive.recover_appell",
+      "file": "Foundation/PureOrderAppellPrimitive.lean",
+      "line": 69,
+      "source_sha256": "c703cd72cb979425c2e119c099a13820c80f203ada75f77776692817caad03ef",
+      "declaration_header": "theorem recover_appell (p : \u2115) (a : \u211d) (r n : \u2115) :\n    recover p a r (appell p a n) = if n < r then 0 else appell p a n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderAppellPrimitive.lean#L69"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderAppellPrimitive.recover_eq_tail",
+      "file": "Foundation/PureOrderAppellPrimitive.lean",
+      "line": 107,
+      "source_sha256": "c703cd72cb979425c2e119c099a13820c80f203ada75f77776692817caad03ef",
+      "declaration_header": "theorem recover_eq_tail (p : \u2115) (a : \u211d) (r : \u2115) (P : Polynomial \u211d) :\n    recover p a r P = tailPart p a r P",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderAppellPrimitive.lean#L107"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderAppellTail.actual_coordinate",
+      "file": "Foundation/PureOrderAppellTail.lean",
+      "line": 91,
+      "source_sha256": "892d2ee5a9c4c57bd7e42c0ee937268a8cb1f5339f6db419d357b31f5ad63537",
+      "declaration_header": "theorem actual_coordinate (m : \u2115) (hm : 0 < m) (t : NNReal) (ht : 0 < t)\n    (P : Polynomial \u211d) (n : \u2115) :\n    coordinate (2*m) ((-1:\u211d)^(m+1)*(t:\u211d)) n P =\n      HigherHeatPolynomialRealization.kernelExpectation m hm t ht (derivative^[n] P) /\n        (n.factorial:\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderAppellTail.lean#L91"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderAppellTail.next_power_first_coordinate",
+      "file": "Foundation/PureOrderAppellTail.lean",
+      "line": 119,
+      "source_sha256": "892d2ee5a9c4c57bd7e42c0ee937268a8cb1f5339f6db419d357b31f5ad63537",
+      "declaration_header": "theorem next_power_first_coordinate (p : \u2115) (hp : 0 < p) (a : \u211d) :\n    coordinate p a 1 (X^(p+1)) = (p+1:\u211d)*(p.factorial:\u211d)*a",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderAppellTail.lean#L119"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.PureOrderAppellTail.next_power_tail_not_centered",
+      "file": "Foundation/PureOrderAppellTail.lean",
+      "line": 127,
+      "source_sha256": "892d2ee5a9c4c57bd7e42c0ee937268a8cb1f5339f6db419d357b31f5ad63537",
+      "declaration_header": "theorem next_power_tail_not_centered (p : \u2115) (hp : 1 < p) (a : \u211d) (ha : a \u2260 0) :\n    tailPart p a p (X^(p+1)) \u2260 X^(p+1)-C (expectation p a (X^(p+1)))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/PureOrderAppellTail.lean#L127"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatAppellDuals.density_polynomial_integrable",
+      "file": "Foundation/HigherHeatAppellDuals.lean",
+      "line": 16,
+      "source_sha256": "8250e6246c88073469f5ec4a12b9e53473ca98d9c5ef0101b4f06db4847ad39b",
+      "declaration_header": "theorem density_polynomial_integrable (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) (n : \u2115)\n    (P : Polynomial \u211d) : Integrable (fun x : \u211d => ((P.eval x:\u211d):\u2102)*density m hm t ht n x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatAppellDuals.lean#L16"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatAppellDuals.density_coordinate",
+      "file": "Foundation/HigherHeatAppellDuals.lean",
+      "line": 20,
+      "source_sha256": "8250e6246c88073469f5ec4a12b9e53473ca98d9c5ef0101b4f06db4847ad39b",
+      "declaration_header": "theorem density_coordinate (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) (n : \u2115) (P : Polynomial \u211d) :\n    (\u222b x : \u211d, ((P.eval x:\u211d):\u2102)*density m hm t ht n x) =\n      ((coordinate (2*m) ((-1:\u211d)^(m+1)*(t:\u211d)) n P : \u211d):\u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatAppellDuals.lean#L20"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatAppellDuals.density_biorthogonal",
+      "file": "Foundation/HigherHeatAppellDuals.lean",
+      "line": 45,
+      "source_sha256": "8250e6246c88073469f5ec4a12b9e53473ca98d9c5ef0101b4f06db4847ad39b",
+      "declaration_header": "theorem density_biorthogonal (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t)\n    (n k : \u2115) :\n    (\u222b x : \u211d, (((appell (2*m) ((-1:\u211d)^(m+1)*(t:\u211d)) k).eval x:\u211d):\u2102)*\n      density m hm t ht n x) = if k=n then 1 else 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatAppellDuals.lean#L45"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatKernelStein.kernel_ode",
+      "file": "Foundation/HigherHeatKernelStein.lean",
+      "line": 63,
+      "source_sha256": "63f172710b8130a6275c4464b15bae78da72c62d3e72e7b54c65feafc21c4dfd",
+      "declaration_header": "theorem kernel_ode (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) (x : \u211d) :\n    (x:\u2102)*evenKernel m hm t ht x=\n      odeCoefficient m t*iteratedDeriv (2*m-1) (evenKernel m hm t ht : \u211d \u2192 \u2102) x",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatKernelStein.lean#L63"
+    },
+    {
+      "paper": "Section 3 static Appell reconstruction, nondegenerate polynomial pairing, Stein-weight boundary, actual Schwartz-density coordinates and centered primitive",
+      "declaration": "OperatorDerivativeRewrite.Foundation.HigherHeatKernelStein.schwartz_stein",
+      "file": "Foundation/HigherHeatKernelStein.lean",
+      "line": 69,
+      "source_sha256": "63f172710b8130a6275c4464b15bae78da72c62d3e72e7b54c65feafc21c4dfd",
+      "declaration_header": "theorem schwartz_stein (m : \u2115) (hm : 0 < m) (t : \u211d\u22650) (ht : 0 < t) (f : \ud835\udce2(\u211d,\u2102)) :\n    (\u222b x : \u211d, (x:\u2102)*f x*evenKernel m hm t ht x)=\n      (2*m:\u2115)*(-1:\u2102)^(m+1)*(t:\u211d)*\n        (\u222b x : \u211d, jet (2*m-1) f x*evenKernel m hm t ht x)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/HigherHeatKernelStein.lean#L69"
     }
   ],
   "human_reorganization": [
@@ -887,6 +1175,16 @@
     "The signed quartic square cancellation is not an L2 norm limit: its actual absolute-variation error diverges. Normalized variation probabilities still have pointwise distance at least 24T from the proposed negative limit.",
     "The explicit L2-small deterministic spike has constant fourth-power clock. Angular-frequency value exp(-1) corresponds to the formal 2pi-frequency convention after rescaling; no continuity claim on the stronger factorial domain is refuted.",
     "The final complementary-derivative channel is necessary for the displayed terminal test by a direct derivative calculation. The named source proves first-channel range failure; no general channel minimality or synthesis injectivity is inferred.",
-    "Section 3 gives the elementary factorial-series reconstruction of the faithful one-coordinate realization. Every derivative at zero is an ell1 coefficient. Actual integer-order arithmetic theta moments have the lower bound d*4^n from the fixed positive interval [2,3], so they cannot be realized in this coefficient domain. The actual real/complex derivative bridge and nonmembership theorem are mapped. This does not assert nonrepresentability in every multivariate quotient, injectivity of the completed product pairing, a failure of the scoped signed reconstruction, or a zero/threshold/RH implication. The coefficient-growth test is elementary and is not claimed novel."
+    "Section 3 gives the elementary factorial-series reconstruction of the faithful one-coordinate realization. Every derivative at zero is an ell1 coefficient. Actual integer-order arithmetic theta moments have the lower bound d*4^n from the fixed positive interval [2,3], so they cannot be realized in this coefficient domain. The actual real/complex derivative bridge and nonmembership theorem are mapped. This does not assert nonrepresentability in every multivariate quotient, injectivity of the completed product pairing, a failure of the scoped signed reconstruction, or a zero/threshold/RH implication. The coefficient-growth test is elementary and is not claimed novel.",
+    "Section 3 reconstructs the finite Appell algebra using explicitly formal coefficient generating functions, not an unproved integral of an exponential series. Leading pairings expose full polynomial nondegeneracy, uniqueness of x/(pa) as the higher-order polynomial Stein weight, and failure of a polynomial representative for coordinate one or first derivative when p>2. The Gaussian p=2 case is retained as an exception.",
+    "Actual derivatives of the real Schwartz heat kernel divided by factorials give absolutely polynomial-integrable Lebesgue density duals. No L2 score or bounded completed coordinate map is inferred. The impossibility of rho_1=W*k for polynomial W is a labelled elementary consequence of the mapped first-order obstruction.",
+    "The unique centered polynomial primitive and all finite derivative-primitive tails are reconstructed on the monic basis. Removing all low Appell coordinates is distinct from centering; x^(p+1) supplies a nonzero coordinate-one witness. These static identities are not asserted to define chronological stochastic integration or replace the native multitime convergence proof.",
+    "Hile\u2013Stanoyevitch primary Sections 3\u20134 establish broader classical polynomial evolution/generating-function antecedents. Exact polynomial-coordinate obstruction priority remains unresolved; no new Appell mechanism is claimed."
+  ],
+  "literature": [
+    {
+      "url": "https://stanoyevitch.net/papers/no14_w_Hile_AMRT_02.pdf",
+      "review": "Author-hosted primary Hile\u2013Stanoyevitch Heat Polynomial Generalizations, Sections 3\u20134, equations (3.1), (4.3) and (4.7), inspected for exponential generating functions and broader polynomial evolution. Does not certify priority for the exact coordinate-dual obstruction."
+    }
   ]
 }
