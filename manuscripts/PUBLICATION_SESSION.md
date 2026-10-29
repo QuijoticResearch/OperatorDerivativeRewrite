@@ -171,3 +171,7 @@ Twelve-page reviewed draft; 169 exact source correspondences; fourteen exact alg
 ## Sticky-clock companion completed
 
 Eight-page reviewed classical companion; 163 exact source correspondences. The proof constructs the supported mass from actual smooth residuals and a summable subsequence, then proves holding, strict variance deficit and causal observed-filtration martingales. All pages inspected; references resolved; no overfull boxes. Nineteen reviewed drafts total 171 pages. No research-source or campaign changes.
+
+## Sticky pair consolidated in the clock companion
+
+The same paper is now eleven pages, with 217 exact source correspondences. Full Brownian-coordinate finite-increment laws follow from stopped Fourier products; covariance equals expected holding, and positive diagonal mass occurs at some deterministic time in every positive horizon. All final pages and enlarged compensation/covariance/reference pages inspected. Nineteen reviewed drafts total 174 pages.

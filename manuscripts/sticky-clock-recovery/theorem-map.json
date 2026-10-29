@@ -1451,7 +1451,7 @@
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyNaturalMartingales.lean#L55"
     },
     {
-      "paper": "9: separate formal boundary, not a premise",
+      "paper": "12: separate formal boundary, not a premise",
       "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorClosure.closable",
       "file": "Foundation/StickyGeneratorClosure.lean",
       "line": 75,
@@ -1460,13 +1460,499 @@
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorClosure.lean#L75"
     },
     {
-      "paper": "9: separate formal boundary, not a premise",
+      "paper": "12: separate formal boundary, not a premise",
       "declaration": "OperatorDerivativeRewrite.Foundation.StickyGeneratorClosure.domain_dense",
       "file": "Foundation/StickyGeneratorClosure.lean",
       "line": 85,
       "source_sha256": "c76879ce8a6ecdf15234dc3716c3bed3763699dba220dbede34e22696fa054d6",
       "declaration_header": "theorem domain_dense (\u03ba : \u211d\u22650) : Dense ((operator \u03ba).domain : Set C\u2080(\u211d, \u211d))",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyGeneratorClosure.lean#L85"
+    },
+    {
+      "paper": "9: actual two-source paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairPaths.center_clock_bounds",
+      "file": "Foundation/StickyPairPaths.lean",
+      "line": 31,
+      "source_sha256": "abc6930f02a41965339a4d2312049abd9475077f1d20deb32b9b7722d22bb8c7",
+      "declaration_header": "theorem center_clock_bounds (\u03ba : \u211d\u22650) (w : SampleSpace) (t : \u211d\u22650) :\n    t \u2264 centerClock \u03ba w t \u2227 centerClock \u03ba w t \u2264 2*t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairPaths.lean#L31"
+    },
+    {
+      "paper": "9: actual two-source paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairPaths.center_clock_continuous",
+      "file": "Foundation/StickyPairPaths.lean",
+      "line": 45,
+      "source_sha256": "abc6930f02a41965339a4d2312049abd9475077f1d20deb32b9b7722d22bb8c7",
+      "declaration_header": "theorem center_clock_continuous (\u03ba : \u211d\u22650) (w : SampleSpace) : Continuous (centerClock \u03ba w)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairPaths.lean#L45"
+    },
+    {
+      "paper": "9: actual two-source paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairPaths.center_clock_monotone",
+      "file": "Foundation/StickyPairPaths.lean",
+      "line": 48,
+      "source_sha256": "abc6930f02a41965339a4d2312049abd9475077f1d20deb32b9b7722d22bb8c7",
+      "declaration_header": "theorem center_clock_monotone (\u03ba : \u211d\u22650) (w : SampleSpace) : Monotone (centerClock \u03ba w)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairPaths.lean#L48"
+    },
+    {
+      "paper": "9: actual two-source paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairPaths.clock_balance",
+      "file": "Foundation/StickyPairPaths.lean",
+      "line": 62,
+      "source_sha256": "abc6930f02a41965339a4d2312049abd9475077f1d20deb32b9b7722d22bb8c7",
+      "declaration_header": "theorem clock_balance (\u03ba : \u211d\u22650) (w : SampleSpace) (t : \u211d\u22650) :\n    centerClock \u03ba w t+inverse \u03ba w t=2*t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairPaths.lean#L62"
+    },
+    {
+      "paper": "9: actual two-source paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairPaths.pair_measurable",
+      "file": "Foundation/StickyPairPaths.lean",
+      "line": 120,
+      "source_sha256": "abc6930f02a41965339a4d2312049abd9475077f1d20deb32b9b7722d22bb8c7",
+      "declaration_header": "theorem pair_measurable (\u03ba : \u211d\u22650) : Measurable (pairPath \u03ba)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairPaths.lean#L120"
+    },
+    {
+      "paper": "9: actual two-source paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairPaths.pair_hasLaw",
+      "file": "Foundation/StickyPairPaths.lean",
+      "line": 136,
+      "source_sha256": "abc6930f02a41965339a4d2312049abd9475077f1d20deb32b9b7722d22bb8c7",
+      "declaration_header": "theorem pair_hasLaw (\u03ba : \u211d\u22650) : HasLaw (pairPath \u03ba) (pathLaw \u03ba) sourceMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairPaths.lean#L136"
+    },
+    {
+      "paper": "9: actual two-source paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairPaths.difference",
+      "file": "Foundation/StickyPairPaths.lean",
+      "line": 139,
+      "source_sha256": "abc6930f02a41965339a4d2312049abd9475077f1d20deb32b9b7722d22bb8c7",
+      "declaration_header": "theorem difference (\u03ba : \u211d\u22650) (w : Sample) (t : \u211d\u22650) :\n    leftPath \u03ba w t-rightPath \u03ba w t=Real.sqrt 2*separationPath \u03ba w t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairPaths.lean#L139"
+    },
+    {
+      "paper": "9: actual two-source paths",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairPaths.coincidence",
+      "file": "Foundation/StickyPairPaths.lean",
+      "line": 151,
+      "source_sha256": "abc6930f02a41965339a4d2312049abd9475077f1d20deb32b9b7722d22bb8c7",
+      "declaration_header": "theorem coincidence (\u03ba : \u211d\u22650) (w : Sample) (t : \u211d\u22650) :\n    leftPath \u03ba w t=rightPath \u03ba w t \u2194 separationPath \u03ba w t=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairPaths.lean#L151"
+    },
+    {
+      "paper": "9,11: same-sample coincidence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairSampling.coincidence_occupation",
+      "file": "Foundation/StickyPairSampling.lean",
+      "line": 23,
+      "source_sha256": "eb99533fa08a409933542becc7f2a4eff2deda54ba647e987d341fd8352e42a3",
+      "declaration_header": "theorem coincidence_occupation : \u2200\u1d50 w \u2202sourceMeasure, \u2200 \u03ba T : \u211d\u22650,\n    BrownianClockMeasureTransport.ordinaryTime\n      ({t : \u211d\u22650 | leftPath \u03ba w t=rightPath \u03ba w t} \u2229 Iic T) =\n      ENNReal.ofReal ((T:\u211d)-inverse \u03ba w.1 T)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairSampling.lean#L23"
+    },
+    {
+      "paper": "9,11: same-sample coincidence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairSampling.inverse_cosine_mean",
+      "file": "Foundation/StickyPairSampling.lean",
+      "line": 79,
+      "source_sha256": "eb99533fa08a409933542becc7f2a4eff2deda54ba647e987d341fd8352e42a3",
+      "declaration_header": "theorem inverse_cosine_mean (\u03ba t : \u211d\u22650) (u : \u211d) :\n    (\u222b w, cosineProcess u (inverse \u03ba w t) w \u2202gaussianProduct)=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairSampling.lean#L79"
+    },
+    {
+      "paper": "9,11: same-sample coincidence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairSampling.inverse_sine_mean",
+      "file": "Foundation/StickyPairSampling.lean",
+      "line": 86,
+      "source_sha256": "eb99533fa08a409933542becc7f2a4eff2deda54ba647e987d341fd8352e42a3",
+      "declaration_header": "theorem inverse_sine_mean (\u03ba t : \u211d\u22650) (u : \u211d) :\n    (\u222b w, sineProcess u (inverse \u03ba w t) w \u2202gaussianProduct)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairSampling.lean#L86"
+    },
+    {
+      "paper": "9: stopped complex martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianComplexSampling.phase_eq",
+      "file": "Foundation/BrownianComplexSampling.lean",
+      "line": 20,
+      "source_sha256": "13a1b9d4035ff30e354bceda0d18280dd75f034a394059105d26b29581c6f6de",
+      "declaration_header": "theorem phase_eq (u : \u211d) (t : \u211d\u22650) (w : SampleSpace) :\n    phase u t w=(weight u t : \u2102)*observable u (clockPath w t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianComplexSampling.lean#L20"
+    },
+    {
+      "paper": "9: stopped complex martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianComplexSampling.phase_at_stop_measurable",
+      "file": "Foundation/BrownianComplexSampling.lean",
+      "line": 32,
+      "source_sha256": "13a1b9d4035ff30e354bceda0d18280dd75f034a394059105d26b29581c6f6de",
+      "declaration_header": "theorem phase_at_stop_measurable (u : \u211d) :\n    Measurable[h\u03c4.measurableSpace] (fun w => phase u (\u03c4 w) w)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianComplexSampling.lean#L32"
+    },
+    {
+      "paper": "9: stopped complex martingale",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianComplexSampling.phase_conditional",
+      "file": "Foundation/BrownianComplexSampling.lean",
+      "line": 72,
+      "source_sha256": "13a1b9d4035ff30e354bceda0d18280dd75f034a394059105d26b29581c6f6de",
+      "declaration_header": "theorem phase_conditional (u : \u211d) (h\u03c3\u03c4 : \u2200 w, \u03c3 w \u2264 \u03c4 w)\n    (N : \u2115) (hN : \u2200 w, \u03c4 w \u2264 N) :\n    gaussianProduct[(fun w => phase u (\u03c4 w) w) | h\u03c3.measurableSpace]\n      =\u1d50[gaussianProduct] (fun w => phase u (\u03c3 w) w)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianComplexSampling.lean#L72"
+    },
+    {
+      "paper": "9: phase normalization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianCompensatedSampling.phase_norm",
+      "file": "Foundation/BrownianCompensatedSampling.lean",
+      "line": 15,
+      "source_sha256": "7a0063d380f0f081d01ae63f6861c7dd8bd8c415e27dba4a7e119f20b47a5cc4",
+      "declaration_header": "theorem phase_norm (u : \u211d) (t : \u211d\u22650) (w : SampleSpace) : \u2016phase u t w\u2016=weight u t",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianCompensatedSampling.lean#L15"
+    },
+    {
+      "paper": "9: phase normalization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianCompensatedSampling.phase_nonzero",
+      "file": "Foundation/BrownianCompensatedSampling.lean",
+      "line": 19,
+      "source_sha256": "7a0063d380f0f081d01ae63f6861c7dd8bd8c415e27dba4a7e119f20b47a5cc4",
+      "declaration_header": "theorem phase_nonzero (u : \u211d) (t : \u211d\u22650) (w : SampleSpace) : phase u t w \u2260 0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianCompensatedSampling.lean#L19"
+    },
+    {
+      "paper": "9: phase normalization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianCompensatedSampling.phase_norm_one_le",
+      "file": "Foundation/BrownianCompensatedSampling.lean",
+      "line": 24,
+      "source_sha256": "7a0063d380f0f081d01ae63f6861c7dd8bd8c415e27dba4a7e119f20b47a5cc4",
+      "declaration_header": "theorem phase_norm_one_le (u : \u211d) (t : \u211d\u22650) (w : SampleSpace) : 1 \u2264 \u2016phase u t w\u2016",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianCompensatedSampling.lean#L24"
+    },
+    {
+      "paper": "9: phase normalization",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianCompensatedSampling.bounded_weighted_sampling",
+      "file": "Foundation/BrownianCompensatedSampling.lean",
+      "line": 34,
+      "source_sha256": "7a0063d380f0f081d01ae63f6861c7dd8bd8c415e27dba4a7e119f20b47a5cc4",
+      "declaration_header": "theorem bounded_weighted_sampling (u : \u211d) (h\u03c3\u03c4 : \u2200 w, \u03c3 w \u2264 \u03c4 w)\n    (N : \u2115) (hN : \u2200 w, \u03c4 w \u2264 N) (F : SampleSpace \u2192 \u2102)\n    (hF : StronglyMeasurable[h\u03c3.measurableSpace] F) (C : \u211d) (hC : \u2200 w, \u2016F w\u2016 \u2264 C) :\n    (\u222b w, F w*phase u (\u03c4 w) w \u2202gaussianProduct)=\n      \u222b w, F w*phase u (\u03c3 w) w \u2202gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianCompensatedSampling.lean#L34"
+    },
+    {
+      "paper": "9: exact finite phase products",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianFiniteCompensator.density_measurable",
+      "file": "Foundation/BrownianFiniteCompensator.lean",
+      "line": 26,
+      "source_sha256": "fc86af56467c5b7af25199ae496123803cb4c78ef3aade72c86e594cb593956b",
+      "declaration_header": "theorem density_measurable (n : \u2115) : Measurable[(h\u03c4 n).measurableSpace] (density \u03c4 u n)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianFiniteCompensator.lean#L26"
+    },
+    {
+      "paper": "9: exact finite phase products",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianFiniteCompensator.density_bound",
+      "file": "Foundation/BrownianFiniteCompensator.lean",
+      "line": 36,
+      "source_sha256": "fc86af56467c5b7af25199ae496123803cb4c78ef3aade72c86e594cb593956b",
+      "declaration_header": "theorem density_bound (n N : \u2115) (hN : \u2200 k, k \u2264 n \u2192 \u2200 w, \u03c4 k w \u2264 N) (w : SampleSpace) :\n    \u2016density \u03c4 u n w\u2016 \u2264 \u220f k \u2208 Finset.range n, weight (u k) N",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianFiniteCompensator.lean#L36"
+    },
+    {
+      "paper": "9: exact finite phase products",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianFiniteCompensator.density_integrable",
+      "file": "Foundation/BrownianFiniteCompensator.lean",
+      "line": 49,
+      "source_sha256": "fc86af56467c5b7af25199ae496123803cb4c78ef3aade72c86e594cb593956b",
+      "declaration_header": "theorem density_integrable (n N : \u2115) (hN : \u2200 k, k \u2264 n \u2192 \u2200 w, \u03c4 k w \u2264 N) :\n    Integrable (density \u03c4 u n) gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianFiniteCompensator.lean#L49"
+    },
+    {
+      "paper": "9: exact finite phase products",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianFiniteCompensator.density_mean",
+      "file": "Foundation/BrownianFiniteCompensator.lean",
+      "line": 57,
+      "source_sha256": "fc86af56467c5b7af25199ae496123803cb4c78ef3aade72c86e594cb593956b",
+      "declaration_header": "theorem density_mean (n N : \u2115) (hN : \u2200 k, k \u2264 n \u2192 \u2200 w, \u03c4 k w \u2264 N) :\n    (\u222b w, density \u03c4 u n w \u2202gaussianProduct)=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianFiniteCompensator.lean#L57"
+    },
+    {
+      "paper": "9: exact finite phase products",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianFiniteCompensator.inverse_density_mean",
+      "file": "Foundation/BrownianFiniteCompensator.lean",
+      "line": 89,
+      "source_sha256": "fc86af56467c5b7af25199ae496123803cb4c78ef3aade72c86e594cb593956b",
+      "declaration_header": "theorem inverse_density_mean (\u03ba : \u211d\u22650) (times : \u2115 \u2192 \u211d\u22650) (ht : Monotone times)\n    (u : \u2115 \u2192 \u211d) (n : \u2115) :\n    (\u222b w, density (fun k w => inverse \u03ba w (times k)) u n w \u2202gaussianProduct)=1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianFiniteCompensator.lean#L89"
+    },
+    {
+      "paper": "10: source Brownian increments",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianFiniteIncrementFourier.source_formula",
+      "file": "Foundation/BrownianFiniteIncrementFourier.lean",
+      "line": 43,
+      "source_sha256": "8ff7e472f4adbef2f5e11ffa0d23990ecef914033d719e662d2fe03aea55b99f",
+      "declaration_header": "theorem source_formula (times : \u2115 \u2192 \u211d\u22650) (ht : Monotone times) (u : \u2115 \u2192 \u211d) (n : \u2115) :\n    (\u222b w, incrementProduct (fun r w => clockPath w r) times u n w \u2202gaussianProduct)=\n    \u220f k \u2208 Finset.range n, (Real.exp (-(u k)^2*((times (k+1):\u211d)-times k)/2) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianFiniteIncrementFourier.lean#L43"
+    },
+    {
+      "paper": "10: source Brownian increments",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianFiniteIncrementFourier.centered_formula",
+      "file": "Foundation/BrownianFiniteIncrementFourier.lean",
+      "line": 53,
+      "source_sha256": "8ff7e472f4adbef2f5e11ffa0d23990ecef914033d719e662d2fe03aea55b99f",
+      "declaration_header": "theorem centered_formula (times : \u2115 \u2192 \u211d\u22650) (ht : Monotone times) (u : \u2115 \u2192 \u211d) (n : \u2115) :\n    (\u222b w, incrementProduct (fun r w => centeredPath w r) times u n w \u2202gaussianProduct)=\n    \u220f k \u2208 Finset.range n, (Real.exp (-(u k)^2*((times (k+1):\u211d)-times k)/2) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianFiniteIncrementFourier.lean#L53"
+    },
+    {
+      "paper": "10: complete balanced increment law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairFiniteIncrementFourier.interval_compensation",
+      "file": "Foundation/StickyPairFiniteIncrementFourier.lean",
+      "line": 15,
+      "source_sha256": "5bd0149f1674332f9da0aa2d0e6aef8df876f9004ea5b5ef7e0667995fa6da55",
+      "declaration_header": "theorem interval_compensation (\u03ba s t : \u211d\u22650) (w : SampleSpace) (v a b : \u211d) (hab : a^2=b^2) :\n    (Real.exp (-(v*a)^2*((centerClock \u03ba w t:\u211d)-centerClock \u03ba w s)/2) : \u2102)*\n      observable (v*b) (clockPath w (inverse \u03ba w t)-clockPath w (inverse \u03ba w s)) =\n    (Real.exp (-(v*a)^2*((t:\u211d)-s)) : \u2102)*\n      (phase (v*b) (inverse \u03ba w t) w/phase (v*b) (inverse \u03ba w s) w)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairFiniteIncrementFourier.lean#L15"
+    },
+    {
+      "paper": "10: complete balanced increment law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairFiniteIncrementFourier.fiber",
+      "file": "Foundation/StickyPairFiniteIncrementFourier.lean",
+      "line": 40,
+      "source_sha256": "5bd0149f1674332f9da0aa2d0e6aef8df876f9004ea5b5ef7e0667995fa6da55",
+      "declaration_header": "theorem fiber (\u03ba : \u211d\u22650) (times : \u2115 \u2192 \u211d\u22650) (ht : Monotone times)\n    (u : \u2115 \u2192 \u211d) (n : \u2115) (w : SampleSpace) (a b : \u211d) :\n    (\u222b z, incrementProduct (fun r w => linearValue \u03ba r a b w) times u n (w,z) \u2202gaussianProduct)=\n      (\u220f k \u2208 Finset.range n, (Real.exp (-(u k*a)^2*\n        ((centerClock \u03ba w (times (k+1)):\u211d)-centerClock \u03ba w (times k))/2) : \u2102))*\n      (\u220f k \u2208 Finset.range n, observable (u k*b)\n        (centeredPath w (inverse \u03ba w (times (k+1)))-centeredPath w (inverse \u03ba w (times k))))",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairFiniteIncrementFourier.lean#L40"
+    },
+    {
+      "paper": "10: complete balanced increment law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairFiniteIncrementFourier.balanced_formula",
+      "file": "Foundation/StickyPairFiniteIncrementFourier.lean",
+      "line": 69,
+      "source_sha256": "5bd0149f1674332f9da0aa2d0e6aef8df876f9004ea5b5ef7e0667995fa6da55",
+      "declaration_header": "theorem balanced_formula (\u03ba : \u211d\u22650) (times : \u2115 \u2192 \u211d\u22650) (ht : Monotone times)\n    (u : \u2115 \u2192 \u211d) (n : \u2115) (a b : \u211d) (hab : a^2=b^2) :\n    (\u222b w, incrementProduct (fun r w => linearValue \u03ba r a b w) times u n w \u2202sourceMeasure)=\n      \u220f k \u2208 Finset.range n, (Real.exp (-(u k*a)^2*((times (k+1):\u211d)-times k)) : \u2102)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairFiniteIncrementFourier.lean#L69"
+    },
+    {
+      "paper": "10: complete balanced increment law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairFiniteIncrementFourier.half_matches_source",
+      "file": "Foundation/StickyPairFiniteIncrementFourier.lean",
+      "line": 112,
+      "source_sha256": "5bd0149f1674332f9da0aa2d0e6aef8df876f9004ea5b5ef7e0667995fa6da55",
+      "declaration_header": "theorem half_matches_source (\u03ba : \u211d\u22650) (times : \u2115 \u2192 \u211d\u22650) (ht : Monotone times)\n    (u : \u2115 \u2192 \u211d) (n : \u2115) (a b : \u211d) (ha : a^2=1/2) (hb : b^2=1/2) :\n    (\u222b w, incrementProduct (fun r w => linearValue \u03ba r a b w) times u n w \u2202sourceMeasure)=\n      \u222b w, incrementProduct (fun r w => clockPath w r) times u n w \u2202gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairFiniteIncrementFourier.lean#L112"
+    },
+    {
+      "paper": "10: full Brownian coordinate law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairBrownianCoordinates.map_fin_eq_of_fourier",
+      "file": "Foundation/StickyPairBrownianCoordinates.lean",
+      "line": 14,
+      "source_sha256": "d5532a3f90d82062a01f66accfe5c91455e99bdccececff9ba9770af91217260",
+      "declaration_header": "theorem map_fin_eq_of_fourier {\u03a9 \u03a9' : Type*} [MeasurableSpace \u03a9] [MeasurableSpace \u03a9']\n    (\u03bc : Measure \u03a9) (\u03bd : Measure \u03a9') [IsFiniteMeasure \u03bc] [IsFiniteMeasure \u03bd] (n : \u2115)\n    (X : \u03a9 \u2192 Fin n \u2192 \u211d) (Y : \u03a9' \u2192 Fin n \u2192 \u211d) (hX : Measurable X) (hY : Measurable Y)\n    (h : \u2200 p : Fin n \u2192 \u211d, (\u222b w, \u220f i, observable (p i) (X w i) \u2202\u03bc)=\n      \u222b w, \u220f i, observable (p i) (Y w i) \u2202\u03bd) : \u03bc.map X=\u03bd.map Y",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairBrownianCoordinates.lean#L14"
+    },
+    {
+      "paper": "10: full Brownian coordinate law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairBrownianCoordinates.half_increment_law",
+      "file": "Foundation/StickyPairBrownianCoordinates.lean",
+      "line": 43,
+      "source_sha256": "d5532a3f90d82062a01f66accfe5c91455e99bdccececff9ba9770af91217260",
+      "declaration_header": "theorem half_increment_law (\u03ba : \u211d\u22650) (times : \u2115 \u2192 \u211d\u22650) (ht : Monotone times)\n    (n : \u2115) (a b : \u211d) (ha : a^2=1/2) (hb : b^2=1/2) :\n    HasLaw (fun w => fun i : Fin n => linearValue \u03ba (times (i+1)) a b w-\n      linearValue \u03ba (times i) a b w)\n      (gaussianProduct.map (fun w => fun i : Fin n =>\n        clockPath w (times (i+1))-clockPath w (times i))) sourceMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairBrownianCoordinates.lean#L43"
+    },
+    {
+      "paper": "10: full Brownian coordinate law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairBrownianCoordinates.independence_of_vector_law",
+      "file": "Foundation/StickyPairBrownianCoordinates.lean",
+      "line": 68,
+      "source_sha256": "d5532a3f90d82062a01f66accfe5c91455e99bdccececff9ba9770af91217260",
+      "declaration_header": "theorem independence_of_vector_law {\u03a9 \u03a9' : Type*} [MeasurableSpace \u03a9] [MeasurableSpace \u03a9']\n    (\u03bc : Measure \u03a9) (\u03bd : Measure \u03a9') [IsProbabilityMeasure \u03bc] [IsProbabilityMeasure \u03bd]\n    (n : \u2115) (X : \u03a9 \u2192 Fin n \u2192 \u211d) (Y : \u03a9' \u2192 Fin n \u2192 \u211d)\n    (hX : Measurable X) (hY : Measurable Y) (he : \u03bc.map X=\u03bd.map Y)\n    (hi : iIndepFun (fun i w => Y w i) \u03bd) : iIndepFun (fun i w => X w i) \u03bc",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairBrownianCoordinates.lean#L68"
+    },
+    {
+      "paper": "10: full Brownian coordinate law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairBrownianCoordinates.half_prefix_independent",
+      "file": "Foundation/StickyPairBrownianCoordinates.lean",
+      "line": 89,
+      "source_sha256": "d5532a3f90d82062a01f66accfe5c91455e99bdccececff9ba9770af91217260",
+      "declaration_header": "theorem half_prefix_independent (\u03ba : \u211d\u22650) (times : \u2115 \u2192 \u211d\u22650) (ht : Monotone times)\n    (n : \u2115) (a b : \u211d) (ha : a^2=1/2) (hb : b^2=1/2) :\n    iIndepFun (fun i : Fin n => fun w => linearValue \u03ba (times (i+1)) a b w-\n      linearValue \u03ba (times i) a b w) sourceMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairBrownianCoordinates.lean#L89"
+    },
+    {
+      "paper": "10: full Brownian coordinate law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairBrownianCoordinates.half_hasIndepIncrements",
+      "file": "Foundation/StickyPairBrownianCoordinates.lean",
+      "line": 101,
+      "source_sha256": "d5532a3f90d82062a01f66accfe5c91455e99bdccececff9ba9770af91217260",
+      "declaration_header": "theorem half_hasIndepIncrements (\u03ba : \u211d\u22650) (a b : \u211d) (ha : a^2=1/2) (hb : b^2=1/2) :\n    HasIndepIncrements (fun r w => linearValue \u03ba r a b w) sourceMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairBrownianCoordinates.lean#L101"
+    },
+    {
+      "paper": "10: full Brownian coordinate law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairBrownianCoordinates.half_isBrownian",
+      "file": "Foundation/StickyPairBrownianCoordinates.lean",
+      "line": 124,
+      "source_sha256": "d5532a3f90d82062a01f66accfe5c91455e99bdccececff9ba9770af91217260",
+      "declaration_header": "theorem half_isBrownian (\u03ba : \u211d\u22650) (a b : \u211d) (ha : a^2=1/2) (hb : b^2=1/2) :\n    IsBrownianReal (fun r w => linearValue \u03ba r a b w) sourceMeasure where\n  toIsPreBrownianReal",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairBrownianCoordinates.lean#L124"
+    },
+    {
+      "paper": "10: full Brownian coordinate law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairBrownianCoordinates.left_isBrownian",
+      "file": "Foundation/StickyPairBrownianCoordinates.lean",
+      "line": 131,
+      "source_sha256": "d5532a3f90d82062a01f66accfe5c91455e99bdccececff9ba9770af91217260",
+      "declaration_header": "theorem left_isBrownian (\u03ba : \u211d\u22650) :\n    IsBrownianReal (fun r w => leftPath \u03ba w r) sourceMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairBrownianCoordinates.lean#L131"
+    },
+    {
+      "paper": "10: full Brownian coordinate law",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairBrownianCoordinates.right_isBrownian",
+      "file": "Foundation/StickyPairBrownianCoordinates.lean",
+      "line": 141,
+      "source_sha256": "d5532a3f90d82062a01f66accfe5c91455e99bdccececff9ba9770af91217260",
+      "declaration_header": "theorem right_isBrownian (\u03ba : \u211d\u22650) :\n    IsBrownianReal (fun r w => rightPath \u03ba w r) sourceMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairBrownianCoordinates.lean#L141"
+    },
+    {
+      "paper": "11: exact covariance and dependence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairCovariance.left_L2",
+      "file": "Foundation/StickyPairCovariance.lean",
+      "line": 13,
+      "source_sha256": "923d72d796acf509cc42e82b7873aa5a83827815c9103c8eaf2cf4d36a4892e8",
+      "declaration_header": "theorem left_L2 (\u03ba t : \u211d\u22650) : MemLp (fun w => leftPath \u03ba w t) 2 sourceMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairCovariance.lean#L13"
+    },
+    {
+      "paper": "11: exact covariance and dependence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairCovariance.right_L2",
+      "file": "Foundation/StickyPairCovariance.lean",
+      "line": 16,
+      "source_sha256": "923d72d796acf509cc42e82b7873aa5a83827815c9103c8eaf2cf4d36a4892e8",
+      "declaration_header": "theorem right_L2 (\u03ba t : \u211d\u22650) : MemLp (fun w => rightPath \u03ba w t) 2 sourceMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairCovariance.lean#L16"
+    },
+    {
+      "paper": "11: exact covariance and dependence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairCovariance.left_mean",
+      "file": "Foundation/StickyPairCovariance.lean",
+      "line": 19,
+      "source_sha256": "923d72d796acf509cc42e82b7873aa5a83827815c9103c8eaf2cf4d36a4892e8",
+      "declaration_header": "theorem left_mean (\u03ba t : \u211d\u22650) : (\u222b w, leftPath \u03ba w t \u2202sourceMeasure)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairCovariance.lean#L19"
+    },
+    {
+      "paper": "11: exact covariance and dependence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairCovariance.right_mean",
+      "file": "Foundation/StickyPairCovariance.lean",
+      "line": 23,
+      "source_sha256": "923d72d796acf509cc42e82b7873aa5a83827815c9103c8eaf2cf4d36a4892e8",
+      "declaration_header": "theorem right_mean (\u03ba t : \u211d\u22650) : (\u222b w, rightPath \u03ba w t \u2202sourceMeasure)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairCovariance.lean#L23"
+    },
+    {
+      "paper": "11: exact covariance and dependence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairCovariance.left_square",
+      "file": "Foundation/StickyPairCovariance.lean",
+      "line": 32,
+      "source_sha256": "923d72d796acf509cc42e82b7873aa5a83827815c9103c8eaf2cf4d36a4892e8",
+      "declaration_header": "theorem left_square (\u03ba t : \u211d\u22650) : (\u222b w, (leftPath \u03ba w t)^2 \u2202sourceMeasure)=(t:\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairCovariance.lean#L32"
+    },
+    {
+      "paper": "11: exact covariance and dependence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairCovariance.right_square",
+      "file": "Foundation/StickyPairCovariance.lean",
+      "line": 38,
+      "source_sha256": "923d72d796acf509cc42e82b7873aa5a83827815c9103c8eaf2cf4d36a4892e8",
+      "declaration_header": "theorem right_square (\u03ba t : \u211d\u22650) : (\u222b w, (rightPath \u03ba w t)^2 \u2202sourceMeasure)=(t:\u211d)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairCovariance.lean#L38"
+    },
+    {
+      "paper": "11: exact covariance and dependence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairCovariance.difference_square",
+      "file": "Foundation/StickyPairCovariance.lean",
+      "line": 44,
+      "source_sha256": "923d72d796acf509cc42e82b7873aa5a83827815c9103c8eaf2cf4d36a4892e8",
+      "declaration_header": "theorem difference_square (\u03ba t : \u211d\u22650) :\n    (\u222b w, (leftPath \u03ba w t-rightPath \u03ba w t)^2 \u2202sourceMeasure)=\n      2*\u222b w, (inverse \u03ba w t:\u211d) \u2202gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairCovariance.lean#L44"
+    },
+    {
+      "paper": "11: exact covariance and dependence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairCovariance.product_integrable",
+      "file": "Foundation/StickyPairCovariance.lean",
+      "line": 63,
+      "source_sha256": "923d72d796acf509cc42e82b7873aa5a83827815c9103c8eaf2cf4d36a4892e8",
+      "declaration_header": "theorem product_integrable (\u03ba t : \u211d\u22650) :\n    Integrable (fun w => leftPath \u03ba w t*rightPath \u03ba w t) sourceMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairCovariance.lean#L63"
+    },
+    {
+      "paper": "11: exact covariance and dependence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairCovariance.product_holding",
+      "file": "Foundation/StickyPairCovariance.lean",
+      "line": 67,
+      "source_sha256": "923d72d796acf509cc42e82b7873aa5a83827815c9103c8eaf2cf4d36a4892e8",
+      "declaration_header": "theorem product_holding (\u03ba t : \u211d\u22650) :\n    (\u222b w, leftPath \u03ba w t*rightPath \u03ba w t \u2202sourceMeasure)=\n      \u222b w, BrownianStickyNontriviality.occupation \u03ba w t \u2202gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairCovariance.lean#L67"
+    },
+    {
+      "paper": "11: exact covariance and dependence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairCovariance.covariance_holding",
+      "file": "Foundation/StickyPairCovariance.lean",
+      "line": 86,
+      "source_sha256": "923d72d796acf509cc42e82b7873aa5a83827815c9103c8eaf2cf4d36a4892e8",
+      "declaration_header": "theorem covariance_holding (\u03ba t : \u211d\u22650) :\n    cov[(fun w => leftPath \u03ba w t),(fun w => rightPath \u03ba w t);sourceMeasure]=\n      \u222b w, BrownianStickyNontriviality.occupation \u03ba w t \u2202gaussianProduct",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairCovariance.lean#L86"
+    },
+    {
+      "paper": "11: exact covariance and dependence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairCovariance.covariance_positive",
+      "file": "Foundation/StickyPairCovariance.lean",
+      "line": 93,
+      "source_sha256": "923d72d796acf509cc42e82b7873aa5a83827815c9103c8eaf2cf4d36a4892e8",
+      "declaration_header": "theorem covariance_positive (\u03ba t : \u211d\u22650) (h\u03ba : 0 < \u03ba) (ht : 0 < t) :\n    0 < cov[(fun w => leftPath \u03ba w t),(fun w => rightPath \u03ba w t);sourceMeasure]",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairCovariance.lean#L93"
+    },
+    {
+      "paper": "11: exact covariance and dependence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairCovariance.not_independent",
+      "file": "Foundation/StickyPairCovariance.lean",
+      "line": 98,
+      "source_sha256": "923d72d796acf509cc42e82b7873aa5a83827815c9103c8eaf2cf4d36a4892e8",
+      "declaration_header": "theorem not_independent (\u03ba t : \u211d\u22650) (h\u03ba : 0 < \u03ba) (ht : 0 < t) :\n    \u00ac IndepFun (fun w => leftPath \u03ba w t) (fun w => rightPath \u03ba w t) sourceMeasure",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairCovariance.lean#L98"
+    },
+    {
+      "paper": "11: deterministic-time existence",
+      "declaration": "OperatorDerivativeRewrite.Foundation.BrownianStickyBoundaryAtom.exists_boundary_atom",
+      "file": "Foundation/BrownianStickyBoundaryAtom.lean",
+      "line": 16,
+      "source_sha256": "59296988bceada44774a23a6acb75293a38a6ca5f4ef0998f15929c538778f6b",
+      "declaration_header": "theorem exists_boundary_atom (\u03ba T : \u211d\u22650) (h\u03ba : 0 < \u03ba) (hT : 0 < T) :\n    \u2203 s : \u211d\u22650, 0 < s \u2227 s \u2264 T \u2227 0 < gaussianProduct {\u03c9 | changedPath \u03ba \u03c9 s = 0}",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/BrownianStickyBoundaryAtom.lean#L16"
+    },
+    {
+      "paper": "11: genuine diagonal coupling",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairDiagonal.coincidence_probability",
+      "file": "Foundation/StickyPairDiagonal.lean",
+      "line": 31,
+      "source_sha256": "cb0bb26996b5a2327ae55a197fbdb1f654f4f2754e8fff1c89622eb63a18e5ab",
+      "declaration_header": "theorem coincidence_probability (\u03ba t : \u211d\u22650) :\n    sourceMeasure {w | leftPath \u03ba w t=rightPath \u03ba w t}=\n      gaussianProduct {w | changedPath \u03ba w t=0}",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairDiagonal.lean#L31"
+    },
+    {
+      "paper": "11: genuine diagonal coupling",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairDiagonal.diagonal_probability",
+      "file": "Foundation/StickyPairDiagonal.lean",
+      "line": 50,
+      "source_sha256": "cb0bb26996b5a2327ae55a197fbdb1f654f4f2754e8fff1c89622eb63a18e5ab",
+      "declaration_header": "theorem diagonal_probability (\u03ba t : \u211d\u22650) :\n    oneTimeLaw \u03ba t (diagonal \u211d)=gaussianProduct {w | changedPath \u03ba w t=0}",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairDiagonal.lean#L50"
+    },
+    {
+      "paper": "11: genuine diagonal coupling",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairDiagonal.gaussian_product_diagonal_zero",
+      "file": "Foundation/StickyPairDiagonal.lean",
+      "line": 55,
+      "source_sha256": "cb0bb26996b5a2327ae55a197fbdb1f654f4f2754e8fff1c89622eb63a18e5ab",
+      "declaration_header": "theorem gaussian_product_diagonal_zero (t : \u211d\u22650) (ht : 0 < t) :\n    ((gaussianReal 0 t).prod (gaussianReal 0 t)) (diagonal \u211d)=0",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairDiagonal.lean#L55"
+    },
+    {
+      "paper": "11: genuine diagonal coupling",
+      "declaration": "OperatorDerivativeRewrite.Foundation.StickyPairDiagonal.exists_nonproduct_coupling",
+      "file": "Foundation/StickyPairDiagonal.lean",
+      "line": 65,
+      "source_sha256": "cb0bb26996b5a2327ae55a197fbdb1f654f4f2754e8fff1c89622eb63a18e5ab",
+      "declaration_header": "theorem exists_nonproduct_coupling (\u03ba T : \u211d\u22650) (h\u03ba : 0 < \u03ba) (hT : 0 < T) :\n    \u2203 s : \u211d\u22650, 0 < s \u2227 s \u2264 T \u2227\n      0 < oneTimeLaw \u03ba s (diagonal \u211d) \u2227\n      oneTimeLaw \u03ba s \u2260 (gaussianReal 0 s).prod (gaussianReal 0 s)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/StickyPairDiagonal.lean#L65"
     }
   ],
   "human_reorganization": [
@@ -1474,7 +1960,8 @@
     "The paper normalizes the continuous mass to zero on a measurable exceptional event, whereas the source centers its Stieltjes cumulative there. These agree on a common probability-one event, so the same original coordinate classes and actual-process conclusions are retained. No new Lean declarations are added.",
     "The printed bounded-sampling proof uses integrable compact maxima of the particular Brownian, sign-integral and compensated-square martingales. The formal generic sampling theorem instead uses uniform integrability and requires no such additional maximum hypothesis. The paper does not claim to prove that more general theorem.",
     "Causal raw-past clock versions are distinguished from actual coordinates measurable in ambient null augmentation. No right-continuity, driver-independence, Markov all-start family, generator identification or stochastic flow is assumed.",
-    "Holding identity has one common path event for every parameter and horizon. Nontrivial holding is asserted in positive expectation/probability, not samplewise positivity or a computed terminal atom."
+    "Holding identity has one common path event for every parameter and horizon. Nontrivial holding is asserted in positive expectation/probability, not samplewise positivity or a computed terminal atom.",
+    "The two-source balanced pair is included in the same paper. Its complete finite-increment Fourier law is proved by bounded stopped phase products, rather than inferred from one-time marginals. Brownian-coordinate path laws do not silently assert a Brownian property in the joint pair filtration. Positive covariance is for every positive terminal time; diagonal mass is asserted at some deterministic time in every horizon."
   ],
   "literature": [
     {
@@ -1484,6 +1971,10 @@
     {
       "url": "https://doi.org/10.1214/EJP.v19-2350",
       "review": "Primary full Bass 2014 article: Section 2 equations 2.3\u20132.4 give speed-measure additive-clock representation. Introduction explicitly separates the sticky SDE weak/strong question. No solution of that prescribed-driver SDE is claimed here."
+    },
+    {
+      "url": "https://arxiv.org/abs/math/0702542",
+      "review": "Primary Howitt--Warren 2007 preprint, p2 equations 1\u20132: classical Brownian coupling with coincidence bracket and local time. Relevant antecedent only; no source-mapped identification of the present joint bracket or a full stochastic flow is inferred."
     }
   ],
   "novelty": "Classical formalization companion; no new sticky process or local-time mechanism claimed."
