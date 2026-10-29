@@ -27,7 +27,9 @@ original joint law. Every strict global entropy contraction factor therefore
 fails for this update, at every fixed finite coupling. The obstruction uses
 the original continuous-boundary reference, in addition to an elementary
 two-atom example. A separate state-replacement loop kernel has genuine fixed-coupling entropy
-decay, with finite entropy after one step even from a point mass. Classical
+decay, with finite entropy after one step even from a point mass. A zero-trace
+band supplies a genuine two-step Haar reset with explicit pair-count bounds;
+an exact zero-trace row separates this mechanism from Wilson transport. Classical
 conditional-expectation and heat-bath mechanisms
 are credited; no obstruction to dynamics updating all coordinates or to a
 physical Yang--Mills mass gap is asserted.
@@ -536,6 +538,167 @@ $\varepsilon_r$ tends to zero as $|r|\to\infty$, and this proof supplies
 no coupling-uniform entropy rate. Neither it nor the boundary obstruction
 addresses volume or continuum uniformity.
 
+
+\section{A two-step Haar reset through a zero-trace band}
+The replacement kernel has a more informative positive-coupling reset
+than its global density bound alone suggests. Keep the \emph{same}
+$P_r$ from the preceding section, and assume $r\geq0$. For $\delta>0$ put
+\[
+ B_\delta=\{Z\in G:|h(Z)|<\delta\},\qquad
+ a_\delta=m(B_\delta),\qquad
+ b_{r,\delta}=a_\delta e^{-(1+3\delta)r}.
+\]
+The set is open since $h$ is continuous. It is nonempty, since
+$\operatorname{diag}(i,-i)\in\SU$ has zero trace. Thus $a_\delta>0$.
+For completeness, Haar probability on a compact group assigns positive
+mass to every nonempty open set: its left translates cover the group,
+a finite subcover exists by compactness, and zero mass of the original
+set would force total mass zero. Hence no unproved quantitative band
+mass estimate is needed here.
+
+\begin{theorem}[Actual two-step minorization]\label{thm:bandreset}
+For every $C\in G$,
+\begin{equation}\label{eq:bandreset}
+ P_r^2(C,\cdot)\geq b_{r,\delta}m,\qquad
+ 0<b_{r,\delta}\leq1.
+\end{equation}
+The composition is of the actual probability kernel, twice; it is not
+a proposed transition density or a stationary-reference reset.
+\end{theorem}
+\begin{proof}
+For $Z\in B_\delta$, the first density obeys
+\[
+ k_r(C,Z)\geq e^{-(1+\delta)r},
+\]
+because $rh(C)h(Z)\geq-r\delta$ and $z_r(C)\leq e^r$.
+At the second step, $z_r(Z)\leq e^{r\delta}$ and
+$rh(Z)h(D)\geq-r\delta$ for every $D$. Thus
+\[
+ k_r(Z,D)\geq e^{-2r\delta}\qquad(Z\in B_\delta).
+\]
+For any Borel $A$, positivity and Tonelli give
+\begin{align*}
+ P_r^2(C,A)
+ &=\int_G k_r(C,Z)\!\int_A k_r(Z,D)m(dD)m(dZ)\\
+ &\geq\int_{B_\delta}e^{-(1+\delta)r}
+                    e^{-2r\delta}m(A)m(dZ)
+ =b_{r,\delta}m(A).
+\end{align*}
+The lower coefficient is positive. Evaluating the inequality at $A=G$
+gives $b_{r,\delta}\leq1$, using the Markov property of the composition.
+\end{proof}
+\lean{SU2ZeroTraceBridge}{band_mass_pos; density_into_band; density_from_band}
+\lean{SU2ZeroTraceBridge}{two_step_reset; bridge_pos; bridge_le_one}
+
+\subsection*{Iteration, stationary convergence and the pair count}
+Put $\alpha=b_{r,\delta}/2\in(0,1)$ and define the genuine residual
+\[
+ L(C,\cdot)=\frac{P_r^2(C,\cdot)-\alpha m}{1-\alpha}.
+\]
+Nonnegativity, measurable evaluations and mass one follow just as in
+the previous residual construction. Here $m$ is a common reset law;
+it is not asserted stationary. In fact
+$\pi_r=\alpha m+(1-\alpha)\pi_r L$ follows from stationarity of $\pi_r$
+for $P_r^2$, and does not give $\pi_r L=\pi_r$.
+For a bounded real measurable $f$, let
+$\operatorname{osc}(f)=\sup_C f(C)-\inf_C f(C)$. Since a Markov average
+stays between the infimum and supremum of its input,
+\[
+ \operatorname{osc}(P_r^2f)
+ =(1-\alpha)\operatorname{osc}(Lf)
+ \leq(1-\alpha)\operatorname{osc}(f).
+\]
+Induction therefore proves, for $0\leq f\leq1$,
+\begin{equation}\label{eq:bandosc}
+ |P_r^{2n}f(C)-P_r^{2n}f(D)|
+ \leq(1-\alpha)^n\leq e^{-n\alpha}.
+\end{equation}
+All powers are actual kernel powers. Measurability and boundedness
+are preserved by kernel integration, so every induction step is defined.
+The same estimate holds for $2n+1$ steps by applying the even-step bound
+to $P_rf$, which still takes values in $[0,1]$.
+\lean{SU2ZeroTraceBridge}{twoAverage_eq_transfer_twice; iterate_range}
+\lean{SU2ZeroTraceBridge}{iterate_oscillation; iterate_exponential_bound}
+
+A useful human consequence is convergence from every initial probability
+$\mu$ to the already constructed stationary $\pi_r$. Define
+$d_{\rm TV}(\mu,\nu)=\sup_A|\mu(A)-\nu(A)|$. Integrating the
+two-state bound for $f=1_A$ against $\mu(dC)\pi_r(dD)$ and using
+stationarity gives
+\[
+ d_{\rm TV}(\mu P_r^{2n},\pi_r),\quad
+ d_{\rm TV}(\mu P_r^{2n+1},\pi_r)
+ \leq(1-\alpha)^n.
+\]
+This also proves uniqueness: if $\nu$ is stationary, substitute $\nu$
+and let $n\to\infty$. This total-variation conclusion is a printed
+human deduction, not a new mapped formal theorem.
+
+For a prescribed $t\geq0$, a sufficient integer pair count is
+\begin{equation}\label{eq:bandcount}
+ n\geq\frac{2t}{a_\delta}e^{(1+3\delta)r}.
+\end{equation}
+Multiplication by $\alpha=(a_\delta/2)e^{-(1+3\delta)r}$ gives
+$n\alpha\geq t$, and \eqref{eq:bandosc} then gives $e^{-t}$.
+These are $n$ pairs, hence $2n$ original transitions. For each
+$\eta>0$, choose $\delta=\eta/3$; the positive two-step Haar coefficient
+is then $a_{\eta/3}e^{-(1+\eta)r}$. Its prefactor depends on $\eta$.
+No exponent-one endpoint, optimality or coupling-uniform rate is claimed.
+\lean{SU2ZeroTraceBridge}{sufficient_pair_count; reset_rate_near_one}
+The oscillation/total-variation mechanism is classical Doeblin contraction;
+Gaubert--Qu~\cite{gq}, introductory equations (1)--(4) and Theorem 1.1,
+give its coefficient and oscillation context. No new general ergodicity
+principle is asserted. This Haar minorization is also not a license to
+reuse Lemma~\ref{lem:residual} with reference $\pi_r$: that entropy proof
+required a \emph{stationary-reference} minorization and invariant residual.
+The earlier one-step entropy conclusion retains its separate proof.
+
+\subsection*{The zero-trace row distinguishes Wilson transport}
+There is a direct obstruction to identifying this reset mechanism with
+one-word Wilson transport. Define the latter on the same group by
+\[
+ W_r(C,dD)=\frac{e^{r h(C^{-1}D)}}{\zeta_r}m(dD),\qquad
+ \zeta_r=\int_Ge^{rh(V)}m(dV).
+\]
+Left invariance makes the denominator independent of $C$. Equivalently,
+$D=CV$, where $V$ has the Haar tilt $e^{rh(V)}/\zeta_r$.
+This is the source's one-word transition evaluated at the inverse
+boundary argument. Its normalized relative-holonomy mean is
+\[
+ \int_Gh(C^{-1}D)W_r(C,dD)
+ =c_r,\qquad c_r=\frac{\int_G h(V)e^{rh(V)}m(dV)}{\zeta_r}.
+\]
+In contrast, $h(C)=0$ makes $P_r(C,\cdot)=m$ exactly, since its
+interaction vanishes and its partition is one.
+\lean{SU2ZeroTraceBridge}{zero_trace_row; wilson_relative_mean}
+
+Here is a direct human strictness argument, valid at every $r>0$.
+The central transformation $V\mapsto -V$ preserves Haar probability
+and sends $h$ to $-h$. Averaging the original numerator with its
+transformed expression gives
+\[
+ \int h(V)e^{rh(V)}m(dV)
+ =\int h(V)\sinh(rh(V))m(dV)>0.
+\]
+The integrand is nonnegative and continuous, and strictly positive
+on a nonempty open neighborhood of the identity. The same compact
+Haar support argument gives the strict integral inequality. All
+integrands are bounded at each fixed $r$. Thus $c_r>0$, whereas
+$\int h(C^{-1}D)m(dD)=\int h\,dm=0$ by the same sign symmetry.
+At any zero-trace $C$ the two rows consequently differ for every $r>0$.
+The mapped formal mismatch is stated eventually at large coupling,
+using $c_r\to1$; the all-positive-coupling strengthening here is a
+labelled human symmetry proof, not that literal formal quantifier.
+\lean{SU2ZeroTraceBridge}{zero_trace_wilson_mismatch}
+
+This distinction already occurs for one group variable. It does not
+settle a Wilson lattice gap or prohibit another valid minorization
+for $W_r$. In particular the algebraic rescaling
+$2ne^{-(1+3\delta)r}$ in the loop oscillation exponent is only a
+proposed distance scale until related independently to an actual
+lattice spacing. The source labels that scale as proposed; no physical
+mass gap follows by renaming a transition count.
+
 \section{Interpretation and comparison with heat-bath mixing}
 Conditional expectation and the entropy chain rule are classical. This
 paper makes no novelty claim for the obstruction that an exactly retained
@@ -584,5 +747,9 @@ Symposium on Information Theory (2013).
 \emph{Approximate tensorization of entropy at high temperature},
 Ann. Fac. Sci. Toulouse Math. (6) \textbf{24} (2015), 691--716.
 \href{https://www.numdam.org/item/AFST_2015_6_24_4_691_0.pdf}{Primary journal PDF}.
+\bibitem{gq} S. Gaubert and Z. Qu,
+\emph{Dobrushin's ergodicity coefficient for Markov operators on cones},
+primary author manuscript, Section 1, equations (1)--(4), Theorem 1.1.
+\url{https://www.cmap.polytechnique.fr/~gaubert/PAPERS/GaubertQuIEOTD14QuFinal.pdf}.
 \end{thebibliography}
 \end{document}

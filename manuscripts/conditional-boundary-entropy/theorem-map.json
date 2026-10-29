@@ -688,6 +688,150 @@
       "source_sha256": "b599356517fb202efcb4666afa2db6b9528c0810cb1ff3ce581b7a323d3c83d2",
       "declaration_header": "theorem entropy_tendsto_zero_after_first (r : \u211d) (\u03c1 : Measure SU2)\n    [IsProbabilityMeasure \u03c1] :\n    Tendsto (fun n : \u2115 => klDiv (iterateLaw r \u03c1 (n + 1)) (equilibriumLaw r))\n      atTop (\ud835\udcdd 0)",
       "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2PointEntropy.lean#L166"
+    },
+    {
+      "paper": "Section 9 actual two-step trace-product loop Haar reset, pair count and Wilson row mismatch",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ZeroTraceBridge.band_mass_pos",
+      "file": "Foundation/SU2ZeroTraceBridge.lean",
+      "line": 31,
+      "source_sha256": "e369d826c78d5b80c18f2dc2e8644f8f8ccf15b9aef6b24c69a36e35e5a923a0",
+      "declaration_header": "theorem band_mass_pos (\u03b4 : \u211d) (h\u03b4 : 0 < \u03b4) : 0 < law.real (band \u03b4)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ZeroTraceBridge.lean#L31"
+    },
+    {
+      "paper": "Section 9 actual two-step trace-product loop Haar reset, pair count and Wilson row mismatch",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ZeroTraceBridge.density_into_band",
+      "file": "Foundation/SU2ZeroTraceBridge.lean",
+      "line": 54,
+      "source_sha256": "e369d826c78d5b80c18f2dc2e8644f8f8ccf15b9aef6b24c69a36e35e5a923a0",
+      "declaration_header": "theorem density_into_band (r \u03b4 : \u211d) (hr : 0 \u2264 r) (C Z : SU2)\n    (hZ : Z \u2208 band \u03b4) :\n    Real.exp (-(r * (1 + \u03b4))) \u2264 density law (interaction r) C Z",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ZeroTraceBridge.lean#L54"
+    },
+    {
+      "paper": "Section 9 actual two-step trace-product loop Haar reset, pair count and Wilson row mismatch",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ZeroTraceBridge.density_from_band",
+      "file": "Foundation/SU2ZeroTraceBridge.lean",
+      "line": 80,
+      "source_sha256": "e369d826c78d5b80c18f2dc2e8644f8f8ccf15b9aef6b24c69a36e35e5a923a0",
+      "declaration_header": "theorem density_from_band (r \u03b4 : \u211d) (hr : 0 \u2264 r) (Z D : SU2)\n    (hZ : Z \u2208 band \u03b4) :\n    Real.exp (-(2 * r * \u03b4)) \u2264 density law (interaction r) Z D",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ZeroTraceBridge.lean#L80"
+    },
+    {
+      "paper": "Section 9 actual two-step trace-product loop Haar reset, pair count and Wilson row mismatch",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ZeroTraceBridge.two_step_reset",
+      "file": "Foundation/SU2ZeroTraceBridge.lean",
+      "line": 120,
+      "source_sha256": "e369d826c78d5b80c18f2dc2e8644f8f8ccf15b9aef6b24c69a36e35e5a923a0",
+      "declaration_header": "theorem two_step_reset (r \u03b4 : \u211d) (hr : 0 \u2264 r) (C : SU2) :\n    ENNReal.ofReal (bridge r \u03b4) \u2022 law \u2264 (loopKernel r \u2218\u2096 loopKernel r) C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ZeroTraceBridge.lean#L120"
+    },
+    {
+      "paper": "Section 9 actual two-step trace-product loop Haar reset, pair count and Wilson row mismatch",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ZeroTraceBridge.bridge_pos",
+      "file": "Foundation/SU2ZeroTraceBridge.lean",
+      "line": 115,
+      "source_sha256": "e369d826c78d5b80c18f2dc2e8644f8f8ccf15b9aef6b24c69a36e35e5a923a0",
+      "declaration_header": "theorem bridge_pos (r \u03b4 : \u211d) (h\u03b4 : 0 < \u03b4) : 0 < bridge r \u03b4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ZeroTraceBridge.lean#L115"
+    },
+    {
+      "paper": "Section 9 actual two-step trace-product loop Haar reset, pair count and Wilson row mismatch",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ZeroTraceBridge.bridge_le_one",
+      "file": "Foundation/SU2ZeroTraceBridge.lean",
+      "line": 153,
+      "source_sha256": "e369d826c78d5b80c18f2dc2e8644f8f8ccf15b9aef6b24c69a36e35e5a923a0",
+      "declaration_header": "theorem bridge_le_one (r \u03b4 : \u211d) (hr : 0 \u2264 r) (C : SU2) : bridge r \u03b4 \u2264 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ZeroTraceBridge.lean#L153"
+    },
+    {
+      "paper": "Section 9 actual two-step trace-product loop Haar reset, pair count and Wilson row mismatch",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ZeroTraceBridge.reset_range",
+      "file": "Foundation/SU2ZeroTraceBridge.lean",
+      "line": 162,
+      "source_sha256": "e369d826c78d5b80c18f2dc2e8644f8f8ccf15b9aef6b24c69a36e35e5a923a0",
+      "declaration_header": "theorem reset_range (r \u03b4 : \u211d) (hr : 0 \u2264 r) (h\u03b4 : 0 < \u03b4) :\n    0 < reset r \u03b4 \u2227 reset r \u03b4 < 1",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ZeroTraceBridge.lean#L162"
+    },
+    {
+      "paper": "Section 9 actual two-step trace-product loop Haar reset, pair count and Wilson row mismatch",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ZeroTraceBridge.twoAverage_eq_transfer_twice",
+      "file": "Foundation/SU2ZeroTraceBridge.lean",
+      "line": 292,
+      "source_sha256": "e369d826c78d5b80c18f2dc2e8644f8f8ccf15b9aef6b24c69a36e35e5a923a0",
+      "declaration_header": "theorem twoAverage_eq_transfer_twice (r : \u211d) (f : SU2 \u2192 \u211d) (hf : Measurable f)\n    (hb : \u2200 D, 0 \u2264 f D \u2227 f D \u2264 1) (C : SU2) :\n    twoAverage r f C = SU2VariationalGap.transfer r (SU2VariationalGap.transfer r f) C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ZeroTraceBridge.lean#L292"
+    },
+    {
+      "paper": "Section 9 actual two-step trace-product loop Haar reset, pair count and Wilson row mismatch",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ZeroTraceBridge.iterate_range",
+      "file": "Foundation/SU2ZeroTraceBridge.lean",
+      "line": 235,
+      "source_sha256": "e369d826c78d5b80c18f2dc2e8644f8f8ccf15b9aef6b24c69a36e35e5a923a0",
+      "declaration_header": "theorem iterate_range (r \u03b4 : \u211d) (hr : 0 \u2264 r) (h\u03b4 : 0 < \u03b4)\n    (n : \u2115) (f : SU2 \u2192 \u211d) (hf : Measurable f) (hb : \u2200 D, 0 \u2264 f D \u2227 f D \u2264 1) :\n    \u2203 a : \u211d, \u2200 C, a \u2264 iterate r n f C \u2227 iterate r n f C \u2264 a + (1 - reset r \u03b4)^n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ZeroTraceBridge.lean#L235"
+    },
+    {
+      "paper": "Section 9 actual two-step trace-product loop Haar reset, pair count and Wilson row mismatch",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ZeroTraceBridge.iterate_oscillation",
+      "file": "Foundation/SU2ZeroTraceBridge.lean",
+      "line": 270,
+      "source_sha256": "e369d826c78d5b80c18f2dc2e8644f8f8ccf15b9aef6b24c69a36e35e5a923a0",
+      "declaration_header": "theorem iterate_oscillation (r \u03b4 : \u211d) (hr : 0 \u2264 r) (h\u03b4 : 0 < \u03b4)\n    (n : \u2115) (f : SU2 \u2192 \u211d) (hf : Measurable f) (hb : \u2200 D, 0 \u2264 f D \u2227 f D \u2264 1)\n    (C D : SU2) : |iterate r n f C - iterate r n f D| \u2264 (1 - reset r \u03b4)^n",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ZeroTraceBridge.lean#L270"
+    },
+    {
+      "paper": "Section 9 actual two-step trace-product loop Haar reset, pair count and Wilson row mismatch",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ZeroTraceBridge.iterate_exponential_bound",
+      "file": "Foundation/SU2ZeroTraceBridge.lean",
+      "line": 277,
+      "source_sha256": "e369d826c78d5b80c18f2dc2e8644f8f8ccf15b9aef6b24c69a36e35e5a923a0",
+      "declaration_header": "theorem iterate_exponential_bound (r \u03b4 t : \u211d) (hr : 0 \u2264 r) (h\u03b4 : 0 < \u03b4)\n    (n : \u2115) (hn : t \u2264 (n : \u211d) * reset r \u03b4) (f : SU2 \u2192 \u211d) (hf : Measurable f)\n    (hb : \u2200 D, 0 \u2264 f D \u2227 f D \u2264 1) (C D : SU2) :\n    |iterate r n f C - iterate r n f D| \u2264 Real.exp (-t)",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ZeroTraceBridge.lean#L277"
+    },
+    {
+      "paper": "Section 9 actual two-step trace-product loop Haar reset, pair count and Wilson row mismatch",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ZeroTraceBridge.sufficient_pair_count",
+      "file": "Foundation/SU2ZeroTraceBridge.lean",
+      "line": 299,
+      "source_sha256": "e369d826c78d5b80c18f2dc2e8644f8f8ccf15b9aef6b24c69a36e35e5a923a0",
+      "declaration_header": "theorem sufficient_pair_count (r \u03b4 t : \u211d) (h\u03b4 : 0 < \u03b4) (n : \u2115)\n    (hn : (2 * t/law.real (band \u03b4)) * Real.exp ((1 + 3 * \u03b4) * r) \u2264 (n : \u211d)) :\n    t \u2264 (n : \u211d) * reset r \u03b4",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ZeroTraceBridge.lean#L299"
+    },
+    {
+      "paper": "Section 9 actual two-step trace-product loop Haar reset, pair count and Wilson row mismatch",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ZeroTraceBridge.reset_rate_near_one",
+      "file": "Foundation/SU2ZeroTraceBridge.lean",
+      "line": 358,
+      "source_sha256": "e369d826c78d5b80c18f2dc2e8644f8f8ccf15b9aef6b24c69a36e35e5a923a0",
+      "declaration_header": "theorem reset_rate_near_one (\u03b7 : \u211d) (h\u03b7 : 0 < \u03b7) :\n    \u2203 b : \u211d, 0 < b \u2227 \u2200 r : \u211d, 0 \u2264 r \u2192 \u2200 C : SU2,\n      ENNReal.ofReal (b * Real.exp (-(1 + \u03b7) * r)) \u2022 law \u2264 (loopKernel r \u2218\u2096 loopKernel r) C",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ZeroTraceBridge.lean#L358"
+    },
+    {
+      "paper": "Section 9 actual two-step trace-product loop Haar reset, pair count and Wilson row mismatch",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ZeroTraceBridge.zero_trace_row",
+      "file": "Foundation/SU2ZeroTraceBridge.lean",
+      "line": 325,
+      "source_sha256": "e369d826c78d5b80c18f2dc2e8644f8f8ccf15b9aef6b24c69a36e35e5a923a0",
+      "declaration_header": "theorem zero_trace_row (r : \u211d) (C : SU2) (hC : halfTrace C = 0) : loopKernel r C = law",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ZeroTraceBridge.lean#L325"
+    },
+    {
+      "paper": "Section 9 actual two-step trace-product loop Haar reset, pair count and Wilson row mismatch",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ZeroTraceBridge.wilson_relative_mean",
+      "file": "Foundation/SU2ZeroTraceBridge.lean",
+      "line": 331,
+      "source_sha256": "e369d826c78d5b80c18f2dc2e8644f8f8ccf15b9aef6b24c69a36e35e5a923a0",
+      "declaration_header": "theorem wilson_relative_mean (\u03b2 : \u211d) (C : SU2) :\n    (\u222b D, halfTrace (C\u207b\u00b9 * D) \u2202SU2OneWordTransfer.transition law \u03b2 C\u207b\u00b9) =\n      SU2WilsonConvolution.coefficient \u03b2",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ZeroTraceBridge.lean#L331"
+    },
+    {
+      "paper": "Section 9 actual two-step trace-product loop Haar reset, pair count and Wilson row mismatch",
+      "declaration": "OperatorDerivativeRewrite.Foundation.SU2ZeroTraceBridge.zero_trace_wilson_mismatch",
+      "file": "Foundation/SU2ZeroTraceBridge.lean",
+      "line": 340,
+      "source_sha256": "e369d826c78d5b80c18f2dc2e8644f8f8ccf15b9aef6b24c69a36e35e5a923a0",
+      "declaration_header": "theorem zero_trace_wilson_mismatch : \u2200\u1da0 \u03b2 : \u211d in atTop,\n    \u2203 C : SU2, halfTrace C = 0 \u2227 loopKernel \u03b2 C = law \u2227\n      SU2OneWordTransfer.transition law \u03b2 C\u207b\u00b9 \u2260 law",
+      "baseline_url": "https://github.com/QuijoticResearch/OperatorDerivativeRewrite/blob/bab688bb6140cd6316c80680095a914ea0d346db/Foundation/SU2ZeroTraceBridge.lean#L340"
     }
   ],
   "human_reorganization": [
@@ -695,7 +839,11 @@
     "Finite-word potential boundedness is reproved by elementary unitary matrix entry bounds rather than the mapped quaternion staple radius.",
     "The explicit bounded boundary-density ratio and first-step entropy upper bound 4|r| are printed human deductions of mapped partition and domination estimates, not additional formal declarations.",
     "The residual contraction proof uses standard Borel reverse disintegration and conditional Jensen to reconstruct the classical data-processing argument; the formal source invokes the measure-theoretic KL library.",
-    "Boundary-preserving updates act on boundary/interior pairs; the positive loop comparison replaces the single chain state. Their state spaces and references are kept separate. The hemisphere event is not claimed gauge invariant."
+    "Boundary-preserving updates act on boundary/interior pairs; the positive loop comparison replaces the single chain state. Their state spaces and references are kept separate. The hemisphere event is not claimed gauge invariant.",
+    "Section 9 gives complete density and Tonelli proofs of actual P_r squared Haar minorization through a zero-trace band, with coefficient m(B_delta)*exp(-(1+3delta)r). Halving yields a genuine residual, all measurable powers and the explicit count of pairs.",
+    "Convergence in total variation to the already constructed stationary law and uniqueness are labelled human consequences of the oscillation estimate, not new mapped formal theorems. The reset reference is Haar, not the stationary tilted law, so no invariant residual or entropy-reference transfer is inferred.",
+    "At a zero-trace current state the trace-product loop row is exactly Haar. The mapped Wilson mismatch is eventual at large coupling; the printed all-r-positive mismatch is a labelled human symmetry/strict positivity proof using the nonempty Haar-supported neighborhood of the identity. The Wilson argument retains the inverse boundary convention and actual relative-holonomy tilt.",
+    "Near-exponent-one rate uses delta=eta/3 and a positive eta-dependent band prefactor. No endpoint optimality, coupling-uniform rate, physical-spacing identification or continuum mass gap is claimed."
   ],
   "novelty": "Classical formalization companion; no new heat-bath obstruction, strict data-processing phenomenon or mass-gap claim."
 }
